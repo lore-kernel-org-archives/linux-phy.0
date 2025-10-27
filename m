@@ -4,90 +4,106 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 30898CCF9EA
-	for <linux-phy@archiver.kernel.org>; Mon, 27 Oct 2025 09:14:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 47EA9CCF9E0
+	for <linux-phy@archiver.kernel.org>; Mon, 27 Oct 2025 09:22:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nVmLeQVm8IYuUBc2dYOp7UQYteyX+LPr/uMxKusCeM8=; b=WTjMhd/lbu86d8
-	PsLKik9mJG2iggJCX05D+T6VH1Zb5KSqOTrUzGBoviJYp56ThoCG9K7wMzYdJKLJncz6gXc3ZYzFA
-	MMhCIp8VAAGhgxXC3S/O2Y4z4YD0EmWfAdQRzdYw2LGo7M0kG+zh6Hk9iFL4lBMqIOrl0zZluYHdg
-	HE/hZqh5HQiNxWjq+5mBwCAFlZl2qBdY8eYVagn08OmhTiAIOJylzVHvKRTHYqKDvSzaGz0RbCEDP
-	CeipWpjep5+69ww9aZWheSXGBQqNNYhXHm4xyURvureWpVZIFBvPiNv6YD7FUvCiqDQJ1qfApiZKu
-	7di5AXGAitXCZiWc7+qw==;
+	List-Owner; bh=JnQZ/pdrLXzTobSjHxYC2jg3zZw5pOfU5UeX/ljJHXE=; b=0IUOznQH2NlrEC
+	lOERiR0CghtxR5wEGS/AQlwmOuqqASiInmIUl4+R8pjtKeD1x2VISqpMOUHdgiAylUSvcNvUguXdm
+	Tp1ZVN+NrwtOqsRu9a8DVUSskAky/1U08/XlCM6YI0TB4c741L1yKKe3TzTA6+kPlqR9voXbxJXyC
+	PyNOUMnYqbDTtOIvmmuHN6r43GuMhNlo1GoraxIRfBN+mk0JBowekbkTaqiNvl3KZqnjl4YcSvPr0
+	OYHoEyohPpl8JoFVahO6UqA6i08gUGt0JSAjo18yv7eqcADcaZyl7Js+wTdp+ytUJB1zRBM5TcjqL
+	F8jD6aIMT1i/rBod2jmA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDJIy-0000000DVDX-2LCt;
-	Mon, 27 Oct 2025 09:14:20 +0000
-Received: from mail-wm1-x333.google.com ([2a00:1450:4864:20::333])
+	id 1vDJRJ-0000000DW36-0jBs;
+	Mon, 27 Oct 2025 09:22:57 +0000
+Received: from mail-ej1-x635.google.com ([2a00:1450:4864:20::635])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDJIw-0000000DVD6-1Mml
+	id 1vDJRF-0000000DW1o-3mpo
 	for linux-phy@lists.infradead.org;
-	Mon, 27 Oct 2025 09:14:19 +0000
-Received: by mail-wm1-x333.google.com with SMTP id 5b1f17b1804b1-46fcf9f63b6so26148235e9.2
-        for <linux-phy@lists.infradead.org>; Mon, 27 Oct 2025 02:14:17 -0700 (PDT)
+	Mon, 27 Oct 2025 09:22:55 +0000
+Received: by mail-ej1-x635.google.com with SMTP id a640c23a62f3a-b6d855ca585so447430066b.0
+        for <linux-phy@lists.infradead.org>; Mon, 27 Oct 2025 02:22:53 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1761556456; x=1762161256; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=zMfASScf5ZTOmAyQbAWxr3O4HT4xPAALH5kjKVs+B5Y=;
-        b=CEs9K7YaPvaHQEA/oSDta2Gjm/GhQ0V4RARSA6m/6qvc1FUjpTKeeZRjqZwiHdaLi8
-         //LDAbxSyHWIRiT2zlLFP99hLbk6upLAc0tuT+tN+guATBBpZzay3JBT+3Dh67bNyX/z
-         DcyuGtpP1GKxizb4Nm+t0ZfTgY9EGOIaFz0xsM4NYhPRl7OuQqvIUGgQOeReP84llb4f
-         OA5XCRli7IuixZlTXbQ6vQwaqhlv6cJQ31jq/Hji4cYhNZ8kFO5TnQM8Ti5rR+OrphJm
-         IdCdUOsh0r685Mpej7fRSKGw2O9gfWqXimB5GUjZws9dE/q3Ah1fujlHyU7ZD4dRgGfZ
-         1S1w==
+        d=linaro.org; s=google; t=1761556972; x=1762161772; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=idLQEGHawEowPnMFpADe7JKEtzSuZ6zkkitTWQDADFM=;
+        b=gMG0i4syMQmOSyHQREgQ3R87FW3UyXXyrwMUH0CyQmmoIPSTnMcQeRUXime4NANpE9
+         EnrXsqkz7Xr/NLJ2OYHmzCfG+UrDhP4QpEAO2x0mcYTxBUyoRT4BjO/Dlg7fXOsbJqLP
+         WUUY9IXARU7P+gqX1ochZp6jF6s5m0bvdKF1c+p8EuEgdmPYP43AgqdY14MwL5QJSzZh
+         GQW0DSmofcXASOi2LtMaH6+VLmWCDbmEfzkp/puLLeOmv8Dj/j2paUv+huJf+wlOcNLv
+         K8M0LRihUxxlzHymgd8Ot/RUJMVVvcS8G4MXF7RZIe5Hv2qEAfP3wNGCSRb2vHrYc7gS
+         xiPw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1761556456; x=1762161256;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=zMfASScf5ZTOmAyQbAWxr3O4HT4xPAALH5kjKVs+B5Y=;
-        b=WgLQdkH1LkPumnOA6rSSqrbuZYvbCj4BzonxxunZhkNDYNlSVr/0DUIlHCGklq7qtW
-         d4eFrOn8KxQYpaDRVnQ9DkzQbqY2Cud1MdDX8x4E2TLjf65j5qMxpZEsed1JPhaOAunV
-         b55p+rnhc5fxadKNQnkA7+g9+qLyV2Dl9gRE256gmhfE0A8+DGlcjwxrHRZGdVnspqsC
-         THvpdqKqxcwsMj3TGS4P8WlJF7ulIeyhRmVTMeb0d768tnmTzbr62+/uiVX1Vvf11o5C
-         0mxT3Gnp/5IFR/AMgh97h7I3JGYvg0lvEXgYoFgw7/TspN1+TfRGmb0kAaSD/LZPhIKK
-         OjBA==
-X-Forwarded-Encrypted: i=1; AJvYcCUKrK0Sx+k9c4w/POuzg1wz0WkRHQj3rqkBVm6rEhC8t7HJ6GQtOy+4+n6kdvRW05ZwIHd1RUJsnUQ=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyswWngtfPfbL0ZUzdar3P+NphRUPPDGJoy7eWbZtLP0olEhaX7
-	NYuxyKTNSyjaL0Nn6E2SUYn4tRZX+wUCspOD9+pPQ1zR1ORDZ0jfnliRLG4+zff7dzo=
-X-Gm-Gg: ASbGnct9I+3WPWZwComxnvUgkGVfOqDrSDO6Md/HEmMemH1SdWLl2lx5xfoAnGG38t0
-	VX9Q+HDIJ78oRkAGZoLHAlfg9M0IEr2ExBtHHaIUrUl2OUCAYReM4KydtoCUO9GF6c+mrQIbw9f
-	dCb6Ahk0ivogfmOyKhrvj1Os+2aQB7fTT627Wq2fF49r/qRXn+b8XzmBIWYA8VYOpovjLiqdY8g
-	gG2LK1B5gf40xcZYdv0fxzXoDvSpNzNc+J4EFZk5yT2IZJT+n9X5FTkD4UojhpcI13jbG5zDNAT
-	yQtbyV2OZbA3unC/WIXp8gFwsVQqnK/ec6tqnCmilbutrhc/0Nad9gJGBiKQwKuZ6IaKcBqhpgG
-	jgNWaynb74QMPaO5EZApya5lNiCq7RW0qldrF9N9gf597v/u4iWcXONcXu8oxzlvz/vddRxXlvw
-	NpyfKMEHY=
-X-Google-Smtp-Source: AGHT+IF01498un0tSWAnn1Di9SQ50IOxjN2AyB2jrpc+3JXFxPl0fMSWvNz6Z5oCVFiz8j55+fzQuw==
-X-Received: by 2002:a05:600d:438f:b0:476:84e9:b55d with SMTP id 5b1f17b1804b1-47684e9bedbmr28893255e9.3.1761556456359;
-        Mon, 27 Oct 2025 02:14:16 -0700 (PDT)
-Received: from linaro.org ([86.121.7.169])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-475ddae2309sm60319575e9.12.2025.10.27.02.14.14
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 27 Oct 2025 02:14:15 -0700 (PDT)
-Date: Mon, 27 Oct 2025 11:14:14 +0200
-From: Abel Vesa <abel.vesa@linaro.org>
-To: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Wesley Cheng <quic_wcheng@quicinc.com>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v6 6/8] phy: qualcomm: qmp-combo: Update QMP PHY with
- Glymur settings
-Message-ID: <j4it7mdacjnx3gocmak5nxx7bqmtxmikum7kn7qr5dh7jac7ok@oiqkbnil6lfd>
-References: <20251024-glymur_usb-v6-0-471fa39ff857@oss.qualcomm.com>
- <20251024-glymur_usb-v6-6-471fa39ff857@oss.qualcomm.com>
+        d=1e100.net; s=20230601; t=1761556972; x=1762161772;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=idLQEGHawEowPnMFpADe7JKEtzSuZ6zkkitTWQDADFM=;
+        b=FbbDEpGjBjEpaAMgAW9+mFNCPu9bY2Ej3i8ywjunMyobEp19zatid8EviPKjM0q1L2
+         goqNf31bnhxZp0m/m3jB8ug1PVKQ2fDQ5d7J8RTPoi+jOi1wFdXagMvSrS3C/amQ6Emy
+         j4nbm2Q39iELQvt2Nly7QgOVof/MKD7go1VG0yCnkFOpgPd/t2LbDm0vrpOg5D8oyW8g
+         Gm+7zu4oy11G/xZbN1P1/S8VIqcn7ZhEq7rNYt+keNnIt82a1zPLG6+jqfwRcBjvJTnb
+         XuHAKdIgn3BTvuURi1PlQb6lKuWUAB1K9QqV2EN7bbZy/CRgmUXXq0j356L3qFdNu1Q2
+         0wDg==
+X-Forwarded-Encrypted: i=1; AJvYcCVa38Blw8W4Izr164zX0uNxA+0aS3LazPPNnq6O/jLuWgz8/2L8l/nkci2foMYQG/S4bD+Y5tujmtk=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yyw5ahkzMw0+39Ha8NqL4GtCykr0/yHUznSJPoLiMfx+DvkkBd9
+	5bqIGj9z3xE/zX+BYL8YHwzJ0bk7C5kOJgY7Dx8hc6tx0VgGKXN/3DdHCKMV7K9+Lfg=
+X-Gm-Gg: ASbGncvO34gpKW5SnPMQwYBevw9M+MKNi50dJt7bcGMplYxlW29JlO/hWONL/N5CQ3D
+	gYGJSVBOh5ZIAMRxph49jwyj79GuIv38ofDgesipGW976bG7K1F1Du/an9ovy3xOW0nhaCykFAz
+	O5BQ6GpZO0WoUZlb22UrFF2MarzBixiZ7X3MxbBIAyv3LqQI6S14ZoJQPDZi6zRud8046BQNgHQ
+	NExTVvwUI68PhTyUk3bfFJ180aLjcyJ1rJh95rUVxT+Jp5FHg7Al7y/DEX0NZYziP0UbJ4QYgkR
+	RAwuxOlAyusdMr8UcR0ope/Kp8UJ62xbZowu7C+7196LxPiC8nfkzkpLe1i+G+P8wBiehsGZkfL
+	q3DGThdLgLVhQGDAXnUEQj62he81aUAajQFvCnKAn7WGrn8s1CQQADmp85+uC2BfMZ4rnYXH/BN
+	pridQ550w9WBGUPfvSxg==
+X-Google-Smtp-Source: AGHT+IFgheBk8plPZFOvo1Fh8CqMw+IDlX5zjqqJtiHnOJ15bA0846Akm4ZoeAvbvhHYf1Mdb/gfzw==
+X-Received: by 2002:a17:907:6d20:b0:b6d:6a35:99a0 with SMTP id a640c23a62f3a-b6d6a359c49mr1253713666b.33.1761556971534;
+        Mon, 27 Oct 2025 02:22:51 -0700 (PDT)
+Received: from [192.168.0.39] ([82.76.24.202])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-b6d853c549fsm708029666b.37.2025.10.27.02.22.49
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 27 Oct 2025 02:22:51 -0700 (PDT)
+Message-ID: <56a13c84-7d8b-42f1-97f6-c338b931f205@linaro.org>
+Date: Mon, 27 Oct 2025 11:22:48 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20251024-glymur_usb-v6-6-471fa39ff857@oss.qualcomm.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 01/31] dt-bindings: media: add DW MIPI CSI-2 Host
+ support
+To: Sakari Ailus <sakari.ailus@iki.fi>, Frank Li <Frank.Li@nxp.com>
+Cc: Rui Miguel Silva <rmfrfs@gmail.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Martin Kepplinger <martink@posteo.de>, Purism Kernel Team <kernel@puri.sm>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, Peng Fan <peng.fan@nxp.com>,
+ Alice Yuan <alice.yuan@nxp.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Steve Longerbeam <slongerbeam@gmail.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, imx@lists.linux.dev,
+ linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+ linux-staging@lists.linux.dev, Luis Oliveira <lolivei@synopsys.com>
+References: <20250821-95_cam-v3-0-c9286fbb34b9@nxp.com>
+ <20250821-95_cam-v3-1-c9286fbb34b9@nxp.com>
+ <aP8t3YClrZxOnHea@valkosipuli.retiisi.eu>
+From: Eugen Hristev <eugen.hristev@linaro.org>
+Content-Language: en-US
+In-Reply-To: <aP8t3YClrZxOnHea@valkosipuli.retiisi.eu>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251027_021418_403011_05B99F92 
-X-CRM114-Status: GOOD (  21.43  )
+X-CRM114-CacheID: sfid-20251027_022253_998718_2913F81E 
+X-CRM114-Status: GOOD (  18.08  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,74 +120,223 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 25-10-24 17:47:44, Wesley Cheng wrote:
-> For SuperSpeed USB to work properly, there is a set of HW settings that
-> need to be programmed into the USB blocks within the QMP PHY.  Ensure that
-> these settings follow the latest settings mentioned in the HW programming
-> guide.  The QMP USB PHY on Glymur is a USB43 based PHY that will have some
-> new ways to define certain registers, such as the replacement of TXA/RXA
-> and TXB/RXB register sets.  This was replaced with the LALB register set.
+
+
+On 10/27/25 10:31, Sakari Ailus wrote:
+> Hei Eugen,
 > 
-> There are also some PHY init updates to modify the PCS MISC register space.
-> Without these, the QMP PHY PLL locking fails.
+> On Thu, Aug 21, 2025 at 04:15:36PM -0400, Frank Li wrote:
+>> From: Eugen Hristev <eugen.hristev@linaro.org>
+
+Hi everyone,
+
+While I originally wrote this patch, and Frank keeping me as author, I
+have not contributed more to it, so, I think you can drop me as author
+and Frank you can put your name to it.
+
+Thanks for continuing the work on it.
+
+Eugen
+>>
+>> Add bindings for Synopsys DesignWare MIPI CSI-2 host, which used at i.MX93
+>> and i.MX95 platform.
+>>
+>> Signed-off-by: Luis Oliveira <lolivei@synopsys.com>
+>> Signed-off-by: Eugen Hristev <eugen.hristev@linaro.org>
+>> Signed-off-by: Frank Li <Frank.Li@nxp.com>
+>> ---
+>> Change in v3
+>> - drop remote-endpoint: true
+>> - drop clock-lanes
+>>
+>> Change in v2
+>> - remove Eugen Hristev <eugen.hristev@microchip.com> from mantainer.
+>> - update ugen Hristev's s-o-b tag to align original author's email address
+>> - remove single snps,dw-mipi-csi2-v150 compatible string
+>> - move additionalProperties after required
+>> ---
+>>  .../bindings/media/snps,dw-mipi-csi2-v150.yaml     | 151 +++++++++++++++++++++
+>>  MAINTAINERS                                        |   1 +
+>>  2 files changed, 152 insertions(+)
+>>
+>> diff --git a/Documentation/devicetree/bindings/media/snps,dw-mipi-csi2-v150.yaml b/Documentation/devicetree/bindings/media/snps,dw-mipi-csi2-v150.yaml
+>> new file mode 100644
+>> index 0000000000000000000000000000000000000000..d950daa4ee9cfd504ef84b83271b2a1b710ffd6b
+>> --- /dev/null
+>> +++ b/Documentation/devicetree/bindings/media/snps,dw-mipi-csi2-v150.yaml
+>> @@ -0,0 +1,151 @@
+>> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+>> +%YAML 1.2
+>> +---
+>> +$id: http://devicetree.org/schemas/media/snps,dw-mipi-csi2-v150.yaml#
+>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>> +
+>> +title: Synopsys DesignWare CSI-2 Host controller (csi2host)
+>> +
+>> +maintainers:
+>> +  - Frank Li <Frank.Li@nxp.com>
+>> +
+>> +description:
+>> +  CSI2HOST is used to receive image coming from an MIPI CSI-2 compatible
+>> +  camera. It will convert the incoming CSI-2 stream into a dedicated
+>> +  interface called the Synopsys IDI (Image Data Interface).
+>> +  This interface is a 32-bit SoC internal only, and can be assimilated
+>> +  with a CSI-2 interface.
+>> +
+>> +properties:
+>> +  compatible:
+>> +    items:
+>> +      - enum:
+>> +          - fsl,imx93-mipi-csi2
+>> +      - const: snps,dw-mipi-csi2-v150
+>> +
+>> +  reg:
+>> +    items:
+>> +      - description: MIPI CSI-2 core register
+>> +
+>> +  reg-names:
+>> +    items:
+>> +      - const: core
+>> +
+>> +  clocks:
+>> +    maxItems: 2
+>> +
+>> +  clock-names:
+>> +    items:
+>> +      - const: per
+>> +      - const: pixel
+>> +
+>> +  phys:
+>> +    maxItems: 1
+>> +    description: MIPI D-PHY
+>> +
+>> +  phy-names:
+>> +    items:
+>> +      - const: rx
+>> +
+>> +  resets:
+>> +    maxItems: 1
+>> +
+>> +  interrupts:
+>> +    maxItems: 1
+>> +
+>> +  power-domains:
+>> +    maxItems: 1
+>> +
+>> +  ports:
+>> +    $ref: /schemas/graph.yaml#/properties/ports
+>> +
+>> +    properties:
+>> +      port@0:
+>> +        $ref: /schemas/graph.yaml#/$defs/port-base
+>> +        unevaluatedProperties: false
+>> +        description:
+>> +          Input port node, single endpoint describing the input port.
+>> +
+>> +        properties:
+>> +          endpoint:
+>> +            $ref: video-interfaces.yaml#
+>> +            unevaluatedProperties: false
+>> +            description: Endpoint connected to input device
+>> +
+>> +            properties:
+>> +              bus-type:
+>> +                const: 4
 > 
-> Signed-off-by: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
-> ---
->  drivers/phy/qualcomm/phy-qcom-qmp-combo.c          | 288 ++++++++++
->  drivers/phy/qualcomm/phy-qcom-qmp-pcs-aon-v8.h     |  17 +
->  drivers/phy/qualcomm/phy-qcom-qmp-pcs-misc-v8.h    |  12 +
->  .../phy/qualcomm/phy-qcom-qmp-qserdes-lalb-v8.h    | 639 +++++++++++++++++++++
->  drivers/phy/qualcomm/phy-qcom-qmp-usb43-pcs-v8.h   |  33 ++
->  .../qualcomm/phy-qcom-qmp-usb43-qserdes-com-v8.h   | 224 ++++++++
->  drivers/phy/qualcomm/phy-qcom-qmp.h                |   2 +
->  7 files changed, 1215 insertions(+)
+> If 4 is the only value supported, you can drop the property altogether.
 > 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> index 1caa1fb6a8c7..d1534ed7200b 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+>> +
+>> +              data-lanes:
+>> +                minItems: 1
+>> +                maxItems: 4
+>> +                items:
+>> +                  maximum: 4
+>> +
+>> +      port@1:
+>> +        $ref: /schemas/graph.yaml#/$defs/port-base
+>> +        unevaluatedProperties: false
+>> +        description:
+>> +          Output port node, single endpoint describing the output port.
+>> +
+>> +        properties:
+>> +          endpoint:
+>> +            unevaluatedProperties: false
+>> +            $ref: video-interfaces.yaml#
+>> +            description: Endpoint connected to output device
+>> +
+>> +            properties:
+>> +              bus-type:
+>> +                const: 4
+> 
+> Are both input and output of this block CSI-2 with D-PHY?
+> 
+>> +
+>> +    required:
+>> +      - port@0
+>> +      - port@1
+>> +
+>> +required:
+>> +  - compatible
+>> +  - reg
+>> +  - reg-names
+>> +  - interrupts
+>> +  - ports
+>> +
+>> +additionalProperties: false
+>> +
+>> +examples:
+>> +  - |
+>> +    csi@3000 {
+>> +        compatible = "fsl,imx93-mipi-csi2", "snps,dw-mipi-csi2-v150";
+>> +        reg = <0x03000 0x1000>;
+>> +        reg-names = "core";
+>> +        phys = <&mipi_dphy_rx 0>;
+>> +        phy-names = "rx";
+>> +        resets = <&dw_rst 1>;
+>> +        interrupts = <2>;
+>> +
+>> +        ports {
+>> +            #address-cells = <1>;
+>> +            #size-cells = <0>;
+>> +
+>> +            port@0 {
+>> +                reg = <0>;
+>> +
+>> +                endpoint {
+>> +                    bus-type = <4>; /* MIPI CSI2 D-PHY */
+>> +                    remote-endpoint = <&camera_1>;
+>> +                    data-lanes = <1 2>;
+>> +                    clock-lanes = <0>;
+>> +                };
+>> +            };
+>> +
+>> +            port@1 {
+>> +                reg = <1>;
+>> +
+>> +                endpoint {
+>> +                    remote-endpoint = <&idi_receiver>;
+>> +                    bus-type = <4>;
+>> +                };
+>> +            };
+>> +        };
+>> +    };
+>> +
+>> +...
+>> diff --git a/MAINTAINERS b/MAINTAINERS
+>> index 9d9d2be7be8037dfa96f1c9edd24a0cf997b9393..ecb7bc7cc8ad797f43173075ca8973804bf335f7 100644
+>> --- a/MAINTAINERS
+>> +++ b/MAINTAINERS
+>> @@ -15334,6 +15334,7 @@ F:	Documentation/devicetree/bindings/media/fsl,imx93-parallel-csi.yaml
+>>  F:	Documentation/devicetree/bindings/media/nxp,imx-mipi-csi2.yaml
+>>  F:	Documentation/devicetree/bindings/media/nxp,imx7-csi.yaml
+>>  F:	Documentation/devicetree/bindings/media/nxp,imx8mq-mipi-csi2.yaml
+>> +F:	Documentation/devicetree/bindings/media/snps,dw-mipi-csi2-v150.yaml
+>>  F:	drivers/media/platform/nxp/imx-mipi-csis.c
+>>  F:	drivers/media/platform/nxp/imx-parallel-csi.c
+>>  F:	drivers/media/platform/nxp/imx7-media-csi.c
+>>
+> 
 
-[...]
-
->  
-> +static const unsigned int qmp_v8_n3_usb43dpphy_regs_layout[QPHY_LAYOUT_SIZE] = {
-> +	[QPHY_SW_RESET]			= QPHY_V6_N4_PCS_SW_RESET,
-> +	[QPHY_START_CTRL]			= QPHY_V6_N4_PCS_START_CONTROL,
-> +	[QPHY_PCS_STATUS]			= QPHY_V6_N4_PCS_PCS_STATUS1,
-> +	[QPHY_PCS_POWER_DOWN_CONTROL]	= QPHY_V6_N4_PCS_POWER_DOWN_CONTROL,
-
-The patches I have for DP fixes these by adding the V8_N3E and using those instead.
-
-The reason this hasn't created any issues is because, at least for these 4, the offsets
-are the same.
-
-You can use my patch so you don't have to add those reg offsets yourself, if you want.
-
-> +
-> +	/* In PCS_USB */
-> +	[QPHY_PCS_AUTONOMOUS_MODE_CTRL]	= QPHY_V6_PCS_USB3_AUTONOMOUS_MODE_CTRL,
-> +	[QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR]	= QPHY_V6_PCS_USB3_LFPS_RXTERM_IRQ_CLEAR,
-> +
-> +	[QPHY_AON_TOGGLE_ENABLE]		= QPHY_V8_PCS_AON_USB3_AON_TOGGLE_ENABLE,
-> +
-> +	[QPHY_COM_RESETSM_CNTRL]		= QSERDES_V6_COM_RESETSM_CNTRL,
-> +	[QPHY_COM_C_READY_STATUS]		= QSERDES_V6_COM_C_READY_STATUS,
-> +	[QPHY_COM_CMN_STATUS]		= QSERDES_V6_COM_CMN_STATUS,
-> +	[QPHY_COM_BIAS_EN_CLKBUFLR_EN]	= QSERDES_V6_COM_PLL_BIAS_EN_CLK_BUFLR_EN,
-> +
-> +	[QPHY_DP_PHY_STATUS]		= QSERDES_V6_DP_PHY_STATUS,
-> +	[QPHY_DP_PHY_VCO_DIV]		= QSERDES_V6_DP_PHY_VCO_DIV,
-> +
-> +	[QPHY_TX_TX_POL_INV]		= QSERDES_V6_N4_TX_TX_POL_INV,
-> +	[QPHY_TX_TX_DRV_LVL]		= QSERDES_V6_N4_TX_TX_DRV_LVL,
-> +	[QPHY_TX_TX_EMP_POST1_LVL]		= QSERDES_V6_N4_TX_TX_EMP_POST1_LVL,
-> +	[QPHY_TX_HIGHZ_DRVR_EN]		= QSERDES_V6_N4_TX_HIGHZ_DRVR_EN,
-> +	[QPHY_TX_TRANSCEIVER_BIAS_EN]	= QSERDES_V6_N4_TX_TRANSCEIVER_BIAS_EN,
-> +};
-
-I'm pretty sure this is wrong. You are using the V8_LALB offsets below, which
-is correct, but here you are using V6_N4. At first glance, these are quite
-different.
 
 -- 
 linux-phy mailing list
