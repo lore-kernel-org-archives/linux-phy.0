@@ -4,74 +4,113 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 405E2CCF9E9
-	for <linux-phy@archiver.kernel.org>; Mon, 27 Oct 2025 02:20:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 239CCCCF9E0
+	for <linux-phy@archiver.kernel.org>; Mon, 27 Oct 2025 06:25:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=F4PngvUAKYpOspHci5VdwFppSMgAl4HV0FdF2A8nzFo=; b=ootQXTemWBQfC8
-	6hhO8KIetn9zMNrZjhwhuiANUSlv+uJyzVL1/yblp5m0Y9cvJ40/zMWr8JEQEyT1p/Q8onx302M2f
-	5NdNMJblsrTVkeKO7kFcT8Z1AkhgqwIdrnIVzl8vJ+sLRShnlg5GeGMNWNUOwVHC751qGGQ6tpTOD
-	hbNWJH5AGUZaF6R9g3VG3DDd2RfSsRXFOf0KOtCOzCvdG1gGi6LXFfxYOnvIeTSyVVBaHC4NR/tvD
-	eKvx01lbArTbisBf0N6Cbt95h6ywKuePWSL4dCW9Bteu4erRANYEQOy9SgfTIGb3c9GhIksqXtn9y
-	N1/N1PHWTHGvfhhB87fQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=8Ri1TY0Iz26W9YxEKrF3BqzMjm/Ohl1ZKCKoM9YuOv8=; b=07qqzNXVTesPP6
+	dqLkZOQo+XFUltjReU2zfAI/GMpHl5sG4ebVtZvfFQDSP79CZqQk7/szrZQSl63WP0griYRUU+KDE
+	di9M9UkUCC+Q3S9cHlP9m4bpdRQItsaWU6wg7iq2jtvNqGgY0rxKSHJqtyKlRDOidaLz3zDw1YlgF
+	mgvcKvJ9cK33UFUaUwEaX3xkD0/ubR755mpyV/+VI44dWPANJmEDxV5NuOPBC0Jza3ZXjC9/L8E62
+	FfeAmCCAtNGOHYpH5BERX78w/CGE5Y9vXrSoFg42UNKB2TikBEBEI8bRmTRYVTMPLdrTlja4AjmVN
+	oTxXcRqwk58BMNVr+KNw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDCqV-0000000D0il-2mZq;
-	Mon, 27 Oct 2025 02:20:31 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
+	id 1vDGfF-0000000DBsG-2uwB;
+	Mon, 27 Oct 2025 06:25:09 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDCqS-0000000D0iG-3lzM;
-	Mon, 27 Oct 2025 02:20:30 +0000
-Received: from pendragon.ideasonboard.com (82-203-161-16.bb.dnainternet.fi [82.203.161.16])
-	by perceval.ideasonboard.com (Postfix) with UTF8SMTPSA id 61680236;
-	Mon, 27 Oct 2025 03:18:37 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
-	s=mail; t=1761531517;
-	bh=0CPmrnJL35JfeSwF9I2tzAzFRtMEjte+93fbLG7UNU0=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=O+hjqnVXDi8L+biq5hrxrkwgQ7iKXFsSi2wbLCLPUZ6/HtkYFWa3AS1AvSksK1ldJ
-	 f7HZcdQYnaDiNFVUc68KRRLeQ5ifXosnR1K0icoUFGQYIOqG9xYuz/NIcUYPTJhLdz
-	 eV7XunXdJF65K/cWOBRNefdvLPo/1oKm4mYxTPT8=
-Date: Mon, 27 Oct 2025 04:20:10 +0200
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Frank Li <Frank.Li@nxp.com>
-Cc: Rui Miguel Silva <rmfrfs@gmail.com>,
-	Martin Kepplinger <martink@posteo.de>,
-	Purism Kernel Team <kernel@puri.sm>,
-	Mauro Carvalho Chehab <mchehab@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Eugen Hristev <eugen.hristev@linaro.org>,
-	Shawn Guo <shawnguo@kernel.org>,
-	Sascha Hauer <s.hauer@pengutronix.de>,
-	Pengutronix Kernel Team <kernel@pengutronix.de>,
-	Fabio Estevam <festevam@gmail.com>, Peng Fan <peng.fan@nxp.com>,
-	Alice Yuan <alice.yuan@nxp.com>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Steve Longerbeam <slongerbeam@gmail.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	linux-media@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, imx@lists.linux.dev,
-	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
-	linux-staging@lists.linux.dev
-Subject: Re: [PATCH v3 12/31] media: staging: media: imx6-mipi-csi2: move sd
- imx6's specific initialization into imx6-sci2.c
-Message-ID: <20251027022010.GW13023@pendragon.ideasonboard.com>
-References: <20250821-95_cam-v3-0-c9286fbb34b9@nxp.com>
- <20250821-95_cam-v3-12-c9286fbb34b9@nxp.com>
- <20251027014448.GV13023@pendragon.ideasonboard.com>
+	id 1vDGfD-0000000DBrr-46lP
+	for linux-phy@lists.infradead.org;
+	Mon, 27 Oct 2025 06:25:09 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 59R3Gr741502912
+	for <linux-phy@lists.infradead.org>; Mon, 27 Oct 2025 06:25:06 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:date:from:message-id:mime-version
+	:subject:to; s=qcppdkim1; bh=teLtNRm505PX8MdgaxTQ1fxSCIYlKPWmx/D
+	tUXEpo74=; b=ZuNcoIrwuEC64OO/+W72lW39Zktlb6lwaLtSurDy+OsFs9jK3aL
+	Yt9i8WV6K8/unlpcgUdktKbNSfgX0o9HcaOr50IEg2Ft0Wrf4QXqjZQCn6VSyCt6
+	mS5wpuxjMqN3My548/NrnRPRkSIlj0uLLBYNWoulHm+/JBfJhtV4LCbjtjkpVCdh
+	0BusGdsxLJHQQhdm2dzPbPgTwXq3EBL7xsETiCQq74PqQuqzHfEEw0s0l3svamSD
+	VslLlO4mU+AmiPHgr6cMF+gfczjlqHhQl7gxAY16f7vdBdpGFYf4Vtcny6vEeHQ5
+	Epm0dgYGvW1ilURMAVM+tKdN3kRyZ2x9d0Q==
+Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4a20pnrcy4-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Mon, 27 Oct 2025 06:25:06 +0000 (GMT)
+Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-28bd8b3fa67so36062625ad.2
+        for <linux-phy@lists.infradead.org>; Sun, 26 Oct 2025 23:25:06 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1761546305; x=1762151105;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=teLtNRm505PX8MdgaxTQ1fxSCIYlKPWmx/DtUXEpo74=;
+        b=rqofxNKN2T0PR4H/VLRo8hO6j9KQw6kCQydEiPiclxdTvKw3nALpjJPo1d1BPCO1EG
+         BrSog8RyDJ9bfO0NMM9QvxXieMeBPhNS13dGN/5F51QDzM5OHkU+e31Cde3xwWdZjUGE
+         0Is3p0c2NoRLHprRMWvmKt8uBvbFxlCRyKPO0dkkvXgcqsivgCZ58H48LmiiXCFg4rFN
+         onvWJdjzq+p0xaS8pPjSZMO5dyj3CmsUJm/RmKYOFMvn9Ybnrh18yseGnRRtsEBP3EXD
+         Gz4hmHEiBBR4r93gr8O0/GKHmcUDnZKrn+OF7MD1KpfJ7ojLdc7tVYbpbakfSBQwMdWq
+         RWsw==
+X-Forwarded-Encrypted: i=1; AJvYcCWcBOKo7VEIQU8lJ2+RVo3AvvnyGG+ag8iWVtxN5tHK5WmSTju0AvWmjqOB+clsIibhqjYUU+RdcjI=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwIsOv8KW462CrvDAikw8mzlOUqBlfGKTZmceperE6UcimIAMKi
+	9hvJZrGB21xpUqmyqF9A4th4cehZqilCJjIYAXWdiVxRbtWBlEUa/fRHPy18jMFleiKbkj8rK5K
+	nyJ1Ga+7Aiv2XYOubfx0W2grkZrujq4CCx9tMwB2ukmCvLlgxJ3G5j3cOikzEB5OGq5it
+X-Gm-Gg: ASbGncvDLH/rREvm3Tz/NN0IGFEA1mF83yZ9NIfzaecexXrk/LYHeLL9+G2+uxs2RNI
+	y4u1l/AliBCvNxnifjJ+zOizgJ6hUN54M7Tq7e1e1/JolvQ7dla5Lrg9LPSE36Nbs27LIuDODHX
+	4bqcCdwY0AtO/p1m7rNbtI2/JmSs9FsOUU0epj6qZI+u/i44nxVDGNlbK2Tk0gnfqDlxDydIsGZ
+	BqXg/kSe8N3WrnmYEYBjXXgl1rLyqv6EjAgYI7g4Uy4ADH/6zJcXUDy8wbpP23WQiGistsZg9KG
+	fFbd5/IWX7tkxk9KWRSYM21R+ikCOQ9VqYluHCsUWsksfw8NPXdtDvZuquXx5+qOog7PbJwEmp1
+	1GyubNH749n60vEuf40uyR8raAx4=
+X-Received: by 2002:a17:902:f70b:b0:267:af07:6528 with SMTP id d9443c01a7336-290caf83079mr448673405ad.35.1761546305427;
+        Sun, 26 Oct 2025 23:25:05 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGYsbnoxIoDwX1NoZs2UO3l7p3LATS1TmaBH5XzP3HuuA+Rw6QnyKU7CjxwqONWCAnQw26BZg==
+X-Received: by 2002:a17:902:f70b:b0:267:af07:6528 with SMTP id d9443c01a7336-290caf83079mr448673185ad.35.1761546304946;
+        Sun, 26 Oct 2025 23:25:04 -0700 (PDT)
+Received: from hu-prashk-hyd.qualcomm.com ([202.46.22.19])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-29498d23218sm68346975ad.51.2025.10.26.23.25.02
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 26 Oct 2025 23:25:04 -0700 (PDT)
+From: Prashanth K <prashanth.k@oss.qualcomm.com>
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-kernel@vger.kernel.org,
+        Prashanth K <prashanth.k@oss.qualcomm.com>
+Subject: [PATCH] phy: qualcomm: m31-eusb2: Add runtime pm ops
+Date: Mon, 27 Oct 2025 11:54:58 +0530
+Message-Id: <20251027062458.1411096-1-prashanth.k@oss.qualcomm.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20251027014448.GV13023@pendragon.ideasonboard.com>
+X-Proofpoint-GUID: TkHbD2aBsHFJoRJUWP_WXN6lxrdXBUmz
+X-Proofpoint-ORIG-GUID: TkHbD2aBsHFJoRJUWP_WXN6lxrdXBUmz
+X-Authority-Analysis: v=2.4 cv=A+xh/qWG c=1 sm=1 tr=0 ts=68ff1042 cx=c_pps
+ a=IZJwPbhc+fLeJZngyXXI0A==:117 a=fChuTYTh2wq5r3m49p7fHw==:17
+ a=x6icFKpwvdMA:10 a=VkNPw1HP01LnGYTKEx00:22 a=EUspDBNiAAAA:8
+ a=-Y0lm5QSNLYpoQ5O1QAA:9 a=uG9DUKGECoFWVXl0Dc02:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDI3MDA1NiBTYWx0ZWRfXzyzJ8xjKQDwm
+ 4tkuZq3sL+izEpJTEEOuvY0/ZVKB4VEzR5U7tNgGhVcxaqqHZ3QCxCiRACKUHs+qRBfmhipIoJW
+ RFBebMfp6TeYS1Flj9oIJuqSFenoLPyvmKa6ay8/MaxDVJjZbEzne80TiDn4wHKaYyM48Rofpmj
+ JJ/8SgdEilYK+KWHKYoe5pyhHegYelfr49FyqMQT7AsJVKHnKRkZZWWNZ01xuRfvG88RutPGcQ2
+ 5uTyU9IJ+TikGrhZ5CbKVo+e802eWSDQCJkHX5ogt0DIqivO4CCtFjEpq8L3dU/ZUKdhb8YIfqq
+ IlUCUr7U0MrKpmlYJMqU4OEYvSuFVcSppp0xfF7gRRQ3f9MkC1fP7NNdM4uKrbqj+XL8p8dPOoO
+ 569X8QJIcKAWIXunDEnSNZkN+3B0dQ==
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-10-27_03,2025-10-22_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501 lowpriorityscore=0 clxscore=1015 suspectscore=0
+ spamscore=0 bulkscore=0 adultscore=0 impostorscore=0 phishscore=0
+ malwarescore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2510020000
+ definitions=main-2510270056
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251026_192029_079397_7664E74A 
-X-CRM114-Status: GOOD (  30.14  )
+X-CRM114-CacheID: sfid-20251026_232508_140773_87B6FEA5 
+X-CRM114-Status: GOOD (  15.69  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,164 +127,82 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Oct 27, 2025 at 03:44:49AM +0200, Laurent Pinchart wrote:
-> On Thu, Aug 21, 2025 at 04:15:47PM -0400, Frank Li wrote:
-> > Move imx6's specific sd's owner, name, csi2_internal_ops, grp_id into
-> 
-> grp_id needs to go. It's specific to the i.MX6 IPUv3 framework, and is
-> the main part hindering splitting the CSI-2 receiver driver from the
-> rest of the code.
-> 
-> > imx6-sci2.c.
-> > 
-> > Signed-off-by: Frank Li <Frank.Li@nxp.com>
-> > ---
-> >  drivers/staging/media/imx/imx6-csi2.c      | 23 +++++++++++++++++++++++
-> >  drivers/staging/media/imx/imx6-mipi-csi2.c | 29 ++++++-----------------------
-> >  include/media/dw-mipi-csi2.h               |  4 ++++
-> >  3 files changed, 33 insertions(+), 23 deletions(-)
-> > 
-> > diff --git a/drivers/staging/media/imx/imx6-csi2.c b/drivers/staging/media/imx/imx6-csi2.c
-> > index 72eff685fad99b3def46cf2866565191b7de9a8b..66274d8d73b67b35682bb82a9eb745bb24da7ae4 100644
-> > --- a/drivers/staging/media/imx/imx6-csi2.c
-> > +++ b/drivers/staging/media/imx/imx6-csi2.c
-> > @@ -19,6 +19,29 @@ struct imx6_csi2 {
-> >  	struct dw_mipi_csi2_dev dw;
-> >  };
-> >  
-> > +static int csi2_registered(struct v4l2_subdev *sd)
-> > +{
-> > +	struct dw_mipi_csi2_dev *csi2 = sd_to_dw_mipi_csi2_dev(sd);
-> > +
-> > +	/* set a default mbus format  */
-> > +	return imx_media_init_mbus_fmt(&csi2->format_mbus,
-> > +				      IMX_MEDIA_DEF_PIX_WIDTH,
-> > +				      IMX_MEDIA_DEF_PIX_HEIGHT, 0,
-> > +				      V4L2_FIELD_NONE, NULL);
-> > +}
-> > +
-> > +static const struct v4l2_subdev_internal_ops csi2_internal_ops = {
-> > +	.init_state = imx_media_init_state,
-> > +	.registered = csi2_registered,
+Add runtime power management operation callbacks for M31 EUSB2 PHY.
+Enable/disable the clocks based on the runtime suspend/resume calls.
 
-Also, these two operations should be handled by the new driver. The imx6
-media framework has a set of helper functions to handle initialization
-of formats, with data structures shared between drivers. It's fine
-duplicating some of the code, with a copy of the required data in the
-new driver. It will be a good opportunity to both avoid historical
-mistake with the new code (for instance, imx_media_init_state() should
-really not be implemented as a wrapper around get subdev get_fmt
-operation), and to remove code from the shared helpers that is
-CSI-2-specific, if any.
+Signed-off-by: Prashanth K <prashanth.k@oss.qualcomm.com>
+---
+ drivers/phy/qualcomm/phy-qcom-m31-eusb2.c | 40 +++++++++++++++++++++++
+ 1 file changed, 40 insertions(+)
 
-> > +};
-> > +
-> > +static const struct dw_mipi_csi2_config imx6_config = {
-> > +	.module = THIS_MODULE,
-> > +	.name = "imx6-mipi-csi2",
-> > +	.internal_ops = &csi2_internal_ops,
-> > +	.grp_id = IMX_MEDIA_GRP_ID_CSI2,
-> > +};
-> > +
-> >  static int csi2_probe(struct platform_device *pdev)
-> >  {
-> >  	struct imx6_csi2 *csi2;
-> > diff --git a/drivers/staging/media/imx/imx6-mipi-csi2.c b/drivers/staging/media/imx/imx6-mipi-csi2.c
-> > index b5911a37972be868e10c115ada1910fa04b2765c..ff06a739b957b305625d145c04c06999d0c13cae 100644
-> > --- a/drivers/staging/media/imx/imx6-mipi-csi2.c
-> > +++ b/drivers/staging/media/imx/imx6-mipi-csi2.c
-> > @@ -15,11 +15,11 @@
-> >  #include <linux/platform_device.h>
-> >  #include <media/dw-mipi-csi2.h>
-> >  #include <media/v4l2-common.h>
-> > +#include <media/v4l2-ctrls.h>
-> >  #include <media/v4l2-device.h>
-> >  #include <media/v4l2-fwnode.h>
-> >  #include <media/v4l2-mc.h>
-> >  #include <media/v4l2-subdev.h>
-> > -#include "imx-media.h"
-> >  
-> >  /*
-> >   * The default maximum bit-rate per lane in Mbps, if the
-> > @@ -44,8 +44,6 @@ struct dw_csi2_regs {
-> >  	u32	phy_tst_ctrl1;
-> >  };
-> >  
-> > -#define DEVICE_NAME "imx6-mipi-csi2"
-> > -
-> >  /* Help check wrong access unexisted register at difference IP version */
-> >  #define DW_REG_EXIST		0x80000000
-> >  #define DW_REG(x)		(DW_REG_EXIST | (x))
-> > @@ -544,17 +542,6 @@ static int csi2_set_fmt(struct v4l2_subdev *sd,
-> >  	return 0;
-> >  }
-> >  
-> > -static int csi2_registered(struct v4l2_subdev *sd)
-> > -{
-> > -	struct dw_mipi_csi2_dev *csi2 = sd_to_dev(sd);
-> > -
-> > -	/* set a default mbus format  */
-> > -	return imx_media_init_mbus_fmt(&csi2->format_mbus,
-> > -				      IMX_MEDIA_DEF_PIX_WIDTH,
-> > -				      IMX_MEDIA_DEF_PIX_HEIGHT, 0,
-> > -				      V4L2_FIELD_NONE, NULL);
-> > -}
-> > -
-> >  /* --------------- CORE OPS --------------- */
-> >  
-> >  static int csi2_log_status(struct v4l2_subdev *sd)
-> > @@ -605,11 +592,6 @@ static const struct v4l2_subdev_ops csi2_subdev_ops = {
-> >  	.pad = &csi2_pad_ops,
-> >  };
-> >  
-> > -static const struct v4l2_subdev_internal_ops csi2_internal_ops = {
-> > -	.init_state = imx_media_init_state,
-> > -	.registered = csi2_registered,
-> > -};
-> > -
-> >  static int csi2_notify_bound(struct v4l2_async_notifier *notifier,
-> >  			     struct v4l2_subdev *sd,
-> >  			     struct v4l2_async_connection *asd)
-> > @@ -709,14 +691,15 @@ int dw_mipi_csi2_init(struct platform_device *pdev, struct dw_mipi_csi2_dev *csi
-> >  	csi2->regs = &dw_csi2_v0;
-> >  	v4l2_subdev_init(&csi2->sd, &csi2_subdev_ops);
-> >  	v4l2_set_subdevdata(&csi2->sd, &pdev->dev);
-> > -	csi2->sd.internal_ops = &csi2_internal_ops;
-> >  	csi2->sd.entity.ops = &csi2_entity_ops;
-> >  	csi2->sd.dev = &pdev->dev;
-> > -	csi2->sd.owner = THIS_MODULE;
-> >  	csi2->sd.flags = V4L2_SUBDEV_FL_HAS_DEVNODE;
-> > -	strscpy(csi2->sd.name, DEVICE_NAME, sizeof(csi2->sd.name));
-> >  	csi2->sd.entity.function = MEDIA_ENT_F_VID_IF_BRIDGE;
-> > -	csi2->sd.grp_id = IMX_MEDIA_GRP_ID_CSI2;
-> > +
-> > +	csi2->sd.owner = config->module;
-> > +	strscpy(csi2->sd.name, config->name, sizeof(csi2->sd.name));
-> > +	csi2->sd.internal_ops = config->internal_ops;
-> > +	csi2->sd.grp_id = config->grp_id;
-> >  
-> >  	for (i = 0; i < CSI2_NUM_PADS; i++) {
-> >  		csi2->pad[i].flags = (i == CSI2_SINK_PAD) ?
-> > diff --git a/include/media/dw-mipi-csi2.h b/include/media/dw-mipi-csi2.h
-> > index 4e656f09c81db9dc9f232ed061f70803a5478c85..dfd25e23ea93fd53b064471b6a9557ef9c070fe7 100644
-> > --- a/include/media/dw-mipi-csi2.h
-> > +++ b/include/media/dw-mipi-csi2.h
-> > @@ -10,6 +10,10 @@
-> >  #include <media/v4l2-subdev.h>
-> >  
-> >  struct dw_mipi_csi2_config {
-> > +	struct module *module;
-> > +	const char *name;
-> > +	int grp_id;
-> > +	const struct v4l2_subdev_internal_ops *internal_ops;
-> >  };
-> >  
-> >  /*
-
+diff --git a/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c b/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c
+index 0a0d2d9fc846..1aeb5e3de07c 100644
+--- a/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c
++++ b/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c
+@@ -240,6 +240,34 @@ static const struct phy_ops m31eusb2_phy_gen_ops = {
+ 	.owner		= THIS_MODULE,
+ };
+ 
++static int m31eusb2_phy_runtime_suspend(struct device *dev)
++{
++	struct m31eusb2_phy *phy = dev_get_drvdata(dev);
++
++	dev_dbg(dev, "Suspending M31 eUSB2 Phy\n");
++	clk_disable_unprepare(phy->clk);
++
++	return 0;
++}
++
++static int m31eusb2_phy_runtime_resume(struct device *dev)
++{
++	struct m31eusb2_phy *phy = dev_get_drvdata(dev);
++	int ret = 0;
++
++	dev_dbg(dev, "Resuming M31 eUSB2 Phy\n");
++	ret = clk_prepare_enable(phy->clk);
++	if (ret)
++		dev_err(dev, "failed to enable ref clock, %d\n", ret);
++
++	return ret;
++}
++
++static const struct dev_pm_ops m31eusb2_phy_pm_ops = {
++	SET_RUNTIME_PM_OPS(m31eusb2_phy_runtime_suspend,
++			   m31eusb2_phy_runtime_resume, NULL)
++};
++
+ static int m31eusb2_phy_probe(struct platform_device *pdev)
+ {
+ 	struct phy_provider *phy_provider;
+@@ -270,6 +298,17 @@ static int m31eusb2_phy_probe(struct platform_device *pdev)
+ 		return dev_err_probe(dev, PTR_ERR(phy->clk),
+ 				     "failed to get clk\n");
+ 
++	dev_set_drvdata(dev, phy);
++	pm_runtime_set_active(dev);
++	pm_runtime_enable(dev);
++
++	/*
++	 * Prevent runtime pm from being ON by default. Users can enable
++	 * it using power/control in sysfs.
++	 */
++	pm_runtime_forbid(dev);
++
++
+ 	phy->phy = devm_phy_create(dev, NULL, &m31eusb2_phy_gen_ops);
+ 	if (IS_ERR(phy->phy))
+ 		return dev_err_probe(dev, PTR_ERR(phy->phy),
+@@ -313,6 +352,7 @@ static struct platform_driver m31eusb2_phy_driver = {
+ 	.probe = m31eusb2_phy_probe,
+ 	.driver = {
+ 		.name = "qcom-m31eusb2-phy",
++		.pm = &m31eusb2_phy_pm_ops,
+ 		.of_match_table = m31eusb2_phy_id_table,
+ 	},
+ };
 -- 
-Regards,
+2.34.1
 
-Laurent Pinchart
 
 -- 
 linux-phy mailing list
