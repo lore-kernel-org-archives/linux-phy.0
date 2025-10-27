@@ -4,113 +4,118 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 239CCCCF9E0
-	for <linux-phy@archiver.kernel.org>; Mon, 27 Oct 2025 06:25:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 71423CCF9E0
+	for <linux-phy@archiver.kernel.org>; Mon, 27 Oct 2025 08:25:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=8Ri1TY0Iz26W9YxEKrF3BqzMjm/Ohl1ZKCKoM9YuOv8=; b=07qqzNXVTesPP6
-	dqLkZOQo+XFUltjReU2zfAI/GMpHl5sG4ebVtZvfFQDSP79CZqQk7/szrZQSl63WP0griYRUU+KDE
-	di9M9UkUCC+Q3S9cHlP9m4bpdRQItsaWU6wg7iq2jtvNqGgY0rxKSHJqtyKlRDOidaLz3zDw1YlgF
-	mgvcKvJ9cK33UFUaUwEaX3xkD0/ubR755mpyV/+VI44dWPANJmEDxV5NuOPBC0Jza3ZXjC9/L8E62
-	FfeAmCCAtNGOHYpH5BERX78w/CGE5Y9vXrSoFg42UNKB2TikBEBEI8bRmTRYVTMPLdrTlja4AjmVN
-	oTxXcRqwk58BMNVr+KNw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Al8sMYVYyv5I3W++FsHC1o2Ug1RiJWsYE5dx9c+XzKc=; b=bxD/thM69RgdE6
+	/6Gz4dcXnamiOasaj2odvkMg66ayXVu/44gM4H8rRW8pXsJdRhnVmiBiVHei/DN/O9fQlMOH8Bc18
+	3aGyo3+yUS57my6livu182fbTGZozuOMiT0x2Fzjxk4G0cPHakp+XNhDh8Qr+jKIt6QkMjlfiF6zp
+	mixNHQegjM1MYqOlwn9YqISRyvL1skZzANEtmy1QFCm/EP5TT3FVS/A/1rsT0VAq90RqeKQ3BghYQ
+	3an/isfjPP1JHAcQcVd9Fyam7C7cZXJ5EPEXQUgL+XmjzWSkLTjQSr6g+TLnr5Q8rFL1Rnyuc2pSJ
+	4vaSVGaY59TLj0MSxN9Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDGfF-0000000DBsG-2uwB;
-	Mon, 27 Oct 2025 06:25:09 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1vDIXx-0000000DLUz-4AoO;
+	Mon, 27 Oct 2025 08:25:46 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDGfD-0000000DBrr-46lP
+	id 1vDIXv-0000000DLTz-47TZ
 	for linux-phy@lists.infradead.org;
-	Mon, 27 Oct 2025 06:25:09 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 59R3Gr741502912
-	for <linux-phy@lists.infradead.org>; Mon, 27 Oct 2025 06:25:06 GMT
+	Mon, 27 Oct 2025 08:25:45 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 59R7p6KP888691
+	for <linux-phy@lists.infradead.org>; Mon, 27 Oct 2025 08:25:42 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:message-id:mime-version
-	:subject:to; s=qcppdkim1; bh=teLtNRm505PX8MdgaxTQ1fxSCIYlKPWmx/D
-	tUXEpo74=; b=ZuNcoIrwuEC64OO/+W72lW39Zktlb6lwaLtSurDy+OsFs9jK3aL
-	Yt9i8WV6K8/unlpcgUdktKbNSfgX0o9HcaOr50IEg2Ft0Wrf4QXqjZQCn6VSyCt6
-	mS5wpuxjMqN3My548/NrnRPRkSIlj0uLLBYNWoulHm+/JBfJhtV4LCbjtjkpVCdh
-	0BusGdsxLJHQQhdm2dzPbPgTwXq3EBL7xsETiCQq74PqQuqzHfEEw0s0l3svamSD
-	VslLlO4mU+AmiPHgr6cMF+gfczjlqHhQl7gxAY16f7vdBdpGFYf4Vtcny6vEeHQ5
-	Epm0dgYGvW1ilURMAVM+tKdN3kRyZ2x9d0Q==
-Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4a20pnrcy4-1
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	Rsb5IoKjQNN5TuHEex46Q/ZW+nK+3INVuz35ePkitGI=; b=mfUx5/xtkaV10vGm
+	8STGARjNiwYeRqX0bwBI6nbAxM1A0AsGAuM5ibwEdS3wHqDp56/oQMXN56nSVWMI
+	I6x4oEnzNHDHxrQxp/mpGIBJJFbbr1lpJrzzbJMU4n3MkwmOYorWC05mvEU7NVOp
+	W+BTO0vjq9MDUsCzpAHIGoB8Ee783w59+dU0t5Sq8eaOz1ihkQgkUWKDnjxBy7/S
+	QzQoMbfCxcAiE7xu25oUYgwBv1UqWOMjG0oqBbFj1W1eR8bP9/4lChyZcri5lEwI
+	Bm0elhYmdACDw/b6xCBLRxZZt4ab8gjLOkaHqVudwBJNVzphNAhI+bs1CX5BzWF4
+	9/zZ9Q==
+Received: from mail-qv1-f71.google.com (mail-qv1-f71.google.com [209.85.219.71])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4a0nnb3wmh-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Mon, 27 Oct 2025 06:25:06 +0000 (GMT)
-Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-28bd8b3fa67so36062625ad.2
-        for <linux-phy@lists.infradead.org>; Sun, 26 Oct 2025 23:25:06 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Mon, 27 Oct 2025 08:25:41 +0000 (GMT)
+Received: by mail-qv1-f71.google.com with SMTP id 6a1803df08f44-87c0e043c87so13074246d6.2
+        for <linux-phy@lists.infradead.org>; Mon, 27 Oct 2025 01:25:41 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1761546305; x=1762151105;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=teLtNRm505PX8MdgaxTQ1fxSCIYlKPWmx/DtUXEpo74=;
-        b=rqofxNKN2T0PR4H/VLRo8hO6j9KQw6kCQydEiPiclxdTvKw3nALpjJPo1d1BPCO1EG
-         BrSog8RyDJ9bfO0NMM9QvxXieMeBPhNS13dGN/5F51QDzM5OHkU+e31Cde3xwWdZjUGE
-         0Is3p0c2NoRLHprRMWvmKt8uBvbFxlCRyKPO0dkkvXgcqsivgCZ58H48LmiiXCFg4rFN
-         onvWJdjzq+p0xaS8pPjSZMO5dyj3CmsUJm/RmKYOFMvn9Ybnrh18yseGnRRtsEBP3EXD
-         Gz4hmHEiBBR4r93gr8O0/GKHmcUDnZKrn+OF7MD1KpfJ7ojLdc7tVYbpbakfSBQwMdWq
-         RWsw==
-X-Forwarded-Encrypted: i=1; AJvYcCWcBOKo7VEIQU8lJ2+RVo3AvvnyGG+ag8iWVtxN5tHK5WmSTju0AvWmjqOB+clsIibhqjYUU+RdcjI=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwIsOv8KW462CrvDAikw8mzlOUqBlfGKTZmceperE6UcimIAMKi
-	9hvJZrGB21xpUqmyqF9A4th4cehZqilCJjIYAXWdiVxRbtWBlEUa/fRHPy18jMFleiKbkj8rK5K
-	nyJ1Ga+7Aiv2XYOubfx0W2grkZrujq4CCx9tMwB2ukmCvLlgxJ3G5j3cOikzEB5OGq5it
-X-Gm-Gg: ASbGncvDLH/rREvm3Tz/NN0IGFEA1mF83yZ9NIfzaecexXrk/LYHeLL9+G2+uxs2RNI
-	y4u1l/AliBCvNxnifjJ+zOizgJ6hUN54M7Tq7e1e1/JolvQ7dla5Lrg9LPSE36Nbs27LIuDODHX
-	4bqcCdwY0AtO/p1m7rNbtI2/JmSs9FsOUU0epj6qZI+u/i44nxVDGNlbK2Tk0gnfqDlxDydIsGZ
-	BqXg/kSe8N3WrnmYEYBjXXgl1rLyqv6EjAgYI7g4Uy4ADH/6zJcXUDy8wbpP23WQiGistsZg9KG
-	fFbd5/IWX7tkxk9KWRSYM21R+ikCOQ9VqYluHCsUWsksfw8NPXdtDvZuquXx5+qOog7PbJwEmp1
-	1GyubNH749n60vEuf40uyR8raAx4=
-X-Received: by 2002:a17:902:f70b:b0:267:af07:6528 with SMTP id d9443c01a7336-290caf83079mr448673405ad.35.1761546305427;
-        Sun, 26 Oct 2025 23:25:05 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IGYsbnoxIoDwX1NoZs2UO3l7p3LATS1TmaBH5XzP3HuuA+Rw6QnyKU7CjxwqONWCAnQw26BZg==
-X-Received: by 2002:a17:902:f70b:b0:267:af07:6528 with SMTP id d9443c01a7336-290caf83079mr448673185ad.35.1761546304946;
-        Sun, 26 Oct 2025 23:25:04 -0700 (PDT)
-Received: from hu-prashk-hyd.qualcomm.com ([202.46.22.19])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-29498d23218sm68346975ad.51.2025.10.26.23.25.02
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 26 Oct 2025 23:25:04 -0700 (PDT)
-From: Prashanth K <prashanth.k@oss.qualcomm.com>
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        linux-kernel@vger.kernel.org,
-        Prashanth K <prashanth.k@oss.qualcomm.com>
-Subject: [PATCH] phy: qualcomm: m31-eusb2: Add runtime pm ops
-Date: Mon, 27 Oct 2025 11:54:58 +0530
-Message-Id: <20251027062458.1411096-1-prashanth.k@oss.qualcomm.com>
-X-Mailer: git-send-email 2.34.1
+        d=1e100.net; s=20230601; t=1761553541; x=1762158341;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=Rsb5IoKjQNN5TuHEex46Q/ZW+nK+3INVuz35ePkitGI=;
+        b=DoXcDxzGbyYBKIxGL4sSp7wOmh3nOI6eBf5YHcl6Ptd/vUa5OdOzI14gUqBDIF3qjE
+         1eLCXwnETYY208tpaIFTEHyrm3AMDg3c/HcOHSGxtQ4IIatVFd4JZ4P//Noqy9ti3On0
+         +PsvrCqUDYCFNJL4FTjUXRJVXy7QdaTEP4/MZq3XCVeGHgguHyz6PYpwxdYe3CgpIJzA
+         VY1gln0xVBn+zDw4fe/WIAF2DqpD6rE+W0UoD8FPyFE8pSRanHApFCeTCBaAdlrcjVLK
+         ARR/bRvSerzQ/Kt926YTwrPw76SVlwxgzu2UqAVKYFE7f8kaRRC6My4tOFwznOZv34PN
+         /1JQ==
+X-Forwarded-Encrypted: i=1; AJvYcCWW7K/oWHuG/03CoDmVl3YoNUlc65oeuaEAa9a4xCEooeQQG7zoZU7WdDc9sd1d3DK9m7k3RNruwKg=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yw6JoSfeIfgetBf95Q5gHj//h2ET3Xrj6zJzfHtaow+ZosgBjty
+	aHKOMpgEWOXF9jpQZn5NYZK/1WJlxkflYdLZPo/jQuen+JfTcv8AcF9u8UHaXLUaaR8N2X/zA6U
+	76+eZ4w3boYJIeZ3e5g7DIUK/QnKWc29kQnvsfJvnWz2zIEyB2+gOHxHYAtm36XVk/Cpy
+X-Gm-Gg: ASbGncvOFnrgAhdLjK7U+npHmAWBzR3DBhrdw7RM9vNPzQOfesAy7EsrmwrIs/lD429
+	cLFs2VKMTHxtJ2sAIJhidu87Hi2cnzz+2usykDcV/CyDEiyf+amPeYV6UzkuGtIf7npM5DPNhRC
+	fXmSnQSg5+2ctCG/LehO2Wd5dVs9bdiXPhI7ANHUauE7s3Y5mT6vmLnL8bCXEay1YPMAU+klfhw
+	3koJSYhpS5QBh+15owW4D6fHTqBWrvUzsix1t0mYZC6SwIGIwmV0fMaZdGRPSuE2Clv1Rlkc9Qb
+	/q6z99zDM/8wLrXzyEksBSPGwW8jFH7/E6OVxbK3LEIoMamlqRyUrtt57MqInXll5Z+gnWrdpzh
+	WSoabjJdQieen7KLs2e6wvbjsRRncb4Jd97yrLP3f+0MFbpmKFri8m5x9
+X-Received: by 2002:a05:6214:f05:b0:81f:3abf:dc1f with SMTP id 6a1803df08f44-87c206aa6f8mr294428536d6.8.1761553540628;
+        Mon, 27 Oct 2025 01:25:40 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFWO4UfxTU1BX5oTeeqL0Gs4K66cPeHuRqQeCNBm97cuVqGohCsQt/0ok7E7/fOVHrIRAJiJg==
+X-Received: by 2002:a05:6214:f05:b0:81f:3abf:dc1f with SMTP id 6a1803df08f44-87c206aa6f8mr294428506d6.8.1761553540138;
+        Mon, 27 Oct 2025 01:25:40 -0700 (PDT)
+Received: from [192.168.119.202] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-b6d85359c0bsm704420366b.24.2025.10.27.01.25.38
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 27 Oct 2025 01:25:39 -0700 (PDT)
+Message-ID: <daf0055b-7caf-4ace-8a06-071468273a37@oss.qualcomm.com>
+Date: Mon, 27 Oct 2025 09:25:38 +0100
 MIME-Version: 1.0
-X-Proofpoint-GUID: TkHbD2aBsHFJoRJUWP_WXN6lxrdXBUmz
-X-Proofpoint-ORIG-GUID: TkHbD2aBsHFJoRJUWP_WXN6lxrdXBUmz
-X-Authority-Analysis: v=2.4 cv=A+xh/qWG c=1 sm=1 tr=0 ts=68ff1042 cx=c_pps
- a=IZJwPbhc+fLeJZngyXXI0A==:117 a=fChuTYTh2wq5r3m49p7fHw==:17
- a=x6icFKpwvdMA:10 a=VkNPw1HP01LnGYTKEx00:22 a=EUspDBNiAAAA:8
- a=-Y0lm5QSNLYpoQ5O1QAA:9 a=uG9DUKGECoFWVXl0Dc02:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDI3MDA1NiBTYWx0ZWRfXzyzJ8xjKQDwm
- 4tkuZq3sL+izEpJTEEOuvY0/ZVKB4VEzR5U7tNgGhVcxaqqHZ3QCxCiRACKUHs+qRBfmhipIoJW
- RFBebMfp6TeYS1Flj9oIJuqSFenoLPyvmKa6ay8/MaxDVJjZbEzne80TiDn4wHKaYyM48Rofpmj
- JJ/8SgdEilYK+KWHKYoe5pyhHegYelfr49FyqMQT7AsJVKHnKRkZZWWNZ01xuRfvG88RutPGcQ2
- 5uTyU9IJ+TikGrhZ5CbKVo+e802eWSDQCJkHX5ogt0DIqivO4CCtFjEpq8L3dU/ZUKdhb8YIfqq
- IlUCUr7U0MrKpmlYJMqU4OEYvSuFVcSppp0xfF7gRRQ3f9MkC1fP7NNdM4uKrbqj+XL8p8dPOoO
- 569X8QJIcKAWIXunDEnSNZkN+3B0dQ==
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] phy: qualcomm: m31-eusb2: Add runtime pm ops
+To: Prashanth K <prashanth.k@oss.qualcomm.com>, Vinod Koul
+ <vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-kernel@vger.kernel.org
+References: <20251027062458.1411096-1-prashanth.k@oss.qualcomm.com>
+Content-Language: en-US
+From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+In-Reply-To: <20251027062458.1411096-1-prashanth.k@oss.qualcomm.com>
+X-Proofpoint-GUID: 5TiKVFHcgaA_LebOye5l4sl79QN0nSUa
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDI3MDA3NyBTYWx0ZWRfX9b/JkurliR6/
+ gAlYZaJKvCXSO74lyB24ZJkamZvCuVWolNIWGs1VvCJcPvY0HQgL/+h+xQSNnA9ew3S/EW2PAAZ
+ U9kB93Nj1o5gm/+zol4Mia32aQ2/1TIcq5cA5v7S4JcI9H9LtObq6dqSQykSna/sVDikF+AmM4D
+ Hh/XbAeF95dY8Jts/cExi5ga3KUTO72tIt1mwKOAe9XXJLGybKfcK+zO/jDd477qZYsu1HH6d9+
+ FTqAN50kWoophXkWYJybR6+vqnV7PsMts8wRU7Ds5Rq18Pq1HDnnZbrmtl0C6HyJiOzNY1Qt7NQ
+ M3zpHbzbd3Ps/M5QFwS/ujNtCcLXnw6PG0FHpv4Epqg4lBcLbNQZsQ6t1AS2JkvBKECbkP2j3H5
+ RNeTL/lelNJ+eob/mkMttJJ1Pp4ANw==
+X-Authority-Analysis: v=2.4 cv=AJoZt3K7 c=1 sm=1 tr=0 ts=68ff2c85 cx=c_pps
+ a=UgVkIMxJMSkC9lv97toC5g==:117 a=FpWmc02/iXfjRdCD7H54yg==:17
+ a=IkcTkHD0fZMA:10 a=x6icFKpwvdMA:10 a=VkNPw1HP01LnGYTKEx00:22
+ a=EUspDBNiAAAA:8 a=k3wdqr90-_sLWsnx9DcA:9 a=QEXdDO2ut3YA:10
+ a=1HOtulTD9v-eNWfpl4qZ:22
+X-Proofpoint-ORIG-GUID: 5TiKVFHcgaA_LebOye5l4sl79QN0nSUa
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-10-27_03,2025-10-22_01,2025-03-28_01
+ definitions=2025-10-27_04,2025-10-22_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 lowpriorityscore=0 clxscore=1015 suspectscore=0
- spamscore=0 bulkscore=0 adultscore=0 impostorscore=0 phishscore=0
- malwarescore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2510020000
- definitions=main-2510270056
+ adultscore=0 impostorscore=0 lowpriorityscore=0 bulkscore=0 spamscore=0
+ phishscore=0 suspectscore=0 clxscore=1015 priorityscore=1501 malwarescore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2510020000 definitions=main-2510270077
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251026_232508_140773_87B6FEA5 
-X-CRM114-Status: GOOD (  15.69  )
+X-CRM114-CacheID: sfid-20251027_012544_050229_DE86E3A6 
+X-CRM114-Status: GOOD (  13.45  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -127,82 +132,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add runtime power management operation callbacks for M31 EUSB2 PHY.
-Enable/disable the clocks based on the runtime suspend/resume calls.
+On 10/27/25 7:24 AM, Prashanth K wrote:
+> Add runtime power management operation callbacks for M31 EUSB2 PHY.
+> Enable/disable the clocks based on the runtime suspend/resume calls.
+> 
+> Signed-off-by: Prashanth K <prashanth.k@oss.qualcomm.com>
+> ---
 
-Signed-off-by: Prashanth K <prashanth.k@oss.qualcomm.com>
----
- drivers/phy/qualcomm/phy-qcom-m31-eusb2.c | 40 +++++++++++++++++++++++
- 1 file changed, 40 insertions(+)
+[...]
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c b/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c
-index 0a0d2d9fc846..1aeb5e3de07c 100644
---- a/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c
-+++ b/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c
-@@ -240,6 +240,34 @@ static const struct phy_ops m31eusb2_phy_gen_ops = {
- 	.owner		= THIS_MODULE,
- };
- 
-+static int m31eusb2_phy_runtime_suspend(struct device *dev)
-+{
-+	struct m31eusb2_phy *phy = dev_get_drvdata(dev);
-+
-+	dev_dbg(dev, "Suspending M31 eUSB2 Phy\n");
-+	clk_disable_unprepare(phy->clk);
-+
-+	return 0;
-+}
-+
-+static int m31eusb2_phy_runtime_resume(struct device *dev)
-+{
-+	struct m31eusb2_phy *phy = dev_get_drvdata(dev);
-+	int ret = 0;
-+
-+	dev_dbg(dev, "Resuming M31 eUSB2 Phy\n");
-+	ret = clk_prepare_enable(phy->clk);
-+	if (ret)
-+		dev_err(dev, "failed to enable ref clock, %d\n", ret);
-+
-+	return ret;
-+}
-+
-+static const struct dev_pm_ops m31eusb2_phy_pm_ops = {
-+	SET_RUNTIME_PM_OPS(m31eusb2_phy_runtime_suspend,
-+			   m31eusb2_phy_runtime_resume, NULL)
-+};
-+
- static int m31eusb2_phy_probe(struct platform_device *pdev)
- {
- 	struct phy_provider *phy_provider;
-@@ -270,6 +298,17 @@ static int m31eusb2_phy_probe(struct platform_device *pdev)
- 		return dev_err_probe(dev, PTR_ERR(phy->clk),
- 				     "failed to get clk\n");
- 
-+	dev_set_drvdata(dev, phy);
-+	pm_runtime_set_active(dev);
-+	pm_runtime_enable(dev);
-+
-+	/*
-+	 * Prevent runtime pm from being ON by default. Users can enable
-+	 * it using power/control in sysfs.
-+	 */
-+	pm_runtime_forbid(dev);
-+
-+
- 	phy->phy = devm_phy_create(dev, NULL, &m31eusb2_phy_gen_ops);
- 	if (IS_ERR(phy->phy))
- 		return dev_err_probe(dev, PTR_ERR(phy->phy),
-@@ -313,6 +352,7 @@ static struct platform_driver m31eusb2_phy_driver = {
- 	.probe = m31eusb2_phy_probe,
- 	.driver = {
- 		.name = "qcom-m31eusb2-phy",
-+		.pm = &m31eusb2_phy_pm_ops,
- 		.of_match_table = m31eusb2_phy_id_table,
- 	},
- };
--- 
-2.34.1
+>  static int m31eusb2_phy_probe(struct platform_device *pdev)
+>  {
+>  	struct phy_provider *phy_provider;
+> @@ -270,6 +298,17 @@ static int m31eusb2_phy_probe(struct platform_device *pdev)
+>  		return dev_err_probe(dev, PTR_ERR(phy->clk),
+>  				     "failed to get clk\n");
+>  
+> +	dev_set_drvdata(dev, phy);
+> +	pm_runtime_set_active(dev);
+> +	pm_runtime_enable(dev);
+> +
+> +	/*
+> +	 * Prevent runtime pm from being ON by default. Users can enable
+> +	 * it using power/control in sysfs.
+> +	 */
+> +	pm_runtime_forbid(dev);
 
+This screams "this patch is broken" or "there are bad issues" which
+you did not describe at all.
+
+Konrad
 
 -- 
 linux-phy mailing list
