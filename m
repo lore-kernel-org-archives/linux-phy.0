@@ -4,119 +4,120 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7E252CCF9EC
-	for <linux-phy@archiver.kernel.org>; Mon, 27 Oct 2025 11:09:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6A3BCCF9E0
+	for <linux-phy@archiver.kernel.org>; Mon, 27 Oct 2025 11:11:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b5PBBWF1/a0INUzzFBpp4Uj7FZceIs/rLEIJpehe+l0=; b=vGifn8www4ET1s
-	yNUnSAHTWpwhYap23/IS0WI8VLX2S94Z3enWzAwgE0jBGKV0l8zqK0SvpZMWn4jEfESIb8EqMr3gF
-	ZDlUDEYbaf1OYBZEtR3ryshEw7OPk0SUnKSSI5b5OYJE/1IOpHa1LMUHcbUnLneZglpiAfSPp7MNm
-	fEf+4pVsJwAnyjLPXSVTpnLgG15MMOFFi8mr6guutVvdav8qQhYWAGKYAGlmUbzHwnZm3yXdmgKoG
-	f4jm/NQwpKoA48ZlIl4eCt9/htZrJHQW1wnbUxhBERdQv4SnBVDd5My2jobxRmjEpQKYKCz5pCIfD
-	rmuTRC/wR+hphm7fSohg==;
+	List-Owner; bh=G1yl67qqNBa0tyym5I70dhzXq+SWv6HGTfaY7No4/SQ=; b=wtTrsY5KHsgHro
+	aKtfjDQStF4biZTtVXS6cm2rHV7QM3UA5QiLrXQPzd3ugm6KkPUTsSi/+BHVey+UTY+FP4K7hD9ZY
+	GtXiG9HMoxiLJOQywK5lyyQPQczN09wPE0sHIxIECS9Sv1qDz53ecUEYY8QpqXS/3Ae5ga5Mg8iVJ
+	urA3GmEEwOW+dKwiMPshFo5dmkEFb3LT3JvONfuD2OQNu3+281zf3ZBBdKsY2xoDBV5Odq5xOXEy1
+	9M+iH6YCIPRTjr+XF1E9YJoNgmFdrYYksSIfZ9xAWphdkPD7X1bB5mz0BMzsKLq1ecixslRgXxacY
+	jDnyd3A5URBvB0Cx3XXQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDL6e-0000000DjJD-0BfA;
-	Mon, 27 Oct 2025 11:09:44 +0000
+	id 1vDL8A-0000000DjYt-2f13;
+	Mon, 27 Oct 2025 11:11:18 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDL6b-0000000DjIs-1SUh
+	id 1vDL87-0000000DjYN-4B7V
 	for linux-phy@lists.infradead.org;
-	Mon, 27 Oct 2025 11:09:43 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 59R8P3sJ1037004
-	for <linux-phy@lists.infradead.org>; Mon, 27 Oct 2025 11:09:40 GMT
+	Mon, 27 Oct 2025 11:11:17 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 59R7n1fP581250
+	for <linux-phy@lists.infradead.org>; Mon, 27 Oct 2025 11:11:15 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	1OKEOWHV2jDS8HuQ9OUVVQMf5EtunRWIyG+g+gcxrpY=; b=SpVB3hnWbAeoJ9wZ
-	tFc7is5UpBTRfm16Nn1oq21eEX04VqEEkDkbTT3Iyf/r80XbsiykH2sAcPctUP27
-	VgrmhKqOTxq8rACgwt29XMf3a4W73v/7RYSNzUrS4lThnQDUm0pS6kHXe77Ge7Yq
-	OpidUmIXwu/mlLWrbMWHLy0yXiOqEuG20gD7t5K4Z0dvAlE5Aohb7GoyY7UucXPW
-	L3y1f3OF49Qn20vfa7tBw4fofqlCgcCf+OMPggbVnQmCDIcyAkDkmlOerjXetucz
-	YNjc1waY60MCzdPjLb/480MCIYB4v5hP2hwqARkeB6yg1d22dehJq8G0gxYhYFrV
-	EobTmA==
-Received: from mail-pj1-f70.google.com (mail-pj1-f70.google.com [209.85.216.70])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4a0px6m8vj-1
+	H8WIQT23Q8Zg1BnAz2MWS0UE2kbwz+Q6IEFFa9VNqtA=; b=mLQKwzDyym9IA/DT
+	sZZ0SGXb2BUHepEZibF2ZId8fduvszNKie29iwh/sBpQV7ZWCEnCGvIcrWzJBKIM
+	HzoJPzC0XIDWKCxohVolVRMjPU12qbLhaYsdxHJFLmNSG3y1XjAJ4cceVK0Eorvt
+	JccgRWzlhAU2b2Pc0x3PhQWzUNuA97PJXc+tcSQwbPJfykjXBf0es83C9Tmhtppn
+	r5T+VaXR1Hjt2oyR5X/7pWSNXhp+6hxatZnAUL3ZWssHJrfGo8VpSx/8CNzX/jWR
+	3IccZfaHG3fgu1sAvhqjPl3JU0Z6jGoNm9aiLPCgxipJCEImU1/NuvaneqQ75d4W
+	M/E4+A==
+Received: from mail-qt1-f197.google.com (mail-qt1-f197.google.com [209.85.160.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4a0nkamcb9-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Mon, 27 Oct 2025 11:09:40 +0000 (GMT)
-Received: by mail-pj1-f70.google.com with SMTP id 98e67ed59e1d1-32ee157b9c9so3526587a91.2
-        for <linux-phy@lists.infradead.org>; Mon, 27 Oct 2025 04:09:40 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Mon, 27 Oct 2025 11:11:14 +0000 (GMT)
+Received: by mail-qt1-f197.google.com with SMTP id d75a77b69052e-4ecf5ea6669so2134751cf.2
+        for <linux-phy@lists.infradead.org>; Mon, 27 Oct 2025 04:11:14 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1761563379; x=1762168179;
+        d=1e100.net; s=20230601; t=1761563474; x=1762168274;
         h=content-transfer-encoding:in-reply-to:from:content-language
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=1OKEOWHV2jDS8HuQ9OUVVQMf5EtunRWIyG+g+gcxrpY=;
-        b=TgLNUYPhSCa+spsKTH/05ROok4EVG9JLWbJQgqywHOKF7dZBsJTeHB0Ms6d4vXwE/Y
-         QzPYvhTFVsNRg0ae0v8kRNGrUeWKG61V3yISbhDMKtiSx6wMZrqt/IvxZELAOkCye2Uq
-         c0bQ+2ceRw+WAyQsc6iD+eaXIBpypOGpGHRtpkS0M54GMveWKYnHepKl252dIUtBRWoI
-         x+ZkebVLgqCtq3cEq4ogamgVEbuk6akqpqtL2KMNiKy2PkFQ8fWsdACw/2Gu61g53wYE
-         FSuMRrPddXGbaFjC/pTlelaSZNGin/p+YDZEbbQTbH0r9VTNEWr1cor0eqUlJgODkYBJ
-         wmTA==
-X-Forwarded-Encrypted: i=1; AJvYcCUO3MsC3nEL/HZQY83HdObchbR5Qn1a66fLF/64o82I8qR58J7ws1lu2kXovy9BpwCzQTaYb06vBwc=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwjlPNTCzh0htPhXMDq0JZVJg1+lGu4GOIS6QVh4PvJTyf2M43b
-	gxZ1McmrwFCpVHlgjF8bbg8Ug/zT4WMyPShcr1XFPSti011fL4zX42VOXp8hRthuiUOcVB0yJos
-	EQvC6mKKR6ANVAr/p0VSWuFoF6A7ueqVoLggil7Ua2zJGQvnYgkjr8L/pf35/ctYxZLS1
-X-Gm-Gg: ASbGncv7xPU53w9+3A9LdOlKMdSad7/aiBP2h9uagkvDImgUQTkXvpdJJk70HX+wNxG
-	q00fxEjTPwiMjAPcAsVNCApwjhKsjMT3R4nR1VsqQbuwTVSn4uvgi3oOMDJh4sDO3Z9w0Jeh91a
-	O/Bb8NMPZJdeJ3JZ7T7TiROUGINNG+ndHe+Ty0dhuIycxYUgM4vj16hujb50SNfU+ercDwl4ixi
-	5/aQYvNlby5Jubhv/WYL7RCrZw19+o+Tjd+zu9pFQ+R7dH8cmzpdhm/ZyIy2kBfkMfYVLZfUoe5
-	qMMY9ihRc7BqSTwZ5/6Om1mVP+fHyfMrv8TRVNu6RGFQK4CMYM/XwZrCFC5LOEB29QbGCfl8aZZ
-	CL98mgJHIATfQmCcmfJIcUmRQBZA=
-X-Received: by 2002:a17:90b:2686:b0:32e:e18a:3691 with SMTP id 98e67ed59e1d1-33bcf919f1fmr50010245a91.35.1761563379207;
-        Mon, 27 Oct 2025 04:09:39 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IHkUlEj8/wHcKODqSO/BOEax5NmnIZ4PQBlUjqIzNj2WYmI0MzR8y/WOp5byH5DLvoMAjzatw==
-X-Received: by 2002:a17:90b:2686:b0:32e:e18a:3691 with SMTP id 98e67ed59e1d1-33bcf919f1fmr50010210a91.35.1761563378756;
-        Mon, 27 Oct 2025 04:09:38 -0700 (PDT)
-Received: from [10.218.10.142] ([202.46.22.19])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-33fed7f3aeesm8092563a91.14.2025.10.27.04.09.36
+        bh=H8WIQT23Q8Zg1BnAz2MWS0UE2kbwz+Q6IEFFa9VNqtA=;
+        b=aizhGS8INYmtw7XT+1h9/ONA47UIQJ//VLYD+wcgv4s7Tmcm6X4jSe9mOGKWNuWFJq
+         ZGUbxDCBgrAtWyicLY5wSJVfFp9obY6L16XSB2Q/DVfAJMX4vxqgDlzH1wbgfVubq8hY
+         miSlyDEBidcfrJYZ0V1n7GmaQYWBokvsIn148+bFPcPSkVbmk4UPCWAtPg6dRroNPpJb
+         UiJWweHc/g1QFeROZyId7n+ixN/vkQiRoT6C4lag5cD9I9OYqFCt8Ab1B1syWwVgdhsu
+         q9gUdJ0jjVfHPo46Hb6cDKov6/otAfWGYQc7Kr1tF1+ktGWmz7j1Wp/uP00/M7CJcPnO
+         fL3w==
+X-Forwarded-Encrypted: i=1; AJvYcCVbNhVncadkJovWUFUyWjJPPk/3UR45jg3JIoZQSiYvzTi5fjaIWNLJovVy1MXRuad3dW6iLm9ke2c=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz8c+du7m8I8n/LPr2M0oUnsvAqwYYWjv29nuVKfDTx6MDb/is/
+	HwtZ5wYyCFD0UfhOyd2KB4NAETZmStejGP4q/QuHC7oI2jY1K/YHomvwO/nmRnn6rnWDKydB6O1
+	UzymgvSbnH8t0YsTKOZvwFVdJfAAklT9CCaTjlFd9Le8vtScN5BLPsMQZ+Usal1G/H2Iv
+X-Gm-Gg: ASbGncvdw5peBwBPgjoT3bg939ZFCItQbAI7Q69th3ib/W0/h/BgAeMD4dTnnZk2OOU
+	fwHFojYywDRh78PlThluQ9sDCOISdYuCFMRrHT1RzZO7Pni0GGjxYqyySusyGJysnq9CLM2lrRk
+	mUZnRc14bI96u4ifKesxZOSrFJM1PLUS6OxaWPrUR1KckGR152eQZH80Zihbu1AltfH3BhnN7eL
+	GXL6aNGb9+lrwTFbcz9Kb5blcYU3aHN6bRRFEOTlmBz2C6QMu9UQk52J2lbf2obGqhK8N00EAFV
+	l0W00PDgAbAfk8u7fSVTf7e+y1OLs7ICrcEuUmSVbyu6P4ku8AXnWupW+hxeuCDKacHaKd6eGgJ
+	tffEqJpmTQmk8PeKOHzDqaS1xdz/a03lB8BZXbjRE+6pxcI2LnPRbFc92
+X-Received: by 2002:ac8:5704:0:b0:4ec:eef1:52f7 with SMTP id d75a77b69052e-4eceef16c1emr45626221cf.11.1761563474280;
+        Mon, 27 Oct 2025 04:11:14 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHp0McDYH82cpews6krOwb1okYKKV12xKV/8IeClVI/HE450oM4Yo+OS37OfzZ2SELE5qFANQ==
+X-Received: by 2002:ac8:5704:0:b0:4ec:eef1:52f7 with SMTP id d75a77b69052e-4eceef16c1emr45625791cf.11.1761563473633;
+        Mon, 27 Oct 2025 04:11:13 -0700 (PDT)
+Received: from [192.168.119.202] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
+        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-63e7ef833besm5896053a12.15.2025.10.27.04.11.12
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 27 Oct 2025 04:09:38 -0700 (PDT)
-Message-ID: <1c52e759-15fd-462b-a9fd-ad620da099f5@oss.qualcomm.com>
-Date: Mon, 27 Oct 2025 16:39:34 +0530
+        Mon, 27 Oct 2025 04:11:13 -0700 (PDT)
+Message-ID: <e4f33bf0-05d9-4aad-b00e-fb7cc2c2633b@oss.qualcomm.com>
+Date: Mon, 27 Oct 2025 12:11:11 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH] phy: qualcomm: m31-eusb2: Add runtime pm ops
-To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
-        Vinod Koul <vkoul@kernel.org>,
+To: Prashanth K <prashanth.k@oss.qualcomm.com>, Vinod Koul
+ <vkoul@kernel.org>,
         Kishon Vijay Abraham I <kishon@kernel.org>
 Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
         linux-kernel@vger.kernel.org
 References: <20251027062458.1411096-1-prashanth.k@oss.qualcomm.com>
  <daf0055b-7caf-4ace-8a06-071468273a37@oss.qualcomm.com>
+ <1c52e759-15fd-462b-a9fd-ad620da099f5@oss.qualcomm.com>
 Content-Language: en-US
-From: Prashanth K <prashanth.k@oss.qualcomm.com>
-In-Reply-To: <daf0055b-7caf-4ace-8a06-071468273a37@oss.qualcomm.com>
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDI3MDEwNCBTYWx0ZWRfX/xgKezTs4eFW
- w/Uh1VO3vEbwoiXnQOEE4t8uMIgg0JpN/u2sJk5IQVLcAnI9Dg4NnMxhZrDyMe5i3yMUnMwILEv
- KSO5V6aGuB6/MLu8KInK9vx9U7cxz1CIyTyHz0YXaSHj6UeS91VdkqY1O+YcmJrcIVNGkSZ5d5W
- +FIYZHVjcQUFy6ENm45M8XTvmJ31BQYm1ayRDcr7Y0S5xMdu1QZJ/efT0xVdBT6DrZFa00nEhRe
- ilzr3CKtmC6nupckOj/1i8YGWDku6iHJEJ5LCa1KjBC7Q0qZMrjQBJ9qZZPFgiqpBa8rKdp1HM6
- ypFSmavzaiCchTXxy2H6M7mWByLMQza7AHN0eCT0+uSshwbUAgIMrX7Jkirf3+xVLryn3+qcY9i
- 9N6WXmlM2mtQznG7JlGhpLMbZf80UA==
-X-Proofpoint-ORIG-GUID: 1qhJblZYvMXUKakKA0-XgCy1zqul_oK8
-X-Proofpoint-GUID: 1qhJblZYvMXUKakKA0-XgCy1zqul_oK8
-X-Authority-Analysis: v=2.4 cv=WqMm8Nfv c=1 sm=1 tr=0 ts=68ff52f4 cx=c_pps
- a=0uOsjrqzRL749jD1oC5vDA==:117 a=fChuTYTh2wq5r3m49p7fHw==:17
+From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+In-Reply-To: <1c52e759-15fd-462b-a9fd-ad620da099f5@oss.qualcomm.com>
+X-Authority-Analysis: v=2.4 cv=AYW83nXG c=1 sm=1 tr=0 ts=68ff5353 cx=c_pps
+ a=EVbN6Ke/fEF3bsl7X48z0g==:117 a=FpWmc02/iXfjRdCD7H54yg==:17
  a=IkcTkHD0fZMA:10 a=x6icFKpwvdMA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=EUspDBNiAAAA:8 a=1dOfxVL-wUTtPdxvxmkA:9 a=QEXdDO2ut3YA:10
- a=mQ_c8vxmzFEMiUWkPHU9:22
+ a=EUspDBNiAAAA:8 a=TkFh0mFV8F8mC-raymcA:9 a=QEXdDO2ut3YA:10
+ a=a_PwQJl-kcHnX1M80qC6:22
+X-Proofpoint-ORIG-GUID: fC3Iaq27LTWuJXvlCZxpC5ZPzNtPc5RD
+X-Proofpoint-GUID: fC3Iaq27LTWuJXvlCZxpC5ZPzNtPc5RD
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDI3MDEwNCBTYWx0ZWRfX4c08Eg0VWOCg
+ xkWPMuzxim8uqliigXvpUb+fMrPApOGXMGRy5k5nhmuPEGH0yiXpec2NU1TZPuq9xphbTYuBlD9
+ ocRcNvgMshJ+CDxNde2vlVx3Utk31zllktUtfCG38z9TuCQgrE8qPDCle1HPANqoeNZM4hw4o/W
+ YylQ9YJgP/SQSg3HXrmUvWb8CBooMJp2fvGht/jIPpYbgz6bz7+LahfrIaTEkj+PBPnTftznIHy
+ AY6xHtzzN1nqSMNlIMCyegWp8/qlNuFV80+pRVNiQNN99r9pfVkHQ3s8CyBh8shbn0wuxafdUEF
+ XEWLIS1yBnfmd1ctMQRQtNFV8QXMiO6tF0XYxTAgNbbYz3OLH1KalnBlxQOjkRQE4z01ZWMLfOu
+ u1Bw/6KBzmpg3wbwbYWSdP6naiH14Q==
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.80.40
  definitions=2025-10-27_05,2025-10-22_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 priorityscore=1501 impostorscore=0 spamscore=0 phishscore=0
- suspectscore=0 lowpriorityscore=0 malwarescore=0 adultscore=0 bulkscore=0
+ spamscore=0 impostorscore=0 suspectscore=0 malwarescore=0 adultscore=0
+ priorityscore=1501 lowpriorityscore=0 bulkscore=0 clxscore=1015 phishscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2510020000 definitions=main-2510270104
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251027_040942_161410_EFC81B23 
-X-CRM114-Status: GOOD (  14.97  )
+X-CRM114-CacheID: sfid-20251027_041116_175937_D3AA7D20 
+X-CRM114-Status: GOOD (  15.82  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -133,46 +134,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-
-On 10/27/2025 1:55 PM, Konrad Dybcio wrote:
-> On 10/27/25 7:24 AM, Prashanth K wrote:
->> Add runtime power management operation callbacks for M31 EUSB2 PHY.
->> Enable/disable the clocks based on the runtime suspend/resume calls.
+On 10/27/25 12:09 PM, Prashanth K wrote:
+> 
+> 
+> On 10/27/2025 1:55 PM, Konrad Dybcio wrote:
+>> On 10/27/25 7:24 AM, Prashanth K wrote:
+>>> Add runtime power management operation callbacks for M31 EUSB2 PHY.
+>>> Enable/disable the clocks based on the runtime suspend/resume calls.
+>>>
+>>> Signed-off-by: Prashanth K <prashanth.k@oss.qualcomm.com>
+>>> ---
 >>
->> Signed-off-by: Prashanth K <prashanth.k@oss.qualcomm.com>
->> ---
+>> [...]
+>>
+>>>  static int m31eusb2_phy_probe(struct platform_device *pdev)
+>>>  {
+>>>  	struct phy_provider *phy_provider;
+>>> @@ -270,6 +298,17 @@ static int m31eusb2_phy_probe(struct platform_device *pdev)
+>>>  		return dev_err_probe(dev, PTR_ERR(phy->clk),
+>>>  				     "failed to get clk\n");
+>>>  
+>>> +	dev_set_drvdata(dev, phy);
+>>> +	pm_runtime_set_active(dev);
+>>> +	pm_runtime_enable(dev);
+>>> +
+>>> +	/*
+>>> +	 * Prevent runtime pm from being ON by default. Users can enable
+>>> +	 * it using power/control in sysfs.
+>>> +	 */
+>>> +	pm_runtime_forbid(dev);
+>>
+>> This screams "this patch is broken" or "there are bad issues" which
+>> you did not describe at all.
+>>
+>> Konrad
 > 
-> [...]
-> 
->>  static int m31eusb2_phy_probe(struct platform_device *pdev)
->>  {
->>  	struct phy_provider *phy_provider;
->> @@ -270,6 +298,17 @@ static int m31eusb2_phy_probe(struct platform_device *pdev)
->>  		return dev_err_probe(dev, PTR_ERR(phy->clk),
->>  				     "failed to get clk\n");
->>  
->> +	dev_set_drvdata(dev, phy);
->> +	pm_runtime_set_active(dev);
->> +	pm_runtime_enable(dev);
->> +
->> +	/*
->> +	 * Prevent runtime pm from being ON by default. Users can enable
->> +	 * it using power/control in sysfs.
->> +	 */
->> +	pm_runtime_forbid(dev);
-> 
-> This screams "this patch is broken" or "there are bad issues" which
-> you did not describe at all.
-> 
-> Konrad
+> Hi Konrad, I was followed the same sequence from other phy drivers
+> containing pm_ops. I assume the runtime_forbid is added to control
+> runtime pm from userspace.
 
-Hi Konrad, I was followed the same sequence from other phy drivers
-containing pm_ops. I assume the runtime_forbid is added to control
-runtime pm from userspace.
+Other drivers call runtime_forbid() because the implementation doesn't
+work.. Or at least historically the usb3 part hasn't been able to sus/
+res properly
 
-Regards,
-Prashanth K
+Konrad
 
 -- 
 linux-phy mailing list
