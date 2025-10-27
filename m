@@ -4,60 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8F22ECCF9E5
-	for <linux-phy@archiver.kernel.org>; Mon, 27 Oct 2025 02:06:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 405E2CCF9E9
+	for <linux-phy@archiver.kernel.org>; Mon, 27 Oct 2025 02:20:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AIz5DaywnvVMDCo9M5S+hRLZ7aumi779FNJAbQo1RaA=; b=Pj+06NlwecjTs/
-	cQmDmpFVIRyIIYSGsqurfpQd5UcRKdxJIl1h1a/t5TmgKITq7C3qUWtS4elGP/1Nnkj1tMKFvzd8c
-	vPvIZwwgrTDQiBEjO2/S2r/j71Hiy+9KFDwZwavJ38oE9u3Zac67QwtELCUskPHnMw0sx6hygglCR
-	8RKuIMY+/UKXlf23OMYLn14Wb2wnBxNhKYsIAb6Jze1rOfClAazvFLmgp81/9OuUZGI44OPQsfP4M
-	Vpx9MEk8SKRyMfQUARs5Y/cMBfVBrJyQIpuLlpkjF1ut8tBLhJuZUPvAkJtQgOPODo+j1qrGadOZ8
-	PyXy/yKM2DkedjVr0Ewg==;
+	List-Owner; bh=F4PngvUAKYpOspHci5VdwFppSMgAl4HV0FdF2A8nzFo=; b=ootQXTemWBQfC8
+	6hhO8KIetn9zMNrZjhwhuiANUSlv+uJyzVL1/yblp5m0Y9cvJ40/zMWr8JEQEyT1p/Q8onx302M2f
+	5NdNMJblsrTVkeKO7kFcT8Z1AkhgqwIdrnIVzl8vJ+sLRShnlg5GeGMNWNUOwVHC751qGGQ6tpTOD
+	hbNWJH5AGUZaF6R9g3VG3DDd2RfSsRXFOf0KOtCOzCvdG1gGi6LXFfxYOnvIeTSyVVBaHC4NR/tvD
+	eKvx01lbArTbisBf0N6Cbt95h6ywKuePWSL4dCW9Bteu4erRANYEQOy9SgfTIGb3c9GhIksqXtn9y
+	N1/N1PHWTHGvfhhB87fQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDCdA-0000000D09I-0OqF;
-	Mon, 27 Oct 2025 02:06:44 +0000
-Received: from vps0.lunn.ch ([156.67.10.101])
+	id 1vDCqV-0000000D0il-2mZq;
+	Mon, 27 Oct 2025 02:20:31 +0000
+Received: from perceval.ideasonboard.com ([213.167.242.64])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDCd7-0000000D08j-3nvm
-	for linux-phy@lists.infradead.org;
-	Mon, 27 Oct 2025 02:06:43 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
-	s=20171124; h=In-Reply-To:Content-Disposition:Content-Type:MIME-Version:
-	References:Message-ID:Subject:Cc:To:From:Date:From:Sender:Reply-To:Subject:
-	Date:Message-ID:To:Cc:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Content-Disposition:In-Reply-To:References;
-	bh=tu+M7M2YF38JiZNC0fahSFfxfFEADGU7uVQ/AZh5caY=; b=UybAvca29K/efssa5m01nE9JZO
-	50t332oIzhW3rJ+6FgUXsLwBv2VTMkLh+7Z8wb+rY4DAZe1Z7w7P5pdVQY5NkHMzGD+kvWg0J1u7x
-	rckJu2zgKx9l0MKUraY0B/EQNpzZIZ1ME4svZP07rtWKdGlyuvHVu+jfe0/2W2TRzSOg=;
-Received: from andrew by vps0.lunn.ch with local (Exim 4.94.2)
-	(envelope-from <andrew@lunn.ch>)
-	id 1vDCd5-00C9GW-ST; Mon, 27 Oct 2025 03:06:39 +0100
-Date: Mon, 27 Oct 2025 03:06:39 +0100
-From: Andrew Lunn <andrew@lunn.ch>
-To: Josua Mayer <josua@solid-run.com>
-Cc: "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
-	"advaitdhamorikar@gmail.com" <advaitdhamorikar@gmail.com>,
+	id 1vDCqS-0000000D0iG-3lzM;
+	Mon, 27 Oct 2025 02:20:30 +0000
+Received: from pendragon.ideasonboard.com (82-203-161-16.bb.dnainternet.fi [82.203.161.16])
+	by perceval.ideasonboard.com (Postfix) with UTF8SMTPSA id 61680236;
+	Mon, 27 Oct 2025 03:18:37 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+	s=mail; t=1761531517;
+	bh=0CPmrnJL35JfeSwF9I2tzAzFRtMEjte+93fbLG7UNU0=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=O+hjqnVXDi8L+biq5hrxrkwgQ7iKXFsSi2wbLCLPUZ6/HtkYFWa3AS1AvSksK1ldJ
+	 f7HZcdQYnaDiNFVUc68KRRLeQ5ifXosnR1K0icoUFGQYIOqG9xYuz/NIcUYPTJhLdz
+	 eV7XunXdJF65K/cWOBRNefdvLPo/1oKm4mYxTPT8=
+Date: Mon, 27 Oct 2025 04:20:10 +0200
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Frank Li <Frank.Li@nxp.com>
+Cc: Rui Miguel Silva <rmfrfs@gmail.com>,
+	Martin Kepplinger <martink@posteo.de>,
+	Purism Kernel Team <kernel@puri.sm>,
+	Mauro Carvalho Chehab <mchehab@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Eugen Hristev <eugen.hristev@linaro.org>,
+	Shawn Guo <shawnguo@kernel.org>,
+	Sascha Hauer <s.hauer@pengutronix.de>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>, Peng Fan <peng.fan@nxp.com>,
+	Alice Yuan <alice.yuan@nxp.com>, Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>, Rabeeh Khoury <rabeeh@solid-run.com>,
-	Yazan Shhady <yazan.shhady@solid-run.com>,
-	Mikhail Anikin <mikhail.anikin@solid-run.com>,
-	Jon Nettleton <jon@solid-run.com>
-Subject: Re: phy: marvell: phy-mvebu-cp110-comphy: link failure and lockup
- built as module (=M)
-Message-ID: <e5fd6b91-be1f-4d0d-86c1-9dc1713873d4@lunn.ch>
-References: <43918f90-9bcb-4838-9328-8f06a8693681@solid-run.com>
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Steve Longerbeam <slongerbeam@gmail.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, imx@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+	linux-staging@lists.linux.dev
+Subject: Re: [PATCH v3 12/31] media: staging: media: imx6-mipi-csi2: move sd
+ imx6's specific initialization into imx6-sci2.c
+Message-ID: <20251027022010.GW13023@pendragon.ideasonboard.com>
+References: <20250821-95_cam-v3-0-c9286fbb34b9@nxp.com>
+ <20250821-95_cam-v3-12-c9286fbb34b9@nxp.com>
+ <20251027014448.GV13023@pendragon.ideasonboard.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <43918f90-9bcb-4838-9328-8f06a8693681@solid-run.com>
+In-Reply-To: <20251027014448.GV13023@pendragon.ideasonboard.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251026_190641_965375_86592CB1 
-X-CRM114-Status: GOOD (  19.36  )
+X-CRM114-CacheID: sfid-20251026_192029_079397_7664E74A 
+X-CRM114-Status: GOOD (  30.14  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,66 +88,164 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, Oct 25, 2025 at 12:45:52PM +0000, Josua Mayer wrote:
-> Dear Maintainers,
+On Mon, Oct 27, 2025 at 03:44:49AM +0200, Laurent Pinchart wrote:
+> On Thu, Aug 21, 2025 at 04:15:47PM -0400, Frank Li wrote:
+> > Move imx6's specific sd's owner, name, csi2_internal_ops, grp_id into
 > 
-> I came across a bug srelating to cp110 comphy driver.
+> grp_id needs to go. It's specific to the i.MX6 IPUv3 framework, and is
+> the main part hindering splitting the CSI-2 receiver driver from the
+> rest of the code.
 > 
-> On a board with CN9130 SoC + 2 external CPs Debian 13 freezes during boot,
-> at some point after initramfs and kernel module loading has started.
-> 
-> This occurs only when a pci card is present and had link-up from u-boot, e.g.:
-> 
-> PCIE-0: Link up (Gen3-x4, Bus0)
-> PCIE-12: Link up (Gen3-x1, Bus12)
-> 
-> The issue is reproducible with a generic rootfs, kernel built with arm64 defconfig,
-> no initramfs, but a single kernel configuration change:
-> 
-> CONFIG_PHY_MVEBU_CP110_COMPHY=y -> m
-> 
-> i.e. building the comphy driver as a module.
-> 
-> The problem shows up usually by the console freezing during boot,
-> before eventually the system watchdog hard resets SoC.
+> > imx6-sci2.c.
+> > 
+> > Signed-off-by: Frank Li <Frank.Li@nxp.com>
+> > ---
+> >  drivers/staging/media/imx/imx6-csi2.c      | 23 +++++++++++++++++++++++
+> >  drivers/staging/media/imx/imx6-mipi-csi2.c | 29 ++++++-----------------------
+> >  include/media/dw-mipi-csi2.h               |  4 ++++
+> >  3 files changed, 33 insertions(+), 23 deletions(-)
+> > 
+> > diff --git a/drivers/staging/media/imx/imx6-csi2.c b/drivers/staging/media/imx/imx6-csi2.c
+> > index 72eff685fad99b3def46cf2866565191b7de9a8b..66274d8d73b67b35682bb82a9eb745bb24da7ae4 100644
+> > --- a/drivers/staging/media/imx/imx6-csi2.c
+> > +++ b/drivers/staging/media/imx/imx6-csi2.c
+> > @@ -19,6 +19,29 @@ struct imx6_csi2 {
+> >  	struct dw_mipi_csi2_dev dw;
+> >  };
+> >  
+> > +static int csi2_registered(struct v4l2_subdev *sd)
+> > +{
+> > +	struct dw_mipi_csi2_dev *csi2 = sd_to_dw_mipi_csi2_dev(sd);
+> > +
+> > +	/* set a default mbus format  */
+> > +	return imx_media_init_mbus_fmt(&csi2->format_mbus,
+> > +				      IMX_MEDIA_DEF_PIX_WIDTH,
+> > +				      IMX_MEDIA_DEF_PIX_HEIGHT, 0,
+> > +				      V4L2_FIELD_NONE, NULL);
+> > +}
+> > +
+> > +static const struct v4l2_subdev_internal_ops csi2_internal_ops = {
+> > +	.init_state = imx_media_init_state,
+> > +	.registered = csi2_registered,
 
-Do you know at what point the comphy driver module is loaded?
+Also, these two operations should be handled by the new driver. The imx6
+media framework has a set of helper functions to handle initialization
+of formats, with data structures shared between drivers. It's fine
+duplicating some of the code, with a copy of the required data in the
+new driver. It will be a good opportunity to both avoid historical
+mistake with the new code (for instance, imx_media_init_state() should
+really not be implemented as a wrapper around get subdev get_fmt
+operation), and to remove code from the shared helpers that is
+CSI-2-specific, if any.
 
-Do you get the same behaviour if the comphy module is not built/not
-available?
+> > +};
+> > +
+> > +static const struct dw_mipi_csi2_config imx6_config = {
+> > +	.module = THIS_MODULE,
+> > +	.name = "imx6-mipi-csi2",
+> > +	.internal_ops = &csi2_internal_ops,
+> > +	.grp_id = IMX_MEDIA_GRP_ID_CSI2,
+> > +};
+> > +
+> >  static int csi2_probe(struct platform_device *pdev)
+> >  {
+> >  	struct imx6_csi2 *csi2;
+> > diff --git a/drivers/staging/media/imx/imx6-mipi-csi2.c b/drivers/staging/media/imx/imx6-mipi-csi2.c
+> > index b5911a37972be868e10c115ada1910fa04b2765c..ff06a739b957b305625d145c04c06999d0c13cae 100644
+> > --- a/drivers/staging/media/imx/imx6-mipi-csi2.c
+> > +++ b/drivers/staging/media/imx/imx6-mipi-csi2.c
+> > @@ -15,11 +15,11 @@
+> >  #include <linux/platform_device.h>
+> >  #include <media/dw-mipi-csi2.h>
+> >  #include <media/v4l2-common.h>
+> > +#include <media/v4l2-ctrls.h>
+> >  #include <media/v4l2-device.h>
+> >  #include <media/v4l2-fwnode.h>
+> >  #include <media/v4l2-mc.h>
+> >  #include <media/v4l2-subdev.h>
+> > -#include "imx-media.h"
+> >  
+> >  /*
+> >   * The default maximum bit-rate per lane in Mbps, if the
+> > @@ -44,8 +44,6 @@ struct dw_csi2_regs {
+> >  	u32	phy_tst_ctrl1;
+> >  };
+> >  
+> > -#define DEVICE_NAME "imx6-mipi-csi2"
+> > -
+> >  /* Help check wrong access unexisted register at difference IP version */
+> >  #define DW_REG_EXIST		0x80000000
+> >  #define DW_REG(x)		(DW_REG_EXIST | (x))
+> > @@ -544,17 +542,6 @@ static int csi2_set_fmt(struct v4l2_subdev *sd,
+> >  	return 0;
+> >  }
+> >  
+> > -static int csi2_registered(struct v4l2_subdev *sd)
+> > -{
+> > -	struct dw_mipi_csi2_dev *csi2 = sd_to_dev(sd);
+> > -
+> > -	/* set a default mbus format  */
+> > -	return imx_media_init_mbus_fmt(&csi2->format_mbus,
+> > -				      IMX_MEDIA_DEF_PIX_WIDTH,
+> > -				      IMX_MEDIA_DEF_PIX_HEIGHT, 0,
+> > -				      V4L2_FIELD_NONE, NULL);
+> > -}
+> > -
+> >  /* --------------- CORE OPS --------------- */
+> >  
+> >  static int csi2_log_status(struct v4l2_subdev *sd)
+> > @@ -605,11 +592,6 @@ static const struct v4l2_subdev_ops csi2_subdev_ops = {
+> >  	.pad = &csi2_pad_ops,
+> >  };
+> >  
+> > -static const struct v4l2_subdev_internal_ops csi2_internal_ops = {
+> > -	.init_state = imx_media_init_state,
+> > -	.registered = csi2_registered,
+> > -};
+> > -
+> >  static int csi2_notify_bound(struct v4l2_async_notifier *notifier,
+> >  			     struct v4l2_subdev *sd,
+> >  			     struct v4l2_async_connection *asd)
+> > @@ -709,14 +691,15 @@ int dw_mipi_csi2_init(struct platform_device *pdev, struct dw_mipi_csi2_dev *csi
+> >  	csi2->regs = &dw_csi2_v0;
+> >  	v4l2_subdev_init(&csi2->sd, &csi2_subdev_ops);
+> >  	v4l2_set_subdevdata(&csi2->sd, &pdev->dev);
+> > -	csi2->sd.internal_ops = &csi2_internal_ops;
+> >  	csi2->sd.entity.ops = &csi2_entity_ops;
+> >  	csi2->sd.dev = &pdev->dev;
+> > -	csi2->sd.owner = THIS_MODULE;
+> >  	csi2->sd.flags = V4L2_SUBDEV_FL_HAS_DEVNODE;
+> > -	strscpy(csi2->sd.name, DEVICE_NAME, sizeof(csi2->sd.name));
+> >  	csi2->sd.entity.function = MEDIA_ENT_F_VID_IF_BRIDGE;
+> > -	csi2->sd.grp_id = IMX_MEDIA_GRP_ID_CSI2;
+> > +
+> > +	csi2->sd.owner = config->module;
+> > +	strscpy(csi2->sd.name, config->name, sizeof(csi2->sd.name));
+> > +	csi2->sd.internal_ops = config->internal_ops;
+> > +	csi2->sd.grp_id = config->grp_id;
+> >  
+> >  	for (i = 0; i < CSI2_NUM_PADS; i++) {
+> >  		csi2->pad[i].flags = (i == CSI2_SINK_PAD) ?
+> > diff --git a/include/media/dw-mipi-csi2.h b/include/media/dw-mipi-csi2.h
+> > index 4e656f09c81db9dc9f232ed061f70803a5478c85..dfd25e23ea93fd53b064471b6a9557ef9c070fe7 100644
+> > --- a/include/media/dw-mipi-csi2.h
+> > +++ b/include/media/dw-mipi-csi2.h
+> > @@ -10,6 +10,10 @@
+> >  #include <media/v4l2-subdev.h>
+> >  
+> >  struct dw_mipi_csi2_config {
+> > +	struct module *module;
+> > +	const char *name;
+> > +	int grp_id;
+> > +	const struct v4l2_subdev_internal_ops *internal_ops;
+> >  };
+> >  
+> >  /*
 
-I _guess_ that there is some missing EPROBE_DEFER code. It could be
-when the PCIE code tries to get the PHY and fails, it just keeps
-going, when in fact it needs to return EPROBE_DEFER, so that the core
-will try again later, once the module has been loaded.
+-- 
+Regards,
 
-Actually
-
-static int armada8k_pcie_setup_phys(struct armada8k_pcie *pcie)
-{
-        struct dw_pcie *pci = pcie->pci;
-        struct device *dev = pci->dev;
-        struct device_node *node = dev->of_node;
-        int ret = 0;
-        int i;
-
-        for (i = 0; i < ARMADA8K_PCIE_MAX_LANES; i++) {
-                pcie->phy[i] = devm_of_phy_get_by_index(dev, node, i);
-                if (IS_ERR(pcie->phy[i])) {
-                        if (PTR_ERR(pcie->phy[i]) != -ENODEV)
-                                return PTR_ERR(pcie->phy[i]);
-
-                        pcie->phy[i] = NULL;
-                        continue;
-                }
-
-                pcie->phy_count++;
-        }
-
-Do you see devm_of_phy_get_by_index() return -ENODEV? If i'm reading
-this code correctly, it will just continue without the PHY.
-
-	Andrew
+Laurent Pinchart
 
 -- 
 linux-phy mailing list
