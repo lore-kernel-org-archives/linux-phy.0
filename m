@@ -4,121 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5888CCCF9E5
-	for <linux-phy@archiver.kernel.org>; Mon, 27 Oct 2025 01:50:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8F22ECCF9E5
+	for <linux-phy@archiver.kernel.org>; Mon, 27 Oct 2025 02:06:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1aaWCKogknEC7hQthK7Q+qa8Tg1fYnptkvjavH+PQbk=; b=aVzdtwakTFXeiy
-	5hUAMig5/Uo55yMcFtIvDy/zK7Xb8I0tSdwSz0s2zTk8rPCy8TDpRvEhRTvTW/ZAnWtuvWf8gOqhE
-	rloS2KJYphdB5qyDF+fY0696bTfngEFWqDuNAI7elbxV51C5eKblg2ObWJf0F0L3Y1wznK6SCtaDc
-	QqfLJvQLuoJigqOh7aU9AWE2bYT2R2/oZUr4NEGy1HpKel2//lruazuxvJmTc13VjFJTLiZPVh+9/
-	H031/Upb0Dm/JHQNkgOTB3zFD0AJ7Z5uE4aYNDfy6meQ6uQ3/lBY8xo94NKanWcT/pk1qYz53j47Z
-	4l7lYgYsl7TQdBdw4nHg==;
+	List-Owner; bh=AIz5DaywnvVMDCo9M5S+hRLZ7aumi779FNJAbQo1RaA=; b=Pj+06NlwecjTs/
+	cQmDmpFVIRyIIYSGsqurfpQd5UcRKdxJIl1h1a/t5TmgKITq7C3qUWtS4elGP/1Nnkj1tMKFvzd8c
+	vPvIZwwgrTDQiBEjO2/S2r/j71Hiy+9KFDwZwavJ38oE9u3Zac67QwtELCUskPHnMw0sx6hygglCR
+	8RKuIMY+/UKXlf23OMYLn14Wb2wnBxNhKYsIAb6Jze1rOfClAazvFLmgp81/9OuUZGI44OPQsfP4M
+	Vpx9MEk8SKRyMfQUARs5Y/cMBfVBrJyQIpuLlpkjF1ut8tBLhJuZUPvAkJtQgOPODo+j1qrGadOZ8
+	PyXy/yKM2DkedjVr0Ewg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDCNQ-0000000CykF-0Um8;
-	Mon, 27 Oct 2025 01:50:28 +0000
-Received: from mgamail.intel.com ([192.198.163.17])
+	id 1vDCdA-0000000D09I-0OqF;
+	Mon, 27 Oct 2025 02:06:44 +0000
+Received: from vps0.lunn.ch ([156.67.10.101])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDCNN-0000000CyjW-1rom;
-	Mon, 27 Oct 2025 01:50:26 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1761529825; x=1793065825;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=T3pkaI/GJuOsGFoVg5/R4SNriMbvV6bNB454qQaWZQ8=;
-  b=SFY3HsTqY2Ry2NQd3zO0yKdoJsln+nTLaiUb4zzF60W8D3fRq3fTXODw
-   vIBdycM9zJwvlhYvqOcGxcNv44Wqhmf9fou4m9uCosnAOkm6KckOTJUSi
-   nkN927iyFhYV3TRCynZEFAVQPkqrYSO/6TtlB7mDEjtvQ1U9lSgvnIdzd
-   XwnRRWL2OjwRSPQ87xHjhLVEbaRdYK45rUr66pRQNTdKsHayxukAQ/5wc
-   dIM67bUNf8kclm4K6Kwww5CDKvMH3gHlYXHgnPehlNFFU8HvWh+phtlbm
-   QuCapYO8U12dwTIYM86QRSxqOuwZLqOC3cCInr5Mx/LWbufk48meZkVPf
-   w==;
-X-CSE-ConnectionGUID: EjNrAoT2QeimWbddKFblBA==
-X-CSE-MsgGUID: tgzsK907Tp6tcdrer8j7Zw==
-X-IronPort-AV: E=McAfee;i="6800,10657,11586"; a="63512777"
-X-IronPort-AV: E=Sophos;i="6.19,257,1754982000"; 
-   d="scan'208";a="63512777"
-Received: from orviesa003.jf.intel.com ([10.64.159.143])
-  by fmvoesa111.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 26 Oct 2025 18:50:23 -0700
-X-CSE-ConnectionGUID: RqD3PVgcSpO3hdFc8HdBsw==
-X-CSE-MsgGUID: bAZX7S5kQLGkCNKy4yStdQ==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.19,257,1754982000"; 
-   d="scan'208";a="188967609"
-Received: from yilunxu-optiplex-7050.sh.intel.com (HELO localhost) ([10.239.159.165])
-  by orviesa003.jf.intel.com with ESMTP; 26 Oct 2025 18:50:09 -0700
-Date: Mon, 27 Oct 2025 09:36:28 +0800
-From: Xu Yilun <yilun.xu@linux.intel.com>
-To: "Rob Herring (Arm)" <robh@kernel.org>
-Cc: Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
-	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	Andrzej Hajda <andrzej.hajda@intel.com>,
-	Robert Foss <rfoss@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Moritz Fischer <mdf@kernel.org>, Xu Yilun <yilun.xu@intel.com>,
-	Bartosz Golaszewski <brgl@bgdev.pl>,
-	Guenter Roeck <linux@roeck-us.net>,
-	Andi Shyti <andi.shyti@kernel.org>,
-	Jonathan Cameron <jic23@kernel.org>,
-	Dmitry Torokhov <dmitry.torokhov@gmail.com>,
-	Georgi Djakov <djakov@kernel.org>,
-	Thomas Gleixner <tglx@linutronix.de>,
-	Joerg Roedel <joro@8bytes.org>,
-	Jassi Brar <jassisinghbrar@gmail.com>,
-	Mauro Carvalho Chehab <mchehab@kernel.org>,
-	Lee Jones <lee@kernel.org>,
-	Miquel Raynal <miquel.raynal@bootlin.com>,
-	Richard Weinberger <richard@nod.at>,
-	Vignesh Raghavendra <vigneshr@ti.com>,
-	Andrew Lunn <andrew+netdev@lunn.ch>,
-	"David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
-	Johannes Berg <johannes@sipsolutions.net>,
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Bjorn Helgaas <bhelgaas@google.com>,
+	id 1vDCd7-0000000D08j-3nvm
+	for linux-phy@lists.infradead.org;
+	Mon, 27 Oct 2025 02:06:43 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+	s=20171124; h=In-Reply-To:Content-Disposition:Content-Type:MIME-Version:
+	References:Message-ID:Subject:Cc:To:From:Date:From:Sender:Reply-To:Subject:
+	Date:Message-ID:To:Cc:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Content-Disposition:In-Reply-To:References;
+	bh=tu+M7M2YF38JiZNC0fahSFfxfFEADGU7uVQ/AZh5caY=; b=UybAvca29K/efssa5m01nE9JZO
+	50t332oIzhW3rJ+6FgUXsLwBv2VTMkLh+7Z8wb+rY4DAZe1Z7w7P5pdVQY5NkHMzGD+kvWg0J1u7x
+	rckJu2zgKx9l0MKUraY0B/EQNpzZIZ1ME4svZP07rtWKdGlyuvHVu+jfe0/2W2TRzSOg=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.94.2)
+	(envelope-from <andrew@lunn.ch>)
+	id 1vDCd5-00C9GW-ST; Mon, 27 Oct 2025 03:06:39 +0100
+Date: Mon, 27 Oct 2025 03:06:39 +0100
+From: Andrew Lunn <andrew@lunn.ch>
+To: Josua Mayer <josua@solid-run.com>
+Cc: "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+	"advaitdhamorikar@gmail.com" <advaitdhamorikar@gmail.com>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Sebastian Reichel <sre@kernel.org>,
-	Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <ukleinek@kernel.org>,
-	Mark Brown <broonie@kernel.org>,
-	Mathieu Poirier <mathieu.poirier@linaro.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Olivia Mackall <olivia@selenic.com>,
-	Herbert Xu <herbert@gondor.apana.org.au>,
-	Daniel Lezcano <daniel.lezcano@linaro.org>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-clk@vger.kernel.org, dri-devel@lists.freedesktop.org,
-	linux-fbdev@vger.kernel.org, dmaengine@vger.kernel.org,
-	linux-fpga@vger.kernel.org, linux-gpio@vger.kernel.org,
-	linux-hwmon@vger.kernel.org, linux-i2c@vger.kernel.org,
-	linux-iio@vger.kernel.org, linux-input@vger.kernel.org,
-	linux-pm@vger.kernel.org, iommu@lists.linux.dev,
-	linux-media@vger.kernel.org, linux-mtd@lists.infradead.org,
-	netdev@vger.kernel.org, linux-wireless@vger.kernel.org,
-	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-pwm@vger.kernel.org, linux-remoteproc@vger.kernel.org,
-	linux-crypto@vger.kernel.org, linux-sound@vger.kernel.org,
-	linux-usb@vger.kernel.org
-Subject: Re: [PATCH] dt-bindings: Remove extra blank lines
-Message-ID: <aP7MnJ8mIlZhT//S@yilunxu-OptiPlex-7050>
-References: <20251023143957.2899600-1-robh@kernel.org>
+	Vinod Koul <vkoul@kernel.org>, Rabeeh Khoury <rabeeh@solid-run.com>,
+	Yazan Shhady <yazan.shhady@solid-run.com>,
+	Mikhail Anikin <mikhail.anikin@solid-run.com>,
+	Jon Nettleton <jon@solid-run.com>
+Subject: Re: phy: marvell: phy-mvebu-cp110-comphy: link failure and lockup
+ built as module (=M)
+Message-ID: <e5fd6b91-be1f-4d0d-86c1-9dc1713873d4@lunn.ch>
+References: <43918f90-9bcb-4838-9328-8f06a8693681@solid-run.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20251023143957.2899600-1-robh@kernel.org>
+In-Reply-To: <43918f90-9bcb-4838-9328-8f06a8693681@solid-run.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251026_185025_528730_3C749A68 
-X-CRM114-Status: UNSURE (   9.24  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20251026_190641_965375_86592CB1 
+X-CRM114-Status: GOOD (  19.36  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -135,18 +74,66 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Oct 23, 2025 at 09:37:56AM -0500, Rob Herring (Arm) wrote:
-> Generally at most 1 blank line is the standard style for DT schema
-> files. Remove the few cases with more than 1 so that the yamllint check
-> for this can be enabled.
+On Sat, Oct 25, 2025 at 12:45:52PM +0000, Josua Mayer wrote:
+> Dear Maintainers,
 > 
-> Signed-off-by: Rob Herring (Arm) <robh@kernel.org>
+> I came across a bug srelating to cp110 comphy driver.
+> 
+> On a board with CN9130 SoC + 2 external CPs Debian 13 freezes during boot,
+> at some point after initramfs and kernel module loading has started.
+> 
+> This occurs only when a pci card is present and had link-up from u-boot, e.g.:
+> 
+> PCIE-0: Link up (Gen3-x4, Bus0)
+> PCIE-12: Link up (Gen3-x1, Bus12)
+> 
+> The issue is reproducible with a generic rootfs, kernel built with arm64 defconfig,
+> no initramfs, but a single kernel configuration change:
+> 
+> CONFIG_PHY_MVEBU_CP110_COMPHY=y -> m
+> 
+> i.e. building the comphy driver as a module.
+> 
+> The problem shows up usually by the console freezing during boot,
+> before eventually the system watchdog hard resets SoC.
 
-[...]
+Do you know at what point the comphy driver module is loaded?
 
->  Documentation/devicetree/bindings/fpga/fpga-region.yaml      | 5 -----
+Do you get the same behaviour if the comphy module is not built/not
+available?
 
-Acked-by: Xu Yilun <yilun.xu@intel.com>
+I _guess_ that there is some missing EPROBE_DEFER code. It could be
+when the PCIE code tries to get the PHY and fails, it just keeps
+going, when in fact it needs to return EPROBE_DEFER, so that the core
+will try again later, once the module has been loaded.
+
+Actually
+
+static int armada8k_pcie_setup_phys(struct armada8k_pcie *pcie)
+{
+        struct dw_pcie *pci = pcie->pci;
+        struct device *dev = pci->dev;
+        struct device_node *node = dev->of_node;
+        int ret = 0;
+        int i;
+
+        for (i = 0; i < ARMADA8K_PCIE_MAX_LANES; i++) {
+                pcie->phy[i] = devm_of_phy_get_by_index(dev, node, i);
+                if (IS_ERR(pcie->phy[i])) {
+                        if (PTR_ERR(pcie->phy[i]) != -ENODEV)
+                                return PTR_ERR(pcie->phy[i]);
+
+                        pcie->phy[i] = NULL;
+                        continue;
+                }
+
+                pcie->phy_count++;
+        }
+
+Do you see devm_of_phy_get_by_index() return -ENODEV? If i'm reading
+this code correctly, it will just continue without the PHY.
+
+	Andrew
 
 -- 
 linux-phy mailing list
