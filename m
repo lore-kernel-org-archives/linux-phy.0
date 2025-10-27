@@ -4,77 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E7571CCF9E5
-	for <linux-phy@archiver.kernel.org>; Sun, 26 Oct 2025 22:25:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C58E3CCF9E9
+	for <linux-phy@archiver.kernel.org>; Mon, 27 Oct 2025 01:19:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=F2C5GR6EiR8mAZ1tJQGER6FYVFspmF6ekhj9xn3eDqY=; b=NNODIpo03J0J1zNGEB5irKezW3
-	IcIC0EhSIDl9q34Vj4zlVm4iNgcsZUajG2scdXwWgQVXx4ZrTThrZj9iKfr67+QTtwEgn+bLnajXo
-	zqpreQJ7c5osF/4uSOwqk54ZBtTA3y39ECnJTogbOyXcIIx3e2ZDy8zQcVMFfZa8CvuioR1fZ2Hr/
-	9B9jmx3u2e1xj3Ep9zZEeZWkMsOEoNkS6KhtYXn4kowXH9m1ahxG8sBAQa9kKJlMGsuh41G/59gqw
-	iCF9WNK6VAM4eiWUEB9olIpW8Bsnzv05nR3vYlq+BcAqjhS2lgeTT91HAB5PJCtaldol7U/2qrTvn
-	2TwnVmAw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JTgj3Pr+p2u1H650xNBVTH9dzDE35uaTcUE5WNOg77c=; b=WozSSkXIpvC4Ou
+	7FPHmoih3YcEsK6yRX6jxl9WzyMAu7BG/rjfNmaF9sGBhEqdg+a6rT0cluTXLv7ym/efvmven17ix
+	N6mch7beicOrfJLp11edi7HJuJTP9f81i/Sx71u6zfbtqVA7U+q3RLu7QzAG1KWbA3HNvejRGGHxq
+	HaklYOy4ZwgMk9VgoLINwkTThdJ41IFpDY1gzezJcZaFLJwgEznhtC/86/iRnaOQGqYENILFTwPbE
+	frRoNNZ0d2p0UY0aunMGTBjblY+Q73tU10V2sJ+H5SfEFiYm6UuoUzAQ7XaP1y6iIe5m5JOP/Pzt+
+	uJVWtnxvnBjAf3n62ueQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vD9BT-0000000CoUr-28SN;
-	Sun, 26 Oct 2025 22:25:55 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vDBti-0000000CwR3-1SrP;
+	Mon, 27 Oct 2025 01:19:46 +0000
+Received: from perceval.ideasonboard.com ([213.167.242.64])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vD9BR-0000000CoTx-1LyE;
-	Sun, 26 Oct 2025 22:25:53 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 6B0DA60330;
-	Sun, 26 Oct 2025 22:25:52 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 49624C4CEE7;
-	Sun, 26 Oct 2025 22:25:47 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1761517552;
-	bh=YcfVCtLK/W1LvoMvGvygXNzNh0vRWUm1hNpESZXkvZk=;
+	id 1vDBte-0000000CwQE-41fd;
+	Mon, 27 Oct 2025 01:19:44 +0000
+Received: from pendragon.ideasonboard.com (82-203-161-16.bb.dnainternet.fi [82.203.161.16])
+	by perceval.ideasonboard.com (Postfix) with UTF8SMTPSA id 8594D14A6;
+	Mon, 27 Oct 2025 02:17:53 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+	s=mail; t=1761527873;
+	bh=FS+KlOZTayfUweHo35RYfizlXiiTS/dCMqOAye4j6/s=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=X55sznBAWggJ/HDGIZ6dcBSXLmlm8wZtp4v11We2/RanthjNuuSqrLXxB3D6+dJjG
-	 KWLdA/u217zShuCi99Na37WPbV+mGEk3vLOm7l2lwkobjD01Ue0VTeVaSkehFWCkFY
-	 VIsVUB+J5nn8qynVBOGW4T94+24+ocYVV67OfpVpp8MZvBE9yBuq90LCEBwr8dCLPS
-	 54mHUndnVBWYO4DsnbhAUNwGBuMydDoQLLoD/wxo//W+p4+51f+YoNswBdb0VumVAz
-	 faYPxFUmixtcIAAjpcJMrs7xJr5oYeDft/J4naku8wTQTYHiSwYYy3gBXnRTXFElR6
-	 3f/UL93sKp2tQ==
-Date: Sun, 26 Oct 2025 22:25:44 +0000
-From: Conor Dooley <conor@kernel.org>
-To: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-Cc: Alim Akhtar <alim.akhtar@samsung.com>,
-	Avri Altman <avri.altman@wdc.com>,
-	Bart Van Assche <bvanassche@acm.org>, Rob Herring <robh@kernel.org>,
+	b=cSr4M6GXYmVqXJ9DNbAIsvskO1G8IzD4w5TqPONHF5q/NBWj+wASYuTLdhVHb38C2
+	 7YKeykbbg0p9Y3WWXgQjfVYQejOJXz1HsTyGjxy1DTjXtadyc/uwMysXRqBDDPCp/p
+	 1q1pdqj5EsuYsjtJ1H0vlJ1rVgpwGLaEfTbbQTHY=
+Date: Mon, 27 Oct 2025 03:19:27 +0200
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Frank Li <Frank.Li@nxp.com>
+Cc: Rui Miguel Silva <rmfrfs@gmail.com>,
+	Martin Kepplinger <martink@posteo.de>,
+	Purism Kernel Team <kernel@puri.sm>,
+	Mauro Carvalho Chehab <mchehab@kernel.org>,
+	Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
 	Conor Dooley <conor+dt@kernel.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Chunfeng Yun <chunfeng.yun@mediatek.com>,
-	Vinod Koul <vkoul@kernel.org>,
+	Eugen Hristev <eugen.hristev@linaro.org>,
+	Shawn Guo <shawnguo@kernel.org>,
+	Sascha Hauer <s.hauer@pengutronix.de>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>, Peng Fan <peng.fan@nxp.com>,
+	Alice Yuan <alice.yuan@nxp.com>, Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Peter Wang <peter.wang@mediatek.com>,
-	Stanley Jhu <chu.stanley@gmail.com>,
-	"James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
-	"Martin K. Petersen" <martin.petersen@oracle.com>,
 	Philipp Zabel <p.zabel@pengutronix.de>,
-	Liam Girdwood <lgirdwood@gmail.com>,
-	Mark Brown <broonie@kernel.org>,
-	Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>,
-	kernel@collabora.com, linux-scsi@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH v3 03/24] dt-bindings: ufs: mediatek,ufs: Add mt8196
- variant
-Message-ID: <20251026-these-wise-9b5e63c78907@spud>
-References: <20251023-mt8196-ufs-v3-0-0f04b4a795ff@collabora.com>
- <20251023-mt8196-ufs-v3-3-0f04b4a795ff@collabora.com>
- <20251024-thrash-amid-d5af186c4319@spud>
- <5617400.31r3eYUQgx@workhorse>
+	Steve Longerbeam <slongerbeam@gmail.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, imx@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+	linux-staging@lists.linux.dev
+Subject: Re: [PATCH v3 02/31] media: v4l2-common: Add helper function
+ v4l_get_required_align_by_bpp()
+Message-ID: <20251027011927.GS13023@pendragon.ideasonboard.com>
+References: <20250821-95_cam-v3-0-c9286fbb34b9@nxp.com>
+ <20250821-95_cam-v3-2-c9286fbb34b9@nxp.com>
 MIME-Version: 1.0
-In-Reply-To: <5617400.31r3eYUQgx@workhorse>
+Content-Disposition: inline
+In-Reply-To: <20250821-95_cam-v3-2-c9286fbb34b9@nxp.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20251026_181943_140100_A7A3A9E7 
+X-CRM114-Status: GOOD (  25.77  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,117 +82,106 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0673911706870751440=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Thu, Aug 21, 2025 at 04:15:37PM -0400, Frank Li wrote:
+> Add helper v4l_get_required_align_by_bpp() to help get width alignment
+> requirement. Basic replace below logic and enhance to any 2^[0..31] in
+> drivers/media/platform/nxp/imx-mipi-csis.c
+> 
+> mipi_csis_set_fmt(
+> {
+>         ...
+> 
+>         switch (csis_fmt->width % 8) {
+>         case 0:
+>                 align = 0;
+>                 break;
+>         case 4:
+>                 align = 1;
+>                 break;
+>         case 2:
+>         case 6:
+>                 align = 2;
+>                 break;
+>         default:
+>                 /* 1, 3, 5, 7 */
+>                 align = 3;
+>                 break;
+>         }
+> 	...
+> }
+> 
+> Signed-off-by: Frank Li <Frank.Li@nxp.com>
+> ---
+> The same patch will be see at https://lore.kernel.org/imx/20250729-imx8qxp_pcam-v4-2-4dfca4ed2f87@nxp.com/
+> dw csi2 patch also this
+> ---
+>  include/media/v4l2-common.h | 30 ++++++++++++++++++++++++++++++
+>  1 file changed, 30 insertions(+)
+> 
+> diff --git a/include/media/v4l2-common.h b/include/media/v4l2-common.h
+> index 39dd0c78d70f7b935c2e10f9767646d2cedd3079..0a9da5e8daaddf26903d9ff4bed08b283dcd38b2 100644
+> --- a/include/media/v4l2-common.h
+> +++ b/include/media/v4l2-common.h
+> @@ -704,4 +704,34 @@ static inline bool v4l2_is_quant_valid(__u8 quantization)
+>  	       quantization == V4L2_QUANTIZATION_LIM_RANGE;
+>  }
+>  
+> +/**
+> + * v4l_get_required_align_by_bpp - get align requirement for
+> + *	v4l_bound_align_image(). (bpp * width) % (1 << align) have to be 0.
+> + *	given number bpp, get width's alignment requirement. For example,
+> + *	if align is 3, means require bpp * width must be multiples of 8.
+> + *	    bpp     return  width's requirememnt
+> + *	    0       0       none
+> + *	    1       3       8 (need 3 zero bits)
+> + *	    2       2       4
+> + *	    3       3       8
+> + *	    4       1       2
+> + *	    5       3       8
+> + *	    6       2       4
+> + *	    7       3       8
 
---===============0673911706870751440==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="LhPY1uIXOXYzwQC0"
-Content-Disposition: inline
+This is supposed to be a brief one-line description. The rest of the
+documentation goes after the argument.
 
+Also, have checked the formatting of the generated documentation ?
 
---LhPY1uIXOXYzwQC0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+> + * @bpp: input bpp
 
-On Fri, Oct 24, 2025 at 07:51:11PM +0200, Nicolas Frattaroli wrote:
-> On Friday, 24 October 2025 19:13:36 Central European Summer Time Conor Do=
-oley wrote:
-> > On Thu, Oct 23, 2025 at 09:49:21PM +0200, Nicolas Frattaroli wrote:
-> >=20
-> > >      };
-> > > +  - |
-> > > +    #include <dt-bindings/reset/mediatek,mt8196-resets.h>
-> > > +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> > > +
-> > > +    ufshci@16810000 {
-> > > +        compatible =3D "mediatek,mt8196-ufshci";
-> > > +        reg =3D <0x16810000 0x2a00>;
-> > > +        interrupts =3D <GIC_SPI 320 IRQ_TYPE_LEVEL_HIGH>;
-> > > +
-> > > +        clocks =3D <&ufs_ao_clk 6>,
-> > > +                 <&ufs_ao_clk 7>,
-> > > +                 <&clk26m>,
-> > > +                 <&ufs_ao_clk 3>,
-> > > +                 <&clk26m>,
-> > > +                 <&ufs_ao_clk 4>,
-> > > +                 <&ufs_ao_clk 0>,
-> > > +                 <&topckgen 7>,
-> > > +                 <&topckgen 41>,
-> > > +                 <&topckgen 105>,
-> > > +                 <&topckgen 83>,
-> > > +                 <&ufs_ao_clk 1>,
-> > > +                 <&ufs_ao_clk 2>,
-> > > +                 <&topckgen 42>,
-> > > +                 <&topckgen 84>,
-> > > +                 <&topckgen 102>;
-> >=20
-> > This is absolutely a nitpick thing, but if you end up resubmitting, can
-> > you pick a consistent format between the two examples your series adds
-> > for the clocks/clock names?
->=20
-> No problem, will do. IIRC I kept them as a list like this so I could
-> easily reorder things, but now that I'm fairly sure this order is the
-> correct one, it's probably best to make this more compact.
->=20
-> Also sorry for the numbers as clock IDs, but MediaTek clock headers
-> have conflicting symbols and the dt schema example extractor dumps
-> all examples into one dts file. :(
+I have no idea if this is a bits per pixel or bytes per pixel value. I'm
+actually not sure what the function is even supposed to do. It feels
+it's really a ad-hoc helper, I would like to see it being used in
+multiple drivers to see if it makes sense.
 
-Numbers is fine, dw about that.
+> + * @align: expected alignment, 2^(align).
+> + *
+> + * return: required alignment.
+> + */
+> +static inline u32 v4l_get_required_align_by_bpp(u32 bpp, u32 align)
+> +{
+> +	int pos;
+> +
+> +	if (bpp == 0)
+> +		return 0;
+> +
+> +	pos = ffs(bpp) - 1;
+> +	return pos > align ? 0 : align - pos;
+> +}
+> +
+>  #endif /* V4L2_COMMON_H_ */
+> 
 
-> Since this has bugged me in the past, and many schemas may rely on
-> the concat behaviour now: would a patch in the distant future that
-> prefixes all MediaTek clock binding headers with the SoC name be
-> acceptable if it keeps the old names intact as aliases to them with
-> a #ifndef guard?
+-- 
+Regards,
 
-Honestly, I don't think it's that big of a deal to use the numbers,
-they're only examples after all (even if for soc-peripherals they're
-almost always exactly what is used in reality).
-
-What you do with aliases is really up to the mediatek platform
-maintainers, but I think if it were my platform I would just not bother.
-
-> I should also think about some way we can avoid similar bindings
-> symbol naming mishaps in the future.
->=20
-> Thank you for pointing me in the right direction with regards to
-> the binding!
->=20
-> Kind regards,
-> Nicolas Frattaroli
->=20
-> > Reviewed-by: Conor Dooley <conor.dooley@microchip.com>
-> > pw-bot: not-applicable
-
---LhPY1uIXOXYzwQC0
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaP6f6AAKCRB4tDGHoIJi
-0lVoAQDVEcmFlZDGe0sLSSI/vhJc1fCDdip8vWj9q3rZ4BUI+gEAyI4wOcjukunf
-BlHSEe6kYAuozj/qCFBWrR+C47CjOwk=
-=xrOe
------END PGP SIGNATURE-----
-
---LhPY1uIXOXYzwQC0--
-
-
---===============0673911706870751440==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Laurent Pinchart
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============0673911706870751440==--
-
