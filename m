@@ -4,118 +4,102 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 71423CCF9E0
-	for <linux-phy@archiver.kernel.org>; Mon, 27 Oct 2025 08:25:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0DC8CCCF9EA
+	for <linux-phy@archiver.kernel.org>; Mon, 27 Oct 2025 08:31:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Al8sMYVYyv5I3W++FsHC1o2Ug1RiJWsYE5dx9c+XzKc=; b=bxD/thM69RgdE6
-	/6Gz4dcXnamiOasaj2odvkMg66ayXVu/44gM4H8rRW8pXsJdRhnVmiBiVHei/DN/O9fQlMOH8Bc18
-	3aGyo3+yUS57my6livu182fbTGZozuOMiT0x2Fzjxk4G0cPHakp+XNhDh8Qr+jKIt6QkMjlfiF6zp
-	mixNHQegjM1MYqOlwn9YqISRyvL1skZzANEtmy1QFCm/EP5TT3FVS/A/1rsT0VAq90RqeKQ3BghYQ
-	3an/isfjPP1JHAcQcVd9Fyam7C7cZXJ5EPEXQUgL+XmjzWSkLTjQSr6g+TLnr5Q8rFL1Rnyuc2pSJ
-	4vaSVGaY59TLj0MSxN9Q==;
+	List-Owner; bh=JNpnhKmF5w9D9zl0YO2JocSSeIpzwyu5EdCB/dWvutg=; b=DPbERP25Sje7QK
+	GiJ0nNJXTTaHJ/t9P2YvXi0jg7ZT2ogVPyxahuwM4HdNGQj7Q4C9BtrS0NyBcWfBGE0Ge9idg/eya
+	uK2blnaTXz216Le0cS90pY2H7VsQWLcxx6Ix/YbmSzA/1Xyglbq95VjonMeOKCEOWfvQ3hClE32GC
+	awNaPQxluolXLo4PBF8Y35OAP4qcKNZiqe7yJKy6DVAV7G4Up72apf+Y1+ds8+c29qJucc6UIv/Bu
+	HSBMn8F/i84PPj+xpzAEjZ8PzBtgRwPqV38FlQrZ5fuAFM+uHVMI0HCeK8xYKqixniKpn3xfUFuQG
+	6mTye/g8kPJqJtjoHVsg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDIXx-0000000DLUz-4AoO;
-	Mon, 27 Oct 2025 08:25:46 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1vDIde-0000000DLrz-3SW9;
+	Mon, 27 Oct 2025 08:31:39 +0000
+Received: from meesny.iki.fi ([2001:67c:2b0:1c1::201])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDIXv-0000000DLTz-47TZ
-	for linux-phy@lists.infradead.org;
-	Mon, 27 Oct 2025 08:25:45 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 59R7p6KP888691
-	for <linux-phy@lists.infradead.org>; Mon, 27 Oct 2025 08:25:42 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	Rsb5IoKjQNN5TuHEex46Q/ZW+nK+3INVuz35ePkitGI=; b=mfUx5/xtkaV10vGm
-	8STGARjNiwYeRqX0bwBI6nbAxM1A0AsGAuM5ibwEdS3wHqDp56/oQMXN56nSVWMI
-	I6x4oEnzNHDHxrQxp/mpGIBJJFbbr1lpJrzzbJMU4n3MkwmOYorWC05mvEU7NVOp
-	W+BTO0vjq9MDUsCzpAHIGoB8Ee783w59+dU0t5Sq8eaOz1ihkQgkUWKDnjxBy7/S
-	QzQoMbfCxcAiE7xu25oUYgwBv1UqWOMjG0oqBbFj1W1eR8bP9/4lChyZcri5lEwI
-	Bm0elhYmdACDw/b6xCBLRxZZt4ab8gjLOkaHqVudwBJNVzphNAhI+bs1CX5BzWF4
-	9/zZ9Q==
-Received: from mail-qv1-f71.google.com (mail-qv1-f71.google.com [209.85.219.71])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4a0nnb3wmh-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Mon, 27 Oct 2025 08:25:41 +0000 (GMT)
-Received: by mail-qv1-f71.google.com with SMTP id 6a1803df08f44-87c0e043c87so13074246d6.2
-        for <linux-phy@lists.infradead.org>; Mon, 27 Oct 2025 01:25:41 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1761553541; x=1762158341;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=Rsb5IoKjQNN5TuHEex46Q/ZW+nK+3INVuz35ePkitGI=;
-        b=DoXcDxzGbyYBKIxGL4sSp7wOmh3nOI6eBf5YHcl6Ptd/vUa5OdOzI14gUqBDIF3qjE
-         1eLCXwnETYY208tpaIFTEHyrm3AMDg3c/HcOHSGxtQ4IIatVFd4JZ4P//Noqy9ti3On0
-         +PsvrCqUDYCFNJL4FTjUXRJVXy7QdaTEP4/MZq3XCVeGHgguHyz6PYpwxdYe3CgpIJzA
-         VY1gln0xVBn+zDw4fe/WIAF2DqpD6rE+W0UoD8FPyFE8pSRanHApFCeTCBaAdlrcjVLK
-         ARR/bRvSerzQ/Kt926YTwrPw76SVlwxgzu2UqAVKYFE7f8kaRRC6My4tOFwznOZv34PN
-         /1JQ==
-X-Forwarded-Encrypted: i=1; AJvYcCWW7K/oWHuG/03CoDmVl3YoNUlc65oeuaEAa9a4xCEooeQQG7zoZU7WdDc9sd1d3DK9m7k3RNruwKg=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yw6JoSfeIfgetBf95Q5gHj//h2ET3Xrj6zJzfHtaow+ZosgBjty
-	aHKOMpgEWOXF9jpQZn5NYZK/1WJlxkflYdLZPo/jQuen+JfTcv8AcF9u8UHaXLUaaR8N2X/zA6U
-	76+eZ4w3boYJIeZ3e5g7DIUK/QnKWc29kQnvsfJvnWz2zIEyB2+gOHxHYAtm36XVk/Cpy
-X-Gm-Gg: ASbGncvOFnrgAhdLjK7U+npHmAWBzR3DBhrdw7RM9vNPzQOfesAy7EsrmwrIs/lD429
-	cLFs2VKMTHxtJ2sAIJhidu87Hi2cnzz+2usykDcV/CyDEiyf+amPeYV6UzkuGtIf7npM5DPNhRC
-	fXmSnQSg5+2ctCG/LehO2Wd5dVs9bdiXPhI7ANHUauE7s3Y5mT6vmLnL8bCXEay1YPMAU+klfhw
-	3koJSYhpS5QBh+15owW4D6fHTqBWrvUzsix1t0mYZC6SwIGIwmV0fMaZdGRPSuE2Clv1Rlkc9Qb
-	/q6z99zDM/8wLrXzyEksBSPGwW8jFH7/E6OVxbK3LEIoMamlqRyUrtt57MqInXll5Z+gnWrdpzh
-	WSoabjJdQieen7KLs2e6wvbjsRRncb4Jd97yrLP3f+0MFbpmKFri8m5x9
-X-Received: by 2002:a05:6214:f05:b0:81f:3abf:dc1f with SMTP id 6a1803df08f44-87c206aa6f8mr294428536d6.8.1761553540628;
-        Mon, 27 Oct 2025 01:25:40 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IFWO4UfxTU1BX5oTeeqL0Gs4K66cPeHuRqQeCNBm97cuVqGohCsQt/0ok7E7/fOVHrIRAJiJg==
-X-Received: by 2002:a05:6214:f05:b0:81f:3abf:dc1f with SMTP id 6a1803df08f44-87c206aa6f8mr294428506d6.8.1761553540138;
-        Mon, 27 Oct 2025 01:25:40 -0700 (PDT)
-Received: from [192.168.119.202] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-b6d85359c0bsm704420366b.24.2025.10.27.01.25.38
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 27 Oct 2025 01:25:39 -0700 (PDT)
-Message-ID: <daf0055b-7caf-4ace-8a06-071468273a37@oss.qualcomm.com>
-Date: Mon, 27 Oct 2025 09:25:38 +0100
+	id 1vDIda-0000000DLqt-3zsQ;
+	Mon, 27 Oct 2025 08:31:36 +0000
+Received: from hillosipuli.retiisi.eu (91-158-51-183.elisa-laajakaista.fi [91.158.51.183])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: sailus)
+	by meesny.iki.fi (Postfix) with ESMTPSA id 4cw6DG3ZVczyS8;
+	Mon, 27 Oct 2025 10:31:26 +0200 (EET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=iki.fi; s=meesny;
+	t=1761553888;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=0vcpvhF5urzAN7K3wpgk7xwaAxcma2kFDIrKQc/Gknc=;
+	b=SVci1QMIf6DQF3QJGG6IvxwWPCCbeqZpjSffOVgw1knI3OfEpMa+G6gdxdn2Yzy9prXKlg
+	4raZJXlHxv1qKxzaZRr/UGPh/FRPZnDXRB1Vta9BvD/O5DZLotO3ffjLskNvHNu+getjJh
+	xomqgH/huEHMNVf9Xy3nng+mq+sUZeQ=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=iki.fi;
+	s=meesny; t=1761553888;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=0vcpvhF5urzAN7K3wpgk7xwaAxcma2kFDIrKQc/Gknc=;
+	b=OgulRCt6/GZcUbYBPfcrCRPu+lmQT1TxrG7z/LT4wj+NJisiYYy1d/gbKmn+2qOwBGr6wW
+	OIb9jJlAeQSyjfmf3aQEJBs1Y+jimmhzgLgUDp6P4pYpRRQvA14BlF3pZYLcz5qFoH0gjQ
+	9AwvIj8IXmsmpEnxa6Z0rjCPN78fJkk=
+ARC-Authentication-Results: i=1;
+	ORIGINATING;
+	auth=pass smtp.auth=sailus smtp.mailfrom=sakari.ailus@iki.fi
+ARC-Seal: i=1; s=meesny; d=iki.fi; t=1761553888; a=rsa-sha256; cv=none;
+	b=Z6M5vn5d0QQk5z/e5iYJ7DRxmHK4SMNRhbBubBTvj2QrecRm7CrcadKe+bud7GW1yetIvu
+	VFDSbnEv4nI353DHC8Unb92tNPpPiCc/rJ4n2nUdS8IYLhbFQGtWNQWVdA10QP4wlhL4Nm
+	g/G84m8AW/FJogYPDXDBuy7847tmU9o=
+Received: from valkosipuli.retiisi.eu (valkosipuli.local [192.168.4.2])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange secp256r1 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	by hillosipuli.retiisi.eu (Postfix) with ESMTPS id A06EA634C5E;
+	Mon, 27 Oct 2025 10:31:25 +0200 (EET)
+Date: Mon, 27 Oct 2025 10:31:25 +0200
+From: Sakari Ailus <sakari.ailus@iki.fi>
+To: Frank Li <Frank.Li@nxp.com>
+Cc: Rui Miguel Silva <rmfrfs@gmail.com>,
+	Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+	Martin Kepplinger <martink@posteo.de>,
+	Purism Kernel Team <kernel@puri.sm>,
+	Mauro Carvalho Chehab <mchehab@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Eugen Hristev <eugen.hristev@linaro.org>,
+	Shawn Guo <shawnguo@kernel.org>,
+	Sascha Hauer <s.hauer@pengutronix.de>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>, Peng Fan <peng.fan@nxp.com>,
+	Alice Yuan <alice.yuan@nxp.com>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Steve Longerbeam <slongerbeam@gmail.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, imx@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+	linux-staging@lists.linux.dev, Luis Oliveira <lolivei@synopsys.com>
+Subject: Re: [PATCH v3 01/31] dt-bindings: media: add DW MIPI CSI-2 Host
+ support
+Message-ID: <aP8t3YClrZxOnHea@valkosipuli.retiisi.eu>
+References: <20250821-95_cam-v3-0-c9286fbb34b9@nxp.com>
+ <20250821-95_cam-v3-1-c9286fbb34b9@nxp.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] phy: qualcomm: m31-eusb2: Add runtime pm ops
-To: Prashanth K <prashanth.k@oss.qualcomm.com>, Vinod Koul
- <vkoul@kernel.org>,
-        Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        linux-kernel@vger.kernel.org
-References: <20251027062458.1411096-1-prashanth.k@oss.qualcomm.com>
-Content-Language: en-US
-From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <20251027062458.1411096-1-prashanth.k@oss.qualcomm.com>
-X-Proofpoint-GUID: 5TiKVFHcgaA_LebOye5l4sl79QN0nSUa
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDI3MDA3NyBTYWx0ZWRfX9b/JkurliR6/
- gAlYZaJKvCXSO74lyB24ZJkamZvCuVWolNIWGs1VvCJcPvY0HQgL/+h+xQSNnA9ew3S/EW2PAAZ
- U9kB93Nj1o5gm/+zol4Mia32aQ2/1TIcq5cA5v7S4JcI9H9LtObq6dqSQykSna/sVDikF+AmM4D
- Hh/XbAeF95dY8Jts/cExi5ga3KUTO72tIt1mwKOAe9XXJLGybKfcK+zO/jDd477qZYsu1HH6d9+
- FTqAN50kWoophXkWYJybR6+vqnV7PsMts8wRU7Ds5Rq18Pq1HDnnZbrmtl0C6HyJiOzNY1Qt7NQ
- M3zpHbzbd3Ps/M5QFwS/ujNtCcLXnw6PG0FHpv4Epqg4lBcLbNQZsQ6t1AS2JkvBKECbkP2j3H5
- RNeTL/lelNJ+eob/mkMttJJ1Pp4ANw==
-X-Authority-Analysis: v=2.4 cv=AJoZt3K7 c=1 sm=1 tr=0 ts=68ff2c85 cx=c_pps
- a=UgVkIMxJMSkC9lv97toC5g==:117 a=FpWmc02/iXfjRdCD7H54yg==:17
- a=IkcTkHD0fZMA:10 a=x6icFKpwvdMA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=EUspDBNiAAAA:8 a=k3wdqr90-_sLWsnx9DcA:9 a=QEXdDO2ut3YA:10
- a=1HOtulTD9v-eNWfpl4qZ:22
-X-Proofpoint-ORIG-GUID: 5TiKVFHcgaA_LebOye5l4sl79QN0nSUa
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-10-27_04,2025-10-22_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- adultscore=0 impostorscore=0 lowpriorityscore=0 bulkscore=0 spamscore=0
- phishscore=0 suspectscore=0 clxscore=1015 priorityscore=1501 malwarescore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2510020000 definitions=main-2510270077
+Content-Disposition: inline
+In-Reply-To: <20250821-95_cam-v3-1-c9286fbb34b9@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251027_012544_050229_DE86E3A6 
-X-CRM114-Status: GOOD (  13.45  )
+X-CRM114-CacheID: sfid-20251027_013135_178188_D2520D45 
+X-CRM114-Status: GOOD (  20.45  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -132,36 +116,213 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 10/27/25 7:24 AM, Prashanth K wrote:
-> Add runtime power management operation callbacks for M31 EUSB2 PHY.
-> Enable/disable the clocks based on the runtime suspend/resume calls.
+Hei Eugen,
+
+On Thu, Aug 21, 2025 at 04:15:36PM -0400, Frank Li wrote:
+> From: Eugen Hristev <eugen.hristev@linaro.org>
 > 
-> Signed-off-by: Prashanth K <prashanth.k@oss.qualcomm.com>
+> Add bindings for Synopsys DesignWare MIPI CSI-2 host, which used at i.MX93
+> and i.MX95 platform.
+> 
+> Signed-off-by: Luis Oliveira <lolivei@synopsys.com>
+> Signed-off-by: Eugen Hristev <eugen.hristev@linaro.org>
+> Signed-off-by: Frank Li <Frank.Li@nxp.com>
 > ---
-
-[...]
-
->  static int m31eusb2_phy_probe(struct platform_device *pdev)
->  {
->  	struct phy_provider *phy_provider;
-> @@ -270,6 +298,17 @@ static int m31eusb2_phy_probe(struct platform_device *pdev)
->  		return dev_err_probe(dev, PTR_ERR(phy->clk),
->  				     "failed to get clk\n");
->  
-> +	dev_set_drvdata(dev, phy);
-> +	pm_runtime_set_active(dev);
-> +	pm_runtime_enable(dev);
+> Change in v3
+> - drop remote-endpoint: true
+> - drop clock-lanes
+> 
+> Change in v2
+> - remove Eugen Hristev <eugen.hristev@microchip.com> from mantainer.
+> - update ugen Hristev's s-o-b tag to align original author's email address
+> - remove single snps,dw-mipi-csi2-v150 compatible string
+> - move additionalProperties after required
+> ---
+>  .../bindings/media/snps,dw-mipi-csi2-v150.yaml     | 151 +++++++++++++++++++++
+>  MAINTAINERS                                        |   1 +
+>  2 files changed, 152 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/media/snps,dw-mipi-csi2-v150.yaml b/Documentation/devicetree/bindings/media/snps,dw-mipi-csi2-v150.yaml
+> new file mode 100644
+> index 0000000000000000000000000000000000000000..d950daa4ee9cfd504ef84b83271b2a1b710ffd6b
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/media/snps,dw-mipi-csi2-v150.yaml
+> @@ -0,0 +1,151 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/media/snps,dw-mipi-csi2-v150.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > +
-> +	/*
-> +	 * Prevent runtime pm from being ON by default. Users can enable
-> +	 * it using power/control in sysfs.
-> +	 */
-> +	pm_runtime_forbid(dev);
+> +title: Synopsys DesignWare CSI-2 Host controller (csi2host)
+> +
+> +maintainers:
+> +  - Frank Li <Frank.Li@nxp.com>
+> +
+> +description:
+> +  CSI2HOST is used to receive image coming from an MIPI CSI-2 compatible
+> +  camera. It will convert the incoming CSI-2 stream into a dedicated
+> +  interface called the Synopsys IDI (Image Data Interface).
+> +  This interface is a 32-bit SoC internal only, and can be assimilated
+> +  with a CSI-2 interface.
+> +
+> +properties:
+> +  compatible:
+> +    items:
+> +      - enum:
+> +          - fsl,imx93-mipi-csi2
+> +      - const: snps,dw-mipi-csi2-v150
+> +
+> +  reg:
+> +    items:
+> +      - description: MIPI CSI-2 core register
+> +
+> +  reg-names:
+> +    items:
+> +      - const: core
+> +
+> +  clocks:
+> +    maxItems: 2
+> +
+> +  clock-names:
+> +    items:
+> +      - const: per
+> +      - const: pixel
+> +
+> +  phys:
+> +    maxItems: 1
+> +    description: MIPI D-PHY
+> +
+> +  phy-names:
+> +    items:
+> +      - const: rx
+> +
+> +  resets:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +  power-domains:
+> +    maxItems: 1
+> +
+> +  ports:
+> +    $ref: /schemas/graph.yaml#/properties/ports
+> +
+> +    properties:
+> +      port@0:
+> +        $ref: /schemas/graph.yaml#/$defs/port-base
+> +        unevaluatedProperties: false
+> +        description:
+> +          Input port node, single endpoint describing the input port.
+> +
+> +        properties:
+> +          endpoint:
+> +            $ref: video-interfaces.yaml#
+> +            unevaluatedProperties: false
+> +            description: Endpoint connected to input device
+> +
+> +            properties:
+> +              bus-type:
+> +                const: 4
 
-This screams "this patch is broken" or "there are bad issues" which
-you did not describe at all.
+If 4 is the only value supported, you can drop the property altogether.
 
-Konrad
+> +
+> +              data-lanes:
+> +                minItems: 1
+> +                maxItems: 4
+> +                items:
+> +                  maximum: 4
+> +
+> +      port@1:
+> +        $ref: /schemas/graph.yaml#/$defs/port-base
+> +        unevaluatedProperties: false
+> +        description:
+> +          Output port node, single endpoint describing the output port.
+> +
+> +        properties:
+> +          endpoint:
+> +            unevaluatedProperties: false
+> +            $ref: video-interfaces.yaml#
+> +            description: Endpoint connected to output device
+> +
+> +            properties:
+> +              bus-type:
+> +                const: 4
+
+Are both input and output of this block CSI-2 with D-PHY?
+
+> +
+> +    required:
+> +      - port@0
+> +      - port@1
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - reg-names
+> +  - interrupts
+> +  - ports
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    csi@3000 {
+> +        compatible = "fsl,imx93-mipi-csi2", "snps,dw-mipi-csi2-v150";
+> +        reg = <0x03000 0x1000>;
+> +        reg-names = "core";
+> +        phys = <&mipi_dphy_rx 0>;
+> +        phy-names = "rx";
+> +        resets = <&dw_rst 1>;
+> +        interrupts = <2>;
+> +
+> +        ports {
+> +            #address-cells = <1>;
+> +            #size-cells = <0>;
+> +
+> +            port@0 {
+> +                reg = <0>;
+> +
+> +                endpoint {
+> +                    bus-type = <4>; /* MIPI CSI2 D-PHY */
+> +                    remote-endpoint = <&camera_1>;
+> +                    data-lanes = <1 2>;
+> +                    clock-lanes = <0>;
+> +                };
+> +            };
+> +
+> +            port@1 {
+> +                reg = <1>;
+> +
+> +                endpoint {
+> +                    remote-endpoint = <&idi_receiver>;
+> +                    bus-type = <4>;
+> +                };
+> +            };
+> +        };
+> +    };
+> +
+> +...
+> diff --git a/MAINTAINERS b/MAINTAINERS
+> index 9d9d2be7be8037dfa96f1c9edd24a0cf997b9393..ecb7bc7cc8ad797f43173075ca8973804bf335f7 100644
+> --- a/MAINTAINERS
+> +++ b/MAINTAINERS
+> @@ -15334,6 +15334,7 @@ F:	Documentation/devicetree/bindings/media/fsl,imx93-parallel-csi.yaml
+>  F:	Documentation/devicetree/bindings/media/nxp,imx-mipi-csi2.yaml
+>  F:	Documentation/devicetree/bindings/media/nxp,imx7-csi.yaml
+>  F:	Documentation/devicetree/bindings/media/nxp,imx8mq-mipi-csi2.yaml
+> +F:	Documentation/devicetree/bindings/media/snps,dw-mipi-csi2-v150.yaml
+>  F:	drivers/media/platform/nxp/imx-mipi-csis.c
+>  F:	drivers/media/platform/nxp/imx-parallel-csi.c
+>  F:	drivers/media/platform/nxp/imx7-media-csi.c
+> 
+
+-- 
+Regards,
+
+Sakari Ailus
 
 -- 
 linux-phy mailing list
