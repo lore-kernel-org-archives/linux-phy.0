@@ -4,28 +4,28 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 60772CCF9EA
-	for <linux-phy@archiver.kernel.org>; Mon, 27 Oct 2025 09:59:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B666FCCF9EC
+	for <linux-phy@archiver.kernel.org>; Mon, 27 Oct 2025 09:59:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i/1a7LFg+7BMMwy7ZbjLhL7BI/cqRv90cN9TTxWpQtE=; b=T5taovUCRsrtOM
-	Jb/sOoH8yGQjx3qLEM1yPTxpGGpGXdHtkTK/6j/azp+SsdN5hAHzyWuyJ9i+upW9rmLEyFckxFPgM
-	YPJez/a9ygmdo1KyOWM5vKYnU8ZznKjAPZRjClrrQfrnnYpcurFfKjFTsLnaeZueJjlJbauW9Eoji
-	vYdlq/AV0mS5CEFj2eNKB3kmE08WuPXYeDXyRHHQeRuPuVvOKjoNKInYpul45HRKQSTy+gGoR636t
-	Y2gjZJBFm6AloxAE8iWBFDm0aTPtT8bGKMePEmq88dHrDPUGlOkHSjtl8a5ueONnVFhbFo93zILxR
-	5q6gcVEK76hAvm+3xaVw==;
+	List-Owner; bh=8i7CgVMD9yiNowBT+G09AnVy3xBgetzrYmeBCFtwd6c=; b=u50WlIHyjNAujZ
+	S5TUJ83m6kv2yZG9gHq/noO861ARufIs+YRXB9qdpC54xY78A3cEJphXER8ikwO+gZlLuHCWe6C0J
+	ilN4n6JP9FvlRYYdqbYylLwnLKAlnKd8jmCqY6096nWwACIJKsCNNMq6O9m4TkXyXG2afYSYnZPaC
+	YfgkqUSqZVE3jLkZj4rVkDVLBOWixMiepYHtuxC3UpxaXugJdCqYjwiiaAt3CAcQtmN9NX9xyursD
+	Fmj/UrDRXCo5h5NJrdDAABOAJxu8Wx+54fbR1JU9CRP2GJa96gAb1IFy2KfKXXe7xdfZ7gZ2cL2r7
+	65AvVoQEtU6zWGccG3ZA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDK0E-0000000DbEv-0afY;
-	Mon, 27 Oct 2025 09:59:02 +0000
+	id 1vDK0F-0000000DbGr-1nv9;
+	Mon, 27 Oct 2025 09:59:03 +0000
 Received: from mail.aspeedtech.com ([211.20.114.72] helo=TWMBX01.aspeed.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDJzw-0000000DaqR-2DG0;
-	Mon, 27 Oct 2025 09:58:45 +0000
+	id 1vDK00-0000000DaqR-3Jpn;
+	Mon, 27 Oct 2025 09:58:49 +0000
 Received: from TWMBX01.aspeed.com (192.168.0.62) by TWMBX01.aspeed.com
  (192.168.0.62) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.10; Mon, 27 Oct
@@ -44,16 +44,16 @@ To: <lpieralisi@kernel.org>, <kwilczynski@kernel.org>, <mani@kernel.org>,
 	<linux-phy@lists.infradead.org>, <openbmc@lists.ozlabs.org>,
 	<linux-gpio@vger.kernel.org>
 CC: <jacky_chou@aspeedtech.com>
-Subject: [PATCH v4 7/9] PCI: Add FMT, TYPE and CPL status definition for TLP header
-Date: Mon, 27 Oct 2025 17:58:23 +0800
-Message-ID: <20251027095825.181161-8-jacky_chou@aspeedtech.com>
+Subject: [PATCH v4 9/9] MAINTAINERS: Add ASPEED PCIe RC driver
+Date: Mon, 27 Oct 2025 17:58:25 +0800
+Message-ID: <20251027095825.181161-10-jacky_chou@aspeedtech.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20251027095825.181161-1-jacky_chou@aspeedtech.com>
 References: <20251027095825.181161-1-jacky_chou@aspeedtech.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251027_025844_575303_961B5934 
-X-CRM114-Status: UNSURE (   6.19  )
+X-CRM114-CacheID: sfid-20251027_025848_835184_345ADCF2 
+X-CRM114-Status: UNSURE (   6.67  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -71,40 +71,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-According to PCIe specification, add FMT, TYPE and CPL status
-definition for TLP header.
+Add maintainer for ASPEED PCIe RC driver.
 
 Signed-off-by: Jacky Chou <jacky_chou@aspeedtech.com>
 ---
- drivers/pci/pci.h | 15 +++++++++++++++
- 1 file changed, 15 insertions(+)
+ MAINTAINERS | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
 
-diff --git a/drivers/pci/pci.h b/drivers/pci/pci.h
-index 4492b809094b..9e5cf35409c8 100644
---- a/drivers/pci/pci.h
-+++ b/drivers/pci/pci.h
-@@ -88,6 +88,21 @@ struct pcie_tlp_log;
- #define PCI_BUS_BRIDGE_MEM_WINDOW	1
- #define PCI_BUS_BRIDGE_PREF_MEM_WINDOW	2
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 3da2c26a796b..cf13c890fb5d 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -3836,6 +3836,17 @@ S:	Maintained
+ F:	Documentation/devicetree/bindings/media/aspeed,video-engine.yaml
+ F:	drivers/media/platform/aspeed/
  
-+/* Format of TLP; PCIe r7.0, sec 2.2.1 */
-+#define PCIE_TLP_FMT_3DW_NO_DATA	0x00 /* 3DW header, no data */
-+#define PCIE_TLP_FMT_4DW_NO_DATA	0x01 /* 4DW header, no data */
-+#define PCIE_TLP_FMT_3DW_DATA		0x02 /* 3DW header, with data */
-+#define PCIE_TLP_FMT_4DW_DATA		0x03 /* 4DW header, with data */
++ASPEED PCIE CONTROLLER DRIVER
++M:	Jacky Chou <jacky_chou@aspeedtech.com>
++L:	linux-aspeed@lists.ozlabs.org (moderated for non-subscribers)
++L:	linux-pci@vger.kernel.org
++S:	Maintained
++F:	Documentation/devicetree/bindings/pci/aspeed,ast2600-pcie.yaml
++F:	Documentation/devicetree/bindings/phy/aspeed,ast2600-pcie-phy.yaml
++F:	Documentation/devicetree/bindings/soc/aspeed/aspeed,ast2700-pcie-cfg.yaml
++F:	drivers/pci/controller/pcie-aspeed.c
++F:	drivers/phy/aspeed/pcie-phy-aspeed.c
 +
-+/* Type of TLP; PCIe r7.0, sec 2.2.1 */
-+#define PCIE_TLP_TYPE_CFG0_RD		0x04 /* Config Type 0 Read Request */
-+#define PCIE_TLP_TYPE_CFG0_WR		0x04 /* Config Type 0 Write Request */
-+#define PCIE_TLP_TYPE_CFG1_RD		0x05 /* Config Type 1 Read Request */
-+#define PCIE_TLP_TYPE_CFG1_WR		0x05 /* Config Type 1 Write Request */
-+
-+/* Cpl. status of Complete; PCIe r7.0, sec 2.2.9.1 */
-+#define PCIE_CPL_STS_SUCCESS		0x00 /* Successful Completion */
-+
- extern const unsigned char pcie_link_speed[];
- extern bool pci_early_dump;
- 
+ ASUS EC HARDWARE MONITOR DRIVER
+ M:	Eugene Shalygin <eugene.shalygin@gmail.com>
+ L:	linux-hwmon@vger.kernel.org
 -- 
 2.34.1
 
