@@ -4,89 +4,137 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 12E6FCCF9E0
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Oct 2025 21:08:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1E46ACCF9E0
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Oct 2025 21:10:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5WQqTh7NBuWm2uBiLk36ZjFoX86GxhMfibuy1sh0UxE=; b=LZyrz0+oO4drcC
-	DobGw/6V2Ie7kibQfKdyuZmsI3IcVB9YobdmMEqR94aWzbDwxUkQq40OdGr48xGNZ7Trj4ekTt+ij
-	4JNe5uNZKlThQuqHVq09ZEw87fb8RZTAKEqCysSRviISXHvG7fXeeaQjzvVFd93Lq4gFDMFJq9uuW
-	u5rl61C8+xQ0eTb6MWqmy9V+h9LjlE2cQHWy/vYgkAv8/QOY911Qb7HonNGN8Vm6rteDF9sPk0T/w
-	fySkC+i9mbp74RrFl2CzK3eE9F+YdsWKFvRFHa+UgQ1v/KURKzmY4nvTa0f1t5B1JTlU6BxZvNJi7
-	YXSQ5404MltxfA08vSJQ==;
+	List-Owner; bh=gq74SrZKA+W72lv85HLlRhBZgkyCuN3kwqyNtaHumus=; b=OUgdhEKTm5BX/h
+	uQz8Jbqx3UV/qKZZHzTMSUFXcuSfll5SWgIDBDjMzHirV76IyrBWOBwiTy4Wks8CC/UO3Mbf5BSlE
+	Hk18ZLy+LJzn+vDg5lzTy9jZ0ccHTE/R1HipqTwc4FiQz7qZl91TLAzygr9QRb7jkDZEfyKEvU4XQ
+	R5/oxZ5gDz59Zt9j4JKaEFegDT3Lq75J2LY78vTUme+/ypNos7ghd17dRCwre80Xrb2mEYRWYkRNc
+	CtDIFBcr5lPqg94S9iszOxKd1j+Xp22R3xRP3TvFI7tpyY2w8P6HgAQH3VNruKnI39kSgWi8qmMmR
+	H0UVZbpeaDrMC63eI5DQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDqva-0000000Gf72-3OLo;
-	Tue, 28 Oct 2025 21:08:26 +0000
-Received: from hall.aurel32.net ([2001:bc8:30d7:100::1])
+	id 1vDqxj-0000000GfcR-3hnw;
+	Tue, 28 Oct 2025 21:10:39 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDqvX-0000000Gf5b-3LNX;
-	Tue, 28 Oct 2025 21:08:25 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=aurel32.net
-	; s=202004.hall; h=In-Reply-To:Content-Type:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Content-Transfer-Encoding:From:Reply-To:
-	Subject:Content-ID:Content-Description:X-Debbugs-Cc;
-	bh=Ffm4KPkf/6W48UcMMTcsGbPQba3i9kiox/XnAfVk4T0=; b=a8H9SFykx3+YTrmg/MyciN/yNQ
-	b6EzTBu3RKSDamjxTvQLU9Lm4Qs3uAokbJG9P+LDj/VXiwq3xCF8kII0+fyec40MW9kWmYbqh3E64
-	z16xNMGTnw3Lb0y5OiMqLzDYFVUxIDGFAfmyliL/Lo+qVDfPIgnbbc2aignaq/nYFgsV91hqXKK9B
-	anKmlPAZc6jKSvC6dIziURlZKn0mbv7CJhVlHbuv7Tsm2QX9rr7bN3E4+9NNzTIT3/KDAjJFkJOZJ
-	Uri6IyjQHssbjeG75z2Wqko4MfRWBbqqyg2i3OoXHmPPqSIgT7n9KzdhuGJeIpmIOC/JMPlOg7ZYY
-	8PjgYBKA==;
-Received: from [2a01:e34:ec5d:a741:1ee1:92ff:feb4:5ec0] (helo=ohm.rr44.fr)
-	by hall.aurel32.net with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.98.2)
-	(envelope-from <aurelien@aurel32.net>)
-	id 1vDqvC-0000000047k-2puT;
-	Tue, 28 Oct 2025 22:08:02 +0100
-Date: Tue, 28 Oct 2025 22:08:01 +0100
-From: Aurelien Jarno <aurelien@aurel32.net>
-To: Alex Elder <elder@riscstar.com>
-Cc: Johannes Erdfelt <johannes@erdfelt.com>, robh@kernel.org,
-	krzk+dt@kernel.org, conor+dt@kernel.org, bhelgaas@google.com,
-	lpieralisi@kernel.org, kwilczynski@kernel.org, mani@kernel.org,
-	vkoul@kernel.org, kishon@kernel.org, dlan@gentoo.org,
-	guodong@riscstar.com, pjw@kernel.org, palmer@dabbelt.com,
-	aou@eecs.berkeley.edu, alex@ghiti.fr, p.zabel@pengutronix.de,
-	christian.bruel@foss.st.com, shradha.t@samsung.com,
-	krishna.chundru@oss.qualcomm.com, qiang.yu@oss.qualcomm.com,
-	namcao@linutronix.de, thippeswamy.havalige@amd.com,
-	inochiama@gmail.com, devicetree@vger.kernel.org,
-	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
-	spacemit@lists.linux.dev, linux-riscv@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2 0/7] Introduce SpacemiT K1 PCIe phy and host controller
-Message-ID: <aQEwsdvx8fvPyj5k@aurel32.net>
-Mail-Followup-To: Alex Elder <elder@riscstar.com>,
-	Johannes Erdfelt <johannes@erdfelt.com>, robh@kernel.org,
-	krzk+dt@kernel.org, conor+dt@kernel.org, bhelgaas@google.com,
-	lpieralisi@kernel.org, kwilczynski@kernel.org, mani@kernel.org,
-	vkoul@kernel.org, kishon@kernel.org, dlan@gentoo.org,
-	guodong@riscstar.com, pjw@kernel.org, palmer@dabbelt.com,
-	aou@eecs.berkeley.edu, alex@ghiti.fr, p.zabel@pengutronix.de,
-	christian.bruel@foss.st.com, shradha.t@samsung.com,
-	krishna.chundru@oss.qualcomm.com, qiang.yu@oss.qualcomm.com,
-	namcao@linutronix.de, thippeswamy.havalige@amd.com,
-	inochiama@gmail.com, devicetree@vger.kernel.org,
-	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
-	spacemit@lists.linux.dev, linux-riscv@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-References: <20251013153526.2276556-1-elder@riscstar.com>
- <aPEhvFD8TzVtqE2n@aurel32.net>
- <92ee253f-bf6a-481a-acc2-daf26d268395@riscstar.com>
- <aQEElhSCRNqaPf8m@aurel32.net>
- <20251028184250.GM15521@sventech.com>
- <82848c80-15e0-4c0e-a3f6-821a7f4778a5@riscstar.com>
+	id 1vDqxh-0000000Gfbt-2GJb
+	for linux-phy@lists.infradead.org;
+	Tue, 28 Oct 2025 21:10:38 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 59SJlMNB2539303
+	for <linux-phy@lists.infradead.org>; Tue, 28 Oct 2025 21:10:36 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	Mqr6jI8kEn36wwEAP0spn6W0+YbPiO/jF1iak5N/mWc=; b=d1YOl+J8vzWcYr6h
+	0ZvgeWSN8INT/4QS9WRMOceyOz5L+QrE9RJ73/vXnHn3DPt7mmhImS8D3uNdSzZU
+	iqQw/UgznYLn7Pa0RRYAAjNGZ/52WkyrexkJUkjg4ydw2JEG2YxAbqZBS/N7bSdH
+	xv6rcRXXn7HxZNTTZR6IwVxFuk1AhWAEoJq1DmIfzQHmhgijdh0gzGF8S/If5b5d
+	3vgHLiemWTUDQjZnh1BpbMuW2VEb7s6giEeBcQknO1ZrJQFuDviU69rSRYKh/gof
+	rIIGIjZSRTZWkcQVNgpOKi6Ulm0SpiNfk9BUcn8xFRR/eAZ6/EexyIXBjHOojJH9
+	5Pc08g==
+Received: from mail-qt1-f199.google.com (mail-qt1-f199.google.com [209.85.160.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4a34a1g662-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Tue, 28 Oct 2025 21:10:36 +0000 (GMT)
+Received: by mail-qt1-f199.google.com with SMTP id d75a77b69052e-4e8bb155690so85890501cf.0
+        for <linux-phy@lists.infradead.org>; Tue, 28 Oct 2025 14:10:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1761685836; x=1762290636; darn=lists.infradead.org;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=Mqr6jI8kEn36wwEAP0spn6W0+YbPiO/jF1iak5N/mWc=;
+        b=VObh/QUz74zNXrr1yHi7C7/1g5/4XOJZrjX6Uqk5N0ZbWPycdaPageMDEjKL/10TE5
+         JKSIb1greYZIxCqY7TzX5GH1QdvqH1PUfL5sLjbsMx4xedSjeIuBtxdNF/EymnuUU+nX
+         VEgrWinTDiEu3CPKGmd28hIPYD62gayjAQGDcD1WxkvGyXwMIsn6i5i6p7pBqa3oO4ec
+         +k2UKbSwZV95HogntcUBW6zmnJL62UlQrfptjG+BJQgsy0rtLewoMShjEUYJ0gGtSIOQ
+         NXofjmwQQ3u8GQuKgJoFjRnXQ2pSnItCtQEd4E0EBLQtOqBEz4Dr0R8M4UgTJFyDfVv7
+         S/2g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1761685836; x=1762290636;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=Mqr6jI8kEn36wwEAP0spn6W0+YbPiO/jF1iak5N/mWc=;
+        b=wnnVGsDFEof+cMValzYVtH5gmCRGhri5meNeMHrr3ShykG7VS4Qm+T2FFMB+QcvhDC
+         fLLVnwrHmDF6DE8TItouhLqJO/6878ge01WBRjIHGN9czE9jA4Nbs7m7GIcr2oCNFquF
+         1mklR13/iolWtgPgc1qKwBzqcP/wa+Yd5JQWZh1mOAToqyZoeqflKJn43NgOhunxgVKp
+         ZrrKVaqZTRiiBxgZNqR0+wQYJnc4GX6w1JTMixrR/V82I1cNz7Gg3GHGtZHB1bKshNwc
+         oK+lhwv/SRmVQOVN3+VqMPuVLTNJQNE7cCn/wiTl60VyeE719e9VuCwI2MpGY2Yi1+DD
+         ADEQ==
+X-Forwarded-Encrypted: i=1; AJvYcCW+ioNgTb1i29xy/dcbmRpQ+nP5y95ZNECQutK5HoLCbrFWznGXcveF1gABFjZpthp0E+pCJmTeUQg=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzFtdqLvVJSQs+/qa5mpqqi3QTTPb46r/3tOBJawchBBbNPcRof
+	B1I/qg13SAkce+4bihu2PD6qn6c6HoSGR+YhSlunVveIONroFETIKVcpQIXvQZOpodXvy5zN6M/
+	zPuuW/b83AOEZTf4wX0v4kEZuNrYIJT3d3CUQmsKtIJKkfy2faQEIbnjDN3cYiWzMFQ7A
+X-Gm-Gg: ASbGncuxx4Q/ENeBMInBWBi4a/TUJOj66rHpI+Zy93YE22KQqR536ei/KXSmjKqW7D/
+	hgsusMZpbgP5wUjOK/E2tGXirLRjkwb+Q3GfTnrOrQc402fJPNLZ27v4KriSeSfb4TZ8ftqRhoS
+	cz2MJ/vGb+Hembb9fjli679uHjJ7R7rNbrjC3liSUyGUsgb67b4tQokNU3ntunGBNIJKvTRGUVE
+	Zxialsd0fxmf/HrLXK7YbkQnVa4HJzT8/PDb86mdXfGPHGSNz24Hfi94CjnFl7Snhy0Cn+5hfbw
+	tZRUwvC1dZt214U90sW9Mt4ZuneicchzgG528aIraPtPGW7dq1XV+KAUzyjFVyDPPJFGcucLCib
+	kGvU3TeH0JpXbEVl9W7csTqsnl+R4x+fAe2DuDvCjgxXUG3QRSdWzPjUoCwrnjgG9oy13MLMOS+
+	NLCZTvtGs4Dy2+
+X-Received: by 2002:a05:622a:a13:b0:4e5:8352:9db2 with SMTP id d75a77b69052e-4ed15c53a38mr9670951cf.74.1761685835457;
+        Tue, 28 Oct 2025 14:10:35 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IF4tjibJm7dG8AJyDHRzmtH6DpuGiCZjw97dxYBt3mz9bXp88WMGifM0FnhLxqp+1uYKy6www==
+X-Received: by 2002:a05:622a:a13:b0:4e5:8352:9db2 with SMTP id d75a77b69052e-4ed15c53a38mr9670501cf.74.1761685834897;
+        Tue, 28 Oct 2025 14:10:34 -0700 (PDT)
+Received: from umbar.lan (2001-14ba-a0c3-3a00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a0c3:3a00:264b:feff:fe8b:be8a])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-59301f5d9fbsm3281999e87.56.2025.10.28.14.10.32
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 28 Oct 2025 14:10:33 -0700 (PDT)
+Date: Tue, 28 Oct 2025 23:10:31 +0200
+From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+To: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
+Cc: Abel Vesa <abel.vesa@linaro.org>, krzk+dt@kernel.org, conor+dt@kernel.org,
+        konrad.dybcio@oss.qualcomm.com, kishon@kernel.org, vkoul@kernel.org,
+        gregkh@linuxfoundation.org, robh@kernel.org,
+        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-usb@vger.kernel.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v5 07/10] phy: qualcomm: qmp-combo: Update QMP PHY with
+ Glymur settings
+Message-ID: <7pc3m2pzp3hzogg5ygorsmv2dy5vw2xiebppcbx7tzp4jnhuom@epgtkjpniyrs>
+References: <20251006222002.2182777-1-wesley.cheng@oss.qualcomm.com>
+ <20251006222002.2182777-8-wesley.cheng@oss.qualcomm.com>
+ <zaotrz6upmpwv2w65633rlflubmykzn5dqiydl66y7rdalld4l@bo4oto5iynor>
+ <9d3dd1cf-4969-3dcb-18dc-59cfb68033f7@oss.qualcomm.com>
+ <39732bf6-dd6f-b808-7c10-b3faa4d46489@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <82848c80-15e0-4c0e-a3f6-821a7f4778a5@riscstar.com>
-User-Agent: Mutt/2.2.13 (2024-03-09)
+In-Reply-To: <39732bf6-dd6f-b808-7c10-b3faa4d46489@oss.qualcomm.com>
+X-Authority-Analysis: v=2.4 cv=Nu/cssdJ c=1 sm=1 tr=0 ts=6901314c cx=c_pps
+ a=WeENfcodrlLV9YRTxbY/uA==:117 a=xqWC_Br6kY4A:10 a=8nJEP1OIZ-IA:10
+ a=x6icFKpwvdMA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
+ a=EUspDBNiAAAA:8 a=_2V7C_1fM0J6bjkbbwIA:9 a=3ZKOabzyN94A:10 a=wPNLvfGTeEIA:10
+ a=kacYvNCVWA4VmyqE58fU:22
+X-Proofpoint-GUID: Cf8NztRISmnjx-CjpFBj9jD48JZ0-jc4
+X-Proofpoint-ORIG-GUID: Cf8NztRISmnjx-CjpFBj9jD48JZ0-jc4
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDI4MDE3OCBTYWx0ZWRfX/ISyI3RjIgfA
+ zFSgmRxJICBxdWpsN+iB9lvRG/WEYvQC8kJYutp8eY3Uw9mwP9twSQrKd3YaoyaOWmyiSoncX7m
+ rjccQntGw9P/MzgxshogVmDF0bfGZnq4hrzeRlZypp708qytaQ6VGA/1N3z8ph9MBt/VR2EPsQq
+ aARtF2nBXKBd50T4wlgMNejr952xzGWpjcz1CnmgnNoDFvX4NNSw9CbPfwHLKJg2uxTSXgZ1sL+
+ qCVDiOxLs8fU7q7vRfiJZzhpoL/3MVQtGUioUi5RRAr4dqkv1r0WkeHrI3jbQYbNjupjIDzwFQc
+ YYVEFTJHZyM9sk/mMrux83qu8h37rVJOHbkWgA/Ky/mUSdOANT0tHa5ccd+rC/SQw1bOlEzV9D/
+ 8MlY8Yk3EQN/6bwlT9aSabr0zkQRsA==
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-10-28_08,2025-10-22_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ spamscore=0 priorityscore=1501 adultscore=0 suspectscore=0 clxscore=1015
+ lowpriorityscore=0 phishscore=0 impostorscore=0 bulkscore=0 malwarescore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2510240001 definitions=main-2510280178
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251028_140824_429510_C650D8A7 
-X-CRM114-Status: GOOD (  52.17  )
+X-CRM114-CacheID: sfid-20251028_141037_698500_D21C4686 
+X-CRM114-Status: GOOD (  39.60  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,170 +146,187 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 2025-10-28 14:10, Alex Elder wrote:
-> On 10/28/25 1:42 PM, Johannes Erdfelt wrote:
-> > On Tue, Oct 28, 2025, Aurelien Jarno <aurelien@aurel32.net> wrote:
-> > > Hi Alex,
-> > > 
-> > > On 2025-10-17 11:21, Alex Elder wrote:
-> > > > On 10/16/25 11:47 AM, Aurelien Jarno wrote:
-> > > > > Hi Alex,
-> > > > > 
-> > > > > On 2025-10-13 10:35, Alex Elder wrote:
-> > > > > > This series introduces a PHY driver and a PCIe driver to support PCIe
-> > > > > > on the SpacemiT K1 SoC.  The PCIe implementation is derived from a
-> > > > > > Synopsys DesignWare PCIe IP.  The PHY driver supports one combination
-> > > > > > PCIe/USB PHY as well as two PCIe-only PHYs.  The combo PHY port uses
-> > > > > > one PCIe lane, and the other two ports each have two lanes.  All PCIe
-> > > > > > ports operate at 5 GT/second.
-> > > > > > 
-> > > > > > The PCIe PHYs must be configured using a value that can only be
-> > > > > > determined using the combo PHY, operating in PCIe mode.  To allow
-> > > > > > that PHY to be used for USB, the calibration step is performed by
-> > > > > > the PHY driver automatically at probe time.  Once this step is done,
-> > > > > > the PHY can be used for either PCIe or USB.
-> > > > > > 
-> > > > > > Version 2 of this series incorporates suggestions made during the
-> > > > > > review of version 1.  Specific highlights are detailed below.
-> > > > > 
-> > > > > With the issues mentioned in patch 4 fixed, this patchset works fine for
-> > > > > me. That said I had to disable ASPM by passing pcie_aspm=off on the
-> > > > > command line, as it is now enabled by default since 6.18-rc1 [1]. At
-> > > > > this stage, I am not sure if it is an issue with my NVME drive or an
-> > > > > issue with the controller.
-> > > > 
-> > > > Can you describe what symptoms you had that required you to pass
-> > > > "pcie_aspm=off" on the kernel command line?
-> > > > 
-> > > > I see these lines in my boot log related to ASPM (and added by
-> > > > the commit you link to), for both pcie1 and pcie2:
-> > > > 
-> > > >    pci 0000:01:00.0: ASPM: DT platform, enabling L0s-up L0s-dw L1 AS
-> > > > PM-L1.1 ASPM-L1.2 PCI-PM-L1.1 PCI-PM-L1.2
-> > > >    pci 0000:01:00.0: ASPM: DT platform, enabling ClockPM
-> > > > 
-> > > >    . . .
-> > > > 
-> > > >    nvme nvme0: pci function 0000:01:00.0
-> > > >    nvme 0000:01:00.0: enabling device (0000 -> 0002)
-> > > >    nvme nvme0: allocated 64 MiB host memory buffer (16 segments).
-> > > >    nvme nvme0: 8/0/0 default/read/poll queues
-> > > >     nvme0n1: p1
-> > > > 
-> > > > My NVMe drive on pcie1 works correctly.
-> > > >    https://www.crucial.com/ssd/p3/CT1000P3SSD8
-> > > > 
-> > > >    root@bananapif3:~# df /a
-> > > >    Filesystem     1K-blocks     Used Available Use% Mounted on
-> > > >    /dev/nvme0n1p1 960302804 32063304 879385040   4% /a
-> > > >    root@bananapif3:~#
-> > > 
-> > > Sorry for the delay, it took me time to test some more things and
-> > > different SSDs. First of all I still see the issue with your v3 on top
-> > > of v6.18-rc3, which includes some fixes for ASPM support [1].
-> > > 
-> > > I have tried 3 different SSDs, none of them are working, but the
-> > > symptoms are different, although all related with ASPM (pcie_aspm=off
-> > > workarounds the issue).
-> > > 
-> > > With a Fox Spirit PM18 SSD (Silicon Motion, Inc. SM2263EN/SM2263XT
-> > > controller), I do not have more than this:
-> > > [    5.196723] nvme nvme0: pci function 0000:01:00.0
-> > > [    5.198843] nvme 0000:01:00.0: enabling device (0000 -> 0002)
-> > > 
-> > > With a WD Blue SN570 SSD, I get this:
-> > > [    5.199513] nvme nvme0: pci function 0000:01:00.0
-> > > [    5.201653] nvme 0000:01:00.0: enabling device (0000 -> 0002)
-> > > [    5.270334] nvme nvme0: allocated 32 MiB host memory buffer (8 segments).
-> > > [    5.277624] nvme nvme0: 8/0/0 default/read/poll queues
-> > > [   19.192350] nvme nvme0: using unchecked data buffer
-> > > [   48.108400] nvme nvme0: controller is down; will reset: CSTS=0xffffffff, PCI_STATUS=0x10
-> > > [   48.113885] nvme nvme0: Does your device have a faulty power saving mode enabled?
-> > > [   48.121346] nvme nvme0: Try "nvme_core.default_ps_max_latency_us=0 pcie_aspm=off pcie_port_pm=off" and report a bug
-> > > [   48.176878] nvme0n1: I/O Cmd(0x2) @ LBA 0, 8 blocks, I/O Error (sct 0x3 / sc 0x71)
-> > > [   48.181926] I/O error, dev nvme0n1, sector 0 op 0x0:(READ) flags 0x80700 phys_seg 1 prio class 2
-> > > [   48.243670] nvme 0000:01:00.0: enabling device (0000 -> 0002)
-> > > [   48.246914] nvme nvme0: Disabling device after reset failure: -19
-> > > [   48.280495] Buffer I/O error on dev nvme0n1, logical block 0, async page read
-> > > 
-> > > 
-> > > Finally with a PNY CS1030 SSD (Phison PS5015-E15 controller), I get this:
-> > > [    5.215631] nvme nvme0: pci function 0000:01:00.0
-> > > [    5.220435] nvme 0000:01:00.0: enabling device (0000 -> 0002)
-> > > [    5.329565] nvme nvme0: allocated 64 MiB host memory buffer (16 segments).
-> > > [   66.540485] nvme nvme0: I/O tag 28 (401c) QID 0 timeout, disable controller
-> > > [   66.585245] nvme 0000:01:00.0: probe with driver nvme failed with error -4
-> > > 
-> > > Note that I also tested this latest SSD on a VisionFive 2 board with exactly
-> > > the same kernel (I just moved the SSD and booted), and it works fine with ASPM
-> > > enabled (confirmed with lspci).
-> > 
-> > I have been testing this patchset recently as well, but on an Orange Pi
-> > RV2 board instead (and an extra RV2 specific patch to enable power to
-> > the M.2 slot).
-> > 
-> > I ran into the same symptoms you had ("QID 0 timeout" after about 60
-> > seconds). However, I'm using an Intel 600p. I can confirm my NVME drive
-> > seems to work fine with the "pcie_aspm=off" workaround as well.
-> 
-> I don't see this problem, and haven't tried to reproduce it yet.
-> 
-> Mani told me I needed to add these lines to ensure the "runtime
-> PM hierarchy of PCIe chain" won't be "broken":
-> 
-> 	pm_runtime_set_active()
-> 	pm_runtime_no_callbacks()
-> 	devm_pm_runtime_enable()
-> 
-> Just out of curiosity, could you try with those lines added
-> just before these assignments in k1_pcie_probe()?
-> 
-> 	k1->pci.dev = dev;
-> 	k1->pci.ops = &k1_pcie_ops;
-> 	dw_pcie_cap_set(&k1->pci, REQ_RES);
-> 
-> I doubt it will fix what you're seeing, but at the moment I'm
-> working on something else.
-> 
+On Fri, Oct 24, 2025 at 05:41:18PM -0700, Wesley Cheng wrote:
+> =
 
-Thanks for your fast answer. I have just tried this patch:
+> =
 
---- a/drivers/pci/controller/dwc/pcie-spacemit-k1.c
-+++ b/drivers/pci/controller/dwc/pcie-spacemit-k1.c
-@@ -271,6 +271,16 @@ static int k1_pcie_probe(struct platform_device *pdev)
- 		return dev_err_probe(dev, PTR_ERR(k1->phy),
- 				     "failed to get PHY\n");
- 
-+	ret = pm_runtime_set_active(dev);
-+	if (ret < 0)
-+		return dev_err_probe(dev, ret, "Failed to activate runtime PM\n");
-+
-+	pm_runtime_no_callbacks(dev);
-+
-+	ret = devm_pm_runtime_enable(dev);
-+	if (ret < 0)
-+		return dev_err_probe(dev, ret, "Failed to enable runtime PM\n");
-+
- 	k1->pci.dev = dev;
- 	k1->pci.ops = &k1_pcie_ops;
- 	dw_pcie_cap_set(&k1->pci, REQ_RES);
+> On 10/24/2025 5:02 PM, Wesley Cheng wrote:
+> > =
 
-Unfortunately this doesn't fix the issue. On the positive side, things 
-still work with it and pcie_aspm=off.
+> > =
 
-Regards
-AUrelien
+> > On 10/24/2025 3:04 AM, Abel Vesa wrote:
+> > > On 25-10-06 15:19:59, Wesley Cheng wrote:
+> > > > For SuperSpeed USB to work properly, there is a set of HW settings =
+that
+> > > > need to be programmed into the USB blocks within the QMP PHY.=A0
+> > > > Ensure that
+> > > > these settings follow the latest settings mentioned in the HW
+> > > > programming
+> > > > guide.=A0 The QMP USB PHY on Glymur is a USB43 based PHY that will
+> > > > have some
+> > > > new ways to define certain registers, such as the replacement of TX=
+A/RXA
+> > > > and TXB/RXB register sets.=A0 This was replaced with the LALB
+> > > > register set.
+> > > > =
 
--- 
-Aurelien Jarno                          GPG: 4096R/1DDD8C9B
-aurelien@aurel32.net                     http://aurel32.net
+> > > > There are also some PHY init updates to modify the PCS MISC
+> > > > register space.
+> > > > Without these, the QMP PHY PLL locking fails.
+> > > > =
 
--- 
+> > > > Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+> > > > Signed-off-by: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
+> > > > ---
+> > > > =A0 drivers/phy/qualcomm/phy-qcom-qmp-combo.c=A0=A0=A0=A0 | 314 +++=
++++++-
+> > > > =A0 .../phy/qualcomm/phy-qcom-qmp-pcs-aon-v8.h=A0=A0=A0 |=A0 17 +
+> > > > =A0 .../phy/qualcomm/phy-qcom-qmp-pcs-misc-v8.h=A0=A0 |=A0 12 +
+> > > > =A0 .../qualcomm/phy-qcom-qmp-qserdes-lalb-v8.h=A0=A0 | 639 +++++++=
++++++++++++
+> > > > =A0 .../phy/qualcomm/phy-qcom-qmp-usb43-pcs-v8.h=A0 |=A0 33 +
+> > > > =A0 .../phy-qcom-qmp-usb43-qserdes-com-v8.h=A0=A0=A0=A0=A0=A0 | 224=
+ ++++++
+> > > > =A0 drivers/phy/qualcomm/phy-qcom-qmp.h=A0=A0=A0=A0=A0=A0=A0=A0=A0=
+=A0 |=A0=A0 2 +
+> > > > =A0 7 files changed, 1240 insertions(+), 1 deletion(-)
+> > > > =A0 create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-aon-v8=
+.h
+> > > > =A0 create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-pcs-misc-v=
+8.h
+> > > > =A0 create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-qserdes-la=
+lb-v8.h
+> > > > =A0 create mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-usb43-pcs-=
+v8.h
+> > > > =A0 create mode 100644
+> > > > drivers/phy/qualcomm/phy-qcom-qmp-usb43-qserdes-com-v8.h
+> > > > =
+
+> > > > diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> > > > b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> > > > index 1caa1fb6a8c7..8216820e388f 100644
+> > > > --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> > > > +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> > > =
+
+> > > [...]
+> > > =
+
+> > > > +static const struct qmp_phy_cfg glymur_usb3dpphy_cfg =3D {
+> > > > +=A0=A0=A0 .offsets=A0=A0=A0=A0=A0=A0=A0 =3D &qmp_combo_usb43dp_off=
+sets_v8,
+> > > > +
+> > > > +=A0=A0=A0 .serdes_tbl=A0=A0=A0=A0=A0=A0=A0 =3D glymur_usb43dp_serd=
+es_tbl,
+> > > > +=A0=A0=A0 .serdes_tbl_num=A0=A0=A0=A0=A0=A0=A0 =3D ARRAY_SIZE(glym=
+ur_usb43dp_serdes_tbl),
+> > > > +=A0=A0=A0 .tx_tbl=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 =3D glymur_usb4=
+3dp_lalb_tbl,
+> > > > +=A0=A0=A0 .tx_tbl_num=A0=A0=A0=A0=A0=A0=A0 =3D ARRAY_SIZE(glymur_u=
+sb43dp_lalb_tbl),
+> > > > +=A0=A0=A0 .pcs_tbl=A0=A0=A0=A0=A0=A0=A0 =3D glymur_usb43dp_pcs_tbl,
+> > > > +=A0=A0=A0 .pcs_tbl_num=A0=A0=A0=A0=A0=A0=A0 =3D ARRAY_SIZE(glymur_=
+usb43dp_pcs_tbl),
+> > > > +=A0=A0=A0 .pcs_usb_tbl=A0=A0=A0=A0=A0=A0=A0 =3D glymur_usb43dp_pcs=
+_usb_tbl,
+> > > > +=A0=A0=A0 .pcs_usb_tbl_num=A0=A0=A0 =3D ARRAY_SIZE(glymur_usb43dp_=
+pcs_usb_tbl),
+> > > > +=A0=A0=A0 .pcs_misc_tbl=A0=A0=A0=A0=A0=A0=A0 =3D glymur_usb43dp_pc=
+s_misc_tbl,
+> > > > +=A0=A0=A0 .pcs_misc_tbl_num=A0=A0=A0 =3D ARRAY_SIZE(glymur_usb43dp=
+_pcs_misc_tbl),
+> > > > +
+> > > > +=A0=A0=A0 .dp_serdes_tbl=A0=A0=A0=A0=A0=A0=A0 =3D qmp_v6_n4_dp_ser=
+des_tbl,
+> > > > +=A0=A0=A0 .dp_serdes_tbl_num=A0=A0=A0 =3D ARRAY_SIZE(qmp_v6_n4_dp_=
+serdes_tbl),
+> > > > +=A0=A0=A0 .dp_tx_tbl=A0=A0=A0=A0=A0=A0=A0 =3D qmp_v6_n4_dp_tx_tbl,
+> > > > +=A0=A0=A0 .dp_tx_tbl_num=A0=A0=A0=A0=A0=A0=A0 =3D ARRAY_SIZE(qmp_v=
+6_n4_dp_tx_tbl),
+> > > > +
+> > > > +=A0=A0=A0 .serdes_tbl_rbr=A0=A0=A0=A0=A0=A0=A0 =3D qmp_v6_n4_dp_se=
+rdes_tbl_rbr,
+> > > > +=A0=A0=A0 .serdes_tbl_rbr_num=A0=A0=A0 =3D ARRAY_SIZE(qmp_v6_n4_dp=
+_serdes_tbl_rbr),
+> > > > +=A0=A0=A0 .serdes_tbl_hbr=A0=A0=A0=A0=A0=A0=A0 =3D qmp_v6_n4_dp_se=
+rdes_tbl_hbr,
+> > > > +=A0=A0=A0 .serdes_tbl_hbr_num=A0=A0=A0 =3D ARRAY_SIZE(qmp_v6_n4_dp=
+_serdes_tbl_hbr),
+> > > > +=A0=A0=A0 .serdes_tbl_hbr2=A0=A0=A0 =3D qmp_v6_n4_dp_serdes_tbl_hb=
+r2,
+> > > > +=A0=A0=A0 .serdes_tbl_hbr2_num=A0=A0=A0 =3D ARRAY_SIZE(qmp_v6_n4_d=
+p_serdes_tbl_hbr2),
+> > > > +=A0=A0=A0 .serdes_tbl_hbr3=A0=A0=A0 =3D qmp_v6_n4_dp_serdes_tbl_hb=
+r3,
+> > > > +=A0=A0=A0 .serdes_tbl_hbr3_num=A0=A0=A0 =3D ARRAY_SIZE(qmp_v6_n4_d=
+p_serdes_tbl_hbr3),
+> > > > +
+> > > > +=A0=A0=A0 .swing_hbr_rbr=A0=A0=A0=A0=A0=A0=A0 =3D &qmp_dp_v6_volta=
+ge_swing_hbr_rbr,
+> > > > +=A0=A0=A0 .pre_emphasis_hbr_rbr=A0=A0=A0 =3D &qmp_dp_v6_pre_emphas=
+is_hbr_rbr,
+> > > > +=A0=A0=A0 .swing_hbr3_hbr2=A0=A0=A0 =3D &qmp_dp_v5_voltage_swing_h=
+br3_hbr2,
+> > > > +=A0=A0=A0 .pre_emphasis_hbr3_hbr2=A0=A0=A0 =3D &qmp_dp_v5_pre_emph=
+asis_hbr3_hbr2,
+> > > > +
+> > > > +=A0=A0=A0 .dp_aux_init=A0=A0=A0=A0=A0=A0=A0 =3D qmp_v4_dp_aux_init,
+> > > > +=A0=A0=A0 .configure_dp_tx=A0=A0=A0 =3D qmp_v4_configure_dp_tx,
+> > > > +=A0=A0=A0 .configure_dp_phy=A0=A0=A0 =3D qmp_v4_configure_dp_phy,
+> > > > +=A0=A0=A0 .calibrate_dp_phy=A0=A0=A0 =3D qmp_v4_calibrate_dp_phy,
+> > > =
+
+> > > So I see you are adding the DP related config here as well, but it is
+> > > definitely not compatible with v6 N4. I'm assyuming you picked v6 N4
+> > > as a default
+> > > just to allow the USB part work for now, right ?
+> > > =
+
+> > > I don't suppose we can drop the DP related config from this patch and
+> > > still have the USB part working, right?
+> > > =
+
+> > > Otherwise, we need to mention the fact that even though the DP part
+> > > is also being added, it is broken.
+> > =
+
+> > Hi Abel,
+> > =
+
+> > That is correct.=A0 Without these defined, the USB path won't work, and
+> > we'll need to supplement this if we wanted to add DP support.=A0 Hence,
+> > why I didn't add any mention of DP altmode in the commit text.=A0 I can
+> > clarify that we added DP placeholders if that makes it more clear in the
+> > commit text.
+> > =
+
+> =
+
+> Hi Abel,
+> =
+
+> I take that back...I went back and reviewed the QMP combo driver again, a=
+nd
+> gave it a try w/o any of the DP init tables.  SS USB is working fine.  I
+> will update the patch to remove the DP entries.  Thanks for catching this.
+
+Please provide a proper programming for DP part instead. I don't see a
+reason to provide only partial support for the device.
+
+-- =
+
+With best wishes
+Dmitry
+
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
