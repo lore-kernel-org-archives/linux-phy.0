@@ -4,121 +4,111 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6ED11CCD1BF
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Oct 2025 11:11:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 11548CCD1BF
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Oct 2025 11:14:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GrZhQda2Yc4wdN3vnR9rqnEWFWmdYKBnM9C27sof/NU=; b=dYwxQEEiU7BnRq
-	9bVZjb6bh278cvc6OGFLlpJADILxJ2jDaaLK7P/IwqTnyEwcX0rM8fBW56osoO+PdvyCKDzu3hSf0
-	DbJV+/sUyxCBlVLJHIb3YgGbj9ilcZyFi9R/0eQwECiwhDmifNG+rQH5OwnaSF2A7BlOYCUB9FQ/C
-	l1RT0vkWCeq/4GaGYAbLVyV+uCYrgD6YiMNanJiLq4tsBDEb2CDpbBdMfheu98+WKYGg9PPXetXBL
-	Qhj9mzmyqyySk4Ruml51wCijl2/KNS7kD0ZlKMx2EyqIQPqAgmEROaQIRjEvyZ1QB2E5v/oVDK59i
-	LZq4f48ijZAixuFv6InA==;
+	List-Owner; bh=grVsZIJikhafXKPQyaQxCMm8RasHStG3oWsDosKcc/g=; b=dzh3ynxFso7/gA
+	n9eSL1ITXlCB+3mC8wOUgGv+JJcg3/2UltZFJaYU+U5NTOsKLwa/VPa4be84S9dGJqUs0bI2H2Qe+
+	Iqdacv6ixLxnpopbgH/w6zDPVkK0GUtoQBZ1Dqn31mS+TZvypyA6t6UbDG8H66MKfUbGi4c5sfJ3P
+	DywEpRMoZi163RASfs39wmZzDiPuwZs5H8ikzGya6Q9faLDNvxx53+MnWZCFIjdDw4QS3JI0/bAqE
+	ez3DeIqooVcJhU4Y7SwQn6yktppiaxnogW1zXcVa/rsyNavUoDyIS/nmJHXCoGMsxT75PfsPyFnB2
+	nNwTm1WVztq4DYdkDZUw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDhcK-0000000Fp7l-0pDF;
-	Tue, 28 Oct 2025 11:11:56 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1vDhej-0000000FpNl-2gPq;
+	Tue, 28 Oct 2025 11:14:25 +0000
+Received: from mail-ej1-x62f.google.com ([2a00:1450:4864:20::62f])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDhcI-0000000Fp77-01Ac
+	id 1vDheg-0000000FpMM-1xBP
 	for linux-phy@lists.infradead.org;
-	Tue, 28 Oct 2025 11:11:55 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 59S8rjBR2881785
-	for <linux-phy@lists.infradead.org>; Tue, 28 Oct 2025 11:11:53 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	opUtdQf4QfMq9eW5ijzGVRszcOjE71sRMPdyYjws57U=; b=RYXB6v26+vYPhlCW
-	KKF4VCCEITpKOLNrnI1gTw4AV5aIiQj+sirAXsZ6mD8RPXAPXPeQY4FOrCfaSD8h
-	ICKkft255d0UpDS7qABN2w8koXf3skvpcuw6repqcQwO3Flc+ueYVJIwhp6O4/o2
-	W2bdn2mWWlNQh/bQfAa6W3gj2NDNfLMN2jwYsJKwB+kVPXa7+HgMtjnUM/Cm3L3k
-	WjHzTscfOSpnQUy9NvZIQDIzCcx7wniuBZZ0psIt8SBdmYNSkWCAq/ekd1fmUouW
-	ucgzIp24JLig6RQeoy8gOK7zSChbzE9rHeIwxxOyL/ZY6PkqV1F+BlUM56/kdRUu
-	NaDdVw==
-Received: from mail-pg1-f200.google.com (mail-pg1-f200.google.com [209.85.215.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4a29uhbjus-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Tue, 28 Oct 2025 11:11:51 +0000 (GMT)
-Received: by mail-pg1-f200.google.com with SMTP id 41be03b00d2f7-b6ceeea4addso4490999a12.1
-        for <linux-phy@lists.infradead.org>; Tue, 28 Oct 2025 04:11:51 -0700 (PDT)
+	Tue, 28 Oct 2025 11:14:24 +0000
+Received: by mail-ej1-x62f.google.com with SMTP id a640c23a62f3a-b4aed12cea3so734733066b.1
+        for <linux-phy@lists.infradead.org>; Tue, 28 Oct 2025 04:14:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1761650060; x=1762254860; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:content-language:from
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=YjFpI9BYeJIGawQior8vsJoD7SmwJll5ZNIMlbkQNe0=;
+        b=D5w23G0qbK1ZR4EQQ7ftA/efD33EO05BkwtmHT4hARdzB81kGtKTTRzedXeVp767zo
+         xuhnr9Y/w6lFTa4gUomIxICzzsZM4z7ip8tED/MKCkMduDAIHLzYd+PTGHlFk/LjHMBQ
+         gtOILzhX9wYaf26kpf+MR0ihuMfnvreBCATEszK2eUUaOda5YKrYDLoNCVVoSyfLVkGL
+         eSyRiOlbogqN6GV4R6ilhfrN3GxnCRFF5L4fS07ABj3GeJHChprSt3C0gkLF1YgOruzp
+         fBVciqjXkObPq8aEl7/9zQHxHUFGYtjhFlv/ai3ps/7NlpnN+YiLE40B/tKfkPep385+
+         8/ug==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1761649911; x=1762254711;
-        h=content-transfer-encoding:in-reply-to:from:content-language
+        d=1e100.net; s=20230601; t=1761650060; x=1762254860;
+        h=content-transfer-encoding:in-reply-to:content-language:from
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=opUtdQf4QfMq9eW5ijzGVRszcOjE71sRMPdyYjws57U=;
-        b=gm0f/Z1wnfBUZT/4DrSse/otepjeNIrt2EaNo5IMkrh30g8qDqJXoPBVmUWgqZwVdj
-         3QHUeXE/HcFI0J7LzEJtDc50MNh1Lp/T8u4dJHP7cLJRKxgRQxcZbEKTIFYxPU7OUULD
-         EAzBIzFmZOHXET6X/qq+D7jXR39uPpvaLDHSPM9TFcwnswSXqqYUjoww3huXYZj0JigQ
-         UPFAxhGRwJlhRmiMZP1ovUaa8TiMZ5DAfvnJxcVZoTNfnHZCcgPCfK/H9JLTdL0W6l+6
-         jM0pOWsYAR5HJObUOuldFv4Owdxs9Av9oHav7hXJku1xnjFBeUq7ZXT0bIu/gNTw+SSy
-         qtVA==
-X-Forwarded-Encrypted: i=1; AJvYcCWOsaxvGyYofi9rhvr+TxwaOUBI1PoHlbrxMcygKX6uFujZ+y3R8Gr6yY2HA0dsOp0FObKG3d6YuZs=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx0Nz8bcgclqYIOAapk4fehvjDF3GdghRZ1Y05UpIX3jltfI1ka
-	n7id+CpqLplF0KB2xXDVE08R0HFt31KEkUsKWH6nA4E3YwevnLZogYjGqBIjbcRmysTIcvjf9q7
-	AMG3wNuKwZwtxlEVUBpASV9GLyfAmd8xgx7naEImkhujVwe72NgbxKiuvdx+DCVXgwjER
-X-Gm-Gg: ASbGncuVadjHghfMDUZ6ohOqkkF1kcd+UJiphiguOx9+jPmSKBbL5vd1Vsmu1c37TcT
-	Q4FTnrJIOSOc/e4Aj8uln2dCV9urIZCvvALoYidotY5TxU8B+6yOBj4z5T+juIyPa5O5t55NaS3
-	ePJch0l7Yt+tPmevQ0jGuyW6RXtPUUfXcu8QCzLnrp87v6aEDVH4t1j2X7l3JgIsjZQMK6p4Ixe
-	bqZvFdVRZmiDF+fAjQFw58uYDsI2PbiNutP93VmEwC8Ln2MYdoAaQhGbj0Yu+j7guNZoHpO2gA0
-	IMkAd776rUm2N9hyrtYXevgIrWsKgr5ci1CssCpNWuQcLTR4e/6v33OmD1Zg+YCk1fFqZCqB9LL
-	lkVwjXZyxZ2BcBkX2bCYWmAPgIiA=
-X-Received: by 2002:a05:6a20:9389:b0:334:a681:389c with SMTP id adf61e73a8af0-344d1e9d6f7mr4082418637.15.1761649911249;
-        Tue, 28 Oct 2025 04:11:51 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IEir10gLmpuIQM7ApflZtUrLLZhaDCqOjyulYgaRdAjRBHf/P6MEgnu6ky/ldUcH5shRkkc9A==
-X-Received: by 2002:a05:6a20:9389:b0:334:a681:389c with SMTP id adf61e73a8af0-344d1e9d6f7mr4082378637.15.1761649910755;
-        Tue, 28 Oct 2025 04:11:50 -0700 (PDT)
-Received: from [10.218.10.142] ([202.46.22.19])
-        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-b712791576dsm10053265a12.12.2025.10.28.04.11.47
+        bh=YjFpI9BYeJIGawQior8vsJoD7SmwJll5ZNIMlbkQNe0=;
+        b=Jyd6Ge3AYHsF0yYIV4R8mCOXhJ4fc0Cf65uhThwBxa7D1ZXOA90+RS1/xSeHOO6Awl
+         rI2YGLDifRvDBburn4RAovCM/mhIT6NMdajv2kBqbm0++74apJLWJ8j1pBhkDmzIwNPF
+         ituKA9SbHq54OuqyskfMmyWMnxN59I+XupF/dCdNphsjy/TV4lL98pDle+Ckxo/Cocps
+         cNoyKp9/cj93v90Gs/TcdAzZRvp/SwOhngpjU0GzrzwgYPVYxNr0VYsnTocX95rIv71y
+         zTHfnfZdYu7kR3yxvO1OudLwlLXJGpmuqLyF3g5Pbz4zJN9XLLQ37sU5F7QhCT98z0zk
+         13YQ==
+X-Forwarded-Encrypted: i=1; AJvYcCVFfvWHbAqJiWZXS+qHAhtwv+7mfO7d7Db87rlaRKEk8BmEx+52Ki4XrIZgjeR8ggCDc6bRhvBRZ8I=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz9Z0C1hoeYGEuU9lDjInpECyblBVHtqKgRSatN2tqqb7CcFvZP
+	oNoC8PVt56ArqaQx/eM5t3UGPyJkCRjxrzsqrV+jW3mgpQrQxWPd/LDK
+X-Gm-Gg: ASbGncuwlgi2bKqT9cQujxjfP2Id5moNErNd2zXRSLR1YxyPyeHP205wUJ0znRlM/1Y
+	EepDFeUccZVFtAb82BaU8dF3DQ93Ddk9iDzfOLx3Q3TWYBHwPs3ajmFep3HfgboIZfWtYkJGw8T
+	1iVpclFtqBcQ5PdoGKtDm4oJEfO7Q8fz7SJjBty29MU9E4jzkRokIeGvYh1/go0Hi4JIZF+9tPj
+	fLo1ZIbpCZ4BU/8S6nhIt6UI1VqyeueooCBeMjmnVvcPT6x/KLJP51ITEliBeoW1f/gaZAOJ60e
+	FN4aozV7hRXOYSGP6XxlPu44MBHM5vIMO/Gne4QQzWiK8nyOvoCz4EIs/yDgUtjLwDmnLLWbacD
+	LLXC4Qi/ro/RCaIB8mqzypaKw7xFmLIc3nZKpf72tjiw49lmh4sACb/lu6sYOQbFaD1ClTLRJM8
+	vKfjLsAWreM1/RVlIS46nTZVTAkcqQDUQqm6iTyXVfP7z+BVsKmhz7nFV9pcfuR7O+bPK1UtdPR
+	J6ChoDqfotx0M0lwoT40wHL03peb/vya1Cikg3MJCH68dlOAuaftQ==
+X-Google-Smtp-Source: AGHT+IGFhB1uFC3jfUFSa2Q1GaChneZzYP9rrCvUKq1g/2kn74sMQ9tiDca6CquKILqpFbpXF/Q/Kg==
+X-Received: by 2002:a17:907:7f0a:b0:b4a:ed12:ce51 with SMTP id a640c23a62f3a-b6dba498fe6mr339684266b.23.1761650059938;
+        Tue, 28 Oct 2025 04:14:19 -0700 (PDT)
+Received: from ?IPV6:2001:1c00:20d:1300:1b1c:4449:176a:89ea? (2001-1c00-020d-1300-1b1c-4449-176a-89ea.cable.dynamic.v6.ziggo.nl. [2001:1c00:20d:1300:1b1c:4449:176a:89ea])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-b6d853077ddsm1052436566b.11.2025.10.28.04.14.18
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 28 Oct 2025 04:11:49 -0700 (PDT)
-Message-ID: <17995927-b7fb-458a-a863-b03bd15e6073@oss.qualcomm.com>
-Date: Tue, 28 Oct 2025 16:41:45 +0530
+        Tue, 28 Oct 2025 04:14:19 -0700 (PDT)
+Message-ID: <05610ae5-4a8a-47e9-808b-7ff98fade78e@gmail.com>
+Date: Tue, 28 Oct 2025 12:14:17 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] phy: qualcomm: m31-eusb2: Add runtime pm ops
-To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
-        Vinod Koul <vkoul@kernel.org>,
-        Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        linux-kernel@vger.kernel.org
-References: <20251027062458.1411096-1-prashanth.k@oss.qualcomm.com>
- <daf0055b-7caf-4ace-8a06-071468273a37@oss.qualcomm.com>
- <1c52e759-15fd-462b-a9fd-ad620da099f5@oss.qualcomm.com>
- <e4f33bf0-05d9-4aad-b00e-fb7cc2c2633b@oss.qualcomm.com>
+Subject: Re: [PATCH 12/15] arm64: dts: mediatek: mt7981b-openwrt-one: Enable
+ Ethernet
+To: Sjoerd Simons <sjoerd@collabora.com>, Andrew Lunn <andrew@lunn.ch>,
+ "Lucien.Jheng" <lucienzx159@gmail.com>
+Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Matthias Brugger
+ <matthias.bgg@gmail.com>,
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+ Ryder Lee <ryder.lee@mediatek.com>, Jianjun Wang
+ <jianjun.wang@mediatek.com>, Bjorn Helgaas <bhelgaas@google.com>,
+ Lorenzo Pieralisi <lpieralisi@kernel.org>,
+ =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
+ Manivannan Sadhasivam <mani@kernel.org>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Lee Jones <lee@kernel.org>,
+ Andrew Lunn <andrew+netdev@lunn.ch>, "David S. Miller"
+ <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>,
+ Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+ Lorenzo Bianconi <lorenzo@kernel.org>, Felix Fietkau <nbd@nbd.name>,
+ kernel@collabora.com, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-mediatek@lists.infradead.org, linux-pci@vger.kernel.org,
+ linux-phy@lists.infradead.org, netdev@vger.kernel.org,
+ Daniel Golle <daniel@makrotopia.org>, Bryan Hinton <bryan@bryanhinton.com>
+References: <20251016-openwrt-one-network-v1-0-de259719b6f2@collabora.com>
+ <20251016-openwrt-one-network-v1-12-de259719b6f2@collabora.com>
+ <4f82aa17-1bf8-4d72-bc1f-b32f364e1cf6@lunn.ch>
+ <8f5335a703905dea9d8d0c1840862a3478da1ca7.camel@collabora.com>
+From: Eric Woudstra <ericwouds@gmail.com>
 Content-Language: en-US
-From: Prashanth K <prashanth.k@oss.qualcomm.com>
-In-Reply-To: <e4f33bf0-05d9-4aad-b00e-fb7cc2c2633b@oss.qualcomm.com>
-X-Proofpoint-ORIG-GUID: FbZiCWrJRt3xmqA7uWNDmLSIPve_UkpY
-X-Proofpoint-GUID: FbZiCWrJRt3xmqA7uWNDmLSIPve_UkpY
-X-Authority-Analysis: v=2.4 cv=QuFTHFyd c=1 sm=1 tr=0 ts=6900a4f9 cx=c_pps
- a=oF/VQ+ItUULfLr/lQ2/icg==:117 a=fChuTYTh2wq5r3m49p7fHw==:17
- a=IkcTkHD0fZMA:10 a=x6icFKpwvdMA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=EUspDBNiAAAA:8 a=_xMILRQ3MvDrwl_WGjgA:9 a=QEXdDO2ut3YA:10
- a=3WC7DwWrALyhR5TkjVHa:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDI4MDA5NSBTYWx0ZWRfX9PSi2pKGPMYY
- dC66ygkvHvW5xug2o0OolorhUYcC3YP31R3W6/prpb4WmgYEJLRy25OKoJlenFF+J1AsV8A2JRX
- 3GexKwkTQkLy1CqWWsGM+ARvlBQDePG/IwQBPrarFnjJpnrx9eJgMoPven6sGfI79112pcASkvP
- qIwdHOFiR13d3R1FVIv70Drx5lRq6SbIJQ+bGTdDTvtXspOUE2i1NO7J/pIlPusq5jXfT0Cquka
- k4BOnk8Bj0MtT8bkuB7CUsIcrcPaPY5owRuuFdPW++Acw/eZ2UrsI2QkjViQYs/KDMvasmVZMD6
- zlb52r9+NnQ30fMe+WDQaQerwOW6O1yMi8hRh5yY0xi4VRQBzuRrf9iIyD5jj1jesN4c6gFHs+9
- pNpYQHd0ldNKPTCzfAr2HE64ffiBDA==
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-10-28_04,2025-10-22_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 adultscore=0 spamscore=0 lowpriorityscore=0 bulkscore=0
- phishscore=0 clxscore=1015 priorityscore=1501 suspectscore=0 malwarescore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2510020000 definitions=main-2510280095
+In-Reply-To: <8f5335a703905dea9d8d0c1840862a3478da1ca7.camel@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251028_041154_058030_F93DD75D 
-X-CRM114-Status: GOOD (  14.96  )
+X-CRM114-CacheID: sfid-20251028_041422_521533_DFEC4DA5 
+X-CRM114-Status: GOOD (  11.93  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -137,57 +127,26 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
 
-On 10/27/2025 4:41 PM, Konrad Dybcio wrote:
-> On 10/27/25 12:09 PM, Prashanth K wrote:
+On 10/21/25 10:21 PM, Sjoerd Simons wrote:
+> On Fri, 2025-10-17 at 19:31 +0200, Andrew Lunn wrote:
+>>> +&mdio_bus {
+>>> +	phy15: ethernet-phy@f {
+>>> +		compatible = "ethernet-phy-id03a2.a411";
+>>> +		reg = <0xf>;
+>>> +		interrupt-parent = <&pio>;
+>>> +		interrupts = <38 IRQ_TYPE_EDGE_FALLING>;
 >>
->>
->> On 10/27/2025 1:55 PM, Konrad Dybcio wrote:
->>> On 10/27/25 7:24 AM, Prashanth K wrote:
->>>> Add runtime power management operation callbacks for M31 EUSB2 PHY.
->>>> Enable/disable the clocks based on the runtime suspend/resume calls.
->>>>
->>>> Signed-off-by: Prashanth K <prashanth.k@oss.qualcomm.com>
->>>> ---
->>>
->>> [...]
->>>
->>>>  static int m31eusb2_phy_probe(struct platform_device *pdev)
->>>>  {
->>>>  	struct phy_provider *phy_provider;
->>>> @@ -270,6 +298,17 @@ static int m31eusb2_phy_probe(struct platform_device *pdev)
->>>>  		return dev_err_probe(dev, PTR_ERR(phy->clk),
->>>>  				     "failed to get clk\n");
->>>>  
->>>> +	dev_set_drvdata(dev, phy);
->>>> +	pm_runtime_set_active(dev);
->>>> +	pm_runtime_enable(dev);
->>>> +
->>>> +	/*
->>>> +	 * Prevent runtime pm from being ON by default. Users can enable
->>>> +	 * it using power/control in sysfs.
->>>> +	 */
->>>> +	pm_runtime_forbid(dev);
->>>
->>> This screams "this patch is broken" or "there are bad issues" which
->>> you did not describe at all.
->>>
->>> Konrad
->>
->> Hi Konrad, I was followed the same sequence from other phy drivers
->> containing pm_ops. I assume the runtime_forbid is added to control
->> runtime pm from userspace.
+>> This is probably wrong. PHY interrupts are generally level, not edge.
 > 
-> Other drivers call runtime_forbid() because the implementation doesn't
-> work.. Or at least historically the usb3 part hasn't been able to sus/
-> res properly
+> Sadly i can't find a datasheet for the PHY, so can't really validate that easily. Maybe Eric can
+> comment here as the author of the relevant PHY driver.
 > 
-> Konrad
+> I'd note that the mt7986a-bananapi-bpi-r3-mini dts has the same setup for this PHY, however that's
+> ofcourse not authoritative.
+> 
 
-Sure, I'll remove the runtime_forbid call and send v2. Let me know if
-there's anything else.
+Lucien would have access to the correct information about the interrupt.
 
-Thanks in advance,
-Prashanth K
 
 -- 
 linux-phy mailing list
