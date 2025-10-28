@@ -4,60 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 83FF5CCF9E0
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Oct 2025 17:13:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2ADA4CCD1BF
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Oct 2025 18:00:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=0ZwDjtR2ygtcQ6BjjTiYe9d6ak1hljm8JDEXJArPwf0=; b=JEqFx9jhHAdWvw
-	6zX9+tHGnPA8FpnS4E4TC/o6qRYkblLbH2Ks442EXGM6942X1a4BgYLB+1ot2D/IGPhpgYtIo4heW
-	Z0B3sacXKp30bWk5vWJixt3KXU1J5V9nU0wiHSMYNFWMF3IMCNYKqMP6CjOWWvYgeRw9eM5XJ/Max
-	4ZeALZXU1d0cCsctULY+QhNcID6++SS7Z9uT1PyshJLmC7/pLPs6vc2OzQP6m2eCCypjJFEyaqb6D
-	hgDpVrVqRxr8H4gpXXLm0cf0uPEIPla2jr6FiXhfjF0OH+j2knC59P4gOF/0u4gCIyfsKPn8dprLh
-	PgS7Grb3bydb2BjRw5AQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=EJWTMJN99BhQAXE3fuOLBp9NPOp37HV641ni9dxXwRA=; b=WdaugCBbIJy4l6
+	W57TMoIyvjV+b8XA+6fkTn4NMc590Xy+DIxhqEbHXHRE0Lu41AWgc66nZ+vDgNZ+0OK3Law1DJhva
+	TDQx/jItTkGQx4eT/c7u/sgq5X5WLMVi5TWH6xIy+5U7liqhRjDuchewhMo3y7TWk0Jf952YuZJpl
+	+38srYlAplAnhWzy6V2pcVzt7Pa7fiajBvEgPbJikD9VUM+td2AIxDbbzYfjmDTYAl0c7CKx1qrNO
+	3LGjqp6fjAYsHa37DWeswPgo6hDa68fyB4Xy/HcJc7mudw7y12JJKcoN99at6rqf05V5SCIb2d49r
+	gET8bKKhpRVO6g83fiQQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDnGJ-0000000GOIJ-0Ucm;
-	Tue, 28 Oct 2025 17:13:35 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1vDnzc-0000000GRfm-3G74;
+	Tue, 28 Oct 2025 18:00:24 +0000
+Received: from hall.aurel32.net ([2001:bc8:30d7:100::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDnGH-0000000GOHY-0Ypu;
-	Tue, 28 Oct 2025 17:13:33 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 3B9306124B;
-	Tue, 28 Oct 2025 17:13:32 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B658BC4CEE7;
-	Tue, 28 Oct 2025 17:13:31 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1761671611;
-	bh=+cenkb0yL5U6fkb9PXEJLOZBBfbIw/K5JcCnxUVgehI=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:From;
-	b=GHWgETQ1RNiG4NgBjVLnhJH9atMiVJdloWNMv11jPg99tyK+rmBwAzqK9hTb4gVhT
-	 2ZtFnJKwxLI4s2Q1P8yhoci5coU0j5l4vn2zCzKepsIfscxlIj7Zu5fXo/n3/KWGIz
-	 hHMqKbrGfsuMHEa9JXdVniJNLDuD3aTag4FRYpY8MZC7Tdt+1tj5Isr/dt42Ncc8NJ
-	 sH4jdipg5MKIr6H7mirxdjLBByUiKYKRocaUoLgV9TRC+GCZAmUas2q83NjwZJ561i
-	 7CYd2BuJMIACVxarC+376c/AlA60uR1HFbp6n2bx39j1c/IyYibnP+f7s04InfotSN
-	 hUMwQm5MxpCww==
-Date: Tue, 28 Oct 2025 12:13:30 -0500
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Jacky Chou <jacky_chou@aspeedtech.com>
-Cc: lpieralisi@kernel.org, kwilczynski@kernel.org, mani@kernel.org,
-	robh@kernel.org, bhelgaas@google.com, krzk+dt@kernel.org,
-	conor+dt@kernel.org, joel@jms.id.au, andrew@codeconstruct.com.au,
-	vkoul@kernel.org, kishon@kernel.org, linus.walleij@linaro.org,
-	p.zabel@pengutronix.de, linux-aspeed@lists.ozlabs.org,
-	linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org, openbmc@lists.ozlabs.org,
-	linux-gpio@vger.kernel.org
-Subject: Re: [PATCH v4 8/9] PCI: aspeed: Add ASPEED PCIe RC driver
-Message-ID: <20251028171330.GA1506282@bhelgaas>
+	id 1vDnzV-0000000GReN-1KBS;
+	Tue, 28 Oct 2025 18:00:21 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=aurel32.net
+	; s=202004.hall; h=In-Reply-To:Content-Type:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Content-Transfer-Encoding:From:Reply-To:
+	Subject:Content-ID:Content-Description:X-Debbugs-Cc;
+	bh=Hg4yk8h2S9UFPnNuzCx8HQK8YMdf20o+Im/dr85/zXQ=; b=R8Ovmd8NBwXulNQtyTfLsMwMIN
+	QaO+L7OCqIGgkcse7iaihMcTfHlToyTu5bL/vSk1H1i70G9Dsd7TfFfH9+33HE1vEmN7rTZv5Ed8K
+	axV3kiRfH5LvXNPtmrDchc+LFcgS5UU2Pov1xpNZ43/a15QOHqa6omz2q+sPsFHtYxLUPI0gvdHR1
+	/ZRwZ+u66zpkOu9Fi8i1vzvyEfx8vrn1/JV+Iv1Enczfcz7L67mWJoN+pnsRK1QNciZyyLsgfCOnp
+	AckH7GcqIZNRoTHMsuMSzm/X7snvQftdDUwPafT1TdeSdKLxj22nogPSixHBQDL8NUZ3Ed20HEA3/
+	ILrcPEmA==;
+Received: from [2a01:e34:ec5d:a741:1ee1:92ff:feb4:5ec0] (helo=ohm.rr44.fr)
+	by hall.aurel32.net with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.98.2)
+	(envelope-from <aurelien@aurel32.net>)
+	id 1vDnz5-00000008hSt-1qV2;
+	Tue, 28 Oct 2025 18:59:51 +0100
+Date: Tue, 28 Oct 2025 18:59:50 +0100
+From: Aurelien Jarno <aurelien@aurel32.net>
+To: Alex Elder <elder@riscstar.com>
+Cc: robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+	bhelgaas@google.com, lpieralisi@kernel.org, kwilczynski@kernel.org,
+	mani@kernel.org, vkoul@kernel.org, kishon@kernel.org,
+	dlan@gentoo.org, guodong@riscstar.com, pjw@kernel.org,
+	palmer@dabbelt.com, aou@eecs.berkeley.edu, alex@ghiti.fr,
+	p.zabel@pengutronix.de, christian.bruel@foss.st.com,
+	shradha.t@samsung.com, krishna.chundru@oss.qualcomm.com,
+	qiang.yu@oss.qualcomm.com, namcao@linutronix.de,
+	thippeswamy.havalige@amd.com, inochiama@gmail.com,
+	devicetree@vger.kernel.org, linux-pci@vger.kernel.org,
+	linux-phy@lists.infradead.org, spacemit@lists.linux.dev,
+	linux-riscv@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v2 0/7] Introduce SpacemiT K1 PCIe phy and host controller
+Message-ID: <aQEElhSCRNqaPf8m@aurel32.net>
+Mail-Followup-To: Alex Elder <elder@riscstar.com>, robh@kernel.org,
+	krzk+dt@kernel.org, conor+dt@kernel.org, bhelgaas@google.com,
+	lpieralisi@kernel.org, kwilczynski@kernel.org, mani@kernel.org,
+	vkoul@kernel.org, kishon@kernel.org, dlan@gentoo.org,
+	guodong@riscstar.com, pjw@kernel.org, palmer@dabbelt.com,
+	aou@eecs.berkeley.edu, alex@ghiti.fr, p.zabel@pengutronix.de,
+	christian.bruel@foss.st.com, shradha.t@samsung.com,
+	krishna.chundru@oss.qualcomm.com, qiang.yu@oss.qualcomm.com,
+	namcao@linutronix.de, thippeswamy.havalige@amd.com,
+	inochiama@gmail.com, devicetree@vger.kernel.org,
+	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
+	spacemit@lists.linux.dev, linux-riscv@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+References: <20251013153526.2276556-1-elder@riscstar.com>
+ <aPEhvFD8TzVtqE2n@aurel32.net>
+ <92ee253f-bf6a-481a-acc2-daf26d268395@riscstar.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20251027095825.181161-9-jacky_chou@aspeedtech.com>
+In-Reply-To: <92ee253f-bf6a-481a-acc2-daf26d268395@riscstar.com>
+User-Agent: Mutt/2.2.13 (2024-03-09)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20251028_110017_931680_91195043 
+X-CRM114-Status: GOOD (  38.32  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,113 +98,134 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Oct 27, 2025 at 05:58:24PM +0800, Jacky Chou wrote:
-> Introduce PCIe Root Complex driver for ASPEED SoCs. Support RC
-> initialization, reset, clock, IRQ domain, and MSI domain setup.
-> Implement platform-specific setup and register configuration for
-> ASPEED. And provide PCI config space read/write and INTx/MSI
-> interrupt handling.
+Hi Alex,
 
-> +config PCIE_ASPEED
-> +	bool "ASPEED PCIe controller"
-> +	depends on ARCH_ASPEED || COMPILE_TEST
-> +	depends on OF
-> +	depends on PCI_MSI
-> +	select IRQ_MSI_LIB
-> +	help
-> +	  Enable this option to support the PCIe controller found on ASPEED
-> +	  SoCs.
-> +
-> +	  This driver provides initialization and management for PCIe
-> +	  Root Complex functionality, including interrupt and MSI support.
+On 2025-10-17 11:21, Alex Elder wrote:
+> On 10/16/25 11:47 AM, Aurelien Jarno wrote:
+> > Hi Alex,
+> > 
+> > On 2025-10-13 10:35, Alex Elder wrote:
+> > > This series introduces a PHY driver and a PCIe driver to support PCIe
+> > > on the SpacemiT K1 SoC.  The PCIe implementation is derived from a
+> > > Synopsys DesignWare PCIe IP.  The PHY driver supports one combination
+> > > PCIe/USB PHY as well as two PCIe-only PHYs.  The combo PHY port uses
+> > > one PCIe lane, and the other two ports each have two lanes.  All PCIe
+> > > ports operate at 5 GT/second.
+> > > 
+> > > The PCIe PHYs must be configured using a value that can only be
+> > > determined using the combo PHY, operating in PCIe mode.  To allow
+> > > that PHY to be used for USB, the calibration step is performed by
+> > > the PHY driver automatically at probe time.  Once this step is done,
+> > > the PHY can be used for either PCIe or USB.
+> > > 
+> > > Version 2 of this series incorporates suggestions made during the
+> > > review of version 1.  Specific highlights are detailed below.
+> > 
+> > With the issues mentioned in patch 4 fixed, this patchset works fine for
+> > me. That said I had to disable ASPM by passing pcie_aspm=off on the
+> > command line, as it is now enabled by default since 6.18-rc1 [1]. At
+> > this stage, I am not sure if it is an issue with my NVME drive or an
+> > issue with the controller.
+> 
+> Can you describe what symptoms you had that required you to pass
+> "pcie_aspm=off" on the kernel command line?
+> 
+> I see these lines in my boot log related to ASPM (and added by
+> the commit you link to), for both pcie1 and pcie2:
+> 
+>   pci 0000:01:00.0: ASPM: DT platform, enabling L0s-up L0s-dw L1 AS
+> PM-L1.1 ASPM-L1.2 PCI-PM-L1.1 PCI-PM-L1.2
+>   pci 0000:01:00.0: ASPM: DT platform, enabling ClockPM
+> 
+>   . . .
+> 
+>   nvme nvme0: pci function 0000:01:00.0
+>   nvme 0000:01:00.0: enabling device (0000 -> 0002)
+>   nvme nvme0: allocated 64 MiB host memory buffer (16 segments).
+>   nvme nvme0: 8/0/0 default/read/poll queues
+>    nvme0n1: p1
+> 
+> My NVMe drive on pcie1 works correctly.
+>   https://www.crucial.com/ssd/p3/CT1000P3SSD8
+> 
+>   root@bananapif3:~# df /a
+>   Filesystem     1K-blocks     Used Available Use% Mounted on
+>   /dev/nvme0n1p1 960302804 32063304 879385040   4% /a
+>   root@bananapif3:~#
 
-Maybe "INTx and MSI support", since MSI is an interrupt?
+Sorry for the delay, it took me time to test some more things and 
+different SSDs. First of all I still see the issue with your v3 on top 
+of v6.18-rc3, which includes some fixes for ASPM support [1].
 
-> +/* Complete status */
+I have tried 3 different SSDs, none of them are working, but the 
+symptoms are different, although all related with ASPM (pcie_aspm=off 
+workarounds the issue).
 
-"Completion"
+With a Fox Spirit PM18 SSD (Silicon Motion, Inc. SM2263EN/SM2263XT 
+controller), I do not have more than this:
+[    5.196723] nvme nvme0: pci function 0000:01:00.0
+[    5.198843] nvme 0000:01:00.0: enabling device (0000 -> 0002)
 
-> +static int aspeed_ast2700_ahb_remap_to_bar(struct aspeed_pcie *pcie)
-> +{
-> +	struct resource_entry *win, *tmp;
-> +	struct pci_host_bridge *bridge = pcie->host;
-> +
-> +	/* Configure AHB remapping to BAR on AST27x0.
-> +	 * The BAR region is HW-fixed in AST27x0, these BARs will be filled
-> +	 * in the ranges of pcie node in DT.
-> +	 */
+With a WD Blue SN570 SSD, I get this:
+[    5.199513] nvme nvme0: pci function 0000:01:00.0
+[    5.201653] nvme 0000:01:00.0: enabling device (0000 -> 0002)
+[    5.270334] nvme nvme0: allocated 32 MiB host memory buffer (8 segments).
+[    5.277624] nvme nvme0: 8/0/0 default/read/poll queues
+[   19.192350] nvme nvme0: using unchecked data buffer
+[   48.108400] nvme nvme0: controller is down; will reset: CSTS=0xffffffff, PCI_STATUS=0x10
+[   48.113885] nvme nvme0: Does your device have a faulty power saving mode enabled?
+[   48.121346] nvme nvme0: Try "nvme_core.default_ps_max_latency_us=0 pcie_aspm=off pcie_port_pm=off" and report a bug
+[   48.176878] nvme0n1: I/O Cmd(0x2) @ LBA 0, 8 blocks, I/O Error (sct 0x3 / sc 0x71) 
+[   48.181926] I/O error, dev nvme0n1, sector 0 op 0x0:(READ) flags 0x80700 phys_seg 1 prio class 2
+[   48.243670] nvme 0000:01:00.0: enabling device (0000 -> 0002)
+[   48.246914] nvme nvme0: Disabling device after reset failure: -19
+[   48.280495] Buffer I/O error on dev nvme0n1, logical block 0, async page read
 
-I don't understand what "HW-fixed" means here.  It looks like you're
-writing host bridge window addresses (that came from DT) to the
-hardware.  That sounds like they're not actually "fixed" but
-programmable.
 
-Host bridge windows are not BARs themselves.  Mem space for devices
-below the host bridge is allocated from the windows, and the addresses
-are programmed into BARs of those downstream devices.
+Finally with a PNY CS1030 SSD (Phison PS5015-E15 controller), I get this:
+[    5.215631] nvme nvme0: pci function 0000:01:00.0
+[    5.220435] nvme 0000:01:00.0: enabling device (0000 -> 0002)
+[    5.329565] nvme nvme0: allocated 64 MiB host memory buffer (16 segments).
+[   66.540485] nvme nvme0: I/O tag 28 (401c) QID 0 timeout, disable controller
+[   66.585245] nvme 0000:01:00.0: probe with driver nvme failed with error -4
 
-Multi-line comment style:
+Note that I also tested this latest SSD on a VisionFive 2 board with exactly
+the same kernel (I just moved the SSD and booted), and it works fine with ASPM
+enabled (confirmed with lspci).
 
-  /*
-   * Configure ...
-   */
+> I basically want to know if there's something I should do with this
+> driver to address this.  (Mani, can you explain?)
 
-Wrap to fill 78 columns, or add blank lines between paragraphs.
+I am not sure on my side how to debug that. What I know is that it is 
+linked to ASPM L1, L0 works fine. In other words the SSDs work fine with 
+this patch:
 
-> +	resource_list_for_each_entry_safe(win, tmp, &bridge->windows) {
-> +		struct resource *res = win->res;
-> +
-> +		if (resource_type(res) == IORESOURCE_MEM &&
-> +		    !(res->flags & IORESOURCE_MEM_64)) {
-> +			writel(ASPEED_REMAP_BAR_BASE(res->start),
-> +			       pcie->reg + ASPEED_H2X_REMAP_DIRECT_ADDR);
-> +			return 0;
-> +		}
-> +	}
-> +
-> +	return -ENODEV;
-> +}
-> +
-> +static int aspeed_ast2700_setup(struct platform_device *pdev)
-> +{
-> +	struct aspeed_pcie *pcie = platform_get_drvdata(pdev);
-> +	struct device *dev = pcie->dev;
-> +	int ret;
-> +
-> +	pcie->cfg = syscon_regmap_lookup_by_phandle(dev->of_node,
-> +						    "aspeed,pciecfg");
-> +	if (IS_ERR(pcie->cfg))
-> +		return dev_err_probe(dev, PTR_ERR(pcie->cfg),
-> +				     "failed to map pciecfg base\n");
-> +
-> +	regmap_update_bits(pcie->cfg, ASPEED_SCU_60,
-> +			   ASPEED_RC_E2M_PATH_EN | ASPEED_RC_H2XS_PATH_EN |
-> +			   ASPEED_RC_H2XD_PATH_EN | ASPEED_RC_H2XX_PATH_EN |
-> +			   ASPEED_RC_UPSTREAM_MEM_EN,
-> +			   ASPEED_RC_E2M_PATH_EN | ASPEED_RC_H2XS_PATH_EN |
-> +			   ASPEED_RC_H2XD_PATH_EN | ASPEED_RC_H2XX_PATH_EN |
-> +			   ASPEED_RC_UPSTREAM_MEM_EN);
-> +	regmap_write(pcie->cfg, ASPEED_SCU_64,
-> +		     ASPEED_RC0_DECODE_DMA_BASE(0) |
-> +		     ASPEED_RC0_DECODE_DMA_LIMIT(0xff) |
-> +		     ASPEED_RC1_DECODE_DMA_BASE(0) |
-> +		     ASPEED_RC1_DECODE_DMA_LIMIT(0xff));
-> +	regmap_write(pcie->cfg, ASPEED_SCU_70, ASPEED_DISABLE_EP_FUNC);
-> +
-> +	aspeed_host_reset(pcie);
-> +
-> +	writel(0, pcie->reg + ASPEED_H2X_CTRL);
-> +	writel(ASPEED_H2X_BRIDGE_EN | ASPEED_H2X_BRIDGE_DIRECT_EN,
-> +	       pcie->reg + ASPEED_H2X_CTRL);
-> +
-> +	ret = aspeed_ast2700_ahb_remap_to_bar(pcie);
-> +	if (ret)
-> +		return dev_err_probe(dev, ret, "failed to assign BAR\n");
+diff --git a/drivers/pci/pcie/aspm.c b/drivers/pci/pcie/aspm.c
+index 79b9651584737..1a134ec68b591 100644
+--- a/drivers/pci/pcie/aspm.c
++++ b/drivers/pci/pcie/aspm.c
+@@ -801,8 +801,8 @@ static void pcie_aspm_override_default_link_state(struct pcie_link_state *link)
+ 	if (of_have_populated_dt()) {
+ 		if (link->aspm_support & PCIE_LINK_STATE_L0S)
+ 			link->aspm_default |= PCIE_LINK_STATE_L0S;
+-		if (link->aspm_support & PCIE_LINK_STATE_L1)
+-			link->aspm_default |= PCIE_LINK_STATE_L1;
++//		if (link->aspm_support & PCIE_LINK_STATE_L1)
++//			link->aspm_default |= PCIE_LINK_STATE_L1;
+ 		override = link->aspm_default & ~link->aspm_enabled;
+ 		if (override)
+ 			pci_info(pdev, "ASPM: default states%s%s\n",
 
-This is not assigning *BARs*.  A host bridge doesn't have BARs in the
-PCI spec sense.  It might have programmable address ranges, but the
-host bridge is not itself a PCI device, so its programmability is
-device specific.
+I can test more things if needed, but I don't know where to start.
+
+Regards
+Aurelien
+
+[1] https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=df5192d9bb0e38bf831fb93e8026e346aa017ca8
+
+-- 
+Aurelien Jarno                          GPG: 4096R/1DDD8C9B
+aurelien@aurel32.net                     http://aurel32.net
 
 -- 
 linux-phy mailing list
