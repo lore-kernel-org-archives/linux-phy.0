@@ -4,60 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E022CCF9EE
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Oct 2025 13:46:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A3BA4CCD1BF
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Oct 2025 14:14:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=NSgQlqYo1tdlVxcIlGNg5Ql6IhdHJX8tgPXzZauS3Eg=; b=ZSwNjxpEuGwHfF
-	8KOvp/7vKDiLr581JF/7doeLQbBPHZ5eZj8ys1dgiJjwetKzj3iukKETbrhthpdfikCikftUamljL
-	oTjB4ZHg1TNWZ5eMxr+3Xu6cvE4a5vFVBXuvev4EsYfgn4qULUrsDDSig2VzUrLUl8Crz6POw6Dx4
-	4Zr8OED2OiMugIS5ayN6pMv0dux4t5qft0WjOgr9wYBVbwy+Svbbp9bIQZrL2D8h32m0zeDivir16
-	z/7nIzyoH/ZYr6uOWsCdqRK6h0dCliY2E7BxSETCj0YyqSIL3OfBP/XRz87jKrZJkPLsV+aeKTBbX
-	3KInlnYlq3NrF9R2VXow==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Cu/YaR7C/mG3A4QOWU8otsU1wEpUlQxRHJ7JfO9HlJ4=; b=2Y25YJv7hD9eXS
+	SYgf6sauLHLkSWOk2jwTEu0KMnyAM7Dt+12V2iKnkxlZiFtWuXSyAhmrLATj92lTj/yMrrFXgdXGm
+	4XepMs1vvHwulBY4P2qnWG5/30PhT9o7BfOLh5OnDem58tmdCamNzD4Szonx3elaLhlwCmvUX6oZw
+	kVzwwQLLKQ75xIHVNnaLAEeGJ0UcXqbtfzL5TP2E2AWqnpA6dwB8twfOuSU7ziBpONwQknVQMO9T2
+	z89h0LeGyPuUGc5CNzXkd1FOIeFu9nRyLb+oCQV0GWbIY00C+vMjXlVt5iDjsQLJ7FuMA3h8rjwy4
+	v0LYs9B/aB3lK4OeSQHQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDk2D-0000000G1fw-09nB;
-	Tue, 28 Oct 2025 13:46:49 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vDkT0-0000000G4o3-1CSI;
+	Tue, 28 Oct 2025 14:14:30 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDk2A-0000000G1fG-3aQp;
-	Tue, 28 Oct 2025 13:46:46 +0000
+	id 1vDkSy-0000000G4ni-1YfL
+	for linux-phy@lists.infradead.org;
+	Tue, 28 Oct 2025 14:14:29 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id C4F5660398;
-	Tue, 28 Oct 2025 13:46:45 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4601DC116C6;
-	Tue, 28 Oct 2025 13:46:45 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 870C445846;
+	Tue, 28 Oct 2025 14:14:27 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E0469C4CEF7;
+	Tue, 28 Oct 2025 14:14:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1761659205;
-	bh=gHTXG47ZT83HtioVGkOdOgeWLg99afniblJgeCrheGk=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:From;
-	b=HyngrGjLb54dCOStOExNIW8Y0NWfQzBXP7/lfZg2CrXY7+IMVLq42u0PG+z1cEhOL
-	 M9rvJLEAEy7zeEAWnuV/unlMTMS3/MUsv0ix70sVbD2swTqZWjJ73oXB/FnRpo6ibM
-	 5estbSa3g/FRLspY7MtCd9VANbOrV9/5esg2D/G+7NIUhmjdRsQO8xY/aVRcPYRGXb
-	 X/UIMn6YkUr50ydC9753IDyWw8dnp67i7nUJy9ediQGszIl+HEj5mZ17iKfEPbiCQI
-	 yV1LFP3RB+1kFvEmWfqvRVyp0cXJ70Zaz3/Whr5ecoe3Wqctp9aXbfY9yaLyAIIFK6
-	 M+094b4nEUMzQ==
-Date: Tue, 28 Oct 2025 08:46:44 -0500
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Jacky Chou <jacky_chou@aspeedtech.com>
-Cc: lpieralisi@kernel.org, kwilczynski@kernel.org, mani@kernel.org,
-	robh@kernel.org, bhelgaas@google.com, krzk+dt@kernel.org,
-	conor+dt@kernel.org, joel@jms.id.au, andrew@codeconstruct.com.au,
-	vkoul@kernel.org, kishon@kernel.org, linus.walleij@linaro.org,
-	p.zabel@pengutronix.de, linux-aspeed@lists.ozlabs.org,
-	linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org, openbmc@lists.ozlabs.org,
-	linux-gpio@vger.kernel.org
-Subject: Re: [PATCH v4 2/9] dt-bindings: PCI: Add ASPEED PCIe RC support
-Message-ID: <20251028134644.GA1506590@bhelgaas>
+	s=k20201202; t=1761660867;
+	bh=3VOmtzVfP8rEqarJwOAk+ziIA6PjTjNMEu5CtoUoCFI=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=Qd7ItwOxGn5Say5y+Rz4vtUUhgSCdYFdancMc8WF8PRHPadwBheR88UHHjkpzlyRW
+	 lu7GFLRQTGQU+GTw22K47FvuKoNK/v1HMMdYBMNB7qQ4+PiGL3AyVQDaYJutuuw/9w
+	 GAKiFoSOv9Zuq+CldSqdKPU+1HebK4daLHuJLdq+zTT2AwdO6faPSE+aW3NGuEHAAm
+	 8L/3+5nLL530uc6Elwt4llVL5abFteKGnEXVS64+jTeaXd5Kq37xiWaOjWp+cOo87y
+	 NirMkaMwfDxXDwFnhq+nf4ohQI3EqQm2rYxI77BOK+Kee4XRBtQKdt+TMBywG61r4b
+	 CiTO+JV1n5vPQ==
+Date: Tue, 28 Oct 2025 09:17:25 -0500
+From: Bjorn Andersson <andersson@kernel.org>
+To: Prashanth K <prashanth.k@oss.qualcomm.com>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] phy: qualcomm: m31-eusb2: Add runtime pm ops
+Message-ID: <5b7rv52cqu55jn5ku6hy6m7u7yn37i4iviaj4eutlgudw7mpny@w3vhaulnmi2p>
+References: <20251027062458.1411096-1-prashanth.k@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20251027095825.181161-3-jacky_chou@aspeedtech.com>
+In-Reply-To: <20251027062458.1411096-1-prashanth.k@oss.qualcomm.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20251028_071428_778238_6A5A9C04 
+X-CRM114-Status: GOOD (  22.62  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,93 +73,90 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Oct 27, 2025 at 05:58:18PM +0800, Jacky Chou wrote:
-> ASPEED AST2600 provides one PCIe RC for Gen2 and AST2700 provides three
-> PCIe RC for two Gen4 and one Gen2. All of these RCs have just one root
-> port to connect to PCIe device. And also have Mem, I/O access, legacy
-> interrupt and MSI.
+On Mon, Oct 27, 2025 at 11:54:58AM +0530, Prashanth K wrote:
+> Add runtime power management operation callbacks for M31 EUSB2 PHY.
+> Enable/disable the clocks based on the runtime suspend/resume calls.
 
-> +description:
-> +  The ASPEED PCIe Root Complex controller provides PCI Express Root Complex
-> +  functionality for ASPEED SoCs, such as the AST2600 and AST2700.
-> +  This controller enables connectivity to PCIe endpoint devices, supporting
-> +  memory and I/O windows, MSI and legacy interrupts, and integration with
-> +  the SoC's clock, reset, and pinctrl subsystems. On AST2600, the PCIe Root
-> +  Port device number is always 8.
+Please start with describing which problem this solves.
 
-s/legacy/INTx/
+Regards,
+Bjorn
 
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - aspeed,ast2600-pcie
-> +      - aspeed,ast2700-pcie
+> 
+> Signed-off-by: Prashanth K <prashanth.k@oss.qualcomm.com>
+> ---
+>  drivers/phy/qualcomm/phy-qcom-m31-eusb2.c | 40 +++++++++++++++++++++++
+>  1 file changed, 40 insertions(+)
+> 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c b/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c
+> index 0a0d2d9fc846..1aeb5e3de07c 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c
+> @@ -240,6 +240,34 @@ static const struct phy_ops m31eusb2_phy_gen_ops = {
+>  	.owner		= THIS_MODULE,
+>  };
+>  
+> +static int m31eusb2_phy_runtime_suspend(struct device *dev)
+> +{
+> +	struct m31eusb2_phy *phy = dev_get_drvdata(dev);
 > +
-> +  reg:
-> +    maxItems: 1
+> +	dev_dbg(dev, "Suspending M31 eUSB2 Phy\n");
+> +	clk_disable_unprepare(phy->clk);
 > +
-> +  ranges:
-> +    minItems: 2
-> +    maxItems: 2
+> +	return 0;
+> +}
 > +
-> +  interrupts:
-> +    maxItems: 1
-> +    description: IntX and MSI interrupt
-
-s/IntX/INTx/
-
-> +    pcie0: pcie@1e770000 {
-> +      compatible = "aspeed,ast2600-pcie";
-> +      device_type = "pci";
-> +      reg = <0x1e770000 0x100>;
-> +      #address-cells = <3>;
-> +      #size-cells = <2>;
-> +      interrupts = <GIC_SPI 168 IRQ_TYPE_LEVEL_HIGH>;
-> +      bus-range = <0x00 0xff>;
+> +static int m31eusb2_phy_runtime_resume(struct device *dev)
+> +{
+> +	struct m31eusb2_phy *phy = dev_get_drvdata(dev);
+> +	int ret = 0;
 > +
-> +      ranges = <0x01000000 0x0 0x00018000 0x00018000 0x0 0x00008000
-> +                0x02000000 0x0 0x60000000 0x60000000 0x0 0x20000000>;
+> +	dev_dbg(dev, "Resuming M31 eUSB2 Phy\n");
+> +	ret = clk_prepare_enable(phy->clk);
+> +	if (ret)
+> +		dev_err(dev, "failed to enable ref clock, %d\n", ret);
 > +
-> +      resets = <&syscon ASPEED_RESET_H2X>;
-> +      reset-names = "h2x";
-> +      pinctrl-0 = <&pinctrl_pcierc1_default>;
-> +      pinctrl-names = "default";
+> +	return ret;
+> +}
 > +
-> +      #interrupt-cells = <1>;
-> +      msi-controller;
+> +static const struct dev_pm_ops m31eusb2_phy_pm_ops = {
+> +	SET_RUNTIME_PM_OPS(m31eusb2_phy_runtime_suspend,
+> +			   m31eusb2_phy_runtime_resume, NULL)
+> +};
 > +
-> +      aspeed,ahbc = <&ahbc>;
+>  static int m31eusb2_phy_probe(struct platform_device *pdev)
+>  {
+>  	struct phy_provider *phy_provider;
+> @@ -270,6 +298,17 @@ static int m31eusb2_phy_probe(struct platform_device *pdev)
+>  		return dev_err_probe(dev, PTR_ERR(phy->clk),
+>  				     "failed to get clk\n");
+>  
+> +	dev_set_drvdata(dev, phy);
+> +	pm_runtime_set_active(dev);
+> +	pm_runtime_enable(dev);
 > +
-> +      interrupt-map-mask = <0 0 0 7>;
-> +      interrupt-map = <0 0 0 1 &pcie_intc0 0>,
-> +                      <0 0 0 2 &pcie_intc0 1>,
-> +                      <0 0 0 3 &pcie_intc0 2>,
-> +                      <0 0 0 4 &pcie_intc0 3>;
-> +      legacy-interrupt-controller {
-> +        interrupt-controller;
-> +        #address-cells = <0>;
-> +        #interrupt-cells = <1>;
-> +      };
-
-IIUC, Rob says there's no need for a separate interrupt-controller
-stanza and it can be directly in the host bridge [1].
-
-I think that does make interrupt-map a little more verbose because the
-parent unit address will use the host bridge #address-cells (3)
-instead of the interrupt controller #address-cells (0), e.g., this
-from [2]:
-
-  pcie@10e40000 {
-      compatible = "renesas,r9a08g045-pcie";
-      #address-cells = <3>;
-      #interrupt-cells = <1>;
-      interrupt-map = <0 0 0 1 &pcie 0 0 0 0>, /* INTA */
-                      <0 0 0 2 &pcie 0 0 0 1>, /* INTB */
-                      <0 0 0 3 &pcie 0 0 0 2>, /* INTC */
-                      <0 0 0 4 &pcie 0 0 0 3>; /* INTD */
-
-[1] https://lore.kernel.org/linux-pci/20250509204905.GA4080349-robh@kernel.org/
-[2] https://lore.kernel.org/linux-pci/20251007133657.390523-2-claudiu.beznea.uj@bp.renesas.com/
+> +	/*
+> +	 * Prevent runtime pm from being ON by default. Users can enable
+> +	 * it using power/control in sysfs.
+> +	 */
+> +	pm_runtime_forbid(dev);
+> +
+> +
+>  	phy->phy = devm_phy_create(dev, NULL, &m31eusb2_phy_gen_ops);
+>  	if (IS_ERR(phy->phy))
+>  		return dev_err_probe(dev, PTR_ERR(phy->phy),
+> @@ -313,6 +352,7 @@ static struct platform_driver m31eusb2_phy_driver = {
+>  	.probe = m31eusb2_phy_probe,
+>  	.driver = {
+>  		.name = "qcom-m31eusb2-phy",
+> +		.pm = &m31eusb2_phy_pm_ops,
+>  		.of_match_table = m31eusb2_phy_id_table,
+>  	},
+>  };
+> -- 
+> 2.34.1
+> 
+> 
 
 -- 
 linux-phy mailing list
