@@ -4,59 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A3BA4CCD1BF
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Oct 2025 14:14:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BD3ACCCD1BF
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Oct 2025 14:23:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Cu/YaR7C/mG3A4QOWU8otsU1wEpUlQxRHJ7JfO9HlJ4=; b=2Y25YJv7hD9eXS
-	SYgf6sauLHLkSWOk2jwTEu0KMnyAM7Dt+12V2iKnkxlZiFtWuXSyAhmrLATj92lTj/yMrrFXgdXGm
-	4XepMs1vvHwulBY4P2qnWG5/30PhT9o7BfOLh5OnDem58tmdCamNzD4Szonx3elaLhlwCmvUX6oZw
-	kVzwwQLLKQ75xIHVNnaLAEeGJ0UcXqbtfzL5TP2E2AWqnpA6dwB8twfOuSU7ziBpONwQknVQMO9T2
-	z89h0LeGyPuUGc5CNzXkd1FOIeFu9nRyLb+oCQV0GWbIY00C+vMjXlVt5iDjsQLJ7FuMA3h8rjwy4
-	v0LYs9B/aB3lK4OeSQHQ==;
+	List-Owner; bh=uzPjQqY1ESlPQyVkmxOAa6XYPKzxKYlSG0rxUK7cAug=; b=qkHpYjGBZHDJHz
+	RQYORLqXEipuU2s3Pz7J4IbXeEXkMStg5kwqL2T7rnho2fFZcFRE/w9p3WbM7F52eMbFl7j70t7S/
+	Iz1NB2F8igaXv7H4wjVqzjCw6YwbKEqzhuHRG0XKpoek9Is/OOsjtu8LF5Ho//7aehD/ybwqiH2sN
+	cl6LIYXnoRFMLblHgGVN8PcXOeLvFyev5fjNsHOzjf6BPt5rEMISQ4fUJai9aajsGOwVtY13QCPRJ
+	Oa3GdTq5K/8YNfYCoXebiRiBP68z09OgzNhzWR6KISCbGZspFp58eLJBAfiKbtKLomRUHzHeXCHk+
+	i/xCvlQWjW3l6xs6rJRw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDkT0-0000000G4o3-1CSI;
-	Tue, 28 Oct 2025 14:14:30 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1vDkbe-0000000G5FH-2F9U;
+	Tue, 28 Oct 2025 14:23:26 +0000
+Received: from mgamail.intel.com ([192.198.163.18])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDkSy-0000000G4ni-1YfL
-	for linux-phy@lists.infradead.org;
-	Tue, 28 Oct 2025 14:14:29 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 870C445846;
-	Tue, 28 Oct 2025 14:14:27 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E0469C4CEF7;
-	Tue, 28 Oct 2025 14:14:26 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1761660867;
-	bh=3VOmtzVfP8rEqarJwOAk+ziIA6PjTjNMEu5CtoUoCFI=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=Qd7ItwOxGn5Say5y+Rz4vtUUhgSCdYFdancMc8WF8PRHPadwBheR88UHHjkpzlyRW
-	 lu7GFLRQTGQU+GTw22K47FvuKoNK/v1HMMdYBMNB7qQ4+PiGL3AyVQDaYJutuuw/9w
-	 GAKiFoSOv9Zuq+CldSqdKPU+1HebK4daLHuJLdq+zTT2AwdO6faPSE+aW3NGuEHAAm
-	 8L/3+5nLL530uc6Elwt4llVL5abFteKGnEXVS64+jTeaXd5Kq37xiWaOjWp+cOo87y
-	 NirMkaMwfDxXDwFnhq+nf4ohQI3EqQm2rYxI77BOK+Kee4XRBtQKdt+TMBywG61r4b
-	 CiTO+JV1n5vPQ==
-Date: Tue, 28 Oct 2025 09:17:25 -0500
-From: Bjorn Andersson <andersson@kernel.org>
-To: Prashanth K <prashanth.k@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] phy: qualcomm: m31-eusb2: Add runtime pm ops
-Message-ID: <5b7rv52cqu55jn5ku6hy6m7u7yn37i4iviaj4eutlgudw7mpny@w3vhaulnmi2p>
-References: <20251027062458.1411096-1-prashanth.k@oss.qualcomm.com>
+	id 1vDkbb-0000000G5Eb-1JD4;
+	Tue, 28 Oct 2025 14:23:24 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1761661403; x=1793197403;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=ZjKITrPWlUyYajJm3Ljrd+gMFKVlc9juJxipai/H3sg=;
+  b=gP4kJxl+CIzbRjG3F80b0qfBAq/8CV0qgDCYcxt/Yr0HQf1PHDsrftel
+   vIOBobVrPg+Hj/NptTKDklJSHn3WOBgNNeGyIEl0lgE9FFfPty1NyxrrO
+   NM2jrBBrKCXSbWxmtOTsn6mScAn0v2HUIOVpNQ18LlGE0K/SqTqF1py3f
+   Xo9d+5DDabb3COMcVxPj+Y/44EBPcDaXCrh7cBXQHi47iJagEYJm+e0eO
+   rOJe/3mle2D6/jkcgDQF3wD8eLASunAXw0BNQJHahvEE76DWJMtOtCeeW
+   coiyXYAgmFibDJ7Ukn+kij9XRaX/r5GuAoGdPgXu32zyuTtDJuC0Lhyme
+   Q==;
+X-CSE-ConnectionGUID: 8gkZy0kySzyi/jQ/z3rF0A==
+X-CSE-MsgGUID: RdrPpPbgSEaOcG2b0vkITg==
+X-IronPort-AV: E=McAfee;i="6800,10657,11586"; a="62966670"
+X-IronPort-AV: E=Sophos;i="6.19,261,1754982000"; 
+   d="scan'208";a="62966670"
+Received: from orviesa009.jf.intel.com ([10.64.159.149])
+  by fmvoesa112.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 28 Oct 2025 07:23:21 -0700
+X-CSE-ConnectionGUID: rJqVb9lsQW6rF8W3nrYn0g==
+X-CSE-MsgGUID: 5bWYwMMeSPSqrq/PhxgLNw==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.19,261,1754982000"; 
+   d="scan'208";a="184987007"
+Received: from lkp-server02.sh.intel.com (HELO 66d7546c76b2) ([10.239.97.151])
+  by orviesa009.jf.intel.com with ESMTP; 28 Oct 2025 07:23:16 -0700
+Received: from kbuild by 66d7546c76b2 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1vDkbR-000JE1-2i;
+	Tue, 28 Oct 2025 14:23:13 +0000
+Date: Tue, 28 Oct 2025 22:22:14 +0800
+From: kernel test robot <lkp@intel.com>
+To: Jacky Chou <jacky_chou@aspeedtech.com>, lpieralisi@kernel.org,
+	kwilczynski@kernel.org, mani@kernel.org, robh@kernel.org,
+	bhelgaas@google.com, krzk+dt@kernel.org, conor+dt@kernel.org,
+	joel@jms.id.au, andrew@codeconstruct.com.au, vkoul@kernel.org,
+	kishon@kernel.org, linus.walleij@linaro.org, p.zabel@pengutronix.de,
+	linux-aspeed@lists.ozlabs.org, linux-pci@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	openbmc@lists.ozlabs.org, linux-gpio@vger.kernel.org
+Cc: oe-kbuild-all@lists.linux.dev, jacky_chou@aspeedtech.com
+Subject: Re: [PATCH v4 8/9] PCI: aspeed: Add ASPEED PCIe RC driver
+Message-ID: <202510282225.yqfv0wel-lkp@intel.com>
+References: <20251027095825.181161-9-jacky_chou@aspeedtech.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20251027062458.1411096-1-prashanth.k@oss.qualcomm.com>
+In-Reply-To: <20251027095825.181161-9-jacky_chou@aspeedtech.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251028_071428_778238_6A5A9C04 
-X-CRM114-Status: GOOD (  22.62  )
+X-CRM114-CacheID: sfid-20251028_072323_392251_1EFF4368 
+X-CRM114-Status: GOOD (  10.85  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,90 +94,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Oct 27, 2025 at 11:54:58AM +0530, Prashanth K wrote:
-> Add runtime power management operation callbacks for M31 EUSB2 PHY.
-> Enable/disable the clocks based on the runtime suspend/resume calls.
+Hi Jacky,
 
-Please start with describing which problem this solves.
+kernel test robot noticed the following build warnings:
 
-Regards,
-Bjorn
+[auto build test WARNING on pci/next]
+[also build test WARNING on pci/for-linus robh/for-next linusw-pinctrl/devel linusw-pinctrl/for-next linus/master v6.18-rc3 next-20251028]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
 
-> 
-> Signed-off-by: Prashanth K <prashanth.k@oss.qualcomm.com>
-> ---
->  drivers/phy/qualcomm/phy-qcom-m31-eusb2.c | 40 +++++++++++++++++++++++
->  1 file changed, 40 insertions(+)
-> 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c b/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c
-> index 0a0d2d9fc846..1aeb5e3de07c 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c
-> @@ -240,6 +240,34 @@ static const struct phy_ops m31eusb2_phy_gen_ops = {
->  	.owner		= THIS_MODULE,
->  };
->  
-> +static int m31eusb2_phy_runtime_suspend(struct device *dev)
-> +{
-> +	struct m31eusb2_phy *phy = dev_get_drvdata(dev);
-> +
-> +	dev_dbg(dev, "Suspending M31 eUSB2 Phy\n");
-> +	clk_disable_unprepare(phy->clk);
-> +
-> +	return 0;
-> +}
-> +
-> +static int m31eusb2_phy_runtime_resume(struct device *dev)
-> +{
-> +	struct m31eusb2_phy *phy = dev_get_drvdata(dev);
-> +	int ret = 0;
-> +
-> +	dev_dbg(dev, "Resuming M31 eUSB2 Phy\n");
-> +	ret = clk_prepare_enable(phy->clk);
-> +	if (ret)
-> +		dev_err(dev, "failed to enable ref clock, %d\n", ret);
-> +
-> +	return ret;
-> +}
-> +
-> +static const struct dev_pm_ops m31eusb2_phy_pm_ops = {
-> +	SET_RUNTIME_PM_OPS(m31eusb2_phy_runtime_suspend,
-> +			   m31eusb2_phy_runtime_resume, NULL)
-> +};
-> +
->  static int m31eusb2_phy_probe(struct platform_device *pdev)
->  {
->  	struct phy_provider *phy_provider;
-> @@ -270,6 +298,17 @@ static int m31eusb2_phy_probe(struct platform_device *pdev)
->  		return dev_err_probe(dev, PTR_ERR(phy->clk),
->  				     "failed to get clk\n");
->  
-> +	dev_set_drvdata(dev, phy);
-> +	pm_runtime_set_active(dev);
-> +	pm_runtime_enable(dev);
-> +
-> +	/*
-> +	 * Prevent runtime pm from being ON by default. Users can enable
-> +	 * it using power/control in sysfs.
-> +	 */
-> +	pm_runtime_forbid(dev);
-> +
-> +
->  	phy->phy = devm_phy_create(dev, NULL, &m31eusb2_phy_gen_ops);
->  	if (IS_ERR(phy->phy))
->  		return dev_err_probe(dev, PTR_ERR(phy->phy),
-> @@ -313,6 +352,7 @@ static struct platform_driver m31eusb2_phy_driver = {
->  	.probe = m31eusb2_phy_probe,
->  	.driver = {
->  		.name = "qcom-m31eusb2-phy",
-> +		.pm = &m31eusb2_phy_pm_ops,
->  		.of_match_table = m31eusb2_phy_id_table,
->  	},
->  };
-> -- 
-> 2.34.1
-> 
-> 
+url:    https://github.com/intel-lab-lkp/linux/commits/Jacky-Chou/dt-bindings-phy-aspeed-Add-ASPEED-PCIe-PHY/20251027-180856
+base:   https://git.kernel.org/pub/scm/linux/kernel/git/pci/pci.git next
+patch link:    https://lore.kernel.org/r/20251027095825.181161-9-jacky_chou%40aspeedtech.com
+patch subject: [PATCH v4 8/9] PCI: aspeed: Add ASPEED PCIe RC driver
+config: loongarch-randconfig-r113-20251028 (https://download.01.org/0day-ci/archive/20251028/202510282225.yqfv0wel-lkp@intel.com/config)
+compiler: loongarch64-linux-gcc (GCC) 13.4.0
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20251028/202510282225.yqfv0wel-lkp@intel.com/reproduce)
+
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202510282225.yqfv0wel-lkp@intel.com/
+
+sparse warnings: (new ones prefixed by >>)
+>> drivers/pci/controller/pcie-aspeed.c:1084:38: sparse: sparse: symbol 'pcie_rc_ast2600' was not declared. Should it be static?
+>> drivers/pci/controller/pcie-aspeed.c:1093:38: sparse: sparse: symbol 'pcie_rc_ast2700' was not declared. Should it be static?
+
+vim +/pcie_rc_ast2600 +1084 drivers/pci/controller/pcie-aspeed.c
+
+  1083	
+> 1084	const struct aspeed_pcie_rc_platform pcie_rc_ast2600 = {
+  1085		.setup = aspeed_ast2600_setup,
+  1086		.reg_intx_en = 0xc4,
+  1087		.reg_intx_sts = 0xc8,
+  1088		.reg_msi_en = 0xe0,
+  1089		.reg_msi_sts = 0xe8,
+  1090		.msi_address = 0x1e77005c,
+  1091	};
+  1092	
+> 1093	const struct aspeed_pcie_rc_platform pcie_rc_ast2700 = {
+  1094		.setup = aspeed_ast2700_setup,
+  1095		.reg_intx_en = 0x40,
+  1096		.reg_intx_sts = 0x48,
+  1097		.reg_msi_en = 0x50,
+  1098		.reg_msi_sts = 0x58,
+  1099		.msi_address = 0x000000f0,
+  1100	};
+  1101	
+
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-phy mailing list
