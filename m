@@ -4,86 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6403CCF9E0
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Oct 2025 13:24:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E022CCF9EE
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Oct 2025 13:46:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xQy49etPHiFmEAlp7N3cKL2181yY+ymvKbONaZMZ024=; b=D/WOdgrwGtdCre
-	NI/rsBkvBVZHw0Njkzm3W6vygISh1qUYzTLurly+rqTnyoQmwI33l7ysGnkJixyu5QufjNREDcE//
-	RrDism1b3Kgr2eO5LFb8u+HsOb0z0eNo0YYfVt8fJCVklZwg4skx5GfGeSgLxTFC7LFfhCO1oyXGH
-	TM8sK1wnLvSI28WDfCm/CbiFRhB4ppDQ+4VRwXlPn05M0Yyhbtc9U5+CZ+FXZfV+NB1rqZysxaYib
-	jZPz487ZDXBXM4nVqmtOHXZbRdj8EgT03Zwq7qq84hUYFJuCWAWPoDVPkjHQ9eKdxfLjVvPO21LPZ
-	zr75Nf6bRXZ3uYlzuMFQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=NSgQlqYo1tdlVxcIlGNg5Ql6IhdHJX8tgPXzZauS3Eg=; b=ZSwNjxpEuGwHfF
+	8KOvp/7vKDiLr581JF/7doeLQbBPHZ5eZj8ys1dgiJjwetKzj3iukKETbrhthpdfikCikftUamljL
+	oTjB4ZHg1TNWZ5eMxr+3Xu6cvE4a5vFVBXuvev4EsYfgn4qULUrsDDSig2VzUrLUl8Crz6POw6Dx4
+	4Zr8OED2OiMugIS5ayN6pMv0dux4t5qft0WjOgr9wYBVbwy+Svbbp9bIQZrL2D8h32m0zeDivir16
+	z/7nIzyoH/ZYr6uOWsCdqRK6h0dCliY2E7BxSETCj0YyqSIL3OfBP/XRz87jKrZJkPLsV+aeKTBbX
+	3KInlnYlq3NrF9R2VXow==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDjh2-0000000G02m-0l8G;
-	Tue, 28 Oct 2025 13:24:56 +0000
-Received: from sender4-op-o15.zoho.com ([136.143.188.15])
+	id 1vDk2D-0000000G1fw-09nB;
+	Tue, 28 Oct 2025 13:46:49 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDjgx-0000000G01v-3Pvk;
-	Tue, 28 Oct 2025 13:24:53 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1761657869; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=ZCTOLf2S+q8m7fxAVIx8Y+bCTP95emO4YmHpi3NRritxQmxe3ATRHjgeW0BrRIv/SbQdJcPkYSIUlLoL7Sl45gi2zztEIUBUCnLkgM8wr8gLtilOLj+4p0mgiYOXQchJqvmPzkbMfQ+hjVO2mN6HwX4WU2/7ifnbvDnEokHm7os=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1761657869; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=8/d3UUUhdWoIZXpk8NwqSpg4DExzAbF8PYQkQhgem3s=; 
-	b=mVNRJGLaKBa+FnpaA60HLtOXJLBTBabrws/EXB4240rOpfhff5FXpf/VNKnYWCwBu00BOQ3NWKiZVwJqhU0Q3gMtrBNyvabfFoH3VOmcPyKqHEO88TmrhOh57Z7cNaIbziW7X/3hIqvD/KY4twXCtuQs4aGT6BhvdTOPnX+n6xw=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=sjoerd@collabora.com;
-	dmarc=pass header.from=<sjoerd@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1761657869;
-	s=zohomail; d=collabora.com; i=sjoerd@collabora.com;
-	h=Message-ID:Subject:Subject:From:From:To:To:Cc:Cc:Date:Date:In-Reply-To:References:Content-Type:Content-Transfer-Encoding:MIME-Version:Message-Id:Reply-To;
-	bh=8/d3UUUhdWoIZXpk8NwqSpg4DExzAbF8PYQkQhgem3s=;
-	b=ZwoIEHXchlDN8s9MvkdPt0IM1C2ZQYDwtGfbijZC9gXXVKG93gOrptfLgnMCk5QN
-	KWqWvywAsKEtYwEZm6+KZfkQE2jPZsK7IM4T470U+hBGQFBMILmP97pYYcSjTIEpo1C
-	3viKQ0jStrCNXpRAwgnP937Ec/N+iwr3jwOZzaVI=
-Received: by mx.zohomail.com with SMTPS id 1761657866228953.45389749315;
-	Tue, 28 Oct 2025 06:24:26 -0700 (PDT)
-Message-ID: <408842eda1caa53247ff759cd9ea75dcab624594.camel@collabora.com>
-Subject: Re: [PATCH 12/15] arm64: dts: mediatek: mt7981b-openwrt-one: Enable
- Ethernet
-From: Sjoerd Simons <sjoerd@collabora.com>
-To: Eric Woudstra <ericwouds@gmail.com>, Andrew Lunn <andrew@lunn.ch>, 
- "Lucien.Jheng" <lucienzx159@gmail.com>
-Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
-  Conor Dooley <conor+dt@kernel.org>, Matthias Brugger
- <matthias.bgg@gmail.com>, AngeloGioacchino Del Regno	
- <angelogioacchino.delregno@collabora.com>, Ryder Lee
- <ryder.lee@mediatek.com>,  Jianjun Wang <jianjun.wang@mediatek.com>, Bjorn
- Helgaas <bhelgaas@google.com>, Lorenzo Pieralisi	 <lpieralisi@kernel.org>,
- Krzysztof =?UTF-8?Q?Wilczy=C5=84ski?=	 <kwilczynski@kernel.org>, Manivannan
- Sadhasivam <mani@kernel.org>, Chunfeng Yun	 <chunfeng.yun@mediatek.com>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Lee Jones <lee@kernel.org>, Andrew Lunn <andrew+netdev@lunn.ch>,  "David S.
- Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, Jakub
- Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, Lorenzo
- Bianconi <lorenzo@kernel.org>, Felix Fietkau <nbd@nbd.name>, 
-	kernel@collabora.com, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, 	linux-arm-kernel@lists.infradead.org,
- linux-mediatek@lists.infradead.org, 	linux-pci@vger.kernel.org,
- linux-phy@lists.infradead.org, netdev@vger.kernel.org,  Daniel Golle
- <daniel@makrotopia.org>, Bryan Hinton <bryan@bryanhinton.com>
-Date: Tue, 28 Oct 2025 14:24:19 +0100
-In-Reply-To: <05610ae5-4a8a-47e9-808b-7ff98fade78e@gmail.com>
-References: <20251016-openwrt-one-network-v1-0-de259719b6f2@collabora.com>
-	 <20251016-openwrt-one-network-v1-12-de259719b6f2@collabora.com>
-	 <4f82aa17-1bf8-4d72-bc1f-b32f364e1cf6@lunn.ch>
-	 <8f5335a703905dea9d8d0c1840862a3478da1ca7.camel@collabora.com>
-	 <05610ae5-4a8a-47e9-808b-7ff98fade78e@gmail.com>
-Organization: Collabora
-User-Agent: Evolution 3.56.2-5 
+	id 1vDk2A-0000000G1fG-3aQp;
+	Tue, 28 Oct 2025 13:46:46 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id C4F5660398;
+	Tue, 28 Oct 2025 13:46:45 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4601DC116C6;
+	Tue, 28 Oct 2025 13:46:45 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1761659205;
+	bh=gHTXG47ZT83HtioVGkOdOgeWLg99afniblJgeCrheGk=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:From;
+	b=HyngrGjLb54dCOStOExNIW8Y0NWfQzBXP7/lfZg2CrXY7+IMVLq42u0PG+z1cEhOL
+	 M9rvJLEAEy7zeEAWnuV/unlMTMS3/MUsv0ix70sVbD2swTqZWjJ73oXB/FnRpo6ibM
+	 5estbSa3g/FRLspY7MtCd9VANbOrV9/5esg2D/G+7NIUhmjdRsQO8xY/aVRcPYRGXb
+	 X/UIMn6YkUr50ydC9753IDyWw8dnp67i7nUJy9ediQGszIl+HEj5mZ17iKfEPbiCQI
+	 yV1LFP3RB+1kFvEmWfqvRVyp0cXJ70Zaz3/Whr5ecoe3Wqctp9aXbfY9yaLyAIIFK6
+	 M+094b4nEUMzQ==
+Date: Tue, 28 Oct 2025 08:46:44 -0500
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Jacky Chou <jacky_chou@aspeedtech.com>
+Cc: lpieralisi@kernel.org, kwilczynski@kernel.org, mani@kernel.org,
+	robh@kernel.org, bhelgaas@google.com, krzk+dt@kernel.org,
+	conor+dt@kernel.org, joel@jms.id.au, andrew@codeconstruct.com.au,
+	vkoul@kernel.org, kishon@kernel.org, linus.walleij@linaro.org,
+	p.zabel@pengutronix.de, linux-aspeed@lists.ozlabs.org,
+	linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org, openbmc@lists.ozlabs.org,
+	linux-gpio@vger.kernel.org
+Subject: Re: [PATCH v4 2/9] dt-bindings: PCI: Add ASPEED PCIe RC support
+Message-ID: <20251028134644.GA1506590@bhelgaas>
 MIME-Version: 1.0
-X-ZohoMailClient: External
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251028_062451_938494_CC1BC9D9 
-X-CRM114-Status: GOOD (  15.52  )
+Content-Disposition: inline
+In-Reply-To: <20251027095825.181161-3-jacky_chou@aspeedtech.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,39 +74,93 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, 2025-10-28 at 12:14 +0100, Eric Woudstra wrote:
-> 
-> 
-> On 10/21/25 10:21 PM, Sjoerd Simons wrote:
-> > On Fri, 2025-10-17 at 19:31 +0200, Andrew Lunn wrote:
-> > > > +&mdio_bus {
-> > > > +	phy15: ethernet-phy@f {
-> > > > +		compatible = "ethernet-phy-id03a2.a411";
-> > > > +		reg = <0xf>;
-> > > > +		interrupt-parent = <&pio>;
-> > > > +		interrupts = <38 IRQ_TYPE_EDGE_FALLING>;
-> > > 
-> > > This is probably wrong. PHY interrupts are generally level, not edge.
-> > 
-> > Sadly i can't find a datasheet for the PHY, so can't really validate that
-> > easily. Maybe Eric can
-> > comment here as the author of the relevant PHY driver.
-> > 
-> > I'd note that the mt7986a-bananapi-bpi-r3-mini dts has the same setup for
-> > this PHY, however that's
-> > ofcourse not authoritative.
-> > 
-> 
-> Lucien would have access to the correct information about the interrupt.
+On Mon, Oct 27, 2025 at 05:58:18PM +0800, Jacky Chou wrote:
+> ASPEED AST2600 provides one PCIe RC for Gen2 and AST2700 provides three
+> PCIe RC for two Gen4 and one Gen2. All of these RCs have just one root
+> port to connect to PCIe device. And also have Mem, I/O access, legacy
+> interrupt and MSI.
 
-Thanks! For what it's worth i got around to putting a scope on the line last
-night. It looks like the interrupt line is pulled down until cleared, so it
-appears it's indeed a Level interrupt as Andrew guessed. But would be great to
-have this confirmed based on the documentation :)
+> +description:
+> +  The ASPEED PCIe Root Complex controller provides PCI Express Root Complex
+> +  functionality for ASPEED SoCs, such as the AST2600 and AST2700.
+> +  This controller enables connectivity to PCIe endpoint devices, supporting
+> +  memory and I/O windows, MSI and legacy interrupts, and integration with
+> +  the SoC's clock, reset, and pinctrl subsystems. On AST2600, the PCIe Root
+> +  Port device number is always 8.
 
--- 
-Sjoerd Simons <sjoerd@collabora.com>
-Collabora
+s/legacy/INTx/
+
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - aspeed,ast2600-pcie
+> +      - aspeed,ast2700-pcie
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  ranges:
+> +    minItems: 2
+> +    maxItems: 2
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +    description: IntX and MSI interrupt
+
+s/IntX/INTx/
+
+> +    pcie0: pcie@1e770000 {
+> +      compatible = "aspeed,ast2600-pcie";
+> +      device_type = "pci";
+> +      reg = <0x1e770000 0x100>;
+> +      #address-cells = <3>;
+> +      #size-cells = <2>;
+> +      interrupts = <GIC_SPI 168 IRQ_TYPE_LEVEL_HIGH>;
+> +      bus-range = <0x00 0xff>;
+> +
+> +      ranges = <0x01000000 0x0 0x00018000 0x00018000 0x0 0x00008000
+> +                0x02000000 0x0 0x60000000 0x60000000 0x0 0x20000000>;
+> +
+> +      resets = <&syscon ASPEED_RESET_H2X>;
+> +      reset-names = "h2x";
+> +      pinctrl-0 = <&pinctrl_pcierc1_default>;
+> +      pinctrl-names = "default";
+> +
+> +      #interrupt-cells = <1>;
+> +      msi-controller;
+> +
+> +      aspeed,ahbc = <&ahbc>;
+> +
+> +      interrupt-map-mask = <0 0 0 7>;
+> +      interrupt-map = <0 0 0 1 &pcie_intc0 0>,
+> +                      <0 0 0 2 &pcie_intc0 1>,
+> +                      <0 0 0 3 &pcie_intc0 2>,
+> +                      <0 0 0 4 &pcie_intc0 3>;
+> +      legacy-interrupt-controller {
+> +        interrupt-controller;
+> +        #address-cells = <0>;
+> +        #interrupt-cells = <1>;
+> +      };
+
+IIUC, Rob says there's no need for a separate interrupt-controller
+stanza and it can be directly in the host bridge [1].
+
+I think that does make interrupt-map a little more verbose because the
+parent unit address will use the host bridge #address-cells (3)
+instead of the interrupt controller #address-cells (0), e.g., this
+from [2]:
+
+  pcie@10e40000 {
+      compatible = "renesas,r9a08g045-pcie";
+      #address-cells = <3>;
+      #interrupt-cells = <1>;
+      interrupt-map = <0 0 0 1 &pcie 0 0 0 0>, /* INTA */
+                      <0 0 0 2 &pcie 0 0 0 1>, /* INTB */
+                      <0 0 0 3 &pcie 0 0 0 2>, /* INTC */
+                      <0 0 0 4 &pcie 0 0 0 3>; /* INTD */
+
+[1] https://lore.kernel.org/linux-pci/20250509204905.GA4080349-robh@kernel.org/
+[2] https://lore.kernel.org/linux-pci/20251007133657.390523-2-claudiu.beznea.uj@bp.renesas.com/
 
 -- 
 linux-phy mailing list
