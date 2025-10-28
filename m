@@ -4,113 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1912BCCF9EE
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Oct 2025 10:17:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E137CCD1BF
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Oct 2025 10:17:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yOM/VMBTVE+8pwxx0D+k4Vb4lTUDSHIN9AKevw8XGWI=; b=X8LivL81miA73E
-	gg5NUDW+qQ6ozO+aufAXYu2yRWvmLdoH/WojwcWCtfOqlBoOxZShdvOKMR3z5k6/4EaJJNcyFmIdT
-	Jc/nkXNOq/DP56clqAyjJ682yZn6osx2Gik2T1kWjYJuLNanIuCXwwDWlqFp28ybzYGqHGiV+IiBr
-	JwjBZ4SrbOyWHK94mEFROc5kQJNCYnJM72stXCphlUIfR4WEtLYFdD9EOlRziXYouq/gfjCwohVeN
-	PvnKSTmMlVubm7OqldBKzEU0wM5N+xkYt1a6QlDSZAl9L85/ChtCassscykXaJiFq5bceOZb7MDMw
-	d9WUg9VdL2lwtnUCrTqw==;
+	List-Owner; bh=9ampiSpsH1SWqrQ13qXaxxxOJe+gWZqD5wkhR5GOrH0=; b=Ah2L42OA6ExPpM
+	YTZ5Eve+nC97t8LSJHIURytqqjsHHUOUHMBHUK9FnbiCi9jo8IT4Crrtah9XWAKkBmP8f5iXazk3F
+	ABM6zYaiJyhL7qVi0ck68cnqSVXmukE+qDZG+t9ek7BaB/dbHzFGK/6X1DvKFwroJpdIESlFoSPjF
+	lcNE7q56hu/QduaMJEWHuHIM7awVrlAKd0nTLef7mQLxoCxn/L9UuQvbfngaCiN7nSz6UgPb/bjCF
+	9AvX94Iv5py6278d4uJAMOMTOw/QiJKhZ7kDTfIxo4D7dPCHxFdeA/9LlXkDgnEOZNZnaqU8xION1
+	Yj7Vvvq/wPTwLNxdBJdA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDgl9-0000000Fjj8-1jPT;
-	Tue, 28 Oct 2025 10:17:00 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1vDglm-0000000FjsT-46xz;
+	Tue, 28 Oct 2025 10:17:39 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDgl6-0000000Fjhs-28yy
+	id 1vDgll-0000000Fjro-1yTK
 	for linux-phy@lists.infradead.org;
-	Tue, 28 Oct 2025 10:16:58 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 59SA3MuU1238711;
-	Tue, 28 Oct 2025 10:16:41 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	AXZZaRV9/aKTDc5WPcsiEt+lwX/c/Kd/mZJvpJjiS3Y=; b=eFvvXxu/CskYXUwV
-	Z0TkpEG7R/i3JZm0ioIdRwo6AAtLhTTmBjPCdBDm4UIkuq1rhIe+mNSXKwSCQQtf
-	g7mVkKv1dlQmrBYkfwcVF/fBTxyTN/GUeRVIgfVTNZDS24gFT9brdCwvB4iHARB4
-	ubU1LHkW0KvlyZssuDUt5GrLk2VzK4Y/ePQr9w8tKSow7oHu5v/nuQe5JRVj8MR5
-	BTBlOOxOTqGxeEuXPketlPJmhO37BufCrTus4OuWZdLTG1jwtXXj75miH0BhIaiV
-	vQYVbe/M1pWHZGio+hPo/VHY+jb+d8qM80Z2AbiJbCpuzmXkKla2a8+PwVjXp6r/
-	ByIsFQ==
-Received: from nasanppmta01.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4a2ur3g121-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 28 Oct 2025 10:16:41 +0000 (GMT)
-Received: from nasanex01a.na.qualcomm.com (nasanex01a.na.qualcomm.com [10.52.223.231])
-	by NASANPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 59SAGeru011629
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 28 Oct 2025 10:16:40 GMT
-Received: from [10.206.96.75] (10.80.80.8) by nasanex01a.na.qualcomm.com
- (10.52.223.231) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.24; Tue, 28 Oct
- 2025 03:16:31 -0700
-Message-ID: <cfaf4ad9-53a9-4adf-adf3-36203403e908@quicinc.com>
-Date: Tue, 28 Oct 2025 15:46:28 +0530
+	Tue, 28 Oct 2025 10:17:38 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id CD5954338B;
+	Tue, 28 Oct 2025 10:17:36 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A4334C4CEE7;
+	Tue, 28 Oct 2025 10:17:36 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1761646656;
+	bh=VJm5ppskrkPPf3nRfEgvoMvvIklrrttFGp5m0NBmnyk=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=IShrimE7H1813z47FHt13K47u5BgdRj9iyDRKicWAJd0tX1h0kwskOGZA6tOHtZI6
+	 rQVhfGpamswikSuJ1o3da8aJfnTExSR4gMRm0CRruhqJT9w0VHzVCo7mwdhCVppv42
+	 mMWd7LH77DxttYQ+CMtoyJH9OknGxrFB929qZaRw0Rb//TdiZS5pN/u+Hq9CA2I227
+	 Mx1MdYIPgLin/4McNNL9OyCzdbLBlMhx+7KzfoKJlVlKGQu/ymL+YmtktkSlF29GyI
+	 Fe7QSRJO5XSLMp7yq+ME2Ztnu1wccztg+1DdQNUpelQ8TMsSnXqeeH7zu109hYytmX
+	 iBufrhfsU4lEw==
+Received: from johan by xi.lan with local (Exim 4.98.2)
+	(envelope-from <johan@kernel.org>)
+	id 1vDgln-000000001Hj-3XDT;
+	Tue, 28 Oct 2025 11:17:40 +0100
+Date: Tue, 28 Oct 2025 11:17:39 +0100
+From: Johan Hovold <johan@kernel.org>
+To: Miaoqian Lin <linmq006@gmail.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Roger Quadros <rogerq@ti.com>, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org, stable@vger.kernel.org
+Subject: Re: [PATCH] phy: ti: omap-usb2: Fix device node reference leak in
+ omap_usb2_probe
+Message-ID: <aQCYQ8NY3iaC4G_E@hovoldconsulting.com>
+References: <20251028062508.69382-1-linmq006@gmail.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 1/3] dt-bindings: phy: qcom-edp: Add edp ref clk for
- sa8775p
-Content-Language: en-US
-To: Bjorn Andersson <andersson@kernel.org>
-CC: <robin.clark@oss.qualcomm.com>, <lumag@kernel.org>,
-        <abhinav.kumar@linux.dev>, <jessica.zhang@oss.qualcomm.com>,
-        <sean@poorly.run>, <marijn.suijten@somainline.org>,
-        <maarten.lankhorst@linux.intel.com>, <mripard@kernel.org>,
-        <tzimmermann@suse.de>, <airlied@gmail.com>, <simona@ffwll.ch>,
-        <robh@kernel.org>, <krzk+dt@kernel.org>, <conor+dt@kernel.org>,
-        <quic_mahap@quicinc.com>, <konradybcio@kernel.org>, <mani@kernel.org>,
-        <James.Bottomley@hansenpartnership.com>, <martin.petersen@oracle.com>,
-        <vkoul@kernel.org>, <kishon@kernel.org>,
-        <cros-qcom-dts-watchers@chromium.org>, <linux-phy@lists.infradead.org>,
-        <linux-arm-msm@vger.kernel.org>, <dri-devel@lists.freedesktop.org>,
-        <freedreno@lists.freedesktop.org>, <devicetree@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>, <linux-scsi@vger.kernel.org>,
-        <quic_vproddut@quicinc.com>
-References: <20251013104806.6599-1-quic_riteshk@quicinc.com>
- <20251013104806.6599-2-quic_riteshk@quicinc.com>
- <wai7uqe6bn6kcfp3gmgqvc7sfrs37vmpqh6cucc7mopwf5x76j@vkxbwvqiqlyz>
-From: Ritesh Kumar <quic_riteshk@quicinc.com>
-In-Reply-To: <wai7uqe6bn6kcfp3gmgqvc7sfrs37vmpqh6cucc7mopwf5x76j@vkxbwvqiqlyz>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nasanex01a.na.qualcomm.com (10.52.223.231)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDI4MDA4NyBTYWx0ZWRfX2yGWf57XHnkc
- aJ7yBDQfRpt1/dljtXSWtZxUVsAGsfY9LqgAu+q/7VCRqexGp2SlbUqYPoV98u1IB4bXo6pu8QU
- CUU5zp2rA45PjdzyzBwkLxo+oBv+JCWv0Tzgd1GAsvbEH8XhZMvMjV4aY45ZCHL2q80gJSY/TXp
- qHHYS3eBmHkBPEFt4kUDTyfPuRtynrInQtgb0SaXWpsn3ESMhv8NNQ/RdyZiSNaTdIawX0BxTSA
- zIze2rJRT7wRq+Kf2NtvF3ElltzzUyfls2/9jzCWfnbJ+geUNExnsZBOwiMnOlxuJIBhSIGwHE2
- YWSzWxiBzyv4IH4she4iS/06JVK7oO7ftXVWxcSqZpy1EUdISROtx2N0Hr5IIy20xHoRHIyzIWA
- NTtwHM3cLXuvJc0nb9t6npyVxaMjHg==
-X-Authority-Analysis: v=2.4 cv=Jub8bc4C c=1 sm=1 tr=0 ts=69009809 cx=c_pps
- a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
- a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=x6icFKpwvdMA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=VwQbUJbxAAAA:8 a=COk6AnOGAAAA:8 a=EUspDBNiAAAA:8
- a=UE7cb82etAGfsupJFAEA:9 a=QEXdDO2ut3YA:10 a=-_B0kFfA75AA:10
- a=TjNXssC_j7lpFel5tvFf:22 a=nl4s5V0KI7Kw-pW0DWrs:22 a=pHzHmUro8NiASowvMSCR:22
- a=xoEH_sTeL_Rfw54TyV31:22
-X-Proofpoint-GUID: 6qcP2j5BWDkV_R2vhP4zlL5mv1mbfjFi
-X-Proofpoint-ORIG-GUID: 6qcP2j5BWDkV_R2vhP4zlL5mv1mbfjFi
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-10-28_04,2025-10-22_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- lowpriorityscore=0 clxscore=1015 spamscore=0 bulkscore=0 adultscore=0
- suspectscore=0 impostorscore=0 phishscore=0 malwarescore=0 priorityscore=1501
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2510020000 definitions=main-2510280087
+Content-Disposition: inline
+In-Reply-To: <20251028062508.69382-1-linmq006@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251028_031656_697642_4B668B83 
-X-CRM114-Status: GOOD (  18.83  )
+X-CRM114-CacheID: sfid-20251028_031737_531579_4220EF01 
+X-CRM114-Status: UNSURE (   9.92  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -122,56 +77,33 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Tue, Oct 28, 2025 at 02:25:06PM +0800, Miaoqian Lin wrote:
+> In omap_usb2_probe(), of_parse_phandle() returns a device node with its
+> reference count incremented. The caller is responsible for releasing this
+> reference when the node is no longer needed.
+> 
+> Add of_node_put(control_node) after usage to fix the
+> reference leak.
+> 
+> Found via static analysis.
+> 
+> Fixes: 478b6c7436c2 ("usb: phy: omap-usb2: Don't use omap_get_control_dev()")
+> Cc: stable@vger.kernel.org
 
-On 10/27/2025 10:35 PM, Bjorn Andersson wrote:
-> On Mon, Oct 13, 2025 at 04:18:04PM +0530, Ritesh Kumar wrote:
-> > Add edp reference clock for sa8775p edp phy.
->
-> Perhaps the eDP ref clock was missed in the initial contribution,
-> perhaps it wasn't supposed to be described at the time, perhaps the
-> hardware changed...we can only speculate on the purpose of this patch...
->
-> You could change this however, by following
-> https://docs.kernel.org/process/submitting-patches.html#describe-your-changes
-> and start your commit message with an explanation of the problem you're
-> trying to solve...
+There should not be any need to backport this one.
 
-Sure, will update the commit message giving details of the problem.
+> Signed-off-by: Miaoqian Lin <linmq006@gmail.com>
 
-> > 
-> > Signed-off-by: Ritesh Kumar <quic_riteshk@quicinc.com>
->
-> Please start using your oss.qualcomm.com
+Other than that, looks good:
 
-Took a note of it.
+Reviewed-by: Johan Hovold <johan@kernel.org>
 
-> Regards,
-> Bjorn
->
-> > ---
-> >  Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml | 1 +
-> >  1 file changed, 1 insertion(+)
-> > 
-> > diff --git a/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
-> > index bfc4d75f50ff..b0e4015596de 100644
-> > --- a/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
-> > +++ b/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
-> > @@ -73,6 +73,7 @@ allOf:
-> >          compatible:
-> >            enum:
-> >              - qcom,x1e80100-dp-phy
-> > +            - qcom,sa8775p-edp-phy
-> >      then:
-> >        properties:
-> >          clocks:
-> > -- 
-> > 2.17.1
-> > 
+Johan
 
 -- 
 linux-phy mailing list
