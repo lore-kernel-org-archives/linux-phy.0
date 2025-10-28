@@ -4,77 +4,181 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E8A0ECCD1BF
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Oct 2025 08:28:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F41FACCF9E0
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Oct 2025 08:41:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AMfkfC4CKuHym0Mqwjc6wCHppsGt7KIiN7EyHnJwWf8=; b=KO1OUYMzusFZw2
-	WaS9cMMD9yQJq/FEQoIuFSaln1mPkPBg4n3BCEgPRFznizgduEUqFJLAQ1og1eVGU8M6hSOWvQIQ/
-	+XL4nE3I9ebShUPl11PbM+cTt8/pxrG24iKEn40AqemabeJXYha72IIfABD5pWx/oxi7OcD1RFwey
-	feYtD3H8+zIbxYNnkHjXHzXgi5opJHdxTBpEo4mb88ZJOu1IOWO87QsrB+kb9W85Hd6eSezNR+Ebg
-	bLiIPw81ySf9gP/KnVevIZqWf++l8DADlnvIkq9ZsO+MpG6VbKcwWTWvYTsGuWgN3+tlO6nvTa7yF
-	ABvexyn78U1w9nI2nFww==;
+	List-Owner; bh=4s3qq7h0ynNRl0T0iCzWCxLNj9vLcVmgTOWfJILURws=; b=ahslqzVMB5+7Zx
+	vt3dt058ObsSmFyxZv0mBcU3gfEDZY9im06TTSLDF97+AiZb0fSKZ/KAHFhci0oi8kEgp/pTWl5Bc
+	5cQUUvcH9U1FXt/0hfpnnL4aIXXQTgUkV5AsmU0mGeciTTEqbKp+R+lennaie16xfnk8sw+Zd0Qll
+	LbTT54Fd4isUJ7svsBdUyLBbNRgrjEAk7iCG9Psav1vGFBkke1AvOIwWEHIeuF+ySBuM3q1BvRMxe
+	GIc3xZFK/Sq2a9UcvVp/NrxX1wVXF/KA7ao+e6MBrS8VOjcKvvuVSn+mznfOQW9yaJKcu6Df4gqWf
+	KvHy187iNLFrqjzlLRGQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDf3r-0000000FY8s-2NJu;
-	Tue, 28 Oct 2025 08:28:11 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
+	id 1vDfH4-0000000FYzJ-2PvR;
+	Tue, 28 Oct 2025 08:41:50 +0000
+Received: from mail-japaneastazlp170120005.outbound.protection.outlook.com ([2a01:111:f403:c405::5] helo=TYPPR03CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDf3o-0000000FY7O-0BaC;
-	Tue, 28 Oct 2025 08:28:09 +0000
-Received: from pendragon.ideasonboard.com (unknown [193.209.96.36])
-	by perceval.ideasonboard.com (Postfix) with UTF8SMTPSA id E545116CD;
-	Tue, 28 Oct 2025 09:26:17 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
-	s=mail; t=1761639978;
-	bh=oNlpkQO5cst6KsAukF9U7bQZ+Sa47oF2EkKRJDLHMeI=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=jIKURGR5U/AmwLf+zhFNmroQF9QQUBrT0sjXi/qZVnGFcfUdImrsM2j8NnW9HLYXZ
-	 gcATKbqYBMHtB0VeGe2ohVjfTiTypIovnOmECF9Un2qglKWztUtcfYYxECAvEG3R3z
-	 7BUVyheYs5jGK5m14Z1JQbpUiQLyX6EuiMkr8t4w=
-Date: Tue, 28 Oct 2025 10:27:53 +0200
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Frank Li <Frank.li@nxp.com>
-Cc: Sakari Ailus <sakari.ailus@iki.fi>, Rui Miguel Silva <rmfrfs@gmail.com>,
-	Martin Kepplinger <martink@posteo.de>,
-	Purism Kernel Team <kernel@puri.sm>,
-	Mauro Carvalho Chehab <mchehab@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Eugen Hristev <eugen.hristev@linaro.org>,
-	Shawn Guo <shawnguo@kernel.org>,
-	Sascha Hauer <s.hauer@pengutronix.de>,
-	Pengutronix Kernel Team <kernel@pengutronix.de>,
-	Fabio Estevam <festevam@gmail.com>, Peng Fan <peng.fan@nxp.com>,
-	Alice Yuan <alice.yuan@nxp.com>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Steve Longerbeam <slongerbeam@gmail.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	linux-media@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, imx@lists.linux.dev,
-	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
-	linux-staging@lists.linux.dev, Luis Oliveira <lolivei@synopsys.com>
-Subject: Re: [PATCH v3 01/31] dt-bindings: media: add DW MIPI CSI-2 Host
- support
-Message-ID: <20251028082753.GZ13023@pendragon.ideasonboard.com>
-References: <20250821-95_cam-v3-0-c9286fbb34b9@nxp.com>
- <20250821-95_cam-v3-1-c9286fbb34b9@nxp.com>
- <aP8t3YClrZxOnHea@valkosipuli.retiisi.eu>
- <aP+enPOHPkvZAkzS@lizhi-Precision-Tower-5810>
- <aP_bSQUIle_9-L-7@valkosipuli.retiisi.eu>
- <aP/ehdkppeVr5G6H@lizhi-Precision-Tower-5810>
+	id 1vDfH1-0000000FYyb-1kxq;
+	Tue, 28 Oct 2025 08:41:49 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=piFjuaRAJvOSPnkAxWMY8REXl5rVoD5vEATlz2fQiH1wynvYeqnS3YCQXg+SaIXaNTNQt/xI5MrJ9lu7Y7szMCxRLFxnIRgEreptkT/DsrECzLMQTiEL7UVTUAj1/J97hwCb+GcNw7bX9AqZ0uPrgF+XL9DPeDCKSiCKCA8NGttvCdu99azjVOWzw3hYa0XTu2riuH2HkFruAL5WMm0b5y8wzty/kVREYpKywTcjviwXFdl8Vw7Qn9zS8Cgn2K+yL48JC2DvckpukL7l9iuVoUSx7DxzQtqJ7R8RcXwbeQnM4wCH+3tthzfugnOEJLIB/E/MhtoSsZ9x5Jp031Xatw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=iSp6QRrqRlVKZyh6PwKddC8WwDrhRhF4BhXP7AwRzIs=;
+ b=pqs70SnZ6xQdEsVcVwOK0QmLa9S4Vn2kJ4S2eq0wsKlUUHO1lCf9Bgo8pXMZd0IDxpOALcSUODqNjsTRGe1y0ZAvyMuVs9GaMngrie5fUA8CsASIIYISuZHO4QOoq12a2fqcCdRfg72bltXRMPaYravPMSPGTkOmC7lSCn60R4FEOiVqK7O7PU17k/pYsxsmHenTBViJDZc/mdufubUVjUEPIK+xYPnpmc2y+T4ubm5lpjICkIVzxV2BmOEYLmOlrFKQiH4LHhbNcponXOV/Yqh2ZgLa5/rUxmPdmD4qZt46S0ZoO7kdnFxEzViKlwCkhBMQfbbsFqdKFsz8hT2asg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=aspeedtech.com; dmarc=pass action=none
+ header.from=aspeedtech.com; dkim=pass header.d=aspeedtech.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aspeedtech.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=iSp6QRrqRlVKZyh6PwKddC8WwDrhRhF4BhXP7AwRzIs=;
+ b=lAh9t5vZJMn+NNU3x/Cbheyv9FP0gZJVwXeyMlCAgmcgX2NKJUNaarRif0W3gCZ43fvRDArRO/sSnQQAIqGKWd2l1CCN0vU5VorM4Q5mKPKAgeJ7eaBouMEJge5O3Jpzlye23ywG3EsjM2LmP4RxFHHWV7f8j75jlaMuskz31Py71g3YNhKcPkjJHLXTtMFht51SkevfsVrSHURILFNAn9b96X/9Ok8QUxdKFctLm83Xy/qxyYXRpxUw6toXOimtEU/FZsOjs1AENSA+pK6Cq2OPSdxp81YCA81MEoH9Q9mXl1QdOjKQ0LTMtFyYQzHelcVymedKu4kU67sH+KtBKA==
+Received: from SEYPR06MB5134.apcprd06.prod.outlook.com (2603:1096:101:5a::12)
+ by SEZPR06MB6959.apcprd06.prod.outlook.com (2603:1096:101:1ed::14) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9253.20; Tue, 28 Oct
+ 2025 08:41:39 +0000
+Received: from SEYPR06MB5134.apcprd06.prod.outlook.com
+ ([fe80::6b58:6014:be6e:2f28]) by SEYPR06MB5134.apcprd06.prod.outlook.com
+ ([fe80::6b58:6014:be6e:2f28%6]) with mapi id 15.20.9253.018; Tue, 28 Oct 2025
+ 08:41:39 +0000
+From: Jacky Chou <jacky_chou@aspeedtech.com>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+CC: "lpieralisi@kernel.org" <lpieralisi@kernel.org>, "kwilczynski@kernel.org"
+	<kwilczynski@kernel.org>, "mani@kernel.org" <mani@kernel.org>,
+	"robh@kernel.org" <robh@kernel.org>, "bhelgaas@google.com"
+	<bhelgaas@google.com>, "krzk+dt@kernel.org" <krzk+dt@kernel.org>,
+	"conor+dt@kernel.org" <conor+dt@kernel.org>, "joel@jms.id.au"
+	<joel@jms.id.au>, "andrew@codeconstruct.com.au"
+	<andrew@codeconstruct.com.au>, "vkoul@kernel.org" <vkoul@kernel.org>,
+	"kishon@kernel.org" <kishon@kernel.org>, "linus.walleij@linaro.org"
+	<linus.walleij@linaro.org>, "p.zabel@pengutronix.de"
+	<p.zabel@pengutronix.de>, "linux-aspeed@lists.ozlabs.org"
+	<linux-aspeed@lists.ozlabs.org>, "linux-pci@vger.kernel.org"
+	<linux-pci@vger.kernel.org>, "devicetree@vger.kernel.org"
+	<devicetree@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
+	<linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+	<linux-kernel@vger.kernel.org>, "linux-phy@lists.infradead.org"
+	<linux-phy@lists.infradead.org>, "openbmc@lists.ozlabs.org"
+	<openbmc@lists.ozlabs.org>, "linux-gpio@vger.kernel.org"
+	<linux-gpio@vger.kernel.org>
+Subject: [PATCH v4 4/9] ARM: dts: aspeed-g6: Add AST2600 PCIe RC PERST#
+Thread-Topic: [PATCH v4 4/9] ARM: dts: aspeed-g6: Add AST2600 PCIe RC PERST#
+Thread-Index: AQHcRyhBkwdEhUYe506wXhLgpJneR7TXMXOAgAAM4lA=
+Date: Tue, 28 Oct 2025 08:41:39 +0000
+Message-ID: <SEYPR06MB5134DA0859EEACE4B308CD159DFDA@SEYPR06MB5134.apcprd06.prod.outlook.com>
+References: <20251027095825.181161-1-jacky_chou@aspeedtech.com>
+ <20251027095825.181161-5-jacky_chou@aspeedtech.com>
+ <20251028-witty-nickel-pig-5bd4bc@kuoka>
+In-Reply-To: <20251028-witty-nickel-pig-5bd4bc@kuoka>
+Accept-Language: zh-TW, en-US
+Content-Language: zh-TW
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=aspeedtech.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: SEYPR06MB5134:EE_|SEZPR06MB6959:EE_
+x-ms-office365-filtering-correlation-id: 2e04c4cf-ad17-4dfb-7b9f-08de15fdd03c
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;ARA:13230040|366016|7416014|376014|1800799024|38070700021;
+x-microsoft-antispam-message-info: =?utf-8?B?Mjl4aUJPcllTQkYxdERrTXo4V3NoWld0M2hmYmVoa0c1UnhGaStjVFozZTdG?=
+ =?utf-8?B?aFZQaG5YYWRYd2J1R0dPMk1PZWp3MGVhbUpVNktSRzRnM0RXNHU4SU5ISStP?=
+ =?utf-8?B?VTMvNWJVREtPcFc4VDVpY3JnOWJJNTd0MUJENkUwMHFMaXcvN1BvUTFPeHI3?=
+ =?utf-8?B?NzJ5VDNmU1ZxMENoekxMRThkdWhuLy9DSllLT0dEb0ZrNWg4ZTNRU1Y1ZVEw?=
+ =?utf-8?B?R3gvbVFxVm1YSDcwVUlPK2pUNDk5KytSUGk4QXhPYm5iMDhvOE1lbUFuZG9K?=
+ =?utf-8?B?Yi95aWN2VENmVU9vQmYxRWpBajZ2VjRWaHR1QnUrQWRuQkhxUFdCbllZRHJD?=
+ =?utf-8?B?aThnLzFUVGlMWkdwVUttcHZmbHRHai9MUUthVkZtajFWYm44QTZDZEFhMG93?=
+ =?utf-8?B?MFEwemNXL3BHL3cwTmlKN3BNV2JYeEk2eVZvV0t4RTFzTHRWZmErdHVsb21G?=
+ =?utf-8?B?ZDZjNTdhV3JVZUpFL2thSUxUM1RLY0VtakpYYnljelVXdEpwdGcvYmtMZ3Nt?=
+ =?utf-8?B?dzZweWJVSy9vVnV3UW9MK2FzcUJlMUJBVVBtQ1VXbE9nNUtWZmVJZllrZGhR?=
+ =?utf-8?B?TzQ5M3V2U3VNOTBWaHVKakRHVXphU3ZvVFhaRXFSYXg4bm5xWVJBRmdPRjVX?=
+ =?utf-8?B?WkNneFVLRkp5Zi85bkVPVFBDa2xxdVdkK0RDRUlZK3RRR0JZejFqRUFmTkdM?=
+ =?utf-8?B?bHRQQUF4QU5HeVRrZkhTQ0o0VkVmemc0bkpDUXN6czgrT1dNRHFjQ3hXRmlJ?=
+ =?utf-8?B?TnorYWhqWXE5TThNNjVNVmxoeFVjRXN3Q3FyVUNvK3pHV3l2YlloNDRCUjhk?=
+ =?utf-8?B?Q1BJZ3dNd0xlelQvMjZBWTJYV2dSQldMYnFRYytDSWJZNFQwN2dtT3ZJYnNK?=
+ =?utf-8?B?SUN5dUtnbjZMRElpaytRaEJSTTk2Nnl2TkQvd1I0emdPWFI4TWNXQzFXNCs2?=
+ =?utf-8?B?ZHZVb04zT0ZPRk5HTUVYUy9GUm8vcEQ2WDFnRG5JOWx5OUgrR2tFSFByeVF5?=
+ =?utf-8?B?RFNRcCtHT2llM1JLblZYUTFpVWNaOGZVSHZHQ1d3VUJJWlBJWlVBZ0I4M1JT?=
+ =?utf-8?B?TW1ka21xYUgzQ0lDYzROS1dUbjI1SldOcTRwcTZQQ3JCYVFtbHljMDhyQXpI?=
+ =?utf-8?B?c3ozenFaZytHY01kMUg5cUFhRXlTZDl6ZnZhb2tCRHhlVFc4N3NIWlc1a2o1?=
+ =?utf-8?B?TU0vZGdyVHZ0UHBmNk4xMGs2OExmKzBzSnE1bEpyOHk3UzhNa0IzaGxrcVc4?=
+ =?utf-8?B?Slc0QzBvc2pBc1NhRW55RXc1cWtRWU02MmN1cGN3WHRNaWhBc25VZUtaVkN6?=
+ =?utf-8?B?WEJzbFp4b2pGUHVYbEpsYnoxeFVDVVVXMlBsRHFFa1pCeVNpRTVDMDBZQkwr?=
+ =?utf-8?B?azVyTk1NQTlKZzJWRktoQ1g0S3dyYUZsajErYnJTdElkdW02M1BNWDUvVk41?=
+ =?utf-8?B?NVB1MzNTT3FhbFh0Qm9EcWZGWTRRVS85anJ1YUI1RVh2VkxVZDNYU256K1Qv?=
+ =?utf-8?B?OC92akZ0Mi9rQmtJbFl6M2YyVDIvdUI0U0d5S3cvSTNIWnhPbjZnWmtmT0dI?=
+ =?utf-8?B?REN5WTBEUlBHaXRMakpPdGRQbnpWS0pTb2RzZ2FiRjlCS3hqTjQwNEw5QzNl?=
+ =?utf-8?B?L1NxVERCUHFTd003b2xoYnJYMDdCcmNueXB1VUxlcktrT2wwbjYwVjJrK0lq?=
+ =?utf-8?B?V1E1ZFZ1QlBkR1pZaGppMUdEV29QM3lDc1JkOGdYWWVmVWc5WVprcTZiWmhI?=
+ =?utf-8?B?Y3BoWjRaOStISDRESVFUNVZvdUc0Mk9zS2VLMStwVFFvb0JxT2NOaVRRWFlI?=
+ =?utf-8?B?ZWNBT0tmSzlzV2VNd2xDNmFjWjFPMzNWdGhDckE1YXR1RWZPbmxmN3VTM29X?=
+ =?utf-8?B?c21hT1JSVFZxak12MkZielE2YTJINGZwVmdPSkczcCtldEFpNmVOV3JyWDRS?=
+ =?utf-8?B?bllJNEo0Y2RIV0ZHaEdoYm84d0tudkF1REJUQlNPS0x5QVRHVUFoOXVzKzdP?=
+ =?utf-8?B?QlllVThYUjBSNDQ1cHNmeVp4aTE0MDN2aXl0bW84VFcvK2thd0VKTGx3c05Q?=
+ =?utf-8?Q?wq2pQU?=
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:zh-tw;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SEYPR06MB5134.apcprd06.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(7416014)(376014)(1800799024)(38070700021);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?utf-8?B?MGF3SUlyQ2ZYVzI3MDdiRjRpVThSZHhzYm56R2lWSjc1VUdIMldVTUh3SnV2?=
+ =?utf-8?B?Mnk5TUoxUmFCU2FnbnJPcDBBa2NkdFZZYmZUcmxaaVhEZVUvWEQ0YmxoOHg2?=
+ =?utf-8?B?NmUwUi9sMGVIYzdJSHVPTU5sRzdRendGQml1VGNET3JweXNjQzhxdHNTaHN2?=
+ =?utf-8?B?eGRKNjBsNlVnVFVBeWlHbjdjaXhMYkFvSGpKUXhTYldVaTI1V1pzampoM1R5?=
+ =?utf-8?B?cUFWYXE5emx1NFFpSFFKOEF4QzRhRi92Rm9oeDhjOVZzdDdCMmJpWUNDWXVE?=
+ =?utf-8?B?bE0zZHp3ZmV2bDhZV3B2R2hibWgzNEEvbDhKa000VGVuWmJLSEcrbEhveDZU?=
+ =?utf-8?B?WHVIeTdmKzRYcTJhT2padDdsSXVKSlZrQllkNnJvMUduN01xR0VLNFVWUHlV?=
+ =?utf-8?B?UFppL1gvWFB0RmFsNnVQSlk4TFFKSEUwaURiTTRaSEplT3hab1oxRGNxbG9K?=
+ =?utf-8?B?ZzduU0ZLVUFBUHJxWmkvM294K3dGa1dOZDFNZ3Rxa3dXMVR3RnNyYnFtM0hD?=
+ =?utf-8?B?SkRlZEdvc0J6M0NZRTlJOTdFWXcvV2dqV3YxUW0wTW5CeU5YaUZ1OEprOXR6?=
+ =?utf-8?B?eWlsdFlMaThpK1d2SXZWZWZyOVdtNnpiQ0JueGxQUEhSQXBYdE1aaUZVa3FQ?=
+ =?utf-8?B?U25xY3p4bVhSbVpvckdQWVBpdU9mWUZiUmVDN1VVWDBwOWdOYjRJUkdBcXh3?=
+ =?utf-8?B?VmozUnlNMlg0WEtjbFRSejYzUEpTUFVMSHVqQVdmNEpqNWdsUEdSbWo2RVg2?=
+ =?utf-8?B?RkgyVEl4WnpmQ1dKZCs1SEsvRExGVkxXOXVKU2ZpUDFJd3I3emZYSzVkUk0y?=
+ =?utf-8?B?L2hSVTFnQ0doQlpSaVRTak10ckFPWUhBOTF3UHF3eWRNMVZ1d2ZmZGIycXlq?=
+ =?utf-8?B?WXRydW5RejE0TVplcWJzQzRwUUdQZUFqemxwbU5YcEhWUUd5eTEzU2lKWTJ2?=
+ =?utf-8?B?aG5qQXJhZzVmNnUzRStDeldJS1h3UWd1aDl1YTY3L0NFODI3K09iTHhpQ0cx?=
+ =?utf-8?B?R3g5enM3MURBNXZoWnA4d21CNHdweHdEdFpyVXAwSXNIb2d5MGN6S0J3UGZk?=
+ =?utf-8?B?NTBtM3puYWVOQzQ5N3BldkxJK1pTZitOMUNjdzh0eVB5VzhVZTloeWwwZlZr?=
+ =?utf-8?B?YVdQZjUvekFpVTluYWF1QVlaaUozQjJ6UGxDU0VIY3hWbUxuZSs3RWFQdlly?=
+ =?utf-8?B?VndTVzVZejRUZW1FbElOa1hxanFPcmJjZ0dLZVRLZDZ0VGVsK0o1UlVDQmIw?=
+ =?utf-8?B?Z0V1MkJSb2pXNW5XUG02U3Q3aERnMVh3b1hLbjNZWmg3THdoRDc1c3BsdXZl?=
+ =?utf-8?B?UWtVS1dPSktlL3hrTm9VZ2J6N2xYTkVjYUJSRktZSTZjVlROM3VnNWRsazVK?=
+ =?utf-8?B?YVF2bERGdUtlR1JOMmpFYTV2bERab1BYeldRV1Y4STVtV3g1Zm95UHJjaXRj?=
+ =?utf-8?B?akE1SUtBVnlrbDZuelB2V1oxNEFGUjlybjBLaGp6QVIwY3RldmJjaUpCVXBP?=
+ =?utf-8?B?cUNUdXVWYW1rUEthMXlDZlo5Sjc0SlJXUTdXOWdMUjZwUExuNkJ6TGVqOFJU?=
+ =?utf-8?B?a1ZDMGVIUENqQXpyVU8vYnhjeCtnTjJsTTdVZjl2UkR4SnhsaHUzMTArYXdl?=
+ =?utf-8?B?ZzIvN3JKM1A3cGdDaEhBSjB3UU4xUFY1SjZ6LzVlY2dwVU5pdmt3dWV0UVNQ?=
+ =?utf-8?B?SFBoNGwyVmN5N0k1YVVwbEpBT1R1Z051cjZGdzBpam9Sc1lpTXBGS3R4ZEtw?=
+ =?utf-8?B?clMyN25TZ0NlbDdFZlJXbUlSVkhwSmhvb2FPcnVEc2F4aFdPMHVWb1NFZldD?=
+ =?utf-8?B?RWVva1orWm5RMXBLMEwyUENqNy9oVTZFZ1VxYStIdFBvVy9Ec2dYRzFYcWNw?=
+ =?utf-8?B?QjBQVVlaSHBhMFRuV1J2QXdzdDg4c2xYLzdHOHpMNmROZzNTTGVaaitPZkpr?=
+ =?utf-8?B?Tm85MXRXSUhMYUZkVm9rVG1TckJGY3lMUXk4YWh4SEUxWitRN2xMdWMxZDJQ?=
+ =?utf-8?B?MzZNc25aL1c0QUM5MzIzVlJJcHgrb2lGelhDSXZaUXFDOTZpUVdDUnZKOVJi?=
+ =?utf-8?B?SUQ4ZEFWUmNjQjRkU1VUdGhwRUFiR2JUWWVxcTFaN0NrNGNPTFd5Uk83Qmxo?=
+ =?utf-8?Q?EVFPcQ+GBViW/p0R7i9dhOO8L?=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <aP/ehdkppeVr5G6H@lizhi-Precision-Tower-5810>
+X-OriginatorOrg: aspeedtech.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: SEYPR06MB5134.apcprd06.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2e04c4cf-ad17-4dfb-7b9f-08de15fdd03c
+X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Oct 2025 08:41:39.7502
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 43d4aa98-e35b-4575-8939-080e90d5a249
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: WTje9earqnBuB0eEbzDU5BNA0eGoMURxa1KHumwhHe8JV595rfCGARz64fwxiCegYp5QdYWEz1GdgX/WXfkwhWHpUEsbMfYnCoTIgBD+z50=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SEZPR06MB6959
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251028_012808_222644_12C8F605 
-X-CRM114-Status: GOOD (  33.49  )
+X-CRM114-CacheID: sfid-20251028_014147_850335_0BC6F0EB 
+X-CRM114-Status: GOOD (  10.25  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,170 +195,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Oct 27, 2025 at 05:05:09PM -0400, Frank Li wrote:
-> On Mon, Oct 27, 2025 at 10:51:21PM +0200, Sakari Ailus wrote:
-> > On Mon, Oct 27, 2025 at 12:32:28PM -0400, Frank Li wrote:
-> > > On Mon, Oct 27, 2025 at 10:31:25AM +0200, Sakari Ailus wrote:
-> > > > On Thu, Aug 21, 2025 at 04:15:36PM -0400, Frank Li wrote:
-> > > > > From: Eugen Hristev <eugen.hristev@linaro.org>
-> > > > >
-> > > > > Add bindings for Synopsys DesignWare MIPI CSI-2 host, which used at i.MX93
-> > > > > and i.MX95 platform.
-> > > > >
-> > > > > Signed-off-by: Luis Oliveira <lolivei@synopsys.com>
-> > > > > Signed-off-by: Eugen Hristev <eugen.hristev@linaro.org>
-> > > > > Signed-off-by: Frank Li <Frank.Li@nxp.com>
-> > > > > ---
-> > > > > Change in v3
-> > > > > - drop remote-endpoint: true
-> > > > > - drop clock-lanes
-> > > > >
-> > > > > Change in v2
-> > > > > - remove Eugen Hristev <eugen.hristev@microchip.com> from mantainer.
-> > > > > - update ugen Hristev's s-o-b tag to align original author's email address
-> > > > > - remove single snps,dw-mipi-csi2-v150 compatible string
-> > > > > - move additionalProperties after required
-> > > > > ---
-> > > > >  .../bindings/media/snps,dw-mipi-csi2-v150.yaml     | 151 +++++++++++++++++++++
-> > > > >  MAINTAINERS                                        |   1 +
-> > > > >  2 files changed, 152 insertions(+)
-> > > > >
-> > > > > diff --git a/Documentation/devicetree/bindings/media/snps,dw-mipi-csi2-v150.yaml b/Documentation/devicetree/bindings/media/snps,dw-mipi-csi2-v150.yaml
-> > > > > new file mode 100644
-> > > > > index 0000000000000000000000000000000000000000..d950daa4ee9cfd504ef84b83271b2a1b710ffd6b
-> > > > > --- /dev/null
-> > > > > +++ b/Documentation/devicetree/bindings/media/snps,dw-mipi-csi2-v150.yaml
-> > > > > @@ -0,0 +1,151 @@
-> > > > > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> > > > > +%YAML 1.2
-> > > > > +---
-> > > > > +$id: http://devicetree.org/schemas/media/snps,dw-mipi-csi2-v150.yaml#
-> > > > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > > > > +
-> > > > > +title: Synopsys DesignWare CSI-2 Host controller (csi2host)
-> > > > > +
-> > > > > +maintainers:
-> > > > > +  - Frank Li <Frank.Li@nxp.com>
-> > > > > +
-> > > > > +description:
-> > > > > +  CSI2HOST is used to receive image coming from an MIPI CSI-2 compatible
-> > > > > +  camera. It will convert the incoming CSI-2 stream into a dedicated
-> > > > > +  interface called the Synopsys IDI (Image Data Interface).
-> > > > > +  This interface is a 32-bit SoC internal only, and can be assimilated
-> > > > > +  with a CSI-2 interface.
-> > > > > +
-> > > > > +properties:
-> > > > > +  compatible:
-> > > > > +    items:
-> > > > > +      - enum:
-> > > > > +          - fsl,imx93-mipi-csi2
-> > > > > +      - const: snps,dw-mipi-csi2-v150
-> > > > > +
-> > > > > +  reg:
-> > > > > +    items:
-> > > > > +      - description: MIPI CSI-2 core register
-> > > > > +
-> > > > > +  reg-names:
-> > > > > +    items:
-> > > > > +      - const: core
-> > > > > +
-> > > > > +  clocks:
-> > > > > +    maxItems: 2
-> > > > > +
-> > > > > +  clock-names:
-> > > > > +    items:
-> > > > > +      - const: per
-> > > > > +      - const: pixel
-> > > > > +
-> > > > > +  phys:
-> > > > > +    maxItems: 1
-> > > > > +    description: MIPI D-PHY
-> > > > > +
-> > > > > +  phy-names:
-> > > > > +    items:
-> > > > > +      - const: rx
-> > > > > +
-> > > > > +  resets:
-> > > > > +    maxItems: 1
-> > > > > +
-> > > > > +  interrupts:
-> > > > > +    maxItems: 1
-> > > > > +
-> > > > > +  power-domains:
-> > > > > +    maxItems: 1
-> > > > > +
-> > > > > +  ports:
-> > > > > +    $ref: /schemas/graph.yaml#/properties/ports
-> > > > > +
-> > > > > +    properties:
-> > > > > +      port@0:
-> > > > > +        $ref: /schemas/graph.yaml#/$defs/port-base
-> > > > > +        unevaluatedProperties: false
-> > > > > +        description:
-> > > > > +          Input port node, single endpoint describing the input port.
-> > > > > +
-> > > > > +        properties:
-> > > > > +          endpoint:
-> > > > > +            $ref: video-interfaces.yaml#
-> > > > > +            unevaluatedProperties: false
-> > > > > +            description: Endpoint connected to input device
-> > > > > +
-> > > > > +            properties:
-> > > > > +              bus-type:
-> > > > > +                const: 4
-> > > >
-> > > > If 4 is the only value supported, you can drop the property altogether.
-> > >
-> > > Sorry, What's your means here? There are more options in video-interfaces.yaml.
-> > > here just add restriction for bus-type. otherwise other value can be
-> > > provide in dts file.
-> >
-> > It could, but wouldn't any other value be incorrect?
+Hi Krzysztof,
+
+Thanks for your reply.
+
+> On Mon, Oct 27, 2025 at 05:58:20PM +0800, Jacky Chou wrote:
+> > Add pinctrl support for PCIe RC PERST#.
 > 
-> at least that 5 # Parallel doesn't make sense for CSI2's input.
+> This is part of PCI commit. Makes no sense on its own.
+> 
 
-The point is that, if the only valid value is CSI-2 DPHY (4), then
-there's no need to specify it in DT. The driver would know the input bus
-is CSI-2 DPHY, so there's no need to convey that information in the
-device tree.
+Agreed.
+I merge this patch into 
+"ARM: dts: aspeed-g6: Add PCIe RC and PCIe PHY node" patch in next version.
 
-> > In other words, this property is redundant and should be dropped.
-> >
-> > > > > +
-> > > > > +              data-lanes:
-> > > > > +                minItems: 1
-> > > > > +                maxItems: 4
-> > > > > +                items:
-> > > > > +                  maximum: 4
-> > > > > +
-> > > > > +      port@1:
-> > > > > +        $ref: /schemas/graph.yaml#/$defs/port-base
-> > > > > +        unevaluatedProperties: false
-> > > > > +        description:
-> > > > > +          Output port node, single endpoint describing the output port.
-> > > > > +
-> > > > > +        properties:
-> > > > > +          endpoint:
-> > > > > +            unevaluatedProperties: false
-> > > > > +            $ref: video-interfaces.yaml#
-> > > > > +            description: Endpoint connected to output device
-> > > > > +
-> > > > > +            properties:
-> > > > > +              bus-type:
-> > > > > +                const: 4
-> > > >
-> > > > Are both input and output of this block CSI-2 with D-PHY?
-> > >
-> > > Yes, input from camera sensor, output to others image processors to do data
-> > > transfer or format convert.
-> >
-> > The description appears to be saying this is "Synopsys IDI", not CSI-2 with
-> > D-PHY. We don't have a bus-type for IDI. Couldn't you simply drop it?
-
--- 
-Regards,
-
-Laurent Pinchart
+Thanks,
+Jacky
 
 -- 
 linux-phy mailing list
