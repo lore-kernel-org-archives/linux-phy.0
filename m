@@ -4,168 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 00E8ECCF9E0
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Oct 2025 15:46:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 83FF5CCF9E0
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Oct 2025 17:13:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6sm9QxDx3YHyn4btJI+DBsTa7b9xvGd+hPSJUZuTCLg=; b=G9uV3gn34K5Uvi
-	dn+bwK3JFkOyhAJe+MkxojMpCxqoFlji6zlV0QCCrab4n3vOh9HrpSijXX0pRQZEEAIgH2wW4rfMt
-	j/mza3sRQpe8WZQTfm0zActikiJckbbc0t/++9wiraNGqJGG8ykhkFV/RqQTH/byr02i3rmCtv/Hz
-	E2KPl1cSiw7nB6jh6GvLB6XDayIKZ1m70t9VeW3LZeWPBaBTGYoRpvukKUnh7UmNEWSQxAR52P1x+
-	ROgr0mk9SjnfPh0l8umxr78j9vjwyr7s2a2hercML02d3NhuBE1txF6hXYo9QeV5u5pSfG6/d/AcD
-	ACAL2APCLOaRKCRmCz2g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=0ZwDjtR2ygtcQ6BjjTiYe9d6ak1hljm8JDEXJArPwf0=; b=JEqFx9jhHAdWvw
+	6zX9+tHGnPA8FpnS4E4TC/o6qRYkblLbH2Ks442EXGM6942X1a4BgYLB+1ot2D/IGPhpgYtIo4heW
+	Z0B3sacXKp30bWk5vWJixt3KXU1J5V9nU0wiHSMYNFWMF3IMCNYKqMP6CjOWWvYgeRw9eM5XJ/Max
+	4ZeALZXU1d0cCsctULY+QhNcID6++SS7Z9uT1PyshJLmC7/pLPs6vc2OzQP6m2eCCypjJFEyaqb6D
+	hgDpVrVqRxr8H4gpXXLm0cf0uPEIPla2jr6FiXhfjF0OH+j2knC59P4gOF/0u4gCIyfsKPn8dprLh
+	PgS7Grb3bydb2BjRw5AQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDltk-0000000GDyM-2ZgO;
-	Tue, 28 Oct 2025 15:46:12 +0000
-Received: from mail-westeuropeazlp170130006.outbound.protection.outlook.com ([2a01:111:f403:c201::6] helo=AM0PR02CU008.outbound.protection.outlook.com)
+	id 1vDnGJ-0000000GOIJ-0Ucm;
+	Tue, 28 Oct 2025 17:13:35 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDlti-0000000GDvS-1rzt;
-	Tue, 28 Oct 2025 15:46:11 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=GpL9G94NQFPm5sgd42r1W3a3QBjP6VgIcJoUYIYUDWM32uCBboZ8oZmWTATTb940kDWf3KXeXIFd+ojEkn1hy0ZvYFtzB3XJOu+vgv7hNFYPmup8SQ9DR1vBDwpClWfHp+7YlVLuM3CnXVT49YJg2JheQtukZxfZL8BzM3ayjlkkK8kB6f5DKNqWCqpXjV41ryZ3LFcRy95tGUCM2TTcJH/jkFU7GxPhhDkqkYP5hXassSLegilqLLGLO2IpzsgI3R/LIS7vD04oLcgwwkut9s7p5Jm6Rj8ZP7q8oR69rn07PjcMN9lpUyxgKBGOiLzsGW1zuDLXhGjuJCTdJhhFWA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=8iLXANqp5GLRVSl9BAqSbFY/ygfcL5MH5h+BFeV7LU0=;
- b=k2f3kbHtRb02bR4TjQFOUD3bzyXeWkjwoAYM+xapdIeVRccHzTWLpIZxh9bxTRA8WK6Zffi9dXJkKUXjLeC4xIKCB8UFoJ1DBhQfi6qedpHI39FrPoD7BtCEXVdWfgU+BBj/bwrmyPNuRDpneFY04OEMb9vFIXVk50t5D+A8yf8ZT+HFNTGb3Nz9u5lt7VsoFhSN6Ue1F/F+vKaYDmGL6ZvDnaBGc/KdEoDYOtTF0WkGo0dDVA6ARCzsSM5bhVUR6Y/qRhwdx09VR8pggD3t0PPi1OHllBjf1jllsy3v7I3F/8iAxfZ/uDK5Hn0Q42jeYTZFGseHtELCmxXUaTj3tQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=8iLXANqp5GLRVSl9BAqSbFY/ygfcL5MH5h+BFeV7LU0=;
- b=EfpIkGUyJBgWAdw7m/CgvvoOgWlmr8l5mvINB0LkvSF6xUbuzebvR5GkR8dWyPvqWNngvpxgbNUd9tckRAaD6VT8Kxe3QKMKBsHdk09wN55ufnUGJRnB0bFjEd2j/REyOlAk5iI/j1N4c4IFqF/IrP00ri6ezqDSQkRbKO7ncWEcOQar5twpoo+uc5NpOh4WfvfLWABHunSqizf9XYaO8/i3j5aBmolNQ+sfy6J+YBeG60LA2YGFEnjJofpR8I/edjCHNuvZlsoTy7CAzodDcvXFMW0eqy1rBNYyJJtAWG0pnxTPe6XJX/77noMVrPIidMAwbOTAWJfXVi3+5VDF3A==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from PAXSPRMB0053.eurprd04.prod.outlook.com (2603:10a6:102:23f::21)
- by AS5PR04MB9970.eurprd04.prod.outlook.com (2603:10a6:20b:67e::21) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9253.19; Tue, 28 Oct
- 2025 15:46:06 +0000
-Received: from PAXSPRMB0053.eurprd04.prod.outlook.com
- ([fe80::504f:2a06:4579:5f15]) by PAXSPRMB0053.eurprd04.prod.outlook.com
- ([fe80::504f:2a06:4579:5f15%6]) with mapi id 15.20.9275.011; Tue, 28 Oct 2025
- 15:46:06 +0000
-Date: Tue, 28 Oct 2025 11:45:54 -0400
-From: Frank Li <Frank.li@nxp.com>
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Cc: Sakari Ailus <sakari.ailus@iki.fi>, Rui Miguel Silva <rmfrfs@gmail.com>,
-	Martin Kepplinger <martink@posteo.de>,
-	Purism Kernel Team <kernel@puri.sm>,
-	Mauro Carvalho Chehab <mchehab@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Eugen Hristev <eugen.hristev@linaro.org>,
-	Shawn Guo <shawnguo@kernel.org>,
-	Sascha Hauer <s.hauer@pengutronix.de>,
-	Pengutronix Kernel Team <kernel@pengutronix.de>,
-	Fabio Estevam <festevam@gmail.com>, Peng Fan <peng.fan@nxp.com>,
-	Alice Yuan <alice.yuan@nxp.com>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Steve Longerbeam <slongerbeam@gmail.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	linux-media@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, imx@lists.linux.dev,
-	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
-	linux-staging@lists.linux.dev, Luis Oliveira <lolivei@synopsys.com>
-Subject: Re: [PATCH v3 01/31] dt-bindings: media: add DW MIPI CSI-2 Host
- support
-Message-ID: <aQDlMpKgRkeSIx0y@lizhi-Precision-Tower-5810>
-References: <20250821-95_cam-v3-0-c9286fbb34b9@nxp.com>
- <20250821-95_cam-v3-1-c9286fbb34b9@nxp.com>
- <aP8t3YClrZxOnHea@valkosipuli.retiisi.eu>
- <aP+enPOHPkvZAkzS@lizhi-Precision-Tower-5810>
- <aP_bSQUIle_9-L-7@valkosipuli.retiisi.eu>
- <aP/ehdkppeVr5G6H@lizhi-Precision-Tower-5810>
- <20251028082753.GZ13023@pendragon.ideasonboard.com>
-Content-Disposition: inline
-In-Reply-To: <20251028082753.GZ13023@pendragon.ideasonboard.com>
-X-ClientProxiedBy: BY3PR04CA0008.namprd04.prod.outlook.com
- (2603:10b6:a03:217::13) To PAXSPRMB0053.eurprd04.prod.outlook.com
- (2603:10a6:102:23f::21)
+	id 1vDnGH-0000000GOHY-0Ypu;
+	Tue, 28 Oct 2025 17:13:33 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 3B9306124B;
+	Tue, 28 Oct 2025 17:13:32 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B658BC4CEE7;
+	Tue, 28 Oct 2025 17:13:31 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1761671611;
+	bh=+cenkb0yL5U6fkb9PXEJLOZBBfbIw/K5JcCnxUVgehI=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:From;
+	b=GHWgETQ1RNiG4NgBjVLnhJH9atMiVJdloWNMv11jPg99tyK+rmBwAzqK9hTb4gVhT
+	 2ZtFnJKwxLI4s2Q1P8yhoci5coU0j5l4vn2zCzKepsIfscxlIj7Zu5fXo/n3/KWGIz
+	 hHMqKbrGfsuMHEa9JXdVniJNLDuD3aTag4FRYpY8MZC7Tdt+1tj5Isr/dt42Ncc8NJ
+	 sH4jdipg5MKIr6H7mirxdjLBByUiKYKRocaUoLgV9TRC+GCZAmUas2q83NjwZJ561i
+	 7CYd2BuJMIACVxarC+376c/AlA60uR1HFbp6n2bx39j1c/IyYibnP+f7s04InfotSN
+	 hUMwQm5MxpCww==
+Date: Tue, 28 Oct 2025 12:13:30 -0500
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Jacky Chou <jacky_chou@aspeedtech.com>
+Cc: lpieralisi@kernel.org, kwilczynski@kernel.org, mani@kernel.org,
+	robh@kernel.org, bhelgaas@google.com, krzk+dt@kernel.org,
+	conor+dt@kernel.org, joel@jms.id.au, andrew@codeconstruct.com.au,
+	vkoul@kernel.org, kishon@kernel.org, linus.walleij@linaro.org,
+	p.zabel@pengutronix.de, linux-aspeed@lists.ozlabs.org,
+	linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org, openbmc@lists.ozlabs.org,
+	linux-gpio@vger.kernel.org
+Subject: Re: [PATCH v4 8/9] PCI: aspeed: Add ASPEED PCIe RC driver
+Message-ID: <20251028171330.GA1506282@bhelgaas>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PAXSPRMB0053:EE_|AS5PR04MB9970:EE_
-X-MS-Office365-Filtering-Correlation-Id: b6268eb5-935a-4739-4c40-08de16391b7f
-X-LD-Processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|52116014|376014|7416014|1800799024|366016|19092799006|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?9jsCGDRgqJHodEj/bKwa+HqwkBGnOUydEnefeQyZi8OKThAZJF26tilwzIBd?=
- =?us-ascii?Q?7C/B9y0X7FhL573SyP5276UBauHmIv2UFdb6HuTCUqr+maRY4Arbwn727j8p?=
- =?us-ascii?Q?6vCvyvMRr9y4r0aa677PUQHJ9NBaR0oqYnYDrUHQsDP34gSKDWN3KyONmpVu?=
- =?us-ascii?Q?MRUFFahMF4maF2o4MRP8ZEylrHJDBtEwLLHUZbrqYStslUxqFGisahGElayu?=
- =?us-ascii?Q?vS47Dpk+ToCj/vh19KfSynaAEj995YUxpbYAzcUumFxQchccGB3Po+86dT1n?=
- =?us-ascii?Q?ZLy8D61D40HkJnQ9Q9qp+8C1ZHOCju67uqOP5okB91GdhKxTIM/dvKcL0P9P?=
- =?us-ascii?Q?3kYcUWdC5DByidH0I57xtXKc9Z2A+oFGdtTVU/xw3c4cIQCPPH+Kq+flskE7?=
- =?us-ascii?Q?KN73xSqS5Asu8RWrLmdVrYAFBWYbvnxhzEgLILejgNcuoVKAujT/qndWfuCT?=
- =?us-ascii?Q?/ugp+fHRF6wcxtF1AdCTs8di1c4jZQZadjDsYkDRHlqp2t7HiHNh032tN9f5?=
- =?us-ascii?Q?QCEmPhYcUlLxRef80u4yQ9OLEehpr76wAI5wrBjzvyVxtWKSapO6AGvShQVQ?=
- =?us-ascii?Q?D32eTyDn7lqN9ancOLQ+ekc7w16VmoudEG7NzuJ+qZsBcWPDdKK65AP8gnc1?=
- =?us-ascii?Q?zT8evGX+oS1xSv/xlSEJtzsOgDk4giYbscfYpDzWHEEot31lxK9KOpd9DzPt?=
- =?us-ascii?Q?Z5lbJJ0SgYZe9/UibaxkZPgMX6Y1P34tXjjCHglQmR87xLf6ofaBC0v4KqPS?=
- =?us-ascii?Q?CkTLtO+1ejzLQn7m+1dCupMUpXLOTnvnHywVKl0wuMYVC+Q8qR41umONSWH0?=
- =?us-ascii?Q?px8f5D9KGRhlAkVCTjJNUg/NfZtNtz5/A5FC944FqBFTUNGzwtS3R6qjVReQ?=
- =?us-ascii?Q?dPsq5yi9hLEoAIvxVusiL0LjA1vFu6ItgAgCqHckGeVX1kgqRntMtbfsPOYy?=
- =?us-ascii?Q?XDoa8V8lmk+1M7oDOWZz48LwP3jobG+iH9PDDfuaWBXB/cplHsQCgE8zTNBh?=
- =?us-ascii?Q?F+kLZRyQ4v32jkwD11cMIKVbYU3BT10ECMerUoiO90mnt3OHOHw9rr6+eW5T?=
- =?us-ascii?Q?vfLr1jrl3d2p8OkRJ7fKaT/cSGO0uGF+bUQaW0LwCJW7Dr+l4ISL6uJ+u6Sl?=
- =?us-ascii?Q?3YUcAq5ZWTvhLE9Lkl4PtIp9+pTTCyeLohAudWdpJpkr99LEqe8/V2SeeAQN?=
- =?us-ascii?Q?hMG6AXiPD2lFv4WGJJjhItgsJKtVbiRu3jKXzTtfpNICVHRAEp14m9j9YRgf?=
- =?us-ascii?Q?ksciI9ZNQaJQTmN4WjqRDetUCWEukxRxOYDC6OCadNvCayt0dqHPbpUCPHdd?=
- =?us-ascii?Q?T/Ic7PYxv8b2dvDICg5WwErYk8DCzBse+xRg5DnbmsoGNnl3WHvXUSFuciTO?=
- =?us-ascii?Q?fIsb/YErz/hWYRkVSIOmlAfYzX6WKPmGibeJxzjQiJyaXpighECKSVzcw9pn?=
- =?us-ascii?Q?KQaSbnEvPwniojw44QYhDJRUYKdFo5r/4/QIbX1BnYa4W4kb6yc42w=3D=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXSPRMB0053.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(52116014)(376014)(7416014)(1800799024)(366016)(19092799006)(38350700014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?O5j522nm/9kSQ4nT0squtWAP+05jH2J9D4m9g2NmuJFrbvvQJMax8IT8FYKC?=
- =?us-ascii?Q?mgzjqI6jZkBT8K6UW/gsZulSyvIapJguZZH6LIdu/aHTFsxo6cJ3NS7cgYpK?=
- =?us-ascii?Q?0XvuOVpT10baQaHAnxNw6mbEsLJx6UhXLZ7xf9bXKK3NaBmmO766oWw5Bqa2?=
- =?us-ascii?Q?mz4enPCkE9YaivfzizV31NF8ZNOSVgcc8FDEzgKIB6ibwguoecOrjE068A8Q?=
- =?us-ascii?Q?arihS0lrictePFU+ogX+2zGCyC8oGtIdGk/cbeLmGgfnW2WW8DWNRB7h6YWv?=
- =?us-ascii?Q?A+vvEyyzS5ABjvgsN9AO1oMC2lUShzYppbMEnKHQsdz2VbW7AzXwkDw/ELs8?=
- =?us-ascii?Q?yvvd0qGXmrquaT9CKwI27Ahk1RQAp3VBjoxyGlwaKX5QaVBgVpNQwIS8x/1Y?=
- =?us-ascii?Q?wH6kb8aB8xNyXOdS/LeU73PC7IDSirblDzrmdWq1010PKqK3lwbNzqcHxSgv?=
- =?us-ascii?Q?r5M8wav9DbwDPeYHNBuJNLCyy9J3n5T6x7i7m5IUkjrzwmMi2Yd6SyscF9PM?=
- =?us-ascii?Q?ayNXCp7jtBH3/lTmvPWpV04GG7poVbjwmnm5YEOe/6x1lJ7QIHtCXgoFuqsE?=
- =?us-ascii?Q?DbF8PwNNXonEos1McD3zVhw83/wKPKgbfOzvcORul/ZUogIWuyHVGWBhRu1T?=
- =?us-ascii?Q?yM6ghyL8hUhUKIxjE9tfKtuAHEaBU9zcC6XqWnS+6M9SnRVnPyDvwhyqeG9W?=
- =?us-ascii?Q?IOLXYrsUq/x3tn187EJlKkVRc/mR9ZbIV1YSbm9r8WUqkR8zXPQmuUTCD1vQ?=
- =?us-ascii?Q?Ey3ctygJDTkU21j5E9W4gHzBhyybsr9q54Vx4gT3WaTEFwBIyJJz0tRAfc6t?=
- =?us-ascii?Q?KG/xsl/Jf7faSQ+d7Ri9OhTa7MaLat5cg7Bvs9BhZ/4OGNfsVqoNkI1kHuWQ?=
- =?us-ascii?Q?2stdTfrUetL6qG9RSnD58xJxt5jbim/q/k03FRsgwGeuXBZGL1rSF4eXLvW/?=
- =?us-ascii?Q?k5sAKwb4wbwT8LB8EerM1MY067RNNKEVC1c780iWmbKrlYM4FOZXM0Q4rFS4?=
- =?us-ascii?Q?NJ9B1zbaRHEGpDt8ad++CJd5FfufOgOzvwHOzaqL/UIy0Ggc0xJGNjJR8O68?=
- =?us-ascii?Q?p05QReRViB+hMwxbUmsQRaxS4rS4CO85hRTY5W+QgGM8O53CNII5XLN0vxa0?=
- =?us-ascii?Q?DPItr+t9yvh7tbl6GOI6+u+IyzAZDpqxswOtblOMAvezJPJ7v1bmp76uUOSm?=
- =?us-ascii?Q?w9VJgGBDOE/eiEJ8CAI1V6baihf/yBaQRb6SXYskjN5YJj2y5/FhbnH3DYST?=
- =?us-ascii?Q?47yIvfQDgr2w/WFxgcv7wcfmYy4wnf2Zua3vS1Mj5QuRTECob1zrTffD62vL?=
- =?us-ascii?Q?AGxYx/yX8Ouvp8TU2QqAS9egC/Are2COOTaKDL9ZQ2UY+L8EfmqwoS71r99o?=
- =?us-ascii?Q?b0TDSzSApOwr4xYhjPBHSvgMa89WyGeNAu4f/xOo5+HntIx9OeayLTLlhuwK?=
- =?us-ascii?Q?/ezWxiFyfOmsu6VZpSCWfyebwkHuFIPQbSCFDf45dVku1TyMem/s63/kyN1p?=
- =?us-ascii?Q?G2Q3Kx/W4fElw2wOHgJQSNZeH0TlNrnNYwZIPOriW1+IhaWpFDpXE5s5ZUOA?=
- =?us-ascii?Q?/W56W9dpir6kqfU7ow4=3D?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: b6268eb5-935a-4739-4c40-08de16391b7f
-X-MS-Exchange-CrossTenant-AuthSource: PAXSPRMB0053.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 28 Oct 2025 15:46:06.5688
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: NlDLsZW3iZzUIT893GQG18JegW7e2NfAe4SxswNVno3NGMtPRhZy3rRLpQm1Chp/UUk5ksFOOV6C+QENWN6d0w==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS5PR04MB9970
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251028_084610_629256_1E7CADCA 
-X-CRM114-Status: GOOD (  32.92  )
+Content-Disposition: inline
+In-Reply-To: <20251027095825.181161-9-jacky_chou@aspeedtech.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -182,175 +74,113 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Oct 28, 2025 at 10:27:53AM +0200, Laurent Pinchart wrote:
-> On Mon, Oct 27, 2025 at 05:05:09PM -0400, Frank Li wrote:
-> > On Mon, Oct 27, 2025 at 10:51:21PM +0200, Sakari Ailus wrote:
-> > > On Mon, Oct 27, 2025 at 12:32:28PM -0400, Frank Li wrote:
-> > > > On Mon, Oct 27, 2025 at 10:31:25AM +0200, Sakari Ailus wrote:
-> > > > > On Thu, Aug 21, 2025 at 04:15:36PM -0400, Frank Li wrote:
-> > > > > > From: Eugen Hristev <eugen.hristev@linaro.org>
-> > > > > >
-> > > > > > Add bindings for Synopsys DesignWare MIPI CSI-2 host, which used at i.MX93
-> > > > > > and i.MX95 platform.
-> > > > > >
-> > > > > > Signed-off-by: Luis Oliveira <lolivei@synopsys.com>
-> > > > > > Signed-off-by: Eugen Hristev <eugen.hristev@linaro.org>
-> > > > > > Signed-off-by: Frank Li <Frank.Li@nxp.com>
-> > > > > > ---
-> > > > > > Change in v3
-> > > > > > - drop remote-endpoint: true
-> > > > > > - drop clock-lanes
-> > > > > >
-> > > > > > Change in v2
-> > > > > > - remove Eugen Hristev <eugen.hristev@microchip.com> from mantainer.
-> > > > > > - update ugen Hristev's s-o-b tag to align original author's email address
-> > > > > > - remove single snps,dw-mipi-csi2-v150 compatible string
-> > > > > > - move additionalProperties after required
-> > > > > > ---
-> > > > > >  .../bindings/media/snps,dw-mipi-csi2-v150.yaml     | 151 +++++++++++++++++++++
-> > > > > >  MAINTAINERS                                        |   1 +
-> > > > > >  2 files changed, 152 insertions(+)
-> > > > > >
-> > > > > > diff --git a/Documentation/devicetree/bindings/media/snps,dw-mipi-csi2-v150.yaml b/Documentation/devicetree/bindings/media/snps,dw-mipi-csi2-v150.yaml
-> > > > > > new file mode 100644
-> > > > > > index 0000000000000000000000000000000000000000..d950daa4ee9cfd504ef84b83271b2a1b710ffd6b
-> > > > > > --- /dev/null
-> > > > > > +++ b/Documentation/devicetree/bindings/media/snps,dw-mipi-csi2-v150.yaml
-> > > > > > @@ -0,0 +1,151 @@
-> > > > > > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> > > > > > +%YAML 1.2
-> > > > > > +---
-> > > > > > +$id: http://devicetree.org/schemas/media/snps,dw-mipi-csi2-v150.yaml#
-> > > > > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > > > > > +
-> > > > > > +title: Synopsys DesignWare CSI-2 Host controller (csi2host)
-> > > > > > +
-> > > > > > +maintainers:
-> > > > > > +  - Frank Li <Frank.Li@nxp.com>
-> > > > > > +
-> > > > > > +description:
-> > > > > > +  CSI2HOST is used to receive image coming from an MIPI CSI-2 compatible
-> > > > > > +  camera. It will convert the incoming CSI-2 stream into a dedicated
-> > > > > > +  interface called the Synopsys IDI (Image Data Interface).
-> > > > > > +  This interface is a 32-bit SoC internal only, and can be assimilated
-> > > > > > +  with a CSI-2 interface.
-> > > > > > +
-> > > > > > +properties:
-> > > > > > +  compatible:
-> > > > > > +    items:
-> > > > > > +      - enum:
-> > > > > > +          - fsl,imx93-mipi-csi2
-> > > > > > +      - const: snps,dw-mipi-csi2-v150
-> > > > > > +
-> > > > > > +  reg:
-> > > > > > +    items:
-> > > > > > +      - description: MIPI CSI-2 core register
-> > > > > > +
-> > > > > > +  reg-names:
-> > > > > > +    items:
-> > > > > > +      - const: core
-> > > > > > +
-> > > > > > +  clocks:
-> > > > > > +    maxItems: 2
-> > > > > > +
-> > > > > > +  clock-names:
-> > > > > > +    items:
-> > > > > > +      - const: per
-> > > > > > +      - const: pixel
-> > > > > > +
-> > > > > > +  phys:
-> > > > > > +    maxItems: 1
-> > > > > > +    description: MIPI D-PHY
-> > > > > > +
-> > > > > > +  phy-names:
-> > > > > > +    items:
-> > > > > > +      - const: rx
-> > > > > > +
-> > > > > > +  resets:
-> > > > > > +    maxItems: 1
-> > > > > > +
-> > > > > > +  interrupts:
-> > > > > > +    maxItems: 1
-> > > > > > +
-> > > > > > +  power-domains:
-> > > > > > +    maxItems: 1
-> > > > > > +
-> > > > > > +  ports:
-> > > > > > +    $ref: /schemas/graph.yaml#/properties/ports
-> > > > > > +
-> > > > > > +    properties:
-> > > > > > +      port@0:
-> > > > > > +        $ref: /schemas/graph.yaml#/$defs/port-base
-> > > > > > +        unevaluatedProperties: false
-> > > > > > +        description:
-> > > > > > +          Input port node, single endpoint describing the input port.
-> > > > > > +
-> > > > > > +        properties:
-> > > > > > +          endpoint:
-> > > > > > +            $ref: video-interfaces.yaml#
-> > > > > > +            unevaluatedProperties: false
-> > > > > > +            description: Endpoint connected to input device
-> > > > > > +
-> > > > > > +            properties:
-> > > > > > +              bus-type:
-> > > > > > +                const: 4
-> > > > >
-> > > > > If 4 is the only value supported, you can drop the property altogether.
-> > > >
-> > > > Sorry, What's your means here? There are more options in video-interfaces.yaml.
-> > > > here just add restriction for bus-type. otherwise other value can be
-> > > > provide in dts file.
-> > >
-> > > It could, but wouldn't any other value be incorrect?
-> >
-> > at least that 5 # Parallel doesn't make sense for CSI2's input.
->
-> The point is that, if the only valid value is CSI-2 DPHY (4), then
-> there's no need to specify it in DT. The driver would know the input bus
-> is CSI-2 DPHY, so there's no need to convey that information in the
-> device tree.
+On Mon, Oct 27, 2025 at 05:58:24PM +0800, Jacky Chou wrote:
+> Introduce PCIe Root Complex driver for ASPEED SoCs. Support RC
+> initialization, reset, clock, IRQ domain, and MSI domain setup.
+> Implement platform-specific setup and register configuration for
+> ASPEED. And provide PCI config space read/write and INTx/MSI
+> interrupt handling.
 
-Make sense.
+> +config PCIE_ASPEED
+> +	bool "ASPEED PCIe controller"
+> +	depends on ARCH_ASPEED || COMPILE_TEST
+> +	depends on OF
+> +	depends on PCI_MSI
+> +	select IRQ_MSI_LIB
+> +	help
+> +	  Enable this option to support the PCIe controller found on ASPEED
+> +	  SoCs.
+> +
+> +	  This driver provides initialization and management for PCIe
+> +	  Root Complex functionality, including interrupt and MSI support.
 
-Frank
->
-> > > In other words, this property is redundant and should be dropped.
-> > >
-> > > > > > +
-> > > > > > +              data-lanes:
-> > > > > > +                minItems: 1
-> > > > > > +                maxItems: 4
-> > > > > > +                items:
-> > > > > > +                  maximum: 4
-> > > > > > +
-> > > > > > +      port@1:
-> > > > > > +        $ref: /schemas/graph.yaml#/$defs/port-base
-> > > > > > +        unevaluatedProperties: false
-> > > > > > +        description:
-> > > > > > +          Output port node, single endpoint describing the output port.
-> > > > > > +
-> > > > > > +        properties:
-> > > > > > +          endpoint:
-> > > > > > +            unevaluatedProperties: false
-> > > > > > +            $ref: video-interfaces.yaml#
-> > > > > > +            description: Endpoint connected to output device
-> > > > > > +
-> > > > > > +            properties:
-> > > > > > +              bus-type:
-> > > > > > +                const: 4
-> > > > >
-> > > > > Are both input and output of this block CSI-2 with D-PHY?
-> > > >
-> > > > Yes, input from camera sensor, output to others image processors to do data
-> > > > transfer or format convert.
-> > >
-> > > The description appears to be saying this is "Synopsys IDI", not CSI-2 with
-> > > D-PHY. We don't have a bus-type for IDI. Couldn't you simply drop it?
->
-> --
-> Regards,
->
-> Laurent Pinchart
+Maybe "INTx and MSI support", since MSI is an interrupt?
+
+> +/* Complete status */
+
+"Completion"
+
+> +static int aspeed_ast2700_ahb_remap_to_bar(struct aspeed_pcie *pcie)
+> +{
+> +	struct resource_entry *win, *tmp;
+> +	struct pci_host_bridge *bridge = pcie->host;
+> +
+> +	/* Configure AHB remapping to BAR on AST27x0.
+> +	 * The BAR region is HW-fixed in AST27x0, these BARs will be filled
+> +	 * in the ranges of pcie node in DT.
+> +	 */
+
+I don't understand what "HW-fixed" means here.  It looks like you're
+writing host bridge window addresses (that came from DT) to the
+hardware.  That sounds like they're not actually "fixed" but
+programmable.
+
+Host bridge windows are not BARs themselves.  Mem space for devices
+below the host bridge is allocated from the windows, and the addresses
+are programmed into BARs of those downstream devices.
+
+Multi-line comment style:
+
+  /*
+   * Configure ...
+   */
+
+Wrap to fill 78 columns, or add blank lines between paragraphs.
+
+> +	resource_list_for_each_entry_safe(win, tmp, &bridge->windows) {
+> +		struct resource *res = win->res;
+> +
+> +		if (resource_type(res) == IORESOURCE_MEM &&
+> +		    !(res->flags & IORESOURCE_MEM_64)) {
+> +			writel(ASPEED_REMAP_BAR_BASE(res->start),
+> +			       pcie->reg + ASPEED_H2X_REMAP_DIRECT_ADDR);
+> +			return 0;
+> +		}
+> +	}
+> +
+> +	return -ENODEV;
+> +}
+> +
+> +static int aspeed_ast2700_setup(struct platform_device *pdev)
+> +{
+> +	struct aspeed_pcie *pcie = platform_get_drvdata(pdev);
+> +	struct device *dev = pcie->dev;
+> +	int ret;
+> +
+> +	pcie->cfg = syscon_regmap_lookup_by_phandle(dev->of_node,
+> +						    "aspeed,pciecfg");
+> +	if (IS_ERR(pcie->cfg))
+> +		return dev_err_probe(dev, PTR_ERR(pcie->cfg),
+> +				     "failed to map pciecfg base\n");
+> +
+> +	regmap_update_bits(pcie->cfg, ASPEED_SCU_60,
+> +			   ASPEED_RC_E2M_PATH_EN | ASPEED_RC_H2XS_PATH_EN |
+> +			   ASPEED_RC_H2XD_PATH_EN | ASPEED_RC_H2XX_PATH_EN |
+> +			   ASPEED_RC_UPSTREAM_MEM_EN,
+> +			   ASPEED_RC_E2M_PATH_EN | ASPEED_RC_H2XS_PATH_EN |
+> +			   ASPEED_RC_H2XD_PATH_EN | ASPEED_RC_H2XX_PATH_EN |
+> +			   ASPEED_RC_UPSTREAM_MEM_EN);
+> +	regmap_write(pcie->cfg, ASPEED_SCU_64,
+> +		     ASPEED_RC0_DECODE_DMA_BASE(0) |
+> +		     ASPEED_RC0_DECODE_DMA_LIMIT(0xff) |
+> +		     ASPEED_RC1_DECODE_DMA_BASE(0) |
+> +		     ASPEED_RC1_DECODE_DMA_LIMIT(0xff));
+> +	regmap_write(pcie->cfg, ASPEED_SCU_70, ASPEED_DISABLE_EP_FUNC);
+> +
+> +	aspeed_host_reset(pcie);
+> +
+> +	writel(0, pcie->reg + ASPEED_H2X_CTRL);
+> +	writel(ASPEED_H2X_BRIDGE_EN | ASPEED_H2X_BRIDGE_DIRECT_EN,
+> +	       pcie->reg + ASPEED_H2X_CTRL);
+> +
+> +	ret = aspeed_ast2700_ahb_remap_to_bar(pcie);
+> +	if (ret)
+> +		return dev_err_probe(dev, ret, "failed to assign BAR\n");
+
+This is not assigning *BARs*.  A host bridge doesn't have BARs in the
+PCI spec sense.  It might have programmable address ranges, but the
+host bridge is not itself a PCI device, so its programmability is
+device specific.
 
 -- 
 linux-phy mailing list
