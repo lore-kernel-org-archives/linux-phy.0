@@ -4,81 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2F17DCCF9EB
-	for <linux-phy@archiver.kernel.org>; Wed, 29 Oct 2025 10:32:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3A360CCF9EE
+	for <linux-phy@archiver.kernel.org>; Wed, 29 Oct 2025 11:51:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1PUI5kTd6GTz6oalceYgtogB22rJWecFRPP44cVOcc4=; b=vvXvFaPPThnjCT
-	GsaxnxVqKqQ8YH5EBfNZYNbsMvvArLAHGVaKy0713n1hCZk8xYQQPJHOpDFxJcfxSfK2gfdAeXuP6
-	0hZBHXWo0QCCbofZlJYU5HlpT9KfOtFZr/DEFJN9oX4gr50hNHwmmcLh4YnfshCABu7mu8cKxWX0h
-	uAXjaEk5wGnZXiI/l59UJJN2Y/3u0GUZJRsz77I3z5A0ijr8Ag671i6Ux5YgYOhesfSkr7c9T6a/V
-	3GjeE76fPepMMo3zLaBOlmRhL8EPAF5zN7S2KF2akFF0ik+JTP9Mo3Zs7kwV7Kp35oZr21oLinWZb
-	4rYRyDCf3muTiLtsh3iw==;
+	List-Owner; bh=DY6u5G6Ci1J8WUrzZz/O0lFaqdS61tP3NbvmVhFHSzc=; b=oVLxBUgj9TjJQ6
+	JwOb1f3I+vYKb4JzZVypz+sGTYlb85/RijsLWHm6AM1bL+MT0qkdWMuSq1kjozvJYqhX9LWZYOv7z
+	jiFMYnhijIIQYj8QqPnCECcNAontQ3ndp0lyeDkkoSlnZlkbndEhWlQUl+ZhURm/2gIuB5dKhwa3T
+	45z9V3ZwsE7+ZhmkfZ1lVrHNzp/WoSGBPKeAkhRER9N+0iFRCOe0d9w9fdVyCdIyj8RLyjwKViGru
+	xXiHeSXWsYoNRS9zAbQEBpHGi/n1JD5TsqxfU6MRZZzcrbP/CiuQVXpFd0OJ4DthBuQfs+bXZWd3l
+	QLccgHcoTO05HP5gVI1g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vE3TO-00000000mYA-2gTE;
-	Wed, 29 Oct 2025 10:32:10 +0000
-Received: from mail-m49204.qiye.163.com ([45.254.49.204])
+	id 1vE4hf-000000013Mb-3CKe;
+	Wed, 29 Oct 2025 11:50:59 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vE3TJ-00000000mS2-1dWo;
-	Wed, 29 Oct 2025 10:32:09 +0000
-Received: from [172.16.12.149] (unknown [58.22.7.114])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 27a23665c;
-	Wed, 29 Oct 2025 18:31:58 +0800 (GMT+08:00)
-Message-ID: <e0c5bda3-7428-49e0-9955-fa23f1e4f35d@rock-chips.com>
-Date: Wed, 29 Oct 2025 18:31:57 +0800
+	id 1vE4hd-000000013Lb-25LN
+	for linux-phy@lists.infradead.org;
+	Wed, 29 Oct 2025 11:50:59 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1761738653;
+	bh=aWBg/5FAXfkDx0QZCOU/nqj2uohrdhR0Ob7qiD0W2wE=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=nwx8NcEajHmNE7tE6vwMx7cecLGrrCBRulGwKWaSxaQYJprJ9yS6aYFgdBc71EgHD
+	 MFS6PIcS+SYMmlNWDNk0m1HvAHoyYYk4PZ5uIQUd4k159MpxarJL5/s2BWqTquJe8S
+	 kXyrhuCtJmxyZG5SwiZ+vmuw/pWqfeYM1WVeEoWenQ2VPWkdYRmQhRbE6rbeRIfee2
+	 P11j7XIBntKdBaSVNpV4KOIWSW91TF1CccQc0Vgmy8n6NYnQ2JG1Bw7xVHdxs3xf95
+	 /hJZRgwbfZOYF3qljCDP5FaTaYC7Ni9mccFe5hRCJmpwFSOK2G8uSBzJZW16nZn7sv
+	 V94AelF4TZxNA==
+Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
+	(No client certificate requested)
+	(Authenticated sender: kholk11)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 2BA4D17E1315;
+	Wed, 29 Oct 2025 12:50:53 +0100 (CET)
+Message-ID: <2cb49197-6588-4e89-8b37-29477bfc7e98@collabora.com>
+Date: Wed, 29 Oct 2025 12:50:52 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v8 10/10] arm64: dts: rockchip: rk3399-evb-ind: Add
- support for DisplayPort
-To: Peter Chen <hzpeterchen@gmail.com>, Chaoyi Chen <kernel@airkyi.com>
-Cc: Heikki Krogerus <heikki.krogerus@linux.intel.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Heiko Stuebner
- <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
- Andy Yan <andy.yan@rock-chips.com>,
- Yubing Zhang <yubing.zhang@rock-chips.com>,
- Frank Wang <frank.wang@rock-chips.com>,
- Andrzej Hajda <andrzej.hajda@intel.com>,
- Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
- Amit Sunil Dhamne <amitsd@google.com>, Dragan Simic <dsimic@manjaro.org>,
- Johan Jonker <jbx6244@gmail.com>, Diederik de Haas <didi.debian@cknow.org>,
- Peter Robinson <pbrobinson@gmail.com>, linux-usb@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org
-References: <20251029071435.88-1-kernel@airkyi.com>
- <20251029071435.88-11-kernel@airkyi.com>
- <CAL411-o6mF71oBeRsJ-OPZNbLegn4iJ_ELN9xVdppTM3ssUPOw@mail.gmail.com>
- <cc8b583a-77ec-4a7f-97cc-2d148f7fee9f@rock-chips.com>
+Subject: Re: [PATCH v7 00/10] SPMI: Implement sub-devices and migrate drivers
+To: sboyd@kernel.org
+Cc: jic23@kernel.org, dlechner@baylibre.com, nuno.sa@analog.com,
+ andy@kernel.org, arnd@arndb.de, gregkh@linuxfoundation.org,
+ srini@kernel.org, vkoul@kernel.org, kishon@kernel.org, sre@kernel.org,
+ krzysztof.kozlowski@linaro.org, u.kleine-koenig@baylibre.com,
+ linux-arm-msm@vger.kernel.org, linux-iio@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-pm@vger.kernel.org, kernel@collabora.com, wenst@chromium.org,
+ casey.connolly@linaro.org
+References: <20251021083219.17382-1-angelogioacchino.delregno@collabora.com>
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 Content-Language: en-US
-From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
-In-Reply-To: <cc8b583a-77ec-4a7f-97cc-2d148f7fee9f@rock-chips.com>
-X-HM-Tid: 0a9a2f863f0e03abkunm89a9d527348c30
-X-HM-MType: 1
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZGU4eGlZKTh9OSx9CGk1PSBpWFRQJFh
-	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSEpPSE
-	xVSktLVUpCS0tZBg++
-DKIM-Signature: a=rsa-sha256;
-	b=GmeuiUAxP7J2yuWygBp95hV/mCOru5SA8EQF6k8V2qpQmRXW7S/ggyYk6FWN6PZ5seE3nppmtySOiZU0C0yx32P3CLk2gGfF+2QjP0ShL16frucKFSI9rXy8+y7T7ReuyXgssIptoyeDmznafg59sMOyB5abKFMpN1vtCMAK/P8=; s=default; c=relaxed/relaxed; d=rock-chips.com; v=1;
-	bh=x8PMAjpUzEpEObt1dire31F5Js78fV2X3/gBASmc8NM=;
-	h=date:mime-version:subject:message-id:from;
+In-Reply-To: <20251021083219.17382-1-angelogioacchino.delregno@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251029_033206_035780_CDE64237 
-X-CRM114-Status: GOOD (  14.15  )
+X-CRM114-CacheID: sfid-20251029_045057_903295_4C86CAE2 
+X-CRM114-Status: GOOD (  35.74  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,97 +76,163 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMTAvMjkvMjAyNSA2OjIxIFBNLCBDaGFveWkgQ2hlbiB3cm90ZToKCj4gSGkgUGV0ZXIsCj4K
-PiBPbiAxMC8yOS8yMDI1IDU6NDUgUE0sIFBldGVyIENoZW4gd3JvdGU6Cj4+PiArJmkyYzQgewo+
-Pj4gK8KgwqDCoMKgwqDCoCBpMmMtc2NsLXJpc2luZy10aW1lLW5zID0gPDQ3NT47Cj4+PiArwqDC
-oMKgwqDCoMKgIGkyYy1zY2wtZmFsbGluZy10aW1lLW5zID0gPDI2PjsKPj4+ICvCoMKgwqDCoMKg
-wqAgc3RhdHVzID0gIm9rYXkiOwo+Pj4gKwo+Pj4gK8KgwqDCoMKgwqDCoCB1c2JjMDogdHlwZWMt
-cG9ydGNAMjIgewo+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgY29tcGF0aWJsZSA9
-ICJmY3MsZnVzYjMwMiI7Cj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCByZWcgPSA8
-MHgyMj47Cj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBpbnRlcnJ1cHQtcGFyZW50
-ID0gPCZncGlvMT47Cj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBpbnRlcnJ1cHRz
-ID0gPFJLX1BBMiBJUlFfVFlQRV9MRVZFTF9MT1c+Owo+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqAgcGluY3RybC1uYW1lcyA9ICJkZWZhdWx0IjsKPj4+ICvCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgIHBpbmN0cmwtMCA9IDwmdXNiYzBfaW50PjsKPj4+ICvCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgIHZidXMtc3VwcGx5ID0gPCZ2YnVzX3R5cGVjPjsKPj4+ICsKPj4+ICvC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHVzYl9jb246IGNvbm5lY3RvciB7Cj4+PiArwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgY29tcGF0aWJsZSA9ICJ1
-c2ItYy1jb25uZWN0b3IiOwo+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgIGxhYmVsID0gIlVTQi1DIjsKPj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoCBkYXRhLXJvbGUgPSAiZHVhbCI7Cj4+PiArwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcG93ZXItcm9sZSA9ICJkdWFsIjsKPj4+
-ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB0cnktcG93ZXIt
-cm9sZSA9ICJzaW5rIjsKPj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoCBvcC1zaW5rLW1pY3Jvd2F0dCA9IDwxMDAwMDAwPjsKPj4+ICvCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBzaW5rLXBkb3MgPQo+Pj4gK8KgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCA8UERP
-X0ZJWEVEKDUwMDAsIDI1MDAsIFBET19GSVhFRF9VU0JfQ09NTSk+Owo+Pj4gK8KgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHNvdXJjZS1wZG9zID0KPj4+ICvCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAg
-PFBET19GSVhFRCg1MDAwLCAxNTAwLCBQRE9fRklYRURfVVNCX0NPTU0pPjsKPj4+ICsKPj4+ICvC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBhbHRtb2RlcyB7Cj4+
-PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgIGRpc3BsYXlwb3J0IHsKPj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHN2aWQgPSAvYml0
-cy8gMTYgPDB4ZmYwMT47Cj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB2ZG8gPSA8MHgwMDAwMWM0
-Nj47Cj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgIH07Cj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqAgfTsKPj4+ICsKPj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoCBwb3J0cyB7Cj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICNhZGRyZXNzLWNlbGxzID0gPDE+Owo+Pj4gK8Kg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oCAjc2l6ZS1jZWxscyA9IDwwPjsKPj4+ICsKPj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcG9ydEAwIHsKPj4+ICvCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgIHJlZyA9IDwwPjsKPj4+ICsKPj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHVz
-YmNfaHM6IGVuZHBvaW50IHsKPj4+ICsgcmVtb3RlLWVuZHBvaW50ID0gPCZ1MnBoeTBfdHlwZWNf
-aHM+Owo+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgfTsKPj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgfTsKPj4+ICsKPj4gV2h5
-IFVTQjIgUEhZIG5lZWRzIHRvIGJlIG5vdGlmaWVkIGZvciBUeXBlLUMgY29ubmVjdGlvbj8KPgo+
-IEkgdGhpbmsgdGhlIFVTQi1jb25uZWN0b3IgYmluZGluZyByZXF1aXJlIGEgcG9ydEAwIGZvciBI
-aWdoIFNwZWVkLsKgIFNvIEkgZmlsbGVkIGluIFVTQjIgUEhZIGhlcmUuIEFuZCBJIGhhdmUgbG9v
-a2VkIHVwIGJvYXJkcyB3aXRoIHRoZSBzYW1lIHVzYWdlLCBhbmQgc29tZSBvZiB0aGUgcmVzdWx0
-cyBhcmUgYXMgZm9sbG93czoKPgo+IC0gcmszMzk5LWZpcmVmbHkuZHRzCj4KPiAtIHJrMzM5OS1w
-aW5lYm9vay1wcm8uZHRzCj4KPiAtIHJrMzM5OS1lYWlkay02MTAuZHRzCj4KPgo+Pgo+Pj4gK8Kg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oCBwb3J0QDEgewo+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcmVnID0gPDE+Owo+Pj4gKwo+Pj4g
-K8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqAgdXNiY19zczogZW5kcG9pbnQgewo+Pj4gKyByZW1vdGUtZW5k
-cG9pbnQgPSA8JnRjcGh5MF90eXBlY19zcz47Cj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB9Owo+
-Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoCB9Owo+Pj4gKwo+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBwb3J0QDIgewo+Pj4gK8KgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqAgcmVnID0gPDI+Owo+Pj4gKwo+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgdXNiY19kcDogZW5k
-cG9pbnQgewo+Pj4gKyByZW1vdGUtZW5kcG9pbnQgPSA8JnRjcGh5MF90eXBlY19kcD47Cj4+PiAr
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoCB9Owo+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB9Owo+Pj4gK8KgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIH07Cj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoCB9Owo+Pj4gK8KgwqDCoMKgwqDCoCB9Owo+Pj4gK307Cj4+PiArCj4+IC4uLi4uCj4+
-PiDCoCAmdTJwaHkwIHsKPj4+IMKgwqDCoMKgwqDCoMKgwqAgc3RhdHVzID0gIm9rYXkiOwo+Pj4g
-Kwo+Pj4gK8KgwqDCoMKgwqDCoCBwb3J0IHsKPj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgIHUycGh5MF90eXBlY19oczogZW5kcG9pbnQgewo+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHJlbW90ZS1lbmRwb2ludCA9IDwmdXNiY19ocz47Cj4+
-PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB9Owo+Pj4gK8KgwqDCoMKgwqDCoCB9Owo+
-Pj4gwqAgfTsKPj4+Cj4+IFRoZXJlIGlzIG5vIHN3aXRjaCBhbmQgbXV4LCBob3cgdG8gY28td29y
-ayB3aXRoIFR5cGUtQz8KPgo+IEkgY2hlY2tlZCB0aGUgcGh5LXJvY2tjaGlwLWlubm8tdXNiMi5j
-IGJ1dCBkaWQgbm90IGZpbmQgYW55IHN3aXRjaCBvciBtdXguIERvZXMgdGhpcyBtZWFuIHRoYXQg
-d2UgbmVlZCB0byBpbXBsZW1lbnQgdGhlbT8gVGhhbmsgeW91LgoKV2FpdCBhIG1pbnV0ZSwgYWN0
-dWFsbHkgd2UgaGF2ZSBtdWx0aXBsZSBoYXJkd2FyZSBpbnRlcmZhY2VzLCBvbmUgb2Ygd2hpY2gg
-aXMgVHlwZS1DLCBldmVudHVhbGx5IGNvbm5lY3RlZCB0byBVU0JEUFBIWSwgYW5kIHRoZSBvdGhl
-ciBpcyBtaWNyby11c2IgY29ubmVjdGVkIHRvIFUyUEhZLgoKCj4KPgo+Pgo+PiBCZXN0IHJlZ2Fy
-ZHMsCj4+IFBldGVyCj4+Cj4+Ci0tIApCZXN0LApDaGFveWkKCgotLSAKbGludXgtcGh5IG1haWxp
-bmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJh
-ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+Il 21/10/25 10:32, AngeloGioacchino Del Regno ha scritto:
+> Changes in v7:
+>   - Added commit to cleanup redundant dev_name() in the pre-existing
+>     spmi_device_add() function
+>   - Added commit removing unneeded goto and improving spmi_device_add()
+>     readability by returning error in error path, and explicitly zero
+>     for success at the end.
+
+Any further comments on this series?
+Any chance we can get it picked in this merge window please?
+
+Please note that this series either needs two cycles or an immutable branch
+because of the driver migration commits.
+
+Thanks,
+Angelo
+
+> 
+> Changes in v6:
+>   - Added commit to convert spmi.c to %pe error format and used
+>     %pe error format in spmi_subdevice code as wanted by Uwe Kleine-Konig
+> 
+> Changes in v5:
+>   - Changed dev_err to dev_err_probe in qcom-spmi-sdam (and done
+>     that even though I disagree - because I wanted this series to
+>     *exclusively* introduce the minimum required changes to
+>     migrate to the new API, but okay, whatever....!);
+>   - Added missing REGMAP dependency in Kconfig for qcom-spmi-sdam,
+>     phy-qcom-eusb2-repeater and qcom-coincell to resolve build
+>     issues when the already allowed COMPILE_TEST is enabled
+>     as pointed out by the test robot's randconfig builds.
+> 
+> Changes in v4:
+>   - Added selection of REGMAP_SPMI in Kconfig for qcom-coincell and
+>     for phy-qcom-eusb2-repeater to resolve undefined references when
+>     compiled with some randconfig
+> 
+> Changes in v3:
+>   - Fixed importing "SPMI" namespace in spmi-devres.c
+>   - Removed all instances of defensive programming, as pointed out by
+>     jic23 and Sebastian
+>   - Removed explicit casting as pointed out by jic23
+>   - Moved ida_free call to spmi_subdev_release() and simplified error
+>     handling in spmi_subdevice_alloc_and_add() as pointed out by jic23
+> 
+> Changes in v2:
+>   - Fixed missing `sparent` initialization in phy-qcom-eusb2-repeater
+>   - Changed val_bits to 8 in all Qualcomm drivers to ensure
+>     compatibility as suggested by Casey
+>   - Added struct device pointer in all conversion commits as suggested
+>     by Andy
+>   - Exported newly introduced functions with a new "SPMI" namespace
+>     and imported the same in all converted drivers as suggested by Andy
+>   - Added missing error checking for dev_set_name() call in spmi.c
+>     as suggested by Andy
+>   - Added comma to last entry of regmap_config as suggested by Andy
+> 
+> While adding support for newer MediaTek platforms, featuring complex
+> SPMI PMICs, I've seen that those SPMI-connected chips are internally
+> divided in various IP blocks, reachable in specific contiguous address
+> ranges... more or less like a MMIO, but over a slow SPMI bus instead.
+> 
+> I recalled that Qualcomm had something similar... and upon checking a
+> couple of devicetrees, yeah - indeed it's the same over there.
+> 
+> What I've seen then is a common pattern of reading the "reg" property
+> from devicetree in a struct member and then either
+>   A. Wrapping regmap_{read/write/etc}() calls in a function that adds
+>      the register base with "base + ..register", like it's done with
+>      writel()/readl() calls; or
+>   B. Doing the same as A. but without wrapper functions.
+> 
+> Even though that works just fine, in my opinion it's wrong.
+> 
+> The regmap API is way more complex than MMIO-only readl()/writel()
+> functions for multiple reasons (including supporting multiple busses
+> like SPMI, of course) - but everyone seemed to forget that regmap
+> can manage register base offsets transparently and automatically in
+> its API functions by simply adding a `reg_base` to the regmap_config
+> structure, which is used for initializing a `struct regmap`.
+> 
+> So, here we go: this series implements the software concept of an SPMI
+> Sub-Device (which, well, also reflects how Qualcomm and MediaTek's
+> actual hardware is laid out anyway).
+> 
+>                 SPMI Controller
+>                       |                ______
+>                       |               /       Sub-Device 1
+>                       V              /
+>                SPMI Device (PMIC) ----------- Sub-Device 2
+>                                      \
+>                                       \______ Sub-Device 3
+> 
+> As per this implementation, an SPMI Sub-Device can be allocated/created
+> and added in any driver that implements a... well.. subdevice (!) with
+> an SPMI "main" device as its parent: this allows to create and finally
+> to correctly configure a regmap that is specific to the sub-device,
+> operating on its specific address range and reading, and writing, to
+> its registers with the regmap API taking care of adding the base address
+> of a sub-device's registers as per regmap API design.
+> 
+> All of the SPMI Sub-Devices are therefore added as children of the SPMI
+> Device (usually a PMIC), as communication depends on the PMIC's SPMI bus
+> to be available (and the PMIC to be up and running, of course).
+> 
+> Summarizing the dependency chain (which is obvious to whoever knows what
+> is going on with Qualcomm and/or MediaTek SPMI PMICs):
+>      "SPMI Sub-Device x...N" are children "SPMI Device"
+>      "SPMI Device" is a child of "SPMI Controller"
+> 
+> (that was just another way to say the same thing as the graph above anyway).
+> 
+> Along with the new SPMI Sub-Device registration functions, I have also
+> performed a conversion of some Qualcomm SPMI drivers and only where the
+> actual conversion was trivial.
+> 
+> I haven't included any conversion of more complex Qualcomm SPMI drivers
+> because I don't have the required bandwidth to do so (and besides, I think,
+> but haven't exactly verified, that some of those require SoCs that I don't
+> have for testing anyway).
+> 
+> AngeloGioacchino Del Regno (10):
+>    spmi: Print error status with %pe format
+>    spmi: Remove redundant dev_name() print in spmi_device_add()
+>    spmi: Remove unneeded goto in spmi_device_add() error path
+>    spmi: Implement spmi_subdevice_alloc_and_add() and devm variant
+>    nvmem: qcom-spmi-sdam: Migrate to devm_spmi_subdevice_alloc_and_add()
+>    power: reset: qcom-pon: Migrate to devm_spmi_subdevice_alloc_and_add()
+>    phy: qualcomm: eusb2-repeater: Migrate to
+>      devm_spmi_subdevice_alloc_and_add()
+>    misc: qcom-coincell: Migrate to devm_spmi_subdevice_alloc_and_add()
+>    iio: adc: qcom-spmi-iadc: Migrate to
+>      devm_spmi_subdevice_alloc_and_add()
+>    iio: adc: qcom-spmi-iadc: Remove regmap R/W wrapper functions
+> 
+>   drivers/iio/adc/qcom-spmi-iadc.c              | 109 ++++++++----------
+>   drivers/misc/Kconfig                          |   2 +
+>   drivers/misc/qcom-coincell.c                  |  38 ++++--
+>   drivers/nvmem/Kconfig                         |   1 +
+>   drivers/nvmem/qcom-spmi-sdam.c                |  36 ++++--
+>   drivers/phy/qualcomm/Kconfig                  |   2 +
+>   .../phy/qualcomm/phy-qcom-eusb2-repeater.c    |  53 ++++++---
+>   drivers/power/reset/qcom-pon.c                |  34 ++++--
+>   drivers/spmi/spmi-devres.c                    |  24 ++++
+>   drivers/spmi/spmi.c                           |  95 +++++++++++++--
+>   include/linux/spmi.h                          |  16 +++
+>   11 files changed, 289 insertions(+), 121 deletions(-)
+> 
+
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
