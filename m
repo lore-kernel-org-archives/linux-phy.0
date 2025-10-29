@@ -4,137 +4,162 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 84F32CCD1BF
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Oct 2025 22:30:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 495D4CCD1BF
+	for <linux-phy@archiver.kernel.org>; Wed, 29 Oct 2025 05:43:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+7NQUT7KsHHm2sqyt3PVnlz4cL/XHdQZf3PJaXKZ4jc=; b=OYoCLshr2iWuGr
-	PQzftRnGNfRZUHOzKx9ZvepYW+WBD9Ago0z5U11dFCuT6LeiMwomeWkqVrNDbC+meZkSdly0QwXxC
-	MT+IKbjQldW7OXJ9mxeVMu6+tuDyP/tFNnHsffADBWECB/5tqHu8rZVt9vP/2LGMv5BPIXYZSf/WG
-	mpnTAc9hAqpbhcWwDvcFnONLe+wd+75UNqxPD4hK2WQjsI0PMc9YdeXSH2HQ1Ug/4xpHdWcP7/tWx
-	ct5lCv5u1flHcNRGN4YnDft1AuUGl00dlV+II1tL06gMa+Lqar1hmbwQCVKLle9OfHYdWsV7t3gYC
-	pRpTZvd+XycLUcWe+TfA==;
+	List-Owner; bh=FmyBwFLaKn40ji/uDe9oSDd5wjWHVhsznUA2lUAo+NA=; b=pLndFT/Y+1WazP
+	T57cNgedYkq8Jd9R9TG+M/kc6M4h3Fca9catVbzJJgHPPcbTBeeYBdQxOdQTKzfkv6inTtX2hWBWg
+	D3Fu3nNnUJRLofm3jJ6OBIhoywWEWDEViwjsLK344ik4DqGPGncTdV2Se4/rXL/3gJfUQDR06Qvv9
+	3uTONrxVLyoBH9BFXFfy35dw2yuoZKpGnC0ONKeImEipEAlbW4h2qSirJIl1/b2wu9mHVemDCLK91
+	tzYZcn7yKfFdR6rlIJ5oT4QahI5ylLHBCx3wqoMvPZNj4bAeAy7GZsbfGGg376mttQInxHmFDSce4
+	0E1Ezmsq0h2UF2IhXhdg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDsDN-0000000GkBz-0XY6;
-	Tue, 28 Oct 2025 22:30:53 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1vDyxt-0000000HLzB-1dAq;
+	Wed, 29 Oct 2025 05:43:21 +0000
+Received: from mail-japanwestazon11022110.outbound.protection.outlook.com ([40.107.75.110] helo=OS8PR02CU002.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDsDJ-0000000GkBW-3nrX
-	for linux-phy@lists.infradead.org;
-	Tue, 28 Oct 2025 22:30:51 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 59SJlUXE2554380
-	for <linux-phy@lists.infradead.org>; Tue, 28 Oct 2025 22:30:49 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=fwav1IUxYKqs4VwQSpfLoAKs
-	uvsEteeWs9ZalDF4WYA=; b=H/HWLmngQ0Mibyh7Vxg8EQQn92J5jap8NQh69SY6
-	f9H8OVSzoShKsUUQTNL5Ia3qJD7/d/b+qkICC0WkZCdusRW9gkNAsJgNECozSfqr
-	jXVQtEBURopU4LvcCkqebD+byK4lnxajipYlN9smkyY7pF22rvK1HMsRaWjpLWwI
-	MYsrbDg/3PS6HdiTPp+/b9N4M5FK1iEt0sQDNr/WzEUhz25U4278TfO+NiWIPvIO
-	n/WjUIjJrOumIOCCdD9Wu2CjAPcpounzpJIkdSeTsp93eBVBSSoVOAjweAtM6jpc
-	6grz5Y2OgpDxD+Qb0svklx/jBouWnFRLyXplHOH0sOQwIA==
-Received: from mail-qt1-f200.google.com (mail-qt1-f200.google.com [209.85.160.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4a34a10cbv-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Tue, 28 Oct 2025 22:30:49 +0000 (GMT)
-Received: by mail-qt1-f200.google.com with SMTP id d75a77b69052e-4ecf3420ce3so73215041cf.3
-        for <linux-phy@lists.infradead.org>; Tue, 28 Oct 2025 15:30:49 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1761690648; x=1762295448; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=fwav1IUxYKqs4VwQSpfLoAKsuvsEteeWs9ZalDF4WYA=;
-        b=V9OWKA2zcPwvaYYagiJAbR1PYTfHQ8KfUoaU6rxidrwA2F+GZK8tqj69xQhYYLvZXq
-         X22GULKnECO7F3IXQt4++H/daM6GdfacGelIDoodbCOkFlBHlfsUUbqfhQIDG3JV6MF9
-         0zmG2xuWNIAS4A2QCA75k2+xdXekZerhiFnThAdXl1TAUOYxO/LVkeDjbLimN2en2p/S
-         U15kyFPE3k0oGQ69+dSHU/T6Uc8AoqNN0OASECN89Mavi83Z3vC53f48QD/JO3v8gScw
-         FvqFHJbaY9LWO3EhEiMyuZBQ8LUuPi1ugcDhFtqSfgPrRW3r3RwyxicQqIHozS1Rtpti
-         +RaQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1761690648; x=1762295448;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=fwav1IUxYKqs4VwQSpfLoAKsuvsEteeWs9ZalDF4WYA=;
-        b=djm5Dhjc1F47fuOp90s+KWMBl/4l+QNqoRQ/3Ljnyb93mQ1aptmODKpbNwAI5lZaki
-         3SFkiIQMXWukto+ThOGTxw9nIr8mAwdlxPY30w1FC6l44Ogg5ZlvJ3x/gQAcuw4qXl48
-         OfATjzSp7yI7YaxdcJ+b7rIv/F/OaXR3vBsRSRfVCmdaoWTyVT1fRanEQx16FcRfGl8b
-         iD6yov4UCOHVzoTb9n3uoo6Syyc06s4Yd2CgAJgO+AokJf3BF6uc4QxotiUPA1ELckmF
-         Wl9BJPFqINhicWF2eWzAEVtaLLOBGjZL2Tgi8q/9TuW87Yqo8RZ8Bzk2u+ecOSmgpe8d
-         WBLA==
-X-Forwarded-Encrypted: i=1; AJvYcCUPJneWr8KdOhsDmm9qnx7Yvc17wyAZZFSZbIF34hy49E698onYGE6cGf/+lah2eLzOwSiZ8BmOfIM=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzQJCqAtZjZURsd3ZwuLasGB2j28w0+FAaqRNi0PgwpKyqoF/oI
-	Mrj5XSrbB2f6YcYglsZCjzHyjMBCyUMK82bObC+7n2ivZCQdKFg4AGoRxbPbeOuGN9jB818aY+L
-	Ttu4AKiYlt6lDyGfRYUrO2hwWqoEka9i/XCuHxpG19NCWNjDLa8gA2KU4hzFxz5XhqYvZ
-X-Gm-Gg: ASbGncuGY9lSZhpKo98hr92iWGCTT/rt6zxQKSbI4LIZ91CC3REHBch+iVJGG70oDQO
-	SoXVKFX8OsppuAO+CBG45ZhJtmyeISE50bq6KBTJIttoppmaimFpVRiK77SBCgUeA9FmFVGJGsp
-	Wcb3b7DfQT9nT0VZ6oMggcYuXHOLNWqJQaMJX5MFwS1dSkm0M73AZVcSXlSS7YIk2SSWOuEWhNC
-	2XRR5+vBJTs3vkhRQosYFaNlwASahj4RtHavhmD3tGjxSN5YHR34H0idwBAH1GSa7ozyZhWn/u8
-	JBrBlu+2eCxj0oufidxdtu5DzTnBrmHfSjSaFWIqggVx6gI5vcNJzAFQG8f3Zu3IP3/YFviRcwt
-	gaTZdB9vzfZZK5dql3q5EIOrgBcimD3dprHzKYd1A1sZ4mkHfviNIVKNpatQYmGR1CLsRKZNkgC
-	kUmfv+T5uWj+9i
-X-Received: by 2002:a05:622a:17c6:b0:4e8:9f46:402e with SMTP id d75a77b69052e-4ed15c7bf1cmr13100331cf.40.1761690648083;
-        Tue, 28 Oct 2025 15:30:48 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IF/d7lNS9futW4CsSn+fTGrGsWFDbeBBpVaN8gUsAhRPKt76RRIf2y8i7yGHEXORdu2OicfJw==
-X-Received: by 2002:a05:622a:17c6:b0:4e8:9f46:402e with SMTP id d75a77b69052e-4ed15c7bf1cmr13099981cf.40.1761690647629;
-        Tue, 28 Oct 2025 15:30:47 -0700 (PDT)
-Received: from umbar.lan (2001-14ba-a0c3-3a00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a0c3:3a00:264b:feff:fe8b:be8a])
-        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-378ee0c61a7sm28518321fa.28.2025.10.28.15.30.44
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 28 Oct 2025 15:30:45 -0700 (PDT)
-Date: Wed, 29 Oct 2025 00:30:42 +0200
-From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-To: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Wesley Cheng <quic_wcheng@quicinc.com>,
-        Abel Vesa <abel.vesa@linaro.org>, linux-arm-msm@vger.kernel.org,
-        linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v6 6/8] phy: qualcomm: qmp-combo: Update QMP PHY with
- Glymur settings
-Message-ID: <ysekkn5mxwq47bnra5ocwfeacfa2gujhmgvivorupn73npsrnl@2cig7cjdvhuy>
-References: <20251024-glymur_usb-v6-0-471fa39ff857@oss.qualcomm.com>
- <20251024-glymur_usb-v6-6-471fa39ff857@oss.qualcomm.com>
- <ktjmbmfd37tm6ij3pqbrbhfounizz4znmqvearvh4spvuky6i6@pw5czztggbjm>
- <7ae01221-868e-d5dc-4297-8006a69e7a7c@oss.qualcomm.com>
+	id 1vDyxp-0000000HLy1-42XF;
+	Wed, 29 Oct 2025 05:43:19 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=BC2Nvdp0VdFecHVOI2SPeGSCiGinhQRIItAYe7BsBC1d+/x1oPTHJcGF3L65np4NA5oCOkvRyzf9BNlpaqycU1Rvb3Kux3YASyuDmcmhejIHr7xPi5YWjDFsVSdQuIQHEGaTWclqLJMOubN3rrYEZAZ9nP06BD77NSO1AWFYRhO3WjiOb6l3tNFJQ/FV/W+pEY18IRxBMBCTDLleHO223r9ntU1D51AuEWHUuRUnIxQL86SDByQZuKeVThQ0IeMSxdz17l5VqpiSIzUjhaKyERjU8RJlNpAtplApg3Q2L1kTRuSVmKI6Dnov3U3XDNy+rtW4lIJcZ5ttMnjEaTn0rg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=ynwy00dR/tsKfVhRmey69t5AYaR9MoKn+r8JSOb5jhg=;
+ b=aR7SWAeC2esso5XqRiI4naCjBzzHKIPtcZsj+VTPsKiRUuevLlMWTUPoPeZZIUiaXGYH0LeuBajMX0xjQqE4qDVHfQLVSVv/AzrO8haIqrfCb8KtF1S0K20yGevgRlZxra3Jcc3dr0IstGEFKSvmPBtZ8WTttP97Eb7lFnIuHW+6nB1exG3jEwfVZetP55AejW9znghezXJGrJrSq3k3aVmAA/JEoXVl2C+bPOw/NczRcdGhRogFkPTWD+44t27YN0/Uy0Hpb/3iU3SOoltvtzrWGIQuMfVqe7nkVcMglMhDPR2WT+WDlGjniAq9JPM6gw/Rp3ENox7jNzOeaBWzqQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=aspeedtech.com; dmarc=pass action=none
+ header.from=aspeedtech.com; dkim=pass header.d=aspeedtech.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aspeedtech.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=ynwy00dR/tsKfVhRmey69t5AYaR9MoKn+r8JSOb5jhg=;
+ b=NtvJaptQw4dNmEMrqtwFnhgToSTZaETwufEtfln8fCKIo27QoQXa/NHhGzP59QJ2YfcABxS9zDwOHSktCIV+kqk79vL3uuvxI43E7WXFLQWCBMP0APxSqcspzsTLCC8sAiXVRC4dXSgOg1M8eSdY5bqECxFr1zrIZXzTuVjv8XnTwLvAlInQk1kCq1cqXbmrgNsB+hJZHUKMoqpbuqA10xzGMZJrfLkuL0eE46YGoI32USW8GhSBuZYUnyYcqeIrxelSxR2kjUqRtrjaU9qC3PadXVBL1ew9tqValrmECx+87KcFZFq+PYngZUlulPphPpQj3pD/eqOPADqR5lrhQw==
+Received: from SEYPR06MB5134.apcprd06.prod.outlook.com (2603:1096:101:5a::12)
+ by PUZPR06MB5537.apcprd06.prod.outlook.com (2603:1096:301:ed::10) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9275.13; Wed, 29 Oct
+ 2025 05:43:08 +0000
+Received: from SEYPR06MB5134.apcprd06.prod.outlook.com
+ ([fe80::6b58:6014:be6e:2f28]) by SEYPR06MB5134.apcprd06.prod.outlook.com
+ ([fe80::6b58:6014:be6e:2f28%6]) with mapi id 15.20.9253.018; Wed, 29 Oct 2025
+ 05:43:08 +0000
+From: Jacky Chou <jacky_chou@aspeedtech.com>
+To: Bjorn Helgaas <helgaas@kernel.org>
+CC: "lpieralisi@kernel.org" <lpieralisi@kernel.org>, "kwilczynski@kernel.org"
+	<kwilczynski@kernel.org>, "mani@kernel.org" <mani@kernel.org>,
+	"robh@kernel.org" <robh@kernel.org>, "bhelgaas@google.com"
+	<bhelgaas@google.com>, "krzk+dt@kernel.org" <krzk+dt@kernel.org>,
+	"conor+dt@kernel.org" <conor+dt@kernel.org>, "joel@jms.id.au"
+	<joel@jms.id.au>, "andrew@codeconstruct.com.au"
+	<andrew@codeconstruct.com.au>, "vkoul@kernel.org" <vkoul@kernel.org>,
+	"kishon@kernel.org" <kishon@kernel.org>, "linus.walleij@linaro.org"
+	<linus.walleij@linaro.org>, "p.zabel@pengutronix.de"
+	<p.zabel@pengutronix.de>, "linux-aspeed@lists.ozlabs.org"
+	<linux-aspeed@lists.ozlabs.org>, "linux-pci@vger.kernel.org"
+	<linux-pci@vger.kernel.org>, "devicetree@vger.kernel.org"
+	<devicetree@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
+	<linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+	<linux-kernel@vger.kernel.org>, "linux-phy@lists.infradead.org"
+	<linux-phy@lists.infradead.org>, "openbmc@lists.ozlabs.org"
+	<openbmc@lists.ozlabs.org>, "linux-gpio@vger.kernel.org"
+	<linux-gpio@vger.kernel.org>
+Subject: [PATCH v4 2/9] dt-bindings: PCI: Add ASPEED PCIe RC support
+Thread-Topic: [PATCH v4 2/9] dt-bindings: PCI: Add ASPEED PCIe RC support
+Thread-Index: AQHcRyhADj69zSmEtEeIJduMtT9i4LTXlEcAgAEKe+A=
+Date: Wed, 29 Oct 2025 05:43:08 +0000
+Message-ID: <SEYPR06MB5134A2E62C79EE4008D2A3979DFAA@SEYPR06MB5134.apcprd06.prod.outlook.com>
+References: <20251027095825.181161-3-jacky_chou@aspeedtech.com>
+ <20251028134644.GA1506590@bhelgaas>
+In-Reply-To: <20251028134644.GA1506590@bhelgaas>
+Accept-Language: zh-TW, en-US
+Content-Language: zh-TW
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=aspeedtech.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: SEYPR06MB5134:EE_|PUZPR06MB5537:EE_
+x-ms-office365-filtering-correlation-id: e1f961f0-20d5-4214-67e5-08de16ae0a3c
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;ARA:13230040|7416014|376014|1800799024|366016|38070700021;
+x-microsoft-antispam-message-info: =?us-ascii?Q?piXnuStdWKRM1Jw/PNG14VE4J49l7asCtZosyXN4euXN41l9L0QLtizAZClJ?=
+ =?us-ascii?Q?El9J24C2HaGkQBT00SPN2Tf+pZ2vvv4ARofqf4gfuNIxfag29mGwm6FLZgUf?=
+ =?us-ascii?Q?fTP4HtdiQffgaaZRIczg+MjVYDH9Kl7CgGGFORSMlMJAl9kK7tcaZM0+SDUj?=
+ =?us-ascii?Q?iqOElClVUsHuUbs2n42AUC2JbxAqNLLuosMxXlzo4aSw472WTUGwXRSVtmLZ?=
+ =?us-ascii?Q?1AMKE/Q2lcQWyq9888Uh1Mpv1E4J2t9eY5t9iHl9GeBW6pjguo5fezEuAh9h?=
+ =?us-ascii?Q?sYdoKIjTw0U2mJttLXsgg1WnA21gKje7O0JGk/nhEy2U7uNY35Gn/TlwBWj+?=
+ =?us-ascii?Q?lnInffa+GuHsSyDjmnmNC+ClnIdUE/Dk/5y/LdzygluU2uSK/QjR0OfHdhiJ?=
+ =?us-ascii?Q?vxsmS0vfgABrp1VwIWMMZpqlax0DlCnylAX7Nrxo43UnqvIBqUKfgH4y+BFp?=
+ =?us-ascii?Q?VLMF3nFzf5JQH2TR2Y4rU5Hn9h/ImQloBaNLua8LAQitzYVPPUgUMlMdQRqz?=
+ =?us-ascii?Q?4gcONhd4FFLuHNcVBO1LBkdzthSgysseUx7LpAQ3hPjepnr9cMxgk8icSBZq?=
+ =?us-ascii?Q?yyCIEULjgj130lepc9OAlimQNceHP4bn0QpeDbHjhAFJEUvL4zc99dgsUl7w?=
+ =?us-ascii?Q?7VxDb7rZxWPBmNv7+v0EHVsVqwhbQxSw+MBNZ7+WD1jXS29eZk+Ic0/+2YkA?=
+ =?us-ascii?Q?PRWKh/2FS6AuezdLSUUzabbFWpb5wJxbLrpug0EyzFMyyzbOvS5TiWBkQ8o/?=
+ =?us-ascii?Q?KnxrS7A6y3E+ze/sQc+wJ0rrV3Ddn8hNHpZP9TtsCe4H+94wZ3gEGwnn95mI?=
+ =?us-ascii?Q?2QBuFcBRO44ykux8mH9YbDUS/opT3UhXZ7GjeTJGQAG195RXDUPbNcKSsd3j?=
+ =?us-ascii?Q?vIN/a2fYU4aQPpXWwLB/nhd5gC3UtmpJHmt4vFArXgdiVHGa8HAld+uAMWtl?=
+ =?us-ascii?Q?r2+aef3nii3wI2vVS6UH2IsYyLCMM8GmkULv/ng/tH71bQ4ewbciQPZ4l8xO?=
+ =?us-ascii?Q?qsaSbrZhIWiyl5fBG2MTOXgGOpPoBL+NgYrr179ke2WHOvh/AhSdGaUqPQvq?=
+ =?us-ascii?Q?5h4y2ZLlfA3IaBJYWLcxrqBHOr9/kZpvl2Jlu6UNA11RKoiVz2+3TNU2L4Qo?=
+ =?us-ascii?Q?ETLZu3KNtfSL6s3OabZ+kcnOLsGRotytYciw08LkchFGpBePWGE/u0WFyLEY?=
+ =?us-ascii?Q?vSR2Wsl+rYZ0aI+x9um4Y7XX2Fwpp/+eipMFckq1tCG0zlfC7heOSxrSxesp?=
+ =?us-ascii?Q?UU7eSMaIN7Dqv5Pi+YnWN8pxEtzrn9WhALqZHmkCwCfkG7ckE9OFqZE7Rwkh?=
+ =?us-ascii?Q?c/ed6cfSvWRF938imMhenn2zx37bJ+yRvk4mFO+pxo4FETVU0zfZdmCxpsN+?=
+ =?us-ascii?Q?fyR06KacBZ+xKXBNwNbFpV94gGbi/C2etLjgM0oDzYcSu09xhXabSZxW5Bge?=
+ =?us-ascii?Q?aWE8+e4NFQUGQdk3h0XO6j/WmBAVMN1BkIkFGtsP6T3YkeiRD+Ate4TA1V53?=
+ =?us-ascii?Q?21HwruAefb5UHxIQO2gDUUdoSkqPU6YSJM9s?=
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SEYPR06MB5134.apcprd06.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(7416014)(376014)(1800799024)(366016)(38070700021);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?N/lImsa1pqvHnQ8nC4tcnfqhpYrHS4paUr4mh/wXQSPbP02Vu8nxoPIgxVuX?=
+ =?us-ascii?Q?nSfQWte8Ms2JRbYURjkhOBdeGXrqig9m1pHvXKC6xriEANiJRJr7Oabt5Ehp?=
+ =?us-ascii?Q?zPMVg72p3yiqAQPiwMFK7Bhzxt/lmXSI+TPN32HaIJuKzO7yVsWhyb86t9ti?=
+ =?us-ascii?Q?dwur7aup6jGNFH+slN7FOujsPAXL4OLyC2jhDsYbts3P9FMyy0J+nksM9UJa?=
+ =?us-ascii?Q?YMBmSw1EfzTWixtvpKgLn3+6mm+cTPSuuphjhQhQYzo9PEYFKXbDbrKH4hxG?=
+ =?us-ascii?Q?lZJnbZPlLhvaY5zXodVg0lVUnGXCpeVMMSt0yJE9VX2jqD8p2bqO5J6vKO7C?=
+ =?us-ascii?Q?1AxECp7bj2Uq+OdVPkkrizqqzhic4cQNn+UxAzbrM7cqj7YZLgx0nCEhSnIU?=
+ =?us-ascii?Q?h/BnQe9teQtGgN/0FeTsKS/KfFabKtZCidFbNRYTPSxDhxgDrpNurwnEllEQ?=
+ =?us-ascii?Q?nJflsZc+VBkrekECJi/WlWRXI/qDCEzm0F8O3klpXkI4SHC3O5kjCiF2Rm0U?=
+ =?us-ascii?Q?z/XOx/bFYhANWMEwa5TeqiqnORSwcct3doh520Mq9oVx3VYg5WAIN4RQ3iCC?=
+ =?us-ascii?Q?fw9f/MG6qC8dy1f/gDDGTs5oFWJQcIKdZlvknLRLNagiDvY2XLnoLUtVHEMP?=
+ =?us-ascii?Q?x+eub/Nwum1/Q+vFYao1ePea5OvwkHfKhdgJTnJDy9VAF1WpKUl2athCIDH1?=
+ =?us-ascii?Q?qK/i3FtJMFDrtiIzyQknBWr6hrPOvPJ3NEDHVmPl544u2BHadpVKKwiQ+qdg?=
+ =?us-ascii?Q?v6AXuxW+kjje2mGMDXzxqtumqmSN6yfBONEhKSX/kDAK3hvabiPELim8Aa1d?=
+ =?us-ascii?Q?Zxsz2iAn0I8JYeE/dlslhWOyKyBX0DhBitJY9xcxeotEeKKn3zNU+GtlUtGk?=
+ =?us-ascii?Q?F/Q2TZJnf+b02/HVo1EaPWuhllX/FScq6M0yNuGIswzz72oRWNFy8RWYFEbH?=
+ =?us-ascii?Q?qd8DhU5z70WTAhKnMBJLtYDxOWL0HcxTWgWBa97Dou46b9imjcB1RlhJ/W4X?=
+ =?us-ascii?Q?WJ5nEHGDXgMDfwITz4FQFwrMSW55xN/r6hjD+yu6fm2byERxhsc5tawL1+tJ?=
+ =?us-ascii?Q?ob/FUEEQNEpgEBYq0wGt7cru3p/scGZFhiK2euYSoKcH67colUBH8zj5YD7H?=
+ =?us-ascii?Q?BXDIycR8RGIobSYNFz0t1IMq4/7ulLndeLljvHwcynMUqyJw0FqEzWTt2iqY?=
+ =?us-ascii?Q?0BJ1w7+NeMzz+XC1/2O2vrynmG9qdECOA1VHSW9Lu4RdT9x9qZv2H2LWUXtS?=
+ =?us-ascii?Q?RmOCKRw373vQonRlj9UiUumI++QrBpvXvG+EJCfeWA2eUWKMkz9QVTzZvf0y?=
+ =?us-ascii?Q?4mfSKgQR6m8XRwAUao7wCUyrG91X2HXbMnF9qonv3aGsdZt3WW1bNI28DUIr?=
+ =?us-ascii?Q?WXbjOiL4NHh3pch4toG2AjrasXMlwkEp5TgkFCUtoJ6XdkTcWs3y45zuDxOC?=
+ =?us-ascii?Q?+N1QQq0vE54YcPNYHYaC3p4bhIcirQN72/8FMhiOUdrf9M9/ZV4bFKhyWIBB?=
+ =?us-ascii?Q?zSWaShDMr7C2IH62iZtARpeLzOgL8gqSJPqfIuuLp4sX332tJ1rn2a69wmvF?=
+ =?us-ascii?Q?ExlQOOReWCdMFy6VReXPxLwqjYFOy1wo7i8ksGKK?=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <7ae01221-868e-d5dc-4297-8006a69e7a7c@oss.qualcomm.com>
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDI4MDE5MCBTYWx0ZWRfX83miADs+6Tiv
- mOnwtRtU0lUZkTlJkyEiKaok4vOF4oFh2U/OE+WZOIrHLEiYGiRjLfEg2vigiuyClHS3rKt59Ik
- 4MBkz8UVDuWbbjlRF75jC7QhB39HuEcfFQytMzKSIfRQh5xLnICXznV/6M+1eItYVnVB/oBoJNW
- 0Orz8ZB0tGTWgyQLdX5pdI+PIaGgQL95HVTwbS7FJhWO7SZE+bmVUPw1HwwxMU1Ti9KS6muur4n
- Xz2Xe0/DfWqL24JjYYvQ+345dzhWRkgi5Kp60BK/vBZbQ1PeTBVxj/qTOd4HQ9TR7VABV/DCWnK
- wvGnjBq+f0ZPXXzPURiX3PrFSNhQ+CRPDRULfNCaUjidTje1CUs4Wevo0LXGAzqrVxAhY9QnJmh
- aGV+StiYfLpVCDwjWVi3irGnEnlfag==
-X-Proofpoint-ORIG-GUID: UXvDHuTiFIVw9m6JhESfaS9Ag-z2SyC6
-X-Authority-Analysis: v=2.4 cv=EKULElZC c=1 sm=1 tr=0 ts=69014419 cx=c_pps
- a=JbAStetqSzwMeJznSMzCyw==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
- a=x6icFKpwvdMA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=EUspDBNiAAAA:8 a=jibdWOiqirJgiXNZ0pYA:9 a=CjuIK1q_8ugA:10
- a=uxP6HrT_eTzRwkO_Te1X:22
-X-Proofpoint-GUID: UXvDHuTiFIVw9m6JhESfaS9Ag-z2SyC6
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-10-28_08,2025-10-22_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- malwarescore=0 priorityscore=1501 impostorscore=0 lowpriorityscore=0
- phishscore=0 clxscore=1015 suspectscore=0 adultscore=0 bulkscore=0
- spamscore=0 classifier=typeunknown authscore=0 authtc= authcc= route=outbound
- adjust=0 reason=mlx scancount=1 engine=8.22.0-2510240001
- definitions=main-2510280190
+X-OriginatorOrg: aspeedtech.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: SEYPR06MB5134.apcprd06.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: e1f961f0-20d5-4214-67e5-08de16ae0a3c
+X-MS-Exchange-CrossTenant-originalarrivaltime: 29 Oct 2025 05:43:08.3440
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 43d4aa98-e35b-4575-8939-080e90d5a249
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 4EqfczJVOqO7zlHLmbuzA0s0NFa8GTQZCEaeWkP+27nmEdG2hGSTxiUhXSXo9iKoRXT2zOEZSx1T09CG2xKWHEfIZiM1hIL29fS/k/NIirw=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PUZPR06MB5537
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251028_153050_049392_EBB7E875 
-X-CRM114-Status: GOOD (  30.64  )
+X-CRM114-CacheID: sfid-20251028_224318_046771_27FD8FAB 
+X-CRM114-Status: GOOD (  14.99  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -151,126 +176,110 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Oct 28, 2025 at 03:15:33PM -0700, Wesley Cheng wrote:
-> 
-> 
-> On 10/27/2025 7:21 AM, Dmitry Baryshkov wrote:
-> > On Fri, Oct 24, 2025 at 05:47:44PM -0700, Wesley Cheng wrote:
-> > > For SuperSpeed USB to work properly, there is a set of HW settings that
-> > > need to be programmed into the USB blocks within the QMP PHY.  Ensure that
-> > > these settings follow the latest settings mentioned in the HW programming
-> > > guide.  The QMP USB PHY on Glymur is a USB43 based PHY that will have some
-> > > new ways to define certain registers, such as the replacement of TXA/RXA
-> > > and TXB/RXB register sets.  This was replaced with the LALB register set.
-> > > 
-> > > There are also some PHY init updates to modify the PCS MISC register space.
-> > > Without these, the QMP PHY PLL locking fails.
-> > > 
-> > > Signed-off-by: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
-> > > ---
-> > >   drivers/phy/qualcomm/phy-qcom-qmp-combo.c          | 288 ++++++++++
-> > >   drivers/phy/qualcomm/phy-qcom-qmp-pcs-aon-v8.h     |  17 +
-> > >   drivers/phy/qualcomm/phy-qcom-qmp-pcs-misc-v8.h    |  12 +
-> > >   .../phy/qualcomm/phy-qcom-qmp-qserdes-lalb-v8.h    | 639 +++++++++++++++++++++
-> > >   drivers/phy/qualcomm/phy-qcom-qmp-usb43-pcs-v8.h   |  33 ++
-> > >   .../qualcomm/phy-qcom-qmp-usb43-qserdes-com-v8.h   | 224 ++++++++
-> > >   drivers/phy/qualcomm/phy-qcom-qmp.h                |   2 +
-> > >   7 files changed, 1215 insertions(+)
-> > > 
-> > > diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> > > index 1caa1fb6a8c7..d1534ed7200b 100644
-> > > --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> > > +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> > > @@ -30,9 +30,11 @@
-> > >   #include "phy-qcom-qmp.h"
-> > >   #include "phy-qcom-qmp-pcs-aon-v6.h"
-> > > +#include "phy-qcom-qmp-pcs-aon-v8.h"
-> > >   #include "phy-qcom-qmp-pcs-misc-v3.h"
-> > >   #include "phy-qcom-qmp-pcs-misc-v4.h"
-> > >   #include "phy-qcom-qmp-pcs-misc-v5.h"
-> > > +#include "phy-qcom-qmp-pcs-misc-v8.h"
-> > >   #include "phy-qcom-qmp-pcs-usb-v4.h"
-> > >   #include "phy-qcom-qmp-pcs-usb-v5.h"
-> > >   #include "phy-qcom-qmp-pcs-usb-v6.h"
-> > > @@ -46,6 +48,8 @@
-> > >   #include "phy-qcom-qmp-dp-phy-v5.h"
-> > >   #include "phy-qcom-qmp-dp-phy-v6.h"
-> > > +#include "phy-qcom-qmp-usb43-pcs-v8.h"
-> > > +
-> > >   /* QPHY_V3_DP_COM_RESET_OVRD_CTRL register bits */
-> > >   /* DP PHY soft reset */
-> > >   #define SW_DPPHY_RESET				BIT(0)
-> > > @@ -97,6 +101,7 @@ enum qphy_reg_layout {
-> > >   	QPHY_TX_HIGHZ_DRVR_EN,
-> > >   	QPHY_TX_TRANSCEIVER_BIAS_EN,
-> > > +	QPHY_AON_TOGGLE_ENABLE,
-> > >   	/* Keep last to ensure regs_layout arrays are properly initialized */
-> > >   	QPHY_LAYOUT_SIZE
-> > >   };
-> > > @@ -259,6 +264,236 @@ static const unsigned int qmp_v8_usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
-> > >   	[QPHY_TX_TRANSCEIVER_BIAS_EN]	= QSERDES_V8_TX_TRANSCEIVER_BIAS_EN,
-> > >   };
-> > > +static const unsigned int qmp_v8_n3_usb43dpphy_regs_layout[QPHY_LAYOUT_SIZE] = {
-> > > +	[QPHY_SW_RESET]			= QPHY_V6_N4_PCS_SW_RESET,
-> > > +	[QPHY_START_CTRL]			= QPHY_V6_N4_PCS_START_CONTROL,
-> > > +	[QPHY_PCS_STATUS]			= QPHY_V6_N4_PCS_PCS_STATUS1,
-> > > +	[QPHY_PCS_POWER_DOWN_CONTROL]	= QPHY_V6_N4_PCS_POWER_DOWN_CONTROL,
-> > 
-> > V8 PHY should not be using V6 register offsets.
-> > 
-> > > +
-> > > +	/* In PCS_USB */
-> > > +	[QPHY_PCS_AUTONOMOUS_MODE_CTRL]	= QPHY_V6_PCS_USB3_AUTONOMOUS_MODE_CTRL,
-> > > +	[QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR]	= QPHY_V6_PCS_USB3_LFPS_RXTERM_IRQ_CLEAR,
-> > > +
-> > > +	[QPHY_AON_TOGGLE_ENABLE]		= QPHY_V8_PCS_AON_USB3_AON_TOGGLE_ENABLE,
-> > > +
-> > > +	[QPHY_COM_RESETSM_CNTRL]		= QSERDES_V6_COM_RESETSM_CNTRL,
-> > > +	[QPHY_COM_C_READY_STATUS]		= QSERDES_V6_COM_C_READY_STATUS,
-> > > +	[QPHY_COM_CMN_STATUS]		= QSERDES_V6_COM_CMN_STATUS,
-> > > +	[QPHY_COM_BIAS_EN_CLKBUFLR_EN]	= QSERDES_V6_COM_PLL_BIAS_EN_CLK_BUFLR_EN,
-> > > +
-> > > +	[QPHY_DP_PHY_STATUS]		= QSERDES_V6_DP_PHY_STATUS,
-> > > +	[QPHY_DP_PHY_VCO_DIV]		= QSERDES_V6_DP_PHY_VCO_DIV,
-> > > +
-> > > +	[QPHY_TX_TX_POL_INV]		= QSERDES_V6_N4_TX_TX_POL_INV,
-> > > +	[QPHY_TX_TX_DRV_LVL]		= QSERDES_V6_N4_TX_TX_DRV_LVL,
-> > > +	[QPHY_TX_TX_EMP_POST1_LVL]		= QSERDES_V6_N4_TX_TX_EMP_POST1_LVL,
-> > > +	[QPHY_TX_HIGHZ_DRVR_EN]		= QSERDES_V6_N4_TX_HIGHZ_DRVR_EN,
-> > > +	[QPHY_TX_TRANSCEIVER_BIAS_EN]	= QSERDES_V6_N4_TX_TRANSCEIVER_BIAS_EN,
-> > > +};
-> > > +
-> > > @@ -2528,6 +2784,27 @@ static const struct qmp_phy_cfg sm8750_usb3dpphy_cfg = {
-> > >   	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
-> > >   };
-> > > +static const struct qmp_phy_cfg glymur_usb3dpphy_cfg = {
-> > > +	.offsets		= &qmp_combo_usb43dp_offsets_v8,
-> > > +
-> > > +	.serdes_tbl		= glymur_usb43dp_serdes_tbl,
-> > > +	.serdes_tbl_num		= ARRAY_SIZE(glymur_usb43dp_serdes_tbl),
-> > > +	.tx_tbl			= glymur_usb43dp_lalb_tbl,
-> > > +	.tx_tbl_num		= ARRAY_SIZE(glymur_usb43dp_lalb_tbl),
-> > > +	.pcs_tbl		= glymur_usb43dp_pcs_tbl,
-> > > +	.pcs_tbl_num		= ARRAY_SIZE(glymur_usb43dp_pcs_tbl),
-> > > +	.pcs_usb_tbl		= glymur_usb43dp_pcs_usb_tbl,
-> > > +	.pcs_usb_tbl_num	= ARRAY_SIZE(glymur_usb43dp_pcs_usb_tbl),
-> > > +	.pcs_misc_tbl		= glymur_usb43dp_pcs_misc_tbl,
-> > > +	.pcs_misc_tbl_num	= ARRAY_SIZE(glymur_usb43dp_pcs_misc_tbl),
-> > 
-> > DP tables are missing.
-> > 
-> 
-> Hi Dmitry,
-> 
-> I think I discussed this with Abel on the previous patch revision.  At the
-> moment I did not add support for DP, so we shouldn't add the tables, unless
-> you think we should still have placeholder?
+Thank you for your reply.
 
-Please add DP support.
+> > +  The ASPEED PCIe Root Complex controller provides PCI Express Root
+> > +Complex
+> > +  functionality for ASPEED SoCs, such as the AST2600 and AST2700.
+> > +  This controller enables connectivity to PCIe endpoint devices,
+> > +supporting
+> > +  memory and I/O windows, MSI and legacy interrupts, and integration
+> > +with
+> > +  the SoC's clock, reset, and pinctrl subsystems. On AST2600, the
+> > +PCIe Root
+> > +  Port device number is always 8.
+> 
+> s/legacy/INTx/
+> 
 
--- 
-With best wishes
-Dmitry
+Agreed.
+
+> > +properties:
+> > +  compatible:
+> > +    enum:
+> > +      - aspeed,ast2600-pcie
+> > +      - aspeed,ast2700-pcie
+> > +
+> > +  reg:
+> > +    maxItems: 1
+> > +
+> > +  ranges:
+> > +    minItems: 2
+> > +    maxItems: 2
+> > +
+> > +  interrupts:
+> > +    maxItems: 1
+> > +    description: IntX and MSI interrupt
+> 
+> s/IntX/INTx/
+> 
+
+Agreed.
+
+> > +    pcie0: pcie@1e770000 {
+> > +      compatible = "aspeed,ast2600-pcie";
+> > +      device_type = "pci";
+> > +      reg = <0x1e770000 0x100>;
+> > +      #address-cells = <3>;
+> > +      #size-cells = <2>;
+> > +      interrupts = <GIC_SPI 168 IRQ_TYPE_LEVEL_HIGH>;
+> > +      bus-range = <0x00 0xff>;
+> > +
+> > +      ranges = <0x01000000 0x0 0x00018000 0x00018000 0x0
+> 0x00008000
+> > +                0x02000000 0x0 0x60000000 0x60000000 0x0
+> 0x20000000>;
+> > +
+> > +      resets = <&syscon ASPEED_RESET_H2X>;
+> > +      reset-names = "h2x";
+> > +      pinctrl-0 = <&pinctrl_pcierc1_default>;
+> > +      pinctrl-names = "default";
+> > +
+> > +      #interrupt-cells = <1>;
+> > +      msi-controller;
+> > +
+> > +      aspeed,ahbc = <&ahbc>;
+> > +
+> > +      interrupt-map-mask = <0 0 0 7>;
+> > +      interrupt-map = <0 0 0 1 &pcie_intc0 0>,
+> > +                      <0 0 0 2 &pcie_intc0 1>,
+> > +                      <0 0 0 3 &pcie_intc0 2>,
+> > +                      <0 0 0 4 &pcie_intc0 3>;
+> > +      legacy-interrupt-controller {
+> > +        interrupt-controller;
+> > +        #address-cells = <0>;
+> > +        #interrupt-cells = <1>;
+> > +      };
+> 
+> IIUC, Rob says there's no need for a separate interrupt-controller stanza and it
+> can be directly in the host bridge [1].
+> 
+> I think that does make interrupt-map a little more verbose because the parent
+> unit address will use the host bridge #address-cells (3) instead of the interrupt
+> controller #address-cells (0), e.g., this from [2]:
+> 
+>   pcie@10e40000 {
+>       compatible = "renesas,r9a08g045-pcie";
+>       #address-cells = <3>;
+>       #interrupt-cells = <1>;
+>       interrupt-map = <0 0 0 1 &pcie 0 0 0 0>, /* INTA */
+>                       <0 0 0 2 &pcie 0 0 0 1>, /* INTB */
+>                       <0 0 0 3 &pcie 0 0 0 2>, /* INTC */
+>                       <0 0 0 4 &pcie 0 0 0 3>; /* INTD */
+> 
+> [1]
+> https://lore.kernel.org/linux-pci/20250509204905.GA4080349-robh@kernel.or
+> g/
+> [2]
+> https://lore.kernel.org/linux-pci/20251007133657.390523-2-claudiu.beznea.uj
+> @bp.renesas.com/
+
+Thank you for your information.
+I will modify this part in next version.
+
+Thanks,
+Jacky
+
 
 -- 
 linux-phy mailing list
