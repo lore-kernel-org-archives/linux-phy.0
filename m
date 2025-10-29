@@ -4,83 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0CE04CCF9EE
-	for <linux-phy@archiver.kernel.org>; Wed, 29 Oct 2025 21:41:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DAD34CCF9EE
+	for <linux-phy@archiver.kernel.org>; Wed, 29 Oct 2025 21:56:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:From:Subject:Message-ID:
-	References:Mime-Version:In-Reply-To:Date:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=VxOWbYXZVaIvnLH9FdyiB0wwbGzSpERR++LtXAWU6lY=; b=4ykIh15XWz99u5viUeVBEsEKzY
-	UprERJVyJm3myXjoDr92myCMuoFDGP6bqtp+ZK9hRDgJ0GINdyWyJOVrrBrOoWNQz5VXtwS0Uf2ZX
-	uiFEvhwYfo5ShVKjEXnjwSMCcmzGS2UTUntnqwxe2yVKiaE1E7Z1qYDLrihFxbaSA22CmJIBEH4vh
-	GESk48kiNjeqXXKLOvcNjNiZFel5ngfSSUTsK9G1ziCttDEJ+uOmmcf73V3IQDEJ1dpFbn3qPPv6Z
-	XxrN5QTE8IkiU8AmwVY3cAA+rXCfqjSXBCK6HUjtbsSWoBds++fXKx05qMhJRnbiTOO3KZu6vNNW7
-	mE4UNO5w==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pTVO6hUZ7D+iZzOXXlX5LgUFTK5gK/IvXEgM6QrF8rM=; b=Z6gp6dTWEgww5A
+	nXh/oWUsf8Iu61uaNhzFMb3Y96prjWQnFwiEbGVkxd6JqobML8ZGf0ej5WXNuSrq/ARCcuOv9bobA
+	ipywt3/OjM20zb4S5vkYm9G+4JepPuCO6ssOGjwYADRW1SilRkzp2PNjI2qThb0d/Y0CGbO1NZUNi
+	+Wi0fZC1V552fjBlaEBdZpQBStJ6ewlhJmOgsQC9bX1zk12bOImsrOXcnRn0egi0TqX/xCZSIfunV
+	M6xwe6XjTklonqTTzItoydodyvNHRTo9LKqHxodszNDISYURDmR97olwVhRVsVL/SsWNx2yvUI87D
+	L4GUVw2ptFiCYZpYyQuQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vEDum-0000000307U-2sV7;
-	Wed, 29 Oct 2025 21:41:08 +0000
-Received: from mail-pj1-x104a.google.com ([2607:f8b0:4864:20::104a])
+	id 1vEEA7-000000032mz-1WdL;
+	Wed, 29 Oct 2025 21:56:59 +0000
+Received: from mail-pl1-x631.google.com ([2607:f8b0:4864:20::631])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vEDui-0000000304f-0vhv
+	id 1vEEA3-000000032lI-0SQ6
 	for linux-phy@lists.infradead.org;
-	Wed, 29 Oct 2025 21:41:05 +0000
-Received: by mail-pj1-x104a.google.com with SMTP id 98e67ed59e1d1-32eb18b5500so557110a91.2
-        for <linux-phy@lists.infradead.org>; Wed, 29 Oct 2025 14:41:02 -0700 (PDT)
+	Wed, 29 Oct 2025 21:56:57 +0000
+Received: by mail-pl1-x631.google.com with SMTP id d9443c01a7336-29488933a91so3628585ad.2
+        for <linux-phy@lists.infradead.org>; Wed, 29 Oct 2025 14:56:54 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=google.com; s=20230601; t=1761774062; x=1762378862; darn=lists.infradead.org;
-        h=cc:to:from:subject:message-id:references:mime-version:in-reply-to
-         :date:from:to:cc:subject:date:message-id:reply-to;
-        bh=PsD+60KDxRA63pKuk3kGCvoA2vQ4JCKP7PSH6fRAYgs=;
-        b=FdRNcQ1+bFLN3MF4RQU032WkYuv3zAKXNdcC7xHnCvta2pdMTxy1hVI4m/7pq+A2B0
-         rfi+20dPLzj8fQR/0txN0RmF1jlEdW6NE5GKyFOKH/TVPVaGbaz1784Gfcn1JfLhiXu5
-         QyZVbOMfWQhdHBHLD9fQKUJVpUwIZMEiafayodVf3RGjDtVs3PnR4eHGoyhbx3kVWiaj
-         1OPFwfBPZ9B8Zm0GfbMpeiaMwPW4vm7FKF6r9CzEh+Km60O2uMt2T7S4QPl+N3Bs1FM6
-         J116nxN95mlg79WF0Ts31Fc/DS+7JIkocGmtUU8FrNn64Yqv2+B3Qg8D+Lzpo5H8p+Up
-         7GBw==
+        d=google.com; s=20230601; t=1761775014; x=1762379814; darn=lists.infradead.org;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=TJTLgOh8jsaRPCjdQQVu2n3V/rJ9ZSz5eRUC9ZjNuFk=;
+        b=y5VwV6moUa2B0xCsBjQUGpFWusmViBBN2H3ED6WJ1bUi7j2TiXWji73Yaq8jufUtYt
+         hFn/48a1vzKWZ76/FG+J1N5yrwVvBLm+eSls5c2GNg6EZcMJDexNCstcxW2oUCgz9Sf1
+         o6gXgeO7yqjYGt1CTggkF6fve9TJWkx2I5IvhK2aMRG71y6pu2Hb39HqbOg146rE61Bz
+         Coww36EF1TYh79RW3Gr9OAEpH8mRaCjHEL7csMs89Aro8yzUaSdvnSHpIwe3/H9kUjKd
+         7SHSyMdXFDPmTOPcG1ZMv38ZeRdn2/EqAWnRJDwiRJb8JprwL0aeyiNmd+BM/xFYlyJY
+         XC6g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1761774062; x=1762378862;
-        h=cc:to:from:subject:message-id:references:mime-version:in-reply-to
-         :date:x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=PsD+60KDxRA63pKuk3kGCvoA2vQ4JCKP7PSH6fRAYgs=;
-        b=TpR6BO+eA1q7ZflRXNC6w5YiOnRPWgipGcv4BWOX1e6J1oIikIH1FzEk3mNQDSzvj8
-         pLw7BymCJxp4rM3oFH4qEMDBKutiQmZZC6npzt9NWfMvC3MSBYKmdwF6oNFH1tG0xOEJ
-         C0p8z3EkiQAuqGcFdjHwmIJJHrviXNtaZO515Ft433PiJw5juTEjBtPhWgHdfjNbNk/j
-         xVdYApxGOZ8PSIQIZuMKOv8O4j+81K0VDIZbPZntY1jyPoIBn62ijhfANuJ/hr2OFQpr
-         TKnATQxIn6AjeSOxyntvITIXLPkCpiTm8/+73VgbHjiTcmDYS+fnB8X9lQpAMIXVYwtA
-         4FMw==
-X-Forwarded-Encrypted: i=1; AJvYcCVLe11Jm4kp5tbH8zuJCHeJPaKahAT1gjy/6bVwLcOaxUFybsC365wGjI0B3VXZP7KFLRkqR5YNIxM=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxxnjQ/nnvVCPYzxbtWrOooAdbC2LBJlIb1lBCDykO2FjCa4BZL
-	daRBxNf4mS0bTnMNoSSJfx0S3FfAG8XbuqN1wtIJZGX7lXi4EB+wnBYxjkgSYW9ljgccwlzg1BK
-	Bi2Rs2Q==
-X-Google-Smtp-Source: AGHT+IEMfFp8ZCC0xNU0mSbhzy5iC7snXPJKFHRF56WugTXlGgarRnyuyK6BjOFtMaCJF60s6FLDD+G3tTU=
-X-Received: from plbli15.prod.google.com ([2002:a17:903:294f:b0:267:fa7d:b637])
- (user=royluo job=prod-delivery.src-stubby-dispatcher) by 2002:a17:902:ec8d:b0:269:87a3:43b8
- with SMTP id d9443c01a7336-294ee217833mr7098535ad.4.1761774061567; Wed, 29
- Oct 2025 14:41:01 -0700 (PDT)
-Date: Wed, 29 Oct 2025 21:40:32 +0000
-In-Reply-To: <20251029214032.3175261-1-royluo@google.com>
-Mime-Version: 1.0
-References: <20251029214032.3175261-1-royluo@google.com>
-X-Mailer: git-send-email 2.51.1.851.g4ebd6896fd-goog
-Message-ID: <20251029214032.3175261-3-royluo@google.com>
-Subject: [PATCH v5 2/2] phy: Add Google Tensor SoC USB PHY driver
+        d=1e100.net; s=20230601; t=1761775014; x=1762379814;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=TJTLgOh8jsaRPCjdQQVu2n3V/rJ9ZSz5eRUC9ZjNuFk=;
+        b=dtYkRw5mx/93Oqy6RoLrwf9tBNv6udaO3Tz/wttYcIrBiM1p1nvxJ0If1ec3inzFyz
+         FDEcktCwNC030B2jdw73SQeGscDSUUAIQE/F2dXQXw2751g/AMfJ7Fl3whAoNdO9pnsO
+         5j5NCjpvV5Nfh2jGuTcVYC8INKBCg88bjmJaLvYi3+H06a6owAY4Iw70wfa4FBrr6BC9
+         rkzsgqbN2UTY8cg0D082ZZrs0lci34DHeuYwZbZbJJE6d5I+B1IKtazxif48aBxy+2oM
+         79xNNY62K7xsvDChnn63KjNywadWoZurfJ+cDMQ5GyGAtjRk/AwHpHcj2EiydtfJzBVp
+         zYXw==
+X-Forwarded-Encrypted: i=1; AJvYcCXrFk3SQbnhKMhtZfzXzsOSb/54LNfhs23ISE7nYilgzI1k85QHFmZ/DR8DpQiJd6PamSDoUgXKlcQ=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyZIpfV22GxoS7FaFBbK7YhW01k8Aqo6NJ73Nc4QO7sZTuZOVAU
+	2Gebn6Qb1YpN3MCPZyOCschiXmpeaQs//taE/3ybIa7+LgTCXnSpP/ddioCVN9e7XJq0U1Hbmx/
+	CP81eYyhF5WQz5VMTU354Kf1aaSwOXZVK8zWzHL1u
+X-Gm-Gg: ASbGncsKtwKENj+Dvp7F+UqlHbNiHnit/1bBN92g/ZjknS9bBrnSNuDnjZfcc7djeTv
+	lhmW9hawyojI1c7ZtSvi9Ntn3KPIWjlJ5nbDlhage9JE89PuRUdDkau4oxBLgCd9gjNiA1rH3+W
+	0zWAuX+qFhuyHEXoVLWo1CdNoHirkYaAR1Qotj4tSc6QvjbiGkR/A2d1e8VdflyhUURR5rWbsie
+	o4ZHghK/vuvuJJV4iyNFOeqVvy0VotLnEqhL+Vm2C5uOR50EbDtNRlrPNb6lYjAOaxNduYpN9dw
+	8v3T+d0nQDPFZS8=
+X-Google-Smtp-Source: AGHT+IE7MK0ouzOxdgxbbJICpwKKB/m/kuER8QUSyeE8WkSLtloBkkEzSk6YhBjjZ6+dAw+dHj+t4Lwls8B0wpVK58k=
+X-Received: by 2002:a17:903:41c1:b0:276:d3e:6844 with SMTP id
+ d9443c01a7336-294ede84e2cmr10876965ad.33.1761775013281; Wed, 29 Oct 2025
+ 14:56:53 -0700 (PDT)
+MIME-Version: 1.0
+References: <20251017235159.2417576-1-royluo@google.com> <20251017235159.2417576-3-royluo@google.com>
+ <37daba64-5233-4573-95de-38612c2358f2@gmail.com> <CA+zupgwbmKt8BhHEM-76CLLH_dE_vmyHvKwqpC2WzwED9irEVw@mail.gmail.com>
+In-Reply-To: <CA+zupgwbmKt8BhHEM-76CLLH_dE_vmyHvKwqpC2WzwED9irEVw@mail.gmail.com>
 From: Roy Luo <royluo@google.com>
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+Date: Wed, 29 Oct 2025 14:56:16 -0700
+X-Gm-Features: AWmQ_blXw1Xn8pKPUfoc6ad6zDhTM7hi1hzEqd7lDJfXI9Cm3_Ji6rmIfYSQ3kQ
+Message-ID: <CA+zupgyywiKajEbTf34P1E0kz_1hni_gApXG+ObrjTHaBRRdWA@mail.gmail.com>
+Subject: Re: [PATCH v4 2/2] phy: Add Google Tensor SoC USB PHY driver
+To: Ivaylo Ivanov <ivo.ivanov.ivanov1@gmail.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
 	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
 	Philipp Zabel <p.zabel@pengutronix.de>, Peter Griffin <peter.griffin@linaro.org>, 
-	"=?UTF-8?q?Andr=C3=A9=20Draszik?=" <andre.draszik@linaro.org>, Tudor Ambarus <tudor.ambarus@linaro.org>
-Cc: Doug Anderson <dianders@google.com>, Joy Chakraborty <joychakr@google.com>, 
-	Naveen Kumar <mnkumar@google.com>, Roy Luo <royluo@google.com>, 
-	Badhri Jagan Sridharan <badhri@google.com>, linux-phy@lists.infradead.org, 
+	=?UTF-8?Q?Andr=C3=A9_Draszik?= <andre.draszik@linaro.org>, 
+	Tudor Ambarus <tudor.ambarus@linaro.org>, Joy Chakraborty <joychakr@google.com>, 
+	Naveen Kumar <mnkumar@google.com>, Badhri Jagan Sridharan <badhri@google.com>, linux-phy@lists.infradead.org, 
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
 	linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251029_144104_276334_D85F23D8 
-X-CRM114-Status: GOOD (  24.65  )
+X-CRM114-CacheID: sfid-20251029_145655_184004_EC432D0B 
+X-CRM114-Status: GOOD (  52.55  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,346 +98,199 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Support the USB PHY found on Google Tensor G5. This particular USB PHY
-supports both high-speed and super-speed operations, and is integrated
-with the SNPS DWC3 controller that's also on the SoC.
-This initial patch specifically adds functionality for high-speed.
-
-Co-developed-by: Joy Chakraborty <joychakr@google.com>
-Signed-off-by: Joy Chakraborty <joychakr@google.com>
-Co-developed-by: Naveen Kumar <mnkumar@google.com>
-Signed-off-by: Naveen Kumar <mnkumar@google.com>
-Signed-off-by: Roy Luo <royluo@google.com>
----
- drivers/phy/Kconfig          |  13 ++
- drivers/phy/Makefile         |   1 +
- drivers/phy/phy-google-usb.c | 271 +++++++++++++++++++++++++++++++++++
- 3 files changed, 285 insertions(+)
- create mode 100644 drivers/phy/phy-google-usb.c
-
-diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
-index 58c911e1b2d2..be237847efed 100644
---- a/drivers/phy/Kconfig
-+++ b/drivers/phy/Kconfig
-@@ -101,6 +101,19 @@ config PHY_NXP_PTN3222
- 	  schemes. It supports all three USB 2.0 data rates: Low Speed, Full
- 	  Speed and High Speed.
- 
-+config PHY_GOOGLE_USB
-+	tristate "Google Tensor SoC USB PHY driver"
-+	depends on HAS_IOMEM
-+	depends on OF
-+	depends on TYPEC
-+	select GENERIC_PHY
-+	help
-+	  Enable support for the USB PHY on Google Tensor SoCs, starting with
-+	  the G5 generation. This driver provides the PHY interfaces to
-+	  interact with the SNPS eUSB2 and USB 3.2/DisplayPort Combo PHY, both
-+	  of which are integrated with the DWC3 USB DRD controller.
-+	  This driver currently supports USB high-speed.
-+
- source "drivers/phy/allwinner/Kconfig"
- source "drivers/phy/amlogic/Kconfig"
- source "drivers/phy/broadcom/Kconfig"
-diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
-index c670a8dac468..1d7a1331bd19 100644
---- a/drivers/phy/Makefile
-+++ b/drivers/phy/Makefile
-@@ -13,6 +13,7 @@ obj-$(CONFIG_PHY_SNPS_EUSB2)		+= phy-snps-eusb2.o
- obj-$(CONFIG_USB_LGM_PHY)		+= phy-lgm-usb.o
- obj-$(CONFIG_PHY_AIROHA_PCIE)		+= phy-airoha-pcie.o
- obj-$(CONFIG_PHY_NXP_PTN3222)		+= phy-nxp-ptn3222.o
-+obj-$(CONFIG_PHY_GOOGLE_USB)		+= phy-google-usb.o
- obj-y					+= allwinner/	\
- 					   amlogic/	\
- 					   broadcom/	\
-diff --git a/drivers/phy/phy-google-usb.c b/drivers/phy/phy-google-usb.c
-new file mode 100644
-index 000000000000..02c6e9f2912e
---- /dev/null
-+++ b/drivers/phy/phy-google-usb.c
-@@ -0,0 +1,271 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * phy-google-usb.c - Google USB PHY driver
-+ *
-+ * Copyright (C) 2025, Google LLC
-+ */
-+
-+#include <linux/bitfield.h>
-+#include <linux/clk.h>
-+#include <linux/reset.h>
-+#include <linux/io.h>
-+#include <linux/kernel.h>
-+#include <linux/module.h>
-+#include <linux/of.h>
-+#include <linux/phy/phy.h>
-+#include <linux/platform_device.h>
-+#include <linux/mutex.h>
-+#include <linux/cleanup.h>
-+#include <linux/usb/typec_mux.h>
-+
-+#define USBCS_USB2PHY_CFG19_OFFSET 0x0
-+#define USBCS_USB2PHY_CFG19_PHY_CFG_PLL_FB_DIV GENMASK(19, 8)
-+
-+#define USBCS_USB2PHY_CFG21_OFFSET 0x8
-+#define USBCS_USB2PHY_CFG21_PHY_ENABLE BIT(12)
-+#define USBCS_USB2PHY_CFG21_REF_FREQ_SEL GENMASK(15, 13)
-+#define USBCS_USB2PHY_CFG21_PHY_TX_DIG_BYPASS_SEL BIT(19)
-+
-+#define USBCS_PHY_CFG1_OFFSET 0x28
-+#define USBCS_PHY_CFG1_SYS_VBUSVALID BIT(17)
-+
-+enum google_usb_phy_id {
-+	GOOGLE_USB2_PHY,
-+	GOOGLE_USB_PHY_NUM,
-+};
-+
-+struct google_usb_phy_instance {
-+	int index;
-+	struct phy *phy;
-+	int num_clks;
-+	struct clk_bulk_data *clks;
-+	struct reset_control *rsts;
-+};
-+
-+struct google_usb_phy {
-+	struct device *dev;
-+	void __iomem *usb2_cfg_base;
-+	void __iomem *usb3_top_base;
-+	struct google_usb_phy_instance insts[GOOGLE_USB_PHY_NUM];
-+	/* serialize phy access */
-+	struct mutex phy_mutex;
-+	struct typec_switch_dev *sw;
-+	enum typec_orientation orientation;
-+};
-+
-+static inline struct google_usb_phy *to_google_usb_phy(struct google_usb_phy_instance *inst)
-+{
-+	return container_of(inst, struct google_usb_phy, insts[inst->index]);
-+}
-+
-+static void set_vbus_valid(struct google_usb_phy *gphy)
-+{
-+	u32 reg;
-+
-+	if (gphy->orientation == TYPEC_ORIENTATION_NONE) {
-+		reg = readl(gphy->usb3_top_base + USBCS_PHY_CFG1_OFFSET);
-+		reg &= ~USBCS_PHY_CFG1_SYS_VBUSVALID;
-+		writel(reg, gphy->usb3_top_base + USBCS_PHY_CFG1_OFFSET);
-+	} else {
-+		reg = readl(gphy->usb3_top_base + USBCS_PHY_CFG1_OFFSET);
-+		reg |= USBCS_PHY_CFG1_SYS_VBUSVALID;
-+		writel(reg, gphy->usb3_top_base + USBCS_PHY_CFG1_OFFSET);
-+	}
-+}
-+
-+static int google_usb_set_orientation(struct typec_switch_dev *sw,
-+				      enum typec_orientation orientation)
-+{
-+	struct google_usb_phy *gphy = typec_switch_get_drvdata(sw);
-+
-+	dev_dbg(gphy->dev, "set orientation %d\n", orientation);
-+
-+	gphy->orientation = orientation;
-+
-+	if (pm_runtime_suspended(gphy->dev))
-+		return 0;
-+
-+	guard(mutex)(&gphy->phy_mutex);
-+
-+	set_vbus_valid(gphy);
-+
-+	return 0;
-+}
-+
-+static int google_usb2_phy_init(struct phy *_phy)
-+{
-+	struct google_usb_phy_instance *inst = phy_get_drvdata(_phy);
-+	struct google_usb_phy *gphy = to_google_usb_phy(inst);
-+	u32 reg;
-+	int ret = 0;
-+
-+	dev_dbg(gphy->dev, "initializing usb2 phy\n");
-+
-+	guard(mutex)(&gphy->phy_mutex);
-+
-+	reg = readl(gphy->usb2_cfg_base + USBCS_USB2PHY_CFG21_OFFSET);
-+	reg &= ~USBCS_USB2PHY_CFG21_PHY_TX_DIG_BYPASS_SEL;
-+	reg &= ~USBCS_USB2PHY_CFG21_REF_FREQ_SEL;
-+	reg |= FIELD_PREP(USBCS_USB2PHY_CFG21_REF_FREQ_SEL, 0);
-+	writel(reg, gphy->usb2_cfg_base + USBCS_USB2PHY_CFG21_OFFSET);
-+
-+	reg = readl(gphy->usb2_cfg_base + USBCS_USB2PHY_CFG19_OFFSET);
-+	reg &= ~USBCS_USB2PHY_CFG19_PHY_CFG_PLL_FB_DIV;
-+	reg |= FIELD_PREP(USBCS_USB2PHY_CFG19_PHY_CFG_PLL_FB_DIV, 368);
-+	writel(reg, gphy->usb2_cfg_base + USBCS_USB2PHY_CFG19_OFFSET);
-+
-+	set_vbus_valid(gphy);
-+
-+	ret = clk_bulk_prepare_enable(inst->num_clks, inst->clks);
-+	if (ret)
-+		return ret;
-+
-+	ret = reset_control_deassert(inst->rsts);
-+	if (ret) {
-+		clk_bulk_disable_unprepare(inst->num_clks, inst->clks);
-+		return ret;
-+	}
-+
-+	reg = readl(gphy->usb2_cfg_base + USBCS_USB2PHY_CFG21_OFFSET);
-+	reg |= USBCS_USB2PHY_CFG21_PHY_ENABLE;
-+	writel(reg, gphy->usb2_cfg_base + USBCS_USB2PHY_CFG21_OFFSET);
-+
-+	return ret;
-+}
-+
-+static int google_usb2_phy_exit(struct phy *_phy)
-+{
-+	struct google_usb_phy_instance *inst = phy_get_drvdata(_phy);
-+	struct google_usb_phy *gphy = to_google_usb_phy(inst);
-+	u32 reg;
-+
-+	dev_dbg(gphy->dev, "exiting usb2 phy\n");
-+
-+	guard(mutex)(&gphy->phy_mutex);
-+
-+	reg = readl(gphy->usb2_cfg_base + USBCS_USB2PHY_CFG21_OFFSET);
-+	reg &= ~USBCS_USB2PHY_CFG21_PHY_ENABLE;
-+	writel(reg, gphy->usb2_cfg_base + USBCS_USB2PHY_CFG21_OFFSET);
-+
-+	reset_control_assert(inst->rsts);
-+	clk_bulk_disable_unprepare(inst->num_clks, inst->clks);
-+
-+	return 0;
-+}
-+
-+static const struct phy_ops google_usb2_phy_ops = {
-+	.init		= google_usb2_phy_init,
-+	.exit		= google_usb2_phy_exit,
-+};
-+
-+static struct phy *google_usb_phy_xlate(struct device *dev,
-+					const struct of_phandle_args *args)
-+{
-+	struct google_usb_phy *gphy = dev_get_drvdata(dev);
-+
-+	if (args->args[0] >= GOOGLE_USB_PHY_NUM) {
-+		dev_err(dev, "invalid PHY index requested from DT\n");
-+		return ERR_PTR(-ENODEV);
-+	}
-+	return gphy->insts[args->args[0]].phy;
-+}
-+
-+static int google_usb_phy_probe(struct platform_device *pdev)
-+{
-+	struct device *dev = &pdev->dev;
-+	struct google_usb_phy *gphy;
-+	struct phy *phy;
-+	struct google_usb_phy_instance *inst;
-+	struct phy_provider *phy_provider;
-+	struct typec_switch_desc sw_desc = { };
-+	int ret;
-+
-+	gphy = devm_kzalloc(dev, sizeof(*gphy), GFP_KERNEL);
-+	if (!gphy)
-+		return -ENOMEM;
-+
-+	dev_set_drvdata(dev, gphy);
-+	gphy->dev = dev;
-+
-+	ret = devm_mutex_init(dev, &gphy->phy_mutex);
-+	if (ret)
-+		return ret;
-+
-+	gphy->usb2_cfg_base = devm_platform_ioremap_resource_byname(pdev,
-+								    "usb2_cfg");
-+	if (IS_ERR(gphy->usb2_cfg_base))
-+		return dev_err_probe(dev, PTR_ERR(gphy->usb2_cfg_base),
-+				    "invalid usb2 cfg\n");
-+
-+	gphy->usb3_top_base = devm_platform_ioremap_resource_byname(pdev,
-+								    "usb3_top");
-+	if (IS_ERR(gphy->usb3_top_base))
-+		return dev_err_probe(dev, PTR_ERR(gphy->usb3_top_base),
-+				    "invalid usb3 top\n");
-+
-+	inst = &gphy->insts[GOOGLE_USB2_PHY];
-+	inst->index = GOOGLE_USB2_PHY;
-+	phy = devm_phy_create(dev, NULL, &google_usb2_phy_ops);
-+	if (IS_ERR(phy))
-+		return dev_err_probe(dev, PTR_ERR(phy),
-+				     "failed to create usb2 phy instance\n");
-+	inst->phy = phy;
-+	phy_set_drvdata(phy, inst);
-+	ret = devm_clk_bulk_get_all_enabled(dev, &inst->clks);
-+	if (ret < 0)
-+		return dev_err_probe(dev, ret, "failed to get u2 phy clks\n");
-+	inst->num_clks = ret;
-+
-+	inst->rsts = devm_reset_control_array_get_exclusive(dev);
-+	if (IS_ERR(inst->rsts))
-+		return dev_err_probe(dev, PTR_ERR(inst->rsts),
-+				     "failed to get u2 phy resets\n");
-+
-+	phy_provider = devm_of_phy_provider_register(dev, google_usb_phy_xlate);
-+	if (IS_ERR(phy_provider))
-+		return dev_err_probe(dev, PTR_ERR(phy_provider),
-+				     "failed to register phy provider\n");
-+
-+	pm_runtime_enable(dev);
-+
-+	sw_desc.fwnode = dev_fwnode(dev);
-+	sw_desc.drvdata = gphy;
-+	sw_desc.name = fwnode_get_name(dev_fwnode(dev));
-+	sw_desc.set = google_usb_set_orientation;
-+
-+	gphy->sw = typec_switch_register(dev, &sw_desc);
-+	if (IS_ERR(gphy->sw))
-+		return dev_err_probe(dev, PTR_ERR(gphy->sw),
-+				     "failed to register typec switch\n");
-+
-+	return 0;
-+}
-+
-+static void google_usb_phy_remove(struct platform_device *pdev)
-+{
-+	struct google_usb_phy *gphy = dev_get_drvdata(&pdev->dev);
-+
-+	typec_switch_unregister(gphy->sw);
-+	pm_runtime_disable(&pdev->dev);
-+}
-+
-+static const struct of_device_id google_usb_phy_of_match[] = {
-+	{
-+		.compatible = "google,gs5-usb-phy",
-+	},
-+	{ }
-+};
-+MODULE_DEVICE_TABLE(of, google_usb_phy_of_match);
-+
-+static struct platform_driver google_usb_phy = {
-+	.probe	= google_usb_phy_probe,
-+	.remove = google_usb_phy_remove,
-+	.driver = {
-+		.name		= "google-usb-phy",
-+		.of_match_table	= google_usb_phy_of_match,
-+	}
-+};
-+
-+module_platform_driver(google_usb_phy);
-+MODULE_LICENSE("GPL");
-+MODULE_DESCRIPTION("Google USB phy driver");
--- 
-2.51.1.851.g4ebd6896fd-goog
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gTW9uLCBPY3QgMjAsIDIwMjUgYXQgMTI6NTXigK9QTSBSb3kgTHVvIDxyb3lsdW9AZ29vZ2xl
+LmNvbT4gd3JvdGU6Cj4KPiBPbiBTYXQsIE9jdCAxOCwgMjAyNSBhdCAxOjEz4oCvQU0gSXZheWxv
+IEl2YW5vdgo+IDxpdm8uaXZhbm92Lml2YW5vdjFAZ21haWwuY29tPiB3cm90ZToKPiA+Cj4gPiBP
+biAxMC8xOC8yNSAwMjo1MSwgUm95IEx1byB3cm90ZToKPiA+ID4gU3VwcG9ydCB0aGUgVVNCIFBI
+WSBmb3VuZCBvbiBHb29nbGUgVGVuc29yIEc1LiBUaGlzIHBhcnRpY3VsYXIgVVNCIFBIWQo+ID4g
+PiBzdXBwb3J0cyBib3RoIGhpZ2gtc3BlZWQgYW5kIHN1cGVyLXNwZWVkIG9wZXJhdGlvbnMsIGFu
+ZCBpcyBpbnRlZ3JhdGVkCj4gPiA+IHdpdGggdGhlIFNOUFMgRFdDMyBjb250cm9sbGVyIHRoYXQn
+cyBhbHNvIG9uIHRoZSBTb0MuCj4gPiA+IFRoaXMgaW5pdGlhbCBwYXRjaCBzcGVjaWZpY2FsbHkg
+YWRkcyBmdW5jdGlvbmFsaXR5IGZvciBoaWdoLXNwZWVkLgo+ID4gPgo+ID4gPiBDby1kZXZlbG9w
+ZWQtYnk6IEpveSBDaGFrcmFib3J0eSA8am95Y2hha3JAZ29vZ2xlLmNvbT4KPiA+ID4gU2lnbmVk
+LW9mZi1ieTogSm95IENoYWtyYWJvcnR5IDxqb3ljaGFrckBnb29nbGUuY29tPgo+ID4gPiBDby1k
+ZXZlbG9wZWQtYnk6IE5hdmVlbiBLdW1hciA8bW5rdW1hckBnb29nbGUuY29tPgo+ID4gPiBTaWdu
+ZWQtb2ZmLWJ5OiBOYXZlZW4gS3VtYXIgPG1ua3VtYXJAZ29vZ2xlLmNvbT4KPiA+ID4gU2lnbmVk
+LW9mZi1ieTogUm95IEx1byA8cm95bHVvQGdvb2dsZS5jb20+Cj4gPiA+IC0tLQo+ID4gPiAgZHJp
+dmVycy9waHkvS2NvbmZpZyAgICAgICAgICB8ICAxMyArKwo+ID4gPiAgZHJpdmVycy9waHkvTWFr
+ZWZpbGUgICAgICAgICB8ICAgMSArCj4gPiA+ICBkcml2ZXJzL3BoeS9waHktZ29vZ2xlLXVzYi5j
+IHwgMjcxICsrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrCj4gPiA+ICAzIGZpbGVz
+IGNoYW5nZWQsIDI4NSBpbnNlcnRpb25zKCspCj4gPiA+ICBjcmVhdGUgbW9kZSAxMDA2NDQgZHJp
+dmVycy9waHkvcGh5LWdvb2dsZS11c2IuYwo+ID4gPgo+ID4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVy
+cy9waHkvS2NvbmZpZyBiL2RyaXZlcnMvcGh5L0tjb25maWcKPiA+ID4gaW5kZXggNThjOTExZTFi
+MmQyLi5mZTMyZDEzNTYwMDIgMTAwNjQ0Cj4gPiA+IC0tLSBhL2RyaXZlcnMvcGh5L0tjb25maWcK
+PiA+ID4gKysrIGIvZHJpdmVycy9waHkvS2NvbmZpZwo+ID4gPiBAQCAtMTAxLDYgKzEwMSwxOSBA
+QCBjb25maWcgUEhZX05YUF9QVE4zMjIyCj4gPiA+ICAgICAgICAgc2NoZW1lcy4gSXQgc3VwcG9y
+dHMgYWxsIHRocmVlIFVTQiAyLjAgZGF0YSByYXRlczogTG93IFNwZWVkLCBGdWxsCj4gPiA+ICAg
+ICAgICAgU3BlZWQgYW5kIEhpZ2ggU3BlZWQuCj4gPiA+Cj4gPiA+ICtjb25maWcgUEhZX0dPT0dM
+RV9VU0IKPiA+ID4gKyAgICAgdHJpc3RhdGUgIkdvb2dsZSBUZW5zb3IgU29DIFVTQiBQSFkgZHJp
+dmVyIgo+ID4gPiArICAgICBkZXBlbmRzIG9uIEhBU19JT01FTQo+ID4gPiArICAgICBkZXBlbmRz
+IG9uIE9GCj4gPiA+ICsgICAgIGRlcGVuZHMgb24gVFlQRUMKPiA+ID4gKyAgICAgc2VsZWN0IEdF
+TkVSSUNfUEhZCj4gPiA+ICsgICAgIGhlbHAKPiA+ID4gKyAgICAgICBFbmFibGUgc3VwcG9ydCBm
+b3IgdGhlIFVTQiBQSFkgb24gR29vZ2xlIFRlbnNvciBTb0NzLCBzdGFydGluZyB3aXRoCj4gPiA+
+ICsgICAgICAgdGhlIEc1IGdlbmVyYXRpb24uIFRoaXMgZHJpdmVyIHByb3ZpZGVzIHRoZSBQSFkg
+aW50ZXJmYWNlcyB0bwo+ID4gPiArICAgICAgIGludGVyYWN0IHdpdGggdGhlIFNOUFMgZVVTQjIg
+YW5kIFVTQiAzLjIvRGlzcGxheVBvcnQgQ29tYm8gUEhZLCBib3RoCj4gPiA+ICsgICAgICAgb2Yg
+d2hpY2ggYXJlIGludGVncmF0ZWQgd2l0aCB0aGUgRFdDMyBVU0IgY29udHJvbGxlci4KPiA+Cj4g
+PiBTbyBpdCdzIG1vcmUgbGlrZSBhIERSRCBjb250cm9sbGVyLCBzaW5jZSBpdCBlbmNhcHN1bGF0
+ZXMgbXVsdGlwbGUgcGh5cz8KPgo+IFllcywgaXQncyBhIERSRCBjb250cm9sbGVyLCBJIHdpbGwg
+bWFrZSBpdCBjbGVhciBpbiB0aGUgbmV4dCB2ZXJzaW9uLgo+Cj4gPgo+ID4gPiArICAgICAgIFRo
+aXMgZHJpdmVyIGN1cnJlbnRseSBzdXBwb3J0cyBVU0IgaGlnaC1zcGVlZC4KPiA+ID4gKwo+ID4g
+PiAgc291cmNlICJkcml2ZXJzL3BoeS9hbGx3aW5uZXIvS2NvbmZpZyIKPiA+ID4gIHNvdXJjZSAi
+ZHJpdmVycy9waHkvYW1sb2dpYy9LY29uZmlnIgo+ID4gPiAgc291cmNlICJkcml2ZXJzL3BoeS9i
+cm9hZGNvbS9LY29uZmlnIgo+ID4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvTWFrZWZpbGUg
+Yi9kcml2ZXJzL3BoeS9NYWtlZmlsZQo+ID4gPiBpbmRleCBjNjcwYThkYWM0NjguLjFkN2ExMzMx
+YmQxOSAxMDA2NDQKPiA+IC4uLgo+ID4gPiArI2luY2x1ZGUgPGxpbnV4L21vZHVsZS5oPgo+ID4g
+PiArI2luY2x1ZGUgPGxpbnV4L29mLmg+Cj4gPiA+ICsjaW5jbHVkZSA8bGludXgvcGh5L3BoeS5o
+Pgo+ID4gPiArI2luY2x1ZGUgPGxpbnV4L3BsYXRmb3JtX2RldmljZS5oPgo+ID4gPiArI2luY2x1
+ZGUgPGxpbnV4L211dGV4Lmg+Cj4gPiA+ICsjaW5jbHVkZSA8bGludXgvY2xlYW51cC5oPgo+ID4g
+PiArI2luY2x1ZGUgPGxpbnV4L3VzYi90eXBlY19tdXguaD4KPiA+ID4gKwo+ID4gPiArI2RlZmlu
+ZSBVU0JDU19VU0IyUEhZX0NGRzE5X09GRlNFVCAweDAKPiA+ID4gKyNkZWZpbmUgVVNCQ1NfVVNC
+MlBIWV9DRkcxOV9QSFlfQ0ZHX1BMTF9GQl9ESVYgR0VOTUFTSygxOSwgOCkKPiA+Cj4gPiBJJ2Qg
+c3VnZ2VzdCBpbXBsZW1lbnRpbmcgdGhlIGVVU0Igc3VwcG9ydCBpbiB0aGUgZXhpc3Rpbmcgc25w
+cy1ldXNiMgo+ID4gZHJpdmVyIGZvciB0aGUgc2FrZSBvZiBjbGFyaXR5LiBUaGF0IHdheSwgeW91
+IGNhbiBwYXNzIGl0IGFzIGEgcGhhbmRsZQo+ID4gdG8gdGhpcyBkcml2ZXIgYW5kIHByb2JlIGl0
+IHdoZW4gZHJkIGlzIHByb2JpbmcuCj4KPiBJZiBJIHVuZGVyc3RhbmQgaXQgY29ycmVjdGx5LCB5
+b3UncmUgcmVmZXJyaW5nIHRvIHRoZSBwYXR0ZXJuIHVzZWQgaW4KPiBEb2N1bWVudGF0aW9uL2Rl
+dmljZXRyZWUvYmluZGluZ3MvcGh5L3NhbXN1bmcsZXh5bm9zMjIwMC1ldXNiMi1waHkueWFtbCBh
+bmQKPiBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcGh5L3NhbXN1bmcsdXNiMy1k
+cmQtcGh5LnlhbWwuCj4gUGxlYXNlIGNvcnJlY3QgbWUgaWYgSSdtIHdyb25nLgo+Cj4gQXQgZmly
+c3QgZ2xhbmNlLCB0aGlzIGFwcHJvYWNoIHNlZW1zIGZlYXNpYmxlLiBDdXN0b20gbG9naWMsIHN1
+Y2gKPiBhcyB2YnVzIHZhbGlkIGhhbmRsaW5nLCB3b3VsZCBuZWVkIHRvIHN0YXkgd2l0aGluIHRo
+aXMgZHJpdmVyLiBNb3N0Cj4gb2YgdGhlIGVVU0IgYmxvY2sgY29uZmlndXJhdGlvbiBpbiBnb29n
+bGVfdXNiMl9waHlfaW5pdCgpIGNvdWxkCj4gYmUgbW92ZWQgdG8gdGhlIHNucHMtZXVzYjIgZHJp
+dmVyIGJ5IGFkZGluZyBvbmUgbW9yZSBjb21wYXRpYmxlCj4gZm9yIEdvb2dsZSdzIHZlcnNpb24g
+b2YgdGhlIFNOU1AgZVVTQiBJUC4gSG93ZXZlciwgSSdkIGFyZ3VlCj4gMS4gVGhpcyBhcHByb2Fj
+aCB3b3VsZCBpbnRyb2R1Y2UgYW4gZXh0cmEgbGF5ZXIgb2YgUEhZIGludGVyZmFjZSwKPiAgICAg
+d2hpY2ggYWRkcyB1bm5lY2Vzc2FyeSBjb21wbGV4aXR5Lgo+IDIuIE5vdCBtdWNoIG9mIHRoZSBj
+b2RlIGlzIHJldXNlZCBpbiBzbnBzLWV1c2IyIGRyaXZlcjogdGhlIHJlZ2lzdGVyCj4gICAgIGRl
+ZmluaXRpb24gYW5kIHByb2dyYW1taW5nIHNlcXVlbmNlIGFyZSBzcGVjaWZpYyB0byBHb29nbGUs
+Cj4gICAgIGhlbmNlIHRoZSBsb2dpYyBpbiBnb29nbGVfdXNiMl9waHlfaW5pdCgpIHdvdWxkIGhh
+dmUgdG8gYmUKPiAgICAgbW92ZWQgdG8gc25wcy1ldXNiMiBkcml2ZXIgYWxtb3N0IHdvcmQtYnkt
+d29yZC4KPgo+IEkgdW5kZXJzdGFuZCB0aGlzIGFwcHJvYWNoIHdhcyBzdWdnZXN0ZWQgZm9yIHRo
+ZSBzYWtlIG9mIGNsYXJpdHksCj4gYnV0IEknbSBub3Qgc3VyZSB3aGV0aGVyIHRoYXQgbWFrZXMg
+Zm9yIHRoZSBiZXN0IHRyYWRlLW9mZi4gU2luY2UKPiB0aGVyZSBpcyBhIHByZWNlZGVudCBmb3Ig
+dGhpcyBhcHByb2FjaCwgSSBkbyBub3QgaGF2ZSBhIHN0cm9uZwo+IG9iamVjdGlvbi4gSXQgd291
+bGQgYmUgaGVscGZ1bCBpZiB0aGUgbWFpbnRhaW5lcnMgY291bGQgYWxzbyBwcm92aWRlCj4gdGhl
+aXIgaW5wdXQgb24gdGhpcyBzcGVjaWZpYyBwb2ludC4KCkhpIEl2YXlsbywKCkknbSBzdGlsbCBo
+ZXNpdGFudCB0byBtYWtlIHRoZSBjaGFuZ2VzIHlvdSBzdWdnZXN0ZWQgd2l0aG91dAptYWludGFp
+bmVyIGlucHV0IGFzIGl0IGludm9sdmVzIHNpZ25pZmljYW50IGNoYW5nZXMgaW4gdGhlIGRyaXZl
+cgphcmNoaXRlY3R1cmUuIEkndmUgSW5jb3Jwb3JhdGVkIGVub3VnaCBjaGFuZ2VzIGZvciByZXZp
+ZXcgaW4KdGhlIG90aGVyIHBhdGNoIGluIHRoaXMgc2VyaWVzLCBoZW5jZSBJJ3ZlIHNlbnQgb3V0
+IGEgbmV3IHZlcnNpb24KdjUgWzFdIHRvIGtlZXAgdGhlIHJldmlldyBwcm9jZXNzIGdvaW5nLiBI
+b3BlIEkgY2FuIGdldCBzb21lCmZlZWRiYWNrIGZyb20gcGh5IG1haW50YWluZXJzIHRoZXJlLgoK
+VGhhbmtzLApSb3kgTHVvCgpbMV0gIGh0dHBzOi8vbG9yZS5rZXJuZWwub3JnL2xpbnV4LXBoeS8y
+MDI1MTAyOTIxNDAzMi4zMTc1MjYxLTEtcm95bHVvQGdvb2dsZS5jb20KCj4KPiA+Cj4gPiA+ICsK
+PiA+ID4gKyNkZWZpbmUgVVNCQ1NfVVNCMlBIWV9DRkcyMV9PRkZTRVQgMHg4Cj4gPiA+ICsjZGVm
+aW5lIFVTQkNTX1VTQjJQSFlfQ0ZHMjFfUEhZX0VOQUJMRSBCSVQoMTIpCj4gPiA+ICsjZGVmaW5l
+IFVTQkNTX1VTQjJQSFlfQ0ZHMjFfUkVGX0ZSRVFfU0VMIEdFTk1BU0soMTUsIDEzKQo+ID4gPiAr
+I2RlZmluZSBVU0JDU19VU0IyUEhZX0NGRzIxX1BIWV9UWF9ESUdfQllQQVNTX1NFTCBCSVQoMTkp
+Cj4gPiA+ICsKPiA+ID4gKyNkZWZpbmUgVVNCQ1NfUEhZX0NGRzFfT0ZGU0VUIDB4MjgKPiA+ID4g
+KyNkZWZpbmUgVVNCQ1NfUEhZX0NGRzFfU1lTX1ZCVVNWQUxJRCBCSVQoMTcpCj4gPiA+ICsKPiA+
+ID4gK2VudW0gZ29vZ2xlX3VzYl9waHlfaWQgewo+ID4gPiArICAgICBHT09HTEVfVVNCMl9QSFks
+Cj4gPiA+ICsgICAgIEdPT0dMRV9VU0JfUEhZX05VTSwKPiA+ID4gK307Cj4gPiA+ICsKPiA+ID4g
+K3N0cnVjdCBnb29nbGVfdXNiX3BoeV9pbnN0YW5jZSB7Cj4gPiA+ICsgICAgIGludCBpbmRleDsK
+PiA+ID4gKyAgICAgc3RydWN0IHBoeSAqcGh5Owo+ID4gPiArICAgICBpbnQgbnVtX2Nsa3M7Cj4g
+PiA+ICsgICAgIHN0cnVjdCBjbGtfYnVsa19kYXRhICpjbGtzOwo+ID4gPiArICAgICBzdHJ1Y3Qg
+cmVzZXRfY29udHJvbCAqcnN0czsKPiA+ID4gK307Cj4gPiA+ICsKPiA+ID4gK3N0cnVjdCBnb29n
+bGVfdXNiX3BoeSB7Cj4gPiA+ICsgICAgIHN0cnVjdCBkZXZpY2UgKmRldjsKPiA+ID4gKyAgICAg
+dm9pZCBfX2lvbWVtICp1MnBoeV9jZmdfYmFzZTsKPiA+ID4gKyAgICAgdm9pZCBfX2lvbWVtICpk
+cF90b3BfYmFzZTsKPiA+ID4gKyAgICAgc3RydWN0IGdvb2dsZV91c2JfcGh5X2luc3RhbmNlIGlu
+c3RzW0dPT0dMRV9VU0JfUEhZX05VTV07Cj4gPiA+ICsgICAgIC8qIHNlcmlhbGl6ZSBwaHkgYWNj
+ZXNzICovCj4gPiA+ICsgICAgIHN0cnVjdCBtdXRleCBwaHlfbXV0ZXg7Cj4gPiA+ICsgICAgIHN0
+cnVjdCB0eXBlY19zd2l0Y2hfZGV2ICpzdzsKPiA+ID4gKyAgICAgZW51bSB0eXBlY19vcmllbnRh
+dGlvbiBvcmllbnRhdGlvbjsKPiA+ID4gK307Cj4gPiA+ICsKPiA+ID4gK3N0YXRpYyBpbmxpbmUg
+c3RydWN0IGdvb2dsZV91c2JfcGh5ICp0b19nb29nbGVfdXNiX3BoeShzdHJ1Y3QgZ29vZ2xlX3Vz
+Yl9waHlfaW5zdGFuY2UgKmluc3QpCj4gPiA+ICt7Cj4gPiA+ICsgICAgIHJldHVybiBjb250YWlu
+ZXJfb2YoaW5zdCwgc3RydWN0IGdvb2dsZV91c2JfcGh5LCBpbnN0c1tpbnN0LT5pbmRleF0pOwo+
+ID4gPiArfQo+ID4gPiArCj4gPiA+ICtzdGF0aWMgdm9pZCBzZXRfdmJ1c192YWxpZChzdHJ1Y3Qg
+Z29vZ2xlX3VzYl9waHkgKmdwaHkpCj4gPiA+ICt7Cj4gPiA+ICsgICAgIHUzMiByZWc7Cj4gPiA+
+ICsKPiA+ID4gKyAgICAgaWYgKGdwaHktPm9yaWVudGF0aW9uID09IFRZUEVDX09SSUVOVEFUSU9O
+X05PTkUpIHsKPiA+ID4gKyAgICAgICAgICAgICByZWcgPSByZWFkbChncGh5LT5kcF90b3BfYmFz
+ZSArIFVTQkNTX1BIWV9DRkcxX09GRlNFVCk7Cj4gPiA+ICsgICAgICAgICAgICAgcmVnICY9IH5V
+U0JDU19QSFlfQ0ZHMV9TWVNfVkJVU1ZBTElEOwo+ID4gPiArICAgICAgICAgICAgIHdyaXRlbChy
+ZWcsIGdwaHktPmRwX3RvcF9iYXNlICsgVVNCQ1NfUEhZX0NGRzFfT0ZGU0VUKTsKPiA+ID4gKyAg
+ICAgfSBlbHNlIHsKPiA+ID4gKyAgICAgICAgICAgICByZWcgPSByZWFkbChncGh5LT5kcF90b3Bf
+YmFzZSArIFVTQkNTX1BIWV9DRkcxX09GRlNFVCk7Cj4gPiA+ICsgICAgICAgICAgICAgcmVnIHw9
+IFVTQkNTX1BIWV9DRkcxX1NZU19WQlVTVkFMSUQ7Cj4gPiA+ICsgICAgICAgICAgICAgd3JpdGVs
+KHJlZywgZ3BoeS0+ZHBfdG9wX2Jhc2UgKyBVU0JDU19QSFlfQ0ZHMV9PRkZTRVQpOwo+ID4gPiAr
+ICAgICB9Cj4gPiA+ICt9Cj4gPiA+ICsKPiA+ID4gK3N0YXRpYyBpbnQgZ29vZ2xlX3VzYl9zZXRf
+b3JpZW50YXRpb24oc3RydWN0IHR5cGVjX3N3aXRjaF9kZXYgKnN3LAo+ID4gPiArICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICBlbnVtIHR5cGVjX29yaWVudGF0aW9uIG9yaWVudGF0
+aW9uKQo+ID4gPiArewo+ID4gPiArICAgICBzdHJ1Y3QgZ29vZ2xlX3VzYl9waHkgKmdwaHkgPSB0
+eXBlY19zd2l0Y2hfZ2V0X2RydmRhdGEoc3cpOwo+ID4gPiArCj4gPiA+ICsgICAgIGRldl9kYmco
+Z3BoeS0+ZGV2LCAic2V0IG9yaWVudGF0aW9uICVkXG4iLCBvcmllbnRhdGlvbik7Cj4gPiA+ICsK
+PiA+ID4gKyAgICAgZ3BoeS0+b3JpZW50YXRpb24gPSBvcmllbnRhdGlvbjsKPiA+ID4gKwo+ID4g
+PiArICAgICBpZiAocG1fcnVudGltZV9zdXNwZW5kZWQoZ3BoeS0+ZGV2KSkKPiA+ID4gKyAgICAg
+ICAgICAgICByZXR1cm4gMDsKPiA+ID4gKwo+ID4gPiArICAgICBndWFyZChtdXRleCkoJmdwaHkt
+PnBoeV9tdXRleCk7Cj4gPiA+ICsKPiA+ID4gKyAgICAgc2V0X3ZidXNfdmFsaWQoZ3BoeSk7Cj4g
+PiA+ICsKPiA+ID4gKyAgICAgcmV0dXJuIDA7Cj4gPiA+ICt9Cj4gPiA+ICsKPiA+ID4gK3N0YXRp
+YyBpbnQgZ29vZ2xlX3VzYjJfcGh5X2luaXQoc3RydWN0IHBoeSAqX3BoeSkKPiA+ID4gK3sKPiA+
+ID4gKyAgICAgc3RydWN0IGdvb2dsZV91c2JfcGh5X2luc3RhbmNlICppbnN0ID0gcGh5X2dldF9k
+cnZkYXRhKF9waHkpOwo+ID4gPiArICAgICBzdHJ1Y3QgZ29vZ2xlX3VzYl9waHkgKmdwaHkgPSB0
+b19nb29nbGVfdXNiX3BoeShpbnN0KTsKPiA+ID4gKyAgICAgdTMyIHJlZzsKPiA+ID4gKyAgICAg
+aW50IHJldCA9IDA7Cj4gPiA+ICsKPiA+ID4gKyAgICAgZGV2X2RiZyhncGh5LT5kZXYsICJpbml0
+aWFsaXppbmcgdXNiMiBwaHlcbiIpOwo+ID4gPiArCj4gPiA+ICsgICAgIGd1YXJkKG11dGV4KSgm
+Z3BoeS0+cGh5X211dGV4KTsKPiA+ID4gKwo+ID4gPiArICAgICByZWcgPSByZWFkbChncGh5LT51
+MnBoeV9jZmdfYmFzZSArIFVTQkNTX1VTQjJQSFlfQ0ZHMjFfT0ZGU0VUKTsKPiA+ID4gKyAgICAg
+cmVnICY9IH5VU0JDU19VU0IyUEhZX0NGRzIxX1BIWV9UWF9ESUdfQllQQVNTX1NFTDsKPiA+ID4g
+KyAgICAgcmVnICY9IH5VU0JDU19VU0IyUEhZX0NGRzIxX1JFRl9GUkVRX1NFTDsKPiA+ID4gKyAg
+ICAgcmVnIHw9IEZJRUxEX1BSRVAoVVNCQ1NfVVNCMlBIWV9DRkcyMV9SRUZfRlJFUV9TRUwsIDAp
+Owo+ID4gPiArICAgICB3cml0ZWwocmVnLCBncGh5LT51MnBoeV9jZmdfYmFzZSArIFVTQkNTX1VT
+QjJQSFlfQ0ZHMjFfT0ZGU0VUKTsKPiA+ID4gKwo+ID4gPiArICAgICByZWcgPSByZWFkbChncGh5
+LT51MnBoeV9jZmdfYmFzZSArIFVTQkNTX1VTQjJQSFlfQ0ZHMTlfT0ZGU0VUKTsKPiA+ID4gKyAg
+ICAgcmVnICY9IH5VU0JDU19VU0IyUEhZX0NGRzE5X1BIWV9DRkdfUExMX0ZCX0RJVjsKPiA+ID4g
+KyAgICAgcmVnIHw9IEZJRUxEX1BSRVAoVVNCQ1NfVVNCMlBIWV9DRkcxOV9QSFlfQ0ZHX1BMTF9G
+Ql9ESVYsIDM2OCk7Cj4gPgo+ID4gWWVhaCwgaXQncyBkZWZpbml0ZWx5IHRoZSBlVVNCIElQLCBi
+dXQgd2lyZWQgZGlmZmVyZW50bHkuCj4gPgo+ID4gcGh5LXNucHMtZXVzYjIuYzoKPiA+ICNkZWZp
+bmUgRVhZTk9TX1VTQl9QSFlfQ0ZHX1BMTENGRzAgKDB4OCkKPiA+ICNkZWZpbmUgUEhZX0NGR19Q
+TExfRkJfRElWXzE5XzhfTUFTSyBHRU5NQVNLKDE5LCA4KQo+ID4gI2RlZmluZSBESVZfMTlfOF8x
+OV8yX01IWl9WQUwgKDB4MTcwKQo+ID4KPiA+ID4gKyAgICAgd3JpdGVsKHJlZywgZ3BoeS0+dTJw
+aHlfY2ZnX2Jhc2UgKyBVU0JDU19VU0IyUEhZX0NGRzE5X09GRlNFVCk7Cj4gPiA+ICsKPiA+ID4g
+KyAgICAgc2V0X3ZidXNfdmFsaWQoZ3BoeSk7Cj4gPiA+ICsKPiA+ID4gKyAgICAgcmV0ID0gY2xr
+X2J1bGtfcHJlcGFyZV9lbmFibGUoaW5zdC0+bnVtX2Nsa3MsIGluc3QtPmNsa3MpOwo+ID4gPiAr
+ICAgICBpZiAocmV0KQo+ID4gPiArICAgICAgICAgICAgIHJldHVybiByZXQ7Cj4gPiA+ICsKPiA+
+ID4gKyAgICAgcmV0ID0gcmVzZXRfY29udHJvbF9kZWFzc2VydChpbnN0LT5yc3RzKTsKPiA+ID4g
+KyAgICAgaWYgKHJldCkgewo+ID4gPiArICAgICAgICAgICAgIGNsa19idWxrX2Rpc2FibGVfdW5w
+cmVwYXJlKGluc3QtPm51bV9jbGtzLCBpbnN0LT5jbGtzKTsKPiA+ID4gKyAgICAgICAgICAgICBy
+ZXR1cm4gcmV0Owo+ID4gPiArICAgICB9Cj4gPiA+ICsKPiA+ID4gKyAgICAgcmVnID0gcmVhZGwo
+Z3BoeS0+dTJwaHlfY2ZnX2Jhc2UgKyBVU0JDU19VU0IyUEhZX0NGRzIxX09GRlNFVCk7Cj4gPiA+
+ICsgICAgIHJlZyB8PSBVU0JDU19VU0IyUEhZX0NGRzIxX1BIWV9FTkFCTEU7Cj4gPiA+ICsgICAg
+IHdyaXRlbChyZWcsIGdwaHktPnUycGh5X2NmZ19iYXNlICsgVVNCQ1NfVVNCMlBIWV9DRkcyMV9P
+RkZTRVQpOwo+ID4gPiArCj4gPiA+ICsgICAgIHJldHVybiByZXQ7Cj4gPiA+ICt9Cj4gPiA+ICsK
+PiA+IC4uLgo+ID4gPiArCj4gPiA+ICsgICAgIGdwaHktPnN3ID0gdHlwZWNfc3dpdGNoX3JlZ2lz
+dGVyKGRldiwgJnN3X2Rlc2MpOwo+ID4gPiArICAgICBpZiAoSVNfRVJSKGdwaHktPnN3KSkKPiA+
+ID4gKyAgICAgICAgICAgICByZXR1cm4gZGV2X2Vycl9wcm9iZShkZXYsIFBUUl9FUlIoZ3BoeS0+
+c3cpLAo+ID4gPiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICJmYWlsZWQgdG8g
+cmVnaXN0ZXIgdHlwZWMgc3dpdGNoXG4iKTsKPiA+ID4gKwo+ID4gPiArICAgICByZXR1cm4gMDsK
+PiA+ID4gK30KPiA+ID4gKwo+ID4gPiArc3RhdGljIHZvaWQgZ29vZ2xlX3VzYl9waHlfcmVtb3Zl
+KHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCj4gPiA+ICt7Cj4gPiA+ICsgICAgIHN0cnVj
+dCBnb29nbGVfdXNiX3BoeSAqZ3BoeSA9IGRldl9nZXRfZHJ2ZGF0YSgmcGRldi0+ZGV2KTsKPiA+
+ID4gKwo+ID4gPiArICAgICB0eXBlY19zd2l0Y2hfdW5yZWdpc3RlcihncGh5LT5zdyk7Cj4gPiA+
+ICsgICAgIHBtX3J1bnRpbWVfZGlzYWJsZSgmcGRldi0+ZGV2KTsKPiA+ID4gK30KPiA+ID4gKwo+
+ID4gPiArc3RhdGljIGNvbnN0IHN0cnVjdCBvZl9kZXZpY2VfaWQgZ29vZ2xlX3VzYl9waHlfb2Zf
+bWF0Y2hbXSA9IHsKPiA+ID4gKyAgICAgewo+ID4gPiArICAgICAgICAgICAgIC5jb21wYXRpYmxl
+ID0gImdvb2dsZSxnczUtdXNiLXBoeSIsCj4gPgo+ID4gRGlkIHRoZSBuYW1pbmcgc2NoZW1lIGFs
+c28gY2hhbmdlIGZyb20gZ3N7Tn0wMSB0byBnc04/Cj4KPiBTdGFydGluZyBmcm9tIFRlbnNvciBH
+NSwgdGhlcmUncyBubyBtb2RlbCBudW1iZXIgWzFdLCBoZW5jZQo+IHRoZSBjaGFuZ2UuIFRoZSBw
+cmVmaXggImdzIiBpcyBrZXB0IGFzIHRoZWlyIGZhbWlseSBuYW1lLgo+Cj4gWzFdIGh0dHBzOi8v
+ZW4ud2lraXBlZGlhLm9yZy93aWtpL0dvb2dsZV9UZW5zb3IKPgo+ID4KPiA+ID4gKyAgICAgfSwK
+PiA+ID4gKyAgICAgeyB9Cj4gPiA+ICt9Owo+ID4gPiArTU9EVUxFX0RFVklDRV9UQUJMRShvZiwg
+Z29vZ2xlX3VzYl9waHlfb2ZfbWF0Y2gpOwo+ID4gPiArCj4gPiA+ICtzdGF0aWMgc3RydWN0IHBs
+YXRmb3JtX2RyaXZlciBnb29nbGVfdXNiX3BoeSA9IHsKPiA+ID4gKyAgICAgLnByb2JlICA9IGdv
+b2dsZV91c2JfcGh5X3Byb2JlLAo+ID4gPiArICAgICAucmVtb3ZlID0gZ29vZ2xlX3VzYl9waHlf
+cmVtb3ZlLAo+ID4gPiArICAgICAuZHJpdmVyID0gewo+ID4gPiArICAgICAgICAgICAgIC5uYW1l
+ICAgICAgICAgICA9ICJnb29nbGUtdXNiLXBoeSIsCj4gPiA+ICsgICAgICAgICAgICAgLm9mX21h
+dGNoX3RhYmxlID0gZ29vZ2xlX3VzYl9waHlfb2ZfbWF0Y2gsCj4gPiA+ICsgICAgIH0KPiA+ID4g
+K307Cj4gPiA+ICsKPiA+ID4gK21vZHVsZV9wbGF0Zm9ybV9kcml2ZXIoZ29vZ2xlX3VzYl9waHkp
+Owo+ID4gPiArTU9EVUxFX0xJQ0VOU0UoIkdQTCIpOwo+ID4gPiArTU9EVUxFX0RFU0NSSVBUSU9O
+KCJHb29nbGUgVVNCIHBoeSBkcml2ZXIiKTsKPiA+Cj4gPiBHcmVhdCB3b3JrIQo+ID4KPiA+IEJl
+c3QgcmVnYXJkcywKPiA+IEl2YXlsbwo+Cj4gVGhhbmsgeW91IGZvciB0aGUgcmV2aWV3IQo+Cj4g
+UmVnYXJkcywKPiBSb3kgTHVvCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlA
+bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
+aXN0aW5mby9saW51eC1waHkK
