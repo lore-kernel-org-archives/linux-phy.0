@@ -4,97 +4,104 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6C8F3CCF9EE
-	for <linux-phy@archiver.kernel.org>; Wed, 29 Oct 2025 19:11:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EF61BCCF9EE
+	for <linux-phy@archiver.kernel.org>; Wed, 29 Oct 2025 19:21:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Subject:Cc:To:From:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bz/0KAP6DrWn+iDYXuvp0zw91hqIPqxGj4bqBLS7StM=; b=UNsTFMx2mr4Ye8
-	ajIcdAQ+G9Jaa5Si7erz88s5Lxd10sra85ngWvFzV3avZW9gP0jk9iqXLF5eq8APXqQDN3k/5lfp1
-	HERKYnHJP/p3TjKzKzsHtjkRiL3ST/tiVPJkRqKwPOHseOjOACvlKbmgYt+rBKYEStAlcbm9iEmVN
-	e4OYtC1HAytbZ1CMtB5O5wxVyGu/hXyORVMIJpNeFNPdSpembpqgGIn69H05Rx9YEEw8vww+G2ZtX
-	SdnGd2krfyTqxBtnmykVHU2vCY5li7UeX06PIlSVdJbLQScsNE5GAEvMyJRB9OatKbpJPgo80Mf1p
-	k9XNoGKOpz9yKgNDdYhw==;
+	List-Owner; bh=/xfrKW5n3l285X1kY6/Np0HzgOumRsV8I+ZASfh0Lo0=; b=avlc7Mel/5G4Su
+	GaaKYEvnqmxSsiavyJdhiWI9zvZolRF/ykjS3wW+kTSzPjhrAuEiyf1Cocfr8r+1QzgVYjObJWMqx
+	r28AqGSxyNXU0mWzrUCjLjkXwgpccoE1eL8UrwdWa6CYA8TF8Z0og+i/i91xmwMzExAUjgMeAIEy/
+	G9cDzkW8yC05nICgiWWJI0Uh4yZeAewzOF2skAxxwxl9bX2S4LeGDOILUy3G42doEfSL3zA/UDPwj
+	A6kwavqLQhh5OQUTpeGm1RcOfQKk3EYoPcgvRHtiy/vjmFU/gVG6IXMp7vuAN2GPUTJANebVZK9ZL
+	AM1DHRi3PRL+A06t8qJg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vEBZp-00000002XHv-45PW;
-	Wed, 29 Oct 2025 19:11:21 +0000
-Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
+	id 1vEBjP-00000002Z1W-35QF;
+	Wed, 29 Oct 2025 19:21:15 +0000
+Received: from fout-a7-smtp.messagingengine.com ([103.168.172.150])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vEBZm-00000002XGT-4A5g
-	for linux-phy@lists.infradead.org;
-	Wed, 29 Oct 2025 19:11:20 +0000
-Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-475dd559a83so1176955e9.1
-        for <linux-phy@lists.infradead.org>; Wed, 29 Oct 2025 12:11:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1761765077; x=1762369877; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:subject:cc
-         :to:from:date:message-id:from:to:cc:subject:date:message-id:reply-to;
-        bh=zLgblDIy8bcKRfG2LuAVMDQcQzPf8VrxYqngcQhuaTk=;
-        b=dkFMGPpp1JiOhoHwXCVU7GyFExqCBDHnCpnjTXltmJ429Dg61wj3jfFvx9Uq1D/DzF
-         qVItct294otqaIo7nTv7GQ3qShxN1xPmupz99oj4p1lQZToyotccGS0uuwbYHDJ4C6zl
-         8C0dwS5UeC63iFjlayc20aDu9X1fjdmLL6RFzJ1NLo5fFQ3g1DEj/oddoGMiVs8zV5l8
-         6d0JNCKZx7SJKlHm5h6CD0ArbUedKaHFtc/Io1009hrq8ol//3lFOK4DJNhyr0LuN9Pf
-         rGzkbsBmwSJHxpwhSY/3FApUEiWYNR09xaDpMqXxc/9FMD3LAfwmIeohJCkbOWw6xmD8
-         XFvQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1761765077; x=1762369877;
-        h=in-reply-to:content-disposition:mime-version:references:subject:cc
-         :to:from:date:message-id:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=zLgblDIy8bcKRfG2LuAVMDQcQzPf8VrxYqngcQhuaTk=;
-        b=SorIk2+l7VOliHB6eu97JeCKYGXRYZQEOnDCll5VQxPvVsputSIylXknFwctfS025Z
-         hLl93fiC/MxKNMLlEcXdkEkO+2VzftUW+uvhyiJE2EC6sVe3q8cvChF7fFHkPq1cHfg8
-         lpiHVUGoTFTHQhNT2Il8MU80jFbF7EjKSNi8jKnAiGuHDdH8tAE9rmW4OzKphFNz6wuP
-         vFg6jsckjvltOLnCN3wN180Ufvf5ASnkwbxHwycIQIslE55sEuMc/speY4hOkusk3XTV
-         WcpJVSaMX9E/WhPZWgA6l0+MCepydqpVglLMg/ifhaM1h1cJiT0oqgT2xvKEDkKYEAXZ
-         IyoA==
-X-Forwarded-Encrypted: i=1; AJvYcCU9RWIHzobE9BMOm0h5DFb12TAPBSHbtqkuIzvP84rdqhzjCzamESiHRWC95Fu11gIg+35QvOIbjAA=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwGBeE41fH1L6FW0sl1/BGKVF9XoByOhisT4b8nskExpoXnvbCD
-	E7EV5e6bWFFRYifxAe3jxMiNqLekiQyyTjSC1djIfleGhzY/69x/rr2j
-X-Gm-Gg: ASbGncuB2fb6lNMuvszj96upirJzZX2hcrQt/llbcFc4Nt1JF3MujL5nI0MU8UczJ8c
-	wrx/LMSgI3cI5D7KrNtAJ/Vu/yiFlCi3stt8EEe18gAD0/Ia8TTbLhbfyhaQz9zQtCMOmLBNT21
-	gVYok9ZQ3Ezef2ZIDz31VaubM7kbjOVmz0hueSnpbGjbtwiRPxyHaSCrOKwNNVoARmRgplgkJ2E
-	3cPG8fuAryoIJzn6rKSqkuVC4rP/1LogrAP8NQeq3c6XRDgwBPGmUJO0KAhVZIxbkcATWDVZMqe
-	L0+d8K54oSSKw9AWUz76Kwn+8MCtMSJ1B990T1jXlP+9rRWjtYjxAPEycEDJGox90b6bRrcAS8X
-	UgqDn0mRJ+N3Hp57Ot9dAez24Kkfp6jpV9TIBwtcdgj82ShbgpU60QOxosQKH//PHrB04UxgBn7
-	gGnvqTQGuVb5xVW3i/Ys7EPcBlle0q
-X-Google-Smtp-Source: AGHT+IHHJ0QFj6Gb9jCEPnxHuuKJVnaNcrJYknPm6OXlzII4o39jZjUz3lv37Wl4zGDlA2OEKu9Xhg==
-X-Received: by 2002:a05:600c:34c4:b0:471:145b:dd0d with SMTP id 5b1f17b1804b1-4771e1ca0b2mr36156105e9.24.1761765076611;
-        Wed, 29 Oct 2025 12:11:16 -0700 (PDT)
-Received: from Ansuel-XPS. (93-34-90-37.ip49.fastwebnet.it. [93.34.90.37])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4771832e857sm53183195e9.0.2025.10.29.12.11.15
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 29 Oct 2025 12:11:16 -0700 (PDT)
-Message-ID: <690266d4.050a0220.3a144c.eef7@mx.google.com>
-X-Google-Original-Message-ID: <aQJmzmMMxJfaZA4h@Ansuel-XPS.>
-Date: Wed, 29 Oct 2025 20:11:10 +0100
-From: Christian Marangi <ansuelsmth@gmail.com>
-To: Conor Dooley <conor@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>,
+	id 1vEBjJ-00000002Yyn-13Rw;
+	Wed, 29 Oct 2025 19:21:14 +0000
+Received: from phl-compute-12.internal (phl-compute-12.internal [10.202.2.52])
+	by mailfout.phl.internal (Postfix) with ESMTP id BAE7BEC0216;
+	Wed, 29 Oct 2025 15:21:04 -0400 (EDT)
+Received: from phl-mailfrontend-02 ([10.202.2.163])
+  by phl-compute-12.internal (MEProxy); Wed, 29 Oct 2025 15:21:04 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jannau.net; h=cc
+	:cc:content-type:content-type:date:date:from:from:in-reply-to
+	:in-reply-to:message-id:mime-version:references:reply-to:subject
+	:subject:to:to; s=fm1; t=1761765664; x=1761852064; bh=jem23dYJdF
+	RhHLUSEWq8tu+ibq6sWJqXQQzANvsStpY=; b=OYMw0sCHij1zJaRlTY4YrR4JL+
+	aekjErUkcj4MYndWo86jBl5sr3A4VGbafACxivi3A77xvglutrG3himNHGHsM/cJ
+	h63Jz/C0wvMrNiN8eNXfiWPdQa2O8seVGMMqsK8Opq4/5DxWv7FsNSs3d8MBOtf1
+	LQJxO/1fJUIpN5eLwBHNeJp0qbmUSBdRVGz2emWzbKDx2esVqLy0BdT664W9jn0z
+	jic9fuDw7ThInXUkyw7B8lVqJNBE3kvIZpEPSoI4B5D1sX5p3rzW3fqT+U44XiLD
+	h1PJWTjCvxF4wwVNDzNhkfdRdrgzrLdY3FNPeIvDWQBJu6Oa7F3uLItIcmWA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:cc:content-type:content-type:date:date
+	:feedback-id:feedback-id:from:from:in-reply-to:in-reply-to
+	:message-id:mime-version:references:reply-to:subject:subject:to
+	:to:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; t=
+	1761765664; x=1761852064; bh=jem23dYJdFRhHLUSEWq8tu+ibq6sWJqXQQz
+	ANvsStpY=; b=PW6/T/BobTSrujnjEzRH2re4C+q8SOtvPVnXWrJm3MOpWtEMHTc
+	pHq08V22b8fO/IFhpodR6NScUdy4/6T4Y/Tjm53tUDobp8nAfcEtSm9xsv0i+Jy6
+	MMDtsUMTYIIE29YZyLQZTLDaVlgsDYjhWvUwHePKaFE/o1riq55Z4zLbhEbgYY/I
+	zUTB8MKlqyzhU1pmUwCBLOke1mohnVkkew4fStOaSDoRljOi62Mlk64I02OP8sXC
+	jeoIl+mlNO4pWayZwMKuDmCl3wtgZP06R5YahGSy85OD7JlvWCB2YdbSXSWvLgaP
+	2zE7R9pYmMKBNWQJS2VU3Cufiub9l0JPmXg==
+X-ME-Sender: <xms:H2kCaTdvuR0Quaz_Wa7neXmxc2yCbsoUhbUEpKuVZPBN3rxfVXE0bQ>
+    <xme:H2kCaTnZyAG8DvX8Pu6MD5IAIUT8hkNaaMAip_s4V5mBLwHA0Js4GunpHLHeI8b7t
+    Q7e8sAO1Ks3kmRb9U0Mry2St9hi9kB3LLITQTCeSy9y2S2NUY2RwCQ>
+X-ME-Received: <xmr:H2kCaSpTAJF-us1M4W0Zzv-w8F7V5BdN3nB0GeSuh-v-TdKPp_dtSTGaSDSzpbHHPgNo5Zbd4zIcFxIqif-DlBpAuI_3UAt2LwY>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeeffedrtdeggdduieegheehucetufdoteggodetrf
+    dotffvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfurfetoffkrfgpnffqhgenuceu
+    rghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmnecujf
+    gurhepfffhvfevuffkfhggtggujgesthdtredttddtjeenucfhrhhomheplfgrnhhnvgcu
+    ifhruhhnrghuuceojhesjhgrnhhnrghurdhnvghtqeenucggtffrrghtthgvrhhnpefgvd
+    ffveelgedujeeffeehheekheelheefgfejffeftedugeethfeuudefheefteenucevlhhu
+    shhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpehjsehjrghnnhgruh
+    drnhgvthdpnhgspghrtghpthhtohepudegpdhmohguvgepshhmthhpohhuthdprhgtphht
+    thhopehsvhgvnheskhgvrhhnvghlrdhorhhgpdhrtghpthhtohepnhgvrghlsehgohhmph
+    grrdguvghvpdhrtghpthhtohepvhhkohhulheskhgvrhhnvghlrdhorhhgpdhrtghpthht
+    ohepkhhishhhohhnsehkvghrnhgvlhdrohhrghdprhgtphhtthhopehrohgshheskhgvrh
+    hnvghlrdhorhhgpdhrtghpthhtohepkhhriihkodgutheskhgvrhhnvghlrdhorhhgpdhr
+    tghpthhtoheptghonhhorhdoughtsehkvghrnhgvlhdrohhrghdprhgtphhtthhopehprd
+    iirggsvghlsehpvghnghhuthhrohhnihigrdguvgdprhgtphhtthhopegrshgrhhhisehl
+    ihhsthhsrdhlihhnuhigrdguvghv
+X-ME-Proxy: <xmx:H2kCaQFJ-jlPTf321gWn7Ew0QtFozD-QEP9H0RpWgKVsxbJjB4_uhQ>
+    <xmx:H2kCaYQAP0zaeNvQOkcDooS1okPvh1ZolGl5OpviAFEGdPPVicVwhA>
+    <xmx:H2kCaWNDpDaB4ehDJBvCjoycEcXE51rVm0JvXlYD5S1OZah-b9h2lg>
+    <xmx:H2kCaVkTozJx0mtR3rat_6VW88AtmdNYGQ_pvk5Fmb12aYWjq8c_ww>
+    <xmx:IGkCaXHxT7V8XajSIX1xktYOLXAnFQiuscZ5xiV8m9ksndsw1qA8lfb0>
+Feedback-ID: i47b949f6:Fastmail
+Received: by mail.messagingengine.com (Postfix) with ESMTPA; Wed,
+ 29 Oct 2025 15:21:02 -0400 (EDT)
+Date: Wed, 29 Oct 2025 20:21:01 +0100
+From: Janne Grunau <j@jannau.net>
+To: Sven Peter <sven@kernel.org>
+Cc: Neal Gompa <neal@gompa.dev>, Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
 	Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
 	Conor Dooley <conor+dt@kernel.org>,
-	Lorenzo Bianconi <lorenzo@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>, asahi@lists.linux.dev,
 	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v3 2/4] dt-bindings: phy: Add documentation for Airoha
- AN7581 USB PHY
-References: <20251029173713.7670-1-ansuelsmth@gmail.com>
- <20251029173713.7670-3-ansuelsmth@gmail.com>
- <20251029-mutual-scotch-7ca52e17da69@spud>
- <69025bc9.5d0a0220.1f0440.deb9@mx.google.com>
- <20251029-henna-easily-227513366e90@spud>
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	Alyssa Rosenzweig <alyssa@rosenzweig.io>
+Subject: Re: [PATCH 1/3] soc: apple: Add hardware tunable support
+Message-ID: <20251029192101.GA458701@robin.jannau.net>
+References: <20251026-b4-atcphy-v1-0-f81b1225f9c6@kernel.org>
+ <20251026-b4-atcphy-v1-1-f81b1225f9c6@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20251029-henna-easily-227513366e90@spud>
+In-Reply-To: <20251026-b4-atcphy-v1-1-f81b1225f9c6@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251029_121119_112384_C007495A 
-X-CRM114-Status: GOOD (  65.40  )
+X-CRM114-CacheID: sfid-20251029_122109_677848_217088A9 
+X-CRM114-Status: GOOD (  29.94  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,279 +118,210 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Oct 29, 2025 at 06:35:51PM +0000, Conor Dooley wrote:
-> On Wed, Oct 29, 2025 at 07:24:04PM +0100, Christian Marangi wrote:
-> > On Wed, Oct 29, 2025 at 06:07:22PM +0000, Conor Dooley wrote:
-> > > On Wed, Oct 29, 2025 at 06:37:10PM +0100, Christian Marangi wrote:
-> > > > Add documentation for Airoha AN7581 USB PHY that describe the USB PHY
-> > > > for the USB controller.
-> > > > 
-> > > > Airoha AN7581 SoC support a maximum of 2 USB port. The USB 2.0 mode is
-> > > > always supported. The USB 3.0 mode is optional and depends on the Serdes
-> > > > mode currently configured on the system for the relevant USB port.
-> > > > 
-> > > > The first USB port on the SoC can be both used for USB 3.0 operation or
-> > > > Ethernet (HSGMII).
-> > > > The second USB port on the SoC can be both used for USB 3.0 operation or
-> > > > for an additional PCIe line.
-> > > > 
-> > > > Signed-off-by: Christian Marangi <ansuelsmth@gmail.com>
-> > > > ---
-> > > > 
-> > > > For DT maintainers, in v2 there were some comments, hope the new
-> > > > description and names of the property better clarify the usage and
-> > > > why they are needed.
-> > > > 
-> > > >  .../bindings/phy/airoha,an7581-usb-phy.yaml   | 76 +++++++++++++++++++
-> > > >  MAINTAINERS                                   |  7 ++
-> > > >  .../dt-bindings/phy/airoha,an7581-usb-phy.h   | 11 +++
-> > > >  3 files changed, 94 insertions(+)
-> > > >  create mode 100644 Documentation/devicetree/bindings/phy/airoha,an7581-usb-phy.yaml
-> > > >  create mode 100644 include/dt-bindings/phy/airoha,an7581-usb-phy.h
-> > > > 
-> > > > diff --git a/Documentation/devicetree/bindings/phy/airoha,an7581-usb-phy.yaml b/Documentation/devicetree/bindings/phy/airoha,an7581-usb-phy.yaml
-> > > > new file mode 100644
-> > > > index 000000000000..5106685c124d
-> > > > --- /dev/null
-> > > > +++ b/Documentation/devicetree/bindings/phy/airoha,an7581-usb-phy.yaml
-> > > > @@ -0,0 +1,76 @@
-> > > > +# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
-> > > > +%YAML 1.2
-> > > > +---
-> > > > +$id: http://devicetree.org/schemas/phy/airoha,an7581-usb-phy.yaml#
-> > > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > > > +
-> > > > +title: Airoha AN7581 SoC USB PHY
-> > > > +
-> > > > +maintainers:
-> > > > +  - Christian Marangi <ansuelsmth@gmail.com>
-> > > > +
-> > > > +description: >
-> > > > +  The Airoha AN7581 SoC USB PHY describes the USB PHY for the USB controller.
-> > > > +
-> > > > +  Airoha AN7581 SoC support a maximum of 2 USB port. The USB 2.0 mode is
-> > > > +  always supported. The USB 3.0 mode is optional and depends on the Serdes
-> > > > +  mode currently configured on the system for the relevant USB port.
-> > > > +
-> > > > +  The first USB port on the SoC can be both used for USB 3.0 operation or
-> > > > +  Ethernet (HSGMII).
-> > > > +  The second USB port on the SoC can be both used for USB 3.0 operation or
-> > > > +  for an additional PCIe line.
-> > > > +
-> > > > +properties:
-> > > > +  compatible:
-> > > > +    const: airoha,an7581-usb-phy
-> > > > +
-> > > > +  reg:
-> > > > +    maxItems: 1
-> > > > +
-> > > > +  airoha,usb2-monitor-clk-sel:
-> > > > +    description: Describe what oscillator across the available 4
-> > > > +      should be selected for USB 2.0 Slew Rate calibration.
-> > > 
-> > > Why's this being set in dt? What actually determines what oscillator
-> > > should be used? Do they have different performance characteristics?
-> > > How is someone meant to know which one to use?
-> > >
-> > 
-> > Hi Conor,
-> > 
-> > thanks a lot for the review.
-> > 
-> > The airoha,usb2-monitor-clk-sel is set in DT because it describe the HW
-> > and to what oscillator the PHY should be connected to.
-> > 
-> > There are 2 PHY at different register space. One PHY needs to calibrate
-> > for oscillator 1 and the other PHY for oscillator 2 or the PHY doesn't
-> > work for USB 2.0 (the calibration fails)
+Hej,
+
+On Sun, Oct 26, 2025 at 01:52:01PM +0000, Sven Peter wrote:
+> Various hardware, like the Type-C PHY or the Thunderbolt/USB4 NHI,
+> present on Apple SoCs need machine-specific tunables passed from our
+> bootloader m1n1 to the device tree. Add generic helpers so that we
+> don't have to duplicate this across multiple drivers.
 > 
-> This implies that the oscillator is not part of the phy block, if
-> there's multiple competing for the same one. Why are these oscillators
-> not represented as clocks?
->
-
-This was also pointed out in the old revision. The oscillator is
-internal and there isn't a register to read the frequency or to
-enable/disable.
-
-The PHY register block have the same exact bits to select from 0 to 3.
-The HW internally is then connected to 1 or 2 basted on the physical PHY.
-
-So yes they are part of the PHY block, just the register map is too
-""liberal"" on the configuration.
-
-I verified if the same oscillator could be used for both but it does end
-up in the port not working as the calibration fails.
-
-> > The previous implementation used an index property but that was rejected
-> > as it wasn't descriptive of the HW.
-> > 
-> > > > +    $ref: /schemas/types.yaml#/definitions/uint32
-> > > > +    enum: [0, 1, 2, 3]
-> > > > +
-> > > > +  airoha,usb3-serdes:
-> > > > +    description: Describe what Serdes line is attached to the USB 3.0 port.
-> > > > +      Can be either Serdes USB1 or Serdes USB2.
-> > > > +    $ref: /schemas/types.yaml#/definitions/uint32
-> > > > +    enum: [2, 3]
-> > > 
-> > > This is confusing. Why 2 and 3 for usb1 and usb2? What even is the
-> > > mapping? Is it 2:1/3:2 or 2:2/3:1?
-> > > 
-> > 
-> > AFAIK there isn't a way to directly reference dt-bindings.
+> Reviewed-by: Alyssa Rosenzweig <alyssa@rosenzweig.io>
+> Reviewed-by: Neal Gompa <neal@gompa.dev>
+> Signed-off-by: Sven Peter <sven@kernel.org>
+> ---
+>  drivers/soc/apple/Kconfig         |  4 +++
+>  drivers/soc/apple/Makefile        |  3 ++
+>  drivers/soc/apple/tunable.c       | 71 +++++++++++++++++++++++++++++++++++++++
+>  include/linux/soc/apple/tunable.h | 60 +++++++++++++++++++++++++++++++++
+>  4 files changed, 138 insertions(+)
 > 
-> Usually people put the name of the file in.
-> 
+> diff --git a/drivers/soc/apple/Kconfig b/drivers/soc/apple/Kconfig
+> index ad67368892311bed5a94d358288390a6fb8b3b4a..d0ff32182a2b4a10c98cb96c70a03bea8c650f84 100644
+> --- a/drivers/soc/apple/Kconfig
+> +++ b/drivers/soc/apple/Kconfig
+> @@ -38,6 +38,10 @@ config APPLE_SART
+>  
+>  	  Say 'y' here if you have an Apple SoC.
+>  
+> +config APPLE_TUNABLE
+> +	tristate
+> +	depends on ARCH_APPLE || COMPILE_TEST
+> +
+>  endmenu
+>  
+>  endif
+> diff --git a/drivers/soc/apple/Makefile b/drivers/soc/apple/Makefile
+> index 4d9ab8f3037b7159771d8817fa507ba29f99ae10..0b85ab61aefe131349a67d0aa80204edd8e89925 100644
+> --- a/drivers/soc/apple/Makefile
+> +++ b/drivers/soc/apple/Makefile
+> @@ -8,3 +8,6 @@ apple-rtkit-y = rtkit.o rtkit-crashlog.o
+>  
+>  obj-$(CONFIG_APPLE_SART) += apple-sart.o
+>  apple-sart-y = sart.o
+> +
+> +obj-$(CONFIG_APPLE_TUNABLE) += apple-tunable.o
+> +apple-tunable-y = tunable.o
+> diff --git a/drivers/soc/apple/tunable.c b/drivers/soc/apple/tunable.c
+> new file mode 100644
+> index 0000000000000000000000000000000000000000..c54da8ef28cef16118c518c761f95e8dd9f78002
+> --- /dev/null
+> +++ b/drivers/soc/apple/tunable.c
+> @@ -0,0 +1,71 @@
+> +// SPDX-License-Identifier: GPL-2.0-only OR MIT
+> +/*
+> + * Apple Silicon hardware tunable support
+> + *
+> + * Each tunable is a list with each entry containing a offset into the MMIO
+> + * region, a mask of bits to be cleared and a set of bits to be set. These
+> + * tunables are passed along by the previous boot stages and vary from device
+> + * to device such that they cannot be hardcoded in the individual drivers.
+> + *
+> + * Copyright (C) The Asahi Linux Contributors
+> + */
+> +
+> +#include <linux/io.h>
+> +#include <linux/module.h>
+> +#include <linux/of.h>
+> +#include <linux/soc/apple/tunable.h>
+> +
+> +struct apple_tunable *devm_apple_tunable_parse(struct device *dev,
+> +					       struct device_node *np,
+> +					       const char *name)
+> +{
+> +	struct apple_tunable *tunable;
+> +	struct property *prop;
+> +	const __be32 *p;
+> +	size_t sz;
+> +	int i;
+> +
+> +	prop = of_find_property(np, name, NULL);
+> +	if (!prop)
+> +		return ERR_PTR(-ENOENT);
+> +
+> +	if (prop->length % (3 * sizeof(u32)))
+> +		return ERR_PTR(-EINVAL);
+> +	sz = prop->length / (3 * sizeof(u32));
+> +
+> +	tunable = devm_kzalloc(dev,
+> +			       sizeof(*tunable) + sz * sizeof(*tunable->values),
 
-Yes on this I have seen mixed implementation with only the enum and some
-adding the link to it. I will add in the description.
+There is a struct_size macro in linux/overflow.h for this calculation.
+We do not have to care about overflows as as struct property.length
+remains (signed) int. I would expect there is a much smaller limit for of
+properties in place anyway. The macro looks nicer though:
 
-> > 
-> > 2 and 3 are from include/dt-bindings/soc/airoha,scu-ssr.h
-> > 
-> > #define AIROHA_SCU_SERDES_USB1		2
-> > #define AIROHA_SCU_SERDES_USB2		3
-> 
-> Why overcomplicate like this? Just use 1 and 2. If that corresponds to
-> register settings of 2 and 3, do that conversion in the driver.
-> Properties are not shoving just register settings etc into, what happens,
-> for example, when the next soc comes along and these are actually usb1 is
-> 3 and usb2 is 4 there? All of a sudden, your property has different
-> meanings depending on which device is being used.
-> 
+struct_size(tunable, values, sz)
 
-This is really just to identify the serdes line that can have multiple
-usage, they don't refer to a specific register.
+> +			       GFP_KERNEL);
+> +	if (!tunable)
+> +		return ERR_PTR(-ENOMEM);
+> +	tunable->sz = sz;
+> +
+> +	for (i = 0, p = NULL; i < tunable->sz; ++i) {
+> +		p = of_prop_next_u32(prop, p, &tunable->values[i].offset);
 
-The PCIe one are added as they can also be used for PCIe or Ethernet
-usage and in the future this feature will be implemented in the PCIe PHY.
+Does it make sense to add an size argument either here or in
+apple_tunable_apply() to check that the offset is within the expect MMIO
+region? Not really important but might catch a bug someday.
 
-It's ok to change it 1 but then I hope we won't fall in the monclk case
-where we end up with
+> +		p = of_prop_next_u32(prop, p, &tunable->values[i].mask);
+> +		p = of_prop_next_u32(prop, p, &tunable->values[i].value);
+> +	}
+> +
+> +	return tunable;
+> +}
+> +EXPORT_SYMBOL(devm_apple_tunable_parse);
+> +
+> +void apple_tunable_apply(void __iomem *regs, struct apple_tunable *tunable)
+> +{
+> +	size_t i;
+> +
+> +	for (i = 0; i < tunable->sz; ++i) {
+> +		u32 val, old_val;
+> +
+> +		val = old_val = readl_relaxed(regs + tunable->values[i].offset);
+> +		val &= ~tunable->values[i].mask;
+> +		val |= tunable->values[i].value;
+> +		if (val != old_val)
+> +			writel_relaxed(val, regs + tunable->values[i].offset);
+> +	}
+> +}
+> +EXPORT_SYMBOL(apple_tunable_apply);
+> +
+> +MODULE_LICENSE("Dual MIT/GPL");
+> +MODULE_AUTHOR("Sven Peter <sven@kernel.org>");
+> +MODULE_DESCRIPTION("Apple Silicon hardware tunable support");
+> diff --git a/include/linux/soc/apple/tunable.h b/include/linux/soc/apple/tunable.h
+> new file mode 100644
+> index 0000000000000000000000000000000000000000..7e74e81b32e56c9a8ce94cb64bb340b007bac8da
+> --- /dev/null
+> +++ b/include/linux/soc/apple/tunable.h
+> @@ -0,0 +1,60 @@
+> +/* SPDX-License-Identifier: GPL-2.0-only OR MIT */
+> +/*
+> + * Apple Silicon hardware tunable support
+> + *
+> + * Each tunable is a list with each entry containing a offset into the MMIO
+> + * region, a mask of bits to be cleared and a set of bits to be set. These
+> + * tunables are passed along by the previous boot stages and vary from device
+> + * to device such that they cannot be hardcoded in the individual drivers.
+> + *
+> + * Copyright (C) The Asahi Linux Contributors
+> + */
+> +
+> +#ifndef _LINUX_SOC_APPLE_TUNABLE_H_
+> +#define _LINUX_SOC_APPLE_TUNABLE_H_
+> +
+> +#include <linux/device.h>
+> +#include <linux/types.h>
+> +
+> +/**
+> + * Struct to store an Apple Silicon hardware tunable.
+> + *
+> + * Each tunable is a list with each entry containing a offset into the MMIO
+> + * region, a mask of bits to be cleared and a set of bits to be set. These
+> + * tunables are passed along by the previous boot stages and vary from device
+> + * to device such that they cannot be hardcoded in the individual drivers.
+> + *
+> + * @param sz Number of [offset, mask, value] tuples stored in values.
+> + * @param values [offset, mask, value] array.
+> + */
+> +struct apple_tunable {
+> +	size_t sz;
+> +	struct {
+> +		u32 offset;
+> +		u32 mask;
+> +		u32 value;
+> +	} values[] __counted_by(sz);
+> +};
+> +
+> +/**
+> + * Parse an array of hardware tunables from the device tree.
+> + *
+> + * @dev: Device node used for devm_kzalloc internally.
+> + * @np: Device node which contains the tunable array.
+> + * @name: Name of the device tree property which contains the tunables.
+> + *
+> + * @return: devres allocated struct on success or PTR_ERR on failure.
+> + */
+> +struct apple_tunable *devm_apple_tunable_parse(struct device *dev,
+> +					       struct device_node *np,
+> +					       const char *name);
+> +
+> +/**
+> + * Apply a previously loaded hardware tunable.
+> + *
+> + * @param regs: MMIO to which the tunable will be applied.
+> + * @param tunable: Pointer to the tunable.
+> + */
+> +void apple_tunable_apply(void __iomem *regs, struct apple_tunable *tunable);
+> +
+> +#endif
 
-airoha,usb3-serdes = <1>;
+Reviewed-by: Janne Grunau <j@jannau.net>
 
-as that will be VERY confusing in DT.
-
-(again I'm using dt-bindings here to give clear indication of the
-hardware since it's already confusing as is with all the double usage of
-the different PHY)
-
-> > > > +
-> > > > +  airoha,scu:
-> > > > +    description: Phandle to the SCU syscon to configure the Serdes line.
-> > > > +    $ref: /schemas/types.yaml#/definitions/phandle
-> > > > +
-> > > > +  '#phy-cells':
-> > > > +    description: Describe if the referred PHY is the USB 2.0 PHY or USB 3.0 PHY.
-> > > > +    const: 1
-> > > 
-> > > Which is which here?
-> > >
-> > 
-> > Mhh I think I didn't understand here. #phy-cells describe the
-> > parameters to be used for phys property in a different node.
-> > 
-> > The current usage would be
-> > 
-> > <&usb0_phy PHY_TYPE_USB2> for USB 2.0
-> > or <&usb0_phy PHY_TYPE_USB3> for USB 3.0
-> > 
-> > This node expose 2 PHY that can be referenced by the single parameters.
-> 
-> Ah, I didn't know that the 1 cell variant here was type not index.
-> 
-
-Yes in the driver I'm maching for type not index as it's very confusing.
-Any hint on better describe it on the schema? Maybe I can reword with
-
-"Describe if the referred PHY is PHY_TYPE_USB2 or PHY_TYPE_USB3"
-
-Should be more direct. I understand now the confusion.
-
-> > > > +required:
-> > > > +  - compatible
-> > > > +  - reg
-> > > > +  - airoha,usb2-monitor-clk-sel
-> > > > +  - airoha,usb3-serdes
-> > > > +  - airoha,scu
-> > > > +  - '#phy-cells'
-> > > > +
-> > > > +additionalProperties: false
-> > > > +
-> > > > +examples:
-> > > > +  - |
-> > > > +    #include <dt-bindings/phy/airoha,an7581-usb-phy.h>
-> > > > +    #include <dt-bindings/soc/airoha,scu-ssr.h>
-> > > > +
-> > > > +    phy@1fac0000 {
-> > > > +        compatible = "airoha,an7581-usb-phy";
-> > > > +        reg = <0x1fac0000 0x10000>;
-> > > > +
-> > > > +        airoha,usb2-monitor-clk-sel = <AIROHA_USB2_MONCLK_SEL1>;
-> > > > +        airoha,usb3-serdes = <AIROHA_SCU_SERDES_USB1>;
-> > > > +        airoha,scu = <&scu>;
-> > > > +
-> > > > +        #phy-cells = <1>;
-> > > > +    };
-> > > > +
-> > > > diff --git a/MAINTAINERS b/MAINTAINERS
-> > > > index 8085fdca7bcd..af23c590bbc6 100644
-> > > > --- a/MAINTAINERS
-> > > > +++ b/MAINTAINERS
-> > > > @@ -763,6 +763,13 @@ S:	Maintained
-> > > >  F:	Documentation/devicetree/bindings/spi/airoha,en7581-snand.yaml
-> > > >  F:	drivers/spi/spi-airoha-snfi.c
-> > > >  
-> > > > +AIROHA USB PHY DRIVER
-> > > > +M:	Christian Marangi <ansuelsmth@gmail.com>
-> > > > +L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
-> > > > +S:	Maintained
-> > > > +F:	Documentation/devicetree/bindings/phy/airoha,an7581-usb-phy.yaml
-> > > > +F:	include/dt-bindings/phy/airoha,an7581-usb-phy.h
-> > > > +
-> > > >  AIRSPY MEDIA DRIVER
-> > > >  L:	linux-media@vger.kernel.org
-> > > >  S:	Orphan
-> > > > diff --git a/include/dt-bindings/phy/airoha,an7581-usb-phy.h b/include/dt-bindings/phy/airoha,an7581-usb-phy.h
-> > > > new file mode 100644
-> > > > index 000000000000..efbb0ae75e3a
-> > > > --- /dev/null
-> > > > +++ b/include/dt-bindings/phy/airoha,an7581-usb-phy.h
-> > > > @@ -0,0 +1,11 @@
-> > > > +/* SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause */
-> > > > +
-> > > > +#ifndef _DT_BINDINGS_AIROHA_AN7581_USB_PHY_H_
-> > > > +#define _DT_BINDINGS_AIROHA_AN7581_USB_PHY_H_
-> > > > +
-> > > > +#define AIROHA_USB2_MONCLK_SEL0                 0
-> > > > +#define AIROHA_USB2_MONCLK_SEL1                 1
-> > > > +#define AIROHA_USB2_MONCLK_SEL2                 2
-> > > > +#define AIROHA_USB2_MONCLK_SEL3                 3
-> > > 
-> > > These definitions seem completely pointless. The property is called
-> > > "airoha,usb2-monitor-clk-sel" so any use will look like
-> > > "airoha,usb2-monitor-clk-sel = <3>;"
-> > > That's more informative than the define is, since it doesn't even
-> > > truncate "monitor". I'd just delete this header entirely and use the
-> > > number. If you want the define in the driver to avoid magic numbers,
-> > > just define it in the driver.
-> > > 
-> > 
-> > Well yes the idea here is to not have to use magic numbers in DT and try
-> > to use the naming in the SoC documentation since they are called
-> > monclk_sel0, monclk_sel1 ...
-> 
-> Sometimes the "magic" number just makes sense to use. If something is
-> completely arbitrary, then sure use one to make it readable. If
-> literally the number itself, as it is here, don't bother.
-
-Ok no problem, thanks for hint. More than happy to make this easier and
-have less redundant headers.
-
--- 
-	Ansuel
+Janne
 
 -- 
 linux-phy mailing list
