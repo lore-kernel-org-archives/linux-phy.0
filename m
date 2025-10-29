@@ -4,110 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C1B02CCD1BF
-	for <linux-phy@archiver.kernel.org>; Wed, 29 Oct 2025 07:16:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 85B28CCF9EE
+	for <linux-phy@archiver.kernel.org>; Wed, 29 Oct 2025 08:40:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YKR7WH7HVRM7I4QNrGpBZ8XBUJTtZLq0dSb5PE11q48=; b=dBresYo++Yq7D9
-	bzrH/uYU8uQrydfovvV2B1kWOS2AAMLKd3sRB6r22dNZ6KLaNwYHwW3xgTwzU5hwiF/QtGsqX+55F
-	VUV7AqybX88iSBoW5dpFD7SzrMojem6WOzRNt5B83N3s9PaOZ+NGvm/MMsT+3XOh9Bhx+9PTqWrKI
-	KKGZzpa15LzQbxUGeE6M7GYbmdkv4KNqQjpSEO8hjEw4ujG79mucG4xIKOuhv++wGeO5j2TAxOPjS
-	fJ4b2UYAsnshipUuY5JLPRN19bgMXmst4OmWZeGI4vLOHrVPrll8mmFxQfe0ftucDUCsRAgzU4upX
-	UzBkZS4WKSN7rOEdjpqw==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=dud3LpD71DDaqFHZPyqI+ZxX20EmcUMnvaMtmeak04U=; b=jlHNLJJxQdWVbX
+	KrzhEzDgmLDe8D88jLjWmcK5NISTZk3THekAn5dD4B4IyXgJC6HgPqGh8MzlF/+Y4QKWRUmOaasaJ
+	P/ZZRn7by3AANrVU90xopT4wWfrx2+Bnidbd11LvPRYsDOaUTKi+TSNGqFGN4qfX1ejMrxCkOF9J2
+	qE/6Fx4W4Nm4sty8sfMnbKrgoewIw4tc2SaqOCwoQu91Rl1/BrsGP2kZyfRki3CqDF7BorK2HJfnS
+	/X4NVxSn7IV2q0gplr+KvacrQubB9XucYoJgo5OaykywRoEyPBJdhb8D7V1Qm8Dkk1N09U34+ScfJ
+	CoOVnZhhgw8f+66SJTpg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vE0QU-000000003Wz-2Ceu;
-	Wed, 29 Oct 2025 07:16:58 +0000
-Received: from smtpbgeu2.qq.com ([18.194.254.142])
+	id 1vE1jZ-00000000LYX-1DxX;
+	Wed, 29 Oct 2025 08:40:45 +0000
+Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vE0QN-000000003Er-1Fd4;
-	Wed, 29 Oct 2025 07:16:56 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=airkyi.com;
-	s=altu2504; t=1761722181;
-	bh=1RfAR5qe3fDpGYWfe4IMPee9wlWopj1wjBrVtJQSHJQ=;
-	h=From:To:Subject:Date:Message-Id;
-	b=ZnfEzsEx2zZXXKu2HSsIfRuAbYwOfsTqdKjYLDYNL8OUWSYDu9P2Zo14u3MBvYBCn
-	 8dSv4ISLEHrqtVHZr8mv7EotmvEOAy7OrEyjL2n4KIojL50yDklhLmcRwC6RGtIpGK
-	 bBsKwnxdLwdXvBT8lH1RAUAnKxrQ+fKEHI9kV2aQ=
-X-QQ-mid: zesmtpsz6t1761722139t9151357f
-X-QQ-Originating-IP: /bUuDFF9LoIstyTpUXcLBmZNXpV9iclT5Q9ER/D5JLM=
-Received: from DESKTOP-8BT1A2O.localdomain ( [58.22.7.114])
-	by bizesmtp.qq.com (ESMTP) with 
-	id ; Wed, 29 Oct 2025 15:15:34 +0800 (CST)
-X-QQ-SSF: 0000000000000000000000000000000
-X-QQ-GoodBg: 0
-X-BIZMAIL-ID: 10265484516757037659
-From: Chaoyi Chen <kernel@airkyi.com>
-To: Heikki Krogerus <heikki.krogerus@linux.intel.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+	id 1vE1jW-00000000LXK-2Mx9
+	for linux-phy@lists.infradead.org;
+	Wed, 29 Oct 2025 08:40:44 +0000
+Received: by mail-wm1-x330.google.com with SMTP id 5b1f17b1804b1-47721293fd3so1991335e9.1
+        for <linux-phy@lists.infradead.org>; Wed, 29 Oct 2025 01:40:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1761727239; x=1762332039; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=BWxjeRjOEhcNVgfP/QkxqsBAhufcjSTlJ37Z8hpahuU=;
+        b=F9gLxlE5aHl7xSgLlUPVqKZGAZYWF6m4RF0FNTyP+uqpRk1Lt23qMkQTFo4bH4rHT4
+         pEXF6FItn6guGuHgMg8MTVbtnWte3RrxbHg4HPC1YZDDQofBzM4Ll0tMgc3FL6J97x1l
+         MzVXJ9jEyKPxPBObZu9zcaluK2T+HooPOng25KHTny5up2BV1ueaJpQ1odTaxiE/lv4m
+         jggOWm2U79aOhbOGsYAdXMJ08kRrLdEw8yNSE27XatgCCEEbBMqDC4iz82p2NBsUjVB+
+         flGu+jYy4PfPioEIi+iaYGR1iMbNDSepDkJkgI1QHC6ppj7/AmTe+WDujPQpdq6h919n
+         Mmbg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1761727239; x=1762332039;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=BWxjeRjOEhcNVgfP/QkxqsBAhufcjSTlJ37Z8hpahuU=;
+        b=pEyc9XZ9Ibiaci1RdHycOI51edh+IBpdi8xZIdGrQlhn+owMtioZCSiH23c4wDwKxq
+         toBrSOqrFBXjdKo7HsJnJmm9jekzIFeB6FdxP3V0t73sTyJwUrbf/nY4d7YXISPfXq9w
+         vPEsoft3Tb/KOMZTU0qQgow3bfL6h0bEvgrtWNekXf/28Y1HGO1UrUXlVBj8RBL9cusM
+         fXOc4RoVSU9psqYKMC8ljUjs+6EIJ8KKY83fx8TSK8W/jk1zBjrUWp9NWNuPRBe1OiOa
+         resYKKb66JLYiiBWpErHVp8sufqR21nv6rRBjOKvU3V1vxEctVxkdSeUTQCsS8Xfns1s
+         LKNA==
+X-Forwarded-Encrypted: i=1; AJvYcCU/dDIWMcJXjPIAfQDfOWgU+fKN5JWfR17aeUSfFRgbB8xfUWBqw9q/hH+ovcdUSbWWRYw1diBSWDY=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yzp8aKlhhl51lxW5XUjO/OyJ9Snf4v9TNcriIrzbOa8Nj/tcAf1
+	v+kM9nOmSFbCEqdm6S6aZaxLkKgykgP8/icR/X1hxdcXk1cpShlMhRVv
+X-Gm-Gg: ASbGncus+RsABeheDc6Vw9y74yNpZGkZrTUv0jgweHB1hiDID5gg25ou1F6kaTyUyKl
+	KczLLghiwr5MA/PIXSchRZJ4y2xY3qgB0ZXp3Bg8d4gTrWWOcqu5P2IO1vdOro2yUK/ScY12LwS
+	DRzzOBPXi3PIiDeNaFJOAe81hJKNj2onPOJU/mrDI9bEjdI36sBOwWqA/fKi30M4NzRHPlnwAik
+	VrxrklmWWd/7N7cHiko8aIQS/7YD6OznImEWxxxH8qgsAvA1EAM7Va9ayBGGLRSmF5Dqe2tZVMp
+	xZPMnmq7yIUImfljCN315E4OWBlE4b81vHNuyocquamEAolKQhAdDEhloKp2wGu/HYRguqGbweG
+	9r2ubfz6X06fIxwh6kahjtFgRIN20OCeMurLmkacCr8Bw5cYi/cyj8/rnJWnsfUE/+ejNVGzKUA
+	Eth0ifmUKljTDwvoeVNTxTrgGaJBEy6lMJFn/nEs3+2MyoVtdDadUFCXo9PgwZ
+X-Google-Smtp-Source: AGHT+IHzDG9SBUzGPViM4O6XUORkMfXDOjYXSdJLjQD/Nfqn6/OKgCqHeLDZcWlwFIAoLgO8gs3hzQ==
+X-Received: by 2002:a05:600c:4450:b0:46f:b42e:e38f with SMTP id 5b1f17b1804b1-4771e6a188bmr20563075e9.19.1761727239422;
+        Wed, 29 Oct 2025 01:40:39 -0700 (PDT)
+Received: from biju.lan (host86-162-200-138.range86-162.btcentralplus.com. [86.162.200.138])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4771e3a88fdsm39485785e9.10.2025.10.29.01.40.38
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 29 Oct 2025 01:40:39 -0700 (PDT)
+From: Biju <biju.das.au@gmail.com>
+X-Google-Original-From: Biju <biju.das.jz@bp.renesas.com>
+To: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
 	Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
 	Conor Dooley <conor+dt@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>,
-	Sandy Huang <hjc@rock-chips.com>,
-	Andy Yan <andy.yan@rock-chips.com>,
-	Yubing Zhang <yubing.zhang@rock-chips.com>,
-	Frank Wang <frank.wang@rock-chips.com>,
-	Andrzej Hajda <andrzej.hajda@intel.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Robert Foss <rfoss@kernel.org>,
-	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
-	Jonas Karlman <jonas@kwiboo.se>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	David Airlie <airlied@gmail.com>,
-	Simona Vetter <simona@ffwll.ch>,
-	Amit Sunil Dhamne <amitsd@google.com>,
-	Chaoyi Chen <chaoyi.chen@rock-chips.com>,
-	Dragan Simic <dsimic@manjaro.org>,
-	Johan Jonker <jbx6244@gmail.com>,
-	Diederik de Haas <didi.debian@cknow.org>,
-	Peter Robinson <pbrobinson@gmail.com>
-Cc: linux-usb@vger.kernel.org,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	Magnus Damm <magnus.damm@gmail.com>
+Cc: Biju Das <biju.das.jz@bp.renesas.com>,
+	linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	dri-devel@lists.freedesktop.org
-Subject: [PATCH v8 10/10] arm64: dts: rockchip: rk3399-evb-ind: Add support for DisplayPort
-Date: Wed, 29 Oct 2025 15:14:35 +0800
-Message-Id: <20251029071435.88-11-kernel@airkyi.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20251029071435.88-1-kernel@airkyi.com>
-References: <20251029071435.88-1-kernel@airkyi.com>
-X-QQ-SENDSIZE: 520
-Feedback-ID: zesmtpsz:airkyi.com:qybglogicsvrsz:qybglogicsvrsz4a-0
-X-QQ-XMAILINFO: MI8xiyr9SLuAXVPvvA1fD2UVI9ooUgKnNR27iWQk//0QAlIHO6Y7Szus
-	RaPuxLvhpYC2wLL6+a3ddUrPxP98CIPOktd6at0zI643XPzmZ0HmBhT43eMPzo7AkT0LRax
-	tmsXnrXYqgTHVFlI7oBOqWNaEt9TBIRgZ5SCDKzPabaVF4J8vqI7O3T8FrHzpH8kWRURTHG
-	8QVqv/kxtEGpRM2ma6xLmdciGFG+/YyCZpjaGedeYTCATy5OW6c4Bk1+Ah49Eyx7sR8Kluh
-	v7/uTkms3dh+K9LKs7MV+GtlGFrLBuBg5kWQ5aJUNEQCM1B/pg/RsWx187lrTR7axsgzBqP
-	DdF1WlKqs4diOjYPjyVfQ1FcGkIyjVtPM8iXuV5rncmyP+CN+RHAa4iYf+i6gRfAPau6Em4
-	+ALHEGWJZWF97Hr88mPjc3dHqWR+uR9e7r5lL02Vwbu/sbviKav8vCLeWZ6fPr2WfEXgexO
-	C7oujV37/i1X4nyIKJWiCapONB8eIME3/Kw9Qds38Nu+An4v9DGeOGdaOSx1VWLVHc8FGgl
-	VLea1M9YhUhK1oj0gHUZsI2RLv9hdJOJFtUJF5dGvAfBFjrwbbCclRZxBC8qFbH9/BX/FdA
-	uJUpeQNy2WcIORiMSaYxlnNXMWxLX/hOlul8bfG0zmcATiCB7++xB1x/c7rxkIv2+BMjeHs
-	YAdBGGXYn8HBAJXYIbz9Xes98oWsNSFGWD/vZC10gv6W38FyHM7kbnynzO1FGX2Zvv9r/Iz
-	oIZMFz7Kd/rSHHzQgoWIGIzJz+Sa33c2hH3meucwrPMYaf9L0qAw31k8bezoyTiF8K/r0Zo
-	Paocz6CmXZtbWvcOOO6fpqDrxRsK9S8AZvWldE+EAv4Q2ZQQ2PEK3gIiaujZKBf0eiJGvzp
-	+YQKp6MZj8tqQyGPhsTqzG8gwxr1aD41N/7CSHq4IX1fv6lBA5IqyXtjU8yG3/Z05dwGmBm
-	guJTVlANG1tZp9lGy8SfmhTtlZHWIaTKLkRgmQZ9AZ1Soypicr0noKoPo1Y1UPyDzuYaqrT
-	poIxRLy8wiRCYDC6jC2buwLaP+PIsr/ShXpleqCH8jeMiIj2CI
-X-QQ-XMRINFO: MPJ6Tf5t3I/ycC2BItcBVIA=
-X-QQ-RECHKSPAM: 0
+	linux-renesas-soc@vger.kernel.org,
+	Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+	Biju Das <biju.das.au@gmail.com>
+Subject: [PATCH v4 0/2] Add Renesas RZ/G3E USB3.0 PHY driver
+Date: Wed, 29 Oct 2025 08:40:32 +0000
+Message-ID: <20251029084037.108610-1-biju.das.jz@bp.renesas.com>
+X-Mailer: git-send-email 2.43.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251029_001651_829127_C07AD4B3 
-X-CRM114-Status: GOOD (  11.50  )
+X-CRM114-CacheID: sfid-20251029_014042_622455_1B5408CE 
+X-CRM114-Status: UNSURE (   9.62  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,247 +106,41 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+From: Biju Das <biju.das.jz@bp.renesas.com>
 
-The RK3399 EVB IND board has a Type-C interface DisplayPort.
-It use fusb302 chip as Type-C controller.
+This patch series aims to add Renesas RZ/G3E USB3.0 PHY driver support.
+This module is connected between USB3 Host and PHY module. The main
+functions of this module are:
+ 1) Reset control
+ 2) Control of PHY input pins
+ 3) Monitoring of PHY output pins
 
-fusb302 chip ---> USB/DP PHY0 <----> CDN-DP controller
+v3->v4:
+ * This patch series split from[1] as this series can be merged
+   without any issues.
+ * Collected tag from Geert.
+ 
+[1] https://lore.kernel.org/all/20250916150255.4231-1-biju.das.jz@bp.renesas.com/
 
-Signed-off-by: Chaoyi Chen <chaoyi.chen@rock-chips.com>
----
+Biju Das (2):
+  dt-bindings: phy: renesas: Document Renesas RZ/G3E USB3.0 PHY
+  phy: renesas: Add Renesas RZ/G3E USB3.0 PHY driver
 
-(no changes since v4)
+ .../bindings/phy/renesas,rzg3e-usb3-phy.yaml  |  63 +++++
+ drivers/phy/renesas/Kconfig                   |   7 +
+ drivers/phy/renesas/Makefile                  |   1 +
+ drivers/phy/renesas/phy-rzg3e-usb3.c          | 259 ++++++++++++++++++
+ 4 files changed, 330 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/renesas,rzg3e-usb3-phy.yaml
+ create mode 100644 drivers/phy/renesas/phy-rzg3e-usb3.c
 
-Changes in v3:
-- Fix wrong vdo value.
-- Fix port node in usb-c-connector.
-
-Changes in v2:
-- Add endpoint to link DP PHY and DP controller.
-- Fix devicetree coding style.
-
- .../boot/dts/rockchip/rk3399-evb-ind.dts      | 146 ++++++++++++++++++
- 1 file changed, 146 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-evb-ind.dts b/arch/arm64/boot/dts/rockchip/rk3399-evb-ind.dts
-index 70aee1ab904c..aeeee6bd2973 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-evb-ind.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-evb-ind.dts
-@@ -4,6 +4,7 @@
-  */
- 
- /dts-v1/;
-+#include <dt-bindings/usb/pd.h>
- #include "rk3399.dtsi"
- 
- / {
-@@ -19,6 +20,21 @@ chosen {
- 		stdout-path = "serial2:1500000n8";
- 	};
- 
-+	sound: sound {
-+		compatible = "rockchip,rk3399-gru-sound";
-+		rockchip,cpu = <&i2s0 &spdif>;
-+	};
-+
-+	vbus_typec: regulator-vbus-typec {
-+		compatible = "regulator-fixed";
-+		enable-active-high;
-+		gpio = <&gpio1 RK_PC2 GPIO_ACTIVE_HIGH>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&vcc5v0_typec0_en>;
-+		regulator-name = "vbus_typec";
-+		vin-supply = <&vcc5v0_sys>;
-+	};
-+
- 	vcc5v0_sys: regulator-vcc5v0-sys {
- 		compatible = "regulator-fixed";
- 		enable-active-high;
-@@ -31,6 +47,11 @@ vcc5v0_sys: regulator-vcc5v0-sys {
- 	};
- };
- 
-+&cdn_dp {
-+	phys = <&tcphy0_dp>;
-+	status = "okay";
-+};
-+
- &cpu_b0 {
- 	cpu-supply = <&vdd_cpu_b>;
- };
-@@ -55,6 +76,12 @@ &cpu_l3 {
- 	cpu-supply = <&vdd_cpu_l>;
- };
- 
-+&dp_out {
-+	dp_controller_output: endpoint {
-+		remote-endpoint = <&dp_phy_in>;
-+	};
-+};
-+
- &emmc_phy {
- 	status = "okay";
- };
-@@ -341,6 +368,71 @@ regulator-state-mem {
- 	};
- };
- 
-+&i2c4 {
-+	i2c-scl-rising-time-ns = <475>;
-+	i2c-scl-falling-time-ns = <26>;
-+	status = "okay";
-+
-+	usbc0: typec-portc@22 {
-+		compatible = "fcs,fusb302";
-+		reg = <0x22>;
-+		interrupt-parent = <&gpio1>;
-+		interrupts = <RK_PA2 IRQ_TYPE_LEVEL_LOW>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&usbc0_int>;
-+		vbus-supply = <&vbus_typec>;
-+
-+		usb_con: connector {
-+			compatible = "usb-c-connector";
-+			label = "USB-C";
-+			data-role = "dual";
-+			power-role = "dual";
-+			try-power-role = "sink";
-+			op-sink-microwatt = <1000000>;
-+			sink-pdos =
-+				<PDO_FIXED(5000, 2500, PDO_FIXED_USB_COMM)>;
-+			source-pdos =
-+				<PDO_FIXED(5000, 1500, PDO_FIXED_USB_COMM)>;
-+
-+			altmodes {
-+				displayport {
-+					svid = /bits/ 16 <0xff01>;
-+					vdo = <0x00001c46>;
-+				};
-+			};
-+
-+			ports {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+
-+				port@0 {
-+					reg = <0>;
-+
-+					usbc_hs: endpoint {
-+						remote-endpoint = <&u2phy0_typec_hs>;
-+					};
-+				};
-+
-+				port@1 {
-+					reg = <1>;
-+
-+					usbc_ss: endpoint {
-+						remote-endpoint = <&tcphy0_typec_ss>;
-+					};
-+				};
-+
-+				port@2 {
-+					reg = <2>;
-+
-+					usbc_dp: endpoint {
-+						remote-endpoint = <&tcphy0_typec_dp>;
-+					};
-+				};
-+			};
-+		};
-+	};
-+};
-+
- &i2s2 {
- 	status = "okay";
- };
-@@ -354,6 +446,16 @@ &io_domains {
- };
- 
- &pinctrl {
-+	usb-typec {
-+		usbc0_int: usbc0-int {
-+			rockchip,pins = <1 RK_PA2 RK_FUNC_GPIO &pcfg_pull_up>;
-+		};
-+
-+		vcc5v0_typec0_en: vcc5v0-typec0-en {
-+			rockchip,pins = <1 RK_PC2 RK_FUNC_GPIO &pcfg_pull_none>;
-+		};
-+	};
-+
- 	pmic {
- 		pmic_int_l: pmic-int-l {
- 			rockchip,pins = <1 RK_PC5 RK_FUNC_GPIO &pcfg_pull_up>;
-@@ -400,10 +502,48 @@ &sdmmc {
- 	status = "okay";
- };
- 
-+&sound {
-+	rockchip,codec = <&cdn_dp>;
-+	status = "okay";
-+};
-+
-+&spdif {
-+	status = "okay";
-+};
-+
- &tcphy0 {
- 	status = "okay";
- };
- 
-+&tcphy0_dp {
-+	mode-switch;
-+
-+	port {
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+
-+		tcphy0_typec_dp: endpoint@0 {
-+			reg = <0>;
-+			remote-endpoint = <&usbc_dp>;
-+		};
-+
-+		dp_phy_in: endpoint@1 {
-+			reg = <1>;
-+			remote-endpoint = <&dp_controller_output>;
-+		};
-+	};
-+};
-+
-+&tcphy0_usb3 {
-+	orientation-switch;
-+
-+	port {
-+		tcphy0_typec_ss: endpoint {
-+			remote-endpoint = <&usbc_ss>;
-+		};
-+	};
-+};
-+
- &tcphy1 {
- 	status = "okay";
- };
-@@ -418,6 +558,12 @@ &tsadc {
- 
- &u2phy0 {
- 	status = "okay";
-+
-+	port {
-+		u2phy0_typec_hs: endpoint {
-+			remote-endpoint = <&usbc_hs>;
-+		};
-+	};
- };
- 
- &u2phy0_host {
 -- 
-2.49.0
+2.43.0
 
 
 -- 
