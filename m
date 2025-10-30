@@ -4,99 +4,99 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AEC6DCCF9EE
-	for <linux-phy@archiver.kernel.org>; Thu, 30 Oct 2025 00:10:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1787FCCF9EE
+	for <linux-phy@archiver.kernel.org>; Thu, 30 Oct 2025 01:34:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hSLK2vAwz+LniDvbBV4LX9pF6KHNGsH/KiVUNx66YgE=; b=enjK3QIlkExHlZ
-	zJIqFK8COu21o3E7MfPqxrJtKtT4MSElb2WHmYyTkOCquuq4kfDOuxe2uZYsT5Rr0DUbLTSFLqxTT
-	XN/ZS0Q75qF6348+Mx2XYrC+hrEIZzhB1KVoaEU5EzzrlFxnO+FIDrTGdJPR/k/Z7LwVtSQPL2vmv
-	uTAL3GZyYW7wovxnkkvuuUlYRSqm6T7NzDiyMHvA2bfxB8tcbHwBjGTdv8270jbujLstXtSisllLK
-	Jv8McmT9JsvdPbr+ooXUD6u9wSQZtVS28l9FHZgepgnrTqxk9DG49lr7gCz0UgCAVskhh0/2Fjwds
-	uPATEiNKoYNOW7A2r5pQ==;
+	List-Owner; bh=QzW5VH33GPYXROmXtopBLhB/UtyScuzGMiaorMaNF7k=; b=uVNHH3QdZZNVaH
+	11JmYNrDgBKDUS1fD8R2XyxwqodNTPs3J6+Fcr1VWs8/9ibretoR5F87wAyIPxJx113ysZIOUAh9a
+	c+pJrqUNMoVUYoyKnNwh1kOykUJ6tTVXlqYxwEAD07PKk3YpUjMynpg2OupE3x34GRx1t+5h9EJ8F
+	q5CHInHcl6F8htIk4vg6A/hyOad1neb0e7WwEaK91CQwG6CcL6lUUzSNRs/0vyyDFHVQds2B2Guk3
+	p+e9hSpF4W1rS0ENpV5VhQifQpBId5WVDn1OZxt4pnIN/pO0IJEZHXI3XU7fY7I3vYFejsEiTmYM+
+	ROPssZt/du9tLIpK4GNg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vEGF8-00000003HGT-1v28;
-	Thu, 30 Oct 2025 00:10:18 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1vEHYs-00000003Krr-1c5H;
+	Thu, 30 Oct 2025 01:34:46 +0000
+Received: from mail-yw1-x1130.google.com ([2607:f8b0:4864:20::1130])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vEGF5-00000003HFA-1qs1
+	id 1vEHYp-00000003Kqc-0jb8
 	for linux-phy@lists.infradead.org;
-	Thu, 30 Oct 2025 00:10:16 +0000
-Received: by mail-io1-xd42.google.com with SMTP id ca18e2360f4ac-93e8834d80aso19294239f.1
-        for <linux-phy@lists.infradead.org>; Wed, 29 Oct 2025 17:10:15 -0700 (PDT)
+	Thu, 30 Oct 2025 01:34:45 +0000
+Received: by mail-yw1-x1130.google.com with SMTP id 00721157ae682-781014f4e12so8774927b3.1
+        for <linux-phy@lists.infradead.org>; Wed, 29 Oct 2025 18:34:42 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=riscstar-com.20230601.gappssmtp.com; s=20230601; t=1761783014; x=1762387814; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=7VMgrL4eh2mYx+l5oZfmNXv7av2SRwaUbOAevR++3T8=;
-        b=koH9eeHA+/JK2h2SrfNC+eqLcqV9L8oM+09H6Y3PSmpndV9nekKYnOYgQKJLKXmSRx
-         2SaNo3uJp2mLWPi5CkD4t9oeuFV1TGbGeun2+zDwmv46V3FegDT4bN5F5dzZdUjNCrAl
-         iSGBL6jUa7mJrIu9Wuhw2dARmsfTE4iy06vg1kmqstB84kSE20jzPrC9V2E/okUYP0io
-         3V+X25rAyr/VUEFxLNUyHVExKJv7lxHnS/nX+oybvtRASXYI0ULaERcOx3HURdtB9VjB
-         ppy5VM7ayKMSvZphXPCxjRKc7m8JnyqjO6bsa50CnXeQV36Dh5H8lk8nlU/N9ePvqcRD
-         wIew==
+        d=gmail.com; s=20230601; t=1761788082; x=1762392882; darn=lists.infradead.org;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=QSYKQjyLLpQ9U6VgF/+NC7c9Vfg3d8+LTPH7512lTcw=;
+        b=KuJvQSbGxrGAvKU6rSfDOzT3N1DzN/16gr2rq1KYUhvf6zAeSImd7lRIkpx0fyeIrH
+         rIt4tEmRy8duiLl5rxTiDYbCgq6Pg1/V6lzAXaXSfIWrsrfgHKrgoK6j1At4C0LWNYwf
+         srHX3HQAOPCUqsyst+VNGE7iu/MBOC3sZjCYdWCkeUG+SuhVRnb1TCVfF9/Mj3bIAmor
+         YpBitgWGPP7FT0OqJux80mZgUuQNJYxO7ukjyi/wDNOtOIXXABey869P+2zbDGMnIORs
+         knFC0PY7ESXHUdeKta/w60XkIARu0zcALXgjvEhca3gEe2UK4hks0iVFZ6AQZLSTVXK2
+         Inyw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1761783014; x=1762387814;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=7VMgrL4eh2mYx+l5oZfmNXv7av2SRwaUbOAevR++3T8=;
-        b=XdVAljcsHFMpXx2LecHeSLJCf8qL7OFi6g4BTq6G6x5DzplzHWZ4TkbIuQx1r+9mxr
-         pwiZAkF6ulRc6l20PGGv+fnnIEMOnbYp+MDPftj+JYLwjq5JQtWCHlKk++Tqi/DgVKKI
-         f8AEPpMzKfbnnSumP9SIgfX9TaGs/J2K8Pq2yfVn/ghs4VfAWeWKiPwgHYMhRkGyKlM7
-         SkTTc94087VYr55xLXFqEX8I3lNN8emywFQ0yg7mmkTGfwSZ4Zhfih1jLwsjuWKmLGBr
-         mFi+z2IgSRYNfJHR4+R07p3InyS9g4URT7BqXXr+TONudHe2ys5dj8aJeCKHn3LmnqFl
-         tsng==
-X-Forwarded-Encrypted: i=1; AJvYcCU6YkzkXO0BSpjpCJFHuyq1KPGHuVh8N+kHchdXaCNnWvgO5LIEN2Xq1W9JG6Vu13yWHQJvUAojF2k=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yyd0WksA+wzVvTyWS1o3PDcQE6/JzJb7SlN00eaFosw10eRDNLH
-	u5Hv6aupvryy6EApcUJIhRRtDS6h8LqlLX4htHl9+Ql7rkzMjfC239m4vFtrJFf4uts=
-X-Gm-Gg: ASbGncsXT/NCxJknpLbndCNapbqz6olwg9f9ogZQAQ83djEt4eNtyM6ORxZxhLm87cr
-	Xj2nuOZYYk4jeTma32BEel2AgKyWshgXoLsDCfdycuIGZg3h3i03+R6MbPXSqs8X7T9i4LWNNBw
-	dBtE/OnViC5lv1WHQhLrBejKi9J4tQrbEIH8jguappSWkbcJnAlEEELEZhMV6METpqzKB5KVLig
-	6FScIOILQ3AklJDZ8T0T77Gz3sZqKRXxKZ/TQYYCGWOb0aOutF7GmAshMzLnzUYFyyiQHX4mz6l
-	4ffAw7KW58PMzXk39DcDqrqFxhqUJHCa0l5isrrdznmEt48wrIq5JPD+ZW8PpWizzfZo++56RBD
-	aV50cWnLyGHnMdV6MUF/MTr89jB7kStZbTD1V8MzPAG7EprJdh2mjqf1n4nbHosVzQIY1TmIyZj
-	MBiq3IYLS9itXjwgBAIOMptJLkb6DSMvPpevLcE0MA
-X-Google-Smtp-Source: AGHT+IGS7Sez1Zsjkc45MiOR9FLqorMzZtLxO54c8lUefypNW27H7J3DhzlOczc822LiC/qSjQNUVA==
-X-Received: by 2002:a05:6e02:1805:b0:42e:d74:7260 with SMTP id e9e14a558f8ab-432f9071e91mr71017075ab.29.1761783014250;
-        Wed, 29 Oct 2025 17:10:14 -0700 (PDT)
-Received: from [172.22.22.234] (c-75-72-117-212.hsd1.mn.comcast.net. [75.72.117.212])
-        by smtp.gmail.com with ESMTPSA id 8926c6da1cb9f-5aea946de57sm5939330173.34.2025.10.29.17.10.10
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 29 Oct 2025 17:10:13 -0700 (PDT)
-Message-ID: <9bebde96-485f-4f30-b54c-be9e6c16f2d6@riscstar.com>
-Date: Wed, 29 Oct 2025 19:10:10 -0500
+        d=1e100.net; s=20230601; t=1761788082; x=1762392882;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=QSYKQjyLLpQ9U6VgF/+NC7c9Vfg3d8+LTPH7512lTcw=;
+        b=mdQShPcd+g7XxAV1urDe3EDR8L3OetNTLnBYq7Z7Xgw0qd9CN8/HkAtQBspJTXmps9
+         ouuH3JpxB/4hUawyoMh2enkNmUQc08T0KnjF/DGqs+AXi3zfozK4ggkfSf9kft0aTT/R
+         1vi4SdjdLDwMivmjzZcMpoGu5sXWaz9kc6Ozf9+W1O1M01oTge/WLYnixlYGDiaYmMnG
+         R1zSuobfPbBDI8UKTBlqYpI6+ie1XXOdNIkqylTbSJmtIp6ru11lTt8aHRMgJ69uYilT
+         LuhoQ3iq9fbp0pW6lzw9+Elha5QAdTqkAcf5hmmAT30moMeoJxNBBVGhNTDg3U8vEEhc
+         tPTw==
+X-Forwarded-Encrypted: i=1; AJvYcCUmmsy/CUyQ6eG5Ds2lnZww0cJJKng11gC7yNkZ1V09rR3vXsXOUTisyotoKiuNObmqBy8rO/qRD00=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxAYq36FjIcSdjMbzsWoJF9loZVTtfOhjm88tOb97TYIh6GJPGL
+	HWcU9V1mi0f6g3fmzMkzCOshFr4Y3fRogtGL+jkfG+lCsGu5eGMLE5m+ONsIlNMgM6Y1e6sgkdI
+	9B88yWulV+X6mnmgpSIHWT5UGGWAyVQE=
+X-Gm-Gg: ASbGncte3WUwUl1exhO4WbPtKT7kg/aPke2ggmbVlhBdpujcRqNgVFsMVAD7zs9KAwV
+	GDULUKEZJbCnemjNtMcY8YKWDzjcqdpW2HZabDo1OXTug9rr3IGNs+mhBnd6jgOEDznixANvmLF
+	BDz5l9ZyfYKY/JGVAaDY+x/UsTmaynHvGQiFI13Eb9X57Xd5qs3AGvv8cOoEsUUqyLcPDkCfJxI
+	3SnZHmstNSvNFP2O5KmG4lJjFHe/Cf63XPOlVh1iJaCbUGTy3Gkol+kF0w=
+X-Google-Smtp-Source: AGHT+IHMgJ4rKBE3uO85FiTJlzlAN942wrm4DmLjbiS0N7/wUCXXDdFNOdlxyLWqUIKEUXLtWtfDUoP0SJbFBB5hViQ=
+X-Received: by 2002:a05:690c:6a89:b0:784:841e:c03c with SMTP id
+ 00721157ae682-7863903404amr16292487b3.15.1761788081875; Wed, 29 Oct 2025
+ 18:34:41 -0700 (PDT)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 5/7] PCI: spacemit: introduce SpacemiT PCIe host driver
-To: Manivannan Sadhasivam <mani@kernel.org>
-Cc: robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
- bhelgaas@google.com, lpieralisi@kernel.org, kwilczynski@kernel.org,
- vkoul@kernel.org, kishon@kernel.org, dlan@gentoo.org, guodong@riscstar.com,
- pjw@kernel.org, palmer@dabbelt.com, aou@eecs.berkeley.edu, alex@ghiti.fr,
- p.zabel@pengutronix.de, christian.bruel@foss.st.com, shradha.t@samsung.com,
- krishna.chundru@oss.qualcomm.com, qiang.yu@oss.qualcomm.com,
- namcao@linutronix.de, thippeswamy.havalige@amd.com, inochiama@gmail.com,
- devicetree@vger.kernel.org, linux-pci@vger.kernel.org,
- linux-phy@lists.infradead.org, spacemit@lists.linux.dev,
- linux-riscv@lists.infradead.org, linux-kernel@vger.kernel.org
-References: <20251013153526.2276556-1-elder@riscstar.com>
- <20251013153526.2276556-6-elder@riscstar.com>
- <274772thveml3xq2yc7477b7lywzzwelbjtq3hiy4louc6cqom@o5zq66mqa27h>
- <4027609d-6396-44c0-a514-11d7fe8a5b58@riscstar.com>
- <paxtbwlvndtsmllhsdiovwqoes7aqwiltac6ah4ehrpkz554y6@uj5k3w5jxeln>
-Content-Language: en-US
-From: Alex Elder <elder@riscstar.com>
-In-Reply-To: <paxtbwlvndtsmllhsdiovwqoes7aqwiltac6ah4ehrpkz554y6@uj5k3w5jxeln>
+References: <20251029071435.88-1-kernel@airkyi.com> <20251029071435.88-11-kernel@airkyi.com>
+ <CAL411-o6mF71oBeRsJ-OPZNbLegn4iJ_ELN9xVdppTM3ssUPOw@mail.gmail.com>
+ <cc8b583a-77ec-4a7f-97cc-2d148f7fee9f@rock-chips.com> <e0c5bda3-7428-49e0-9955-fa23f1e4f35d@rock-chips.com>
+In-Reply-To: <e0c5bda3-7428-49e0-9955-fa23f1e4f35d@rock-chips.com>
+From: Peter Chen <hzpeterchen@gmail.com>
+Date: Thu, 30 Oct 2025 09:34:30 +0800
+X-Gm-Features: AWmQ_bnwd-FVfcBS5MP2Q8qG3_b5HlIQQto3HU-lVRe3FvjLA4i8HmYCB1URRXQ
+Message-ID: <CAL411-oXfvp-iqN+uRmFHijdmW=1omKwozKOoZ2shxukMHmwPg@mail.gmail.com>
+Subject: Re: [PATCH v8 10/10] arm64: dts: rockchip: rk3399-evb-ind: Add
+ support for DisplayPort
+To: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+Cc: Chaoyi Chen <kernel@airkyi.com>, Heikki Krogerus <heikki.krogerus@linux.intel.com>, 
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Heiko Stuebner <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>, 
+	Andy Yan <andy.yan@rock-chips.com>, Yubing Zhang <yubing.zhang@rock-chips.com>, 
+	Frank Wang <frank.wang@rock-chips.com>, Andrzej Hajda <andrzej.hajda@intel.com>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>, 
+	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, Jonas Karlman <jonas@kwiboo.se>, 
+	Jernej Skrabec <jernej.skrabec@gmail.com>, 
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, 
+	Thomas Zimmermann <tzimmermann@suse.de>, David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
+	Amit Sunil Dhamne <amitsd@google.com>, Dragan Simic <dsimic@manjaro.org>, Johan Jonker <jbx6244@gmail.com>, 
+	Diederik de Haas <didi.debian@cknow.org>, Peter Robinson <pbrobinson@gmail.com>, linux-usb@vger.kernel.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
+	linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251029_171015_539295_33E05656 
-X-CRM114-Status: GOOD (  59.52  )
+X-CRM114-CacheID: sfid-20251029_183443_236589_ABD4941A 
+X-CRM114-Status: GOOD (  19.18  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,243 +108,85 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 10/28/25 2:06 AM, Manivannan Sadhasivam wrote:
-> On Mon, Oct 27, 2025 at 05:24:38PM -0500, Alex Elder wrote:
->> On 10/26/25 11:55 AM, Manivannan Sadhasivam wrote:
->>> On Mon, Oct 13, 2025 at 10:35:22AM -0500, Alex Elder wrote:
->>>> Introduce a driver for the PCIe host controller found in the SpacemiT
->>>> K1 SoC.  The hardware is derived from the Synopsys DesignWare PCIe IP.
->>>> The driver supports three PCIe ports that operate at PCIe gen2 transfer
->>>> rates (5 GT/sec).  The first port uses a combo PHY, which may be
->>>> configured for use for USB 3 instead.
->>>>
->>>> Signed-off-by: Alex Elder <elder@riscstar.com>
->>>> ---
-
-. . .
-
->>>> +	ret = devm_regulator_get_enable(dev, "vpcie3v3-supply");
->>>> +	if (ret)
->>>> +		return dev_err_probe(dev, ret,
->>>> +				     "failed to get \"vpcie3v3\" supply\n");
->>>
->>> As mentioned in the bindings patch, you should rely on the PWRCTRL_SLOT driver
->>> to handle the power supplies. It is not yet handling the PERST#, but I have a
->>> series floating for that:
->>> https://lore.kernel.org/linux-pci/20250912-pci-pwrctrl-perst-v3-0-3c0ac62b032c@oss.qualcomm.com/
->>
->> I think that just means that I'll define a DT node compatible with
->> "pciclass,0604", and in that node I'll specify the vpcie3v3-supply
->> property.  That will cause that (pwrctrl) device to get and enable
->> the supply before the "real" PCIe device probes.
->>
-> 
-> Right.
-> 
->> And once your PERST work gets merged into the PCI power control
->> framework, a callback will allow that to assert PERST# as needed
->> surrounding power transitions.  (But I won't worry about that
->> for now.)
->>
-> 
-> I'm still nervous to say that you should not worry about it (about not
-> deasserting PERST# at the right time) as it goes against the PCIe spec.
-> Current pwrctrl platforms supporting PERST# are working fine due to sheer luck.
-> 
-> So it would be better to leave the pwrctrl driver out of the equation now and
-> enable the supply in this driver itself. Later, once my pwrctrl rework gets
-> merged, I will try to switch this driver to use it.
-
-As I understand it, PERST# should be only be deasserted after
-all power rails are known to be stable.
-
-This driver enables the regulator during probe, shortly
-before calling dw_pcie_host_init().  That function calls
-back to k1_pcie_init(), which enables clocks, deasserts
-resets, and initializes the PHY before it changes the
-PERST# state.
-
-By "changing the PERST# state" I mean it is asserted
-(driven low), then deasserted after 100 milliseconds
-(PCIE_T_PVPERL_MS).
-
-I have two questions on this:
-- You say the PCI spec talks about the "right time" to
-   deassert PERST# (relative to power).  Is that at all
-   related to PCIE_T_PVPERL_MS?
-- I notice that PERST# is in a deasserted state at the
-   time I assert it in this sequence.  Do you see any
-   reason I should assert it early as an initialization
-   step, or is asserting it and holding it there for
-   100 msec sufficient?
-
->> Is that right?
->>
->>>> +
->>>> +	/* Hold the PHY in reset until we start the link */
->>>> +	regmap_set_bits(k1->pmu, k1->pmu_off + PCIE_CLK_RESET_CONTROL,
->>>> +			APP_HOLD_PHY_RST);
->>>> +
->>>> +	k1->phy = devm_phy_get(dev, NULL);
->>>> +	if (IS_ERR(k1->phy))
->>>> +		return dev_err_probe(dev, PTR_ERR(k1->phy),
->>>> +				     "failed to get PHY\n");
->>>
->>> Once you move these properties to Root Port binding, you need to have per-Root
->>> Port parser. Again, you can refer the STM32 driver.
->>
->> I see getting the PHY in stm32_pcie_parse_port(), but nothing
->> about the supply (which you mentioned in the other message).
->>
-> 
-> To conclude, you should move forward with defining the PHY and supply properties
-> in the Root Port node, but parse/handle them in this driver itself.
-
-Got it.
-
->>>> +
->>>> +	k1->pci.dev = dev;
->>>> +	k1->pci.ops = &k1_pcie_ops;
->>>> +	dw_pcie_cap_set(&k1->pci, REQ_RES);
->>>> +
->>>> +	k1->pci.pp.ops = &k1_pcie_host_ops;
->>>> +	k1->pci.pp.num_vectors = MAX_MSI_IRQS;
->>>
->>> This driver is just using a single 'msi' vector, which can only support 32 MSIs.
->>> But MAX_MSI_IRQS is 256. So this looks wrong.
->>
->> In dw_pcie_host_init(), if unspecified, MSI_DEF_NUM_VECTORS=32 is
->> used for num_vectors.  If it is specified, only if the value
->> exceeds MAX_MSI_IRQS=256 is an error returned.
->>
-> 
-> Yes, because the driver trusts the glue drivers to provide the num_vectors if
-> they support more than 32.
-> 
->> In dw_handle_msi_irq(), "num_ctrls" is computed based on
->> num_vectors / MAX_MSI_IRQS_PER_CTRL=32.  A loop then
->> iterates over those "controllers"(?) to handle each bit
->> set in their corresponding register.
->>
->> This seems OK.  Can you explain why you think it's wrong?
->>
-> 
-> So both 'ctrl' and 'msi' IRQs are interrelated. Each 'ctrl' can have upto 32 MSI
-> vectors only. If your platform supports more than 32 MSI vectors, like 256, then
-> the platform DT should provide 8 'msi' IRQs.
-
-I have asked SpacemiT about this, specifically whether there
-are additional interrupts (I don't think there are), or if
-not that, additional registers to support MSI 32+ (see
-below).  In their downstream driver they handle interrupts
-differently.  I suspect num_vectors needs to be set to 32
-(or I'll leave it unset and take the default).
-
-
-In the DesignWare driver, there are up to 8 "ctrls", and each
-ctrl has 32 bit positions representing 32 MSI vectors.  Each
-can have an msi_irq defined.  An msi_irq is always set up for
-ctrl 0.
-
-For any ctrl with an msi_irq assigned, dw_pcie_msi_host_init()
-sets its interrupt handler to dw_chained_msi_isr(), which just
-calls dw_handle_msi_irq().
-
-The way dw_handle_msi_irq() works, a single ctrl apparently can
-handle up to 256 MSI vectors, as long as the block of 3 registers
-that manage the ctrl (ENABLE, MASK, and STATUS presumably) are
-consecutive in I/O memory for consecutive ctrls.
-
-
-I looked for other examples.  I see that "pcie-fu740.c", which
-supports compatible "sifive,fu740-pcie", sets num_vectors to
-MAX_MSI_IRQS, but "fu740-c000.dtsi" defines just one "msi"
-interrupt.  And "pci-dra7xx.c" seems to do something similar,
-and maybe "pcie-rcar-gen4.c" too.
-
-> Currently the driver is not strict about this requirement. I will send a patch
-> to print an error message if this requirement is not satisfied.
-> 
->>>> +
->>>> +	platform_set_drvdata(pdev, k1);
->>>> +
->>>
->>> For setting the correct runtime PM state of the controller, you should do:
->>>
->>> pm_runtime_set_active()
->>> pm_runtime_no_callbacks()
->>> devm_pm_runtime_enable()
->>
->> OK, that's easy enough.
->>
->>> This will fix the runtime PM hierarchy of PCIe chain (from host controller to
->>> client drivers). Otherwise, it will be broken.
->> Is this documented somewhere?  (It wouldn't surprise me if it
->> is and I just missed it.)
->>
-> 
-> Sorry no. It is on my todo list. But I'm getting motivation now.
-> 
->> This driver has as its origins some vendor code, and I simply
->> removed the runtime PM calls.  I didn't realize something would
->> be broken without making pm_runtime*() calls.
->>
-> 
-> It is the PM framework requirement to mark the device as 'active' to allow it to
-> participate in runtime PM. If you do not mark it as 'active' and 'enable' it,
-> the framework will not allow propagating the runtime PM changes before *this*
-> device. For instance, consider the generic PCI topology:
-> 
-> PCI controller (platform device)
-> 	|
-> PCI host bridge
-> 	|
-> PCI Root Port
-> 	|
-> PCI endpoint device
-> 
-> If the runtime PM is not enabled for the PCI Root Port, then if the PCI endpoint
-> device runtime suspends, it will not trigger runtime suspend for the Root Port
-> and also for the PCI controller. Also, since the runtime PM framework doesn't
-> have the visibility of the devices underneath the bus (like endpoint), it may
-> assume that no devices (children) are currently active and may trigger runtime
-> suspend of the Root Port (parent) even though the endpoint device could be
-> 'active'.
-
-So this basically marks this controller as a pass-through device that
-doesn't itself change state for runtime PM, but still communicates that
-somewhere at or below it there might be devices that do participate.
-  > For all these reasons, it is recommended to properly reflect the 
-runtime PM
-> status of the device even if the driver doesn't do anything special about it.
-> This is also the reason why I asked you to set pm_runtime_no_callbacks() since
-> this driver doesn't register any runtime PM ops.
-OK, I think understand now.
-
-> Since this controller driver is the top of the hierarchy, you may ask what could
-> happen if this driver runtime PM status is not reflected correctly. Well, most
-> controllers have some power domain associated with them controlled by the genpd
-> framework. If the runtime PM framework thinks that there are no devices
-> connected to the bus and the controller driver also doesn't have the state
-> enabled, it may disable the power domain associated with it. If that happens,
-> the PCI controller will not work and so the devices in the hierarchy.
-> 
-> Hope this clarifies.
-
-Yes, it helps a lot.  Thank you.
-
-					-Alex
-
-> - Mani
-> 
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gV2VkLCBPY3QgMjksIDIwMjUgYXQgNjozMuKAr1BNIENoYW95aSBDaGVuIDxjaGFveWkuY2hl
+bkByb2NrLWNoaXBzLmNvbT4gd3JvdGU6Cj4KPiBPbiAxMC8yOS8yMDI1IDY6MjEgUE0sIENoYW95
+aSBDaGVuIHdyb3RlOgo+Cj4gPiBIaSBQZXRlciwKPiA+Cj4gPiBPbiAxMC8yOS8yMDI1IDU6NDUg
+UE0sIFBldGVyIENoZW4gd3JvdGU6Cj4gPj4+ICsmaTJjNCB7Cj4gPj4+ICsgICAgICAgaTJjLXNj
+bC1yaXNpbmctdGltZS1ucyA9IDw0NzU+Owo+ID4+PiArICAgICAgIGkyYy1zY2wtZmFsbGluZy10
+aW1lLW5zID0gPDI2PjsKPiA+Pj4gKyAgICAgICBzdGF0dXMgPSAib2theSI7Cj4gPj4+ICsKPiA+
+Pj4gKyAgICAgICB1c2JjMDogdHlwZWMtcG9ydGNAMjIgewo+ID4+PiArICAgICAgICAgICAgICAg
+Y29tcGF0aWJsZSA9ICJmY3MsZnVzYjMwMiI7Cj4gPj4+ICsgICAgICAgICAgICAgICByZWcgPSA8
+MHgyMj47Cj4gPj4+ICsgICAgICAgICAgICAgICBpbnRlcnJ1cHQtcGFyZW50ID0gPCZncGlvMT47
+Cj4gPj4+ICsgICAgICAgICAgICAgICBpbnRlcnJ1cHRzID0gPFJLX1BBMiBJUlFfVFlQRV9MRVZF
+TF9MT1c+Owo+ID4+PiArICAgICAgICAgICAgICAgcGluY3RybC1uYW1lcyA9ICJkZWZhdWx0IjsK
+PiA+Pj4gKyAgICAgICAgICAgICAgIHBpbmN0cmwtMCA9IDwmdXNiYzBfaW50PjsKPiA+Pj4gKyAg
+ICAgICAgICAgICAgIHZidXMtc3VwcGx5ID0gPCZ2YnVzX3R5cGVjPjsKPiA+Pj4gKwo+ID4+PiAr
+ICAgICAgICAgICAgICAgdXNiX2NvbjogY29ubmVjdG9yIHsKPiA+Pj4gKyAgICAgICAgICAgICAg
+ICAgICAgICAgY29tcGF0aWJsZSA9ICJ1c2ItYy1jb25uZWN0b3IiOwo+ID4+PiArICAgICAgICAg
+ICAgICAgICAgICAgICBsYWJlbCA9ICJVU0ItQyI7Cj4gPj4+ICsgICAgICAgICAgICAgICAgICAg
+ICAgIGRhdGEtcm9sZSA9ICJkdWFsIjsKPiA+Pj4gKyAgICAgICAgICAgICAgICAgICAgICAgcG93
+ZXItcm9sZSA9ICJkdWFsIjsKPiA+Pj4gKyAgICAgICAgICAgICAgICAgICAgICAgdHJ5LXBvd2Vy
+LXJvbGUgPSAic2luayI7Cj4gPj4+ICsgICAgICAgICAgICAgICAgICAgICAgIG9wLXNpbmstbWlj
+cm93YXR0ID0gPDEwMDAwMDA+Owo+ID4+PiArICAgICAgICAgICAgICAgICAgICAgICBzaW5rLXBk
+b3MgPQo+ID4+PiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxQRE9fRklYRUQoNTAw
+MCwgMjUwMCwgUERPX0ZJWEVEX1VTQl9DT01NKT47Cj4gPj4+ICsgICAgICAgICAgICAgICAgICAg
+ICAgIHNvdXJjZS1wZG9zID0KPiA+Pj4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8
+UERPX0ZJWEVEKDUwMDAsIDE1MDAsIFBET19GSVhFRF9VU0JfQ09NTSk+Owo+ID4+PiArCj4gPj4+
+ICsgICAgICAgICAgICAgICAgICAgICAgIGFsdG1vZGVzIHsKPiA+Pj4gKyAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICBkaXNwbGF5cG9ydCB7Cj4gPj4+ICsgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICBzdmlkID0gL2JpdHMvIDE2IDwweGZmMDE+Owo+ID4+PiArICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdmRvID0gPDB4MDAwMDFjNDY+Owo+
+ID4+PiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIH07Cj4gPj4+ICsgICAgICAgICAg
+ICAgICAgICAgICAgIH07Cj4gPj4+ICsKPiA+Pj4gKyAgICAgICAgICAgICAgICAgICAgICAgcG9y
+dHMgewo+ID4+PiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICNhZGRyZXNzLWNlbGxz
+ID0gPDE+Owo+ID4+PiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICNzaXplLWNlbGxz
+ID0gPDA+Owo+ID4+PiArCj4gPj4+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcG9y
+dEAwIHsKPiA+Pj4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJlZyA9
+IDwwPjsKPiA+Pj4gKwo+ID4+PiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgdXNiY19oczogZW5kcG9pbnQgewo+ID4+PiArIHJlbW90ZS1lbmRwb2ludCA9IDwmdTJwaHkw
+X3R5cGVjX2hzPjsKPiA+Pj4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+IH07Cj4gPj4+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfTsKPiA+Pj4gKwo+ID4+
+IFdoeSBVU0IyIFBIWSBuZWVkcyB0byBiZSBub3RpZmllZCBmb3IgVHlwZS1DIGNvbm5lY3Rpb24/
+Cj4gPgo+ID4gSSB0aGluayB0aGUgVVNCLWNvbm5lY3RvciBiaW5kaW5nIHJlcXVpcmUgYSBwb3J0
+QDAgZm9yIEhpZ2ggU3BlZWQuICBTbyBJIGZpbGxlZCBpbiBVU0IyIFBIWSBoZXJlLiBBbmQgSSBo
+YXZlIGxvb2tlZCB1cCBib2FyZHMgd2l0aCB0aGUgc2FtZSB1c2FnZSwgYW5kIHNvbWUgb2YgdGhl
+IHJlc3VsdHMgYXJlIGFzIGZvbGxvd3M6Cj4gPgo+ID4gLSByazMzOTktZmlyZWZseS5kdHMKPiA+
+Cj4gPiAtIHJrMzM5OS1waW5lYm9vay1wcm8uZHRzCj4gPgo+ID4gLSByazMzOTktZWFpZGstNjEw
+LmR0cwo+ID4KCk9rYXkuICBNeSBxdWVzdGlvbiBpcyBiYXNpYzogVVNCMiBQSFkgc3VwcGxpZXMg
+RFAvRE0sIGFuZCB0aGUgRFAvRE0gaXMKc2hvcnQgZm9yIFR5cGUtQyBjb25uZWN0b3IsCmFuZCBu
+byBjb250cm9sIGlzIG5lZWRlZCBmb3IgVHlwZS1DIGFwcGxpY2F0aW9uLgpXaHkgaXMgdGhlcmUg
+YSByZW1vdGUtZW5kcG9pbnQgY29ubmVjdGlvbiBiZXR3ZWVuIFVTQjIgUEhZIGFuZCBUeXBlLUMg
+Y29ubmVjdG9yPwoKPiA+Cj4gPj4KPiA+Pj4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICBwb3J0QDEgewo+ID4+PiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+cmVnID0gPDE+Owo+ID4+PiArCj4gPj4+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICB1c2JjX3NzOiBlbmRwb2ludCB7Cj4gPj4+ICsgcmVtb3RlLWVuZHBvaW50ID0gPCZ0
+Y3BoeTBfdHlwZWNfc3M+Owo+ID4+PiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgfTsKPiA+Pj4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9Owo+ID4+PiAr
+Cj4gPj4+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcG9ydEAyIHsKPiA+Pj4gKyAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJlZyA9IDwyPjsKPiA+Pj4gKwo+
+ID4+PiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdXNiY19kcDogZW5k
+cG9pbnQgewo+ID4+PiArIHJlbW90ZS1lbmRwb2ludCA9IDwmdGNwaHkwX3R5cGVjX2RwPjsKPiA+
+Pj4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIH07Cj4gPj4+ICsgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgfTsKPiA+Pj4gKyAgICAgICAgICAgICAgICAgICAg
+ICAgfTsKPiA+Pj4gKyAgICAgICAgICAgICAgIH07Cj4gPj4+ICsgICAgICAgfTsKPiA+Pj4gK307
+Cj4gPj4+ICsKPiA+PiAuLi4uLgo+ID4+PiAgICZ1MnBoeTAgewo+ID4+PiAgICAgICAgICBzdGF0
+dXMgPSAib2theSI7Cj4gPj4+ICsKPiA+Pj4gKyAgICAgICBwb3J0IHsKPiA+Pj4gKyAgICAgICAg
+ICAgICAgIHUycGh5MF90eXBlY19oczogZW5kcG9pbnQgewo+ID4+PiArICAgICAgICAgICAgICAg
+ICAgICAgICByZW1vdGUtZW5kcG9pbnQgPSA8JnVzYmNfaHM+Owo+ID4+PiArICAgICAgICAgICAg
+ICAgfTsKPiA+Pj4gKyAgICAgICB9Owo+ID4+PiAgIH07Cj4gPj4+Cj4gPj4gVGhlcmUgaXMgbm8g
+c3dpdGNoIGFuZCBtdXgsIGhvdyB0byBjby13b3JrIHdpdGggVHlwZS1DPwo+ID4KPiA+IEkgY2hl
+Y2tlZCB0aGUgcGh5LXJvY2tjaGlwLWlubm8tdXNiMi5jIGJ1dCBkaWQgbm90IGZpbmQgYW55IHN3
+aXRjaCBvciBtdXguIERvZXMgdGhpcyBtZWFuIHRoYXQgd2UgbmVlZCB0byBpbXBsZW1lbnQgdGhl
+bT8gVGhhbmsgeW91Lgo+Cj4gV2FpdCBhIG1pbnV0ZSwgYWN0dWFsbHkgd2UgaGF2ZSBtdWx0aXBs
+ZSBoYXJkd2FyZSBpbnRlcmZhY2VzLCBvbmUgb2Ygd2hpY2ggaXMgVHlwZS1DLCBldmVudHVhbGx5
+IGNvbm5lY3RlZCB0byBVU0JEUFBIWSwgYW5kIHRoZSBvdGhlciBpcyBtaWNyby11c2IgY29ubmVj
+dGVkIHRvIFUyUEhZLgoKSSBhc3N1bWUgdGhlIE1pY3JvLVVTQiBjb25uZWN0b3IgZG9lcyBub3Qg
+dXNlIFR5cGUtQy9QRCBJQywgaXMgaXQKcmlnaHQ/IERvZXMgaXQgcmVsYXRlIHRvIHRoaXMgcGF0
+Y2g/CgpCZXN0IHJlZ2FyZHMsClBldGVyCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51
+eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFp
+bG1hbi9saXN0aW5mby9saW51eC1waHkK
