@@ -4,65 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3C68ECCF9F0
-	for <linux-phy@archiver.kernel.org>; Thu, 30 Oct 2025 18:51:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 10171CCF9E3
+	for <linux-phy@archiver.kernel.org>; Thu, 30 Oct 2025 20:35:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wevOQOs1NRemWpr9wuVgQXDrnREe4YvTxEuYL6KAta4=; b=aO3cFc3FaGFKT0
-	Zv40antqAhTpA1QRTMHiDKpcEoINgFbAE17ZKyLFO1CfUUww+wQYQ18UItC7p7KTnAhBvPr9aQnN+
-	aypIxzjpvUnSxh/2BCEsGk5Lf5zbNbARwV5T/0hY0G/41+WGU5gvw+f9hqitcnoD6af+3hKaeMHoP
-	z4sudjCfEXddoYvvUl57qDEYsh/G2nlXzPsxurV/RyB2IvQd0AoosO0K1f5+I3+4Jbs7xOZ88xirn
-	oVbJuPX2OE6UYZR8dHbTPI5k7K2iRDA9qcxu632glV7xxah+dpO7RBEBeDqDbr1b0ECSfRW7Wby6K
-	N7mWv3xpRBo0zI/IGp1g==;
+	List-Owner; bh=e9D82j8eXJfbsM4LvNzBVWkFpLzk8x5ZcPUCb7kXTw8=; b=IjBHx9PTH0pwaO
+	yARQeLKCFl8NGh3TrqLJGfwlvM+CGArmkV564yDwQL6cQC4GwYVzD9K/sjUNbJ4yXFN1/xkLafoNZ
+	kytFUE9Rxky5pKLhds51dizJEbc/tc9tOxUQn4B52B97Xe+HOfGqu6cP/BYrQvun0Ajyc0Fb6e5LP
+	TlKS12YC9kBB5wo1rupgRM8dvvlgsTPYnYJSaI/q8HbTvk5AcGYS3nQ9aNmOw68M43zMSQg34Aj7W
+	Bfj7vGWicSZzdi0+BdpRCAKgxO+oFvIKHtLW3iHJ0iNFBj/oJ3YvL3PsnCqJQbZawJL8/CDgEvvyv
+	YencVpmFFpUEWuYZFqkA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vEXk8-00000004dAx-3x3y;
-	Thu, 30 Oct 2025 18:51:28 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1vEZMW-00000004qNh-2f32;
+	Thu, 30 Oct 2025 20:35:12 +0000
+Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vEXk5-00000004dAO-1bXJ;
-	Thu, 30 Oct 2025 18:51:26 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 8881C61135;
-	Thu, 30 Oct 2025 18:51:24 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D9089C4CEF1;
-	Thu, 30 Oct 2025 18:51:23 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1761850284;
-	bh=FBCCR/Suue4f/BvtdNxzoMBDqCveM6h0dVOlYqgroZM=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=ppahJgI3Xpdl1cneURrtsR7KIjC+5T47cH07+HkmD4gKk5zbtBbcJ7WlO5RtFoDGB
-	 Agf3/JtDIpzT0bS9yvmQmQxyN6MEBMVjerBSWgqL7LqLflyyi0dPVIn1J4kE4PG/nK
-	 q6EAr0bkeofrSkl4D7UdD/TRn1xSWZFL1xIptv+Xv53fOu5x+4LIQ5w9sg9O4QfYGJ
-	 NrWp2HIU+xkwZmrtcL3sAtuDnpFkugmTDZMWKykXc5JTuelFgbnUz2heyaxVB6hgat
-	 6t/Bnpm073zqJY11MUlgRPwAkRGaNeLHmm5w9AABv+WHTMAeO+v3+QTSzn9kYAxZFs
-	 3RzUr4Zp4XgRA==
-Date: Thu, 30 Oct 2025 13:51:22 -0500
-From: Rob Herring <robh@kernel.org>
-To: Christian Marangi <ansuelsmth@gmail.com>
-Cc: Conor Dooley <conor@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Lorenzo Bianconi <lorenzo@kernel.org>,
-	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v3 2/4] dt-bindings: phy: Add documentation for Airoha
- AN7581 USB PHY
-Message-ID: <20251030185122.GA236742-robh@kernel.org>
-References: <20251029173713.7670-1-ansuelsmth@gmail.com>
- <20251029173713.7670-3-ansuelsmth@gmail.com>
- <20251029-mutual-scotch-7ca52e17da69@spud>
- <69025bc9.5d0a0220.1f0440.deb9@mx.google.com>
- <20251029-henna-easily-227513366e90@spud>
- <690266d4.050a0220.3a144c.eef7@mx.google.com>
+	id 1vEZMS-00000004qMj-3hHD;
+	Thu, 30 Oct 2025 20:35:10 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1761856485; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=gkFbZ213okCftKgeKgIIwNoz8BwA4nDP6MzCr0YARnjslWbS8bf914DjEU26RKsesu0i7gZx4BTfyz1xxAgNbQMZ+hOgVrrgyBtWW8VMvkD1hskA7r5/OPkLeophqY65m9j/4O4l1Y9P6SwMdoSy8qMjWiwQU/R+tvzDuY+qM+k=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1761856485; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=+Wkm4p/uQ+Vqh1gCohypGhEVZ1/dwpzLDQlD8Bjlil8=; 
+	b=Gnr8xIhUAPzV2qfRb1oLqyxVo5sYZWiNHe+DDVUg/CHGOPZtjMxE9wPQmju6dCohAzktipJKP2YWvL5u9mW/WZSFsCaUWNk3l1EeVNWUSTxJB/E4oPJwqb0FZwBiY+h8vUyCgRnA6upcsdDuS10nEcP/oYKeYkbfFBQxcXmxQAc=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=sjoerd@collabora.com;
+	dmarc=pass header.from=<sjoerd@collabora.com>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1761856485;
+	s=zohomail; d=collabora.com; i=sjoerd@collabora.com;
+	h=Message-ID:Subject:Subject:From:From:To:To:Cc:Cc:Date:Date:In-Reply-To:References:Content-Type:Content-Transfer-Encoding:MIME-Version:Message-Id:Reply-To;
+	bh=+Wkm4p/uQ+Vqh1gCohypGhEVZ1/dwpzLDQlD8Bjlil8=;
+	b=eE9lQAyjvcD+VsAFUGr3EGVzq1lb8anctgxPOFZUE+IyjqTE06JyDOHlv1dZWFZ+
+	GJu62lcDIBD5F/Za7yXXSFfmLJl7bfrpDY2VhzDNK66M909P75cdhk3qdwz/uSfrpMY
+	nlZLfK3BN7dj33lt0OVX5CDVbVQpWIkm0m886a44=
+Received: by mx.zohomail.com with SMTPS id 1761856481126419.9479106165559;
+	Thu, 30 Oct 2025 13:34:41 -0700 (PDT)
+Message-ID: <f2c3e18fe22284c4a5ab0ce085e2d17be844a0a8.camel@collabora.com>
+Subject: Re: [PATCH 10/15] arm64: dts: mediatek: mt7981b: Add Ethernet and
+ WiFi offload support
+From: Sjoerd Simons <sjoerd@collabora.com>
+To: Daniel Golle <daniel@makrotopia.org>
+Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+  Conor Dooley <conor+dt@kernel.org>, Matthias Brugger
+ <matthias.bgg@gmail.com>, AngeloGioacchino Del Regno	
+ <angelogioacchino.delregno@collabora.com>, Ryder Lee
+ <ryder.lee@mediatek.com>,  Jianjun Wang <jianjun.wang@mediatek.com>, Bjorn
+ Helgaas <bhelgaas@google.com>, Lorenzo Pieralisi	 <lpieralisi@kernel.org>,
+ Krzysztof =?UTF-8?Q?Wilczy=C5=84ski?=	 <kwilczynski@kernel.org>, Manivannan
+ Sadhasivam <mani@kernel.org>, Chunfeng Yun	 <chunfeng.yun@mediatek.com>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Lee Jones <lee@kernel.org>, Andrew Lunn <andrew+netdev@lunn.ch>,  "David S.
+ Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, Jakub
+ Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, Lorenzo
+ Bianconi <lorenzo@kernel.org>, Felix Fietkau <nbd@nbd.name>, 
+	kernel@collabora.com, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, 	linux-arm-kernel@lists.infradead.org,
+ linux-mediatek@lists.infradead.org, 	linux-pci@vger.kernel.org,
+ linux-phy@lists.infradead.org, netdev@vger.kernel.org,  Bryan Hinton
+ <bryan@bryanhinton.com>
+Date: Thu, 30 Oct 2025 21:34:28 +0100
+In-Reply-To: <aPEhiVdgkVLvF9Et@makrotopia.org>
+References: <20251016-openwrt-one-network-v1-0-de259719b6f2@collabora.com>
+	 <20251016-openwrt-one-network-v1-10-de259719b6f2@collabora.com>
+	 <aPEhiVdgkVLvF9Et@makrotopia.org>
+User-Agent: Evolution 3.56.2-5 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <690266d4.050a0220.3a144c.eef7@mx.google.com>
+X-ZohoMailClient: External
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20251030_133508_974225_88E77D84 
+X-CRM114-Status: GOOD (  17.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,63 +91,40 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Oct 29, 2025 at 08:11:10PM +0100, Christian Marangi wrote:
-> On Wed, Oct 29, 2025 at 06:35:51PM +0000, Conor Dooley wrote:
-> > On Wed, Oct 29, 2025 at 07:24:04PM +0100, Christian Marangi wrote:
-> > > On Wed, Oct 29, 2025 at 06:07:22PM +0000, Conor Dooley wrote:
-> > > > On Wed, Oct 29, 2025 at 06:37:10PM +0100, Christian Marangi wrote:
-> > > > > Add documentation for Airoha AN7581 USB PHY that describe the USB PHY
-> > > > > for the USB controller.
-> > > > > 
-> > > > > Airoha AN7581 SoC support a maximum of 2 USB port. The USB 2.0 mode is
-> > > > > always supported. The USB 3.0 mode is optional and depends on the Serdes
-> > > > > mode currently configured on the system for the relevant USB port.
-> > > > > 
-> > > > > The first USB port on the SoC can be both used for USB 3.0 operation or
-> > > > > Ethernet (HSGMII).
-> > > > > The second USB port on the SoC can be both used for USB 3.0 operation or
-> > > > > for an additional PCIe line.
-> > > > > 
-> > > > > Signed-off-by: Christian Marangi <ansuelsmth@gmail.com>
-> > > > > ---
-
-
-> > > > > +  '#phy-cells':
-> > > > > +    description: Describe if the referred PHY is the USB 2.0 PHY or USB 3.0 PHY.
-> > > > > +    const: 1
-> > > > 
-> > > > Which is which here?
-> > > >
-> > > 
-> > > Mhh I think I didn't understand here. #phy-cells describe the
-> > > parameters to be used for phys property in a different node.
-> > > 
-> > > The current usage would be
-> > > 
-> > > <&usb0_phy PHY_TYPE_USB2> for USB 2.0
-> > > or <&usb0_phy PHY_TYPE_USB3> for USB 3.0
-> > > 
-> > > This node expose 2 PHY that can be referenced by the single parameters.
-> > 
-> > Ah, I didn't know that the 1 cell variant here was type not index.
-> > 
-> 
-> Yes in the driver I'm maching for type not index as it's very confusing.
-> Any hint on better describe it on the schema? Maybe I can reword with
-> 
-> "Describe if the referred PHY is PHY_TYPE_USB2 or PHY_TYPE_USB3"
-
-"The cell contains the mode, PHY_TYPE_USB2 or PHY_TYPE_USB3, as defined 
-in dt-bindings/phy/phy.h."
-
-Rob
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gVGh1LCAyMDI1LTEwLTE2IGF0IDE3OjQ3ICswMTAwLCBEYW5pZWwgR29sbGUgd3JvdGU6Cj4g
+T24gVGh1LCBPY3QgMTYsIDIwMjUgYXQgMTI6MDg6NDZQTSArMDIwMCwgU2pvZXJkIFNpbW9ucyB3
+cm90ZToKPiA+IEFkZCBkZXZpY2UgdHJlZSBub2RlcyBmb3IgdGhlIEV0aGVybmV0IHN1YnN5c3Rl
+bSBvbiBNVDc5ODFCIFNvQywKPiA+IGluY2x1ZGluZzoKPiA+IC0gRXRoZXJuZXQgTUFDIGNvbnRy
+b2xsZXIgd2l0aCBkdWFsIEdNQUMgc3VwcG9ydAo+ID4gLSBXaXJlbGVzcyBFdGhlcm5ldCBEaXNw
+YXRjaCAoV0VEKQo+ID4gLSBTR01JSSBQSFkgY29udHJvbGxlcnMgZm9yIGhpZ2gtc3BlZWQgRXRo
+ZXJuZXQgaW50ZXJmYWNlcwo+ID4gLSBSZXNlcnZlZCBtZW1vcnkgcmVnaW9ucyBmb3IgV2lGaSBv
+ZmZsb2FkIHByb2Nlc3Nvcgo+ID4gCj4gPiBTaWduZWQtb2ZmLWJ5OiBTam9lcmQgU2ltb25zIDxz
+am9lcmRAY29sbGFib3JhLmNvbT4KPiA+IC0tLQo+ID4gwqBhcmNoL2FybTY0L2Jvb3QvZHRzL21l
+ZGlhdGVrL210Nzk4MWIuZHRzaSB8IDEzMyArKysrKysrKysrKysrKysrKysrKysrKysrKysrKysK
+PiA+IMKgMSBmaWxlIGNoYW5nZWQsIDEzMyBpbnNlcnRpb25zKCspCj4gPiAKPiA+IGRpZmYgLS1n
+aXQgYS9hcmNoL2FybTY0L2Jvb3QvZHRzL21lZGlhdGVrL210Nzk4MWIuZHRzaQo+ID4gYi9hcmNo
+L2FybTY0L2Jvb3QvZHRzL21lZGlhdGVrL210Nzk4MWIuZHRzaQo+ID4gaW5kZXggMTM5NTBmZTZl
+ODc2Ni4uYzg1ZmEwZGRmMmRhOCAxMDA2NDQKPiA+IC0tLSBhL2FyY2gvYXJtNjQvYm9vdC9kdHMv
+bWVkaWF0ZWsvbXQ3OTgxYi5kdHNpCj4gPiArKysgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL21lZGlh
+dGVrL210Nzk4MWIuZHRzaQoKW3NuaXBdCj4gPiAJCQltZGlvX2J1czogbWRpby1idXMgewo+ID4g
+KwkJCQkjYWRkcmVzcy1jZWxscyA9IDwxPjsKPiA+ICsJCQkJI3NpemUtY2VsbHMgPSA8MD47Cj4g
+PiArCj4gPiArCQkJCWludF9nYmVfcGh5OiBldGhlcm5ldC1waHlAMCB7Cj4gPiArCQkJCQljb21w
+YXRpYmxlID0gImV0aGVybmV0LXBoeS1pZWVlODAyLjMtYzIyIjsKPiA+ICsJCQkJCXJlZyA9IDww
+PjsKPiA+ICsJCQkJCXBoeS1tb2RlID0gImdtaWkiOwo+ID4gKwkJCQkJcGh5LWlzLWludGVncmF0
+ZWQ7Cj4gPiArCQkJCQludm1lbS1jZWxscyA9IDwmcGh5X2NhbGlicmF0aW9uPjsKPiA+ICsJCQkJ
+CW52bWVtLWNlbGwtbmFtZXMgPSAicGh5LWNhbC1kYXRhIjsKPiAKPiBQbGVhc2UgYWxzbyBkZWZp
+bmUgdGhlIHR3byBMRURzIGhlcmUgd2l0aCB0aGVpciBjb3JyZXNwb25kaW5nIChvbmx5KQo+IHBp
+bmN0cmwgb3B0aW9ucyBmb3IgZWFjaCBvZiB0aGVtLCB3aXRoICdzdGF0dXMgPSAiZGlzYWJsZWQi
+OycuIFRoaXMKPiBtYWtlcyBpdCBlYXNpZXIgZm9yIGJvYXJkcyB0byBtYWtlIHVzZSBvZiB0aGUg
+RXRoZXJuZXQgUEhZIGxlZHMgYnkganVzdAo+IHJlZmVyZW5jaW5nIHRoZSBMRUQgYW5kIHNldHRp
+bmcgdGhlIHN0YXR1cyB0byAnb2theScuCgpJIGxlZnQgdGhvc2Ugb3V0IG9uIHB1cnBvc2UgYXMg
+aSBjYW4ndCBlYXNpbHkgdmFsaWRhdGUgdGhlbS4gVGhleSdyZSBwcm9iYWJseSBiZXR0ZXIgdG8g
+YmUgYWRkZWQgb25jZQpzb21lb25lIGFkZHMgYSBib2FyZCB1c2luZyB0aGUgaHcgbGVkIGNvbnRy
+b2wuCgo+IAotLSAKU2pvZXJkIFNpbW9ucwpDb2xsYWJvcmEgTHRkLgoKLS0gCmxpbnV4LXBoeSBt
+YWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5p
+bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
