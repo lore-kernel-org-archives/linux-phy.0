@@ -4,108 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3017BCCF9F8
-	for <linux-phy@archiver.kernel.org>; Thu, 30 Oct 2025 08:53:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A6DB1CCF9F0
+	for <linux-phy@archiver.kernel.org>; Thu, 30 Oct 2025 08:57:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=JvM7SREV97xPhEHkROCqdtrlpxFwGPzFqjweIYJ19aA=; b=B+J4tjjvUZNYfK
-	FcZmasih32pXLVC2BYI4I822mnSHGBiEzLck9NJqdp4iMCy0xFD4cuVwOIT0GeMsaP85bm+U+lSg5
-	rm6idK9Kfhk7Mo/waC8JOwX8xdU6zquHFAGNUgSEcpTEEj3eHy5iOKFKwQUxmYxAn2uVSjY8Kh36u
-	Lscd0JodPoX57oRKATTqxQ19m4k3ZdaiPvf3dhC/ldu2cYw4WItb8DVz0bBOZZ0U4k+btfjIUv0zD
-	R3bGs+rMy+oS7irHTksV0rMdOVGtLsVuUcSZP8ErvOf5YKTgXYJnholC+gTwAgDpETHZPGpcu7pfv
-	X5w/obc9p9MLlNHjMDpg==;
+	List-Owner; bh=/oNUHtL3lkOTKLdm+C49x5eNvyD9z6Zf7ok0doN25jk=; b=meFaGnhRYH+DWo
+	/gkq0h1KopTsBQw6o96S5/8tFJoN0zd9+WJAUz4KpMpHE8QCL9v5n2Vr1P8Ze21lLf84uGbwfj5PZ
+	an7woTHsRKRLV/IbGrD1Uox0JMde1/0paaJ7oFer51eOFefq2zlcKwdpgGcJAr/VyZgGQ6rED7w+P
+	fX0MipKYi6VMsu5uAjjzk7LSJogL4txLOclASLG4fgPTeOKIUgBYG+YX6VXivNzXrhVzLhFo/5mOc
+	Tng/XP93A4OjNtptlLV3r0ex/fn0NzU5CAkJcoW+MdjXk91d14jGKy6vq3MnEx4WHNBq05mJ+oJT9
+	KWPc1n15NztmIBQN9NNQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vEOPN-00000003nol-3qzD
+	id 1vEOTN-00000003oHh-1piY
 	for linux-phy@archiver.kernel.org;
-	Thu, 30 Oct 2025 08:53:25 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	Thu, 30 Oct 2025 08:57:33 +0000
+Received: from mgamail.intel.com ([192.198.163.8])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vEOPM-00000003noQ-06CL
+	id 1vEOTK-00000003oGt-3C55
 	for linux-phy@lists.infradead.org;
-	Thu, 30 Oct 2025 08:53:25 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 59U7Yjkj1598878;
-	Thu, 30 Oct 2025 08:53:15 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:message-id:mime-version
-	:subject:to; s=qcppdkim1; bh=6t+6uWhyy591iuiYgwhisW/rL2lpx2ayTva
-	AMRuLfGQ=; b=n658eDytvOrCoDSW6MnyEvIJzRN+uXMsTsuh5oNSW3EO25wS3dx
-	gWiEofUmVWV1PSQFjj2IJ378kviy+joJ+EHTH2XW0+J+O+08RjqwTkJ0CZrDYDbK
-	tU0pi57EDAizxJSJj0LJxReeTwVTH8s0mgI/xCj91YGtC9W5I8FwnphHzH60BCFT
-	7qRmcIxmnPntS7hXzO+oxIwKDM3PVw68adB8g6lQJkiA9ICh2wr/S7YgO74IqCJl
-	5w+cnk/2AwnFmzJ2fJez9ppR5RgFijW0ZAluWHYGf396VvWTBxbzqAqEon8djhzJ
-	3p3a0POkj64UvORHsIdBrC3GOQ6kgBH13ZQ==
-Received: from aptaippmta01.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com [103.229.16.4])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4a3ta7ss5c-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 30 Oct 2025 08:53:15 +0000 (GMT)
-Received: from pps.filterd (APTAIPPMTA01.qualcomm.com [127.0.0.1])
-	by APTAIPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 59U8m8Mq027982;
-	Thu, 30 Oct 2025 08:48:08 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by APTAIPPMTA01.qualcomm.com (PPS) with ESMTPS id 4a0qmmec4j-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 30 Oct 2025 08:48:08 +0000
-Received: from APTAIPPMTA01.qualcomm.com (APTAIPPMTA01.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 59U8m8wP027967;
-	Thu, 30 Oct 2025 08:48:08 GMT
-Received: from cse-cd02-lnx.ap.qualcomm.com (cse-cd02-lnx.qualcomm.com [10.64.75.246])
-	by APTAIPPMTA01.qualcomm.com (PPS) with ESMTPS id 59U8m7Ie027964
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 30 Oct 2025 08:48:07 +0000
-Received: by cse-cd02-lnx.ap.qualcomm.com (Postfix, from userid 4438065)
-	id 10F42780; Thu, 30 Oct 2025 16:48:06 +0800 (CST)
-From: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
-To: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
-        krzk+dt@kernel.org, conor+dt@kernel.org, jingoohan1@gmail.com,
-        mani@kernel.org, lpieralisi@kernel.org, kwilczynski@kernel.org,
-        bhelgaas@google.com, johan+linaro@kernel.org, vkoul@kernel.org,
-        kishon@kernel.org, neil.armstrong@linaro.org, abel.vesa@linaro.org,
-        kw@linux.com
-Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
-        linux-phy@lists.infradead.org, qiang.yu@oss.qualcomm.com,
-        quic_krichai@quicinc.com, quic_vbadigan@quicinc.com,
-        Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
-Subject: [PATCH v2 0/4] Add PCIe3 and PCIe5 support for HAMOA-IOT-EVK board
-Date: Thu, 30 Oct 2025 16:48:00 +0800
-Message-Id: <20251030084804.1682744-1-ziyue.zhang@oss.qualcomm.com>
-X-Mailer: git-send-email 2.34.1
+	Thu, 30 Oct 2025 08:57:31 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1761814651; x=1793350651;
+  h=from:to:cc:subject:date:message-id:mime-version:
+   content-transfer-encoding;
+  bh=Ux7Un8JsfcaMErqx2EFkr3IcsMGkW80ic7GNusJRyp8=;
+  b=HQAbk+0ustl14vRjhnmgyMOlgdXkG+79aQNvE4XFtf1ITfWZ7OTzxgpJ
+   yauwpqrpLQ/sgkj2CV4D0skEuxx2QS66y6JKOHPikP78JIcpOiVgRuHf9
+   rSfS+FMZBn1k85A/dlp7Pdk1TMD001xorOci4ckDEJ8A50BchaLHn/MQU
+   zMNlPHzVFsLyZ7c2q/rzGrH4igSRD+tE1WiCVnEtU1/o8qAWu+ZMWtZB9
+   RrFhJ2DWyOymfSYVl8QC1eQU5ZVtlpH8IBLGE1v1p/YBISy0Mjoh5LMBY
+   J1lPY/x4Vex2+631r1K07A2CODHGj3gTqx8FOKdKZCnhEMX2JdQ3GMZS7
+   g==;
+X-CSE-ConnectionGUID: mWSL8PEWTuS1jfWh4RHK3Q==
+X-CSE-MsgGUID: tyV1o4HbTzO60DPkd47gJQ==
+X-IronPort-AV: E=McAfee;i="6800,10657,11597"; a="81577826"
+X-IronPort-AV: E=Sophos;i="6.19,266,1754982000"; 
+   d="scan'208";a="81577826"
+Received: from fmviesa006.fm.intel.com ([10.60.135.146])
+  by fmvoesa102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 30 Oct 2025 01:57:30 -0700
+X-CSE-ConnectionGUID: 9zJffJcUT9a/NzOOnZysSw==
+X-CSE-MsgGUID: Pu2LX2xrS7an1fmDjskt9w==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.19,266,1754982000"; 
+   d="scan'208";a="185778312"
+Received: from bergbenj-mobl1.ger.corp.intel.com (HELO kekkonen.fi.intel.com) ([10.245.245.176])
+  by fmviesa006-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 30 Oct 2025 01:57:28 -0700
+Received: from punajuuri.localdomain (unknown [192.168.240.130])
+	by kekkonen.fi.intel.com (Postfix) with ESMTP id 232F1121E1E;
+	Thu, 30 Oct 2025 10:57:25 +0200 (EET)
+Received: from sailus by punajuuri.localdomain with local (Exim 4.98.2)
+	(envelope-from <sakari.ailus@linux.intel.com>)
+	id 1vEOTF-00000007wT9-0LpV;
+	Thu, 30 Oct 2025 10:57:25 +0200
+Organization: Intel Finland Oy - BIC 0357606-4 - c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo
+From: Sakari Ailus <sakari.ailus@linux.intel.com>
+To: linux-phy@lists.infradead.org
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	David Lechner <dlechner@baylibre.com>,
+	Linus Walleij <linus.walleij@linaro.org>,
+	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>,
+	Johan Hovold <johan+linaro@kernel.org>
+Subject: [PATCH RESEND 1/2] phy: motorola: phy-mapphone-mdm6600: Remove redundant pm_runtime_mark_last_busy() calls
+Date: Thu, 30 Oct 2025 10:57:24 +0200
+Message-ID: <20251030085725.1893039-1-sakari.ailus@linux.intel.com>
+X-Mailer: git-send-email 2.47.3
 MIME-Version: 1.0
-X-QCInternal: smtphost
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Authority-Analysis: v=2.4 cv=aaVsXBot c=1 sm=1 tr=0 ts=6903277b cx=c_pps
- a=nuhDOHQX5FNHPW3J6Bj6AA==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
- a=x6icFKpwvdMA:10 a=VkNPw1HP01LnGYTKEx00:22 a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8
- a=QeMu0tCiC60fgC08giYA:9 a=nl4s5V0KI7Kw-pW0DWrs:22 a=pHzHmUro8NiASowvMSCR:22
- a=xoEH_sTeL_Rfw54TyV31:22
-X-Proofpoint-ORIG-GUID: tBEy9dmEZO1fn0qvzrmEOK2lB2d4RNi3
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDMwMDA3MiBTYWx0ZWRfXzGkp6NWNom4O
- nvtiEmS3Ngw3+ASEh1F9sPh1InDUYpdXEIB9xBT6jOLVSfmbYVgY/k8K3fQXZ/1GA/k5eZN9a8z
- V70bLwJnsM5U5t5kuXQmtVgiiduizkCWVrqfqL5TE5yuasMtvGOqJ+VN1tekISc2Kx35OaJuVwZ
- +o48vRx7rMXhi2bKStoo1IXm/DFGwAZsJw8QnETL7FgIim9LJiVwumWLttNZR6qZc4h+k0j3FUL
- W14uR0BEeUhCZUc9UFYRm782r6MzwLmprd9N+/MISbtkh/OS5jUIhhLYBnBvOw838T1vlJ4p0L3
- 8SGg7ER3IDpG02iDRL26Cqs5k7wt3T+OzMyA7OPElkxL8ausfOwV3KVeXVBmyzNdM4yZ+n6ZkA9
- n9Louvn3xK7HveEM1svXIs0Hgh3UOQ==
-X-Proofpoint-GUID: tBEy9dmEZO1fn0qvzrmEOK2lB2d4RNi3
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
- definitions=2025-10-30_02,2025-10-29_03,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- adultscore=0 priorityscore=1501 malwarescore=0 clxscore=1015 impostorscore=0
- suspectscore=0 spamscore=0 phishscore=0 lowpriorityscore=0 bulkscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2510240001 definitions=main-2510300072
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251030_015324_186001_67C7588E 
-X-CRM114-Status: UNSURE (   9.35  )
+X-CRM114-CacheID: sfid-20251030_015730_848028_BD982C02 
+X-CRM114-Status: UNSURE (   8.81  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -123,35 +96,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This patch series adds support for PCIe3 and PCIe5 on the HAMOA-IOT-EVK
-board.
+pm_runtime_put_autosuspend(), pm_runtime_put_sync_autosuspend(),
+pm_runtime_autosuspend() and pm_request_autosuspend() now include a call
+to pm_runtime_mark_last_busy(). Remove the now-reduntant explicit call to
+pm_runtime_mark_last_busy().
 
-PCIe3 is a Gen4 x8 slot intended for external GPU.
-PCIe5 is a Gen3 x2 slot designed for external modem connectivity.
-
-To enable these interfaces, the series introduces the necessary device
-tree nodes and associated regulator definitions to ensure proper power
-sequencing and functionality.
-
+Signed-off-by: Sakari Ailus <sakari.ailus@linux.intel.com>
 ---
-Changes in v2:
-- Move PMIC gpio pins to patch set 4 (Krishna)
-- Link to v1: https://lore.kernel.org/all/20250922075509.3288419-1-ziyue.zhang@oss.qualcomm.com/
+ drivers/phy/motorola/phy-mapphone-mdm6600.c | 2 --
+ 1 file changed, 2 deletions(-)
 
-Ziyue Zhang (4):
-  arm64: dts: qcom: Add PCIe 5 support for HAMOA-IOT-SOM platform
-  arm64: dts: qcom: Add PCIe 5 wwan regulator for HAMOA-IOT-EVK board
-  arm64: dts: qcom: Add PCIe 3 support for HAMOA-IOT-SOM platform
-  arm64: dts: qcom: Add PCIe 3 regulators for HAMOA-IOT-EVK board
-
- arch/arm64/boot/dts/qcom/hamoa-iot-evk.dts  | 83 +++++++++++++++++++++
- arch/arm64/boot/dts/qcom/hamoa-iot-som.dtsi | 79 ++++++++++++++++++++
- 2 files changed, 162 insertions(+)
-
-
-base-commit: 131f3d9446a6075192cdd91f197989d98302faa6
+diff --git a/drivers/phy/motorola/phy-mapphone-mdm6600.c b/drivers/phy/motorola/phy-mapphone-mdm6600.c
+index fd0e0cd1c1cf..c82826bd2832 100644
+--- a/drivers/phy/motorola/phy-mapphone-mdm6600.c
++++ b/drivers/phy/motorola/phy-mapphone-mdm6600.c
+@@ -248,7 +248,6 @@ static irqreturn_t phy_mdm6600_wakeirq_thread(int irq, void *data)
+ 	}
+ 
+ 	/* Just wake-up and kick the autosuspend timer */
+-	pm_runtime_mark_last_busy(ddata->dev);
+ 	pm_runtime_put_autosuspend(ddata->dev);
+ 
+ 	return IRQ_HANDLED;
+@@ -616,7 +615,6 @@ static int phy_mdm6600_probe(struct platform_device *pdev)
+ 		error = PTR_ERR(ddata->phy_provider);
+ 
+ idle:
+-	pm_runtime_mark_last_busy(ddata->dev);
+ 	pm_runtime_put_autosuspend(ddata->dev);
+ 
+ cleanup:
 -- 
-2.34.1
+2.47.3
 
 
 -- 
