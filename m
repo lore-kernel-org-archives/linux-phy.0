@@ -4,58 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E8516CCF9F8
-	for <linux-phy@archiver.kernel.org>; Thu, 30 Oct 2025 16:41:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B11CBCCF9F8
+	for <linux-phy@archiver.kernel.org>; Thu, 30 Oct 2025 17:50:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QLqtQuYCG7D+xkBEBKfBuAyay5/ew168D2PUFADkUQQ=; b=ntP+Fx01PaiIQF
-	z73qqd0A5clON+jceZSSTnYKGCVtAUeRwE1IJrNFKcfdevxuTp9SXXspCXLw6caMcUdm7NLh3foQd
-	Z1uFOmZrlOWyTU3v57wfjO9aiUf3/13ClqrL5VCFrcb2PJNh5BiwwTD1G/lJzxwZYj8HR38esQ/NU
-	uosILMin4a5A8tWWyKVle6SagN2yhgev2E3jm2rUpJi4/Sm2dp3sWUYpD05lO6Cl+BYuKyCYpaBfk
-	xm7b3jP0Ervz81CXH5lQQJxa+FE4tyE26jwYTQRgLhH1xMgKwKyo+ZRjs6AS1CYv8HfCqm9o5VPfM
-	iAXxTCb0Oi2wzcGUrtsA==;
+	List-Owner; bh=Pa6wTyzA8WFCRBuqDOIKNRhoU1wpmM/WWcZ1Gc65PH0=; b=r09u6tObDBqR/C
+	p6VjGR8EWgg2Lebl23MwOM4RZ0xvn0MCuBEra2LCnzB3M8NL0gl0CsIDwoJBfToUwCCE37KBPcNbB
+	YabeGzHzRRv3jVK+Pj1UOhLDNDTtVZLdUGLam16Xzgqh5ys4/aTqVEDoMO7RJMNMSBciLUV76QrEQ
+	Dkm3B02wH9Y/wQwdPMXIEk3+6yoLwX3U5LEzP75mOPXoXAKFim18ljnJdzDXg5uFg+fQzdR/x4dz6
+	Gwmg3pM4LY0cpIjv/PClWalXn1cxzYAy9OhzMCGnVCM0xcL9Skjtynq5PTn8S1xNOQe1Of+gFl7L0
+	v0WQNb6BTNZaL911KHYg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vEViJ-00000004TXp-2H1S;
-	Thu, 30 Oct 2025 16:41:27 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1vEWms-00000004YaX-48GE;
+	Thu, 30 Oct 2025 17:50:14 +0000
+Received: from hall.aurel32.net ([2001:bc8:30d7:100::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vEViG-00000004TXQ-1rHQ;
-	Thu, 30 Oct 2025 16:41:26 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id C0A1441B14;
-	Thu, 30 Oct 2025 16:41:23 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A17F5C4CEF1;
-	Thu, 30 Oct 2025 16:41:15 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1761842483;
-	bh=aIoUwknKACszK3iv7HnkpaK0g2nYzhodMj6uyK4R4cI=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=OFfTgDYUwwtk9a3MXmhN+C5QZeQcKowOvQ7JtdxMp86xa7GEim8ms4eA76JdlZfHS
-	 eFhBevKSCYCx6yMiJ4R3yNh1fEKAOckpxYlBhI00S+GuEHbN3tDMHcHFjIQ1269XM1
-	 0162sMPeIP15mj38QzG6640TZdgvl0DyZO+zAfpQ7ma2P8O29xh8ZpHLOZ/sL32xe0
-	 iqWWZ9MUG/8ewMu0jydmDJAMYeZyKtiWVz81dJNlG9Bj+piDGu94CB0PcteyGg6uJe
-	 yPXStu00GL1l1YREbznHaQFRp4m3fyjHtsoP+kDTeTeOt9XtrZbecyLXwkT6Ds1J5w
-	 cFFbUk6PUfVZg==
-Date: Thu, 30 Oct 2025 22:11:12 +0530
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: Johannes Erdfelt <johannes@erdfelt.com>, 
-	Aurelien Jarno <aurelien@aurel32.net>
-Cc: Alex Elder <elder@riscstar.com>, robh@kernel.org, krzk+dt@kernel.org, 
-	conor+dt@kernel.org, bhelgaas@google.com, lpieralisi@kernel.org, 
-	kwilczynski@kernel.org, vkoul@kernel.org, kishon@kernel.org, dlan@gentoo.org, 
-	guodong@riscstar.com, pjw@kernel.org, palmer@dabbelt.com, aou@eecs.berkeley.edu, 
-	alex@ghiti.fr, p.zabel@pengutronix.de, christian.bruel@foss.st.com, 
-	shradha.t@samsung.com, krishna.chundru@oss.qualcomm.com, qiang.yu@oss.qualcomm.com, 
-	namcao@linutronix.de, thippeswamy.havalige@amd.com, inochiama@gmail.com, 
-	devicetree@vger.kernel.org, linux-pci@vger.kernel.org, linux-phy@lists.infradead.org, 
-	spacemit@lists.linux.dev, linux-riscv@lists.infradead.org, linux-kernel@vger.kernel.org
+	id 1vEWmp-00000004YY6-3BGS;
+	Thu, 30 Oct 2025 17:50:14 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=aurel32.net
+	; s=202004.hall; h=In-Reply-To:Content-Type:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Content-Transfer-Encoding:From:Reply-To:
+	Subject:Content-ID:Content-Description:X-Debbugs-Cc;
+	bh=JSgLBP4N8SNl1gTOFG6TDDGGZeq/ZcICS9giX00KL1s=; b=se09qJUR+afv9LNen0zoku4b/N
+	sK1LMhglahuW/MrFGN+kga6O0ok8UDIwm1bX0WRn7t+GXuXg/TLvNS2gr1fKj6qsaGcaIQK/jdbA9
+	0QCH0cLX7eh7V1Hzx0M64sme0FCudCaCA+UE5/9Dqyfg/CXO99w4Nac3l70T0xzQTCIPHlWgDC2/n
+	rxGbQpS0ePc8qNiReX2L0XfHkEIvYKOQDYDd0dgCSmLHzTijJ8RxKrRIjzGw8GQB6CU4fcwwxkR6q
+	k5cgghZuOt3rvmV/Kl+TWKXkX7BzRHnQevSb+mII+Bi4FWnYTmmkIjHzXl1gdK6zAhq0HLUPOwgZw
+	EXG45G+A==;
+Received: from [2a01:e34:ec5d:a741:1ee1:92ff:feb4:5ec0] (helo=ohm.rr44.fr)
+	by hall.aurel32.net with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.98.2)
+	(envelope-from <aurelien@aurel32.net>)
+	id 1vEWmI-00000002ZzI-1jJy;
+	Thu, 30 Oct 2025 18:49:38 +0100
+Date: Thu, 30 Oct 2025 18:49:37 +0100
+From: Aurelien Jarno <aurelien@aurel32.net>
+To: Manivannan Sadhasivam <mani@kernel.org>
+Cc: Johannes Erdfelt <johannes@erdfelt.com>,
+	Alex Elder <elder@riscstar.com>, robh@kernel.org,
+	krzk+dt@kernel.org, conor+dt@kernel.org, bhelgaas@google.com,
+	lpieralisi@kernel.org, kwilczynski@kernel.org, vkoul@kernel.org,
+	kishon@kernel.org, dlan@gentoo.org, guodong@riscstar.com,
+	pjw@kernel.org, palmer@dabbelt.com, aou@eecs.berkeley.edu,
+	alex@ghiti.fr, p.zabel@pengutronix.de, christian.bruel@foss.st.com,
+	shradha.t@samsung.com, krishna.chundru@oss.qualcomm.com,
+	qiang.yu@oss.qualcomm.com, namcao@linutronix.de,
+	thippeswamy.havalige@amd.com, inochiama@gmail.com,
+	devicetree@vger.kernel.org, linux-pci@vger.kernel.org,
+	linux-phy@lists.infradead.org, spacemit@lists.linux.dev,
+	linux-riscv@lists.infradead.org, linux-kernel@vger.kernel.org
 Subject: Re: [PATCH v2 0/7] Introduce SpacemiT K1 PCIe phy and host controller
-Message-ID: <5kwbaj2eqr4imcaoh6otqo7huuraqhodxh4dbwc33vqpi5j5yq@ueufnqetrg2m>
+Message-ID: <aQOlMcI9jTdd7QNb@aurel32.net>
+Mail-Followup-To: Manivannan Sadhasivam <mani@kernel.org>,
+	Johannes Erdfelt <johannes@erdfelt.com>,
+	Alex Elder <elder@riscstar.com>, robh@kernel.org,
+	krzk+dt@kernel.org, conor+dt@kernel.org, bhelgaas@google.com,
+	lpieralisi@kernel.org, kwilczynski@kernel.org, vkoul@kernel.org,
+	kishon@kernel.org, dlan@gentoo.org, guodong@riscstar.com,
+	pjw@kernel.org, palmer@dabbelt.com, aou@eecs.berkeley.edu,
+	alex@ghiti.fr, p.zabel@pengutronix.de, christian.bruel@foss.st.com,
+	shradha.t@samsung.com, krishna.chundru@oss.qualcomm.com,
+	qiang.yu@oss.qualcomm.com, namcao@linutronix.de,
+	thippeswamy.havalige@amd.com, inochiama@gmail.com,
+	devicetree@vger.kernel.org, linux-pci@vger.kernel.org,
+	linux-phy@lists.infradead.org, spacemit@lists.linux.dev,
+	linux-riscv@lists.infradead.org, linux-kernel@vger.kernel.org
 References: <20251013153526.2276556-1-elder@riscstar.com>
  <aPEhvFD8TzVtqE2n@aurel32.net>
  <92ee253f-bf6a-481a-acc2-daf26d268395@riscstar.com>
@@ -63,12 +81,14 @@ References: <20251013153526.2276556-1-elder@riscstar.com>
  <20251028184250.GM15521@sventech.com>
  <82848c80-15e0-4c0e-a3f6-821a7f4778a5@riscstar.com>
  <20251028204832.GN15521@sventech.com>
+ <5kwbaj2eqr4imcaoh6otqo7huuraqhodxh4dbwc33vqpi5j5yq@ueufnqetrg2m>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20251028204832.GN15521@sventech.com>
+In-Reply-To: <5kwbaj2eqr4imcaoh6otqo7huuraqhodxh4dbwc33vqpi5j5yq@ueufnqetrg2m>
+User-Agent: Mutt/2.2.13 (2024-03-09)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251030_094125_166544_3776CBF9 
-X-CRM114-Status: GOOD (  25.16  )
+X-CRM114-CacheID: sfid-20251030_105012_239912_FF0E9B9B 
+X-CRM114-Status: GOOD (  30.71  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,48 +100,83 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-KyBBdXJlbGllbgoKT24gVHVlLCBPY3QgMjgsIDIwMjUgYXQgMDE6NDg6MzJQTSAtMDcwMCwgSm9o
-YW5uZXMgRXJkZmVsdCB3cm90ZToKPiBPbiBUdWUsIE9jdCAyOCwgMjAyNSwgQWxleCBFbGRlciA8
-ZWxkZXJAcmlzY3N0YXIuY29tPiB3cm90ZToKPiA+IE9uIDEwLzI4LzI1IDE6NDIgUE0sIEpvaGFu
-bmVzIEVyZGZlbHQgd3JvdGU6Cj4gPiA+IEkgaGF2ZSBiZWVuIHRlc3RpbmcgdGhpcyBwYXRjaHNl
-dCByZWNlbnRseSBhcyB3ZWxsLCBidXQgb24gYW4gT3JhbmdlIFBpCj4gPiA+IFJWMiBib2FyZCBp
-bnN0ZWFkIChhbmQgYW4gZXh0cmEgUlYyIHNwZWNpZmljIHBhdGNoIHRvIGVuYWJsZSBwb3dlciB0
-bwo+ID4gPiB0aGUgTS4yIHNsb3QpLgo+ID4gPiAKPiA+ID4gSSByYW4gaW50byB0aGUgc2FtZSBz
-eW1wdG9tcyB5b3UgaGFkICgiUUlEIDAgdGltZW91dCIgYWZ0ZXIgYWJvdXQgNjAKPiA+ID4gc2Vj
-b25kcykuIEhvd2V2ZXIsIEknbSB1c2luZyBhbiBJbnRlbCA2MDBwLiBJIGNhbiBjb25maXJtIG15
-IE5WTUUgZHJpdmUKPiA+ID4gc2VlbXMgdG8gd29yayBmaW5lIHdpdGggdGhlICJwY2llX2FzcG09
-b2ZmIiB3b3JrYXJvdW5kIGFzIHdlbGwuCj4gPiAKPiA+IEkgZG9uJ3Qgc2VlIHRoaXMgcHJvYmxl
-bSwgYW5kIGhhdmVuJ3QgdHJpZWQgdG8gcmVwcm9kdWNlIGl0IHlldC4KPiA+IAo+ID4gTWFuaSB0
-b2xkIG1lIEkgbmVlZGVkIHRvIGFkZCB0aGVzZSBsaW5lcyB0byBlbnN1cmUgdGhlICJydW50aW1l
-Cj4gPiBQTSBoaWVyYXJjaHkgb2YgUENJZSBjaGFpbiIgd29uJ3QgYmUgImJyb2tlbiI6Cj4gPiAK
-PiA+IAlwbV9ydW50aW1lX3NldF9hY3RpdmUoKQo+ID4gCXBtX3J1bnRpbWVfbm9fY2FsbGJhY2tz
-KCkKPiA+IAlkZXZtX3BtX3J1bnRpbWVfZW5hYmxlKCkKPiA+IAo+ID4gSnVzdCBvdXQgb2YgY3Vy
-aW9zaXR5LCBjb3VsZCB5b3UgdHJ5IHdpdGggdGhvc2UgbGluZXMgYWRkZWQKPiA+IGp1c3QgYmVm
-b3JlIHRoZXNlIGFzc2lnbm1lbnRzIGluIGsxX3BjaWVfcHJvYmUoKT8KPiA+IAo+ID4gCWsxLT5w
-Y2kuZGV2ID0gZGV2Owo+ID4gCWsxLT5wY2kub3BzID0gJmsxX3BjaWVfb3BzOwo+ID4gCWR3X3Bj
-aWVfY2FwX3NldCgmazEtPnBjaSwgUkVRX1JFUyk7Cj4gPiAKPiA+IEkgZG91YnQgaXQgd2lsbCBm
-aXggd2hhdCB5b3UncmUgc2VlaW5nLCBidXQgYXQgdGhlIG1vbWVudCBJJ20KPiA+IHdvcmtpbmcg
-b24gc29tZXRoaW5nIGVsc2UuCj4gCj4gVW5mb3J0dW5hdGVseSB0aGVyZSBpcyBubyBkaWZmZXJl
-bmNlIHdpdGggdGhlIHJ1bnRpbWUgUE0gaGllcmFyY2h5Cj4gYWRkaXRpb25zLgo+IAoKVGhlc2Ug
-YXJlIG5vdCBzdXBwb3NlZCB0byBmaXggdGhlIGlzc3VlcyB5b3Ugd2VyZSBmYWNpbmcuIEkgZGlz
-Y3Vzc2VkIHdpdGggQWxleApvZmZsaW5lIGFuZCBmaWd1cmVkIG91dCB0aGF0IEwxIHdvcmtzIGZp
-bmUgb24gaGlzIEJQSS1GMyBib2FyZCB3aXRoIGEgTlZNZSBTU0QuCgpBbmQgSSBiZWxpZXZlLCBB
-dXJlbGllbiBpcyBhbHNvIHVzaW5nIHRoYXQgc2FtZSBib2FyZCwgYnV0IHdpdGggZGlmZmVyZW50
-ClNTRHMuIEJ1dCB3aGF0IGlzIHB1enpsaW5nIG1lIGlzLCBMMSBpcyBicmVha2luZyBBdXJlbGll
-bidzIHNldHVwIHdpdGggMyBTU0RzCmZyb20gZGlmZmVyZW50IHZlbmRvcnMuIEl0IGFwcGFyZW50
-bHkgd29ya3MgZmluZSBvbiBBbGV4J3Mgc2V0dXAuIFNvIGl0IHNvbWVob3cKY29uZmlybXMgdGhh
-dCBSb290IFBvcnQgc3VwcG9ydHMgYW5kIGJlaGF2ZXMgY29ycmVjdGx5IHdpdGggTDEuIEJ1dCBh
-dCB0aGUgc2FtZQp0aW1lLCBJIGNhbm5vdCBqdXN0IHNheSB3aXRob3V0IGV2aWRlbmNlIHRoYXQg
-TDEgaXMgYnJva2VuIG9uIGFsbCB0aGVzZSBTU0RzCnRoYXQgeW91IGFuZCBBdXJlbGllbiB0ZXN0
-ZWQgd2l0aC4KClNvIHVudGlsIHRoYXQgaXMgZmlndXJlZCBvdXQsIEkndmUgYXNrZWQgQWxleCB0
-byBkaXNhYmxlIEwxIENBUCBpbiB0aGUKY29udHJvbGxlciBkcml2ZXIuIFNvIGluIHRoZSBuZXh0
-IHZlcnNpb24gb2YgdGhpcyBzZXJpZXMsIHlvdXIgU1NEcyBzaG91bGQgd29yawpvdXQgb2YgdGhl
-IGJveC4KCi0gTWFuaQoKLS0gCuCuruCuo+Cuv+CuteCuo+CvjeCuo+CuqeCvjSDgrprgrqTgrr7g
-rprgrr/grrXgrq7gr40KCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0
-cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
-bmZvL2xpbnV4LXBoeQo=
+Hi Mani,
+
+On 2025-10-30 22:11, Manivannan Sadhasivam wrote:
+> + Aurelien
+> 
+> On Tue, Oct 28, 2025 at 01:48:32PM -0700, Johannes Erdfelt wrote:
+> > On Tue, Oct 28, 2025, Alex Elder <elder@riscstar.com> wrote:
+> > > On 10/28/25 1:42 PM, Johannes Erdfelt wrote:
+> > > > I have been testing this patchset recently as well, but on an Orange Pi
+> > > > RV2 board instead (and an extra RV2 specific patch to enable power to
+> > > > the M.2 slot).
+> > > > 
+> > > > I ran into the same symptoms you had ("QID 0 timeout" after about 60
+> > > > seconds). However, I'm using an Intel 600p. I can confirm my NVME drive
+> > > > seems to work fine with the "pcie_aspm=off" workaround as well.
+> > > 
+> > > I don't see this problem, and haven't tried to reproduce it yet.
+> > > 
+> > > Mani told me I needed to add these lines to ensure the "runtime
+> > > PM hierarchy of PCIe chain" won't be "broken":
+> > > 
+> > > 	pm_runtime_set_active()
+> > > 	pm_runtime_no_callbacks()
+> > > 	devm_pm_runtime_enable()
+> > > 
+> > > Just out of curiosity, could you try with those lines added
+> > > just before these assignments in k1_pcie_probe()?
+> > > 
+> > > 	k1->pci.dev = dev;
+> > > 	k1->pci.ops = &k1_pcie_ops;
+> > > 	dw_pcie_cap_set(&k1->pci, REQ_RES);
+> > > 
+> > > I doubt it will fix what you're seeing, but at the moment I'm
+> > > working on something else.
+> > 
+> > Unfortunately there is no difference with the runtime PM hierarchy
+> > additions.
+> > 
+> 
+> These are not supposed to fix the issues you were facing. I discussed with Alex
+> offline and figured out that L1 works fine on his BPI-F3 board with a NVMe SSD.
+> 
+> And I believe, Aurelien is also using that same board, but with different
+> SSDs. But what is puzzling me is, L1 is breaking Aurelien's setup with 3 SSDs
+> from different vendors. It apparently works fine on Alex's setup. So it somehow
+> confirms that Root Port supports and behaves correctly with L1. But at the same
+> time, I cannot just say without evidence that L1 is broken on all these SSDs
+> that you and Aurelien tested with.
+
+It could be that we have different revision of the BPI-F3 board, it's 
+not impossible that I got an early-ish version. That said I just 
+visually checked the PCB against the schematics, and the devices on the 
+CLKREQN line appear to be installed.
+
+If someone has contacts to check what changes have been done between the 
+different board revision, that could help. Or same if there are 
+different revisions of the SpacemiT K1 chip.
+
+> So until that is figured out, I've asked Alex to disable L1 CAP in the
+> controller driver. So in the next version of this series, your SSDs should work
+> out of the box.
+
+Thanks, that sounds good.
+
+Regards
+Aurelien
+
+-- 
+Aurelien Jarno                          GPG: 4096R/1DDD8C9B
+aurelien@aurel32.net                     http://aurel32.net
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
