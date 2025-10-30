@@ -4,66 +4,110 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 99F71CCF9F8
-	for <linux-phy@archiver.kernel.org>; Thu, 30 Oct 2025 07:38:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46DACCCF9F0
+	for <linux-phy@archiver.kernel.org>; Thu, 30 Oct 2025 08:48:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ng2CQS8Mp9I0oKIgEdousKUllLp239edVTMHkXL2X+Q=; b=xDD8L6yBcCs8yq
-	ULRTjZeXuLJDwM/alw8YBdj5AQx2NnpvZ9y93bOn8YW/rdbNSdLxhacz+Vb0Y4XWBYOOV9nRGtDlP
-	UmPJpMZHa0ohFuZcxJwR8jszlXKwP/sm8zUWMi++cYVHXxKM2FYeSgCbO7nl9mOB4XmlTKbiMcbDX
-	mb+Sxpdq+do60q88Qkpn29nEtHtuI8EcrBpeWIw6XCE+7h0lLl6tHAjn58veOHocJwJku/8BrjgUj
-	moYSz8TOxwykQfWiN6Fmnk4rODLtHMz3S53/KiaWM2XofxXataxrrVNgGuv7OfsFF8FkOnf5gPHvu
-	KByZFtJ4L/Qv/p5F4F7Q==;
+	List-Owner; bh=/nHZdomoDOTc2OGAKfmjnrfz+pr0ZSIGbJCuODGc3zc=; b=yrUYE3rc5Ka6Pa
+	jdmElpbMEyalin9na/Ay6+/fsKkwHq96y9/Ff+VDqV1ZhRYjGR3oCkQUvlpf1W5lITo6rrjKbe6e+
+	kJZwrJnsfdVw9BlWheazNaJFbD9pEDu/DTe07tnQgsDsmEIO+kjh3NUi+LhMTJQbwvNnaNNmz+LT1
+	tnm3ZLvVcQ5GTjdDs13N5rOqRIgbJJ/cwPdvqqsJOfn27cKB2e/Q21sn5XKALiHrFrNlTIg/wBVMM
+	SLkHrCWQ/YQnQvblV4rOAAn6mtZSX1mo5Rt3Lg9/JY8hTFtO5yWs5aJ6ALRV0uooPGvFADjK2aMFe
+	62uuDRB+SnTx9KA6Apdg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vENER-00000003dXh-0qhg;
-	Thu, 30 Oct 2025 07:38:03 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1vEOKV-00000003n7Y-3Xor
+	for linux-phy@archiver.kernel.org;
+	Thu, 30 Oct 2025 08:48:23 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vENEF-00000003dVU-3Zlr;
-	Thu, 30 Oct 2025 07:37:53 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 3553A44591;
-	Thu, 30 Oct 2025 07:37:51 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7E2C8C4CEF1;
-	Thu, 30 Oct 2025 07:37:50 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1761809871;
-	bh=p5DHJywARmB6vgwsW87ali+itZaEbJODsI/RAOXtFCU=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=BTu0b8qNGle6R+nWGmP4sNLndzagsCvdS/cbADesFxlULifaO76DGm7ScTcoqCjfZ
-	 fP5A7qc+k+GR7FJ13+GWv4Rw59IycUpgKVZ6ZJiGv3Plx/qxok01KYRsRvBcKe9+G1
-	 Dv9ssTxAPwWBqV6erVoEaiFEvLsGTUDvIT1icXMUvwlJRE8dHDlaHEnUWomt04+sOz
-	 yRTLDWvk0P2VxTjrQpx02G5OaH0kGK3OMmpm3i7lekjMcE1Df15k5rOgRrgWje0dln
-	 yGJDcg4EEc5LXOxsc3ty2JeUUHgFecigDQ0w58W0Y0Q30kw1Lh9pkcdXgj3Z2P/PD6
-	 iLjEuL9hL0tNg==
-Date: Thu, 30 Oct 2025 08:37:48 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Roy Luo <royluo@google.com>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Philipp Zabel <p.zabel@pengutronix.de>, Peter Griffin <peter.griffin@linaro.org>, 
-	=?utf-8?B?QW5kcsOp?= Draszik <andre.draszik@linaro.org>, Tudor Ambarus <tudor.ambarus@linaro.org>, 
-	Doug Anderson <dianders@google.com>, Joy Chakraborty <joychakr@google.com>, 
-	Naveen Kumar <mnkumar@google.com>, Badhri Jagan Sridharan <badhri@google.com>, 
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org
-Subject: Re: [PATCH v5 1/2] dt-bindings: phy: google: Add Google Tensor G5
- USB PHY
-Message-ID: <20251030-cunning-copper-jellyfish-1b5f3b@kuoka>
-References: <20251029214032.3175261-1-royluo@google.com>
- <20251029214032.3175261-2-royluo@google.com>
+	id 1vEOKS-00000003n4F-0UCV
+	for linux-phy@lists.infradead.org;
+	Thu, 30 Oct 2025 08:48:21 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 59TNDOom569432;
+	Thu, 30 Oct 2025 08:48:12 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:date:from:in-reply-to:message-id
+	:mime-version:references:subject:to; s=qcppdkim1; bh=T8kDteBa32Z
+	Z3REFXFeQzifFsW38kLJueXZX9kgf+Kw=; b=b8mPjh42h3BOIcpGEpU+E+XlgWL
+	b6GMFXVbvY/nsbSaltNx8I5h7LCU1/sK+I13YEz4yRDB+kO+XL2mULjb34wHQklk
+	IrK52lOJDlW/1uf9MXLtsuGhiA2JYBzZyk+Gtrfb8PxDyL0yECykHHjsbGHlUr0x
+	z3lc3RNmRxdOEX7YdnRA+R/Bfe01zMXK6oWYazMtXjm7tgs64iSAiS2n/a2QQj5b
+	5xyiqr0YY0b6TCT7UKBl7k8UuO+xa4Hckd4RGFwucU/quY8V49N8WrD0tHt7AuNw
+	6bNfyTjDeHc8EjjDuB2XFjJ+0LXI2gwrcoFllSEnrWTr7I7S9yhQDsXV62Q==
+Received: from aptaippmta01.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com [103.229.16.4])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4a3m0bk4kx-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 30 Oct 2025 08:48:11 +0000 (GMT)
+Received: from pps.filterd (APTAIPPMTA01.qualcomm.com [127.0.0.1])
+	by APTAIPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 59U8m8jl027984;
+	Thu, 30 Oct 2025 08:48:08 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by APTAIPPMTA01.qualcomm.com (PPS) with ESMTPS id 4a0qmmec4m-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 30 Oct 2025 08:48:08 +0000
+Received: from APTAIPPMTA01.qualcomm.com (APTAIPPMTA01.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 59U8m8Xa027969;
+	Thu, 30 Oct 2025 08:48:08 GMT
+Received: from cse-cd02-lnx.ap.qualcomm.com (cse-cd02-lnx.qualcomm.com [10.64.75.246])
+	by APTAIPPMTA01.qualcomm.com (PPS) with ESMTPS id 59U8m7iQ027966
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 30 Oct 2025 08:48:08 +0000
+Received: by cse-cd02-lnx.ap.qualcomm.com (Postfix, from userid 4438065)
+	id 476087AF; Thu, 30 Oct 2025 16:48:06 +0800 (CST)
+From: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
+To: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
+        krzk+dt@kernel.org, conor+dt@kernel.org, jingoohan1@gmail.com,
+        mani@kernel.org, lpieralisi@kernel.org, kwilczynski@kernel.org,
+        bhelgaas@google.com, johan+linaro@kernel.org, vkoul@kernel.org,
+        kishon@kernel.org, neil.armstrong@linaro.org, abel.vesa@linaro.org,
+        kw@linux.com
+Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
+        linux-phy@lists.infradead.org, qiang.yu@oss.qualcomm.com,
+        quic_krichai@quicinc.com, quic_vbadigan@quicinc.com,
+        Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
+Subject: [PATCH v2 4/4] arm64: dts: qcom: Add PCIe 3 regulators for HAMOA-IOT-EVK board
+Date: Thu, 30 Oct 2025 16:48:04 +0800
+Message-Id: <20251030084804.1682744-5-ziyue.zhang@oss.qualcomm.com>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20251030084804.1682744-1-ziyue.zhang@oss.qualcomm.com>
+References: <20251030084804.1682744-1-ziyue.zhang@oss.qualcomm.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20251029214032.3175261-2-royluo@google.com>
+X-QCInternal: smtphost
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: 3XuDuN8aZ6fFOiyJtTNJC3iElh85e0D1
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDMwMDA3MSBTYWx0ZWRfX7h34hR5FK3ra
+ R/Uk51mXBD9ivVvURO0AkbVDjHJgoMH+u+g+qDABZfe3I80tk7/TsZY7rzn79rHUOD3qsSpn+Bi
+ ZHgX58yi0hAKKspVt3XnfT5C83WhUUK6iIip8jTvtLnoa3ROkbno1F8q3ROzKJKVe+WbGkA452K
+ WLebAFx0i/0Hx1LeXyMiDefW2Kf5DUSGrtPV7mWbI50ZhjZxoG+LBF30CHjE31dTF0ypBwyGA0u
+ 2pK8iB8DmiClAr4LzYtfNGFPoZAIFbpXZqBUG9Y5upFHx3zIw3iuS9kcbAKYUn/riP+k/RZdum+
+ 2N8Gvd0XBWK5YsgbxMlIN+GEvV60om7qBPmGIeGZL6cisl78nLsBcySSweZG5Gp3cNXgtlSX622
+ aPy5tGMydHZwwRa8rUqnm15P34PbwQ==
+X-Proofpoint-GUID: 3XuDuN8aZ6fFOiyJtTNJC3iElh85e0D1
+X-Authority-Analysis: v=2.4 cv=YLySCBGx c=1 sm=1 tr=0 ts=6903264c cx=c_pps
+ a=nuhDOHQX5FNHPW3J6Bj6AA==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+ a=x6icFKpwvdMA:10 a=VkNPw1HP01LnGYTKEx00:22 a=EUspDBNiAAAA:8
+ a=sPBEuoHp8yVuwt2A19AA:9 a=nl4s5V0KI7Kw-pW0DWrs:22 a=pHzHmUro8NiASowvMSCR:22
+ a=xoEH_sTeL_Rfw54TyV31:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
+ definitions=2025-10-30_02,2025-10-29_03,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501 phishscore=0 bulkscore=0 spamscore=0 malwarescore=0
+ adultscore=0 lowpriorityscore=0 clxscore=1015 impostorscore=0 suspectscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2510240001 definitions=main-2510300071
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251030_003751_927787_A0074E72 
-X-CRM114-Status: GOOD (  21.76  )
+X-CRM114-CacheID: sfid-20251030_014820_272940_C0827971 
+X-CRM114-Status: GOOD (  10.85  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,143 +124,132 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Oct 29, 2025 at 09:40:31PM +0000, Roy Luo wrote:
-> Document the device tree bindings for the USB PHY interfaces integrated
-> with the DWC3 controller on Google Tensor SoCs, starting with G5
-> generation. The USB PHY on Tensor G5 includes two integrated Synopsys
-> PHY IPs: the eUSB 2.0 PHY IP and the USB 3.2/DisplayPort combo PHY IP.
-> 
-> Due to a complete architectural overhaul in the Google Tensor G5, the
-> existing Samsung/Exynos USB PHY binding for older generations of Google
-> silicons such as gs101 are no longer compatible, necessitating this new
-> device tree binding.
-> 
-> Signed-off-by: Roy Luo <royluo@google.com>
-> ---
->  .../bindings/phy/google,gs5-usb-phy.yaml      | 127 ++++++++++++++++++
->  1 file changed, 127 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/google,gs5-usb-phy.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/google,gs5-usb-phy.yaml b/Documentation/devicetree/bindings/phy/google,gs5-usb-phy.yaml
-> new file mode 100644
-> index 000000000000..8a590036fbac
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/google,gs5-usb-phy.yaml
-> @@ -0,0 +1,127 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +# Copyright (C) 2025, Google LLC
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/google,gs5-usb-phy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Google Tensor Series (G5+) USB PHY
-> +
-> +maintainers:
-> +  - Roy Luo <royluo@google.com>
-> +
-> +description: |
-> +  Describes the USB PHY interfaces integrated with the DWC3 USB controller on
-> +  Google Tensor SoCs, starting with the G5 generation.
-> +  Two specific PHY IPs from Synopsys are integrated, including eUSB 2.0 PHY IP
-> +  and USB 3.2/DisplayPort combo PHY IP.
-> +
-> +properties:
-> +  compatible:
-> +    const: google,gs5-usb-phy
-> +
-> +  reg:
-> +    items:
-> +      - description: USB3.2/DisplayPort combo PHY core registers.
-> +      - description: USB3.2/DisplayPort combo PHY Type-C Assist registers.
-> +      - description: USB2 PHY configuration registers.
-> +      - description: USB3.2/DisplayPort combo PHY top-level registers.
-> +
-> +  reg-names:
-> +    items:
-> +      - const: usb3_core
-> +      - const: usb3_tca
-> +      - const: usb2_cfg
-> +      - const: usb3_top
+HAMOA-IOT-EVK board includes a PCIe3 controller and x8 slot that require
+proper power rail and control signal configuration. This update adds
+`vddpe-3v3-supply` and `regulator-pcie-12v` to provide 3.3V to the PHY
+and 12V to the slot for external devices.
 
-These prefixes are redundant. Also, you are still referencing here
-completely different devices. MMIO of IP blocks do not have size of 0xc
-and they do not span over other blocks (0x0c410000 and then next one is
-0x0c637000).
+It also introduces PM GPIOs to manage power enable and reset signals,
+ensuring stable power sequencing and reliable PCIe3 operation.
 
+Signed-off-by: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
+---
+ arch/arm64/boot/dts/qcom/hamoa-iot-evk.dts | 79 ++++++++++++++++++++++
+ 1 file changed, 79 insertions(+)
 
-> +            reg = <0 0x0c410000 0 0x20000>,
-> +                  <0 0x0c430000 0 0x1000>,
-> +                  <0 0x0c450014 0 0xc>,
-> +                  <0 0x0c637000 0 0xa0>;
-> +
-> +  "#phy-cells":
-> +    description: |
-> +      The phandle's argument in the PHY specifier selects one of the three
-> +      following PHY interfaces.
-> +      - 0 for USB high-speed.
-> +      - 1 for USB super-speed.
-> +      - 2 for DisplayPort.
-> +    const: 1
-> +
-> +  clocks:
-> +    minItems: 2
-> +    items:
-> +      - description: USB2 PHY clock.
-> +      - description: USB2 PHY APB clock.
-> +      - description: USB3.2/DisplayPort combo PHY clock.
-> +      - description: USB3.2/DisplayPort combo PHY firmware clock.
-> +    description:
-> +      USB3 clocks are optional if the device is intended for USB2-only
-> +      operation.
-
-No, they are not. SoCs are not made that internal wires are being
-disconnected when you solder it to a different board.
-
-I stopped reviewing here.
-
-You are making unusual, unexpected big changes after v4. At v4 you
-received only few nits because the review process was about to finish.
-
-Now you rewrite everything so you ask me to re-review from scratch.
-
-> +
-> +  clock-names:
-> +    minItems: 2
-> +    items:
-> +      - const: usb2
-> +      - const: usb2_apb
-> +      - const: usb3
-> +      - const: usb3_fw
-
-Again, what's with the prefixes? apb is bus clock, so how you could have
-bus clock for usb2 and usb3? This means you have two busses, so two
-devices.
-
-> +
-> +  resets:
-> +    minItems: 2
-> +    items:
-> +      - description: USB2 PHY reset.
-> +      - description: USB2 PHY APB reset.
-> +      - description: USB3.2/DisplayPort combo PHY reset.
-> +    description:
-> +      USB3 clocks are optional if the device is intended for USB2-only
-> +      operation.
-> +
-> +  reset-names:
-> +    minItems: 2
-> +    items:
-> +      - const: usb2
-> +      - const: usb2_apb
-> +      - const: usb3
-
-And here?
-
-This all looks like downstream code.
-
-Best regards,
-Krzysztof
+diff --git a/arch/arm64/boot/dts/qcom/hamoa-iot-evk.dts b/arch/arm64/boot/dts/qcom/hamoa-iot-evk.dts
+index 24c2dcef0ba8..0984a6eed226 100644
+--- a/arch/arm64/boot/dts/qcom/hamoa-iot-evk.dts
++++ b/arch/arm64/boot/dts/qcom/hamoa-iot-evk.dts
+@@ -414,6 +414,48 @@ vreg_wwan: regulator-wwan {
+ 		regulator-boot-on;
+ 	};
+ 
++	vreg_pcie_12v: regulator-pcie-12v {
++		compatible = "regulator-fixed";
++
++		regulator-name = "VREG_PCIE_12V";
++		regulator-min-microvolt = <12000000>;
++		regulator-max-microvolt = <12000000>;
++
++		gpio = <&pm8550ve_8_gpios 8 GPIO_ACTIVE_HIGH>;
++		enable-active-high;
++
++		pinctrl-0 = <&pcie_x8_12v>;
++		pinctrl-names = "default";
++	};
++
++	vreg_pcie_3v3_aux: regulator-pcie-3v3-aux {
++		compatible = "regulator-fixed";
++
++		regulator-name = "VREG_PCIE_3P3_AUX";
++		regulator-min-microvolt = <3300000>;
++		regulator-max-microvolt = <3300000>;
++
++		gpio = <&pmc8380_3_gpios 8 GPIO_ACTIVE_HIGH>;
++		enable-active-high;
++
++		pinctrl-0 = <&pm_sde7_aux_3p3_en>;
++		pinctrl-names = "default";
++	};
++
++	vreg_pcie_3v3: regulator-pcie-3v3 {
++		compatible = "regulator-fixed";
++
++		regulator-name = "VREG_PCIE_3P3";
++		regulator-min-microvolt = <3300000>;
++		regulator-max-microvolt = <3300000>;
++
++		gpio = <&pmc8380_3_gpios 6 GPIO_ACTIVE_HIGH>;
++		enable-active-high;
++
++		pinctrl-0 = <&pm_sde7_main_3p3_en>;
++		pinctrl-names = "default";
++};
++
+ 	sound {
+ 		compatible = "qcom,x1e80100-sndcard";
+ 		model = "X1E80100-EVK";
+@@ -844,6 +886,12 @@ &mdss_dp3_phy {
+ 	status = "okay";
+ };
+ 
++&pcie3_port {
++	vpcie12v-supply = <&vreg_pcie_12v>;
++	vpcie3v3-supply = <&vreg_pcie_3v3>;
++	vpcie3v3aux-supply = <&vreg_pcie_3v3_aux>;
++};
++
+ &pcie5 {
+ 	vddpe-3v3-supply = <&vreg_wwan>;
+ };
+@@ -872,6 +920,17 @@ usb0_3p3_reg_en: usb0-3p3-reg-en-state {
+ 	};
+ };
+ 
++&pm8550ve_8_gpios {
++	pcie_x8_12v: pcie-12v-default-state {
++		pins = "gpio8";
++		function = "normal";
++		output-enable;
++		output-high;
++		bias-pull-down;
++		power-source = <0>;
++	};
++};
++
+ &pm8550ve_9_gpios {
+ 	usb0_1p8_reg_en: usb0-1p8-reg-en-state {
+ 		pins = "gpio8";
+@@ -883,6 +942,26 @@ usb0_1p8_reg_en: usb0-1p8-reg-en-state {
+ 	};
+ };
+ 
++&pmc8380_3_gpios {
++	pm_sde7_aux_3p3_en: pcie-aux-3p3-default-state {
++		pins = "gpio8";
++		function = "normal";
++		output-enable;
++		output-high;
++		bias-pull-down;
++		power-source = <0>;
++	};
++
++	pm_sde7_main_3p3_en: pcie-main-3p3-default-state {
++		pins = "gpio6";
++		function = "normal";
++		output-enable;
++		output-high;
++		bias-pull-down;
++		power-source = <0>;
++	};
++};
++
+ &pmc8380_5_gpios {
+ 	usb0_pwr_1p15_reg_en: usb0-pwr-1p15-reg-en-state {
+ 		pins = "gpio8";
+-- 
+2.34.1
 
 
 -- 
