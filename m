@@ -4,73 +4,111 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4B4C2CCF9EB
-	for <linux-phy@archiver.kernel.org>; Fri, 31 Oct 2025 06:10:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0CD25CCF9EB
+	for <linux-phy@archiver.kernel.org>; Fri, 31 Oct 2025 06:48:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NE7HLdH/VkIJZgbgpcNF51ziOBSZBWj/WR/9UWP1ex0=; b=UZIC7JVcxjJI6Z
-	je2sELeaTWNvhHJrC6iLtZ9JzInZIB7SkfXhEEgoEEQCvDZTA8M8cUGsb2A83ANl7eFhlnUjrxRfA
-	TmSf9Ge4tq1hhvn8P+VRz22PEgPRTVd9uTFaZxrUobp910FV5HN4o+NJ5az6RyDWFzvkxR+jntf9s
-	4vYuBPQ4SrRhbcdmqdmTJIBiqBhBHx1/wC7LdHVJnd9jvdrt7gctq1O2XVprQmr0fEG8wbmDJVSCU
-	H0n8Y3pGsUomsZzKSz+gTTW9hlNOF1aqe0VM56xfsXlChbWF239+6IYz8Jxgqe87OaDrqp+Ri9GDh
-	tARQ+d8oU6Z6EpbOCaiQ==;
+	List-Owner; bh=jwiSBZlwr+mb+U1vY0D9MEq7+UkbuoIMvfsIAGIS+iM=; b=Ei9wITmp8upVjh
+	fen4lplVLt+9len10MFfSPYmzslsoAW6pqega2NWiGpCxA8Ln/vWl+izMVsZvSXQED9R1ET0zzTSf
+	L0iUb9u70cc4bNU7hr5EzUBLzBiN/lwJlMUHPJh03UaA0EOiEOKWIQWO2+n85WPm0xJZxwhipZlPR
+	jUDu6GunFTSUGt09uDZ6QMbAoTRGKjwFPDP5K1scyT5L4zaIA+hkiAqNd+V0/CRh/5n129H/bHq9m
+	2IrJ55wI/GN9xyiBu4PwCLH4bQmkHBMi4VNc/OuCElch9u6TFF14ezfVS/E9yJbA+7dDUR77y3Ym0
+	WZZaZX03mfs4FFBdkr2Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vEiLh-00000005R5r-2nPH;
-	Fri, 31 Oct 2025 06:10:57 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1vEiwL-00000005Ue8-1ldm;
+	Fri, 31 Oct 2025 06:48:49 +0000
+Received: from smtpbgeu1.qq.com ([52.59.177.22])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vEiLL-00000005R16-1H9q;
-	Fri, 31 Oct 2025 06:10:36 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id C384143601;
-	Fri, 31 Oct 2025 06:10:32 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6449CC4CEF1;
-	Fri, 31 Oct 2025 06:10:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1761891032;
-	bh=mtI0bJgcONn/+JNea1wnkILdIZmOmfcP/gzxeMrjXJs=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=rDDA7osPfNKJWxC6aUuvy+jowSUofyqimpL1QvPRJtDoh9joXUz9Z8pp/KYkh+boq
-	 TTVrkev+wIydtYDHxM68tfxTbDC0ODJHJPAxIdhsnYjMB8pTb3Ak0EjP+uD5U4DkiO
-	 jH19GobKrGOs6SyL56fIa0CDMZMsnivg+4JIRe+Pr6EudiD8BGkYp3q+ROhMzGr/KF
-	 sDNnYKqGRoVGXAbpSqe/jaBMfbuxrvMTDRE70DoBg9zVvGJKdqU1vG3PUJuRec39gb
-	 j/zSkPyOOih0ERHsQyiULHVo0xgh4JRnAzngtYMf5ZAVbqMx09OWcaCYBdkLjcQgpE
-	 iwi5wZpI9EtkA==
-Date: Fri, 31 Oct 2025 11:40:20 +0530
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: Aurelien Jarno <aurelien@aurel32.net>
-Cc: Johannes Erdfelt <johannes@erdfelt.com>, 
-	Alex Elder <elder@riscstar.com>, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, 
-	bhelgaas@google.com, lpieralisi@kernel.org, kwilczynski@kernel.org, vkoul@kernel.org, 
-	kishon@kernel.org, dlan@gentoo.org, guodong@riscstar.com, pjw@kernel.org, 
-	palmer@dabbelt.com, aou@eecs.berkeley.edu, alex@ghiti.fr, p.zabel@pengutronix.de, 
-	christian.bruel@foss.st.com, shradha.t@samsung.com, krishna.chundru@oss.qualcomm.com, 
-	qiang.yu@oss.qualcomm.com, namcao@linutronix.de, thippeswamy.havalige@amd.com, 
-	inochiama@gmail.com, devicetree@vger.kernel.org, linux-pci@vger.kernel.org, 
-	linux-phy@lists.infradead.org, spacemit@lists.linux.dev, linux-riscv@lists.infradead.org, 
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2 0/7] Introduce SpacemiT K1 PCIe phy and host controller
-Message-ID: <ywr66wfkfay3xse77mb7ddbga5nced4yg7dapiybj3p2yp2an2@7zsaj5one5in>
-References: <20251013153526.2276556-1-elder@riscstar.com>
- <aPEhvFD8TzVtqE2n@aurel32.net>
- <92ee253f-bf6a-481a-acc2-daf26d268395@riscstar.com>
- <aQEElhSCRNqaPf8m@aurel32.net>
- <20251028184250.GM15521@sventech.com>
- <82848c80-15e0-4c0e-a3f6-821a7f4778a5@riscstar.com>
- <20251028204832.GN15521@sventech.com>
- <5kwbaj2eqr4imcaoh6otqo7huuraqhodxh4dbwc33vqpi5j5yq@ueufnqetrg2m>
- <aQOlMcI9jTdd7QNb@aurel32.net>
+	id 1vEiwD-00000005UcN-04iD;
+	Fri, 31 Oct 2025 06:48:46 +0000
+X-QQ-mid: esmtpgz13t1761893210tf21d82f4
+X-QQ-Originating-IP: R90kadoSj/Lu9jhXDo3EOBK+P2zoChp7ZYtBXxB6TvQ=
+Received: from [192.168.125.98] ( [113.104.140.154])
+	by bizesmtp.qq.com (ESMTP) with 
+	id ; Fri, 31 Oct 2025 14:46:46 +0800 (CST)
+X-QQ-SSF: 0000000000000000000000000000000
+X-QQ-GoodBg: 0
+X-BIZMAIL-ID: 1332421492275545379
+Message-ID: <99841AD0EE6A35D4+4a6afacb-4d1c-4727-9a75-134190350aca@linux.starfivetech.com>
+Date: Fri, 31 Oct 2025 14:46:46 +0800
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <aQOlMcI9jTdd7QNb@aurel32.net>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] dt-bindings: Remove extra blank lines
+To: "Rob Herring (Arm)" <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+ David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Thomas Zimmermann <tzimmermann@suse.de>,
+ Andrzej Hajda <andrzej.hajda@intel.com>, Robert Foss <rfoss@kernel.org>,
+ Vinod Koul <vkoul@kernel.org>, Moritz Fischer <mdf@kernel.org>,
+ Xu Yilun <yilun.xu@intel.com>, Bartosz Golaszewski <brgl@bgdev.pl>,
+ Guenter Roeck <linux@roeck-us.net>, Andi Shyti <andi.shyti@kernel.org>,
+ Jonathan Cameron <jic23@kernel.org>,
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ Georgi Djakov <djakov@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ Joerg Roedel <joro@8bytes.org>, Jassi Brar <jassisinghbrar@gmail.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Lee Jones <lee@kernel.org>,
+ Miquel Raynal <miquel.raynal@bootlin.com>,
+ Richard Weinberger <richard@nod.at>, Vignesh Raghavendra <vigneshr@ti.com>,
+ Andrew Lunn <andrew+netdev@lunn.ch>, "David S. Miller"
+ <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>,
+ Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+ Johannes Berg <johannes@sipsolutions.net>,
+ =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
+ Manivannan Sadhasivam <mani@kernel.org>, Bjorn Helgaas
+ <bhelgaas@google.com>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Sebastian Reichel <sre@kernel.org>, =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?=
+ <ukleinek@kernel.org>, Mark Brown <broonie@kernel.org>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Olivia Mackall <olivia@selenic.com>,
+ Herbert Xu <herbert@gondor.apana.org.au>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-clk@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-fbdev@vger.kernel.org, dmaengine@vger.kernel.org,
+ linux-fpga@vger.kernel.org, linux-gpio@vger.kernel.org,
+ linux-hwmon@vger.kernel.org, linux-i2c@vger.kernel.org,
+ linux-iio@vger.kernel.org, linux-input@vger.kernel.org,
+ linux-pm@vger.kernel.org, iommu@lists.linux.dev,
+ linux-media@vger.kernel.org, linux-mtd@lists.infradead.org,
+ netdev@vger.kernel.org, linux-wireless@vger.kernel.org,
+ linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-pwm@vger.kernel.org, linux-remoteproc@vger.kernel.org,
+ linux-crypto@vger.kernel.org, linux-sound@vger.kernel.org,
+ linux-usb@vger.kernel.org
+References: <20251023143957.2899600-1-robh@kernel.org>
+Content-Language: en-US
+From: Hal Feng <hal.feng@linux.starfivetech.com>
+In-Reply-To: <20251023143957.2899600-1-robh@kernel.org>
+X-QQ-SENDSIZE: 520
+Feedback-ID: esmtpgz:linux.starfivetech.com:qybglogicsvrgz:qybglogicsvrgz5a-1
+X-QQ-XMAILINFO: MJegDAk7akMnPutOgGD+MrWmu2kVE+CLUb4qgIBITTJ5oEvA/NaqWaOd
+	tREBpW7IbiBIz4cOQPW9Qi99rxq01qdH1RtU5sUl4eGCGSq7wsUYcoHAzPQAVeklxQNa7Ub
+	qNXLqPgffxbbY+cnj69e/jtMc9ub2bDJqaFeZi4mRRaC1HMTxgPG7ZY4xZsZdGxWpFSxHjm
+	4GqJdZZvN2moZccZqrvhvc8yRElWuujVMMU7TRuEta+Ty53cnk+KPmrAyBs++pQ80WG7Dcr
+	XFfLOJ4O5J0U4xzYfXtYpnAQsGTD/9N9ZekxB7UJYqWFgnk+nrjRGOmMCDRvshmtDsyRWms
+	/1VEdnKVw+OUxHuGNYb9wn/oQaYi7H9z94THvo43+iJ9VI5PO2CI/AdpCnV1HCKsOjjPbcI
+	K0TVzg302gEgboT8oP2Ly36etyb1dKq4tqw/Vx0GIi/fZFT0zVu3vBsVQQweibq8mqhKZqs
+	6+866akdtqNl+2E/bw7G+tynGPSFXLjTcPq8YCIA+xtNPUk0fkro9RdYJrU367aAcFEBXnb
+	6mmD1PMxIZwBpRquGM1vhm+TTxrqNgVcHAp+aulk8QXsLN+sfrsmwu9nJxHsuhJ8WqA6Zcd
+	eZ+sXNnjMPk5k7JhQOXCAIxiuVRHHC5WrGzhQXNWYycMqQhdhDeyD3WdYX+c4fsajAH14dS
+	I6gHlYUfalrr83pTSvTWlGMJ8nfUhM+MHPJn+27BUNTeSwQ1ezdb7HaBgQWrCR4M7n76/zU
+	jCM11qOra8fmm+IEAT16kxztBfAuosOktPEujhextJMCEcXuFUTQtGCdePyS3E2nTpQbIGD
+	PdWwPUL7qr3OHERAj76K6AIicHYiQjIHnTE28yu1vPE3SiChbkAGojGkRwJURr24hEraBXm
+	ntV/YfxKvt4KckabE3Bqv5BYbBdawPZbQS3zDyzLjNOBOVqwuAyhJERS6lmPH9xco5aQFVM
+	2gOoR82ISQAcC+ZOkV+2hjf9wblsYmC71TN4=
+X-QQ-XMRINFO: Nq+8W0+stu50PRdwbJxPCL0=
+X-QQ-RECHKSPAM: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251030_231035_766379_FE9CDC5A 
-X-CRM114-Status: GOOD (  33.22  )
+X-CRM114-CacheID: sfid-20251030_234841_794467_9838091E 
+X-CRM114-Status: GOOD (  15.77  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,64 +120,173 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVGh1LCBPY3QgMzAsIDIwMjUgYXQgMDY6NDk6MzdQTSArMDEwMCwgQXVyZWxpZW4gSmFybm8g
-d3JvdGU6Cj4gSGkgTWFuaSwKPiAKPiBPbiAyMDI1LTEwLTMwIDIyOjExLCBNYW5pdmFubmFuIFNh
-ZGhhc2l2YW0gd3JvdGU6Cj4gPiArIEF1cmVsaWVuCj4gPiAKPiA+IE9uIFR1ZSwgT2N0IDI4LCAy
-MDI1IGF0IDAxOjQ4OjMyUE0gLTA3MDAsIEpvaGFubmVzIEVyZGZlbHQgd3JvdGU6Cj4gPiA+IE9u
-IFR1ZSwgT2N0IDI4LCAyMDI1LCBBbGV4IEVsZGVyIDxlbGRlckByaXNjc3Rhci5jb20+IHdyb3Rl
-Ogo+ID4gPiA+IE9uIDEwLzI4LzI1IDE6NDIgUE0sIEpvaGFubmVzIEVyZGZlbHQgd3JvdGU6Cj4g
-PiA+ID4gPiBJIGhhdmUgYmVlbiB0ZXN0aW5nIHRoaXMgcGF0Y2hzZXQgcmVjZW50bHkgYXMgd2Vs
-bCwgYnV0IG9uIGFuIE9yYW5nZSBQaQo+ID4gPiA+ID4gUlYyIGJvYXJkIGluc3RlYWQgKGFuZCBh
-biBleHRyYSBSVjIgc3BlY2lmaWMgcGF0Y2ggdG8gZW5hYmxlIHBvd2VyIHRvCj4gPiA+ID4gPiB0
-aGUgTS4yIHNsb3QpLgo+ID4gPiA+ID4gCj4gPiA+ID4gPiBJIHJhbiBpbnRvIHRoZSBzYW1lIHN5
-bXB0b21zIHlvdSBoYWQgKCJRSUQgMCB0aW1lb3V0IiBhZnRlciBhYm91dCA2MAo+ID4gPiA+ID4g
-c2Vjb25kcykuIEhvd2V2ZXIsIEknbSB1c2luZyBhbiBJbnRlbCA2MDBwLiBJIGNhbiBjb25maXJt
-IG15IE5WTUUgZHJpdmUKPiA+ID4gPiA+IHNlZW1zIHRvIHdvcmsgZmluZSB3aXRoIHRoZSAicGNp
-ZV9hc3BtPW9mZiIgd29ya2Fyb3VuZCBhcyB3ZWxsLgo+ID4gPiA+IAo+ID4gPiA+IEkgZG9uJ3Qg
-c2VlIHRoaXMgcHJvYmxlbSwgYW5kIGhhdmVuJ3QgdHJpZWQgdG8gcmVwcm9kdWNlIGl0IHlldC4K
-PiA+ID4gPiAKPiA+ID4gPiBNYW5pIHRvbGQgbWUgSSBuZWVkZWQgdG8gYWRkIHRoZXNlIGxpbmVz
-IHRvIGVuc3VyZSB0aGUgInJ1bnRpbWUKPiA+ID4gPiBQTSBoaWVyYXJjaHkgb2YgUENJZSBjaGFp
-biIgd29uJ3QgYmUgImJyb2tlbiI6Cj4gPiA+ID4gCj4gPiA+ID4gCXBtX3J1bnRpbWVfc2V0X2Fj
-dGl2ZSgpCj4gPiA+ID4gCXBtX3J1bnRpbWVfbm9fY2FsbGJhY2tzKCkKPiA+ID4gPiAJZGV2bV9w
-bV9ydW50aW1lX2VuYWJsZSgpCj4gPiA+ID4gCj4gPiA+ID4gSnVzdCBvdXQgb2YgY3VyaW9zaXR5
-LCBjb3VsZCB5b3UgdHJ5IHdpdGggdGhvc2UgbGluZXMgYWRkZWQKPiA+ID4gPiBqdXN0IGJlZm9y
-ZSB0aGVzZSBhc3NpZ25tZW50cyBpbiBrMV9wY2llX3Byb2JlKCk/Cj4gPiA+ID4gCj4gPiA+ID4g
-CWsxLT5wY2kuZGV2ID0gZGV2Owo+ID4gPiA+IAlrMS0+cGNpLm9wcyA9ICZrMV9wY2llX29wczsK
-PiA+ID4gPiAJZHdfcGNpZV9jYXBfc2V0KCZrMS0+cGNpLCBSRVFfUkVTKTsKPiA+ID4gPiAKPiA+
-ID4gPiBJIGRvdWJ0IGl0IHdpbGwgZml4IHdoYXQgeW91J3JlIHNlZWluZywgYnV0IGF0IHRoZSBt
-b21lbnQgSSdtCj4gPiA+ID4gd29ya2luZyBvbiBzb21ldGhpbmcgZWxzZS4KPiA+ID4gCj4gPiA+
-IFVuZm9ydHVuYXRlbHkgdGhlcmUgaXMgbm8gZGlmZmVyZW5jZSB3aXRoIHRoZSBydW50aW1lIFBN
-IGhpZXJhcmNoeQo+ID4gPiBhZGRpdGlvbnMuCj4gPiA+IAo+ID4gCj4gPiBUaGVzZSBhcmUgbm90
-IHN1cHBvc2VkIHRvIGZpeCB0aGUgaXNzdWVzIHlvdSB3ZXJlIGZhY2luZy4gSSBkaXNjdXNzZWQg
-d2l0aCBBbGV4Cj4gPiBvZmZsaW5lIGFuZCBmaWd1cmVkIG91dCB0aGF0IEwxIHdvcmtzIGZpbmUg
-b24gaGlzIEJQSS1GMyBib2FyZCB3aXRoIGEgTlZNZSBTU0QuCj4gPiAKPiA+IEFuZCBJIGJlbGll
-dmUsIEF1cmVsaWVuIGlzIGFsc28gdXNpbmcgdGhhdCBzYW1lIGJvYXJkLCBidXQgd2l0aCBkaWZm
-ZXJlbnQKPiA+IFNTRHMuIEJ1dCB3aGF0IGlzIHB1enpsaW5nIG1lIGlzLCBMMSBpcyBicmVha2lu
-ZyBBdXJlbGllbidzIHNldHVwIHdpdGggMyBTU0RzCj4gPiBmcm9tIGRpZmZlcmVudCB2ZW5kb3Jz
-LiBJdCBhcHBhcmVudGx5IHdvcmtzIGZpbmUgb24gQWxleCdzIHNldHVwLiBTbyBpdCBzb21laG93
-Cj4gPiBjb25maXJtcyB0aGF0IFJvb3QgUG9ydCBzdXBwb3J0cyBhbmQgYmVoYXZlcyBjb3JyZWN0
-bHkgd2l0aCBMMS4gQnV0IGF0IHRoZSBzYW1lCj4gPiB0aW1lLCBJIGNhbm5vdCBqdXN0IHNheSB3
-aXRob3V0IGV2aWRlbmNlIHRoYXQgTDEgaXMgYnJva2VuIG9uIGFsbCB0aGVzZSBTU0RzCj4gPiB0
-aGF0IHlvdSBhbmQgQXVyZWxpZW4gdGVzdGVkIHdpdGguCj4gCj4gSXQgY291bGQgYmUgdGhhdCB3
-ZSBoYXZlIGRpZmZlcmVudCByZXZpc2lvbiBvZiB0aGUgQlBJLUYzIGJvYXJkLCBpdCdzIAo+IG5v
-dCBpbXBvc3NpYmxlIHRoYXQgSSBnb3QgYW4gZWFybHktaXNoIHZlcnNpb24uIFRoYXQgc2FpZCBJ
-IGp1c3QgCj4gdmlzdWFsbHkgY2hlY2tlZCB0aGUgUENCIGFnYWluc3QgdGhlIHNjaGVtYXRpY3Ms
-IGFuZCB0aGUgZGV2aWNlcyBvbiB0aGUgCj4gQ0xLUkVRTiBsaW5lIGFwcGVhciB0byBiZSBpbnN0
-YWxsZWQuCj4gCgpDTEtSRVEjIGlzIG9ubHkgbmVlZGVkIGZvciBMMSBQTSBTdWJzdGF0ZXMgKEwx
-LjEgYW5kIEwxLjIpLiBJbiBvdGhlciBBU1BNIHN0YXRlcwooTDBzIGFuZCBMMSksIFJFRkNMSyBp
-cyBzdXBwb3NlZCB0byBiZSBPTi4gU28gdGhvc2UgZG9uJ3QgbmVlZCBDTEtSRVEjIGFzc2VydGlv
-bgpieSB0aGUgZW5kcG9pbnQuCgpUaGUgTDEgaXNzdWUgeW91IGFyZSBmYWNpbmcgY291bGQgYmUg
-ZHVlIHRvIHRoZSBib2FyZCByb3V0aW5nIGlzc3VlIGFsc28uIEknbQpqdXN0IHNwZWN1bGF0aW5n
-IGhlcmUuCgo+IElmIHNvbWVvbmUgaGFzIGNvbnRhY3RzIHRvIGNoZWNrIHdoYXQgY2hhbmdlcyBo
-YXZlIGJlZW4gZG9uZSBiZXR3ZWVuIHRoZSAKPiBkaWZmZXJlbnQgYm9hcmQgcmV2aXNpb24sIHRo
-YXQgY291bGQgaGVscC4gT3Igc2FtZSBpZiB0aGVyZSBhcmUgCj4gZGlmZmVyZW50IHJldmlzaW9u
-cyBvZiB0aGUgU3BhY2VtaVQgSzEgY2hpcC4KPiAKCkkgaG9wZSBBbGV4IGNhbiBnZXQgdGhpcyBp
-bmZvcm1hdGlvbi4KCi0gTWFuaQoKLS0gCuCuruCuo+Cuv+CuteCuo+CvjeCuo+CuqeCvjSDgrprg
-rqTgrr7grprgrr/grrXgrq7gr40KCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBo
-eUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
-L2xpc3RpbmZvL2xpbnV4LXBoeQo=
+On 10/23/2025 10:37 PM, Rob Herring (Arm) wrote:
+> Generally at most 1 blank line is the standard style for DT schema
+> files. Remove the few cases with more than 1 so that the yamllint check
+> for this can be enabled.
+> 
+> Signed-off-by: Rob Herring (Arm) <robh@kernel.org>
+> ---
+>  Documentation/devicetree/bindings/.yamllint                  | 2 +-
+>  Documentation/devicetree/bindings/arm/psci.yaml              | 1 -
+>  .../bindings/clock/allwinner,sun4i-a10-gates-clk.yaml        | 1 -
+>  .../devicetree/bindings/clock/renesas,cpg-mssr.yaml          | 1 -
+>  .../devicetree/bindings/clock/xlnx,clocking-wizard.yaml      | 1 -
+>  .../display/allwinner,sun4i-a10-display-frontend.yaml        | 1 -
+>  .../devicetree/bindings/display/allwinner,sun6i-a31-drc.yaml | 1 -
+>  .../bindings/display/allwinner,sun8i-a83t-dw-hdmi.yaml       | 1 -
+>  .../devicetree/bindings/display/amlogic,meson-vpu.yaml       | 1 -
+>  .../devicetree/bindings/display/bridge/adi,adv7511.yaml      | 1 -
+>  .../devicetree/bindings/display/bridge/lvds-codec.yaml       | 1 -
+>  .../devicetree/bindings/display/bridge/toshiba,tc358767.yaml | 1 -
+>  .../devicetree/bindings/display/ilitek,ili9486.yaml          | 1 -
+>  Documentation/devicetree/bindings/display/msm/gpu.yaml       | 1 -
+>  .../devicetree/bindings/display/panel/panel-timing.yaml      | 1 -
+>  .../devicetree/bindings/display/panel/tpo,tpg110.yaml        | 1 -
+>  .../devicetree/bindings/display/rockchip/rockchip,dw-dp.yaml | 1 -
+>  .../devicetree/bindings/display/simple-framebuffer.yaml      | 1 -
+>  .../devicetree/bindings/dma/snps,dma-spear1340.yaml          | 1 -
+>  Documentation/devicetree/bindings/dma/stericsson,dma40.yaml  | 1 -
+>  .../devicetree/bindings/dma/stm32/st,stm32-dma.yaml          | 1 -
+>  Documentation/devicetree/bindings/edac/apm,xgene-edac.yaml   | 1 -
+>  .../devicetree/bindings/firmware/qemu,fw-cfg-mmio.yaml       | 1 -
+>  Documentation/devicetree/bindings/fpga/fpga-region.yaml      | 5 -----
+>  .../devicetree/bindings/gpio/brcm,xgs-iproc-gpio.yaml        | 1 -
+>  .../devicetree/bindings/gpio/fairchild,74hc595.yaml          | 1 -
+>  Documentation/devicetree/bindings/hwmon/adi,ltc2947.yaml     | 1 -
+>  Documentation/devicetree/bindings/hwmon/adi,max31827.yaml    | 1 -
+>  Documentation/devicetree/bindings/hwmon/national,lm90.yaml   | 1 -
+>  Documentation/devicetree/bindings/hwmon/ti,tmp513.yaml       | 1 -
+>  Documentation/devicetree/bindings/hwmon/ti,tps23861.yaml     | 1 -
+>  Documentation/devicetree/bindings/i2c/i2c-mux-gpmux.yaml     | 1 -
+>  .../devicetree/bindings/i2c/realtek,rtl9301-i2c.yaml         | 1 -
+>  Documentation/devicetree/bindings/i2c/tsd,mule-i2c-mux.yaml  | 2 --
+>  Documentation/devicetree/bindings/iio/adc/adi,ad7380.yaml    | 1 -
+>  Documentation/devicetree/bindings/iio/adc/adi,ad7606.yaml    | 1 -
+>  Documentation/devicetree/bindings/iio/adc/adi,ad7949.yaml    | 1 -
+>  Documentation/devicetree/bindings/iio/adc/adi,ade9000.yaml   | 1 -
+>  .../devicetree/bindings/iio/adc/cosmic,10001-adc.yaml        | 1 -
+>  Documentation/devicetree/bindings/iio/adc/st,stm32-adc.yaml  | 1 -
+>  .../devicetree/bindings/iio/adc/x-powers,axp209-adc.yaml     | 1 -
+>  .../devicetree/bindings/iio/afe/voltage-divider.yaml         | 1 -
+>  .../devicetree/bindings/iio/frequency/adi,admv4420.yaml      | 1 -
+>  .../devicetree/bindings/iio/pressure/murata,zpa2326.yaml     | 1 -
+>  .../devicetree/bindings/iio/proximity/semtech,sx9324.yaml    | 1 -
+>  .../devicetree/bindings/iio/temperature/adi,ltc2983.yaml     | 1 -
+>  Documentation/devicetree/bindings/input/ti,drv266x.yaml      | 1 -
+>  .../devicetree/bindings/interconnect/qcom,rpmh.yaml          | 1 -
+>  .../devicetree/bindings/interrupt-controller/arm,gic-v3.yaml | 1 -
+>  .../bindings/interrupt-controller/aspeed,ast2700-intc.yaml   | 1 -
+>  .../bindings/interrupt-controller/fsl,vf610-mscm-ir.yaml     | 1 -
+>  .../bindings/interrupt-controller/loongson,liointc.yaml      | 1 -
+>  .../bindings/interrupt-controller/mediatek,mtk-cirq.yaml     | 1 -
+>  .../bindings/interrupt-controller/mscc,ocelot-icpu-intr.yaml | 1 -
+>  Documentation/devicetree/bindings/iommu/arm,smmu.yaml        | 4 ----
+>  Documentation/devicetree/bindings/mailbox/arm,mhu.yaml       | 1 -
+>  Documentation/devicetree/bindings/mailbox/arm,mhuv2.yaml     | 1 -
+>  Documentation/devicetree/bindings/mailbox/mtk,adsp-mbox.yaml | 1 -
+>  Documentation/devicetree/bindings/media/amphion,vpu.yaml     | 1 -
+>  Documentation/devicetree/bindings/media/i2c/adi,adv7604.yaml | 2 --
+>  .../devicetree/bindings/media/i2c/techwell,tw9900.yaml       | 1 -
+>  Documentation/devicetree/bindings/media/nxp,imx8-jpeg.yaml   | 1 -
+>  .../devicetree/bindings/media/qcom,sc8280xp-camss.yaml       | 1 -
+>  .../bindings/media/samsung,exynos4212-fimc-is.yaml           | 1 -
+>  .../devicetree/bindings/media/samsung,s5pv210-jpeg.yaml      | 1 -
+>  Documentation/devicetree/bindings/media/st,stm32-dma2d.yaml  | 1 -
+>  .../devicetree/bindings/media/video-interface-devices.yaml   | 4 ----
+>  .../memory-controllers/qcom,ebi2-peripheral-props.yaml       | 1 -
+>  Documentation/devicetree/bindings/mfd/stericsson,ab8500.yaml | 1 -
+>  .../devicetree/bindings/mtd/amlogic,meson-nand.yaml          | 1 -
+>  .../devicetree/bindings/mtd/marvell,nand-controller.yaml     | 1 -
+>  Documentation/devicetree/bindings/mux/mux-controller.yaml    | 1 -
+>  .../devicetree/bindings/net/allwinner,sun8i-a83t-emac.yaml   | 2 --
+>  Documentation/devicetree/bindings/net/brcm,bcmgenet.yaml     | 1 -
+>  .../devicetree/bindings/net/brcm,mdio-mux-iproc.yaml         | 1 -
+>  .../devicetree/bindings/net/cortina,gemini-ethernet.yaml     | 1 -
+>  Documentation/devicetree/bindings/net/fsl,gianfar.yaml       | 2 --
+>  .../devicetree/bindings/net/mdio-mux-multiplexer.yaml        | 1 -
+>  Documentation/devicetree/bindings/net/qcom,ipa.yaml          | 1 -
+>  Documentation/devicetree/bindings/net/ti,cpsw-switch.yaml    | 1 -
+>  .../devicetree/bindings/net/wireless/ti,wlcore.yaml          | 1 -
+>  .../devicetree/bindings/pci/altr,pcie-root-port.yaml         | 1 -
+>  Documentation/devicetree/bindings/pci/loongson.yaml          | 1 -
+>  Documentation/devicetree/bindings/pci/rockchip-dw-pcie.yaml  | 1 -
+>  .../devicetree/bindings/pci/starfive,jh7110-pcie.yaml        | 1 -
+>  Documentation/devicetree/bindings/pci/versatile.yaml         | 1 -
+>  .../bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml         | 1 -
+>  .../devicetree/bindings/pinctrl/brcm,bcm21664-pinctrl.yaml   | 1 -
+>  .../devicetree/bindings/pinctrl/fsl,imx9-pinctrl.yaml        | 1 -
+>  .../devicetree/bindings/pinctrl/qcom,qcs404-pinctrl.yaml     | 1 -
+>  .../bindings/pinctrl/qcom,sm6115-lpass-lpi-pinctrl.yaml      | 1 -
+>  .../devicetree/bindings/pinctrl/qcom,sm6125-tlmm.yaml        | 1 -
+>  .../devicetree/bindings/pinctrl/renesas,rza1-ports.yaml      | 3 ---
+>  .../devicetree/bindings/pinctrl/starfive,jh7100-pinctrl.yaml | 1 -
+>  .../devicetree/bindings/power/supply/mt6360_charger.yaml     | 1 -
+>  .../bindings/power/supply/stericsson,ab8500-charger.yaml     | 1 -
+>  .../devicetree/bindings/pwm/allwinner,sun4i-a10-pwm.yaml     | 1 -
+>  .../bindings/regulator/richtek,rt6245-regulator.yaml         | 1 -
+>  .../devicetree/bindings/remoteproc/ti,k3-r5f-rproc.yaml      | 2 --
+>  Documentation/devicetree/bindings/reset/ti,sci-reset.yaml    | 1 -
+>  .../bindings/rng/inside-secure,safexcel-eip76.yaml           | 2 --
+>  .../devicetree/bindings/soc/fsl/cpm_qe/fsl,qe-muram.yaml     | 1 -
+>  .../devicetree/bindings/soc/mediatek/mediatek,mutex.yaml     | 1 -
+>  .../bindings/soc/microchip/atmel,at91rm9200-tcb.yaml         | 1 -
+>  Documentation/devicetree/bindings/soc/rockchip/grf.yaml      | 1 -
+>  Documentation/devicetree/bindings/soc/ti/ti,pruss.yaml       | 3 ---
+>  Documentation/devicetree/bindings/sound/adi,adau1372.yaml    | 1 -
+>  Documentation/devicetree/bindings/sound/adi,adau7118.yaml    | 1 -
+>  .../devicetree/bindings/sound/rockchip,i2s-tdm.yaml          | 1 -
+>  .../devicetree/bindings/sound/rockchip,rk3328-codec.yaml     | 2 +-
+>  Documentation/devicetree/bindings/sound/samsung,tm2.yaml     | 1 -
+>  .../devicetree/bindings/sound/ti,tlv320dac3100.yaml          | 1 -
+>  Documentation/devicetree/bindings/sound/wlf,wm8903.yaml      | 1 -
+>  .../devicetree/bindings/timer/nvidia,tegra-timer.yaml        | 1 -
+>  .../devicetree/bindings/timer/nvidia,tegra186-timer.yaml     | 1 -
+>  Documentation/devicetree/bindings/usb/qcom,pmic-typec.yaml   | 1 -
+>  116 files changed, 2 insertions(+), 136 deletions(-)
+> 
+
+...
+
+> diff --git a/Documentation/devicetree/bindings/pci/starfive,jh7110-pcie.yaml b/Documentation/devicetree/bindings/pci/starfive,jh7110-pcie.yaml
+> index 5f432452c815..33c80626e8ec 100644
+> --- a/Documentation/devicetree/bindings/pci/starfive,jh7110-pcie.yaml
+> +++ b/Documentation/devicetree/bindings/pci/starfive,jh7110-pcie.yaml
+> @@ -16,7 +16,6 @@ properties:
+>    compatible:
+>      const: starfive,jh7110-pcie
+>  
+> -
+>    reg:
+>      maxItems: 2
+>  
+
+...
+
+> diff --git a/Documentation/devicetree/bindings/pinctrl/starfive,jh7100-pinctrl.yaml b/Documentation/devicetree/bindings/pinctrl/starfive,jh7100-pinctrl.yaml
+> index f3258f2fd3a4..3f14eab01c54 100644
+> --- a/Documentation/devicetree/bindings/pinctrl/starfive,jh7100-pinctrl.yaml
+> +++ b/Documentation/devicetree/bindings/pinctrl/starfive,jh7100-pinctrl.yaml
+> @@ -32,7 +32,6 @@ description: |
+>      | | |     |   |   |          -------
+>      UART0     UART1 --
+>  
+> -
+>    The big MUX in the diagram only has 7 different ways of mapping peripherals
+>    on the left to pins on the right. StarFive calls the 7 configurations "signal
+>    groups".
+
+Reviewed-by: Hal Feng <hal.feng@starfivetech.com>
+
+Best regards,
+Hal
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
