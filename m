@@ -4,53 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EC473CCFA00
-	for <linux-phy@archiver.kernel.org>; Sat,  1 Nov 2025 13:33:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CAC45CCFA00
+	for <linux-phy@archiver.kernel.org>; Sat,  1 Nov 2025 13:33:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Z7VPdwHi4l7FyBKEXL7Qs4atebXV5urNVWRHBAxrcfI=; b=EzigtldoUlaWiP
-	GBO2Y0vflBncacyWEWwakTprBzcieEW+kcjt2L8T7p85eSB2sB+fd5Inzd94moGITzfyC8EC2KDHv
-	NGIexMwm03AdxoFPWUHLNi5+rs1AfUqtAm3AKlMnzw7Ew6DmXsDe3RJf411ODxjzZDvPqpP5Rle4C
-	VC9nE9qrRU38D8HzhUMlSKXryKGP4H5TQnmkla6jJbX0yFVnICZ2f/C0A1GYBrGsBxr8M4ZBKVqN1
-	Ii0fHBhhxCepiGkiUHVFiC1yqHtoy3mhN4/lTOJZR67UPCxLyg54fHsm9NIgEqXXkO/Ai/4t2ubU6
-	H1A0MFCutlMYPtSTSmjw==;
+	List-Owner; bh=raHeQ7bU+P94beTn2wnjs5TpzuD8dVEhrMOqjMqHIM8=; b=OHwHpiozpzxvA7
+	ZhMRlU2zhKGjP4eRrQ7h8uZzlqkhlMf90SzyUdlpXQ7Eokn+7UqG/Mkoan2ly3vexypT4gzSKZYF7
+	x8YdLu5h6uWswQDNzE6Jwb9QxbubrbZSKYURpWT3O4ohwuofhy9PfC/TcVWfjIOcutJMmam5irtQw
+	HuzpkmmllqF4SIAB9uL7gPZN6bgM35zb2y6u1hqHGa5tLnHFoHM0An9Uc1Sin6BUE4cLyHHASjwld
+	GL1hpunkvX8hpMtixLbNpbyVnfdPZEU/uJAFGfppuG3PMo5HQ/EmNmJu1aFNSNCMxjvfFnxtzOA3x
+	WD3xE/ii2Nwm3pu19MuQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vFBjU-00000007moO-1kz9;
-	Sat, 01 Nov 2025 13:33:28 +0000
+	id 1vFBjd-00000007n0S-0S7f;
+	Sat, 01 Nov 2025 13:33:38 +0000
 Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vFBjC-00000007mBJ-45J2;
+	id 1vFBjB-00000007m9Y-2qfm;
 	Sat, 01 Nov 2025 13:33:13 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
 	s=mail; t=1762003979;
-	bh=YUkMxhc36lfDFQq88M5/ukQps2eWc5BNpPfONN/wkTU=;
+	bh=UijHeDMHMdBNIO9BLCrR9i8WyBLXoUJhDobFME3OXHY=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=l0fhBZXxbT5HKIykr8Fk3qKkjo31VGI8L72JfSpzHqeBi4RmwcTYVZ9qT9eqT9vKP
-	 47Z9ZTZAc4WQmdlmrnm5SbrNzjB4I+sOuKf7K4Dj1YvnHre3lZ3ccBIXLsY7dR8/LP
-	 Xr1xI6M3e97yGGrfAsaM1s7CZPl26mWFOB986EZC0mOnw/KPeUpjnFZETvpcWZMjZv
-	 vTZWfzE68I0GYM+3S8thQFOikv5EDEJjoO99dXaaast1sl41rRdfW1lTo8ZjIdVtKh
-	 /cf59dS3alql+eEWEePZgCuSbm73WBffOmaWq/uSx/dKtYxOZQwQ1xXvHXgUtRVKq3
-	 icKuL/Tg8ynUQ==
-Received: from beast.luon.net (unknown [IPv6:2a10:3781:2531::8])
+	b=E2Y4n+EvnaE3MViZJ+XtsJMVOGjHDNaXPHmKm7axkj15Dv1CxLY1N8BjXN02rR8O0
+	 9TvvzOxKf4fnbLYiwGtq7+KCVzMMr324qhvDZC3P8vK53ZLTd/0useF9Bh6e8Zd6vB
+	 c2NXXUGlc4EwCg83rG+hSzrN3UPVRlNcY2M8G+2zaRI5mKoEOnT7A2o93LSBBDgwwt
+	 12sD3DVv7WpV7RolzzryQw1AQbd1VdYpIuf/c9iigfn8fZKxbpDCb+ti2l5lhxemt8
+	 n+YJ2TdqlN+mtwTrYmyMYs2+s2Ch4ZKIwk3V4g8pxJOMe5GCobJ2vKfhTG8x0b2RfR
+	 BuygEanXt5xVg==
+Received: from beast.luon.net (simons.connected.by.freedominter.net [45.83.240.172])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
 	(No client certificate requested)
 	(Authenticated sender: sjoerd)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 6C2DB17E1423;
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id AB5BE17E15C9;
 	Sat,  1 Nov 2025 14:32:59 +0100 (CET)
 Received: by beast.luon.net (Postfix, from userid 1000)
-	id BBBAB10E9D03C; Sat, 01 Nov 2025 14:32:58 +0100 (CET)
+	id DC29010E9D046; Sat, 01 Nov 2025 14:32:58 +0100 (CET)
 From: Sjoerd Simons <sjoerd@collabora.com>
-Date: Sat, 01 Nov 2025 14:32:55 +0100
-Subject: [PATCH v2 10/15] arm64: dts: mediatek: mt7981b-openwrt-one: Enable
- SPI NOR
+Date: Sat, 01 Nov 2025 14:33:00 +0100
+Subject: [PATCH v2 15/15] arm64: dts: mediatek: mt7981b-openwrt-one: Enable
+ software leds
 MIME-Version: 1.0
-Message-Id: <20251101-openwrt-one-network-v2-10-2a162b9eea91@collabora.com>
+Message-Id: <20251101-openwrt-one-network-v2-15-2a162b9eea91@collabora.com>
 References: <20251101-openwrt-one-network-v2-0-2a162b9eea91@collabora.com>
 In-Reply-To: <20251101-openwrt-one-network-v2-0-2a162b9eea91@collabora.com>
 To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
@@ -77,8 +77,8 @@ Cc: kernel@collabora.com, devicetree@vger.kernel.org,
  Sjoerd Simons <sjoerd@collabora.com>
 X-Mailer: b4 0.14.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251101_063311_295281_191CDD61 
-X-CRM114-Status: GOOD (  12.94  )
+X-CRM114-CacheID: sfid-20251101_063310_012558_9EBE4B05 
+X-CRM114-Status: GOOD (  13.76  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,133 +95,120 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The openwrt one has a SPI NOR flash which from factory is used for:
-* Recovery system
-* WiFi eeprom data
-* ethernet Mac addresses
+The openwrt has 3 status leds at the front:
+* red: Used as failsafe led by openwrt
+* white: Used as boot led by openwrt
+* green: Used as running/upgrade led by openwrt
 
-Describe this following the same partitions as the openwrt configuration
-uses.
+On the back each RJ45 jack has the typical amber/green leds. For the WAN
+jack this is hardware controlled by the phy, for LAN these are under
+software control and enabled by this patch.
 
 Signed-off-by: Sjoerd Simons <sjoerd@collabora.com>
 ---
 V1 -> V2:
-  - Use numeric drive-strength values rather then defines
-  - Make nvmem cell labers more meaningfull
-  - Only define nvmem cells used in later patches by devicetree
+  - Improve commit message
+  - Re-order nodes to be alphabetical
 ---
- .../boot/dts/mediatek/mt7981b-openwrt-one.dts      | 77 ++++++++++++++++++++++
+ .../boot/dts/mediatek/mt7981b-openwrt-one.dts      | 57 ++++++++++++++++++++++
  arch/arm64/boot/dts/mediatek/mt7981b.dtsi          |  2 +-
- 2 files changed, 78 insertions(+), 1 deletion(-)
+ 2 files changed, 58 insertions(+), 1 deletion(-)
 
 diff --git a/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts b/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts
-index 5834273839c17..183e48d985ed7 100644
+index b13f16d7816bf..b308b7ad4945d 100644
 --- a/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts
 +++ b/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts
-@@ -3,6 +3,7 @@
- /dts-v1/;
+@@ -26,6 +26,50 @@ memory@40000000 {
+ 		device_type = "memory";
+ 	};
  
- #include "mt7981b.dtsi"
-+#include "dt-bindings/pinctrl/mt65xx.h"
- 
- / {
- 	compatible = "openwrt,one", "mediatek,mt7981b";
-@@ -53,6 +54,82 @@ mux {
- 			groups = "pcie_pereset";
++	pwm-leds {
++		compatible = "pwm-leds";
++
++		led-0 {
++			color = <LED_COLOR_ID_WHITE>;
++			default-brightness = <0>;
++			function = LED_FUNCTION_STATUS;
++			max-brightness = <255>;
++			pwms = <&pwm 0 10000>;
++		};
++
++		led-1 {
++			color = <LED_COLOR_ID_GREEN>;
++			default-brightness = <0>;
++			function = LED_FUNCTION_STATUS;
++			max-brightness = <255>;
++			pwms = <&pwm 1 10000>;
++		};
++	};
++
++	gpio-leds {
++		compatible = "gpio-leds";
++
++		led-0 {
++			color = <LED_COLOR_ID_RED>;
++			function = LED_FUNCTION_STATUS;
++			gpios = <&pio 9 GPIO_ACTIVE_HIGH>;
++		};
++
++		led-1 {
++			color = <LED_COLOR_ID_AMBER>;
++			function = LED_FUNCTION_LAN;
++			gpios = <&pio 34 GPIO_ACTIVE_LOW>;
++			linux,default-trigger = "netdev";
++		};
++
++		led-2 {
++			color = <LED_COLOR_ID_GREEN>;
++			function = LED_FUNCTION_LAN;
++			gpios = <&pio 35 GPIO_ACTIVE_LOW>;
++			linux,default-trigger = "netdev";
++		};
++	};
++
+ 	reg_3p3v: regulator-3p3v {
+ 		compatible = "regulator-fixed";
+ 		regulator-name = "fixed-3.3V";
+@@ -111,6 +155,13 @@ mux {
  		};
  	};
-+
-+	spi2_flash_pins: spi2-pins {
+ 
++	pwm_pins: pwm-pins {
 +		mux {
-+			function = "spi";
-+			groups = "spi2";
-+		};
-+
-+		conf-pu {
-+			bias-pull-up = <MTK_PUPD_SET_R1R0_11>;
-+			drive-strength = <8>;
-+			pins = "SPI2_CS", "SPI2_WP";
-+		};
-+
-+		conf-pd {
-+			bias-pull-down = <MTK_PUPD_SET_R1R0_11>;
-+			drive-strength = <8>;
-+			pins = "SPI2_CLK", "SPI2_MOSI", "SPI2_MISO";
++			function = "pwm";
++			groups = "pwm0_0", "pwm1_1";
 +		};
 +	};
-+};
 +
-+&spi2 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&spi2_flash_pins>;
-+	status = "okay";
-+
-+	flash@0 {
-+		compatible = "jedec,spi-nor";
-+		reg = <0>;
-+		spi-max-frequency = <40000000>;
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+
-+		partitions {
-+			compatible = "fixed-partitions";
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+
-+			partition@0 {
-+				reg = <0x00000 0x40000>;
-+				label = "bl2-nor";
-+			};
-+
-+			partition@40000 {
-+				reg = <0x40000 0xc0000>;
-+				label = "factory";
-+				read-only;
-+
-+				nvmem-layout {
-+					compatible = "fixed-layout";
-+					#address-cells = <1>;
-+					#size-cells = <1>;
-+
-+					wifi_factory_calibration: eeprom@0 {
-+						reg = <0x0 0x1000>;
-+					};
-+
-+					wan_factory_mac: macaddr@24 {
-+						reg = <0x24 0x6>;
-+						compatible = "mac-base";
-+						#nvmem-cell-cells = <1>;
-+					};
-+				};
-+			};
-+
-+			partition@100000 {
-+				reg = <0x100000 0x80000>;
-+				label = "fip-nor";
-+			};
-+
-+			partition@180000 {
-+				reg = <0x180000 0xc80000>;
-+				label = "recovery";
-+			};
-+		};
-+	};
+ 	spi2_flash_pins: spi2-pins {
+ 		mux {
+ 			function = "spi";
+@@ -147,6 +198,12 @@ conf {
+ 	};
  };
  
- &uart0 {
++&pwm {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pwm_pins>;
++	status = "okay";
++};
++
+ &spi2 {
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&spi2_flash_pins>;
 diff --git a/arch/arm64/boot/dts/mediatek/mt7981b.dtsi b/arch/arm64/boot/dts/mediatek/mt7981b.dtsi
-index 3510a26cb5112..2c9819f28fdc2 100644
+index 17dd13d4c0015..66d89495bac52 100644
 --- a/arch/arm64/boot/dts/mediatek/mt7981b.dtsi
 +++ b/arch/arm64/boot/dts/mediatek/mt7981b.dtsi
-@@ -195,7 +195,7 @@ i2c@11007000 {
- 			status = "disabled";
+@@ -126,7 +126,7 @@ apmixedsys: clock-controller@1001e000 {
+ 			#clock-cells = <1>;
  		};
  
--		spi@11009000 {
-+		spi2: spi@11009000 {
- 			compatible = "mediatek,mt7981-spi-ipm", "mediatek,spi-ipm";
- 			reg = <0 0x11009000 0 0x1000>;
- 			interrupts = <GIC_SPI 142 IRQ_TYPE_LEVEL_HIGH>;
+-		pwm@10048000 {
++		pwm: pwm@10048000 {
+ 			compatible = "mediatek,mt7981-pwm";
+ 			reg = <0 0x10048000 0 0x1000>;
+ 			clocks = <&infracfg CLK_INFRA_PWM_STA>,
 
 -- 
 2.51.0
