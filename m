@@ -4,53 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D728CCFA0D
-	for <linux-phy@archiver.kernel.org>; Sat,  1 Nov 2025 13:33:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EBDAFCCFA07
+	for <linux-phy@archiver.kernel.org>; Sat,  1 Nov 2025 13:33:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iIjqdcaBcpodDzRjSuHhKbc2MnDaPz0W83n3tQ+d728=; b=oJfuoa1PkKAkvT
-	peZobwH4OqcYx9afPYQB9ZEB9zeQI8AkuJkxO3XboWpdEFyqOIdRW5uZ3haOfktnzp+bnmpmKHycQ
-	QJUqQ+I/8eb+YNFfYUosTvacIhOenBrjp5XNFHxwx5TX31fPBKnFjbSm5IWvTWh6u00MehIBm677i
-	1QR7aE2qndsSrIjWh+/16Q12LjYlXQ1E7ifXCjNycnw0qQ27So1xo5iTt16p2+p5zDsGJtEB+x7Zr
-	lBn5N3YVrxhe48LYWVpFjrNXgIZetEcG5xtDJBBxZK4S0vlsycodHMvIr6jHGe14MHCkL/DVCPrc1
-	Mj4UVLHmGhVmNkBed1zQ==;
+	List-Owner; bh=KyY0ItVaiDV7VReOxkpu5AmvnytMcS6iU07K3ao1fIM=; b=XuFAVgYcFay8nF
+	Qnfo4ynvVUZ7C/f5WXUPOb9W37XLxqtVf0BjWcTJVBPK/rQ1Urit8zS/6oEWjFNcwCrSZoX5IZN5z
+	1AYcgK9BXKWNPHOetukI6MbgVoUhckgkLHjSV84lYdVhMMOvzjitz8xFYFcG3DgxgagCMVbPz1IkV
+	3EwwXh8e+OyAauE5PRuhTh/6yWogdPtiCWw2sHQIfFFm+1MHpu5OFt7mfmt0rxehyGuHabdzIJugL
+	IOK1DvDbWI7X2puFoOsXglUkgV+E4xPPD2D1djOawSkC1AC3nsm86kn8g1kw56kP8yoOfH6FvinH4
+	8ULBXmuMpnkh2MIRc0XQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vFBjJ-00000007mUN-3mjK;
-	Sat, 01 Nov 2025 13:33:17 +0000
+	id 1vFBjL-00000007mXc-2KIo;
+	Sat, 01 Nov 2025 13:33:19 +0000
 Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vFBjB-00000007m8m-1eUH;
+	id 1vFBjA-00000007m7j-3ZFp;
 	Sat, 01 Nov 2025 13:33:11 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
 	s=mail; t=1762003979;
-	bh=ddAWFEZSGMfHfJ5Pa8nJFb0YRUqdHA2wEA1v6swMTIk=;
+	bh=0HQMjZYjWvOC8AwZB4R1t/Hz5V/fyYneHN+5PdUNP20=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=pd8tsOHXF2nNN4eGy+w9Sh29dx2KQACvx6rQPRV0hbKNvFGKLoD+TH0Kv9o3iE1Sr
-	 rizYo/ZVnr/lBhQIawH8WdS6BKB9SYFBrVIwxeBtPJ4MrwBxQiPNWfaxsaENMfPGxq
-	 grR6H3d2MqrsyNOeSM2rAwqYRs2XSIrxzyevk16wewvG2dLGQMnzBTn8p1UIiKUexf
-	 36B6lYblrHBHYcqhqOMdZPjloRaAK71tK+Yd/sbN7fcLX1O5Z+NEqgWAdW+8FsMl75
-	 W4fdecAdMgPSSwVAK/GL2kBB3wz3nzt+/3BSFHo784nU4sIW63JbHL5eCFW57nY/jH
-	 Rocd61J4pGhqQ==
-Received: from beast.luon.net (unknown [IPv6:2a10:3781:2531::8])
+	b=l9nczXUDxbsuld2nus7TFhbL1B8vWq5MuI8V7hFJv3h6Jm9IdYLTbqlke49yRTS5I
+	 QGsmi+F5kwTO/S8uihIYa5sRtUbxppmF/1lx2kF3hfKLP6nYV1ENploteOuNiYkL5Q
+	 K6/uRUicqmalZ6w5+WZFu+OpjNRlVEY8R5waycSDM+R4kEomnejcau40BLTBqhoIhl
+	 87KEbjJFCYlQvqA72Jc6eaaOfWcOBtYIHkNO7L+aLRalHP/PXZVdmICJfPDXCaqdHC
+	 DTOQvLOnODdw6Ko7LZ44hFTx8mi8ZX204TqLI8vtBMq+lCWvucI5/3sG/7c00Vv4IC
+	 NIyZCFmttGa6Q==
+Received: from beast.luon.net (simons.connected.by.freedominter.net [45.83.240.172])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
 	(No client certificate requested)
 	(Authenticated sender: sjoerd)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 7BC8417E154C;
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 6312D17E1418;
 	Sat,  1 Nov 2025 14:32:59 +0100 (CET)
 Received: by beast.luon.net (Postfix, from userid 1000)
-	id CDABD10E9D042; Sat, 01 Nov 2025 14:32:58 +0100 (CET)
+	id 9F62310E9D032; Sat, 01 Nov 2025 14:32:58 +0100 (CET)
 From: Sjoerd Simons <sjoerd@collabora.com>
-Date: Sat, 01 Nov 2025 14:32:58 +0100
-Subject: [PATCH v2 13/15] arm64: dts: mediatek: mt7981b: Add wifi memory
- region
+Date: Sat, 01 Nov 2025 14:32:50 +0100
+Subject: [PATCH v2 05/15] dt-bindings: phy: mediatek,tphy: Add support for
+ MT7981
 MIME-Version: 1.0
-Message-Id: <20251101-openwrt-one-network-v2-13-2a162b9eea91@collabora.com>
+Message-Id: <20251101-openwrt-one-network-v2-5-2a162b9eea91@collabora.com>
 References: <20251101-openwrt-one-network-v2-0-2a162b9eea91@collabora.com>
 In-Reply-To: <20251101-openwrt-one-network-v2-0-2a162b9eea91@collabora.com>
 To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
@@ -74,11 +74,12 @@ Cc: kernel@collabora.com, devicetree@vger.kernel.org,
  linux-mediatek@lists.infradead.org, linux-pci@vger.kernel.org, 
  linux-phy@lists.infradead.org, netdev@vger.kernel.org, 
  Daniel Golle <daniel@makrotopia.org>, Bryan Hinton <bryan@bryanhinton.com>, 
- Sjoerd Simons <sjoerd@collabora.com>
+ Sjoerd Simons <sjoerd@collabora.com>, 
+ Conor Dooley <conor.dooley@microchip.com>
 X-Mailer: b4 0.14.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251101_063309_697363_12CC9807 
-X-CRM114-Status: UNSURE (   9.92  )
+X-CRM114-CacheID: sfid-20251101_063309_866204_7AAB4542 
+X-CRM114-Status: UNSURE (   9.21  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -96,39 +97,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add required memory region for the builtin wifi block.
+Add a compatible string for Filogic 820, this chip integrates a MediaTek
+generic T-PHY version 2
 
+Acked-by: Conor Dooley <conor.dooley@microchip.com>
+Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 Signed-off-by: Sjoerd Simons <sjoerd@collabora.com>
 ---
-V1 -> V2: Don't set status to in this patch
----
- arch/arm64/boot/dts/mediatek/mt7981b.dtsi | 6 ++++++
- 1 file changed, 6 insertions(+)
+ Documentation/devicetree/bindings/phy/mediatek,tphy.yaml | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm64/boot/dts/mediatek/mt7981b.dtsi b/arch/arm64/boot/dts/mediatek/mt7981b.dtsi
-index 065f5a3c8b26a..eb2effb3c1ed2 100644
---- a/arch/arm64/boot/dts/mediatek/mt7981b.dtsi
-+++ b/arch/arm64/boot/dts/mediatek/mt7981b.dtsi
-@@ -69,6 +69,11 @@ secmon_reserved: secmon@43000000 {
- 			no-map;
- 		};
- 
-+		wmcpu_emi: wmcpu-reserved@47c80000 {
-+			reg = <0 0x47c80000 0 0x100000>;
-+			no-map;
-+		};
-+
- 		wo_emi0: wo-emi@47d80000 {
- 			reg = <0 0x47d80000 0 0x40000>;
- 			no-map;
-@@ -497,6 +502,7 @@ wifi@18000000 {
- 			clocks = <&topckgen CLK_TOP_NETSYS_MCU_SEL>,
- 				 <&topckgen CLK_TOP_AP2CNN_HOST_SEL>;
- 			clock-names = "mcu", "ap2conn";
-+			memory-region = <&wmcpu_emi>;
- 			resets = <&watchdog MT7986_TOPRGU_CONSYS_SW_RST>;
- 			reset-names = "consys";
- 			status = "disabled";
+diff --git a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+index b2218c1519391..ff5c77ef11765 100644
+--- a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
++++ b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
+@@ -80,6 +80,7 @@ properties:
+               - mediatek,mt2712-tphy
+               - mediatek,mt6893-tphy
+               - mediatek,mt7629-tphy
++              - mediatek,mt7981-tphy
+               - mediatek,mt7986-tphy
+               - mediatek,mt8183-tphy
+               - mediatek,mt8186-tphy
 
 -- 
 2.51.0
