@@ -4,62 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 083E8CCFA02
-	for <linux-phy@archiver.kernel.org>; Sun,  2 Nov 2025 13:09:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6F13ECCF9E3
+	for <linux-phy@archiver.kernel.org>; Sun,  2 Nov 2025 16:34:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:From:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iXijN4xABf5nVZlL91ZIgyINQ2dwl8GK7bk0TuO/zDk=; b=Lkqzvt0cgschUY
-	Lnb/rEC3O8VhKOImkL7AEDtpaCoSubv3ONcjwEhyNLgJEdfuVbY/EWe7ahlymOhuyif6UBByS+2sW
-	OOIcpjGUGGEg4ZEBsrOLQONhJVLuSml5XswQFza5Ce/0zLQuWRG7zSbm2CFC9Do9Y2ubsN2CKsd5a
-	jo1GbmkujH8KPW92Tm4ZbaE5CC9qG8dLBHrF4CGCkIYE/BBmf/ivzbIELhdPsRHj6We7lfyFNsT3z
-	EF04LQKl07DE7+k7p+KTZxfJkMvjmyFJdAGb6shyIt+9c3snu9ao8bln1RUPfvyw+1d1bmqvThBeP
-	qMj1TIGIQ0S2hsVF6hfw==;
+	List-Owner; bh=aj7aVbDwZHtRlJwLnveWK3oKAvy5oAPn95tFxnCZ3Zg=; b=INShlvNj2D1ziQ
+	U+H6X7LhDcbGel9mEibxygM18ROKjO91IwuIRk3iJ2l0esbfkm8W/jXsfxcVCH6+ot7uiSqZcxibX
+	KKqBYM9VYf/OW4sb3QkvVgbqUfUtVZjD4RTa//ESZxMTfmwAUHazJk8MwTvY5hBWD/GnRV7UM5SE+
+	wEmiv9YhI/3xOEJrib1ImsGedJKPfOgam/YZ/ejPUVd1EIabmr3WiaaFlFHfwzlOHkF4NnMHZk3Ut
+	LxpWTPamwNbFQrRxgmymHwNOaMXXMHN5EJ5HfEoixOT/5x7m0aXL9p+rvIo+KBPyH9Kr9aM26aSx4
+	Gp2zmB7FGTiAP6K1M4iA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vFXqA-00000008YPG-25Ye;
-	Sun, 02 Nov 2025 13:09:50 +0000
+	id 1vFb26-00000008erB-3fu9;
+	Sun, 02 Nov 2025 16:34:22 +0000
 Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vFXq8-00000008YP3-3nFi;
-	Sun, 02 Nov 2025 13:09:49 +0000
+	id 1vFb24-00000008eqd-2KvG;
+	Sun, 02 Nov 2025 16:34:20 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 0B2EC601AF;
-	Sun,  2 Nov 2025 13:09:48 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C6412C4CEF7;
-	Sun,  2 Nov 2025 13:09:44 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 88BC46022D;
+	Sun,  2 Nov 2025 16:34:19 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id ABB61C4CEF7;
+	Sun,  2 Nov 2025 16:34:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1762088987;
-	bh=JsNDhf+4sb8rTXxkI79UStDqc65YrKO9bboNIQAYcd8=;
-	h=Date:From:Subject:To:Cc:References:In-Reply-To:From;
-	b=WQqncrOLfQR2JjAKh9LI6nIQ0Nm8RyfBKSYY0XY1ViSxUoG4bDIQKz7BCAPFNuxYo
-	 37AZpcki5Jg9997/go8g0gPMS1D0AydB16zygbVzdjYkIx6Hcr8p/yj61IQCGp6mZx
-	 TUwk7oJ6HzF4NzDXRUybthVJFsXPIrHXg44ygchSBz4HJTdFo7zC/V0mthPMx8V8cs
-	 cYSNJ1vmaEGgUS8bBvCF35SEmVoG/sL3XFNj/HjTup/56kPtAmMLPe9sYRfwP1tq2n
-	 srd7Ml97o1NrZv90JoPohUvFimC6JylFikVOD8MopGAsH8/d/D0Z+GX/g4hXsfjOBs
-	 qIVOO7cRcWLGg==
-Message-ID: <c8a88007-aaa0-4f8c-bf47-186b41428502@kernel.org>
-Date: Sun, 2 Nov 2025 14:09:42 +0100
+	s=k20201202; t=1762101259;
+	bh=BMHbVQks4miUEqiNB8Bj8JUPKeAlJSJSR1yVrl8aLco=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=m7eRD6TVlAfyAK/SnxypxQv2CmKl306jhXgTbNo+yEzxGzgBywD4o3XO+Kra3kmUC
+	 BHeM9hHDBMsxnas3zHbLQV+jXGd43myStuXXahsqlnh1MurcU2NGwQZgqfQ1ROV/GQ
+	 R1Pn9WDjXqwgLImO8l2p2csPYY5IvVZokYSEJGvJl6QDnPEPH2lDomh0rfaaZUlZeM
+	 GXKm1g0JlMbAHcafI/yarK+QpXQbMIsDi8O/iVF9ZvJcEBhNzY649s591I/T7XpW7k
+	 vJMX2iVXWlqbfZvVvbDLnKCpTK3ZsX6HPpK8vBbVLb8hhzsxrvKHJS6Gj0qvKfdMhp
+	 vvcH1GW9R8jLA==
+Date: Sun, 2 Nov 2025 17:34:16 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Sjoerd Simons <sjoerd@collabora.com>
+Cc: Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Matthias Brugger <matthias.bgg@gmail.com>, 
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, Ryder Lee <ryder.lee@mediatek.com>, 
+	Jianjun Wang <jianjun.wang@mediatek.com>, Bjorn Helgaas <bhelgaas@google.com>, 
+	Lorenzo Pieralisi <lpieralisi@kernel.org>, Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
+	Manivannan Sadhasivam <mani@kernel.org>, Chunfeng Yun <chunfeng.yun@mediatek.com>, 
+	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+	Lee Jones <lee@kernel.org>, Andrew Lunn <andrew+netdev@lunn.ch>, 
+	"David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
+	Lorenzo Bianconi <lorenzo@kernel.org>, Felix Fietkau <nbd@nbd.name>, kernel@collabora.com, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org, linux-pci@vger.kernel.org, 
+	linux-phy@lists.infradead.org, netdev@vger.kernel.org, Daniel Golle <daniel@makrotopia.org>, 
+	Bryan Hinton <bryan@bryanhinton.com>
+Subject: Re: [PATCH v2 08/15] dt-bindings: net: mediatek,net: Correct
+ bindings for MT7981
+Message-ID: <20251102-honest-jade-hedgehog-b85f0d@kuoka>
+References: <20251101-openwrt-one-network-v2-0-2a162b9eea91@collabora.com>
+ <20251101-openwrt-one-network-v2-8-2a162b9eea91@collabora.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-From: Sven Peter <sven@kernel.org>
-Subject: Re: [PATCH 1/3] soc: apple: Add hardware tunable support
-To: Janne Grunau <j@jannau.net>
-Cc: Neal Gompa <neal@gompa.dev>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
- asahi@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Alyssa Rosenzweig <alyssa@rosenzweig.io>
-References: <20251026-b4-atcphy-v1-0-f81b1225f9c6@kernel.org>
- <20251026-b4-atcphy-v1-1-f81b1225f9c6@kernel.org>
- <20251029192101.GA458701@robin.jannau.net>
-Content-Language: en-US
-In-Reply-To: <20251029192101.GA458701@robin.jannau.net>
+Content-Disposition: inline
+In-Reply-To: <20251101-openwrt-one-network-v2-8-2a162b9eea91@collabora.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,82 +79,32 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
-
-On 29.10.25 20:21, Janne Grunau wrote:
-> Hej,
+On Sat, Nov 01, 2025 at 02:32:53PM +0100, Sjoerd Simons wrote:
+> Different SoCs have different numbers of Wireless Ethernet
+> Dispatch (WED) units:
+> - MT7981: Has 1 WED unit
+> - MT7986: Has 2 WED units
+> - MT7988: Has 2 WED units
 > 
-> On Sun, Oct 26, 2025 at 01:52:01PM +0000, Sven Peter wrote:
->> Various hardware, like the Type-C PHY or the Thunderbolt/USB4 NHI,
->> present on Apple SoCs need machine-specific tunables passed from our
->> bootloader m1n1 to the device tree. Add generic helpers so that we
->> don't have to duplicate this across multiple drivers.
->>
->> Reviewed-by: Alyssa Rosenzweig <alyssa@rosenzweig.io>
->> Reviewed-by: Neal Gompa <neal@gompa.dev>
->> Signed-off-by: Sven Peter <sven@kernel.org>
-
-[...]
-
->> +
->> +	tunable = devm_kzalloc(dev,
->> +			       sizeof(*tunable) + sz * sizeof(*tunable->values),
+> Update the binding to reflect these hardware differences. The MT7981
+> also uses infracfg for PHY switching, so allow that property.
 > 
-> There is a struct_size macro in linux/overflow.h for this calculation.
-> We do not have to care about overflows as as struct property.length
-> remains (signed) int. I would expect there is a much smaller limit for of
-> properties in place anyway. The macro looks nicer though:
-> 
-> struct_size(tunable, values, sz)
+> Signed-off-by: Sjoerd Simons <sjoerd@collabora.com>
+> ---
+> V1 -> V2: Only overwrite constraints that are different from the default
 
-Nice, I'll use that!
+I don't get it.
 
-> 
->> +			       GFP_KERNEL);
->> +	if (!tunable)
->> +		return ERR_PTR(-ENOMEM);
->> +	tunable->sz = sz;
->> +
->> +	for (i = 0, p = NULL; i < tunable->sz; ++i) {
->> +		p = of_prop_next_u32(prop, p, &tunable->values[i].offset);
-> 
-> Does it make sense to add an size argument either here or in
-> apple_tunable_apply() to check that the offset is within the expect MMIO
-> region? Not really important but might catch a bug someday.
+mediatek,mt7622-eth now can have 1 or 2 items, but previously it had
+strict 2. This needs explanation in commit msg.
 
-I would've usually said this was overkill but given that we just found a 
-bug in our bootloader which caused us to copy random memory as tunables 
-a week or two ago because of a stale fdt node id I'll add some sanity 
-checks here.
-
-> 
->> +		p = of_prop_next_u32(prop, p, &tunable->values[i].mask);
->> +		p = of_prop_next_u32(prop, p, &tunable->values[i].value);
-
-[...]
-
->> +/**
->> + * Apply a previously loaded hardware tunable.
->> + *
->> + * @param regs: MMIO to which the tunable will be applied.
->> + * @param tunable: Pointer to the tunable.
->> + */
->> +void apple_tunable_apply(void __iomem *regs, struct apple_tunable *tunable);
->> +
->> +#endif
-> 
-> Reviewed-by: Janne Grunau <j@jannau.net>
-
-thanks!
-
-
-Sven
-
+Best regards,
+Krzysztof
 
 
 -- 
