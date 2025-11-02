@@ -4,81 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2BD34CCFA05
-	for <linux-phy@archiver.kernel.org>; Sat,  1 Nov 2025 13:33:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 083E8CCFA02
+	for <linux-phy@archiver.kernel.org>; Sun,  2 Nov 2025 13:09:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:From:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a0WQmqQdDPH5dlqwejWMYZRjKWZXRYizZnCCHtwGGD8=; b=YHNcuve2It74An
-	uhriV98bA8YulIEZFHkvBJ4eawwP73zXF33vz4tB7BQR6dx6SBb31VsybF5oY+tUrCi8wJOEJgPBm
-	6k+SKx/46pSjBtF+qZKjqGMAg2LUsO7i/xPoWSq0IOPw2ooVB5//OOB/KY3542jIlJE4OCWLP9ao/
-	Mt/isRM1dPPE0rPy57r8R60v3BXXXGJEZjM8C4Q1NXSyaSHZLSlgMmDRIJfgOyUahb7N4C6gLFYzG
-	3sQQOjLs88o+mRQByr3dvCgXnzoL7P+IMvp8Y2fGZHn/JWQNorBYDoPTag73/LDM331FjzZgLy20P
-	ZNaO5iXIuMUq3wRuULvQ==;
+	List-Owner; bh=iXijN4xABf5nVZlL91ZIgyINQ2dwl8GK7bk0TuO/zDk=; b=Lkqzvt0cgschUY
+	Lnb/rEC3O8VhKOImkL7AEDtpaCoSubv3ONcjwEhyNLgJEdfuVbY/EWe7ahlymOhuyif6UBByS+2sW
+	OOIcpjGUGGEg4ZEBsrOLQONhJVLuSml5XswQFza5Ce/0zLQuWRG7zSbm2CFC9Do9Y2ubsN2CKsd5a
+	jo1GbmkujH8KPW92Tm4ZbaE5CC9qG8dLBHrF4CGCkIYE/BBmf/ivzbIELhdPsRHj6We7lfyFNsT3z
+	EF04LQKl07DE7+k7p+KTZxfJkMvjmyFJdAGb6shyIt+9c3snu9ao8bln1RUPfvyw+1d1bmqvThBeP
+	qMj1TIGIQ0S2hsVF6hfw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vFBjf-00000007n3L-0Sfb;
-	Sat, 01 Nov 2025 13:33:39 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	id 1vFXqA-00000008YPG-25Ye;
+	Sun, 02 Nov 2025 13:09:50 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vFBjF-00000007mFK-16vW;
-	Sat, 01 Nov 2025 13:33:14 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1762003980;
-	bh=ZDZDYWQ0pBb006s9WoF4BubE2PEuT8OM2W2BmbduJzY=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=nh2aYfQiFcRIetufBWS4vqK2KujifLFy12b1CPMyEOtcoYhLE/xrV5Z+8TBe2ka1Y
-	 tbkq5j9dPw+LmwO5l3yr0d8wgLaMh5I8BDq0dWngGXFhKtZQMp+hSKQJ2h5HIwJ8FL
-	 89c5YvH3G2+WvzansquvT24h55dufBJ440yPgy5QvlS2W/E2J8Gb4YfucZnT/zJNyG
-	 1KFlTc05ffnK2Yg0admBEDga9+t+9okKrtOpkkzwi7Iq8Ulyxgmnl1nC5XSm8GRNVi
-	 Z+J0ig2rqLRqsLHepcS1MLKLb/tmbTbIRkjWu1JCKlOcw8BuM0wZn4C3qAwBr72z9o
-	 r9SWVNNmJ+4lA==
-Received: from beast.luon.net (unknown [IPv6:2a10:3781:2531::8])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
-	(No client certificate requested)
-	(Authenticated sender: sjoerd)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id E9FB817E35CB;
-	Sat,  1 Nov 2025 14:32:59 +0100 (CET)
-Received: by beast.luon.net (Postfix, from userid 1000)
-	id BF4D510E9D03E; Sat, 01 Nov 2025 14:32:58 +0100 (CET)
-From: Sjoerd Simons <sjoerd@collabora.com>
-Date: Sat, 01 Nov 2025 14:32:56 +0100
-Subject: [PATCH v2 11/15] arm64: dts: mediatek: mt7981b-openwrt-one: Enable
- Ethernet
+	id 1vFXq8-00000008YP3-3nFi;
+	Sun, 02 Nov 2025 13:09:49 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 0B2EC601AF;
+	Sun,  2 Nov 2025 13:09:48 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C6412C4CEF7;
+	Sun,  2 Nov 2025 13:09:44 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1762088987;
+	bh=JsNDhf+4sb8rTXxkI79UStDqc65YrKO9bboNIQAYcd8=;
+	h=Date:From:Subject:To:Cc:References:In-Reply-To:From;
+	b=WQqncrOLfQR2JjAKh9LI6nIQ0Nm8RyfBKSYY0XY1ViSxUoG4bDIQKz7BCAPFNuxYo
+	 37AZpcki5Jg9997/go8g0gPMS1D0AydB16zygbVzdjYkIx6Hcr8p/yj61IQCGp6mZx
+	 TUwk7oJ6HzF4NzDXRUybthVJFsXPIrHXg44ygchSBz4HJTdFo7zC/V0mthPMx8V8cs
+	 cYSNJ1vmaEGgUS8bBvCF35SEmVoG/sL3XFNj/HjTup/56kPtAmMLPe9sYRfwP1tq2n
+	 srd7Ml97o1NrZv90JoPohUvFimC6JylFikVOD8MopGAsH8/d/D0Z+GX/g4hXsfjOBs
+	 qIVOO7cRcWLGg==
+Message-ID: <c8a88007-aaa0-4f8c-bf47-186b41428502@kernel.org>
+Date: Sun, 2 Nov 2025 14:09:42 +0100
 MIME-Version: 1.0
-Message-Id: <20251101-openwrt-one-network-v2-11-2a162b9eea91@collabora.com>
-References: <20251101-openwrt-one-network-v2-0-2a162b9eea91@collabora.com>
-In-Reply-To: <20251101-openwrt-one-network-v2-0-2a162b9eea91@collabora.com>
-To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Matthias Brugger <matthias.bgg@gmail.com>, 
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
- Ryder Lee <ryder.lee@mediatek.com>, 
- Jianjun Wang <jianjun.wang@mediatek.com>, 
- Bjorn Helgaas <bhelgaas@google.com>, 
- Lorenzo Pieralisi <lpieralisi@kernel.org>, 
- =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, 
- Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Lee Jones <lee@kernel.org>, 
- Andrew Lunn <andrew+netdev@lunn.ch>, 
- "David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
- Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
- Lorenzo Bianconi <lorenzo@kernel.org>, Felix Fietkau <nbd@nbd.name>
-Cc: kernel@collabora.com, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- linux-mediatek@lists.infradead.org, linux-pci@vger.kernel.org, 
- linux-phy@lists.infradead.org, netdev@vger.kernel.org, 
- Daniel Golle <daniel@makrotopia.org>, Bryan Hinton <bryan@bryanhinton.com>, 
- Sjoerd Simons <sjoerd@collabora.com>
-X-Mailer: b4 0.14.3
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251101_063313_634363_32E3DC9A 
-X-CRM114-Status: GOOD (  11.99  )
+User-Agent: Mozilla Thunderbird
+From: Sven Peter <sven@kernel.org>
+Subject: Re: [PATCH 1/3] soc: apple: Add hardware tunable support
+To: Janne Grunau <j@jannau.net>
+Cc: Neal Gompa <neal@gompa.dev>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
+ asahi@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Alyssa Rosenzweig <alyssa@rosenzweig.io>
+References: <20251026-b4-atcphy-v1-0-f81b1225f9c6@kernel.org>
+ <20251026-b4-atcphy-v1-1-f81b1225f9c6@kernel.org>
+ <20251029192101.GA458701@robin.jannau.net>
+Content-Language: en-US
+In-Reply-To: <20251029192101.GA458701@robin.jannau.net>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,124 +71,82 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Enable the Ethernet subsystem on OpenWrt One board with dual-MAC
-configuration:
-- GMAC0: Connected to external Airoha EN8811H 2.5GbE PHY via SGMII
-  (2500base-x mode) for WAN connectivity with LED indicators
-- GMAC1: Connected to internal MT7981 1GbE PHY (GMII mode) for LAN
+Hi,
 
-Ethernet aliases are defined to provide consistent network interface
-naming (ethernet0 = LAN, ethernet1 = WAN).
+On 29.10.25 20:21, Janne Grunau wrote:
+> Hej,
+> 
+> On Sun, Oct 26, 2025 at 01:52:01PM +0000, Sven Peter wrote:
+>> Various hardware, like the Type-C PHY or the Thunderbolt/USB4 NHI,
+>> present on Apple SoCs need machine-specific tunables passed from our
+>> bootloader m1n1 to the device tree. Add generic helpers so that we
+>> don't have to duplicate this across multiple drivers.
+>>
+>> Reviewed-by: Alyssa Rosenzweig <alyssa@rosenzweig.io>
+>> Reviewed-by: Neal Gompa <neal@gompa.dev>
+>> Signed-off-by: Sven Peter <sven@kernel.org>
 
-Signed-off-by: Sjoerd Simons <sjoerd@collabora.com>
----
-V1 -> V2:
-  - Switch gmac0 phy irq to Level
-  - Update mac nvmem label name
----
- .../boot/dts/mediatek/mt7981b-openwrt-one.dts      | 60 ++++++++++++++++++++++
- 1 file changed, 60 insertions(+)
+[...]
 
-diff --git a/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts b/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts
-index 183e48d985ed7..90edb9f493c6d 100644
---- a/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts
-+++ b/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts
-@@ -3,6 +3,8 @@
- /dts-v1/;
- 
- #include "mt7981b.dtsi"
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/leds/common.h>
- #include "dt-bindings/pinctrl/mt65xx.h"
- 
- / {
-@@ -10,6 +12,8 @@ / {
- 	model = "OpenWrt One";
- 
- 	aliases {
-+		ethernet0 = &gmac1;
-+		ethernet1 = &gmac0;
- 		serial0 = &uart0;
- 	};
- 
-@@ -41,6 +45,58 @@ reg_5v: regulator-5v {
- 	};
- };
- 
-+&eth {
-+	status = "okay";
-+
-+	/* WAN interface */
-+	gmac0: mac@0 {
-+		compatible = "mediatek,eth-mac";
-+		reg = <0>;
-+		nvmem-cells = <&wan_factory_mac 0>;
-+		nvmem-cell-names = "mac-address";
-+		phy-mode = "2500base-x";
-+		phy-handle = <&phy15>;
-+	};
-+
-+	/* LAN interface */
-+	gmac1: mac@1 {
-+		compatible = "mediatek,eth-mac";
-+		reg = <1>;
-+		phy-mode = "gmii";
-+		phy-handle = <&int_gbe_phy>;
-+	};
-+};
-+
-+&mdio_bus {
-+	phy15: ethernet-phy@f {
-+		compatible = "ethernet-phy-id03a2.a411";
-+		reg = <0xf>;
-+		interrupt-parent = <&pio>;
-+		interrupts = <38 IRQ_TYPE_LEVEL_LOW>;
-+		reset-gpios = <&pio 39 GPIO_ACTIVE_LOW>;
-+		reset-assert-us = <10000>;
-+		reset-deassert-us = <20000>;
-+		airoha,pnswap-rx;
-+
-+		leds {
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+
-+			led@0 {
-+				reg = <0>;
-+				function = LED_FUNCTION_WAN;
-+				color = <LED_COLOR_ID_AMBER>;
-+			};
-+
-+			led@1 {
-+				reg = <1>;
-+				function = LED_FUNCTION_WAN;
-+				color = <LED_COLOR_ID_GREEN>;
-+			};
-+		};
-+	};
-+};
-+
- &pcie {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&pcie_pins>;
-@@ -132,6 +188,10 @@ partition@180000 {
- 	};
- };
- 
-+&sgmiisys0 {
-+	mediatek,pnswap;
-+};
-+
- &uart0 {
- 	status = "okay";
- };
+>> +
+>> +	tunable = devm_kzalloc(dev,
+>> +			       sizeof(*tunable) + sz * sizeof(*tunable->values),
+> 
+> There is a struct_size macro in linux/overflow.h for this calculation.
+> We do not have to care about overflows as as struct property.length
+> remains (signed) int. I would expect there is a much smaller limit for of
+> properties in place anyway. The macro looks nicer though:
+> 
+> struct_size(tunable, values, sz)
 
--- 
-2.51.0
+Nice, I'll use that!
+
+> 
+>> +			       GFP_KERNEL);
+>> +	if (!tunable)
+>> +		return ERR_PTR(-ENOMEM);
+>> +	tunable->sz = sz;
+>> +
+>> +	for (i = 0, p = NULL; i < tunable->sz; ++i) {
+>> +		p = of_prop_next_u32(prop, p, &tunable->values[i].offset);
+> 
+> Does it make sense to add an size argument either here or in
+> apple_tunable_apply() to check that the offset is within the expect MMIO
+> region? Not really important but might catch a bug someday.
+
+I would've usually said this was overkill but given that we just found a 
+bug in our bootloader which caused us to copy random memory as tunables 
+a week or two ago because of a stale fdt node id I'll add some sanity 
+checks here.
+
+> 
+>> +		p = of_prop_next_u32(prop, p, &tunable->values[i].mask);
+>> +		p = of_prop_next_u32(prop, p, &tunable->values[i].value);
+
+[...]
+
+>> +/**
+>> + * Apply a previously loaded hardware tunable.
+>> + *
+>> + * @param regs: MMIO to which the tunable will be applied.
+>> + * @param tunable: Pointer to the tunable.
+>> + */
+>> +void apple_tunable_apply(void __iomem *regs, struct apple_tunable *tunable);
+>> +
+>> +#endif
+> 
+> Reviewed-by: Janne Grunau <j@jannau.net>
+
+thanks!
+
+
+Sven
+
 
 
 -- 
