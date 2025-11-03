@@ -4,77 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4DA24CCF9E3
-	for <linux-phy@archiver.kernel.org>; Sun,  2 Nov 2025 22:25:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3743DCCFA00
+	for <linux-phy@archiver.kernel.org>; Mon,  3 Nov 2025 01:12:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y3M3P4/jqlPg6GiSRHvrdQgGASA1REt2WLSm3fdQ3D0=; b=En6lQZyBAL1hV4
-	mEBpF9nzO4blx7u5qGsbRWPrdfYOC1eDqf2GUi9uOTG0RNK8RqmI5d9wNr+xPSjgLO8j2yp77hIS7
-	z9iN5nl7tDB2OfQzcCLJP24e22IFeRc8KccCbkvKAUyWVzImrPyHsXbQV5jvlAdHTo70giDZ1yqtF
-	eA2yNON21yqORz71lVo2YaFIkxPYk75o3dXxh8ByicKzBhdh7eR7fmOlvTuplArszwIrBiV+Ia+KB
-	HCxUo6DNHNIxtHC2pVHYLbtnssZvALs5gRyxlmPJmXjh3k09Ho0YEmEgmRi9YWU9BReo5+EMVvw9/
-	87btQaYZSukR9LwmaQqQ==;
+	List-Owner; bh=f+a9khd3zHdgru3Tewjn8Z9Gbw9eoFkjma2MM2HFBT0=; b=qqvuh0igd/8xDe
+	7A8Iij0L/jLVuzTp6YMcN/nrSLcKK/Gbnx8mx8XJis1ou7xDDh/HxICuIUGbKjWOeBgLjdoqVqUNv
+	/h7h071zxsFboKK49OybU45hlapIkRRPAtEpQpmUUqQjyB0VEjp1XvSxPfh3TbGiY5bvX4SwQs6ma
+	Lr6ZZNcwN2Vtaopx7VuUdLKFMvwi2oY0GYN99332A3ae6169xFWry0uEnqCF+9tXHvqEWTpNxY4rA
+	gJYlys9F6Hwv0KkCYBvAADaiKrAjV0Vip5sBXp9t/r/TPcosH+y664Zr+ed2k3xJPS5sHky7mOPf5
+	Dyhc3Jcz6MwfVVilxRWg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vFgW0-00000008tMp-3NMI;
-	Sun, 02 Nov 2025 22:25:36 +0000
-Received: from mgamail.intel.com ([192.198.163.7])
+	id 1vFj7H-00000008zvc-2NkT;
+	Mon, 03 Nov 2025 01:12:15 +0000
+Received: from mail-m12889.netease.com ([103.209.128.89])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vFgVw-00000008tMR-1W9O;
-	Sun, 02 Nov 2025 22:25:34 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1762122331; x=1793658331;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=xAaDVXcvzXMuT6b41jvj67zRq9dUreGowV9Fgs0NF0Y=;
-  b=dLn09RPCd3lCvkzqCZEc4JvPOKzS9Al9OkRYtQu2NLotO5TZkB/uLfcb
-   +Jzvp//7HLUoSRjB8zh4DzJIfTUfsI1qbkj5b6lUrgSOTZ+Ao8rgWz8wk
-   hNyCbrhQJEv+6ng1tsFKWo+p/DPaFgLu9JDydzDKWwWP/iLg93N7aZEdQ
-   wOutIUi7M8Tnbb1YfH/tb/qZNJ0oHuwUGl/1bZZR6Dkzzaefc71Zt/5du
-   TmVHOnwyLSKNp3BxmDCvC52SDy5UkyGLoEDIRtgJCIAjFNPLDEH+w/YnA
-   DCdqRYDik14f0IQyaL04UPCqd9IS9kfTdo8fDH7NhI47KC1Dfv05uXTUg
-   A==;
-X-CSE-ConnectionGUID: 1JTZ+3SbTzid+kRGHMR/hw==
-X-CSE-MsgGUID: vJ+BefHfSZ+/vzuA0XXbVQ==
-X-IronPort-AV: E=McAfee;i="6800,10657,11601"; a="89663064"
-X-IronPort-AV: E=Sophos;i="6.19,274,1754982000"; 
-   d="scan'208";a="89663064"
-Received: from fmviesa006.fm.intel.com ([10.60.135.146])
-  by fmvoesa101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 02 Nov 2025 14:25:30 -0800
-X-CSE-ConnectionGUID: vXJAcFdIRR2J+3k8618sjw==
-X-CSE-MsgGUID: gfzfgI3ESyqPmcXpTmfFfg==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.19,274,1754982000"; 
-   d="scan'208";a="186593785"
-Received: from lkp-server02.sh.intel.com (HELO 66d7546c76b2) ([10.239.97.151])
-  by fmviesa006.fm.intel.com with ESMTP; 02 Nov 2025 14:25:28 -0800
-Received: from kbuild by 66d7546c76b2 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1vFgVq-000PcC-1p;
-	Sun, 02 Nov 2025 22:25:26 +0000
-Date: Mon, 3 Nov 2025 06:25:00 +0800
-From: kernel test robot <lkp@intel.com>
-To: Alex Elder <elder@riscstar.com>, vkoul@kernel.org, kishon@kernel.org
-Cc: oe-kbuild-all@lists.linux.dev, p.zabel@pengutronix.de, dlan@gentoo.org,
-	aurelien@aurel32.net, guodong@riscstar.com,
-	linux-phy@lists.infradead.org, spacemit@lists.linux.dev,
-	linux-riscv@lists.infradead.org, linux-kernel@vger.kernel.org,
-	Junzhong Pan <panjunzhong@linux.spacemit.com>
-Subject: Re: [PATCH v4 4/7] phy: spacemit: introduce PCIe/combo PHY
-Message-ID: <202511030652.3CVPb2v3-lkp@intel.com>
-References: <20251030220259.1063792-5-elder@riscstar.com>
+	id 1vFj7D-00000008zux-1zS5;
+	Mon, 03 Nov 2025 01:12:13 +0000
+Received: from [172.16.12.149] (unknown [58.22.7.114])
+	by smtp.qiye.163.com (Hmail) with ESMTP id 2818c2243;
+	Mon, 3 Nov 2025 09:11:59 +0800 (GMT+08:00)
+Message-ID: <39c21e9f-4958-4007-bb09-3ef40ff30d2a@rock-chips.com>
+Date: Mon, 3 Nov 2025 09:11:57 +0800
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20251030220259.1063792-5-elder@riscstar.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v8 01/10] usb: typec: Add notifier functions
+To: Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ Chaoyi Chen <kernel@airkyi.com>
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Heiko Stuebner
+ <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
+ Andy Yan <andy.yan@rock-chips.com>,
+ Yubing Zhang <yubing.zhang@rock-chips.com>,
+ Frank Wang <frank.wang@rock-chips.com>,
+ Andrzej Hajda <andrzej.hajda@intel.com>,
+ Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
+ David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+ Amit Sunil Dhamne <amitsd@google.com>, Dragan Simic <dsimic@manjaro.org>,
+ Johan Jonker <jbx6244@gmail.com>, Diederik de Haas <didi.debian@cknow.org>,
+ Peter Robinson <pbrobinson@gmail.com>, linux-usb@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org
+References: <20251029071435.88-1-kernel@airkyi.com>
+ <20251029071435.88-2-kernel@airkyi.com> <aQS8IatWiAUzBUxd@kuha.fi.intel.com>
+Content-Language: en-US
+From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+In-Reply-To: <aQS8IatWiAUzBUxd@kuha.fi.intel.com>
+X-HM-Tid: 0a9a47455e0103abkunm8b2c313f943871
+X-HM-MType: 1
+X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
+	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZGR5MTVYYQk0YGR1KQ0kfTx1WFRQJFh
+	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSEpPSE
+	xVSktLVUpCS0tZBg++
+DKIM-Signature: a=rsa-sha256;
+	b=Xf2GCOogE5JU9VFai8bfqqPO4EwB1WJ7U798BYDMShF5yADbVIRdoEeXupnhnUlWCWamERfBB8hOvuY9KC55ljPx2XdO0aSSZ4aN/YVRrfNdwUmKid0Rkhyi8liJDc6hPFcv+WVwWCoRwFPiFILAWI0NSARBI9pcgXmLDxUm+VA=; s=default; c=relaxed/relaxed; d=rock-chips.com; v=1;
+	bh=kGpL6uycvY2W1UtRJCq/id+/GMXz5vHEcP9JtnFabFA=;
+	h=date:mime-version:subject:message-id:from;
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251102_142532_464057_D63F4E6A 
-X-CRM114-Status: UNSURE (   8.31  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20251102_171212_057277_67CED759 
+X-CRM114-Status: GOOD (  10.47  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,44 +87,53 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Alex,
+On 10/31/2025 9:39 PM, Heikki Krogerus wrote:
 
-kernel test robot noticed the following build errors:
+> Hi,
+>
+>> diff --git a/include/linux/usb/typec_notify.h b/include/linux/usb/typec_notify.h
+>> new file mode 100644
+>> index 000000000000..f3a7b5f5b05b
+>> --- /dev/null
+>> +++ b/include/linux/usb/typec_notify.h
+>> @@ -0,0 +1,16 @@
+>> +/* SPDX-License-Identifier: GPL-2.0 */
+>> +
+>> +#ifndef __USB_TYPEC_NOTIFY
+>> +#define __USB_TYPEC_NOTIFY
+>> +
+>> +#include <linux/notifier.h>
+> Replace that include with a forward declaration:
+>
+> struct notifier_block;
+>
+>> +enum usb_typec_event {
+>> +	TYPEC_ALTMODE_REGISTERED,
+>> +	TYPEC_ALTMODE_UNREGISTERED,
+>> +};
+>> +
+>> +int typec_altmode_register_notify(struct notifier_block *nb);
+>> +int typec_altmode_unregister_notify(struct notifier_block *nb);
+>> +
+>> +#endif /* __USB_TYPEC_NOTIFY */
+> I don't see any need for a separate header file for this. Intoduce
+> those in typec_altmode.h.
 
-[auto build test ERROR on 131f3d9446a6075192cdd91f197989d98302faa6]
+Will fix these in v9. Thank you.
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Alex-Elder/dt-bindings-phy-spacemit-add-SpacemiT-PCIe-combo-PHY/20251031-060541
-base:   131f3d9446a6075192cdd91f197989d98302faa6
-patch link:    https://lore.kernel.org/r/20251030220259.1063792-5-elder%40riscstar.com
-patch subject: [PATCH v4 4/7] phy: spacemit: introduce PCIe/combo PHY
-config: sh-allmodconfig (https://download.01.org/0day-ci/archive/20251103/202511030652.3CVPb2v3-lkp@intel.com/config)
-compiler: sh4-linux-gcc (GCC) 15.1.0
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20251103/202511030652.3CVPb2v3-lkp@intel.com/reproduce)
 
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202511030652.3CVPb2v3-lkp@intel.com/
-
-All errors (new ones prefixed by >>, old ones prefixed by <<):
-
->> ERROR: modpost: "devm_clk_hw_register" [drivers/phy/phy-spacemit-k1-pcie.ko] undefined!
->> ERROR: modpost: "devm_clk_hw_get_clk" [drivers/phy/phy-spacemit-k1-pcie.ko] undefined!
-ERROR: modpost: "clk_save_context" [drivers/net/phy/air_en8811h.ko] undefined!
-ERROR: modpost: "clk_restore_context" [drivers/net/phy/air_en8811h.ko] undefined!
-ERROR: modpost: "__delay" [drivers/net/mdio/mdio-cavium.ko] undefined!
-ERROR: modpost: "devm_of_clk_add_hw_provider" [drivers/media/i2c/tc358746.ko] undefined!
-ERROR: modpost: "devm_clk_hw_register" [drivers/media/i2c/tc358746.ko] undefined!
-ERROR: modpost: "of_clk_hw_simple_get" [drivers/media/i2c/tc358746.ko] undefined!
-
+>
+> thanks,
+>
 -- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+Best,
+Chaoyi
+
 
 -- 
 linux-phy mailing list
