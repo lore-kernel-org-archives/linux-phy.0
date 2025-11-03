@@ -4,79 +4,160 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1D5EDCCFA00
-	for <linux-phy@archiver.kernel.org>; Mon,  3 Nov 2025 01:16:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1FC32CCFA04
+	for <linux-phy@archiver.kernel.org>; Mon,  3 Nov 2025 02:56:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qX08D+G63u4LVoiwwK0h7NLIpxZjGAGop/s2adu2p50=; b=sLNd2zRVa9/ah3
-	yCg0UDLDk7Hm2hRM0ALhHTrW9MMp6r7pDqds2VlQ8PYNJZVFAp0qfxjnd6RvcDXGVo9oaXxfn6DEF
-	dKq2mrXEpaoQ3ZMP3/MSyaCtpDXtfIK2Srg7cw/1ii9sO9QwHhcZOankWrEleAF0oyx5cbSGuNwoT
-	Nq6Lwxxqfu06xxHelEiWkBqUZf6CrEDOZKmY1kOV+igE+dCcAlJIrxbHpcx4ZIGH74UiXTUf/+rnX
-	eRIhP1Rwd0t8MKqcLzLDGEnYrurYJvmFpVMbec93yx5mB4fvpTuZ3A5th75VfZ7Z242VPIlQDGt1J
-	b+MjvQGwbVDrPBisdvbQ==;
+	List-Owner; bh=wevWYUR0fAH4yXG3Ad1usRrUpW/8ndxJxhQF/AvAjW0=; b=p4UsFpZAZXwouw
+	W955Cnwwpz2mkOJd8JhvGEU7RjV72qRTVbTOJMS9jSBStXVB0l8gFZzhXS8/cFFjcATZ788w9kEOJ
+	FRFzkrJL16Kmsud1ECFoJ3MKXx6vNB+WXBfe4zuyHQChfhj9dq5+fYh1LmHqyVeIeWoOZM0P3bGR8
+	+TNZPXzia00Uu98pKAQc88mKXPr9LwQOEwliqaMAYsH1h+jMvYzhL6N8OIEOKzakdUQFY1M0TPAQG
+	0Wb8Iu5luUFTmdqFovQRRrylkdNxZyDfOAU0LZ/g9EUe8wavhYoPEu9nbA+FqTFC0t5yUPcuE/9qp
+	oAA/WHxU9/FcIBt4R0eg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vFjAz-000000090CI-2wWN;
-	Mon, 03 Nov 2025 01:16:05 +0000
-Received: from mail-m3294.qiye.163.com ([220.197.32.94])
+	id 1vFkk5-000000095iz-2Zub;
+	Mon, 03 Nov 2025 02:56:25 +0000
+Received: from mail-westeuropeazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c201::3] helo=AS8PR04CU009.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vFjAx-000000090Bo-0oTV;
-	Mon, 03 Nov 2025 01:16:04 +0000
-Received: from [172.16.12.149] (unknown [58.22.7.114])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 2818daae2;
-	Mon, 3 Nov 2025 09:15:57 +0800 (GMT+08:00)
-Message-ID: <48b9ae2c-7cc5-430d-94c0-e49d341a4b14@rock-chips.com>
-Date: Mon, 3 Nov 2025 09:15:55 +0800
+	id 1vFkk3-000000095iN-3xDE;
+	Mon, 03 Nov 2025 02:56:25 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=NLSf6AYVXwKLkvSiC+lkt1hXYRV6G+iMaQIjFoebgoM6HRcMkP2WgNl1bhg2GjjNe7bckkIAnFLdC80iwW7ctl4SP33xw1U9OimdaczzIWpVm3XmzMIiEUtVMuSNjn1LNjpMKbbXIFIyoTg4ycXcnaT1H5ieJ5UgUljytOrXHV5QQT1NM1Eq6+ZhCrAS6d+ACuC2E3yAKd4INPdSHLBUhsjSugT0xuUuw6H4xNzwSZ/Jv82MktA7o2jRsTbU2ZHwhpIov2kSP6UHJtLsGk6y8zDDnmqlHAau86eoKFKsnYSSOxqHSvR82SMH3ZgDZYrMN5iIbXAHaBbrFoDUjqK4eQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=ti66uUvmN+e4E5TSYt+WkKkYVrtvo5cHHT10C2GD5/I=;
+ b=Dd4xnsAjuZaAkY9llvolp5pv/sEz/odLFFf7EIUDd5fIKaujrDPjvadJnSio+AGnbTKn4VZNlFD/mC8HdfoxwTn01WKmr9PjNiEsGKpxaKRvsptG9L2iugpYhHetj1SuXDIOieKKbziB4NsYmX9Ow3lY/atLLh7tfQSplHQoKVnppiy6t7NqOUzkS5j2iy5PvO9Irr8ev0Widvy+sRNWcE3E6NWUlmESX9XtyRY0pjSjUiyFV6wk4LupQb6zoVi6ul6LMWcGmWqhLtpE+5EKkzcWXfnSF15rC9/KaxjZznpNZ6QCtkxkEO1KkMSyO1YwqRwz4VNf6vYeNVTeCJ051A==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
+ dkim=pass header.d=oss.nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
+ s=selector1-NXP1-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=ti66uUvmN+e4E5TSYt+WkKkYVrtvo5cHHT10C2GD5/I=;
+ b=GpA244dKAMx7M3Fq2aixOMy59sT+zKJKyGtPH60cUavN6MeM0CUVwfdYFqu4UvJYeuVqSU5w7G9ecR59GoVmI6D+SoQusq0tNPkYnKmGEwmpkwKrCVQR9pVyPyQF+PCoZeV/Tekw9LyFtlxlWxM3hDRlzk2b8gwyYQaPH00BTx/B/3taCkjuJzwiGN+TKNKhZ062WVBRziZUrlOU1ahLmQv6dEYFJPvfTA4+P5VxcWlEL/KeRAH2/M1tDu1fLt6alVZwbJcs7Qbq0IqavHPNlGW8w3pc+3SNieZRnOartDBWTvS1ZYdn19AXEE90NEEOFhp4WPYuUviVNIPSABkEkA==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=oss.nxp.com;
+Received: from PAXPR04MB8459.eurprd04.prod.outlook.com (2603:10a6:102:1da::15)
+ by GV1PR04MB10352.eurprd04.prod.outlook.com (2603:10a6:150:1c4::5) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9275.16; Mon, 3 Nov
+ 2025 02:56:15 +0000
+Received: from PAXPR04MB8459.eurprd04.prod.outlook.com
+ ([fe80::165a:30a2:5835:9630]) by PAXPR04MB8459.eurprd04.prod.outlook.com
+ ([fe80::165a:30a2:5835:9630%4]) with mapi id 15.20.9275.015; Mon, 3 Nov 2025
+ 02:56:15 +0000
+Date: Mon, 3 Nov 2025 12:08:26 +0800
+From: Peng Fan <peng.fan@oss.nxp.com>
+To: Peng Fan <peng.fan@nxp.com>
+Cc: Marc Kleine-Budde <mkl@pengutronix.de>,
+	Vincent Mailhol <mailhol@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Aswath Govindraju <a-govindraju@ti.com>,
+	Shawn Guo <shawnguo@kernel.org>,
+	Sascha Hauer <s.hauer@pengutronix.de>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>, Frank Li <frank.li@nxp.com>,
+	Haibo Chen <haibo.chen@nxp.com>, linux-can@vger.kernel.org,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, imx@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH v7 0/8] phy: phy-can-transceiver: Support TJA1048/TJA1051
+Message-ID: <20251103040826.GA16149@nxa18884-linux.ap.freescale.net>
+References: <20251001-can-v7-0-fad29efc3884@nxp.com>
+Content-Disposition: inline
+In-Reply-To: <20251001-can-v7-0-fad29efc3884@nxp.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-ClientProxiedBy: SI2P153CA0026.APCP153.PROD.OUTLOOK.COM
+ (2603:1096:4:190::18) To PAXPR04MB8459.eurprd04.prod.outlook.com
+ (2603:10a6:102:1da::15)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v8 03/10] drm/bridge: Implement generic USB Type-C DP HPD
- bridge
-To: Heikki Krogerus <heikki.krogerus@linux.intel.com>,
- Chaoyi Chen <kernel@airkyi.com>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Heiko Stuebner
- <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
- Andy Yan <andy.yan@rock-chips.com>,
- Yubing Zhang <yubing.zhang@rock-chips.com>,
- Frank Wang <frank.wang@rock-chips.com>,
- Andrzej Hajda <andrzej.hajda@intel.com>,
- Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
- Amit Sunil Dhamne <amitsd@google.com>, Dragan Simic <dsimic@manjaro.org>,
- Johan Jonker <jbx6244@gmail.com>, Diederik de Haas <didi.debian@cknow.org>,
- Peter Robinson <pbrobinson@gmail.com>, linux-usb@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org
-References: <20251029071435.88-1-kernel@airkyi.com>
- <20251029071435.88-4-kernel@airkyi.com> <aQTAdaIgjgTRSgxL@kuha.fi.intel.com>
-Content-Language: en-US
-From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
-In-Reply-To: <aQTAdaIgjgTRSgxL@kuha.fi.intel.com>
-X-HM-Tid: 0a9a4748ff7903abkunm80e48559945672
-X-HM-MType: 1
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZGUlNTVYYS05PH0hMS0hMTRhWFRQJFh
-	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSEpOTE
-	5VSktLVUpCS0tZBg++
-DKIM-Signature: a=rsa-sha256;
-	b=MhC1aMzTcbPCb2GjvXUVWVpijnqhAyuKlMB6iEaiyJGduWsVfghOz7b2U3nUfv8Mj0E35szVjd5jTralNiiLCaQdj9D5G7m7Qs5XWRHxfl1qXlNyLyigt/zY5uzcO1bqg1vdcVzL/VjRyP0YS3mSEae+ibuPs+XQeTNHJ1KiXT8=; s=default; c=relaxed/relaxed; d=rock-chips.com; v=1;
-	bh=5pRPING1gapH7HdR50g5wH/mDEvyo4qh8YXcAm7Fee8=;
-	h=date:mime-version:subject:message-id:from;
+X-MS-Exchange-MessageSentRepresentingType: 1
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PAXPR04MB8459:EE_|GV1PR04MB10352:EE_
+X-MS-Office365-Filtering-Correlation-Id: 87b66cd0-4d4b-4fac-7bbb-08de1a848d8c
+X-MS-Exchange-SharedMailbox-RoutingAgent-Processed: True
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|52116014|7416014|366016|1800799024|19092799006|38350700014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?NKCzD2NA8v3s7cgpFgFj/T4TUzVkUmkLH7pBpUJkymaOLJSCUojaddxpfwxK?=
+ =?us-ascii?Q?xaAxOZuwIp4Wx7VqEkH69ythKMviICS8Cst6ToMdukLIGazUkePobKS4+Kg1?=
+ =?us-ascii?Q?wDmuMSfS3w7SXhlYRpmfsT1xB1iUVW0vZxr1AjJ1Co9muwjYeDhezvCgNSwB?=
+ =?us-ascii?Q?ZGw4DizmloBG9Jou8IPLgw8y9Hc5fQreFrHDZ4QUtq2qrl+A3kCxzCFBRfo1?=
+ =?us-ascii?Q?TWb8zoufBZ+zQqZ6ZVCBXQ+cgv5bSXl6jnIlXq0JUaqotQ/LYPZ4nAqZHvzU?=
+ =?us-ascii?Q?eB4O/vNSoIE4Qxrh6+/FD0p5sLHnJWc3W3aI7oPFOsWbkfZC2jg3Fkv89l0M?=
+ =?us-ascii?Q?0mx0xpzM19BSPW69GKyToobV/ErjqUzS9+rdtG46jma1ju+suTMCcAbXc8MA?=
+ =?us-ascii?Q?h3n41W7bhsv/SaqHsvCoOG6txt3dKYsQgafKhmGcEWaCSUjfCD2ktzHD3s6J?=
+ =?us-ascii?Q?AF0zlaYe4DppA9HCVBmvqD2pb/o3aPbj9ESvZPNh1jjjYD3P+T3lP7n8MBuv?=
+ =?us-ascii?Q?OYXS5wXam6EyfYwBbsq7BbCxfAIV25PE9sb6S+/0nx8BxmUuMlz5+NbgnOrV?=
+ =?us-ascii?Q?5dZ94V4XYXvG0FqXECLr7UDKJhJKoYgG1GtJ/X9PavqaGoToAZuBA5Rc9SuB?=
+ =?us-ascii?Q?rSbI9Ww5/FQIODAtO1Q0vVNHvv91mrtxr1IU+sEnGPFh8M4r1rkC8nAXtIrx?=
+ =?us-ascii?Q?7VBlGnjg/Ih8s5qe9tJAA23RwUD5VGClR9YYdXTdSdyKEGELwTEra+O3D3U3?=
+ =?us-ascii?Q?cB5GNZfQydU3jRe9fW2MKChfAUdZ7t6NckJVSfCWyHv5Pd3Vi8wC5yMmoiD3?=
+ =?us-ascii?Q?PBvIE3iW3yGGKxyg6ca7qOhtcMJtBICTszewH/dSbTdKQgRtcn5JnKWklhQi?=
+ =?us-ascii?Q?o5Oier+zirt+kuWnO6tGOmEzKEoM0W2lDn2BvJjPnnz1XCljednB5S2vNe7t?=
+ =?us-ascii?Q?QQ0aW6XTduOzZNuAZnGQqccir/APKjxreVI1css4rGTx4uSsbLz5C6CA+3fG?=
+ =?us-ascii?Q?Wp6z7RAoBsz+bG9PJH0Vktnd2b3UZp3vNRK351rzOGDwon/RpNh5MvkTnWrW?=
+ =?us-ascii?Q?tSrBmZ1o+xt1+xNWiGif7uqu3yqfHfHFcP30MS62z6HHiHUtyubTRBB2yDzS?=
+ =?us-ascii?Q?x1y7HqnXWW4mvGxwd59uH6lN1TNiWVpwXRUbOoIMVG8JBa/xA+wawAm2DYYO?=
+ =?us-ascii?Q?fszpSxXdY5miM14wejWMAXVisTirbeJFiimpQDRe1rf1ZyOSR9wtGa7TJfnv?=
+ =?us-ascii?Q?QRZ5tT4AXgaWy7eDgVgg7n1oQBgezFM+8JbLHYVPqJKLoZyT1TUa8Rql9CpI?=
+ =?us-ascii?Q?I6QdYQgWyqO44bQKmNT9FPtbciZ7YLF2tUub1Zpi4m9HamRTRFuD1kWjNZGx?=
+ =?us-ascii?Q?4yHYVRT8QeFu5bdBF21FETNjpVf6HfkFJ3BODUshwfYmNZcqESFxF5yKZphT?=
+ =?us-ascii?Q?0g27reNJREohi9laWE1dwJYEsTYh666BuOoj3bE5j+jUB9j1eZHR93tkCSYr?=
+ =?us-ascii?Q?6SQJ2eCGN7/xwCn09CudJWspnzjLYNtYWo4w?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB8459.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(52116014)(7416014)(366016)(1800799024)(19092799006)(38350700014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?4Pvdnf3n2w9IQT/yGAbLh6R//kthUFZ58o43lbpxw+FSEerwq0doXQ1MEBWW?=
+ =?us-ascii?Q?ut50iNlvGUUds0gqctraoimDQPExcD+RTVtggSkZ3BYGCScfsH/cKJYk87TX?=
+ =?us-ascii?Q?9J9YuYx5g1OTgwYCTtGDjcM4xA+LHXupsA804cHhh4QD3h0g3ZuHCmg9swca?=
+ =?us-ascii?Q?1L+TpSxvBXJIv2hOuBIDqOjxX+4CRjGxLETw2oyF5aHKP8rpGjF7fdZNTfr0?=
+ =?us-ascii?Q?Fgx0vTWIkm/DSMDnGsyCDmbtCcJso6GkskFj3JpFQ+qapazjbPkJtyqyvU1Y?=
+ =?us-ascii?Q?SJj0z7NpowQBzTCXeORFr233h9Tl0yj6MRxHUJy+yqeIQ+h085GKHmxjdlmg?=
+ =?us-ascii?Q?OhtGljXg6rugSkduGF7EyfP5KVVnkbad+o5C/OgF24xNleo2diXrVGqWc5nh?=
+ =?us-ascii?Q?YwuI7A3IgwRwFXQAcJm/IoQfE4WzP9Xh9Wr8EJI4BSb+9Kjo9H+7t34H54OP?=
+ =?us-ascii?Q?0HWkpnzwj3MBlEYRiuIGeSU0AkcMBtvBkBQvPbxHKz9vsFdE0SXDWrjzB2gr?=
+ =?us-ascii?Q?osIa9Ae8rWJTTBPSS/LH3BwOAIkDP50Mx4tAV/XPh3C3uOU3jPQuuw/+2pnp?=
+ =?us-ascii?Q?RIiBAQzDWBcl3Ig0iqq0WS1VT3FMYs/NMwXTB1fcJRAFsB4ADIIpMIjEohlu?=
+ =?us-ascii?Q?wMgrnf+x61khsQeYnwqxov3KTzZDn8riwdf20cO/dJm0lMANhrKIy8WAukbK?=
+ =?us-ascii?Q?s0I8J+z5B7PGV6LMrPStk0jlkm8YkTdeNJorkygpB4SqN+feRKbiPdfifqnH?=
+ =?us-ascii?Q?is03UPMydL5u5bbc4sK3NkWAqCHnysrGBUAAkg00v/pE3L/mZnwSUUSXxt4G?=
+ =?us-ascii?Q?kUh6ZfIw2jPa4SH5AG5R/DVjS4Xtx69qyat0SXNyK+mwIZCnJZywDIMDXV9E?=
+ =?us-ascii?Q?uxSYxs1n/rWmQrUxFoygiT2ZgOhO22O0DMtpuqOXbDph3jJcayZST4/Nn0Ko?=
+ =?us-ascii?Q?l7fRmzAh+8Y/jn4yX826a4BSWQGPtUR4CBNQ2eczakRtRCGvOJ3eVBihkD58?=
+ =?us-ascii?Q?UOAEaPbYqupjvQiaMVzanhQVn4AK9M4ylFhMXlmV4VJYlgcShGZrbkBqpRqp?=
+ =?us-ascii?Q?GHCqklIeYGfpF5UUf064hom+AuEjk9rFBGS5RUewBFX/QnpzRZrBK9Hp3swV?=
+ =?us-ascii?Q?xy34D9i9N3EpW7k5l3gtQY/d1IVp7NSOqOOuz609/Deq1cJhR9D82DGdU6ZB?=
+ =?us-ascii?Q?kXOdhpQsfiPvorYrLE1bATLD6ypy0qxhtq6lYu10A7NvD0AAJI7h5P9x6GC/?=
+ =?us-ascii?Q?d5iXl4LP7jucoijBFqFkkUQMMKSbJPM/p7GQtZK30Si05t8VRc1LxUlHBFnC?=
+ =?us-ascii?Q?fiIsvwDhshb7Av38FL7zJVKaJ5LFZ/trmywhJ57F1qePHrfQ2lrpbjQnCqr0?=
+ =?us-ascii?Q?Stycdy/mqFGxepRgNV98ygNQpV0jTsjXBXbGOBfk+MwYqSypHMF8+AO71DGS?=
+ =?us-ascii?Q?5Oli8YsjSsu+AMOYTC8p4j+azqOM/UK8NbAIANQSUQiSTZVf4KhJoB8Td+1L?=
+ =?us-ascii?Q?XQTZTndc/VPVXpiZDfKmAR6WafY9+Piqt/N5Pr3h0/I/vh9O4chFjM2cP5Fd?=
+ =?us-ascii?Q?IjIyIvxyA6yyEAOlX9FobyidE6csKqukY8oPsrxm?=
+X-OriginatorOrg: oss.nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 87b66cd0-4d4b-4fac-7bbb-08de1a848d8c
+X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB8459.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Nov 2025 02:56:15.3649
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: NXVWUoDyoTVz/902YJ9MYoYI7FnAXqM/sngJrqLRO2wK9prC4Fj3ZikNKb2NmbRDi4RsKJUEXEuFq40Ichix/g==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV1PR04MB10352
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251102_171603_403263_83494755 
-X-CRM114-Status: GOOD (  20.27  )
+X-CRM114-CacheID: sfid-20251102_185623_991783_654088E9 
+X-CRM114-Status: UNSURE (   7.07  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,167 +169,30 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 10/31/2025 9:58 PM, Heikki Krogerus wrote:
+Hi Marc, Vincent, Vinod,
 
-> Wed, Oct 29, 2025 at 03:14:28PM +0800, Chaoyi Chen kirjoitti:
->> From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
->>
->> Several USB-C controller drivers have already implemented the DP HPD
->> bridge function provided by aux-hpd-bridge.c, but there are still
->> some USB-C controller driver that have not yet implemented it.
->>
->> This patch implements a generic DP HPD bridge based on aux-hpd-bridge.c,
->> so that other USB-C controller drivers don't need to implement it again.
->>
->> Signed-off-by: Chaoyi Chen <chaoyi.chen@rock-chips.com>
->> ---
->>
->> Changes in v8:
->> - Merge generic DP HPD bridge into one module.
->>
->>   drivers/gpu/drm/bridge/Kconfig                |  5 +-
->>   drivers/gpu/drm/bridge/Makefile               |  8 +++-
->>   drivers/gpu/drm/bridge/aux-hpd-bridge.c       | 23 ++++++++-
->>   drivers/gpu/drm/bridge/aux-hpd-bridge.h       | 13 +++++
->>   .../gpu/drm/bridge/aux-hpd-typec-dp-bridge.c  | 47 +++++++++++++++++++
->>   5 files changed, 93 insertions(+), 3 deletions(-)
->>   create mode 100644 drivers/gpu/drm/bridge/aux-hpd-bridge.h
->>   create mode 100644 drivers/gpu/drm/bridge/aux-hpd-typec-dp-bridge.c
->>
->> diff --git a/drivers/gpu/drm/bridge/Kconfig b/drivers/gpu/drm/bridge/Kconfig
->> index a250afd8d662..17257b223a28 100644
->> --- a/drivers/gpu/drm/bridge/Kconfig
->> +++ b/drivers/gpu/drm/bridge/Kconfig
->> @@ -23,13 +23,16 @@ config DRM_AUX_BRIDGE
->>   	  build bridges chain.
->>   
->>   config DRM_AUX_HPD_BRIDGE
->> -	tristate
->> +	tristate "AUX HPD bridge support"
-> Don't you now need:
+On Wed, Oct 01, 2025 at 09:22:31PM +0800, Peng Fan wrote:
 >
->          depends on TYPEC || !TYPEC
->
->>   	depends on DRM_BRIDGE && OF
->>   	select AUXILIARY_BUS
->>   	help
->>   	  Simple bridge that terminates the bridge chain and provides HPD
->>   	  support.
->>   
->> +	  Specifically, if you want a default Type-C DisplayPort HPD bridge for
->> +	  each port of the Type-C controller, say Y here.
->> +
->>   menu "Display Interface Bridges"
->>   	depends on DRM && DRM_BRIDGE
->>   
->> diff --git a/drivers/gpu/drm/bridge/Makefile b/drivers/gpu/drm/bridge/Makefile
->> index c7dc03182e59..2998937444bc 100644
->> --- a/drivers/gpu/drm/bridge/Makefile
->> +++ b/drivers/gpu/drm/bridge/Makefile
->> @@ -1,6 +1,12 @@
->>   # SPDX-License-Identifier: GPL-2.0
->>   obj-$(CONFIG_DRM_AUX_BRIDGE) += aux-bridge.o
->> -obj-$(CONFIG_DRM_AUX_HPD_BRIDGE) += aux-hpd-bridge.o
->> +
->> +hpd-bridge-y := aux-hpd-bridge.o
->> +ifneq ($(CONFIG_TYPEC),)
->> +hpd-bridge-y += aux-hpd-typec-dp-bridge.o
->> +endif
->> +obj-$(CONFIG_DRM_AUX_HPD_BRIDGE) += hpd-bridge.o
->> +
->>   obj-$(CONFIG_DRM_CHIPONE_ICN6211) += chipone-icn6211.o
->>   obj-$(CONFIG_DRM_CHRONTEL_CH7033) += chrontel-ch7033.o
->>   obj-$(CONFIG_DRM_CROS_EC_ANX7688) += cros-ec-anx7688.o
->> diff --git a/drivers/gpu/drm/bridge/aux-hpd-bridge.c b/drivers/gpu/drm/bridge/aux-hpd-bridge.c
->> index 2e9c702c7087..11ad6dc776c7 100644
->> --- a/drivers/gpu/drm/bridge/aux-hpd-bridge.c
->> +++ b/drivers/gpu/drm/bridge/aux-hpd-bridge.c
->> @@ -12,6 +12,8 @@
->>   #include <drm/drm_bridge.h>
->>   #include <drm/bridge/aux-bridge.h>
->>   
->> +#include "aux-hpd-bridge.h"
->> +
->>   static DEFINE_IDA(drm_aux_hpd_bridge_ida);
->>   
->>   struct drm_aux_hpd_bridge_data {
->> @@ -204,7 +206,26 @@ static struct auxiliary_driver drm_aux_hpd_bridge_drv = {
->>   	.id_table = drm_aux_hpd_bridge_table,
->>   	.probe = drm_aux_hpd_bridge_probe,
->>   };
->> -module_auxiliary_driver(drm_aux_hpd_bridge_drv);
->> +
->> +static int drm_aux_hpd_bridge_mod_init(void)
->> +{
->> +	int ret;
->> +
->> +	ret = auxiliary_driver_register(&drm_aux_hpd_bridge_drv);
->> +	if (ret)
->> +		return ret;
->> +
->> +	return drm_aux_hpd_typec_dp_bridge_init();
->> +}
->> +
->> +static void drm_aux_hpd_bridge_mod_exit(void)
->> +{
->> +	drm_aux_hpd_typec_dp_bridge_exit();
->> +	auxiliary_driver_unregister(&drm_aux_hpd_bridge_drv);
->> +}
->> +
->> +module_init(drm_aux_hpd_bridge_mod_init);
->> +module_exit(drm_aux_hpd_bridge_mod_exit);
->>   
->>   MODULE_AUTHOR("Dmitry Baryshkov <dmitry.baryshkov@linaro.org>");
->>   MODULE_DESCRIPTION("DRM HPD bridge");
->> diff --git a/drivers/gpu/drm/bridge/aux-hpd-bridge.h b/drivers/gpu/drm/bridge/aux-hpd-bridge.h
->> new file mode 100644
->> index 000000000000..69364731c2f1
->> --- /dev/null
->> +++ b/drivers/gpu/drm/bridge/aux-hpd-bridge.h
->> @@ -0,0 +1,13 @@
->> +/* SPDX-License-Identifier: GPL-2.0-only */
->> +#ifndef AUX_HPD_BRIDGE_H
->> +#define AUX_HPD_BRIDGE_H
->> +
->> +#if IS_REACHABLE(CONFIG_TYPEC)
->> +int drm_aux_hpd_typec_dp_bridge_init(void);
->> +void drm_aux_hpd_typec_dp_bridge_exit(void);
->> +#else
->> +static inline int drm_aux_hpd_typec_dp_bridge_init(void) { return 0; }
->> +static inline void drm_aux_hpd_typec_dp_bridge_exit(void) { }
->> +#endif /* IS_REACHABLE(CONFIG_TYPEC) */
->> +
->> +#endif /* AUX_HPD_BRIDGE_H */
->> diff --git a/drivers/gpu/drm/bridge/aux-hpd-typec-dp-bridge.c b/drivers/gpu/drm/bridge/aux-hpd-typec-dp-bridge.c
->> new file mode 100644
->> index 000000000000..6f2a1fca0fc5
->> --- /dev/null
->> +++ b/drivers/gpu/drm/bridge/aux-hpd-typec-dp-bridge.c
->> @@ -0,0 +1,47 @@
->> +// SPDX-License-Identifier: GPL-2.0+
->> +#include <linux/of.h>
->> +#include <linux/usb/typec_altmode.h>
->> +#include <linux/usb/typec_dp.h>
->> +#include <linux/usb/typec_notify.h>
->> +
->> +#include <drm/bridge/aux-bridge.h>
->> +
->> +#include "aux-hpd-bridge.h"
->> +
->> +#if IS_REACHABLE(CONFIG_TYPEC)
-> You don't need that. You should not use ifdefs in .c files.
->
-Oh yes, this should be handled by depend on. I will fix it in v9.
+>---
+>Peng Fan (8):
+>      dt-bindings: phy: ti,tcan104x-can: Document NXP TJA105X/1048
+>      phy: phy-can-transceiver: Introduce can_transceiver_priv
+>      phy: phy-can-transceiver: Add dual channel support for TJA1048
+>      phy: phy-can-transceiver: Drop the gpio desc check
+>      phy: phy-can-transceiver: Add support for TJA105{1,7}
+>      arm64: dts: imx95-15x15-evk: Use phys to replace xceiver-supply
+>      arm64: dts: imx8mp-evk: Use phys to replace xceiver-supply
+>      arm64: dts: imx93-11x11-evk: Use phys to replace xceiver-supply
 
--- 
-Best,
-Chaoyi
+Would you please give a look on the driver changes?
 
+Thanks,
+Peng
 
 -- 
 linux-phy mailing list
