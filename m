@@ -4,100 +4,105 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 938F9CCF9FE
-	for <linux-phy@archiver.kernel.org>; Mon,  3 Nov 2025 13:48:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4A3F1CCF9F8
+	for <linux-phy@archiver.kernel.org>; Mon,  3 Nov 2025 16:42:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ze5+JnSH8NPqlQ4jz670TjSKkxO5p9wrJg9ec7aHAgk=; b=jkXP1mVplEkRv2
-	52K8RdJ4146QGrtbWiS7TDCJh2lHdPzt5zmo8Q5GSJNMmj3TQotRB9UbTY3mU8XCmBAEzt5cT2CTt
-	VXbSpkI9BUtNAytbsY1C6UmblzV2ookgIwBAUyIUAr2db5aBx1Au1TjqE8858+VKcNu7TR9y5PaxF
-	WoXGILMkZNHBeAaB3S+i7EBW7n25FA0RsHXC5xHEatuPp+DKRw0j73aghpnbzP9tTQhTztZQydyMT
-	p3s3cI81b3iT5Fm26b1I64lu6PpNO++XzB9EHOqeWTT8G0K6ldO4K265S6ayI0LZYeaufPN5xbYL0
-	RezUmkJFm5dZoliujirA==;
+	List-Owner; bh=lFRn2ZHiXQTBGbA17BqpfVIMoqnjEW2ZfR7C3TPAUVU=; b=cVuCl4kDnEFkeB
+	2zBiD1uxUTfGRWCiVCDYtTFhF2k6tMJZ/M3HzzyNOwbvdMPdk+WSI/X/IH8Sr8SRTGLAuozoG7qxQ
+	T6KKFbCf5qoCFG3hSsffriyCgAvkkhKF3MFHDu5iyvJ7IPLSoCVKhsYf1EjOMzWLCgqTCrFyo7Qhx
+	Zss/dEySopUb37TEwXhX9vtPvH1g/4UAH+99tEiV0riTZgK9FEKEnKfZIk9iPi9T8y535PnN8keYu
+	ftatVJyLaqUFfPWx8Zj/bMtPc664yILx18UrxgB5NWMVZysV47Sq/uHeV8dGKYrF0J3HCWiNs/gKH
+	rMnYqUSAV+4+kQiNN81g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vFuvA-00000009x5B-0fXZ;
-	Mon, 03 Nov 2025 13:48:32 +0000
-Received: from mgamail.intel.com ([198.175.65.21])
+	id 1vFxdX-0000000AHwJ-3COV;
+	Mon, 03 Nov 2025 16:42:31 +0000
+Received: from mail-il1-x142.google.com ([2607:f8b0:4864:20::142])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vFuv7-00000009x2g-0qdk;
-	Mon, 03 Nov 2025 13:48:31 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1762177709; x=1793713709;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=/eMBTgNJH8/Xgm8LgLzir6GKHePQ75zTAgJlicmNsfQ=;
-  b=WoEhzKYemBdcD8PsWNzNw5GpGsxipF4zNsvDD+kJ2q/ZJ1zCjXBRV9RO
-   +kDYMo58SBbvdtNm3qvOkFRT4cLQKAIJL1k+cSiHArylAXKORuXJNPQUZ
-   rk9nQDIQZ5fQwo6P8yAdJz+kxNS7OX0PROUXsQdNSqPttJWviXv2jUwP5
-   kbi0SaprYUKwk8m7Nvv9e/IJVxVvbZaDVJA0G5bEJRO0q7ZEauOL91BMq
-   5e+4mnRp/YEMA9bD9RnHI2/7Fg2o41yDlr+GJj3kHANHAoQ0wOC+c0rq+
-   UlanJs6L+8YuY8QsEp72pk1iZ4m45rcZjmIXYONRN13YSF/AiYa9b7WPI
-   Q==;
-X-CSE-ConnectionGUID: ZCumIJWDSemHRqGUVoD/rQ==
-X-CSE-MsgGUID: KquS19ZySMiehBBYXz6Uuw==
-X-IronPort-AV: E=McAfee;i="6800,10657,11531"; a="64156335"
-X-IronPort-AV: E=Sophos;i="6.17,312,1747724400"; 
-   d="scan'208";a="64156335"
-Received: from orviesa006.jf.intel.com ([10.64.159.146])
-  by orvoesa113.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 03 Nov 2025 05:48:28 -0800
-X-CSE-ConnectionGUID: JFm5J5b9STC09kNJqEZ1eA==
-X-CSE-MsgGUID: J32ocSpgR2yn1eLsQx1Tpg==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.19,276,1754982000"; 
-   d="scan'208";a="186110382"
-Received: from aschofie-mobl2.amr.corp.intel.com (HELO kuha.fi.intel.com) ([10.124.220.222])
-  by orviesa006.jf.intel.com with SMTP; 03 Nov 2025 05:48:11 -0800
-Received: by kuha.fi.intel.com (sSMTP sendmail emulation); Mon, 03 Nov 2025 15:48:09 +0200
-Date: Mon, 3 Nov 2025 15:48:09 +0200
-From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
-To: Chaoyi Chen <chaoyi.chen@rock-chips.com>
-Cc: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
-	Chaoyi Chen <kernel@airkyi.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
-	Andy Yan <andy.yan@rock-chips.com>,
-	Yubing Zhang <yubing.zhang@rock-chips.com>,
-	Frank Wang <frank.wang@rock-chips.com>,
-	Andrzej Hajda <andrzej.hajda@intel.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Robert Foss <rfoss@kernel.org>,
-	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
-	Jonas Karlman <jonas@kwiboo.se>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
-	Amit Sunil Dhamne <amitsd@google.com>,
-	Dragan Simic <dsimic@manjaro.org>, Johan Jonker <jbx6244@gmail.com>,
-	Diederik de Haas <didi.debian@cknow.org>,
-	Peter Robinson <pbrobinson@gmail.com>, linux-usb@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org
-Subject: Re: [PATCH v8 03/10] drm/bridge: Implement generic USB Type-C DP HPD
- bridge
-Message-ID: <aQiymTFVU7UpcJ1p@kuha.fi.intel.com>
-References: <20251029071435.88-1-kernel@airkyi.com>
- <20251029071435.88-4-kernel@airkyi.com>
- <rzozpbqmymdczerh3iijxxtz3xnsznoku7w2mquikwv6u5osvo@7h43hwc2fpzm>
- <eca9d5bd-23bd-4c1d-b2f2-c0c32f14177f@rock-chips.com>
+	id 1vFxdU-0000000AHvQ-3Eix
+	for linux-phy@lists.infradead.org;
+	Mon, 03 Nov 2025 16:42:30 +0000
+Received: by mail-il1-x142.google.com with SMTP id e9e14a558f8ab-4331e9cb748so6805915ab.1
+        for <linux-phy@lists.infradead.org>; Mon, 03 Nov 2025 08:42:28 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=riscstar-com.20230601.gappssmtp.com; s=20230601; t=1762188147; x=1762792947; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=GHeoDcWtrtw4Kqs9i7E9yy2tKQ26ZOwu5ohkUo50ijM=;
+        b=sMXbLwhgqcBlYyO7RiPH/tjjHjImG2bieXZnXntKKmCNvQyXGrV5Y9q0Xx6y5t0CyR
+         lVZjxo6zQ6QC0kwbs7JF1U2xqgIHDzkppXGsk+MERwVuAnvEEaKWZkPwuraP2CkjZaYY
+         A1gaE8kk0kr0SVxXjspz/SpRnlvcQu5bHiIuw78ldbNSCff4MilEihLI+/P+ZYZr1Yhy
+         HaRM5HBEWhQyl7cYGwyOZWNKDKX/kmuEGletSPNYOVr1QxIh7226C7RlFB9MxSvyBKkg
+         62wYUl1PILkpKLksVIUb+yrzbZ55ofzfWh+IwzkCcFdJcJEgtrB52lnbatn1wnYOfOT2
+         WfDQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1762188147; x=1762792947;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=GHeoDcWtrtw4Kqs9i7E9yy2tKQ26ZOwu5ohkUo50ijM=;
+        b=QFUTkExI5g8bG/1W1H1YwL6CM3dlU0TSQhKeRss9K2DAdtxkhEv3V4htsCtoj+sLRu
+         gFBV3/DFJLbYqM1A+LKwxkyosOzJzgSaxKkR1IDiQzlN8rC3utkxHayooDuZjrp62Gw0
+         HQpaiT01in+IIqhjj9bi2MeOU+peAltpry20mVmDsmn2kyYxbesIrFqhlvNaM/4CGOoh
+         c5g7Om2LzQM3F63fxHKdB6hlwA+hxrPIxcZkJg31+0MgmjMLIhZSHiN9OH3hM3Qn/7mc
+         Ph/u/VtHxsgqYwdh+RgnqK3v7s0TEGiu3eebKAPDuUXRp2vCeXgE1FtAC6UgBmZOsBf6
+         MJ9A==
+X-Forwarded-Encrypted: i=1; AJvYcCX2zal8ngTToSvc7kOHUbUbDGynoclfqazriqUn6Hq4TUZcw0UavOd25UwDy5PxOKdUiPSmOCCbXKM=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyatwB5kemF2MpkSQ0hk9iGnXm3vNJh+8T4UeKp31bQ8OiIROT5
+	L0bjL8bVco2qIES4VwE/ky+Nq9xSj5HelgWfQFr/0SdTK7JCGV6aHcvp/P5wjLbdBZE=
+X-Gm-Gg: ASbGncsVWCU4Ex/Z47oEVTN8pPULIqhuTE1YnA8mlvFHYxwSjjIu3T4KNuWhMu7oWCM
+	y6cCVCbVE8RWu5zf04QyuZelZsdxa1NEi5RmqvZq1aQ68BiKqRPifaqSvDFR9uC40cxPwWSK4f1
+	kdExYJNiFESWKO0sRcbDrxcShE1t3yWpmbbZl1C8lmqL09P8B2vBjTyscnO9RHZYtwaenNqYldW
+	fubNFRseFawnWpz0c68XDH/3x64Y/2j9IQLhixQpojecqBb8W0d1phu9To7JfXmD3QO17/xSivK
+	etyIXO+1NsCXMN4xKfsHBvd7dtGnIUhgUrSqSSDq39R3qg2TBAjbod45TBU8jhCvvWmfb16i47n
+	KbsQvWDmTEBlVZkIAUdLxbDkI7ZUNUivA75QvfXKHm/xYHkvImKMv/epxmyFSq9RFLQYEhizxU5
+	d7qOBxsfpR8m7d4tg3RkjvqvQLJ1cYWy4f9oGmX7gD
+X-Google-Smtp-Source: AGHT+IHkHY4VTZ7p5OKjtOgXuNnn4x75Ilvl4YEJ6q5B/6x6J8/6eBwuDTFeeDgt2AKvux4z5rFo4g==
+X-Received: by 2002:a05:6e02:4603:b0:433:229c:351c with SMTP id e9e14a558f8ab-433377fbe1emr622165ab.1.1762188147419;
+        Mon, 03 Nov 2025 08:42:27 -0800 (PST)
+Received: from [172.22.22.234] (c-75-72-117-212.hsd1.mn.comcast.net. [75.72.117.212])
+        by smtp.gmail.com with ESMTPSA id 8926c6da1cb9f-5b7226f55edsm334467173.59.2025.11.03.08.42.24
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 03 Nov 2025 08:42:26 -0800 (PST)
+Message-ID: <35da84ab-5104-4fee-a7ea-4f3d42f7344a@riscstar.com>
+Date: Mon, 3 Nov 2025 10:42:23 -0600
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <eca9d5bd-23bd-4c1d-b2f2-c0c32f14177f@rock-chips.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 0/7] Introduce SpacemiT K1 PCIe phy and host controller
+To: Manivannan Sadhasivam <mani@kernel.org>,
+ Aurelien Jarno <aurelien@aurel32.net>
+Cc: Johannes Erdfelt <johannes@erdfelt.com>, robh@kernel.org,
+ krzk+dt@kernel.org, conor+dt@kernel.org, bhelgaas@google.com,
+ lpieralisi@kernel.org, kwilczynski@kernel.org, vkoul@kernel.org,
+ kishon@kernel.org, dlan@gentoo.org, guodong@riscstar.com, pjw@kernel.org,
+ palmer@dabbelt.com, aou@eecs.berkeley.edu, alex@ghiti.fr,
+ p.zabel@pengutronix.de, christian.bruel@foss.st.com, shradha.t@samsung.com,
+ krishna.chundru@oss.qualcomm.com, qiang.yu@oss.qualcomm.com,
+ namcao@linutronix.de, thippeswamy.havalige@amd.com, inochiama@gmail.com,
+ devicetree@vger.kernel.org, linux-pci@vger.kernel.org,
+ linux-phy@lists.infradead.org, spacemit@lists.linux.dev,
+ linux-riscv@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20251013153526.2276556-1-elder@riscstar.com>
+ <aPEhvFD8TzVtqE2n@aurel32.net>
+ <92ee253f-bf6a-481a-acc2-daf26d268395@riscstar.com>
+ <aQEElhSCRNqaPf8m@aurel32.net> <20251028184250.GM15521@sventech.com>
+ <82848c80-15e0-4c0e-a3f6-821a7f4778a5@riscstar.com>
+ <20251028204832.GN15521@sventech.com>
+ <5kwbaj2eqr4imcaoh6otqo7huuraqhodxh4dbwc33vqpi5j5yq@ueufnqetrg2m>
+ <aQOlMcI9jTdd7QNb@aurel32.net>
+ <ywr66wfkfay3xse77mb7ddbga5nced4yg7dapiybj3p2yp2an2@7zsaj5one5in>
+Content-Language: en-US
+From: Alex Elder <elder@riscstar.com>
+In-Reply-To: <ywr66wfkfay3xse77mb7ddbga5nced4yg7dapiybj3p2yp2an2@7zsaj5one5in>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251103_054829_286153_AD1D7397 
-X-CRM114-Status: GOOD (  31.49  )
+X-CRM114-CacheID: sfid-20251103_084229_056999_DFC4BD1C 
+X-CRM114-Status: GOOD (  26.28  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,178 +114,99 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-> > > diff --git a/drivers/gpu/drm/bridge/Kconfig b/drivers/gpu/drm/bridge/Kconfig
-> > > index a250afd8d662..17257b223a28 100644
-> > > --- a/drivers/gpu/drm/bridge/Kconfig
-> > > +++ b/drivers/gpu/drm/bridge/Kconfig
-> > > @@ -23,13 +23,16 @@ config DRM_AUX_BRIDGE
-> > >   	  build bridges chain.
-> > >   config DRM_AUX_HPD_BRIDGE
-> > > -	tristate
-> > > +	tristate "AUX HPD bridge support"
-> > Why? No, this is supposed to be selected by other drivers. Users don't
-> > know an wouldn't know what is this.
+On 10/31/25 1:10 AM, Manivannan Sadhasivam wrote:
+> On Thu, Oct 30, 2025 at 06:49:37PM +0100, Aurelien Jarno wrote:
+>> Hi Mani,
+>>
+>> On 2025-10-30 22:11, Manivannan Sadhasivam wrote:
+>>> + Aurelien
+>>>
+>>> On Tue, Oct 28, 2025 at 01:48:32PM -0700, Johannes Erdfelt wrote:
+>>>> On Tue, Oct 28, 2025, Alex Elder <elder@riscstar.com> wrote:
+>>>>> On 10/28/25 1:42 PM, Johannes Erdfelt wrote:
+>>>>>> I have been testing this patchset recently as well, but on an Orange Pi
+>>>>>> RV2 board instead (and an extra RV2 specific patch to enable power to
+>>>>>> the M.2 slot).
+>>>>>>
+>>>>>> I ran into the same symptoms you had ("QID 0 timeout" after about 60
+>>>>>> seconds). However, I'm using an Intel 600p. I can confirm my NVME drive
+>>>>>> seems to work fine with the "pcie_aspm=off" workaround as well.
+>>>>>
+>>>>> I don't see this problem, and haven't tried to reproduce it yet.
+>>>>>
+>>>>> Mani told me I needed to add these lines to ensure the "runtime
+>>>>> PM hierarchy of PCIe chain" won't be "broken":
+>>>>>
+>>>>> 	pm_runtime_set_active()
+>>>>> 	pm_runtime_no_callbacks()
+>>>>> 	devm_pm_runtime_enable()
+>>>>>
+>>>>> Just out of curiosity, could you try with those lines added
+>>>>> just before these assignments in k1_pcie_probe()?
+>>>>>
+>>>>> 	k1->pci.dev = dev;
+>>>>> 	k1->pci.ops = &k1_pcie_ops;
+>>>>> 	dw_pcie_cap_set(&k1->pci, REQ_RES);
+>>>>>
+>>>>> I doubt it will fix what you're seeing, but at the moment I'm
+>>>>> working on something else.
+>>>>
+>>>> Unfortunately there is no difference with the runtime PM hierarchy
+>>>> additions.
+>>>>
+>>>
+>>> These are not supposed to fix the issues you were facing. I discussed with Alex
+>>> offline and figured out that L1 works fine on his BPI-F3 board with a NVMe SSD.
+>>>
+>>> And I believe, Aurelien is also using that same board, but with different
+>>> SSDs. But what is puzzling me is, L1 is breaking Aurelien's setup with 3 SSDs
+>>> from different vendors. It apparently works fine on Alex's setup. So it somehow
+>>> confirms that Root Port supports and behaves correctly with L1. But at the same
+>>> time, I cannot just say without evidence that L1 is broken on all these SSDs
+>>> that you and Aurelien tested with.
+
+Aurelien, can you please confirm that your reports are with the BPI-F3
+board?  I believe you identified the three SSDs that were failing.  I
+am considering buying one of those models to see if I can reproduce
+the problem and troubleshoot it.
+
+>> It could be that we have different revision of the BPI-F3 board, it's
+>> not impossible that I got an early-ish version. That said I just
+>> visually checked the PCB against the schematics, and the devices on the
+>> CLKREQN line appear to be installed.
+>>
 > 
-> In v7, I implemented an additional module for selecting this option. But
-> Heikki believes that it would be better to merge the two modules into one.
-
-Like I said before, I was merely curious why not just squash the
-support into that AUX_PD_HPD_BRIDGE. If that does not make sense, then
-so be it - make it a "Display Interface Bridge" driver like you
-originally proposed.
-
-> > >   	depends on DRM_BRIDGE && OF
-> > >   	select AUXILIARY_BUS
-> > >   	help
-> > >   	  Simple bridge that terminates the bridge chain and provides HPD
-> > >   	  support.
-> > > +	  Specifically, if you want a default Type-C DisplayPort HPD bridge for
-> > > +	  each port of the Type-C controller, say Y here.
-> > > +
-> > >   menu "Display Interface Bridges"
-> > >   	depends on DRM && DRM_BRIDGE
-> > > diff --git a/drivers/gpu/drm/bridge/Makefile b/drivers/gpu/drm/bridge/Makefile
-> > > index c7dc03182e59..2998937444bc 100644
-> > > --- a/drivers/gpu/drm/bridge/Makefile
-> > > +++ b/drivers/gpu/drm/bridge/Makefile
-> > > @@ -1,6 +1,12 @@
-> > >   # SPDX-License-Identifier: GPL-2.0
-> > >   obj-$(CONFIG_DRM_AUX_BRIDGE) += aux-bridge.o
-> > > -obj-$(CONFIG_DRM_AUX_HPD_BRIDGE) += aux-hpd-bridge.o
-> > > +
-> > > +hpd-bridge-y := aux-hpd-bridge.o
-> > > +ifneq ($(CONFIG_TYPEC),)
-> > > +hpd-bridge-y += aux-hpd-typec-dp-bridge.o
-> > > +endif
-> > > +obj-$(CONFIG_DRM_AUX_HPD_BRIDGE) += hpd-bridge.o
-> > > +
-> > >   obj-$(CONFIG_DRM_CHIPONE_ICN6211) += chipone-icn6211.o
-> > >   obj-$(CONFIG_DRM_CHRONTEL_CH7033) += chrontel-ch7033.o
-> > >   obj-$(CONFIG_DRM_CROS_EC_ANX7688) += cros-ec-anx7688.o
-> > > diff --git a/drivers/gpu/drm/bridge/aux-hpd-bridge.c b/drivers/gpu/drm/bridge/aux-hpd-bridge.c
-> > > index 2e9c702c7087..11ad6dc776c7 100644
-> > > --- a/drivers/gpu/drm/bridge/aux-hpd-bridge.c
-> > > +++ b/drivers/gpu/drm/bridge/aux-hpd-bridge.c
-> > > @@ -12,6 +12,8 @@
-> > >   #include <drm/drm_bridge.h>
-> > >   #include <drm/bridge/aux-bridge.h>
-> > > +#include "aux-hpd-bridge.h"
-> > > +
-> > >   static DEFINE_IDA(drm_aux_hpd_bridge_ida);
-> > >   struct drm_aux_hpd_bridge_data {
-> > > @@ -204,7 +206,26 @@ static struct auxiliary_driver drm_aux_hpd_bridge_drv = {
-> > >   	.id_table = drm_aux_hpd_bridge_table,
-> > >   	.probe = drm_aux_hpd_bridge_probe,
-> > >   };
-> > > -module_auxiliary_driver(drm_aux_hpd_bridge_drv);
-> > > +
-> > > +static int drm_aux_hpd_bridge_mod_init(void)
-> > > +{
-> > > +	int ret;
-> > > +
-> > > +	ret = auxiliary_driver_register(&drm_aux_hpd_bridge_drv);
-> > > +	if (ret)
-> > > +		return ret;
-> > > +
-> > > +	return drm_aux_hpd_typec_dp_bridge_init();
-> > > +}
-> > > +
-> > > +static void drm_aux_hpd_bridge_mod_exit(void)
-> > > +{
-> > > +	drm_aux_hpd_typec_dp_bridge_exit();
-> > > +	auxiliary_driver_unregister(&drm_aux_hpd_bridge_drv);
-> > > +}
-> > > +
-> > > +module_init(drm_aux_hpd_bridge_mod_init);
-> > > +module_exit(drm_aux_hpd_bridge_mod_exit);
-> > >   MODULE_AUTHOR("Dmitry Baryshkov <dmitry.baryshkov@linaro.org>");
-> > >   MODULE_DESCRIPTION("DRM HPD bridge");
-> > > diff --git a/drivers/gpu/drm/bridge/aux-hpd-bridge.h b/drivers/gpu/drm/bridge/aux-hpd-bridge.h
-> > > new file mode 100644
-> > > index 000000000000..69364731c2f1
-> > > --- /dev/null
-> > > +++ b/drivers/gpu/drm/bridge/aux-hpd-bridge.h
-> > > @@ -0,0 +1,13 @@
-> > > +/* SPDX-License-Identifier: GPL-2.0-only */
-> > > +#ifndef AUX_HPD_BRIDGE_H
-> > > +#define AUX_HPD_BRIDGE_H
-> > > +
-> > > +#if IS_REACHABLE(CONFIG_TYPEC)
-> > > +int drm_aux_hpd_typec_dp_bridge_init(void);
-> > > +void drm_aux_hpd_typec_dp_bridge_exit(void);
-> > > +#else
-> > > +static inline int drm_aux_hpd_typec_dp_bridge_init(void) { return 0; }
-> > > +static inline void drm_aux_hpd_typec_dp_bridge_exit(void) { }
-> > > +#endif /* IS_REACHABLE(CONFIG_TYPEC) */
-> > > +
-> > > +#endif /* AUX_HPD_BRIDGE_H */
-> > > diff --git a/drivers/gpu/drm/bridge/aux-hpd-typec-dp-bridge.c b/drivers/gpu/drm/bridge/aux-hpd-typec-dp-bridge.c
-> > > new file mode 100644
-> > > index 000000000000..6f2a1fca0fc5
-> > > --- /dev/null
-> > > +++ b/drivers/gpu/drm/bridge/aux-hpd-typec-dp-bridge.c
-> > > @@ -0,0 +1,47 @@
-> > > +// SPDX-License-Identifier: GPL-2.0+
-> > > +#include <linux/of.h>
-> > > +#include <linux/usb/typec_altmode.h>
-> > > +#include <linux/usb/typec_dp.h>
-> > > +#include <linux/usb/typec_notify.h>
-> > > +
-> > > +#include <drm/bridge/aux-bridge.h>
-> > > +
-> > > +#include "aux-hpd-bridge.h"
-> > > +
-> > > +#if IS_REACHABLE(CONFIG_TYPEC)
-> > > +static int drm_typec_bus_event(struct notifier_block *nb,
-> > > +			       unsigned long action, void *data)
-> > > +{
-> > This feels like this should be a part of the Type-C subsystem rather
-> > than DRM.
+> CLKREQ# is only needed for L1 PM Substates (L1.1 and L1.2). In other ASPM states
+> (L0s and L1), REFCLK is supposed to be ON. So those don't need CLKREQ# assertion
+> by the endpoint.
 > 
-> In v7, this used to be a part of the Type-C subsystem. I'm not sure what
-> Heikki thinks about this.
+> The L1 issue you are facing could be due to the board routing issue also. I'm
+> just speculating here.
+> 
+>> If someone has contacts to check what changes have been done between the
+>> different board revision, that could help. Or same if there are
+>> different revisions of the SpacemiT K1 chip.
+>>
+> 
+> I hope Alex can get this information.
 
-Your original proposal of making the entire TYPEC subsystem depend on
-DRM is _not_ going to happen. In general, if I've now understood this
-correctly, this thing probable should be a "display interface bridge
-driver", similar to what you proposed in the previous version.
+I have sent a message to SpacemiT to explain that these issues are
+being reported, and asking for any useful information about the
+BPI-F3 (including whether there are different versions, or different
+versions of firmware, and how someone can identify what they have).
 
-Note also that you could make it selected automatically, so there is
-no need for user selectable option if that's the preference. Kconfig
-and Makefile gives you options on how to do that. For example, maybe
-this Kconfig works (or does not, but something like it will):
+Thanks.
 
-diff --git a/drivers/gpu/drm/bridge/Kconfig b/drivers/gpu/drm/bridge/Kconfig
-index a250afd8d662..7487024ba2ce 100644
---- a/drivers/gpu/drm/bridge/Kconfig
-+++ b/drivers/gpu/drm/bridge/Kconfig
-@@ -30,6 +30,15 @@ config DRM_AUX_HPD_BRIDGE
-          Simple bridge that terminates the bridge chain and provides HPD
-          support.
- 
-+if DRM_AUX_HPD_BRIDGE
-+
-+config DRM_AUX_HPD_TYPEC_BRIDGE
-+       tristate
-+       depends on TYPEC || !TYPEC
-+       default TYPEC
-+
-+endif /* DRM_AUX_HPD_BRIDGE */
-+
- menu "Display Interface Bridges"
-        depends on DRM && DRM_BRIDGE
- 
+					-Alex
 
+> - Mani
+> 
 
-thanks,
-
--- 
-heikki
 
 -- 
 linux-phy mailing list
