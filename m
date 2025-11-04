@@ -4,84 +4,159 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 52FD7CCFA03
-	for <linux-phy@archiver.kernel.org>; Tue,  4 Nov 2025 02:44:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5E680CCFA03
+	for <linux-phy@archiver.kernel.org>; Tue,  4 Nov 2025 02:59:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QrStWPScKyCW3XEpXoAMjv1FKcvYa661Yo7hO2gYqv8=; b=MuErKQ71cr+mWb
-	pB30oUw9d5ar+swoICkF7AaYmqu46Z/tFRmZgo5vpfTVkc4LLuS/Um/nbS+bYseavvYPY3tf8+L/e
-	ShZSinWj4mIDVH4ckzoWVObnKDmNjVDA4z/vdmJXtSE+my1eIw71WN8TlIx2vTOGUBTNZBdwCngT6
-	JzBiRN6okcNWi+cdNlsw7AW/IaEEkxZ4o7uL467B/HdZjttA2f8UTpSZjZtykqE8612qOCgzQddr6
-	nrCfcPkHz/BjH8htmEL2QGmwxw/hjy11r5fsr565Spo5Wifgfq9xHh4Sz9Z3swt7OZZx/nbNEx184
-	NTfhi+anbWMk+74o29kA==;
+	List-Owner; bh=NZ35a9C3RKMPoZ8CRD1TMgRHWR+M3cWTFk85IfavGU4=; b=xeUNk9TCmHQfQc
+	cJhfpF0wWbqhlGV5m2kspwFjp+DRFoYl7dxKBKJoVC/4yqdDGnwVPV/5k1SCrD5NYFlqIBxNm3lOa
+	7GZpqMdnqP09GOU4dx1uv7tDbdDsLNH6pMcBzQTdIWEOSC7bKDXuZnm1q56TBhZboWVAA/dahqgWQ
+	IIoLbV5DMUJmb2rnP6K62UGzVupwhst1bSllRznrIkM8TKFV3PCFMnRvipHicZ1u9XJ8hx43rHTXw
+	yNxSuZFRuYheAD+H2+mDLxE04SDIwLMXJZZ9zJV/X6yq87ZtTVOgt0B0ZGC5or5Lrq3YWDjrH/z3s
+	Byr8ha1VFvTxZOQt8v+Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vG71g-0000000Aztk-1awU;
-	Tue, 04 Nov 2025 02:44:04 +0000
-Received: from smtpbg150.qq.com ([18.132.163.193])
+	id 1vG7GB-0000000B0Tu-3Yu9;
+	Tue, 04 Nov 2025 02:59:03 +0000
+Received: from mail-francesouthazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c207::3] helo=MRWPR03CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vG71F-0000000AzrD-1630
-	for linux-phy@lists.infradead.org;
-	Tue, 04 Nov 2025 02:44:03 +0000
-X-QQ-mid: esmtpsz16t1762224181t5590cb45
-X-QQ-Originating-IP: EvRggr8iWg+rMKt+SbdgLn51Uv/XopMlLWVk1mWUgqE=
-Received: from [127.0.0.1] ( [116.237.87.237])
-	by bizesmtp.qq.com (ESMTP) with 
-	id ; Tue, 04 Nov 2025 10:42:58 +0800 (CST)
-X-QQ-SSF: 0000000000000000000000000000000
-X-QQ-GoodBg: 0
-X-BIZMAIL-ID: 17583655265826415366
-Message-ID: <88A0003946F4D3F6+19ac224d-3431-48b5-b8ce-9cae7c7ec264@radxa.com>
-Date: Tue, 4 Nov 2025 10:42:58 +0800
+	id 1vG7G9-0000000B0TG-09Vn;
+	Tue, 04 Nov 2025 02:59:02 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=pare1Y5yL85LRaZ94rU+7e/8Rvv+lc8KuuVLVyNtSzjfgGfMncN7qRdkrt3Gu1a8Sdd8/41ff0rh2603mocIzHBQOZ5wAzeKj2BDtNAIDUjq1ni26Rr32Go7QqQbXzKPx2ZKV8Qnvq/UNsy2htM/7Ia9XFzKkGRm1irCWEl5dEMUeYfKiRMHqbkDA5GqW4XpE5+JkcKqmLesfrny91i1ELUVyKWamwQ/3rxVf6n1aH7l2nSSBJZ6IIq2UI7cafpEDTIwJEDIBu8emrmJh75RpD542UYed7qz+sxU20r6vHS6Y0JCdFJODL44/HWBVq5eoIm7oEFYbNcClSuHu/kHUg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=G1acGgEmHMcJR0/4plY3txSaSuZisVH7dssnv4GVxXA=;
+ b=KnodH6VePY7H+/vLy6cf2wwyQEEZA6e8hdtNS7vS2/mlhaPQcuf397rNdkFj5JPl9CHs2Kmu0GRVkA9Cuii7JD41tyPPPh+tjq42+jssKhJeWIcPFvE64S3ImX3JGB+qumiv+QcY0Lpdl3wIQDqGwvmnziJ0rmEe9xbNdvEs4xmC1JekycmQtfU65WbOaUmOwxur5D1L5lekqs5WQNCPwMA/eopobptPRlXlqjnvbzkKAsMBtIC0cBJQEZ24wtNnt6hDHVmp1Pun5GZ6r37JRlUi4E7XiU/2soZFc/+gKRS/4eFwvTJSVjTM1685Q44Fa0saZQXX1dG9IYHPkWg83A==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
+ dkim=pass header.d=oss.nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
+ s=selector1-NXP1-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=G1acGgEmHMcJR0/4plY3txSaSuZisVH7dssnv4GVxXA=;
+ b=R6DMjHUKcNRf7qSpeFj7noSTn3Asv1r7iqGjXgdg0fy5Hbky7+uWhNyJLLNulDwWkG9YXgQtrGiU6V0qMGbwP4hkDt2Lw6U+UcCZz7yO1Dh7OWmseG4Sj4As1jL6z/tk1juLbNxIReCFt1bQ3pBhvyQkW4JCHA1SIFmTlYqWcTqWT5dXPxInlLKj4dcUi0XtOfseoWcEMEZpTfXIjdLcJA8oD4vbU/hIX8J0x3IXxIam6yXF/dh2lk3WS8mKgP9hJ9ZmvIo2y+Ha9mGAnQut/GmlL35vXIXUt8LBL8l1oBiWmB4CpX8qbyTBH/v+sYl48GflZUejwccNnJuS7mPB7g==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=oss.nxp.com;
+Received: from PAXPR04MB8459.eurprd04.prod.outlook.com (2603:10a6:102:1da::15)
+ by AM7PR04MB6965.eurprd04.prod.outlook.com (2603:10a6:20b:104::14) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9275.15; Tue, 4 Nov
+ 2025 02:58:53 +0000
+Received: from PAXPR04MB8459.eurprd04.prod.outlook.com
+ ([fe80::165a:30a2:5835:9630]) by PAXPR04MB8459.eurprd04.prod.outlook.com
+ ([fe80::165a:30a2:5835:9630%4]) with mapi id 15.20.9275.015; Tue, 4 Nov 2025
+ 02:58:53 +0000
+Date: Tue, 4 Nov 2025 12:11:19 +0800
+From: Peng Fan <peng.fan@oss.nxp.com>
+To: Xu Yang <xu.yang_2@nxp.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+	Sascha Hauer <s.hauer@pengutronix.de>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>, Li Jun <jun.li@nxp.com>,
+	Abel Vesa <abelvesa@kernel.org>, Peng Fan <peng.fan@nxp.com>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, imx@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+	linux-clk@vger.kernel.org, Frank Li <Frank.Li@nxp.com>,
+	Conor Dooley <conor.dooley@microchip.com>
+Subject: Re: [PATCH v3 0/4] Add i.MX95 USB3.0 PHY alternate clock support
+Message-ID: <20251104041119.GC8752@nxa18884-linux.ap.freescale.net>
+References: <20251103-usb-phy-alt-clk-support-v3-0-18b8bd4f01b0@nxp.com>
+Content-Disposition: inline
+In-Reply-To: <20251103-usb-phy-alt-clk-support-v3-0-18b8bd4f01b0@nxp.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-ClientProxiedBy: SG2PR01CA0144.apcprd01.prod.exchangelabs.com
+ (2603:1096:4:8f::24) To PAXPR04MB8459.eurprd04.prod.outlook.com
+ (2603:10a6:102:1da::15)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 0/3] phy: qcom: edp: Add missing ref clock to x1e80100
-To: Stephan Gerhold <stephan.gerhold@linaro.org>
-Cc: Abel Vesa <abel.vesa@linaro.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
- Dmitry Baryshkov <lumag@kernel.org>, Konrad Dybcio <konradybcio@kernel.org>,
- Sibi Sankar <quic_sibis@quicinc.com>,
- Rajendra Nayak <quic_rjendra@quicinc.com>, Johan Hovold <johan@kernel.org>,
- Taniya Das <quic_tdas@quicinc.com>,
- Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- stable@vger.kernel.org
-References: <20250909-phy-qcom-edp-add-missing-refclk-v3-0-4ec55a0512ab@linaro.org>
- <6A43111ED3D39760+a88e4a65-5da8-4d3b-b27e-fa19037462c8@radxa.com>
- <aM1wnAw0mA-iNgJy@linaro.org>
-Content-Language: en-US
-From: Xilin Wu <sophon@radxa.com>
-In-Reply-To: <aM1wnAw0mA-iNgJy@linaro.org>
-X-QQ-SENDSIZE: 520
-Feedback-ID: esmtpsz:radxa.com:qybglogicsvrgz:qybglogicsvrgz6b-0
-X-QQ-XMAILINFO: MSyoPQEuxKCuFn+gUCRGdo9Xpg+bKyM9N4nZhxvnRyvUNmbYtNj3Pjt9
-	W4PO+M8z7FV559WG/fnt5uWrmfDD4k2FcZtUyZIeQ95/3GVXOM1jh5CGkZbmt7Hz44zETRj
-	j/XXMI+4swLB3GBl3uheGbucFm+l16SWxwl+9C97lWJxvIw/J6PCV9W5eWLG9oFawNv8xMw
-	IU6lkHa3uMrQoo+5nSK28yt5NgsF7AoFJMXKRP/h11LtVbHlLtvVqzm4J8ivhMlzzL1H69c
-	oLimbYhXXVoOe9qafvA5Uobyov2HFxQ7c/cKS5WxX2NSfxumh+1Kq+lQbnsOHqgNMxiWxtS
-	AyHY7l9TMDz7pA4MA2yV+vixRrygVwY67pBvTM+TIChbxyV8q16zxwUCe+bQGrDAq5t/mHZ
-	EuwtRmuSxTN87YQ0qDw92LSFlWHyu/q1XtzvadJqJt85rdY+v727T2IqkMV+uBCdQSkPz9p
-	ZCTRDY+g2ypfPfWcfKRbuWbeyJlkqLIz/1jd7tkpD4ZIkkRJedqjI7oAJWx4ZOXQ1BIZpWW
-	VGZBJQXefyr9OPWt2cMKx1MRFieow/6xvsKPb1wyUh/8zcxH7EcWeIBM/KXCjqO36wiDkDB
-	fAkKK7lE6ZsRPTlQx+bHz0AMBSl9usfdYblN4kHJqgAwa4CVo0oTSx0N+jTgZTcF6nsuz8e
-	Mg67NCeRy2G++9mcyIHo5Bf/ouPxvKHGiHc5RJlxG1QergGKjlrl/Og2Z27vC0mmwxePJOq
-	d1MP1aq6Hgge+iJgK6wcFTzumqT0LP1wUimPhKEk/0K3Hy/10LL0LQDRCJh2hLgObrm14rM
-	KxM12N577HMLi/x84iveDFKW0IzODfOoRZgB/BgqCqLIt54SwKHN7nFaCNr056YttbPJnS4
-	a/ZOYj5BKiepUcgX5Ct0ZzTIADI2PFaLvqb3+QR4OLclut5j8jX2WDI8JHE6Yi2aQQnOEb3
-	wnKbvzglgNN1Vt3/1ogdDHTS/cud6OpREI2hMBGHQ6yJc+lQXg2jhed7DOdZnPF7bqZ2r3L
-	i7vKQo0w==
-X-QQ-XMRINFO: Mp0Kj//9VHAxr69bL5MkOOs=
-X-QQ-RECHKSPAM: 0
+X-MS-Exchange-MessageSentRepresentingType: 1
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PAXPR04MB8459:EE_|AM7PR04MB6965:EE_
+X-MS-Office365-Filtering-Correlation-Id: f3277e87-9853-4306-f7c9-08de1b4e1656
+X-MS-Exchange-SharedMailbox-RoutingAgent-Processed: True
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|52116014|7416014|376014|366016|19092799006|1800799024|38350700014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?LBR9jd8U49Nwe08WyL9yL3LAX7r3iKjXJoij+GkSDd7Rb9erBMuvtXM/A098?=
+ =?us-ascii?Q?DTVoSDianEXUFp2fmx0kFh9LdzY35UCpCveukRCTUmg43b3OdrpWgaMoA1lF?=
+ =?us-ascii?Q?fIVpUUkzAV0Y8tAG2P0EdWsouLPOmioO2uysYvlyndune6+MO8ZJ5X3yh2Hm?=
+ =?us-ascii?Q?zgLlpK6cwFWrKlX/jIhwh/KTnaY1ifn3ZZn37P1+Scwj3EVFdCeQzcR6OvVa?=
+ =?us-ascii?Q?iSvCHSuTc++RgKop7/KAXUHQtYNfizL6+XQKnhj1U1HxuxKGDQbo6L/g6Y8i?=
+ =?us-ascii?Q?ycLhx55aG7P1Hdlhvjpzbv0L0CNmR44PIvU/djjSXuZ6seWNtVq4HJUNtpUX?=
+ =?us-ascii?Q?vrY9eSmJwsJA5ZCBaGdCUgH/qJFsE1f4slxIx8pMsVMuB5SDlseTJPDg1WCj?=
+ =?us-ascii?Q?gmznzuGSUHgGBfN/Q62pXYg7Ix8Sr66z4LKY+vMD7rQJGfyEryWWo29zt0Vs?=
+ =?us-ascii?Q?sw24ZcCPBytzY5hSOV7MvibNvupHcReiRKagl7KwPL5wvGMpYpJdpG4/UidS?=
+ =?us-ascii?Q?/Rk5YiNsHR8VdedG9aChPIfutlV4xfbmFYPqL9D43QRQGmRIgZs2EjqyQxm3?=
+ =?us-ascii?Q?EaDlft7hwSlos6Y46u2PnbnXaLBpw4I60JIUqJ4FZhjY1nkFY21jcrFs5f7W?=
+ =?us-ascii?Q?dH/sE3BE8EMEeKgt34wjBN1RU7vziEaLMcgV5VT5Pjw61XKJxvF8T6wfqcGN?=
+ =?us-ascii?Q?lTkiwQg9/HUfJQbL988PsBJYI9EnMVYZ3f/iMZVJRrbLLrPgbB3Za5HPz/Od?=
+ =?us-ascii?Q?ZgIm1iqo84YkFVvqbmTiOZ5QWkFmA/SaGAKAnwLP2xiatzX8tJfYUoFFs/HU?=
+ =?us-ascii?Q?GdSWOhIuKHStSMTJaDpbIKMrML3t24SxLrNLjy/7Oaqv8lp/kyj9qstPKKpo?=
+ =?us-ascii?Q?Og1wzIXnCchlTSJQJa8nfMDZrsGgx0thKNSRxxDQ32gksA8ovUunH7UZO2Vi?=
+ =?us-ascii?Q?kNhRk3Ihlzbk98wui6KJwMIcTrlbWvB1NAHm2x67W7erjsMrbMzQIBAiqm+2?=
+ =?us-ascii?Q?J98teu1/WmG0PYvTwv4JIJzCBLU+O+ZV1E6LCrYHEzsDnrYmakzSprnvXZK0?=
+ =?us-ascii?Q?t05Ew9e1hX3FN3rjnoap9W2NQvcbDcWK1KqqDVzwTqOSTi7khkbGZGflirTH?=
+ =?us-ascii?Q?H0Uw3vo9/f4UZ5+bUI43n/PjTXbNyRcloE1ywzONBBuQMN5/TQKhl9wRm2TK?=
+ =?us-ascii?Q?NzWAXbi/TOpyuyr4tnNnB0McDp37toc/J2L7ZgPO3YGK8DKIhjVB5v+hNrlI?=
+ =?us-ascii?Q?lzRBkU8qHznpUaFHOErJ70Z7kttPqoNCNDGOWHsOec5+KYk5UYcSQJSGumaA?=
+ =?us-ascii?Q?aQ+A+fPvFyUN9WmguW6eiEvPHtOOz1Dwr6m9YH+HDDU3jybameNl45katML9?=
+ =?us-ascii?Q?iwnO/BpnAd8WPmP1Fx8p6itkkraPTytJxz17Cv/PGRtRpC/TLLZ8f6Xr/Gsi?=
+ =?us-ascii?Q?mYPA/TivThQyA9kk0v52p8eTPo9fXU6yb6vCSo1F5/XnDw+llxME/d7Q9N5o?=
+ =?us-ascii?Q?qqbBD2I5pm+8Kh/oZLERTJQ80x/o3WP2iljf?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB8459.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(52116014)(7416014)(376014)(366016)(19092799006)(1800799024)(38350700014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?Eyn3zP6zqdAgpage20+SFAJCXxzQIJiF6UTmUi7XXnW+twfidM43L9105Znr?=
+ =?us-ascii?Q?d8H8xNqsVWA3gABufL65KhvaSzzYBJXI+o3JtbLJTAn9Fkr5i5oLOx7O60qS?=
+ =?us-ascii?Q?9wRhNSxQjzKT05IKALxBaow+IBI78y4qXlbsodbgKwKM7B7+/ZaWHpWeUFtW?=
+ =?us-ascii?Q?6AKDqOuzOqiWotZ+wr9Q2QPOwMB3li7G5BoQljcWJieO/x5XjIxXHsQk/OZM?=
+ =?us-ascii?Q?ptHTdf8KTIySHf4MlnEwde4GedM5Notv3ybip0b3CrjSLcF2+u2d2+I0aJ3Q?=
+ =?us-ascii?Q?GLv5lgFHn0OPdhWgJJ0v0YrfDYrVqNLMbFC3oaX85BRUqcdtzEf1tURlL7og?=
+ =?us-ascii?Q?B3fkYK0LmJdLSmno0Hj+N0cSjRce1e/sDuU7klmUEOA/CDgnrTZCxvNs6l3V?=
+ =?us-ascii?Q?CQja3gHvsZXbEEy8h7ngPGuSV9E0juGviArWqz24fmOBeTfBnw75gs8bYLW1?=
+ =?us-ascii?Q?B4alg9PWfIGSvIqvzNfml0vQw56whJbNoqAoSCo76+CNKH/nbrs0wIW0s0ed?=
+ =?us-ascii?Q?Jp9+RgeMRKlJsBvA8DE322i9oMYgB8WcC9+ZJcluHxf25cB4X/5/88ecxiVM?=
+ =?us-ascii?Q?zL6y/cZzjXLUiqcIyhsSnLpFn9r+4Ep+q9bVU6z3yUK7Vq2GOO9UnIzcCYhb?=
+ =?us-ascii?Q?jiPYAPnkcZIKxFj0Gsi1mwrdqlEI4cyZv86nQG1/Z308BaRcPO5PZm0c1J9+?=
+ =?us-ascii?Q?C7owAnzV0LhJAuR7GVwNkSN9AB3E3olQe5fMjC/xtN6iC+LK5UYTQISwyBtd?=
+ =?us-ascii?Q?lly6frncSbSKBeNDy+ZtQGvvFTWKWpKbiX8KafsQ3nOylXrxhGOXTlb4nM/u?=
+ =?us-ascii?Q?GeZDVcgK6IUqBzrKpV6vF2XkHDpub2nzRCx/GsLPG9UajTF+gzNHpxUm4NtA?=
+ =?us-ascii?Q?FpoacheZHgfTHXaspRauvpT8ffLr2LQ4efiFWX0Y3k5wK0hRLtFhAYA+tODJ?=
+ =?us-ascii?Q?FR/bkizjwgfatn7GvViFryjQ18M6Ocj+WtYHDWiZAiD0apQ4mE2QDpa1Cx5m?=
+ =?us-ascii?Q?TEYwMpECcaETSim4xRwLyfoOlSCycb1VGX+dUHI+sxPSqTuejnxAoLxSzkwe?=
+ =?us-ascii?Q?P2oqtC+PZEwyttRdAkGawyUHLoEHhiBVy1zOoUvdLYn/9qQF6yEwnh3TsQi4?=
+ =?us-ascii?Q?hIZcD9R0OEbVxIr0ycmD3DBABwgj3G2HAGHAAuzyzBINdntrxDffhwTa943j?=
+ =?us-ascii?Q?aVdAyfFVR3KNRpIHWBSuOwP8mY4YH9Z24aaOf3K8ntopzbluBSk+OpaAlMc8?=
+ =?us-ascii?Q?W5HdBUS+DYZ/QySjssDD4jE3KQMRpZOzbbo3scHYGSzuKTlRnN2F5v+GZMT6?=
+ =?us-ascii?Q?50k9XsZXFvwUnfNjSEEI9hqu+9qJKuK2GjApYH+OtTcS/ns4lppXR+ux9FIW?=
+ =?us-ascii?Q?A9/aVS9UQQmR+4Y+1YEPXWCvsw677OrTkIE2IIzqmsxTOSgGJ6379JXGNAKl?=
+ =?us-ascii?Q?a8HY0BVUJek4WkPGXQb5Xswh24aBRpx6OYfIHNrPyylXuF7aJAVe0hKwKRxl?=
+ =?us-ascii?Q?gKTPY6tScdOCXrl6W3tGIiUu3BxedCo1wxxHbgV2rHg6Y73bGKc8qzuUITZ4?=
+ =?us-ascii?Q?QGkqrUZwZTeQTbjDhzg7h/REbl7o46EJhC5fZznc?=
+X-OriginatorOrg: oss.nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: f3277e87-9853-4306-f7c9-08de1b4e1656
+X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB8459.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Nov 2025 02:58:53.2087
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: NN3yu+9eIXxOFHnTBYjdMD8eAtP0PIB/PgJkflwPq/ZBt4GaIX2HtHlfNLcARYfkwrH+pUQcvGNIdLJt0xOI3A==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM7PR04MB6965
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251103_184337_932643_FECE4830 
-X-CRM114-Status: GOOD (  26.33  )
+X-CRM114-CacheID: sfid-20251103_185901_082205_78054E93 
+X-CRM114-Status: GOOD (  12.42  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,212 +168,66 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 9/19/2025 11:02 PM, Stephan Gerhold wrote:
-> On Fri, Sep 19, 2025 at 07:06:36PM +0800, Xilin Wu wrote:
->> On 9/9/2025 3:33 PM, Abel Vesa wrote:
->>> According to documentation, the DP PHY on x1e80100 has another clock
->>> called ref.
->>>
->>> The current X Elite devices supported upstream work fine without this
->>> clock, because the boot firmware leaves this clock enabled. But we should
->>> not rely on that. Also, when it comes to power management, this clock
->>> needs to be also disabled on suspend. So even though this change breaks
->>> the ABI, it is needed in order to make we disable this clock on runtime
->>> PM, when that is going to be enabled in the driver.
->>>
->>> So rework the driver to allow different number of clocks, fix the
->>> dt-bindings schema and add the clock to the DT node as well.
->>>
->>> Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
->>> ---
->>> Changes in v3:
->>> - Use dev_err_probe() on clocks parsing failure.
->>> - Explain why the ABI break is necessary.
->>> - Drop the extra 'clk' suffix from the clock name. So ref instead of
->>>     refclk.
->>> - Link to v2: https://lore.kernel.org/r/20250903-phy-qcom-edp-add-missing-refclk-v2-0-d88c1b0cdc1b@linaro.org
->>>
->>> Changes in v2:
->>> - Fix schema by adding the minItems, as suggested by Krzysztof.
->>> - Use devm_clk_bulk_get_all, as suggested by Konrad.
->>> - Rephrase the commit messages to reflect the flexible number of clocks.
->>> - Link to v1: https://lore.kernel.org/r/20250730-phy-qcom-edp-add-missing-refclk-v1-0-6f78afeadbcf@linaro.org
->>>
->>> ---
->>> Abel Vesa (3):
->>>         dt-bindings: phy: qcom-edp: Add missing clock for X Elite
->>>         phy: qcom: edp: Make the number of clocks flexible
->>>         arm64: dts: qcom: Add missing TCSR ref clock to the DP PHYs
->>>
->>>    .../devicetree/bindings/phy/qcom,edp-phy.yaml      | 28 +++++++++++++++++++++-
->>>    arch/arm64/boot/dts/qcom/x1e80100.dtsi             | 12 ++++++----
->>>    drivers/phy/qualcomm/phy-qcom-edp.c                | 16 ++++++-------
->>>    3 files changed, 43 insertions(+), 13 deletions(-)
->>> ---
->>> base-commit: 65dd046ef55861190ecde44c6d9fcde54b9fb77d
->>> change-id: 20250730-phy-qcom-edp-add-missing-refclk-5ab82828f8e7
->>>
->>> Best regards,
->>
->> Hi,
->>
->> I'm observing what looks like a related clock failure on sc8280xp when
->> booting without a monitor connected to a DP-to-HDMI bridge on mdss0_dp2.
->>
->> Do you think sc8280xp might require a similar fix, or could this be a
->> different issue?
->>
->>
->> [    0.390390] ------------[ cut here ]------------
->> [    0.390398] disp0_cc_mdss_dptx2_link_clk_src: rcg didn't update its
->> configuration.
->> [    0.390419] WARNING: CPU: 0 PID: 63 at drivers/clk/qcom/clk-rcg2.c:136
->> update_config+0xa4/0xb0
->> [    0.390439] Modules linked in:
->> [    0.390448] CPU: 0 UID: 0 PID: 63 Comm: kworker/u32:1 Not tainted 6.16.3+
->> #45 PREEMPT(lazy)
->> [    0.390455] Hardware name: Qualcomm QRD, BIOS
->> 6.0.250905.BOOT.MXF.1.1.c1-00167-MAKENA-1 09/ 5/2025
->> [    0.390460] Workqueue: events_unbound deferred_probe_work_func
->> [    0.390476] pstate: 60400005 (nZCv daif +PAN -UAO -TCO -DIT -SSBS
->> BTYPE=--)
->> [    0.390482] pc : update_config+0xa4/0xb0
->> [    0.390492] lr : update_config+0xa4/0xb0
->> [    0.390500] sp : ffff80008351b9e0
->> [    0.390504] x29: ffff80008351b9e0 x28: 0000000000000000 x27:
->> ffff0000850ec3c0
->> [    0.390515] x26: ffff800081205320 x25: 0000000000000002 x24:
->> 0000000000000000
->> [    0.390523] x23: ffff8000812052a0 x22: ffff000080467800 x21:
->> ffff800081207ef0
->> [    0.390531] x20: ffff8000822ad6f0 x19: 0000000000000000 x18:
->> ffffffffffc06b68
->> [    0.390539] x17: 616c707369642e30 x16: 3030313065613a6d x15:
->> ffff800081474230
->> [    0.390547] x14: ffffffffff806b67 x13: 2e6e6f6974617275 x12:
->> 6769666e6f632073
->> [    0.390556] x11: 0000000000000058 x10: 0000000000000018 x9 :
->> ffff8000814742b8
->> [    0.390565] x8 : 0000000000afffa8 x7 : 0000000000000179 x6 :
->> ffff800081f742b8
->> [    0.390574] x5 : ffff800081f742b8 x4 : 0000000000000178 x3 :
->> 00000000fffdffff
->> [    0.390582] x2 : ffff8000814741f8 x1 : ffff00008091cec0 x0 :
->> 0000000100000000
->> [    0.390591] Call trace:
->> [    0.390595]  update_config+0xa4/0xb0 (P)
->> [    0.390606]  clk_rcg2_set_parent+0x58/0x68
->> [    0.390617]  clk_core_set_parent_nolock+0xc4/0x1e0
->> [    0.390630]  clk_set_parent+0x40/0x144
->> [    0.390638]  of_clk_set_defaults+0x12c/0x520
->> [    0.390645]  platform_probe+0x38/0xdc
->> [    0.390652]  really_probe+0xc0/0x390
->> [    0.390657]  __driver_probe_device+0x7c/0x150
->> [    0.390663]  driver_probe_device+0x40/0x120
->> [    0.390667]  __device_attach_driver+0xbc/0x168
->> [    0.390673]  bus_for_each_drv+0x74/0xc0
->> [    0.390684]  __device_attach+0x9c/0x1ac
->> [    0.390688]  device_initial_probe+0x14/0x20
->> [    0.390694]  bus_probe_device+0x9c/0xa0
->> [    0.390703]  deferred_probe_work_func+0xa8/0xf8
->> [    0.390713]  process_one_work+0x150/0x2b0
->> [    0.390725]  worker_thread+0x2d0/0x3ec
->> [    0.390731]  kthread+0x118/0x1e0
->> [    0.390738]  ret_from_fork+0x10/0x20
->> [    0.390751] ---[ end trace 0000000000000000 ]---
->> [    0.390760] clk: failed to reparent disp0_cc_mdss_dptx2_link_clk_src to
->> aec2a00.phy::link_clk: -16
->> [    0.401093] ------------[ cut here ]------------
->> [    0.401096] disp0_cc_mdss_dptx2_pixel0_clk_src: rcg didn't update its
->> configuration.
->> [    0.401112] WARNING: CPU: 0 PID: 63 at drivers/clk/qcom/clk-rcg2.c:136
->> update_config+0xa4/0xb0
->> [    0.401126] Modules linked in:
->> [    0.401132] CPU: 0 UID: 0 PID: 63 Comm: kworker/u32:1 Tainted: G   W
->> 6.16.3+ #45 PREEMPT(lazy)
->> [    0.401141] Tainted: [W]=WARN
->> [    0.401144] Hardware name: Qualcomm QRD, BIOS
->> 6.0.250905.BOOT.MXF.1.1.c1-00167-MAKENA-1 09/ 5/2025
->> [    0.401147] Workqueue: events_unbound deferred_probe_work_func
->> [    0.401159] pstate: 60400005 (nZCv daif +PAN -UAO -TCO -DIT -SSBS
->> BTYPE=--)
->> [    0.401164] pc : update_config+0xa4/0xb0
->> [    0.401174] lr : update_config+0xa4/0xb0
->> [    0.401182] sp : ffff80008351b9e0
->> [    0.401185] x29: ffff80008351b9e0 x28: 00000000fffffff0 x27:
->> ffff0000850ec3c0
->> [    0.401194] x26: ffff800081205320 x25: 0000000000000002 x24:
->> 0000000000000000
->> [    0.401203] x23: ffff8000812052a0 x22: ffff000080467800 x21:
->> ffff800081207ea0
->> [    0.401211] x20: ffff8000822ad640 x19: 0000000000000000 x18:
->> ffffffffffc07528
->> [    0.401219] x17: 32636561206f7420 x16: 0001020ef3c08cb3 x15:
->> ffff800081474230
->> [    0.401227] x14: ffffffffff807527 x13: 2e6e6f6974617275 x12:
->> 6769666e6f632073
->> [    0.401235] x11: 0000000000000058 x10: 0000000000000018 x9 :
->> ffff8000814742b8
->> [    0.401243] x8 : 0000000000afffa8 x7 : 00000000000001a4 x6 :
->> ffff800081f742b8
->> [    0.401252] x5 : ffff800081f742b8 x4 : 00000000000001a3 x3 :
->> 00000000fffdffff
->> [    0.401260] x2 : ffff8000814741f8 x1 : ffff00008091cec0 x0 :
->> 0000000100000000
->> [    0.401268] Call trace:
->> [    0.401271]  update_config+0xa4/0xb0 (P)
->> [    0.401281]  clk_rcg2_set_parent+0x58/0x68
->> [    0.401291]  clk_core_set_parent_nolock+0xc4/0x1e0
->> [    0.401299]  clk_set_parent+0x40/0x144
->> [    0.401308]  of_clk_set_defaults+0x12c/0x520
->> [    0.401314]  platform_probe+0x38/0xdc
->> [    0.401321]  really_probe+0xc0/0x390
->> [    0.401325]  __driver_probe_device+0x7c/0x150
->> [    0.401330]  driver_probe_device+0x40/0x120
->> [    0.401335]  __device_attach_driver+0xbc/0x168
->> [    0.401340]  bus_for_each_drv+0x74/0xc0
->> [    0.401349]  __device_attach+0x9c/0x1ac
->> [    0.401353]  device_initial_probe+0x14/0x20
->> [    0.401358]  bus_probe_device+0x9c/0xa0
->> [    0.401367]  deferred_probe_work_func+0xa8/0xf8
->> [    0.401377]  process_one_work+0x150/0x2b0
->> [    0.401384]  worker_thread+0x2d0/0x3ec
->> [    0.401390]  kthread+0x118/0x1e0
->> [    0.401395]  ret_from_fork+0x10/0x20
->> [    0.401405] ---[ end trace 0000000000000000 ]---
->> [    0.401412] clk: failed to reparent disp0_cc_mdss_dptx2_pixel0_clk_src to
->> aec2a00.phy::vco_div_clk: -16
->>
-> 
-> The same happens on the X1E Devkit if there is nothing connected to the
-> HDMI port. I believe you are looking for my patch series instead. :-)
-> 
-> https://lore.kernel.org/r/20250814-platform-delay-clk-defaults-v1-0-4aae5b33512f@linaro.org/T/
-> 
-> If it works for you, replying with a Tested-by there would be much
-> appreciated. I'm still trying to convince folks that the approach of the
-> series is the best way to move forward with this issue. :-)
+Hi Xu,
 
-Sorry for the late reply. For some reason, I completely missed this 
-email. But it does solve the issue for me. Thank you for the fix!
+On Mon, Nov 03, 2025 at 06:08:31PM +0800, Xu Yang wrote:
+>The i.MX95 USB3.0 PHY supports XTAL 24MHz clock by default as reference
+>clock and 100MHz clock as alternate reference clock. If the default
+>reference clock brings USB performance degradation in bad condition, such
+>as the working temperature is too low or too high, switch to alternate
+>clock may overcome the degradation. This will add alternate clock support
+>to enhance the function of USB3.0 PHY.
 
-Tested-by: Xilin Wu <sophon@radxa.com> # sc8280xp
+I gave a recheck on this patchset. Sorry, need to take back my R-b from patch 3.
+I think we need to avoid introduce xx-usb-blk-ctl here.
 
-> 
-> Thanks,
-> Stephan
-> 
-> 
+Reuse imx95 hsio-blk-ctl and fix that node.
 
+We only have one HSIO BLK CTRL, PCIE(0xc0) and USB(0x00) both should use it,
+but not introduce a new compatible.
 
--- 
-Best regards,
-Xilin Wu <sophon@radxa.com>
+Let me give a look on current BLK CTRL for PCIE stuff and extend it to support
+USB.
+
+Thanks,
+Peng
+
+>
+>---
+>Changes in v3:
+>- collect some Rb and Ab tag
+>- Link to v2: https://lore.kernel.org/r/20251010-usb-phy-alt-clk-support-v2-0-af4b78bb4ae8@nxp.com
+>
+>Changes in v2:
+>- improve patch #1 commit message
+>- collect Rb tag
+>- Link to v1: https://lore.kernel.org/r/20250919-usb-phy-alt-clk-support-v1-0-57c2a13eea1c@nxp.com
+>
+>---
+>Xu Yang (4):
+>      dt-bindings: phy: imx8mq-usb: add alternate reference clock
+>      dt-bindings: clock: nxp,imx95-blk-ctl: add support for USB in HSIO Block Control
+>      phy: fsl-imx8mq-usb: support alternate reference clock
+>      clk: imx95-blk-ctl: Add one clock mux for HSIO block
+>
+> .../bindings/clock/nxp,imx95-blk-ctl.yaml          |  1 +
+> .../bindings/phy/fsl,imx8mq-usb-phy.yaml           |  7 ++++++-
+> drivers/clk/imx/clk-imx95-blk-ctl.c                | 19 ++++++++++++++++++
+> drivers/phy/freescale/phy-fsl-imx8mq-usb.c         | 23 ++++++++++++++++++++--
+> 4 files changed, 47 insertions(+), 3 deletions(-)
+>---
+>base-commit: 18514fd70ea4ca9de137bb3bceeac1bac4bcad75
+>change-id: 20250919-usb-phy-alt-clk-support-e54e69ac0780
+>
+>Best regards,
+>-- 
+>Xu Yang <xu.yang_2@nxp.com>
+>
 
 -- 
 linux-phy mailing list
