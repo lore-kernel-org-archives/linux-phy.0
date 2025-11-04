@@ -4,141 +4,218 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 43505CCF9F8
-	for <linux-phy@archiver.kernel.org>; Tue,  4 Nov 2025 03:08:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 76F00CCFA00
+	for <linux-phy@archiver.kernel.org>; Tue,  4 Nov 2025 05:43:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:CC:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZI0RqacjXt551AjKV5hPBXCSiZOUqG5qxyNMck+msOg=; b=zJv+E0DaLoVXAP
-	6QIUxQbD09Q28rRNF1cXdBOslvL7LW3ShCaDaGT9Wm33RbDVIoXkSUI9RYyTM7WtXBcH3USxFwXsn
-	x1GoY9P0r7l3TqEigMHxqJXBkd1uv28G31ioza4sP3ul4vL/3NY5i42oGGdz3+Yq7Vs8jXlwyXn2f
-	2EKnelslIneZxGIwQoG1GBByF3xjtNyGWpvXabourn3vEumIUDYFQVFJjQ5PZcPHdFIfqGmLcQBH4
-	SE/leMMuJQ4lHfbBDWBfB1ljSRoZw44v77uw8tpvcFUIhhu2RKQ8gcsNZ8Kz98qxotaa+d3NCMYhG
-	F0Htti5eIiqbYB5hmlzg==;
+	List-Owner; bh=gSvmvd9UyOJAE04oXbhq8mU0kVLi6MaSXgyo0BPaVgY=; b=OLT7rMz+5EEobe
+	JejZqFXRIB06VWUYh4fvpSiEftjD/k3wuJj+Rmlkjs/cHanO3AWK5fr5vUGEsvURwAMEVQvUkZ3ww
+	7DFekCh7mizAcaXdNJOBU9vLeaVWPBkV7qu3rBvtEuL/RXAPQ3J14FkRYj+HC+hXoaZDT0SpYb8PK
+	/W8YpW9sI8ZOy6CCm58LZ2FpFQJUTsglAgRFW+1hUgTFevZR3FTP7aKualaz5rjA0eRCRjGMOT+LJ
+	64yivSRla6NVO9lP8bZmJGdBEqLv9kbC3z6Hd1S2BV05HaU8iqUIK+a3wdL5iXqV2lfwQwxSDJt+e
+	Ue7lPICquTpQRWaICcCQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vG7PJ-0000000B1kF-3zLC;
-	Tue, 04 Nov 2025 03:08:29 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1vG9pK-0000000BCLH-0GN5;
+	Tue, 04 Nov 2025 05:43:30 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vG7PG-0000000B1iG-3lmH
-	for linux-phy@lists.infradead.org;
-	Tue, 04 Nov 2025 03:08:28 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 5A42rq893693365
-	for <linux-phy@lists.infradead.org>; Tue, 4 Nov 2025 03:08:26 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	/6IliQChOlmblwVDFbtSfuQYWXFl9im/RWm0ERKAi38=; b=m5ZpgxcoVLNvenIl
-	jXsO1MXeXKXElB9NktoAXCErwCygFWzihJunK8WxsED2CLzAelG3SPEMtFHUT5GU
-	NnKK2NMyyyeWdOmaWrgx2V2+mzGXPLeynf5OOhLJieutLVpk7w0TkxLM9iSPfZbt
-	ysLYCg0Tr+DwR6E2bA6daJGB4p0UzB16umEOtZPOFukqyUoAJjs8rYVuK7KwwwTE
-	NYQnbcBfY1/5HsUMRz2r8BbgmCsV7fspgnU+ZvJLSo3hzJzXwkqIFAKiHB7Cz47o
-	aZezUpf/9qcE0kp0NQaE6+e6SUUe5sLzgZSdGPf8JgWYCKRVFxCiXQrbQalIzqFh
-	/YiVig==
-Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4a6u8b2d7x-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Tue, 04 Nov 2025 03:08:25 +0000 (GMT)
-Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-2904e9e0ef9so119415605ad.3
-        for <linux-phy@lists.infradead.org>; Mon, 03 Nov 2025 19:08:25 -0800 (PST)
+	id 1vG9pG-0000000BCKl-3eQ1;
+	Tue, 04 Nov 2025 05:43:28 +0000
+X-UUID: 2c85a0a2b94111f09f706fa2197c6ceb-20251103
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
+	h=MIME-Version:Content-Transfer-Encoding:Content-ID:Content-Type:In-Reply-To:References:Message-ID:Date:Subject:CC:To:From; bh=yFWpGc6PmwrBGQF9WKOHsKnLg9CqoNdkRGL+Z3ei91A=;
+	b=qyKujJJS5cbbW/voizmoftmwpMRAJC3n50xn/9BYovZczT4MNyvjpcsu2pZuzKH23IJpZNcVoL31p+YJw9rVAbLaJNuTM0s5F8yfMt/rDEA5z1Xnzo/SEtCXDf++QJWon7cgVjalqV1KdM2aentVp1tEwIl4Jrw45hqXhIGMAIs=;
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.3.6,REQID:81d1a4b5-4830-4105-be33-aa3b195ea7d9,IP:0,UR
+	L:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:r
+	elease,TS:0
+X-CID-META: VersionHash:a9d874c,CLOUDID:b6b01ae0-3890-4bb9-a90e-2a6a4ecf6c66,B
+	ulkID:nil,BulkQuantity:0,Recheck:0,SF:80|81|82|83|102|110|111|836|888|898,
+	TC:-5,Content:0|15|50,EDM:-3,IP:nil,URL:0,File:130,RT:0,Bulk:nil,QS:nil,BE
+	C:nil,COL:0,OSI:0,OSA:0,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
+X-CID-BVR: 2,SSN|SDN
+X-CID-BAS: 2,SSN|SDN,0,_
+X-CID-FACTOR: TF_CID_SPAM_SNR
+X-CID-RHF: D41D8CD98F00B204E9800998ECF8427E
+X-UUID: 2c85a0a2b94111f09f706fa2197c6ceb-20251103
+Received: from mtkmbs10n1.mediatek.inc [(172.21.101.34)] by mailgw01.mediatek.com
+	(envelope-from <chaotian.jing@mediatek.com>)
+	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
+	with ESMTP id 489795586; Mon, 03 Nov 2025 22:43:21 -0700
+Received: from mtkmbs10n1.mediatek.inc (172.21.101.34) by
+ mtkmbs11n1.mediatek.inc (172.21.101.185) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1748.26; Tue, 4 Nov 2025 13:43:18 +0800
+Received: from SG2PR04CU009.outbound.protection.outlook.com (172.21.101.237)
+ by mtkmbs10n1.mediatek.inc (172.21.101.34) with Microsoft SMTP Server id
+ 15.2.1748.26 via Frontend Transport; Tue, 4 Nov 2025 13:43:18 +0800
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=c20GhKMzF+Ft74VaSbWFdFjwYzvSP6rhVY9gh7/sqkb44ZS1xXMF1u8monzbTSdFdcBGEoQkWR+7Sxlhs0Ju/OXSxABlg7mUD3wSVmAqD40uTD9rdJJZpHni+JQFfrtQJPZzUAD7SLE972L8i+66cqupZrA9eZbJzlt1XRJ1T9sVCe0mkyDUL3R4kNZNx6UNzgyxV3pBcyZfVR6sKGuERjeeUAo3ZxgDL3Jjaw011rBSvF88IryRWjdy5YLOjFdVgYhHoVI9kRoDD5wyqZ7YtJ4UWaXKjX1ON25YjkrmeucBUg5JQRwCmWv/WQB9ZobhnKL7y+tgC9GaUpJZjneuNg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=yFWpGc6PmwrBGQF9WKOHsKnLg9CqoNdkRGL+Z3ei91A=;
+ b=IERmtvqtGZ9Y/2KY4G64pd0pw+ILjvZdWkgeWya8PvSaiCqJ+kcC2CVRmsQZ6BwkApGeU82oBFvRfmRBqjX2tzoR6mvpCWBdLFts3E7yrDfUFjz3QngUjL+m4mPX5MD4+3bzAlVvxXGPPfa2qYAazSOtGknQ1XyroI6nKTW2exBzS4sJxZ1pQAUMhZRUFofEUZ6qUxDkMGaYKmUDjVvC8YwX9bLqPHHBchV7JGIkG+PsbDwXMJEkfgEqfkML58UhafKfroeDnL1MNUksZrVUo+1GNNF1L3oJO02x4FeZrTPtVfyhUqmR3yCDk9I7yQojzORMmbk4hseG3L/WTrSRzw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=mediatek.com; dmarc=pass action=none header.from=mediatek.com;
+ dkim=pass header.d=mediatek.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1762225705; x=1762830505; darn=lists.infradead.org;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=/6IliQChOlmblwVDFbtSfuQYWXFl9im/RWm0ERKAi38=;
-        b=LvIELmIcw0EywkLuQYd9/L3uj7Cshxvh5hH17CO+YPReTnLGgfpABVt1UYzwaNJryl
-         Bc8vFuX8dkJhziapDb1gm0j64pz7ZmyB2t2cJWh4Bef22Sc7tb9H4W4cX9g3afzxNyzE
-         Of2dJvnEBM+05hZ5eZAlUvjE8Vr9SAvKgWv5S6rZS4jzQQQx/BBTjEzALcXnwqOAWie/
-         TpWd1VBx/s0Ijcy3v5M2uXz8PAl7JtqJhsj1nB4PpMMGHXO/p9H1SPLsSx/h+oV9tT6t
-         Z2zAmw4H8F6WlOtzQylOXGKU1+Xe4/gBUnsm65hW0OTEGCe3obCsrhV/8SkitJvsMmyL
-         hHpA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1762225705; x=1762830505;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=/6IliQChOlmblwVDFbtSfuQYWXFl9im/RWm0ERKAi38=;
-        b=ORMXr+hlJCUlEE/lvVwQUdU68FxlDSXCs0e7aukrxK/rgWKDK7SoJ1QJRz24NuN+hj
-         yaU00OtGUDe7NHzk3uDhNVtITktnrdfUENORJhU1EpBlt4auOWyU47clHfAVwOOpzTTL
-         7com3r2SG1iDLpLENJ0shUy+yzBp1MnCkvqW4k8fiWnsoVGvVIH1VCTncVvExrooC3GI
-         me1cjuMLHSrLasmv7aytfRmHk80d1q22Nd8K0zuiiWU7Az34nxbildWI+7d7OTDcH4OR
-         G+mL938vL7R+IdPjeroZJBLngc0UICo1j2P/jYO9A0vEvdYX06dp76qLEe00DVWBWe9w
-         DEGA==
-X-Forwarded-Encrypted: i=1; AJvYcCW5wtlO1u/TfF4A5zmZGCqXpOKpdzh3piU2yzdJmn0j/HIrLWEJE3nqpq0CuKexKsTGYwhccStLOaM=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yz1gHRI1In1jJ4Ih/0KgSQnLAz6KKxGGzxUgvvKDUUXiRAWWwFK
-	TAPQfacyqwtHUTGUZE9rTcRDtCR9DKe+XEHAfnjqKCardt7qh2U7qiT6UUmv10ufsQlbNinhbbe
-	t82QtXBibPlQvwtMO349029uY76K+xB7kMNXliaK5A3V8L+UGqAL1oqt+KdIGkF9CwaDd
-X-Gm-Gg: ASbGnctFPbsxgNjk0rUwlaM8ZZUeda4+lLlYlUmu3Lfl4ZNLdU0FwIyqtFhBGBOR4xR
-	sgfp/5h4Zt7OSRe8tmwJtg1Y749EZ1+OLia57L2EfBVNCzBIi22bZ1/p2DFnBEASIbIIT1YrUnr
-	Fj9GjdB0tSjqQiqeImNk+hcZSR96HWnFNyaTI3H5IXO5tMjQpytiMKdE3Eho3IoztcTTCpy7Og3
-	B/48BzrtPWrmSeSAwY7PON5gT9VnTTEK0IR+SShpbhs1rQnbuin+eavZZGtDNUFOxYfXyiuHmVd
-	MA9xg4ZA+S3OehRkBs8s0jCim0kYiQR2xCMq1llMeVCD1sucvp/AO1aeehJELIf9ZzGHc8Z+o+u
-	J/k3FQ/k1907frBXW6zEV4Pj2SIQ3oLkmXdZez2Owm5UqeA==
-X-Received: by 2002:a17:902:c408:b0:295:592f:9498 with SMTP id d9443c01a7336-295592f9523mr155596705ad.44.1762225704636;
-        Mon, 03 Nov 2025 19:08:24 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IE68IacwJ922o8Q2tnXR/C8bZxcQvBcLjyiEBCk8PMLXUR/6ExjOjKPZEY8OPbwsC2VMtL57A==
-X-Received: by 2002:a17:902:c408:b0:295:592f:9498 with SMTP id d9443c01a7336-295592f9523mr155596015ad.44.1762225703901;
-        Mon, 03 Nov 2025 19:08:23 -0800 (PST)
-Received: from hu-qianyu-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-29601998da3sm7357365ad.27.2025.11.03.19.08.22
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 03 Nov 2025 19:08:23 -0800 (PST)
-From: Qiang Yu <qiang.yu@oss.qualcomm.com>
-Date: Mon, 03 Nov 2025 19:08:17 -0800
-Subject: [PATCH v3 5/5] phy: qcom: qmp-pcie: add QMP PCIe PHY tables for
- Kaanapali
+ d=mediateko365.onmicrosoft.com; s=selector2-mediateko365-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=yFWpGc6PmwrBGQF9WKOHsKnLg9CqoNdkRGL+Z3ei91A=;
+ b=ij5iem2Il7I4kBSbx11bhXY/cNsM/W1kER/TAlA+bN65lPTeTCheAg98fCuPdbuQotpkbUB+J/JLiniE7nAVMcZzbu1/+P5uNdkYf1g8yx76Ytf/GdsKF4fkl1731Ubi5nhYZt5THLQS/VTHzIQc3hO5bHQk/zuqf1utcME15u8=
+Received: from KL1PR03MB6032.apcprd03.prod.outlook.com (2603:1096:820:8b::7)
+ by KL1PR03MB7223.apcprd03.prod.outlook.com (2603:1096:820:d6::10) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9298.7; Tue, 4 Nov
+ 2025 05:43:15 +0000
+Received: from KL1PR03MB6032.apcprd03.prod.outlook.com
+ ([fe80::4e46:b38a:9317:deb7]) by KL1PR03MB6032.apcprd03.prod.outlook.com
+ ([fe80::4e46:b38a:9317:deb7%7]) with mapi id 15.20.9275.015; Tue, 4 Nov 2025
+ 05:43:15 +0000
+From: =?utf-8?B?Q2hhb3RpYW4gSmluZyAo5LqV5pyd5aSpKQ==?=
+	<Chaotian.Jing@mediatek.com>
+To: =?utf-8?B?UGV0ZXIgV2FuZyAo546L5L+h5Y+LKQ==?= <peter.wang@mediatek.com>,
+	=?utf-8?B?Q2h1bmZlbmcgWXVuICjkupHmmKXls7Ap?= <Chunfeng.Yun@mediatek.com>,
+	"nicolas.frattaroli@collabora.com" <nicolas.frattaroli@collabora.com>,
+	"kishon@kernel.org" <kishon@kernel.org>, "avri.altman@wdc.com"
+	<avri.altman@wdc.com>, "bvanassche@acm.org" <bvanassche@acm.org>,
+	"martin.petersen@oracle.com" <martin.petersen@oracle.com>,
+	"broonie@kernel.org" <broonie@kernel.org>, "alim.akhtar@samsung.com"
+	<alim.akhtar@samsung.com>, "chu.stanley@gmail.com" <chu.stanley@gmail.com>,
+	"conor+dt@kernel.org" <conor+dt@kernel.org>, "p.zabel@pengutronix.de"
+	<p.zabel@pengutronix.de>, "robh@kernel.org" <robh@kernel.org>,
+	"James.Bottomley@HansenPartnership.com"
+	<James.Bottomley@HansenPartnership.com>, "lgirdwood@gmail.com"
+	<lgirdwood@gmail.com>, "vkoul@kernel.org" <vkoul@kernel.org>,
+	"matthias.bgg@gmail.com" <matthias.bgg@gmail.com>, "krzk+dt@kernel.org"
+	<krzk+dt@kernel.org>, AngeloGioacchino Del Regno
+	<angelogioacchino.delregno@collabora.com>
+CC: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+	"linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+	"kernel@collabora.com" <kernel@collabora.com>, Louis-Alexis Eyraud
+	<louisalexis.eyraud@collabora.com>, "linux-scsi@vger.kernel.org"
+	<linux-scsi@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
+	<linux-arm-kernel@lists.infradead.org>, "linux-phy@lists.infradead.org"
+	<linux-phy@lists.infradead.org>
+Subject: Re: [PATCH v3 02/24] dt-bindings: ufs: mediatek,ufs: Complete the
+ binding
+Thread-Topic: [PATCH v3 02/24] dt-bindings: ufs: mediatek,ufs: Complete the
+ binding
+Thread-Index: AQHcTTov5FH3aKEmO0K+Nb2511pYNLTiAV4A
+Date: Tue, 4 Nov 2025 05:43:15 +0000
+Message-ID: <aecc0545e85bd972e27b3104ac05fe4a7b1f3069.camel@mediatek.com>
+References: <20251023-mt8196-ufs-v3-0-0f04b4a795ff@collabora.com>
+	 <20251023-mt8196-ufs-v3-2-0f04b4a795ff@collabora.com>
+In-Reply-To: <20251023-mt8196-ufs-v3-2-0f04b4a795ff@collabora.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=mediatek.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: KL1PR03MB6032:EE_|KL1PR03MB7223:EE_
+x-ms-office365-filtering-correlation-id: d058c33c-4138-4dfb-062e-08de1b650ced
+x-ld-processed: a7687ede-7a6b-4ef6-bace-642f677fbe31,ExtAddr
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;ARA:13230040|366016|7416014|376014|1800799024|38070700021|921020;
+x-microsoft-antispam-message-info: =?utf-8?B?SlY5M1VGSUtTdlkxUHNsTWVqMHFBYUFhYWU3cG40YmhZMndjUFVBUUFEVTF6?=
+ =?utf-8?B?L1dSZzVRS1Y2YllEVGgva3YxQUtTMVlxZUhsOUswdEZtWG43ODhXQVJxNnFt?=
+ =?utf-8?B?cFpyc0xaYmxmc1YrMjg4UENMOEVQaVphSDNTRUc5SUU5Y0lONHBhYVkyVW9V?=
+ =?utf-8?B?RTdOR1FnSEZMMEFvUVJpRXR3dWxML0VlalBBOEllVVRDTGI4eTk3bnZVakF1?=
+ =?utf-8?B?SVoxVWQwNTlIbThUbFQwaUVIaUlwU1k1Sk85a1plZ2pPRmNPRHF1bStmRmJm?=
+ =?utf-8?B?Z0l0ZlNEVHhtV1Z6T0ozaS9VZnQvenB5Q3RkVytGUUwvNlcraHdOR2c4c3M3?=
+ =?utf-8?B?SnZtZmx1cFJISmlQZitpUC9iRjVxbWpEb3lRSWVwUExsdHhZMFNMZlZ5ZDJk?=
+ =?utf-8?B?YkVSanFrZzRCQWV2amJGayt6Y2lqRmRDTi9hYWdobXZlcHdxYTY4RXoyU2gw?=
+ =?utf-8?B?SlgwMTFGN0JXZlZMYTJ4aXhraDUzNUx4RFNuUmg3VVg4T0I4cjA5VUQ4WFYz?=
+ =?utf-8?B?ajhpWHlMMVdkeFcxVUZuTlBWN01KV09YcFBJY3Ezb095QnFUZGYxRkRtalJi?=
+ =?utf-8?B?M0cxSEtZUHdVckhlbDJJY3dzN1o2MGV3Y3lwVndDMlJDV09DRVUwc0xtQS9s?=
+ =?utf-8?B?REpVM3ErQkpuQVUwWUVEZ3ZEK01QSHlGc2M0NzNEcnFJWWtWS0MybE1JMEY4?=
+ =?utf-8?B?aTA1T0d6ekJiSzMzRGF2Nnl1SHdHRnUzWWx2TGMxamw2aUhHVUs3MDBrTkxs?=
+ =?utf-8?B?c2pWYklESEdmZHpQNHZFeGhwMTFhTUZVWHVPNVRCOGxlSlpwSEZIU1d3NlFD?=
+ =?utf-8?B?eWJUZXF1WTlGVUY5VXdBSFdEMWFaU0ZpQlpiUWJjcHdENGpiTld1THhWNjd0?=
+ =?utf-8?B?ZnRzN0kzMXFBdUE0NXFZVi80NWJMWmNoS05hdEUwUXBjdzF1c0NUZi9aQ2Jh?=
+ =?utf-8?B?VWNuM3M1Z2FxOVg2Z2RaMHVRSnoxR2lTNS84cGJqTSsrWGdYYWkwZ2UyZ1dF?=
+ =?utf-8?B?ZzRQb3l6N2FHQm4ycXFTcTZCTHd3VTVvTk5XdGFGelBMWHdrZytwSXlPVSta?=
+ =?utf-8?B?bkJ0ZUN1azlkRW5Vb1BSR2NWTWJVRExCeTJiUnhiK0dnVzNxekNibjd3OXF3?=
+ =?utf-8?B?dVFOY3EzalpmQTN4RTBCWXNVV2pCR3dmLy9WeGk3SStCYmFGSjQ1YWRaaHJ2?=
+ =?utf-8?B?K1NpK1pDZnIvTTVwQ2dUcUtZLzhqTElGcFF4V3ZreGdaVXpZeG1CcE5saWZG?=
+ =?utf-8?B?SlRBckUxNnRVWjdhZWgvQ3M3LzVndm9naWpXY0Eyblh2eVZIdEx3em9tSElO?=
+ =?utf-8?B?bi9TOFFxRU5KTm9JMUFSWm9EdzlaRDI2R1hyN1crN2R0UlFLZDhUWGRhY1J3?=
+ =?utf-8?B?TUNHcEVRWHdnT0l1bURBY3RMdWVRa21lL0JROC9IUVJIaFRzWTVDdmlSV3di?=
+ =?utf-8?B?KzFiNUlJWTVnTHNrckwyL3pnRGdNZDN0eCt1TmEyeGdTSkliS01HZWJSVkJo?=
+ =?utf-8?B?ays4ZFdRVEJnR2VSTUJnRGMwT0dTOFI4bTUzMFdNZ3FMakZ3dHBQQnpqd1Zo?=
+ =?utf-8?B?bU8zNklBbE9sQ2VsTTA5bFNLQWZ3VU0vVS9EOHp3M3M0ZGFYaE5LQ2ZMdElK?=
+ =?utf-8?B?dU1udVB6b2VtZWdLY0FBTUFXTFBQeXRDc21Fa0JjSGZjZ00xdS9IVnBtSzBO?=
+ =?utf-8?B?dFRadWptSXovTktjLzRJL1loSjVMUDhTR3lWTWJwbmNwM1NZcVhzSlk3MVV1?=
+ =?utf-8?B?UDhBeTUrYk9QRXc2Z3g1Q0N2bUl6cDhjUytlMmRTcmN4TlFZQ1FLQkI5U0U0?=
+ =?utf-8?B?SFZUUTlyVnEzQWlKc3dFcFJyQ2lZcFQxVjRTMzFiOG55b0RVeHhFTzFUclJV?=
+ =?utf-8?B?bm9HQzRod2Qyam02TDUvbGhwKzVLYXdmcnpCVjBLZDBOY0FYNmJlblBXcEkx?=
+ =?utf-8?B?WWFud2N0TlRlT0JOblZiRUhLYzhwZE9iaG95WGpIckFWTEdFZGo2SWgwS3Fa?=
+ =?utf-8?B?cVpUTGQ1ZlJIazNPUFdYcTBnU0xybElISlBweUpPeEx0T05tUTdXM08xeVpX?=
+ =?utf-8?B?N09lbmVSQkp1cnpESi94MmgzT0ZRT0hHWHZUUT09?=
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:KL1PR03MB6032.apcprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(7416014)(376014)(1800799024)(38070700021)(921020);DIR:OUT;SFP:1101;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?utf-8?B?VWJ6SHVONGZZVFVUQmM4SlF2V1NZenIyUGJxd09yZVVpRExvT2ZGZ2FIS3RL?=
+ =?utf-8?B?WXdHdWY4Zm1LQ2RNYk5QV3NQOE5pRWVSaWpaaFl1UnVtWkN1YmVxNkxOeDhh?=
+ =?utf-8?B?clFvN2FlbTQrS2NzM3l3NmNmWW1OZ3RKOFZqN2FnUzk3NjFoQnVsSTVaWS9W?=
+ =?utf-8?B?cVBWUjFic2NLc2kxOHQxOXZLRlE4Z3RWQWJHNWtQODFWc3pQWnNRQVJaZmlN?=
+ =?utf-8?B?RW9FYWtTakRRTjBUTTlIZDFROWJqNk4zeVRCWm4vNmMvM2p0ZFV5YmhmVFZs?=
+ =?utf-8?B?alFrbGczWVd2d2VDWG9TbjNsOW5zZWVoSG8zSWRLVWJ4SFBrNmd5ZXZCKytm?=
+ =?utf-8?B?MG4zMnpiNzVjcGVHTlZoN0dZQXZGOGF5UHJCWWsrcXBMRGVuUW40Wlpodlp4?=
+ =?utf-8?B?SVBob2Uwd2pEMEZ0d1Bsa1RXT1RURnkzZHhsdi9wQi9rS09IVVNSclNvME1v?=
+ =?utf-8?B?Z1I4Rms2SFlqK3c0ZlJiTmdQSU1qcHJPcXVPbmVPUmtRM0greXdyUUQ0Vlc1?=
+ =?utf-8?B?cHFtaTdLYVVpODZTMFIvZEllRWVUR1orcXZGc1VzbnpuaVF3MWxxNTRobHZm?=
+ =?utf-8?B?Sk1yMlNWT2ZPeTFDZDNaSTRvVlZIaVVSYlo2RVBWMGluRVV3UFNoZm04T3g1?=
+ =?utf-8?B?NUdhZU14YW9NMWZSeVFld0kwVGJMK1hFZWwvZHNuc2Q5RUVxQk5Vbk5taVls?=
+ =?utf-8?B?eGNmQlpVeTdkQS9vWU9IQXphWFhXRjNhdTB4Qndja2xKUE9CcWtFYUJGTDRV?=
+ =?utf-8?B?d1VVdWtxdEFyZG1qbm9nbnhZcFRzM2cyNzVWN0prQjJha29WU09YSkFNMHlt?=
+ =?utf-8?B?T2ZoQUFCSldUZ29jZEd4U0o1emF1S05uSDYwT3lBRGdlMFVCT25lOW5zVm4w?=
+ =?utf-8?B?SnlOaSsveVRNQmN4WGVrNEdqRDZGdldPMTVlcXEzK1M1eU8weE04ZlFoMC90?=
+ =?utf-8?B?em0wNmRqRlVNcGtSQWVWdmJQclNoMi9XM0U4a0QwYzZsMk1LK0x0T1ZwZG9x?=
+ =?utf-8?B?SHJiV3lObzA0ZFRKVWRtbGxIbkx0OVFHeXNUR0poaWQrNTVobyszeHRrUk41?=
+ =?utf-8?B?Z3dZNFRJTUJ0K0tqUDZFVFluVVBlTVI4cWcrRnJFZzhCYWF6Zlc2d1hUcFV4?=
+ =?utf-8?B?a3liVU9tN1FTazRheW9uaWIram1hdHV2cnBZSnZQaGptTWNIaGU3VURGakVp?=
+ =?utf-8?B?UDJpMUVBSGVHanRKdWNFdS9JUFhPT3l4S05PbkdPMUdLR1NVUXZFRUxERUQx?=
+ =?utf-8?B?RFlYRCtIVkdDd1NjMHUwSzUvemdxMGpISmdGMlpzdCtxMVpDNDNndUtETXE5?=
+ =?utf-8?B?UVc1UWxFTUdIRmRyeEdUMmhKVG9obnl5dFI2Nk1KdFd1a3QycENIR3FBNzNk?=
+ =?utf-8?B?Smd0bjBTdTRkL2RSNENPbFhJMExtd3F4cDFiVUxTbjdSbUtNUFp3NlhUQjho?=
+ =?utf-8?B?eWZ0RGpHWS9TVUh2cFVoNU90aVVJNEtyUkorR1RJYVNTcU9RUVpmNDduVjha?=
+ =?utf-8?B?MWkySHVOYmZUY2tvdWFXNm1pVzY3aytkOUJETkdqTHVaMmlpdm1UMGRtSkVw?=
+ =?utf-8?B?QlpBMWYyTWs5NHJmdDlxTlVyR1Zlc3dpV0N4eHMzejJpL3hOdE51OGZsdWJU?=
+ =?utf-8?B?ZVgxNU42Q1lBQnlpV0d2bjVGYlFPdzYwWXR2bzljdzRHMXFWSkhxT3ZjK21Q?=
+ =?utf-8?B?SVBRbllkRTlZcmhiZ1R4VWFhbm1sUW9wMWlIK2YyR0FaM2t1dnFWQ1A4NDBo?=
+ =?utf-8?B?MXBvM2JYYW03Yll0NUQyUHQ2eFplTHp4U2N3TDJqZG8veHQwdllZM2FsekR5?=
+ =?utf-8?B?WHJVSVk3dEJiSHBOVHk2ZUNnK1VVRTV4ZWFzK0NPazZ0b0dlTnVQWG9PWUpB?=
+ =?utf-8?B?RE5xVjVTY2JBTlJETk9uazNYMm1OblJiU2prOXhQdzVjQ2ZRQTBTY3hFVVB5?=
+ =?utf-8?B?TUVlUHI1dk53OHh0TVp1VXJPc3VoazdEejlNdVNtOWVOMDFRV2R2Um5iUmNW?=
+ =?utf-8?B?YnRvQk05RG9LQ3ZGMEZ5L1VqeXFJMVNmbUZsdmR6OEVTL285ak0vZGtJQkdk?=
+ =?utf-8?B?SFlsb3J0Yi9vUjBSREJwSGRjdzFSWU80Y0MwL0JSVWVHV0N6QitUcHd6ZUVy?=
+ =?utf-8?B?ZVlOTlZUeFlvdExBcnF2c2JqTy9oUDVNZk1UQlBjL29PVVk4SFNZeFo0aG9a?=
+ =?utf-8?B?K3c9PQ==?=
+Content-ID: <B19C7574EB8DDA489B74CC34C6EE564E@apcprd03.prod.outlook.com>
 MIME-Version: 1.0
-Message-Id: <20251103-kaanapali-pcie-phy-v3-5-18b0f27c7e96@oss.qualcomm.com>
-References: <20251103-kaanapali-pcie-phy-v3-0-18b0f27c7e96@oss.qualcomm.com>
-In-Reply-To: <20251103-kaanapali-pcie-phy-v3-0-18b0f27c7e96@oss.qualcomm.com>
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        Qiang Yu <qiang.yu@oss.qualcomm.com>,
-        Jingyi Wang <jingyi.wang@oss.qualcomm.com>
-X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1762225695; l=12299;
- i=qiang.yu@oss.qualcomm.com; s=20250513; h=from:subject:message-id;
- bh=HMFF1M7phmpCK7VuGZ58TK+uqqRS30P/iFvqeTQ1RsE=;
- b=PwDScpYWu5A6I1OAymoUt+Kt34xisSr6yuBWsV61x097YymBWHJNocHlWfs9Tf/RpEnoMH7Iu
- o4Mi9NTkUlKBlw9VKtrRb3o2iN9Z4uwLLOB2lcFaX3kcW3puo+ahS6p
-X-Developer-Key: i=qiang.yu@oss.qualcomm.com; a=ed25519;
- pk=Rr94t+fykoieF1ngg/bXxEfr5KoQxeXPtYxM8fBQTAI=
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMTA0MDAyNCBTYWx0ZWRfX22gXhiPRUwRv
- dQje90w8+IAYIuFr11Hgyj/Ek5PtFxypU4bIUl5q2J9Qj+e3mJnVY5tKEBvmryAPYByaLb+Fkkp
- sv3Ubk/ILPrE6xsxMBmBqrjfi+FyeXB5KmHPkRsWkJ5dswpCWjw7va2Gm0O7FbpfDtYaXD5j35O
- EnMKlonqwVzOrzvXuowc9wwqe4uiMYTv1juHPbQDEKfMFpw5KrFhjOBLNTpktJR39SXapBkoQV0
- +ZBjO2AB5E3WzUoq0/R+6SSMHFlsGOT6g9vqoTOi4NiTGOXPgnkffS1/BkrnAZFNWlz8iKy8zhn
- lzY+uKCQXzHJTK++KmvqqwyyL/eS0bQUwGw8RgXASpaMPhAcY+sadVTI2VaS0/Uya1d3IcHJmn1
- B4tPq6pkUEvglPmmbRknRl14AU+sWw==
-X-Proofpoint-GUID: WaQcBWYUQsPTvs66HJs94rx7YtKofFA6
-X-Authority-Analysis: v=2.4 cv=Ha8ZjyE8 c=1 sm=1 tr=0 ts=69096e29 cx=c_pps
- a=IZJwPbhc+fLeJZngyXXI0A==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=IkcTkHD0fZMA:10 a=6UeiqGixMTsA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=EUspDBNiAAAA:8 a=0FVVrbj2krFBHOIXHEsA:9
- a=QEXdDO2ut3YA:10 a=uG9DUKGECoFWVXl0Dc02:22
-X-Proofpoint-ORIG-GUID: WaQcBWYUQsPTvs66HJs94rx7YtKofFA6
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
- definitions=2025-11-03_06,2025-11-03_03,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 priorityscore=1501 spamscore=0 lowpriorityscore=0
- malwarescore=0 clxscore=1015 phishscore=0 suspectscore=0 adultscore=0
- bulkscore=0 classifier=typeunknown authscore=0 authtc= authcc= route=outbound
- adjust=0 reason=mlx scancount=1 engine=8.22.0-2510240001
- definitions=main-2511040024
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: KL1PR03MB6032.apcprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: d058c33c-4138-4dfb-062e-08de1b650ced
+X-MS-Exchange-CrossTenant-originalarrivaltime: 04 Nov 2025 05:43:15.5664
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: a7687ede-7a6b-4ef6-bace-642f677fbe31
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: xPysWhkwFaML7cKEbmPj4LV48HZs2jO8FP7h4Ym972fgk4AjsNADBKQPWLp9ksVCb1afbJtZx27XePryW3vU0KKFNEyTj1Hpi+/D7fyAPvE=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: KL1PR03MB7223
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251103_190827_064560_D6CC0EF2 
-X-CRM114-Status: GOOD (  11.94  )
+X-CRM114-CacheID: sfid-20251103_214326_940204_3190DFAD 
+X-CRM114-Status: GOOD (  19.97  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -155,259 +232,254 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add QMP PCIe PHY support for the Kaanapali platform.
+On Thu, 2025-10-23 at 21:49 +0200, Nicolas Frattaroli wrote:
+> As it stands, the mediatek,ufs.yaml binding is startlingly
+> incomplete.
+> Its one example, which is the only real "user" of this binding in
+> mainline, uses the deprecated freq-table-hz property.
+> 
+> The resets, of which there are three optional ones, are completely
+> absent.
+> 
+> The clock description for MT8195 is incomplete, as is the one for
+> MT8192. It's not known if the one clock binding for MT8183 is even
+> correct, but I do not have access to the necessary code and
+> documentation to find this out myself.
+> 
+> The power supply situation is not much better; the binding describes
+> one
+> required power supply, but uses a supply property from ufs-
+> common.yaml
+> that can be either 1.8V or 3.3V.
+> 
+> No second example is present in the binding, making verification
+> difficult.
+> 
+> Disallow freq-table-hz and move to operating-points-v2. It's fine to
+> break compatibility here, as the binding is currently unused and
+> would
+> be impossible to correctly use in its current state.
+> 
+> Add the three resets and the corresponding reset-names property.
+> These
+> resets appear to be optional, i.e. not required for the functioning
+> of
+> the device.
+> 
+> Move the list of clock names out of the if condition, and expand it
+> for
+> the confirmed clocks I could find by cross-referencing several clock
+> drivers. For MT8195, increase the minimum number of clocks to include
+> the crypt and rx_symbol ones, as they're internal to the SoC and
+> should
+> always be present, and should therefore not be omitted.
+> 
+> MT8192 gets to have at least 3 clocks, as these were the ones I could
+> quickly confirm from a glance at various trees. I can't say this was
+> an
+> exhaustive search though, but it's better than the current situation.
+> 
+> Properly document all supplies, with which pin name on the SoCs they
+> supply, and what voltage we understand them as. Mandate vcc-supply-
+> 1p8,
+> as vcc-supply appears to always be describing a 1.8V supply. The
+> ufs-common.yaml vccq/vccq2 supplies are used for this purpose, so
+> that
+> common UFS implementations which do power management for these don't
+> have to treat MediaTek's 1.2V supplies in a special way.
+> 
+> Add the missing avdd09-supply, which so far only mt8183 uses.
+> 
+> Also add a MT8195 example to the binding, using supply labels that I
+> am
+> pretty sure would be the right ones for e.g. the Radxa NIO 12L.
+> 
+> Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+> ---
+>  .../devicetree/bindings/ufs/mediatek,ufs.yaml      | 115
+> +++++++++++++++++----
+>  1 file changed, 97 insertions(+), 18 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/ufs/mediatek,ufs.yaml
+> b/Documentation/devicetree/bindings/ufs/mediatek,ufs.yaml
+> index 1dec54fb00f3..364672bc65b1 100644
+> --- a/Documentation/devicetree/bindings/ufs/mediatek,ufs.yaml
+> +++ b/Documentation/devicetree/bindings/ufs/mediatek,ufs.yaml
+> @@ -18,11 +18,28 @@ properties:
+>  
+>    clocks:
+>      minItems: 1
+> -    maxItems: 8
+> +    maxItems: 13
+>  
+>    clock-names:
+>      minItems: 1
+> -    maxItems: 8
+> +    items:
+> +      - const: ufs
+> +      - const: ufs_aes
+> +      - const: ufs_tick
+> +      - const: unipro_sysclk
+> +      - const: unipro_tick
+> +      - const: unipro_mp_bclk
+> +      - const: ufs_tx_symbol
+> +      - const: ufs_mem_sub
+> +      - const: crypt_mux
+> +      - const: crypt_lp
+> +      - const: crypt_perf
+> +      - const: ufs_rx_symbol0
+> +      - const: ufs_rx_symbol1
+> +
+> +  operating-points-v2: true
+> +
+> +  freq-table-hz: false
+>  
+>    phys:
+>      maxItems: 1
+> @@ -30,7 +47,31 @@ properties:
+>    reg:
+>      maxItems: 1
+>  
+> -  vcc-supply: true
+> +  resets:
+> +    items:
+> +      - description: reset for the UniPro layer
+> +      - description: reset for the cryptography engine
+> +      - description: reset for the host controller
+> +
+> +  reset-names:
+> +    items:
+> +      - const: unipro
+> +      - const: crypto
+> +      - const: hci
+> +
+> +  avdd09-supply:
+> +    description: Phandle to the 0.9V supply powering the AVDD09_UFS
+> pin
+> +
+> +  vcc-supply:
+> +    description: Phandle to the 1.8V supply powering the AVDD18_UFS
+> pin
+> +
+> +  vcc-supply-1p8: true
+> +
+> +  vccq-supply:
+> +    description: Phandle to the 1.2V supply powering the AVDD12_UFS
+> pin
+> +
+> +  vccq2-supply:
+> +    description: Phandle to the 1.2V supply powering the
+> AVDD12_CKBUF_UFS pin
 
-Signed-off-by: Jingyi Wang <jingyi.wang@oss.qualcomm.com>
-Signed-off-by: Qiang Yu <qiang.yu@oss.qualcomm.com>
----
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 194 +++++++++++++++++++++++++++++++
- 1 file changed, 194 insertions(+)
-
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index 62b1c845b6275d924fa501ac64e69db5f58844aa..6218824b4b81afd97f6497a089204a49f6336a49 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -37,6 +37,9 @@
- #include "phy-qcom-qmp-pcs-pcie-v6_30.h"
- #include "phy-qcom-qmp-pcs-v6_30.h"
- #include "phy-qcom-qmp-pcie-qhp.h"
-+#include "phy-qcom-qmp-qserdes-com-v8.h"
-+#include "phy-qcom-qmp-pcs-pcie-v8.h"
-+#include "phy-qcom-qmp-qserdes-txrx-pcie-v8.h"
- 
- #define PHY_INIT_COMPLETE_TIMEOUT		10000
- 
-@@ -100,6 +103,13 @@ static const unsigned int pciephy_v7_regs_layout[QPHY_LAYOUT_SIZE] = {
- 	[QPHY_PCS_POWER_DOWN_CONTROL]	= QPHY_V7_PCS_POWER_DOWN_CONTROL,
- };
- 
-+static const unsigned int pciephy_v8_regs_layout[QPHY_LAYOUT_SIZE] = {
-+	[QPHY_SW_RESET]                 = QPHY_V8_PCS_SW_RESET,
-+	[QPHY_START_CTRL]               = QPHY_V8_PCS_START_CONTROL,
-+	[QPHY_PCS_STATUS]               = QPHY_V8_PCS_PCS_STATUS1,
-+	[QPHY_PCS_POWER_DOWN_CONTROL]   = QPHY_V8_PCS_POWER_DOWN_CONTROL,
-+};
-+
- static const struct qmp_phy_init_tbl msm8998_pcie_serdes_tbl[] = {
- 	QMP_PHY_INIT_CFG(QSERDES_V3_COM_BIAS_EN_CLKBUFLR_EN, 0x14),
- 	QMP_PHY_INIT_CFG(QSERDES_V3_COM_CLK_SELECT, 0x30),
-@@ -3061,6 +3071,149 @@ static const struct qmp_phy_init_tbl sar2130p_qmp_gen3x2_pcie_ep_pcs_misc_tbl[]
- 	QMP_PHY_INIT_CFG(QPHY_PCIE_V6_PCS_PCIE_POWER_STATE_CONFIG4, 0x07),
- };
- 
-+static const struct qmp_phy_init_tbl kaanapali_qmp_gen3x2_pcie_serdes_tbl[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_SSC_STEP_SIZE1_MODE1, 0x93),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_SSC_STEP_SIZE2_MODE1, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_CP_CTRL_MODE1, 0x06),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_PLL_RCTRL_MODE1, 0x16),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_PLL_CCTRL_MODE1, 0x36),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_CORECLK_DIV_MODE1, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_LOCK_CMP1_MODE1, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_LOCK_CMP2_MODE1, 0x1a),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_DEC_START_MODE1, 0x34),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_DIV_FRAC_START1_MODE1, 0x55),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_DIV_FRAC_START2_MODE1, 0x55),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_DIV_FRAC_START3_MODE1, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_HSCLK_SEL_1, 0x01),
-+
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_SSC_STEP_SIZE1_MODE0, 0xf8),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_SSC_STEP_SIZE2_MODE0, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_CP_CTRL_MODE0, 0x06),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_PLL_RCTRL_MODE0, 0x16),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_PLL_CCTRL_MODE0, 0x36),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_CORECLK_DIV_MODE0, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_LOCK_CMP1_MODE0, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_LOCK_CMP2_MODE0, 0x0d),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_DEC_START_MODE0, 0x41),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_DIV_FRAC_START1_MODE0, 0xab),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_DIV_FRAC_START2_MODE0, 0xaa),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_DIV_FRAC_START3_MODE0, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_HSCLK_HS_SWITCH_SEL_1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_BG_TIMER, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_SSC_PER1, 0x62),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_SSC_PER2, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_BIAS_EN_CLKBUFLR_EN, 0x14),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_CLK_ENABLE1, 0x90),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_SYS_CLK_CTRL, 0x82),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_PLL_IVCO, 0x0f),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_SYSCLK_EN_SEL, 0x08),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_LOCK_CMP_EN, 0x46),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_LOCK_CMP_CFG, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_VCO_TUNE_MAP, 0x14),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_CLK_SELECT, 0x34),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_CORE_CLK_EN, 0xa0),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_CMN_CONFIG_1, 0x16),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_CMN_MISC_1, 0x88),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_CMN_MODE, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_VCO_DC_LEVEL_CTRL, 0x0f),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_COM_PLL_SPARE_FOR_ECO, 0x02),
-+};
-+
-+static const struct qmp_phy_init_tbl kaanapali_qmp_gen3x2_pcie_tx_tbl[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_TX_RES_CODE_LANE_OFFSET_TX, 0x1b),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_TX_RES_CODE_LANE_OFFSET_RX, 0x14),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_TX_LANE_MODE_1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_TX_LANE_MODE_2, 0x40),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_TX_LANE_MODE_3, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_TX_TRAN_DRVR_EMP_EN, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_TX_TX_BAND0, 0x05),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_TX_TX_BAND1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_TX_SEL_10B_8B, 0x07),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_TX_SEL_20B_10B, 0x1f),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_TX_PARRATE_REC_DETECT_IDLE_EN, 0x90),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_TX_TX_ADAPT_POST_THRESH1, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_TX_TX_ADAPT_POST_THRESH2, 0x0d),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_TX_EQ_RCF_CTRL_RATE3, 0x53),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_TX_EQ_RCF_CTRL_RATE4, 0x54),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_TX_PHPRE_CTRL, 0x20),
-+};
-+
-+static const struct qmp_phy_init_tbl kaanapali_qmp_gen3x2_pcie_rx_tbl[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_UCDR_FO_GAIN_RATE4, 0x0b),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_UCDR_SO_GAIN_RATE3, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_UCDR_SO_GAIN_RATE4, 0x05),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_UCDR_PI_CONTROLS, 0x15),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_VGA_CAL_CNTRL1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_VGA_CAL_MAN_VAL, 0x89),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_RX_EQU_ADAPTOR_CNTRL4, 0x2d),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_SIGDET_ENABLES, 0x1c),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_SIGDET_LVL, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_RXCLK_DIV2_CTRL, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_RX_BAND_CTRL0, 0x05),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_RX_TERM_BW_CTRL0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_RX_TERM_BW_CTRL1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_SVS_MODE_CTRL, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_UCDR_PI_CTRL1, 0x40),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_UCDR_PI_CTRL2, 0x42),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_UCDR_SB2_THRESH2_RATE3, 0x18),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_UCDR_SB2_GAIN1_RATE3, 0x12),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_UCDR_SB2_GAIN2_RATE3, 0x18),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_RX_MODE_RATE_0_1_B0, 0xc2),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_RX_MODE_RATE_0_1_B1, 0xc2),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_RX_MODE_RATE_0_1_B2, 0x18),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_RX_MODE_RATE_0_1_B4, 0x0f),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_RX_MODE_RATE_0_1_B7, 0x62),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_RX_MODE_RATE3_B0, 0xe4),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_RX_MODE_RATE3_B1, 0x63),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_RX_MODE_RATE3_B2, 0xd8),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_RX_MODE_RATE3_B3, 0x99),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_RX_MODE_RATE3_B4, 0x67),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_RX_MODE_RATE4_SA_B0, 0xa4),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_RX_MODE_RATE4_SA_B1, 0xa4),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_RX_MODE_RATE4_SA_B2, 0x28),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_RX_MODE_RATE4_SA_B3, 0x9f),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_RX_MODE_RATE4_SA_B4, 0x48),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_RX_MODE_RATE4_SA_B5, 0x24),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_Q_PI_INTRINSIC_BIAS_RATE32, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_Q_PI_INTRINSIC_BIAS_RATE4, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_EOM_MAX_ERR_LIMIT_LSB, 0xff),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_EOM_MAX_ERR_LIMIT_MSB, 0xff),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_AUXDATA_BIN_RATE23, 0x30),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_AUXDATA_BIN_RATE4, 0x03),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_VTHRESH_CAL_MAN_VAL_RATE3, 0x1f),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_VTHRESH_CAL_MAN_VAL_RATE4, 0x1f),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_PCIE_RX_GM_CAL, 0x0d),
-+};
-+
-+static const struct qmp_phy_init_tbl kaanapali_qmp_gen3x2_pcie_pcs_tbl[] = {
-+	QMP_PHY_INIT_CFG(QPHY_PCIE_V8_PCS_G12S1_TXDEEMPH_M6DB, 0x17),
-+	QMP_PHY_INIT_CFG(QPHY_PCIE_V8_PCS_G3S2_PRE_GAIN, 0x2e),
-+	QMP_PHY_INIT_CFG(QPHY_PCIE_V8_PCS_RX_SIGDET_LVL, 0xcc),
-+	QMP_PHY_INIT_CFG(QPHY_PCIE_V8_PCS_ELECIDLE_DLY_SEL, 0x40),
-+	QMP_PHY_INIT_CFG(QPHY_PCIE_V8_PCS_PCS_TX_RX_CONFIG1, 0x04),
-+	QMP_PHY_INIT_CFG(QPHY_PCIE_V8_PCS_PCS_TX_RX_CONFIG2, 0x02),
-+	QMP_PHY_INIT_CFG(QPHY_PCIE_V8_PCS_EQ_CONFIG4, 0x00),
-+	QMP_PHY_INIT_CFG(QPHY_PCIE_V8_PCS_EQ_CONFIG5, 0x22),
-+};
-+
-+static const struct qmp_phy_init_tbl kaanapali_qmp_gen3x2_pcie_pcs_misc_tbl[] = {
-+	QMP_PHY_INIT_CFG(QPHY_PCIE_V8_PCS_TX_RX_CONFIG, 0xc0),
-+	QMP_PHY_INIT_CFG(QPHY_PCIE_V8_PCS_POWER_STATE_CONFIG2, 0x1d),
-+	QMP_PHY_INIT_CFG(QPHY_PCIE_V8_PCS_ENDPOINT_REFCLK_DRIVE, 0xc1),
-+	QMP_PHY_INIT_CFG(QPHY_PCIE_V8_PCS_OSC_DTCT_ACTIONS, 0x00),
-+	QMP_PHY_INIT_CFG(QPHY_PCIE_V8_PCS_EQ_CONFIG1, 0x16),
-+	QMP_PHY_INIT_CFG(QPHY_PCIE_V8_PCS_G3_RXEQEVAL_TIME, 0x27),
-+	QMP_PHY_INIT_CFG(QPHY_PCIE_V8_PCS_G4_RXEQEVAL_TIME, 0x27),
-+	QMP_PHY_INIT_CFG(QPHY_PCIE_V8_PCS_G4_EQ_CONFIG5, 0x02),
-+	QMP_PHY_INIT_CFG(QPHY_PCIE_V8_PCS_G4_PRE_GAIN, 0x2e),
-+	QMP_PHY_INIT_CFG(QPHY_PCIE_V8_PCS_RX_MARGINING_CONFIG1, 0x03),
-+	QMP_PHY_INIT_CFG(QPHY_PCIE_V8_PCS_RX_MARGINING_CONFIG3, 0x28),
-+	QMP_PHY_INIT_CFG(QPHY_PCIE_V8_PCS_RX_MARGINING_CONFIG5, 0x0f),
-+	QMP_PHY_INIT_CFG(QPHY_PCIE_V8_PCS_G3_FOM_EQ_CONFIG5, 0xf2),
-+	QMP_PHY_INIT_CFG(QPHY_PCIE_V8_PCS_G4_FOM_EQ_CONFIG5, 0xf2),
-+	QMP_PHY_INIT_CFG(QPHY_PCIE_V8_PCS_POWER_STATE_CONFIG6, 0x1f),
-+};
-+
- struct qmp_pcie_offsets {
- 	u16 serdes;
- 	u16 pcs;
-@@ -3356,6 +3509,16 @@ static const struct qmp_pcie_offsets qmp_pcie_offsets_v6_30 = {
- 	.ln_shrd	= 0x8000,
- };
- 
-+static const struct qmp_pcie_offsets qmp_pcie_offsets_v8_0 = {
-+	.serdes		= 0x1000,
-+	.pcs		= 0x1400,
-+	.pcs_misc	= 0x1800,
-+	.tx		= 0x0000,
-+	.rx		= 0x0200,
-+	.tx2		= 0x0800,
-+	.rx2		= 0x0a00,
-+};
-+
- static const struct qmp_phy_cfg ipq8074_pciephy_cfg = {
- 	.lanes			= 1,
- 
-@@ -4412,6 +4575,34 @@ static const struct qmp_phy_cfg qmp_v6_gen4x4_pciephy_cfg = {
- 	.phy_status             = PHYSTATUS_4_20,
- };
- 
-+static const struct qmp_phy_cfg qmp_v8_gen3x2_pciephy_cfg = {
-+	.lanes = 2,
-+
-+	.offsets		= &qmp_pcie_offsets_v8_0,
-+
-+	.tbls = {
-+		.serdes			= kaanapali_qmp_gen3x2_pcie_serdes_tbl,
-+		.serdes_num		= ARRAY_SIZE(kaanapali_qmp_gen3x2_pcie_serdes_tbl),
-+		.tx			= kaanapali_qmp_gen3x2_pcie_tx_tbl,
-+		.tx_num			= ARRAY_SIZE(kaanapali_qmp_gen3x2_pcie_tx_tbl),
-+		.rx			= kaanapali_qmp_gen3x2_pcie_rx_tbl,
-+		.rx_num			= ARRAY_SIZE(kaanapali_qmp_gen3x2_pcie_rx_tbl),
-+		.pcs			= kaanapali_qmp_gen3x2_pcie_pcs_tbl,
-+		.pcs_num		= ARRAY_SIZE(kaanapali_qmp_gen3x2_pcie_pcs_tbl),
-+		.pcs_misc		= kaanapali_qmp_gen3x2_pcie_pcs_misc_tbl,
-+		.pcs_misc_num		= ARRAY_SIZE(kaanapali_qmp_gen3x2_pcie_pcs_misc_tbl),
-+	},
-+
-+	.reset_list		= sdm845_pciephy_reset_l,
-+	.num_resets		= ARRAY_SIZE(sdm845_pciephy_reset_l),
-+	.vreg_list		= qmp_phy_vreg_l,
-+	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
-+	.regs			= pciephy_v8_regs_layout,
-+
-+	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
-+	.phy_status		= PHYSTATUS_4_20,
-+};
-+
- static void qmp_pcie_init_port_b(struct qmp_pcie *qmp, const struct qmp_phy_cfg_tbls *tbls)
- {
- 	const struct qmp_phy_cfg *cfg = qmp->cfg;
-@@ -5177,6 +5368,9 @@ static const struct of_device_id qmp_pcie_of_match_table[] = {
- 	}, {
- 		.compatible = "qcom,ipq9574-qmp-gen3x2-pcie-phy",
- 		.data = &ipq9574_gen3x2_pciephy_cfg,
-+	}, {
-+		.compatible = "qcom,kaanapali-qmp-gen3x2-pcie-phy",
-+		.data = &qmp_v8_gen3x2_pciephy_cfg,
- 	}, {
- 		.compatible = "qcom,msm8998-qmp-pcie-phy",
- 		.data = &msm8998_pciephy_cfg,
-
--- 
-2.34.1
-
-
+The AVDD_xxx LDO is used for IC internally, and the vcc-supply/vccq-
+supply/vccq2-supply are used for UFS device's power. so that it is
+wrong setting the AVDD_xxx to these suppliers.
+and, the vcc is 2.5V or 3.3V, not 1.8V.
+>  
+>    mediatek,ufs-disable-mcq:
+>      $ref: /schemas/types.yaml#/definitions/flag
+> @@ -43,6 +84,7 @@ required:
+>    - phys
+>    - reg
+>    - vcc-supply
+> +  - vcc-supply-1p8
+>  
+>  unevaluatedProperties: false
+>  
+> @@ -53,29 +95,41 @@ allOf:
+>        properties:
+>          compatible:
+>            contains:
+> -            enum:
+> -              - mediatek,mt8195-ufshci
+> +            const: mediatek,mt8183-ufshci
+>      then:
+>        properties:
+>          clocks:
+> -          minItems: 8
+> +          maxItems: 1
+>          clock-names:
+>            items:
+>              - const: ufs
+> -            - const: ufs_aes
+> -            - const: ufs_tick
+> -            - const: unipro_sysclk
+> -            - const: unipro_tick
+> -            - const: unipro_mp_bclk
+> -            - const: ufs_tx_symbol
+> -            - const: ufs_mem_sub
+> -    else:
+> +        vccq2-supply: false
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            const: mediatek,mt8192-ufshci
+> +    then:
+>        properties:
+>          clocks:
+> -          maxItems: 1
+> +          minItems: 3
+> +          maxItems: 3
+> +        clocks-names:
+> +          minItems: 3
+> +          maxItems: 3
+> +        avdd09-supply: false
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            const: mediatek,mt8195-ufshci
+> +    then:
+> +      properties:
+> +        clocks:
+> +          minItems: 13
+>          clock-names:
+> -          items:
+> -            - const: ufs
+> +          minItems: 13
+> +        avdd09-supply: false
+>  
+>  examples:
+>    - |
+> @@ -94,8 +148,33 @@ examples:
+>  
+>              clocks = <&infracfg_ao CLK_INFRA_UFS>;
+>              clock-names = "ufs";
+> -            freq-table-hz = <0 0>;
+>  
+>              vcc-supply = <&mt_pmic_vemc_ldo_reg>;
+> +            vcc-supply-1p8;
+>          };
+>      };
+> +  - |
+> +    ufshci@11270000 {
+> +        compatible = "mediatek,mt8195-ufshci";
+> +        reg = <0x11270000 0x2300>;
+> +        interrupts = <GIC_SPI 137 IRQ_TYPE_LEVEL_HIGH>;
+> +        phys = <&ufsphy>;
+> +        clocks = <&infracfg_ao 63>, <&infracfg_ao 64>, <&infracfg_ao
+> 65>,
+> +                 <&infracfg_ao 54>, <&infracfg_ao 55>,
+> +                 <&infracfg_ao 56>, <&infracfg_ao 90>,
+> +                 <&infracfg_ao 93>, <&topckgen 60>, <&topckgen 152>,
+> +                 <&topckgen 125>, <&topckgen 212>, <&topckgen 215>;
+> +        clock-names = "ufs", "ufs_aes", "ufs_tick",
+> +                      "unipro_sysclk", "unipro_tick",
+> +                      "unipro_mp_bclk", "ufs_tx_symbol",
+> +                      "ufs_mem_sub", "crypt_mux", "crypt_lp",
+> +                      "crypt_perf", "ufs_rx_symbol0",
+> "ufs_rx_symbol1";
+> +
+> +        operating-points-v2 = <&ufs_opp_table>;
+> +
+> +        vcc-supply = <&mt6359_vufs_ldo_reg>;
+> +        vcc-supply-1p8;
+> +        vccq-supply = <&mt6359_vrf12_ldo_reg>;
+> +        vccq2-supply = <&mt6359_vbbck_ldo_reg>;
+> +        mediatek,ufs-disable-mcq;
+> +    };
+> 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
