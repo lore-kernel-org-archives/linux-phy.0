@@ -4,219 +4,142 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 26302CCF9E3
-	for <linux-phy@archiver.kernel.org>; Tue,  4 Nov 2025 07:28:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 128ECCCF9E3
+	for <linux-phy@archiver.kernel.org>; Tue,  4 Nov 2025 07:56:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:CC:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4UIv+mg7LnO4zz6/PsizUWm9CG/1c1NA8BoRp0GFAhk=; b=y48cOhiqvaXdQZ
-	5p0ySDchb6JV6SgyDwBBB/mR+BoLp+V2UUywfONNlYeL9mMKNHZzs5jEkxZKCb8iLyNR62Es6rTXD
-	LsNQSBa5Swv5ICpxzpOvvF0EwOkKoETLP/09P8i14GnSdogeAh3mdkUEhr/50F7o4LvVYuvqqvnnN
-	opy2XHkNMG+18NQwVDIjG5g0kvSZYncPeGQVjm+v5gtEr+amzhTa/n0tiUZP+Dg6Gjdh30eT++URh
-	N9ZbwPC6hQr8dMxsMEpiTat8pCxMpjYsRQhdZP0lx89fP+tZ8W/EtGV27z6q5VW+dqwp9x0ROOX9C
-	9aUHGWE4bS7lpD59c6+Q==;
+	List-Owner; bh=QSKNyRwA34I6MDmuaqnWwZADdx3GF2rKcA5XtQiuoVU=; b=K08BzEB+dtNXpi
+	HD/LOhPfyFe95RW02jLYYWOKD04Tt+mHOk6riemvqkkvJzSmYVWnXCRh430HkPyysYwZDitdt7vqZ
+	7BzFB/FHENSMoT0uJ1FYYu71KMA9h543cGIpudW3ZncqN6qGy/xmO2JPFKbXOUvIZJoGiXCpgYjMI
+	ulsMYqC6/4mYJujjZP9e92rbeR3VJUfGd8hPORD75zhqqNYUDI2ytelnQWKHw5Jg+jKfVZfz1ph1E
+	Lq6n61dB0NWvbsxwwmcl76N+5FPHHDF5DAAo5oWHikqIGKShI1km/OEoIoJUdWV6kn2E/1hbc0qyp
+	uN6HND7NMrdJ4RPyyXXw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vGBSy-0000000BKLw-31qr;
-	Tue, 04 Nov 2025 07:28:32 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1vGBu6-0000000BMn6-0xT8;
+	Tue, 04 Nov 2025 07:56:34 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vGBSw-0000000BKLT-3Oxr;
-	Tue, 04 Nov 2025 07:28:31 +0000
-X-UUID: d92e4f58b94f11f09f706fa2197c6ceb-20251104
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
-	h=MIME-Version:Content-Transfer-Encoding:Content-ID:Content-Type:In-Reply-To:References:Message-ID:Date:Subject:CC:To:From; bh=jKMhm7L4+bAkH+hQvBDE/hpqwYM+ArWpqbGU+uF8+Hc=;
-	b=cr6wMBLcSyyu1MOQBc783y06BfTmnvgw1j/BxLhyP14KEe7Jw4Sqm3rzcvLk+CtzSn1czwI0DkMHxZrAawtXZQQSGtPjd3KO0A6fpD7o/q840aknWUNP9AWBD6V6LedMm7vO02s1pb7c6iFZX/Y2r0ar/GRvM7TQgizsN5PfAyk=;
-X-CID-CACHE: Type:Local,Time:202511040028-07,HitQuantity:1
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.3.6,REQID:d20df5bb-0dc7-4d25-8b33-c86a3a3e3738,IP:0,UR
-	L:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:r
-	elease,TS:0
-X-CID-META: VersionHash:a9d874c,CLOUDID:94f61be0-3890-4bb9-a90e-2a6a4ecf6c66,B
-	ulkID:nil,BulkQuantity:0,Recheck:0,SF:80|81|82|83|102|110|111|836|888|898,
-	TC:-5,Content:0|15|50,EDM:-3,IP:nil,URL:0,File:130,RT:0,Bulk:nil,QS:nil,BE
-	C:nil,COL:0,OSI:0,OSA:0,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
-X-CID-BVR: 2,SSN|SDN
-X-CID-BAS: 2,SSN|SDN,0,_
-X-CID-FACTOR: TF_CID_SPAM_SNR
-X-CID-RHF: D41D8CD98F00B204E9800998ECF8427E
-X-UUID: d92e4f58b94f11f09f706fa2197c6ceb-20251104
-Received: from mtkmbs09n2.mediatek.inc [(172.21.101.94)] by mailgw01.mediatek.com
-	(envelope-from <chaotian.jing@mediatek.com>)
-	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
-	with ESMTP id 1833474451; Tue, 04 Nov 2025 00:28:24 -0700
-Received: from mtkmbs10n1.mediatek.inc (172.21.101.34) by
- mtkmbs11n2.mediatek.inc (172.21.101.187) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1748.26; Tue, 4 Nov 2025 15:28:21 +0800
-Received: from SI4PR04CU001.outbound.protection.outlook.com (172.21.101.237)
- by mtkmbs10n1.mediatek.inc (172.21.101.34) with Microsoft SMTP Server id
- 15.2.1748.26 via Frontend Transport; Tue, 4 Nov 2025 15:28:21 +0800
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=eAsUcRrVkpOLN1H783YYkVzbLciAzAdY4PM71Js+gEVOovCYLuA6HvFtVS/KSiFuTmFsj0NoxyQH3LRL4daUaV+fswEPoGC4hh8psweZjeDE9UDPrPlTH7mZ6VJxswiyCMVmHu8Ap+5dP/FUqislFfbHg2YABar+aN8IBSfyFzPj7mcJkZ6HjZUGLdD4411BCTbZg6f2t8UqR2qLBB8miVwpWJ1k7XGKx1JmbMkrFVHp2dk9EgMy93WoZ02nRuTt2bF9LHEnSeJr4+dl+uQRWw+LPiTGTDCQ3gTzchrBitIdUClyCKDGmxWY070KdtjIhGJVpnCCj0gSQwknru/61Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=jKMhm7L4+bAkH+hQvBDE/hpqwYM+ArWpqbGU+uF8+Hc=;
- b=hO1iwm2mbsz177I3MpNnPC1naEA4wryybMZFTezm5U/Fk0DDwaWmfU7ESCVNWV8xDX+A5b6N7Ha7zyC8OfwZl9/BUK63mIJRRydYgOD3vbZtL1C299FBmk5xJ47Z+VhakNZDmh1jxW5AshN5mqsC7ng+BSiZm9BPXXyUKVcIwpKTror8FpomXar6XL2TdGsqcZXqJvuzBdBhy4UNKtyUyRXHbxsEjJP5+tq7xWiaMbaUdmf3mXdTEvPKDEkLIaLhhNBJMQ9oMmL9MkoX8lDGjD4i2d7oWrehv8Qob1e+rgTG/Ub7YXvKlzUFGjlQssj75AjqY3kkOXs+E7y9qQ7pEg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=mediatek.com; dmarc=pass action=none header.from=mediatek.com;
- dkim=pass header.d=mediatek.com; arc=none
+	id 1vGBu3-0000000BMlG-01qW
+	for linux-phy@lists.infradead.org;
+	Tue, 04 Nov 2025 07:56:32 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 5A45GM8i1059913
+	for <linux-phy@lists.infradead.org>; Tue, 4 Nov 2025 07:56:30 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	RoHRt+4t/c3tdwGEDl4fclkJI4Vp+4dj/2Y0zI28L2A=; b=alQ8yu3xJ3FjoQj+
+	elCtwvIDJ3iUNC3PN/L/FeSABIfRNwwvn8bkmx7rfM1jfgRLupb8v+9BtyFUV2Tx
+	vFTl0GTmiqhoZlIBm6rwRZ1t6d/BcKhqCd+Qa+4OkjVP3PhlNlmsMWljIvRKBLQB
+	OqRnnRgHK9R5r2G7iy9G8HX8lO3wIlBXn14V+NZY6czmzNLow/8QHfqBUPUnL58S
+	RvhWyV5BXI3pXdZXuokR2Zxeara8E+qBnROd7cFMkgbFgZG6Vytm9EC6hXTlpZNO
+	+gWpjKaqeflCsORSFyPJAycroooCS12ushbEJD9cwI4aYjYV0dW9ibajqweHL7Jm
+	iyoODw==
+Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com [209.85.216.71])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4a7b6prdf4-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Tue, 04 Nov 2025 07:56:30 +0000 (GMT)
+Received: by mail-pj1-f71.google.com with SMTP id 98e67ed59e1d1-3405c46a22eso5549058a91.2
+        for <linux-phy@lists.infradead.org>; Mon, 03 Nov 2025 23:56:30 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=mediateko365.onmicrosoft.com; s=selector2-mediateko365-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=jKMhm7L4+bAkH+hQvBDE/hpqwYM+ArWpqbGU+uF8+Hc=;
- b=DmlynacSHnEHA43ZIiiS8ft88L+zH+CGuJ5onEPhQUwsfFUls6EWLViM6BoAXgTdprRkmH6bdTd9ofsjcrOEoWZgCBDNjI9+0FvlHAWAbjfHbmNZNgxBxm1v7ZVYmkrta/FGtkPdvNkMt/ylDiFIK7rxfgrOQiVCiKbT6dv5PkA=
-Received: from KL1PR03MB6032.apcprd03.prod.outlook.com (2603:1096:820:8b::7)
- by JH0PR03MB7545.apcprd03.prod.outlook.com (2603:1096:990:8::10) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9275.16; Tue, 4 Nov
- 2025 07:28:18 +0000
-Received: from KL1PR03MB6032.apcprd03.prod.outlook.com
- ([fe80::4e46:b38a:9317:deb7]) by KL1PR03MB6032.apcprd03.prod.outlook.com
- ([fe80::4e46:b38a:9317:deb7%7]) with mapi id 15.20.9275.015; Tue, 4 Nov 2025
- 07:28:18 +0000
-From: =?utf-8?B?Q2hhb3RpYW4gSmluZyAo5LqV5pyd5aSpKQ==?=
-	<Chaotian.Jing@mediatek.com>
-To: =?utf-8?B?UGV0ZXIgV2FuZyAo546L5L+h5Y+LKQ==?= <peter.wang@mediatek.com>,
-	=?utf-8?B?Q2h1bmZlbmcgWXVuICjkupHmmKXls7Ap?= <Chunfeng.Yun@mediatek.com>,
-	"nicolas.frattaroli@collabora.com" <nicolas.frattaroli@collabora.com>,
-	"kishon@kernel.org" <kishon@kernel.org>, "avri.altman@wdc.com"
-	<avri.altman@wdc.com>, "bvanassche@acm.org" <bvanassche@acm.org>,
-	"martin.petersen@oracle.com" <martin.petersen@oracle.com>,
-	"broonie@kernel.org" <broonie@kernel.org>, "alim.akhtar@samsung.com"
-	<alim.akhtar@samsung.com>, "chu.stanley@gmail.com" <chu.stanley@gmail.com>,
-	"conor+dt@kernel.org" <conor+dt@kernel.org>, "p.zabel@pengutronix.de"
-	<p.zabel@pengutronix.de>, "robh@kernel.org" <robh@kernel.org>,
-	"James.Bottomley@HansenPartnership.com"
-	<James.Bottomley@HansenPartnership.com>, "lgirdwood@gmail.com"
-	<lgirdwood@gmail.com>, "vkoul@kernel.org" <vkoul@kernel.org>,
-	"matthias.bgg@gmail.com" <matthias.bgg@gmail.com>, "krzk+dt@kernel.org"
-	<krzk+dt@kernel.org>, AngeloGioacchino Del Regno
-	<angelogioacchino.delregno@collabora.com>
-CC: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-	"linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
-	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
-	"kernel@collabora.com" <kernel@collabora.com>, Louis-Alexis Eyraud
-	<louisalexis.eyraud@collabora.com>, "linux-scsi@vger.kernel.org"
-	<linux-scsi@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
-	<linux-arm-kernel@lists.infradead.org>, "linux-phy@lists.infradead.org"
-	<linux-phy@lists.infradead.org>
-Subject: Re: [PATCH v3 09/24] scsi: ufs: mediatek: Rework the crypt-boost
- stuff
-Thread-Topic: [PATCH v3 09/24] scsi: ufs: mediatek: Rework the crypt-boost
- stuff
-Thread-Index: AQHcTTo49ypGQfrPO0eMepv5B6/WfbTiHriA
-Date: Tue, 4 Nov 2025 07:28:18 +0000
-Message-ID: <9ae7495023a8562566ff57bd2dfa60524194ee30.camel@mediatek.com>
-References: <20251023-mt8196-ufs-v3-0-0f04b4a795ff@collabora.com>
-	 <20251023-mt8196-ufs-v3-9-0f04b4a795ff@collabora.com>
-In-Reply-To: <20251023-mt8196-ufs-v3-9-0f04b4a795ff@collabora.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=mediatek.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: KL1PR03MB6032:EE_|JH0PR03MB7545:EE_
-x-ms-office365-filtering-correlation-id: 0cb1a420-3d3b-410d-de72-08de1b73b9b0
-x-ld-processed: a7687ede-7a6b-4ef6-bace-642f677fbe31,ExtAddr
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230040|7416014|376014|366016|1800799024|921020|38070700021;
-x-microsoft-antispam-message-info: =?utf-8?B?OFY3OVIxK0gxRm5qL2c3NSsvY1RveXhsam5XWUIwSnZTTUUvaGlXaTBtWFVO?=
- =?utf-8?B?RFdVNnZjamNTKytRcmZOSDc2aDh1VS9tdVpDd2MydzlnSFBiMENITTZQbjVG?=
- =?utf-8?B?SWd3MmFCbnBwWWkzaGlzUC81aG9UYktqb1RKZ1U5TjBOWXdHVnpDS2dOSndw?=
- =?utf-8?B?QTRGbHl0azViTkU1TmhVRXFhLytyVHBjVWFYMkJ0U1pQZVdqT1E2MzJtTXVQ?=
- =?utf-8?B?RGxCc2h3WGJRQkJZbFo0bE53L2FMOEIwVy9VaURXcE4vYzluczFIV1NWOUxH?=
- =?utf-8?B?cVZ6MzFUWVBVejN5R016cVhtajRhcnplamVBcytwZnJrM0dmb0NaTWFZUldG?=
- =?utf-8?B?ZWRyKzNGM0JTSGlFZEZwOTRWbDVxdnR1K2tsYnRlM3d0K09JaEFGZVdoUXdR?=
- =?utf-8?B?YlVlbHY2VWFWbThldUlGQ01SdWlRbFdsMG9LV3ovdUZaeVZYWGZNK1hhMmZs?=
- =?utf-8?B?QXBJRW9sL1VoTDJqUGR1NEs0bmJCUGFhbUNCNmw2VWZKMnVuWU1pWEdzcW51?=
- =?utf-8?B?YkF5VU9XQ2lJb3daNUJhR1RGeTZIZlhFWit1SndHamp5eUtLSlVBRjhteVZh?=
- =?utf-8?B?cUV5b3JHZ09MN3dPZjM2bmZkZ1lDYlVkdnF0OHVFTVhjWlMrbitOa2xZc0d5?=
- =?utf-8?B?bWNNUWdibG5peUxRcU0vWEthVGQxYjlhNnc1OUF5dmlza0FIT2hCcUZlWmFj?=
- =?utf-8?B?NTFpK08yL0xSNTR3YXVIZ1RsL2E1S0VDeE9TWnhsdDJCcDB2c3NuRENINnR0?=
- =?utf-8?B?NHp6UGdCeDBzSHJwaHBId2xjc1Q0WTZoeEo3YmRiVDkzMDkwSVBxbG9ONVJt?=
- =?utf-8?B?U0hSMXM5S1U4Rmx4SXZTSU9OeTdqemovZlpkaitqeXFSM3dmTEw1bklyd2Q2?=
- =?utf-8?B?SGJ4MzgzZ0ttb3liOTBwR01ObDVKbjVqNHE2TkFiUlJRemJmeVgrMU01NnZo?=
- =?utf-8?B?N0VzZmhuendNV0lKQitqL1ZnaHMzVjR0M0JQaU40Z1dqaW1nQVdCcTFjWlFm?=
- =?utf-8?B?cUduZVJtMkFrN2FaRnpaeXNxZ3AxdnhVN0RoMDh0WEY3cmdXVWVMSzJPUXdu?=
- =?utf-8?B?NUVsaTRLMWtKUXJadW1Bb2hiOFpoQzBXLzhRSHdKbkVoNnFBQ01aZW9jeTdw?=
- =?utf-8?B?bmUzK1NJWi9FV3FXR1UxeWVteExJUk8vYktQWGo2NGJSWERJb0ZNbnZQcUJX?=
- =?utf-8?B?eENXUEpRQ1p0N2w0ZEVKMlEzZDd3SUdSYlIrQ3ZVVzB1dzZZZTdtS05kakp4?=
- =?utf-8?B?dCt0bHptcnhPYmZMVFZoMWtBclAwcGEwWmtiV0NJb3Z4bXJwZUtQZkJMMVEv?=
- =?utf-8?B?VlQ1dmVZWWI3b3g2eEMwMDRhalo4NStKTHFVTTZ5RTFXSHpoY1hleVRrTStr?=
- =?utf-8?B?TXJjdVVZMTB0M1kycjEycnBXd29WcVR0YVd4YlZrMFF5U2I2S2xvcHJnamIr?=
- =?utf-8?B?clNCWlFwNERZcDd0ZXVyWm5LcDRtUHhTS3YwUHZnRUJ6UFZhNEwrWWN6UTN3?=
- =?utf-8?B?cXA3NWJZUktvL25zMndyVFRqdWxrNTdDL1d0Rk9ITHZFdFNlNVhTZ0JYNnBY?=
- =?utf-8?B?dnpJZlVZQ2xjUTBQaEhCYjd1aklUYllvYjJJNHZma1k2L0lvSURQTTNPTkVv?=
- =?utf-8?B?NysybnlrUFE4MFkrdUE0Y0s3N284bTR0VDI2RGJlTWlkOHBTUkY5Mi9yMXhF?=
- =?utf-8?B?L3Z6TVVRcittcXllNmZSdm02cHlzZ25lMDdBTElJQ3hwWXFyOHBjSStCODkv?=
- =?utf-8?B?M3ErQnlPK0ZtRGpUY2lXTHgwOHN6bjFQTjJ6UW5rMjVmZHdwL09zOVJHV3Fy?=
- =?utf-8?B?OHdLKysrU3pxSlhneE5yakVaK01tcGFlRjdISmtCNklrTWZNYWpRYXFlcm1z?=
- =?utf-8?B?MElwREkwVEJQeDQ5eVFuTGw2eGVNVmJkRjdJTVhxSnJxQ2dlVGQrb0lFdSt3?=
- =?utf-8?B?VHRtKzlRZVZienl5OFJYcnNlSDd6eHc0S2g2S2I3MitOVndTSVpVRmhKNHQ5?=
- =?utf-8?B?bm5DaDFSc3FveVBld2QyRFhnZ0d2Z1JqOFk1NFRFd1piSmkrZWVVclVEOUhH?=
- =?utf-8?B?WFNsRGpmc2Z2V2FRcDRNUWJSV1NxNkFYQUFDdz09?=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:KL1PR03MB6032.apcprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(7416014)(376014)(366016)(1800799024)(921020)(38070700021);DIR:OUT;SFP:1101;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?utf-8?B?blFqOEpZeTVyRURWeUxUL1Fnc29IcTBpVG1ERDVpZysrS09WdXBLc1YyRlVj?=
- =?utf-8?B?WCtPOGx5OFh3WXZ5UE5KczRPeWxzS1FXTTF1eVd4V05Qa2R5Zlh2YTZTVDAy?=
- =?utf-8?B?aHhVR2hlM0V3T29HUGE5dnUxLytSUUFteWhnYXpQSXpZQzRtWFVRZjVnQk5K?=
- =?utf-8?B?QVUxeFBCT0dLYmRYL3N6NFZJMlpwSy8wVTl6Z1VzYUJlUmgvNDlGckVIeGx6?=
- =?utf-8?B?SU1aTGlRdTVEZzlRUnFlYTRhSDduZGEySkh1WnE5dGR1cXdHaG1HYUZ1a3Z6?=
- =?utf-8?B?dzFzWndFZE1wSEk0UjlxdVpEamxOMWJCNWdST0Z2TE5veVZKczB3MzdJTDF5?=
- =?utf-8?B?anNpS0V4M0RxTFpEYmJKSFBNdjFaUVdqTjk0bHk5SENoSjVnV2tnd1Bmd2xY?=
- =?utf-8?B?U2dKTlh2N0plQ21kcVFnYzdIZG1xdUZHZWpCRStuWVFBQ3dyNjFRdzlxNXZX?=
- =?utf-8?B?MjRxR1RaZlMxblZEY1hZZzhnQjJhcDEwTXZrWjgreHNlWTQzQkdmWHg1SzB3?=
- =?utf-8?B?RGIxL0w4SE5EMm1uMG0zNmdNb1lVbWRxa3JBK2gzQnFJbWZaT3cyZHVnN040?=
- =?utf-8?B?WUU3OFVqdzlhTlk5b2QwZDBTR3hPTXhUMHJicFJqcEZwaDRteGRRNjRETUMy?=
- =?utf-8?B?K2hMdUFPNVB4Yk5hVU1RUHR2RXNMdXBnNEhod3ljSUxNRk9LRjdhQlFFTHNP?=
- =?utf-8?B?b2Y2QWNHYW9lRyt2TlUxRVh4TitEU2F2WEpGbEQzS3FRYzQwY0grb1NjaW5n?=
- =?utf-8?B?SDA2V1VBLzFIWU9jSytnVjNRREFaK3EwTVNZcTNmY2l1ZklzOVF6aDFiSm1a?=
- =?utf-8?B?cUtsenJjT2hIRXl5OGpJVnFxRFliWEJGOVdaaVppUUtaOFFaRVNIcGhOZHg3?=
- =?utf-8?B?V0FZV1pnSDQzdXhTRHBEWHN4S2EvdjNROEErSXlQOGtEcTFmbGhSUXlNY0c1?=
- =?utf-8?B?azh6TjZDR001azU4QlNKOTkwU1Zmem56VllCNDdMWkxKY0Z5T1l1LzFlZVRk?=
- =?utf-8?B?M1N2VG5vZ3VPUnpHNk92STRFOHpvMWxJVE9vR0ZmdmVXM3lIcW5vdFM2S0RP?=
- =?utf-8?B?czJOTG1sV0xwUk9uZEJMKzRhcHR5VmFXWW5mcTJIMFlDb2pWbWhxVFpBVHFo?=
- =?utf-8?B?dSt6RThqMy9oanc5eE85NGdDcURLMDlMbnFOaFFTV24xbHk3YnNOS0t1MExP?=
- =?utf-8?B?V1FLcmpKL1M1TTNXaXBNTHlhZEkzdGZ2bVY0RGhsZW9KdTZZRjcvN1dHdGhF?=
- =?utf-8?B?eEx0SkV3OXlVS1JEVDJqNk5NSnQ1czlBa2U0UlR5aVF4emR3ZFpzSWNEV2Rn?=
- =?utf-8?B?dG5oZy9jOWVERWpTWHhYS1B0YTd4bUU4MnU1VE53YVE1dExQR2M1d2wxQ1Mr?=
- =?utf-8?B?VldPSW91QmRkNERmQnhMY2U3dldtRmpXdjlycWdlNFhNbzYxN1dFYzZwb3N1?=
- =?utf-8?B?ZEpTdk4vYVV3WkJKS3ZqeE9IbEdnczZWOVNScWhScFY3RDk1ckFockRyT3p2?=
- =?utf-8?B?ZTRrT3Y2L0NOQ3Yya3VhZ2NmemRDYllpT3YvZ0Y1YlgzdGsxOEJ3VjBzSXA1?=
- =?utf-8?B?a2Q0Y1VNY2lBRU8vRUp3RmxTRFlYdWNhTTV1czBZUFliUCtzV0pVMFNSWnZM?=
- =?utf-8?B?eFhOVVJwMlI3NW9xNGlaTERIL2NTU2ptY3J2MGFuNm9kWm1FYjRwNTkxcW52?=
- =?utf-8?B?aWk2VDdwNUlBQWRBdUdQTUc5R1N3dHpIWkg1VkdpUzJBRllxRkFJVFBSajFG?=
- =?utf-8?B?d0ljd3JsOUZTcVZVTlhwZzF1VlJtZE51QzVybzRvZmJUQVdLMFhOenorNFkz?=
- =?utf-8?B?MmswV01pdXRpKzA1REpnRXVmZzdad3lIdmxUbjg0R1BUU2d0WlJGMkNJcnI0?=
- =?utf-8?B?YlZCdGFHMjAyYlZFeW83c1k3ZGdPM3hQL1c2bXgzRWk0V05IenhBWHJZTHdG?=
- =?utf-8?B?Z2hLLzdxNjFFdWRGejV2NklsNFdTQ2Jya3dQand6dTQvR3l3SzN6MmtpdjZs?=
- =?utf-8?B?QjBDekRIOUJTRFJIcHRqQnZsblJBWE1mMlpEUkxnb2wwTDNVNWtiMVRDM092?=
- =?utf-8?B?NFJxRUhiQlIvdm5YOStCeTg4QUtvQjBtcm0vN1JJZ1U3NzBlbjl5RkZMSFlj?=
- =?utf-8?B?RUt0NDhUMXo5bG1YdFlJQVF1NkNMMUF0ZmFBVkE1R1RST055U1M1dDVUTTNL?=
- =?utf-8?B?R2c9PQ==?=
-Content-ID: <05053CAC8DEB6C4AB8D7D5CCDA215855@apcprd03.prod.outlook.com>
+        d=oss.qualcomm.com; s=google; t=1762242990; x=1762847790; darn=lists.infradead.org;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=RoHRt+4t/c3tdwGEDl4fclkJI4Vp+4dj/2Y0zI28L2A=;
+        b=fSBhq9uplC24yVJOATFCZjDTohg3SVyNjuL8wc+SpGz8RY/3LPf7BQMtfC+iebU9Pb
+         ZFIWYrLx+etI/I2ywKCTWSwWMCaGaj4PaIOhvDt/EyNXOTBLQ2dftxdyNkGKazt9aL7X
+         /Pv1QnD6LbOPCHkX7tIO/AYKC8wlDcKZUKmO9Xy0/e3NEd18TjX/05AriTOXP5rw4Dmk
+         zx33WAcqybhCrVAJ7warvcRE3kcxt3/kkcSnD33LOgE7hV26dKBvAmA+5sy6ijxtwid2
+         rHmvK9ZpYdBlaUVozSj8sf45/hnQzipu0dYNJJsCa3FP++vw0SWEU4GguxdQdGQzupTN
+         lRnA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1762242990; x=1762847790;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=RoHRt+4t/c3tdwGEDl4fclkJI4Vp+4dj/2Y0zI28L2A=;
+        b=fI9UAjCBVzze+PRK4rfw7mi3u92tz9JbYysqI0o9A7vxme9ysSR80URbqj8IWIVknG
+         AlUW5dZQyLp5kWNf7ZY14UdgNyu+lN08xkrX9Pk2JIMhfNVT63aK5VZZ89hk85WUPZak
+         4ZRVYtclXb3OdNYU1rL88kM+upJ8CPuajkRd4KJDnkgfZOUnKoWJTXpt8YlS26XGeQ6G
+         iZiosM/SOIvUObFK0l3x+qrOMrhZfiAxLjlK2D/VVPJA40Q67uo1S2Xv/NGi8qDCsmQ3
+         pAWYqGPbUvFmoqdvtui+Cjb6SV3OglhXyA2Dn/8UoI4XUf7buHS+XRtFPLgdUThrE+cR
+         OYqw==
+X-Forwarded-Encrypted: i=1; AJvYcCW/xw2kIaaCJn6FNYC2+59G3mOyVpognBh2z1oSHMQUvx+XgrIQoe42RYDdDSfevZaO3ZANfMgK78k=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzWlHYkjpKmAP81t/TojK637Pau3DTp6nKsuyYE9ryp+GULEA3u
+	5xnIeBLyAxfKhaw02VE0+IBSDQZt4iffL21WLWMhu+k8zO/rPwwaCqOpL2njPr/A0zEZ6nafGa7
+	Z2wmxaxV3qY5vp5mrhtdmuFpAoVIxVDPNzfcfEIHHV/9xjJ16yiWvhjdpmhbSvwlbirOD
+X-Gm-Gg: ASbGncvy8ojUNUJ4lDldzEsZXx5xEhki8e4+JSY0d51b9Ld6xKZLgMsf3edyTbFpzKJ
+	Bye/TgX/pQxNMOzjg6+dK7doM8SnKG+mKBXg/41a+IJmXTMFwAcnLDSzLKkB5mZZ6kfE5AbGm8W
+	Tt9RR6jz/FE5vOzOvHy9UuXD9wfAmdzMIMOLbz/7TzlScpTS3IHKgdVFbUY29MkSEJQSi2oKUS0
+	XViX1nt6rZrIauyBEID+QDwGFAh/ieSIKIb4sWF+M8q3cQG9llPyW+dFp6yxCIzc/8KN+RP8LDQ
+	kv8z3SHJfrEitpm0lSjMj6/VUtIKUmJsPnXdBjuzktMW7GLlRfWTGPr07QTWfUhGTB9CHOdJ0W7
+	ylzsMYMhcKyuiQs2/lGZ1yN6+BBOHhdJnMX2PAhPiqK2Hcw==
+X-Received: by 2002:a17:90b:2d84:b0:340:b572:3b7f with SMTP id 98e67ed59e1d1-340b5723c9emr14408694a91.20.1762242989731;
+        Mon, 03 Nov 2025 23:56:29 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHblCsTh9EtWdUdTdA5S+5zt8dR4ohSG7w0SjM7q5S624Oo1ILhLcn4ytG8kX9EqOp8INvBCA==
+X-Received: by 2002:a17:90b:2d84:b0:340:b572:3b7f with SMTP id 98e67ed59e1d1-340b5723c9emr14408667a91.20.1762242989235;
+        Mon, 03 Nov 2025 23:56:29 -0800 (PST)
+Received: from hu-qianyu-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-34159a16652sm3627951a91.20.2025.11.03.23.56.28
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 03 Nov 2025 23:56:28 -0800 (PST)
+From: Qiang Yu <qiang.yu@oss.qualcomm.com>
+Date: Mon, 03 Nov 2025 23:56:24 -0800
+Subject: [PATCH v6 1/3] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy:
+ Document the Glymur QMP PCIe PHY
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: KL1PR03MB6032.apcprd03.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 0cb1a420-3d3b-410d-de72-08de1b73b9b0
-X-MS-Exchange-CrossTenant-originalarrivaltime: 04 Nov 2025 07:28:18.3363
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: a7687ede-7a6b-4ef6-bace-642f677fbe31
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: LWfG5OyhHS+nnU11GiHu6cOpPAc4SM6vH+cmqxdVWCIh4yNrTtfCUsELhmtLesXriti5rJfHlDbbOJiVTF1G2FPVPo2J1RCAgGfJhoX490Q=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: JH0PR03MB7545
+Message-Id: <20251103-glymur-pcie-upstream-v6-1-18a5e0a538dc@oss.qualcomm.com>
+References: <20251103-glymur-pcie-upstream-v6-0-18a5e0a538dc@oss.qualcomm.com>
+In-Reply-To: <20251103-glymur-pcie-upstream-v6-0-18a5e0a538dc@oss.qualcomm.com>
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        Qiang Yu <qiang.yu@oss.qualcomm.com>,
+        Prudhvi Yarlagadda <quic_pyarlaga@quicinc.com>,
+        Wenbin Yao <wenbin.yao@oss.qualcomm.com>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1762242987; l=1696;
+ i=qiang.yu@oss.qualcomm.com; s=20250513; h=from:subject:message-id;
+ bh=1mXglDsn+0xPeOIvS0urkFyaDKAG2hJUN/4wa3OAjrY=;
+ b=GDVAIOjrtXgFxzq3uZDg8rQD0ct/+9J5e8bGi0lgeVcn5C6a0KNvzWvmp7eukWmwXw/i6g99h
+ sLGPoRscagRDmBJWoDMGWX6jOH33rlVmLIRspi4B5THCcUdBlhNy+Ef
+X-Developer-Key: i=qiang.yu@oss.qualcomm.com; a=ed25519;
+ pk=Rr94t+fykoieF1ngg/bXxEfr5KoQxeXPtYxM8fBQTAI=
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMTA0MDA2NCBTYWx0ZWRfXzgaltUA994NA
+ 6Y5c4wsJAABgfTVB1olbcG6E03vXLLIgtFhqlcqecRZu76BxqXm8ogxUIF8vDs0L0lB6BAV7UeP
+ V+eo9ECxdqMi1VlaNqSGZqnVB173w6pQjRovAYEv7y7DzEFxG3o5Q+0WsQ2psvJUfjGOErUFbbj
+ Wy0nPkrX89aOTTt9NS8wC1XzneoekTPHQll4wgs4IQpulPHWlNtwJptr7HDECym/iuQMwfjymjc
+ uezwkjEBoQIWOBv9vR/npJNbPgd8jS55Qys3KbI2rgdUgj9aD7Zd9j77RN4J43ZqccF1Lp9530Y
+ d+Q8dos+B5kXNN9zd8Ut9goMbOxZjnE34KIoz5gBXV2Mc45Oy+CzRMwrS/OkA6dO1HwosSWpgd5
+ IsNY+AqAaMabo1eDSPdcEdjHFGJwVA==
+X-Proofpoint-GUID: 2q7CNUvhhLzs_IJeU1NaeKnBzqME6QIO
+X-Proofpoint-ORIG-GUID: 2q7CNUvhhLzs_IJeU1NaeKnBzqME6QIO
+X-Authority-Analysis: v=2.4 cv=Y4L1cxeN c=1 sm=1 tr=0 ts=6909b1ae cx=c_pps
+ a=UNFcQwm+pnOIJct1K4W+Mw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=IkcTkHD0fZMA:10 a=6UeiqGixMTsA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=COk6AnOGAAAA:8 a=EUspDBNiAAAA:8 a=VwQbUJbxAAAA:8
+ a=prgL3jgsdPShhDvlN2UA:9 a=QEXdDO2ut3YA:10 a=uKXjsCUrEbL0IQVhDsJ9:22
+ a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
+ definitions=2025-11-03_06,2025-11-03_03,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ clxscore=1015 priorityscore=1501 suspectscore=0 phishscore=0 bulkscore=0
+ impostorscore=0 spamscore=0 adultscore=0 malwarescore=0 lowpriorityscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2510240001 definitions=main-2511040064
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251103_232830_868006_438EB49B 
-X-CRM114-Status: GOOD (  20.81  )
+X-CRM114-CacheID: sfid-20251103_235631_055635_59BB63EE 
+X-CRM114-Status: GOOD (  10.33  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -233,164 +156,52 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, 2025-10-23 at 21:49 +0200, Nicolas Frattaroli wrote:
-> I don't know whether the crypt-boost functionality as it is currently
-> implemented is even appropriate for mainline. It might be better done
-> in
-> some generic way. But what I do know is that I can rework the code to
-> make it less obtuse.
-> 
-> Prefix the boost stuff with the appropriate vendor prefix, remove the
-> pointless clock wrappers, and rework the function.
-> 
-> Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-> ---
->  drivers/ufs/host/ufs-mediatek.c | 91 +++++++++++++++--------------
-> ------------
->  1 file changed, 32 insertions(+), 59 deletions(-)
-> 
-> diff --git a/drivers/ufs/host/ufs-mediatek.c b/drivers/ufs/host/ufs-
-> mediatek.c
-> index 131f71145a12..9c0ac72d6e43 100644
-> --- a/drivers/ufs/host/ufs-mediatek.c
-> +++ b/drivers/ufs/host/ufs-mediatek.c
-> @@ -562,21 +562,6 @@ static int ufs_mtk_mphy_power_on(struct ufs_hba
-> *hba, bool on)
->  	return 0;
->  }
->  
-> -static int ufs_mtk_get_host_clk(struct device *dev, const char
-> *name,
-> -				struct clk **clk_out)
-> -{
-> -	struct clk *clk;
-> -	int err = 0;
-> -
-> -	clk = devm_clk_get(dev, name);
-> -	if (IS_ERR(clk))
-> -		err = PTR_ERR(clk);
-> -	else
-> -		*clk_out = clk;
-> -
-> -	return err;
-> -}
-> -
->  static void ufs_mtk_boost_crypt(struct ufs_hba *hba, bool boost)
->  {
->  	struct ufs_mtk_host *host = ufshcd_get_variant(hba);
-> @@ -633,65 +618,53 @@ static void ufs_mtk_boost_crypt(struct ufs_hba
-> *hba, bool boost)
->  	clk_disable_unprepare(cfg->clk_crypt_mux);
->  }
->  
-> -static int ufs_mtk_init_host_clk(struct ufs_hba *hba, const char
-> *name,
-> -				 struct clk **clk)
-> -{
-> -	int ret;
-> -
-> -	ret = ufs_mtk_get_host_clk(hba->dev, name, clk);
-> -	if (ret) {
-> -		dev_info(hba->dev, "%s: failed to get %s: %d",
-> __func__,
-> -			 name, ret);
-> -	}
-> -
-> -	return ret;
-> -}
-> -
-> -static void ufs_mtk_init_boost_crypt(struct ufs_hba *hba)
-> +static int ufs_mtk_init_boost_crypt(struct ufs_hba *hba)
-You change the return type but never checked the return value when
-calling this function ?
->  {
->  	struct ufs_mtk_host *host = ufshcd_get_variant(hba);
->  	struct ufs_mtk_crypt_cfg *cfg;
->  	struct device *dev = hba->dev;
-> -	struct regulator *reg;
-> -	u32 volt;
-> +	int ret;
->  
-> -	host->crypt = devm_kzalloc(dev, sizeof(*(host->crypt)),
-> -				   GFP_KERNEL);
-> -	if (!host->crypt)
-> -		goto disable_caps;
-> +	cfg = devm_kzalloc(dev, sizeof(*cfg), GFP_KERNEL);
-> +	if (!cfg)
-> +		return -ENOMEM;
->  
-> -	reg = devm_regulator_get_optional(dev, "dvfsrc-vcore");
-> -	if (IS_ERR(reg)) {
-> -		dev_info(dev, "failed to get dvfsrc-vcore: %ld",
-> -			 PTR_ERR(reg));
-> -		goto disable_caps;
-> +	cfg->reg_vcore = devm_regulator_get_optional(dev, "dvfsrc-
-> vcore");
-> +	if (IS_ERR(cfg->reg_vcore)) {
-> +		dev_err(dev, "Failed to get dvfsrc-vcore: %pe", cfg-
-> >reg_vcore);
-Since this regulator is optional, why use dev_err ? and why retune an
-error since you never check the return value ?
-> +		return PTR_ERR(cfg->reg_vcore);
->  	}
->  
-> -	if (of_property_read_u32(dev->of_node, "boost-crypt-vcore-min",
-> -				 &volt)) {
-> -		dev_info(dev, "failed to get boost-crypt-vcore-min");
-> -		goto disable_caps;
-> +	ret = of_property_read_u32(dev->of_node, "mediatek,boost-crypt-
-> vcore-min",
-> +				   &cfg->vcore_volt);
-> +	if (ret) {
-> +		dev_err(dev, "Failed to get mediatek,boost-crypt-vcore-
-> min: %pe\n",
-> +			ERR_PTR(ret));
-> +		return ret;
->  	}
->  
-> -	cfg = host->crypt;
-> -	if (ufs_mtk_init_host_clk(hba, "crypt_mux",
-> -				  &cfg->clk_crypt_mux))
-> -		goto disable_caps;
-> +	cfg->clk_crypt_mux = devm_clk_get(dev, "crypt_mux");
-> +	if (IS_ERR(cfg->clk_crypt_mux)) {
-> +		dev_err(dev, "Failed to get clock crypt_mux: %pe\n",
-> cfg->clk_crypt_mux);
-> +		return PTR_ERR(cfg->clk_crypt_mux);
-> +	}
->  
-> -	if (ufs_mtk_init_host_clk(hba, "crypt_lp",
-> -				  &cfg->clk_crypt_lp))
-> -		goto disable_caps;
-> +	cfg->clk_crypt_lp = devm_clk_get(dev, "crypt_lp");
-> +	if (IS_ERR(cfg->clk_crypt_lp)) {
-> +		dev_err(dev, "Failed to get clock crypt_lp: %pe\n",
-> cfg->clk_crypt_lp);
-> +		return PTR_ERR(cfg->clk_crypt_lp);
-> +	}
->  
-> -	if (ufs_mtk_init_host_clk(hba, "crypt_perf",
-> -				  &cfg->clk_crypt_perf))
-> -		goto disable_caps;
-> +	cfg->clk_crypt_perf = devm_clk_get(dev, "crypt_perf");
-> +	if (IS_ERR(cfg->clk_crypt_perf)) {
-> +		dev_err(dev, "Failed to get clock crypt_perf: %pe\n",
-> cfg->clk_crypt_perf);
-> +		return PTR_ERR(cfg->clk_crypt_perf);
-> +	}
->  
-> -	cfg->reg_vcore = reg;
-> -	cfg->vcore_volt = volt;
-> +	host->crypt = cfg;
->  	host->caps |= UFS_MTK_CAP_BOOST_CRYPT_ENGINE;
->  
-> -disable_caps:
-> -	return;
-> +	return 0;
->  }
->  
->  static void ufs_mtk_init_host_caps(struct ufs_hba *hba)
-> 
+From: Prudhvi Yarlagadda <quic_pyarlaga@quicinc.com>
+
+The fifth PCIe instance on Glymur has a Gen5 4-lane PHY. Document it as a
+separate compatible.
+
+Signed-off-by: Prudhvi Yarlagadda <quic_pyarlaga@quicinc.com>
+Signed-off-by: Wenbin Yao <wenbin.yao@oss.qualcomm.com>
+Acked-by: Rob Herring (Arm) <robh@kernel.org>
+Signed-off-by: Qiang Yu <qiang.yu@oss.qualcomm.com>
+---
+ Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+index 9f5f9af6f6cd8373358ad7ec8303a62f006c1f95..48bd11410e8c2de664d47262b982473ee24cf09d 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+@@ -16,6 +16,7 @@ description:
+ properties:
+   compatible:
+     enum:
++      - qcom,glymur-qmp-gen5x4-pcie-phy
+       - qcom,qcs615-qmp-gen3x1-pcie-phy
+       - qcom,qcs8300-qmp-gen4x2-pcie-phy
+       - qcom,sa8775p-qmp-gen4x2-pcie-phy
+@@ -178,6 +179,7 @@ allOf:
+         compatible:
+           contains:
+             enum:
++              - qcom,glymur-qmp-gen5x4-pcie-phy
+               - qcom,sa8775p-qmp-gen4x2-pcie-phy
+               - qcom,sa8775p-qmp-gen4x4-pcie-phy
+               - qcom,sc8280xp-qmp-gen3x1-pcie-phy
+@@ -213,6 +215,7 @@ allOf:
+         compatible:
+           contains:
+             enum:
++              - qcom,glymur-qmp-gen5x4-pcie-phy
+               - qcom,sm8550-qmp-gen4x2-pcie-phy
+               - qcom,sm8650-qmp-gen4x2-pcie-phy
+               - qcom,x1e80100-qmp-gen3x2-pcie-phy
+
+-- 
+2.34.1
+
+
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
