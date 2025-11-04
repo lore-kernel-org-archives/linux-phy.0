@@ -4,82 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B7DADCCFA03
-	for <linux-phy@archiver.kernel.org>; Tue,  4 Nov 2025 01:18:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7CE9FCCF9F8
+	for <linux-phy@archiver.kernel.org>; Tue,  4 Nov 2025 01:28:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n6WbX7b4IebPVDdkU00GUK+Ax6H2QR0TyUdRrleUr1Y=; b=u05PqooHtSm01x
-	5PtnHDyQEyjxdh4vHgqjYC0IzaxqOp9yHMh10TCyqtm+mAscFTMUxVcNeTrc3w90UJd1b4PPziYiK
-	X0aeKnI2UPIJ1MxOezgZzgPGU/DSquupPV8Pxqdhp42j3By3fkGRf8o88FnpxyyaLFbdXE1NjMktx
-	+BIU2+45dsWNi+iGZXWp8+bFxBVOubz6oyDrurEgRZzksqM9SywwQC1aI7ccYLhRr+ITdnWNLh6h4
-	qiFjGbgnDP578Jr9YjYrCC0aKnA0k8qp72XJR1Z6rP6O/sPA/8WZjUO8qM39dFZbPfQPxEI/+Va1d
-	mlvWd9Dr0J0oLjtkTOLA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=dBE2U7wGLGYK+7SCejFLZk4AHcbgLbc4m2raqN+YwY8=; b=3oP8BPmtmRzh5m
+	qK6M8Y4t96AzWTPDzuPY2sQ0sxJZgS7x6RCZkgG1AYgQTaHfniS5/LYycFsBL395y5VBlWLhSWVMc
+	PKzXRysoqciXCnnjGtp5sCbaaI+1KJQrKVLzZCuS6DpvFn+CYoZV2TZDKrcOcWqXqhw1dWocMqaKA
+	n6hpmZddBJ2lluZtXD40JZAEn71WPV9wtFD7n86VgnXkORrNYKV4JN/yGb6sh8Bt9tn+K78pYXlHu
+	YNpamXf4yLmSxe5tkIjRpXVMxydeRMiYELdZqOUZqEOxEQuronXNFhLMejsxA5yZEvV0UPL6M654E
+	JdnoKR5m77BZzN/CfkUg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vG5hB-0000000Asvp-3jvs;
-	Tue, 04 Nov 2025 01:18:49 +0000
-Received: from mail-m49244.qiye.163.com ([45.254.49.244])
+	id 1vG5qi-0000000Atge-12C1;
+	Tue, 04 Nov 2025 01:28:40 +0000
+Received: from smtp84.cstnet.cn ([159.226.251.84] helo=cstnet.cn)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vG5h8-0000000AsvL-2Qsz;
-	Tue, 04 Nov 2025 01:18:48 +0000
-Received: from [172.16.12.149] (unknown [58.22.7.114])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 2840cd1f4;
-	Tue, 4 Nov 2025 09:18:35 +0800 (GMT+08:00)
-Message-ID: <7fb7e578-b97d-4ea5-a8af-33199563d834@rock-chips.com>
-Date: Tue, 4 Nov 2025 09:18:33 +0800
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v8 03/10] drm/bridge: Implement generic USB Type-C DP HPD
- bridge
-To: Heikki Krogerus <heikki.krogerus@linux.intel.com>
-Cc: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
- Chaoyi Chen <kernel@airkyi.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Heiko Stuebner
- <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
- Andy Yan <andy.yan@rock-chips.com>,
- Yubing Zhang <yubing.zhang@rock-chips.com>,
- Frank Wang <frank.wang@rock-chips.com>,
- Andrzej Hajda <andrzej.hajda@intel.com>,
- Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
- Amit Sunil Dhamne <amitsd@google.com>, Dragan Simic <dsimic@manjaro.org>,
- Johan Jonker <jbx6244@gmail.com>, Diederik de Haas <didi.debian@cknow.org>,
- Peter Robinson <pbrobinson@gmail.com>, linux-usb@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org
-References: <20251029071435.88-1-kernel@airkyi.com>
- <20251029071435.88-4-kernel@airkyi.com>
- <rzozpbqmymdczerh3iijxxtz3xnsznoku7w2mquikwv6u5osvo@7h43hwc2fpzm>
- <eca9d5bd-23bd-4c1d-b2f2-c0c32f14177f@rock-chips.com>
- <aQiymTFVU7UpcJ1p@kuha.fi.intel.com>
-Content-Language: en-US
-From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
-In-Reply-To: <aQiymTFVU7UpcJ1p@kuha.fi.intel.com>
-X-HM-Tid: 0a9a4c71c26b03abkunm130d5e00ad8ac3
-X-HM-MType: 1
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZGUxJHlZCQk5KS09MHxpMSklWFRQJFh
-	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSEpOTE
-	5VSktLVUpCS0tZBg++
-DKIM-Signature: a=rsa-sha256;
-	b=AuKMie6XasD4Ngz32l1vJN8MYJB3Q/ibq1sswvGRbMIkyPTR7zzbtimzXPHmxbP/bkGpQZbAOxK+Ojkz38e9UGsxnPhHyh8hEMd1ysID0NaZV31oqLPgpYK9A8fiLwUsQ9bSXv2Psd5G5LAHaF052M4swaypeBxEzuuYoRhmnOw=; s=default; c=relaxed/relaxed; d=rock-chips.com; v=1;
-	bh=wIQSa2jEFJAsHLJt6tSAavwwKal+P7ObcOZRQSB3xAQ=;
-	h=date:mime-version:subject:message-id:from;
+	id 1vG5qe-0000000Atfs-2ImC
+	for linux-phy@lists.infradead.org;
+	Tue, 04 Nov 2025 01:28:38 +0000
+Received: from localhost.localdomain (unknown [202.112.113.212])
+	by APP-05 (Coremail) with SMTP id zQCowADXgO+1VglpSv1aAQ--.30914S2;
+	Tue, 04 Nov 2025 09:28:32 +0800 (CST)
+From: Ma Ke <make24@iscas.ac.cn>
+To: jckuo@nvidia.com,
+	vkoul@kernel.org,
+	kishon@kernel.org,
+	thierry.reding@gmail.com,
+	jonathanh@nvidia.com
+Cc: linux-phy@lists.infradead.org,
+	linux-tegra@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	akpm@linux-foundation.org,
+	Ma Ke <make24@iscas.ac.cn>,
+	stable@vger.kernel.org
+Subject: [PATCH v2] phy: Fix error handling in tegra_xusb_pad_init
+Date: Tue,  4 Nov 2025 09:28:20 +0800
+Message-Id: <20251104012820.35336-1-make24@iscas.ac.cn>
+X-Mailer: git-send-email 2.17.1
+X-CM-TRANSID: zQCowADXgO+1VglpSv1aAQ--.30914S2
+X-Coremail-Antispam: 1UD129KBjvJXoW7Aw4DKFWkAF15tFW3Aw4fKrg_yoW8ZryUp3
+	WUGas0gr9Ygrs5KF1YvF1IvFyUGa12k34Fvr1rA34akrs3Z34Fqas8trWxAa4UArZ2yF4U
+	JrZxJ34kJFyUC3DanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDU0xBIdaVrnRJUUUPY14x267AKxVW8JVW5JwAFc2x0x2IEx4CE42xK8VAvwI8IcIk0
+	rVWrJVCq3wAFIxvE14AKwVWUJVWUGwA2ocxC64kIII0Yj41l84x0c7CEw4AK67xGY2AK02
+	1l84ACjcxK6xIIjxv20xvE14v26ryj6F1UM28EF7xvwVC0I7IYx2IY6xkF7I0E14v26F4j
+	6r4UJwA2z4x0Y4vEx4A2jsIE14v26r4UJVWxJr1l84ACjcxK6I8E87Iv6xkF7I0E14v26F
+	4UJVW0owAac4AC62xK8xCEY4vEwIxC4wAS0I0E0xvYzxvE52x082IY62kv0487Mc02F40E
+	FcxC0VAKzVAqx4xG6I80ewAv7VC0I7IYx2IY67AKxVWUGVWUXwAv7VC2z280aVAFwI0_Jr
+	0_Gr1lOx8S6xCaFVCjc4AY6r1j6r4UM4x0Y48IcxkI7VAKI48JM4x0x7Aq67IIx4CEVc8v
+	x2IErcIFxwACI402YVCY1x02628vn2kIc2xKxwCY1x0262kKe7AKxVWUtVW8ZwCY02Avz4
+	vE14v_KwCF04k20xvY0x0EwIxGrwCFx2IqxVCFs4IE7xkEbVWUJVW8JwC20s026c02F40E
+	14v26r1j6r18MI8I3I0E7480Y4vE14v26r106r1rMI8E67AF67kF1VAFwI0_Jw0_GFylIx
+	kGc2Ij64vIr41lIxAIcVC0I7IYx2IY67AKxVWUJVWUCwCI42IY6xIIjxv20xvEc7CjxVAF
+	wI0_Gr0_Cr1lIxAIcVCF04k26cxKx2IYs7xG6r1j6r1xMIIF0xvEx4A2jsIE14v26r1j6r
+	4UMIIF0xvEx4A2jsIEc7CjxVAFwI0_Gr0_Gr1UYxBIdaVFxhVjvjDU0xZFpf9x0JUWa0PU
+	UUUU=
+X-Originating-IP: [202.112.113.212]
+X-CM-SenderInfo: ppdnvj2u6l2u1dvotugofq/
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251103_171847_172357_E16BE6F4 
-X-CRM114-Status: GOOD (  25.72  )
+X-CRM114-CacheID: sfid-20251103_172836_949582_6CE88403 
+X-CRM114-Status: GOOD (  11.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,185 +80,71 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 11/3/2025 9:48 PM, Heikki Krogerus wrote:
+If device_add() fails, do not use device_unregister() for error
+handling. device_unregister() consists two functions: device_del() and
+put_device(). device_unregister() should only be called after
+device_add() succeeded because device_del() undoes what device_add()
+does if successful.
 
->>>> diff --git a/drivers/gpu/drm/bridge/Kconfig b/drivers/gpu/drm/bridge/Kconfig
->>>> index a250afd8d662..17257b223a28 100644
->>>> --- a/drivers/gpu/drm/bridge/Kconfig
->>>> +++ b/drivers/gpu/drm/bridge/Kconfig
->>>> @@ -23,13 +23,16 @@ config DRM_AUX_BRIDGE
->>>>    	  build bridges chain.
->>>>    config DRM_AUX_HPD_BRIDGE
->>>> -	tristate
->>>> +	tristate "AUX HPD bridge support"
->>> Why? No, this is supposed to be selected by other drivers. Users don't
->>> know an wouldn't know what is this.
->> In v7, I implemented an additional module for selecting this option. But
->> Heikki believes that it would be better to merge the two modules into one.
-> Like I said before, I was merely curious why not just squash the
-> support into that AUX_PD_HPD_BRIDGE. If that does not make sense, then
-> so be it - make it a "Display Interface Bridge" driver like you
-> originally proposed.
+As comment of device_add() says, 'if device_add() succeeds, you should
+call device_del() when you want to get rid of it. If device_add() has
+not succeeded, use only put_device() to drop the reference count'.
 
-Yes, it is.
+In tegra_xusb_pad_init(), both dev_set_name() and device_add() may
+fail. In either case, we should only use put_device(). After
+device_initialize(), the device has a reference count of 1. If
+dev_set_name() fails, device_add() has not been called. If
+device_add() fails, it has already cleaned up after itself.
+device_unregister() would incorrectly call device_del() when
+device_add() was never successful. Therefore, change both error paths
+to use put_device() instead of device_unregister().
 
+Found by code review.
 
->>>>    	depends on DRM_BRIDGE && OF
->>>>    	select AUXILIARY_BUS
->>>>    	help
->>>>    	  Simple bridge that terminates the bridge chain and provides HPD
->>>>    	  support.
->>>> +	  Specifically, if you want a default Type-C DisplayPort HPD bridge for
->>>> +	  each port of the Type-C controller, say Y here.
->>>> +
->>>>    menu "Display Interface Bridges"
->>>>    	depends on DRM && DRM_BRIDGE
->>>> diff --git a/drivers/gpu/drm/bridge/Makefile b/drivers/gpu/drm/bridge/Makefile
->>>> index c7dc03182e59..2998937444bc 100644
->>>> --- a/drivers/gpu/drm/bridge/Makefile
->>>> +++ b/drivers/gpu/drm/bridge/Makefile
->>>> @@ -1,6 +1,12 @@
->>>>    # SPDX-License-Identifier: GPL-2.0
->>>>    obj-$(CONFIG_DRM_AUX_BRIDGE) += aux-bridge.o
->>>> -obj-$(CONFIG_DRM_AUX_HPD_BRIDGE) += aux-hpd-bridge.o
->>>> +
->>>> +hpd-bridge-y := aux-hpd-bridge.o
->>>> +ifneq ($(CONFIG_TYPEC),)
->>>> +hpd-bridge-y += aux-hpd-typec-dp-bridge.o
->>>> +endif
->>>> +obj-$(CONFIG_DRM_AUX_HPD_BRIDGE) += hpd-bridge.o
->>>> +
->>>>    obj-$(CONFIG_DRM_CHIPONE_ICN6211) += chipone-icn6211.o
->>>>    obj-$(CONFIG_DRM_CHRONTEL_CH7033) += chrontel-ch7033.o
->>>>    obj-$(CONFIG_DRM_CROS_EC_ANX7688) += cros-ec-anx7688.o
->>>> diff --git a/drivers/gpu/drm/bridge/aux-hpd-bridge.c b/drivers/gpu/drm/bridge/aux-hpd-bridge.c
->>>> index 2e9c702c7087..11ad6dc776c7 100644
->>>> --- a/drivers/gpu/drm/bridge/aux-hpd-bridge.c
->>>> +++ b/drivers/gpu/drm/bridge/aux-hpd-bridge.c
->>>> @@ -12,6 +12,8 @@
->>>>    #include <drm/drm_bridge.h>
->>>>    #include <drm/bridge/aux-bridge.h>
->>>> +#include "aux-hpd-bridge.h"
->>>> +
->>>>    static DEFINE_IDA(drm_aux_hpd_bridge_ida);
->>>>    struct drm_aux_hpd_bridge_data {
->>>> @@ -204,7 +206,26 @@ static struct auxiliary_driver drm_aux_hpd_bridge_drv = {
->>>>    	.id_table = drm_aux_hpd_bridge_table,
->>>>    	.probe = drm_aux_hpd_bridge_probe,
->>>>    };
->>>> -module_auxiliary_driver(drm_aux_hpd_bridge_drv);
->>>> +
->>>> +static int drm_aux_hpd_bridge_mod_init(void)
->>>> +{
->>>> +	int ret;
->>>> +
->>>> +	ret = auxiliary_driver_register(&drm_aux_hpd_bridge_drv);
->>>> +	if (ret)
->>>> +		return ret;
->>>> +
->>>> +	return drm_aux_hpd_typec_dp_bridge_init();
->>>> +}
->>>> +
->>>> +static void drm_aux_hpd_bridge_mod_exit(void)
->>>> +{
->>>> +	drm_aux_hpd_typec_dp_bridge_exit();
->>>> +	auxiliary_driver_unregister(&drm_aux_hpd_bridge_drv);
->>>> +}
->>>> +
->>>> +module_init(drm_aux_hpd_bridge_mod_init);
->>>> +module_exit(drm_aux_hpd_bridge_mod_exit);
->>>>    MODULE_AUTHOR("Dmitry Baryshkov <dmitry.baryshkov@linaro.org>");
->>>>    MODULE_DESCRIPTION("DRM HPD bridge");
->>>> diff --git a/drivers/gpu/drm/bridge/aux-hpd-bridge.h b/drivers/gpu/drm/bridge/aux-hpd-bridge.h
->>>> new file mode 100644
->>>> index 000000000000..69364731c2f1
->>>> --- /dev/null
->>>> +++ b/drivers/gpu/drm/bridge/aux-hpd-bridge.h
->>>> @@ -0,0 +1,13 @@
->>>> +/* SPDX-License-Identifier: GPL-2.0-only */
->>>> +#ifndef AUX_HPD_BRIDGE_H
->>>> +#define AUX_HPD_BRIDGE_H
->>>> +
->>>> +#if IS_REACHABLE(CONFIG_TYPEC)
->>>> +int drm_aux_hpd_typec_dp_bridge_init(void);
->>>> +void drm_aux_hpd_typec_dp_bridge_exit(void);
->>>> +#else
->>>> +static inline int drm_aux_hpd_typec_dp_bridge_init(void) { return 0; }
->>>> +static inline void drm_aux_hpd_typec_dp_bridge_exit(void) { }
->>>> +#endif /* IS_REACHABLE(CONFIG_TYPEC) */
->>>> +
->>>> +#endif /* AUX_HPD_BRIDGE_H */
->>>> diff --git a/drivers/gpu/drm/bridge/aux-hpd-typec-dp-bridge.c b/drivers/gpu/drm/bridge/aux-hpd-typec-dp-bridge.c
->>>> new file mode 100644
->>>> index 000000000000..6f2a1fca0fc5
->>>> --- /dev/null
->>>> +++ b/drivers/gpu/drm/bridge/aux-hpd-typec-dp-bridge.c
->>>> @@ -0,0 +1,47 @@
->>>> +// SPDX-License-Identifier: GPL-2.0+
->>>> +#include <linux/of.h>
->>>> +#include <linux/usb/typec_altmode.h>
->>>> +#include <linux/usb/typec_dp.h>
->>>> +#include <linux/usb/typec_notify.h>
->>>> +
->>>> +#include <drm/bridge/aux-bridge.h>
->>>> +
->>>> +#include "aux-hpd-bridge.h"
->>>> +
->>>> +#if IS_REACHABLE(CONFIG_TYPEC)
->>>> +static int drm_typec_bus_event(struct notifier_block *nb,
->>>> +			       unsigned long action, void *data)
->>>> +{
->>> This feels like this should be a part of the Type-C subsystem rather
->>> than DRM.
->> In v7, this used to be a part of the Type-C subsystem. I'm not sure what
->> Heikki thinks about this.
-> Your original proposal of making the entire TYPEC subsystem depend on
-> DRM is _not_ going to happen. In general, if I've now understood this
-> correctly, this thing probable should be a "display interface bridge
-> driver", similar to what you proposed in the previous version.
->
-> Note also that you could make it selected automatically, so there is
-> no need for user selectable option if that's the preference. Kconfig
-> and Makefile gives you options on how to do that. For example, maybe
-> this Kconfig works (or does not, but something like it will):
->
-> diff --git a/drivers/gpu/drm/bridge/Kconfig b/drivers/gpu/drm/bridge/Kconfig
-> index a250afd8d662..7487024ba2ce 100644
-> --- a/drivers/gpu/drm/bridge/Kconfig
-> +++ b/drivers/gpu/drm/bridge/Kconfig
-> @@ -30,6 +30,15 @@ config DRM_AUX_HPD_BRIDGE
->            Simple bridge that terminates the bridge chain and provides HPD
->            support.
->   
-> +if DRM_AUX_HPD_BRIDGE
-> +
-> +config DRM_AUX_HPD_TYPEC_BRIDGE
-> +       tristate
-> +       depends on TYPEC || !TYPEC
-> +       default TYPEC
-> +
-> +endif /* DRM_AUX_HPD_BRIDGE */
-> +
->   menu "Display Interface Bridges"
->          depends on DRM && DRM_BRIDGE
+Cc: stable@vger.kernel.org
+Fixes: 53d2a715c240 ("phy: Add Tegra XUSB pad controller support")
+Signed-off-by: Ma Ke <make24@iscas.ac.cn>
+---
+Changes in v2:
+- modified the Fixes tag;
+- modified the patch description.
+---
+ drivers/phy/tegra/xusb.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
-Thank you for your code. I think both of your points make sense. So choosing the approach you mentioned now (similar to v7) might be a reasonable compromise.
-
-
-
->   
->
->
-> thanks,
->
+diff --git a/drivers/phy/tegra/xusb.c b/drivers/phy/tegra/xusb.c
+index c89df95aa6ca..d89493d68699 100644
+--- a/drivers/phy/tegra/xusb.c
++++ b/drivers/phy/tegra/xusb.c
+@@ -171,16 +171,16 @@ int tegra_xusb_pad_init(struct tegra_xusb_pad *pad,
+ 
+ 	err = dev_set_name(&pad->dev, "%s", pad->soc->name);
+ 	if (err < 0)
+-		goto unregister;
++		goto put_device;
+ 
+ 	err = device_add(&pad->dev);
+ 	if (err < 0)
+-		goto unregister;
++		goto put_device;
+ 
+ 	return 0;
+ 
+-unregister:
+-	device_unregister(&pad->dev);
++put_device:
++	put_device(&pad->dev);
+ 	return err;
+ }
+ 
 -- 
-Best,
-Chaoyi
+2.17.1
 
 
 -- 
