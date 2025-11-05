@@ -4,69 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EBC95CCFA15
-	for <linux-phy@archiver.kernel.org>; Wed,  5 Nov 2025 08:44:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CBD3BCCFA07
+	for <linux-phy@archiver.kernel.org>; Wed,  5 Nov 2025 09:02:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jqRIBoqZ5rLVrOOF/ZhKSH3nPeGIiJ1FldcDwPgUZLA=; b=rWRSxrwbE6SiXs
-	3+B6l6qdnZgIdDTqJxH7uhgQDQTumX0ZpDFEzNjgP+ebOJtvrRgvlQrEERL0pX9e7eOY+JVAYnx7t
-	oTDNzC7EL8N3wnvglb+jIWWKx6jpyIQRzgz/l5QzEaRHGZSaAdEeQDJ9SPsVWe8CCUlcCzkqhTJt6
-	KHkNR3+cf6P7Zjr1Dl1JirORO8l5CsjE81/Mtw5pnQYVyFHvt7WhUXE/2ONAl5vhMG3imY51376kI
-	tA9T0+IKzyDCUesJ/rK7kT0rRQJJv/m0v4PeErM5appV5PBZkH1tn+X6XS7LpRZjKJjANf/rdOZrT
-	hvlaop0oyURpqytUNiVA==;
+	List-Owner; bh=+QecqTI44N2OZtiJvtSzv2/SDqIbwsFquMqRU5FraFs=; b=DiaAX2jawJKgoV
+	L9raKYAAkrdpN4wOCHK/32b8/rslWBxVxQoO93KUIt8/5wWmcFpQiFVDP+kjMZP7DlGMxxh8+Ywd6
+	3u0pKJWK3Onw59EAGGIrPxlKNC/UNuFGwisBjff3wLth+DhkEWBstesyIpbAAv+Y7Hc2l3BPKC2r2
+	6SjyKYQs+6AbXmJTPfu3oQLcu0bvoEmvTZgV3J+q/ULKr/oseRVfnk5ad90KOv6rGzfHnG6aImEck
+	XUqx54zshf9eTbYrpzP+rlmZljQtMkdcyPBZbF0A31yMHi0GKU8urSg4EYg5srZo9E+URZqMXathm
+	webiE70oEB3kp+GURgzQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vGZ8C-0000000DJPT-1zcQ;
-	Wed, 05 Nov 2025 08:44:40 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1vGZPv-0000000DLOP-2VPs;
+	Wed, 05 Nov 2025 09:02:59 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vGZ89-0000000DJOw-0Hrw
-	for linux-phy@lists.infradead.org;
-	Wed, 05 Nov 2025 08:44:38 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 6CF7D4376F;
-	Wed,  5 Nov 2025 08:44:36 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B4CD0C4CEF8;
-	Wed,  5 Nov 2025 08:44:35 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1762332276;
-	bh=B1mrzqdCotHeUPx6GmeRphi3vwwxC29uywn7AUaYpIM=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=CzGUfFRLTsL19Qi/+XP0OzEpr4fmO4sluqZzOHVtWApYci0N543doqZb2LYPRMQR4
-	 dY3EVAfT1DZ2vwrO7fYLaNlYaTSnc+KirvRrrwMu6Ew/NsyGtBg43SQTwVp6Sir5ET
-	 ODovueBinj4gWGjlSR5zIFRhClia0uE1HD8cXIzP6s91aSZItsvOjfYekB9LCByPlR
-	 +owTzT/WQLgiiks5rvCRODfMhUIKdFzoFYtM9H1JdeJAQTf3yvj8hbxZfQPqTT8I9z
-	 ILgsXLWk6nWUVl6SrnknhDK+0kpfZ5ka+Z1NQgsi801m2a32GWLRkoYE2Gd55ZaGeu
-	 mZFe9LQ00RxUA==
-Date: Wed, 5 Nov 2025 09:44:33 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Ritesh Kumar <riteshk@qti.qualcomm.com>
-Cc: robin.clark@oss.qualcomm.com, lumag@kernel.org, 
-	abhinav.kumar@linux.dev, jessica.zhang@oss.qualcomm.com, sean@poorly.run, 
-	marijn.suijten@somainline.org, maarten.lankhorst@linux.intel.com, mripard@kernel.org, 
-	tzimmermann@suse.de, airlied@gmail.com, simona@ffwll.ch, robh@kernel.org, 
-	krzk+dt@kernel.org, conor+dt@kernel.org, quic_mahap@quicinc.com, 
-	andersson@kernel.org, konradybcio@kernel.org, mani@kernel.org, 
-	James.Bottomley@hansenpartnership.com, martin.petersen@oracle.com, vkoul@kernel.org, kishon@kernel.org, 
-	cros-qcom-dts-watchers@chromium.org, Ritesh Kumar <quic_riteshk@quicinc.com>, 
-	linux-phy@lists.infradead.org, linux-arm-msm@vger.kernel.org, dri-devel@lists.freedesktop.org, 
-	freedreno@lists.freedesktop.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-scsi@vger.kernel.org, quic_vproddut@quicinc.com
-Subject: Re: [PATCH v3 1/2] dt-bindings: phy: qcom-edp: Add eDP ref clk for
- sa8775p
-Message-ID: <20251105-juicy-rhino-of-action-b6be48@kuoka>
-References: <20251104114327.27842-1-riteshk@qti.qualcomm.com>
- <20251104114327.27842-2-riteshk@qti.qualcomm.com>
+	id 1vGZPs-0000000DLNT-4B3D;
+	Wed, 05 Nov 2025 09:02:58 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1762333373;
+	bh=D1kXj4gtsjUnasLlwa3L0gfdoh8wYVSZBwRgpQpcno4=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=h3zOaontMw3gV8UO0mm/nlUz+mKiMAJ99bIKofwKyKMd/ku7pb/GREpFL28XlSSRW
+	 6QabUiN3r+QP4AGsx65Op2USw/0Iov00cLyZIeMPqY59O6xhNsIj3xGobD6ai/5suM
+	 5k8uAbunwROmwGt4grXyY3HkP+gnb8Uy2xyRAl7BJZPqggeMaXfPUfk5raLjPKNSXs
+	 0KrLHyYneizQ6UDiG4QI6ENcGQhGjmoTLZtNzeZrGpchVx6h2saSzoedBzZNFncFrJ
+	 7j8NV+Ko32UNle3d/5zC03+HIDvkrQCZNGoU3DOtiRm6U9cvZMJvL7gR1rUrAEuwo9
+	 qLBNnNUOT1d/Q==
+Received: from IcarusMOD.eternityproject.eu (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: kholk11)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 33AF817E0CA1;
+	Wed,  5 Nov 2025 10:02:52 +0100 (CET)
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Matthias Brugger <matthias.bgg@gmail.com>, 
+ Ryder Lee <ryder.lee@mediatek.com>, 
+ Jianjun Wang <jianjun.wang@mediatek.com>, 
+ Bjorn Helgaas <bhelgaas@google.com>, 
+ Lorenzo Pieralisi <lpieralisi@kernel.org>, 
+ =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
+ Manivannan Sadhasivam <mani@kernel.org>, 
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Lee Jones <lee@kernel.org>, 
+ Andrew Lunn <andrew+netdev@lunn.ch>, 
+ "David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
+ Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
+ Lorenzo Bianconi <lorenzo@kernel.org>, Felix Fietkau <nbd@nbd.name>, 
+ Sjoerd Simons <sjoerd@collabora.com>
+Cc: kernel@collabora.com, devicetree@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-mediatek@lists.infradead.org, linux-pci@vger.kernel.org, 
+ linux-phy@lists.infradead.org, netdev@vger.kernel.org, 
+ Daniel Golle <daniel@makrotopia.org>, Bryan Hinton <bryan@bryanhinton.com>, 
+ Conor Dooley <conor.dooley@microchip.com>
+In-Reply-To: <20251101-openwrt-one-network-v2-0-2a162b9eea91@collabora.com>
+References: <20251101-openwrt-one-network-v2-0-2a162b9eea91@collabora.com>
+Subject: Re: (subset) [PATCH v2 00/15] arm64: dts: mediatek: Add Openwrt
+ One AP functionality
+Message-Id: <176233337214.16133.6784720310145740675.b4-ty@collabora.com>
+Date: Wed, 05 Nov 2025 10:02:52 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20251104114327.27842-2-riteshk@qti.qualcomm.com>
+X-Mailer: b4 0.14.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251105_004437_150134_54AA4747 
-X-CRM114-Status: GOOD (  18.50  )
+X-CRM114-CacheID: sfid-20251105_010257_210639_9FB2562A 
+X-CRM114-Status: UNSURE (   7.48  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,71 +94,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Nov 04, 2025 at 05:13:26PM +0530, Ritesh Kumar wrote:
-> From: Ritesh Kumar <quic_riteshk@quicinc.com>
+On Sat, 01 Nov 2025 14:32:45 +0100, Sjoerd Simons wrote:
+> Significant changes in V2:
+>   * https://lore.kernel.org/lkml/20251016-openwrt-one-network-v1-0-de259719b6f2@collabora.com/
+>   * Only introduce labels in mt7981b.dtsi when required
+>   * Switch Airoha EN8811H phy irq to level rather then edge triggered
+>   * Move uart0 pinctrl from board dts to soc dtsi
+>   * Only overwrite constraints with non-default values in MT7981 bindings
+>   * Make SPI NOR nvmem cell labels more meaningfull
+>   * Seperate fixing and disable-by-default for the mt7981 in seperate
+>     patches
 > 
-> When the initial contribution of eDP PHY for sa8775p was done,
-> eDP reference clock voting was missed. It worked fine at that
-> time because the clock was already enabled by the UFS PHY driver.
-> 
-> After commit 77d2fa54a945 ("scsi: ufs: qcom : Refactor
-> phy_power_on/off calls"), eDP reference clock started getting
-> turned off, leading to the following PHY power-on failure:
-> 
-> phy phy-aec2a00.phy.10: phy poweron failed --> -110
-> 
-> To fix this, explicit voting for the eDP reference clock is
-> required. This patch adds the eDP reference clock for sa8775p
-> eDP PHY and updates the corresponding example node.
+> [...]
 
-Please wrap commit message according to Linux coding style / submission
-process (neither too early nor over the limit):
-https://elixir.bootlin.com/linux/v6.4-rc1/source/Documentation/process/submitting-patches.rst#L597
+Applied to v6.18-next/dts64, thanks!
 
-> 
-> Signed-off-by: Ritesh Kumar <quic_riteshk@quicinc.com>
-> ---
->  .../devicetree/bindings/display/msm/qcom,sa8775p-mdss.yaml  | 6 ++++--
->  Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml     | 1 +
->  2 files changed, 5 insertions(+), 2 deletions(-)
-> 
-> diff --git a/Documentation/devicetree/bindings/display/msm/qcom,sa8775p-mdss.yaml b/Documentation/devicetree/bindings/display/msm/qcom,sa8775p-mdss.yaml
-> index e2730a2f25cf..6c827cf9692b 100644
-> --- a/Documentation/devicetree/bindings/display/msm/qcom,sa8775p-mdss.yaml
-> +++ b/Documentation/devicetree/bindings/display/msm/qcom,sa8775p-mdss.yaml
-> @@ -200,9 +200,11 @@ examples:
->                    <0x0aec2000 0x1c8>;
->  
->              clocks = <&dispcc0 MDSS_DISP_CC_MDSS_DPTX0_AUX_CLK>,
-> -                     <&dispcc0 MDSS_DISP_CC_MDSS_AHB_CLK>;
-> +                     <&dispcc0 MDSS_DISP_CC_MDSS_AHB_CLK>,
-> +                     <&gcc GCC_EDP_REF_CLKREF_EN>;
->              clock-names = "aux",
-> -                          "cfg_ahb";
-> +                          "cfg_ahb",
-> +                          "ref";
->  
->              #clock-cells = <1>;
->              #phy-cells = <0>;
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
-> index bfc4d75f50ff..ba757b08b9b1 100644
-> --- a/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
-> @@ -72,6 +72,7 @@ allOf:
->        properties:
->          compatible:
->            enum:
-> +            - qcom,sa8775p-edp-phy
->              - qcom,x1e80100-dp-phy
+[01/15] arm64: dts: mediatek: mt7981b: Configure UART0 pinmux
+        commit: 8bc650405f4476667973b10ec58152d37cd41a99
+[02/15] arm64: dts: mediatek: mt7981b: Add reserved memory for TF-A
+        commit: c6dcf3283044533ec425eb45af3627ec8834aebe
 
-I don't have such code in latest next, which makes it impossible to
-review.
+Cheers,
+Angelo
 
->      then:
->        properties:
-> -- 
-> 2.17.1
-> 
+
 
 -- 
 linux-phy mailing list
