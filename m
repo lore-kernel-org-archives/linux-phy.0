@@ -4,74 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 03CA5CCFA0D
-	for <linux-phy@archiver.kernel.org>; Wed,  5 Nov 2025 16:05:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9667ECCF9F8
+	for <linux-phy@archiver.kernel.org>; Wed,  5 Nov 2025 16:44:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6OEd2Qx00BD4H9nesQK6ASsAmNs6XThA+oh8pW+k4Wc=; b=ekdSU4TkAnHclP
-	QuL8+/epzye8DyTVgPXfB1UDVM/mAPmxDUHM7hGIGjt1WO+yxevlw61sO74yOGZ0NwT+QLilhkN6C
-	d9sSD2gxCOE+7GZEL0ootzBQfA8sbEBl5SOGHeRhIBqSC++YOd53cPhkhAL/bVTlQjreLoZhKIwyi
-	ozYNlVckv8UtKL9ubn3bXXpmH2NiT4YWRCeuofHVSWT1KkZyxlVefvpcgCnpAVoqLr07yszzkBHW7
-	TpERCk06nht3tbSvnGXCzdB0nWMC03hsH1S2kiOSzyZN/WDg+YDd4qBp9IxvjwePl8G2pTlo33R+X
-	HhX7ebzVGwNg5/w7kiaQ==;
+	List-Owner; bh=RXS5qHeGmm1xgqZJj3XtLuWPb2aG1KLHsav3rH2pWzQ=; b=UDNAr3cpTto9BY
+	+znVnaKjJpPtkyV/O9VUfExAY8JjxAVAXM0VXv6c70rVUJBfVloZtMIlI8vBfJf1hlJeCfiuJRNh0
+	uZvqJFx2reans9r67wiK6ocISmVpyI4zCeiICLug6CM5LEocwj2cBS26gna3WUJ+R3Jo+nVFXNoiE
+	9dYa4ea25DID0YqYAQKkVdQ/ajhtz3pNEhqCyIBGi26P8wh+FjUzi1cmPMFGaGBEPf3OtSW130Bt2
+	XvVmcZYkRqHhP+yri6izrgUqGL21GJcgYpo/JBEE6yFR8CljPl7VHBR++pigMpT3AbRHbaMKfe1YD
+	SNDDAO3b26Z337sKUl/w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vGg0e-0000000E1RD-2gm7;
-	Wed, 05 Nov 2025 16:05:20 +0000
-Received: from metis.whiteo.stw.pengutronix.de ([2a0a:edc0:2:b01:1d::104])
+	id 1vGgca-0000000E5jK-0spl;
+	Wed, 05 Nov 2025 16:44:32 +0000
+Received: from mail-wm1-x329.google.com ([2a00:1450:4864:20::329])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vGg0c-0000000E1QA-33go
+	id 1vGgcW-0000000E5i8-4Af9
 	for linux-phy@lists.infradead.org;
-	Wed, 05 Nov 2025 16:05:19 +0000
-Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
-	by metis.whiteo.stw.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
-	(Exim 4.92)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1vGg0F-0001Ma-RR; Wed, 05 Nov 2025 17:04:55 +0100
-Received: from lupine.office.stw.pengutronix.de ([2a0a:edc0:0:900:1d::4e] helo=lupine)
-	by drehscheibe.grey.stw.pengutronix.de with esmtps  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.96)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1vGg0E-007Dp6-3D;
-	Wed, 05 Nov 2025 17:04:55 +0100
-Received: from pza by lupine with local (Exim 4.98.2)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1vGg0E-00000000Cj1-3ksp;
-	Wed, 05 Nov 2025 17:04:54 +0100
-Message-ID: <4857ace4d241d3a0de4fe7247312ff07c930b11e.camel@pengutronix.de>
-Subject: Re: [PATCH v2 06/21] reset: rzv2h-usb2phy: Add support for VBUS mux
- controller registration
-From: Philipp Zabel <p.zabel@pengutronix.de>
-To: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>, 
-	tomm.merciai@gmail.com
-Cc: linux-renesas-soc@vger.kernel.org, biju.das.jz@bp.renesas.com, Vinod
- Koul	 <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Rob
- Herring	 <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor
- Dooley	 <conor+dt@kernel.org>, Fabrizio Castro
- <fabrizio.castro.jz@renesas.com>, Lad Prabhakar
- <prabhakar.mahadev-lad.rj@bp.renesas.com>, Peter Rosin <peda@axentia.se>,
- Yoshihiro Shimoda	 <yoshihiro.shimoda.uh@renesas.com>, Geert Uytterhoeven
- <geert+renesas@glider.be>,  Magnus Damm <magnus.damm@gmail.com>, Arnd
- Bergmann <arnd@arndb.de>, Greg Kroah-Hartman	 <gregkh@linuxfoundation.org>,
- linux-phy@lists.infradead.org, 	devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-Date: Wed, 05 Nov 2025 17:04:54 +0100
-In-Reply-To: <39923e450f1ce220cbca28dcf6b215dd9fa79dde.1762354366.git.tommaso.merciai.xr@bp.renesas.com>
-References: <cover.1762354366.git.tommaso.merciai.xr@bp.renesas.com>
-	 <39923e450f1ce220cbca28dcf6b215dd9fa79dde.1762354366.git.tommaso.merciai.xr@bp.renesas.com>
-User-Agent: Evolution 3.56.1-1+deb13u1 
+	Wed, 05 Nov 2025 16:44:30 +0000
+Received: by mail-wm1-x329.google.com with SMTP id 5b1f17b1804b1-4711b95226dso155725e9.0
+        for <linux-phy@lists.infradead.org>; Wed, 05 Nov 2025 08:44:28 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1762361067; x=1762965867; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=ZY2ovksieRapgk658pHLWkUZACRChu2RMh3Rj1+1OEY=;
+        b=b/U4VMUoQT5ifINeMrEfRMQqK9jEfD3KOSX/Wge+B1c6t+PAmZNWMWg0z4XuVYxky9
+         VBA2OVUjyx5RKEU0PxmTGFgxOvbz7dH4rpFNrQGW4tv/AchIUUq2G/uhQeBBSD8P2BTi
+         C8uc5FcE24Us9Hg5fJcQY1IvAaMVQAMv4uWCOwpbnxMMDPpZtNrOR9r9BcaHpMIH76qG
+         ucvWvlwAUhGOgK9anga5ZrKGcfA5Zi66T6ptR2IqF7Hfp4SX8unMTzviMzAYMdem3FLb
+         ot7U7cka0dM18mouRILcQq/4Wzxq6omlZRhVwzqb+5u/6ulB+4HJa/dpZJpsY82KOHEF
+         TqMw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1762361067; x=1762965867;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=ZY2ovksieRapgk658pHLWkUZACRChu2RMh3Rj1+1OEY=;
+        b=VlmlnK9Cx5BaxWZG+xK2hbSYaOGTjCOnAi/m4phe4QxRn7e2/aC/U3HmrHf4UtKTHw
+         +ia0PpEENhticptGgb8FF3mktN7upZDetCRv9o6TzD6HSH1utobTPmN3zCbfXEuSh4P1
+         FzKcG7f0OXsQdU5leUW3CN3sD1ruL01VexxqekDLE8nrgVn5yYDD127CZAGMEAGY4IK3
+         9ucKWkScG6wUznruZ+IXy+V+72qjs7b7K80wyOWB9rjs4b/u5THWlvx2hz9yya8ExwdY
+         12sJZrRAdHQuUo5/ebJ8WJoHE9ih3PBQojyhvh3ilEBBFUH9EThd9KmRUgK4yNHIx9PS
+         21gg==
+X-Forwarded-Encrypted: i=1; AJvYcCXkRWKBaxTaG3/OgrHBL0x0OxlqAqS0QGxVsM8X5MC9cj5rd9AT09SYbrhCXdUVxX+7WdVB6Z+We4M=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzzYh0dQjg/iHmMtcTyg6ieNr7UqEwUq4+7kl/rNTw+b2iuc7wL
+	SNYNRO2XJKY3Ew0tzbivjMEbRNHkYtvR3LmUUc/tGA2SVNFMnZCY1/Yv
+X-Gm-Gg: ASbGnctvJ+9ngNGwPxsC+HD/F+7f9lwllbHM9xRXQswSTr4om7DDHjhBk5IK4Xd07MW
+	zdsRJufmI/f7kh2ItdceohMMr0BXS3qEaKw55VAOcTJFbsas9DQilnxiHKeruShFXZTXEJucXdO
+	p5F5/2HGda/vVZwjzy4Iv4PTLfN/w7Ej2H4CMUSvS18xdCyp/M+2dRjDpxdAHaQpJ7Rrxep0m+e
+	AivlTjRcYkgRt9wS3g12EOGmXxHv0sMarEi2ceUXh7KM2r8bic91wkgjxDXTTIzZXlbZbrBxoK1
+	k+16xmxTIA36cTunAz1SE1hVSbU37hZdqifAWqpTtyhiHiGqTqjEPXklDgUJnU2eRuUq89GGRgd
+	k6EL1wdn/MF2Gs3wyqaVJSrfwQwMVg2aEJWT9LCZ62sqFrSFsDve/vJ/SqC1nO3Fe1rirfWg0Oq
+	0rjuhqR1zRHHPNOWQXjwJ+rQLgy2zTlhulMh5netWC5rxRyKemDFr0Kk5JhA==
+X-Google-Smtp-Source: AGHT+IGU8h8RqLt1fJTOpph+Kb6J+YXpLSWNisJ5Rw8ElaLdkndSmhqlDVbaDGVZcwA5Mkqog8YWaw==
+X-Received: by 2002:a05:600c:1c90:b0:477:589e:6c2f with SMTP id 5b1f17b1804b1-4775ce1eabamr35876305e9.22.1762361066679;
+        Wed, 05 Nov 2025 08:44:26 -0800 (PST)
+Received: from jernej-laptop.localnet (178-79-73-218.dynamic.telemach.net. [178.79.73.218])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-429dc1fdef7sm11938330f8f.43.2025.11.05.08.44.23
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 05 Nov 2025 08:44:24 -0800 (PST)
+From: Jernej =?UTF-8?B?xaBrcmFiZWM=?= <jernej.skrabec@gmail.com>
+To: linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
+ Marco Crivellari <marco.crivellari@suse.com>
+Cc: Tejun Heo <tj@kernel.org>, Lai Jiangshan <jiangshanlai@gmail.com>,
+ Frederic Weisbecker <frederic@kernel.org>,
+ Sebastian Andrzej Siewior <bigeasy@linutronix.de>,
+ Marco Crivellari <marco.crivellari@suse.com>, Michal Hocko <mhocko@suse.com>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, Samuel Holland <samuel@sholland.org>
+Subject: Re: [PATCH] phy: sun4i-usb: replace use of system_wq with system_percpu_wq
+Date: Wed, 05 Nov 2025 17:44:22 +0100
+Message-ID: <12772271.O9o76ZdvQC@jernej-laptop>
+In-Reply-To: <20251105152023.259813-1-marco.crivellari@suse.com>
+References: <20251105152023.259813-1-marco.crivellari@suse.com>
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
-X-SA-Exim-Mail-From: p.zabel@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.whiteo.stw.pengutronix.de); SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251105_080518_770790_CF753D42 
-X-CRM114-Status: GOOD (  21.12  )
+X-CRM114-CacheID: sfid-20251105_084429_094224_66E26F33 
+X-CRM114-Status: GOOD (  10.10  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,127 +100,30 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mi, 2025-11-05 at 16:39 +0100, Tommaso Merciai wrote:
-> The RZ/V2H USB2 PHY requires control of the VBUS selection line
-> (VBENCTL) through a mux controller described in the device tree as
-> "mux-controller". This change adds support for registering
-> vbus-sel-mux auxiliary driver during probe.
-> 
-> This enables proper management of USB2.0 VBUS source selection on
-> platforms using the RZ/V2H SoC.
-> 
-> Signed-off-by: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
-> ---
-> v1->v2:
->  - New patch
-> 
->  drivers/reset/Kconfig               |  1 +
->  drivers/reset/reset-rzv2h-usb2phy.c | 65 +++++++++++++++++++++++++++++
->  2 files changed, 66 insertions(+)
-> 
-> diff --git a/drivers/reset/Kconfig b/drivers/reset/Kconfig
-> index e1ae624661f3..f54e216ca7f6 100644
-> --- a/drivers/reset/Kconfig
-> +++ b/drivers/reset/Kconfig
-> @@ -255,6 +255,7 @@ config RESET_RZG2L_USBPHY_CTRL
->  config RESET_RZV2H_USB2PHY
->  	tristate "Renesas RZ/V2H(P) (and similar SoCs) USB2PHY Reset driver"
->  	depends on ARCH_RENESAS || COMPILE_TEST
-> +	select AUXILIARY_BUS
->  	help
->  	  Support for USB2PHY Port reset Control found on the RZ/V2H(P) SoC
->  	  (and similar SoCs).
-> diff --git a/drivers/reset/reset-rzv2h-usb2phy.c b/drivers/reset/reset-rzv2h-usb2phy.c
-> index 5bdd39274612..6074aa8cc13a 100644
-> --- a/drivers/reset/reset-rzv2h-usb2phy.c
-> +++ b/drivers/reset/reset-rzv2h-usb2phy.c
-> @@ -5,8 +5,10 @@
->   * Copyright (C) 2025 Renesas Electronics Corporation
->   */
->  
-> +#include <linux/auxiliary_bus.h>
->  #include <linux/cleanup.h>
->  #include <linux/delay.h>
-> +#include <linux/idr.h>
->  #include <linux/io.h>
->  #include <linux/module.h>
->  #include <linux/of.h>
-> @@ -14,6 +16,9 @@
->  #include <linux/pm_runtime.h>
->  #include <linux/reset.h>
->  #include <linux/reset-controller.h>
-> +#include <linux/reset/reset_rzv2h_usb2phy.h>
-> +
-> +static DEFINE_IDA(auxiliary_ids);
->  
->  struct rzv2h_usb2phy_regval {
->  	u16 reg;
-> @@ -104,6 +109,62 @@ static int rzv2h_usb2phy_reset_of_xlate(struct reset_controller_dev *rcdev,
->  	return 0;
->  }
->  
-> +static void rzv2h_usb2phy_reset_adev_unregister(void *data)
-> +{
-> +	struct auxiliary_device *adev = data;
-> +
-> +	auxiliary_device_delete(adev);
-> +	auxiliary_device_uninit(adev);
-> +}
-> +
-> +static void rzv2h_usb2phy_reset_adev_release(struct device *dev)
-> +{
-> +	struct auxiliary_device *adev = to_auxiliary_dev(dev);
-> +
-> +	ida_free(&auxiliary_ids, adev->id);
-> +}
-> +
-> +static int rzv2h_usb2phy_reset_mux_register(struct device *dev,
-> +					    void __iomem *base,
-> +					    const char *mux_name)
-> +{
-> +	struct reset_rzv2h_usb2phy_adev *rdev;
-> +	struct auxiliary_device *adev;
-> +	int ret;
-> +
-> +	rdev = devm_kzalloc(dev, sizeof(*rdev), GFP_KERNEL);
-> +	if (!rdev)
-> +		return -ENOMEM;
-> +
-> +	rdev->base = base;
-> +
-> +	adev = &rdev->adev;
-> +	adev->name = mux_name;
-> +	adev->dev.parent = dev->parent;
-> +	adev->dev.release = rzv2h_usb2phy_reset_adev_release;
-> +	adev->dev.of_node = dev->of_node;
-> +	ret = ida_alloc(&auxiliary_ids, GFP_KERNEL);
-> +	if (ret < 0)
-> +		return ret;
-> +	adev->id = ret;
-> +
-> +	ret = auxiliary_device_init(adev);
-> +	if (ret)
-> +		goto cleanup_ida;
-> +
-> +	ret = auxiliary_device_add(adev);
-> +	if (ret) {
-> +		auxiliary_device_uninit(adev);
-> +		goto cleanup_ida;
-> +	}
-> +
-> +	return devm_add_action_or_reset(dev, rzv2h_usb2phy_reset_adev_unregister, adev);
-
-Can't you use __devm_auxiliary_device_create()?
-
-regards
-Philipp
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+RG5lIHNyZWRhLCA1LiBub3ZlbWJlciAyMDI1IG9iIDE2OjIwOjIzIFNyZWRuamVldnJvcHNraSBz
+dGFuZGFyZG5pIMSNYXMgamUgTWFyY28gQ3JpdmVsbGFyaSBuYXBpc2FsKGEpOgo+IEN1cnJlbnRs
+eSBpZiBhIHVzZXIgZW5xdWV1ZXMgYSB3b3JrIGl0ZW0gdXNpbmcgc2NoZWR1bGVfZGVsYXllZF93
+b3JrKCkgdGhlCj4gdXNlZCB3cSBpcyAic3lzdGVtX3dxIiAocGVyLWNwdSB3cSkgd2hpbGUgcXVl
+dWVfZGVsYXllZF93b3JrKCkgdXNlCj4gV09SS19DUFVfVU5CT1VORCAodXNlZCB3aGVuIGEgY3B1
+IGlzIG5vdCBzcGVjaWZpZWQpLiBUaGUgc2FtZSBhcHBsaWVzIHRvCj4gc2NoZWR1bGVfd29yaygp
+IHRoYXQgaXMgdXNpbmcgc3lzdGVtX3dxIGFuZCBxdWV1ZV93b3JrKCksIHRoYXQgbWFrZXMgdXNl
+Cj4gYWdhaW4gb2YgV09SS19DUFVfVU5CT1VORC4KPiAKPiBUaGlzIGxhY2sgb2YgY29uc2lzdGVu
+Y3kgY2Fubm90IGJlIGFkZHJlc3NlZCB3aXRob3V0IHJlZmFjdG9yaW5nIHRoZSBBUEkuCj4gCj4g
+VGhpcyBwYXRjaCBjb250aW51ZXMgdGhlIGVmZm9ydCB0byByZWZhY3RvciB3b3JxdWV1ZSBBUElz
+LCB3aGljaCBoYXMgYmVndW4KPiB3aXRoIHRoZSBjaGFuZ2UgaW50cm9kdWNpbmcgbmV3IHdvcmtx
+dWV1ZXMgYW5kIGEgbmV3IGFsbG9jX3dvcmtxdWV1ZSBmbGFnOgo+IAo+IGNvbW1pdCAxMjhlYTlm
+NmNjZmIgKCJ3b3JrcXVldWU6IEFkZCBzeXN0ZW1fcGVyY3B1X3dxIGFuZCBzeXN0ZW1fZGZsX3dx
+IikKPiBjb21taXQgOTMwYzJlYTU2NmFmICgid29ya3F1ZXVlOiBBZGQgbmV3IFdRX1BFUkNQVSBm
+bGFnIikKPiAKPiBSZXBsYWNlIHN5c3RlbV93cSB3aXRoIHN5c3RlbV9wZXJjcHVfd3EsIGtlZXBp
+bmcgdGhlIHNhbWUgYmVoYXZpb3IuCj4gVGhlIG9sZCB3cSAoc3lzdGVtX3dxKSB3aWxsIGJlIGtl
+cHQgZm9yIGEgZmV3IHJlbGVhc2UgY3ljbGVzLgo+IAo+IFN1Z2dlc3RlZC1ieTogVGVqdW4gSGVv
+IDx0akBrZXJuZWwub3JnPgo+IFNpZ25lZC1vZmYtYnk6IE1hcmNvIENyaXZlbGxhcmkgPG1hcmNv
+LmNyaXZlbGxhcmlAc3VzZS5jb20+CgpSZXZpZXdlZC1ieTogSmVybmVqIFNrcmFiZWMgPGplcm5l
+ai5za3JhYmVjQGdtYWlsLmNvbT4KCkJlc3QgcmVnYXJkcywKSmVybmVqCgoKCi0tIApsaW51eC1w
+aHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlz
+dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
