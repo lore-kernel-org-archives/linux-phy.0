@@ -4,53 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6AE5CCF9F8
-	for <linux-phy@archiver.kernel.org>; Wed,  5 Nov 2025 21:18:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 48F22CCF9F8
+	for <linux-phy@archiver.kernel.org>; Wed,  5 Nov 2025 21:18:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KyY0ItVaiDV7VReOxkpu5AmvnytMcS6iU07K3ao1fIM=; b=1/jRi0FQLYjNb2
-	+aaiNKiTrEZ1F+TmpBbhf5Qd7CFZCjZ7hXYSnDmK8xB+HlEK9kd/JdKC4cBqu9sju13xxKVLqrTHR
-	TnmJA925jidyzu0HW/vU6QUWQIz0UcAMCLEfBe6FYG2/Nswlk5HEB73KmVcQGJzDZaH8DoPPW8ktS
-	SucG8nm7O4z/MsrUW1epQlocnNOBRELsn3EwFJEJqkHqB2KjhywUrswvEipQF8LMx6bOQg64ootcc
-	0QlEDAyvesu0FgHCNc+9vse3N8rxL/govZrODBrvwRGTsvd/QuolExm5jlnNayH8TPLEiBDViH6Fw
-	Bn0Y1nxAO9XIwsOi4lug==;
+	List-Owner; bh=KYuelZQdFw+6XVkSJYXoJdD/PGLS3/yYMsJaLSEA3lg=; b=TLtt8xY9Dy/Uth
+	zvE1CG6zX9buB9MWdffzo3xmMk0eChBSC5HYK0ZB54X+tdOeH2dYZPSrI9fdIh1FwKmh6W76ut/Yh
+	wH+NaHKYgej54T2eWageLKVYA37rlcyma1LFEHt4wdKrdICblxFU34k40SSiTrAUnVycjzkw6kly1
+	8uDw+d76KqoGcH0BOkeP9owNDvAbeBk0+W2LND8GmbyBze6muVpBF9dPbspQjiw2DNRuR+ZpGuoVF
+	vG6yAiRAvIJNC9UQnC1iz+yUK1RxB28K8PG6++DC+k4R1nYXhQKoTrRYjEu/h+y2RSILT/HAxE1d/
+	ik4/d7HBrmy3M8PRa7UQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vGku5-0000000EUHy-1uaf;
-	Wed, 05 Nov 2025 21:18:53 +0000
-Received: from bali.collaboradmins.com ([148.251.105.195])
+	id 1vGku7-0000000EULa-3Xcf;
+	Wed, 05 Nov 2025 21:18:55 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vGktu-0000000ETzV-01bB;
-	Wed, 05 Nov 2025 21:18:43 +0000
+	id 1vGktu-0000000ETzx-2I9Z;
+	Wed, 05 Nov 2025 21:18:44 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1762377515;
-	bh=0HQMjZYjWvOC8AwZB4R1t/Hz5V/fyYneHN+5PdUNP20=;
+	s=mail; t=1762377516;
+	bh=l3tEWhRqP4lk80hQap0vJX2rjpGnZh5LT9KfShignVs=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=E+0/zF+6oMms5hJTlxoUCNIi/DeN8KiZrnBjTBO/RUtepOeAYNieN3YDaZ8sXRCTg
-	 0R4a3m6gZap6/EjIdz0PgdQPDVl9JQK5VgB55EKabHBR9y9ltShIHngSc/xm9yFlMI
-	 e6ixnHLiAseOdlMdjnDpsPHOMWyTbKeOpTxoXQKNIAcKLCostve024jIAdX+WRmgu5
-	 6NqNKuorQRxMCvKTbxg23/bThwa8zbmNRYlUVmCggyw/jMvLUIxcgoofcpGAaa5WNW
-	 TNK9SI7WAfpfKHGvNQQrbqK72CLMqOvL0yUsGw5hcX5VNIfNcnZGSDoK7P7sGaTTge
-	 EvrkabOTCXGdQ==
+	b=RZt8bfUA3x1BMPbp6nkMXKDVBZsmSqC8Cr6yQf9Bmt2Dn+/fwoSYvUgfRuREfi7tC
+	 Q/Q8f7iMK8cG1uT2ybpCwmTx6q0+56XFN+FUXpTwPkiJMlqFbUFh6CDhq3d/Sb3pYd
+	 0khH4Qat4TIVxrmiUAmDbJPZJT6v44l65FEstFParsZO2eah/zNv3Ok8LrSTZFrPLT
+	 QOlF3l0Ffm4b5G93+j/mYrVhX1W2ZC5PZDl3BBzk01fwCQCSA3FY8u3Pgkmvk7bXAF
+	 cQY9ji73EbfDjeSbnSNsBMHmBoCAp688kMuyKVrKb17vGX9Deq5zuP796vQziSjtIf
+	 lHPsXdw8w/mGw==
 Received: from beast.luon.net (unknown [IPv6:2a10:3781:2531::8])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
 	(No client certificate requested)
 	(Authenticated sender: sjoerd)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id D171217E141C;
-	Wed,  5 Nov 2025 22:18:35 +0100 (CET)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 3395417E14FF;
+	Wed,  5 Nov 2025 22:18:36 +0100 (CET)
 Received: by beast.luon.net (Postfix, from userid 1000)
-	id A705710F352E3; Wed, 05 Nov 2025 22:18:34 +0100 (CET)
+	id D51B210F352F3; Wed, 05 Nov 2025 22:18:34 +0100 (CET)
 From: Sjoerd Simons <sjoerd@collabora.com>
-Date: Wed, 05 Nov 2025 22:18:00 +0100
-Subject: [PATCH v3 05/13] dt-bindings: phy: mediatek,tphy: Add support for
- MT7981
+Date: Wed, 05 Nov 2025 22:18:08 +0100
+Subject: [PATCH v3 13/13] arm64: dts: mediatek: mt7981b-openwrt-one: Enable
+ wifi
 MIME-Version: 1.0
-Message-Id: <20251105-openwrt-one-network-v3-5-008e2cab38d1@collabora.com>
+Message-Id: <20251105-openwrt-one-network-v3-13-008e2cab38d1@collabora.com>
 References: <20251105-openwrt-one-network-v3-0-008e2cab38d1@collabora.com>
 In-Reply-To: <20251105-openwrt-one-network-v3-0-008e2cab38d1@collabora.com>
 To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
@@ -74,13 +74,11 @@ Cc: kernel@collabora.com, devicetree@vger.kernel.org,
  linux-mediatek@lists.infradead.org, linux-pci@vger.kernel.org, 
  linux-phy@lists.infradead.org, netdev@vger.kernel.org, 
  Daniel Golle <daniel@makrotopia.org>, Bryan Hinton <bryan@bryanhinton.com>, 
- Sjoerd Simons <sjoerd@collabora.com>, 
- Conor Dooley <conor.dooley@microchip.com>
+ Sjoerd Simons <sjoerd@collabora.com>
 X-Mailer: b4 0.14.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251105_131842_202316_35B8CB33 
-X-CRM114-Status: UNSURE (   9.72  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20251105_131842_784749_B7C916F9 
+X-CRM114-Status: GOOD (  12.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,28 +95,72 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add a compatible string for Filogic 820, this chip integrates a MediaTek
-generic T-PHY version 2
+Enable Dual-band WiFI 6 functionality on the Openwrt One
 
-Acked-by: Conor Dooley <conor.dooley@microchip.com>
-Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 Signed-off-by: Sjoerd Simons <sjoerd@collabora.com>
 ---
- Documentation/devicetree/bindings/phy/mediatek,tphy.yaml | 1 +
- 1 file changed, 1 insertion(+)
+V2 -> V3: replace MTK_DRIVE_4mA with direct value
+V1 -> V2: Update eeprom node label
+---
+ .../boot/dts/mediatek/mt7981b-openwrt-one.dts      | 24 ++++++++++++++++++++++
+ arch/arm64/boot/dts/mediatek/mt7981b.dtsi          |  2 +-
+ 2 files changed, 25 insertions(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
-index b2218c1519391..ff5c77ef11765 100644
---- a/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
-+++ b/Documentation/devicetree/bindings/phy/mediatek,tphy.yaml
-@@ -80,6 +80,7 @@ properties:
-               - mediatek,mt2712-tphy
-               - mediatek,mt6893-tphy
-               - mediatek,mt7629-tphy
-+              - mediatek,mt7981-tphy
-               - mediatek,mt7986-tphy
-               - mediatek,mt8183-tphy
-               - mediatek,mt8186-tphy
+diff --git a/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts b/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts
+index 2aea899006453..3de368c73bc81 100644
+--- a/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts
++++ b/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts
+@@ -180,6 +180,22 @@ conf-pd {
+ 			pins = "SPI2_CLK", "SPI2_MOSI", "SPI2_MISO";
+ 		};
+ 	};
++
++	wifi_dbdc_pins: wifi-dbdc-pins {
++		mux {
++			function = "eth";
++			groups = "wf0_mode1";
++		};
++
++		conf {
++			pins = "WF_HB1", "WF_HB2", "WF_HB3", "WF_HB4",
++			       "WF_HB0", "WF_HB0_B", "WF_HB5", "WF_HB6",
++			       "WF_HB7", "WF_HB8", "WF_HB9", "WF_HB10",
++			       "WF_TOP_CLK", "WF_TOP_DATA", "WF_XO_REQ",
++			       "WF_CBA_RESETB", "WF_DIG_RESETB";
++			drive-strength = <4>;
++		};
++	};
+ };
+ 
+ &pwm {
+@@ -257,6 +273,14 @@ &usb_phy {
+ 	status = "okay";
+ };
+ 
++&wifi {
++	nvmem-cells = <&wifi_factory_calibration>;
++	nvmem-cell-names = "eeprom";
++	pinctrl-names = "dbdc";
++	pinctrl-0 = <&wifi_dbdc_pins>;
++	status = "okay";
++};
++
+ &xhci {
+ 	phys = <&u2port0 PHY_TYPE_USB2>;
+ 	vusb33-supply = <&reg_3p3v>;
+diff --git a/arch/arm64/boot/dts/mediatek/mt7981b.dtsi b/arch/arm64/boot/dts/mediatek/mt7981b.dtsi
+index a7be3670e0059..66d89495bac52 100644
+--- a/arch/arm64/boot/dts/mediatek/mt7981b.dtsi
++++ b/arch/arm64/boot/dts/mediatek/mt7981b.dtsi
+@@ -490,7 +490,7 @@ wo_ccif0: syscon@151a5000 {
+ 			interrupts = <GIC_SPI 211 IRQ_TYPE_LEVEL_HIGH>;
+ 		};
+ 
+-		wifi@18000000 {
++		wifi: wifi@18000000 {
+ 			compatible = "mediatek,mt7981-wmac";
+ 			reg = <0 0x18000000 0 0x1000000>,
+ 			      <0 0x10003000 0 0x1000>,
 
 -- 
 2.51.0
