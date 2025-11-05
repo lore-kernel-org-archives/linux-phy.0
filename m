@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0544FCCFA0D
-	for <linux-phy@archiver.kernel.org>; Wed,  5 Nov 2025 15:59:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 03CA5CCFA0D
+	for <linux-phy@archiver.kernel.org>; Wed,  5 Nov 2025 16:05:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6IY5dZeOr4GqsZ/ii9vvHnXz8dXrr9Xj/sAyP4qBDg4=; b=fijFkjP6SjRr7L
-	vYUxsW0ewtNoNFDIBAtCh4BYSfiObVONs5ztIX+96rhVAI04fxi3EjvOrMB4iWBtYZ8tW4v0DOash
-	VIf5BZyl9WsQNh5bYCIszGedLM6fXUf+dBlrdQHy/QurTvrcAwVTsm4xFBHlYIQPILl2IA7OhrNft
-	DDD6ASLac+E5ZGaMUdBfkJtNVfsfGjc1raFjo13WhY2qDnNS8ICB8Nzp8giFfjOFTAvwN0A0FWDg5
-	y8Mn8xQ+B6acHA8Dqcrls8mZnPPZ45cc6okPVobCcRU8U/F/rTHdiJgr6IDC1Jg0AmUwxstzIueLs
-	yIVSLOtaJaLe+84e5H8Q==;
+	List-Owner; bh=6OEd2Qx00BD4H9nesQK6ASsAmNs6XThA+oh8pW+k4Wc=; b=ekdSU4TkAnHclP
+	QuL8+/epzye8DyTVgPXfB1UDVM/mAPmxDUHM7hGIGjt1WO+yxevlw61sO74yOGZ0NwT+QLilhkN6C
+	d9sSD2gxCOE+7GZEL0ootzBQfA8sbEBl5SOGHeRhIBqSC++YOd53cPhkhAL/bVTlQjreLoZhKIwyi
+	ozYNlVckv8UtKL9ubn3bXXpmH2NiT4YWRCeuofHVSWT1KkZyxlVefvpcgCnpAVoqLr07yszzkBHW7
+	TpERCk06nht3tbSvnGXCzdB0nWMC03hsH1S2kiOSzyZN/WDg+YDd4qBp9IxvjwePl8G2pTlo33R+X
+	HhX7ebzVGwNg5/w7kiaQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vGfvM-0000000E0TN-2Sew;
-	Wed, 05 Nov 2025 15:59:52 +0000
+	id 1vGg0e-0000000E1RD-2gm7;
+	Wed, 05 Nov 2025 16:05:20 +0000
 Received: from metis.whiteo.stw.pengutronix.de ([2a0a:edc0:2:b01:1d::104])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vGfvK-0000000E0Sx-1p8L
+	id 1vGg0c-0000000E1QA-33go
 	for linux-phy@lists.infradead.org;
-	Wed, 05 Nov 2025 15:59:51 +0000
+	Wed, 05 Nov 2025 16:05:19 +0000
 Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
 	by metis.whiteo.stw.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
 	(Exim 4.92)
 	(envelope-from <p.zabel@pengutronix.de>)
-	id 1vGfuv-0000Rf-LD; Wed, 05 Nov 2025 16:59:25 +0100
+	id 1vGg0F-0001Ma-RR; Wed, 05 Nov 2025 17:04:55 +0100
 Received: from lupine.office.stw.pengutronix.de ([2a0a:edc0:0:900:1d::4e] helo=lupine)
 	by drehscheibe.grey.stw.pengutronix.de with esmtps  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
 	(Exim 4.96)
 	(envelope-from <p.zabel@pengutronix.de>)
-	id 1vGfuu-007Djq-1i;
-	Wed, 05 Nov 2025 16:59:24 +0100
+	id 1vGg0E-007Dp6-3D;
+	Wed, 05 Nov 2025 17:04:55 +0100
 Received: from pza by lupine with local (Exim 4.98.2)
 	(envelope-from <p.zabel@pengutronix.de>)
-	id 1vGfuu-00000000CbV-1n3z;
-	Wed, 05 Nov 2025 16:59:24 +0100
-Message-ID: <180fcd1307af02eadc6136512ef78226bc7c00dd.camel@pengutronix.de>
-Subject: Re: [PATCH v2 03/21] reset: rzv2h-usb2phy: Keep PHY clock enabled
- for entire device lifetime
+	id 1vGg0E-00000000Cj1-3ksp;
+	Wed, 05 Nov 2025 17:04:54 +0100
+Message-ID: <4857ace4d241d3a0de4fe7247312ff07c930b11e.camel@pengutronix.de>
+Subject: Re: [PATCH v2 06/21] reset: rzv2h-usb2phy: Add support for VBUS mux
+ controller registration
 From: Philipp Zabel <p.zabel@pengutronix.de>
 To: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>, 
 	tomm.merciai@gmail.com
@@ -59,10 +59,10 @@ Cc: linux-renesas-soc@vger.kernel.org, biju.das.jz@bp.renesas.com, Vinod
  Bergmann <arnd@arndb.de>, Greg Kroah-Hartman	 <gregkh@linuxfoundation.org>,
  linux-phy@lists.infradead.org, 	devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org
-Date: Wed, 05 Nov 2025 16:59:24 +0100
-In-Reply-To: <4b760e6e39679edd7f3d3a9a5b4babc7805ffe29.1762354366.git.tommaso.merciai.xr@bp.renesas.com>
+Date: Wed, 05 Nov 2025 17:04:54 +0100
+In-Reply-To: <39923e450f1ce220cbca28dcf6b215dd9fa79dde.1762354366.git.tommaso.merciai.xr@bp.renesas.com>
 References: <cover.1762354366.git.tommaso.merciai.xr@bp.renesas.com>
-	 <4b760e6e39679edd7f3d3a9a5b4babc7805ffe29.1762354366.git.tommaso.merciai.xr@bp.renesas.com>
+	 <39923e450f1ce220cbca28dcf6b215dd9fa79dde.1762354366.git.tommaso.merciai.xr@bp.renesas.com>
 User-Agent: Evolution 3.56.1-1+deb13u1 
 MIME-Version: 1.0
 X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
@@ -70,8 +70,8 @@ X-SA-Exim-Mail-From: p.zabel@pengutronix.de
 X-SA-Exim-Scanned: No (on metis.whiteo.stw.pengutronix.de); SAEximRunCond expanded to false
 X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251105_075950_479038_B47E3E95 
-X-CRM114-Status: GOOD (  18.87  )
+X-CRM114-CacheID: sfid-20251105_080518_770790_CF753D42 
+X-CRM114-Status: GOOD (  21.12  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,59 +88,117 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mi, 2025-11-05 at 16:38 +0100, Tommaso Merciai wrote:
-> The driver was disabling the USB2 PHY clock immediately after register
-> initialization in probe() and after each reset operation. This left the
-> PHY unclocked even though it must remain active for USB functionality.
+On Mi, 2025-11-05 at 16:39 +0100, Tommaso Merciai wrote:
+> The RZ/V2H USB2 PHY requires control of the VBUS selection line
+> (VBENCTL) through a mux controller described in the device tree as
+> "mux-controller". This change adds support for registering
+> vbus-sel-mux auxiliary driver during probe.
 > 
-> The behavior appeared to work only when another driver
-> (e.g., USB controller) had already enabled the clock, making operation
-> unreliable and hardware-dependent. In configurations where this driver
-> is the sole clock user, USB functionality would fail.
+> This enables proper management of USB2.0 VBUS source selection on
+> platforms using the RZ/V2H SoC.
 > 
-> Fix this by:
-> - Enabling the clock once in probe() via pm_runtime_resume_and_get()
-> - Removing all pm_runtime_put() calls from assert/deassert/status
-> - Registering a devm cleanup action to release the clock at removal
-> - Dropping the unnecessary rzv2h_usbphy_assert_helper() function
-> 
-> This ensures the PHY clock remains enabled for the entire device lifetime,
-> preventing instability and aligning with hardware requirements.
-> 
-> Fixes: e3911d7f865b ("reset: Add USB2PHY port reset driver for Renesas RZ/V2H(P)")
 > Signed-off-by: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
 > ---
 > v1->v2:
->  - Improve commit body and commit msg
->  - Added Fixes tag
->  - Dropped unnecessary rzv2h_usbphy_assert_helper() function
+>  - New patch
 > 
->  drivers/reset/reset-rzv2h-usb2phy.c | 64 ++++++++---------------------
->  1 file changed, 18 insertions(+), 46 deletions(-)
+>  drivers/reset/Kconfig               |  1 +
+>  drivers/reset/reset-rzv2h-usb2phy.c | 65 +++++++++++++++++++++++++++++
+>  2 files changed, 66 insertions(+)
 > 
+> diff --git a/drivers/reset/Kconfig b/drivers/reset/Kconfig
+> index e1ae624661f3..f54e216ca7f6 100644
+> --- a/drivers/reset/Kconfig
+> +++ b/drivers/reset/Kconfig
+> @@ -255,6 +255,7 @@ config RESET_RZG2L_USBPHY_CTRL
+>  config RESET_RZV2H_USB2PHY
+>  	tristate "Renesas RZ/V2H(P) (and similar SoCs) USB2PHY Reset driver"
+>  	depends on ARCH_RENESAS || COMPILE_TEST
+> +	select AUXILIARY_BUS
+>  	help
+>  	  Support for USB2PHY Port reset Control found on the RZ/V2H(P) SoC
+>  	  (and similar SoCs).
 > diff --git a/drivers/reset/reset-rzv2h-usb2phy.c b/drivers/reset/reset-rzv2h-usb2phy.c
-> index ae643575b067..5bdd39274612 100644
+> index 5bdd39274612..6074aa8cc13a 100644
 > --- a/drivers/reset/reset-rzv2h-usb2phy.c
 > +++ b/drivers/reset/reset-rzv2h-usb2phy.c
-[...]
-> @@ -175,14 +143,14 @@ static int rzv2h_usb2phy_reset_probe(struct platform_device *pdev)
->  	if (error)
->  		return dev_err_probe(dev, error, "pm_runtime_resume_and_get failed\n");
+> @@ -5,8 +5,10 @@
+>   * Copyright (C) 2025 Renesas Electronics Corporation
+>   */
 >  
-> +	error = devm_add_action_or_reset(dev, rzv2h_usb2phy_reset_pm_runtime_put,
-> +					 dev);
-> +	if (error)
-> +		return dev_err_probe(dev, error, "unable to register cleanup action\n");
+> +#include <linux/auxiliary_bus.h>
+>  #include <linux/cleanup.h>
+>  #include <linux/delay.h>
+> +#include <linux/idr.h>
+>  #include <linux/io.h>
+>  #include <linux/module.h>
+>  #include <linux/of.h>
+> @@ -14,6 +16,9 @@
+>  #include <linux/pm_runtime.h>
+>  #include <linux/reset.h>
+>  #include <linux/reset-controller.h>
+> +#include <linux/reset/reset_rzv2h_usb2phy.h>
 > +
->  	for (unsigned int i = 0; i < data->init_val_count; i++)
->  		writel(data->init_vals[i].val, priv->base + data->init_vals[i].reg);
+> +static DEFINE_IDA(auxiliary_ids);
 >  
-> -	/* keep usb2phy in asserted state */
-> -	rzv2h_usbphy_assert_helper(priv);
+>  struct rzv2h_usb2phy_regval {
+>  	u16 reg;
+> @@ -104,6 +109,62 @@ static int rzv2h_usb2phy_reset_of_xlate(struct reset_controller_dev *rcdev,
+>  	return 0;
+>  }
+>  
+> +static void rzv2h_usb2phy_reset_adev_unregister(void *data)
+> +{
+> +	struct auxiliary_device *adev = data;
+> +
+> +	auxiliary_device_delete(adev);
+> +	auxiliary_device_uninit(adev);
+> +}
+> +
+> +static void rzv2h_usb2phy_reset_adev_release(struct device *dev)
+> +{
+> +	struct auxiliary_device *adev = to_auxiliary_dev(dev);
+> +
+> +	ida_free(&auxiliary_ids, adev->id);
+> +}
+> +
+> +static int rzv2h_usb2phy_reset_mux_register(struct device *dev,
+> +					    void __iomem *base,
+> +					    const char *mux_name)
+> +{
+> +	struct reset_rzv2h_usb2phy_adev *rdev;
+> +	struct auxiliary_device *adev;
+> +	int ret;
+> +
+> +	rdev = devm_kzalloc(dev, sizeof(*rdev), GFP_KERNEL);
+> +	if (!rdev)
+> +		return -ENOMEM;
+> +
+> +	rdev->base = base;
+> +
+> +	adev = &rdev->adev;
+> +	adev->name = mux_name;
+> +	adev->dev.parent = dev->parent;
+> +	adev->dev.release = rzv2h_usb2phy_reset_adev_release;
+> +	adev->dev.of_node = dev->of_node;
+> +	ret = ida_alloc(&auxiliary_ids, GFP_KERNEL);
+> +	if (ret < 0)
+> +		return ret;
+> +	adev->id = ret;
+> +
+> +	ret = auxiliary_device_init(adev);
+> +	if (ret)
+> +		goto cleanup_ida;
+> +
+> +	ret = auxiliary_device_add(adev);
+> +	if (ret) {
+> +		auxiliary_device_uninit(adev);
+> +		goto cleanup_ida;
+> +	}
+> +
+> +	return devm_add_action_or_reset(dev, rzv2h_usb2phy_reset_adev_unregister, adev);
 
-This change is not mentioned in the patch description.
-
-Is initially asserting the reset not required after all?
+Can't you use __devm_auxiliary_device_create()?
 
 regards
 Philipp
