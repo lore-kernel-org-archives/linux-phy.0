@@ -4,95 +4,161 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 99A9ECCF9F8
-	for <linux-phy@archiver.kernel.org>; Wed,  5 Nov 2025 15:20:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 22D84CCF9F8
+	for <linux-phy@archiver.kernel.org>; Wed,  5 Nov 2025 15:40:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Ti94eoF6yGctPr8ufaL2xuZTjIlG+RxuMmuiAtXPVRk=; b=U9WyrOuIObpGl8
-	VB976OdcvPbf8T6ckUy2cno6vbr8I8oPouvls+qWff0U83JkhUVYhAdAecZZ6y5DnwvsytEZD/+U4
-	s7fp0TGePpBd4hk29fjmwK5nVG1WMFKQbvshCpyB4vWdDjo4oOANsPWnLdd4Xx5UrjUD/r+/MZee6
-	Brp0PD0NNsrpIoQ/Acz/givS1eHVOBqhuaxJRD70C7XaBNjjPtwYGXWjNv4cW6d2k0C78NyDTmEaj
-	/BJjIEipNgu0ePLn1cQm83vFmxDonVNoyVgUr/SbS+bjco7Beppd/wAgjb7v7bKLoigIaMlHIUkWx
-	qRn0/kgwS+iksb6TZkfw==;
+	List-Owner; bh=FT2WDkbHRgSV1zFHy0Aob0+2f398W0Kd7IEAaRuoaWA=; b=vFjsbi1TjV9GNi
+	tHhmfpvkZqQjfRovfWnkiN6Aeyk8UYcOr5CJNjrpK9wWo66waNfWL3jOwqWvReMolwlvst9TMfVPd
+	geuBZDfzYVPILu4PBs48dpHk5frlu0bffISllCv1xR+AJTrmyl3yrVFZYtNVKZyrC5EnB9SHPtftB
+	dAA0HZoQSJwszlBab1IGt2t9jyTBIvcouyhJqDTzf5zM1/4fkYFIpiLXcnJCj5TVx+NU7mEY/TSLE
+	SHac9qpLBcCwohnh/gxmKrsrPOdNnBEiVKfI6sITFtY+fmJpalLllEUs9eqUejVutNjMBKhlwiBQV
+	gIA4Tm7KR34VmXg8KjcA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vGfJP-0000000Duqi-0hlg;
-	Wed, 05 Nov 2025 15:20:39 +0000
-Received: from mail-wr1-x42b.google.com ([2a00:1450:4864:20::42b])
+	id 1vGfcF-0000000Dxej-2PId;
+	Wed, 05 Nov 2025 15:40:07 +0000
+Received: from mail-japaneastazlp170100000.outbound.protection.outlook.com ([2a01:111:f403:c405::] helo=TY3P286CU002.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vGfJK-0000000DupL-3EUr
+	id 1vGfcB-0000000Dxdk-1OA4
 	for linux-phy@lists.infradead.org;
-	Wed, 05 Nov 2025 15:20:38 +0000
-Received: by mail-wr1-x42b.google.com with SMTP id ffacd0b85a97d-426f1574a14so4213467f8f.3
-        for <linux-phy@lists.infradead.org>; Wed, 05 Nov 2025 07:20:34 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=suse.com; s=google; t=1762356033; x=1762960833; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=ranMJA7nhTTLeDvlm0qxHCF2jeri90ZrthFQur/cI2M=;
-        b=P1MQ5hcM2KFGnyw9pKxGWKWbCuFLDd14MkHV1HSp3GEibmGbjrFs16t4fsjdBtq2Ot
-         yfXgV6oXKVtfSZqgMAG8PZpjLMa8RWnPuMMRMgL6oqR2sr6gItC1paAuOdVHXnjWw8Ch
-         DJhZLVIkkhv1FfZvV5oqFBLMIHV40k3UKligXWMC/RN46H8X/wwr/+WGVdCyoYZib86k
-         B/FBxpXmgRVRIrAfmYIvKxxihpeECKS2HnVhtBMiXfqGVrpSllI9HzlIVxuaf+ii/Yoa
-         ChHh87RbD15vft1iV9jI6/yKxaELRLjBzjkZMtJ+Jb6mfrtTJawv6ek6BYzgifOMT4UN
-         FV5w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1762356033; x=1762960833;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=ranMJA7nhTTLeDvlm0qxHCF2jeri90ZrthFQur/cI2M=;
-        b=a6w6RdJmSKtSeqNbCTAZpez2PTI2MuMJVXgJKHgNJhmppre9kKi+cLnOANlBXy0sFn
-         RmCVAhldfwPXnv2lBafYt5AzYJFmOm7LCpeNRDsnIrKlUWdUPX3sCZ66O5FjyxlxtbCp
-         95QCeDPoRRjhBitvVGeA8Ixd6rYZCIZyBUmGSP2fzsVc1Ug/H+MzrbbGGk5IcU45hhLX
-         1KqupT22Mj0qXywSifq9Gsq9cKXKEBzE0pyaG0ijmC2+hIWvvF2arCDWSQ1wHndCc+3g
-         aWoo0NPfLuHsi2K4HGzvHjZZzJxfwq0qhY9p3Vv46xX0l0C0Zaz50WHOYXD2zL+WWQGy
-         zhLg==
-X-Forwarded-Encrypted: i=1; AJvYcCV7JmPu2rcJJJlsPJFUD+x415MgAuecRzhczEjtQDy+q2sbtxZhpeybyJbQaf4j6/IrFxpopstAxo0=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyNTrnCoSRkoLgVkZEOlotPXngHslPCReQNs8rCC2qWq52peZqU
-	Dq8Qf4HQeBSI58dd34uCKUDUsPy8pJB3lhYIHLFHZ9NOItk0BUQzupBIE0Thd8OXjMo=
-X-Gm-Gg: ASbGnctQtyIz5wJNxTFv9cE0vt/hIt/qIHe/mQ1S5SKED+oXri8X7cqCx6FOVp94aq7
-	uhk6DCGQhwusojErzGhbGT0DAcN2+7IN9CjCoBDtdoeu3YcuIvANUev8j+rEmHCg7/84P4XKkY0
-	IVg2kceixL6+te4YebZ7c/QwEam1op/8SyBlk7CAlt/l1Jj+wtYk+naRq4AF8OayS60va9qhBnC
-	zpHoQ63KC5yfqR8+s0yFW1DeH+zvP40QMGKmWHPUrNAr0lXkELJnd+1+cFCKO2RQ+Cqp4UhW/dx
-	glIvH66Ue3vUVd1L9uthSfG2SAxYwwEII+GdQExALfuVnaaVczgnWDrGFm37+bwY9zDVCmwucY9
-	8Ti0h+1bQUA6rczvu9eWxeycjMqz5ZC/AUyupoz07sKX+ndVChldm4C0H2mps2X1srdN54JfAGp
-	oZZS6muJJL5sQ+kv9Vv7Kv4x8=
-X-Google-Smtp-Source: AGHT+IHUa1UagvSj8MVB8CHfM78Fkv+vbGeo68mTbHX615SxRGVOlXbaT5kn8JdN3BRCGmBUMVJgvw==
-X-Received: by 2002:a05:6000:22ca:b0:429:c774:dbfc with SMTP id ffacd0b85a97d-429e32c8168mr3259102f8f.12.1762356032871;
-        Wed, 05 Nov 2025 07:20:32 -0800 (PST)
-Received: from localhost.localdomain ([2a00:6d43:105:c401:e307:1a37:2e76:ce91])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-429dc200878sm11018117f8f.45.2025.11.05.07.20.31
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 05 Nov 2025 07:20:32 -0800 (PST)
-From: Marco Crivellari <marco.crivellari@suse.com>
-To: linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-sunxi@lists.linux.dev
-Cc: Tejun Heo <tj@kernel.org>,
-	Lai Jiangshan <jiangshanlai@gmail.com>,
-	Frederic Weisbecker <frederic@kernel.org>,
-	Sebastian Andrzej Siewior <bigeasy@linutronix.de>,
-	Marco Crivellari <marco.crivellari@suse.com>,
-	Michal Hocko <mhocko@suse.com>,
+	Wed, 05 Nov 2025 15:40:06 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=w91+Tevm6hjCYTtaDqgt1rDwy3jFfV+S+aeaV7xr4jIDMKXF+vYf+Ml+/Z8I4qna7X4OYJuu7P6x1gcONXCzq0rppmPUCi9LPHWjytsChjLHPblHbioSgCmaYOOsPVghzeEK3V3hW9B57mfBOAlyQStgd0xJ2HrHIUkeuDTBERXa7ApMJ+7Q7JzBNPEptPO9Mth+uYMZmp3T6PcwcwwCYQwaU0gnUk6FTz0/EWBr7mu3tJzDdh10gibvv3yo0RPJdmgVpQPBgwudEGp5GtcEZqwfx6kDb1/n/5gIFxHGQqTsZwy2fKIYuRrooBGmpKVch2lK36Wz5wCzfUFEuqZLaA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=OSV87wyyzB2cSIDAaDpfdioF0qEvrPeZalUdmbpssXU=;
+ b=ez58u/Fbycogji3/+jml9qohtRfP2sgK6SRrZTxbU3pYiKceBXPhi/PB/cRqa/Vts2mEuuzE+v739YhiRONupqkroTRFs26dOWQSulp23QvRlCLwr6Tidd76LWBZ9SqV1bVX4WAwZEv4bD+SNjdWwiJdtTIyAKq+dTQhctZ66oZFWTS1+xHS/hthw/oHkzItD9wWV+dKjDeRzpCuybxvH3zzwpTPPxEcgN3aiIrYu174OXyIwEA4LLHhnL65yR+RGw2Qgy9A92jpJXXmcjnDgAPbu4Pg0ARRc4DIbnZJeeUcqIkDVTQ9lSN+8APS2tFDgjEhI7cfgW0elK1YU3zlOg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=bp.renesas.com; dmarc=pass action=none
+ header.from=bp.renesas.com; dkim=pass header.d=bp.renesas.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bp.renesas.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=OSV87wyyzB2cSIDAaDpfdioF0qEvrPeZalUdmbpssXU=;
+ b=QzUrWzxYqbmV/YyKEGC6qkydx/QCH3z3qNt6Uov7/mBkkfmJ+j/tOD4bxMKicksnp5ouq1lBCtFuF7K8sMA2SaP06r8TJCIpk/ALvvECamnCDFRJ6nxuSOmJL1Xb2eMCxPzZuElwXIE8pmlSG8ram/nczz+sHColm99voeVTdJI=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=bp.renesas.com;
+Received: from TYCPR01MB11947.jpnprd01.prod.outlook.com (2603:1096:400:3e1::6)
+ by OSZPR01MB9329.jpnprd01.prod.outlook.com (2603:1096:604:1d7::10) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9298.8; Wed, 5 Nov
+ 2025 15:39:59 +0000
+Received: from TYCPR01MB11947.jpnprd01.prod.outlook.com
+ ([fe80::63d8:fff3:8390:8d31]) by TYCPR01MB11947.jpnprd01.prod.outlook.com
+ ([fe80::63d8:fff3:8390:8d31%6]) with mapi id 15.20.9298.010; Wed, 5 Nov 2025
+ 15:39:58 +0000
+From: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
+To: tomm.merciai@gmail.com
+Cc: linux-renesas-soc@vger.kernel.org,
+	biju.das.jz@bp.renesas.com,
+	Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>,
 	Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Chen-Yu Tsai <wens@csie.org>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Samuel Holland <samuel@sholland.org>
-Subject: [PATCH] phy: sun4i-usb: replace use of system_wq with system_percpu_wq
-Date: Wed,  5 Nov 2025 16:20:23 +0100
-Message-ID: <20251105152023.259813-1-marco.crivellari@suse.com>
-X-Mailer: git-send-email 2.51.1
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Fabrizio Castro <fabrizio.castro.jz@renesas.com>,
+	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Peter Rosin <peda@axentia.se>,
+	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	Magnus Damm <magnus.damm@gmail.com>,
+	Arnd Bergmann <arnd@arndb.de>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH v2 00/21] Add USB2.0 support for RZ/G3E
+Date: Wed,  5 Nov 2025 16:38:56 +0100
+Message-ID: <cover.1762354366.git.tommaso.merciai.xr@bp.renesas.com>
+X-Mailer: git-send-email 2.43.0
+X-ClientProxiedBy: FRYP281CA0002.DEUP281.PROD.OUTLOOK.COM (2603:10a6:d10::12)
+ To TYCPR01MB11947.jpnprd01.prod.outlook.com (2603:1096:400:3e1::6)
 MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: TYCPR01MB11947:EE_|OSZPR01MB9329:EE_
+X-MS-Office365-Filtering-Correlation-Id: e68ace78-d042-4258-6188-08de1c8193a0
+X-LD-Processed: 53d82571-da19-47e4-9cb4-625a166a4a2a,ExtAddr
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|1800799024|7416014|52116014|376014|38350700014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?hHr6Hu+/2KzhMfNfe4PPrGgWeDyphn42zaT6GtXyD3BFkl+hVYiszamNqC4g?=
+ =?us-ascii?Q?U8Qpc627c9NOCUC7g0isl20jkFvz4x9tlD/V5L4zO2v5Q990Pn8+LZ3T5otU?=
+ =?us-ascii?Q?jEYSuRC89xG3Aw2uYlYn9DR+BEtse/1qc/cKfFAn+1b5z+L4er+kdVbjiNiF?=
+ =?us-ascii?Q?0kQjGpGgzoK2VbaasAJ7RTJRxr6BDj3nrsd8S0p/cF3bnxTQap4EINbJHsvb?=
+ =?us-ascii?Q?fi0m2ZO+oFwM3vwa/LKysvMo4ho7CdaaRDnlhtE70zQ7ceaXwrV6CGFwoDe3?=
+ =?us-ascii?Q?cNEVadVSW9vds45u6nITXUmtqdTIcOAsCdRMwYfFw5npq9BiDxkWvOuhONRf?=
+ =?us-ascii?Q?PqRjUOLwYRo90y7HZBkIqBO9hM75OB1T9PpugqAcDHOmLXBFLl41PxlMWznF?=
+ =?us-ascii?Q?wZUuwXB1DGuQTE0yfesXrd/+WXJTxrPAuq0/XHo1qbnGf82ik4ULg5igiyph?=
+ =?us-ascii?Q?QLBDOBUrC3nuO2W0YcI6I0AwsdTdU1SHVQ8nau/xhdi8+O/UTfhN+GrHKVdv?=
+ =?us-ascii?Q?a0Erom39HiBdL1HLYDvCh9NqnmBIh7ij0I3a1/UcksyIyEygRQqg2x/qPiFZ?=
+ =?us-ascii?Q?/Zmhecxxp3mHZILOGqUMIfv+lu6sS3p7WQsiaryx6otb+Wo51FC8TDoAeKvk?=
+ =?us-ascii?Q?znPjwLJGWwqynXaQYMQu45gyfr8lIGOppEnv476sN5n7cI0KVP73iE1CitYU?=
+ =?us-ascii?Q?WWByMOaOdWM7lSda++dUJIeeZ4C+OoHd+peFT4Xafb8H9AIiO2JqHKbM1rdZ?=
+ =?us-ascii?Q?7AmpW6voqv99xYjPuhFjQ+I7ZR1GXvH29BIiy3G36Z+NyfW3I0//qHN70Zfj?=
+ =?us-ascii?Q?fxUf7TK6zM8/2wC2ccKky7rNYCoOLTHcWE2p0GfvGM9jUfdM8Jy3/sBKpw9K?=
+ =?us-ascii?Q?fkFGm8M8GxI7DwUE6Wt5Pc5AhFEd8kFGugmPxodXgArtXBS3my6vHqV926RX?=
+ =?us-ascii?Q?Qo4gUedAocDzzemMndtk7He0DxdEPJj92Kp35bgkwXybfAYepWso5DsllnhF?=
+ =?us-ascii?Q?nqaynGOVuXRIQZ1MUaGJV8Pq9/0ReBDPEtNuGSg7y8sngrM9arYnj3kALyrD?=
+ =?us-ascii?Q?7+NEhfKoRLLGMvwQHBFWzOoSu0/29PzVZjXyDJyroNSP6mPPAHVhU6foGYiI?=
+ =?us-ascii?Q?pbD5YIIJn8pvl/cned3jzsT6YkwVWBgL4dblQl/tk65609xp1JRKyLPtltNi?=
+ =?us-ascii?Q?THtZ/RYRYAcf92Rm78hJ4N2SQ57UvKvYT6n964rgXIFHsMjUipy8pMuh+ulm?=
+ =?us-ascii?Q?L8Fzz/3iPoI0fVktUUsHAnriIB/WgT87JjTdabgEqaGqzr9JTBby/VEg7qqW?=
+ =?us-ascii?Q?/VB3aW9c+Qlt3hleE+YRA+GM/Bm/A3RdGqVCrGiatY63lRl4cO/QdBUSUdQa?=
+ =?us-ascii?Q?NY2eUPDsSNBPgOgjEdD2ih1iRs0XLM4uXOouDAU1y6pDhwfe0PND6JRRBy3P?=
+ =?us-ascii?Q?38riYJWVwgsSOXeTNHslms+IJkD6SP625uUAtNTvDIJhaFdU7Oh/s1lCD2Pc?=
+ =?us-ascii?Q?b3YFxzJeiT5+ZWBlClJGYqh48A40AbYvf9ec?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TYCPR01MB11947.jpnprd01.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(7416014)(52116014)(376014)(38350700014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?M2u7K6BScDvtCgGg1TzVzwRj5+IXFk55yFvJZyWyx//wyF198WE4j9PdxXge?=
+ =?us-ascii?Q?dII1uUn/ejgnOLpiPK9TQGpH9deKIR04wNHgt7IpiV7HrUKVQmnmyrUaAfEZ?=
+ =?us-ascii?Q?vGEfNBiOEdosDabLodnB/li1zvbvHEezkQK1qHR3LkGaSfF4tyi0GWKRizWh?=
+ =?us-ascii?Q?q7SYVNiBMtSJsi157HCZQKSsVU3oVcM+fTL0A1lVo2hV0cY60K4kAlTNbtHn?=
+ =?us-ascii?Q?1mv0KsOfd7PL78419Erzo/HpYfMzlk/ClrxWkXaaD2XrStIGHhBP1foxHAU4?=
+ =?us-ascii?Q?nu5AKr9yz1YgZl9/vjQeawbGbl+fisfXq8vzs7qaBHMkPQ/LHdO13oFgwwVe?=
+ =?us-ascii?Q?x3H2HotIZ0I/n8wOdSWSOoNG/neby1xigd8fXp3FyFWXJpPMkw26sWtGAKMy?=
+ =?us-ascii?Q?ppQQEY7RQGS48D17RyOwQnOyMg2+mVWxYIC+EFHpLZLSiaNnr6vH4L7QNvX0?=
+ =?us-ascii?Q?aq/2v3tTB2R0NNsnW0gY4nxPcXwLs/Zj4kAbzWIoCORDBj71AtYSZhKRpiYS?=
+ =?us-ascii?Q?NOoabIB85MgAUmMwjp49JWZrXaReuGG1jwRsuNtCb4TpO9XQTN1kxnJdj4++?=
+ =?us-ascii?Q?eOZIMqo8GSOeA8sG9tg0rcdJMtZrE22CfZuu0PCIFcUwqs6hkH6lOkI/4XOC?=
+ =?us-ascii?Q?lhiRzyjw39a7W5l9WugbxWDu/V0L2RfH1Vk0FGyKAn9x7s40gXbqPfYiH12Y?=
+ =?us-ascii?Q?cqGEetZ9EZCVLHN65FEb4C2azNOeTrDSmRJrutGlF3p5wMgF48Gk9isE/WoD?=
+ =?us-ascii?Q?mIuCz8s7KjQOJIikpgT++C84IMPlUkbYqOjJuM//ruJ6goUZYpjjsaZrrtuK?=
+ =?us-ascii?Q?rDN5PSKSeQTG0E3Rkg+CzXJRWxD7202+i2m/eJz8esNIqccd6Ubi7nk3bx8C?=
+ =?us-ascii?Q?NAi92WXYKgl2PvRzMI8KIe3gdNG9g2aJ+AlT1Qu3iVg6lfq1fo1Tj9lYvJPD?=
+ =?us-ascii?Q?/HwbcOyE9K5LokLrUQPsc9GxE+0FDp1twPqMh2yaa531kA0rSdSqmnPhHlx8?=
+ =?us-ascii?Q?LcFYgUTLlCReWjTDCgjZ80FttM8MLCPzsgRWs74GJDveCsQqIFNAYLco1iC9?=
+ =?us-ascii?Q?pybnmF6+IpsdAcZWirpfE0kzq7sf+w4HzRYHepRw02gGhvm3eh/bQkACeS+o?=
+ =?us-ascii?Q?RUMnsoEwXcY/cKFp62zoyhDrXJuKeTarkqt385eoH1hCBrQD2c83Mj94vnRH?=
+ =?us-ascii?Q?Iwqj2J8lfWwIvpUzSw9YERxB4wvqrvWtCk9vIXLyitj9HU8e8rnlVHB3yiYa?=
+ =?us-ascii?Q?YLgO3dXo4KKn2CH6yYdP9qkd83/9J230hTnE/tIHGyoX1FWDHVviTbhF+pYd?=
+ =?us-ascii?Q?/pvgRZCsvxUhGzkjwn0as4HMGY/KWe4OaGEXzvCGGdUdM+4ID6VFu2V2eI2U?=
+ =?us-ascii?Q?k9ESOCghqK6gDHPOLMkpwN8IZzcWnZgSD25fCvXwxNeapU5I37I1HobeIDx0?=
+ =?us-ascii?Q?Ya6ypCib2p/sNPzTT2K8sguL7zD0GU/YLzPmNoXsgaBK/uoV/0HpshHAwFjT?=
+ =?us-ascii?Q?tzdSsyfKDmwPCFolveRIsWZAeOikgZEr+Yzm71PaVQ0MJ/GajO09Oi0FUddY?=
+ =?us-ascii?Q?5gr4ooCkeQ8ZIiEB4GffgspkhSeQRvjSUNwI5Fths7aRexpQ0fCKbD9znlsd?=
+ =?us-ascii?Q?YmKUE/ymNHEz1+tgYgyqyUk=3D?=
+X-OriginatorOrg: bp.renesas.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: e68ace78-d042-4258-6188-08de1c8193a0
+X-MS-Exchange-CrossTenant-AuthSource: TYCPR01MB11947.jpnprd01.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Nov 2025 15:39:58.8197
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 53d82571-da19-47e4-9cb4-625a166a4a2a
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: +uT7fgiAvA+LoK12FxUcX6/92PPp26FKAxg3IH+rg3glUbksI4nqzOz7WR37YHASUBnZTEPgXAZIufr2wiprdsCWDqK/xvlhIyN+xEU1OMXfRebhwMx7QUOaB2vGpNQ4
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: OSZPR01MB9329
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251105_072034_838976_79F44DC0 
-X-CRM114-Status: GOOD (  13.99  )
+X-CRM114-CacheID: sfid-20251105_074003_757727_0C923F6D 
+X-CRM114-Status: GOOD (  13.93  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,98 +175,83 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Currently if a user enqueues a work item using schedule_delayed_work() the
-used wq is "system_wq" (per-cpu wq) while queue_delayed_work() use
-WORK_CPU_UNBOUND (used when a cpu is not specified). The same applies to
-schedule_work() that is using system_wq and queue_work(), that makes use
-again of WORK_CPU_UNBOUND.
+Dear All,
 
-This lack of consistency cannot be addressed without refactoring the API.
+This patch series adds USB2.0 support for the Renesas R9A09G047 SoC and
+enables it on the RZ/G3E SMARK II board. RZ/G3E has USB2.0 IP that is
+identical to the one's found into the RZ/V2H SoC (R9A09G057).
 
-This patch continues the effort to refactor worqueue APIs, which has begun
-with the change introducing new workqueues and a new alloc_workqueue flag:
+This series apply on top of [1] + [2].
 
-commit 128ea9f6ccfb ("workqueue: Add system_percpu_wq and system_dfl_wq")
-commit 930c2ea566af ("workqueue: Add new WQ_PERCPU flag")
+Thanks & Regards,
+Tommaso
 
-Replace system_wq with system_percpu_wq, keeping the same behavior.
-The old wq (system_wq) will be kept for a few release cycles.
+[1] https://patchwork.kernel.org/project/linux-renesas-soc/list/?series=1015037
+[2] https://patchwork.kernel.org/project/linux-renesas-soc/patch/20250912130911.185674-1-tommaso.merciai.xr@bp.renesas.com/
 
-Suggested-by: Tejun Heo <tj@kernel.org>
-Signed-off-by: Marco Crivellari <marco.crivellari@suse.com>
----
- drivers/phy/allwinner/phy-sun4i-usb.c | 14 +++++++-------
- 1 file changed, 7 insertions(+), 7 deletions(-)
+v1->v2:
+ - Rebased on top of next-20251103 + [1] + [2]
+ - Reworked series to use mux-state for controlling VBUS_SEL
+   as suggested by PZabel added also mux bindings documentation
+   on phy and rst side.
+ - Collected Conor Dooley tags
+ - Dropped unnecessary rzv2h_usbphy_assert_helper() function from
+   rzv2h_usb2phy_reset_probe()
 
-diff --git a/drivers/phy/allwinner/phy-sun4i-usb.c b/drivers/phy/allwinner/phy-sun4i-usb.c
-index 59d38d88efb0..e2fbf8ccf99e 100644
---- a/drivers/phy/allwinner/phy-sun4i-usb.c
-+++ b/drivers/phy/allwinner/phy-sun4i-usb.c
-@@ -359,7 +359,7 @@ static int sun4i_usb_phy_init(struct phy *_phy)
- 		/* Force ISCR and cable state updates */
- 		data->id_det = -1;
- 		data->vbus_det = -1;
--		queue_delayed_work(system_wq, &data->detect, 0);
-+		queue_delayed_work(system_percpu_wq, &data->detect, 0);
- 	}
- 
- 	return 0;
-@@ -482,7 +482,7 @@ static int sun4i_usb_phy_power_on(struct phy *_phy)
- 
- 	/* We must report Vbus high within OTG_TIME_A_WAIT_VRISE msec. */
- 	if (phy->index == 0 && sun4i_usb_phy0_poll(data))
--		mod_delayed_work(system_wq, &data->detect, DEBOUNCE_TIME);
-+		mod_delayed_work(system_percpu_wq, &data->detect, DEBOUNCE_TIME);
- 
- 	return 0;
- }
-@@ -503,7 +503,7 @@ static int sun4i_usb_phy_power_off(struct phy *_phy)
- 	 * Vbus gpio to not trigger an edge irq on Vbus off, so force a rescan.
- 	 */
- 	if (phy->index == 0 && !sun4i_usb_phy0_poll(data))
--		mod_delayed_work(system_wq, &data->detect, POLL_TIME);
-+		mod_delayed_work(system_percpu_wq, &data->detect, POLL_TIME);
- 
- 	return 0;
- }
-@@ -542,7 +542,7 @@ static int sun4i_usb_phy_set_mode(struct phy *_phy,
- 
- 	data->id_det = -1; /* Force reprocessing of id */
- 	data->force_session_end = true;
--	queue_delayed_work(system_wq, &data->detect, 0);
-+	queue_delayed_work(system_percpu_wq, &data->detect, 0);
- 
- 	return 0;
- }
-@@ -654,7 +654,7 @@ static void sun4i_usb_phy0_id_vbus_det_scan(struct work_struct *work)
- 		extcon_set_state_sync(data->extcon, EXTCON_USB, vbus_det);
- 
- 	if (sun4i_usb_phy0_poll(data))
--		queue_delayed_work(system_wq, &data->detect, POLL_TIME);
-+		queue_delayed_work(system_percpu_wq, &data->detect, POLL_TIME);
- }
- 
- static irqreturn_t sun4i_usb_phy0_id_vbus_det_irq(int irq, void *dev_id)
-@@ -662,7 +662,7 @@ static irqreturn_t sun4i_usb_phy0_id_vbus_det_irq(int irq, void *dev_id)
- 	struct sun4i_usb_phy_data *data = dev_id;
- 
- 	/* vbus or id changed, let the pins settle and then scan them */
--	mod_delayed_work(system_wq, &data->detect, DEBOUNCE_TIME);
-+	mod_delayed_work(system_percpu_wq, &data->detect, DEBOUNCE_TIME);
- 
- 	return IRQ_HANDLED;
- }
-@@ -676,7 +676,7 @@ static int sun4i_usb_phy0_vbus_notify(struct notifier_block *nb,
- 
- 	/* Properties on the vbus_power_supply changed, scan vbus_det */
- 	if (val == PSY_EVENT_PROP_CHANGED && psy == data->vbus_power_supply)
--		mod_delayed_work(system_wq, &data->detect, DEBOUNCE_TIME);
-+		mod_delayed_work(system_percpu_wq, &data->detect, DEBOUNCE_TIME);
- 
- 	return NOTIFY_OK;
- }
+Tommaso Merciai (21):
+  phy: renesas: rcar-gen3-usb2: Use devm_pm_runtime_enable()
+  phy: renesas: rcar-gen3-usb2: Factor out VBUS control logic
+  reset: rzv2h-usb2phy: Keep PHY clock enabled for entire device
+    lifetime
+  dt-bindings: reset: renesas,rzv2h-usb2phy: Add '#mux-state-cells'
+    property
+  mux: Add driver for Renesas RZ/V2H USB VBUS_SEL mux
+  reset: rzv2h-usb2phy: Add support for VBUS mux controller registration
+  dt-bindings: phy: renesas,usb2-phy: Document USB VBUS regulator
+  dt-bindings: phy: renesas,usb2-phy: Document mux-states property
+  phy: renesas: rcar-gen3-usb2: Add regulator for OTG VBUS control
+  phy: renesas: rcar-gen3-usb2: Use mux-state for phyrst management
+  dt-bindings: usb: renesas,usbhs: Add RZ/G3E SoC support
+  dt-bindings: phy: renesas,usb2-phy: Document RZ/G3E SoC
+  dt-bindings: reset: Document RZ/G3E USB2PHY reset
+  arm64: dts: renesas: r9a09g057: Add USB2.0 VBUS_SEL mux-controller
+    support
+  arm64: dts: renesas: r9a09g056: Add USB2.0 VBUS_SEL mux-controller
+    support
+  arm64: dts: renesas: r9a09g056: Add USB2.0 PHY VBUS internal regulator
+    node
+  arm64: dts: renesas: r9a09g056n48-rzv2n-evk: Enable USB2 PHY0 VBUS
+    support
+  arm64: dts: renesas: r9a09g057: Add USB2.0 PHY VBUS internal regulator
+    node
+  arm64: dts: renesas: r9a09g057h44-rzv2h-evk: Enable USB2 PHY0 VBUS
+    support
+  arm64: dts: renesas: r9a09g047: Add USB2.0 support
+  arm64: dts: renesas: r9a09g047e57-smarc: Enable USB2.0 support
+
+ .../bindings/phy/renesas,usb2-phy.yaml        |  16 +-
+ .../reset/renesas,rzv2h-usb2phy-reset.yaml    |   9 +-
+ .../bindings/usb/renesas,usbhs.yaml           |   1 +
+ arch/arm64/boot/dts/renesas/r9a09g047.dtsi    | 125 +++++++++
+ .../boot/dts/renesas/r9a09g047e57-smarc.dts   |  49 ++++
+ arch/arm64/boot/dts/renesas/r9a09g056.dtsi    |   7 +
+ .../dts/renesas/r9a09g056n48-rzv2n-evk.dts    |   5 +
+ arch/arm64/boot/dts/renesas/r9a09g057.dtsi    |   9 +
+ .../dts/renesas/r9a09g057h44-rzv2h-evk.dts    |   5 +
+ .../boot/dts/renesas/renesas-smarc2.dtsi      |  23 ++
+ drivers/mux/Kconfig                           |  10 +
+ drivers/mux/Makefile                          |   2 +
+ drivers/mux/rzv2h-usb-vbus.c                  |  97 +++++++
+ drivers/phy/renesas/phy-rcar-gen3-usb2.c      | 263 ++++++++++++++----
+ drivers/reset/Kconfig                         |   1 +
+ drivers/reset/reset-rzv2h-usb2phy.c           | 129 ++++++---
+ include/linux/reset/reset_rzv2h_usb2phy.h     |  15 +
+ 17 files changed, 669 insertions(+), 97 deletions(-)
+ create mode 100644 drivers/mux/rzv2h-usb-vbus.c
+ create mode 100644 include/linux/reset/reset_rzv2h_usb2phy.h
+
 -- 
-2.51.1
+2.43.0
 
 
 -- 
