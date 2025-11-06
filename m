@@ -4,92 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6E8ECCFA03
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Nov 2025 14:41:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 14722CCFA05
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Nov 2025 17:27:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=8dSJtxNHpyYBngD8xdQVsmxR9E27OFGfreF0KGRrSxI=; b=0ZDo0Ue4A7zdhU
-	svpiTD1HWfAxE0MReKDTb62liIYILwxbT7p5rY2ccOUCKlGD9n52/ldg9GF+MO0SMbaoijKBM6Vgg
-	4EOOmB5UJhcf5nGK7DzLE5VxvBfu9JPeJom8q1unkrfK4gwI04vgKPVWuJOcxOPIn+DPMtk6fDYo2
-	viLYHi2QJrNrXqIpHY47dYelBw1QJhe7kx17oFkIH7+qFLchGn8SXVLpMMb1+qs9Ur05Hw9F+UlBu
-	VPxv7mpI7IrZuSfEGyW9r5ogIjWoBSjAsa23G7He9auMfnDW0NhN9v6ioRAjj36MBqUU+VMVE9vuQ
-	VkLMcGFNciq00ck7sbmA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=co2nL8Rui6sWSAMqSv0xZGIK9UpDCBEixgmg1iXSWCQ=; b=1QjPxKx6Djsyjdt5Jl4Dk3SiGr
+	VkD7xKwtP57QCg350i7EoJAp7IRTXHP8b7qOMANkyoQKH+w+5LrOfqJGu1O0uEZ23oh1VX26iu6f9
+	fezd2yf39M6tRH2AYJoAP9ZoapJQ2QGVW85f2n/3HTVCFHSrldTorSuZO3jQXteVizJvREcxb3Sro
+	YGMkbtRRIDVfIRaNyRXs7GYhv73q0j5ZnWfGD5pUtcFqYrDKtFJZEL6Vk0YBc8LoT6R5kFfVfJw+g
+	BDxvbJVeEAM3pPmVuFO6Iu5ihLP0iD8PKXqOXwewLlua+xOfNq3hHqHzog0pw5NTf3iNCaayaK1tS
+	TrvwbsVg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vH1BW-0000000FiIU-1JPc;
-	Thu, 06 Nov 2025 14:41:58 +0000
-Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
+	id 1vH3lb-0000000G1AS-1m1z;
+	Thu, 06 Nov 2025 17:27:23 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vH1BS-0000000FiHu-2zFg
-	for linux-phy@lists.infradead.org;
-	Thu, 06 Nov 2025 14:41:56 +0000
-Received: by mail-wm1-x331.google.com with SMTP id 5b1f17b1804b1-47112edf9f7so6258035e9.0
-        for <linux-phy@lists.infradead.org>; Thu, 06 Nov 2025 06:41:53 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=tuxon.dev; s=google; t=1762440112; x=1763044912; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=XLvBreGMwkIXqaZtfvc2Qx+LalMucsk2m3rxCN5bCz4=;
-        b=MR7BvO56xcyHtNRAnx/uovnVP5g9eciaEUX5QmwxCZ7MwPmHZtCz6VNyW2Q9JZuEjR
-         paWxWHqj2X2G1o6+bHG8M5GI8UpBfZtOFIM0AgYoOMhclKuwvTKRQvOlZ+LG9xSUFBQy
-         fsoCQaAzl8z0BHSKFd6sNbNbTzzE999QAU636kzp9YOLnxlBcrIbtsHLeOWd+Vb8v77l
-         11YhtAsecMnQHD8R7JivyXeLlCwLzKioPePiDLP1HoSa46vXk8apvCZHdy7LkmGQY4O/
-         PZNjAveGkQt6qUlx/+Hr/t9RCTS14BCyfvu4xsrVzFeQK6gEEhjdHe44yxEzAo0yVDgk
-         LKUw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1762440112; x=1763044912;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=XLvBreGMwkIXqaZtfvc2Qx+LalMucsk2m3rxCN5bCz4=;
-        b=ZWpz6H4TMXmMT8iS32VN3QJ3LkGdAeP3p4uBfFyc6WtPojlAeW66C+1w94CtIvtZkn
-         TCAzCeaXOReLBmxZ8DV3+ZIP7K5YyEnHRi2n6VVG0pLOMM/+0qlvin0lyzj1fuO8XNrj
-         GrMg3CLoewKCzBdepOdz57wcwhwREsVbl/Kz+cUTvMRDaCN0aDZIeWY4/rko0MCqSNZN
-         bvNq38rA0esWtoOJKA/T0IIP0bI/irrnIgNsWLNUJZqblmMpYFVK1OtUE8nXnEAoFzlI
-         Z3sukfzGezWGZGIcN0iPbcx/FXhHSgkUCqZO2WmdVqyk1jXBIjbof/1bgjB3DRB3GqJI
-         SB9Q==
-X-Forwarded-Encrypted: i=1; AJvYcCW2bjquHRPqnBKPmyxvUb4y8c3tAxX2MJUb5J8UUXAWZn/4eRSIPbQo7B37j4osPv0fUx1+yMpP9OY=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yy5j2GohNcqmFyZnzENVLAE6IvrfHghPiLQt+SUCHvljQRnCLlT
-	E7Qus7tLFEhfn4Q8q1ZdurLfdhROUlbpsnx3VonaRbrxf7QENUvv/jr3oqRjv9rJ3Rg=
-X-Gm-Gg: ASbGncvaE5sHwFJvb1KyeWI/qQUoPdQvQvHeZI/skepR426YsGb9TGXsGHdEfi8Bgqg
-	B/PT7IT3b/pBSyK/H8RAr8X15TILyTpsLpaizaKlAFgLjzuzRwGk4vBoY0m7lIirDPIMhWTinEV
-	4SOGkcKqygY2bxhUVf42V3oBMA4p/XWVUQYEUySgS/XnYtDKXtYkFpquSVrGEnPqxyPnBq9Sro1
-	vAkCEQ1HgsS0fgQ/Yx1vQXp0JJ01XhIXIhGurbY9baMcBV7QcsfcZ7dOEc5VvuC7PR8pKLgDf8n
-	EstIyZfTA0JSSMmReOgCB+FWdv27DQTCu9D8/RuT7uWE39uA+vZplv7KfyseCQocBhd58VdlR/P
-	cbzl7HkURxrYQKczpE4QisqgqjsT7AX1C5QZNQHmbIFI3dkCXp2iYC8gx6hKJ+9ayKn9tPmBGtt
-	FUdWhgm4vfpDtaMBbFad8PSAPxdm3jYg==
-X-Google-Smtp-Source: AGHT+IEQIEtoq2huqYNM973Pi0C7dV27dTRh+KYLOlZZJrYRyqy5q0MDFqLHXSPi+tcIpGgwQC9bug==
-X-Received: by 2002:a05:6000:184e:b0:429:bc68:6c95 with SMTP id ffacd0b85a97d-429e330ab3dmr6769606f8f.47.1762440111989;
-        Thu, 06 Nov 2025 06:41:51 -0800 (PST)
-Received: from claudiu-X670E-Pro-RS.. ([82.78.167.134])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-429eb42a2aasm5369892f8f.21.2025.11.06.06.41.50
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 06 Nov 2025 06:41:51 -0800 (PST)
-From: Claudiu <claudiu.beznea@tuxon.dev>
-X-Google-Original-From: Claudiu <claudiu.beznea.uj@bp.renesas.com>
-To: yoshihiro.shimoda.uh@renesas.com,
-	vkoul@kernel.org,
-	kishon@kernel.org,
-	geert+renesas@glider.be,
-	magnus.damm@gmail.com,
-	p.zabel@pengutronix.de
-Cc: claudiu.beznea@tuxon.dev,
-	linux-renesas-soc@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
-Subject: [PATCH] phy: renesas: rcar-gen3-usb2: Add suspend/resume support
-Date: Thu,  6 Nov 2025 16:41:48 +0200
-Message-ID: <20251106144148.3051962-1-claudiu.beznea.uj@bp.renesas.com>
-X-Mailer: git-send-email 2.43.0
+	id 1vH3lX-0000000G19v-3RwQ;
+	Thu, 06 Nov 2025 17:27:20 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id E2AF74433B;
+	Thu,  6 Nov 2025 17:27:18 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AC827C116C6;
+	Thu,  6 Nov 2025 17:27:14 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1762450038;
+	bh=lUYNwn621b4INnVv6cYUd9i8ygchqkVKYYeeytWLys8=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=AmMzs73VnjPXmC/0CawgwdAAECJ1wJXAWnwMQs7cvyNsJ8gcIKEmofrUeLkYBv1bd
+	 1dwbVsduZY9Hh2P4Er88otWdF/OtGWQBj59m5EtsoxzMWIQqz4I/gg5CSBj2A1TXk5
+	 +CDYE5TE1HSL3IZtGbNZ/4X9hMqqYJj3wEvS3IweFoWj2AE2jtIarNJYcPWV3e6Try
+	 T5g4cl/zNIMVWgstSipeHjVO7I4mYPDg0HSmdLE1UpofGJZx4AuNIgH3xfYWXSof1Y
+	 TW1r3xus5GPisF2NMyuBSwOVbEIQhFCmZEWc+SbXjqHg69Zu9aFNrWLLQm5Z4gR/u/
+	 7DpEB7V12nwxg==
+Date: Thu, 6 Nov 2025 17:27:12 +0000
+From: Conor Dooley <conor@kernel.org>
+To: Chaoyi Chen <kernel@airkyi.com>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>,
+	Jessica Zhang <jessica.zhang@oss.qualcomm.com>,
+	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Sandy Huang <hjc@rock-chips.com>,
+	Heiko =?iso-8859-1?Q?St=FCbner?= <heiko@sntech.de>,
+	Andy Yan <andy.yan@rock-chips.com>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org,
+	Chaoyi Chen <chaoyi.chen@rock-chips.com>
+Subject: Re: [PATCH 2/9] dt-bindings: phy: rockchip-inno-dsidphy: Add
+ compatible for rk3506
+Message-ID: <20251106-litigate-cultivate-75a4aac333c7@spud>
+References: <20251106020632.92-1-kernel@airkyi.com>
+ <20251106020632.92-3-kernel@airkyi.com>
 MIME-Version: 1.0
+In-Reply-To: <20251106020632.92-3-kernel@airkyi.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251106_064154_793132_441FA757 
-X-CRM114-Status: GOOD (  19.77  )
+X-CRM114-CacheID: sfid-20251106_092719_879079_1F3716ED 
+X-CRM114-Status: UNSURE (   6.47  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,158 +83,48 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============2677312282535672003=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 
-The Renesas RZ/G3S supports a power saving mode where power to most of the
-SoC components is turned off. The USB PHY is among these components.
-Because of this the settings applied in driver probe need to be executed
-also on resume path. On suspend path only reset signal need to be asserted.
-Add suspend/resume support.
+--===============2677312282535672003==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="V33MzIjcuA2BZAPY"
+Content-Disposition: inline
 
-Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
----
 
-This patch is built on top of patches 1/7, 2/7 at [1]
+--V33MzIjcuA2BZAPY
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-[1] https://lore.kernel.org/all/20251023135810.1688415-2-claudiu.beznea.uj@bp.renesas.com
+Acked-by: Conor Dooley <conor.dooley@microchip.com>
+pw-bot: not-applicable
 
- drivers/phy/renesas/phy-rcar-gen3-usb2.c | 66 +++++++++++++++++-------
- 1 file changed, 47 insertions(+), 19 deletions(-)
+--V33MzIjcuA2BZAPY
+Content-Type: application/pgp-signature; name="signature.asc"
 
-diff --git a/drivers/phy/renesas/phy-rcar-gen3-usb2.c b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
-index a38ead7c8055..3c063e4dea41 100644
---- a/drivers/phy/renesas/phy-rcar-gen3-usb2.c
-+++ b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
-@@ -132,6 +132,7 @@ struct rcar_gen3_chan {
- 	struct device *dev;	/* platform_device's device */
- 	const struct rcar_gen3_phy_drv_data *phy_data;
- 	struct extcon_dev *extcon;
-+	struct reset_control *rstc;
- 	struct rcar_gen3_phy rphys[NUM_OF_PHYS];
- 	struct regulator *vbus;
- 	struct work_struct work;
-@@ -778,35 +779,24 @@ static void rcar_gen3_reset_assert(void *data)
- static int rcar_gen3_phy_usb2_init_bus(struct rcar_gen3_chan *channel)
- {
- 	struct device *dev = channel->dev;
--	struct reset_control *rstc;
- 	int ret;
- 	u32 val;
- 
--	rstc = devm_reset_control_array_get_shared(dev);
--	if (IS_ERR(rstc))
--		return PTR_ERR(rstc);
-+	if (!channel->phy_data->init_bus)
-+		return 0;
- 
- 	ret = pm_runtime_resume_and_get(dev);
- 	if (ret)
- 		return ret;
- 
--	ret = reset_control_deassert(rstc);
--	if (ret)
--		goto rpm_put;
--
--	ret = devm_add_action_or_reset(dev, rcar_gen3_reset_assert, rstc);
--	if (ret)
--		goto rpm_put;
--
- 	val = readl(channel->base + USB2_AHB_BUS_CTR);
- 	val &= ~USB2_AHB_BUS_CTR_MBL_MASK;
- 	val |= USB2_AHB_BUS_CTR_MBL_INCR4;
- 	writel(val, channel->base + USB2_AHB_BUS_CTR);
- 
--rpm_put:
- 	pm_runtime_put(dev);
- 
--	return ret;
-+	return 0;
- }
- 
- static int rcar_gen3_phy_usb2_probe(struct platform_device *pdev)
-@@ -846,6 +836,18 @@ static int rcar_gen3_phy_usb2_probe(struct platform_device *pdev)
- 		}
- 	}
- 
-+	channel->rstc = devm_reset_control_array_get_optional_shared(dev);
-+	if (IS_ERR(channel->rstc))
-+		return PTR_ERR(channel->rstc);
-+
-+	ret = reset_control_deassert(channel->rstc);
-+	if (ret)
-+		return ret;
-+
-+	ret = devm_add_action_or_reset(dev, rcar_gen3_reset_assert, channel->rstc);
-+	if (ret)
-+		return ret;
-+
- 	/*
- 	 * devm_phy_create() will call pm_runtime_enable(&phy->dev);
- 	 * And then, phy-core will manage runtime pm for this device.
-@@ -861,11 +863,9 @@ static int rcar_gen3_phy_usb2_probe(struct platform_device *pdev)
- 	platform_set_drvdata(pdev, channel);
- 	channel->dev = dev;
- 
--	if (channel->phy_data->init_bus) {
--		ret = rcar_gen3_phy_usb2_init_bus(channel);
--		if (ret)
--			goto error;
--	}
-+	ret = rcar_gen3_phy_usb2_init_bus(channel);
-+	if (ret)
-+		goto error;
- 
- 	spin_lock_init(&channel->lock);
- 	for (i = 0; i < NUM_OF_PHYS; i++) {
-@@ -936,10 +936,38 @@ static void rcar_gen3_phy_usb2_remove(struct platform_device *pdev)
- 	pm_runtime_disable(&pdev->dev);
- };
- 
-+static int rcar_gen3_phy_usb2_suspend(struct device *dev)
-+{
-+	struct rcar_gen3_chan *channel = dev_get_drvdata(dev);
-+
-+	return reset_control_assert(channel->rstc);
-+}
-+
-+static int rcar_gen3_phy_usb2_resume(struct device *dev)
-+{
-+	struct rcar_gen3_chan *channel = dev_get_drvdata(dev);
-+	int ret;
-+
-+	ret = reset_control_deassert(channel->rstc);
-+	if (ret)
-+		return ret;
-+
-+	ret = rcar_gen3_phy_usb2_init_bus(channel);
-+	if (ret)
-+		reset_control_assert(channel->rstc);
-+
-+	return ret;
-+}
-+
-+static DEFINE_SIMPLE_DEV_PM_OPS(rcar_gen3_phy_usb2_pm_ops,
-+				rcar_gen3_phy_usb2_suspend,
-+				rcar_gen3_phy_usb2_resume);
-+
- static struct platform_driver rcar_gen3_phy_usb2_driver = {
- 	.driver = {
- 		.name		= "phy_rcar_gen3_usb2",
- 		.of_match_table	= rcar_gen3_phy_usb2_match_table,
-+		.pm		= pm_ptr(&rcar_gen3_phy_usb2_pm_ops),
- 	},
- 	.probe	= rcar_gen3_phy_usb2_probe,
- 	.remove = rcar_gen3_phy_usb2_remove,
--- 
-2.43.0
+-----BEGIN PGP SIGNATURE-----
 
+iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaQzacAAKCRB4tDGHoIJi
+0hUTAQD7NwjnqRmBmopmm9xS3ZqfaL4Lj+EawXUG/K8Qy/2v1QEArBXv4nDqLv9S
+VD0Fl63GQYh+57qF0vwhbIjEcBRyQgs=
+=XWuK
+-----END PGP SIGNATURE-----
+
+--V33MzIjcuA2BZAPY--
+
+
+--===============2677312282535672003==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============2677312282535672003==--
+
