@@ -4,80 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46025CCFA0D
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Nov 2025 03:07:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BF19ACCF9F8
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Nov 2025 08:04:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Wsycfgjd2mXwnIFspxj6qV9j61TuZhEos9BPVuMuh2I=; b=wUirRQlz6r8/tL
-	U/u9ecgVqd8JALDTqkwRQw69/M8LBR/NE8q3PieP68lIrxfuwmOCikac9vMzr8ENzFCozoWyGBmId
-	BGAWXBl3dNFhXp4X6e5TqkQO3fVAdWjIxQEWwTIeSOEI2sZc1DIT0nPx11iRLb6UKgvxSfC45qpUj
-	u7ImU94TGrTvn5B+6Hc4YujMibqBOGRCQUEb93ItUdnB/5B4hmun53lRHYDIoLlsBng+KQ8OD8v4c
-	Kc6YHGgFwGNO9CkdGjPehzTGxsIT9DYxzIluc1ZZpBH6vuep2rP29m1EyxO7lNIL/rp/t5F3RnIyd
-	2kl1n/inLXxYXRV0FgHA==;
+	List-Owner; bh=gKK+l6azRyIheRkNdWa3IJVEqLUoxE4re7V7h8kHnsk=; b=fZtBdgngRV91C3
+	1OdJbjbUI0BeN8npdLnoO7f/WtVqVF0q5dMLCuEM1+VM9qXx0CkzbnD0mLd6qYg6DjD9hFb+uBRls
+	R5wogXyGjHgHayYvHJ+rG4szpiwNjSOlSNQnslWN6eYUpapRxHAsbVEVsCFdUsGg62gAC+hV8Wz9q
+	FHu3CCHpvyBVHcbmVpHjTRf5QFKZaTiDQkLZpmFU3UALDU8shwl1XB3OZps935oCs9B4oVa6RsMm9
+	0ffrd7R9GbyWop203opA3zz4Co4neCiCxKnq36ocgWQsvluFjSRGvvhHHrsqqWnMVZK95Jbbe8ZjZ
+	abk16PlgjGrax5u55NdA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vGqL8-0000000Enfu-3eKM;
-	Thu, 06 Nov 2025 03:07:10 +0000
-Received: from mail-m128193.netease.com ([103.209.128.193])
+	id 1vGuyZ-0000000F2ZZ-1fPy;
+	Thu, 06 Nov 2025 08:04:11 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vGqL5-0000000EnfO-3DrY;
-	Thu, 06 Nov 2025 03:07:09 +0000
-Received: from [172.16.12.149] (unknown [58.22.7.114])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 2893b798a;
-	Thu, 6 Nov 2025 11:06:56 +0800 (GMT+08:00)
-Message-ID: <64de56d4-43e8-4e77-a171-0bd0855ad816@rock-chips.com>
-Date: Thu, 6 Nov 2025 11:06:54 +0800
+	id 1vGuyV-0000000F2Yd-3w9u;
+	Thu, 06 Nov 2025 08:04:09 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 41ED744012;
+	Thu,  6 Nov 2025 08:04:07 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8BA2CC4CEFB;
+	Thu,  6 Nov 2025 08:04:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1762416247;
+	bh=ccHkm5qtYzT6iKa2MpQExMHciYd9ipIA4PEh7rQnhmM=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=NvHF5V12wKqbRMiQh9lD2BGO6IANaZaFz4LZfCAwGDwOjoG5QFOJu38rdjOPjw8mV
+	 haXxY/iWnRM8GboXg478oHWJpF2vHWZzLbOfM/2L2YdtzCSYDa4Tf4zv/kcfmniEiY
+	 d/I6gdIPiAsnEkbIkqaIrnWxY1RTzRJCXPgrWt3P5VaSdknfiowbmC+SZQevCd/ldP
+	 blDmJLIhXIIJ4mtoBiVRN9A8X3tPOBUdfcXS/Ag+iQHm1J1rmKsbODJ6dnTxLw4NVG
+	 Hq8vSt7CDeRJKm8OSn6K2RRO36AAkqGww9DdqxAFgro75BPf3L6XHde6ydlik4vGXv
+	 Skifuqv+5A5tg==
+Date: Thu, 6 Nov 2025 09:04:04 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Sjoerd Simons <sjoerd@collabora.com>
+Cc: Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Matthias Brugger <matthias.bgg@gmail.com>, 
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, Ryder Lee <ryder.lee@mediatek.com>, 
+	Jianjun Wang <jianjun.wang@mediatek.com>, Bjorn Helgaas <bhelgaas@google.com>, 
+	Lorenzo Pieralisi <lpieralisi@kernel.org>, Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
+	Manivannan Sadhasivam <mani@kernel.org>, Chunfeng Yun <chunfeng.yun@mediatek.com>, 
+	Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+	Lee Jones <lee@kernel.org>, Andrew Lunn <andrew+netdev@lunn.ch>, 
+	"David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
+	Lorenzo Bianconi <lorenzo@kernel.org>, Felix Fietkau <nbd@nbd.name>, kernel@collabora.com, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org, linux-pci@vger.kernel.org, 
+	linux-phy@lists.infradead.org, netdev@vger.kernel.org, Daniel Golle <daniel@makrotopia.org>, 
+	Bryan Hinton <bryan@bryanhinton.com>
+Subject: Re: [PATCH v3 08/13] dt-bindings: net: mediatek,net: Correct
+ bindings for MT7981
+Message-ID: <20251106-unbiased-warping-earthworm-f4f66c@kuoka>
+References: <20251105-openwrt-one-network-v3-0-008e2cab38d1@collabora.com>
+ <20251105-openwrt-one-network-v3-8-008e2cab38d1@collabora.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v8 03/10] drm/bridge: Implement generic USB Type-C DP HPD
- bridge
-To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
- Chaoyi Chen <kernel@airkyi.com>
-Cc: Heikki Krogerus <heikki.krogerus@linux.intel.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Heiko Stuebner
- <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
- Andy Yan <andy.yan@rock-chips.com>,
- Yubing Zhang <yubing.zhang@rock-chips.com>,
- Frank Wang <frank.wang@rock-chips.com>,
- Andrzej Hajda <andrzej.hajda@intel.com>,
- Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
- Amit Sunil Dhamne <amitsd@google.com>, Dragan Simic <dsimic@manjaro.org>,
- Johan Jonker <jbx6244@gmail.com>, Diederik de Haas <didi.debian@cknow.org>,
- Peter Robinson <pbrobinson@gmail.com>, linux-usb@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org
-References: <20251029071435.88-1-kernel@airkyi.com>
- <20251029071435.88-4-kernel@airkyi.com>
- <rzozpbqmymdczerh3iijxxtz3xnsznoku7w2mquikwv6u5osvo@7h43hwc2fpzm>
-Content-Language: en-US
-From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
-In-Reply-To: <rzozpbqmymdczerh3iijxxtz3xnsznoku7w2mquikwv6u5osvo@7h43hwc2fpzm>
-X-HM-Tid: 0a9a5721af0c03abkunm89fae464e7fb72
-X-HM-MType: 1
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZGUtKHlZKSk1MSE5OS0kfTkpWFRQJFh
-	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSEpPSE
-	xVSktLVUpCS0tZBg++
-DKIM-Signature: a=rsa-sha256;
-	b=evRfUVzE9gnJAOXo0XuZFWXMj+MLkXfh5miIhw12ck4N1iYs5TbQdrxU9sXAhiqRhN95j9bofAlR+87xDufP/ZBmz83i5dVRqQ8YiIiWE3TJThOgujLTjEgg/nXx4gfI/QUtvi+Nqf0kpUsoxBrB6H+DOC0XV+9rUTNW2AupTjQ=; s=default; c=relaxed/relaxed; d=rock-chips.com; v=1;
-	bh=uxhO0QLYdKtAxkfwSVZCwZIlmY3EqbMoelKvCYvQETM=;
-	h=date:mime-version:subject:message-id:from;
+Content-Disposition: inline
+In-Reply-To: <20251105-openwrt-one-network-v3-8-008e2cab38d1@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251105_190708_354184_A26F3E49 
-X-CRM114-Status: GOOD (  20.38  )
+X-CRM114-CacheID: sfid-20251106_000408_015781_4768B097 
+X-CRM114-Status: GOOD (  15.54  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,65 +82,50 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 11/3/2025 12:00 PM, Dmitry Baryshkov wrote:
+On Wed, Nov 05, 2025 at 10:18:03PM +0100, Sjoerd Simons wrote:
+> Different SoCs can have different numbers of Wireless Ethernet
+> Dispatch (WED) units, specifically the MT7981 only has a single WED.
+> Furthermore the MT7981 uses infracfg for PHY switching. Adjust bindings
+> to match both aspects.
+> 
+> Signed-off-by: Sjoerd Simons <sjoerd@collabora.com>
+> ---
+> V2 -> V3: Only update MT7981 constraints rather then defaults
+> V1 -> V2: Only overwrite constraints that are different from the default
+> ---
+>  Documentation/devicetree/bindings/net/mediatek,net.yaml | 6 ++++--
+>  1 file changed, 4 insertions(+), 2 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/net/mediatek,net.yaml b/Documentation/devicetree/bindings/net/mediatek,net.yaml
+> index b45f67f92e80d..c49871438efc7 100644
+> --- a/Documentation/devicetree/bindings/net/mediatek,net.yaml
+> +++ b/Documentation/devicetree/bindings/net/mediatek,net.yaml
+> @@ -338,12 +338,14 @@ allOf:
+>              - const: netsys0
+>              - const: netsys1
+>  
+> -        mediatek,infracfg: false
+> -
+>          mediatek,sgmiisys:
+>            minItems: 2
+>            maxItems: 2
+>  
+> +        mediatek,wed:
+> +          minItems: 1
 
-> On Wed, Oct 29, 2025 at 03:14:28PM +0800, Chaoyi Chen wrote:
->> From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
->>
->> Several USB-C controller drivers have already implemented the DP HPD
->> bridge function provided by aux-hpd-bridge.c, but there are still
->> some USB-C controller driver that have not yet implemented it.
->>
->> This patch implements a generic DP HPD bridge based on aux-hpd-bridge.c,
->> so that other USB-C controller drivers don't need to implement it again.
-> This doesn't describe the problem that you are trying to solve.
->
->> Signed-off-by: Chaoyi Chen <chaoyi.chen@rock-chips.com>
->> ---
->>
->> Changes in v8:
->> - Merge generic DP HPD bridge into one module.
->>
->>   drivers/gpu/drm/bridge/Kconfig                |  5 +-
->>   drivers/gpu/drm/bridge/Makefile               |  8 +++-
->>   drivers/gpu/drm/bridge/aux-hpd-bridge.c       | 23 ++++++++-
->>   drivers/gpu/drm/bridge/aux-hpd-bridge.h       | 13 +++++
->>   .../gpu/drm/bridge/aux-hpd-typec-dp-bridge.c  | 47 +++++++++++++++++++
->>   5 files changed, 93 insertions(+), 3 deletions(-)
->>   create mode 100644 drivers/gpu/drm/bridge/aux-hpd-bridge.h
->>   create mode 100644 drivers/gpu/drm/bridge/aux-hpd-typec-dp-bridge.c
->>
->> diff --git a/drivers/gpu/drm/bridge/Kconfig b/drivers/gpu/drm/bridge/Kconfig
->> index a250afd8d662..17257b223a28 100644
->> --- a/drivers/gpu/drm/bridge/Kconfig
->> +++ b/drivers/gpu/drm/bridge/Kconfig
->> @@ -23,13 +23,16 @@ config DRM_AUX_BRIDGE
->>   	  build bridges chain.
->>   
->>   config DRM_AUX_HPD_BRIDGE
->> -	tristate
->> +	tristate "AUX HPD bridge support"
-> Why? No, this is supposed to be selected by other drivers. Users don't
-> know an wouldn't know what is this.
->
-Sorry, I might have misunderstood you point. In v7, I added a new DRM_AUX_TYPEC_DP_HPD_BRIDGE module to select DRM_AUX_HPD_BRIDGE. This seems to fit the "selected by other drivers" scenario, but I think you might not want to expose any information to the users.
+Drop, 1 mis already minimum.
 
-And the other one is what Heikki said:
+Anyway, this does not match top-level schema which said minItems 2. You
+need to keep these consistent among all variants and top-level.
 
-+if DRM_AUX_HPD_BRIDGE + +config DRM_AUX_HPD_TYPEC_BRIDGE + tristate + depends on TYPEC || !TYPEC + default TYPEC + +endif /* DRM_AUX_HPD_BRIDGE */ + menu "Display Interface Bridges" depends on DRM && DRM_BRIDGE
 
-If I understand correctly, in this scenario we need to select DRM_AUX_HPD_BRIDGE in the DP driver. When Type-C is available, DRM_AUX_HPD_TYPEC_BRIDGE will be selected automatically.
-
-Is the method mentioned by Heikki what you want? Thank you.
-
--- 
-Best,
-Chaoyi
+Best regards,
+Krzysztof
 
 
 -- 
