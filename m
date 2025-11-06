@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7C69DCCFA19
-	for <linux-phy@archiver.kernel.org>; Thu,  6 Nov 2025 17:27:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D1644CCFA13
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Nov 2025 17:28:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=KALx8ZRi4hYrBlpC9SWjNP31ype2CW/zMBGJ7Doddhw=; b=CKEShvGkmrmr+nQ/MOOUS9uZwc
-	O5+4pWdkV+wJkzblwra9OztgS9Ae7dzk+jw3MVqTgTAd9MunBxL8AuPUrx13BUjqbPQjCb+30WEMT
-	VTS5akIOD4PBRMaTCCpHMMhpK4gmDUyZCG4lJ6P7k4kw1/rk4PMaEGW1xIMpOT1Pwdruqo4UGeKVs
-	/AXY7yHcIC6SdSW4uGAO5RIkmEbSpTbQVadq0Y7rhRKcwDeMnpcyIvKk2S8rEJrMph7Bbt/rc/OzB
-	81WF9nbh0669jQdOdfYUxGB8S2Or9i/gg0GMiIqdSsT9pRwqyaXbTNT9vdXmw54RFlB5AM++WwE2R
-	Y//3nd5g==;
+	bh=pVUaboRUIQ2sVp0Rw4yDICyg4owQwrFHXIINw1b/8r4=; b=o8CW22NxeraxKC73SzVCOdCesu
+	26Vs21PSE+E6NI/eruSa9cTpvR4FYJDzKX3dZMQj+afZIXz4XZ3ZNaotHiNQLk9yRGMfAZxR68xi6
+	89TJQtC9rEouiW7FWJD7UaNou/aIfOHZHo+QeyJyUdU1SrIn61tRz80dP7cz0m+m5xIuF68ukZ67g
+	PpACSddPnSXm/hR0jSyp3OH21soAKkhNOutnZ0rznL5f/bbmWCLepWYhd7Ue06osN8Rk0/oLB1eZT
+	q8PPUtgt41JxwXEqF0StotiOBz9SxROESUx9v4Uy8CzuDWb2LRHd8Q2++FkzB4M2igk2QyfOLW11k
+	g5kPEhFw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vH3lv-0000000G1Hj-0a7D;
-	Thu, 06 Nov 2025 17:27:43 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1vH3mL-0000000G1SE-1U1Z;
+	Thu, 06 Nov 2025 17:28:09 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vH3lr-0000000G1GD-1QTk;
-	Thu, 06 Nov 2025 17:27:40 +0000
+	id 1vH3mH-0000000G1QT-3LUV;
+	Thu, 06 Nov 2025 17:28:06 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id F185744347;
-	Thu,  6 Nov 2025 17:27:38 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6A2F5C116C6;
-	Thu,  6 Nov 2025 17:27:34 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id F0EF8432E5;
+	Thu,  6 Nov 2025 17:28:04 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C585BC4CEFB;
+	Thu,  6 Nov 2025 17:28:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1762450058;
-	bh=exgWbHID0vmaigzS4XnqckayK/oGniZO4zHXBr3W8jQ=;
+	s=k20201202; t=1762450084;
+	bh=bgxrGX1ncCHXXJp1kwwkg1TSvCMea4zbZRphFSfsxhA=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=tafTi2xpDg1xI/M2nj4GljTLfLTsbyxwZiMGVTKUEAl3EgFK9dTECbbexROmMwX+o
-	 XpYvQJPxy57OUx/QXLeG8tyERm6CZ41Xx5b/assW8XCanFyiiMlrGMGZ0I2TflUkYW
-	 z0Pt68TTHuOAVR7iDzngDfsEhbd0qH+43zQSksbPcPZECaaEnlN7DaFunvs8FJGABp
-	 pnqDEWvP6TCRvO9kRHT0fvp8EfuAQ2aUZDKy3XAHkAOMdtIqBr0xcqN8r+MTDtKjxq
-	 rkkonfeqhLFVSvXtTNLLNUuDkaofWLhfXkKWQN6aAUD45uDkb/VjMbAoVLG/0GfW50
-	 vSBUwU35rf2XA==
-Date: Thu, 6 Nov 2025 17:27:29 +0000
+	b=FLwc/b9Cj6k5hUXPM9oYxjeswD8Vb1ej4/mcZDVLV0MmuNFlo+hLSwLEDhVYG9FgW
+	 2onU3Rj3cj25Sp6p7wA78X45e3lV0E274Qj4/fFwJbhu6X02vf+tVHiDX5nFbppzKk
+	 50GP1FEbI7eV5/ocbikVTV9B1i5WUB0+NiRUrBhyEl6byOJ25Ik3kariC2esEEJYPw
+	 iFULGRyotJ1WnSPGN6Y933gUd0H5d1YejDHnubSFeTWJy6dWVhtGODA1g5Hvpfxlm7
+	 utgvNAHF6d4dpnoaEdW6rUJJPrGoEMTe3GNBVRY6uuAj65ErVMlp986qDmisjXmPK/
+	 /8bCy4V5KvAnA==
+Date: Thu, 6 Nov 2025 17:27:58 +0000
 From: Conor Dooley <conor@kernel.org>
 To: Chaoyi Chen <kernel@airkyi.com>
 Cc: Neil Armstrong <neil.armstrong@linaro.org>,
@@ -61,15 +61,15 @@ Cc: Neil Armstrong <neil.armstrong@linaro.org>,
 	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
 	linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org,
 	Chaoyi Chen <chaoyi.chen@rock-chips.com>
-Subject: Re: [PATCH 4/9] dt-bindings: display: rockchip,vop: Add compatible
- for rk3506
-Message-ID: <20251106-handwrite-dragging-3b3412f31f73@spud>
+Subject: Re: [PATCH 3/9] dt-bindings: display: rockchip,dw-mipi-dsi: Add
+ compatible for rk3506
+Message-ID: <20251106-watch-confining-6a3800cf81eb@spud>
 References: <20251106020632.92-1-kernel@airkyi.com>
- <20251106020632.92-5-kernel@airkyi.com>
+ <20251106020632.92-4-kernel@airkyi.com>
 MIME-Version: 1.0
-In-Reply-To: <20251106020632.92-5-kernel@airkyi.com>
+In-Reply-To: <20251106020632.92-4-kernel@airkyi.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251106_092739_458887_9EC4A237 
+X-CRM114-CacheID: sfid-20251106_092805_851708_4FC464DC 
 X-CRM114-Status: UNSURE (   6.47  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
@@ -83,39 +83,39 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============4723393527246999998=="
+Content-Type: multipart/mixed; boundary="===============4756536376541314093=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============4723393527246999998==
+--===============4756536376541314093==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="iFxwStVh54SvJg7o"
+	protocol="application/pgp-signature"; boundary="3yjg8hVehVxlP0SN"
 Content-Disposition: inline
 
 
---iFxwStVh54SvJg7o
+--3yjg8hVehVxlP0SN
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
 Acked-by: Conor Dooley <conor.dooley@microchip.com>
 pw-bot: not-applicable
 
---iFxwStVh54SvJg7o
+--3yjg8hVehVxlP0SN
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaQzagQAKCRB4tDGHoIJi
-0tnQAQDjtDyPUwx20IW0HISJbhMIsNUDBRBA3cRm4dNIzlL4BQEA6j3h6HtparPK
-FhH4LmHt/FFmIyYclVhg33+tCXx2dQw=
-=VFYI
+iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaQzangAKCRB4tDGHoIJi
+0mJSAP9jViavOmW7ijllM9pi+5hpceEFSeVprT+VVdypRaeBggEAraipNDFhLqIW
+QknuBgh9VzGzJrCnn5mz8n4Ul7FO0Aw=
+=9Uh8
 -----END PGP SIGNATURE-----
 
---iFxwStVh54SvJg7o--
+--3yjg8hVehVxlP0SN--
 
 
---===============4723393527246999998==
+--===============4756536376541314093==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -126,5 +126,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============4723393527246999998==--
+--===============4756536376541314093==--
 
