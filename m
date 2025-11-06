@@ -4,81 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 31119CD1292
-	for <linux-phy@archiver.kernel.org>; Wed,  5 Nov 2025 21:19:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D5FBDCCF9F8
+	for <linux-phy@archiver.kernel.org>; Thu,  6 Nov 2025 02:07:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SUDc5L14dZFoqO2V/LYNEvC6ifzv0Os7md6yyByyJ58=; b=BM0CXZGLHGbT5Y
-	/wikzfA5waIHuCCQdMeKmXjc9iApSAKMwaVIREVcPQx/9F4zyKP0/A24tjVtoyxfwkoJjML65kx/i
-	kUy6HanH7sUA6tCh9kwHkmfvY1DIW0reot5MowXxkS4qS/QsvbIXA6lew5+5pU4uQEtRatdJXujG0
-	r9dthoQPdTejVhUx55q8SZTqZQw1BI2dij80ilYJwdi8+GfA1hbmZtQZmo2vJPTwDG8LbBHmPKL8b
-	zy3eoO81f4eIdm/zjSeP2Oos+SKxjdU1YFttG+pilkTc0BRwvXmJx1O2T5hf8rUqLG3TaZ7qKqhfG
-	5Eotf6m/HSzu8bJtRpbA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=2HfFH0j8/VivZq416b3a02ItdLPgS3y1VAjH31YeTqg=; b=k+uD/ggUotT8jm
+	aijqIPSnwGXDlYCMlQ1IPpKmy+X3KivayiK8S8XtvHoZsUQ66U9+IimPoiNaZ8sQcJkz5TfuMqKk1
+	/AliushF7ZuAhyloIHvhyhonTrUtJCJpmQRtcYfiRAOR09bRR4sF2liaDp1E7CoLiSSxKy5JRKQIo
+	XxaIt48fOA/63VuMt9i3gCmdsodsexvLQaSbAz4t4HxBmb6Z0Z6K/zNGCFLjc+5bb7eaigePk+5Fo
+	OSLkFVIzLtnsuPB/ImMkXdgBCR0VO3aDen/TVBunX7QaxBEQbYdUl8QPopAok7P5oFewqtokZBNPP
+	/WwvD3RzAcopAFFqpy2Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vGkuM-0000000EUi8-34Zf;
-	Wed, 05 Nov 2025 21:19:10 +0000
-Received: from bali.collaboradmins.com ([148.251.105.195])
+	id 1vGpPD-0000000EjHd-15yy;
+	Thu, 06 Nov 2025 02:07:19 +0000
+Received: from smtpbguseast1.qq.com ([54.204.34.129])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vGktv-0000000EU0s-1jI7;
-	Wed, 05 Nov 2025 21:18:46 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1762377516;
-	bh=qtE8TxX+bp4mVeKXXycM622mPKaw8qoe/nGz0YEjV0g=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=IaRJcfEJJPmuVxfIA0AMonJG0NAIwG2GFs1HcbU8uvXF99pgELvzC5G7nSSRhwUVJ
-	 LuwV5lD0JO+6NbQDCg/6824/ru1L/WtPNmPZ9XIv2dmNWRPrG1D+ir8Y18q8GzoaIE
-	 qEW8KlPcmRtH5QYv8gEmfKMpqY/vnwuoHhrQxhH/YBZUJn8Mrio3T/yeFVOaa9Kfp/
-	 3bU7QVAyxxZtxGmkVSf/V0rYQ39sDr5ivWxPxN2ygRhLyKoa/vXN3Zh8b/MbgnaR53
-	 jdmgxlQ8Y7in86CB/YBRRqqqam07WivxiWw5icWmtAT4asEubhTmOpyhAMNyxRoJ/A
-	 g3EvDDnrDetBw==
-Received: from beast.luon.net (unknown [IPv6:2a10:3781:2531::8])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
-	(No client certificate requested)
-	(Authenticated sender: sjoerd)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 4164C17E1500;
-	Wed,  5 Nov 2025 22:18:36 +0100 (CET)
-Received: by beast.luon.net (Postfix, from userid 1000)
-	id B209C10F352E7; Wed, 05 Nov 2025 22:18:34 +0100 (CET)
-From: Sjoerd Simons <sjoerd@collabora.com>
-Date: Wed, 05 Nov 2025 22:18:02 +0100
-Subject: [PATCH v3 07/13] arm64: dts: mediatek: mt7981b-openwrt-one: Enable
- PCIe and USB
-MIME-Version: 1.0
-Message-Id: <20251105-openwrt-one-network-v3-7-008e2cab38d1@collabora.com>
-References: <20251105-openwrt-one-network-v3-0-008e2cab38d1@collabora.com>
-In-Reply-To: <20251105-openwrt-one-network-v3-0-008e2cab38d1@collabora.com>
-To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Matthias Brugger <matthias.bgg@gmail.com>, 
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
- Ryder Lee <ryder.lee@mediatek.com>, 
- Jianjun Wang <jianjun.wang@mediatek.com>, 
- Bjorn Helgaas <bhelgaas@google.com>, 
- Lorenzo Pieralisi <lpieralisi@kernel.org>, 
- =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, 
- Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Lee Jones <lee@kernel.org>, 
- Andrew Lunn <andrew+netdev@lunn.ch>, 
- "David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
- Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
- Lorenzo Bianconi <lorenzo@kernel.org>, Felix Fietkau <nbd@nbd.name>
-Cc: kernel@collabora.com, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- linux-mediatek@lists.infradead.org, linux-pci@vger.kernel.org, 
- linux-phy@lists.infradead.org, netdev@vger.kernel.org, 
- Daniel Golle <daniel@makrotopia.org>, Bryan Hinton <bryan@bryanhinton.com>, 
- Sjoerd Simons <sjoerd@collabora.com>
-X-Mailer: b4 0.14.3
+	id 1vGpP9-0000000EjGZ-341e;
+	Thu, 06 Nov 2025 02:07:17 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=airkyi.com;
+	s=altu2504; t=1762394802;
+	bh=VVl1Qjus8u0aUj8+6Bj8jBGW/g0TFXzsB/9E8b+TxZM=;
+	h=From:To:Subject:Date:Message-Id;
+	b=Jz/mSUG81JzjgYqtmrsoGxedEs9qCq/TV7Sc5FRXH49aYam1s9LeQZBgIZnnOflhh
+	 qPseJK8+qg1raZmWNV14RTkp5WXetzfinEneBxA7fTGOmK/nbrehIaVYAcDeSaWF5p
+	 PibFmGR/Ox+jwiA71qcpDSQ6Gjemx2ntXzwcJ+Eo=
+X-QQ-mid: esmtpgz15t1762394799t86ae74a2
+X-QQ-Originating-IP: yhNbobLVwNbY5V1jr9iOK5ifgRi7NiwMV1ECYKdCN10=
+Received: from DESKTOP-8BT1A2O.localdomain ( [58.22.7.114])
+	by bizesmtp.qq.com (ESMTP) with 
+	id ; Thu, 06 Nov 2025 10:06:37 +0800 (CST)
+X-QQ-SSF: 0000000000000000000000000000000
+X-QQ-GoodBg: 0
+X-BIZMAIL-ID: 10766765311845532809
+From: Chaoyi Chen <kernel@airkyi.com>
+To: Neil Armstrong <neil.armstrong@linaro.org>,
+	Jessica Zhang <jessica.zhang@oss.qualcomm.com>,
+	David Airlie <airlied@gmail.com>,
+	Simona Vetter <simona@ffwll.ch>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Sandy Huang <hjc@rock-chips.com>,
+	=?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
+	Andy Yan <andy.yan@rock-chips.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: dri-devel@lists.freedesktop.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-phy@lists.infradead.org,
+	Chaoyi Chen <chaoyi.chen@rock-chips.com>
+Subject: [PATCH 0/9] drm/rockchip: Introduce Rockchip RK3506 VOP
+Date: Thu,  6 Nov 2025 10:06:23 +0800
+Message-Id: <20251106020632.92-1-kernel@airkyi.com>
+X-Mailer: git-send-email 2.17.1
+X-QQ-SENDSIZE: 520
+Feedback-ID: esmtpgz:airkyi.com:qybglogicsvrgz:qybglogicsvrgz6b-0
+X-QQ-XMAILINFO: MaVe9I53f0M32r5fsRWj//W6nWaUspkMSaTtRW4c2N6Mdvr0+1ipAgD5
+	JUlOS2AFXv2TT5iyKkQofrVkr4B6nVpxXL6F80oenAcFfNT6ZYS9VfFPbTdzHbAPbxlLTFr
+	u3pn3DnIXAQoG4ecnn0xqL8Eh6kEScNs48pmFXkPacrGEJDKHpi+yv6oU/F8yyzEEWzdHNy
+	rUySAbLVGX2lD3J0qtmrKEVQOUKGgisz6cKeY0iB1erxFWa4hODg3J337bFzjADIJX6RiqL
+	IkssFhteJj/+JSxld1aapay3kY40f47vb0fRxFpqi3pYxrtg0wVEodRlDsNihgCmcYJKvDA
+	IiYCt1v6RpYoQOUB5q9j/A7Xkn+LrNzQQ1KcflGdcH1xIXZ8bAdkxXuJFR90SAGUGvcNBAD
+	2nbQf6qZtfHKSbEzEaj4wCg0QlTTm42p5wBkyjgYS6LMolsYav3Q6MYQ8LE/co0LVlFAuL4
+	nMVz4KyQwBPKb+dyswWvp/GHlbdYXKo/lwMUvMmjEYbppktIBc6r3UDUW2qh87xsRWzvVmZ
+	yrc0RIuEl6MP3dW9bjbSqcRrE4h/u/rOZRFDHEVxAWA2xioLfemSHgun52czZWwv+uKnFzx
+	r41bHUFf7TXnn9HsZqNd7C+9n8wtZNa90DhWZpYUOYwCt9L9KTlzg5nzHFxf48tI0oHn3S6
+	1K3P0HnVJeCZbZU2aAkEO6GNqUNjXIfvZ2bbkbpvC4qY773Ev1nh680PRo6ktxJ7sZ9s+w7
+	Dak34WJKt3Pa7zrKnNozVPoF8dqH7TqtgopT7Y8/mKkd3w9n3uTcDl587GR1yorc1+KF1p5
+	cVwFulLw8bk3SRXT2UktX9IVEeM6WLnWx9pAeS1Y1h0h+KDMaEpHiSQ1MspzojlC80Rkhxe
+	MAnG3q57lQjueLxu/ciFBE7zyVkCiM6Cu1pY2NoKvPtQnkUhuMW8VdzmsDi6bfB+7Trm0h9
+	R1rNpsQQ7Z51SMEVk8NCXUlrnT2Ylt9ZA5lQCCflYxPW4mg==
+X-QQ-XMRINFO: Nq+8W0+stu50PRdwbJxPCL0=
+X-QQ-RECHKSPAM: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251105_131843_751628_5822FC28 
-X-CRM114-Status: GOOD (  11.99  )
+X-CRM114-CacheID: sfid-20251105_180716_286869_807557A2 
+X-CRM114-Status: UNSURE (   8.24  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,84 +102,51 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Enable the PCIe controller and USB3 XHCI host on the OpenWrt One
-board. The USB controller is configured for USB 2.0 only mode, as the
-shared USB3/PCIe PHY is dedicated to PCIe functionality on this board.
+From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
 
-Signed-off-by: Sjoerd Simons <sjoerd@collabora.com>
----
- .../boot/dts/mediatek/mt7981b-openwrt-one.dts      | 43 ++++++++++++++++++++++
- 1 file changed, 43 insertions(+)
+The VOP on rk3506:
+- Support 2 lane MIPI DSI interface, 1.5Gbps/lane.
+- Support RGB interface.
+- Max output resolution is 1280x1280@60fps.
+- WIN1 layer support RGB888/ARGB8888/RGB565.
+- Support Gamma LUT.
 
-diff --git a/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts b/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts
-index 2e39e72877301..7382599cfea29 100644
---- a/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts
-+++ b/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts
-@@ -67,9 +67,40 @@ led-2 {
- 			linux,default-trigger = "netdev";
- 		};
- 	};
-+
-+	reg_3p3v: regulator-3p3v {
-+		compatible = "regulator-fixed";
-+		regulator-name = "fixed-3.3V";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+		regulator-boot-on;
-+		regulator-always-on;
-+	};
-+
-+	reg_5v: regulator-5v {
-+		compatible = "regulator-fixed";
-+		regulator-name = "fixed-5V";
-+		regulator-min-microvolt = <5000000>;
-+		regulator-max-microvolt = <5000000>;
-+		regulator-boot-on;
-+		regulator-always-on;
-+	};
-+};
-+
-+&pcie {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pcie_pins>;
-+	status = "okay";
- };
- 
- &pio {
-+	pcie_pins: pcie-pins {
-+		mux {
-+			function = "pcie";
-+			groups = "pcie_pereset";
-+		};
-+	};
-+
- 	pwm_pins: pwm-pins {
- 		mux {
- 			function = "pwm";
-@@ -163,3 +194,15 @@ partition@180000 {
- &uart0 {
- 	status = "okay";
- };
-+
-+&usb_phy {
-+	status = "okay";
-+};
-+
-+&xhci {
-+	phys = <&u2port0 PHY_TYPE_USB2>;
-+	vusb33-supply = <&reg_3p3v>;
-+	vbus-supply = <&reg_5v>;
-+	mediatek,u3p-dis-msk = <0x01>;
-+	status = "okay";
-+};
+This series adds basic support for rk3506 VOP. And tested on the
+rk3506g-evb1-v10 board with a Wanchanglong W552946AAA DSI panel.
+
+Chaoyi Chen (9):
+  dt-bindings: ili9881c: Add compatible string for Wanchanglong
+    w552946aaa
+  dt-bindings: phy: rockchip-inno-dsidphy: Add compatible for rk3506
+  dt-bindings: display: rockchip,dw-mipi-dsi: Add compatible for rk3506
+  dt-bindings: display: rockchip,vop: Add compatible for rk3506
+  drm/panel: ilitek-ili9881d: Add support for Wanchanglong W552946AAA
+    panel
+  phy: rockchip: inno-dsidphy: Add support for rk3506
+  drm/rockchip: dsi: Add support for rk3506
+  drm/rockchip: Drop ROCKCHIP_IOMMU depend for DRM_ROCKCHIP
+  drm/rockchip: vop: Add support for rk3506
+
+ .../display/panel/ilitek,ili9881c.yaml        |   1 +
+ .../rockchip/rockchip,dw-mipi-dsi.yaml        |   1 +
+ .../display/rockchip/rockchip-vop.yaml        |   1 +
+ .../bindings/phy/rockchip,px30-dsi-dphy.yaml  |   1 +
+ drivers/gpu/drm/panel/panel-ilitek-ili9881c.c | 225 ++++++++++++++++++
+ drivers/gpu/drm/rockchip/Kconfig              |   3 +-
+ .../gpu/drm/rockchip/dw-mipi-dsi-rockchip.c   |  20 ++
+ drivers/gpu/drm/rockchip/rockchip_vop_reg.c   |  57 +++++
+ drivers/gpu/drm/rockchip/rockchip_vop_reg.h   |  14 ++
+ .../phy/rockchip/phy-rockchip-inno-dsidphy.c  |  91 ++++++-
+ 10 files changed, 410 insertions(+), 4 deletions(-)
 
 -- 
-2.51.0
+2.51.1
 
 
 -- 
