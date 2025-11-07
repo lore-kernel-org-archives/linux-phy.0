@@ -4,77 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 87017CCF9E3
-	for <linux-phy@archiver.kernel.org>; Fri,  7 Nov 2025 09:07:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 57AF1CCF9F8
+	for <linux-phy@archiver.kernel.org>; Fri,  7 Nov 2025 09:40:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:To:Cc:Subject:
-	From:Message-Id:Date:Mime-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BE2iXsZv5//HjF6K0vaC30E2K8wfK88P6jkTkaoxDXQ=; b=kxxFmtB8unJ2s/
-	mHjb0/Aymb3qLlRR1imC+N1/J3nyD683o3BxYSSPTGD4aBqMb0Um382QCZkl6x1QU0zyXzP67OT6C
-	Qchz/lb67qyASlQKkW7Ggcp4asFp1jkoe+IUATVMKMFwAH4mrIVuz5D51NYDFBO6YneHJdlI/Pq/w
-	I7FujoAbqPE7VP7C5vduBDY2Gtp0ZxDlXO+MxkOcaNexbwFJ7dH/w16kvEh+wStJjFwQg2vdfslo1
-	7zEFmvYF9IYzD0MY81fF+yzvRRocUf0XJdM4AgNiUFAty5kqLnwuVBRZqjZLD5In5LuT4L+Z9asoY
-	05VnCZDqsNqrmf/yEuIA==;
+	List-Owner; bh=4TzhiXMNM9EdlyQ3+T7z6voS8v/3T3VfCSL3DrJ+VW0=; b=RcwY2GBz9n5wKj
+	FKDI9i+e9zAgL3MDSIhk88INwmQE2SgSZRgYeOLu1ynFhn816oEZzuo/t5kfUCw02F9ngHLUukQQo
+	cooNXlZ5nmOfbLfA/6OAZw6CabiELt0EgEEb5xgxZI9khi4m4vxnBJCu6avvlL7UQwSLGWfiumVKu
+	Kll3l6ukqJ5Eu+8v7JNfBMz+UGkgV+CzkwwEyk+1bmmYqWlL+xB46bcaP3oaFvahydpkP65n/yLhP
+	teqxWxj3SZtQQQZLCaclxLYSxkCPP+4eBS7e02OgNE1YbYJ0heUifl38igWsxxkI3ItkIMtaCZ37u
+	1xRZfm+tDwM/e7fjoUeg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vHIRZ-0000000Gvvv-0Unl;
-	Fri, 07 Nov 2025 09:07:41 +0000
-Received: from smtpout-02.galae.net ([185.246.84.56])
-	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vHIRV-0000000Gvuy-2JMo
+	id 1vHIxJ-0000000H0Gc-1V45;
+	Fri, 07 Nov 2025 09:40:29 +0000
+Received: from elvis.franken.de ([193.175.24.41])
+	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1vHIxC-0000000Gzwo-46Cz
 	for linux-phy@lists.infradead.org;
-	Fri, 07 Nov 2025 09:07:39 +0000
-Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-02.galae.net (Postfix) with ESMTPS id 2F0A81A1919;
-	Fri,  7 Nov 2025 09:07:33 +0000 (UTC)
-Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id EC1B46070B;
-	Fri,  7 Nov 2025 09:07:32 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id EA9AA11851DE5;
-	Fri,  7 Nov 2025 10:07:27 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1762506451; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 content-transfer-encoding:in-reply-to:references;
-	bh=Sy63ZFPfLxeX+rkZOJprYwfHaS5jEGoCibkMAFJMUlc=;
-	b=0rzgYZsY73DyTeUngQTpshM2GBPYgAwxOp9qVrv8gZO96h4rFyI682/J7ahEUWaNzeuM9B
-	tJkWuSNE1n0ibZwbVBGXWKUpVjNcJSW3Aknslb/zrlqs/iw7h+P+t1v4uxvg1xkaglHBMQ
-	D0V7tRIG4q1UiPtBhiyqFYrlnQZvbt03vH+3LGrm+YYygSLwk9hecL0CKN1L4Ua1i/Xx4C
-	0E9RSPkqeqrwmsn1eAY17ZBAP80uozInu/RRnYqcfyWSqG4JX4ultmjT58SiAGhxUQDif/
-	2gKPHvhZm3CGlMFmzu6XjChJjyxxvhnw2BCO9Buq4zlUqrEMv1Be+AcJrkYqWA==
-Mime-Version: 1.0
-Date: Fri, 07 Nov 2025 10:07:27 +0100
-Message-Id: <DE2CE3YY1Q9E.3HLFSD4K2CCGS@bootlin.com>
-From: =?utf-8?q?Th=C3=A9o_Lebrun?= <theo.lebrun@bootlin.com>
-Subject: Re: [PATCH v2 0/7] Add generic PHY driver used by MACB/GEM on EyeQ5
-Cc: <linux-mips@vger.kernel.org>, <devicetree@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
- <linux-clk@vger.kernel.org>, =?utf-8?q?Beno=C3=AEt_Monin?=
- <benoit.monin@bootlin.com>, "Maxime Chevallier"
- <maxime.chevallier@bootlin.com>, "Tawfik Bayouk"
- <tawfik.bayouk@mobileye.com>, "Thomas Petazzoni"
- <thomas.petazzoni@bootlin.com>, "Conor Dooley"
- <conor.dooley@microchip.com>, "Jerome Brunet" <jbrunet@baylibre.com>,
- "Andrew Lunn" <andrew@lunn.ch>
-To: "Philipp Zabel" <p.zabel@pengutronix.de>, =?utf-8?q?Th=C3=A9o_Lebrun?=
- <theo.lebrun@bootlin.com>, "Vladimir Kondratiev"
- <vladimir.kondratiev@mobileye.com>, =?utf-8?q?Gr=C3=A9gory_Clement?=
- <gregory.clement@bootlin.com>, "Rob Herring" <robh@kernel.org>, "Krzysztof
- Kozlowski" <krzk+dt@kernel.org>, "Conor Dooley" <conor+dt@kernel.org>,
- "Vinod Koul" <vkoul@kernel.org>, "Kishon Vijay Abraham I"
- <kishon@kernel.org>, "Michael Turquette" <mturquette@baylibre.com>,
- "Stephen Boyd" <sboyd@kernel.org>, "Thomas Bogendoerfer"
- <tsbogend@alpha.franken.de>
-X-Mailer: aerc 0.21.0-0-g5549850facc2
+	Fri, 07 Nov 2025 09:40:25 +0000
+Received: from uucp by elvis.franken.de with local-rmail (Exim 3.36 #1)
+	id 1vHIx6-000492-00; Fri, 07 Nov 2025 10:40:16 +0100
+Received: by alpha.franken.de (Postfix, from userid 1000)
+	id 5D811C0256; Fri,  7 Nov 2025 10:39:37 +0100 (CET)
+Date: Fri, 7 Nov 2025 10:39:37 +0100
+From: Thomas Bogendoerfer <tsbogend@alpha.franken.de>
+To: =?iso-8859-1?Q?Th=E9o?= Lebrun <theo.lebrun@bootlin.com>
+Cc: Vladimir Kondratiev <vladimir.kondratiev@mobileye.com>,
+	=?iso-8859-1?Q?Gr=E9gory?= Clement <gregory.clement@bootlin.com>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>, linux-mips@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org, linux-clk@vger.kernel.org,
+	=?iso-8859-1?Q?Beno=EEt?= Monin <benoit.monin@bootlin.com>,
+	Maxime Chevallier <maxime.chevallier@bootlin.com>,
+	Tawfik Bayouk <tawfik.bayouk@mobileye.com>,
+	Thomas Petazzoni <thomas.petazzoni@bootlin.com>
+Subject: Re: [PATCH v2 6/7] MIPS: mobileye: eyeq5: add two Cadence GEM
+ Ethernet controllers
+Message-ID: <aQ2-WZkptVKJTM0a@alpha.franken.de>
 References: <20251101-macb-phy-v2-0-c1519eef16d3@bootlin.com>
- <56a49462312d89fd0de6da273f698c0f89e73ada.camel@pengutronix.de>
-In-Reply-To: <56a49462312d89fd0de6da273f698c0f89e73ada.camel@pengutronix.de>
-X-Last-TLS-Session-Version: TLSv1.3
+ <20251101-macb-phy-v2-6-c1519eef16d3@bootlin.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20251101-macb-phy-v2-6-c1519eef16d3@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251107_010737_732630_5D481EF6 
-X-CRM114-Status: GOOD (  11.50  )
+X-CRM114-CacheID: sfid-20251107_014023_192085_3490DC72 
+X-CRM114-Status: UNSURE (   8.36  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,53 +72,30 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVGh1IE5vdiA2LCAyMDI1IGF0IDExOjUxIEFNIENFVCwgUGhpbGlwcCBaYWJlbCB3cm90ZToK
-PiBPbiBTYSwgMjAyNS0xMS0wMSBhdCAwOTo1MyArMDEwMCwgVGjDqW8gTGVicnVuIHdyb3RlOgo+
-PiBBYm91dCBtZXJnaW5nLCBpdCdsbCBwcm9iYWJseSBiZSBjb21wbGV4LiBJIHNlZSBubyBidWls
-ZCBkZXBlbmRlbmNpZXMsCj4+IGJ1dCB0aGUgYm9hcmQgd2lsbCBiZSBpbiBhbiBvZGQgc3RhdGUg
-aWYgb25seSBzb21lIHBhdGNoZXMgYXJlIGFwcGxpZWQuCj4+IFNvbWUgZGV2X3dhcm4oKSBhdCBi
-b290IGFuZCBkZXYtPm9mX25vZGUgcmVmY291bnRpbmcgaXNzdWVzIGF0IHVubG9hZC4KPj4gCj4+
-ICAtIFtQQVRDSCAxLzddIGR0LWJpbmRpbmdzOiBzb2M6IG1vYmlsZXllOiBPTEIgaXMgYW4gRXRo
-ZXJuZXQgUEhZIHByb3ZpZGVyIG9uIEV5ZVE1Cj4+ICAgIFdlIHRvdWNoIGR0LWJpbmRpbmdzIGJl
-Y2F1c2UgT0xCIGJlY29tZXMgYSBQSFkgcHJvdmlkZXIuCj4+ICAgID0+IGxpbnV4LW1pcHMgKD8p
-Cj4+IAo+PiAgLSBbUEFUQ0ggMi83XSBwaHk6IEFkZCBkcml2ZXIgZm9yIEV5ZVE1IEV0aGVybmV0
-IFBIWSB3cmFwcGVyCj4+ICAgIFdlIGFkZCB0aGUgZ2VuZXJpYyBQSFkgZHJpdmVyIGluIGRyaXZl
-cnMvcGh5L3BoeS1leWVxNS1ldGguYyB3aXRoIHRoZQo+PiAgICB1c3VhbCBLY29uZmlnLCBNYWtl
-ZmlsZSBhbmQgTUFJTlRBSU5FUlMgY2hhbmdlcy4KPj4gICAgPT4gbGludXgtcGh5ICg/KQo+PiAK
-Pj4gIC0gW1BBVENIIDYvN10gTUlQUzogbW9iaWxleWU6IGV5ZXE1OiBhZGQgdHdvIENhZGVuY2Ug
-R0VNIEV0aGVybmV0IGNvbnRyb2xsZXJzCj4+ICAgIFtQQVRDSCA3LzddIE1JUFM6IG1vYmlsZXll
-OiBleWVxNS1lcG06IGFkZCB0d28gQ2FkZW5jZSBHRU0gRXRoZXJuZXQgUEhZcwo+PiAgICBEVFMg
-cGF0Y2hlcyB0byBhZGQgYm90aCB0aGUgI3BoeS1jZWxscyBvZiBPTEIgYW5kIHRoZSBNQUNCIGlu
-c3RhbmNlcy4KPj4gICAgPT4gbGludXgtbWlwcwo+PiAKPj4gIC0gW1BBVENIIDQvN10gY2xrOiBl
-eWVxOiBhZGQgRXllUTUgY2hpbGRyZW4gYXV4aWxpYXJ5IGRldmljZSBmb3IgZ2VuZXJpYyBQSFlz
-Cj4+ICAgIFdlIG11c3QgdXBkYXRlIGNsay1leWVxIGJlY2F1c2UgaXQgaW5zdGFudGlhdGVzIGEg
-bmV3IGF1eGRldi4KPj4gICAgPT4gbGludXgtY2xrCj4+IAo+PiAgLSBbUEFUQ0ggMy83XSBjbGs6
-IGV5ZXE6IHVzZSB0aGUgYXV4aWxpYXJ5IGRldmljZSBjcmVhdGlvbiBoZWxwZXIKPj4gICAgW1BB
-VENIIDUvN10gcmVzZXQ6IGV5ZXE6IGRyb3AgZGV2aWNlX3NldF9vZl9ub2RlX2Zyb21fZGV2KCkg
-ZG9uZSBieSBwYXJlbnQKPj4gICAgV2l0aCB0aGUgZGV2LT5vZl9ub2RlIGFzc2lnbmVtZW50LCB3
-ZSBtdXN0IGFsc28gY29ycmVjdCByZXNldC1leWVxLgo+PiAgICA9PiBzZXBhcmF0ZSB0aGVtIGlu
-dG8gbGludXgtY2xrIGFuZCBsaW51eC1yZXNldD8KPgo+IFNpbmNlIDMgYW5kIDQgc2hvdWxkIGdv
-IHZpYSBjbGssIGFuZCA1IGhhcyBhIGRlcGVuZGVuY3kgb24gMywgSSB3b3VsZAo+IHN1Z2dlc3Qg
-bWVyZ2luZyB0aGVtIGFsbCB0b2dldGhlci4KClRoYW5rcyBmb3IgdGhlIGZlZWRiYWNrIFBoaWxp
-cHAsIGFuZCB0aGUgcmV2aWV3IG9uIFs1LzddLiBHZXR0aW5nIGl0Cm1lcmdlZCBpbiBsaW51eC1j
-bGsgd2lsbCBlYXNlIHRoZSBwcm9jZXNzIGFuZCBhdm9pZCBicmVha2FnZS4gVXBkYXRlZApzdW1t
-YXJ5OgoKIC0gW1BBVENIIDEvN10gZHQtYmluZGluZ3M6IHNvYzogbW9iaWxleWU6IE9MQiBpcyBh
-biBFdGhlcm5ldCBQSFkgcHJvdmlkZXIgb24gRXllUTUKICAgW1BBVENIIDYvN10gTUlQUzogbW9i
-aWxleWU6IGV5ZXE1OiBhZGQgdHdvIENhZGVuY2UgR0VNIEV0aGVybmV0IGNvbnRyb2xsZXJzCiAg
-IFtQQVRDSCA3LzddIE1JUFM6IG1vYmlsZXllOiBleWVxNS1lcG06IGFkZCB0d28gQ2FkZW5jZSBH
-RU0gRXRoZXJuZXQgUEhZcwogICA9PiBsaW51eC1taXBzCgogLSBbUEFUQ0ggMi83XSBwaHk6IEFk
-ZCBkcml2ZXIgZm9yIEV5ZVE1IEV0aGVybmV0IFBIWSB3cmFwcGVyCiAgID0+IGxpbnV4LXBoeQoK
-IC0gW1BBVENIIDMvN10gY2xrOiBleWVxOiB1c2UgdGhlIGF1eGlsaWFyeSBkZXZpY2UgY3JlYXRp
-b24gaGVscGVyCiAgIFtQQVRDSCA0LzddIGNsazogZXllcTogYWRkIEV5ZVE1IGNoaWxkcmVuIGF1
-eGlsaWFyeSBkZXZpY2UgZm9yIGdlbmVyaWMgUEhZcwogICBbUEFUQ0ggNS83XSByZXNldDogZXll
-cTogZHJvcCBkZXZpY2Vfc2V0X29mX25vZGVfZnJvbV9kZXYoKSBkb25lIGJ5IHBhcmVudAogICA9
-PiBsaW51eC1jbGsKCkkgbWlnaHQgc2VuZCBWMyBzb29uLCB3aXRoIHlvdXIgdHJhaWxlcnMgYXBw
-ZW5kZWQuCgpUaGFua3MsCgotLQpUaMOpbyBMZWJydW4sIEJvb3RsaW4KRW1iZWRkZWQgTGludXgg
-YW5kIEtlcm5lbCBlbmdpbmVlcmluZwpodHRwczovL2Jvb3RsaW4uY29tCgoKLS0gCmxpbnV4LXBo
-eSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0
-cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On Sat, Nov 01, 2025 at 09:53:34AM +0100, Th=E9o Lebrun wrote:
+> Add both MACB/GEM instances found in the Mobileye EyeQ5 SoC.
+> =
+
+> Signed-off-by: Th=E9o Lebrun <theo.lebrun@bootlin.com>
+> ---
+>  arch/mips/boot/dts/mobileye/eyeq5.dtsi | 45 ++++++++++++++++++++++++++++=
+++++++
+>  1 file changed, 45 insertions(+)
+
+Acked-by: Thomas Bogendoerfer <tsbogend@alpha.franken.de>
+
+-- =
+
+Crap can work. Given enough thrust pigs will fly, but it's not necessarily a
+good idea.                                                [ RFC1925, 2.3 ]
+
+-- =
+
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
