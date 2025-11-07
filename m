@@ -4,62 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BE35ACCF9F8
-	for <linux-phy@archiver.kernel.org>; Fri,  7 Nov 2025 11:45:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 98ED2CCFA05
+	for <linux-phy@archiver.kernel.org>; Fri,  7 Nov 2025 16:03:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+ddlYr2F9Bu77qpWbRyp53QSPrkBKXq0oJFYJk8d7AU=; b=Pt5yUgfbFyN4VC
-	buP+yHTNPhAhpOIbpGto4kuUIzTYkarknkvcAYayMeKSy7wEXgCzMbtCMC+pIPFqUKeWSKAM6PEEW
-	8Ltk9ssOHxFWlj8aDk06bpevvgsITEnb/NR6Kdv+vhB2+yLomdDbTVGXajL9PRNH5VHX/n999Xqsn
-	hA2ghniCqMbXDg05SWsVf+tTmC521FB5NJlbuQzj4R6ARGIWDA9rVnOofd0PV+2vW1/1jMJj5Hep3
-	ifhfw9j1UbUgNqIJpRMDj5fcKCzZlnvh/BdCAzrDHkYADh08fR+0V0ELI0u17aj/omfwX5qfOddG5
-	8/lP6JLz+zEsS4TSnjPA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=dOrIXaGZGEcHtLuhjetwFPfH9GAScw3MhZpmjZA9ivg=; b=aNOIjEDoP2j8F7
+	dqkLTDkAxBrMywbzj5B7+U6EZEVBgnNM0fpDa/K1zIgMbZ3saOG37sqnToaBpuDbatC1O4tzRnq8c
+	zhbBVUcwC/fjuDXYP3WBUPVRKAcdwsM2HDF0jm16BBIjrGAyElpKv/RAaTmBeeUKqZREXDjNnjiws
+	Ev7bDXq+YxlgHN33GqHSN0++kllB+9IM2rAa7+Q2OuNMJbsL9zzpwvy9mpaqtHMuDuYRtnhq0wgGT
+	f63QJJAJKt8KaTQXVeROslB5Ep3b64eOWhajXb/nOC0PwThsXdkQNoUTDuaIEER0Kj4zh7QvNPhi1
+	JaFlZ4YegJ1eT8Dmp4Uw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vHKuP-0000000HE9B-1ws0;
-	Fri, 07 Nov 2025 11:45:37 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vHOvo-0000000034j-1M8e;
+	Fri, 07 Nov 2025 16:03:20 +0000
+Received: from mail-wr1-x435.google.com ([2a00:1450:4864:20::435])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vHKuN-0000000HE95-2N1Y
+	id 1vHOvm-0000000032Z-07yt
 	for linux-phy@lists.infradead.org;
-	Fri, 07 Nov 2025 11:45:35 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 99006618FD;
-	Fri,  7 Nov 2025 11:45:34 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0458BC116B1;
-	Fri,  7 Nov 2025 11:45:20 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1762515934;
-	bh=izDt0p7345JaRE7QPi4vAH1RGCVddKUk9lJ7ECKLP2o=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=Tf2n5etWb7ZB0uyhL9KX1WJMrI8iz3X4UloiD5SaZevZEsHmX7vZvHJQq/7lFiOMs
-	 LZ4x0F1xojYcPEztReGlpQ+Ann+bdqm2sZ/i1gsKyDRMuPRgEb6Q27o4t6OidiE15C
-	 7DJpoN9uMT9pUhPOgYtrzFul37DZ2eonLqS9tjUKp0x+T4p3eQtb6o8fGUwJKGVQFE
-	 vGByKDBpHCaPlM4vgtADSGOjrkhjoim/kNMU6XzVcwgO1a7a+OUcJeifNDK9jg5MXy
-	 wAW/viwcwEIeKFa7DzJa9fnSGuVrq/wCwqZyJCllt1rs/MT+i1jqsosqlAU1Uce4+e
-	 RuYY0XlZnWWbQ==
-Date: Fri, 7 Nov 2025 17:15:14 +0530
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
-Cc: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org, 
-	krzk+dt@kernel.org, conor+dt@kernel.org, jingoohan1@gmail.com, lpieralisi@kernel.org, 
-	kwilczynski@kernel.org, bhelgaas@google.com, johan+linaro@kernel.org, vkoul@kernel.org, 
-	kishon@kernel.org, neil.armstrong@linaro.org, abel.vesa@linaro.org, kw@linux.com, 
-	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org, qiang.yu@oss.qualcomm.com, 
-	quic_krichai@quicinc.com, quic_vbadigan@quicinc.com
-Subject: Re: [PATCH v14 1/5] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy:
- Update pcie phy bindings for qcs8300
-Message-ID: <q3naavmyhk3ksvrtdvt7jmfwfvf666souckek356tfp3olqsxl@t65dsp5hxoeu>
-References: <20251024095609.48096-1-ziyue.zhang@oss.qualcomm.com>
- <20251024095609.48096-2-ziyue.zhang@oss.qualcomm.com>
+	Fri, 07 Nov 2025 16:03:19 +0000
+Received: by mail-wr1-x435.google.com with SMTP id ffacd0b85a97d-3ee64bc6b90so649884f8f.0
+        for <linux-phy@lists.infradead.org>; Fri, 07 Nov 2025 08:03:17 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1762531396; x=1763136196; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:to
+         :from:from:to:cc:subject:date:message-id:reply-to;
+        bh=G0mDULtyLau81Hx7l19RN5NkHyi5+qJVHhgWHezFVzM=;
+        b=Qhb4F365K9hBpwD0zXe0b4SChyvmaou4BUsq61SopETfOqLJhNNm7uNTa4RuHrDTQm
+         z9BUgiB3vVlS/ID0hh86WY064BwwWqTYNT83N4it+r12HzMzvZZy7gznHPBLV+9Hsvpn
+         T9gjeA9Tp1bAmiBse2Zo+hFT1LkVeyT9r7s/PkgvkDMSJ5Xami7c/4E1NfVR410og5T4
+         WPlHkFTEvL/JmnDYj3t9uIGQcdnej8Qng2Sq78oNkw4/VZ/Hk0gjiGlBOQuTdiOjXH3Z
+         pS8NAjoR3ZMvH6SNh+levdTik/peoul0z1/g1mOmuaYybWyhm2WkrT+6pWrVWucUBcbF
+         ieVw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1762531396; x=1763136196;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:to
+         :from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=G0mDULtyLau81Hx7l19RN5NkHyi5+qJVHhgWHezFVzM=;
+        b=r3DlfFJDq3mJapjt61yO68nI+rZNk8vGUuiwXvXNV8TaCmN89BktI3NDjUZQUQqnna
+         grgBAGt995xyS83KTVtQl8MDeCq/3Wi2g7yRG/7Y/qGmV+kDcsh56jdiJIlW4no1HKED
+         k1yj3dHTWacS9ODngEX/cnpPwfiADUNpKzh6RwQbayoTwCsNRz85LMbuSYbISQ+szw4x
+         rwRxu+q8waNBw9Xt/83k1nAcmD2MMBh2W7VZsEB0SMWI63WGsAwt1/58f8DFbxN1P6Wx
+         A/sxvDUcF9oE777WP8Povr/vPqfDcSfc3Gx2ZPpdu7VKeQq7gxa0EqcGDP7Fa+ZPtn/+
+         /esA==
+X-Forwarded-Encrypted: i=1; AJvYcCWW3UayeglhAbx7mJ4FxD81EWDlUQKVpjFbhvdfIxK0vYbG94dmd/8wknEjwJgJSbAxSFTeO1P0VJQ=@lists.infradead.org
+X-Gm-Message-State: AOJu0YymKY2h2WDGeehQWThEmu05U/rw7OLbJOxXvMuMvEKPsBLebFOp
+	TQ4gM3ktmGSmllR7MCZ5AueUh2l2PdqklDOZJrKfxYiE78qI0m7h/AXq
+X-Gm-Gg: ASbGncu8vHiaVc3rnjp8OJbNPA8gGh6mE1zUX/pTkZfj9J5Ik1shWkUIGolFewhNk0w
+	eIZZpTk1jeIVG0BnGFNuLOZEZ46NwOnSQS0RDE2bNCPNFh+mI8Mo0DM6cu0QR3Sbl8VXw3B0LQf
+	GJJgrcf99woGhbzZOkndEacexLM8E++zwJ7uYsqsGM+/UoXdDMNGgEHjwZjmyq0OIs3F3VnSH21
+	4MyCzB/iU2AnRzv7oA+GJktkxYF+u8IFv23sR8QHp0MSFx70Y8+ZBmxMNn2GZrDYHKg4LAM3weW
+	DwwcyS+rBMOajAVYt7hmU3LI3CtdXtXf84XInrzAw+DO9AnAKYyT5lvTgF5jSDk8XNShHaq9gk7
+	Pilv4F39JMrophhEMhxMacfI/lgwGxUI+AcKzCDZTyVd5WK5CuEEkQ/+JR/Y/jpxb3rjZba7KRX
+	Rx7Zsu11DPsh2zPvMAd+VLEZK5HxAGoA==
+X-Google-Smtp-Source: AGHT+IGWPgmkF6Tn4YlpwmubMBI4eBl1r/OcD+5NjkjCWh9jwtlH3q0sR0Qg5xX/PiNPpj2joJCdKw==
+X-Received: by 2002:a05:6000:4409:b0:42b:2ac7:7939 with SMTP id ffacd0b85a97d-42b2ac787fcmr514536f8f.3.1762531395848;
+        Fri, 07 Nov 2025 08:03:15 -0800 (PST)
+Received: from Ansuel-XPS24 (93-34-90-37.ip49.fastwebnet.it. [93.34.90.37])
+        by smtp.googlemail.com with ESMTPSA id ffacd0b85a97d-42abe63e13csm6058016f8f.19.2025.11.07.08.03.14
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 07 Nov 2025 08:03:15 -0800 (PST)
+From: Christian Marangi <ansuelsmth@gmail.com>
+To: Christian Marangi <ansuelsmth@gmail.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Lorenzo Bianconi <lorenzo@kernel.org>,
+	linux-arm-kernel@lists.infradead.org,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH v4 0/4] airoha: an7581: USB support
+Date: Fri,  7 Nov 2025 17:02:42 +0100
+Message-ID: <20251107160251.2307088-1-ansuelsmth@gmail.com>
+X-Mailer: git-send-email 2.51.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20251024095609.48096-2-ziyue.zhang@oss.qualcomm.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20251107_080318_081479_32FD1396 
+X-CRM114-Status: GOOD (  13.49  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,51 +100,82 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gRnJpLCBPY3QgMjQsIDIwMjUgYXQgMDU6NTY6MDVQTSArMDgwMCwgWml5dWUgWmhhbmcgd3Jv
-dGU6Cj4gVGhlIGdjY19hdXhfY2xrIGlzIG5vdCByZXF1aXJlZCBieSB0aGUgUENJZSBQSFkgb24g
-cWNzODMwMCBhbmQgaXMgbm90Cj4gc3BlY2lmaWVkIGluIHRoZSBkZXZpY2UgdHJlZSBub2RlLiBI
-ZW5jZSwgbW92ZSB0aGUgcWNzODMwMCBwaHkKPiBjb21wYXRpYmlsaXR5IGVudHJ5IGludG8gdGhl
-IGxpc3Qgb2YgUEhZcyB0aGF0IHJlcXVpcmUgc2l4IGNsb2Nrcy4KPiAKPiBSZW1vdmVkIHRoZSBw
-aHlfYXV4IGNsb2NrIGZyb20gdGhlIFBDSWUgUEhZIGJpbmRpbmcgYXMgaXQgaXMgbm8gbG9uZ2Vy
-Cj4gdXNlZCBieSBhbnkgaW5zdGFuY2UuCj4gCj4gRml4ZXM6IGU0NmU1OWI3N2E5ZSAoImR0LWJp
-bmRpbmdzOiBwaHk6IHFjb20sc2M4MjgweHAtcW1wLXBjaWUtcGh5OiBEb2N1bWVudCB0aGUgUUNT
-ODMwMCBRTVAgUENJZSBQSFkgR2VuNCB4MiIpCj4gU2lnbmVkLW9mZi1ieTogWml5dWUgWmhhbmcg
-PHppeXVlLnpoYW5nQG9zcy5xdWFsY29tbS5jb20+CgpBY2tlZC1ieTogTWFuaXZhbm5hbiBTYWRo
-YXNpdmFtIDxtYW5pQGtlcm5lbC5vcmc+CgotIE1hbmkKCj4gQWNrZWQtYnk6IFJvYiBIZXJyaW5n
-IChBcm0pIDxyb2JoQGtlcm5lbC5vcmc+Cj4gUmV2aWV3ZWQtYnk6IEpvaGFuIEhvdm9sZCA8am9o
-YW4rbGluYXJvQGtlcm5lbC5vcmc+Cj4gLS0tCj4gIC4uLi9waHkvcWNvbSxzYzgyODB4cC1xbXAt
-cGNpZS1waHkueWFtbCAgICAgICAgIHwgMTcgKystLS0tLS0tLS0tLS0tLS0KPiAgMSBmaWxlIGNo
-YW5nZWQsIDIgaW5zZXJ0aW9ucygrKSwgMTUgZGVsZXRpb25zKC0pCj4gCj4gZGlmZiAtLWdpdCBh
-L0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9waHkvcWNvbSxzYzgyODB4cC1xbXAt
-cGNpZS1waHkueWFtbCBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9waHkvcWNv
-bSxzYzgyODB4cC1xbXAtcGNpZS1waHkueWFtbAo+IGluZGV4IDExOWI0ZmYzNmRiZC4uZDk0ZDA4
-NzUyY2VjIDEwMDY0NAo+IC0tLSBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9w
-aHkvcWNvbSxzYzgyODB4cC1xbXAtcGNpZS1waHkueWFtbAo+ICsrKyBiL0RvY3VtZW50YXRpb24v
-ZGV2aWNldHJlZS9iaW5kaW5ncy9waHkvcWNvbSxzYzgyODB4cC1xbXAtcGNpZS1waHkueWFtbAo+
-IEBAIC01NSw3ICs1NSw3IEBAIHByb3BlcnRpZXM6Cj4gIAo+ICAgIGNsb2NrczoKPiAgICAgIG1p
-bkl0ZW1zOiA1Cj4gLSAgICBtYXhJdGVtczogNwo+ICsgICAgbWF4SXRlbXM6IDYKPiAgCj4gICAg
-Y2xvY2stbmFtZXM6Cj4gICAgICBtaW5JdGVtczogNQo+IEBAIC02Niw3ICs2Niw2IEBAIHByb3Bl
-cnRpZXM6Cj4gICAgICAgIC0gZW51bTogW3JjaG5nLCByZWZnZW5dCj4gICAgICAgIC0gY29uc3Q6
-IHBpcGUKPiAgICAgICAgLSBjb25zdDogcGlwZWRpdjIKPiAtICAgICAgLSBjb25zdDogcGh5X2F1
-eAo+ICAKPiAgICBwb3dlci1kb21haW5zOgo+ICAgICAgbWF4SXRlbXM6IDEKPiBAQCAtMTc4LDYg
-KzE3Nyw3IEBAIGFsbE9mOgo+ICAgICAgICAgIGNvbXBhdGlibGU6Cj4gICAgICAgICAgICBjb250
-YWluczoKPiAgICAgICAgICAgICAgZW51bToKPiArICAgICAgICAgICAgICAtIHFjb20scWNzODMw
-MC1xbXAtZ2VuNHgyLXBjaWUtcGh5Cj4gICAgICAgICAgICAgICAgLSBxY29tLHNhODc3NXAtcW1w
-LWdlbjR4Mi1wY2llLXBoeQo+ICAgICAgICAgICAgICAgIC0gcWNvbSxzYTg3NzVwLXFtcC1nZW40
-eDQtcGNpZS1waHkKPiAgICAgICAgICAgICAgICAtIHFjb20sc2M4MjgweHAtcW1wLWdlbjN4MS1w
-Y2llLXBoeQo+IEBAIC0xOTUsMTkgKzE5NSw2IEBAIGFsbE9mOgo+ICAgICAgICAgIGNsb2NrLW5h
-bWVzOgo+ICAgICAgICAgICAgbWluSXRlbXM6IDYKPiAgCj4gLSAgLSBpZjoKPiAtICAgICAgcHJv
-cGVydGllczoKPiAtICAgICAgICBjb21wYXRpYmxlOgo+IC0gICAgICAgICAgY29udGFpbnM6Cj4g
-LSAgICAgICAgICAgIGVudW06Cj4gLSAgICAgICAgICAgICAgLSBxY29tLHFjczgzMDAtcW1wLWdl
-bjR4Mi1wY2llLXBoeQo+IC0gICAgdGhlbjoKPiAtICAgICAgcHJvcGVydGllczoKPiAtICAgICAg
-ICBjbG9ja3M6Cj4gLSAgICAgICAgICBtaW5JdGVtczogNwo+IC0gICAgICAgIGNsb2NrLW5hbWVz
-Ogo+IC0gICAgICAgICAgbWluSXRlbXM6IDcKPiAtCj4gICAgLSBpZjoKPiAgICAgICAgcHJvcGVy
-dGllczoKPiAgICAgICAgICBjb21wYXRpYmxlOgo+IC0tIAo+IDIuMzQuMQo+IAoKLS0gCuCuruCu
-o+Cuv+CuteCuo+CvjeCuo+CuqeCvjSDgrprgrqTgrr7grprgrr/grrXgrq7gr40KCi0tIApsaW51
-eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8v
-bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+This is a major rework of the old v2 series.
+
+The SoC always support USB 2.0 but for USB 3.0 it needs additional
+configuration for the Serdes port. Such port can be either configured
+for USB usage or for PCIe lines or HSGMII and these are configured
+in the SCU space.
+
+The previous implementation of a dedicated SSR driver was too
+complex and fragile for the simple task of configuring a register
+hence it was dropped and the handling is entirely in the PHY driver.
+
+Everything was reducted to the dt-bindings to describe the Serdes line.
+
+Also the property for the PHY are renamed to a more suitable name and
+everything is now mandatory to simplify the implementation.
+(the PHY are always present and active on the SoC)
+
+Also other unrelated patch are dropped from this series.
+
+Changes v4:
+- Rename PCIe and USB PHY to AN7581
+- Drop airoha,scu (handled directly in driver)
+- Drop dt-bindings for monitor clock in favor of raw values
+- Better describe the usage of airoha,usb3-serdes
+- Simplify values of dt-bindings SSR SERDES
+
+Changes v3:
+- Drop clk changes
+- Drop SSR driver
+- Rename property in Documentation
+- Simplify PHY handling
+- Move SSR handling inside the PHY driver
+  Link: https://lore.kernel.org/all/20251029173713.7670-1-ansuelsmth@gmail.com/
+
+Changes v2:
+- Drop changes for simple-mfd
+- Rework PHY node structure to single node
+- Drop port-id property in favor of serdes-port and
+  usb2-monitor-clock-sel
+- Make the SSR driver probe from the clock driver
+
+Christian Marangi (4):
+  dt-bindings: soc: Add bindings for Airoha SCU Serdes lines
+  dt-bindings: phy: Add documentation for Airoha AN7581 USB PHY
+  phy: move and rename Airoha PCIe PHY driver to dedicated directory
+  phy: airoha: Add support for Airoha AN7581 USB PHY
+
+ .../bindings/phy/airoha,an7581-usb-phy.yaml   |   71 +
+ MAINTAINERS                                   |   11 +-
+ drivers/phy/Kconfig                           |   11 +-
+ drivers/phy/Makefile                          |    5 +-
+ drivers/phy/airoha/Kconfig                    |   23 +
+ drivers/phy/airoha/Makefile                   |    4 +
+ drivers/phy/airoha/phy-an7581-pcie-regs.h     |  494 +++++++
+ drivers/phy/airoha/phy-an7581-pcie.c          | 1290 +++++++++++++++++
+ drivers/phy/airoha/phy-an7581-usb.c           |  614 ++++++++
+ include/dt-bindings/soc/airoha,scu-ssr.h      |   11 +
+ 10 files changed, 2520 insertions(+), 14 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/phy/airoha,an7581-usb-phy.yaml
+ create mode 100644 drivers/phy/airoha/Kconfig
+ create mode 100644 drivers/phy/airoha/Makefile
+ create mode 100644 drivers/phy/airoha/phy-an7581-pcie-regs.h
+ create mode 100644 drivers/phy/airoha/phy-an7581-pcie.c
+ create mode 100644 drivers/phy/airoha/phy-an7581-usb.c
+ create mode 100644 include/dt-bindings/soc/airoha,scu-ssr.h
+
+-- 
+2.51.0
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
