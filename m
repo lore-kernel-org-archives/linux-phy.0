@@ -4,88 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DC979CCF9F8
-	for <linux-phy@archiver.kernel.org>; Sat,  8 Nov 2025 01:05:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9D1FCCCFA13
+	for <linux-phy@archiver.kernel.org>; Sat,  8 Nov 2025 11:09:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:Cc:To:In-Reply-To:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5u3dVfR8J7nvgTWZx7oD7BqAZDr5GlFEmqKMGAmO1oo=; b=ToUEPCCfguahCp
-	SHgzFso0n0d4EbGSRElR30VpAbiTb4lPiNopGnEaVG9+N8HMySEnf9r4RgBuotK0/w/DvXz8eS/fv
-	IKKzejQOzcPalMt2B01fAUVCIXCUVUCSyANTeb/P2tNqjreTDHW5Qb7NH8KBjYkHqiRHS3Gluqq/c
-	6k8aAjfG3ywp8grGFlwlgZlKQxX5t/Bj4iOYO3YAJT7WdupqgZvoL/BgVz7GoJFZNK6WO8aETyybk
-	l9ShIwvAKmTZu9JLKs4+lByMaTxf0OUENCyFYUjX5/BH1nk9BDEWq2V3Vb+y6eukrIDQvXElWomiE
-	aipd9apXs0fuBWHg5edA==;
+	List-Owner; bh=ygskPLZfa/exZREL8MVAYEHQdoE6odGHbnbnKU4mn+M=; b=jGvmuysN1pPdIM
+	ty6ZyGc6YmBw5u9L+1xim0QxxxRCsLNrKDKksz8fac+fLH3t5vZFMoVcXxVj2DtlkNCExZ/BsQQ5s
+	E0YeomlQdugP+7nqdWmCLkdO2qw5QFEm+uPdLusM93oFeEYy/DsH72SHW8aXdanSCY1T/h8ATNpOK
+	lNzp57sOkXJMD1C3ewSpqnxRYBrZJoj5EHoKjX1qBKYr2NbZPaI5C64PDJhpYNPSNjHo6zWSoGuE8
+	wiIfmB++puWHzm/wZQ44MNG63g3wGSvfVAet7zOQ1xRzkk+8L3atuzx7KMStEClyQvaknIs25/bNx
+	/mCjgX++/dsd1rk5+MSw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vHXOK-00000001rD1-2dWD;
-	Sat, 08 Nov 2025 01:05:20 +0000
-Received: from mailout1.w1.samsung.com ([210.118.77.11])
+	id 1vHgoa-0000000331a-0jAL;
+	Sat, 08 Nov 2025 11:09:04 +0000
+Received: from hall.aurel32.net ([2001:bc8:30d7:100::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vHXOF-00000001r4j-2JMi;
-	Sat, 08 Nov 2025 01:05:18 +0000
-Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
-	by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id 20251108010513euoutp01cd998bebd4aaa0ed75d96f0fc47a244b~14oqK5B6w2093120931euoutp01c;
-	Sat,  8 Nov 2025 01:05:13 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com 20251108010513euoutp01cd998bebd4aaa0ed75d96f0fc47a244b~14oqK5B6w2093120931euoutp01c
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1762563913;
-	bh=YU8wIooXjxk6UtzN7Anm6mq6ulm4i8hVNl5onJ1Mzz8=;
-	h=From:Date:Subject:In-Reply-To:To:Cc:References:From;
-	b=g/3URcl86dOd/25J8GuIREK1ar322CV6yudM8qSho08qEO9taL2YwiH08sft/SA+t
-	 f07cnBtMHZdtjJ6pJrtksjB8NGwY3cmFMAkbQysu/WmM/G0OkiXNbPGALZf2572u2d
-	 s79QZG11HAl/naijAjxSBqz0Uyl33LfhqcuHIzvw=
-Received: from eusmtip2.samsung.com (unknown [203.254.199.222]) by
-	eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
-	20251108010512eucas1p11f3e192a7b174f8585c98cb2efe68689~14opF744q2253622536eucas1p1t;
-	Sat,  8 Nov 2025 01:05:12 +0000 (GMT)
-Received: from AMDC4942.eu.corp.samsungelectronics.net (unknown
-	[106.210.136.40]) by eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
-	20251108010511eusmtip2d36e66e4a369e219a8a6ccf78998468a~14onsA8PS2515425154eusmtip2h;
-	Sat,  8 Nov 2025 01:05:11 +0000 (GMT)
-From: Michal Wilczynski <m.wilczynski@samsung.com>
-Date: Sat, 08 Nov 2025 02:04:47 +0100
-Subject: [PATCH RFC 13/13] riscv: dts: starfive: jh7110: Update DT for
- display subsystem
+	id 1vHgoW-0000000330R-2bxo;
+	Sat, 08 Nov 2025 11:09:03 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=aurel32.net
+	; s=202004.hall; h=In-Reply-To:Content-Type:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Content-Transfer-Encoding:From:Reply-To:
+	Subject:Content-ID:Content-Description:X-Debbugs-Cc;
+	bh=to2ffKjQT3P3MwBgednnfOCK140+zX9tIALsoHeMAbU=; b=cDWq5EZN2304uIsRG15seKn7jc
+	8c4eO24JcZwAXyXW8HjrkgnDBqCvoME1flCK/uvSskYOXrEk9WEFizKXgzPI4ZxGLWnTSzkCFtVh+
+	ha6+874xT6F7dbERZeye47Yy70N4dvhaVxzgF2PZNJYDBIhVPIlwPnHMV0UZ7tJ81wQl40RcFPv1B
+	hJTknGJ/gAh9jFtRJsEhuGUUzoBbAQgVK94mtxGTqdbppsLSEC1E0a1lJmogvdKF+tlGy93qTAUuD
+	yiUGyNCul62N3ePUAKm3omphE9n1bC4HBS7Sjgyeq/p/VYCPmIecnDKelrKw/XDjXj/PzftruGgIM
+	DzZ0Os9g==;
+Received: from [2a01:e34:ec5d:a741:1ee1:92ff:feb4:5ec0] (helo=ohm.rr44.fr)
+	by hall.aurel32.net with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.98.2)
+	(envelope-from <aurelien@aurel32.net>)
+	id 1vHgnx-0000000DxOH-1KAZ;
+	Sat, 08 Nov 2025 12:08:25 +0100
+Date: Sat, 8 Nov 2025 12:08:24 +0100
+From: Aurelien Jarno <aurelien@aurel32.net>
+To: Alex Elder <elder@riscstar.com>
+Cc: dlan@gentoo.org, robh@kernel.org, krzk+dt@kernel.org,
+	conor+dt@kernel.org, vkoul@kernel.org, kishon@kernel.org,
+	bhelgaas@google.com, lpieralisi@kernel.org, kwilczynski@kernel.org,
+	mani@kernel.org, ziyao@disroot.org, johannes@erdfelt.com,
+	mayank.rana@oss.qualcomm.com, qiang.yu@oss.qualcomm.com,
+	shradha.t@samsung.com, inochiama@gmail.com, pjw@kernel.org,
+	palmer@dabbelt.com, aou@eecs.berkeley.edu, alex@ghiti.fr,
+	p.zabel@pengutronix.de, christian.bruel@foss.st.com,
+	thippeswamy.havalige@amd.com, krishna.chundru@oss.qualcomm.com,
+	guodong@riscstar.com, devicetree@vger.kernel.org,
+	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
+	spacemit@lists.linux.dev, linux-riscv@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v5 0/7] Introduce SpacemiT K1 PCIe phy and host controller
+Message-ID: <aQ8kqIljwGZfkF8M@aurel32.net>
+Mail-Followup-To: Alex Elder <elder@riscstar.com>, dlan@gentoo.org,
+	robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+	vkoul@kernel.org, kishon@kernel.org, bhelgaas@google.com,
+	lpieralisi@kernel.org, kwilczynski@kernel.org, mani@kernel.org,
+	ziyao@disroot.org, johannes@erdfelt.com,
+	mayank.rana@oss.qualcomm.com, qiang.yu@oss.qualcomm.com,
+	shradha.t@samsung.com, inochiama@gmail.com, pjw@kernel.org,
+	palmer@dabbelt.com, aou@eecs.berkeley.edu, alex@ghiti.fr,
+	p.zabel@pengutronix.de, christian.bruel@foss.st.com,
+	thippeswamy.havalige@amd.com, krishna.chundru@oss.qualcomm.com,
+	guodong@riscstar.com, devicetree@vger.kernel.org,
+	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
+	spacemit@lists.linux.dev, linux-riscv@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+References: <20251107191557.1827677-1-elder@riscstar.com>
 MIME-Version: 1.0
-Message-Id: <20251108-jh7110-clean-send-v1-13-06bf43bb76b1@samsung.com>
-In-Reply-To: <20251108-jh7110-clean-send-v1-0-06bf43bb76b1@samsung.com>
-To: Michal Wilczynski <m.wilczynski@samsung.com>,  Conor Dooley
-	<conor@kernel.org>, Rob Herring <robh@kernel.org>,  Krzysztof Kozlowski
-	<krzk+dt@kernel.org>,  Emil Renner Berthing <kernel@esmil.dk>,  Hal Feng
-	<hal.feng@starfivetech.com>,  Michael Turquette <mturquette@baylibre.com>, 
-	Stephen Boyd <sboyd@kernel.org>, Conor Dooley <conor+dt@kernel.org>,  Xingyu
-	Wu <xingyu.wu@starfivetech.com>, Vinod Koul <vkoul@kernel.org>,  Kishon
-	Vijay Abraham I <kishon@kernel.org>,  Andrzej Hajda
-	<andrzej.hajda@intel.com>,  Neil Armstrong <neil.armstrong@linaro.org>,
-	Robert Foss <rfoss@kernel.org>,  Laurent Pinchart
-	<Laurent.pinchart@ideasonboard.com>,  Jonas Karlman <jonas@kwiboo.se>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,  David Airlie
-	<airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,  Maarten Lankhorst
-	<maarten.lankhorst@linux.intel.com>,  Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,  Lee Jones <lee@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,  Paul Walmsley
-	<paul.walmsley@sifive.com>,  Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou
-	<aou@eecs.berkeley.edu>,  Alexandre Ghiti <alex@ghiti.fr>,  Marek Szyprowski
-	<m.szyprowski@samsung.com>, Icenowy Zheng <uwu@icenowy.me>,  Maud Spierings
-	<maudspierings@gocontroll.com>, Andy Yan <andyshrk@163.com>,  Heiko Stuebner
-	<heiko@sntech.de>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-clk@vger.kernel.org, linux-phy@lists.infradead.org, 
-	dri-devel@lists.freedesktop.org, linux-riscv@lists.infradead.org
-X-Mailer: b4 0.15-dev
-X-CMS-MailID: 20251108010512eucas1p11f3e192a7b174f8585c98cb2efe68689
-X-Msg-Generator: CA
-X-RootMTR: 20251108010512eucas1p11f3e192a7b174f8585c98cb2efe68689
-X-EPHeader: CA
-X-CMS-RootMailID: 20251108010512eucas1p11f3e192a7b174f8585c98cb2efe68689
-References: <20251108-jh7110-clean-send-v1-0-06bf43bb76b1@samsung.com>
-	<CGME20251108010512eucas1p11f3e192a7b174f8585c98cb2efe68689@eucas1p1.samsung.com>
+Content-Disposition: inline
+In-Reply-To: <20251107191557.1827677-1-elder@riscstar.com>
+User-Agent: Mutt/2.2.13 (2024-03-09)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251107_170517_030609_AC7B45C3 
-X-CRM114-Status: GOOD (  15.67  )
+X-CRM114-CacheID: sfid-20251108_030901_235288_A51A669A 
+X-CRM114-Status: GOOD (  22.90  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,330 +98,128 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Activate the display subsystem drivers by refactoring the device tree.
+Hi Alex,
 
-This change wraps the dc8200, hdmi, and voutcrg nodes within the new
-vout_subsystem node. This ensures the PD_VOUT power domain is enabled
-before the child drivers are probed.
+Thanks for this new version.
 
-The monolithic hdmi node is replaced with the hdmi_mfd (MFD parent)
-node, containing the hdmi_phy and hdmi_controller children.
+On 2025-11-07 13:15, Alex Elder wrote:
+> This series introduces a PHY driver and a PCIe driver to support PCIe
+> on the SpacemiT K1 SoC.  The PCIe implementation is derived from a
+> Synopsys DesignWare PCIe IP.  The PHY driver supports one combination
+> PCIe/USB PHY as well as two PCIe-only PHYs.  The combo PHY port uses
+> one PCIe lane, and the other two ports each have two lanes.  All PCIe
+> ports operate at 5 GT/second.
+> 
+> The PCIe PHYs must be configured using a value that can only be
+> determined using the combo PHY, operating in PCIe mode.  To allow
+> that PHY to be used for USB, the needed calibration step is performed
+> by the PHY driver automatically at probe time.  Once this step is done,
+> the PHY can be used for either PCIe or USB.
+> 
+> This initial version of the driver supports 32 MSIs, and does not
+> support PCI INTx interrupts.  The hardware does not support MSI-X.
+> 
+> Version 5 of this series incorporates suggestions made during the
+> review of version 4.  Specific highlights are detailed below.
+> 
+> Note:
+> Aurelien Jarno and Johannes Erdfelt have reported seeing ASPM errors
+> accessing NVMe drives when using earlier versions of this series.
+> The Kconfig files they used were very different from the RISC-V
+> default configuration.
+> 
+> Aurelien has since reported the errors do not occur when using
+> defconfig.  Johannes has not reported back about this.
 
-The voutcrg node is updated to consume the pixel clock from the
-&hdmi_phy node instead of the old fixed-clock. The dc8200 node is also
-updated to get its pixel clocks from voutcrg's MUXes.
+Unfortunately, while it is true with v4, this is not the case with v5 
+anymore :(
 
-Finally, the old, incorrect hdmitx0-pixel-clock fixed-clock node is
-removed.
+Fundamentally in the generic designware driver, post_init (which is used 
+to disable L1 support on the controller side) is called after starting 
+the link. The comparison of the capabilities is done in 
+pcie_aspm_cap_init when the link is up, which happens a tiny bit after 
+starting it.
 
-Signed-off-by: Michal Wilczynski <m.wilczynski@samsung.com>
----
- arch/riscv/boot/dts/starfive/jh7110-common.dtsi | 119 +++++++++++++++++++++++-
- arch/riscv/boot/dts/starfive/jh7110.dtsi        | 111 +++++++++++++++++-----
- 2 files changed, 207 insertions(+), 23 deletions(-)
+In practice with v4, the link is started, ASPM L1 is disabled and the 
+link becomes up. With v5, the move of the code getting and enabling the 
+regulator changed the timing, and ASPM L1 is now disabled on the 
+controller 2-3 ms after the link is up, which is too late.
 
-diff --git a/arch/riscv/boot/dts/starfive/jh7110-common.dtsi b/arch/riscv/boot/dts/starfive/jh7110-common.dtsi
-index 2eaf01775ef57d884b4d662af3caa83da2d2ad48..ce459e297261393a352061707041db453819885c 100644
---- a/arch/riscv/boot/dts/starfive/jh7110-common.dtsi
-+++ b/arch/riscv/boot/dts/starfive/jh7110-common.dtsi
-@@ -33,6 +33,25 @@ memory@40000000 {
- 		bootph-pre-ram;
- 	};
- 
-+	reserved-memory {
-+		#address-cells = <2>;
-+		#size-cells = <2>;
-+		ranges;
-+
-+		/* vout applies for space from this CMA
-+		 * Without this CMA reservation,
-+		 * vout may not work properly.
-+		 */
-+		linux,cma {
-+			compatible = "shared-dma-pool";
-+			reusable;
-+			size = <0x0 0x20000000>;
-+			alignment = <0x0 0x1000>;
-+			alloc-ranges = <0x0 0x70000000 0x0 0x20000000>;
-+			linux,cma-default;
-+		};
-+	};
-+
- 	gpio-restart {
- 		compatible = "gpio-restart";
- 		gpios = <&sysgpio 35 GPIO_ACTIVE_HIGH>;
-@@ -73,12 +92,47 @@ codec {
- 			};
- 		};
- 	};
-+
-+	hdmi-connector {
-+		compatible = "hdmi-connector";
-+		type = "a";
-+
-+		port {
-+			hdmi_con_in: endpoint {
-+				remote-endpoint = <&hdmi_out_con>;
-+			};
-+		};
-+	};
- };
- 
- &cpus {
- 	timebase-frequency = <4000000>;
- };
- 
-+&dc8200 {
-+	status = "okay";
-+
-+	ports {
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+
-+		dpu_port0: port@0 {
-+			reg = <0>;
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+
-+			dpu_out_dpi0: endpoint@0 {
-+				reg = <0>;
-+				remote-endpoint = <&hdmi_in>;
-+			};
-+		};
-+
-+		dpu_port1: port@1 {
-+			reg = <1>;
-+		};
-+	};
-+};
-+
- &dvp_clk {
- 	clock-frequency = <74250000>;
- };
-@@ -99,8 +153,31 @@ &gmac1_rmii_refin {
- 	clock-frequency = <50000000>;
- };
- 
--&hdmitx0_pixelclk {
--	clock-frequency = <297000000>;
-+&hdmi_controller {
-+	status = "okay";
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&hdmi_pins>;
-+
-+	ports {
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+
-+		port@0 {
-+			reg = <0>;
-+
-+			hdmi_in: endpoint {
-+				remote-endpoint = <&dpu_out_dpi0>;
-+			};
-+		};
-+
-+		hdmi_out_port: port@1 {
-+			reg = <1>;
-+			hdmi_out_con: endpoint {
-+				remote-endpoint = <&hdmi_con_in>;
-+			};
-+
-+		};
-+	};
- };
- 
- &i2srx_bclk_ext {
-@@ -388,6 +465,40 @@ &syscrg {
- };
- 
- &sysgpio {
-+	hdmi_pins: hdmi-0 {
-+		hdmi-cec-pins {
-+			pinmux = <GPIOMUX(14, GPOUT_SYS_HDMI_CEC_SDA,
-+					      GPOEN_SYS_HDMI_CEC_SDA,
-+					      GPI_SYS_HDMI_CEC_SDA)>;
-+			input-enable;
-+			bias-pull-up;
-+		};
-+
-+		hdmi-hpd-pins {
-+			pinmux = <GPIOMUX(15, GPOUT_HIGH,
-+					      GPOEN_ENABLE,
-+					      GPI_SYS_HDMI_HPD)>;
-+			input-enable;
-+			bias-disable; /* external pull-up */
-+		};
-+
-+		hdmi-scl-pins {
-+			pinmux = <GPIOMUX(0, GPOUT_SYS_HDMI_DDC_SCL,
-+					     GPOEN_SYS_HDMI_DDC_SCL,
-+					     GPI_SYS_HDMI_DDC_SCL)>;
-+			input-enable;
-+			bias-pull-up;
-+		};
-+
-+		hdmi-sda-pins {
-+			pinmux = <GPIOMUX(1, GPOUT_SYS_HDMI_DDC_SDA,
-+					     GPOEN_SYS_HDMI_DDC_SDA,
-+					     GPI_SYS_HDMI_DDC_SDA)>;
-+			input-enable;
-+			bias-pull-up;
-+		};
-+	};
-+
- 	i2c0_pins: i2c0-0 {
- 		i2c-pins {
- 			pinmux = <GPIOMUX(57, GPOUT_LOW,
-@@ -677,3 +788,7 @@ &U74_3 {
- &U74_4 {
- 	cpu-supply = <&vdd_cpu>;
- };
-+
-+&voutcrg {
-+	status = "okay";
-+};
-diff --git a/arch/riscv/boot/dts/starfive/jh7110.dtsi b/arch/riscv/boot/dts/starfive/jh7110.dtsi
-index 0ba74ef046792fd63ed6cf971fa1438609b06fb1..da670a44dcec0f3dae65a2612c24b79f3cdd7d6c 100644
---- a/arch/riscv/boot/dts/starfive/jh7110.dtsi
-+++ b/arch/riscv/boot/dts/starfive/jh7110.dtsi
-@@ -283,12 +283,6 @@ gmac1_rmii_refin: gmac1-rmii-refin-clock {
- 		#clock-cells = <0>;
- 	};
- 
--	hdmitx0_pixelclk: hdmitx0-pixel-clock {
--		compatible = "fixed-clock";
--		clock-output-names = "hdmitx0_pixelclk";
--		#clock-cells = <0>;
--	};
--
- 	i2srx_bclk_ext: i2srx-bclk-ext-clock {
- 		compatible = "fixed-clock";
- 		clock-output-names = "i2srx_bclk_ext";
-@@ -344,6 +338,14 @@ tdm_ext: tdm-ext-clock {
- 		#clock-cells = <0>;
- 	};
- 
-+	xin24m: xin24m {
-+		compatible = "fixed-clock";
-+		#clock-cells = <0>;
-+		clock-frequency = <24000000>;
-+		clock-output-names = "xin24m";
-+	};
-+
-+
- 	soc {
- 		compatible = "simple-bus";
- 		interrupt-parent = <&plic>;
-@@ -1203,22 +1205,89 @@ camss: isp@19840000 {
- 			status = "disabled";
- 		};
- 
--		voutcrg: clock-controller@295c0000 {
--			compatible = "starfive,jh7110-voutcrg";
--			reg = <0x0 0x295c0000 0x0 0x10000>;
--			clocks = <&syscrg JH7110_SYSCLK_VOUT_SRC>,
--				 <&syscrg JH7110_SYSCLK_VOUT_TOP_AHB>,
--				 <&syscrg JH7110_SYSCLK_VOUT_TOP_AXI>,
--				 <&syscrg JH7110_SYSCLK_VOUT_TOP_HDMITX0_MCLK>,
--				 <&syscrg JH7110_SYSCLK_I2STX0_BCLK>,
--				 <&hdmitx0_pixelclk>;
--			clock-names = "vout_src", "vout_top_ahb",
--				      "vout_top_axi", "vout_top_hdmitx0_mclk",
--				      "i2stx0_bclk", "hdmitx0_pixelclk";
--			resets = <&syscrg JH7110_SYSRST_VOUT_TOP_SRC>;
--			#clock-cells = <1>;
--			#reset-cells = <1>;
-+		vout_subsystem: display-subsystem@29400000 {
-+			compatible = "starfive,jh7110-vout-subsystem";
-+			reg = <0x0 0x29400000 0x0 0x200000>;
-+			#address-cells = <2>;
-+			#size-cells = <2>;
-+			ranges;
-+
- 			power-domains = <&pwrc JH7110_PD_VOUT>;
-+			clocks = <&syscrg JH7110_SYSCLK_NOC_BUS_DISP_AXI>;
-+			resets = <&syscrg JH7110_SYSRST_NOC_BUS_DISP_AXI>;
-+
-+			dc8200: display@29400000 {
-+				compatible = "verisilicon,dc";
-+				reg = <0x0 0x29400000 0x0 0x2800>;
-+				interrupts = <95>;
-+
-+				clocks = <&voutcrg JH7110_VOUTCLK_DC8200_CORE>,
-+					<&voutcrg JH7110_VOUTCLK_DC8200_AXI>,
-+					<&voutcrg JH7110_VOUTCLK_DC8200_AHB>,
-+					<&voutcrg JH7110_VOUTCLK_DC8200_PIX0>,
-+					<&voutcrg JH7110_VOUTCLK_DC8200_PIX1>;
-+				clock-names = "core", "axi", "ahb", "pix0", "pix1";
-+
-+				resets = <&voutcrg JH7110_VOUTRST_DC8200_CORE>,
-+					 <&voutcrg JH7110_VOUTRST_DC8200_AXI>,
-+					 <&voutcrg JH7110_VOUTRST_DC8200_AHB>;
-+				reset-names = "core", "axi", "ahb";
-+			};
-+
-+			hdmi_mfd: hdmi@29590000 {
-+				compatible = "starfive,jh7110-hdmi-mfd";
-+				reg = <0x0 0x29590000 0x0 0x4000>;
-+
-+				hdmi_phy: phy {
-+					compatible = "starfive,jh7110-inno-hdmi-phy";
-+
-+					clocks = <&xin24m>;
-+					clock-names = "refoclk";
-+
-+					/* Output clock: The variable pixel clock */
-+					#clock-cells = <0>;
-+					clock-output-names = "hdmi_pclk";
-+
-+					/* PHY provider for the controller */
-+					#phy-cells = <0>;
-+				};
-+
-+				hdmi_controller: controller {
-+					compatible = "starfive,jh7110-inno-hdmi-controller";
-+					interrupts = <99>;
-+
-+					clocks = <&voutcrg JH7110_VOUTCLK_HDMI_TX_SYS>,
-+						 <&voutcrg JH7110_VOUTCLK_HDMI_TX_MCLK>,
-+						 <&voutcrg JH7110_VOUTCLK_HDMI_TX_BCLK>,
-+						 <&hdmi_phy>;
-+					clock-names = "sys", "mclk", "bclk", "pclk";
-+
-+					resets = <&voutcrg JH7110_VOUTRST_HDMI_TX_HDMI>;
-+					reset-names = "hdmi_tx";
-+
-+					phys = <&hdmi_phy>;
-+					phy-names = "hdmi-phy";
-+				};
-+			};
-+
-+			voutcrg: clock-controller@295c0000 {
-+				compatible = "starfive,jh7110-voutcrg";
-+				reg = <0x0 0x295c0000 0x0 0x10000>;
-+
-+				clocks = <&syscrg JH7110_SYSCLK_VOUT_SRC>,
-+					 <&syscrg JH7110_SYSCLK_VOUT_TOP_AHB>,
-+					 <&syscrg JH7110_SYSCLK_VOUT_TOP_AXI>,
-+					 <&syscrg JH7110_SYSCLK_VOUT_TOP_HDMITX0_MCLK>,
-+					 <&syscrg JH7110_SYSCLK_I2STX0_BCLK>,
-+					 <&hdmi_phy>;
-+				clock-names = "vout_src", "vout_top_ahb",
-+					      "vout_top_axi", "vout_top_hdmitx0_mclk",
-+					      "i2stx0_bclk", "hdmitx0_pixelclk";
-+
-+				resets = <&syscrg JH7110_SYSRST_VOUT_TOP_SRC>;
-+				#clock-cells = <1>;
-+				#reset-cells = <1>;
-+			};
- 		};
- 
- 		pcie0: pcie@940000000 {
+I have added a call to pci_info to display the moment where ASPM is 
+disabled. This is without the regulator change:
+
+[    0.386730] spacemit-k1-pcie ca400000.pcie: host bridge /soc/pcie-bus/pcie@ca400000 ranges:
+[    0.386970] spacemit-k1-pcie ca800000.pcie: host bridge /soc/pcie-bus/pcie@ca800000 ranges:
+[    0.387017] spacemit-k1-pcie ca800000.pcie:       IO 0x00b7002000..0x00b7101fff -> 0x0000000000
+[    0.387047] spacemit-k1-pcie ca800000.pcie:      MEM 0x00a0000000..0x00afffffff -> 0x00a0000000
+[    0.387062] spacemit-k1-pcie ca800000.pcie:      MEM 0x00b0000000..0x00b6ffffff -> 0x00b0000000
+[    0.400109] spacemit-k1-pcie ca400000.pcie:       IO 0x009f002000..0x009f101fff -> 0x0000000000
+[    0.490101] spacemit-k1-pcie ca800000.pcie: iATU: unroll T, 8 ob, 8 ib, align 4K, limit 4G
+[    0.494195] spacemit-k1-pcie ca400000.pcie:      MEM 0x0090000000..0x009effffff -> 0x0090000000
+[    0.850344] spacemit-k1-pcie ca400000.pcie: iATU: unroll T, 8 ob, 8 ib, align 4K, limit 4G
+[    0.950133] spacemit-k1-pcie ca400000.pcie: PCIe Gen.1 x2 link up
+[    1.129988] spacemit-k1-pcie ca400000.pcie: PCI host bridge to bus 0000:00
+[    1.335482] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    1.340946] pci_bus 0000:00: root bus resource [io  0x100000-0x1fffff] (bus address [0x0000-0xfffff])
+[    1.350181] pci_bus 0000:00: root bus resource [mem 0x90000000-0x9effffff]
+[    1.358734] pci_bus 0000:00: resource 4 [io  0x100000-0x1fffff]
+[    1.362033] pci_bus 0000:00: resource 5 [mem 0x90000000-0x9effffff]
+[    1.368289] spacemit-k1-pcie ca400000.pcie: pcie_aspm_override_default_link_state
+[    1.375967] pci 0000:00:00.0: [1e5d:3003] type 01 class 0x060400 PCIe Root Port
+[    1.383043] pci 0000:00:00.0: BAR 0 [mem 0x00000000-0x000fffff]
+[    1.388927] pci 0000:00:00.0: BAR 1 [mem 0x00000000-0x000fffff]
+[    1.394826] pci 0000:00:00.0: PCI bridge to [bus 01-ff]
+[    1.400061] pci 0000:00:00.0:   bridge window [io  0x100000-0x100fff]
+[    1.406460] pci 0000:00:00.0:   bridge window [mem 0x00000000-0x000fffff]
+[    1.413245] pci 0000:00:00.0:   bridge window [mem 0x00000000-0x000fffff 64bit pref]
+[    1.421012] pci 0000:00:00.0: supports D1
+[    1.424948] pci 0000:00:00.0: PME# supported from D0 D1 D3hot D3cold
+[    1.432718] pci 0000:01:00.0: [1987:5015] type 00 class 0x010802 PCIe Endpoint
+[    1.438698] pci 0000:01:00.0: BAR 0 [mem 0x00000000-0x00003fff 64bit]
+[    1.445426] pci 0000:01:00.0: 4.000 Gb/s available PCIe bandwidth, limited by 2.5 GT/s PCIe x2 link at 0000:00:00.0 (capable of 31.504 Gb/s with 8.0 GT/s PCIe x4 link)
+[    1.464897] pci_bus 0000:01: busn_res: [bus 01-ff] end is updated to 01
+
+And this is with the regulator change:
+
+[    0.410796] spacemit-k1-pcie ca400000.pcie: host bridge /soc/pcie-bus/pcie@ca400000 ranges:
+[    0.410836] spacemit-k1-pcie ca800000.pcie: host bridge /soc/pcie-bus/pcie@ca800000 ranges:
+[    0.410889] spacemit-k1-pcie ca800000.pcie:       IO 0x00b7002000..0x00b7101fff -> 0x0000000000
+[    0.410917] spacemit-k1-pcie ca800000.pcie:      MEM 0x00a0000000..0x00afffffff -> 0x00a0000000
+[    0.410932] spacemit-k1-pcie ca800000.pcie:      MEM 0x00b0000000..0x00b6ffffff -> 0x00b0000000
+[    0.424651] spacemit-k1-pcie ca400000.pcie:       IO 0x009f002000..0x009f101fff -> 0x0000000000
+[    0.436446] spacemit-k1-pcie ca400000.pcie:      MEM 0x0090000000..0x009effffff -> 0x0090000000
+[    0.513897] spacemit-k1-pcie ca800000.pcie: iATU: unroll T, 8 ob, 8 ib, align 4K, limit 4G
+[    0.559595] spacemit-k1-pcie ca400000.pcie: iATU: unroll T, 8 ob, 8 ib, align 4K, limit 4G
+[    0.839412] spacemit-k1-pcie ca400000.pcie: PCIe Gen.1 x2 link up
+[    0.847078] spacemit-k1-pcie ca400000.pcie: PCI host bridge to bus 0000:00
+[    0.857600] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    0.868702] pci_bus 0000:00: root bus resource [io  0x100000-0x1fffff] (bus address [0x0000-0xfffff])
+[    1.146409] pci_bus 0000:00: root bus resource [mem 0x90000000-0x9effffff]
+[    1.373742] pci 0000:00:00.0: [1e5d:3003] type 01 class 0x060400 PCIe Root Port
+[    1.380963] pci 0000:00:00.0: BAR 0 [mem 0x00000000-0x000fffff]
+[    1.386883] pci 0000:00:00.0: BAR 1 [mem 0x00000000-0x000fffff]
+[    1.392808] pci 0000:00:00.0: PCI bridge to [bus 01-ff]
+[    1.395394] pci 0000:00:00.0:   bridge window [io  0x100000-0x100fff]
+[    1.401811] pci 0000:00:00.0:   bridge window [mem 0x00000000-0x000fffff]
+[    1.408583] pci 0000:00:00.0:   bridge window [mem 0x00000000-0x000fffff 64bit pref]
+[    1.416354] pci 0000:00:00.0: supports D1
+[    1.420294] pci 0000:00:00.0: PME# supported from D0 D1 D3hot D3cold
+[    1.428220] pci 0000:01:00.0: [1987:5015] type 00 class 0x010802 PCIe Endpoint
+[    1.434034] pci 0000:01:00.0: BAR 0 [mem 0x00000000-0x00003fff 64bit]
+[    1.440772] pci 0000:01:00.0: 4.000 Gb/s available PCIe bandwidth, limited by 2.5 GT/s PCIe x2 link at 0000:00:00.0 (capable of 31.504 Gb/s with 8.0 GT/s PCIe x4 link)
+[    1.463390] pci 0000:01:00.0: pcie_aspm_override_default_link_state
+[    1.467000] pci 0000:01:00.0: ASPM: default states L1
+[    1.472093] pci_bus 0000:01: busn_res: [bus 01-ff] end is updated to 01
+
+Note how the line pcie_aspm_override_default_link_state arrives too 
+late.
+
+Regards
+Aurelien
 
 -- 
-2.34.1
-
+Aurelien Jarno                          GPG: 4096R/1DDD8C9B
+aurelien@aurel32.net                     http://aurel32.net
 
 -- 
 linux-phy mailing list
