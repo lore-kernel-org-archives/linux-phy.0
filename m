@@ -4,89 +4,150 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0339BCCFA13
-	for <linux-phy@archiver.kernel.org>; Mon, 10 Nov 2025 09:19:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A4C1BCCFA13
+	for <linux-phy@archiver.kernel.org>; Mon, 10 Nov 2025 09:23:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YNtR5pW5QOoRNtMP4qjf0b8mu06ZrL9rxJ4YQwt9YX4=; b=YZNaAF0b+GCz1S
-	1SQ0GaiWiqbd8qY+C707uxYNvBZhxnAPpKm2BHU3O3r2IXsoTfIm9qe5YhiVLU8vpmTzV9xUN822q
-	RTZlJbq2JuCU0bm4J3C1rnvTdTGFZcP+SI6ybNtuC2tBGREhY29KAdT9qjR3qXTRJMPxntOUujAcL
-	FYOnnXiiyhFJP14HNQZWMqgFFdy7QVat5qgBQcEgpdkgVZrw1WQ6Fkd/3watr3zSt+n8d1Gx/1K4w
-	3rcR48gKKzKqbvHq5mfHogno0u2KhTx+zh4T+gWNXClsdUZz9ZReFABQVcVkKJD5gi1hFq/ETY8Vq
-	Y5Yqq4x7KW4TEupn7IHg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=vJjPtFUKix8RZaoYYnK0S6YFzBqJVvVqizeK5RMIYvI=; b=T1tqomqLYYzuog
+	H/UzaB4mYrqvtBhMeofSuIcigns+4NpQPAWSuIKQnUaozyRHZY64lyZmxQi3pg+hbI4iHCtMQ5D5a
+	NfE56k8GPddMbLeehpitMFO8Eq5C053oqSP6iqcxtgbm2uF3E4JkYiZB/iVM3KPmLrRWtiItIhB5Z
+	dQNH0ym7oFrx3PG7K+xyGBKXyA8S8Ir8l/QES6Dlj48YHXfcQcAqPVFgZBmdxvGRC6CbGZHp2FuJR
+	WnL5/+Zho7D4h2M2i/rXGUnwSMcZOXKJvzPeO4Gp4k0XzRVxqKitjF37RJM1jbs5gBb0rowFaxqGO
+	R6JII79JqfyuTSDv80hg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vIO43-000000054lM-3CGF;
-	Mon, 10 Nov 2025 09:19:55 +0000
-Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
+	id 1vIO75-0000000556Q-13yS;
+	Mon, 10 Nov 2025 09:23:03 +0000
+Received: from mail-westeuropeazon11010017.outbound.protection.outlook.com ([52.101.69.17] helo=AM0PR83CU005.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vIO3z-000000054jn-2UUo;
-	Mon, 10 Nov 2025 09:19:53 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1762766377; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=mQxPVYOATQezqBL5yCJPKwUbX+JgMrUABoUyvim3PFza8c5ZHhZestibHiJFWxXvoUng13jVC8P9S64jLTObD3EpZPUjgof53bxKAflmbD/d78+0IWCG8rNnUURNAQ8Oje3LhaAfmz53emfB473ehmaxkoUhLVNdPpqAiCm1FeU=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1762766377; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=hxLXwdvcR73afnWX3+U+TbZmEVnvtJ1WDn3vMJOYfeI=; 
-	b=AUtP6OnBexLHP6078mlNSuvrN1eMtg8eyILcYQm+PCUyEel5aO3GjP5o+k/IR2p8jF5aO/vUOfWan+DKf+K6QVxlPMK3JNUqhpcbD2Q6ZQc69QnOsjAw2W5iAuL+QEHBPlJ0aoWglABTbUZzwNG9t4F8qJN4UUICHgiaxNcj24E=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=nicolas.frattaroli@collabora.com;
-	dmarc=pass header.from=<nicolas.frattaroli@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1762766376;
-	s=zohomail; d=collabora.com; i=nicolas.frattaroli@collabora.com;
-	h=From:From:To:To:Cc:Cc:Subject:Subject:Date:Date:Message-ID:In-Reply-To:References:MIME-Version:Content-Transfer-Encoding:Content-Type:Message-Id:Reply-To;
-	bh=hxLXwdvcR73afnWX3+U+TbZmEVnvtJ1WDn3vMJOYfeI=;
-	b=FSyKtglpf319WU2vjW77dgt25xU6yIInC/sCx6LK4hbKihknuUJcM+Xfc4doAzdm
-	TkVp3GcYUsXL3ydIq01zsOAj8rnMcOSkAt6BZ5AUWKkDs6fcC2OqtvmkDzvhvjE66+d
-	HJOO9ylHv/KRJd9AOt8FaM/tBgmLyh5foC6PyvK0=
-Received: by mx.zohomail.com with SMTPS id 1762766374404175.65977685098846;
-	Mon, 10 Nov 2025 01:19:34 -0800 (PST)
-From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-To: Peter Wang =?UTF-8?B?KOeOi+S/oeWPiyk=?= <peter.wang@mediatek.com>,
- Chunfeng Yun =?UTF-8?B?KOS6keaYpeWzsCk=?= <Chunfeng.Yun@mediatek.com>,
- "kishon@kernel.org" <kishon@kernel.org>,
- "avri.altman@wdc.com" <avri.altman@wdc.com>,
- "bvanassche@acm.org" <bvanassche@acm.org>,
- "martin.petersen@oracle.com" <martin.petersen@oracle.com>,
- "broonie@kernel.org" <broonie@kernel.org>,
- "alim.akhtar@samsung.com" <alim.akhtar@samsung.com>,
- "chu.stanley@gmail.com" <chu.stanley@gmail.com>,
- "conor+dt@kernel.org" <conor+dt@kernel.org>,
- "p.zabel@pengutronix.de" <p.zabel@pengutronix.de>,
- "robh@kernel.org" <robh@kernel.org>,
- "James.Bottomley@HansenPartnership.com"
- <James.Bottomley@hansenpartnership.com>,
- "lgirdwood@gmail.com" <lgirdwood@gmail.com>,
- "vkoul@kernel.org" <vkoul@kernel.org>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- "krzk+dt@kernel.org" <krzk+dt@kernel.org>,
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
- Chaotian Jing =?UTF-8?B?KOS6leacneWkqSk=?= <Chaotian.Jing@mediatek.com>
-Cc: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "kernel@collabora.com" <kernel@collabora.com>,
- Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>,
- "linux-scsi@vger.kernel.org" <linux-scsi@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>
-Subject: Re: [PATCH v3 09/24] scsi: ufs: mediatek: Rework the crypt-boost stuff
-Date: Mon, 10 Nov 2025 10:19:25 +0100
-Message-ID: <6210035.lOV4Wx5bFT@workhorse>
-In-Reply-To: <9ae7495023a8562566ff57bd2dfa60524194ee30.camel@mediatek.com>
-References: <20251023-mt8196-ufs-v3-0-0f04b4a795ff@collabora.com>
- <20251023-mt8196-ufs-v3-9-0f04b4a795ff@collabora.com>
- <9ae7495023a8562566ff57bd2dfa60524194ee30.camel@mediatek.com>
+	id 1vIO72-0000000555O-1knW
+	for linux-phy@lists.infradead.org;
+	Mon, 10 Nov 2025 09:23:01 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=TuK3fleAsn+XNFK1QF2KC/USkb7DmVDX2R5jnR6oxHVExTWlOQI7qRX9SMIdX+mccK3OOfX0VUiX7wdEr2PRMcFT4W6z9L0S5yqq302/Cbv0J1eHYiNMrxpyEcXEv8TIgCFfWh8lUszGxGPQLAlCsIMQILbgIOweZtPsuIS45RpV/90oNF8J4xpLaZ1mZLwUC6SmvjNYm7NfPMwaWaRJSLz4HgEbmpZF/1CS+qQkNrOC6cYgrVyPPTWI3csxWtSbhE2eQm/CUwC0lqkXOOz126LHvPXNLgjDxcneBbx93pfI9U9vZKsxuV5tZB81rhGk+zGvUwAq0ShCSUwbH4Dwrg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=OnQ7gglthdaN4xcLqDhNCKsIFLig4ZBv2GfX+MqC7e8=;
+ b=nPtTtlXM1fhQ6y3SNobqJMhHmiYqtVFMxUOhoOSYab601ivLyrgJyxnIBRIcCKTW5nNzEYyIg6hq8b7zC7dNdipMzuS/AzuXIIQaU7aDVWshhkcV+iFMH6tSyxCVVivW6e3yTjDDSIibnQPyqWIrBySIV4Z3jVHEGeGfScfaJd89BzxtIgCPfONoTgIjDppsYdyr8dLswgEGmuN+Ub34bF1MtuPhkTjBvJh5Q3VDubssk6CG/Cnv4uRzAf2qa3m4mjIqN4RmE6Ma2feiaFCHVGNmBng2w239tjLh/o7bu4rsXCdns5dzl08I1KfnMhZ6argL/cQEYiih+CbbZoRakg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=OnQ7gglthdaN4xcLqDhNCKsIFLig4ZBv2GfX+MqC7e8=;
+ b=BfTnUQDIXW+OLgJzYxn8WzgiwOuApwKMupDg0DDfUiBqmpnMaDSi0C+/t4g4lT10kiV1B4gHGBcFr/dNrVDO7s/P4PprSHkAmYICGnBsGqEJh14tJEAvJebty39eD/nDMGlJrN47hJ2mFTedlxtRfN/9xB25+/O9F1UYJ3jZrJLyFUmRh/hYeUS5BojBdWZ+wT5M3uCgEbQXiVXEqWnMDkTOEOOV1+oXbxPKQFGv/Kkl1dGwIYZqlcDMh9HWEl9bZ1h4r1U8V0GZIIHhcQbNKGZ4GLh8XULm8RmujOz22ea2ah+I7jhqU8qq0aOphPA/4VCE2uEhjvLbSOj4FMKfUg==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AM8PR04MB7779.eurprd04.prod.outlook.com (2603:10a6:20b:24b::14)
+ by DU6PR04MB11229.eurprd04.prod.outlook.com (2603:10a6:10:5c4::22) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9298.16; Mon, 10 Nov
+ 2025 09:22:52 +0000
+Received: from AM8PR04MB7779.eurprd04.prod.outlook.com
+ ([fe80::b067:7ceb:e3d7:6f93]) by AM8PR04MB7779.eurprd04.prod.outlook.com
+ ([fe80::b067:7ceb:e3d7:6f93%5]) with mapi id 15.20.9298.010; Mon, 10 Nov 2025
+ 09:22:52 +0000
+From: Vladimir Oltean <vladimir.oltean@nxp.com>
+To: linux-phy@lists.infradead.org
+Cc: Ioana Ciornei <ioana.ciornei@nxp.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Josua Mayer <josua@solid-run.com>,
+	linux-kernel@vger.kernel.org,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	devicetree@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: [PATCH v4 phy 00/16] Lynx 28G improvements part 1
+Date: Mon, 10 Nov 2025 11:22:25 +0200
+Message-Id: <20251110092241.1306838-1-vladimir.oltean@nxp.com>
+X-Mailer: git-send-email 2.34.1
+X-ClientProxiedBy: AM8P190CA0026.EURP190.PROD.OUTLOOK.COM
+ (2603:10a6:20b:219::31) To AM8PR04MB7779.eurprd04.prod.outlook.com
+ (2603:10a6:20b:24b::14)
 MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM8PR04MB7779:EE_|DU6PR04MB11229:EE_
+X-MS-Office365-Filtering-Correlation-Id: d2234213-48c3-4301-e6cd-08de203ab8e6
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|52116014|376014|7416014|366016|1800799024|38350700014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?c1rbwU709e4sWdKSmFPAqCa7tnasygXlSV7rW46GQQ3zKLRXq+twNKTeHamx?=
+ =?us-ascii?Q?G4OekmtXrqqPqJ2h56IA34ehO4E/ep0+tIm3KwZeSM6Sb1cZVcP9g++B74VY?=
+ =?us-ascii?Q?m015TvrX7n3LySl2jgT+TaJ6lubhgW/OglDF0VR4jyr5bi8pXdVGEABSsMhG?=
+ =?us-ascii?Q?wymbMLrUwiaDxMRPiM2wwium1/rpwn/fBJt8bOMs2HxZ9TmUjjT5rcBaSzSA?=
+ =?us-ascii?Q?oFmWzPzovjG2kttpOH1O36gIj0fXwS2rs9E9o7QiYe8woNgGLbplvSOsliVh?=
+ =?us-ascii?Q?+E6ZFxpbZn+8KkDivO3oz2W+df178cIEMoaLJ/Z6Fc1h2wdFKxW3aDoo+Euu?=
+ =?us-ascii?Q?VpE99Dj99rqUc7MsnaCj5TsgfGES3LrzBVPXpRD8WQGk2WyB30glkkQs1ODF?=
+ =?us-ascii?Q?ewyQljWunjakhBz2SGUXIV4PBnjRylqU/t31XwjW0ppvn22q63YqV3WDtDye?=
+ =?us-ascii?Q?AVQ/2QaJTjmh0UOZXP93p62lOu0FzVy3/oAQIexafpR9PTpohVF+aRAcADLe?=
+ =?us-ascii?Q?Rkn0hZC0Nih1xQlipI7AJvi4V6CjP7QTD5ItTPZrKMMlRrIDjgHk4vWeYBpH?=
+ =?us-ascii?Q?plkBnZlbYIH3aMT9kGWf5fiBkPsAh4Qve483saWDnfyJSBcrkwBIkBn35l3r?=
+ =?us-ascii?Q?grJcWULNH+cKC1mCXvlbwVnvuW3XHP84WFSeG/DvVaG29bMpSS0RTp4Fiw4d?=
+ =?us-ascii?Q?kbkUOjkjik7SF6IsIMgNYQpgshkpIyJ5zCy39iACXnCzUUN7irRIw+SN24mT?=
+ =?us-ascii?Q?xUpLclAmV5UKfItIV64O8CiU6rZkNMA2OK2xkm2KQ4Y1UfnWSBbv7Ck0550L?=
+ =?us-ascii?Q?FXVQGqeH/1+C3ObkCcJGfyghmKZrL34EylEGx14A4+VicfDuhCqo1UZfAkEo?=
+ =?us-ascii?Q?LJj5AqCUAY0YQLs/3Vz5DRpbqOKoShfAdgISz3988vAxrz7IprPTLKeZrhcn?=
+ =?us-ascii?Q?I1Sx+YlkByPPsV4AfiHjokgj46CFZ1nVXCyF3ujhx7ORRQeczYWypTbqNjUH?=
+ =?us-ascii?Q?EKb62l0eKtDMi1WPovtpsjsn/bPh5rp/l3eqcTkOMJ35SW+61tql3n9VogBR?=
+ =?us-ascii?Q?r/H+K32jeiH+xMX/BZPwCi/qjWWLxW2zr/dyR/NgpmT4NcjTsxlLYkVTk3aH?=
+ =?us-ascii?Q?x0sNqqisENUNMgDFln/6az3tIigTc4DupIgsbli0CDcXIZ224QEsMDU5m4FK?=
+ =?us-ascii?Q?PF2xVNetFN1zNTkfzmLdYYzgnwqSTFe9qio8xEwCtqbOHnN66v8gyGOnrWmd?=
+ =?us-ascii?Q?QlJCbhZswUQcIcN56R5CNSAWZ6QQKx916QgOoVMiTYKFdN7SSZrGf03RKwJ4?=
+ =?us-ascii?Q?bLQtGvecb9ryt4b5W4jlB79phkYGOMRadauyLvF2LLcV56ygtsrVFFrWRVTX?=
+ =?us-ascii?Q?OGOnejRCApVs4Eb4XZGpkY5m7sft5fQqmr8rtkvpc288J6zDTAjOhjiauuGB?=
+ =?us-ascii?Q?xbGgYqh0ieRwNmSbOC7b2Wo9hPvWrg9H/TZySjqTW3jwDjxmIF/dJwOXxsU/?=
+ =?us-ascii?Q?3p2j84BHuBSRlXtAgqld3fRBY3TMvuayF/i7?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM8PR04MB7779.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(52116014)(376014)(7416014)(366016)(1800799024)(38350700014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?6GsV4MOoCVs+qt9bVjj+giP0xnZkgvxjO94B/ED1QsOU3uRYLHToWqZFFtE1?=
+ =?us-ascii?Q?IBd3Rb368DLCsikC+y2ji1PNRbr5sJCu1wopKZ6SP46m2uJ8Ne6Qu096jLzi?=
+ =?us-ascii?Q?kovjaSM+yKv2X8RyONNbwPcl3tYQY5Yb6d03Jr7vOf2QQIcZCe13fSWXVni0?=
+ =?us-ascii?Q?phzZe4J2ZkU2jBuK1NT1Rl6O35bB8aI9svW6GDPvgSl04bFM+lxZ0xb1Uxbs?=
+ =?us-ascii?Q?jJeN0R1ZZ1o9XYr5747eG7o8TTS6Kmrmki1amt1WeYPofylrZgHrm+LIZPBR?=
+ =?us-ascii?Q?F1Fac/NcdzIKXp2wtIBG/mfOT1ykq3wbMOU7AUVIOAoUlTa8Wt6dC3YLYsZp?=
+ =?us-ascii?Q?5i/nZU/Yx+C5wp2VGVbmRnSBho0z0bqSoEF13XlRHEB+qFq02wF0/F1r85aP?=
+ =?us-ascii?Q?l8t9eXgIXdiRqjZi84Flus0yWeXjAM0evRXHx9DP55o0jA6FXR2mEm/xBchC?=
+ =?us-ascii?Q?ZdMHEcH5xrc23TpYwCLSrYbv+1fiuBhjYYJIsk/lcHUjazWk/rdAZ5JQHb1l?=
+ =?us-ascii?Q?2SEkfFKDeVaS26GzJl5XXVCAhQbwQWNSXcdUE2ymaCy93tWQOWSheEKP0G+X?=
+ =?us-ascii?Q?LGJyhO8jmjQS2j02ndJlXdMT0IHTiHkeM0x4LxNy9pi4FOLQLAvEHPvufGL+?=
+ =?us-ascii?Q?j/WTqQO4AaQeYA8gHrA8Iir/rDYgjykCLQfTUP5yBWMGaiJnv4OZa4LBNM81?=
+ =?us-ascii?Q?IM6F3rZPrgah3I9R+h+9h3EmqJ/Vebo2RSK2JERdQk9h1OwOgFW38W2KYPkz?=
+ =?us-ascii?Q?K0GTpeSdoRoi+DznEG/gUnBe+0TaBuCZirjYCUBie1+gr+niQ0iT9v7oHg2T?=
+ =?us-ascii?Q?ROoTPxb4fdNJMgv6/Z2tW63r9gp6vagoG1To1MSxjKz0YB6gU1Yj9QxtxeP5?=
+ =?us-ascii?Q?rBsIvzF8HzGbZS/DP9yAISRtf5UScv0oUrNZV5Ej94ernK38MZ+rbuAhN6E2?=
+ =?us-ascii?Q?xlZ6/WaLauzMoafcqkJtWF5WUZzVH8RLI/MuVs67js5vhgmkmGW0vzt7ga8j?=
+ =?us-ascii?Q?dOEbfjv2UUTgbAyb3GGmFmNy6cYqQC9gB2K45yg5AwfNm1vdhVfUhg31CLwt?=
+ =?us-ascii?Q?x40gxQ/tXf8cGjLRWb+4YwVkKnroE+oGuX7H+n/p674nT2e73W0OX6Fv6xVv?=
+ =?us-ascii?Q?I1i3U5Mnz0c4NivLtZNPNiEVTSvGv+712tFfwiAcLYOt/cMDr6BffGLEjLIg?=
+ =?us-ascii?Q?eCJ5YUp1fnQxR9HJCESazTImXxz2H4awBWJZYGRfLCchPYexbN6bSlSUw4T9?=
+ =?us-ascii?Q?lS92buQKHbANeGpet/WxyjBhnkQpM+GFq6rmhBcwDR/978HfN6r45xU5wpyC?=
+ =?us-ascii?Q?Ex/oq+htpvwHDNsPM1Wr/LqTOJOsJD5IhzPhJ7njMUACWEzdAKpuf6bvdAAp?=
+ =?us-ascii?Q?tDrq4yhCuCifxsYEeKfweXYiUSfvwgkv5HtZfET9/WBuLHg77o72VFwOsBFG?=
+ =?us-ascii?Q?gU+n3DOP6K64mAWiwtjkBJPW/QugMKA9BXMTuGFGpkrqIA/VmkiCD4Tiu2Uz?=
+ =?us-ascii?Q?MP5D6s4WoxfUhq9BddJ5I9Rw+yRSpKVmSAXu0C/RYLT0gBJ2UcKOI7QuEGqQ?=
+ =?us-ascii?Q?8sBwGV+2eT4LDifDnYocavk7L1KCg+ber6RzpwaQiThY5LKLtnvsk2bHpmg7?=
+ =?us-ascii?Q?3w=3D=3D?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: d2234213-48c3-4301-e6cd-08de203ab8e6
+X-MS-Exchange-CrossTenant-AuthSource: AM8PR04MB7779.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 Nov 2025 09:22:52.1164
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: k51FCfHqw1/nOxYp3UpvPjOEIXjiAXbAcHgSQqizUsKI1qhqrFY4tKclX5eYq52qob55iwuK6csvhFHfoAAxnw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU6PR04MB11229
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251110_011951_686104_382A5EB8 
-X-CRM114-Status: GOOD (  30.86  )
+X-CRM114-CacheID: sfid-20251110_012300_471273_89470C22 
+X-CRM114-Status: GOOD (  16.98  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,112 +159,112 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVHVlc2RheSwgNCBOb3ZlbWJlciAyMDI1IDA4OjI4OjE4IENlbnRyYWwgRXVyb3BlYW4gU3Rh
-bmRhcmQgVGltZSBDaGFvdGlhbiBKaW5nICjkupXmnJ3lpKkpIHdyb3RlOgo+IE9uIFRodSwgMjAy
-NS0xMC0yMyBhdCAyMTo0OSArMDIwMCwgTmljb2xhcyBGcmF0dGFyb2xpIHdyb3RlOgo+ID4gSSBk
-b24ndCBrbm93IHdoZXRoZXIgdGhlIGNyeXB0LWJvb3N0IGZ1bmN0aW9uYWxpdHkgYXMgaXQgaXMg
-Y3VycmVudGx5Cj4gPiBpbXBsZW1lbnRlZCBpcyBldmVuIGFwcHJvcHJpYXRlIGZvciBtYWlubGlu
-ZS4gSXQgbWlnaHQgYmUgYmV0dGVyIGRvbmUKPiA+IGluCj4gPiBzb21lIGdlbmVyaWMgd2F5LiBC
-dXQgd2hhdCBJIGRvIGtub3cgaXMgdGhhdCBJIGNhbiByZXdvcmsgdGhlIGNvZGUgdG8KPiA+IG1h
-a2UgaXQgbGVzcyBvYnR1c2UuCj4gPiAKPiA+IFByZWZpeCB0aGUgYm9vc3Qgc3R1ZmYgd2l0aCB0
-aGUgYXBwcm9wcmlhdGUgdmVuZG9yIHByZWZpeCwgcmVtb3ZlIHRoZQo+ID4gcG9pbnRsZXNzIGNs
-b2NrIHdyYXBwZXJzLCBhbmQgcmV3b3JrIHRoZSBmdW5jdGlvbi4KPiA+IAo+ID4gU2lnbmVkLW9m
-Zi1ieTogTmljb2xhcyBGcmF0dGFyb2xpIDxuaWNvbGFzLmZyYXR0YXJvbGlAY29sbGFib3JhLmNv
-bT4KPiA+IC0tLQo+ID4gIGRyaXZlcnMvdWZzL2hvc3QvdWZzLW1lZGlhdGVrLmMgfCA5MSArKysr
-KysrKysrKysrKystLS0tLS0tLS0tLS0tLQo+ID4gLS0tLS0tLS0tLS0tCj4gPiAgMSBmaWxlIGNo
-YW5nZWQsIDMyIGluc2VydGlvbnMoKyksIDU5IGRlbGV0aW9ucygtKQo+ID4gCj4gPiBkaWZmIC0t
-Z2l0IGEvZHJpdmVycy91ZnMvaG9zdC91ZnMtbWVkaWF0ZWsuYyBiL2RyaXZlcnMvdWZzL2hvc3Qv
-dWZzLQo+ID4gbWVkaWF0ZWsuYwo+ID4gaW5kZXggMTMxZjcxMTQ1YTEyLi45YzBhYzcyZDZlNDMg
-MTAwNjQ0Cj4gPiAtLS0gYS9kcml2ZXJzL3Vmcy9ob3N0L3Vmcy1tZWRpYXRlay5jCj4gPiArKysg
-Yi9kcml2ZXJzL3Vmcy9ob3N0L3Vmcy1tZWRpYXRlay5jCj4gPiBAQCAtNTYyLDIxICs1NjIsNiBA
-QCBzdGF0aWMgaW50IHVmc19tdGtfbXBoeV9wb3dlcl9vbihzdHJ1Y3QgdWZzX2hiYQo+ID4gKmhi
-YSwgYm9vbCBvbikKPiA+ICAJcmV0dXJuIDA7Cj4gPiAgfQo+ID4gIAo+ID4gLXN0YXRpYyBpbnQg
-dWZzX210a19nZXRfaG9zdF9jbGsoc3RydWN0IGRldmljZSAqZGV2LCBjb25zdCBjaGFyCj4gPiAq
-bmFtZSwKPiA+IC0JCQkJc3RydWN0IGNsayAqKmNsa19vdXQpCj4gPiAtewo+ID4gLQlzdHJ1Y3Qg
-Y2xrICpjbGs7Cj4gPiAtCWludCBlcnIgPSAwOwo+ID4gLQo+ID4gLQljbGsgPSBkZXZtX2Nsa19n
-ZXQoZGV2LCBuYW1lKTsKPiA+IC0JaWYgKElTX0VSUihjbGspKQo+ID4gLQkJZXJyID0gUFRSX0VS
-UihjbGspOwo+ID4gLQllbHNlCj4gPiAtCQkqY2xrX291dCA9IGNsazsKPiA+IC0KPiA+IC0JcmV0
-dXJuIGVycjsKPiA+IC19Cj4gPiAtCj4gPiAgc3RhdGljIHZvaWQgdWZzX210a19ib29zdF9jcnlw
-dChzdHJ1Y3QgdWZzX2hiYSAqaGJhLCBib29sIGJvb3N0KQo+ID4gIHsKPiA+ICAJc3RydWN0IHVm
-c19tdGtfaG9zdCAqaG9zdCA9IHVmc2hjZF9nZXRfdmFyaWFudChoYmEpOwo+ID4gQEAgLTYzMyw2
-NSArNjE4LDUzIEBAIHN0YXRpYyB2b2lkIHVmc19tdGtfYm9vc3RfY3J5cHQoc3RydWN0IHVmc19o
-YmEKPiA+ICpoYmEsIGJvb2wgYm9vc3QpCj4gPiAgCWNsa19kaXNhYmxlX3VucHJlcGFyZShjZmct
-PmNsa19jcnlwdF9tdXgpOwo+ID4gIH0KPiA+ICAKPiA+IC1zdGF0aWMgaW50IHVmc19tdGtfaW5p
-dF9ob3N0X2NsayhzdHJ1Y3QgdWZzX2hiYSAqaGJhLCBjb25zdCBjaGFyCj4gPiAqbmFtZSwKPiA+
-IC0JCQkJIHN0cnVjdCBjbGsgKipjbGspCj4gPiAtewo+ID4gLQlpbnQgcmV0Owo+ID4gLQo+ID4g
-LQlyZXQgPSB1ZnNfbXRrX2dldF9ob3N0X2NsayhoYmEtPmRldiwgbmFtZSwgY2xrKTsKPiA+IC0J
-aWYgKHJldCkgewo+ID4gLQkJZGV2X2luZm8oaGJhLT5kZXYsICIlczogZmFpbGVkIHRvIGdldCAl
-czogJWQiLAo+ID4gX19mdW5jX18sCj4gPiAtCQkJIG5hbWUsIHJldCk7Cj4gPiAtCX0KPiA+IC0K
-PiA+IC0JcmV0dXJuIHJldDsKPiA+IC19Cj4gPiAtCj4gPiAtc3RhdGljIHZvaWQgdWZzX210a19p
-bml0X2Jvb3N0X2NyeXB0KHN0cnVjdCB1ZnNfaGJhICpoYmEpCj4gPiArc3RhdGljIGludCB1ZnNf
-bXRrX2luaXRfYm9vc3RfY3J5cHQoc3RydWN0IHVmc19oYmEgKmhiYSkKPiBZb3UgY2hhbmdlIHRo
-ZSByZXR1cm4gdHlwZSBidXQgbmV2ZXIgY2hlY2tlZCB0aGUgcmV0dXJuIHZhbHVlIHdoZW4KPiBj
-YWxsaW5nIHRoaXMgZnVuY3Rpb24gPwoKWWVhaCwgSSBzaG91bGQgcHJvYmFibHkgY2hlY2sgdGhl
-IHJldHVybiBpbiB1ZnNfbXRrX2luaXRfaG9zdF9jYXBzCmluc3RlYWQgb2YgY29udGludWluZyBv
-biBzaWxlbnRseS4KCj4gPiAgewo+ID4gIAlzdHJ1Y3QgdWZzX210a19ob3N0ICpob3N0ID0gdWZz
-aGNkX2dldF92YXJpYW50KGhiYSk7Cj4gPiAgCXN0cnVjdCB1ZnNfbXRrX2NyeXB0X2NmZyAqY2Zn
-Owo+ID4gIAlzdHJ1Y3QgZGV2aWNlICpkZXYgPSBoYmEtPmRldjsKPiA+IC0Jc3RydWN0IHJlZ3Vs
-YXRvciAqcmVnOwo+ID4gLQl1MzIgdm9sdDsKPiA+ICsJaW50IHJldDsKPiA+ICAKPiA+IC0JaG9z
-dC0+Y3J5cHQgPSBkZXZtX2t6YWxsb2MoZGV2LCBzaXplb2YoKihob3N0LT5jcnlwdCkpLAo+ID4g
-LQkJCQkgICBHRlBfS0VSTkVMKTsKPiA+IC0JaWYgKCFob3N0LT5jcnlwdCkKPiA+IC0JCWdvdG8g
-ZGlzYWJsZV9jYXBzOwo+ID4gKwljZmcgPSBkZXZtX2t6YWxsb2MoZGV2LCBzaXplb2YoKmNmZyks
-IEdGUF9LRVJORUwpOwo+ID4gKwlpZiAoIWNmZykKPiA+ICsJCXJldHVybiAtRU5PTUVNOwo+ID4g
-IAo+ID4gLQlyZWcgPSBkZXZtX3JlZ3VsYXRvcl9nZXRfb3B0aW9uYWwoZGV2LCAiZHZmc3JjLXZj
-b3JlIik7Cj4gPiAtCWlmIChJU19FUlIocmVnKSkgewo+ID4gLQkJZGV2X2luZm8oZGV2LCAiZmFp
-bGVkIHRvIGdldCBkdmZzcmMtdmNvcmU6ICVsZCIsCj4gPiAtCQkJIFBUUl9FUlIocmVnKSk7Cj4g
-PiAtCQlnb3RvIGRpc2FibGVfY2FwczsKPiA+ICsJY2ZnLT5yZWdfdmNvcmUgPSBkZXZtX3JlZ3Vs
-YXRvcl9nZXRfb3B0aW9uYWwoZGV2LCAiZHZmc3JjLQo+ID4gdmNvcmUiKTsKPiA+ICsJaWYgKElT
-X0VSUihjZmctPnJlZ192Y29yZSkpIHsKPiA+ICsJCWRldl9lcnIoZGV2LCAiRmFpbGVkIHRvIGdl
-dCBkdmZzcmMtdmNvcmU6ICVwZSIsIGNmZy0KPiA+ID5yZWdfdmNvcmUpOwo+IFNpbmNlIHRoaXMg
-cmVndWxhdG9yIGlzIG9wdGlvbmFsLCB3aHkgdXNlIGRldl9lcnIgPyBhbmQgd2h5IHJldHVuZSBh
-bgo+IGVycm9yIHNpbmNlIHlvdSBuZXZlciBjaGVjayB0aGUgcmV0dXJuIHZhbHVlID8KCkJlY2F1
-c2UgZ2V0X29wdGlvbmFsIGRvZXNuJ3QgbWVhbiB3aGF0IHlvdSB0aGluayBpdCBtZWFucy4gSXQg
-bWVhbnMKdGhlIGZ1bmN0aW9uIHJldHVybnMgLUVOT0RFViBpZiB0aGUgcmVndWxhdG9yIGlzIGFi
-c2VudCwgaW5zdGVhZCBvZgpjcmVhdGluZyBhIGR1bW15IHN1cHBseS4gV2Ugd2FudCB0byBoYXJk
-IGVycm9yIG91dCBpZiB0aGUgcmVndWxhdG9yCmlzIGFic2VudCwgYmVjYXVzZSB0aGUgcmVndWxh
-dG9yIGlzIG5lZWRlZC4KCldoZXRoZXIgb3Igbm90IHRoZSByZXR1cm4gY29kZSBpcyBjaGVja2Vk
-IG1ha2VzIG5vIGZ1bmN0aW9uYWwKZGlmZmVyZW5jZSBpbiB0aGlzIGNhc2UuIElmIHRoaXMgZnVu
-Y3Rpb24gZXhpdHMgZWFybHksClVGU19NVEtfQ0FQX0JPT1NUX0NSWVBUX0VOR0lORSBpc24ndCBh
-ZGRlZCB0byB0aGUgaG9zdCBjYXBzLAphbmQgdGhlIGhvc3QtPmNyeXB0IG1lbWJlciBpc24ndCBz
-ZXQgdG8gY2ZnLgoKVGhlIHJldHVybiBjb2RlIG1heSBiZSB1c2VmdWwgZm9yIGFkZGl0aW9uYWwg
-bG9nZ2luZywgd2hpY2ggaXMgbm90CmNyaXRpY2FsIHRvIHRoZSBjb3JyZWN0bmVzcyBvZiB0aGUg
-Y29kZS4KCj4gPiArCQlyZXR1cm4gUFRSX0VSUihjZmctPnJlZ192Y29yZSk7Cj4gPiAgCX0KPiA+
-ICAKPiA+IC0JaWYgKG9mX3Byb3BlcnR5X3JlYWRfdTMyKGRldi0+b2Zfbm9kZSwgImJvb3N0LWNy
-eXB0LXZjb3JlLW1pbiIsCj4gPiAtCQkJCSAmdm9sdCkpIHsKPiA+IC0JCWRldl9pbmZvKGRldiwg
-ImZhaWxlZCB0byBnZXQgYm9vc3QtY3J5cHQtdmNvcmUtbWluIik7Cj4gPiAtCQlnb3RvIGRpc2Fi
-bGVfY2FwczsKPiA+ICsJcmV0ID0gb2ZfcHJvcGVydHlfcmVhZF91MzIoZGV2LT5vZl9ub2RlLCAi
-bWVkaWF0ZWssYm9vc3QtY3J5cHQtCj4gPiB2Y29yZS1taW4iLAo+ID4gKwkJCQkgICAmY2ZnLT52
-Y29yZV92b2x0KTsKPiA+ICsJaWYgKHJldCkgewo+ID4gKwkJZGV2X2VycihkZXYsICJGYWlsZWQg
-dG8gZ2V0IG1lZGlhdGVrLGJvb3N0LWNyeXB0LXZjb3JlLQo+ID4gbWluOiAlcGVcbiIsCj4gPiAr
-CQkJRVJSX1BUUihyZXQpKTsKPiA+ICsJCXJldHVybiByZXQ7Cj4gPiAgCX0KPiA+ICAKPiA+IC0J
-Y2ZnID0gaG9zdC0+Y3J5cHQ7Cj4gPiAtCWlmICh1ZnNfbXRrX2luaXRfaG9zdF9jbGsoaGJhLCAi
-Y3J5cHRfbXV4IiwKPiA+IC0JCQkJICAmY2ZnLT5jbGtfY3J5cHRfbXV4KSkKPiA+IC0JCWdvdG8g
-ZGlzYWJsZV9jYXBzOwo+ID4gKwljZmctPmNsa19jcnlwdF9tdXggPSBkZXZtX2Nsa19nZXQoZGV2
-LCAiY3J5cHRfbXV4Iik7Cj4gPiArCWlmIChJU19FUlIoY2ZnLT5jbGtfY3J5cHRfbXV4KSkgewo+
-ID4gKwkJZGV2X2VycihkZXYsICJGYWlsZWQgdG8gZ2V0IGNsb2NrIGNyeXB0X211eDogJXBlXG4i
-LAo+ID4gY2ZnLT5jbGtfY3J5cHRfbXV4KTsKPiA+ICsJCXJldHVybiBQVFJfRVJSKGNmZy0+Y2xr
-X2NyeXB0X211eCk7Cj4gPiArCX0KPiA+ICAKPiA+IC0JaWYgKHVmc19tdGtfaW5pdF9ob3N0X2Ns
-ayhoYmEsICJjcnlwdF9scCIsCj4gPiAtCQkJCSAgJmNmZy0+Y2xrX2NyeXB0X2xwKSkKPiA+IC0J
-CWdvdG8gZGlzYWJsZV9jYXBzOwo+ID4gKwljZmctPmNsa19jcnlwdF9scCA9IGRldm1fY2xrX2dl
-dChkZXYsICJjcnlwdF9scCIpOwo+ID4gKwlpZiAoSVNfRVJSKGNmZy0+Y2xrX2NyeXB0X2xwKSkg
-ewo+ID4gKwkJZGV2X2VycihkZXYsICJGYWlsZWQgdG8gZ2V0IGNsb2NrIGNyeXB0X2xwOiAlcGVc
-biIsCj4gPiBjZmctPmNsa19jcnlwdF9scCk7Cj4gPiArCQlyZXR1cm4gUFRSX0VSUihjZmctPmNs
-a19jcnlwdF9scCk7Cj4gPiArCX0KPiA+ICAKPiA+IC0JaWYgKHVmc19tdGtfaW5pdF9ob3N0X2Ns
-ayhoYmEsICJjcnlwdF9wZXJmIiwKPiA+IC0JCQkJICAmY2ZnLT5jbGtfY3J5cHRfcGVyZikpCj4g
-PiAtCQlnb3RvIGRpc2FibGVfY2FwczsKPiA+ICsJY2ZnLT5jbGtfY3J5cHRfcGVyZiA9IGRldm1f
-Y2xrX2dldChkZXYsICJjcnlwdF9wZXJmIik7Cj4gPiArCWlmIChJU19FUlIoY2ZnLT5jbGtfY3J5
-cHRfcGVyZikpIHsKPiA+ICsJCWRldl9lcnIoZGV2LCAiRmFpbGVkIHRvIGdldCBjbG9jayBjcnlw
-dF9wZXJmOiAlcGVcbiIsCj4gPiBjZmctPmNsa19jcnlwdF9wZXJmKTsKPiA+ICsJCXJldHVybiBQ
-VFJfRVJSKGNmZy0+Y2xrX2NyeXB0X3BlcmYpOwo+ID4gKwl9Cj4gPiAgCj4gPiAtCWNmZy0+cmVn
-X3Zjb3JlID0gcmVnOwo+ID4gLQljZmctPnZjb3JlX3ZvbHQgPSB2b2x0Owo+ID4gKwlob3N0LT5j
-cnlwdCA9IGNmZzsKPiA+ICAJaG9zdC0+Y2FwcyB8PSBVRlNfTVRLX0NBUF9CT09TVF9DUllQVF9F
-TkdJTkU7Cj4gPiAgCj4gPiAtZGlzYWJsZV9jYXBzOgo+ID4gLQlyZXR1cm47Cj4gPiArCXJldHVy
-biAwOwo+ID4gIH0KPiA+ICAKPiA+ICBzdGF0aWMgdm9pZCB1ZnNfbXRrX2luaXRfaG9zdF9jYXBz
-KHN0cnVjdCB1ZnNfaGJhICpoYmEpCj4gPiAKPiAKCgoKCgotLSAKbGludXgtcGh5IG1haWxpbmcg
-bGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVh
-ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+This is the first part in upstreaming a set of around 100 patches that
+were developed in NXP's vendor Linux Factory kernel over the course of
+several years.
+
+This part is mainly concerned with correcting some historical mistakes
+which make extending the driver more difficult:
+- The 3 instances of this SerDes block, as seen on NXP LX2160A, need to
+  be differentiated somehow, because otherwise, the driver cannot reject
+  a configuration which is unsupported by the hardware. The proposal is
+  to do that based on compatible string.
+- Lanes cannot have electrical parameters described in the device tree,
+  because they are not described in the device tree.
+- The register naming scheme forces us to modify a single register field
+  per lynx_28g_lane_rmw() call - leads to inefficient code
+- lynx_28g_lane_set_sgmii(), lynx_28g_lane_set_10gbaser() are unfit for
+  their required roles when the current SerDes protocol is 25GBase-R.
+  They are replaced with a better structured approach.
+- USXGMII and 10GBase-R have different protocol converters, and should
+  be treated separately by the SerDes driver.
+
+The device tree binding + driver changes are all non-breaking.
+I also have device tree conversions for LX2160A and LX2162A which are
+also non-breaking due to their partial nature.
+
+If I were to replace patterns such as:
+	phys = <&serdes_2 0>;
+with:
+	phys = <&serdes_2_lane_a>;
+
+then the corresponding device tree conversions would also be breaking.
+I don't _need_ to do that to make progress, but eventually I would like
+to be able to.
+
+In order to be able to make that kind of change in a non-breaking
+manner in a reasonable number of years, I would like patches 1-3 to be
+backported to stable kernels.
+
+Compared to v3 here:
+https://lore.kernel.org/linux-phy/20250926180505.760089-1-vladimir.oltean@nxp.com/
+there are some new patches, but it overall shrank in size because I
+deferred new features to "part 2". Essentially, v4 is like v3, except
+with a better plan to handle device tree transitions without breakage,
+and with the following patches temporarily dropped:
+[PATCH v3 phy 14/17] phy: lynx-28g: add support for 25GBASER
+[PATCH v3 phy 15/17] phy: lynx-28g: use timeouts when waiting for
+ lane halt and reset
+[PATCH v3 phy 16/17] phy: lynx-28g: truly power the lanes up or down
+[PATCH v3 phy 17/17] phy: lynx-28g: implement phy_exit() operation
+
+Compared to v2 here:
+https://lore.kernel.org/lkml/d0c8bbf8-a0c5-469f-a148-de2235948c0f@solid-run.com/
+v3 grew in size due to Josua's request to avoid unbounded loops waiting
+for lane resets/halts/stops to complete.
+
+Compared to v1 here:
+https://lore.kernel.org/lkml/20250904154402.300032-1-vladimir.oltean@nxp.com/
+v2 grew in size due to Josua's request for a device tree binding where
+individual lanes have their own OF nodes. This seems to be the right
+moment to make that change.
+
+Detailed change log in individual patches. Thanks to Josua, Rob, Conor,
+Krzysztof, Ioana who provided feedback on the previous version, and I
+hope it has all been addressed.
+
+Cc: Rob Herring <robh@kernel.org>
+Cc: Krzysztof Kozlowski <krzk+dt@kernel.org>
+Cc: Conor Dooley <conor+dt@kernel.org>
+Cc: devicetree@vger.kernel.org
+Cc: stable@vger.kernel.org
+
+Ioana Ciornei (1):
+  phy: lynx-28g: configure more equalization params for 1GbE and 10GbE
+
+Vladimir Oltean (15):
+  dt-bindings: phy: lynx-28g: permit lane OF PHY providers
+  phy: lynx-28g: refactor lane probing to lynx_28g_probe_lane()
+  phy: lynx-28g: support individual lanes as OF PHY providers
+  phy: lynx-28g: remove LYNX_28G_ prefix from register names
+  phy: lynx-28g: don't concatenate lynx_28g_lane_rmw() argument "reg"
+    with "val" and "mask"
+  phy: lynx-28g: use FIELD_GET() and FIELD_PREP()
+  phy: lynx-28g: convert iowrite32() calls with magic values to macros
+  phy: lynx-28g: restructure protocol configuration register accesses
+  phy: lynx-28g: make lynx_28g_set_lane_mode() more systematic
+  phy: lynx-28g: refactor lane->interface to lane->mode
+  phy: lynx-28g: distinguish between 10GBASE-R and USXGMII
+  phy: lynx-28g: use "dev" argument more in lynx_28g_probe()
+  phy: lynx-28g: improve lynx_28g_probe() sequence
+  dt-bindings: phy: lynx-28g: add compatible strings per SerDes and
+    instantiation
+  phy: lynx-28g: probe on per-SoC and per-instance compatible strings
+
+ .../devicetree/bindings/phy/fsl,lynx-28g.yaml |  153 +-
+ drivers/phy/freescale/phy-fsl-lynx-28g.c      | 1271 +++++++++++++----
+ 2 files changed, 1134 insertions(+), 290 deletions(-)
+
+-- 
+2.34.1
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
