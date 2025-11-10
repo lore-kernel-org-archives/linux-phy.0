@@ -4,105 +4,151 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 174D8CCF9E3
-	for <linux-phy@archiver.kernel.org>; Mon, 10 Nov 2025 11:58:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5BE23CCF9E3
+	for <linux-phy@archiver.kernel.org>; Mon, 10 Nov 2025 11:59:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o+3gWKqlNZY6+fsxiwk/tEaCB6mn/Y6MC7y7WLgAbB8=; b=QmDtttW728yExx
-	vsHRvzTnXZauOrqJvq7wxi6lqxQZCmDCqFuYefaBXGa78+O61f+WWuVGAGhxwi/EoFv3HuuD67oxj
-	4M05wial/8Rdkv4WtsRpAEtjFBEsSe4jZUswAioHf7XC1ODpl/nqWMNTJ55zXAU6InsAX6sZb1pG6
-	udpNPS+r7GWyDiWlyjByadzTou4oFnz+DyPeKJ9eTeyKb2bNY/t+crwjCCTbwBaQzCrRiLE8OOCSu
-	0Z786sLbHHGlL/lHEVL3sNW/GTLlBe+Tc1VO/Jjcz2SwWr50MohWiAVS+sSj4++D3z7kFW5miVlhN
-	Xh8oVSs5sSTgmu0l+V4A==;
+	List-Owner; bh=DAUM8sbfuaF0z9/RCKI3Njr9u+1qBVtCrfbZafDeJ00=; b=n5iulrin6ROZgM
+	TXYtFydlYObyljPEAYgXfsLhniKY69PYE0FZ2vIUfYED17rcvwqcbRVHJ5xpck8w+gNFPDKPGuhrN
+	K7nNP9CVEO9p6N7lYIYJe1J71swJESlDWnvWYgMEgls3qJOxQawyP86PK6UsM+d2Nbc+zIL9x/GRq
+	bgDU+sti3sWPzK4NJR/e2exh7YaHBa+nLkJGxVIXjzN7iKTub+PD2YnNUDJkU0X2dlNrA0OYPVti7
+	XJUyxgswT1bRyhn3+rdRPEF8XdkLcfJbNFv2ShCZdSqOJbeEuXmGGDjwZwkI9EHrdmWpYXZoI7mTy
+	jDphJdGy5aUnO5yn+GdA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vIQXW-00000005Mit-3Zks;
-	Mon, 10 Nov 2025 11:58:30 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1vIQY1-00000005Mkg-0Uo2;
+	Mon, 10 Nov 2025 11:59:01 +0000
+Received: from mail-francesouthazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c207::3] helo=MRWPR03CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vIQXV-00000005Mhw-0E4R
+	id 1vIQXy-00000005MkM-1xU7
 	for linux-phy@lists.infradead.org;
-	Mon, 10 Nov 2025 11:58:30 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 5AA8pFDI1797802;
-	Mon, 10 Nov 2025 11:58:26 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=LVBKFtu946R
-	BF2wTKkMtHK6iDj/rZuhXvfuYMUOh07E=; b=N/y4xHS34mFbuSyAdkWotLzRS+k
-	Meex07oQsB7ZdEaURbx1jXHZDdtPFQy7gYe9mns6GyPaYNq1afzwWr/BJQz543oB
-	fwSomJp4/trXm7OJ/fuSdcSWbF2P1HytV2veYiz3zkYwNzJ+LrhayYNRDteq40uT
-	kIsmMQxSu8ricw31xVkGEmRIiKNHz48AgC4DVo4K2HyCzqRzhWcLRjGaEkkq89fL
-	S1Ua6BZA6FqY+AjIyreUGK4xjWitVXL+rZDtjasZCo/EDNDK7DNy6aqHFq3XRDAF
-	BDYSr3df46ROnuUS9sUbG6XEHe4gDL6wznT6j2p8pxu3DSgfU0XS3+o0O8Q==
-Received: from apblrppmta01.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4aaue0jfeu-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 10 Nov 2025 11:58:25 +0000 (GMT)
-Received: from pps.filterd (APBLRPPMTA01.qualcomm.com [127.0.0.1])
-	by APBLRPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 5AABwMEb023662;
-	Mon, 10 Nov 2025 11:58:22 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTPS id 4a9xxkqej3-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 10 Nov 2025 11:58:22 +0000
-Received: from APBLRPPMTA01.qualcomm.com (APBLRPPMTA01.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 5AABwMwQ023657;
-	Mon, 10 Nov 2025 11:58:22 GMT
-Received: from hu-devc-hyd-u22-c.qualcomm.com (hu-amitsi-hyd.qualcomm.com [10.213.97.115])
-	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTPS id 5AABwMWP023655
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 10 Nov 2025 11:58:22 +0000
-Received: by hu-devc-hyd-u22-c.qualcomm.com (Postfix, from userid 4648853)
-	id E757B5A8; Mon, 10 Nov 2025 17:28:21 +0530 (+0530)
-From: Amit Singh <quic_amitsi@quicinc.com>
-To: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
-        krzk+dt@kernel.org, conor+dt@kernel.org, vkoul@kernel.org,
-        kishon@kernel.org, lumag@kernel.org, neil.armstrong@linaro.org,
-        quic_wcheng@quicinc.com
-Cc: Amit Singh <quic_amitsi@quicinc.com>, linux-arm-msm@vger.kernel.org,
-        linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org, quic_riteshk@quicinc.com,
-        quic_rajeevny@quicinc.com, quic_vproddut@quicinc.com
-Subject: [PATCH 3/3] arm64: dts: qcom: qcs6490-rb3gen2: add vdda-aux supply for USB QMP PHY
-Date: Mon, 10 Nov 2025 17:28:06 +0530
-Message-Id: <20251110115806.2379442-4-quic_amitsi@quicinc.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20251110115806.2379442-1-quic_amitsi@quicinc.com>
-References: <20251110115806.2379442-1-quic_amitsi@quicinc.com>
+	Mon, 10 Nov 2025 11:58:59 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=I8gmG7nsu7TxaazSBXI3pE16AeOGMVCMcIQdmIZtjc0M9UVoLNn+OWUe5ckD+KRE1HBOU6W0HqsTTXLPM5CVYP+p1SzpvPFv3GEaTz7jxrZnMiIMkNwBJE/jc8XGsZ6qciQOnzoGxNJfMt2/AJCrq6q19/prM9uRjrjPCOADQCLE9RS861eiFshhkOxK+a00pAenTkMnnTRcBabylRzhdRkh46Bab7SJrOv85b7XBEqmkVov4+ev2yCEOD4eOldZKGuPAU9V0+a2k3Ze/+nO5sDobB95K28Cl8oGS5nU1F4QAy6yPN8ABIJW/080gN42/Ki32jTeQj4ieC49Fv7dtA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=RS+3AQKhdUwOiYyJYyKE5Ik/j7tpGsbFmL3EI6U1MkQ=;
+ b=s4kZzVqWtQAXLS4a5J8hnl0RNd9hPG/JajaCcX78xQZv0Jaibi93ZVS47NKvVunW9tVQDDOzlGAmEpdF9Uw4fjORUJY59wK2ADnSUFDS04B65tva1KqHHwfTRRqwiVoySimT0H1g/QRNYnyUXvWriXc3B3JNZfODtmfwsuXso6AY1J1Qn8NhgeXjvIgx2e1q06z/wwUow4w2hIIT64TWEg7gOAjDzJ2P4wm30yqGgvAddVOUv6hbbQGOcKxL3QrNJ9cSNB6WiE/r/V95f+/zihnublrZNRSeHxjR89lV7cIZJy7HMYZxkM2hwkrkEoma06cNuZbOiG2RM4KnwGcyjw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=RS+3AQKhdUwOiYyJYyKE5Ik/j7tpGsbFmL3EI6U1MkQ=;
+ b=HOQlXuZByHG7O1EwZtd47N6Qm65q76ItpOxC7fcp+MduAJtc23ynsSEx5upV60ko2vT/R2JzqKvqqbWZP5sq7F6jA9T6cORQB635TlI/45qJTR6/i2nqWAJQx07DH7sVACTkiAbnRsEVJDrPvwHCQuidJnYxyz3ihUEWKFuR2g7+IDTKmsmKx6VmAR9eRiXTVAHfDI5RiC4lgvGnVH7rvyZKkCUkmOgp/wj0iIN/Umvd3K47ftH/gyA3b/IRclpRLXJH+/uCXkCF0fj+ZWxZ1HhrPrK9baE194gSZiNm9GShqN19VkrEOeP/ESpYYbyXgRy0rjKLe3m0OJy761Djbg==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AM8PR04MB7779.eurprd04.prod.outlook.com (2603:10a6:20b:24b::14)
+ by AMDPR04MB11605.eurprd04.prod.outlook.com (2603:10a6:20b:71a::9) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9298.16; Mon, 10 Nov
+ 2025 11:58:54 +0000
+Received: from AM8PR04MB7779.eurprd04.prod.outlook.com
+ ([fe80::b067:7ceb:e3d7:6f93]) by AM8PR04MB7779.eurprd04.prod.outlook.com
+ ([fe80::b067:7ceb:e3d7:6f93%5]) with mapi id 15.20.9298.010; Mon, 10 Nov 2025
+ 11:58:54 +0000
+Date: Mon, 10 Nov 2025 13:58:51 +0200
+From: Vladimir Oltean <vladimir.oltean@nxp.com>
+To: "Rob Herring (Arm)" <robh@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: devicetree@vger.kernel.org, Josua Mayer <josua@solid-run.com>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Ioana Ciornei <ioana.ciornei@nxp.com>,
+	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v4 phy 15/16] dt-bindings: phy: lynx-28g: add compatible
+ strings per SerDes and instantiation
+Message-ID: <20251110115851.ew72c7b4n6npkxkg@skbuf>
+References: <20251110092241.1306838-1-vladimir.oltean@nxp.com>
+ <20251110092241.1306838-16-vladimir.oltean@nxp.com>
+ <176277056708.3414333.5403009680990856810.robh@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <176277056708.3414333.5403009680990856810.robh@kernel.org>
+X-ClientProxiedBy: VI1PR07CA0211.eurprd07.prod.outlook.com
+ (2603:10a6:802:58::14) To AM8PR04MB7779.eurprd04.prod.outlook.com
+ (2603:10a6:20b:24b::14)
 MIME-Version: 1.0
-X-QCInternal: smtphost
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: zFLGZVAhL6kn7BD1Ik9DKap63qkFPwLs
-X-Authority-Analysis: v=2.4 cv=BfDVE7t2 c=1 sm=1 tr=0 ts=6911d361 cx=c_pps
- a=Ou0eQOY4+eZoSc0qltEV5Q==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
- a=6UeiqGixMTsA:10 a=VkNPw1HP01LnGYTKEx00:22 a=COk6AnOGAAAA:8
- a=zqwJLAdVuhH6XCcEYnAA:9 a=TjNXssC_j7lpFel5tvFf:22 a=cPQSjfK2_nFv0Q5t_7PE:22
-X-Proofpoint-GUID: zFLGZVAhL6kn7BD1Ik9DKap63qkFPwLs
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMTEwMDEwNCBTYWx0ZWRfXyFw76nkcwG4N
- km5Au/VI85JEHjGwk6u+99X9/Lf3e0GO8a8SMgjfna6vF0Mj5Utg0/6IJaHPG5t4wXrOfJOGSHT
- V6V3/usVPonpOSRQ+C0YL2xdKm1cG6aTmgOtR/mn1qV3fa2w5NE8PfOj0gabfzrgk+w2hGE3Y4z
- pVuZYyYAGA1shh28ENunyliCoe+fOUB4fvQgit471KtW7FSc347PlZn6QqXk+sn1oVuiI8cam1I
- EZLScf6H2i9244vKLWkYfDeqCJvFmbEFXo2RDk8YOtxvkj2afTN58dgKund78p2NfNw/kaKl36x
- hJnxxedFwpsqV8n2dKXhJSE6XT8/s3B4sXyjmgn+RrRHGoNTKJdijlT6JH60fwpNBB/wRcYHcp6
- xguDRVnYeEusm/T6nRaM2lXMiPTemw==
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
- definitions=2025-11-10_04,2025-11-06_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- bulkscore=0 priorityscore=1501 malwarescore=0 impostorscore=0 spamscore=0
- phishscore=0 lowpriorityscore=0 clxscore=1015 adultscore=0 suspectscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2510240001 definitions=main-2511100104
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM8PR04MB7779:EE_|AMDPR04MB11605:EE_
+X-MS-Office365-Filtering-Correlation-Id: 44c11cc5-b183-4daa-8e6d-08de2050856a
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|10070799003|1800799024|366016|19092799006;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?xmwudsQSCdDwOb3ecTbWwPBrfqcwNt6eDi2Nc3nDRWhlzWI4JKLSkBsEW28c?=
+ =?us-ascii?Q?d1SHLPx90RTPCagv/eedENhU7FkSkrEPou0lk8Py2gd3w9oWTep7eUVXZLcn?=
+ =?us-ascii?Q?CbHYqzyojV4jB9J7wVGji+c1xosDNv4lHk8Gv/bCsrSklS1h6+KC2L0dqdUX?=
+ =?us-ascii?Q?vaxfXTd/+Osp6cwovpVSb2SN+8cjyWjl+8EsSgopZbIq3mKOHPmLqVyA1gAi?=
+ =?us-ascii?Q?PuSUJS45SG6AmNw6PIKVODoPEPqnJ9/HszwKRa6Qxqi1y6l9Fo9cF+mU3L+A?=
+ =?us-ascii?Q?cBfh9AaFoHTmlj6zfXR6ePL0E72YdjxIj3XicbuEjywbhylbkuJkqS/A+QrP?=
+ =?us-ascii?Q?wW6adMKuWhldJVWrEhueh6PkXIOwk138kFCNepf5MwbNBu5GJr0squw8Hg/V?=
+ =?us-ascii?Q?4LQ1Ekgrr52AcsZISrzMoSxp1/sagCLS8GDSLqUTKLxrLDo9JlgLXSo9Uzao?=
+ =?us-ascii?Q?rBTZ9QomSuaVlrypsn6lrZtQdExXJcZI0lW3KLXnJlEa+WugyxUsWSVE3IQo?=
+ =?us-ascii?Q?U7+RX3JpGqCOsobM3M+wtjYPkOuDcZf93tZuG08GgLWYc6d8+dk6+6+ZHcsm?=
+ =?us-ascii?Q?T9y20lLqEO9oPkEynR1bDjHPTqB7HKaD/MsXow0+k2bvt3BWzfbF9YorJ5o0?=
+ =?us-ascii?Q?O3adpBgJN0wFQJZkYBdZjkZFvWazSDYWccYtcnb+j4Xw3vy9ALn+r/pCP0us?=
+ =?us-ascii?Q?AIZhB6mHsrdHiGMDYtDNtDXiXnzJnS41Qk3CMo6akK9o02dOOb4A7LpERS/p?=
+ =?us-ascii?Q?cP51497bCRKXlYpQ2T02UoeiAanmGfotDyOtO1lztQcd56qzZNl8WlJ6vM+W?=
+ =?us-ascii?Q?7JldzvCg4zHJWRqt6IzGYfgkwWj3ImsMjOgkvJ21jUPyvCGS1vTxnBsJlxmd?=
+ =?us-ascii?Q?qfmHe7uA+XAwtd7HU1Jyex0FLOh2ZZP0A/3Kqf34iyqGhgahP0imhpjwPoAJ?=
+ =?us-ascii?Q?Mmx8Ey/4Yb6dbd2/b4vIj5GYt6aaWvWWadXqpBLNeQyoYgOjKPzJuO3nDnIs?=
+ =?us-ascii?Q?nMyOHuB/PAbQr+s63+xbo4vQPyzG/YAa0dPB+OCXkvG9La7qjozrE3mTgSBo?=
+ =?us-ascii?Q?Dpiq1xB7ViHE/OK9bqKb1MKtREFipAVWxAujOX01lt1wbBrUslEWHLomvj7Z?=
+ =?us-ascii?Q?NcyXF3Ys+XfOu/5PqbESZJeRdvSEqVisHgDk9RvX3ECFDcOvVs6x5TWs5bEw?=
+ =?us-ascii?Q?icSuL9LaOZIUf2TlIpeBl/4WKkHbazMel1/H66fk3yzpiwSf14vMqE1u+qAE?=
+ =?us-ascii?Q?h7E8Wwd9eluKfJqnPNYH1CQ3ZQWlzbDc1S9LzX+6bDSDe21UyVVvkkveVx5W?=
+ =?us-ascii?Q?ypT/Pq/X56CVgTqPRpSc5Hr/V2VLp/4TVfFWMbygRme6wRkhp4MNfSK6bD9g?=
+ =?us-ascii?Q?zhbe/xvkX7t5S+9dmFuPg6gpVdjGWqT9TL1QBLHRC5M5dwFZvGdZVeJNy+ns?=
+ =?us-ascii?Q?KLKVnJqs4jcDLicCpjwFDTFVDrhnQ0Mx?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM8PR04MB7779.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(10070799003)(1800799024)(366016)(19092799006);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?tslUuoUdjdf3MkmGWGXfd3Dd3iIJBQtn2PUplqh/HB3WG5ElnCWBbUZ9pRJo?=
+ =?us-ascii?Q?ooNwzZTQ5RdbmTXIN3BxTSCpBn7svknFwUbByiq1gXEfLPyyUikR8PXhP7mv?=
+ =?us-ascii?Q?ll7mVpt0Bk4m1BlYXWR5B/A8MLY5MSK69aWVxHN2i7d3lwes1Ggqh/AcLSkE?=
+ =?us-ascii?Q?GRS/+o3hi8t5FwJriuQO5Ikn/X5yL7WyQPQ6JZi+eIwtfGgQ0p6X/jFqihyZ?=
+ =?us-ascii?Q?EPmWwDGlLioB9psKB2laILwBYKD21+9py4EcsE//ljaqoGgRRmJJKdgWismm?=
+ =?us-ascii?Q?7YdUJteW3s6NzDfccP7QV99XAZ2jZm+vqmUjw67f7MLnLkBY4FiRD6rmOBFv?=
+ =?us-ascii?Q?8aZRQHI/LTczuChtSP3ghimVpadKlUho1H8RPUU1gvrGQ5dV7vr9hH6edUhC?=
+ =?us-ascii?Q?uBpTYsI4juceQUqCPr5tasSNK6vpkyApI//TH8MT1bSngTXUC5Vb1r3QUNS4?=
+ =?us-ascii?Q?ivE4+8eP1+DbTDExDzO3G2TDKf+U4rKkZ+R50uoSnMHO8GXArATR/KVS00MT?=
+ =?us-ascii?Q?CpLb+cLlTtH/QT99TNLtpANUZlKHfhOKa7YSA9QBGYmKU3hWrSDmv4O9NYH/?=
+ =?us-ascii?Q?KTyBM2n5CJY9qN9wEe6102+q768G1W6XUPPpKlk22gKns0bqpv1bF3089U2u?=
+ =?us-ascii?Q?BU6igBphMcw9Qf5BuIIiFk7jHWveI17svB3LQOQvNkYS9ZjhJXo7JDMXypjT?=
+ =?us-ascii?Q?/8NPlpFueVwMioKGPil5PxCtM3BEZZrlG/2UspMUY5KLp+8gOI61GSacCD7j?=
+ =?us-ascii?Q?ZWXcYUeSyrBEo8WltA1eOE+mw7KY/gmTB3iToyHVatX8ZW/ZufOxlEIzkIyK?=
+ =?us-ascii?Q?4WBPBPTb62/e7MttqMefT3MtRG5uqGaAe5fQ8liwZpQjLWUVEuPhhB9Ccr2g?=
+ =?us-ascii?Q?8nU9LdI3cS687lFM7cbc0pUydBF/7c+shlSwIC5YeqitIOgE0QaCoto4nI+k?=
+ =?us-ascii?Q?r5Mkt0xTrB7L5etuMbOym2X284NlblSBuQ12mK2IUjS2hPWc0MesrFzeKLeW?=
+ =?us-ascii?Q?2iwuH0fUmx6xue5fhuITRbV1csX1QL2TJ5W3vZhGEcuqMkDC8ldA3jPuPwIy?=
+ =?us-ascii?Q?v89kAKtvDMU5PGunasjo4kPrMcrdGH+EooAX8EjSAlQsQYXhH0u3imxs7aAQ?=
+ =?us-ascii?Q?c/bOP3v5/5V/020VdD6hmhpauzWpsxpMitR9EjiTY0GKCx9a5l/4m8dxQrtN?=
+ =?us-ascii?Q?AFO8p9vAGNo4GBmkKbN43ggEmpKgolGlokxZrrr71HXSW85ia4lK3/dKSNhQ?=
+ =?us-ascii?Q?Gc4dBt8+sV2c4xl2AN7118fgCdbZLjc7BR5v7eVgsqVoXCwqN4El2U0GVwht?=
+ =?us-ascii?Q?BvZhs6Gp3nO1aQylOm49TtprzbPNzgOlatwVdSkZ8hoEYBNnKM3ua65V2sFR?=
+ =?us-ascii?Q?PShl+GoURNCs/QnLfRr3S0XD0VokfGPknKp8PqKITfx486i8CvhuF74GJSxz?=
+ =?us-ascii?Q?zeSFuOM82LBDCvZ8VRFKmH2cgDgukVqjj5hy6Hihn1GshMl8XgLWzcezLqO6?=
+ =?us-ascii?Q?MfGAlhCM9QL812+iMGEpL1lLsr2JfHl8nyK/5YKxl//mItPxNkADhBPoA2/F?=
+ =?us-ascii?Q?S2G6KaDrQ/9OuvpiQqoARnhF21umPgrFpYkHtuctBXLCpT0Bt67sOx9XIyzT?=
+ =?us-ascii?Q?CJ6B8NOCp1+WaShjCyYGZHwI557bfZkg2DkJYy8kcPvN5QxNGy9Yo7JXa7nq?=
+ =?us-ascii?Q?NwEBqQ=3D=3D?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 44c11cc5-b183-4daa-8e6d-08de2050856a
+X-MS-Exchange-CrossTenant-AuthSource: AM8PR04MB7779.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 Nov 2025 11:58:54.2724
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: ulTECW5hwVSL2i6cWQ65vxl78B23ZmKTqgNRrrs3zTmNh1j/KGGvGkKoPfq2xGUiV4+v8LzFr21YVCU0Gi7OyA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AMDPR04MB11605
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251110_035829_213676_E326D177 
-X-CRM114-Status: GOOD (  10.03  )
+X-CRM114-CacheID: sfid-20251110_035858_685517_516DBCC7 
+X-CRM114-Status: GOOD (  45.60  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,33 +165,153 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add the missing vdda-aux-supply to the USB QMP PHY node on the
-RB3 Gen2 (QCS6490) platform. The auxiliary 3.0 V rail is required for
-stable PHY operation and proper power configuration.
+On Mon, Nov 10, 2025 at 04:29:27AM -0600, Rob Herring (Arm) wrote:
+> 
+> On Mon, 10 Nov 2025 11:22:40 +0200, Vladimir Oltean wrote:
+> > The 28G Lynx SerDes is instantiated 3 times in the NXP LX2160A SoC and
+> > twice in the NXP LX2162A. All these instances share the same register
+> > map, but the number of lanes and the protocols supported by each lane
+> > differs in a way that isn't detectable by the programming model.
+> > 
+> > Going by the generic "fsl,lynx-28g" compatible string and expecting all
+> > SerDes instantiations to use it was a mistake that needs to be fixed.
+> > 
+> > The two major options considered are
+> > (a) encode the SoC and the SerDes instance in the compatible string,
+> >     everything else is the responsibility of the driver to derive based
+> >     on this sufficient information
+> > (b) add sufficient device tree properties to describe the per-lane
+> >     differences, as well as the different lane count
+> > 
+> > Another important consideration is that any decision made here should
+> > be consistent with the decisions taken for the yet-to-be-introduced
+> > 10G Lynx SerDes (older generation for older SoCs), because of how
+> > similar they are.
+> > 
+> > I've seen option (b) at play in this unmerged patch set for the 10G Lynx
+> > here, and I didn't like it:
+> > https://lore.kernel.org/linux-phy/20230413160607.4128315-3-sean.anderson@seco.com/
+> > 
+> > This is because there, we have a higher degree of variability in the
+> > PCCR register values that need to be written per protocol. This makes
+> > that approach more drawn-out and more prone to errors, compared to (a)
+> > which is more succinct and obviously correct.
+> > 
+> > So I've chosen option (a) through elimination, and this also reflects
+> > how the SoC reference manual provides different tables with protocol
+> > combinations for each SerDes. NXP clearly documents these as not
+> > identical, and refers to them as such (SerDes 1, 2, etc).
+> > 
+> > The per-SoC compatible string is prepended to the "fsl,lynx-28g" generic
+> > compatible, which is left there for compatibility with old kernels. An
+> > exception would be LX2160A SerDes #3, which at the time of writing is
+> > not described in fsl-lx2160a.dtsi, and is a non-networking SerDes, so
+> > the existing Linux driver is useless for it. So there is no practical
+> > reason to put the "fsl,lynx-28g" fallback for "fsl,lx2160a-serdes3".
+> > 
+> > The specific compatible strings give us the opportunity to express more
+> > constraints in the schema that we weren't able to express before:
+> > - We allow #phy-cells in the top-level SerDes node only for
+> >   compatibility with old kernels that don't know how to translate
+> >   "phys = <&serdes_1_lane_a>" to a PHY. We don't need that feature for
+> >   the not-yet-introduced LX2160A SerDes #3, so make the presence of
+> >   #phy-cells at the top level be dependent on the presence of the
+> >   "fsl,lynx-28g" fallback compatible.
+> > - The modernization of the compatible string should come together with
+> >   per-lane OF nodes.
+> > - LX2162A SerDes 1 has fewer lanes than the others, and trying to use
+> >   lanes 0-3 would be a mistake that could be caught by the schema.
+> > 
+> > Cc: Rob Herring <robh@kernel.org>
+> > Cc: Krzysztof Kozlowski <krzk+dt@kernel.org>
+> > Cc: Conor Dooley <conor+dt@kernel.org>
+> > Cc: devicetree@vger.kernel.org
+> > Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
+> > ---
+> > v3->v4:
+> > - OF nodes per lane broken out as a separate "[PATCH v4 phy 01/16]
+> >   dt-bindings: phy: lynx-28g: permit lane OF PHY providers"
+> > - rewritten commit message
+> > - s|"^phy@[0-9a-f]+$"|"^phy@[0-7]$"|g in patternProperties
+> > - define "#address-cells" and "#size-cells" as part of common
+> >   properties, only leave the part which marks them required in the allOf
+> >   constraints area
+> > v2->v3:
+> > - re-add "fsl,lynx-28g" as fallback compatible, and #phy-cells = <1> in
+> >   top-level "serdes" node
+> > - drop useless description texts
+> > - fix text formatting
+> > - schema is more lax to allow overlaying old and new required properties
+> > v1->v2:
+> > - drop the usage of "fsl,lynx-28g" as a fallback compatible
+> > - mark "fsl,lynx-28g" as deprecated
+> > - implement Josua's request for per-lane OF nodes for the new compatible
+> >   strings
+> > 
+> >  .../devicetree/bindings/phy/fsl,lynx-28g.yaml | 86 +++++++++++++++++--
+> >  1 file changed, 79 insertions(+), 7 deletions(-)
+> > 
+> 
+> My bot found errors running 'make dt_binding_check' on your patch:
+> 
+> yamllint warnings/errors:
+> 
+> dtschema/dtc warnings/errors:
+> /builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/fsl,lynx-28g.example.dtb: serdes@1ea0000 (fsl,lx2160a-serdes1): '#phy-cells' does not match any of the regexes: '^phy@[0-7]$', '^pinctrl-[0-9]+$'
+> 	from schema $id: http://devicetree.org/schemas/phy/fsl,lynx-28g.yaml
+> 
+> doc reference errors (make refcheckdocs):
+> 
+> See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20251110092241.1306838-16-vladimir.oltean@nxp.com
+> 
+> The base for the series is generally the latest rc1. A different dependency
+> should be noted in *this* patch.
+> 
+> If you already ran 'make dt_binding_check' and didn't see the above
+> error(s), then make sure 'yamllint' is installed and dt-schema is up to
+> date:
+> 
+> pip3 install dtschema --upgrade
+> 
+> Please check and re-submit after running the above command yourself. Note
+> that DT_SCHEMA_FILES can be set to your schema file to speed up checking
+> your schema. However, it must be unset to test all examples with your schema.
+>
 
-Providing this supply avoids fallback to dummy regulators and helps
-ensure reliable USB enumeration.
+I'm terribly sorry about this. There was a testing fault that led to
+this mistake remaining uncaught.
+Originally I was testing with "make -j $ncpu DT_CHECKER_FLAGS=-m DT_SCHEMA_FILES=net/ dt_binding_check":
+https://github.com/vladimiroltean/nipa/commit/5579a443f88ec7f8a3e33108acb3d9d529ff825a
+(and because this is a patch on Documentation/dt-bindings/phy/ rather than net/,
+I missed the warnings).
+I had fixed this when submitting the pull request to Jakub (removed DT_SCHEMA_FILES=net/):
+https://github.com/linux-netdev/nipa/pull/65/commits/b7d53ebaaeaf1a4e474d6cd85b3b73d557a669a2
+but I forgot to pull in the modification back into the test automation framework that I used :-/
 
-Signed-off-by: Amit Singh <quic_amitsi@quicinc.com>
----
- arch/arm64/boot/dts/qcom/qcs6490-rb3gen2.dts | 1 +
- 1 file changed, 1 insertion(+)
+Anyway, regarding the warning itself: I had forgotten in the 1+ month
+since v3 why I had to do this:
+https://lore.kernel.org/linux-phy/20250926180505.760089-13-vladimir.oltean@nxp.com/
 
-diff --git a/arch/arm64/boot/dts/qcom/qcs6490-rb3gen2.dts b/arch/arm64/boot/dts/qcom/qcs6490-rb3gen2.dts
-index c146161e4bb4..441b5d9d377c 100644
---- a/arch/arm64/boot/dts/qcom/qcs6490-rb3gen2.dts
-+++ b/arch/arm64/boot/dts/qcom/qcs6490-rb3gen2.dts
-@@ -1367,6 +1367,7 @@ &usb_1_hsphy {
- };
- 
- &usb_1_qmpphy {
-+	vdda-aux-supply = <&vreg_l7c_3p0>;
- 	vdda-phy-supply = <&vreg_l6b_1p2>;
- 	vdda-pll-supply = <&vreg_l1b_0p912>;
- 
--- 
-2.34.1
+ properties:
+-  "#phy-cells":
+-    const: 1
++
++  "#phy-cells": true // <--- this
+...
++allOf:
+...
++      properties:
++        "#phy-cells":
++          const: 1
++      required:
++        - "#phy-cells"
 
+so I removed that part, but I'll have to add it back.
+
+
+@linux-phy maintainers, if this turns out to be the only problem after
+review, could you still consider applying patches 1-14, so that I can
+make less noise while resending?
 
 -- 
 linux-phy mailing list
