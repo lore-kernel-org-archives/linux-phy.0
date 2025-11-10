@@ -4,54 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E211FCCF9E3
-	for <linux-phy@archiver.kernel.org>; Mon, 10 Nov 2025 09:23:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 096A4CCFA13
+	for <linux-phy@archiver.kernel.org>; Mon, 10 Nov 2025 09:23:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HppJYnMobFqpedEiOYiFE+XSlr831saJ1OAymw9O3wI=; b=sKJVrtkG8ctAlF
-	5WcT1NV7n/p3b/wGZVyetm/fwYgaKgFyzBhXhtlJ4l56XHcyX50hU+Pe3Z0PZu/OVsyhxcuAHYXHv
-	aIiYzQGK87mFpGH7HHhgVApxmOImQ2bzuZ3LSDExzzUrn9jP7hEhuDHBzIU5KU22XBC4pHjgYljzo
-	Tf9v69K82qSf9mAWk4kUOMmPceUaPA0OVowtZKt4FrK6+rweO2hqo+akm1Hq4dWKWFTewt3/Ey/2K
-	OUn/TgAI+LvQ8rwsR+M3xo0/M4GhcRZEZ3+9ut3verkXQu8YKjY+7ihbWTo3jzQPJB6qizv0ln5bv
-	B0XZeynU42c7YUT09Bvg==;
+	List-Owner; bh=B/71Oj8+AagMyz/HBmu53oVPheztDf3H5S5M4V6F0Sg=; b=K4F4ZDn2Hok2av
+	oh+MjU4gKXTRYMGCDwSMEoejyCA3BUl9VjJjV8qwGaSf52UdZHKZFwyDti2r2XC2QrYfVZoyKdQvz
+	N4/Bw6MTGLxw2oVkz03it4HaYyAAF24ZmkDZ4h0DbVV2ChblUrqNjAY/f/ZgjRr3OLaa1FlvOEvdC
+	FBvXl1mJ1lBDTUdaofRoeS93UyDINkMKk4GXZr8Ww526pcRMq1d2IJuF+/B+BrQry1oWhr6OoQqzM
+	ftZImlcHEB3I0OaBQdk7ufvdRuVGj4AVxwTBJZ6uojQi2BYXukUFjFwGdfk0oikY2Hp2lTFyuwT6n
+	fKvM73JYEAbk1iYq1IWA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vIO7G-000000055EM-2pnb;
-	Mon, 10 Nov 2025 09:23:14 +0000
+	id 1vIO7I-000000055G0-3JlE;
+	Mon, 10 Nov 2025 09:23:16 +0000
 Received: from mail-northeuropeazlp170120005.outbound.protection.outlook.com ([2a01:111:f403:c200::5] helo=DUZPR83CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vIO7E-0000000559f-289V
+	id 1vIO7G-0000000559f-0cmE
 	for linux-phy@lists.infradead.org;
-	Mon, 10 Nov 2025 09:23:13 +0000
+	Mon, 10 Nov 2025 09:23:15 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=dl3H9yMqTeZCyC1oIYYXbWZjom1KLa9WfOjz0Y5r0e+mddHjYpaDGVpGGhgsohSfeMnEnTQhPPFC1s1tMvJpzsb9WDTMs66vPjeSOGYlx3ptQ8LyGrAUBXw4JkgmDjWYEyui5SQs+Q21m+gvtCtqLfzRXXZS/JGanK2DQaavpBr/oDCRxfFCz+5BaLnfaGdrBZhkKEDD9aN+iZb2eq9JSbdps32PDWJ6I4Uwm2B9r1FN+JeGQ+8VdODbHXwq1CsfuD48lZqK0gy1MjxXVvAEAXxqf5BkBebkBr21pOwUeu5fO1XLg71t5SUOcyTfLC8CB3KS0HK57PGCHQsKaicDfQ==
+ b=GMCdmXcmN2SDeQ9P9wb5RKCYDsoOTnOjjcQ7Q6oKdtnwDXaPAvwGNhO9fM1Jshr8cok2jtTK0rUtLtoimI9Aq+xxzsq2Nm+BS1mreAJ77nG5HWRU2iCo4h7s4BdDhMtxpLuarcX1FRZm1c0B2xIzVw0VdLVeo49KnwsjSrvSCyVMVzu1VkdOKGWJxwmebYBg8z8UjA5h74v7jxoy4P6PocLDcAqTPGqFe7ZMQVdZLD3a6sX1QyKq6NIZmFp3GIylicJ9jBNxAa5LoVrpc64S+A+3Jai0zN2DymzSHSn0YGp6VVg2iZVrw1P//WpyvSSexpznQV7Vuodm/qx+oiGIiQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=HqtThF9G2iwGhsF3bm35/cFTP49DYkDAe1JKOUCzkPo=;
- b=mfoc5ZDUw7naEaEAzoEfUqxPkshAT3E0psIBJfXS5pOEU9BDTjJ6+PalLfN7vcCPrv1XUL1y5IbJCRazX7q5VLIyvhF1tVMkYcEeL7/u0v6Db4QFjkkNfzqGQ882IGCgTLB34x+oTK+CwprzsIx3Mc+Zh/IzxddaV59zn06QY9g3ecctcX5kKpphRJsriw2e21wbCcpHM+EUdR2nfxQP8tU/gs4h73axO/B5hwdU8EboVZDcyfKXpVRt/ITI2u6SrYTupjZ7AakwDVDDDstAJjY4q+9EJNuKRmefEhTzZTsvZ0kExOT08OSfgBnpSyR2wIAui2INa0mJ2wYF8SJLZw==
+ bh=cZnyYra4tAKa1KXYu3Js0VKL6TOb8QIOu8s7+qHvfAk=;
+ b=LvNzMiwNTk8QIAvuY1CEYQd4MO5Edxc1T88+uaMGWT1CTCGSS+1YF/X4wORhamOIt7O//sRJOU52Qfr4XvQwALh8nwromUXXYEu0aVo7m8AfO1pnBE9NcIku+j1/wspeiY7eggMyC+v3PD3RkpiQQtK3Et08i43txF4gW8RZw7HxCVEAyUTpLG66tgzh7VI0y8CVaXTxIt/4DxQy01hIh3PNUVL84MlGm+zXErYz0nC5qJ++XPDbdhqESs+MgJnt7a/g3LM8zfJ4FEZdINcUBY+e1UggMiaoU+1rQMHSAO5XqOqKJ6JrdV3ey3PFoWNlP4XXODU5u9F6CzmHQalNjQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=HqtThF9G2iwGhsF3bm35/cFTP49DYkDAe1JKOUCzkPo=;
- b=Obie9vNInkwfGufjmNlPuk9Wp+0gxNTtrjH+aBiqhSbYKYm52d7qZOE2r/9RxYAsCM1RGBWsj4kmt/5fRI7nv35b+BoApcE5gl315W+B7mVYAIAqoMj9a+4in5fcJJKMccqj1poGET64Wk0+PefQjmwwBp4Fv1uCJxBUXqgMpeFL2og/9f7Dm+gehxQd3LFhckqbptl6WvSjLuOmCJQaMF4WVTfjFgDKt1q9HIPd8GN8BJB9zDPjDS7SUMAgatGQhkOBy394pzwg4CrXWDWaSm7oVP+3h8G2AME4x1oJvhdIb97xrsr6oiiCFYe+CyPI7vbsrzBvHzP2jn5TZ/LpTw==
+ bh=cZnyYra4tAKa1KXYu3Js0VKL6TOb8QIOu8s7+qHvfAk=;
+ b=GdSJ+fu/cKzel2y/LuMb3VKUtWxxrL8bpdzRy3OgHeiHyd4C8sSjJJu533QKKgLpjb9PpK/h0DQ4SaWfFX5KtvBVtwwroz8WobmT27wVEl7NSdsV9xH/N3ELWDvEsHbdEPFcYlHS/7UsCNM69u407W+rpC969wqEUuv9yMLSmtQVhPDBNwKKz62NgEyXHw9CXSg1XxGnG4w8y361so0rT6eSltXKas9R6LtTA5yjJ9E2bab0V53HRXEbm7/Sc+PyviofWdepEx4qs9HKUzFaj+pJgoGN1rVkoTNPrW+yKJxrl/8ikUTEu1MksltUoPBfXujToiHuHWLRgjVfvyW+eA==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from AM8PR04MB7779.eurprd04.prod.outlook.com (2603:10a6:20b:24b::14)
  by PA1PR04MB10468.eurprd04.prod.outlook.com (2603:10a6:102:448::12) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9298.16; Mon, 10 Nov
- 2025 09:23:03 +0000
+ 2025 09:23:05 +0000
 Received: from AM8PR04MB7779.eurprd04.prod.outlook.com
  ([fe80::b067:7ceb:e3d7:6f93]) by AM8PR04MB7779.eurprd04.prod.outlook.com
  ([fe80::b067:7ceb:e3d7:6f93%5]) with mapi id 15.20.9298.010; Mon, 10 Nov 2025
- 09:23:03 +0000
+ 09:23:05 +0000
 From: Vladimir Oltean <vladimir.oltean@nxp.com>
 To: linux-phy@lists.infradead.org
 Cc: Ioana Ciornei <ioana.ciornei@nxp.com>,
@@ -59,9 +59,9 @@ Cc: Ioana Ciornei <ioana.ciornei@nxp.com>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
 	Josua Mayer <josua@solid-run.com>,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH v4 phy 08/16] phy: lynx-28g: restructure protocol configuration register accesses
-Date: Mon, 10 Nov 2025 11:22:33 +0200
-Message-Id: <20251110092241.1306838-9-vladimir.oltean@nxp.com>
+Subject: [PATCH v4 phy 10/16] phy: lynx-28g: refactor lane->interface to lane->mode
+Date: Mon, 10 Nov 2025 11:22:35 +0200
+Message-Id: <20251110092241.1306838-11-vladimir.oltean@nxp.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20251110092241.1306838-1-vladimir.oltean@nxp.com>
 References: <20251110092241.1306838-1-vladimir.oltean@nxp.com>
@@ -71,80 +71,80 @@ X-ClientProxiedBy: AM8P190CA0026.EURP190.PROD.OUTLOOK.COM
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
 X-MS-TrafficTypeDiagnostic: AM8PR04MB7779:EE_|PA1PR04MB10468:EE_
-X-MS-Office365-Filtering-Correlation-Id: bda334e7-1578-44b1-693d-08de203abfe7
+X-MS-Office365-Filtering-Correlation-Id: 3420ba75-3d02-40b6-2001-08de203ac10d
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|52116014|376014|366016|19092799006|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?vdPJfScyBOd0oKw4WFgtbvYp0663K/Fbp3t1qFLhbRx1tSewqkASarUyvu4D?=
- =?us-ascii?Q?jSX/dCikV3uD1Ga+ca+EnlEX39PQj5wuv5Yf3M8FUFehwQWPNJisW6MSwFNI?=
- =?us-ascii?Q?t4v8Sklbv6xrFZYJsASwHUKRpxWZwSy6G1e3Gf5NrGeTUDt91QP7bTnr7NzK?=
- =?us-ascii?Q?9BgC16H1J3bvqchh4pTApnTtIvq8GFTRr5t3zyQTY7oUPTKToD+Nv+JwvtaL?=
- =?us-ascii?Q?J1qEV4JYsoxfyvVSifKBe75raRKj5KgVLmEoMXs1AREwCEjy9MiKCNiU8wSZ?=
- =?us-ascii?Q?6ib7ABdSB5IYj/5c1/wsjLqeh1e2M1uZj66kSUg0FIsfGHAAyVlAks2sqcn3?=
- =?us-ascii?Q?H/7K5L01Fx1hyilOfDiuiuopn9IRr1yw+m8ytszXmmvCSivQliLToj/DOB4L?=
- =?us-ascii?Q?n9bwEHrk8XsT2rRTEi7zHPjJjRGMOlChl/T0+/ALYMxQURdagqBgLdpKP81g?=
- =?us-ascii?Q?Scdul0JiDTVhORxvesddCztFczhgowFWNjICiz7KKMCT9TF1K3JUbZp7FJbM?=
- =?us-ascii?Q?4TRaROk9R1p6fCGhVMMrGSvrAxDXzZ6mNP+wZvjEvR+tYckQv2pVtjusN/+4?=
- =?us-ascii?Q?dKfK6YDfkLam6Vzt0jH+A6IhRO9rGi7qxdWA6tI7ywdSq2Ek0gibosRS3Z9M?=
- =?us-ascii?Q?KQtldq8cDYxHHyw/a3YsJ7Q6n7/v7P2g2fAqvwEOIgdEu3HLV3hOiVZo2qoT?=
- =?us-ascii?Q?dnljQFmTdRukiTP+uYZrhhL4/qGOz4iXlYjiHkRmEkByy0sAvK7wrjyl2Xik?=
- =?us-ascii?Q?iM8yFKzdr0mHGp/jXwLTr46DGrAIZa+xchHbaA82M0omrbrs4Psy5k0URYw7?=
- =?us-ascii?Q?iq/+dRkpQ2iqBoVM2zBRzBlnxzc5YdDYbf+ov12QWRl3U3BChwiwaOm24pwk?=
- =?us-ascii?Q?NLr+5rFB8UezFCB0rdwGuCMZQq8OoVZkOqvoAUTLD7WR0sJFqx6iqSQua7p1?=
- =?us-ascii?Q?yahdknA04WKIqfSx6UyKwJvmLTfW5wj3xyRS20ZDrtjftPdRy8UUVTvxHuGn?=
- =?us-ascii?Q?1tUGT3PklN4uif5EMBdbpD+PHoMbnvAkKNMgdpN/N3uTY6eRdp/1wgMmLqu9?=
- =?us-ascii?Q?BBBt0Aq+tTmHinhps1kRI/Zin/JIFTdL2VEIaOml5/j9LgeJxljr/sL9owHW?=
- =?us-ascii?Q?BzFs71f9pruRpz8TXwHPhO6P1aftvAqal3hZYt1p6oIXaZI14RE64JW7bLUW?=
- =?us-ascii?Q?3XItelvDGEkdFTj897XzgwHwa6fG4VkTzRH8O3YQ+SBejHRjC/wVP6RotEWt?=
- =?us-ascii?Q?hhkmV0Dnq24m9iJ6WVug+jiSHfkm1kFQA2nZQTjysGyHZ1NC4+giCP6p+07e?=
- =?us-ascii?Q?QWYT3N/GLpWJMp6/Vx2WNIPG2P0V69wfpbI1Nhe8fKj56xId15DKzvM+Pv7E?=
- =?us-ascii?Q?zaPURWkbeT21aIUzxmJXNQEcybHnDs6fyoBmj6XGFph2wzMRUTcQP5DS4GYK?=
- =?us-ascii?Q?jc3hswrwM7oP8ViRdj7ukjanqurUC9ZkmsyhcmjfNvjchHQ2ButRldAgyWoD?=
- =?us-ascii?Q?q55WLFa9TNGBmX7/qmuWcxPBNOI021WINpX4?=
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?vUggjXDq3z/cFwCQCP4WSDoPXWCcqXHFqJcEMVO3z0Kgu7UyKM37f4MxK/M6?=
+ =?us-ascii?Q?dEBuWS7lftL8i8fY8G3hGqL1AsmeFavipa7qXxwgjt86qEtuwypOlUsYz+1U?=
+ =?us-ascii?Q?geZK9jn4fyAoQvmn+1oAQqt1kCcWcnUzjVLxzUhZllVWXeXVb29XjKqwcZOH?=
+ =?us-ascii?Q?WQLPm+lXZHwWQzydecDcCZL45KzwJW/mUS+RP/X/vpFZUUIWO7T/L9vHkIAk?=
+ =?us-ascii?Q?ZC3aD1AkRFkkO8fYLmmJ56jBahb8WsVqrqQhT0GwxhRsEBj2/egLlsIjHDve?=
+ =?us-ascii?Q?rqJgfNgECat1+QRj3C1exzE79IZDgE5tm7TGpxWW1BDZSrKzfmBXM2gaQkkj?=
+ =?us-ascii?Q?2GfYqrZ7m46JeoZTIGT9Z9DSfBD8QaA1LdAKcoBK+SYcJvRySgmTtStzYfEF?=
+ =?us-ascii?Q?t7gLMcr6cYoNYPOK9tG24F5RvEPS9qZYlvXoSAKJq1RzmbfyCxE3gL54h/f/?=
+ =?us-ascii?Q?2zweflLsZOONEEmrJDHfDo6Kz9jgHWWGebBRWM7jDO8Ctow64xNfKEyKPlWw?=
+ =?us-ascii?Q?vbMRcPeiW8tHyC6mGfoBsyxL0f3qn6bdJT1XqOSiZWdoP/P7fryPGfCI55XW?=
+ =?us-ascii?Q?6BVD83SNfzsZnXVfHFtuQH5913EyWxhQlSVHY7iSzGyMzaTDFLoLxKMevK/i?=
+ =?us-ascii?Q?zkFVZgL+EriavNRE0M20//0GbnLyS4F9Ej08bo9gnCIilcvrlNA0Sn5Iiqq1?=
+ =?us-ascii?Q?kd3ABc5TZ5AO9SRLWE6AFhX6IOzeaFKCmGPWZeTodnPTXjJAYi3NP+J5xirG?=
+ =?us-ascii?Q?oEOVCY943pbMCF7ns3bli9HeftCJJLkZgzLf+gXtAd2KLGpEygt4I0YOy/Ux?=
+ =?us-ascii?Q?OZZSqs2R7KMookLZia3oIfa1DjPrzOr3xsfinY7UAjyL3/ehMIoOEQUiQ5mV?=
+ =?us-ascii?Q?cucA7o66PXlhXsnyoFMj6xij4cREoJ89kCP3csXbCHA/V7pTTfVaxQVWlszF?=
+ =?us-ascii?Q?x2KGKfY7Z8Tywh2J9P0Ml8Jx5GWWAEmzUuqrspB+70209itGFRZSvaHAkFIE?=
+ =?us-ascii?Q?eD6dXdgtS3y5yONqTf2vote8yilRzeFLjkUFqeJXH5sbCPK7OTOir2da/cY8?=
+ =?us-ascii?Q?24qiZm4n9wS1lmn3jpJmU9WWqBGTq7LtjrPIVfj/fJeYGmsjYBu9ZnTetJW/?=
+ =?us-ascii?Q?UJThMpHpCA15tbs5ITPVfT9V2yLFJzfuPc0uMOt19hiBihu0KjN5xrB3DpsB?=
+ =?us-ascii?Q?SBCynTBZRXF6BMEgnbw0m5Y0IOrY2fOC35kdDA8OBiWvrtcDylVIUnQG3Lco?=
+ =?us-ascii?Q?SksuV0Bd/kCFpOMUJflrR90aUEOCuolXzSlDNeO/GVH2NAKHK7iaw7JXbrwA?=
+ =?us-ascii?Q?t3mni0wLg0AeGAnF6MqvFCeGfZ/1T/CJLbiRkpyiPZOzuK3nLd2PQFHo1ZGX?=
+ =?us-ascii?Q?EfYWMfyDzBkvoORvvfcHPZ/AsWqjg3KSLclPlZ6axFyPIzQYmvt2HhCy4D7I?=
+ =?us-ascii?Q?96tdsxausAFZYqkIeTpbWc3uASDSCVMpVKYIvUN2zhH8KEBwUE84zVLxRGFX?=
+ =?us-ascii?Q?iM6b10uRDI7Fot8Ni5yff5ExGc3+1JBp8FkU?=
 X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM8PR04MB7779.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(52116014)(376014)(366016)(19092799006)(38350700014);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?+L0XLVx9eV7Flrdot9lsiSJ4PFNt3pAw2/uMK3yeFz91cNe1hLUVjaPRhkDH?=
- =?us-ascii?Q?zsf3sW+eW+FVjHeYnaB1tbmy6KSYEWithYDiRU1FbaP9GtQNfnORs0/Xxumr?=
- =?us-ascii?Q?BYiBDzkQBfQElH1WU1/8OghjKLwor0S/d0LacpToJSgPxFWbl7PNZJdlqK6R?=
- =?us-ascii?Q?rd46RfB/6oIMeFdK8PXFowtuA1K08eTZUBzHJdzINNANnxH83OTt59qn1BLQ?=
- =?us-ascii?Q?zMXvi/URDdKsAVxswx+aglGwitrFVPpXt/yOCI44X3yfr2D0t3pi+Cmz1da9?=
- =?us-ascii?Q?42wEGYfXIHx07S+MVzx/l3N5sleWWgQJ6veaQdSWquY0kH7jLhmHuHHyDI2c?=
- =?us-ascii?Q?an+R0M4CjsmvFUUjh44XQSF8FSxS6PuVxiOjweABlBng+z56w0u7MCOCHMXD?=
- =?us-ascii?Q?ebtxuY7TFJeuqaHvsnW/yH7RMsFx7bsQKajJsrPZBmCa9SZ30fDD2VT7f4Uk?=
- =?us-ascii?Q?dq22rUnoLuuxyP7QDnwleHS+Bw2WnPookkeHpRD56BClj/n4tRPiWN1NvTMF?=
- =?us-ascii?Q?SJcIoBUG7MaRpuIk0xu+hyWhI3Rxz957N4dtI2TFOX1vzPmdJTGfvaN0pcLe?=
- =?us-ascii?Q?l0vXTHt83ZWquy4P4Pj7Bxy6fA4CT8EXsXM10COmDHN1jbJN1YbsOzrcVDz2?=
- =?us-ascii?Q?dMEIbYFZRnRQAoM1eAbUocBX/68KrNKFqVg/eV9ovMWelaZ0cj5wibwMafB8?=
- =?us-ascii?Q?SlCT3O+FXHKZqm1wKUUUnSPT8vDUjmvhqNtB3rho4FItjfEL6W1B5dUU+vmB?=
- =?us-ascii?Q?PRs9cx7wjVHDSJ8jPk//+C581IFTbA7hIf8ObiktHgKy0G0sa0H/fE8uSOt7?=
- =?us-ascii?Q?jp/BZWAlhpreAwvuFc2fkP/O/un/rvmFcBIC3VzF4sAQRsJvta9d7hH/WpoX?=
- =?us-ascii?Q?nsXRDqV35D9P9Bcr0LJCCxilFo6IncVWHQ1KM6KS+vyie0LbAk3vo9WXvJ0D?=
- =?us-ascii?Q?Yixl8UEXpkHUX+RgXsJNthTyYuk//J70szuzXZY6wsfa6xNhn2YFSQ9NBAD+?=
- =?us-ascii?Q?yp4inharobIR6odX+t1iPmXXWHsOUBg9xmZdMT0PuNWBfKMldQvCZC7MuWGe?=
- =?us-ascii?Q?givYDEjej9zVkyXQWCYY8s/chKekifq78ZIDcVaP1iYoy3njJm0pwGxbL8XL?=
- =?us-ascii?Q?xoVEkB+RCjrWihudvQC1H3oljnwhIGKaviu3EEHZtl+k8z+4u/b0QlYX5mqw?=
- =?us-ascii?Q?7I0V6fh4g3sqJzOJLV4iWdzkm8IWZfFHI+Hq0UAKzrWKAWb7YTUv0mf+76vJ?=
- =?us-ascii?Q?2ODc5HW/yB7bj7ztOxvqj5a6eHTHWqrF3snJuhFZgv4TeXfec4CDYQZcwR6+?=
- =?us-ascii?Q?La94GZpLmQNPrPIv+1E/jdzTNQkjZ13MavIHqvVaFQnp2+pHOZXvS2rUYi3W?=
- =?us-ascii?Q?CfDlbrAbfJpdj3SJnJPlsaijIOL2y1xA0M4mZfwH5ZR9BcNBURo/9me2yflz?=
- =?us-ascii?Q?XzS1hiJ9dogrUp4GAvA5pvf5GlhT0ngQeIZ5kQFVlFs6kR/T52pREi7vRl4x?=
- =?us-ascii?Q?X9fS93XHZNprPCllCl/ioHHB64llnkYhJj4f1NSqgNf6GP8bhlM1fY1UwukF?=
- =?us-ascii?Q?S/iA3aSVtmI8r05vCm2gKOhjWNyD4KTY10OHdJPx9CFNr37Zl0Nq3Bi/jRVr?=
- =?us-ascii?Q?tw=3D=3D?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?EU889stoUHHIJ+wsxM/wA/cQXq01Su4GNdKEcFDKNPE38suF+NFzGXQiOO2p?=
+ =?us-ascii?Q?bjoX5p2s2RYNIRD29QDQq/cduksT4uiW7/wIPgMYietPWgJbX6RV+aRlx1hJ?=
+ =?us-ascii?Q?O+3/T1JcvW9G5BtQ4UDcqD0+zg5NziqwfpK2pnD4tmQapjpzb+EZ4dkN+YJS?=
+ =?us-ascii?Q?lwD2v/7BOQ97sPI6PeQ7WEB1AuIk+2FNDVGUKY66yC0i9o0TaXzz9s95wvAn?=
+ =?us-ascii?Q?6UXhS/C8kiSBdIW0HQE2YpHN8w9llHNEtY21uzOP1wmUydAmJulaGVmwl0K4?=
+ =?us-ascii?Q?rD8CR0FfIHsVMwgs670Pj2A2pB6mYGI6MQ3MKtNkLlvPUi9enVP5Nyrf6o1v?=
+ =?us-ascii?Q?OQ6LnFo5ioUKCOgOloqFYQEwq8SCOShPP113ifQ+zpKTA3tD8QwN7e28LgWm?=
+ =?us-ascii?Q?Ps7IXUart+TM+sRk9aehFxwisCq4FQNYqLQ7avi7enKTPq0+Y5cQCLqZUNhV?=
+ =?us-ascii?Q?crguCEULCHtRQmUpq3J/dF4ec4eUlAY6sIRnbxyLdCxKHXyKxJlkRcdETTeh?=
+ =?us-ascii?Q?yXp6UW+b05QKJSKQZJK2zgTCZvS/8Na8xrbQbzSMgQIwXPYVOpFpGAyf1Iq7?=
+ =?us-ascii?Q?UTqf51Fo6J4KYziUY+92SjkVDFtmKA3Cw1h59A/INWVTOFMAqbtdpBjDnKnP?=
+ =?us-ascii?Q?24YYTT3ji5UZ7fIADig0wdM82rlzmsh/CspjwrwuM9mMFFDB/GmePkfYlDWD?=
+ =?us-ascii?Q?PY/HQC78MVC/7CVZDUwBYfVgXHcPaezuMaqqIAMD17/FYbeTAxGg5yJy9tkF?=
+ =?us-ascii?Q?+LBHjLJ7jUPulNrmEWuMR5nbwinyRb/j5puT81ZOQTfkknRZyN7UbgvtKW1r?=
+ =?us-ascii?Q?tUK3fzGXqopohJ8qdkZ2D/dv3W1BrOhQgHjtmDtKvc2gBMMH1vD5LBAKl+YO?=
+ =?us-ascii?Q?9onbFpQStvWXerFnCFEJvDeBc8KGyQSNpMVXLlQuijEA5I70Gky1TOChG/44?=
+ =?us-ascii?Q?3lxMINOTLaraN2zX1c0fpNnkLd6O2gHEaLcRaZZaUv9DQkbEAhA+LT8zfrSz?=
+ =?us-ascii?Q?dDc3XinDSnl0weaohKIX43hnpB7eeOuR2xPJF0a2DqB9fJ8g8RmLLMhZXDQ2?=
+ =?us-ascii?Q?LNU6L/g9TgHsUjB6yRKIR8CJWn0TjNM021kCeZjbr7j70ubde5IeGrbJ8ACD?=
+ =?us-ascii?Q?FaWrAruwWrj3OB9Ju0l8oFroa0+cU1QlPmmqFn7dfbCokqD3tGEXsk78OvMG?=
+ =?us-ascii?Q?gmHarT7kAwzMTN8L8J0XxG86bEbR7qm3CEhitVf/XoeYqCKTYWPayP+BQ8rK?=
+ =?us-ascii?Q?kP3+1cNd3SUmL3PVw4LEjPr3yIT5K9MX2vPBmm9c7dLCy3DyJYdULH5O211P?=
+ =?us-ascii?Q?hfpNUJhPSCa54oZUGClhq4msxfKj+1hOeLXboLovA3Z/bAbFe3PMXvZn0pIg?=
+ =?us-ascii?Q?4Szyx3N9Me0AURuBSLUrm23+K32k8vA8mohIkVMdx88adLdygnIdYbbZbD47?=
+ =?us-ascii?Q?6P5vucuGkIbaSIroxKbVtcMqL35eAbS4PfNZV9K53w2yOCa5NB0394wjabzG?=
+ =?us-ascii?Q?Xd8CPGUmgH2xyi7KXj1yPX8qL9vhqR//KgLs0KXtrjkx6+CjRJA09y1mQ/Xw?=
+ =?us-ascii?Q?TbtI6Ys2sYQ7MWSb49V8bNoUTPAmJjedkcPQoaJV0VXmQXYHTcMIgn2W937g?=
+ =?us-ascii?Q?Vw=3D=3D?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: bda334e7-1578-44b1-693d-08de203abfe7
+X-MS-Exchange-CrossTenant-Network-Message-Id: 3420ba75-3d02-40b6-2001-08de203ac10d
 X-MS-Exchange-CrossTenant-AuthSource: AM8PR04MB7779.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 Nov 2025 09:23:03.4925
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 Nov 2025 09:23:05.4691
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 1txtGN5wLsGyvOBXQ3I5QWmNTIsE+qVsDJi8iguQY5LzSDnl/2/jwkNKZWBRuey9vuv7etO77YaqWaoij1/WDw==
+X-MS-Exchange-CrossTenant-UserPrincipalName: Ks2U12+VQe0HpQymeihnUHtDllh/MFdF3LL7Qzsc1jY/CDh+Y6zUJDmpJIG1ggWUi9WX5nUVX3DtAV4kUbNDXQ==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA1PR04MB10468
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251110_012312_566573_713C664C 
-X-CRM114-Status: GOOD (  13.00  )
+X-CRM114-CacheID: sfid-20251110_012314_248316_63BC01F9 
+X-CRM114-Status: GOOD (  18.93  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -161,126 +161,528 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Eliminate the need to calculate a lane_offset manually, and generate
-some macros which access the protocol converter corresponding to the
-correct lane in the PCC* registers.
+Lynx 28G is a multi-protocol SerDes - it handles serial Ethernet, PCIe,
+SATA.
+
+The driver should not use the phylib-specific phy_interface_t as an
+internal data representation, but something specific to its internal
+capabilities, and only convert to phy_interface_t when PHY_MODE_ETHERNET
+is selected and used.
+
+Otherwise it has no way of representing the non-Ethernet lanes (which
+was not a short-term goal when the driver was introduced, and is not a
+goal per se right now either, but should nonetheless be possible).
+
+Prefer the "enum lynx_lane_mode" name over "lynx_28g_lane_mode", in
+preparation of future Lynx 10G SerDes support. This SerDes is part of
+the same IP family and has similar capabilities, and will reuse some
+code, hence the common data type.
 
 Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
 ---
-v1->v4: none
+v3->v4: none
+v2->v3:
+- fix lynx_28g_set_mode() by using lane_mode instead of submode
+- save lane_mode to local variable in lynx_28g_set_mode()
+v1->v2: none
 
- drivers/phy/freescale/phy-fsl-lynx-28g.c | 55 ++++++++++++++----------
- 1 file changed, 33 insertions(+), 22 deletions(-)
+ drivers/phy/freescale/phy-fsl-lynx-28g.c | 208 ++++++++++++-----------
+ 1 file changed, 106 insertions(+), 102 deletions(-)
 
 diff --git a/drivers/phy/freescale/phy-fsl-lynx-28g.c b/drivers/phy/freescale/phy-fsl-lynx-28g.c
-index 3b19b7d22b6a..bf06ce42e291 100644
+index 83d9cbae251b..2b5dbc0361a1 100644
 --- a/drivers/phy/freescale/phy-fsl-lynx-28g.c
 +++ b/drivers/phy/freescale/phy-fsl-lynx-28g.c
-@@ -12,17 +12,32 @@
- #define LYNX_28G_NUM_LANE			8
- #define LYNX_28G_NUM_PLL			2
+@@ -243,6 +243,13 @@ enum lynx_28g_proto_sel {
+ 	PROTO_SEL_25G_50G_100G = 0x1a,
+ };
  
-+#define LNa_PCC_OFFSET(lane)			(4 * (LYNX_28G_NUM_LANE - (lane->id) - 1))
++enum lynx_lane_mode {
++	LANE_MODE_UNKNOWN,
++	LANE_MODE_1000BASEX_SGMII,
++	LANE_MODE_10GBASER_USXGMII,
++	LANE_MODE_MAX,
++};
 +
- /* General registers per SerDes block */
- #define PCC8					0x10a0
--#define PCC8_SGMII				0x1
--#define PCC8_SGMII_DIS				0x0
-+#define PCC8_SGMIInCFG(lane, x)			(((x) & GENMASK(2, 0)) << LNa_PCC_OFFSET(lane))
-+#define PCC8_SGMIInCFG_EN(lane)			PCC8_SGMIInCFG(lane, 1)
-+#define PCC8_SGMIInCFG_MSK(lane)		PCC8_SGMIInCFG(lane, GENMASK(2, 0))
-+#define PCC8_SGMIIn_KX(lane, x)			((((x) << 3) & BIT(3)) << LNa_PCC_OFFSET(lane))
-+#define PCC8_SGMIIn_KX_MSK(lane)		PCC8_SGMIIn_KX(lane, 1)
-+#define PCC8_MSK(lane)				PCC8_SGMIInCFG_MSK(lane) | \
-+						PCC8_SGMIIn_KX_MSK(lane)
+ struct lynx_28g_proto_conf {
+ 	/* LNaGCR0 */
+ 	int proto_sel;
+@@ -280,8 +287,8 @@ struct lynx_28g_proto_conf {
+ 	int smp_autoz_eg1r;
+ };
  
- #define PCCC					0x10b0
--#define PCCC_10GBASER				0x9
--#define PCCC_USXGMII				0x1
--#define PCCC_SXGMII_DIS				0x0
--
--#define LNa_PCC_OFFSET(lane)			(4 * (LYNX_28G_NUM_LANE - (lane->id) - 1))
-+#define PCCC_SXGMIInCFG(lane, x)		(((x) & GENMASK(2, 0)) << LNa_PCC_OFFSET(lane))
-+#define PCCC_SXGMIInCFG_EN(lane)		PCCC_SXGMIInCFG(lane, 1)
-+#define PCCC_SXGMIInCFG_MSK(lane)		PCCC_SXGMIInCFG(lane, GENMASK(2, 0))
-+#define PCCC_SXGMIInCFG_XFI(lane, x)		((((x) << 3) & BIT(3)) << LNa_PCC_OFFSET(lane))
-+#define PCCC_SXGMIInCFG_XFI_MSK(lane)		PCCC_SXGMIInCFG_XFI(lane, 1)
-+#define PCCC_MSK(lane)				PCCC_SXGMIInCFG_MSK(lane) | \
-+						PCCC_SXGMIInCFG_XFI_MSK(lane)
+-static const struct lynx_28g_proto_conf lynx_28g_proto_conf[PHY_INTERFACE_MODE_MAX] = {
+-	[PHY_INTERFACE_MODE_SGMII] = {
++static const struct lynx_28g_proto_conf lynx_28g_proto_conf[LANE_MODE_MAX] = {
++	[LANE_MODE_1000BASEX_SGMII] = {
+ 		.proto_sel = LNaGCR0_PROTO_SEL_SGMII,
+ 		.if_width = LNaGCR0_IF_WIDTH_10_BIT,
+ 		.teq_type = EQ_TYPE_NO_EQ,
+@@ -309,35 +316,7 @@ static const struct lynx_28g_proto_conf lynx_28g_proto_conf[PHY_INTERFACE_MODE_M
+ 		.smp_autoz_d1r = 0,
+ 		.smp_autoz_eg1r = 0,
+ 	},
+-	[PHY_INTERFACE_MODE_1000BASEX] = {
+-		.proto_sel = LNaGCR0_PROTO_SEL_SGMII,
+-		.if_width = LNaGCR0_IF_WIDTH_10_BIT,
+-		.teq_type = EQ_TYPE_NO_EQ,
+-		.sgn_preq = 1,
+-		.ratio_preq = 0,
+-		.sgn_post1q = 1,
+-		.ratio_post1q = 0,
+-		.amp_red = 6,
+-		.adpt_eq = 48,
+-		.enter_idle_flt_sel = 4,
+-		.exit_idle_flt_sel = 3,
+-		.data_lost_th_sel = 1,
+-		.gk2ovd = 0x1f,
+-		.gk3ovd = 0,
+-		.gk4ovd = 0,
+-		.gk2ovd_en = 1,
+-		.gk3ovd_en = 1,
+-		.gk4ovd_en = 0,
+-		.eq_offset_ovd = 0x1f,
+-		.eq_offset_ovd_en = 0,
+-		.eq_offset_rng_dbl = 0,
+-		.eq_blw_sel = 0,
+-		.eq_boost = 0,
+-		.spare_in = 0,
+-		.smp_autoz_d1r = 0,
+-		.smp_autoz_eg1r = 0,
+-	},
+-	[PHY_INTERFACE_MODE_10GBASER] = {
++	[LANE_MODE_10GBASER_USXGMII] = {
+ 		.proto_sel = LNaGCR0_PROTO_SEL_XFI,
+ 		.if_width = LNaGCR0_IF_WIDTH_20_BIT,
+ 		.teq_type = EQ_TYPE_2TAP,
+@@ -379,7 +358,7 @@ struct lynx_28g_pll {
+ 	struct lynx_28g_priv *priv;
+ 	u32 rstctl, cr0, cr1;
+ 	int id;
+-	DECLARE_PHY_INTERFACE_MASK(supported);
++	DECLARE_BITMAP(supported, LANE_MODE_MAX);
+ };
+ 
+ struct lynx_28g_lane {
+@@ -388,7 +367,7 @@ struct lynx_28g_lane {
+ 	bool powered_up;
+ 	bool init;
+ 	unsigned int id;
+-	phy_interface_t interface;
++	enum lynx_lane_mode mode;
+ };
+ 
+ struct lynx_28g_priv {
+@@ -429,7 +408,34 @@ static void lynx_28g_rmw(struct lynx_28g_priv *priv, unsigned long off,
+ #define lynx_28g_pll_read(pll, reg)			\
+ 	ioread32((pll)->priv->base + reg((pll)->id))
+ 
+-static bool lynx_28g_supports_interface(struct lynx_28g_priv *priv, int intf)
++static const char *lynx_lane_mode_str(enum lynx_lane_mode lane_mode)
++{
++	switch (lane_mode) {
++	case LANE_MODE_1000BASEX_SGMII:
++		return "1000Base-X/SGMII";
++	case LANE_MODE_10GBASER_USXGMII:
++		return "10GBase-R/USXGMII";
++	default:
++		return "unknown";
++	}
++}
 +
-+#define PCCD					0x10b4
-+#define PCCD_E25GnCFG(lane, x)			(((x) & GENMASK(2, 0)) << LNa_PCCD_OFFSET(lane))
-+#define PCCD_E25GnCFG_EN(lane)			PCCD_E25GnCFG(lane, 1)
-+#define PCCD_E25GnCFG_MSK(lane)			PCCD_E25GnCFG(lane, GENMASK(2, 0))
-+#define PCCD_MSK(lane)				PCCD_E25GnCFG_MSK(lane)
++static enum lynx_lane_mode phy_interface_to_lane_mode(phy_interface_t intf)
++{
++	switch (intf) {
++	case PHY_INTERFACE_MODE_SGMII:
++	case PHY_INTERFACE_MODE_1000BASEX:
++		return LANE_MODE_1000BASEX_SGMII;
++	case PHY_INTERFACE_MODE_10GBASER:
++	case PHY_INTERFACE_MODE_USXGMII:
++		return LANE_MODE_10GBASER_USXGMII;
++	default:
++		return LANE_MODE_UNKNOWN;
++	}
++}
++
++static bool lynx_28g_supports_lane_mode(struct lynx_28g_priv *priv,
++					enum lynx_lane_mode mode)
+ {
+ 	int i;
  
- /* Per PLL registers */
- #define PLLnRSTCTL(pll)				(0x400 + (pll) * 0x100 + 0x0)
-@@ -314,20 +329,21 @@ static void lynx_28g_lane_set_pll(struct lynx_28g_lane *lane,
- static void lynx_28g_cleanup_lane(struct lynx_28g_lane *lane)
+@@ -437,7 +443,7 @@ static bool lynx_28g_supports_interface(struct lynx_28g_priv *priv, int intf)
+ 		if (PLLnRSTCTL_DIS(priv->pll[i].rstctl))
+ 			continue;
+ 
+-		if (test_bit(intf, priv->pll[i].supported))
++		if (test_bit(mode, priv->pll[i].supported))
+ 			return true;
+ 	}
+ 
+@@ -445,7 +451,7 @@ static bool lynx_28g_supports_interface(struct lynx_28g_priv *priv, int intf)
+ }
+ 
+ static struct lynx_28g_pll *lynx_28g_pll_get(struct lynx_28g_priv *priv,
+-					     phy_interface_t intf)
++					     enum lynx_lane_mode mode)
+ {
+ 	struct lynx_28g_pll *pll;
+ 	int i;
+@@ -456,27 +462,27 @@ static struct lynx_28g_pll *lynx_28g_pll_get(struct lynx_28g_priv *priv,
+ 		if (PLLnRSTCTL_DIS(pll->rstctl))
+ 			continue;
+ 
+-		if (test_bit(intf, pll->supported))
++		if (test_bit(mode, pll->supported))
+ 			return pll;
+ 	}
+ 
+ 	/* no pll supports requested mode, either caller forgot to check
+ 	 * lynx_28g_supports_lane_mode, or this is a bug.
+ 	 */
+-	dev_WARN_ONCE(priv->dev, 1, "no pll for interface %s\n", phy_modes(intf));
++	dev_WARN_ONCE(priv->dev, 1, "no pll for lane mode %s\n",
++		      lynx_lane_mode_str(mode));
+ 	return NULL;
+ }
+ 
+ static void lynx_28g_lane_set_nrate(struct lynx_28g_lane *lane,
+ 				    struct lynx_28g_pll *pll,
+-				    phy_interface_t intf)
++				    enum lynx_lane_mode lane_mode)
+ {
+ 	switch (FIELD_GET(PLLnCR1_FRATE_SEL, pll->cr1)) {
+ 	case PLLnCR1_FRATE_5G_10GVCO:
+ 	case PLLnCR1_FRATE_5G_25GVCO:
+-		switch (intf) {
+-		case PHY_INTERFACE_MODE_SGMII:
+-		case PHY_INTERFACE_MODE_1000BASEX:
++		switch (lane_mode) {
++		case LANE_MODE_1000BASEX_SGMII:
+ 			lynx_28g_lane_rmw(lane, LNaTGCR0,
+ 					  FIELD_PREP(LNaTGCR0_N_RATE, LNaTGCR0_N_RATE_QUARTER),
+ 					  LNaTGCR0_N_RATE);
+@@ -489,9 +495,8 @@ static void lynx_28g_lane_set_nrate(struct lynx_28g_lane *lane,
+ 		}
+ 		break;
+ 	case PLLnCR1_FRATE_10G_20GVCO:
+-		switch (intf) {
+-		case PHY_INTERFACE_MODE_10GBASER:
+-		case PHY_INTERFACE_MODE_USXGMII:
++		switch (lane_mode) {
++		case LANE_MODE_10GBASER_USXGMII:
+ 			lynx_28g_lane_rmw(lane, LNaTGCR0,
+ 					  FIELD_PREP(LNaTGCR0_N_RATE, LNaTGCR0_N_RATE_FULL),
+ 					  LNaTGCR0_N_RATE);
+@@ -580,17 +585,16 @@ static int lynx_28g_power_on(struct phy *phy)
+ 	return 0;
+ }
+ 
+-static int lynx_28g_get_pccr(phy_interface_t interface, int lane,
++static int lynx_28g_get_pccr(enum lynx_lane_mode lane_mode, int lane,
+ 			     struct lynx_pccr *pccr)
+ {
+-	switch (interface) {
+-	case PHY_INTERFACE_MODE_SGMII:
+-	case PHY_INTERFACE_MODE_1000BASEX:
++	switch (lane_mode) {
++	case LANE_MODE_1000BASEX_SGMII:
+ 		pccr->offset = PCC8;
+ 		pccr->width = 4;
+ 		pccr->shift = SGMII_CFG(lane);
+ 		break;
+-	case PHY_INTERFACE_MODE_10GBASER:
++	case LANE_MODE_10GBASER_USXGMII:
+ 		pccr->offset = PCCC;
+ 		pccr->width = 4;
+ 		pccr->shift = SXGMII_CFG(lane);
+@@ -602,13 +606,12 @@ static int lynx_28g_get_pccr(phy_interface_t interface, int lane,
+ 	return 0;
+ }
+ 
+-static int lynx_28g_get_pcvt_offset(int lane, phy_interface_t interface)
++static int lynx_28g_get_pcvt_offset(int lane, enum lynx_lane_mode lane_mode)
+ {
+-	switch (interface) {
+-	case PHY_INTERFACE_MODE_SGMII:
+-	case PHY_INTERFACE_MODE_1000BASEX:
++	switch (lane_mode) {
++	case LANE_MODE_1000BASEX_SGMII:
+ 		return SGMIIaCR0(lane);
+-	case PHY_INTERFACE_MODE_10GBASER:
++	case LANE_MODE_10GBASER_USXGMII:
+ 		return SXGMIIaCR0(lane);
+ 	default:
+ 		return -EOPNOTSUPP;
+@@ -616,14 +619,14 @@ static int lynx_28g_get_pcvt_offset(int lane, phy_interface_t interface)
+ }
+ 
+ static int lynx_pccr_write(struct lynx_28g_lane *lane,
+-			   phy_interface_t interface, u32 val)
++			   enum lynx_lane_mode lane_mode, u32 val)
  {
  	struct lynx_28g_priv *priv = lane->priv;
--	u32 lane_offset = LNa_PCC_OFFSET(lane);
+ 	struct lynx_pccr pccr;
+ 	u32 old, tmp, mask;
+ 	int err;
  
- 	/* Cleanup the protocol configuration registers of the current protocol */
- 	switch (lane->interface) {
- 	case PHY_INTERFACE_MODE_10GBASER:
--		lynx_28g_rmw(priv, PCCC,
--			     PCCC_SXGMII_DIS << lane_offset,
--			     GENMASK(3, 0) << lane_offset);
-+		/* Cleanup the protocol configuration registers */
-+		lynx_28g_rmw(priv, PCCC, 0, PCCC_MSK(lane));
+-	err = lynx_28g_get_pccr(interface, lane->id, &pccr);
++	err = lynx_28g_get_pccr(lane_mode, lane->id, &pccr);
+ 	if (err)
+ 		return err;
+ 
+@@ -638,13 +641,13 @@ static int lynx_pccr_write(struct lynx_28g_lane *lane,
+ 	return 0;
+ }
+ 
+-static int lynx_pcvt_read(struct lynx_28g_lane *lane, phy_interface_t interface,
+-			  int cr, u32 *val)
++static int lynx_pcvt_read(struct lynx_28g_lane *lane,
++			  enum lynx_lane_mode lane_mode, int cr, u32 *val)
+ {
+ 	struct lynx_28g_priv *priv = lane->priv;
+ 	int offset;
+ 
+-	offset = lynx_28g_get_pcvt_offset(lane->id, interface);
++	offset = lynx_28g_get_pcvt_offset(lane->id, lane_mode);
+ 	if (offset < 0)
+ 		return offset;
+ 
+@@ -653,13 +656,13 @@ static int lynx_pcvt_read(struct lynx_28g_lane *lane, phy_interface_t interface,
+ 	return 0;
+ }
+ 
+-static int lynx_pcvt_write(struct lynx_28g_lane *lane, phy_interface_t interface,
+-			   int cr, u32 val)
++static int lynx_pcvt_write(struct lynx_28g_lane *lane,
++			   enum lynx_lane_mode lane_mode, int cr, u32 val)
+ {
+ 	struct lynx_28g_priv *priv = lane->priv;
+ 	int offset;
+ 
+-	offset = lynx_28g_get_pcvt_offset(lane->id, interface);
++	offset = lynx_28g_get_pcvt_offset(lane->id, lane_mode);
+ 	if (offset < 0)
+ 		return offset;
+ 
+@@ -668,43 +671,44 @@ static int lynx_pcvt_write(struct lynx_28g_lane *lane, phy_interface_t interface
+ 	return 0;
+ }
+ 
+-static int lynx_pcvt_rmw(struct lynx_28g_lane *lane, phy_interface_t interface,
++static int lynx_pcvt_rmw(struct lynx_28g_lane *lane,
++			 enum lynx_lane_mode lane_mode,
+ 			 int cr, u32 val, u32 mask)
+ {
+ 	int err;
+ 	u32 tmp;
+ 
+-	err = lynx_pcvt_read(lane, interface, cr, &tmp);
++	err = lynx_pcvt_read(lane, lane_mode, cr, &tmp);
+ 	if (err)
+ 		return err;
+ 
+ 	tmp &= ~mask;
+ 	tmp |= val;
+ 
+-	return lynx_pcvt_write(lane, interface, cr, tmp);
++	return lynx_pcvt_write(lane, lane_mode, cr, tmp);
+ }
+ 
+ static void lynx_28g_lane_remap_pll(struct lynx_28g_lane *lane,
+-				    phy_interface_t interface)
++				    enum lynx_lane_mode lane_mode)
+ {
+ 	struct lynx_28g_priv *priv = lane->priv;
+ 	struct lynx_28g_pll *pll;
+ 
+ 	/* Switch to the PLL that works with this interface type */
+-	pll = lynx_28g_pll_get(priv, interface);
++	pll = lynx_28g_pll_get(priv, lane_mode);
+ 	if (unlikely(pll == NULL))
+ 		return;
+ 
+ 	lynx_28g_lane_set_pll(lane, pll);
+ 
+ 	/* Choose the portion of clock net to be used on this lane */
+-	lynx_28g_lane_set_nrate(lane, pll, interface);
++	lynx_28g_lane_set_nrate(lane, pll, lane_mode);
+ }
+ 
+ static void lynx_28g_lane_change_proto_conf(struct lynx_28g_lane *lane,
+-					    phy_interface_t interface)
++					    enum lynx_lane_mode lane_mode)
+ {
+-	const struct lynx_28g_proto_conf *conf = &lynx_28g_proto_conf[interface];
++	const struct lynx_28g_proto_conf *conf = &lynx_28g_proto_conf[lane_mode];
+ 
+ 	lynx_28g_lane_rmw(lane, LNaGCR0,
+ 			  FIELD_PREP(LNaGCR0_PROTO_SEL, conf->proto_sel) |
+@@ -775,21 +779,20 @@ static void lynx_28g_lane_change_proto_conf(struct lynx_28g_lane *lane,
+ }
+ 
+ static int lynx_28g_lane_disable_pcvt(struct lynx_28g_lane *lane,
+-				      phy_interface_t interface)
++				      enum lynx_lane_mode lane_mode)
+ {
+ 	struct lynx_28g_priv *priv = lane->priv;
+ 	int err;
+ 
+ 	spin_lock(&priv->pcc_lock);
+ 
+-	err = lynx_pccr_write(lane, interface, 0);
++	err = lynx_pccr_write(lane, lane_mode, 0);
+ 	if (err)
+ 		goto out;
+ 
+-	switch (interface) {
+-	case PHY_INTERFACE_MODE_SGMII:
+-	case PHY_INTERFACE_MODE_1000BASEX:
+-		err = lynx_pcvt_rmw(lane, interface, CR(1), 0,
++	switch (lane_mode) {
++	case LANE_MODE_1000BASEX_SGMII:
++		err = lynx_pcvt_rmw(lane, lane_mode, CR(1), 0,
+ 				    SGMIIaCR1_SGPCS_EN);
  		break;
- 	case PHY_INTERFACE_MODE_SGMII:
- 	case PHY_INTERFACE_MODE_1000BASEX:
--		lynx_28g_rmw(priv, PCC8,
--			     PCC8_SGMII_DIS << lane_offset,
--			     GENMASK(3, 0) << lane_offset);
-+		/* Cleanup the protocol configuration registers */
-+		lynx_28g_rmw(priv, PCC8, 0, PCC8_MSK(lane));
-+
-+		/* Disable the SGMII PCS */
-+		lynx_28g_lane_rmw(lane, SGMIIaCR1, 0, SGMIIaCR1_SGPCS_EN);
-+
+ 	default:
+@@ -803,7 +806,7 @@ static int lynx_28g_lane_disable_pcvt(struct lynx_28g_lane *lane,
+ }
+ 
+ static int lynx_28g_lane_enable_pcvt(struct lynx_28g_lane *lane,
+-				     phy_interface_t interface)
++				     enum lynx_lane_mode lane_mode)
+ {
+ 	struct lynx_28g_priv *priv = lane->priv;
+ 	u32 val;
+@@ -811,10 +814,9 @@ static int lynx_28g_lane_enable_pcvt(struct lynx_28g_lane *lane,
+ 
+ 	spin_lock(&priv->pcc_lock);
+ 
+-	switch (interface) {
+-	case PHY_INTERFACE_MODE_SGMII:
+-	case PHY_INTERFACE_MODE_1000BASEX:
+-		err = lynx_pcvt_rmw(lane, interface, CR(1), SGMIIaCR1_SGPCS_EN,
++	switch (lane_mode) {
++	case LANE_MODE_1000BASEX_SGMII:
++		err = lynx_pcvt_rmw(lane, lane_mode, CR(1), SGMIIaCR1_SGPCS_EN,
+ 				    SGMIIaCR1_SGPCS_EN);
+ 		break;
+ 	default:
+@@ -823,19 +825,18 @@ static int lynx_28g_lane_enable_pcvt(struct lynx_28g_lane *lane,
+ 
+ 	val = 0;
+ 
+-	switch (interface) {
+-	case PHY_INTERFACE_MODE_SGMII:
+-	case PHY_INTERFACE_MODE_1000BASEX:
++	switch (lane_mode) {
++	case LANE_MODE_1000BASEX_SGMII:
+ 		val |= PCC8_SGMIIa_CFG;
+ 		break;
+-	case PHY_INTERFACE_MODE_10GBASER:
++	case LANE_MODE_10GBASER_USXGMII:
+ 		val |= PCCC_SXGMIIn_CFG | PCCC_SXGMIIn_XFI;
  		break;
  	default:
  		break;
-@@ -336,16 +352,13 @@ static void lynx_28g_cleanup_lane(struct lynx_28g_lane *lane)
+ 	}
  
- static void lynx_28g_lane_set_sgmii(struct lynx_28g_lane *lane)
- {
--	u32 lane_offset = LNa_PCC_OFFSET(lane);
+-	err = lynx_pccr_write(lane, interface, val);
++	err = lynx_pccr_write(lane, lane_mode, val);
+ 
+ 	spin_unlock(&priv->pcc_lock);
+ 
+@@ -847,18 +848,20 @@ static int lynx_28g_set_mode(struct phy *phy, enum phy_mode mode, int submode)
+ 	struct lynx_28g_lane *lane = phy_get_drvdata(phy);
  	struct lynx_28g_priv *priv = lane->priv;
- 	struct lynx_28g_pll *pll;
+ 	int powered_up = lane->powered_up;
++	enum lynx_lane_mode lane_mode;
+ 	int err = 0;
  
- 	lynx_28g_cleanup_lane(lane);
+ 	if (mode != PHY_MODE_ETHERNET)
+ 		return -EOPNOTSUPP;
  
- 	/* Setup the lane to run in SGMII */
--	lynx_28g_rmw(priv, PCC8,
--		     PCC8_SGMII << lane_offset,
--		     GENMASK(3, 0) << lane_offset);
-+	lynx_28g_rmw(priv, PCC8, PCC8_SGMIInCFG_EN(lane), PCC8_MSK(lane));
+-	if (lane->interface == PHY_INTERFACE_MODE_NA)
++	if (lane->mode == LANE_MODE_UNKNOWN)
+ 		return -EOPNOTSUPP;
  
- 	/* Setup the protocol select and SerDes parallel interface width */
- 	lynx_28g_lane_rmw(lane, LNaGCR0,
-@@ -390,15 +403,13 @@ static void lynx_28g_lane_set_sgmii(struct lynx_28g_lane *lane)
- static void lynx_28g_lane_set_10gbaser(struct lynx_28g_lane *lane)
+-	if (!lynx_28g_supports_interface(priv, submode))
++	lane_mode = phy_interface_to_lane_mode(submode);
++	if (!lynx_28g_supports_lane_mode(priv, lane_mode))
+ 		return -EOPNOTSUPP;
+ 
+-	if (submode == lane->interface)
++	if (lane_mode == lane->mode)
+ 		return 0;
+ 
+ 	/* If the lane is powered up, put the lane into the halt state while
+@@ -867,15 +870,15 @@ static int lynx_28g_set_mode(struct phy *phy, enum phy_mode mode, int submode)
+ 	if (powered_up)
+ 		lynx_28g_power_off(phy);
+ 
+-	err = lynx_28g_lane_disable_pcvt(lane, lane->interface);
++	err = lynx_28g_lane_disable_pcvt(lane, lane->mode);
+ 	if (err)
+ 		goto out;
+ 
+-	lynx_28g_lane_change_proto_conf(lane, submode);
+-	lynx_28g_lane_remap_pll(lane, submode);
+-	WARN_ON(lynx_28g_lane_enable_pcvt(lane, submode));
++	lynx_28g_lane_change_proto_conf(lane, lane_mode);
++	lynx_28g_lane_remap_pll(lane, lane_mode);
++	WARN_ON(lynx_28g_lane_enable_pcvt(lane, lane_mode));
+ 
+-	lane->interface = submode;
++	lane->mode = lane_mode;
+ 
+ out:
+ 	if (powered_up)
+@@ -889,11 +892,13 @@ static int lynx_28g_validate(struct phy *phy, enum phy_mode mode, int submode,
  {
+ 	struct lynx_28g_lane *lane = phy_get_drvdata(phy);
  	struct lynx_28g_priv *priv = lane->priv;
--	u32 lane_offset = LNa_PCC_OFFSET(lane);
- 	struct lynx_28g_pll *pll;
++	enum lynx_lane_mode lane_mode;
  
- 	lynx_28g_cleanup_lane(lane);
+ 	if (mode != PHY_MODE_ETHERNET)
+ 		return -EOPNOTSUPP;
  
- 	/* Enable the SXGMII lane */
--	lynx_28g_rmw(priv, PCCC,
--		     PCCC_10GBASER << lane_offset,
--		     GENMASK(3, 0) << lane_offset);
-+	lynx_28g_rmw(priv, PCCC, PCCC_SXGMIInCFG_EN(lane) |
-+		     PCCC_SXGMIInCFG_XFI(lane, 1), PCCC_MSK(lane));
+-	if (!lynx_28g_supports_interface(priv, submode))
++	lane_mode = phy_interface_to_lane_mode(submode);
++	if (!lynx_28g_supports_lane_mode(priv, lane_mode))
+ 		return -EOPNOTSUPP;
  
- 	/* Setup the protocol select and SerDes parallel interface width */
- 	lynx_28g_lane_rmw(lane, LNaGCR0,
+ 	return 0;
+@@ -946,12 +951,11 @@ static void lynx_28g_pll_read_configuration(struct lynx_28g_priv *priv)
+ 		case PLLnCR1_FRATE_5G_10GVCO:
+ 		case PLLnCR1_FRATE_5G_25GVCO:
+ 			/* 5GHz clock net */
+-			__set_bit(PHY_INTERFACE_MODE_1000BASEX, pll->supported);
+-			__set_bit(PHY_INTERFACE_MODE_SGMII, pll->supported);
++			__set_bit(LANE_MODE_1000BASEX_SGMII, pll->supported);
+ 			break;
+ 		case PLLnCR1_FRATE_10G_20GVCO:
+ 			/* 10.3125GHz clock net */
+-			__set_bit(PHY_INTERFACE_MODE_10GBASER, pll->supported);
++			__set_bit(LANE_MODE_10GBASER_USXGMII, pll->supported);
+ 			break;
+ 		default:
+ 			/* 6GHz, 12.890625GHz, 8GHz */
+@@ -1002,13 +1006,13 @@ static void lynx_28g_lane_read_configuration(struct lynx_28g_lane *lane)
+ 	protocol = FIELD_GET(LNaPSS_TYPE, pss);
+ 	switch (protocol) {
+ 	case LNaPSS_TYPE_SGMII:
+-		lane->interface = PHY_INTERFACE_MODE_SGMII;
++		lane->mode = LANE_MODE_1000BASEX_SGMII;
+ 		break;
+ 	case LNaPSS_TYPE_XFI:
+-		lane->interface = PHY_INTERFACE_MODE_10GBASER;
++		lane->mode = LANE_MODE_10GBASER_USXGMII;
+ 		break;
+ 	default:
+-		lane->interface = PHY_INTERFACE_MODE_NA;
++		lane->mode = LANE_MODE_UNKNOWN;
+ 	}
+ }
+ 
 -- 
 2.34.1
 
