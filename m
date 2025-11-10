@@ -4,151 +4,135 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5BE23CCF9E3
-	for <linux-phy@archiver.kernel.org>; Mon, 10 Nov 2025 11:59:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 35C1BCCF9E3
+	for <linux-phy@archiver.kernel.org>; Mon, 10 Nov 2025 12:04:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DAUM8sbfuaF0z9/RCKI3Njr9u+1qBVtCrfbZafDeJ00=; b=n5iulrin6ROZgM
-	TXYtFydlYObyljPEAYgXfsLhniKY69PYE0FZ2vIUfYED17rcvwqcbRVHJ5xpck8w+gNFPDKPGuhrN
-	K7nNP9CVEO9p6N7lYIYJe1J71swJESlDWnvWYgMEgls3qJOxQawyP86PK6UsM+d2Nbc+zIL9x/GRq
-	bgDU+sti3sWPzK4NJR/e2exh7YaHBa+nLkJGxVIXjzN7iKTub+PD2YnNUDJkU0X2dlNrA0OYPVti7
-	XJUyxgswT1bRyhn3+rdRPEF8XdkLcfJbNFv2ShCZdSqOJbeEuXmGGDjwZwkI9EHrdmWpYXZoI7mTy
-	jDphJdGy5aUnO5yn+GdA==;
+	List-Owner; bh=5CjSlECSE0E2ubNWLQtNpg/OqFJ7U5fDsrRIRxVGcLo=; b=b5wHAE2OID+53Z
+	AJfjcf7XxXPpCBBn3mjir0a30tEDhDwp9L7xHmH+7sBT1CyoCEkeATR1BF8W+h38Z4n0omQbjaCt/
+	y1kW9t85AK13PQhf6h6o2/rokwOWAmizm1VYCh28rFCwBZ6dUTkiubkLL8q4+hjv5+stjV0wTws4A
+	IWdtjmNNdiHK32+Dt7p5wo621HbXc0ZL8Qzx1KT/9NMR2ySrXNypT/Eoi5MNocxrLK40hKByKSulH
+	o7KmazpNNTnLwPw7ZhG/WocgSHTDQ5iSnINgCOmlVw6itezrtJLQVizWyQJMH6eID/QCytKsicFdy
+	k9F4qCBz3BVUGRXEsOvg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vIQY1-00000005Mkg-0Uo2;
-	Mon, 10 Nov 2025 11:59:01 +0000
-Received: from mail-francesouthazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c207::3] helo=MRWPR03CU001.outbound.protection.outlook.com)
+	id 1vIQdj-00000005NGi-3tHZ;
+	Mon, 10 Nov 2025 12:04:55 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vIQXy-00000005MkM-1xU7
+	id 1vIQdg-00000005NG9-48JJ
 	for linux-phy@lists.infradead.org;
-	Mon, 10 Nov 2025 11:58:59 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=I8gmG7nsu7TxaazSBXI3pE16AeOGMVCMcIQdmIZtjc0M9UVoLNn+OWUe5ckD+KRE1HBOU6W0HqsTTXLPM5CVYP+p1SzpvPFv3GEaTz7jxrZnMiIMkNwBJE/jc8XGsZ6qciQOnzoGxNJfMt2/AJCrq6q19/prM9uRjrjPCOADQCLE9RS861eiFshhkOxK+a00pAenTkMnnTRcBabylRzhdRkh46Bab7SJrOv85b7XBEqmkVov4+ev2yCEOD4eOldZKGuPAU9V0+a2k3Ze/+nO5sDobB95K28Cl8oGS5nU1F4QAy6yPN8ABIJW/080gN42/Ki32jTeQj4ieC49Fv7dtA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=RS+3AQKhdUwOiYyJYyKE5Ik/j7tpGsbFmL3EI6U1MkQ=;
- b=s4kZzVqWtQAXLS4a5J8hnl0RNd9hPG/JajaCcX78xQZv0Jaibi93ZVS47NKvVunW9tVQDDOzlGAmEpdF9Uw4fjORUJY59wK2ADnSUFDS04B65tva1KqHHwfTRRqwiVoySimT0H1g/QRNYnyUXvWriXc3B3JNZfODtmfwsuXso6AY1J1Qn8NhgeXjvIgx2e1q06z/wwUow4w2hIIT64TWEg7gOAjDzJ2P4wm30yqGgvAddVOUv6hbbQGOcKxL3QrNJ9cSNB6WiE/r/V95f+/zihnublrZNRSeHxjR89lV7cIZJy7HMYZxkM2hwkrkEoma06cNuZbOiG2RM4KnwGcyjw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=RS+3AQKhdUwOiYyJYyKE5Ik/j7tpGsbFmL3EI6U1MkQ=;
- b=HOQlXuZByHG7O1EwZtd47N6Qm65q76ItpOxC7fcp+MduAJtc23ynsSEx5upV60ko2vT/R2JzqKvqqbWZP5sq7F6jA9T6cORQB635TlI/45qJTR6/i2nqWAJQx07DH7sVACTkiAbnRsEVJDrPvwHCQuidJnYxyz3ihUEWKFuR2g7+IDTKmsmKx6VmAR9eRiXTVAHfDI5RiC4lgvGnVH7rvyZKkCUkmOgp/wj0iIN/Umvd3K47ftH/gyA3b/IRclpRLXJH+/uCXkCF0fj+ZWxZ1HhrPrK9baE194gSZiNm9GShqN19VkrEOeP/ESpYYbyXgRy0rjKLe3m0OJy761Djbg==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from AM8PR04MB7779.eurprd04.prod.outlook.com (2603:10a6:20b:24b::14)
- by AMDPR04MB11605.eurprd04.prod.outlook.com (2603:10a6:20b:71a::9) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9298.16; Mon, 10 Nov
- 2025 11:58:54 +0000
-Received: from AM8PR04MB7779.eurprd04.prod.outlook.com
- ([fe80::b067:7ceb:e3d7:6f93]) by AM8PR04MB7779.eurprd04.prod.outlook.com
- ([fe80::b067:7ceb:e3d7:6f93%5]) with mapi id 15.20.9298.010; Mon, 10 Nov 2025
- 11:58:54 +0000
-Date: Mon, 10 Nov 2025 13:58:51 +0200
-From: Vladimir Oltean <vladimir.oltean@nxp.com>
-To: "Rob Herring (Arm)" <robh@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: devicetree@vger.kernel.org, Josua Mayer <josua@solid-run.com>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Ioana Ciornei <ioana.ciornei@nxp.com>,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v4 phy 15/16] dt-bindings: phy: lynx-28g: add compatible
- strings per SerDes and instantiation
-Message-ID: <20251110115851.ew72c7b4n6npkxkg@skbuf>
-References: <20251110092241.1306838-1-vladimir.oltean@nxp.com>
- <20251110092241.1306838-16-vladimir.oltean@nxp.com>
- <176277056708.3414333.5403009680990856810.robh@kernel.org>
-Content-Disposition: inline
-In-Reply-To: <176277056708.3414333.5403009680990856810.robh@kernel.org>
-X-ClientProxiedBy: VI1PR07CA0211.eurprd07.prod.outlook.com
- (2603:10a6:802:58::14) To AM8PR04MB7779.eurprd04.prod.outlook.com
- (2603:10a6:20b:24b::14)
+	Mon, 10 Nov 2025 12:04:54 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 5AA9CfFl3146223
+	for <linux-phy@lists.infradead.org>; Mon, 10 Nov 2025 12:04:51 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	fAMlSP1cES968wwO9rlfMbzdj2xWrLcU9q2FW6trd6I=; b=d6Hx6yxa60IwSD0d
+	RH28GrzDrKbhwrb8wZ0rihWmrZoldrXU1Y0mIJcC22Oo/17Z3w9TMLawCmn1lLlR
+	L0CwwJAW5Oi4UskmEZgZ1CBhpz2F+upHpEGGw0yo7bHyPU9zIhK1wBxom14k5UOV
+	cmTG8otm9uY115nKigNPMyvC0GanGB0jHr5RoJDfQXHRzqu+EtVgbIpP7wobv9Ts
+	lsmeDYTYO9M7maPPfrWwtRzUxj6LBD4lJrR8D6d2LZB7mgsojudiGmtiw0BTjwoE
+	tRgkxh/1yMEXO7TmWqhotr6O4tLJEj3W9Bi0f5FOcxi4GxaP2F7uzhrPwOm9RzCC
+	6dhgbg==
+Received: from mail-qt1-f200.google.com (mail-qt1-f200.google.com [209.85.160.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4abd7hrgmm-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Mon, 10 Nov 2025 12:04:50 +0000 (GMT)
+Received: by mail-qt1-f200.google.com with SMTP id d75a77b69052e-4edaa289e0dso8098001cf.3
+        for <linux-phy@lists.infradead.org>; Mon, 10 Nov 2025 04:04:50 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1762776290; x=1763381090; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=fAMlSP1cES968wwO9rlfMbzdj2xWrLcU9q2FW6trd6I=;
+        b=RCVbxiwvke+S0xQ9tz43KLyPOR69NUSU44Z7f62O1soE7z5cRkxQCi5O+coE7BjMDz
+         KcmUA58Oknup0zHhUJ9YXhbQdWM175OZHGEz8EaEkqRzbOP6fDbG89LW4D4sqfEr0QmY
+         pmGrT8qdU4XebYIwNW7VSHCHNksPSU/pSD8Ep6f+eKLm7/cR8Cth/bJp8Y8D2TsDg1J+
+         D9+rntx36HSeWG5USNaQVyCN5uMZgg9AiFBbjGyOTyt5Zy3SA6HFBKf2y33MgffFyNzn
+         fI/84P8M2d5t6Swz6ny8NQGXhDcKZCEeNDWJTFOxmplIqCqng7+NA+B4G2QJ5appUOGu
+         XCKw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1762776290; x=1763381090;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=fAMlSP1cES968wwO9rlfMbzdj2xWrLcU9q2FW6trd6I=;
+        b=m3wbwS6Hhbc4H2L0AkbVKu7+CmjSxjnj5qDleY3LQICPNpJHtLk65+FVKWs4PpnLTM
+         r7AZ3FzEeu92A17qN3g73fJ+pGtGws6IqwobkF2XMtnHSyE7MSJ+cx8EL9h9Pcw4/F5H
+         mC+0d9f9NcvwQBRfY0GpMRiVWTkA9d618OK6FTSTANX/q1DFId986ySSk9qY1NS+H2B2
+         x+8Os4pARgseBpXdK9+W4iYZPRWL6J6boys0xu4CBBPdhSYVryr1NTb8tVDiL3RXEfhi
+         EIk8nID+t2As26eusjx3Yu48FEAYgbDWRGqWwuZCVLcgiHmJ9ocLkCdICUeZK1/p9OHo
+         HggQ==
+X-Forwarded-Encrypted: i=1; AJvYcCXqG+vlbfEFV0wYYzT1vuTZ4Dx9DiAF3vcGqXReOHT9dTPUqOJfNfPLntsD7xdauQUyC24oqUbpwHI=@lists.infradead.org
+X-Gm-Message-State: AOJu0Ywo2fAZwEgq0bf9Is8f23l+SyJqKhSuo+ATZNkF5tLOX1yASwL8
+	+VbrAQqTV7B9qWBPCl2kksgwSqvmQ13eKDjLWd7WMq8m0HVr7jbAMnB5FVU49QqF11V/KmmdT/h
+	h7tK9yd5T/CKtvraATE+gxjyJGOOL2GtQ0jqbpSNic7Dp0cRj4NlNCM/ggw0HWfxt64NP
+X-Gm-Gg: ASbGnctq/b0CWNLkS2mO1jMU0WE51xwg4orUdSpsEGfDLeCg4E3T0qX6ERVCBA/GvEo
+	vcGy2ZGsKpeQQ5dFbxcdViDALKD5EY67WjOmjkwzQsI9+SKZeHpVviwKMpGcbp+kNYanYNU3GcQ
+	FmJu2eKhAe1YMIX7dQiyrVdwJk5cP1MLhA6Ix8NWHJD0HlyzK86MrOoGItkgE+HjCYVzxryaWxl
+	TssKcIwqijI++MGJt/aJoYhCXeTjfDf+9PFLccustmT071h3j2kaIcLFRliQV6V5yf/BT79QO96
+	CRZFycUvJkiilFq6M2RC7kGUEGkigxPkCEDueRBMODOq1eTuh1+ZfU7HYz9IDP8o4tIt3Epky3m
+	sXMPbZoct6KiPNKFO3jmKYhe6AWRCd1D/P0FDRiA5apLfsLWk5C+rQ+hC
+X-Received: by 2002:a05:622a:3cb:b0:4e8:a001:226d with SMTP id d75a77b69052e-4edc6055c83mr3412201cf.7.1762776290204;
+        Mon, 10 Nov 2025 04:04:50 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGzDbbLjdzMiLA+y68+aSiGVjpIJDyiwSr5crhClqs7TwZ7jR7Ff37L74FLOF28viWzc1ZsFg==
+X-Received: by 2002:a05:622a:3cb:b0:4e8:a001:226d with SMTP id d75a77b69052e-4edc6055c83mr3411801cf.7.1762776289668;
+        Mon, 10 Nov 2025 04:04:49 -0800 (PST)
+Received: from [192.168.119.202] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-b72bf4fbf3csm1069581766b.26.2025.11.10.04.04.47
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 10 Nov 2025 04:04:49 -0800 (PST)
+Message-ID: <454ad8d6-43c9-4819-b849-c123fa9d33bd@oss.qualcomm.com>
+Date: Mon, 10 Nov 2025 13:04:46 +0100
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AM8PR04MB7779:EE_|AMDPR04MB11605:EE_
-X-MS-Office365-Filtering-Correlation-Id: 44c11cc5-b183-4daa-8e6d-08de2050856a
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|10070799003|1800799024|366016|19092799006;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?xmwudsQSCdDwOb3ecTbWwPBrfqcwNt6eDi2Nc3nDRWhlzWI4JKLSkBsEW28c?=
- =?us-ascii?Q?d1SHLPx90RTPCagv/eedENhU7FkSkrEPou0lk8Py2gd3w9oWTep7eUVXZLcn?=
- =?us-ascii?Q?CbHYqzyojV4jB9J7wVGji+c1xosDNv4lHk8Gv/bCsrSklS1h6+KC2L0dqdUX?=
- =?us-ascii?Q?vaxfXTd/+Osp6cwovpVSb2SN+8cjyWjl+8EsSgopZbIq3mKOHPmLqVyA1gAi?=
- =?us-ascii?Q?PuSUJS45SG6AmNw6PIKVODoPEPqnJ9/HszwKRa6Qxqi1y6l9Fo9cF+mU3L+A?=
- =?us-ascii?Q?cBfh9AaFoHTmlj6zfXR6ePL0E72YdjxIj3XicbuEjywbhylbkuJkqS/A+QrP?=
- =?us-ascii?Q?wW6adMKuWhldJVWrEhueh6PkXIOwk138kFCNepf5MwbNBu5GJr0squw8Hg/V?=
- =?us-ascii?Q?4LQ1Ekgrr52AcsZISrzMoSxp1/sagCLS8GDSLqUTKLxrLDo9JlgLXSo9Uzao?=
- =?us-ascii?Q?rBTZ9QomSuaVlrypsn6lrZtQdExXJcZI0lW3KLXnJlEa+WugyxUsWSVE3IQo?=
- =?us-ascii?Q?U7+RX3JpGqCOsobM3M+wtjYPkOuDcZf93tZuG08GgLWYc6d8+dk6+6+ZHcsm?=
- =?us-ascii?Q?T9y20lLqEO9oPkEynR1bDjHPTqB7HKaD/MsXow0+k2bvt3BWzfbF9YorJ5o0?=
- =?us-ascii?Q?O3adpBgJN0wFQJZkYBdZjkZFvWazSDYWccYtcnb+j4Xw3vy9ALn+r/pCP0us?=
- =?us-ascii?Q?AIZhB6mHsrdHiGMDYtDNtDXiXnzJnS41Qk3CMo6akK9o02dOOb4A7LpERS/p?=
- =?us-ascii?Q?cP51497bCRKXlYpQ2T02UoeiAanmGfotDyOtO1lztQcd56qzZNl8WlJ6vM+W?=
- =?us-ascii?Q?7JldzvCg4zHJWRqt6IzGYfgkwWj3ImsMjOgkvJ21jUPyvCGS1vTxnBsJlxmd?=
- =?us-ascii?Q?qfmHe7uA+XAwtd7HU1Jyex0FLOh2ZZP0A/3Kqf34iyqGhgahP0imhpjwPoAJ?=
- =?us-ascii?Q?Mmx8Ey/4Yb6dbd2/b4vIj5GYt6aaWvWWadXqpBLNeQyoYgOjKPzJuO3nDnIs?=
- =?us-ascii?Q?nMyOHuB/PAbQr+s63+xbo4vQPyzG/YAa0dPB+OCXkvG9La7qjozrE3mTgSBo?=
- =?us-ascii?Q?Dpiq1xB7ViHE/OK9bqKb1MKtREFipAVWxAujOX01lt1wbBrUslEWHLomvj7Z?=
- =?us-ascii?Q?NcyXF3Ys+XfOu/5PqbESZJeRdvSEqVisHgDk9RvX3ECFDcOvVs6x5TWs5bEw?=
- =?us-ascii?Q?icSuL9LaOZIUf2TlIpeBl/4WKkHbazMel1/H66fk3yzpiwSf14vMqE1u+qAE?=
- =?us-ascii?Q?h7E8Wwd9eluKfJqnPNYH1CQ3ZQWlzbDc1S9LzX+6bDSDe21UyVVvkkveVx5W?=
- =?us-ascii?Q?ypT/Pq/X56CVgTqPRpSc5Hr/V2VLp/4TVfFWMbygRme6wRkhp4MNfSK6bD9g?=
- =?us-ascii?Q?zhbe/xvkX7t5S+9dmFuPg6gpVdjGWqT9TL1QBLHRC5M5dwFZvGdZVeJNy+ns?=
- =?us-ascii?Q?KLKVnJqs4jcDLicCpjwFDTFVDrhnQ0Mx?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM8PR04MB7779.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(10070799003)(1800799024)(366016)(19092799006);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?tslUuoUdjdf3MkmGWGXfd3Dd3iIJBQtn2PUplqh/HB3WG5ElnCWBbUZ9pRJo?=
- =?us-ascii?Q?ooNwzZTQ5RdbmTXIN3BxTSCpBn7svknFwUbByiq1gXEfLPyyUikR8PXhP7mv?=
- =?us-ascii?Q?ll7mVpt0Bk4m1BlYXWR5B/A8MLY5MSK69aWVxHN2i7d3lwes1Ggqh/AcLSkE?=
- =?us-ascii?Q?GRS/+o3hi8t5FwJriuQO5Ikn/X5yL7WyQPQ6JZi+eIwtfGgQ0p6X/jFqihyZ?=
- =?us-ascii?Q?EPmWwDGlLioB9psKB2laILwBYKD21+9py4EcsE//ljaqoGgRRmJJKdgWismm?=
- =?us-ascii?Q?7YdUJteW3s6NzDfccP7QV99XAZ2jZm+vqmUjw67f7MLnLkBY4FiRD6rmOBFv?=
- =?us-ascii?Q?8aZRQHI/LTczuChtSP3ghimVpadKlUho1H8RPUU1gvrGQ5dV7vr9hH6edUhC?=
- =?us-ascii?Q?uBpTYsI4juceQUqCPr5tasSNK6vpkyApI//TH8MT1bSngTXUC5Vb1r3QUNS4?=
- =?us-ascii?Q?ivE4+8eP1+DbTDExDzO3G2TDKf+U4rKkZ+R50uoSnMHO8GXArATR/KVS00MT?=
- =?us-ascii?Q?CpLb+cLlTtH/QT99TNLtpANUZlKHfhOKa7YSA9QBGYmKU3hWrSDmv4O9NYH/?=
- =?us-ascii?Q?KTyBM2n5CJY9qN9wEe6102+q768G1W6XUPPpKlk22gKns0bqpv1bF3089U2u?=
- =?us-ascii?Q?BU6igBphMcw9Qf5BuIIiFk7jHWveI17svB3LQOQvNkYS9ZjhJXo7JDMXypjT?=
- =?us-ascii?Q?/8NPlpFueVwMioKGPil5PxCtM3BEZZrlG/2UspMUY5KLp+8gOI61GSacCD7j?=
- =?us-ascii?Q?ZWXcYUeSyrBEo8WltA1eOE+mw7KY/gmTB3iToyHVatX8ZW/ZufOxlEIzkIyK?=
- =?us-ascii?Q?4WBPBPTb62/e7MttqMefT3MtRG5uqGaAe5fQ8liwZpQjLWUVEuPhhB9Ccr2g?=
- =?us-ascii?Q?8nU9LdI3cS687lFM7cbc0pUydBF/7c+shlSwIC5YeqitIOgE0QaCoto4nI+k?=
- =?us-ascii?Q?r5Mkt0xTrB7L5etuMbOym2X284NlblSBuQ12mK2IUjS2hPWc0MesrFzeKLeW?=
- =?us-ascii?Q?2iwuH0fUmx6xue5fhuITRbV1csX1QL2TJ5W3vZhGEcuqMkDC8ldA3jPuPwIy?=
- =?us-ascii?Q?v89kAKtvDMU5PGunasjo4kPrMcrdGH+EooAX8EjSAlQsQYXhH0u3imxs7aAQ?=
- =?us-ascii?Q?c/bOP3v5/5V/020VdD6hmhpauzWpsxpMitR9EjiTY0GKCx9a5l/4m8dxQrtN?=
- =?us-ascii?Q?AFO8p9vAGNo4GBmkKbN43ggEmpKgolGlokxZrrr71HXSW85ia4lK3/dKSNhQ?=
- =?us-ascii?Q?Gc4dBt8+sV2c4xl2AN7118fgCdbZLjc7BR5v7eVgsqVoXCwqN4El2U0GVwht?=
- =?us-ascii?Q?BvZhs6Gp3nO1aQylOm49TtprzbPNzgOlatwVdSkZ8hoEYBNnKM3ua65V2sFR?=
- =?us-ascii?Q?PShl+GoURNCs/QnLfRr3S0XD0VokfGPknKp8PqKITfx486i8CvhuF74GJSxz?=
- =?us-ascii?Q?zeSFuOM82LBDCvZ8VRFKmH2cgDgukVqjj5hy6Hihn1GshMl8XgLWzcezLqO6?=
- =?us-ascii?Q?MfGAlhCM9QL812+iMGEpL1lLsr2JfHl8nyK/5YKxl//mItPxNkADhBPoA2/F?=
- =?us-ascii?Q?S2G6KaDrQ/9OuvpiQqoARnhF21umPgrFpYkHtuctBXLCpT0Bt67sOx9XIyzT?=
- =?us-ascii?Q?CJ6B8NOCp1+WaShjCyYGZHwI557bfZkg2DkJYy8kcPvN5QxNGy9Yo7JXa7nq?=
- =?us-ascii?Q?NwEBqQ=3D=3D?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 44c11cc5-b183-4daa-8e6d-08de2050856a
-X-MS-Exchange-CrossTenant-AuthSource: AM8PR04MB7779.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 Nov 2025 11:58:54.2724
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: ulTECW5hwVSL2i6cWQ65vxl78B23ZmKTqgNRrrs3zTmNh1j/KGGvGkKoPfq2xGUiV4+v8LzFr21YVCU0Gi7OyA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AMDPR04MB11605
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 0/3] add vdda-aux regulator support for QMP PHY on QCS6490
+To: Amit Singh <quic_amitsi@quicinc.com>, andersson@kernel.org,
+        konradybcio@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
+        conor+dt@kernel.org, vkoul@kernel.org, kishon@kernel.org,
+        lumag@kernel.org, neil.armstrong@linaro.org, quic_wcheng@quicinc.com
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        quic_riteshk@quicinc.com, quic_rajeevny@quicinc.com,
+        quic_vproddut@quicinc.com
+References: <20251110115806.2379442-1-quic_amitsi@quicinc.com>
+Content-Language: en-US
+From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+In-Reply-To: <20251110115806.2379442-1-quic_amitsi@quicinc.com>
+X-Proofpoint-GUID: ZxhFleL5f2so1V-nzFVggjs-JvsStR0N
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMTEwMDEwNCBTYWx0ZWRfX/kesdIt8DdNx
+ vassNLN0IxhoAJ+hQVFX7WuVpkTspYCcHBUYI4TuK4kPjmsZFALkMAm0nmgVg4P4js3BG45ceSz
+ qc/fMsQWo+amvWMjLUZlboruREuu/dxYfc8bGZB84ocl/amQLBSkQ9HKoXeKfhusDVHA9Dzny+8
+ /gEn7K4+4NP0jjkGbKHlLGZ21oeGTv8jZgzuAmqRRUdxivm8zPg4Lp0pE5r8x1yv9E+MwGiou6m
+ kSV68gne/N+qI9x19fVuvcSVEjIpqBODct4aKBAWjTWcWyI6/rQvAWiyovje1hTxEoec2b0a5X+
+ X+Yqc7UXS9dxHfVDW9t5Keodymk5HB2kByLNoxh7iqL8as8kwIlqE0gQX14IilZsJjy2Sic1uVE
+ HIjktwI/3mr2htYGgZgzhpnBNevZGg==
+X-Proofpoint-ORIG-GUID: ZxhFleL5f2so1V-nzFVggjs-JvsStR0N
+X-Authority-Analysis: v=2.4 cv=Yt4ChoYX c=1 sm=1 tr=0 ts=6911d4e2 cx=c_pps
+ a=JbAStetqSzwMeJznSMzCyw==:117 a=FpWmc02/iXfjRdCD7H54yg==:17
+ a=IkcTkHD0fZMA:10 a=6UeiqGixMTsA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=yJhrbEhF6J9Oi74tKswA:9 a=QEXdDO2ut3YA:10
+ a=uxP6HrT_eTzRwkO_Te1X:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
+ definitions=2025-11-10_04,2025-11-06_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ bulkscore=0 adultscore=0 spamscore=0 phishscore=0 malwarescore=0
+ impostorscore=0 clxscore=1015 suspectscore=0 lowpriorityscore=0
+ priorityscore=1501 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2510240001
+ definitions=main-2511100104
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251110_035858_685517_516DBCC7 
-X-CRM114-Status: GOOD (  45.60  )
+X-CRM114-CacheID: sfid-20251110_040453_143890_0DDB010D 
+X-CRM114-Status: GOOD (  13.13  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -165,153 +149,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Nov 10, 2025 at 04:29:27AM -0600, Rob Herring (Arm) wrote:
+On 11/10/25 12:58 PM, Amit Singh wrote:
+> The `vdda-aux` supply is necessary for proper power sequencing and reliable
+> USB enumeration on platforms that provide this rail.
 > 
-> On Mon, 10 Nov 2025 11:22:40 +0200, Vladimir Oltean wrote:
-> > The 28G Lynx SerDes is instantiated 3 times in the NXP LX2160A SoC and
-> > twice in the NXP LX2162A. All these instances share the same register
-> > map, but the number of lanes and the protocols supported by each lane
-> > differs in a way that isn't detectable by the programming model.
-> > 
-> > Going by the generic "fsl,lynx-28g" compatible string and expecting all
-> > SerDes instantiations to use it was a mistake that needs to be fixed.
-> > 
-> > The two major options considered are
-> > (a) encode the SoC and the SerDes instance in the compatible string,
-> >     everything else is the responsibility of the driver to derive based
-> >     on this sufficient information
-> > (b) add sufficient device tree properties to describe the per-lane
-> >     differences, as well as the different lane count
-> > 
-> > Another important consideration is that any decision made here should
-> > be consistent with the decisions taken for the yet-to-be-introduced
-> > 10G Lynx SerDes (older generation for older SoCs), because of how
-> > similar they are.
-> > 
-> > I've seen option (b) at play in this unmerged patch set for the 10G Lynx
-> > here, and I didn't like it:
-> > https://lore.kernel.org/linux-phy/20230413160607.4128315-3-sean.anderson@seco.com/
-> > 
-> > This is because there, we have a higher degree of variability in the
-> > PCCR register values that need to be written per protocol. This makes
-> > that approach more drawn-out and more prone to errors, compared to (a)
-> > which is more succinct and obviously correct.
-> > 
-> > So I've chosen option (a) through elimination, and this also reflects
-> > how the SoC reference manual provides different tables with protocol
-> > combinations for each SerDes. NXP clearly documents these as not
-> > identical, and refers to them as such (SerDes 1, 2, etc).
-> > 
-> > The per-SoC compatible string is prepended to the "fsl,lynx-28g" generic
-> > compatible, which is left there for compatibility with old kernels. An
-> > exception would be LX2160A SerDes #3, which at the time of writing is
-> > not described in fsl-lx2160a.dtsi, and is a non-networking SerDes, so
-> > the existing Linux driver is useless for it. So there is no practical
-> > reason to put the "fsl,lynx-28g" fallback for "fsl,lx2160a-serdes3".
-> > 
-> > The specific compatible strings give us the opportunity to express more
-> > constraints in the schema that we weren't able to express before:
-> > - We allow #phy-cells in the top-level SerDes node only for
-> >   compatibility with old kernels that don't know how to translate
-> >   "phys = <&serdes_1_lane_a>" to a PHY. We don't need that feature for
-> >   the not-yet-introduced LX2160A SerDes #3, so make the presence of
-> >   #phy-cells at the top level be dependent on the presence of the
-> >   "fsl,lynx-28g" fallback compatible.
-> > - The modernization of the compatible string should come together with
-> >   per-lane OF nodes.
-> > - LX2162A SerDes 1 has fewer lanes than the others, and trying to use
-> >   lanes 0-3 would be a mistake that could be caught by the schema.
-> > 
-> > Cc: Rob Herring <robh@kernel.org>
-> > Cc: Krzysztof Kozlowski <krzk+dt@kernel.org>
-> > Cc: Conor Dooley <conor+dt@kernel.org>
-> > Cc: devicetree@vger.kernel.org
-> > Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
-> > ---
-> > v3->v4:
-> > - OF nodes per lane broken out as a separate "[PATCH v4 phy 01/16]
-> >   dt-bindings: phy: lynx-28g: permit lane OF PHY providers"
-> > - rewritten commit message
-> > - s|"^phy@[0-9a-f]+$"|"^phy@[0-7]$"|g in patternProperties
-> > - define "#address-cells" and "#size-cells" as part of common
-> >   properties, only leave the part which marks them required in the allOf
-> >   constraints area
-> > v2->v3:
-> > - re-add "fsl,lynx-28g" as fallback compatible, and #phy-cells = <1> in
-> >   top-level "serdes" node
-> > - drop useless description texts
-> > - fix text formatting
-> > - schema is more lax to allow overlaying old and new required properties
-> > v1->v2:
-> > - drop the usage of "fsl,lynx-28g" as a fallback compatible
-> > - mark "fsl,lynx-28g" as deprecated
-> > - implement Josua's request for per-lane OF nodes for the new compatible
-> >   strings
-> > 
-> >  .../devicetree/bindings/phy/fsl,lynx-28g.yaml | 86 +++++++++++++++++--
-> >  1 file changed, 79 insertions(+), 7 deletions(-)
-> > 
+> This series adds support for the `vdda-aux` regulator to the QMP PHY driver
+> and updates the QCS6490 RB3 Gen2 device tree to provide the required
+> auxiliary 3.0 V rail for stable USB PHY operation.
+> Platforms that do not define `vdda-aux` remain unaffected.
 > 
-> My bot found errors running 'make dt_binding_check' on your patch:
-> 
-> yamllint warnings/errors:
-> 
-> dtschema/dtc warnings/errors:
-> /builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/fsl,lynx-28g.example.dtb: serdes@1ea0000 (fsl,lx2160a-serdes1): '#phy-cells' does not match any of the regexes: '^phy@[0-7]$', '^pinctrl-[0-9]+$'
-> 	from schema $id: http://devicetree.org/schemas/phy/fsl,lynx-28g.yaml
-> 
-> doc reference errors (make refcheckdocs):
-> 
-> See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20251110092241.1306838-16-vladimir.oltean@nxp.com
-> 
-> The base for the series is generally the latest rc1. A different dependency
-> should be noted in *this* patch.
-> 
-> If you already ran 'make dt_binding_check' and didn't see the above
-> error(s), then make sure 'yamllint' is installed and dt-schema is up to
-> date:
-> 
-> pip3 install dtschema --upgrade
-> 
-> Please check and re-submit after running the above command yourself. Note
-> that DT_SCHEMA_FILES can be set to your schema file to speed up checking
-> your schema. However, it must be unset to test all examples with your schema.
->
+> Tested on RB3 Gen2 (QCS6490) platform to ensure proper USB enumeration and
+> PHY stability.
 
-I'm terribly sorry about this. There was a testing fault that led to
-this mistake remaining uncaught.
-Originally I was testing with "make -j $ncpu DT_CHECKER_FLAGS=-m DT_SCHEMA_FILES=net/ dt_binding_check":
-https://github.com/vladimiroltean/nipa/commit/5579a443f88ec7f8a3e33108acb3d9d529ff825a
-(and because this is a patch on Documentation/dt-bindings/phy/ rather than net/,
-I missed the warnings).
-I had fixed this when submitting the pull request to Jakub (removed DT_SCHEMA_FILES=net/):
-https://github.com/linux-netdev/nipa/pull/65/commits/b7d53ebaaeaf1a4e474d6cd85b3b73d557a669a2
-but I forgot to pull in the modification back into the test automation framework that I used :-/
+I don't see this vreg going to the SoC on the schematics.
 
-Anyway, regarding the warning itself: I had forgotten in the 1+ month
-since v3 why I had to do this:
-https://lore.kernel.org/linux-phy/20250926180505.760089-13-vladimir.oltean@nxp.com/
+What is it actually powering?
 
- properties:
--  "#phy-cells":
--    const: 1
-+
-+  "#phy-cells": true // <--- this
-...
-+allOf:
-...
-+      properties:
-+        "#phy-cells":
-+          const: 1
-+      required:
-+        - "#phy-cells"
-
-so I removed that part, but I'll have to add it back.
-
-
-@linux-phy maintainers, if this turns out to be the only problem after
-review, could you still consider applying patches 1-14, so that I can
-make less noise while resending?
+Konrad
 
 -- 
 linux-phy mailing list
