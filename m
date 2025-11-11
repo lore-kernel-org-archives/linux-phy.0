@@ -4,64 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9B0F1CCF9E3
-	for <linux-phy@archiver.kernel.org>; Tue, 11 Nov 2025 07:58:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D63F9CCFA18
+	for <linux-phy@archiver.kernel.org>; Tue, 11 Nov 2025 08:30:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:From:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a75E0BQSj91fEFfeDqRThfpExyd5aY6zVu3RGGIPNH0=; b=AthMPG8uB1Tb5N
-	grAqbh030W87t2rwV+6uXcbxSRgjqj3YCHeS4iMKDRH+YXiQSDG4SOKOi589DlLxpaiuHUj3hE2nt
-	/SACydI6s/PeY2mOI7KDLAszB/4OlQj1FgBbcJK0qCHALG1AdUAWGM2J9IJpf7RBAWP6JL5kzGKoK
-	V12dudocwvknYhmvL6PybvU8texS5QmNkXPEsFTX9hWotQFzQXvyapn1XNDoKLwHStyceYZPxN9m/
-	V9Gk1Bg9mA1GpYLQbu/xdoyprxnjSfa9+YSeQ6h6RWooVySicZRDabqN8S2lK9ctPScZfwU6RGTBo
-	FXz2EYUGdYYdvT9R24sg==;
+	List-Owner; bh=J6StANxUpfxTMOZPnvvkNC9TKQNdT0RwYoYs9x+Y/Bs=; b=2siv308VzP6eF+
+	uRv5mI6czWXBjGvpk76u1PX1AAuCV8mkpQOj3IuY+d/SjerG073X9ho6HIXgVKip1h5oiI0t8XFxd
+	YpewoC8DvGAFHXrHK/rfZ4tP1ZqxcAT8BsgsC0HrhJzeeLVW23n921syMKCxouUw4srB4CLL7PQ8y
+	oZ+cxss/kCj4c6iJol7HZxTLaeEsRjcVjBddCo/W4M6JZISYbbMdTORENkUvlxAXvv89HlHxr+F3V
+	2JSpiSZsqAr6en5ReFUYe642acXf5RQLgMGwYlEXTP5cpBLvtHRY8UdGKCZx62qyfg7s2TE6PV1VC
+	qrMAhp32j99LlCjykCXQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vIjHF-00000006jLh-12Hn;
-	Tue, 11 Nov 2025 07:58:57 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1vIjm3-00000006mrB-25iY;
+	Tue, 11 Nov 2025 08:30:47 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vIjHD-00000006jLL-2mi9
-	for linux-phy@lists.infradead.org;
-	Tue, 11 Nov 2025 07:58:56 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 12ECC43A1E;
-	Tue, 11 Nov 2025 07:58:55 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 601EEC116D0;
-	Tue, 11 Nov 2025 07:58:54 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1762847934;
-	bh=t8z+DsR+SctqG4ry1HDsLKkUjYHAZMrxzuomQp6SW58=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=tjGEIOutK6PmrJoukZphpytayAF+fN82nQo8X89aDoeZmXiJTESO7W7a4iCGwlnUE
-	 tR9j+ZRBesJWZkPY7Ez3PCi8MvsL2UwzILa6x4Zc8xXRQiXousGE08DFoTBWfkDzuN
-	 Yjvwhez06aDEntSgIccF9r1I2vpPME223IHW8ajRiiyGwOxQzy6l7bPQrZwcTOcAs9
-	 lVKCgVCtyrjySyi9g0K9Ss+DmNDhBqbsmkhfQrxmvpYiCWuJLvnBIqj2PQw2Ve5Q5q
-	 oU6mcH8uWT3AjaMQHSPYLN79vyhiXQQEjbSJC4iZXuIJQnC3wSzn5BYXxI2n10S6KV
-	 deziRAddUrExw==
-Date: Tue, 11 Nov 2025 08:58:52 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Amit Singh <quic_amitsi@quicinc.com>
-Cc: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org, 
-	krzk+dt@kernel.org, conor+dt@kernel.org, vkoul@kernel.org, kishon@kernel.org, 
-	lumag@kernel.org, neil.armstrong@linaro.org, quic_wcheng@quicinc.com, 
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, quic_riteshk@quicinc.com, quic_rajeevny@quicinc.com, 
-	quic_vproddut@quicinc.com
-Subject: Re: [PATCH 1/3] dt-bindings: phy: qcom: qmp-combo: add support for
- vdda-aux regulator
-Message-ID: <20251111-innocent-affable-saluki-2bf8bb@kuoka>
-References: <20251110115806.2379442-1-quic_amitsi@quicinc.com>
- <20251110115806.2379442-2-quic_amitsi@quicinc.com>
+	id 1vIjm0-00000006mqS-1I2C;
+	Tue, 11 Nov 2025 08:30:46 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1762849840;
+	bh=d6hbMkfnrqZV3eqYEQrTninyADS9Axe0rTNBA1LAauM=;
+	h=Date:Subject:From:To:Cc:References:In-Reply-To:From;
+	b=BOh2+jq15IgCBzgothKOYnuAhsJMpfnUeGLlpiXL1BdcQfwtEPYTbJ37791r5/Nlr
+	 jWY+6AA/opWdHkVLEZ/RiDfayNNeB/R6QzozNq2IybvmDzmqLgmIjTpWwYfJ0LZoCM
+	 ErHgT2j4JLN47umS3CFBCqXFeEJBnr0DGEIbmWeZvqr5RUxIdt/ZbjoDotyNF7lfOm
+	 V620by1hc67TqdVdtVhj61JfdweoPLzJ1mgYDnxP8okD9ZYnDN5AlHx/AHecia75H0
+	 QOYrPzU0UYwhHl+QSNJ06cLBca7j+Fx7DCjIVDHLBvPcKfsQMddJ8tCXfDSNnRdr39
+	 gJM4zdOkWLK9g==
+Received: from [192.168.1.90] (unknown [82.79.138.145])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: cristicc)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 6633017E00A6;
+	Tue, 11 Nov 2025 09:30:40 +0100 (CET)
+Message-ID: <2fb8b8cc-c393-4b2b-a501-667e7a8c4dd4@collabora.com>
+Date: Tue, 11 Nov 2025 10:30:39 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20251110115806.2379442-2-quic_amitsi@quicinc.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v4 00/11] Add HDMI 2.1 FRL support to
+ phy-rockchip-samsung-hdptx
+From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
+ <kishon@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
+ Algea Cao <algea.cao@rock-chips.com>, Dmitry Baryshkov <lumag@kernel.org>
+Cc: kernel@collabora.com, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+References: <20250902-phy-hdptx-frl-v4-0-7d69176373ce@collabora.com>
+Content-Language: en-US
+In-Reply-To: <20250902-phy-hdptx-frl-v4-0-7d69176373ce@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251110_235855_745468_D687F8E5 
-X-CRM114-Status: UNSURE (   9.47  )
+X-CRM114-CacheID: sfid-20251111_003044_557125_E670D51B 
+X-CRM114-Status: UNSURE (   7.48  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -74,24 +74,28 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gTW9uLCBOb3YgMTAsIDIwMjUgYXQgMDU6Mjg6MDRQTSArMDUzMCwgQW1pdCBTaW5naCB3cm90
-ZToKPiBBZGQgc3VwcG9ydCBmb3IgdGhlICJ2ZGRhLWF1eCIgcmVndWxhdG9yIGluIHRoZSBRTVAg
-UEhZIGJpbmRpbmcsIHdpdGgKPiBhbiBlbmFibGVfbG9hZCBvZiAzNjAwMCDCtUEuIE1hbmFnaW5n
-IHRoaXMgYXV4aWxpYXJ5IHJhaWwgaW4gdGhlIGRyaXZlcgo+IGFsbG93cyBwcm9wZXIgcG93ZXIg
-Y29uZmlndXJhdGlvbiBvbiBwbGF0Zm9ybXMgdGhhdCBwcm92aWRlIHRoZSBzdXBwbHksCgpXaGF0
-IGlzIGhhcyB0byBkbyBhbnl0aGluZyB3aXRoIHRoZSBkcml2ZXI/IFdoeSBhcmUgeW91IGRvY3Vt
-ZW50aW5nIHRoZQpkcml2ZXI/CgpJIHVuZGVyc3RhbmQgdGhpcyB0aGF0IHRoZXJlIGlzIG5vIHN1
-Y2ggc3VwcGx5IGluIHRoZSBoYXJkd2FyZSBhbmQgeW91Cmp1c3QgcG9rZSB0byBzb21lb25lIGVs
-c2UncyBzdXBwbHkuCgoKPiBpbXByb3ZpbmcgUEhZIHN0YWJpbGl0eS4KPiAKPiBUaGlzIGNoYW5n
-ZSBpcyBhIG5vLW9wIG9uIHBsYXRmb3JtcyB0aGF0IGRvIG5vdCBkZWZpbmUgdGhlICJ2ZGRhLWF1
-eCIKPiByZWd1bGF0b3IuCgpXaGljaCBwbGF0Zm9ybXMgYXJlIHRoZXNlPyBZb3VyIHBhdGNoIGNs
-YWltcyBoZXJlIHRoYXQgYWxsIG9mIHRoZQpwbGF0Zm9ybXMgZGVmaW5lIHZkZGEtYXV4LCBiZWNh
-dXNlIHlvdSBkaWQgbm90IGNvbnN0cmFpbiBpdCBwZXIgdmFyaWFudC4KCkJlc3QgcmVnYXJkcywK
-S3J6eXN6dG9mCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmlu
-ZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
-bGludXgtcGh5Cg==
+Hi,
+
+On 9/2/25 11:44 PM, Cristian Ciocaltea wrote:
+> The Samsung HDMI/eDP Transmitter Combo PHY is capable of handling four
+> HDMI 2.1 Fixed Rate Link (FRL) lanes, while each lane can operate at
+> 3Gbps, 6Gbps, 8Gbps, 10Gbps or 12Gbps.
+> 
+> This patchset extends the HDMI PHY configuration API to manage the FRL
+> mode and provides all the required HDMI driver changes to enable FRL in
+> addition to the already supported TMDS mode.
+
+Just a kind reminder if this fell through the cracks.
+
+Thanks,
+Cristian
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
