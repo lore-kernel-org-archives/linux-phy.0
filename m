@@ -4,75 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 222CBCCFA1A
-	for <linux-phy@archiver.kernel.org>; Tue, 11 Nov 2025 17:49:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0A71ECCFA1A
+	for <linux-phy@archiver.kernel.org>; Tue, 11 Nov 2025 18:15:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=NCKtCDdKOKAJiUG9W62bpUpdFtu2OFylJUud2orwOrQ=; b=EPdb7yJxkCfdVH5vFV+5AGNCu8
-	f0KbbWDM3anwi8RXCmTkWkElO1g/kFAvhTNR4QqwskhjrSN1AHtFLI0BhAPuDJ3iiO1BwAipniPZ3
-	ptZ7X974qcQJVdKGhCYaAOOgAcJL6vZxicM4CTi5t4OEF1M5cJKUo0W10utR5QeFDHwrEx66McyvZ
-	U3Ntom+gsf6wEoOmEpkPuO14B688XvI5JaH8LRXUrgdr0sYmIFcdqMvr73WUS6ZfVIKcTP9Hy3rCX
-	EiYbM3vEOydjIZRHca+1IO9Xgirp1HcF5v5ysWiQQHKLW0JlTsOrFkPDOZypmqzvdfb/JELrgMojR
-	tkXXQUCA==;
+	bh=TtFB91kGVqrJSmWUaTnFd72MbtEgrKf1Y24Ks1zE038=; b=oLsQ6VV32DB91d37d8UpftP7nK
+	ltzg5MG8p7KyiNePmzUUNSQW0WCxD1Ej64ZkqZKU71jlziTMzErWsA+jIjn0fpUqsUgP+aCijki8f
+	a1xYzUrviF7xXb1zWYdxZTOT/FLxpI3ejc/Yxw1Zn9p5aMoBR6Rys12ePWx9CIDRLm6OUC3+BoFUF
+	ypprTp2DGFmKJB4Bov+sqQsLGY3PGNYSh1CbZRFvuc3nu9ZTF+ZR4NfJmLu8ofiGoJgvbIch/SMF1
+	kcLi5klzDFtA8WZNBnjXR+VNxcT2cmGqsNrMgIVzKoJhOHtQ3lxGbN9QLQMql4mr7IAig4++uU6ZY
+	78jt6W8w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vIsUn-00000007YfS-2xzU;
-	Tue, 11 Nov 2025 17:49:33 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1vIstQ-00000007aiq-2xr6;
+	Tue, 11 Nov 2025 18:15:00 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vIsUm-00000007Yf7-0Io2
-	for linux-phy@lists.infradead.org;
-	Tue, 11 Nov 2025 17:49:32 +0000
+	id 1vIstP-00000007aiX-0hAS;
+	Tue, 11 Nov 2025 18:14:59 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id D2133441B5;
-	Tue, 11 Nov 2025 17:49:30 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AEB74C4CEF7;
-	Tue, 11 Nov 2025 17:49:26 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 036FE60209;
+	Tue, 11 Nov 2025 18:14:58 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id ADF59C4CEF7;
+	Tue, 11 Nov 2025 18:14:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1762883370;
-	bh=zocJ862gCjpDuUNubmzgR6h99aJwcneiyYTLTKnNI3Y=;
+	s=k20201202; t=1762884897;
+	bh=YJZ2BYCy/RFNPtkZFsqxaPgXCs3zWEQSsNMKkzCW8hI=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=oE9XwjjXJ4zuViCgUJhNrma+dXIqJlBP2R6zTUD36jZAWS90+BR0ADBOISmI1EtA5
-	 OB+N5/fxR2Y/H3F75CR4mlfqvLiYBW6l6uKuZbPn/uWOYnSdGh2FhP1etlOu3eP/MY
-	 atbndOludtfppNkDkZ8zzbX+s3S9C6+6Xaj1quxlWsNZHr9qJTj+0b+8btYRL5cvZL
-	 GRD0fWynnQ95Dy/SC93tYylHIyF4CZXpdahIA453u0AQLXTIydKaePMGkrpMh0h8vf
-	 ek4KHdC/1dSOSlA3hBoQtVltPPsbhH2s5w2v223bcFc2cIvSoSzWFNq5MUm/kft1Uk
-	 VqlK7Fk95LtJA==
-Date: Tue, 11 Nov 2025 17:49:24 +0000
+	b=PTyOuaBcX/6ltywosBlk/NwujGRrcJfEf8qH4zrh95pJAt8KmLpY0rchl/8qtmmFz
+	 Qa8aDw06RDCss8Kjwi1Qe/onQEh5ofgzEewAcX+H2bNOc7Br0Em4wLlqP2YplseInE
+	 UU14ps8vqndAKHvQrGwOSZl4mE10pCFh2mkdJNjMIWPUkgxgVEyX4mwIdoMls+80we
+	 Hco0gmIy2hh/V6SIk7fVd1rSUqsggZXdtjysstDTlfkDjXZG/9OTl5AKEGRAb5K6lr
+	 BSDUwHwZplb8f+HiSYVis4M+DIzNyu2PPjkMhdxWTXnGXJ2ls1CidyEq6/oXFK1ICK
+	 2Xjdgg8pBJJqA==
+Date: Tue, 11 Nov 2025 18:14:48 +0000
 From: Conor Dooley <conor@kernel.org>
-To: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>, robh@kernel.org
-Cc: tomm.merciai@gmail.com, linux-renesas-soc@vger.kernel.org,
-	biju.das.jz@bp.renesas.com, Vinod Koul <vkoul@kernel.org>,
+To: Michal Wilczynski <m.wilczynski@samsung.com>
+Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Emil Renner Berthing <kernel@esmil.dk>,
+	Hal Feng <hal.feng@starfivetech.com>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>, Conor Dooley <conor+dt@kernel.org>,
+	Xingyu Wu <xingyu.wu@starfivetech.com>,
+	Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Fabrizio Castro <fabrizio.castro.jz@renesas.com>,
-	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+	Andrzej Hajda <andrzej.hajda@intel.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Robert Foss <rfoss@kernel.org>,
+	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+	Jonas Karlman <jonas@kwiboo.se>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>, Lee Jones <lee@kernel.org>,
 	Philipp Zabel <p.zabel@pengutronix.de>,
-	Peter Rosin <peda@axentia.se>,
-	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
-	Geert Uytterhoeven <geert+renesas@glider.be>,
-	Magnus Damm <magnus.damm@gmail.com>, Arnd Bergmann <arnd@arndb.de>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v3 04/21] dt-bindings: reset: renesas,rzv2h-usb2phy:
- Document VBUS_SEL mux
-Message-ID: <20251111-character-catnip-0832956a3fb1@spud>
-References: <cover.1762773720.git.tommaso.merciai.xr@bp.renesas.com>
- <8fba0b7235bd398d41329fd087d68f7e98bbbaca.1762773720.git.tommaso.merciai.xr@bp.renesas.com>
- <20251110-resonate-strict-c3d6c42f3e0d@spud>
- <aRJqfh7p9M3NHfCS@tom-desktop>
+	Paul Walmsley <paul.walmsley@sifive.com>,
+	Palmer Dabbelt <palmer@dabbelt.com>,
+	Albert Ou <aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>,
+	Marek Szyprowski <m.szyprowski@samsung.com>,
+	Icenowy Zheng <uwu@icenowy.me>,
+	Maud Spierings <maudspierings@gocontroll.com>,
+	Andy Yan <andyshrk@163.com>, Heiko Stuebner <heiko@sntech.de>,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-clk@vger.kernel.org, linux-phy@lists.infradead.org,
+	dri-devel@lists.freedesktop.org, linux-riscv@lists.infradead.org
+Subject: Re: [PATCH RFC 00/13] drm: starfive: jh7110: Enable display subsystem
+Message-ID: <20251111-footing-eclair-332f5f0769f2@spud>
+References: <CGME20251108010451eucas1p1c7bf340dbd2b1b7cbfb53d6debce7a2e@eucas1p1.samsung.com>
+ <20251108-jh7110-clean-send-v1-0-06bf43bb76b1@samsung.com>
+ <20251110-clang-baking-b8b27730356e@spud>
+ <00e897dc-9966-439b-a74a-7604a1870027@samsung.com>
 MIME-Version: 1.0
-In-Reply-To: <aRJqfh7p9M3NHfCS@tom-desktop>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251111_094932_175170_B5291356 
-X-CRM114-Status: GOOD (  23.82  )
+In-Reply-To: <00e897dc-9966-439b-a74a-7604a1870027@samsung.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,149 +92,89 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============5835411473760278911=="
+Content-Type: multipart/mixed; boundary="===============5204279542292972442=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============5835411473760278911==
+--===============5204279542292972442==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="i+5JGchjTRlwEy8H"
+	protocol="application/pgp-signature"; boundary="/gBidW5Sm+Kw8wVT"
 Content-Disposition: inline
 
 
---i+5JGchjTRlwEy8H
+--/gBidW5Sm+Kw8wVT
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-Tommaso, Rob,
-
-On Mon, Nov 10, 2025 at 11:43:37PM +0100, Tommaso Merciai wrote:
+On Tue, Nov 11, 2025 at 04:33:28PM +0100, Michal Wilczynski wrote:
+>=20
+>=20
+> On 11/10/25 20:35, Conor Dooley wrote:
+> > On Sat, Nov 08, 2025 at 02:04:34AM +0100, Michal Wilczynski wrote:
+> >> This series enables the display subsystem on the StarFive JH7110 SoC.
+> >> This hardware has a complex set of dependencies that this series aims =
+to
+> >> solve.
+> >>
+> >> I believe this is a PHY tuning issue that can be fixed in the new
+> >> phy-jh7110-inno-hdmi.c driver without changing the overall architectur=
+e.
+> >> I plan to continue debugging these modes and will submit follow up fix=
+es
+> >> as needed.
+> >>
+> >> The core architectural plumbing is sound and ready for review.
+> >>
+> >> Notes:
+> >> - The JH7110 does not have a centralized MAINTAINERS entry like the
+> >>   TH1520, and driver maintainership seems fragmented. I have therefore
+> >>   added a MAINTAINERS entry for the display subsystem and am willing to
+> >>   help with its maintenance.
+> >=20
+> > Yeah, bunch of different folks wrote the drivers, so lots of entries.
+> > Pretty much all as you've done here, authors are responsible for the
+> > individual components and Emil is the platform maintainer but
+> > responsible for most drivers.
+> >=20
+> > Do you need any feedback dt wise on the RFC, or is it too likely that
+> > we'll both waste our breath if the DRM folks don't approve of your
+> > approach for the rest of this series?
+>=20
 > Hi Conor,
-> Thanks for your comment!
 >=20
-> On Mon, Nov 10, 2025 at 06:56:31PM +0000, Conor Dooley wrote:
-> > On Mon, Nov 10, 2025 at 01:08:04PM +0100, Tommaso Merciai wrote:
-> > > Document the 'mux-controller' child node in the Renesas RZ/V2H(P)
-> > > USB2PHY reset binding to support describing the USB VBUS_SEL
-> > > multiplexer as a mux-controller.
-> > >=20
-> > > This is required to properly configure the USB PHY VBUS source on
-> > > RZ/V2H(P), RZ/G3E SoCs.
-> > >=20
-> > > Signed-off-by: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
-> > > ---
-> > > v2->v3:
-> > >  - Manipulate mux-controller as an internal node.
-> >=20
-> > Why is it a child node, rather than just putting the cell in the parent
-> > reset node?
+> Thank you for your response.
 >=20
-> Getting "make dt_binding_check errors" [1] in v2
-> Adding #mux-state-cells =3D <1> into:
+> That's a fair point about the risk of the DRM approach being rejected.
+> While I can't be certain, I'm hopeful that part is relatively
+> straightforward, as it primarily integrates other recently reviewed
+> (though not yet merged) components like the inno-hdmi bridge and dc8200
+> drivers.
 >=20
-> 	usb20phyrst: reset-controller@15830000
-> 	usb21phyrst: reset-controller@15840000
->=20
-> Nodes.
->=20
-> Please correct me if I'm wrong.
+> To be honest, I was more concerned that the DT part of the series would
+> be more problematic. Given that, I would find it very helpful to get
+> your feedback on the DT aspects now, if you have the time.
 
-I think that that binding is not working as intended. Why require a
-node-name pattern, when it matches on other things too:
-select:
-  anyOf:
-    - properties:
-        $nodename:
-          pattern: '^mux-controller'
-    - required:
-        - '#mux-control-cells'
-    - required:
-        - '#mux-state-cells'
-if the node name always contained mux-controller, the second two here
-would not be needed. Looks to me like the intention was for it to allow
-putting these control/state-cells properties into mfd type nodes.
+Right. You'll definitely want some actual DRM people to weigh in though
+before making changes, I am really not familiar enough with this type of
+hardware to know if the breakdown is correct.
 
-I'd delete the node name property tbh. Rob, you converted this to
-schema, what do you think?
-
-Cheers,
-Conor.
-=20
-> [1] https://patchwork.kernel.org/project/linux-renesas-soc/patch/961741af=
-7d4ec945945164759fe0d78bb3cf4d9d.1762354366.git.tommaso.merciai.xr@bp.renes=
-as.com/
->=20
-> >=20
-> > >  - Improved commit body.
-> > >=20
-> > > v1->v2:
-> > >  - New patch
-> > >=20
-> > >  .../bindings/reset/renesas,rzv2h-usb2phy-reset.yaml   | 11 +++++++++=
-++
-> > >  1 file changed, 11 insertions(+)
-> > >=20
-> > > diff --git a/Documentation/devicetree/bindings/reset/renesas,rzv2h-us=
-b2phy-reset.yaml b/Documentation/devicetree/bindings/reset/renesas,rzv2h-us=
-b2phy-reset.yaml
-> > > index c1b800a10b53..03da74ff2d08 100644
-> > > --- a/Documentation/devicetree/bindings/reset/renesas,rzv2h-usb2phy-r=
-eset.yaml
-> > > +++ b/Documentation/devicetree/bindings/reset/renesas,rzv2h-usb2phy-r=
-eset.yaml
-> > > @@ -37,6 +37,12 @@ properties:
-> > >    '#reset-cells':
-> > >      const: 0
-> > > =20
-> > > +  mux-controller:
-> > > +    $ref: /schemas/mux/mux-controller.yaml#
-> > > +    description: Mux controller for USB VBUS source selection.
-> > > +    type: object
-> > > +    unevaluatedProperties: false
-> > > +
-> > >  required:
-> > >    - compatible
-> > >    - reg
-> > > @@ -44,6 +50,7 @@ required:
-> > >    - resets
-> > >    - power-domains
-> > >    - '#reset-cells'
-> > > +  - mux-controller
-> > > =20
-> > >  additionalProperties: false
-> > > =20
-> > > @@ -58,4 +65,8 @@ examples:
-> > >          resets =3D <&cpg 0xaf>;
-> > >          power-domains =3D <&cpg>;
-> > >          #reset-cells =3D <0>;
-> > > +
-> > > +        mux-controller {
-> > > +          #mux-state-cells =3D <1>;
-> > > +        };
-> > >      };
-> > > --=20
-> > > 2.43.0
-> > >=20
->=20
->=20
-
---i+5JGchjTRlwEy8H
+--/gBidW5Sm+Kw8wVT
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaRN3JAAKCRB4tDGHoIJi
-0kOLAQCI5K2A+ibI0FbtW+1ELPWJuLm5VD2WFoSS+aZuH4mZngD+KEH6LZ/MiVEc
-Ck342874THE4WX4OIe2YftYE5Z1hago=
-=Z10t
+iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaRN9GAAKCRB4tDGHoIJi
+0r8GAPkBsYDP7LLqp2+h6FYJs9F/YlRAnuueN9JB2on22suIYQEA03Yvk0N2Sfh+
+Ee2i/GJcLr7XOYAXK2mOE8f+CiHaLQU=
+=L7ty
 -----END PGP SIGNATURE-----
 
---i+5JGchjTRlwEy8H--
+--/gBidW5Sm+Kw8wVT--
 
 
---===============5835411473760278911==
+--===============5204279542292972442==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -237,5 +185,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============5835411473760278911==--
+--===============5204279542292972442==--
 
