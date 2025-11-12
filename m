@@ -4,78 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ED1ADCCFA1A
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Nov 2025 08:05:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C3EB2CCFA1A
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Nov 2025 08:45:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3VQcMCCUn3yohSQJX6HK801yRcJbHSbfDO7G7egBHTc=; b=3m5FOlUk5j1EpB
-	6eQhLshiJuuWcbs/E0nktu/03xkWAJyNzxk6bTZuzWl2v/6eNf8QBxEPkqEz0euY1gvBwpMqelDcQ
-	yzqqvMVbY2uF0vf8urP1pr1JUfyttfrN639Z7ljE/J+sqZIBDdCSNxq8ytoHMbL7GQnxrcVZhaewx
-	fXIvcuMRc5B5oIdQ6hGikmFoMjXnaOrRF/arjFWtKOL+rKWc38iwRs/LNa71StNme0sDJ4TOom+YL
-	qdRYbGJErsS/xFk6cCLcVn4n2jY5OH+Pxr25TY7s1C/6zRXdMh18CKJ16zBunBpnqoqdR8Q3u1dVP
-	zPaTn7tbezFTjUju59Hg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=sjjCSq5qC1MkTq7BruSim0TKk7lZLR7cL90Snswqu/4=; b=CMKKmzzcCHwl26AyO3HW25BwVL
+	cK98ZXAMjVpt854QJdf517dgamL4HJWc0EKKMVGZA2tOwUOl2CdiS/jYmgjekpwXZHmJ8lGh9zouq
+	LAn44dIxAR8EBY5pypwFsTvLZZ7PHiLOHgrJE2D7MXNFbxlstR6xiMd6DfIlKgDWh3/t0LFf3X/3C
+	7FckLtVlP7mERZvhL/zmBRHuXkFCP9ZyHr9C1bih6Hz/BjVm2UT0L7rpiUxqCFKOcOO1BthHd9esr
+	RiRBzGPF3+kX2HXoICO8QY51hDE9whFl+0sqcNWIrLLzuKJg7gj6of0uIvDWorlP/M4kGLI55lnBs
+	V527hgxw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJ5qm-00000008JHr-339K;
-	Wed, 12 Nov 2025 08:05:08 +0000
-Received: from esa.microchip.iphmx.com ([68.232.154.123])
+	id 1vJ6TP-00000008NKB-2EDo;
+	Wed, 12 Nov 2025 08:45:03 +0000
+Received: from metis.whiteo.stw.pengutronix.de ([2a0a:edc0:2:b01:1d::104])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJ5qi-00000008JHS-2zLk
+	id 1vJ6TM-00000008NIg-2J3z
 	for linux-phy@lists.infradead.org;
-	Wed, 12 Nov 2025 08:05:07 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
-  t=1762934705; x=1794470705;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=7fgngQWE5JqhzDwfazakRBCRmnVFrLFlRIkASUf9MlU=;
-  b=XCCBJQlicHH/Xo0eeuUcdT2stoJ2arQZpOwtU33uH6NKOLfomNjZHx+1
-   zLP8EQzUK3Z5fnJ9xJN1ZkcsRy3hTCwtrK46MAjNvcZlVaImyLIvDza6Y
-   /q8KpEsArBbVU4KmkZQ9g72ngIWfLQ2/VFYBISiVZ3pwDlU57me961/9S
-   Cx7uxgF2aO6klUn7qmTyLhfaa9h09z8jlM6oSpVSggTpNavaWSGUbGAql
-   Uj+p+yfa/ftUr0TCjusdT9qhU0Wu7WKEm9+TPxBPSheSwwSS6wZU5rBqt
-   +ItPAtxA1ZpRsU6bu3r6lxVUZ8opVXyGRxHyWig5gbmb9M4odtwFYsGbq
-   g==;
-X-CSE-ConnectionGUID: O+7tn57RR6yiVzrz+41PbQ==
-X-CSE-MsgGUID: /JM4zLgETfazU5PP2MMZiA==
-X-IronPort-AV: E=Sophos;i="6.19,298,1754982000"; 
-   d="scan'208";a="49497723"
-X-Amp-Result: SKIPPED(no attachment in message)
-Received: from unknown (HELO email.microchip.com) ([170.129.1.10])
-  by esa2.microchip.iphmx.com with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256; 12 Nov 2025 01:05:02 -0700
-Received: from chn-vm-ex02.mchp-main.com (10.10.87.72) by
- chn-vm-ex02.mchp-main.com (10.10.87.72) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2507.58; Wed, 12 Nov 2025 01:04:07 -0700
-Received: from localhost (10.10.85.11) by chn-vm-ex02.mchp-main.com
- (10.10.85.144) with Microsoft SMTP Server id 15.1.2507.58 via Frontend
- Transport; Wed, 12 Nov 2025 01:04:07 -0700
-Date: Wed, 12 Nov 2025 09:02:35 +0100
-From: Horatiu Vultur <horatiu.vultur@microchip.com>
-To: Conor Dooley <conor@kernel.org>
-CC: Krzysztof Kozlowski <krzk@kernel.org>, <vkoul@kernel.org>,
-	<kishon@kernel.org>, <robh@kernel.org>, <krzk+dt@kernel.org>,
-	<conor+dt@kernel.org>, <linux-phy@lists.infradead.org>,
-	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH 2/2] dt-bindings: phy: lan966x: Add optional
- microchip,sx-tx/rx-inverted
-Message-ID: <20251112080235.c5iinfnketsunefy@DEN-DL-M31836.microchip.com>
-References: <20251110110536.2596490-1-horatiu.vultur@microchip.com>
- <20251110110536.2596490-3-horatiu.vultur@microchip.com>
- <20251110-unwound-award-a11d69b9da4f@spud>
- <20251111095831.lp4kvdfcahtwgrqc@DEN-DL-M31836.microchip.com>
- <58b0d712-48a4-4490-a63f-404716844557@kernel.org>
- <20251111-ploy-dispersal-164ae403df4d@spud>
+	Wed, 12 Nov 2025 08:45:02 +0000
+Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
+	by metis.whiteo.stw.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+	(Exim 4.92)
+	(envelope-from <mkl@pengutronix.de>)
+	id 1vJ6T8-0001qQ-9X; Wed, 12 Nov 2025 09:44:46 +0100
+Received: from moin.white.stw.pengutronix.de ([2a0a:edc0:0:b01:1d::7b] helo=bjornoya.blackshift.org)
+	by drehscheibe.grey.stw.pengutronix.de with esmtps  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.96)
+	(envelope-from <mkl@pengutronix.de>)
+	id 1vJ6T6-0003Hx-34;
+	Wed, 12 Nov 2025 09:44:44 +0100
+Received: from pengutronix.de (p54b152ce.dip0.t-ipconnect.de [84.177.82.206])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(Client did not present a certificate)
+	(Authenticated sender: mkl-all@blackshift.org)
+	by smtp.blackshift.org (Postfix) with ESMTPSA id 8D2B349D91F;
+	Wed, 12 Nov 2025 08:44:44 +0000 (UTC)
+Date: Wed, 12 Nov 2025 09:44:44 +0100
+From: Marc Kleine-Budde <mkl@pengutronix.de>
+To: Peng Fan <peng.fan@nxp.com>
+Cc: Vincent Mailhol <mailhol@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Aswath Govindraju <a-govindraju@ti.com>, Shawn Guo <shawnguo@kernel.org>, 
+	Sascha Hauer <s.hauer@pengutronix.de>, Pengutronix Kernel Team <kernel@pengutronix.de>, 
+	Fabio Estevam <festevam@gmail.com>, Frank Li <frank.li@nxp.com>, Haibo Chen <haibo.chen@nxp.com>, 
+	linux-can@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH v7 0/8] phy: phy-can-transceiver: Support TJA1048/TJA1051
+Message-ID: <20251112-vivid-mysterious-guppy-3bc98a-mkl@pengutronix.de>
+References: <20251001-can-v7-0-fad29efc3884@nxp.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20251111-ploy-dispersal-164ae403df4d@spud>
+In-Reply-To: <20251001-can-v7-0-fad29efc3884@nxp.com>
+X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
+X-SA-Exim-Mail-From: mkl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.whiteo.stw.pengutronix.de); SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251112_000505_022206_E91E257A 
-X-CRM114-Status: GOOD (  23.37  )
+X-CRM114-CacheID: sfid-20251112_004500_603839_8E204100 
+X-CRM114-Status: GOOD (  12.69  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,52 +79,81 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============6618101302417620358=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The 11/11/2025 17:39, Conor Dooley wrote:
-> On Tue, Nov 11, 2025 at 11:06:02AM +0100, Krzysztof Kozlowski wrote:
-> > On 11/11/2025 10:58, Horatiu Vultur wrote:
-> > > The 11/10/2025 18:43, Conor Dooley wrote:
-> > > 
-> > > Hi Conor,
-> > > 
-> > >> On Mon, Nov 10, 2025 at 12:05:36PM +0100, Horatiu Vultur wrote:
-> > >>> This allows to invert the N and P signals of the RX and TX Serdes
-> > >>> signals. This option allows the board designer to trace their signals
-> > >>> easier on the boards.
-> > >>
-> > >> Why can't this just be done in software, debugfs or something like that?
-> > >> Maybe it's just your description is poor, but sounds like the intention
-> > >> here is to just switch things around for debug purposes.
-> > > 
-> > > I don't think it should be done through debugfs. As this describes the
-> > > board layout and I don't think someone will want to change it at
-> > > runtime to see how things behave. So maybe the description is poor.
-> > 
-> > You said it is purely for hardware designer to trace signals, so sorry,
-> > but that's not DTs purpose.
-> 
-> If it is not purely some sort of debug helper, then please explain
-> better in your commit message.
 
-Yes, I will do so because I don't see how this is a debug helper
-functionality. I see it as changing the polarity of some pins and there
-are few examples in the devicetree bindings where pins change the
-polarity. Why I see it as changing the polarity is because the
-N(negative) will become P(positive) and the P(positive) will become the
-N(negative), so we just invert the signals.
-
-> pw-bot: changes-requested
+--===============6618101302417620358==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="ybnlldmwtejuzxbv"
+Content-Disposition: inline
 
 
+--ybnlldmwtejuzxbv
+Content-Type: text/plain; protected-headers=v1; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Subject: Re: [PATCH v7 0/8] phy: phy-can-transceiver: Support TJA1048/TJA1051
+MIME-Version: 1.0
 
--- 
-/Horatiu
+On 01.10.2025 21:22:31, Peng Fan wrote:
+> TJA1048 is a Dual channel can transceiver with Sleep mode supported.
+> TJA105{1,7} is a Single Channel can transceiver with Sleep mode supported.
+>
+> To support them:
+> patch 1: add binding doc
+> patch 2/3: To support dual channel,
+>    - Introduce new flag CAN_TRANSCEIVER_DUAL_CH to indicate the phy
+>      has two channels.
+>    - Introduce can_transceiver_priv as a higher level encapsulation for
+>      phy, mux_state, num_ch.
+>    - Alloc a phy for each channel
+> patch 4: Simplify code
+> patch 5: Add TJA1051,7 support
+> Others: Update dts to use phys.
+>
+> Signed-off-by: Peng Fan <peng.fan@nxp.com>
+
+Acked-by: Marc Kleine-Budde <mkl@pengutronix.de>
+
+regards,
+Marc
+
+--=20
+Pengutronix e.K.                 | Marc Kleine-Budde          |
+Embedded Linux                   | https://www.pengutronix.de |
+Vertretung N=C3=BCrnberg              | Phone: +49-5121-206917-129 |
+Amtsgericht Hildesheim, HRA 2686 | Fax:   +49-5121-206917-9   |
+
+--ybnlldmwtejuzxbv
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEn/sM2K9nqF/8FWzzDHRl3/mQkZwFAmkUSPkACgkQDHRl3/mQ
+kZySvAf+OFcIv9Q1NDa53XdFIdOJfnQshUo1IZMggqNsuPNzMQKJ6R564JfdKSe+
+SDr8+3X7K7je0ZNjGNwBlqG67+AUU/WGW2v4ZOEkabVxnNEVbPHz7qJwLmYUs9b3
+vOSIMe0uxsXGVN3aFHsbC6kOB3wahwNp/1IDYdmZa/z6YOwA3bQ3eJAiqnbEuQWW
+leNCXauhnCw+WTtCdSLzQN7vLWnWKnRFWmuGfFTAK4S8/vEqOc6Y1p/ThTv8wOIh
+4UfcCqqRvH6zUWh5SbhQyANm9bO/qbbs4P4qRGEH+0X3/7oCKWc2VAI0lGQ1ndtf
+5G51bBe28y6IHAGpb2c1rGNXLw8Cgg==
+=tFN5
+-----END PGP SIGNATURE-----
+
+--ybnlldmwtejuzxbv--
+
+
+--===============6618101302417620358==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============6618101302417620358==--
+
