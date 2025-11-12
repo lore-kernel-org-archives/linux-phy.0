@@ -4,76 +4,109 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F0A78CCF9F8
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Nov 2025 08:52:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0A9EFCCF9F8
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Nov 2025 09:03:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=N+jBgB/p8eSeIXX9kTbUKEXHytltMuE38u94h7Xl0HY=; b=LC6r5/MkVt7eDE
-	jOclBSgL0N6HN4WWlg1KK9EuTV8Jfxw/Nx9sPcNziOsmSl1MOM/9pwGSNAbVq/bLZ7zdaKmsklVNY
-	grR8r1f2biR8Q7u4uKrek7gOqZJ/EPweM2s28Lovy+apzmVl5MqHxVcVF0L12qmQqdaqLAq16WVzq
-	1+G/F4mBdqQvhpZdELLcy5K3YCU7ZjaU4Sl6UbZm7CflFKeZRQt3DWbi2gisMN6v8I8cllI/mUGiZ
-	y6zf2hBtUYXX/TSEYu3F/sHM2soYjO7ptde8b6VOYb1k6vLVKeXyjaGiW9DzMspDmxWmxOj5SjGqe
-	u/SmdHmIyFPQpmVauxIA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=NWS7cGgP9o1rz5h0+H6TdR5qWMclsj5cmeUCzirxFDg=; b=vgBQ9W3l41RqfR
+	vUR9x7UcF1sIsskL3ZKYztS3tQfQXsNY8/RQOYDhIaUQbIAy7PbaSncpJp82ms2zi1wwutdaLUxB0
+	nEX92lHjmAwmVGr0y6G7vUVbhtx0mjYvQV7XAXI6DGN1nzetMtlI/v7mpjFL9K+qQTrZLdo57yrAg
+	RH8SUK3NNIp2q+yMGVQ3UeHipFVhKlV+54M4AGX6S1Bl/m+y5NkFPfdJwo5jv+b46yY74VV1bmEaW
+	9bknigxlVWgqCFfy6m1eH+YOJ/eebUa5lmQn2dklbXQeeFF/cvdb6lHNm8YUZvF2thK7bBaDB2JYD
+	VcWTYEXE0CjZTzsg8CIg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJ6ac-00000008Oit-377W;
-	Wed, 12 Nov 2025 08:52:30 +0000
-Received: from mgamail.intel.com ([192.198.163.17])
+	id 1vJ6lK-00000008QKw-2kCa;
+	Wed, 12 Nov 2025 09:03:34 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJ6aa-00000008OiZ-3mDn
+	id 1vJ6lI-00000008QJz-2rqE
 	for linux-phy@lists.infradead.org;
-	Wed, 12 Nov 2025 08:52:30 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1762937548; x=1794473548;
-  h=from:to:cc:subject:date:message-id:mime-version:
-   content-transfer-encoding;
-  bh=/HupXrEtviHKeYqFWD2xOuGaa1w8dBZFeGJomcGBZZ8=;
-  b=bcoRBpPgE4DYQcvDPEkMH647anNbhK1oA457OuqBJG78fnn7Lb0DgCR5
-   nWehVboYhhCfZj1SK0THbPBf2LQRpEIlVmmq+8DlJUySv4lId+oxaBhJF
-   bD4yYPuTIgZo0nkvpC3mIjX/IZ7hFElyPW877c3w4s2tw3XCxqqpeKmdJ
-   vXte7T1RsI/cZ+pQTdJEetXJG8jxeUI7WHXO7EPb1qsDhPJ4IwmUHb8uc
-   iQeNbXff/D0LhfmEp+5/RhU/7RnibMPJyE7LvP8ClWdD5QFCopH9k17k0
-   Vkcip2NZGWffBYFGNkjt/7BCG3OZ5nF77IDnl3o5uztdqLCac7jCTVvuv
-   Q==;
-X-CSE-ConnectionGUID: UZ5bP8SnT5ae2dN+Ytll8w==
-X-CSE-MsgGUID: /VXuDLBGR0qQpHf4lIs/LQ==
-X-IronPort-AV: E=McAfee;i="6800,10657,11610"; a="64900544"
-X-IronPort-AV: E=Sophos;i="6.19,299,1754982000"; 
-   d="scan'208";a="64900544"
-Received: from fmviesa001.fm.intel.com ([10.60.135.141])
-  by fmvoesa111.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 12 Nov 2025 00:52:26 -0800
-X-CSE-ConnectionGUID: PlNl9rPYTWWXs8v5DozB/g==
-X-CSE-MsgGUID: Yx4G9kIMTnG3StpM5ARJhw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.19,299,1754982000"; 
-   d="scan'208";a="219894591"
-Received: from black.igk.intel.com ([10.91.253.5])
-  by fmviesa001.fm.intel.com with ESMTP; 12 Nov 2025 00:52:25 -0800
-Received: by black.igk.intel.com (Postfix, from userid 1003)
-	id 4E2F295; Wed, 12 Nov 2025 09:52:24 +0100 (CET)
-From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-To: Inochi Amaoto <inochiama@gmail.com>,
-	Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
-	linux-phy@lists.infradead.org,
-	sophgo@lists.linux.dev,
-	linux-kernel@vger.kernel.org
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Chen Wang <unicorn_wang@outlook.com>
-Subject: [PATCH v1 1/1] phy: sophgo: Remove unused of_gpio.h
-Date: Wed, 12 Nov 2025 09:52:20 +0100
-Message-ID: <20251112085220.1452530-1-andriy.shevchenko@linux.intel.com>
-X-Mailer: git-send-email 2.50.1
+	Wed, 12 Nov 2025 09:03:33 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 5AC2X3R72813765;
+	Wed, 12 Nov 2025 09:03:25 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:date:from:in-reply-to:message-id
+	:mime-version:references:subject:to; s=qcppdkim1; bh=W3Ek7lW/6JS
+	6FfHVzcyjaSTlCTonVsRPSZKWIETuY1c=; b=Y4YAvoRI3WD25qPxelxgRv9NlQj
+	IJqpLmILSZBVVH7dGQDu4g0PI7Y8Nku44dsW557Mb5I8osD+HUXHc6WRW67UKMTv
+	FM4+BUcaZKBw9AZsTudDpsyXR1P3E9J2cwC/DuVClFLJjCFSsuako+ef9jlgEbvW
+	LSs694tWrsWvFe2nMbcwNvX+219lW/GIklpI7cvsjUNPBWfIk1Cr+bBeTVi3/Dcp
+	KWbezJgd2p32Edlhx/xpBBcOySqpv0MX1u0ygsYqsK06EFco9LXgNxbTHrb2l3ws
+	FU+zO5yb2Jhtit2uQxpJ3NbpXouRDJM1wGUMX+D/MLLhIXeDwktV8xGLCsA==
+Received: from aptaippmta02.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com [103.229.16.4])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4ac855jk84-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 12 Nov 2025 09:03:25 +0000 (GMT)
+Received: from pps.filterd (APTAIPPMTA02.qualcomm.com [127.0.0.1])
+	by APTAIPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 5AC93LGH012296;
+	Wed, 12 Nov 2025 09:03:21 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by APTAIPPMTA02.qualcomm.com (PPS) with ESMTPS id 4a9xxmq755-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 12 Nov 2025 09:03:21 +0000
+Received: from APTAIPPMTA02.qualcomm.com (APTAIPPMTA02.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 5AC93LG4012284;
+	Wed, 12 Nov 2025 09:03:21 GMT
+Received: from cse-cd02-lnx.ap.qualcomm.com (cse-cd02-lnx.qualcomm.com [10.64.75.246])
+	by APTAIPPMTA02.qualcomm.com (PPS) with ESMTPS id 5AC93KXq012281
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 12 Nov 2025 09:03:21 +0000
+Received: by cse-cd02-lnx.ap.qualcomm.com (Postfix, from userid 4438065)
+	id 74E6673F; Wed, 12 Nov 2025 17:03:19 +0800 (CST)
+From: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
+To: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
+        krzk+dt@kernel.org, conor+dt@kernel.org, jingoohan1@gmail.com,
+        mani@kernel.org, lpieralisi@kernel.org, kwilczynski@kernel.org,
+        bhelgaas@google.com, johan+linaro@kernel.org, vkoul@kernel.org,
+        kishon@kernel.org, neil.armstrong@linaro.org, abel.vesa@linaro.org,
+        kw@linux.com
+Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
+        linux-phy@lists.infradead.org, qiang.yu@oss.qualcomm.com,
+        krishna.chundru@oss.qualcomm.com, quic_vbadigan@quicinc.com,
+        Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
+Subject: [PATCH v3 1/2] arm64: dts: qcom: Add PCIe3 and PCIe5 support for HAMOA-IOT-SOM platform
+Date: Wed, 12 Nov 2025 17:03:15 +0800
+Message-Id: <20251112090316.936187-2-ziyue.zhang@oss.qualcomm.com>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20251112090316.936187-1-ziyue.zhang@oss.qualcomm.com>
+References: <20251112090316.936187-1-ziyue.zhang@oss.qualcomm.com>
 MIME-Version: 1.0
+X-QCInternal: smtphost
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: SvyYy3S2kwz3IkCDy0dFREdnNbqSztof
+X-Authority-Analysis: v=2.4 cv=DYwaa/tW c=1 sm=1 tr=0 ts=69144d5d cx=c_pps
+ a=nuhDOHQX5FNHPW3J6Bj6AA==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+ a=6UeiqGixMTsA:10 a=VkNPw1HP01LnGYTKEx00:22 a=EUspDBNiAAAA:8
+ a=bvY3E1ByFFb03tV5gjAA:9 a=nl4s5V0KI7Kw-pW0DWrs:22 a=pHzHmUro8NiASowvMSCR:22
+ a=xoEH_sTeL_Rfw54TyV31:22
+X-Proofpoint-ORIG-GUID: SvyYy3S2kwz3IkCDy0dFREdnNbqSztof
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMTEyMDA3MCBTYWx0ZWRfX/qPuyssSDHt8
+ wElXyBziAjMl6oafChJFgzNUnvN01bNP+m4NDmNTVw1MupUiekwmFR7jpWlQr7KLUdyGXizY5sM
+ idMShSXmYLDDRucYj9k4xNrhcvquHtQn7KPm3+xlmLV/+Y/ddSJLuBA/JP34zQc/L7onxFC7+ZS
+ lbOKE1tK+dcQmEkDR5S7wezz7zFJ2w7sSWULcLMWE5Owv83pVPrs2rLFwGVVZc5/3DKf9QakQyN
+ 8S+Nczl1KHhJopgBS6qe0ysUSNlZdDSaowvmtFYZx68rx44sIbkt/sxHok7IvjMRa3sdeMRLJFZ
+ FJpUrabyM7bmhVWmxLqsPkNG0ObdZPv8PNmfomgexRURJMsBAESF9fGfKapgUiOZVCQxIqVncUI
+ Qmx2G8c8uRvaIw9i4j+k+y9wDWbthg==
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
+ definitions=2025-11-12_03,2025-11-11_03,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ phishscore=0 lowpriorityscore=0 bulkscore=0 adultscore=0 suspectscore=0
+ priorityscore=1501 impostorscore=0 spamscore=0 clxscore=1015 malwarescore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2510240001 definitions=main-2511120070
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251112_005228_948055_4DD4A35F 
-X-CRM114-Status: UNSURE (   7.56  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20251112_010332_838377_45F197E6 
+X-CRM114-Status: GOOD (  11.58  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,28 +123,131 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-of_gpio.h is deprecated and subject to remove.
-The driver doesn't use it, simply remove the unused header.
+HAMOA IoT SOM requires PCIe3 and PCIe5 connectivity for SATA controller
+and SDX65.
+Add the required sideband signals (PERST#, WAKE#, CLKREQ#), pinctrl states
+and power supply properties in the device tree, which PCIe3 and PCIe5
+require.
 
-Signed-off-by: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+Signed-off-by: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
+Reviewed-by: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
 ---
- drivers/phy/sophgo/phy-cv1800-usb2.c | 1 -
- 1 file changed, 1 deletion(-)
+ arch/arm64/boot/dts/qcom/hamoa-iot-som.dtsi | 79 +++++++++++++++++++++
+ 1 file changed, 79 insertions(+)
 
-diff --git a/drivers/phy/sophgo/phy-cv1800-usb2.c b/drivers/phy/sophgo/phy-cv1800-usb2.c
-index 64f8e37b4b52..6fe846534e9c 100644
---- a/drivers/phy/sophgo/phy-cv1800-usb2.c
-+++ b/drivers/phy/sophgo/phy-cv1800-usb2.c
-@@ -11,7 +11,6 @@
- #include <linux/module.h>
- #include <linux/of.h>
- #include <linux/of_address.h>
--#include <linux/of_gpio.h>
- #include <linux/platform_device.h>
- #include <linux/phy/phy.h>
- #include <linux/regmap.h>
+diff --git a/arch/arm64/boot/dts/qcom/hamoa-iot-som.dtsi b/arch/arm64/boot/dts/qcom/hamoa-iot-som.dtsi
+index 4de7c0abb25a..abb8ea323d78 100644
+--- a/arch/arm64/boot/dts/qcom/hamoa-iot-som.dtsi
++++ b/arch/arm64/boot/dts/qcom/hamoa-iot-som.dtsi
+@@ -390,6 +390,22 @@ &gpu_zap_shader {
+ 	firmware-name = "qcom/x1e80100/gen70500_zap.mbn";
+ };
+ 
++&pcie3 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pcie3_default>;
++	perst-gpios = <&tlmm 143 GPIO_ACTIVE_LOW>;
++	wake-gpios = <&tlmm 145 GPIO_ACTIVE_LOW>;
++
++	status = "okay";
++};
++
++&pcie3_phy {
++	vdda-phy-supply = <&vreg_l3c_0p8>;
++	vdda-pll-supply = <&vreg_l3e_1p2>;
++
++	status = "okay";
++};
++
+ &pcie4 {
+ 	perst-gpios = <&tlmm 146 GPIO_ACTIVE_LOW>;
+ 	wake-gpios = <&tlmm 148 GPIO_ACTIVE_LOW>;
+@@ -407,6 +423,23 @@ &pcie4_phy {
+ 	status = "okay";
+ };
+ 
++&pcie5 {
++	perst-gpios = <&tlmm 149 GPIO_ACTIVE_LOW>;
++	wake-gpios = <&tlmm 151 GPIO_ACTIVE_LOW>;
++
++	pinctrl-0 = <&pcie5_default>;
++	pinctrl-names = "default";
++
++	status = "okay";
++};
++
++&pcie5_phy {
++	vdda-phy-supply = <&vreg_l3i_0p8>;
++	vdda-pll-supply = <&vreg_l3e_1p2>;
++
++	status = "okay";
++};
++
+ &pcie6a {
+ 	perst-gpios = <&tlmm 152 GPIO_ACTIVE_LOW>;
+ 	wake-gpios = <&tlmm 154 GPIO_ACTIVE_LOW>;
+@@ -454,6 +487,29 @@ &tlmm {
+ 	gpio-reserved-ranges = <34 2>, /* TPM LP & INT */
+ 			       <44 4>; /* SPI (TPM) */
+ 
++	pcie3_default: pcie3-default-state {
++		clkreq-n-pins {
++			pins = "gpio144";
++			function = "pcie3_clk";
++			drive-strength = <2>;
++			bias-pull-up;
++		};
++
++		perst-n-pins {
++			pins = "gpio143";
++			function = "gpio";
++			drive-strength = <2>;
++			bias-disable;
++		};
++
++		wake-n-pins {
++			pins = "gpio145";
++			function = "gpio";
++			drive-strength = <2>;
++			bias-pull-up;
++		};
++	};
++
+ 	pcie4_default: pcie4-default-state {
+ 		clkreq-n-pins {
+ 			pins = "gpio147";
+@@ -477,6 +533,29 @@ wake-n-pins {
+ 		};
+ 	};
+ 
++	pcie5_default: pcie5-default-state {
++		clkreq-n-pins {
++			pins = "gpio150";
++			function = "pcie5_clk";
++			drive-strength = <2>;
++			bias-pull-up;
++		};
++
++		perst-n-pins {
++			pins = "gpio149";
++			function = "gpio";
++			drive-strength = <2>;
++			bias-disable;
++		};
++
++		wake-n-pins {
++			pins = "gpio151";
++			function = "gpio";
++			drive-strength = <2>;
++			bias-pull-up;
++		};
++	};
++
+ 	pcie6a_default: pcie6a-default-state {
+ 		clkreq-n-pins {
+ 			pins = "gpio153";
 -- 
-2.50.1
+2.34.1
 
 
 -- 
