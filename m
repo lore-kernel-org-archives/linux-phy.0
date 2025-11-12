@@ -4,108 +4,113 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1428CCCFA1A
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Nov 2025 09:03:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 56DFCCD13DE
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Nov 2025 16:06:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=92TGqXA29jM+UkmnGwx7Ats/9+wt2jRzNZAik6A0/fA=; b=FSc5na28YhGrjA
-	5sCiVvTQDCTTxTBv5ZhVhMj/StkcSrWd109/DNhzAq7e7GWZL0THmnkxIA/Pplx9ZV7pnHSlZBBa+
-	HmyisqFXObyq1AHVJAQWPHDqnHqWiiLL4gXqAXyYVRbGv/PASn4000CeQ2Cfx7Xi1gn2j2SREkd0K
-	tZ/5eELIOZwYQv7yhKPLlTLZs6p8UjDDqg/XDDqmpG1k4XmJTIlSVkNDCUGUyIEOgMyCUivXHyOVU
-	hT7TYqW1RQKjh83UgQBgzL/pkchuWdwJ5OwS0KgGAHCFXljOk6E9z/p4Hk26DMKN9/f2bIAY9BQSJ
-	9GsRBI0xtHUwrYN4DqzA==;
+	List-Owner; bh=Mk9U7jY/mdgXcL0kR0AkLUKPWE38lglT8Jr5Bt7NeLE=; b=QyFGZsHejwRe9E
+	5Jm3irpH9Xp5KuEANxKlJl731m8wEBufK0oeNvOr1smRFgRFRxbZ1bJpWvshVMkikgw11pmO3hhHb
+	XCk/IaoH0Jh94xVbJDxu0TOVFyr8nsRE0fHkkvo+J2Mn76ysxiVNv+bcDplwJpQlIYVyUOgm9MSfV
+	BdIpLLc2fZ3rWvKOk8fLwu6+0mqOfKQrrHQ/PJ8saqu7UxMlfas4qtAWN3zoBi4suAvVh6Jz/eRT1
+	0N2ivYG8Pep7qyLpPZtNHxJ6lESEfCpTom0yP424uISBB77Qt1Bkr1HCh5n9d9QxySEfNLJam/sHP
+	pcFoKxA2B7PIqOgiM1Cg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJ6lL-00000008QLl-3RMx;
-	Wed, 12 Nov 2025 09:03:35 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1vJDMO-000000099Mz-3fRx;
+	Wed, 12 Nov 2025 16:06:16 +0000
+Received: from mail-wm1-x335.google.com ([2a00:1450:4864:20::335])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJ6lJ-00000008QKV-3Qpm
+	id 1vJDMK-000000099Jb-1K70
 	for linux-phy@lists.infradead.org;
-	Wed, 12 Nov 2025 09:03:35 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 5AC8ndr14006241;
-	Wed, 12 Nov 2025 09:03:24 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:message-id:mime-version
-	:subject:to; s=qcppdkim1; bh=kmp/UD49T+mMXHBhn6G//elyFU+oJ4daqAG
-	JIwEP9CM=; b=PplWNV0P7iwhJ6RzivUM35cViADNGkgEsrNI5sQMenUqGWrzFXc
-	8kg2rkg4iUNmXJiRDheeTSQWQv13scIEeWFWAvhL8mQOmUd0vHKDu4ACZY7H40VF
-	e9xS1iiROiHm4JgcFfn5tHT/YCCjGihoIOr8Oqy4qdbCRPtamd5qvHm6clb8xQPv
-	qN4vvNfdyR6Zo/PR1j0CvapqdFA1KrOvCzEgMWc66FKf8+xu0E/BU7QbZMKCf98s
-	i7iIDN8V4mYGPxIIcasKKvBQKvLviZkSv2ZpCrd2t+jtKdwCowuV/y8IHerP3uc2
-	6ucnweTIsEd7u7dwaZuKj97JF8x7g6XXgEQ==
-Received: from aptaippmta02.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com [103.229.16.4])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4acg5bh870-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 12 Nov 2025 09:03:24 +0000 (GMT)
-Received: from pps.filterd (APTAIPPMTA02.qualcomm.com [127.0.0.1])
-	by APTAIPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 5AC93LG9012295;
-	Wed, 12 Nov 2025 09:03:21 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by APTAIPPMTA02.qualcomm.com (PPS) with ESMTPS id 4a9xxmq754-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 12 Nov 2025 09:03:21 +0000
-Received: from APTAIPPMTA02.qualcomm.com (APTAIPPMTA02.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 5AC93LQ5012283;
-	Wed, 12 Nov 2025 09:03:21 GMT
-Received: from cse-cd02-lnx.ap.qualcomm.com (cse-cd02-lnx.qualcomm.com [10.64.75.246])
-	by APTAIPPMTA02.qualcomm.com (PPS) with ESMTPS id 5AC93KOW012280
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 12 Nov 2025 09:03:21 +0000
-Received: by cse-cd02-lnx.ap.qualcomm.com (Postfix, from userid 4438065)
-	id 716EB77B; Wed, 12 Nov 2025 17:03:19 +0800 (CST)
-From: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
-To: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
-        krzk+dt@kernel.org, conor+dt@kernel.org, jingoohan1@gmail.com,
-        mani@kernel.org, lpieralisi@kernel.org, kwilczynski@kernel.org,
-        bhelgaas@google.com, johan+linaro@kernel.org, vkoul@kernel.org,
-        kishon@kernel.org, neil.armstrong@linaro.org, abel.vesa@linaro.org,
-        kw@linux.com
-Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
-        linux-phy@lists.infradead.org, qiang.yu@oss.qualcomm.com,
-        krishna.chundru@oss.qualcomm.com, quic_vbadigan@quicinc.com,
-        Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
-Subject: [PATCH v3 0/2] Add PCIe3 and PCIe5 support for HAMOA-IOT-EVK board
-Date: Wed, 12 Nov 2025 17:03:14 +0800
-Message-Id: <20251112090316.936187-1-ziyue.zhang@oss.qualcomm.com>
-X-Mailer: git-send-email 2.34.1
+	Wed, 12 Nov 2025 16:06:14 +0000
+Received: by mail-wm1-x335.google.com with SMTP id 5b1f17b1804b1-477563e28a3so6346895e9.1
+        for <linux-phy@lists.infradead.org>; Wed, 12 Nov 2025 08:06:11 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1762963570; x=1763568370; darn=lists.infradead.org;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=eSaK7KjpsRpJPsoshb/MU55TLjeahDB1ks0unKYBn4A=;
+        b=eat0byyQLNID/67SdGnhxXfGfnKxBuMkMeInCv6FWrijWsjGpC7Z8bhMmXgiixD+MG
+         CiFe0OV/D/GpnqkT7RRvtKD6Z+7pmzfJYwme/x6uLvIXX158sx54Eutb5lqkyRruOvXA
+         X+n16QBlaStiGtkopdkIuNQDji1pH32ITqc1vjUKxo1FZd7BDixE00G5LSCye/TjMqQr
+         +tq0o/ztGRffV1ADk6JSpNuZRDPxJwPwr6Y+x+FCz0+nmi3Ec8qg+vb9D8L0FKshHKb2
+         QB6akUwaawNUrtjw3W5uxGDRMwWklQJg/JAol+laEuBfdkhcDyhLVKmDUCISZVi9d+KN
+         Vtmw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1762963570; x=1763568370;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=eSaK7KjpsRpJPsoshb/MU55TLjeahDB1ks0unKYBn4A=;
+        b=pyXx83VNj0uH60CAcFZOIVU0xH29Vmtv2vsaicZDo+pWzUQ1/bbGjMCdz+HmOVrwnt
+         mQvgBxm4Owc+pAoeWMDnkRyZW9dbfaEs3epDUz2CyMHpq4DFdk+dlkJ3Y5VkNwj1FXrW
+         pP6k3uT95XPGOtuiU4oEKJVghwTXKKOohDB/mT3CbkOCgmX3NoWh2YD2eNDb0ej/1oXB
+         aYRZpwwrVzUm9HolCNwpejBCDndyPARBsBd6+TruWlLxx81TQFvz6EEsiiOg35A625AY
+         Y5kMwLOVxSFhsahPJRJ1QhHDyU319eknbjNRlcvP429yA0PeKs//jpIRQXSKaBE/HlXx
+         m5yw==
+X-Gm-Message-State: AOJu0YzC2APmrsCScLdFqKZUI1h8K9wDnpaGf65BAJJWh+Qh4zXm/AzE
+	4f+uaK9vUTqY/BlyctxDBiAfR2gZ7TD75ZEfdZbgy6Rb4SuyHbtrRaThrRPxX9XJyQg=
+X-Gm-Gg: ASbGncuibcuauci5MqscI98w+N6N/i2HdjYJNluUTKCBbnnavjCZNmQGcXVS4gxytDh
+	hHUyR879NKZbE6ACuknOa1PP2tLOcjqNw8aK/xvgO6TIAwkpll2AS4/ROU2ge7O9NvZM8teCwma
+	05oJ7nwOy491vgefJqPzFydVCIDyvToA2T6PqP5Vs6UYB4YPb9XnD07/HPbvmh5ymi8tWh7ZOPH
+	04bwfgoUz/UwWudgC0GaCrgYJo+EGvH42EOirBwB8bRePVjlGvbtnv7AWwbD7ecN5zQGsoZ9E+G
+	alIsGPYnHAjIRwSD8Q5KZh8ewV5Q75N8HlBjAj8dP0wdaTn92W8P5MtK4ZErpNffvk4fPLemvkm
+	K4rrvkbErukP8+jCd28+GgXAkmW5qeMLp37UngzYyEXI5SRBW1trtAgKwm6BbmGGWUi7ujwJK2k
+	+qT0zJfrHs8T8xrNPnqacWkK3oJTRHl5s=
+X-Google-Smtp-Source: AGHT+IG6rFzEcxKdldL8ZJSA90DQKBh2V/CJToGQI/q5NdQAalijEOc2BYKjbz+pmbmuHRK+JHR6rQ==
+X-Received: by 2002:a05:600c:5247:b0:477:7f4a:44bd with SMTP id 5b1f17b1804b1-47787224955mr29777585e9.0.1762963570392;
+        Wed, 12 Nov 2025 08:06:10 -0800 (PST)
+Received: from gpeter-l.roam.corp.google.com ([145.224.66.100])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-47787e95327sm41226855e9.12.2025.11.12.08.06.09
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 12 Nov 2025 08:06:09 -0800 (PST)
+From: Peter Griffin <peter.griffin@linaro.org>
+Subject: [PATCH v4 0/2] Add new phy_notify_state() api
+Date: Wed, 12 Nov 2025 16:05:57 +0000
+Message-Id: <20251112-phy-notify-pmstate-v4-0-717d78009d15@linaro.org>
 MIME-Version: 1.0
-X-QCInternal: smtphost
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: TrRre4cN3kxxGOAdTY9Db1hr6cDmKmIY
-X-Proofpoint-GUID: TrRre4cN3kxxGOAdTY9Db1hr6cDmKmIY
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMTEyMDA3MCBTYWx0ZWRfX5vM68VZECLi6
- fGMuSV2S1Gxp6zmGivhzENv0KKxNWz3+AGPJRvRgNadpnWfV8QSbM+hPpnZzQrSqo9LN7NjhtoN
- ybnwwabPjBup0w1luyKfskRXXjp9QT6r38ZI2AlIPObyeSsXkB6xmqmy6AsjTpzch0E6/b3lSAI
- 88ZoUkN+L8Lh+wg+e0DOpAwGyyfAkLTHbD7+TJsoKnbCoIhL+yFmAbw1qz8cWW9rExmFaAqmLOA
- 9xpRUjXv0WZ2Hc5w+c0pKwLOV1dsh0Bi6drziXPEqKth4ldCArEWwmR8d3nU1nW7VLo7hNrI/+l
- 7XYGLg+u6p2D7Twmln10hsqlNeu3liWAg4WsScRiQp0SrvoULciQkBqqnzYh3Olk0Y3iTwA/dU4
- EH7L2XuwX0GpPdYKso0H3YJ0PHrDKA==
-X-Authority-Analysis: v=2.4 cv=YYawJgRf c=1 sm=1 tr=0 ts=69144d5c cx=c_pps
- a=nuhDOHQX5FNHPW3J6Bj6AA==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
- a=6UeiqGixMTsA:10 a=VkNPw1HP01LnGYTKEx00:22 a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8
- a=QeMu0tCiC60fgC08giYA:9 a=nl4s5V0KI7Kw-pW0DWrs:22 a=pHzHmUro8NiASowvMSCR:22
- a=xoEH_sTeL_Rfw54TyV31:22
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
- definitions=2025-11-12_03,2025-11-11_03,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 suspectscore=0 impostorscore=0 malwarescore=0 spamscore=0
- priorityscore=1501 phishscore=0 lowpriorityscore=0 adultscore=0 bulkscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2510240001 definitions=main-2511120070
+X-B4-Tracking: v=1; b=H4sIAGWwFGkC/3XOQWrDMBAF0KsErSszmvEkdla9R8lCiSV7oJWMJ
+ ExM8N0rB0opbZd/4L8/D5VdEpfV+fBQyS2SJYYa2peDuk02jE7LULNCQIYTkJ6nVYdYxK96/sj
+ FFqc94NUyd+iPrGpxTs7L/Ym+XWqeJJeY1ufGYvbrzrUGABEMMzdEhIY6jXp2xaVmTOK9hNd3C
+ TbFJqZR7dCCX+V/f1lQg/Y3c+yhpd6Y0y+Dvo3O/G1QNeg6WO6BeRjoh7Ft2ydU4cJ1NgEAAA=
+ =
+X-Change-ID: 20250703-phy-notify-pmstate-f02ba5582f65
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ =?utf-8?q?Andr=C3=A9_Draszik?= <andre.draszik@linaro.org>, 
+ Tudor Ambarus <tudor.ambarus@linaro.org>, 
+ Alim Akhtar <alim.akhtar@samsung.com>, 
+ Krzysztof Kozlowski <krzk@kernel.org>
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org, 
+ kernel-team@android.com, William Mcvicker <willmcvicker@google.com>, 
+ Manivannan Sadhasivam <mani@kernel.org>, neil.armstrong@linaro.org, 
+ Peter Griffin <peter.griffin@linaro.org>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1976;
+ i=peter.griffin@linaro.org; h=from:subject:message-id;
+ bh=Tb8QWBachEzK293/rkkaGX5QoR2WIIDvyetwzLPF/dU=;
+ b=owEBbQKS/ZANAwAKAc7ouNYCNHK6AcsmYgBpFLBvBMKx+UST6zAYRGgV+Ns9aJTxOwnsxasX4
+ V/1V6CwXvyJAjMEAAEKAB0WIQQO/I5vVXh1DVa1SfzO6LjWAjRyugUCaRSwbwAKCRDO6LjWAjRy
+ uqy0D/9yeYWXP6i5RIKwe6GIAI0BWoqhXoXkNenwExXcitTNpZk414r9TMsa1jqI0fj3A1TSesq
+ KQSB+5+FFomF7mRj4i1z4ToYS8GlrBPBwm9JufqwjzQ7MTcN71JzReyMtUSEj9EkVFto7Pz891G
+ YWK6nTx+MqgDJcSZt2+DnKYJheWutFMpQVD4R5jHWncVFYj6Qpvlh9BOq5upOiWrIuvmzX5rV5f
+ ISp9AMu2FnLKjQhM+S7qEO5pPVD5zVPiRcAm6kcNTeX04ZFrm4fXiAouRy2YL01IbQx+NDtj+zE
+ RjELefMhdU9ZCALKPu7TAA2AFGq+N/0jamQ2epi8DV2vXIB5hHtZ0ie166LLLjAwScov+pSQs14
+ nmRel0AunzcRbXG0lCkKaMDKIptSLVygvTa2RpycBbGMuil7h1FSRO97whzFuM1d4h+pvArvwJr
+ Bcg2TqI8pzc9pHTKv2TJbcoe0PzR4J8V5h1GOzkkFd9N2EbVvLi/TjZZmCNaoejmCnstvGYcCmy
+ XjmZjy3wf7f+g3i2Zvdz/V4wY2R4C1p0u27OvTi97lSSMe7Tdx7Mmnwc0R7kCiVtm+nEjVcEeUj
+ /pjAW2PupbeOjVQ80H+NZJ+snaJN+X6fmmhqg3wuTwUne/3+7LEeEOEBe/OI3/lFidz3Ep710z4
+ dRvM7VGm26TWWMw==
+X-Developer-Key: i=peter.griffin@linaro.org; a=openpgp;
+ fpr=0EFC8E6F5578750D56B549FCCEE8B8D6023472BA
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251112_010333_978926_B793A69B 
-X-CRM114-Status: UNSURE (   9.76  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20251112_080612_382920_8A008EDB 
+X-CRM114-Status: GOOD (  11.13  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -122,38 +127,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This patch series adds support for PCIe3 and PCIe5 on the HAMOA-IOT-EVK
-board.
+This series adds a new phy_notify_state() API to the phy subsystem. It is
+designed to be used when some specific runtime configuration parameters
+need to be changed when transitioning to the desired state which can't be
+handled by phy_calibrate()or phy_power_{on|off}().
 
-PCIe3 is a Gen4 x8 slot intended for sata controller.
-PCIe5 is a Gen3 x2 slot designed for external modem connectivity.
+The first user of the new API is phy-samsung-ufs and phy-gs101-ufs which
+need to issue some register writes when entering and exiting the hibern8
+link state.
 
-To enable these interfaces, the series introduces the necessary device
-tree nodes and associated regulator definitions to ensure proper power
-sequencing and functionality.
+A separate patch will be sent for ufs-exynos driver to make use of this new
+API in the hibern8 callbacks.
 
+Signed-off-by: Peter Griffin <peter.griffin@linaro.org>
 ---
+Changes in v4:
+- Add missing 'used' word in commit description (Vinod)
+- Fix 0-day compiler warning
+- Link to v3: https://lore.kernel.org/r/20250813-phy-notify-pmstate-v3-0-3bda59055dd3@linaro.org
+
 Changes in v3:
-- Update commit message and DT format (Bjron)
-- Merge PCIe3 and PCIe5 changes into one patch
-- Link to v2: https://lore.kernel.org/all/20251030084804.1682744-1-ziyue.zhang@oss.qualcomm.com/
+- Rename API to phy_notify_state(). (Mani/Neil)
+- Remove inline kerneldoc comment (Mani)
+- s/phy/PHY (Mani)
+- peripheral specific enums in phy.h (Vinod)
+
+- Link to v2: https://lore.kernel.org/r/20250703-phy-notify-pmstate-v2-0-fc1690439117@linaro.org
 
 Changes in v2:
-- Move PMIC gpio pins to patch set 4 (Krishna)
-- Link to v1: https://lore.kernel.org/all/20250922075509.3288419-1-ziyue.zhang@oss.qualcomm.com/
+- Add new phy_notify_pmstate API() instead of using phy_set_mode() (Vinod)
+- Link to v1: https://lore.kernel.org/r/20241002201555.3332138-1-peter.griffin@linaro.org
 
-Ziyue Zhang (2):
-  arm64: dts: qcom: Add PCIe3 and PCIe5 support for HAMOA-IOT-SOM
-    platform
-  arm64: dts: qcom: Add PCIe3 and PCIe5 regulators for HAMAO-IOT-EVK
-    board
+---
+Peter Griffin (2):
+      phy: add new phy_notify_state() api
+      phy: samsung: gs101-ufs: Add .notify_phystate() & hibern8 enter/exit values
 
- arch/arm64/boot/dts/qcom/hamoa-iot-evk.dts  | 83 +++++++++++++++++++++
- arch/arm64/boot/dts/qcom/hamoa-iot-som.dtsi | 79 ++++++++++++++++++++
- 2 files changed, 162 insertions(+)
+ drivers/phy/phy-core.c                | 25 ++++++++++++++++++++++
+ drivers/phy/samsung/phy-gs101-ufs.c   | 28 ++++++++++++++++++++++++
+ drivers/phy/samsung/phy-samsung-ufs.c | 40 +++++++++++++++++++++++++++++++++++
+ drivers/phy/samsung/phy-samsung-ufs.h |  7 ++++++
+ include/linux/phy/phy.h               | 19 +++++++++++++++++
+ 5 files changed, 119 insertions(+)
+---
+base-commit: b179ce312bafcb8c68dc718e015aee79b7939ff0
+change-id: 20250703-phy-notify-pmstate-f02ba5582f65
 
+Best regards,
 -- 
-2.34.1
+Peter Griffin <peter.griffin@linaro.org>
 
 
 -- 
