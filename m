@@ -4,74 +4,137 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 900D1CD343F
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Nov 2025 18:48:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2EF69CD4847
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Nov 2025 21:16:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=twH/uuWZCVaTT+1qSihe8smh6BouKOC6T7VIUTO9UGw=; b=MAClQhE+0LO5EYmwebbzNNYq9i
-	pbvt4LukIfvI9zlq1mIxHTs57FSerQTDJBb7g6ej2XFutCY3EIWwsBwiRHNq5hJfIKXcLEDYs274s
-	5+rhPsD6DKOdIIlJe/3QhMabweI4v2FBFCeIwua3b1aOHDNfd+lmeu2+NSPzSrR+9FghOk1K7Nb5M
-	7XYeWZd1nkOcCJVuVeAW+CSCUy+QxKc7OmtBU04uABFmDcS5pyFi0aIRjR9PjpV0QB0hB5CaYCIBs
-	ST5CF3kaLxTizoktlnYwBJTiAc9l2KYNBDyONlRj6U+V/FUCrSrTojBNCBtlcBREUi5F0dMrs/9m5
-	v8069mlA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=f6enXtnY2YYLb1z5btY45StDx1c/wlKmYrFw7C6Wcgk=; b=pfG6WCrC1aWqCB
+	qgfkj169gl8P0iKGrr1QFBx1rAZnvmZn5FTSELCsOgRTThmBf9RbnnMrqxHKh1LCxT/Z0DpcoCEsz
+	zRYcIMPEJsoBNSvr5YCbQ/UNRvdBDj7YpA4CR5TWnK+GHnfQhZcFN+gmxOP07YvFoCKFxTVepnTFY
+	MHPzrpjpMTS+G4xICe/rE7K3o/zsbSkLx2JDHQh2L+SruMxV9YeTZ/OZx1WqBYlWPrtSqHBXEB8Wa
+	cvV/n0jim0G5jeBl1ey+mGRipSpFj+xDAM6SYnnssrshhxGbC5VKqbVb/4btP7yWbfqzZw5KeMi7R
+	uaatpws4yQQEcCE6fseg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJFtI-00000009Nyf-0Lwy;
-	Wed, 12 Nov 2025 18:48:24 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vJIC8-00000009Wk2-153w;
+	Wed, 12 Nov 2025 21:16:00 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJFtH-00000009NyW-1UnZ
+	id 1vJIC5-00000009Wjd-1msE
 	for linux-phy@lists.infradead.org;
-	Wed, 12 Nov 2025 18:48:23 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 72F56601A5;
-	Wed, 12 Nov 2025 18:48:22 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4F897C4CEF7;
-	Wed, 12 Nov 2025 18:48:18 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1762973302;
-	bh=dxUWBNjSHg2QdfgaDnXYT/JYX+mehzTGcs5DtsDTJ9g=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=g3PAt5osYgKijUL2pFo/OcQJcuo8aKl5jV/Ro3uEVCVlD5OzT7hsi0AgBnOqQmH93
-	 MuRxEyLqIgFC3RVgXpZ4r4sQT55Jd5ifjR8X9CiHVoxQE7GStm6zBj87jmCiZbwTUz
-	 Z2dn9tro+uFRIdPzYPLS3Mj2nGDhhl/F/FjdvKikjLlzrj2/IWB1/hVX0K476FtIDc
-	 N3pPQLOTKoMyP0B46dd3/S1sLGEt+qaBX5Fm5PKAu2wUvLLpOdqQmzQUySwi1iBX3i
-	 8GRhi6DpOyCQ0cNxPJmzoymZA8KAomNA8jhW93SeN9tLnuAcwtgTQJgWwhw/0t6Jq9
-	 kSe7689rBQsMQ==
-Date: Wed, 12 Nov 2025 18:48:16 +0000
-From: Conor Dooley <conor@kernel.org>
-To: Rob Herring <robh@kernel.org>
-Cc: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>,
-	tomm.merciai@gmail.com, linux-renesas-soc@vger.kernel.org,
-	biju.das.jz@bp.renesas.com, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Fabrizio Castro <fabrizio.castro.jz@renesas.com>,
-	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Peter Rosin <peda@axentia.se>,
-	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
-	Geert Uytterhoeven <geert+renesas@glider.be>,
-	Magnus Damm <magnus.damm@gmail.com>, Arnd Bergmann <arnd@arndb.de>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v3 04/21] dt-bindings: reset: renesas,rzv2h-usb2phy:
- Document VBUS_SEL mux
-Message-ID: <20251112-launch-overcoat-18c3924b9b3f@spud>
-References: <cover.1762773720.git.tommaso.merciai.xr@bp.renesas.com>
- <8fba0b7235bd398d41329fd087d68f7e98bbbaca.1762773720.git.tommaso.merciai.xr@bp.renesas.com>
- <20251110-resonate-strict-c3d6c42f3e0d@spud>
- <aRJqfh7p9M3NHfCS@tom-desktop>
- <20251111-character-catnip-0832956a3fb1@spud>
- <20251112163712.GA1850277-robh@kernel.org>
+	Wed, 12 Nov 2025 21:15:58 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 5ACEJ7ZK1382178
+	for <linux-phy@lists.infradead.org>; Wed, 12 Nov 2025 21:15:56 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=HGBWrs7DnHLfdEf2UIMKQOz4
+	rRJ3a068v2CpxXJAmdU=; b=FqFHfHRiO1SI3v2yuxSfDK2ZL4TkYZ6invjXimWm
+	AvP+g2SUor3kQCIbE7uLf7M/kstYiPI4umK0Ii3o0H5hin+63EOkIG9Uir80lpv/
+	ky99GAGv0H1EuwiSbeADrbD5FflejhtgzCyE3YiIsmOwO8Op/R4SxnXXj7Pcp/Al
+	v6B6miEaMdznNKFa0k9ELmM+gowFgFu0j13AY2WPjvvyBpWv1yo1gLNJAFBomJkx
+	+2QsG6PiACDZ1EAtDIRepJ/Sq9YWn3vJd0cPXEtIsrRRnRuxE+Tag3oErr/WG1L8
+	70WQbLc3F5PdlzJb+lb7raErXiGB3TIKU6AtJ5qj2O5tJg==
+Received: from mail-qt1-f198.google.com (mail-qt1-f198.google.com [209.85.160.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4acuw49ar1-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Wed, 12 Nov 2025 21:15:56 +0000 (GMT)
+Received: by mail-qt1-f198.google.com with SMTP id d75a77b69052e-4edb927e4deso2716051cf.3
+        for <linux-phy@lists.infradead.org>; Wed, 12 Nov 2025 13:15:56 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1762982156; x=1763586956; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=HGBWrs7DnHLfdEf2UIMKQOz4rRJ3a068v2CpxXJAmdU=;
+        b=Nk6XWB/QdHfdOFaVu19BsPRSY9cYXJXkyuL2n3mnySDj8pTABoMpUmUffO0QxF2g7M
+         SSqVyTtmDmH2ThRL0rzTm5/YAqthBnwZ1PNMnw1DCr/n6PGoClQ+x/UOO0gs3Dub5QNx
+         Zt7ei5XpOJYFm1jISFThkf+57mxVlKOKZZthlGGnsNCnbtUnprvweeHoPbxHhDGc3Fag
+         qcnvUOtYcMF+Vh7XRRHGfdxauu8r/MwCOWvL0CknyNRPMtUb7KgkN9Yn+CmJd32e76PS
+         Jz3DOL3vdnR2mdVuBJzdHZogBkiuQaBVH2JTQgCrLF5NcbsC9FjQPWbBSre4pLpEarkT
+         mz8Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1762982156; x=1763586956;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=HGBWrs7DnHLfdEf2UIMKQOz4rRJ3a068v2CpxXJAmdU=;
+        b=lSMJJmv0cbczhGAz8AJPUGUqDXqDA1wMEdzSOuX9rZJNguFrEhAhff4qUgBtgOYQhA
+         uQtfpcU0kcNQKdn8YoN3BbBYt1XCUAF2JI0T3svgAOSpFAEHNMZXYJmi2f4ZVZJkpmf5
+         FYx8qlHdb9IeGD//K0hAKrRTVmScaOSphea77ADW9l9NBFNHLqeoxGw96PhHy1lVjYmX
+         pSPHXh2EPbn/wNLtB2QE8EsNUlRM7vKR7pKdh55ta+KrQgcFvFT7/3LMJNateEj1hOuJ
+         nTD+5f9QeSueWLBAsEYEbU5ZIRUCci+UqWOuwlyIm+LxegLMbwg+H7mLoivce4ednc/v
+         7Xjg==
+X-Forwarded-Encrypted: i=1; AJvYcCVVMwps7kdgVeMTVfYQUZWd/Jg36ntFfFuyIoVRHhz7u9A+zNOZs/shQ6JvXp9pouUIoCOAoVtMlB8=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yw1FOqmH+XLXfO/NrEAmUeowd/ctRD7XDKNC9UfM9KUFOZM29e0
+	mtRHUFdHJBAZRGgiBXjH6cA43KPCoN7g73oKPpjfMvV6SOE2Z5f6f68A/571HpZ4nEGgr5oIzkP
+	E63TtAwvhOzEHsYLMFPuUip22FVOW+kFW91KvKkuXIfv6lHGQbYD+NOSiW5PTc3mc015p
+X-Gm-Gg: ASbGncuDc8O5yVD7P9OUtvTIb0+oDBdejVJZo0vO+hLt347x+X2FR04G7JUVjD7PASp
+	JF9NCRlIMUTi8FswXM1e4wDThjimWncHqOvi9x3/mBzyJ6nhoBr+0UeiHd6u79c4gWyIlRZZWUO
+	sAl2UrnfX0+zecquo9UmFdpsZjsBbwT6ngTzPH98OMnpap5p7KJ17iWP6mu7o9hlt/WpKN6Xjik
+	PeVdXYbQctwcMeHVJvtAOYnPE269k1aGEtHkPJRB8NSLCv/cdKIY3BepcrfMkbxReOcoj8D+bxL
+	XEgcglCsGRG25FKeyJqN/pMo4xM5qAxxecYIc0WCaMWqPHbWJ1urjlI/K2paCKJ4wfpsuj8Ayf5
+	tVIlYiOTetUJV96akZDJGNS6u4B4eaMncDPFvK/BpHiLrZxkIHAJkyzNGNNRv63rkVUAjwGv1P7
+	DJy96bGSkhPJaK
+X-Received: by 2002:ac8:5815:0:b0:4ed:b2da:9662 with SMTP id d75a77b69052e-4eddbe56a76mr66415401cf.70.1762982155749;
+        Wed, 12 Nov 2025 13:15:55 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEWqFy2kLgPWPVS/huXKoUFZ5R57hNEieCYdk97d1qbnfNL5pgKF8pzTG5alOHRPxvUi3yPcg==
+X-Received: by 2002:ac8:5815:0:b0:4ed:b2da:9662 with SMTP id d75a77b69052e-4eddbe56a76mr66414771cf.70.1762982155063;
+        Wed, 12 Nov 2025 13:15:55 -0800 (PST)
+Received: from umbar.lan (2001-14ba-a0c3-3a00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a0c3:3a00:264b:feff:fe8b:be8a])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5957c50f627sm668161e87.26.2025.11.12.13.15.54
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 12 Nov 2025 13:15:54 -0800 (PST)
+Date: Wed, 12 Nov 2025 23:15:52 +0200
+From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+To: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
+Cc: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
+        krzk+dt@kernel.org, conor+dt@kernel.org, jingoohan1@gmail.com,
+        mani@kernel.org, lpieralisi@kernel.org, kwilczynski@kernel.org,
+        bhelgaas@google.com, johan+linaro@kernel.org, vkoul@kernel.org,
+        kishon@kernel.org, neil.armstrong@linaro.org, abel.vesa@linaro.org,
+        kw@linux.com, linux-arm-msm@vger.kernel.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
+        qiang.yu@oss.qualcomm.com, krishna.chundru@oss.qualcomm.com,
+        quic_vbadigan@quicinc.com
+Subject: Re: [PATCH v3 1/2] arm64: dts: qcom: Add PCIe3 and PCIe5 support for
+ HAMOA-IOT-SOM platform
+Message-ID: <q6ztnuiouxvg7kpy6knrnwugusi72xfye6wf2pgfltugjwlbep@mxtt3vm7vx4i>
+References: <20251112090316.936187-1-ziyue.zhang@oss.qualcomm.com>
+ <20251112090316.936187-2-ziyue.zhang@oss.qualcomm.com>
 MIME-Version: 1.0
-In-Reply-To: <20251112163712.GA1850277-robh@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <20251112090316.936187-2-ziyue.zhang@oss.qualcomm.com>
+X-Proofpoint-ORIG-GUID: 0RSPfkrBgnoJPdHqCviqaxtSuaRySwX0
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMTEyMDE3MSBTYWx0ZWRfX0nHXKRgEsAHz
+ NMYCx7s+5wxDSLIDD2m84YCd6vzyLzQyEg9rWqx5OAitYr2EMU/UHWiV5iLpZw1dTw7o6tP6N+0
+ dKT3uukcsOcf73YdIeLc+ZGo0NypNKIqondA5VxDXn/NwXYn58t2RNBcfK6OEFEfv4lCCy6ibj1
+ wOfjDhSS5I3efTFJ3SypFcyiuhszvXs1blACDNEU1NdrG9Lls2Mqvfo2o0jjOc4uTADvKwALVdF
+ GUVjWpPwrzM6432vh6fkGfhkwv5t7GylwRNYWLB73n+LcwT23cGasgnUcR5vaWv2rI91hpQyPw8
+ GO0ARDhk0dA2X7O++jjm5eodtcCZZcaCOa9BVNGJ7EdpwPYhQylfeDvsnub1ZkdxB0UlXljubNu
+ 3PEWUJyOn503yIbfGJn5EP/ff5vZzA==
+X-Authority-Analysis: v=2.4 cv=F+Bat6hN c=1 sm=1 tr=0 ts=6914f90c cx=c_pps
+ a=mPf7EqFMSY9/WdsSgAYMbA==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
+ a=6UeiqGixMTsA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
+ a=EUspDBNiAAAA:8 a=EhQ9wbuxbXqUBhoRm5MA:9 a=CjuIK1q_8ugA:10
+ a=dawVfQjAaf238kedN5IG:22
+X-Proofpoint-GUID: 0RSPfkrBgnoJPdHqCviqaxtSuaRySwX0
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
+ definitions=2025-11-12_06,2025-11-12_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ clxscore=1015 spamscore=0 malwarescore=0 phishscore=0 bulkscore=0
+ adultscore=0 priorityscore=1501 impostorscore=0 lowpriorityscore=0
+ suspectscore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2510240001
+ definitions=main-2511120171
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20251112_131557_482383_157634B4 
+X-CRM114-Status: GOOD (  13.33  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,119 +146,33 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============4950479212751082044=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Wed, Nov 12, 2025 at 05:03:15PM +0800, Ziyue Zhang wrote:
+> HAMOA IoT SOM requires PCIe3 and PCIe5 connectivity for SATA controller
+> and SDX65.
+> Add the required sideband signals (PERST#, WAKE#, CLKREQ#), pinctrl states
+> and power supply properties in the device tree, which PCIe3 and PCIe5
+> require.
+> 
+> Signed-off-by: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
+> Reviewed-by: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
+> ---
+>  arch/arm64/boot/dts/qcom/hamoa-iot-som.dtsi | 79 +++++++++++++++++++++
+>  1 file changed, 79 insertions(+)
+> 
 
---===============4950479212751082044==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="Wi4VmUiHBPJH/1r5"
-Content-Disposition: inline
-
-
---Wi4VmUiHBPJH/1r5
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Wed, Nov 12, 2025 at 10:37:12AM -0600, Rob Herring wrote:
-> On Tue, Nov 11, 2025 at 05:49:24PM +0000, Conor Dooley wrote:
-> > Tommaso, Rob,
-> >=20
-> > On Mon, Nov 10, 2025 at 11:43:37PM +0100, Tommaso Merciai wrote:
-> > > Hi Conor,
-> > > Thanks for your comment!
-> > >=20
-> > > On Mon, Nov 10, 2025 at 06:56:31PM +0000, Conor Dooley wrote:
-> > > > On Mon, Nov 10, 2025 at 01:08:04PM +0100, Tommaso Merciai wrote:
-> > > > > Document the 'mux-controller' child node in the Renesas RZ/V2H(P)
-> > > > > USB2PHY reset binding to support describing the USB VBUS_SEL
-> > > > > multiplexer as a mux-controller.
-> > > > >=20
-> > > > > This is required to properly configure the USB PHY VBUS source on
-> > > > > RZ/V2H(P), RZ/G3E SoCs.
-> > > > >=20
-> > > > > Signed-off-by: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
-> > > > > ---
-> > > > > v2->v3:
-> > > > >  - Manipulate mux-controller as an internal node.
-> > > >=20
-> > > > Why is it a child node, rather than just putting the cell in the pa=
-rent
-> > > > reset node?
-> > >=20
-> > > Getting "make dt_binding_check errors" [1] in v2
-> > > Adding #mux-state-cells =3D <1> into:
-> > >=20
-> > > 	usb20phyrst: reset-controller@15830000
-> > > 	usb21phyrst: reset-controller@15840000
-> > >=20
-> > > Nodes.
-> > >=20
-> > > Please correct me if I'm wrong.
-> >=20
-> > I think that that binding is not working as intended. Why require a
-> > node-name pattern, when it matches on other things too:
-> > select:
-> >   anyOf:
-> >     - properties:
-> >         $nodename:
-> >           pattern: '^mux-controller'
-> >     - required:
-> >         - '#mux-control-cells'
-> >     - required:
-> >         - '#mux-state-cells'
-> > if the node name always contained mux-controller, the second two here
-> > would not be needed. Looks to me like the intention was for it to allow
-> > putting these control/state-cells properties into mfd type nodes.
-> >=20
-> > I'd delete the node name property tbh. Rob, you converted this to
-> > schema, what do you think?
->=20
-> Yeah, I'd probably just comment it out and drop the select.
-
-Is dropping the select okay to do, or should just the nodename portion
-go? I think there's a couple users that would need to be fixed up if the
-whole thing gets removed. E.g. gpio-mux and reg-mux bot rely on the
-schema being applied automagically AFAICT, and maybe there's some others.
-Although, 99% of mux-controllers seem to use gpio-mux, reg-mux and
-mmio-mux which are covered by those two files.
-
-> I'm not sure what to do here in general. Matching on node names was=20
-> useful early on, but that becomes less useful as we have schemas for=20
-> everything. I'd still like to document standard node names in schemas=20
-> somehow, but obviously we can't require a certain name when a node is=20
-> multiple providers. Ideally, every node name in the list in the DT spec=
-=20
-> would be in schemas and we could generate that list.
->=20
-> Rob
-
---Wi4VmUiHBPJH/1r5
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaRTWbwAKCRB4tDGHoIJi
-0jBkAQD+fuaIvSWR60ndqX3CRSXBB7//qO2aOwu8ZSKwQj313gD/ebujckuMju4A
-5EbhixmUxssMpXa/u63PrjPIR9oGowI=
-=zSBW
------END PGP SIGNATURE-----
-
---Wi4VmUiHBPJH/1r5--
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
 
 
---===============4950479212751082044==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============4950479212751082044==--
-
