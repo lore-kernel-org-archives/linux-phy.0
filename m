@@ -4,87 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BFBA3CD13DD
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Nov 2025 16:17:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6D3D3CD3420
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Nov 2025 16:20:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xMEgviqxR+4atPS4sPb/sQboJ939qoXr5RJF0yZCWog=; b=USMniEJ3OkaSKN
-	OLUtCMGHl80Yh2jecqICk8/YX3UM9CoC6sGn8QGWvVtZi5CJvVcKgmuJWuegzOxG+tgbbkuWrDki/
-	/zqJRUd2oocx8qHNeUJV/1SbZ5Hivebu9BJrFl9K2WzZEouJDBh3lEgEe5RIQaaPpXa0izVXRnm2e
-	yEdo2uJPn3l7+NUn9ALtQjpQ7uWRSZLn0GQRFm8llCCqLJm8iSeZAgyIkfWRAQeXXtdgrUvoWMWF2
-	vuYSCWe3f6k2CQE6UMTJa91hPMzVTq7E/IhF0AGE7FOANi1E7pb5BFPmseeNeFua8ZfxfHj5s0ENb
-	TqjOF5ZkU1tgf/qBlKwQ==;
+	List-Owner; bh=QUwr7oPWOX00+NgmXsvILydvcgufbNx8Zis+Eg+nAo4=; b=i+O5xmlq9xs6Ef
+	oZNsTFJ6JcibKz0wBU1z8HsN3YQur05gKErHLG8a3qrHwPHHNwEhVfjNnOAU7hSnK79e5e4GSTr6Z
+	MK1ltwYFv1SC5SDXauZVWd5EdAZ43KEOSaUwV5Lr/JVQzOH5JB5+AjL4sDymToSTn7er6scvjqdnt
+	0e++K7dnVkvG79JstkvoATm4UXpv3NYUtdCqHXavSX/UACmggfuA3pIYgqRQyry3T29chM0bZFNaD
+	ZLy9mWuV/rkCDuQbDDkP8HAGhBnO2/7Y8u/pyuDVEa7OIfmoN8X0+WZe1dxpdirekJp5uAQathZ7r
+	9ohkuJmq/zVOYMWBTijg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJDX7-00000009AQT-0uBC;
-	Wed, 12 Nov 2025 16:17:21 +0000
-Received: from mail-oa1-x2f.google.com ([2001:4860:4864:20::2f])
+	id 1vJDaU-00000009AiF-0qmp;
+	Wed, 12 Nov 2025 16:20:50 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJDX5-00000009APF-14gp
+	id 1vJDaS-00000009Ai7-3U8v
 	for linux-phy@lists.infradead.org;
-	Wed, 12 Nov 2025 16:17:20 +0000
-Received: by mail-oa1-x2f.google.com with SMTP id 586e51a60fabf-3e41b6469f5so470937fac.2
-        for <linux-phy@lists.infradead.org>; Wed, 12 Nov 2025 08:17:18 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1762964237; x=1763569037; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=8VMCABcDQg3bj1MpLgUPb6hZG0b0uHbN8RDXsa01+ho=;
-        b=AhgGIIkc3sA97kppJXnS0Mojkh6RRGNZ1eycDzjbgxNeourU3Uhur8CkAP1I6083E9
-         cXGpUAgDNb65WQBXyiLjb1Fh9x9NdvDz1Lhq6AZlghZ/zJHpP78LGd4YR0Hgt2YaIt+e
-         PrX4H80kDQsZZQ/Rffm0drhFigXitjDrSAXZKR06YNmkBWo72P+rD2E8T9VA2oylhO/c
-         rSYy13eHR+maW6SCmURY+GQwRiR28ldx73SOa/mRfI4oFHMxR7PnKewInX03fsMBVsV/
-         gIJ1cc6Uukd2FvzKyy0WRR4dr1UbeGQyd87UK4siUWrTzUt9XkdATiucN7XACOi3FNTM
-         RzCA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1762964237; x=1763569037;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=8VMCABcDQg3bj1MpLgUPb6hZG0b0uHbN8RDXsa01+ho=;
-        b=RHs/uTHM2GbJU+l/iyw3Aa7R+ZeOfFUhPYzNJ14D3vAsnf1ONn72m5Zz3MtTi6anZ3
-         IlEwhcC8T5M3WP1jVJ2yNa7Yws3xONY/tc6WqolFu0Mcof7tG4mzvnf5Vpjlx4G7Z+KF
-         jcMgB8AKYn/Jpbww6f+n1eNlR5epLl6XoCAwXA0AA5+lPLVtfCC2/LMRwsVH2votukm/
-         ZbV9iEmM6v+yahGRVgRGtzi23xSh1nptTaMGxEZBu6p4sh3yAqVvNUZ4kAbwOn0RwuQQ
-         RKRlxTvDu2gz+H9pTcG7+ybPFMo3QnkdvE/J7b2CpxiELDCVGDWj27c5+S2mLsOUlu8k
-         mXTQ==
-X-Forwarded-Encrypted: i=1; AJvYcCV2TbkqnwnuKAhPxsqfX6/PJp5ZneV6O7w/97g6kkyf/xmTLxviZFkS1yAOjN0uTsCFiGH/p6aicBQ=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yy9UwTqO5ZpkUSEMvXErPIgM6C68jhxaMkrC5sTCst70fjO8NMD
-	DSJMi4havpzo3foQKVzWuTliMt2KNVfgIKlvYcz5p+7b78gn1ZEIJky/FQghSCl2/Vz3YqB4ahp
-	Vc1ZZyAXSWKPXDrm2eI7/WHu8JkLBdz3kC+AfpQoLVw==
-X-Gm-Gg: ASbGnctAGb1QxnYgOEud3tGgx5vtdcWWhY8hUEOIjPyKS/Z+37dy2bmFIA6eSx0/jxm
-	HHopfxI+QJrK6YHSiCRBCHgkmWdcypXeBOX4OBkbx62ebm0+cNibYnfSrxvEl8cz0BHxm0o7/IM
-	6+SjKlSmRtCaomCSA9eNXPzfYXb9IdtBQY4xuQlR44IkYvfcjUPqAPf2B2n8hEfZSozZg38jcSf
-	bULNSKe3D4BWN9m6Y0cYk28HsNpnyLIdPUSvUx2IKUFEvbziHvhRC6+7xyRWA==
-X-Google-Smtp-Source: AGHT+IEsUM5mecSa8OvDA3eHi3Rt//Ce7dwGX8jwgmu78EO/L2nrGwzBPId/luKJz03aDcGKbnhMLH136z6/UVOOfm4=
-X-Received: by 2002:a05:6870:5694:b0:367:6cdd:8c52 with SMTP id
- 586e51a60fabf-3e833fe5841mr1730179fac.14.1762964237482; Wed, 12 Nov 2025
- 08:17:17 -0800 (PST)
+	Wed, 12 Nov 2025 16:20:49 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 96339601B0;
+	Wed, 12 Nov 2025 16:20:47 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 13026C4CEF5;
+	Wed, 12 Nov 2025 16:20:47 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1762964447;
+	bh=rHIrbwjlYH/gBkXgGCh/M7lUpBCIVsmiYtKm0JkgxPo=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=CwbKob8zPfvEsJwbsrZY0piMuxlW03+AXKU/9/+zihz4TvIleDu/JeviNaHOGroWY
+	 DzOjMJ6G4YkRDhlPMBuGrHiKXCxx4VfBDWJCAh07/wk/Atwmpt+ZZPqI+jxO90lFUT
+	 zdoDcuNxppBEqVBDzte6v2Cv0d3RyDJpg7ak6qCbrq4JaPrj129FIn+0Q6UtM7acNv
+	 XNNXve0WdlNKzr3rAePDWe6oINOCAXo2aKAUbfyYq0UF1lsuRAHdy5sqfSDM0NfrE/
+	 BRkLd/Q84Rmgr+6v5OiR0492m8RuyJzj85kYkj3ofOEuA8fStSLTFOXhgrBoesWMkp
+	 /jy5GOPytQeMA==
+Date: Wed, 12 Nov 2025 10:20:45 -0600
+From: "Rob Herring (Arm)" <robh@kernel.org>
+To: Vladimir Oltean <vladimir.oltean@nxp.com>
+Cc: devicetree@vger.kernel.org, linux-phy@lists.infradead.org,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Ioana Ciornei <ioana.ciornei@nxp.com>,
+	Conor Dooley <conor+dt@kernel.org>, linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org, Kishon Vijay Abraham I <kishon@kernel.org>,
+	Josua Mayer <josua@solid-run.com>
+Subject: Re: [PATCH v4 phy 01/16] dt-bindings: phy: lynx-28g: permit lane OF
+ PHY providers
+Message-ID: <176296444496.1846369.12547968881654162757.robh@kernel.org>
+References: <20251110092241.1306838-1-vladimir.oltean@nxp.com>
+ <20251110092241.1306838-2-vladimir.oltean@nxp.com>
 MIME-Version: 1.0
-References: <20251112-phy-notify-pmstate-v4-0-717d78009d15@linaro.org>
- <20251112-phy-notify-pmstate-v4-1-717d78009d15@linaro.org> <aRSyTst8Vd-Qb2Ha@shell.armlinux.org.uk>
-In-Reply-To: <aRSyTst8Vd-Qb2Ha@shell.armlinux.org.uk>
-From: Peter Griffin <peter.griffin@linaro.org>
-Date: Wed, 12 Nov 2025 16:17:06 +0000
-X-Gm-Features: AWmQ_bmeUqnv9Axu23X8v5l7CIA0NkBrp9BKset-SthjnPv3fEKplJqCJGUzBUo
-Message-ID: <CADrjBPqPUOQThv+KmeYyUhMA1S5HL_F8FwTa_srcZM43P4GzyA@mail.gmail.com>
-Subject: Re: [PATCH v4 1/2] phy: add new phy_notify_state() api
-To: "Russell King (Oracle)" <linux@armlinux.org.uk>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
-	=?UTF-8?Q?Andr=C3=A9_Draszik?= <andre.draszik@linaro.org>, 
-	Tudor Ambarus <tudor.ambarus@linaro.org>, Alim Akhtar <alim.akhtar@samsung.com>, 
-	Krzysztof Kozlowski <krzk@kernel.org>, linux-phy@lists.infradead.org, 
-	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
-	linux-samsung-soc@vger.kernel.org, kernel-team@android.com, 
-	William Mcvicker <willmcvicker@google.com>, Manivannan Sadhasivam <mani@kernel.org>, neil.armstrong@linaro.org
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251112_081719_299490_5DD650F7 
-X-CRM114-Status: UNSURE (   8.50  )
-X-CRM114-Notice: Please train this message.
+Content-Disposition: inline
+In-Reply-To: <20251110092241.1306838-2-vladimir.oltean@nxp.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,33 +76,71 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Russell,
 
-On Wed, 12 Nov 2025 at 16:14, Russell King (Oracle)
-<linux@armlinux.org.uk> wrote:
->
-> On Wed, Nov 12, 2025 at 04:05:58PM +0000, Peter Griffin wrote:
-> > +int phy_notify_state(struct phy *phy, union phy_notify state)
-> ...
-> > @@ -255,6 +266,7 @@ int phy_reset(struct phy *phy);
-> >  int phy_calibrate(struct phy *phy);
-> >  int phy_notify_connect(struct phy *phy, int port);
-> >  int phy_notify_disconnect(struct phy *phy, int port);
-> > +int phy_notify_state(struct phy *phy, union phy_notify state);
-> >  static inline int phy_get_bus_width(struct phy *phy)
-> >  {
-> >       return phy->attrs.bus_width;
-> > @@ -412,6 +424,13 @@ static inline int phy_notify_disconnect(struct phy *phy, int index)
-> >       return -ENOSYS;
-> >  }
-> >
-> > +static inline int phy_notify_phystate(struct phy *phy, union phy_notify state)
->
-> Should this be phy_notify_state() ?
+On Mon, 10 Nov 2025 11:22:26 +0200, Vladimir Oltean wrote:
+> Josua Mayer requested to have OF nodes for each lane, so that he
+> (and other board developers) can further describe electrical parameters
+> individually.
+> 
+> For this use case, we need a container node to apply the already
+> existing Documentation/devicetree/bindings/phy/transmit-amplitude.yaml,
+> plus whatever other schemas might get standardized for TX equalization
+> parameters, polarity inversion etc.
+> 
+> When lane OF nodes exist, these are also PHY providers ("phys" phandles
+> can point directly to them). Compare that to the existing binding, where
+> the PHY provider is the top-level SerDes node, and the second cell in
+> the "phys" phandle specifies the lane index.
+> 
+> The new binding format overlaps over the old one without interfering,
+> but there is a caveat:
+> 
+> Existing device trees, which already have "phys = <&serdes1 0>" cannot
+> be converted to "phys = <&serdes_1_lane_a>", because in doing so, we
+> would break compatibility with old kernels which don't understand how to
+> translate the latter phandle to a PHY.
+> 
+> The transition to the new phandle format can be performed only after a
+> reasonable amount of time has elapsed after this schema change and the
+> corresponding driver change have been backported to stable kernels.
+> 
+> However, the aforementioned transition is not strictly necessary, and
+> the "hybrid" description (where individual lanes have their own OF node,
+> but are not pointed to by the "phys" phandle) can remain for an
+> indefinite amount of time, even if a little inelegant.
+> 
+> For newly introduced device trees, where there are no compatibility
+> concerns with old kernels to speak of, it is strongly recommended to use
+> the "phys = <&serdes_1_lane_a>" format. The same holds for phandles
+> towards lanes of LX2160A SerDes #3, which at the time of writing is not
+> yet described in fsl-lx2160a.dtsi, so there is no legacy to maintain.
+> 
+> To avoid the strange situation where we have a "phy" (SerDes node) ->
+> "phy" (lane node) hierarchy, let's rename the expected name of the
+> top-level node to "serdes", and update the example too. This has a
+> theoretical chance of causing regressions if bootloaders search for
+> hardcoded paths rather than using aliases, but to the best of my
+> knowledge, for LX2160A/LX2162A this is not the case.
+> 
+> Link: https://lore.kernel.org/lkml/02270f62-9334-400c-b7b9-7e6a44dbbfc9@solid-run.com/
+> Cc: Rob Herring <robh@kernel.org>
+> Cc: Krzysztof Kozlowski <krzk+dt@kernel.org>
+> Cc: Conor Dooley <conor+dt@kernel.org>
+> Cc: devicetree@vger.kernel.org
+> Cc: stable@vger.kernel.org
+> Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
+> ---
+> v3-v4: patch is new (broken out from previous "[PATCH v3 phy 12/17]
+>        dt-bindings: phy: lynx-28g: add compatible strings per SerDes
+>        and instantiation") to deal just with the lane OF nodes, in a
+>        backportable way
+> 
+>  .../devicetree/bindings/phy/fsl,lynx-28g.yaml | 71 ++++++++++++++++++-
+>  1 file changed, 70 insertions(+), 1 deletion(-)
+> 
 
-Yes, that's a good point! Let me send a new version fixing that.
+Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
 
-Peter
 
 -- 
 linux-phy mailing list
