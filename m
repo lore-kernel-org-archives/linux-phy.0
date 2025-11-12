@@ -4,90 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C748BCD3438
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Nov 2025 18:36:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 900D1CD343F
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Nov 2025 18:48:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=O0VArZErxiZVrJgukPwbfUEzEjzcfGUlvkpoodRkAOA=; b=1J1g82oXHuFBJuWjgpBqcBpHoT
-	n8P1vi7KshVNmsgLSaXPW9Nlw6uSBZl2NW0jqs5zsYofqCExE6JCukYm93P/ohUbzg2liqcpGZRmJ
-	tM3EaPPr4P1QIYMR98WVjg54Cx5c4kst9BKiFL/bX0MbZPfAC8A20CK7jy7E3Tlm5seic374qJJaS
-	g2djuYIpvi/0wfK4YGDYw0KIXG3Qf2XpbO9nrNNPwsh05tuS52Ellv5rp7b6oXqCIDWZEcimIqH0/
-	wiTJtr8Wrm1y8Idtjh+S/So/3wHw2BapnwEe0LDnDa1cyx743HDS7FaSfs9n1xCGPjOttUHBndcsO
-	X2X5TXhg==;
+	bh=twH/uuWZCVaTT+1qSihe8smh6BouKOC6T7VIUTO9UGw=; b=MAClQhE+0LO5EYmwebbzNNYq9i
+	pbvt4LukIfvI9zlq1mIxHTs57FSerQTDJBb7g6ej2XFutCY3EIWwsBwiRHNq5hJfIKXcLEDYs274s
+	5+rhPsD6DKOdIIlJe/3QhMabweI4v2FBFCeIwua3b1aOHDNfd+lmeu2+NSPzSrR+9FghOk1K7Nb5M
+	7XYeWZd1nkOcCJVuVeAW+CSCUy+QxKc7OmtBU04uABFmDcS5pyFi0aIRjR9PjpV0QB0hB5CaYCIBs
+	ST5CF3kaLxTizoktlnYwBJTiAc9l2KYNBDyONlRj6U+V/FUCrSrTojBNCBtlcBREUi5F0dMrs/9m5
+	v8069mlA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJFhr-00000009Mnj-2MV5;
-	Wed, 12 Nov 2025 18:36:35 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1vJFtI-00000009Nyf-0Lwy;
+	Wed, 12 Nov 2025 18:48:24 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJFhp-00000009MnC-06EO;
-	Wed, 12 Nov 2025 18:36:34 +0000
+	id 1vJFtH-00000009NyW-1UnZ
+	for linux-phy@lists.infradead.org;
+	Wed, 12 Nov 2025 18:48:23 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 34FCF40841;
-	Wed, 12 Nov 2025 18:36:32 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3A0D8C4CEF7;
-	Wed, 12 Nov 2025 18:36:25 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 72F56601A5;
+	Wed, 12 Nov 2025 18:48:22 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4F897C4CEF7;
+	Wed, 12 Nov 2025 18:48:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1762972592;
-	bh=WnOMdyUM9PIIBDXqCoag+EQM65Uhfsy8dLkk4QRpRf4=;
+	s=k20201202; t=1762973302;
+	bh=dxUWBNjSHg2QdfgaDnXYT/JYX+mehzTGcs5DtsDTJ9g=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=GI/5YeOfpZMmZVaVUwRR6Fbye59/PSnaqF/DdPeOXtxbGIbwfNWHeDbyV4p3QU59G
-	 +D16rYwVg8D32b2bSej61a9lz1kZvGXw4j2I4QZjsAGx51e7Ii55bzmRx4GzrabPNV
-	 mH65mLBEOVxrZrmT1myfF7c0stIgBhYKzqvc5IucEk7P5fdNM+Otbxh4ArAdwhvcMi
-	 NckYMl5HBmZIJ/uE9MEYAty8k1PvYxgpB8Jpndc0cf+bWFdSVcpht76AC40ennmRKz
-	 2VRPWg1FFoOgEYPXvOxetk/BAQlONtL5gVFzR85UdiF0GprVVpSdLPLtk9kodpMpah
-	 eazHG4E1gMLGA==
-Date: Wed, 12 Nov 2025 18:36:23 +0000
+	b=g3PAt5osYgKijUL2pFo/OcQJcuo8aKl5jV/Ro3uEVCVlD5OzT7hsi0AgBnOqQmH93
+	 MuRxEyLqIgFC3RVgXpZ4r4sQT55Jd5ifjR8X9CiHVoxQE7GStm6zBj87jmCiZbwTUz
+	 Z2dn9tro+uFRIdPzYPLS3Mj2nGDhhl/F/FjdvKikjLlzrj2/IWB1/hVX0K476FtIDc
+	 N3pPQLOTKoMyP0B46dd3/S1sLGEt+qaBX5Fm5PKAu2wUvLLpOdqQmzQUySwi1iBX3i
+	 8GRhi6DpOyCQ0cNxPJmzoymZA8KAomNA8jhW93SeN9tLnuAcwtgTQJgWwhw/0t6Jq9
+	 kSe7689rBQsMQ==
+Date: Wed, 12 Nov 2025 18:48:16 +0000
 From: Conor Dooley <conor@kernel.org>
-To: Icenowy Zheng <uwu@icenowy.me>
-Cc: Michal Wilczynski <m.wilczynski@samsung.com>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Emil Renner Berthing <kernel@esmil.dk>,
-	Hal Feng <hal.feng@starfivetech.com>,
-	Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>, Conor Dooley <conor+dt@kernel.org>,
-	Xingyu Wu <xingyu.wu@starfivetech.com>,
-	Vinod Koul <vkoul@kernel.org>,
+To: Rob Herring <robh@kernel.org>
+Cc: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>,
+	tomm.merciai@gmail.com, linux-renesas-soc@vger.kernel.org,
+	biju.das.jz@bp.renesas.com, Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Andrzej Hajda <andrzej.hajda@intel.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Robert Foss <rfoss@kernel.org>,
-	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
-	Jonas Karlman <jonas@kwiboo.se>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>, Lee Jones <lee@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Fabrizio Castro <fabrizio.castro.jz@renesas.com>,
+	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
 	Philipp Zabel <p.zabel@pengutronix.de>,
-	Paul Walmsley <paul.walmsley@sifive.com>,
-	Palmer Dabbelt <palmer@dabbelt.com>,
-	Albert Ou <aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>,
-	Marek Szyprowski <m.szyprowski@samsung.com>,
-	Maud Spierings <maudspierings@gocontroll.com>,
-	Andy Yan <andyshrk@163.com>, Heiko Stuebner <heiko@sntech.de>,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-clk@vger.kernel.org, linux-phy@lists.infradead.org,
-	dri-devel@lists.freedesktop.org, linux-riscv@lists.infradead.org
-Subject: Re: [PATCH RFC 01/13] dt-bindings: soc: starfive: Add vout-subsystem
- IP block
-Message-ID: <20251112-skating-robust-81be8dee0a8b@spud>
-References: <20251108-jh7110-clean-send-v1-0-06bf43bb76b1@samsung.com>
- <CGME20251108010453eucas1p2403ec0dd2c69ae7f3eabe19cf686f345@eucas1p2.samsung.com>
- <20251108-jh7110-clean-send-v1-1-06bf43bb76b1@samsung.com>
- <20251111-massager-twistable-1e88f03d82f8@spud>
- <20251111-unsaid-rockslide-67b88b2e34bd@spud>
- <0d8e3a626b037dd348378e5ebca8005c1e715871.camel@icenowy.me>
+	Peter Rosin <peda@axentia.se>,
+	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	Magnus Damm <magnus.damm@gmail.com>, Arnd Bergmann <arnd@arndb.de>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v3 04/21] dt-bindings: reset: renesas,rzv2h-usb2phy:
+ Document VBUS_SEL mux
+Message-ID: <20251112-launch-overcoat-18c3924b9b3f@spud>
+References: <cover.1762773720.git.tommaso.merciai.xr@bp.renesas.com>
+ <8fba0b7235bd398d41329fd087d68f7e98bbbaca.1762773720.git.tommaso.merciai.xr@bp.renesas.com>
+ <20251110-resonate-strict-c3d6c42f3e0d@spud>
+ <aRJqfh7p9M3NHfCS@tom-desktop>
+ <20251111-character-catnip-0832956a3fb1@spud>
+ <20251112163712.GA1850277-robh@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <0d8e3a626b037dd348378e5ebca8005c1e715871.camel@icenowy.me>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251112_103633_111089_D595AC1A 
-X-CRM114-Status: GOOD (  21.69  )
+In-Reply-To: <20251112163712.GA1850277-robh@kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,73 +83,110 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============5565922410889685840=="
+Content-Type: multipart/mixed; boundary="===============4950479212751082044=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============5565922410889685840==
+--===============4950479212751082044==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="z01jU0pczI5X5Okr"
+	protocol="application/pgp-signature"; boundary="Wi4VmUiHBPJH/1r5"
 Content-Disposition: inline
 
 
---z01jU0pczI5X5Okr
-Content-Type: text/plain; charset=utf-8
+--Wi4VmUiHBPJH/1r5
+Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Wed, Nov 12, 2025 at 02:34:39PM +0800, Icenowy Zheng wrote:
-> =E5=9C=A8 2025-11-11=E6=98=9F=E6=9C=9F=E4=BA=8C=E7=9A=84 18:36 +0000=EF=
-=BC=8CConor Dooley=E5=86=99=E9=81=93=EF=BC=9A
-> > On Tue, Nov 11, 2025 at 06:18:16PM +0000, Conor Dooley wrote:
-> > > On Sat, Nov 08, 2025 at 02:04:35AM +0100, Michal Wilczynski wrote:
-> > > > Add the dt-binding documentation for the StarFive JH7110 Video
-
-> > > > +patternProperties:
-> > > > +=C2=A0 "^display@[0-9a-f]+$":
-> > >=20
-> > > Personally I'd like to see these being regular properties, since
-> > > there's
-> > > exactly one possible setup for this.
-> > >=20
-> > > > +=C2=A0=C2=A0=C2=A0 type: object
-> > > > +=C2=A0=C2=A0=C2=A0 description: Verisilicon DC8200 Display Control=
-ler node.
-> > >=20
-> > > Can you add the relevant references here instead of allowing any
-> > > object?
+On Wed, Nov 12, 2025 at 10:37:12AM -0600, Rob Herring wrote:
+> On Tue, Nov 11, 2025 at 05:49:24PM +0000, Conor Dooley wrote:
+> > Tommaso, Rob,
 > >=20
-> > I don't think that if you did, this would pass the binding checks,
-> > because there's no "verisilicon,dc" binding. I think I saw one in
-> > progress, but without the soc-specific compatible that I am going to
-> > require here - if for no reason other than making sure that the
-> > clocks
-> > etc are provided correctly for this device.
+> > On Mon, Nov 10, 2025 at 11:43:37PM +0100, Tommaso Merciai wrote:
+> > > Hi Conor,
+> > > Thanks for your comment!
+> > >=20
+> > > On Mon, Nov 10, 2025 at 06:56:31PM +0000, Conor Dooley wrote:
+> > > > On Mon, Nov 10, 2025 at 01:08:04PM +0100, Tommaso Merciai wrote:
+> > > > > Document the 'mux-controller' child node in the Renesas RZ/V2H(P)
+> > > > > USB2PHY reset binding to support describing the USB VBUS_SEL
+> > > > > multiplexer as a mux-controller.
+> > > > >=20
+> > > > > This is required to properly configure the USB PHY VBUS source on
+> > > > > RZ/V2H(P), RZ/G3E SoCs.
+> > > > >=20
+> > > > > Signed-off-by: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
+> > > > > ---
+> > > > > v2->v3:
+> > > > >  - Manipulate mux-controller as an internal node.
+> > > >=20
+> > > > Why is it a child node, rather than just putting the cell in the pa=
+rent
+> > > > reset node?
+> > >=20
+> > > Getting "make dt_binding_check errors" [1] in v2
+> > > Adding #mux-state-cells =3D <1> into:
+> > >=20
+> > > 	usb20phyrst: reset-controller@15830000
+> > > 	usb21phyrst: reset-controller@15840000
+> > >=20
+> > > Nodes.
+> > >=20
+> > > Please correct me if I'm wrong.
+> >=20
+> > I think that that binding is not working as intended. Why require a
+> > node-name pattern, when it matches on other things too:
+> > select:
+> >   anyOf:
+> >     - properties:
+> >         $nodename:
+> >           pattern: '^mux-controller'
+> >     - required:
+> >         - '#mux-control-cells'
+> >     - required:
+> >         - '#mux-state-cells'
+> > if the node name always contained mux-controller, the second two here
+> > would not be needed. Looks to me like the intention was for it to allow
+> > putting these control/state-cells properties into mfd type nodes.
+> >=20
+> > I'd delete the node name property tbh. Rob, you converted this to
+> > schema, what do you think?
 >=20
-> Well I didn't specify any soc-specific compatible because that IP has
-> its own identification registers.
+> Yeah, I'd probably just comment it out and drop the select.
 
-I still require one because I want to make sure that clocks etc are
-handled correctly. You can ignore it in the driver if you wish, but when
-the next user comes along with one more or less clock, I want the
-jh7110 one to be forced to use the correct configuration.
+Is dropping the select okay to do, or should just the nodename portion
+go? I think there's a couple users that would need to be fixed up if the
+whole thing gets removed. E.g. gpio-mux and reg-mux bot rely on the
+schema being applied automagically AFAICT, and maybe there's some others.
+Although, 99% of mux-controllers seem to use gpio-mux, reg-mux and
+mmio-mux which are covered by those two files.
 
---z01jU0pczI5X5Okr
+> I'm not sure what to do here in general. Matching on node names was=20
+> useful early on, but that becomes less useful as we have schemas for=20
+> everything. I'd still like to document standard node names in schemas=20
+> somehow, but obviously we can't require a certain name when a node is=20
+> multiple providers. Ideally, every node name in the list in the DT spec=
+=20
+> would be in schemas and we could generate that list.
+>=20
+> Rob
+
+--Wi4VmUiHBPJH/1r5
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaRTTpwAKCRB4tDGHoIJi
-0n08APwON6v69gaWnOdNIAfYHKE57muDvt77iLW9YOkBpmJ8gQD/SCB3VfMB5jCd
-kGuaHJbvedczk5aTkG39KaIgYoNexAc=
-=8HDy
+iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaRTWbwAKCRB4tDGHoIJi
+0jBkAQD+fuaIvSWR60ndqX3CRSXBB7//qO2aOwu8ZSKwQj313gD/ebujckuMju4A
+5EbhixmUxssMpXa/u63PrjPIR9oGowI=
+=zSBW
 -----END PGP SIGNATURE-----
 
---z01jU0pczI5X5Okr--
+--Wi4VmUiHBPJH/1r5--
 
 
---===============5565922410889685840==
+--===============4950479212751082044==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -176,5 +197,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============5565922410889685840==--
+--===============4950479212751082044==--
 
