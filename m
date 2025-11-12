@@ -4,62 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 473B9CD3421
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Nov 2025 16:29:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8C0FECD13DD
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Nov 2025 16:37:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5DPU6VQfwXR115UgJn3utJfpL7xBOGLpoxzSIUbW0tw=; b=LomQRuB46Ky5Q3
-	JoxZUVsh4tMq4geuxYKCax96XcenGFc47MOhvEG4bldodk1gHLOwuLP+Vtn5mKx/TR+b5SAhOrsJw
-	ddmsPbs26mtSZNOlNsMWZ7jm2yW0G+yNykA+vNYusfcjT1x5ArRsRdKS/YWL5IuP3LS9DuQ31MbCM
-	OPg/Bfn+VDYAKs1/g0g9bQlcPKKWQ04T7KAMCHk1csAC9SW+L0rQ+GS+9S1eAxFU0sRdPAEVzjwa9
-	gutMh1EkHY7zqjHZGLT70JnSlGr90MVKJAZzAXNSzs7kSS086pjfULXzg6xdfBPWiQvqmmZq/PBN8
-	MdiPLHKSb8cWkODCjBSQ==;
+	List-Owner; bh=AW+4SVmCBAwIvgk9Lb4kMAjKtYfV+ImIluHW5SWZmQY=; b=3eV0ycp29k3C0v
+	MpoyyxRQQDIBwkU34peYplpIlBNC0+7266rQr4k6eeol0xWXSazY4xvfnQqbPbrni+Q2jfcF+R8hN
+	MzqPJH82oihPUJgnBj//t4Kb9Ysaj3OU1VuwcLnOK/pS1K7ChrkjJqJrJ9CrMJb71vhNIwtFt1BXJ
+	RGnBHquuPTU6i3IItKEubQlF4wuJMAnCkGtcbTX+CRcEDyszyiM0Xv1zFv3J5Smnw82Fv/nOfoUH7
+	DOSfarG6KSHOYhn0lW210LMtRrQNf1xAvcaK8HDBDu5XETtB3RB5DGECiePzpekxEpJpa7oIoaQqt
+	YoXY4YYj7nO4qUmiiX9w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJDj5-00000009BSI-3igJ;
-	Wed, 12 Nov 2025 16:29:43 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1vJDqP-00000009BuH-0xjo;
+	Wed, 12 Nov 2025 16:37:17 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJDj5-00000009BSB-00MW
+	id 1vJDqN-00000009Bu7-2txC
 	for linux-phy@lists.infradead.org;
-	Wed, 12 Nov 2025 16:29:43 +0000
+	Wed, 12 Nov 2025 16:37:15 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 16E2C601A5;
-	Wed, 12 Nov 2025 16:29:42 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 39F77C4CEF1;
-	Wed, 12 Nov 2025 16:29:40 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id CAFB2601B9;
+	Wed, 12 Nov 2025 16:37:14 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 496C3C4CEF5;
+	Wed, 12 Nov 2025 16:37:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1762964981;
-	bh=DP5D2zjQPq84AdGMdpDugauF+Uw5VjnEZ/jSz0bVjQU=;
+	s=k20201202; t=1762965434;
+	bh=oowPZ540cX44zaHpABNfot6LitLXzhEHziYTiD86060=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=Umd7piN3+04i8gvUPVvGaPzCgGl9OYviITEvXRjtjkY1zWB08XfPwM596K5Xx+yTT
-	 6jlBuI7jmtuhSTV7HXyJghjYGq5GvSUuhsHoVQf8x7f6Efsa18iC+7AbtoXVU0DQ6u
-	 7BUti4EwiDji9mD8ATudxo8+lYjVmK1qJZxU6Ok6WQAjwL78NTMNsJg58rwKM9fp0X
-	 2n1VDrUQ4c6yPc2d25GV8oAYeb+103t3lBtA8GMELK9WhJ+C8+NnE2+2IHyfEW8YMy
-	 3I20JVe9pmiZnDbpF0qEFXF0ZvGvKvTeFJmY/VBdros8N5KrXxzSxt0pI09T3CsiQG
-	 aywUJlcTIjY8A==
-Date: Wed, 12 Nov 2025 10:33:58 -0600
-From: Bjorn Andersson <andersson@kernel.org>
-To: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
-Cc: konradybcio@kernel.org, robh@kernel.org, krzk+dt@kernel.org, 
-	conor+dt@kernel.org, jingoohan1@gmail.com, mani@kernel.org, lpieralisi@kernel.org, 
-	kwilczynski@kernel.org, bhelgaas@google.com, johan+linaro@kernel.org, vkoul@kernel.org, 
-	kishon@kernel.org, neil.armstrong@linaro.org, abel.vesa@linaro.org, kw@linux.com, 
-	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org, qiang.yu@oss.qualcomm.com, 
-	krishna.chundru@oss.qualcomm.com, quic_vbadigan@quicinc.com
-Subject: Re: [PATCH v3 2/2] arm64: dts: qcom: Add PCIe3 and PCIe5 regulators
- for HAMAO-IOT-EVK board
-Message-ID: <6iuuosajwue35goout6ohpdbmdoahc6f3gxicliiin6wq3ggjh@m7nkqnsxq63h>
-References: <20251112090316.936187-1-ziyue.zhang@oss.qualcomm.com>
- <20251112090316.936187-3-ziyue.zhang@oss.qualcomm.com>
+	b=C49xMFRcBVwukuEBj8w7WVJkJdl2b6q7XKOX7iyjoj46RwGJVJdZjGt4jvbUyfvH+
+	 pEho5CCRnuL3R712dZdjFptpRjKnPadSWo3NL2LuQ947HDE2J6L5IycFMYZm6N1N4I
+	 yHDN7Olr6pMhU5D0IoH/EUNJLbgzmKfHQoJeN2dMYVWgQyztFgvsXFgUv9V5Q5dXcO
+	 PSyJWnbufZdpOEJSo86sJgSCEr3dj8p2KaJ8i9ba6oDjKwphY8Hz7JH3EvmuLq7ISM
+	 N4Ms1vr+nJYY8nJyP/j9+lPVNygBhaE+l4NAwkv0DAjAsD2kXiit3ZenoD0WhtKqXV
+	 jCrsEHE2su+bA==
+Date: Wed, 12 Nov 2025 10:37:12 -0600
+From: Rob Herring <robh@kernel.org>
+To: Conor Dooley <conor@kernel.org>
+Cc: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>,
+	tomm.merciai@gmail.com, linux-renesas-soc@vger.kernel.org,
+	biju.das.jz@bp.renesas.com, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Fabrizio Castro <fabrizio.castro.jz@renesas.com>,
+	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Peter Rosin <peda@axentia.se>,
+	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	Magnus Damm <magnus.damm@gmail.com>, Arnd Bergmann <arnd@arndb.de>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v3 04/21] dt-bindings: reset: renesas,rzv2h-usb2phy:
+ Document VBUS_SEL mux
+Message-ID: <20251112163712.GA1850277-robh@kernel.org>
+References: <cover.1762773720.git.tommaso.merciai.xr@bp.renesas.com>
+ <8fba0b7235bd398d41329fd087d68f7e98bbbaca.1762773720.git.tommaso.merciai.xr@bp.renesas.com>
+ <20251110-resonate-strict-c3d6c42f3e0d@spud>
+ <aRJqfh7p9M3NHfCS@tom-desktop>
+ <20251111-character-catnip-0832956a3fb1@spud>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20251112090316.936187-3-ziyue.zhang@oss.qualcomm.com>
+In-Reply-To: <20251111-character-catnip-0832956a3fb1@spud>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,146 +88,68 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Nov 12, 2025 at 05:03:16PM +0800, Ziyue Zhang wrote:
-> HAMAO IoT EVK uses PCIe5 to connect an SDX65 module for WWAN functionality
-> and PCIe3 to connect a SATA controller. These interfaces require multiple
-> voltage rails: PCIe5 needs 3.3V supplied by vreg_wwan, while PCIe3 requires
-> 12V, 3.3V, and 3.3V AUX rails, controlled via PMIC GPIOs.
+On Tue, Nov 11, 2025 at 05:49:24PM +0000, Conor Dooley wrote:
+> Tommaso, Rob,
 > 
+> On Mon, Nov 10, 2025 at 11:43:37PM +0100, Tommaso Merciai wrote:
+> > Hi Conor,
+> > Thanks for your comment!
+> > 
+> > On Mon, Nov 10, 2025 at 06:56:31PM +0000, Conor Dooley wrote:
+> > > On Mon, Nov 10, 2025 at 01:08:04PM +0100, Tommaso Merciai wrote:
+> > > > Document the 'mux-controller' child node in the Renesas RZ/V2H(P)
+> > > > USB2PHY reset binding to support describing the USB VBUS_SEL
+> > > > multiplexer as a mux-controller.
+> > > > 
+> > > > This is required to properly configure the USB PHY VBUS source on
+> > > > RZ/V2H(P), RZ/G3E SoCs.
+> > > > 
+> > > > Signed-off-by: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
+> > > > ---
+> > > > v2->v3:
+> > > >  - Manipulate mux-controller as an internal node.
+> > > 
+> > > Why is it a child node, rather than just putting the cell in the parent
+> > > reset node?
+> > 
+> > Getting "make dt_binding_check errors" [1] in v2
+> > Adding #mux-state-cells = <1> into:
+> > 
+> > 	usb20phyrst: reset-controller@15830000
+> > 	usb21phyrst: reset-controller@15840000
+> > 
+> > Nodes.
+> > 
+> > Please correct me if I'm wrong.
+> 
+> I think that that binding is not working as intended. Why require a
+> node-name pattern, when it matches on other things too:
+> select:
+>   anyOf:
+>     - properties:
+>         $nodename:
+>           pattern: '^mux-controller'
+>     - required:
+>         - '#mux-control-cells'
+>     - required:
+>         - '#mux-state-cells'
+> if the node name always contained mux-controller, the second two here
+> would not be needed. Looks to me like the intention was for it to allow
+> putting these control/state-cells properties into mfd type nodes.
+> 
+> I'd delete the node name property tbh. Rob, you converted this to
+> schema, what do you think?
 
-I love it! Thank you for the clear description.
+Yeah, I'd probably just comment it out and drop the select.
 
-Regards,
-Bjorn
+I'm not sure what to do here in general. Matching on node names was 
+useful early on, but that becomes less useful as we have schemas for 
+everything. I'd still like to document standard node names in schemas 
+somehow, but obviously we can't require a certain name when a node is 
+multiple providers. Ideally, every node name in the list in the DT spec 
+would be in schemas and we could generate that list.
 
-> Add the required fixed regulators with related pin configuration, and
-> connect them to the PCIe3 and PCIe5 ports to ensure proper power for the
-> SDX65 module and SATA controller.
-> 
-> Signed-off-by: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
-> Reviewed-by: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
-> ---
->  arch/arm64/boot/dts/qcom/hamoa-iot-evk.dts | 83 ++++++++++++++++++++++
->  1 file changed, 83 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/qcom/hamoa-iot-evk.dts b/arch/arm64/boot/dts/qcom/hamoa-iot-evk.dts
-> index 36dd6599402b..ac17f7cb8b3d 100644
-> --- a/arch/arm64/boot/dts/qcom/hamoa-iot-evk.dts
-> +++ b/arch/arm64/boot/dts/qcom/hamoa-iot-evk.dts
-> @@ -199,6 +199,48 @@ vreg_nvme: regulator-nvme {
->  		regulator-boot-on;
->  	};
->  
-> +	vreg_pcie_12v: regulator-pcie-12v {
-> +		compatible = "regulator-fixed";
-> +
-> +		regulator-name = "VREG_PCIE_12V";
-> +		regulator-min-microvolt = <12000000>;
-> +		regulator-max-microvolt = <12000000>;
-> +
-> +		gpio = <&pm8550ve_8_gpios 8 GPIO_ACTIVE_HIGH>;
-> +		enable-active-high;
-> +
-> +		pinctrl-0 = <&pcie_x8_12v>;
-> +		pinctrl-names = "default";
-> +	};
-> +
-> +	vreg_pcie_3v3: regulator-pcie-3v3 {
-> +		compatible = "regulator-fixed";
-> +
-> +		regulator-name = "VREG_PCIE_3P3";
-> +		regulator-min-microvolt = <3300000>;
-> +		regulator-max-microvolt = <3300000>;
-> +
-> +		gpio = <&pmc8380_3_gpios 6 GPIO_ACTIVE_HIGH>;
-> +		enable-active-high;
-> +
-> +		pinctrl-0 = <&pm_sde7_main_3p3_en>;
-> +		pinctrl-names = "default";
-> +	};
-> +
-> +	vreg_pcie_3v3_aux: regulator-pcie-3v3-aux {
-> +		compatible = "regulator-fixed";
-> +
-> +		regulator-name = "VREG_PCIE_3P3_AUX";
-> +		regulator-min-microvolt = <3300000>;
-> +		regulator-max-microvolt = <3300000>;
-> +
-> +		gpio = <&pmc8380_3_gpios 8 GPIO_ACTIVE_HIGH>;
-> +		enable-active-high;
-> +
-> +		pinctrl-0 = <&pm_sde7_aux_3p3_en>;
-> +		pinctrl-names = "default";
-> +	};
-> +
->  	/* Left unused as the retimer is not used on this board. */
->  	vreg_rtmr0_1p15: regulator-rtmr0-1p15 {
->  		compatible = "regulator-fixed";
-> @@ -844,6 +886,16 @@ &mdss_dp3_phy {
->  	status = "okay";
->  };
->  
-> +&pcie3_port {
-> +	vpcie12v-supply = <&vreg_pcie_12v>;
-> +	vpcie3v3-supply = <&vreg_pcie_3v3>;
-> +	vpcie3v3aux-supply = <&vreg_pcie_3v3_aux>;
-> +};
-> +
-> +&pcie5 {
-> +	vddpe-3v3-supply = <&vreg_wwan>;
-> +};
-> +
->  &pcie6a {
->  	vddpe-3v3-supply = <&vreg_nvme>;
->  };
-> @@ -868,6 +920,17 @@ usb0_3p3_reg_en: usb0-3p3-reg-en-state {
->  	};
->  };
->  
-> +&pm8550ve_8_gpios {
-> +	pcie_x8_12v: pcie-12v-default-state {
-> +		pins = "gpio8";
-> +		function = "normal";
-> +		output-enable;
-> +		output-high;
-> +		bias-pull-down;
-> +		power-source = <0>;
-> +	};
-> +};
-> +
->  &pm8550ve_9_gpios {
->  	usb0_1p8_reg_en: usb0-1p8-reg-en-state {
->  		pins = "gpio8";
-> @@ -879,6 +942,26 @@ usb0_1p8_reg_en: usb0-1p8-reg-en-state {
->  	};
->  };
->  
-> +&pmc8380_3_gpios {
-> +	pm_sde7_aux_3p3_en: pcie-aux-3p3-default-state {
-> +		pins = "gpio8";
-> +		function = "normal";
-> +		output-enable;
-> +		output-high;
-> +		bias-pull-down;
-> +		power-source = <0>;
-> +	};
-> +
-> +	pm_sde7_main_3p3_en: pcie-main-3p3-default-state {
-> +		pins = "gpio6";
-> +		function = "normal";
-> +		output-enable;
-> +		output-high;
-> +		bias-pull-down;
-> +		power-source = <0>;
-> +	};
-> +};
-> +
->  &pmc8380_5_gpios {
->  	usb0_pwr_1p15_reg_en: usb0-pwr-1p15-reg-en-state {
->  		pins = "gpio8";
-> -- 
-> 2.34.1
-> 
+Rob
 
 -- 
 linux-phy mailing list
