@@ -4,74 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8C0FECD13DD
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Nov 2025 16:37:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 592C2CD343C
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Nov 2025 18:32:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AW+4SVmCBAwIvgk9Lb4kMAjKtYfV+ImIluHW5SWZmQY=; b=3eV0ycp29k3C0v
-	MpoyyxRQQDIBwkU34peYplpIlBNC0+7266rQr4k6eeol0xWXSazY4xvfnQqbPbrni+Q2jfcF+R8hN
-	MzqPJH82oihPUJgnBj//t4Kb9Ysaj3OU1VuwcLnOK/pS1K7ChrkjJqJrJ9CrMJb71vhNIwtFt1BXJ
-	RGnBHquuPTU6i3IItKEubQlF4wuJMAnCkGtcbTX+CRcEDyszyiM0Xv1zFv3J5Smnw82Fv/nOfoUH7
-	DOSfarG6KSHOYhn0lW210LMtRrQNf1xAvcaK8HDBDu5XETtB3RB5DGECiePzpekxEpJpa7oIoaQqt
-	YoXY4YYj7nO4qUmiiX9w==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=xEYU0pRw4Cue0du0wBWQFOtsbpi17uY8uV9SE1Jebcc=; b=AN2+PasdliOQZ9wRcQiWDjsdOx
+	Ec5hj2TUmwSmCYrTDdWDd+ccO3VE+s/8kqeHRuICVwEyU6Uj2L/ErKuBB43kXpxbYvw652XfSOokr
+	rzXKo2o0DT500EWQi99zpCkRswbkX/3XnyTSRQwMKoDSzUstW8AKHOeGVwrYQUUH9z23TR+uf4iaX
+	KrJlcOcegv5cMUxCedlDWHAFl6XySemxgp7Is8pR9MMkeXr97IRiitEsSKROb8l85dE8Kkxe5QPhx
+	UEW6CPExMORGy6/XNGuGhZBPQXA2yU0YFFasabKDMRFjjkdeN2l1vXQ1rMW4meLKu/TQ3VsHKZG3k
+	LEPY6BoA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJDqP-00000009BuH-0xjo;
-	Wed, 12 Nov 2025 16:37:17 +0000
+	id 1vJFdX-00000009MD9-45mD;
+	Wed, 12 Nov 2025 18:32:07 +0000
 Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJDqN-00000009Bu7-2txC
+	id 1vJFdX-00000009MCd-08TI
 	for linux-phy@lists.infradead.org;
-	Wed, 12 Nov 2025 16:37:15 +0000
+	Wed, 12 Nov 2025 18:32:07 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id CAFB2601B9;
-	Wed, 12 Nov 2025 16:37:14 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 496C3C4CEF5;
-	Wed, 12 Nov 2025 16:37:14 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 220E9601AF;
+	Wed, 12 Nov 2025 18:32:06 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CAA60C4CEF1;
+	Wed, 12 Nov 2025 18:32:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1762965434;
-	bh=oowPZ540cX44zaHpABNfot6LitLXzhEHziYTiD86060=;
+	s=k20201202; t=1762972325;
+	bh=rhYHIaDeRlqkfmPOJcKkkL6MWk98Yo8FHzQg9ppxXiw=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=C49xMFRcBVwukuEBj8w7WVJkJdl2b6q7XKOX7iyjoj46RwGJVJdZjGt4jvbUyfvH+
-	 pEho5CCRnuL3R712dZdjFptpRjKnPadSWo3NL2LuQ947HDE2J6L5IycFMYZm6N1N4I
-	 yHDN7Olr6pMhU5D0IoH/EUNJLbgzmKfHQoJeN2dMYVWgQyztFgvsXFgUv9V5Q5dXcO
-	 PSyJWnbufZdpOEJSo86sJgSCEr3dj8p2KaJ8i9ba6oDjKwphY8Hz7JH3EvmuLq7ISM
-	 N4Ms1vr+nJYY8nJyP/j9+lPVNygBhaE+l4NAwkv0DAjAsD2kXiit3ZenoD0WhtKqXV
-	 jCrsEHE2su+bA==
-Date: Wed, 12 Nov 2025 10:37:12 -0600
-From: Rob Herring <robh@kernel.org>
-To: Conor Dooley <conor@kernel.org>
-Cc: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>,
-	tomm.merciai@gmail.com, linux-renesas-soc@vger.kernel.org,
-	biju.das.jz@bp.renesas.com, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Fabrizio Castro <fabrizio.castro.jz@renesas.com>,
-	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Peter Rosin <peda@axentia.se>,
-	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
-	Geert Uytterhoeven <geert+renesas@glider.be>,
-	Magnus Damm <magnus.damm@gmail.com>, Arnd Bergmann <arnd@arndb.de>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v3 04/21] dt-bindings: reset: renesas,rzv2h-usb2phy:
- Document VBUS_SEL mux
-Message-ID: <20251112163712.GA1850277-robh@kernel.org>
-References: <cover.1762773720.git.tommaso.merciai.xr@bp.renesas.com>
- <8fba0b7235bd398d41329fd087d68f7e98bbbaca.1762773720.git.tommaso.merciai.xr@bp.renesas.com>
- <20251110-resonate-strict-c3d6c42f3e0d@spud>
- <aRJqfh7p9M3NHfCS@tom-desktop>
- <20251111-character-catnip-0832956a3fb1@spud>
+	b=XxgUJKucqwpnqFajquRl8Zd0vK+MfyA65TGjwcjY+tJlFdF3RFAk7NAAGp9567X+3
+	 2f+we+WKmh3O3LlAxx3dlAGlzeCnLftFkwyfkCoQt24ZAqfn1wV5N+8xevaCWM/Qi0
+	 rgNRzafPx7FZzdTOuUuy9S8b/lSz8bLksBHzXHtZvBfCJ7zXVc6Nij5fcJZn5UYEus
+	 bEDdHhVu0rnWAZmXJQ/TEYxdV2YS2hlyq8lZdqZuWWDB9WCDQhk6GmY5eBfovjQKzf
+	 d/MTO7p1tHRDeqwOtltFxZJ0pGz+JagVC5SVl07WrvlCyBy5iOFoI5i93P/64hli+I
+	 NXOkZYD5QQoJA==
+Date: Wed, 12 Nov 2025 18:32:01 +0000
+From: Conor Dooley <conor@kernel.org>
+To: Horatiu Vultur <horatiu.vultur@microchip.com>
+Cc: Krzysztof Kozlowski <krzk@kernel.org>, vkoul@kernel.org,
+	kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
+	conor+dt@kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 2/2] dt-bindings: phy: lan966x: Add optional
+ microchip,sx-tx/rx-inverted
+Message-ID: <20251112-junkman-buckle-31fcfcbfa3c5@spud>
+References: <20251110110536.2596490-1-horatiu.vultur@microchip.com>
+ <20251110110536.2596490-3-horatiu.vultur@microchip.com>
+ <20251110-unwound-award-a11d69b9da4f@spud>
+ <20251111095831.lp4kvdfcahtwgrqc@DEN-DL-M31836.microchip.com>
+ <58b0d712-48a4-4490-a63f-404716844557@kernel.org>
+ <20251111-ploy-dispersal-164ae403df4d@spud>
+ <20251112080235.c5iinfnketsunefy@DEN-DL-M31836.microchip.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20251111-character-catnip-0832956a3fb1@spud>
+In-Reply-To: <20251112080235.c5iinfnketsunefy@DEN-DL-M31836.microchip.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,75 +72,92 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============1470073930730368504=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Nov 11, 2025 at 05:49:24PM +0000, Conor Dooley wrote:
-> Tommaso, Rob,
-> 
-> On Mon, Nov 10, 2025 at 11:43:37PM +0100, Tommaso Merciai wrote:
-> > Hi Conor,
-> > Thanks for your comment!
-> > 
-> > On Mon, Nov 10, 2025 at 06:56:31PM +0000, Conor Dooley wrote:
-> > > On Mon, Nov 10, 2025 at 01:08:04PM +0100, Tommaso Merciai wrote:
-> > > > Document the 'mux-controller' child node in the Renesas RZ/V2H(P)
-> > > > USB2PHY reset binding to support describing the USB VBUS_SEL
-> > > > multiplexer as a mux-controller.
-> > > > 
-> > > > This is required to properly configure the USB PHY VBUS source on
-> > > > RZ/V2H(P), RZ/G3E SoCs.
-> > > > 
-> > > > Signed-off-by: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
-> > > > ---
-> > > > v2->v3:
-> > > >  - Manipulate mux-controller as an internal node.
-> > > 
-> > > Why is it a child node, rather than just putting the cell in the parent
-> > > reset node?
-> > 
-> > Getting "make dt_binding_check errors" [1] in v2
-> > Adding #mux-state-cells = <1> into:
-> > 
-> > 	usb20phyrst: reset-controller@15830000
-> > 	usb21phyrst: reset-controller@15840000
-> > 
-> > Nodes.
-> > 
-> > Please correct me if I'm wrong.
-> 
-> I think that that binding is not working as intended. Why require a
-> node-name pattern, when it matches on other things too:
-> select:
->   anyOf:
->     - properties:
->         $nodename:
->           pattern: '^mux-controller'
->     - required:
->         - '#mux-control-cells'
->     - required:
->         - '#mux-state-cells'
-> if the node name always contained mux-controller, the second two here
-> would not be needed. Looks to me like the intention was for it to allow
-> putting these control/state-cells properties into mfd type nodes.
-> 
-> I'd delete the node name property tbh. Rob, you converted this to
-> schema, what do you think?
 
-Yeah, I'd probably just comment it out and drop the select.
+--===============1470073930730368504==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="5ULl6H7+uUD9DWU7"
+Content-Disposition: inline
 
-I'm not sure what to do here in general. Matching on node names was 
-useful early on, but that becomes less useful as we have schemas for 
-everything. I'd still like to document standard node names in schemas 
-somehow, but obviously we can't require a certain name when a node is 
-multiple providers. Ideally, every node name in the list in the DT spec 
-would be in schemas and we could generate that list.
 
-Rob
+--5ULl6H7+uUD9DWU7
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Wed, Nov 12, 2025 at 09:02:35AM +0100, Horatiu Vultur wrote:
+> The 11/11/2025 17:39, Conor Dooley wrote:
+> > On Tue, Nov 11, 2025 at 11:06:02AM +0100, Krzysztof Kozlowski wrote:
+> > > On 11/11/2025 10:58, Horatiu Vultur wrote:
+> > > > The 11/10/2025 18:43, Conor Dooley wrote:
+> > > >=20
+> > > > Hi Conor,
+> > > >=20
+> > > >> On Mon, Nov 10, 2025 at 12:05:36PM +0100, Horatiu Vultur wrote:
+> > > >>> This allows to invert the N and P signals of the RX and TX Serdes
+> > > >>> signals. This option allows the board designer to trace their sig=
+nals
+> > > >>> easier on the boards.
+> > > >>
+> > > >> Why can't this just be done in software, debugfs or something like=
+ that?
+> > > >> Maybe it's just your description is poor, but sounds like the inte=
+ntion
+> > > >> here is to just switch things around for debug purposes.
+> > > >=20
+> > > > I don't think it should be done through debugfs. As this describes =
+the
+> > > > board layout and I don't think someone will want to change it at
+> > > > runtime to see how things behave. So maybe the description is poor.
+> > >=20
+> > > You said it is purely for hardware designer to trace signals, so sorr=
+y,
+> > > but that's not DTs purpose.
+> >=20
+> > If it is not purely some sort of debug helper, then please explain
+> > better in your commit message.
+>=20
+> Yes, I will do so because I don't see how this is a debug helper
+> functionality. I see it as changing the polarity of some pins and there
+
+The word "trace" here might be problematic? Maybe you meant something
+like "lay out", but all of the use of the word tracing in electronics
+that I have ever seen refers to troubleshooting - be that physically
+following signals to see if there's degradation or things like the
+trace framework in linux.
+
+> are few examples in the devicetree bindings where pins change the
+> polarity. Why I see it as changing the polarity is because the
+> N(negative) will become P(positive) and the P(positive) will become the
+> N(negative), so we just invert the signals.
+
+--5ULl6H7+uUD9DWU7
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaRTSoQAKCRB4tDGHoIJi
+0imiAQCuvPVj5pCt0I4n4uPayM4eKjorWxB+tswfVsc6jE04EwEAusBqIYkcPuvM
+u0XmSCHD6wSTz43Y5uWyQdojJ+Pqswg=
+=t3BV
+-----END PGP SIGNATURE-----
+
+--5ULl6H7+uUD9DWU7--
+
+
+--===============1470073930730368504==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============1470073930730368504==--
+
