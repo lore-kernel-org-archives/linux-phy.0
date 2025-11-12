@@ -4,112 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 000C8CD3421
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Nov 2025 16:27:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 473B9CD3421
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Nov 2025 16:29:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fZYIjW14QGW/rpgvq/W1UB4IeDbLjoVg8U2Kru+T/ew=; b=FybubdBEKpojY5
-	T3ueyD4ITubu3Nxh01DLpAKuUEbcWooE3lEvFunhw+lc/W17pMEe1qtvRTNaSemCMWik77iSXgFZ0
-	DsNks9I8z8/xk580QJd3WYOftgYgy4c1tccW61++m///1LI+iocN3tGJARxGLzXArDLhNPC8tpGEA
-	NxVnIy9pCHUeD7fye5NebVGeSy5TTFkxRzyBRBuclWvsYJeTgNysuXvD+qGH//8Q4Edk4O4bxeO3I
-	j38M4NF/FQ/DGYpW7PGeJPYonV5D1aYkDSA8/GbJtIwyTWXc1VzL0wXBipplDe5nPUzKa8aQjsNYz
-	ju/iWN78+4m13Pavddxg==;
+	List-Owner; bh=5DPU6VQfwXR115UgJn3utJfpL7xBOGLpoxzSIUbW0tw=; b=LomQRuB46Ky5Q3
+	JoxZUVsh4tMq4geuxYKCax96XcenGFc47MOhvEG4bldodk1gHLOwuLP+Vtn5mKx/TR+b5SAhOrsJw
+	ddmsPbs26mtSZNOlNsMWZ7jm2yW0G+yNykA+vNYusfcjT1x5ArRsRdKS/YWL5IuP3LS9DuQ31MbCM
+	OPg/Bfn+VDYAKs1/g0g9bQlcPKKWQ04T7KAMCHk1csAC9SW+L0rQ+GS+9S1eAxFU0sRdPAEVzjwa9
+	gutMh1EkHY7zqjHZGLT70JnSlGr90MVKJAZzAXNSzs7kSS086pjfULXzg6xdfBPWiQvqmmZq/PBN8
+	MdiPLHKSb8cWkODCjBSQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJDgq-00000009B7U-365G;
-	Wed, 12 Nov 2025 16:27:24 +0000
-Received: from mail-wm1-x336.google.com ([2a00:1450:4864:20::336])
+	id 1vJDj5-00000009BSI-3igJ;
+	Wed, 12 Nov 2025 16:29:43 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJDgl-00000009B3k-1fsR
+	id 1vJDj5-00000009BSB-00MW
 	for linux-phy@lists.infradead.org;
-	Wed, 12 Nov 2025 16:27:20 +0000
-Received: by mail-wm1-x336.google.com with SMTP id 5b1f17b1804b1-477619f8ae5so8394825e9.3
-        for <linux-phy@lists.infradead.org>; Wed, 12 Nov 2025 08:27:18 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1762964837; x=1763569637; darn=lists.infradead.org;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=3zf+/GCTzFTCgE5kx1XIhvvkdps3fbhzPkXxT6Wkygo=;
-        b=D9rGyvha0584Dh4ulD9iU5raXJaG0EIg2N9tZ2W/oJvbBwwnV94ovc3x4aUd1su3JP
-         mVhCgeeEweC4uAkqnbfYWWPbQWUJRYNgTzlQY7T62Aj02rii+Qtr18mxvCsV/FXgOosC
-         MV67ey55/70BPQ7vrz9bM0tV6/UpzW4PJDAEoyrXla9IifDk9k39l4pNYqcfoXkyP1d3
-         Fk2QKZvMtBREWKRb5VBEFNfFJT2WQc515tk6FxlDI9XtsK4KwdK4KaRCagySE/gu6egw
-         d3UeNx/Hu16AkxiDWPpvni4sqhFXwhvO2xcHbkcEci4YjkTOIXQq4EjVRBP2ZegF+thF
-         /c/w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1762964837; x=1763569637;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:x-gm-gg:x-gm-message-state:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=3zf+/GCTzFTCgE5kx1XIhvvkdps3fbhzPkXxT6Wkygo=;
-        b=e7EwWo/URHeuNHRLGyF/IqyBmo52wKR0Jo2YH4qtQKDfLSFx034KvDiCxf/UUnDYPC
-         zGDZ8RheT4DC6+Yt4Md6OIYeMIad5FgiZx4vMyYRFzDFDgFtW5gVA+ZerDq0JuhxI0+N
-         WwOYAtwFVHzv0F6WBHXnAL14nNGFzlUMLoglGnDQR4vgpZjzmEbDrLTj7YcF+nVvYn6H
-         XHKoGh57SrDMw5bjSq1O19LUi7pWymcSRx5jBRbb0GtnYa5EhH41sFrxXLB0eCdRLf71
-         xyi8BaQkOBOpspjznXfa73LxG/gJD3zdYrMYVXYmScHUvgnpAWlMaejmZu2ehjj57cLo
-         /4zQ==
-X-Gm-Message-State: AOJu0YyFHUk+5Puu3dTHFGlcErQbaVhMB2giZmhFI0c09y7yXC/AKW0y
-	5g8Ef6bAllzO4HrGigj+nkbM3OrAwstJKi/sR2LdLw0v/BgwRPJijurkg2W+XSf7YivHzcSPv7J
-	ZNDR84Ns=
-X-Gm-Gg: ASbGnctoT0Ts+SoVBg/7HzWjnK+hF/ZR6EW5eB+8gP9NkHuO8/nMjkWXZBWZ43s9hPL
-	ecdxwbBShYi9aSDeSrZFGwtZEimUJb1HfEJR1KGgdupdnQZQpkLn96winlw/rkJ1HYN6MvUEBIF
-	/SP/SiizJb6EgLBnEQo4c5AVdZ6XMid10c9p+TnaYhWsHODolD7km8TRcj+ES337xaEvU7RDHAh
-	lNHj4l5Pfp8SyhcrcjCWinARlASbiq4S5TLAwMLzmGiQEWFgGfu3qyydvjdIwW5j9u1zhq3sJ/H
-	PevFj6fgC+cHUvXX+yFO2tXexWox4gP8ODdyVgaXNzxPF0eaMAJuoYw9jXHUELzonHobdWLCJww
-	ZeAU3IbVSLhAd4eBBl20gJjT4jyVrIROtpnUyHUtedHOlrQV+EwHCXJwmBvFmk2VMC6ZOnoBGom
-	PMOZZsfdJPYiGqhy3zAsvKO5AVmR2tNQo=
-X-Google-Smtp-Source: AGHT+IGbQBT6h9D+QiV3NZeclPrdWfHO3lE+CnYRzD/4ItKJuieqX8JUgxpLYyCA2DaWGs9ABKZfZA==
-X-Received: by 2002:a05:600c:8b22:b0:477:63dc:be00 with SMTP id 5b1f17b1804b1-47787086655mr33058775e9.25.1762964837199;
-        Wed, 12 Nov 2025 08:27:17 -0800 (PST)
-Received: from gpeter-l.roam.corp.google.com ([145.224.66.100])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-47787e36ca3sm48534815e9.5.2025.11.12.08.27.15
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 12 Nov 2025 08:27:16 -0800 (PST)
-From: Peter Griffin <peter.griffin@linaro.org>
-Date: Wed, 12 Nov 2025 16:27:07 +0000
-Subject: [PATCH v5 2/2] phy: samsung: gs101-ufs: Add .notify_phystate() &
- hibern8 enter/exit values
+	Wed, 12 Nov 2025 16:29:43 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 16E2C601A5;
+	Wed, 12 Nov 2025 16:29:42 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 39F77C4CEF1;
+	Wed, 12 Nov 2025 16:29:40 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1762964981;
+	bh=DP5D2zjQPq84AdGMdpDugauF+Uw5VjnEZ/jSz0bVjQU=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=Umd7piN3+04i8gvUPVvGaPzCgGl9OYviITEvXRjtjkY1zWB08XfPwM596K5Xx+yTT
+	 6jlBuI7jmtuhSTV7HXyJghjYGq5GvSUuhsHoVQf8x7f6Efsa18iC+7AbtoXVU0DQ6u
+	 7BUti4EwiDji9mD8ATudxo8+lYjVmK1qJZxU6Ok6WQAjwL78NTMNsJg58rwKM9fp0X
+	 2n1VDrUQ4c6yPc2d25GV8oAYeb+103t3lBtA8GMELK9WhJ+C8+NnE2+2IHyfEW8YMy
+	 3I20JVe9pmiZnDbpF0qEFXF0ZvGvKvTeFJmY/VBdros8N5KrXxzSxt0pI09T3CsiQG
+	 aywUJlcTIjY8A==
+Date: Wed, 12 Nov 2025 10:33:58 -0600
+From: Bjorn Andersson <andersson@kernel.org>
+To: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
+Cc: konradybcio@kernel.org, robh@kernel.org, krzk+dt@kernel.org, 
+	conor+dt@kernel.org, jingoohan1@gmail.com, mani@kernel.org, lpieralisi@kernel.org, 
+	kwilczynski@kernel.org, bhelgaas@google.com, johan+linaro@kernel.org, vkoul@kernel.org, 
+	kishon@kernel.org, neil.armstrong@linaro.org, abel.vesa@linaro.org, kw@linux.com, 
+	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org, qiang.yu@oss.qualcomm.com, 
+	krishna.chundru@oss.qualcomm.com, quic_vbadigan@quicinc.com
+Subject: Re: [PATCH v3 2/2] arm64: dts: qcom: Add PCIe3 and PCIe5 regulators
+ for HAMAO-IOT-EVK board
+Message-ID: <6iuuosajwue35goout6ohpdbmdoahc6f3gxicliiin6wq3ggjh@m7nkqnsxq63h>
+References: <20251112090316.936187-1-ziyue.zhang@oss.qualcomm.com>
+ <20251112090316.936187-3-ziyue.zhang@oss.qualcomm.com>
 MIME-Version: 1.0
-Message-Id: <20251112-phy-notify-pmstate-v5-2-39df622d8fcb@linaro.org>
-References: <20251112-phy-notify-pmstate-v5-0-39df622d8fcb@linaro.org>
-In-Reply-To: <20251112-phy-notify-pmstate-v5-0-39df622d8fcb@linaro.org>
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- =?utf-8?q?Andr=C3=A9_Draszik?= <andre.draszik@linaro.org>, 
- Tudor Ambarus <tudor.ambarus@linaro.org>, 
- Alim Akhtar <alim.akhtar@samsung.com>, 
- Krzysztof Kozlowski <krzk@kernel.org>
-Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org, 
- kernel-team@android.com, William Mcvicker <willmcvicker@google.com>, 
- Manivannan Sadhasivam <mani@kernel.org>, neil.armstrong@linaro.org, 
- Peter Griffin <peter.griffin@linaro.org>
-X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=5855;
- i=peter.griffin@linaro.org; h=from:subject:message-id;
- bh=ZkTyvzs3kiErZLDD09beyCa4zgS6txIDoNMnbc53+tY=;
- b=owEBbQKS/ZANAwAKAc7ouNYCNHK6AcsmYgBpFLVfwlZ5jst5dZK7+RF0jA51MBaOdzMVv/kjL
- xcH1R87WhSJAjMEAAEKAB0WIQQO/I5vVXh1DVa1SfzO6LjWAjRyugUCaRS1XwAKCRDO6LjWAjRy
- utY0D/4sWragFjlosVxmET+0kZGsxeZNRi/7KobzDWh8KPTwpWOjtFZ0jEYq7e/lCmyWaKbqRK3
- AopubMfgLd5aVJpavGeSQNki7Mclzw34Y013JC+5EK9+0fcQIZ+5XBY452ipzmXUqbILM51Psqw
- LxZwfTy5+KfWVNQtH1OjVmtBXZT4D4js5fAhw9svh7AHQefpQpOxxQd9Diq9ZVsNlivopmBxOwg
- tyq/Rk75SvyYCJVcwGNJIf8vkWRlzO0gL2UWAvElzvx1PckfqzsjscDntF1jvZC7zb//Cc7i/73
- MD7lm0YIpj9NTYMsrp/S57zXDEGsSkwuUfrinROfsDEt1GKVy0x5grhYLJlrikObGlgUPzVad3a
- s9VoVJAn1MMZzOlbY/TaHbzipsdBmzRS4Be1mnoVlmhVviBvZOdHQEwx1/E7R+tKQdB50jvnsEp
- QjDukapygIb9xPt9rSGE2eoRMbQWvG2wOm8LZHaQnsXS+oiXlf4AbuXMUE+TbwSReceSsD9Dufd
- szvDKlxO+kwk0oIvXhv0KrI/ffWkhL5xM+ehg98Xrl7rc49VCxo/6PqvRmkpdOc+J1zAMWdCm7a
- XrtXSrJbq4lJvzxooZA1CqBIMVtvY2GXgmTD40tnZj2RGiqg8Tk3hLMgvb/9kbC4g/3x0oDWXHl
- ysVzOtkmaxPD3Ag==
-X-Developer-Key: i=peter.griffin@linaro.org; a=openpgp;
- fpr=0EFC8E6F5578750D56B549FCCEE8B8D6023472BA
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251112_082719_475457_3ADDB58E 
-X-CRM114-Status: GOOD (  14.95  )
+Content-Disposition: inline
+In-Reply-To: <20251112090316.936187-3-ziyue.zhang@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -126,173 +76,146 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Implement the .notify_phystate() callback and provide the gs101 specific
-phy values that need to be programmed when entering and exiting the hibern8
-state.
+On Wed, Nov 12, 2025 at 05:03:16PM +0800, Ziyue Zhang wrote:
+> HAMAO IoT EVK uses PCIe5 to connect an SDX65 module for WWAN functionality
+> and PCIe3 to connect a SATA controller. These interfaces require multiple
+> voltage rails: PCIe5 needs 3.3V supplied by vreg_wwan, while PCIe3 requires
+> 12V, 3.3V, and 3.3V AUX rails, controlled via PMIC GPIOs.
+> 
 
-Signed-off-by: Peter Griffin <peter.griffin@linaro.org>
----
-Changes in v4
- - Resolve Intel 0-day warning
----
- drivers/phy/samsung/phy-gs101-ufs.c   | 28 ++++++++++++++++++++++++
- drivers/phy/samsung/phy-samsung-ufs.c | 40 +++++++++++++++++++++++++++++++++++
- drivers/phy/samsung/phy-samsung-ufs.h |  7 ++++++
- 3 files changed, 75 insertions(+)
+I love it! Thank you for the clear description.
 
-diff --git a/drivers/phy/samsung/phy-gs101-ufs.c b/drivers/phy/samsung/phy-gs101-ufs.c
-index 17b798da5b5761f8e367599517d2d97bf0bb6b74..a15e1f453f7f3cecd6d3aa75217633ac4b6085d0 100644
---- a/drivers/phy/samsung/phy-gs101-ufs.c
-+++ b/drivers/phy/samsung/phy-gs101-ufs.c
-@@ -108,12 +108,39 @@ static const struct samsung_ufs_phy_cfg tensor_gs101_post_pwr_hs_config[] = {
- 	END_UFS_PHY_CFG,
- };
- 
-+static const struct samsung_ufs_phy_cfg tensor_gs101_post_h8_enter[] = {
-+	PHY_TRSV_REG_CFG_GS101(0x262, 0x08, PWR_MODE_ANY),
-+	PHY_TRSV_REG_CFG_GS101(0x265, 0x0A, PWR_MODE_ANY),
-+	PHY_COMN_REG_CFG(0x1, 0x8,  PWR_MODE_ANY),
-+	PHY_COMN_REG_CFG(0x0, 0x86,  PWR_MODE_ANY),
-+	PHY_COMN_REG_CFG(0x8, 0x60,  PWR_MODE_HS_ANY),
-+	PHY_TRSV_REG_CFG_GS101(0x222, 0x08, PWR_MODE_HS_ANY),
-+	PHY_TRSV_REG_CFG_GS101(0x246, 0x01, PWR_MODE_HS_ANY),
-+	END_UFS_PHY_CFG,
-+};
-+
-+static const struct samsung_ufs_phy_cfg tensor_gs101_pre_h8_exit[] = {
-+	PHY_COMN_REG_CFG(0x0, 0xC6,  PWR_MODE_ANY),
-+	PHY_COMN_REG_CFG(0x1, 0x0C,  PWR_MODE_ANY),
-+	PHY_TRSV_REG_CFG_GS101(0x262, 0x00, PWR_MODE_ANY),
-+	PHY_TRSV_REG_CFG_GS101(0x265, 0x00, PWR_MODE_ANY),
-+	PHY_COMN_REG_CFG(0x8, 0xE0,  PWR_MODE_HS_ANY),
-+	PHY_TRSV_REG_CFG_GS101(0x246, 0x03, PWR_MODE_HS_ANY),
-+	PHY_TRSV_REG_CFG_GS101(0x222, 0x18, PWR_MODE_HS_ANY),
-+	END_UFS_PHY_CFG,
-+};
-+
- static const struct samsung_ufs_phy_cfg *tensor_gs101_ufs_phy_cfgs[CFG_TAG_MAX] = {
- 	[CFG_PRE_INIT]		= tensor_gs101_pre_init_cfg,
- 	[CFG_PRE_PWR_HS]	= tensor_gs101_pre_pwr_hs_config,
- 	[CFG_POST_PWR_HS]	= tensor_gs101_post_pwr_hs_config,
- };
- 
-+static const struct samsung_ufs_phy_cfg *tensor_gs101_hibern8_cfgs[] = {
-+	[CFG_POST_HIBERN8_ENTER]	= tensor_gs101_post_h8_enter,
-+	[CFG_PRE_HIBERN8_EXIT]		= tensor_gs101_pre_h8_exit,
-+};
-+
- static const char * const tensor_gs101_ufs_phy_clks[] = {
- 	"ref_clk",
- };
-@@ -170,6 +197,7 @@ static int gs101_phy_wait_for_cdr_lock(struct phy *phy, u8 lane)
- 
- const struct samsung_ufs_phy_drvdata tensor_gs101_ufs_phy = {
- 	.cfgs = tensor_gs101_ufs_phy_cfgs,
-+	.cfgs_hibern8 = tensor_gs101_hibern8_cfgs,
- 	.isol = {
- 		.offset = TENSOR_GS101_PHY_CTRL,
- 		.mask = TENSOR_GS101_PHY_CTRL_MASK,
-diff --git a/drivers/phy/samsung/phy-samsung-ufs.c b/drivers/phy/samsung/phy-samsung-ufs.c
-index f3cbe6b17b235bb181b3fae628d75822f0c9183a..ee665f26c2361ff9c3933b10ac713bbd9085b459 100644
---- a/drivers/phy/samsung/phy-samsung-ufs.c
-+++ b/drivers/phy/samsung/phy-samsung-ufs.c
-@@ -217,6 +217,44 @@ static int samsung_ufs_phy_set_mode(struct phy *generic_phy,
- 	return 0;
- }
- 
-+static int samsung_ufs_phy_notify_state(struct phy *phy,
-+					union phy_notify state)
-+{
-+	struct samsung_ufs_phy *ufs_phy = get_samsung_ufs_phy(phy);
-+	const struct samsung_ufs_phy_cfg *cfg;
-+	int i, err = -EINVAL;
-+
-+	if (!ufs_phy->cfgs_hibern8)
-+		return 0;
-+
-+	if (state.ufs_state == PHY_UFS_HIBERN8_ENTER)
-+		cfg = ufs_phy->cfgs_hibern8[CFG_POST_HIBERN8_ENTER];
-+	else if (state.ufs_state == PHY_UFS_HIBERN8_EXIT)
-+		cfg = ufs_phy->cfgs_hibern8[CFG_PRE_HIBERN8_EXIT];
-+	else
-+		goto err_out;
-+
-+	for_each_phy_cfg(cfg) {
-+		for_each_phy_lane(ufs_phy, i) {
-+			samsung_ufs_phy_config(ufs_phy, cfg, i);
-+		}
-+	}
-+
-+	if (state.ufs_state == PHY_UFS_HIBERN8_EXIT) {
-+		for_each_phy_lane(ufs_phy, i) {
-+			if (ufs_phy->drvdata->wait_for_cdr) {
-+				err = ufs_phy->drvdata->wait_for_cdr(phy, i);
-+				if (err)
-+					goto err_out;
-+			}
-+		}
-+	}
-+
-+	return 0;
-+err_out:
-+	return err;
-+}
-+
- static int samsung_ufs_phy_exit(struct phy *phy)
- {
- 	struct samsung_ufs_phy *ss_phy = get_samsung_ufs_phy(phy);
-@@ -233,6 +271,7 @@ static const struct phy_ops samsung_ufs_phy_ops = {
- 	.power_off	= samsung_ufs_phy_power_off,
- 	.calibrate	= samsung_ufs_phy_calibrate,
- 	.set_mode	= samsung_ufs_phy_set_mode,
-+	.notify_phystate = samsung_ufs_phy_notify_state,
- 	.owner          = THIS_MODULE,
- };
- 
-@@ -287,6 +326,7 @@ static int samsung_ufs_phy_probe(struct platform_device *pdev)
- 	phy->dev = dev;
- 	phy->drvdata = drvdata;
- 	phy->cfgs = drvdata->cfgs;
-+	phy->cfgs_hibern8 = drvdata->cfgs_hibern8;
- 	memcpy(&phy->isol, &drvdata->isol, sizeof(phy->isol));
- 
- 	if (!of_property_read_u32_index(dev->of_node, "samsung,pmu-syscon", 1,
-diff --git a/drivers/phy/samsung/phy-samsung-ufs.h b/drivers/phy/samsung/phy-samsung-ufs.h
-index a28f148081d168344b47f2798b00cb098f0a8574..f2c2e744e5bae87c9cfcaa17f4a09456f134966a 100644
---- a/drivers/phy/samsung/phy-samsung-ufs.h
-+++ b/drivers/phy/samsung/phy-samsung-ufs.h
-@@ -92,6 +92,11 @@ enum {
- 	CFG_TAG_MAX,
- };
- 
-+enum {
-+	CFG_POST_HIBERN8_ENTER,
-+	CFG_PRE_HIBERN8_EXIT,
-+};
-+
- struct samsung_ufs_phy_cfg {
- 	u32 off_0;
- 	u32 off_1;
-@@ -108,6 +113,7 @@ struct samsung_ufs_phy_pmu_isol {
- 
- struct samsung_ufs_phy_drvdata {
- 	const struct samsung_ufs_phy_cfg **cfgs;
-+	const struct samsung_ufs_phy_cfg **cfgs_hibern8;
- 	struct samsung_ufs_phy_pmu_isol isol;
- 	const char * const *clk_list;
- 	int num_clks;
-@@ -124,6 +130,7 @@ struct samsung_ufs_phy {
- 	struct clk_bulk_data *clks;
- 	const struct samsung_ufs_phy_drvdata *drvdata;
- 	const struct samsung_ufs_phy_cfg * const *cfgs;
-+	const struct samsung_ufs_phy_cfg * const *cfgs_hibern8;
- 	struct samsung_ufs_phy_pmu_isol isol;
- 	u8 lane_cnt;
- 	int ufs_phy_state;
+Regards,
+Bjorn
 
--- 
-2.51.2.1041.gc1ab5b90ca-goog
-
+> Add the required fixed regulators with related pin configuration, and
+> connect them to the PCIe3 and PCIe5 ports to ensure proper power for the
+> SDX65 module and SATA controller.
+> 
+> Signed-off-by: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
+> Reviewed-by: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
+> ---
+>  arch/arm64/boot/dts/qcom/hamoa-iot-evk.dts | 83 ++++++++++++++++++++++
+>  1 file changed, 83 insertions(+)
+> 
+> diff --git a/arch/arm64/boot/dts/qcom/hamoa-iot-evk.dts b/arch/arm64/boot/dts/qcom/hamoa-iot-evk.dts
+> index 36dd6599402b..ac17f7cb8b3d 100644
+> --- a/arch/arm64/boot/dts/qcom/hamoa-iot-evk.dts
+> +++ b/arch/arm64/boot/dts/qcom/hamoa-iot-evk.dts
+> @@ -199,6 +199,48 @@ vreg_nvme: regulator-nvme {
+>  		regulator-boot-on;
+>  	};
+>  
+> +	vreg_pcie_12v: regulator-pcie-12v {
+> +		compatible = "regulator-fixed";
+> +
+> +		regulator-name = "VREG_PCIE_12V";
+> +		regulator-min-microvolt = <12000000>;
+> +		regulator-max-microvolt = <12000000>;
+> +
+> +		gpio = <&pm8550ve_8_gpios 8 GPIO_ACTIVE_HIGH>;
+> +		enable-active-high;
+> +
+> +		pinctrl-0 = <&pcie_x8_12v>;
+> +		pinctrl-names = "default";
+> +	};
+> +
+> +	vreg_pcie_3v3: regulator-pcie-3v3 {
+> +		compatible = "regulator-fixed";
+> +
+> +		regulator-name = "VREG_PCIE_3P3";
+> +		regulator-min-microvolt = <3300000>;
+> +		regulator-max-microvolt = <3300000>;
+> +
+> +		gpio = <&pmc8380_3_gpios 6 GPIO_ACTIVE_HIGH>;
+> +		enable-active-high;
+> +
+> +		pinctrl-0 = <&pm_sde7_main_3p3_en>;
+> +		pinctrl-names = "default";
+> +	};
+> +
+> +	vreg_pcie_3v3_aux: regulator-pcie-3v3-aux {
+> +		compatible = "regulator-fixed";
+> +
+> +		regulator-name = "VREG_PCIE_3P3_AUX";
+> +		regulator-min-microvolt = <3300000>;
+> +		regulator-max-microvolt = <3300000>;
+> +
+> +		gpio = <&pmc8380_3_gpios 8 GPIO_ACTIVE_HIGH>;
+> +		enable-active-high;
+> +
+> +		pinctrl-0 = <&pm_sde7_aux_3p3_en>;
+> +		pinctrl-names = "default";
+> +	};
+> +
+>  	/* Left unused as the retimer is not used on this board. */
+>  	vreg_rtmr0_1p15: regulator-rtmr0-1p15 {
+>  		compatible = "regulator-fixed";
+> @@ -844,6 +886,16 @@ &mdss_dp3_phy {
+>  	status = "okay";
+>  };
+>  
+> +&pcie3_port {
+> +	vpcie12v-supply = <&vreg_pcie_12v>;
+> +	vpcie3v3-supply = <&vreg_pcie_3v3>;
+> +	vpcie3v3aux-supply = <&vreg_pcie_3v3_aux>;
+> +};
+> +
+> +&pcie5 {
+> +	vddpe-3v3-supply = <&vreg_wwan>;
+> +};
+> +
+>  &pcie6a {
+>  	vddpe-3v3-supply = <&vreg_nvme>;
+>  };
+> @@ -868,6 +920,17 @@ usb0_3p3_reg_en: usb0-3p3-reg-en-state {
+>  	};
+>  };
+>  
+> +&pm8550ve_8_gpios {
+> +	pcie_x8_12v: pcie-12v-default-state {
+> +		pins = "gpio8";
+> +		function = "normal";
+> +		output-enable;
+> +		output-high;
+> +		bias-pull-down;
+> +		power-source = <0>;
+> +	};
+> +};
+> +
+>  &pm8550ve_9_gpios {
+>  	usb0_1p8_reg_en: usb0-1p8-reg-en-state {
+>  		pins = "gpio8";
+> @@ -879,6 +942,26 @@ usb0_1p8_reg_en: usb0-1p8-reg-en-state {
+>  	};
+>  };
+>  
+> +&pmc8380_3_gpios {
+> +	pm_sde7_aux_3p3_en: pcie-aux-3p3-default-state {
+> +		pins = "gpio8";
+> +		function = "normal";
+> +		output-enable;
+> +		output-high;
+> +		bias-pull-down;
+> +		power-source = <0>;
+> +	};
+> +
+> +	pm_sde7_main_3p3_en: pcie-main-3p3-default-state {
+> +		pins = "gpio6";
+> +		function = "normal";
+> +		output-enable;
+> +		output-high;
+> +		bias-pull-down;
+> +		power-source = <0>;
+> +	};
+> +};
+> +
+>  &pmc8380_5_gpios {
+>  	usb0_pwr_1p15_reg_en: usb0-pwr-1p15-reg-en-state {
+>  		pins = "gpio8";
+> -- 
+> 2.34.1
+> 
 
 -- 
 linux-phy mailing list
