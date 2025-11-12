@@ -4,63 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 592C2CD343C
-	for <linux-phy@archiver.kernel.org>; Wed, 12 Nov 2025 18:32:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C748BCD3438
+	for <linux-phy@archiver.kernel.org>; Wed, 12 Nov 2025 18:36:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=xEYU0pRw4Cue0du0wBWQFOtsbpi17uY8uV9SE1Jebcc=; b=AN2+PasdliOQZ9wRcQiWDjsdOx
-	Ec5hj2TUmwSmCYrTDdWDd+ccO3VE+s/8kqeHRuICVwEyU6Uj2L/ErKuBB43kXpxbYvw652XfSOokr
-	rzXKo2o0DT500EWQi99zpCkRswbkX/3XnyTSRQwMKoDSzUstW8AKHOeGVwrYQUUH9z23TR+uf4iaX
-	KrJlcOcegv5cMUxCedlDWHAFl6XySemxgp7Is8pR9MMkeXr97IRiitEsSKROb8l85dE8Kkxe5QPhx
-	UEW6CPExMORGy6/XNGuGhZBPQXA2yU0YFFasabKDMRFjjkdeN2l1vXQ1rMW4meLKu/TQ3VsHKZG3k
-	LEPY6BoA==;
+	bh=O0VArZErxiZVrJgukPwbfUEzEjzcfGUlvkpoodRkAOA=; b=1J1g82oXHuFBJuWjgpBqcBpHoT
+	n8P1vi7KshVNmsgLSaXPW9Nlw6uSBZl2NW0jqs5zsYofqCExE6JCukYm93P/ohUbzg2liqcpGZRmJ
+	tM3EaPPr4P1QIYMR98WVjg54Cx5c4kst9BKiFL/bX0MbZPfAC8A20CK7jy7E3Tlm5seic374qJJaS
+	g2djuYIpvi/0wfK4YGDYw0KIXG3Qf2XpbO9nrNNPwsh05tuS52Ellv5rp7b6oXqCIDWZEcimIqH0/
+	wiTJtr8Wrm1y8Idtjh+S/So/3wHw2BapnwEe0LDnDa1cyx743HDS7FaSfs9n1xCGPjOttUHBndcsO
+	X2X5TXhg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJFdX-00000009MD9-45mD;
-	Wed, 12 Nov 2025 18:32:07 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vJFhr-00000009Mnj-2MV5;
+	Wed, 12 Nov 2025 18:36:35 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJFdX-00000009MCd-08TI
-	for linux-phy@lists.infradead.org;
-	Wed, 12 Nov 2025 18:32:07 +0000
+	id 1vJFhp-00000009MnC-06EO;
+	Wed, 12 Nov 2025 18:36:34 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 220E9601AF;
-	Wed, 12 Nov 2025 18:32:06 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id CAA60C4CEF1;
-	Wed, 12 Nov 2025 18:32:03 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 34FCF40841;
+	Wed, 12 Nov 2025 18:36:32 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3A0D8C4CEF7;
+	Wed, 12 Nov 2025 18:36:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1762972325;
-	bh=rhYHIaDeRlqkfmPOJcKkkL6MWk98Yo8FHzQg9ppxXiw=;
+	s=k20201202; t=1762972592;
+	bh=WnOMdyUM9PIIBDXqCoag+EQM65Uhfsy8dLkk4QRpRf4=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=XxgUJKucqwpnqFajquRl8Zd0vK+MfyA65TGjwcjY+tJlFdF3RFAk7NAAGp9567X+3
-	 2f+we+WKmh3O3LlAxx3dlAGlzeCnLftFkwyfkCoQt24ZAqfn1wV5N+8xevaCWM/Qi0
-	 rgNRzafPx7FZzdTOuUuy9S8b/lSz8bLksBHzXHtZvBfCJ7zXVc6Nij5fcJZn5UYEus
-	 bEDdHhVu0rnWAZmXJQ/TEYxdV2YS2hlyq8lZdqZuWWDB9WCDQhk6GmY5eBfovjQKzf
-	 d/MTO7p1tHRDeqwOtltFxZJ0pGz+JagVC5SVl07WrvlCyBy5iOFoI5i93P/64hli+I
-	 NXOkZYD5QQoJA==
-Date: Wed, 12 Nov 2025 18:32:01 +0000
+	b=GI/5YeOfpZMmZVaVUwRR6Fbye59/PSnaqF/DdPeOXtxbGIbwfNWHeDbyV4p3QU59G
+	 +D16rYwVg8D32b2bSej61a9lz1kZvGXw4j2I4QZjsAGx51e7Ii55bzmRx4GzrabPNV
+	 mH65mLBEOVxrZrmT1myfF7c0stIgBhYKzqvc5IucEk7P5fdNM+Otbxh4ArAdwhvcMi
+	 NckYMl5HBmZIJ/uE9MEYAty8k1PvYxgpB8Jpndc0cf+bWFdSVcpht76AC40ennmRKz
+	 2VRPWg1FFoOgEYPXvOxetk/BAQlONtL5gVFzR85UdiF0GprVVpSdLPLtk9kodpMpah
+	 eazHG4E1gMLGA==
+Date: Wed, 12 Nov 2025 18:36:23 +0000
 From: Conor Dooley <conor@kernel.org>
-To: Horatiu Vultur <horatiu.vultur@microchip.com>
-Cc: Krzysztof Kozlowski <krzk@kernel.org>, vkoul@kernel.org,
-	kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
-	conor+dt@kernel.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 2/2] dt-bindings: phy: lan966x: Add optional
- microchip,sx-tx/rx-inverted
-Message-ID: <20251112-junkman-buckle-31fcfcbfa3c5@spud>
-References: <20251110110536.2596490-1-horatiu.vultur@microchip.com>
- <20251110110536.2596490-3-horatiu.vultur@microchip.com>
- <20251110-unwound-award-a11d69b9da4f@spud>
- <20251111095831.lp4kvdfcahtwgrqc@DEN-DL-M31836.microchip.com>
- <58b0d712-48a4-4490-a63f-404716844557@kernel.org>
- <20251111-ploy-dispersal-164ae403df4d@spud>
- <20251112080235.c5iinfnketsunefy@DEN-DL-M31836.microchip.com>
+To: Icenowy Zheng <uwu@icenowy.me>
+Cc: Michal Wilczynski <m.wilczynski@samsung.com>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Emil Renner Berthing <kernel@esmil.dk>,
+	Hal Feng <hal.feng@starfivetech.com>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>, Conor Dooley <conor+dt@kernel.org>,
+	Xingyu Wu <xingyu.wu@starfivetech.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Andrzej Hajda <andrzej.hajda@intel.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Robert Foss <rfoss@kernel.org>,
+	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+	Jonas Karlman <jonas@kwiboo.se>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>, Lee Jones <lee@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Paul Walmsley <paul.walmsley@sifive.com>,
+	Palmer Dabbelt <palmer@dabbelt.com>,
+	Albert Ou <aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>,
+	Marek Szyprowski <m.szyprowski@samsung.com>,
+	Maud Spierings <maudspierings@gocontroll.com>,
+	Andy Yan <andyshrk@163.com>, Heiko Stuebner <heiko@sntech.de>,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-clk@vger.kernel.org, linux-phy@lists.infradead.org,
+	dri-devel@lists.freedesktop.org, linux-riscv@lists.infradead.org
+Subject: Re: [PATCH RFC 01/13] dt-bindings: soc: starfive: Add vout-subsystem
+ IP block
+Message-ID: <20251112-skating-robust-81be8dee0a8b@spud>
+References: <20251108-jh7110-clean-send-v1-0-06bf43bb76b1@samsung.com>
+ <CGME20251108010453eucas1p2403ec0dd2c69ae7f3eabe19cf686f345@eucas1p2.samsung.com>
+ <20251108-jh7110-clean-send-v1-1-06bf43bb76b1@samsung.com>
+ <20251111-massager-twistable-1e88f03d82f8@spud>
+ <20251111-unsaid-rockslide-67b88b2e34bd@spud>
+ <0d8e3a626b037dd348378e5ebca8005c1e715871.camel@icenowy.me>
 MIME-Version: 1.0
-In-Reply-To: <20251112080235.c5iinfnketsunefy@DEN-DL-M31836.microchip.com>
+In-Reply-To: <0d8e3a626b037dd348378e5ebca8005c1e715871.camel@icenowy.me>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20251112_103633_111089_D595AC1A 
+X-CRM114-Status: GOOD (  21.69  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,83 +99,73 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============1470073930730368504=="
+Content-Type: multipart/mixed; boundary="===============5565922410889685840=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============1470073930730368504==
+--===============5565922410889685840==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="5ULl6H7+uUD9DWU7"
+	protocol="application/pgp-signature"; boundary="z01jU0pczI5X5Okr"
 Content-Disposition: inline
 
 
---5ULl6H7+uUD9DWU7
-Content-Type: text/plain; charset=us-ascii
+--z01jU0pczI5X5Okr
+Content-Type: text/plain; charset=utf-8
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Wed, Nov 12, 2025 at 09:02:35AM +0100, Horatiu Vultur wrote:
-> The 11/11/2025 17:39, Conor Dooley wrote:
-> > On Tue, Nov 11, 2025 at 11:06:02AM +0100, Krzysztof Kozlowski wrote:
-> > > On 11/11/2025 10:58, Horatiu Vultur wrote:
-> > > > The 11/10/2025 18:43, Conor Dooley wrote:
-> > > >=20
-> > > > Hi Conor,
-> > > >=20
-> > > >> On Mon, Nov 10, 2025 at 12:05:36PM +0100, Horatiu Vultur wrote:
-> > > >>> This allows to invert the N and P signals of the RX and TX Serdes
-> > > >>> signals. This option allows the board designer to trace their sig=
-nals
-> > > >>> easier on the boards.
-> > > >>
-> > > >> Why can't this just be done in software, debugfs or something like=
- that?
-> > > >> Maybe it's just your description is poor, but sounds like the inte=
-ntion
-> > > >> here is to just switch things around for debug purposes.
-> > > >=20
-> > > > I don't think it should be done through debugfs. As this describes =
-the
-> > > > board layout and I don't think someone will want to change it at
-> > > > runtime to see how things behave. So maybe the description is poor.
+On Wed, Nov 12, 2025 at 02:34:39PM +0800, Icenowy Zheng wrote:
+> =E5=9C=A8 2025-11-11=E6=98=9F=E6=9C=9F=E4=BA=8C=E7=9A=84 18:36 +0000=EF=
+=BC=8CConor Dooley=E5=86=99=E9=81=93=EF=BC=9A
+> > On Tue, Nov 11, 2025 at 06:18:16PM +0000, Conor Dooley wrote:
+> > > On Sat, Nov 08, 2025 at 02:04:35AM +0100, Michal Wilczynski wrote:
+> > > > Add the dt-binding documentation for the StarFive JH7110 Video
+
+> > > > +patternProperties:
+> > > > +=C2=A0 "^display@[0-9a-f]+$":
 > > >=20
-> > > You said it is purely for hardware designer to trace signals, so sorr=
-y,
-> > > but that's not DTs purpose.
+> > > Personally I'd like to see these being regular properties, since
+> > > there's
+> > > exactly one possible setup for this.
+> > >=20
+> > > > +=C2=A0=C2=A0=C2=A0 type: object
+> > > > +=C2=A0=C2=A0=C2=A0 description: Verisilicon DC8200 Display Control=
+ler node.
+> > >=20
+> > > Can you add the relevant references here instead of allowing any
+> > > object?
 > >=20
-> > If it is not purely some sort of debug helper, then please explain
-> > better in your commit message.
+> > I don't think that if you did, this would pass the binding checks,
+> > because there's no "verisilicon,dc" binding. I think I saw one in
+> > progress, but without the soc-specific compatible that I am going to
+> > require here - if for no reason other than making sure that the
+> > clocks
+> > etc are provided correctly for this device.
 >=20
-> Yes, I will do so because I don't see how this is a debug helper
-> functionality. I see it as changing the polarity of some pins and there
+> Well I didn't specify any soc-specific compatible because that IP has
+> its own identification registers.
 
-The word "trace" here might be problematic? Maybe you meant something
-like "lay out", but all of the use of the word tracing in electronics
-that I have ever seen refers to troubleshooting - be that physically
-following signals to see if there's degradation or things like the
-trace framework in linux.
+I still require one because I want to make sure that clocks etc are
+handled correctly. You can ignore it in the driver if you wish, but when
+the next user comes along with one more or less clock, I want the
+jh7110 one to be forced to use the correct configuration.
 
-> are few examples in the devicetree bindings where pins change the
-> polarity. Why I see it as changing the polarity is because the
-> N(negative) will become P(positive) and the P(positive) will become the
-> N(negative), so we just invert the signals.
-
---5ULl6H7+uUD9DWU7
+--z01jU0pczI5X5Okr
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaRTSoQAKCRB4tDGHoIJi
-0imiAQCuvPVj5pCt0I4n4uPayM4eKjorWxB+tswfVsc6jE04EwEAusBqIYkcPuvM
-u0XmSCHD6wSTz43Y5uWyQdojJ+Pqswg=
-=t3BV
+iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaRTTpwAKCRB4tDGHoIJi
+0n08APwON6v69gaWnOdNIAfYHKE57muDvt77iLW9YOkBpmJ8gQD/SCB3VfMB5jCd
+kGuaHJbvedczk5aTkG39KaIgYoNexAc=
+=8HDy
 -----END PGP SIGNATURE-----
 
---5ULl6H7+uUD9DWU7--
+--z01jU0pczI5X5Okr--
 
 
---===============1470073930730368504==
+--===============5565922410889685840==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -159,5 +176,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---===============1470073930730368504==--
+--===============5565922410889685840==--
 
