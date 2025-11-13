@@ -4,93 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5101ECD6E71
-	for <linux-phy@archiver.kernel.org>; Thu, 13 Nov 2025 14:58:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BD5C9CD6E7D
+	for <linux-phy@archiver.kernel.org>; Thu, 13 Nov 2025 15:05:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:From:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=imRzFbqbe4gJITuAv6XNhFFnR4iHlcicuxDcdYzde6s=; b=1rM9zSOTwtZxsT
-	zJu0ZpRwjterT4OmaQWNoJIyCCW5lBtUhOdQiOXIXcvEQ05WEkRel8J8UPftyJ/86jNPApQT6L4qJ
-	PuxObZneH8tRMITcvlRtAQ41apw6jIJ/5pjJVSLXBRaySbURl0tqIzAGpkmm00fc/MlPP7VAIpcr2
-	FDUzjqkWVuGcLDBUKAlhKmeDtJ1g+Fz0hMVPLvCNv5T4N9TJhVN+AmwzSHHItBMyqGQMbzpFZTFkr
-	f3SSxXNkLGw6qt0tT9JhYaGJZvhk4edoKkjIijwvyBiwuEB1vxw5UjUe+/jSQS9lBbDnnGKi1u5ZQ
-	W9jAzpF0cBMCBsubNERQ==;
+	List-Owner; bh=ckWciwOuQvv+XpI8lBoL9cRTuebBFItAKUVtXDRRB20=; b=hQOAxaP3ae1sox
+	a3fc3IbSnlGEMyr66PrE1TEfChIR7YmQGzTDZ1tf17NI2rpdS5koZ1b7ryn4BQ58rcnoAOIIlsPKs
+	LElUeDEu80rCG+3MPw5E+n8q/IEOz255fnb3EvYj+H5AIGZlhNVzlYNLNONCrQQyRgjlpThaQUfvP
+	5lqZM+QjuA4FHh3kVbpPl4A1ffgLdpBhTSg30CUG2aiTL+x2IG+l9X2JJzwec+WlNO53z2DcsqvWt
+	pAlu+MWCQQJrhIJ8+aY+WuFWPty300gch0YC1+WrmxsftVqXulRihQelbAXxBDe8P2G0GyEF4v/Vc
+	NOi8V1QnMpm1cQG1Rb7g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJYm1-0000000AeOA-0Cup;
-	Thu, 13 Nov 2025 14:58:09 +0000
-Received: from mailout1.w1.samsung.com ([210.118.77.11])
+	id 1vJYse-0000000Aeqw-1dlZ;
+	Thu, 13 Nov 2025 15:05:00 +0000
+Received: from mail-ua1-f49.google.com ([209.85.222.49])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJYlw-0000000AeMx-3Fo1;
-	Thu, 13 Nov 2025 14:58:07 +0000
-Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
-	by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id 20251113145759euoutp01fef0a97a0ebaf8bd2c8d8fa9cc795730~3mOLljyiZ1322713227euoutp012;
-	Thu, 13 Nov 2025 14:57:59 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com 20251113145759euoutp01fef0a97a0ebaf8bd2c8d8fa9cc795730~3mOLljyiZ1322713227euoutp012
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1763045879;
-	bh=ogp7tQuY4ykhbwHIKUJTRYSar7oRQokZNx6TlxIJ+5c=;
-	h=Date:Subject:To:Cc:From:In-Reply-To:References:From;
-	b=T8vElxvmkwwSu1Wl5s0VXj6iVdl2A5s7iYFjmFeFPouxsJm1ZPkAuL/pj3v38TcxU
-	 /xoPUpVOskKRLjECmF0grhpoxv/PVum1bvXNYzG6n+Owrs/cxRuPbe4zkZQdEvAzaI
-	 PFjnHtKU80hgiAFcv2hYlDM5zIbRHGRMVNt0srsQ=
-Received: from eusmtip2.samsung.com (unknown [203.254.199.222]) by
-	eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
-	20251113145758eucas1p1bca3e4e91b329de9c52de40c7d86d093~3mOLC8LIJ0576905769eucas1p1J;
-	Thu, 13 Nov 2025 14:57:58 +0000 (GMT)
-Received: from [192.168.1.44] (unknown [106.210.136.40]) by
-	eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
-	20251113145757eusmtip2959d20c844dc6203e206300997e642d0~3mOJlt2ga3124231242eusmtip2e;
-	Thu, 13 Nov 2025 14:57:57 +0000 (GMT)
-Message-ID: <e1696331-1271-46a8-adb6-9fed4521f22b@samsung.com>
-Date: Thu, 13 Nov 2025 15:57:57 +0100
+	id 1vJYsb-0000000AeqW-2xKq
+	for linux-phy@lists.infradead.org;
+	Thu, 13 Nov 2025 15:04:59 +0000
+Received: by mail-ua1-f49.google.com with SMTP id a1e0cc1a2514c-93526e2842dso255940241.0
+        for <linux-phy@lists.infradead.org>; Thu, 13 Nov 2025 07:04:56 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1763046296; x=1763651096;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=4ubK9EQtGlqEmscuI2UlEc444kIJ9wNNtF0OWUtH/PI=;
+        b=Qh5ADpgidMCJX/WK6/YVbZg6jSp/sWky+bwBBgQCemsqWT2ttF8kBQ5Yp1nVr7UJ3+
+         CQ2gJD9qNXfbtFtahjnzV+ZkUhj1Srw4Y9qYJWZ/9Z1ur8sq4xCfQ17WBfOJMCnFUdp6
+         Lgaf6n4ilnumYOchI5RBUbgTotAc4VD8q0e+s/W23ABSBJeKeZ7hJZ2t7a/o6/cnEhYt
+         ECPRxmlzGoybguLJhcN59boFeXwb+OkVai+qDeV9hjKdYCqxi1xGuvCgM1Gwr0wIILpT
+         KBXJkj+z2ND/LcjP6CyZvULB0SlZ6G8VQJo4LWam3bol5XSemA7V1Oh/KrsdIc8Tf85C
+         kV3A==
+X-Forwarded-Encrypted: i=1; AJvYcCVs5tpwLw60EgjlvNh54fIc7YNO69+9Q/m2wfP2GsJpUbiB/YDoRL+0ou4w5iyzv9zfVNWXNu5XmfA=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxX7kEABZQyaLcKEQa/+Wob6Z6lO5nQ/FGSoYY6EYfDXTJBUGN8
+	wy/TR4rP+VeN410ZUREGcW8NQQlwkPA2E5zigNzoaSOw0tcERFKPwrJcMTmGJMkOZLQ=
+X-Gm-Gg: ASbGncvocKlwjLjsj5DT6TYch1eLreQoZFugP2HoZWhYxqLyDrtw4NdISo6B/kbBTU+
+	dUhjKsnsAst22KCTnyrrRQfVHe/rr/wRKEVZ3dOjRBzCjwIypPNLa3CInivQq9d05ZU4YSp0H8V
+	luDw/R66cBVYtQ66dyv2/Bc+PCJivdl/pW5a4xRjaD89LqViocLjropiYY8n+c8qRMRRWzISM4d
+	zU0DukHv3ya7VzugJgOvJY7Z4Vdl4SroB4QdXFqGna5hSNr+Uw3HL4fAyFnd4SwqdM5mPdakI45
+	i0CmcB8zNSOYcc35bw/56cpNSExp+LRUGO3URhHI9UicMYwFa/MaWgt3aYGG5xZbjWPc8AL0QjX
+	tOxpgby2Emx58on9hXmx+WsdCl3nNiBOqDOiQf/cL6PwDFoMuxjGLRQHNjTx7ty/EkXemoWPbJ4
+	msHxna5APGtqSXEn3hLrFO2TZ4sDz45xvgA2KhvQ==
+X-Google-Smtp-Source: AGHT+IEyJxiQKE4RYEucljF8lT717t4DGge+CHxdhNw76WntnhUN7wbLAFBao7gkw0XrHVDDQ+jDOA==
+X-Received: by 2002:a05:6122:4d84:b0:55b:113f:7e08 with SMTP id 71dfb90a1353d-55b113f81cemr698514e0c.2.1763046295649;
+        Thu, 13 Nov 2025 07:04:55 -0800 (PST)
+Received: from mail-vs1-f45.google.com (mail-vs1-f45.google.com. [209.85.217.45])
+        by smtp.gmail.com with ESMTPSA id 71dfb90a1353d-55b0f32efe1sm749531e0c.2.2025.11.13.07.04.54
+        for <linux-phy@lists.infradead.org>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 13 Nov 2025 07:04:55 -0800 (PST)
+Received: by mail-vs1-f45.google.com with SMTP id ada2fe7eead31-5d61f261ebfso319280137.2
+        for <linux-phy@lists.infradead.org>; Thu, 13 Nov 2025 07:04:54 -0800 (PST)
+X-Forwarded-Encrypted: i=1; AJvYcCVHCgMtpSTytDgjlSHP2yaY7OEake16JBPMNi5xXrLeJxj9Y9wYc9QyAx0KZVGvdPBzz8uCr5Vdazg=@lists.infradead.org
+X-Received: by 2002:a05:6102:a4b:b0:5db:f573:a2c with SMTP id
+ ada2fe7eead31-5de07d2f924mr2287392137.13.1763046294441; Thu, 13 Nov 2025
+ 07:04:54 -0800 (PST)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH RFC 00/13] drm: starfive: jh7110: Enable display
- subsystem
-To: Conor Dooley <conor@kernel.org>, Maxime Ripard <mripard@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>, Dmitry Baryshkov
-	<dmitry.baryshkov@oss.qualcomm.com>, Robert Foss <rfoss@kernel.org>
-Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Emil Renner Berthing <kernel@esmil.dk>, Hal Feng
-	<hal.feng@starfivetech.com>, Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Xingyu
-	Wu <xingyu.wu@starfivetech.com>, Vinod Koul <vkoul@kernel.org>, Kishon Vijay
-	Abraham I <kishon@kernel.org>, Andrzej Hajda <andrzej.hajda@intel.com>, Neil
-	Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>,
-	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, Jonas Karlman
-	<jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>, David Airlie
-	<airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, Maarten Lankhorst
-	<maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>, Lee Jones <lee@kernel.org>, Philipp
-	Zabel <p.zabel@pengutronix.de>, Paul Walmsley <paul.walmsley@sifive.com>,
-	Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou <aou@eecs.berkeley.edu>,
-	Alexandre Ghiti <alex@ghiti.fr>, Marek Szyprowski
-	<m.szyprowski@samsung.com>, Icenowy Zheng <uwu@icenowy.me>, Maud Spierings
-	<maudspierings@gocontroll.com>, Andy Yan <andyshrk@163.com>, Heiko Stuebner
-	<heiko@sntech.de>, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-clk@vger.kernel.org, linux-phy@lists.infradead.org,
-	dri-devel@lists.freedesktop.org, linux-riscv@lists.infradead.org
-Content-Language: en-US
-From: Michal Wilczynski <m.wilczynski@samsung.com>
-In-Reply-To: <20251111-matriarch-diocese-b314e7bdaf81@spud>
-X-CMS-MailID: 20251113145758eucas1p1bca3e4e91b329de9c52de40c7d86d093
-X-Msg-Generator: CA
-X-RootMTR: 20251108010451eucas1p1c7bf340dbd2b1b7cbfb53d6debce7a2e
-X-EPHeader: CA
-X-CMS-RootMailID: 20251108010451eucas1p1c7bf340dbd2b1b7cbfb53d6debce7a2e
-References: <CGME20251108010451eucas1p1c7bf340dbd2b1b7cbfb53d6debce7a2e@eucas1p1.samsung.com>
-	<20251108-jh7110-clean-send-v1-0-06bf43bb76b1@samsung.com>
-	<20251110-clang-baking-b8b27730356e@spud>
-	<00e897dc-9966-439b-a74a-7604a1870027@samsung.com>
-	<20251111-footing-eclair-332f5f0769f2@spud>
-	<20251111-matriarch-diocese-b314e7bdaf81@spud>
+References: <20251023135810.1688415-1-claudiu.beznea.uj@bp.renesas.com> <20251023135810.1688415-7-claudiu.beznea.uj@bp.renesas.com>
+In-Reply-To: <20251023135810.1688415-7-claudiu.beznea.uj@bp.renesas.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Thu, 13 Nov 2025 16:04:43 +0100
+X-Gmail-Original-Message-ID: <CAMuHMdUqoi-1GgyC3ZpmOupNtFxaUwRx8C4Q3iO9nx_hMwxX5A@mail.gmail.com>
+X-Gm-Features: AWmQ_bntxYDPmpH9FJ7BCBwIP1rRXvUl6W1zgLobUSlsMYdvdi_L11aPQlSxmS8
+Message-ID: <CAMuHMdUqoi-1GgyC3ZpmOupNtFxaUwRx8C4Q3iO9nx_hMwxX5A@mail.gmail.com>
+Subject: Re: [PATCH v8 6/7] arm64: dts: renesas: r9a08g045: Add USB support
+To: Claudiu <claudiu.beznea@tuxon.dev>
+Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, 
+	conor+dt@kernel.org, p.zabel@pengutronix.de, magnus.damm@gmail.com, 
+	yoshihiro.shimoda.uh@renesas.com, biju.das.jz@bp.renesas.com, 
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org, 
+	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>, 
+	Wolfram Sang <wsa+renesas@sang-engineering.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251113_065805_425724_A5076E1B 
-X-CRM114-Status: GOOD (  22.77  )
+X-CRM114-CacheID: sfid-20251113_070457_747605_D33FE6D6 
+X-CRM114-Status: GOOD (  15.74  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,87 +101,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Thu, 23 Oct 2025 at 17:21, Claudiu <claudiu.beznea@tuxon.dev> wrote:
+> From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+>
+> Add USB nodes for the Renesas RZ/G3S SoC. This consists of PHY reset,
+> host and device support.
+>
+> Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
+> Tested-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
+> Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 
+Thanks, will queue in renesas-devel for v6.19.
 
-On 11/11/25 19:37, Conor Dooley wrote:
-> On Tue, Nov 11, 2025 at 06:14:48PM +0000, Conor Dooley wrote:
->> On Tue, Nov 11, 2025 at 04:33:28PM +0100, Michal Wilczynski wrote:
->>>
->>>
->>> On 11/10/25 20:35, Conor Dooley wrote:
->>>> On Sat, Nov 08, 2025 at 02:04:34AM +0100, Michal Wilczynski wrote:
->>>>> This series enables the display subsystem on the StarFive JH7110 SoC.
->>>>> This hardware has a complex set of dependencies that this series aims to
->>>>> solve.
->>>>>
->>>>> I believe this is a PHY tuning issue that can be fixed in the new
->>>>> phy-jh7110-inno-hdmi.c driver without changing the overall architecture.
->>>>> I plan to continue debugging these modes and will submit follow up fixes
->>>>> as needed.
->>>>>
->>>>> The core architectural plumbing is sound and ready for review.
->>>>>
->>>>> Notes:
->>>>> - The JH7110 does not have a centralized MAINTAINERS entry like the
->>>>>   TH1520, and driver maintainership seems fragmented. I have therefore
->>>>>   added a MAINTAINERS entry for the display subsystem and am willing to
->>>>>   help with its maintenance.
->>>>
->>>> Yeah, bunch of different folks wrote the drivers, so lots of entries.
->>>> Pretty much all as you've done here, authors are responsible for the
->>>> individual components and Emil is the platform maintainer but
->>>> responsible for most drivers.
->>>>
->>>> Do you need any feedback dt wise on the RFC, or is it too likely that
->>>> we'll both waste our breath if the DRM folks don't approve of your
->>>> approach for the rest of this series?
->>>
->>> Hi Conor,
->>>
->>> Thank you for your response.
->>>
->>> That's a fair point about the risk of the DRM approach being rejected.
->>> While I can't be certain, I'm hopeful that part is relatively
->>> straightforward, as it primarily integrates other recently reviewed
->>> (though not yet merged) components like the inno-hdmi bridge and dc8200
->>> drivers.
->>>
->>> To be honest, I was more concerned that the DT part of the series would
->>> be more problematic. Given that, I would find it very helpful to get
->>> your feedback on the DT aspects now, if you have the time.
->>
->> Right. You'll definitely want some actual DRM people to weigh in though
->> before making changes, I am really not familiar enough with this type of
->> hardware to know if the breakdown is correct.
-> 
-> It looks generally sane to me chief, but as I said I am not really
-> familiar enough with this sort of hardware to have a real take on it.
-> Sorry, you'll need to get your affirmation about how you've laid stuff
-> out elsewhere :/
+Gr{oetje,eeting}s,
 
-Thanks for the look, Conor.
+                        Geert
 
-I appreciate the sanity check on the DT side. I'll focus on getting the
-necessary feedback from the DRM maintainers regarding the architectural
-breakdown before spinning a v2.
-
-[Adding Dmitry Baryshkov and highlighting Maxime, Heiko, and Robert]
-
-Could you folks take a brief look at the driver split in this series?
-
-Conor has reviewed the DT bindings and they look sane to him, but we
-need to verify that the architectural split between the
-phy-jh7110-inno-hdmi and the DRM bridge driver is acceptable for this
-Innosilicon IP.
-
-I am particularly interested if the current handling of the PHY tuning
-parameters (as described in the cover letter) fits the modern DRM
-bridge/PHY paradigm, or if this should be modeled differently given the
-similarities to Rockchip implementations.
-
-Best regards,
 -- 
-Michal Wilczynski <m.wilczynski@samsung.com>
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 -- 
 linux-phy mailing list
