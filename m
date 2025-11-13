@@ -4,93 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3ED67CD342D
-	for <linux-phy@archiver.kernel.org>; Thu, 13 Nov 2025 00:49:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5F61ACD4F48
+	for <linux-phy@archiver.kernel.org>; Thu, 13 Nov 2025 03:00:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FylHTbsczzuVPP8EDlGqODoO71G6uu9O2xy3rZNRXt4=; b=D38hbNsQzBtCUb
-	5a5e8W7MYv5ERHUi4K1ktdZGwyaifxuhj3pj4gCkkhSTezQnrUUli2n8jWsDqCi68z+3poKbuzyi2
-	YEhvxxnJAAmwM6SrZcZevgFxCAWqxOFsUhccv3Jx683ptubc+RRAdQxWLSqqBNLqyazFPdkXUG/7K
-	Ri2dMgv7q6/FVaaAEaqHlgfJFIRLGSQjSXCS/519Js0dW9N4ILQ6VNt6oP5H6X0T4///LTJMOTL3A
-	cz4NDB2H9B/coXO1B+bP/XPNvbkx/KEFORBQczCwpbPId0JYP/Ipj13MhGLAKqeHfAijg8QvMMB6S
-	83gnrMMTOnpWHY+t5k/A==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=HnLfMuQ6AUdxEvEEYyqAkPC/UZlKG+8HGL328P8uXhQ=; b=4430Gcu6Bjpjx5
+	6mjjuvx3tUAyN8zkhAGejkd4+mysT4OszsIGnwJipatkSXKgCV0rCnMyf4LVtfi9Kwv3cDKLa6EyT
+	/RTM0dKGbVsYCmiMGAqMmhU1fJYrAax2TVhKWXWSAawAPFbTJPYUs7R803be/vjWp/nmAwYpKwkNZ
+	C+2YWc0Ddlg5elbE/I4i6DoSxaCuuS+qFGJ+VCZ4yeAw+3sOvxBbkRY8dyrdfzAB6NjwXdk37GkLM
+	YeClX+B8RcYr9j6zsObFZ9D5H1pnpSU7rzR1PLj4AophUTXXXLERrCaTUKJjw4577U18D5HMkKKah
+	LrxwF7TLZ0IM33i9ujuA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJLWq-00000009gWX-3KWw;
-	Thu, 13 Nov 2025 00:49:36 +0000
-Received: from sender4-op-o12.zoho.com ([136.143.188.12])
+	id 1vJNZn-00000009p36-3gCf;
+	Thu, 13 Nov 2025 03:00:47 +0000
+Received: from mail-m19731118.qiye.163.com ([220.197.31.118])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJLWo-00000009gVn-076v;
-	Thu, 13 Nov 2025 00:49:35 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1762994927; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=H6LzGbP5dJZM746g0tHRH07iUvv90mFC1ovHkOxCf70dTMiaabPLP6JE4HObK+VFAaIA8aX8VeNn9qhua0P4h6fcM7z/2ObxAYspfjy/0rVOKWFsMtr0krNQ2zUCRhmEkYWBGmNjV2jmcOJ5OkNSWISSpM3OhJOgoCGA6ftkhuY=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1762994927; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=CaqYrXe8Ge+kPBFlhZjMdu1CeT964d9IlL/4u4InQzg=; 
-	b=E/uPDJNh+zJVd0hkFHDmkNmRzFnMfMIX+VwdBSR0A57MWSIsiA5AJ+oftIrlyy1wBuKh3cP1sJKHCPjTFkbyD/29zM1YMfUxFpnHBUPegAvFsdLRCod2L0LJL2XpklThhtfxdHdWz3LMTMFktAjKmg3xDzRpeUURSNOVfz+FQAk=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=icenowy.me;
-	spf=pass  smtp.mailfrom=uwu@icenowy.me;
-	dmarc=pass header.from=<uwu@icenowy.me>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1762994927;
-	s=zmail2; d=icenowy.me; i=uwu@icenowy.me;
-	h=Message-ID:Subject:Subject:From:From:To:To:Cc:Cc:Date:Date:In-Reply-To:References:Content-Type:Content-Transfer-Encoding:MIME-Version:Message-Id:Reply-To;
-	bh=CaqYrXe8Ge+kPBFlhZjMdu1CeT964d9IlL/4u4InQzg=;
-	b=e/XQGG6GKNFqKSgfgsMobkmts6s5b2JIFfEeTnauhiARBxrzFOiqcu1y6m50CxBa
-	UC0gn0804/nPbVDNvUgFXc/j59KJ0kBqP3mktrx5smdDG3DgMw9DC3fF280ly+cqXO1
-	HgwRKOgZMZVEHhR08hjQ0v0ZLjAKhh7fu0UXNbRjU15MzSN03RQQZtrBiIb1Me+wVm6
-	ERHC+BkxoP37ZC/xdNyugN4uSw597sCux35E8/jxI9sGdMshHSZa9NvjjoTU8hcDgzG
-	t7fOu8ebnKcmH4OqbUe2M8+RWw5cQvKONtcdeNFm8HAkIwMyKBtQXf9CkIamYZ3dGTq
-	fpfMqJ17Nw==
-Received: by mx.zohomail.com with SMTPS id 176299492610942.753891752546224;
-	Wed, 12 Nov 2025 16:48:46 -0800 (PST)
-Message-ID: <1d54524d7ef939232b4512ca59c78794484103ca.camel@icenowy.me>
-Subject: Re: [PATCH RFC 01/13] dt-bindings: soc: starfive: Add
- vout-subsystem IP block
-From: Icenowy Zheng <uwu@icenowy.me>
-To: Conor Dooley <conor@kernel.org>
-Cc: Michal Wilczynski <m.wilczynski@samsung.com>, Rob Herring
- <robh@kernel.org>,  Krzysztof Kozlowski <krzk+dt@kernel.org>, Emil Renner
- Berthing <kernel@esmil.dk>, Hal Feng <hal.feng@starfivetech.com>, Michael
- Turquette <mturquette@baylibre.com>,  Stephen Boyd <sboyd@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Xingyu Wu <xingyu.wu@starfivetech.com>,
-  Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Andrzej Hajda <andrzej.hajda@intel.com>, Neil Armstrong
- <neil.armstrong@linaro.org>,  Robert Foss <rfoss@kernel.org>, Laurent
- Pinchart <Laurent.pinchart@ideasonboard.com>, Jonas Karlman
- <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>, David Airlie
- <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, Maarten Lankhorst
- <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, 
- Thomas Zimmermann <tzimmermann@suse.de>, Lee Jones <lee@kernel.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, Paul Walmsley
- <paul.walmsley@sifive.com>, Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou
- <aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>, Marek Szyprowski
- <m.szyprowski@samsung.com>, Maud Spierings <maudspierings@gocontroll.com>, 
- Andy Yan <andyshrk@163.com>, Heiko Stuebner <heiko@sntech.de>,
- devicetree@vger.kernel.org,  linux-kernel@vger.kernel.org,
- linux-clk@vger.kernel.org,  linux-phy@lists.infradead.org,
- dri-devel@lists.freedesktop.org,  linux-riscv@lists.infradead.org
-Date: Thu, 13 Nov 2025 08:48:33 +0800
-In-Reply-To: <20251112-skating-robust-81be8dee0a8b@spud>
-References: <20251108-jh7110-clean-send-v1-0-06bf43bb76b1@samsung.com>
-	 <CGME20251108010453eucas1p2403ec0dd2c69ae7f3eabe19cf686f345@eucas1p2.samsung.com>
-	 <20251108-jh7110-clean-send-v1-1-06bf43bb76b1@samsung.com>
-	 <20251111-massager-twistable-1e88f03d82f8@spud>
-	 <20251111-unsaid-rockslide-67b88b2e34bd@spud>
-	 <0d8e3a626b037dd348378e5ebca8005c1e715871.camel@icenowy.me>
-	 <20251112-skating-robust-81be8dee0a8b@spud>
-Organization: Anthon Open-Source Community
-User-Agent: Evolution 3.44.4 
-MIME-Version: 1.0
-X-ZohoMailClient: External
+	id 1vJNZk-00000009p2M-3ZgW;
+	Thu, 13 Nov 2025 03:00:46 +0000
+Received: from localhost.localdomain (unknown [58.22.7.114])
+	by smtp.qiye.163.com (Hmail) with ESMTP id 29687937f;
+	Thu, 13 Nov 2025 11:00:38 +0800 (GMT+08:00)
+From: Shawn Lin <shawn.lin@rock-chips.com>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
+	Heiko Stuebner <heiko@sntech.de>,
+	Yao Zi <ziyao@disroot.org>,
+	linux-phy@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	Shawn Lin <shawn.lin@rock-chips.com>
+Subject: [PATCH] phy: rockchip: naneng-combphy: Fix PCIe L1ss support
+Date: Thu, 13 Nov 2025 11:00:28 +0800
+Message-Id: <1763002828-212219-1-git-send-email-shawn.lin@rock-chips.com>
+X-Mailer: git-send-email 2.7.4
+X-HM-Tid: 0a9a7b286b9709cckunmb5c46a5f24944e
+X-HM-MType: 1
+X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
+	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZQk8ZHlZOHh5LS0lIGUgfGkpWFRQJFh
+	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSUJMTU
+	xVSktLVUtZBg++
+DKIM-Signature: a=rsa-sha256;
+	b=cCNojZVonb1lv23vv3pS2U60tJEmAuctR8TGD0vb0Dbo7dPVwT0RnGoaRcyFE6HzyyPsJhOz0TDw/BjqidT7NuX9s/xroOCS4HJxOuSL5go9+WTbYUElMyk6mxpgA2xvUDEZmBlHGEhX3FJxJhSDIjTQ2HJ/CRfX16qB8uTmQOo=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
+	bh=S7L42Y7j11IGJceKJY6qAzucNqZtfZNTo1ZyQbfILj8=;
+	h=date:mime-version:subject:message-id:from;
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251112_164934_122011_23C6DD1A 
-X-CRM114-Status: GOOD (  22.04  )
+X-CRM114-CacheID: sfid-20251112_190045_384353_BE37889D 
+X-CRM114-Status: UNSURE (   9.61  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,50 +66,53 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-5ZyoIDIwMjUtMTEtMTLmmJ/mnJ/kuInnmoQgMTg6MzYgKzAwMDDvvIxDb25vciBEb29sZXnlhpnp
-gZPvvJoKPiBPbiBXZWQsIE5vdiAxMiwgMjAyNSBhdCAwMjozNDozOVBNICswODAwLCBJY2Vub3d5
-IFpoZW5nIHdyb3RlOgo+ID4g5ZyoIDIwMjUtMTEtMTHmmJ/mnJ/kuoznmoQgMTg6MzYgKzAwMDDv
-vIxDb25vciBEb29sZXnlhpnpgZPvvJoKPiA+ID4gT24gVHVlLCBOb3YgMTEsIDIwMjUgYXQgMDY6
-MTg6MTZQTSArMDAwMCwgQ29ub3IgRG9vbGV5IHdyb3RlOgo+ID4gPiA+IE9uIFNhdCwgTm92IDA4
-LCAyMDI1IGF0IDAyOjA0OjM1QU0gKzAxMDAsIE1pY2hhbCBXaWxjenluc2tpCj4gPiA+ID4gd3Jv
-dGU6Cj4gPiA+ID4gPiBBZGQgdGhlIGR0LWJpbmRpbmcgZG9jdW1lbnRhdGlvbiBmb3IgdGhlIFN0
-YXJGaXZlIEpINzExMAo+ID4gPiA+ID4gVmlkZW8KPiAKPiA+ID4gPiA+ICtwYXR0ZXJuUHJvcGVy
-dGllczoKPiA+ID4gPiA+ICvCoCAiXmRpc3BsYXlAWzAtOWEtZl0rJCI6Cj4gPiA+ID4gCj4gPiA+
-ID4gUGVyc29uYWxseSBJJ2QgbGlrZSB0byBzZWUgdGhlc2UgYmVpbmcgcmVndWxhciBwcm9wZXJ0
-aWVzLAo+ID4gPiA+IHNpbmNlCj4gPiA+ID4gdGhlcmUncwo+ID4gPiA+IGV4YWN0bHkgb25lIHBv
-c3NpYmxlIHNldHVwIGZvciB0aGlzLgo+ID4gPiA+IAo+ID4gPiA+ID4gK8KgwqDCoCB0eXBlOiBv
-YmplY3QKPiA+ID4gPiA+ICvCoMKgwqAgZGVzY3JpcHRpb246IFZlcmlzaWxpY29uIERDODIwMCBE
-aXNwbGF5IENvbnRyb2xsZXIgbm9kZS4KPiA+ID4gPiAKPiA+ID4gPiBDYW4geW91IGFkZCB0aGUg
-cmVsZXZhbnQgcmVmZXJlbmNlcyBoZXJlIGluc3RlYWQgb2YgYWxsb3dpbmcKPiA+ID4gPiBhbnkK
-PiA+ID4gPiBvYmplY3Q/Cj4gPiA+IAo+ID4gPiBJIGRvbid0IHRoaW5rIHRoYXQgaWYgeW91IGRp
-ZCwgdGhpcyB3b3VsZCBwYXNzIHRoZSBiaW5kaW5nCj4gPiA+IGNoZWNrcywKPiA+ID4gYmVjYXVz
-ZSB0aGVyZSdzIG5vICJ2ZXJpc2lsaWNvbixkYyIgYmluZGluZy4gSSB0aGluayBJIHNhdyBvbmUg
-aW4KPiA+ID4gcHJvZ3Jlc3MsIGJ1dCB3aXRob3V0IHRoZSBzb2Mtc3BlY2lmaWMgY29tcGF0aWJs
-ZSB0aGF0IEkgYW0gZ29pbmcKPiA+ID4gdG8KPiA+ID4gcmVxdWlyZSBoZXJlIC0gaWYgZm9yIG5v
-IHJlYXNvbiBvdGhlciB0aGFuIG1ha2luZyBzdXJlIHRoYXQgdGhlCj4gPiA+IGNsb2Nrcwo+ID4g
-PiBldGMgYXJlIHByb3ZpZGVkIGNvcnJlY3RseSBmb3IgdGhpcyBkZXZpY2UuCj4gPiAKPiA+IFdl
-bGwgSSBkaWRuJ3Qgc3BlY2lmeSBhbnkgc29jLXNwZWNpZmljIGNvbXBhdGlibGUgYmVjYXVzZSB0
-aGF0IElQCj4gPiBoYXMKPiA+IGl0cyBvd24gaWRlbnRpZmljYXRpb24gcmVnaXN0ZXJzLgo+IAo+
-IEkgc3RpbGwgcmVxdWlyZSBvbmUgYmVjYXVzZSBJIHdhbnQgdG8gbWFrZSBzdXJlIHRoYXQgY2xv
-Y2tzIGV0YyBhcmUKPiBoYW5kbGVkIGNvcnJlY3RseS4gWW91IGNhbiBpZ25vcmUgaXQgaW4gdGhl
-IGRyaXZlciBpZiB5b3Ugd2lzaCwgYnV0Cj4gd2hlbgo+IHRoZSBuZXh0IHVzZXIgY29tZXMgYWxv
-bmcgd2l0aCBvbmUgbW9yZSBvciBsZXNzIGNsb2NrLCBJIHdhbnQgdGhlCj4gamg3MTEwIG9uZSB0
-byBiZSBmb3JjZWQgdG8gdXNlIHRoZSBjb3JyZWN0IGNvbmZpZ3VyYXRpb24uCgpJIGRvbid0IHRo
-aW5rIGZvciB0aG9zZSBnZW5lcmljIElQcyByZXF1aXJpbmcgYSBTb0Mtc3BlY2lmaWMgY29tcGF0
-aWJsZQppcyBhIGdvb2QgaWRlYS4KCkluIGFkZGl0aW9uLCBgdml2YW50ZSxnY2AgcmVxdWlyZXMg
-bm8gU29DLXNwZWNpZmljIG9yIGV2ZW4gbW9kZWwtCm51bWJlci1zcGVjaWZpYyBjb21wYXRpYmxl
-IHN0cmluZ3MgdG9vLCBhbmQgYHZlcmlzaWxpY29uLGRjYCBpcyBmcm9tCnRoZSBzYW1lIElQIHZl
-bmRvciBbMV0gYW5kIGZlYXR1cmVzIHRoZSBzYW1lIHNldCBvZiBpZGVudGlmaWNhdGlvbgpyZWdp
-c3RlcnMgKHNlZSBhbHNvIGFsbCBHQ18gcHJlZml4ZWQgaWRlbnRpZmljYXRpb24gcmVnaXN0ZXJz
-IGluIFsyXSkuCgpbMV0KaHR0cHM6Ly93d3cuZGVzaWduLXJldXNlLmNvbS9uZXdzLzIwMjUyNzQ0
-Ni12ZXJpc2lsaWNvbi1jb21wbGV0ZXMtYWNxdWlzaXRpb24tb2Ytdml2YW50ZS8KWzJdCmh0dHBz
-Oi8vZ2l0aHViLmNvbS9taWxrdi1tZWdyZXovcm9ja29zLXUtYm9vdC9ibG9iL2M5MjIxY2YyZmE3
-N2QzOWMwYjI0MWFiNGIwMzBjNzA4ZTdlYmUyNzkvZHJpdmVycy92aWRlby9lc3dpbi9lc3dpbl9k
-Y19yZWcuaAoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJh
-ZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGlu
-dXgtcGh5Cg==
+Need to control the delay PLL turnoff time if PCIe works on
+L1 PM substates.
+
+Fixes: bbcca4fac873 ("phy: rockchip: naneng-combphy: Add RK3528 support")
+Signed-off-by: Shawn Lin <shawn.lin@rock-chips.com>
+---
+
+ drivers/phy/rockchip/phy-rockchip-naneng-combphy.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+index a3ef198..af9a5c7 100644
+--- a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
++++ b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+@@ -21,6 +21,9 @@
+ #define REF_CLOCK_100MHz		(100 * HZ_PER_MHZ)
+ 
+ /* RK3528 COMBO PHY REG */
++#define RK3528_PHYREG5				0x14
++#define RK3528_PHYREG5_GATE_TX_PCK_SEL		BIT(3)
++#define RK3528_PHYREG5_GATE_TX_PCK_DLY_PLL_OFF	BIT(3)
+ #define RK3528_PHYREG6				0x18
+ #define RK3528_PHYREG6_PLL_KVCO			GENMASK(12, 10)
+ #define RK3528_PHYREG6_PLL_KVCO_VALUE		0x2
+@@ -504,6 +507,11 @@ static int rk3528_combphy_cfg(struct rockchip_combphy_priv *priv)
+ 	case REF_CLOCK_100MHz:
+ 		rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_clk_100m, true);
+ 		if (priv->type == PHY_TYPE_PCIE) {
++			/* Gate_tx_pck_sel length select for L1ss support */
++			rockchip_combphy_updatel(priv, RK3528_PHYREG5_GATE_TX_PCK_SEL,
++						 RK3528_PHYREG5_GATE_TX_PCK_DLY_PLL_OFF,
++						 RK3528_PHYREG5);
++
+ 			/* PLL KVCO tuning fine */
+ 			val = FIELD_PREP(RK3528_PHYREG6_PLL_KVCO, RK3528_PHYREG6_PLL_KVCO_VALUE);
+ 			rockchip_combphy_updatel(priv, RK3528_PHYREG6_PLL_KVCO, val,
+-- 
+2.7.4
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
