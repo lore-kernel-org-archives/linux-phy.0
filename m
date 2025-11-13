@@ -4,76 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BD5C9CD6E7D
-	for <linux-phy@archiver.kernel.org>; Thu, 13 Nov 2025 15:05:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E4538CD8C82
+	for <linux-phy@archiver.kernel.org>; Thu, 13 Nov 2025 15:05:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ckWciwOuQvv+XpI8lBoL9cRTuebBFItAKUVtXDRRB20=; b=hQOAxaP3ae1sox
-	a3fc3IbSnlGEMyr66PrE1TEfChIR7YmQGzTDZ1tf17NI2rpdS5koZ1b7ryn4BQ58rcnoAOIIlsPKs
-	LElUeDEu80rCG+3MPw5E+n8q/IEOz255fnb3EvYj+H5AIGZlhNVzlYNLNONCrQQyRgjlpThaQUfvP
-	5lqZM+QjuA4FHh3kVbpPl4A1ffgLdpBhTSg30CUG2aiTL+x2IG+l9X2JJzwec+WlNO53z2DcsqvWt
-	pAlu+MWCQQJrhIJ8+aY+WuFWPty300gch0YC1+WrmxsftVqXulRihQelbAXxBDe8P2G0GyEF4v/Vc
-	NOi8V1QnMpm1cQG1Rb7g==;
+	List-Owner; bh=GCWNrsAi3plVQ2FzIPlKl4ispxycRWxbu1e6cf6e93k=; b=meLOpVKxj7YnMc
+	AEoIze7UWQjwHePhSV6JRkYw3elSgbf81IZjyDSbCRb0z4eEdGIS1A3tqag7g2b0vW7nMq0EXZvrs
+	e1zn6GW3sXCTfdhihaBkwmAHf0KQMvVJwG0woDr2qgkpZ//BUSAbaH0dTVJpOVFJOP+L1hyQgbXDm
+	0eqm6pj2E8pq+ZOHe6pWTpX/ONvmNUHsoePCV3Dt8apygnrULowReh7eZ+00IGQZvuTdpDW5VaD7b
+	V1XubQHYP9512Qe7l3j4QhJ0wTgXq1Y+SULzR9sBRuQASGpdReS3yRGXCj3nvD02cQmTFCtyIMCxp
+	LrDujd3OCP6bzNBB7IlQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJYse-0000000Aeqw-1dlZ;
-	Thu, 13 Nov 2025 15:05:00 +0000
-Received: from mail-ua1-f49.google.com ([209.85.222.49])
+	id 1vJYtC-0000000Aeth-2qxS;
+	Thu, 13 Nov 2025 15:05:34 +0000
+Received: from mail-vk1-f178.google.com ([209.85.221.178])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJYsb-0000000AeqW-2xKq
+	id 1vJYt9-0000000AetH-19Co
 	for linux-phy@lists.infradead.org;
-	Thu, 13 Nov 2025 15:04:59 +0000
-Received: by mail-ua1-f49.google.com with SMTP id a1e0cc1a2514c-93526e2842dso255940241.0
-        for <linux-phy@lists.infradead.org>; Thu, 13 Nov 2025 07:04:56 -0800 (PST)
+	Thu, 13 Nov 2025 15:05:32 +0000
+Received: by mail-vk1-f178.google.com with SMTP id 71dfb90a1353d-5599688d574so271949e0c.2
+        for <linux-phy@lists.infradead.org>; Thu, 13 Nov 2025 07:05:30 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1763046296; x=1763651096;
+        d=1e100.net; s=20230601; t=1763046330; x=1763651130;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=4ubK9EQtGlqEmscuI2UlEc444kIJ9wNNtF0OWUtH/PI=;
-        b=Qh5ADpgidMCJX/WK6/YVbZg6jSp/sWky+bwBBgQCemsqWT2ttF8kBQ5Yp1nVr7UJ3+
-         CQ2gJD9qNXfbtFtahjnzV+ZkUhj1Srw4Y9qYJWZ/9Z1ur8sq4xCfQ17WBfOJMCnFUdp6
-         Lgaf6n4ilnumYOchI5RBUbgTotAc4VD8q0e+s/W23ABSBJeKeZ7hJZ2t7a/o6/cnEhYt
-         ECPRxmlzGoybguLJhcN59boFeXwb+OkVai+qDeV9hjKdYCqxi1xGuvCgM1Gwr0wIILpT
-         KBXJkj+z2ND/LcjP6CyZvULB0SlZ6G8VQJo4LWam3bol5XSemA7V1Oh/KrsdIc8Tf85C
-         kV3A==
-X-Forwarded-Encrypted: i=1; AJvYcCVs5tpwLw60EgjlvNh54fIc7YNO69+9Q/m2wfP2GsJpUbiB/YDoRL+0ou4w5iyzv9zfVNWXNu5XmfA=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxX7kEABZQyaLcKEQa/+Wob6Z6lO5nQ/FGSoYY6EYfDXTJBUGN8
-	wy/TR4rP+VeN410ZUREGcW8NQQlwkPA2E5zigNzoaSOw0tcERFKPwrJcMTmGJMkOZLQ=
-X-Gm-Gg: ASbGncvocKlwjLjsj5DT6TYch1eLreQoZFugP2HoZWhYxqLyDrtw4NdISo6B/kbBTU+
-	dUhjKsnsAst22KCTnyrrRQfVHe/rr/wRKEVZ3dOjRBzCjwIypPNLa3CInivQq9d05ZU4YSp0H8V
-	luDw/R66cBVYtQ66dyv2/Bc+PCJivdl/pW5a4xRjaD89LqViocLjropiYY8n+c8qRMRRWzISM4d
-	zU0DukHv3ya7VzugJgOvJY7Z4Vdl4SroB4QdXFqGna5hSNr+Uw3HL4fAyFnd4SwqdM5mPdakI45
-	i0CmcB8zNSOYcc35bw/56cpNSExp+LRUGO3URhHI9UicMYwFa/MaWgt3aYGG5xZbjWPc8AL0QjX
-	tOxpgby2Emx58on9hXmx+WsdCl3nNiBOqDOiQf/cL6PwDFoMuxjGLRQHNjTx7ty/EkXemoWPbJ4
-	msHxna5APGtqSXEn3hLrFO2TZ4sDz45xvgA2KhvQ==
-X-Google-Smtp-Source: AGHT+IEyJxiQKE4RYEucljF8lT717t4DGge+CHxdhNw76WntnhUN7wbLAFBao7gkw0XrHVDDQ+jDOA==
-X-Received: by 2002:a05:6122:4d84:b0:55b:113f:7e08 with SMTP id 71dfb90a1353d-55b113f81cemr698514e0c.2.1763046295649;
-        Thu, 13 Nov 2025 07:04:55 -0800 (PST)
-Received: from mail-vs1-f45.google.com (mail-vs1-f45.google.com. [209.85.217.45])
-        by smtp.gmail.com with ESMTPSA id 71dfb90a1353d-55b0f32efe1sm749531e0c.2.2025.11.13.07.04.54
+        bh=bwlUmhYLedxffSiGPT0olVCco0Fmu8rqsu17IPvjiOY=;
+        b=gBx5g09oA7MLQrfTy1Ve5JV2CKWkucmdn5OFwT6I2BGnTRsleOO1jBIoJ35iRetQMy
+         soLdzc2VtZHA527CeQ+D8roRES5wIepfIi+ks7ODlmXcqKi/t8+2uTqu+9tk9h41nrrR
+         Zoa6Xy3R95Dj/VeQJBX463AfP22OtKUNMc8sT3ACWajyVELGtOnctVox+eREVxSz9t5E
+         XLQW/S4Fi2faJbp1cOd81DLkNeewDhoY+KhxkGt2O1WLQ1DN8vIovQzECHzHYn8k9F/i
+         LZP1l7XrDxIHHjU8jLbQ+EHFRJbKPTWCugpTyudkuiZUa1oFFputkoz+3h6gRIQxbnMH
+         IpvA==
+X-Forwarded-Encrypted: i=1; AJvYcCVQwm8L+A82uTDxegHokGdPaIJnhDI9tKML4io7o3cnaD1Mw3hMsHLdtZDhXZ/liu1xRHIzlbxXTQU=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwGlzi6ACxk2nDo13n4SDD3FHCx1OXGw0LVGm4xKgGrh81Cunte
+	1Fqk4PePiIB+sj2c1XdVtH1Jh5H9bcC4qo+JuD7JXMYZ2Dc9znTwwU+j3elfW1DQ0A0=
+X-Gm-Gg: ASbGncuRXzZwtl/UmVj4A4tsiaTQbJgikX49fuUTQN9DEQEe/JVJMZ9Vgo9vC7tObz0
+	z8liY7H0B49/1hY3o5a9B6T5x4vxeXR6j3IVPc/DN3EXPveQhGB//ecijocpyUICTQydGiRlRYN
+	xomDs8C6lPxmqROMxxWLMBIbkyUr3fw3hmvu+UmvOM+wQVhom8SZRuvCvGenVAF/pz0BQHLAnmL
+	ZoifHTo+Jfgx7KctUQcQVp4QtpEDG4g4EMWw85rFj0WeDSId8xSsfWsy/G32yJ0w5IlLH7HZ2en
+	9xrpc941G/mHKpJxko+TXfoftPdIodGDBTd8QylB9DNWUdsGZd9IFhV/LG8lqOexXBUlcZfQPkp
+	spSc3BCowsPSORC4aIQOWBeceLD+TBFUp/Duz2FHk5XX15CziegHwAKDl+YyT3l9MVwR/0Gx+6o
+	mWv9jmDiAY5hiMXz7/Js0CrCpWV8d1xmF6aWNJafsW/2wInyyG
+X-Google-Smtp-Source: AGHT+IEcbUqxnAlWkCD2y7Rp1XanYBJIhNT8MJHSBS8SK5FTKEtOrtQvUnBH5y6km1GXlgMfCWGpvw==
+X-Received: by 2002:a05:6122:2a05:b0:559:3b8a:70ce with SMTP id 71dfb90a1353d-559e7c82a52mr2356408e0c.7.1763046329525;
+        Thu, 13 Nov 2025 07:05:29 -0800 (PST)
+Received: from mail-ua1-f43.google.com (mail-ua1-f43.google.com. [209.85.222.43])
+        by smtp.gmail.com with ESMTPSA id 71dfb90a1353d-55b0f499b5dsm837751e0c.24.2025.11.13.07.05.29
         for <linux-phy@lists.infradead.org>
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 13 Nov 2025 07:04:55 -0800 (PST)
-Received: by mail-vs1-f45.google.com with SMTP id ada2fe7eead31-5d61f261ebfso319280137.2
-        for <linux-phy@lists.infradead.org>; Thu, 13 Nov 2025 07:04:54 -0800 (PST)
-X-Forwarded-Encrypted: i=1; AJvYcCVHCgMtpSTytDgjlSHP2yaY7OEake16JBPMNi5xXrLeJxj9Y9wYc9QyAx0KZVGvdPBzz8uCr5Vdazg=@lists.infradead.org
-X-Received: by 2002:a05:6102:a4b:b0:5db:f573:a2c with SMTP id
- ada2fe7eead31-5de07d2f924mr2287392137.13.1763046294441; Thu, 13 Nov 2025
- 07:04:54 -0800 (PST)
+        Thu, 13 Nov 2025 07:05:29 -0800 (PST)
+Received: by mail-ua1-f43.google.com with SMTP id a1e0cc1a2514c-9371f6f2813so307173241.0
+        for <linux-phy@lists.infradead.org>; Thu, 13 Nov 2025 07:05:29 -0800 (PST)
+X-Forwarded-Encrypted: i=1; AJvYcCVAodlzBwCqKt2MAUhd5XN0Pm1ONSI10634a5rl4+rppM+IyfK17s0QV38bRRAetty7g7goruVmLes=@lists.infradead.org
+X-Received: by 2002:a05:6102:498:b0:5df:8f4:61e6 with SMTP id
+ ada2fe7eead31-5df098d049amr1727150137.32.1763046328910; Thu, 13 Nov 2025
+ 07:05:28 -0800 (PST)
 MIME-Version: 1.0
-References: <20251023135810.1688415-1-claudiu.beznea.uj@bp.renesas.com> <20251023135810.1688415-7-claudiu.beznea.uj@bp.renesas.com>
-In-Reply-To: <20251023135810.1688415-7-claudiu.beznea.uj@bp.renesas.com>
+References: <20251023135810.1688415-1-claudiu.beznea.uj@bp.renesas.com> <20251023135810.1688415-8-claudiu.beznea.uj@bp.renesas.com>
+In-Reply-To: <20251023135810.1688415-8-claudiu.beznea.uj@bp.renesas.com>
 From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Thu, 13 Nov 2025 16:04:43 +0100
-X-Gmail-Original-Message-ID: <CAMuHMdUqoi-1GgyC3ZpmOupNtFxaUwRx8C4Q3iO9nx_hMwxX5A@mail.gmail.com>
-X-Gm-Features: AWmQ_bntxYDPmpH9FJ7BCBwIP1rRXvUl6W1zgLobUSlsMYdvdi_L11aPQlSxmS8
-Message-ID: <CAMuHMdUqoi-1GgyC3ZpmOupNtFxaUwRx8C4Q3iO9nx_hMwxX5A@mail.gmail.com>
-Subject: Re: [PATCH v8 6/7] arm64: dts: renesas: r9a08g045: Add USB support
+Date: Thu, 13 Nov 2025 16:05:17 +0100
+X-Gmail-Original-Message-ID: <CAMuHMdVaB15yLcGObzF_zuNKSqioE4ktD_u4xkJ-YJuQiD4fdw@mail.gmail.com>
+X-Gm-Features: AWmQ_blisT-axhMgcAs5oMipnI2iYyBHU5ygZXj2OjcwlBET81JTXEQGhpMKWtU
+Message-ID: <CAMuHMdVaB15yLcGObzF_zuNKSqioE4ktD_u4xkJ-YJuQiD4fdw@mail.gmail.com>
+Subject: Re: [PATCH v8 7/7] arm64: dts: renesas: rzg3s-smarc: Enable USB support
 To: Claudiu <claudiu.beznea@tuxon.dev>
 Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org, 
 	conor+dt@kernel.org, p.zabel@pengutronix.de, magnus.damm@gmail.com, 
@@ -83,8 +83,8 @@ Cc: vkoul@kernel.org, kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
 	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>, 
 	Wolfram Sang <wsa+renesas@sang-engineering.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251113_070457_747605_D33FE6D6 
-X-CRM114-Status: GOOD (  15.74  )
+X-CRM114-CacheID: sfid-20251113_070531_334724_455CCF88 
+X-CRM114-Status: GOOD (  14.30  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,11 +101,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, 23 Oct 2025 at 17:21, Claudiu <claudiu.beznea@tuxon.dev> wrote:
+On Thu, 23 Oct 2025 at 20:41, Claudiu <claudiu.beznea@tuxon.dev> wrote:
 > From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 >
-> Add USB nodes for the Renesas RZ/G3S SoC. This consists of PHY reset,
-> host and device support.
+> Enable USB support (host, device, USB PHYs).
 >
 > Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
 > Tested-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
