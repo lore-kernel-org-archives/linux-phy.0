@@ -4,84 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1FCD9CD4F49
-	for <linux-phy@archiver.kernel.org>; Fri, 14 Nov 2025 05:34:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 08B5BCDE008
+	for <linux-phy@archiver.kernel.org>; Fri, 14 Nov 2025 05:37:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
+	:Subject:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Dh0Cdab3YxYN4Ggxksot1qpyhCx2tpFooADK66roaaw=; b=tdQ5DtUjD9ydcY
-	3icd7Y8kxNBMsEKDCCrKcyHADJHyIKJtZmjuTqsfjjydRFKOH6pYj40i8gwKAO0YhflTTEZmwPPKl
-	1zJkFU7fUsgnIv8i2qJmsaKrvQKvgiGKDz5QDrAygmhSDmO//jLUTtwv7TyROqpUi66mQRVq+m0uU
-	suQGGhuMyRpYLnd4YdprKD0rsYQ2gYPAXv6MVuApg0vbF0nH4KAKLLo1P++DRte+CHKRx+vKmA8Je
-	FGMtLTvxFtDsuPKnnqi2rFt5Df9Ju4JFjgX8JUvAnnVEIulH0dFcKi6bBmebCbCwVtMEcKGhCSuh9
-	4q7sxQxLlrGJ9Yz+2pfw==;
+	List-Owner; bh=Gzf0cMiy5r8pay6zjhTScslmkONVWZSUfMhVJVvgQjw=; b=zs43bMlb/hF4eA
+	WANziVFwaooklgC345kuP0MRXXnzETIiHPN0Xdhdxy/WThB/KzIJT6VdMJFPkZP4pjfAg8zbemvJq
+	wKxXfZJQIsQSYQweO0neYkGx4LunW201V8M7KXRqbcb2dIdp9wsV8rYcafB+CG+J7bzd9puXXpzvp
+	iSyzFzwSC/BomU7AcjAirwT+Z1e4+spMU/1npKQ3uwdp8gUUhiuVJLZSD8ye6zKylD8QAa5ya9ui1
+	bhuuHKIU93OkP71Qwzqnqg47ywHudYpPsHI0lYFp/ua8PuCVO8qVubt0hohVdegY1FYXiVS50s0Rv
+	oeBaSo2zMg86KWzbE0FA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJmSX-0000000BbA9-2itD;
-	Fri, 14 Nov 2025 05:34:57 +0000
-Received: from hall.aurel32.net ([2001:bc8:30d7:100::1])
+	id 1vJmUh-0000000BbPA-38VY;
+	Fri, 14 Nov 2025 05:37:11 +0000
+Received: from mailout1.samsung.com ([203.254.224.24])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJmSU-0000000Bb9I-2mJx;
-	Fri, 14 Nov 2025 05:34:56 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=aurel32.net
-	; s=202004.hall; h=In-Reply-To:Content-Type:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Content-Transfer-Encoding:From:Reply-To:
-	Subject:Content-ID:Content-Description:X-Debbugs-Cc;
-	bh=j4/5GhlPjkb3zB4cmvsOflk7TfcTfmyfgTcfGeeRs10=; b=lI0dcTUfaAd8Slc7QsDEWoAZ6g
-	Dlbl/u69jN6L0rlAQEnPt3zmA+rPZJ2Oj9wHFnprNkxA0/35otRGnCHgmFd8bwaXQd/iMX1tM0F4O
-	hY7u9kxZterFev5cVc4Kw1flPzGBaTW0rB8a8dFJPE5KxQ0IhlO/MOjuCJLC23b4ZE+19NQIMAWlN
-	CoS6FCWXjCV1enVK7lF0PK2ObdthRAX8Tyx65swkDZeRxzMy1wXHlFJ6S33tsuTH0VR53TScD4MQ0
-	y73EpBaooHgcCSginztVmBrpwUG+2pPUim9YBUXdVXGX2OB2OKNQZJ4rLwAkgtFUfy4aksVDZA6s7
-	tLR97Kkw==;
-Received: from [2a01:e34:ec5d:a741:1ee1:92ff:feb4:5ec0] (helo=ohm.rr44.fr)
-	by hall.aurel32.net with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.98.2)
-	(envelope-from <aurelien@aurel32.net>)
-	id 1vJmSA-00000003JgB-1aXy;
-	Fri, 14 Nov 2025 06:34:34 +0100
-Date: Fri, 14 Nov 2025 06:34:33 +0100
-From: Aurelien Jarno <aurelien@aurel32.net>
-To: Alex Elder <elder@riscstar.com>
-Cc: dlan@gentoo.org, robh@kernel.org, krzk+dt@kernel.org,
-	conor+dt@kernel.org, vkoul@kernel.org, kishon@kernel.org,
-	bhelgaas@google.com, lpieralisi@kernel.org, kwilczynski@kernel.org,
-	mani@kernel.org, ziyao@disroot.org, johannes@erdfelt.com,
-	mayank.rana@oss.qualcomm.com, qiang.yu@oss.qualcomm.com,
-	shradha.t@samsung.com, inochiama@gmail.com, pjw@kernel.org,
-	palmer@dabbelt.com, aou@eecs.berkeley.edu, alex@ghiti.fr,
-	p.zabel@pengutronix.de, christian.bruel@foss.st.com,
-	thippeswamy.havalige@amd.com, krishna.chundru@oss.qualcomm.com,
-	guodong@riscstar.com, devicetree@vger.kernel.org,
-	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
-	spacemit@lists.linux.dev, linux-riscv@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v6 0/7] Introduce SpacemiT K1 PCIe phy and host controller
-Message-ID: <aRa_aQB4d8-miKac@aurel32.net>
-Mail-Followup-To: Alex Elder <elder@riscstar.com>, dlan@gentoo.org,
-	robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
-	vkoul@kernel.org, kishon@kernel.org, bhelgaas@google.com,
-	lpieralisi@kernel.org, kwilczynski@kernel.org, mani@kernel.org,
-	ziyao@disroot.org, johannes@erdfelt.com,
-	mayank.rana@oss.qualcomm.com, qiang.yu@oss.qualcomm.com,
-	shradha.t@samsung.com, inochiama@gmail.com, pjw@kernel.org,
-	palmer@dabbelt.com, aou@eecs.berkeley.edu, alex@ghiti.fr,
-	p.zabel@pengutronix.de, christian.bruel@foss.st.com,
-	thippeswamy.havalige@amd.com, krishna.chundru@oss.qualcomm.com,
-	guodong@riscstar.com, devicetree@vger.kernel.org,
-	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
-	spacemit@lists.linux.dev, linux-riscv@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-References: <20251113214540.2623070-1-elder@riscstar.com>
+	id 1vJmUc-0000000BbOC-2CXk
+	for linux-phy@lists.infradead.org;
+	Fri, 14 Nov 2025 05:37:08 +0000
+Received: from epcas2p1.samsung.com (unknown [182.195.41.53])
+	by mailout1.samsung.com (KnoxPortal) with ESMTP id 20251114053700epoutp01e2d7c891143b9d5412dc4478cd0c29c3~3yNqh7eip0623606236epoutp01h
+	for <linux-phy@lists.infradead.org>; Fri, 14 Nov 2025 05:37:00 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.samsung.com 20251114053700epoutp01e2d7c891143b9d5412dc4478cd0c29c3~3yNqh7eip0623606236epoutp01h
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+	s=mail20170921; t=1763098620;
+	bh=f4BkXaRbSY4CpriOHwvnOYLmtFzMrOOh9JYVfFHYZLU=;
+	h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
+	b=YgyMmFYvQZKJBQaW2RZ1GrT7kT+Ok+o2IaDdCPx2EcyGSWVILyZADQ7jvRK5DbK99
+	 c4u54jHechDb2It81AO3pNdvVKuG2FkzkzLGnuSysUSF5BLCJKyhRofQ55HCCkHS6O
+	 ybO6+B2TPpW6zh6ufOqvvw+pxhqO6gaSa987tyig=
+Received: from epsnrtp03.localdomain (unknown [182.195.42.155]) by
+	epcas2p4.samsung.com (KnoxPortal) with ESMTPS id
+	20251114053700epcas2p4c375cd9debd91d96156eef1e20d5f26b~3yNqGZZPU2059920599epcas2p4A;
+	Fri, 14 Nov 2025 05:37:00 +0000 (GMT)
+Received: from epcas2p1.samsung.com (unknown [182.195.38.206]) by
+	epsnrtp03.localdomain (Postfix) with ESMTP id 4d75Vg3vvJz3hhTH; Fri, 14 Nov
+	2025 05:36:59 +0000 (GMT)
+Received: from epsmtip2.samsung.com (unknown [182.195.34.31]) by
+	epcas2p1.samsung.com (KnoxPortal) with ESMTPA id
+	20251114053658epcas2p1bb54b75492e5850a0dc6dbed8ec7cf38~3yNpA9ojs2511225112epcas2p1v;
+	Fri, 14 Nov 2025 05:36:58 +0000 (GMT)
+Received: from KORCO118486 (unknown [12.80.208.104]) by epsmtip2.samsung.com
+	(KnoxPortal) with ESMTPA id
+	20251114053658epsmtip274ea3eac07362b98eb7eac08d3e37631~3yNo5WXGX2019320193epsmtip2D;
+	Fri, 14 Nov 2025 05:36:58 +0000 (GMT)
+From: =?utf-8?B?67Cw7IOB7ZuIL1Nhbmdob29uIEJhZQ==?= <sh86.bae@samsung.com>
+To: "'Krzysztof Kozlowski'" <krzk@kernel.org>, <robh@kernel.org>,
+	<conor+dt@kernel.org>, <vkoul@kernel.org>, <alim.akhtar@samsung.com>,
+	<kishon@kernel.org>, <m.szyprowski@samsung.com>, <jh80.chung@samsung.com>,
+	<shradha.t@samsung.com>
+Cc: <krzk+dt@kernel.org>, <linux-kernel@vger.kernel.org>,
+	<devicetree@vger.kernel.org>, <linux-samsung-soc@vger.kernel.org>,
+	<linux-phy@lists.infradead.org>, <linux-arm-kernel@lists.infradead.org>
+In-Reply-To: <945d5f68-66b9-40f3-afd7-64e746075d12@kernel.org>
+Subject: RE: [PATCH 1/4] dt-bindings: soc: samsung: exynos-sysreg: add hsi0
+ for ExynosAutov920
+Date: Fri, 14 Nov 2025 14:36:58 +0900
+Message-ID: <000001dc5528$b2053210$160f9630$@samsung.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20251113214540.2623070-1-elder@riscstar.com>
-User-Agent: Mutt/2.2.13 (2024-03-09)
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQISOccZb2Ez4IvEWuwZme1oXG7+3gG5WrFyAj6/1FYBYx2HL7RbA5zw
+Content-Language: ko
+X-CMS-MailID: 20251114053658epcas2p1bb54b75492e5850a0dc6dbed8ec7cf38
+X-Msg-Generator: CA
+X-Sendblock-Type: AUTO_CONFIDENTIAL
+CMS-TYPE: 102P
+cpgsPolicy: CPGSC10-234,Y
+X-CFilter-Loop: Reflected
+X-CMS-RootMailID: 20250926074011epcas2p438f7edb31c720c0950e9df986983f5a5
+References: <20250926073921.1000866-1-sh86.bae@samsung.com>
+	<CGME20250926074011epcas2p438f7edb31c720c0950e9df986983f5a5@epcas2p4.samsung.com>
+	<20250926073921.1000866-2-sh86.bae@samsung.com>
+	<945d5f68-66b9-40f3-afd7-64e746075d12@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251113_213455_129875_0B842C55 
-X-CRM114-Status: GOOD (  17.43  )
+X-CRM114-CacheID: sfid-20251113_213706_725996_302E3A91 
+X-CRM114-Status: GOOD (  14.89  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,38 +100,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 2025-11-13 15:45, Alex Elder wrote:
-> This series introduces a PHY driver and a PCIe driver to support PCIe
-> on the SpacemiT K1 SoC.  The PCIe implementation is derived from a
-> Synopsys DesignWare PCIe IP.  The PHY driver supports one combination
-> PCIe/USB PHY as well as two PCIe-only PHYs.  The combo PHY port uses
-> one PCIe lane, and the other two ports each have two lanes.  All PCIe
-> ports operate at 5 GT/second.
+> > Add hsi0 compatible for ExynosAutov920 PCIe settings for:
+> > - PCIe PHY power control
+> > - PLL settings for PCIe
+> > - PCIe device direction (RC/EP)
+> >
+> > Signed-off-by: Sanghoon Bae <sh86.bae@samsung.com>
+> > ---
+> >  .../devicetree/bindings/soc/samsung/samsung,exynos-sysreg.yaml   | 1 +
+> >  1 file changed, 1 insertion(+)
+> >
+> This is not really related to PCIe or phy patchset, so putting it here
+> just makes life of maintainers more difficult. There is really no reason
+> for that.
 > 
-> The PCIe PHYs must be configured using a value that can only be
-> determined using the combo PHY, operating in PCIe mode.  To allow
-> that PHY to be used for USB, the needed calibration step is performed
-> by the PHY driver automatically at probe time.  Once this step is done,
-> the PHY can be used for either PCIe or USB.
-> 
-> The driver supports 256 MSIs, and initially does not support PCI INTx
-> interrupts.  The hardware does not support MSI-X.
-> 
-> Version 6 of this series addresses a few comments from Christophe
-> Jaillet, and improves a workaround that disables ASPM L1.  The two
-> people who had reported errors on earlier versions of this code have
-> confirmed their NVMe devices now work when configured with the default
-> RISC-V kernel configuration.
+> Don't mix subsystems when not needed. DTS patchset targeting me, should be
+> separate from other subsystems in such case and it only needs to mention
+> in changelog or cover letter where are the bindings.
+Will separate this patch from the patchset
 
-Thanks for this new version. I confirm it works fine on the various NVME 
-devices for which I reported issues with the previous versions of this 
-patchset.
-
-Tested-by: Aurelien Jarno <aurelien@aurel32.net>
-
--- 
-Aurelien Jarno                          GPG: 4096R/1DDD8C9B
-aurelien@aurel32.net                     http://aurel32.net
 
 -- 
 linux-phy mailing list
