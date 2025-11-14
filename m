@@ -4,85 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3F2CECDE014
-	for <linux-phy@archiver.kernel.org>; Fri, 14 Nov 2025 06:57:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9C935CDE019
+	for <linux-phy@archiver.kernel.org>; Fri, 14 Nov 2025 07:08:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
-	:Subject:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GKFoTxKfJj8NcCbCX9E67WNjNNcFX9iyo+XtsM4WmEo=; b=DOx2cDVD35eePS
-	Nhiux520FZbWGnhbJNuK2rvVbJiqhTaWuKkMVgffA6bkpTJ50XSs5VVgbhhztDGivyeybifpf7vYt
-	v8KTgiTHeQxl3d3tJZz+vEteKKf8RdyqBmVCjyOABOm+7dZG22/oT8+WzIEVN12hyrV8YGolUeYSb
-	J11b0UuXmV4/JPCDat0Qzzuahxd7RgbdD7A6J4lcXYeZIi0voTfXjypzKjoedWPkV+i/wTBfQUpX4
-	atYCsuSp9j0Wf+M8mXXbIzJNl1tMAiY05/CP2jHL7KgU3zKGyGbaROpVJPb1buVCIqZnwGMPM0uoN
-	Kaj4YI4L+M2t7V/fwhuw==;
+	List-Owner; bh=XA0SAgojWzdZJFE3wUlG3G22NLEHFa5K/oB//vCOWIQ=; b=Fq8Z9qvFiBQ1M0
+	K8cirnjV/8ktb7OFl5d0OuXi3fK5kFxDNHaNso3eyNh4vOuix/fICziCfDwKkM6Tb1+EWmhbbk+Y5
+	1FTXG+nsHUzOAKzWb/j99xc8f/7Epa2T/iiFUWGxRb6i/OQSOLl9nY1rryk26NV1xEDOj1FW8Earc
+	CMAFIi+5kLYPlpNFCUNHqB2wTBjG5YvVQX9XHbIuoZ1UOjD68v/AVVImQYcLW7SOB7avmxWW+4mZ2
+	s+0tzIzMjJObsdAb1N9MG4wx4QFc1J2KUFq2WA/JIphYkyB+zQbiaL0XeAlHK1Y2nY6vXUee5LvMy
+	6w/CxZ7N13O54TafhmAw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJnkS-0000000BhKm-3LKG;
-	Fri, 14 Nov 2025 06:57:32 +0000
-Received: from mailout4.samsung.com ([203.254.224.34])
+	id 1vJnue-0000000BiWp-0zHf;
+	Fri, 14 Nov 2025 07:08:04 +0000
+Received: from sender3-op-o12.zoho.com ([136.143.184.12])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJnkO-0000000BhJi-0X8l
-	for linux-phy@lists.infradead.org;
-	Fri, 14 Nov 2025 06:57:31 +0000
-Received: from epcas2p3.samsung.com (unknown [182.195.41.55])
-	by mailout4.samsung.com (KnoxPortal) with ESMTP id 20251114065720epoutp042327ea245c69c7348341c18ee6498d89~3zTzZYXvg2756527565epoutp04x
-	for <linux-phy@lists.infradead.org>; Fri, 14 Nov 2025 06:57:20 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com 20251114065720epoutp042327ea245c69c7348341c18ee6498d89~3zTzZYXvg2756527565epoutp04x
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1763103440;
-	bh=1vkMpsltnFXkF+G2EStX6zbbbjFa3ZqX3K9ihfvO02o=;
-	h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
-	b=AF9eq+cOCo27nmRd0D85k64UWmd+h8PC9krLewVBf8bPetYybViAT+7VXgYXlBUPm
-	 D8x+8PS1FCXZnGrTxgWQwl6yqAbO9GQ7ihBF/22K7G3ho8FtJ88fSiCfVxSazWviFP
-	 ZtrPDMUbSxBwgZyBDwWkpNH/oycM8oXaZ6B/h0y4=
-Received: from epsnrtp03.localdomain (unknown [182.195.42.155]) by
-	epcas2p1.samsung.com (KnoxPortal) with ESMTPS id
-	20251114065719epcas2p1e8849a097d46ed03d4a15f820d6e3459~3zTy8NAmg1323413234epcas2p1B;
-	Fri, 14 Nov 2025 06:57:19 +0000 (GMT)
-Received: from epcas2p1.samsung.com (unknown [182.195.38.211]) by
-	epsnrtp03.localdomain (Postfix) with ESMTP id 4d77HM3gHXz3hhTD; Fri, 14 Nov
-	2025 06:57:19 +0000 (GMT)
-Received: from epsmtip1.samsung.com (unknown [182.195.34.30]) by
-	epcas2p1.samsung.com (KnoxPortal) with ESMTPA id
-	20251114065718epcas2p1f36aa81a248e01e9c78a9064c268b72f~3zTyB67lU1559915599epcas2p1K;
-	Fri, 14 Nov 2025 06:57:18 +0000 (GMT)
-Received: from KORCO118486 (unknown [12.80.208.104]) by epsmtip1.samsung.com
-	(KnoxPortal) with ESMTPA id
-	20251114065718epsmtip16f5e401c43bd4752ad76b10649c268b8~3zTx7Nt-s0134501345epsmtip1i;
-	Fri, 14 Nov 2025 06:57:18 +0000 (GMT)
-From: "SanghoonBae" <sh86.bae@samsung.com>
-To: "'Krzysztof Kozlowski'" <krzk@kernel.org>, <robh@kernel.org>,
-	<conor+dt@kernel.org>, <vkoul@kernel.org>, <alim.akhtar@samsung.com>,
-	<kishon@kernel.org>, <m.szyprowski@samsung.com>, <jh80.chung@samsung.com>,
-	<shradha.t@samsung.com>
-Cc: <krzk+dt@kernel.org>, <linux-kernel@vger.kernel.org>,
-	<devicetree@vger.kernel.org>, <linux-samsung-soc@vger.kernel.org>,
-	<linux-phy@lists.infradead.org>, <linux-arm-kernel@lists.infradead.org>
-In-Reply-To: <ea85d388-c0c1-4b4a-96d6-d3f27622ed54@kernel.org>
-Subject: RE: [PATCH 3/4] arm64: dts: ExynosAutov920: add PCIe PHY DT nodes
-Date: Fri, 14 Nov 2025 15:57:18 +0900
-Message-ID: <001601dc5533$eb0049f0$c100ddd0$@samsung.com>
+	id 1vJnub-0000000BiWM-1BZs;
+	Fri, 14 Nov 2025 07:08:02 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1763104032; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=jk8AIvOvE/8LILOk2DAILmhafD1+Kg+0XgQZHPcvLjJXSs3Qx5wAXkzN5cm/OxTZ51kk7c6QgLrcFAGR355r+9xNXVNZGIu6GDQVIA47uKMXSlZKpaZhKMbG/skxbQxmTi+2HJww9siVp6dDOOeh9j8biyYC5chBoMAyIPdjZ6k=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1763104032; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=iC+mgltNwb/6TnBtEL9kwPSjqaqHA5+5TY9cLqiISLU=; 
+	b=SMLZwHprsnx3D00elMkDAh13b+oJs8sHl8Sm9UQlfTbjAYanSRGYNDvHwmvIar8Xa2ELh6OZExv8bnPxCVP/6IwacTlLs4UK7BQU36CdBlIc4xsUH0clvzNVfXIdd896rin/1aX4hZYouTbL9x13nknClax0wwN6HugVdoTvRcQ=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=icenowy.me;
+	spf=pass  smtp.mailfrom=uwu@icenowy.me;
+	dmarc=pass header.from=<uwu@icenowy.me>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1763104032;
+	s=zmail2; d=icenowy.me; i=uwu@icenowy.me;
+	h=Message-ID:Subject:Subject:From:From:To:To:Cc:Cc:Date:Date:In-Reply-To:References:Content-Type:Content-Transfer-Encoding:MIME-Version:Message-Id:Reply-To;
+	bh=iC+mgltNwb/6TnBtEL9kwPSjqaqHA5+5TY9cLqiISLU=;
+	b=Yd6vZtKPbUx5vWV+zNJtZtt5NR9BWsRdyN8Gw4lNM4SwZ6FAE6/Rk7VRnLKUT/v6
+	sELB7aNzp5H8Z2YbspkYpXkuvsQF0W+fkXmB0JYpIRUgf+qRhxpew29OIpCi3HhxdkX
+	29DoCJAuPPZrDkrzlUJ9d7fQ4kMo5WOC+XUgfn6jPLk1o0EFKcak8CiZg4N8uL8jPRE
+	K+UK2V5lb5YkC2rdGSGEOYgfgsOMvc/j8YCVjYgN7Cddi7uua0UDXan8YvpIHlX9J7w
+	ctZax5B1yJ9tck3DyVIfWhhgYo9KBtNBD1JKLOTnYrE47mZreU0zMzkvSRqIkpFDLQ6
+	74JW1oXADQ==
+Received: by mx.zohomail.com with SMTPS id 1763104029433118.5268080863134;
+	Thu, 13 Nov 2025 23:07:09 -0800 (PST)
+Message-ID: <0109a90fc464e3cc63dd6c11e699db0143906256.camel@icenowy.me>
+Subject: Re: [PATCH RFC 01/13] dt-bindings: soc: starfive: Add
+ vout-subsystem IP block
+From: Icenowy Zheng <uwu@icenowy.me>
+To: Conor Dooley <conor@kernel.org>
+Cc: Michal Wilczynski <m.wilczynski@samsung.com>, Rob Herring
+ <robh@kernel.org>,  Krzysztof Kozlowski <krzk+dt@kernel.org>, Emil Renner
+ Berthing <kernel@esmil.dk>, Hal Feng <hal.feng@starfivetech.com>, Michael
+ Turquette <mturquette@baylibre.com>,  Stephen Boyd <sboyd@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Xingyu Wu <xingyu.wu@starfivetech.com>,
+  Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Andrzej Hajda <andrzej.hajda@intel.com>, Neil Armstrong
+ <neil.armstrong@linaro.org>,  Robert Foss <rfoss@kernel.org>, Laurent
+ Pinchart <Laurent.pinchart@ideasonboard.com>, Jonas Karlman
+ <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>, David Airlie
+ <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, Maarten Lankhorst
+ <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, 
+ Thomas Zimmermann <tzimmermann@suse.de>, Lee Jones <lee@kernel.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Paul Walmsley
+ <paul.walmsley@sifive.com>, Palmer Dabbelt <palmer@dabbelt.com>, Albert Ou
+ <aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>, Marek Szyprowski
+ <m.szyprowski@samsung.com>, Maud Spierings <maudspierings@gocontroll.com>, 
+ Andy Yan <andyshrk@163.com>, Heiko Stuebner <heiko@sntech.de>,
+ devicetree@vger.kernel.org,  linux-kernel@vger.kernel.org,
+ linux-clk@vger.kernel.org,  linux-phy@lists.infradead.org,
+ dri-devel@lists.freedesktop.org,  linux-riscv@lists.infradead.org
+Date: Fri, 14 Nov 2025 15:06:55 +0800
+In-Reply-To: <20251113-irritable-unfold-da619d52026c@spud>
+References: <20251108-jh7110-clean-send-v1-0-06bf43bb76b1@samsung.com>
+	 <CGME20251108010453eucas1p2403ec0dd2c69ae7f3eabe19cf686f345@eucas1p2.samsung.com>
+	 <20251108-jh7110-clean-send-v1-1-06bf43bb76b1@samsung.com>
+	 <20251111-massager-twistable-1e88f03d82f8@spud>
+	 <20251111-unsaid-rockslide-67b88b2e34bd@spud>
+	 <0d8e3a626b037dd348378e5ebca8005c1e715871.camel@icenowy.me>
+	 <20251112-skating-robust-81be8dee0a8b@spud>
+	 <1d54524d7ef939232b4512ca59c78794484103ca.camel@icenowy.me>
+	 <20251113-irritable-unfold-da619d52026c@spud>
+Organization: Anthon Open-Source Community
+User-Agent: Evolution 3.44.4 
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 16.0
-Thread-Index: AQISOccZb2Ez4IvEWuwZme1oXG7+3gLz1TbfAjvUL4UCZHEM87RJTwlQ
-Content-Language: ko
-X-CMS-MailID: 20251114065718epcas2p1f36aa81a248e01e9c78a9064c268b72f
-X-Msg-Generator: CA
-X-Sendblock-Type: AUTO_CONFIDENTIAL
-CMS-TYPE: 102P
-cpgsPolicy: CPGSC10-234,Y
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20250926074021epcas2p36a8dc02c84c9ca11e2318a1a8931d68a
-References: <20250926073921.1000866-1-sh86.bae@samsung.com>
-	<CGME20250926074021epcas2p36a8dc02c84c9ca11e2318a1a8931d68a@epcas2p3.samsung.com>
-	<20250926073921.1000866-4-sh86.bae@samsung.com>
-	<ea85d388-c0c1-4b4a-96d6-d3f27622ed54@kernel.org>
+X-ZohoMailClient: External
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251113_225728_837802_C2823B14 
-X-CRM114-Status: GOOD (  13.93  )
+X-CRM114-CacheID: sfid-20251113_230801_375605_C84A115D 
+X-CRM114-Status: GOOD (  30.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,68 +104,61 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-> > +		pcie_2l_phy: pcie-phy2l@161c6000{
-> 
-> 
-> 
-> Node names should be generic. See also an explanation and list of examples
-> (not exhaustive) in DT specification:
-> https://protect2.fireeye.com/v1/url?k=d2bcf1f2-8d273f96-d2bd7abd-
-> 000babda0201-1fe7eb4ecd262f65&q=1&e=8522e96d-f1a1-4b6b-baa9-
-> 44344340469a&u=https%3A%2F%2Fdevicetree-
-> specification.readthedocs.io%2Fen%2Flatest%2Fchapter2-devicetree-
-> basics.html%23generic-names-recommendation
-> If you cannot find a name matching your device, please check in kernel
-> sources for similar cases or you can grow the spec (via pull request to DT
-> spec repo).
-I will rename the node referring the guideline you linked.
-
-> Plus style issues... missing space.
-Will add space before left brace.
-
-> I would like to see also PCIe nodes somewhere, because I wonder if num-
-> lanes should not be moved to PCI node (phy consumer) instead.
-> Current approach feels better, but maybe it just duplicates num-lanes from
-> the PCI?
-As mentioned earlier, I plan to enable the PCIe nodes later.
-However, I can share my prototype PCIe node that I am currently using for
-PCIe driver testing:
-
-pcie_0: pcie@163c0000 {
-	compatible = "samsung,exynosautov920-pcie";
-	gpios = <&gph0 1 0>;	/* PERST */
-	reg = <0x163C0000 0x1000>, <0x12000000 0x20000>,
-		<0x2fffd000 0x2000>, <0x12600000 0x2000>;
-	reg-names = "elbi", "dbi", "config", "atu";
-	#address-cells = <3>;
-	#size-cells = <2>;
-	#interrupt-cells = <1>;
-	device_type = "pci";
-	interrupts = <GIC_SPI 444 IRQ_TYPE_LEVEL_HIGH>;
-	interrupt-map-mask = <0 0 0 0>;
-	interrupt-map = <0 0 0 0 &gic GIC_SPI 444 IRQ_TYPE_LEVEL_HIGH>;
-	clocks = <&xtcxo>;
-	clock-names = "ref_clk";
-	num-lanes = <1>;
-	num-viewport = <3>;
-	bus-range = <0x00 0xff>;
-	phys = <&pcie_0_phy>;
-	samsung,pcie-ch = <0>;
-	ranges = <0x82000000 0 0x20000000 0x20000000 0 0x1FFFD000>;
-	status = "disabled";
-};
-
-As you expected, num-lanes will be defined only in the PCIe node.
-Please let me know if this composition of the DT nodes looks appropriate
-to you.
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+5ZyoIDIwMjUtMTEtMTPmmJ/mnJ/lm5vnmoQgMTk6NDQgKzAwMDDvvIxDb25vciBEb29sZXnlhpnp
+gZPvvJoKPiBPbiBUaHUsIE5vdiAxMywgMjAyNSBhdCAwODo0ODozM0FNICswODAwLCBJY2Vub3d5
+IFpoZW5nIHdyb3RlOgo+ID4g5ZyoIDIwMjUtMTEtMTLmmJ/mnJ/kuInnmoQgMTg6MzYgKzAwMDDv
+vIxDb25vciBEb29sZXnlhpnpgZPvvJoKPiA+ID4gT24gV2VkLCBOb3YgMTIsIDIwMjUgYXQgMDI6
+MzQ6MzlQTSArMDgwMCwgSWNlbm93eSBaaGVuZyB3cm90ZToKPiA+ID4gPiDlnKggMjAyNS0xMS0x
+MeaYn+acn+S6jOeahCAxODozNiArMDAwMO+8jENvbm9yIERvb2xleeWGmemBk++8mgo+ID4gPiA+
+ID4gT24gVHVlLCBOb3YgMTEsIDIwMjUgYXQgMDY6MTg6MTZQTSArMDAwMCwgQ29ub3IgRG9vbGV5
+IHdyb3RlOgo+ID4gPiA+ID4gPiBPbiBTYXQsIE5vdiAwOCwgMjAyNSBhdCAwMjowNDozNUFNICsw
+MTAwLCBNaWNoYWwgV2lsY3p5bnNraQo+ID4gPiA+ID4gPiB3cm90ZToKPiA+ID4gPiA+ID4gPiBB
+ZGQgdGhlIGR0LWJpbmRpbmcgZG9jdW1lbnRhdGlvbiBmb3IgdGhlIFN0YXJGaXZlIEpINzExMAo+
+ID4gPiA+ID4gPiA+IFZpZGVvCj4gPiA+IAo+ID4gPiA+ID4gPiA+ICtwYXR0ZXJuUHJvcGVydGll
+czoKPiA+ID4gPiA+ID4gPiArwqAgIl5kaXNwbGF5QFswLTlhLWZdKyQiOgo+ID4gPiA+ID4gPiAK
+PiA+ID4gPiA+ID4gUGVyc29uYWxseSBJJ2QgbGlrZSB0byBzZWUgdGhlc2UgYmVpbmcgcmVndWxh
+ciBwcm9wZXJ0aWVzLAo+ID4gPiA+ID4gPiBzaW5jZQo+ID4gPiA+ID4gPiB0aGVyZSdzCj4gPiA+
+ID4gPiA+IGV4YWN0bHkgb25lIHBvc3NpYmxlIHNldHVwIGZvciB0aGlzLgo+ID4gPiA+ID4gPiAK
+PiA+ID4gPiA+ID4gPiArwqDCoMKgIHR5cGU6IG9iamVjdAo+ID4gPiA+ID4gPiA+ICvCoMKgwqAg
+ZGVzY3JpcHRpb246IFZlcmlzaWxpY29uIERDODIwMCBEaXNwbGF5IENvbnRyb2xsZXIKPiA+ID4g
+PiA+ID4gPiBub2RlLgo+ID4gPiA+ID4gPiAKPiA+ID4gPiA+ID4gQ2FuIHlvdSBhZGQgdGhlIHJl
+bGV2YW50IHJlZmVyZW5jZXMgaGVyZSBpbnN0ZWFkIG9mCj4gPiA+ID4gPiA+IGFsbG93aW5nCj4g
+PiA+ID4gPiA+IGFueQo+ID4gPiA+ID4gPiBvYmplY3Q/Cj4gPiA+ID4gPiAKPiA+ID4gPiA+IEkg
+ZG9uJ3QgdGhpbmsgdGhhdCBpZiB5b3UgZGlkLCB0aGlzIHdvdWxkIHBhc3MgdGhlIGJpbmRpbmcK
+PiA+ID4gPiA+IGNoZWNrcywKPiA+ID4gPiA+IGJlY2F1c2UgdGhlcmUncyBubyAidmVyaXNpbGlj
+b24sZGMiIGJpbmRpbmcuIEkgdGhpbmsgSSBzYXcKPiA+ID4gPiA+IG9uZSBpbgo+ID4gPiA+ID4g
+cHJvZ3Jlc3MsIGJ1dCB3aXRob3V0IHRoZSBzb2Mtc3BlY2lmaWMgY29tcGF0aWJsZSB0aGF0IEkg
+YW0KPiA+ID4gPiA+IGdvaW5nCj4gPiA+ID4gPiB0bwo+ID4gPiA+ID4gcmVxdWlyZSBoZXJlIC0g
+aWYgZm9yIG5vIHJlYXNvbiBvdGhlciB0aGFuIG1ha2luZyBzdXJlIHRoYXQKPiA+ID4gPiA+IHRo
+ZQo+ID4gPiA+ID4gY2xvY2tzCj4gPiA+ID4gPiBldGMgYXJlIHByb3ZpZGVkIGNvcnJlY3RseSBm
+b3IgdGhpcyBkZXZpY2UuCj4gPiA+ID4gCj4gPiA+ID4gV2VsbCBJIGRpZG4ndCBzcGVjaWZ5IGFu
+eSBzb2Mtc3BlY2lmaWMgY29tcGF0aWJsZSBiZWNhdXNlIHRoYXQKPiA+ID4gPiBJUAo+ID4gPiA+
+IGhhcwo+ID4gPiA+IGl0cyBvd24gaWRlbnRpZmljYXRpb24gcmVnaXN0ZXJzLgo+ID4gPiAKPiA+
+ID4gSSBzdGlsbCByZXF1aXJlIG9uZSBiZWNhdXNlIEkgd2FudCB0byBtYWtlIHN1cmUgdGhhdCBj
+bG9ja3MgZXRjCj4gPiA+IGFyZQo+ID4gPiBoYW5kbGVkIGNvcnJlY3RseS4gWW91IGNhbiBpZ25v
+cmUgaXQgaW4gdGhlIGRyaXZlciBpZiB5b3Ugd2lzaCwKPiA+ID4gYnV0Cj4gPiA+IHdoZW4KPiA+
+ID4gdGhlIG5leHQgdXNlciBjb21lcyBhbG9uZyB3aXRoIG9uZSBtb3JlIG9yIGxlc3MgY2xvY2ss
+IEkgd2FudCB0aGUKPiA+ID4gamg3MTEwIG9uZSB0byBiZSBmb3JjZWQgdG8gdXNlIHRoZSBjb3Jy
+ZWN0IGNvbmZpZ3VyYXRpb24uCj4gPiAKPiA+IEkgZG9uJ3QgdGhpbmsgZm9yIHRob3NlIGdlbmVy
+aWMgSVBzIHJlcXVpcmluZyBhIFNvQy1zcGVjaWZpYwo+ID4gY29tcGF0aWJsZQo+ID4gaXMgYSBn
+b29kIGlkZWEuCj4gCj4gSSBkaXNhZ3JlZS4gSWYgdGhpbmdzIGFyZSBjb21wbGV4IGVub3VnaCB0
+byBlbmQgdXAgd2l0aCBkaWZmZXJlbnQKPiBudW1iZXJzIG9mIGNsb2NrcyBvciBwb3dlci1kb21h
+aW5zIGV0YyBvbiBkaWZmZXJlbnQgcGxhdGZvcm1zICh3aGljaAo+IEkKPiBiZWxpZXZlIEdQVXMg
+YXJlKSB0aGVuIEkgd2FudCBvbmUgZm9yIHZhbGlkYXRpb24gcHVycG9zZXMgb24KPiBwbGF0Zm9y
+bXMgSQo+IGNhcmUgYWJvdXQuIFdoYXQgeW91IGRvIGluIHRoZSBkcml2ZXIgaXMgdXAgdG8geW91
+LgoKV2VsbCBJIHRoaW5rIFZpdmFudGUgR1BVcyBkbyBoYXZlIHN1Y2ggY2FzZSAtLSBhICJzaGFk
+ZXIiIGNsb2NrIHRoYXQgaXMKb25seSBwcmVzZW50IHdoZW4gM0Qgc3VwcG9ydCBpcyBoZXJlLiBC
+dXQgdGhhdCBiaW5kaW5nIHN0aWxsIGNvbnRhaW5zCm9ubHkgInZpdmFudGUsZ2MiIGFuZCB0aGUg
+bWFpbnRhaW5lciBvZiBldG5hdml2IHJlamVjdHMgZXh0cmEKY29tcGF0aWJsZSBzdHJpbmdzLgoK
+SW4gYWRkaXRpb24sIGFzIHRoZSBhZGRpdGlvbiBvZiBTb0Mtc3BlY2lmaWMgY29tcGF0aWJsZSBz
+dHJpbmcgYW5kIHRoZQpyZWFsIERUIGFyZSB1c3VhbGx5IHdyaXR0ZW4gYnkgdGhlIHNhbWUgcGVy
+c29uIGF0IHRoZSBzYW1lIHRpbWUsIEkKZG9uJ3QgdGhpbmsgdGhpcyBpbnRyb2R1Y2VzIGFueSBt
+b3JlIHZhbGlkYXRpb24gKGJlY2F1c2Ugd2hlbiB0aGUKYXV0aG9yIGdldHMgdGhpbmdzIHdyb25n
+IHRoZXkgd2lsbCBqdXN0IG1ha2UgaXQgd3JvbmcgYXQgdGhlIHR3bwpwbGFjZXMpLgoKLS0gCmxp
+bnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6
+Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
