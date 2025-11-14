@@ -4,56 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DD489CDE006
-	for <linux-phy@archiver.kernel.org>; Fri, 14 Nov 2025 06:05:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3F2CECDE014
+	for <linux-phy@archiver.kernel.org>; Fri, 14 Nov 2025 06:57:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
 	:Subject:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=88KFV0xX/ALfQE0zYx8wOXLy5OSJnfI9QJUpe8l3cDo=; b=Dqcg7Ea7WeVf5m
-	mJ++P7uY/2L9s/lr+mKUNHhbxvJvvro88dGkUzJWb2C+wjn52eFsjS8ytdCeel9zIICafPsQN4y0J
-	gHEjH5s3gsHkBBsf5+x2EOT3JD8AbRyYJIAmy8Hl2XrO44zMbzOBzijjFYnpqzPtrI7la5QxtoaVP
-	S85c2pX6rLbXgz6DtMRPlgnL6xfk61CpS4AvLEV4547rScqg0iQb+ZK4sQ87rIRYJFWWahU9t/j0p
-	iAFzwQIj2Of5M8LloscbS0MZ+c1ILQIA6TV/j3OAybsBjqe6lvACH98TaJyY4X74oD/QAj0uVG2so
-	jr41z1YCYLA31otCBoIA==;
+	List-Owner; bh=GKFoTxKfJj8NcCbCX9E67WNjNNcFX9iyo+XtsM4WmEo=; b=DOx2cDVD35eePS
+	Nhiux520FZbWGnhbJNuK2rvVbJiqhTaWuKkMVgffA6bkpTJ50XSs5VVgbhhztDGivyeybifpf7vYt
+	v8KTgiTHeQxl3d3tJZz+vEteKKf8RdyqBmVCjyOABOm+7dZG22/oT8+WzIEVN12hyrV8YGolUeYSb
+	J11b0UuXmV4/JPCDat0Qzzuahxd7RgbdD7A6J4lcXYeZIi0voTfXjypzKjoedWPkV+i/wTBfQUpX4
+	atYCsuSp9j0Wf+M8mXXbIzJNl1tMAiY05/CP2jHL7KgU3zKGyGbaROpVJPb1buVCIqZnwGMPM0uoN
+	Kaj4YI4L+M2t7V/fwhuw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJmw5-0000000BdLl-2mw4;
-	Fri, 14 Nov 2025 06:05:29 +0000
-Received: from mailout1.samsung.com ([203.254.224.24])
+	id 1vJnkS-0000000BhKm-3LKG;
+	Fri, 14 Nov 2025 06:57:32 +0000
+Received: from mailout4.samsung.com ([203.254.224.34])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJmw1-0000000BdKN-0rxp
+	id 1vJnkO-0000000BhJi-0X8l
 	for linux-phy@lists.infradead.org;
-	Fri, 14 Nov 2025 06:05:27 +0000
-Received: from epcas2p1.samsung.com (unknown [182.195.41.53])
-	by mailout1.samsung.com (KnoxPortal) with ESMTP id 20251114060519epoutp018d13d66d7ce0579613e6dd0ab1b1fbf9~3ymYuiHkt0269402694epoutp01P
-	for <linux-phy@lists.infradead.org>; Fri, 14 Nov 2025 06:05:19 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.samsung.com 20251114060519epoutp018d13d66d7ce0579613e6dd0ab1b1fbf9~3ymYuiHkt0269402694epoutp01P
+	Fri, 14 Nov 2025 06:57:31 +0000
+Received: from epcas2p3.samsung.com (unknown [182.195.41.55])
+	by mailout4.samsung.com (KnoxPortal) with ESMTP id 20251114065720epoutp042327ea245c69c7348341c18ee6498d89~3zTzZYXvg2756527565epoutp04x
+	for <linux-phy@lists.infradead.org>; Fri, 14 Nov 2025 06:57:20 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com 20251114065720epoutp042327ea245c69c7348341c18ee6498d89~3zTzZYXvg2756527565epoutp04x
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
-	s=mail20170921; t=1763100319;
-	bh=foyN9VFEd5R0A8quCBtbbHsWARJaVaEQr2kOKG08j/I=;
+	s=mail20170921; t=1763103440;
+	bh=1vkMpsltnFXkF+G2EStX6zbbbjFa3ZqX3K9ihfvO02o=;
 	h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
-	b=CjV1nJ3FIGUg8MzxNHtK0U+0NJc7tqDwC6fcOtCraMcS8TqxLP9x/B9gECCEMHfIT
-	 kDLQDleS0q0N6+tBA8DP0zCPzIjJAySG5j/CO/NGX20WNtC7IbI2i5we4NMc6LlgRU
-	 UVqVQxil0YkcZ6HAfH7El0s5urIwPJf9QsBimLNU=
+	b=AF9eq+cOCo27nmRd0D85k64UWmd+h8PC9krLewVBf8bPetYybViAT+7VXgYXlBUPm
+	 D8x+8PS1FCXZnGrTxgWQwl6yqAbO9GQ7ihBF/22K7G3ho8FtJ88fSiCfVxSazWviFP
+	 ZtrPDMUbSxBwgZyBDwWkpNH/oycM8oXaZ6B/h0y4=
 Received: from epsnrtp03.localdomain (unknown [182.195.42.155]) by
-	epcas2p4.samsung.com (KnoxPortal) with ESMTPS id
-	20251114060518epcas2p4c8439432d520565644955a31d6c77fc0~3ymYALs0M1660016600epcas2p4J;
-	Fri, 14 Nov 2025 06:05:18 +0000 (GMT)
-Received: from epcas2p2.samsung.com (unknown [182.195.38.200]) by
-	epsnrtp03.localdomain (Postfix) with ESMTP id 4d767L0cpTz3hhT7; Fri, 14 Nov
-	2025 06:05:18 +0000 (GMT)
-Received: from epsmtip2.samsung.com (unknown [182.195.34.31]) by
-	epcas2p3.samsung.com (KnoxPortal) with ESMTPA id
-	20251114060517epcas2p354291681ebb7d2922c09960e33aa7de5~3ymWmajVk1718617186epcas2p3Y;
-	Fri, 14 Nov 2025 06:05:17 +0000 (GMT)
-Received: from KORCO118486 (unknown [12.80.208.104]) by epsmtip2.samsung.com
+	epcas2p1.samsung.com (KnoxPortal) with ESMTPS id
+	20251114065719epcas2p1e8849a097d46ed03d4a15f820d6e3459~3zTy8NAmg1323413234epcas2p1B;
+	Fri, 14 Nov 2025 06:57:19 +0000 (GMT)
+Received: from epcas2p1.samsung.com (unknown [182.195.38.211]) by
+	epsnrtp03.localdomain (Postfix) with ESMTP id 4d77HM3gHXz3hhTD; Fri, 14 Nov
+	2025 06:57:19 +0000 (GMT)
+Received: from epsmtip1.samsung.com (unknown [182.195.34.30]) by
+	epcas2p1.samsung.com (KnoxPortal) with ESMTPA id
+	20251114065718epcas2p1f36aa81a248e01e9c78a9064c268b72f~3zTyB67lU1559915599epcas2p1K;
+	Fri, 14 Nov 2025 06:57:18 +0000 (GMT)
+Received: from KORCO118486 (unknown [12.80.208.104]) by epsmtip1.samsung.com
 	(KnoxPortal) with ESMTPA id
-	20251114060516epsmtip2b0a9c0c558ff57d67c33a178db682ec7~3ymWfEl6q0508905089epsmtip2c;
-	Fri, 14 Nov 2025 06:05:16 +0000 (GMT)
-From: "Sanghoon Bae" <sh86.bae@samsung.com>
+	20251114065718epsmtip16f5e401c43bd4752ad76b10649c268b8~3zTx7Nt-s0134501345epsmtip1i;
+	Fri, 14 Nov 2025 06:57:18 +0000 (GMT)
+From: "SanghoonBae" <sh86.bae@samsung.com>
 To: "'Krzysztof Kozlowski'" <krzk@kernel.org>, <robh@kernel.org>,
 	<conor+dt@kernel.org>, <vkoul@kernel.org>, <alim.akhtar@samsung.com>,
 	<kishon@kernel.org>, <m.szyprowski@samsung.com>, <jh80.chung@samsung.com>,
@@ -61,29 +61,28 @@ To: "'Krzysztof Kozlowski'" <krzk@kernel.org>, <robh@kernel.org>,
 Cc: <krzk+dt@kernel.org>, <linux-kernel@vger.kernel.org>,
 	<devicetree@vger.kernel.org>, <linux-samsung-soc@vger.kernel.org>,
 	<linux-phy@lists.infradead.org>, <linux-arm-kernel@lists.infradead.org>
-In-Reply-To: <649f8e90-d99b-401a-bb0f-ef0cf9c4fe7f@kernel.org>
-Subject: RE: [PATCH 2/4] dt-bindings: phy: Add PCIe PHY support for
- ExynosAutov920 SoC
-Date: Fri, 14 Nov 2025 15:05:16 +0900
-Message-ID: <000601dc552c$a63e6060$f2bb2120$@samsung.com>
+In-Reply-To: <ea85d388-c0c1-4b4a-96d6-d3f27622ed54@kernel.org>
+Subject: RE: [PATCH 3/4] arm64: dts: ExynosAutov920: add PCIe PHY DT nodes
+Date: Fri, 14 Nov 2025 15:57:18 +0900
+Message-ID: <001601dc5533$eb0049f0$c100ddd0$@samsung.com>
 MIME-Version: 1.0
 X-Mailer: Microsoft Outlook 16.0
-Thread-Index: AQISOccZb2Ez4IvEWuwZme1oXG7+3gIkR40QAdlJHE0CkODhjLRRbuBw
+Thread-Index: AQISOccZb2Ez4IvEWuwZme1oXG7+3gLz1TbfAjvUL4UCZHEM87RJTwlQ
 Content-Language: ko
-X-CMS-MailID: 20251114060517epcas2p354291681ebb7d2922c09960e33aa7de5
+X-CMS-MailID: 20251114065718epcas2p1f36aa81a248e01e9c78a9064c268b72f
 X-Msg-Generator: CA
 X-Sendblock-Type: AUTO_CONFIDENTIAL
 CMS-TYPE: 102P
 cpgsPolicy: CPGSC10-234,Y
 X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20250926074017epcas2p18fb2fc616b92dc04ad9e018151c2ba29
+X-CMS-RootMailID: 20250926074021epcas2p36a8dc02c84c9ca11e2318a1a8931d68a
 References: <20250926073921.1000866-1-sh86.bae@samsung.com>
-	<CGME20250926074017epcas2p18fb2fc616b92dc04ad9e018151c2ba29@epcas2p1.samsung.com>
-	<20250926073921.1000866-3-sh86.bae@samsung.com>
-	<649f8e90-d99b-401a-bb0f-ef0cf9c4fe7f@kernel.org>
+	<CGME20250926074021epcas2p36a8dc02c84c9ca11e2318a1a8931d68a@epcas2p3.samsung.com>
+	<20250926073921.1000866-4-sh86.bae@samsung.com>
+	<ea85d388-c0c1-4b4a-96d6-d3f27622ed54@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251113_220525_875073_E5D0EF48 
-X-CRM114-Status: GOOD (  18.65  )
+X-CRM114-CacheID: sfid-20251113_225728_837802_C2823B14 
+X-CRM114-Status: GOOD (  13.93  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,44 +99,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-> > Since the Exynosautov920 SoC uses the Samsung PCIe PHY, add support
-> > for it in the Exynosautov920 PCIe PHY bindings.
-> >
-> > The Exynosautov920 SoC includes two PHY instances: one for a 4-lane
-> > PHY and another for a 2-lane PHY. Each PHY can be used by separate
-> > controllers through the bifurcation option. Therefore, from 2 up to 4
-> > PCIe controllers can be supported and connected with this PHY driver.
+> > +		pcie_2l_phy: pcie-phy2l@161c6000{
 > 
 > 
-> Describe hardware, not driver.
-I will describe about the Exynosautov920 SoC PCIe hardware.
+> 
+> Node names should be generic. See also an explanation and list of examples
+> (not exhaustive) in DT specification:
+> https://protect2.fireeye.com/v1/url?k=d2bcf1f2-8d273f96-d2bd7abd-
+> 000babda0201-1fe7eb4ecd262f65&q=1&e=8522e96d-f1a1-4b6b-baa9-
+> 44344340469a&u=https%3A%2F%2Fdevicetree-
+> specification.readthedocs.io%2Fen%2Flatest%2Fchapter2-devicetree-
+> basics.html%23generic-names-recommendation
+> If you cannot find a name matching your device, please check in kernel
+> sources for similar cases or you can grow the spec (via pull request to DT
+> spec repo).
+I will rename the node referring the guideline you linked.
 
-> > PCIe lane number is used to distinguish each PHY instance.
-> > This is required since two PHY instances on ExynosAutov920 is not
-> > identical.
-> > On PHY driver code, need to check each instance and different settings.
-> 
-> 
-> Describe hardware, not driver.
-I will describe about the Exynosautov920 SoC PCIe hardware.
+> Plus style issues... missing space.
+Will add space before left brace.
 
-> > @@ -19,6 +19,7 @@ properties:
-> >        - samsung,exynos5433-pcie-phy
-> >        - tesla,fsd-pcie-phy0
-> >        - tesla,fsd-pcie-phy1
-> > +      - samsung,exynosautov920-pcie-phy
-> 
-> Messed order.
-Will fix the order
+> I would like to see also PCIe nodes somewhere, because I wonder if num-
+> lanes should not be moved to PCI node (phy consumer) instead.
+> Current approach feels better, but maybe it just duplicates num-lanes from
+> the PCI?
+As mentioned earlier, I plan to enable the PCIe nodes later.
+However, I can share my prototype PCIe node that I am currently using for
+PCIe driver testing:
 
-> > @@ -42,6 +47,7 @@ allOf:
-> >              enum:
-> >                - tesla,fsd-pcie-phy0
-> >                - tesla,fsd-pcie-phy1
-> > +              - samsung,exynosautov920-pcie-phy
-> 
-> Messed order.
-Will fix the order
+pcie_0: pcie@163c0000 {
+	compatible = "samsung,exynosautov920-pcie";
+	gpios = <&gph0 1 0>;	/* PERST */
+	reg = <0x163C0000 0x1000>, <0x12000000 0x20000>,
+		<0x2fffd000 0x2000>, <0x12600000 0x2000>;
+	reg-names = "elbi", "dbi", "config", "atu";
+	#address-cells = <3>;
+	#size-cells = <2>;
+	#interrupt-cells = <1>;
+	device_type = "pci";
+	interrupts = <GIC_SPI 444 IRQ_TYPE_LEVEL_HIGH>;
+	interrupt-map-mask = <0 0 0 0>;
+	interrupt-map = <0 0 0 0 &gic GIC_SPI 444 IRQ_TYPE_LEVEL_HIGH>;
+	clocks = <&xtcxo>;
+	clock-names = "ref_clk";
+	num-lanes = <1>;
+	num-viewport = <3>;
+	bus-range = <0x00 0xff>;
+	phys = <&pcie_0_phy>;
+	samsung,pcie-ch = <0>;
+	ranges = <0x82000000 0 0x20000000 0x20000000 0 0x1FFFD000>;
+	status = "disabled";
+};
+
+As you expected, num-lanes will be defined only in the PCIe node.
+Please let me know if this composition of the DT nodes looks appropriate
+to you.
 
 
 -- 
