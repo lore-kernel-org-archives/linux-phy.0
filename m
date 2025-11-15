@@ -4,54 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E3D61CEBF86
-	for <linux-phy@archiver.kernel.org>; Sat, 15 Nov 2025 20:58:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 23AF5CEBF8A
+	for <linux-phy@archiver.kernel.org>; Sat, 15 Nov 2025 20:58:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yH+g/T5fcQieIzgXEzx8j/CweBYRH6x8ASwG71qp2OI=; b=iDGQ4k6yr5Y272
-	gJQPPvo6dLKI55J22l+ZRfALTm1QL4MY/TTDLUtUSsjfthhZgvMKgqpcFiMsxenZtbz4oV/zi9zeQ
-	Nq79infLz2RQJlbmvKr7OIoFLr10E0QrlRqxcDwG/mjYuQYtfVX0uOjbP1h8/zcu88BjrxRWinew2
-	fGtGvMOoAf7ngseeWOGaVDnuNAkHyviNXWidomPk8PWVR1EXjUsWTmILWNu46vw5pUYecnzKeI91a
-	ykhwbn2RZmtaCx68RD2LTqNOkQgAWyKL5KmhOmv0Pb2cZB4SM8u3iUVkBnKXtnG5pKXZPVrN8TnXy
-	y6oaPWm+dVqL9DgE2HNA==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=RE9UaWXPPymwexjbcQih/aeDADRMalirHLk6jUOhed4=; b=ybJhhiCfX+sNIE
+	nYhOBey4TRf6+UpaWpjCjVEoEEvBv74Oia+N6FoAqCn5locHXT+oQ+uyN4FBuD809KP5r+7m9n+VN
+	BIzITzmKTRkNismxNgj2ZAm2dM/LKeLmZ+7czQUWLmUOz8elqF90LtLSfZmugruKx2diPuvxXhsqi
+	dmcC4jvS3ezRN8FO6vfczgcygo7sbqyKS+c/WdJmcOup4oS0avLpfaJffTohAXco90CSb1klg6AE9
+	5ttp23OIOPtJ/im7XPKrSWkQVZG/VxuLBWivXdblmriJUDOqnn7XY/d7uaEV2nmurOfBOVRN8Z+ad
+	2fF7WVuVj4dT9JVA1xhw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vKNM8-0000000E5HO-2lXU;
-	Sat, 15 Nov 2025 20:58:48 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	id 1vKNMA-0000000E5Kf-3WyZ;
+	Sat, 15 Nov 2025 20:58:50 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vKNLw-0000000E56g-1nGv;
-	Sat, 15 Nov 2025 20:58:39 +0000
+	id 1vKNLw-0000000E56h-2s6C;
+	Sat, 15 Nov 2025 20:58:40 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
 	s=mail; t=1763240312;
-	bh=BNloXSmxfui+A+UD0vb6639VkVLh4h7qFS1iqqJUbUo=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=d6IFiUNqQD+93pkq4ov86+rPsBtqWuNo+o78OoQQeHDVPP6RnQvqLT0il8ol+tsgU
-	 YMhKX0Dz+TVcC3EtyHF7Ck6JT2/94g3FzZeYYCK8zWmMpsh5DSSZjwm9ME60o3QjoV
-	 aOlfgrFV808O7OmvfGCGPaouspC95qn7GlhLeK8hX25M45q2CTlbc8uP12FRDKPVwK
-	 LBDVWjUfhgIZz3+HIzzg0OF6DEGWUKypIn05PzcPlXgp4iu/wxaIF0yTtyjJD/dJgg
-	 u/IO3GbZ5fekm38/cTda66Kaxq1x5qkpojvKA3nkAb/chsHnprCZNbOK1OnknsJ9O0
-	 ypAexouToZ05Q==
-Received: from beast.luon.net (simons.connected.by.freedominter.net [45.83.240.172])
+	bh=/iQHhrZOTfas5Ng9jqV3uTT5Sw+mmFyQVwbLKAoWb3c=;
+	h=From:Subject:Date:To:Cc:From;
+	b=XqMwBYIDLf6+s2bjI5cw4xZXAA43I54eBTEN6y49LVrVMMVxPFgsWmNkJPaZ5wbTn
+	 Bch23EHYym8+6H9jm9E23kayAOh1seAVXJDDQYZT9Tkc7E0Pye8vRVRwGthmGpORN6
+	 BsI8L+MkZuqABEa4F31wxfRaC1w38ly2fuHoiGp15qr6bVnRgeXochW7QDvQOhP+Tg
+	 UenLuvMp7JX9hVNh02bB3p3WK40XkFNye/8B5ps139YbZVQpz36n8tuLcHJSp1MtWQ
+	 N4zhmo4ihRlPV5vUoYzGw119t2meW0uPrJaevl6wKTGEro9IaTf4StU31vZUd0vogX
+	 6kvIWdcANggAQ==
+Received: from beast.luon.net (unknown [IPv6:2a10:3781:2531::8])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
 	(No client certificate requested)
 	(Authenticated sender: sjoerd)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 6FCE517E00B0;
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 84AF017E127F;
 	Sat, 15 Nov 2025 21:58:32 +0100 (CET)
 Received: by beast.luon.net (Postfix, from userid 1000)
-	id 11F6A110527D9; Sat, 15 Nov 2025 21:58:32 +0100 (CET)
+	id 0C769110527D7; Sat, 15 Nov 2025 21:58:32 +0100 (CET)
 From: Sjoerd Simons <sjoerd@collabora.com>
-Date: Sat, 15 Nov 2025 21:58:04 +0100
-Subject: [PATCH v4 01/11] dt-bindings: mfd: syscon: Add mt7981-topmisc
+Subject: [PATCH v4 00/11] arm64: dts: mediatek: Add Openwrt One AP
+ functionality
+Date: Sat, 15 Nov 2025 21:58:03 +0100
+Message-Id: <20251115-openwrt-one-network-v4-0-48cbda2969ac@collabora.com>
 MIME-Version: 1.0
-Message-Id: <20251115-openwrt-one-network-v4-1-48cbda2969ac@collabora.com>
-References: <20251115-openwrt-one-network-v4-0-48cbda2969ac@collabora.com>
-In-Reply-To: <20251115-openwrt-one-network-v4-0-48cbda2969ac@collabora.com>
+X-B4-Tracking: v=1; b=H4sIAFzpGGkC/x3MMQqAMAxA0atIZgNtqYJeRRy0Rg1CKqmoIN7d4
+ viG/x9IpEwJ2uIBpZMTR8nwZQFhHWQh5CkbnHGVNbbGuJNcemAUQqHjirqhN2NohmBHVwXI5a4
+ 08/1fu/59P+WhNVBlAAAA
+X-Change-ID: 20251016-openwrt-one-network-40bc9ac1b25c
 To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
  Conor Dooley <conor+dt@kernel.org>, 
  Matthias Brugger <matthias.bgg@gmail.com>, 
@@ -77,9 +80,8 @@ Cc: kernel@collabora.com, devicetree@vger.kernel.org,
  Conor Dooley <conor.dooley@microchip.com>
 X-Mailer: b4 0.14.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251115_125836_635252_F7CBC235 
-X-CRM114-Status: UNSURE (   8.47  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20251115_125836_882367_546FF6F4 
+X-CRM114-Status: GOOD (  11.70  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,31 +98,87 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This hardware block amongst other things includes a multiplexer for a
-high-speed Combo-Phy. This binding allows exposing the multiplexer
+Significant changes in V4:
+  * Drop patches that were picked up
+  * Improve mediatek,net dt bindings:
+    - Move back to V2 version (widening global constraint, constraining
+      per compatible)
+    - Ensure all compatibles are constraint in the amount of WEDs (2 for
+      everything apart from mt7981). Specifically adding constraints for
+      mediatek,mt7622-eth and ralink,rt5350-eth
+Significant changes in V3:
+  * Drop patches that were picked up
+  * Re-order patches so changes that don't require dt binding changes
+    come first (Requested by Angelo)
+  * Specify drive power directly rather then using MTK_DRIVE_...
+  * Simply mediatek,net binding changes to avoid accidental changes to
+    other compatibles then mediatek,mt7981-eth
+Significant changes in V2:
+  * https://lore.kernel.org/lkml/20251016-openwrt-one-network-v1-0-de259719b6f2@collabora.com/
+  * Only introduce labels in mt7981b.dtsi when required
+  * Switch Airoha EN8811H phy irq to level rather then edge triggered
+  * Move uart0 pinctrl from board dts to soc dtsi
+  * Only overwrite constraints with non-default values in MT7981 bindings
+  * Make SPI NOR nvmem cell labels more meaningfull
+  * Seperate fixing and disable-by-default for the mt7981 in seperate
+    patches
 
-Acked-by: Conor Dooley <conor.dooley@microchip.com>
-Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+This series add various peripherals to the Openwrt One, to make it
+actually useful an access point:
+
+* Pcie express (tested with nvme storage)
+* Wired network interfaces
+* Wireless network interfaces (2.4g, 5ghz wifi)
+* Status leds
+* SPI NOR for factory data
+
+Unsurprisingly the series is a mix of dt binding updates, extensions of
+the mt7981b and the openwrt one dtb. All driver support required is
+already available.
+
+Sadly during testing i've found various quirks requiring kernel
+arguments. Documenting those here both as note to self and making it
+easier for others to test :)
+
+* fw_devlink=permissive: the nvmem fixed-layout doesn't create a layout
+  device, so doesn't trigger fw_devlink
+* clk_ignore_unused: Needed when building CONFIG_NET_MEDIATEK_SOC as a
+  module. If the ethernet related clocks (gp1/gp2) get disabled the
+  mac ends up in a weird state causing it not to function correctly.
+* pcie_aspm: ASPM is forced to enabled in 6.18-rc1, unfortunately
+  enabling ASPM L1.1 ends up triggering unrecoverable AERs.
+
+Patches are against the mediatek trees for-next branch
+
 Signed-off-by: Sjoerd Simons <sjoerd@collabora.com>
 ---
- Documentation/devicetree/bindings/mfd/syscon.yaml | 1 +
- 1 file changed, 1 insertion(+)
+Sjoerd Simons (11):
+      dt-bindings: mfd: syscon: Add mt7981-topmisc
+      dt-bindings: PCI: mediatek-gen3: Add MT7981 PCIe compatible
+      dt-bindings: phy: mediatek,tphy: Add support for MT7981
+      arm64: dts: mediatek: mt7981b: Add PCIe and USB support
+      arm64: dts: mediatek: mt7981b-openwrt-one: Enable PCIe and USB
+      dt-bindings: net: mediatek,net: Correct bindings for MT7981
+      arm64: dts: mediatek: mt7981b: Add Ethernet and WiFi offload support
+      arm64: dts: mediatek: mt7981b-openwrt-one: Enable Ethernet
+      arm64: dts: mediatek: mt7981b: Disable wifi by default
+      arm64: dts: mediatek: mt7981b: Add wifi memory region
+      arm64: dts: mediatek: mt7981b-openwrt-one: Enable wifi
 
-diff --git a/Documentation/devicetree/bindings/mfd/syscon.yaml b/Documentation/devicetree/bindings/mfd/syscon.yaml
-index 657c38175fba2..51511078c4c3b 100644
---- a/Documentation/devicetree/bindings/mfd/syscon.yaml
-+++ b/Documentation/devicetree/bindings/mfd/syscon.yaml
-@@ -193,6 +193,7 @@ properties:
-           - mediatek,mt2701-pctl-a-syscfg
-           - mediatek,mt2712-pctl-a-syscfg
-           - mediatek,mt6397-pctl-pmic-syscfg
-+          - mediatek,mt7981-topmisc
-           - mediatek,mt7988-topmisc
-           - mediatek,mt8135-pctl-a-syscfg
-           - mediatek,mt8135-pctl-b-syscfg
+ Documentation/devicetree/bindings/mfd/syscon.yaml  |   1 +
+ .../devicetree/bindings/net/mediatek,net.yaml      |  26 ++-
+ .../bindings/pci/mediatek-pcie-gen3.yaml           |   1 +
+ .../devicetree/bindings/phy/mediatek,tphy.yaml     |   1 +
+ .../boot/dts/mediatek/mt7981b-openwrt-one.dts      | 125 ++++++++++++
+ arch/arm64/boot/dts/mediatek/mt7981b.dtsi          | 222 ++++++++++++++++++++-
+ 6 files changed, 371 insertions(+), 5 deletions(-)
+---
+base-commit: 67ed5843a67b7ba63d79f2ba3fd21bee151d3138
+change-id: 20251016-openwrt-one-network-40bc9ac1b25c
 
+Best regards,
 -- 
-2.51.0
+Sjoerd Simons <sjoerd@collabora.com>
 
 
 -- 
