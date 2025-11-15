@@ -4,53 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 440AECEBF96
-	for <linux-phy@archiver.kernel.org>; Sat, 15 Nov 2025 20:58:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3CC60CEBF8A
+	for <linux-phy@archiver.kernel.org>; Sat, 15 Nov 2025 20:58:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1aIr3wN9ly1x/aGCSlnmd6QV/L8qow8VoGPF+l0UOZ8=; b=HeU+5NYPvsgFAQ
-	oszvhxVe3XhgcOyF0LNt5R8N/PNxffCUlE++/QO6kxqEZ56YbuhMbTrb5H1vx/qwGYqyc3Z48TWkj
-	WwF2Skekpe1bZwIkOtZLsbqgFklmldQ7azoxDIBUFzo2yzo2DdlV86cC49qKyRvl53yx5Kb5dj3VC
-	v0sU3Z7M7X0vmg51I+m2sw29g6OOw9e+A77CdC03q6CoYmzUuUMNeL6kAQVoLLy8xJC6d0pOWsqFi
-	pFuBiSzUQyqJUQsMYCVAjRwiBMApR2ryKtRE+Qg1vnNgswJwD3ypez8E9XHB8EsB98cqa9vBOjkh3
-	IRqDQxWCpwTzEaDINDEg==;
+	List-Owner; bh=kwRn6bLvU/i3we0Y1MxAus+MjbWAz7i/Ka/yBVt7Qh0=; b=K69NA6QDdei6PT
+	uJ3yXFi1kh2DwKfCHeplA7wInuAML1XdjYO2F775DjMqmaSefH/Sz/rCx1mLrYUoxxQZDrmIGe6Hf
+	lnnHK3tOeEXLT3PTN9C/OzC6q4HzRSbdnsCd36T7Dvu60XKh7kx2if0x9jMzgiHK6JLDa+vUaVvBW
+	x3iM555aaJ7L2wzI6GXicS7b6q+dbi12d9eqsOYt7LZImS10+tkW7OBhm9vvV8KfTiRWEPcSBxruj
+	dgZhfpnirD2V1cQzNm+5z/tNn+/79t7g4LS5LUrB2YTllvpokStSHDLjhT3fRMPX+2uWEn/H6uEsk
+	KUrSLALc7ZhWvFQv7DiA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vKNMD-0000000E5Qn-3uVz;
-	Sat, 15 Nov 2025 20:58:53 +0000
-Received: from bali.collaboradmins.com ([148.251.105.195])
+	id 1vKNMG-0000000E5Wg-3UxK;
+	Sat, 15 Nov 2025 20:58:56 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vKNM0-0000000E58H-3gfI;
-	Sat, 15 Nov 2025 20:58:44 +0000
+	id 1vKNM1-0000000E58h-40C6;
+	Sat, 15 Nov 2025 20:58:45 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1763240313;
-	bh=8iJNPpI85EcL2zA7omSQYgyHFc03BY1+Hwd6GqmpZ7c=;
+	s=mail; t=1763240314;
+	bh=haXHZnrCQw87Hh0XlwT4Nqlq0lDr5SGoeyDsPgAcJ6c=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=bWdQNyPtiD6YGJ5U1tblDalUMjPSFWlLTCVs1FJNg3aM1LzTzH3lOqijc0PR27Mo1
-	 KP1MmZ0ABQCv2JiSVy45PlI72oyWvYp2oCHe+JKj55k9iN1/R875ODl9Wz+N1pUS9T
-	 tyBqPNG7xr6FgkKbsvN9B8sEi+f0/0TR5e8S1KcoKlzrU8RNl3UHDVUXUsIVTOUlub
-	 AY+RBAnqeyxJCZ95XnzdLRF04IJJtCbw23HDlPLkLOLj4KZ1Q/G+STRfg41qoeN6WW
-	 +KdLLAvUTmF1m2+nvnk2JeBN5EaFsBZJaGfWmgPDFmH1iSJF2SImhGkwVXcI8dsdEM
-	 tZxY2LYuM8Cnw==
-Received: from beast.luon.net (simons.connected.by.freedominter.net [45.83.240.172])
+	b=TOoV/J7cx5DpMaFvAYsYvaD9LPvgXxNp7YzX6WYjs3cvvv0YO0wkhBXGgOmqU/Ik7
+	 citiTlK3d5z1LTbYuHmb6MUtRogL7OxbF6U0iWhIn6Y4MvG2zgv3D7DL0apFPvVNzW
+	 BPaVnpgrMw1xz2XZajY8//z15GGj207k1X6yywHUMOTQab6fKfaJi5WtX/PrgK4nC1
+	 /HZAdkTMK0OCovro7ffLfFUPelI1Dr3XCSA48/7lOpabn8tVXe3lA3tYWXZpkwiwmJ
+	 qPKcMyPXAONT/3J0p/TPOe38lIR5eCa/W59LppUe1I2oE0djAJ6RZheKd5/xiQ/XHK
+	 by8Tbx2CrPd5Q==
+Received: from beast.luon.net (unknown [IPv6:2a10:3781:2531::8])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
 	(No client certificate requested)
 	(Authenticated sender: sjoerd)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id E66F717E1340;
-	Sat, 15 Nov 2025 21:58:32 +0100 (CET)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id D5C9D17E141E;
+	Sat, 15 Nov 2025 21:58:33 +0100 (CET)
 Received: by beast.luon.net (Postfix, from userid 1000)
-	id 37FA8110527E7; Sat, 15 Nov 2025 21:58:32 +0100 (CET)
+	id 3FC51110527E9; Sat, 15 Nov 2025 21:58:32 +0100 (CET)
 From: Sjoerd Simons <sjoerd@collabora.com>
-Date: Sat, 15 Nov 2025 21:58:11 +0100
-Subject: [PATCH v4 08/11] arm64: dts: mediatek: mt7981b-openwrt-one: Enable
- Ethernet
+Date: Sat, 15 Nov 2025 21:58:12 +0100
+Subject: [PATCH v4 09/11] arm64: dts: mediatek: mt7981b: Disable wifi by
+ default
 MIME-Version: 1.0
-Message-Id: <20251115-openwrt-one-network-v4-8-48cbda2969ac@collabora.com>
+Message-Id: <20251115-openwrt-one-network-v4-9-48cbda2969ac@collabora.com>
 References: <20251115-openwrt-one-network-v4-0-48cbda2969ac@collabora.com>
 In-Reply-To: <20251115-openwrt-one-network-v4-0-48cbda2969ac@collabora.com>
 To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
@@ -77,8 +77,9 @@ Cc: kernel@collabora.com, devicetree@vger.kernel.org,
  Sjoerd Simons <sjoerd@collabora.com>
 X-Mailer: b4 0.14.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251115_125841_092912_3F31D9ED 
-X-CRM114-Status: GOOD (  11.48  )
+X-CRM114-CacheID: sfid-20251115_125842_182365_C62C650B 
+X-CRM114-Status: UNSURE (   9.83  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,107 +96,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Enable the Ethernet subsystem on OpenWrt One board with dual-MAC
-configuration:
-- GMAC0: Connected to external Airoha EN8811H 2.5GbE PHY via SGMII
-  (2500base-x mode) for WAN connectivity with LED indicators
-- GMAC1: Connected to internal MT7981 1GbE PHY (GMII mode) for LAN
+Disable the wifi block by default as it won't function properly without
+at least pin muxing.
 
-Ethernet aliases are defined to provide consistent network interface
-naming (ethernet0 = LAN, ethernet1 = WAN).
+This doesn't enable wifi on any of the existing mt7981b devices as a
+required memory-region property is missing, causing the driver to fail
+probing anyway.
 
 Signed-off-by: Sjoerd Simons <sjoerd@collabora.com>
 ---
-V1 -> V2:
-  - Switch gmac0 phy irq to Level
-  - Update mac nvmem label name
+V2: Newly introduced patch
 ---
- .../boot/dts/mediatek/mt7981b-openwrt-one.dts      | 58 ++++++++++++++++++++++
- 1 file changed, 58 insertions(+)
+ arch/arm64/boot/dts/mediatek/mt7981b.dtsi | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts b/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts
-index 7382599cfea29..2aea899006453 100644
---- a/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts
-+++ b/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts
-@@ -12,6 +12,8 @@ / {
- 	model = "OpenWrt One";
- 
- 	aliases {
-+		ethernet0 = &gmac1;
-+		ethernet1 = &gmac0;
- 		serial0 = &uart0;
+diff --git a/arch/arm64/boot/dts/mediatek/mt7981b.dtsi b/arch/arm64/boot/dts/mediatek/mt7981b.dtsi
+index 6be588be3761a..1f4c114354660 100644
+--- a/arch/arm64/boot/dts/mediatek/mt7981b.dtsi
++++ b/arch/arm64/boot/dts/mediatek/mt7981b.dtsi
+@@ -499,6 +499,7 @@ wifi@18000000 {
+ 			clock-names = "mcu", "ap2conn";
+ 			resets = <&watchdog MT7986_TOPRGU_CONSYS_SW_RST>;
+ 			reset-names = "consys";
++			status = "disabled";
+ 		};
  	};
  
-@@ -87,6 +89,58 @@ reg_5v: regulator-5v {
- 	};
- };
- 
-+&eth {
-+	status = "okay";
-+
-+	/* WAN interface */
-+	gmac0: mac@0 {
-+		compatible = "mediatek,eth-mac";
-+		reg = <0>;
-+		nvmem-cells = <&wan_factory_mac 0>;
-+		nvmem-cell-names = "mac-address";
-+		phy-mode = "2500base-x";
-+		phy-handle = <&phy15>;
-+	};
-+
-+	/* LAN interface */
-+	gmac1: mac@1 {
-+		compatible = "mediatek,eth-mac";
-+		reg = <1>;
-+		phy-mode = "gmii";
-+		phy-handle = <&int_gbe_phy>;
-+	};
-+};
-+
-+&mdio_bus {
-+	phy15: ethernet-phy@f {
-+		compatible = "ethernet-phy-id03a2.a411";
-+		reg = <0xf>;
-+		interrupt-parent = <&pio>;
-+		interrupts = <38 IRQ_TYPE_LEVEL_LOW>;
-+		reset-gpios = <&pio 39 GPIO_ACTIVE_LOW>;
-+		reset-assert-us = <10000>;
-+		reset-deassert-us = <20000>;
-+		airoha,pnswap-rx;
-+
-+		leds {
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+
-+			led@0 {
-+				reg = <0>;
-+				function = LED_FUNCTION_WAN;
-+				color = <LED_COLOR_ID_AMBER>;
-+			};
-+
-+			led@1 {
-+				reg = <1>;
-+				function = LED_FUNCTION_WAN;
-+				color = <LED_COLOR_ID_GREEN>;
-+			};
-+		};
-+	};
-+};
-+
- &pcie {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&pcie_pins>;
-@@ -191,6 +245,10 @@ partition@180000 {
- 	};
- };
- 
-+&sgmiisys0 {
-+	mediatek,pnswap;
-+};
-+
- &uart0 {
- 	status = "okay";
- };
 
 -- 
 2.51.0
