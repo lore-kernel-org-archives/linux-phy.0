@@ -4,81 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 89AE3CEB2D2
-	for <linux-phy@archiver.kernel.org>; Sat, 15 Nov 2025 20:59:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 29757CD4F3E
+	for <linux-phy@archiver.kernel.org>; Sun, 16 Nov 2025 07:32:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SUDc5L14dZFoqO2V/LYNEvC6ifzv0Os7md6yyByyJ58=; b=Mn1vRLeEhTahNI
-	IFD/2unQ+oQSZS0oHFxjDiNd8sp4TYqu2rLtBo/H3UsAYzF+2I5oxhBTXrHb+4gxfPBLRxW1P9qk2
-	qgpUioKJclOGiiuieemG1MswhCWtR/P/yAXiRlWtNPZVcOwPZVnKT9nc7JFWiGbbCP57C9kse4Squ
-	+ITfkeDRab1drhwXESiAQx3Ds2GEp/Li1hFzsrTIA6AqY+dUNaO+gegYYS2ac6H/QvwaC6wYJFqpB
-	XquQ+PZk30iJqvq3ftaxcRWW7E3UvRY69JQ8r0uvW/m07NXQX09L8RDnVWXiRv+XDFdRShezp/MXG
-	0+PK3/uz+cxIN414eBVA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=rbJUcaGg6hDZuJlOmUv+B4JWGbUEDf6iF+OkNZ6Yh0M=; b=hDFB0w5K/HdmAV
+	CfRpXvG93wu/wj8Fmk2DSyW+3B/DZmX6/fLtrbZ1W3x6P90QuNg5U31xrSTkwPS00mbq26tlPu4sr
+	HqdDmaLxBPce4OVJSo50ra2KPqtVOVMHnshCy9PvN6F6XscNAoyQeCT50BHpuOuHrrJ1PkKiqxBub
+	lSzkQ24e1OoOrjDPc5V+YohElU1GhcWXhC6+EyHA6yAA4FdHs4of4CxuuFB/YdWNKDFrCOEaewJTX
+	7PiOlsUntOXMcemasDfvOsS9mDLRXxNv8RWqjY/ggyTHuH5H9gW10es7FnEASpbnRTDlBVMGuJbXL
+	MtOUwZV0+sOik/rClnhA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vKNMM-0000000E5hb-0gxI;
-	Sat, 15 Nov 2025 20:59:02 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	id 1vKXFm-0000000ERd0-2mz2;
+	Sun, 16 Nov 2025 07:32:54 +0000
+Received: from smtp81.cstnet.cn ([159.226.251.81] helo=cstnet.cn)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vKNM2-0000000E58z-1yGX;
-	Sat, 15 Nov 2025 20:58:45 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1763240313;
-	bh=qtE8TxX+bp4mVeKXXycM622mPKaw8qoe/nGz0YEjV0g=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=OMTrMedcu0AeQXazVdUg3cIgK7psG/6TTE91XDJScFPQcInb7moqAzzyqBzWMDPmz
-	 NmMaHV1wu9Nz42zxajQAQ/OVT8yEz6+nRjUBVO0ryHzqc6UPNqfoRDKxlmdJRbZLcU
-	 f0fP/rJJ0iF9d1BTMgPkvJIdlO6HtcKXqiaUQDCdE2NH5V72CUyGVwg7ypj0I+Z9GC
-	 fFvUrGEWkzCZDiDsT+KmQcAyXF5jp7wnfitEFNwXJa7RSjYWUDWHDsdc3lxG0KbE37
-	 wzquvJyfv+Jf3MLJJYQ3W39I+pp3wpzIuUkR6xJ1gbJmGI8O67yR+rLPlahzQL2Tbk
-	 Vp1ipOawKNEUA==
-Received: from beast.luon.net (unknown [IPv6:2a10:3781:2531::8])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
-	(No client certificate requested)
-	(Authenticated sender: sjoerd)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 47C3217E1401;
-	Sat, 15 Nov 2025 21:58:33 +0100 (CET)
-Received: by beast.luon.net (Postfix, from userid 1000)
-	id 29442110527E1; Sat, 15 Nov 2025 21:58:32 +0100 (CET)
-From: Sjoerd Simons <sjoerd@collabora.com>
-Date: Sat, 15 Nov 2025 21:58:08 +0100
-Subject: [PATCH v4 05/11] arm64: dts: mediatek: mt7981b-openwrt-one: Enable
- PCIe and USB
-MIME-Version: 1.0
-Message-Id: <20251115-openwrt-one-network-v4-5-48cbda2969ac@collabora.com>
-References: <20251115-openwrt-one-network-v4-0-48cbda2969ac@collabora.com>
-In-Reply-To: <20251115-openwrt-one-network-v4-0-48cbda2969ac@collabora.com>
-To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Matthias Brugger <matthias.bgg@gmail.com>, 
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
- Ryder Lee <ryder.lee@mediatek.com>, 
- Jianjun Wang <jianjun.wang@mediatek.com>, 
- Bjorn Helgaas <bhelgaas@google.com>, 
- Lorenzo Pieralisi <lpieralisi@kernel.org>, 
- =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, 
- Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Lee Jones <lee@kernel.org>, 
- Andrew Lunn <andrew+netdev@lunn.ch>, 
- "David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
- Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
- Lorenzo Bianconi <lorenzo@kernel.org>, Felix Fietkau <nbd@nbd.name>
-Cc: kernel@collabora.com, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- linux-mediatek@lists.infradead.org, linux-pci@vger.kernel.org, 
- linux-phy@lists.infradead.org, netdev@vger.kernel.org, 
- Daniel Golle <daniel@makrotopia.org>, Bryan Hinton <bryan@bryanhinton.com>, 
- Sjoerd Simons <sjoerd@collabora.com>
-X-Mailer: b4 0.14.3
+	id 1vKXFj-0000000ERcf-41AF
+	for linux-phy@lists.infradead.org;
+	Sun, 16 Nov 2025 07:32:54 +0000
+Received: from localhost.localdomain (unknown [202.112.113.212])
+	by APP-03 (Coremail) with SMTP id rQCowAAnstQZfhlp_+TxAA--.28161S2;
+	Sun, 16 Nov 2025 15:32:44 +0800 (CST)
+From: Ma Ke <make24@iscas.ac.cn>
+To: vkoul@kernel.org,
+	kishon@kernel.org,
+	make24@iscas.ac.cn,
+	andriy.shevchenko@linux.intel.com,
+	mchehab+huawei@kernel.org,
+	mani@kernel.org
+Cc: linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	akpm@linux-foundation.org,
+	stable@vger.kernel.org
+Subject: [PATCH] phy: HiSilicon: Fix error handling in hi3670_pcie_get_resources_from_pcie
+Date: Sun, 16 Nov 2025 15:32:31 +0800
+Message-Id: <20251116073231.22676-1-make24@iscas.ac.cn>
+X-Mailer: git-send-email 2.17.1
+X-CM-TRANSID: rQCowAAnstQZfhlp_+TxAA--.28161S2
+X-Coremail-Antispam: 1UD129KBjvJXoW7WFWfJr4rCw18ZrW5tF4xJFb_yoW8tr1DpF
+	W7KFWakry8J393uF1FvF45WFyYkFs0ka45A34xK34SvFnaqr90qayUtFy0q3W2vFWkZFWU
+	KFyUtF4kJa18trJanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDU0xBIdaVrnRJUUUP014x267AKxVW8JVW5JwAFc2x0x2IEx4CE42xK8VAvwI8IcIk0
+	rVWrJVCq3wAFIxvE14AKwVWUJVWUGwA2ocxC64kIII0Yj41l84x0c7CEw4AK67xGY2AK02
+	1l84ACjcxK6xIIjxv20xvE14v26r4j6ryUM28EF7xvwVC0I7IYx2IY6xkF7I0E14v26r4j
+	6F4UM28EF7xvwVC2z280aVAFwI0_Cr1j6rxdM28EF7xvwVC2z280aVCY1x0267AKxVWxJr
+	0_GcWlnxkEFVAIw20F6cxK64vIFxWle2I262IYc4CY6c8Ij28IcVAaY2xG8wAqx4xG64xv
+	F2IEw4CE5I8CrVC2j2WlYx0E2Ix0cI8IcVAFwI0_Jr0_Jr4lYx0Ex4A2jsIE14v26r1j6r
+	4UMcvjeVCFs4IE7xkEbVWUJVW8JwACjcxG0xvY0x0EwIxGrwACjI8F5VA0II8E6IAqYI8I
+	648v4I1lFIxGxcIEc7CjxVA2Y2ka0xkIwI1lc7CjxVAaw2AFwI0_Jw0_GFylc2xSY4AK67
+	AK6r4xMxAIw28IcxkI7VAKI48JMxC20s026xCaFVCjc4AY6r1j6r4UMI8I3I0E5I8CrVAF
+	wI0_Jr0_Jr4lx2IqxVCjr7xvwVAFwI0_JrI_JrWlx4CE17CEb7AF67AKxVWUtVW8ZwCIc4
+	0Y0x0EwIxGrwCI42IY6xIIjxv20xvE14v26r1j6r1xMIIF0xvE2Ix0cI8IcVCY1x0267AK
+	xVWUJVW8JwCI42IY6xAIw20EY4v20xvaj40_Jr0_JF4lIxAIcVC2z280aVAFwI0_Jr0_Gr
+	1lIxAIcVC2z280aVCY1x0267AKxVW8JVW8JrUvcSsGvfC2KfnxnUUI43ZEXa7VUbsmitUU
+	UUU==
+X-Originating-IP: [202.112.113.212]
+X-CM-SenderInfo: ppdnvj2u6l2u1dvotugofq/
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251115_125844_876976_31568B83 
-X-CRM114-Status: GOOD (  11.36  )
+X-CRM114-CacheID: sfid-20251115_233252_388967_864BAFDF 
+X-CRM114-Status: GOOD (  11.01  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,84 +79,74 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Enable the PCIe controller and USB3 XHCI host on the OpenWrt One
-board. The USB controller is configured for USB 2.0 only mode, as the
-shared USB3/PCIe PHY is dedicated to PCIe functionality on this board.
+In hi3670_pcie_get_resources_from_pcie(), the reference obtained via
+bus_find_device_by_of_node() is never released with put_device(). Each
+call to this function increments the reference count of the PCIe
+device without decrementing it, preventing proper device cleanup. And
+the device node obtained via of_get_child_by_name() is never released
+with of_node_put(). This could cause a leak of the node reference.
 
-Signed-off-by: Sjoerd Simons <sjoerd@collabora.com>
+Add proper resource cleanup using goto labels to ensure all acquired
+references are released before function return, regardless of the exit
+path.
+
+Found by code review.
+
+Cc: stable@vger.kernel.org
+Fixes: 73075011ffff ("phy: HiSilicon: Add driver for Kirin 970 PCIe PHY")
+Signed-off-by: Ma Ke <make24@iscas.ac.cn>
 ---
- .../boot/dts/mediatek/mt7981b-openwrt-one.dts      | 43 ++++++++++++++++++++++
- 1 file changed, 43 insertions(+)
+ drivers/phy/hisilicon/phy-hi3670-pcie.c | 13 ++++++++++---
+ 1 file changed, 10 insertions(+), 3 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts b/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts
-index 2e39e72877301..7382599cfea29 100644
---- a/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts
-+++ b/arch/arm64/boot/dts/mediatek/mt7981b-openwrt-one.dts
-@@ -67,9 +67,40 @@ led-2 {
- 			linux,default-trigger = "netdev";
- 		};
- 	};
-+
-+	reg_3p3v: regulator-3p3v {
-+		compatible = "regulator-fixed";
-+		regulator-name = "fixed-3.3V";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+		regulator-boot-on;
-+		regulator-always-on;
-+	};
-+
-+	reg_5v: regulator-5v {
-+		compatible = "regulator-fixed";
-+		regulator-name = "fixed-5V";
-+		regulator-min-microvolt = <5000000>;
-+		regulator-max-microvolt = <5000000>;
-+		regulator-boot-on;
-+		regulator-always-on;
-+	};
-+};
-+
-+&pcie {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pcie_pins>;
-+	status = "okay";
- };
+diff --git a/drivers/phy/hisilicon/phy-hi3670-pcie.c b/drivers/phy/hisilicon/phy-hi3670-pcie.c
+index dbc7dcce682b..4c67a7613261 100644
+--- a/drivers/phy/hisilicon/phy-hi3670-pcie.c
++++ b/drivers/phy/hisilicon/phy-hi3670-pcie.c
+@@ -560,7 +560,8 @@ static int hi3670_pcie_get_resources_from_pcie(struct hi3670_pcie_phy *phy)
+ {
+ 	struct device_node *pcie_port;
+ 	struct device *dev = phy->dev;
+-	struct device *pcie_dev;
++	struct device *pcie_dev = NULL;
++	int ret = 0;
  
- &pio {
-+	pcie_pins: pcie-pins {
-+		mux {
-+			function = "pcie";
-+			groups = "pcie_pereset";
-+		};
-+	};
-+
- 	pwm_pins: pwm-pins {
- 		mux {
- 			function = "pwm";
-@@ -163,3 +194,15 @@ partition@180000 {
- &uart0 {
- 	status = "okay";
- };
-+
-+&usb_phy {
-+	status = "okay";
-+};
-+
-+&xhci {
-+	phys = <&u2port0 PHY_TYPE_USB2>;
-+	vusb33-supply = <&reg_3p3v>;
-+	vbus-supply = <&reg_5v>;
-+	mediatek,u3p-dis-msk = <0x01>;
-+	status = "okay";
-+};
-
+ 	pcie_port = of_get_child_by_name(dev->parent->of_node, "pcie");
+ 	if (!pcie_port) {
+@@ -572,7 +573,8 @@ static int hi3670_pcie_get_resources_from_pcie(struct hi3670_pcie_phy *phy)
+ 	pcie_dev = bus_find_device_by_of_node(&platform_bus_type, pcie_port);
+ 	if (!pcie_dev) {
+ 		dev_err(dev, "Didn't find pcie device\n");
+-		return -ENODEV;
++		ret = -ENODEV;
++		goto out_put_node;
+ 	}
+ 
+ 	/*
+@@ -586,9 +588,14 @@ static int hi3670_pcie_get_resources_from_pcie(struct hi3670_pcie_phy *phy)
+ 	phy->apb = dev_get_regmap(pcie_dev, "kirin_pcie_apb");
+ 	if (!phy->apb) {
+ 		dev_err(dev, "Failed to get APB regmap\n");
+-		return -ENODEV;
++		ret = -ENODEV;
++		goto out_put_device;
+ 	}
+ 
++out_put_device:
++	put_device(pcie_dev);
++out_put_node:
++	of_node_put(pcie_port);
+ 	return 0;
+ }
+ 
 -- 
-2.51.0
+2.17.1
 
 
 -- 
