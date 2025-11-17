@@ -4,68 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AB1BACEACEF
-	for <linux-phy@archiver.kernel.org>; Mon, 17 Nov 2025 07:00:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46105CEBF92
+	for <linux-phy@archiver.kernel.org>; Mon, 17 Nov 2025 07:05:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FWN65NIgrfYbkuY8NzLevlotPvnGiL7g2FJ5/B9QIL8=; b=yHNW4mf1F5tf0b
-	f2VKmVRcdDrBr+hUnMBcgaFoD81Nkbk89tCo7Pz2BTvWwpJY2YTAWspUbsnbImc/aKyiOapiMtfxh
-	Xbe3jhDJZodzKBoW4Qa689TzwGx/CPBjHQvBaU28wCQe8iJu4UKscM+zJLWcjIDNMjCUkWvFCe8ws
-	j7ZE9p9HuztGCqugXXU84PyLXnpQR5ztUiRGqkcur6f2dU3hftWBDMsTDns9/jquAihuZ2L8wMK5q
-	BuvHYF9J58kYe6XiUFK9MQy4FFSr21gXNqxB6XHLeUOItAxlBjmdQgB8gyt8ytiv5TXKYc3TWxQ8A
-	+jB+K26UnlJZ28ojHv/g==;
+	List-Owner; bh=7VNA4C9sFWsTXvqaI4FGd8BcxTuU0uCvfrq3wRgnWRw=; b=KIHQSeUl2IDDJ6
+	BphARxt4s+al3sG1jQqqaeGDHUesu+kzAzXsaYuUriFjj6iP9Qf3wOMmBChK2j8zXOCm4cKNKHU0K
+	PGOG/I1N+zHzKxHj0c68FfC1hUf0tAlFzLnsyXZbcYoXwWOegq7tkiYjDAmED9jjYJdtZ4ZFzZzxV
+	NJGQ82SDnBR8Mu0CuR8SsWhtvpKqgaFiDl199Ykm92c9ZLpEKHzy2sBh5Gj4+tJVD/1en9S30RWtr
+	PRvj8mN/23i9cch4Msfcte7h5iQs88hHjoZVErPnKjAVffFj/1ohpRHb2UUjyP6ppOweaeLq8b7Xe
+	oLKmbmNg+zp1YuBMX8Pw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vKtE1-0000000FYvb-1A7t;
-	Mon, 17 Nov 2025 07:00:33 +0000
+	id 1vKtIx-0000000FZTE-3zSn;
+	Mon, 17 Nov 2025 07:05:39 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vKtDy-0000000FYv7-426c
-	for linux-phy@lists.infradead.org;
-	Mon, 17 Nov 2025 07:00:32 +0000
+	id 1vKtIv-0000000FZSL-05Ox;
+	Mon, 17 Nov 2025 07:05:38 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 8F23440D81;
-	Mon, 17 Nov 2025 07:00:30 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D9AADC4CEF5;
-	Mon, 17 Nov 2025 07:00:29 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 525E843F19;
+	Mon, 17 Nov 2025 07:05:36 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 765EBC4CEF5;
+	Mon, 17 Nov 2025 07:05:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1763362830;
-	bh=aZN7zbXZXHa7wcgVartfQ5nXipXYlMCiZfigd0SdNLg=;
+	s=k20201202; t=1763363136;
+	bh=iU8ROMk83jPncCljG0G/Fsoi2HDIAUbVt2VmcnD6plU=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=jH/3sOh553iNuvqJzZEEhjMGtt2bcN1UWZ8gn40Kc6uvg7hZdXCj+rtc/UI10jG/R
-	 1NH+zU9IEq1KHtOdvdgYag4OyDSeZMexuBZFgX8DxXOirnnHTDblblquhFNFM1q5Yc
-	 WAa3sB3jNuGNIrljkZYU6LBEFJOQi7ufeHHq8t86n1hwIXtZ8G0Ls2nw91Y5pcQhz1
-	 nlYGmg9fKa7bn+sBBc0wKVcD9zrROHc7NQz3TRkw6ai6tOhI5az7ESfDnufa74YG0e
-	 oENNgH0A/5QCRdTy3iVXaUv/Hw65C51boqV/3RPp5Ajtfos2UI0REvlcJ8dgSAElXR
-	 WMoJGt2P6U2Jw==
-Date: Mon, 17 Nov 2025 08:00:27 +0100
+	b=Zmf+GQm0pAZ6z6C3arkzoxE5KbyOToef7Sp5DndQnxXr8JmQ3033UwODfZZpK7eMG
+	 hNH2jlwIuNUC5NnJDZINgZJkjsQJmjVDQrUIWEvPazC8bT+gOyaYKNFP8Uis24UXEt
+	 mU5oJ0PrmJNp25ZaImcMpp9pIDc8xskK7aEelL5VGWSuUeOnhVqU2YCiwbVsYM36cB
+	 +17Rqg5eybYkDTX3XKBekgImKsuhhWCgQs0k0isOYITGYUfeEsHwvLyJGwVn6IGefN
+	 4doh0ptX0oiLvP/wADeR//qwwzH01kT6exkg/8xtX7yON6lMV/FrtXhlnhvW0RUQWm
+	 qytLrxDJMjTIQ==
+Date: Mon, 17 Nov 2025 08:05:33 +0100
 From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
-Cc: tomm.merciai@gmail.com, linux-renesas-soc@vger.kernel.org, 
-	biju.das.jz@bp.renesas.com, Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+To: Kuba =?utf-8?Q?Szczodrzy=C5=84ski?= <kuba@szczodrzynski.pl>
+Cc: Maxime Ripard <mripard@kernel.org>, 
+	Samuel Holland <samuel@sholland.org>, Chen-Yu Tsai <wens@csie.org>, 
+	Jernej Skrabec <jernej.skrabec@gmail.com>, Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
+	Thomas Zimmermann <tzimmermann@suse.de>, Rob Herring <robh@kernel.org>, 
 	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Fabrizio Castro <fabrizio.castro.jz@renesas.com>, Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>, 
-	Philipp Zabel <p.zabel@pengutronix.de>, Peter Rosin <peda@axentia.se>, 
-	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, Geert Uytterhoeven <geert+renesas@glider.be>, 
-	Magnus Damm <magnus.damm@gmail.com>, Arnd Bergmann <arnd@arndb.de>, 
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v3 04/21] dt-bindings: reset: renesas,rzv2h-usb2phy:
- Document VBUS_SEL mux
-Message-ID: <20251117-sturdy-resourceful-crab-c14bb8@kuoka>
-References: <cover.1762773720.git.tommaso.merciai.xr@bp.renesas.com>
- <8fba0b7235bd398d41329fd087d68f7e98bbbaca.1762773720.git.tommaso.merciai.xr@bp.renesas.com>
+	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
+	linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org, 
+	linux-riscv@lists.infradead.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	dri-devel@lists.freedesktop.org, parthiban@linumiz.com, paulk@sys-base.io
+Subject: Re: [PATCH v3 4/6] dt-bindings: display: sun4i: Add D1s/T113 combo
+ D-PHY bindings
+Message-ID: <20251117-faithful-unique-millipede-d8bae5@kuoka>
+References: <20251116134609.447043-1-kuba@szczodrzynski.pl>
+ <20251116134943.447443-1-kuba@szczodrzynski.pl>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <8fba0b7235bd398d41329fd087d68f7e98bbbaca.1762773720.git.tommaso.merciai.xr@bp.renesas.com>
+In-Reply-To: <20251116134943.447443-1-kuba@szczodrzynski.pl>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251116_230031_039167_12D864E6 
-X-CRM114-Status: GOOD (  16.37  )
+X-CRM114-CacheID: sfid-20251116_230537_083387_608C1A3A 
+X-CRM114-Status: GOOD (  13.14  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,76 +75,35 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Nov 10, 2025 at 01:08:04PM +0100, Tommaso Merciai wrote:
-> Document the 'mux-controller' child node in the Renesas RZ/V2H(P)
-> USB2PHY reset binding to support describing the USB VBUS_SEL
-> multiplexer as a mux-controller.
-> 
-> This is required to properly configure the USB PHY VBUS source on
-> RZ/V2H(P), RZ/G3E SoCs.
-
-And where did you explain why this cannot be folded into parent node? If
-you do not provide context why reviewer's advice cannot be fulfilled,
-then you will get the same comment.
-
-> 
-> Signed-off-by: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
-> ---
-> v2->v3:
->  - Manipulate mux-controller as an internal node.
->  - Improved commit body.
-> 
-> v1->v2:
->  - New patch
-> 
->  .../bindings/reset/renesas,rzv2h-usb2phy-reset.yaml   | 11 +++++++++++
->  1 file changed, 11 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/reset/renesas,rzv2h-usb2phy-reset.yaml b/Documentation/devicetree/bindings/reset/renesas,rzv2h-usb2phy-reset.yaml
-> index c1b800a10b53..03da74ff2d08 100644
-> --- a/Documentation/devicetree/bindings/reset/renesas,rzv2h-usb2phy-reset.yaml
-> +++ b/Documentation/devicetree/bindings/reset/renesas,rzv2h-usb2phy-reset.yaml
-> @@ -37,6 +37,12 @@ properties:
->    '#reset-cells':
->      const: 0
->  
-> +  mux-controller:
-> +    $ref: /schemas/mux/mux-controller.yaml#
-> +    description: Mux controller for USB VBUS source selection.
-> +    type: object
-> +    unevaluatedProperties: false
-> +
->  required:
->    - compatible
->    - reg
-> @@ -44,6 +50,7 @@ required:
->    - resets
->    - power-domains
->    - '#reset-cells'
-> +  - mux-controller
->  
->  additionalProperties: false
->  
-> @@ -58,4 +65,8 @@ examples:
->          resets = <&cpg 0xaf>;
->          power-domains = <&cpg>;
->          #reset-cells = <0>;
-> +
-> +        mux-controller {
-> +          #mux-state-cells = <1>;
-
-Do not mix up indentation.
-
-Best regards,
-Krzysztof
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gU3VuLCBOb3YgMTYsIDIwMjUgYXQgMDI6NDk6NDNQTSArMDEwMCwgS3ViYSBTemN6b2RyennF
+hHNraSB3cm90ZToKPiBUaGUgc3VuNGkgVENPTiBuZWVkcyBhIHJlZmVyZW5jZSB0byB0aGUgRC1Q
+SFkgaW4gb3JkZXIgdG8gc3VwcG9ydCBMVkRTCj4gb24gQWxsd2lubmVyIEQxcy9UMTEzLgo+IAo+
+IEFkZCBwaHlzIGFuZCBwaHktbmFtZXMgdG8gRFQgYmluZGluZ3MuCgpEbyBub3QgYXR0YWNoICh0
+aHJlYWQpIHlvdXIgcGF0Y2hzZXRzIHRvIHNvbWUgb3RoZXIgdGhyZWFkcyAodW5yZWxhdGVkCm9y
+IG9sZGVyIHZlcnNpb25zKS4gVGhpcyBidXJpZXMgdGhlbSBkZWVwIGluIHRoZSBtYWlsYm94IGFu
+ZCBtaWdodAppbnRlcmZlcmUgd2l0aCBhcHBseWluZyBlbnRpcmUgc2V0cy4gU2VlIGFsc286Cmh0
+dHBzOi8vZWxpeGlyLmJvb3RsaW4uY29tL2xpbnV4L3Y2LjE2LXJjMi9zb3VyY2UvRG9jdW1lbnRh
+dGlvbi9wcm9jZXNzL3N1Ym1pdHRpbmctcGF0Y2hlcy5yc3QjTDgzMAoKCj4gCj4gU2lnbmVkLW9m
+Zi1ieTogS3ViYSBTemN6b2RyennFhHNraSA8a3ViYUBzemN6b2Ryenluc2tpLnBsPgo+IC0tLQo+
+ICAuLi4vYmluZGluZ3MvZGlzcGxheS9hbGx3aW5uZXIsc3VuNGktYTEwLXRjb24ueWFtbCAgICAg
+ICAgICB8IDYgKysrKysrCj4gIDEgZmlsZSBjaGFuZ2VkLCA2IGluc2VydGlvbnMoKykKPiAKPiBk
+aWZmIC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2Rpc3BsYXkvYWxs
+d2lubmVyLHN1bjRpLWExMC10Y29uLnlhbWwgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmlu
+ZGluZ3MvZGlzcGxheS9hbGx3aW5uZXIsc3VuNGktYTEwLXRjb24ueWFtbAo+IGluZGV4IDcyNGQ5
+M2I5MS4uNTI1ODkzNDFmIDEwMDY0NAo+IC0tLSBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9i
+aW5kaW5ncy9kaXNwbGF5L2FsbHdpbm5lcixzdW40aS1hMTAtdGNvbi55YW1sCj4gKysrIGIvRG9j
+dW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2Rpc3BsYXkvYWxsd2lubmVyLHN1bjRpLWEx
+MC10Y29uLnlhbWwKPiBAQCAtMTE1LDYgKzExNSwxMiBAQCBwcm9wZXJ0aWVzOgo+ICAgICAgICAg
+ICAgLSBjb25zdDogZWRwCj4gICAgICAgICAgICAtIGNvbnN0OiBsdmRzCj4gIAo+ICsgIHBoeXM6
+Cj4gKyAgICBtYXhJdGVtczogMQo+ICsKPiArICBwaHktbmFtZXM6Cj4gKyAgICBjb25zdDogY29t
+Ym8tcGh5CgpEcm9wIHBoeSBzdWZmaXguIENhbiBhICJwaHkiIHByb3BlcnR5IGhvbGQgcmVmZXJl
+bmNlIHRvIHNvbWV0aGluZyBlbHNlCnRoYW4gcGh5PyBZb3UgZG9uJ3QgbmVlZCBuYW1lcyBpbiB0
+aGUgZmlyc3QgcGxhY2UsIHlvdSBoYXZlIG9ubHkgb25lCmVudHJ5LgoKQmVzdCByZWdhcmRzLApL
+cnp5c3p0b2YKCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5m
+cmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
+aW51eC1waHkK
