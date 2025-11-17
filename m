@@ -4,66 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46105CEBF92
-	for <linux-phy@archiver.kernel.org>; Mon, 17 Nov 2025 07:05:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B55BECE8D6B
+	for <linux-phy@archiver.kernel.org>; Mon, 17 Nov 2025 08:33:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7VNA4C9sFWsTXvqaI4FGd8BcxTuU0uCvfrq3wRgnWRw=; b=KIHQSeUl2IDDJ6
-	BphARxt4s+al3sG1jQqqaeGDHUesu+kzAzXsaYuUriFjj6iP9Qf3wOMmBChK2j8zXOCm4cKNKHU0K
-	PGOG/I1N+zHzKxHj0c68FfC1hUf0tAlFzLnsyXZbcYoXwWOegq7tkiYjDAmED9jjYJdtZ4ZFzZzxV
-	NJGQ82SDnBR8Mu0CuR8SsWhtvpKqgaFiDl199Ykm92c9ZLpEKHzy2sBh5Gj4+tJVD/1en9S30RWtr
-	PRvj8mN/23i9cch4Msfcte7h5iQs88hHjoZVErPnKjAVffFj/1ohpRHb2UUjyP6ppOweaeLq8b7Xe
-	oLKmbmNg+zp1YuBMX8Pw==;
+	List-Owner; bh=sO14BxosV0PqtXod7jTMghWcOGVNMmNTc8iOIljDwMo=; b=PZyhlga2YFwnH+
+	kDYee3Icwd05QYWnWgp34wJBQiJOtChI/A3pMODraPZbJIgB5P+vvfSHuyAjeNDmmckQdNg8oWoRT
+	15rtkYRVAj3hi970mLs+7NXRljgXhR0AszFk9HzA8N/ku8ZXy1LXtPTW5lo0mVMCL8BJs238GP+uG
+	R+tLMvy42D6AYy5RMr+nrsOZ64+eCHE/skuoW8hdvYXOmDQDEn3pq+98Q/WXU5U9Ye/zUUfDTv7L1
+	KcUYMOGXJDCguPmMk4jO7WKRKNiBOdf7ssO3/WBGoK+NSkb38P76mlzgc+0NSarDV58RvxWhfSfqd
+	Ld9EHxnp45MCkDukvfAA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vKtIx-0000000FZTE-3zSn;
-	Mon, 17 Nov 2025 07:05:39 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1vKugR-0000000FgcB-0g2A;
+	Mon, 17 Nov 2025 08:33:59 +0000
+Received: from mgamail.intel.com ([192.198.163.10])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vKtIv-0000000FZSL-05Ox;
-	Mon, 17 Nov 2025 07:05:38 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 525E843F19;
-	Mon, 17 Nov 2025 07:05:36 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 765EBC4CEF5;
-	Mon, 17 Nov 2025 07:05:35 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1763363136;
-	bh=iU8ROMk83jPncCljG0G/Fsoi2HDIAUbVt2VmcnD6plU=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=Zmf+GQm0pAZ6z6C3arkzoxE5KbyOToef7Sp5DndQnxXr8JmQ3033UwODfZZpK7eMG
-	 hNH2jlwIuNUC5NnJDZINgZJkjsQJmjVDQrUIWEvPazC8bT+gOyaYKNFP8Uis24UXEt
-	 mU5oJ0PrmJNp25ZaImcMpp9pIDc8xskK7aEelL5VGWSuUeOnhVqU2YCiwbVsYM36cB
-	 +17Rqg5eybYkDTX3XKBekgImKsuhhWCgQs0k0isOYITGYUfeEsHwvLyJGwVn6IGefN
-	 4doh0ptX0oiLvP/wADeR//qwwzH01kT6exkg/8xtX7yON6lMV/FrtXhlnhvW0RUQWm
-	 qytLrxDJMjTIQ==
-Date: Mon, 17 Nov 2025 08:05:33 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Kuba =?utf-8?Q?Szczodrzy=C5=84ski?= <kuba@szczodrzynski.pl>
-Cc: Maxime Ripard <mripard@kernel.org>, 
-	Samuel Holland <samuel@sholland.org>, Chen-Yu Tsai <wens@csie.org>, 
-	Jernej Skrabec <jernej.skrabec@gmail.com>, Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
-	Thomas Zimmermann <tzimmermann@suse.de>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
-	linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev, linux-kernel@vger.kernel.org, 
-	linux-riscv@lists.infradead.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	dri-devel@lists.freedesktop.org, parthiban@linumiz.com, paulk@sys-base.io
-Subject: Re: [PATCH v3 4/6] dt-bindings: display: sun4i: Add D1s/T113 combo
- D-PHY bindings
-Message-ID: <20251117-faithful-unique-millipede-d8bae5@kuoka>
-References: <20251116134609.447043-1-kuba@szczodrzynski.pl>
- <20251116134943.447443-1-kuba@szczodrzynski.pl>
+	id 1vKugN-0000000FgbQ-3ncD;
+	Mon, 17 Nov 2025 08:33:57 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1763368436; x=1794904436;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=fwZ0M264l2HDkJoHx6/s0vTo1RmcLUo2A7k4nruvgmg=;
+  b=TAEBaW1YmvTVyX8eEY9bXFGnWzPvR72UW+aJVx68MhPSCLytUq3NQ5UZ
+   uUK6Y8517s23CZ6Jnbo+qF6VbszFaITkpfdvWGrzghNI7bFZgKcPPkhZm
+   k4iJ5IyYu4aI/4YAbVTeusKB9q+JVlmJZGImWAGvFkFtimXJlk5cFgeqL
+   l1/A8RefCr8uTdCuNU80/NDnb0hjFiKNFTKrwasEcMfUQNdWmjcIfd7fV
+   C6uDUh6aKgCvseU0Ms1pdvh8L4YnUtLjcdnyriBp1kIzWHo9mveCIzZLJ
+   XYL6RA2GJwbkDZjVLl8QUbeXHyZzcQwsByrQIdugeJIvIcQ/IpNSBq+Ys
+   g==;
+X-CSE-ConnectionGUID: oLCx3IZTTAyHsofcJhllcQ==
+X-CSE-MsgGUID: 1i9KS4maRuy292hUeTYp1w==
+X-IronPort-AV: E=McAfee;i="6800,10657,11615"; a="76711769"
+X-IronPort-AV: E=Sophos;i="6.19,311,1754982000"; 
+   d="scan'208";a="76711769"
+Received: from orviesa004.jf.intel.com ([10.64.159.144])
+  by fmvoesa104.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 17 Nov 2025 00:33:53 -0800
+X-CSE-ConnectionGUID: LzySukzyT0q7wE/hYMMthQ==
+X-CSE-MsgGUID: 2U3W8q32QTu8NcnLccW2lA==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.19,311,1754982000"; 
+   d="scan'208";a="194842874"
+Received: from mgoodin-mobl3.amr.corp.intel.com (HELO kuha.fi.intel.com) ([10.124.220.176])
+  by orviesa004.jf.intel.com with SMTP; 17 Nov 2025 00:33:42 -0800
+Received: by kuha.fi.intel.com (sSMTP sendmail emulation); Mon, 17 Nov 2025 10:33:39 +0200
+Date: Mon, 17 Nov 2025 10:33:39 +0200
+From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
+To: Chaoyi Chen <kernel@airkyi.com>
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+	Peter Chen <hzpeterchen@gmail.com>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Heiko Stuebner <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
+	Andy Yan <andy.yan@rock-chips.com>,
+	Yubing Zhang <yubing.zhang@rock-chips.com>,
+	Frank Wang <frank.wang@rock-chips.com>,
+	Andrzej Hajda <andrzej.hajda@intel.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Robert Foss <rfoss@kernel.org>,
+	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+	Jonas Karlman <jonas@kwiboo.se>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+	Amit Sunil Dhamne <amitsd@google.com>,
+	Chaoyi Chen <chaoyi.chen@rock-chips.com>,
+	Dragan Simic <dsimic@manjaro.org>, Johan Jonker <jbx6244@gmail.com>,
+	Diederik de Haas <didi.debian@cknow.org>,
+	Peter Robinson <pbrobinson@gmail.com>, linux-usb@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org
+Subject: Re: [PATCH v9 01/10] usb: typec: Add notifier functions
+Message-ID: <aRrd48unDVdtKYH3@kuha.fi.intel.com>
+References: <20251111105040.94-1-kernel@airkyi.com>
+ <20251111105040.94-2-kernel@airkyi.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20251116134943.447443-1-kuba@szczodrzynski.pl>
+In-Reply-To: <20251111105040.94-2-kernel@airkyi.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251116_230537_083387_608C1A3A 
-X-CRM114-Status: GOOD (  13.14  )
+X-CRM114-CacheID: sfid-20251117_003355_963468_8EB96A38 
+X-CRM114-Status: GOOD (  22.08  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,35 +106,141 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gU3VuLCBOb3YgMTYsIDIwMjUgYXQgMDI6NDk6NDNQTSArMDEwMCwgS3ViYSBTemN6b2RyennF
-hHNraSB3cm90ZToKPiBUaGUgc3VuNGkgVENPTiBuZWVkcyBhIHJlZmVyZW5jZSB0byB0aGUgRC1Q
-SFkgaW4gb3JkZXIgdG8gc3VwcG9ydCBMVkRTCj4gb24gQWxsd2lubmVyIEQxcy9UMTEzLgo+IAo+
-IEFkZCBwaHlzIGFuZCBwaHktbmFtZXMgdG8gRFQgYmluZGluZ3MuCgpEbyBub3QgYXR0YWNoICh0
-aHJlYWQpIHlvdXIgcGF0Y2hzZXRzIHRvIHNvbWUgb3RoZXIgdGhyZWFkcyAodW5yZWxhdGVkCm9y
-IG9sZGVyIHZlcnNpb25zKS4gVGhpcyBidXJpZXMgdGhlbSBkZWVwIGluIHRoZSBtYWlsYm94IGFu
-ZCBtaWdodAppbnRlcmZlcmUgd2l0aCBhcHBseWluZyBlbnRpcmUgc2V0cy4gU2VlIGFsc286Cmh0
-dHBzOi8vZWxpeGlyLmJvb3RsaW4uY29tL2xpbnV4L3Y2LjE2LXJjMi9zb3VyY2UvRG9jdW1lbnRh
-dGlvbi9wcm9jZXNzL3N1Ym1pdHRpbmctcGF0Y2hlcy5yc3QjTDgzMAoKCj4gCj4gU2lnbmVkLW9m
-Zi1ieTogS3ViYSBTemN6b2RyennFhHNraSA8a3ViYUBzemN6b2Ryenluc2tpLnBsPgo+IC0tLQo+
-ICAuLi4vYmluZGluZ3MvZGlzcGxheS9hbGx3aW5uZXIsc3VuNGktYTEwLXRjb24ueWFtbCAgICAg
-ICAgICB8IDYgKysrKysrCj4gIDEgZmlsZSBjaGFuZ2VkLCA2IGluc2VydGlvbnMoKykKPiAKPiBk
-aWZmIC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2Rpc3BsYXkvYWxs
-d2lubmVyLHN1bjRpLWExMC10Y29uLnlhbWwgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmlu
-ZGluZ3MvZGlzcGxheS9hbGx3aW5uZXIsc3VuNGktYTEwLXRjb24ueWFtbAo+IGluZGV4IDcyNGQ5
-M2I5MS4uNTI1ODkzNDFmIDEwMDY0NAo+IC0tLSBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9i
-aW5kaW5ncy9kaXNwbGF5L2FsbHdpbm5lcixzdW40aS1hMTAtdGNvbi55YW1sCj4gKysrIGIvRG9j
-dW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2Rpc3BsYXkvYWxsd2lubmVyLHN1bjRpLWEx
-MC10Y29uLnlhbWwKPiBAQCAtMTE1LDYgKzExNSwxMiBAQCBwcm9wZXJ0aWVzOgo+ICAgICAgICAg
-ICAgLSBjb25zdDogZWRwCj4gICAgICAgICAgICAtIGNvbnN0OiBsdmRzCj4gIAo+ICsgIHBoeXM6
-Cj4gKyAgICBtYXhJdGVtczogMQo+ICsKPiArICBwaHktbmFtZXM6Cj4gKyAgICBjb25zdDogY29t
-Ym8tcGh5CgpEcm9wIHBoeSBzdWZmaXguIENhbiBhICJwaHkiIHByb3BlcnR5IGhvbGQgcmVmZXJl
-bmNlIHRvIHNvbWV0aGluZyBlbHNlCnRoYW4gcGh5PyBZb3UgZG9uJ3QgbmVlZCBuYW1lcyBpbiB0
-aGUgZmlyc3QgcGxhY2UsIHlvdSBoYXZlIG9ubHkgb25lCmVudHJ5LgoKQmVzdCByZWdhcmRzLApL
-cnp5c3p0b2YKCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5m
-cmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
-aW51eC1waHkK
+Tue, Nov 11, 2025 at 06:50:31PM +0800, Chaoyi Chen kirjoitti:
+> From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+> 
+> Some other part of kernel may want to know the event of typec bus.
+> 
+> This patch add common notifier function to notify these event.
+> 
+> Signed-off-by: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+> ---
+> 
+> Changes in v9:
+> - Remove redundant header files.
+> 
+> Changes in v8:
+> - Fix coding style.
+> 
+>  drivers/usb/typec/Makefile        |  2 +-
+>  drivers/usb/typec/bus.h           |  2 ++
+>  drivers/usb/typec/class.c         |  2 ++
+>  drivers/usb/typec/notify.c        | 23 +++++++++++++++++++++++
+>  include/linux/usb/typec_altmode.h |  9 +++++++++
+>  5 files changed, 37 insertions(+), 1 deletion(-)
+>  create mode 100644 drivers/usb/typec/notify.c
+> 
+> diff --git a/drivers/usb/typec/Makefile b/drivers/usb/typec/Makefile
+> index 7a368fea61bc..20d09c5314d7 100644
+> --- a/drivers/usb/typec/Makefile
+> +++ b/drivers/usb/typec/Makefile
+> @@ -1,6 +1,6 @@
+>  # SPDX-License-Identifier: GPL-2.0
+>  obj-$(CONFIG_TYPEC)		+= typec.o
+> -typec-y				:= class.o mux.o bus.o pd.o retimer.o
+> +typec-y				:= class.o mux.o notify.o bus.o pd.o retimer.o
+>  typec-$(CONFIG_ACPI)		+= port-mapper.o
+>  obj-$(CONFIG_TYPEC)		+= altmodes/
+>  obj-$(CONFIG_TYPEC_TCPM)	+= tcpm/
+> diff --git a/drivers/usb/typec/bus.h b/drivers/usb/typec/bus.h
+> index 643b8c81786d..820b59b6d434 100644
+> --- a/drivers/usb/typec/bus.h
+> +++ b/drivers/usb/typec/bus.h
+> @@ -26,6 +26,8 @@ struct altmode {
+>  	struct altmode			*plug[2];
+>  };
+>  
+> +void typec_notify_event(unsigned long event, void *data);
+> +
+>  #define to_altmode(d) container_of(d, struct altmode, adev)
+>  
+>  extern const struct bus_type typec_bus;
+> diff --git a/drivers/usb/typec/class.c b/drivers/usb/typec/class.c
+> index 9b2647cb199b..9d2aa3dd3f56 100644
+> --- a/drivers/usb/typec/class.c
+> +++ b/drivers/usb/typec/class.c
+> @@ -600,6 +600,8 @@ typec_register_altmode(struct device *parent,
+>  		return ERR_PTR(ret);
+>  	}
+>  
+> +	typec_notify_event(TYPEC_ALTMODE_REGISTERED, &alt->adev);
+> +
+>  	return &alt->adev;
+>  }
+
+You need to also send TYPEC_ALTMODE_UNREGISTERED notification in
+typec_unregister_altmode().
+
+thanks,
+
+> diff --git a/drivers/usb/typec/notify.c b/drivers/usb/typec/notify.c
+> new file mode 100644
+> index 000000000000..9e50b54da359
+> --- /dev/null
+> +++ b/drivers/usb/typec/notify.c
+> @@ -0,0 +1,23 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +#include <linux/notifier.h>
+> +
+> +#include "bus.h"
+> +
+> +static BLOCKING_NOTIFIER_HEAD(typec_notifier_list);
+> +
+> +int typec_altmode_register_notify(struct notifier_block *nb)
+> +{
+> +	return blocking_notifier_chain_register(&typec_notifier_list, nb);
+> +}
+> +EXPORT_SYMBOL_GPL(typec_altmode_register_notify);
+> +
+> +int typec_altmode_unregister_notify(struct notifier_block *nb)
+> +{
+> +	return blocking_notifier_chain_unregister(&typec_notifier_list, nb);
+> +}
+> +EXPORT_SYMBOL_GPL(typec_altmode_unregister_notify);
+> +
+> +void typec_notify_event(unsigned long event, void *data)
+> +{
+> +	blocking_notifier_call_chain(&typec_notifier_list, event, data);
+> +}
+> diff --git a/include/linux/usb/typec_altmode.h b/include/linux/usb/typec_altmode.h
+> index f7db3bd4c90e..59e20702504b 100644
+> --- a/include/linux/usb/typec_altmode.h
+> +++ b/include/linux/usb/typec_altmode.h
+> @@ -10,6 +10,7 @@
+>  #define MODE_DISCOVERY_MAX	6
+>  
+>  struct typec_altmode_ops;
+> +struct notifier_block;
+>  
+>  /**
+>   * struct typec_altmode - USB Type-C alternate mode device
+> @@ -77,6 +78,14 @@ int typec_altmode_notify(struct typec_altmode *altmode, unsigned long conf,
+>  const struct typec_altmode *
+>  typec_altmode_get_partner(struct typec_altmode *altmode);
+>  
+> +enum usb_typec_event {
+> +	TYPEC_ALTMODE_REGISTERED,
+> +	TYPEC_ALTMODE_UNREGISTERED,
+> +};
+> +
+> +int typec_altmode_register_notify(struct notifier_block *nb);
+> +int typec_altmode_unregister_notify(struct notifier_block *nb);
+> +
+>  /**
+>   * struct typec_cable_ops - Cable alternate mode operations vector
+>   * @enter: Operations to be executed with Enter Mode Command
+> -- 
+> 2.51.1
+
+-- 
+heikki
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
