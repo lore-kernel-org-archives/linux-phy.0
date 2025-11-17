@@ -4,78 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CE592CCD19A
-	for <linux-phy@archiver.kernel.org>; Sun, 16 Nov 2025 22:39:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A1197CEACEF
+	for <linux-phy@archiver.kernel.org>; Mon, 17 Nov 2025 01:02:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EXOiK1xbIuxEK2KXVHX5/BLWyYrVBDq28JNF8OPNuR0=; b=dMc9LJUSq8IGGz
-	DcKHz3YMKzC/CJGTV4jT9xf6kGs2zB4n4jNGgAgdSIs0WoXil1m60wrR6Z4Cml6OlMn4v6Luw4d5p
-	JwO+YyyHe7x+t/HTeCOFZlCueX7tag7sDtSQdIeJXET8RvYsFDmZ4sbqFTaKgF4zCdLBYAYQnvrbQ
-	2cHqNrx/oIo8RdKK+iJ3TbD1hfsm5XcvmgJqsphL+xW42q9u1CZkNhZLKm+bYphKaojJmWw/SRgZ8
-	7EXn9gU4GXpOnd+sREoTunfA5MF9Wl2PTCjrtr2VkoDdfw2YdpVSiGu+7TSVQvGZsXkfcMXk2vb1B
-	6sy3BCFlerHg7bA6yJLQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=64XgL97iKHK0j8amQDsizkh3L4M8zzEfLdWZXq92jvE=; b=eRZB+Rf9ljmZim
+	8mWHKcPnYfWXOvrHKCUs14iKHUi7BgjoWbCTFt/izRBUpq1TKrDsnRfwl7i89XZZ6KxzzaSrZ5tvj
+	AaLgLnIenUFb0HGzHi86uLFGWzfWKXHG9Mnehi5Q9GF3bD/D8jk7org6WPeoT5i433KdYqgDvpx+v
+	qTNz9uCC5Niif/r0El/ffCzMTyxTEZO3bCccLoaPG/O99wIuz3fu4Saz5wVkSaFW+QsJekif6igum
+	C+jOpAjc8G38qyvz2VWQspFOqsH03VCxcaewj/9NzuYcuZjaW+GGE/EIRSegi3hfL53lM8+a1LnKf
+	QjgMvyiwCjvVoMXizW7w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vKlOw-0000000FAJe-39tb;
-	Sun, 16 Nov 2025 22:39:18 +0000
-Received: from mgamail.intel.com ([198.175.65.21])
+	id 1vKndt-0000000FFKA-2tlB;
+	Mon, 17 Nov 2025 01:02:53 +0000
+Received: from smtp84.cstnet.cn ([159.226.251.84] helo=cstnet.cn)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vKlOs-0000000FAJD-3C2g
+	id 1vKndp-0000000FFJA-2vdM
 	for linux-phy@lists.infradead.org;
-	Sun, 16 Nov 2025 22:39:17 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1763332755; x=1794868755;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=02EvVrOPvHK3ycSr4xdL6Ct7ZgclQPlSgosQiWeSxpM=;
-  b=HY4qELn+/OqRYyY1XWcttozTN0qlpWiGki0zEhjsf7YzKVTNSlW1Swm8
-   aHw9hcnLlTWFQ64sWtS9zXl6t7vD0U6hAVwjJeOM+G0DnfLaAn97GfaR0
-   h96WxdW55i6uNkB6m93+/EvtRXTs2f9djnc7Vn6B9E2O1LFFWvyB07/w9
-   C2FAE5sx0/pwl1gE1LEBqLieY6SW9wze3g9mpXxluBRinxLzsOxDkBbfV
-   O/MbhED9lwXClEXC1dV6PRmNR2k/0zVtRiyoH/v0pJCkVUlProZgbkPuJ
-   ZQsLdeU6ggHGXgtt4t+bVEjIRF//vrprg/o0W0cPPiehK/JgMbxMmkQeB
-   w==;
-X-CSE-ConnectionGUID: yyr+KxGGQxaXKqGTNsCW8g==
-X-CSE-MsgGUID: MoMlUEZ4SmSrNBewrQeYPw==
-X-IronPort-AV: E=McAfee;i="6800,10657,11615"; a="65270400"
-X-IronPort-AV: E=Sophos;i="6.19,310,1754982000"; 
-   d="scan'208";a="65270400"
-Received: from fmviesa005.fm.intel.com ([10.60.135.145])
-  by orvoesa113.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 16 Nov 2025 14:39:12 -0800
-X-CSE-ConnectionGUID: vdRJyfc7RWCVKcuvKEZ6eQ==
-X-CSE-MsgGUID: uyuqrEC1RAig1JK2VQ0bPw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.19,310,1754982000"; 
-   d="scan'208";a="194618049"
-Received: from lkp-server01.sh.intel.com (HELO 7b01c990427b) ([10.239.97.150])
-  by fmviesa005.fm.intel.com with ESMTP; 16 Nov 2025 14:39:08 -0800
-Received: from kbuild by 7b01c990427b with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1vKlOk-00097n-1V;
-	Sun, 16 Nov 2025 22:39:06 +0000
-Date: Mon, 17 Nov 2025 06:38:24 +0800
-From: kernel test robot <lkp@intel.com>
-To: Ma Ke <make24@iscas.ac.cn>, vkoul@kernel.org, kishon@kernel.org,
-	andriy.shevchenko@linux.intel.com, mchehab+huawei@kernel.org,
+	Mon, 17 Nov 2025 01:02:52 +0000
+Received: from localhost.localdomain (unknown [202.112.113.212])
+	by APP-05 (Coremail) with SMTP id zQCowABXU2QkdBppz4ICAQ--.23440S2;
+	Mon, 17 Nov 2025 09:02:35 +0800 (CST)
+From: Ma Ke <make24@iscas.ac.cn>
+To: vkoul@kernel.org,
+	kishon@kernel.org,
+	make24@iscas.ac.cn,
+	andriy.shevchenko@linux.intel.com,
+	mchehab+huawei@kernel.org,
 	mani@kernel.org
-Cc: oe-kbuild-all@lists.linux.dev, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org, akpm@linux-foundation.org,
+Cc: linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	akpm@linux-foundation.org,
 	stable@vger.kernel.org
-Subject: Re: [PATCH] phy: HiSilicon: Fix error handling in
- hi3670_pcie_get_resources_from_pcie
-Message-ID: <202511170524.sEQYJ4MB-lkp@intel.com>
-References: <20251116073231.22676-1-make24@iscas.ac.cn>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20251116073231.22676-1-make24@iscas.ac.cn>
+Subject: [PATCH v2] phy: HiSilicon: Fix error handling in hi3670_pcie_get_resources_from_pcie
+Date: Mon, 17 Nov 2025 09:02:27 +0800
+Message-Id: <20251117010227.17238-1-make24@iscas.ac.cn>
+X-Mailer: git-send-email 2.17.1
+X-CM-TRANSID: zQCowABXU2QkdBppz4ICAQ--.23440S2
+X-Coremail-Antispam: 1UD129KBjvJXoW7WFWfJr4rCw18ZrW5tF4xJFb_yoW8KFyfpF
+	WUKFWakryUJ397uFWSvF45XFyYkFs0ka45A34Ik34fZFnYvryqqayUtFy0qF129FWkZFWU
+	KFyUtF4DGF48trJanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDU0xBIdaVrnRJUUUPY14x267AKxVW8JVW5JwAFc2x0x2IEx4CE42xK8VAvwI8IcIk0
+	rVWrJVCq3wAFIxvE14AKwVWUJVWUGwA2ocxC64kIII0Yj41l84x0c7CEw4AK67xGY2AK02
+	1l84ACjcxK6xIIjxv20xvE14v26r4j6ryUM28EF7xvwVC0I7IYx2IY6xkF7I0E14v26r4j
+	6F4UM28EF7xvwVC2z280aVAFwI0_Gr1j6F4UJwA2z4x0Y4vEx4A2jsIEc7CjxVAFwI0_Gr
+	1j6F4UJwAac4AC62xK8xCEY4vEwIxC4wAS0I0E0xvYzxvE52x082IY62kv0487Mc02F40E
+	FcxC0VAKzVAqx4xG6I80ewAv7VC0I7IYx2IY67AKxVWUJVWUGwAv7VC2z280aVAFwI0_Jr
+	0_Gr1lOx8S6xCaFVCjc4AY6r1j6r4UM4x0Y48IcxkI7VAKI48JM4x0x7Aq67IIx4CEVc8v
+	x2IErcIFxwACI402YVCY1x02628vn2kIc2xKxwCY1x0262kKe7AKxVWUtVW8ZwCY02Avz4
+	vE14v_KwCF04k20xvY0x0EwIxGrwCFx2IqxVCFs4IE7xkEbVWUJVW8JwC20s026c02F40E
+	14v26r1j6r18MI8I3I0E7480Y4vE14v26r106r1rMI8E67AF67kF1VAFwI0_Jw0_GFylIx
+	kGc2Ij64vIr41lIxAIcVC0I7IYx2IY67AKxVWUJVWUCwCI42IY6xIIjxv20xvEc7CjxVAF
+	wI0_Jr0_Gr1lIxAIcVCF04k26cxKx2IYs7xG6r1j6r1xMIIF0xvEx4A2jsIE14v26r1j6r
+	4UMIIF0xvEx4A2jsIEc7CjxVAFwI0_Gr0_Gr1UYxBIdaVFxhVjvjDU0xZFpf9x0JUmQ6LU
+	UUUU=
+X-Originating-IP: [202.112.113.212]
+X-CM-SenderInfo: ppdnvj2u6l2u1dvotugofq/
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251116_143915_292831_7CDFAC6E 
-X-CRM114-Status: GOOD (  13.15  )
+X-CRM114-CacheID: sfid-20251116_170250_164933_08E197B5 
+X-CRM114-Status: GOOD (  12.93  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,92 +79,80 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Ma,
+In hi3670_pcie_get_resources_from_pcie(), the reference obtained via
+bus_find_device_by_of_node() is never released with put_device(). Each
+call to this function increments the reference count of the PCIe
+device without decrementing it, preventing proper device cleanup. And
+the device node obtained via of_get_child_by_name() is never released
+with of_node_put(). This could cause a leak of the node reference.
 
-kernel test robot noticed the following build warnings:
+Add proper resource cleanup using goto labels to ensure all acquired
+references are released before function return, regardless of the exit
+path.
 
-[auto build test WARNING on akpm-mm/mm-everything]
-[also build test WARNING on linus/master v6.18-rc5 next-20251114]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
+Found by code review.
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Ma-Ke/phy-HiSilicon-Fix-error-handling-in-hi3670_pcie_get_resources_from_pcie/20251116-153458
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/akpm/mm.git mm-everything
-patch link:    https://lore.kernel.org/r/20251116073231.22676-1-make24%40iscas.ac.cn
-patch subject: [PATCH] phy: HiSilicon: Fix error handling in hi3670_pcie_get_resources_from_pcie
-config: m68k-randconfig-r072-20251117 (https://download.01.org/0day-ci/archive/20251117/202511170524.sEQYJ4MB-lkp@intel.com/config)
-compiler: m68k-linux-gcc (GCC) 10.5.0
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20251117/202511170524.sEQYJ4MB-lkp@intel.com/reproduce)
+Cc: stable@vger.kernel.org
+Fixes: 73075011ffff ("phy: HiSilicon: Add driver for Kirin 970 PCIe PHY")
+Signed-off-by: Ma Ke <make24@iscas.ac.cn>
+---
+Changes in v2:
+- modified the patch for the warning that variable 'ret' is set but not used.
+---
+ drivers/phy/hisilicon/phy-hi3670-pcie.c | 15 +++++++++++----
+ 1 file changed, 11 insertions(+), 4 deletions(-)
 
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202511170524.sEQYJ4MB-lkp@intel.com/
-
-All warnings (new ones prefixed by >>):
-
-   drivers/phy/hisilicon/phy-hi3670-pcie.c: In function 'hi3670_pcie_get_resources_from_pcie':
->> drivers/phy/hisilicon/phy-hi3670-pcie.c:564:6: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
-     564 |  int ret = 0;
-         |      ^~~
-
-
-vim +/ret +564 drivers/phy/hisilicon/phy-hi3670-pcie.c
-
-   558	
-   559	static int hi3670_pcie_get_resources_from_pcie(struct hi3670_pcie_phy *phy)
-   560	{
-   561		struct device_node *pcie_port;
-   562		struct device *dev = phy->dev;
-   563		struct device *pcie_dev = NULL;
- > 564		int ret = 0;
-   565	
-   566		pcie_port = of_get_child_by_name(dev->parent->of_node, "pcie");
-   567		if (!pcie_port) {
-   568			dev_err(dev, "no pcie node found in %s\n",
-   569				dev->parent->of_node->full_name);
-   570			return -ENODEV;
-   571		}
-   572	
-   573		pcie_dev = bus_find_device_by_of_node(&platform_bus_type, pcie_port);
-   574		if (!pcie_dev) {
-   575			dev_err(dev, "Didn't find pcie device\n");
-   576			ret = -ENODEV;
-   577			goto out_put_node;
-   578		}
-   579	
-   580		/*
-   581		 * We might just use NULL instead of the APB name, as the
-   582		 * pcie-kirin currently registers directly just one regmap (although
-   583		 * the DWC driver register other regmaps).
-   584		 *
-   585		 * Yet, it sounds safer to warrant that it will be accessing the
-   586		 * right regmap. So, let's use the named version.
-   587		 */
-   588		phy->apb = dev_get_regmap(pcie_dev, "kirin_pcie_apb");
-   589		if (!phy->apb) {
-   590			dev_err(dev, "Failed to get APB regmap\n");
-   591			ret = -ENODEV;
-   592			goto out_put_device;
-   593		}
-   594	
-   595	out_put_device:
-   596		put_device(pcie_dev);
-   597	out_put_node:
-   598		of_node_put(pcie_port);
-   599		return 0;
-   600	}
-   601	
-
+diff --git a/drivers/phy/hisilicon/phy-hi3670-pcie.c b/drivers/phy/hisilicon/phy-hi3670-pcie.c
+index dbc7dcce682b..9960c9da9b4a 100644
+--- a/drivers/phy/hisilicon/phy-hi3670-pcie.c
++++ b/drivers/phy/hisilicon/phy-hi3670-pcie.c
+@@ -560,7 +560,8 @@ static int hi3670_pcie_get_resources_from_pcie(struct hi3670_pcie_phy *phy)
+ {
+ 	struct device_node *pcie_port;
+ 	struct device *dev = phy->dev;
+-	struct device *pcie_dev;
++	struct device *pcie_dev = NULL;
++	int ret = 0;
+ 
+ 	pcie_port = of_get_child_by_name(dev->parent->of_node, "pcie");
+ 	if (!pcie_port) {
+@@ -572,7 +573,8 @@ static int hi3670_pcie_get_resources_from_pcie(struct hi3670_pcie_phy *phy)
+ 	pcie_dev = bus_find_device_by_of_node(&platform_bus_type, pcie_port);
+ 	if (!pcie_dev) {
+ 		dev_err(dev, "Didn't find pcie device\n");
+-		return -ENODEV;
++		ret = -ENODEV;
++		goto out_put_node;
+ 	}
+ 
+ 	/*
+@@ -586,10 +588,15 @@ static int hi3670_pcie_get_resources_from_pcie(struct hi3670_pcie_phy *phy)
+ 	phy->apb = dev_get_regmap(pcie_dev, "kirin_pcie_apb");
+ 	if (!phy->apb) {
+ 		dev_err(dev, "Failed to get APB regmap\n");
+-		return -ENODEV;
++		ret = -ENODEV;
++		goto out_put_device;
+ 	}
+ 
+-	return 0;
++out_put_device:
++	put_device(pcie_dev);
++out_put_node:
++	of_node_put(pcie_port);
++	return ret;
+ }
+ 
+ static int kirin_pcie_clk_ctrl(struct hi3670_pcie_phy *phy, bool enable)
 -- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+2.17.1
+
 
 -- 
 linux-phy mailing list
