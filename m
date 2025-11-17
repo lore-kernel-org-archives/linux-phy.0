@@ -4,80 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3C9EACEACEF
-	for <linux-phy@archiver.kernel.org>; Mon, 17 Nov 2025 08:47:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0E742CE8D6B
+	for <linux-phy@archiver.kernel.org>; Mon, 17 Nov 2025 10:34:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JyoPtp3rXm3O4oY+lP1jr2r2Qr0x/n1/+5mAWe8YNVI=; b=DWTr09rACpiye/
-	4jV1CsXkYJbkghXFqPKz9lcRHaJ906WSJX5mu0AWyVZBAuqh3Nb325nA0cPylJ2iuIiRU1ZZQNPPJ
-	R/jM9hXPRDXP1+m48DS5A3PfA3a6x/T6FLx0//3otjc2fY0CTZWnkh88QqX9iuOTQ6UjoxmtqhMLp
-	HfobZfR6Ycuw1HZNx+y6mBOq1IqqdgFJQGUCmP7DK9+prL3djp2+ra1UWNX6+jmryj+ULYFaUj7Zr
-	JAhtLZEQ9TQM4w70R0HPtoB4oH1pAGMx1HKKXAA5n2YRkFu13iXY2cDUVlGwCZS9y2DritfQnrHG7
-	T0wPWv4Xu081q6PT8I5w==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=qFlmP0hdM8pL67gZwtqsQudmDpzfuns5jWEDkehsIXo=; b=yg61bn2NIK48y4
+	C90/Gn4IEynQ/O8MxdaKApwuwGAtRfUClzhq3bq7nzB2v7mfnrNX+g1DgV+m2X3sx1+5MGojC9o8f
+	2PM5BvGk0ZzieocFcznQeCysMmbJSaWSmGozNx65J7+iLafWClkiAOy7YUbZC7cHWi9hkEcwGktWk
+	7kFp0s5YLoctDcQjYachNkeVuIYAPrkhYNsdVJ2uNVxPvdJK3KXy6fV3c7e2qt6eD/vMU9rJ8vz5w
+	7LtVZj7ET8yughrTdEvevFnlFKggHQtO3Quc075HGh3KnBORftlCLtPmt/wa5cd1XkAoP7oX+lKRI
+	NxMgZXxDu0eALjIUKZMg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vKutb-0000000FiHx-3ZUX;
-	Mon, 17 Nov 2025 08:47:35 +0000
-Received: from mail-m21470.qiye.163.com ([117.135.214.70])
+	id 1vKwZ6-0000000Ft86-3NKI;
+	Mon, 17 Nov 2025 10:34:32 +0000
+Received: from mail-wr1-x431.google.com ([2a00:1450:4864:20::431])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vKutZ-0000000FiH0-2WUJ;
-	Mon, 17 Nov 2025 08:47:35 +0000
-Received: from [172.16.12.51] (unknown [58.22.7.114])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 29d4759ae;
-	Mon, 17 Nov 2025 16:47:26 +0800 (GMT+08:00)
-Message-ID: <140cd555-d512-4712-9d71-2d7f188a74fb@rock-chips.com>
-Date: Mon, 17 Nov 2025 16:47:25 +0800
+	id 1vKwZ4-0000000Ft6x-0OLz
+	for linux-phy@lists.infradead.org;
+	Mon, 17 Nov 2025 10:34:31 +0000
+Received: by mail-wr1-x431.google.com with SMTP id ffacd0b85a97d-42b39d51dcfso2223136f8f.2
+        for <linux-phy@lists.infradead.org>; Mon, 17 Nov 2025 02:34:29 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=tuxon.dev; s=google; t=1763375668; x=1763980468; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=NKLUGCUiC6BsXqUDiypfMjQ6coFYy6H+VDi5a2zSn2c=;
+        b=Y4YdAcu3r3VUTTFj+QK7U5qbW8WUC79vDisBDkrX4xTgOQ65jyXe29kHqfwhkDQIOO
+         GdIYb534x25ykj4rmTcxhctWlcuAKSmLXP7rXGNqPtud/EqFUHvZW0VB5G4ZAo9Pe2KH
+         2hiRReJdchnCRMaFchjpW6aIaNN3e85eLUiIWJHXb5b3+zg6rJtSpYu2Qoc+NL1nbn+Z
+         WMUNL20DSaMx9TBy3te+9YdMR33jhOZLeP7dgHtqZ5prjlWSohb95WPVxuJIZ/kTwoAW
+         KXVYq7kRuuLRF5CqxpAC5JMibqHzz0sGoKNfJK9U0rubMxy2borvJuyHmWKMQ9j4+/DM
+         jzrQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1763375668; x=1763980468;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=NKLUGCUiC6BsXqUDiypfMjQ6coFYy6H+VDi5a2zSn2c=;
+        b=PG7PS2z1Uvd8nALghBcaGIQY2sY6TKV8suYS8WzXpCrIsTzI1T5AQ+KcW0a5cEHJIu
+         X64Y9tSmR9uU6vpy6z8d/7vXxQfuCKNborTnR4FcV72LkavhLxq4oQUdE0JyEPphY5Dk
+         keF37RCMh5IAlKiQiBbiBTI5OjmF96U3kcVkiUH1OBebzBjAEufybCpaiXX0KfuIle6i
+         utQuCqUNiQRKO6xPyS0soyUXTHdrYYNE3PhOKsTNCy+PLlEzcfUTRXgRYna6YUwI9gNL
+         vOP6ZQSfn3BNzYzgwlPi/ShEpW5TXuCw4ZFmGneE20EgQxiUtZNERhpOM/IoGGg1hGro
+         hGLg==
+X-Gm-Message-State: AOJu0Yx9uGFTrMIm8YFRg9GbFcGKIfbFaecM/2UlYGc7D7H5D4Nw8Fbg
+	2F11ThjTg0ogEEwCSraaICAYeHF+2u7u5EMO6dFSx1fhzM5jJ8RpznCz7YHJ0pseaR+flelEvBj
+	ag3FbRcQ=
+X-Gm-Gg: ASbGnctmeKy2WmFeIkUn0kZJ251m+1wf2FfUOjiwsZxgJT0T7epK2/N+z19XFnYASPi
+	6TBX7YbF8qYEWngukieviMNVyeHMNOGFnnsxRVvvwYoG0GQELmR9ZABGLR0Zkj4ohJe9vt+4btL
+	4RpmMLMV3FCYeHXIp9T0jA1+WyLIBv5cMU3d1HcnDxcLvEP/H6WZuBAmdws0cKipn2SG0Fi6QFD
+	DdTONUjr020wbzk3i0NUhiwdMcWcv2onCurxYdwkBeLpWYzbXEhECVB7xj2TQgCYzTQC/AwLmyS
+	7k3laeIKLYm315+sD3o45SQ9DE7N2lqX6FRQ+nUYLCMOJgRx+VqqBfvMwqSmrO4bFhavrYGdPp2
+	bixq1/S9Tt+qqyHjVw9EodJ25Vy31l4fYwIIX+MJeQD14OFrYos/s4z1OiB9GrGieWkMscHUSZ7
+	62xBgv2BOKU6orgPC5GU6nAm7k6lqQGjzOqB9sTjBJ
+X-Google-Smtp-Source: AGHT+IFH7hI6pRmki0tztedhTA81jUl1AFeXaOvedsd1Ex9BDadNDzYRxdJihuaErNc3iXiwe3ufkQ==
+X-Received: by 2002:a5d:64e7:0:b0:42b:47da:c313 with SMTP id ffacd0b85a97d-42b593395a0mr12422355f8f.3.1763375667860;
+        Mon, 17 Nov 2025 02:34:27 -0800 (PST)
+Received: from claudiu-X670E-Pro-RS.. ([82.78.167.134])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-42b53f17291sm25560904f8f.32.2025.11.17.02.34.26
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 17 Nov 2025 02:34:27 -0800 (PST)
+From: Claudiu <claudiu.beznea@tuxon.dev>
+X-Google-Original-From: Claudiu <claudiu.beznea.uj@bp.renesas.com>
+To: claudiu.beznea@tuxon.dev,
+	vkoul@kernel.org,
+	kishon@kernel.org
+Cc: linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+Subject: [PATCH] phy: core: Remove extra space after '='
+Date: Mon, 17 Nov 2025 12:34:22 +0200
+Message-ID: <20251117103422.4041040-1-claudiu.beznea.uj@bp.renesas.com>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v9 03/10] drm/bridge: Implement generic USB Type-C DP HPD
- bridge
-To: Heikki Krogerus <heikki.krogerus@linux.intel.com>,
- Chaoyi Chen <kernel@airkyi.com>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
- Peter Chen <hzpeterchen@gmail.com>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Heiko Stuebner
- <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
- Andy Yan <andy.yan@rock-chips.com>,
- Yubing Zhang <yubing.zhang@rock-chips.com>,
- Frank Wang <frank.wang@rock-chips.com>,
- Andrzej Hajda <andrzej.hajda@intel.com>,
- Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
- Amit Sunil Dhamne <amitsd@google.com>, Dragan Simic <dsimic@manjaro.org>,
- Johan Jonker <jbx6244@gmail.com>, Diederik de Haas <didi.debian@cknow.org>,
- Peter Robinson <pbrobinson@gmail.com>, linux-usb@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org
-References: <20251111105040.94-1-kernel@airkyi.com>
- <20251111105040.94-4-kernel@airkyi.com> <aRrffpTP5KyAFVnx@kuha.fi.intel.com>
-Content-Language: en-US
-From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
-In-Reply-To: <aRrffpTP5KyAFVnx@kuha.fi.intel.com>
-X-HM-Tid: 0a9a90ff5e3f03abkunm2a6b77ad8f27ca
-X-HM-MType: 1
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZQkpPQ1ZCHR0ZSE4ZGEkaS0tWFRQJFh
-	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSEpPSE
-	xVSktLVUpCS0tZBg++
-DKIM-Signature: a=rsa-sha256;
-	b=TxAbeCZFY7eqkjxpcivUMqwOH8QFtRL/B2e4tf+GteqsvSZy467ZXu17S6C/ZqVYLBEPPxecTuUo+uZ16WS5iY68xy9ealSCVZp0U6FKLSNqzRNh1vr58YTSeVBSum2ZFTjltiUSSyEJsWu6PKSkNbO0JitC3s7a642vFVxtj4U=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
-	bh=/VyBu/i0fSLSIZpB/cn2Lo04jmSlwZbXvvGuWwLCrig=;
-	h=date:mime-version:subject:message-id:from;
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251117_004733_914801_23BFAC92 
-X-CRM114-Status: GOOD (  24.30  )
+X-CRM114-CacheID: sfid-20251117_023430_137681_DFCC819A 
+X-CRM114-Status: UNSURE (   9.47  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,161 +97,35 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 11/17/2025 4:40 PM, Heikki Krogerus wrote:
+From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 
-> Tue, Nov 11, 2025 at 06:50:33PM +0800, Chaoyi Chen kirjoitti:
->> From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
->>
->> The HPD function of Type-C DP is implemented through
->> drm_connector_oob_hotplug_event(). For embedded DP, it is required
->> that the DRM connector fwnode corresponds to the Type-C port fwnode.
->>
->> To describe the relationship between the DP controller and the Type-C
->> port device, we usually using drm_bridge to build a bridge chain.
->>
->> Now several USB-C controller drivers have already implemented the DP
->> HPD bridge function provided by aux-hpd-bridge.c, it will build a DP
->> HPD bridge on USB-C connector port device.
->>
->> But this requires the USB-C controller driver to manually register the
->> HPD bridge. If the driver does not implement this feature, the bridge
->> will not be create.
->>
->> So this patch implements a generic DP HPD bridge based on
->> aux-hpd-bridge.c. It will monitor Type-C bus events, and when a
->> Type-C port device containing the DP svid is registered, it will
->> create an HPD bridge for it without the need for the USB-C controller
->> driver to implement it.
->>
->> Signed-off-by: Chaoyi Chen <chaoyi.chen@rock-chips.com>
-> Normally there is no "help" section for hidden config options. I
-> guess it can not cause any harm? It is a bit confusing, though. But
-> FWIW:
+Remove extra space after '=' to comply with coding style.
 
-The hidden options "DRM_AUX_BRIDGE" and "DRM_AUX_HPD_BRIDGE" also have a help section.
+Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+---
+ drivers/phy/phy-core.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-I think this is just for comment purposes :)
-
-
->
-> Reviewed-by: Heikki Krogerus <heikki.krogerus@linux.intel.com>
->
->> ---
->>
->> Changes in v9:
->> - Remove the exposed DRM_AUX_HPD_BRIDGE option, and select
->> DRM_AUX_HPD_TYPEC_BRIDGE when it is available.
->> - Add more commit comment about problem background.
->>
->> Changes in v8:
->> - Merge generic DP HPD bridge into one module.
->>
->>   drivers/gpu/drm/bridge/Kconfig                | 10 ++++
->>   drivers/gpu/drm/bridge/Makefile               |  1 +
->>   .../gpu/drm/bridge/aux-hpd-typec-dp-bridge.c  | 50 +++++++++++++++++++
->>   3 files changed, 61 insertions(+)
->>   create mode 100644 drivers/gpu/drm/bridge/aux-hpd-typec-dp-bridge.c
->>
->> diff --git a/drivers/gpu/drm/bridge/Kconfig b/drivers/gpu/drm/bridge/Kconfig
->> index a250afd8d662..559487aa09a9 100644
->> --- a/drivers/gpu/drm/bridge/Kconfig
->> +++ b/drivers/gpu/drm/bridge/Kconfig
->> @@ -30,6 +30,16 @@ config DRM_AUX_HPD_BRIDGE
->>   	  Simple bridge that terminates the bridge chain and provides HPD
->>   	  support.
->>   
->> +if DRM_AUX_HPD_BRIDGE
->> +config DRM_AUX_HPD_TYPEC_BRIDGE
->> +	tristate
->> +	depends on TYPEC || !TYPEC
->> +	default TYPEC
->> +	help
->> +	  Simple bridge that terminates the bridge chain and provides HPD
->> +	  support. It build bridge on each USB-C connector device node.
->> +endif
->> +
->>   menu "Display Interface Bridges"
->>   	depends on DRM && DRM_BRIDGE
->>   
->> diff --git a/drivers/gpu/drm/bridge/Makefile b/drivers/gpu/drm/bridge/Makefile
->> index c7dc03182e59..a3a0393d2e72 100644
->> --- a/drivers/gpu/drm/bridge/Makefile
->> +++ b/drivers/gpu/drm/bridge/Makefile
->> @@ -1,6 +1,7 @@
->>   # SPDX-License-Identifier: GPL-2.0
->>   obj-$(CONFIG_DRM_AUX_BRIDGE) += aux-bridge.o
->>   obj-$(CONFIG_DRM_AUX_HPD_BRIDGE) += aux-hpd-bridge.o
->> +obj-$(CONFIG_DRM_AUX_HPD_TYPEC_BRIDGE) += aux-hpd-typec-dp-bridge.o
->>   obj-$(CONFIG_DRM_CHIPONE_ICN6211) += chipone-icn6211.o
->>   obj-$(CONFIG_DRM_CHRONTEL_CH7033) += chrontel-ch7033.o
->>   obj-$(CONFIG_DRM_CROS_EC_ANX7688) += cros-ec-anx7688.o
->> diff --git a/drivers/gpu/drm/bridge/aux-hpd-typec-dp-bridge.c b/drivers/gpu/drm/bridge/aux-hpd-typec-dp-bridge.c
->> new file mode 100644
->> index 000000000000..9cb6a0cb0f0a
->> --- /dev/null
->> +++ b/drivers/gpu/drm/bridge/aux-hpd-typec-dp-bridge.c
->> @@ -0,0 +1,50 @@
->> +// SPDX-License-Identifier: GPL-2.0+
->> +#include <linux/of.h>
->> +#include <linux/usb/typec_altmode.h>
->> +#include <linux/usb/typec_dp.h>
->> +
->> +#include <drm/bridge/aux-bridge.h>
->> +
->> +static int drm_typec_bus_event(struct notifier_block *nb,
->> +			       unsigned long action, void *data)
->> +{
->> +	struct typec_altmode *alt = (struct typec_altmode *)data;
->> +
->> +	if (action != TYPEC_ALTMODE_REGISTERED)
->> +		goto done;
->> +
->> +	if (is_typec_partner(&alt->dev) || alt->svid != USB_TYPEC_DP_SID)
->> +		goto done;
->> +
->> +	/*
->> +	 * alt->dev.parent->parent : USB-C controller device
->> +	 * alt->dev.parent         : USB-C connector device
->> +	 */
->> +	drm_dp_hpd_bridge_register(alt->dev.parent->parent,
->> +				   to_of_node(alt->dev.parent->fwnode));
->> +
->> +done:
->> +	return NOTIFY_OK;
->> +}
->> +
->> +static struct notifier_block drm_typec_event_nb = {
->> +	.notifier_call = drm_typec_bus_event,
->> +};
->> +
->> +static void drm_aux_hpd_typec_dp_bridge_module_exit(void)
->> +{
->> +	typec_altmode_unregister_notify(&drm_typec_event_nb);
->> +}
->> +
->> +static int __init drm_aux_hpd_typec_dp_bridge_module_init(void)
->> +{
->> +	typec_altmode_register_notify(&drm_typec_event_nb);
->> +
->> +	return 0;
->> +}
->> +
->> +module_init(drm_aux_hpd_typec_dp_bridge_module_init);
->> +module_exit(drm_aux_hpd_typec_dp_bridge_module_exit);
->> +
->> +MODULE_DESCRIPTION("DRM TYPEC DP HPD BRIDGE");
->> +MODULE_LICENSE("GPL");
->> -- 
->> 2.51.1
-
+diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
+index 04a5a34e7a95..8a1e8c15e688 100644
+--- a/drivers/phy/phy-core.c
++++ b/drivers/phy/phy-core.c
+@@ -361,7 +361,7 @@ int phy_power_off(struct phy *phy)
+ 
+ 	mutex_lock(&phy->mutex);
+ 	if (phy->power_count == 1 && phy->ops->power_off) {
+-		ret =  phy->ops->power_off(phy);
++		ret = phy->ops->power_off(phy);
+ 		if (ret < 0) {
+ 			dev_err(&phy->dev, "phy poweroff failed --> %d\n", ret);
+ 			mutex_unlock(&phy->mutex);
 -- 
-Best,
-Chaoyi
+2.43.0
 
 
 -- 
