@@ -4,163 +4,139 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EECFACEBF61
-	for <linux-phy@archiver.kernel.org>; Mon, 17 Nov 2025 14:44:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 397E4CEBF61
+	for <linux-phy@archiver.kernel.org>; Mon, 17 Nov 2025 14:55:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cv6aNsx2c3kUmQMq/mbu82xobzeTd9AVxoSec9j5LcU=; b=fbEom/4U6mahHp
-	06plYLuEL6C/EqtI1mxsRMN6Yi7Q1ETONC4kb9pg+BwGj0xNW7sSe92hismymbg8qDa9NWNDfOBCS
-	fzlZqsNSWh8k9nfYwKXkcNrhFvRFvwN6Sg7Qv3pqM2WDTFlqqclYSBTs5bJPXDZXtS0xuZockMqAZ
-	A3jN3Yvo31ThAMVbgWrkM5BpeD0GWUfMlosOu97UDdIWrD7SXZ27blPaAX7GdUzDFFipMeI6hBRAj
-	wFMNi58NMtO9Xn+O939OVs1dg6NFaorJJOC7YLWFqDm6FwZd4HGdfXvi41tSkBhomDkZ0R+alSca8
-	hztmXn0cT3ULpllIaaNA==;
+	List-Owner; bh=46apW2AK2Jue4t+lpyLGSwx0zcYBF/M4D/n9OSIOhTA=; b=kX+O5wlIRKnJ3U
+	RQ6TD4KoFIFTvHFUJSuRHWtmZqwp1L1U+bdFOeyhU7iHZh2UPTh9n0bxGEh4dSBljl70MhhW6GZlU
+	5b5cG/nkzLxtF9RBPhUMKtRsWary3/On2l6CtW9DRrvk4fqiFo0kIXGIxpoZy3ltObQOsauDK3hS8
+	pDCy5Vk2kMLNtwOKP136diOhQjSRlE5uWqdiHaiOg5ta7HilHDWzESbOHysG3DwHR0skCBtCI4hRn
+	fr6+cYtonZJdKsra93iCx08CYmKmCuyVtIcTeD4ZPUG4XUcqmgm+MURnYdz3dlgKVm2f3RJbgC2dX
+	sk6D2Ldf4HjAxBI3ddLw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vL0TQ-0000000GH6R-1OaN;
-	Mon, 17 Nov 2025 14:44:56 +0000
-Received: from mail-japaneastazon11010039.outbound.protection.outlook.com ([52.101.229.39] helo=TY3P286CU002.outbound.protection.outlook.com)
+	id 1vL0dr-0000000GHjY-3XFW;
+	Mon, 17 Nov 2025 14:55:43 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vL0TL-0000000GH5y-0ZU1
+	id 1vL0dp-0000000GHiv-1uE4
 	for linux-phy@lists.infradead.org;
-	Mon, 17 Nov 2025 14:44:54 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=WhD8sj9l/ZlqU4jcRrq4ZjUuwO6wXYckRaWH2jgK+MFs9t9SL0LxzdltIK2ZHP2VtSOW57ZMUoJnu1mIlrO9b6f9qfLNhxO4k82nr1k/iKc2qiiWw5SUL5g7ZvLpBo9PIlP0DCKpzvrpSnffRKbhyO5Jo4PtuPUty2abndXyP9mEUSF2A4JvMrOGfxbe0TDiPID7VuIldyH45+/4EXFCRSHU0J1nvY9G3fSNULr2DkHgfY3CjCOhAH6TL09CQf33WkVmELTXTh8Gc3vBgDZTlmmku5J/rFMMYzf929QOMsmhIDpx6LV09uJyvOI3jIQgxAeglv3VndiwlwaYeFwrAw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=Rsd8/XLJiAQ8bDnYGWK3aww9U6smpqs/Qj/2JlJ+hUg=;
- b=QH60GPeSeDu1eOSIuYf0j1L+j4rm6iNLngLny3PdRHrAJS0nRBeh0PanJkHQU+z8W+RAkn3GHAyw3JvN5Na1NS7gLZw6drwdLOz06ro3bL37P+7z0jyI817/ijZJakSJOTtzQK9C8TQWq+zhwTJ+Ca5e8zgbmMPJZ6TCYP7AmpGQMSQSKud5KEUYG9U24CBnhhmY9bbQmXRYVzNlDV3UyMZmEVKyvBFSl+m192XvwKk2ekbhwJcnqZGSvu0Oi1V1QIcVaESzdRoCm3axHdf9j6Hy8nQExmtwK/AehujjCKDeWjl3WZOywH+xrNUn7d6J1nL1XMsy9PVDOnEjePYP2g==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=bp.renesas.com; dmarc=pass action=none
- header.from=bp.renesas.com; dkim=pass header.d=bp.renesas.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bp.renesas.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Rsd8/XLJiAQ8bDnYGWK3aww9U6smpqs/Qj/2JlJ+hUg=;
- b=lpwTuH7Xvd5YgKR0slbzTDmtzpvKIJjLPXQoyIdrm2SIrdnXw7FLzJUIjj+p49Y3KXgarW9xAYYu/odnD3GgvsVpC37zCS8uMLISv6vXt12kpo6Dj1naiyh3ZrZsnsxL06AXaOZu0AOtLzbG7YJaAUedXCsRQZ+cwOz4qu8L9v4=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=bp.renesas.com;
-Received: from TYCPR01MB11947.jpnprd01.prod.outlook.com (2603:1096:400:3e1::6)
- by TYYPR01MB16483.jpnprd01.prod.outlook.com (2603:1096:405:2df::13) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9343.8; Mon, 17 Nov
- 2025 14:44:43 +0000
-Received: from TYCPR01MB11947.jpnprd01.prod.outlook.com
- ([fe80::33f1:f7cd:46be:e4d8]) by TYCPR01MB11947.jpnprd01.prod.outlook.com
- ([fe80::33f1:f7cd:46be:e4d8%5]) with mapi id 15.20.9343.009; Mon, 17 Nov 2025
- 14:44:43 +0000
-Date: Mon, 17 Nov 2025 15:44:30 +0100
-From: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Cc: tomm.merciai@gmail.com, linux-renesas-soc@vger.kernel.org,
-	biju.das.jz@bp.renesas.com, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Fabrizio Castro <fabrizio.castro.jz@renesas.com>,
-	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Peter Rosin <peda@axentia.se>,
-	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
-	Geert Uytterhoeven <geert+renesas@glider.be>,
-	Magnus Damm <magnus.damm@gmail.com>, Arnd Bergmann <arnd@arndb.de>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v3 04/21] dt-bindings: reset: renesas,rzv2h-usb2phy:
- Document VBUS_SEL mux
-Message-ID: <aRs0zpiOPO5nKLml@tom-desktop>
-References: <cover.1762773720.git.tommaso.merciai.xr@bp.renesas.com>
- <8fba0b7235bd398d41329fd087d68f7e98bbbaca.1762773720.git.tommaso.merciai.xr@bp.renesas.com>
- <20251117-sturdy-resourceful-crab-c14bb8@kuoka>
-Content-Disposition: inline
-In-Reply-To: <20251117-sturdy-resourceful-crab-c14bb8@kuoka>
-X-ClientProxiedBy: FR4P281CA0438.DEUP281.PROD.OUTLOOK.COM
- (2603:10a6:d10:c6::16) To TYCPR01MB11947.jpnprd01.prod.outlook.com
- (2603:1096:400:3e1::6)
+	Mon, 17 Nov 2025 14:55:42 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 5AHBbUKj2582098
+	for <linux-phy@lists.infradead.org>; Mon, 17 Nov 2025 14:55:41 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	awbwG/k9XyjzMvCh6NANh6uyBFKHQ/YUvVhYaVb6bNY=; b=lTOhfrUnVVdViObc
+	dVXIqvdmzxpeVtUkMLX1z9OnGv+edJ5XTbdvLAe2DcgV7rbnHw0BOsnuKQol2q01
+	QZcPHjtaQn8EzTqNSO2LQ6ek9A4xnbC604QgAjnOEctwy5r0OM2URZ8APcqr2VCC
+	fRhU+xXuIzWe/ux1tU7orrxc2HqY4KwWSHjTwo4raNX/OkNcIy/qs4RbphlZhnx6
+	g4xdwJbZ4AvaBrFyrauLgDFcMsL2VsWA0dNk2Ij9aWC4xxKa0aOTihkVCxA40Bb3
+	l5RVJEVFdvWmgkwFTqiCO0Jev0xG5WAlddEn2GCmXr8Ckg44ZJObXSO6OejjMeGg
+	nPO9gw==
+Received: from mail-pf1-f198.google.com (mail-pf1-f198.google.com [209.85.210.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4afssfa56x-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Mon, 17 Nov 2025 14:55:40 +0000 (GMT)
+Received: by mail-pf1-f198.google.com with SMTP id d2e1a72fcca58-7b9321b9312so11274657b3a.1
+        for <linux-phy@lists.infradead.org>; Mon, 17 Nov 2025 06:55:40 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1763391339; x=1763996139; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:date:message-id:subject
+         :references:in-reply-to:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=awbwG/k9XyjzMvCh6NANh6uyBFKHQ/YUvVhYaVb6bNY=;
+        b=Dc4oIF2KF9+m4D6lqjmE3EnFAsm2ukiELQPIQ+W6JRN6FP6eQHSdUWNdeuh80RSB98
+         8j1epry7hlQezbfmvXy2fHaEEFEI6M7WZFmdOZGtyevVjvBRrG4e26LpdNpMVxPqrEzJ
+         F9Mjn2AvbzO+8qzGZh0kGrehyPFj/cpPsTgJORBaEQktD6zXYGUA5SblFW+9xBBrgikJ
+         K0jUOCe46UDieorK7HVB/3wdTg/9rbV/jQK8zQgHULqLLtGq1HyUxBnDNzGYzJr2xYgA
+         9LydNjqFNSOop6Q1HJ6p5OFx3BVd5RE7NqY81VB9zfsAqt3yCcDvCspQz29d/QUALRYX
+         4U3Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1763391339; x=1763996139;
+        h=content-transfer-encoding:mime-version:date:message-id:subject
+         :references:in-reply-to:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to;
+        bh=awbwG/k9XyjzMvCh6NANh6uyBFKHQ/YUvVhYaVb6bNY=;
+        b=IEkQFnRDBopB6LKA9t2Zx8uySWXEvJc7yTgI8RUL3TSVAsesmHlK7Z8XIAgx+WYurc
+         gwDiQ1KONxrCTukjJIZ0lq6dMoaETw25lT2swxvui2RuJzYYEcTdBlaV6sk8MibCun0M
+         bEt5+0jm4HEqdHlbxiOaJaBhogEj6cq7chhw95JqfKKO3qXZtb6yvcBJswkSg8g97CgD
+         Bt+zPvy/2bmrMaF3cRS7kq9T0doJpqSGkdPD3Z8YoRDzqDf4dapup/jaBLtNhi+INXZM
+         jqAPJe1T8PjyaGDTCpvacpIJwsT5M7jQD1yRTeg0LXfedA0nRNmAe5XXDlINUxOBSWo0
+         5i2A==
+X-Forwarded-Encrypted: i=1; AJvYcCVvjp5IsPd72JM3AVchVofG97bxrhK3aL1gFsAPcAE4vixBEK3p8Qm26xA6ONQ2O0uP0ug75vU9u3g=@lists.infradead.org
+X-Gm-Message-State: AOJu0Ywk5BqMb/q5/OBiU72WgQkRaCfHj08ckAgn7us/AF2VSbRqCsu3
+	GvWpqw6dKMAd5pyTVluHo+x+8+WDsgXBrfbsT1co5yiU7cuQYcpID7dvNQ6yX5aj/Wocqe6bZYp
+	QAXbNc6CSPHVhrvddWxgANO+YtKmMHVkiZ1M5Mqp1vQ0yBPNEkqPPa9CB/CzGP3/9tE9l
+X-Gm-Gg: ASbGncu7MTqFkjRkV6PXQpzY6wr7QP6Sd4SXovZns/KvX6WOpN4pdw2b7e8f75aPQCo
+	ku/Y2PZzD0+8/jp11b1i1jHXB9Exf5lBfROpDyZe4wwVWpUA5g5avgAOElbgwHWYEl0T322XmL4
+	qgBghxjUQaG2xADyxk1Ue50DgzZoLnRL8J+w6ROPOp2PFqSULSsV9Xu4j5h4u6MZILQxEGsx56Q
+	fPrkN/jgypAAGH7cJ5rXcrZcEuRaTe8Vakn/VcThiENL5PCvSNeiTuUSpKAPnawyFw7Cca9P1U4
+	YxRM6O6dc6hDhASIB0b5EdszdDe6V9nsB0g6VxeOwnBFLHr14FSyq49ta6Zd+oHEs/mIdiBA
+X-Received: by 2002:aa7:9069:0:b0:7b8:349:1b24 with SMTP id d2e1a72fcca58-7ba3bb8c363mr13353849b3a.22.1763391339462;
+        Mon, 17 Nov 2025 06:55:39 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFSL5vJ9zpN99/df4BrrN39IGWZXi59cv6hPKEmE1JVTmbqGnrZbM2VZhjhEvINN7S/y/pFWA==
+X-Received: by 2002:aa7:9069:0:b0:7b8:349:1b24 with SMTP id d2e1a72fcca58-7ba3bb8c363mr13353786b3a.22.1763391338914;
+        Mon, 17 Nov 2025 06:55:38 -0800 (PST)
+Received: from [192.168.1.102] ([120.60.57.34])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-7b924aee8afsm13627213b3a.8.2025.11.17.06.55.31
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 17 Nov 2025 06:55:38 -0800 (PST)
+From: Manivannan Sadhasivam <manivannan.sadhasivam@oss.qualcomm.com>
+X-Google-Original-From: Manivannan Sadhasivam <mani@kernel.org>
+To: dlan@gentoo.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+        vkoul@kernel.org, kishon@kernel.org, bhelgaas@google.com,
+        lpieralisi@kernel.org, kwilczynski@kernel.org,
+        Alex Elder <elder@riscstar.com>
+Cc: ziyao@disroot.org, aurelien@aurel32.net, johannes@erdfelt.com,
+        mayank.rana@oss.qualcomm.com, qiang.yu@oss.qualcomm.com,
+        shradha.t@samsung.com, inochiama@gmail.com, pjw@kernel.org,
+        palmer@dabbelt.com, aou@eecs.berkeley.edu, alex@ghiti.fr,
+        p.zabel@pengutronix.de, christian.bruel@foss.st.com,
+        thippeswamy.havalige@amd.com, krishna.chundru@oss.qualcomm.com,
+        guodong@riscstar.com, devicetree@vger.kernel.org,
+        linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
+        spacemit@lists.linux.dev, linux-riscv@lists.infradead.org,
+        linux-kernel@vger.kernel.org
+In-Reply-To: <20251113214540.2623070-1-elder@riscstar.com>
+References: <20251113214540.2623070-1-elder@riscstar.com>
+Subject: Re: (subset) [PATCH v6 0/7] Introduce SpacemiT K1 PCIe phy and
+ host controller
+Message-Id: <176339133088.9268.13766811346004998135.b4-ty@kernel.org>
+Date: Mon, 17 Nov 2025 20:25:30 +0530
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: TYCPR01MB11947:EE_|TYYPR01MB16483:EE_
-X-MS-Office365-Filtering-Correlation-Id: 378f2328-22c9-4a5a-8aa0-08de25e7d850
-X-LD-Processed: 53d82571-da19-47e4-9cb4-625a166a4a2a,ExtAddr
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|376014|366016|52116014|7416014|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?8naYzz7FW1dSH0bNOhTil/S0d/HMOXQcHPh333+VeaxUJABTnunBJU1m0ejC?=
- =?us-ascii?Q?EPaWep/YBcIOx1bP85EamfOU/3NwpdK9vtDJ4XIK54mYH0idwe9pJ8K8bAZq?=
- =?us-ascii?Q?bodERdA27FLtO99IYjBa3UJU95YLsTDfJxlOVGrW20ap1XgP4mvazl9Owi/B?=
- =?us-ascii?Q?Pem0N/r7f8ya89GmOP9BZZ0kcTnBs3qSZB17IxBRoMSr3UxBWuAD5JdrsD2V?=
- =?us-ascii?Q?i0TWseC/GEHBE08xXkbGkZUuF1k6kqKrDWD2qJ4kj4JjnZb9wyaUD1oYwf/u?=
- =?us-ascii?Q?UeSNy0C8oIasY5k7vfw4R7xM6WNYh5CHlf69dKwodaybMtuVrHxlyy8G9ZPv?=
- =?us-ascii?Q?8wjAet1YIqTnJ9ryGd7K3ZNHDiLNM1jVwWF148x4oICq1s/DAZeQn+hSOo9G?=
- =?us-ascii?Q?WUe86DLIAA8EJRYxeofdDpCdswKKnf0ahBPAj9ZK6PgXz2sl9ZokXDIdZLVd?=
- =?us-ascii?Q?HyK7kwx86oyMUXsKBKxOgVoHggXp37qoKtYPcIEWk+Z9rk98ZyneRI4r1QyD?=
- =?us-ascii?Q?UNe+VoFRvzNjwyUk06HHFo5a7bg7iQFGIhOWLRTMeTZG5/4eMfsJh5KVajLK?=
- =?us-ascii?Q?Ih583JuxcABOUmxhg/ZsP+B1UyRTiR5rDxsz+WqwT4zhGTCaOwEQUPqTbSpK?=
- =?us-ascii?Q?SltH2vMbOWIx0d2zQWoIDmJrqC1TgVWslaZcN/wOVLxH/nR71xYxWhCjLpt3?=
- =?us-ascii?Q?pjqK/YQS+WrSQ6tkPhCPcQM9H8/WIsxSNFN6F/LNb3Nx3GjpL69hE/K8MRIT?=
- =?us-ascii?Q?6eSl8s/NhVCR7ieaImDijFrdqyrmJ8NrOCkE+SRjTyeVIHQj/HUpohuf1/4W?=
- =?us-ascii?Q?x7L4wz8cQdQQLDSR2eq2DMq+pDi4rgKZPbo5MEyVsGS11XVgfHETbAtu3ql5?=
- =?us-ascii?Q?LJd08GFalUDiknRZ+coHd7xXjy6FsRToRyBrW1afiYQXs84p8FnLcD7CoaUP?=
- =?us-ascii?Q?tQOzarmwYT19/Mh98/fBsZZglbX6z1BQJhYyNyykbVff2gSlv+n/cFwlR1Pv?=
- =?us-ascii?Q?8/uB7lnJRTEAjBWTS0n0TJ8dEX29FE/9DrX+LoG8PKFwJV6rSLNT7rtlsTXg?=
- =?us-ascii?Q?8JlNujwmSLl6vznuOUBcxItwalt7PAMghexTR62gEHb0x65Fc855pwRBGCJZ?=
- =?us-ascii?Q?t2e9pJwZpBuB8HvRs1yM5BbMJ3ttITncmMGXjMTIjHu3EsJWHgK+Bcn4zxQM?=
- =?us-ascii?Q?FaC94hP8NSg1iCiuIeJsg4NbKOcJ1RqKFdo4r7KFs8fSsvQ3TeiCcc2PUWgD?=
- =?us-ascii?Q?AN488qeo6c+KMuYrv7RDAc9kda95Pf/WJfXzSwjHln2bwgVL2N+TZ8cYAt1f?=
- =?us-ascii?Q?UMPoik62SEHjlEVnR1hwuXf1FJq30r78qOmIINBxQkVrTkWuVpRrfCCVDkS8?=
- =?us-ascii?Q?qsg/4tKXp3DJexrwd1t4ES+1c0ceoP6889d4b74ee3h9kuRb6Y6G3b9y1f9V?=
- =?us-ascii?Q?tTyCMsnkkdlVyosqJsq+35LYdbLbdaCtwS7BXT3TEjHm95gstRo4ImwkuZGk?=
- =?us-ascii?Q?eZfaHZQHnBMvwlNtrZYfqLowZTKteIfyPkKt?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TYCPR01MB11947.jpnprd01.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(376014)(366016)(52116014)(7416014)(38350700014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?MCIxhJOVoGVdKUHJ1GlhgngjdG5rrf3JNDCVXOVI4nyIw+VD0zNhq3uzHM7F?=
- =?us-ascii?Q?nqjQWrEU4SSp0pqi2u6N2fJSkLmfOLfNe9rO4/2gPo4HBscRSyvGuHsMn03k?=
- =?us-ascii?Q?2P4/fakwuWJLXWmIvhMNcW4IATNsYRzSo12fILAaMsmvTSQ4a3Zan9QGQtJb?=
- =?us-ascii?Q?K9TJ3YLswk5oCATtyZDxuCuIYIESSRrN1qq6wwjJZwOQHLksTi2scKO5ACko?=
- =?us-ascii?Q?MdwdczLv5iMcbiPOvoD06MO6zdGVZ10dshWsVFf7ItmNqwue4yZSM5MQdGME?=
- =?us-ascii?Q?LlH8P4k8sArUOiSujnNr8Pnluh2BQQpkkYvmfPFj0wq/oMnpsMaiZCBmjTN+?=
- =?us-ascii?Q?Lafo1CfKhZuHSsM2kHvNpIxpJ7YnkKT9rWBWdotsWAIEkZhdXmuGFaggfDnf?=
- =?us-ascii?Q?60mGSNGNkpeF4bkeUBUEvvvJSVHzUGfQaRDvcO+lOpf8X1pSelWw47LG7EbC?=
- =?us-ascii?Q?OdtgpAcBjZ7jbTF6fuXTfVoeZcHQM62RVXcSQJ94VR1aBu3UvviCwHkNojlp?=
- =?us-ascii?Q?swDKQDOrbA9o4LirwcsNUbNTUAUvO2Pn0raynQp22HYVveIWH1EN4sgI4naV?=
- =?us-ascii?Q?7SVjXA9FPkoPN89Sli9b36Orly0eDm2mWdD7crbPF/VHtuXgzND001wOISfW?=
- =?us-ascii?Q?px/oGC9QH7MTAKBKMqNa+BzecNG6f7tXDw3mh5PJbalkujdXYOWwIgzHlH8S?=
- =?us-ascii?Q?Og1C8DP8YL+HL0CB4fdRvyuutBAMX3qRknq1lfeu+rgEw6vPZ74jC5P+Ecdi?=
- =?us-ascii?Q?k/Or+7lisrHQ5f4/UibeJebrVSHuSQYkDw6wUmc6bfF/Stu3s6RYIRhVmT9B?=
- =?us-ascii?Q?KAUMK2odNiBl98cQvOOKuKJL4rj3eI0z9e6ksiCPo7E2VV8p5YzbX1XVTnL+?=
- =?us-ascii?Q?Q5LFV2yRpweNBNtEULWyurRNZf7nRb4C4u2DJuZ4SLWVIEcKA/KgN1yiuG9j?=
- =?us-ascii?Q?f+6XBQif339cEfozOEX+ycgq/pf+AY50W9fPJLKLrWX9Y8Oi0owc3I1aJSMl?=
- =?us-ascii?Q?ILu38azykUcEPXDN3lbA1cOFbcOhIYxCfCn7hc2z4Gz+EKJPliSB8t2bch7r?=
- =?us-ascii?Q?4eLu7+Y7O8oxz8LALMDQwuE1BJhXUaOG/T7J0kqSAYgzeI590CqoAGGX3iwH?=
- =?us-ascii?Q?4iBqI+fBW/c6284keTYAPnPttcYwBkRIOzsh6kVLG+n99sUw6g4ehDxXjrl6?=
- =?us-ascii?Q?GNHLh7BsSRutt7SlHs90mPkLY44vMW160LOGZVjxN3SBxB/OwJv4fI0cg69t?=
- =?us-ascii?Q?DzI8WKvYzg7kx7reJoLTMhI00K8Onst5BMYNMhMdIqInR0VquPRqlZ1NeL7e?=
- =?us-ascii?Q?aU9RHQp5noIqlYWUNTjvTj3sJFnQZNLfUWqyhFB3iBMFvU6IrNzLBcw+SSFc?=
- =?us-ascii?Q?gefZv9Ox9XlAH9/U+F+zOJIopVLC8I9E3zxwqbTGnhnRAVQfv9/bmOGcG8j0?=
- =?us-ascii?Q?TnnmH2s9UjhjuAyWELMlwqaGwYh2VfGokTkpKtXG+jukVD9PFuGc53ZwYpzB?=
- =?us-ascii?Q?6tf/KsAgWQaic2vND7P6xhT887Z5swMd+iqV++F02eVKy9nVCag8oGL0m0di?=
- =?us-ascii?Q?2YQ4PSiZMyhZmo2CibPJA54/f4PwNFG5YcWgPeIDLBpanDP2r3N+xNZU360p?=
- =?us-ascii?Q?Tz98AHb2MnqEKlwyVyMpA5E=3D?=
-X-OriginatorOrg: bp.renesas.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 378f2328-22c9-4a5a-8aa0-08de25e7d850
-X-MS-Exchange-CrossTenant-AuthSource: TYCPR01MB11947.jpnprd01.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Nov 2025 14:44:43.1039
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 53d82571-da19-47e4-9cb4-625a166a4a2a
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: AACothaOXj0OVDhWipEdrVA2aKUVe57ZZW+0b+3mf+VckWuEwsaTzXiY/W9wqb4YrB9X2jLNxTyPlBA7Jj5CSzCJyQSPNdZ9c13Ni7fpRWw2qrDHpMgaKOx88Y2qNy4d
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYYPR01MB16483
+X-Mailer: b4 0.14.3
+X-Proofpoint-ORIG-GUID: -udWfE5jcgAkBSxm9f4mSQCdgMKeLo-h
+X-Proofpoint-GUID: -udWfE5jcgAkBSxm9f4mSQCdgMKeLo-h
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMTE3MDEyNyBTYWx0ZWRfXybZHPML5VJS0
+ RiEvOjg8ARJjm7hitg/gXgERvDeK4PNp09B6LvmP53uuLb8AuFqPo5L3JoA8r11ASoIPU5VeISI
+ f+08zpYlpKexN24h4Nz89LDYntYJM0Az4dZQGpkw8IJ2EXplHg2Wa3OfLc5RZ9gyi77GmTQVbaP
+ xJ8h16UvQW6NMBiAPoXwS0ymjyagsROT1mmnMvNIRII9XXVC6JLZA4il7kzPDYnKxIHaOMEkXwj
+ bTWU5n5wRXbkEhJeexE9iW31hHCL6B3EAF4elJnBCsRZ6IuKzFgT+IJWIDAsF1G39fOHSAfAwTk
+ oOpnYuo0CVCESQc+8irD5zNzhkPVG1bryT2tQu48rHpxKpLgaa9nIpQYRK1D9iDn+EGsLoeSMRP
+ Rk2cJ510y89yll8/Ul1wnmZyzH9vKg==
+X-Authority-Analysis: v=2.4 cv=IrkTsb/g c=1 sm=1 tr=0 ts=691b376c cx=c_pps
+ a=m5Vt/hrsBiPMCU0y4gIsQw==:117 a=SvArCPxluHhT4bP621h3eQ==:17
+ a=IkcTkHD0fZMA:10 a=6UeiqGixMTsA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=VwQbUJbxAAAA:8 a=TFzoyenawzPvhxzIwaMA:9
+ a=QEXdDO2ut3YA:10 a=IoOABgeZipijB_acs4fv:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
+ definitions=2025-11-17_03,2025-11-13_02,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ lowpriorityscore=0 suspectscore=0 spamscore=0 phishscore=0 adultscore=0
+ malwarescore=0 bulkscore=0 clxscore=1011 impostorscore=0 priorityscore=1501
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2510240001 definitions=main-2511170127
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251117_064451_524822_4FE05D10 
-X-CRM114-Status: GOOD (  21.35  )
+X-CRM114-CacheID: sfid-20251117_065541_488849_08456207 
+X-CRM114-Status: GOOD (  10.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -177,91 +153,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Krzysztof,
-Thanks for your review!
 
-
-On Mon, Nov 17, 2025 at 08:00:27AM +0100, Krzysztof Kozlowski wrote:
-> On Mon, Nov 10, 2025 at 01:08:04PM +0100, Tommaso Merciai wrote:
-> > Document the 'mux-controller' child node in the Renesas RZ/V2H(P)
-> > USB2PHY reset binding to support describing the USB VBUS_SEL
-> > multiplexer as a mux-controller.
-> > 
-> > This is required to properly configure the USB PHY VBUS source on
-> > RZ/V2H(P), RZ/G3E SoCs.
+On Thu, 13 Nov 2025 15:45:32 -0600, Alex Elder wrote:
+> This series introduces a PHY driver and a PCIe driver to support PCIe
+> on the SpacemiT K1 SoC.  The PCIe implementation is derived from a
+> Synopsys DesignWare PCIe IP.  The PHY driver supports one combination
+> PCIe/USB PHY as well as two PCIe-only PHYs.  The combo PHY port uses
+> one PCIe lane, and the other two ports each have two lanes.  All PCIe
+> ports operate at 5 GT/second.
 > 
-> And where did you explain why this cannot be folded into parent node? If
-> you do not provide context why reviewer's advice cannot be fulfilled,
-> then you will get the same comment.
+> [...]
 
-Ouch, thanks.
+Applied, thanks!
 
-The mux-controller cannot be folded into the parent USB2PHY node because
-the VBUS source selector is not part of the USB2PHY block itself.
+[3/7] dt-bindings: pci: spacemit: Introduce PCIe host controller
+      commit: a812b09a6b599ea80ec1065a9a635724a235843d
+[5/7] PCI: spacemit: Add SpacemiT PCIe host driver
+      commit: ff64e078e45faee50cc6ca7900a3520e8ff1c79e
 
-I will add that in v4.
-
-> 
-> > 
-> > Signed-off-by: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
-> > ---
-> > v2->v3:
-> >  - Manipulate mux-controller as an internal node.
-> >  - Improved commit body.
-> > 
-> > v1->v2:
-> >  - New patch
-> > 
-> >  .../bindings/reset/renesas,rzv2h-usb2phy-reset.yaml   | 11 +++++++++++
-> >  1 file changed, 11 insertions(+)
-> > 
-> > diff --git a/Documentation/devicetree/bindings/reset/renesas,rzv2h-usb2phy-reset.yaml b/Documentation/devicetree/bindings/reset/renesas,rzv2h-usb2phy-reset.yaml
-> > index c1b800a10b53..03da74ff2d08 100644
-> > --- a/Documentation/devicetree/bindings/reset/renesas,rzv2h-usb2phy-reset.yaml
-> > +++ b/Documentation/devicetree/bindings/reset/renesas,rzv2h-usb2phy-reset.yaml
-> > @@ -37,6 +37,12 @@ properties:
-> >    '#reset-cells':
-> >      const: 0
-> >  
-> > +  mux-controller:
-> > +    $ref: /schemas/mux/mux-controller.yaml#
-> > +    description: Mux controller for USB VBUS source selection.
-> > +    type: object
-> > +    unevaluatedProperties: false
-> > +
-> >  required:
-> >    - compatible
-> >    - reg
-> > @@ -44,6 +50,7 @@ required:
-> >    - resets
-> >    - power-domains
-> >    - '#reset-cells'
-> > +  - mux-controller
-> >  
-> >  additionalProperties: false
-> >  
-> > @@ -58,4 +65,8 @@ examples:
-> >          resets = <&cpg 0xaf>;
-> >          power-domains = <&cpg>;
-> >          #reset-cells = <0>;
-> > +
-> > +        mux-controller {
-> > +          #mux-state-cells = <1>;
-> 
-> Do not mix up indentation.
-
-Ack, thank you.
-
-
-> 
-> Best regards,
-> Krzysztof
-> 
-
-Regards,
-Tommaso
-
-
+Best regards,
+-- 
+Manivannan Sadhasivam <mani@kernel.org>
 
 
 -- 
