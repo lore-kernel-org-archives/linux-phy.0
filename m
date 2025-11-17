@@ -4,41 +4,40 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8660BCEACEF
-	for <linux-phy@archiver.kernel.org>; Mon, 17 Nov 2025 12:39:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 15B3CCEBF93
+	for <linux-phy@archiver.kernel.org>; Mon, 17 Nov 2025 12:39:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References:Message-ID
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KI1OlR2PAsCBBkATdJ4VLGVM43aB25NMXvpBKUuTZZc=; b=Y5Dv7ekqi9DOmu
-	Mel1rsS2XAizQjM2rZqxp7VHfTwI8HUHRKjcNMcJVq7+rhzh8XPTEWyirWsgwbzuIJTIDOpml+k82
-	CKHg1dcD8FwgYevzn6HrwSVCZK2XtIeZvr0bgho5tfM7Xg4N4rksl5K1CoBq9TIPkMaTGfrXcg67G
-	sJJPFKO8++ZfZBU8WaTS4TBaxBLgvhZzT3odT6JyucoqH/0+r4f8xUCe7kWL7+D0fjc+IWaeLxqC0
-	v4ILa2qv/IG26LfrDY61DhFSo8eXXUET1BsbZBD6IW5kUBbVYTpeg9PZuwgUllmZk2C+n1FGfb99k
-	GA+9rRAZtQ6+w7JT2xwQ==;
+	List-Owner; bh=11sTHZFB/PMFNAZFutKIouwaVoqkCtw6jxjy46InpfQ=; b=A22xw6yH4X/sXc
+	gVPtK3gV0FcSjcVjQeUNha2261NBMnnD+f5dhNhUayE8cOp5ztBv5nIjcNE+c+SvXH+0usZVu3MJO
+	zHWh/5KCvF2rgQPPoh6Z2w5oNKuMD8gssxTx+m6BmLpgYN9+ihX1OFLtRAjEYm1vsXOYwwvqOTxJ9
+	g8qdQPjXJXTc8bRBuh+5uAlCui4eiZ77Tnm+94OjuymJVwhmzTSTqN5kA85FvrggIW8CPjv8qE7NI
+	SIrQTLe6FG7MMHdmFwRqsbDTfyUEzlAwE0BVOVi+fMrk1OphhSjxU1wsQSDe6IhBbSoVzdyj2vWLV
+	wboTFyPwi2x21Hyvd/+g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vKyVx-0000000G5xw-104T;
-	Mon, 17 Nov 2025 12:39:25 +0000
+	id 1vKyVy-0000000G61J-3BqH;
+	Mon, 17 Nov 2025 12:39:26 +0000
 Received: from mail.aspeedtech.com ([211.20.114.72] helo=TWMBX01.aspeed.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vKyVl-0000000G5br-2M4m;
-	Mon, 17 Nov 2025 12:39:15 +0000
+	id 1vKyVs-0000000G5br-2bS9;
+	Mon, 17 Nov 2025 12:39:21 +0000
 Received: from TWMBX01.aspeed.com (192.168.0.62) by TWMBX01.aspeed.com
  (192.168.0.62) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.10; Mon, 17 Nov
- 2025 20:38:52 +0800
+ 2025 20:38:53 +0800
 Received: from [127.0.1.1] (192.168.10.13) by TWMBX01.aspeed.com
  (192.168.0.62) with Microsoft SMTP Server id 15.2.1748.10 via Frontend
  Transport; Mon, 17 Nov 2025 20:38:52 +0800
 From: Jacky Chou <jacky_chou@aspeedtech.com>
-Date: Mon, 17 Nov 2025 20:37:53 +0800
-Subject: [PATCH v5 6/8] PCI: Add FMT, TYPE and CPL status definition for
- TLP header
+Date: Mon, 17 Nov 2025 20:37:55 +0800
+Subject: [PATCH v5 8/8] MAINTAINERS: Add ASPEED PCIe RC driver
 MIME-Version: 1.0
-Message-ID: <20251117-upstream_pcie_rc-v5-6-b4a198576acf@aspeedtech.com>
+Message-ID: <20251117-upstream_pcie_rc-v5-8-b4a198576acf@aspeedtech.com>
 References: <20251117-upstream_pcie_rc-v5-0-b4a198576acf@aspeedtech.com>
 In-Reply-To: <20251117-upstream_pcie_rc-v5-0-b4a198576acf@aspeedtech.com>
 To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -55,16 +54,16 @@ CC: <linux-aspeed@lists.ozlabs.org>, <linux-pci@vger.kernel.org>,
 	Andrew Jeffery <andrew@aj.id.au>, <openbmc@lists.ozlabs.org>,
 	<linux-gpio@vger.kernel.org>, Jacky Chou <jacky_chou@aspeedtech.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1763383131; l=1361;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1763383132; l=1055;
  i=jacky_chou@aspeedtech.com; s=20251031; h=from:subject:message-id;
- bh=nq0bqCx0rHmNiL65sL9sXGxxVddeGd0PW7LtKF4DAu4=;
- b=ohyGxEFVCsregWLt3wVAi2U+bBcoIDIlGlp/apfQY0etcg+EXobiXAKPvzkSUVMmQK6qKIDif
- BLm+I4EiODJDaDLdFpfsDe6s4IqY0umuxt4J2jZKnU6hPPNUStGiTaX
+ bh=YilEpdg8bG3UlHL0jHcsLDK1FRQBHwdXT6OrMPOq/1Q=;
+ b=xMAiCJqkMeOMFaK9w07sbCbi+5n6yruqP0jV94j6UtTNzoJ1vBw+Y488yx7yG40qxEmQu912D
+ 6axCGPEFNHsAEglqFN5bpaxu1HylnFeoGm0rRBURvJFFdxv/DF83zPC
 X-Developer-Key: i=jacky_chou@aspeedtech.com; a=ed25519;
  pk=8XBx7KFM1drEsfCXTH9QC2lbMlGU4XwJTA6Jt9Mabdo=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251117_043913_611638_FBD9757F 
-X-CRM114-Status: UNSURE (   6.95  )
+X-CRM114-CacheID: sfid-20251117_043920_677210_A732FDB7 
+X-CRM114-Status: UNSURE (   7.05  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -82,40 +81,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-According to PCIe specification, add FMT, TYPE and CPL status
-definition for TLP header.
+Add maintainer for ASPEED PCIe RC driver.
 
 Signed-off-by: Jacky Chou <jacky_chou@aspeedtech.com>
 ---
- drivers/pci/pci.h | 15 +++++++++++++++
- 1 file changed, 15 insertions(+)
+ MAINTAINERS | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
 
-diff --git a/drivers/pci/pci.h b/drivers/pci/pci.h
-index 36f8c0985430..3a075f77cf4a 100644
---- a/drivers/pci/pci.h
-+++ b/drivers/pci/pci.h
-@@ -88,6 +88,21 @@ struct pcie_tlp_log;
- #define PCI_BUS_BRIDGE_MEM_WINDOW	1
- #define PCI_BUS_BRIDGE_PREF_MEM_WINDOW	2
+diff --git a/MAINTAINERS b/MAINTAINERS
+index e64b94e6b5a9..664c1f2c4cc0 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -3837,6 +3837,18 @@ S:	Maintained
+ F:	Documentation/devicetree/bindings/media/aspeed,video-engine.yaml
+ F:	drivers/media/platform/aspeed/
  
-+/* Format of TLP; PCIe r7.0, sec 2.2.1 */
-+#define PCIE_TLP_FMT_3DW_NO_DATA	0x00 /* 3DW header, no data */
-+#define PCIE_TLP_FMT_4DW_NO_DATA	0x01 /* 4DW header, no data */
-+#define PCIE_TLP_FMT_3DW_DATA		0x02 /* 3DW header, with data */
-+#define PCIE_TLP_FMT_4DW_DATA		0x03 /* 4DW header, with data */
++ASPEED PCIE CONTROLLER DRIVER
++M:	Jacky Chou <jacky_chou@aspeedtech.com>
++L:	linux-aspeed@lists.ozlabs.org (moderated for non-subscribers)
++L:	linux-pci@vger.kernel.org
++L:	linux-phy@lists.infradead.org
++S:	Maintained
++F:	Documentation/devicetree/bindings/pci/aspeed,ast2600-pcie.yaml
++F:	Documentation/devicetree/bindings/phy/aspeed,ast2600-pcie-phy.yaml
++F:	drivers/pci/controller/pcie-aspeed.c
++F:	drivers/phy/aspeed/Kconfig
++F:	drivers/phy/aspeed/pcie-phy-aspeed.c
 +
-+/* Type of TLP; PCIe r7.0, sec 2.2.1 */
-+#define PCIE_TLP_TYPE_CFG0_RD		0x04 /* Config Type 0 Read Request */
-+#define PCIE_TLP_TYPE_CFG0_WR		0x04 /* Config Type 0 Write Request */
-+#define PCIE_TLP_TYPE_CFG1_RD		0x05 /* Config Type 1 Read Request */
-+#define PCIE_TLP_TYPE_CFG1_WR		0x05 /* Config Type 1 Write Request */
-+
-+/* Cpl. status of Complete; PCIe r7.0, sec 2.2.9.1 */
-+#define PCIE_CPL_STS_SUCCESS		0x00 /* Successful Completion */
-+
- extern const unsigned char pcie_link_speed[];
- extern bool pci_early_dump;
- 
+ ASUS EC HARDWARE MONITOR DRIVER
+ M:	Eugene Shalygin <eugene.shalygin@gmail.com>
+ L:	linux-hwmon@vger.kernel.org
 
 -- 
 2.34.1
