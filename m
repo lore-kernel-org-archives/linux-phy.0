@@ -4,84 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 68EDACCD19A
-	for <linux-phy@archiver.kernel.org>; Tue, 18 Nov 2025 09:09:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1BAE6CEBF92
+	for <linux-phy@archiver.kernel.org>; Tue, 18 Nov 2025 09:12:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=74mEyVAUjTwT4PT6dqGDbj88rMwgkkv11q4qO+bKi6g=; b=OdqCU6h68Tt70S
-	f41fkkrs2W17WK4edq5v4J4eJtiVFdd/qOwdF9UpZaJi4rNBL3yTkFUwWx3M/rnRcAGyJyq74HNmY
-	wzI1ZlrmdoHd2uN3SIU/Qnxgh3S/X80t8sr5aPAidMsmfW3Z2tgrDzj4BNK6Jz8POWXvuoKUFB9Qu
-	ZYIcb8kzNUlZUfm6fhIRUe9CTSmTw3WvC9MiB/sffsU3XOn7fHOL34q3NykNcz4I4DeFYjuwa/tiu
-	L+yUrVw2+lp9gdXNepYOsM4nANrhXaWFysPiFEHjA02T3csBeyY3M4HsXh0E3MOW90fHGobqLTUYM
-	Pv8Uz4VQrYbOb6PMSujw==;
+	List-Owner; bh=h5JtecachG7E9cDvy3yLTNrEbiXYd8Q0J6EYJ5O7KyY=; b=0htDCD2KZzd69w
+	0zb9j5X4YWd1YbhXUGdLQOVDiwg5+mXeu3//If3A7m54+CZlAjzhDnRDvytIEAOalMjIllqi+5vVx
+	0/y9b3QFh34xNm3U0F1ooFESwzROL5ml3S1TLuhMdxFehZWmqIUBW9uQ3IhHxAY5BquPtyTBL/jxQ
+	6TzvxypHKCQe8ZNOfqPR3oaE6FJTaxUJ3OLKvBGucHEyhH4loO3d4t/dkYLFMQDoPn9uCUK5w41sw
+	yswddbgmmMYrY29HuV4bG059c/r66FWQoRMBZfSOUrwEt/wFGPKBTVIT+zviip32QSD096Ml0ClqB
+	gjKLG2WCDppIsA/4hVuw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vLHiI-000000008MV-0mZ5;
-	Tue, 18 Nov 2025 09:09:26 +0000
-Received: from mail-wm1-x32f.google.com ([2a00:1450:4864:20::32f])
+	id 1vLHld-000000008iC-3Wiu;
+	Tue, 18 Nov 2025 09:12:53 +0000
+Received: from mail-wm1-x32a.google.com ([2a00:1450:4864:20::32a])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vLHiG-000000008Lp-0dnx
+	id 1vLHlb-000000008gl-1ctQ
 	for linux-phy@lists.infradead.org;
-	Tue, 18 Nov 2025 09:09:25 +0000
-Received: by mail-wm1-x32f.google.com with SMTP id 5b1f17b1804b1-47775fb6c56so53811735e9.1
-        for <linux-phy@lists.infradead.org>; Tue, 18 Nov 2025 01:09:23 -0800 (PST)
+	Tue, 18 Nov 2025 09:12:52 +0000
+Received: by mail-wm1-x32a.google.com with SMTP id 5b1f17b1804b1-4779a4fc95aso17540315e9.1
+        for <linux-phy@lists.infradead.org>; Tue, 18 Nov 2025 01:12:50 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1763456962; x=1764061762; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1763457169; x=1764061969; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:from:references:cc:to:subject:reply-to:user-agent
          :mime-version:date:message-id:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=6oIfItUat9PClJ/7841Lk0/EAWLm0Y5CqmDrv2Vv/oI=;
-        b=r3u/XrqnT0DTzK/APA39iPpcqdQIWkrtkoDlnW1FFncoGY1CM2uOy2SO8u72hPW+VH
-         FN7dKT1Za2xQj+Qo40KCD5ac5E0tUtij2FNvqbNRnUn4uqWTHetMMRMbGhWnJE4SPz5U
-         phTWcs9o73TV/8fEeMqu2erYRJ83+AjlDUfMcC2G35l5TjFvEAuQrhET793bFBxK4xDV
-         C7Ridd3GPXe64XKReuzFiqBHvXtcMSmazdtnpQhEq4GKUmt0IW7muy/V2Ma1soeGBAVa
-         dewegKN2oVYLDV8acTcDDVL/FwB7ffdIshmkI2vDiQbuv0RcCj+B4fZw8dEAwqbKOplC
-         1Y3Q==
+        bh=GsbUZq12GH8jSgBm1055puXBgPzLYHPQmArZG1I4wqA=;
+        b=P0j6PixRVwsYaau8YORuhRDqtCqeY+iZno4hGCxlLGxwRs1k9ypVW4ePRzpefuej08
+         3j55tnqNUJcH0GIAYHg9z7jONe0blTHs7zrrxe8MDpEW7rO6ETnvn31WSq9UT1ykosKf
+         vHzgzg3X6mR13PDVPS3uAfP5ZjCMzAHUQafEJYY1x2le/hGHGIs4euIJ4yCdIJeuvIgi
+         /MJrchmcAQpBg7A+Eo/STvsySSUTwnqWZEdqof9VtBYhQioqDo+rtqXeQMEe3kuMPVq4
+         fpjeTaknOyaAaWJrn207hTEZKHI+7AWfullAlZg/fxPzAmF1U+CHZs6rRKDZHmQ0y+tp
+         wTFw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1763456962; x=1764061762;
+        d=1e100.net; s=20230601; t=1763457169; x=1764061969;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:from:references:cc:to:subject:reply-to:user-agent
          :mime-version:date:message-id:x-gm-gg:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=6oIfItUat9PClJ/7841Lk0/EAWLm0Y5CqmDrv2Vv/oI=;
-        b=c/Vw0AnWe0MSkJwB+FRZVDrKhV4xp38DedVO+EydPlCr/f2Lk5CwGR/UdCeac5cr7O
-         j0TnM/Wfk+VXMy0fG2ZJ+GP0uVoZIsbzf5JaiLlERGUbnccNT8xXcYcWqJpk4PfNhciM
-         mJp6zK4NBag7PFyNWAt3le9bxyfdVRCafoWscRkJVOeMlsVo/pZiXAtOdtmr7xNGU9n8
-         f3se9q80npK5C+PxMmlTKCMCjudghcnUtTyz8hkdgiiu4B4zswbyI0G45Hq4filwmUzl
-         Fqzykg+FqYlCJxW9FpSwrNsDnR5YgKgbQFVcJHusxoecJBghDWFfQIyCNDeMcZWXnGti
-         f/Mw==
-X-Gm-Message-State: AOJu0YxElNVmyqpBhZteXnYijzS0DfKb2xZgKpme3NMXA0c9Jf4CmOAQ
-	K4v9GABxV9LJA+8cGiIL2ppuDu0t3rclg2XFUYsIJhh/RcFGFOhts0y5EWhJqITf7m8=
-X-Gm-Gg: ASbGncuhNJYbBsQBER5GHUVC2Z6Bn3YgW1mMoCTvdI6ODg5XNMFV5sfoqD8jEy0W1og
-	ZTnfN7YnKMW+SzoGSob7G0mxSztHnhjpxvL5KyVKyiLQCTia96WmdBGazuEINVEub9FrVMqlGJo
-	5CClyJvo4ndQMX6pYSaK73d49FH0yoy5WbhHoOZHYtForMDxXWZSPX1RqiC8PCKhWNSuef9WSoE
-	b1/TO3jvohS7EXuCm6uV8snJ0hzqO/oc4wfcoVR+t6sarn5cgLFBWluOxyLVx6pKeimP3NxPQpl
-	7ZfVEnnZebroKkEXDnv1FKXxwNJ880SIARBoniKobN6vWwb9D7hEeC+ynxJGmmqFX4b+5HRk3zL
-	BwBA/j9LdbrFGYS2Au3e11vSLwdLtHFnDyG2Zoj5T0ozCxoV5noHrdRqBknST82LTTWd190g38o
-	SyHePte3iGYmGtIU7x30i1XHTT3oN0hF7po7oo+EQbhyRq4u+QiZqK6j+Ym/Z45Uc=
-X-Google-Smtp-Source: AGHT+IHc8ApN7ctjZzzYbFA8HW7vBukVzWPj5prvx9bmeaSfL0r9Voscu8eVE4UTNA+dfltTKtHYaw==
-X-Received: by 2002:a05:600c:354b:b0:475:da13:257c with SMTP id 5b1f17b1804b1-4778fea1239mr167868515e9.27.1763456961571;
-        Tue, 18 Nov 2025 01:09:21 -0800 (PST)
+        bh=GsbUZq12GH8jSgBm1055puXBgPzLYHPQmArZG1I4wqA=;
+        b=dEsIbvjSB5X1EJpWBj9yt6DAKplXDdPdjsdCJ3x/5MMD23Ah4Ci4SS0UmJPeBzFQK8
+         AQYhVkQZ7q5nHT+m7Xww/5FI9SPsF1mwOLzSujfiyZPE1Ef/342/Sy3zvA0i2e8LwKfn
+         uiQ/2yDutb8f+5urkn8ZJDsDMzw9TXqdNArgOG3SVTWjwmNKrUz3eOvxCr+TW/0tNpi7
+         r1QrXODTJM3K/umfBUIbSMgG3X+2AHhqBX0t9LK+WbmjYbbVmS0CC007cm6PqNO0G8xZ
+         4vD0tBHPml4Ld5CeUNjiGf7m873LDTCe/UU9cmNsAWXinvZNZfGObgRskIy0hUfDycqu
+         QN/w==
+X-Forwarded-Encrypted: i=1; AJvYcCU9yDnLbfzlqVkPZTccv+yShX/IVkzn8NNdyTJs4HZ2O5q/atEkNG4kwak+AFoN9NvcGwDDssFkeFQ=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yx/VEH5SD+fwtYUQ4Q3v9Z48XSGJrq+Uoup+Fw8/AlFabgX3ESk
+	PtD9cdMz9j5rC0gtu6LujXKZEdmRg6r3496NM4nP0gnxe5hE26eNwXdkMt5bg7hLBmo=
+X-Gm-Gg: ASbGnctdb8aNj6hnQzIa5p5xKt/LHmgCEm54VLINXNGx3OYupmVeP2RmepO/w1D+8c8
+	+8R/YgCuDYzwnOMvRykFqBiQmBwUFFcs4Fg7/5z039f5Nyro69l+7HQ4inhnknivMLchAWQ1g+9
+	YcrM0trXwCaA2CJINKjb1T3QVkFxZXRS/306UvcLWgc6iPNSigzZCwZ4m82nWzGM6voWWa3Fxz7
+	svxvjzSi1A6QGAR5t+J3ebhZJvw2CuLdX3OPy2LDkL6vFVSnZnwrI58imsF/Zf9D8QJyrHuxhGp
+	7YcJqNlyyV3K1e8WbESy8TNpjdcFubptV1XClCaGG8p28wSHS+kgvchm1KPGHwmtVTD3XPqDcZF
+	wFNtEnS3WacfILIDizaRc9auYvcBKQfv2NzpvSvVGykJ8ZzpT76HAjdtoGHG4GtemxfgqT5c9fj
+	AQWv8VvGHg5cum7LSHr1k/OalMr2O7KfdhdCPL1PonzGIXJtf2eENFxPNeOqn25R2YRHsXrfzi7
+	g==
+X-Google-Smtp-Source: AGHT+IFLWIbKy5iYyYGBqFd+tt7NLXABbN0modVFRv0VlJwVt0Qh9TTTSA9l9Sw1Gv8SWS/Tv7D3jQ==
+X-Received: by 2002:a05:600c:19c6:b0:475:ddad:c3a9 with SMTP id 5b1f17b1804b1-477a94fc3eamr20486455e9.13.1763457169335;
+        Tue, 18 Nov 2025 01:12:49 -0800 (PST)
 Received: from ?IPV6:2a01:e0a:3d9:2080:366e:5264:fffe:1c49? ([2a01:e0a:3d9:2080:366e:5264:fffe:1c49])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-477a9741cbfsm13033615e9.6.2025.11.18.01.09.20
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-47787e442c2sm362834385e9.7.2025.11.18.01.12.48
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 18 Nov 2025 01:09:21 -0800 (PST)
-Message-ID: <8d34bc6b-77e1-487e-af2f-fba99ab867ac@linaro.org>
-Date: Tue, 18 Nov 2025 10:09:20 +0100
+        Tue, 18 Nov 2025 01:12:48 -0800 (PST)
+Message-ID: <70a23bf8-6648-489e-908f-d7727f5cccd3@linaro.org>
+Date: Tue, 18 Nov 2025 10:12:48 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2] phy: HiSilicon: Fix error handling in
- hi3670_pcie_get_resources_from_pcie
-To: Ma Ke <make24@iscas.ac.cn>, vkoul@kernel.org, kishon@kernel.org,
- andriy.shevchenko@linux.intel.com, mchehab+huawei@kernel.org, mani@kernel.org
-Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
- akpm@linux-foundation.org, stable@vger.kernel.org
-References: <20251117010227.17238-1-make24@iscas.ac.cn>
+Subject: Re: [PATCH] phy: rockchip: naneng-combphy: Fix PCIe L1ss support
+To: Shawn Lin <shawn.lin@rock-chips.com>, Vinod Koul <vkoul@kernel.org>
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
+ Heiko Stuebner <heiko@sntech.de>, linux-phy@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+References: <1763004478-218446-1-git-send-email-shawn.lin@rock-chips.com>
 From: Neil Armstrong <neil.armstrong@linaro.org>
 Content-Language: en-US, fr
 Autocrypt: addr=neil.armstrong@linaro.org; keydata=
@@ -109,10 +110,10 @@ Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
  QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
 Organization: Linaro
-In-Reply-To: <20251117010227.17238-1-make24@iscas.ac.cn>
+In-Reply-To: <1763004478-218446-1-git-send-email-shawn.lin@rock-chips.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251118_010924_224773_B233CC35 
-X-CRM114-Status: GOOD (  21.48  )
+X-CRM114-CacheID: sfid-20251118_011251_454519_3936DB30 
+X-CRM114-Status: GOOD (  13.64  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -130,74 +131,52 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 11/17/25 02:02, Ma Ke wrote:
-> In hi3670_pcie_get_resources_from_pcie(), the reference obtained via
-> bus_find_device_by_of_node() is never released with put_device(). Each
-> call to this function increments the reference count of the PCIe
-> device without decrementing it, preventing proper device cleanup. And
-> the device node obtained via of_get_child_by_name() is never released
-> with of_node_put(). This could cause a leak of the node reference.
-> 
-> Add proper resource cleanup using goto labels to ensure all acquired
-> references are released before function return, regardless of the exit
-> path.
-> 
-> Found by code review.
-> 
-> Cc: stable@vger.kernel.org
-> Fixes: 73075011ffff ("phy: HiSilicon: Add driver for Kirin 970 PCIe PHY")
-> Signed-off-by: Ma Ke <make24@iscas.ac.cn>
-> ---
-> Changes in v2:
-> - modified the patch for the warning that variable 'ret' is set but not used.
-> ---
->   drivers/phy/hisilicon/phy-hi3670-pcie.c | 15 +++++++++++----
->   1 file changed, 11 insertions(+), 4 deletions(-)
-> 
-> diff --git a/drivers/phy/hisilicon/phy-hi3670-pcie.c b/drivers/phy/hisilicon/phy-hi3670-pcie.c
-> index dbc7dcce682b..9960c9da9b4a 100644
-> --- a/drivers/phy/hisilicon/phy-hi3670-pcie.c
-> +++ b/drivers/phy/hisilicon/phy-hi3670-pcie.c
-> @@ -560,7 +560,8 @@ static int hi3670_pcie_get_resources_from_pcie(struct hi3670_pcie_phy *phy)
->   {
->   	struct device_node *pcie_port;
->   	struct device *dev = phy->dev;
-> -	struct device *pcie_dev;
-> +	struct device *pcie_dev = NULL;
-> +	int ret = 0;
->   
->   	pcie_port = of_get_child_by_name(dev->parent->of_node, "pcie");
->   	if (!pcie_port) {
-> @@ -572,7 +573,8 @@ static int hi3670_pcie_get_resources_from_pcie(struct hi3670_pcie_phy *phy)
->   	pcie_dev = bus_find_device_by_of_node(&platform_bus_type, pcie_port);
->   	if (!pcie_dev) {
->   		dev_err(dev, "Didn't find pcie device\n");
-> -		return -ENODEV;
-> +		ret = -ENODEV;
-> +		goto out_put_node;
->   	}
->   
->   	/*
-> @@ -586,10 +588,15 @@ static int hi3670_pcie_get_resources_from_pcie(struct hi3670_pcie_phy *phy)
->   	phy->apb = dev_get_regmap(pcie_dev, "kirin_pcie_apb");
->   	if (!phy->apb) {
->   		dev_err(dev, "Failed to get APB regmap\n");
-> -		return -ENODEV;
-> +		ret = -ENODEV;
-> +		goto out_put_device;
->   	}
->   
-> -	return 0;
-> +out_put_device:
-> +	put_device(pcie_dev);
-> +out_put_node:
-> +	of_node_put(pcie_port);
-> +	return ret;
->   }
->   
->   static int kirin_pcie_clk_ctrl(struct hi3670_pcie_phy *phy, bool enable)
+On 11/13/25 04:27, Shawn Lin wrote:
+> Need to control the delay PLL turnoff time if PCIe works on
+> L1 PM substates.
 
-Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
+Can you elaborate ?
+
+> 
+> Fixes: f13bff25161b ("phy: rockchip-naneng-combo: Support rk3562")
+> Signed-off-by: Shawn Lin <shawn.lin@rock-chips.com>
+> ---
+> 
+>   drivers/phy/rockchip/phy-rockchip-naneng-combphy.c | 9 +++++++++
+>   1 file changed, 9 insertions(+)
+> 
+> diff --git a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+> index af9a5c7..5b6f80e 100644
+> --- a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+> +++ b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+> @@ -106,6 +106,10 @@
+>   #define RK3568_PHYREG18				0x44
+>   #define RK3568_PHYREG18_PLL_LOOP		0x32
+>   
+> +#define RK3568_PHYREG30				0x74
+> +#define RK3568_PHYREG30_GATE_TX_PCK_SEL         BIT(7)
+> +#define RK3568_PHYREG30_GATE_TX_PCK_DLY_PLL_OFF BIT(7)
+> +
+>   #define RK3568_PHYREG32				0x7C
+>   #define RK3568_PHYREG32_SSC_MASK		GENMASK(7, 4)
+>   #define RK3568_PHYREG32_SSC_DIR_MASK		GENMASK(5, 4)
+> @@ -665,6 +669,11 @@ static int rk3562_combphy_cfg(struct rockchip_combphy_priv *priv)
+>   	case REF_CLOCK_100MHz:
+>   		rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_clk_100m, true);
+>   		if (priv->type == PHY_TYPE_PCIE) {
+> +			/* Gate_tx_pck_sel length select for L1ss support */
+> +			rockchip_combphy_updatel(priv, RK3568_PHYREG30_GATE_TX_PCK_SEL,
+> +						 RK3568_PHYREG30_GATE_TX_PCK_DLY_PLL_OFF,
+> +						 RK3568_PHYREG30);
+> +
+>   			/* PLL KVCO tuning fine */
+>   			val = FIELD_PREP(RK3568_PHYREG33_PLL_KVCO_MASK,
+>   					 RK3568_PHYREG33_PLL_KVCO_VALUE);
+
+Please use proper patch versioning when sending a new version, with a proper
+changelog.
+
+Neil
 
 -- 
 linux-phy mailing list
