@@ -4,87 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2B156CED25D
-	for <linux-phy@archiver.kernel.org>; Tue, 18 Nov 2025 09:49:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E7B5CCED25D
+	for <linux-phy@archiver.kernel.org>; Tue, 18 Nov 2025 09:52:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5QzKIQLXff2pGffXJNi58bhMGyYECIZmPJvrJh9nTLk=; b=qTVVhhUz3S5yDR
-	yxr3qV9CMPaPo5cu+7H/5uY1SgtH9bFA9s0C36c/I9yKxBXvnMVfjrsEMcFoslUs9oCuowy3QHGcP
-	vu24wPxMCD43J51FXWfOf6+/ls4/rfhZYmLxMeKKoFrpPH6DPHAIBuwow3R7lvwW4llG4yY0MuP7S
-	/oNufQW5a5H7gV+458/H+Tz6TfsnJ96uHoxeywGrm6tWPW2A9QaVRowlRuspEGeEPWuWnoEr5gjM7
-	4RJsb6cnzEe+I+zvQMmJLE/4KoM6IRolL1/q2tIHZ1+5fNJfknuEYPyqYPRUVodDSDrniZCaORDpT
-	Sn3HFPnYLGo3IMhjG78g==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=CW6Ht1DeSwsKmZAxx/rpZUaFB6cNlepRvifV+J9aUrE=; b=ren42KlLhkltsU
+	DKM3CBaJrut13imUKY4u4GqEHaHVnlzAs1q/3916Z48tPhRTX7nLqbgngu3CXrZaoy6xTZeQQSiMH
+	elJ73YmHsbgFaNlTMs2I5/jqeKuF4BV2UZvLOKgDHTl3cZ3R517NvfesWh5iz+EiF6i5PwF6fB4Gp
+	tFfzyt/qKYnKpma5kowRNZmEDkI18YenELRJHLXve1gi9Lkd/ck0safBwH6fwMw9tP0qfTz4n6WI9
+	aeReeHQ1LCdXn3dach5TEEdRQtmkET3nRRS7jCMxuMPy+PqK+SWwjR5ycZdO8i5JSkgqahj55CStN
+	9f/p0jj49AB6T+wbWYFA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vLIL1-00000000BeR-3Cvh;
-	Tue, 18 Nov 2025 09:49:27 +0000
-Received: from mail-pg1-x52d.google.com ([2607:f8b0:4864:20::52d])
+	id 1vLINy-00000000Bpn-2rzr;
+	Tue, 18 Nov 2025 09:52:30 +0000
+Received: from mail-m19731107.qiye.163.com ([220.197.31.107])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vLIKz-00000000Be6-14yO
-	for linux-phy@lists.infradead.org;
-	Tue, 18 Nov 2025 09:49:26 +0000
-Received: by mail-pg1-x52d.google.com with SMTP id 41be03b00d2f7-ba599137cf8so3361756a12.0
-        for <linux-phy@lists.infradead.org>; Tue, 18 Nov 2025 01:49:24 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1763459364; x=1764064164; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=xzCBMigVD0krKuQCjmEzo9fFKxVpsyvZJvTxuR6DkP0=;
-        b=jsF8gBLV4F9BOYd8jOMSonrdMGx93dLApDRqTyCx5yWrwPeJZeJVMcNcPjJhaI6WD+
-         E3V7h8IbbONHU1n1qAFo6Gx+FDejbMZjjtUVBm35mCiqga0z+JyMuUQANPO/ncItuFOH
-         Exifd1zmKfOGRi5gbIA2CfgJXj24zlsDP0r+ewRbV9LJRCPW/mnh3CAqdqUauCdLBiaZ
-         jigX2Fo0YOPkF8RYcFB8qSZlLCjDis00UxkUe69WW/BepHG3Q852xL4KXJBcdzZdPBv6
-         b4vbtjZ9mE6YNQSjUwkGsuqgA0MeUxWeFPJdsYDFZ3RM2nJmGA6szluI9Owt7R9ZejQh
-         x4qg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1763459364; x=1764064164;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=xzCBMigVD0krKuQCjmEzo9fFKxVpsyvZJvTxuR6DkP0=;
-        b=C3KMnub9dKZwS9RcoWbe+iikb+otC788gX4QChQWRn4dGLRJFNM1gMDtYVPpEiFbO1
-         qDQ0UAujJcCwNIs3LuZX4+ELw/DiOmh7RrwrL9bFyax0h9JyFsmkMQxbpphH34J8Am7P
-         UbbZxlD7O7aVzsEnYtw6SNij18E2kZda9s3jYxnttuuyYb0kdaKFn3E/lZyBPDhCwL6M
-         b9h1gLXOn3UhkJAtcLYXsWZx+z3cGcJbye1AZFDLLg3uvm7j6Nrs/k5l4FYaBXlj/SsX
-         /B4d8v3XQ3N464FVD3kBaQHShZqrS3c9qvOX6aOMvoyrHpiH9PXTC+bsEy57ltCC+Zxn
-         basQ==
-X-Forwarded-Encrypted: i=1; AJvYcCX7zR/EAN80bv3nWh+u9fzsvlPEEGSp39NAJuG5tLzKu4Q/FBoIm16kZgE4vyooOxHwSabSOYORK4Y=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwrC6S8OYMa7vlHXTjo7Y82Aj4qhBBxgeCIgxs6IUhZEazdq6Sr
-	FQRmrQCKtjKUCjjx7NdsFdbjDtCIJijXR0S2wfwx8XYGa9noRUIg+O9N
-X-Gm-Gg: ASbGncvcKAKSYhXZ/VM0IPE0XTjoj3lAi+iBMk6ZqKJXeHQT3vIS24GVr5lvA9vwiJ7
-	Oh1wEp+ylMyOwgRPzawaVItFSIrUHIcx19JP07BwpK7EaXfsABD49s9MNCnJ+0i0DBsTu/LSe0B
-	FOErXv+Xi67F7u2dKzWbYcgVvHWMc6NqrB5qxJCLBLjrF2zGsq/ctGPT8Pp5xdSyOTc3PcteMgQ
-	ns3JL+1KujbKjsVl3cGQ+yyE6iNzBJcjZVELqER/rL676GfIYPoytk/Cg5DZuaaqzCb3pxiL2Ua
-	oStgzksNrVMXyeUhw4w1exsWZmFYk1HwBSw79+ZIL6ipOFU4Htod8SxRxdZ5Nnwv7rjLE0Ie90H
-	pvxXWen46lbQvp6FOwZT8kuKFAsaePKitwPjdt5t+dyJaqyYVg1WrSvbifDB/He8cLyGeO/qTQF
-	L7zQPnVpubLw==
-X-Google-Smtp-Source: AGHT+IGX2vg9yS5PesxmtNKzfyWKsQEYzhdmMoZFsVnrN9bTUhkb0gAf4+KyOAW00IAt5KKjwTpS/A==
-X-Received: by 2002:a05:701a:ca86:b0:11b:9386:a38e with SMTP id a92af1059eb24-11c74fb2245mr850013c88.21.1763459363884;
-        Tue, 18 Nov 2025 01:49:23 -0800 (PST)
-Received: from localhost ([2001:19f0:ac00:4eb8:5400:5ff:fe30:7df3])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-11b06088625sm59877211c88.8.2025.11.18.01.49.23
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 18 Nov 2025 01:49:23 -0800 (PST)
-Date: Tue, 18 Nov 2025 17:48:50 +0800
-From: Inochi Amaoto <inochiama@gmail.com>
-To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>, 
-	Inochi Amaoto <inochiama@gmail.com>, linux-phy@lists.infradead.org, sophgo@lists.linux.dev, 
-	linux-kernel@vger.kernel.org
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Chen Wang <unicorn_wang@outlook.com>
-Subject: Re: [PATCH v1 1/1] phy: sophgo: Remove unused of_gpio.h
-Message-ID: <qyvtgvvvq6txgliwm64bapal3e7ehjc46fdjm3fomf6tp5gwkh@qrwyzwgvkfg5>
-References: <20251112085220.1452530-1-andriy.shevchenko@linux.intel.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20251112085220.1452530-1-andriy.shevchenko@linux.intel.com>
+	id 1vLINu-00000000Bob-2AiW;
+	Tue, 18 Nov 2025 09:52:28 +0000
+Received: from localhost.localdomain (unknown [58.22.7.114])
+	by smtp.qiye.163.com (Hmail) with ESMTP id 29fc4b61c;
+	Tue, 18 Nov 2025 17:52:18 +0800 (GMT+08:00)
+From: Shawn Lin <shawn.lin@rock-chips.com>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Heiko Stuebner <heiko@sntech.de>,
+	linux-phy@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	Shawn Lin <shawn.lin@rock-chips.com>
+Subject: [PATCH v2 1/2] phy: rockchip: naneng-combphy: Fix PCIe L1ss support RK3528
+Date: Tue, 18 Nov 2025 17:52:05 +0800
+Message-Id: <1763459526-35004-1-git-send-email-shawn.lin@rock-chips.com>
+X-Mailer: git-send-email 2.7.4
+X-HM-Tid: 0a9a96611e3a09cckunm93a8996eb0d84
+X-HM-MType: 1
+X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
+	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZGk5OH1YaSB9PQhoeQh1PTUNWFRQJFh
+	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSEtNQk
+	tVSktLVUpCWQY+
+DKIM-Signature: a=rsa-sha256;
+	b=a2oFOPthaQEIt4MW6m2pk2yfX+Vlx6ugdjfkaAhrKJt3uhj68BmgsIOSq1dAgy0TtcEoMBOAQDhzSUJGTXNYH9T3uUkj/yaO8CkKYflqpn/GtUstdrNYaPUPL9GbiwiBdBiSqS8bGoZIYSvCQD9M03cM7/T7Ck4XvduBSvN5Zqs=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
+	bh=Skz4mG9W2ufsR4h+lf41EHlpZZxIUoBU9shWqZQwFu4=;
+	h=date:mime-version:subject:message-id:from;
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251118_014925_296529_9EAEFA1B 
-X-CRM114-Status: GOOD (  15.26  )
+X-CRM114-CacheID: sfid-20251118_015227_039278_15951FE6 
+X-CRM114-Status: GOOD (  10.26  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,44 +65,55 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Nov 12, 2025 at 09:52:20AM +0100, Andy Shevchenko wrote:
-> of_gpio.h is deprecated and subject to remove.
-> The driver doesn't use it, simply remove the unused header.
-> 
-> Signed-off-by: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-> ---
->  drivers/phy/sophgo/phy-cv1800-usb2.c | 1 -
->  1 file changed, 1 deletion(-)
-> 
-> diff --git a/drivers/phy/sophgo/phy-cv1800-usb2.c b/drivers/phy/sophgo/phy-cv1800-usb2.c
-> index 64f8e37b4b52..6fe846534e9c 100644
-> --- a/drivers/phy/sophgo/phy-cv1800-usb2.c
-> +++ b/drivers/phy/sophgo/phy-cv1800-usb2.c
-> @@ -11,7 +11,6 @@
->  #include <linux/module.h>
->  #include <linux/of.h>
->  #include <linux/of_address.h>
-> -#include <linux/of_gpio.h>
->  #include <linux/platform_device.h>
->  #include <linux/phy/phy.h>
->  #include <linux/regmap.h>
-> -- 
-> 2.50.1
-> 
-> 
-> -- 
-> linux-phy mailing list
-> linux-phy@lists.infradead.org
-> https://lists.infradead.org/mailman/listinfo/linux-phy
+When PCIe link enters L1 PM substates, the PHY will turn off its
+PLL for power-saving. However, it turns off the PLL too fast which
+leads the PHY to be broken. According to the PHY document, we need
+to delay PLL turnoff time.
 
-LGTM
+Fixes: bbcca4fac873 ("phy: rockchip: naneng-combphy: Add RK3528 support")
+Signed-off-by: Shawn Lin <shawn.lin@rock-chips.com>
+---
 
-Reviewed-by: Inochi Amaoto <inochiama@gmail.com>
+Changes in v2:
+- add more commit message
+
+ drivers/phy/rockchip/phy-rockchip-naneng-combphy.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+index a3ef198..e303bec 100644
+--- a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
++++ b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
+@@ -21,6 +21,9 @@
+ #define REF_CLOCK_100MHz		(100 * HZ_PER_MHZ)
+ 
+ /* RK3528 COMBO PHY REG */
++#define RK3528_PHYREG5				0x14
++#define RK3528_PHYREG5_GATE_TX_PCK_SEL		BIT(3)
++#define RK3528_PHYREG5_GATE_TX_PCK_DLY_PLL_OFF	BIT(3)
+ #define RK3528_PHYREG6				0x18
+ #define RK3528_PHYREG6_PLL_KVCO			GENMASK(12, 10)
+ #define RK3528_PHYREG6_PLL_KVCO_VALUE		0x2
+@@ -504,6 +507,10 @@ static int rk3528_combphy_cfg(struct rockchip_combphy_priv *priv)
+ 	case REF_CLOCK_100MHz:
+ 		rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_clk_100m, true);
+ 		if (priv->type == PHY_TYPE_PCIE) {
++			/* Gate_tx_pck_sel length select for L1ss support */
++			rockchip_combphy_updatel(priv, RK3528_PHYREG5_GATE_TX_PCK_SEL,
++						 RK3528_PHYREG5_GATE_TX_PCK_DLY_PLL_OFF, RK3528_PHYREG5);
++
+ 			/* PLL KVCO tuning fine */
+ 			val = FIELD_PREP(RK3528_PHYREG6_PLL_KVCO, RK3528_PHYREG6_PLL_KVCO_VALUE);
+ 			rockchip_combphy_updatel(priv, RK3528_PHYREG6_PLL_KVCO, val,
+-- 
+2.7.4
+
 
 -- 
 linux-phy mailing list
