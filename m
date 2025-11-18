@@ -4,83 +4,109 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 15F82CEBF92
-	for <linux-phy@archiver.kernel.org>; Tue, 18 Nov 2025 08:57:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2F8EBCEBF92
+	for <linux-phy@archiver.kernel.org>; Tue, 18 Nov 2025 09:08:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ji5J9vy1SADTuwY4FOmO7T5trNOvIABAwzDlK4Y8TK4=; b=Hygp2hFXTOI0iW
-	raseDqaaUA5YaDqLWVV9YogmoM8FOEdDIyH1Xc7Hr7GDH4I9w+RgnWv3/Erpi6YRmhsq6hBvSsHKX
-	TANdJQpssaMPRnC0ODPO26V2hty2w+CyI3g69fljz7aBUL+lwccZ/DF8uqnRaGhzP9j+gkKO9uIog
-	FI7+X8XjsaFOi245kW/ij6/g+F7mZMgwfPFsdI6UZ1YHN52rJtFB01HrX9+jnwds5W7ommHXkUapY
-	EtKWeInKVTKmw/8w9AgT3zVbb29Z/JyyN/tLXPIuM+jgLnty3RHrfOnhXVK/JimUeH6B2/KW+u3YR
-	0ijwydj5gnRHiHTPemNQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
+	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=N1+8PiiDk4nebhPDyv4JqRgNvmvoIz11ZN6kdlCp0IQ=; b=p81eIsbMvixYVyTEL4OTtHrjtd
+	P6bTAxJDKgHU433UvzpJhocA//7KYbwslGqsH4010pS+A0XZDpWcZddZuq7nIAne9T9SBSgcdK1Wx
+	FUqbUDDLVdMERnSRfFoXBbsQbgkfaC5S1heflGoBKob41i3980ywoByvChfVPOgsvXiBfcZ42G3t7
+	yFsbKQavpeIp/QL5YdVS5n31DQO3JluIl9m9IYPhnU7kIexRj0WW2YazX2j6hDdv82c6ieXuAPm6J
+	4UgmlghmaD/mXh6yaEbjCY46AdoVZCPbtQSqsHUL/PEYsIyYUcRcX7jVYNkxTq1TvA4zKPxNxMejP
+	NG4XBWPg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vLHX9-000000007dX-2uk4;
-	Tue, 18 Nov 2025 08:57:55 +0000
-Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
+	id 1vLHhB-000000008Cw-3dxL;
+	Tue, 18 Nov 2025 09:08:17 +0000
+Received: from mail-wm1-x334.google.com ([2a00:1450:4864:20::334])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vLHX7-000000007d4-2t9r
+	id 1vLHh7-000000008Ao-34z7
 	for linux-phy@lists.infradead.org;
-	Tue, 18 Nov 2025 08:57:54 +0000
-Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-4775e891b5eso27222065e9.2
-        for <linux-phy@lists.infradead.org>; Tue, 18 Nov 2025 00:57:53 -0800 (PST)
+	Tue, 18 Nov 2025 09:08:16 +0000
+Received: by mail-wm1-x334.google.com with SMTP id 5b1f17b1804b1-4779d47be12so21010335e9.2
+        for <linux-phy@lists.infradead.org>; Tue, 18 Nov 2025 01:08:13 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1763456272; x=1764061072; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1763456892; x=1764061692; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:from:references:cc:to:subject:reply-to:user-agent
+         :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=rC8kpIg7n3IbnpWjH0XcjwgNz8ju2WF1/n1qfDY88RY=;
-        b=F3Xcc6wgO7vDHqrn95Zx3ixGC8xz0CkoPyyYnZH3ohccK2ZoQqx+u98Cxns5qZR+kz
-         JUNaD22xtH5XYEaYeMuott/LfhD6FZv7Zja2OlEehW06oQbxHz4j5BDtwhVdet/2IWpC
-         OkoANcNKOUomHmA/UM1HZ8bcdWt/HaLd2RmMIx4eMTTWB1uyIJ19R3GzVQGWOlS6RYL4
-         T/sYVH1vyn8P3yZprQZoMElWog0BfIWGj/tbUHh/zvzv6YtBmylSSjxlUGTVpSMNwW/S
-         FlHL/jFaBSKXZ+6rpJUXzCJz802E3HJaDv6ovt3G7KL2KuMnCOeIIHTqIK4qdMpnHNQf
-         T8pQ==
+        bh=c8ojmwZvyIUVTGQLirWUPhk95m2/9IA4Sz9hLtWscRI=;
+        b=Qo6c9qP4liwvcnWwlLfhRY9GJW+hJSjF28PxOrZlyIe8amxTSqh2J3lMsolrUPU3Rh
+         2oXyssGpyRQqk767+JFExFHvTkqz0uQC9CFgLoAClU2VkUYBBWaxvT19OVfjn3/VPsbO
+         hRjjzQwxQUZTiLAiCCQ/TPU00sqAwIQAGIls/PCxsOfP7cIUlzkogm77L4KKCTFcLozL
+         TNuLEKYS7muTqsDqGfSMYu7H+VEuKzWBbdZV9v8egeBmiga7KJXL9ZkmZsaLIYXd+7d9
+         4vyvl5cJoCRuAZPf6++hF/aDEEd9dDIZm0daIlCKOAC3k8vRQ5A/HQ4BS3+EQ/ZPex2x
+         os0A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1763456272; x=1764061072;
+        d=1e100.net; s=20230601; t=1763456892; x=1764061692;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:from:references:cc:to:subject:reply-to:user-agent
+         :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:x-gm-gg:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=rC8kpIg7n3IbnpWjH0XcjwgNz8ju2WF1/n1qfDY88RY=;
-        b=EdqOpQWh8WCRDsbOuuorJPgLodD+ORoR+riHQh6xp5/YKAHs+6G/DIgCnLffnnXXNJ
-         qnNQgMSCYgUOvOGWxA2Z4ZqzjSuMmVrcQIOAYCwxfWzc/sXU82VYNaU8UrcBTd87dShm
-         n8kx9vLElBeAI+wdqtzyEk1Usd/duE7lKpMZfUr1gTeHDS2Ygo5EitOOE5cXuWj438t/
-         KmX94gaJUJOUO7TXSahL3cc483nhvcEUZ3krY6ibhzzYKIiVbTqbDocW4sS+g+GUn5JI
-         Z1JuMaQdn6A3+EHG0jvjV05hE3DFzCPHM9O6c3afCUrj2k9oY6ks8laN+gw3u5fRj+Oi
-         UxqQ==
-X-Gm-Message-State: AOJu0YwAtWUNAgyFGeAKY7oowyUpj9QNk8InBpU4idzZrE6Mvd5NieZl
-	3Ur8Ztb1tEs/FxbyYFNv3Hx6jHqVGkOl+sDIy6bxjaNs3SPZCVRXmkdc8fJa+ah2ezY=
-X-Gm-Gg: ASbGncsL7lwXNY4kTiQphaxwL1gQlHryX2M89yOSwy7Wqfp75+23JdT9W2P1vj0+XlI
-	y1I+tV3HTXGAeqHLM5MQgnYAQ34nysE8qRLIMHvAwCGRn5+eq5v4OqiiYQXiU5UWjgtaJOZQPhF
-	X8N3dT0lz37KCieLANc/hRG8K+AIJGv80g5Fzrlh9El03Ge4BxYXjDiiB8XxjnlMUZmONx5bPjJ
-	7kLbAwLTg7jCQw453CwnPWNAf9eFGTv8gZG9xQgycvmVwMRe1NdgZ9J3XJ5+nSxWhgf2aNVrfFi
-	n3HnQCipd2tYDtqhXpWLg5JRsp5T8yuVJctV8A3Sq0/gRxsweZ4ugOcAOAP8vT6HWHAQApIS/J7
-	inKxyzHBulDimKiW4ihpR75+y2lb0uXqW6Yzd1SVVacmYLeEisd2+pNdIDfTik+Z0R/m51JSqp7
-	+sDRmxI5LjpayBXJ3vGn+egP19npCIU1avBDMOEdiTddfrplqg3NwhWNeS6q7sOko=
-X-Google-Smtp-Source: AGHT+IE8nmDt9gjoK7L165XWZWGzR+lbLS4TeXCh8A8tp8olz3j0G+VPiXQFyunIBjunNWGm29ES3A==
-X-Received: by 2002:a05:600c:1382:b0:477:3e0b:c0e3 with SMTP id 5b1f17b1804b1-4778fea1743mr144063505e9.32.1763456271853;
-        Tue, 18 Nov 2025 00:57:51 -0800 (PST)
+        bh=c8ojmwZvyIUVTGQLirWUPhk95m2/9IA4Sz9hLtWscRI=;
+        b=YNJBDqQufahFzw+pEmDoH3z4w1RW+4eMgfNMKZh4zM3Oy0R1ezhsfLcnC465cZ3dHi
+         CMp2yytbVZyS9YdwTbmAk2dB53jPAMPTBNZhF23KiU2CzuBRf64aJZvGojPF1NNPIWHY
+         R1wvaPKhoUJsWm4Punhjk+ZmIjBI0sSUvUVTCgVH8FOirAZF2a5hCnd0OcW1kwnqdquq
+         Cz+34D/fc+Nx3r38zc+e77fmDqm3yeyDF0rkxIdFCug0zfo9GEDAW+BePXmCBUaRaDID
+         /z9ZcmG4L8Ilr3PatamJymyUUAO6j8F4d1iprhm/oFf2VOYQ+IF0mJwCrQtPNaxF3wUt
+         5CIg==
+X-Forwarded-Encrypted: i=1; AJvYcCXxir2f3x1MJpaLcVI+sXjjsXkoC7wNgv3MJdrJG8b8aTCLn6RyQTK5nPyaxbQco6S6vCba2xBlaMY=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yzsllw+mrxbMvul+4FsN2Tq1Hyiqm8loezQx3fiagIxH6NXO+Rf
+	voXCyWvKgUiud3MDIGJ9EUzeHafp5En7+iNNhsrTaxbEmB+iQxKy/xcPzWpRO/zQNlM=
+X-Gm-Gg: ASbGncvpvqNZ+mFapzHKX+kElmGOX5ZlD7XY3zroTwqwsaa7X5AItu/akWJeQrTduJ+
+	g8gkdZ9CYOhLMDTArxl13LlhbhKID+1zrzHGHpS7dEaYY+Utse8WanRoXaVw3iz+DsS3qI0Jsq8
+	1k57GXb9+p4SwHOCTmC6gTfIAje5/OxgqQ5q85okVjA3/WN7xQwoUMGW59QR+gDYpQoFiPK6OaK
+	wIGOfneAcpn6rjkDiMczE/EGXQ2vO9R75g7ReAz1W0Css9/OHFY18xyLUJMGk2qWIqt59twSbsz
+	zDd6Q9NxXNiSIBWvkLCWXKaRSwn5040V+nBHwD30K/TR/qiZiPfPYvZQvzuGxbfA+H0gGdeA9+D
+	YoVsaMkRftDVNclfi8Y4ZsgqzSBHkS6KSU1L0g9Vjqgkdx5LiXA4v0hpe9WaDMdHIQUeXG6SBjR
+	on1MLOxuvgm+Ujrv86w88Zn+wKPc3kqbYOpFYqa/MZMPkdcjDbDLQGLiSDYpbEpv8=
+X-Google-Smtp-Source: AGHT+IG6gLgCwxhtQm3Z8HznXw2PJ389guvo2P4OhOD1SCc8LUBuHyTff2qepHeal9ABmF52l4Ec4Q==
+X-Received: by 2002:a05:600c:3e8e:b0:477:abea:901c with SMTP id 5b1f17b1804b1-477abea924dmr8401245e9.11.1763456891500;
+        Tue, 18 Nov 2025 01:08:11 -0800 (PST)
 Received: from ?IPV6:2a01:e0a:3d9:2080:366e:5264:fffe:1c49? ([2a01:e0a:3d9:2080:366e:5264:fffe:1c49])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4779fb67e73sm123932865e9.0.2025.11.18.00.57.51
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-42b53f2084dsm31563471f8f.42.2025.11.18.01.08.09
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 18 Nov 2025 00:57:51 -0800 (PST)
-Message-ID: <feeb51c3-bc83-42aa-9c10-16aca1169afa@linaro.org>
-Date: Tue, 18 Nov 2025 09:57:50 +0100
+        Tue, 18 Nov 2025 01:08:11 -0800 (PST)
+Message-ID: <7ca46d0d-d235-421e-95cb-901efb856b0c@linaro.org>
+Date: Tue, 18 Nov 2025 10:08:09 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] phy: core: Remove extra space after '='
-To: Claudiu <claudiu.beznea@tuxon.dev>, vkoul@kernel.org, kishon@kernel.org
-Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
- Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
-References: <20251117103422.4041040-1-claudiu.beznea.uj@bp.renesas.com>
 From: Neil Armstrong <neil.armstrong@linaro.org>
+Subject: Re: [PATCH v9 06/10] phy: rockchip: phy-rockchip-typec: Add DRM AUX
+ bridge
+To: Chaoyi Chen <kernel@airkyi.com>,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+ Peter Chen <hzpeterchen@gmail.com>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Heiko Stuebner
+ <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
+ Andy Yan <andy.yan@rock-chips.com>,
+ Yubing Zhang <yubing.zhang@rock-chips.com>,
+ Frank Wang <frank.wang@rock-chips.com>,
+ Andrzej Hajda <andrzej.hajda@intel.com>, Robert Foss <rfoss@kernel.org>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
+ David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+ Amit Sunil Dhamne <amitsd@google.com>,
+ Chaoyi Chen <chaoyi.chen@rock-chips.com>, Dragan Simic <dsimic@manjaro.org>,
+ Johan Jonker <jbx6244@gmail.com>, Diederik de Haas <didi.debian@cknow.org>,
+ Peter Robinson <pbrobinson@gmail.com>
+Cc: linux-usb@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ dri-devel@lists.freedesktop.org
+References: <20251111105040.94-1-kernel@airkyi.com>
+ <20251111105040.94-7-kernel@airkyi.com>
 Content-Language: en-US, fr
 Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
@@ -107,10 +133,10 @@ Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
  QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
 Organization: Linaro
-In-Reply-To: <20251117103422.4041040-1-claudiu.beznea.uj@bp.renesas.com>
+In-Reply-To: <20251111105040.94-7-kernel@airkyi.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251118_005753_746995_817C81FC 
-X-CRM114-Status: GOOD (  11.66  )
+X-CRM114-CacheID: sfid-20251118_010813_822169_CDA51C14 
+X-CRM114-Status: GOOD (  22.23  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -128,31 +154,140 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 11/17/25 11:34, Claudiu wrote:
-> From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+On 11/11/25 11:50, Chaoyi Chen wrote:
+> From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
 > 
-> Remove extra space after '=' to comply with coding style.
+> Using the DRM_AUX_BRIDGE helper to create the transparent DRM bridge
+> device.
 > 
-> Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+> Signed-off-by: Chaoyi Chen <chaoyi.chen@rock-chips.com>
 > ---
->   drivers/phy/phy-core.c | 2 +-
->   1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
-> index 04a5a34e7a95..8a1e8c15e688 100644
-> --- a/drivers/phy/phy-core.c
-> +++ b/drivers/phy/phy-core.c
-> @@ -361,7 +361,7 @@ int phy_power_off(struct phy *phy)
+> (no changes since v7)
+> 
+> Changes in v6:
+> - Fix depend in Kconfig.
+> 
+>   drivers/phy/rockchip/Kconfig              |  2 +
+>   drivers/phy/rockchip/phy-rockchip-typec.c | 52 +++++++++++++++++++++++
+>   2 files changed, 54 insertions(+)
+> 
+> diff --git a/drivers/phy/rockchip/Kconfig b/drivers/phy/rockchip/Kconfig
+> index db4adc7c53da..bcb5476222fc 100644
+> --- a/drivers/phy/rockchip/Kconfig
+> +++ b/drivers/phy/rockchip/Kconfig
+> @@ -120,6 +120,8 @@ config PHY_ROCKCHIP_TYPEC
+>   	tristate "Rockchip TYPEC PHY Driver"
+>   	depends on OF && (ARCH_ROCKCHIP || COMPILE_TEST)
+>   	depends on TYPEC || TYPEC=n
+> +	depends on DRM || DRM=n
+> +	select DRM_AUX_BRIDGE if DRM_BRIDGE
+>   	select EXTCON
+>   	select GENERIC_PHY
+>   	select RESET_CONTROLLER
+> diff --git a/drivers/phy/rockchip/phy-rockchip-typec.c b/drivers/phy/rockchip/phy-rockchip-typec.c
+> index 1f5b4142cbe4..748a6eb8ad95 100644
+> --- a/drivers/phy/rockchip/phy-rockchip-typec.c
+> +++ b/drivers/phy/rockchip/phy-rockchip-typec.c
+> @@ -36,6 +36,7 @@
+>    * orientation, false is normal orientation.
+>    */
 >   
->   	mutex_lock(&phy->mutex);
->   	if (phy->power_count == 1 && phy->ops->power_off) {
-> -		ret =  phy->ops->power_off(phy);
-> +		ret = phy->ops->power_off(phy);
->   		if (ret < 0) {
->   			dev_err(&phy->dev, "phy poweroff failed --> %d\n", ret);
->   			mutex_unlock(&phy->mutex);
+> +#include <linux/auxiliary_bus.h>
+>   #include <linux/clk.h>
+>   #include <linux/clk-provider.h>
+>   #include <linux/delay.h>
+> @@ -56,6 +57,7 @@
+>   #include <linux/phy/phy.h>
+>   #include <linux/usb/typec_dp.h>
+>   #include <linux/usb/typec_mux.h>
+> +#include <drm/bridge/aux-bridge.h>
+>   
+>   #define CMN_SSM_BANDGAP			(0x21 << 2)
+>   #define CMN_SSM_BIAS			(0x22 << 2)
+> @@ -415,6 +417,7 @@ struct rockchip_usb3phy_port_cfg {
+>   
+>   struct rockchip_typec_phy {
+>   	struct device *dev;
+> +	struct auxiliary_device dp_port_dev;
+>   	void __iomem *base;
+>   	struct extcon_dev *extcon;
+>   	struct typec_mux_dev *mux;
+> @@ -1299,6 +1302,51 @@ static void tcphy_typec_mux_unregister(void *data)
+>   	typec_mux_unregister(tcphy->mux);
+>   }
+>   
+> +static void tcphy_dp_port_dev_release(struct device *dev)
+> +{
+> +	struct auxiliary_device *adev = to_auxiliary_dev(dev);
+> +
+> +	of_node_put(adev->dev.of_node);
+> +}
+> +
+> +static void tcphy_dp_port_unregister_adev(void *_adev)
+> +{
+> +	struct auxiliary_device *adev = _adev;
+> +
+> +	auxiliary_device_delete(adev);
+> +	auxiliary_device_uninit(adev);
+> +}
+> +
+> +static int tcphy_aux_bridge_register(struct rockchip_typec_phy *tcphy, struct device_node *np)
+> +{
+> +	struct auxiliary_device *adev = &tcphy->dp_port_dev;
+> +	int ret;
+> +
+> +	adev->name = "dp_port";
+> +	adev->dev.parent = tcphy->dev;
+> +	adev->dev.of_node = of_node_get(np);
+> +	adev->dev.release = tcphy_dp_port_dev_release;
+> +
+> +	ret = auxiliary_device_init(adev);
+> +
 
-Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
+Drop this empty line.
+
+> +	if (ret) {
+> +		of_node_put(adev->dev.of_node);
+> +		return ret;
+> +	}
+> +
+> +	ret = auxiliary_device_add(adev);
+> +	if (ret) {
+> +		auxiliary_device_uninit(adev);
+> +		return ret;
+> +	}
+> +
+> +	devm_add_action_or_reset(tcphy->dev, tcphy_dp_port_unregister_adev, adev);
+> +
+> +	ret = drm_aux_bridge_register(&adev->dev);
+
+Adding an aux device to an aux device looks quite overengineered to me !
+
+If it's a matter of using the proper of_node, you may instead create a separate
+drm_aux_bridge_register() like drm_aux_bridge_register_from_node() instead.
+
+Neil
+
+> +
+> +	return 0;
+> +}
+> +
+>   static int tcphy_setup_typec_mux(struct rockchip_typec_phy *tcphy)
+>   {
+>   	struct typec_mux_desc mux_desc = {};
+> @@ -1312,6 +1360,10 @@ static int tcphy_setup_typec_mux(struct rockchip_typec_phy *tcphy)
+>   	if (!of_property_read_bool(np, "mode-switch"))
+>   		goto put_np;
+>   
+> +	ret = tcphy_aux_bridge_register(tcphy, np);
+> +	if (ret)
+> +		goto put_np;
+> +
+>   	mux_desc.drvdata = tcphy;
+>   	mux_desc.fwnode = device_get_named_child_node(tcphy->dev, "dp-port");
+>   	mux_desc.set = tcphy_typec_mux_set;
+
 
 -- 
 linux-phy mailing list
