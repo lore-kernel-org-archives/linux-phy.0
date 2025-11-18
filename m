@@ -4,86 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1BAE6CEBF92
-	for <linux-phy@archiver.kernel.org>; Tue, 18 Nov 2025 09:12:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3B819CCD19A
+	for <linux-phy@archiver.kernel.org>; Tue, 18 Nov 2025 09:13:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h5JtecachG7E9cDvy3yLTNrEbiXYd8Q0J6EYJ5O7KyY=; b=0htDCD2KZzd69w
-	0zb9j5X4YWd1YbhXUGdLQOVDiwg5+mXeu3//If3A7m54+CZlAjzhDnRDvytIEAOalMjIllqi+5vVx
-	0/y9b3QFh34xNm3U0F1ooFESwzROL5ml3S1TLuhMdxFehZWmqIUBW9uQ3IhHxAY5BquPtyTBL/jxQ
-	6TzvxypHKCQe8ZNOfqPR3oaE6FJTaxUJ3OLKvBGucHEyhH4loO3d4t/dkYLFMQDoPn9uCUK5w41sw
-	yswddbgmmMYrY29HuV4bG059c/r66FWQoRMBZfSOUrwEt/wFGPKBTVIT+zviip32QSD096Ml0ClqB
-	gjKLG2WCDppIsA/4hVuw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
+	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=jS/s2/SIYtLQ5jhmRtDY1YwGDMTVp/14JuqnAqllOGA=; b=KWC1j7Cn1ewXtCcb6C2phTuUn1
+	i4xnr6c0SfHeCTygK5oyg9GqfStLqtXRf8REOPh6zbzQk0EFnk1G2mvx3TKVIAuQUDSM0laAdWfcH
+	Cn4VqwypBNGuPoMn0eenh18sjmS0Yvq7OUTpVwUGeDEjkZ1Bb7jIMWpEjk4QGh+sYTptWaFjqOwwc
+	DGSiexoudIZt+dJPAs1znVCS0q0kd1qaT0VxvrchtH+hHu4h4IsK0yPgb7KV/71reubND/Vb6XMl1
+	O/5SpNtnEViATxAbRd4N0LzZ1WFJG4epzlj8l+oGulN4QhIX9KCQpqpdqEXm7lsR+45SJG8wtrijZ
+	vDuAQE3A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vLHld-000000008iC-3Wiu;
-	Tue, 18 Nov 2025 09:12:53 +0000
-Received: from mail-wm1-x32a.google.com ([2a00:1450:4864:20::32a])
+	id 1vLHmJ-000000008rU-031y;
+	Tue, 18 Nov 2025 09:13:35 +0000
+Received: from mail-wm1-x32e.google.com ([2a00:1450:4864:20::32e])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vLHlb-000000008gl-1ctQ
+	id 1vLHmG-000000008qi-183X
 	for linux-phy@lists.infradead.org;
-	Tue, 18 Nov 2025 09:12:52 +0000
-Received: by mail-wm1-x32a.google.com with SMTP id 5b1f17b1804b1-4779a4fc95aso17540315e9.1
-        for <linux-phy@lists.infradead.org>; Tue, 18 Nov 2025 01:12:50 -0800 (PST)
+	Tue, 18 Nov 2025 09:13:33 +0000
+Received: by mail-wm1-x32e.google.com with SMTP id 5b1f17b1804b1-47775fb6cb4so37115475e9.0
+        for <linux-phy@lists.infradead.org>; Tue, 18 Nov 2025 01:13:31 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1763457169; x=1764061969; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1763457210; x=1764062010; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:from:references:cc:to:subject:reply-to:user-agent
+         :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=GsbUZq12GH8jSgBm1055puXBgPzLYHPQmArZG1I4wqA=;
-        b=P0j6PixRVwsYaau8YORuhRDqtCqeY+iZno4hGCxlLGxwRs1k9ypVW4ePRzpefuej08
-         3j55tnqNUJcH0GIAYHg9z7jONe0blTHs7zrrxe8MDpEW7rO6ETnvn31WSq9UT1ykosKf
-         vHzgzg3X6mR13PDVPS3uAfP5ZjCMzAHUQafEJYY1x2le/hGHGIs4euIJ4yCdIJeuvIgi
-         /MJrchmcAQpBg7A+Eo/STvsySSUTwnqWZEdqof9VtBYhQioqDo+rtqXeQMEe3kuMPVq4
-         fpjeTaknOyaAaWJrn207hTEZKHI+7AWfullAlZg/fxPzAmF1U+CHZs6rRKDZHmQ0y+tp
-         wTFw==
+        bh=b3d9aSuODkFC9g/oScA6ndSxxtPyvcgy72vCoZYW6hk=;
+        b=z8ZnnMX/te44kUaQROOmdrbhGCUuddwUvQh+fSh79eLDAfK8NlSJrilDCITqgsOl6M
+         eNpsuPSwf5gBqfLNHilmUD0uc2vi4Ma1ynDda4dj6rCrGXc0x0IKUdoQngnp8JT4IrHF
+         2HJMETBZLBvF/qmP72otcJnqk06GHO5nXgupfBJ6a+QCxh/Dd7/BR14vPgcAatBVb3dF
+         9F7muzs2o+gZt3qF8leMBFYQ0zEMWnvoXg0cjx9U3XwtUyCUamHB+uYz3fXcEUi29oeL
+         exCGbUTSacVAXZbNPG+HDdmE8c/vUjrjqXSuwmUlbTveXn4svtKEHDu7MpD3HmZh+9Uk
+         /asw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1763457169; x=1764061969;
+        d=1e100.net; s=20230601; t=1763457210; x=1764062010;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:from:references:cc:to:subject:reply-to:user-agent
+         :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:x-gm-gg:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=GsbUZq12GH8jSgBm1055puXBgPzLYHPQmArZG1I4wqA=;
-        b=dEsIbvjSB5X1EJpWBj9yt6DAKplXDdPdjsdCJ3x/5MMD23Ah4Ci4SS0UmJPeBzFQK8
-         AQYhVkQZ7q5nHT+m7Xww/5FI9SPsF1mwOLzSujfiyZPE1Ef/342/Sy3zvA0i2e8LwKfn
-         uiQ/2yDutb8f+5urkn8ZJDsDMzw9TXqdNArgOG3SVTWjwmNKrUz3eOvxCr+TW/0tNpi7
-         r1QrXODTJM3K/umfBUIbSMgG3X+2AHhqBX0t9LK+WbmjYbbVmS0CC007cm6PqNO0G8xZ
-         4vD0tBHPml4Ld5CeUNjiGf7m873LDTCe/UU9cmNsAWXinvZNZfGObgRskIy0hUfDycqu
-         QN/w==
-X-Forwarded-Encrypted: i=1; AJvYcCU9yDnLbfzlqVkPZTccv+yShX/IVkzn8NNdyTJs4HZ2O5q/atEkNG4kwak+AFoN9NvcGwDDssFkeFQ=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx/VEH5SD+fwtYUQ4Q3v9Z48XSGJrq+Uoup+Fw8/AlFabgX3ESk
-	PtD9cdMz9j5rC0gtu6LujXKZEdmRg6r3496NM4nP0gnxe5hE26eNwXdkMt5bg7hLBmo=
-X-Gm-Gg: ASbGnctdb8aNj6hnQzIa5p5xKt/LHmgCEm54VLINXNGx3OYupmVeP2RmepO/w1D+8c8
-	+8R/YgCuDYzwnOMvRykFqBiQmBwUFFcs4Fg7/5z039f5Nyro69l+7HQ4inhnknivMLchAWQ1g+9
-	YcrM0trXwCaA2CJINKjb1T3QVkFxZXRS/306UvcLWgc6iPNSigzZCwZ4m82nWzGM6voWWa3Fxz7
-	svxvjzSi1A6QGAR5t+J3ebhZJvw2CuLdX3OPy2LDkL6vFVSnZnwrI58imsF/Zf9D8QJyrHuxhGp
-	7YcJqNlyyV3K1e8WbESy8TNpjdcFubptV1XClCaGG8p28wSHS+kgvchm1KPGHwmtVTD3XPqDcZF
-	wFNtEnS3WacfILIDizaRc9auYvcBKQfv2NzpvSvVGykJ8ZzpT76HAjdtoGHG4GtemxfgqT5c9fj
-	AQWv8VvGHg5cum7LSHr1k/OalMr2O7KfdhdCPL1PonzGIXJtf2eENFxPNeOqn25R2YRHsXrfzi7
-	g==
-X-Google-Smtp-Source: AGHT+IFLWIbKy5iYyYGBqFd+tt7NLXABbN0modVFRv0VlJwVt0Qh9TTTSA9l9Sw1Gv8SWS/Tv7D3jQ==
-X-Received: by 2002:a05:600c:19c6:b0:475:ddad:c3a9 with SMTP id 5b1f17b1804b1-477a94fc3eamr20486455e9.13.1763457169335;
-        Tue, 18 Nov 2025 01:12:49 -0800 (PST)
+        bh=b3d9aSuODkFC9g/oScA6ndSxxtPyvcgy72vCoZYW6hk=;
+        b=mAZAyL3K6TWNW0eca2bd+QPitbE+4FTNUiswNuvyvTftk9YSuPBSWXL3URRReqHCYW
+         8hE7kQgec4PUUkizDVHnXWBrhn7TLi3eo7uEmTbiS9obbGl0xZ6sf2YiEqqghDgnfFr3
+         aqtiCxqkE8xob7AuudZon9BaOgqbo9C+bsRfMZTzKHmHb1t9MUTHlzibKUTUcm+VgNDc
+         Dlb4Kn3+t2dhHed4fqcUBG1jyT3513mucI+mrKZYKWh4psdjRfVIsXPLlVgHZ3Rm9Ky9
+         s6JANxXR9aQxRTkw2cwiipgQ2e+szob3k7M7vTo/v/iARka+K9ESJyWcb9t63GxDG87J
+         TCkw==
+X-Gm-Message-State: AOJu0Yzl1PUpzVTyQ2/PkULUKdBPqavA94fHC96mrAnAkrL5naQW179+
+	+Zj+bYRVs/c3qv5FO/8RE0xDV7z/yXQX2wNK65yCXjYFG08IVN7+5+wrzB1twQR/niY=
+X-Gm-Gg: ASbGncvES76gb6JU45zjQkQrdP91XapFYGUqEtOSt7zwfv7P0rdOpoB7gXjdc2ZDOo7
+	1EHWPkAWCNlUuKEcOMCn78UvY21sbfcwCmrf7TCvYr5ViW2fFxS4en4W6n+BrRSTJaZOxpMPbMw
+	0HKSW49i7rbZhiBbwxgtke4IL4leCrxlCR1vaVtuDdruuGAHSHlIM+vx0CWb2GzTNvCYi7YCpqh
+	EL2498CQUD9S0uNPgk4lw7IkTS/OG7pDymRixhqTSoSDsdyMFb4nAQ82EGTw+mkZenwn10wezJN
+	4VgYSEIXpLQJ+d4qDd8B34oJHw+qahq2MmTaAfz/L8zswefTg+RVQoubytfeK8PXeoaiIEv5ZX3
+	uuS2GNUZCPIXOfBD1NckHx5ssJNYOp5Bges7EXsz82ykBZXZFW6MP55gXLo/kK6mD0GmVlQe5/5
+	QGgiY/WiZbRPwoG6BUv2H6JlLc4uTPb9g9uurPxWmj4onj3FnVvagYQTbLFKN1mf4=
+X-Google-Smtp-Source: AGHT+IG0kFz9gx02O1y5oWOQ9n3OLuLQ5sSciCR005X4QnJdS+EzbkU+x3njzrapxSpWUzk8bgSoEQ==
+X-Received: by 2002:a05:600c:3b25:b0:477:7925:f7f3 with SMTP id 5b1f17b1804b1-4778fe62d4emr129814195e9.14.1763457210262;
+        Tue, 18 Nov 2025 01:13:30 -0800 (PST)
 Received: from ?IPV6:2a01:e0a:3d9:2080:366e:5264:fffe:1c49? ([2a01:e0a:3d9:2080:366e:5264:fffe:1c49])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-47787e442c2sm362834385e9.7.2025.11.18.01.12.48
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-477a97213b8sm13156565e9.1.2025.11.18.01.13.29
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 18 Nov 2025 01:12:48 -0800 (PST)
-Message-ID: <70a23bf8-6648-489e-908f-d7727f5cccd3@linaro.org>
-Date: Tue, 18 Nov 2025 10:12:48 +0100
+        Tue, 18 Nov 2025 01:13:29 -0800 (PST)
+Message-ID: <c95faaf1-57e4-4387-89c1-be6befc79416@linaro.org>
+Date: Tue, 18 Nov 2025 10:13:28 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] phy: rockchip: naneng-combphy: Fix PCIe L1ss support
-To: Shawn Lin <shawn.lin@rock-chips.com>, Vinod Koul <vkoul@kernel.org>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
- Heiko Stuebner <heiko@sntech.de>, linux-phy@lists.infradead.org,
- linux-rockchip@lists.infradead.org
-References: <1763004478-218446-1-git-send-email-shawn.lin@rock-chips.com>
-From: Neil Armstrong <neil.armstrong@linaro.org>
+From: neil.armstrong@linaro.org
+Subject: Re: [PATCH v5 1/2] phy: add new phy_notify_state() api
+To: Peter Griffin <peter.griffin@linaro.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ =?UTF-8?Q?Andr=C3=A9_Draszik?= <andre.draszik@linaro.org>,
+ Tudor Ambarus <tudor.ambarus@linaro.org>,
+ Alim Akhtar <alim.akhtar@samsung.com>, Krzysztof Kozlowski <krzk@kernel.org>
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
+ kernel-team@android.com, William Mcvicker <willmcvicker@google.com>,
+ Manivannan Sadhasivam <mani@kernel.org>
+References: <20251112-phy-notify-pmstate-v5-0-39df622d8fcb@linaro.org>
+ <20251112-phy-notify-pmstate-v5-1-39df622d8fcb@linaro.org>
 Content-Language: en-US, fr
 Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
@@ -110,10 +114,10 @@ Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
  QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
 Organization: Linaro
-In-Reply-To: <1763004478-218446-1-git-send-email-shawn.lin@rock-chips.com>
+In-Reply-To: <20251112-phy-notify-pmstate-v5-1-39df622d8fcb@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251118_011251_454519_3936DB30 
-X-CRM114-Status: GOOD (  13.64  )
+X-CRM114-CacheID: sfid-20251118_011332_373693_C97D5C53 
+X-CRM114-Status: GOOD (  24.00  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -131,52 +135,128 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 11/13/25 04:27, Shawn Lin wrote:
-> Need to control the delay PLL turnoff time if PCIe works on
-> L1 PM substates.
-
-Can you elaborate ?
-
+On 11/12/25 17:27, Peter Griffin wrote:
+> Add a new phy_notify_state() api that notifies and configures a phy for a
+> given state transition.
 > 
-> Fixes: f13bff25161b ("phy: rockchip-naneng-combo: Support rk3562")
-> Signed-off-by: Shawn Lin <shawn.lin@rock-chips.com>
+> This is intended to be used by phy drivers which need to do some runtime
+> configuration of parameters that can't be handled by phy_calibrate() or
+> phy_power_{on|off}().
+> 
+> The first usage of this API is in the Samsung UFS phy that needs to issue
+> some register writes when entering and exiting the hibernate link state.
+> 
+> Signed-off-by: Peter Griffin <peter.griffin@linaro.org>
 > ---
+> Changes in v5
+> - Fix typo phy_notify_phystate to phy_notify_state (Russell)
 > 
->   drivers/phy/rockchip/phy-rockchip-naneng-combphy.c | 9 +++++++++
->   1 file changed, 9 insertions(+)
+> Changes in v4
+>   - Add missing 'used' word (Vinod)
+> ---
+>   drivers/phy/phy-core.c  | 25 +++++++++++++++++++++++++
+>   include/linux/phy/phy.h | 19 +++++++++++++++++++
+>   2 files changed, 44 insertions(+)
 > 
-> diff --git a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-> index af9a5c7..5b6f80e 100644
-> --- a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-> +++ b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-> @@ -106,6 +106,10 @@
->   #define RK3568_PHYREG18				0x44
->   #define RK3568_PHYREG18_PLL_LOOP		0x32
+> diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
+> index 04a5a34e7a950ae94fae915673c25d476fc071c1..60be8af984bf06649ef00e695d0ed4ced597cdb9 100644
+> --- a/drivers/phy/phy-core.c
+> +++ b/drivers/phy/phy-core.c
+> @@ -520,6 +520,31 @@ int phy_notify_disconnect(struct phy *phy, int port)
+>   }
+>   EXPORT_SYMBOL_GPL(phy_notify_disconnect);
 >   
-> +#define RK3568_PHYREG30				0x74
-> +#define RK3568_PHYREG30_GATE_TX_PCK_SEL         BIT(7)
-> +#define RK3568_PHYREG30_GATE_TX_PCK_DLY_PLL_OFF BIT(7)
+> +/**
+> + * phy_notify_state() - phy state notification
+> + * @phy: the PHY returned by phy_get()
+> + * @state: the PHY state
+> + *
+> + * Notify the PHY of a state transition. Used to notify and
+> + * configure the PHY accordingly.
+> + *
+> + * Returns: %0 if successful, a negative error code otherwise
+> + */
+> +int phy_notify_state(struct phy *phy, union phy_notify state)
+> +{
+> +	int ret;
 > +
->   #define RK3568_PHYREG32				0x7C
->   #define RK3568_PHYREG32_SSC_MASK		GENMASK(7, 4)
->   #define RK3568_PHYREG32_SSC_DIR_MASK		GENMASK(5, 4)
-> @@ -665,6 +669,11 @@ static int rk3562_combphy_cfg(struct rockchip_combphy_priv *priv)
->   	case REF_CLOCK_100MHz:
->   		rockchip_combphy_param_write(priv->phy_grf, &cfg->pipe_clk_100m, true);
->   		if (priv->type == PHY_TYPE_PCIE) {
-> +			/* Gate_tx_pck_sel length select for L1ss support */
-> +			rockchip_combphy_updatel(priv, RK3568_PHYREG30_GATE_TX_PCK_SEL,
-> +						 RK3568_PHYREG30_GATE_TX_PCK_DLY_PLL_OFF,
-> +						 RK3568_PHYREG30);
+> +	if (!phy || !phy->ops->notify_phystate)
+> +		return 0;
 > +
->   			/* PLL KVCO tuning fine */
->   			val = FIELD_PREP(RK3568_PHYREG33_PLL_KVCO_MASK,
->   					 RK3568_PHYREG33_PLL_KVCO_VALUE);
+> +	mutex_lock(&phy->mutex);
+> +	ret = phy->ops->notify_phystate(phy, state);
+> +	mutex_unlock(&phy->mutex);
+> +
+> +	return ret;
+> +}
+> +EXPORT_SYMBOL_GPL(phy_notify_state);
+> +
+>   /**
+>    * phy_configure() - Changes the phy parameters
+>    * @phy: the phy returned by phy_get()
+> diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
+> index 13add0c2c40721fe9ca3f0350d13c035cd25af45..2af0d01ebb39f27dfb34ccb5140771beef8288d5 100644
+> --- a/include/linux/phy/phy.h
+> +++ b/include/linux/phy/phy.h
+> @@ -53,6 +53,15 @@ enum phy_media {
+>   	PHY_MEDIA_DAC,
+>   };
+>   
+> +enum phy_ufs_state {
+> +	PHY_UFS_HIBERN8_ENTER,
+> +	PHY_UFS_HIBERN8_EXIT,
+> +};
+> +
+> +union phy_notify {
+> +	enum phy_ufs_state ufs_state;
+> +};
+> +
+>   /**
+>    * union phy_configure_opts - Opaque generic phy configuration
+>    *
+> @@ -83,6 +92,7 @@ union phy_configure_opts {
+>    * @set_speed: set the speed of the phy (optional)
+>    * @reset: resetting the phy
+>    * @calibrate: calibrate the phy
+> + * @notify_phystate: notify and configure the phy for a particular state
+>    * @release: ops to be performed while the consumer relinquishes the PHY
+>    * @owner: the module owner containing the ops
+>    */
+> @@ -132,6 +142,7 @@ struct phy_ops {
+>   	int	(*connect)(struct phy *phy, int port);
+>   	int	(*disconnect)(struct phy *phy, int port);
+>   
+> +	int	(*notify_phystate)(struct phy *phy, union phy_notify state);
+>   	void	(*release)(struct phy *phy);
+>   	struct module *owner;
+>   };
+> @@ -255,6 +266,7 @@ int phy_reset(struct phy *phy);
+>   int phy_calibrate(struct phy *phy);
+>   int phy_notify_connect(struct phy *phy, int port);
+>   int phy_notify_disconnect(struct phy *phy, int port);
+> +int phy_notify_state(struct phy *phy, union phy_notify state);
+>   static inline int phy_get_bus_width(struct phy *phy)
+>   {
+>   	return phy->attrs.bus_width;
+> @@ -412,6 +424,13 @@ static inline int phy_notify_disconnect(struct phy *phy, int index)
+>   	return -ENOSYS;
+>   }
+>   
+> +static inline int phy_notify_state(struct phy *phy, union phy_notify state)
+> +{
+> +	if (!phy)
+> +		return 0;
+> +	return -ENOSYS;
+> +}
+> +
+>   static inline int phy_configure(struct phy *phy,
+>   				union phy_configure_opts *opts)
+>   {
+> 
 
-Please use proper patch versioning when sending a new version, with a proper
-changelog.
+LGTM !
 
-Neil
+Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 
 -- 
 linux-phy mailing list
