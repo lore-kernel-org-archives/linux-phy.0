@@ -4,66 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E442CEE341
-	for <linux-phy@archiver.kernel.org>; Tue, 18 Nov 2025 17:11:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D5E2CCEE33B
+	for <linux-phy@archiver.kernel.org>; Tue, 18 Nov 2025 17:18:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fW8orjf+IT8F/0uv7jKMZqUvJhWQeNS6cjw2/U2ZvwY=; b=E0h66n0WMV/RB+
-	POsHQjQaUq3JtPcuvClOm93BlqMu6WC20V7Y7CbILM+gbu3vfZ9PPApf6Fx747hosr1Up4SwRYVWA
-	jciwysz0oaFOQqbDx4deLY7naahQw2ieycu7ukIF4rDxmoY9ULSqIaVzjMecAgjOTN3tfqiw6aoQJ
-	3p333vB5VDKaR/GW6KBrYx97xEElekbE65aw3OrpnbgREhJcrEVvBcPhWTPz8Nvaxzoc+ElUE5+pB
-	d2XcsxKxob9tyKhz2TPASqzNbGlF2DVy1I4PRCku+6VAooIfKlGOR0f5ZJ5suwQlzf+2MjUGfrVHC
-	1NcjXAMweP/94P8QxvDA==;
+	List-Owner; bh=euyUxVNteNm+PGf40KlKzYFkdQlTSicDV7RV0xih0G0=; b=xB1f80m8WmnwrY
+	jLS7QHwOukXazcsIE/XkBM6QJivrMwl2Lp1ZD6noAo61dd7ySPVC/ygcWMLZM9NlKyYSY3wtMGTv2
+	E/GVPZcC3ZLsRYHasI7d++jSpQ/QaXC0rS8xz4ehvQwCYSSGBz1wxSywLSUGen2Z93WVk97b+ied5
+	W/9mOJcA7gwGBx4p63xd+XH0T2ujxCgryyODm4hvLetrOjCCQRRUcHw/Szb13EIoCNP2uIDSMCWnM
+	9ta6yDK5UaSpw080ERxd02YiFJ3v6uIApGzIHe23foiquof4PWdbYmk+9rJVFGYGV0ZFVAzmz+Fnd
+	a9jXrwjxFKB4Y0pLIonQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vLPEa-00000000p8f-3Klt;
-	Tue, 18 Nov 2025 17:11:16 +0000
+	id 1vLPLR-00000000qSR-2a1A;
+	Tue, 18 Nov 2025 17:18:21 +0000
 Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vLPEQ-00000000p6O-3z43
-	for linux-phy@lists.infradead.org;
-	Tue, 18 Nov 2025 17:11:15 +0000
+	id 1vLPLP-00000000qRx-0n9S;
+	Tue, 18 Nov 2025 17:18:20 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 96027401D8;
-	Tue, 18 Nov 2025 17:11:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8D168C4AF1A;
-	Tue, 18 Nov 2025 17:11:03 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 83A464087D;
+	Tue, 18 Nov 2025 17:18:18 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id ED1A7C4CEF1;
+	Tue, 18 Nov 2025 17:18:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1763485864;
-	bh=wOZRNNIL+m5X/h13FesXwnoBhtVOzxcdpFfYndv3xl4=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=RDSJbAspBhtFe32YSTBs8uYPNiFEWfPcwFKM1ZnYHS/pAO2MFWEqnP8wwZEMKRxBB
-	 Y5oWUjhcxjk+aMVjUfmPh7yxgW7k2h+9MEhn6KDy3lTgLtzRJXBmzIG8uvG0XKw3o6
-	 5STIiUTtWwPSUO8vMcBcIDz/RZeNnFhtXr/TbmTD9TFFjhSLk+UswR2+Ypyz9d+ZX0
-	 5u6RwKNGK2J0ZDPCryQ0d9ryiYvKf+QJa1x3VH/qwYhBzX4biOkeqoXWFML3OjwpAo
-	 Mcf0jAf/PAM9dJWAgxAa+4nBl5Vw6Wgiwa4tCAAJwokx0GgcVQDrnapaz2r4VRQjLd
-	 dsrxIawHtEKLQ==
-Date: Tue, 18 Nov 2025 22:40:59 +0530
+	s=k20201202; t=1763486298;
+	bh=1wHwuQs+KyZl1yodXT0yg2BEqvi1f1TTUhu+LxUU8GQ=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=LRCAJX0oKd0lqfZIIz9qm2DQH9x++4W0Rqi4wLfSn7Gaeiu3LgztD6PqX4xut/MP4
+	 pc8KyM8sEBvZ3zG0x/UBt7gSHiElvE4IThaggzpADKhINojZkohQXHkJLRa+w/oojJ
+	 KTEbmVeTN3E32VSabX+mxr7/CjiJ7kAv0xysHrovD8PdGs7/3/nGsTeSbtsttNeZdK
+	 SA7HohyzyJ2x5xKotD6EBSFbiq3Zo63zThivF8bfzoJTq2Wz/rWOjXXYd/5SY6jK71
+	 DeT5rTgq7uLGNdhlEXUgOgQvYErjn7mpbLGjIPBR//zGRnREFKT8aWy0okkz9c7ad9
+	 CDLTaHo3ttjDA==
 From: Vinod Koul <vkoul@kernel.org>
-To: Qiang Yu <qiang.yu@oss.qualcomm.com>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	Prudhvi Yarlagadda <quic_pyarlaga@quicinc.com>,
-	Wenbin Yao <wenbin.yao@oss.qualcomm.com>,
-	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
-	Manivannan Sadhasivam <mani@kernel.org>
-Subject: Re: [PATCH v6 0/3] Add support for Glymur PCIe Gen5 x4
-Message-ID: <aRyoo2Ve_hjgc84M@vaman>
-References: <20251103-glymur-pcie-upstream-v6-0-18a5e0a538dc@oss.qualcomm.com>
+To: Marc Kleine-Budde <mkl@pengutronix.de>, 
+ Vincent Mailhol <mailhol@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Aswath Govindraju <a-govindraju@ti.com>, 
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>, 
+ Pengutronix Kernel Team <kernel@pengutronix.de>, 
+ Fabio Estevam <festevam@gmail.com>, Frank Li <frank.li@nxp.com>, 
+ Haibo Chen <haibo.chen@nxp.com>, Peng Fan <peng.fan@nxp.com>
+Cc: linux-can@vger.kernel.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org, 
+ Frank Li <Frank.Li@nxp.com>
+In-Reply-To: <20251001-can-v7-0-fad29efc3884@nxp.com>
+References: <20251001-can-v7-0-fad29efc3884@nxp.com>
+Subject: Re: (subset) [PATCH v7 0/8] phy: phy-can-transceiver: Support
+ TJA1048/TJA1051
+Message-Id: <176348629150.62598.2560301627293635701.b4-ty@kernel.org>
+Date: Tue, 18 Nov 2025 22:48:11 +0530
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20251103-glymur-pcie-upstream-v6-0-18a5e0a538dc@oss.qualcomm.com>
+X-Mailer: b4 0.13.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251118_091107_004303_1A2BB8E3 
-X-CRM114-Status: UNSURE (   9.92  )
+X-CRM114-CacheID: sfid-20251118_091819_251729_C97977F8 
+X-CRM114-Status: UNSURE (   7.99  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -81,20 +83,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 03-11-25, 23:56, Qiang Yu wrote:
-> Glymur is the next generation compute SoC of Qualcomm. This patch series
-> aims to add support for the fourth, fifth and sixth PCIe instance on it.
-> The fifth PCIe instance on Glymur has a Gen5 4-lane PHY and fourth, fifth
-> and sixth PCIe instance have a Gen5 2-lane PHY.
+
+On Wed, 01 Oct 2025 21:22:31 +0800, Peng Fan wrote:
+> TJA1048 is a Dual channel can transceiver with Sleep mode supported.
+> TJA105{1,7} is a Single Channel can transceiver with Sleep mode supported.
 > 
-> The device tree changes and whatever driver patches that are not part of
-> this patch series will be posted separately after official announcement of
-> the SOC.
+> To support them:
+> patch 1: add binding doc
+> patch 2/3: To support dual channel,
+>    - Introduce new flag CAN_TRANSCEIVER_DUAL_CH to indicate the phy
+>      has two channels.
+>    - Introduce can_transceiver_priv as a higher level encapsulation for
+>      phy, mux_state, num_ch.
+>    - Alloc a phy for each channel
+> patch 4: Simplify code
+> patch 5: Add TJA1051,7 support
+> Others: Update dts to use phys.
+> 
+> [...]
 
-Please rebase on phy/next, this does not apply for me
+Applied, thanks!
 
+[1/8] dt-bindings: phy: ti,tcan104x-can: Document NXP TJA105X/1048
+      commit: 05ace63d0bcfe131e741923394c7ce03322a141e
+[2/8] phy: phy-can-transceiver: Introduce can_transceiver_priv
+      commit: c77464bd9b4155891a135e51f8e916e1ab94fc14
+[3/8] phy: phy-can-transceiver: Add dual channel support for TJA1048
+      commit: 6e9fe9409e10ed25b43928062832037752630979
+[4/8] phy: phy-can-transceiver: Drop the gpio desc check
+      commit: d02a7eb12924b7473a62d5a6c9e670fe5bf6e4b7
+[5/8] phy: phy-can-transceiver: Add support for TJA105{1,7}
+      commit: b817f505926b8ffbdea8aa87b66a622acb9b96e9
+
+Best regards,
 -- 
 ~Vinod
+
+
 
 -- 
 linux-phy mailing list
