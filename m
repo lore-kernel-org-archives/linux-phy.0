@@ -4,69 +4,155 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D5BDACE8D6B
-	for <linux-phy@archiver.kernel.org>; Mon, 17 Nov 2025 22:14:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0B208CEBF93
+	for <linux-phy@archiver.kernel.org>; Tue, 18 Nov 2025 07:19:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rYSh2IkTaEr1MSJ0E2uTZzzZwF8fC1At9vCUb0kPZnI=; b=L9AAsHj7ul9u8D
-	y/iAXMSeIqyDomVTv2GeOg6f7ewMI/wxvsjhVUtbqjS6ilBjTQHIElb2LHwWcX6t+BTLAeU6GmluQ
-	3u2GSOs3cy77WtXa0GxYoLfYSvoyRqrc/n8D3CzBcr9irloq0G6WKXmFf2J18Ve0goEn2QrED7Ni0
-	uPuN8N+DGH5D6miplgZEhTvetkxrF3v6pfqA4TrHFksxRLhJnySqZOpLAaNRDGDtLHdVpHGUZKT04
-	zR+51MRuuxdmCVRkaCdEw9A2fQjZximUTKgy7VAgBw+ED4cq8a8hzeHtQSzk2OJ3dcJ0pBxIK1qBW
-	6TFJ4AcBAdoBOq8LOtAQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=fZ68PVSmg8aQMhNQ0mIcyF5E/+llKNBftKsi7fgoR+g=; b=L7l7QxVtbrj8oI
+	vxmfA3lXkvsWgh1TaH9oy066eacfBj0UjU2rTUrMvhKLlmpirmUN4I2/+rWDeWWjaD7lE0PYt90/h
+	UGu+oG+9gVVIimmVh7xpCflT0C5XeuKr44G4nttCbFg9RspR7tK7TXMN7NIlqYRNyzj4tBOsOdOov
+	27kcDLx5b7AWosmcUQZw0JiEjyOGfvT77ZZpQ95820WA9QNWnFkhPw/6sbJAEyPF1a1jdt2cib472
+	rf0q46axWt56ZxnsW/p4CGENBD2Vk+8vx/NIa+vkhWz0N0AvDRqHikg05FVDWNHM+0qlNEo/coCL/
+	Ecz4dYE8otnGEJx4ytWw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vL7U3-0000000Gvuo-1vsi;
-	Mon, 17 Nov 2025 22:14:03 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1vLFzf-0000000HY8i-3LOz;
+	Tue, 18 Nov 2025 07:19:15 +0000
+Received: from mail-westeuropeazon11013041.outbound.protection.outlook.com ([52.101.72.41] helo=AM0PR02CU008.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vL7U1-0000000Gvu9-1Utp;
-	Mon, 17 Nov 2025 22:14:01 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 72402601B0;
-	Mon, 17 Nov 2025 22:14:00 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 39EEEC4CEFB;
-	Mon, 17 Nov 2025 22:13:59 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1763417640;
-	bh=7Xd20imrbtGgnXJ3jPRH56ORSA3mGDUGiu8VDY8+wQg=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=lI/pl0lN6EX8s9iMhr6hihgzqMq8MaevBIbaVdxbeBCszr1DXBmtkgy28tbas56y7
-	 FBSRgEq9e6GtxUDy0/q80zOBM+kudxzZK60maqj0+HRQ1GPB9It3lIiyJJ2b9nJwWV
-	 M86UA5cgtRag0DHuXtiRgN5EMZQ5L4j34Fc+I8fZmQ+PpGh6pPkDXNX5wWGrlKyiAA
-	 vGVJC+PBnAv8+iuFUIbFc5rRFKi7wT/U4XA+t4dNdRyCCVHYnnLHU5FRe5CyByxrph
-	 Orr77XGG9naWfY2a45e4BdsX/smNf/REhy0VCvYfP+3Y5hLoTA5QlO97a3iIvqKw6c
-	 XaRQPx3EfSBvg==
-Date: Mon, 17 Nov 2025 16:13:57 -0600
-From: Rob Herring <robh@kernel.org>
-To: Jacky Chou <jacky_chou@aspeedtech.com>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
-	Andrew Jeffery <andrew@codeconstruct.com.au>,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Linus Walleij <linus.walleij@linaro.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	linux-aspeed@lists.ozlabs.org, linux-pci@vger.kernel.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
-	Andrew Jeffery <andrew@aj.id.au>, openbmc@lists.ozlabs.org,
-	linux-gpio@vger.kernel.org
-Subject: Re: [PATCH v5 2/8] dt-bindings: PCI: Add ASPEED PCIe RC support
-Message-ID: <20251117221357.GA806266-robh@kernel.org>
-References: <20251117-upstream_pcie_rc-v5-0-b4a198576acf@aspeedtech.com>
- <20251117-upstream_pcie_rc-v5-2-b4a198576acf@aspeedtech.com>
+	id 1vLFzd-0000000HY88-1D0e;
+	Tue, 18 Nov 2025 07:19:14 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=k9Y+sxP27lalDFysfTHVwyllkRbVT2GfEb4EmRnhdCaM6yozLDzw/cqont0DgvhAuyRxDs3uY0V4MTXw0tOXw1RpCI+dB5oqauCTJ2QnoaHdTXPRZWy/62Sx9SYlLPv0bvSTvmFSuht4dsUF9r8+ub30z1QZUo+aNSp8F5d4LsXMitNooSZ84xFGnpn/9+EIFFLRqI0XhU6clM7BTKN34QHNy3Uo+Z2GEJIqcM6YM2kS9WcgPK5aZix6udwAeezTXtLNFx3eU/Zz1w+swN7EAy+SAPoV421qhAau9CM7OiJRUR1DOtZheI5ZUpJJY7rHnT63/sQR37FYFIMCfhbcvg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=rTHokWIOrgiJWtZYC5I5Y051EsdjSxrx6dkzMmdg4SU=;
+ b=cXFyYJDnj2ZIsA+zQDJTuBHkZqLNICGpGRTj/Zy1AgLGZyAfzDQ4f2myW2Hnc9HYNddcH/qI6UIKlC+Vf2BG8/HztuKNMbQkTdWu5GD1qPIVhukm74gWEsWNLa8knOJHQTiXwEUnTEZPxDc+eLPK0V4PJhcjAo4zvD2NfZyw49IKpJlUsvuiNkAlA4bpMaNEynQA82tJc/U3wQNTYORerLcsTMkBXHTO88sPZt7OcyZwPLlT70sMCS7E2mscrzjs1ha1bqqJZnBGw5h23GjFrRhrdqpMdFdZjTQzW+9dASwLkcyDfQzhJH34kKqxXcYkUo+wMh80B/H+iFFy5DKzsg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=rTHokWIOrgiJWtZYC5I5Y051EsdjSxrx6dkzMmdg4SU=;
+ b=Vyu9cqInkF8ENCANa6wyKag+3wcwrpjBOeZWeZgIzxe0DKiqb5EQCCt75JWbTsi72p7Yq9Gxuoug7UU5uhfmLHtxX22v4QEqApnPVJebSuqfW5eFnz0g5LIBGq+5ydxJ21xfB1kjoFgKUYjDvewekGy9Y3eJQk4xNrDAvxGFh8LSuKoHVu0eHU6HGWvBd3mCrDtakG16RlSPk4XqDRSVTL5U3mcNUR1R3rSM8CL7F25+lln57Ev40GlLQMayKo+8O+mStjyPWlYRhZK3+heOPe05DNrIVgKn0zeb4kkcceLYjGdVSGjw6Q22JJ1v5JwOPcBjocOkXgZ019pldQy2gg==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from PAXPR04MB8829.eurprd04.prod.outlook.com (2603:10a6:102:20c::17)
+ by VI2PR04MB10643.eurprd04.prod.outlook.com (2603:10a6:800:27c::7) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9343.10; Tue, 18 Nov
+ 2025 07:19:06 +0000
+Received: from PAXPR04MB8829.eurprd04.prod.outlook.com
+ ([fe80::cdc5:713a:9592:f7ad]) by PAXPR04MB8829.eurprd04.prod.outlook.com
+ ([fe80::cdc5:713a:9592:f7ad%7]) with mapi id 15.20.9320.021; Tue, 18 Nov 2025
+ 07:19:05 +0000
+From: Xu Yang <xu.yang_2@nxp.com>
+To: vkoul@kernel.org,
+	kishon@kernel.org,
+	robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	shawnguo@kernel.org,
+	s.hauer@pengutronix.de,
+	kernel@pengutronix.de,
+	festevam@gmail.com,
+	jun.li@nxp.com,
+	Frank.Li@nxp.com,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	imx@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH v4 1/2] dt-bindings: phy: imx8mq-usb: add alternate reference clock
+Date: Tue, 18 Nov 2025 15:19:46 +0800
+Message-Id: <20251118071947.2504789-1-xu.yang_2@nxp.com>
+X-Mailer: git-send-email 2.34.1
+X-ClientProxiedBy: SI2PR04CA0013.apcprd04.prod.outlook.com
+ (2603:1096:4:197::6) To PAXPR04MB8829.eurprd04.prod.outlook.com
+ (2603:10a6:102:20c::17)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20251117-upstream_pcie_rc-v5-2-b4a198576acf@aspeedtech.com>
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PAXPR04MB8829:EE_|VI2PR04MB10643:EE_
+X-MS-Office365-Filtering-Correlation-Id: 3d78d214-8f05-4111-b3ee-08de2672c1cc
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|366016|376014|7416014|52116014|19092799006|921020|38350700014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?gHoXiRCSnrVFqB3atz6He+/i/2GdMeM9VYFux9Tgo7+321m0riHPkmpg/+V+?=
+ =?us-ascii?Q?02y37wmkQVu+LJ5MDYKD7TfAXW2Nww69dpun4QJjmwSc3f+jf4pRLrT9k6Xo?=
+ =?us-ascii?Q?2mwOj+Myoe3kkeuNRh9cn169aWQl9jQqgkW/ifuJafu439VD8VMYaRQgf13o?=
+ =?us-ascii?Q?zpHLlpcPoguItZpNnO0Td7E3HeHxZSG2GGfFooKv7PNV7WHW0+INKAEN02Zk?=
+ =?us-ascii?Q?7FmA+6VxJY4Q4sogkoWzlwgz5tzv34cIlhNBjwbd5SopllUM/l3Prp1iyXGP?=
+ =?us-ascii?Q?q7TWq4PU0QQz6fyZMV4D3GH/4ujj1CHn8Obms4JT8DBKfA8tdOAKTba4MhEY?=
+ =?us-ascii?Q?15IbvzeAA9kPtBKimW0E/N6FZb3yKSGj/ThbzgR+4VgjeMFKlfIYbTU3+OSA?=
+ =?us-ascii?Q?y0NlPSn47o7SjAud/YENHuQGmUlpF5Bh/OTbHmmPST3gWEdPawg29qJGjUra?=
+ =?us-ascii?Q?w4PbKFlYIAORK/UJ3i67IZ3JDf9w2tS91l5uRdGmOPfolDRWQckAwHeV6zWq?=
+ =?us-ascii?Q?DVtetLNtLoSIIDuGC84HS33a3kVzGIF+A4Kej05yGbFzsKryAmQ0USyBw5cF?=
+ =?us-ascii?Q?4NuzLo/Xdc8al5uMVS4/Cv0MAw2amXRwJq4ax9ftDanMAs/xaJs1g6NXonzD?=
+ =?us-ascii?Q?JMg9VDrHxPnpNm88a0owDz212z+aqco7x1H3V7xNOFAQ8ukVctWbCPbewkPj?=
+ =?us-ascii?Q?MG009bKyp4pmdC+UGsxBMi85ey3YXs9iQMKFKTTGIvuj2zB/JlnJbrJ9uEJP?=
+ =?us-ascii?Q?EHRYjMtV/6hGokVOw1xVd/Z45TUx/X7hUU4Up+oRDmOE0RZpy1sQxA9tk0ww?=
+ =?us-ascii?Q?cwzjr0wyamcddwvGEwlZVrQT3yOgN0VYAIbKD/kokuBUVRfYylBwWHfbjeZg?=
+ =?us-ascii?Q?ebqEs046E+WnXqM18QPBhUXK+q3/v2jCgRTg4cvRcT/hrjOxIrlsgcuy6mhD?=
+ =?us-ascii?Q?Ip6chGPwInFtQ8bDETO8svUjYlIghwp6M3aacD/WY0Q8I8rYbXU/4Xwwbv0Z?=
+ =?us-ascii?Q?UQ+ZNG5r7t1bJpLVoSuF6k5rB2B4ePjjyWSilyBXLoCe6wbDYn9cMOIAyNWe?=
+ =?us-ascii?Q?ZeAEBvnUjYMA3k6cEdv4Lm3DRGa3QVcN9fIYg1IdH0z0YBa60hI2GxnfII76?=
+ =?us-ascii?Q?Cqkl/+dJ55eCeCunltIaZgQToMqKvKy0KDaf8nb6k+Gni6kJsa1M//UiHvk2?=
+ =?us-ascii?Q?cS2LXO/yr5VAMwNPlqUBUcMet9MK7wBQt5a+pcaI1z+V8E1Rd6U1rwSw0c7I?=
+ =?us-ascii?Q?H/1z19dIBjy0hw9zNZRWGV/jecwJMfHD9CSkX8rJ4Sx2YhpwICOCR/W8okf3?=
+ =?us-ascii?Q?Yy57h1nMEHMI7k9H6RS9u3y5N41QBfCpAOMYtLOYdbw8sPaouCXEo0HTFxiL?=
+ =?us-ascii?Q?BoktQHQwWuOfPk0kswH7R7SDWvM4y32UmZb87O9Gc3+CPHP1ksGWmBfykKl3?=
+ =?us-ascii?Q?KkCynOfGyHWB+k2iSIZg3Bj91rLmPwbOHcEj11XeBAo9+LM7d9sIHIC9i+vD?=
+ =?us-ascii?Q?dO2fgarx/0qy+7JNadaS8oSSUVtK1QG5aD73RKQQ577iDmpBpl4jOoGm8g?=
+ =?us-ascii?Q?=3D=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB8829.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(376014)(7416014)(52116014)(19092799006)(921020)(38350700014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?VyEHWAHlI5hmkitjAxqzhphZ6YEvOJ0KdKW+BqJH3s7TYAEFbD1l1OZcjmUp?=
+ =?us-ascii?Q?ceCjRorxm7g/qcD8cLqf+HrJ0EvYqR35tKXdrn2luPYCNcFq9gDxmGsLFh9/?=
+ =?us-ascii?Q?PFqaI4eePSLYGB1X8FTNnzxUyW/eDJikc2Y8kkLnunY94CowRNS5DQ570GUx?=
+ =?us-ascii?Q?4VZfygftDklLLUdgGl9+uonwgfkLpJ1Ofy0F0CNGVtI88qLVCWDhBsB8jo+/?=
+ =?us-ascii?Q?TIVqPAU4iSoyU0x2McSaGXYeKH/j7KZpnyNBXsebp0hD/TVcglvyAde2117o?=
+ =?us-ascii?Q?kLdENylg/TygKFuxz7CrtKyKDuxnfFxOLXoimM0PdijeErf7WyMtc/8SEPfT?=
+ =?us-ascii?Q?C2wfo4pj8Q4XTqHrP5c51Dfz6+KIxRa4Pjcst+CxI82qvpIkNpp3rM16EGXd?=
+ =?us-ascii?Q?MxYIQyVT5EonIE38+k9fIDZPeyPFpIHhjOgvmAptHX54l4EYZ31EJnzNswoP?=
+ =?us-ascii?Q?WHqpjMCjTIspjDsBroPnMBwFOAoDSPOcozAEcNLpg4jmAwriLPOIa06ZW6mm?=
+ =?us-ascii?Q?ngo/JiJB+yGQKFK9lxgTbubAPwBovlNyGPJvxF+SyW/VZFyZsncXSyrT1EEQ?=
+ =?us-ascii?Q?HMiUmKeU6uhfAtUUbMwelh8MGRcPhBLE8fyFlEgIXEWqnqbBGyYD8GvZVWie?=
+ =?us-ascii?Q?LbT8tAS4h/9ndKt+hGrDVQMPCc/sbGhuoTjTaicjzzZPYGVQ17EpZjJSHa7l?=
+ =?us-ascii?Q?W0KlVIdBhPmO8rI+/Y8mINhEW4p/UpReqUZeuG/7OL/I9CSGiK83Y3Fpvoc9?=
+ =?us-ascii?Q?Sp4CI+9Ybl0uz5nfehPw7vn4nhRLqLOeIPrnwYP4O3kFG0TILR1tscgdFDnQ?=
+ =?us-ascii?Q?rS9nQStbEgu2aw9zYZslnfT3/CzdZJ+/12qLHHoQy/wfGKshccd+RtqkZwYG?=
+ =?us-ascii?Q?ScieVa6zl0hnXFyrCCubpokaA2R7slNQJe18XHoTvzM9aLIlh5aNxh10ddP6?=
+ =?us-ascii?Q?Gr5qfmOl9ee+5vONw5ORQoEzTQEVe8XFPsYsyK54eun5ozlx+Mx7paX4zJNE?=
+ =?us-ascii?Q?iXR/9plieUV/sDxrJ4bt7mwgiVaJEtIUhyzorOCnqwF5aRzihe/8bdkR5xTL?=
+ =?us-ascii?Q?TBS+e67ZE/xc/ySUrvJdnUmqoomHcIJVkj8H8Vo0Z85BYLaw8AONsDEXCUrt?=
+ =?us-ascii?Q?ItSGBNt7Cq9Zl1eIpJRZTgodmwEd3V7ETq2OIYkEVfF1STCNsHUEcdMoJ7Ze?=
+ =?us-ascii?Q?2hoon36s8T1yzW2VIc1xUoY+0pnnOYoJ+F1dB74Gp0DFi+hhTIYfHvBo17ck?=
+ =?us-ascii?Q?cOWnv/0AtOq4kqEyXBXv1MyIoTht58ouB4R0Xh8KoV24v4SgbT2X1qoaGrBy?=
+ =?us-ascii?Q?Ui3olH+2Wxkl7xwX+Q6pGnGbaLR/rgDUfxQ1yohBa148LSoBvBWFANsk78oQ?=
+ =?us-ascii?Q?kcXmjzu0lQ01WmbaWPX9+e1yY/sTcSwigpVJaRoaPn+3cwChi+UzVdMTQj0r?=
+ =?us-ascii?Q?SswwKZyr5L0Fn4H2ZzBCQEvVwZifhvMBq6Zlvkb5tZsyj7qug2P2f+j35Pml?=
+ =?us-ascii?Q?jZJhkMrSck4WPrmk5uJssK7SoQMkudDVhOoqmto/+uXWnnmUvz16zf4ixZZ9?=
+ =?us-ascii?Q?C/R6TJn4QZPg2Sp/hmPmWN78LWF6BYzdjpvauzxP?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 3d78d214-8f05-4111-b3ee-08de2672c1cc
+X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB8829.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 Nov 2025 07:19:05.7697
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: x6rzHa9qk092ymPr249W6iiWH3Ukz/BxX6eB/aa76af25VcbZkMsKuK0zQrHotYY0eD6LDYpcfFEihtT+Efrww==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI2PR04MB10643
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20251117_231913_350003_442B3423 
+X-CRM114-Status: UNSURE (   9.74  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,187 +169,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Nov 17, 2025 at 08:37:49PM +0800, Jacky Chou wrote:
-> ASPEED AST2600 provides one PCIe RC for Gen2 and AST2700 provides three
-> PCIe RC for two Gen4 and one Gen2. All of these RCs have just one root
-> port to connect to PCIe device. And also have Mem, I/O access, legacy
-> interrupt and MSI.
-> 
-> Signed-off-by: Jacky Chou <jacky_chou@aspeedtech.com>
-> ---
->  .../bindings/pci/aspeed,ast2600-pcie.yaml          | 149 +++++++++++++++++++++
->  1 file changed, 149 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/pci/aspeed,ast2600-pcie.yaml b/Documentation/devicetree/bindings/pci/aspeed,ast2600-pcie.yaml
-> new file mode 100644
-> index 000000000000..459b5c49657a
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/pci/aspeed,ast2600-pcie.yaml
-> @@ -0,0 +1,149 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/pci/aspeed,ast2600-pcie.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: ASPEED PCIe Root Complex Controller
-> +
-> +maintainers:
-> +  - Jacky Chou <jacky_chou@aspeedtech.com>
-> +
-> +description:
-> +  The ASPEED PCIe Root Complex controller provides PCI Express Root Complex
-> +  functionality for ASPEED SoCs, such as the AST2600 and AST2700.
-> +  This controller enables connectivity to PCIe endpoint devices, supporting
-> +  memory and I/O windows, MSI and INTx interrupts, and integration with
-> +  the SoC's clock, reset, and pinctrl subsystems. On AST2600, the PCIe Root
-> +  Port device number is always 8.
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - aspeed,ast2600-pcie
-> +      - aspeed,ast2700-pcie
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  ranges:
-> +    minItems: 2
-> +    maxItems: 2
-> +
-> +  interrupts:
-> +    maxItems: 1
-> +    description: INTx and MSI interrupt
-> +
-> +  resets:
-> +    items:
-> +      - description: PCIe controller reset
-> +
-> +  reset-names:
-> +    items:
-> +      - const: h2x
-> +
-> +  aspeed,ahbc:
-> +    $ref: /schemas/types.yaml#/definitions/phandle
-> +    description:
-> +      Phandle to the ASPEED AHB Controller (AHBC) syscon node.
-> +      This reference is used by the PCIe controller to access
-> +      system-level configuration registers related to the AHB bus.
-> +      To enable AHB access for the PCIe controller.
-> +
-> +  aspeed,pciecfg:
-> +    $ref: /schemas/types.yaml#/definitions/phandle
-> +    description:
-> +      Phandle to the ASPEED PCIe configuration syscon node.
-> +      This reference allows the PCIe controller to access
-> +      SoC-specific PCIe configuration registers. There are the others
-> +      functions such PCIe RC and PCIe EP will use this common register
-> +      to configure the SoC interfaces.
-> +
-> +  interrupt-controller: true
-> +
-> +allOf:
-> +  - $ref: /schemas/pci/pci-host-bridge.yaml#
-> +  - $ref: /schemas/interrupt-controller/msi-controller.yaml#
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            const: aspeed,ast2600-pcie
-> +    then:
-> +      required:
-> +        - aspeed,ahbc
-> +    else:
-> +      properties:
-> +        aspeed,ahbc: false
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            const: aspeed,ast2700-pcie
-> +    then:
-> +      required:
-> +        - aspeed,pciecfg
-> +    else:
-> +      properties:
-> +        aspeed,pciecfg: false
-> +
-> +required:
-> +  - reg
-> +  - interrupts
-> +  - bus-range
-> +  - ranges
-> +  - resets
-> +  - reset-names
-> +  - msi-controller
-> +  - interrupt-controller
-> +  - interrupt-map-mask
-> +  - interrupt-map
-> +
-> +unevaluatedProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +    #include <dt-bindings/clock/ast2600-clock.h>
-> +
-> +    pcie0: pcie@1e770000 {
-> +      compatible = "aspeed,ast2600-pcie";
-> +      device_type = "pci";
-> +      reg = <0x1e770000 0x100>;
-> +      #address-cells = <3>;
-> +      #size-cells = <2>;
-> +      interrupts = <GIC_SPI 168 IRQ_TYPE_LEVEL_HIGH>;
-> +      bus-range = <0x00 0xff>;
-> +
-> +      ranges = <0x01000000 0x0 0x00018000 0x00018000 0x0 0x00008000
-> +                0x02000000 0x0 0x60000000 0x60000000 0x0 0x20000000>;
-> +
-> +      resets = <&syscon ASPEED_RESET_H2X>;
-> +      reset-names = "h2x";
-> +
-> +      #interrupt-cells = <1>;
-> +      msi-controller;
-> +
-> +      aspeed,ahbc = <&ahbc>;
-> +
-> +      interrupt-controller;
-> +      interrupt-map-mask = <0 0 0 7>;
-> +      interrupt-map = <0 0 0 1 &pcie0 0>,
-> +                      <0 0 0 2 &pcie0 1>,
-> +                      <0 0 0 3 &pcie0 2>,
-> +                      <0 0 0 4 &pcie0 3>;
-> +
-> +      pcie@8,0 {
+Beside default 24MHz clock input, there is an optional additional 100Mhz
+clock input 'alt' for USB PHY reference clock.
 
-This node and the properties need to be in the schema along with a ref 
-to pci-pci-bridge.yaml.
+Reviewed-by: Frank Li <Frank.Li@nxp.com>
+Acked-by: Conor Dooley <conor.dooley@microchip.com>
+Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
 
-> +        reg = <0x804000 0 0 0 0>;
+---
+Changes in v2:
+ - improve commit message
+Changes in v3:
+ - no changes
+Changes in v4:
+ - no changes
+---
+ .../devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml        | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
 
-The address should not have the bus number as it is dynamic.
+diff --git a/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml b/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
+index f9cffbb2df07..8a00a6c58edd 100644
+--- a/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/fsl,imx8mq-usb-phy.yaml
+@@ -27,11 +27,16 @@ properties:
+     const: 0
+ 
+   clocks:
+-    maxItems: 1
++    minItems: 1
++    items:
++      - description: PHY configuration clock
++      - description: Alternate PHY reference clock
+ 
+   clock-names:
++    minItems: 1
+     items:
+       - const: phy
++      - const: alt
+ 
+   power-domains:
+     maxItems: 1
+-- 
+2.34.1
 
-> +        #address-cells = <3>;
-> +        #size-cells = <2>;
-> +        device_type = "pci";
-> +        resets = <&syscon ASPEED_RESET_PCIE_RC_O>;
-> +        reset-names = "perst";
-
-Not sure this name is correct. PERST is a signal on the connector going 
-downstream to the endpoint.
-
-> +        clocks = <&syscon ASPEED_CLK_GATE_BCLK>;
-> +        pinctrl-names = "default";
-> +        pinctrl-0 = <&pinctrl_pcierc1_default>;
-> +        phys = <&pcie_phy1>;
-> +        ranges;
-> +      };
-> +    };
-> 
-> -- 
-> 2.34.1
-> 
 
 -- 
 linux-phy mailing list
