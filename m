@@ -4,97 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 89652CEDD8A
-	for <linux-phy@archiver.kernel.org>; Tue, 18 Nov 2025 13:50:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DD489CEDD8A
+	for <linux-phy@archiver.kernel.org>; Tue, 18 Nov 2025 13:54:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
-	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=eMLcNdFD0c/qq7q4RM3REAmxztumMNYBK8rXD0kNdxw=; b=qV8TrQDirfiTGThTnEQB3p+hbD
-	kZ53v8KxSRRi3L2vtYyWYafyNWFgpklB4DHF/0jFq45/vmeXgKoybO3S3nfXUrmHYNG/oY1v81MYv
-	Ze/Elos/DnEHZwrZ9o9D4OuTuaPLHULYhRXcJjGPORT5dKC6h3H1+lbdqnUHan310rCIM+OnhJ03C
-	c7xWukW+NZhkqugmDT5NxbFG7G2tToL2D9QmR6K/Nx0rRXHv9CVB5STB98QUADUsKLaMnw6GXnXgW
-	KBRloreWPoBfbRUY/CgZAbHC80JqtZY3v+KLtuxNwwZBKSHXE6cSnMx3AaxroLOsA94+hAzQAm102
-	2tOf4BZw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5W5TnM56c/54a/SifcU8vP8S/GmvxeQYuvw34piNIQI=; b=S/tPYQv/moH3WA
+	OF53B1H40mr65FUJn0Op1ygcx4kJXdu1+pYvfLfPl/2gLGObH9VCO3OPricdF4Z7bYgG6z8cLV+qM
+	0ue8TD6tS7V2WyhkT6cQfFVfRgBf0ENAwT6iIMyWh4ZOEWinPmr7dZ3wp4mUOMq0N3zhBUH9OM90d
+	6QpDTdLTRb++hPTh7lRkr7geit6Fv6B2qnW9cW0jbKL2J2GvkDLLvk+rTXNmF40R7+/Kh5BBh2Nj1
+	HnBdJ25yaIuyHEHElrel4UnWzo5nNbiBJ7N5b94ehUQiEkGT286Blf9WDlerEETkei6y8hgmRPXXC
+	thH/S6j+yB8qSDmmXmSw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vLM6a-00000000UTk-1MXU;
-	Tue, 18 Nov 2025 13:50:48 +0000
-Received: from mail-wr1-x42b.google.com ([2a00:1450:4864:20::42b])
+	id 1vLMAR-00000000Upg-2lTB;
+	Tue, 18 Nov 2025 13:54:47 +0000
+Received: from mail-wm1-x32e.google.com ([2a00:1450:4864:20::32e])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vLM6T-00000000UPp-0iya
+	id 1vLMAP-00000000UpH-0KsL
 	for linux-phy@lists.infradead.org;
-	Tue, 18 Nov 2025 13:50:46 +0000
-Received: by mail-wr1-x42b.google.com with SMTP id ffacd0b85a97d-42b3d7c1321so3980216f8f.3
-        for <linux-phy@lists.infradead.org>; Tue, 18 Nov 2025 05:50:40 -0800 (PST)
+	Tue, 18 Nov 2025 13:54:46 +0000
+Received: by mail-wm1-x32e.google.com with SMTP id 5b1f17b1804b1-477770019e4so59424095e9.3
+        for <linux-phy@lists.infradead.org>; Tue, 18 Nov 2025 05:54:44 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1763473839; x=1764078639; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1763474083; x=1764078883; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
+         :content-language:from:references:cc:to:subject:reply-to:user-agent
          :mime-version:date:message-id:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=dY87Qd6K9FmYpUIN2v9FDUk/qdoG5fxW/x7OSqsCn3w=;
-        b=lkJrogEx+owEeZPlwXICzFL7YWtKJ5mCyJ/EZ2+PXvAKg6xpVrqyLIzzl+6j7GRJ4f
-         r5aOOCsN0rNXk0cU2co7rKvzCDPyPpAdazdpaLVxegxOll5i9I2/ZuDRRNaR7c6C6mCR
-         j6gDP88VholnlbzfjN6CTpxQDyY2qF4duitnRwYhS0RYl+ERrao34L2p3P/RzxNBy6h6
-         KanBaJcYr8RwzE+o975LpBQ+DOKKo7STamrB+9L8bGTVT8LOxDdYxiIFq/48hmsn2tAB
-         x/lj/VWWVW9R/5s1y1b9OYFnHs8YZVTl2vmOz7Ws0bJWmzq2RWbBu9z1kiFp5Wl3UObp
-         a7vA==
+        bh=Z4rTQs6cNVDsxXvXmMBx4hq1l1GKxmU7dSKs02Pj2AE=;
+        b=VbV9HRcB+gmuLzQwYicXdHwHOwjWbNzjWQQde8bGscCQtGYz5l/2T2W8Z1v8ejFHQk
+         ywrnhmv55xfAlb3ohu4DIfgW4Mc9BF3cYaeNRADCDSoCjfbM9tsIVRhwG0FcBMuRCABj
+         ZClkeKEQ6FFAqYSm95TpcT7ZLhVInd/zBBV3v15bCh6ifTSTbgNiMa2fT67+fp1VHBqG
+         nZKGHyv7AHn23H07CwHiejP2TSlg9nLIqTsCXzNcldkdGo35YGCaZN02zHhicQs4iZEu
+         TPcTCHcxBIMwi6L5YZXJr+sLFHb96CLROsiD1sLmzyPtmAeIlhJxTga5v1LHH5g4j0Jo
+         zXjg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1763473839; x=1764078639;
+        d=1e100.net; s=20230601; t=1763474083; x=1764078883;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
+         :content-language:from:references:cc:to:subject:reply-to:user-agent
          :mime-version:date:message-id:x-gm-gg:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=dY87Qd6K9FmYpUIN2v9FDUk/qdoG5fxW/x7OSqsCn3w=;
-        b=WaQ9+YlaO4/JshhbZTKQQ/L/UlclYFV14sicgz3kJ9aZslaDxB+PKVPkzcwXbpkH3B
-         NcTFlISrdWecfaEkajLjlvlOJj9ahH4LL9yXVGu+PKQuOlBattOaBN4l+Fz1VsC80mG4
-         WaNrGdG8FA9a2mROAIorCDhe4jSvZMj4AnNXRlHLLuB5Gs2w3M22QtlwDbaiby/j8u49
-         q6ftfUYFFIlma589UNqasVxTxmXsSxs/E/tR77YH6Kyjjvt7k/LQlG7uhwR8IJ1PmXln
-         0UUrebooUj+OkVyNYg4ZWKeTq4Vfeh5CzCuefIFwLgXcmLGy5xBcNoCB7+lmBbP60ZoM
-         5FwQ==
-X-Forwarded-Encrypted: i=1; AJvYcCVWzYzkVKs3P8Dr+MjIwmFMfp+GYixbklE0pGaFcbT3hEX2FHryMTTZUPpsfcauizrTLrD2MF2H390=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yy1nQSrF/pJ1rVFN43CTxM4GKTbDJsOc0G1cB5+Zz0c3dL4uZDv
-	GNk5McPSHFRwvrGqaNlNEozcKJTrBQcrBewPh7HfEKAcMZDMQfkIYwKSEg27Dsftk0Q=
-X-Gm-Gg: ASbGncvJ0kjBNz5qmq6VwihEM5Zkcvi/bxMraqz65dPO2mdeLywbT+gGz39vHkqqaUQ
-	vBqine+uHxcXWd/YYZ667ox+RHzXJgDTCypnKIKgsOc3PeWEPWskVHuUCilmcSRaFATnG4SbTUw
-	pSsIyBx7Npvyz/us0ukNmmE3p4S0jR7s7hhZ25f7T7Y1Gf0jQQXj496l4n3i9+Eo5kLB3Pjmzb2
-	J5XjaO7BSZgkAlCnRLCNMbQrZyQbzjDDqvajKZcsJm8ZTI6Fg9/p4JGfatHabfJ4iq3Xs9w8xt9
-	L8hEm1nLTzF/sJZpNBZPABCHghv7BWeSPwxSjh5zjLrRJyD1sbRRIcGpqJi/jY7/tHGmrl2SNUo
-	oM13/QH8zQzyRjnMdX7yKQybJa4ep4owTPwmuMYVfqk+7Eew3yzfnFYI8HteN9PeTu7sHkeZmw+
-	oZfGiITErunRGj0eHxJ263tzclBb2LzTHb9djax/XYrbVIAq3woK5GZTsAt0KTxkc=
-X-Google-Smtp-Source: AGHT+IHO7NgHAvMoNL+Vwr0gsrbLBbRzB68mfS+LYvq/Q1H/ixopITAemFG2PunekaEBn/eSbVurMg==
-X-Received: by 2002:a05:6000:24c7:b0:428:52c7:feae with SMTP id ffacd0b85a97d-42b593869b1mr16288107f8f.32.1763473839029;
-        Tue, 18 Nov 2025 05:50:39 -0800 (PST)
+        bh=Z4rTQs6cNVDsxXvXmMBx4hq1l1GKxmU7dSKs02Pj2AE=;
+        b=j5DvBrBiDyLlR2F7Oy1FOzhdDcEI0KbL4wmuv+zUiLIitPVN/SqGnK8zJvLbf3l8J6
+         t0emWmsA9zXvN6+1EB5NVeOhfAVB5P3YHPVTZF2xLiVb4Gv2yu+lT7SSXNgC001abr4r
+         +PuJLPTJuqIyGLvbcLDxEKfwwWxh82ls69I3JZaL+lT0zMkHhV8iiCJ7X59jWwPy7PXB
+         CKDRPqn6vGqVlG8s7iRQrM76CInpnav/bbs+DC5uy6dJvkY0/U6jWxt0s6wnDXFn0LRe
+         oP1fKTZmroR+wk+N8ezYzfICCYkuRURDID6o4jz9dB8h8b3Re/jPilGAt8rxsjCzDgso
+         t+iA==
+X-Forwarded-Encrypted: i=1; AJvYcCUEOW+vcSrfBsyNMiXYMoZbjt8NRnwyiItl3sio8bDGvk4nZb3SbhcBxXpc/FZvMlVtXyp2ua5ktIs=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yzr8gHXBMrEo4Awy/PQJU7I6onVPJCSiN6Q3hshy7NU/ZlExBfn
+	aJyeevEL2dpDhd5cJLp0AIhI49X5nyFvw1Lq/pizjDlANckUiQh+frMeNzBAWdw32vc=
+X-Gm-Gg: ASbGncsANCXfvtYdmB/09ZUe//pxp5Pg4qTPZc9BaHX/wkiMadm3fptTpwdXamq21dp
+	6LBy4Xm1hppJVbhjtQeN5jUegnrk1vYqBFab6tihIVg4vQDmUygtCZgdhWh6dqPjmvQeNAb8khU
+	k6CK98nbEv+oC6w8/7vh3xp+Jms357x4AzyFI1adDxvKAehQCnHhu0YY65WdVDUG64TdNDa/3ZV
+	4vXAAvd2hSLkdlVM3f7T1dpFMO1ZwIVN6mzDfOj/rkvaxhIZFPA0CrwxITw4XWmZcXv8A8dcqGT
+	nkC/UgJ7tqDHj/mv0H6Ra588ifqkLBVZZu/0NHKUnIhVL0yQ35N2wKqteCVF4U/m3K5C238SBBf
+	0yuUhtrrd3ilqvGpGLdx97ZyR9lDvNemIo7GJ7fAmWDj3sxRjpNWrJ/s4T0FiZwtPzG96061Qe0
+	EUhic7T+E1a3pk4hEibQfcR8pfrqsIMbN3+bCQBDFHKJgb8D0MCQc4u46ajBikDtHexZ4h+Aqsg
+	g==
+X-Google-Smtp-Source: AGHT+IHhitoziKhXGK/4vUvir0RlhvYqtbf0w6VoUxFm0DXXGjIIgAo5tsERHyW1tWVmq0iyACjNnQ==
+X-Received: by 2002:a05:600c:3593:b0:477:557b:6917 with SMTP id 5b1f17b1804b1-4778fe4fdecmr165470535e9.18.1763474082956;
+        Tue, 18 Nov 2025 05:54:42 -0800 (PST)
 Received: from ?IPV6:2a01:e0a:3d9:2080:366e:5264:fffe:1c49? ([2a01:e0a:3d9:2080:366e:5264:fffe:1c49])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-42b53e85e6fsm32359458f8f.18.2025.11.18.05.50.37
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-477a96a58c5sm19787245e9.0.2025.11.18.05.54.42
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 18 Nov 2025 05:50:38 -0800 (PST)
-Message-ID: <e21760e8-4eaf-4181-a328-5d0d205b7ae0@linaro.org>
-Date: Tue, 18 Nov 2025 14:50:37 +0100
+        Tue, 18 Nov 2025 05:54:42 -0800 (PST)
+Message-ID: <4d486bd8-9e87-4bf2-a96f-38aa0f701c45@linaro.org>
+Date: Tue, 18 Nov 2025 14:54:42 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] phy: renesas: rcar-gen3-usb2: Add suspend/resume support
+To: Claudiu <claudiu.beznea@tuxon.dev>, yoshihiro.shimoda.uh@renesas.com,
+ vkoul@kernel.org, kishon@kernel.org, geert+renesas@glider.be,
+ magnus.damm@gmail.com, p.zabel@pengutronix.de
+Cc: linux-renesas-soc@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org,
+ Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+References: <20251106144148.3051962-1-claudiu.beznea.uj@bp.renesas.com>
 From: Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH 5/9] drm/panel: ilitek-ili9881d: Add support for
- Wanchanglong W552946AAA panel
-To: Chaoyi Chen <kernel@airkyi.com>,
- Jessica Zhang <jessica.zhang@oss.qualcomm.com>,
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Sandy Huang <hjc@rock-chips.com>,
- =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>,
- Andy Yan <andy.yan@rock-chips.com>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org,
- Chaoyi Chen <chaoyi.chen@rock-chips.com>
-References: <20251106020632.92-1-kernel@airkyi.com>
- <20251106020632.92-6-kernel@airkyi.com>
 Content-Language: en-US, fr
 Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
@@ -121,10 +112,10 @@ Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
  QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
 Organization: Linaro
-In-Reply-To: <20251106020632.92-6-kernel@airkyi.com>
+In-Reply-To: <20251106144148.3051962-1-claudiu.beznea.uj@bp.renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251118_055043_911126_08B5BB7F 
-X-CRM114-Status: GOOD (  13.57  )
+X-CRM114-CacheID: sfid-20251118_055445_185240_0ABE1AE1 
+X-CRM114-Status: GOOD (  27.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -142,281 +133,156 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 11/6/25 03:06, Chaoyi Chen wrote:
-> From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+On 11/6/25 15:41, Claudiu wrote:
+> From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 > 
-> W552946AAA is a panel by Wanchanglong. This panel utilizes the
-> Ilitek ILI9881D controller.
+> The Renesas RZ/G3S supports a power saving mode where power to most of the
+> SoC components is turned off. The USB PHY is among these components.
+> Because of this the settings applied in driver probe need to be executed
+> also on resume path. On suspend path only reset signal need to be asserted.
+> Add suspend/resume support.
 > 
-> W552946AAA is similar to W552946ABA, but the W552946AAA only
-> uses 2 lanes.
-> 
-> Tested on rk3506g-evb1-v10.
-> 
-> Signed-off-by: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+> Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 > ---
->   drivers/gpu/drm/panel/panel-ilitek-ili9881c.c | 225 ++++++++++++++++++
->   1 file changed, 225 insertions(+)
 > 
-> diff --git a/drivers/gpu/drm/panel/panel-ilitek-ili9881c.c b/drivers/gpu/drm/panel/panel-ilitek-ili9881c.c
-> index ad4993b2f92a..9b3e9450808d 100644
-> --- a/drivers/gpu/drm/panel/panel-ilitek-ili9881c.c
-> +++ b/drivers/gpu/drm/panel/panel-ilitek-ili9881c.c
-> @@ -820,6 +820,204 @@ static const struct ili9881c_instr tl050hdv35_init[] = {
->   	ILI9881C_COMMAND_INSTR(0xd3, 0x39),
->   };
+> This patch is built on top of patches 1/7, 2/7 at [1]
+> 
+> [1] https://lore.kernel.org/all/20251023135810.1688415-2-claudiu.beznea.uj@bp.renesas.com
+> 
+>   drivers/phy/renesas/phy-rcar-gen3-usb2.c | 66 +++++++++++++++++-------
+>   1 file changed, 47 insertions(+), 19 deletions(-)
+> 
+> diff --git a/drivers/phy/renesas/phy-rcar-gen3-usb2.c b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
+> index a38ead7c8055..3c063e4dea41 100644
+> --- a/drivers/phy/renesas/phy-rcar-gen3-usb2.c
+> +++ b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
+> @@ -132,6 +132,7 @@ struct rcar_gen3_chan {
+>   	struct device *dev;	/* platform_device's device */
+>   	const struct rcar_gen3_phy_drv_data *phy_data;
+>   	struct extcon_dev *extcon;
+> +	struct reset_control *rstc;
+>   	struct rcar_gen3_phy rphys[NUM_OF_PHYS];
+>   	struct regulator *vbus;
+>   	struct work_struct work;
+> @@ -778,35 +779,24 @@ static void rcar_gen3_reset_assert(void *data)
+>   static int rcar_gen3_phy_usb2_init_bus(struct rcar_gen3_chan *channel)
+>   {
+>   	struct device *dev = channel->dev;
+> -	struct reset_control *rstc;
+>   	int ret;
+>   	u32 val;
 >   
-> +static const struct ili9881c_instr w552946aaa_init[] = {
-> +	ILI9881C_SWITCH_PAGE_INSTR(3),
-> +	ILI9881C_COMMAND_INSTR(0x01, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x02, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x03, 0x53),
-> +	ILI9881C_COMMAND_INSTR(0x04, 0x53),
-> +	ILI9881C_COMMAND_INSTR(0x05, 0x13),
-> +	ILI9881C_COMMAND_INSTR(0x06, 0x04),
-> +	ILI9881C_COMMAND_INSTR(0x07, 0x02),
-> +	ILI9881C_COMMAND_INSTR(0x08, 0x02),
-> +	ILI9881C_COMMAND_INSTR(0x09, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x0a, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x0b, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x0c, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x0d, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x0e, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x0f, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x10, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x11, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x12, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x13, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x14, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x15, 0x08),
-> +	ILI9881C_COMMAND_INSTR(0x16, 0x10),
-> +	ILI9881C_COMMAND_INSTR(0x17, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x18, 0x08),
-> +	ILI9881C_COMMAND_INSTR(0x19, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x1a, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x1b, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x1c, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x1d, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x1e, 0xc0),
-> +	ILI9881C_COMMAND_INSTR(0x1f, 0x80),
-> +	ILI9881C_COMMAND_INSTR(0x20, 0x02),
-> +	ILI9881C_COMMAND_INSTR(0x21, 0x09),
-> +	ILI9881C_COMMAND_INSTR(0x22, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x23, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x24, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x25, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x26, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x27, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x28, 0x55),
-> +	ILI9881C_COMMAND_INSTR(0x29, 0x03),
-> +	ILI9881C_COMMAND_INSTR(0x2a, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x2b, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x2c, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x2d, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x2e, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x2f, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x30, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x31, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x32, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x33, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x34, 0x04),
-> +	ILI9881C_COMMAND_INSTR(0x35, 0x05),
-> +	ILI9881C_COMMAND_INSTR(0x36, 0x05),
-> +	ILI9881C_COMMAND_INSTR(0x37, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x38, 0x3c),
-> +	ILI9881C_COMMAND_INSTR(0x39, 0x35),
-> +	ILI9881C_COMMAND_INSTR(0x3a, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x3b, 0x40),
-> +	ILI9881C_COMMAND_INSTR(0x3c, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x3d, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x3e, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x3f, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x40, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x41, 0x88),
-> +	ILI9881C_COMMAND_INSTR(0x42, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x43, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x44, 0x1f),
-> +	ILI9881C_COMMAND_INSTR(0x50, 0x01),
-> +	ILI9881C_COMMAND_INSTR(0x51, 0x23),
-> +	ILI9881C_COMMAND_INSTR(0x52, 0x45),
-> +	ILI9881C_COMMAND_INSTR(0x53, 0x67),
-> +	ILI9881C_COMMAND_INSTR(0x54, 0x89),
-> +	ILI9881C_COMMAND_INSTR(0x55, 0xab),
-> +	ILI9881C_COMMAND_INSTR(0x56, 0x01),
-> +	ILI9881C_COMMAND_INSTR(0x57, 0x23),
-> +	ILI9881C_COMMAND_INSTR(0x58, 0x45),
-> +	ILI9881C_COMMAND_INSTR(0x59, 0x67),
-> +	ILI9881C_COMMAND_INSTR(0x5a, 0x89),
-> +	ILI9881C_COMMAND_INSTR(0x5b, 0xab),
-> +	ILI9881C_COMMAND_INSTR(0x5c, 0xcd),
-> +	ILI9881C_COMMAND_INSTR(0x5d, 0xef),
-> +	ILI9881C_COMMAND_INSTR(0x5e, 0x03),
-> +	ILI9881C_COMMAND_INSTR(0x5f, 0x14),
-> +	ILI9881C_COMMAND_INSTR(0x60, 0x15),
-> +	ILI9881C_COMMAND_INSTR(0x61, 0x0c),
-> +	ILI9881C_COMMAND_INSTR(0x62, 0x0d),
-> +	ILI9881C_COMMAND_INSTR(0x63, 0x0e),
-> +	ILI9881C_COMMAND_INSTR(0x64, 0x0f),
-> +	ILI9881C_COMMAND_INSTR(0x65, 0x10),
-> +	ILI9881C_COMMAND_INSTR(0x66, 0x11),
-> +	ILI9881C_COMMAND_INSTR(0x67, 0x08),
-> +	ILI9881C_COMMAND_INSTR(0x68, 0x02),
-> +	ILI9881C_COMMAND_INSTR(0x69, 0x0a),
-> +	ILI9881C_COMMAND_INSTR(0x6a, 0x02),
-> +	ILI9881C_COMMAND_INSTR(0x6b, 0x02),
-> +	ILI9881C_COMMAND_INSTR(0x6c, 0x02),
-> +	ILI9881C_COMMAND_INSTR(0x6d, 0x02),
-> +	ILI9881C_COMMAND_INSTR(0x6e, 0x02),
-> +	ILI9881C_COMMAND_INSTR(0x6f, 0x02),
-> +	ILI9881C_COMMAND_INSTR(0x70, 0x02),
-> +	ILI9881C_COMMAND_INSTR(0x71, 0x02),
-> +	ILI9881C_COMMAND_INSTR(0x72, 0x06),
-> +	ILI9881C_COMMAND_INSTR(0x73, 0x02),
-> +	ILI9881C_COMMAND_INSTR(0x74, 0x02),
-> +	ILI9881C_COMMAND_INSTR(0x75, 0x14),
-> +	ILI9881C_COMMAND_INSTR(0x76, 0x15),
-> +	ILI9881C_COMMAND_INSTR(0x77, 0x0f),
-> +	ILI9881C_COMMAND_INSTR(0x78, 0x0e),
-> +	ILI9881C_COMMAND_INSTR(0x79, 0x0d),
-> +	ILI9881C_COMMAND_INSTR(0x7a, 0x0c),
-> +	ILI9881C_COMMAND_INSTR(0x7b, 0x11),
-> +	ILI9881C_COMMAND_INSTR(0x7c, 0x10),
-> +	ILI9881C_COMMAND_INSTR(0x7d, 0x06),
-> +	ILI9881C_COMMAND_INSTR(0x7e, 0x02),
-> +	ILI9881C_COMMAND_INSTR(0x7f, 0x0a),
-> +	ILI9881C_COMMAND_INSTR(0x80, 0x02),
-> +	ILI9881C_COMMAND_INSTR(0x81, 0x02),
-> +	ILI9881C_COMMAND_INSTR(0x82, 0x02),
-> +	ILI9881C_COMMAND_INSTR(0x83, 0x02),
-> +	ILI9881C_COMMAND_INSTR(0x84, 0x02),
-> +	ILI9881C_COMMAND_INSTR(0x85, 0x02),
-> +	ILI9881C_COMMAND_INSTR(0x86, 0x02),
-> +	ILI9881C_COMMAND_INSTR(0x87, 0x02),
-> +	ILI9881C_COMMAND_INSTR(0x88, 0x08),
-> +	ILI9881C_COMMAND_INSTR(0x89, 0x02),
-> +	ILI9881C_COMMAND_INSTR(0x8a, 0x02),
-> +	ILI9881C_SWITCH_PAGE_INSTR(4),
-> +	ILI9881C_COMMAND_INSTR(0x00, 0x80),
-> +	ILI9881C_COMMAND_INSTR(0x70, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x71, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x66, 0xfe),
-> +	ILI9881C_COMMAND_INSTR(0x82, 0x15),
-> +	ILI9881C_COMMAND_INSTR(0x84, 0x15),
-> +	ILI9881C_COMMAND_INSTR(0x85, 0x15),
-> +	ILI9881C_COMMAND_INSTR(0x3a, 0x24),
-> +	ILI9881C_COMMAND_INSTR(0x32, 0xac),
-> +	ILI9881C_COMMAND_INSTR(0x8c, 0x80),
-> +	ILI9881C_COMMAND_INSTR(0x3c, 0xf5),
-> +	ILI9881C_COMMAND_INSTR(0x88, 0x33),
-> +	ILI9881C_SWITCH_PAGE_INSTR(1),
-> +	ILI9881C_COMMAND_INSTR(0x22, 0x0a),
-> +	ILI9881C_COMMAND_INSTR(0x31, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x53, 0x78),
-> +	ILI9881C_COMMAND_INSTR(0x55, 0x7b),
-> +	ILI9881C_COMMAND_INSTR(0x60, 0x20),
-> +	ILI9881C_COMMAND_INSTR(0x61, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0x62, 0x0d),
-> +	ILI9881C_COMMAND_INSTR(0x63, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0xa0, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0xa1, 0x10),
-> +	ILI9881C_COMMAND_INSTR(0xa2, 0x1c),
-> +	ILI9881C_COMMAND_INSTR(0xa3, 0x13),
-> +	ILI9881C_COMMAND_INSTR(0xa4, 0x15),
-> +	ILI9881C_COMMAND_INSTR(0xa5, 0x26),
-> +	ILI9881C_COMMAND_INSTR(0xa6, 0x1a),
-> +	ILI9881C_COMMAND_INSTR(0xa7, 0x1d),
-> +	ILI9881C_COMMAND_INSTR(0xa8, 0x67),
-> +	ILI9881C_COMMAND_INSTR(0xa9, 0x1c),
-> +	ILI9881C_COMMAND_INSTR(0xaa, 0x29),
-> +	ILI9881C_COMMAND_INSTR(0xab, 0x5b),
-> +	ILI9881C_COMMAND_INSTR(0xac, 0x26),
-> +	ILI9881C_COMMAND_INSTR(0xad, 0x28),
-> +	ILI9881C_COMMAND_INSTR(0xae, 0x5c),
-> +	ILI9881C_COMMAND_INSTR(0xaf, 0x30),
-> +	ILI9881C_COMMAND_INSTR(0xb0, 0x31),
-> +	ILI9881C_COMMAND_INSTR(0xb1, 0x32),
-> +	ILI9881C_COMMAND_INSTR(0xb2, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0xb1, 0x2e),
-> +	ILI9881C_COMMAND_INSTR(0xb2, 0x32),
-> +	ILI9881C_COMMAND_INSTR(0xb3, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0xb6, 0x02),
-> +	ILI9881C_COMMAND_INSTR(0xb7, 0x03),
-> +	ILI9881C_COMMAND_INSTR(0xc0, 0x00),
-> +	ILI9881C_COMMAND_INSTR(0xc1, 0x10),
-> +	ILI9881C_COMMAND_INSTR(0xc2, 0x1c),
-> +	ILI9881C_COMMAND_INSTR(0xc3, 0x13),
-> +	ILI9881C_COMMAND_INSTR(0xc4, 0x15),
-> +	ILI9881C_COMMAND_INSTR(0xc5, 0x26),
-> +	ILI9881C_COMMAND_INSTR(0xc6, 0x1a),
-> +	ILI9881C_COMMAND_INSTR(0xc7, 0x1d),
-> +	ILI9881C_COMMAND_INSTR(0xc8, 0x67),
-> +	ILI9881C_COMMAND_INSTR(0xc9, 0x1c),
-> +	ILI9881C_COMMAND_INSTR(0xca, 0x29),
-> +	ILI9881C_COMMAND_INSTR(0xcb, 0x5b),
-> +	ILI9881C_COMMAND_INSTR(0xcc, 0x26),
-> +	ILI9881C_COMMAND_INSTR(0xcd, 0x28),
-> +	ILI9881C_COMMAND_INSTR(0xce, 0x5c),
-> +	ILI9881C_COMMAND_INSTR(0xcf, 0x30),
-> +	ILI9881C_COMMAND_INSTR(0xd0, 0x31),
-> +	ILI9881C_COMMAND_INSTR(0xd1, 0x2e),
-> +	ILI9881C_COMMAND_INSTR(0xd2, 0x32),
-> +	ILI9881C_COMMAND_INSTR(0xd3, 0x00),
-> +	ILI9881C_SWITCH_PAGE_INSTR(0),
-> +};
-> +
->   static const struct ili9881c_instr w552946ab_init[] = {
->   	ILI9881C_SWITCH_PAGE_INSTR(3),
->   	ILI9881C_COMMAND_INSTR(0x01, 0x00),
-> @@ -1772,6 +1970,23 @@ static const struct drm_display_mode tl050hdv35_default_mode = {
->   	.height_mm	= 110,
->   };
+> -	rstc = devm_reset_control_array_get_shared(dev);
+> -	if (IS_ERR(rstc))
+> -		return PTR_ERR(rstc);
+> +	if (!channel->phy_data->init_bus)
+> +		return 0;
 >   
-> +static const struct drm_display_mode w552946aaa_default_mode = {
-> +	.clock		= 65000,
-> +
-> +	.hdisplay	= 720,
-> +	.hsync_start	= 720 + 52,
-> +	.hsync_end	= 720 + 52 + 8,
-> +	.htotal		= 720 + 52 + 8 + 48,
-> +
-> +	.vdisplay	= 1280,
-> +	.vsync_start	= 1280 + 16,
-> +	.vsync_end	= 1280 + 16 + 6,
-> +	.vtotal		= 1280 + 16 + 6 + 15,
-> +
-> +	.width_mm	= 68,
-> +	.height_mm	= 121,
-> +};
-> +
->   static const struct drm_display_mode w552946aba_default_mode = {
->   	.clock		= 64000,
+>   	ret = pm_runtime_resume_and_get(dev);
+>   	if (ret)
+>   		return ret;
 >   
-> @@ -1983,6 +2198,15 @@ static const struct ili9881c_desc tl050hdv35_desc = {
->   	.default_address_mode = 0x03,
->   };
+> -	ret = reset_control_deassert(rstc);
+> -	if (ret)
+> -		goto rpm_put;
+> -
+> -	ret = devm_add_action_or_reset(dev, rcar_gen3_reset_assert, rstc);
+> -	if (ret)
+> -		goto rpm_put;
+> -
+>   	val = readl(channel->base + USB2_AHB_BUS_CTR);
+>   	val &= ~USB2_AHB_BUS_CTR_MBL_MASK;
+>   	val |= USB2_AHB_BUS_CTR_MBL_INCR4;
+>   	writel(val, channel->base + USB2_AHB_BUS_CTR);
 >   
-> +static const struct ili9881c_desc w552946aaa_desc = {
-> +	.init = w552946aaa_init,
-> +	.init_length = ARRAY_SIZE(w552946aaa_init),
-> +	.mode = &w552946aaa_default_mode,
-> +	.mode_flags = MIPI_DSI_MODE_VIDEO | MIPI_DSI_MODE_VIDEO_BURST |
-> +		      MIPI_DSI_MODE_LPM | MIPI_DSI_MODE_NO_EOT_PACKET,
-> +	.lanes = 2,
-> +};
+> -rpm_put:
+>   	pm_runtime_put(dev);
+>   
+> -	return ret;
+> +	return 0;
+>   }
+>   
+>   static int rcar_gen3_phy_usb2_probe(struct platform_device *pdev)
+> @@ -846,6 +836,18 @@ static int rcar_gen3_phy_usb2_probe(struct platform_device *pdev)
+>   		}
+>   	}
+>   
+> +	channel->rstc = devm_reset_control_array_get_optional_shared(dev);
+> +	if (IS_ERR(channel->rstc))
+> +		return PTR_ERR(channel->rstc);
 > +
->   static const struct ili9881c_desc w552946aba_desc = {
->   	.init = w552946ab_init,
->   	.init_length = ARRAY_SIZE(w552946ab_init),
-> @@ -2023,6 +2247,7 @@ static const struct of_device_id ili9881c_of_match[] = {
->   	{ .compatible = "feixin,k101-im2byl02", .data = &k101_im2byl02_desc },
->   	{ .compatible = "startek,kd050hdfia020", .data = &kd050hdfia020_desc },
->   	{ .compatible = "tdo,tl050hdv35", .data = &tl050hdv35_desc },
-> +	{ .compatible = "wanchanglong,w552946aaa", .data = &w552946aaa_desc },
->   	{ .compatible = "wanchanglong,w552946aba", .data = &w552946aba_desc },
->   	{ .compatible = "ampire,am8001280g", .data = &am8001280g_desc },
->   	{ .compatible = "raspberrypi,dsi-7inch", &rpi_7inch_desc },
+> +	ret = reset_control_deassert(channel->rstc);
+> +	if (ret)
+> +		return ret;
+> +
+> +	ret = devm_add_action_or_reset(dev, rcar_gen3_reset_assert, channel->rstc);
+> +	if (ret)
+> +		return ret;
+> +
+>   	/*
+>   	 * devm_phy_create() will call pm_runtime_enable(&phy->dev);
+>   	 * And then, phy-core will manage runtime pm for this device.
+> @@ -861,11 +863,9 @@ static int rcar_gen3_phy_usb2_probe(struct platform_device *pdev)
+>   	platform_set_drvdata(pdev, channel);
+>   	channel->dev = dev;
+>   
+> -	if (channel->phy_data->init_bus) {
+> -		ret = rcar_gen3_phy_usb2_init_bus(channel);
+> -		if (ret)
+> -			goto error;
+> -	}
 
-Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
+I don't see why you changed the logic of calling rcar_gen3_phy_usb2_init_bus(),
+moving the reset setup and handling should be enough, no ?
+
+Neil
+
+> +	ret = rcar_gen3_phy_usb2_init_bus(channel);
+> +	if (ret)
+> +		goto error;
+>   
+>   	spin_lock_init(&channel->lock);
+>   	for (i = 0; i < NUM_OF_PHYS; i++) {
+> @@ -936,10 +936,38 @@ static void rcar_gen3_phy_usb2_remove(struct platform_device *pdev)
+>   	pm_runtime_disable(&pdev->dev);
+>   };
+>   
+> +static int rcar_gen3_phy_usb2_suspend(struct device *dev)
+> +{
+> +	struct rcar_gen3_chan *channel = dev_get_drvdata(dev);
+> +
+> +	return reset_control_assert(channel->rstc);
+> +}
+> +
+> +static int rcar_gen3_phy_usb2_resume(struct device *dev)
+> +{
+> +	struct rcar_gen3_chan *channel = dev_get_drvdata(dev);
+> +	int ret;
+> +
+> +	ret = reset_control_deassert(channel->rstc);
+> +	if (ret)
+> +		return ret;
+> +
+> +	ret = rcar_gen3_phy_usb2_init_bus(channel);
+> +	if (ret)
+> +		reset_control_assert(channel->rstc);
+> +
+> +	return ret;
+> +}
+> +
+> +static DEFINE_SIMPLE_DEV_PM_OPS(rcar_gen3_phy_usb2_pm_ops,
+> +				rcar_gen3_phy_usb2_suspend,
+> +				rcar_gen3_phy_usb2_resume);
+> +
+>   static struct platform_driver rcar_gen3_phy_usb2_driver = {
+>   	.driver = {
+>   		.name		= "phy_rcar_gen3_usb2",
+>   		.of_match_table	= rcar_gen3_phy_usb2_match_table,
+> +		.pm		= pm_ptr(&rcar_gen3_phy_usb2_pm_ops),
+>   	},
+>   	.probe	= rcar_gen3_phy_usb2_probe,
+>   	.remove = rcar_gen3_phy_usb2_remove,
+
 
 -- 
 linux-phy mailing list
