@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AB27DCEE342
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 16151CEE343
 	for <linux-phy@archiver.kernel.org>; Tue, 18 Nov 2025 17:18:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,56 +12,47 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CLczL7omUh6ePNJXHCx569bhbHsIrC9HufU13+lpT10=; b=u3LPDC8hhY7ivo
-	TY3ThOfQrsvf+fJtepy5QJIG0Oad6VY52JXPw3MKHW0OKxL7titeadEl8MA+JKshquJlWYD/8KRdK
-	3GfksYSyo5iu9n32w+90MM4lj8nutbkmD/uTjqyCW6UPiADWQX/Gr/oUjs4TVQYMhoTsDstfkAeNH
-	L9dY78adMseLagr3OVIkCCJJX0FOOV9a0pkYiChulxkJp0o1AnWz6l91o5v42BokQCXx0z5B+C+R7
-	//li6H3vy1lCPpl/3pT7Nk+gYY2z6mo9sbRxOJOt5/Obq9JxH1jGdluYgSWNhnv8J8tIH7DupVSdU
-	7kmzGNsYkXi+c8P/xEmg==;
+	List-Owner; bh=Mkc1AesGzh1iafAUYz1b8zVjUoGwsB8jrmds4CTy5yI=; b=akGAaC2i6xwkfD
+	EY49ys478hE8xxjD/8eaCbPZWBg0CTyz1MQAwVudT5lEJbMXr7e/91GB3QRj5MSCFDwrmumVcvDIC
+	tPxwnZ5FwWY9jK4s9Zv3VvEXNIzJlin5vK0M7rO/x4MvEUsrSasKYilKn+UuYmswC1ueHEZuPpeX5
+	+oG1XMUrZo264S/ffwq1akHZUXURoWLNjZ5bI20qeaKfPnnI7e1SL7n4fTWLaGt3t9B+rOUc236bW
+	tnvwcZNtuFWld/w+MItVhC90s71hJZfrKVroHkt8ZqkXfwWB0az0lH8QnqT8sbqH7TF8QS1V/pglh
+	wsLRELWSLPJb3eEuzd4A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vLPLZ-00000000qUu-1o6m;
+	id 1vLPLZ-00000000qVD-2sMG;
 	Tue, 18 Nov 2025 17:18:29 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vLPLW-00000000qTw-2dSI;
-	Tue, 18 Nov 2025 17:18:27 +0000
+	id 1vLPLY-00000000qUP-3wTy
+	for linux-phy@lists.infradead.org;
+	Tue, 18 Nov 2025 17:18:29 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 452E241764;
+	by tor.source.kernel.org (Postfix) with ESMTP id 5EC8C61108;
+	Tue, 18 Nov 2025 17:18:28 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6FB6FC2BCB1;
 	Tue, 18 Nov 2025 17:18:26 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A3632C4CEF5;
-	Tue, 18 Nov 2025 17:18:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1763486305;
-	bh=EEwSzAuRM0kq1EprADYYK7v3yQkWwLAJQjIqfYobBFE=;
+	s=k20201202; t=1763486307;
+	bh=kNNPtMGh+bMjabzibNEHON5AwQKYfiW3/HMQS1nmqFA=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=HG31WzSorwr9uYMM1jp8y4FNbu4d/kPuj16fkX4cfdoCG7Zpnz5qD2/cDfexk8+rg
-	 o0tC1flc/yJG1IC5wU7Q/CofQRbx9tWoXaVJcLOhCMx6ZOf/lcmuxrsQd4NiXliFO3
-	 fESWiu80RjXGA7I7qmRbP0ezuIpgEYsCtbUq1NaNZVeuEmje3M3RPJsa/RkFloy1Ec
-	 dzUj17G8wV+xF78foJ8RUbI9EttwezeeoWjSTEDIGyX1nsyYpXB7baIYGDN38LN5rP
-	 ujIl/WxR+uZGhv3JZ/YGkCAMt0iDvx6RXBT1MrbLb5pK3jl5OJQ8JIyYhEFTn0v0mg
-	 LN37zgN5/oKRg==
+	b=s54LzJ8oCwmh+oVExm+1YC3vQGHweXjYR87PxPQE5jffbmjzf1XZicoWOs4vcaD/a
+	 2TvH4453Q21vf1Jm5uXxsJyH/LFQSESGmR91wRLDZGabhaxKYKZ/YB7VYyOwbV9ew1
+	 Ga+r5EK1zm+sNbojFPBpquB9TZrpY+7DOQl50huf5FBw6TXhlQGcEDxUFh0C2oNMoG
+	 ep3YGHzWlOwNoPYmUzpNkWKMCQBU0ogqqtSP2v25aiMmxhjt2gVIGmvUzSh1KtSXN+
+	 U9V7J1fDDVX9KLLplzbdYgcVO7onoL7JX5TDFNGtIr9nWHE5kQt6rgLTUQa1hbfUr6
+	 EwDoJuEsetndg==
 From: Vinod Koul <vkoul@kernel.org>
-To: Kishon Vijay Abraham I <kishon@kernel.org>, 
- =?utf-8?q?Andr=C3=A9_Draszik?= <andre.draszik@linaro.org>, 
- Tudor Ambarus <tudor.ambarus@linaro.org>, 
- Alim Akhtar <alim.akhtar@samsung.com>, 
- Krzysztof Kozlowski <krzk@kernel.org>, 
- Peter Griffin <peter.griffin@linaro.org>
+To: kishon@kernel.org, Claudiu <claudiu.beznea@tuxon.dev>
 Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org, 
- kernel-team@android.com, William Mcvicker <willmcvicker@google.com>, 
- Manivannan Sadhasivam <mani@kernel.org>, neil.armstrong@linaro.org
-In-Reply-To: <20251112-phy-notify-pmstate-v5-0-39df622d8fcb@linaro.org>
-References: <20251112-phy-notify-pmstate-v5-0-39df622d8fcb@linaro.org>
-Subject: Re: [PATCH v5 0/2] Add new phy_notify_state() api
-Message-Id: <176348630114.62598.12188488023476027485.b4-ty@kernel.org>
-Date: Tue, 18 Nov 2025 22:48:21 +0530
+ Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+In-Reply-To: <20251117103422.4041040-1-claudiu.beznea.uj@bp.renesas.com>
+References: <20251117103422.4041040-1-claudiu.beznea.uj@bp.renesas.com>
+Subject: Re: [PATCH] phy: core: Remove extra space after '='
+Message-Id: <176348630606.62598.7063456477483942304.b4-ty@kernel.org>
+Date: Tue, 18 Nov 2025 22:48:26 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251118_091826_691762_3B3BE7DC 
-X-CRM114-Status: GOOD (  10.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,24 +70,15 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Wed, 12 Nov 2025 16:27:05 +0000, Peter Griffin wrote:
-> This series adds a new phy_notify_state() API to the phy subsystem. It is
-> designed to be used when some specific runtime configuration parameters
-> need to be changed when transitioning to the desired state which can't be
-> handled by phy_calibrate()or phy_power_{on|off}().
+On Mon, 17 Nov 2025 12:34:22 +0200, Claudiu wrote:
+> Remove extra space after '=' to comply with coding style.
 > 
-> The first user of the new API is phy-samsung-ufs and phy-gs101-ufs which
-> need to issue some register writes when entering and exiting the hibern8
-> link state.
 > 
-> [...]
 
 Applied, thanks!
 
-[1/2] phy: add new phy_notify_state() api
-      commit: 4edf654be5471659e3260be0a557eaa2ece668ab
-[2/2] phy: samsung: gs101-ufs: Add .notify_phystate() & hibern8 enter/exit values
-      commit: a1af5d2be169ecec92cb4d85c811450d68164aec
+[1/1] phy: core: Remove extra space after '='
+      commit: 54760125b026f25d329158ffb5f5569c8efcea93
 
 Best regards,
 -- 
