@@ -4,93 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 94E2FCF58C9
-	for <linux-phy@archiver.kernel.org>; Wed, 19 Nov 2025 19:23:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A73DACF58D2
+	for <linux-phy@archiver.kernel.org>; Wed, 19 Nov 2025 19:50:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:Subject:From:
+	To:Message-Id:Date:Mime-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BEQDcOTeswDLsmBjlG5SKYyIgt4ChJykn5cKcqnyJKY=; b=so+nu4vfqB6zMa
-	wo8gO+kXefvlY/hpByudUSz1Abzx8xR6Z8mlnh4pC/2D6/XA3kWYMib/MNyfy3dhDXvcpE55BT/Wu
-	066FGIJrCOld8QRR/jUFOV6dp4dsi5gF5DQT4/o9n6s7LmClMbZ7c+gx8klyeACRh6v5K+r+S9C6D
-	TjY3aS7aIK/pIz6I3kKxq55Gb9xjoryow51Vrof9j7wNq8DqgiLZxONTB4qyiozbjYIED86XFIfKw
-	3jGnWCIT+8OX36NtVlIHXAZjtv6BPl2ScfkqlOyFmJ9ymgP4d6m6RaBnNwItaEtNeD1QQVd8gr+Ss
-	WTHZ3xi7UZaAsXquohLQ==;
+	List-Owner; bh=7mkPcsWRkudNfvMQIj3oxDYmM2TuarnpnIX+OZM3qwo=; b=qSGj+sRbjLgVtr
+	R4P6midlud+7oLNqqIgbb4llWstw6uooZDIB/dWUOQDmLvh6nVP0KnzY89t6EbHYQo30aTPOqDfY7
+	h+syYeloDyBer3s+XDV/BM9zO/bauLllfcwZ4JIMiTrNbtqhwF+s+/qJohhJnbwz2GE3Ej1cYC3EU
+	nbvfD582n3DHPSB2RcxiX7b6wIGv+gfycQl4jwiK3l01j41AIJ59z8MHVzvWd6jeiUX4IW18VimL/
+	KB1wVRvvizWnufXANtkNVUClSfx1z47KUEGYzzcR0i2XTxEx3rxjRgAbq1E3kStPrtQZPVti6hXn4
+	Q65mAktVa+0wK1ODuvcw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vLnmB-00000004zmm-0M3f;
-	Wed, 19 Nov 2025 19:23:35 +0000
-Received: from mail-wm1-x32f.google.com ([2a00:1450:4864:20::32f])
+	id 1vLoBm-00000005BlQ-01qo;
+	Wed, 19 Nov 2025 19:50:02 +0000
+Received: from smtpout-04.galae.net ([185.171.202.116])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vLnm8-00000004zks-3LW3
+	id 1vLoBj-00000005Bil-019P
 	for linux-phy@lists.infradead.org;
-	Wed, 19 Nov 2025 19:23:33 +0000
-Received: by mail-wm1-x32f.google.com with SMTP id 5b1f17b1804b1-4779c672e9cso122345e9.1
-        for <linux-phy@lists.infradead.org>; Wed, 19 Nov 2025 11:23:31 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1763580210; x=1764185010; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=MLogAxNGjiigadE1rwrA8a4RXHrpBoSC3+TrVQwZY7I=;
-        b=iKZsv2jGpkgZ6tyF4ZRMPIR47T0OOsI2IWoUslzeL7dso3PCjKf68qCms2qJ1UWIq+
-         qf4MKaEZLhp3NoO3dKgJlgDFCZwAvzOhbvs6LqLWjF5rgRTAsqE64jWMt3GQXHT0I2FL
-         HXI6xBVVgDcOYQHGLkxrt83AHG0wFmXCCXqqkvi9pjW0INBPWsgQ8XHpRcjD94qfWnhZ
-         mGSY+VY42ZiwMwMtyZGIn0hBxU5AIWO6qkMtwQ9JDucW+zQOzIiCuotZKApHyORgD3vG
-         Vxx/AzIHCClZ9HFNSlr4WWKiLa5khpYp40Uv2OjczbLzlHPbp9vZ2w7+20F7BEl1VRT8
-         ILEA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1763580210; x=1764185010;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=MLogAxNGjiigadE1rwrA8a4RXHrpBoSC3+TrVQwZY7I=;
-        b=t/cGQ8a3iQ7TxF0jiXegXUIi2ITS0FTHLo8PDBeGlK8YTsgoWqmZmJiYiBjsgZvNTk
-         kaj8BMR8FJDALxG8HUdT/SMLChM2OGLAL9KPhLI95HYdY25b7o9672bniyK0t0ayRWmq
-         OxTK2AzngL4Xg4iBv6aAV8F7tndbb6NGPpihBQ5IeispLu0kpdQPWc64PveJ3VLZlTfq
-         Yzk7ciqZM1V8791L+c/T9ueWRfEnp3iL+eIRXbWh8BJxWTfyHEUweDTwQh16pRs5MxD6
-         aSEFzdVTsR8CKxfldFZ4BGw1jh4MRFTWFnL1z2SkkG79rcmphhAZNY793uuu+hdZWdFv
-         0D8g==
-X-Forwarded-Encrypted: i=1; AJvYcCW3+DUifTOebr9jZMM8yTHXU13+bwCb4z0OgykkKPIa/d3f1SdqdH1uHVMxyd5WWdI43Jq1K7JAI2g=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzLGQtkdN6pHJlJbVhUA7cTXC6ASP3GKCQe5bBFlEReCT+mP1gv
-	QNDN+vGrjSABq+uyIzh1J3mC36kUfKBNDYUM4g/qHjf6x+/xrolVMrfP
-X-Gm-Gg: ASbGncukNEpjHw/2HtjAWaK+HBUmvFW6iXPz2xCmrd3tngxheKlHDugPG9ivUax2ClO
-	LMHIi1ONzuIxW5Gr0ATX6kID/Z1NldrCJicGHSAAutZR9sM7OXQfMXv05kAUpNe1KSpzmSoOob5
-	ZFj8W45TgJF/gKvY39FBnYnWjUCTU6EyBW3d3lEEjq/VCkSoB9/4zvMg8eY3OX0rDFtwcucSNlk
-	NhxBblfhem0QCmlfdvu/bbwA/ZdBC3B8W/hkn2BYqQLoefBO6VIzuo31oQe8TIGR2++zQSm34FA
-	Q8itjMN93DIzdNjx2UtPDwoZwK1qsrYXy9rOEN306Yj40yl2aiGgJbI0RlI4Ehu+K/imalkIB8M
-	9uZqfDKU4tettJSnKXTUTlbmDgNwrDOPPFCy3l9OKm7C8rJfBjIioSFREe6pv1blu7Rw8msYp+Z
-	cUCg==
-X-Google-Smtp-Source: AGHT+IHc0rQkUlODH4e8Ox9CfugcMtuw2oByT3bP5OSjkiKT9z5TjLYVlgVIgUfYDFNn+RnRunywAw==
-X-Received: by 2002:a05:600c:46cf:b0:46e:43f0:6181 with SMTP id 5b1f17b1804b1-477b8c93834mr1695005e9.7.1763580210359;
-        Wed, 19 Nov 2025 11:23:30 -0800 (PST)
-Received: from skbuf ([2a02:2f04:d106:d600:2e45:b79d:e48e:e6b])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-477b10142d3sm72561855e9.5.2025.11.19.11.23.28
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 19 Nov 2025 11:23:29 -0800 (PST)
-Date: Wed, 19 Nov 2025 21:23:26 +0200
-From: Vladimir Oltean <olteanv@gmail.com>
-To: Horatiu Vultur <horatiu.vultur@microchip.com>
-Cc: Vladimir Oltean <vladimir.oltean@nxp.com>, vkoul@kernel.org,
-	kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
-	conor+dt@kernel.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	Daniel Golle <daniel@makrotopia.org>
-Subject: Re: [PATCH 0/2] phy: microchip: lan966x: Allow to invert N and P
- signals
-Message-ID: <20251119192326.4bflaqkh4zvz2rib@skbuf>
-References: <20251110110536.2596490-1-horatiu.vultur@microchip.com>
- <20251110114216.r6zdgg4iky7kasut@skbuf>
- <20251111095016.42byrgj33lp4bouo@DEN-DL-M31836.microchip.com>
- <20251113163023.syl6nxq2mqkxpz4z@skbuf>
- <20251114103411.rzigaoictyinmx66@DEN-DL-M31836.microchip.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20251114103411.rzigaoictyinmx66@DEN-DL-M31836.microchip.com>
+	Wed, 19 Nov 2025 19:50:00 +0000
+Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
+	by smtpout-04.galae.net (Postfix) with ESMTPS id B3D7DC11195;
+	Wed, 19 Nov 2025 19:49:33 +0000 (UTC)
+Received: from mail.galae.net (mail.galae.net [212.83.136.155])
+	by smtpout-01.galae.net (Postfix) with ESMTPS id D932060699;
+	Wed, 19 Nov 2025 19:49:55 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 9639A102F2165;
+	Wed, 19 Nov 2025 20:49:43 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
+	t=1763581794; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 content-transfer-encoding:in-reply-to:references;
+	bh=idyisNLwX/81MGmvTcXblC/vtIFhEqtsf+2ziThKUl0=;
+	b=JXf09Dz37KSxb84fPt0xCNsN6GavF6zxGYaDnAtetqDs1Km7Qg7tyl3ucVCrlP7/wI3vAH
+	Brt1JLyQr6Z57RRLIel57nTLTRpZp/sci2HRmjHC9IN8P66AnuvhSLwoAleU1e/B5bLIs9
+	iaCY9MyqzKGWVk2uTAulwuStyUlVPQz3dHD/IHrZ0mSJPM4G72sjQoDupWx8MFVv4jORI6
+	skNrYrosDF7JY6jIe6vF8gCgT7WtJ7AMpQezOWiZJq6UpmsLH1LyIMmlFoUNpI6slEiwTZ
+	GOY43hLWnRXakTMPShCKL/gGL2evdNlbs5ZmEWzSbKZqvB85NowHOsfPoUyZLA==
+Mime-Version: 1.0
+Date: Wed, 19 Nov 2025 20:49:42 +0100
+Message-Id: <DECXKE9A67HG.35AR5UZKKQ8A1@bootlin.com>
+To: "Chaoyi Chen" <chaoyi.chen@rock-chips.com>, "Chaoyi Chen"
+ <kernel@airkyi.com>, "Heikki Krogerus" <heikki.krogerus@linux.intel.com>,
+ "Greg Kroah-Hartman" <gregkh@linuxfoundation.org>, "Dmitry Baryshkov"
+ <dmitry.baryshkov@oss.qualcomm.com>, "Peter Chen" <hzpeterchen@gmail.com>,
+ "Rob Herring" <robh@kernel.org>, "Krzysztof Kozlowski"
+ <krzk+dt@kernel.org>, "Conor Dooley" <conor+dt@kernel.org>, "Vinod Koul"
+ <vkoul@kernel.org>, "Kishon Vijay Abraham I" <kishon@kernel.org>, "Heiko
+ Stuebner" <heiko@sntech.de>, "Sandy Huang" <hjc@rock-chips.com>, "Andy Yan"
+ <andy.yan@rock-chips.com>, "Yubing Zhang" <yubing.zhang@rock-chips.com>,
+ "Frank Wang" <frank.wang@rock-chips.com>, "Andrzej Hajda"
+ <andrzej.hajda@intel.com>, "Neil Armstrong" <neil.armstrong@linaro.org>,
+ "Robert Foss" <rfoss@kernel.org>, "Laurent Pinchart"
+ <Laurent.pinchart@ideasonboard.com>, "Jonas Karlman" <jonas@kwiboo.se>,
+ "Jernej Skrabec" <jernej.skrabec@gmail.com>, "Maarten Lankhorst"
+ <maarten.lankhorst@linux.intel.com>, "Maxime Ripard" <mripard@kernel.org>,
+ "Thomas Zimmermann" <tzimmermann@suse.de>, "David Airlie"
+ <airlied@gmail.com>, "Simona Vetter" <simona@ffwll.ch>, "Amit Sunil Dhamne"
+ <amitsd@google.com>, "Dragan Simic" <dsimic@manjaro.org>, "Johan Jonker"
+ <jbx6244@gmail.com>, "Diederik de Haas" <didi.debian@cknow.org>, "Peter
+ Robinson" <pbrobinson@gmail.com>
+From: "Luca Ceresoli" <luca.ceresoli@bootlin.com>
+Subject: Re: [PATCH v9 08/10] drm/rockchip: cdn-dp: Add multiple bridges to
+ support PHY port selection
+Cc: <linux-usb@vger.kernel.org>, <devicetree@vger.kernel.org>,
+ <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+ <linux-arm-kernel@lists.infradead.org>,
+ <linux-rockchip@lists.infradead.org>, <dri-devel@lists.freedesktop.org>
+X-Mailer: aerc 0.20.1
+References: <20251111105040.94-1-kernel@airkyi.com>
+ <20251111105040.94-9-kernel@airkyi.com>
+ <DE5YP3AVGOG3.OHP68Z0F6KBU@bootlin.com>
+ <b1a339e7-a011-4b4b-8988-2e3768753c85@rock-chips.com>
+ <2ebace6f-d3c4-4516-b6cb-4951de06b6c8@rock-chips.com>
+In-Reply-To: <2ebace6f-d3c4-4516-b6cb-4951de06b6c8@rock-chips.com>
+X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251119_112332_859933_A6CB9DB3 
-X-CRM114-Status: GOOD (  24.28  )
+X-CRM114-CacheID: sfid-20251119_114959_190125_1E70E032 
+X-CRM114-Status: GOOD (  16.90  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,109 +96,69 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Sorry for the delay. This time I got it but I forgot to answer.
-
-On Fri, Nov 14, 2025 at 11:34:11AM +0100, Horatiu Vultur wrote:
-> > Would it be possible to leave the SerDes muxing alone (with its
-> > #phy-cells = <2>) and just add the lane OF nodes as an extra? You can
-> > add new support for phys = <&phandle_directly_to_lane>, but that
-> > wouldn't remove the existing support.
-> 
-> So you were thinking something like this
-> ---
-> 	serdes: serdes@e202c000 {
-> 		compatible = "microchip,lan966x-serdes";
-> 		reg = <0xe202c000 0x9c>,
-> 		      <0xe2004010 0x4>;
-> 		#phy-cells = <2>;
-> 
-> 		serdes_lane_0 {
-> 		    reg = <0>;
-> 		};
-> 	};
-> 
-> 	port0 {
-> 		phys = <&serdes_lane_0>;
-> 	};
-> ---
-> 
-> Maybe it is just a silly idea but what about doing like this:
-> ---
-> 	serdes: serdes@e202c000 {
-> 		compatible = "microchip,lan966x-serdes";
-> 		reg = <0xe202c000 0x9c>,
-> 		      <0xe2004010 0x4>;
-> 		#phy-cells = <2>;
-> 		status = "disabled";
-> 
-> 		serdes_lane_0 {
-> 		    serdes-properties
-> 		};
-> 	};
-> ---
-> Then there is no change to the ports and then in the lan966x-serdes I
-> will iterate over all the child nodes and read the properties for each
-> lane.
-
-Well, if you re-read my message I think we are saying the same thing,
-but in reverse order.
-
-"Would it be possible to leave the SerDes muxing alone ... and just add
-the lane OF nodes as an extra?" <- this would be your "silly" idea where
-serdes_lane_0 just holds reg = <0> and the polarity properties.
-
-"You can add new support for phys = <&phandle_directly_to_lane>, but
-that wouldn't remove the existing support." <- this would correspond
-to the first example you gave, presented as "So you were thinking
-something like this".
-
-Actually, I wasn't saying you have to implement the first way, just that
-you can optionally do that as well.
-
-To expand on your example. The base SerDes device tree node would look
-like this:
-
-	serdes: serdes@e202c000 {
-		compatible = "microchip,lan966x-serdes";
-		reg = <0xe202c000 0x9c>,
-		      <0xe2004010 0x4>;
-		#phy-cells = <2>;
-
-		serdes_lane_0: phy@0 {
-			reg = <0>;
-			#phy-cells = <1>;
-			tx-polarity = <PHY_POL_INV>;
-		};
-	};
-
-and you could reference it like this (i.e. keep everything the same in
-the consumer as until now, to avoid breaking compatibility):
-
-	port0 {
-		phys = <&serdes 0 CU(0)>;
-	};
-
-or like this (following the principle - if you have an OF node for the
-lane, why not allow it be the PHY provider):
-
-	port0 {
-		phys = <&serdes_lane_0 CU(0)>;
-	};
-
-Just be careful that transitioning existing boards from one phandle
-format to the other is a breaking change (old kernels won't understand
-the "phys" with just 1 #phy-cell).
-
-> Anyway I can wait with this patch series until you get your changes in.
-
-I will keep you copied to the patch set which I hope to send later today.
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+SGVsbG8gQ2hhb3lpLAoKT24gTW9uIE5vdiAxNywgMjAyNSBhdCAyOjMzIEFNIENFVCwgQ2hhb3lp
+IENoZW4gd3JvdGU6Ci4uLgo+Pj4+ICvCoMKgwqAgLyogT25lIGVuZHBvaW50IG1heSBjb3JyZXNw
+b25kIHRvIG9uZSBuZXh0IGJyaWRnZS4gKi8KPj4+PiArwqDCoMKgIGZvcl9lYWNoX29mX2dyYXBo
+X3BvcnRfZW5kcG9pbnQocG9ydCwgZHBfZXApIHsKPj4+PiArwqDCoMKgwqDCoMKgwqAgc3RydWN0
+IGRldmljZV9ub2RlICpuZXh0X2JyaWRnZV9ub2RlIF9fZnJlZShkZXZpY2Vfbm9kZSkgPQo+Pj4+
+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIG9mX2dyYXBoX2dldF9yZW1vdGVfcG9ydF9wYXJlbnQo
+ZHBfZXApOwo+Pj4+ICsKPj4+PiArwqDCoMKgwqDCoMKgwqAgYnJpZGdlID0gb2ZfZHJtX2ZpbmRf
+YnJpZGdlKG5leHRfYnJpZGdlX25vZGUpOwo+Pj4+ICvCoMKgwqDCoMKgwqDCoCBpZiAoIWJyaWRn
+ZSkgewo+Pj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHJldCA9IC1FUFJPQkVfREVGRVI7Cj4+
+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqAgZ290byBvdXQ7Cj4+Pj4gK8KgwqDCoMKgwqDCoMKg
+IH0KPj4+PiArCj4+Pj4gK8KgwqDCoMKgwqDCoMKgIGRwLT5uZXh0X2JyaWRnZV92YWxpZCA9IHRy
+dWU7Cj4+Pj4gK8KgwqDCoMKgwqDCoMKgIGRwLT5uZXh0X2JyaWRnZV9saXN0W2NvdW50XS5icmlk
+Z2UgPSBicmlkZ2U7Cj4+PiBZb3UgYXJlIHN0b3JpbmcgYSByZWZlcmVuY2UgdG8gYSBkcm1fYnJp
+ZGdlLCBzbyBoYXZlIHRvIGluY3JlbWVudCB0aGUKPj4+IHJlZmNvdW50Ogo+Pj4KPj4+IMKgwqDC
+oMKgwqDCoMKgIGRwLT5uZXh0X2JyaWRnZV9saXN0W2NvdW50XS5icmlkZ2UgPSBkcm1fYnJpZGdl
+X2dldChicmlkZ2UpOwo+Pj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBeXl5eXl5e
+Xl5eXl5eXgo+Pj4KPj4+IEZZSSB0aGVyZSBpcyBhIHBsYW4gdG8gcmVwbGFjZSBvZl9kcm1fZmlu
+ZF9icmlkZ2UoKSB3aXRoIGEgZnVuY3Rpb24gdGhhdAo+Pj4gaW5jcmVhc2VzIHRoZSBicmlkZ2Ug
+cmVmY291bnQgYmVmb3JlIHJldHVybmluZyB0aGUgYnJpZGdlLCBidXQgaXQncyBub3QKPj4+IHRo
+ZXJlIHlldC4gV2hlbiB0aGF0IHdpbGwgaGFwcGVuLCB0aGUgZXhwbGljaXQgZHJtX2JyaWRnZV9n
+ZXQoKSB3b24ndCBiZQo+Pj4gbmVlZGVkIGFueW1vcmUgYW5kIHRoaXMgY29kZSBjYW4gYmUgdXBk
+YXRlZCBhY2NvcmRpbmdseS4KPgo+IE91dCBvZiBjdXJpb3NpdHksIEkgY2hlY2tlZCB0aGUgY2Fs
+bGVycyBvZiBvZl9kcm1fZmluZF9icmlkZ2UoKSwgYW5kIGl0Cj4gc2VlbXMgdGhhdCB0aGUgdmFz
+dCBtYWpvcml0eSBvZiB0aGVtIGRvIG5vdCBwYXkgYXR0ZW50aW9uIHRvIHRoZSBpbmNyZWFzZQo+
+IG9yIGRlY3JlYXNlIG9mIHJlZmVyZW5jZSBjb3VudHMuCgpUaGV5IGRvIG5vdCBjYWxsIGRybV9i
+cmlkZ2VfcHV0KCkgdG8gZGVjcmVhc2UgdGhlIHJlZmNvdW50LCBhbmQgdGhhdCdzCiJjb3JyZWN0
+IiBiZWNhdXNlIG9mX2RybV9maW5kX2JyaWRnZSgpIGRvZXMgbm90IGluY3JlYXNlIGl0LiBUaGlz
+IHdhcwp0b3RhbGx5IGNvcnJlY3QgaW4gdGhlIHBhc3QgYmVjYXVzZSBEUk0gYnJpZGdlIHJlZmNv
+dW50aW5nIGRpZCBub3QgZXhpc3QuCgpSZWZjb3VudGluZyBoYXMgYmVlbiBhZGRlZCB0byBzdXBw
+b3J0IGhvdC1wbHVnZ2FibGUgYnJpZGdlcy4gSWYgeW91IHdhbnQKbW9yZSBpbmZvLCB0aGlzIHBy
+ZXNlbnRhdGlvbiBJIGdhdmUgYXQgRUxDRSAyMDI1IGlzIGEgZ29vZCBzdW1tYXJ5LCB3aXRoCmxp
+bmtzIHRvIHJlbGV2YW50IHBhdGNoZXM6CgogKiBWaWRlbyAoc3RhcnQgYXQgMTk6MzApOiBodHRw
+czovL3d3dy55b3V0dWJlLmNvbS93YXRjaD92PW1zbUJRQlN5Wlo0CiAqIFNsaWRlcyAoc3RhcnQg
+YXQgc2xpZGUgMjcpOgogICBodHRwczovL2Jvb3RsaW4uY29tL3B1Yi9jb25mZXJlbmNlcy8yMDI1
+L2VsY2UvY2VyZXNvbGktaG90cGx1Zy1zdGF0dXMucGRmCgo+IERvZXMgdGhpcyBtZWFuIHRoYXQg
+ZXZlbiBpZiB3ZSBhZGQgcmVmZXJlbmNlIGNvdW50aW5nIGluCj4gb2ZfZHJtX2ZpbmRfYnJpZGdl
+KCksIHdlIHN0aWxsIG5lZWQgdG8gbW9kaWZ5IHRoZSBjb3JyZXNwb25kaW5nIGZ1bmN0aW9ucwo+
+IG9mIHRoZWlyIGNhbGxlcnMgYW5kIGRlY3JlYXNlIHRoZSByZWZlcmVuY2UgY291bnQgYXQgdGhl
+IGFwcHJvcHJpYXRlCj4gdGltZT8KCkV4YWN0bHkuIEkgaGF2ZSBleHBsb3JlZCB0aGF0IGFwcHJv
+YWNoIGJ1dCBpdCB0dXJuZWQgb3V0IGJlaW5nIG5vdApyZWFzb25hYmx5IGRvYWJsZSBkdWUgdG8g
+dGhlIGxhcmdlIG51bWJlciBvZiAoZGlyZWN0ICsgaW5kaXJlY3QpIGNhbGxlcnMgb2YKb2ZfZHJt
+X2ZpbmRfYnJpZGdlKCkgYXMgd2VsbCBhcyB0aGUgdHJpY2tpbmVzcyBvZiB0aG9zZSBpbnZvbHZp
+bmd0aGUKcGFuZWxfYnJpZGdlLiBTbyBNYXhpbWUgcHJvcG9zZWQgYSBkaWZmZXJlbnQgYXBwcm9h
+Y2ggWzBdOiBkZXByZWNhdGUKb2ZfZHJtX2ZpbmRfYnJpZGdlKCkgYW5kIHJlcGxhY2UgaXQgd2l0
+aCBhIGZ1bmN0aW9uIHRoYXQgaW5jcmVtZW50cyB0aGUKcmVmY291bnQsIHRoZW4gbGV0IHRoZSB2
+YXJpb3VzIGNhbGxlcnMgbW92ZSB0byB0aGUgbmV3IGZ1bmN0aW9uIG92ZXIgdGltZS4KCkVhcmxp
+ZXIgdG9kYXkgSSBzZW50IGEgc2VyaWVzIGRvaW5nIHRoYXQsIGFuZCBjb252ZXJ0aW5nIGxvdHMg
+b2YgdXNlcnMKWzFdLiBJZi93aGVuIHRoYXQgYXBwcm9hY2ggd2lsbCBiZSBhY2NlcHRlZCwgeW91
+IGNhbiB1cGRhdGUgeW91ciBkcml2ZXIgdG8KdXNlIHRoZSBuZXcgZHJtX29mX2Z1bmRfYnJpZGdl
+KCkgYW5kIHRha2UgY2FyZSBvZiBwdXR0aW5nIHRoZSByZWZlcmVuY2UKd2hlbiBhcHByb3ByaWF0
+ZS4gQnV0IHlvdSBkb24ndCBuZWVkIHRvIGRvIGFueXRoaW5nIHVudGlsIHRoZW4uCgpbMF0gaHR0
+cHM6Ly9sb3JlLmtlcm5lbC5vcmcvZHJpLWRldmVsLzIwMjUwMzE5LXN0eWxpc2gtbGltZS1tb25n
+b29zZS0wYTE4YWRAaG91YXQvClsxXSBodHRwczovL2xvcmUua2VybmVsLm9yZy9sa21sLzIwMjUx
+MTE5LWRybS1icmlkZ2UtYWxsb2MtZ2V0cHV0LWRybV9vZl9maW5kX2JyaWRnZS12MS0wLTBkYjk4
+YTdmZTQ3NEBib290bGluLmNvbS8KCj4gVGhhbmsgeW91LgoKWW91J3JlIHdlbGNvbWUuIEkgaG9w
+ZSBpdCB3YXMgYSBjbGVhciBleHBsYW5hdGlvbi4KCkx1Y2EKCi0tCkx1Y2EgQ2VyZXNvbGksIEJv
+b3RsaW4KRW1iZWRkZWQgTGludXggYW5kIEtlcm5lbCBlbmdpbmVlcmluZwpodHRwczovL2Jvb3Rs
+aW4uY29tCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFk
+ZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
+eC1waHkK
