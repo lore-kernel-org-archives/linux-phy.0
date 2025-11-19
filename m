@@ -4,84 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3400CCF34CB
-	for <linux-phy@archiver.kernel.org>; Wed, 19 Nov 2025 15:07:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 791D9CF34C9
+	for <linux-phy@archiver.kernel.org>; Wed, 19 Nov 2025 15:14:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Row/O8Gh05BqFf/urXrf5kPZaKriqQdMMlBUaO4PgqI=; b=I8ce/S+KSo6KMc
-	BhPXsrh6asrRgzJQ5RUkXS8Rog7g/RiGOy8WpXOvevPeuNl0HydTIfxrbwJGTRpRLp8Mou7q8cyFa
-	2FPdzWHKot6Yb8S8QXHm5niY2NiuzRpf/eHe9bTZdtxvB8VN/ccScyt2BjML7fNT6bdWAHptBA/2I
-	3Nrd7OtwMV176sbZEF8uXBDp6OIfv9aGtQLgf+qpN+FKI+1/nQZ83cXjp4S8lVyWjnc6pDiAkPdYO
-	7tzN6JkqiT8QYF0Udt0A9nrHsc/J3GhLCXUozwjSWMQ/cJs9AT5i1Kmu76YSbYt70MiSf/NjyBHHJ
-	JR99aBJYUEYgFo6Ffy2w==;
+	List-Owner; bh=KkuTrSSqm2I+v5kf3PDkeE65qhG+y3xvbUNFyP8OfBo=; b=GRrHtzknEDQLhC
+	XeHnp1lGVmUwTzGK2+dZqq8OfM4IfLOeSXaTxTyvpyKhW8hffstVxdPj/27oSAZljypxUCHVPJeGa
+	K/cf58+GIQXm+LLZytkVBlw/F+7eNNJj0+b2/c8DRIf9c91cZritZyqYD3DSc9wCkw+vgGp5O+ufE
+	aQxqvpv5a9tbeqTTq+bXhL8gdIkhtBiozAQNk5VuCO+X4kISzIQGd90OS9yZ5K5gjiYboBLJ1taOv
+	3yHOzUaOr4VBCilfMAdyemiVMMiCQQxAA2SDjoMjmy8J5z3vaas6X0bMagSBWFuxBXHzWfd9KR/oY
+	dCT98wrS4ipvQ/1BXsfg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vLjmP-00000003Szf-44It;
-	Wed, 19 Nov 2025 15:07:33 +0000
-Received: from mail-wr1-x42d.google.com ([2a00:1450:4864:20::42d])
+	id 1vLjt4-00000003TKf-0MOX;
+	Wed, 19 Nov 2025 15:14:26 +0000
+Received: from mail-wr1-x436.google.com ([2a00:1450:4864:20::436])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vLjmO-00000003SzG-02Q5
+	id 1vLjt1-00000003TJU-3ywD
 	for linux-phy@lists.infradead.org;
-	Wed, 19 Nov 2025 15:07:33 +0000
-Received: by mail-wr1-x42d.google.com with SMTP id ffacd0b85a97d-429c4c65485so5710063f8f.0
-        for <linux-phy@lists.infradead.org>; Wed, 19 Nov 2025 07:07:31 -0800 (PST)
+	Wed, 19 Nov 2025 15:14:25 +0000
+Received: by mail-wr1-x436.google.com with SMTP id ffacd0b85a97d-42b3c965cc4so582084f8f.0
+        for <linux-phy@lists.infradead.org>; Wed, 19 Nov 2025 07:14:23 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1763564850; x=1764169650; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1763565262; x=1764170062; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:from:references:cc:to:subject:reply-to:user-agent
          :mime-version:date:message-id:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=b8MXHRVY48CutCxVOD2Cd8MderTR1vjNZQmBDMhIq4I=;
-        b=ibZSEak7p0zoHxjkMqeGEHpAzJnfFMajQEyVK084TH6ncVD3v3GFx1vczah+cTWw3M
-         v9fgbIYaGUDsxgMkZa1EfDwyxWFWGAVQooF9wwEhnqKvjPjWbTOm86QVL4kpU+KF4FyC
-         baoDEip1r+wQ8Was0H+a1UyMqZDU9yNamXBl3SrnQd5GZSsvIn6AvZj/RkBZR9cMPQmu
-         xJcFCMxlUurUySHZDcbYZ2jHXgtS9jPCDLfKCSNdRj9CTl/guPgiWi4R0MGNeSOwMgVm
-         7v5XollDt73fLDcEwh7eFE66qrQNv3SthsOhwHoD2ztJEM+wP8JlLgAUtdkDc0rjhFu6
-         S7wQ==
+        bh=lkHlND8AocQhZqckGnaaNO+3qDUjMRfPMX7RKCDl4Hs=;
+        b=IPZ7shpsBpflBTVBFn+9BA3CvPV/DmK3Oi1+i1EpzTy2OPULT9s/dNxY/uVrrUYPh3
+         5p4g57oi36biaL1C5qVhfjZUCR66K+KTKNXiLpETlkNo7inDQmYgBzuOydTNqalzS9Us
+         zpge5M+cNhDsacK2tAa2OPxYtvZoUI8SMI2ijIeqlyGwCfD9I10bXdXFWs7sMt0ciA9a
+         tH9riYJxhbxMP1rRDot2WzggZ6QLFS/W/2LTPJFoY2s9M/5grfJy2GGaWTcER/xO35Bz
+         QUE3oQnGMIXewJymlwMqacO8ntr/el0eK0fT3tyw1r8exxbpor8MRSS7AhJ7NDhYzEJa
+         yNdw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1763564850; x=1764169650;
+        d=1e100.net; s=20230601; t=1763565262; x=1764170062;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:from:references:cc:to:subject:reply-to:user-agent
          :mime-version:date:message-id:x-gm-gg:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=b8MXHRVY48CutCxVOD2Cd8MderTR1vjNZQmBDMhIq4I=;
-        b=lK/OjCcWQ4V6LnRU3IS8wQRb1kjx7RPM9fw5OCl9CI1Xg+mHFNBU7dQxA9ShCpzmzl
-         sp4blyrfPAC2z+U2HAwmIHIeliPfbVWqV3JXITefTGUBrMdlG45ema38KeAWK+gLzFFI
-         W5+kY4VPy0cCevnb+/ouzvlKIlrZ0OZezTLFZinz8FMYkIpUcXya4KMQlrOnubBdy+kq
-         EwfclJTUDVv0VaIz+S+zlV7zuPk0Xid8gj6lR1wNl1SGEVD25T0GOBUngozGcRRFGVU6
-         liXPgzNFHm0jKcBQDZQ7Oj62Zwtip4cCOj05Ld6j7V2CU1M2SbliTJc67MqWh8kBx9OI
-         AzOg==
-X-Gm-Message-State: AOJu0YzDEzQr/qEPD9XrOz7T1ryH+AhM1+kx+cfDr0FHKDENDN7SaYOC
-	w3E3q7QHP1P/t30P7fkDpQsc1/bZobmVXn3bpy/Qdh7gVuyTtQGmqyoAkrgCBvwColM=
-X-Gm-Gg: ASbGnct/sy2ob34JW2xWYhp3p9ECB99yLjO1rTDqBYmD1rGrpAioEq0BRROu280yBZ7
-	5D5uVuWXvUzgppvEvyoUoQ1EWww4iUoXqb2+wIcsndysXatUkPc3Vc0qzx65VD+J58kK1GJzXvk
-	aeZfJJcb3rPP6ebX5KOkCAgMwXEwgPIjuAPFN5pk1YgUJvQhjX8S3shQMCOQDNR9ig3rYJXfjUT
-	qmsW64nkxUopQNG9VU0m0o/GGm4lZFQMMZhXKBB/ejawA28bNfNrwY7uxgI91/tZCE1mLeWASrl
-	RXF1rVpnZj66rug7teIyUZWPVx6y+88VHBU+AIPIu24Th6DwD4LhM84PPEuENMUhtFiPzNNgvgK
-	fUeLw15a2whdCmWx0QlzWJDNOrMYnC2ly1+ZNJyiM1ml4KZwcXAADWxWiWqzomjtys2C+jD/unb
-	IHRqNab8mfw5WBash86iVv/qZ/zgqF/RciUB6tiUIofwefWHmdfb4+RrBDPOFo+F0=
-X-Google-Smtp-Source: AGHT+IHdI5AOlmNDX5m4IHoZ74FO5t2segG/koratGEOW9qb5av5beCTKzXqT4NvIhC8HV6z9TOzRg==
-X-Received: by 2002:a05:6000:2010:b0:42b:55a1:214f with SMTP id ffacd0b85a97d-42b59340d6dmr20687485f8f.21.1763564849819;
-        Wed, 19 Nov 2025 07:07:29 -0800 (PST)
+        bh=lkHlND8AocQhZqckGnaaNO+3qDUjMRfPMX7RKCDl4Hs=;
+        b=v5xXhxjy9p2JSUrn3FC+zHaQYx5GQioyc7SM+Mrd/RaYS/LDH5cLPy8XEBNLCVRyaS
+         llEsYuGPaRPch3Qxu1IBqVsFxdQ3NceZRGfkMPsTcSK4rGMGMnJzJHMTG9F87xuLP3Ih
+         XfhA5YHxuPbdF2gz+CMRyl+gtZCSZtSYM2bQ5BZ+RCNiDrvZrbVh9zK+Oma+Z8SYCfcX
+         LmoOr0PrI4ihdz4/ADjjqUNnqwd1SR9Y1wfRpjdXK6hVCsEUpIx1OrIonO8SprV1eO1B
+         Rn36LnxmiKA8ymx3L0NCh67vNS4EC+l3gxK7vrfwv0qXNbwkrUXiCa7gBLUa+5/0YSGo
+         0QJA==
+X-Forwarded-Encrypted: i=1; AJvYcCX+sOUfqhd1QOe3bgJf5JXyFZmw0LwejDwEM7sT9tG9tQ/GVy5XPcVJI88haLgyRRboznsPwGxdc0Q=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yyu7wjB/c+4biJH+aK18iuXZODK1wB0Lb2OxciQA4mL3qka2otS
+	rhfq4BuXFXPJcykDSzuBmizIbaxjGS9J4B3gQwthXQyLKM8bFeUN428LTJ+u68TDORI=
+X-Gm-Gg: ASbGncuB7Ov1v7C5ef477QNLyPF+AZnRrINGyk1zybaqrc1cGdror1xdNf6cZs/bOv/
+	SSD7ZzW53uKbpggQ3/p/xiwKL5DG/KDfiC5dYn5AxdLP5JjLWq+z2KQRYlpbuODTH53af87r8Ly
+	VAD8tSsDLMPYEXuoJC2vZba1Xxyey+GRUCy44Xk0dX+ms9F27PFlPwwf46BS+4G+lCF/G4BupNs
+	UDO6Y9h744pR35AXwghf93WwvDFGUbL6jHf4pBzQzTEGdkJW0cANNmkzzfVZZfHmfsjvRTpE4Zr
+	6ld4Zs7Zb7WXlGnu/wFVnAel8wk3a04jU4ZyIYJ+z4+w6Jj9BYqZQ9p9PfaJmJ4QbUj2+PPIazw
+	zhJWcr9y3oOxF/kyo3ZjyGYQUc72DNxTked1EiOTKj/uaHTIDzBJ4cDuRgHSw1noUe8cMpzYbMa
+	3EdrnfNsfqxOT7Ac4joPSSMSVu2P/7+QLmuFxy87t6hLoKxJ4w+HI1oFzD2pSJnZ4jmNhMXOvrn
+	A==
+X-Google-Smtp-Source: AGHT+IGrnkcaARv5IxTtNZ8mZofbwJq+G/I7rO36uq8AMERCsRXjwtLlV07M5eZa+gjQ6GroqAvyvQ==
+X-Received: by 2002:a05:6000:1ca:b0:429:b8c7:1848 with SMTP id ffacd0b85a97d-42cb220e976mr2816927f8f.19.1763565261828;
+        Wed, 19 Nov 2025 07:14:21 -0800 (PST)
 Received: from ?IPV6:2a01:e0a:3d9:2080:263d:925b:a11f:ae36? ([2a01:e0a:3d9:2080:263d:925b:a11f:ae36])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-42b53e91f2dsm39622909f8f.19.2025.11.19.07.07.28
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-42b53e845bdsm37266810f8f.12.2025.11.19.07.14.20
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 19 Nov 2025 07:07:29 -0800 (PST)
-Message-ID: <461244a1-3bc1-478f-b97f-b0607375e596@linaro.org>
-Date: Wed, 19 Nov 2025 16:07:28 +0100
+        Wed, 19 Nov 2025 07:14:21 -0800 (PST)
+Message-ID: <d737b075-ca2f-483e-833f-c8e8a4cbc31d@linaro.org>
+Date: Wed, 19 Nov 2025 16:14:20 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] phy: broadcom: bcm63xx-usbh: fix section mismatches
-To: Johan Hovold <johan@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
- stable@vger.kernel.org, =?UTF-8?Q?=C3=81lvaro_Fern=C3=A1ndez_Rojas?=
- <noltari@gmail.com>
-References: <20251017054537.6884-1-johan@kernel.org>
+Subject: Re: [PATCH] phy: cadence-torrent: restore parent clock for refclk
+ during resume
+To: "Thomas Richard (TI.com)" <thomas.richard@bootlin.com>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Gregory CLEMENT <gregory.clement@bootlin.com>, Udit Kumar <u-kumar1@ti.com>,
+ Prasanth Mantena <p-mantena@ti.com>, Abhash Kumar <a-kumar2@ti.com>,
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20251110-phy-cadence-torrent-resume-restore-refclk-parent-v1-1-1be87af7d19e@bootlin.com>
 From: Neil Armstrong <neil.armstrong@linaro.org>
 Content-Language: en-US, fr
 Autocrypt: addr=neil.armstrong@linaro.org; keydata=
@@ -109,10 +113,10 @@ Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
  QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
 Organization: Linaro
-In-Reply-To: <20251017054537.6884-1-johan@kernel.org>
+In-Reply-To: <20251110-phy-cadence-torrent-resume-restore-refclk-parent-v1-1-1be87af7d19e@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251119_070732_090029_35469A01 
-X-CRM114-Status: GOOD (  17.75  )
+X-CRM114-CacheID: sfid-20251119_071424_024001_51C1DE02 
+X-CRM114-Status: GOOD (  16.41  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -125,47 +129,81 @@ List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
 Reply-To: Neil Armstrong <neil.armstrong@linaro.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMTAvMTcvMjUgMDc6NDUsIEpvaGFuIEhvdm9sZCB3cm90ZToKPiBQbGF0Zm9ybSBkcml2ZXJz
-IGNhbiBiZSBwcm9iZWQgYWZ0ZXIgdGhlaXIgaW5pdCBzZWN0aW9ucyBoYXZlIGJlZW4KPiBkaXNj
-YXJkZWQgKGUuZy4gb24gcHJvYmUgZGVmZXJyYWwgb3IgbWFudWFsIHJlYmluZCB0aHJvdWdoIHN5
-c2ZzKSBzbyB0aGUKPiBwcm9iZSBmdW5jdGlvbiBhbmQgbWF0Y2ggdGFibGUgbXVzdCBub3QgbGl2
-ZSBpbiBpbml0Lgo+IAo+IEZpeGVzOiA3ODNmNmQzZGNmMzUgKCJwaHk6IGJjbTYzeHgtdXNiaDog
-QWRkIEJDTTYzeHggVVNCSCBkcml2ZXIiKQo+IENjOiBzdGFibGVAdmdlci5rZXJuZWwub3JnCSMg
-NS45Cj4gQ2M6IMOBbHZhcm8gRmVybsOhbmRleiBSb2phcyA8bm9sdGFyaUBnbWFpbC5jb20+Cj4g
-U2lnbmVkLW9mZi1ieTogSm9oYW4gSG92b2xkIDxqb2hhbkBrZXJuZWwub3JnPgo+IC0tLQo+ICAg
-ZHJpdmVycy9waHkvYnJvYWRjb20vcGh5LWJjbTYzeHgtdXNiaC5jIHwgNiArKystLS0KPiAgIDEg
-ZmlsZSBjaGFuZ2VkLCAzIGluc2VydGlvbnMoKyksIDMgZGVsZXRpb25zKC0pCj4gCj4gZGlmZiAt
-LWdpdCBhL2RyaXZlcnMvcGh5L2Jyb2FkY29tL3BoeS1iY202M3h4LXVzYmguYyBiL2RyaXZlcnMv
-cGh5L2Jyb2FkY29tL3BoeS1iY202M3h4LXVzYmguYwo+IGluZGV4IDY0NzY0NGRlMDQxYi4uMjlm
-ZDY3OTFiYWU2IDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvcGh5L2Jyb2FkY29tL3BoeS1iY202M3h4
-LXVzYmguYwo+ICsrKyBiL2RyaXZlcnMvcGh5L2Jyb2FkY29tL3BoeS1iY202M3h4LXVzYmguYwo+
-IEBAIC0zNzUsNyArMzc1LDcgQEAgc3RhdGljIHN0cnVjdCBwaHkgKmJjbTYzeHhfdXNiaF9waHlf
-eGxhdGUoc3RydWN0IGRldmljZSAqZGV2LAo+ICAgCXJldHVybiBvZl9waHlfc2ltcGxlX3hsYXRl
-KGRldiwgYXJncyk7Cj4gICB9Cj4gICAKPiAtc3RhdGljIGludCBfX2luaXQgYmNtNjN4eF91c2Jo
-X3BoeV9wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+ICtzdGF0aWMgaW50IGJj
-bTYzeHhfdXNiaF9waHlfcHJvYmUoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKPiAgIHsK
-PiAgIAlzdHJ1Y3QgZGV2aWNlICpkZXYgPSAmcGRldi0+ZGV2Owo+ICAgCXN0cnVjdCBiY202M3h4
-X3VzYmhfcGh5CSp1c2JoOwo+IEBAIC00MzIsNyArNDMyLDcgQEAgc3RhdGljIGludCBfX2luaXQg
-YmNtNjN4eF91c2JoX3BoeV9wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+ICAg
-CXJldHVybiAwOwo+ICAgfQo+ICAgCj4gLXN0YXRpYyBjb25zdCBzdHJ1Y3Qgb2ZfZGV2aWNlX2lk
-IGJjbTYzeHhfdXNiaF9waHlfaWRzW10gX19pbml0Y29uc3QgPSB7Cj4gK3N0YXRpYyBjb25zdCBz
-dHJ1Y3Qgb2ZfZGV2aWNlX2lkIGJjbTYzeHhfdXNiaF9waHlfaWRzW10gPSB7Cj4gICAJeyAuY29t
-cGF0aWJsZSA9ICJicmNtLGJjbTYzMTgtdXNiaC1waHkiLCAuZGF0YSA9ICZ1c2JoX2JjbTYzMTgg
-fSwKPiAgIAl7IC5jb21wYXRpYmxlID0gImJyY20sYmNtNjMyOC11c2JoLXBoeSIsIC5kYXRhID0g
-JnVzYmhfYmNtNjMyOCB9LAo+ICAgCXsgLmNvbXBhdGlibGUgPSAiYnJjbSxiY202MzU4LXVzYmgt
-cGh5IiwgLmRhdGEgPSAmdXNiaF9iY202MzU4IH0sCj4gQEAgLTQ0Myw3ICs0NDMsNyBAQCBzdGF0
-aWMgY29uc3Qgc3RydWN0IG9mX2RldmljZV9pZCBiY202M3h4X3VzYmhfcGh5X2lkc1tdIF9faW5p
-dGNvbnN0ID0gewo+ICAgfTsKPiAgIE1PRFVMRV9ERVZJQ0VfVEFCTEUob2YsIGJjbTYzeHhfdXNi
-aF9waHlfaWRzKTsKPiAgIAo+IC1zdGF0aWMgc3RydWN0IHBsYXRmb3JtX2RyaXZlciBiY202M3h4
-X3VzYmhfcGh5X2RyaXZlciBfX3JlZmRhdGEgPSB7Cj4gK3N0YXRpYyBzdHJ1Y3QgcGxhdGZvcm1f
-ZHJpdmVyIGJjbTYzeHhfdXNiaF9waHlfZHJpdmVyID0gewo+ICAgCS5kcml2ZXIJPSB7Cj4gICAJ
-CS5uYW1lID0gImJjbTYzeHgtdXNiaC1waHkiLAo+ICAgCQkub2ZfbWF0Y2hfdGFibGUgPSBiY202
-M3h4X3VzYmhfcGh5X2lkcywKClJldmlld2VkLWJ5OiBOZWlsIEFybXN0cm9uZyA8bmVpbC5hcm1z
-dHJvbmdAbGluYXJvLm9yZz4KCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBs
-aXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LXBoeQo=
+Hi,
+
+On 11/10/25 15:07, Thomas Richard (TI.com) wrote:
+> While suspend and resume, parent clock config for refclk was getting lost.
+> So save and restore it in suspend and resume operations.
+> 
+> Signed-off-by: Thomas Richard (TI.com) <thomas.richard@bootlin.com>
+> ---
+>   drivers/phy/cadence/phy-cadence-torrent.c | 11 +++++++++++
+>   1 file changed, 11 insertions(+)
+> 
+> diff --git a/drivers/phy/cadence/phy-cadence-torrent.c b/drivers/phy/cadence/phy-cadence-torrent.c
+> index 37fa4bad6bd7..17d09e7d866d 100644
+> --- a/drivers/phy/cadence/phy-cadence-torrent.c
+> +++ b/drivers/phy/cadence/phy-cadence-torrent.c
+> @@ -384,6 +384,7 @@ struct cdns_torrent_phy {
+>   	struct regmap_field *phy_reset_ctrl;
+>   	struct regmap_field *phy_pcs_iso_link_ctrl_1[MAX_NUM_LANES];
+>   	struct clk_hw_onecell_data *clk_hw_data;
+> +	int refclk_parent;
+
+Can't this be stored in struct cdns_torrent_refclk_driver ?
+
+>   };
+>   
+>   enum phy_powerstate {
+> @@ -3329,8 +3330,13 @@ static const struct cdns_torrent_vals sgmii_qsgmii_xcvr_diag_ln_vals = {
+>   static int cdns_torrent_phy_suspend_noirq(struct device *dev)
+>   {
+>   	struct cdns_torrent_phy *cdns_phy = dev_get_drvdata(dev);
+> +	struct clk_hw *refclk_hw = cdns_phy->clk_hw_data->hws[CDNS_TORRENT_REFCLK_DRIVER];
+> +	struct cdns_torrent_refclk_driver *refclk_driver = to_cdns_torrent_refclk_driver(refclk_hw);
+>   	int i;
+>   
+> +	regmap_field_read(refclk_driver->cmn_fields[CMN_CDIAG_REFCLK_DRV0_CTRL_4],
+> +			  &cdns_phy->refclk_parent);
+
+Can't cdns_torrent_refclk_driver_get_parent()/set_parent() be used instead ?
+Or even better add cdns_torrent_refclk_driver_suspend/_resume() functions to handle that.
+
+Neil
+
+> +
+>   	reset_control_assert(cdns_phy->phy_rst);
+>   	reset_control_assert(cdns_phy->apb_rst);
+>   	for (i = 0; i < cdns_phy->nsubnodes; i++)
+> @@ -3349,9 +3355,14 @@ static int cdns_torrent_phy_suspend_noirq(struct device *dev)
+>   static int cdns_torrent_phy_resume_noirq(struct device *dev)
+>   {
+>   	struct cdns_torrent_phy *cdns_phy = dev_get_drvdata(dev);
+> +	struct clk_hw *refclk_hw = cdns_phy->clk_hw_data->hws[CDNS_TORRENT_REFCLK_DRIVER];
+> +	struct cdns_torrent_refclk_driver *refclk_driver = to_cdns_torrent_refclk_driver(refclk_hw);
+>   	int node = cdns_phy->nsubnodes;
+>   	int ret, i;
+>   
+> +	regmap_field_write(refclk_driver->cmn_fields[CMN_CDIAG_REFCLK_DRV0_CTRL_4],
+> +			   cdns_phy->refclk_parent);
+> +
+>   	ret = cdns_torrent_clk(cdns_phy);
+>   	if (ret)
+>   		return ret;
+> 
+> ---
+> base-commit: 415559c31bd4f19fde440f759d529a448743fc8c
+> change-id: 20251110-phy-cadence-torrent-resume-restore-refclk-parent-f59fb5fc69fa
+> 
+> Best regards,
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
