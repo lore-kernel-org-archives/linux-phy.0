@@ -4,88 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5ED49CF2599
-	for <linux-phy@archiver.kernel.org>; Wed, 19 Nov 2025 08:25:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 313F9CF2597
+	for <linux-phy@archiver.kernel.org>; Wed, 19 Nov 2025 08:34:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NcClONPTp/zl7OGNNnvNnFbAVCkUXhbU2N+gub6Q5Jg=; b=yS5sB0i+Phr6aN
-	lAorJFEiP5u0vZds5vma6FBtRR4xn6VbSJDQ66p3rz/69+ZwLylK1LxMHsfMcmYljyrMagZdQiEDr
-	F2+MtkU/ci7fI0rN1Lu97VP4D/iN+BJ01QQp9RTA+jGzE4UHg1EMzpzEFn6KhT/UWHF5svJqWPmpS
-	d2MnAw7wT/ahUKXOvBDVYngiErgLSMRJJtLSDJBmVY+8eMnb54LSTpLrkBqEr0FxD3DUOGxnYJVL+
-	PVNrUDxjV3sANOJhbgX91nRYryJCZH+j3UUnQbndClywQlFKEX9kiiKz/IEcKDwu/KK6581J27ywj
-	0+X/5Xd8Z+/aDGHFERzA==;
+	List-Owner; bh=UwwbjBYeOqmWJM1p3joD6313z9FCfNVY9YtlHWfeJII=; b=Jn6Xluzz9m6GMR
+	qCbKzNVhczIuewdQ+mt/K+AXkjvsNSCSQFhrOEkVDcelJvne0ewg7xLC5gARIZTEyuAPwqdYYeOjE
+	rjyUty0zNJHEevOduijTkvG5ZW1yXfgl8uQ3Q5mwto/PqcIbnT2FU2QvdHrcPOvTRZCxn4Oy/hkhR
+	fGn9Q8xtCHAHWxY7y2LODZnGMpG0RmS8xxifAFiiw6/06hfmaBjBrlOhhI0WkJBGND9Gh8nmebN9x
+	Xx4LsLEQU6tHJEWkEPzx8QcLfjY4rvh9zCq/UOTLAJc6pogQiOhEw0AGHDKaPsaDtuNAlu50CLZTZ
+	Prj2a1e2l0g9kAflN3nQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vLdVV-00000002mvT-0Lbj;
-	Wed, 19 Nov 2025 08:25:41 +0000
-Received: from mail-wr1-x42b.google.com ([2a00:1450:4864:20::42b])
+	id 1vLdds-00000002nj0-2ii3;
+	Wed, 19 Nov 2025 08:34:20 +0000
+Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vLdVS-00000002muT-2Tux
+	id 1vLddp-00000002nhT-35k9
 	for linux-phy@lists.infradead.org;
-	Wed, 19 Nov 2025 08:25:39 +0000
-Received: by mail-wr1-x42b.google.com with SMTP id ffacd0b85a97d-42bb288c219so3147999f8f.1
-        for <linux-phy@lists.infradead.org>; Wed, 19 Nov 2025 00:25:37 -0800 (PST)
+	Wed, 19 Nov 2025 08:34:19 +0000
+Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-477a1c28778so38885485e9.3
+        for <linux-phy@lists.infradead.org>; Wed, 19 Nov 2025 00:34:17 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1763540737; x=1764145537; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1763541256; x=1764146056; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:from:references:cc:to:subject:reply-to:user-agent
          :mime-version:date:message-id:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=xBBcd3+nheVdQUVhqxqKoLH5dFTFqo2xtG50pxJYM/k=;
-        b=URT/sys9RL2TqxsBspGP19AqkblJtZZUIYi0gL9bcoH6bPwfRev/2sDqgBcA2k89EB
-         zNgHfKkuiqOHyfBynCkHi4GXI2c1004FqviB+m7FTbGveSHj2yNOZ18PH3BSy03N31u3
-         GqpW2ntzCRWGlou1dv4saNzThTfdtXOhxhwhjuijdioj/L/W277ktOvo9mOffnHRVCyv
-         X1W9nI0XuIPC73W+h1PXTGpCB3dwWcgpPZR8fFzE21njE+2Xevf2nMD8MU9eR2X0r7dP
-         DpoFK+xruazZ4GZRFiQNu55XGfXbzjQYKf8oaf7hw37a5w7bNmm1IjwVdHbCO2cL9LYh
-         G8uA==
+        bh=w+/AlCqKHgv+5W9JRi5XzSllXLdQfh7XBTDVysKOlDI=;
+        b=JhWCBQ5YNmBWDdBNxu4mo2uRIQrviibXcMKVlFtlbalwWd2fLQVaZuw/DD3XNiOWD8
+         +KrGsYbj8E+n6or2YX4HZMs7hWYtloBrI09etSyQZnrfNHfTQaVYpcpcny//7hmnntdk
+         F+vmX1dft+ffojS4zXSlQBfjbCciJLIBXLqnZOUSgLWbjpsXWqsFm9Uptrazm8Gj6iQB
+         B5r+04S1sTt/BuQ1vvik3xeTWARov7vrQ0DYe0ePDtP9VEaLnobgCuL+jNNaiw5tAjhh
+         gDPw13pb5d5vLhigbEKflFoKz4x9VSdnoQljNJy44wLI+wf0nn5fKXniQF3M/uSLBgJ9
+         Ze1A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1763540737; x=1764145537;
+        d=1e100.net; s=20230601; t=1763541256; x=1764146056;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:from:references:cc:to:subject:reply-to:user-agent
          :mime-version:date:message-id:x-gm-gg:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=xBBcd3+nheVdQUVhqxqKoLH5dFTFqo2xtG50pxJYM/k=;
-        b=l0gfbla2tEgHDF+5JcQBU+TyfdC3QLDe/bhO8hEz2ivw2JBoZ+aStty+XfH5v7IfOy
-         lmnfuqGSNVTnYxZoEKVCvWnfQWeLjlRWilhFcZ9/3DjvpXXkLKltp9IqGAOF5FKhTW5Y
-         bzA3+H1SXrdsbaPJkeUnjE9ZSlj0ylYrU1F7c51ZRgPPcuJrjb8VcobsS53LsT5hrKcY
-         8fKIw9MlI0416DjmCVay9TcGjPA014eIXyYCTH2VKTQGpcpwMC6TtZkMPVN+s9auf+MK
-         pX5uWEcJhsO6qh33pCjLJKuhlDueDhRj4KTplxCpeUb8DSphwxZ1hnHu1ryCcl/1ueFj
-         75+w==
-X-Forwarded-Encrypted: i=1; AJvYcCXCkPg6zK3t1LCmR4ys/54Aly9Dvk6AExOPO1G2H24TTixZv99mrz4aQg3tpzFQGkzx0Zi3zt4sV88=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxRu++8nwNlzzdrcYU1Qn+NVYVLzhdxyVDRficUaTaWApHO5Pzc
-	fwhUCAopIsDZf5cW9DwK76IxNsBeMtn5cpbXdASNDscdlvDh+o96fZRrTY8s+F2vvCtsy2KpssZ
-	5lgF4
-X-Gm-Gg: ASbGncu8rbnfmsZ5Akp65s7Ut5XzZOueYWOSwOkMb3U70QjyORwA2stblGqVyWEcobn
-	5JDhugI8m2l1OpSMu7WtEyRt7qvlfXAYMOt+lFbb0rm0BJfCm/s14l5qWtE+z0C6QTqNlwl91KI
-	NmpCaDynr54lcorAulDhXnDOrZeocZPLdb3pMS8wKvq+832sC27r5VqajMj5FVSHIHDbCd1Vs7C
-	2ISUyW681jBqRDwOWxEeHjNTGtV2nUqiFevSZ3lxFGQT0gkiO08ZTqK/kB/sTqRCbeX4SqR7XFv
-	WDBzBtAT1lI2nbDVKSXJO4CLAaUbV6cp9MTBgs8QnNzcc2Va4e+0yv8pvWSweZxnstiONMpdVfx
-	Hq4pA8Kxg3OmcpZ601T3ljxY1081/m9kc/UxtuhzHyfOaV7UCEOiDTKcGz9RKV4RS99S4keDEYA
-	0pjXTCboi7WunJdb37TwBsWOWXydAX8r3j5+1vHabGWfzPN3KGg4AcpXrxAOp6nns=
-X-Google-Smtp-Source: AGHT+IF/Pf8OhHHAkH/l86ffTNQDrKGEqlTVtrpGBWQTevcyQWVHh3qnGd6Me/o5osf1E2M94f66fw==
-X-Received: by 2002:a05:6000:24c7:b0:42b:3dbe:3a43 with SMTP id ffacd0b85a97d-42b5938fa99mr18992058f8f.50.1763540736555;
-        Wed, 19 Nov 2025 00:25:36 -0800 (PST)
+        bh=w+/AlCqKHgv+5W9JRi5XzSllXLdQfh7XBTDVysKOlDI=;
+        b=tIc2+GjGmMn3wfIqijOpVCyzwPmwgHqftUCKuRYOJHPhyapYqcqYt1FRHE8RBKO9Ip
+         hDUGfvru4Q/lyhXLayL1N1L9nq21F0DsAFnJRJs01zUUmJskI0llwVynGTEfgjAz+Fia
+         7b7djvuKDpXyRMIwrXH6ldiaZRDffVhiGGYSoPKCYp+opPC3Tbv8A9Od6sWMOIodHTK5
+         wXC9HGsVxdysY6p/HAh7NIqoFxbIacwqDq1oAR8xfdp3TSrUnAXgg9QbH9L9DffX0eI+
+         kYKPVKmfrROnNhzwb8Sj8SwjmKT8P40homo0mfMdvRcTVQ7zSNpPT1Uma/u6P3/3S+yC
+         HtnQ==
+X-Forwarded-Encrypted: i=1; AJvYcCUZk67PIs8lN10QsIioL49Tv5neBNPK2+rxN2YVXoJWhvdzoKgGfJIvPBPTJnfp2I8p4u9tBXqbinI=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxrT6gK2A8lcddhUi94ggTuRCyQCzlDTIJSBRMJAP9QouClJ8mG
+	UWBksAjRdOwua0oNJPQsLrc5SuP9FLS3kmN6DxWF/vHFwyc0J4BX36OcUY4twj//bOQ=
+X-Gm-Gg: ASbGncu910EQ4E6o/FAeHk7JzlzsuwsfJPWvEKhxoS2wdwv2QryBi3eCSF9gcRticHn
+	iBN8A/XJ2DXDkT/9gk4owI0+AcHDZFWUj7wgK4gYTYFCS0qGY8WICZ0Wlcxe6JkfXEueMRUco25
+	oRK+aDUHguIzm38GBrp2VXL6krNUz7p+7q8i8OyyaY9JsMkVNdvsp16ei59+C8g5eXDIN54Gub1
+	uN1E0ceIQJMp8ymZ9vGjLhjEuWE4csmTVhh4DBstquWH6mUB22ko1v8IIdybOBlcOWt3ExOAf5V
+	1yEbe/bTArdsdtGDuqeAzgIrQN9EG91N37qRebAZuNMgL7w1katJb3yFrCdiA1eGb2QFsdo5AWV
+	bQBtT6PbN5CU4IqewXlDRjFy9oQx5yemyjmeRj5OXHkE/uHyxsjhoxk2SJSP66sy8lSCsGELvU+
+	9J9UhUDu35Dvs3VmFof/IRrfBMDb+CH+Wb8QRsLa307sOVFpWRrhRwjDMeuVB/ZLppm1I7GfxKr
+	w==
+X-Google-Smtp-Source: AGHT+IHVp2PGi8oPNPdtYdqf3AmS609D+mT7/vePIQoYDCp+mgoVIZvn2Zu2WgFpzUuhzVS0VARa9A==
+X-Received: by 2002:a05:600c:c177:b0:477:7975:30ea with SMTP id 5b1f17b1804b1-4778fea1336mr196095645e9.29.1763541255662;
+        Wed, 19 Nov 2025 00:34:15 -0800 (PST)
 Received: from ?IPV6:2a01:e0a:3d9:2080:94e4:fa88:414d:e1ad? ([2a01:e0a:3d9:2080:94e4:fa88:414d:e1ad])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-42b53e846afsm35816408f8f.13.2025.11.19.00.25.35
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-477afb54774sm19335905e9.3.2025.11.19.00.34.14
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 19 Nov 2025 00:25:36 -0800 (PST)
-Message-ID: <25e9e2ae-d280-4022-8c8a-41df5009011a@linaro.org>
-Date: Wed, 19 Nov 2025 09:25:35 +0100
+        Wed, 19 Nov 2025 00:34:15 -0800 (PST)
+Message-ID: <ae29237b-6b72-4755-9816-8ea0f935aeb5@linaro.org>
+Date: Wed, 19 Nov 2025 09:34:14 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH RESEND 0/3] Fixes for phy-rockchip-samsung-hdptx
-To: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Heiko Stuebner <heiko@sntech.de>, Dmitry Baryshkov <lumag@kernel.org>,
- Algea Cao <algea.cao@rock-chips.com>
-Cc: kernel@collabora.com, linux-phy@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org, Andy Yan <andy.yan@rock-chips.com>
-References: <20251028-phy-hdptx-fixes-v1-0-ecc642a59d94@collabora.com>
+Subject: Re: [PATCH] phy: ti: gmii-sel: Add a sanity check on the phy_id
+To: Dan Carpenter <dan.carpenter@linaro.org>, Vinod Koul <vkoul@kernel.org>
+Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
+ Maxime Chevallier <maxime.chevallier@bootlin.com>,
+ Michael Walle <mwalle@kernel.org>, Andrew Davis <afd@ti.com>,
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+ kernel-janitors@vger.kernel.org
+References: <aPJpB-QI8FMpFGOk@stanley.mountain>
 From: Neil Armstrong <neil.armstrong@linaro.org>
 Content-Language: en-US, fr
 Autocrypt: addr=neil.armstrong@linaro.org; keydata=
@@ -113,10 +112,10 @@ Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
  QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
 Organization: Linaro
-In-Reply-To: <20251028-phy-hdptx-fixes-v1-0-ecc642a59d94@collabora.com>
+In-Reply-To: <aPJpB-QI8FMpFGOk@stanley.mountain>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251119_002538_656759_C5FBAB91 
-X-CRM114-Status: GOOD (  10.53  )
+X-CRM114-CacheID: sfid-20251119_003417_805485_94C00B66 
+X-CRM114-Status: GOOD (  16.19  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -134,30 +133,32 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 10/28/25 09:00, Cristian Ciocaltea wrote:
-> These patches were initially part of the HDMI 2.1 FRL support series [1]
-> aiming to provide a few fixes for the Samsung HDMI/eDP Transmitter Combo
-> PHY.
+On 10/17/25 18:04, Dan Carpenter wrote:
+> The "phy_id" comes from the device tree so it's going to be correct.
+> But static checkers sometimes complain when we have an upper bounds
+> check with no lower bounds check.  Also it's a bit unusual that the
+> lowest valid number is 1 instead of 0 so adding a check could
+> potentially help someone.
 > 
-> I'm sending this as a distinct series right now, since the FRL part
-> might require additional time for review.
-> 
-> [1] https://lore.kernel.org/r/20250818-phy-hdptx-frl-v3-0-c79997d8bb2b@collabora.com
-> 
-> Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+> Signed-off-by: Dan Carpenter <dan.carpenter@linaro.org>
 > ---
-> Cristian Ciocaltea (3):
->        phy: rockchip: samsung-hdptx: Fix reported clock rate in high bpc mode
->        phy: rockchip: samsung-hdptx: Reduce ROPLL loop bandwidth
->        phy: rockchip: samsung-hdptx: Prevent Inter-Pair Skew from exceeding the limits
+>   drivers/phy/ti/phy-gmii-sel.c | 2 +-
+>   1 file changed, 1 insertion(+), 1 deletion(-)
 > 
->   drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 27 +++++++++++++----------
->   1 file changed, 15 insertions(+), 12 deletions(-)
-> ---
-> base-commit: 33bcf93b9a6b028758105680f8b538a31bc563cf
-> change-id: 20250902-phy-hdptx-fixes-7308ffea4c6a
+> diff --git a/drivers/phy/ti/phy-gmii-sel.c b/drivers/phy/ti/phy-gmii-sel.c
+> index 50adabb867cb..6cfe2538d15b 100644
+> --- a/drivers/phy/ti/phy-gmii-sel.c
+> +++ b/drivers/phy/ti/phy-gmii-sel.c
+> @@ -341,7 +341,7 @@ static struct phy *phy_gmii_sel_of_xlate(struct device *dev,
+>   	if (priv->soc_data->features & BIT(PHY_GMII_SEL_RMII_IO_CLK_EN) &&
+>   	    args->args_count < 2)
+>   		return ERR_PTR(-EINVAL);
+> -	if (phy_id > priv->num_ports)
+> +	if (phy_id < 1 || phy_id > priv->num_ports)
+>   		return ERR_PTR(-EINVAL);
+>   	if (phy_id != priv->if_phys[phy_id - 1].id)
+>   		return ERR_PTR(-EINVAL);
 
-For the serie:
 Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 
 -- 
