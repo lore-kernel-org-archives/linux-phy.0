@@ -4,92 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E80DACF2597
-	for <linux-phy@archiver.kernel.org>; Wed, 19 Nov 2025 08:41:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 39B93CF258C
+	for <linux-phy@archiver.kernel.org>; Wed, 19 Nov 2025 08:42:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:To:Subject:From:
-	MIME-Version:Date:Message-ID:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=y6uRDfy4+z1eGZSeRsx+Ud9Gv9kcyTeZr3fqgXyUoUw=; b=J9BvWgzATpXam5NQVBl3JK9+j7
-	8RiNAjeZ//xGBte631oiSuwAQfmVXbJBiLyB/KMqtWJw/QAtfTgpYR9VUVT37yn991W68xDO7iSPA
-	SoQIYFClbUMOhbxhIv5Zi3Pg2NRWCp3pdzdXpcebSKd+utigfYDlQQz43VhauKhfJnz31stT4xRDg
-	HnJnZpHwxAwXqswixmPlu0MvpLGIT9I20VsCy6Aonr8IrKAxyMEXVGsDMzL6A130yjWVRE6zrwttJ
-	ZQyGvxznzHK2zpwToMrNRWLPg53bIKV3WZXRkHzLR3yNTpixgAYEnOa+VtarAGYkaTBIXfsdCvr8V
-	X94ZqWTg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=10j1jYt5egwI/TVyTV15ZQJT6eovbos/cm0Se/mMKT0=; b=P5ZEZJru+VV223
+	W+7KudzdQM+o1CtsOwvhgJBNfJ/+RvbxbhXdjGNTpLQT/o863Bao1vyV5Hertu21fZafN9zqVGWIN
+	rVp7zoxrikwG5ZqDTiK1cudOMUXVQlApx+oWxJnPkUOACpAfnq5IPS5rQFSmlfpBSehlbFDZQwTAo
+	whBjVtMztp1QwVEjspHW2qSPB17ay1Xg49zd9O0f6D5IASrEDGwGpmfoRAVPraOlkRQRdRx1a/4OO
+	iYD2f6G6b3+Ga24nlxkSz4UwzdHWT+9zHgzERPHPShoTridr5Bl8xtLXCXy08lgqasyfhoPWkXk1z
+	ooCHjnFZ5MdDT3I4yOCA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vLdl7-00000002oNC-2zhx;
-	Wed, 19 Nov 2025 08:41:49 +0000
-Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
+	id 1vLdlm-00000002oTC-4B6k;
+	Wed, 19 Nov 2025 08:42:30 +0000
+Received: from mail-wm1-x334.google.com ([2a00:1450:4864:20::334])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vLdl5-00000002oLP-0Ne3
+	id 1vLdlk-00000002oSl-3wry
 	for linux-phy@lists.infradead.org;
-	Wed, 19 Nov 2025 08:41:48 +0000
-Received: by mail-wm1-x32b.google.com with SMTP id 5b1f17b1804b1-477a219db05so22075375e9.2
-        for <linux-phy@lists.infradead.org>; Wed, 19 Nov 2025 00:41:46 -0800 (PST)
+	Wed, 19 Nov 2025 08:42:30 +0000
+Received: by mail-wm1-x334.google.com with SMTP id 5b1f17b1804b1-4779aa4f928so44376995e9.1
+        for <linux-phy@lists.infradead.org>; Wed, 19 Nov 2025 00:42:28 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1763541705; x=1764146505; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1763541747; x=1764146547; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:to:subject:reply-to:from:user-agent
+         :content-language:from:references:cc:to:subject:reply-to:user-agent
          :mime-version:date:message-id:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=B38cCNHEIiFRoBT5tfPUwxAQfE53n8AjY5vTLhKGZRg=;
-        b=get6bBFXOlYJ7NLJcvwZMgAh8pue7S6b8vhoDwsZhecIoAO6InKobMlm6+3nZ4x8az
-         CIs9Fq0NmzOcDz7IfAr2UhDNIykulROALJ8xEfX0VUZuNk9n0Km3PS2Cr+dXeXcav7ZK
-         O7CSrkgP0uHUhZB79Qzhmi5WW6c+qUkLKrRvSzQyP4Rf946uL2vcsEx/7T2MNpqu0zIv
-         PsoDESL49ZrSxPD0fd+QtJjM2mFBsF+1wC5Az7unBTKqWl+VNHZ+SsUnPz3DoS2v+5v8
-         LG1dNyJZYf9iD21919wvdk1SzUchLSidPlN8dpjJ7SnsrXblqjS8xxO3/DETjmISxvMv
-         lfBg==
+        bh=yi5k6FhTRnszTU4ub2HtHQHWRa8+xtRinFDw1eNRn5c=;
+        b=Iku/bLFqJuRpiGatR5XE7NGlFkSl6AT4/G/epYputzzAzRA4CXvsB8QyeDnoYHVOMO
+         T2RjzRzNhevBXjRMO1ckSUBTTmVVpMdbfFiHyhbgFYM/f11Xq/ZiNVTewPT42uy1Saoo
+         QSG7hXvIt7WHCu0i5PruW9pmYfJzKkkBAuMzeOOebA/Y16u08ty93hPqe6HmyAxNPAqh
+         S/F+MQAEaJhHRWkJKfv61d0UbYZSHm3r9hUtXBx4TmxRrdGBdPvVxwbwlZlrbA2hnnZD
+         qcfFMfzW4rDNAJ8m0U2EdS6owa6bKEDVSWliIQ2VtDpIXYk4DU9oby96ejVT6iNGNpML
+         RsZQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1763541705; x=1764146505;
+        d=1e100.net; s=20230601; t=1763541747; x=1764146547;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:to:subject:reply-to:from:user-agent
+         :content-language:from:references:cc:to:subject:reply-to:user-agent
          :mime-version:date:message-id:x-gm-gg:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=B38cCNHEIiFRoBT5tfPUwxAQfE53n8AjY5vTLhKGZRg=;
-        b=kO5E5UjtFh1X4DsaaSAg8BUBICTzW2hvMn/YdSviw8MxcAvA9h4UdbIquZ0eIPjlTw
-         WItwxkMrX+KrD7p8kkBgEb0YUTgEgEfMTGgbBD250bo/eGQ6DR0/HmCPJ0OW1z7eWUbp
-         Wt1KWpVn0QnNUGQRFu8YGv3XMtcDjbzs6JXplr72tOMEB46pdyvrbeldJ8d9eOVMlA88
-         eyHjjyu54OA38GVV7YYbStMWm7suNHeAHjF26/PWkqVHCv26g6DD/VjlqbfAfvvNuDCx
-         xjQcTRCJgqpXsJUmrQRaIhyAWx32ub4xHW92ynvYvDqvqEalIAPM8+v7Nc8rOdxXs3Q8
-         nGyA==
-X-Forwarded-Encrypted: i=1; AJvYcCWFsxfORg6NzrR1BOOWxR4n1I3flBNPbZoqjVtm6jZboEnwGDBlodbqdP2GjFv/pGidvJ3w/H+DqQg=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwquU1evNDulrc7tOACUjdxCXPPJ1OGwQxm0K6LCMJdcEAz8VUq
-	0RO3mU/l8HJVf0ZGz0ayIF1ruaefbsjQ1As2fpK4WmKczu5bP7QrZYHZNXCf09cIV/i4cubHdke
-	Zomqf
-X-Gm-Gg: ASbGncvZVIdfku/gDukojl/gekxmi7JuK5aveaES4RCkKBilMr0HwbLoepSUOAr9uqP
-	vwqfxS1LFtUBb1TJZCZ73+vJkcC4M4OdKhVmvFjh2w0L0WBYSqjuV9ejvujoc5RjVdp+W9qYqua
-	Mq8hQT+52h+8T1K+mAHV6AqopVzn59+TNpA/hsSm5UsDeItnC7xDF71Qxz0HhPqep4DLwOiEbEi
-	u/VMoIj1sdz68ZfgYNtzoub34kYDTNpRyRoU7+sHP57hRbkQAtFtEXjkjpggd4qmgMqjq2PHdpw
-	TYFq59Ew/Q8zmqtnjRFRjDb9hljqpGru0wR/kvIPn/7l11RXHSt7u4VeUuRJuVBTW0Vtb6ZSn2M
-	HOJtv0s5lwCR2ZYsTCd4ncKLCxjjejLcJRWJrGyL1W77XKlurlHkzRZGFhsvlkJ1XStoQ65am92
-	+ZuqJftfyvmhFV70qrDy+fNmp7L573TPGNXhRYsDPaoRWCMt0di2cAc1pnn4zn0g5pVOLknY765
-	w==
-X-Google-Smtp-Source: AGHT+IE7QRxp9Ipzy2DFnLBSlO7Q8Aq7iSpY4noVScdDKaIbMEMvRmchKALFaeoev2EnwQ3DjU6Nzg==
-X-Received: by 2002:a05:600c:630d:b0:471:1765:839c with SMTP id 5b1f17b1804b1-4778fea2bf7mr165071695e9.20.1763541705081;
-        Wed, 19 Nov 2025 00:41:45 -0800 (PST)
+        bh=yi5k6FhTRnszTU4ub2HtHQHWRa8+xtRinFDw1eNRn5c=;
+        b=PoZAGo6UtLv/3PGhbUgOzWY/mkNLA4jbjM+jSOc9Jm+PN6fDzHdOUILBNUn5DZVXg/
+         pUq2dMmjXj0lLBTqKdLXbnXSDnX1SMS6xhjPmUfZxfh4lSpUXHuOA0TKW3fV9On25ewG
+         2c08PzQQHuEIXwIwjB4EkmKLLy87H0QwV5UESl2TwoymnXBkaABC5l4D+7JhlrXwxZw9
+         Fzq+xW5KJm6N9IjtK6FSXR6Cw62g/v2BwltNYYOibdrd+DqoiOJff7WZr0EiYtG8AOgd
+         ZuePt8N9oGd0a7lk/nWleoSv8g/yxRRoy5WyYfQsJtpaMvPlrv3c17qxwsN3Ta8aLcA2
+         rZgw==
+X-Forwarded-Encrypted: i=1; AJvYcCV3iV7GxjOfxGpbIb1TUhjXM7V6rHAayZTFjDldMVibbK3BqIhueppS93Qo8YwdwhjnUcnMKx8+Et0=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyxhLqRXcFf/r8PBtKqub1taNN3bAaNSZ4N7ASEf5j0UjAgdqP/
+	IAdvJgCFzYzdEvblZ74soR1mnIYYItOFBoLNsqpSYCjFcESBKwqQ7Ae92rBKSLR7GyU=
+X-Gm-Gg: ASbGncvkgRyu5C9PE9XmR+uOIStukQdiDOKR7RmECQ0x/+dA1cwfMEPxGF+mNZ4NQoU
+	pUujdbmQ4jwpJvdaZGOAACn/LKD6tL3K/B214aFxG3612BEp608bo0XklyAylqlMBv6l+QEVJJA
+	/d291Nw8OiE2UcWciV/pG8m7XeC0lYd1yHZz3qdOu7VynLT5hmoI4zGKvnq7dRDF/0FXF3APRcR
+	cNMRbmrXAOvesvJ4QNiyUA37NegapJ1htUao3xiYfkPn0j9CMEE6z26b0Hbxt7jM131gE/oYJU1
+	3fOcHpAxI1/mygihmaQfOIMWRDGZQ/EQkApFrFAxTGrZl4EGcpFvL4nHfvbCU8zwJyM9lOnpzf7
+	vr09jk2ZXmCTwa1efxlLVQsO6yRuT3YQbg+yvWq19Jona8HWZct9ecsRMsjIn8WPcG3Xgo+fxCz
+	/RSKXGRS/wnoG2VKIt2z23PiL1oMlynIYLE8GXROaAi8EoU1L2YcMQAjbrEimRxcc=
+X-Google-Smtp-Source: AGHT+IFApKg1U/eP5JzH7mZkCFrpbynYjZzdOp8s89mlzmKzHMfZxlrZ3gIewT2FA4JlyOqRRgVWog==
+X-Received: by 2002:a5d:5f90:0:b0:429:8a71:d57 with SMTP id ffacd0b85a97d-42b59356aadmr17938218f8f.27.1763541746951;
+        Wed, 19 Nov 2025 00:42:26 -0800 (PST)
 Received: from ?IPV6:2a01:e0a:3d9:2080:94e4:fa88:414d:e1ad? ([2a01:e0a:3d9:2080:94e4:fa88:414d:e1ad])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-477a9e051d8sm35832865e9.5.2025.11.19.00.41.44
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-42b53e7ae88sm36000475f8f.6.2025.11.19.00.42.26
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 19 Nov 2025 00:41:44 -0800 (PST)
-Message-ID: <615111b0-b2ad-4ace-b9b0-70e92389db83@linaro.org>
-Date: Wed, 19 Nov 2025 09:41:43 +0100
+        Wed, 19 Nov 2025 00:42:26 -0800 (PST)
+Message-ID: <bbf1fc3d-228a-42ad-97ee-8a03003b08b5@linaro.org>
+Date: Wed, 19 Nov 2025 09:42:25 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] phy: qcom: m31-eusb2: Update init sequence to set
+ PHY_ENABLE
+To: Wesley Cheng <wesley.cheng@oss.qualcomm.com>, kishon@kernel.org,
+ vkoul@kernel.org
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org, Ronak Raheja <ronak.raheja@oss.qualcomm.com>
+References: <20250920032158.242725-1-wesley.cheng@oss.qualcomm.com>
 From: Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH] phy: qcom-qmp-combo: Use regulator_bulk_data with
- init_load_uA for regulator setup
-To: Faisal Hassan <faisal.hassan@oss.qualcomm.com>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
- Johan Hovold <johan+linaro@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
- Wesley Cheng <quic_wcheng@quicinc.com>,
- Konrad Dybcio <quic_kdybcio@quicinc.com>, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-References: <20250922135901.2067-1-faisal.hassan@oss.qualcomm.com>
 Content-Language: en-US, fr
 Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
@@ -116,10 +110,10 @@ Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
  QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
 Organization: Linaro
-In-Reply-To: <20250922135901.2067-1-faisal.hassan@oss.qualcomm.com>
+In-Reply-To: <20250920032158.242725-1-wesley.cheng@oss.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251119_004147_171528_D9069F4C 
-X-CRM114-Status: GOOD (  23.11  )
+X-CRM114-CacheID: sfid-20251119_004229_002355_6927683A 
+X-CRM114-Status: GOOD (  14.30  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -137,102 +131,40 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 9/22/25 15:59, Faisal Hassan wrote:
-> Replace the custom qmp_regulator_data structure with the standard
-> regulator_bulk_data and use the init_load_uA field to set regulator
-> load during initialization.
+On 9/20/25 05:21, Wesley Cheng wrote:
+> From: Ronak Raheja <ronak.raheja@oss.qualcomm.com>
 > 
-> This change simplifies the regulator setup by removing manual
-> allocation and load configuration logic, and leverages
-> devm_regulator_bulk_get_const() to automatically apply load settings
-> before enabling regulators.
+> Certain platforms may not have the PHY_ENABLE bit set on power on reset.
+> Update the current sequence to explicitly write to enable the PHY_ENABLE
+> bit.  This ensures that regardless of the platform, the PHY is properly
+> enabled.
 > 
-> Signed-off-by: Faisal Hassan <faisal.hassan@oss.qualcomm.com>
+> Signed-off-by: Ronak Raheja <ronak.raheja@oss.qualcomm.com>
+> Signed-off-by: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
 > ---
->   drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 49 +++--------------------
->   1 file changed, 6 insertions(+), 43 deletions(-)
+>   drivers/phy/qualcomm/phy-qcom-m31-eusb2.c | 2 ++
+>   1 file changed, 2 insertions(+)
 > 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> index f07d097b129f..97262ed63700 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-> @@ -1636,14 +1636,9 @@ static const struct qmp_phy_init_tbl x1e80100_usb43dp_pcs_usb_tbl[] = {
+> diff --git a/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c b/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c
+> index bf32572566c4..fbf5e999ca7a 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c
+> @@ -25,6 +25,7 @@
+>   #define POR				BIT(1)
+>   
+>   #define USB_PHY_HS_PHY_CTRL_COMMON0	(0x54)
+> +#define PHY_ENABLE			BIT(0)
+>   #define SIDDQ_SEL			BIT(1)
+>   #define SIDDQ				BIT(2)
+>   #define FSEL				GENMASK(6, 4)
+> @@ -81,6 +82,7 @@ struct m31_eusb2_priv_data {
+>   static const struct m31_phy_tbl_entry m31_eusb2_setup_tbl[] = {
+>   	M31_EUSB_PHY_INIT_CFG(USB_PHY_CFG0, UTMI_PHY_CMN_CTRL_OVERRIDE_EN, 1),
+>   	M31_EUSB_PHY_INIT_CFG(USB_PHY_UTMI_CTRL5, POR, 1),
+> +	M31_EUSB_PHY_INIT_CFG(USB_PHY_HS_PHY_CTRL_COMMON0, PHY_ENABLE, 1),
+>   	M31_EUSB_PHY_INIT_CFG(USB_PHY_CFG1, PLL_EN, 1),
+>   	M31_EUSB_PHY_INIT_CFG(USB_PHY_FSEL_SEL, FSEL_SEL, 1),
 >   };
->   
->   /* list of regulators */
-> -struct qmp_regulator_data {
-> -	const char *name;
-> -	unsigned int enable_load;
-> -};
-> -
-> -static struct qmp_regulator_data qmp_phy_vreg_l[] = {
-> -	{ .name = "vdda-phy", .enable_load = 21800 },
-> -	{ .name = "vdda-pll", .enable_load = 36000 },
-> +static struct regulator_bulk_data qmp_phy_vreg_l[] = {
-> +	{ .supply = "vdda-phy", .init_load_uA = 21800, },
-> +	{ .supply = "vdda-pll", .init_load_uA = 36000, },
->   };
->   
->   static const u8 qmp_dp_v3_pre_emphasis_hbr3_hbr2[4][4] = {
-> @@ -1801,7 +1796,7 @@ struct qmp_phy_cfg {
->   	const char * const *reset_list;
->   	int num_resets;
->   	/* regulators to be requested */
-> -	const struct qmp_regulator_data *vreg_list;
-> +	const struct regulator_bulk_data *vreg_list;
->   	int num_vregs;
->   
->   	/* array of registers with different offsets */
-> @@ -3403,39 +3398,6 @@ static const struct dev_pm_ops qmp_combo_pm_ops = {
->   			   qmp_combo_runtime_resume, NULL)
->   };
->   
-> -static int qmp_combo_vreg_init(struct qmp_combo *qmp)
-> -{
-> -	const struct qmp_phy_cfg *cfg = qmp->cfg;
-> -	struct device *dev = qmp->dev;
-> -	int num = cfg->num_vregs;
-> -	int ret, i;
-> -
-> -	qmp->vregs = devm_kcalloc(dev, num, sizeof(*qmp->vregs), GFP_KERNEL);
-> -	if (!qmp->vregs)
-> -		return -ENOMEM;
-> -
-> -	for (i = 0; i < num; i++)
-> -		qmp->vregs[i].supply = cfg->vreg_list[i].name;
-> -
-> -	ret = devm_regulator_bulk_get(dev, num, qmp->vregs);
-> -	if (ret) {
-> -		dev_err(dev, "failed at devm_regulator_bulk_get\n");
-> -		return ret;
-> -	}
-> -
-> -	for (i = 0; i < num; i++) {
-> -		ret = regulator_set_load(qmp->vregs[i].consumer,
-> -					cfg->vreg_list[i].enable_load);
-> -		if (ret) {
-> -			dev_err(dev, "failed to set load at %s\n",
-> -				qmp->vregs[i].supply);
-> -			return ret;
-> -		}
-> -	}
-> -
-> -	return 0;
-> -}
-> -
->   static int qmp_combo_reset_init(struct qmp_combo *qmp)
->   {
->   	const struct qmp_phy_cfg *cfg = qmp->cfg;
-> @@ -4003,7 +3965,8 @@ static int qmp_combo_probe(struct platform_device *pdev)
->   	if (ret)
->   		return ret;
->   
-> -	ret = qmp_combo_vreg_init(qmp);
-> +	ret = devm_regulator_bulk_get_const(dev, qmp->cfg->num_vregs,
-> +					qmp->cfg->vreg_list, &qmp->vregs);
->   	if (ret)
->   		return ret;
->   
 
 Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 
