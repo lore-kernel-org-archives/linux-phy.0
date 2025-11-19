@@ -4,54 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E57A7CF58C4
-	for <linux-phy@archiver.kernel.org>; Wed, 19 Nov 2025 18:07:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E6D38CF58C9
+	for <linux-phy@archiver.kernel.org>; Wed, 19 Nov 2025 18:42:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:Cc:From:Subject:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7SIzuSWlmi2vDA//TQDmG6ZkQvvonZm8DIJP1GNwE2c=; b=Vpj82zjuffO7CY
-	ZWyHOr2yLysH5oXT9OmXypiB0/EGixZvFigjTuRe8pR+aolDjLEkNslTeJAEL4ge+4b0fGvNDGuRC
-	ym5XY58DVp81yHlSHrDedvVM/6iqOz6FFsDlknPjLgf8GGntE1Cu0TXGVulxeCMunELTlNRZuX4Il
-	kbTzlc3cNMvLLjNcTA2x5fpDvYQ7jWPpbGhuNtZTVJFRs8IGfR7VSQUojRKDrVxdQsn0U4IpalQw0
-	YMaf/cASrKewcu9Mj+uUTRvj6m+njk2Z/G1l+sFPGLZHnqqDuDcOqh36Det3JxAOLESvr0GFTArRt
-	2cKPMTukzysIl9MKQV5Q==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=U9LnRbRwqimMxuORvA5a3/Jca/lkD6WebQvMSziibZU=; b=QoM6SNfc5vfD8lq5Ns7qfnsb2i
+	2H6Lidy90qS9zZx8MpkK/go52s2aTvnuwqx4rqmCRngvluJZIeWNNjvbeLgf9mfUfzoEjazBahyiO
+	SP6PXWOkeAJWerPH+73LacePylZvtoDES0T8umUslqtTQYRFj5G/BMYM1lQIm2KMYoiDFajkAWMEU
+	OjYSzGadSWlZqh55F60rwY/1suq8qtEXqpdvrP/+M3LDbQa0msTK1Mi+5XHWLb8snEAPJmBpBIsHa
+	jJgraR2bssUY4NPHzU4QlDISL6OKMwF01Y1P7064ccH+sMsFOI8SiIJ+IM3Fcx47eAFgLKo0t2AVa
+	eKRjlGgg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vLmaC-00000004Q9a-2Cfo;
-	Wed, 19 Nov 2025 18:07:08 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1vLn8i-00000004hPZ-2IB3;
+	Wed, 19 Nov 2025 18:42:48 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vLmaB-00000004Q9N-3s4T
-	for linux-phy@lists.infradead.org;
-	Wed, 19 Nov 2025 18:07:07 +0000
+	id 1vLn8f-00000004hNu-2oHU;
+	Wed, 19 Nov 2025 18:42:46 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id F12CB6019F;
-	Wed, 19 Nov 2025 18:07:06 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8A69EC4CEF5;
-	Wed, 19 Nov 2025 18:07:06 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 0D0254360A;
+	Wed, 19 Nov 2025 18:42:45 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 23360C4CEF5;
+	Wed, 19 Nov 2025 18:42:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1763575626;
-	bh=4d5rcTTQrqxAwHFaEaXz/InkRKSrlbPARDoNksmiCEg=;
-	h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
-	b=pKbOQFwwmhYoWDKR/2FuVI6VMRMd2zKEVIsN/acQhKxl93XDSD8FvrTjPG6ihhTIy
-	 guT6Ut5ihv5Fhtcy9iUQK4WG2TSkhRNhyV1NjhouV8/GS0LJ11Zr9rOueb2PWiwm28
-	 pncSlYGs7R4Jr/X5Vy6cBOxI4ApYpSPkiY0ypF529Pevez9JJtjHhFXUg1+XG/ny9T
-	 bzU6ZwsCslyUwjbQ5QE3y4rNMifQH0uySdwkIZYSkY5Pesl4tagnEkDk7YzAMIOsS5
-	 OTDalcGxrUW/2FL4Zy/dKaCJomPx/UdfRuQDDpXoYv55z7uhQwIrHRWzT2BCbjn4aL
-	 2z+Si8wQvktwA==
+	s=k20201202; t=1763577764;
+	bh=d+20Uj7V/wB53t3E3ACYXIU/QyzVL9+KYCOlwfL2P6s=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=EdRjYlhhDT9zjqscZl9dlk/VT2v65GFWB3iqHMzaQ4z8NdllYI0b1kSjnUUz5X5As
+	 UgF/WhAJt0vsYmMaV6bLjCxpKGQwamYcp2JNPSeQSbN2UxLWnLS6JJqLX2faMrUGzf
+	 oYwOaEAMmod6faMCkejLzbEJ2C75HCLHat1HLOPlRK3zKoxUEfNwB/rTVIEkgKBF/c
+	 +4Jyd7+usTtI1J7mKfFdwJu9l8vG3vosYdvG2btZbhB3rL5twxTFCkDnirM71iUsP4
+	 NOFrrtdQbgWHEnu3hJpo/LU7j1I+c0+3ylyPLfB3tF1pNfrH5xcRU4RgwtxWMHVVPt
+	 BRNWVIKBrXAvQ==
+Date: Wed, 19 Nov 2025 18:42:37 +0000
+From: Conor Dooley <conor@kernel.org>
+To: Sjoerd Simons <sjoerd@collabora.com>
+Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	Ryder Lee <ryder.lee@mediatek.com>,
+	Jianjun Wang <jianjun.wang@mediatek.com>,
+	Bjorn Helgaas <bhelgaas@google.com>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Chunfeng Yun <chunfeng.yun@mediatek.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Lee Jones <lee@kernel.org>, Andrew Lunn <andrew+netdev@lunn.ch>,
+	"David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+	Lorenzo Bianconi <lorenzo@kernel.org>, Felix Fietkau <nbd@nbd.name>,
+	kernel@collabora.com, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-mediatek@lists.infradead.org, linux-pci@vger.kernel.org,
+	linux-phy@lists.infradead.org, netdev@vger.kernel.org,
+	Daniel Golle <daniel@makrotopia.org>,
+	Bryan Hinton <bryan@bryanhinton.com>
+Subject: Re: [PATCH v4 06/11] dt-bindings: net: mediatek,net: Correct
+ bindings for MT7981
+Message-ID: <20251119-snowless-thrower-0c4743a2820c@spud>
+References: <20251115-openwrt-one-network-v4-0-48cbda2969ac@collabora.com>
+ <20251115-openwrt-one-network-v4-6-48cbda2969ac@collabora.com>
 MIME-Version: 1.0
-In-Reply-To: <20251119-macb-phy-v3-3-e9a7be186a33@bootlin.com>
-References: <20251119-macb-phy-v3-0-e9a7be186a33@bootlin.com> <20251119-macb-phy-v3-3-e9a7be186a33@bootlin.com>
-Subject: Re: [PATCH v3 3/7] clk: eyeq: use the auxiliary device creation helper
-From: Stephen Boyd <sboyd@kernel.org>
-Cc: linux-mips@vger.kernel.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, linux-clk@vger.kernel.org, =?utf-8?q?Beno=C3=AEt?= Monin <benoit.monin@bootlin.com>, Maxime Chevallier <maxime.chevallier@bootlin.com>, Tawfik Bayouk <tawfik.bayouk@mobileye.com>, Thomas Petazzoni <thomas.petazzoni@bootlin.com>, =?utf-8?q?Th=C3=A9o?= Lebrun <theo.lebrun@bootlin.com>, Jerome Brunet <jbrunet@baylibre.com>
-To: Conor Dooley <conor+dt@kernel.org>, =?utf-8?q?Gr=C3=A9gory?= Clement <gregory.clement@bootlin.com>, Kishon Vijay Abraham I <kishon@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Michael Turquette <mturquette@baylibre.com>, Philipp Zabel <p.zabel@pengutronix.de>, Rob Herring <robh@kernel.org>, Thomas Bogendoerfer <tsbogend@alpha.franken.de>, =?utf-8?q?Th=C3=A9o?= Lebrun <theo.lebrun@bootlin.com>, Vinod Koul <vkoul@kernel.org>, Vladimir Kondratiev <vladimir.kondratiev@mobileye.com>
-Date: Wed, 19 Nov 2025 10:07:04 -0800
-Message-ID: <176357562473.11952.15433192921239262065@lazor>
-User-Agent: alot/0.11
+In-Reply-To: <20251115-openwrt-one-network-v4-6-48cbda2969ac@collabora.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20251119_104245_731111_A6FB264C 
+X-CRM114-Status: GOOD (  10.25  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,18 +89,60 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============1698382553663055410=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-UXVvdGluZyBUaMOpbyBMZWJydW4gKDIwMjUtMTEtMTkgMDc6NTE6MTEpCj4gRnJvbTogSmVyb21l
-IEJydW5ldCA8amJydW5ldEBiYXlsaWJyZS5jb20+Cj4gCj4gVGhlIGF1eGlsaWFyeSBkZXZpY2Ug
-Y3JlYXRpb24gb2YgdGhpcyBkcml2ZXIgaXMgc2ltcGxlIGVub3VnaCB0bwo+IHVzZSB0aGUgYXZh
-aWxhYmxlIGF1eGlsaWFyeSBkZXZpY2UgY3JlYXRpb24gaGVscGVyLgo+IAo+IFVzZSBpdCBhbmQg
-cmVtb3ZlIHNvbWUgYm9pbGVycGxhdGUgY29kZS4KPiAKPiBUZXN0ZWQtYnk6IFRow6lvIExlYnJ1
-biA8dGhlby5sZWJydW5AYm9vdGxpbi5jb20+ICAjIE9uIE1vYmlsZXllIEV5ZVE1Cj4gU2lnbmVk
-LW9mZi1ieTogSmVyb21lIEJydW5ldCA8amJydW5ldEBiYXlsaWJyZS5jb20+CgpZb3UgbmVlZCB0
-byBhZGQgeW91ciBTb0IgaGVyZS4KCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBo
-eUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
-L2xpc3RpbmZvL2xpbnV4LXBoeQo=
+
+--===============1698382553663055410==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="OWZxw9N+U4ItickZ"
+Content-Disposition: inline
+
+
+--OWZxw9N+U4ItickZ
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Sat, Nov 15, 2025 at 09:58:09PM +0100, Sjoerd Simons wrote:
+> Different SoCs have different numbers of Wireless Ethernet
+> Dispatch (WED) units:
+> - MT7981: Has 1 WED unit
+> - MT7986: Has 2 WED units
+> - MT7988: Has 2 WED units
+>=20
+> Update the binding to reflect these hardware differences. The MT7981
+> also uses infracfg for PHY switching, so allow that property.
+>=20
+> Signed-off-by: Sjoerd Simons <sjoerd@collabora.com>
+
+Acked-by: Conor Dooley <conor.dooley@microchip.com>
+
+--OWZxw9N+U4ItickZ
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaR4PnAAKCRB4tDGHoIJi
+0qysAP4slbkJvvcDz+LiScI3HC4oFNoFUawshCKoNhDhEg0RZQD+JPTtXG5xiV2r
+lqSBXMrX7H73koX9k2vleiv2AUW+EAI=
+=X2CE
+-----END PGP SIGNATURE-----
+
+--OWZxw9N+U4ItickZ--
+
+
+--===============1698382553663055410==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============1698382553663055410==--
+
