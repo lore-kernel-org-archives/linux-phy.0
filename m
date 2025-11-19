@@ -4,94 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3306CF2598
-	for <linux-phy@archiver.kernel.org>; Wed, 19 Nov 2025 08:22:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5ED49CF2599
+	for <linux-phy@archiver.kernel.org>; Wed, 19 Nov 2025 08:25:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=49av36Gyv3jc/McjLcHKe0axKkf4mlCept4pdQAk2Uw=; b=o24U/yUvobFPnq
-	Zw3oASPrb5p/GGSQFH2IF+y4zOrjLUSdDbDyfex3AGlfUKWwy57NnamtLIEXp6CHjtFahrGdssj//
-	LJz3HVF19NclScD10AgmyBrKf1QVQky7D1/0wCbZ8wxNVm40tmTNFVWdYtVxWpEv2D1BWjLzU+fSz
-	IpLYxY54VEV7/WPZ14jGmohTUqQtIcc95HmI+cDYWr9g4tdQ3z5ZJQE3KuPD5dnXaSdYETSNaCVhg
-	dnHKCr0Nxk8OFWjlR2EtUPG5BqhsIvkei5k7JeXnsc1qa7BzcOBa6h0kiu4YWhct59dcQs4XYzBK9
-	BUEJgOIwEwIxuo+3bWtA==;
+	List-Owner; bh=NcClONPTp/zl7OGNNnvNnFbAVCkUXhbU2N+gub6Q5Jg=; b=yS5sB0i+Phr6aN
+	lAorJFEiP5u0vZds5vma6FBtRR4xn6VbSJDQ66p3rz/69+ZwLylK1LxMHsfMcmYljyrMagZdQiEDr
+	F2+MtkU/ci7fI0rN1Lu97VP4D/iN+BJ01QQp9RTA+jGzE4UHg1EMzpzEFn6KhT/UWHF5svJqWPmpS
+	d2MnAw7wT/ahUKXOvBDVYngiErgLSMRJJtLSDJBmVY+8eMnb54LSTpLrkBqEr0FxD3DUOGxnYJVL+
+	PVNrUDxjV3sANOJhbgX91nRYryJCZH+j3UUnQbndClywQlFKEX9kiiKz/IEcKDwu/KK6581J27ywj
+	0+X/5Xd8Z+/aDGHFERzA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vLdS3-00000002mlz-1yxH;
-	Wed, 19 Nov 2025 08:22:07 +0000
-Received: from mail-wr1-x430.google.com ([2a00:1450:4864:20::430])
+	id 1vLdVV-00000002mvT-0Lbj;
+	Wed, 19 Nov 2025 08:25:41 +0000
+Received: from mail-wr1-x42b.google.com ([2a00:1450:4864:20::42b])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vLdS0-00000002mlZ-1001
+	id 1vLdVS-00000002muT-2Tux
 	for linux-phy@lists.infradead.org;
-	Wed, 19 Nov 2025 08:22:05 +0000
-Received: by mail-wr1-x430.google.com with SMTP id ffacd0b85a97d-42b2e9ac45aso4114258f8f.0
-        for <linux-phy@lists.infradead.org>; Wed, 19 Nov 2025 00:22:03 -0800 (PST)
+	Wed, 19 Nov 2025 08:25:39 +0000
+Received: by mail-wr1-x42b.google.com with SMTP id ffacd0b85a97d-42bb288c219so3147999f8f.1
+        for <linux-phy@lists.infradead.org>; Wed, 19 Nov 2025 00:25:37 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1763540522; x=1764145322; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1763540737; x=1764145537; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:from:references:cc:to:subject:reply-to:user-agent
          :mime-version:date:message-id:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=prHnOWL3KZTfGMcuYs6Gvqk+F387R0tzV57ZZJJ4m2w=;
-        b=DuLcw/6/qNlkyWDQp3IB2vaPsgbBuAQKSm+bOYbJ1rNspoA/XH1Fj0RtS7r3Al/fqw
-         IpB/fj4xeIc2O9LXyp39sCO99sL7eCyuPuP1aTYuz8ffYcuEgGHdZ4r32+pOo1AeTI/w
-         IZojQV2RkZurLwbL9bUX2qxJZaJ4t1d2FWv6Z40+sERRHY01tclc6xezg9GyioqIGlif
-         uPW27dKsE5aM1JLSPVAH6sn1NegQ+EZosjUVgZIfjKKZ3JfaKDWWO6crl4rRSKmyTIFM
-         l/soN+dPM0DPGGWMv7PhA0DAMM2Q1buHUnhsIPQtWMAfRXB39MSDvjdY5T5qSPSEZjOd
-         PuMQ==
+        bh=xBBcd3+nheVdQUVhqxqKoLH5dFTFqo2xtG50pxJYM/k=;
+        b=URT/sys9RL2TqxsBspGP19AqkblJtZZUIYi0gL9bcoH6bPwfRev/2sDqgBcA2k89EB
+         zNgHfKkuiqOHyfBynCkHi4GXI2c1004FqviB+m7FTbGveSHj2yNOZ18PH3BSy03N31u3
+         GqpW2ntzCRWGlou1dv4saNzThTfdtXOhxhwhjuijdioj/L/W277ktOvo9mOffnHRVCyv
+         X1W9nI0XuIPC73W+h1PXTGpCB3dwWcgpPZR8fFzE21njE+2Xevf2nMD8MU9eR2X0r7dP
+         DpoFK+xruazZ4GZRFiQNu55XGfXbzjQYKf8oaf7hw37a5w7bNmm1IjwVdHbCO2cL9LYh
+         G8uA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1763540522; x=1764145322;
+        d=1e100.net; s=20230601; t=1763540737; x=1764145537;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:from:references:cc:to:subject:reply-to:user-agent
          :mime-version:date:message-id:x-gm-gg:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=prHnOWL3KZTfGMcuYs6Gvqk+F387R0tzV57ZZJJ4m2w=;
-        b=nhKPaP7X3y6gIb4AAAf5UEgzc9T+wpPmS2D/89EXQ9H8tmo90UZujAztmOUcVrZO6C
-         yL538o66mrjICRdCUOAcMmUZ/wRk6+bl4UTr/9LLifDboz46AON9U1J85GcQ3LrPAW8a
-         Dt3cBFetk4mAIh2sh6cKE2+BvTYv6y/m3vO+y60wbK3W8w8XA5Vlh+CnD5efeAW2CT7i
-         Ax68bzS5w2tvkseaGINfKhmQL/QX9vbKW7dUYvHgZYQDLlGuuR3FiIqrPwUoF90DFM+H
-         lkhhNmlU61GqLUhkrDlhlkBU+rMb2xrP7D83/ImrtbM25U7F4++BwTlU1axd/ZDTSaY+
-         Ltqw==
-X-Forwarded-Encrypted: i=1; AJvYcCUgTqaWZdRb6lIa3OmIxjYOUn12i3ngr3SKhAp6wVOQV0VJqFwaoaCH+vHU4EQWsKWuA3Hh1U3wOjM=@lists.infradead.org
-X-Gm-Message-State: AOJu0Ywoe0LpD0i3EjmeLzcIoK0IwL+z+NW/D2XRZx2ag+JpGh9/DxKp
-	3+/MozbvfBy5qlKd8aN72KFDCeBlrjM2yampz3NYw+c4ly+f93LD5FeqgGNcvH089Eg=
-X-Gm-Gg: ASbGncuGSx17NddPEaqBiLj4r6Ga/Y1QB6pqqUJKZIBMwCTalBPJ00vg6w97i/T39mL
-	hTVNsJ3OfhDrCHnE9Rh18yvTXuFnR2nx9KmqnQX26QPqtYCHWmIlnuYOQvEqZ0rNDJ3h6zisKaS
-	x8A773Lbp2Nz6Jxjx87hxGQS/VuFAmewyKJqDjeq/O8xg2IGdVSqiRD1/WrINFOTggLBdzfwJPs
-	XH7EbJ14etAqiInD7vOFauc2Yr2N/HTuqS0RMHcBXuAF+dyn/bVB2o7hr/fGVvJdqH/MZdDCc+S
-	b9dvZpkmGXE0izIJlvCRCFEos8wv3U8OCQc7Ps9u73KUR5Mu5Wj1ymTqJGgsZX+lxg4WUgpkj9N
-	KeP8vsry1H/ji2FKSvkqITPllFbdo/+U9LEDCdvocxZ1hvpWNbiE4p8EoJPwMLZ5BFZqAefn51W
-	XA0FgcKo2WqJ1udkTftn7xrO1K4Fa04K3hqggeFGV1ahtF9DkP5vTg0uHNkXZaYEo29zV7k2ANZ
-	Q==
-X-Google-Smtp-Source: AGHT+IESR3q8PRMdgehT41zzmTrRE4kFNljWLOSoMsF6eJXC2oWLRwLzbqk1zj89EkKHUL3P6S7vaw==
-X-Received: by 2002:a05:6000:4210:b0:42b:40b5:e64c with SMTP id ffacd0b85a97d-42b5938ab12mr17657397f8f.30.1763540522201;
-        Wed, 19 Nov 2025 00:22:02 -0800 (PST)
+        bh=xBBcd3+nheVdQUVhqxqKoLH5dFTFqo2xtG50pxJYM/k=;
+        b=l0gfbla2tEgHDF+5JcQBU+TyfdC3QLDe/bhO8hEz2ivw2JBoZ+aStty+XfH5v7IfOy
+         lmnfuqGSNVTnYxZoEKVCvWnfQWeLjlRWilhFcZ9/3DjvpXXkLKltp9IqGAOF5FKhTW5Y
+         bzA3+H1SXrdsbaPJkeUnjE9ZSlj0ylYrU1F7c51ZRgPPcuJrjb8VcobsS53LsT5hrKcY
+         8fKIw9MlI0416DjmCVay9TcGjPA014eIXyYCTH2VKTQGpcpwMC6TtZkMPVN+s9auf+MK
+         pX5uWEcJhsO6qh33pCjLJKuhlDueDhRj4KTplxCpeUb8DSphwxZ1hnHu1ryCcl/1ueFj
+         75+w==
+X-Forwarded-Encrypted: i=1; AJvYcCXCkPg6zK3t1LCmR4ys/54Aly9Dvk6AExOPO1G2H24TTixZv99mrz4aQg3tpzFQGkzx0Zi3zt4sV88=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxRu++8nwNlzzdrcYU1Qn+NVYVLzhdxyVDRficUaTaWApHO5Pzc
+	fwhUCAopIsDZf5cW9DwK76IxNsBeMtn5cpbXdASNDscdlvDh+o96fZRrTY8s+F2vvCtsy2KpssZ
+	5lgF4
+X-Gm-Gg: ASbGncu8rbnfmsZ5Akp65s7Ut5XzZOueYWOSwOkMb3U70QjyORwA2stblGqVyWEcobn
+	5JDhugI8m2l1OpSMu7WtEyRt7qvlfXAYMOt+lFbb0rm0BJfCm/s14l5qWtE+z0C6QTqNlwl91KI
+	NmpCaDynr54lcorAulDhXnDOrZeocZPLdb3pMS8wKvq+832sC27r5VqajMj5FVSHIHDbCd1Vs7C
+	2ISUyW681jBqRDwOWxEeHjNTGtV2nUqiFevSZ3lxFGQT0gkiO08ZTqK/kB/sTqRCbeX4SqR7XFv
+	WDBzBtAT1lI2nbDVKSXJO4CLAaUbV6cp9MTBgs8QnNzcc2Va4e+0yv8pvWSweZxnstiONMpdVfx
+	Hq4pA8Kxg3OmcpZ601T3ljxY1081/m9kc/UxtuhzHyfOaV7UCEOiDTKcGz9RKV4RS99S4keDEYA
+	0pjXTCboi7WunJdb37TwBsWOWXydAX8r3j5+1vHabGWfzPN3KGg4AcpXrxAOp6nns=
+X-Google-Smtp-Source: AGHT+IF/Pf8OhHHAkH/l86ffTNQDrKGEqlTVtrpGBWQTevcyQWVHh3qnGd6Me/o5osf1E2M94f66fw==
+X-Received: by 2002:a05:6000:24c7:b0:42b:3dbe:3a43 with SMTP id ffacd0b85a97d-42b5938fa99mr18992058f8f.50.1763540736555;
+        Wed, 19 Nov 2025 00:25:36 -0800 (PST)
 Received: from ?IPV6:2a01:e0a:3d9:2080:94e4:fa88:414d:e1ad? ([2a01:e0a:3d9:2080:94e4:fa88:414d:e1ad])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-42b53f203afsm37294740f8f.39.2025.11.19.00.22.01
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-42b53e846afsm35816408f8f.13.2025.11.19.00.25.35
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 19 Nov 2025 00:22:01 -0800 (PST)
-Message-ID: <84e53d61-ef32-4f15-aa51-132acb83c52d@linaro.org>
-Date: Wed, 19 Nov 2025 09:22:00 +0100
+        Wed, 19 Nov 2025 00:25:36 -0800 (PST)
+Message-ID: <25e9e2ae-d280-4022-8c8a-41df5009011a@linaro.org>
+Date: Wed, 19 Nov 2025 09:25:35 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 2/3] phy: qcom: edp: Make the number of clocks flexible
-To: Abel Vesa <abel.vesa@linaro.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
- Dmitry Baryshkov <lumag@kernel.org>, Konrad Dybcio <konradybcio@kernel.org>,
- Sibi Sankar <quic_sibis@quicinc.com>,
- Rajendra Nayak <quic_rjendra@quicinc.com>
-Cc: Johan Hovold <johan@kernel.org>, Taniya Das <quic_tdas@quicinc.com>,
- Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- stable@vger.kernel.org
-References: <20250909-phy-qcom-edp-add-missing-refclk-v3-0-4ec55a0512ab@linaro.org>
- <20250909-phy-qcom-edp-add-missing-refclk-v3-2-4ec55a0512ab@linaro.org>
+Subject: Re: [PATCH RESEND 0/3] Fixes for phy-rockchip-samsung-hdptx
+To: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Heiko Stuebner <heiko@sntech.de>, Dmitry Baryshkov <lumag@kernel.org>,
+ Algea Cao <algea.cao@rock-chips.com>
+Cc: kernel@collabora.com, linux-phy@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-kernel@vger.kernel.org, Andy Yan <andy.yan@rock-chips.com>
+References: <20251028-phy-hdptx-fixes-v1-0-ecc642a59d94@collabora.com>
 From: Neil Armstrong <neil.armstrong@linaro.org>
 Content-Language: en-US, fr
 Autocrypt: addr=neil.armstrong@linaro.org; keydata=
@@ -119,10 +113,10 @@ Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
  QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
 Organization: Linaro
-In-Reply-To: <20250909-phy-qcom-edp-add-missing-refclk-v3-2-4ec55a0512ab@linaro.org>
+In-Reply-To: <20251028-phy-hdptx-fixes-v1-0-ecc642a59d94@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251119_002204_323886_E1E83386 
-X-CRM114-Status: GOOD (  21.71  )
+X-CRM114-CacheID: sfid-20251119_002538_656759_C5FBAB91 
+X-CRM114-Status: GOOD (  10.53  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -140,76 +134,30 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 9/9/25 09:33, Abel Vesa wrote:
-> On X Elite, the DP PHY needs another clock called ref, while all other
-> platforms do not.
+On 10/28/25 09:00, Cristian Ciocaltea wrote:
+> These patches were initially part of the HDMI 2.1 FRL support series [1]
+> aiming to provide a few fixes for the Samsung HDMI/eDP Transmitter Combo
+> PHY.
 > 
-> The current X Elite devices supported upstream work fine without this
-> clock, because the boot firmware leaves this clock enabled. But we should
-> not rely on that. Also, even though this change breaks the ABI, it is
-> needed in order to make the driver disables this clock along with the
-> other ones, for a proper bring-down of the entire PHY.
+> I'm sending this as a distinct series right now, since the FRL part
+> might require additional time for review.
 > 
-> So in order to handle these clocks on different platforms, make the driver
-> get all the clocks regardless of how many there are provided.
+> [1] https://lore.kernel.org/r/20250818-phy-hdptx-frl-v3-0-c79997d8bb2b@collabora.com
 > 
-> Cc: stable@vger.kernel.org # v6.10
-> Fixes: db83c107dc29 ("phy: qcom: edp: Add v6 specific ops and X1E80100 platform support")
-> Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
+> Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
 > ---
->   drivers/phy/qualcomm/phy-qcom-edp.c | 16 ++++++++--------
->   1 file changed, 8 insertions(+), 8 deletions(-)
+> Cristian Ciocaltea (3):
+>        phy: rockchip: samsung-hdptx: Fix reported clock rate in high bpc mode
+>        phy: rockchip: samsung-hdptx: Reduce ROPLL loop bandwidth
+>        phy: rockchip: samsung-hdptx: Prevent Inter-Pair Skew from exceeding the limits
 > 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-edp.c b/drivers/phy/qualcomm/phy-qcom-edp.c
-> index f1b51018683d51df064f60440864c6031638670c..ca9bb9d70e29e1a132bd499fb9f74b5837acf45b 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-edp.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-edp.c
-> @@ -103,7 +103,9 @@ struct qcom_edp {
->   
->   	struct phy_configure_opts_dp dp_opts;
->   
-> -	struct clk_bulk_data clks[2];
-> +	struct clk_bulk_data *clks;
-> +	int num_clks;
-> +
->   	struct regulator_bulk_data supplies[2];
->   
->   	bool is_edp;
-> @@ -218,7 +220,7 @@ static int qcom_edp_phy_init(struct phy *phy)
->   	if (ret)
->   		return ret;
->   
-> -	ret = clk_bulk_prepare_enable(ARRAY_SIZE(edp->clks), edp->clks);
-> +	ret = clk_bulk_prepare_enable(edp->num_clks, edp->clks);
->   	if (ret)
->   		goto out_disable_supplies;
->   
-> @@ -885,7 +887,7 @@ static int qcom_edp_phy_exit(struct phy *phy)
->   {
->   	struct qcom_edp *edp = phy_get_drvdata(phy);
->   
-> -	clk_bulk_disable_unprepare(ARRAY_SIZE(edp->clks), edp->clks);
-> +	clk_bulk_disable_unprepare(edp->num_clks, edp->clks);
->   	regulator_bulk_disable(ARRAY_SIZE(edp->supplies), edp->supplies);
->   
->   	return 0;
-> @@ -1092,11 +1094,9 @@ static int qcom_edp_phy_probe(struct platform_device *pdev)
->   	if (IS_ERR(edp->pll))
->   		return PTR_ERR(edp->pll);
->   
-> -	edp->clks[0].id = "aux";
-> -	edp->clks[1].id = "cfg_ahb";
-> -	ret = devm_clk_bulk_get(dev, ARRAY_SIZE(edp->clks), edp->clks);
-> -	if (ret)
-> -		return ret;
-> +	edp->num_clks = devm_clk_bulk_get_all(dev, &edp->clks);
-> +	if (edp->num_clks < 0)
-> +		return dev_err_probe(dev, edp->num_clks, "failed to parse clocks\n");
->   
->   	edp->supplies[0].supply = "vdda-phy";
->   	edp->supplies[1].supply = "vdda-pll";
-> 
+>   drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 27 +++++++++++++----------
+>   1 file changed, 15 insertions(+), 12 deletions(-)
+> ---
+> base-commit: 33bcf93b9a6b028758105680f8b538a31bc563cf
+> change-id: 20250902-phy-hdptx-fixes-7308ffea4c6a
 
+For the serie:
 Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 
 -- 
