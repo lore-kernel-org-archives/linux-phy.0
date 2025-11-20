@@ -4,66 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 47B79CF8549
-	for <linux-phy@archiver.kernel.org>; Thu, 20 Nov 2025 17:11:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 05102CF9C72
+	for <linux-phy@archiver.kernel.org>; Thu, 20 Nov 2025 17:11:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UzljNHiWwMpMvZDaZ0E5EClw6j1OJaZbwC3ryBsxCQY=; b=gt6L4PMQK7uJPf
-	WKXFV+7hAjayNWuP9GHbtvDDr5Lmge5fz2ABDV5hohvtOM4ineChdL8OhQYUInOsNq1UaTCF3gxV7
-	xO3bsaMSKNNIOR0ABWW5FC0GbkFqEqg3G3XBcJ0KZh7BZ2RWNj1JDOvBiPkSeNj/awpXtd2cToq50
-	gOCrXsTNeaSzq/hcMQAc1B6LqjqXLq1fmMpykfMMAOMKeZsS+0h3uSOZf9LmR3QF9WF0vaei7nSV7
-	iKEg2G9t+PIqLrcCL255krB1ooYow00S6Z26CBLkaCwMKk78TZJM4nwtCS+SyXcOV1/aloEdqRVfo
-	TS1YZsTtd1OSZs/oh5mQ==;
+	List-Owner; bh=/7B9OhbWrW251tgjkTHanwe4eVLzhJxR3Cg8xGNb5jQ=; b=26LyQyD7n+IFDm
+	aiRmWS3gGOIbev23btdB7PcEQqPkNSwc2652sFPm3K0phn3kz1ALu/4WHJgTa7HvDc7jPNwPYCoOB
+	4yQ709oYLJeBIwktmApWsyJzx42wUKhY7GHh9tgcEXy2o3WSJJHKsXGr83aVI1VCdv2zwmictAnQF
+	R33bijpFsqNGchmm7XXIY8M5/7SJe8oPm4KNHclM1aRcW4AskH6rmzYJKHmPmqAjQwBT4rUpePQSA
+	p7WBpNPBiml6XfzC3Z1VpQVocMCGWVDEttlofWpluAFKMVbpi3bYMyJHU1qB8o4d9TuMIknD+CSAt
+	wobym3DoYYAX7mWrmayA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vM8Ba-000000073ri-43VQ;
-	Thu, 20 Nov 2025 17:11:10 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1vM8Bh-000000073tY-36U4;
+	Thu, 20 Nov 2025 17:11:17 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vM8BX-000000073qQ-3X7q
-	for linux-phy@lists.infradead.org;
-	Thu, 20 Nov 2025 17:11:09 +0000
+	id 1vM8Bg-000000073sk-2VOL;
+	Thu, 20 Nov 2025 17:11:16 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id C53D14423F;
-	Thu, 20 Nov 2025 17:11:06 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id CA1E3C116C6;
-	Thu, 20 Nov 2025 17:11:03 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id BABE8601D3;
+	Thu, 20 Nov 2025 17:11:15 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 56A38C4CEF1;
+	Thu, 20 Nov 2025 17:11:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1763658666;
-	bh=xyRZEuNoOtmwK7QjfAkmVwp6Fuz90wGnSs5wkHI7Ib4=;
-	h=From:To:In-Reply-To:References:Subject:Date:From;
-	b=no505gVk3Jg5ybrW5UuuUwgGtyMzV+v8r+8RBBDhk1yd5Y0Swx7xO6ZIB7+V7RwHM
-	 y6dyUactujRh2gD0HIoCQQPQWLMc7ASW9NO6XkakGxREU7eRTFC8YWWUYJRm1o+8OJ
-	 G4xOGkiFbpJeGfm6eFlhKKnMtbIPMM7tZXKZrnqwE07rcOGbkaRbDidN8cJjHCkyVP
-	 i6rL1GycsaMrZutXdMI2Sn9onwVCL158Gexzeqv+GbkwUcIIV3bcIR9/RJxujZPKgX
-	 LdCIhd17LZmLY6RkEk7xTDd5S0V6D93O1C6DSENRgVDUQrPgFBP4meI5CZY/z7xUMo
-	 ndFMLxXYycWDw==
+	s=k20201202; t=1763658675;
+	bh=TMLntoU8iUOS/qsRpXy6ReTJ0gjhyOEPYkzAMR3tBsI=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=aqLfR4iUeq0dB4adf+THdyDTXEYLPmrUzBfkTi+siE4FErR83JFGTcLfKnZPwMODP
+	 zj2cUYj3WBLrInuLNgbziXnA7+G9xs8XtvV8dheiKGDn0HgJZReHIrRT/oWGXTphBw
+	 jav2dXGGvpcDBBZpIT1RCdSYwVNydmY44mIGqMAlNo1AsrYfgc5+mcS8i3aaEEr2ud
+	 4TUiRefxrRVy12nbdxe98sT9eFv8FdR5zFScbGQQFtJSC3KnpPv1GWm214oV8dZjgT
+	 NBl/XpNE1EKX2BLhLbdvZITRXTf7HBvkVza3ncDhy4jxeipTFt+dX7P+f3c6f1D9CH
+	 5vSYkUHWrDl8w==
 From: Vinod Koul <vkoul@kernel.org>
-To: Kishon Vijay Abraham I <kishon@kernel.org>, 
- Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Johan Hovold <johan+linaro@kernel.org>, 
- Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, 
- Wesley Cheng <quic_wcheng@quicinc.com>, 
- Konrad Dybcio <quic_kdybcio@quicinc.com>, linux-arm-msm@vger.kernel.org, 
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
- Faisal Hassan <faisal.hassan@oss.qualcomm.com>
-In-Reply-To: <20250922135901.2067-1-faisal.hassan@oss.qualcomm.com>
-References: <20250922135901.2067-1-faisal.hassan@oss.qualcomm.com>
-Subject: Re: [PATCH] phy: qcom-qmp-combo: Use regulator_bulk_data with
- init_load_uA for regulator setup
-Message-Id: <176365866344.207696.2538575283551353793.b4-ty@kernel.org>
-Date: Thu, 20 Nov 2025 22:41:03 +0530
+To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Matthias Brugger <matthias.bgg@gmail.com>, 
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
+ Ryder Lee <ryder.lee@mediatek.com>, 
+ Jianjun Wang <jianjun.wang@mediatek.com>, 
+ Bjorn Helgaas <bhelgaas@google.com>, 
+ Lorenzo Pieralisi <lpieralisi@kernel.org>, 
+ =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
+ Manivannan Sadhasivam <mani@kernel.org>, 
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Lee Jones <lee@kernel.org>, 
+ Andrew Lunn <andrew+netdev@lunn.ch>, 
+ "David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
+ Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
+ Lorenzo Bianconi <lorenzo@kernel.org>, Felix Fietkau <nbd@nbd.name>, 
+ Sjoerd Simons <sjoerd@collabora.com>
+Cc: kernel@collabora.com, devicetree@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-mediatek@lists.infradead.org, linux-pci@vger.kernel.org, 
+ linux-phy@lists.infradead.org, netdev@vger.kernel.org, 
+ Daniel Golle <daniel@makrotopia.org>, Bryan Hinton <bryan@bryanhinton.com>, 
+ Conor Dooley <conor.dooley@microchip.com>
+In-Reply-To: <20251115-openwrt-one-network-v4-0-48cbda2969ac@collabora.com>
+References: <20251115-openwrt-one-network-v4-0-48cbda2969ac@collabora.com>
+Subject: Re: (subset) [PATCH v4 00/11] arm64: dts: mediatek: Add Openwrt
+ One AP functionality
+Message-Id: <176365866697.207696.9870186215211079064.b4-ty@kernel.org>
+Date: Thu, 20 Nov 2025 22:41:06 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251120_091107_909562_4ECB75A6 
-X-CRM114-Status: UNSURE (   5.61  )
-X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,22 +90,38 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Mon, 22 Sep 2025 19:29:01 +0530, Faisal Hassan wrote:
-> Replace the custom qmp_regulator_data structure with the standard
-> regulator_bulk_data and use the init_load_uA field to set regulator
-> load during initialization.
-> 
-> This change simplifies the regulator setup by removing manual
-> allocation and load configuration logic, and leverages
-> devm_regulator_bulk_get_const() to automatically apply load settings
-> before enabling regulators.
+On Sat, 15 Nov 2025 21:58:03 +0100, Sjoerd Simons wrote:
+> Significant changes in V4:
+>   * Drop patches that were picked up
+>   * Improve mediatek,net dt bindings:
+>     - Move back to V2 version (widening global constraint, constraining
+>       per compatible)
+>     - Ensure all compatibles are constraint in the amount of WEDs (2 for
+>       everything apart from mt7981). Specifically adding constraints for
+>       mediatek,mt7622-eth and ralink,rt5350-eth
+> Significant changes in V3:
+>   * Drop patches that were picked up
+>   * Re-order patches so changes that don't require dt binding changes
+>     come first (Requested by Angelo)
+>   * Specify drive power directly rather then using MTK_DRIVE_...
+>   * Simply mediatek,net binding changes to avoid accidental changes to
+>     other compatibles then mediatek,mt7981-eth
+> Significant changes in V2:
+>   * https://lore.kernel.org/lkml/20251016-openwrt-one-network-v1-0-de259719b6f2@collabora.com/
+>   * Only introduce labels in mt7981b.dtsi when required
+>   * Switch Airoha EN8811H phy irq to level rather then edge triggered
+>   * Move uart0 pinctrl from board dts to soc dtsi
+>   * Only overwrite constraints with non-default values in MT7981 bindings
+>   * Make SPI NOR nvmem cell labels more meaningfull
+>   * Seperate fixing and disable-by-default for the mt7981 in seperate
+>     patches
 > 
 > [...]
 
 Applied, thanks!
 
-[1/1] phy: qcom-qmp-combo: Use regulator_bulk_data with init_load_uA for regulator setup
-      commit: 81d75558406609f311766a37ec4b2c74d7b11ea0
+[03/11] dt-bindings: phy: mediatek,tphy: Add support for MT7981
+        commit: 80ac0fba0f1a72be2c7b532b8e2ad61300a165c3
 
 Best regards,
 -- 
