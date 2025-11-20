@@ -4,66 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1E82CCF8549
-	for <linux-phy@archiver.kernel.org>; Thu, 20 Nov 2025 17:11:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 47B79CF8549
+	for <linux-phy@archiver.kernel.org>; Thu, 20 Nov 2025 17:11:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	References:In-Reply-To:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H5aHtTCfi7hvYap95fn5390fobuLb2u/bWUmZXDBeLc=; b=laDesSP7kgAnCG
-	c9hpdE4htojJEWpO4zwXxd3Q/DkLQrTo4IxbtWJMIjgACvviYsFG1d2VFjPFMc0ZQx3LMp56Y9IVV
-	uXPhbsvfvkZmxRSlovNbd7m1X45kbPb2Oj/Lw9cEMhlDrZXwQ1MkNjaKxqIAFdaYaFeGLwSfAkDy8
-	Y3djRE1cpyLT1u5DlEYy/Nai2TbvigI3DUEpsAYcBxjqb3g4JScY8sWSenJqwo2gLP2gG5HzzoOFj
-	73OwcvKtEokfOcJYwN5kOaq9UJZXH/XraiickglppTlzlWq2VfOGmiReSC+tixkLR4hsqrePo/WON
-	1CQ9DL2HG+i1zMjYBsfA==;
+	List-Owner; bh=UzljNHiWwMpMvZDaZ0E5EClw6j1OJaZbwC3ryBsxCQY=; b=gt6L4PMQK7uJPf
+	WKXFV+7hAjayNWuP9GHbtvDDr5Lmge5fz2ABDV5hohvtOM4ineChdL8OhQYUInOsNq1UaTCF3gxV7
+	xO3bsaMSKNNIOR0ABWW5FC0GbkFqEqg3G3XBcJ0KZh7BZ2RWNj1JDOvBiPkSeNj/awpXtd2cToq50
+	gOCrXsTNeaSzq/hcMQAc1B6LqjqXLq1fmMpykfMMAOMKeZsS+0h3uSOZf9LmR3QF9WF0vaei7nSV7
+	iKEg2G9t+PIqLrcCL255krB1ooYow00S6Z26CBLkaCwMKk78TZJM4nwtCS+SyXcOV1/aloEdqRVfo
+	TS1YZsTtd1OSZs/oh5mQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vM8BW-000000073qJ-30iX;
-	Thu, 20 Nov 2025 17:11:06 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vM8Ba-000000073ri-43VQ;
+	Thu, 20 Nov 2025 17:11:10 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vM8BU-000000073pe-1ieJ
+	id 1vM8BX-000000073qQ-3X7q
 	for linux-phy@lists.infradead.org;
-	Thu, 20 Nov 2025 17:11:05 +0000
+	Thu, 20 Nov 2025 17:11:09 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 7F8DE601A2;
+	by sea.source.kernel.org (Postfix) with ESMTP id C53D14423F;
+	Thu, 20 Nov 2025 17:11:06 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CA1E3C116C6;
 	Thu, 20 Nov 2025 17:11:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6D931C4CEF1;
-	Thu, 20 Nov 2025 17:10:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1763658663;
-	bh=srEXc3YV3Z9k+S6EjyCYz4pndYvvbKnp0h6Ftjs+8L8=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=ihxve8DzixV2TWEoB5pzQv6zF5lJiNc9O+zNIBHJ+p1O3P+EAxeIFgpualrrnUUcK
-	 GM9o+qbJ2jonDThsdrpXOHcvSBF3NPB2DEXZTlI9SnMcA0ZJkteKHb9BZmnzHZVlcR
-	 aXBB1/lBhMUQHnSdmT9iw1OgJwUmWltt947pg2VwCMFOYj06hRaJcacgw/FNo3OxnQ
-	 fQoUtYZD0LyDmP43hC9um8bp28PrYl8JdiERR6dpb1QdN5L8lTx4YIx8rsNqY49+WH
-	 NVWvifn/N6DKmykahiO1ikXpWCZf8syhAlNUkBNCQAtt6DcxlX39/3MigYeKioRQdv
-	 XemZHmeMa1v4Q==
+	s=k20201202; t=1763658666;
+	bh=xyRZEuNoOtmwK7QjfAkmVwp6Fuz90wGnSs5wkHI7Ib4=;
+	h=From:To:In-Reply-To:References:Subject:Date:From;
+	b=no505gVk3Jg5ybrW5UuuUwgGtyMzV+v8r+8RBBDhk1yd5Y0Swx7xO6ZIB7+V7RwHM
+	 y6dyUactujRh2gD0HIoCQQPQWLMc7ASW9NO6XkakGxREU7eRTFC8YWWUYJRm1o+8OJ
+	 G4xOGkiFbpJeGfm6eFlhKKnMtbIPMM7tZXKZrnqwE07rcOGbkaRbDidN8cJjHCkyVP
+	 i6rL1GycsaMrZutXdMI2Sn9onwVCL158Gexzeqv+GbkwUcIIV3bcIR9/RJxujZPKgX
+	 LdCIhd17LZmLY6RkEk7xTDd5S0V6D93O1C6DSENRgVDUQrPgFBP4meI5CZY/z7xUMo
+	 ndFMLxXYycWDw==
 From: Vinod Koul <vkoul@kernel.org>
 To: Kishon Vijay Abraham I <kishon@kernel.org>, 
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>, 
- Lorenzo Pieralisi <lpieralisi@kernel.org>, 
- =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
- Manivannan Sadhasivam <mani@kernel.org>, 
- Bjorn Andersson <andersson@kernel.org>, 
- Wenbin Yao <wenbin.yao@oss.qualcomm.com>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- linux-pci@vger.kernel.org, konrad.dybcio@oss.qualcomm.com, 
- qiang.yu@oss.qualcomm.com, Prudhvi Yarlagadda <quic_pyarlaga@quicinc.com>, 
- Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-In-Reply-To: <20250825-glymur_pcie5-v3-0-5c1d1730c16f@oss.qualcomm.com>
-References: <20250825-glymur_pcie5-v3-0-5c1d1730c16f@oss.qualcomm.com>
-Subject: Re: (subset) [PATCH v3 0/4] PCI: qcom: Add support for Glymur PCIe
- Gen5x4
-Message-Id: <176365865805.207696.3284794076492688749.b4-ty@kernel.org>
-Date: Thu, 20 Nov 2025 22:40:58 +0530
+ Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Johan Hovold <johan+linaro@kernel.org>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, 
+ Wesley Cheng <quic_wcheng@quicinc.com>, 
+ Konrad Dybcio <quic_kdybcio@quicinc.com>, linux-arm-msm@vger.kernel.org, 
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ Faisal Hassan <faisal.hassan@oss.qualcomm.com>
+In-Reply-To: <20250922135901.2067-1-faisal.hassan@oss.qualcomm.com>
+References: <20250922135901.2067-1-faisal.hassan@oss.qualcomm.com>
+Subject: Re: [PATCH] phy: qcom-qmp-combo: Use regulator_bulk_data with
+ init_load_uA for regulator setup
+Message-Id: <176365866344.207696.2538575283551353793.b4-ty@kernel.org>
+Date: Thu, 20 Nov 2025 22:41:03 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20251120_091107_909562_4ECB75A6 
+X-CRM114-Status: UNSURE (   5.61  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,24 +81,22 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Mon, 25 Aug 2025 23:01:46 -0700, Wenbin Yao wrote:
-> Glymur is the next generation compute SoC of Qualcomm. This patch series
-> aims to add support for the fifth PCIe instance on it. The fifth PCIe
-> instance on Glymur has a Gen5 4-lane PHY. Patch [1/4] documents PHY as a
-> separate compatible and Patch [2/4] documents controller as a separate
-> compatible. Patch [3/4] describles the new PCS offsets in a dedicated
-> header file. Patch [4/4] adds configuration and compatible for PHY.
+On Mon, 22 Sep 2025 19:29:01 +0530, Faisal Hassan wrote:
+> Replace the custom qmp_regulator_data structure with the standard
+> regulator_bulk_data and use the init_load_uA field to set regulator
+> load during initialization.
+> 
+> This change simplifies the regulator setup by removing manual
+> allocation and load configuration logic, and leverages
+> devm_regulator_bulk_get_const() to automatically apply load settings
+> before enabling regulators.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/4] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Document the Glymur QMP PCIe PHY
-      commit: d877f881cec508a46f76dbed7c46ab78bc1c0d87
-[3/4] phy: qcom-qmp: pcs: Add v8.50 register offsets
-      commit: bc2ba6e3fb8a35cd83813be1bd4c5f066a401d8b
-[4/4] phy: qcom: qmp-pcie: Add support for Glymur PCIe Gen5x4 PHY
-      commit: 1797c6677ad6298ca463b6ee42245e19e9cc1206
+[1/1] phy: qcom-qmp-combo: Use regulator_bulk_data with init_load_uA for regulator setup
+      commit: 81d75558406609f311766a37ec4b2c74d7b11ea0
 
 Best regards,
 -- 
