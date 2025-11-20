@@ -4,38 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BCF03CF8864
-	for <linux-phy@archiver.kernel.org>; Thu, 20 Nov 2025 15:38:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4015ECF8875
+	for <linux-phy@archiver.kernel.org>; Thu, 20 Nov 2025 15:40:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UGwaBE8sp5+sYMVc46qNHCX4CQzKto9m9YsB3KpNoAs=; b=GYe9/o147XsDTV
-	LWP+7k+Tg5+JxD+X+J+9NLGaB8afTPYazdGF4Qeajeglj/19RN6D7UwXuPyI8rhYaiDGIEvpnk698
-	9jFjItfVhqSBYDtrt8lzQU8xsLO9DVinxriqYzAu8u0iCuyftz5Zvh2Y/4ktHUBs+aKEYXHDydcFA
-	8T4HLHL4Et9+WmHQuxlK4A6v+Zmf83O9qOW771khVOfJFSU9FJm7nMSlbHrRCMbQhxvoZiNy0W8zO
-	P7LS0Z1Rac3YGkdG/2zK0Oy4Z4yAx78/KrDxVnJQECEjfL9I++Suvi1fC3DnEUQHFOG8iq9HuIoGX
-	HmChu5tib6SqJbN+j8gg==;
+	List-Owner; bh=X0wVK5bjatVPeht+ZZA7s+JUzVX7SX31bipg2t44yLw=; b=rt/ph5S/45pu/T
+	xrC1ttTtb6YaOlGUfthmgjMAlb7M3T6rPlcwSLUbc0qEQi0QSYnxJzQYhv0j4x730oiG47h7I8YG6
+	doAMgZcOzK+p1MsFwKumBb2hk2YoJWgsAqB9APQt0jSAz1gbwgiAPcpGn1pLw2Pm4kol7Qs7qpNO5
+	Z08R7vFw4O+j5XpDJ4GeZtCCAIOBH4hy4Zt92AyKBolHkJV608WMKsIvFJ2+qauyZO2CvbjMm+epk
+	ACen9yFKi/aXaymn7RzkifLJwBpdyWW0v4E9aWDs2ncHScDbXWxjlUQql2HePG6fzw2tTjCTviy+v
+	ixcFsqOTG15rZeyAufmA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vM6kH-00000006vaK-1Vyp;
-	Thu, 20 Nov 2025 15:38:53 +0000
-Received: from pidgin.makrotopia.org ([2a07:2ec0:3002::65])
+	id 1vM6lm-00000006vqp-41aL;
+	Thu, 20 Nov 2025 15:40:26 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vM6kE-00000006vZ6-2zCY;
-	Thu, 20 Nov 2025 15:38:51 +0000
-Received: from local
-	by pidgin.makrotopia.org with esmtpsa (TLS1.3:TLS_AES_256_GCM_SHA384:256)
-	 (Exim 4.98.2)
-	(envelope-from <daniel@makrotopia.org>)
-	id 1vM6jw-0000000086m-1ie9;
-	Thu, 20 Nov 2025 15:38:32 +0000
-Date: Thu, 20 Nov 2025 15:38:20 +0000
-From: Daniel Golle <daniel@makrotopia.org>
+	id 1vM6lj-00000006vpn-0hkG;
+	Thu, 20 Nov 2025 15:40:23 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 4C11360137;
+	Thu, 20 Nov 2025 15:40:22 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2AC6EC4CEF1;
+	Thu, 20 Nov 2025 15:40:14 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1763653222;
+	bh=tNNmZ2QL/T1AtHJf3KMxZyhhMvxqTgXsdcTVHNZESwc=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=i4NueJCx9r7KrKIBLF+cUWlHEImFEFp6i4HTJfMhvWzE0AhQ79mVl9GJ5OUOETAfM
+	 v62QWN+2FK0HlefMQ7hG+2OPPC0f9N+/gkosLtmKA10LtlP8Bb6C0zwAuL//WSEnXI
+	 MT/BFVyE4z4b/wO3+IbcPDwRX7sIFXsco2qbEug2EQ4KzlmW5vKE5c8ACO1XaJXN4h
+	 qnbhCjeCCgO/PPPzTjLptR4lFLi1Oh5evb4wDshNYs3UoCfHEbsrc4bUgNU43cgYSE
+	 4+k2PcHFO4ggtL4T/WYyj66+4LfcwwcuIGBfwfs8EOo4ZCJdE0o7PmsRZlYtEdCVlQ
+	 kjnswH7RBQq/Q==
+Date: Thu, 20 Nov 2025 15:40:12 +0000
+From: Lee Jones <lee@kernel.org>
 To: Jakub Kicinski <kuba@kernel.org>
-Cc: Lee Jones <lee@kernel.org>, patchwork-bot+netdevbpf@kernel.org,
+Cc: patchwork-bot+netdevbpf@kernel.org,
 	Sjoerd Simons <sjoerd@collabora.com>, robh@kernel.org,
 	krzk+dt@kernel.org, conor+dt@kernel.org, matthias.bgg@gmail.com,
 	angelogioacchino.delregno@collabora.com, ryder.lee@mediatek.com,
@@ -48,10 +57,11 @@ Cc: Lee Jones <lee@kernel.org>, patchwork-bot+netdevbpf@kernel.org,
 	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
 	linux-mediatek@lists.infradead.org, linux-pci@vger.kernel.org,
 	linux-phy@lists.infradead.org, netdev@vger.kernel.org,
-	bryan@bryanhinton.com, conor.dooley@microchip.com
+	daniel@makrotopia.org, bryan@bryanhinton.com,
+	conor.dooley@microchip.com
 Subject: Re: [PATCH v4 00/11] arm64: dts: mediatek: Add Openwrt One AP
  functionality
-Message-ID: <aR817IjAOgJ808FO@makrotopia.org>
+Message-ID: <20251120154012.GJ661940@google.com>
 References: <20251115-openwrt-one-network-v4-0-48cbda2969ac@collabora.com>
  <176360700676.1051457.11874224265724256534.git-patchwork-notify@kernel.org>
  <20251120152829.GH661940@google.com>
@@ -59,10 +69,6 @@ References: <20251115-openwrt-one-network-v4-0-48cbda2969ac@collabora.com>
 MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <20251120073639.3fd7cc7c@kernel.org>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251120_073850_770311_C7F5BE21 
-X-CRM114-Status: UNSURE (   8.61  )
-X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,25 +80,43 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Nov 20, 2025 at 07:36:39AM -0800, Jakub Kicinski wrote:
-> On Thu, 20 Nov 2025 15:28:29 +0000 Lee Jones wrote:
-> > > Here is the summary with links:
-> > >   - [v4,01/11] dt-bindings: mfd: syscon: Add mt7981-topmisc
-> > >     (no matching commit)  
-> > 
-> > I thought this days of Net randomly picking up MFD patches were behind us!
-> 
-> Take another look at the message. We picked out just one of the changes
-> here.
-
-... and that's an MFD change (dt-bindings, but still)
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gVGh1LCAyMCBOb3YgMjAyNSwgSmFrdWIgS2ljaW5za2kgd3JvdGU6Cgo+IE9uIFRodSwgMjAg
+Tm92IDIwMjUgMTU6Mjg6MjkgKzAwMDAgTGVlIEpvbmVzIHdyb3RlOgo+ID4gPiBIZXJlIGlzIHRo
+ZSBzdW1tYXJ5IHdpdGggbGlua3M6Cj4gPiA+ICAgLSBbdjQsMDEvMTFdIGR0LWJpbmRpbmdzOiBt
+ZmQ6IHN5c2NvbjogQWRkIG10Nzk4MS10b3BtaXNjCj4gPiA+ICAgICAobm8gbWF0Y2hpbmcgY29t
+bWl0KSAgCj4gPiAKPiA+IEkgdGhvdWdodCB0aGlzIGRheXMgb2YgTmV0IHJhbmRvbWx5IHBpY2tp
+bmcgdXAgTUZEIHBhdGNoZXMgd2VyZSBiZWhpbmQgdXMhCj4gCj4gVGFrZSBhbm90aGVyIGxvb2sg
+YXQgdGhlIG1lc3NhZ2UuIFdlIHBpY2tlZCBvdXQganVzdCBvbmUgb2YgdGhlIGNoYW5nZXMKPiBo
+ZXJlLgoKQWggc3VwZXIhCgpUaGFua3MgZm9yIHRoZSBjbGFyaWZpY2F0aW9uIGFuZCBhcG9sb2dp
+ZXMgZm9yIG1pc3JlYWRpbmcgdGhlIG91dHB1dC4KCj4gPiA+ICAgLSBbdjQsMDIvMTFdIGR0LWJp
+bmRpbmdzOiBQQ0k6IG1lZGlhdGVrLWdlbjM6IEFkZCBNVDc5ODEgUENJZSBjb21wYXRpYmxlCj4g
+PiA+ICAgICAobm8gbWF0Y2hpbmcgY29tbWl0KQo+ID4gPiAgIC0gW3Y0LDAzLzExXSBkdC1iaW5k
+aW5nczogcGh5OiBtZWRpYXRlayx0cGh5OiBBZGQgc3VwcG9ydCBmb3IgTVQ3OTgxCj4gPiA+ICAg
+ICAobm8gbWF0Y2hpbmcgY29tbWl0KQo+ID4gPiAgIC0gW3Y0LDA0LzExXSBhcm02NDogZHRzOiBt
+ZWRpYXRlazogbXQ3OTgxYjogQWRkIFBDSWUgYW5kIFVTQiBzdXBwb3J0Cj4gPiA+ICAgICAobm8g
+bWF0Y2hpbmcgY29tbWl0KQo+ID4gPiAgIC0gW3Y0LDA1LzExXSBhcm02NDogZHRzOiBtZWRpYXRl
+azogbXQ3OTgxYi1vcGVud3J0LW9uZTogRW5hYmxlIFBDSWUgYW5kIFVTQgo+ID4gPiAgICAgKG5v
+IG1hdGNoaW5nIGNvbW1pdCkKPiA+ID4gICAtIFt2NCwwNi8xMV0gZHQtYmluZGluZ3M6IG5ldDog
+bWVkaWF0ZWssbmV0OiBDb3JyZWN0IGJpbmRpbmdzIGZvciBNVDc5ODEKPiA+ID4gICAgIGh0dHBz
+Oi8vZ2l0Lmtlcm5lbC5vcmcvbmV0ZGV2L25ldC1uZXh0L2MvYmM0MWZiYmY2ZmFhCj4gPiA+ICAg
+LSBbdjQsMDcvMTFdIGFybTY0OiBkdHM6IG1lZGlhdGVrOiBtdDc5ODFiOiBBZGQgRXRoZXJuZXQg
+YW5kIFdpRmkgb2ZmbG9hZCBzdXBwb3J0Cj4gPiA+ICAgICAobm8gbWF0Y2hpbmcgY29tbWl0KQo+
+ID4gPiAgIC0gW3Y0LDA4LzExXSBhcm02NDogZHRzOiBtZWRpYXRlazogbXQ3OTgxYi1vcGVud3J0
+LW9uZTogRW5hYmxlIEV0aGVybmV0Cj4gPiA+ICAgICAobm8gbWF0Y2hpbmcgY29tbWl0KQo+ID4g
+PiAgIC0gW3Y0LDA5LzExXSBhcm02NDogZHRzOiBtZWRpYXRlazogbXQ3OTgxYjogRGlzYWJsZSB3
+aWZpIGJ5IGRlZmF1bHQKPiA+ID4gICAgIChubyBtYXRjaGluZyBjb21taXQpCj4gPiA+ICAgLSBb
+djQsMTAvMTFdIGFybTY0OiBkdHM6IG1lZGlhdGVrOiBtdDc5ODFiOiBBZGQgd2lmaSBtZW1vcnkg
+cmVnaW9uCj4gPiA+ICAgICAobm8gbWF0Y2hpbmcgY29tbWl0KQo+ID4gPiAgIC0gW3Y0LDExLzEx
+XSBhcm02NDogZHRzOiBtZWRpYXRlazogbXQ3OTgxYi1vcGVud3J0LW9uZTogRW5hYmxlIHdpZmkK
+PiA+ID4gICAgIChubyBtYXRjaGluZyBjb21taXQpCgpUaGlzIGlzIGEgdmVyeSBvZGQgd2F5IG9m
+IHByZXNlbnRpbmcgdGhhdCBvbmUgcGF0Y2ggZnJvbSB0aGUgc2V0IHdhcyBtZXJnZWQuCgpOb3Qg
+c3VyZSBJJ3ZlIHNlZW4gdGhpcyBiZWZvcmUuICBJcyBpdCBuZXc/CgpJdCdzIHZlcnkgY29uZnVz
+aW5nLiAgSXMgaXQgYSBjb3JlIFBXIHRoaW5nIGFuZCAvIG9yIGNhbiBpdCBiZSBjb25maWd1cmVk
+PwoKLS0gCkxlZSBKb25lcyBb5p2O55C85pavXQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QK
+bGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
+L21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
