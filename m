@@ -4,76 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5E083CF856E
-	for <linux-phy@archiver.kernel.org>; Thu, 20 Nov 2025 15:49:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F1E98CF887B
+	for <linux-phy@archiver.kernel.org>; Thu, 20 Nov 2025 16:37:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jIpfYvUmDIuAh3RXhi3wls8uUMU1xXj410hBJzCasJQ=; b=Rcki12JyKZZUTF
-	bgfArjDzEH42NtUSYAhrVly1vj7wGzkGJuswrT1kY+V4Ke9aDyZdivSlkqKJsPRcc0HppN3qL4v9t
-	gGX6oNm0Z6ae2jDVJjQY0ixmlKe5sxMfBOo5dKjZNwN1QWoU4z+nXMBbY7DGFO4pe8wnk3/GTdZbJ
-	ZAGY1PXOsCNi2Ba/jRZS+4e/hvZ1jtUEuOCcj+fX5ZLN+yFovpg1+eL40zFYXHcquTApsC7CNOWJS
-	wXLMhv1sGPqxERf6UwFb1Fbn5xkKPYZp9Spa7bVQg7UISk4uCFANZNww1FQWSNDa1m5NxWeoZcG4k
-	U3PZNSIK4EioMVY8idvQ==;
+	List-Owner; bh=0W1khxHqsFqBK4GWDxEM0KPJYngxw4RVr5dHOXY2JHM=; b=p3SAN2/bZZhpY3
+	6+23IUJHHVecrTo99KoNj508YANNRtvlLX0P5yLkZIs+0g1yaZnPlzk1NblWdrn5HAFObQxUF13vm
+	XaoRssaN5JiRMq01Ite5/OyG2/qdFPYNAH1RpcBfOHGt/7ENnuwzA2YVPXL0eNnugAh72uZqf+3hk
+	1omZ5K2AZpgmU6qJqMVguuIO3azqAWt7+fJOD80Y4eaeMXfV6MTD7NAJ1M0dF2ybsjRxN9XWma2op
+	eXb+U5UsYbMa7xN5HS4m4OumcAbdGOxAaAy51JGPly1duPDHH8FHjEQEWXLPwLVHEb9vY/G4nH7c9
+	VOo1Izdi1osoG4KLV3YQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vM6uH-00000006wmx-3caC;
-	Thu, 20 Nov 2025 15:49:13 +0000
-Received: from bali.collaboradmins.com ([148.251.105.195])
+	id 1vM7el-000000071gS-2FF5;
+	Thu, 20 Nov 2025 16:37:15 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vM6uE-00000006wly-03Rd;
-	Thu, 20 Nov 2025 15:49:11 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1763653746;
-	bh=OGknm9RlxOFdzEIgb0Da240Rs6WBRlFklz56cuT5Dzk=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=gV64s3dwXmsMljMFBMmBoJ42qjeQHC9N24uo4ZJBqIEkncBs9YZXB3Nd/kXGyszun
-	 cm4zlyod0+P0iSdP1dCBdCUTY42rOJion/yFnsZwmkuHNx+VYW7DBrqo5ZHquHNID6
-	 FifqKimupbrrs1I4KNwohZ+bAsUGTl7wB0XvPuyp7oduEP7EZidkBPhcvynK4Jae9R
-	 MEiMCGtTaHjUeUUYPVB82jBif+IKIBRcz983UGyNtCXwgqQ8SdswlR7WDMO4fZil6L
-	 MHzyDi/jcqAjXOA/1lPwBPBGZEZypMtTkr5UCNkwFamiPZfzU+i7kGIwM6vryl9fYq
-	 sEfCDzFUZbGUg==
-Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id CD10C17E0117;
-	Thu, 20 Nov 2025 16:49:04 +0100 (CET)
-Message-ID: <c23d5d1e-4816-41c7-9886-41d586c84cc6@collabora.com>
-Date: Thu, 20 Nov 2025 16:49:04 +0100
+	id 1vM7ej-000000071g8-3lDW;
+	Thu, 20 Nov 2025 16:37:14 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id D0C1A601A2;
+	Thu, 20 Nov 2025 16:37:12 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id BDF2BC116C6;
+	Thu, 20 Nov 2025 16:37:11 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1763656632;
+	bh=hbrcZhED8ZxmgKPlhMnubsZAPDUVZ9ThVyihMNpMRkE=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=hcwzASneqrpvBjGk4tho3kOpzagOn+SOeqiKPHyQeKxyebb22vSY3fDgS8+8adapc
+	 fFUhYDPWd8ydQV7qUj9Uoppfwl/bPXPv3poou5+gbbswof7HH6V1b2simgTqAB1YQv
+	 C81rrpYW1uGwKsSl0nb0LHUcY7MS7gsu1cADLRyoACLxG8d20ipDO5yA7dc4F9LsC5
+	 Sxx06GTnydxHhQj1UGp1v2BBczQipWItJOXSgmRYqf5Yw8PonRlYzH+BdIfQzEsMYV
+	 AkYsN/c6pAtWApmwYZlXGhyb9e7LkEuCSfZySBVvT53GhBc+/L5VcPn9mhl+KM20lB
+	 n4VFXgyrT5gUA==
+Date: Thu, 20 Nov 2025 22:07:08 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Pritam Manohar Sutar <pritam.sutar@samsung.com>
+Cc: kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
+	conor+dt@kernel.org, alim.akhtar@samsung.com,
+	andre.draszik@linaro.org, peter.griffin@linaro.org,
+	kauschluss@disroot.org, johan@kernel.org,
+	ivo.ivanov.ivanov1@gmail.com, m.szyprowski@samsung.com,
+	s.nawrocki@samsung.com, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-samsung-soc@vger.kernel.org, rosa.pila@samsung.com,
+	dev.tailor@samsung.com, faraz.ata@samsung.com,
+	muhammed.ali@samsung.com, selvarasu.g@samsung.com
+Subject: Re: [PATCH v9 4/6] phy: exynos5-usbdrd: support HS combo phy for
+ ExynosAutov920
+Message-ID: <aR9DtJuwpzoq6spx@vaman>
+References: <20251010070912.3758334-1-pritam.sutar@samsung.com>
+ <CGME20251010070057epcas5p31b6ee42004594b2b2fb414494180753c@epcas5p3.samsung.com>
+ <20251010070912.3758334-5-pritam.sutar@samsung.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 00/11] arm64: dts: mediatek: Add Openwrt One AP
- functionality
-To: Jakub Kicinski <kuba@kernel.org>, Lee Jones <lee@kernel.org>,
- Konstantin Ryabitsev <konstantin@linuxfoundation.org>
-Cc: patchwork-bot+netdevbpf@kernel.org, Sjoerd Simons <sjoerd@collabora.com>,
- robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
- matthias.bgg@gmail.com, ryder.lee@mediatek.com, jianjun.wang@mediatek.com,
- bhelgaas@google.com, lpieralisi@kernel.org, kwilczynski@kernel.org,
- mani@kernel.org, chunfeng.yun@mediatek.com, vkoul@kernel.org,
- kishon@kernel.org, andrew+netdev@lunn.ch, davem@davemloft.net,
- edumazet@google.com, pabeni@redhat.com, lorenzo@kernel.org, nbd@nbd.name,
- kernel@collabora.com, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-mediatek@lists.infradead.org, linux-pci@vger.kernel.org,
- linux-phy@lists.infradead.org, netdev@vger.kernel.org,
- daniel@makrotopia.org, bryan@bryanhinton.com, conor.dooley@microchip.com
-References: <20251115-openwrt-one-network-v4-0-48cbda2969ac@collabora.com>
- <176360700676.1051457.11874224265724256534.git-patchwork-notify@kernel.org>
- <20251120152829.GH661940@google.com> <20251120073639.3fd7cc7c@kernel.org>
- <20251120154012.GJ661940@google.com> <20251120074457.5aa06d89@kernel.org>
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Content-Language: en-US
-In-Reply-To: <20251120074457.5aa06d89@kernel.org>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251120_074910_243625_7C9F4605 
-X-CRM114-Status: UNSURE (   9.67  )
-X-CRM114-Notice: Please train this message.
+Content-Disposition: inline
+In-Reply-To: <20251010070912.3758334-5-pritam.sutar@samsung.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,48 +75,294 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Il 20/11/25 16:44, Jakub Kicinski ha scritto:
-> On Thu, 20 Nov 2025 15:40:12 +0000 Lee Jones wrote:
->>>>>    - [v4,02/11] dt-bindings: PCI: mediatek-gen3: Add MT7981 PCIe compatible
->>>>>      (no matching commit)
->>>>>    - [v4,03/11] dt-bindings: phy: mediatek,tphy: Add support for MT7981
->>>>>      (no matching commit)
->>>>>    - [v4,04/11] arm64: dts: mediatek: mt7981b: Add PCIe and USB support
->>>>>      (no matching commit)
->>>>>    - [v4,05/11] arm64: dts: mediatek: mt7981b-openwrt-one: Enable PCIe and USB
->>>>>      (no matching commit)
->>>>>    - [v4,06/11] dt-bindings: net: mediatek,net: Correct bindings for MT7981
->>>>>      https://git.kernel.org/netdev/net-next/c/bc41fbbf6faa
->>>>>    - [v4,07/11] arm64: dts: mediatek: mt7981b: Add Ethernet and WiFi offload support
->>>>>      (no matching commit)
->>>>>    - [v4,08/11] arm64: dts: mediatek: mt7981b-openwrt-one: Enable Ethernet
->>>>>      (no matching commit)
->>>>>    - [v4,09/11] arm64: dts: mediatek: mt7981b: Disable wifi by default
->>>>>      (no matching commit)
->>>>>    - [v4,10/11] arm64: dts: mediatek: mt7981b: Add wifi memory region
->>>>>      (no matching commit)
->>>>>    - [v4,11/11] arm64: dts: mediatek: mt7981b-openwrt-one: Enable wifi
->>>>>      (no matching commit)
->>
->> This is a very odd way of presenting that one patch from the set was merged.
->>
->> Not sure I've seen this before.  Is it new?
->>
->> It's very confusing.  Is it a core PW thing and / or can it be configured?
+On 10-10-25, 12:39, Pritam Manohar Sutar wrote:
+> Support UTMI+ combo phy for this SoC which is somewhat simmilar to
+                                                        ^^^^^^^^
+typo
+
+> what the existing Exynos850 support does. The difference is that
+> some register offsets and bit fields are defferent from Exynos850.
+                                           ^^^^^^^^
+again
 > 
-> It's k.org infra bot. Konstantin, would it be possible to highlight
-> more that a series is partially applied?
+> Add required change in phy driver to support combo HS phy for this SoC.
+> 
+> Reviewed-by: Alim Akhtar <alim.akhtar@samsung.com>
+> Signed-off-by: Pritam Manohar Sutar <pritam.sutar@samsung.com>
+> ---
+>  drivers/phy/samsung/phy-exynos5-usbdrd.c | 211 +++++++++++++++++++++++
+>  1 file changed, 211 insertions(+)
+> 
+> diff --git a/drivers/phy/samsung/phy-exynos5-usbdrd.c b/drivers/phy/samsung/phy-exynos5-usbdrd.c
+> index dfc2cc71e579..c52b0e25a423 100644
+> --- a/drivers/phy/samsung/phy-exynos5-usbdrd.c
+> +++ b/drivers/phy/samsung/phy-exynos5-usbdrd.c
+> @@ -41,6 +41,13 @@
+>  #define EXYNOS2200_CLKRST_LINK_PCLK_SEL		BIT(1)
+>  
+>  #define EXYNOS2200_DRD_UTMI			0x10
+> +
+> +/* ExynosAutov920 bits */
+> +#define UTMICTL_FORCE_UTMI_SUSPEND		BIT(13)
+> +#define UTMICTL_FORCE_UTMI_SLEEP		BIT(12)
+> +#define UTMICTL_FORCE_DPPULLDOWN		BIT(9)
+> +#define UTMICTL_FORCE_DMPULLDOWN		BIT(8)
+> +
+>  #define EXYNOS2200_UTMI_FORCE_VBUSVALID		BIT(1)
+>  #define EXYNOS2200_UTMI_FORCE_BVALID		BIT(0)
+>  
+> @@ -250,6 +257,22 @@
+>  #define EXYNOS850_DRD_HSP_TEST			0x5c
+>  #define HSP_TEST_SIDDQ				BIT(24)
+>  
+> +#define EXYNOSAUTOV920_DRD_HSP_CLKRST		0x100
+> +#define HSPCLKRST_PHY20_SW_PORTRESET		BIT(3)
+> +#define HSPCLKRST_PHY20_SW_POR			BIT(1)
+> +#define HSPCLKRST_PHY20_SW_POR_SEL		BIT(0)
+> +
+> +#define EXYNOSAUTOV920_DRD_HSPCTL		0x104
+> +#define HSPCTRL_VBUSVLDEXTSEL			BIT(13)
+> +#define HSPCTRL_VBUSVLDEXT			BIT(12)
+> +#define HSPCTRL_EN_UTMISUSPEND			BIT(9)
+> +#define HSPCTRL_COMMONONN			BIT(8)
+> +
+> +#define EXYNOSAUTOV920_DRD_HSP_TEST		0x10c
+> +
+> +#define EXYNOSAUTOV920_DRD_HSPPLLTUNE		0x110
+> +#define HSPPLLTUNE_FSEL				GENMASK(18, 16)
+> +
+>  /* Exynos9 - GS101 */
+>  #define EXYNOS850_DRD_SECPMACTL			0x48
+>  #define SECPMACTL_PMA_ROPLL_REF_CLK_SEL		GENMASK(13, 12)
+> @@ -2054,6 +2077,140 @@ static const struct exynos5_usbdrd_phy_drvdata exynos990_usbdrd_phy = {
+>  	.n_regulators		= ARRAY_SIZE(exynos5_regulator_names),
+>  };
+>  
+> +static void
+> +exynosautov920_usbdrd_utmi_init(struct exynos5_usbdrd_phy *phy_drd)
+> +{
+> +	void __iomem *reg_phy = phy_drd->reg_phy;
+> +	u32 reg;
+> +
+> +	/*
+> +	 * Disable HWACG (hardware auto clock gating control). This
+> +	 * forces QACTIVE signal in Q-Channel interface to HIGH level,
+> +	 * to make sure the PHY clock is not gated by the hardware.
+> +	 */
+> +	reg = readl(reg_phy + EXYNOS850_DRD_LINKCTRL);
+> +	reg |= LINKCTRL_FORCE_QACT;
+> +	writel(reg, reg_phy + EXYNOS850_DRD_LINKCTRL);
+> +
+> +	/* De-assert link reset */
+> +	reg = readl(reg_phy + EXYNOS2200_DRD_CLKRST);
+> +	reg &= ~CLKRST_LINK_SW_RST;
+> +	writel(reg, reg_phy + EXYNOS2200_DRD_CLKRST);
+> +
+> +	/* Set PHY POR High */
+> +	reg = readl(reg_phy + EXYNOSAUTOV920_DRD_HSP_CLKRST);
+> +	reg |= HSPCLKRST_PHY20_SW_POR | HSPCLKRST_PHY20_SW_POR_SEL;
+> +	writel(reg, reg_phy + EXYNOSAUTOV920_DRD_HSP_CLKRST);
+> +
+> +	/* Enable UTMI+ */
+> +	reg = readl(reg_phy + EXYNOS2200_DRD_UTMI);
+> +	reg &= ~(UTMICTL_FORCE_UTMI_SUSPEND | UTMICTL_FORCE_UTMI_SLEEP |
+> +		UTMICTL_FORCE_DPPULLDOWN | UTMICTL_FORCE_DMPULLDOWN);
+> +	writel(reg, reg_phy + EXYNOS2200_DRD_UTMI);
+> +
+> +	/* set phy clock & control HS phy */
+> +	reg = readl(reg_phy + EXYNOSAUTOV920_DRD_HSPCTL);
+> +	reg |= HSPCTRL_EN_UTMISUSPEND | HSPCTRL_COMMONONN;
+> +	writel(reg, reg_phy + EXYNOSAUTOV920_DRD_HSPCTL);
+> +
+> +	fsleep(100);
+> +
+> +	/* Set VBUS Valid and DP-Pull up control by VBUS pad usage */
+> +	reg = readl(reg_phy + EXYNOS850_DRD_LINKCTRL);
+> +	reg |= FIELD_PREP_CONST(LINKCTRL_BUS_FILTER_BYPASS, 0xf);
+> +	writel(reg, reg_phy + EXYNOS850_DRD_LINKCTRL);
+> +
+> +	reg = readl(reg_phy + EXYNOS2200_DRD_UTMI);
+> +	reg |= EXYNOS2200_UTMI_FORCE_VBUSVALID | EXYNOS2200_UTMI_FORCE_BVALID;
+> +	writel(reg, reg_phy + EXYNOS2200_DRD_UTMI);
+> +
+> +	reg = readl(reg_phy + EXYNOSAUTOV920_DRD_HSPCTL);
+> +	reg |= HSPCTRL_VBUSVLDEXTSEL | HSPCTRL_VBUSVLDEXT;
+> +	writel(reg, reg_phy + EXYNOSAUTOV920_DRD_HSPCTL);
+> +
+> +	/* Setting FSEL for refference clock */
+> +	reg = readl(reg_phy + EXYNOSAUTOV920_DRD_HSPPLLTUNE);
+> +	reg &= ~HSPPLLTUNE_FSEL;
+> +
+> +	switch (phy_drd->extrefclk) {
+> +	case EXYNOS5_FSEL_50MHZ:
+> +		reg |= FIELD_PREP(HSPPLLTUNE_FSEL, 7);
+> +		break;
+> +	case EXYNOS5_FSEL_26MHZ:
+> +		reg |= FIELD_PREP(HSPPLLTUNE_FSEL, 6);
+> +		break;
+> +	case EXYNOS5_FSEL_24MHZ:
+> +		reg |= FIELD_PREP(HSPPLLTUNE_FSEL, 2);
+> +		break;
+> +	case EXYNOS5_FSEL_20MHZ:
+> +		reg |= FIELD_PREP(HSPPLLTUNE_FSEL, 1);
+> +		break;
+> +	case EXYNOS5_FSEL_19MHZ2:
+> +		reg |= FIELD_PREP(HSPPLLTUNE_FSEL, 0);
+> +		break;
+> +	default:
+> +		dev_warn(phy_drd->dev, "unsupported ref clk: %#.2x\n",
+> +			 phy_drd->extrefclk);
+> +		break;
+> +	}
+> +	writel(reg, reg_phy + EXYNOSAUTOV920_DRD_HSPPLLTUNE);
+> +
+> +	/* Enable PHY Power Mode */
+> +	reg = readl(reg_phy + EXYNOSAUTOV920_DRD_HSP_TEST);
+> +	reg &= ~HSP_TEST_SIDDQ;
+> +	writel(reg, reg_phy + EXYNOSAUTOV920_DRD_HSP_TEST);
+> +
+> +	/* before POR low, 10us delay is needed to Finish PHY reset */
+> +	fsleep(10);
+> +
+> +	/* Set PHY POR Low */
+> +	reg = readl(reg_phy + EXYNOSAUTOV920_DRD_HSP_CLKRST);
+> +	reg |= HSPCLKRST_PHY20_SW_POR_SEL;
+> +	reg &= ~(HSPCLKRST_PHY20_SW_POR | HSPCLKRST_PHY20_SW_PORTRESET);
+> +	writel(reg, reg_phy + EXYNOSAUTOV920_DRD_HSP_CLKRST);
+> +
+> +	/* after POR low and delay 75us, PHYCLOCK is guaranteed. */
+> +	fsleep(75);
+> +
+> +	/* force pipe3 signal for link */
+> +	reg = readl(reg_phy + EXYNOS850_DRD_LINKCTRL);
+> +	reg |= LINKCTRL_FORCE_PIPE_EN;
+> +	reg &= ~LINKCTRL_FORCE_PHYSTATUS;
+> +	reg |= LINKCTRL_FORCE_RXELECIDLE;
+> +	writel(reg, reg_phy + EXYNOS850_DRD_LINKCTRL);
+> +}
+> +
+> +static void
+> +exynosautov920_usbdrd_hsphy_disable(struct exynos5_usbdrd_phy *phy_drd)
+> +{
+> +	u32 reg;
+> +	void __iomem *reg_phy = phy_drd->reg_phy;
+> +
+> +	/* set phy clock & control HS phy */
+> +	reg = readl(reg_phy + EXYNOS2200_DRD_UTMI);
+> +	reg |= UTMICTL_FORCE_UTMI_SUSPEND | UTMICTL_FORCE_UTMI_SLEEP;
+> +	reg &= ~(UTMICTL_FORCE_DPPULLDOWN | UTMICTL_FORCE_DMPULLDOWN);
+> +	writel(reg, reg_phy + EXYNOS2200_DRD_UTMI);
+> +
+> +	/* Disable PHY Power Mode */
+> +	reg = readl(reg_phy + EXYNOSAUTOV920_DRD_HSP_TEST);
+> +	reg |= HSP_TEST_SIDDQ;
+> +	writel(reg, reg_phy + EXYNOSAUTOV920_DRD_HSP_TEST);
+> +
+> +	/* clear force q-channel */
+> +	reg = readl(reg_phy + EXYNOS850_DRD_LINKCTRL);
+> +	reg &= ~LINKCTRL_FORCE_QACT;
+> +	writel(reg, reg_phy + EXYNOS850_DRD_LINKCTRL);
+> +
+> +	/* link sw reset is need for USB_DP/DM high-z in host mode */
+> +	reg = readl(reg_phy + EXYNOS2200_DRD_CLKRST);
+> +	reg |= CLKRST_LINK_SW_RST;
+> +	writel(reg, reg_phy + EXYNOS2200_DRD_CLKRST);
+> +	fsleep(10);
+> +	reg &= ~CLKRST_LINK_SW_RST;
+> +	writel(reg, reg_phy + EXYNOS2200_DRD_CLKRST);
+> +}
+> +
+>  static int exynosautov920_usbdrd_phy_init(struct phy *phy)
+>  {
+>  	struct phy_usb_instance *inst = phy_get_drvdata(phy);
+> @@ -2095,6 +2252,27 @@ static int exynosautov920_usbdrd_phy_exit(struct phy *phy)
+>  	return 0;
+>  }
+>  
+> +static int exynosautov920_usbdrd_combo_phy_exit(struct phy *phy)
+> +{
+> +	struct phy_usb_instance *inst = phy_get_drvdata(phy);
+> +	struct exynos5_usbdrd_phy *phy_drd = to_usbdrd_phy(inst);
+> +	int ret = 0;
 
-I guess that adding "(subset)" like b4 does would improve those messages quite
-a lot ;-)
+Superfluous init
 
-Cheers,
-Angelo
+> +
+> +	ret = clk_bulk_prepare_enable(phy_drd->drv_data->n_clks, phy_drd->clks);
+> +	if (ret)
+> +		return ret;
+> +
+> +	if (inst->phy_cfg->id == EXYNOS5_DRDPHY_UTMI)
+> +		exynosautov920_usbdrd_hsphy_disable(phy_drd);
+> +
+> +	/* enable PHY isol */
+> +	inst->phy_cfg->phy_isol(inst, true);
+> +
+> +	clk_bulk_disable_unprepare(phy_drd->drv_data->n_clks, phy_drd->clks);
+> +
+> +	return 0;
+> +}
+> +
+>  static int exynosautov920_usbdrd_phy_power_on(struct phy *phy)
+>  {
+>  	struct phy_usb_instance *inst = phy_get_drvdata(phy);
+> @@ -2146,6 +2324,36 @@ static const char * const exynosautov920_usb20_regulators[] = {
+>  	"dvdd", "vdd18", "vdd33",
+>  };
+>  
+> +static const struct phy_ops exynosautov920_usbdrd_combo_hsphy_ops = {
+> +	.init		= exynosautov920_usbdrd_phy_init,
+> +	.exit		= exynosautov920_usbdrd_combo_phy_exit,
+> +	.power_on	= exynosautov920_usbdrd_phy_power_on,
+> +	.power_off	= exynosautov920_usbdrd_phy_power_off,
+> +	.owner		= THIS_MODULE,
+> +};
+> +
+> +static const struct
+> +exynos5_usbdrd_phy_config usbdrd_hsphy_cfg_exynosautov920[] = {
+> +	{
+> +		.id		= EXYNOS5_DRDPHY_UTMI,
+> +		.phy_isol	= exynos5_usbdrd_phy_isol,
+> +		.phy_init	= exynosautov920_usbdrd_utmi_init,
+> +	},
+> +};
+> +
+> +static const
+> +struct exynos5_usbdrd_phy_drvdata exynosautov920_usbdrd_combo_hsphy = {
+> +	.phy_cfg		= usbdrd_hsphy_cfg_exynosautov920,
+> +	.phy_ops		= &exynosautov920_usbdrd_combo_hsphy_ops,
+> +	.pmu_offset_usbdrd0_phy	= EXYNOSAUTOV920_PHY_CTRL_USB20,
+> +	.clk_names		= exynos5_clk_names,
+> +	.n_clks			= ARRAY_SIZE(exynos5_clk_names),
+> +	.core_clk_names		= exynos5_core_clk_names,
+> +	.n_core_clks		= ARRAY_SIZE(exynos5_core_clk_names),
+> +	.regulator_names	= exynosautov920_usb20_regulators,
+> +	.n_regulators		= ARRAY_SIZE(exynosautov920_usb20_regulators),
+> +};
+> +
+>  static const struct phy_ops exynosautov920_usbdrd_phy_ops = {
+>  	.init		= exynosautov920_usbdrd_phy_init,
+>  	.exit		= exynosautov920_usbdrd_phy_exit,
+> @@ -2380,6 +2588,9 @@ static const struct of_device_id exynos5_usbdrd_phy_of_match[] = {
+>  	}, {
+>  		.compatible = "samsung,exynos990-usbdrd-phy",
+>  		.data = &exynos990_usbdrd_phy
+> +	}, {
+> +		.compatible = "samsung,exynosautov920-usbdrd-combo-hsphy",
+> +		.data = &exynosautov920_usbdrd_combo_hsphy
+>  	}, {
+>  		.compatible = "samsung,exynosautov920-usbdrd-phy",
+>  		.data = &exynosautov920_usbdrd_phy
+> -- 
+> 2.34.1
+
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
