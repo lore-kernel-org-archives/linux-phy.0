@@ -4,68 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 65F2BCFA76C
-	for <linux-phy@archiver.kernel.org>; Fri, 21 Nov 2025 10:24:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8D2F4CFC27E
+	for <linux-phy@archiver.kernel.org>; Fri, 21 Nov 2025 14:18:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HKIewEJVp59MQaWZGeVdPMNU1svQpXCMG+MdHTHG2LI=; b=yGTaN9l70jGttB
-	6uxFEqyz/1t3bLzztu6/0K1hjkAMGAVq0xWCI47sSCXMUL5g8bRgGAs/FH7fNjUlvbx+qb0DzVsAx
-	QKrXOzhp/cs9eguXzqXH23VbOY4QvDzD+QiuhmoxBq0YMvqKvatUuRheFli7wISNNuGBB/XpsieeO
-	kHD8FPTKOZYoWxCEN7Mh9ckzAdzUCJyBji6TaQ5OsMycbh0449P4oHEwrq84iQNaIw0U2vTbbMbYl
-	uoyz7sWYhacQ8cfOR0f3QFh4w5Zl289EIvQQEVZ/TjIeXmCIer/xzISAUo748l+uli7t5f5n9rTJe
-	Bgp/KKcQnIXrkzEbHRZQ==;
+	List-Owner; bh=cNvp+VgaZnXtuSRZDfFn8/jzLs23eSccIaVUvSXVF2o=; b=udaymYFtBz8mQC
+	6aLYn2HoKb4FTOYet8JcGHxcOOzy3Z+K7KhX4d40Q+RKopMZ8/kb5TXNmDONN7JEsi8BBtMTlDSME
+	SPISxhVgb6VY/QMxN9KFV7AVrvGK6mNx+SFEMO44xWk63hHrFEdOoDh6U/x0JqYXE626mt9EmG1wV
+	+VgITXcm9NNaUJRCMKArjHAKmfFBzVVL8S4lYRf/Cxt/F4/jKz8VP7oHlV6oOXNZi/Us8+h9EI2Un
+	qZFtGPpZzu3OsbBsABe49qb1pz9gBoNpU5eQdrVCXicyLkr+ogLslRAPdfVvDPCxAdv+iKG6AKMnA
+	dPa2XuZCCbf9/Evn1PsQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vMOJl-00000008EOe-0jy8;
-	Fri, 21 Nov 2025 10:24:41 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1vMRyC-00000008VXt-0ago;
+	Fri, 21 Nov 2025 14:18:40 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vMOJj-00000008EOQ-1neI;
-	Fri, 21 Nov 2025 10:24:39 +0000
+	id 1vMRy7-00000008VVw-1zKi;
+	Fri, 21 Nov 2025 14:18:36 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 8AFA060235;
-	Fri, 21 Nov 2025 10:24:38 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 83A35C4CEF1;
-	Fri, 21 Nov 2025 10:24:37 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1763720678;
-	bh=HizJuIeoODBpLxDfWhYPkJL8kWROViz2yXrYNsMsOZQ=;
+	by sea.source.kernel.org (Postfix) with ESMTP id C7D87442EB;
+	Fri, 21 Nov 2025 14:18:34 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 23600C116C6;
+	Fri, 21 Nov 2025 14:18:34 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
+	s=korg; t=1763734714;
+	bh=7ykWYfNeXBP9xhRMOGHYkSJQ+oeDMqaGVDI5K6Z6yPI=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=ENU7nhgQJ0Xamb6jBuOiemY0Bw1AJxP1R15NYtKp5A36cygl4NMApg9nBioHh8leE
-	 NReMNTh22emL56uJrYwaQkSsB7IYXQb2NF3XqbXXdTzu8339j3daFqLuuDY9zyyAyy
-	 u51V3HzZDCr9Dd+RHM9Rfo3F7US/BeTOoqeLuHO7TL/gkqZDN4MEFAj0TEQTI4VMqQ
-	 Q5ZGhvIj2qOoD81XZa4Q2CnqjMk/S+FpgQgunoKNvHLv3oRoxa/rotQbkuwUCDtuMf
-	 qySx6QD2GGLwD0annoDrtNAfEIndIk1Y9Y/wPGsW0NNsGYM7cRwVWbQQsvvDbMddoN
-	 O/1cO9Bn7T2TA==
-Date: Fri, 21 Nov 2025 15:54:34 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Pritam Manohar Sutar <pritam.sutar@samsung.com>
-Cc: kishon@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
-	conor+dt@kernel.org, alim.akhtar@samsung.com,
-	andre.draszik@linaro.org, peter.griffin@linaro.org,
-	kauschluss@disroot.org, johan@kernel.org,
-	ivo.ivanov.ivanov1@gmail.com, m.szyprowski@samsung.com,
-	s.nawrocki@samsung.com, linux-phy@lists.infradead.org,
+	b=i3rS3lc8q8yGKuccSf3yMj75an1MrewEFf3kOpSVN1Itlqjn6CWMKnDbM1Q+Liqt6
+	 mkNEoSVgcJGe/BF/nBOhbQBj3I5iEIhyuquCfuN8nhyM6KbMg+9zvCvxCF3P3Heb0n
+	 LPV4Ir6ZbRyF4j9okG+sFB0ssPvAfegwt33s/t0c=
+Date: Fri, 21 Nov 2025 15:07:03 +0100
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Chaoyi Chen <kernel@airkyi.com>
+Cc: Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+	Peter Chen <hzpeterchen@gmail.com>,
+	Luca Ceresoli <luca.ceresoli@bootlin.com>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Heiko Stuebner <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
+	Andy Yan <andy.yan@rock-chips.com>,
+	Yubing Zhang <yubing.zhang@rock-chips.com>,
+	Frank Wang <frank.wang@rock-chips.com>,
+	Andrzej Hajda <andrzej.hajda@intel.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Robert Foss <rfoss@kernel.org>,
+	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+	Jonas Karlman <jonas@kwiboo.se>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+	Amit Sunil Dhamne <amitsd@google.com>,
+	Chaoyi Chen <chaoyi.chen@rock-chips.com>,
+	Dragan Simic <dsimic@manjaro.org>, Johan Jonker <jbx6244@gmail.com>,
+	Diederik de Haas <didi.debian@cknow.org>,
+	Peter Robinson <pbrobinson@gmail.com>, linux-usb@vger.kernel.org,
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-samsung-soc@vger.kernel.org, rosa.pila@samsung.com,
-	dev.tailor@samsung.com, faraz.ata@samsung.com,
-	muhammed.ali@samsung.com, selvarasu.g@samsung.com
-Subject: Re: [PATCH v9 4/6] phy: exynos5-usbdrd: support HS combo phy for
- ExynosAutov920
-Message-ID: <aSA94s_g0yVno3sS@vaman>
-References: <20251010070912.3758334-1-pritam.sutar@samsung.com>
- <CGME20251010070057epcas5p31b6ee42004594b2b2fb414494180753c@epcas5p3.samsung.com>
- <20251010070912.3758334-5-pritam.sutar@samsung.com>
- <aR9DtJuwpzoq6spx@vaman>
- <00ef01dc5abd$b8aac3b0$2a004b10$@samsung.com>
+	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org
+Subject: Re: [PATCH v10 01/11] usb: typec: Add notifier functions
+Message-ID: <2025112102-laurel-mulch-58e4@gregkh>
+References: <20251120022343.250-1-kernel@airkyi.com>
+ <20251120022343.250-2-kernel@airkyi.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <00ef01dc5abd$b8aac3b0$2a004b10$@samsung.com>
+In-Reply-To: <20251120022343.250-2-kernel@airkyi.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20251121_061835_532950_1173A889 
+X-CRM114-Status: GOOD (  10.08  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,50 +97,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 21-11-25, 13:36, Pritam Manohar Sutar wrote:
-> Hi Vinod,
+On Thu, Nov 20, 2025 at 10:23:33AM +0800, Chaoyi Chen wrote:
+> From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
 > 
-> > -----Original Message-----
-> > From: Vinod Koul <vkoul@kernel.org>
-> > Sent: 20 November 2025 10:07 PM
-> > To: Pritam Manohar Sutar <pritam.sutar@samsung.com>
-> > Cc: kishon@kernel.org; robh@kernel.org; krzk+dt@kernel.org;
-> > conor+dt@kernel.org; alim.akhtar@samsung.com; andre.draszik@linaro.org;
-> > peter.griffin@linaro.org; kauschluss@disroot.org; johan@kernel.org;
-> > ivo.ivanov.ivanov1@gmail.com; m.szyprowski@samsung.com;
-> > s.nawrocki@samsung.com; linux-phy@lists.infradead.org;
-> > devicetree@vger.kernel.org; linux-kernel@vger.kernel.org; linux-arm-
-> > kernel@lists.infradead.org; linux-samsung-soc@vger.kernel.org;
-> > rosa.pila@samsung.com; dev.tailor@samsung.com;
-> > faraz.ata@samsung.com; muhammed.ali@samsung.com;
-> > selvarasu.g@samsung.com
-> > Subject: Re: [PATCH v9 4/6] phy: exynos5-usbdrd: support HS combo phy for
-> > ExynosAutov920
-> > 
-> > On 10-10-25, 12:39, Pritam Manohar Sutar wrote:
-> > > Support UTMI+ combo phy for this SoC which is somewhat simmilar to
-> >                                                         ^^^^^^^^ typo
-> > 
-> > > what the existing Exynos850 support does. The difference is that some
-> > > register offsets and bit fields are defferent from Exynos850.
-> >                                            ^^^^^^^^ again
-> 
-> Thank for the review and sorry for the typo and can you please
-> confirm if updated commit message is fine, mentioned as below?
-> 
-> "
->     phy: exynos5-usbdrd: support HS combo phy for ExynosAutov920
-> 
->     Support UTMI+ combo phy for this SoC, which is somewhat similar to
->     what the existing Exynos850 supports. The difference is that some
->     register offsets and bit fields are different from Exynos850.
-> 
->     Add required change in phy driver to support combo HS phy for this SoC.
-> "
+> Some other part of kernel may want to know the event of typec bus.
 
-better :-)
--- 
-~Vinod
+Be specific, WHAT part of the kernel will need to know this?
+
+And why a new notifier, why not just use the existing notifiers that you
+already have?  And what is this going to be used for?
+
+Notifiers are a pain, and should almost never be added.  Use real
+function calls instead.
+
+thanks,
+
+greg k-h
 
 -- 
 linux-phy mailing list
