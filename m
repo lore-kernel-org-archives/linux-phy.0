@@ -4,88 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5B17ACFA468
-	for <linux-phy@archiver.kernel.org>; Fri, 21 Nov 2025 08:47:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ADBD8CF9C74
+	for <linux-phy@archiver.kernel.org>; Fri, 21 Nov 2025 08:56:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DOMo3zwE3bPgjHiOW9YZl0PPJgKAB6PHRvuefuZLk9U=; b=mDv8m86uddLtbf
-	4FCwNmTkPzHygy3gBePTrsL1JHBT5sjJTpXZ6NGe+l0OXxdBmecoQf8EnNCQB/hQYpW1h2/rECD3Q
-	yfI3ZNt7pkryygl7OW+GuyKBG690vu0Va8oxp8ifkLNJeuF0Sgf7ctYx5mvgbaapouk+f8bha9eNZ
-	+qz7WSxkofB4TUdvWPUZtxO+gyXjYXjl0bweULRoxiMcM8sTcyDtylJeQoaeU4d90absqtxSX63dD
-	SnTOpohnCXKaPHrJFU/gBxyBKVMZnOyPDhwACx8NtLa4rmI/Pvj0nKS4gN1LJR0RsRNklvWywzXLf
-	1SHt4lWAMosWlxerAtMg==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:From:Subject:Message-ID:
+	Mime-Version:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=kU3Pns0I8+bGEUzix0BV8lz7yeqn1OewFHacCpIYMIY=; b=TOE
+	XF1/+PQGWOIurMrsPPh+nTUlP/T3YL4GlKMFi+i8uFvk87Zy3V5XJ+6Syd7KbecxDNIlMKX+mZfRN
+	mANz3mSgQLTLoG+1ctMRU5XyYaasraNc9089iIT9Bl97NXGiY52LQhFxgQeteDLcWTspbB3v/e0wK
+	HgcfhL1mtVPaStcKz5+bMYVZfnflkAGnqefGyS762NHv909h4M8YRO65QItzYdhpQ6XxURQb9U6Sc
+	HzAmvfH7HjlXOiSstVi8BEEf0P6mxCxDqGHvMvEUIe+9IvpvCTynLg48OuTt0aKlILYh/3vxhtOL7
+	+mUzaiYjUF64Ap/ZdPgsyaLh3oa1FhA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vMMnG-000000085lq-3q1r;
-	Fri, 21 Nov 2025 08:47:02 +0000
-Received: from mail-pj1-x1030.google.com ([2607:f8b0:4864:20::1030])
+	id 1vMMwc-000000086dU-1d8y;
+	Fri, 21 Nov 2025 08:56:42 +0000
+Received: from mail-pg1-x54a.google.com ([2607:f8b0:4864:20::54a])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vMMnD-000000085kr-3kwQ
+	id 1vMMwY-000000086bV-3YUI
 	for linux-phy@lists.infradead.org;
-	Fri, 21 Nov 2025 08:47:01 +0000
-Received: by mail-pj1-x1030.google.com with SMTP id 98e67ed59e1d1-34585428e33so1739896a91.3
-        for <linux-phy@lists.infradead.org>; Fri, 21 Nov 2025 00:46:58 -0800 (PST)
+	Fri, 21 Nov 2025 08:56:40 +0000
+Received: by mail-pg1-x54a.google.com with SMTP id 41be03b00d2f7-b62da7602a0so1748403a12.2
+        for <linux-phy@lists.infradead.org>; Fri, 21 Nov 2025 00:56:38 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=google.com; s=20230601; t=1763714818; x=1764319618; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=9rw6P3vTkq9/VDf2BdRM52eT1wyytd0Ws0h+4Sg6bhM=;
-        b=tX7YYGhDS5nRY6mU0gwehzkzr0wFaFwdG+wEzc3M0CPJ0OTRzQSg/ygB4VK6QIt2so
-         HIMau39h96jAEQ6oZ4sjRfVw6thFU/9DH4sNz23/OwSPh7B/BmCDJvJLwU8UvPDYhpz2
-         MHerwlgi9Xx5z+nm7iNILyCDn/Fk23s3PxdcLQWlq/GmVt8DC5yX7V02aP7MTp6AgLTy
-         xA9EQnxRlWJhJ0Sb4PXrLyLX/mvti/PzUQkwksUhML3ZE8QQhVZ/4y9S3OS6XA6i5Js/
-         rrYWUQA04HXIoDY7Js+5M3kQT+1baCc0anPpwfb9HzHcSDTiDt5TGdLFxSX6DvTlupWa
-         op4A==
+        d=google.com; s=20230601; t=1763715397; x=1764320197; darn=lists.infradead.org;
+        h=cc:to:from:subject:message-id:mime-version:date:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=DhM9Fa/jP+KWb7vx3DxnfgNJ8bMuk70umuAM2oX5908=;
+        b=tm/o9rn3l+i+ogsHIcrbCmpYAFc7UQlSM5a+miYKOPWvApoZM9x/JjhNHvPM0ei9q4
+         zPiCNbj69+0eJMS+YososDWJ5q25wPhxinL4BA0M9OAXpM6P5DJt78uRUaDj+kPWdRIY
+         nnLkvFg+/VaA0TLWjeIZCGRxc6gMx09h1Rcg/Ou+n/9wwajjHdoTxbwo0mGXuIgB6M0S
+         u9vH9wX+cUDwwQvSHXRYAezy0H46hEa3O2JCvfGtS2yjXQw+YirpisDrFvL0a4BfHxvK
+         0my3H9m9qovIfdSig5TTVsuP6tFKNoYRvsiUbU6qQgcSabgMJVzAtnwVWhPyA21ti+sS
+         9g2Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1763714818; x=1764319618;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=9rw6P3vTkq9/VDf2BdRM52eT1wyytd0Ws0h+4Sg6bhM=;
-        b=JGKmPJciEOmKebtOgB+6xCHH/IHLH8PlGu+7L9y+i7ydBL5AR054iVdaobPKY6XIgJ
-         FPWtuzuRxymKWElNJR8Ncx/yCTvJb5lEQeeIb0g+E6C0GyssUrpr4rf81iXk9xQU1IQo
-         T8ih5KldqAExJy76dQq7iiqvSa7vuQbn6GAaUX/AE6PcdLc+VXxqjulcTJQ37GTAEaVn
-         s07AkGter3HtO/ZzQrug+So0ydWgupWHu1kL1YpttPhA5uwsRZYP0Tm7XgGi3xY36F+s
-         Ta0UJl8C6ABsOTN2kXyI8/5IBWHnCiBnxtlei1+VDGI03hSMBaY76WgW6o1bykDsfQMb
-         Jo8g==
-X-Forwarded-Encrypted: i=1; AJvYcCVCn5qoy4MoCyoKW/mLWx2mQ8uJ6K5UiWTz9WlmAsI7hEtgwQ0vfS3K7f6r6jAcTDiBIYyFD8SL9M4=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyHwb07BaT8wTkcdN34PvsHed21Ph9pgPtvxBxAUEXZCK/UiLas
-	J2AxXXR86tIV7Spctbxy3IAfsir17GhEF8XJu6qhI8EbVdbSfKOe1VG2FaZTuqXDkzxlgiUKMpT
-	BJYZNnyY5DsNAZb+EGO2t74Hp/1HGdd2kcpK2WgF/
-X-Gm-Gg: ASbGnct1rHbIi6cwGaW5W7X3bAv6/L+nzRoKrIzIyyYXp20LKf4dY0KLwfjEZpEDbOH
-	J3HoOpX6KPtTETQEIxMhyACoBxN08Veu46QvyOCZoRpZfRnwGL0K9fASyueJQAYilzg5W+wjPLI
-	SC0HPUb5RBefnzaBhVvD21N0+8geLORUQgxehaZ0tFda57EJRWHYJgCBeObCzEnTlY0J+ONa3EE
-	aaCarTb7Asyf+eLKvWhqQ4UPlKnErHXGzMsOW6f0Sld5lPZyHcWLrsGUEcHy7n8EhD/Zsg=
-X-Google-Smtp-Source: AGHT+IEGKK1JVapl4Bfkn+X1caSvW4BJYyhUwjXrKD36ojgbUTuY+cLlAhIn+4hGtsKsgQZA7TevAUxQK94FOcafFjQ=
-X-Received: by 2002:a05:7022:ea46:10b0:119:e569:f26c with SMTP id
- a92af1059eb24-11c9d819c4amr549173c88.21.1763714817986; Fri, 21 Nov 2025
- 00:46:57 -0800 (PST)
-MIME-Version: 1.0
-References: <20251120-phyb4-v6-0-b6694e1f0caf@google.com> <20251120-phyb4-v6-1-b6694e1f0caf@google.com>
- <20251121-attentive-demonic-jacamar-fc4afb@kuoka>
-In-Reply-To: <20251121-attentive-demonic-jacamar-fc4afb@kuoka>
+        d=1e100.net; s=20230601; t=1763715397; x=1764320197;
+        h=cc:to:from:subject:message-id:mime-version:date:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=DhM9Fa/jP+KWb7vx3DxnfgNJ8bMuk70umuAM2oX5908=;
+        b=SNKEXF6c16F9YoCW4yXGTMngtlLsviOTemJJomsprIAR/X9rgSG2YKJ72PjdBNZOYY
+         GF3lI5MOW/pfSgUs7IymjkcVA828wchpc5tK3qqZ2sz0BBgkzYEVywXiJIfgu42afMRP
+         HqhimuQ/TFr0nwNQbILueyK3Wex7W+HJijt8FB8JR0kHvd7I0IW38AGV7BCDjg6b2aiQ
+         5gPSQF198DJDY+AMpr8pdGJk0iBR+NJmQO4dHGS5SXrdy6sQ03rEK/W52XCN76HT0T3U
+         DMzii3zx13+dtLsdJD7TxVbqRufHfxZ+JYO3ktG0UuSCBN3ZAqUdhK88o1x6T3z90R3Y
+         D2WA==
+X-Forwarded-Encrypted: i=1; AJvYcCUasY6kTdnty2cNcDotYg25OU+o6bfGq9pWP9h3e8CqJTBjNNoQnSdAaqYbuLSL/+fdgvaapqEnpDU=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzpPa5Zp6302vhTEJXk1Go0fjAkcQ1u/V/3j8AHnsQmU5KB1Hjw
+	uXTfmSy/6LJiV85+x3cS00cpIiHaQiP4GUy+zaWVj1RcouFNT3l+VzEzwT9R6pUg5CvWMsu5slU
+	rhvJQWQ==
+X-Google-Smtp-Source: AGHT+IHOt9VGLM5kE8fbmXammocOK9LHEy2oDCT5mMWFdkcdyy6xX1Z2HP5Qw8fBAZ2SiujmIs4ZXkkrgOM=
+X-Received: from dlbqj20.prod.google.com ([2002:a05:7022:ec14:b0:11b:806e:9c8d])
+ (user=royluo job=prod-delivery.src-stubby-dispatcher) by 2002:a05:7022:3f89:b0:119:e56b:91f6
+ with SMTP id a92af1059eb24-11c9d87076bmr424174c88.39.1763715397353; Fri, 21
+ Nov 2025 00:56:37 -0800 (PST)
+Date: Fri, 21 Nov 2025 08:56:19 +0000
+Mime-Version: 1.0
+X-B4-Tracking: v=1; b=H4sIADMpIGkC/02OQQqDMBREryJZN5J8Y8Sueo/iIqY/JqBGEisV8
+ e6NIrTLBzNvZiMRg8NI7tlGAi4uOj8mqG4Z0VaNHVL3SkyAQck5r+lk11ZQQFaoSgtRa0FSdgp
+ o3Of0PJvEJviBzjag+rUZ1MAFKyAveFWC5JTT4Nf+7R+d912PufbDIbMuzj6s56dFHsprHtg1v 0jKaCtlLZAbppX5NzT7vn8BvOwlxdgAAAA=
+X-Change-Id: 20251119-phyb4-2e03a7c449c4
+X-Developer-Key: i=royluo@google.com; a=ed25519; pk=nTq1n8WcJActRWe1s8jdcy+TzpTK4a+IYRCIWvQfq5k=
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1763715395; l=4451;
+ i=royluo@google.com; s=20251120; h=from:subject:message-id;
+ bh=Ar+FpJ9OcQupIafQmNevHRUQrYI7zdExOsWYoTxS3fQ=; b=SBxNkIDzrCsiCjNNLNfD4nwYdPjqjoFKrywstPwPtPtm9mW+EVfzp6ypYcS1gv6q6NhTIaxuU
+ boJMTGOjnZ6CVULL34Yllotu9p0zwgKXaWjiMFHgrWaci1TWiDyKmwc
+X-Mailer: b4 0.14.2
+Message-ID: <20251121-phyb4-v7-0-df644fa62180@google.com>
+Subject: [PATCH v7 0/2] Add Google Tensor SoC USB PHY support
 From: Roy Luo <royluo@google.com>
-Date: Fri, 21 Nov 2025 16:46:21 +0800
-X-Gm-Features: AWmQ_bmUVOlmJqcVyT_EtvB6gdvlOG5rtdefUR1SndkOE8ikDuOVfBKFFoK6hGc
-Message-ID: <CA+zupgxskC2HMy_sLusDbb_L1t49frjLQW6isBfAKa6BgNvpNQ@mail.gmail.com>
-Subject: Re: [PATCH v6 1/2] dt-bindings: phy: google: Add Google Tensor G5 USB PHY
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
 	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Peter Griffin <peter.griffin@linaro.org>, =?UTF-8?Q?Andr=C3=A9_Draszik?= <andre.draszik@linaro.org>, 
-	Tudor Ambarus <tudor.ambarus@linaro.org>, Philipp Zabel <p.zabel@pengutronix.de>, 
-	Badhri Jagan Sridharan <badhri@google.com>, Doug Anderson <dianders@google.com>, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org, 
-	Joy Chakraborty <joychakr@google.com>, Naveen Kumar <mnkumar@google.com>
+	Peter Griffin <peter.griffin@linaro.org>, 
+	"=?utf-8?q?Andr=C3=A9_Draszik?=" <andre.draszik@linaro.org>, Tudor Ambarus <tudor.ambarus@linaro.org>, 
+	Philipp Zabel <p.zabel@pengutronix.de>
+Cc: Badhri Jagan Sridharan <badhri@google.com>, Doug Anderson <dianders@google.com>, 
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+	linux-samsung-soc@vger.kernel.org, Joy Chakraborty <joychakr@google.com>, 
+	Naveen Kumar <mnkumar@google.com>, Roy Luo <royluo@google.com>, 
+	Krzysztof Kozlowski <krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251121_004659_963616_5A6D37B6 
-X-CRM114-Status: GOOD (  18.21  )
+X-CRM114-CacheID: sfid-20251121_005638_894126_23FC38B6 
+X-CRM114-Status: GOOD (  15.10  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,35 +100,107 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gRnJpLCBOb3YgMjEsIDIwMjUgYXQgNDoxNuKAr1BNIEtyenlzenRvZiBLb3psb3dza2kgPGty
-emtAa2VybmVsLm9yZz4gd3JvdGU6Cj4KPiBPbiBUaHUsIE5vdiAyMCwgMjAyNSBhdCAwNTozNjo0
-MVBNICswMDAwLCBSb3kgTHVvIHdyb3RlOgo+Cj4gSSByZWFkIGxhc3QgZGlzY3Vzc2lvbiBhbmQg
-cGF0Y2ggaXMgZmluZSwgZXhjZXB0IG9uZSBpc3N1ZSBpbiBleGFtcGxlIEkKPiBuZXZlciBub3Rp
-Y2VkIGJlZm9yZSAoc2VlIGF0IHRoZSBlbmQpLCB3aGljaCBJIHdhbnQgdG8gZml4LiBBcG9sb2dp
-ZXMKPiBmb3Igbm90IGJyaW5naW5nIGl0IHVwIGFueXRpbWUgZWFybGllciwgSSBtaXNzZWQgaXQu
-IFdoaWxlIGF0IGl0IGFsc28KPiBvbmUgbW9yZSBuaXQuCj4KPiA+ICtkZXNjcmlwdGlvbjogfAo+
-Cj4gbml0OiBkcm9wIHwsIGRvIG5vdCBuZWVkICd8JyB1bmxlc3MgeW91IG5lZWQgdG8gcHJlc2Vy
-dmUgZm9ybWF0dGluZy4KPgo+ID4gKyAgRGVzY3JpYmVzIHRoZSBVU0IgUEhZIGludGVyZmFjZXMg
-aW50ZWdyYXRlZCB3aXRoIHRoZSBEV0MzIFVTQiBjb250cm9sbGVyIG9uCj4gPiArICBHb29nbGUg
-VGVuc29yIFNvQ3MsIHN0YXJ0aW5nIHdpdGggdGhlIEc1IGdlbmVyYXRpb24gKGxhZ3VuYSkuCj4g
-PiArICBUd28gc3BlY2lmaWMgUEhZIElQcyBmcm9tIFN5bm9wc3lzIGFyZSBpbnRlZ3JhdGVkLCBp
-bmNsdWRpbmcgZVVTQiAyLjAgUEhZIElQCj4gPiArICBhbmQgVVNCMy4yL0Rpc3BsYXlQb3J0IGNv
-bWJvIFBIWSBJUC4KPgo+IC4uLgo+Cj4gPiA+ICsKPiA+ICthZGRpdGlvbmFsUHJvcGVydGllczog
-ZmFsc2UKPiA+ICsKPiA+ICtleGFtcGxlczoKPiA+ICsgIC0gfAo+ID4gKyAgICBzb2Mgewo+ID4g
-KyAgICAgICAgI2FkZHJlc3MtY2VsbHMgPSA8Mj47Cj4gPiArICAgICAgICAjc2l6ZS1jZWxscyA9
-IDwyPjsKPiA+ICsKPiA+ICsgICAgICAgIHVzYl9waHk6IHVzYl9waHlAYzQxMDAwMCB7Cj4KPiBu
-b2RlIG5hbWU6IHVzYi1waHksIGJlY2F1c2UgdGhlcmUgYXJlIG5vIHVuZGVyc2NvcnMgdXNlZCBh
-bnl3aGVyZSBpbgo+IHVwc3RyZWFtLiBXaGlsZSBhdCBpdCwgeW91IGNhbiBkcm9wIHRoZSBsYWJl
-bCBhcyB3ZWxsLCBiZWNhdXNlIGl0IGlzIG5vdAo+IHVpc2VkLCBzbyBqdXN0IHVzYi1waHlALi4u
-Li4gewo+Cj4gUGxlYXNlIHNlbmQgbmV3IHZlcnNpb24gd2l0aCB0aGVzZSB0d28gZml4ZWQgYW5k
-Ogo+Cj4gUmV2aWV3ZWQtYnk6IEtyenlzenRvZiBLb3psb3dza2kgPGtyemtAa2VybmVsLm9yZz4K
-Pgo+IEJlc3QgcmVnYXJkcywKPiBLcnp5c3p0b2YKPgoKVGhhbmsgeW91IGZvciB0aGUgcmV2aWV3
-LCBJIGFwcHJlY2lhdGUgaXQhCkFjayBvbiBib3RoIHBvaW50cyBhbmQgd2lsbCBzZW5kIG91dCBh
-IG5ldyB2ZXJzaW9uLgoKUmVnYXJkcywKUm95IEx1bwoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxp
-c3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQu
-b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+This series introduces USB PHY support for the Google Tensor G5
+SoC (codename: Laguna), a new generation of Google silicon first
+launched with Pixel 10 devices.
+
+The Tensor G5 represents a significant architectural overhaul compared
+to previous Tensor generations (e.g., gs101), which were based on Samsung
+Exynos IP. Although the G5 still utilizes Synopsys IP for the USB
+components, the custom top-level integration introduces a completely new
+design for clock, reset scheme, register interfaces and programming
+sequence, necessitating new drivers and device tree bindings.
+
+The USB subsystem on Tensor G5 integrates a Synopsys DWC3 USB 3.1
+DRD-Single Port controller with hibernation support, and a custom PHY
+block comprising Synopsys eUSB2 and USB 3.2/DP combo PHYs. The controller
+support is sent as a separate patch series.
+
+Co-developed-by: Joy Chakraborty <joychakr@google.com>
+Signed-off-by: Joy Chakraborty <joychakr@google.com>
+Co-developed-by: Naveen Kumar <mnkumar@google.com>
+Signed-off-by: Naveen Kumar <mnkumar@google.com>
+Signed-off-by: Roy Luo <royluo@google.com>
+---
+Changes in v7:
+- Change the device tree binding example node name to usb-phy to follow
+ the hyphen-separated naming convention and remove label.
+Link to v6: https://lore.kernel.org/r/20251120-phyb4-v6-0-b6694e1f0caf@google.com
+
+Changes in v6:
+- Use "lga" as SoC name instead of "gs5" to align with Tensor G5 device
+  tree https://lore.kernel.org/lkml/20251111192422.4180216-1-dianders@chromium.org 
+- Add "usb2_core" to the reg property to define the MMIO space for
+  the eUSB 2.0 PHY IP.
+- Rename "usb3_top" reg as "usbdp_top" and update the description to
+  reflect its nature as a top-level wrapper and align with internal
+  documentation.
+- Use syscon to access the "usb2_cfg" MMIO space.
+- Remove minItems for clocks and resets, making all listed clocks and
+  resets (including USB3) mandatory.
+Link to v5: https://lore.kernel.org/linux-phy/20251029214032.3175261-1-royluo@google.com
+
+Changes in v5:
+- Add usb3 registers/clks/resets to binding as suggested by Krzysztof
+  Kozlowski. This ensures completeness of the binding, though the
+  driver has not yet ultilized the resources. The usb3 clks and resets
+  are optional if usb2-only operation is desired, this is denoted by
+  minItems and descriptions in the clocks and resets properties.
+  Additionally, rename existing binding entries for consistency and to
+  better differntiate between usb2 and usb3.
+- Move the description of the phy select to phy-cells in binding as
+  suggested by Krzysztof Kozlowski.
+Link to v4: https://lore.kernel.org/linux-phy/20251017235159.2417576-1-royluo@google.com
+
+Changes in v4:
+- Separate controller and phy changes into two distinct patch series.
+- Remove usb2only mode configuration and the corresponding usb_top_cfg
+  reg (moved to controller)
+- Add more descriptions to dp_top reg to indicate it's not DP specific.
+- Add u2phy_apb clk/reset
+Link to v3: https://lore.kernel.org/linux-usb/20251010201607.1190967-1-royluo@google.com
+
+Changes in v3:
+- Align binding file name with the compatible string
+- Simplify the compatible property in binding to a single const value.
+- Add descriptive comments and use item list in binding.
+- Rename binding entries for clarity and brevity.
+Link to v2: https://lore.kernel.org/linux-usb/20251008060000.3136021-1-royluo@google.com
+
+Changes in v2:
+- Reorder patches to present bindings first.
+- Update dt binding compatible strings to be SoC-specific (google,gs5-*).
+- Better describe the hardware in dt binding commit messages and
+  descriptions.
+- Adjust PHY driver commit subjects to use correct prefixes ("phy:").
+- Move PHY driver from a subdirectory to drivers/phy/.
+Link to v1: https://lore.kernel.org/linux-usb/20251006232125.1833979-1-royluo@google.com/
+
+---
+Roy Luo (2):
+      dt-bindings: phy: google: Add Google Tensor G5 USB PHY
+      phy: Add Google Tensor SoC USB PHY driver
+
+ .../bindings/phy/google,lga-usb-phy.yaml           | 133 ++++++++++
+ drivers/phy/Kconfig                                |  13 +
+ drivers/phy/Makefile                               |   1 +
+ drivers/phy/phy-google-usb.c                       | 292 +++++++++++++++++++++
+ 4 files changed, 439 insertions(+)
+---
+base-commit: 8b690556d8fe074b4f9835075050fba3fb180e93
+change-id: 20251119-phyb4-2e03a7c449c4
+
+Best regards,
+-- 
+Roy Luo <royluo@google.com>
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
