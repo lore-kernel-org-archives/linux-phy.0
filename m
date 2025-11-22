@@ -4,77 +4,116 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4713FCFC29A
-	for <linux-phy@archiver.kernel.org>; Fri, 21 Nov 2025 18:24:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CA575CF64B1
+	for <linux-phy@archiver.kernel.org>; Sat, 22 Nov 2025 11:28:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=aEx5YmqnLqPd7E+5VfYruzexi0rEGl/vnTUy7jqGvK4=; b=1/g6t1jCsk8c/nfQO5/mZno3lh
-	lBqY+cJNBBXHeT7xVw95uUZlHOJUIvUvFXoUaZJfm5EpUyD8HMjhdrgyZCqQsOKUwbsUlSi5C5Ay/
-	Q7WHUY7wMybOuG/Bybzkd+VUdJYxVvYQ4IsycXJPQBImn4lZ+EcYjHhZP12uN57/CNJanSEbf5TLF
-	Wwd105FMSzAmD+WSYemv1M4si7wmSIWKgQ/+SoV94NxVYRyojNh+U00TkAHbY2CqTjXmUjGYXKh4d
-	6B9LrvDjd8RzOMqtnSJIlRRkEOT97PaFTj3DibiuDGILv7g49UqBrpx6EqDGO8gaQRn62U0MxE6KN
-	ykg7wndA==;
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Rd/wNsZ13IEKx4BJUHxf44KxQ2hSP4mwuoJmO7tgLys=; b=uSyDPSLDvi0Vs3
+	fhVucpZmUsqFAAmT1WINCepazS5XAMOi8uKcl2vOdDSwFI/XwdlmT/7glV/cbQcAyR4RxxMeuVReL
+	7LfjsTn1jOkhp8AIDVtVcLQVhT+Xfbl4PWChKo6WILgElm1x7lAIJLwqATLunQkWqXVuzPs7EkzRg
+	780Sh2KrrxZkjvwV5AmGlFHuQUV3PqsZ2NdXl/dFxsCYKju8N6oAz7Ai8U/1nQEvnbBX4YYGZccb2
+	Kppu56Rnq3DD+z8q1wOAct1p72zs9gBFJUTqNKFyh8Y6ny9aS4DCa9YM6c+LAJZ6dcIbKDyzC3tNw
+	O/uDmhdOzRdqGvMr7OHQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vMVnq-00000008qm1-3czY;
-	Fri, 21 Nov 2025 18:24:14 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1vMln0-00000009V2d-1DZs;
+	Sat, 22 Nov 2025 11:28:26 +0000
+Received: from s2.avantea.pl ([46.242.128.95])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vMVno-00000008qlH-0xGa
-	for linux-phy@lists.infradead.org;
-	Fri, 21 Nov 2025 18:24:13 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 354B44174A;
-	Fri, 21 Nov 2025 18:24:11 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 347D0C4CEF1;
-	Fri, 21 Nov 2025 18:24:06 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1763749451;
-	bh=WLjenSCjWa8XEEDvvIHGWW6n2IZ7PQS4eefK5BUqRb8=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=Pym6eGsrkOKumrM7LgpO9HvT5akwyBbD1DY7t9Er8blwCUsWvmasjGYXUfROxYzr4
-	 Jkr6sz5zjgJNmiMzuiB1jsh2eK2PTEeEBCrQFJr/11JGvNgR9nr1Xq0fZdTVYRYK6A
-	 TL7cJT1oFozg++zXtdkO0dW31IkI7mND5v4XgHYh3xrsPZMKNLY6pmN3jK/1bvWpXQ
-	 evtzJktLrMeTNMVsTKNb43u9NwjgTkI9v0w1/O/BH7BF08ph5ZaWU27qi4QpMc2fiC
-	 zp8UWY190uHqPe65KfsYM3/sbAshbx0FQPJ/6lXMrzXrKKJIUX+KrsdcI5Ok0Zw2+E
-	 UF3hb2kB1rwmA==
-Date: Fri, 21 Nov 2025 18:24:03 +0000
-From: Conor Dooley <conor@kernel.org>
-To: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
-Cc: tomm.merciai@gmail.com, linux-renesas-soc@vger.kernel.org,
-	biju.das.jz@bp.renesas.com, Peter Rosin <peda@axentia.se>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Fabrizio Castro <fabrizio.castro.jz@renesas.com>,
-	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
-	Geert Uytterhoeven <geert+renesas@glider.be>,
-	Magnus Damm <magnus.damm@gmail.com>,
-	Sebastian Reichel <sebastian.reichel@collabora.com>,
-	Andi Shyti <andi.shyti@kernel.org>,
-	Jonathan Cameron <jonathan.cameron@huawei.com>,
-	Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <ukleinek@kernel.org>,
-	Arnd Bergmann <arnd@arndb.de>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org
-Subject: Re: [PATCH v4 01/22] dt-bindings: mux: Remove nodename pattern
- constraints
-Message-ID: <20251121-spring-slot-ec9fb6887565@spud>
-References: <cover.1763737324.git.tommaso.merciai.xr@bp.renesas.com>
- <cb7c28ccf3a1b136e793b48720f816de7d5f75b2.1763737324.git.tommaso.merciai.xr@bp.renesas.com>
+	id 1vMlmw-00000009V1I-050u;
+	Sat, 22 Nov 2025 11:28:23 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=szczodrzynski.pl; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To
+	:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=sTIigErOKl7e8JhN8I1UwZxYBcS4CkN23s/oTFvf/Dg=; b=mDhTUOtYYD2PoSPm7+k+UOXoPV
+	lnjPFdJ7GPLaTgHd8oAnqdH61tFnFJMo+j0p8AqaYPNEXbKYIO1unFo8zP+6acOwKlUllA18AC2Gf
+	A3LNGIxH9m8Z+WUNDrZ3DS6+SYiCWrsgVk1z9kV5eM3iGuat8DQW8BMsuaLsm7kq3ON6SmhBakq6e
+	u6Ao6E7/shC+Jc/XKZDjYYbNwiSjQTtFo2mV3LsOIZTi7N9X62HQag+UoeORzEpcXhgJ9MJBNELOu
+	wbZoMRNuqZw/P2W7G/FO8V+Ys7F8+LgqjnwhflrMZheLZyW2OvPvLLCQU0sMMfMRpCQrxHRxr2v7a
+	+u5r/pXA==;
+Received: from d100-78.icpnet.pl ([77.65.100.78] helo=[192.168.0.120])
+	by s2.avantea.pl with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
+	(Exim 4.98.1)
+	(envelope-from <kuba@szczodrzynski.pl>)
+	id 1vMlml-00000007s2Y-1bfI;
+	Sat, 22 Nov 2025 12:28:11 +0100
+Message-ID: <72fba214-010d-498e-957f-f1d042f18edc@szczodrzynski.pl>
+Date: Sat, 22 Nov 2025 12:27:04 +0100
 MIME-Version: 1.0
-In-Reply-To: <cb7c28ccf3a1b136e793b48720f816de7d5f75b2.1763737324.git.tommaso.merciai.xr@bp.renesas.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 1/6] phy: allwinner: phy-sun6i-mipi-dphy: Support LVDS
+ in combo D-PHY
+To: Parthiban <parthiban@linumiz.com>, Maxime Ripard <mripard@kernel.org>,
+ Samuel Holland <samuel@sholland.org>, Chen-Yu Tsai <wens@csie.org>,
+ Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Thomas Zimmermann <tzimmermann@suse.de>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>
+Cc: David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+ linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
+ linux-kernel@vger.kernel.org, linux-riscv@lists.infradead.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, paulk@sys-base.io
+References: <20251116134609.447043-1-kuba@szczodrzynski.pl>
+ <20251116134724.447131-1-kuba@szczodrzynski.pl>
+ <6d421d06-c534-40f3-8732-8f80a29b6821@linumiz.com>
+Content-Language: pl
+From: =?UTF-8?Q?Kuba_Szczodrzy=C5=84ski?= <kuba@szczodrzynski.pl>
+Autocrypt: addr=kuba@szczodrzynski.pl; keydata=
+ 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
+In-Reply-To: <6d421d06-c534-40f3-8732-8f80a29b6821@linumiz.com>
+X-Authenticated-Id: kuba@szczodrzynski.pl
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251121_102412_304596_D48DEB5A 
-X-CRM114-Status: GOOD (  16.17  )
+X-CRM114-CacheID: sfid-20251122_032822_293069_D2D94C83 
+X-CRM114-Status: GOOD (  22.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,108 +125,65 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============7155236404648782238=="
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
---===============7155236404648782238==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="VKsNTaFTCye1rtHN"
-Content-Disposition: inline
-
-
---VKsNTaFTCye1rtHN
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Fri, Nov 21, 2025 at 04:11:50PM +0100, Tommaso Merciai wrote:
-> The nodename pattern in  created an unnecessary restriction that forced
-> all mux nodes to be named with the 'mux-controller' prefix.
-> This prevented valid use cases where mux functionality is part of other
-> hardware blocks that should use more specific naming conventions.
->=20
-> Remove the $nodename pattern constraints from both the 'select' keyword
-> and the properties section of the mux-controller schema.
->=20
-> Signed-off-by: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
-
-Funnily enough, there's another patch that I saw today that hit this
-same thing:
-https://lore.kernel.org/all/176373269741.263545.10849918874919174841.robh@k=
-ernel.org/
-
-> ---
-> v3->v4:
->  - New patch.
->=20
->  Documentation/devicetree/bindings/mux/mux-controller.yaml | 6 ------
->  1 file changed, 6 deletions(-)
->=20
-> diff --git a/Documentation/devicetree/bindings/mux/mux-controller.yaml b/=
-Documentation/devicetree/bindings/mux/mux-controller.yaml
-> index 78340bbe4df6..6defb9da10f7 100644
-> --- a/Documentation/devicetree/bindings/mux/mux-controller.yaml
-> +++ b/Documentation/devicetree/bindings/mux/mux-controller.yaml
-> @@ -63,18 +63,12 @@ description: |
-> =20
->  select:
->    anyOf:
-> -    - properties:
-> -        $nodename:
-> -          pattern: '^mux-controller'
->      - required:
->          - '#mux-control-cells'
->      - required:
->          - '#mux-state-cells'
-> =20
-
->  properties:
-> -  $nodename:
-> -    pattern: '^mux-controller(@.*|-([0-9]|[1-9][0-9]+))?$'
-
-I need to apologise, I told you to delete the wrong thing in my DM
-earlier. Only deleting this part was actually required, deleting the
-select portion doesn't really do anything for your problem.
-What you've done is probably fine though, since anything actually acting
-as a mux-controller will have the cells properties.
-
-Reviewed-by: Conor Dooley <conor.dooley@microchip.com>
-pw-bot: not-applicable
-
-> -
->    '#mux-control-cells':
->      enum: [ 0, 1 ]
-> =20
-> --=20
-> 2.43.0
->=20
-
---VKsNTaFTCye1rtHN
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaSCuQwAKCRB4tDGHoIJi
-0oFIAQDW2bAxzrTvDF1ukX42XWJsL5zccm84MH2+EOosxxP+5gD/RAup3FCsfPBU
-gRGFV0fs3ohPxPBLD/iszdmUMqJOxg4=
-=3axy
------END PGP SIGNATURE-----
-
---VKsNTaFTCye1rtHN--
-
-
---===============7155236404648782238==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============7155236404648782238==--
-
+VyBkbml1IDIwMjUtMTEtMjAgb8KgMDc6MjQ6NTMsIFBhcnRoaWJhbiBwaXN6ZToKCj4gRGVhciBL
+dWJhLAo+Cj4gVGhhbmtzIGZvciB5b3VyIGVmZm9ydHMuCj4KPiBPbiAxMS8xNi8yNSAyOjQ3IFBN
+LCBLdWJhIFN6Y3pvZHJ6ecWEc2tpIHdyb3RlOgo+PiBTb21lIEFsbHdpbm5lciBjaGlwcyAobm90
+YWJseSB0aGUgRDFzL1QxMTMgYW5kIHRoZSBBMTAwKSBoYXZlIGEgImNvbWJvCj4+IE1JUEkgRFNJ
+IEQtUEhZIiB3aGljaCBpcyByZXF1aXJlZCB3aGVuIHVzaW5nIHNpbmdsZS1saW5rIExWRFMwLgo+
+Pgo+PiBJbiB0aGlzIG1vZGUsIHRoZSBEU0kgcGVyaXBoZXJhbCBpcyBub3QgdXNlZCBhbmQgdGhl
+IFBIWSBpcyBub3QKPj4gY29uZmlndXJlZCBmb3IgRFNJLiBJbnN0ZWFkLCB0aGUgQ09NQk9fUEhZ
+X1JFR3ggcmVnaXN0ZXJzIGFyZSBzZXQgdG8KPj4gZW5hYmxlIExWRFMgb3BlcmF0aW9uLgo+Pgo+
+PiBFbmFibGUgdGhlIFBIWSBkcml2ZXIgdG8gd29yayBpbiBMVkRTIG1vZGUgb24gY2hpcHMgd2l0
+aCBhIGNvbWJvIEQtUEhZLgo+Pgo+PiBBbHNvIGNoYW5nZSB0aGUgU1VONTBJX0NPTUJPX1BIWV9S
+RUcxIG1hY3JvIG5hbWVzIHRvIHJlZmxlY3QgdGhlIGNvcnJlY3QKPj4gcmVnaXN0ZXIgbmFtZS4K
+Pj4KPj4gU2lnbmVkLW9mZi1ieTogS3ViYSBTemN6b2RyennFhHNraSA8a3ViYUBzemN6b2Ryenlu
+c2tpLnBsPgo+PiAtLS0KPj4gICBkcml2ZXJzL3BoeS9hbGx3aW5uZXIvcGh5LXN1bjZpLW1pcGkt
+ZHBoeS5jIHwgNzAgKysrKysrKysrKysrKysrKysrKystCj4+ICAgMSBmaWxlIGNoYW5nZWQsIDY4
+IGluc2VydGlvbnMoKyksIDIgZGVsZXRpb25zKC0pCj4gSSB0cmllZCBpbnRlZ3JhdGluZyB5b3Vy
+IGNoYW5nZXMgaW4gQTEzMyBkaXNwbGF5IHBpcGVsaW5lIGFuZCBJIGNvdWxkbid0IGdldCB0aGUg
+TFZEUyB3b3JraW5nLgo+IEFtIHN0aWxsIG5hcnJvd2luZyBkb3duIHdoYXQgaXMgbWlzc2luZyBp
+biB5b3VyIHBhdGNoLiBEcml2ZXIgcmVnaXN0cmF0aW9uIGlzIHN1Y2Nlc3MgYW5kIEkKPiBjYW4g
+c2VlIC9kZXYvZmIwIGFzIHdlbGwuIEJ1dCBub3RoaW5nIG9uIHRoZSBkaXNwbGF5IGl0c2VsZi4K
+Pgo+IEJ1dCB3aXRoIGJlbG93IGNoYW5nZXMgZnJvbSBteSBwYXRjaCwKPgo+IGRpZmYgLS1naXQg
+YS9kcml2ZXJzL3BoeS9hbGx3aW5uZXIvcGh5LXN1bjZpLW1pcGktZHBoeS5jIGIvZHJpdmVycy9w
+aHkvYWxsd2lubmVyL3BoeS1zdW42aS1taXBpLWRwaHkuYwo+IGluZGV4IDM2ZWFiOTUyNzFiMi4u
+ZDE2NGIyZWE1ZGZkIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvcGh5L2FsbHdpbm5lci9waHktc3Vu
+NmktbWlwaS1kcGh5LmMKPiArKysgYi9kcml2ZXJzL3BoeS9hbGx3aW5uZXIvcGh5LXN1bjZpLW1p
+cGktZHBoeS5jCj4gQEAgLTMxNCwxMyArMzE0LDExIEBAIHN0YXRpYyB2b2lkIHN1bjUwaV9hMTAw
+X21pcGlfZHBoeV90eF9wb3dlcl9vbihzdHJ1Y3Qgc3VuNmlfZHBoeSAqZHBoeSkKPiAgICAgICAg
+ICAvKiBEaXNhYmxlIHNpZ21hLWRlbHRhIG1vZHVsYXRpb24uICovCj4gICAgICAgICAgcmVnbWFw
+X3dyaXRlKGRwaHktPnJlZ3MsIFNVTjUwSV9EUEhZX1BMTF9SRUcyLCAwKTsKPiAgIAo+IC0gICAg
+ICAgcmVnbWFwX3VwZGF0ZV9iaXRzKGRwaHktPnJlZ3MsIFNVTjZJX0RQSFlfQU5BNF9SRUcsCj4g
+LSAgICAgICAgICAgICAgICAgICAgICAgICAgU1VONklfRFBIWV9BTkE0X1JFR19FTl9NSVBJLAo+
+IC0gICAgICAgICAgICAgICAgICAgICAgICAgIFNVTjZJX0RQSFlfQU5BNF9SRUdfRU5fTUlQSSk7
+Cj4gLQo+ICAgICAgICAgIHJlZ21hcF91cGRhdGVfYml0cyhkcGh5LT5yZWdzLCBTVU41MElfQ09N
+Qk9fUEhZX1JFRzAsCj4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgU1VONTBJX0NPTUJPX1BI
+WV9SRUcwX0VOX0xWRFMgfAo+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICBTVU41MElfQ09N
+Qk9fUEhZX1JFRzBfRU5fTUlQSSB8Cj4gICAgICAgICAgICAgICAgICAgICAgICAgICAgIFNVTjUw
+SV9DT01CT19QSFlfUkVHMF9FTl9DT01CT0xETywKPiArICAgICAgICAgICAgICAgICAgICAgICAg
+ICBTVU41MElfQ09NQk9fUEhZX1JFRzBfRU5fTFZEUyB8Cj4gICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgIFNVTjUwSV9DT01CT19QSFlfUkVHMF9FTl9NSVBJIHwKPiAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgU1VONTBJX0NPTUJPX1BIWV9SRUcwX0VOX0NPTUJPTERPKTsKPiAgIAo+IEBA
+IC01MjgsNiArNTI2LDIyIEBAIHN0YXRpYyBpbnQgc3VuNmlfZHBoeV9leGl0KHN0cnVjdCBwaHkg
+KnBoeSkKPiAgICAgICAgICByZXR1cm4gMDsKPiAgIH0KPgo+IExWRFMgd29ya3MgZmluZS4KPgo+
+IENvdWxkIHlvdSBwbGVhc2Ugc2hhcmUgdGhlIGRpZmYgb2YgeW91ciBkdHMgLyBkdHNpPwoKSGks
+CkhlcmUncyB0aGUgRFRTIG92ZXJsYXkgSSB1c2VkIHRvIGVuYWJsZSBhbiBMVkRTIHBhbmVsIG9u
+IFQxMTMuIFlvdSdsbCBuZWVkIHRvIGFkYXB0IHRoZSBwYW5lbCBzcGVjaWZpY2F0aW9uIHRvIHlv
+dXIgcGFydGljdWxhciBkaXNwbGF5LgpJIGRpZCBub3QgbmVlZCB0byBjaGFuZ2UgdGhlIHBoeSBk
+cml2ZXIsIHNvIHRoaXMgZXh0cmEgcmVxdWlyZW1lbnQgbWlnaHQgYmUgc3BlY2lmaWMgdG8gQTEz
+My4KCi9kdHMtdjEvOwovcGx1Z2luLzsKCiZ7L30gewoJcGFuZWwgewoJCWNvbXBhdGlibGUgPSAi
+cGFuZWwtbHZkcyI7CgkJZGF0YS1tYXBwaW5nID0gImplaWRhLTE4IjsKCQlkZGMtaTJjLWJ1cyA9
+IDwmaTJjMj47CgoJCXBvcnQgewoJCQlwYW5lbF9pbnB1dDogZW5kcG9pbnQgewoJCQkJcmVtb3Rl
+LWVuZHBvaW50ID0gPCZ0Y29uX2xjZDBfb3V0X2x2ZHM+OwoJCQl9OwoJCX07Cgl9Owp9OwoKJnRj
+b25fbGNkMCB7CglwaW5jdHJsLW5hbWVzID0gImRlZmF1bHQiOwoJcGluY3RybC0wID0gPCZsY2Rf
+bHZkczBfcGlucz47Cn07CgomdGNvbl9sY2QwX291dCB7CglyZWcgPSA8MT47CgkjYWRkcmVzcy1j
+ZWxscyA9IDwxPjsKCSNzaXplLWNlbGxzID0gPDA+OwoKCXRjb25fbGNkMF9vdXRfbHZkczogZW5k
+cG9pbnRAMCB7CgkJcmVnID0gPDA+OwoJCXJlbW90ZS1lbmRwb2ludCA9IDwmcGFuZWxfaW5wdXQ+
+OwoJfTsKfTsKClJlZ2FyZHMKS3ViYQoKPgo+IFRoYW5rcywKPiBQYXJ0aGliYW4KCi0tIApsaW51
+eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8v
+bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
