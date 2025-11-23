@@ -4,165 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8DC64CFD2EC
-	for <linux-phy@archiver.kernel.org>; Sat, 22 Nov 2025 19:34:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C1D97CFD316
+	for <linux-phy@archiver.kernel.org>; Sun, 23 Nov 2025 21:20:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tKtDu8j6CSgAPtQajVGHA6+hTX3kW084gdtOJGSlUe4=; b=v4GzSpMyC74XBe
-	cbMsQl0Xk6qLB5XJcEKnOZlHOMJgZo0O35Q9J/PwipONlTr3tNh8mj3C0Mvz3iinkEC2vgitW24Vo
-	WEknX7y1Nz+R8GeItNjOnY1kPMPVxrwnxiYzjhyCIvbojwE7dJJFJ8uR2CooXjW7wKn4S/cEvcVWg
-	teqkmpx1AhfpB/SlKW8ef3gfPscntYu6MxptgiCYXB6ileMlGne/ArXOVniKk6ksmzX/sKyUtAGSb
-	xkzsr4z8ZaTeh7OiIi3yF6zUsAgu+r0IeNcH2ww2NUblrFLQgTCK3bPHyr8KIPXJUqnXhKkl/ijpg
-	6eKKymJj3eBJJ8/6DxWw==;
+	List-Owner; bh=CGhgXGh92hPCQLSJDKx+Bxy4M0bjjzPvoTcUb8olcjQ=; b=y6xYl9pRRECfIH
+	K0T0zYsuZHic8aW6vS3rodj5GVXjWcYMbI11dapEOdMsYhRUCvhKrAPzHfGw9D23KE0hDz0qeerG6
+	Zzau2ha1kZxsuVZUKDE+OkihDnKTnz/j1PNfOK9NhCCTGgqUEJPFAjC3bgFD6QFYdqXFc2/yEQq7b
+	OvsGnRmV1NgjNCRSq/U/OzFwDK2E362MDDbzPjoajmcH+9XVDGzG71eAX4qjVkNRC8FgHL2II5Njj
+	/5hl1LCsl1jaBdP/9EMbkSY2+GYrZRh4rcZ98h7nQrsu2yWYXXXWSiC9Zhyvao/4MpH1usAe/FU4s
+	j3ZBIqIPHiE1Tz88HGPg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vMtNP-00000009pmV-2Ud1;
-	Sat, 22 Nov 2025 19:34:31 +0000
-Received: from mail-northeuropeazon11010041.outbound.protection.outlook.com ([52.101.84.41] helo=DB3PR0202CU003.outbound.protection.outlook.com)
+	id 1vNHVJ-0000000AhwN-14pU;
+	Sun, 23 Nov 2025 21:20:17 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vMtNB-00000009pHB-1p8n;
-	Sat, 22 Nov 2025 19:34:18 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=o5LwcKShZsnorsrEYafmoj4FhiXYaGbAVNMhXxBrcAXfbmbarSY3QTLKrRAFdq5z8kC7v02KojuKn6zjkC/iQbfuhZK258UWBSIIe+A8CSuxhuq89j381O7lm/xrbRcraJ6v6LI8WJZwAtgHfkJ1ikxJiO/bYPOApcdu3badbsNKL1Krgxjnz8vOWpqh1B2/R8A0iKrOuLrLkAt6lXfvabfzsvT0eEz4VhxDejE8ve2WA4ASvEvpPx1qQWX11/ChnjzdgmdMK9WBBG2Wk24s1dMN6YJ+yit+EavJbVj8G+xDhEB+CG6L22FXOy6+MvfiF9OnyO39scxMR4xgIvsEsw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=aTVc8y60sxAjdlXcbccamwQHc4i8JgYcJIJuaJhhFKw=;
- b=kW7OjhygDKsB3VOIRfYSx7XECe9gi9C1ZVBe+eJOkYaiIOWWqwSpNOUWbTINuvqhDCBn64NkqR/IE7+yAxbEq2fBXfCi+9AQ8rCtW7PpCSTRothRsOZIaoi6EF1m/Lyai4A1rUZBNyCZYbwRAWPiiIFC7UB5QS+5f9ZwiHCSUnppXippmIAjg7hC5vKEezBShAyG8eyHQf2Ia60rAahvpgp620Y5q2N331X6gyI1FNOU7AMw1u2YJiiIdXM4bIT2Xh9Q1AntPzy/s/ALCOM+3g8JoZBuqWCpLwuooXabd2gxdtLt50Xquk/DGraoo9VWCdMF5A28YEt1uDcho4mFVw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=aTVc8y60sxAjdlXcbccamwQHc4i8JgYcJIJuaJhhFKw=;
- b=ZRgmazowdtC5toxRIopTiRPM+znbOirHY5axBpkvDcth+xqJV+OYAqUirjRGWwWMi6QwzXOM+6THUWYBGL/fvzmoR54a5Rq6bROX6CD/C/p/PVdyoM/NbA7x2oNUFA+HF+PkMXehfTuZbCUSB1Ggxqa+LhXzf+Z1G6P0hhrnfUMymdNTKiVD8s9TeBH+PkhZTs1WlRyrcdQ1cPWT5PXZFYZ7rDtqYMQrniSYoTdR4q9ky/RxOrXPOXpMTEUWyHnSStR8LK0hfUwG3jXupMu1lzprzkqRQDmAj+J7hSBOz4STbOM7aHPpOfMyze+D5JT8R5eOSinYFNkqZcF0KgNU+Q==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from AM9PR04MB8585.eurprd04.prod.outlook.com (2603:10a6:20b:438::13)
- by AS8PR04MB9510.eurprd04.prod.outlook.com (2603:10a6:20b:44a::11) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9343.15; Sat, 22 Nov
- 2025 19:34:12 +0000
-Received: from AM9PR04MB8585.eurprd04.prod.outlook.com
- ([fe80::8063:666f:9a2e:1dab]) by AM9PR04MB8585.eurprd04.prod.outlook.com
- ([fe80::8063:666f:9a2e:1dab%5]) with mapi id 15.20.9343.011; Sat, 22 Nov 2025
- 19:34:12 +0000
-From: Vladimir Oltean <vladimir.oltean@nxp.com>
-To: netdev@vger.kernel.org,
-	devicetree@vger.kernel.org,
-	linux-phy@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org,
-	Daniel Golle <daniel@makrotopia.org>,
-	Horatiu Vultur <horatiu.vultur@microchip.com>,
-	Andrew Lunn <andrew@lunn.ch>,
-	Heiner Kallweit <hkallweit1@gmail.com>,
-	Russell King <linux@armlinux.org.uk>,
-	"David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>,
-	Paolo Abeni <pabeni@redhat.com>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Eric Woudstra <ericwouds@gmail.com>,
-	=?UTF-8?q?Marek=20Beh=C3=BAn?= <kabel@kernel.org>,
-	Lee Jones <lee@kernel.org>,
-	Patrice Chotard <patrice.chotard@foss.st.com>
-Subject: [PATCH net-next 9/9] dt-bindings: net: airoha,en8811h: deprecate "airoha,pnswap-rx" and "airoha,pnswap-tx"
-Date: Sat, 22 Nov 2025 21:33:41 +0200
-Message-Id: <20251122193341.332324-10-vladimir.oltean@nxp.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20251122193341.332324-1-vladimir.oltean@nxp.com>
-References: <20251122193341.332324-1-vladimir.oltean@nxp.com>
-X-ClientProxiedBy: AM0PR10CA0010.EURPRD10.PROD.OUTLOOK.COM
- (2603:10a6:208:17c::20) To AM9PR04MB8585.eurprd04.prod.outlook.com
- (2603:10a6:20b:438::13)
+	id 1vNHVH-0000000Ahvm-40CH;
+	Sun, 23 Nov 2025 21:20:16 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 4049C60175;
+	Sun, 23 Nov 2025 21:20:15 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id C128FC16AAE;
+	Sun, 23 Nov 2025 21:20:14 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1763932814;
+	bh=3/FNvvvthqfqE8Hlk9y9M/lWMbT998+aR2jWJxRXnA4=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
+	b=KBXD6Q+jWlPzG+0shR4MHFzHUXktDR7CVzoHPdEH7AK459wMK3BLBU9GEiBGBvumB
+	 gXk+G54wNYf2UfsGtPMIVPdkMs1eOl/vrnkUMT+l/d5gYcFj4rLTKKg8qrtg8EbiH8
+	 DOHqUilHJKAOzTOpQ23R2Vl4/Q3mHUt/UJoMSwepPA16RCZEM4xqGuwTjuVKrUJskD
+	 Rv7lbw3vWrOMVkndZEZfXoHlEFUwxxUE7uquf+GQ/oZl1nDNjctKVpoCv/zD9xJu/A
+	 e5MOvenYbUsKuQlrPoAJ9suhYAhl7jgFUuEfzPSkva1T6fKPSpPubtQ2rHPfeRombt
+	 s4140q4H1tymQ==
+Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
+	by smtp.lore.kernel.org (Postfix) with ESMTP id A58EBCFD316;
+	Sun, 23 Nov 2025 21:20:14 +0000 (UTC)
+From: Sven Peter <sven@kernel.org>
+Date: Sun, 23 Nov 2025 21:19:54 +0000
+Subject: [PATCH v2 1/3] soc: apple: Add hardware tunable support
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AM9PR04MB8585:EE_|AS8PR04MB9510:EE_
-X-MS-Office365-Filtering-Correlation-Id: 80372d79-817b-4a37-71a0-08de29fe1d0b
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|7416014|52116014|366016|10070799003|1800799024|19092799006;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?1Vbph9ld/86hozbVvxJyahHea6xTBB4uryNB5JPvZztaPtzbFAofABZXngOn?=
- =?us-ascii?Q?LgO4Gj5fVUCZpy2VIJXaRPqYZCndZG8xCVQ3Z8rBrvhm7/pHBWLo4GelNjq6?=
- =?us-ascii?Q?DSkkoDF+r3+B1Dv3oY4o0hpAO7lqHnohkpjJKOXsRQlEq9E3Kfy6vvQq2Xj1?=
- =?us-ascii?Q?RgzucJYzrJXScP+8G7wRcEdnZ5vn8vTK9CMJbsYDsau2Qr72YMZH90XsLxFO?=
- =?us-ascii?Q?lpM0DhpXBTJeF4gK6BWteWkK9ZNSVuHBj1trIQ2q54NFxxBG4Uf2lrUma6z0?=
- =?us-ascii?Q?s0x0ayttXVWPn9PfY8ObJVXfsMjPBHVtv2/oulsO4CNNVsfYMBQ3dWvFmj3H?=
- =?us-ascii?Q?iRz+/xEconuJsmUJvkA4pyzsMv9u6jpUXNh+WDp6Y1sKTcKmvb2zazNArA3A?=
- =?us-ascii?Q?nx/yb+OpoquGvIcq220cTnFI4Fz+U7XSAbBHaC2sBoLjgiQSq7nCHCsU45d9?=
- =?us-ascii?Q?cZ+plEcArEhkj4UxJgD8+QEHh+YmyQYiXA6PJvVbcEhHj6+K11eSnfKS72eu?=
- =?us-ascii?Q?Dp4Fu7k7Wo1F7+PjgKCJhHtxF2+494eTZAV7JHJzN0XtmvR892Ju+y/TUzJQ?=
- =?us-ascii?Q?9OWA9JwJSR+euv01Yw/F58+k6s0fAgIpsuGP5pMQkqyESr3LoHHR35Wqble+?=
- =?us-ascii?Q?hKEaqNnFbzBgNT/pJAYKOR0ELpZ+uLIn3gd/7pfLan5E/2ygDyt/QJQTU9iG?=
- =?us-ascii?Q?lX3uLaKhsZrCkiiHu/zyU1LEod0/ppfoUK594UU60FR1nyCbcwVmjvCeZwqE?=
- =?us-ascii?Q?meS2ZEOuFe8kXvlwCvzvKByuNRilZ7vDzntErjihZYUYKV1F19ORRauz+J2S?=
- =?us-ascii?Q?89+RMCQlSJps7fPqrOxjMa6A0I5wOVaC0Mjht1hBmla6iEr6nONER0rFsIM5?=
- =?us-ascii?Q?hWjiKNXCJfGwLKYj5wZw4LT4LWX8g3VF4MYcO2Hi6LhFtuxlIMBQmRmVprgY?=
- =?us-ascii?Q?+wFQF5uqRO1RqOHuM5O7c4iRmzEJzF9EPrJOdtwdOYCcr3Ej3jPCQhNcYItz?=
- =?us-ascii?Q?yh/KBKWW1JQF/1siaq1iunmzne8ze1GSmC5+FHPEp+EqMBT0cwmY3KXK3g31?=
- =?us-ascii?Q?Y7JAEeshhDnAWJaY6zb4uE3WsLBWWJxMojVk4/4ypFK7cJTAxGiZ3CcS4qmN?=
- =?us-ascii?Q?Yy1B4oWwOYi/JkffXKLZzl1Xy6wxjQoo3i9/eeb7ap+gtx1npDc/kP3VVVrj?=
- =?us-ascii?Q?i6eZRTF/bzABVnStBXcPTaRuBusX2OXhzvyrz1Kta+7Y6LxR3hWVnlWPvmM2?=
- =?us-ascii?Q?6EL/Ru/zTerdiu4MjfZnk+bv0NwrJ3uRfzl6MCLNkUJ8xYu/NSxlziffvUTP?=
- =?us-ascii?Q?R9TUK3CaZlmYdMGIHlRsUUCPAMGv7fQELWA769Z/c+C1U1QQiextt5897FG4?=
- =?us-ascii?Q?I5HZbZrLTlBluCcLiu3/zVRrr9L5KkYFx2RCj1Hb3kdq+M4Yu3exnT4rAO/o?=
- =?us-ascii?Q?bugkKnwmz9uHvFL5JuWOGNCnvWp/CPrp?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM9PR04MB8585.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(7416014)(52116014)(366016)(10070799003)(1800799024)(19092799006);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?lqwNOeh4qT1tgLTHrSd+OnjirAfvyqjN1bwhIprjPKeUmBtOfwiwDpcUVkNw?=
- =?us-ascii?Q?ACu9WVZQLW8nhmDLMaSdn7sh0Y1GPKLT1bJc4pYYXQ7DWzoae/44WlgEjMHb?=
- =?us-ascii?Q?p2PgPwvnpcTXt7Nf3GTP4pAdam8HRNRvLpas/lMqQxgBDdJ8gcWvq1VKp34q?=
- =?us-ascii?Q?ZnGTQZqqiifRDVnmJ8z7GOpvxEspwirfkYIpuJrK39LmdUgqfjij+iDjFQr3?=
- =?us-ascii?Q?VJNetyG1ITKdJ2SQuq8NLsL+rbrFpM3R9kc96rwBkG6YMwCYqlmgrlb/anLw?=
- =?us-ascii?Q?01iHdZrN3yqtF42aElXeWyEVxEopqDXAslxLvhQg2uyeOaLNEk5T/swYYXG5?=
- =?us-ascii?Q?w5xdgg0EOA6OJddGNz16iO5IVANHcmlMo9NLrJ2P9Obp9bbWqgKFsOhUvHRR?=
- =?us-ascii?Q?+eVcx6f4Evv4RSMPfsqt7Xz3HwmtVvbz4NK5Hv6XqjW2klSpgX/74scXxkGp?=
- =?us-ascii?Q?JojKXfMiLMfhaaTMsixoRtq6WjasjOYPmxFV9p7fnoz/8RIU4ephh3rY8q/t?=
- =?us-ascii?Q?YUJCiq//rJXMPk/WBSZOdLU2sLIZ+qoI23aEx1GcujhETgF1CsdTsAtQlHXz?=
- =?us-ascii?Q?Bz1gvFBj2kRfm35zSDhsjkO/GBPfXeq71RmMKYSL2bakxpyfMs+JDSIn2Z/n?=
- =?us-ascii?Q?vXlHgBRvpmWkbewogiIQ877G6qD2Fc80HAioOz2cZ8ddqH3oMvBi2iv7cKeB?=
- =?us-ascii?Q?17S/bpmHeKPdZXHynnG86bt8TdGXJbxJ829a3+bApyhO/eRvp3zWaNYMLMvN?=
- =?us-ascii?Q?efc/r+mMaeupsAjv/jGgrzzsGPD+rvkwZt4zYUx/OShWkjTsCSg2Fo0Vnkas?=
- =?us-ascii?Q?5md9dIVCvS4yMJ9hiG4krAiBJRPKUW+sgB3zkctqw1lE4q0GEifU23X2lhh3?=
- =?us-ascii?Q?iPAXWZRf6PPxYYmdj+TNZIMVeoR0SEHhHaRsFo1u36eewZ8njKx2mlPzs+9i?=
- =?us-ascii?Q?UMni/fd4FfLZEG2tKFKPJD18hm6YtaRj7fP91NgG9KrkbIYVAGdCJIEbeji5?=
- =?us-ascii?Q?k7FlONjkgwMjIon2ixwdT6pMBlb7KvGFkOwkWZPK1BX8U0a2niEviBBVE+rK?=
- =?us-ascii?Q?xPGLK/1V5WxScbTrB3MqE0RAXLoZiddb8YYsA62LD1YWp+5cjLZ1+wUEj2Fw?=
- =?us-ascii?Q?fiAPy6yLUnpQPT5OYn46BrYnxLCUAaErZ9yP2Xa1m1KZ4lRZoy0mUU9GXc+l?=
- =?us-ascii?Q?u8abjNVtf1v6unaFdiCqDv+lBwV+R6vZZn8eYJ9EoOWEs5P9W6eUzzbF6pYp?=
- =?us-ascii?Q?yDbZxVUQdw/8O7QoBoQ1vej377e9XcQkhkXs5KBejRaTtR2UssqAnKCE727M?=
- =?us-ascii?Q?uoTJEMMLJsLGMs1IDRCLe0AvCCg8QxGZ+qLgWR1b9OFThhECtEj1wn7O3Ev4?=
- =?us-ascii?Q?jrNkIUjsw5RaL/aQPGGLjEVZxcFOWHZ+CXW/JygvjX3E13DPcRVJJQxHJx1Y?=
- =?us-ascii?Q?voVWjzthtyi9XVeGpVt+YW6Ni1iUWRjf4pA6gR6Jt0n6yZVjP8xwWBg6B5ry?=
- =?us-ascii?Q?+Xbru4lug1B/YAEdlU23adp5OnSmiPW1tDVs51tX5Eef8bNtOchxc25Nuobr?=
- =?us-ascii?Q?sPZWBJpFtqWNmUTbouMefL1tk0EU76K3tuK9QpNcRRYP77dJIvgxvq7RcEWP?=
- =?us-ascii?Q?adllDOWhT3IXWVYumyq71K8=3D?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 80372d79-817b-4a37-71a0-08de29fe1d0b
-X-MS-Exchange-CrossTenant-AuthSource: AM9PR04MB8585.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 22 Nov 2025 19:34:12.0054
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: KA5TBnfC97f+tGon8n9anu0/s8751/1jz9bEI26+/5zVvmgftiEZxYKuIOWdRXQdbd2gjleWLUDHMaBUDVDiwA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB9510
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251122_113417_573174_E98DAA2E 
-X-CRM114-Status: GOOD (  12.21  )
+Message-Id: <20251123-b4-atcphy-v2-1-34cc7092b22a@kernel.org>
+References: <20251123-b4-atcphy-v2-0-34cc7092b22a@kernel.org>
+In-Reply-To: <20251123-b4-atcphy-v2-0-34cc7092b22a@kernel.org>
+To: Janne Grunau <j@jannau.net>, Neal Gompa <neal@gompa.dev>, 
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>
+Cc: asahi@lists.linux.dev, linux-arm-kernel@lists.infradead.org, 
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, Sven Peter <sven@kernel.org>, 
+ Alyssa Rosenzweig <alyssa@rosenzweig.io>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=openpgp-sha256; l=6699; i=sven@kernel.org;
+ h=from:subject:message-id;
+ bh=3/FNvvvthqfqE8Hlk9y9M/lWMbT998+aR2jWJxRXnA4=;
+ b=owGbwMvMwCHmIlirolUq95LxtFoSQ6ZyVfvqmXN2z770dMcnbo8dGWWfgs13stXe1Ljpard5X
+ rXN9XnyHaUsDGIcDLJiiizb99ubPnn4RnDppkvvYeawMoEMYeDiFICJmIYx/BW9VXbEf1dd/b3c
+ vFivisVvnU70RGzIkKy2v9bHfs75SRHD/+jk6NWWHG8bn37sZFoUJSxnc2rdNC+mhYd/Bdyb+iH
+ OnxcA
+X-Developer-Key: i=sven@kernel.org; a=openpgp;
+ fpr=A1E3E34A2B3C820DBC4955E5993B08092F131F93
+X-Endpoint-Received: by B4 Relay for sven@kernel.org/default with
+ auth_id=407
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -179,63 +87,206 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Reference the common PHY properties, and update the example to use them.
+Various hardware, like the Type-C PHY or the Thunderbolt/USB4 NHI,
+present on Apple SoCs need machine-specific tunables passed from our
+bootloader m1n1 to the device tree. Add generic helpers so that we
+don't have to duplicate this across multiple drivers.
 
-Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
+Reviewed-by: Alyssa Rosenzweig <alyssa@rosenzweig.io>
+Reviewed-by: Neal Gompa <neal@gompa.dev>
+Reviewed-by: Janne Grunau <j@jannau.net>
+Signed-off-by: Sven Peter <sven@kernel.org>
 ---
- .../devicetree/bindings/net/airoha,en8811h.yaml       | 11 ++++++++++-
- 1 file changed, 10 insertions(+), 1 deletion(-)
+ drivers/soc/apple/Kconfig         |  4 ++
+ drivers/soc/apple/Makefile        |  3 ++
+ drivers/soc/apple/tunable.c       | 80 +++++++++++++++++++++++++++++++++++++++
+ include/linux/soc/apple/tunable.h | 62 ++++++++++++++++++++++++++++++
+ 4 files changed, 149 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/net/airoha,en8811h.yaml b/Documentation/devicetree/bindings/net/airoha,en8811h.yaml
-index ecb5149ec6b0..0de6e9284fbc 100644
---- a/Documentation/devicetree/bindings/net/airoha,en8811h.yaml
-+++ b/Documentation/devicetree/bindings/net/airoha,en8811h.yaml
-@@ -16,6 +16,7 @@ description:
+diff --git a/drivers/soc/apple/Kconfig b/drivers/soc/apple/Kconfig
+index ad67368892311bed5a94d358288390a6fb8b3b4a..d0ff32182a2b4a10c98cb96c70a03bea8c650f84 100644
+--- a/drivers/soc/apple/Kconfig
++++ b/drivers/soc/apple/Kconfig
+@@ -38,6 +38,10 @@ config APPLE_SART
  
- allOf:
-   - $ref: ethernet-phy.yaml#
-+  - $ref: /schemas/phy/phy-common-props.yaml#
+ 	  Say 'y' here if you have an Apple SoC.
  
- properties:
-   compatible:
-@@ -30,12 +31,18 @@ properties:
-     description:
-       Reverse rx polarity of the SERDES. This is the receiving
-       side of the lines from the MAC towards the EN881H.
-+      This property is deprecated, for details please refer to
-+      Documentation/devicetree/bindings/phy/phy-common-props.yaml
-+    deprecated: true
- 
-   airoha,pnswap-tx:
-     type: boolean
-     description:
-       Reverse tx polarity of SERDES. This is the transmitting
-       side of the lines from EN8811H towards the MAC.
-+      This property is deprecated, for details please refer to
-+      Documentation/devicetree/bindings/phy/phy-common-props.yaml
-+    deprecated: true
- 
- required:
-   - reg
-@@ -44,6 +51,8 @@ unevaluatedProperties: false
- 
- examples:
-   - |
-+    #include <dt-bindings/phy/phy.h>
++config APPLE_TUNABLE
++	tristate
++	depends on ARCH_APPLE || COMPILE_TEST
 +
-     mdio {
-         #address-cells = <1>;
-         #size-cells = <0>;
-@@ -51,6 +60,6 @@ examples:
-         ethernet-phy@1 {
-             compatible = "ethernet-phy-id03a2.a411";
-             reg = <1>;
--            airoha,pnswap-rx;
-+            rx-polarity = <PHY_POL_INVERT>;
-         };
-     };
+ endmenu
+ 
+ endif
+diff --git a/drivers/soc/apple/Makefile b/drivers/soc/apple/Makefile
+index 4d9ab8f3037b7159771d8817fa507ba29f99ae10..0b85ab61aefe131349a67d0aa80204edd8e89925 100644
+--- a/drivers/soc/apple/Makefile
++++ b/drivers/soc/apple/Makefile
+@@ -8,3 +8,6 @@ apple-rtkit-y = rtkit.o rtkit-crashlog.o
+ 
+ obj-$(CONFIG_APPLE_SART) += apple-sart.o
+ apple-sart-y = sart.o
++
++obj-$(CONFIG_APPLE_TUNABLE) += apple-tunable.o
++apple-tunable-y = tunable.o
+diff --git a/drivers/soc/apple/tunable.c b/drivers/soc/apple/tunable.c
+new file mode 100644
+index 0000000000000000000000000000000000000000..6593238391715be07cdfec0c1b116d6946f53fb5
+--- /dev/null
++++ b/drivers/soc/apple/tunable.c
+@@ -0,0 +1,80 @@
++// SPDX-License-Identifier: GPL-2.0-only OR MIT
++/*
++ * Apple Silicon hardware tunable support
++ *
++ * Each tunable is a list with each entry containing a offset into the MMIO
++ * region, a mask of bits to be cleared and a set of bits to be set. These
++ * tunables are passed along by the previous boot stages and vary from device
++ * to device such that they cannot be hardcoded in the individual drivers.
++ *
++ * Copyright (C) The Asahi Linux Contributors
++ */
++
++#include <linux/io.h>
++#include <linux/module.h>
++#include <linux/of.h>
++#include <linux/overflow.h>
++#include <linux/soc/apple/tunable.h>
++
++struct apple_tunable *devm_apple_tunable_parse(struct device *dev,
++					       struct device_node *np,
++					       const char *name,
++					       struct resource *res)
++{
++	struct apple_tunable *tunable;
++	struct property *prop;
++	const __be32 *p;
++	size_t sz;
++	int i;
++
++	if (resource_size(res) < 4)
++		return ERR_PTR(-EINVAL);
++
++	prop = of_find_property(np, name, NULL);
++	if (!prop)
++		return ERR_PTR(-ENOENT);
++
++	if (prop->length % (3 * sizeof(u32)))
++		return ERR_PTR(-EINVAL);
++	sz = prop->length / (3 * sizeof(u32));
++
++	tunable = devm_kzalloc(dev, struct_size(tunable, values, sz), GFP_KERNEL);
++	if (!tunable)
++		return ERR_PTR(-ENOMEM);
++	tunable->sz = sz;
++
++	for (i = 0, p = NULL; i < tunable->sz; ++i) {
++		p = of_prop_next_u32(prop, p, &tunable->values[i].offset);
++		p = of_prop_next_u32(prop, p, &tunable->values[i].mask);
++		p = of_prop_next_u32(prop, p, &tunable->values[i].value);
++
++		/* Sanity checks to catch bugs in our bootloader */
++		if (tunable->values[i].offset % 4)
++			return ERR_PTR(-EINVAL);
++		if (tunable->values[i].offset > (resource_size(res) - 4))
++			return ERR_PTR(-EINVAL);
++	}
++
++	return tunable;
++}
++EXPORT_SYMBOL(devm_apple_tunable_parse);
++
++void apple_tunable_apply(void __iomem *regs, struct apple_tunable *tunable)
++{
++	size_t i;
++
++	for (i = 0; i < tunable->sz; ++i) {
++		u32 val, old_val;
++
++		old_val = readl(regs + tunable->values[i].offset);
++		val = old_val & ~tunable->values[i].mask;
++		val |= tunable->values[i].value;
++		if (val != old_val)
++			writel(val, regs + tunable->values[i].offset);
++	}
++}
++EXPORT_SYMBOL(apple_tunable_apply);
++
++MODULE_LICENSE("Dual MIT/GPL");
++MODULE_AUTHOR("Sven Peter <sven@kernel.org>");
++MODULE_DESCRIPTION("Apple Silicon hardware tunable support");
+diff --git a/include/linux/soc/apple/tunable.h b/include/linux/soc/apple/tunable.h
+new file mode 100644
+index 0000000000000000000000000000000000000000..531ca814cd02357a0c5de6f3acde805294c13d4a
+--- /dev/null
++++ b/include/linux/soc/apple/tunable.h
+@@ -0,0 +1,62 @@
++/* SPDX-License-Identifier: GPL-2.0-only OR MIT */
++/*
++ * Apple Silicon hardware tunable support
++ *
++ * Each tunable is a list with each entry containing a offset into the MMIO
++ * region, a mask of bits to be cleared and a set of bits to be set. These
++ * tunables are passed along by the previous boot stages and vary from device
++ * to device such that they cannot be hardcoded in the individual drivers.
++ *
++ * Copyright (C) The Asahi Linux Contributors
++ */
++
++#ifndef _LINUX_SOC_APPLE_TUNABLE_H_
++#define _LINUX_SOC_APPLE_TUNABLE_H_
++
++#include <linux/device.h>
++#include <linux/types.h>
++
++/**
++ * Struct to store an Apple Silicon hardware tunable.
++ *
++ * Each tunable is a list with each entry containing a offset into the MMIO
++ * region, a mask of bits to be cleared and a set of bits to be set. These
++ * tunables are passed along by the previous boot stages and vary from device
++ * to device such that they cannot be hardcoded in the individual drivers.
++ *
++ * @param sz Number of [offset, mask, value] tuples stored in values.
++ * @param values [offset, mask, value] array.
++ */
++struct apple_tunable {
++	size_t sz;
++	struct {
++		u32 offset;
++		u32 mask;
++		u32 value;
++	} values[] __counted_by(sz);
++};
++
++/**
++ * Parse an array of hardware tunables from the device tree.
++ *
++ * @dev: Device node used for devm_kzalloc internally.
++ * @np: Device node which contains the tunable array.
++ * @name: Name of the device tree property which contains the tunables.
++ * @res: Resource to which the tunables will be applied, used for bound checking
++ *
++ * @return: devres allocated struct on success or PTR_ERR on failure.
++ */
++struct apple_tunable *devm_apple_tunable_parse(struct device *dev,
++					       struct device_node *np,
++					       const char *name,
++					       struct resource *res);
++
++/**
++ * Apply a previously loaded hardware tunable.
++ *
++ * @param regs: MMIO to which the tunable will be applied.
++ * @param tunable: Pointer to the tunable.
++ */
++void apple_tunable_apply(void __iomem *regs, struct apple_tunable *tunable);
++
++#endif
+
 -- 
 2.34.1
+
 
 
 -- 
