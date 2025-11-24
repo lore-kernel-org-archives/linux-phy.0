@@ -4,78 +4,111 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 17C49CFD313
-	for <linux-phy@archiver.kernel.org>; Mon, 24 Nov 2025 14:46:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 90102CFD313
+	for <linux-phy@archiver.kernel.org>; Mon, 24 Nov 2025 14:48:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:Subject:From:
-	To:Message-Id:Date:Mime-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f4o5cwy/5x+M/ZxkcpDtM/LrLdhyKsXDCKcNk3jBh00=; b=0XLXkssybzZxnW
-	EKmYlfHxqcqd8eumcjbQB30U3OZMZ4XWxjHpDgIqOzj6EnImFFSNvJsLDHpe0vUXuiDLAVnMr5d5J
-	5QZ3v0AexzOVZ1xY9Nic3YXTsToj5W88sClKh7H/tQurhWHIBLMIeRrWcIH6k2+h35JChFBqF9x/k
-	7FCUqy3eq702cqm15jdGdCGbk3waW/gh5IxIq6e5LOGYdRuHW4X1UUWVslxjZnznYIV/8Z02JPNvY
-	frW1c9FkFaec5FIAvGtwBQAiEsr1iCpxs1wRNsYiRhl5REsOfW9xeQsbxz9ix87gQCZp17x7cVjd2
-	VKjS5O1lVLUXnq/0nmfQ==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=UnXOChLA/gRYb9TTtz4EZSGeQ3aCNzIg4z8LCHrxNcc=; b=Je97eaT3RPTgFX
+	CI+zC7WgkGrfhEtljqA/ZwGGcA9XStbIUyV6HL3uokw/qrDnTMM9Re4RRuL/JCdwe6dgTdcSPGpQc
+	EwQZMQT2AMWKAUvkDlahrY2ZX0V32C1H5AQ7pIHJvCszkuWAFHwcZLcIMVeUNsbimL8dBGJOo6YNj
+	lbTTHXyCuHK5C0LNbJjjh69MMIru+L1yugqBvI0LU1t9Fb/uAnJaN8ppgBZc2mEFGz/Qky2c4IOEP
+	SMgpOmzBKcGl/zXdz81gvjynaMXQOZRRLgVczSB4/FVYRm15O+nuqaIQBx7dROJYlkCSx/GO2H6bT
+	3rZftA4lmr+seDrYiHAA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vNXpm-0000000Brqf-3XHa;
-	Mon, 24 Nov 2025 14:46:30 +0000
-Received: from smtpout-03.galae.net ([185.246.85.4])
+	id 1vNXrx-0000000Bryt-1Gqb;
+	Mon, 24 Nov 2025 14:48:45 +0000
+Received: from smtpout-02.galae.net ([185.246.84.56])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vNXpi-0000000Brq8-0Fli
+	id 1vNXrv-0000000Brxy-0Gya
 	for linux-phy@lists.infradead.org;
-	Mon, 24 Nov 2025 14:46:28 +0000
+	Mon, 24 Nov 2025 14:48:44 +0000
 Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-03.galae.net (Postfix) with ESMTPS id 109504E4189F;
-	Mon, 24 Nov 2025 14:46:24 +0000 (UTC)
+	by smtpout-02.galae.net (Postfix) with ESMTPS id D99F71A1D21;
+	Mon, 24 Nov 2025 14:48:39 +0000 (UTC)
 Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id D6229606FC;
-	Mon, 24 Nov 2025 14:46:23 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 345D110371DA2;
-	Mon, 24 Nov 2025 15:46:21 +0100 (CET)
+	by smtpout-01.galae.net (Postfix) with ESMTPS id 8FF7760705;
+	Mon, 24 Nov 2025 14:48:39 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 80FB3103719DA;
+	Mon, 24 Nov 2025 15:48:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1763995582; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 content-transfer-encoding:in-reply-to:references;
-	bh=+qmgrtT0fSoelw7XMVNn3o/vDeOr/X03Bxb90zIAOqQ=;
-	b=oCDxF9GwvexzD4nD1/CZ/SQttn+vHARpNw46K9rfHbM+vBlEN0yTNYaTt42ezYScxXPHrM
-	go2o6hFWebvNqe0u8S/7lbdss+BD+uir2lCZV6pHi07U6tFPLOhumVmDlAhvG4IFS4zSrB
-	Ip6c0ApTp2Oee8PpDj8avs5PzxmdF7HyHjtzkeq2zYCHBarcQa/Ly03CKrXy82Fn+xRxih
-	Lg+t7o8Z1YMlUAs9bJab047cHl2U3C6hQmXzL2d8tbhvX5m1OY7ecMekJi+111UdqmmjE8
-	IwovumQRoBvm3/IxrOwr3mK3cO4mBalKJd4+cPd9AW0H/7cFynQehWoFwW3tbQ==
-Mime-Version: 1.0
-Date: Mon, 24 Nov 2025 15:46:20 +0100
-Message-Id: <DEH08UJJGPFG.2RSQ6YHTM5JPY@bootlin.com>
-To: "Stephen Boyd" <sboyd@kernel.org>, "Conor Dooley" <conor+dt@kernel.org>,
- =?utf-8?q?Gr=C3=A9gory_Clement?= <gregory.clement@bootlin.com>, "Kishon
- Vijay Abraham I" <kishon@kernel.org>, "Krzysztof Kozlowski"
- <krzk+dt@kernel.org>, "Michael Turquette" <mturquette@baylibre.com>,
- "Philipp Zabel" <p.zabel@pengutronix.de>, "Rob Herring" <robh@kernel.org>,
- "Thomas Bogendoerfer" <tsbogend@alpha.franken.de>,
- =?utf-8?q?Th=C3=A9o_Lebrun?= <theo.lebrun@bootlin.com>, "Vinod Koul"
- <vkoul@kernel.org>, "Vladimir Kondratiev"
- <vladimir.kondratiev@mobileye.com>
-From: =?utf-8?q?Th=C3=A9o_Lebrun?= <theo.lebrun@bootlin.com>
-Subject: Re: [PATCH v3 3/7] clk: eyeq: use the auxiliary device creation
- helper
-Cc: <linux-mips@vger.kernel.org>, <devicetree@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
- <linux-clk@vger.kernel.org>, =?utf-8?q?Beno=C3=AEt_Monin?=
- <benoit.monin@bootlin.com>, "Maxime Chevallier"
- <maxime.chevallier@bootlin.com>, "Tawfik Bayouk"
- <tawfik.bayouk@mobileye.com>, "Thomas Petazzoni"
- <thomas.petazzoni@bootlin.com>, "Jerome Brunet" <jbrunet@baylibre.com>
-X-Mailer: aerc 0.21.0-0-g5549850facc2
-References: <20251119-macb-phy-v3-0-e9a7be186a33@bootlin.com>
- <20251119-macb-phy-v3-3-e9a7be186a33@bootlin.com>
- <176357562473.11952.15433192921239262065@lazor>
-In-Reply-To: <176357562473.11952.15433192921239262065@lazor>
+	t=1763995716; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 content-transfer-encoding; bh=lMMnsIAMX15PebOo+vvp3kZXhfsSNZFvuA90j6sbfwQ=;
+	b=jUTyAbVW7z6HgIL0UvQTBUOY3RBSlX8VdTeX0gsaimyCSTq2lU4LBJlcJGjHswWYg3w4Ba
+	FcB7MoEShZEeCM5CVYDH+y18Sle5bUpyOLmuMH6zzeLu/qH19bjyhLRfqdHUMgk9lHiRyQ
+	FQSZckmayvnZ/ROF+b0f63MuIo26mCh5HR41kU8Dpa/S/d7gKSY2WIo22OTRxm+iaWngVs
+	d75WdjxaLOdvnMGIaJBZe5ADWVwr7jYOpUKYlQpUI6Lw1pwinp6w7bMGETMpK8tkLRbZTG
+	pLlfMWKRdYryjbDETCxuFEfYhgemlNUMjvtHvmj90IL+h9pqy5BjQfmQbG+1WA==
+From: Romain Gantois <romain.gantois@bootlin.com>
+Subject: [PATCH v4 0/6] Add support for the LTM8054 voltage regulator
+Date: Mon, 24 Nov 2025 15:48:04 +0100
+Message-Id: <20251124-ltm8054-driver-v4-0-107a8a814abe@bootlin.com>
+MIME-Version: 1.0
+X-B4-Tracking: v=1; b=H4sIACRwJGkC/2XOTQrCMBCG4auUrI1k0qQ/rryHuEibiQ20jSQlK
+ KV3N60gapfvwDx8MwnoLQZyymbiMdpg3ZhCHDLSdmq8IbU6NeGMS1byivbTUDEpqPY2oqcArVG
+ iFMAKSdLT3aOxjw28XFN3NkzOPzc/wnp9UzUU/1QEyqjRAssKdJ439blxburteGzdQFYs8i+Ay
+ x3AE9A0BSjBQDHd7oH8A0BavAPybQEYVMhMIdUvsCzLC7uLZAkwAQAA
+X-Change-ID: 20250728-ltm8054-driver-11cfa4741065
+To: Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, 
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Jonathan Cameron <jic23@kernel.org>, 
+ David Lechner <dlechner@baylibre.com>, 
+ =?utf-8?q?Nuno_S=C3=A1?= <nuno.sa@analog.com>, 
+ Andy Shevchenko <andy@kernel.org>
+Cc: Thomas Petazzoni <thomas.petazzoni@bootlin.com>, 
+ linux-kernel@vger.kernel.org, devicetree@vger.kernel.org, 
+ linux-iio@vger.kernel.org, Romain Gantois <romain.gantois@bootlin.com>, 
+ Conor Dooley <conor.dooley@microchip.com>, 
+ MyungJoo Ham <myungjoo.ham@samsung.com>, 
+ Chanwoo Choi <cw00.choi@samsung.com>, Guenter Roeck <linux@roeck-us.net>, 
+ Peter Rosin <peda@axentia.se>, Mariel Tinaco <Mariel.Tinaco@analog.com>, 
+ Lars-Peter Clausen <lars@metafoo.de>, 
+ Michael Hennerich <Michael.Hennerich@analog.com>, 
+ Kevin Tsai <ktsai@capellamicro.com>, 
+ Linus Walleij <linus.walleij@linaro.org>, 
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>, 
+ Eugen Hristev <eugen.hristev@linaro.org>, Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Sebastian Reichel <sre@kernel.org>, Chen-Yu Tsai <wens@csie.org>, 
+ Support Opensource <support.opensource@diasemi.com>, 
+ Paul Cercueil <paul@crapouillou.net>, Iskren Chernev <me@iskren.info>, 
+ Marek Szyprowski <m.szyprowski@samsung.com>, 
+ Matheus Castello <matheus@castello.eng.br>, 
+ Saravanan Sekar <sravanhome@gmail.com>, 
+ Matthias Brugger <matthias.bgg@gmail.com>, 
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
+ Casey Connolly <casey.connolly@linaro.org>, 
+ =?utf-8?q?Pali_Roh=C3=A1r?= <pali@kernel.org>, 
+ Orson Zhai <orsonzhai@gmail.com>, 
+ Baolin Wang <baolin.wang@linux.alibaba.com>, 
+ Chunyan Zhang <zhang.lyra@gmail.com>, Amit Kucheria <amitk@kernel.org>, 
+ Thara Gopinath <thara.gopinath@gmail.com>, 
+ "Rafael J. Wysocki" <rafael@kernel.org>, 
+ Daniel Lezcano <daniel.lezcano@linaro.org>, Zhang Rui <rui.zhang@intel.com>, 
+ Lukasz Luba <lukasz.luba@arm.com>, 
+ Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>, 
+ Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>, 
+ Sylwester Nawrocki <s.nawrocki@samsung.com>, 
+ Olivier Moysan <olivier.moysan@foss.st.com>, 
+ Arnaud Pouliquen <arnaud.pouliquen@foss.st.com>, 
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>, 
+ Alexandre Torgue <alexandre.torgue@foss.st.com>, 
+ Dixit Parmar <dixitparmar19@gmail.com>, linux-hwmon@vger.kernel.org, 
+ linux-input@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-pm@vger.kernel.org, linux-mips@vger.kernel.org, 
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org, 
+ linux-arm-msm@vger.kernel.org, linux-sound@vger.kernel.org, 
+ linux-stm32@st-md-mailman.stormreply.com, 
+ Andy Shevchenko <andriy.shevchenko@intel.com>
+X-Mailer: b4 0.14.3
 X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251124_064626_254608_00EC2034 
-X-CRM114-Status: UNSURE (   6.42  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20251124_064843_249458_70B6F916 
+X-CRM114-Status: GOOD (  16.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,22 +120,149 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gV2VkIE5vdiAxOSwgMjAyNSBhdCA3OjA3IFBNIENFVCwgU3RlcGhlbiBCb3lkIHdyb3RlOgo+
-IFF1b3RpbmcgVGjDqW8gTGVicnVuICgyMDI1LTExLTE5IDA3OjUxOjExKQo+PiBGcm9tOiBKZXJv
-bWUgQnJ1bmV0IDxqYnJ1bmV0QGJheWxpYnJlLmNvbT4KPj4gCj4+IFRoZSBhdXhpbGlhcnkgZGV2
-aWNlIGNyZWF0aW9uIG9mIHRoaXMgZHJpdmVyIGlzIHNpbXBsZSBlbm91Z2ggdG8KPj4gdXNlIHRo
-ZSBhdmFpbGFibGUgYXV4aWxpYXJ5IGRldmljZSBjcmVhdGlvbiBoZWxwZXIuCj4+IAo+PiBVc2Ug
-aXQgYW5kIHJlbW92ZSBzb21lIGJvaWxlcnBsYXRlIGNvZGUuCj4+IAo+PiBUZXN0ZWQtYnk6IFRo
-w6lvIExlYnJ1biA8dGhlby5sZWJydW5AYm9vdGxpbi5jb20+ICAjIE9uIE1vYmlsZXllIEV5ZVE1
-Cj4+IFNpZ25lZC1vZmYtYnk6IEplcm9tZSBCcnVuZXQgPGpicnVuZXRAYmF5bGlicmUuY29tPgo+
-Cj4gWW91IG5lZWQgdG8gYWRkIHlvdXIgU29CIGhlcmUuCgpPb3BzLCBJIGFtIG5vdCB1c2VkIHRv
-IHNlbmRpbmcgb3RoZXIgcGVvcGxlJ3MgcGF0Y2hlcyBhcyBwYXJ0IG9mIG15CnNlcmllcy4gVjQg
-Zml4ZXMgdGhpcy4gVGhhbmtzIQoKLS0KVGjDqW8gTGVicnVuLCBCb290bGluCkVtYmVkZGVkIExp
-bnV4IGFuZCBLZXJuZWwgZW5naW5lZXJpbmcKaHR0cHM6Ly9ib290bGluLmNvbQoKCi0tIApsaW51
-eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8v
-bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+Hello everyone,
+
+This is version four of my series which adds initial support of the Linear
+Technology LTM8054 voltage regulator. The driver supports a fixed voltage
+and a tunable output current limit using a DAC-controlled pin.
+
+I'd say that the most unusual part of this series is the usage of the IIO
+consumer API in a regulator driver. I think this makes sense here, since
+the regulator driver has to access a DAC to read/set the output current
+limit.
+
+Since the regulator driver writes microvolts and the IIO consumer API takes
+millivolts, the reads and writes to the CTL DAC have to be scaled by a
+factor of 1000. Scaled reads are already supported in IIO, but scaled
+writes are not, which is why I've implemented them in patch 2/4.
+
+Moreover, the IIO read/write operations are done in quite a roundabout way
+in the driver's regulator callbacks. This is due to a unsafe locking
+interaction: the regulator callbacks are called under regulator lock, which
+means they have an active ww_mutex reservation ID. Or, some IIO drivers
+will perform regulator operations when read/written to, thus taking a new
+ww_mutex reservation ID.  Taking two consecutive reservation IDs for the
+same ww_mutex context without freeing the first ID is forbidden (and
+lockdep will complain about this). The most straightforward solution I've
+found is to move the actual IIO read/write operations to a different
+thread, and to wait for them to complete with a timeout from the main
+callback thread.
+
+Please let me know what you think.
+
+Thanks,
+
+Romain
+
+Signed-off-by: Romain Gantois <romain.gantois@bootlin.com>
+---
+Changes in v4:
+- Various style improvements.
+- Used namespaced exports for the IIO consumer API.
+- Mitigated bug caused by abs() corner case.
+- Link to v3: https://lore.kernel.org/r/20251106-ltm8054-driver-v3-0-fd1feae0f65a@bootlin.com
+
+Changes in v3:
+- Made IIO operations to an asynchronous context to avoid locking issue.
+- Made CTL DAC control optional.
+- Make various style adjustments to the LTM8054 driver.
+- Link to v2: https://lore.kernel.org/r/20250925-ltm8054-driver-v2-0-bb61a401a0dc@bootlin.com
+
+Changes in v2:
+- Refactored iio_convert_processed_to_raw() to match what was done in Hans'
+  series.
+- Added unit tests for IIO division.
+- Fixed coding style issues and removed unnecessary casts.
+- Link to v1: https://lore.kernel.org/r/20250916-ltm8054-driver-v1-0-fd4e781d33b9@bootlin.com
+
+---
+Romain Gantois (6):
+      regulator: dt-bindings: Add Linear Technology LTM8054 regulator
+      iio: inkern: Use namespaced exports
+      iio: add processed write API
+      iio: test: Add kunit tests for iio_divide_by_value()
+      regulator: Support the LTM8054 voltage regulator
+      regulator: ltm8054: Support output current limit control
+
+ .../devicetree/bindings/regulator/adi,ltm8054.yaml |  71 ++++
+ MAINTAINERS                                        |   6 +
+ drivers/extcon/extcon-adc-jack.c                   |   1 +
+ drivers/hwmon/iio_hwmon.c                          |   1 +
+ drivers/hwmon/ntc_thermistor.c                     |   1 +
+ drivers/iio/adc/envelope-detector.c                |   1 +
+ drivers/iio/afe/iio-rescale.c                      |   1 +
+ drivers/iio/buffer/industrialio-buffer-cb.c        |   1 +
+ drivers/iio/buffer/industrialio-hw-consumer.c      |   1 +
+ drivers/iio/dac/ad8460.c                           |   1 +
+ drivers/iio/dac/dpot-dac.c                         |   1 +
+ drivers/iio/dac/ds4424.c                           |   1 +
+ drivers/iio/inkern.c                               | 187 ++++++++--
+ drivers/iio/light/cm3605.c                         |   1 +
+ drivers/iio/light/gp2ap002.c                       |   1 +
+ drivers/iio/multiplexer/iio-mux.c                  |   1 +
+ drivers/iio/potentiostat/lmp91000.c                |   1 +
+ drivers/iio/test/Kconfig                           |  12 +
+ drivers/iio/test/Makefile                          |   1 +
+ drivers/iio/test/iio-test-divide.c                 | 247 ++++++++++++++
+ drivers/iio/test/iio-test-multiply.c               |   1 +
+ drivers/input/joystick/adc-joystick.c              |   1 +
+ drivers/input/keyboard/adc-keys.c                  |   1 +
+ drivers/input/touchscreen/colibri-vf50-ts.c        |   1 +
+ drivers/input/touchscreen/resistive-adc-touch.c    |   1 +
+ drivers/phy/motorola/phy-cpcap-usb.c               |   1 +
+ drivers/power/supply/ab8500_btemp.c                |   1 +
+ drivers/power/supply/ab8500_charger.c              |   1 +
+ drivers/power/supply/ab8500_fg.c                   |   1 +
+ drivers/power/supply/axp20x_ac_power.c             |   1 +
+ drivers/power/supply/axp20x_battery.c              |   1 +
+ drivers/power/supply/axp20x_usb_power.c            |   1 +
+ drivers/power/supply/axp288_fuel_gauge.c           |   1 +
+ drivers/power/supply/cpcap-battery.c               |   1 +
+ drivers/power/supply/cpcap-charger.c               |   1 +
+ drivers/power/supply/da9150-charger.c              |   1 +
+ drivers/power/supply/generic-adc-battery.c         |   1 +
+ drivers/power/supply/ingenic-battery.c             |   1 +
+ drivers/power/supply/intel_dc_ti_battery.c         |   1 +
+ drivers/power/supply/lego_ev3_battery.c            |   1 +
+ drivers/power/supply/lp8788-charger.c              |   1 +
+ drivers/power/supply/max17040_battery.c            |   1 +
+ drivers/power/supply/mp2629_charger.c              |   1 +
+ drivers/power/supply/mt6370-charger.c              |   1 +
+ drivers/power/supply/qcom_smbx.c                   |   1 +
+ drivers/power/supply/rn5t618_power.c               |   1 +
+ drivers/power/supply/rx51_battery.c                |   1 +
+ drivers/power/supply/sc27xx_fuel_gauge.c           |   1 +
+ drivers/power/supply/twl4030_charger.c             |   1 +
+ drivers/power/supply/twl4030_madc_battery.c        |   1 +
+ drivers/power/supply/twl6030_charger.c             |   1 +
+ drivers/regulator/Kconfig                          |   9 +
+ drivers/regulator/Makefile                         |   1 +
+ drivers/regulator/ltm8054-regulator.c              | 379 +++++++++++++++++++++
+ drivers/thermal/qcom/qcom-spmi-adc-tm5.c           |   1 +
+ drivers/thermal/qcom/qcom-spmi-temp-alarm.c        |   1 +
+ drivers/thermal/renesas/rzg3s_thermal.c            |   1 +
+ drivers/thermal/thermal-generic-adc.c              |   1 +
+ include/linux/iio/consumer.h                       |  36 ++
+ sound/soc/codecs/audio-iio-aux.c                   |   1 +
+ sound/soc/samsung/aries_wm8994.c                   |   1 +
+ sound/soc/samsung/midas_wm1811.c                   |   1 +
+ sound/soc/stm/stm32_adfsdm.c                       |   1 +
+ 63 files changed, 972 insertions(+), 30 deletions(-)
+---
+base-commit: cda7b38e04b41bf0e19deed2999d725f440a5abd
+change-id: 20250728-ltm8054-driver-11cfa4741065
+
+Best regards,
+-- 
+Romain Gantois <romain.gantois@bootlin.com>
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
