@@ -4,178 +4,159 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2AE69CFA466
-	for <linux-phy@archiver.kernel.org>; Mon, 24 Nov 2025 15:40:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9CF70CFD313
+	for <linux-phy@archiver.kernel.org>; Mon, 24 Nov 2025 16:20:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3lIjdZx+kLkM84g6ROgp7TjUygmYP2d4HNXw94Tpeh8=; b=jTukjQ86RZP9gx
-	DTLGJ82R+xthcA03Am6TUnwCL6oPTEF5NtKMFPeykSJvwsV0vzhJeeylEMFvJWFaINbPuIkLClc0U
-	peOb0hUeQM61GQXbtY4TrYvVdfAr0eL7xckhqlCj66+3zIqjqyvRlwwIf/HphtM1mlC2HmdAxjWQ4
-	Vxvn71KIXUnelORlFAN8rB5RMNsB5A4Xt03iD6PHxqeVe7AijfVxVRQTuILS5sFXm5ZcOVAxEo5RJ
-	gEcfJj04D5r6oZeh5819O4ZSAw54pO4M2POK0eh9fNn6ZsTYHvAAS2Dn55heRc6kElMrnmiVDlArS
-	QN4/k1NIPNRZXMCg+ZAw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Cc:Date:
+	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Dv6DxLYOaXNHstKpNOdUW2L2/b5PEDXDGzwyI3IoMl0=; b=Ktmfip1Y0ztxrQ
+	OpomaSz0IwzHDJsX6Tj7x5niLJkrP21kbSutt1nwh64N/7AwC6KptIruOZfbTex62Bf8esNTMK9ns
+	eBvJU4/GQIE2+SgGhZl7nCj4zSsfc3R4TufKSkU1FIfK6rfANXvvnGyV3IwLuYd2iJoERsoOk/jjc
+	TvaeuWTIvHhTJqBlwoXxvNybrj/rDhLg7oS2NAPTiBk/fPF3g7TD1+yU9UPvq2q7bleXaWXhwonVi
+	Se9blRF+P9yzKKwNubjA1WOwP59xEug4YqmAaHcN34QKTEUKIvfxoYiySdLFEbB1TD0KSU2OaOE2c
+	WIxQMYuuL3iYwFNO2W7w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vNYgH-0000000Bw8H-3y0f;
-	Mon, 24 Nov 2025 15:40:45 +0000
-Received: from mail-pj1-x1035.google.com ([2607:f8b0:4864:20::1035])
+	id 1vNZId-0000000BzBh-0DCz;
+	Mon, 24 Nov 2025 16:20:23 +0000
+Received: from mo4-p03-ob.smtp.rzone.de ([81.169.146.174])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vNYgF-0000000Bw7A-22ON
-	for linux-phy@lists.infradead.org;
-	Mon, 24 Nov 2025 15:40:44 +0000
-Received: by mail-pj1-x1035.google.com with SMTP id 98e67ed59e1d1-34372216275so4578337a91.2
-        for <linux-phy@lists.infradead.org>; Mon, 24 Nov 2025 07:40:43 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1763998842; x=1764603642; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:sender:from:to:cc:subject:date:message-id:reply-to;
-        bh=Llp8FG6WVJOxC42YZnLNsTS0zXwdgkxLlwBk+kzHwR8=;
-        b=S/+s3ViPcrJG/bnOXYmP/AV/AU0J4/G7GnnNOw+j2PHnRc758/KOohmC9Xw0J7QwAA
-         8NW1DCLBCiyrZ6JyQtVmJbDuhGRBInBiN2CPAc1gc0T6Ck3ve0AczYfI2fxNI9v+CvKR
-         AQ1E+o2RjQtar1OkdK6EOLspin0F5XSVXXvTzg5fvOlWvlgZ6FN/oWOPzwjAL9w5xDhI
-         BSnkihD59YQp0N2zEOd03vO189zdF8CpxyjNalAuB+Z8SDxaR76cEU9QR03XwR2l0VBr
-         1EO7kzGCjYrG730vvb30RWjRJaHLH4HTs10NiRmCov51UGDtJ/1iT1wshhVT/xdIhfuT
-         VBaQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1763998842; x=1764603642;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:sender:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=Llp8FG6WVJOxC42YZnLNsTS0zXwdgkxLlwBk+kzHwR8=;
-        b=DN4XAS3GifGevRU4DOsfKR9PXe2fDtJ+xmrDPjEJou3FQUWRR20FkSm+EzfoWerq+h
-         /QDl8XA01jLnGdhL63DRO5h17ZSk2hZQsQFrWAAoIv8Ab88YZZ2sZBT3+qyBLCxNnwIL
-         i/TQAjxS75wSgJk6v+x2TWrKoqPkX2KBPMdVSeVJAZ5KtjoTM8Tdn3CJ9qaOlHcxJESN
-         W8CL2m7bb2IPutRJUiP0O2U4aupMXXHb89SDzSlbwHJ2UeJR8+HYkMOI6XrMPMmtLKN3
-         u5nix4wjU12StckevYXtN7S0sdbwcotAozcThsRlx+zu8sPCmikcIGtjTX8bL2Q4+S/v
-         hvpw==
-X-Forwarded-Encrypted: i=1; AJvYcCXUeUiBS7kmGfZXNT0bxK3ErbOzrtAEV9TY2GaNQKlKkOPEIzYmqkB0y99vUUu7LdNwef2+bwaY9V0=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzNI8X3D9A2pxWf5djXeYB0fPL/2kUbrX9VAEP5hpAcV/0AH1MP
-	S3nLasshzfHvtAJRXVIR/FfiiR1c0OlEfcbXJjZt274cglGHRSsdXzaM
-X-Gm-Gg: ASbGncuwVq4gJXeWnZsEUZudlqDVtw97IRZajRirzpASiztKu5nNSxgpGIrxrJ9xXA9
-	Z8L0IQwadK+ThINWFyAfrBWayIgkKPzygjjSLH3+ruR4ySSoGvGEUwPx2qvHoMIzagK0onbH0f+
-	74lbpG+RTdPuoN05e8fHUrLS+zID6PBJNn2P4sCnvzq/yWOdDIVh332pV3JIb4dd1zKUCVmyTnf
-	0c7BMa2frB+vLmmdrKdULzeSmtEf0wl88fBJgj7n5fjUMrGthXhkQVfdcZXzr3mMRSgCIg604Fq
-	0cFyuxTWqPLkUW8MqOF1Rex7Sfr6lCxBPn6JlcKhD9TgpgjEClpxsXWwJOrn52RralE31Rdc1wH
-	icq2UAS37aI9E6slGCTPPXBadgxl4S4UYfkARNLXLrpycZput47YTzTeOyYwzMj79KLNPrUbJ0A
-	fcCQd8Vx9BkEpobqHLjq1OS0yYOq9xmPn9Q49tFQv499XnVPBehrEHrgL0YP4=
-X-Google-Smtp-Source: AGHT+IEFPQhBfCYRI3nTm1u+iQCIbAQZlcFtON++Fnq7DdJGduD9vDQYDBrSvMWcgiV0KUw17gd6Yw==
-X-Received: by 2002:a17:90b:5112:b0:340:bde5:c9e3 with SMTP id 98e67ed59e1d1-34733f2d207mr11198788a91.23.1763998842365;
-        Mon, 24 Nov 2025 07:40:42 -0800 (PST)
-Received: from ?IPV6:2600:1700:e321:62f0:da43:aeff:fecc:bfd5? ([2600:1700:e321:62f0:da43:aeff:fecc:bfd5])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3472692e5c8sm14034703a91.11.2025.11.24.07.40.37
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 24 Nov 2025 07:40:41 -0800 (PST)
-Message-ID: <da5457ea-c1ed-4c90-8743-fc982a02ed88@roeck-us.net>
-Date: Mon, 24 Nov 2025 07:40:37 -0800
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
+	id 1vNZIZ-0000000BzAw-3NqJ;
+	Mon, 24 Nov 2025 16:20:21 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1764001204; cv=none;
+    d=strato.com; s=strato-dkim-0002;
+    b=Mi6ffgTzeLDd6by16LVPA9WBGsA3fZVxfsWD+cc37oI6ulg6dD65T95bJgc6HltKK7
+    N4uWDZgtyOZZdYje8gbuVu9T95X4b6tGrirbXguEMFuLjxnmBeIEHwAlx2PfiDgOUf0X
+    Y5unUlSKON44f9TwafsNmg1XK3HCWLwKQQjfA0arXHoDi0VhL9qaRszysZeC26RBdtLK
+    YO6XinkyNSO/eRv4GXglIu2zaNXRdLUGDJVxoPF+Ebn7lEWzAKhSqULCVuldOiLIotTx
+    q8gu653gQC85578icQWFyQi2iHeAZ1lQr+Y9ej1sK6GmFp8zfbiANYXvd+0sRoKehivg
+    eixA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; t=1764001204;
+    s=strato-dkim-0002; d=strato.com;
+    h=To:References:Message-Id:Cc:Date:In-Reply-To:From:Subject:Cc:Date:
+    From:Subject:Sender;
+    bh=YAUaPVN/LGE+6Tp5hwdCL/oWm3I9gZiHnGqVnZITlYs=;
+    b=cUCmeEBRlYbwM5vOtKFOqHLCauD/E9W7U80NSRAFCB7CoOMD6R2e9+FINz97vTBUxa
+    EaSR9ryKUBDxRXQpAuCFmDrC0Vlz24ODRPRgx20QLtw0CMv6m9nQcIyaVoFA8Hxfe7Ns
+    oRovNaPokz6MeFJr6evXGsdP1dQAe4qrW7Rhh8UKE+mmCQQTJhJXqs0jPA9JE2TMH1EX
+    +yD6kiySzwCuyWvVMLnxzmucLJJrS/5Vb+Y87JuqTctbDFAEVk5grUxKLv8SBccG9mq+
+    b+y8Oj/N/tdmVhKCQxdC+mP4Lcd2i8XJLq1ejg/w9WMfARWVbl5i+FddPbgbqtCDfNeR
+    mgPQ==
+ARC-Authentication-Results: i=1; strato.com;
+    arc=none;
+    dkim=none
+X-RZG-CLASS-ID: mo03
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1764001204;
+    s=strato-dkim-0002; d=goldelico.com;
+    h=To:References:Message-Id:Cc:Date:In-Reply-To:From:Subject:Cc:Date:
+    From:Subject:Sender;
+    bh=YAUaPVN/LGE+6Tp5hwdCL/oWm3I9gZiHnGqVnZITlYs=;
+    b=FDRRuZGDOWIr7PVjsgzCEoc3WjvlYfn5g1ULeDbZRLMYz5CmpY7CZr3cK7UpgYkx0e
+    MJeOyEuhc+s50fia250GETWkb2KyfPR/uu4luJS0hYtGHVYWjj1C0gj4wgXUQbE8ASZY
+    8cbYgmpw+KOk576zSdy2+AnnWs2yoLYgND53GmUAS0eQCYLLfmWBhCTk49aW9cvhkbHv
+    HX6d1mkeNCVs9FwkkOx2Oz+apKUpgSQwGiZb+KHXhrCBW37hjEaBQ2sr0RL/5DH+ejQ7
+    vB8wAa9r1qfbx9RWiahdkadBDaB5zU34WX42srJQJlf0ZoT8+a2k/5Sm1R8szDOOpyRd
+    RIQw==
+DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; t=1764001204;
+    s=strato-dkim-0003; d=goldelico.com;
+    h=To:References:Message-Id:Cc:Date:In-Reply-To:From:Subject:Cc:Date:
+    From:Subject:Sender;
+    bh=YAUaPVN/LGE+6Tp5hwdCL/oWm3I9gZiHnGqVnZITlYs=;
+    b=UpfJCvMrspS72WrTrjWL4jgwZQ8Vv8hqUUkLNHFb0/XXkbAeu7OKuXDGtFnCaVbnqc
+    2w8c+jlmQ0tQ0RvKt+AA==
+X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMhflhwDubTJ9o12DNOsPj0lFzL1yeT0Z"
+Received: from smtpclient.apple
+    by smtp.strato.de (RZmta 54.0.0 DYNA|AUTH)
+    with ESMTPSA id Qc14a81AOGJvF96
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (curve X9_62_prime256v1 with 256 ECDH bits, eq. 3072 bits RSA))
+	(Client did not present a certificate);
+    Mon, 24 Nov 2025 17:19:57 +0100 (CET)
+Mime-Version: 1.0 (Mac OS X Mail 16.0 \(3826.700.81.1.3\))
 Subject: Re: [PATCH v4 0/6] Add support for the LTM8054 voltage regulator
-To: Romain Gantois <romain.gantois@bootlin.com>,
- Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Jonathan Cameron <jic23@kernel.org>,
- David Lechner <dlechner@baylibre.com>, =?UTF-8?Q?Nuno_S=C3=A1?=
- <nuno.sa@analog.com>, Andy Shevchenko <andy@kernel.org>
-Cc: Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
- linux-iio@vger.kernel.org, Conor Dooley <conor.dooley@microchip.com>,
- MyungJoo Ham <myungjoo.ham@samsung.com>, Chanwoo Choi
- <cw00.choi@samsung.com>, Peter Rosin <peda@axentia.se>,
+From: "H. Nikolaus Schaller" <hns@goldelico.com>
+In-Reply-To: <4053840.MHq7AAxBmi@fw-rgant>
+Date: Mon, 24 Nov 2025 17:19:45 +0100
+Cc: Liam Girdwood <lgirdwood@gmail.com>,
+ Mark Brown <broonie@kernel.org>,
+ Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>,
+ Jonathan Cameron <jic23@kernel.org>,
+ David Lechner <dlechner@baylibre.com>,
+ =?utf-8?Q?Nuno_S=C3=A1?= <nuno.sa@analog.com>,
+ Andy Shevchenko <andy@kernel.org>,
+ Guenter Roeck <linux@roeck-us.net>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ linux-kernel@vger.kernel.org,
+ devicetree@vger.kernel.org,
+ linux-iio@vger.kernel.org,
+ Conor Dooley <conor.dooley@microchip.com>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>,
+ Chanwoo Choi <cw00.choi@samsung.com>,
+ Peter Rosin <peda@axentia.se>,
  Mariel Tinaco <Mariel.Tinaco@analog.com>,
  Lars-Peter Clausen <lars@metafoo.de>,
  Michael Hennerich <Michael.Hennerich@analog.com>,
- Kevin Tsai <ktsai@capellamicro.com>, Linus Walleij
- <linus.walleij@linaro.org>, Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- Eugen Hristev <eugen.hristev@linaro.org>, Vinod Koul <vkoul@kernel.org>,
+ Kevin Tsai <ktsai@capellamicro.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ Eugen Hristev <eugen.hristev@linaro.org>,
+ Vinod Koul <vkoul@kernel.org>,
  Kishon Vijay Abraham I <kishon@kernel.org>,
- Sebastian Reichel <sre@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Sebastian Reichel <sre@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>,
  Support Opensource <support.opensource@diasemi.com>,
- Paul Cercueil <paul@crapouillou.net>, Iskren Chernev <me@iskren.info>,
+ Paul Cercueil <paul@crapouillou.net>,
+ Iskren Chernev <me@iskren.info>,
  Marek Szyprowski <m.szyprowski@samsung.com>,
  Matheus Castello <matheus@castello.eng.br>,
  Saravanan Sekar <sravanhome@gmail.com>,
  Matthias Brugger <matthias.bgg@gmail.com>,
  AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
- Casey Connolly <casey.connolly@linaro.org>, =?UTF-8?Q?Pali_Roh=C3=A1r?=
- <pali@kernel.org>, Orson Zhai <orsonzhai@gmail.com>,
+ Casey Connolly <casey.connolly@linaro.org>,
+ =?utf-8?Q?Pali_Roh=C3=A1r?= <pali@kernel.org>,
+ Orson Zhai <orsonzhai@gmail.com>,
  Baolin Wang <baolin.wang@linux.alibaba.com>,
- Chunyan Zhang <zhang.lyra@gmail.com>, Amit Kucheria <amitk@kernel.org>,
+ Chunyan Zhang <zhang.lyra@gmail.com>,
+ Amit Kucheria <amitk@kernel.org>,
  Thara Gopinath <thara.gopinath@gmail.com>,
  "Rafael J. Wysocki" <rafael@kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, Zhang Rui <rui.zhang@intel.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Zhang Rui <rui.zhang@intel.com>,
  Lukasz Luba <lukasz.luba@arm.com>,
  Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>,
- Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>,
+ Jaroslav Kysela <perex@perex.cz>,
+ Takashi Iwai <tiwai@suse.com>,
  Sylwester Nawrocki <s.nawrocki@samsung.com>,
  Olivier Moysan <olivier.moysan@foss.st.com>,
  Arnaud Pouliquen <arnaud.pouliquen@foss.st.com>,
  Maxime Coquelin <mcoquelin.stm32@gmail.com>,
  Alexandre Torgue <alexandre.torgue@foss.st.com>,
- Dixit Parmar <dixitparmar19@gmail.com>, linux-hwmon@vger.kernel.org,
- linux-input@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-pm@vger.kernel.org, linux-mips@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
- linux-arm-msm@vger.kernel.org, linux-sound@vger.kernel.org,
+ Dixit Parmar <dixitparmar19@gmail.com>,
+ linux-hwmon@vger.kernel.org,
+ linux-input@vger.kernel.org,
+ linux-phy@lists.infradead.org,
+ linux-pm@vger.kernel.org,
+ linux-mips@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ linux-mediatek@lists.infradead.org,
+ linux-arm-msm@vger.kernel.org,
+ linux-sound@vger.kernel.org,
  linux-stm32@st-md-mailman.stormreply.com,
  Andy Shevchenko <andriy.shevchenko@intel.com>
+Message-Id: <732D3F12-0361-4800-8981-EF629B4C491F@goldelico.com>
 References: <20251124-ltm8054-driver-v4-0-107a8a814abe@bootlin.com>
- <24527d76-4f6a-4008-a369-23510d492a94@roeck-us.net>
  <23111366.EfDdHjke4D@fw-rgant>
-Content-Language: en-US
-From: Guenter Roeck <linux@roeck-us.net>
-Autocrypt: addr=linux@roeck-us.net; keydata=
- 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
- np3900V20aS7eD9K8GTU0TGC1pyz6IVJwIE=
-In-Reply-To: <23111366.EfDdHjke4D@fw-rgant>
+ <563331EB-2460-4CF5-87B3-5FE60B18BB70@goldelico.com>
+ <4053840.MHq7AAxBmi@fw-rgant>
+To: Romain Gantois <romain.gantois@bootlin.com>
+X-Mailer: Apple Mail (2.3826.700.81.1.3)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251124_074043_540125_E1F8A5AE 
-X-CRM114-Status: GOOD (  27.42  )
+X-CRM114-CacheID: sfid-20251124_082020_283298_0439CFD7 
+X-CRM114-Status: GOOD (  39.26  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -187,80 +168,104 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 11/24/25 07:13, Romain Gantois wrote:
-> Hello Guenter,
-> 
-> 
-> On Monday, 24 November 2025 15:57:41 CET Guenter Roeck wrote:
-> 
->  > On 11/24/25 06:48, Romain Gantois wrote:
-> 
->  > > Hello everyone,
-> 
->  > >
-> 
->  > > This is version four of my series which adds initial support of the Linear
-> 
->  > > Technology LTM8054 voltage regulator. The driver supports a fixed voltage
-> 
->  > > and a tunable output current limit using a DAC-controlled pin.
-> 
->  > >
-> 
->  > > I'd say that the most unusual part of this series is the usage of the IIO
-> 
->  > > consumer API in a regulator driver. I think this makes sense here, since
-> 
->  > > the regulator driver has to access a DAC to read/set the output current
-> 
->  > > limit.
-> 
->  >
-> 
->  > I don't think that is a valid reason. Literally every driver measuring
-> 
->  > voltages or current uses a DAC to do it. How else would one convert an
-> 
->  > analog value into a digital value ?
-> 
-> 
-> Sorry, I don't quite understand your remark. To integrate this voltage
-> 
-> regulator component into the Linux regulator abstraction, I'm providing a
-> 
-> current limit control function. To provide such a function, the voltage level
-> 
-> on a pin has to be controlled. AFAIK, the kernel abstraction used to set
-> 
-> precise voltages on lines is an IO channel.
-> 
-> 
-> Do you think that using the IIO consumer API is not correct here? What other
-> 
-> method do you think I should use?
-> 
+Hi,
 
-Ok, I had a look into the datasheet. Unless I am missing something, the chip doesn't
-have a digital control or monitoring interface such as I2C or SPI.
+> Am 24.11.2025 um 16:57 schrieb Romain Gantois <romain.gantois@bootlin.com>:
+> 
+> Hi Nikolaus,
+> 
+> On Monday, 24 November 2025 16:35:28 CET H. Nikolaus Schaller wrote:
+> ...
+> > > Sorry, I don't quite understand your remark. To integrate this voltage
+> > > regulator component into the Linux regulator abstraction, I'm providing a
+> > > current limit control function. To provide such a function, the voltage
+> > > level on a pin has to be controlled. AFAIK, the kernel abstraction used
+> > > to set precise voltages on lines is an IO channel.
+> > 
+> > I was curious to learn about this topic and looked into the data sheet:
+> > 
+> > https://www.analog.com/media/en/technical-documentation/data-sheets/8054fa.p
+> > df
+> > 
+> > As far as I see the LTM8054 does not even have a programming interface.
+> > So is it reasonable to provide a dedicated driver at all?
+> > 
+> > The figure on page 20 seems to suggest that there is an external DAC
+> > which drives the regulator. And the regulator drives for example a fan.
+> > 
+> > So I would think of a driver for the specific DAC and ignore the specific
+> > LTM chip at all.
+> > 
+> 
+> In my use case, the LTM8054 feeds a DC output port on which various devices 
+> may be plugged. Dynamic output current limitation and output voltage level 
+> control for these devices is a requirement, as well as stepped voltage 
+> transitions, thus the need for a proper regulator device.
+> 
+> The LTM8054's feedback pin can be driven by a different DAC, which allows for 
+> dynamic output voltage control. This is a more complex upstreaming topic 
+> however, so I've left it out of this initial series. There are other component 
+> functions which fit in squarely into the regulator framework, such as 
+> input current limit control and soft-start. But I understand that the current 
+> driver might look a bit "bare".
 
-At the same time, you copied the hardware monitoring mailing list on this summary and
-on (at least) one of the patches, but apparently not on all of them. This lead to my
-apparently wrong assumption that iio is used to monitor (not [just] control) something
-on the chip. I wrongly assumed that IIO is used to report chip status (voltage, current,
-temperature) using an internal DAC. Obviously that was a wrong assumption.
-Sorry for that.
+So you just want to have some user-space mechanism to control voltage
+and current limits? Can't this be done by directly controlling them through
+the iio API?
 
-Apparently you copied the hwmon mailing list for the introduction of an IIO namespace
-and its use in a couple of hwmon drivers in one of the patches. My personal opinion
-is that this should not be part of this series but a series of its own. That is just
-my personal opinion, though.
+Is this for a device that is already in kernel or planned to be supported?
+Or is it "application support" for some SBC?
 
-Guenter
+Are you looking for a virtual "glue" driver to logically combine several low
+level functions?
+
+> 
+> > What could be necessary is if you really want to be able to "regulate"
+> > the current going to Vout, some bridge between regulator API and some
+> > IIO DAC.
+> > 
+> > And enabling/disabling the regulator by some GPIO can be described in
+> > the DT already through a "regulator-fixed".
+> > 
+> 
+> This is a possibility, but when you bring in all of these other hardware 
+> functions that I mentionned e.g. output voltage control and stepping, you'll 
+> end up with several different devices which look unrelated from userspace, but 
+> actually control the same chip.
+
+That is quite usual... I have often heard: user space must fix this as kernel
+just provides basic functions in a harmonized way and integration has to
+be tailored to the device anyways :)
+
+> Userspace will also have to know about some hardware details to properly 
+> control the DACs, such as the values of the sense and feedback resistors. In 
+> my opinion, this bypasses the kernel's abstraction of hardware.
+
+I came up with this argument several times in the part and got a lot of contrary :)
+
+What I still wonder: does your hardware warrant an upstream driver for a
+non-programable chip if a different solution (with help of user-space) already
+exist?
+
+Another question: is your scheme generic enough so that it can be expected
+that other devices are using it in the same way?
+
+Or could the power controller framework (/sys/class/power_supply) fit better?
+
+There is an API to ask chargers etc. for battery voltage and current limits or
+even write them.
+
+There is also "generic-adc-battery" which allows to hook up with arbitrary
+iio-adcs for measurements - although you need a DAC in your setup. Maybe an
+extension here is a better strategy than a dedicated ltm8054 driver?
+
+BR,
+Nikolaus
 
 
 -- 
