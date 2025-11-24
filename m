@@ -4,65 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2FC0BCFD2F6
-	for <linux-phy@archiver.kernel.org>; Mon, 24 Nov 2025 01:19:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F0BACFD313
+	for <linux-phy@archiver.kernel.org>; Mon, 24 Nov 2025 01:40:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=8xCPPTrpp3LAourDKh6KS3On9huMTwIkpuKscT2yRIA=; b=OUWKnOfspOd3cG
-	6EbdcE/YKmf20SWBLZiHUqBxYx5upse+oPeakyjjZvW/HGXhAkCk/5FKqf6AE7DaXmDvdzLJNMs60
-	rwOZx/Cw7emFtJn5+g6mhEO5DABR5+FonezREn+JbBUGZgMb351JLGJrwq7pSgk7UN4gnfBuPFKOZ
-	egh8SgjpfYZjb7i1emHEB/jKMTA0bPJdTMfcc8aw19IcNABTzw9kIRvzH0OAGSk5HOFbY1ILyLZbm
-	zO3Bh0dpOc+xVE1HAjbTpt13Z4uIsXNRg5TPkiLDPmCRXh/yiVtki5kI5aGi1GYXo2Yh8PBPjqVHc
-	ZE723eUdp9XiPM3H+MYQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=IhJLq19xm/N7XWLafLb++hEVBqIC6gWgB4xscw5cWmc=; b=v4RWSqinjiPLwN
+	47BkDx6AUwTl1cf1cAii7E7O/i4I04W04wt+k2q9UCRpeTX3ywTuasSeJFp9GE7DT1aJadURM/IJI
+	WU/aacefRlSCVi1zIZwaGsT2Q2+byt11otYUpywZjB5p0VrrkqWN2Ugz9yQ5TRyWR1l899FEV2bYt
+	mXPEVKwQAyWjCexQhwsD7+CHji/al2LAKt9xEmZ8a4WXZjBAsYyQen2AdKWKqRx7K3DJnLkleCjUL
+	1nzrISqKuKQ4GtXbivqxeJLkyHlmahYSBqdVPUTMx0CrN0qNfss+PEUW2tktAlT0XFPd+Z10BvOOS
+	8V4n/wOIXGgiyvkLsGuQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vNLF5-0000000Auja-3KcM;
-	Mon, 24 Nov 2025 01:19:47 +0000
-Received: from smtp21.cstnet.cn ([159.226.251.21] helo=cstnet.cn)
+	id 1vNLZ0-0000000Aw2t-33JF;
+	Mon, 24 Nov 2025 01:40:22 +0000
+Received: from mail-m19731110.qiye.163.com ([220.197.31.110])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vNLF1-0000000Auir-457r
-	for linux-phy@lists.infradead.org;
-	Mon, 24 Nov 2025 01:19:46 +0000
-Received: from DESKTOP-L0HPE2S (unknown [124.16.141.245])
-	by APP-01 (Coremail) with SMTP id qwCowAC3SsqrsiNpYhbSAQ--.9519S2;
-	Mon, 24 Nov 2025 09:19:40 +0800 (CST)
-From: Haotian Zhang <vulab@iscas.ac.cn>
-To: vkoul@kernel.org,
-	kishon@kernel.org
-Cc: linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Haotian Zhang <vulab@iscas.ac.cn>
-Subject: [PATCH] phy: ti: da8xx-usb: Handle devm_pm_runtime_enable() errors
-Date: Mon, 24 Nov 2025 09:19:19 +0800
-Message-ID: <20251124011919.1581-1-vulab@iscas.ac.cn>
-X-Mailer: git-send-email 2.50.1.windows.1
+	id 1vNLYx-0000000Aw1l-3TY4;
+	Mon, 24 Nov 2025 01:40:21 +0000
+Received: from [172.16.12.51] (unknown [58.22.7.114])
+	by smtp.qiye.163.com (Hmail) with ESMTP id 2a998c2ff;
+	Mon, 24 Nov 2025 09:40:05 +0800 (GMT+08:00)
+Message-ID: <462ad1bd-7eec-4f26-b383-96b049e14559@rock-chips.com>
+Date: Mon, 24 Nov 2025 09:40:03 +0800
 MIME-Version: 1.0
-X-CM-TRANSID: qwCowAC3SsqrsiNpYhbSAQ--.9519S2
-X-Coremail-Antispam: 1UD129KBjvJXoW7KryUWr17Jw15Xw4rtr1rCrg_yoW8Cr17pF
-	WfXas2krWFg348Gw4DJw4kuFWYk3yrtry8KF97C3WF9a45W3yUXa4rAFyjvFsYvrykuF15
-	J3WrJFy7Aa1avF7anT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
-	9KBjDU0xBIdaVrnRJUUUvj14x267AKxVWUJVW8JwAFc2x0x2IEx4CE42xK8VAvwI8IcIk0
-	rVWrJVCq3wAFIxvE14AKwVWUJVWUGwA2ocxC64kIII0Yj41l84x0c7CEw4AK67xGY2AK02
-	1l84ACjcxK6xIIjxv20xvE14v26ryj6F1UM28EF7xvwVC0I7IYx2IY6xkF7I0E14v26r4U
-	JVWxJr1l84ACjcxK6I8E87Iv67AKxVW8Jr0_Cr1UM28EF7xvwVC2z280aVCY1x0267AKxV
-	WxJr0_GcWle2I262IYc4CY6c8Ij28IcVAaY2xG8wAqx4xG64xvF2IEw4CE5I8CrVC2j2Wl
-	Yx0E2Ix0cI8IcVAFwI0_Jr0_Jr4lYx0Ex4A2jsIE14v26r1j6r4UMcvjeVCFs4IE7xkEbV
-	WUJVW8JwACjcxG0xvY0x0EwIxGrwACjI8F5VA0II8E6IAqYI8I648v4I1lc7CjxVAaw2AF
-	wI0_JF0_Jw1l42xK82IYc2Ij64vIr41l4I8I3I0E4IkC6x0Yz7v_Jr0_Gr1lx2IqxVAqx4
-	xG67AKxVWUJVWUGwC20s026x8GjcxK67AKxVWUGVWUWwC2zVAF1VAY17CE14v26r126r1D
-	MIIYrxkI7VAKI48JMIIF0xvE2Ix0cI8IcVAFwI0_Jr0_JF4lIxAIcVC0I7IYx2IY6xkF7I
-	0E14v26r1j6r4UMIIF0xvE42xK8VAvwI8IcIk0rVWUJVWUCwCI42IY6I8E87Iv67AKxVWU
-	JVW8JwCI42IY6I8E87Iv6xkF7I0E14v26r4j6r4UJbIYCTnIWIevJa73UjIFyTuYvjfUeh
-	L0UUUUU
-X-Originating-IP: [124.16.141.245]
-X-CM-SenderInfo: pyxotu46lvutnvoduhdfq/1tbiBwkQA2kjIsDjaQAAs-
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v10 01/11] usb: typec: Add notifier functions
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Chaoyi Chen <kernel@airkyi.com>
+Cc: Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+ Peter Chen <hzpeterchen@gmail.com>, Luca Ceresoli
+ <luca.ceresoli@bootlin.com>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Heiko Stuebner
+ <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
+ Andy Yan <andy.yan@rock-chips.com>,
+ Yubing Zhang <yubing.zhang@rock-chips.com>,
+ Frank Wang <frank.wang@rock-chips.com>,
+ Andrzej Hajda <andrzej.hajda@intel.com>,
+ Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
+ David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+ Amit Sunil Dhamne <amitsd@google.com>, Dragan Simic <dsimic@manjaro.org>,
+ Johan Jonker <jbx6244@gmail.com>, Diederik de Haas <didi.debian@cknow.org>,
+ Peter Robinson <pbrobinson@gmail.com>, linux-usb@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org
+References: <20251120022343.250-1-kernel@airkyi.com>
+ <20251120022343.250-2-kernel@airkyi.com>
+ <2025112102-laurel-mulch-58e4@gregkh>
+Content-Language: en-US
+From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+In-Reply-To: <2025112102-laurel-mulch-58e4@gregkh>
+X-HM-Tid: 0a9ab384a1c703abkunmfa83b8ab38c240
+X-HM-MType: 1
+X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
+	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZQ0JKGVYfGEpIS04dQkgeQhlWFRQJFh
+	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSEpPSE
+	xVSktLVUpCS0tZBg++
+DKIM-Signature: a=rsa-sha256;
+	b=f4+mCPYdv+riXF8Aoj4wUW+oYifKZiJ/TjuUgPWTmNFL8Iz3GvYFWK2QMaTCMdPv2zqbWK5Zjj+81aUzEy5KEuDCOVR74l6uME4OFfDsttmHKoAszBI6HwlYyNszsCtMJETC/7YZJqFTDoTE0Ag2zR+1xxAQDZ/fwtcF0T2b1t4=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
+	bh=7neti7dpAmDFcPilq2Bt0Tzsj7xXGZOIwTb6sK9LseA=;
+	h=date:mime-version:subject:message-id:from;
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251123_171944_377027_DB1526FD 
-X-CRM114-Status: GOOD (  11.23  )
+X-CRM114-CacheID: sfid-20251123_174020_398067_1DE66744 
+X-CRM114-Status: GOOD (  11.46  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,62 +90,50 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-devm_pm_runtime_enable() can fail due to memory allocation. The current
-code ignores its return value after calling pm_runtime_set_active(),
-leaving the device in an inconsistent state if runtime PM initialization
-fails.
+Hi Greg,
 
-Check the return value of devm_pm_runtime_enable() and return on
-failure. Also move the declaration of 'ret' to the function scope
-to support this check.
+On 11/21/2025 10:07 PM, Greg Kroah-Hartman wrote:
+> On Thu, Nov 20, 2025 at 10:23:33AM +0800, Chaoyi Chen wrote:
+>> From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+>>
+>> Some other part of kernel may want to know the event of typec bus.
+> Be specific, WHAT part of the kernel will need to know this?
 
-Fixes: ee8e41b5044f ("phy: ti: phy-da8xx-usb: Add runtime PM support")
-Signed-off-by: Haotian Zhang <vulab@iscas.ac.cn>
----
- drivers/phy/ti/phy-da8xx-usb.c | 9 ++++++---
- 1 file changed, 6 insertions(+), 3 deletions(-)
+For now, it is DRM.
 
-diff --git a/drivers/phy/ti/phy-da8xx-usb.c b/drivers/phy/ti/phy-da8xx-usb.c
-index 1d81a1e6ec6b..be9c77f8c288 100644
---- a/drivers/phy/ti/phy-da8xx-usb.c
-+++ b/drivers/phy/ti/phy-da8xx-usb.c
-@@ -180,6 +180,7 @@ static int da8xx_usb_phy_probe(struct platform_device *pdev)
- 	struct da8xx_usb_phy_platform_data *pdata = dev->platform_data;
- 	struct device_node	*node = dev->of_node;
- 	struct da8xx_usb_phy	*d_phy;
-+	int ret;
- 
- 	d_phy = devm_kzalloc(dev, sizeof(*d_phy), GFP_KERNEL);
- 	if (!d_phy)
-@@ -233,8 +234,6 @@ static int da8xx_usb_phy_probe(struct platform_device *pdev)
- 			return PTR_ERR(d_phy->phy_provider);
- 		}
- 	} else {
--		int ret;
--
- 		ret = phy_create_lookup(d_phy->usb11_phy, "usb-phy",
- 					"ohci-da8xx");
- 		if (ret)
-@@ -249,7 +248,11 @@ static int da8xx_usb_phy_probe(struct platform_device *pdev)
- 			  PHY_INIT_BITS, PHY_INIT_BITS);
- 
- 	pm_runtime_set_active(dev);
--	devm_pm_runtime_enable(dev);
-+	ret = devm_pm_runtime_enable(dev);
-+	if (ret) {
-+		dev_err(dev, "Failed to enable runtime PM\n");
-+		return ret;
-+	}
- 	/*
- 	 * Prevent runtime pm from being ON by default. Users can enable
- 	 * it using power/control in sysfs.
+
+>
+> And why a new notifier, why not just use the existing notifiers that you
+> already have?  And what is this going to be used for?
+
+We have discussed this before, but the current bus notifier cannot achieve the expected notification [0].
+
+[0] https://lore.kernel.org/all/aPsuLREPS_FEV3DS@kuha.fi.intel.com/
+
+
+>
+> Notifiers are a pain, and should almost never be added.  Use real
+> function calls instead.
+
+In v6, I used direct function calls, but had to switch to notifiers because couldn't resolve the dependencies between DRM and Type-C [1]. Do you have any good ideas? Thank you.
+
+[1] https://lore.kernel.org/all/aPYImGmesrZWwyqh@kuha.fi.intel.com/
+
+
+>
+> thanks,
+>
+> greg k-h
+>
+>
 -- 
-2.50.1.windows.1
+Best,
+Chaoyi
 
 
 -- 
