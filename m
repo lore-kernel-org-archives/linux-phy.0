@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B39C9CFD317
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C9770CFA466
 	for <linux-phy@archiver.kernel.org>; Mon, 24 Nov 2025 10:26:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,89 +12,89 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c7ibCD8rPjPiIZ3djLOgZDorY2fAC2cDN17PLnSY8UA=; b=xVFsStMUuEJ27b
-	HaN2Kl+7sdQ80HZluHyDSB2sGezF6dInLX0IEXaQqSi2hIUuLw8q4ZBjlygzAtpB60koeBufLtWlu
-	kGXZedNayOv+mtR2NPUJguLAoXLqUZZhoOVz0yGNY6+8PQVCo0VzKqRrawAjgXNhYnbu6Og+2bV9F
-	d9VJW1rnqz3yFjNrBbtLX6g43kpEY/hqqSSngDifcjTcy2+txl7ln1J4UGTlYTKe5OsjbUk2Chizj
-	2pWHPslHB7uA/POikjBd/4qHpmF6FWzRQq/IcHnOFS7WPDPI3JU0UF0kk5i4YHB4XyW41sI0IebJ6
-	qH1FlUu1cMSE1+r+L/OQ==;
+	List-Owner; bh=9Sc7m+gJ777FGQbbNcWsOXkwNeQZ4kIlFDyTnSQBOr4=; b=aV8bSS17oPTeKe
+	L77JPhmfUHE/Y+tE/VUs6lPe3hahYxRPotbpeZ781HD7NQiyDlM1vhCft3EJ6PV0Wvrh25ThQnAws
+	fgRZpJIquiQ3fCAk+OqiHS7WGg0CMtKzmXwvo+1zQqVWwrHJyEudJVrnvFFWxPOM435NS9m11iVbk
+	pmj0ASwemFGoRZhwSmzpBJlK2bnSZklbOOsk/Qb9VvtL1MLB96jXTHzIPiZVsOiJ38Ti7CZpJIc3k
+	MEZw/uNsE9XQd1kheN8qyolBDHDj6ObHo8rWNrfA4la7pSePet/g4+krAZvv+AVwi4uiF1D0zbMZz
+	xfowerlRKga8Az0QQ09w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vNTlh-0000000BQCI-1PpP;
+	id 1vNTlh-0000000BQCa-2Q4a;
 	Mon, 24 Nov 2025 10:26:01 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vNTlf-0000000BQB5-1oQw
+	id 1vNTlf-0000000BQBL-3dmd
 	for linux-phy@lists.infradead.org;
 	Mon, 24 Nov 2025 10:26:00 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 5AO7TCRi3112050
-	for <linux-phy@lists.infradead.org>; Mon, 24 Nov 2025 10:25:58 GMT
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 5AO81B3Y1889861
+	for <linux-phy@lists.infradead.org>; Mon, 24 Nov 2025 10:25:59 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	3euNon//LBx2JSrUXy4XgZxtCqOpLk6YhQEkZhC/C/I=; b=YhUQocKtl2j0F/Uw
-	Eg09oLmxOU9De2BeeFcqcU/pwQPNocTZYB1nkWXyBBfXX2WUNYeKJjT6iqJORsAG
-	tvOwMANrazOfxRKdlbjOGj6VA/ddVTEpSOs0PHe/x34B7qOniqMjE0r+wX1UwB+i
-	NbncSSMCRLrtDySDVbOYK2y4yww11TUk9JOzPc2wjV57SkD6EKFTuDJfe4nGmmm1
-	hF1M0774O++JHfUJqu5yOWz5QL2gIowhJ56irRt4xABH91Ch82pK1Y4oBEccACOv
-	ND0K479S1IL3VH/OSV4xLHY+cNqkeGzr7y4hYe/3MXX1KEE5OpWEknzNK6jQrPtb
-	o8cHLA==
-Received: from mail-pg1-f200.google.com (mail-pg1-f200.google.com [209.85.215.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4amk10ghrd-1
+	b/hMwykfqDmJcojkU+Aegd5sgEW6VKZtTzabtZT75W8=; b=pLE7c1F62ZCsCAPD
+	e4ZhxKU3A92fvQkDQjrrITxIfM7qawUWye2m7Mh6sLlnrRvOJR2nQHpi7es8OSKf
+	aKkJj6vXNu3jXTnEHHI8Y3gVZ9VrCMwXLgR1tU26OXA1++A9kAz8rMDw+SLmx7tl
+	CKW8VdSeXwfOuKN4PvkiIJW1twb2vkwDXGczdD0B/66B0WckHZw7FzISkCkyteGd
+	mznoqWSjJMkQ5PhjMtYI8XSD1EczEwDRCh4RlnvF5W3Smgbe9Km61P+YLRB2B2fz
+	mX9mFTf3zu6tWnuVbvHoeTQocoxp57w1uq0Miex0jKQDC4HzQUnGxIeJkBeAy9BL
+	HlAWyA==
+Received: from mail-dl1-f71.google.com (mail-dl1-f71.google.com [74.125.82.71])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4ak68dvmgw-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Mon, 24 Nov 2025 10:25:58 +0000 (GMT)
-Received: by mail-pg1-f200.google.com with SMTP id 41be03b00d2f7-b471737e673so5938673a12.1
-        for <linux-phy@lists.infradead.org>; Mon, 24 Nov 2025 02:25:58 -0800 (PST)
+	for <linux-phy@lists.infradead.org>; Mon, 24 Nov 2025 10:25:59 +0000 (GMT)
+Received: by mail-dl1-f71.google.com with SMTP id a92af1059eb24-11b21dfe94dso5110854c88.0
+        for <linux-phy@lists.infradead.org>; Mon, 24 Nov 2025 02:25:59 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1763979958; x=1764584758; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1763979959; x=1764584759; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=3euNon//LBx2JSrUXy4XgZxtCqOpLk6YhQEkZhC/C/I=;
-        b=V3c8lNdIRBrd29iXdjG7dk5eGVFF1zSom4idYPcKMwtbp9YxfB8XqPatVhwwCAFPZT
-         2Hqt23T+JSnU4LxyGBkVF7778ekhYNgCynf0CAOrOuJR84Wm+dOpqNjzuFCK6GKCvv1m
-         hPPXOmH0121tWS3RW0PIItB4fM+QFP6K33xmWQUdQs7V068Kd3R55uPba5KmRK8gxuSM
-         P7Dw+2ZhXkhOd+B+096gs2QcE+wj/oxiHz6e1YKqXys2CGACfGCCIKIIbojg9hSMIkyX
-         Rh5034PnXXAL+opXH704E/SqR6eT2xKcCM5m1N7wsU7Q1DZ9sQz/zMLfcRIbHzfMO7Z+
-         XOLA==
+        bh=b/hMwykfqDmJcojkU+Aegd5sgEW6VKZtTzabtZT75W8=;
+        b=QHrjAwpAnmjJdQpDnquixVEcUVhXMclvVZ2uAMdGIlwIHDKnsDpD/YRrlMJmaT2+iH
+         z2ZiULUdAFpVispbnxqDqtt2AUp58p0U7hEfqU4Wj4u4i5EyLs0MzpJWBegl+Q6j+igf
+         4RVgCX9+UMfroCJ7Sxz1OoOjAc2VGIcPJxF7BjlJRwef/P2z/BNgtFXRwjUtRPl0Zhih
+         0NeCHarWJR6ED3T9+D44N5dPmBtImjdTk7oiPfh9bd2/HgB8S6DScrrovaxvy7qyls2q
+         7WDjtj2FmH1F4TADyUIRaWv6RsPLtpuyJuFu2cYCGGsqHQSAG6xxTiGKkbn0uyYL6/HD
+         fS1A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1763979958; x=1764584758;
+        d=1e100.net; s=20230601; t=1763979959; x=1764584759;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-gg:x-gm-message-state:from:to
          :cc:subject:date:message-id:reply-to;
-        bh=3euNon//LBx2JSrUXy4XgZxtCqOpLk6YhQEkZhC/C/I=;
-        b=PiZiBWeXAp8fpLEOs/fTMH7NguX3Iu6HYXpnN3QaVVYbMmEgV4fXms5kdjdrkXHKLE
-         pjaGEcPrLVtuCPThFYEKUzFzFOQJ4PMY13F8ga0jpC/j3d6YuYPlizrdlWpQdS1cxNeq
-         cuCv7CE6lT18XBKHd4FONYcZ/WldCdSAPaTLdn3Nk1IPhE9rn2Ik9nwQ9jfrHnbioNB5
-         /6OsejqQ0DUJR8YmeKNhYgt3FtZhqtZB0pJnljvA9zgamW/wuDZw+0JbVg2eTPuwOZIY
-         xL+waL1n2yLOjLhzK3A1ePosR1/BfVyi4B7zMk8/MuUk3fG11XHWHk2bh8S+H5ZOf0gM
-         UA/A==
-X-Forwarded-Encrypted: i=1; AJvYcCWhWcgZ+z32mdJl6UDQ01GJMj/db/XjKwRbXjbFCig2e1d77OIN+qNa5d5z+nchL+WlpHADx/XYuJw=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwzidreGZkLeoulKtaV+i3Jtrt8HNj3okJNTEQo+wMKkIc+fNen
-	ou4w+no/5D7YsIRYxhdm1F5xdJpAEkF7nIRc+sfx5Gw8y7h1IkU+nl2zIJR2ZnLXZ2/zB3Y7pUt
-	hTgXpCWVFm2bsiUgS8BrtrBK/EV7m3Fs33SAL9yNMKgBEfjWEJ6/XQGSFZiHCeEoBnzbV
-X-Gm-Gg: ASbGncuh/YgEpLpaI/1LQobp5B/9vhLajVXJfEDNS6Id87NV64AAkNy4d8FiHzdn5fy
-	uhkZxEip0vXkdT5YLAppqVN2SQioXBAsRRbJYwBPLoNewHN8GVlkebRvqyaJMBS8xZ6tFh+hiov
-	geTEBh731XT/11MeAHuI9r+bisPDrVX8cXf0qfg9gf+O5Pru+EPc5dMlC6rOSXZf34qrUw2BLGh
-	iDjvCx7oedUuXHYChmvP/38USSot9Dv0fzn0xK9M+kY3GevCWLsXWOMcm+pSuy930TZURrelRvp
-	Vd0TK19rWuV7OEKojRwxiaQFRfnphetmITFs9N87vKPupPEOimi/OaeUUddO+yoTkTBdUVxewRd
-	RR8Mk2LXa61kyBYYQFtayWpD6Flo6GHG3XKItoDIui83gvlUtPX/tKK8h
-X-Received: by 2002:a05:7022:b83:b0:11b:9386:8269 with SMTP id a92af1059eb24-11c9d87008bmr7364657c88.46.1763979957510;
-        Mon, 24 Nov 2025 02:25:57 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IE0mhsDOy7DP7bwdncY1sdLRwTjXHphQ2JFcRElT7cBmeugUcoSLOEefGh2q727nCrFfjrU7Q==
-X-Received: by 2002:a05:7022:b83:b0:11b:9386:8269 with SMTP id a92af1059eb24-11c9d87008bmr7364620c88.46.1763979956960;
-        Mon, 24 Nov 2025 02:25:56 -0800 (PST)
+        bh=b/hMwykfqDmJcojkU+Aegd5sgEW6VKZtTzabtZT75W8=;
+        b=pHarYBYgD5phkbdBbDQCvtDhydLo+gWy+gBDOLbQT4waNGsN4x+2h9s5v6XZHuchad
+         W2UANaVWf2bV4inzzP+Qi9lo5SMg+/sc29zhHGWvV0VYgGjFJJVoDiYRNfg4WoLjhfwb
+         4CqvIdZwojIC46sffa+xLT9ZYNEUTq3qKlzmNonHjiJsGCLlujw/aoSb4citSq+pOMAi
+         GZ25eFZC0frPnun0k2AxowskR+jqYpoDqNWZ5vcNEt4+RlOzmjtStL8F4ezENPyyM6g8
+         8dgcYEB7/IZ2DkPiD2sEECn0JFsD3kfCeutgAmW+i7zTr0kiBO1T9Mg2pU8purh7W1zJ
+         hKUQ==
+X-Forwarded-Encrypted: i=1; AJvYcCVhLmyvTSviqWIpinwa5zYVi5TpCMxpp9DCQITpcD7C/6CwgeWL4sdPU4nk0/P+ZJvAHUm7jORkPBs=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yx1rkCTz5/gSynIvONWVgzb2EeUhjiIqdL9aKlmiLarV7ryBY/H
+	I07jJf2zUe1LRA2u1cmdKMOpMTo3RFR2fGzatR1bnL6ZC9cS6eMHRqQWLSrzs5JgXvrpBhMCfyB
+	OiipHJpKLg+LJZwqbxE0CZNAMqiltJlX+cK+fgYk3d3LLnd19ExyQZ2X9bs07lIYrGXdV
+X-Gm-Gg: ASbGncvOOMUxnF5+2gpXQPFdLpfnZveJKHeVZ7tZbRTdI1fJXyqpaCCUsv5w64ou8kW
+	hoIv4cfXul5ZDDhlOR2Mq3Bvtl96c5lSFUwXawDXcnawc9E8LJkpdzSiIzz11JcYFB1grfZzhGM
+	JsSWYOgJu5aJRl64PKuVPA46D3vWURUr4iq5XKd29SD0ojhwUB2JCHl8sJJyevqwWGP9uvphdPQ
+	XzXjIJZxksjszQEhT9Q5lwLxJp686YCkn3yraOS8LSvQun7R9dTZERdAsBgyFtGiv0M7rcfTOpe
+	cxNrEPb/undDAgiThqH9rC5SUIkq+mqS7VQ0iE5SdWC4qrVNoTILz+VE4MoWtITIMZtoUEw3p7M
+	5hFo132ioMKWl8SfSPt7l/nWUMGbdj/FeirDefrgHA7YvOzFfCDL82hrz
+X-Received: by 2002:a05:7022:258e:b0:119:e569:f86a with SMTP id a92af1059eb24-11c9c955bbdmr7216051c88.7.1763979958652;
+        Mon, 24 Nov 2025 02:25:58 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGthYjAqXFcNn0P/z5iQGkCaVdROeTMnrGrxpMt+PRoQV9VJGpe0ff5LdZwq7kFCm8f9nw4Gw==
+X-Received: by 2002:a05:7022:258e:b0:119:e569:f86a with SMTP id a92af1059eb24-11c9c955bbdmr7216019c88.7.1763979958054;
+        Mon, 24 Nov 2025 02:25:58 -0800 (PST)
 Received: from hu-qianyu-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-11c93de6d5csm46140627c88.4.2025.11.24.02.25.56
+        by smtp.gmail.com with ESMTPSA id a92af1059eb24-11c93de6d5csm46140627c88.4.2025.11.24.02.25.57
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 24 Nov 2025 02:25:56 -0800 (PST)
+        Mon, 24 Nov 2025 02:25:57 -0800 (PST)
 From: Qiang Yu <qiang.yu@oss.qualcomm.com>
-Date: Mon, 24 Nov 2025 02:24:34 -0800
-Subject: [PATCH v4 1/5] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Add
- Kaanapali compatible
+Date: Mon, 24 Nov 2025 02:24:35 -0800
+Subject: [PATCH v4 2/5] phy: qcom-qmp: qserdes-txrx: Add complete QMP PCIe
+ PHY v8 register offsets
 MIME-Version: 1.0
-Message-Id: <20251124-kaanapali-pcie-phy-v4-1-d04ee9cca83b@oss.qualcomm.com>
+Message-Id: <20251124-kaanapali-pcie-phy-v4-2-d04ee9cca83b@oss.qualcomm.com>
 References: <20251124-kaanapali-pcie-phy-v4-0-d04ee9cca83b@oss.qualcomm.com>
 In-Reply-To: <20251124-kaanapali-pcie-phy-v4-0-d04ee9cca83b@oss.qualcomm.com>
 To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -105,43 +105,42 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
         devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
         Qiang Yu <qiang.yu@oss.qualcomm.com>,
         Jingyi Wang <jingyi.wang@oss.qualcomm.com>,
-        Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
+        Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
         Neil Armstrong <neil.armstrong@linaro.org>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1763979955; l=1736;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1763979955; l=4559;
  i=qiang.yu@oss.qualcomm.com; s=20250513; h=from:subject:message-id;
- bh=niYSh6CsCMrhQS2BRrxlDOLC4Yc6qPICs6YhLuxLGZk=;
- b=TVsF3Wh/jJvkVKtp/Lt3AKnvGvNx8efZsm5g+8YADfhT0UBsHUKsOLKgxkx1u42mFrPHNAhgt
- 1cQIM5MLSGeAvX9t38gJd18x07ZRAPiQjEMG2lrOgx5gJRPQ0tvid4m
+ bh=DMyrxN6zxkwuIu9tcvyVruPaU8b9DSq9n3Sg3itKewQ=;
+ b=mHFHkNX7CUJhZUqILTQw76QAOoXGlU7bjT03UK9sM2hmMi/tKWxA/8QDBgZxPnYlYajw0Kyt1
+ P51urhadpmIBJkgcdYJguq4mpy0h8uVZovdEV1usQ3FwXW0IjddX66k
 X-Developer-Key: i=qiang.yu@oss.qualcomm.com; a=ed25519;
  pk=Rr94t+fykoieF1ngg/bXxEfr5KoQxeXPtYxM8fBQTAI=
-X-Proofpoint-GUID: 0VpBIikeDIzOy6XY2YMGrQntwt-WQLnD
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMTI0MDA5MiBTYWx0ZWRfXzXFVIttZvJ0p
- 1HibuVDCjEk2HenLKzvsH2qhoHrzRAv3oY7vwd6FE7Aqyw5f6ZROT81LvURfPNU7WOZyyc9zxWC
- 1r+bmLH21DzZ/1I+gqbHRnXbTC5IEwjN5DCAMI9yU0L036uPkdqovQRDEc2Z5tkePbkApFhqMH0
- WghC1Nrn4Ob0+06ITwWlpWGkmWYWxgXl/2Ud7LeIzNbd6lo4ny7XVfpSlujyHAArloL80VgW89A
- 7x2g91uODVGkh5NSYvSfY+m5DWfWTNEPkULuDU5OOnDAEDaaGUJSedHhzJ+4m8ys1w37ucQgqJn
- STvNd+z7wsru1/r+SiweRH59KFkEBtKaeUt8GaWBACXnLbsoaC9wPFEqV5vGphLNt6hyLxZ/+ik
- XLkyzsv+ITH1fmL/VhG9Zi9v4OYGqg==
-X-Proofpoint-ORIG-GUID: 0VpBIikeDIzOy6XY2YMGrQntwt-WQLnD
-X-Authority-Analysis: v=2.4 cv=SP9PlevH c=1 sm=1 tr=0 ts=692432b6 cx=c_pps
- a=oF/VQ+ItUULfLr/lQ2/icg==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMTI0MDA5MiBTYWx0ZWRfXwIjBvPFZCdBn
+ PeubOS3qF+cnUJ12s+8s0XBIvik68N3WR+oMx9wcRYfwPu5+yDYQ5iH+UJzZ+hnjtFk7fSpMH45
+ nUBj5rXYEM7ZCg2YLZPbAlPxmJ7aEBkXST2Ez4CtHkq06NDztccTuGEvb2mexTIkJE7V+DVyRpa
+ B9uHNdkjtpz4V9BB3ckIjP1lhkYiQ1PzI4suZI0ANvw6TpdNlIZ54mlS4bNngoN06J/xq46AY/S
+ aZFOyRCGVVphr37MR0C0yFOHkdviAjzvIT1xexUExoX+EadLEt5G4R7EpFxIOhJHTe+ztdOljAR
+ IbhurPZ5ZNIwW8KqPAAN3hx+0rXlJJQk17R9eo/efODFltZcq4Yeuz0KJo4blGKotpU8bcExU7H
+ fKDIvgEUBoweUHzxWUO2ZhZh6PEiYA==
+X-Proofpoint-GUID: 1mVMWYXm_0V_k3uoUMV-s5R7fGZTtkQr
+X-Proofpoint-ORIG-GUID: 1mVMWYXm_0V_k3uoUMV-s5R7fGZTtkQr
+X-Authority-Analysis: v=2.4 cv=UsBu9uwB c=1 sm=1 tr=0 ts=692432b7 cx=c_pps
+ a=JYo30EpNSr/tUYqK9jHPoA==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
  a=IkcTkHD0fZMA:10 a=6UeiqGixMTsA:10 a=s4-Qcg_JpJYA:10
  a=VkNPw1HP01LnGYTKEx00:22 a=EUspDBNiAAAA:8 a=KKAkSRfTAAAA:8
- a=A6CI9_SKnrlR1hncxxMA:9 a=QEXdDO2ut3YA:10 a=3WC7DwWrALyhR5TkjVHa:22
+ a=AMX_CUzcla2ZGstc20cA:9 a=QEXdDO2ut3YA:10 a=Fk4IpSoW4aLDllm1B1p-:22
  a=cvBusfyB2V15izCimMoJ:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
  definitions=2025-11-24_04,2025-11-21_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- malwarescore=0 priorityscore=1501 bulkscore=0 adultscore=0 suspectscore=0
- phishscore=0 lowpriorityscore=0 clxscore=1015 impostorscore=0 spamscore=0
+ bulkscore=0 adultscore=0 priorityscore=1501 impostorscore=0 phishscore=0
+ suspectscore=0 lowpriorityscore=0 clxscore=1015 malwarescore=0 spamscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2510240001 definitions=main-2511240092
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251124_022559_487446_FE6A20D9 
-X-CRM114-Status: UNSURE (   9.89  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20251124_022559_916534_417D9829 
+X-CRM114-Status: GOOD (  12.25  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -158,44 +157,98 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Document compatible for the QMP PCIe PHY on Kaanapali platform.
+Kaanapali SoC uses QMP PHY with version v8 for PCIe Gen3 x2, but requires
+a completely unique qserdes-txrx register offsets compared to existing v8
+offsets.
+
+Hence, add a dedicated header file containing the FULL SET of qserdes-txrx
+register definitions required for Kaanapali's PCIe PHY operation.
 
 Signed-off-by: Jingyi Wang <jingyi.wang@oss.qualcomm.com>
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
 Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 Signed-off-by: Qiang Yu <qiang.yu@oss.qualcomm.com>
 ---
- Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml | 3 +++
- 1 file changed, 3 insertions(+)
+ .../qualcomm/phy-qcom-qmp-qserdes-txrx-pcie-v8.h   | 71 ++++++++++++++++++++++
+ 1 file changed, 71 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-index 48bd11410e8c2de664d47262b982473ee24cf09d..b8f3b55efd6eafc0c989e64326b99f03516f4e30 100644
---- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-@@ -17,6 +17,7 @@ properties:
-   compatible:
-     enum:
-       - qcom,glymur-qmp-gen5x4-pcie-phy
-+      - qcom,kaanapali-qmp-gen3x2-pcie-phy
-       - qcom,qcs615-qmp-gen3x1-pcie-phy
-       - qcom,qcs8300-qmp-gen4x2-pcie-phy
-       - qcom,sa8775p-qmp-gen4x2-pcie-phy
-@@ -147,6 +148,7 @@ allOf:
-         compatible:
-           contains:
-             enum:
-+              - qcom,kaanapali-qmp-gen3x2-pcie-phy
-               - qcom,qcs615-qmp-gen3x1-pcie-phy
-               - qcom,sar2130p-qmp-gen3x2-pcie-phy
-               - qcom,sc8180x-qmp-pcie-phy
-@@ -216,6 +218,7 @@ allOf:
-           contains:
-             enum:
-               - qcom,glymur-qmp-gen5x4-pcie-phy
-+              - qcom,kaanapali-qmp-gen3x2-pcie-phy
-               - qcom,sm8550-qmp-gen4x2-pcie-phy
-               - qcom,sm8650-qmp-gen4x2-pcie-phy
-               - qcom,x1e80100-qmp-gen3x2-pcie-phy
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-pcie-v8.h b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-pcie-v8.h
+new file mode 100644
+index 0000000000000000000000000000000000000000..181846e08c0f053c5cc7dbaa39a1d407ffdcbcdc
+--- /dev/null
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-pcie-v8.h
+@@ -0,0 +1,71 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries. All rights reserved.
++ */
++
++#ifndef QCOM_PHY_QMP_QSERDES_TXRX_PCIE_V8_H_
++#define QCOM_PHY_QMP_QSERDES_TXRX_PCIE_V8_H_
++
++#define QSERDES_V8_PCIE_TX_RES_CODE_LANE_OFFSET_TX		0x030
++#define QSERDES_V8_PCIE_TX_RES_CODE_LANE_OFFSET_RX		0x034
++#define QSERDES_V8_PCIE_TX_LANE_MODE_1		0x07c
++#define QSERDES_V8_PCIE_TX_LANE_MODE_2		0x080
++#define QSERDES_V8_PCIE_TX_LANE_MODE_3		0x084
++#define QSERDES_V8_PCIE_TX_TRAN_DRVR_EMP_EN		0x0b4
++#define QSERDES_V8_PCIE_TX_TX_BAND0		0x0e0
++#define QSERDES_V8_PCIE_TX_TX_BAND1		0x0e4
++#define QSERDES_V8_PCIE_TX_SEL_10B_8B		0x0f4
++#define QSERDES_V8_PCIE_TX_SEL_20B_10B		0x0f8
++#define QSERDES_V8_PCIE_TX_PARRATE_REC_DETECT_IDLE_EN		0x058
++#define QSERDES_V8_PCIE_TX_TX_ADAPT_POST_THRESH1		0x118
++#define QSERDES_V8_PCIE_TX_TX_ADAPT_POST_THRESH2		0x11c
++#define QSERDES_V8_PCIE_TX_PHPRE_CTRL		0x128
++#define QSERDES_V8_PCIE_TX_EQ_RCF_CTRL_RATE3		0x148
++#define QSERDES_V8_PCIE_TX_EQ_RCF_CTRL_RATE4		0x14c
++
++#define QSERDES_V8_PCIE_RX_UCDR_FO_GAIN_RATE4		0x0dc
++#define QSERDES_V8_PCIE_RX_UCDR_SO_GAIN_RATE3		0x0ec
++#define QSERDES_V8_PCIE_RX_UCDR_SO_GAIN_RATE4		0x0f0
++#define QSERDES_V8_PCIE_RX_UCDR_PI_CONTROLS		0x0f4
++#define QSERDES_V8_PCIE_RX_VGA_CAL_CNTRL1		0x170
++#define QSERDES_V8_PCIE_RX_VGA_CAL_MAN_VAL		0x178
++#define QSERDES_V8_PCIE_RX_RX_EQU_ADAPTOR_CNTRL4		0x1b4
++#define QSERDES_V8_PCIE_RX_SIGDET_ENABLES			0x1d8
++#define QSERDES_V8_PCIE_RX_SIGDET_LVL			0x1e0
++#define QSERDES_V8_PCIE_RX_RXCLK_DIV2_CTRL			0x0b8
++#define QSERDES_V8_PCIE_RX_RX_BAND_CTRL0			0x0bc
++#define QSERDES_V8_PCIE_RX_RX_TERM_BW_CTRL0			0x0c4
++#define QSERDES_V8_PCIE_RX_RX_TERM_BW_CTRL1			0x0c8
++#define QSERDES_V8_PCIE_RX_SVS_MODE_CTRL			0x0b4
++#define QSERDES_V8_PCIE_RX_UCDR_PI_CTRL1			0x058
++#define QSERDES_V8_PCIE_RX_UCDR_PI_CTRL2			0x05c
++#define QSERDES_V8_PCIE_RX_UCDR_SB2_THRESH2_RATE3			0x084
++#define QSERDES_V8_PCIE_RX_UCDR_SB2_GAIN1_RATE3			0x098
++#define QSERDES_V8_PCIE_RX_UCDR_SB2_GAIN2_RATE3			0x0ac
++#define QSERDES_V8_PCIE_RX_RX_MODE_RATE_0_1_B0			0x218
++#define QSERDES_V8_PCIE_RX_RX_MODE_RATE_0_1_B1			0x21c
++#define QSERDES_V8_PCIE_RX_RX_MODE_RATE_0_1_B2			0x220
++#define QSERDES_V8_PCIE_RX_RX_MODE_RATE_0_1_B4			0x228
++#define QSERDES_V8_PCIE_RX_RX_MODE_RATE_0_1_B7			0x234
++#define QSERDES_V8_PCIE_RX_RX_MODE_RATE3_B0			0x260
++#define QSERDES_V8_PCIE_RX_RX_MODE_RATE3_B1			0x264
++#define QSERDES_V8_PCIE_RX_RX_MODE_RATE3_B2			0x268
++#define QSERDES_V8_PCIE_RX_RX_MODE_RATE3_B3			0x26c
++#define QSERDES_V8_PCIE_RX_RX_MODE_RATE3_B4			0x270
++#define QSERDES_V8_PCIE_RX_RX_MODE_RATE4_SA_B0			0x284
++#define QSERDES_V8_PCIE_RX_RX_MODE_RATE4_SA_B1			0x288
++#define QSERDES_V8_PCIE_RX_RX_MODE_RATE4_SA_B2			0x28c
++#define QSERDES_V8_PCIE_RX_RX_MODE_RATE4_SA_B3			0x290
++#define QSERDES_V8_PCIE_RX_RX_MODE_RATE4_SA_B4			0x294
++#define QSERDES_V8_PCIE_RX_RX_MODE_RATE4_SA_B5			0x298
++#define QSERDES_V8_PCIE_RX_Q_PI_INTRINSIC_BIAS_RATE32			0x31c
++#define QSERDES_V8_PCIE_RX_Q_PI_INTRINSIC_BIAS_RATE4			0x320
++#define QSERDES_V8_PCIE_RX_EOM_MAX_ERR_LIMIT_LSB			0x11c
++#define QSERDES_V8_PCIE_RX_EOM_MAX_ERR_LIMIT_MSB			0x120
++#define QSERDES_V8_PCIE_RX_AUXDATA_BIN_RATE23			0x108
++#define QSERDES_V8_PCIE_RX_AUXDATA_BIN_RATE4			0x10c
++#define QSERDES_V8_PCIE_RX_VTHRESH_CAL_MAN_VAL_RATE3			0x198
++#define QSERDES_V8_PCIE_RX_VTHRESH_CAL_MAN_VAL_RATE4			0x19c
++#define QSERDES_V8_PCIE_RX_GM_CAL			0x1a0
++
++#endif
 
 -- 
 2.34.1
