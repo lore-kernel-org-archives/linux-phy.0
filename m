@@ -4,84 +4,113 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 09605CFD313
-	for <linux-phy@archiver.kernel.org>; Mon, 24 Nov 2025 16:33:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 941EECFD318
+	for <linux-phy@archiver.kernel.org>; Mon, 24 Nov 2025 16:38:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wlM9sl3IOcPXydq8nQoAMEgVrlZPFjRsZT8yk+7huws=; b=H0ZhRE1Ia0P+Ln
-	9XGO2MQLz0KCbrnEouT1VrF1EJC+OeQ8bqMzGPan/1DpAfaZT5hzWfY7wOM7B30HGPsLonMaTKtJL
-	ZhqSkUKLbaCyss9JucNjQoAIs0ysIAimMreIXZGgF9VI/E146YWSkAJMqim7JJ+CaHAddw6aYGuli
-	aOubWKY9kalVV3tCYBp8pp5Jxo9atmZRDNup+LDTCIhKa8DqGSbvHBVpUKpxL3i32F9Up8SRdM9TE
-	MBXffIcyTko9TZ1bULFvDdGLju4tRWQMFVB52iCZq7znBuHUCL8gyNspqb4kIF/Ap3HAo0VWM7IAX
-	xuMDQtFUAEzBPxDhGvjA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
+	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=sNBzFyA5uV+d9I1mSGRYm6K8fYBaHcz5Rf2mlbfuL+8=; b=Br2c7+RHNvFKWLOC2BAmP4IEMV
+	0U22CwMOrMkjP29Nh2zFc6QqTLWH6o6Ef7WdN28VbPw8/FuPLe/+07BnvpI/62jefGj9zIgoV4UIY
+	fB8wbvz7prE/MZMjT9cM6vCIkf0AvfRd0XlxGEYJ/LU/v3gi5AOvmzgX/ijZYG5z+V9nm7Y4lNXOg
+	InucG84EFEbKONCUvVECYfLZQfh9KB6lwR9+LDTJDBQ5op/ULOlbfV46KMcQb+c7ls/5rMIPEiTdO
+	q0x7NRtkbp+2Wjatcw6ZulXaT0foL4IyRquN+5FYM2U0aAXx5IB7IZZi9BMkATmd+bifK3sdUCh1c
+	NSAaGj7w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vNZVN-0000000C04T-2j1s;
-	Mon, 24 Nov 2025 16:33:33 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1vNZac-0000000C0Zo-1DLU;
+	Mon, 24 Nov 2025 16:38:58 +0000
+Received: from mail-wm1-x329.google.com ([2a00:1450:4864:20::329])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vNZVL-0000000C041-1rMD;
-	Mon, 24 Nov 2025 16:33:31 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 8E38D60173;
-	Mon, 24 Nov 2025 16:33:30 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B2D80C116C6;
-	Mon, 24 Nov 2025 16:33:29 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
-	s=korg; t=1764002010;
-	bh=b0HsFdIr9UYeg1Jbb+ezqHtOK4AZhADd9B70yMMGZFc=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=g+47ol/xVPKvHq8mO+c2fpgR8DW18YAaKTmijBBG2VtkLGfdTcX8n57jEGZgYFtXt
-	 DF01gZjsrt73ZFaL90qrJ9go9zBaa62onSiMzWQEv3i/waUjE3nOD4/TVDH9cmjl4K
-	 53oeGgUWsOdxH3qnIhbrSMDif3kOexD/8BLXzSs0=
-Date: Mon, 24 Nov 2025 17:33:27 +0100
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Chaoyi Chen <chaoyi.chen@rock-chips.com>
-Cc: Chaoyi Chen <kernel@airkyi.com>,
-	Heikki Krogerus <heikki.krogerus@linux.intel.com>,
-	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
-	Peter Chen <hzpeterchen@gmail.com>,
-	Luca Ceresoli <luca.ceresoli@bootlin.com>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
-	Andy Yan <andy.yan@rock-chips.com>,
-	Yubing Zhang <yubing.zhang@rock-chips.com>,
-	Frank Wang <frank.wang@rock-chips.com>,
-	Andrzej Hajda <andrzej.hajda@intel.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Robert Foss <rfoss@kernel.org>,
-	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
-	Jonas Karlman <jonas@kwiboo.se>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
-	Amit Sunil Dhamne <amitsd@google.com>,
-	Dragan Simic <dsimic@manjaro.org>, Johan Jonker <jbx6244@gmail.com>,
-	Diederik de Haas <didi.debian@cknow.org>,
-	Peter Robinson <pbrobinson@gmail.com>, linux-usb@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org
-Subject: Re: [PATCH v10 01/11] usb: typec: Add notifier functions
-Message-ID: <2025112448-brush-porcupine-c851@gregkh>
-References: <20251120022343.250-1-kernel@airkyi.com>
- <20251120022343.250-2-kernel@airkyi.com>
- <2025112102-laurel-mulch-58e4@gregkh>
- <462ad1bd-7eec-4f26-b383-96b049e14559@rock-chips.com>
- <2025112402-unopposed-polio-e6e9@gregkh>
- <a80483de-518d-45d5-b46a-9b70cca5b236@rock-chips.com>
+	id 1vNZaa-0000000C0ZF-32PA
+	for linux-phy@lists.infradead.org;
+	Mon, 24 Nov 2025 16:38:57 +0000
+Received: by mail-wm1-x329.google.com with SMTP id 5b1f17b1804b1-477aa218f20so28303095e9.0
+        for <linux-phy@lists.infradead.org>; Mon, 24 Nov 2025 08:38:56 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1764002335; x=1764607135; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:organization:autocrypt
+         :content-language:references:cc:to:subject:reply-to:from:user-agent
+         :mime-version:date:message-id:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=Vd4YAgJZUtrh7us92LZ0mBvA8dTVa15KN2e1opNd61Y=;
+        b=ibDJNLac1THQ0qLqLdz0y1grvV2yuou/P1Irl0ue5L1lZVXRB6oYRsZcMsstx1yakx
+         krMJ9Y9Oh6ZnQzH+Pg9trYZuw4pxAbJho23mZn17yVXPG0P7Ce1yztr6PWYEssi/2Wv8
+         2zMuHUdDwpchW/pMLysSZbExw5z2+ngD+Cavy/wUKDTiRCbyhiaWEv59Ou9v/JpQhblS
+         xKyeDYhskq5TpK6vABLm7sULsWa6QU1DTEEw4BY1sI4HzyC5YbHgBYKWfDz3PRFfYOmo
+         jmYW68nvYFgs2v7cUA21vWmswxbPDzNzB8yXIbqg7EW09ujjQIpS9HMphZp0MCDCcD9r
+         U9LA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1764002335; x=1764607135;
+        h=content-transfer-encoding:in-reply-to:organization:autocrypt
+         :content-language:references:cc:to:subject:reply-to:from:user-agent
+         :mime-version:date:message-id:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=Vd4YAgJZUtrh7us92LZ0mBvA8dTVa15KN2e1opNd61Y=;
+        b=g/JvpT4SY0gfLtrp48VEVsBk6YadszFLIgInljLJL2erbYAOHNKyWhNakmzUxB6hQ2
+         0iP2G1/NM8qHLMAEz0WC98a0lTAPvg8lICx2uF3I8L9Ni8qZ7PidBLzFVgZH6FlH/1bi
+         1TwmTZVCwuvsuZ8lscOpk8y/aoco70wZCtwsOQx0LbIV3gRhf64kr8dxP5ZOjn/XuT+5
+         0mr66pA4XABdnAwke4O7xCKx3asPsvaHvb/nIvOc+iYRYwnTEDXImb/qZQLLYMq+2u8H
+         he7Sov4duKVDen9lq7vIh+dB6iRZpRlEuVuJyhoaPHUGDD/fNJMQBLkUvKuh+HTao9Kg
+         ziIw==
+X-Gm-Message-State: AOJu0YwbnqpbiZ8tAeBpISuX2SfWquBXmhV1VsrFlbiNP52MqPKQlUJs
+	Z0ZhzMvfO1S+dOV0bDATw+ezoR8x86Wf2jWUaIkTmbSxHNg8fuNz8o1zCW4mI2mq7Tc=
+X-Gm-Gg: ASbGncuVxz+PTsIy7TInmDa8WhGRHV5lbH0KQPD9QaBeZfD+5y5JXIzbQRLxm+tVNz3
+	7ivGZDoXsBtbjTUcl9avLLfsh2mUL7wH3JjJt0Bwrlb19ghTZGacihIy88Ff73gz01p/ERkBCBY
+	KwVDDMF9pPD8rurO7MeXPQYsl+AzcL5IUqiAC+I9QnPCcx5POshv8QLbDv7iK7b29o7T2BfOMAi
+	Z5w+KG2MqdbdWGftFpggm9M6zGLRzK8VelmGAscWXgnvafxUn8l0YL7WxLXLm44EVBtrcXYJF32
+	vJ/nNU6x0GqcMelJsqAwgDqDmV4uUTvoC9Hv6ovTFz3X8GFZNG1T2YUcoQSadp+kB+VLoIEYHxr
+	Z0GOX2V4QOoI8FEHt8se93AKP3WPLKcvqB1H9pWK8Zy1oY/iCwp6ovJRgVToUJpZ0YYhAtcm2vQ
+	ofsxubzAKzsf6SjUlqx8bJ5CptIgQ7I46+cQHf2r59lQihpaCFEicxu9uWIxFpIyo=
+X-Google-Smtp-Source: AGHT+IFh9+e/nZ0MzhKR8hwSRZkk/UMEPzyG5mZg4dSefUl7CLWflSxPRq5OB52Q97oHK/A7woIV6Q==
+X-Received: by 2002:a05:600c:3110:b0:477:632c:5b91 with SMTP id 5b1f17b1804b1-477c01b4b2amr150122945e9.16.1764002334547;
+        Mon, 24 Nov 2025 08:38:54 -0800 (PST)
+Received: from ?IPV6:2a01:e0a:3d9:2080:ab13:96f5:1459:8396? ([2a01:e0a:3d9:2080:ab13:96f5:1459:8396])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-477bf3af0ecsm206599285e9.9.2025.11.24.08.38.53
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 24 Nov 2025 08:38:54 -0800 (PST)
+Message-ID: <7f66362b-475f-41c1-82c5-d5be7646541f@linaro.org>
+Date: Mon, 24 Nov 2025 17:38:53 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <a80483de-518d-45d5-b46a-9b70cca5b236@rock-chips.com>
+User-Agent: Mozilla Thunderbird
+From: neil.armstrong@linaro.org
+Subject: Re: [PATCH v2] phy: ti: da8xx-usb: Handle devm_pm_runtime_enable()
+ errors
+To: Haotian Zhang <vulab@iscas.ac.cn>, vkoul@kernel.org, kishon@kernel.org
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20251124105734.1027-1-vulab@iscas.ac.cn>
+Content-Language: en-US, fr
+Autocrypt: addr=neil.armstrong@linaro.org; keydata=
+ xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
+ GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
+ BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
+ qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
+ 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
+ AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
+ OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
+ Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
+ YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
+ GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
+ UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
+ GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
+ yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
+ QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
+ SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
+ 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
+ Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
+ oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
+ M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
+ 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
+ KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
+ 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
+ QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
+Organization: Linaro
+In-Reply-To: <20251124105734.1027-1-vulab@iscas.ac.cn>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20251124_083856_796833_99CAE0A9 
+X-CRM114-Status: GOOD (  18.19  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,133 +122,69 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Reply-To: Neil Armstrong <neil.armstrong@linaro.org>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Nov 24, 2025 at 04:05:53PM +0800, Chaoyi Chen wrote:
-> Hi Greg,
-> =
+On 11/24/25 11:57, Haotian Zhang wrote:
+> devm_pm_runtime_enable() can fail due to memory allocation. The current
+> code ignores its return value after calling pm_runtime_set_active(),
+> leaving the device in an inconsistent state if runtime PM initialization
+> fails.
+> 
+> Check the return value of devm_pm_runtime_enable() and return on
+> failure. Also move the declaration of 'ret' to the function scope
+> to support this check.
+> 
+> Fixes: ee8e41b5044f ("phy: ti: phy-da8xx-usb: Add runtime PM support")
+> Suggested-by: Neil Armstrong <neil.armstrong@linaro.org>
+> Signed-off-by: Haotian Zhang <vulab@iscas.ac.cn>
+> ---
+> Changes in v2:
+>    -Just return ret and drop the dev_err() as suggested by Neil
+>    Armstrong.
+> ---
+>   drivers/phy/ti/phy-da8xx-usb.c | 7 ++++---
+>   1 file changed, 4 insertions(+), 3 deletions(-)
+> 
+> diff --git a/drivers/phy/ti/phy-da8xx-usb.c b/drivers/phy/ti/phy-da8xx-usb.c
+> index 1d81a1e6ec6b..62fa6f89c0e6 100644
+> --- a/drivers/phy/ti/phy-da8xx-usb.c
+> +++ b/drivers/phy/ti/phy-da8xx-usb.c
+> @@ -180,6 +180,7 @@ static int da8xx_usb_phy_probe(struct platform_device *pdev)
+>   	struct da8xx_usb_phy_platform_data *pdata = dev->platform_data;
+>   	struct device_node	*node = dev->of_node;
+>   	struct da8xx_usb_phy	*d_phy;
+> +	int ret;
+>   
+>   	d_phy = devm_kzalloc(dev, sizeof(*d_phy), GFP_KERNEL);
+>   	if (!d_phy)
+> @@ -233,8 +234,6 @@ static int da8xx_usb_phy_probe(struct platform_device *pdev)
+>   			return PTR_ERR(d_phy->phy_provider);
+>   		}
+>   	} else {
+> -		int ret;
+> -
+>   		ret = phy_create_lookup(d_phy->usb11_phy, "usb-phy",
+>   					"ohci-da8xx");
+>   		if (ret)
+> @@ -249,7 +248,9 @@ static int da8xx_usb_phy_probe(struct platform_device *pdev)
+>   			  PHY_INIT_BITS, PHY_INIT_BITS);
+>   
+>   	pm_runtime_set_active(dev);
+> -	devm_pm_runtime_enable(dev);
+> +	ret = devm_pm_runtime_enable(dev);
+> +	if (ret)
+> +		return ret;
+>   	/*
+>   	 * Prevent runtime pm from being ON by default. Users can enable
+>   	 * it using power/control in sysfs.
 
-> On 11/24/2025 3:10 PM, Greg Kroah-Hartman wrote:
-> =
+Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 
-> > On Mon, Nov 24, 2025 at 09:40:03AM +0800, Chaoyi Chen wrote:
-> > > Hi Greg,
-> > > =
-
-> > > On 11/21/2025 10:07 PM, Greg Kroah-Hartman wrote:
-> > > > On Thu, Nov 20, 2025 at 10:23:33AM +0800, Chaoyi Chen wrote:
-> > > > > From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
-> > > > > =
-
-> > > > > Some other part of kernel may want to know the event of typec bus.
-> > > > Be specific, WHAT part of the kernel will need to know this?
-> > > For now, it is DRM.
-> > Then say this.
-> =
-
-> Okay, please refer to the discussion below.
-> =
-
-> > =
-
-> > > > And why a new notifier, why not just use the existing notifiers tha=
-t you
-> > > > already have?  And what is this going to be used for?
-> > > We have discussed this before, but the current bus notifier cannot ac=
-hieve the expected notification [0].
-> > > =
-
-> > > [0] https://lore.kernel.org/all/aPsuLREPS_FEV3DS@kuha.fi.intel.com/
-> > Then you need to document the heck out of this in the changelog text.
-> > But I'm still not quite understanding why the bus notifier does not work
-> > here, as you only want this information if the usb device is bound to
-> > the bus there, you do not want to know this if it did not complete.
-> > =
-
-> > That thread says you want this not "too late", but why?  What is the
-> > problem there, and how will you handle your code getting loaded after
-> > the typec code is loaded?  Notifier callbacks don't work for that
-> > situation, right?
-> =
-
-> In fact, the typec_register_altmode() function generates two
-> registered events.=A0The first one is the registered event of the port
-> device, and the second one is the registered event of the partner
-> device.=A0The second one event only occurs after a Type-C device is
-> inserted.
-> The bus notifier event does not actually take effect for the port
-> device, because it only sets the bus for the partner device:
-> =
-
-> =A0 =A0 /* The partners are bind to drivers */
-> =A0 =A0 if (is_typec_partner(parent))
-> =A0 =A0 =A0 =A0 alt->adev.dev.bus =3D &typec_bus;
-
-Setting the bus is correct, then it needs to be registered with the
-driver core so the bus link shows up (and a driver is bound to it.)
-That is when the bus notifier can happen, right?
-
-> I hope it's not too late. In fact, the notifier here will notify DRM to e=
-stablish a bridge chain.
-
-What is a "bridge chain"?
-
-> The downstream DP controller driver hopes to obtain the fwnode of the las=
-t-level Type-C device
-> through this bridge chain to create a DRM connector. And when a device is=
- inserted,
-> drivers/usb/typec/altmodes/displayport.c can notify the HPD (Hot Plug Det=
-ect) event.
-
-But aren't you just the driver for the "partner device"?
-
-If not, why isn't a real device being created that you then bind to,
-what "fake" type of thing are you attempting to do here that would
-require you to do this out-of-band?
-
-> If relying on the second event, the bridge chain may never be established=
-, and the operations of the DP driver will be
-> always deferred. Furthermore, other parts of the display controller drive=
-r will also be deferred accordingly.
-
-What operations?  What exactly is delayed?  You should not be touching a
-device before you have it on your bus, right?
-
-> > > > Notifiers are a pain, and should almost never be added.  Use real
-> > > > function calls instead.
-> > > In v6, I used direct function calls, but had to switch to notifiers b=
-ecause couldn't resolve the dependencies between DRM and Type-C [1]. Do you=
- have any good ideas? Thank you.
-> > Only allow this DRM code to be built if typec code is enabled, do NOT
-> > use a select, use a depends in the drm code.
-> =
-
-> Sorry, I didn't get your point. Does this mean that the current notifiers=
- approach still needs to be changed to direct function calls?
-
-If you somehow convince me that the existing bus notifiers will not
-work, yes :)
-
-> If so, then based on the previous discussion, typec should not depend
-> on any DRM components. Does this mean that we should add the if
-> (IS_REACHABLE(CONFIG_DRM_AUX_BRIDGE)) before the direct function call?
-
-No, do it properly like any other function call to another subsystem.
-
-> Additionally, the current version of CONFIG_DRM_AUX_BRIDGE is selected
-> by the DP driver in patch9.
-
-Don't do "select" if at all possible, always try to do "depends on".
-
-thanks,
-
-greg k-h
-
--- =
-
+-- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
