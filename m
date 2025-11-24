@@ -4,159 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9CF70CFD313
-	for <linux-phy@archiver.kernel.org>; Mon, 24 Nov 2025 16:20:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 09605CFD313
+	for <linux-phy@archiver.kernel.org>; Mon, 24 Nov 2025 16:33:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Cc:Date:
-	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Dv6DxLYOaXNHstKpNOdUW2L2/b5PEDXDGzwyI3IoMl0=; b=Ktmfip1Y0ztxrQ
-	OpomaSz0IwzHDJsX6Tj7x5niLJkrP21kbSutt1nwh64N/7AwC6KptIruOZfbTex62Bf8esNTMK9ns
-	eBvJU4/GQIE2+SgGhZl7nCj4zSsfc3R4TufKSkU1FIfK6rfANXvvnGyV3IwLuYd2iJoERsoOk/jjc
-	TvaeuWTIvHhTJqBlwoXxvNybrj/rDhLg7oS2NAPTiBk/fPF3g7TD1+yU9UPvq2q7bleXaWXhwonVi
-	Se9blRF+P9yzKKwNubjA1WOwP59xEug4YqmAaHcN34QKTEUKIvfxoYiySdLFEbB1TD0KSU2OaOE2c
-	WIxQMYuuL3iYwFNO2W7w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wlM9sl3IOcPXydq8nQoAMEgVrlZPFjRsZT8yk+7huws=; b=H0ZhRE1Ia0P+Ln
+	9XGO2MQLz0KCbrnEouT1VrF1EJC+OeQ8bqMzGPan/1DpAfaZT5hzWfY7wOM7B30HGPsLonMaTKtJL
+	ZhqSkUKLbaCyss9JucNjQoAIs0ysIAimMreIXZGgF9VI/E146YWSkAJMqim7JJ+CaHAddw6aYGuli
+	aOubWKY9kalVV3tCYBp8pp5Jxo9atmZRDNup+LDTCIhKa8DqGSbvHBVpUKpxL3i32F9Up8SRdM9TE
+	MBXffIcyTko9TZ1bULFvDdGLju4tRWQMFVB52iCZq7znBuHUCL8gyNspqb4kIF/Ap3HAo0VWM7IAX
+	xuMDQtFUAEzBPxDhGvjA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vNZId-0000000BzBh-0DCz;
-	Mon, 24 Nov 2025 16:20:23 +0000
-Received: from mo4-p03-ob.smtp.rzone.de ([81.169.146.174])
+	id 1vNZVN-0000000C04T-2j1s;
+	Mon, 24 Nov 2025 16:33:33 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vNZIZ-0000000BzAw-3NqJ;
-	Mon, 24 Nov 2025 16:20:21 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1764001204; cv=none;
-    d=strato.com; s=strato-dkim-0002;
-    b=Mi6ffgTzeLDd6by16LVPA9WBGsA3fZVxfsWD+cc37oI6ulg6dD65T95bJgc6HltKK7
-    N4uWDZgtyOZZdYje8gbuVu9T95X4b6tGrirbXguEMFuLjxnmBeIEHwAlx2PfiDgOUf0X
-    Y5unUlSKON44f9TwafsNmg1XK3HCWLwKQQjfA0arXHoDi0VhL9qaRszysZeC26RBdtLK
-    YO6XinkyNSO/eRv4GXglIu2zaNXRdLUGDJVxoPF+Ebn7lEWzAKhSqULCVuldOiLIotTx
-    q8gu653gQC85578icQWFyQi2iHeAZ1lQr+Y9ej1sK6GmFp8zfbiANYXvd+0sRoKehivg
-    eixA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; t=1764001204;
-    s=strato-dkim-0002; d=strato.com;
-    h=To:References:Message-Id:Cc:Date:In-Reply-To:From:Subject:Cc:Date:
-    From:Subject:Sender;
-    bh=YAUaPVN/LGE+6Tp5hwdCL/oWm3I9gZiHnGqVnZITlYs=;
-    b=cUCmeEBRlYbwM5vOtKFOqHLCauD/E9W7U80NSRAFCB7CoOMD6R2e9+FINz97vTBUxa
-    EaSR9ryKUBDxRXQpAuCFmDrC0Vlz24ODRPRgx20QLtw0CMv6m9nQcIyaVoFA8Hxfe7Ns
-    oRovNaPokz6MeFJr6evXGsdP1dQAe4qrW7Rhh8UKE+mmCQQTJhJXqs0jPA9JE2TMH1EX
-    +yD6kiySzwCuyWvVMLnxzmucLJJrS/5Vb+Y87JuqTctbDFAEVk5grUxKLv8SBccG9mq+
-    b+y8Oj/N/tdmVhKCQxdC+mP4Lcd2i8XJLq1ejg/w9WMfARWVbl5i+FddPbgbqtCDfNeR
-    mgPQ==
-ARC-Authentication-Results: i=1; strato.com;
-    arc=none;
-    dkim=none
-X-RZG-CLASS-ID: mo03
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1764001204;
-    s=strato-dkim-0002; d=goldelico.com;
-    h=To:References:Message-Id:Cc:Date:In-Reply-To:From:Subject:Cc:Date:
-    From:Subject:Sender;
-    bh=YAUaPVN/LGE+6Tp5hwdCL/oWm3I9gZiHnGqVnZITlYs=;
-    b=FDRRuZGDOWIr7PVjsgzCEoc3WjvlYfn5g1ULeDbZRLMYz5CmpY7CZr3cK7UpgYkx0e
-    MJeOyEuhc+s50fia250GETWkb2KyfPR/uu4luJS0hYtGHVYWjj1C0gj4wgXUQbE8ASZY
-    8cbYgmpw+KOk576zSdy2+AnnWs2yoLYgND53GmUAS0eQCYLLfmWBhCTk49aW9cvhkbHv
-    HX6d1mkeNCVs9FwkkOx2Oz+apKUpgSQwGiZb+KHXhrCBW37hjEaBQ2sr0RL/5DH+ejQ7
-    vB8wAa9r1qfbx9RWiahdkadBDaB5zU34WX42srJQJlf0ZoT8+a2k/5Sm1R8szDOOpyRd
-    RIQw==
-DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; t=1764001204;
-    s=strato-dkim-0003; d=goldelico.com;
-    h=To:References:Message-Id:Cc:Date:In-Reply-To:From:Subject:Cc:Date:
-    From:Subject:Sender;
-    bh=YAUaPVN/LGE+6Tp5hwdCL/oWm3I9gZiHnGqVnZITlYs=;
-    b=UpfJCvMrspS72WrTrjWL4jgwZQ8Vv8hqUUkLNHFb0/XXkbAeu7OKuXDGtFnCaVbnqc
-    2w8c+jlmQ0tQ0RvKt+AA==
-X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMhflhwDubTJ9o12DNOsPj0lFzL1yeT0Z"
-Received: from smtpclient.apple
-    by smtp.strato.de (RZmta 54.0.0 DYNA|AUTH)
-    with ESMTPSA id Qc14a81AOGJvF96
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (curve X9_62_prime256v1 with 256 ECDH bits, eq. 3072 bits RSA))
-	(Client did not present a certificate);
-    Mon, 24 Nov 2025 17:19:57 +0100 (CET)
-Mime-Version: 1.0 (Mac OS X Mail 16.0 \(3826.700.81.1.3\))
-Subject: Re: [PATCH v4 0/6] Add support for the LTM8054 voltage regulator
-From: "H. Nikolaus Schaller" <hns@goldelico.com>
-In-Reply-To: <4053840.MHq7AAxBmi@fw-rgant>
-Date: Mon, 24 Nov 2025 17:19:45 +0100
-Cc: Liam Girdwood <lgirdwood@gmail.com>,
- Mark Brown <broonie@kernel.org>,
- Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>,
- Jonathan Cameron <jic23@kernel.org>,
- David Lechner <dlechner@baylibre.com>,
- =?utf-8?Q?Nuno_S=C3=A1?= <nuno.sa@analog.com>,
- Andy Shevchenko <andy@kernel.org>,
- Guenter Roeck <linux@roeck-us.net>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- linux-kernel@vger.kernel.org,
- devicetree@vger.kernel.org,
- linux-iio@vger.kernel.org,
- Conor Dooley <conor.dooley@microchip.com>,
- MyungJoo Ham <myungjoo.ham@samsung.com>,
- Chanwoo Choi <cw00.choi@samsung.com>,
- Peter Rosin <peda@axentia.se>,
- Mariel Tinaco <Mariel.Tinaco@analog.com>,
- Lars-Peter Clausen <lars@metafoo.de>,
- Michael Hennerich <Michael.Hennerich@analog.com>,
- Kevin Tsai <ktsai@capellamicro.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- Eugen Hristev <eugen.hristev@linaro.org>,
- Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Sebastian Reichel <sre@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>,
- Support Opensource <support.opensource@diasemi.com>,
- Paul Cercueil <paul@crapouillou.net>,
- Iskren Chernev <me@iskren.info>,
- Marek Szyprowski <m.szyprowski@samsung.com>,
- Matheus Castello <matheus@castello.eng.br>,
- Saravanan Sekar <sravanhome@gmail.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
- Casey Connolly <casey.connolly@linaro.org>,
- =?utf-8?Q?Pali_Roh=C3=A1r?= <pali@kernel.org>,
- Orson Zhai <orsonzhai@gmail.com>,
- Baolin Wang <baolin.wang@linux.alibaba.com>,
- Chunyan Zhang <zhang.lyra@gmail.com>,
- Amit Kucheria <amitk@kernel.org>,
- Thara Gopinath <thara.gopinath@gmail.com>,
- "Rafael J. Wysocki" <rafael@kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Zhang Rui <rui.zhang@intel.com>,
- Lukasz Luba <lukasz.luba@arm.com>,
- Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>,
- Jaroslav Kysela <perex@perex.cz>,
- Takashi Iwai <tiwai@suse.com>,
- Sylwester Nawrocki <s.nawrocki@samsung.com>,
- Olivier Moysan <olivier.moysan@foss.st.com>,
- Arnaud Pouliquen <arnaud.pouliquen@foss.st.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Alexandre Torgue <alexandre.torgue@foss.st.com>,
- Dixit Parmar <dixitparmar19@gmail.com>,
- linux-hwmon@vger.kernel.org,
- linux-input@vger.kernel.org,
- linux-phy@lists.infradead.org,
- linux-pm@vger.kernel.org,
- linux-mips@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,
- linux-mediatek@lists.infradead.org,
- linux-arm-msm@vger.kernel.org,
- linux-sound@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com,
- Andy Shevchenko <andriy.shevchenko@intel.com>
-Message-Id: <732D3F12-0361-4800-8981-EF629B4C491F@goldelico.com>
-References: <20251124-ltm8054-driver-v4-0-107a8a814abe@bootlin.com>
- <23111366.EfDdHjke4D@fw-rgant>
- <563331EB-2460-4CF5-87B3-5FE60B18BB70@goldelico.com>
- <4053840.MHq7AAxBmi@fw-rgant>
-To: Romain Gantois <romain.gantois@bootlin.com>
-X-Mailer: Apple Mail (2.3826.700.81.1.3)
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251124_082020_283298_0439CFD7 
-X-CRM114-Status: GOOD (  39.26  )
+	id 1vNZVL-0000000C041-1rMD;
+	Mon, 24 Nov 2025 16:33:31 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 8E38D60173;
+	Mon, 24 Nov 2025 16:33:30 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B2D80C116C6;
+	Mon, 24 Nov 2025 16:33:29 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
+	s=korg; t=1764002010;
+	bh=b0HsFdIr9UYeg1Jbb+ezqHtOK4AZhADd9B70yMMGZFc=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=g+47ol/xVPKvHq8mO+c2fpgR8DW18YAaKTmijBBG2VtkLGfdTcX8n57jEGZgYFtXt
+	 DF01gZjsrt73ZFaL90qrJ9go9zBaa62onSiMzWQEv3i/waUjE3nOD4/TVDH9cmjl4K
+	 53oeGgUWsOdxH3qnIhbrSMDif3kOexD/8BLXzSs0=
+Date: Mon, 24 Nov 2025 17:33:27 +0100
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+Cc: Chaoyi Chen <kernel@airkyi.com>,
+	Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+	Peter Chen <hzpeterchen@gmail.com>,
+	Luca Ceresoli <luca.ceresoli@bootlin.com>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Heiko Stuebner <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
+	Andy Yan <andy.yan@rock-chips.com>,
+	Yubing Zhang <yubing.zhang@rock-chips.com>,
+	Frank Wang <frank.wang@rock-chips.com>,
+	Andrzej Hajda <andrzej.hajda@intel.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Robert Foss <rfoss@kernel.org>,
+	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+	Jonas Karlman <jonas@kwiboo.se>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+	Amit Sunil Dhamne <amitsd@google.com>,
+	Dragan Simic <dsimic@manjaro.org>, Johan Jonker <jbx6244@gmail.com>,
+	Diederik de Haas <didi.debian@cknow.org>,
+	Peter Robinson <pbrobinson@gmail.com>, linux-usb@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org
+Subject: Re: [PATCH v10 01/11] usb: typec: Add notifier functions
+Message-ID: <2025112448-brush-porcupine-c851@gregkh>
+References: <20251120022343.250-1-kernel@airkyi.com>
+ <20251120022343.250-2-kernel@airkyi.com>
+ <2025112102-laurel-mulch-58e4@gregkh>
+ <462ad1bd-7eec-4f26-b383-96b049e14559@rock-chips.com>
+ <2025112402-unopposed-polio-e6e9@gregkh>
+ <a80483de-518d-45d5-b46a-9b70cca5b236@rock-chips.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <a80483de-518d-45d5-b46a-9b70cca5b236@rock-chips.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -168,107 +93,133 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
+On Mon, Nov 24, 2025 at 04:05:53PM +0800, Chaoyi Chen wrote:
+> Hi Greg,
+> =
 
-> Am 24.11.2025 um 16:57 schrieb Romain Gantois <romain.gantois@bootlin.com>:
-> 
-> Hi Nikolaus,
-> 
-> On Monday, 24 November 2025 16:35:28 CET H. Nikolaus Schaller wrote:
-> ...
-> > > Sorry, I don't quite understand your remark. To integrate this voltage
-> > > regulator component into the Linux regulator abstraction, I'm providing a
-> > > current limit control function. To provide such a function, the voltage
-> > > level on a pin has to be controlled. AFAIK, the kernel abstraction used
-> > > to set precise voltages on lines is an IO channel.
-> > 
-> > I was curious to learn about this topic and looked into the data sheet:
-> > 
-> > https://www.analog.com/media/en/technical-documentation/data-sheets/8054fa.p
-> > df
-> > 
-> > As far as I see the LTM8054 does not even have a programming interface.
-> > So is it reasonable to provide a dedicated driver at all?
-> > 
-> > The figure on page 20 seems to suggest that there is an external DAC
-> > which drives the regulator. And the regulator drives for example a fan.
-> > 
-> > So I would think of a driver for the specific DAC and ignore the specific
-> > LTM chip at all.
-> > 
-> 
-> In my use case, the LTM8054 feeds a DC output port on which various devices 
-> may be plugged. Dynamic output current limitation and output voltage level 
-> control for these devices is a requirement, as well as stepped voltage 
-> transitions, thus the need for a proper regulator device.
-> 
-> The LTM8054's feedback pin can be driven by a different DAC, which allows for 
-> dynamic output voltage control. This is a more complex upstreaming topic 
-> however, so I've left it out of this initial series. There are other component 
-> functions which fit in squarely into the regulator framework, such as 
-> input current limit control and soft-start. But I understand that the current 
-> driver might look a bit "bare".
+> On 11/24/2025 3:10 PM, Greg Kroah-Hartman wrote:
+> =
 
-So you just want to have some user-space mechanism to control voltage
-and current limits? Can't this be done by directly controlling them through
-the iio API?
+> > On Mon, Nov 24, 2025 at 09:40:03AM +0800, Chaoyi Chen wrote:
+> > > Hi Greg,
+> > > =
 
-Is this for a device that is already in kernel or planned to be supported?
-Or is it "application support" for some SBC?
+> > > On 11/21/2025 10:07 PM, Greg Kroah-Hartman wrote:
+> > > > On Thu, Nov 20, 2025 at 10:23:33AM +0800, Chaoyi Chen wrote:
+> > > > > From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+> > > > > =
 
-Are you looking for a virtual "glue" driver to logically combine several low
-level functions?
+> > > > > Some other part of kernel may want to know the event of typec bus.
+> > > > Be specific, WHAT part of the kernel will need to know this?
+> > > For now, it is DRM.
+> > Then say this.
+> =
 
-> 
-> > What could be necessary is if you really want to be able to "regulate"
-> > the current going to Vout, some bridge between regulator API and some
-> > IIO DAC.
-> > 
-> > And enabling/disabling the regulator by some GPIO can be described in
-> > the DT already through a "regulator-fixed".
-> > 
-> 
-> This is a possibility, but when you bring in all of these other hardware 
-> functions that I mentionned e.g. output voltage control and stepping, you'll 
-> end up with several different devices which look unrelated from userspace, but 
-> actually control the same chip.
+> Okay, please refer to the discussion below.
+> =
 
-That is quite usual... I have often heard: user space must fix this as kernel
-just provides basic functions in a harmonized way and integration has to
-be tailored to the device anyways :)
+> > =
 
-> Userspace will also have to know about some hardware details to properly 
-> control the DACs, such as the values of the sense and feedback resistors. In 
-> my opinion, this bypasses the kernel's abstraction of hardware.
+> > > > And why a new notifier, why not just use the existing notifiers tha=
+t you
+> > > > already have?  And what is this going to be used for?
+> > > We have discussed this before, but the current bus notifier cannot ac=
+hieve the expected notification [0].
+> > > =
 
-I came up with this argument several times in the part and got a lot of contrary :)
+> > > [0] https://lore.kernel.org/all/aPsuLREPS_FEV3DS@kuha.fi.intel.com/
+> > Then you need to document the heck out of this in the changelog text.
+> > But I'm still not quite understanding why the bus notifier does not work
+> > here, as you only want this information if the usb device is bound to
+> > the bus there, you do not want to know this if it did not complete.
+> > =
 
-What I still wonder: does your hardware warrant an upstream driver for a
-non-programable chip if a different solution (with help of user-space) already
-exist?
+> > That thread says you want this not "too late", but why?  What is the
+> > problem there, and how will you handle your code getting loaded after
+> > the typec code is loaded?  Notifier callbacks don't work for that
+> > situation, right?
+> =
 
-Another question: is your scheme generic enough so that it can be expected
-that other devices are using it in the same way?
+> In fact, the typec_register_altmode() function generates two
+> registered events.=A0The first one is the registered event of the port
+> device, and the second one is the registered event of the partner
+> device.=A0The second one event only occurs after a Type-C device is
+> inserted.
+> The bus notifier event does not actually take effect for the port
+> device, because it only sets the bus for the partner device:
+> =
 
-Or could the power controller framework (/sys/class/power_supply) fit better?
+> =A0 =A0 /* The partners are bind to drivers */
+> =A0 =A0 if (is_typec_partner(parent))
+> =A0 =A0 =A0 =A0 alt->adev.dev.bus =3D &typec_bus;
 
-There is an API to ask chargers etc. for battery voltage and current limits or
-even write them.
+Setting the bus is correct, then it needs to be registered with the
+driver core so the bus link shows up (and a driver is bound to it.)
+That is when the bus notifier can happen, right?
 
-There is also "generic-adc-battery" which allows to hook up with arbitrary
-iio-adcs for measurements - although you need a DAC in your setup. Maybe an
-extension here is a better strategy than a dedicated ltm8054 driver?
+> I hope it's not too late. In fact, the notifier here will notify DRM to e=
+stablish a bridge chain.
 
-BR,
-Nikolaus
+What is a "bridge chain"?
 
+> The downstream DP controller driver hopes to obtain the fwnode of the las=
+t-level Type-C device
+> through this bridge chain to create a DRM connector. And when a device is=
+ inserted,
+> drivers/usb/typec/altmodes/displayport.c can notify the HPD (Hot Plug Det=
+ect) event.
 
--- 
+But aren't you just the driver for the "partner device"?
+
+If not, why isn't a real device being created that you then bind to,
+what "fake" type of thing are you attempting to do here that would
+require you to do this out-of-band?
+
+> If relying on the second event, the bridge chain may never be established=
+, and the operations of the DP driver will be
+> always deferred. Furthermore, other parts of the display controller drive=
+r will also be deferred accordingly.
+
+What operations?  What exactly is delayed?  You should not be touching a
+device before you have it on your bus, right?
+
+> > > > Notifiers are a pain, and should almost never be added.  Use real
+> > > > function calls instead.
+> > > In v6, I used direct function calls, but had to switch to notifiers b=
+ecause couldn't resolve the dependencies between DRM and Type-C [1]. Do you=
+ have any good ideas? Thank you.
+> > Only allow this DRM code to be built if typec code is enabled, do NOT
+> > use a select, use a depends in the drm code.
+> =
+
+> Sorry, I didn't get your point. Does this mean that the current notifiers=
+ approach still needs to be changed to direct function calls?
+
+If you somehow convince me that the existing bus notifiers will not
+work, yes :)
+
+> If so, then based on the previous discussion, typec should not depend
+> on any DRM components. Does this mean that we should add the if
+> (IS_REACHABLE(CONFIG_DRM_AUX_BRIDGE)) before the direct function call?
+
+No, do it properly like any other function call to another subsystem.
+
+> Additionally, the current version of CONFIG_DRM_AUX_BRIDGE is selected
+> by the DP driver in patch9.
+
+Don't do "select" if at all possible, always try to do "depends on".
+
+thanks,
+
+greg k-h
+
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
