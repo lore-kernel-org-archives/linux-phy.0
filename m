@@ -4,167 +4,147 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C43EACFD31C
-	for <linux-phy@archiver.kernel.org>; Mon, 24 Nov 2025 08:58:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D49A9CFA466
+	for <linux-phy@archiver.kernel.org>; Mon, 24 Nov 2025 09:26:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DFDvZCakgN0GM9tmzkQmTNt5FtoYVLi9wwovO6hnGsA=; b=GSF39PkJ7Nh4ta
-	rxNOo7Zle6xYKoh4F3rRhn7tmxzOJVfR9seSPICNljpZrsX3PmYnfsIC1nAkgcbdzrnmpD8mugCPX
-	K4kWb4lDWOKrkxz6HfLYZRd85kTmPqDaduK8cfVJg53Tv5eDDa0yawwtu8FR1awpBMCkA0aUoE3BK
-	ykpSDqO5M++vMrleNngeF1AHPoklcX+UaX6aC+xUbFYeqSAfRgj5owF8glPlnuEWBUxKEh015gBuH
-	p72dYO9sooFhob3Pqa7oa/kCefKPIEsAHKUzS7ZwBAW5tpW2XFB4+6fMM7ZzKh17vHU5lERSiNhGr
-	GrbD/3N8GNaJCMnECsZQ==;
+	List-Owner; bh=qo9V6UbPbuyFYRlpyv+30U+a3GTPrLs450eM+3znJfs=; b=hkA1cmmi7BW63F
+	rhxrQqfPJ/MAToBDdUahlc+NsFetNaP3uvlYHydcTwtaCiJPyfb4ADyP1PM6SZ0CuigSAdhgy0XkO
+	ro/9EsoPA4U3DpDDm6fvUPuQPzq6ASg9n1poZwguDBn3yyCo0sP6SRGVwTdP4QgPbdvDy36sdH/9i
+	lJWEGHYL4BdSJF1BD1wL17AGe7JGxK4uYXNTaQANj/25oU9RzUXhs2U+sfSGaSC4rH5VMXjBCUC5j
+	ospr8+fsBve0IdoxE7nTLtbcPQzGyV8T+uJYnpxPiqTMnIZVvgNNW2jgRFJooQxZlopTJJdOsvaWb
+	XASCJhOHfdjqyacM52vA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vNSOr-0000000BIyd-1Rj3;
-	Mon, 24 Nov 2025 08:58:21 +0000
-Received: from mail-japanwestazlp170100003.outbound.protection.outlook.com ([2a01:111:f403:c407::3] helo=OS0P286CU011.outbound.protection.outlook.com)
+	id 1vNSpk-0000000BLER-1zV9;
+	Mon, 24 Nov 2025 09:26:08 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vNSOm-0000000BIy5-46w1
+	id 1vNSpe-0000000BLCY-2fYV
 	for linux-phy@lists.infradead.org;
-	Mon, 24 Nov 2025 08:58:19 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=pn9G9IIbmxgvgaR6OVWYYICo4dynr08xoVwuxpet72dH0yRCioZdRAxKMdrENxQ62MbXO+RX/jMONegGmYhKOChGmceK7wxIiQmgg2pnrey+EtQ40dSdHk8+7BI5JySkl9GsyiR5yJXK+W3Lk8n5t2nUVwKxwomVxxwLoXaatLpk8uAjyPx+MfVkbVZRlryjzZoWyO1iWtj9l6iUWZHPBVBA6jYCqm6ztzr1DWScmjyRR/N6bZJoulhxErnbx3/4cl08YccMCd8XcKbP9xAP4hqAvfeRzvvZv6Z1uI/bGYTHU0ACsngLbhaBROL4qbUvB24uL2vzhn1+FuD05SN18g==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=K06fVmgxiMYulFeTaANbCcJ+yRJJBgLGQON3ambDzkg=;
- b=dd6IVndfNQBCsJ76tKw5UtiT4p4J0OZ6jWQRjmoqf8M+FsvTLhKQlP1wuRpJ0CN0n8fvU8IU+PnsbWqjuZX2+DK6PhCeqILfTCPrG5XGXtUgnLbaVYZRxsCRnhSrkkvYwe2k5I/2WMLvCQpZK/Rjy7Kn+sRNTcB7VifwGDOndR8CTY1xZ0tl/lvsJQECnOkLe9tn/9B5nq/MuOghUHeomJfUXyQs8PanOubPWp13Zl58BxBLZl2T1Em0Dojmj+MVvC7AxlevEzfOS53VBeSFQ9n+M9MzXwel7lPgjrVAu3It1oZeF3uBDw3+MXCOgomiejq2VfCl8q41TRWCiSEx4Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=bp.renesas.com; dmarc=pass action=none
- header.from=bp.renesas.com; dkim=pass header.d=bp.renesas.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bp.renesas.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=K06fVmgxiMYulFeTaANbCcJ+yRJJBgLGQON3ambDzkg=;
- b=HiVrMarc6K2CiBRBIrQbg7E9peYNOoT6FQhRHA3MUguLODnyC19ormP8Uxt0EegeUqoCgYHSKxZHZ2KAzXA0C6GaQyvzKEQ+JTlRtJojYC9CT4Pz6E27EpQtN4z/7A+TIe7iMWlHwvqkBkLBMTaettW+OvD02z10d3hHEPpD008=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=bp.renesas.com;
-Received: from TYCPR01MB11947.jpnprd01.prod.outlook.com (2603:1096:400:3e1::6)
- by TYCPR01MB6558.jpnprd01.prod.outlook.com (2603:1096:400:ac::8) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9366.9; Mon, 24 Nov
- 2025 08:58:03 +0000
-Received: from TYCPR01MB11947.jpnprd01.prod.outlook.com
- ([fe80::33f1:f7cd:46be:e4d8]) by TYCPR01MB11947.jpnprd01.prod.outlook.com
- ([fe80::33f1:f7cd:46be:e4d8%5]) with mapi id 15.20.9366.009; Mon, 24 Nov 2025
- 08:58:03 +0000
-Date: Mon, 24 Nov 2025 09:57:49 +0100
-From: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
-To: Conor Dooley <conor@kernel.org>
-Cc: tomm.merciai@gmail.com, linux-renesas-soc@vger.kernel.org,
-	biju.das.jz@bp.renesas.com, Peter Rosin <peda@axentia.se>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Fabrizio Castro <fabrizio.castro.jz@renesas.com>,
-	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
-	Geert Uytterhoeven <geert+renesas@glider.be>,
-	Magnus Damm <magnus.damm@gmail.com>,
-	Sebastian Reichel <sebastian.reichel@collabora.com>,
-	Andi Shyti <andi.shyti@kernel.org>,
-	Jonathan Cameron <jonathan.cameron@huawei.com>,
-	Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <ukleinek@kernel.org>,
-	Arnd Bergmann <arnd@arndb.de>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org
-Subject: Re: [PATCH v4 01/22] dt-bindings: mux: Remove nodename pattern
- constraints
-Message-ID: <aSQeDSJqDjK42-y4@tom-desktop>
-References: <cover.1763737324.git.tommaso.merciai.xr@bp.renesas.com>
- <cb7c28ccf3a1b136e793b48720f816de7d5f75b2.1763737324.git.tommaso.merciai.xr@bp.renesas.com>
- <20251121-spring-slot-ec9fb6887565@spud>
-Content-Disposition: inline
-In-Reply-To: <20251121-spring-slot-ec9fb6887565@spud>
-X-ClientProxiedBy: FR2P281CA0051.DEUP281.PROD.OUTLOOK.COM
- (2603:10a6:d10:92::8) To TYCPR01MB11947.jpnprd01.prod.outlook.com
- (2603:1096:400:3e1::6)
+	Mon, 24 Nov 2025 09:26:06 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 5AO8QhDD2447434
+	for <linux-phy@lists.infradead.org>; Mon, 24 Nov 2025 09:26:01 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	/4CWX6OdoBZLxQ6ecd23dMQTvFuZp1FvoqDG5znoQSE=; b=nmAxxz3prhVVYvUA
+	GweweaM6mKmkGK74CSyMqRa46dHIAVU7nOOmDiPb2cw5DXPYg2xYACD52Dbm8PUG
+	rDyZVppBASyhH1vqj8TM2fmz12aN8Y6wgXcN+YPhZlEk5ognsZzSA6VD24LDRVUj
+	jTYXWjhOt3AIIE1ohwuaYmsGiAhS72bbOnrN7rvD921bF3Ejchzr0CLZ+UchI0aZ
+	oTPzTwK/hX1EC8oAnPrhetuDOkfmR5gTGj5x5QlZH2J6GbszydQVgisZRZJa+Rb6
+	RoX2Es/3cXvNEYVcrh9T4VJ3h6FE8HGJSk5baerBiBZFaEiFQ4Ox41XIbHo1Wx2p
+	Y2yjtA==
+Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4ak69smeby-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Mon, 24 Nov 2025 09:26:01 +0000 (GMT)
+Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-299ddb0269eso52813615ad.0
+        for <linux-phy@lists.infradead.org>; Mon, 24 Nov 2025 01:26:01 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1763976360; x=1764581160; darn=lists.infradead.org;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=/4CWX6OdoBZLxQ6ecd23dMQTvFuZp1FvoqDG5znoQSE=;
+        b=CYPJCvklcZNgkblHHwNakXSU5gyjkU+drLnR8yxtX2zaTGtYbv55NOBdVK/fjsFj/q
+         SGKo1L9QH3xajRw/vEel0J5b+URr2fDlSelPteevFFuQsEtlfv951F/Ebq6a6o9MtMr/
+         HxNCg9NOioBq3HQzyXxeun6rPc7PvG4sjg58jJYTmAQg9a+KkdsDcKRJG1fGV90aYNyK
+         lGMpQT/Y4Pg4lF96dqUIQR/D2+7uwmoUkQpFJ6IHU1L2XtDWArdSk3IJh1Cv/dftrMt2
+         AMddnkvcpTQlbi67B2VsUUiiV7ILhmjhEuUH9vmTYqgUCF+6GqigLSfdRXJR493ozh4p
+         KY5w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1763976360; x=1764581160;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:x-gm-gg:x-gm-message-state:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=/4CWX6OdoBZLxQ6ecd23dMQTvFuZp1FvoqDG5znoQSE=;
+        b=UlPwbWuADulwy8C02tsaufNlHAlMDTJ1+iIgg6hdDNGG0uTcIV+Zj8pDInI5vsurgt
+         VFjwK1a1YLfBsqZq7CT6iBXJueZ0egAvsVCobNaAcrbVDZd7WTr2Ru9fw94ngES6z/jo
+         AYqbBhnh4pNg4V7tpOXyQJEULVa/VWSwHeO0SlanGv4LV+NxY8tQ8/qOpJzvNhtYlTHi
+         FATOyRanlJsx/tI6YUZdUeICzak8oJL+QASKm6fF5Nrawzu6mleiceLpE/Qh4S83QoDD
+         IpGUP00sgW23m/JoYLtjlQtxpgKoQUIMrVuEKN7Y8GwrTnWJluQePOm3GU2hd7RJ7M5q
+         /3kQ==
+X-Forwarded-Encrypted: i=1; AJvYcCXe+fOC3ySDZ2+4Geg702WY6nxoRQ2ygpJL3xez7OuzF54Kl11Yje9oSn7lc96CINWGzChlyRtYvRM=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yxk5GzQci2Y/A1mTAwAyPbVD2liucH3GNwoBJvxc+pU1br76QWN
+	X5xBzQmAgBXryki/eQBabqOkjYSpBejTU4cYn/85epcqYIFMgNtiMkVT+jw4Izx3o6ZIAWAbuUZ
+	CX9aIN/P+vKK/21MUeW3GQYE6xMNPbMeszZS/1AJoOXJDScGwnn70U4pAnz+s4t9eu/E0+rHPWT
+	3u
+X-Gm-Gg: ASbGncui9y6ywUqw375XgshYG9GiQAQ6olujz9VPjPVUYhgGeKBnfl1VmSTWV9T5eK6
+	1Ain9Xamfx0kAxFCX00WMhFtaNR5V5mNs8b0xWHyNCLZhkSPfjNCTTT+iwHUGSIGKOeGN4C0Uv6
+	KwLr2tqSuJkDuvIWYvurTsrzO0ImEGSJFa8/Batznce4x2KQnhV1bRja5AklpJYORPB3Y07t8i1
+	ny2t3sCnLQ50TvRS3AeYzm5N9M8GCMybREmROgyPQA9vZFKuxr87INDFvyVPg2Lf0KN6W3PyoF2
+	bEg3gD9kQK4kb4m4UQnIxjSvgwJnYWeyc+56nDemi8kpcLp3P+3ELlsbRF3Cr++izZJsWLJkRFN
+	D2daRvLIam+f4J8prA4GqWNsS0eH5V51lLZC096A=
+X-Received: by 2002:a17:903:1a08:b0:298:8ec:9993 with SMTP id d9443c01a7336-29b6bf3bc84mr119263295ad.38.1763976359948;
+        Mon, 24 Nov 2025 01:25:59 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IG70geKhony8KJbXDyYD6UKHrItW47p5VqtsLKF3V1wFMXAWLx5NBW6GM0qYYY/9jWECteyTg==
+X-Received: by 2002:a17:903:1a08:b0:298:8ec:9993 with SMTP id d9443c01a7336-29b6bf3bc84mr119262785ad.38.1763976359375;
+        Mon, 24 Nov 2025 01:25:59 -0800 (PST)
+Received: from hu-mohdayaa-hyd.qualcomm.com ([202.46.23.25])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-29b5b29b1c2sm128444675ad.81.2025.11.24.01.25.55
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 24 Nov 2025 01:25:59 -0800 (PST)
+From: Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>
+Date: Mon, 24 Nov 2025 14:55:17 +0530
+Subject: [PATCH 1/6] dt-bindings: phy: describe additional regulator for
+ Qualcomm SGMII PHY
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: TYCPR01MB11947:EE_|TYCPR01MB6558:EE_
-X-MS-Office365-Filtering-Correlation-Id: 726c1cfc-0941-44e1-b4d6-08de2b379392
-X-LD-Processed: 53d82571-da19-47e4-9cb4-625a166a4a2a,ExtAddr
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|376014|52116014|7416014|1800799024|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?FEcgxb0d0QMkdZ/a0GhfaQmWa8Nll4hkoDSZrPX6yECkhLR8gskHYWqdgC7T?=
- =?us-ascii?Q?q9nKMZvEnKkXFKZolgQ/DK64HsShHEREzru+ffgvxF4qqZsDMrdJl/T3l7J6?=
- =?us-ascii?Q?cVg04gzAMLAbCoDwpOKVhaV6Ay6undNRUghR5LV5FCPN/QP3uMXnW6vYM/Ra?=
- =?us-ascii?Q?5EoSphFLSgJNqmA5xNftt2I0BxncgA2iB6pbSCASTO6Uv6AaDFsxo1JPVvJP?=
- =?us-ascii?Q?2oiKjY4d5pU4TtKITI4avEebvVa53sRydDCKNV8Oawyl8pLx1aVFOKqys8tn?=
- =?us-ascii?Q?e2PO+s5JFEGavzO8UV0LOSEIUex0LyIDHJcKlUfk7+26PxafTc55Jfm/KwYi?=
- =?us-ascii?Q?WJLmiaIQ3eAZudnQxNz+3v0dr9ceUMkTcLUxKzDDRKWxpn38QMW9wdrZ3CWc?=
- =?us-ascii?Q?R9OaxwQPbYDWViEqDNdE/07gnsfUrUxA7rj9WKS499TU+O/ia2QLQNk+azQU?=
- =?us-ascii?Q?u9jOA0kt3q+uZFL/oBeiJO6aPHegP9mHfV/tmkRm0yu5vHBXKCDbE9zyIdRL?=
- =?us-ascii?Q?3m4NugsoTQHx8l1UFEtdh+K3CaFDug1BVMFu3n9eG4nR7mptuFGM+nJtpgv/?=
- =?us-ascii?Q?CD0Dh5kLDzDasSPBI+vTO8Ae6DYpGzb3YNG35h9DNz7V5QXEYhHxJQvBCw01?=
- =?us-ascii?Q?m9+WhJdegL82JDTHFmf/uLAZBy+8KtNE7p9+pVQzhMx9aBvNxcV0NdAySK/6?=
- =?us-ascii?Q?Ou4hO5uHnzIvsXVM9w5zC1HV7f/kxqq+CE+12F5Dmt6JWYJ3S+KV0FcZG9uS?=
- =?us-ascii?Q?m0wxzgfsCpLn4ZXF9pFy06xXocNbqiGP0toyYdSL/wCbCQZdw/lxQbh4Q8/V?=
- =?us-ascii?Q?0axQM007gzy6hn+vcLUyhHY414ajAv85+BeDAaBYuIgryvot+A/aGxmOwZPZ?=
- =?us-ascii?Q?dJHtax2h+duZZuPxmaOGoIKAK7UiwA6h64CMoPDmdVOZQJGYHl2KvAGs5HTX?=
- =?us-ascii?Q?co23Wuxv0r4K0Kr2ceeaH7QP23EEIfe/zzM9bFnWT7Al4pDxgKZHC/8TL3Pu?=
- =?us-ascii?Q?JqRyKgvIWwmRG0HL2e1LVwYBgIOgdjTjbvj3sjM6h4LAEQHH3HQgW328/qbK?=
- =?us-ascii?Q?23EFve8fSCXWaSK5dpGgr38BgvZEnK6hd0xBmJRpwLCqfj8/lOlfjhAy2wCK?=
- =?us-ascii?Q?ilroXNcF9C5BJt/luUprBo6n1kDwysmmcOXAON7wQ5B4vPUPHKuEcSHIqdZJ?=
- =?us-ascii?Q?esfszb0v0kv4tDPYevkoPcwzGTR8voCT7cAsdyGsTpGDZ5Q7+PIZojYIp44z?=
- =?us-ascii?Q?EYzAhBwuB/k4p7xZUwMHi5zMnrYIo/7jwm3zi73i3pN9Tpgm/obZWuKaDkbY?=
- =?us-ascii?Q?TydvrBmW3I5B/MbIid+rY+BgdMpObZMXNegnFTxuvodTOK85ide8WkrZPDh1?=
- =?us-ascii?Q?BJW+lNUkeO80BCT7+IcoiLTtfAff84bBCoQ5afRWk9gj9TYmVYFrxmGS3lV7?=
- =?us-ascii?Q?p/64u/8u9bVjVgIULklGRJz3nXCDIw8hfxzIFb7fra9iJltuvih7KAC73M+s?=
- =?us-ascii?Q?dNG/HeMn4WFWo3aUg9aON8veLuJoTZ2ktSw7?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TYCPR01MB11947.jpnprd01.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(376014)(52116014)(7416014)(1800799024)(38350700014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?TQJJFAWduw6r8hyvVX9PcQVK3vrNm8Wf7Jhk/ojt5cdVr+IMAyoF7aBmOydr?=
- =?us-ascii?Q?X0HaT8XCHvDu9xOz0o+ZTRsxCebb9AFAvVhXrtz2JRLtxbWIug3rh3ic5f+R?=
- =?us-ascii?Q?SNNiQLzBzXyi5658cLhu7fASYeIwaOsIGysBExNKw8HLAS8rtQrS7Ot9vbik?=
- =?us-ascii?Q?3kpe4/N56OhkRh0ho94SGTd/qlFhzbR8llxxtA7iKPwVVXmeLvQIlLnhrFba?=
- =?us-ascii?Q?8Lo8y6ovl7FCfjp3g7WfhAJCVsPNilbKBGVc29rpfSmkE5ywBbiSmeeKQClA?=
- =?us-ascii?Q?TLZzyyDvk1Eo7BnlwihLzWEIrQiQeRq5JOYqseqheJlyY110C8RB1Qx0XkMI?=
- =?us-ascii?Q?W22FCnUzXbzT1QFCbhGV9pq1gkGhnBNNKwHrVSbBnNN005FqOkDgaTb5na5G?=
- =?us-ascii?Q?CAnv6eOi56G8wK+G9R/ojbrbJpU/tmc1C4Cj1h3qc50qbS1QMsY5BxJFC0t6?=
- =?us-ascii?Q?yCx8gNK5SARJmeSJ3VD+XhYXEh2ew+LdLR+dX4TDENjteZZ5REYngmvJfUG3?=
- =?us-ascii?Q?kDy3lgcSVXUi762mSsnoHvPuA8YF7RaABlVuPxmy/x3jD6rG2hAEg8oUwEEJ?=
- =?us-ascii?Q?TJ62AHUchpnPrSXiJHW+BZDpcpfBOnvJ/Q4JBEX2IbHFAN/X1RwtumdTEUxr?=
- =?us-ascii?Q?d2MsIlWLip7ZLj2oPhb0t7q1zzRbDD4Ne2dIvQ90lVivR9JcsW6G+QHy9yX+?=
- =?us-ascii?Q?5Fm3+dOsXrXGixGWejx/oaX1HlwxbvrBg2Le2OX2khl7jKs4zLYggbloVZ8V?=
- =?us-ascii?Q?IEP1y2/PDUjTyDa7aDW0w8rPFaHtZsROvw9fWPa734pnqPJoQNJELry6ppHP?=
- =?us-ascii?Q?jKQTmjNmhbkFjMTKgQgMhBCRY8idzEQlYfeco93BAv9rnp1EKsGypqPglV7P?=
- =?us-ascii?Q?1J6CMdFuQxlZhWYBsDuIYZhGv/eZEyZvFaZQ2PbpkYbLi9eTLw8FzhY3X2KA?=
- =?us-ascii?Q?aKdAPe1cZPBiScCccSoejU3Uh9Q26FpPCxxoUO7eNF8SPxMO+jz40DYe7e9k?=
- =?us-ascii?Q?cr8CsIftzCtglR6KW2xKjuPgnbNmMt/fgjqyun44fu9OIrgWoDCca+7r9y7V?=
- =?us-ascii?Q?iQsZgcQPQU2AphbcCYMOeruM5rgfKALHQExo14yEl5+FVQJMUFcrDSUgU97U?=
- =?us-ascii?Q?vX0LtW8JF0mMQxEAlRuIZUaPjbD3+O5fX+DlHqMqwgtDsal2gZ4ef7x5j8V8?=
- =?us-ascii?Q?aCxSzBo2yknYDCVf3HiKcPb86A0vTWC65wa9Vs1B8n/uVpthvmPPYlE+Agor?=
- =?us-ascii?Q?c6E3nKZsmMedidzOu482xDrMVi2fcsdtnSuhGJIotixSW8pSpg5zeosC5l0B?=
- =?us-ascii?Q?G+vvlNeGaNx87ImN7L1jKT3LlTqdqLp+ZmM18lXjNeraF5NmJMJmVYgeHfFk?=
- =?us-ascii?Q?y9n4lpbR0YYDBWEC9uYWyQ5+cnVT3zz1gBBGeDwUAORBK6wdf1rV0XMeobDA?=
- =?us-ascii?Q?RiuTplQ/gyO3QaipnsERoxLooNt4w1mAS5nm3l8S47F7X3jR56URJyQzwV+q?=
- =?us-ascii?Q?snSuIWXDm4vnKIe6Dzrr5Rof6gnYsAfgV1mVnOFk9NAkOHeh+Onl/RE6MT5Z?=
- =?us-ascii?Q?lOayRDOjot0LbTXYP0g9h9YPdEey72GLtbErzSr25w0J0WeERmSE1OyIA3Cl?=
- =?us-ascii?Q?3nW6CEZiyAbgERB2+F94jRU=3D?=
-X-OriginatorOrg: bp.renesas.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 726c1cfc-0941-44e1-b4d6-08de2b379392
-X-MS-Exchange-CrossTenant-AuthSource: TYCPR01MB11947.jpnprd01.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 24 Nov 2025 08:58:03.5383
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 53d82571-da19-47e4-9cb4-625a166a4a2a
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: WNttD1jaYWGhPm3K9hjvRzf4FeGayCZANjisAlj4PswYKNTMZH4Hj7jwSfq8Utq/6ddDIgL5SAHY9PYQYTyF80LrqMppyYJAoXF76jbTF1+dbOFCWnEkFmS1AKW0ODml
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYCPR01MB6558
+Message-Id: <20251124-sgmiieth_serdes_regulator-v1-1-73ae8f9cbe2a@oss.qualcomm.com>
+References: <20251124-sgmiieth_serdes_regulator-v1-0-73ae8f9cbe2a@oss.qualcomm.com>
+In-Reply-To: <20251124-sgmiieth_serdes_regulator-v1-0-73ae8f9cbe2a@oss.qualcomm.com>
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Bartosz Golaszewski <bartosz.golaszewski@linaro.org>,
+        Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>,
+        Wasim Nazir <wasim.nazir@oss.qualcomm.com>,
+        Mohd Ayaan Anwar <quic_mohdayaa@quicinc.com>,
+        Yijie Yang <quic_yijiyang@quicinc.com>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
+        Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1763976350; l=937;
+ i=mohd.anwar@oss.qualcomm.com; s=20250907; h=from:subject:message-id;
+ bh=CCxkbHvWJEDghx45U8Kf39BypvfvW4rXTmv2PjQ5BYk=;
+ b=AVRuX8rbxMfdPKZWnX8Ca9CxXlSWPic1aRKYI0Eg2r2VsUs9IVuWbryR7WY4HbYJ3ALKQfrwW
+ KYhQlkgj+HdAsLDARZRF372aqYPzn0J8a1KTBH+Ydf16klRvdNyjKVd
+X-Developer-Key: i=mohd.anwar@oss.qualcomm.com; a=ed25519;
+ pk=7JNY72mz7r6hQstsamPYlUbLhQ5+W64pY4LgfSh9DJU=
+X-Authority-Analysis: v=2.4 cv=PNMCOPqC c=1 sm=1 tr=0 ts=692424a9 cx=c_pps
+ a=IZJwPbhc+fLeJZngyXXI0A==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
+ a=IkcTkHD0fZMA:10 a=6UeiqGixMTsA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=EUspDBNiAAAA:8 a=7k2arxiymalmIiNRug0A:9
+ a=QEXdDO2ut3YA:10 a=uG9DUKGECoFWVXl0Dc02:22
+X-Proofpoint-ORIG-GUID: 1sfcnDxG2X1zgit5Th0ROLGy8S4oTVC9
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMTI0MDA4MiBTYWx0ZWRfX49c2mMmiCHUj
+ h5anOZlJ32rinnEpp/ND2dqrcKSVhZ+TjKQGGj/ye9mdw594B0aKB7Fw9zOH/7F1NT/xr53bGem
+ 4AFcr5fx0dWdXJJRqqt9+F+M3vQHo35TP/5K0sI52PFNYW+olt1PVSEZxhuN9rqY4rBbGLVk0EX
+ IbIaYWpusPkQbVwXhe+ypRpGThSYb1BTfwG5eEO2G6eeJgcwKayHzADPa+OIQV+8YWhjBszfsAR
+ 9NXRM60LRshHhjODDAoA1JAQhzd8W7Bu/rF6IoAbk9Ax7WaiBmAGs8Dse+m5c8JnwwjRM8LjmZj
+ f4/yzHraSlI5P7E0dAHvmL88GCYMfDBP5Z5CrRTvWh/o1wkDN09oWsqzMQ7r7Z0q1zBlxQ+/aaF
+ ouTE76phSKY/C9WBPqVeXGgUXyfdzA==
+X-Proofpoint-GUID: 1sfcnDxG2X1zgit5Th0ROLGy8S4oTVC9
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
+ definitions=2025-11-24_04,2025-11-21_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ bulkscore=0 spamscore=0 priorityscore=1501 malwarescore=0 lowpriorityscore=0
+ clxscore=1011 phishscore=0 suspectscore=0 adultscore=0 impostorscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2510240001 definitions=main-2511240082
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251124_005817_371557_B07D1E32 
-X-CRM114-Status: GOOD (  20.95  )
+X-CRM114-CacheID: sfid-20251124_012602_824688_43B35AD4 
+X-CRM114-Status: GOOD (  10.43  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -181,80 +161,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Conor,
-Thank you for your review!
+Describe the additional vdda-0p9-supply for the Qualcomm SGMII PHY.
 
-On Fri, Nov 21, 2025 at 06:24:03PM +0000, Conor Dooley wrote:
-> On Fri, Nov 21, 2025 at 04:11:50PM +0100, Tommaso Merciai wrote:
-> > The nodename pattern in  created an unnecessary restriction that forced
-> > all mux nodes to be named with the 'mux-controller' prefix.
-> > This prevented valid use cases where mux functionality is part of other
-> > hardware blocks that should use more specific naming conventions.
-> > 
-> > Remove the $nodename pattern constraints from both the 'select' keyword
-> > and the properties section of the mux-controller schema.
-> > 
-> > Signed-off-by: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
-> 
-> Funnily enough, there's another patch that I saw today that hit this
-> same thing:
-> https://lore.kernel.org/all/176373269741.263545.10849918874919174841.robh@kernel.org/
+Signed-off-by: Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>
+---
+ .../devicetree/bindings/phy/qcom,sa8775p-dwmac-sgmii-phy.yaml         | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-:)
+diff --git a/Documentation/devicetree/bindings/phy/qcom,sa8775p-dwmac-sgmii-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sa8775p-dwmac-sgmii-phy.yaml
+index 90fc8c039219c739eae05cc17108a9a2fc6193df..0a1330b9118d63cf5400325c58bca05ebc641055 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,sa8775p-dwmac-sgmii-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,sa8775p-dwmac-sgmii-phy.yaml
+@@ -36,6 +36,10 @@ properties:
+     description:
+       Phandle to a regulator that provides power to the PHY.
+ 
++  vdda-0p9-supply:
++    description:
++      Phandle to a 0.9V regulator supply to the PHY.
++
+   "#phy-cells":
+     const: 0
+ 
 
-> 
-> > ---
-> > v3->v4:
-> >  - New patch.
-> > 
-> >  Documentation/devicetree/bindings/mux/mux-controller.yaml | 6 ------
-> >  1 file changed, 6 deletions(-)
-> > 
-> > diff --git a/Documentation/devicetree/bindings/mux/mux-controller.yaml b/Documentation/devicetree/bindings/mux/mux-controller.yaml
-> > index 78340bbe4df6..6defb9da10f7 100644
-> > --- a/Documentation/devicetree/bindings/mux/mux-controller.yaml
-> > +++ b/Documentation/devicetree/bindings/mux/mux-controller.yaml
-> > @@ -63,18 +63,12 @@ description: |
-> >  
-> >  select:
-> >    anyOf:
-> > -    - properties:
-> > -        $nodename:
-> > -          pattern: '^mux-controller'
-> >      - required:
-> >          - '#mux-control-cells'
-> >      - required:
-> >          - '#mux-state-cells'
-> >  
-> 
-> >  properties:
-> > -  $nodename:
-> > -    pattern: '^mux-controller(@.*|-([0-9]|[1-9][0-9]+))?$'
-> 
-> I need to apologise, I told you to delete the wrong thing in my DM
-> earlier. Only deleting this part was actually required, deleting the
-> select portion doesn't really do anything for your problem.
-> What you've done is probably fine though, since anything actually acting
-> as a mux-controller will have the cells properties.
-
-No worries! :)
-Thank you for your review/hint!
-
-> 
-> Reviewed-by: Conor Dooley <conor.dooley@microchip.com>
-> pw-bot: not-applicable
-> 
-> > -
-> >    '#mux-control-cells':
-> >      enum: [ 0, 1 ]
-> >  
-> > -- 
-> > 2.43.0
-> > 
-
-Thanks & Regards,
-Tommaso
-
+-- 
+2.34.1
 
 
 -- 
