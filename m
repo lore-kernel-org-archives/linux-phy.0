@@ -4,65 +4,151 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A4805CFD364
-	for <linux-phy@archiver.kernel.org>; Tue, 25 Nov 2025 07:20:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D12FCFD364
+	for <linux-phy@archiver.kernel.org>; Tue, 25 Nov 2025 07:58:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iI+Kjsi4r7BMvRl0rH8CtiChpQJya+KxZTpdkEuhI2k=; b=ZyXn/gUjqEKv11
-	AI8/WtV6hhyEL2XfJRS6qiOP4UFr+NInXBP6MaF7m/Vh9idjiq1oz9NUHlh8dYkR8oZw5KbANNaVf
-	mzlE/hXnfgK+cAgHr0odWV0t4QmMDolcF80dbXwhCOtsz9PspEeUHcnyeetxSyba+QaHYqOgQs7bv
-	c7Sjyi6YEFQ6Ji+063o6+CUdOIguXICgnG9ZsjgB6+Ezz0EhPFWbsxYrzodg3utbH2mbhf+8H94Ru
-	6H0buZdWEACdFv7SB/x+jEUvnQXFjhXN0dCHYnqnNE8gN4jj9JkhVRzK496aENmHkS1Rp4EYOrmGx
-	pBURKy1OJBF+sYUQ4JFQ==;
+	List-Owner; bh=1XB9W1Wvnpy5T7dXkGgGsYDM0pkj82SfGufG7auMuDo=; b=4Ttsux17Lm0uDC
+	ugRcOLw4WpGGoqfMOA+I+DzL365cpMHZZNshBAeE1CWJQVu0tuw+WmnuI24WzgiP2EetiS3MOTzSD
+	AARnZ/USOWp/glNB7pirMayVwFURR5VE7W0O6guCICliv9L2GiJde9zyFaL9AkJIJuEbfpBaEWy9o
+	n//np6SNf5U0XNtDFLf6ea/kvsxnEyal7kZq2UWKZd9fLMr/Y4xCMwNv43PsblQ9tpjMO6sJAspPl
+	mYmzPD8MD2Qvp1zl/6bmqxkakDrrMHDs78GgbgoteBnjMMBe0EhPL4s1g6Sh62vyRHSdOFM3ApYUG
+	UDFa3idqKvKlEXUyRSqQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vNnLh-0000000Cstw-1k0d;
-	Tue, 25 Nov 2025 07:20:29 +0000
-Received: from mail11.truemail.it ([217.194.8.81])
+	id 1vNnwq-0000000CwUv-3Eg9;
+	Tue, 25 Nov 2025 07:58:52 +0000
+Received: from mail-francecentralazon11013036.outbound.protection.outlook.com ([40.107.162.36] helo=PA4PR04CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vNnLd-0000000Css4-0hFv;
-	Tue, 25 Nov 2025 07:20:27 +0000
-Received: from francesco-nb (248.201.173.83.static.wline.lns.sme.cust.swisscom.ch [83.173.201.248])
-	by mail11.truemail.it (Postfix) with ESMTPA id 567FE22239;
-	Tue, 25 Nov 2025 08:20:17 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dolcini.it;
-	s=default; t=1764055217;
-	bh=eP2e4OiQhKFjF8jIAfWUJ81hm27Yf/v4hmfnRrA+7u4=; h=From:To:Subject;
-	b=plcXhOYfkNszbCYxnXmFqaWOpn7jc3Rlx9S9egzSDXifLp+Bb333iJsRbBBPPv8yq
-	 CbBakUPdb9dSRtKzwZXj6MixsWT03hX/W2bXAjjarsZy+JHCuPZMhMHqK3Zlc+ENtQ
-	 DgYKxtsD7KiRMEuyO3FXQUjuO9wANtxjUkr0tHkB9311I7rVG3bxid1ZqWKf1JzZkC
-	 0CQtFnm6NbfCzmELIFAAxm4Ty59VCC/n8Q52D7eY23zsiRU7mpd/GcRebcivax0usU
-	 Mls6U4hAsqKVkrUKo2p2S8wRJK4pwYISYDSPSJG4OSA8QGj87euyQRFKQSL427X2Vb
-	 BIafJR4XqnsLw==
-Date: Tue, 25 Nov 2025 08:20:11 +0100
-From: Francesco Dolcini <francesco@dolcini.it>
-To: Xu Yang <xu.yang_2@nxp.com>
-Cc: Franz Schnyder <fra.schnyder@gmail.com>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Shawn Guo <shawnguo@kernel.org>,
-	Sascha Hauer <s.hauer@pengutronix.de>,
-	Pengutronix Kernel Team <kernel@pengutronix.de>,
-	Fabio Estevam <festevam@gmail.com>,
-	Franz Schnyder <franz.schnyder@toradex.com>,
-	linux-phy@lists.infradead.org, imx@lists.linux.dev,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
-	Francesco Dolcini <francesco.dolcini@toradex.com>,
+	id 1vNnwo-0000000CwUW-1d3C;
+	Tue, 25 Nov 2025 07:58:51 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=YxV36knawdg0gW3iu+oyl6xfSVSYO0BxgmQaknHCEeHhPh/FVO2LftQ7JeDuK7Co2sIEusdoWUyvhmx0yq8rl2w2DkBReWsamShOjs0oa1vvKJusGetObC05WFkgPj39K9seHxKbaAObraVQDOasTjavJxcqn+trxXo8T2DWHdsVJU4VkZ6BPLHzKTCaCKfcZjRcLLflsZi/nY+041NnpKU6CVJqHKbOjk7TqaZEjT5tDvuktUqLlpzkJV8MhARHa/vBJBMs38WIZk/9+qxwBDf9ZUv5Tw1XtBVoLyZOLmgOyMAVuki/q3h4CiHZk+cUnItyIZ2kXVxoEiKk8myhfg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=OirmIjUKENxPdU70FNmnmNoJlq3JWulXNqb6h8cf55k=;
+ b=kaVKJQPyPzusZ5N7UUE4AUpPP+frXwlgrMi7HUBPOKzwxgc1+KgLDiL0L1v5N45/jYuF5shRRF+EKc5OYJzUArR+hpK2S531open/wJSm7zzrgCaqxE9R9ixe36t4GLt4gA9i63bjOJ3l1BQj467yu4Ks2ruC8pHEocgXKH1LsnQ7ocn0rRZOxH+EgtCzg2u5i7LSCmS4Kz19fUtDDWXDB7L+5vLal+8DFNy5J/wYI7QibWQ+ZiyAobdp4Tu5Lq+9cNjvS8K+A0vBy6JIXBK/gVp2tnuEk2jTEn7tqFojUWVhvtI29ZTcX0KD5zAXHNTjyE3OtdNCRA2kAwP0rAMHA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=OirmIjUKENxPdU70FNmnmNoJlq3JWulXNqb6h8cf55k=;
+ b=Y5uU86PaDGzehy0ajjF9QUJiXILCNqq3LOrcsuaC9FMm0gNZbO0G3J7JVZAa6/5ndQvnuj7jKcZNSr8s7cUufexeT9/h1C6jFbWS/1/t+HUsrMwwxhsFlRev16pQWUCnr9b/j6RKDadih8FY4temKHBp+mdVz9jJYyjiJAnAvx773zWh8NlM446/RBHVzPi1+1F6wgqepT2QFwQgr/++0+gofzXzqwZx0S0iq5ykZwZ/rhURl28hPIt7n1kk+PJ2fJi0Y43XOGxRF6/8yhMMqkYGsMpaECmdAy+uF4DmNvbvgNFCCWhDwtC2CqkoHAYvnuYmiO1wsfTuQtsOpKarlQ==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AM9PR04MB8825.eurprd04.prod.outlook.com (2603:10a6:20b:408::7)
+ by DBBPR04MB7881.eurprd04.prod.outlook.com (2603:10a6:10:1ea::11) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9366.11; Tue, 25 Nov
+ 2025 07:58:44 +0000
+Received: from AM9PR04MB8825.eurprd04.prod.outlook.com
+ ([fe80::67fa:3e46:acd8:78d0]) by AM9PR04MB8825.eurprd04.prod.outlook.com
+ ([fe80::67fa:3e46:acd8:78d0%3]) with mapi id 15.20.9343.016; Tue, 25 Nov 2025
+ 07:58:43 +0000
+Date: Tue, 25 Nov 2025 15:51:58 +0800
+From: Xu Yang <xu.yang_2@nxp.com>
+To: Francesco Dolcini <francesco@dolcini.it>
+Cc: Franz Schnyder <fra.schnyder@gmail.com>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Shawn Guo <shawnguo@kernel.org>, 
+	Sascha Hauer <s.hauer@pengutronix.de>, Pengutronix Kernel Team <kernel@pengutronix.de>, 
+	Fabio Estevam <festevam@gmail.com>, Franz Schnyder <franz.schnyder@toradex.com>, 
+	linux-phy@lists.infradead.org, imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org, 
+	linux-kernel@vger.kernel.org, Francesco Dolcini <francesco.dolcini@toradex.com>, 
 	stable@vger.kernel.org
 Subject: Re: [PATCH v1] phy: fsl-imx8mq-usb: fix typec orientation switch
  when built as module
-Message-ID: <20251125072011.GA5375@francesco-nb>
+Message-ID: <nk7hrpl22awyp7zqnkmqnlenj6hvc2itdpfepzdgcotkljx2fl@7vma3ss46juh>
 References: <20251124095006.588735-1-fra.schnyder@gmail.com>
  <w2dpsbfspr4od2j5seidi3tcpo3r2revhahhxiuacqehkqy3nn@2zjb3xvso45d>
-MIME-Version: 1.0
+ <20251125072011.GA5375@francesco-nb>
 Content-Disposition: inline
-In-Reply-To: <w2dpsbfspr4od2j5seidi3tcpo3r2revhahhxiuacqehkqy3nn@2zjb3xvso45d>
+In-Reply-To: <20251125072011.GA5375@francesco-nb>
+X-ClientProxiedBy: SG2PR02CA0038.apcprd02.prod.outlook.com
+ (2603:1096:3:18::26) To AM9PR04MB8825.eurprd04.prod.outlook.com
+ (2603:10a6:20b:408::7)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM9PR04MB8825:EE_|DBBPR04MB7881:EE_
+X-MS-Office365-Filtering-Correlation-Id: 0da62c71-deca-435a-be42-08de2bf8743e
+X-LD-Processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|19092799006|7416014|376014|366016|52116014|38350700014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?qJPV8v6ULSBgNAulh9CbAogrrPigR+zEPRveRiUv/I2lstuvLjvh72twx2xz?=
+ =?us-ascii?Q?KpMb7dEjY2lDI8NTCYiZoNCWkGTmMlnqQDxY5RobcN8v/vjUWKxoB88BPX0n?=
+ =?us-ascii?Q?//Ia+v+a5K+pIYpVirnpV1h20qZRWTjvw/mTZeRQtlDl2aHENJtbr1GC/CRj?=
+ =?us-ascii?Q?zXlgLQm18o2372SqXc6Ri+SnTkt4xbKt20NWNs3QmFUIDtmvKPF2YVIgQwMf?=
+ =?us-ascii?Q?eGuRHAGFLbGvKWJt2YDfOoEghHptAet1aRheoEXlpgdooP3mE7evjbZ31GbY?=
+ =?us-ascii?Q?dMQ92lX0fuZuJKx8U9X0xG5HaIOe9XHu/tNZhVo0L5NbX5Hg7NE77y3ExM0Z?=
+ =?us-ascii?Q?+1AaSeNmf0lwuCZApFcKIrVt+ueD8+akUeAy3B2DZlZ9NhXW/4YFtqbEfAon?=
+ =?us-ascii?Q?gw8Nr8G4cj8wRwxiHX72q6Q+je4outbO6+n4pYLYhUNWMrqfUjCGhHeXS6g4?=
+ =?us-ascii?Q?5QDErL/PSio+g+ra3B7TcSpOkQaKVToq2VG3/KJaWgH6GC0LK34HavE4DTZu?=
+ =?us-ascii?Q?9/td+2YOUmcJN2BgTfV4uhhGQbaa+OIpoekmUwumxqeErC0LVjIdXmiHHeLF?=
+ =?us-ascii?Q?KvoPjHSh3g9Io4OSL4KajfCtSaLMxqdk7ATWvMAl90Jp2GDjis3Elt4omvEv?=
+ =?us-ascii?Q?L9GS9KoGJzlaZfZeaUn+A/1CiQc+5tzzFn9T1D8Vbfvx31b2YO1mA05cxPg4?=
+ =?us-ascii?Q?/3Fx0Uln5dWhnfGKUEzygb3ogIEOvq2BVUi9O4xSoOVddNAD33mFpJfUPvqf?=
+ =?us-ascii?Q?f3WfBNGWGjfFrsl2tKa6V7Ov15P827zHg/1k3I51ZK8HNM5J0YAax6rsRKwd?=
+ =?us-ascii?Q?PaWexMXrqlYr+Z16RarPVjFJfUll9d2RBEOKbiJzlVCK1yuM/1ECzbAbtzo9?=
+ =?us-ascii?Q?rr1sEi8RTW04lSdu0PrIQ0jw3Sp7PPHvil6Ch0WmFQd4nDJursHX30J2wwVH?=
+ =?us-ascii?Q?cMGSw1i5mwpuT6xXy+Le7S9H3o8GV6EFpKq8fxbvsBIl1oZ2tkrV2QUOyHph?=
+ =?us-ascii?Q?P+tIJiANNCqojlN10plU6T71yjqia9Dqap8zidywHJnfM9oAOzU/4tnWWLB9?=
+ =?us-ascii?Q?bRNtCPTG94Jpbj+8DqCgjycaFt2RnHup74kUHFAPtN5f9VbR6ij3H1fOkvka?=
+ =?us-ascii?Q?Gjkev4G5ySYs6JMSzb7W1iQHjXAynxnG754bBzKoY6XFv5k0XvPf43N7AfND?=
+ =?us-ascii?Q?JBjZOYVDGG0A4MAozUlBWqHDxS5oNeVf4ElF1stlQRB62l3qdR+QMCTm/Tpf?=
+ =?us-ascii?Q?PoDi8UTB3DNe8iQiWDs9zEtQigsQbY64pa5eQCcTzqHwx1vUzYKQCX+lTGMV?=
+ =?us-ascii?Q?a5DmpI5h/nhJO2iWnGuWVh+J4Vhd9KKRqukGTMT5eLoQeBl33622bRiRFWA0?=
+ =?us-ascii?Q?YTtrc2/gfYk89Y4jPf8OowizkQURI7OjAxBTbeuwO8g9fhD5fduYquL0NLVO?=
+ =?us-ascii?Q?YMxBNaKz/BHKX/6PxNU68vaSZ0ZhPEb6VOdvjRF2x8p9J1XNMsMzHEWtavqK?=
+ =?us-ascii?Q?Rf15XRvV+YkNI+5qvTeK2Ym0BOsQWjr7MnPR?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM9PR04MB8825.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(19092799006)(7416014)(376014)(366016)(52116014)(38350700014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?dRWVTYihLALdmtCS5s7KFSyvKzlcG5YnnqEIlJrpQAEiZFh8/X1IWV9NmftV?=
+ =?us-ascii?Q?XfN9gtWQwI2gjHt+wPgDQ84vsGMP4Zbi7OwwlHB35a5LKETrEDIwN7H/BaC5?=
+ =?us-ascii?Q?XcmLAIVItKH0aOAr3r3J24Ml20yZp/KZnyOFCURHd2bLlz7PkIHgfNpY9GrG?=
+ =?us-ascii?Q?bufUAszkQJtW1rJ4fPbVjzj7sBHAAmcqQYMecntMISnIgAIr1D8BVyfpfgth?=
+ =?us-ascii?Q?3RyRjUvZkHoBNgjxHL1Mq1KUdF3tPQCxLzRH4Tho0tNqaXedMlwDXO0ejINY?=
+ =?us-ascii?Q?dEF1hzxTXTEmaJXjPgjfzyYgtdVn02PxE8PMIT2QpbS+sEJWv4WyDs6Lfw+A?=
+ =?us-ascii?Q?LZSqoCSTvcJAA8OzL8Ju4FdWPoyrosVZQOXkCHOeDWX/i0+0ZpjdpdF8pUAm?=
+ =?us-ascii?Q?1BD9hunFeDuAOSWWzm+upe158sIefRSNxjm8aaDN5ijofgGeMRY9NUtuTpRF?=
+ =?us-ascii?Q?6+ukywCx2zK7xgEj9HU6nYW1kkQvcIoTv0fdTf9l0gKkRl49Qli1F9Pldfsx?=
+ =?us-ascii?Q?WFdIjqUp/p4LzN2NOVCZsDYCLcs7mT2//gs9rSLM1j9wG8jIMKUApCEkjolc?=
+ =?us-ascii?Q?ZOdNcCal6cRCfd+Jm0CLeM8M8355t+gDprxWA8TEap/EDWqpAVAH3dPictS9?=
+ =?us-ascii?Q?sVk2qhyo6zFvOb1inzRH9JlKCYKuK3j4n+BQsJqopw8ldno5/jws+47v/I52?=
+ =?us-ascii?Q?/oxlqSv6HT/p++1ChaSZhb/9l03dx3yZlPqRL6BRunZTg5HLA7YJpXXxyKe7?=
+ =?us-ascii?Q?Tw5gZ5YhrQ9ZBYR1Ia8XJVOWXrJF5RauEuXwvFfNnM+sUPtTnCq6GGSFoz7d?=
+ =?us-ascii?Q?7BoIn+xxz3At4VJgGmOWNMfFs2/yH/lxx7LDTT2EvdKZkwcSCdTNeexDvqiZ?=
+ =?us-ascii?Q?vNYXJfVvighZSOTsGb9huG0dsYaywWqLahaGySVreiKcPHP6wTWYT7loGCoP?=
+ =?us-ascii?Q?DBeEqHZGZ+tf0YZgvnFsQfBKsvlgUiBXIBwtbFYt3DpWIHuMyEsrL1VeXwpr?=
+ =?us-ascii?Q?h7iT7Mk0AfO+q/2Ks9NqB2rz1V1R/vkb/FdqHq5v1cH5ZhAOAtfEcIl0Vw3+?=
+ =?us-ascii?Q?4v5CroSTQtiX7V4MgXfz9o5NZFViQ2mdYjWe15Av254whIgWJFURrXSYC/rr?=
+ =?us-ascii?Q?uwY8e5yffmh3oLDvrmAVBdMbizJ2u2EkLh1igK5gVT5FPMpS/zswVh7KMmHy?=
+ =?us-ascii?Q?F+B+kcSmNSuS4j8LjeGdtmM5f6OEodiAPO/IRZxG5f4sYfbEoVg1cuNKgy4s?=
+ =?us-ascii?Q?Rr9JPqj8oRoZxuj37vyU5VDy5YrTKyq7KctJqwFqTYpAhGUe4mtdEREI816m?=
+ =?us-ascii?Q?FZg4kBf1Ul/GRIQsHcvVYBIRH+YAMxPBDItqkj8+0VWtefhsfGp8j7vjQE0R?=
+ =?us-ascii?Q?WHv8KI5QG2tMq6Ax9QEiNWE0OmsIaIvc2yby8aTltGaYlA782xh6kDHEUM51?=
+ =?us-ascii?Q?PRa5nV8leU5gCDQG00NZ9b+tsHCM1Q7Wtl7H5DA7PoxOhsEkVeTMvlYO3VPf?=
+ =?us-ascii?Q?o2v+XoVP5LHM9SBCQkvaPxDYQJjMJWVJIQBSLNQM8QanvWpwMwwpstSKgrQX?=
+ =?us-ascii?Q?qQl0zIDRj+ie1yd51AAY34mstgZBZlF2cDk1DxA/?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 0da62c71-deca-435a-be42-08de2bf8743e
+X-MS-Exchange-CrossTenant-AuthSource: AM9PR04MB8825.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 Nov 2025 07:58:43.8420
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: L91VBbodQJ6uYUySdvyFHAQzCwRpRdyaC/QbkLDARRXeG4b9mjZBL5HTvSwI7EtQR1OxbjwkxX21kdbp65xAWA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DBBPR04MB7881
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251124_232026_246394_65C54ACA 
-X-CRM114-Status: GOOD (  21.64  )
+X-CRM114-CacheID: sfid-20251124_235850_448495_9649C518 
+X-CRM114-Status: GOOD (  28.50  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,51 +165,67 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Nov 25, 2025 at 03:04:43PM +0800, Xu Yang wrote:
-> On Mon, Nov 24, 2025 at 10:50:04AM +0100, Franz Schnyder wrote:
-> > From: Franz Schnyder <franz.schnyder@toradex.com>
+Hi Francesco,
+
+On Tue, Nov 25, 2025 at 08:20:11AM +0100, Francesco Dolcini wrote:
+> On Tue, Nov 25, 2025 at 03:04:43PM +0800, Xu Yang wrote:
+> > On Mon, Nov 24, 2025 at 10:50:04AM +0100, Franz Schnyder wrote:
+> > > From: Franz Schnyder <franz.schnyder@toradex.com>
+> > > 
+> > > Currently, the PHY only registers the typec orientation switch when it
+> > > is built in. If the typec driver is built as a module, the switch
+> > > registration is skipped due to the preprocessor condition, causing
+> > > orientation detection to fail.
+> > > 
+> > > This patch replaces the preprocessor condition so that the orientation
+> > > switch is correctly registered for both built-in and module builds.
+> > > 
+> > > Fixes: b58f0f86fd61 ("phy: fsl-imx8mq-usb: add tca function driver for imx95")
+> > > Cc: stable@vger.kernel.org
+> > > Signed-off-by: Franz Schnyder <franz.schnyder@toradex.com>
+> > > ---
+> > >  drivers/phy/freescale/phy-fsl-imx8mq-usb.c | 2 +-
+> > >  1 file changed, 1 insertion(+), 1 deletion(-)
+> > > 
+> > > diff --git a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
+> > > index b94f242420fc..d498a6b7234b 100644
+> > > --- a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
+> > > +++ b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
+> > > @@ -124,7 +124,7 @@ struct imx8mq_usb_phy {
+> > >  static void tca_blk_orientation_set(struct tca_blk *tca,
+> > >  				enum typec_orientation orientation);
+> > >  
+> > > -#ifdef CONFIG_TYPEC
+> > > +#if IS_ENABLED(CONFIG_TYPEC)
 > > 
-> > Currently, the PHY only registers the typec orientation switch when it
-> > is built in. If the typec driver is built as a module, the switch
-> > registration is skipped due to the preprocessor condition, causing
-> > orientation detection to fail.
+> > With below commit:
 > > 
-> > This patch replaces the preprocessor condition so that the orientation
-> > switch is correctly registered for both built-in and module builds.
+> > 45fe729be9a6 usb: typec: Stub out typec_switch APIs when CONFIG_TYPEC=n
 > > 
-> > Fixes: b58f0f86fd61 ("phy: fsl-imx8mq-usb: add tca function driver for imx95")
-> > Cc: stable@vger.kernel.org
-> > Signed-off-by: Franz Schnyder <franz.schnyder@toradex.com>
-> > ---
-> >  drivers/phy/freescale/phy-fsl-imx8mq-usb.c | 2 +-
-> >  1 file changed, 1 insertion(+), 1 deletion(-)
-> > 
-> > diff --git a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-> > index b94f242420fc..d498a6b7234b 100644
-> > --- a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-> > +++ b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-> > @@ -124,7 +124,7 @@ struct imx8mq_usb_phy {
-> >  static void tca_blk_orientation_set(struct tca_blk *tca,
-> >  				enum typec_orientation orientation);
-> >  
-> > -#ifdef CONFIG_TYPEC
-> > +#if IS_ENABLED(CONFIG_TYPEC)
+> > I think this #if/else/endif condition can be removed.
 > 
-> With below commit:
+> This patch should go to stable, and that commit is not present in any
+> such previous kernel.
+
+Well, commit 45fe729be9a6 was merged in v6.18-rc2. Previous stable kernel
+doesn't have it yet.
+
 > 
-> 45fe729be9a6 usb: typec: Stub out typec_switch APIs when CONFIG_TYPEC=n
+> Should we have 2 patches or "force" 45fe729be9a6 to be also backported?
 > 
-> I think this #if/else/endif condition can be removed.
+> What's the general advise in these situations?
 
-This patch should go to stable, and that commit is not present in any
-such previous kernel.
+I am not quite sure either.
+But commit b58f0f86fd61 was merged in v6.15-rc2. So the stable version to be fixed
+will be v6.18, right? Then commit 45fe729be9a6 will be included already. If so,
+I think only 1 patch will be enough.
 
-Should we have 2 patches or "force" 45fe729be9a6 to be also backported?
+Thanks,
+Xu Yang
 
-What's the general advise in these situations?
-
-Francesco
-
+> 
+> Francesco
+> 
 
 -- 
 linux-phy mailing list
