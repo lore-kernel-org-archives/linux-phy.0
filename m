@@ -4,166 +4,181 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19935D0E6F5
-	for <linux-phy@archiver.kernel.org>; Tue, 25 Nov 2025 15:57:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AA382D0EE0A
+	for <linux-phy@archiver.kernel.org>; Tue, 25 Nov 2025 16:37:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eX48clScskPr65/yig8dwfrLiQu3eHo+FkszQW6ytV4=; b=kR83vyJu+OVPUH
-	GrnhZQ6BnHx49oyoBN49YhFOmK7RLfwZIcJsiD55/JnW4jcw17aTdoBlbYRQkG6hTIDiVnHEdI4dl
-	91gRxuH/9l1/9+i0GEO3Ekf8KYXbpQd7WGwMcEhVimxka2uv2xV90idBbCbA52jD8WgpuQD5/NA7t
-	WFYIBGRPGkt5/9TybY76F+BwALLONr1ueQddu17AJzEPbrKMverhxuq6OSIL2qwkQVeCbXNfdICZA
-	OOcDdw1bnB7M/9Z8ViTqsc24Tqg/eBOi3TWAZ+30g+AYFDxMzeOmeLaFmkJ/fz6cNg3Lxm39KZ+St
-	6n9rRKEwgcPqdoTCk5Vw==;
+	List-Owner; bh=bYZuWNRoygSZs9x9fXNqy9GQQ6WlGlWYPw+RWvQEF8Q=; b=BTHFP2+Fw3f7jI
+	kC7G51w0bchI8q7cPfix0xvPeC5I5GVgKrFmguHPY8VsHNoLLojnq3JXnYK9uBR5KUgxthYtuBdw2
+	61kL1MwbNkRu748kLhdECADRfcQcnmS1zovNB8DVIJXD/SWB8s6zOd3qxUj9eEUwbmbpsgh1drxcY
+	Zc8L6HvmDBxkzDFfV/L8iDB83MjohB3DCyBm4vKXjmi+Zwjyf5lSR24VoBl1UqiG6JfHX2jy0biff
+	k7ccbbp/1iPr12N5GEDQtoVLPCtzXg5xQ6dPBjQ8Gxvh10se2FaUzHX5g5DKqtLHzJYCczxUC+5Tn
+	iOOdTcJxUbq02W/UtZ/g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vNvQR-0000000DXaQ-2GyK;
-	Tue, 25 Nov 2025 15:57:55 +0000
-Received: from mail-japanwestazlp170100003.outbound.protection.outlook.com ([2a01:111:f403:c407::3] helo=OS0P286CU011.outbound.protection.outlook.com)
+	id 1vNw2k-0000000DbbG-0hAA;
+	Tue, 25 Nov 2025 16:37:30 +0000
+Received: from mail-pl1-x62f.google.com ([2607:f8b0:4864:20::62f])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vNvQM-0000000DXZt-3jnS
+	id 1vNw2h-0000000Dba2-3gQH
 	for linux-phy@lists.infradead.org;
-	Tue, 25 Nov 2025 15:57:53 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=CZIMKjeCF7cymk/atsAyvumS/pRu9yy7egFWvAVbQPo1ktpE/0hIPj6pzxWIJ4CHj2zCxoBBaJqKK20ruOXVVXAxf9DIkxB9PDVUDSHOdTXzuX//BCAP21EciyL+N5YOmxgUnLlLCWA+gKJ2R+PRkbo9zj0oZS0uOcwEBX1vWLh1i6f1UQ82Gp6bUAVR7WrEWKDnDvR1SPtJDS5xUSyGFqAZCHwhI9Y0Wu/4R8WRvsP8/zJt1Hn7dlrmbjhLeezpdykKIjtafkBt9q/7JVKtNmjeRbMzA5CkTi89ePaJ2w6FjZCVahlLbfqmeb+k6DMqMOjdr7w1aseZ+oB8Jqm9UA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=ITzL/VDq8d6r6XtiQu4T3w5kjKHLR+Y4t446d/0g0i8=;
- b=lTo/Awaxc+dfzI+VJass9fGqXUBhIY9mxiJ3wYwrY3VWbvj/gPgEBl4az/7/mOlqFSeRoyIeW0rX85SwbEaagm4dAJ9Qe5ElBbziC1bycENBKUlinRcsYvNzAlZEiv+/t0H5Z6wF7UIqQvsX3caWN7zYpEBEtw3w/aRNjWL8CeV0hQS6ZO4RvJG/x8WjmQU3uLpV6LrJRnPmCqtQCZC6vQE/Q9n+etk0iupxaYdYdNi3/rn3rjU+fw5MKOy3M89oYKkJ2zf1ZovLnM+wBSsVF7g1+q4Wv54t+CNbaw4Dmp0go634jZt9PghAZdYgfCQ49K8N927CFPxdoijHpRRg/Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=bp.renesas.com; dmarc=pass action=none
- header.from=bp.renesas.com; dkim=pass header.d=bp.renesas.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bp.renesas.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ITzL/VDq8d6r6XtiQu4T3w5kjKHLR+Y4t446d/0g0i8=;
- b=PkworHLl/15NSeoeHvEfCsWa46YB9xEjNi78J7ZXt4/0eotTiPJR1mnKl/2iBRuPNfSlBeNk66EVoMMURD+Xs0SRgAlLEFLAvsYT+WE6itmmyV9bFB+S9Y5QIbv2mxRsOaeDc3FF1yOvEmhnRsVMw0ZnkjRci20JYhjBAjySnlM=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=bp.renesas.com;
-Received: from TY3PR01MB11948.jpnprd01.prod.outlook.com (2603:1096:400:409::5)
- by TYRPR01MB16003.jpnprd01.prod.outlook.com (2603:1096:405:2ca::8) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9366.11; Tue, 25 Nov
- 2025 15:57:41 +0000
-Received: from TY3PR01MB11948.jpnprd01.prod.outlook.com
- ([fe80::1de5:890d:9c69:172]) by TY3PR01MB11948.jpnprd01.prod.outlook.com
- ([fe80::1de5:890d:9c69:172%4]) with mapi id 15.20.9366.009; Tue, 25 Nov 2025
- 15:57:35 +0000
-Date: Tue, 25 Nov 2025 16:57:14 +0100
-From: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
-To: Geert Uytterhoeven <geert@linux-m68k.org>
-Cc: tomm.merciai@gmail.com, linux-renesas-soc@vger.kernel.org,
-	biju.das.jz@bp.renesas.com, Peter Rosin <peda@axentia.se>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Fabrizio Castro <fabrizio.castro.jz@renesas.com>,
-	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
-	Magnus Damm <magnus.damm@gmail.com>,
-	Sebastian Reichel <sebastian.reichel@collabora.com>,
-	Andi Shyti <andi.shyti@kernel.org>,
-	Jonathan Cameron <jonathan.cameron@huawei.com>,
-	Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <ukleinek@kernel.org>,
-	Arnd Bergmann <arnd@arndb.de>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org
-Subject: Re: [PATCH v4 11/22] phy: renesas: rcar-gen3-usb2: Use mux-state for
- phyrst management
-Message-ID: <aSXR2iEAKjxM8VOR@tom-desktop>
-References: <cover.1763737324.git.tommaso.merciai.xr@bp.renesas.com>
- <89b6d61854e94966fc9781d5832b6c187c35b4de.1763737324.git.tommaso.merciai.xr@bp.renesas.com>
- <CAMuHMdXBbzTeiQJQWuUnJ_rRD1Zo=1TBOzrv4WbvC7whL1=E9w@mail.gmail.com>
-Content-Disposition: inline
-In-Reply-To: <CAMuHMdXBbzTeiQJQWuUnJ_rRD1Zo=1TBOzrv4WbvC7whL1=E9w@mail.gmail.com>
-X-ClientProxiedBy: FR4P281CA0212.DEUP281.PROD.OUTLOOK.COM
- (2603:10a6:d10:e4::11) To TYCPR01MB11947.jpnprd01.prod.outlook.com
- (2603:1096:400:3e1::6)
+	Tue, 25 Nov 2025 16:37:29 +0000
+Received: by mail-pl1-x62f.google.com with SMTP id d9443c01a7336-29812589890so67474875ad.3
+        for <linux-phy@lists.infradead.org>; Tue, 25 Nov 2025 08:37:27 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1764088647; x=1764693447; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:sender:from:to:cc:subject:date:message-id:reply-to;
+        bh=BSWJkC14D263EaCk7olh/4x9IvEymCiNm9Dm8xKZmcc=;
+        b=P0mTJa2biM7+ldEJoRilydR+zF+ucFslaqnAoWeULLj5rTBBFBnmvTkpX3zt8LL0rF
+         FytjYh9zez0tUbkOpTYxnjrQEN47iLD7VZW3L4ZQqMYzdXGpkNVx7UOVs0diRmKuoaPH
+         e0k7OFVo9IUGsnl9M/woRy9s71z266iK2J8UTk2S044gD+xj3LnkyhKIZEoV+Jeaz5EY
+         tUbkpEGwS2VuGsSHj9SBTNsgiBH1s5FT2CRP3CWAgKopfereWzP3X7XbkZ4GpYzCzH1/
+         CfHoWuta4/BwpZ4oCWwAolxQbaA7nlgaOOciUgV6yA4hV25uE/ill8oSHx5vWYuNBRra
+         bHkg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1764088647; x=1764693447;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:sender:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=BSWJkC14D263EaCk7olh/4x9IvEymCiNm9Dm8xKZmcc=;
+        b=mXYXbV5kwNsTq9P9ZkyjsrcTVtvxUbTRPXed5lsOYv0mQ9bpbWku47W6XBSQV2a2DQ
+         VZZqVJBCIm9xiohrKY92ayZqWEUu0yILfLuSKbF1UyP+zhj8Z6QkrfZUXCdsjdkHZO8w
+         BiTAOZvjVmPdTBHJJAk6w0i3kbd+dqXcfVxUrX0ae3LPWMH3n1r17B3WHNZkgYljH1Xk
+         oBCUQBC+0Cz1qLT6r+6+unuDCtL9OltXJpZsHSsAO9vC/jVLxx2yAICyzU/mRBM5VWsI
+         rQptnayDwUl9fVHwgNQ+5INa5CkyCah8fLg+5DqW+e0kGhK5TScrkkVDSRUDj/Mjk/dZ
+         qI9w==
+X-Forwarded-Encrypted: i=1; AJvYcCXF2MoQOlg3Dn2Mh6CvqXIKqJAHpF9ty0CZfJMps/akAkEi7xzQWgTVKm6irAmROvrATShOk/9jwto=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyDPjok/QFHm0PJwzuzdpkesOD0DFqaTahOlIAM5LHj24Z81dqL
+	6ll1Xibxsi3D8AUn3LMSzbs71/1JQ/IODOYsjkHTLjxe2FIYdwRF+QDO
+X-Gm-Gg: ASbGnct5iTuiWHX5nPmApHDaW3LstgjigEa64s6XLPUiox50xco/U5S50WDkdOWOujg
+	nUWhwt155WF4Uli1LGeKUzuw5zqzv4H/EnWqXhUEX0XdrC/1mW7nt8ehj7mfWL7oi9yZCwi3b61
+	PF0LDOZeWgqufKmUV7F9+SgDG2jyqo4ShwtF58fNQma64733OSnUlurk6D2tRYAoluVXqQ8oeP4
+	nZGbGjX+JstyIWdEHxBFrvw24+JQluN6UvqACryYBwSU078RhJGR9xgCQ+iyZGxBSTtltPg1DdW
+	sbpwKqcqi3BFHK3Wp9ShXJknMRcP25FLhL79v3Ymx0n22bIx1QPdPpOqR4OskIebq0MIPFnb8dP
+	RJAQDRgEq3Lq5uQuPleC5G2eP1pDR4RctKVksA0cplKadRx2PFRJyfpurm7CapXIDekFLjBoLrR
+	tP3Qs29uiMFcDU9Ma0M5M0rz2fzExTeO2rLFKbVuRhIeZ9
+X-Google-Smtp-Source: AGHT+IFHy57b+hpQflAZiQVaoxIk86czwU51KAJ0ICKXYmkBowPOIfdH8aTLY+SWpNInrUa/0Wei8g==
+X-Received: by 2002:a17:90b:3c01:b0:340:cb39:74cd with SMTP id 98e67ed59e1d1-34733f589e8mr14550720a91.32.1764088646710;
+        Tue, 25 Nov 2025 08:37:26 -0800 (PST)
+Received: from ?IPV6:2600:1700:e321:62f0:da43:aeff:fecc:bfd5? ([2600:1700:e321:62f0:da43:aeff:fecc:bfd5])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3475ff34831sm1342209a91.5.2025.11.25.08.37.21
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 25 Nov 2025 08:37:25 -0800 (PST)
+Message-ID: <9b43da0b-61e1-49bb-acc2-392de3817db7@roeck-us.net>
+Date: Tue, 25 Nov 2025 08:37:20 -0800
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: TY3PR01MB11948:EE_|TYRPR01MB16003:EE_
-X-MS-Office365-Filtering-Correlation-Id: c7207627-9c77-4b20-24f7-08de2c3b59a4
-X-LD-Processed: 53d82571-da19-47e4-9cb4-625a166a4a2a,ExtAddr
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|7416014|376014|52116014|1800799024|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?A3lYOceJrvw9fVTBcqtIUErde9Xp7Ii8uk133qhHIdxDh9rusWp238nZkQr7?=
- =?us-ascii?Q?dSGmchts/2OS4mENS8KdfRU21577W3Bpnul3u3GuGx0QWci6tC3GpgaasUBN?=
- =?us-ascii?Q?Ej6Ws/N9v6UACnMD+FnxxaWvXDsSQsho62aYS1zIZ/RnkmaTYInex2wq28uW?=
- =?us-ascii?Q?ynyQCfJIMfzFvnrILySVGHsEc9xaDh3d0s+IgGvgk+OTo3wsr2Y83rU1A2Q9?=
- =?us-ascii?Q?yIMltIP9JHcWXYCpDNeW+4e4uqpQ2vml4Egk1PsiGrE7VazRnJHj4ds9iGOW?=
- =?us-ascii?Q?nWwwAMV9/HnjutcXIXPStq4LMygRAi9CEEtnck0VjBBaJGOt7ysBEUUEQEru?=
- =?us-ascii?Q?c31lvgveSlj/XEKaGVDxo8hgeg9bOxPlkcWTbh60LHceMq08Y3WC5BJOcY1U?=
- =?us-ascii?Q?Y3gy2VPFCOAGlaTNwD7xQGMScDbzAL7jO5jkn+C/54KkX+ZiEECzCHUStzSR?=
- =?us-ascii?Q?nCWFJM0mZLUpcZtwFQgpKs9M3GsNz7r6QWKF/ZHf0+M/kdb5/M+93ouxqM2q?=
- =?us-ascii?Q?AhEZOAubxbQKMGK1S1ZAYLLFYu+Eijsx1PMDXHM/wG7C5lysODhJbZVA9CBM?=
- =?us-ascii?Q?VxCaAMdLajNmt3Uq3ODfrrauX8r3EnyCJvTumhf8+xIvBeBDbFoVkrD9DUGu?=
- =?us-ascii?Q?4gA9Xl0lkj0UPu5Ux+wGW6SLT8dkEM5yuceibplR8B6MNp0vVzeFpYfCQ+od?=
- =?us-ascii?Q?5Ha2L5ftIdbDlvd/l/KoInT5+m5+9lfyyyxvZWEMWET4D7PhE++6KE6w8aD6?=
- =?us-ascii?Q?n4DO+MtcUwxseGcc3nMnO4w4askntc66y7hYiz0jKN7cc2ffCw99QBH08TQY?=
- =?us-ascii?Q?VTP4m/zT7VPcxz9EJkXYZSaMtynlaAm1DiwwwLCrGTJeQjvAvu/PGp9G322o?=
- =?us-ascii?Q?BUEFNKsfArYGkBOV9jvn9GIO7UDT4q+3TpG1/bVYayQ8HUc3KzlTs0A9seP6?=
- =?us-ascii?Q?gauWblCJf5cd85E95ByEI5/MgcAcFiEmrclpAqLzcWGVMx7oQb1ssg8oVpqm?=
- =?us-ascii?Q?zKzuY3qJ1P2uLR1wMOH9EmLhmXfX9+Py/2uTTc80ttkjCMQcjEKDWhKRsijU?=
- =?us-ascii?Q?LMMiyqEd4eF785XhAK3VKIjmb7lNDTtZIp2RMC4DoD8TGJwGlBS2q6D3ke4b?=
- =?us-ascii?Q?OrqSfOQmdyvnRWGXJzGwqUjhrFTt45qG2S0oR+KJAqaFvPkqMOmyAOyyrp+y?=
- =?us-ascii?Q?SGuHX9pXddTi/8PMbWKqpA0F0wEptoptg3FM6ZWtP+nJasje9SL+0aG1GP1l?=
- =?us-ascii?Q?WLfyDNQDl9CZKVl51JLCQ6izFXaJyd5zBdu991VcVI1WZuERrAb8AFzR2R7a?=
- =?us-ascii?Q?WTQNcwRMu9KHFkTx+wDaCK8dw63Dm+3HdNrnUysWjgzPc9cvbQ8pn+3kh18h?=
- =?us-ascii?Q?MZT2538mDlLq6Jti19AaLNIppZ6wxEl5pQPGXFDBtHGi8igq6vQ3cKq4tfLr?=
- =?us-ascii?Q?C6FjMflqdZ4qtKf4VQCIj6d+ClUUamlyBGfE3YqGpYIxvXEy3lGNPSdtQHs0?=
- =?us-ascii?Q?GKP6dAiCZDBWcl0i6aXVHIIfcwut025gb6dN?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TY3PR01MB11948.jpnprd01.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(7416014)(376014)(52116014)(1800799024)(38350700014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?Mwn3nhVfGqyI2eSRCwv3hUhCjT3XqJ8cmqmbGiWbNj//u/iRuuxsrgS9kmj9?=
- =?us-ascii?Q?NUgM/s86Wtf9pO3wUZ20UDTLWTIb8cV6uBvmXdE/BGgk8JEozUahUaYbeLT6?=
- =?us-ascii?Q?x6hVhpeKEAITT1AUNr1PxWjy6rie1+5jO39Zbb8+FSB+Naf/I+z24Nk8+oiC?=
- =?us-ascii?Q?tHgC1I4/WUkfg3VBDjLrJhve5HRuty+loYCkY/uVWLhG/QOc7/H8s13QvOsM?=
- =?us-ascii?Q?xXQ18yjUOtAQPuioMPBertA9LR7hVJ4HPgniG9iYjUzVDKv4QjiEA8SQeSvL?=
- =?us-ascii?Q?zTwVPOo0jz6xTS7p+h5RbbzNv0/Q8cLww7pZj86mkfPeQFRA+AVcwhS/pfsQ?=
- =?us-ascii?Q?vM+EmvXWXRjx+45+NAOb7LzMFgA7yqDphatkdaX8ZFnJjgAXmxTlth7LgZ7s?=
- =?us-ascii?Q?VBdH3XSGMY2hlKP21bGWy0cr38Z3BUBjDmDIiW8RCYoN+UOYozsbsVEK8yRy?=
- =?us-ascii?Q?3fPApoiNgdB2akgiucvPFFmGm1oL18cMjIGWG3v1qMimo24+zp7ocyIHKzeI?=
- =?us-ascii?Q?/cB1ng+BlSKhAfTjWC8C3IMgwqeKhaHSZjekaz3S927gQRe7l+DOdEQRcTed?=
- =?us-ascii?Q?d70Gt9ONdCs3B6GStE8HDVmUrAZOdUUpnZWlL6RZZks6KFbBNIjx1T5ewGtz?=
- =?us-ascii?Q?jLwPcWvLPKI1okENzj/0bn9bvdyLBOOXfM2prDo05BrQAevqLhUGUYnpILKq?=
- =?us-ascii?Q?BvDSVCyoG/CNlYvuAbiLsiXeCIrmhC5XJQu7umKmjKVizWJreNAlnNqnxHuc?=
- =?us-ascii?Q?yFtn1mz5mlXp948IJCAGFc+3Y7evqVo9La2rSLksPLJ7BguCotyxnF1R4na/?=
- =?us-ascii?Q?c/2Y/Msc/R0M8LZNDM/1MDEjRDjIlwmf0ntC8a/9ixPlhsQhAC/u7C6mF0WY?=
- =?us-ascii?Q?I3+y/Xo1k2UPFBn+2k7cgbwgU0ceguowd7FRJFnRPrmEwVYupETlh4hFCHM1?=
- =?us-ascii?Q?mqUiifZx+7D+ddDEUccw1rneYhoaQuuqJuOqv/Y2pg68FwYOmwsFpog99Ci4?=
- =?us-ascii?Q?5W9EDGr4oqgI0a0+bJSLSisBUbnXak+4Jjarjbuuw6O0EvQb/MKnLaey2WAj?=
- =?us-ascii?Q?txaseeWyLzg6hfly6f8Pz82f1JLD58HtOdlFHVuz4IWChiQTh3S4oj4Q6VDB?=
- =?us-ascii?Q?77yxV5hGaMEf5dr2IKUNYN+X2chb4KpXveQfwWzsiIOypZ43f4JuHtgZllPU?=
- =?us-ascii?Q?OqdMdcO2axVshccYI+1Y0iWo6NGNm4C0n52xNWtBQFTd0vopfqL8ETx/TK/8?=
- =?us-ascii?Q?ObiGxhs5vJBPPoofTc+KSs+4c9RO6U+jzeVnnVAyQ2GXzXHEtsxRgG4Q0+ya?=
- =?us-ascii?Q?ggPFWz+WYgPOTfik8NcHTzSe4l6NcKCoh8f7VE6Ly2F70eBG3XoTxtd6CY31?=
- =?us-ascii?Q?RsTPWL4d/Av/et38aawVB/dJkzO2u+kiUmCqdURV7mvCF9vWyM5hLir1aWJK?=
- =?us-ascii?Q?UDaNlF/lK5EnjrKxSAJ3u4Sq4VqBj5vVungxFVAE6TBcv4Jtxxb1N4oqcUmN?=
- =?us-ascii?Q?n8xMyzQVwX6GqlBqTXruTTfIqe07o64WvkHHGNaNhiYFru5ON4gOKPLEz9FV?=
- =?us-ascii?Q?xqHpq/ubGVa+z6d0isQ/Ji7yrHYgNIKs8TMVGvhP7pgrwkf0bA/7AhTZ/G36?=
- =?us-ascii?Q?qwaUZpDNGGhuNMyuozaJEQc=3D?=
-X-OriginatorOrg: bp.renesas.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c7207627-9c77-4b20-24f7-08de2c3b59a4
-X-MS-Exchange-CrossTenant-AuthSource: TYCPR01MB11947.jpnprd01.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 Nov 2025 15:57:35.8147
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 53d82571-da19-47e4-9cb4-625a166a4a2a
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: dDFFI2Ex/5Hr9lOEqHCBf4BVQ4xBSgBdEHSbzJ/h0wggHQ/r6TJG5vrbxG4S9BTzujB/1ZaC/9pRbT63q4ZI2rJkt3DTwwVBI7vhI7/riXIjhvIsUDaQmaVvAM5+Fxmd
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYRPR01MB16003
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v4 0/6] Add support for the LTM8054 voltage regulator
+To: "H. Nikolaus Schaller" <hns@goldelico.com>,
+ Romain Gantois <romain.gantois@bootlin.com>
+Cc: Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Jonathan Cameron <jic23@kernel.org>,
+ David Lechner <dlechner@baylibre.com>, =?UTF-8?Q?Nuno_S=C3=A1?=
+ <nuno.sa@analog.com>, Andy Shevchenko <andy@kernel.org>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-iio@vger.kernel.org, Conor Dooley <conor.dooley@microchip.com>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>, Chanwoo Choi
+ <cw00.choi@samsung.com>, Peter Rosin <peda@axentia.se>,
+ Mariel Tinaco <Mariel.Tinaco@analog.com>,
+ Lars-Peter Clausen <lars@metafoo.de>,
+ Michael Hennerich <Michael.Hennerich@analog.com>,
+ Kevin Tsai <ktsai@capellamicro.com>, Linus Walleij
+ <linus.walleij@linaro.org>, Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ Eugen Hristev <eugen.hristev@linaro.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Sebastian Reichel <sre@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Support Opensource <support.opensource@diasemi.com>,
+ Paul Cercueil <paul@crapouillou.net>, Iskren Chernev <me@iskren.info>,
+ Marek Szyprowski <m.szyprowski@samsung.com>,
+ Matheus Castello <matheus@castello.eng.br>,
+ Saravanan Sekar <sravanhome@gmail.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+ Casey Connolly <casey.connolly@linaro.org>, =?UTF-8?Q?Pali_Roh=C3=A1r?=
+ <pali@kernel.org>, Orson Zhai <orsonzhai@gmail.com>,
+ Baolin Wang <baolin.wang@linux.alibaba.com>,
+ Chunyan Zhang <zhang.lyra@gmail.com>, Amit Kucheria <amitk@kernel.org>,
+ Thara Gopinath <thara.gopinath@gmail.com>,
+ "Rafael J. Wysocki" <rafael@kernel.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, Zhang Rui <rui.zhang@intel.com>,
+ Lukasz Luba <lukasz.luba@arm.com>,
+ Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>,
+ Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>,
+ Olivier Moysan <olivier.moysan@foss.st.com>,
+ Arnaud Pouliquen <arnaud.pouliquen@foss.st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@foss.st.com>,
+ Dixit Parmar <dixitparmar19@gmail.com>, linux-hwmon@vger.kernel.org,
+ linux-input@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-pm@vger.kernel.org, linux-mips@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
+ linux-arm-msm@vger.kernel.org, linux-sound@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Andy Shevchenko <andriy.shevchenko@intel.com>
+References: <20251124-ltm8054-driver-v4-0-107a8a814abe@bootlin.com>
+ <4053840.MHq7AAxBmi@fw-rgant>
+ <732D3F12-0361-4800-8981-EF629B4C491F@goldelico.com>
+ <3021060.e9J7NaK4W3@fw-rgant>
+ <0E900830-E248-4F0F-A048-075EAF1D2440@goldelico.com>
+Content-Language: en-US
+From: Guenter Roeck <linux@roeck-us.net>
+Autocrypt: addr=linux@roeck-us.net; keydata=
+ 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
+ np3900V20aS7eD9K8GTU0TGC1pyz6IVJwIE=
+In-Reply-To: <0E900830-E248-4F0F-A048-075EAF1D2440@goldelico.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251125_075751_298985_6C80223C 
-X-CRM114-Status: GOOD (  36.47  )
+X-CRM114-CacheID: sfid-20251125_083727_932979_1FF3635E 
+X-CRM114-Status: GOOD (  15.04  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -175,142 +190,35 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Geert,
-Thanks for your review!
+On 11/25/25 02:25, H. Nikolaus Schaller wrote:
+...
+> Another suggestion: what extending the "regulator-fixed", "regulator-gpio",
+> "regulator-fixed-clock" pattern by some "regulator-gpio-iio-dac-current-limiter"
+> driver to make it independent of your specific chip?
+> 
+The name is terrible ;-), but that is what I would have suggested as well.
+I don't see anything chip specific in this code. If there is a need for
+a regulator driver which uses gpio to enable it and a DAC for current limiting,
+it should be made generic.
 
-On Tue, Nov 25, 2025 at 03:10:22PM +0100, Geert Uytterhoeven wrote:
-> Hi Tommaso,
+> By the way, are you aware of this feature of the regulator-gpio driver?
 > 
-> On Fri, 21 Nov 2025 at 16:14, Tommaso Merciai
-> <tommaso.merciai.xr@bp.renesas.com> wrote:
-> > Add support for selecting the phyrst mux-state using the Linux mux
-> > subsystem in the R-Car Gen3 USB2 PHY driver. This ensures correct hardware
-> > initialization and integration with systems utilizing the mux-state device
-> > tree property.
-> >
-> > A temporary wrapper for optional muxes is introduced until native support
-> > is available in the multiplexer subsystem.
-> >
-> > Signed-off-by: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
+> https://elixir.bootlin.com/linux/v6.18-rc7/source/drivers/regulator/gpio-regulator.c#L97
 > 
-> Thanks for your patch!
+> Just to note: I am neither maintainer nor doing any decisions on this, just asking
+> questions for curiosity and from experience and giving hints for alternative approaches,
+> where I hope they help to find the really best solution.
 > 
-> > --- a/drivers/phy/renesas/phy-rcar-gen3-usb2.c
-> > +++ b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
-> > @@ -938,11 +939,27 @@ static int rcar_gen3_phy_usb2_vbus_regulator_register(struct rcar_gen3_chan *cha
-> >         return rcar_gen3_phy_usb2_vbus_regulator_get_exclusive_enable(channel, enable);
-> >  }
-> >
-> > +/* Temporary wrapper until the multiplexer subsystem supports optional muxes */
-> > +static inline struct mux_state *
-> > +devm_mux_state_get_optional(struct device *dev, const char *mux_name)
-> > +{
-> > +       if (!of_property_present(dev->of_node, "mux-states"))
-> > +               return NULL;
-> > +
-> > +       return devm_mux_state_get(dev, mux_name);
-> > +}
-> > +
-> > +static void rcar_gen3_phy_mux_state_deselect(void *data)
-> > +{
-> > +       mux_state_deselect(data);
-> > +}
-> > +
-> >  static int rcar_gen3_phy_usb2_probe(struct platform_device *pdev)
-> >  {
-> >         struct device *dev = &pdev->dev;
-> >         struct rcar_gen3_chan *channel;
-> >         struct phy_provider *provider;
-> > +       struct mux_state *mux_state;
-> >         int ret = 0, i, irq;
-> >
-> >         if (!dev->of_node) {
-> > @@ -1019,6 +1036,23 @@ static int rcar_gen3_phy_usb2_probe(struct platform_device *pdev)
-> >                 phy_set_drvdata(channel->rphys[i].phy, &channel->rphys[i]);
-> >         }
-> >
-> > +       mux_state = devm_mux_state_get_optional(dev, NULL);
-> > +       if (IS_ERR(mux_state)) {
-> > +               if (PTR_ERR(mux_state) == -EPROBE_DEFER)
-> > +                       return PTR_ERR(mux_state);
-> > +               mux_state = NULL;
-> 
-> No need to set mux_state to NULL, as mux_state is not used below.
-> 
-> However, shouldn't you propagate all errors up?
-> If the mux is not present, mux_state should already be NULL,
-> i.e. IS_ERR(mux_state) would be false.
-> 
-> > +       } else {
-> > +               ret = mux_state_select(mux_state);
-> 
-> This causes a crash on R-Car Gen3 and RZ/Five, as mux_state_select()
-> doesn't handle NULL pointers gracefully yet.
-> 
-> Adding a check like
-> 
->     -       } else {
->     +       } else if (mux_state) {
-> 
-> fixes the issue.
+Same here.
 
-Thank you for checking this!
+Thanks,
+Guenter
 
-Ack :)
-I will switch to:
-
-	mux_state = devm_mux_state_get_optional(dev, NULL);
-	if (IS_ERR(mux_state)) {
-		return PTR_ERR(mux_state);
-	} else if (mux_state) {
-		ret = mux_state_select(mux_state);
-		if (ret)
-			return dev_err_probe(dev, ret, "Failed to select USB mux\n");
-
-		ret = devm_add_action_or_reset(dev, rcar_gen3_phy_mux_state_deselect,
-					       mux_state);
-		if (ret)
-			return dev_err_probe(dev, ret,
-					     "Failed to register USB mux state deselect\n");
-	}
-
-In v5.
-
-
-Kind Regards,
-Tommaso
-
-> 
-> > +               if (ret)
-> > +                       return dev_err_probe(dev, ret, "Failed to select USB mux\n");
-> > +
-> > +               ret = devm_add_action_or_reset(dev, rcar_gen3_phy_mux_state_deselect,
-> > +                                              mux_state);
-> > +               if (ret)
-> > +                       return dev_err_probe(dev, ret,
-> > +                                            "Failed to register USB mux state deselect\n");
-> > +       }
-> > +
-> >         if (channel->phy_data->no_adp_ctrl && channel->is_otg_channel) {
-> >                 ret = rcar_gen3_phy_usb2_vbus_regulator_register(channel);
-> >                 if (ret)
-> 
-> Gr{oetje,eeting}s,
-> 
->                         Geert
-> 
-> -- 
-> Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-> 
-> In personal conversations with technical people, I call myself a hacker. But
-> when I'm talking to journalists I just say "programmer" or something like that.
->                                 -- Linus Torvalds
-> 
 
 -- 
 linux-phy mailing list
