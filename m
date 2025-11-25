@@ -4,68 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E03DED0E6F1
-	for <linux-phy@archiver.kernel.org>; Tue, 25 Nov 2025 14:37:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6D62FD0E6FB
+	for <linux-phy@archiver.kernel.org>; Tue, 25 Nov 2025 15:28:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:From:To:Cc:
+	Subject:Message-Id:Date:Mime-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7k3TVixCRdWXehiv6EH7o+T4NeGtHPnFb/R1ehS4vBA=; b=JyppXsHlX3/SLE
-	cH7rsRlGrdzlMVllx6H0VEklmQWryhdWszgTEzsku1MzbqpHzF7hDjbOL08iaQEtbV5NCx73g2F60
-	BvZ/S90KPbUMSxzCa0Fo/Cv1MYO779RfHiUEIDJ5e33z15uRieBIytPkyRcnqNJPBDKtu6mQRQAA3
-	Me0X5Qk272MzjhYP/wI9Ho7aqQm+1itZg+ZJQi6uUaKqyFIEM+MuZsoardr0sICKeuuqZjqMFeSLI
-	GPer3GQFl8u5lnogvfK/R6jWYQIvICkb3Z5H+Q2P6+ljw5o8XTHcwyMpc996p4/51M7Jtbeuh0tsD
-	h2oS3TrTVDBbF3WUwjOQ==;
+	List-Owner; bh=G8dvS9/RRUDuklXKxykxoBSQNCujoP3Vk1FEe3W9878=; b=ZlpT5jU4iaLf5U
+	dZqYf1O9u/XAwZ3VPFj70Jm7oAroKp1w6QeocsmgvxQRXY8oURVcT2R2zeh/k/4cFa57YDMc1WYOX
+	1s8MYlqZVqmexx4h1yyDkyUYYO6C3XXlHt3R6f/rGcTCy9Au4HX7GNVcxNyVp1dgKVOP0xOa+IOTc
+	BNJSWifTo051IqFSpvVpZtgWLwRoEQGnCAxVNAzbexAOTL9PwtH5r0gPJ4XJ5rLybZBam3Qw1BxYC
+	pC35pVJ9HYBXj0iIitaGzSQGlweRMPkQ30ZpPoOtmNAK1iraIVpAW5yP9v5WYur6ASq/1tzg9j72s
+	Y9G+n2NjzBFQlSWbuqAA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vNuAA-0000000DRa2-1oSo;
-	Tue, 25 Nov 2025 14:37:02 +0000
-Received: from pidgin.makrotopia.org ([2a07:2ec0:3002::65])
+	id 1vNuxm-0000000DVgv-3ngv;
+	Tue, 25 Nov 2025 15:28:18 +0000
+Received: from smtpout-02.galae.net ([185.246.84.56])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vNuA8-0000000DRZQ-0bib;
-	Tue, 25 Nov 2025 14:37:01 +0000
-Received: from local
-	by pidgin.makrotopia.org with esmtpsa (TLS1.3:TLS_AES_256_GCM_SHA384:256)
-	 (Exim 4.98.2)
-	(envelope-from <daniel@makrotopia.org>)
-	id 1vNu9y-000000003cW-1OUO;
-	Tue, 25 Nov 2025 14:36:50 +0000
-Date: Tue, 25 Nov 2025 14:36:42 +0000
-From: Daniel Golle <daniel@makrotopia.org>
-To: Vladimir Oltean <vladimir.oltean@nxp.com>
-Cc: netdev@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org,
-	Horatiu Vultur <horatiu.vultur@microchip.com>,
-	Andrew Lunn <andrew@lunn.ch>,
-	Heiner Kallweit <hkallweit1@gmail.com>,
-	Russell King <linux@armlinux.org.uk>,
-	"David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Eric Woudstra <ericwouds@gmail.com>,
-	Marek =?iso-8859-1?Q?Beh=FAn?= <kabel@kernel.org>,
-	Lee Jones <lee@kernel.org>,
-	Patrice Chotard <patrice.chotard@foss.st.com>
-Subject: Re: [PATCH net-next 0/9] XPCS polarity inversion via generic device
- tree properties
-Message-ID: <aSW--slbJWpXK0nv@makrotopia.org>
-References: <20251122193341.332324-1-vladimir.oltean@nxp.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20251122193341.332324-1-vladimir.oltean@nxp.com>
+	id 1vNuxj-0000000DVfT-0QYU;
+	Tue, 25 Nov 2025 15:28:17 +0000
+Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
+	by smtpout-02.galae.net (Postfix) with ESMTPS id 865891A1D45;
+	Tue, 25 Nov 2025 15:28:10 +0000 (UTC)
+Received: from mail.galae.net (mail.galae.net [212.83.136.155])
+	by smtpout-01.galae.net (Postfix) with ESMTPS id 59A4C606A1;
+	Tue, 25 Nov 2025 15:28:10 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id D30E1102F07FE;
+	Tue, 25 Nov 2025 16:28:04 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
+	t=1764084489; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 content-transfer-encoding:in-reply-to:references;
+	bh=HgxEQ0f8MNjzesLOK80vetYWR3YMKzv8RvyUGva3XLk=;
+	b=K/Fp02xZ1WhDXcE/vwFa8uDqUxs4cBpya3Uwrcrop9bEq7pfenZOXIQyIXmx2DHkO7Vgru
+	QqSq4h0+JFNQ4AA67Sn0cYZHfB1XsjSR1ooUUoj8w1JL9dwGdr5FK/bNugHt3wAJe41uYr
+	uAX2fsP/UxHVQy6Cp+qpfCDuelKkDjEso0lEUbKRDvXz3BX5Oo6QQjoSWTQ/RBxJyF4tNg
+	aiVyQt7GC6EQJPS67xcwL2bBmQY3GHV8dd9afsLEylbbo+dcisEEf93H8jk/AzarBLOuX9
+	3d+Hht7rhKBAo9weo3A/zJ1cvtKmN9Mkk5o3USEarkGCBY+ykGchBqPb5EvKaw==
+Mime-Version: 1.0
+Date: Tue, 25 Nov 2025 16:28:04 +0100
+Message-Id: <DEHVRC8CY12S.3LSC6UVSMU0C1@bootlin.com>
+Subject: Re: [PATCH 1/2] phy: rockchip: inno-usb2: fix disconnection in
+ gadget mode
+Cc: "Kever Yang" <kever.yang@rock-chips.com>, "Minas Harutyunyan"
+ <Minas.Harutyunyan@synopsys.com>, "Alan Stern" <stern@rowland.harvard.edu>,
+ "Louis Chauvet" <louis.chauvet@bootlin.com>, =?utf-8?q?Herv=C3=A9_Codina?=
+ <herve.codina@bootlin.com>, "Thomas Petazzoni"
+ <thomas.petazzoni@bootlin.com>, <linux-phy@lists.infradead.org>,
+ <linux-rockchip@lists.infradead.org>, <linux-usb@vger.kernel.org>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>
+To: "Luca Ceresoli" <luca.ceresoli@bootlin.com>, "Vinod Koul"
+ <vkoul@kernel.org>, "Kishon Vijay Abraham I" <kishon@kernel.org>, "Heiko
+ Stuebner" <heiko@sntech.de>, "William Wu" <wulf@rock-chips.com>
+From: =?utf-8?q?Th=C3=A9o_Lebrun?= <theo.lebrun@bootlin.com>
+X-Mailer: aerc 0.21.0-0-g5549850facc2
+References: <20250722-rk3308-fix-usb-gadget-phy-disconnect-v1-0-239872f05f17@bootlin.com> <20250722-rk3308-fix-usb-gadget-phy-disconnect-v1-1-239872f05f17@bootlin.com>
+In-Reply-To: <20250722-rk3308-fix-usb-gadget-phy-disconnect-v1-1-239872f05f17@bootlin.com>
+X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251125_063700_211469_3CE8C404 
-X-CRM114-Status: GOOD (  25.10  )
+X-CRM114-CacheID: sfid-20251125_072815_278530_F52EF493 
+X-CRM114-Status: GOOD (  19.72  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,95 +77,69 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, Nov 22, 2025 at 09:33:32PM +0200, Vladimir Oltean wrote:
-> Polarity inversion (described in patch 3/6) is a feature with at least 3
-> potential new users waiting for a generic description:
-> - Horatiu Vultur with the lan966x SerDes
-> - Daniel Golle with the MaxLinear GSW1xx switches
-> - Me with a custom SJA1105 board, switch which uses the DesignWare XPCS
-> 
-> I became interested in exploring the problem space because I was averse
-> to the idea of adding vendor-specific device tree properties to describe
-> a common need.
-
-Thank you for coming up with a good solution, and even generalizing
-this beyond networking scope :)
-
-> 
-> This set contains an implementation of a generic feature that should
-> cater to all known needs that were identified during my documentation
-> phase. I've added a new user - the XPCS - and I've converted an existing
-> user - the EN8811H Ethernet PHY.
-> 
-> I haven't converted the rest due to various reasons:
-> - "mediatek,pnswap" is defined bidirectionally and the underlying
->   SGMII_PN_SWAP_TX_RX register field doesn't make it clear which bit is
->   RX and which is TX. Needs more work and expert knowledge from maintainer.
-
-Just to quickly answer to that one from MediaTek's SDK[1]:
-#define SGMII_PN_SWAP_RX               BIT(1)
-#define SGMII_PN_SWAP_TX               BIT(0)
-
-So MediaTek LynxI is ready to be supported via the standard properties
-you are suggesting.
-
-[1]: https://git01.mediatek.com/plugins/gitiles/openwrt/feeds/mtk-openwrt-feeds/+/5cecec123e1ab4c7f4eabd5630e8e8b2e89b9cf0/autobuild/unified/filogic/master/files/target/linux/mediatek/patches-6.6/999-2607-net-pcs-mtk-lynxi-add-individual-polarity-control.patch
-
-
-> - "st,px_rx_pol_inv" - its binding is a .txt file and I don't have time
->   for such a large detour to convert it to dtschema.
-> - "st,pcie-tx-pol-inv" and "st,sata-tx-pol-inv" - these are defined in a
->   .txt schema but are not implemented in any driver. My verdict would be
->   "delete the properties" but again, I would prefer not introducing such
->   dependency to this series.
-> 
-> Vladimir Oltean (9):
->   dt-bindings: phy: rename transmit-amplitude.yaml to
->     phy-common-props.yaml
->   dt-bindings: phy-common-props: create a reusable "protocol-names"
->     definition
->   dt-bindings: phy-common-props: RX and TX lane polarity inversion
->   dt-bindings: net: xpcs: allow properties from phy-common-props.yaml
->   phy: add phy_get_rx_polarity() and phy_get_tx_polarity()
->   net: pcs: xpcs: promote SJA1105 TX polarity inversion to core
->   net: pcs: xpcs: allow lane polarity inversion
->   net: phy: air_en8811h: deprecate "airoha,pnswap-rx" and
->     "airoha,pnswap-tx"
->   dt-bindings: net: airoha,en8811h: deprecate "airoha,pnswap-rx" and
->     "airoha,pnswap-tx"
-> 
->  .../bindings/net/airoha,en8811h.yaml          |  11 +-
->  .../bindings/net/pcs/snps,dw-xpcs.yaml        |   5 +-
->  .../bindings/phy/phy-common-props.yaml        | 152 ++++++++++++++++++
->  .../bindings/phy/transmit-amplitude.yaml      | 103 ------------
->  MAINTAINERS                                   |  21 +++
->  drivers/net/pcs/Kconfig                       |   1 +
->  drivers/net/pcs/pcs-xpcs-nxp.c                |  11 --
->  drivers/net/pcs/pcs-xpcs.c                    |  58 ++++++-
->  drivers/net/pcs/pcs-xpcs.h                    |   2 +-
->  drivers/net/phy/Kconfig                       |   1 +
->  drivers/net/phy/air_en8811h.c                 |  50 ++++--
->  drivers/phy/Kconfig                           |   9 ++
->  drivers/phy/Makefile                          |   1 +
->  drivers/phy/phy-common-props.c                | 117 ++++++++++++++
->  include/dt-bindings/phy/phy.h                 |   4 +
->  include/linux/phy/phy-common-props.h          |  20 +++
->  16 files changed, 426 insertions(+), 140 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/phy/phy-common-props.yaml
->  delete mode 100644 Documentation/devicetree/bindings/phy/transmit-amplitude.yaml
->  create mode 100644 drivers/phy/phy-common-props.c
->  create mode 100644 include/linux/phy/phy-common-props.h
-> 
-> -- 
-> 2.34.1
-> 
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+SGVsbG8gTHVjYSwKCk9uIFR1ZSBKdWwgMjIsIDIwMjUgYXQgMTA6NDMgQU0gQ0VTVCwgTHVjYSBD
+ZXJlc29saSB3cm90ZToKPiBGcm9tOiBMb3VpcyBDaGF1dmV0IDxsb3Vpcy5jaGF1dmV0QGJvb3Rs
+aW4uY29tPgo+Cj4gV2hlbiB0aGUgT1RHIFVTQiBwb3J0IGlzIHVzZWQgdG8gcG93ZXIgdG8gU29D
+LCBjb25maWd1cmVkIGFzIHBlcmlwaGVyYWwgYW5kCgp0eXBvOiBpcyB1c2VkIHRvIHBvd2VyICp0
+aGUqIFNvQwoKPiB1c2VkIGluIGdhZGdldCBtb2RlLCB0aGVyZSBpcyBhIGRpc2Nvbm5lY3Rpb24g
+YWJvdXQgNiBzZWNvbmRzIGFmdGVyIHRoZQo+IGdhZGdldCBpcyBjb25maWd1cmVkIGFuZCBlbnVt
+ZXJhdGVkLgo+Cj4gVGhlIHByb2JsZW0gd2FzIG9ic2VydmVkIG9uIGEgUmFkeGEgUm9jayBQaSBT
+IGJvYXJkLCB3aGljaCBjYW4gb25seSBiZQo+IHBvd2VyZWQgYnkgdGhlIG9ubHkgVVNCLUMgY29u
+bmVjdG9yLiBUaGF0IGNvbm5lY3RvciBpcyB0aGUgb25seSBvbmUgdXNhYmxlCgoid2hpY2ggY2Fu
+IG9ubHkgYmUgcG93ZXJlZCBieSB0aGUgb25seSBVU0ItQyBjb25uZWN0b3IiCmRvdWJsZSAib25s
+eSIgbWFrZXMgaXQgYSBzdXBlciBleGNsdXNpdmUgY29ubmVjdG9yIQoKPiBpbiBnYWRnZXQgbW9k
+ZS4gVGhpcyBpbXBsaWVzIHRoZSBVU0IgY2FibGUgaXMgY29ubmVjdGVkIGZyb20gYmVmb3JlIGJv
+b3QKPiBhbmQgbmV2ZXIgZGlzY29ubmVjdHMgd2hpbGUgdGhlIGtlcm5lbCBydW5zLgo+Cj4gVGhl
+IHByb2JsZW0gaGFwcGVucyBiZWNhdXNlIG9mIHRoZSBQSFkgZHJpdmVyIGNvZGUgZmxvdywgc3Vt
+bWFyaXplZCBhczoKPgo+ICAqIFVEQyBzdGFydCBjb2RlICh0cmlnZ2VyZWQgdmlhIGNvbmZpZ2Zz
+IGF0IGFueSB0aW1lIGFmdGVyIGJvb3QpCj4gICAgLT4gcGh5X2luaXQKPiAgICAgICAgLT4gcm9j
+a2NoaXBfdXNiMnBoeV9pbml0Cj4gICAgICAgICAgICAtPiBzY2hlZHVsZV9kZWxheWVkX3dvcmso
+b3RnX3NtX3dvcmsgW0FdLCA2IHNlYykKPiAgICAtPiBwaHlfcG93ZXJfb24KPiAgICAgICAgLT4g
+cm9ja2NoaXBfdXNiMnBoeV9wb3dlcl9vbgo+ICAgICAgICAgICAgLT4gZW5hYmxlIGNsb2NrCj4g
+ICAgICAgICAgICAtPiByb2NrY2hpcF91c2IycGh5X3Jlc2V0Cj4KPiAgKiBOb3cgdGhlIGdhZGdl
+dCBpbnRlcmZhY2UgaXMgdXAgYW5kIHJ1bm5pbmcuCj4KPiAgKiA2IHNlY29uZHMgbGF0ZXIgb3Rn
+X3NtX3dvcmsgc3RhcnRzIFtBXQo+ICAgIC0+IHJvY2tjaGlwX3VzYjJwaHlfb3RnX3NtX3dvcmso
+KToKPiAgICAgICAgaWYgKEJfSURMRSBzdGF0ZSAmJiBWQlVTIHByZXNlbnQgJiYgLi4uKToKPiAg
+ICAgICAgICAgIHNjaGVkdWxlX2RlbGF5ZWRfd29yaygmcnBvcnQtPmNoZ193b3JrIFtCXSwgMCk7
+Cj4KPiAgKiBpbW1lZGlhdGVseSB0aGUgY2hnX2RldGVjdF93b3JrIHN0YXJ0cyBbQl0KPiAgICAt
+PiByb2NrY2hpcF9jaGdfZGV0ZWN0X3dvcmsoKToKPiAgICAgICAgaWYgY2hnX3N0YXRlIGlzIFVO
+REVGSU5FRDoKPiAgICAgICAgICAgIGlmICghcnBvcnQtPnN1c3BlbmRlZCk6Cj4gICAgICAgICAg
+ICAgICAgcm9ja2NoaXBfdXNiMnBoeV9wb3dlcl9vZmYoKSA8LS0tIFtYXQo+Cj4gQXQgW1hdLCB0
+aGUgUEhZIGlzIHBvd2VyZWQgb2ZmLCBjYXVzaW5nIGEgZGlzY29ubmVjdGlvbi4gVGhpcyBxdWlj
+a2x5Cj4gdHJpZ2dlcnMgYSBuZXcgY29ubmVjdGlvbiBhbmQgZm9sbG93aW5nIHJlLWVudW1lcmF0
+aW9uLCBidXQgYW55IGNvbm5lY3Rpb24KPiB0aGF0IGhhZCBiZWVuIGVzdGFibGlzaGVkIGR1cmlu
+ZyB0aGUgNiBzZWNvbmRzIGlzIGJyb2tlbi4KPgo+IFRoZSBjb2RlIGFscmVhZHkgY2hlY2tzIGZv
+ciAhcnBvcnQtPnN1c3BlbmRlZCwgc28gYWRkIGEgZ3VhcmQgZm9yIFZCVVMgYXMKPiB3ZWxsIHRv
+IGF2b2lkIGEgZGlzY29ubmVjdGlvbiB3aGVuIGEgY2FibGUgaXMgY29ubmVjdGVkLgoKWW91ciBj
+b21taXQgbWVzc2FnZSB3YXMgY2xlYXIgYnV0IEkgd2FzIG1pc3Npbmcgb25lIGtleSBwb2ludDog
+d2hhdApycG9ydC0+c3VzcGVuZGVkIG1lYW5zLiBJdCBpc24ndCB3aGF0IEkgZmlyc3QgdGhvdWdo
+dC4gSW5zdGVhZCBpdCBtZWFucwpwaHkgaXMgcG93ZXJlZCBvZmYuIE5hbWluZyBpcyBiYWQgYnV0
+IHVucmVsYXRlZCB0byB5b3VyIHNlcmllcy4gTWF5YmUKYWRkIGEgY29tbWVudCB0byB5b3VyIGNv
+bW1pdCBtZXNzYWdlIGxpa2UgdGhlIGZvbGxvd2luZz8KCiAgVGhlIGNvZGUgYWxyZWFkeSBjaGVj
+a3MgZm9yICFycG9ydC0+c3VzcGVuZGVkIChQSFkgaXMgcG93ZXJlZCBvbiksIC4uLgoKPiBGaXhl
+czogOTg4OThmM2JjODNjICgicGh5OiByb2NrY2hpcC1pbm5vLXVzYjI6IHN1cHBvcnQgb3RnLXBv
+cnQgZm9yIHJrMzM5OSIpCj4gQ2xvc2VzOiBodHRwczovL2xvcmUua2VybmVsLm9yZy9sa21sLzIw
+MjUwNDE0MTg1NDU4Ljc3NjdhYWJjQGJvb3R5Lwo+IENvLWRldmVsb3BlZC1ieTogTHVjYSBDZXJl
+c29saSA8bHVjYS5jZXJlc29saUBib290bGluLmNvbT4KPiBTaWduZWQtb2ZmLWJ5OiBMdWNhIENl
+cmVzb2xpIDxsdWNhLmNlcmVzb2xpQGJvb3RsaW4uY29tPgo+IFNpZ25lZC1vZmYtYnk6IExvdWlz
+IENoYXV2ZXQgPGxvdWlzLmNoYXV2ZXRAYm9vdGxpbi5jb20+CgpJIGJlbGlldmUgdGhlcmUgaXMg
+YW4gaXNzdWUgd2l0aCB5b3VyIFNvQiBvcmRlcmluZy4gSXQgaXMgbWVhbnQgdG8Kc2lnbmFsIHRo
+ZSBwYXRoJ3Mgcm91dGUgZnJvbSBhdXRob3IgaW50byB0aGUga2VybmVsIHRyZWUuIEluIHRoYXQK
+c2Vuc2UsIGl0IHNob3VsZCBzdGFydCB3aXRoIGF1dGhvciBmb2xsb3dlZCBieSB5b3UgYXMgc3Vi
+bWl0dGVyLiBUaGVuCnRoZSBtYWludGFpbmVyIHdpbGwgYXBwZW5kIGl0cyBvd24uCgpEb2N1bWVu
+dGF0aW9uL3Byb2Nlc3Mvc3VibWl0dGluZy1wYXRjaGVzLnJzdCBpcyBzZW1pLWV4cGxpY2l0bHkg
+d3JpdGluZwp0aGF0IG91dDoKPiBBbnkgZnVydGhlciBTb0JzIFsuLi5dIGZvbGxvd2luZyB0aGUg
+YXV0aG9yJ3MgU29CIFsuLi5dCmh0dHBzOi8vZWxpeGlyLmJvb3RsaW4uY29tL2xpbnV4L3Y2LjE3
+Ljkvc291cmNlL0RvY3VtZW50YXRpb24vcHJvY2Vzcy9zdWJtaXR0aW5nLXBhdGNoZXMucnN0I0w0
+NDktTDQ1MwoKT25lIGdvb2Qgd2F5IHRvIGNoZWNrIGlzIHRoYXQgYWxsIG1haW50YWluZXJzIGFs
+d2F5cyBhcHBlbmQgdGhlaXIgU29CCnJhdGhlciB0aGFuIHByZXBlbmQuCgpXaXRoIHRoYXQsCgpS
+ZXZpZXdlZC1ieTogVGjDqW8gTGVicnVuIDx0aGVvLmxlYnJ1bkBib290bGluLmNvbT4KClRoYW5r
+cywKCi0tClRow6lvIExlYnJ1biwgQm9vdGxpbgpFbWJlZGRlZCBMaW51eCBhbmQgS2VybmVsIGVu
+Z2luZWVyaW5nCmh0dHBzOi8vYm9vdGxpbi5jb20KCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlz
+dApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5v
+cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
