@@ -4,107 +4,159 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F84CCFD37A
-	for <linux-phy@archiver.kernel.org>; Tue, 25 Nov 2025 10:06:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7518ACFD377
+	for <linux-phy@archiver.kernel.org>; Tue, 25 Nov 2025 10:25:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=mRFA9C593Tcyy8lt/QcIG4A6pj8PanJCEtkdH/PX+co=; b=GBX0T3TH+acGf6w5KcQOUWzmQg
-	1bL8RdGyPiIqrYZcuw6Y7ACgb7WCnYM0YrWL1iXt8W8EPRednpFzHZmx3C1qPClZwojOe5RfUvdwb
-	UmBr7oB7ygoXOu9Sr/X5hmkKe4heJWwHThEylajQWv9WMCHePB+Ix9wEVyEqA5mE9i0WTpp38JncZ
-	C8QG54XJnc4eTyv+myUB9L4hhjcXfDFtSwJAzWIgj7O2+AhvhRbC4gYzjCnOgWePsB9nhkmxGMM8i
-	go5SkuzR6RkiXsjH862Pqgwz3qShP1FstnrL0KP7CECGx0gTKmTPjTnKQOdsLx7nNX6P1faDXBpAX
-	/J7FEghw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Cc:Date:
+	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pS/iKJ4eiT3QVVVudc+eFDNSyUvef5490JLXJtaH2hw=; b=beMp1qEst5olmb
+	1ailjmOR6EgyLQauTEXcEw7T7+2PkdD41jS2j8dJkQ29huS8sL4WGxlDNR2sE2egK2vrNatruw1oq
+	wmduNwbWzqTS73YSB6I3dymSJt0zbztvOfAOEb7mWDTh1togF0/qOlyVYyuOnMAvJU2MUqDfRjsVa
+	EmHcPqIrXqAGqTpVg7SCLcrkLKUUeKu0rIinaVLkc++bYNTWOZf45EL2WOIX8atiFnW1qVyVyG6/8
+	o4NscjjzmhD9LmLtL3tphaQxjgiweFG9p2fHK9dmMPFzZsqeLOnXUpycIV+mEi187B48lgsbZ+0Ek
+	R5Pi9VykbpSiBghKk49g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vNpwQ-0000000D52J-3Y3V;
-	Tue, 25 Nov 2025 10:06:34 +0000
-Received: from mgamail.intel.com ([192.198.163.13])
+	id 1vNqF7-0000000D7nG-0Kbq;
+	Tue, 25 Nov 2025 10:25:53 +0000
+Received: from mo4-p01-ob.smtp.rzone.de ([85.215.255.52])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vNpwO-0000000D51P-0PaW;
-	Tue, 25 Nov 2025 10:06:33 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1764065192; x=1795601192;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:content-transfer-encoding:in-reply-to;
-  bh=29iXh/6Ar9jirfEFB6sY3oHqcMP8jUND/E2p9xDZiTA=;
-  b=ZBWoxlDkm2pjIjscvaF7NKQn2aE7IZr4zfakZBjPXxm/BdXZfuJFmJa7
-   8/Gb82yMSmRFAF+ORvNvSyxWcX8hgQprTB+PAO9mkFWrgMcjlLkdCtvag
-   TpcntP/ulrZ5Qqj60xFfMOZoaorjzrCRujDPpyxcCWQmwosWxA+Kzz7U7
-   7iwVbPXXNE8BPhvhp1/GYliHpB9jJkhSNpdew5FWkiMmNrSd5Ky3VFtKW
-   bWedzoVdmUdg6S/+k2xDpEuwUBWPPpluNniHlASo9Rzk4b6DO7litfFUo
-   ph/ElbP76QaC5NPbCr/9pjU4jkXI1bpMyXq43f9UDJNsjhOurl4RdZnDl
-   g==;
-X-CSE-ConnectionGUID: P6cjyZ21S6G3y0Nx54EQIQ==
-X-CSE-MsgGUID: MJI7rIfGR+qtFYb3xrCxnw==
-X-IronPort-AV: E=McAfee;i="6800,10657,11623"; a="68667744"
-X-IronPort-AV: E=Sophos;i="6.20,225,1758610800"; 
-   d="scan'208,223";a="68667744"
-Received: from orviesa007.jf.intel.com ([10.64.159.147])
-  by fmvoesa107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 25 Nov 2025 02:06:31 -0800
-X-CSE-ConnectionGUID: K/jA8k83RpK/ZnK1Pja1og==
-X-CSE-MsgGUID: PQdR2EyrTQyJq0R1zTWu6Q==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.20,225,1758610800"; 
-   d="scan'208,223";a="192591005"
-Received: from vverma7-mobl3.amr.corp.intel.com (HELO kuha) ([10.124.222.196])
-  by orviesa007.jf.intel.com with SMTP; 25 Nov 2025 02:06:20 -0800
-Received: by kuha (sSMTP sendmail emulation); Tue, 25 Nov 2025 12:06:13 +0200
-Date: Tue, 25 Nov 2025 12:06:13 +0200
-From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
-To: Chaoyi Chen <chaoyi.chen@rock-chips.com>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Chaoyi Chen <kernel@airkyi.com>,
-	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
-	Peter Chen <hzpeterchen@gmail.com>,
-	Luca Ceresoli <luca.ceresoli@bootlin.com>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
-	Andy Yan <andy.yan@rock-chips.com>,
-	Yubing Zhang <yubing.zhang@rock-chips.com>,
-	Frank Wang <frank.wang@rock-chips.com>,
-	Andrzej Hajda <andrzej.hajda@intel.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Robert Foss <rfoss@kernel.org>,
-	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
-	Jonas Karlman <jonas@kwiboo.se>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
-	Amit Sunil Dhamne <amitsd@google.com>,
-	Dragan Simic <dsimic@manjaro.org>, Johan Jonker <jbx6244@gmail.com>,
-	Diederik de Haas <didi.debian@cknow.org>,
-	Peter Robinson <pbrobinson@gmail.com>, linux-usb@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org
-Subject: Re: [PATCH v10 01/11] usb: typec: Add notifier functions
-Message-ID: <aSV_lQYJPxN7oBM-@kuha>
-References: <20251120022343.250-1-kernel@airkyi.com>
- <20251120022343.250-2-kernel@airkyi.com>
- <2025112102-laurel-mulch-58e4@gregkh>
- <462ad1bd-7eec-4f26-b383-96b049e14559@rock-chips.com>
- <2025112402-unopposed-polio-e6e9@gregkh>
- <a80483de-518d-45d5-b46a-9b70cca5b236@rock-chips.com>
- <2025112448-brush-porcupine-c851@gregkh>
- <c9cb7b79-37c8-4fef-97a6-7d6b8898f9c4@rock-chips.com>
-MIME-Version: 1.0
-Content-Type: multipart/mixed; boundary="vzc56uF0OXm6IX+X"
-Content-Disposition: inline
-Content-Transfer-Encoding: 8bit
-In-Reply-To: <c9cb7b79-37c8-4fef-97a6-7d6b8898f9c4@rock-chips.com>
+	id 1vNqF3-0000000D7mo-3ESM;
+	Tue, 25 Nov 2025 10:25:51 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1764066342; cv=none;
+    d=strato.com; s=strato-dkim-0002;
+    b=NzivWj6Wl1NM1bZP0RGHpGW+8z5YfYoZZQB6SZ7oE0K379GniDRgLThnVnrKx041yX
+    Rrr7dL+XkCrKJTh0o60YvsuVoKT7Uh7n3rREe9+68nUQy9S5g+2OoiIb6iBTvfWW/ZDO
+    fIEZcRanRPFsMd+6CojEwNrjLylNFN0dHXHaIiBVqJHuoG0erVM6d8EIrsjy/EXFO/3t
+    Nk0/pIr7uEJD1574+egQP950fleFa45S+H9NqGn6FtSGl4H6uLndn49F68NbaDG1aUKY
+    LnMvbnr9MTnxmYThtRMkwU7jN4b5xKAKMJfY2SKF72ThRmxjsOXKACM5i1yiTB21VllR
+    YLjA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; t=1764066342;
+    s=strato-dkim-0002; d=strato.com;
+    h=To:References:Message-Id:Cc:Date:In-Reply-To:From:Subject:Cc:Date:
+    From:Subject:Sender;
+    bh=ci29UazI1lhJ06hRQOi/pXDn1T/cUfvDF30uEVyO5pU=;
+    b=DUZS90uDQzuXhzfDxKl7aLKA3SD/9FN8JgYePxbDvXNBvInnO0EA0uK+I/U8JLJQ85
+    QGEKw5QvyLAjwMjszBDxIeAxyuXmkqODeBIfy/2NDr2c0g2QyqkZr6Lj7TiTIWMbzwzh
+    kfQ3TFtvhAShsRjZ9k1yiuRBeU9Q59M2W8mTDqtt674+elSuXvjyG/VJk2YLVoCUG9u7
+    TDfy1FKCJDCCIIiXcOT4GoXjB/8gMv5ayEeqVp+A2iBGrZeN5zL2pom0xCBX+lDNq/w4
+    E/IkIUuZiGUr55vimV0zmAdfPaS/4mDfPGWfW1DeVVRwj3G7uEGdRcqIbJxgMKM0Nurd
+    U9Lw==
+ARC-Authentication-Results: i=1; strato.com;
+    arc=none;
+    dkim=none
+X-RZG-CLASS-ID: mo01
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1764066342;
+    s=strato-dkim-0002; d=goldelico.com;
+    h=To:References:Message-Id:Cc:Date:In-Reply-To:From:Subject:Cc:Date:
+    From:Subject:Sender;
+    bh=ci29UazI1lhJ06hRQOi/pXDn1T/cUfvDF30uEVyO5pU=;
+    b=NLwgKJhseBcqf+qUCcNj2+koSRExJGn67iUNx8oZea86hMBXpgTWZDKq+hlNdeo/gV
+    o7wD1yY5AWz/C3RsYz2hqQZZEEsYgy1uxQnCyebl0ji7Q4F7fGIaXOeCjEm2qvyrPs7/
+    PFhRGgDV6t8TEwTjkxNxxpt/dGMRDHDe47Q5iHIgbERY7WPKTCRd3ZMPryIBgHQrQ0iy
+    fh7TMnj8FjEOtPrf5G4DN8w3G6nUyrwAPjKRONUBk39q0C994tE2aWE7tL/lbxUsuD1K
+    FALSXPW4eiXUxz4NbkQHZ0/GajNrgEAqMXAiU+VPN3N73rnqcMc+KkyPJ+5fU42FmEQ5
+    M5fw==
+DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; t=1764066342;
+    s=strato-dkim-0003; d=goldelico.com;
+    h=To:References:Message-Id:Cc:Date:In-Reply-To:From:Subject:Cc:Date:
+    From:Subject:Sender;
+    bh=ci29UazI1lhJ06hRQOi/pXDn1T/cUfvDF30uEVyO5pU=;
+    b=oxtcGT9pznqCf1GAkAo8NBELt2UFYQtp5VANAM5oSapF8U4k5ISG7tnH5rFudzvipf
+    ykK//xuRAvGRwjHCB/BQ==
+X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMhflhwDubTJ9o12DNOsPj0lFzL1yfzsZ"
+Received: from smtpclient.apple
+    by smtp.strato.de (RZmta 54.0.0 DYNA|AUTH)
+    with ESMTPSA id Qc14a81APAPZMQu
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (curve X9_62_prime256v1 with 256 ECDH bits, eq. 3072 bits RSA))
+	(Client did not present a certificate);
+    Tue, 25 Nov 2025 11:25:35 +0100 (CET)
+Mime-Version: 1.0 (Mac OS X Mail 16.0 \(3826.700.81.1.3\))
+Subject: Re: [PATCH v4 0/6] Add support for the LTM8054 voltage regulator
+From: "H. Nikolaus Schaller" <hns@goldelico.com>
+In-Reply-To: <3021060.e9J7NaK4W3@fw-rgant>
+Date: Tue, 25 Nov 2025 11:25:24 +0100
+Cc: Liam Girdwood <lgirdwood@gmail.com>,
+ Mark Brown <broonie@kernel.org>,
+ Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>,
+ Jonathan Cameron <jic23@kernel.org>,
+ David Lechner <dlechner@baylibre.com>,
+ =?utf-8?Q?Nuno_S=C3=A1?= <nuno.sa@analog.com>,
+ Andy Shevchenko <andy@kernel.org>,
+ Guenter Roeck <linux@roeck-us.net>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ linux-kernel@vger.kernel.org,
+ devicetree@vger.kernel.org,
+ linux-iio@vger.kernel.org,
+ Conor Dooley <conor.dooley@microchip.com>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>,
+ Chanwoo Choi <cw00.choi@samsung.com>,
+ Peter Rosin <peda@axentia.se>,
+ Mariel Tinaco <Mariel.Tinaco@analog.com>,
+ Lars-Peter Clausen <lars@metafoo.de>,
+ Michael Hennerich <Michael.Hennerich@analog.com>,
+ Kevin Tsai <ktsai@capellamicro.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ Eugen Hristev <eugen.hristev@linaro.org>,
+ Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Sebastian Reichel <sre@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>,
+ Support Opensource <support.opensource@diasemi.com>,
+ Paul Cercueil <paul@crapouillou.net>,
+ Iskren Chernev <me@iskren.info>,
+ Marek Szyprowski <m.szyprowski@samsung.com>,
+ Matheus Castello <matheus@castello.eng.br>,
+ Saravanan Sekar <sravanhome@gmail.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+ Casey Connolly <casey.connolly@linaro.org>,
+ =?utf-8?Q?Pali_Roh=C3=A1r?= <pali@kernel.org>,
+ Orson Zhai <orsonzhai@gmail.com>,
+ Baolin Wang <baolin.wang@linux.alibaba.com>,
+ Chunyan Zhang <zhang.lyra@gmail.com>,
+ Amit Kucheria <amitk@kernel.org>,
+ Thara Gopinath <thara.gopinath@gmail.com>,
+ "Rafael J. Wysocki" <rafael@kernel.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Zhang Rui <rui.zhang@intel.com>,
+ Lukasz Luba <lukasz.luba@arm.com>,
+ Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>,
+ Jaroslav Kysela <perex@perex.cz>,
+ Takashi Iwai <tiwai@suse.com>,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>,
+ Olivier Moysan <olivier.moysan@foss.st.com>,
+ Arnaud Pouliquen <arnaud.pouliquen@foss.st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@foss.st.com>,
+ Dixit Parmar <dixitparmar19@gmail.com>,
+ linux-hwmon@vger.kernel.org,
+ linux-input@vger.kernel.org,
+ linux-phy@lists.infradead.org,
+ linux-pm@vger.kernel.org,
+ linux-mips@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ linux-mediatek@lists.infradead.org,
+ linux-arm-msm@vger.kernel.org,
+ linux-sound@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Andy Shevchenko <andriy.shevchenko@intel.com>
+Message-Id: <0E900830-E248-4F0F-A048-075EAF1D2440@goldelico.com>
+References: <20251124-ltm8054-driver-v4-0-107a8a814abe@bootlin.com>
+ <4053840.MHq7AAxBmi@fw-rgant>
+ <732D3F12-0361-4800-8981-EF629B4C491F@goldelico.com>
+ <3021060.e9J7NaK4W3@fw-rgant>
+To: Romain Gantois <romain.gantois@bootlin.com>
+X-Mailer: Apple Mail (2.3826.700.81.1.3)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251125_020632_220090_58C30AC1 
-X-CRM114-Status: GOOD (  75.42  )
+X-CRM114-CacheID: sfid-20251125_022550_233302_4AD4C50C 
+X-CRM114-Status: GOOD (  41.96  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -116,272 +168,143 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Hi,
 
---vzc56uF0OXm6IX+X
-Content-Type: text/plain; charset=iso-8859-1
-Content-Disposition: inline
-Content-Transfer-Encoding: 8bit
 
-Tue, Nov 25, 2025 at 10:23:02AM +0800, Chaoyi Chen kirjoitti:
-> On 11/25/2025 12:33 AM, Greg Kroah-Hartman wrote:
-> > On Mon, Nov 24, 2025 at 04:05:53PM +0800, Chaoyi Chen wrote:
-> > > Hi Greg,
-> > > 
-> > > On 11/24/2025 3:10 PM, Greg Kroah-Hartman wrote:
-> > > 
-> > > > On Mon, Nov 24, 2025 at 09:40:03AM +0800, Chaoyi Chen wrote:
-> > > > > Hi Greg,
-> > > > > 
-> > > > > On 11/21/2025 10:07 PM, Greg Kroah-Hartman wrote:
-> > > > > > On Thu, Nov 20, 2025 at 10:23:33AM +0800, Chaoyi Chen wrote:
-> > > > > > > From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
-> > > > > > > 
-> > > > > > > Some other part of kernel may want to know the event of typec bus.
-> > > > > > Be specific, WHAT part of the kernel will need to know this?
-> > > > > For now, it is DRM.
-> > > > Then say this.
-> > > Okay, please refer to the discussion below.
-> > > 
-> > > > > > And why a new notifier, why not just use the existing notifiers that you
-> > > > > > already have?  And what is this going to be used for?
-> > > > > We have discussed this before, but the current bus notifier cannot achieve the expected notification [0].
-> > > > > 
-> > > > > [0] https://lore.kernel.org/all/aPsuLREPS_FEV3DS@kuha.fi.intel.com/
-> > > > Then you need to document the heck out of this in the changelog text.
-> > > > But I'm still not quite understanding why the bus notifier does not work
-> > > > here, as you only want this information if the usb device is bound to
-> > > > the bus there, you do not want to know this if it did not complete.
-> > > > 
-> > > > That thread says you want this not "too late", but why?  What is the
-> > > > problem there, and how will you handle your code getting loaded after
-> > > > the typec code is loaded?  Notifier callbacks don't work for that
-> > > > situation, right?
-> > > In fact, the typec_register_altmode() function generates two
-> > > registered events. The first one is the registered event of the port
-> > > device, and the second one is the registered event of the partner
-> > > device. The second one event only occurs after a Type-C device is
-> > > inserted.
-> > > The bus notifier event does not actually take effect for the port
-> > > device, because it only sets the bus for the partner device:
-> > > 
-> > >      /* The partners are bind to drivers */
-> > >      if (is_typec_partner(parent))
-> > >          alt->adev.dev.bus = &typec_bus;
-> > Setting the bus is correct, then it needs to be registered with the
-> > driver core so the bus link shows up (and a driver is bound to it.)
-> > That is when the bus notifier can happen, right?
-> Yes, this is valid for the partner device. But for the port device, since the bus is not specified here, the corresponding bus notifier will not take effect.
-
-Perhaps we should just fix this part and make also the port altmodes
-part of the bus.
-
-Some background, in case this is not clear; the port alternate mode
-devices represent the capability of the ports to support specific
-alternate modes. The partner alternate mode devices do the same
-for the partner devices attached to the ports, but on top of the
-showing the capability, they are also used for the alternate mode
-specific communication using the USB Power Delivery VDM (vendor
-defined messages). That's why only the partner altmodes are bound
-to the generic alternate mode drivers.
-
-And that's why the hack where the port altmodes are not added to the
-bus. But maybe it's not needed.
-
-Chaoyi, can you try the attached patch?
-
-> > > I hope it's not too late. In fact, the notifier here will notify DRM to establish a bridge chain.
-> > What is a "bridge chain"?
-> In DRM, the bridge chain is often used to describe the chain connection relationship
-> of the output of multi level display conversion chips. The bridge chain we are referring to here
-> is actually a chain  structure formed by connecting various devices using a simple transparent bridge [0].
-> 
-> For example, the schematic diagram of a bridge chain is as follows:
-> 
-> DP controller bridge -> DP PHY bridge -> onnn,nb7vpq904m retimer bridge -> fsa4480 analog audio switch bridge -> fusb302 HPD bridge
-> 
-> Here, apart from the DP controller bridge, the rest are transparent DRM bridges, which are used solely to
-> describe the link relationships between various devices.
+> Am 25.11.2025 um 09:41 schrieb Romain Gantois <romain.gantois@bootlin.com>:
 > 
 > 
-> [0] https://patchwork.freedesktop.org/patch/msgid/20231203114333.1305826-2-dmitry.baryshkov@linaro.org
+> This is planned support for a voltage regulator chip.
+
+
+Well, but one which is not by itself programmable. So IMHO, it does not support that chip,
+but the circuit it is used in.
+
+> 
+> > Are you looking for a virtual "glue" driver to logically combine several low
+> > level functions?
 > > 
-> > > The downstream DP controller driver hopes to obtain the fwnode of the last-level Type-C device
-> > > through this bridge chain to create a DRM connector. And when a device is inserted,
-> > > drivers/usb/typec/altmodes/displayport.c can notify the HPD (Hot Plug Detect) event.
-> > But aren't you just the driver for the "partner device"?
+> 
+> I'm looking for a clean userspace abstraction for this component, the low-
+> level functions in this case are those of a voltage regulator.
+
+As far as I understood it has
+- constant voltage
+- current can be limited
+- it can be turned on/off
+
+That means it is a fixed-regulator (for constant voltage and turn on/off)
+and a mechanism to program the current limit (iio-dac). Both have clean
+userspace abstraction.
+
+What am I missing?
+
+> > What I still wonder: does your hardware warrant an upstream driver for a
+> > non-programable chip if a different solution (with help of user-space)
+> > already exist?
 > > 
-> > If not, why isn't a real device being created that you then bind to,
-> > what "fake" type of thing are you attempting to do here that would
-> > require you to do this out-of-band?
-> The HPD event is pass by drm_connector_oob_hotplug_event(), which does not use the device in Type-C.
-> This function will find the corresponding DRM connector device, and the lookup of the DRM connector is
-> done through the fwnode.
 > 
-> And the partner device and the port device have the same fwnode.
+> A different solution does not currently exist (although a userspace-based 
+> solution could be designed). I just think that a kernel-based solution is more 
+> desirable here.
+
+I agree, but that is a common discussion :) For example, years ago I had a long
+discussion if there should be touchscreen pre-calibration in kernel, which is
+desirable to get it almost right after boot, or if it is user-space... In the
+end it was rejected.
+
 > 
+> > Another question: is your scheme generic enough so that it can be expected
+> > that other devices are using it in the same way?
 > > 
-> > > If relying on the second event, the bridge chain may never be established, and the operations of the DP driver will be
-> > > always deferred. Furthermore, other parts of the display controller driver will also be deferred accordingly.
-> > What operations?  What exactly is delayed?  You should not be touching a
-> > device before you have it on your bus, right?
-> To complete the HPD operation, it is necessary to create a drm connector device that
-> has the appropriate fwnode. This operation will be carried out by the DP controller driver.
 > 
-> As you can see, since it cross multiple devices, we need to set the fwnode to the last device fusb302.
-> This requires relying on the bridge chain. We can register bridges for multiple devices and then connect
-> them to form a chain. The connection process is completed through drm_bridge_attach().
-> 
-> A brief example of the process of establishing a bridge chain is as follows, starting from the last bridge:
-> 
-> step1: fusb302 HPD bridge
-> step2: fsa4480 analog audio switch bridge -> fusb302 HPD bridge
-> step3: onnn,nb7vpq904m retimer bridge -> fsa4480 analog audio switch bridge -> fusb302 HPD bridge
-> step4: DP PHY bridge -> onnn,nb7vpq904m retimer bridge -> fsa4480 analog audio switch bridge -> fusb302 HPD bridge
-> step5: DP controller bridge -> DP PHY bridge -> onnn,nb7vpq904m retimer bridge -> fsa4480 analog audio switch bridge -> fusb302 HPD bridge
-> 
-> Step 1 is the most crucial, because essentially, regardless of whether we use notifiers or not, what we ultimately want to achieve is to create an HPD bridge.
-> The DP controller needs to wait for the subsequent bridge chain to be established because it needs to know the connection relationships of the devices.
-> 
-> The question now is when to create the HPD bridge, during the registration of the port device or during the registration of the partner device.
-> If it's the latter, then the delay occurs here.
-> 
-> And I don't think I'm touching the Type-C device here. I'm just using the bridge chain to get a suitable fwnode and create a suitable DRM connector device.
-> The subsequent Type-C HPD events will be on the DRM connector device.
-> 
-> This solution is somewhat complex, and I apologize once again for any confusion caused earlier.
-> 
+> Yes, the LTM8054 has a fairly common design as far as buck-boost chips go. 
+> Things like feedback dividers on the output voltage pin are standard practice.
+
+Yes, I know - but how is this related to the kernel or a driver? To my knowledge
+feedback dividers are never relevant for kernel drivers for buck regulators,
+especially if they are fixed and can not be programmed. They end up in a specification
+of regulator-min-microvolt and regulator-max-microvolt.
+
+So I still wonder why they must be made available to the kernel and user-space.
+
+If you look for example into the schematics of a PocketBeagle 2 
+(https://docs.beagleboard.org/pocketbeagle-2.pdf).
+
+Figure 3.23 on page 26 shows a 3.3V step-down converter with enable and feedback
+resistors (560k/124k).
+
+Still, this regulator is represented not by a dedicated TLV62595 driver but:
+
+https://elixir.bootlin.com/linux/v6.18-rc7/source/arch/arm64/boot/dts/ti/k3-am62-pocketbeagle2.dts#L91
+
+Well, it does not have a controllable current limit, just a builtin one.
+(And a gpio-control could be added by using a regulator-gpio driver).
+
+> And since the driver doesn't rely on a particular way of integrating the 
+> LTM8054 with other components, it can be reused wherever the same regulator 
+> chip is used.
+
+That are my questions:
+- what is so different with an LTM8054 to other buck regulators that it needs a dedicated driver
+- is the feature to control current limit by a DAC to the LTM8054 or is it the DAC (in software perspective)
+- does it need a conversion factor from mA to binary value? Why is this needed in kernel?
+- are there similar designs planned for this chip or already in use which run Linux?
+
+> > Or could the power controller framework (/sys/class/power_supply) fit
+> > better?
 > > 
-> > > > > > Notifiers are a pain, and should almost never be added.  Use real
-> > > > > > function calls instead.
-> > > > > In v6, I used direct function calls, but had to switch to notifiers because couldn't resolve the dependencies between DRM and Type-C [1]. Do you have any good ideas? Thank you.
-> > > > Only allow this DRM code to be built if typec code is enabled, do NOT
-> > > > use a select, use a depends in the drm code.
-> > > Sorry, I didn't get your point. Does this mean that the current notifiers approach still needs to be changed to direct function calls?
-> > If you somehow convince me that the existing bus notifiers will not
-> > work, yes :)
+> 
+> I don't think the power supply abstraction is relevant here. The LTM8054 is a 
+> voltage regulator, it doesn't have charge, capacity, temperature monitoring, 
+> power limitation, or other power supply class features.
+
+By current limitation you also have power limitation. Yes, it does not
+need to provide charge, capacity, temperature but IMHO they are not all mandatory.
+It is just a suggestion to look around if there are different abstractions
+that already exist and can be used.
+
+> 
+> > There is an API to ask chargers etc. for battery voltage and current limits
+> > or even write them.
 > > 
-> > > If so, then based on the previous discussion, typec should not depend
-> > > on any DRM components. Does this mean that we should add the if
-> > > (IS_REACHABLE(CONFIG_DRM_AUX_BRIDGE)) before the direct function call?
-> > No, do it properly like any other function call to another subsystem.
-> > 
-> > > Additionally, the current version of CONFIG_DRM_AUX_BRIDGE is selected
-> > > by the DP driver in patch9.
-> > Don't do "select" if at all possible, always try to do "depends on".
-> Thank you for clarifying this. However, CONFIG_DRM_AUX_BRIDGE is not exposed in the menu, and it is not intended for the end user to select it by design. Therefore, I think there still needs to be some place to select it?
+> > There is also "generic-adc-battery" which allows to hook up with arbitrary
+> > iio-adcs for measurements - although you need a DAC in your setup. Maybe an
+> > extension here is a better strategy than a dedicated ltm8054 driver?
+> 
+> 
+> What if the LTM8054 is not used to supply a battery?
 
-You don't "select TYPEC", you already "depend on TYPEC", so you are
-all set with this one.
+The question remains if you want to solve something for a single board which
+happens to have an LTM8054 or if you are solving a more general design pattern.
 
-thanks,
+In summary my view is that the LTM8054 is just a "fixed-regulator" which
+gets an additional current-limiter feature by adding a DAC chip (which needs a
+driver of course). So software control is required not by the LTM8054 but by
+adding a DAC chip.
 
--- 
-heikki
+Another suggestion: what extending the "regulator-fixed", "regulator-gpio",
+"regulator-fixed-clock" pattern by some "regulator-gpio-iio-dac-current-limiter"
+driver to make it independent of your specific chip?
 
---vzc56uF0OXm6IX+X
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: attachment;
-	filename=0001-usb-typec-Set-the-bus-also-for-the-port-altmodes.patch
+By the way, are you aware of this feature of the regulator-gpio driver?
 
-From 8cca23b3064bf8b33e316245732a8baf834142d2 Mon Sep 17 00:00:00 2001
-From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
-Date: Tue, 25 Nov 2025 10:38:04 +0100
-Subject: [PATCH] usb: typec: Set the bus also for the port altmodes
+https://elixir.bootlin.com/linux/v6.18-rc7/source/drivers/regulator/gpio-regulator.c#L97
 
-The port altmodes can't be bound to the altmode drivers
-because the altmode drivers are meant for partner
-commuication using the VDM (vendor defined messages), but
-they can still be part of the bus. The bus will make sure
-that the normal bus notifications are available also with
-the port altmodes.
+Just to note: I am neither maintainer nor doing any decisions on this, just asking
+questions for curiosity and from experience and giving hints for alternative approaches,
+where I hope they help to find the really best solution.
 
-Signed-off-by: Heikki Krogerus <heikki.krogerus@linux.intel.com>
----
- drivers/usb/typec/bus.c   | 24 +++++++++++++++++++++++-
- drivers/usb/typec/class.c |  4 +---
- 2 files changed, 24 insertions(+), 4 deletions(-)
+Best regards,
+Nikolaus
 
-diff --git a/drivers/usb/typec/bus.c b/drivers/usb/typec/bus.c
-index a884cec9ab7e..1daf7a353c01 100644
---- a/drivers/usb/typec/bus.c
-+++ b/drivers/usb/typec/bus.c
-@@ -445,7 +445,23 @@ static struct attribute *typec_attrs[] = {
- 	&dev_attr_description.attr,
- 	NULL
- };
--ATTRIBUTE_GROUPS(typec);
-+
-+static umode_t typec_is_visible(struct kobject *kobj, struct attribute *attr, int n)
-+{
-+	if (is_typec_port(kobj_to_dev(kobj)->parent))
-+		return 0;
-+	return attr->mode;
-+}
-+
-+static const struct attribute_group typec_group = {
-+	.is_visible = typec_is_visible,
-+	.attrs = typec_attrs,
-+};
-+
-+static const struct attribute_group *typec_groups[] = {
-+	&typec_group,
-+	NULL
-+};
- 
- static int typec_match(struct device *dev, const struct device_driver *driver)
- {
-@@ -453,6 +469,9 @@ static int typec_match(struct device *dev, const struct device_driver *driver)
- 	struct typec_altmode *altmode = to_typec_altmode(dev);
- 	const struct typec_device_id *id;
- 
-+	if (is_typec_port(dev->parent))
-+		return 0;
-+
- 	for (id = drv->id_table; id->svid; id++)
- 		if (id->svid == altmode->svid)
- 			return 1;
-@@ -469,6 +488,9 @@ static int typec_uevent(const struct device *dev, struct kobj_uevent_env *env)
- 	if (add_uevent_var(env, "MODE=%u", altmode->mode))
- 		return -ENOMEM;
- 
-+	if (is_typec_port(dev->parent))
-+		return 0;
-+
- 	return add_uevent_var(env, "MODALIAS=typec:id%04X", altmode->svid);
- }
- 
-diff --git a/drivers/usb/typec/class.c b/drivers/usb/typec/class.c
-index 9b2647cb199b..26bf76328487 100644
---- a/drivers/usb/typec/class.c
-+++ b/drivers/usb/typec/class.c
-@@ -584,9 +584,7 @@ typec_register_altmode(struct device *parent,
- 	if (!is_port)
- 		typec_altmode_set_partner(alt);
- 
--	/* The partners are bind to drivers */
--	if (is_typec_partner(parent))
--		alt->adev.dev.bus = &typec_bus;
-+	alt->adev.dev.bus = &typec_bus;
- 
- 	/* Plug alt modes need a class to generate udev events. */
- 	if (is_typec_plug(parent))
--- 
-2.50.1
-
-
---vzc56uF0OXm6IX+X
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---vzc56uF0OXm6IX+X--
-
