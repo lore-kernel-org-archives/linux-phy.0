@@ -4,68 +4,154 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 976CED11180
-	for <linux-phy@archiver.kernel.org>; Wed, 26 Nov 2025 15:33:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 89A07D11181
+	for <linux-phy@archiver.kernel.org>; Wed, 26 Nov 2025 15:58:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
-	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=enXLmsEU0Sq+3oPDqs2LlytAh2n2Oxf4tACRPndR2hc=; b=0msUsaCR9Y3Dl7
-	L+9OBvxt0evxSnSypDXnkBk3h51iftNrp2/VvdECuh8dHAVsWiqFr+ENIWQewY8+GHFvlOVE70yBT
-	AQA0RW4wq4uizr2s6Tac+Ctc2pZzz8uDvf1jkwEFN8ASHWRkQrlw5Ko1ZQPB/vifC7QRwu6mBeXIE
-	B9RAcY7XBXYXjR5NJRVhuVpBpOfWLEjg6QtkDbZJAf2kiSF5famVTvBc1MHY5I4+EpCsmjzQ49tBK
-	gKCgJUuuc6Cu3D6VMm7CzObkv8/JEc2SmMZsUb7FPka6F4tix57mGCcji7qOP+tKPc4NVmgsbRt23
-	vEfaxprhtJAfUD/+zbkw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=SQVTzpPBkNCqu2UwEBwjR/nYF8C02z+lH2TcPEofQOg=; b=DjIHVXbOmOKsYV
+	7E1ZPNsL+bRLvbyevMPYMhtDq7ntWc+FvqG0SWWp/ukg5MEne+wOhnmAt6zPcuBM9Jy1K8QjcfGI5
+	9MsIJjq7iMyMT3EKQhKFj40T8mq37u33QyFgvcy9fe25Q9bhpJnBRe4GHmYS+6BWAksRzCcjUoYnv
+	QAzL7cYH3j7HiQAPYWhHmrvceNm4vFb33zcNnghXSkOQFXN6PL3n6UtDqwXXdHYrmR7Tcpb62n/5W
+	c85r0Gr4KKIUniAzUBQSPqX1n8uiqNa5HxClQfIG7raeYlKigwYdjOBMGW5eCAuaZHWo8iMd4XO5/
+	gHu5eW+xqTzV/MJ1KkDA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vOHWj-0000000FBhK-0nwu;
-	Wed, 26 Nov 2025 15:33:53 +0000
-Received: from smtpout-04.galae.net ([185.171.202.116])
+	id 1vOHub-0000000FDUy-0bzH;
+	Wed, 26 Nov 2025 15:58:33 +0000
+Received: from mail-northeuropeazon11010022.outbound.protection.outlook.com ([52.101.84.22] helo=DB3PR0202CU003.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vOHWf-0000000FBgC-1Pbb
-	for linux-phy@lists.infradead.org;
-	Wed, 26 Nov 2025 15:33:51 +0000
-Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-04.galae.net (Postfix) with ESMTPS id 3B903C15D79;
-	Wed, 26 Nov 2025 15:33:22 +0000 (UTC)
-Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id E710B60721;
-	Wed, 26 Nov 2025 15:33:44 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 8166D102F1B84;
-	Wed, 26 Nov 2025 16:33:41 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1764171224; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 content-transfer-encoding; bh=lsp+NJNBTPSySlUe7BHmxpBQDMNBrZS8TeTFL/zK5No=;
-	b=HLYw/BQSdsL+LQRm985OiJHaD7YVi4TXpLl1L3FK/qmSm5d4kmukfWQq75vqVSJj7mKiRQ
-	RgMKdN8CJG1srErTMLjDYaXigkRD8WKNhWpV2qPpOHhvbGrmH6G4XjtGR324QdobGovNEo
-	Uxe/qjb/8niE2EjCzmHnkCPpVta46+wb0J4RyUGHyUKwTPGg8ApVjYBbkU3jU8Vba8A5+Q
-	LJhfWzp2NqxaJjqNPJrYC3qdD1/ex66rCFtMvNDkzxjFlbjFfnR4Hn7GhfMWh+ai9bYjs3
-	o3eVc+5AtSL4soSZbXBcINX7yFAXHuVTuM++JU0YFQk6qaid20sxNdF6TdRUMg==
-From: "Thomas Richard (TI.com)" <thomas.richard@bootlin.com>
-Date: Wed, 26 Nov 2025 16:33:37 +0100
-Subject: [PATCH v2] phy: cadence-torrent: restore parent clock for refclk
- during resume
+	id 1vOHuY-0000000FDTt-3QWT;
+	Wed, 26 Nov 2025 15:58:31 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=dTmBb+irpDGNjiwwHnoIEG1jcWHH+cT/zdhp4Eg8qP6mGBNaeHrMkCKHLKtr4D35UTf8bMYbkzQmZX7D5/lsaWP4clEzZcubde4yjI/lTBEcXs5RHsn6hjfog+CV7AhuwxpFeX8o5MBSBpF6W8TI7XEd6Y+irS2o1OYAzXrWqaGRiOtmKd0jUUXd3/1jNDXf9dyZeOhHB/zdaKwu4NJKAeirPapuU8A0+bWWwfruVGNIi5Q/OV2fBlsvyjz7D+RxiSBr8YvDCj/yBvmxYgIzXzfnS6yzI6jcd+MQgCsdw1MphD5rR3JqtGn73neyq6ZLM1KEwIYpiwOsedaY1/HBJg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=KERdB35fdZJQwlTkaIBbWBNw1MQAyN5I4+Q3sKDn7oY=;
+ b=JdPjcysr4LjSjadceeMNWa5vZw8M+nvunBuYJsxHNgANnb/VnHKtQKS+HZR+ZR4bS0Jf2uRwBPBpFmXW6bxalN2zpbYs91x7gPVZr/Wq6rMqPNJNGdnbKxtslprLmoQ56g/c5KR3KCpglGCBKUR0FcM8NC9C38duQSCc9bGGIoU129oWT7rOPwHa56BHPYpY93W+bCDl99Sec1RZhNriNsQ4MFOB/GA3YG2nTgNWJjL1rtOSysh4+mYUp7AbqIb7PyXXec/O3SsFkwJ//so9B7goTXfwuuwXc27vxxgWEMe210/5BX/2LT3dRyfwUUxvk5ELhBqYUNF9/HgW0Jf/iw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=KERdB35fdZJQwlTkaIBbWBNw1MQAyN5I4+Q3sKDn7oY=;
+ b=NMmUKV8jCpHlpt+bWZHO1KPOAZXjGRiTwkF9yLGuJMjrxhd+JeZUxrl0DQhHQZk3Xk5IMfqoJe2u4aJDwTK0esPCo3OPbjb2oUWscOFJzH3I3jGgadRcwcZvC90cUVFkBCEJxlbGUB8hQlowU2P1NPg94pw6fLGKOGatsVmYw9l9FXB2eQaoO7cMRIzhSXQFtbBqtcPoYwfhteYR2wEUt0LrvoKh9LBbEQhaKajrW4/QTKuqDSaifJPHh6jfXSGEUJP7JP8SZRVLMrwfCSktcvwT1FiWB56TfEw75k4tcIRueogivni3lyoMltC4IQKr9+ZfechDBFf36jqoo4RpUQ==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from DU2PR04MB8951.eurprd04.prod.outlook.com (2603:10a6:10:2e2::22)
+ by VE1PR04MB7487.eurprd04.prod.outlook.com (2603:10a6:800:1a2::13) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9366.12; Wed, 26 Nov
+ 2025 15:58:23 +0000
+Received: from DU2PR04MB8951.eurprd04.prod.outlook.com
+ ([fe80::753c:468d:266:196]) by DU2PR04MB8951.eurprd04.prod.outlook.com
+ ([fe80::753c:468d:266:196%4]) with mapi id 15.20.9366.009; Wed, 26 Nov 2025
+ 15:58:23 +0000
+Date: Wed, 26 Nov 2025 10:58:11 -0500
+From: Frank Li <Frank.li@nxp.com>
+To: Franz Schnyder <fra.schnyder@gmail.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Shawn Guo <shawnguo@kernel.org>,
+	Sascha Hauer <s.hauer@pengutronix.de>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>,
+	Franz Schnyder <franz.schnyder@toradex.com>,
+	linux-phy@lists.infradead.org, imx@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+	Francesco Dolcini <francesco.dolcini@toradex.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>, stable@vger.kernel.org,
+	Xu Yang <xu.yang_2@nxp.com>
+Subject: Re: [PATCH v2] phy: fsl-imx8mq-usb: fix typec orientation switch
+ when built as module
+Message-ID: <aScjk7WR5gkF1NeO@lizhi-Precision-Tower-5810>
+References: <20251126140136.1202241-1-fra.schnyder@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <20251126140136.1202241-1-fra.schnyder@gmail.com>
+X-ClientProxiedBy: SJ0PR13CA0211.namprd13.prod.outlook.com
+ (2603:10b6:a03:2c1::6) To DU2PR04MB8951.eurprd04.prod.outlook.com
+ (2603:10a6:10:2e2::22)
 MIME-Version: 1.0
-Message-Id: <20251126-phy-cadence-torrent-resume-restore-refclk-parent-v2-1-5d2eaa958b06@bootlin.com>
-X-B4-Tracking: v=1; b=H4sIANAdJ2kC/6WOQQ6DMAwEv4J8riuCRCk99R+IQwhOsQoJSigqQ
- vy9Dl+ofFjNruz1DpECU4RHtkOglSN7J1BcMjCDdi9C7oWhyItSKZXjPGxodE/OEC4+BHILBoq
- fiZKIk9Sa8Y2zPkNb1rYrrbnVVoOcnSXm71nZtMIDp63t/GBVyf2jbFUo09G90rbqVU3PzvtlZ
- Hc1foL2OI4fj35gk/IAAAA=
-X-Change-ID: 20251110-phy-cadence-torrent-resume-restore-refclk-parent-f59fb5fc69fa
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: Thomas Petazzoni <thomas.petazzoni@bootlin.com>, 
- Gregory CLEMENT <gregory.clement@bootlin.com>, Udit Kumar <u-kumar1@ti.com>, 
- Prasanth Mantena <p-mantena@ti.com>, Abhash Kumar <a-kumar2@ti.com>, 
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
- "Thomas Richard (TI.com)" <thomas.richard@bootlin.com>
-X-Mailer: b4 0.14.3
-X-Last-TLS-Session-Version: TLSv1.3
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DU2PR04MB8951:EE_|VE1PR04MB7487:EE_
+X-MS-Office365-Filtering-Correlation-Id: 1a4d856f-3fd1-4d56-e3b1-08de2d04a0c7
+X-LD-Processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|19092799006|7416014|52116014|376014|1800799024|38350700014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?u5RJXJivFuapdvxglPZJ9xqw0snk3ZNLsqJG6xb3D9llwxPQ39ZVlNbUzacj?=
+ =?us-ascii?Q?4A17zNk6ZRaTsUv66PJPZW72jeehHyvDa7k144g2D9/vMVvfHg/JIERRKfrk?=
+ =?us-ascii?Q?zs4XmUba60NY15gHQd6pKCly+3S5MVry4xQKXSLJJQzR6XK1oLRVFVr3xa9c?=
+ =?us-ascii?Q?VpEvhsODLDm83q4LlGuUBzdqDhwY6XfTInD1/LFox9RASLlxxMBOU1ZqYP93?=
+ =?us-ascii?Q?OxCSv/Rc1r0ID6di887lQ+qwIGloTPYRrAdYUoikL134eHr0wCmIpmZK05JT?=
+ =?us-ascii?Q?orT1i2TzG01EWD4nKteaJePWg+z4j9fGOxHaw3Xfv6AbD11s6tHzwej1UfbV?=
+ =?us-ascii?Q?DRMMVg2BCJq0balYXsGZQUueAX0xaITBpOZYDqyfkPoeUZII5o0fLPQAto0r?=
+ =?us-ascii?Q?AadrfCAu8dbxikdXEke1r8T/S8dHjYO6BXQwdBUIG62CSUfuEm0FsoO6hGYo?=
+ =?us-ascii?Q?JWNiv6nNIHuV3vdtFMQT3ySaigF7O0u1Ie9U6wRYDSAjxpTjM3nqpw1xqSvr?=
+ =?us-ascii?Q?657eoVTNIU18JV9tmCC/OkyybbfGt8BSo1QJ1OHyAqtO66ihPiQ6ekjw/PDd?=
+ =?us-ascii?Q?foSLKhOOaM/sjxciy6vasWWVDMZPN09GcfiSTA2ZkEIvhgeC+LRqP3dIaZG1?=
+ =?us-ascii?Q?TJJ0c+JNhpmHwMF/ydd55PjDnCBQsrYAMww0/oy6q0Q072DQhGaj75NP2cbW?=
+ =?us-ascii?Q?UTTjCzlRk8s4nM8NUGAd4baCnmGQVpmKEEIxcR5s/QPRj+W9jzv7urRhzLN3?=
+ =?us-ascii?Q?cYV9tLlMSqvDhjbwV0R5RvTK7BXxTvgnEOWMn2EJY5xZw3YzOaiGNfwWnCnZ?=
+ =?us-ascii?Q?Sz+CTee5w97cAMJownVHtFE+tuD2RVPqDnYU75X2lXi/PNIeqnbBD4846Sys?=
+ =?us-ascii?Q?8mIWbtVQ/Ufm0bz/JBYjj52Hw7J3e/4wpsQ0AT0YbB0OGWewUCWM5XvRzgkg?=
+ =?us-ascii?Q?NGI+uVPxho/UNHujzRkCKKS5XPzqNklM6Y8qtTuPwiNKwmBU0QtEqbgTLW2r?=
+ =?us-ascii?Q?yLhT1LcrvFjY1SooFq5eUSTr4kP3FNvFcdjGpobX1LWvAZgAc6PrbqVPS3Fw?=
+ =?us-ascii?Q?G+/H/+STIn3zJTT2dWlz45hE04OchsKdCdXfThQ3SOFTGlTKOgspKLqNhtbb?=
+ =?us-ascii?Q?Gn8xLxiTSUBu3jwwYedlGUxnOwtbqVnYG/UOUNAjkXRIMTh2EotLHNRngnm6?=
+ =?us-ascii?Q?dfbBCb7giYPvbKkDgGUC+027JkX8G+twyp6mYIdeFFSvuoZgL2uQU8MB2DMf?=
+ =?us-ascii?Q?f0SAkN6B/CbYU31BUAVlXbXnCTr48DC0exUhnm9zYUsEKH7LriTG7ldbQNRe?=
+ =?us-ascii?Q?YlNbV7wBsuSSrqDnq3lWJjR6Jp+S4gDOK3hH53/pQqxclB4zcsWepdgWbS/B?=
+ =?us-ascii?Q?bKhZfv3SUDR90IUL0hD95XwtpfFUUQZ6O2Vss/8anhspCHhMuUHQTGlFmxGx?=
+ =?us-ascii?Q?Rl2CMXfUwvc+W38TLsY55tp3ksOu/ragtmBKTscVGM+DZU7MTUKLXbtY37qH?=
+ =?us-ascii?Q?UhlzpYERJP4ZWUhnYbdKRIPqKhS3q8bsrxi7?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DU2PR04MB8951.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(19092799006)(7416014)(52116014)(376014)(1800799024)(38350700014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?xi9mJXOlv/mWS4fRCqGOP7aS2Hz8wldYptL+6JpB7+H7wpXpeCh8l/Z17SiG?=
+ =?us-ascii?Q?NXLgQg3flnKoaQ4L++4YYM9AurwP5unyeVtn9V5IzFBQA0/G8Vbj+xV1GwGj?=
+ =?us-ascii?Q?KBGkyZtbZNmwTrdn1lJSbFRLlkmNTUs93j8pStKoaFR1Jnk9Tmkepza/tjcN?=
+ =?us-ascii?Q?Rz2xw0K/6vsM6X3l5C0npWUPZ4TIivTMbbO09PZMw+hEKWtlQG3UgJBKoXa7?=
+ =?us-ascii?Q?za3m1ccAXbE9TfuLAEckHBeT8oJeZlwtZfla27IMKTQxVUbSRxubjjoxxuQ+?=
+ =?us-ascii?Q?RdrujQy6mSZuQlt1GsQREU7YN6EcC/UY4I/t4NggNZSxcfN0E7fbrOAveMGp?=
+ =?us-ascii?Q?aPwrMkYqYdCo9hfrr5Eljh3nqaNTEjgf31p9JkGkhXjgMbe1zyxiSuIGzjxh?=
+ =?us-ascii?Q?PbfaPDQNq5i/zKTcEA/7sWCQoTzk0rcQONBAURmACHOYyh563JU6PmXifDTY?=
+ =?us-ascii?Q?0joLTe3gmi/pcKuGwrRtrIV/bSw5xsS243QxmcfXV/FFUIBYeAUmJ8pv0lLc?=
+ =?us-ascii?Q?Mw1jwNSMtyFhw3z1/VUPVlsosdTYQDFSi7qbffwr7/vkqpTDGyKHLC0q3i57?=
+ =?us-ascii?Q?/ltueXNSnUZX2ZDlSEsV3/3MzfybexNa5OAZdf0X2Xl3b7mxaLBPCYtQGP3L?=
+ =?us-ascii?Q?q4ZdtTMZarqs2xzdG6QCHU6gCjSD/NAzUw5LHC3eNELMdVmTJ8/k7oFpvKDy?=
+ =?us-ascii?Q?S/XojSZSdgMghp77RxZzSUIX7of9jx29euEUdMsADiWsRCKv/KAzBT0C2zSl?=
+ =?us-ascii?Q?RdamgNVmg1uC6Emx79NtaJqePGOZcooZZAVgT4RE1596nMnkM60Pju3+G7Fx?=
+ =?us-ascii?Q?XrKs4es4nlxzi/wQtVYftpXU3IKV9c3LHAvGgvCSLBwNkDi8LeVgCeCJ2ijG?=
+ =?us-ascii?Q?cRdHw++lPyS6XLhk4zlOSxoDUTlM2CNZNoc9NtYWcUYHnuP0yEgYw3St/XuW?=
+ =?us-ascii?Q?l/89siji2rlfYZoMp/Cyv1iEZjjjHgBAzgamNrU5ghEGa2vM5DXKFGpFNtnn?=
+ =?us-ascii?Q?PsvZo+GYw2tSkZqwplnLk5j9zsHiYI711SzUGSHXZEmIyX36yU+TkfA23U3H?=
+ =?us-ascii?Q?/MaK1ZrvYO95crq8xrut1s9jHhOsyyxyJJZ+Ah5MQqN2xK59MVN6HHxsRUTW?=
+ =?us-ascii?Q?b064OT+tBAV0X9Gs5EIwDSOtu+qiQVeGOIp8pMGSTD267GGYNSM3zim7wxl4?=
+ =?us-ascii?Q?so8K5E3nsceDyGsLtM52F6EBGrFfMB8Bmn9eqdk2JyYSTAMpNFKJmLfpgGdS?=
+ =?us-ascii?Q?nUPCF2wyYR1ca6zIGbPwJvxGm+PCQU+7F+q6TSEjJRerOX/6gIOgH9L/yU5s?=
+ =?us-ascii?Q?jfYLuQfy7RfiUJ8DiulvfT6+7ytxi3kboZvSRv6JGMr4P0UWKezW/+ZnQA8i?=
+ =?us-ascii?Q?5BMCrkvdeYs6VA4af+cdJSzIkm+juKex3UMysq937EpWl07L9jxceejhjT+X?=
+ =?us-ascii?Q?tdQ2FG3F+HTROOWkq40mmtxs7FioB5iOe22Mpvi/2PRVqYyL24m7AKJ3eggl?=
+ =?us-ascii?Q?DYgqDHuCTHVsyuv7IGPiXjhUkqEBp27EqN5ATHadtmxjJKrHm4p1gdsT+6R5?=
+ =?us-ascii?Q?oS6GOW8lrl42TFjMDjmcLQpeKHVR42HfO9Thwe5H?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1a4d856f-3fd1-4d56-e3b1-08de2d04a0c7
+X-MS-Exchange-CrossTenant-AuthSource: DU2PR04MB8951.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 Nov 2025 15:58:23.6355
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: LIozV+PFPYjJcvV+k0Wib7bUGTAVy0lof02nWtTA3QQmW1ez7Ff8x0T5QaBLbC7L2VR5JVu2/pTw2sYwtBaYSg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB7487
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251126_073349_535386_336C31DA 
-X-CRM114-Status: GOOD (  11.30  )
+X-CRM114-CacheID: sfid-20251126_075830_879645_8CF44AD8 
+X-CRM114-Status: GOOD (  20.77  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,83 +168,68 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-While suspend and resume, parent clock config for refclk was getting lost.
-So save and restore it in suspend and resume operations.
+On Wed, Nov 26, 2025 at 03:01:33PM +0100, Franz Schnyder wrote:
+> From: Franz Schnyder <franz.schnyder@toradex.com>
+>
+> Currently, the PHY only registers the typec orientation switch when it
+> is built in. If the typec driver is built as a module, the switch
+> registration is skipped due to the preprocessor condition, causing
+> orientation detection to fail.
+>
+> With commit
+> 45fe729be9a6 ("usb: typec: Stub out typec_switch APIs when CONFIG_TYPEC=n")
+> the preprocessor condition is not needed anymore and the orientation
+> switch is correctly registered for both built-in and module builds.
+>
+> Fixes: b58f0f86fd61 ("phy: fsl-imx8mq-usb: add tca function driver for imx95")
+> Cc: stable@vger.kernel.org
+> Suggested-by: Xu Yang <xu.yang_2@nxp.com>
+> Signed-off-by: Franz Schnyder <franz.schnyder@toradex.com>
+> ---
+> v2: Drop the preprocessor condition after a better suggestion.
+>     Reviewed-by Neil tag not added as patch is different
+> ---
 
-Signed-off-by: Thomas Richard (TI.com) <thomas.richard@bootlin.com>
----
-Changes in v2:
-- store parent configuration in cdns_torrent_refclk_driver.
-- add cdns_torrent_refclk_driver_suspend/_resume() functions.
-- use get_parent() and set_parent() operations to save and restore the
-  configuration.
-- Link to v1: https://lore.kernel.org/r/20251110-phy-cadence-torrent-resume-restore-refclk-parent-v1-1-1be87af7d19e@bootlin.com
----
- drivers/phy/cadence/phy-cadence-torrent.c | 23 +++++++++++++++++++++++
- 1 file changed, 23 insertions(+)
+Reviewed-by: Frank Li <Frank.Li@nxp.com>
 
-diff --git a/drivers/phy/cadence/phy-cadence-torrent.c b/drivers/phy/cadence/phy-cadence-torrent.c
-index 37fa4bad6bd72..877f22177c699 100644
---- a/drivers/phy/cadence/phy-cadence-torrent.c
-+++ b/drivers/phy/cadence/phy-cadence-torrent.c
-@@ -397,6 +397,7 @@ struct cdns_torrent_refclk_driver {
- 	struct clk_hw		hw;
- 	struct regmap_field	*cmn_fields[REFCLK_OUT_NUM_CMN_CONFIG];
- 	struct clk_init_data	clk_data;
-+	u8 parent_index;
- };
- 
- #define to_cdns_torrent_refclk_driver(_hw)	\
-@@ -3326,11 +3327,29 @@ static const struct cdns_torrent_vals sgmii_qsgmii_xcvr_diag_ln_vals = {
- 	.num_regs = ARRAY_SIZE(sgmii_qsgmii_xcvr_diag_ln_regs),
- };
- 
-+static void cdns_torrent_refclk_driver_suspend(struct cdns_torrent_phy *cdns_phy)
-+{
-+	struct clk_hw *hw = cdns_phy->clk_hw_data->hws[CDNS_TORRENT_REFCLK_DRIVER];
-+	struct cdns_torrent_refclk_driver *refclk_driver = to_cdns_torrent_refclk_driver(hw);
-+
-+	refclk_driver->parent_index = cdns_torrent_refclk_driver_get_parent(hw);
-+}
-+
-+static int cdns_torrent_refclk_driver_resume(struct cdns_torrent_phy *cdns_phy)
-+{
-+	struct clk_hw *hw = cdns_phy->clk_hw_data->hws[CDNS_TORRENT_REFCLK_DRIVER];
-+	struct cdns_torrent_refclk_driver *refclk_driver = to_cdns_torrent_refclk_driver(hw);
-+
-+	return cdns_torrent_refclk_driver_set_parent(hw, refclk_driver->parent_index);
-+}
-+
- static int cdns_torrent_phy_suspend_noirq(struct device *dev)
- {
- 	struct cdns_torrent_phy *cdns_phy = dev_get_drvdata(dev);
- 	int i;
- 
-+	cdns_torrent_refclk_driver_suspend(cdns_phy);
-+
- 	reset_control_assert(cdns_phy->phy_rst);
- 	reset_control_assert(cdns_phy->apb_rst);
- 	for (i = 0; i < cdns_phy->nsubnodes; i++)
-@@ -3352,6 +3371,10 @@ static int cdns_torrent_phy_resume_noirq(struct device *dev)
- 	int node = cdns_phy->nsubnodes;
- 	int ret, i;
- 
-+	ret = cdns_torrent_refclk_driver_resume(cdns_phy);
-+	if (ret)
-+		return ret;
-+
- 	ret = cdns_torrent_clk(cdns_phy);
- 	if (ret)
- 		return ret;
-
----
-base-commit: c0ea2ae3b2d7fb9eb4bc14400e39d8fb4f510714
-change-id: 20251110-phy-cadence-torrent-resume-restore-refclk-parent-f59fb5fc69fa
-
-Best regards,
--- 
-Thomas Richard (TI.com) <thomas.richard@bootlin.com>
-
+>  drivers/phy/freescale/phy-fsl-imx8mq-usb.c | 14 --------------
+>  1 file changed, 14 deletions(-)
+>
+> diff --git a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
+> index b94f242420fc..72e8aff38b92 100644
+> --- a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
+> +++ b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
+> @@ -124,8 +124,6 @@ struct imx8mq_usb_phy {
+>  static void tca_blk_orientation_set(struct tca_blk *tca,
+>  				enum typec_orientation orientation);
+>
+> -#ifdef CONFIG_TYPEC
+> -
+>  static int tca_blk_typec_switch_set(struct typec_switch_dev *sw,
+>  				enum typec_orientation orientation)
+>  {
+> @@ -173,18 +171,6 @@ static void tca_blk_put_typec_switch(struct typec_switch_dev *sw)
+>  	typec_switch_unregister(sw);
+>  }
+>
+> -#else
+> -
+> -static struct typec_switch_dev *tca_blk_get_typec_switch(struct platform_device *pdev,
+> -			struct imx8mq_usb_phy *imx_phy)
+> -{
+> -	return NULL;
+> -}
+> -
+> -static void tca_blk_put_typec_switch(struct typec_switch_dev *sw) {}
+> -
+> -#endif /* CONFIG_TYPEC */
+> -
+>  static void tca_blk_orientation_set(struct tca_blk *tca,
+>  				enum typec_orientation orientation)
+>  {
+> --
+> 2.43.0
+>
 
 -- 
 linux-phy mailing list
