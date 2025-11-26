@@ -4,39 +4,40 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ED6BDD1036F
-	for <linux-phy@archiver.kernel.org>; Wed, 26 Nov 2025 01:46:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 21912D10372
+	for <linux-phy@archiver.kernel.org>; Wed, 26 Nov 2025 02:14:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=52P+l2NTqTcMAQaQV/fHIA34bp8ifbwxA1czT5FWcSM=; b=RjnoXjPZRikdRM
-	8gFPcBeg9SZI+nVkUa0o7+6I+FG/26jDi9wItq0vk0F5UA5EeGvMAHS0MxzxMKtDJ4h8PZkEIj0dA
-	G9Ka621YvN+cWh4H0xVO1GSSk12T9WqG6+PaOGf0Yth7OKGIkXMlw1bYRdRw1SKBF2TzRwXq81sMH
-	rtVgX5lvIDlTBSi6PB8CAGAWkglldeHF3dU1CpMabHX910kCRQljRpzESLn+DHayiSGJURh8Bp0sZ
-	s0CozyBjHOtUMwpb4eekNHHkOGjLd815/dcGzI4zBuMJD+mGjTsQeNyebAhsyi+zO7d4LoO/FAFID
-	2k3+8tQxNLIKg9jT3GiA==;
+	List-Owner; bh=xb+q0cEfMkF1pVqj2n5JqtiXoB9sq6xe85+8InRiNvo=; b=FrSNDhCUxav46T
+	drAtaOTUg1cciLm7D3ojBKfdwmE7/L5jv9zO689e76V4w202UjGnvoFXWfiq0j8rAnZ58v5JGBsBl
+	JPD9MiY7n8dJPsXl+cYwLW+0CAIPFW1A4MBXEr7IQCJ+1YuSnWgF2YlPfmgRwFd8TkpnxpCeM6O9b
+	KTpFoxjtHLHaDFi4i4CdMzAuQzakpkJXL+X7TitMYgBPJDqbX40pPFC0CASY9l+J6aJikDw6C83WY
+	7hTlEpqgNmoxmLLsUuyUmM350cICYRzb2OhLkmsMq2INMbaI/QpZAT3Ag8imZLWh18XBgs6bw75zN
+	k5V9devQgzL3wKP1KL4g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vO4c3-0000000EBt1-0UqB;
-	Wed, 26 Nov 2025 01:46:31 +0000
-Received: from mail-m1973194.qiye.163.com ([220.197.31.94])
+	id 1vO52t-0000000EEHe-2Sjt;
+	Wed, 26 Nov 2025 02:14:15 +0000
+Received: from mail-m15593.qiye.163.com ([101.71.155.93])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vO4c0-0000000EBs6-2EgG;
-	Wed, 26 Nov 2025 01:46:30 +0000
+	id 1vO52k-0000000EE5W-1hsB;
+	Wed, 26 Nov 2025 02:14:13 +0000
 Received: from [127.0.0.1] (unknown [58.22.7.114])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 2ae663690;
-	Wed, 26 Nov 2025 09:46:21 +0800 (GMT+08:00)
-Message-ID: <cbb38c08-6937-4b7d-a0b0-d5ca6c17f466@rock-chips.com>
-Date: Wed, 26 Nov 2025 09:46:19 +0800
+	by smtp.qiye.163.com (Hmail) with ESMTP id 2ae76c0ea;
+	Wed, 26 Nov 2025 10:14:00 +0800 (GMT+08:00)
+Message-ID: <db9541d3-bc5c-4907-9dc5-965810ef92d9@rock-chips.com>
+Date: Wed, 26 Nov 2025 10:13:58 +0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v10 01/11] usb: typec: Add notifier functions
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Heikki Krogerus <heikki.krogerus@linux.intel.com>
+Subject: Re: [PATCH v10 03/11] drm/bridge: Implement generic USB Type-C DP HPD
+ bridge
+To: Heikki Krogerus <heikki.krogerus@linux.intel.com>
 Cc: Chaoyi Chen <kernel@airkyi.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
  Peter Chen <hzpeterchen@gmail.com>, Luca Ceresoli
  <luca.ceresoli@bootlin.com>, Rob Herring <robh@kernel.org>,
@@ -61,31 +62,23 @@ Cc: Chaoyi Chen <kernel@airkyi.com>,
  linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
  linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org
 References: <20251120022343.250-1-kernel@airkyi.com>
- <20251120022343.250-2-kernel@airkyi.com>
- <2025112102-laurel-mulch-58e4@gregkh>
- <462ad1bd-7eec-4f26-b383-96b049e14559@rock-chips.com>
- <2025112402-unopposed-polio-e6e9@gregkh>
- <a80483de-518d-45d5-b46a-9b70cca5b236@rock-chips.com>
- <2025112448-brush-porcupine-c851@gregkh>
- <c9cb7b79-37c8-4fef-97a6-7d6b8898f9c4@rock-chips.com> <aSV_lQYJPxN7oBM-@kuha>
- <2025112554-uncaring-curator-642a@gregkh>
+ <20251120022343.250-4-kernel@airkyi.com>
 Content-Language: en-US
 From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
-In-Reply-To: <2025112554-uncaring-curator-642a@gregkh>
-X-HM-Tid: 0a9abdd7181603abkunm097aa0cf565eb1
+In-Reply-To: <20251120022343.250-4-kernel@airkyi.com>
+X-HM-Tid: 0a9abdf0668a03abkunm24c9a3ad56c93f
 X-HM-MType: 1
 X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZQ0hNTVZMHUtOSR1DTx8ZHRhWFRQJFh
+	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZQ09JTFZLGEJDTxkZSU1DSElWFRQJFh
 	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSEpPSE
 	xVSktLVUpCS0tZBg++
 DKIM-Signature: a=rsa-sha256;
-	b=ATpEd2peqV8kESMPjbf3DLHuOAl6CsCl20ltOYkox2RRSvunRK2u2jypMEBLL1VzgX6l9RPhBrbLO0wxxiKsmnmH148nSqotcKB1UTdgbjcic/vs7pkvSKUSgo5tanCci8foVksqRSRVq1sBJmUE4CKTJrgx7g/63nwCaXSG/4U=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
-	bh=N0tG8/Nj0kl8vFA6L4W6Z+Hthet7cKPX1ZaAwkiqFD4=;
+	b=Hr6YCgnGlX5GNA/vTj8sVjGPdiIhmMPdJQnyYtxbw3hg6lfKvInidLdPWbW1zoY9j4+tpGlmkTBW1hQjwb4Z9gxpa0ZXKE9DBTBWfsQ5ypJKu7ENzb9BI6KSsu6oCgf8VWCri84W3Qg1rBhVR7tf4N1nKB/LQqKafx0ZEpr82tE=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
+	bh=4tyc09Ao125oOeQ1/2CjusJ4Ro4JNAsugQFnuIaNAdI=;
 	h=date:mime-version:subject:message-id:from;
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251125_174629_084145_568E18A2 
-X-CRM114-Status: UNSURE (   8.24  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20251125_181406_663892_40F57A34 
+X-CRM114-Status: GOOD (  11.47  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,26 +95,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 11/25/2025 7:49 PM, Greg Kroah-Hartman wrote:
->> +static umode_t typec_is_visible(struct kobject *kobj, struct attribute *attr, int n)
->> +{
->> +	if (is_typec_port(kobj_to_dev(kobj)->parent))
-> 
-> Why look at the parent?  Doesn't the device have a type that should show
-> this?
-> 
-> Otherwise, looks good to me.
+Hi Heikki,
 
-They have same deivce type "typec_altmode_dev_type".
-The parent device has a different device type to distinguish between
-port device and partner device.
+On 11/20/2025 10:23 AM, Chaoyi Chen wrote:
+> From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+> 
+
+[...]
 
 > 
-> thanks,
+>  drivers/gpu/drm/bridge/Kconfig                | 10 ++++
+>  drivers/gpu/drm/bridge/Makefile               |  1 +
+>  .../gpu/drm/bridge/aux-hpd-typec-dp-bridge.c  | 50 +++++++++++++++++++
+>  3 files changed, 61 insertions(+)
+>  create mode 100644 drivers/gpu/drm/bridge/aux-hpd-typec-dp-bridge.c
 > 
-> greg k-h
-> 
-> 
+> +
+> +static int drm_typec_bus_event(struct notifier_block *nb,
+> +			       unsigned long action, void *data)
+> +{
+> +	struct typec_altmode *alt = (struct typec_altmode *)data;
+> +
+> +	if (action != TYPEC_ALTMODE_REGISTERED)
+> +		goto done;
+> +
+> +	if (is_typec_partner(&alt->dev) || alt->svid != USB_TYPEC_DP_SID)
+> +		goto done;
+
+It should be "is_typec_partner(alt->dev.parent)".
+Sorry, I didn't notice this earlier. I will fix this in v11.
+
+> +
+> +	/*
+> +	 * alt->dev.parent->parent : USB-C controller device
+> +	 * alt->dev.parent         : USB-C connector device
+> +	 */
+> +	drm_dp_hpd_bridge_register(alt->dev.parent->parent,
+> +				   to_of_node(alt->dev.parent->fwnode));
+> +
+> +done:
+> +	return NOTIFY_OK;
+> +}
+> +
 
 -- 
 Best, 
