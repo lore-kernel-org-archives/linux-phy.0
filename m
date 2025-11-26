@@ -4,169 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B10B9D10387
-	for <linux-phy@archiver.kernel.org>; Wed, 26 Nov 2025 07:26:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 727D8D10384
+	for <linux-phy@archiver.kernel.org>; Wed, 26 Nov 2025 07:50:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uee0dcwKsHsTmI3wJHSWIiOxGd00fnBA4fNcD6orCUQ=; b=ZiAlbioB2zLESy
-	B+J3x+2OkvRFSQ4rOszwYMgf4zC9yL7tdEd57/XCYGnaJ1niTUi6GDLS9eMdXX4aJ2iN21VWVLuVh
-	WqaTIZmaSg605gYRZ07BdKyaU2zwgjfpZI43jqubgZhZ8kGeYbV1qw9FKQCrWJx+vEJPqVu34NPdK
-	wkbRt+G9STESxawseJ/qmgrGhAEsRcrgO/jFBcXRFx6LOFkSFV1tv/O6po8GxdcpwU1G+TvBCVkNw
-	Lw25oY6XktFIdDL+fz4xIOZWbPZoWrRvsvGhMy0PoHLpNPaqtQygF9ZjzGPXILptJr6PvQhoPdoh9
-	4UwMopSmMy0cNQ1sYWgA==;
+	List-Owner; bh=pczgG6RCdHHdbPJyZD3sj6tE+2duH18QhgatT+E4eBI=; b=1fbqVl+UZf/vi+
+	ADujd8w38evMnxBzWnpc8VytGGO4vmgnnOaIasBg6XgNgZLzWeCgBYgwCqrFpLbePsM0vdmieD2bv
+	FkLeGemR/P+swAHBaIDyhbOyZuGmlgQAFsN0iA4UaUqJInNNmRGdlfTwxocMIi08N+ZDIQNMN235l
+	CYyHYBygASUeWmdznGQgYoGLhe7TNoZfDGH4wHlzFgbH9ufqDN6K0bDNcawyvyuwkNnMnWbUCyamU
+	v8X3M40KAYTz8A/urWF3bNq+CdwmjfD6vvw5nqUb8wHneuLv5ezOwr9h4nMLbElskEDVSAICMK8y1
+	W6SbmTxf+q4YZTHBnQXQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vO9vQ-0000000EWAd-13gN;
-	Wed, 26 Nov 2025 07:26:52 +0000
-Received: from mail-norwayeastazon11013025.outbound.protection.outlook.com ([40.107.159.25] helo=OSPPR02CU001.outbound.protection.outlook.com)
+	id 1vOAIP-0000000EYc5-09cE;
+	Wed, 26 Nov 2025 07:50:37 +0000
+Received: from mail-qt1-f180.google.com ([209.85.160.180])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vO9vM-0000000EW8n-2dBe;
-	Wed, 26 Nov 2025 07:26:49 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=ud3cxRvw1TFuFc4nlhs53X+MxzZ3DK++JURr9Tfyb4ZhqmVWruG9PnwomP55PtGXXQ9949ZjQi58fJvGTgLIxVc+qS6D/mbXsUhv/Rd3MG8RchjpMq/qdVVDoDEI3VhyntZA0L0Xz4lIJBI8hwYs6tlKy7hq3sq6fovUt+h39oAE4WBfjDG4XoFDKQfIXw7HzbaoqIJRxDt2jWpIYsUjwM480kJWQV6N+/iM5KEIAsK6Tu0862te3ZS3S2RSAL3ADsARh2D6M7RbBEGeMLks/Qf7nYvqoMVIncR5kqvJAKCo6r1wA+uw7MfmkLGx1NYlT+Qkgkzb+HMwT2FQ7gfm6g==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=P1a8YRq1WkhCi1TUQNyoig2F7ZtUJ0UZCTpT8mVpydE=;
- b=jNaLFRuHmReuO7+wiMPdYYPACcn+2Z9s3EVvM+JOth6B+1c7PWhcxxhP5ZzuUIxN6v3SiTuhFmFsKupg6xKXh9rDnW7l6KyzFvVIGvnpz7OOG4thEloXnhOnApEVAKBsSF9EQNgwctubNnNsqiU2Gym/TCujtANK+FMPx/K0p9ogUwCCGFqEs5U8bi/56k7Gtgd0cp+DR3eRGFxWIp6/9yX5Ce2rKhz4f8B7O4KnpE6nm+14PRxK9Q4/6DC8gocTfZYi7thL2XHF3bpWNapxG8Cb25GFeCGpncGcZJyRmwLIzrwxp1D+jWEXwo7hAbHS4k5G6hDOnTDkd/vTNGWPqg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=P1a8YRq1WkhCi1TUQNyoig2F7ZtUJ0UZCTpT8mVpydE=;
- b=iHM7HGe5qRU3EVOMOqC6ewpWqTZIdqKkCUZKw1E/oLlA9OcINVcB1leIUP+uVRuE7UaJ2wBl3PVEoN6LyREQrmd3kndWbCvHG3+TIodZ6ihofqd6mzAEjlI3W94WOdIwJVz69zRE9lFM0JVntlBqDSUb48OSWk1zvdQCqYeesOGa0jlrz47qC/WbjyHPAYNrWTfG3CGxGSU2p+mmR1s75NzAdlto+2oY7ffvGBt54P45vkESu1JnupvSY++ywgH9GerxDPYprpRnYTCMtjOvyqrznPLpvnCaYpcKWbXKEKtgsQgWO3vUcleIbUOLmHvR8cID+z45aVDfietmxsAKZA==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from AM9PR04MB8585.eurprd04.prod.outlook.com (2603:10a6:20b:438::13)
- by PAXPR04MB8157.eurprd04.prod.outlook.com (2603:10a6:102:1cf::24) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9366.12; Wed, 26 Nov
- 2025 07:26:43 +0000
-Received: from AM9PR04MB8585.eurprd04.prod.outlook.com
- ([fe80::8063:666f:9a2e:1dab]) by AM9PR04MB8585.eurprd04.prod.outlook.com
- ([fe80::8063:666f:9a2e:1dab%5]) with mapi id 15.20.9366.009; Wed, 26 Nov 2025
- 07:26:42 +0000
-Date: Wed, 26 Nov 2025 09:26:38 +0200
-From: Vladimir Oltean <vladimir.oltean@nxp.com>
-To: Andrew Lunn <andrew@lunn.ch>
-Cc: netdev@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org,
-	Daniel Golle <daniel@makrotopia.org>,
-	Horatiu Vultur <horatiu.vultur@microchip.com>,
-	Heiner Kallweit <hkallweit1@gmail.com>,
-	Russell King <linux@armlinux.org.uk>,
-	"David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Eric Woudstra <ericwouds@gmail.com>,
-	Marek =?utf-8?B?QmVo4oia4oirbg==?= <kabel@kernel.org>,
-	Lee Jones <lee@kernel.org>,
-	Patrice Chotard <patrice.chotard@foss.st.com>,
-	Maxime Chevallier <maxime.chevallier@bootlin.com>,
-	Holger Brunck <holger.brunck@hitachienergy.com>
-Subject: Re: [PATCH net-next 1/9] dt-bindings: phy: rename
- transmit-amplitude.yaml to phy-common-props.yaml
-Message-ID: <20251126072638.wqwbhhab3afxvm7x@skbuf>
-References: <20251122193341.332324-1-vladimir.oltean@nxp.com>
- <20251122193341.332324-2-vladimir.oltean@nxp.com>
- <0faccdb7-0934-4543-9b7f-a655a632fa86@lunn.ch>
- <20251125214450.qeljlyt3d27zclfr@skbuf>
- <b4597333-e485-426d-975e-3082895e09f6@lunn.ch>
-Content-Disposition: inline
-In-Reply-To: <b4597333-e485-426d-975e-3082895e09f6@lunn.ch>
-X-ClientProxiedBy: BE1P281CA0040.DEUP281.PROD.OUTLOOK.COM
- (2603:10a6:b10:22::13) To AM9PR04MB8585.eurprd04.prod.outlook.com
- (2603:10a6:20b:438::13)
+	id 1vOAIM-0000000EYbg-2jjX
+	for linux-phy@lists.infradead.org;
+	Wed, 26 Nov 2025 07:50:36 +0000
+Received: by mail-qt1-f180.google.com with SMTP id d75a77b69052e-4edaf8773c4so74357591cf.1
+        for <linux-phy@lists.infradead.org>; Tue, 25 Nov 2025 23:50:34 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1764143433; x=1764748233;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=yTYhQ3G63lU/atNAXCnWcO1/Wz+JDqjFVpYbXLbGHEE=;
+        b=tuVcDRP45GpUBrkzztIKfXvSu+FTwKHSsvKKaBxvWKu/ajTQOH01cW5VrWzVcGOsDE
+         sMxYGRdGJ/O8CEquOYKjpGbqEOp57hvJaF5yWIexBRqaijOTwjqvCaZLBBDXRYK6XLuS
+         Ow2TF+/35ndNVjyWJS/idICvPAD6pD5jMeco+asWLVuPO/NQn95EgpXW3FT6rTxbJ/0W
+         W5NRtCT+OIylD/E+QB5OQoIvhZuNUtNvdzCCD1EkCAkotQE38HqyYpbiJEhCDbtqVHzf
+         RV7KUkmf9fbdhABw7XRbbSQ1mp7uywbcwvOkS8J9E6WcRC0nyWvT8U4r+49mieKFk4P5
+         zh4g==
+X-Forwarded-Encrypted: i=1; AJvYcCUNP40sck5uJnJMVxEfmKzEzPo/rReklIUAp5h8/IoMk7YTOrYTQK0qgjx4h8wgVVFcV8vt3TMeB7U=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyfUqjxLRkElr8CPDHYaH+B5STJwMIE3F0tb8rzzFd7Uzv1HiMr
+	rx2biO9pbqtrcqUi11R3Hlg8rt8h/oMtFHIHgvxCyAZi7/xm5/besItUzXTJ0zzb
+X-Gm-Gg: ASbGncs476XujiKsqPQeNCq2Bteipbdujo+U+tzgf4C1EpqbOdpYVQFRCwRWAc+8IDC
+	/Qfml4ofnS7rjPuE3oJC9YQrnMDVozPwnwXtGoX6ZrDZLpK93Y2ddD8tprgSdGZrFAppuYZsfKT
+	QI0SkTgpV6mt+OYH1qo9f9LdoyD0WQwVJ2UdJHqQTYBW/PrFkEAmuCgk7xlfcazsEr65xTv0sNy
+	aQsAbrUm8iwf6eeXrym47Ng4x52anbMkXOpTB59QEBk4KHEvxGObEFCIrzgO2dv5tC715AmQQvF
+	0leppmNMrVEWOh9cXSyPDl+KmgXHcgQyYFiOFMPDD+x6IvRATXEjZ/IZ4H3/pTb2DflMna7n5Xd
+	y//UtmF8pXapZu4RuEV0qtzI9vAOOFVGgAyZ4LVaAsfNkVzZyudwsgF53biGLLgpMhLKS1BQDr8
+	QzuH6/OTSUv7okNPllE3DII9x2TNoPLCpnD40/Opuz8856RTUo+TfjO7fN
+X-Google-Smtp-Source: AGHT+IHRS4u8NmbV0RNR9N55ju984u5TWRV0UdiQfh24u7xDgBdqE73rT5ZIWao9sWJu1UVJ1HNlMw==
+X-Received: by 2002:ac8:58c4:0:b0:4e8:93a1:7464 with SMTP id d75a77b69052e-4ee58a44081mr228869051cf.15.1764143433035;
+        Tue, 25 Nov 2025 23:50:33 -0800 (PST)
+Received: from mail-qk1-f170.google.com (mail-qk1-f170.google.com. [209.85.222.170])
+        by smtp.gmail.com with ESMTPSA id d75a77b69052e-4ee48e69f3dsm121161881cf.25.2025.11.25.23.50.32
+        for <linux-phy@lists.infradead.org>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 25 Nov 2025 23:50:32 -0800 (PST)
+Received: by mail-qk1-f170.google.com with SMTP id af79cd13be357-8b22624bcdaso779806885a.3
+        for <linux-phy@lists.infradead.org>; Tue, 25 Nov 2025 23:50:32 -0800 (PST)
+X-Forwarded-Encrypted: i=1; AJvYcCVbT1yWXNsjCZeWCNpQ8N6dcGlRXnuE2nLyV1VJR51nacK0AaBGV+xNVwnpwKdmn6L5VM4UJuIiUfI=@lists.infradead.org
+X-Received: by 2002:a05:6102:1484:b0:5db:d07c:218e with SMTP id
+ ada2fe7eead31-5e1de4a7207mr6895254137.41.1764142991927; Tue, 25 Nov 2025
+ 23:43:11 -0800 (PST)
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AM9PR04MB8585:EE_|PAXPR04MB8157:EE_
-X-MS-Office365-Filtering-Correlation-Id: 9f79047f-2797-4ca0-dd95-08de2cbd2535
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|10070799003|1800799024|19092799006|7416014|376014|366016;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?JQu8HNFwD8eEGJZINSdRSTmwU1QgImEqX1+fy7TZhs2rR3+7vbaypArNNvKk?=
- =?us-ascii?Q?oql0jcz6NKaBRSVu/5iqUZyglUq1IaBWkjt74YuYnR+r5OfB8thI5OVr0C1w?=
- =?us-ascii?Q?4jkorcMOZh5ryzX0i3JBGRONYr5jFCuS4jmc9hf/rcFv99Wvc/BPqJXMK8tr?=
- =?us-ascii?Q?d2PDkU0QiMrbP0Tyy/qthJCSf0EIM4Q3oNRsSRfn0VdfeND/ekNCVg4nsYQ2?=
- =?us-ascii?Q?z4W/+Ei8xxvB3fMYfQP38MaacwhyfCdzNCL0Qf/BLVyFYq6bky2V8JI0S7x5?=
- =?us-ascii?Q?O2qh0ljjkUo34DRrJqArhgeLda2oTKXOHt2otLCp8hsqUFjc31wtqoDHcEmd?=
- =?us-ascii?Q?JD9Zmr2cjBfTLWxWIRoK/B03qS/9fu2avJaU0bygho1jbUIhZfPvmjBpg1Q5?=
- =?us-ascii?Q?T+HPCv4YYutc7YsOlNNm7O1nbzkzMBCKNNxveCt39YOmXD+Iez9mj8A/jWKb?=
- =?us-ascii?Q?S3pfsNp2gHS/E/0IJ+T3ndTOZAY+58zcUvFd599x6PEL4CAC91UoCJ3ZGm09?=
- =?us-ascii?Q?s5YqM2vFTbzq/o3d5TujrsDeuj2vWB3ixTDSZxUx2cd2JOucuJmxmvCl7Dc0?=
- =?us-ascii?Q?sLCbIIXI15YkZFMuu0qk4pATv9TvIRZUPY8C6GDECL7B3j8qM7pF9BqI0PVD?=
- =?us-ascii?Q?7LRsY1T+JOR15j/G3CTT1yxr7xvAaCMfUT8a9T8R4iqBHtVFDyrG7V3lIjtL?=
- =?us-ascii?Q?jdb5QtWBmmEnjnImoSy+BKHat6cux04uDa4KPplZeEm0RV/O8qv6GwWXbrvg?=
- =?us-ascii?Q?5AAMjADD7i36tUCxRcwGq4Lz+PJPFbdnA/JMdcMv1upbj8unjHXwR5RGpMo3?=
- =?us-ascii?Q?TGbzwk7+vuFIhRBo/5gz9xUHrCMRYLpJzCbT4v7vFTscGduCeET9i7KM70iB?=
- =?us-ascii?Q?Vc4LqEXQSRdhQkh81xOvcgDGHfLaFBB0q8Y4ftuy7YEg1tDOWMH1k85lVTlM?=
- =?us-ascii?Q?HfhdKuI6KLQWS/2vByzY+I2CkX2t3gOBLrl5RFa0VEW6YlKUaXl7r/gdRbs2?=
- =?us-ascii?Q?30n+Ds+N/asAijoKo3FLtE4hGBSm0G/bv9/6A9A9L7QmBljbYmBMLs8aXRNV?=
- =?us-ascii?Q?k4onxGu/AyWL/SX80AIKm3lO1PkUvECENxnkqQln1/1EvF7B5W3WhN/H7TTc?=
- =?us-ascii?Q?TBYknA5ULkY+C/u/zogPrWDit6IZunot0ohIwExe7/qfx5/FTwaGIQKl2BmJ?=
- =?us-ascii?Q?F+NaC7ICCGZV+ZtXZA8ogRhAxqxZ5F6GWjpavCP+FPGHA5SfcH1SQCHr0k0S?=
- =?us-ascii?Q?zTlpJyP0Qfhg/8SwJ63sjRHuEu7YOdV3rE67o8XkFB14RvydpBVz3BXlY6c2?=
- =?us-ascii?Q?jFvy8AudeCH2SRhuAvAv+bS9zNAej9fS4ieDmJ3MTvWlBwX9PUJaK8FbSZlh?=
- =?us-ascii?Q?fqzEbQ56klorCISOGACCRCo50cpMKNHdsDWLRWboImdCRA1aeyO9As17KxBt?=
- =?us-ascii?Q?5pT+eCW6uznvKLMlqdNuoAjoSCX56ggX9/WEb05pzf/oTR2pf2654A=3D=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM9PR04MB8585.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(10070799003)(1800799024)(19092799006)(7416014)(376014)(366016);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?8GvAWBCBkHaQRDwzX+LQrVwOHDGBOrnFP3lAaTsydcJRJeeRYeSsQOz1ZhmR?=
- =?us-ascii?Q?axSNXy586OoEZpghzT2m8tkLRnr/ujc3RR30lMaRf7soXj0csOhd3squCYjv?=
- =?us-ascii?Q?+mqKfIxtNCphCCCOeG2EAqUJbk4VHowaEKhSruiuFHRNWb/69whAOHoxgFuB?=
- =?us-ascii?Q?sPBAT+hMVaZ+XLPQrFzx2t2ayn6I4c0gXAoq5LJPOyEvWoYhXgaWr0LByqi6?=
- =?us-ascii?Q?dp++1fPM/Dn7RE6tS+MSz+4EHG//ZXU4x6pTYHjp4mvk+k3TTETrjgYWoZRM?=
- =?us-ascii?Q?VlBY2YWVxt3MDfqk0WGU0S6hmkqjpC4DUhpg8PzqrI/TRzknuAJcjCgLPBAl?=
- =?us-ascii?Q?7P++pDd/bY35Gqpu+I8fgLlqj6kkBa0D0uleNOIG47CwtBd7Q3gqvkgJNI7u?=
- =?us-ascii?Q?we/6hKM7srNLbsLonno5GaduFs4OqulrRlK7eHN94J9/itSxspBq8rqDYKRp?=
- =?us-ascii?Q?Wvj0hD16Ii8OfGor+TLN8zGDy+FAZS39qsw+Q+952OVhyhstNPedcSnn3xRy?=
- =?us-ascii?Q?9T3L7Jg7Vlwk318uJCOtlw554SH39UZXNj9fLPq7yq7GZuQ+MNW3xen16UKk?=
- =?us-ascii?Q?QeT85BX+C9xF2Kn2fXh/2UC8IiZUwErdcOzk0h90JzW7qizhGZYy87He8nNB?=
- =?us-ascii?Q?XAwtNrA7Gl1Lpmsf7jUTRuw1oWVfpGqpKk28YN/2rbWfELHLO7syIQh9AE53?=
- =?us-ascii?Q?+Vgz8z8D45PDIWPfH8ebo5zpHbrDCtcd5asIr89V6FAsgZPmQexmsLKQLepf?=
- =?us-ascii?Q?4Tj1NZrVb8ln9ogzDbWVMi10bT4KKUiIBaO6nSLg7HFZm2iJp8B0HotOzZfk?=
- =?us-ascii?Q?GbQkVHV35Qdok/wgrrdjsPjkfXq/i+jiZdSAfb8wWLXwzIA+Fx1YGc29jwUq?=
- =?us-ascii?Q?HZl/keiGFqDXT0RMchSBLtC1RbEOnibwVvnMvdEbS5ajyRi+bkyB6+rsIraO?=
- =?us-ascii?Q?CzRYoVDIjyBGvObUr+woohVL+0KKOHDP9Ji8tcAxa8Q7ETCvWQ+mjVlM9bVA?=
- =?us-ascii?Q?WVt2gcbS2sIO1W9UjQLbBlMRr6rpSTz+cORqXeJaBTl14rVGV+DBBxCY69aa?=
- =?us-ascii?Q?vD/JDjc6A+u8RlyzwYIlA+i9opjvORBsXlmevKwuXyX5xeo9mRxDDJ35A6lG?=
- =?us-ascii?Q?KZMLpY1Q2hmIF0KjLOiBdg8nzS3/u6R9xu19Cd4AHS5gEjp5P4123uy5xNjU?=
- =?us-ascii?Q?1iW/jiTy3MaaX1a1bqdgwLZ4h0Lij819eLQTVOMA31oh/w+tSXHLVzGpVO3w?=
- =?us-ascii?Q?abSD9iJS9LWULWa7vK7Tj21sMsiJd5cCmgHm9QpzM7fbZ/uYmNQp+P2PAmdE?=
- =?us-ascii?Q?fadl/si0IItfzDdIE6fgxMhjN0tyfrIeq7fmNADUWLbTUTmSAMHJsf5KpTJX?=
- =?us-ascii?Q?f4LroCdE1lyIuIkRv2ZTicXEDBmtOtZodFUnXJBsT/nrcL+v0hbw6zP7C3YX?=
- =?us-ascii?Q?YvNvW4YpBscZ5Qev8EPw503JgTBQos420utSwWHpWC0+N+iYnlblsAExRxN0?=
- =?us-ascii?Q?yvIK358jYuh0DkOcAT41MqepP6WXZ4rJQs1uIdirAOPuttwArEYsp6+MHGc9?=
- =?us-ascii?Q?Kln/UC7sz2bZCer4e+1ma0lSPvIf34HuzBMJOs98yHcgGNNhp8LV4RPkmc9A?=
- =?us-ascii?Q?IEioHyGr+QWgLMuxCBzLn2oH/6ls+K6vxzh7y70szltHywWR693Is/DN2Brs?=
- =?us-ascii?Q?ASe/xw=3D=3D?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 9f79047f-2797-4ca0-dd95-08de2cbd2535
-X-MS-Exchange-CrossTenant-AuthSource: AM9PR04MB8585.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 Nov 2025 07:26:42.3016
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: EpomPosy46JJ4kfQVcc44X3bgH6GdnySlNZ9oRlA4m87oEr8HfLNO9/ZRZ2p+TbZaREXVcvT3zIiTHxq4Pn5vA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAXPR04MB8157
+References: <cover.1763737324.git.tommaso.merciai.xr@bp.renesas.com>
+ <89b6d61854e94966fc9781d5832b6c187c35b4de.1763737324.git.tommaso.merciai.xr@bp.renesas.com>
+ <CAMuHMdXBbzTeiQJQWuUnJ_rRD1Zo=1TBOzrv4WbvC7whL1=E9w@mail.gmail.com> <aSXR2iEAKjxM8VOR@tom-desktop>
+In-Reply-To: <aSXR2iEAKjxM8VOR@tom-desktop>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Wed, 26 Nov 2025 08:43:00 +0100
+X-Gmail-Original-Message-ID: <CAMuHMdVYvV8WXBKmQEMnw_qgMdoUDLreNJM3UqEtoZ29AR6NoA@mail.gmail.com>
+X-Gm-Features: AWmQ_bninuJBRTizSxZYPmdtY-ViJHt3X5imX5OlC4FiWsDPZsFKFDX1UIJfnDk
+Message-ID: <CAMuHMdVYvV8WXBKmQEMnw_qgMdoUDLreNJM3UqEtoZ29AR6NoA@mail.gmail.com>
+Subject: Re: [PATCH v4 11/22] phy: renesas: rcar-gen3-usb2: Use mux-state for
+ phyrst management
+To: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
+Cc: tomm.merciai@gmail.com, linux-renesas-soc@vger.kernel.org, 
+	biju.das.jz@bp.renesas.com, Peter Rosin <peda@axentia.se>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Fabrizio Castro <fabrizio.castro.jz@renesas.com>, 
+	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>, 
+	Philipp Zabel <p.zabel@pengutronix.de>, 
+	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, Magnus Damm <magnus.damm@gmail.com>, 
+	Sebastian Reichel <sebastian.reichel@collabora.com>, Andi Shyti <andi.shyti@kernel.org>, 
+	Jonathan Cameron <jonathan.cameron@huawei.com>, =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <ukleinek@kernel.org>, 
+	Arnd Bergmann <arnd@arndb.de>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251125_232648_675123_144872A1 
-X-CRM114-Status: GOOD (  37.28  )
+X-CRM114-CacheID: sfid-20251125_235034_733370_ECBB5465 
+X-CRM114-Status: GOOD (  38.78  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -183,85 +108,117 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-+Maxime, Holger
-thread at https://lore.kernel.org/netdev/20251122193341.332324-2-vladimir.oltean@nxp.com/
+Hi Tommaso,
 
-On Tue, Nov 25, 2025 at 11:33:09PM +0100, Andrew Lunn wrote:
-> > Yeah, although as things currently stand, I'd say that is the lesser of
-> > problems. The only user (mv88e6xxx) does something strange: it says it
-> > wants to configure the TX amplitude of SerDes ports, but instead follows
-> > the phy-handle and applies the amplitude specified in that node.
-> > 
-> > I tried to mentally follow how things would work in 2 cases:
-> > 1. PHY referenced by phy-handle is internal, then by definition it's not
-> >    a SerDes port.
-> > 2. PHY referenced by phy-handle is external, then the mv88e6xxx driver
-> >    looks at what is essentially a device tree description of the PHY's
-> >    TX, and applies that as a mirror image to the local SerDes' TX.
-> > 
-> > I think the logic is used in mv88e6xxx through case #2, i.e. we
-> > externalize the mv88e6xxx SerDes electrical properties to an unrelated
-> > OF node, the connected Ethernet PHY.
-> 
-> My understanding of the code is the same, #2. Although i would
-> probably not say it is an unrelated node. I expect the PHY is on the
-> other end of the SERDES link which is having the TX amplitudes
-> set. This clearly will not work if there is an SFP cage on the other
-> end, but it does for an SGMII PHY.
+On Tue, 25 Nov 2025 at 16:57, Tommaso Merciai
+<tommaso.merciai.xr@bp.renesas.com> wrote:
+> On Tue, Nov 25, 2025 at 03:10:22PM +0100, Geert Uytterhoeven wrote:
+> > On Fri, 21 Nov 2025 at 16:14, Tommaso Merciai
+> > <tommaso.merciai.xr@bp.renesas.com> wrote:
+> > > Add support for selecting the phyrst mux-state using the Linux mux
+> > > subsystem in the R-Car Gen3 USB2 PHY driver. This ensures correct hardware
+> > > initialization and integration with systems utilizing the mux-state device
+> > > tree property.
+> > >
+> > > A temporary wrapper for optional muxes is introduced until native support
+> > > is available in the multiplexer subsystem.
+> > >
+> > > Signed-off-by: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
 
-It is unrelated in the sense that the SGMII PHY is a different kernel
-object, and the mv88e6xxx is polluting its OF node with properties which
-it then interprets as its own, when the PHY driver may have wanted to
-configure its SGMII TX amplitude too, via those same generic properties.
+> > > --- a/drivers/phy/renesas/phy-rcar-gen3-usb2.c
+> > > +++ b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
+> > > @@ -938,11 +939,27 @@ static int rcar_gen3_phy_usb2_vbus_regulator_register(struct rcar_gen3_chan *cha
+> > >         return rcar_gen3_phy_usb2_vbus_regulator_get_exclusive_enable(channel, enable);
+> > >  }
+> > >
+> > > +/* Temporary wrapper until the multiplexer subsystem supports optional muxes */
+> > > +static inline struct mux_state *
+> > > +devm_mux_state_get_optional(struct device *dev, const char *mux_name)
+> > > +{
+> > > +       if (!of_property_present(dev->of_node, "mux-states"))
+> > > +               return NULL;
+> > > +
+> > > +       return devm_mux_state_get(dev, mux_name);
+> > > +}
+> > > +
+> > > +static void rcar_gen3_phy_mux_state_deselect(void *data)
+> > > +{
+> > > +       mux_state_deselect(data);
+> > > +}
+> > > +
+> > >  static int rcar_gen3_phy_usb2_probe(struct platform_device *pdev)
+> > >  {
+> > >         struct device *dev = &pdev->dev;
+> > >         struct rcar_gen3_chan *channel;
+> > >         struct phy_provider *provider;
+> > > +       struct mux_state *mux_state;
+> > >         int ret = 0, i, irq;
+> > >
+> > >         if (!dev->of_node) {
+> > > @@ -1019,6 +1036,23 @@ static int rcar_gen3_phy_usb2_probe(struct platform_device *pdev)
+> > >                 phy_set_drvdata(channel->rphys[i].phy, &channel->rphys[i]);
+> > >         }
+> > >
+> > > +       mux_state = devm_mux_state_get_optional(dev, NULL);
+> > > +       if (IS_ERR(mux_state)) {
+> > > +               if (PTR_ERR(mux_state) == -EPROBE_DEFER)
+> > > +                       return PTR_ERR(mux_state);
+> > > +               mux_state = NULL;
+> >
+> > No need to set mux_state to NULL, as mux_state is not used below.
+> >
+> > However, shouldn't you propagate all errors up?
+> > If the mux is not present, mux_state should already be NULL,
+> > i.e. IS_ERR(mux_state) would be false.
+> >
+> > > +       } else {
+> > > +               ret = mux_state_select(mux_state);
+> >
+> > This causes a crash on R-Car Gen3 and RZ/Five, as mux_state_select()
+> > doesn't handle NULL pointers gracefully yet.
+> >
+> > Adding a check like
+> >
+> >     -       } else {
+> >     +       } else if (mux_state) {
+> >
+> > fixes the issue.
+>
+> Thank you for checking this!
+>
+> Ack :)
+> I will switch to:
+>
+>         mux_state = devm_mux_state_get_optional(dev, NULL);
+>         if (IS_ERR(mux_state)) {
+>                 return PTR_ERR(mux_state);
+>         } else if (mux_state) {
 
-> I guess this code is from before the time Russell converted the
-> mv88e6xxx SERDES code into PCS drivers. The register being set is
-> within the PCS register set.  The mv88e6xxx also does not make use of
-> generic phys to represent the SERDES part of the PCS. So there is no
-> phys phandle to follow since there is no phy.
+Please no else after return.
 
-In my view, the phy-common-props.yaml are supposed to be applicable to either:
-(1) a network PHY with SerDes host-side connection (I suppose the media
-    side electrical properties would be covered by Maxime's phy_port
-    work - Maxime, please confirm).
-(2) a phylink_pcs with SerDes registers within the same register set
-(3) a generic PHY
+>                 ret = mux_state_select(mux_state);
+>                 if (ret)
+>                         return dev_err_probe(dev, ret, "Failed to select USB mux\n");
+>
+>                 ret = devm_add_action_or_reset(dev, rcar_gen3_phy_mux_state_deselect,
+>                                                mux_state);
+>                 if (ret)
+>                         return dev_err_probe(dev, ret,
+>                                              "Failed to register USB mux state deselect\n");
+>         }
+>
+> In v5.
 
-My patch 8/9 (net: phy: air_en8811h: deprecate "airoha,pnswap-rx" and
-"airoha,pnswap-tx") is an example of case (1) for polarities. Also, for
-example, at least Aquantia Gen3 PHYs (AQR111, AQR112) have a (not very
-well documented) "SerDes Lane 0 Amplitude" field in the PHY XS Receive
-(XAUI TX) Reserved Vendor Provisioning 4 register (address 4.E413).
+Gr{oetje,eeting}s,
 
-My patch 7/9 (net: pcs: xpcs: allow lane polarity inversion) is an
-example of case (2).
+                        Geert
 
-I haven't submitted an example of case (3) yet, but the Lynx PCS and
-Lynx SerDes would fall into that category. The PCS would be free of
-describing electrical properties, and those would go to the generic PHY
-(SerDes).
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
 
-All I'm trying to say is that we're missing an OF node to describe
-mv88e6xxx PCS electrical properties, because otherwise, it collides with
-case (1). My note regarding "phys" was just a guess that the "phy-handle"
-may have been mistaken for the port's SerDes PHY. Although there is a
-chance Holger knew what he was doing. In any case, I think we need to
-sort this one way or another, leaving the phy-handle logic a discouraged
-fallback path.
-
-That being said, I'm not exactly an expert in determining _how_ we could
-best retrofit SerDes/PCS OF nodes on top of the mv88e6xxx bindings.
-It depends on how many SerDes ports there are in these switches
-architecturally, and what is their register access method, so it would
-need to be handled on a case-by-case basis rather than one-size-fits-all.
-PCS node in port node could be a starting point, I guess, but I don't
-know if it would work.
-
-For SJA1105 and the XPCS, I thought the best course of action would be
-to create a "regs" container node in the switch, under which we'd have
-"ethernet-pcs" children, but that seems to be problematic in its own
-ways, due to how MFD is seemingly abused to make that work:
-https://lore.kernel.org/netdev/20251118190530.580267-15-vladimir.oltean@nxp.com/
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 -- 
 linux-phy mailing list
