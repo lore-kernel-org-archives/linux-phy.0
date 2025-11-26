@@ -4,88 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7FF26D10F24
-	for <linux-phy@archiver.kernel.org>; Wed, 26 Nov 2025 11:44:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 22DB4D10F22
+	for <linux-phy@archiver.kernel.org>; Wed, 26 Nov 2025 11:51:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eJ/9L4BgXnHLwlkQf0Wh2pJ1K2XWR7DtQ6fe7XIZ3LU=; b=kc3orKCb98LA6R
-	0jt8dfryJ5q5NxAqQpUymDjqz13cH0+sCfNY0p4UxxXDF25O05K4wf0gQ6ZrnLiGAnnECdAaGMxYo
-	5M9M2E0B374UJPHfXaPrRkkKYy+VdyzNLtFNLCQk1YJQCZgPrKkVtMho43/pZLB8GugX3J46JO/qT
-	zdtSjlfNf15u9qQew9EYhUxAeCIqGFC+JjvmDMRJkFYtmmH0SQFwZnw9F3K2NXz35Df0Y136nb+4z
-	WQ5b4kwWR7Nm2Vw2Vr1lvnnhfWdNO+B5ji5VzHk3r7OZr/MunV9g3Dfkzt043o7tnVdcTG7/n07k2
-	HOsdpLsn7X78AwqDluDQ==;
+	List-Owner; bh=Zhbl/JbDqyDTmFV6Zz0cqsLyc4exbI0txJXpxaKDhVk=; b=wIV8Sw1tX5nmDn
+	O87n9SB6cFWX7EmP0VsCOgHJ+mZxD3EzOWAvsJdCa+HZNjXkvfkzOQoc2n9TFyIl5MVg2b6Rx25EJ
+	b5xMvIx9PmMJKf6KDtNHEdanQiUL15Bq6MAFWvGoY35VHu8Qy3s9Bxx2SMh8+cBJ6ML1o+8PWv8ZZ
+	OLWzPhIa+t85YGPpnLPWBdYI4DbwEI6hIel2YeLJNxRuhTMLiO8m8A7s6BO73m77j6vXmx7fAPL4U
+	SZW34WpN5FtXfTQsRd9J59C15I6aFsTHa72iYR3T6mMCDmDADK/HE+ekx+HGRk8VvV9LMaYQS33f9
+	DjbMYcgjIODbhV1VoKMw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vODwq-0000000EvOl-3z3g;
-	Wed, 26 Nov 2025 11:44:37 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vOE3o-0000000Ew6X-2utw;
+	Wed, 26 Nov 2025 11:51:48 +0000
+Received: from mail-m49213.qiye.163.com ([45.254.49.213])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vODwp-0000000EvOU-01ww;
-	Wed, 26 Nov 2025 11:44:35 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id EFBA8601D7;
-	Wed, 26 Nov 2025 11:44:33 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1C877C113D0;
-	Wed, 26 Nov 2025 11:44:33 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
-	s=korg; t=1764157473;
-	bh=dQ3LNp2DPvCHpByC5YJ/LPjNqcR3n3ZIP831X7vWn8k=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=EX6HFDp6M+6sFCHy11l719FEszcZCnX/arPyanWY59AmUz7HdftavnC1U4UCkzvV0
-	 uMiLKf9hkOEIYyVgWL4ByFWeBVROb9xMXOMOAFmxeygWsa7rhDrNnpXdbZ/kbBuZPA
-	 mFQJCkSC9jrSiqVsHgOTzV+V4tdIrre3rw2MorAU=
-Date: Wed, 26 Nov 2025 12:44:17 +0100
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Heikki Krogerus <heikki.krogerus@linux.intel.com>
-Cc: Chaoyi Chen <chaoyi.chen@rock-chips.com>,
-	Chaoyi Chen <kernel@airkyi.com>,
-	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
-	Peter Chen <hzpeterchen@gmail.com>,
-	Luca Ceresoli <luca.ceresoli@bootlin.com>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
-	Andy Yan <andy.yan@rock-chips.com>,
-	Yubing Zhang <yubing.zhang@rock-chips.com>,
-	Frank Wang <frank.wang@rock-chips.com>,
-	Andrzej Hajda <andrzej.hajda@intel.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Robert Foss <rfoss@kernel.org>,
-	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
-	Jonas Karlman <jonas@kwiboo.se>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
-	Amit Sunil Dhamne <amitsd@google.com>,
-	Dragan Simic <dsimic@manjaro.org>, Johan Jonker <jbx6244@gmail.com>,
-	Diederik de Haas <didi.debian@cknow.org>,
-	Peter Robinson <pbrobinson@gmail.com>, linux-usb@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org
+	id 1vOE3k-0000000Ew5q-2dqU;
+	Wed, 26 Nov 2025 11:51:46 +0000
+Received: from [172.16.12.51] (unknown [58.22.7.114])
+	by smtp.qiye.163.com (Hmail) with ESMTP id 2afc8ccb9;
+	Wed, 26 Nov 2025 19:51:34 +0800 (GMT+08:00)
+Message-ID: <e48e1918-8ee0-4ffe-93d5-e096af241f77@rock-chips.com>
+Date: Wed, 26 Nov 2025 19:51:33 +0800
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v10 01/11] usb: typec: Add notifier functions
-Message-ID: <2025112656-dreamland-retreat-2a65@gregkh>
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>
+Cc: Chaoyi Chen <kernel@airkyi.com>,
+ Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+ Peter Chen <hzpeterchen@gmail.com>, Luca Ceresoli
+ <luca.ceresoli@bootlin.com>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Heiko Stuebner
+ <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
+ Andy Yan <andy.yan@rock-chips.com>,
+ Yubing Zhang <yubing.zhang@rock-chips.com>,
+ Frank Wang <frank.wang@rock-chips.com>,
+ Andrzej Hajda <andrzej.hajda@intel.com>,
+ Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
+ David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+ Amit Sunil Dhamne <amitsd@google.com>, Dragan Simic <dsimic@manjaro.org>,
+ Johan Jonker <jbx6244@gmail.com>, Diederik de Haas <didi.debian@cknow.org>,
+ Peter Robinson <pbrobinson@gmail.com>, linux-usb@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org
 References: <2025112102-laurel-mulch-58e4@gregkh>
  <462ad1bd-7eec-4f26-b383-96b049e14559@rock-chips.com>
  <2025112402-unopposed-polio-e6e9@gregkh>
  <a80483de-518d-45d5-b46a-9b70cca5b236@rock-chips.com>
  <2025112448-brush-porcupine-c851@gregkh>
- <c9cb7b79-37c8-4fef-97a6-7d6b8898f9c4@rock-chips.com>
- <aSV_lQYJPxN7oBM-@kuha>
+ <c9cb7b79-37c8-4fef-97a6-7d6b8898f9c4@rock-chips.com> <aSV_lQYJPxN7oBM-@kuha>
  <2025112554-uncaring-curator-642a@gregkh>
- <cbb38c08-6937-4b7d-a0b0-d5ca6c17f466@rock-chips.com>
- <aSbLkwPG0dUzZvql@kuha>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <aSbLkwPG0dUzZvql@kuha>
+ <cbb38c08-6937-4b7d-a0b0-d5ca6c17f466@rock-chips.com> <aSbLkwPG0dUzZvql@kuha>
+ <2025112656-dreamland-retreat-2a65@gregkh>
+Content-Language: en-US
+From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+In-Reply-To: <2025112656-dreamland-retreat-2a65@gregkh>
+X-HM-Tid: 0a9ac001308e03abkunmdaa20eca5ea8c5
+X-HM-MType: 1
+X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
+	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZQk4dHVZIHUIeGBhNTRlNQh5WFRQJFh
+	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSEpPSE
+	xVSktLVUpCS0tZBg++
+DKIM-Signature: a=rsa-sha256;
+	b=jBANWdfCXUE5gDGcQIlQs4pqUaqXDsXzhdChC4iwSgqp3kPQUaUPgNli4XbRKmNmCnFKOqtpFUnKe9D+Kt7p8xXmLhuiJ9Cw18Swcx5cYBTi/Gz5LHMm7Y0xygV99pjgLmQ02+Ajw3beBLk0/GiLF/nG8ov6UkJaZYaaBF/MbrY=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
+	bh=h7ZJhr+0x5ygBrBW8UPFMD6T08Tpdt0hEWVktbHPqtg=;
+	h=date:mime-version:subject:message-id:from;
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20251126_035145_552628_141D03D8 
+X-CRM114-Status: GOOD (  19.56  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,48 +101,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Nov 26, 2025 at 11:42:43AM +0200, Heikki Krogerus wrote:
-> Wed, Nov 26, 2025 at 09:46:19AM +0800, Chaoyi Chen kirjoitti:
-> > On 11/25/2025 7:49 PM, Greg Kroah-Hartman wrote:
-> > >> +static umode_t typec_is_visible(struct kobject *kobj, struct attribute *attr, int n)
-> > >> +{
-> > >> +	if (is_typec_port(kobj_to_dev(kobj)->parent))
-> > > 
-> > > Why look at the parent?  Doesn't the device have a type that should show
-> > > this?
-> > > 
-> > > Otherwise, looks good to me.
-> > 
-> > They have same deivce type "typec_altmode_dev_type".
-> > The parent device has a different device type to distinguish between
-> > port device and partner device.
+On 11/26/2025 7:44 PM, Greg Kroah-Hartman wrote:
+> On Wed, Nov 26, 2025 at 11:42:43AM +0200, Heikki Krogerus wrote:
+>> Wed, Nov 26, 2025 at 09:46:19AM +0800, Chaoyi Chen kirjoitti:
+>>> On 11/25/2025 7:49 PM, Greg Kroah-Hartman wrote:
+>>>>> +static umode_t typec_is_visible(struct kobject *kobj, struct attribute *attr, int n)
+>>>>> +{
+>>>>> +	if (is_typec_port(kobj_to_dev(kobj)->parent))
+>>>>
+>>>> Why look at the parent?  Doesn't the device have a type that should show
+>>>> this?
+>>>>
+>>>> Otherwise, looks good to me.
+>>>
+>>> They have same deivce type "typec_altmode_dev_type".
+>>> The parent device has a different device type to distinguish between
+>>> port device and partner device.
+>>
+>> I was already wondering would it make sense to provide separate device
+>> types for the port, and also plug, alternate modes, but I'm not sure
+>> if that's the right thing to do.
+>>
+>> There is a plan to register an "altmode" also for the USB4 mode,
+>> which of course is not an alternate mode. So USB4 will definitely need a
+>> separate device type.
+>>
+>> So if we supply separate device types for the port, plug and partner
+>> alternate modes, we need to supply separate device types for port, plug
+>> and partner USB4 mode as well.
+>>
+>> We certainly can still do that, but I'm just not sure if it makes
+>> sense?
+>>
+>> I'll prepare a new version for this and include a separate patch where
+>> instead of defining separate device types for the port and plug
+>> alternate modes I'll just supply helpers is_port_alternate_mode() and
+>> is_plug_alternate_mode().
 > 
-> I was already wondering would it make sense to provide separate device
-> types for the port, and also plug, alternate modes, but I'm not sure
-> if that's the right thing to do.
-> 
-> There is a plan to register an "altmode" also for the USB4 mode,
-> which of course is not an alternate mode. So USB4 will definitely need a
-> separate device type.
-> 
-> So if we supply separate device types for the port, plug and partner
-> alternate modes, we need to supply separate device types for port, plug
-> and partner USB4 mode as well.
-> 
-> We certainly can still do that, but I'm just not sure if it makes
-> sense?
-> 
-> I'll prepare a new version for this and include a separate patch where
-> instead of defining separate device types for the port and plug
-> alternate modes I'll just supply helpers is_port_alternate_mode() and
-> is_plug_alternate_mode().
+> That feels like it would be better in the long run as it would be
+> easier to "match" on the device type.
+>
 
-That feels like it would be better in the long run as it would be
-easier to "match" on the device type.
+It make sense. But now can we first use the current "match" device type
+operation and then modify them later?
 
-thanks,
+> thanks,
+> 
+> greg k-h
+> 
+> 
 
-greg k-h
+-- 
+Best, 
+Chaoyi
 
 -- 
 linux-phy mailing list
