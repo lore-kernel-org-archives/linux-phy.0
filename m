@@ -4,193 +4,105 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 747A7D10390
-	for <linux-phy@archiver.kernel.org>; Wed, 26 Nov 2025 09:32:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0B598D10397
+	for <linux-phy@archiver.kernel.org>; Wed, 26 Nov 2025 09:43:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ipc2SuEZGq+TSUXk1Eh/CbZGFpRlRPwI/5SgQT7eA/Y=; b=lPp+XT1HNK5n4f
-	J+zkVmLP2kTinZS65EtSsGl0hEf+aDKN5OwOVJ8Ik3/Ym6xStXcsE2DJldHOT1OjKgoY0mQhMBffo
-	acKRwlE+e/VmbrDXugiysO6IxbSERo/gLDRjzX9OaLkmMNEiJqyeoVokEjtbusil68NKnHNgdpaC+
-	tQ+uyt8fFTtgj6WbGgAxZbe6CLRcRZI5M4RId0iIxdSc0GivhHwMQoq27H8Nm05sPIGfQyxYWGMWH
-	Qxz9zBnQwXVgw7tEgJb9MEpVf1W/0z3mMjdPZXf/HJ1yxtNOpDFnq1eccj3RvvT2ONKoNzqlAa8NA
-	j7WSGEOGiMXCwwRaSvfA==;
+	List-Owner; bh=6ShgnyW36XNDlFtF1veQAPK/gR88Vd6IbsR3uPJyltc=; b=Rjey9Lj41oRBaB
+	Ab9zNBB7NyKfx3JhAv02wG4lzrnHCyEFCl/V6DRS59HRxVBeNfSmGEyArAJdcxTc4yLe8uftmfjLb
+	WTbyndJRFjetwB1S+4KuMBWCL5ZnRSWlldDG/Rr8LDFpo6Gxvi5DjnvqAvWgyk09b4m1Yjg8uurr1
+	1H7pTZLOXnU1sxD+hduPmUwTAZ5FnuN6vg9VQ8cttvwMaw2T8noWkS+sehgcMIuddyPavZTyIl4SM
+	kSU/ysrDyQk0q6JhowvU1THOgccGurHALXIsPRSEGAAfQQCS1zi+WUB4mHx2Z7ShR7SQLpz7eU/5i
+	8cVBc5g6a8Ut4SXv7NXQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vOBtN-0000000EiZj-4B7Y;
-	Wed, 26 Nov 2025 09:32:54 +0000
-Received: from mail-swedencentralazon11013036.outbound.protection.outlook.com ([52.101.83.36] helo=GVXPR05CU001.outbound.protection.outlook.com)
+	id 1vOC3V-0000000EjQU-2VSr;
+	Wed, 26 Nov 2025 09:43:21 +0000
+Received: from mgamail.intel.com ([192.198.163.18])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vOBtL-0000000EiYs-0yCK;
-	Wed, 26 Nov 2025 09:32:52 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=M/0IbdLUEjoJ91RnXlAPhhKr2vDRlhEgFoROZclamh1GrE7iyVJI6GJY1fgKgfmcMfExHsEiQ9V3sB40o8EvgFM280+QuDSqr35s6LN0q4xqwJa0OeDFSa7cQZH5WYTFVlH++qjXpNeoyIXxVmoOlfYH0aRVllPMvMtYd/oLfdLG1RGqWSZwUtv5BCCxa3ytnzYbeHUt+JyduhzcdNcEsfgzoYELRhhTQLab+QkVl+zZzOwgem6v1/yVr4uazRpeAUjJkmYDWmKIR2iFMg3WuSutRbhyfg99KB7hj7NPK1XIqGZgwHVkTp9z9dWSUqNUgF7//FIG0gkrapsPtKxm1Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=Jhp+ji04Rlm5yjPqr+QnGGoyUS8SS2IhMdpWd+7E1HM=;
- b=WdtNPMs/kzLnmjqLmGGmymASeGI4qiEi/t169rs9ALcRjWfsT+RElq5r5xRtpSr0Tx98orMuTt5elqUsr5iXjJgffRFI2RiIxzMdsVT4ImSBSl7HBFj7h7wo+4lO/W4xxCr3/3BLlsFdG7J7kZT93fNtK9rJAt793spL60bsjERYZb7aPOegi2Pan0bgdhdil9tKrYHtWBdmBJVTFCrkD6tvqj5Z3BGtfqSWP+hEFGmA74SqGG2p/NuaIMrKhiMSx1wbN48XzHyjuz6e/MZ+FyaurA74/nS2Ofe6bMAzdwiSlYHpewKjzza0ZYmZ5kOVIhOBL6PcDIa4Uy4w9SD2rw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=hitachienergy.com; dmarc=pass action=none
- header.from=hitachienergy.com; dkim=pass header.d=hitachienergy.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=hitachienergy.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Jhp+ji04Rlm5yjPqr+QnGGoyUS8SS2IhMdpWd+7E1HM=;
- b=z/DFgUWoi0mVKp9DRcJVC++qM8B4gAxfOgx3vYA/ZY9QlZufMtNrVPf0C7Lz0F0nLs8cDlIr4NypQEwhSh4WjzpmLPLXtwzddoH9R1qfh2h3O9vRRl4+XWxrfIuoHA3s+cptAxf1b+zpAXUocrBx3E/VYiAgoA8eY8mq5A7ZnCvoOeYN0MxaZAzaoWs0/vB2GCt9mLp8vDQyCkeZVS6Lqi0Qb9SwYaGPSkxLbjGs4hJw9ruHZc6ai4nELXHjJPW7zhAKARsbPSokwdldz4ml1R/E+UgWfllVAQpcPZZ/Yh1EIczI5gp1vdZ9lCSns6gT86d7mfKxiZ/Zl5wTzdcvtg==
-Received: from AM0PR06MB10396.eurprd06.prod.outlook.com (2603:10a6:20b:6fd::9)
- by AM0PR06MB6547.eurprd06.prod.outlook.com (2603:10a6:208:196::10) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9343.16; Wed, 26 Nov
- 2025 09:32:31 +0000
-Received: from AM0PR06MB10396.eurprd06.prod.outlook.com
- ([fe80::f64e:6a20:6d85:183f]) by AM0PR06MB10396.eurprd06.prod.outlook.com
- ([fe80::f64e:6a20:6d85:183f%6]) with mapi id 15.20.9366.009; Wed, 26 Nov 2025
- 09:32:30 +0000
-From: Holger Brunck <holger.brunck@hitachienergy.com>
-To: Vladimir Oltean <vladimir.oltean@nxp.com>, Andrew Lunn <andrew@lunn.ch>
-CC: "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
-	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
-	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-	"linux-arm-kernel@lists.infradead.org"
-	<linux-arm-kernel@lists.infradead.org>, "linux-mediatek@lists.infradead.org"
-	<linux-mediatek@lists.infradead.org>, Daniel Golle <daniel@makrotopia.org>,
-	Horatiu Vultur <horatiu.vultur@microchip.com>, Heiner Kallweit
-	<hkallweit1@gmail.com>, Russell King <linux@armlinux.org.uk>, "David S.
- Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, Jakub
- Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, Rob Herring
-	<robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
-	<conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
-	<kishon@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, Eric
- Woudstra <ericwouds@gmail.com>,
-	=?iso-2022-jp?B?TWFyZWsgQmVoGyRCImUiaRsoQm4=?= <kabel@kernel.org>, Lee Jones
-	<lee@kernel.org>, Patrice Chotard <patrice.chotard@foss.st.com>, Maxime
- Chevallier <maxime.chevallier@bootlin.com>
-Subject: RE: [PATCH net-next 1/9] dt-bindings: phy: rename
- transmit-amplitude.yaml to phy-common-props.yaml
-Thread-Topic: [PATCH net-next 1/9] dt-bindings: phy: rename
- transmit-amplitude.yaml to phy-common-props.yaml
-Thread-Index: AQHcXqYGtlM98xQGlkSgPr5ML7/KzbUEqGyw
-Date: Wed, 26 Nov 2025 09:32:30 +0000
-Message-ID: <AM0PR06MB10396D06E6F06F6B8AB3CFCBEF7DEA@AM0PR06MB10396.eurprd06.prod.outlook.com>
-References: <20251122193341.332324-1-vladimir.oltean@nxp.com>
- <20251122193341.332324-2-vladimir.oltean@nxp.com>
- <0faccdb7-0934-4543-9b7f-a655a632fa86@lunn.ch>
- <20251125214450.qeljlyt3d27zclfr@skbuf>
- <b4597333-e485-426d-975e-3082895e09f6@lunn.ch>
- <20251126072638.wqwbhhab3afxvm7x@skbuf>
-In-Reply-To: <20251126072638.wqwbhhab3afxvm7x@skbuf>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=hitachienergy.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: AM0PR06MB10396:EE_|AM0PR06MB6547:EE_
-x-ms-office365-filtering-correlation-id: 1b74bb21-4f2c-4e17-f675-08de2cceb890
-x-he-o365-outbound: HEO365Out
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230040|366016|376014|7416014|1800799024|38070700021;
-x-microsoft-antispam-message-info: =?iso-2022-jp?B?MGVuNmo4WXhsem1oZ3RZK1VrTFlmTEdjNm01L1U3VXkxYmZRSGlYUnd4?=
- =?iso-2022-jp?B?ZmZGb2liUFVvWC8rOWdLWUZFWVVQczUvMEltWWsweE5ZN1B2U2taaTcv?=
- =?iso-2022-jp?B?ajNsQ2w3RjVPZXdFVU83UUR5OXZGUEUxdWpXOGl6SW9ITVpHSUk5K2VG?=
- =?iso-2022-jp?B?ckcxQVIrZ1Y4NVdwblN3L0cwQ2xaYjNvYTBWUXdOTWpzMUFqQkJlbzFl?=
- =?iso-2022-jp?B?eGR1cWdmNlpMbXJHOEY5T2pvWDVqV0xkeWdHNUZ2TmtvWFRtTDNDMzVX?=
- =?iso-2022-jp?B?b0ZidlJIOHN1K3p5aEllS2g2dGYxWk5EOUt6eHhsb1F0L0lPQWVlZmgr?=
- =?iso-2022-jp?B?QkFVVkkyZFNqeUkzTE80bG5pamlCS0d1L1d5R0M5by93S2FHWjRCNDh5?=
- =?iso-2022-jp?B?L0NtNlpXZmY5YlhFdzNzZDVvQ08yOWtCaUM1MnBqMGovaFJKeEVCQ1F4?=
- =?iso-2022-jp?B?L05PUnNvTUxxT0w2N1NKamxEUkovNTlBY1pxSWQ0ODd5VmwrOEtlKzBI?=
- =?iso-2022-jp?B?RmN2T29Md2VZdERoTUVsL0YxMHlDSUxraFYvbm9HVElmeU1uRG10Z0xP?=
- =?iso-2022-jp?B?YStqeGZJY29iY1NDUWpHcXZUUEZ3RE10MlB4UTN1OHVjZmxwMVBKMVU0?=
- =?iso-2022-jp?B?ZG4vVGNuK0RhZjEyUFlEMG00YlFSM2lyeW81VERocG1VVHZuSmh3ZkRr?=
- =?iso-2022-jp?B?dnN4MityY1BMVmlzWHd0UUt6clJpK3ZBR3g3K2ZOak1OWGcvRGtoY2tO?=
- =?iso-2022-jp?B?QUJIaFVyQWxqTlRRVGdrNDNybnNoTTRtMVJaZmw5OURnVGxEU01oajUz?=
- =?iso-2022-jp?B?ek1Ed0orZjJ5Q3VoQ1BPNitXMkVCcW52TExvU243WUdZdyt6NjdMUlJC?=
- =?iso-2022-jp?B?MDBBck54K0FSOVFuWlBwVWtaOTR6T3grUlBQc1FLVTEwOFk3Wm50UitV?=
- =?iso-2022-jp?B?Nm9VNHhxa09yZjNvQkcydktIV29uU3dFZ0Y0UEZ6TmRRb09yclJwclh4?=
- =?iso-2022-jp?B?N2dsemNjUU5kZVpWbmV1a0Jza1VoYW5rRm1GZ0ZlY2RpWlllZW5TSjJQ?=
- =?iso-2022-jp?B?RnVXcEdqT0JISDJkUmswNHRsK0ZYa1lza08zb2s5bjNnT1FOdlFCZGlw?=
- =?iso-2022-jp?B?djcwU1RVNG9oYTZVRSt6Y0hEZXI1MnNMTzRkbHRFMm9WZ0JreXo3c29h?=
- =?iso-2022-jp?B?OTVZWWx3bWJkUGE2UTZkK2IyeUtOK3ZIczN3cE4vdzRjWU1tNzRNUVpy?=
- =?iso-2022-jp?B?b0w5SzJ5eU9BUEluRGVuUUJGa0dsdmRQRSs4cExkaTZSYWs4dE52S1VZ?=
- =?iso-2022-jp?B?M04yMFdUQ1BER1JWbEc5QXRJd1g1ZmtxS3lhN25TS1VWQ1htMmVzOFlV?=
- =?iso-2022-jp?B?MDdLdlJTR2JBOTlwdW5QRXRGRjdYUWFCUVNrOE96aHRlWVpwNTEzYkpY?=
- =?iso-2022-jp?B?L2NST00wbjJsczR4Q1JLTFRxcW9KdHVTUmx4Wm1nN2pvUGtqYUhXa3BE?=
- =?iso-2022-jp?B?citQakltR3BWWnlZTS9zeHpFZVVhdkdoRk5FTG9UT3dNVHBwWVVFWEdt?=
- =?iso-2022-jp?B?MUNGMFRLWTFqNWc1Z2o4TGNFUjBqbXA1TkYrMERTYld4eEN1bHNHMHA5?=
- =?iso-2022-jp?B?MmhMVStrNEc0ajhaWnVHamo1OWxsdGg2bWMyMHlTWjd6SFVRNktxbWQ5?=
- =?iso-2022-jp?B?UVNBV1R2K1ZaOXRIVkk3NGpteS9PcU1sTzNLVmhORGVJWjBnL2xVbGxt?=
- =?iso-2022-jp?B?K0Y4QVlaMlliWDV3RXNkUWpxZGd6ZFNpdVlJOTQ5MWxSSVJCeENhYUk1?=
- =?iso-2022-jp?B?RmpNZzFDeHBWZURkcVpLdFI0ME1jNHB2eWR6eDlxUHJ4WFJrSkp1QnhU?=
- =?iso-2022-jp?B?TmpYOWhzRDRZSzNOOGJqTGYxSS8wTC9iY0Y3QXFoR3kzWkVNRjFqMk5h?=
- =?iso-2022-jp?B?QTNGRTBRZTFyMHZzQTZMODJ0SGp2dGZiS1prZW1DOTNYSkUzZWhJZ1lZ?=
- =?iso-2022-jp?B?WTZ6bWhBQnQ2MEJqckJadEFPbXMvWXhKTjhFWDNrVWIxb2lsV1huZk9v?=
- =?iso-2022-jp?B?VmVJVk1mRGN5MUZpWDFGV0JJOE9Mc1l2RE0yZ0RVdmZtSXZWb2Rha0JR?=
- =?iso-2022-jp?B?aXdFNi96dHNEYXJWeUltZmZKbm5abDA2b2RlMnVDQ3FScCtFRWg1Y0dt?=
- =?iso-2022-jp?B?blpldFByaGFNMVJtNzZvM2hsUFM4b0NB?=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:ja;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR06MB10396.eurprd06.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(376014)(7416014)(1800799024)(38070700021);DIR:OUT;SFP:1101;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?iso-2022-jp?B?c1JieUliU1pFME9mcVQ2T1BVMVZpZkxXRng2M2E4YmhKRUFSSXo4aWoy?=
- =?iso-2022-jp?B?UnoxcE50SmQ3Y21TRXZrRWZ5QTRLRERxMENYU2NEUU9Sai9ock9TbDZh?=
- =?iso-2022-jp?B?RFM5MDMwa2p4bTJESTZScGo1OU1vanl0ZTdoOFVCZUlPY2JqbG9wYXBw?=
- =?iso-2022-jp?B?U0xaaW5mWkJHVWs4ck5QczF4d3c4Qjd5d1lKd2pZMmMvdzgrMi9hOTV3?=
- =?iso-2022-jp?B?Z1IraHVITUo3MjFwVVZuYkI1R2V4ZktKVVFORUlTcjI2bUFFaHBNdDNW?=
- =?iso-2022-jp?B?cCsza0NLU1FLM0FZcXduOTEyNTEvcTRNdVhyRk1rVXFLcWtKRGFKRHRH?=
- =?iso-2022-jp?B?UHIxRDZldFJ6aVAwam44UU9vaERGSGpieXFiRCtncmFmYUFzNW5CVzlD?=
- =?iso-2022-jp?B?MmVucXB2czRXTU9XNXltbE16clZzSUo1WDk4V01PY2tCcGtsVEx2b0U4?=
- =?iso-2022-jp?B?Q0N1MHVScHVLVEo4TEdGTlltZitzUnpPTEo4Ukh3WitJNENkWk9wWXFw?=
- =?iso-2022-jp?B?YklxUXdKeTcrMTl3T3AzSXovd3pEelBkYzNIYmNvTlBtakVQaG9hUFl6?=
- =?iso-2022-jp?B?Q0Rjc1dIcUFMMXZIUCthWk9ySFYzVkRVdlNWYS8ySmp5QVE3ZzIzaGsz?=
- =?iso-2022-jp?B?VURqZHk3V0EvNzRtdTFFNG5vaGJoTTkwMHp3QVcvdmdGazRCUTVaZEdG?=
- =?iso-2022-jp?B?ZnBhUncwclB5ZHh3S3RJS3NrRGMzVE01Vk4yNFhsbm1wM3VUU3RJbDZy?=
- =?iso-2022-jp?B?eFJhVmxmSW9vOFQwYjQzeklyY3JmODBWbkp3VldpN0ZVV1F4MkhJc3JV?=
- =?iso-2022-jp?B?Qy9KWnZxL1VRR2NaT0hTNExmUkJYdEpNWU82SC8xamRPQmhQNkxaVE5h?=
- =?iso-2022-jp?B?bFBhOU53RzRBM1VOK012Uk9WM0wrTWEyOWRiOG1vMVlCMUZqdHozNTZv?=
- =?iso-2022-jp?B?UCsyQVlMb2xlUTBNTGNMS0dia3JjVTNZc3o0THA0RUgzaTlIL2ZQeVpZ?=
- =?iso-2022-jp?B?U2ZsWnVyWElZRHJ0R3RFc00xUnZrVUJIdkk0QzkxN0cwazZyZWNQRDE4?=
- =?iso-2022-jp?B?b0Q0R2lWcktnMVdRSElML1VSN0c1YSt2ZEIxbCtibkxjUDJzZmlUVnNv?=
- =?iso-2022-jp?B?RndxdUpiNUZMYjlmR1h1WTVoUzdEUHVDMDI2bVQyblpFdzVXRitiREh3?=
- =?iso-2022-jp?B?ZG0zRk95S2NyV3BHU1plK2R4T1VPNGRMNzl0TThMWVdqMHVra3JpakxM?=
- =?iso-2022-jp?B?UFoxWm1GL1RzMjdXZU1PZ1ZTMHpTbUZ2YnhmNlN6V3p2OG94aGk0Qzh1?=
- =?iso-2022-jp?B?OWorcDRSZWNPZHBMVmdrdTZTL2VhRFkyWmN0dXRSR1VSUEJYMTJ4czJp?=
- =?iso-2022-jp?B?ZXVCK01xT1JYZUJMM0cvbkorWllDZ28wUG9VUCtuY0htOERXclRJYkl5?=
- =?iso-2022-jp?B?UitjNDBWNDBESFFKOHZlZnBVNllaeU45V09vYklvRGFzaXgyWW9adlg5?=
- =?iso-2022-jp?B?Z1pWOThuNXFUUi9QSnF1RUJRT0FuSWpvMmtPc0x2cytSWCtTcFJGMDBW?=
- =?iso-2022-jp?B?cHd2NnkvZndmaGR4cUhIZnY1TFlvSjBYRmVENXZ5UHNsc3djaElVZWJX?=
- =?iso-2022-jp?B?Z0ZXdGNYaWRVZm9Pei9jTGhNUmJ4SlRkR2tTSjkxUk9pbkY2dEEvQWk0?=
- =?iso-2022-jp?B?Zkx1V0lxbWlrMTlaZU5yM2lKUFpwSEZya0p6d3NONEdqYTQ0d2EzMStX?=
- =?iso-2022-jp?B?Vzg0UUY0bkc2TFVscVk1ejVCNThSWHFQZDRZQWpvZENuajZ1UDZ1a0o1?=
- =?iso-2022-jp?B?ZUdqWVlGS09iZDl5Tm5Fd1NzTGU4aHJTVDdWZy9tSHpmS0hPMlVMYmxV?=
- =?iso-2022-jp?B?RURoenpRMVRQWmdOekdRUkJON01GcHVVc3dUdThzMVdaTWNnd1pOSjhw?=
- =?iso-2022-jp?B?VGNFbGlqZHpTenhRUWZSNkxSQ1I1NWxsUEpvTWhCbStrdHRxdFd2MEZl?=
- =?iso-2022-jp?B?SGhNTnBvaXhtVnp5Q0E0eGppWkpMY1lmN1lFNXZoNFM4S21CTTladVh0?=
- =?iso-2022-jp?B?NWs0dm1aTDA2ekFaS3RFL2Q0SSszdzNoOE9GY1BwZWpSVGJBNHdwNFFS?=
- =?iso-2022-jp?B?Qy92WXFuYWFDdHBBSEhzQjFNQzVraTRyRVI2b3U3K2U5a0NZY1VXNmJa?=
- =?iso-2022-jp?B?MGo3VjBXbDRNUG1BWWJTbmFub05INnllUHFVTk9Mc1pGNC9HRVZIRHEr?=
- =?iso-2022-jp?B?ckRISHlFU09SZUUwKzA0ZUlVby9FbHJxMEpSUlNXTEpjVUQ1UzdPV09F?=
- =?iso-2022-jp?B?NTIzMzhNUWhweCtWUkpsTTI2WlduRmVHSnc9PQ==?=
+	id 1vOC3S-0000000EjPt-17VW;
+	Wed, 26 Nov 2025 09:43:19 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1764150198; x=1795686198;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=CCg+lZSEq+WcXEQmJQne7xQ4oE1yxypysTDuDghy64Q=;
+  b=iBDS2yOuRT9lKKYMJ1kxUPgu/X+Pm81Heeg6xmprFhycjI1/Ddu45gLJ
+   sU4+kAegRTlNDQHkGB4rCkIpjGY1eJQbRUs88cKTdzpMg7J+zokYgAUl7
+   xWMDT5mZ/xg/zIOMoiM+3Y/fpHvw0YzEiiwe9G/EpPxE84hu/yJ23y9kd
+   tSsDShBgxcwaAdDNLewzfBbN63X/1rIqn4HJRxXouVQxgV9vACAZEheGm
+   Jicxk4asYOHcLhXm94K5bX289tf392rPRg0kCKvMsqHKMeWJSXUgRHXBw
+   /aVrVY/L0Ai6UkHrVIEYiKC2dCZRTRASKR/8oSwfPWmi5Qb10DZFBRsAr
+   g==;
+X-CSE-ConnectionGUID: eXU6AcowSISKJNzT/EAQQA==
+X-CSE-MsgGUID: /8iNkcs7SqitRaRQmfe0vg==
+X-IronPort-AV: E=McAfee;i="6800,10657,11624"; a="65371596"
+X-IronPort-AV: E=Sophos;i="6.20,228,1758610800"; 
+   d="scan'208";a="65371596"
+Received: from fmviesa003.fm.intel.com ([10.60.135.143])
+  by fmvoesa112.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 26 Nov 2025 01:43:14 -0800
+X-CSE-ConnectionGUID: B+T8YiSeRD+/P6Odm3S47w==
+X-CSE-MsgGUID: B/YD/UVbQWaORjBCGIUAVA==
+X-ExtLoop1: 1
+Received: from iherna2-mobl4.amr.corp.intel.com (HELO kuha) ([10.124.223.25])
+  by fmviesa003.fm.intel.com with SMTP; 26 Nov 2025 01:42:55 -0800
+Received: by kuha (sSMTP sendmail emulation); Wed, 26 Nov 2025 11:42:43 +0200
+Date: Wed, 26 Nov 2025 11:42:43 +0200
+From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
+To: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Chaoyi Chen <kernel@airkyi.com>,
+	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+	Peter Chen <hzpeterchen@gmail.com>,
+	Luca Ceresoli <luca.ceresoli@bootlin.com>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Heiko Stuebner <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
+	Andy Yan <andy.yan@rock-chips.com>,
+	Yubing Zhang <yubing.zhang@rock-chips.com>,
+	Frank Wang <frank.wang@rock-chips.com>,
+	Andrzej Hajda <andrzej.hajda@intel.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Robert Foss <rfoss@kernel.org>,
+	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+	Jonas Karlman <jonas@kwiboo.se>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+	Amit Sunil Dhamne <amitsd@google.com>,
+	Dragan Simic <dsimic@manjaro.org>, Johan Jonker <jbx6244@gmail.com>,
+	Diederik de Haas <didi.debian@cknow.org>,
+	Peter Robinson <pbrobinson@gmail.com>, linux-usb@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org
+Subject: Re: [PATCH v10 01/11] usb: typec: Add notifier functions
+Message-ID: <aSbLkwPG0dUzZvql@kuha>
+References: <20251120022343.250-2-kernel@airkyi.com>
+ <2025112102-laurel-mulch-58e4@gregkh>
+ <462ad1bd-7eec-4f26-b383-96b049e14559@rock-chips.com>
+ <2025112402-unopposed-polio-e6e9@gregkh>
+ <a80483de-518d-45d5-b46a-9b70cca5b236@rock-chips.com>
+ <2025112448-brush-porcupine-c851@gregkh>
+ <c9cb7b79-37c8-4fef-97a6-7d6b8898f9c4@rock-chips.com>
+ <aSV_lQYJPxN7oBM-@kuha>
+ <2025112554-uncaring-curator-642a@gregkh>
+ <cbb38c08-6937-4b7d-a0b0-d5ca6c17f466@rock-chips.com>
 MIME-Version: 1.0
-X-OriginatorOrg: hitachienergy.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: AM0PR06MB10396.eurprd06.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 1b74bb21-4f2c-4e17-f675-08de2cceb890
-X-MS-Exchange-CrossTenant-originalarrivaltime: 26 Nov 2025 09:32:30.4153
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 7831e6d9-dc6c-4cd1-9ec6-1dc2b4133195
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: Mbx1ine+hfUakvsiyE+yNUfXod4LhLph19F6wHbjj0cxEiZzOz5gwXZAiciFAWjvTTRTVqf8SPT4ppt4o3v2jbPHiPvwWOQIST+TCPPENRc=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR06MB6547
+Content-Disposition: inline
+In-Reply-To: <cbb38c08-6937-4b7d-a0b0-d5ca6c17f466@rock-chips.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251126_013251_293308_451FB7DE 
-X-CRM114-Status: GOOD (  38.35  )
+X-CRM114-CacheID: sfid-20251126_014318_343926_F0FCAEC5 
+X-CRM114-Status: GOOD (  17.46  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -207,85 +119,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Vladimir,
- 
-> On Tue, Nov 25, 2025 at 11:33:09PM +0100, Andrew Lunn wrote:
-> > > Yeah, although as things currently stand, I'd say that is the lesser
-> > > of problems. The only user (mv88e6xxx) does something strange: it
-> > > says it wants to configure the TX amplitude of SerDes ports, but
-> > > instead follows the phy-handle and applies the amplitude specified in that
-> node.
-> > >
-> > > I tried to mentally follow how things would work in 2 cases:
-> > > 1. PHY referenced by phy-handle is internal, then by definition it's not
-> > >    a SerDes port.
-> > > 2. PHY referenced by phy-handle is external, then the mv88e6xxx driver
-> > >    looks at what is essentially a device tree description of the PHY's
-> > >    TX, and applies that as a mirror image to the local SerDes' TX.
-> > >
-> > > I think the logic is used in mv88e6xxx through case #2, i.e. we
-> > > externalize the mv88e6xxx SerDes electrical properties to an
-> > > unrelated OF node, the connected Ethernet PHY.
-> >
-> > My understanding of the code is the same, #2. Although i would
-> > probably not say it is an unrelated node. I expect the PHY is on the
-> > other end of the SERDES link which is having the TX amplitudes set.
-> > This clearly will not work if there is an SFP cage on the other end,
-> > but it does for an SGMII PHY.
+Wed, Nov 26, 2025 at 09:46:19AM +0800, Chaoyi Chen kirjoitti:
+> On 11/25/2025 7:49 PM, Greg Kroah-Hartman wrote:
+> >> +static umode_t typec_is_visible(struct kobject *kobj, struct attribute *attr, int n)
+> >> +{
+> >> +	if (is_typec_port(kobj_to_dev(kobj)->parent))
+> > 
+> > Why look at the parent?  Doesn't the device have a type that should show
+> > this?
+> > 
+> > Otherwise, looks good to me.
 > 
-> It is unrelated in the sense that the SGMII PHY is a different kernel object, and
-> the mv88e6xxx is polluting its OF node with properties which it then interprets as
-> its own, when the PHY driver may have wanted to configure its SGMII TX
-> amplitude too, via those same generic properties.
-> 
-> > I guess this code is from before the time Russell converted the
-> > mv88e6xxx SERDES code into PCS drivers. The register being set is
-> > within the PCS register set.  The mv88e6xxx also does not make use of
-> > generic phys to represent the SERDES part of the PCS. So there is no
-> > phys phandle to follow since there is no phy.
-> 
-> In my view, the phy-common-props.yaml are supposed to be applicable to
-> either:
-> (1) a network PHY with SerDes host-side connection (I suppose the media
->     side electrical properties would be covered by Maxime's phy_port
->     work - Maxime, please confirm).
-> (2) a phylink_pcs with SerDes registers within the same register set
-> (3) a generic PHY
-> 
-> My patch 8/9 (net: phy: air_en8811h: deprecate "airoha,pnswap-rx" and
-> "airoha,pnswap-tx") is an example of case (1) for polarities. Also, for example,
-> at least Aquantia Gen3 PHYs (AQR111, AQR112) have a (not very well
-> documented) "SerDes Lane 0 Amplitude" field in the PHY XS Receive (XAUI TX)
-> Reserved Vendor Provisioning 4 register (address 4.E413).
-> 
-> My patch 7/9 (net: pcs: xpcs: allow lane polarity inversion) is an example of case
-> (2).
-> 
-> I haven't submitted an example of case (3) yet, but the Lynx PCS and Lynx SerDes
-> would fall into that category. The PCS would be free of describing electrical
-> properties, and those would go to the generic PHY (SerDes).
-> 
-> All I'm trying to say is that we're missing an OF node to describe mv88e6xxx PCS
-> electrical properties, because otherwise, it collides with case (1). My note
-> regarding "phys" was just a guess that the "phy-handle"
-> may have been mistaken for the port's SerDes PHY. Although there is a chance
-> Holger knew what he was doing. In any case, I think we need to sort this one
-> way or another, leaving the phy-handle logic a discouraged fallback path.
-> 
+> They have same deivce type "typec_altmode_dev_type".
+> The parent device has a different device type to distinguish between
+> port device and partner device.
 
-I was checking our use case, and it is a bit special. We have the port in question
-directly connected to a FPGA which has also have a SerDes interface. We are then
-configuring a fixed link to the FPGA without a phy in between so there is also no
-phy handle in our case. But in general, the board in question is now in maintenance
-and there will be no kernel update anymore in the future. Therefore, it is fine with
-me if you remove or rework the code in question completely. Hope that helps.
+I was already wondering would it make sense to provide separate device
+types for the port, and also plug, alternate modes, but I'm not sure
+if that's the right thing to do.
 
-Best regards
-Holger
+There is a plan to register an "altmode" also for the USB4 mode,
+which of course is not an alternate mode. So USB4 will definitely need a
+separate device type.
 
+So if we supply separate device types for the port, plug and partner
+alternate modes, we need to supply separate device types for port, plug
+and partner USB4 mode as well.
 
+We certainly can still do that, but I'm just not sure if it makes
+sense?
 
+I'll prepare a new version for this and include a separate patch where
+instead of defining separate device types for the port and plug
+alternate modes I'll just supply helpers is_port_alternate_mode() and
+is_plug_alternate_mode().
 
+thanks,
+
+-- 
+heikki
 
 -- 
 linux-phy mailing list
