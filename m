@@ -4,93 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A9FE0D10F58
-	for <linux-phy@archiver.kernel.org>; Wed, 26 Nov 2025 15:18:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 976CED11180
+	for <linux-phy@archiver.kernel.org>; Wed, 26 Nov 2025 15:33:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Be0bx60TS2oQe6bAdZdhwTlXXo7Ja9kB8o45UALo1Hc=; b=KAHLG14ejHstqO
-	2Rah6hcyNDJtO3JymZFJbA40IbI+D1My7cCps1/st4AzyZ2OHzMdXpVf7Oo4ezdMj0hDp1B570Bea
-	DJcYJ7sV4L0d0qPBnchAqNtHiiAH8P1W66V0q9ZXQh2+rbmd3h7bLdaSrUZuYnpqVriyWvJU6idZT
-	3wikAfNmWN3Y48i5Xf30HAe76eUpR7BUwDuRoZM9wKLWnIbQBPdjX5s/uTsuAlFNtJUHCv/CLPopI
-	bJ58QSA5v0iLfyXs9s4dccQUxJBFuo/Ss5yOXtWAy7fkXWkzDVMNgorOu9vxPKqYSpl+Nt9BRGZg9
-	J+ZahAZmaSCSNbF4w5zA==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
+	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=enXLmsEU0Sq+3oPDqs2LlytAh2n2Oxf4tACRPndR2hc=; b=0msUsaCR9Y3Dl7
+	L+9OBvxt0evxSnSypDXnkBk3h51iftNrp2/VvdECuh8dHAVsWiqFr+ENIWQewY8+GHFvlOVE70yBT
+	AQA0RW4wq4uizr2s6Tac+Ctc2pZzz8uDvf1jkwEFN8ASHWRkQrlw5Ko1ZQPB/vifC7QRwu6mBeXIE
+	B9RAcY7XBXYXjR5NJRVhuVpBpOfWLEjg6QtkDbZJAf2kiSF5famVTvBc1MHY5I4+EpCsmjzQ49tBK
+	gKCgJUuuc6Cu3D6VMm7CzObkv8/JEc2SmMZsUb7FPka6F4tix57mGCcji7qOP+tKPc4NVmgsbRt23
+	vEfaxprhtJAfUD/+zbkw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vOHHZ-0000000FAik-0uoC;
-	Wed, 26 Nov 2025 15:18:13 +0000
-Received: from mgamail.intel.com ([198.175.65.11])
+	id 1vOHWj-0000000FBhK-0nwu;
+	Wed, 26 Nov 2025 15:33:53 +0000
+Received: from smtpout-04.galae.net ([185.171.202.116])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vOHHV-0000000FAiC-2JAS;
-	Wed, 26 Nov 2025 15:18:11 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1764170289; x=1795706289;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=OAQISPswKJq25SzgGqswUw+2peV2QjQp+1X2kjl7i/E=;
-  b=oFZKGhWSgSweT/tnejrWEuCqOsmiODdukIYa1yeD0/iCI1WzXQr9cqtr
-   YBClRJ5vwuyiv4k/1CfpEz/dTxEiyofLzjGVnej/9JyY7TpP9q8FjfdDC
-   wpbj8iPF9EYGbsYVN7YPbOkuQVzCAy8kXe1mvqlp3HaI0tPqKq0W8xTk8
-   CPXgDKUW/8ELRDiUXbiS8a00ki77YS7GBGk/1v4oTY+XRc8sv0LnY76Xs
-   5WtVX1AtNYkBR6L2fHFA9KiviFJhvHzDgZhKWXtU6SBcgkkehseb0T58Q
-   KAa39G3i0l1ZnjkoCDsYfC3kE96TqTFFo/V/oHqZZXno3U9FjV4s8uIgq
-   A==;
-X-CSE-ConnectionGUID: TCtfhiIaQ2azMurQR1/U+g==
-X-CSE-MsgGUID: xzJ5Tfz9Ski7g7GAJX+GQQ==
-X-IronPort-AV: E=McAfee;i="6800,10657,11625"; a="76534667"
-X-IronPort-AV: E=Sophos;i="6.20,228,1758610800"; 
-   d="scan'208";a="76534667"
-Received: from fmviesa006.fm.intel.com ([10.60.135.146])
-  by orvoesa103.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 26 Nov 2025 07:18:09 -0800
-X-CSE-ConnectionGUID: xKcInju7QGe/+joUlWElfA==
-X-CSE-MsgGUID: S+2yY/40TsKNxFP41vkcbw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.20,228,1758610800"; 
-   d="scan'208";a="192851038"
-Received: from lkp-server01.sh.intel.com (HELO 4664bbef4914) ([10.239.97.150])
-  by fmviesa006.fm.intel.com with ESMTP; 26 Nov 2025 07:18:02 -0800
-Received: from kbuild by 4664bbef4914 with local (Exim 4.98.2)
-	(envelope-from <lkp@intel.com>)
-	id 1vOHHM-0000000032V-21UG;
-	Wed, 26 Nov 2025 15:18:00 +0000
-Date: Wed, 26 Nov 2025 23:17:29 +0800
-From: kernel test robot <lkp@intel.com>
-To: Vladimir Oltean <vladimir.oltean@nxp.com>, netdev@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-phy@lists.infradead.org
-Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
-	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org,
-	Daniel Golle <daniel@makrotopia.org>,
-	Horatiu Vultur <horatiu.vultur@microchip.com>,
-	Andrew Lunn <andrew@lunn.ch>,
-	Heiner Kallweit <hkallweit1@gmail.com>,
-	Russell King <linux@armlinux.org.uk>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Eric Woudstra <ericwouds@gmail.com>,
-	Marek =?iso-8859-1?Q?Beh=FAn?= <kabel@kernel.org>,
-	Lee Jones <lee@kernel.org>,
-	Patrice Chotard <patrice.chotard@foss.st.com>
-Subject: Re: [PATCH net-next 7/9] net: pcs: xpcs: allow lane polarity
- inversion
-Message-ID: <202511262216.TzyLet3B-lkp@intel.com>
-References: <20251122193341.332324-8-vladimir.oltean@nxp.com>
+	id 1vOHWf-0000000FBgC-1Pbb
+	for linux-phy@lists.infradead.org;
+	Wed, 26 Nov 2025 15:33:51 +0000
+Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
+	by smtpout-04.galae.net (Postfix) with ESMTPS id 3B903C15D79;
+	Wed, 26 Nov 2025 15:33:22 +0000 (UTC)
+Received: from mail.galae.net (mail.galae.net [212.83.136.155])
+	by smtpout-01.galae.net (Postfix) with ESMTPS id E710B60721;
+	Wed, 26 Nov 2025 15:33:44 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 8166D102F1B84;
+	Wed, 26 Nov 2025 16:33:41 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
+	t=1764171224; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 content-transfer-encoding; bh=lsp+NJNBTPSySlUe7BHmxpBQDMNBrZS8TeTFL/zK5No=;
+	b=HLYw/BQSdsL+LQRm985OiJHaD7YVi4TXpLl1L3FK/qmSm5d4kmukfWQq75vqVSJj7mKiRQ
+	RgMKdN8CJG1srErTMLjDYaXigkRD8WKNhWpV2qPpOHhvbGrmH6G4XjtGR324QdobGovNEo
+	Uxe/qjb/8niE2EjCzmHnkCPpVta46+wb0J4RyUGHyUKwTPGg8ApVjYBbkU3jU8Vba8A5+Q
+	LJhfWzp2NqxaJjqNPJrYC3qdD1/ex66rCFtMvNDkzxjFlbjFfnR4Hn7GhfMWh+ai9bYjs3
+	o3eVc+5AtSL4soSZbXBcINX7yFAXHuVTuM++JU0YFQk6qaid20sxNdF6TdRUMg==
+From: "Thomas Richard (TI.com)" <thomas.richard@bootlin.com>
+Date: Wed, 26 Nov 2025 16:33:37 +0100
+Subject: [PATCH v2] phy: cadence-torrent: restore parent clock for refclk
+ during resume
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20251122193341.332324-8-vladimir.oltean@nxp.com>
+Message-Id: <20251126-phy-cadence-torrent-resume-restore-refclk-parent-v2-1-5d2eaa958b06@bootlin.com>
+X-B4-Tracking: v=1; b=H4sIANAdJ2kC/6WOQQ6DMAwEv4J8riuCRCk99R+IQwhOsQoJSigqQ
+ vy9Dl+ofFjNruz1DpECU4RHtkOglSN7J1BcMjCDdi9C7oWhyItSKZXjPGxodE/OEC4+BHILBoq
+ fiZKIk9Sa8Y2zPkNb1rYrrbnVVoOcnSXm71nZtMIDp63t/GBVyf2jbFUo09G90rbqVU3PzvtlZ
+ Hc1foL2OI4fj35gk/IAAAA=
+X-Change-ID: 20251110-phy-cadence-torrent-resume-restore-refclk-parent-f59fb5fc69fa
+To: Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>
+Cc: Thomas Petazzoni <thomas.petazzoni@bootlin.com>, 
+ Gregory CLEMENT <gregory.clement@bootlin.com>, Udit Kumar <u-kumar1@ti.com>, 
+ Prasanth Mantena <p-mantena@ti.com>, Abhash Kumar <a-kumar2@ti.com>, 
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ "Thomas Richard (TI.com)" <thomas.richard@bootlin.com>
+X-Mailer: b4 0.14.3
+X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251126_071809_759561_F5B287D4 
-X-CRM114-Status: GOOD (  10.73  )
+X-CRM114-CacheID: sfid-20251126_073349_535386_336C31DA 
+X-CRM114-Status: GOOD (  11.30  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,38 +82,83 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Vladimir,
+While suspend and resume, parent clock config for refclk was getting lost.
+So save and restore it in suspend and resume operations.
 
-kernel test robot noticed the following build errors:
+Signed-off-by: Thomas Richard (TI.com) <thomas.richard@bootlin.com>
+---
+Changes in v2:
+- store parent configuration in cdns_torrent_refclk_driver.
+- add cdns_torrent_refclk_driver_suspend/_resume() functions.
+- use get_parent() and set_parent() operations to save and restore the
+  configuration.
+- Link to v1: https://lore.kernel.org/r/20251110-phy-cadence-torrent-resume-restore-refclk-parent-v1-1-1be87af7d19e@bootlin.com
+---
+ drivers/phy/cadence/phy-cadence-torrent.c | 23 +++++++++++++++++++++++
+ 1 file changed, 23 insertions(+)
 
-[auto build test ERROR on net-next/main]
+diff --git a/drivers/phy/cadence/phy-cadence-torrent.c b/drivers/phy/cadence/phy-cadence-torrent.c
+index 37fa4bad6bd72..877f22177c699 100644
+--- a/drivers/phy/cadence/phy-cadence-torrent.c
++++ b/drivers/phy/cadence/phy-cadence-torrent.c
+@@ -397,6 +397,7 @@ struct cdns_torrent_refclk_driver {
+ 	struct clk_hw		hw;
+ 	struct regmap_field	*cmn_fields[REFCLK_OUT_NUM_CMN_CONFIG];
+ 	struct clk_init_data	clk_data;
++	u8 parent_index;
+ };
+ 
+ #define to_cdns_torrent_refclk_driver(_hw)	\
+@@ -3326,11 +3327,29 @@ static const struct cdns_torrent_vals sgmii_qsgmii_xcvr_diag_ln_vals = {
+ 	.num_regs = ARRAY_SIZE(sgmii_qsgmii_xcvr_diag_ln_regs),
+ };
+ 
++static void cdns_torrent_refclk_driver_suspend(struct cdns_torrent_phy *cdns_phy)
++{
++	struct clk_hw *hw = cdns_phy->clk_hw_data->hws[CDNS_TORRENT_REFCLK_DRIVER];
++	struct cdns_torrent_refclk_driver *refclk_driver = to_cdns_torrent_refclk_driver(hw);
++
++	refclk_driver->parent_index = cdns_torrent_refclk_driver_get_parent(hw);
++}
++
++static int cdns_torrent_refclk_driver_resume(struct cdns_torrent_phy *cdns_phy)
++{
++	struct clk_hw *hw = cdns_phy->clk_hw_data->hws[CDNS_TORRENT_REFCLK_DRIVER];
++	struct cdns_torrent_refclk_driver *refclk_driver = to_cdns_torrent_refclk_driver(hw);
++
++	return cdns_torrent_refclk_driver_set_parent(hw, refclk_driver->parent_index);
++}
++
+ static int cdns_torrent_phy_suspend_noirq(struct device *dev)
+ {
+ 	struct cdns_torrent_phy *cdns_phy = dev_get_drvdata(dev);
+ 	int i;
+ 
++	cdns_torrent_refclk_driver_suspend(cdns_phy);
++
+ 	reset_control_assert(cdns_phy->phy_rst);
+ 	reset_control_assert(cdns_phy->apb_rst);
+ 	for (i = 0; i < cdns_phy->nsubnodes; i++)
+@@ -3352,6 +3371,10 @@ static int cdns_torrent_phy_resume_noirq(struct device *dev)
+ 	int node = cdns_phy->nsubnodes;
+ 	int ret, i;
+ 
++	ret = cdns_torrent_refclk_driver_resume(cdns_phy);
++	if (ret)
++		return ret;
++
+ 	ret = cdns_torrent_clk(cdns_phy);
+ 	if (ret)
+ 		return ret;
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Vladimir-Oltean/dt-bindings-phy-rename-transmit-amplitude-yaml-to-phy-common-props-yaml/20251123-033900
-base:   net-next/main
-patch link:    https://lore.kernel.org/r/20251122193341.332324-8-vladimir.oltean%40nxp.com
-patch subject: [PATCH net-next 7/9] net: pcs: xpcs: allow lane polarity inversion
-config: arm-spear6xx_defconfig (https://download.01.org/0day-ci/archive/20251126/202511262216.TzyLet3B-lkp@intel.com/config)
-compiler: clang version 22.0.0git (https://github.com/llvm/llvm-project 9e9fe08b16ea2c4d9867fb4974edf2a3776d6ece)
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20251126/202511262216.TzyLet3B-lkp@intel.com/reproduce)
+---
+base-commit: c0ea2ae3b2d7fb9eb4bc14400e39d8fb4f510714
+change-id: 20251110-phy-cadence-torrent-resume-restore-refclk-parent-f59fb5fc69fa
 
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202511262216.TzyLet3B-lkp@intel.com/
-
-All errors (new ones prefixed by >>):
-
->> ld.lld: error: undefined symbol: phy_get_rx_polarity
-   >>> referenced by pcs-xpcs.c:821 (drivers/net/pcs/pcs-xpcs.c:821)
-   >>>               drivers/net/pcs/pcs-xpcs.o:(xpcs_do_config) in archive vmlinux.a
---
->> ld.lld: error: undefined symbol: phy_get_tx_polarity
-   >>> referenced by pcs-xpcs.c:829 (drivers/net/pcs/pcs-xpcs.c:829)
-   >>>               drivers/net/pcs/pcs-xpcs.o:(xpcs_do_config) in archive vmlinux.a
-
+Best regards,
 -- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+Thomas Richard (TI.com) <thomas.richard@bootlin.com>
+
 
 -- 
 linux-phy mailing list
