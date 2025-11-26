@@ -4,83 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7FC56D10F58
-	for <linux-phy@archiver.kernel.org>; Wed, 26 Nov 2025 14:25:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A9FE0D10F58
+	for <linux-phy@archiver.kernel.org>; Wed, 26 Nov 2025 15:18:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gk0/8ntK7K/oUnge+KKEw6X41TzVrqUJJXslRQIxFlY=; b=uDyeruCcN81uUY
-	D5igJ56lBDFsLzFFpgkaE7IT05CLSQBdfZ+BmFbf0nA/gBmS7fUIiRHG8SgCP5/42Mi8BsJUioi6I
-	ndk2hgz/FNvuEWNGwsZ8wHkcBZxJwUGkSAgS9chVAh2vKjciM6WKhqM8nT+37lF97uTM3la6/ALWs
-	Wjq2DZIupQaHkZ4bX4zOVsVLNrJAI4MldGhZAZh6EH1ncJ0kQPikTlHPqYOPDaAoNkUX5MZn26Uqr
-	yNbc7i0y6zb7Dzcsh3b/D+7QI3N67GjR7of0I7jUOb+jNJsclXdpJv46oUr/By4Hv0mptPh0AaYod
-	lxDO/RpFdGN71GZpw8Bw==;
+	List-Owner; bh=Be0bx60TS2oQe6bAdZdhwTlXXo7Ja9kB8o45UALo1Hc=; b=KAHLG14ejHstqO
+	2Rah6hcyNDJtO3JymZFJbA40IbI+D1My7cCps1/st4AzyZ2OHzMdXpVf7Oo4ezdMj0hDp1B570Bea
+	DJcYJ7sV4L0d0qPBnchAqNtHiiAH8P1W66V0q9ZXQh2+rbmd3h7bLdaSrUZuYnpqVriyWvJU6idZT
+	3wikAfNmWN3Y48i5Xf30HAe76eUpR7BUwDuRoZM9wKLWnIbQBPdjX5s/uTsuAlFNtJUHCv/CLPopI
+	bJ58QSA5v0iLfyXs9s4dccQUxJBFuo/Ss5yOXtWAy7fkXWkzDVMNgorOu9vxPKqYSpl+Nt9BRGZg9
+	J+ZahAZmaSCSNbF4w5zA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vOGSO-0000000F6nk-0JHB;
-	Wed, 26 Nov 2025 14:25:20 +0000
-Received: from smtpout-04.galae.net ([185.171.202.116])
+	id 1vOHHZ-0000000FAik-0uoC;
+	Wed, 26 Nov 2025 15:18:13 +0000
+Received: from mgamail.intel.com ([198.175.65.11])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vOGSJ-0000000F6mH-2ETG;
-	Wed, 26 Nov 2025 14:25:17 +0000
-Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-04.galae.net (Postfix) with ESMTPS id A0186C15D78;
-	Wed, 26 Nov 2025 14:24:49 +0000 (UTC)
-Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id 578AB60721;
-	Wed, 26 Nov 2025 14:25:12 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 64B5A102F08EF;
-	Wed, 26 Nov 2025 15:25:01 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1764167111; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 content-transfer-encoding:content-language:in-reply-to:references;
-	bh=Sbs0A8qAYuq+r/+1fjxriavvnUhEfhMgY7SBF5X8V08=;
-	b=k0ooTJYIYW0FYBMVhrgVBpA7A6kXMyqERAgQSrzwOurSlWfmkbqR/cAmccU11VWLC5YJEI
-	n6WrPplsAi0/qCeWTP5rC5r6OVtJarSahnvu8/ytGNtL2IhjV2o4qcZLK1BKZ9REOhbIne
-	GpHwbaHF7/xV6QP11Em8OqvJQxr/vpKrq/B/xhMU6iRCotsKbsvezuDAlSdbcWdLA7WkHY
-	PgHtTABkVp75O1gL9djdWOv4/kvWgJGTXQQtoWevSW4VHF0gnednfaSxWzHACT5hKJnynF
-	DcFAau2f9LPmwhjE9ZTrqGuSx7982EfRtb9Sv1Y9Gy4TO0KRoTFUYh71zTNEkA==
-Message-ID: <9c2518d8-a0ea-46ba-9069-999c2574cd24@bootlin.com>
-Date: Wed, 26 Nov 2025 15:25:00 +0100
+	id 1vOHHV-0000000FAiC-2JAS;
+	Wed, 26 Nov 2025 15:18:11 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1764170289; x=1795706289;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=OAQISPswKJq25SzgGqswUw+2peV2QjQp+1X2kjl7i/E=;
+  b=oFZKGhWSgSweT/tnejrWEuCqOsmiODdukIYa1yeD0/iCI1WzXQr9cqtr
+   YBClRJ5vwuyiv4k/1CfpEz/dTxEiyofLzjGVnej/9JyY7TpP9q8FjfdDC
+   wpbj8iPF9EYGbsYVN7YPbOkuQVzCAy8kXe1mvqlp3HaI0tPqKq0W8xTk8
+   CPXgDKUW/8ELRDiUXbiS8a00ki77YS7GBGk/1v4oTY+XRc8sv0LnY76Xs
+   5WtVX1AtNYkBR6L2fHFA9KiviFJhvHzDgZhKWXtU6SBcgkkehseb0T58Q
+   KAa39G3i0l1ZnjkoCDsYfC3kE96TqTFFo/V/oHqZZXno3U9FjV4s8uIgq
+   A==;
+X-CSE-ConnectionGUID: TCtfhiIaQ2azMurQR1/U+g==
+X-CSE-MsgGUID: xzJ5Tfz9Ski7g7GAJX+GQQ==
+X-IronPort-AV: E=McAfee;i="6800,10657,11625"; a="76534667"
+X-IronPort-AV: E=Sophos;i="6.20,228,1758610800"; 
+   d="scan'208";a="76534667"
+Received: from fmviesa006.fm.intel.com ([10.60.135.146])
+  by orvoesa103.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 26 Nov 2025 07:18:09 -0800
+X-CSE-ConnectionGUID: xKcInju7QGe/+joUlWElfA==
+X-CSE-MsgGUID: S+2yY/40TsKNxFP41vkcbw==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.20,228,1758610800"; 
+   d="scan'208";a="192851038"
+Received: from lkp-server01.sh.intel.com (HELO 4664bbef4914) ([10.239.97.150])
+  by fmviesa006.fm.intel.com with ESMTP; 26 Nov 2025 07:18:02 -0800
+Received: from kbuild by 4664bbef4914 with local (Exim 4.98.2)
+	(envelope-from <lkp@intel.com>)
+	id 1vOHHM-0000000032V-21UG;
+	Wed, 26 Nov 2025 15:18:00 +0000
+Date: Wed, 26 Nov 2025 23:17:29 +0800
+From: kernel test robot <lkp@intel.com>
+To: Vladimir Oltean <vladimir.oltean@nxp.com>, netdev@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-phy@lists.infradead.org
+Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
+	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-mediatek@lists.infradead.org,
+	Daniel Golle <daniel@makrotopia.org>,
+	Horatiu Vultur <horatiu.vultur@microchip.com>,
+	Andrew Lunn <andrew@lunn.ch>,
+	Heiner Kallweit <hkallweit1@gmail.com>,
+	Russell King <linux@armlinux.org.uk>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	Eric Woudstra <ericwouds@gmail.com>,
+	Marek =?iso-8859-1?Q?Beh=FAn?= <kabel@kernel.org>,
+	Lee Jones <lee@kernel.org>,
+	Patrice Chotard <patrice.chotard@foss.st.com>
+Subject: Re: [PATCH net-next 7/9] net: pcs: xpcs: allow lane polarity
+ inversion
+Message-ID: <202511262216.TzyLet3B-lkp@intel.com>
+References: <20251122193341.332324-8-vladimir.oltean@nxp.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH net-next 1/9] dt-bindings: phy: rename
- transmit-amplitude.yaml to phy-common-props.yaml
-To: Vladimir Oltean <vladimir.oltean@nxp.com>, Andrew Lunn <andrew@lunn.ch>
-Cc: netdev@vger.kernel.org, devicetree@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
- Daniel Golle <daniel@makrotopia.org>,
- Horatiu Vultur <horatiu.vultur@microchip.com>,
- Heiner Kallweit <hkallweit1@gmail.com>, Russell King
- <linux@armlinux.org.uk>, "David S. Miller" <davem@davemloft.net>,
- Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>,
- Paolo Abeni <pabeni@redhat.com>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
- Eric Woudstra <ericwouds@gmail.com>, =?UTF-8?B?TWFyZWsgQmVo4oia4oirbg==?=
- <kabel@kernel.org>, Lee Jones <lee@kernel.org>,
- Patrice Chotard <patrice.chotard@foss.st.com>,
- Holger Brunck <holger.brunck@hitachienergy.com>
-References: <20251122193341.332324-1-vladimir.oltean@nxp.com>
- <20251122193341.332324-2-vladimir.oltean@nxp.com>
- <0faccdb7-0934-4543-9b7f-a655a632fa86@lunn.ch>
- <20251125214450.qeljlyt3d27zclfr@skbuf>
- <b4597333-e485-426d-975e-3082895e09f6@lunn.ch>
- <20251126072638.wqwbhhab3afxvm7x@skbuf>
-From: Maxime Chevallier <maxime.chevallier@bootlin.com>
-Content-Language: en-US
-In-Reply-To: <20251126072638.wqwbhhab3afxvm7x@skbuf>
-X-Last-TLS-Session-Version: TLSv1.3
+Content-Disposition: inline
+In-Reply-To: <20251122193341.332324-8-vladimir.oltean@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251126_062515_764248_D0E7DF9C 
-X-CRM114-Status: GOOD (  24.72  )
+X-CRM114-CacheID: sfid-20251126_071809_759561_F5B287D4 
+X-CRM114-Status: GOOD (  10.73  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,58 +107,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
+Hi Vladimir,
 
-On 26/11/2025 08:26, Vladimir Oltean wrote:
-> +Maxime, Holger
-> thread at https://lore.kernel.org/netdev/20251122193341.332324-2-vladimir.oltean@nxp.com/
-> 
-> On Tue, Nov 25, 2025 at 11:33:09PM +0100, Andrew Lunn wrote:
->>> Yeah, although as things currently stand, I'd say that is the lesser of
->>> problems. The only user (mv88e6xxx) does something strange: it says it
->>> wants to configure the TX amplitude of SerDes ports, but instead follows
->>> the phy-handle and applies the amplitude specified in that node.
->>>
->>> I tried to mentally follow how things would work in 2 cases:
->>> 1. PHY referenced by phy-handle is internal, then by definition it's not
->>>    a SerDes port.
->>> 2. PHY referenced by phy-handle is external, then the mv88e6xxx driver
->>>    looks at what is essentially a device tree description of the PHY's
->>>    TX, and applies that as a mirror image to the local SerDes' TX.
->>>
->>> I think the logic is used in mv88e6xxx through case #2, i.e. we
->>> externalize the mv88e6xxx SerDes electrical properties to an unrelated
->>> OF node, the connected Ethernet PHY.
->>
->> My understanding of the code is the same, #2. Although i would
->> probably not say it is an unrelated node. I expect the PHY is on the
->> other end of the SERDES link which is having the TX amplitudes
->> set. This clearly will not work if there is an SFP cage on the other
->> end, but it does for an SGMII PHY.
-> 
-> It is unrelated in the sense that the SGMII PHY is a different kernel
-> object, and the mv88e6xxx is polluting its OF node with properties which
-> it then interprets as its own, when the PHY driver may have wanted to
-> configure its SGMII TX amplitude too, via those same generic properties.
-> 
->> I guess this code is from before the time Russell converted the
->> mv88e6xxx SERDES code into PCS drivers. The register being set is
->> within the PCS register set.  The mv88e6xxx also does not make use of
->> generic phys to represent the SERDES part of the PCS. So there is no
->> phys phandle to follow since there is no phy.
-> 
-> In my view, the phy-common-props.yaml are supposed to be applicable to either:
-> (1) a network PHY with SerDes host-side connection (I suppose the media
->     side electrical properties would be covered by Maxime's phy_port
->     work - Maxime, please confirm).
+kernel test robot noticed the following build errors:
 
-True, but we could definitely conceive applying phy-common-props.yaml on
-the media-side as well :) I don't have a use-case for it right now
-though, and we don't yet have detailed descriptions of the electrical
-properties.
+[auto build test ERROR on net-next/main]
 
-Maxime
+url:    https://github.com/intel-lab-lkp/linux/commits/Vladimir-Oltean/dt-bindings-phy-rename-transmit-amplitude-yaml-to-phy-common-props-yaml/20251123-033900
+base:   net-next/main
+patch link:    https://lore.kernel.org/r/20251122193341.332324-8-vladimir.oltean%40nxp.com
+patch subject: [PATCH net-next 7/9] net: pcs: xpcs: allow lane polarity inversion
+config: arm-spear6xx_defconfig (https://download.01.org/0day-ci/archive/20251126/202511262216.TzyLet3B-lkp@intel.com/config)
+compiler: clang version 22.0.0git (https://github.com/llvm/llvm-project 9e9fe08b16ea2c4d9867fb4974edf2a3776d6ece)
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20251126/202511262216.TzyLet3B-lkp@intel.com/reproduce)
 
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202511262216.TzyLet3B-lkp@intel.com/
+
+All errors (new ones prefixed by >>):
+
+>> ld.lld: error: undefined symbol: phy_get_rx_polarity
+   >>> referenced by pcs-xpcs.c:821 (drivers/net/pcs/pcs-xpcs.c:821)
+   >>>               drivers/net/pcs/pcs-xpcs.o:(xpcs_do_config) in archive vmlinux.a
+--
+>> ld.lld: error: undefined symbol: phy_get_tx_polarity
+   >>> referenced by pcs-xpcs.c:829 (drivers/net/pcs/pcs-xpcs.c:829)
+   >>>               drivers/net/pcs/pcs-xpcs.o:(xpcs_do_config) in archive vmlinux.a
+
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-phy mailing list
