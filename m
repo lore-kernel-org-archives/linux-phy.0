@@ -4,8 +4,8 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AC601CFD2F6
-	for <linux-phy@archiver.kernel.org>; Thu, 27 Nov 2025 13:30:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 196D0D11183
+	for <linux-phy@archiver.kernel.org>; Thu, 27 Nov 2025 13:30:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -13,67 +13,64 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=arxaOBeta/i3L4ZQTAm7TQMysa1vTQQDFuBTs8aAgqw=; b=17+8bsXGvJwldTvlWXsTfBnnaq
-	siYuvB77WmkIn8GgE3PPJyXxNY151UzK0n9UDcuaZINZkUEeuNqWHlNcSXU4zhWcrcK+OZbubNmND
-	1JGArq3V7Cbn6CwZ71egACv+4QpJoTYz7NC75+YiNCmh7l5i6O7k7tPjx2cScub7CUHaHH/bUV6vp
-	gyoiqdgYesrjXirW4wYW5Z0Zw/ngGJ31RO0pKNQnFUxUBV5Vxcj3sprEAcMUejUmxv1NksnMzW73q
-	P7eu0k9+KVnjy7e+C3c1hx48sIoFyWGC50Wx2R0JrPMb3a2O0LJ6X5RK7hf0GfGIzunUp0S4e34PW
-	hn3eV6dw==;
+	bh=YHSr9Wjb+VaknVeVEvTTVxuxmLnRgkAUV6eE4LXbqJk=; b=UJHkDw9kNbmgoH5aa6lDpnetFA
+	VLSuChOPNhsDZSe0DP43CVpHsKIFLOElVxtpg674UtFGJRtoPrtNjBtdZQeQy7IqUwNfrE4mUbPjt
+	cYhRXZt0IDwvzB0AVBPrv02c2IIzj6yQDWTpJRbRjeIx42yUEHBaKu3G3uA1ABlQ/0M8WZ/yQoHJy
+	Idr9pR+38npQJa+fC8J4wsg+XdfDkzhH7T2a0b1c5dO08AfvjPRYOCYgjFJHc9Dc67qQs5vOvGwGm
+	HxJlTl2lAYd/wY7uPoA0z1VIRuEUSf4codfcluY6BfYyvKz46DaI/XwVFKCdENqA8V3Clj8uYrWsE
+	U4kVbZGQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vOc4y-0000000Ggb4-1nX5;
+	id 1vOc4y-0000000GgbN-3PFp;
 	Thu, 27 Nov 2025 13:30:36 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vOc4w-0000000GgZa-0l7E
+	id 1vOc4x-0000000GgaJ-3Fql
 	for linux-phy@lists.infradead.org;
 	Thu, 27 Nov 2025 13:30:35 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 4A914434E7;
-	Thu, 27 Nov 2025 13:30:33 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id EA2C8C4CEF8;
-	Thu, 27 Nov 2025 13:30:32 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id C748960224;
+	Thu, 27 Nov 2025 13:30:34 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 40D41C4CEF8;
+	Thu, 27 Nov 2025 13:30:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1764250233;
-	bh=Prjok+iXF1v1hGeCvqQIR+6Jng3EBvwwFgpQYwSmgbQ=;
+	s=k20201202; t=1764250234;
+	bh=cn9VrPGx8O8d67Cq596Nucl4T2GLkQ6vC881WnyUEDY=;
 	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
-	b=eTlK3v2UNpOgmiFtMX2GWXFkE7uP5RVqAs0OSVzfZn4Bwz6U5zZOVEreVXmiDYsnU
-	 OtW0asZhPl4FCezktxsV++OB4kd16Zgf4FtUICE/KdKVnkbcD2EUTuv7Ss+q53szBp
-	 LMNuNIEu3kYrzysDNwUYtaw1yyfFvfPSydxrz6NW9/Qxew0CGYbEcWefXieL6piTDu
-	 6RhdKI6Vba18PePUkWV3gD/u42DT9KqpfUAJIqcIZxVIIsZjzpOfnGEfTwUOZHGFhz
-	 YeQdQjL/qaYZwb+tMB2W7AYE2225oIG3cb1fMzSlXWARLaZz5HBhOy2JTlDPZYf4iN
-	 gpHha8HIOSyKA==
-Date: Thu, 27 Nov 2025 07:30:31 -0600
+	b=EONxN74BponLklBaZkMH8KM86rZ3lNcF/RhvEyMW0etFJXTAZ05DalnkSESNuB5/x
+	 N7p+UkAlhsFVXxEO/gDRIzQgvjSMLEVtPnkSQshArzLU8BiCOgfSDS5oRtg+SVPMpB
+	 YNFfVsUJZstuvpg8+ehymmX91Dth1zlsvkkDHtK0NB1N6e19MN/5P77BJAqxGfVJCT
+	 wYC7LrYl05k17vja2eqA4IJoVlq08MGnB+xzGvBFIXS4HGMOL2SzeHwKi0UJ67p7Ji
+	 boYE40kZVbCTQdH11Erhs+KwCg76zF6ZEzYtf0b1rc6XQT6JtK4WeIWVo98Gxn7hPi
+	 zGntbACHxZWVQ==
+Date: Thu, 27 Nov 2025 07:30:33 -0600
 MIME-Version: 1.0
 From: "Rob Herring (Arm)" <robh@kernel.org>
-Cc: devicetree@vger.kernel.org, Peter Rosin <peda@axentia.se>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, linux-kernel@vger.kernel.org, 
- Geert Uytterhoeven <geert+renesas@glider.be>, 
- Georgi Djakov <djakov@kernel.org>, 
- Jonathan Cameron <jonathan.cameron@huawei.com>, tomm.merciai@gmail.com, 
+Cc: Magnus Damm <magnus.damm@gmail.com>, linux-renesas-soc@vger.kernel.org, 
+ linux-phy@lists.infradead.org, tomm.merciai@gmail.com, 
+ Vinod Koul <vkoul@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>, 
  Arnd Bergmann <arnd@arndb.de>, 
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
- Bartosz Golaszewski <bartosz.golaszewski@linaro.org>, 
+ Geert Uytterhoeven <geert+renesas@glider.be>, 
  Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, 
- Conor Dooley <conor.dooley@microchip.com>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
- biju.das.jz@bp.renesas.com, Magnus Damm <magnus.damm@gmail.com>, 
- Philipp Zabel <p.zabel@pengutronix.de>, Conor Dooley <conor+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
  Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>, 
- linux-phy@lists.infradead.org, 
+ biju.das.jz@bp.renesas.com, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Guenter Roeck <linux@roeck-us.net>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Mark Brown <broonie@kernel.org>, 
  Fabrizio Castro <fabrizio.castro.jz@renesas.com>, 
- linux-renesas-soc@vger.kernel.org, Mark Brown <broonie@kernel.org>, 
- Guenter Roeck <linux@roeck-us.net>
+ linux-kernel@vger.kernel.org, 
+ Bartosz Golaszewski <bartosz.golaszewski@linaro.org>, 
+ devicetree@vger.kernel.org, Peter Rosin <peda@axentia.se>, 
+ Jonathan Cameron <jonathan.cameron@huawei.com>, 
+ Georgi Djakov <djakov@kernel.org>
 To: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
-In-Reply-To: <d0518a64bac31a5a755471f79d6000aa81657503.1764241212.git.tommaso.merciai.xr@bp.renesas.com>
+In-Reply-To: <9848482be3655a9351a13cdbf815db6b556201d0.1764241212.git.tommaso.merciai.xr@bp.renesas.com>
 References: <cover.1764241212.git.tommaso.merciai.xr@bp.renesas.com>
- <d0518a64bac31a5a755471f79d6000aa81657503.1764241212.git.tommaso.merciai.xr@bp.renesas.com>
-Message-Id: <176425022262.4101597.2096782802654822701.robh@kernel.org>
-Subject: Re: [PATCH v5 01/22] dt-bindings: mux: Remove nodename pattern
- constraints
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251127_053034_275362_FBA885F3 
-X-CRM114-Status: GOOD (  13.13  )
+ <9848482be3655a9351a13cdbf815db6b556201d0.1764241212.git.tommaso.merciai.xr@bp.renesas.com>
+Message-Id: <176425022416.4101652.1368465209303910384.robh@kernel.org>
+Subject: Re: [PATCH v5 05/22] dt-bindings: reset: renesas,rzv2h-usb2phy:
+ Add '#mux-state-cells' property
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,26 +88,35 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Thu, 27 Nov 2025 12:48:28 +0100, Tommaso Merciai wrote:
-> The nodename pattern in  created an unnecessary restriction that forced
-> all mux nodes to be named with the 'mux-controller' prefix.
-> This prevented valid use cases where mux functionality is part of other
-> hardware blocks that should use more specific naming conventions.
+On Thu, 27 Nov 2025 12:48:32 +0100, Tommaso Merciai wrote:
+> Add the '#mux-state-cells' property to support describing the USB VBUS_SEL
+> multiplexer as a mux-controller in the Renesas RZ/V2H(P) USB2PHY binding.
 > 
-> Remove the $nodename pattern constraints from both the 'select' keyword
-> and the properties section of the mux-controller schema.
+> The mux-controller cannot be integrated into the parent USB2PHY node
+> because the VBUS source selector is part of a separate hardware block,
+> not the USB2PHY block itself.
 > 
-> Reviewed-by: Conor Dooley <conor.dooley@microchip.com>
+> This is required to properly configure USB PHY power selection on
+> RZ/V2H(P) and RZ/G3E SoCs.
+> 
 > Signed-off-by: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
 > ---
 > v4->v5:
->  - Added Reviewed-by tag from Conor Dooley.
+>  - No changes
 > 
 > v3->v4:
->  - New patch.
+>  - Switch back to v2 implementation.
+>  - Improve commit body.
 > 
->  Documentation/devicetree/bindings/mux/mux-controller.yaml | 6 ------
->  1 file changed, 6 deletions(-)
+> v2->v3:
+>  - Manipulate mux-controller as an internal node.
+>  - Improved commit body.
+> 
+> v1->v2:
+>  - New patch
+> 
+>  .../bindings/reset/renesas,rzv2h-usb2phy-reset.yaml          | 5 +++++
+>  1 file changed, 5 insertions(+)
 > 
 
 My bot found errors running 'make dt_binding_check' on your patch:
@@ -118,22 +124,11 @@ My bot found errors running 'make dt_binding_check' on your patch:
 yamllint warnings/errors:
 
 dtschema/dtc warnings/errors:
-/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/slimbus/slimbus.example.dtb: slim@28080000 (qcom,slim-ngd-v1.5.0): 'audio-codec@1,0' does not match any of the regexes: '^pinctrl-[0-9]+$', '^slim@[0-9a-f]+$'
-	from schema $id: http://devicetree.org/schemas/slimbus/qcom,slim-ngd.yaml
-/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/slimbus/slimbus.example.dtb: slim@28080000 (qcom,slim-ngd-v1.5.0): #address-cells: 1 was expected
-	from schema $id: http://devicetree.org/schemas/slimbus/qcom,slim-ngd.yaml
-/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/slimbus/slimbus.example.dtb: slim@28080000 (qcom,slim-ngd-v1.5.0): 'dmas' is a required property
-	from schema $id: http://devicetree.org/schemas/slimbus/qcom,slim-ngd.yaml
-/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/slimbus/slimbus.example.dtb: slim@28080000 (qcom,slim-ngd-v1.5.0): 'dma-names' is a required property
-	from schema $id: http://devicetree.org/schemas/slimbus/qcom,slim-ngd.yaml
-Documentation/devicetree/bindings/thermal/thermal-sensor.example.dtb: /example-0/soc/thermal-sensor@c263000: failed to match any schema with compatible: ['qcom,sdm845-tsens', 'qcom,tsens-v2']
-Documentation/devicetree/bindings/thermal/thermal-sensor.example.dtb: /example-0/soc/thermal-sensor@c263000: failed to match any schema with compatible: ['qcom,sdm845-tsens', 'qcom,tsens-v2']
-Documentation/devicetree/bindings/thermal/thermal-sensor.example.dtb: /example-0/soc/thermal-sensor@c265000: failed to match any schema with compatible: ['qcom,sdm845-tsens', 'qcom,tsens-v2']
-Documentation/devicetree/bindings/thermal/thermal-sensor.example.dtb: /example-0/soc/thermal-sensor@c265000: failed to match any schema with compatible: ['qcom,sdm845-tsens', 'qcom,tsens-v2']
+
 
 doc reference errors (make refcheckdocs):
 
-See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/d0518a64bac31a5a755471f79d6000aa81657503.1764241212.git.tommaso.merciai.xr@bp.renesas.com
+See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/9848482be3655a9351a13cdbf815db6b556201d0.1764241212.git.tommaso.merciai.xr@bp.renesas.com
 
 The base for the series is generally the latest rc1. A different dependency
 should be noted in *this* patch.
