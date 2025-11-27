@@ -4,61 +4,108 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DE8F0CFD2F6
-	for <linux-phy@archiver.kernel.org>; Thu, 27 Nov 2025 13:48:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 27596D116E2
+	for <linux-phy@archiver.kernel.org>; Thu, 27 Nov 2025 15:07:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=eG26kQGxOiX5nV5zls0a/s4Jj5WBpOslr72DSrVogbc=; b=jibkdgyXokh74h
-	YprLgjpP8fDx3C463xBDVdlNYaRVFnk2DlziATfGbaT5kWOmZ8XwZuqTUik2sy8spK5dG7tpQbWzz
-	pr7jx76OlwefDCCoSaqJWMi9RP1PhkyndJIzmmn71CtvKux2GzNvyrSVuF0RJcJ4Pl5gjg9tDK38d
-	FUOEUBy6Py3A9R1I378CynOF57KIJGIyM8h0PYwn9ErgquXQqSZbVoTz0v4OgoxVcbyL5j1ZORcal
-	303XXO7CBZ6yZqoUL1TpM8+gF6YRFMKI6bdMwahAjMtCCCWnEBUn+hIv3uxH/Yyi3xy2YR8EpCO+r
-	U4y8jHJDvfo3lDzQO+mw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=sTPFDfedVCFaWmtCJx/eQF+890qKGGE606vCCX+NkIo=; b=YBz4PgjH1whGi/8wLcoJBTheWV
+	DzlActgADyqsfxiaZp2iejk2k5v+Z8Bf4yLE7Uu//pwmic7QILp2awDcVSX0k2KrpA70d//a/mCJ0
+	m83x2FxQL6PqxkS6sbpHsEcDIP6onT5J4wlw47hCfaw6tWhi9gYMI0QzW5/6E1GHQxTJHce/iBkEn
+	eyNk1IVCpax+LhIBrLdmkErgg1SE1meDBhYqgOCQoweWb1sFth356oFDTMu8p7nYJGTA0NVdrt1AI
+	oBFL86Kl4U/shROUmLmfC+ual8QFNzR9TFiKXpLQs55/wAoZ60OGNAhrUbPc+lYeRr+3zvROraJhD
+	QgVTkaUg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vOcMl-0000000GiKL-2nhL;
-	Thu, 27 Nov 2025 13:48:59 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vOdae-0000000Gp7c-2uYE;
+	Thu, 27 Nov 2025 15:07:24 +0000
+Received: from smtpout-03.galae.net ([185.246.85.4])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vOcMk-0000000GiK6-3xck
-	for linux-phy@lists.infradead.org;
-	Thu, 27 Nov 2025 13:48:59 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 16EBA6020A;
-	Thu, 27 Nov 2025 13:48:58 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BFA45C4CEF8;
-	Thu, 27 Nov 2025 13:48:57 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1764251337;
-	bh=N2+IV1yRY0T/LRl/K2e/owyDnFap0O5LSqnWZ9obaNg=;
-	h=From:To:Cc:Subject:Date:From;
-	b=r508GE7UTowlumnhCbER64bfwPrvcIIFZGX2rAoWGGErHMNURRoAItuSkCK+TUpdo
-	 2inaOAv7ca1pUEAfyzDaNVNdNqiq563o093ZjdiLT48SHvXoLzRZ+pm+36czW8cT41
-	 JpGe3DY05mgJOOQgdaTz6Ny6vMFFnr9NdhrA8Fx+arT1fR2FbvUm1I1MmfVy1ALmQ5
-	 M7+Y88C1HHhYKwAMSrSezssUJfIuwLG7y0TZvZOvqpope8hPCpISqLwCvBjNMiHulC
-	 hgeeOpUHoqXPkGVUpVJ6jakPG2TAJAnaBqYpZK7l1x8Xby7QDa8HhNrKjzdiEesWOE
-	 XemmX0oycosvA==
-Received: from johan by xi.lan with local (Exim 4.98.2)
-	(envelope-from <johan@kernel.org>)
-	id 1vOcMm-000000000XO-11gd;
-	Thu, 27 Nov 2025 14:49:00 +0100
-From: Johan Hovold <johan@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>
-Cc: linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Johan Hovold <johan@kernel.org>,
-	stable@vger.kernel.org,
-	Andrew Davis <afd@ti.com>
-Subject: [PATCH] phy: ti: gmii-sel: fix regmap leak on probe failure
-Date: Thu, 27 Nov 2025 14:48:34 +0100
-Message-ID: <20251127134834.2030-1-johan@kernel.org>
-X-Mailer: git-send-email 2.51.2
+	id 1vOdab-0000000Gp4t-0IYy;
+	Thu, 27 Nov 2025 15:07:23 +0000
+Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
+	by smtpout-03.galae.net (Postfix) with ESMTPS id A8FBC4E4191E;
+	Thu, 27 Nov 2025 15:07:15 +0000 (UTC)
+Received: from mail.galae.net (mail.galae.net [212.83.136.155])
+	by smtpout-01.galae.net (Postfix) with ESMTPS id 641AD6068C;
+	Thu, 27 Nov 2025 15:07:15 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id EE57C102F218C;
+	Thu, 27 Nov 2025 16:06:51 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
+	t=1764256032; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 in-reply-to:references; bh=Xb2gYHXIhVp2zaSFmlDMNszWhEx2yHpcG9wfBD9WQ6Q=;
+	b=KsDxrTwJZ35P4V4zqNgBRz6dueQQQ479lYnTv33vH6BaAZQ6mqaBR8WEopD6/WxoiDZf3C
+	Ic4RTSKoLEfjd0/q+TBQmqIrfWBRSTeCoErZlb34wHoEcX2HAzuN2RzutFpS6+d2ln9KMJ
+	TSvAsAUfwMfwSBd4rCMr2Fdi3SKnKSNaEM9vqWiV42ClnoYd2t6PVCTiOsInGdUD2yiqj4
+	ZzTUOWwdLINFYrJ9uWeuCkQFxLH7ib2+v5JAxnvTykYWonFW1xB3OWNxxohmbmwdgPC/rA
+	Ba8/f4uTLQUuaOMbgPFSeaBwbd+ExYFXfFw+9W2+71ncOaO/+QIwmKbAGZv6Rw==
+From: Romain Gantois <romain.gantois@bootlin.com>
+To: "H. Nikolaus Schaller" <hns@goldelico.com>
+Cc: Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Jonathan Cameron <jic23@kernel.org>,
+ David Lechner <dlechner@baylibre.com>,
+ Nuno =?UTF-8?B?U8Oh?= <nuno.sa@analog.com>,
+ Andy Shevchenko <andy@kernel.org>, Guenter Roeck <linux@roeck-us.net>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-iio@vger.kernel.org, Conor Dooley <conor.dooley@microchip.com>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>,
+ Chanwoo Choi <cw00.choi@samsung.com>, Peter Rosin <peda@axentia.se>,
+ Mariel Tinaco <Mariel.Tinaco@analog.com>,
+ Lars-Peter Clausen <lars@metafoo.de>,
+ Michael Hennerich <Michael.Hennerich@analog.com>,
+ Kevin Tsai <ktsai@capellamicro.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ Eugen Hristev <eugen.hristev@linaro.org>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Sebastian Reichel <sre@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Support Opensource <support.opensource@diasemi.com>,
+ Paul Cercueil <paul@crapouillou.net>, Iskren Chernev <me@iskren.info>,
+ Marek Szyprowski <m.szyprowski@samsung.com>,
+ Matheus Castello <matheus@castello.eng.br>,
+ Saravanan Sekar <sravanhome@gmail.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+ Casey Connolly <casey.connolly@linaro.org>,
+ Pali =?UTF-8?B?Um9ow6Fy?= <pali@kernel.org>,
+ Orson Zhai <orsonzhai@gmail.com>,
+ Baolin Wang <baolin.wang@linux.alibaba.com>,
+ Chunyan Zhang <zhang.lyra@gmail.com>, Amit Kucheria <amitk@kernel.org>,
+ Thara Gopinath <thara.gopinath@gmail.com>,
+ "Rafael J. Wysocki" <rafael@kernel.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, Zhang Rui <rui.zhang@intel.com>,
+ Lukasz Luba <lukasz.luba@arm.com>,
+ Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>,
+ Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>,
+ Olivier Moysan <olivier.moysan@foss.st.com>,
+ Arnaud Pouliquen <arnaud.pouliquen@foss.st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@foss.st.com>,
+ Dixit Parmar <dixitparmar19@gmail.com>, linux-hwmon@vger.kernel.org,
+ linux-input@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-pm@vger.kernel.org, linux-mips@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
+ linux-arm-msm@vger.kernel.org, linux-sound@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Andy Shevchenko <andriy.shevchenko@intel.com>
+Subject: Re: [PATCH v4 0/6] Add support for the LTM8054 voltage regulator
+Date: Thu, 27 Nov 2025 16:06:47 +0100
+Message-ID: <8695751.T7Z3S40VBb@fw-rgant>
+In-Reply-To: <0E900830-E248-4F0F-A048-075EAF1D2440@goldelico.com>
+References: <20251124-ltm8054-driver-v4-0-107a8a814abe@bootlin.com>
+ <3021060.e9J7NaK4W3@fw-rgant>
+ <0E900830-E248-4F0F-A048-075EAF1D2440@goldelico.com>
 MIME-Version: 1.0
+X-Last-TLS-Session-Version: TLSv1.3
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20251127_070721_246478_C9B343E9 
+X-CRM114-Status: GOOD (  31.82  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,42 +117,142 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============6670147952988996726=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The mmio regmap that may be allocated during probe is never freed.
+--===============6670147952988996726==
+Content-Type: multipart/signed; boundary="nextPart10847283.nUPlyArG6x";
+ micalg="pgp-sha512"; protocol="application/pgp-signature"
 
-Switch to using the device managed allocator so that the regmap is
-released on probe failures (e.g. probe deferral) and on driver unbind.
+--nextPart10847283.nUPlyArG6x
+Content-Transfer-Encoding: 7Bit
+Content-Type: text/plain; charset="utf-8"; protected-headers="v1"
+From: Romain Gantois <romain.gantois@bootlin.com>
+To: "H. Nikolaus Schaller" <hns@goldelico.com>
+Date: Thu, 27 Nov 2025 16:06:47 +0100
+Message-ID: <8695751.T7Z3S40VBb@fw-rgant>
+In-Reply-To: <0E900830-E248-4F0F-A048-075EAF1D2440@goldelico.com>
+MIME-Version: 1.0
 
-Fixes: 5ab90f40121a ("phy: ti: gmii-sel: Do not use syscon helper to build regmap")
-Cc: stable@vger.kernel.org	# 6.14
-Cc: Andrew Davis <afd@ti.com>
-Signed-off-by: Johan Hovold <johan@kernel.org>
----
- drivers/phy/ti/phy-gmii-sel.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+On Tuesday, 25 November 2025 11:25:24 CET H. Nikolaus Schaller wrote:
+> Hi,
+> 
+> > Am 25.11.2025 um 09:41 schrieb Romain Gantois
+> > <romain.gantois@bootlin.com>:
+> > 
+> > 
+> > This is planned support for a voltage regulator chip.
+> 
+> Well, but one which is not by itself programmable. So IMHO, it does not
+> support that chip, but the circuit it is used in.
+> 
 
-diff --git a/drivers/phy/ti/phy-gmii-sel.c b/drivers/phy/ti/phy-gmii-sel.c
-index 50adabb867cb..26209a89703a 100644
---- a/drivers/phy/ti/phy-gmii-sel.c
-+++ b/drivers/phy/ti/phy-gmii-sel.c
-@@ -512,7 +512,7 @@ static int phy_gmii_sel_probe(struct platform_device *pdev)
- 			return dev_err_probe(dev, PTR_ERR(base),
- 					     "failed to get base memory resource\n");
- 
--		priv->regmap = regmap_init_mmio(dev, base, &phy_gmii_sel_regmap_cfg);
-+		priv->regmap = devm_regmap_init_mmio(dev, base, &phy_gmii_sel_regmap_cfg);
- 		if (IS_ERR(priv->regmap))
- 			return dev_err_probe(dev, PTR_ERR(priv->regmap),
- 					     "Failed to get syscon\n");
+The boundary is a bit blurry in this case, sure.
+
+> > > Are you looking for a virtual "glue" driver to logically combine several
+> > > low level functions?
+> > 
+> > I'm looking for a clean userspace abstraction for this component, the low-
+> > level functions in this case are those of a voltage regulator.
+> 
+> As far as I understood it has
+> - constant voltage
+> - current can be limited
+> - it can be turned on/off
+> 
+> That means it is a fixed-regulator (for constant voltage and turn on/off)
+> and a mechanism to program the current limit (iio-dac). Both have clean
+> userspace abstraction.
+> 
+> What am I missing?
+> 
+
+In my case, the regulator has a DAC tapping into the feedback divider with 
+allows modifying the output voltage level. This isn't specific to the LTM8054 
+though, you can theoretically do this with any regulator chip that has a 
+feedback pin.
+
+...
+> The question remains if you want to solve something for a single board which
+> happens to have an LTM8054 or if you are solving a more general design
+> pattern.
+> 
+> In summary my view is that the LTM8054 is just a "fixed-regulator" which
+> gets an additional current-limiter feature by adding a DAC chip (which needs
+> a driver of course). So software control is required not by the LTM8054 but
+> by adding a DAC chip.
+> 
+> Another suggestion: what extending the "regulator-fixed", "regulator-gpio",
+> "regulator-fixed-clock" pattern by some
+> "regulator-gpio-iio-dac-current-limiter" driver to make it independent of
+> your specific chip?
+> 
+> By the way, are you aware of this feature of the regulator-gpio driver?
+> 
+> https://elixir.bootlin.com/linux/v6.18-rc7/source/drivers/regulator/gpio-reg
+> ulator.c#L97
+> 
+
+That could be a preferable solution given that similar current limit and 
+output voltage limit control methods could apply to other regulator chips... 
+I'll have to think about it some more.
+
+> Just to note: I am neither maintainer nor doing any decisions on this, just
+> asking questions for curiosity and from experience and giving hints for
+> alternative approaches, where I hope they help to find the really best
+> solution.
+
+Sure, I appreciate that.
+
+Thanks,
+
 -- 
-2.51.2
+Romain Gantois, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
+--nextPart10847283.nUPlyArG6x
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part.
+Content-Transfer-Encoding: 7Bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEIcCsAScRrtr7W0x0KCYAIARzeA4FAmkoaQcACgkQKCYAIARz
+eA4wIA//cR+gzKtW78qSkS/qn3QD4fmem8sIoJemjJ96zZS/fPrrD7BVbwlzmT8Z
+PX35PtLLxRdN0CRWsdmEqAAwFLRMn0/UBGpROLNSqKZT9c3SisrVH5XlVV0s95LB
+fS6l3xzgbIjdqhGxwXgV+43B2OuuBLE9AopgYIwRunAam9+nECFHo9hU/4glxqrS
+O54WKxLhs7/BMJdpAv4T8UYjqKiC7Lvpd4oq43g64sacplSnZNv4iwqkga0oOtd8
+2IayCT5+gRm6xd9Xt/cVkQUQAFsoiieLLt87+JZP1ECtjcfwIsDiPBf49DvppELP
+SLg8qwG44QYRhfsPvdBRLFuvkmsu1rGZaBdRQZ+npfBkkwljuh6EllMbFgUOpuCR
+aFQleHJ/6naNsAZGxp4mW6x1YPwsiYeCQuQdffSq2DrTLEAnG3EV3wIB5TbMsF72
+p6glXdEj3uYECnRJ9Lql1PWO9MHGnubF2xCDqRIn7HDxq+DLmZkkZzg4c69/V1fy
+O7go8T5OfK1233Kqb1VDvY9SDRL5+nLo1tacht8yyrhq3LEUumAf7TFLXzBmN+QQ
+5TURL5uovvulw4c6SXs9sa7yriUKuayb9s5CKLsJJI4uYBt+Csyhm/fOfpuvKVm5
+Bryk0xixSfV1ekLMojoBFaS3AFNPGNCHqSmjGOEsaK8hrJ5HgkM=
+=KPmo
+-----END PGP SIGNATURE-----
+
+--nextPart10847283.nUPlyArG6x--
+
+
+
+
+
+--===============6670147952988996726==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============6670147952988996726==--
+
+
+
+
