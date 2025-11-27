@@ -4,134 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D2936D11183
-	for <linux-phy@archiver.kernel.org>; Thu, 27 Nov 2025 10:05:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1D6E6D11183
+	for <linux-phy@archiver.kernel.org>; Thu, 27 Nov 2025 10:19:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Subject:From:To:
+	Cc:Message-Id:Date:Mime-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WtCaktzRjcgT6Hto/DM/csmw7ZjjrC2UtGJsr9sJvA4=; b=iehRfIgCnsWAFa
-	Lyj5oIQYDthKkPUuOZDPllXMRkzS9aRRE2AYQS9cGvA53QCl7y2Yt1Tl+7DtQEOvqFRUMuYtBhrl2
-	lOtVA8QrtGIxnUDU2L17jVOhCJytZ+lOjOlKwrilH4O60oWbRKN4n8Q/s2H7PbaeuiU7xysb8Q37i
-	NcsguKFFcAHPYCZjYkd4CD8dz03EFajDg/77/ezNcnG3avB7x4jV5PEAagZAym/x15b0SnBQVaabO
-	p0sW02zvCipT8dyUk9TFU7hhW1Onc9fTq1JfliBhmclAuMsRejA3i+dG8Pr63QC/WLeheASrf/Q+U
-	1Q0i3YZmnBDj5G+5m8kw==;
+	List-Owner; bh=t7z8tRzGp3iaheNwKz9S3IcNEL3OizIcRvdoyL+sIK8=; b=CBN5cMtIj0UIF+
+	GHc9sB83hPJktQDfiPo2nfLIXM5oxSnrTRiDG4t8gJAoCvP9M9oFc40gWPJ8KLKuCHJxXDitTBVNO
+	9FDQzQg1sNGzeQAemYp5WJ2FAbVdcyf+uuqaoYu4VG7cXS+xlSDWdofvnCdJ1/7Fkb4kN+2xk4/Wh
+	9hJMEawClVMbL0t7sJEHpv8ySqiz+7i4elxmpOzLYq4KTTL6BvM2YZD+5xKVtl5kEbbXcYDQWTKoZ
+	EtGszms99gaM/ukylG14ZoDzYFwIWxSAd8fCHjVv+xlBfuMhn0JnfYZlAx49nq/Yi5qECco4POT/x
+	Gj0atVdhVV+ueMI2l8Mg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vOYsF-0000000GLDU-1poJ;
-	Thu, 27 Nov 2025 10:05:15 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1vOZ5Z-0000000GMhV-2HWv;
+	Thu, 27 Nov 2025 10:19:01 +0000
+Received: from smtpout-02.galae.net ([185.246.84.56])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vOYsC-0000000GLCt-1gcP
+	id 1vOZ5X-0000000GMfe-0Gud
 	for linux-phy@lists.infradead.org;
-	Thu, 27 Nov 2025 10:05:13 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 5AR7j6uw2388412
-	for <linux-phy@lists.infradead.org>; Thu, 27 Nov 2025 10:05:10 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=zS3VWKxPQ7K4FUOwLSLQ/xdq
-	9JxHNa/CvuMbT15j0M0=; b=Jdh/yTRuhXxiuLtouqXIldaimypKHTsuIgYAt39E
-	qDnVKCmMO2vJWhCxGik+VR7qaMp3pAmEW1zv5ohnRh8WX4kvPom2axopZThaz+Fr
-	Ypgk/aOtJfwvDbJ+YUe8czyMXy/pZeZWgpVnXjM4uDgmZzG9cVcnfYNHCKRDDhJT
-	Ck9eXDSC3jEL0gWjH5HeL+XQ5HGznfQ66KM3QYtU1XsuUdJx583VJ7QmEARJbPcz
-	FpmBxQl7pC7jYojxPTm7/2C3UeQ9x+T2KkZAyf1jFhlaSXnpnhBSDllOsE8hiqH/
-	CxdI93uStO4/oyJ81zdtTVQjROMOMv+wcC6PvHfYH1+AFQ==
-Received: from mail-pg1-f198.google.com (mail-pg1-f198.google.com [209.85.215.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4ap7n8j1d0-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Thu, 27 Nov 2025 10:05:10 +0000 (GMT)
-Received: by mail-pg1-f198.google.com with SMTP id 41be03b00d2f7-b471737e673so853675a12.1
-        for <linux-phy@lists.infradead.org>; Thu, 27 Nov 2025 02:05:10 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1764237909; x=1764842709; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=zS3VWKxPQ7K4FUOwLSLQ/xdq9JxHNa/CvuMbT15j0M0=;
-        b=fvBLQbfj1EIwjwBrECXbB23DVm+cZ+5Z7jIikh2vQUcVjxz7+FbRvfkZTc3D6nrp3M
-         GgFOQXq91Q5whgEMis+zCVcjHp08wekWULQjcsK5qsPxdh2dETs4yYGlhJrQNQ4TiIoD
-         PmJJszcqs2ZnnA5RsvzufNp4yTrHSpsxHCSlDVhrkYEgcb8YUAP8ckJ8kuaLG/PfjVR9
-         S3u3OHlqPfrt3GXbuc+EEW9yiK8yDHL//ZfTDy37xIc5WzVnREpTIt5cwV+qsv94cs9W
-         hQM9HV3AHID0+We6/UF3v0IhDg9PianLJWD4OGP2+bgD7zF6hzULQvlhCp+pPCei0taw
-         fKnA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1764237909; x=1764842709;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=zS3VWKxPQ7K4FUOwLSLQ/xdq9JxHNa/CvuMbT15j0M0=;
-        b=jj1NiEYBBGaFVnO1ILMKLu56TvgoWZW1cMp+1ZyrStM+AUjBw5GTJG8ex3i84kEvig
-         7O8u5urnVTSAaThjUnXVoi/4kb+tsAajSiwZTC4HuMk7uZ9Ndel2hPkCyiY//N18zlEK
-         ffVhQ0Hn13wxrO4d3xSRYLsQcvFPTrF5WoW2c93pbfivQsJQjfn4IsutAspPaEu7SYpr
-         q0JNSGoI8uVWNIn+gQKKhVQa88tDTIUBsrIUq6O8AUBcFMlAIg21+5njOe3lRtCqqimP
-         hzxXutTSi02vbx3xHyjnZWx/oJ76oHx5ixLfKvJ+RGzbnksOGvxqT/JwG1H4x52zNRlw
-         u3lw==
-X-Forwarded-Encrypted: i=1; AJvYcCUo2mHifirRzSf5DNPABE8rdIZHDIolDmra5K8NLieA2bHVFVQq5DDKcib92QVogR+9u30Iz4RAUyE=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyrmzXwjv4G1UDcODAlHZcV3fJI1aWuNTai/ir4Iynu4qV8e06i
-	lITetptUq8OdyhlYk7eAw2A8oIs+Z5iH+zZPfz4MurHUmQ+P/+qNlwS14N/cvMifY9Z5b9n7gSK
-	uY3p49ElI7u3z3gq95RUMIxF+la9gOW1PnvVzMnF/Yf184wTCc0i4VxkdEJ7rz92NoYJs
-X-Gm-Gg: ASbGncvkZyPezWNRkqRMOtEQPlmYKUf1zmhuEHZAsrvL+ef7uvrPPxvWZxZyVx/5Lpx
-	eYWk+s3CpzejFaWH8xH1CDSBJfFHhNr/EhvWqN6nP6K3fusOjVocyWCuKMp6XI8OR1u4oaVxPgz
-	I324i9wMNKRbmGjVpcL7wLh5W9U9BO8dZos4Dm/2HGv9qaiRDi+m8HK7T0kDC42GMIczKx+F+Wc
-	Au8wYeKhUn2vo6wPNHnrL5HplM7NmfjbcLAsNYysyam8IKuGZN88pm/vD3IKItqE4+C5Crvs4d/
-	WJ3BbWnsMQesM1zR8rixJLGXZdUfg9fKB//i6IlD32/5Ckgnt43LPrv5e8xuIweAZNmRvB27ZRs
-	lhBcvjsxcQK+fNDSe+QbJz7FFMIqlB04MDmGiUEiIQTLMXdXJsaXpcNbu
-X-Received: by 2002:a05:7022:2528:b0:119:e569:f629 with SMTP id a92af1059eb24-11c9d85fefemr18875633c88.34.1764237909265;
-        Thu, 27 Nov 2025 02:05:09 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IHC1sofe7oy0gDUCDczL88n811ZI3qfWuxmaq7+67gSKa6WnRahxRJjGfKMuG9dK98z6UDMlg==
-X-Received: by 2002:a05:7022:2528:b0:119:e569:f629 with SMTP id a92af1059eb24-11c9d85fefemr18875606c88.34.1764237908686;
-        Thu, 27 Nov 2025 02:05:08 -0800 (PST)
-Received: from hu-qianyu-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-11dcaed5f6bsm5683210c88.1.2025.11.27.02.05.07
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 27 Nov 2025 02:05:08 -0800 (PST)
-Date: Thu, 27 Nov 2025 02:05:06 -0800
-From: Qiang Yu <qiang.yu@oss.qualcomm.com>
-To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        Jingyi Wang <jingyi.wang@oss.qualcomm.com>,
-        Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
-        Neil Armstrong <neil.armstrong@linaro.org>,
-        Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
-        Abel Vesa <abel.vesa@linaro.org>
-Subject: Re: [PATCH v4 0/5] Add PCIe support for Kaanapali
-Message-ID: <aSgiUju4XPrYwuY3@hu-qianyu-lv.qualcomm.com>
-References: <20251124-kaanapali-pcie-phy-v4-0-d04ee9cca83b@oss.qualcomm.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20251124-kaanapali-pcie-phy-v4-0-d04ee9cca83b@oss.qualcomm.com>
-X-Proofpoint-GUID: eCOFjtX6MXDPtNPBY3X0JsyUeiiL_q5t
-X-Authority-Analysis: v=2.4 cv=AufjHe9P c=1 sm=1 tr=0 ts=69282256 cx=c_pps
- a=Qgeoaf8Lrialg5Z894R3/Q==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=kj9zAlcOel0A:10 a=6UeiqGixMTsA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=KKAkSRfTAAAA:8
- a=UtkNu69STNc0K4BKN_0A:9 a=CjuIK1q_8ugA:10 a=x9snwWr2DeNwDh03kgHS:22
- a=cvBusfyB2V15izCimMoJ:22
-X-Proofpoint-ORIG-GUID: eCOFjtX6MXDPtNPBY3X0JsyUeiiL_q5t
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMTI3MDA3MyBTYWx0ZWRfX0Ch1OzwR881F
- fxwsG0Bz3ads2qWAHQuCqrTi54q0oud3BMCkSXFNrrT+NXJNBRdaav8a3suXIam/zwvlBDHqxal
- 1sqs6E14szMNYA3soBfNeDrWWKn42kRZz42dz2K6mBadstL+QOnlkdZ1Ef3EZKS7PEH7/S2BmD/
- 0uyfeiitdNdrH4RCViyjpDpjyKqlPzMzSAWNZMopulFRKApvIkqtbTObiUf0qyOWeh2V60CCxLx
- zPqve7i/MgarUMxBgBRufx6RwiAoG+K7j7v35rNAvY+64Wvnyg7rRPuRykbJcuznzosnG+hBfn8
- Skb+AIKrvRZMy0NMqzlXgahQBODrubeFIS65gTFp/4ACks3o8pYZVKCd+mbfVF0fi2bzey2O7UI
- RvroVAJUzrG0NVFJ8UcLtjHP8dJ+aw==
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
- definitions=2025-11-25_02,2025-11-26_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- malwarescore=0 priorityscore=1501 bulkscore=0 suspectscore=0 adultscore=0
- phishscore=0 spamscore=0 impostorscore=0 lowpriorityscore=0 clxscore=1015
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2510240001 definitions=main-2511270073
+	Thu, 27 Nov 2025 10:19:00 +0000
+Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
+	by smtpout-02.galae.net (Postfix) with ESMTPS id 3EE851A1DC1;
+	Thu, 27 Nov 2025 10:18:51 +0000 (UTC)
+Received: from mail.galae.net (mail.galae.net [212.83.136.155])
+	by smtpout-01.galae.net (Postfix) with ESMTPS id 0474D6068C;
+	Thu, 27 Nov 2025 10:18:51 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 0A079102F08C5;
+	Thu, 27 Nov 2025 11:18:45 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
+	t=1764238730; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 content-transfer-encoding:in-reply-to:references;
+	bh=LgG9gPlkIJWvQG8qqwMiPTiG2WAG9DKgMroYDQ2bIs4=;
+	b=YrQfQhb+6aDx5eS3gn6+AMkY79V3G5HwUWsG48DP7Ih/mZrx7WTptzXRO827bZSdUtZllW
+	kEUg5cJcFYjDa8na85/pJT2Pfw/MIOpVY/Tb9RJ7joAiKOugYhzu9Lu0s6AfmFvS2aFTsd
+	fTG30Dvk6BijXC7uKs901C/NK3KqDw7AG6N2qSsZ02TBvgPr2+du1ZfwHQMKHVvCHmqCy9
+	nBZZsUcQmH2ycbgM3mzVBeGTtroQY9IJEREPP4Gvg+OebLRWeFj0P0btFjtvy5EyFEMoOi
+	B2moEm7ez2lAOSdFt18NQ2Ek/LaVAov9so6PXi6rAOPAzdCzKX2wpoWmmimRHg==
+Mime-Version: 1.0
+Date: Thu, 27 Nov 2025 11:18:45 +0100
+Message-Id: <DEJEFLKA9IJR.237ZLV8HBD2VS@bootlin.com>
+Cc: "Kever Yang" <kever.yang@rock-chips.com>, "Minas Harutyunyan"
+ <Minas.Harutyunyan@synopsys.com>, "Alan Stern" <stern@rowland.harvard.edu>,
+ "Louis Chauvet" <louis.chauvet@bootlin.com>, =?utf-8?q?Herv=C3=A9_Codina?=
+ <herve.codina@bootlin.com>, "Thomas Petazzoni"
+ <thomas.petazzoni@bootlin.com>, <linux-phy@lists.infradead.org>,
+ <linux-rockchip@lists.infradead.org>, <linux-usb@vger.kernel.org>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>
+To: =?utf-8?q?Th=C3=A9o_Lebrun?= <theo.lebrun@bootlin.com>, "Vinod Koul"
+ <vkoul@kernel.org>, "Kishon Vijay Abraham I" <kishon@kernel.org>, "Heiko
+ Stuebner" <heiko@sntech.de>, "William Wu" <wulf@rock-chips.com>
+From: "Luca Ceresoli" <luca.ceresoli@bootlin.com>
+Subject: Re: [PATCH 1/2] phy: rockchip: inno-usb2: fix disconnection in
+ gadget mode
+X-Mailer: aerc 0.20.1
+References: <20250722-rk3308-fix-usb-gadget-phy-disconnect-v1-0-239872f05f17@bootlin.com> <20250722-rk3308-fix-usb-gadget-phy-disconnect-v1-1-239872f05f17@bootlin.com> <DEHVRC8CY12S.3LSC6UVSMU0C1@bootlin.com> <DEJD8DJZFNZO.11B1UBXJBN7MO@bootlin.com> <DEJDSE73CJES.2AB8YSKLW6VE1@bootlin.com>
+In-Reply-To: <DEJDSE73CJES.2AB8YSKLW6VE1@bootlin.com>
+X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251127_020512_448403_40838582 
-X-CRM114-Status: GOOD (  17.43  )
+X-CRM114-CacheID: sfid-20251127_021859_236982_1EF9FD01 
+X-CRM114-Status: GOOD (  15.70  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -143,65 +78,47 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Nov 24, 2025 at 02:24:33AM -0800, Qiang Yu wrote:
-> Describe PCIe PHY. Also add required system resources like regulators,
-> clocks and registers configuration for PCIe PHY.
->
-
-Hi Vinod,
-
-Could you please have a look at this patch series. I have rebased it to
-latest linux-phy next branch.
-
-- Qiang Yu
-> Changes in v4:
-> - Rebase on latest linux-phy next branch
-> - Add reviewed-by tag
-> - Link to v3: https://lore.kernel.org/all/20251103-kaanapali-pcie-phy-v3-0-18b0f27c7e96@oss.qualcomm.com/
-> 
-> Changes in v3:
-> - Rebase on 20251017045919.34599-2-krzysztof.kozlowski@linaro.org
-> - Add reviewed-by tag
-> - Remove [PATCH v2 1/6] since it was applied
-> - Link to v2: https://lore.kernel.org/all/20251015-kaanapali-pcie-upstream-v2-0-84fa7ea638a1@oss.qualcomm.com/
-> 
-> Changes in v2:
-> - Rewrite commit msg for PATCH[3/6]
-> - Keep keep pcs-pcie reigster definitions sorted.
-> - Add Reviewed-by tag.
-> - Keep qmp_pcie_of_match_table sorted.
-> - Link to v1: https://lore.kernel.org/all/20250924-knp-pcie-v1-0-5fb59e398b83@oss.qualcomm.com/
-> 
-> Signed-off-by: Qiang Yu <qiang.yu@oss.qualcomm.com>
-> ---
-> Qiang Yu (5):
->       dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Add Kaanapali compatible
->       phy: qcom-qmp: qserdes-txrx: Add complete QMP PCIe PHY v8 register offsets
->       phy: qcom-qmp: pcs-pcie: Add v8 register offsets
->       phy: qcom-qmp: qserdes-com: Add some more v8 register offsets
->       phy: qcom: qmp-pcie: add QMP PCIe PHY tables for Kaanapali
-> 
->  .../bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml   |   3 +
->  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c           | 194 +++++++++++++++++++++
->  drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v8.h    |  34 ++++
->  drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com-v8.h |  11 ++
->  .../qualcomm/phy-qcom-qmp-qserdes-txrx-pcie-v8.h   |  71 ++++++++
->  5 files changed, 313 insertions(+)
-> ---
-> base-commit: 3b64ea4768e7e64b2d9ae5833dbcac19f6212145
-> change-id: 20251124-kaanapali-pcie-phy-31968b2b2916
-> 
-> Best regards,
-> -- 
-> Qiang Yu <qiang.yu@oss.qualcomm.com>
-> 
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+SGkgVGjDqW8sCgpPbiBUaHUgTm92IDI3LCAyMDI1IGF0IDEwOjQ4IEFNIENFVCwgVGjDqW8gTGVi
+cnVuIHdyb3RlOgo+IE9uIFRodSBOb3YgMjcsIDIwMjUgYXQgMTA6MjIgQU0gQ0VULCBMdWNhIENl
+cmVzb2xpIHdyb3RlOgo+PiBPbiBUdWUgTm92IDI1LCAyMDI1IGF0IDQ6MjggUE0gQ0VULCBUaMOp
+byBMZWJydW4gd3JvdGU6Cj4+Pj4gVGhlIGNvZGUgYWxyZWFkeSBjaGVja3MgZm9yICFycG9ydC0+
+c3VzcGVuZGVkLCBzbyBhZGQgYSBndWFyZCBmb3IgVkJVUyBhcwo+Pj4+IHdlbGwgdG8gYXZvaWQg
+YSBkaXNjb25uZWN0aW9uIHdoZW4gYSBjYWJsZSBpcyBjb25uZWN0ZWQuCj4+Pgo+Pj4gWW91ciBj
+b21taXQgbWVzc2FnZSB3YXMgY2xlYXIgYnV0IEkgd2FzIG1pc3Npbmcgb25lIGtleSBwb2ludDog
+d2hhdAo+Pj4gcnBvcnQtPnN1c3BlbmRlZCBtZWFucy4gSXQgaXNuJ3Qgd2hhdCBJIGZpcnN0IHRo
+b3VnaHQuIEluc3RlYWQgaXQgbWVhbnMKPj4+IHBoeSBpcyBwb3dlcmVkIG9mZi4gTmFtaW5nIGlz
+IGJhZCBidXQgdW5yZWxhdGVkIHRvIHlvdXIgc2VyaWVzLiBNYXliZQo+Pj4gYWRkIGEgY29tbWVu
+dCB0byB5b3VyIGNvbW1pdCBtZXNzYWdlIGxpa2UgdGhlIGZvbGxvd2luZz8KPj4+Cj4+PiAgIFRo
+ZSBjb2RlIGFscmVhZHkgY2hlY2tzIGZvciAhcnBvcnQtPnN1c3BlbmRlZCAoUEhZIGlzIHBvd2Vy
+ZWQgb24pLCAuLi4KPj4KPj4gWW91IGFyZSByaWdodC4gSSBoYXZlIGFkZGVkIGEgc2xpZ2h0bHkg
+bG9uZ2VyIHRleHQ6Cj4+Cj4+ICAgVGhlIGNvZGUgYWxyZWFkeSBjaGVja3MgZm9yICFycG9ydC0+
+c3VzcGVuZGVkICh3aGljaCwgc29tZXdoYXQKPj4gICBjb3VudGVyLWludHVpdGl2ZWx5LCBtZWFu
+cyB0aGUgUEhZIGlzIHBvd2VyZWQgb24pLCAuLi4KPj4KPj4gU3RpbGwgd29ydGggeW91ciBSZXZp
+ZXdlZC1ieT8KPgo+IEV2ZW4gbW9yZSBzby4KClRoYW5rcywgdjIgb24gaXRzIHdheS4KCj4+IEkg
+YWxzbyBhZGRlZCB0aGUgQ2M6IHN0YWJsZUB2Z2VyLmtlcm5lbC5vcmcgbGluZSwgd2hpY2ggSSBu
+b3RpY2VkIGJlaW5nCj4+IG1pc3NpbmcuCj4KPiBJIG5ldmVyIGFkZCB0aGF0IENjIHRyYWlsZXIg
+YW5kIG9ubHkgcmVseSBvbiBgRml4ZXM6YC4gSSB0aG91Z2h0IGl0Cj4gdXNlZCB0byBiZSBkb2N1
+bWVudGVkIGFzIGFuIGFsdGVybmF0aXZlIHRvIHRoYXQgQ2MgdHJhaWxlciBidXQgaXQgZG9lcwo+
+IG5vdCBzaG93IHVwIGluIGBnaXQgbG9nIC1wIERvY3VtZW50YXRpb24vcHJvY2Vzcy9zdGFibGUt
+a2VybmVsLXJ1bGVzLnJzdGAKPgo+IFRoZXJlIGlzIG9uZSBpbmRpcmVjdCBtZW50aW9uIG9mICJz
+Y3JpcHRzIHRoYXQgbG9vayBmb3IgY29tbWl0cwo+IGNvbnRhaW5pbmcgYSAnRml4ZXM6JyB0YWci
+Ogo+IGh0dHBzOi8vZWxpeGlyLmJvb3RsaW4uY29tL2xpbnV4L3Y2LjE3Ljkvc291cmNlL0RvY3Vt
+ZW50YXRpb24vcHJvY2Vzcy9zdGFibGUta2VybmVsLXJ1bGVzLnJzdCNMMTMyLUwxMzQKPgo+IEFu
+eXdheSwgeW91IGRvIHJpZ2h0IGJ5IGV4cGxpY2l0bHkgdGFnZ2luZyBgQ2M6IHN0YWJsZUAuLi5g
+LgoKVGhlb3J5IHNheXMgQ2M6IGlzIG5lZWRlZDoKCj4gTm90ZTogQXR0YWNoaW5nIGEgRml4ZXM6
+IHRhZyBkb2VzIG5vdCBzdWJ2ZXJ0IHRoZSBzdGFibGUga2VybmVsIHJ1bGVzCj4gcHJvY2VzcyBu
+b3IgdGhlIHJlcXVpcmVtZW50IHRvIENjOiBzdGFibGVAdmdlci5rZXJuZWwub3JnIG9uIGFsbCBz
+dGFibGUKPiBwYXRjaCBjYW5kaWRhdGVzLgooaHR0cHM6Ly9kb2NzLmtlcm5lbC5vcmcvcHJvY2Vz
+cy9zdWJtaXR0aW5nLXBhdGNoZXMuaHRtbCNyZXZpZXdlci1zLXN0YXRlbWVudC1vZi1vdmVyc2ln
+aHQpCgpCdXQgaW4gdGhlIHByYWN0aWNlIEkgaGFwcGVuZWQgdG8gZm9yZ2V0IENjOiBzdGFibGUg
+aW4gdGhlIHBhc3QsIHRoZSBwYXRjaApnb3QgYXBwbGllZCBhbmQgdGhlIEZpeGVzOiB0YWcgd2Fz
+IGVub3VnaCBmb3IgY29ycmVjdCBjaGVycnktcGljayBpbiBzdGFibGUKYnJhbmNoZXMuCgpMdWNh
+CgotLQpMdWNhIENlcmVzb2xpLCBCb290bGluCkVtYmVkZGVkIExpbnV4IGFuZCBLZXJuZWwgZW5n
+aW5lZXJpbmcKaHR0cHM6Ly9ib290bGluLmNvbQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QK
+bGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
+L21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
