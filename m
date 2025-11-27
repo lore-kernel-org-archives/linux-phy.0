@@ -4,154 +4,122 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 89A07D11181
-	for <linux-phy@archiver.kernel.org>; Wed, 26 Nov 2025 15:58:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A18E0D116E4
+	for <linux-phy@archiver.kernel.org>; Thu, 27 Nov 2025 02:29:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SQVTzpPBkNCqu2UwEBwjR/nYF8C02z+lH2TcPEofQOg=; b=DjIHVXbOmOKsYV
-	7E1ZPNsL+bRLvbyevMPYMhtDq7ntWc+FvqG0SWWp/ukg5MEne+wOhnmAt6zPcuBM9Jy1K8QjcfGI5
-	9MsIJjq7iMyMT3EKQhKFj40T8mq37u33QyFgvcy9fe25Q9bhpJnBRe4GHmYS+6BWAksRzCcjUoYnv
-	QAzL7cYH3j7HiQAPYWhHmrvceNm4vFb33zcNnghXSkOQFXN6PL3n6UtDqwXXdHYrmR7Tcpb62n/5W
-	c85r0Gr4KKIUniAzUBQSPqX1n8uiqNa5HxClQfIG7raeYlKigwYdjOBMGW5eCAuaZHWo8iMd4XO5/
-	gHu5eW+xqTzV/MJ1KkDA==;
+	List-Owner; bh=yJW/3kIcOfsMId8l09GupxK8DxhbRegbqNrLMJuob9s=; b=qy2KWx6iZfRzkb
+	VUD7+mfc6Cy+Kx38BLFdDxGBqnEVlsoJ1SbWJIyM60Vu2pHfqeplsZcPPhFlwEpe3wbbzbzYXDOp+
+	YpbOnlfKzaw6zYM9arZeCF8LUBuF8s3LbPhOH/22JZ57azK2VMTC8+P2kPtW3Q0vQViB6vvP8ttur
+	xkEl0T8XQPyAenWLNeci6ekc3liQ/ZHh28Pkqa4CmRmN9t54NsN5SsQPKMuXNEQWnVjzS9fMdrEOU
+	MJjnVqY2KkEMCh6s0RoLcQbC5vOPsHwKXGzxxaEtj3nIFl63rMwCJRKZNAcCh2BYdIADEdsZSt5/y
+	+C7FQpfCyErhUFDuG3rg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vOHub-0000000FDUy-0bzH;
-	Wed, 26 Nov 2025 15:58:33 +0000
-Received: from mail-northeuropeazon11010022.outbound.protection.outlook.com ([52.101.84.22] helo=DB3PR0202CU003.outbound.protection.outlook.com)
+	id 1vORkw-0000000FtdG-0tO5;
+	Thu, 27 Nov 2025 02:29:14 +0000
+Received: from smtp-relay-internal-1.canonical.com ([185.125.188.123])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vOHuY-0000000FDTt-3QWT;
-	Wed, 26 Nov 2025 15:58:31 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=dTmBb+irpDGNjiwwHnoIEG1jcWHH+cT/zdhp4Eg8qP6mGBNaeHrMkCKHLKtr4D35UTf8bMYbkzQmZX7D5/lsaWP4clEzZcubde4yjI/lTBEcXs5RHsn6hjfog+CV7AhuwxpFeX8o5MBSBpF6W8TI7XEd6Y+irS2o1OYAzXrWqaGRiOtmKd0jUUXd3/1jNDXf9dyZeOhHB/zdaKwu4NJKAeirPapuU8A0+bWWwfruVGNIi5Q/OV2fBlsvyjz7D+RxiSBr8YvDCj/yBvmxYgIzXzfnS6yzI6jcd+MQgCsdw1MphD5rR3JqtGn73neyq6ZLM1KEwIYpiwOsedaY1/HBJg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=KERdB35fdZJQwlTkaIBbWBNw1MQAyN5I4+Q3sKDn7oY=;
- b=JdPjcysr4LjSjadceeMNWa5vZw8M+nvunBuYJsxHNgANnb/VnHKtQKS+HZR+ZR4bS0Jf2uRwBPBpFmXW6bxalN2zpbYs91x7gPVZr/Wq6rMqPNJNGdnbKxtslprLmoQ56g/c5KR3KCpglGCBKUR0FcM8NC9C38duQSCc9bGGIoU129oWT7rOPwHa56BHPYpY93W+bCDl99Sec1RZhNriNsQ4MFOB/GA3YG2nTgNWJjL1rtOSysh4+mYUp7AbqIb7PyXXec/O3SsFkwJ//so9B7goTXfwuuwXc27vxxgWEMe210/5BX/2LT3dRyfwUUxvk5ELhBqYUNF9/HgW0Jf/iw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=KERdB35fdZJQwlTkaIBbWBNw1MQAyN5I4+Q3sKDn7oY=;
- b=NMmUKV8jCpHlpt+bWZHO1KPOAZXjGRiTwkF9yLGuJMjrxhd+JeZUxrl0DQhHQZk3Xk5IMfqoJe2u4aJDwTK0esPCo3OPbjb2oUWscOFJzH3I3jGgadRcwcZvC90cUVFkBCEJxlbGUB8hQlowU2P1NPg94pw6fLGKOGatsVmYw9l9FXB2eQaoO7cMRIzhSXQFtbBqtcPoYwfhteYR2wEUt0LrvoKh9LBbEQhaKajrW4/QTKuqDSaifJPHh6jfXSGEUJP7JP8SZRVLMrwfCSktcvwT1FiWB56TfEw75k4tcIRueogivni3lyoMltC4IQKr9+ZfechDBFf36jqoo4RpUQ==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from DU2PR04MB8951.eurprd04.prod.outlook.com (2603:10a6:10:2e2::22)
- by VE1PR04MB7487.eurprd04.prod.outlook.com (2603:10a6:800:1a2::13) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9366.12; Wed, 26 Nov
- 2025 15:58:23 +0000
-Received: from DU2PR04MB8951.eurprd04.prod.outlook.com
- ([fe80::753c:468d:266:196]) by DU2PR04MB8951.eurprd04.prod.outlook.com
- ([fe80::753c:468d:266:196%4]) with mapi id 15.20.9366.009; Wed, 26 Nov 2025
- 15:58:23 +0000
-Date: Wed, 26 Nov 2025 10:58:11 -0500
-From: Frank Li <Frank.li@nxp.com>
-To: Franz Schnyder <fra.schnyder@gmail.com>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Shawn Guo <shawnguo@kernel.org>,
-	Sascha Hauer <s.hauer@pengutronix.de>,
-	Pengutronix Kernel Team <kernel@pengutronix.de>,
-	Fabio Estevam <festevam@gmail.com>,
-	Franz Schnyder <franz.schnyder@toradex.com>,
-	linux-phy@lists.infradead.org, imx@lists.linux.dev,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
-	Francesco Dolcini <francesco.dolcini@toradex.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>, stable@vger.kernel.org,
-	Xu Yang <xu.yang_2@nxp.com>
-Subject: Re: [PATCH v2] phy: fsl-imx8mq-usb: fix typec orientation switch
- when built as module
-Message-ID: <aScjk7WR5gkF1NeO@lizhi-Precision-Tower-5810>
-References: <20251126140136.1202241-1-fra.schnyder@gmail.com>
-Content-Disposition: inline
-In-Reply-To: <20251126140136.1202241-1-fra.schnyder@gmail.com>
-X-ClientProxiedBy: SJ0PR13CA0211.namprd13.prod.outlook.com
- (2603:10b6:a03:2c1::6) To DU2PR04MB8951.eurprd04.prod.outlook.com
- (2603:10a6:10:2e2::22)
+	id 1vORks-0000000FtcT-0cbF
+	for linux-phy@lists.infradead.org;
+	Thu, 27 Nov 2025 02:29:12 +0000
+Received: from mail-pl1-f197.google.com (mail-pl1-f197.google.com [209.85.214.197])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by smtp-relay-internal-1.canonical.com (Postfix) with ESMTPS id 04BD940F84
+	for <linux-phy@lists.infradead.org>; Thu, 27 Nov 2025 02:29:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=canonical.com;
+	s=20251003; t=1764210546;
+	bh=moRkfSdnKWE1L7iwARGDzQBHaEjyYU2g3c8YIY8z8/w=;
+	h=From:To:Cc:Subject:Date:Message-ID:In-Reply-To:References:
+	 MIME-Version;
+	b=g1k1V0VpiML9C40ropMqf3FYFMCWSouGzWdLohjpPhGvVXU+TvdK/R2o2uFUuchyV
+	 Vdqo1/PQlStgEHfFH7gVJjG7Lf+4trkbMZDvQ3/VdPtRZHi6AJBth4QfrXPWXLdj8c
+	 PGKVLxQti6V+k2URgdyZUW7UgUd0nuegqP5UVi1u1aBXfMR/Z7e229ROPt+GWEU5pS
+	 8Mo9fArsO6udntZDDznwGI7tdW/a/VW2QAZ3taJCbRgWH5If03duaQtGiJjpy2rW47
+	 GU8hBY0VEyctxbFXuSOFYh1djoNf+T0hHFRJWwX+F9JZvpQ6lNlfe+/1X9uZR7BMn/
+	 5tHo0XujjeZzZlB/u3S1mk542Y6zesINLddhpLerPYAq1Jk54spq3qiL2/nNwydtBk
+	 3B505QnP/059ZZkGCmsvusSKmR/OhqjX9w2GNUAAwvQmSODSECgoMjKwHpm+iBqeza
+	 o1xeAa+ubnqg7eiO+XyHBNd+xS6Fb0Fy+PArUxV26JjRuOw1Vv1CHMzZ2vUWJqONCb
+	 0nJFHXXj+k47QvKBEPDtwvCaBsa6AYgRwCj8r+xQjEXjpiftdCSv7Mmj3gAqPjEpiD
+	 IIw30NPHXw2YEvZ1rdTNXTs4abt0oCVHpCBoHWttPn/1wp0mBz3okZ8QMS+xeU6lFm
+	 XrnWe57JDV/KH/m7Mwncg+6k=
+Received: by mail-pl1-f197.google.com with SMTP id d9443c01a7336-295595cd102so6205105ad.3
+        for <linux-phy@lists.infradead.org>; Wed, 26 Nov 2025 18:29:05 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1764210544; x=1764815344;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to;
+        bh=moRkfSdnKWE1L7iwARGDzQBHaEjyYU2g3c8YIY8z8/w=;
+        b=iqr2ytg2xq6KeKJA0h0SzOxAbYcUpLPqIOfm15c5nTZchqfKc5CrOutNVhKB1IjmKr
+         HUJDAJs3v91o1rm6fK6gyk3DW+kx5uaVJraJJBX/GoZ7HNrEtz+91W+r8sUNNUF1xvLo
+         Itf9f89iiph08+xFuQYlIlmazZ5btFKAtWa/ghN03yZPJ5ScXiyVKU3agQkV+beBteTH
+         1nStWsZVE1TW4IpLmojc/kicI8to12x2oP7Bk8hsk5kb0NcobCJISNb6YpH5KWkYJOqm
+         z4cXd2rujshTVk4Yza29ZddVVJwXUIHPnkjQp+SXLiG+fyzWaKyW2HFaYff7iXz9KACM
+         G8MA==
+X-Forwarded-Encrypted: i=1; AJvYcCXCS+la676tyy9Dzxif+8s/9wJ/igpLdR6FDYDNN6sr1mqQrbC5ZJ5Kks5HfcBVC26iCU1r5ALpN5c=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzyWKwE+Ukw9gVR5lvO+pKhRuekrvqFic8q9ggt/83B9xKKMl8P
+	HJ/5P5DOuFVNV4XD8R1BII2rtOHhWaPEHqkbvG5yQRKzYL8dcwIEz3xN80shPMrFgaiKIotu47q
+	MSRW75bUOTgCP0taIC44gfndbLSDCeLeXj6RBLscFaQJvhPIrbIxSr64VvC3lmMRUkBB8JVZO8b
+	EAUhr2eJw=
+X-Gm-Gg: ASbGncsNVZoyXNsGPrPb0EmH2qP7d+8+Kxf4U2SJUSvj+E5hkTm3TfExY45ivvK/PKL
+	GrxlIj/w4vDize+yfb9yfAMlSoDiEd0KB+QPedsh8+R4yKXjzGxyVPDj5fiFTaZridSeIa+sNzC
+	xp7nvIgTRSTHrNRlh+CDXHq+l5BhtGqkSoIROcWXhEZNWYzKJB1LPZ6YT+0C+qPzqOP07ghIA3G
+	eJQFXSGfW0axkWfw6TbTvNXkswAuhGyux1NvqOjN++TbVYoy/kzmwaaGlvx+JSuTBKF5T3ujosU
+	c2BPHT+9G0sw0gTw8ARZg2XJrTbivNP2MUL6m95IYSdp7YcIJ+yPicoqfJ/KfL+RenY00MAytvO
+	eNmRMKzdm3FXA3BYpGajxw6FWUVe0ijvBamDkXQx5OM1eXkZIP8uzfOpQFoWeej95Sk1aanGNR0
+	hVEKganakMbZDwWE7r9GKTRlDjR3UH/8ND8PgNsRgaDx83I17xfmhrBA==
+X-Received: by 2002:a17:903:1212:b0:295:f47:75cb with SMTP id d9443c01a7336-29b6becc173mr231768945ad.23.1764210544433;
+        Wed, 26 Nov 2025 18:29:04 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFJbyia6acW5QghgQDjbQSlX3VHT1ZArhGAQXYDqmf0tGph2/FKIDt4U28ZbOGlnwTPfcPKYg==
+X-Received: by 2002:a17:903:1212:b0:295:f47:75cb with SMTP id d9443c01a7336-29b6becc173mr231768485ad.23.1764210543907;
+        Wed, 26 Nov 2025 18:29:03 -0800 (PST)
+Received: from localhost.localdomain (125-228-254-191.hinet-ip.hinet.net. [125.228.254.191])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-29b5b25e638sm211732475ad.58.2025.11.26.18.28.59
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 26 Nov 2025 18:29:03 -0800 (PST)
+From: Jian Hui Lee <jianhui.lee@canonical.com>
+To: tommaso.merciai.xr@bp.renesas.com
+Cc: andi.shyti@kernel.org,
+	arnd@arndb.de,
+	biju.das.jz@bp.renesas.com,
+	conor+dt@kernel.org,
+	devicetree@vger.kernel.org,
+	fabrizio.castro.jz@renesas.com,
+	geert+renesas@glider.be,
+	gregkh@linuxfoundation.org,
+	jonathan.cameron@huawei.com,
+	kishon@kernel.org,
+	krzk+dt@kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-renesas-soc@vger.kernel.org,
+	magnus.damm@gmail.com,
+	p.zabel@pengutronix.de,
+	peda@axentia.se,
+	prabhakar.mahadev-lad.rj@bp.renesas.com,
+	robh@kernel.org,
+	sebastian.reichel@collabora.com,
+	tomm.merciai@gmail.com,
+	ukleinek@kernel.org,
+	vkoul@kernel.org,
+	yoshihiro.shimoda.uh@renesas.com
+Subject: Re: [PATCH v4 06/22] mux: Add driver for Renesas RZ/V2H USB VBUS_SEL mux
+Date: Thu, 27 Nov 2025 10:28:41 +0800
+Message-ID: <20251127022841.743277-1-jianhui.lee@canonical.com>
+X-Mailer: git-send-email 2.48.1
+In-Reply-To: <d4152c7008cadbb1fbfaab3d7946b036dcdbcca8.1763737324.git.tommaso.merciai.xr@bp.renesas.com>
+References: <d4152c7008cadbb1fbfaab3d7946b036dcdbcca8.1763737324.git.tommaso.merciai.xr@bp.renesas.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DU2PR04MB8951:EE_|VE1PR04MB7487:EE_
-X-MS-Office365-Filtering-Correlation-Id: 1a4d856f-3fd1-4d56-e3b1-08de2d04a0c7
-X-LD-Processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|19092799006|7416014|52116014|376014|1800799024|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?u5RJXJivFuapdvxglPZJ9xqw0snk3ZNLsqJG6xb3D9llwxPQ39ZVlNbUzacj?=
- =?us-ascii?Q?4A17zNk6ZRaTsUv66PJPZW72jeehHyvDa7k144g2D9/vMVvfHg/JIERRKfrk?=
- =?us-ascii?Q?zs4XmUba60NY15gHQd6pKCly+3S5MVry4xQKXSLJJQzR6XK1oLRVFVr3xa9c?=
- =?us-ascii?Q?VpEvhsODLDm83q4LlGuUBzdqDhwY6XfTInD1/LFox9RASLlxxMBOU1ZqYP93?=
- =?us-ascii?Q?OxCSv/Rc1r0ID6di887lQ+qwIGloTPYRrAdYUoikL134eHr0wCmIpmZK05JT?=
- =?us-ascii?Q?orT1i2TzG01EWD4nKteaJePWg+z4j9fGOxHaw3Xfv6AbD11s6tHzwej1UfbV?=
- =?us-ascii?Q?DRMMVg2BCJq0balYXsGZQUueAX0xaITBpOZYDqyfkPoeUZII5o0fLPQAto0r?=
- =?us-ascii?Q?AadrfCAu8dbxikdXEke1r8T/S8dHjYO6BXQwdBUIG62CSUfuEm0FsoO6hGYo?=
- =?us-ascii?Q?JWNiv6nNIHuV3vdtFMQT3ySaigF7O0u1Ie9U6wRYDSAjxpTjM3nqpw1xqSvr?=
- =?us-ascii?Q?657eoVTNIU18JV9tmCC/OkyybbfGt8BSo1QJ1OHyAqtO66ihPiQ6ekjw/PDd?=
- =?us-ascii?Q?foSLKhOOaM/sjxciy6vasWWVDMZPN09GcfiSTA2ZkEIvhgeC+LRqP3dIaZG1?=
- =?us-ascii?Q?TJJ0c+JNhpmHwMF/ydd55PjDnCBQsrYAMww0/oy6q0Q072DQhGaj75NP2cbW?=
- =?us-ascii?Q?UTTjCzlRk8s4nM8NUGAd4baCnmGQVpmKEEIxcR5s/QPRj+W9jzv7urRhzLN3?=
- =?us-ascii?Q?cYV9tLlMSqvDhjbwV0R5RvTK7BXxTvgnEOWMn2EJY5xZw3YzOaiGNfwWnCnZ?=
- =?us-ascii?Q?Sz+CTee5w97cAMJownVHtFE+tuD2RVPqDnYU75X2lXi/PNIeqnbBD4846Sys?=
- =?us-ascii?Q?8mIWbtVQ/Ufm0bz/JBYjj52Hw7J3e/4wpsQ0AT0YbB0OGWewUCWM5XvRzgkg?=
- =?us-ascii?Q?NGI+uVPxho/UNHujzRkCKKS5XPzqNklM6Y8qtTuPwiNKwmBU0QtEqbgTLW2r?=
- =?us-ascii?Q?yLhT1LcrvFjY1SooFq5eUSTr4kP3FNvFcdjGpobX1LWvAZgAc6PrbqVPS3Fw?=
- =?us-ascii?Q?G+/H/+STIn3zJTT2dWlz45hE04OchsKdCdXfThQ3SOFTGlTKOgspKLqNhtbb?=
- =?us-ascii?Q?Gn8xLxiTSUBu3jwwYedlGUxnOwtbqVnYG/UOUNAjkXRIMTh2EotLHNRngnm6?=
- =?us-ascii?Q?dfbBCb7giYPvbKkDgGUC+027JkX8G+twyp6mYIdeFFSvuoZgL2uQU8MB2DMf?=
- =?us-ascii?Q?f0SAkN6B/CbYU31BUAVlXbXnCTr48DC0exUhnm9zYUsEKH7LriTG7ldbQNRe?=
- =?us-ascii?Q?YlNbV7wBsuSSrqDnq3lWJjR6Jp+S4gDOK3hH53/pQqxclB4zcsWepdgWbS/B?=
- =?us-ascii?Q?bKhZfv3SUDR90IUL0hD95XwtpfFUUQZ6O2Vss/8anhspCHhMuUHQTGlFmxGx?=
- =?us-ascii?Q?Rl2CMXfUwvc+W38TLsY55tp3ksOu/ragtmBKTscVGM+DZU7MTUKLXbtY37qH?=
- =?us-ascii?Q?UhlzpYERJP4ZWUhnYbdKRIPqKhS3q8bsrxi7?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DU2PR04MB8951.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(19092799006)(7416014)(52116014)(376014)(1800799024)(38350700014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?xi9mJXOlv/mWS4fRCqGOP7aS2Hz8wldYptL+6JpB7+H7wpXpeCh8l/Z17SiG?=
- =?us-ascii?Q?NXLgQg3flnKoaQ4L++4YYM9AurwP5unyeVtn9V5IzFBQA0/G8Vbj+xV1GwGj?=
- =?us-ascii?Q?KBGkyZtbZNmwTrdn1lJSbFRLlkmNTUs93j8pStKoaFR1Jnk9Tmkepza/tjcN?=
- =?us-ascii?Q?Rz2xw0K/6vsM6X3l5C0npWUPZ4TIivTMbbO09PZMw+hEKWtlQG3UgJBKoXa7?=
- =?us-ascii?Q?za3m1ccAXbE9TfuLAEckHBeT8oJeZlwtZfla27IMKTQxVUbSRxubjjoxxuQ+?=
- =?us-ascii?Q?RdrujQy6mSZuQlt1GsQREU7YN6EcC/UY4I/t4NggNZSxcfN0E7fbrOAveMGp?=
- =?us-ascii?Q?aPwrMkYqYdCo9hfrr5Eljh3nqaNTEjgf31p9JkGkhXjgMbe1zyxiSuIGzjxh?=
- =?us-ascii?Q?PbfaPDQNq5i/zKTcEA/7sWCQoTzk0rcQONBAURmACHOYyh563JU6PmXifDTY?=
- =?us-ascii?Q?0joLTe3gmi/pcKuGwrRtrIV/bSw5xsS243QxmcfXV/FFUIBYeAUmJ8pv0lLc?=
- =?us-ascii?Q?Mw1jwNSMtyFhw3z1/VUPVlsosdTYQDFSi7qbffwr7/vkqpTDGyKHLC0q3i57?=
- =?us-ascii?Q?/ltueXNSnUZX2ZDlSEsV3/3MzfybexNa5OAZdf0X2Xl3b7mxaLBPCYtQGP3L?=
- =?us-ascii?Q?q4ZdtTMZarqs2xzdG6QCHU6gCjSD/NAzUw5LHC3eNELMdVmTJ8/k7oFpvKDy?=
- =?us-ascii?Q?S/XojSZSdgMghp77RxZzSUIX7of9jx29euEUdMsADiWsRCKv/KAzBT0C2zSl?=
- =?us-ascii?Q?RdamgNVmg1uC6Emx79NtaJqePGOZcooZZAVgT4RE1596nMnkM60Pju3+G7Fx?=
- =?us-ascii?Q?XrKs4es4nlxzi/wQtVYftpXU3IKV9c3LHAvGgvCSLBwNkDi8LeVgCeCJ2ijG?=
- =?us-ascii?Q?cRdHw++lPyS6XLhk4zlOSxoDUTlM2CNZNoc9NtYWcUYHnuP0yEgYw3St/XuW?=
- =?us-ascii?Q?l/89siji2rlfYZoMp/Cyv1iEZjjjHgBAzgamNrU5ghEGa2vM5DXKFGpFNtnn?=
- =?us-ascii?Q?PsvZo+GYw2tSkZqwplnLk5j9zsHiYI711SzUGSHXZEmIyX36yU+TkfA23U3H?=
- =?us-ascii?Q?/MaK1ZrvYO95crq8xrut1s9jHhOsyyxyJJZ+Ah5MQqN2xK59MVN6HHxsRUTW?=
- =?us-ascii?Q?b064OT+tBAV0X9Gs5EIwDSOtu+qiQVeGOIp8pMGSTD267GGYNSM3zim7wxl4?=
- =?us-ascii?Q?so8K5E3nsceDyGsLtM52F6EBGrFfMB8Bmn9eqdk2JyYSTAMpNFKJmLfpgGdS?=
- =?us-ascii?Q?nUPCF2wyYR1ca6zIGbPwJvxGm+PCQU+7F+q6TSEjJRerOX/6gIOgH9L/yU5s?=
- =?us-ascii?Q?jfYLuQfy7RfiUJ8DiulvfT6+7ytxi3kboZvSRv6JGMr4P0UWKezW/+ZnQA8i?=
- =?us-ascii?Q?5BMCrkvdeYs6VA4af+cdJSzIkm+juKex3UMysq937EpWl07L9jxceejhjT+X?=
- =?us-ascii?Q?tdQ2FG3F+HTROOWkq40mmtxs7FioB5iOe22Mpvi/2PRVqYyL24m7AKJ3eggl?=
- =?us-ascii?Q?DYgqDHuCTHVsyuv7IGPiXjhUkqEBp27EqN5ATHadtmxjJKrHm4p1gdsT+6R5?=
- =?us-ascii?Q?oS6GOW8lrl42TFjMDjmcLQpeKHVR42HfO9Thwe5H?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 1a4d856f-3fd1-4d56-e3b1-08de2d04a0c7
-X-MS-Exchange-CrossTenant-AuthSource: DU2PR04MB8951.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 Nov 2025 15:58:23.6355
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: LIozV+PFPYjJcvV+k0Wib7bUGTAVy0lof02nWtTA3QQmW1ez7Ff8x0T5QaBLbC7L2VR5JVu2/pTw2sYwtBaYSg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB7487
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251126_075830_879645_8CF44AD8 
-X-CRM114-Status: GOOD (  20.77  )
+X-CRM114-CacheID: sfid-20251126_182910_576573_11D4C23C 
+X-CRM114-Status: GOOD (  33.90  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -168,68 +136,237 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Nov 26, 2025 at 03:01:33PM +0100, Franz Schnyder wrote:
-> From: Franz Schnyder <franz.schnyder@toradex.com>
->
-> Currently, the PHY only registers the typec orientation switch when it
-> is built in. If the typec driver is built as a module, the switch
-> registration is skipped due to the preprocessor condition, causing
-> orientation detection to fail.
->
-> With commit
-> 45fe729be9a6 ("usb: typec: Stub out typec_switch APIs when CONFIG_TYPEC=n")
-> the preprocessor condition is not needed anymore and the orientation
-> switch is correctly registered for both built-in and module builds.
->
-> Fixes: b58f0f86fd61 ("phy: fsl-imx8mq-usb: add tca function driver for imx95")
-> Cc: stable@vger.kernel.org
-> Suggested-by: Xu Yang <xu.yang_2@nxp.com>
-> Signed-off-by: Franz Schnyder <franz.schnyder@toradex.com>
+On Fri, Nov 21, 2025 at 04:11:55PM +0100, Tommaso Merciai wrote:
+> As per the RZ/V2H(P) HW manual, VBUSEN can be controlled by the VBUS_SEL
+> bit of the VBENCTL Control Register. This register is mapped in the
+> reset framework. The reset driver expose this register as mux-controller
+> and instantiates this driver. The consumer will use the mux API to
+> control the VBUS_SEL bit.
+> 
+> Signed-off-by: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
 > ---
-> v2: Drop the preprocessor condition after a better suggestion.
->     Reviewed-by Neil tag not added as patch is different
-> ---
+> v3->v4:
+>  - Removed mux_chip->dev.of_node not needed.
+> 
+> v2->v3:
+>  - Added mux_chip->dev.of_node = dev->of_node->child as the mux-controller
+>    is an internal node.
+>  - Fixed auxiliary_device_id name.
+>  - Get rdev using from platform_data.
+>  - Drop struct auxiliary_device adev from reset_rzv2h_usb2phy_adev
+>    as it is needed.
+>  - Drop to_reset_rzv2h_usb2phy_adev() as it is not needed.
+> 
+> v1->v2:
+>  - New patch
+> 
+>  drivers/mux/Kconfig                       | 10 +++
+>  drivers/mux/Makefile                      |  2 +
+>  drivers/mux/rzv2h-usb-vbus.c              | 97 +++++++++++++++++++++++
+>  include/linux/reset/reset_rzv2h_usb2phy.h | 11 +++
+>  4 files changed, 120 insertions(+)
+>  create mode 100644 drivers/mux/rzv2h-usb-vbus.c
+>  create mode 100644 include/linux/reset/reset_rzv2h_usb2phy.h
+> 
+> diff --git a/drivers/mux/Kconfig b/drivers/mux/Kconfig
+> index c68132e38138..604f625544ed 100644
+> --- a/drivers/mux/Kconfig
+> +++ b/drivers/mux/Kconfig
+> @@ -59,4 +59,14 @@ config MUX_MMIO
+>  	  To compile the driver as a module, choose M here: the module will
+>  	  be called mux-mmio.
+>  
+> +config MUX_RZV2H_VBENCTL
+> +	tristate "Renesas RZ/V2H USB VBUS mux driver"
+> +	depends on RESET_RZV2H_USB2PHY || COMPILE_TEST
+> +	depends on OF
+> +	select REGMAP_MMIO
+> +	select AUXILIARY_BUS
+> +	default RESET_RZV2H_USB2PHY
+> +	help
+> +	  Support for VBUS mux implemented on Renesas RZ/V2H SoCs.
+> +
+>  endmenu
+> diff --git a/drivers/mux/Makefile b/drivers/mux/Makefile
+> index 6e9fa47daf56..9421660399af 100644
+> --- a/drivers/mux/Makefile
+> +++ b/drivers/mux/Makefile
+> @@ -8,9 +8,11 @@ mux-adg792a-objs		:= adg792a.o
+>  mux-adgs1408-objs		:= adgs1408.o
+>  mux-gpio-objs			:= gpio.o
+>  mux-mmio-objs			:= mmio.o
+> +mux-rzv2h-usb-vbus-objs		:= rzv2h-usb-vbus.o
+>  
+>  obj-$(CONFIG_MULTIPLEXER)	+= mux-core.o
+>  obj-$(CONFIG_MUX_ADG792A)	+= mux-adg792a.o
+>  obj-$(CONFIG_MUX_ADGS1408)	+= mux-adgs1408.o
+>  obj-$(CONFIG_MUX_GPIO)		+= mux-gpio.o
+>  obj-$(CONFIG_MUX_MMIO)		+= mux-mmio.o
+> +obj-$(CONFIG_MUX_RZV2H_VBENCTL)	+= mux-rzv2h-usb-vbus.o
+> diff --git a/drivers/mux/rzv2h-usb-vbus.c b/drivers/mux/rzv2h-usb-vbus.c
+> new file mode 100644
+> index 000000000000..9513bc8f35ff
+> --- /dev/null
+> +++ b/drivers/mux/rzv2h-usb-vbus.c
+> @@ -0,0 +1,97 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Renesas RZ/V2H(P) USB2 VBUS_SEL mux driver
+> + *
+> + * Copyright (C) 2025 Renesas Electronics Corp.
+> + */
+> +
+> +#include <linux/auxiliary_bus.h>
+> +#include <linux/bitops.h>
+> +#include <linux/err.h>
+> +#include <linux/module.h>
+> +#include <linux/mux/driver.h>
+> +#include <linux/of.h>
+> +#include <linux/property.h>
+> +#include <linux/regmap.h>
+> +#include <linux/reset/reset_rzv2h_usb2phy.h>
+> +
+> +#define RZV2H_VBENCTL		0xf0c
+> +
+> +struct mux_rzv2h_usb_vbus_priv {
+> +	struct regmap_field *field;
+> +};
+> +
+> +static int mux_rzv2h_usb_vbus_set(struct mux_control *mux, int state)
+> +{
+> +	struct mux_rzv2h_usb_vbus_priv *priv = mux_chip_priv(mux->chip);
+> +
+> +	return regmap_field_write(priv->field, state);
+> +}
+> +
+> +static const struct mux_control_ops mux_rzv2h_usb_vbus_ops = {
+> +	.set = mux_rzv2h_usb_vbus_set,
+> +};
+> +
+> +static const struct regmap_config rzv2h_usb_vbus_regconf = {
+> +	.reg_bits = 32,
+> +	.val_bits = 32,
+> +	.reg_stride = 4,
+> +	.max_register = RZV2H_VBENCTL,
+> +};
+> +
+> +static int mux_rzv2h_usb_vbus_probe(struct auxiliary_device *adev,
+> +				    const struct auxiliary_device_id *id)
+> +{
+> +	struct reset_rzv2h_usb2phy_adev *rdev = adev->dev.platform_data;
+> +	struct mux_rzv2h_usb_vbus_priv *priv;
+> +	struct device *dev = &adev->dev;
+> +	struct mux_chip *mux_chip;
+> +	struct regmap *regmap;
+> +	struct reg_field reg_field = {
+> +		.reg = RZV2H_VBENCTL,
+> +		.lsb = 0,
+> +		.msb = 0,
+> +	};
+> +	int ret;
+> +
+> +	regmap = devm_regmap_init_mmio(dev, rdev->base, &rzv2h_usb_vbus_regconf);
+> +	if (IS_ERR(regmap))
+> +		return PTR_ERR(regmap);
+> +
+> +	mux_chip = devm_mux_chip_alloc(dev, 1, sizeof(*priv));
+> +	if (IS_ERR(mux_chip))
+> +		return PTR_ERR(mux_chip);
+> +
+> +	priv = mux_chip_priv(mux_chip);
+> +
+> +	priv->field = devm_regmap_field_alloc(dev, regmap, reg_field);
+> +	if (IS_ERR(priv->field))
+> +		return PTR_ERR(priv->field);
+> +
+> +	mux_chip->ops = &mux_rzv2h_usb_vbus_ops;
+> +	mux_chip->mux[0].states = 2;
+> +	mux_chip->mux[0].idle_state = MUX_IDLE_AS_IS;
+> +
+> +	ret = devm_mux_chip_register(dev, mux_chip);
+> +	if (ret < 0)
+> +		return dev_err_probe(dev, ret, "Failed to register mux chip\n");
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct auxiliary_device_id mux_rzv2h_usb_vbus_ids[] = {
+> +	{ .name = "rzv2h_usb2phy_reset.vbus-sel-mux" },
 
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
+hi Tommaso,
+this string causes buffer overflow, could you help to check on it?
 
->  drivers/phy/freescale/phy-fsl-imx8mq-usb.c | 14 --------------
->  1 file changed, 14 deletions(-)
->
-> diff --git a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-> index b94f242420fc..72e8aff38b92 100644
-> --- a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-> +++ b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-> @@ -124,8 +124,6 @@ struct imx8mq_usb_phy {
->  static void tca_blk_orientation_set(struct tca_blk *tca,
->  				enum typec_orientation orientation);
->
-> -#ifdef CONFIG_TYPEC
-> -
->  static int tca_blk_typec_switch_set(struct typec_switch_dev *sw,
->  				enum typec_orientation orientation)
->  {
-> @@ -173,18 +171,6 @@ static void tca_blk_put_typec_switch(struct typec_switch_dev *sw)
->  	typec_switch_unregister(sw);
->  }
->
-> -#else
-> -
-> -static struct typec_switch_dev *tca_blk_get_typec_switch(struct platform_device *pdev,
-> -			struct imx8mq_usb_phy *imx_phy)
-> -{
-> -	return NULL;
-> -}
-> -
-> -static void tca_blk_put_typec_switch(struct typec_switch_dev *sw) {}
-> -
-> -#endif /* CONFIG_TYPEC */
-> -
->  static void tca_blk_orientation_set(struct tca_blk *tca,
->  				enum typec_orientation orientation)
->  {
-> --
+[   15.349036] strlen: detected buffer overflow: 33 byte read of buffer size 32
+[   15.349083] WARNING: CPU: 0 PID: 518 at lib/string_helpers.c:1035 __fortify_report+0x64/0xc8
+[   15.349110] Modules linked in: mux_rzv2h_usb_vbus(+) rcar_canfd(+) mtd sm4_ce(-) can_dev rz_dmac(+) pwm_rzg2l_gpt binfmt_misc dm_multipath efi_pstore nfnetlink ip_tables x_tables autofs4 btrfs blake2b_generic raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor xor_neon raid6_pq raid1 raid0 linear rtc_isl1208 micrel phy_package mmc_block raa215300 rpmb_core dwmac_renesas_gbeth spi_rpc_if pcs_rzn1_miic stmmac_platform stmmac polyval_ce renesas_sdhi_internal_dmac renesas_usbhs ghash_ce panfrost udc_core pcs_xpcs renesas_sdhi_core reset_rzv2h_usb2phy gpu_sched tmio_mmc_core xhci_rcar_hcd ehci_platform sm4 phy_rzg3e_usb3 phy_rcar_gen3_usb2 rzv2m_usb3drd xhci_plat_hcd ohci_platform renesas_rpc_if i2c_riic gpio_regulator gpio_keys fixed aes_neon_bs aes_neon_blk aes_ce_blk aes_ce_cipher
+[   15.349359] CPU: 0 UID: 0 PID: 518 Comm: (udev-worker) Not tainted 6.18.0-5.5 #3 PREEMPT(voluntary)
+[   15.349371] Hardware name: Renesas SMARC EVK version 2 based on r9a09g047e57 (DT)
+[   15.349380] pstate: 60400005 (nZCv daif +PAN -UAO -TCO -DIT -SSBS BTYPE=--)
+[   15.349390] pc : __fortify_report+0x64/0xc8
+[   15.349400] lr : __fortify_report+0x64/0xc8
+[   15.349408] sp : ffff8000854fb830
+[   15.349413] x29: ffff8000854fb830 x28: ffff80007c7a41d8 x27: ffff80007c7a4300
+[   15.349430] x26: ffff800083c4d780 x25: 0000000000000000 x24: ffff0000c5de9de8
+[   15.349446] x23: ffff800081d23b68 x22: ffff0000c004b200 x21: ffff0000ca6dd080
+[   15.349462] x20: 0000000000000020 x19: ffff80007c7a6140 x18: ffff800084b870a8
+[   15.349477] x17: 0000000000000000 x16: 0000000000000000 x15: 0000000000000000
+[   15.349492] x14: 0000000000000000 x13: 323320657a697320 x12: 7265666675622066
+[   15.349507] x11: 0000000000000000 x10: 0000000000000000 x9 : ffff800080208f0c
+[   15.349522] x8 : 0000000000000000 x7 : 0000000000000000 x6 : 0000000000000000
+[   15.349536] x5 : 0000000000000000 x4 : 0000000000000000 x3 : 0000000000000000
+[   15.349550] x2 : 0000000000000000 x1 : 0000000000000000 x0 : 0000000000000000
+[   15.349565] Call trace:
+[   15.349572]  __fortify_report+0x64/0xc8 (P)
+[   15.349583]  __fortify_panic+0x14/0x18
+[   15.349595]  auxiliary_match_id+0xf8/0x110
+[   15.349608]  auxiliary_match+0x28/0x60
+[   15.349617]  __driver_attach+0x34/0x2a8
+[   15.349629]  bus_for_each_dev+0x88/0x110
+[   15.349639]  driver_attach+0x30/0x60
+[   15.349649]  bus_add_driver+0x178/0x2d8
+[   15.349658]  driver_register+0x74/0x178
+[   15.349668]  __auxiliary_driver_register+0x7c/0x150
+[   15.349677]  mux_rzv2h_usb_vbus_driver_init+0x34/0xfd0 [mux_rzv2h_usb_vbus]
+
+> +	{ /* sentinel */ }
+> +};
+> +MODULE_DEVICE_TABLE(auxiliary, mux_rzv2h_usb_vbus_ids);
+> +
+> +static struct auxiliary_driver mux_rzv2h_usb_vbus_driver = {
+> +	.name		= "vbus-sel-mux",
+> +	.probe		= mux_rzv2h_usb_vbus_probe,
+> +	.id_table	= mux_rzv2h_usb_vbus_ids,
+> +};
+> +module_auxiliary_driver(mux_rzv2h_usb_vbus_driver);
+> +
+> +MODULE_DESCRIPTION("RZ/V2H USB VBUS_SEL mux driver");
+> +MODULE_AUTHOR("Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>");
+> +MODULE_LICENSE("GPL");
+> diff --git a/include/linux/reset/reset_rzv2h_usb2phy.h b/include/linux/reset/reset_rzv2h_usb2phy.h
+> new file mode 100644
+> index 000000000000..06247080a66c
+> --- /dev/null
+> +++ b/include/linux/reset/reset_rzv2h_usb2phy.h
+> @@ -0,0 +1,11 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +#ifndef _RESET_RZV2H_USB2PHY_H
+> +#define _RESET_RZV2H_USB2PHY_H
+> +
+> +#include <linux/auxiliary_bus.h>
+> +
+> +struct reset_rzv2h_usb2phy_adev {
+> +	void __iomem *base;
+> +};
+> +
+> +#endif
+> -- 
 > 2.43.0
->
+> 
+> 
+> -- 
+> linux-phy mailing list
+> linux-phy@lists.infradead.org
+> https://lists.infradead.org/mailman/listinfo/linux-phy
 
 -- 
 linux-phy mailing list
