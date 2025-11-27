@@ -4,8 +4,8 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B0C84CFD2F6
-	for <linux-phy@archiver.kernel.org>; Thu, 27 Nov 2025 13:30:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EB57BD111A8
+	for <linux-phy@archiver.kernel.org>; Thu, 27 Nov 2025 13:30:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -13,65 +13,67 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=1Aak51G6xbT6wvVPY0NyK3t3HPIg/0yJfVsU7AG+3YA=; b=VTVpqRIkhz72NklwnMaxqrbke8
-	eNhTite0jgOPRy3vfkdXby2Apj45p88vmaLfL2CYSOstvk7xkesany3lexiU3xOqVNbCAlLIsZFxz
-	LGDW8kxAu3c/OSPUIQR6/rBXqicMhgdDDV1tVNQCX0o1rx/K2oe6qoAGX1oE7uOVylE0PMeNNIYIo
-	90pYt6TmB65McBD3plBFBmT3fgnnzHz70+YB77yVWMexpav5Fs+PPBwJ3NvgjK+529mlriDzpVEGH
-	yNpKO9emyGe6DvuL5j/94/rIPEh8eAe/Vjd9H43gACvUCCDq9UJvGSoKseTqovHewgQtDWwmk+/uB
-	x5Jzi5jg==;
+	bh=XFgnpGAb3BJwUR7uqZvYf0wUIKdeZFLTP8Fvu9CSnxo=; b=YeJ2W1iPmwPVe+KIpzKiA48Hbj
+	0yYbwF1E/UzgT5Q8T/FE8K1Ymnps96GoetNy+WjHTiAAD1oZt0jhd6qEZTh+HK89Nzx9rTJZktUNu
+	olVXQqEHLYNPXOKJ6lgEYTJZVQx85M3GG8Y+0lhZbCWFPKpeJCkKqfepFAjOuH38h2ftoPyJOAwxR
+	M6GxopWlniMlTEbclbwi7yylsEAAXWJtinnxu/Wrk695OIkHmKwmCdB6Qd/jNl3so08aIcxofcNGL
+	Vx2cQD337uSMjCeimf6l2N+twF52m3bb5+lSN/KShhIjCxhBk5ZGArEX13Gc8EqAowdapT/htrss0
+	yBra/88A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vOc53-0000000GgfN-1rWo;
-	Thu, 27 Nov 2025 13:30:41 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vOc54-0000000GggD-2uTT;
+	Thu, 27 Nov 2025 13:30:42 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vOc51-0000000GgdQ-2HP6
+	id 1vOc52-0000000Ggeg-2rUo
 	for linux-phy@lists.infradead.org;
-	Thu, 27 Nov 2025 13:30:39 +0000
+	Thu, 27 Nov 2025 13:30:42 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id E79236020D;
-	Thu, 27 Nov 2025 13:30:38 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 61963C4CEFB;
-	Thu, 27 Nov 2025 13:30:38 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 5FD2D43A60;
+	Thu, 27 Nov 2025 13:30:40 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0A3B2C116D0;
+	Thu, 27 Nov 2025 13:30:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1764250238;
-	bh=qfCyuPWT5K6vsKLyo7M2+8kULAW3XzKDaTl3mUicdWg=;
+	s=k20201202; t=1764250240;
+	bh=7W8m1gN6iJf6URJXr6P1P/KidZjp2vGFzBw9uIu20F8=;
 	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
-	b=h/zdPLFTwBrn/TQD+O3Ne2L5zDppooLS+N0Vo+Pk2xvn+SmxKbrZtqta8otTzSEY5
-	 gBaGeOSLqxOjWXEwKIXnj+J2Ql+oRQY13V/DCLtXSmdUO1T0cphEBjvGdnPUafD6zT
-	 Bmv/5wHYnJQbFFzbTEDdTMixhDUBaFGfm3j4et8n6r1pPAZJfWdGEAM9YRypt3qrmX
-	 6SyL1K3MgpAK52uHwgo6xHFsiSBIXUNElMLIUjIqAd4ckWel3aYWXBMGVtfuRkBcgT
-	 0H+mHk3qnSxfFNmHkyIkXPrH4HCa+xR0cRpcIinUgrWqb14LtWKdcSq50NbO9UtyEL
-	 Q/+zYA1pC6Mcw==
-Date: Thu, 27 Nov 2025 07:30:37 -0600
+	b=gMbf5A7CTRvABqJ/dgN2OT/F+AgyUwVkZR0IW2G5x+RetylR2amp7Dsn+OgeXuDbR
+	 0ZPjC+prWEU7eIXio3ic321IPHk28ckzA3AvGQgPoi3kbOdRyyjiZhaEvK1JI3dd36
+	 fff2bHzcr0ivLqY/4ncM6DNu/W5NqKwPuwaOTUeaqSaxW7iX6icWQq4xsx3FCz3u/p
+	 g6QZFo/WG4grEC+zFMrOc3KvUHG9JbaUnb+TwkzsCivUL+JLRBctJvXFie1VdAYS5i
+	 O4iGm9u7NQvL6N5mWcOqKEB7cGYTa2V5qIVP+5EA7jsD9f15tKP1Y1D41adEEDVv2U
+	 NOra7lPJGjpwQ==
+Date: Thu, 27 Nov 2025 07:30:38 -0600
 MIME-Version: 1.0
 From: "Rob Herring (Arm)" <robh@kernel.org>
-Cc: Krzysztof Kozlowski <krzk+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
- biju.das.jz@bp.renesas.com, Georgi Djakov <djakov@kernel.org>, 
- Conor Dooley <conor.dooley@microchip.com>, Arnd Bergmann <arnd@arndb.de>, 
- Peter Rosin <peda@axentia.se>, 
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
- Philipp Zabel <p.zabel@pengutronix.de>, devicetree@vger.kernel.org, 
- linux-renesas-soc@vger.kernel.org, 
- Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>, 
- Mark Brown <broonie@kernel.org>, tomm.merciai@gmail.com, 
- Conor Dooley <conor+dt@kernel.org>, 
- Geert Uytterhoeven <geert+renesas@glider.be>, 
- Guenter Roeck <linux@roeck-us.net>, 
- Fabrizio Castro <fabrizio.castro.jz@renesas.com>, 
- linux-kernel@vger.kernel.org, Kishon Vijay Abraham I <kishon@kernel.org>, 
- linux-phy@lists.infradead.org, 
+Cc: Guenter Roeck <linux@roeck-us.net>, linux-phy@lists.infradead.org, 
+ linux-renesas-soc@vger.kernel.org, Philipp Zabel <p.zabel@pengutronix.de>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Georgi Djakov <djakov@kernel.org>, 
+ tomm.merciai@gmail.com, 
  Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, 
- Jonathan Cameron <jonathan.cameron@huawei.com>, 
  Magnus Damm <magnus.damm@gmail.com>, 
- Bartosz Golaszewski <bartosz.golaszewski@linaro.org>
+ Conor Dooley <conor.dooley@microchip.com>, biju.das.jz@bp.renesas.com, 
+ Jonathan Cameron <jonathan.cameron@huawei.com>, 
+ Peter Rosin <peda@axentia.se>, linux-kernel@vger.kernel.org, 
+ Fabrizio Castro <fabrizio.castro.jz@renesas.com>, 
+ Mark Brown <broonie@kernel.org>, 
+ Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>, 
+ Bartosz Golaszewski <bartosz.golaszewski@linaro.org>, 
+ Arnd Bergmann <arnd@arndb.de>, devicetree@vger.kernel.org, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+ Geert Uytterhoeven <geert+renesas@glider.be>
 To: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
-In-Reply-To: <33e2552871c7a93a75ccaface5491f994c6156f1.1764241212.git.tommaso.merciai.xr@bp.renesas.com>
+In-Reply-To: <32c6393bc89fd7f4b354def0028220a1916315e6.1764241212.git.tommaso.merciai.xr@bp.renesas.com>
 References: <cover.1764241212.git.tommaso.merciai.xr@bp.renesas.com>
- <33e2552871c7a93a75ccaface5491f994c6156f1.1764241212.git.tommaso.merciai.xr@bp.renesas.com>
-Message-Id: <176425022839.4101786.8488594837632751244.robh@kernel.org>
-Subject: Re: [PATCH v5 12/22] dt-bindings: usb: renesas,usbhs: Add RZ/G3E
- SoC support
+ <32c6393bc89fd7f4b354def0028220a1916315e6.1764241212.git.tommaso.merciai.xr@bp.renesas.com>
+Message-Id: <176425022981.4101836.1767439068441155398.robh@kernel.org>
+Subject: Re: [PATCH v5 13/22] dt-bindings: phy: renesas,usb2-phy: Document
+ RZ/G3E SoC
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20251127_053040_767713_A79712A3 
+X-CRM114-Status: GOOD (  13.58  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,12 +91,13 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Thu, 27 Nov 2025 12:48:39 +0100, Tommaso Merciai wrote:
-> Document the Renesas USBHS controller found on the Renesas RZ/G3E SoC.
-> The USBHS block on RZ/G3E is functionally identical to the one found
-> on the RZ/G2L family, so no driver changes are needed. The existing
-> "renesas,rzg2l-usbhs" fallback compatible will continue to be used for
-> handling this IP.
+On Thu, 27 Nov 2025 12:48:40 +0100, Tommaso Merciai wrote:
+> Document USB2.0 phy bindings for RZ/G3E ("R9A09G047") SoC.
+> 
+> The RZ/G3E USB2.0 phy is functionally identical to the one found
+> on the RZ/V2H(P), so no driver changes are needed. The existing
+> "renesas,usb2-phy-r9a09g057" will be used as a fallback compatible for
+> this IP.
 > 
 > Acked-by: Conor Dooley <conor.dooley@microchip.com>
 > Signed-off-by: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
@@ -111,8 +114,8 @@ On Thu, 27 Nov 2025 12:48:39 +0100, Tommaso Merciai wrote:
 > v1->v2:
 >  - Collected CDooley tag
 > 
->  Documentation/devicetree/bindings/usb/renesas,usbhs.yaml | 1 +
->  1 file changed, 1 insertion(+)
+>  Documentation/devicetree/bindings/phy/renesas,usb2-phy.yaml | 4 +++-
+>  1 file changed, 3 insertions(+), 1 deletion(-)
 > 
 
 My bot found errors running 'make dt_binding_check' on your patch:
@@ -124,7 +127,7 @@ dtschema/dtc warnings/errors:
 
 doc reference errors (make refcheckdocs):
 
-See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/33e2552871c7a93a75ccaface5491f994c6156f1.1764241212.git.tommaso.merciai.xr@bp.renesas.com
+See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/32c6393bc89fd7f4b354def0028220a1916315e6.1764241212.git.tommaso.merciai.xr@bp.renesas.com
 
 The base for the series is generally the latest rc1. A different dependency
 should be noted in *this* patch.
