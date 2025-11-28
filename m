@@ -4,81 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D0EB2D116F1
-	for <linux-phy@archiver.kernel.org>; Fri, 28 Nov 2025 03:17:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4BB4CCFD376
+	for <linux-phy@archiver.kernel.org>; Fri, 28 Nov 2025 05:52:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
-	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=YnOmQtk9pWnfNeYbqPPXvVzY+IBaOM7K7g18EA2dAv8=; b=K5Pn7J84vq8M6txAmAQEGrH/cB
-	wuS5zEG7XuiLPSrA5gGYCYWyoF0zKPhYwsPBuABzcAjb61/qYPCZcKHGiee8bdmKCwox8b/M8tc45
-	/gFBP5pWALM40ydf3mXWeKdpsr4CuFyiTnjxJZ0qdTW5VGvMbcnInwHNDaeW057YWeN5rk0/2FoTp
-	FZPlzSgOQPt2IUkA4jrClMKduk0zYtEgyRAz3RfpwO34QCUXZlSiLnoHhMA9zr8xXlcoimua5XFL1
-	GULbhrNDgIBu9LaNe43oSPua3nMO7S5uMUGVO0rC1gVi2G1Iva69TYHRWFS7FFXwHDGvULtqztYSu
-	ifpTejNg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=G+WacuUK/oHGczF6WD+Bd4bUswwJXfVjC2/EDMyANkU=; b=oFeDKqoPdRAcwR
+	62HnP5hDc2YU2gw4Y7SjDNDx7WJJMFFxcPEjJS5uBopDc/MgYeCgSeikymDw25mXrrAyhpGGsm8BV
+	gD2da6fEFOdWLjy6LDP4NaqG3QENUY8SzTW5xsoovLqdGmTJXRXgMXaE2wcW9leKlRhFcyFhM4NMd
+	Y/Avp1mxHDRT3/emqSxOABTFHbS7nrqr9btqKE4AxaWnfishTF9po05ITvtZYSXUxZa0IeCxmy3Rr
+	AiI4RAAGd0mqvjYyvZBksC/RkY6ENpabZTIE/2gIyaU+rT4r+blsUqikkoq0t1k0EoGu9OwnIQPI9
+	OCuuIf/yW+8Wjj9BI/UA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vOozC-0000000HVrg-1hv3;
-	Fri, 28 Nov 2025 03:17:30 +0000
+	id 1vOrOk-000000000mA-3ld2;
+	Fri, 28 Nov 2025 05:52:02 +0000
 Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vOozA-0000000HVqx-2PYw;
-	Fri, 28 Nov 2025 03:17:28 +0000
+	id 1vOrOj-000000000lu-1JRX;
+	Fri, 28 Nov 2025 05:52:01 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 8655D6013C;
-	Fri, 28 Nov 2025 03:17:27 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 04DF0C4CEF8;
-	Fri, 28 Nov 2025 03:17:26 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1764299847;
-	bh=ryPXwfuMaZzBXoYMo/9eVTKnHFtI3lVtoZXMBixOIc4=;
-	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
-	b=R1Ec+14ZjpPF5TvGD5MwhTACaQKRf4CPFDQlWnS3iKcnA8nYJoHgtULZac5QL0R8e
-	 ONuNr0QhVzGQQpBd9bAMc1HDkJTHGmkM+T4u3EYEry/bXjqhlfnzkJ148xc96GDTWS
-	 9m44RRHE9/pa6qqT19+hA/3uKMQ2VlMa/O1lNQSYr2D7vVq8xL5+nhR0SPDO0iTntq
-	 f/ldas7ZXnM+NMMiIVPZ0xtlmSLav22QSnLLOw/JE1y6uSSXurk3KHRR9Zrbm1mnqz
-	 R9TMfNxqW8aiwae9iBkcsN7xtjhBhTn7smCfb7sO/wYSYR0TxnNyu3olV+kHpfMGwO
-	 8NTnuNSIdcdtA==
-Date: Thu, 27 Nov 2025 21:17:25 -0600
-MIME-Version: 1.0
-From: "Rob Herring (Arm)" <robh@kernel.org>
-Cc: Sandy Huang <hjc@rock-chips.com>, 
- Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>, 
- Diederik de Haas <didi.debian@cknow.org>, Dragan Simic <dsimic@manjaro.org>, 
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
- linux-phy@lists.infradead.org, Andy Yan <andy.yan@rock-chips.com>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Johan Jonker <jbx6244@gmail.com>, 
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, 
- Robert Foss <rfoss@kernel.org>, 
- Heikki Krogerus <heikki.krogerus@linux.intel.com>, 
- Heiko Stuebner <heiko@sntech.de>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- linux-rockchip@lists.infradead.org, 
- Jernej Skrabec <jernej.skrabec@gmail.com>, 
- Maxime Ripard <mripard@kernel.org>, Jonas Karlman <jonas@kwiboo.se>, 
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
- Chaoyi Chen <chaoyi.chen@rock-chips.com>, 
- Thomas Zimmermann <tzimmermann@suse.de>, David Airlie <airlied@gmail.com>, 
- Amit Sunil Dhamne <amitsd@google.com>, linux-kernel@vger.kernel.org, 
- dri-devel@lists.freedesktop.org, Conor Dooley <conor+dt@kernel.org>, 
- Vinod Koul <vkoul@kernel.org>, Peter Chen <hzpeterchen@gmail.com>, 
- Luca Ceresoli <luca.ceresoli@bootlin.com>, 
- Peter Robinson <pbrobinson@gmail.com>, 
- Yubing Zhang <yubing.zhang@rock-chips.com>, Simona Vetter <simona@ffwll.ch>, 
- linux-arm-kernel@lists.infradead.org, 
- Frank Wang <frank.wang@rock-chips.com>, linux-usb@vger.kernel.org, 
- devicetree@vger.kernel.org, Andrzej Hajda <andrzej.hajda@intel.com>
+	by tor.source.kernel.org (Postfix) with ESMTP id 13D6060254;
+	Fri, 28 Nov 2025 05:52:00 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4075FC4CEF1;
+	Fri, 28 Nov 2025 05:51:59 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
+	s=korg; t=1764309119;
+	bh=rOKG7zIx8s+aemPW1HN//6XrEdrArtLP34zx1Rj/gDo=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=DzlZDRzjofDJMmkUGxSJ6QmjoNMH0U/JaI36kLkIseZ4OeEijKfp73hi5Qp4Z9WYU
+	 uRBIauyxvs7tMH0ygcKt8vqm6G0jm8LuGP4sSvRENhhDnuaU05R3wSVex1URwXptA6
+	 RV4WP0uyd4P+ND5o0qzZ+izh3gIwgTBRAcRLKWYU=
+Date: Fri, 28 Nov 2025 06:51:56 +0100
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: Chaoyi Chen <kernel@airkyi.com>
-In-Reply-To: <20251128020405.90-6-kernel@airkyi.com>
+Cc: Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+	Peter Chen <hzpeterchen@gmail.com>,
+	Luca Ceresoli <luca.ceresoli@bootlin.com>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Heiko Stuebner <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
+	Andy Yan <andy.yan@rock-chips.com>,
+	Yubing Zhang <yubing.zhang@rock-chips.com>,
+	Frank Wang <frank.wang@rock-chips.com>,
+	Andrzej Hajda <andrzej.hajda@intel.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Robert Foss <rfoss@kernel.org>,
+	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+	Jonas Karlman <jonas@kwiboo.se>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+	Amit Sunil Dhamne <amitsd@google.com>,
+	Chaoyi Chen <chaoyi.chen@rock-chips.com>,
+	Dragan Simic <dsimic@manjaro.org>, Johan Jonker <jbx6244@gmail.com>,
+	Diederik de Haas <didi.debian@cknow.org>,
+	Peter Robinson <pbrobinson@gmail.com>, linux-usb@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org
+Subject: Re: [PATCH v11 01/11] usb: typec: Set the bus also for the port and
+ plug altmodes
+Message-ID: <2025112846-italicize-handled-84ff@gregkh>
 References: <20251128020405.90-1-kernel@airkyi.com>
- <20251128020405.90-6-kernel@airkyi.com>
-Message-Id: <176429984551.1030074.10716294618988682110.robh@kernel.org>
-Subject: Re: [PATCH v11 05/11] dt-bindings: phy: rockchip:
- rk3399-typec-phy: Support mode-switch
+ <20251128020405.90-2-kernel@airkyi.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20251128020405.90-2-kernel@airkyi.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,81 +95,24 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Fri, 28 Nov 2025 10:03:59 +0800, Chaoyi Chen wrote:
-> From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+On Fri, Nov 28, 2025 at 10:03:55AM +0800, Chaoyi Chen wrote:
+> From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
 > 
-> The RK3399 SoC integrates two USB/DP combo PHYs, each of which
-> supports software-configurable pin mapping and DisplayPort lane
-> assignment. These capabilities enable the PHY itself to handle both
-> mode switching and orientation switching, based on the Type-C plug
-> orientation and USB PD negotiation results.
+> The port and plug altmodes can't be bound to the altmode
+> drivers because the altmode drivers are meant for partner
+> communication using the VDM (vendor defined messages), but
+> they can still be part of the bus. The bus will make sure
+> that the normal bus notifications are available also with
+> the port altmodes.
 > 
-> While an external Type-C controller is still required to detect cable
-> attachment and report USB PD events, the actual mode and orientation
-> switching is performed internally by the PHY through software
-> configuration. This allows the PHY to act as a Type-C multiplexer for
-> both data role and DP altmode configuration.
+> The previously used common device type for all alternate
+> modes is replaced with separate dedicated device types for
+> port, plug, and partner alternate modes.
 > 
-> To reflect this hardware design, this patch introduces a new
-> "mode-switch" property for the dp-port node in the device tree bindings.
-> This property indicates that the connected PHY is capable of handling
-> Type-C mode switching itself.
-> 
-> Signed-off-by: Chaoyi Chen <chaoyi.chen@rock-chips.com>
-> Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+> Signed-off-by: Heikki Krogerus <heikki.krogerus@linux.intel.com>
 > ---
-> 
-> (no changes since v5)
-> 
-> Changes in v4:
-> - Remove "|" in description.
-> 
-> Changes in v3:
-> - Add more descriptions to clarify the role of the PHY in switching.
-> 
-> Changes in v2:
-> - Reuse dp-port/usb3-port in rk3399-typec-phy binding.
-> 
->  .../devicetree/bindings/phy/rockchip,rk3399-typec-phy.yaml  | 6 ++++++
->  1 file changed, 6 insertions(+)
-> 
 
-My bot found errors running 'make dt_binding_check' on your patch:
-
-yamllint warnings/errors:
-
-dtschema/dtc warnings/errors:
-/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/slimbus/slimbus.example.dtb: slim@28080000 (qcom,slim-ngd-v1.5.0): 'audio-codec@1,0' does not match any of the regexes: '^pinctrl-[0-9]+$', '^slim@[0-9a-f]+$'
-	from schema $id: http://devicetree.org/schemas/slimbus/qcom,slim-ngd.yaml
-/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/slimbus/slimbus.example.dtb: slim@28080000 (qcom,slim-ngd-v1.5.0): #address-cells: 1 was expected
-	from schema $id: http://devicetree.org/schemas/slimbus/qcom,slim-ngd.yaml
-/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/slimbus/slimbus.example.dtb: slim@28080000 (qcom,slim-ngd-v1.5.0): 'dmas' is a required property
-	from schema $id: http://devicetree.org/schemas/slimbus/qcom,slim-ngd.yaml
-/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/slimbus/slimbus.example.dtb: slim@28080000 (qcom,slim-ngd-v1.5.0): 'dma-names' is a required property
-	from schema $id: http://devicetree.org/schemas/slimbus/qcom,slim-ngd.yaml
-Documentation/devicetree/bindings/thermal/thermal-sensor.example.dtb: /example-0/soc/thermal-sensor@c263000: failed to match any schema with compatible: ['qcom,sdm845-tsens', 'qcom,tsens-v2']
-Documentation/devicetree/bindings/thermal/thermal-sensor.example.dtb: /example-0/soc/thermal-sensor@c263000: failed to match any schema with compatible: ['qcom,sdm845-tsens', 'qcom,tsens-v2']
-Documentation/devicetree/bindings/thermal/thermal-sensor.example.dtb: /example-0/soc/thermal-sensor@c265000: failed to match any schema with compatible: ['qcom,sdm845-tsens', 'qcom,tsens-v2']
-Documentation/devicetree/bindings/thermal/thermal-sensor.example.dtb: /example-0/soc/thermal-sensor@c265000: failed to match any schema with compatible: ['qcom,sdm845-tsens', 'qcom,tsens-v2']
-
-doc reference errors (make refcheckdocs):
-
-See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20251128020405.90-6-kernel@airkyi.com
-
-The base for the series is generally the latest rc1. A different dependency
-should be noted in *this* patch.
-
-If you already ran 'make dt_binding_check' and didn't see the above
-error(s), then make sure 'yamllint' is installed and dt-schema is up to
-date:
-
-pip3 install dtschema --upgrade
-
-Please check and re-submit after running the above command yourself. Note
-that DT_SCHEMA_FILES can be set to your schema file to speed up checking
-your schema. However, it must be unset to test all examples with your schema.
-
+You forgot to sign off on this :(
 
 -- 
 linux-phy mailing list
