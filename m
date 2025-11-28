@@ -4,65 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6A492CFD376
-	for <linux-phy@archiver.kernel.org>; Fri, 28 Nov 2025 11:36:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B2344CFD376
+	for <linux-phy@archiver.kernel.org>; Fri, 28 Nov 2025 12:18:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HWFNF+nAoVIBc3OM8OMpZFHIoZ/an/wgpPxaGeAP1Gs=; b=xnQZs9LSQlrf3Q
-	WuA1uzGLY4p3MjRuPQrKqHX2IywQH42DuVLBmOlooTg7kS4HGxKYKFqK32TzUSpvVRs19R20lr55Z
-	n/x4aNj2cz9AK8WbSc0ffIxgmQ41CFPQgf67ACW6py14P9ZNabMg2SH0Rlajl90/pDo1HUg2vKsXt
-	L4tN4Q3DSx9Wu5t5RCRpIqvp4mQoRzwKSFfvRBy5nYVTsilWZYTDl9GM685EoYBYgYb+4Ivnjbhau
-	ooHzt7Sl4Ckx2+LzOM/ZYZ1KeCeSPVi2LEtmTJCCaLrepShfHc0ra2wFlsYbMmD0tlUWJ/PmDY2uD
-	TTAKPGzA0Qnd8jnPtgPQ==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
+	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=Cak4ZRDvJr/l85Nvg7X2hSVnmfsJPufHAiF60BZ+G8U=; b=keBZ/B/euhiPQovn9rkEqX19Xr
+	A3NrGVGSuMABtYNw4ViMFZiaCiOW2/Ww2v8lfmhBwQou9X1fbuxaJXqxBoE4iI8D+E50N1qnkEVTw
+	UMTEml1AGxYeF00pat/qAZFKiFBZ3SI4GfYhQE45upnj1gF10UJ3/SXijhDh8ShliJlckXdVROOsJ
+	jVtVVaq0Lvzv/BEYsqpSRcQSi4HciXzRJF653mSUzZnJn1y33QfCmCdxXIPuAFFngU5EJLAtdxsY3
+	7NLpThRreDH8sRPgUA/0w0IAlPzz1YoUGXoK1zj0kRTMDOmMq35dOgI+jqnBqaOxdX6LjVPI+H4rf
+	iSZVnEfg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vOwm8-00000000MTa-2vN2;
-	Fri, 28 Nov 2025 11:36:32 +0000
-Received: from elvis.franken.de ([193.175.24.41])
-	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vOwm5-00000000MT0-4ACt
+	id 1vOxR8-00000000Q8d-1OZy;
+	Fri, 28 Nov 2025 12:18:54 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1vOxR6-00000000Q8V-3rUc
 	for linux-phy@lists.infradead.org;
-	Fri, 28 Nov 2025 11:36:31 +0000
-Received: from uucp by elvis.franken.de with local-rmail (Exim 3.36 #1)
-	id 1vOwm4-0005X9-00; Fri, 28 Nov 2025 12:36:28 +0100
-Received: by alpha.franken.de (Postfix, from userid 1000)
-	id 75E7FC0256; Fri, 28 Nov 2025 12:35:59 +0100 (CET)
-Date: Fri, 28 Nov 2025 12:35:59 +0100
-From: Thomas Bogendoerfer <tsbogend@alpha.franken.de>
-To: Gregory CLEMENT <gregory.clement@bootlin.com>
-Cc: =?iso-8859-1?Q?Th=E9o?= Lebrun <theo.lebrun@bootlin.com>,
-	Vladimir Kondratiev <vladimir.kondratiev@mobileye.com>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>, linux-mips@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-clk@vger.kernel.org,
-	=?iso-8859-1?Q?Beno=EEt?= Monin <benoit.monin@bootlin.com>,
-	Maxime Chevallier <maxime.chevallier@bootlin.com>,
-	Tawfik Bayouk <tawfik.bayouk@mobileye.com>,
-	Thomas Petazzoni <thomas.petazzoni@bootlin.com>
-Subject: Re: [PATCH v4 6/7] MIPS: mobileye: eyeq5: add two Cadence GEM
- Ethernet controllers
-Message-ID: <aSmJH7A7FfQ7Pfdo@alpha.franken.de>
-References: <20251124-macb-phy-v4-0-955c625a81a7@bootlin.com>
- <20251124-macb-phy-v4-6-955c625a81a7@bootlin.com>
- <87y0nq4hd2.fsf@BLaptop.bootlin.com>
- <aSlxGFPP-oURLpPq@alpha.franken.de>
- <87v7iu4eob.fsf@BLaptop.bootlin.com>
+	Fri, 28 Nov 2025 12:18:53 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 0500C60154;
+	Fri, 28 Nov 2025 12:18:52 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7A5BEC4CEF1;
+	Fri, 28 Nov 2025 12:18:51 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1764332331;
+	bh=gwDTvuVEHdwL5CUTLbeq4biMUroLNJCpGrbaPQOlfCw=;
+	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
+	b=PoU05y5ysXu2aV9aWhr1Z4El4WoOUqFX1MQqkEQWpgWfHFWJOqq/slmGgmMeUnH6j
+	 nLOwi8Q9sRIvjV9BuIIQY/74a4ck2fWuhC5G/cgHrnTYUTJoWA84N1T1HdiTFH4481
+	 MMUZSWc1h1l1hqzjsyW6KoBZhPVa3versw2HZIYdXV9q+q3kOILLH0xp4sqnAI91J4
+	 KTdwcjQj1yWfeR3v43Unr5iw64TJCy3JIRsCFw5LpP/Pxn2HZ4KjB6SB5X+jtHfyRr
+	 1ullpmvw84BUX9JhGzj4KuFEOsyWlMtYER5gJHW5O4+FdXwg5n+p+oJzgUnc1+i+sW
+	 I9BoXVDAngGeA==
+Date: Fri, 28 Nov 2025 06:18:49 -0600
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <87v7iu4eob.fsf@BLaptop.bootlin.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251128_033630_325246_D75DE40E 
-X-CRM114-Status: GOOD (  19.64  )
+From: "Rob Herring (Arm)" <robh@kernel.org>
+Cc: linux-kernel@vger.kernel.org, andersson@kernel.org, 
+ devicetree@vger.kernel.org, abel.vesa@linaro.org, 
+ linux-arm-msm@vger.kernel.org, quic_krichai@quicinc.com, 
+ qiang.yu@oss.qualcomm.com, bhelgaas@google.com, kishon@kernel.org, 
+ mani@kernel.org, quic_vbadigan@quicinc.com, johan+linaro@kernel.org, 
+ kwilczynski@kernel.org, jingoohan1@gmail.com, krzk+dt@kernel.org, 
+ neil.armstrong@linaro.org, vkoul@kernel.org, conor+dt@kernel.org, 
+ lpieralisi@kernel.org, linux-pci@vger.kernel.org, 
+ linux-phy@lists.infradead.org, konradybcio@kernel.org, kw@linux.com
+To: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
+In-Reply-To: <20251128104928.4070050-2-ziyue.zhang@oss.qualcomm.com>
+References: <20251128104928.4070050-1-ziyue.zhang@oss.qualcomm.com>
+ <20251128104928.4070050-2-ziyue.zhang@oss.qualcomm.com>
+Message-Id: <176433232993.1873037.5014618389839995125.robh@kernel.org>
+Subject: Re: [PATCH v15 1/6] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy:
+ Update pcie phy bindings for qcs8300
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,34 +73,59 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gRnJpLCBOb3YgMjgsIDIwMjUgYXQgMTE6NDc6MTZBTSArMDEwMCwgR3JlZ29yeSBDTEVNRU5U
-IHdyb3RlOgo+IFRob21hcyBCb2dlbmRvZXJmZXIgPHRzYm9nZW5kQGFscGhhLmZyYW5rZW4uZGU+
-IHdyaXRlczoKPiAKPiA+IE9uIEZyaSwgTm92IDI4LCAyMDI1IGF0IDEwOjQ5OjEzQU0gKzAxMDAs
-IEdyZWdvcnkgQ0xFTUVOVCB3cm90ZToKPiA+PiBIZWxsbyBUaG9tYXMsCj4gPj4gCj4gPj4gPiBB
-ZGQgYm90aCBNQUNCL0dFTSBpbnN0YW5jZXMgZm91bmQgaW4gdGhlIE1vYmlsZXllIEV5ZVE1IFNv
-Qy4KPiA+PiA+Cj4gPj4gPiBBY2tlZC1ieTogVGhvbWFzIEJvZ2VuZG9lcmZlciA8dHNib2dlbmRA
-YWxwaGEuZnJhbmtlbi5kZT4KPiA+PiAKPiA+PiBDYW4geW91IGNvbmZpcm0gdGhhdCB5b3Ugd2ls
-bCBpbmNsdWRlIHRoaXMgcGF0Y2ggYW5kIHRoZSBmb2xsb3dpbmcgb25lCj4gPj4gaW4geW91ciBt
-aXBzLW5leHQgYnJhbmNoPwo+ID4KPiA+IEkgaGF2ZW4ndCBwbGFubmVkIGRvaW5nIHRoaXMuCj4g
-Pgo+ID4+IEFzIHlvdSBnYXZlIHlvdXIgQWNrZWQtYnkgb24gaXQsIEkgYmVsaWV2ZSB0aGlzIHdp
-bGwgYmUgdGhlIGNhc2UsIGJ1dCBJCj4gPj4gd2FudCB0byBiZSBzdXJlIHRoZXkgYXJlbid0IGZv
-cmdvdHRlbi4KPiA+Cj4gPiB0aGUgIEFja2VkLWJ5IGlzIG1lYW50IGZvciBpbmNsdWRpbmcgdGhl
-IHBhdGNoZXMgaW50byB0aGUgdHJlZSwgd2hlcmUgdGhlCj4gPiByZXN0IG9mIHRoaXMgc2VyaWVz
-IGlzIGdvaW5nIGluLgo+IAo+IEhvd2V2ZXIsIGFjY29yZGluZyB0byB0aGUgY292ZXIgbGV0dGVy
-LCB0aGVyZSBhcmUgbm8gYnVpbGQgZGVwZW5kZW5jaWVzCj4gYmV0d2VlbiB0aGVzZSBwYXRjaGVz
-IGFuZCB0aGUgZHJpdmVyLXJlbGF0ZWQgcGF0Y2guIEZ1cnRoZXJtb3JlLCBzaW5jZQo+IGl0IGlu
-dHJvZHVjZXMgYSBuZXcgY29tcGF0aWJsZSBzdHJpbmcsIGV2ZW4gaWYgdGhlIGRyaXZlciBwYXJ0
-IGlzIG5vdAo+IHlldCBtZXJnZWQsIHdlIHdvbuKAmXQgZXhwZXJpZW5jZSBhbnkgcmVncmVzc2lv
-bi4gVGhlcmVmb3JlLCBJIGJlbGlldmUgaXQKPiBpcyBzYWZlIHRvIG1lcmdlIHRoZXNlIHR3byBw
-YXRjaGVzIHVubGVzcyB5b3UgaGF2ZSBhbnkgY29uY2VybnMgYWJvdXQKPiB0aGVtLgoKbm8gY29u
-Y2VybnMsIGJ1dCBhcmVuJ3QgdGhleSB1c2VsZXNzIHdpdGhvdXQgdGhlIGNvZGUgY2hhbmdlcyA/
-CgpUaG9tYXMuCgotLSAKQ3JhcCBjYW4gd29yay4gR2l2ZW4gZW5vdWdoIHRocnVzdCBwaWdzIHdp
-bGwgZmx5LCBidXQgaXQncyBub3QgbmVjZXNzYXJpbHkgYQpnb29kIGlkZWEuICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgWyBSRkMxOTI1LCAyLjMgXQoKLS0g
-CmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
-cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+
+On Fri, 28 Nov 2025 18:49:23 +0800, Ziyue Zhang wrote:
+> The gcc_aux_clk is not required by the PCIe PHY on qcs8300 and is not
+> specified in the device tree node. Hence, move the qcs8300 phy
+> compatibility entry into the list of PHYs that require six clocks.
+> 
+> Removed the phy_aux clock from the PCIe PHY binding as it is no longer
+> used by any instance.
+> 
+> Fixes: e46e59b77a9e ("dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Document the QCS8300 QMP PCIe PHY Gen4 x2")
+> Signed-off-by: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
+> Acked-by: Manivannan Sadhasivam <mani@kernel.org>
+> Acked-by: Rob Herring (Arm) <robh@kernel.org>
+> Reviewed-by: Johan Hovold <johan+linaro@kernel.org>
+> ---
+>  .../phy/qcom,sc8280xp-qmp-pcie-phy.yaml         | 17 ++---------------
+>  1 file changed, 2 insertions(+), 15 deletions(-)
+> 
+
+My bot found errors running 'make dt_binding_check' on your patch:
+
+yamllint warnings/errors:
+
+dtschema/dtc warnings/errors:
+Documentation/devicetree/bindings/thermal/thermal-sensor.example.dtb: /example-0/soc/thermal-sensor@c263000: failed to match any schema with compatible: ['qcom,sdm845-tsens', 'qcom,tsens-v2']
+Documentation/devicetree/bindings/thermal/thermal-sensor.example.dtb: /example-0/soc/thermal-sensor@c263000: failed to match any schema with compatible: ['qcom,sdm845-tsens', 'qcom,tsens-v2']
+Documentation/devicetree/bindings/thermal/thermal-sensor.example.dtb: /example-0/soc/thermal-sensor@c265000: failed to match any schema with compatible: ['qcom,sdm845-tsens', 'qcom,tsens-v2']
+Documentation/devicetree/bindings/thermal/thermal-sensor.example.dtb: /example-0/soc/thermal-sensor@c265000: failed to match any schema with compatible: ['qcom,sdm845-tsens', 'qcom,tsens-v2']
+
+doc reference errors (make refcheckdocs):
+
+See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20251128104928.4070050-2-ziyue.zhang@oss.qualcomm.com
+
+The base for the series is generally the latest rc1. A different dependency
+should be noted in *this* patch.
+
+If you already ran 'make dt_binding_check' and didn't see the above
+error(s), then make sure 'yamllint' is installed and dt-schema is up to
+date:
+
+pip3 install dtschema --upgrade
+
+Please check and re-submit after running the above command yourself. Note
+that DT_SCHEMA_FILES can be set to your schema file to speed up checking
+your schema. However, it must be unset to test all examples with your schema.
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
