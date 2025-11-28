@@ -4,108 +4,112 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 27596D116E2
-	for <linux-phy@archiver.kernel.org>; Thu, 27 Nov 2025 15:07:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7C4D1CFD2F6
+	for <linux-phy@archiver.kernel.org>; Fri, 28 Nov 2025 02:05:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=sTPFDfedVCFaWmtCJx/eQF+890qKGGE606vCCX+NkIo=; b=YBz4PgjH1whGi/8wLcoJBTheWV
-	DzlActgADyqsfxiaZp2iejk2k5v+Z8Bf4yLE7Uu//pwmic7QILp2awDcVSX0k2KrpA70d//a/mCJ0
-	m83x2FxQL6PqxkS6sbpHsEcDIP6onT5J4wlw47hCfaw6tWhi9gYMI0QzW5/6E1GHQxTJHce/iBkEn
-	eyNk1IVCpax+LhIBrLdmkErgg1SE1meDBhYqgOCQoweWb1sFth356oFDTMu8p7nYJGTA0NVdrt1AI
-	oBFL86Kl4U/shROUmLmfC+ual8QFNzR9TFiKXpLQs55/wAoZ60OGNAhrUbPc+lYeRr+3zvROraJhD
-	QgVTkaUg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qp7jzFdF/HTJl5IYN2o2Y8+a5/wvXEF0Aw+JFdSI4/E=; b=qe1hwAPHovCJ20
+	hT6cMWywoYKPSpZ3WAEmgAv3m2Jeybr+hLBkMf5Gy01a7cQOldU9BZXQg9cWzYWChessFBZG8Sok2
+	mzSRlqV+16jxw6VpmacV75Kl+GMts+xaEdaDVzZpzjaszXNiS9qsKy+BUosgw1AUTFg2P5eHn/B8C
+	I3bd/ZQrE1+JuUYH3wEsuYFkExDamBFxMFm9xKR1Hgao0x95kQ8TqKqQPCOKSDQFsCDBmoZG7Oshk
+	ZMeHmjEUVWDD3BL+1eFgXw9EmWUcNDa8Y46dia3qWfGZxRGhD0ymmUKg7Rm8TLrRN1NG7xMKERhya
+	5w4zBc17v9+aMKfTaLqw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vOdae-0000000Gp7c-2uYE;
-	Thu, 27 Nov 2025 15:07:24 +0000
-Received: from smtpout-03.galae.net ([185.246.85.4])
+	id 1vOnrJ-0000000HQJX-0E4c;
+	Fri, 28 Nov 2025 02:05:17 +0000
+Received: from smtpbgsg2.qq.com ([54.254.200.128])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vOdab-0000000Gp4t-0IYy;
-	Thu, 27 Nov 2025 15:07:23 +0000
-Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-03.galae.net (Postfix) with ESMTPS id A8FBC4E4191E;
-	Thu, 27 Nov 2025 15:07:15 +0000 (UTC)
-Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id 641AD6068C;
-	Thu, 27 Nov 2025 15:07:15 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id EE57C102F218C;
-	Thu, 27 Nov 2025 16:06:51 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1764256032; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 in-reply-to:references; bh=Xb2gYHXIhVp2zaSFmlDMNszWhEx2yHpcG9wfBD9WQ6Q=;
-	b=KsDxrTwJZ35P4V4zqNgBRz6dueQQQ479lYnTv33vH6BaAZQ6mqaBR8WEopD6/WxoiDZf3C
-	Ic4RTSKoLEfjd0/q+TBQmqIrfWBRSTeCoErZlb34wHoEcX2HAzuN2RzutFpS6+d2ln9KMJ
-	TSvAsAUfwMfwSBd4rCMr2Fdi3SKnKSNaEM9vqWiV42ClnoYd2t6PVCTiOsInGdUD2yiqj4
-	ZzTUOWwdLINFYrJ9uWeuCkQFxLH7ib2+v5JAxnvTykYWonFW1xB3OWNxxohmbmwdgPC/rA
-	Ba8/f4uTLQUuaOMbgPFSeaBwbd+ExYFXfFw+9W2+71ncOaO/+QIwmKbAGZv6Rw==
-From: Romain Gantois <romain.gantois@bootlin.com>
-To: "H. Nikolaus Schaller" <hns@goldelico.com>
-Cc: Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Jonathan Cameron <jic23@kernel.org>,
- David Lechner <dlechner@baylibre.com>,
- Nuno =?UTF-8?B?U8Oh?= <nuno.sa@analog.com>,
- Andy Shevchenko <andy@kernel.org>, Guenter Roeck <linux@roeck-us.net>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
- linux-iio@vger.kernel.org, Conor Dooley <conor.dooley@microchip.com>,
- MyungJoo Ham <myungjoo.ham@samsung.com>,
- Chanwoo Choi <cw00.choi@samsung.com>, Peter Rosin <peda@axentia.se>,
- Mariel Tinaco <Mariel.Tinaco@analog.com>,
- Lars-Peter Clausen <lars@metafoo.de>,
- Michael Hennerich <Michael.Hennerich@analog.com>,
- Kevin Tsai <ktsai@capellamicro.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- Eugen Hristev <eugen.hristev@linaro.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Sebastian Reichel <sre@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Support Opensource <support.opensource@diasemi.com>,
- Paul Cercueil <paul@crapouillou.net>, Iskren Chernev <me@iskren.info>,
- Marek Szyprowski <m.szyprowski@samsung.com>,
- Matheus Castello <matheus@castello.eng.br>,
- Saravanan Sekar <sravanhome@gmail.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
- Casey Connolly <casey.connolly@linaro.org>,
- Pali =?UTF-8?B?Um9ow6Fy?= <pali@kernel.org>,
- Orson Zhai <orsonzhai@gmail.com>,
- Baolin Wang <baolin.wang@linux.alibaba.com>,
- Chunyan Zhang <zhang.lyra@gmail.com>, Amit Kucheria <amitk@kernel.org>,
- Thara Gopinath <thara.gopinath@gmail.com>,
- "Rafael J. Wysocki" <rafael@kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, Zhang Rui <rui.zhang@intel.com>,
- Lukasz Luba <lukasz.luba@arm.com>,
- Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>,
- Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>,
- Sylwester Nawrocki <s.nawrocki@samsung.com>,
- Olivier Moysan <olivier.moysan@foss.st.com>,
- Arnaud Pouliquen <arnaud.pouliquen@foss.st.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Alexandre Torgue <alexandre.torgue@foss.st.com>,
- Dixit Parmar <dixitparmar19@gmail.com>, linux-hwmon@vger.kernel.org,
- linux-input@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-pm@vger.kernel.org, linux-mips@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
- linux-arm-msm@vger.kernel.org, linux-sound@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com,
- Andy Shevchenko <andriy.shevchenko@intel.com>
-Subject: Re: [PATCH v4 0/6] Add support for the LTM8054 voltage regulator
-Date: Thu, 27 Nov 2025 16:06:47 +0100
-Message-ID: <8695751.T7Z3S40VBb@fw-rgant>
-In-Reply-To: <0E900830-E248-4F0F-A048-075EAF1D2440@goldelico.com>
-References: <20251124-ltm8054-driver-v4-0-107a8a814abe@bootlin.com>
- <3021060.e9J7NaK4W3@fw-rgant>
- <0E900830-E248-4F0F-A048-075EAF1D2440@goldelico.com>
-MIME-Version: 1.0
-X-Last-TLS-Session-Version: TLSv1.3
+	id 1vOnrF-0000000HQH8-0699;
+	Fri, 28 Nov 2025 02:05:14 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=airkyi.com;
+	s=altu2504; t=1764295463;
+	bh=HACn86zdCcEj7sYdICgJjI01+m/bWEVtdDOphGhu1lA=;
+	h=From:To:Subject:Date:Message-Id;
+	b=dqFJQ1Nn1CioFKveMvr7yho7FOu7pKGnXzn98QdFT1ayywap6wUQg+1PfFLdZFLZN
+	 DZbNKE0WD7hGz0twSkFJTApCatQSqSDABnfm3QWFW6CikDvizD2NjDEZ8YwnYISoqQ
+	 8CB3S5TJ+eIWT5VVUCmi5s0/a4b3GcR2d4bdIdzo=
+X-QQ-mid: esmtpsz21t1764295461t91f06378
+X-QQ-Originating-IP: fhbY41yQeB4lJVNR28w6HWtzkSKTp8yaiorSXifwU2Q=
+Received: from DESKTOP-8BT1A2O.localdomain ( [58.22.7.114])
+	by bizesmtp.qq.com (ESMTP) with 
+	id ; Fri, 28 Nov 2025 10:04:18 +0800 (CST)
+X-QQ-SSF: 0000000000000000000000000000000
+X-QQ-GoodBg: 0
+X-BIZMAIL-ID: 8558268278780288437
+From: Chaoyi Chen <kernel@airkyi.com>
+To: Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+	Peter Chen <hzpeterchen@gmail.com>,
+	Luca Ceresoli <luca.ceresoli@bootlin.com>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Heiko Stuebner <heiko@sntech.de>,
+	Sandy Huang <hjc@rock-chips.com>,
+	Andy Yan <andy.yan@rock-chips.com>,
+	Yubing Zhang <yubing.zhang@rock-chips.com>,
+	Frank Wang <frank.wang@rock-chips.com>,
+	Andrzej Hajda <andrzej.hajda@intel.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Robert Foss <rfoss@kernel.org>,
+	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+	Jonas Karlman <jonas@kwiboo.se>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	David Airlie <airlied@gmail.com>,
+	Simona Vetter <simona@ffwll.ch>,
+	Amit Sunil Dhamne <amitsd@google.com>,
+	Chaoyi Chen <chaoyi.chen@rock-chips.com>,
+	Dragan Simic <dsimic@manjaro.org>,
+	Johan Jonker <jbx6244@gmail.com>,
+	Diederik de Haas <didi.debian@cknow.org>,
+	Peter Robinson <pbrobinson@gmail.com>
+Cc: linux-usb@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	dri-devel@lists.freedesktop.org
+Subject: [PATCH v11 01/11] usb: typec: Set the bus also for the port and plug altmodes
+Date: Fri, 28 Nov 2025 10:03:55 +0800
+Message-Id: <20251128020405.90-2-kernel@airkyi.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20251128020405.90-1-kernel@airkyi.com>
+References: <20251128020405.90-1-kernel@airkyi.com>
+X-QQ-SENDSIZE: 520
+Feedback-ID: esmtpsz:airkyi.com:qybglogicsvrgz:qybglogicsvrgz6b-0
+X-QQ-XMAILINFO: N8i9SvusUD3b9+mNTDQX3Fe3Gutepg0o7kEdOVU1N7Gh0NoE7O6H4u87
+	+PzDqM+hgY4lHSMpnKvFOL8wnkognLeXenCn/9KpLHi7DgTF9R3dLCQ4ug3/6I7+2iqqvca
+	afh36BI1eOtZcmbllT98Kv5BNuh5NZVJTWo505LaxVn0q6OPTeoDPNIqxz48xToiFX5R1vq
+	t2ooUBErtKRPbCjTVYvDV0GYMXnGiGuaWQl7eNIcvnFkt3tIBzfK+1xqrASE4/a1ThgtpIG
+	X6TY45655Ue3iNtzI1nJd5LwxR3O07o2IL6ItQrv52FdWFYqEwLj6BtkCN5EyS6yCzyL168
+	Fu4zO4xIQO9v+fddBFxdkCEvoJUHzPlE4NrAvsP9TjQbihQ/j/U0rDch011umYrgQle0oE1
+	uA/mNT0KzyeBqWwC/oiaHClBQmUFCzj2cEY0q4GTtBFu7XGsHcpn9Kyz856c6TwwPharysQ
+	yEC9nJgK/3Dgc4uFTz9dOpWXG8K2DsESeEoy4UFf2VqMLmJak/LNos/1Ad0AUzt4sk7OOGG
+	jFNCLjwuLhwQOuMAmnKRO5HPc6mY3IeVRqA2FpHlfzgKgmNpbM9hvMOWuuP1vWZtv2Ci2JM
+	CtsWGonH91sNvTe5f0D1V86XzwAL4yd56wQcJ9dS+XvltQJkZSDpP/vvo3YYpCDa+mmUVGb
+	Y0DvCFqKFcUwHm86cy0QBH4I3PvA4/oPgoH/gcJL78mPPf8IwHGQr+R6TEBwqJ9CXQogISW
+	CuapsSV/FwTXbXfNySsfA3KsuHDy42+Q2u8Nj8OgBIjwOkrl9WV4xbjvGceN2vrZQHNm/HI
+	NiLOEeyJ9xPyP6+Qjnq6cE0tbcC4rkxi5SadoWiftnKYcw58quueolfXRq+8JCZ5KGw+rpO
+	5TigvZw4YoGuR6oF2eyjEgaW2K2eqWfei28w4+HDtMh5KlFf44vM/lVXyoZ/13bphxsw4Y/
+	PuWiVzGENAKz4RlQxTky/20C7SjmQziA6DDe+nc3Duv3CL2x2/aoN5wrDwl5PghVxsDWbkL
+	XoJvYOtACwnWQxFuods2yAvRqwPzBwAr51me2GLapw8N+KAEFAY+dh/eodIZs=
+X-QQ-XMRINFO: Mp0Kj//9VHAxr69bL5MkOOs=
+X-QQ-RECHKSPAM: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251127_070721_246478_C9B343E9 
-X-CRM114-Status: GOOD (  31.82  )
+X-CRM114-CacheID: sfid-20251127_180513_467856_D72AB802 
+X-CRM114-Status: GOOD (  17.71  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,142 +121,197 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============6670147952988996726=="
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
---===============6670147952988996726==
-Content-Type: multipart/signed; boundary="nextPart10847283.nUPlyArG6x";
- micalg="pgp-sha512"; protocol="application/pgp-signature"
+From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
 
---nextPart10847283.nUPlyArG6x
-Content-Transfer-Encoding: 7Bit
-Content-Type: text/plain; charset="utf-8"; protected-headers="v1"
-From: Romain Gantois <romain.gantois@bootlin.com>
-To: "H. Nikolaus Schaller" <hns@goldelico.com>
-Date: Thu, 27 Nov 2025 16:06:47 +0100
-Message-ID: <8695751.T7Z3S40VBb@fw-rgant>
-In-Reply-To: <0E900830-E248-4F0F-A048-075EAF1D2440@goldelico.com>
-MIME-Version: 1.0
+The port and plug altmodes can't be bound to the altmode
+drivers because the altmode drivers are meant for partner
+communication using the VDM (vendor defined messages), but
+they can still be part of the bus. The bus will make sure
+that the normal bus notifications are available also with
+the port altmodes.
 
-On Tuesday, 25 November 2025 11:25:24 CET H. Nikolaus Schaller wrote:
-> Hi,
-> 
-> > Am 25.11.2025 um 09:41 schrieb Romain Gantois
-> > <romain.gantois@bootlin.com>:
-> > 
-> > 
-> > This is planned support for a voltage regulator chip.
-> 
-> Well, but one which is not by itself programmable. So IMHO, it does not
-> support that chip, but the circuit it is used in.
-> 
+The previously used common device type for all alternate
+modes is replaced with separate dedicated device types for
+port, plug, and partner alternate modes.
 
-The boundary is a bit blurry in this case, sure.
+Signed-off-by: Heikki Krogerus <heikki.krogerus@linux.intel.com>
+---
+ drivers/usb/typec/bus.c   | 24 +++++++++++++++++++++++-
+ drivers/usb/typec/bus.h   |  8 ++++++--
+ drivers/usb/typec/class.c | 33 ++++++++++++++++++++++-----------
+ 3 files changed, 51 insertions(+), 14 deletions(-)
 
-> > > Are you looking for a virtual "glue" driver to logically combine several
-> > > low level functions?
-> > 
-> > I'm looking for a clean userspace abstraction for this component, the low-
-> > level functions in this case are those of a voltage regulator.
-> 
-> As far as I understood it has
-> - constant voltage
-> - current can be limited
-> - it can be turned on/off
-> 
-> That means it is a fixed-regulator (for constant voltage and turn on/off)
-> and a mechanism to program the current limit (iio-dac). Both have clean
-> userspace abstraction.
-> 
-> What am I missing?
-> 
-
-In my case, the regulator has a DAC tapping into the feedback divider with 
-allows modifying the output voltage level. This isn't specific to the LTM8054 
-though, you can theoretically do this with any regulator chip that has a 
-feedback pin.
-
-...
-> The question remains if you want to solve something for a single board which
-> happens to have an LTM8054 or if you are solving a more general design
-> pattern.
-> 
-> In summary my view is that the LTM8054 is just a "fixed-regulator" which
-> gets an additional current-limiter feature by adding a DAC chip (which needs
-> a driver of course). So software control is required not by the LTM8054 but
-> by adding a DAC chip.
-> 
-> Another suggestion: what extending the "regulator-fixed", "regulator-gpio",
-> "regulator-fixed-clock" pattern by some
-> "regulator-gpio-iio-dac-current-limiter" driver to make it independent of
-> your specific chip?
-> 
-> By the way, are you aware of this feature of the regulator-gpio driver?
-> 
-> https://elixir.bootlin.com/linux/v6.18-rc7/source/drivers/regulator/gpio-reg
-> ulator.c#L97
-> 
-
-That could be a preferable solution given that similar current limit and 
-output voltage limit control methods could apply to other regulator chips... 
-I'll have to think about it some more.
-
-> Just to note: I am neither maintainer nor doing any decisions on this, just
-> asking questions for curiosity and from experience and giving hints for
-> alternative approaches, where I hope they help to find the really best
-> solution.
-
-Sure, I appreciate that.
-
-Thanks,
-
+diff --git a/drivers/usb/typec/bus.c b/drivers/usb/typec/bus.c
+index a884cec9ab7e..a33da7f458a5 100644
+--- a/drivers/usb/typec/bus.c
++++ b/drivers/usb/typec/bus.c
+@@ -445,7 +445,23 @@ static struct attribute *typec_attrs[] = {
+ 	&dev_attr_description.attr,
+ 	NULL
+ };
+-ATTRIBUTE_GROUPS(typec);
++
++static umode_t typec_is_visible(struct kobject *kobj, struct attribute *attr, int n)
++{
++	if (is_typec_partner_altmode(kobj_to_dev(kobj)))
++		return attr->mode;
++	return 0;
++}
++
++static const struct attribute_group typec_group = {
++	.is_visible = typec_is_visible,
++	.attrs = typec_attrs,
++};
++
++static const struct attribute_group *typec_groups[] = {
++	&typec_group,
++	NULL
++};
+ 
+ static int typec_match(struct device *dev, const struct device_driver *driver)
+ {
+@@ -453,6 +469,9 @@ static int typec_match(struct device *dev, const struct device_driver *driver)
+ 	struct typec_altmode *altmode = to_typec_altmode(dev);
+ 	const struct typec_device_id *id;
+ 
++	if (!is_typec_partner_altmode(dev))
++		return 0;
++
+ 	for (id = drv->id_table; id->svid; id++)
+ 		if (id->svid == altmode->svid)
+ 			return 1;
+@@ -463,6 +482,9 @@ static int typec_uevent(const struct device *dev, struct kobj_uevent_env *env)
+ {
+ 	const struct typec_altmode *altmode = to_typec_altmode(dev);
+ 
++	if (!is_typec_partner_altmode(dev))
++		return 0;
++
+ 	if (add_uevent_var(env, "SVID=%04X", altmode->svid))
+ 		return -ENOMEM;
+ 
+diff --git a/drivers/usb/typec/bus.h b/drivers/usb/typec/bus.h
+index 643b8c81786d..b58e131450d1 100644
+--- a/drivers/usb/typec/bus.h
++++ b/drivers/usb/typec/bus.h
+@@ -29,8 +29,12 @@ struct altmode {
+ #define to_altmode(d) container_of(d, struct altmode, adev)
+ 
+ extern const struct bus_type typec_bus;
+-extern const struct device_type typec_altmode_dev_type;
++extern const struct device_type typec_port_altmode_dev_type;
++extern const struct device_type typec_plug_altmode_dev_type;
++extern const struct device_type typec_partner_altmode_dev_type;
+ 
+-#define is_typec_altmode(_dev_) (_dev_->type == &typec_altmode_dev_type)
++#define is_typec_port_altmode(dev) ((dev)->type == &typec_port_altmode_dev_type)
++#define is_typec_plug_altmode(dev) ((dev)->type == &typec_plug_altmode_dev_type)
++#define is_typec_partner_altmode(dev) ((dev)->type == &typec_partner_altmode_dev_type)
+ 
+ #endif /* __USB_TYPEC_ALTMODE_H__ */
+diff --git a/drivers/usb/typec/class.c b/drivers/usb/typec/class.c
+index 9b2647cb199b..d6b88317f8a4 100644
+--- a/drivers/usb/typec/class.c
++++ b/drivers/usb/typec/class.c
+@@ -235,7 +235,7 @@ static int altmode_match(struct device *dev, const void *data)
+ 	struct typec_altmode *adev = to_typec_altmode(dev);
+ 	const struct typec_device_id *id = data;
+ 
+-	if (!is_typec_altmode(dev))
++	if (!is_typec_port_altmode(dev))
+ 		return 0;
+ 
+ 	return (adev->svid == id->svid);
+@@ -532,15 +532,28 @@ static void typec_altmode_release(struct device *dev)
+ 	kfree(alt);
+ }
+ 
+-const struct device_type typec_altmode_dev_type = {
+-	.name = "typec_alternate_mode",
++const struct device_type typec_port_altmode_dev_type = {
++	.name = "typec_port_alternate_mode",
++	.groups = typec_altmode_groups,
++	.release = typec_altmode_release,
++};
++
++const struct device_type typec_plug_altmode_dev_type = {
++	.name = "typec_plug_alternate_mode",
++	.groups = typec_altmode_groups,
++	.release = typec_altmode_release,
++};
++
++const struct device_type typec_partner_altmode_dev_type = {
++	.name = "typec_partner_alternate_mode",
+ 	.groups = typec_altmode_groups,
+ 	.release = typec_altmode_release,
+ };
+ 
+ static struct typec_altmode *
+ typec_register_altmode(struct device *parent,
+-		       const struct typec_altmode_desc *desc)
++		       const struct typec_altmode_desc *desc,
++		       const struct device_type *type)
+ {
+ 	unsigned int id = altmode_id_get(parent);
+ 	bool is_port = is_typec_port(parent);
+@@ -575,7 +588,7 @@ typec_register_altmode(struct device *parent,
+ 
+ 	alt->adev.dev.parent = parent;
+ 	alt->adev.dev.groups = alt->groups;
+-	alt->adev.dev.type = &typec_altmode_dev_type;
++	alt->adev.dev.type = type;
+ 	dev_set_name(&alt->adev.dev, "%s.%u", dev_name(parent), id);
+ 
+ 	get_device(alt->adev.dev.parent);
+@@ -584,9 +597,7 @@ typec_register_altmode(struct device *parent,
+ 	if (!is_port)
+ 		typec_altmode_set_partner(alt);
+ 
+-	/* The partners are bind to drivers */
+-	if (is_typec_partner(parent))
+-		alt->adev.dev.bus = &typec_bus;
++	alt->adev.dev.bus = &typec_bus;
+ 
+ 	/* Plug alt modes need a class to generate udev events. */
+ 	if (is_typec_plug(parent))
+@@ -963,7 +974,7 @@ struct typec_altmode *
+ typec_partner_register_altmode(struct typec_partner *partner,
+ 			       const struct typec_altmode_desc *desc)
+ {
+-	return typec_register_altmode(&partner->dev, desc);
++	return typec_register_altmode(&partner->dev, desc, &typec_partner_altmode_dev_type);
+ }
+ EXPORT_SYMBOL_GPL(typec_partner_register_altmode);
+ 
+@@ -1193,7 +1204,7 @@ struct typec_altmode *
+ typec_plug_register_altmode(struct typec_plug *plug,
+ 			    const struct typec_altmode_desc *desc)
+ {
+-	return typec_register_altmode(&plug->dev, desc);
++	return typec_register_altmode(&plug->dev, desc, &typec_plug_altmode_dev_type);
+ }
+ EXPORT_SYMBOL_GPL(typec_plug_register_altmode);
+ 
+@@ -2493,7 +2504,7 @@ typec_port_register_altmode(struct typec_port *port,
+ 		return ERR_CAST(retimer);
+ 	}
+ 
+-	adev = typec_register_altmode(&port->dev, desc);
++	adev = typec_register_altmode(&port->dev, desc, &typec_port_altmode_dev_type);
+ 	if (IS_ERR(adev)) {
+ 		typec_retimer_put(retimer);
+ 		typec_mux_put(mux);
 -- 
-Romain Gantois, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+2.51.1
 
---nextPart10847283.nUPlyArG6x
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part.
-Content-Transfer-Encoding: 7Bit
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEIcCsAScRrtr7W0x0KCYAIARzeA4FAmkoaQcACgkQKCYAIARz
-eA4wIA//cR+gzKtW78qSkS/qn3QD4fmem8sIoJemjJ96zZS/fPrrD7BVbwlzmT8Z
-PX35PtLLxRdN0CRWsdmEqAAwFLRMn0/UBGpROLNSqKZT9c3SisrVH5XlVV0s95LB
-fS6l3xzgbIjdqhGxwXgV+43B2OuuBLE9AopgYIwRunAam9+nECFHo9hU/4glxqrS
-O54WKxLhs7/BMJdpAv4T8UYjqKiC7Lvpd4oq43g64sacplSnZNv4iwqkga0oOtd8
-2IayCT5+gRm6xd9Xt/cVkQUQAFsoiieLLt87+JZP1ECtjcfwIsDiPBf49DvppELP
-SLg8qwG44QYRhfsPvdBRLFuvkmsu1rGZaBdRQZ+npfBkkwljuh6EllMbFgUOpuCR
-aFQleHJ/6naNsAZGxp4mW6x1YPwsiYeCQuQdffSq2DrTLEAnG3EV3wIB5TbMsF72
-p6glXdEj3uYECnRJ9Lql1PWO9MHGnubF2xCDqRIn7HDxq+DLmZkkZzg4c69/V1fy
-O7go8T5OfK1233Kqb1VDvY9SDRL5+nLo1tacht8yyrhq3LEUumAf7TFLXzBmN+QQ
-5TURL5uovvulw4c6SXs9sa7yriUKuayb9s5CKLsJJI4uYBt+Csyhm/fOfpuvKVm5
-Bryk0xixSfV1ekLMojoBFaS3AFNPGNCHqSmjGOEsaK8hrJ5HgkM=
-=KPmo
------END PGP SIGNATURE-----
-
---nextPart10847283.nUPlyArG6x--
-
-
-
-
-
---===============6670147952988996726==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============6670147952988996726==--
-
-
-
-
