@@ -4,28 +4,28 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 52BC7D116F3
-	for <linux-phy@archiver.kernel.org>; Mon,  1 Dec 2025 06:29:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D958ED116E2
+	for <linux-phy@archiver.kernel.org>; Mon,  1 Dec 2025 06:29:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References:Message-ID
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gubOcbEV1gLykW43jvPxWlbBBlPXcwJn4FBNp/3rXZ0=; b=VTm96+AoAEojAf
-	lRuI0Tak7SzZmkfXGeHOwcY20uFM55AuCkgGebkywlz8Y9nNtbhxvVLEwL2hSUg9+vGrwBiTZXCvC
-	BvesOnCS0N31LhcTM61M1+C4UgQGBjVuyFpMU/ygFGnucbXrOa8s6TNnfGwqX2htfRGIrdVvdmvnZ
-	Xbo14IFPBNl+X8YySDLYtojm+b3W3KGEx4Spfgfwf2KoX8Il/38wWvKWulfSN1/DlfzmwqBsiJyBD
-	RdmJqd872GGelYAlVRA1jUw1DKQQ5mveOpoZrShgFhtNzELetW2j6fC1dskHBF8MAkd5Cw/jSgMAF
-	tbQKQjjtHsvJeo4BvreA==;
+	List-Owner; bh=vCBcyKBVabEqbaYxVg1QfS5uMuksMZNMg/eO0VYkFXs=; b=DrhCAUsN+qW4G1
+	NNsddZ27Ds8sFRMpBchFWtk25ZOUaoy8IZf0JSROBYdLX9XaEVK2dxQNv8LaOV94nUrxaZatoDApS
+	ieRPCqcc74td42jseVeOS5KoWSzFCIe5hv89hkutrcawnnQJ0VYq6Ej6YH6BF2onl9zgc1xe2sZs6
+	UH5Fb/n59ntGrms9zLfoby8z5BuTjZ3COYwmy7LzkXthYvWOoWKnlvY7O7AdvIsHqe7AldFNl68GA
+	VPoMoGVp6nJh193KR9wGLw2u5PT2SWKJRDEZOGKOo2pXbIN9J+yoEdM0/N8lW+gvING8Mhurfucv0
+	haYpGEzr9tlqAG+bmOWw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vPxPm-00000002yc8-0I3L;
-	Mon, 01 Dec 2025 06:29:38 +0000
+	id 1vPxPs-00000002yfE-2ctJ;
+	Mon, 01 Dec 2025 06:29:44 +0000
 Received: from mail.aspeedtech.com ([211.20.114.72] helo=TWMBX01.aspeed.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vPxPg-00000002yY1-0vft;
-	Mon, 01 Dec 2025 06:29:33 +0000
+	id 1vPxPi-00000002yY1-0j2M;
+	Mon, 01 Dec 2025 06:29:35 +0000
 Received: from TWMBX01.aspeed.com (192.168.0.62) by TWMBX01.aspeed.com
  (192.168.0.62) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.10; Mon, 1 Dec
@@ -34,10 +34,10 @@ Received: from [127.0.1.1] (192.168.10.13) by TWMBX01.aspeed.com
  (192.168.0.62) with Microsoft SMTP Server id 15.2.1748.10 via Frontend
  Transport; Mon, 1 Dec 2025 14:29:16 +0800
 From: Jacky Chou <jacky_chou@aspeedtech.com>
-Date: Mon, 1 Dec 2025 14:29:11 +0800
-Subject: [PATCH v6 1/7] dt-bindings: phy: aspeed: Add ASPEED PCIe PHY
+Date: Mon, 1 Dec 2025 14:29:12 +0800
+Subject: [PATCH v6 2/7] dt-bindings: PCI: Add ASPEED PCIe RC support
 MIME-Version: 1.0
-Message-ID: <20251201-upstream_pcie_rc-v6-1-8c8800c56b16@aspeedtech.com>
+Message-ID: <20251201-upstream_pcie_rc-v6-2-8c8800c56b16@aspeedtech.com>
 References: <20251201-upstream_pcie_rc-v6-0-8c8800c56b16@aspeedtech.com>
 In-Reply-To: <20251201-upstream_pcie_rc-v6-0-8c8800c56b16@aspeedtech.com>
 To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -54,17 +54,16 @@ CC: <linux-aspeed@lists.ozlabs.org>, <linux-pci@vger.kernel.org>,
 	Andrew Jeffery <andrew@aj.id.au>, <openbmc@lists.ozlabs.org>,
 	<linux-gpio@vger.kernel.org>, Jacky Chou <jacky_chou@aspeedtech.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1764570556; l=1554;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1764570556; l=4935;
  i=jacky_chou@aspeedtech.com; s=20251031; h=from:subject:message-id;
- bh=nSo81XDH3g+0IhsQkmlg4apJPpZay88RgQZ5h1VpL2k=;
- b=wn4tVyDcRAl+ptbneXUhW5x0rObe9Oc/HOE7tXxWQGIo5vEzIS2OoEoe74E8/Wa/IitSyebs3
- ezDyZrRcA+HBsnc8i6VrZcdwJBirEvHGT/W252l1nt3rEtZ+sLZaS36
+ bh=a0hN/cW5eif5O7U21y0DVnS9Jv2bo+ZTpcF/l8WV0k0=;
+ b=J8If8V2vAJuE/6oEwRIL1mNrR7/8faGIWBnA0E2SPEpvCtoseapfuW+djNbezlYz5qyxPAH1d
+ +f6t9htzLBSBdoVGqnbBcgdZjmiHy0L8nDShjQSPPAWxPzlgKO9rfNP
 X-Developer-Key: i=jacky_chou@aspeedtech.com; a=ed25519;
  pk=8XBx7KFM1drEsfCXTH9QC2lbMlGU4XwJTA6Jt9Mabdo=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251130_222932_274300_ED033F49 
-X-CRM114-Status: UNSURE (   8.84  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20251130_222934_223099_424B16D0 
+X-CRM114-Status: GOOD (  11.86  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,62 +80,171 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Introduce device-binding for ASPEED AST2600/2700 PCIe PHY.
-The PCIe PHY is used for PCIe RC to configure as RC mode.
+ASPEED AST2600 provides one PCIe RC for Gen2 and AST2700 provides three
+PCIe RC for two Gen4 and one Gen2. All of these RCs have just one root
+port to connect to PCIe device. And also have Mem, I/O access, legacy
+interrupt and MSI.
 
 Signed-off-by: Jacky Chou <jacky_chou@aspeedtech.com>
-Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
 ---
- .../bindings/phy/aspeed,ast2600-pcie-phy.yaml      | 42 ++++++++++++++++++++++
- 1 file changed, 42 insertions(+)
+ .../bindings/pci/aspeed,ast2600-pcie.yaml          | 150 +++++++++++++++++++++
+ 1 file changed, 150 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/phy/aspeed,ast2600-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/aspeed,ast2600-pcie-phy.yaml
+diff --git a/Documentation/devicetree/bindings/pci/aspeed,ast2600-pcie.yaml b/Documentation/devicetree/bindings/pci/aspeed,ast2600-pcie.yaml
 new file mode 100644
-index 000000000000..71a5cd91fb3f
+index 000000000000..0b792acbf0b3
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/aspeed,ast2600-pcie-phy.yaml
-@@ -0,0 +1,42 @@
++++ b/Documentation/devicetree/bindings/pci/aspeed,ast2600-pcie.yaml
+@@ -0,0 +1,150 @@
 +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/phy/aspeed,ast2600-pcie-phy.yaml#
++$id: http://devicetree.org/schemas/pci/aspeed,ast2600-pcie.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: ASPEED PCIe PHY
++title: ASPEED PCIe Root Complex Controller
 +
 +maintainers:
 +  - Jacky Chou <jacky_chou@aspeedtech.com>
 +
 +description:
-+  The ASPEED PCIe PHY provides the physical layer functionality for PCIe
-+  controllers in the SoC.
++  The ASPEED PCIe Root Complex controller provides PCI Express Root Complex
++  functionality for ASPEED SoCs, such as the AST2600 and AST2700.
++  This controller enables connectivity to PCIe endpoint devices, supporting
++  memory and I/O windows, MSI and INTx interrupts, and integration with
++  the SoC's clock, reset, and pinctrl subsystems. On AST2600, the PCIe Root
++  Port device number is always 8.
 +
 +properties:
 +  compatible:
-+    items:
-+      - enum:
-+          - aspeed,ast2600-pcie-phy
-+          - aspeed,ast2700-pcie-phy
++    enum:
++      - aspeed,ast2600-pcie
++      - aspeed,ast2700-pcie
 +
 +  reg:
 +    maxItems: 1
 +
-+  "#phy-cells":
-+    const: 0
++  ranges:
++    minItems: 2
++    maxItems: 2
++
++  interrupts:
++    maxItems: 1
++    description: INTx and MSI interrupt
++
++  resets:
++    items:
++      - description: PCIe controller reset
++
++  reset-names:
++    items:
++      - const: h2x
++
++  aspeed,ahbc:
++    $ref: /schemas/types.yaml#/definitions/phandle
++    description:
++      Phandle to the ASPEED AHB Controller (AHBC) syscon node.
++      This reference is used by the PCIe controller to access
++      system-level configuration registers related to the AHB bus.
++      To enable AHB access for the PCIe controller.
++
++  aspeed,pciecfg:
++    $ref: /schemas/types.yaml#/definitions/phandle
++    description:
++      Phandle to the ASPEED PCIe configuration syscon node.
++      This reference allows the PCIe controller to access
++      SoC-specific PCIe configuration registers. There are the others
++      functions such PCIe RC and PCIe EP will use this common register
++      to configure the SoC interfaces.
++
++  interrupt-controller: true
++
++allOf:
++  - $ref: /schemas/pci/pci-host-bridge.yaml#
++  - $ref: /schemas/interrupt-controller/msi-controller.yaml#
++  - if:
++      properties:
++        compatible:
++          contains:
++            const: aspeed,ast2600-pcie
++    then:
++      required:
++        - aspeed,ahbc
++    else:
++      properties:
++        aspeed,ahbc: false
++  - if:
++      properties:
++        compatible:
++          contains:
++            const: aspeed,ast2700-pcie
++    then:
++      required:
++        - aspeed,pciecfg
++    else:
++      properties:
++        aspeed,pciecfg: false
 +
 +required:
-+  - compatible
 +  - reg
-+  - "#phy-cells"
++  - interrupts
++  - bus-range
++  - ranges
++  - resets
++  - reset-names
++  - msi-controller
++  - interrupt-controller
++  - interrupt-map-mask
++  - interrupt-map
 +
-+additionalProperties: false
++unevaluatedProperties: false
 +
 +examples:
 +  - |
-+    phy@1e6ed200 {
-+      compatible = "aspeed,ast2600-pcie-phy";
-+      reg = <0x1e6ed200 0x100>;
-+      #phy-cells = <0>;
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++    #include <dt-bindings/clock/ast2600-clock.h>
++
++    pcie0: pcie@1e770000 {
++      compatible = "aspeed,ast2600-pcie";
++      device_type = "pci";
++      reg = <0x1e770000 0x100>;
++      #address-cells = <3>;
++      #size-cells = <2>;
++      interrupts = <GIC_SPI 168 IRQ_TYPE_LEVEL_HIGH>;
++      bus-range = <0x00 0xff>;
++
++      ranges = <0x01000000 0x0 0x00018000 0x00018000 0x0 0x00008000
++                0x02000000 0x0 0x60000000 0x60000000 0x0 0x20000000>;
++
++      resets = <&syscon ASPEED_RESET_H2X>;
++      reset-names = "h2x";
++
++      #interrupt-cells = <1>;
++      msi-controller;
++
++      aspeed,ahbc = <&ahbc>;
++
++      interrupt-controller;
++      interrupt-map-mask = <0 0 0 7>;
++      interrupt-map = <0 0 0 1 &pcie0 0>,
++                      <0 0 0 2 &pcie0 1>,
++                      <0 0 0 3 &pcie0 2>,
++                      <0 0 0 4 &pcie0 3>;
++
++      pcie@8,0 {
++        compatible = "pciclass,0604";
++        reg = <0x00004000 0 0 0 0>;
++        #address-cells = <3>;
++        #size-cells = <2>;
++        device_type = "pci";
++        resets = <&syscon ASPEED_RESET_PCIE_RC_O>;
++        reset-names = "perst";
++        clocks = <&syscon ASPEED_CLK_GATE_BCLK>;
++        pinctrl-names = "default";
++        pinctrl-0 = <&pinctrl_pcierc1_default>;
++        phys = <&pcie_phy1>;
++        ranges;
++      };
 +    };
 
 -- 
