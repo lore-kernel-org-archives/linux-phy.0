@@ -4,72 +4,137 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C7D87D116F1
-	for <linux-phy@archiver.kernel.org>; Mon,  1 Dec 2025 19:04:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 251C7D116F1
+	for <linux-phy@archiver.kernel.org>; Mon,  1 Dec 2025 20:20:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+lswUWXceNlFRaCQRykDXhIsRn/tBWD/qwspg9O+PNg=; b=VjP6vUERjLHzdC
-	/IS2/+XSA6a8o7+h5h0rnTqGyByJZEReXKSd0U33uIzCAt95Qb+HMSegxBGxNUtfToIPU9p/D+9HH
-	uvzgx+DDqhjhVFzwrV9ikOu9jdPrWyoHNO9f49fBfHTjpgsbE7P7gKlWItt1DNL9Oq9FyRpjVqY5O
-	e0ejEyvlZ+OCe5GnfoWXTSF+IuZFQhEUQS3Rr5lA+3E++K0sVsCjyySjj238Zf3ANfR2QgCk7lJBk
-	aqbWG60NH9L6Bhd+rz38HpvwnETiHWg+ViVWHOuQv33ZarFFcfuO9TGlig9OJBKPYmdbBtT7JZQmj
-	U75TrE1yl7UOM5Gz1HQg==;
+	List-Owner; bh=CmAZ/uBoEvD4HJm8sjg+X1USdhWDeJO+OlCp/RGERYc=; b=LBtF4mcoxlP3Qi
+	PE9pZtHQ2HFliyRRfm2ShFsrsD57P//8Ov+u7ejeKNIuQeosgmq+F7Qi3JakWgfmVnsW+RIzpBDOX
+	pTJoLEdiKVlrhHIV6SFRw06G+ZL7EwZJuJRCWn0OYq+CSDV+fVTwFDYm+i1Czk9/Tngx56+pLaT7F
+	M1vefgVffoCHE/sFIjBLcK3qlTpVNmk3dpOb8bOw7ZHzcMthcbNuiqSez7AY4oSZQk3MXHYzIzS2p
+	jDZOvJnvR7CqpRvfunF7Cu8qrK2H8ROHjBAa04DpcNk4QF/YKEDFrI17tHn4F6jfibJe8R4ZvvceD
+	ybAtuxfntv18CpEo7IXg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vQ9Bs-00000004S74-33sf;
-	Mon, 01 Dec 2025 19:04:04 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1vQAOA-00000004UuY-1YP1;
+	Mon, 01 Dec 2025 20:20:50 +0000
+Received: from mail-dy1-x1334.google.com ([2607:f8b0:4864:20::1334])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vQ9Bq-00000004S6A-0ONv;
-	Mon, 01 Dec 2025 19:04:03 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id E775D42B8E;
-	Mon,  1 Dec 2025 19:04:00 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A2750C113D0;
-	Mon,  1 Dec 2025 19:03:59 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1764615840;
-	bh=o+FCanS35An+MiDwhjJ8w/zhkp0tC/kZk0IrIBLdhJA=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
-	b=ZfEFJfVWww3xEELw2OmQMyV36tKdSwDRtdofxmKQfb+ILyEXpPhPrUNkl5MMnvqdk
-	 MeHgecGP2EhHmfAgvv4cg3ASh6ilA8h5W5ooFuflZZi0/2Tle/0ibXxbnDItRhMwBf
-	 DyiYWSDS+Z74LDiwCXVOZE4rbj4OZxE9c9IQprfUrnef8s0TdGKK+7J61DS0IwlNy/
-	 gneE8GMMGdaj/GSHF4HUhsFhpFBITU5tvY/NPYYgqw+RUhepWKj/qtMUshYwc2/avJ
-	 z4/v4E+SwVV/7np/kW8g/FiFhIR+l/Qoonk0nHp4I+hBfxNx56o36KwMo5F6mIaYeI
-	 NLv4o7cfZK56A==
-Date: Mon, 1 Dec 2025 11:03:58 -0800
-From: Jakub Kicinski <kuba@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Vladimir Oltean <vladimir.oltean@nxp.com>, netdev@vger.kernel.org,
- devicetree@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-mediatek@lists.infradead.org, Daniel Golle <daniel@makrotopia.org>,
- Horatiu Vultur <horatiu.vultur@microchip.com>, Andrew Lunn
- <andrew@lunn.ch>, Heiner Kallweit <hkallweit1@gmail.com>, Russell King
- <linux@armlinux.org.uk>, "David S. Miller" <davem@davemloft.net>, Eric
- Dumazet <edumazet@google.com>, Paolo Abeni <pabeni@redhat.com>, Rob Herring
- <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, Matthias
- Brugger <matthias.bgg@gmail.com>, AngeloGioacchino Del Regno
- <angelogioacchino.delregno@collabora.com>, Eric Woudstra
- <ericwouds@gmail.com>, Marek =?UTF-8?B?QmVow7pu?= <kabel@kernel.org>, Lee
- Jones <lee@kernel.org>, Patrice Chotard <patrice.chotard@foss.st.com>
-Subject: Re: [PATCH net-next 5/9] phy: add phy_get_rx_polarity() and
- phy_get_tx_polarity()
-Message-ID: <20251201110358.7618fee2@kernel.org>
-In-Reply-To: <aS1T5i3pCHsNVql6@vaman>
-References: <20251122193341.332324-1-vladimir.oltean@nxp.com>
-	<20251122193341.332324-6-vladimir.oltean@nxp.com>
-	<20251124200121.5b82f09e@kernel.org>
-	<aS1T5i3pCHsNVql6@vaman>
+	id 1vQAO8-00000004Utu-0db4
+	for linux-phy@lists.infradead.org;
+	Mon, 01 Dec 2025 20:20:49 +0000
+Received: by mail-dy1-x1334.google.com with SMTP id 5a478bee46e88-2a45877bd5eso7118747eec.0
+        for <linux-phy@lists.infradead.org>; Mon, 01 Dec 2025 12:20:47 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1764620447; x=1765225247; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:sender:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=tl4KlTdJXESH1UKuri6PD/44H7q8TPZNg4IF3xxQ4Rk=;
+        b=f6hpY6381vHApfLhN0FZ95pQOOWdoT8OcEyVAarol1hhZoFQ9pyPO93q7y/2pcuaz5
+         fV+qLtK+Y4KEtn3dSWPUVRBHrZ+93ims/3dDC1PfxkIQAQoHn0M23GM0Y4N20JpRH+oZ
+         wCK96OkMEomWnZqBn+ARmOYwr7eDGocXeSiU9PxXYeTZETnyP/2ooeIZclyFpEM9L6Ac
+         C13Ii7CriLTBYLnI7tU6pEhtWG2uzPdrzpdHYVsjrFXpHM9+porQ2sC1/j/dXnPQphil
+         SPVpw11UJcQvhTOMBCjdT8/53dWqQUwFZAs2wJy2fBlRMJylf9nNv2edXFIiYGy6rrrB
+         +QQA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1764620447; x=1765225247;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:sender:x-gm-gg:x-gm-message-state:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=tl4KlTdJXESH1UKuri6PD/44H7q8TPZNg4IF3xxQ4Rk=;
+        b=UVds7Oi734YfSdszoV4fyk7eztwvS62r1L/y7IigXhGnWRbfLklgreQdIEi6RIp95a
+         L5OVjfNcP9lHP5c7C9ER5EcjPHG9jMG7EcJPO3mXUhJXXLgpuPvpXh6Rm+IC8lqxGzte
+         TwN4KZpBvDZfwC/PyxkgaCbq5t+4mhK16hJe67RYeVqbiKsO9J+BKXu+oyDV/4uZb9ff
+         HuoIgZMV7NTSeoTqMpGrCFsBmkDFH1HfKAj41pWul6cxZUFBlbKzbJSc0xYaANIH48xr
+         5tgx6+lprGI2FVXxWJg5bZfPMuJovvtIfI1xaeCJH7u6DrEa+1WQMyl7ArcfiVHZHtZg
+         fPlA==
+X-Forwarded-Encrypted: i=1; AJvYcCXe5F0n9vkRqfKS8HKu2cSQa1jHn79isVsJjPIkW7MoSbcP75L1bqGHTp55kNntWdl0zC+3FDa8sOI=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwrtoujEHPqnLIcN5LCG82TRHD/MrgmI2y+P++6JugOwr3FkuAv
+	/6uKE/W27Oil9WZkgeOkZv+9iFndktdL6VDf9v8eZgbjdo1QxSViyMsm
+X-Gm-Gg: ASbGncuq33YRzjiGTqgG4FBVtzwAu65AKi80GIUVBDK7ML5forVQxeNUP8OlxTrmB16
+	zh978e12r3h4sUqs8g3uQXabNfjCaj06bOb10Hwx2rCYwdl65tWzYqhiDX86Jqjc2MzQLs9n92o
+	8zs9mIYmc08uC9HOXTRX3Pxb0pxG4b+uSEODBwnHbvgWOUNOkfAwl4m9uzjmwC6FhiHT4Pa2Zp+
+	Zm4La2rhTfVbJ5EBsLvDO70EwMOp4tP4nBIxU2G21+wegqnAFByNMVZA5psZdblF1uoSiUj2v9F
+	xngvJ5ej7o4wV4FYy0KoFic6Ozq/gDcI8ELWxVS1TzFCrNQreDPelxqwAUxgtOGnlVe+ypkCnD6
+	78WMYsnIJUfcderrp8kP8Qin0v5L4sAn2cnU38xyPEoV9GjVX9qtnLcviY77+MQgrVpt6N6bDA3
+	Ek2ZZJRjKvCuSlAnoCDD5lpFk=
+X-Google-Smtp-Source: AGHT+IEKYg7dqAFBQA5yqyy/4gBG0pLJPO1wg8rofbFAF4WSvH7ZOKVnsnUBP8EQlCPhsTPLoRMRqg==
+X-Received: by 2002:a05:7300:ce8b:b0:2a4:7dbd:1d7a with SMTP id 5a478bee46e88-2a718664ddemr19837071eec.11.1764620446566;
+        Mon, 01 Dec 2025 12:20:46 -0800 (PST)
+Received: from server.roeck-us.net ([2600:1700:e321:62f0:da43:aeff:fecc:bfd5])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-2a96560986csm71991900eec.2.2025.12.01.12.20.45
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 01 Dec 2025 12:20:45 -0800 (PST)
+Date: Mon, 1 Dec 2025 12:20:44 -0800
+From: Guenter Roeck <linux@roeck-us.net>
+To: Romain Gantois <romain.gantois@bootlin.com>
+Cc: MyungJoo Ham <myungjoo.ham@samsung.com>,
+	Chanwoo Choi <cw00.choi@samsung.com>, Peter Rosin <peda@axentia.se>,
+	Jonathan Cameron <jic23@kernel.org>,
+	David Lechner <dlechner@baylibre.com>,
+	Nuno =?iso-8859-1?Q?S=E1?= <nuno.sa@analog.com>,
+	Andy Shevchenko <andy@kernel.org>,
+	Lars-Peter Clausen <lars@metafoo.de>,
+	Michael Hennerich <Michael.Hennerich@analog.com>,
+	Mariel Tinaco <Mariel.Tinaco@analog.com>,
+	Kevin Tsai <ktsai@capellamicro.com>,
+	Linus Walleij <linus.walleij@linaro.org>,
+	Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+	Eugen Hristev <eugen.hristev@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Sebastian Reichel <sre@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+	Hans de Goede <hansg@kernel.org>,
+	Support Opensource <support.opensource@diasemi.com>,
+	Paul Cercueil <paul@crapouillou.net>,
+	Iskren Chernev <me@iskren.info>,
+	Krzysztof Kozlowski <krzk@kernel.org>,
+	Marek Szyprowski <m.szyprowski@samsung.com>,
+	Matheus Castello <matheus@castello.eng.br>,
+	Saravanan Sekar <sravanhome@gmail.com>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	Casey Connolly <casey.connolly@linaro.org>,
+	Pali =?iso-8859-1?Q?Roh=E1r?= <pali@kernel.org>,
+	Orson Zhai <orsonzhai@gmail.com>,
+	Baolin Wang <baolin.wang@linux.alibaba.com>,
+	Chunyan Zhang <zhang.lyra@gmail.com>,
+	Amit Kucheria <amitk@kernel.org>,
+	Thara Gopinath <thara.gopinath@gmail.com>,
+	"Rafael J. Wysocki" <rafael@kernel.org>,
+	Daniel Lezcano <daniel.lezcano@linaro.org>,
+	Zhang Rui <rui.zhang@intel.com>, Lukasz Luba <lukasz.luba@arm.com>,
+	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>,
+	Liam Girdwood <lgirdwood@gmail.com>,
+	Mark Brown <broonie@kernel.org>, Jaroslav Kysela <perex@perex.cz>,
+	Takashi Iwai <tiwai@suse.com>,
+	Sylwester Nawrocki <s.nawrocki@samsung.com>,
+	Olivier Moysan <olivier.moysan@foss.st.com>,
+	Arnaud Pouliquen <arnaud.pouliquen@foss.st.com>,
+	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+	Alexandre Torgue <alexandre.torgue@foss.st.com>,
+	Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+	linux-kernel@vger.kernel.org, linux-hwmon@vger.kernel.org,
+	linux-iio@vger.kernel.org, linux-input@vger.kernel.org,
+	linux-phy@lists.infradead.org, linux-pm@vger.kernel.org,
+	linux-mips@vger.kernel.org, linux-mediatek@lists.infradead.org,
+	linux-arm-msm@vger.kernel.org, linux-sound@vger.kernel.org,
+	linux-stm32@st-md-mailman.stormreply.com
+Subject: Re: [PATCH] iio: inkern: Use namespaced exports
+Message-ID: <8d7a5210-f88c-4af2-80f8-61a390586fd2@roeck-us.net>
+References: <20251201-iio-inkern-use-namespaced-exports-v1-1-da1935f70243@bootlin.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20251201-iio-inkern-use-namespaced-exports-v1-1-da1935f70243@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251201_110402_183577_2BF7A7C5 
-X-CRM114-Status: GOOD (  16.30  )
+X-CRM114-CacheID: sfid-20251201_122048_187228_850AA816 
+X-CRM114-Status: UNSURE (   9.35  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,34 +151,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, 1 Dec 2025 14:07:58 +0530 Vinod Koul wrote:
-> > > Push the supported mask of polarities to these helpers, to simplify
-> > > drivers such that they don't need to validate what's in the device tree
-> > > (or other firmware description).
-> > > 
-> > > The proposed maintainership model is joint custody between netdev and
-> > > linux-phy, because of the fact that these properties can be applied to
-> > > Ethernet PCS blocks just as well as Generic PHY devices. I've added as
-> > > maintainers those from "ETHERNET PHY LIBRARY", "NETWORKING DRIVERS" and
-> > > "GENERIC PHY FRAMEWORK".  
-> > 
-> > I dunno.. ain't no such thing as "joint custody" maintainership.
-> > We have to pick one tree. Given the set of Ms here, I suspect 
-> > the best course of action may be to bubble this up to its own tree.
-> > Ask Konstantin for a tree in k.org, then you can "co-post" the patches
-> > for review + PR link in the cover letter (e.g. how Tony from Intel
-> > submits their patches). This way not networking and PHY can pull
-> > the shared changes with stable commit IDs.  
+On Mon, Dec 01, 2025 at 11:59:43AM +0100, Romain Gantois wrote:
+> Use namespaced exports for IIO consumer API functions.
 > 
-> How much is the volume of the changes that we are talking about, we can
-> always ack and pull into each other trees..?
+> Signed-off-by: Romain Gantois <romain.gantois@bootlin.com>
+> ---
+...
+>  drivers/hwmon/iio_hwmon.c                       |  1 +
+>  drivers/hwmon/ntc_thermistor.c                  |  1 +
 
-We have such ad-hoc situations with multiple subsystems. Letting
-Vladimir and co create their own tree is basically shifting the 
-work of managing the stable branches from netdev maintainers
-downstream. I'd strongly prefer that we lean on git in this way, 
-rather than reenact the 3 spiderman meme multiple times in each
-release.
+for hwmon:
+
+Acked-by: Guenter Roeck <linux@roeck-us.net>
+
+Guenter
 
 -- 
 linux-phy mailing list
