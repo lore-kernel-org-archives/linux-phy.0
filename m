@@ -4,62 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C26E1D111A8
-	for <linux-phy@archiver.kernel.org>; Mon,  1 Dec 2025 07:18:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D1014D116F1
+	for <linux-phy@archiver.kernel.org>; Mon,  1 Dec 2025 08:38:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
-	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=X1wyfv8q3kSWvyPglVWHBaHrnWlDqq48s6aDjlL7OZ8=; b=y/8Xq2CsJFXOUEP5EW98YE4uHv
-	6CNChwmbxpfiaxYv+I439/5VsS3WXewy1aBeRuNdNsTkBP1gIgNFWwT/L20tqEaa6PHyf71C35JXk
-	olmIXcNPgJY++TTQVv0AL9PKxs3wNmK2MOSqbZfZ6aRzuzsrKSWtQozWbIMCjSrrZxb7xrGeshYDf
-	et9ob5X16gJI6LRzjbpuNigWRsLw0muvhAGBJKaI2BsYPQk5MnGIBPQrzqdTikT1/qqf6hC9EfKyZ
-	pSm0Tp5CwRex/zfs0y0InKdQoWf9/OkS2pgbtMVZuLsC72Be5qbGfYPpCiRcUQitftAdPCNL1kd9M
-	iquCkb8w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=RoGF8eBgAP0WyK+njLYJ9EtkzHJAmXOSK67zBf0QdNU=; b=Z+KLNDLZmPxPD2
+	L5QsocT4ZbaIMDQXS8nSUGjEwx3AqIfat2n+WMUQlOdtuSORtyYwqT1wrkHSaIcLeuFqTPUpgH4aI
+	7AlEna8NyeOk284HAMg+1/n5RQJC0v4VambEmHUI9w2m5gyx/24roLeoDAsvSczBhNL2UatOEgQj4
+	A0/LWu0IIuC03es80M/gUTx+vQcybiZnHljDGYDPE8wUIVOFb0Xy3sIcuFeAZlH79TD2XuPgWw0/7
+	Wf3OkzFzQaSETnHzmYvAx6yXfZia9eT8eczhFOTUPgcwiPF24DA/izayInBcl3avIIYJpGNTWUNAw
+	bdJkROv4QTyvinpO3+qQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vPyAo-000000032kE-1Mdk;
-	Mon, 01 Dec 2025 07:18:14 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vPzQ6-000000037i5-1J8H;
+	Mon, 01 Dec 2025 08:38:06 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vPyAn-000000032k7-0aiF
-	for linux-phy@lists.infradead.org;
-	Mon, 01 Dec 2025 07:18:13 +0000
+	id 1vPzQ3-000000037hF-2vjM;
+	Mon, 01 Dec 2025 08:38:04 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 41C8C60160;
-	Mon,  1 Dec 2025 07:18:12 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C69E6C4CEF1;
-	Mon,  1 Dec 2025 07:18:11 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 9179B40ABE;
+	Mon,  1 Dec 2025 08:38:02 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id BCB9BC4CEF1;
+	Mon,  1 Dec 2025 08:38:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1764573492;
-	bh=RzxGFcvxFV4g+bm1hI2rm4ioGn9DwOOl+ULt5zaZWbg=;
-	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
-	b=p160IBuUI4c97YRSN9YP6dLyCnKl5lRWXGLgkY8ydzBPFbWGxyGequeRn1Co06rsH
-	 git4SmXd1q265nPEm8SBTpNlEQ5t+Jf6rwxt6io9xLsjBXGXprOt7rq9PhujbGXQw7
-	 01IThcjwYCJMPJtGtsJFwTnJ6YIwSq9jnY2hXlpMfF7Ok6CDv27hVA/Y7dLTJyQd21
-	 viJgkmIyklQNyk1t6C3WFOq4rSvZ/XyV16nc4YKbpnc/K+dogRyKpzr0USMLFDY31L
-	 k32RBInR6MDe3yYjX13e5Hxmoxr+0qHXgSqQx6Vt3S1YUDSLNz5RahKHUGvRANyvNg
-	 AiE9dIU5jMcoQ==
-Date: Mon, 01 Dec 2025 01:18:10 -0600
+	s=k20201202; t=1764578282;
+	bh=vgbgKs+CIgCE3wPA/E4Yb6WCwekK3Mvgjmi/ncx+CRM=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=LRQuh49SNTjWYzSLBlfkC54mDUI09XOgjyRgmn11odtLc5TTQfWnuLNy4bSxNg/cK
+	 0bU7fI2M136nd9qFVZm9/tEF33O1LDYZU4W4JKOOEySm3cMFu3uMKjEHBehsStNkhd
+	 CKd5EDbtaLDZSvJQySIksO2D+vKI8m3oBwfYya7rusTqzkNXjuZIcXAs7vWQOs0O53
+	 5KXYoGAvYGFO6W79QoXI1wlM3HqGhrzblroWDYv9ttbovUu9ArXDhL4EnLG6MqOKsO
+	 +e7VyF6yeuj2Gg3P+Zdz7dpbr0qRI1hgx9aNMqrjJ63pH6D+I9mddqVq74kS4Y4tDo
+	 DWgcPkMh2kFeQ==
+Date: Mon, 1 Dec 2025 14:07:58 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Jakub Kicinski <kuba@kernel.org>
+Cc: Vladimir Oltean <vladimir.oltean@nxp.com>, netdev@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-mediatek@lists.infradead.org,
+	Daniel Golle <daniel@makrotopia.org>,
+	Horatiu Vultur <horatiu.vultur@microchip.com>,
+	Andrew Lunn <andrew@lunn.ch>,
+	Heiner Kallweit <hkallweit1@gmail.com>,
+	Russell King <linux@armlinux.org.uk>,
+	"David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>, Paolo Abeni <pabeni@redhat.com>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	Eric Woudstra <ericwouds@gmail.com>,
+	Marek =?iso-8859-1?Q?Beh=FAn?= <kabel@kernel.org>,
+	Lee Jones <lee@kernel.org>,
+	Patrice Chotard <patrice.chotard@foss.st.com>
+Subject: Re: [PATCH net-next 5/9] phy: add phy_get_rx_polarity() and
+ phy_get_tx_polarity()
+Message-ID: <aS1T5i3pCHsNVql6@vaman>
+References: <20251122193341.332324-1-vladimir.oltean@nxp.com>
+ <20251122193341.332324-6-vladimir.oltean@nxp.com>
+ <20251124200121.5b82f09e@kernel.org>
 MIME-Version: 1.0
-From: "Rob Herring (Arm)" <robh@kernel.org>
-Cc: linmin@eswincomputing.com, lianghujun@eswincomputing.com, 
- vkoul@kernel.org, p.zabel@pengutronix.de, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, krzk+dt@kernel.org, kishon@kernel.org, 
- conor+dt@kernel.org, Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>, 
- zhengyu@eswincomputing.com, huangyifeng@eswincomputing.com, 
- linux-phy@lists.infradead.org, neil.armstrong@linaro.org, 
- ningyu@eswincomputing.com, fenglin@eswincomputing.com
-To: Yulin Lu <luyulin@eswincomputing.com>
-In-Reply-To: <20251201061000.488-1-luyulin@eswincomputing.com>
-References: <20251201060737.868-1-luyulin@eswincomputing.com>
- <20251201061000.488-1-luyulin@eswincomputing.com>
-Message-Id: <176457349023.2265004.4610408030407592182.robh@kernel.org>
-Subject: Re: [PATCH v6 1/2] dt-bindings: phy: eswin: Document the EIC7700
- SoC SATA PHY
+Content-Disposition: inline
+In-Reply-To: <20251124200121.5b82f09e@kernel.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20251201_003803_775967_7D0C7635 
+X-CRM114-Status: GOOD (  17.75  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,50 +93,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Mon, 01 Dec 2025 14:10:00 +0800, Yulin Lu wrote:
-> Document the SATA PHY on the EIC7700 SoC platform,
-> describing its usage.
+On 24-11-25, 20:01, Jakub Kicinski wrote:
+> On Sat, 22 Nov 2025 21:33:37 +0200 Vladimir Oltean wrote:
+> > Add helpers in the generic PHY folder which can be used using 'select
+> > GENERIC_PHY_COMMON_PROPS' from Kconfig, without otherwise needing to
+> > enable GENERIC_PHY.
+> > 
+> > These helpers need to deal with the slight messiness of the fact that
+> > the polarity properties are arrays per protocol, and with the fact that
+> > there is no default value mandated by the standard properties, all
+> > default values depend on driver and protocol (PHY_POL_NORMAL may be a
+> > good default for SGMII, whereas PHY_POL_AUTO may be a good default for
+> > PCIe).
+> > 
+> > Push the supported mask of polarities to these helpers, to simplify
+> > drivers such that they don't need to validate what's in the device tree
+> > (or other firmware description).
+> > 
+> > The proposed maintainership model is joint custody between netdev and
+> > linux-phy, because of the fact that these properties can be applied to
+> > Ethernet PCS blocks just as well as Generic PHY devices. I've added as
+> > maintainers those from "ETHERNET PHY LIBRARY", "NETWORKING DRIVERS" and
+> > "GENERIC PHY FRAMEWORK".
 > 
-> Signed-off-by: Yulin Lu <luyulin@eswincomputing.com>
-> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-> ---
->  .../bindings/phy/eswin,eic7700-sata-phy.yaml  | 58 +++++++++++++++++++
->  1 file changed, 58 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/eswin,eic7700-sata-phy.yaml
-> 
+> I dunno.. ain't no such thing as "joint custody" maintainership.
+> We have to pick one tree. Given the set of Ms here, I suspect 
+> the best course of action may be to bubble this up to its own tree.
+> Ask Konstantin for a tree in k.org, then you can "co-post" the patches
+> for review + PR link in the cover letter (e.g. how Tony from Intel
+> submits their patches). This way not networking and PHY can pull
+> the shared changes with stable commit IDs.
 
-My bot found errors running 'make dt_binding_check' on your patch:
+How much is the volume of the changes that we are talking about, we can
+always ack and pull into each other trees..?
 
-yamllint warnings/errors:
-
-dtschema/dtc warnings/errors:
-Documentation/devicetree/bindings/thermal/thermal-zones.example.dtb: /example-0/soc/thermal-sensor@c263000: failed to match any schema with compatible: ['qcom,sdm845-tsens', 'qcom,tsens-v2']
-Documentation/devicetree/bindings/thermal/thermal-zones.example.dtb: /example-0/soc/thermal-sensor@c263000: failed to match any schema with compatible: ['qcom,sdm845-tsens', 'qcom,tsens-v2']
-Documentation/devicetree/bindings/thermal/thermal-zones.example.dtb: /example-0/soc/thermal-sensor@c265000: failed to match any schema with compatible: ['qcom,sdm845-tsens', 'qcom,tsens-v2']
-Documentation/devicetree/bindings/thermal/thermal-zones.example.dtb: /example-0/soc/thermal-sensor@c265000: failed to match any schema with compatible: ['qcom,sdm845-tsens', 'qcom,tsens-v2']
-Documentation/devicetree/bindings/thermal/thermal-sensor.example.dtb: /example-0/soc/thermal-sensor@c263000: failed to match any schema with compatible: ['qcom,sdm845-tsens', 'qcom,tsens-v2']
-Documentation/devicetree/bindings/thermal/thermal-sensor.example.dtb: /example-0/soc/thermal-sensor@c263000: failed to match any schema with compatible: ['qcom,sdm845-tsens', 'qcom,tsens-v2']
-Documentation/devicetree/bindings/thermal/thermal-sensor.example.dtb: /example-0/soc/thermal-sensor@c265000: failed to match any schema with compatible: ['qcom,sdm845-tsens', 'qcom,tsens-v2']
-Documentation/devicetree/bindings/thermal/thermal-sensor.example.dtb: /example-0/soc/thermal-sensor@c265000: failed to match any schema with compatible: ['qcom,sdm845-tsens', 'qcom,tsens-v2']
-
-doc reference errors (make refcheckdocs):
-
-See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20251201061000.488-1-luyulin@eswincomputing.com
-
-The base for the series is generally the latest rc1. A different dependency
-should be noted in *this* patch.
-
-If you already ran 'make dt_binding_check' and didn't see the above
-error(s), then make sure 'yamllint' is installed and dt-schema is up to
-date:
-
-pip3 install dtschema --upgrade
-
-Please check and re-submit after running the above command yourself. Note
-that DT_SCHEMA_FILES can be set to your schema file to speed up checking
-your schema. However, it must be unset to test all examples with your schema.
-
+BR
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
