@@ -4,98 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AD074D12694
-	for <linux-phy@archiver.kernel.org>; Wed,  3 Dec 2025 11:15:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F1B1CD12D41
+	for <linux-phy@archiver.kernel.org>; Wed,  3 Dec 2025 11:16:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lHxA/D2lnbOQBrJsMJ6Hm7nGnyvl7j/dfXKL0sRMdfk=; b=rZ5mgWVh9QQMXf
-	Ws8F2FH9rCF0y1+XwIaiCSonzxJRbiCIGvVXITrBKumUo+bO/BR8vbvH4eI97emS8NreJ21NubY4S
-	4W+IyjUmAF9ScMX46yBi80oFtuQd46zf4VkkOK9s/B0b3sg96Oa1ziVUsmsre5uyCrgaTNGExTslq
-	bQkT6acv8MUYwkpPop6huyX9XNL5DGNxPx5mOApqkCECjOVDKIe2CV1f1Qph2omntf7HfoeyhfI0E
-	use23eyA7PQhs5SCOOG4h0EIg+TMlxuLjJn7sjL8Kq6uCLT73WL2Cmh1FofYkkVp4yjD2ggOBQ5G1
-	0t0Eq5vnvRS0m7MBN41w==;
+	List-Owner; bh=eMEfAL+/6kyVAtETLElDB5JNGmchO5R9xzfqgtpIVZ4=; b=jeARtzNqTPXbPl
+	Tz+NBDDinOrcj/wT15oRMz7jmjzb3BY6O+Nxz5Gui+9Y23G2dJoAAfFMmKcWQBcVMxv/vDwXlK97S
+	aj0kFYXU8pXPjUo24ny3AV33p0pGsZnO2Ko2UgtJ0K6TYn3Lhzr85kvOEgjEpQQndpBBXrVRrqnIM
+	eI/EQavewMLAEmxZfqdP64V0RnRMYyLmx5GUZ6R1uTY4qf1VZJDAnFWfOaheu+0TXPAackKa9mEwr
+	85eU8LX5K/6iOpefipCS5NI4QnN59c574onszmSgQHKNEGGgoY0zSb9BQRbO7pZZLKXizYL9pqnvR
+	R952WWY564559hsSudlg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vQkpB-00000006UT0-0fxK;
-	Wed, 03 Dec 2025 11:15:09 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1vQkqj-00000006UZL-33NS;
+	Wed, 03 Dec 2025 11:16:45 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vQkp7-00000006USW-43j3
+	id 1vQkqh-00000006UZ0-4BWZ
 	for linux-phy@lists.infradead.org;
-	Wed, 03 Dec 2025 11:15:07 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 5B34ixQm385711
-	for <linux-phy@lists.infradead.org>; Wed, 3 Dec 2025 11:15:04 GMT
+	Wed, 03 Dec 2025 11:16:45 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 5B3B3DDd1374603
+	for <linux-phy@lists.infradead.org>; Wed, 3 Dec 2025 11:16:43 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	Sx0Sxi7RaZ5r/OLiymcootGTCfaloJHP1I/EOtGg0NM=; b=QQCgPWQvik8a3OvJ
-	zv2UkH1ULms9JrlI0S6j30qdHpunRKda3yT5RSVV4gowcy0NTV81vpgpP6U+7J5D
-	dN4wtUgJcTL71l1Y7ZEH+ZEP3ffBfBfgT8kdGSIXBSDF3R3QDoWblZGKSQ/FdJ4G
-	MqSGs5ow2zzlIXkBCl7cj/eG/EVlzwjRpu40ljuwlHEisFF899HKWa72naXQHXD9
-	Qr6swy0T67BHBTOnpTmqJFdAp2nRTH31cnVoa+gb7GJ5nHbkC4p8qnpgGlq5hfF8
-	f7RzjZv+d9pFvQytAu02QNhuvGUcLbHhPrUgTwKeoo03e67DQxff+/vjYZtUfMHH
-	4MliyQ==
+	1vcxkhN0VIYWP6osWbYrzYEnR0RIZYi5lmnXSpJzjOk=; b=OC14gGlBmCV0vq3m
+	u/Ely86TIcvg766ng+oEXFc80dQVxwePTzA56UbFXxQNe4jOOcLuX3ri1GzBOlnx
+	x6aPzCgeK5Ux724uz4czt3vxvLKWPbgXGDFca6Lk9iHWsXoVKoHJoVb9T98z9Phq
+	bV6g+Zza+FzYqVv4z/Mgmnq1hd/DQAy3sfXVvMlFnf4PdULOGaVwvmKyE5Po+U53
+	E0VsE5J5/0RsPm+Gnc4+8uJgyoASSChRgNxQaYV44/1tVOKIbOE3HA+Ugo1MVGMZ
+	sdycC0O5ft2ORMKeTY5e5Gs8Q7m4Zrt8wdwxykBu5EKrog9la1mxuVLoiPPExq2w
+	dD7Nsw==
 Received: from mail-qk1-f198.google.com (mail-qk1-f198.google.com [209.85.222.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4at5db2s21-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4atm0b81bt-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Wed, 03 Dec 2025 11:15:04 +0000 (GMT)
-Received: by mail-qk1-f198.google.com with SMTP id af79cd13be357-8b25c5dc2c3so118132085a.3
-        for <linux-phy@lists.infradead.org>; Wed, 03 Dec 2025 03:15:04 -0800 (PST)
+	for <linux-phy@lists.infradead.org>; Wed, 03 Dec 2025 11:16:43 +0000 (GMT)
+Received: by mail-qk1-f198.google.com with SMTP id af79cd13be357-8b222111167so142417885a.1
+        for <linux-phy@lists.infradead.org>; Wed, 03 Dec 2025 03:16:43 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1764760504; x=1765365304; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1764760602; x=1765365402; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:from:content-language
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=Sx0Sxi7RaZ5r/OLiymcootGTCfaloJHP1I/EOtGg0NM=;
-        b=bds6w9dsR9+c/j+R+5aTcdb2KSM3xW6d0ZiRz5W1iCQ8mgKAKaVofY9enXXowQgtU6
-         7n69RWW0msnlAjY22dPyP/rjKWRLnbT4SWyAnpQx/fkM3tM+2PrxaWfQhr57CbzW7td9
-         es/c/ENL0By8M8RHg0G7B9AJ3h49oQ0R3eVBonHTbdZlItbMQxDn+3p4XJaWOsOd1lk0
-         QL6JA9oHqexDqtDd5DdrXzf4/zZGHh7zQXK2ZejT8obc8Bq4t2CCxtbukRhzODcFktHe
-         3Y1WLXgyOz4TG2qPMdyIVV5r5HJrtOS73v0TsnmjHRNyHOe425RTX6CG/AIUXaekognt
-         1A5g==
+        bh=1vcxkhN0VIYWP6osWbYrzYEnR0RIZYi5lmnXSpJzjOk=;
+        b=iXW97bu+AAQ2e3b4RqvtXiyygAEpSy1Dq+Q93Aq4OrXmlUhX95b1UD6103OvNKZltY
+         mslpB+lwNaU/6ePyJpfXqrjDc8zP9kk/FsGOKISnB5sWEO81eS+7FBdb9TdhneLhj8w1
+         k0gMU6t1/MAbGuNONhyy3StsHJRrEhGJK90PBakZVGbKpXxZOLBWXjXvk8h/jND4eNjH
+         /nKb2GAGtS4ro0II1SER5oeFUJSto9jdAnX665PYSrvHnXeYcnqynDVm2nadzncJZhg9
+         wuJn2BcLUV/yIEL6pN5XAv/CBhPlfpDCo2yr/RZAN+omSpe3k7w7sHsjk2Awf8b31y6d
+         2sHw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1764760504; x=1765365304;
+        d=1e100.net; s=20230601; t=1764760602; x=1765365402;
         h=content-transfer-encoding:in-reply-to:from:content-language
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=Sx0Sxi7RaZ5r/OLiymcootGTCfaloJHP1I/EOtGg0NM=;
-        b=xPimH8MVR21Sj2hSFNdMiNzuQRKAMOAYgZYwO93Y3ytd0ar3CLTBtEqZ1aMi+O2Pys
-         RGy7H2PYf6Nxqol4WIPkJqIGwHROdw7jYhIuKJRnohR7Zi74LTYSb/GQJLe7eG8U2T94
-         h3j2XvQPTqiaoqmz26UDNchvfoq1MjrMt3ZU/31iTEbKrjXQUzmwCjV9WxCHk7thN0SN
-         g5++qxCqETodoNci/MvAhN9d0guY+he0XvQSeXJ/ioPuiYNw1vw3J5qeTqzsgjBu0erW
-         XOrPZkCv4KD6bmiwo2wvDRB3lv5RY9te11CbrZs1Gc6Z5Jfs4OtprWuT5A7umKkfjpKP
-         MvcQ==
-X-Forwarded-Encrypted: i=1; AJvYcCUzUOE58S+3HCAHseibXQXd1V8rL0vOjjgwSJIO0w3vcSkeNBZK+Vmv+H0DwYLq4+GRE7y6qg7UJx8=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwrYAWHGNParyBG/AzJlouGgIrrcA5VnaZN8avC/8DoF+TG/lev
-	6KXotz9qkfo8jL+BLDvw0PN0OcnyeZEkWoNtUPTDaxxpFaZ3yg9qxKPocIOWeWOhKj7/psrN8LB
-	U9g8r/90p+JxlA2NwDGkOV/sN46D28wnhohJ1ucscYtTYN113yAXnagvN+mvBj8zShQE/
-X-Gm-Gg: ASbGncvVC9quC1BJ8AsZvgIkBlz1x6jXFyH0t8VFn4VC5t8pQLQH/rcQBbMBP2HBZL4
-	JETLIWjfoKmm4XZrimgnAPJWIJnUpBMMvxLngVGVrnTZA+7vED2L5hdXgsLPMgR4PL7eveJMIdo
-	VE1ptgWEzITQSvkgWZrGGS1L80NCvW8cBfvIF1bDuSlA6PnGMcr4lPHEb0w8VheTTj/RiQ5VxPQ
-	hgCpgKvk787cgFz1LPh1vepTppNWzgGYYn38nEXQWBjADSRG1zvjEw5ImxmvBAaBNs0IPFn2eOb
-	xtkVUMa/naF9pk1rDENC8tNfIdGwDPMltlPnK37cSlsbILhL7satRSw6xpVlX7OryjwsyEhq3/W
-	tZNYJ+Aqlf5cM4cAsSqm3YWtb1oeu6xdWEPt4wEvGl2sfnH41uuVaibPwVzRmYLswXA==
-X-Received: by 2002:ac8:7f54:0:b0:4ee:1588:6186 with SMTP id d75a77b69052e-4f0176844ddmr17308021cf.11.1764760504000;
-        Wed, 03 Dec 2025 03:15:04 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IGuDgbijKKd62ii+mc6Bi9vpnrCyOLqg//ZpBlxTts37lCeH5/k75isDDIk/xGo92WQ15EXpw==
-X-Received: by 2002:ac8:7f54:0:b0:4ee:1588:6186 with SMTP id d75a77b69052e-4f0176844ddmr17307571cf.11.1764760503486;
-        Wed, 03 Dec 2025 03:15:03 -0800 (PST)
+        bh=1vcxkhN0VIYWP6osWbYrzYEnR0RIZYi5lmnXSpJzjOk=;
+        b=j0e3phNA58r1VcOme4bwy/kGPZ93qEirHWKm1r5xvGsiDCVqa18e38aSfFQjRC1g9P
+         7WpApXMwnE4dASg5a+lOw2ppbdUlJ5UYDXgkdprFc3d7WnFxmHQmExjjVe7/MDQFOTR2
+         rub4geM8poxIdS6TNQqrzRe5BBUG0vXTKKCJ/nzwFcm5Nqy9njLabUoRUZhNg4oSj3FK
+         VtocrlcMYGqM8GZ2TePwNwcaC5KMB6kUZxwUYn2drNi6uh+3KdK/Ez3tqjX6kHl5WHNo
+         rF6fdI1hFKOJFwIqhBpzTM+Iw/eadgs3z+O5Xijooku+dEFG5NMdt8bPNm6Y7clv7Imo
+         FM9w==
+X-Forwarded-Encrypted: i=1; AJvYcCX+sGe5g9s1OfZKZai9MQjuBM7eM9QVXb363G+Kwnhfcl0mv+R51FAUO1LsM0LFSSBcvuGXY9Wfayg=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwuQvG474g6Wfl1i7sGcSvDFMYVosfOw5+I5ZshdF+Fe07i1LNb
+	UQHtgyrRB9jE2BubD7S/WWFhQbv3hp+Z4knoK1DHZN+eAEtdRvAsIFwVCWa48PGfoMCC54mH+0Q
+	81dmdypBCgwp4lXvdieRx7tM6923BuIY1I0pcz76fEmEr9V7e5eOfxOGPa/fRl+ZPSPiU
+X-Gm-Gg: ASbGncuvoS+0Qf67tZXbHpCIC4dADDSEP71vPda+Abimwu/eBU5rCGGM4RwSPjOKB1u
+	rEsynKXfShC/Sk3Yu/nFT+QbsLzW2MniwAoVf/dbSP4fQxR9mf7RHpKs6Evd1al3tJwric0nB6u
+	QDE7ZP9WF/PN6dN985xfzSl9DfXXe+k37tZ4ziNVYxm7wrVISUCGKa7mujWa+lp3XOwQPNh0Q9j
+	kkBPf2yudXJiqwV15OXNjkNcY8S2bLyAd+zSeb0rLkJ9l36pJIef1P25Idjbjtzm5zxollH9sCB
+	3leh2+iVWAcnNWtQQ3vUbYg5R3yJrNi/HBlLoOb/sXVCmSE+1l72mjiHUyTPDxonGIKv4LKxvHA
+	6dN5FeXHptZmVdoMsqlhUTQVQ4LxnuCiLqK+AS8inK6KP2RyNN1TPiKXbOfyF3yBSKw==
+X-Received: by 2002:a05:620a:2846:b0:86b:12e2:28d1 with SMTP id af79cd13be357-8b5e6a8f8ccmr162915885a.7.1764760602434;
+        Wed, 03 Dec 2025 03:16:42 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGexy9sN1KXrDnKo2qqHpzGTyUcWmRk8uzjam3d5kIfzK18SMX0HS/cP8FWH3AVE4B17InURg==
+X-Received: by 2002:a05:620a:2846:b0:86b:12e2:28d1 with SMTP id af79cd13be357-8b5e6a8f8ccmr162904585a.7.1764760600115;
+        Wed, 03 Dec 2025 03:16:40 -0800 (PST)
 Received: from [192.168.119.72] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-b76f59aed2esm1781866066b.42.2025.12.03.03.15.01
+        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-647641453d7sm13387427a12.13.2025.12.03.03.16.37
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 03 Dec 2025 03:15:02 -0800 (PST)
-Message-ID: <fe15827d-c15c-4b4e-973e-3cc379714467@oss.qualcomm.com>
-Date: Wed, 3 Dec 2025 12:15:00 +0100
+        Wed, 03 Dec 2025 03:16:39 -0800 (PST)
+Message-ID: <dc3e381e-739e-43f6-b41a-3f77ce7e780b@oss.qualcomm.com>
+Date: Wed, 3 Dec 2025 12:16:37 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 2/3] phy: qualcomm: phy-qcom-eusb2-repeater: Add squelch
- detect param update
+Subject: Re: [PATCH 1/3] dt-bindings: phy: qcom,snps-eusb2-repeater: Add
+ squelch param update
 To: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>,
         Vinod Koul <vkoul@kernel.org>,
         Kishon Vijay Abraham I <kishon@kernel.org>,
@@ -113,36 +113,36 @@ To: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>,
 Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
         devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
 References: <20251203083629.2395451-1-krishna.kurapati@oss.qualcomm.com>
- <20251203083629.2395451-3-krishna.kurapati@oss.qualcomm.com>
+ <20251203083629.2395451-2-krishna.kurapati@oss.qualcomm.com>
 Content-Language: en-US
 From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <20251203083629.2395451-3-krishna.kurapati@oss.qualcomm.com>
-X-Proofpoint-ORIG-GUID: vBoeElXleNe2C07qb8PQ_ST-0LtYEpAn
-X-Proofpoint-GUID: vBoeElXleNe2C07qb8PQ_ST-0LtYEpAn
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMjAzMDA4OSBTYWx0ZWRfXxx9Ou7Ilqdsc
- rPLMAN1HRYRQIp8JZ420Ntu1/XXiwKbnm8xiePJEhU0fsIGwXwo7vDK5zxH6bW7yEYKZ3pduH1t
- AWGiNW4aBoAXf7nSr2RrTwRQ0H/6TzUi2EuE5LQ2fYHwhrsLgGetq9Nxy1GMo0ubm5uXGr69ETJ
- z7Mm+JOcp/B8oKxiHLQWF5MCrZcaGUPdr+PuEwDO/VEFuBWW7LMYdEnNuox7SXuxQVyfPaOs/Pg
- 5Awr9vMRU5ZABtgDOUa6cFnlXuyeskGrHAY2ywSIiUatt9nIc9DBX2lNQeRRcyS4l86TDZQDDps
- R46HtUeEjIt1aga0IBUNmcBR7agIiy/o2szxfSTY9FHWS+hwGLjplAjVFItp0309zKMZrkI6cf3
- /d4D6TX7ryaeZiVGL5PC15W2oi/fQg==
-X-Authority-Analysis: v=2.4 cv=VoMuwu2n c=1 sm=1 tr=0 ts=69301bb8 cx=c_pps
+In-Reply-To: <20251203083629.2395451-2-krishna.kurapati@oss.qualcomm.com>
+X-Authority-Analysis: v=2.4 cv=GMMF0+NK c=1 sm=1 tr=0 ts=69301c1b cx=c_pps
  a=qKBjSQ1v91RyAK45QCPf5w==:117 a=FpWmc02/iXfjRdCD7H54yg==:17
  a=IkcTkHD0fZMA:10 a=wP3pNCr1ah4A:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=EUspDBNiAAAA:8 a=ZrT6FAlEKn3Pr7If_u8A:9
+ a=VkNPw1HP01LnGYTKEx00:22 a=EUspDBNiAAAA:8 a=yeJi84D-AGgTn3bWYRoA:9
  a=QEXdDO2ut3YA:10 a=NFOGd7dJGGMPyQGDc5-O:22
+X-Proofpoint-ORIG-GUID: vzUZEDOmsEHbzV0rzUxNtD_-eJLjqZuJ
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMjAzMDA4OSBTYWx0ZWRfX0H/w/ihiXnfK
+ Bm8CtRWx4/JDQ4y/HMk4Q9Kf5kjKCbEbaLv6JPiDDBdgkLrUzXwj2/htOS7PSG8vXDjibNUi3uZ
+ JRuqLlVQc/4CP/EmWOh4Zl8ymCZDUHwsKX+SEskYjFuGgbMONO3OPxfQMxgJv3cNGS7fsOtq56e
+ 7d2/LW/sHY2veD0Lk3sT6TEVXoT5LjHFYJ+suZQ7XgRkR8RsFcH77LWoPRSFcWVTtUxXqAo3dGs
+ ergP5Yx7e9xSbD2STWOZSD6EpJqqUUamX5ubglCI11lluQPqHxcNiqT5di8EFKDBLC922vJBtFT
+ FCReNrX3mCREtETnG01sjUaEf/NJ/npj4YQO2L4DWlNMg+QKYgTYEyZEJhFckUd4hkX+nHsWwBa
+ L3b3nKziYI8vVf5WAbjvX3pQj6q41w==
+X-Proofpoint-GUID: vzUZEDOmsEHbzV0rzUxNtD_-eJLjqZuJ
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
  definitions=2025-12-02_01,2025-11-27_02,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- adultscore=0 impostorscore=0 lowpriorityscore=0 bulkscore=0
- priorityscore=1501 phishscore=0 malwarescore=0 clxscore=1015 spamscore=0
+ adultscore=0 phishscore=0 malwarescore=0 spamscore=0 bulkscore=0
+ clxscore=1015 impostorscore=0 priorityscore=1501 lowpriorityscore=0
  suspectscore=0 classifier=typeunknown authscore=0 authtc= authcc=
  route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2510240001
  definitions=main-2512030089
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251203_031506_144450_77475384 
-X-CRM114-Status: GOOD (  13.81  )
+X-CRM114-CacheID: sfid-20251203_031644_067997_2A6559A5 
+X-CRM114-Status: GOOD (  13.51  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -160,52 +160,29 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 12/3/25 9:36 AM, Krishna Kurapati wrote:
-> Add support for overriding Squelch Detect parameter.
+> Add squelch detect parameter update for synopsys eusb2 repeater.
 > 
 > Signed-off-by: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
 > ---
-
-[...]
-
->  struct eusb2_repeater_init_tbl_reg {
->  	unsigned int reg;
->  	unsigned int value;
-> @@ -120,7 +131,9 @@ static int eusb2_repeater_init(struct phy *phy)
->  	struct regmap *regmap = rptr->regmap;
->  	u32 base = rptr->base;
->  	u32 poll_val;
-> +	s32 dt_val;
->  	int ret;
-> +	int i;
->  	u8 val;
+>  .../devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml  | 7 +++++++
+>  1 file changed, 7 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
+> index 5bf0d6c9c025..8a9251ba3b54 100644
+> --- a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
+> @@ -59,6 +59,13 @@ properties:
+>      minimum: 0
+>      maximum: 7
 >  
->  	ret = regulator_bulk_enable(rptr->cfg->num_vregs, rptr->vregs);
-> @@ -147,6 +160,14 @@ static int eusb2_repeater_init(struct phy *phy)
->  	if (!of_property_read_u8(np, "qcom,tune-res-fsdif", &val))
->  		regmap_write(regmap, base + EUSB2_TUNE_RES_FSDIF, val);
->  
-> +	if (!of_property_read_s32(np, "qcom,squelch-detector-bp", &dt_val)) {
-> +		for (i = 0; i < 8; i++) {
-> +			if (squelch_detector[i] == dt_val)
-> +				val = i;
-> +		}
-> +		regmap_write(regmap, base + EUSB2_TUNE_SQUELCH_U, val);
+> +  qcom,squelch-detector-bp:
+> +    description:
+> +      This adjusts the voltage level for the threshold used to detect valid
+> +      high-speed data.
+> +    minimum: -6000
+> +    maximum: 1000
 
-
-How about:
-
-if (!of_property..) {
-	for (i = 0; i < ARRAY_SIZE(squelch_detector); i++) {
-		if (squelch_detector[i] == dt_val) {
-			regmap_write()
-			break;
-		}
-	}
-}
-
-We could also validate the value (if none found but property present, error
-out), but the dt checker already lists all the available values so that may
-not be necessary
+multipleOf: 1000
 
 Konrad
 
