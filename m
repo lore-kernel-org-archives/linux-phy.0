@@ -4,145 +4,138 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0C018D11707
-	for <linux-phy@archiver.kernel.org>; Tue,  2 Dec 2025 16:29:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ABB6ED1268E
+	for <linux-phy@archiver.kernel.org>; Wed,  3 Dec 2025 02:48:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mI8O3yJ6e5ycuTFVwLQH8W5gwwarD8jwl2sYwi4DZ1s=; b=jD6DQuaHhS4qQo
-	+JybbTK36ko0TAuQ7LgEsov/GaOicq2Q8VFEYz/Lg9JLilUQzkOLTUi3f9tbcb/BwRxSGl1Pf3QWM
-	5hSyOc2Aeyadq4VK0SZ5w6X4HW6ocYII4+fQ5bhAGgmBfYj/Qm4ZpX6/lGblAo7JZR2Pr8vnYSsgx
-	wnYAO5UyezD9iCnjv4bB4qzK7bUDYgizbDcqNLt6E6+U+a0gC4pu5Qb5V/QitQIkqVKz7CPNDtaJk
-	7kM3iq+zd2FmnVW68NOjpEDHMxOnrBkPXJgMvrOUjaidsTyznP+jYXalYaWkriFvQO44qsDJqzFc0
-	MKBttsbgcAYsBnYK2qkA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=40J6x/GHyRAKtVfc1dNK5FDu+Ar5gMRHagh9+J+eN9U=; b=P4m8cnWBIofSGH
+	trwholQFAa9PikCxqU+LZiY+swy3KHYfytYy1DCLjTQCuFhGWLe9cqBiBUh4IYQ0khoTH+0hWf40J
+	jYCmfP1XurMIwOM6SujSwUol7Q+7/rH48c6sHXA4hyR8C33TOZCLJc45kAsuAvBoheKx7VGlpLtlN
+	hZCSk7sEd+YOzT0cf9LEgt6TpiUGAsTnH9IXR4jXei97/n3j+VVpZlJu2yyUVkGx9ku7lu/cSoi8M
+	93FftKW7I01Ni1EMIQJBmYBz2VyO8wISHUsDizDLHn+XKzLXwFcHiGS2iLncoWE9Nym5a1VancUFz
+	KP4GjEdwKSLzHetS1aVQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vQTFt-00000005cZu-1A6G;
-	Tue, 02 Dec 2025 16:29:34 +0000
-Received: from mail-francecentralazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c20a::7] helo=PA4PR04CU001.outbound.protection.outlook.com)
+	id 1vQcuj-0000000630b-2LWZ;
+	Wed, 03 Dec 2025 02:48:21 +0000
+Received: from mail-eastus2azon11010032.outbound.protection.outlook.com ([52.101.56.32] helo=BN1PR04CU002.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vQTFq-00000005cZ8-2ZlO
+	id 1vQcug-0000000630F-0Ern
 	for linux-phy@lists.infradead.org;
-	Tue, 02 Dec 2025 16:29:31 +0000
+	Wed, 03 Dec 2025 02:48:19 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=Gc6mquv4iMFW4TQSRhJJXow6xjycyr30Tt1PFFPBoRNycutV0wNbE2ugU4WLTlYB4nQvxbcyRrXvDWL5sMuGD4/oeTPKN+zDQEduS+h4O7KM2S0oX0ItLuhWAyybmkEMB9mKTIkKkCxT0Kn6YfIr8mHUkZV9aDh3Uo0l8p1Pop73VF0Lr600AIHVpp52d4j4RjE5TVQzTdQPmjwX0KnWpPbUoKTkfa/1ljCHtfvzejen9N86avE+ccbBnscEaWxdTHn5mzZVa5ZGo+VIgd23q8aaOHl+lKYjCRkg3DkbPpm+Smp1ylDIlBgEm2K1/vWgWLspwfkhAxghMPFtJm18pA==
+ b=pTzFeOAgL63WkKeWJR4Y9jQEuOeu9uFZ2YalrRnnb6UcC67mazf3Phy796qGsM8KKMmyXuVqdXSQllo0dXQQQKZBCHvTCgt9ObnJowzWJ1++PHlrRDI6OV1/+zbOb/Woo3GwIsRZaie/wmmP6rRgZDaUP8VA3DJKNf+cMwCNcHW/vGz7n70KnIoAtNfsYCl0hfzJYi1WlP7PCqvAertiN2XSbCzmznwuaXsx3wQOINw4QkBsoXxOsLV6QzA3HTsa7xrY5tudaiyJ1ePPYhDJa30nHVT4pZuA3ucbkO13qE3q70iu7Yo6WaMwRMaa6xKB45TxAorVqRGwyfmKBKAgjA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=0T0qc8VDe/md1JSA3CNlRd5ah19e2yXrbkc8+3JYwBY=;
- b=KRQvwkA9HpVugnR9yO/esZrVEiNs3KJnepHuoG632DEnOs59mlbJAaEHSH2iSeYgZLwG+qjs27HrR2yVsi6yTqS5nfX5AYsqyD8kwgII+4JldAhxZbxZ58A+CLaqiR666XdHnjMumr39WLJDWgfWqvc5wmlFpCoD5elPMgH/36faWkJSoiiqK25F6Isk+OMqIz6FRKZcThyFTiFjd25kl9ngAhU9f0ru1O32faUaWZkbp7co1c0KIBdjL+F3ox8d1l0Q3oXv4nMq19+NZLIM1LEIYUP3asUWVaZ4d16xZAoWBg4toc4n1058ZAXl2ZmF3jiNpLRTWxZvqsf38m3SjQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ bh=jjABCVYLrfkiHKCeVChSpLKX9pX9Lj2R9q9O0S5jkdQ=;
+ b=XRF5a203tpxZGr/CUlZ+D1UvQCHiCEBA2Kd5UZqLR4X7fXR4gPQsWPQ1sKyiI/H5MhfLGZbCnySu+FKeZ4x9JRsllji1KWwN34W6wPp4dEqCG7g+o+r5DVIiXuI5iJxb3dVBC1swtpwJ5nhRFfbgF/xQ8v+I2Nyh4m6pl5km7Apxvf1l7oINCw6+awe/5V1yar8CA5prK92fVSOKcwkjuc9/dRTWSA2RB4HF3T7/CvqsCRtHQgyFjHeNDoFs7la3wQRn0QLWIKK39wtxJYaD6IR0J+z6iehgrWhor9u7rjRf8VHAoUOupQHJ36wXF9z5Nizr7Xhak704dp8jriH9vA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 216.228.118.232) smtp.rcpttodomain=kernel.org smtp.mailfrom=nvidia.com;
+ dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
+ dkim=none (message not signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
+ s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=0T0qc8VDe/md1JSA3CNlRd5ah19e2yXrbkc8+3JYwBY=;
- b=fd/d3Z3xiWU2SC4IlA7DXULfjc/UZ4LRLNlI5Ud+PTZfFUuIOrXrJ6J8ToYAxMvBuZX90ijTYhU5ffJtxT7fRIUonnOggG9M+jY8qoXNwa9Hkw74tf8OnCcy6i2AXoqDOAmcJN87wBBH+jPcw7DTxUIEgZKy1t+Ptgke0uwRwX+cOg5ZljbajZ/9AZ13zSrpZ/SdbhYeupDhC/U3EIpu5qP1NF3dzUr88a9/VfkjsVuz6bvlRBllvThLloiSBorjjKc7W0GLYEK0eLqBpOX800jumu5GZQ9JO98m1caPEA3E2RGGlhTmJ/pjS7/Vap3USMNYJvHBO6zXdCvAni1QQw==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from PAXPR04MB8590.eurprd04.prod.outlook.com (2603:10a6:102:219::10)
- by AS1PR04MB9582.eurprd04.prod.outlook.com (2603:10a6:20b:471::18) with
+ bh=jjABCVYLrfkiHKCeVChSpLKX9pX9Lj2R9q9O0S5jkdQ=;
+ b=AN4Ej6wr+s7ac3ReZhrGK8WbzCzcGqvNiiq2YsTOl5BAEiy80zkE0m9Z95z/ip5bZm3MIIgTyiHDCnzjxwamzgz+kVNgeCyJxbu5RBmP6D4Ix8nhQA0VEjHBZV35Bl/82V+90EZ+Lt/cgihR3mjBttOEV08nyrN+Qaik8usZGiaURHfmE1vgKavtIcHAMz5fkE2uSGrSVwPYEPXYMnDnM7VHRejGcOUt/ClarAWBRqlht5Bw62lEe8eL8dJDDMST7nge99RRAVOCL8Km7iIwkbwRbfzAamxz81m6g8WQb6eOoO2jLwMYXVHP1hoOCA2tKseGNOxWG3+xOzpQF9hbrA==
+Received: from BYAPR02CA0046.namprd02.prod.outlook.com (2603:10b6:a03:54::23)
+ by SA1PR12MB8968.namprd12.prod.outlook.com (2603:10b6:806:388::10) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9366.17; Tue, 2 Dec
- 2025 16:29:22 +0000
-Received: from PAXPR04MB8590.eurprd04.prod.outlook.com
- ([fe80::8cc7:661f:ab20:7d18]) by PAXPR04MB8590.eurprd04.prod.outlook.com
- ([fe80::8cc7:661f:ab20:7d18%2]) with mapi id 15.20.9388.003; Tue, 2 Dec 2025
- 16:29:22 +0000
-Date: Tue, 2 Dec 2025 18:29:19 +0200
-From: Vladimir Oltean <vladimir.oltean@nxp.com>
-To: Tanjeff Moos <Tanjeff.Moos@westermo.com>
-Cc: Sean Anderson <sean.anderson@seco.com>,
-	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>
-Subject: Re: Lynx 10G SerDes Driver on my kernel
-Message-ID: <20251202162919.ow53dn7c3x2lguqr@skbuf>
-References: <a95dcad3-c684-4c2d-834c-07e92132eb85@westermo.com>
-Content-Disposition: inline
-In-Reply-To: <a95dcad3-c684-4c2d-834c-07e92132eb85@westermo.com>
-X-ClientProxiedBy: VI1PR07CA0211.eurprd07.prod.outlook.com
- (2603:10a6:802:58::14) To PAXPR04MB8590.eurprd04.prod.outlook.com
- (2603:10a6:102:219::10)
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9388.9; Wed, 3 Dec
+ 2025 02:48:09 +0000
+Received: from CO1PEPF000044EF.namprd05.prod.outlook.com
+ (2603:10b6:a03:54:cafe::e5) by BYAPR02CA0046.outlook.office365.com
+ (2603:10b6:a03:54::23) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9366.17 via Frontend Transport; Wed,
+ 3 Dec 2025 02:48:09 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.118.232)
+ smtp.mailfrom=nvidia.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=nvidia.com;
+Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
+ 216.228.118.232 as permitted sender) receiver=protection.outlook.com;
+ client-ip=216.228.118.232; helo=mail.nvidia.com; pr=C
+Received: from mail.nvidia.com (216.228.118.232) by
+ CO1PEPF000044EF.mail.protection.outlook.com (10.167.241.69) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.9388.8 via Frontend Transport; Wed, 3 Dec 2025 02:48:08 +0000
+Received: from drhqmail203.nvidia.com (10.126.190.182) by mail.nvidia.com
+ (10.127.129.5) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Tue, 2 Dec
+ 2025 18:47:57 -0800
+Received: from drhqmail201.nvidia.com (10.126.190.180) by
+ drhqmail203.nvidia.com (10.126.190.182) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.20; Tue, 2 Dec 2025 18:47:57 -0800
+Received: from waynec-Precision-5760.nvidia.com (10.127.8.13) by
+ mail.nvidia.com (10.126.190.180) with Microsoft SMTP Server id 15.2.2562.20
+ via Frontend Transport; Tue, 2 Dec 2025 18:47:54 -0800
+From: Wayne Chang <waynec@nvidia.com>
+To: <jckuo@nvidia.com>, <vkoul@kernel.org>, <kishon@kernel.org>,
+	<thierry.reding@gmail.com>, <jonathanh@nvidia.com>
+CC: <waynec@nvidia.com>, <haotienh@nvidia.com>,
+	<linux-phy@lists.infradead.org>, <linux-tegra@vger.kernel.org>,
+	<linux-kernel@vger.kernel.org>, <stable@vger.kernel.org>
+Subject: [PATCH 1/1] phy: tegra: xusb: Fix UTMI AO sleepwalk trigger programming sequence
+Date: Wed, 3 Dec 2025 10:47:52 +0800
+Message-ID: <20251203024752.2335916-1-waynec@nvidia.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
+X-NVConfidentiality: public
+X-NV-OnPremToCloud: ExternallySecured
+X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PAXPR04MB8590:EE_|AS1PR04MB9582:EE_
-X-MS-Office365-Filtering-Correlation-Id: 936fdc09-91af-424b-4c1d-08de31bff333
-X-LD-Processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
+X-MS-TrafficTypeDiagnostic: CO1PEPF000044EF:EE_|SA1PR12MB8968:EE_
+X-MS-Office365-Filtering-Correlation-Id: 5cca15f5-6132-4be9-a57e-08de3216646b
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|10070799003|366016|19092799006|376014|1800799024;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?x6DJQBsulftm0xBb2pnj3c+/D8BKsqb7+a3OStajLPvuEBgtQn9rxqo0Gvd/?=
- =?us-ascii?Q?s6rvo1wyPzJbeSwgR8I4otC+pO8iBj2CKtzjFogSY8NCaiGiJCQZTDx5mnqA?=
- =?us-ascii?Q?ktzv1HToeZaWJHHKU8bEHXl0bbvAmaFtsvN6j4dLmFX8NvUSRQeJGjgAm7Tv?=
- =?us-ascii?Q?/WyfWeQJ0AD+U7nAULvFo0F7Bt7a39w8Sl5x3Bxk6nYRss1xJAmEISkXe3k2?=
- =?us-ascii?Q?veq2QHYIOoe6km/nAmu1jcqIiZgcbzJvBy6O8v/TVdIc2hYQ/JEyTKnrleXm?=
- =?us-ascii?Q?E+xvFKyF3wwfxw0BFQjG1uJaWpvmEy60202Hxj3nH/DHLc+FVLTniCVV7s2V?=
- =?us-ascii?Q?FZxNFWytZxTRamRnVFzA1HNKHCgB8N7+4ZJ4jcqgpdmzh+dvhycFuqibRS4B?=
- =?us-ascii?Q?Yk210hIKz7UvcAXzXF7wkZSdrrN8P6DEBHlok96v29+lc+1fRjFjBsGgVtdi?=
- =?us-ascii?Q?gqVtiwj3s5PGZlQguWi1Ar7FUCV1VGj+uPY4JwJvTZPx0Dx3gOFADdGOFQlM?=
- =?us-ascii?Q?w1+XzUzdZEXdf6nwo5Y+B8OvWX+z6VQyjr76digC9hwAdB7uBmFAzzHv3RF8?=
- =?us-ascii?Q?w9sxycC6l4aoEPG/B07Gmjb9r/LxLEhKRki1x6l/ipGNuL0SMI0FL145oiaK?=
- =?us-ascii?Q?i/CI+eU4jaz3Icz2xjz1EpMgAQfqs/IinOkLO2zelyFn18iDrtyVPpnKRgaN?=
- =?us-ascii?Q?rZ7t98Of4f/PZFQNueeCTI1o5JPn9L4CbGvQTDfnY/em2Ihh3qTjIAj55Vu1?=
- =?us-ascii?Q?4UiICziX9aTS94EQh5Yu85UzQvq6nuq6NF2AGDrF+uYQwO1EcTq4GokCb0WM?=
- =?us-ascii?Q?1f2JMHRsw/bgh41fZ+S9JUgFVmpDT/Esnp0u5JzZQEHr/0VulCV0hJ5JE4cH?=
- =?us-ascii?Q?rwqPe4NFIKZhxNsHA77sJ4ZX2wdWjFSoSo24Ix/6MLDC2P5jRN8ldyhxNN9R?=
- =?us-ascii?Q?qgStR4Zy3F2RbhCaWxN6HNtXJa0hrcrVJaDI7WjZUtf2hvRlkXLfeCCiJg8M?=
- =?us-ascii?Q?viwQ6Y/BJ9e9n7bSof5A5BaH86wlRfB0lK4XmD5C0HbWi4IhsW/ZdsF6kbrS?=
- =?us-ascii?Q?NyJZdIjG7vu4QPJtHRpb402M+0JyQ4fq0Ca+0yJ/Kgiv9YcOFLTzjbuwu+vq?=
- =?us-ascii?Q?RKmeeaj1LYsqP2tjQJylrGyjFXlWyuaXahPZ+gjT8ddWkyEF1RJQpzHVHbi6?=
- =?us-ascii?Q?7PwOT1CYYBhXoAelIZY8VeipuOPmO+u1d+eLRe85SBu1by7sCzqSprYeSVfz?=
- =?us-ascii?Q?Q66VsJ9plvK2qocJBiNvh2U5eS9sMuBKFcQbbxqkEn5d60TA2KcoQkufMzsF?=
- =?us-ascii?Q?7LoX8HLTzBU3w7yNhXNNp+HkYWJrQSGdDWflSv1NQipnF9ojwwR1uaQq0G71?=
- =?us-ascii?Q?bK32dYOCdPqRgRwjuLtkS5RHRhUXs/rg+GNz09LjWR2vdReSC94nh617j6HA?=
- =?us-ascii?Q?GZ5NRqiH5NRRc89VklaxdCTIYBZHCarmanu3KmYPxHFhzAm9B9OAGg=3D=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB8590.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(10070799003)(366016)(19092799006)(376014)(1800799024);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?7D+FgdAkATOe+7rnOG3OPITol1w3qyTpRmf3zJa7qGJajMcBGgtEAL9iRO0J?=
- =?us-ascii?Q?+xy+zvdNj4sPdO5ybdo/jJZ6TkkKFfkoxEB6P9fogITsuX/gjAc/baZRUciy?=
- =?us-ascii?Q?SGKJB88FpgtWZi2Q6sCOPAMRw6GlvTkNaJ31q5jRuq5ZSK8+OF4FSlihCd3a?=
- =?us-ascii?Q?ooW0UEAOAm+5ExkHHt/X9Jrqphg9BjFN3HirkZXcEjiKAkxEPTRoA3EeTLy4?=
- =?us-ascii?Q?fXKBMNJDMzCa2iqcaFlXfnGFQLogsOH7Pn6lUb5a6cFBU1UDcnjumNCo6Hph?=
- =?us-ascii?Q?oNRMBYH0LfmOZ3ZSXaw5u/5M+dUBNA5QCrznSMxU4SNywOJCFFi0GSNpB+M9?=
- =?us-ascii?Q?McDs8KsLNAzAxpydBhTv0j2IAPj2y8OHvXB+CLlaLjEsg7HVrtic/pBrONWW?=
- =?us-ascii?Q?AZhttk+BgLIxfRXT/18DjjvSczUCHRm7yLcLFU37ibUtObbBvd+aguXfpPJI?=
- =?us-ascii?Q?K7MpxFhxXjimXgJEdP/zJiZuOOcp1lLId2QtO+tFTDXaoBnb3ik2mfEayqYi?=
- =?us-ascii?Q?A4+lXue0pP0laooHM9dTl+dnqUt9XQzCpQF663noI+h8G3kz6FOIA6M4X0lU?=
- =?us-ascii?Q?IE5YCRDqfDJRndP4nUjBeySKIuly/v/QpEuwkVIcr2kgo4dkKn3xr2rIs2Ma?=
- =?us-ascii?Q?zzXmGV9xOG9PEzP0A4avwSUICDdStkjL7t9fIY/ruDS8bnmbAx1lYg3GETAc?=
- =?us-ascii?Q?nert/Kt0bWkf8N+8ekmAU4z0jKifsQIg4VFxO08o91ELL22mcXuF6FkUeHcu?=
- =?us-ascii?Q?QIbwqUvi3NBXSDcBaj8Hbf8/YzbM92Q02SKo1Szjudov2OL1qB6bWk6ofVwK?=
- =?us-ascii?Q?f8vcTDyPtcWLIhOadOnGkFphy5AyvEJTzILoYOOD6I/j3zxkhRO58Woow1RF?=
- =?us-ascii?Q?OZf6qSxUVgFaEkO8Icm7UOAm9Fd+ETqVm5n31yt1Kuo22cA+edwXoCxlbpB9?=
- =?us-ascii?Q?HOJYJkwxNijEnAM8nTk6oaBfKRzxnzNdUlX0Fl0CG1NniZogB0nLk4tMQGn+?=
- =?us-ascii?Q?vvkqN0272d3BhszRYVol51OBUcMj6mv/5NYpGCnYEJNFX0nCxuGpstY9KOtO?=
- =?us-ascii?Q?qxUP0PJAzljXfR7+SwRY4bKmdYILgvjiE5setDlgoAT5dZl7QDcUTXA4dq1Q?=
- =?us-ascii?Q?xnYh2ll6wtVBEryP+2QqPP/tOyCtN2STSBlhynb8RAgDcdyaHgNiFo+c7GVE?=
- =?us-ascii?Q?HWv5mMDG/d7YDx4td3mzL7+CMkhm39YNuSePA1OwFYbAUWlTvcONbvIfcaSQ?=
- =?us-ascii?Q?vkJs0udRDq6sa11Bia92LEy7ScC4PhDWX5EIgUuewD3wgW/JccOYivVxdPYS?=
- =?us-ascii?Q?Hbopd3i7YmSnT9UFU11d84urIUQXDaCVl96IkVspFKCa/j121C96fVpR9rG0?=
- =?us-ascii?Q?vn8Mg3hUBF6TixMHHkxT9iZDa0XAvdxgIvLNg8OO9UHUnxp9MSESa4A/tZWn?=
- =?us-ascii?Q?OZoxmTYh6bVB9QuoIsIsPNA51NdiAUYZhyMv9tWKtfz/AxGw46Sr1FHobPCR?=
- =?us-ascii?Q?tpNfXIsWvF7m2oMuy6U/JLvorpR/goxRudZg0fEzpvzxDTPjNkFzB3hAgwRi?=
- =?us-ascii?Q?RZCzApb8jlaNzxDRZa9Mlb7qdhty3ODz38gAhAoq8HA6Pbjqd7qvrEyRIAix?=
- =?us-ascii?Q?DFQgLBiWzRLGxLCfQv5luCU5KJ7G2iIkaulhCPLTXd5V+i52JMoO9u/MpW3F?=
- =?us-ascii?Q?G7jhXg=3D=3D?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 936fdc09-91af-424b-4c1d-08de31bff333
-X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB8590.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Dec 2025 16:29:22.3705
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|36860700013|82310400026|1800799024;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?FxFWOQbJ9+r3v5msnbP+/suqmVjiHWruC0/OnOxl9X/ojSjunq2y0WfKBKM9?=
+ =?us-ascii?Q?lWW4SyUCib/4polPNt8dw4FItPgcl4afQ1fW0j0Nj1TXrsInPgcJ4kxxxS0h?=
+ =?us-ascii?Q?FHCqD/Q+TQnmHe7YIdC7o+g83FWkiY+9Kh1g5aGQY8O8OIYZgSKz5UZRAK3h?=
+ =?us-ascii?Q?qufrVnqRq83OuGzIqBvjhY8RvOoggwfiJOIckSTrhCRdGaKmSeYkaFv8sUyH?=
+ =?us-ascii?Q?0s5K2EWRNMkktU+1p47QIS3vvHjYo92H8a++4A7UKBjqRtjYEEGtyuIt6n8g?=
+ =?us-ascii?Q?vorq9osJp4OpgSv/+jjR0WVJ1JN6WVUue58IYFg9pGeD+aZhPY9O6BsMtpP8?=
+ =?us-ascii?Q?pKMVTlrev1WLaSJRZ2CXklMAlNvyapaZ+nGsYuO38+rGjLKyyQOguLirS8Ip?=
+ =?us-ascii?Q?K/7rERx4RG3aY+qY0yk2MkFrNzAQG5y4tZEZ0kHwgWeEWMWJZPoAwIbaqP7P?=
+ =?us-ascii?Q?3vVQFZoNDwX6ZyBSLA+6WHp+ydU3STPfA90U4pQtWopW4Frb/bmsC8BKkWin?=
+ =?us-ascii?Q?UaHsuMAMF/iPxAW3NlEylrNKc+JN0y3XWmWH/s4SQfn5ywnz7fKF0v9gZ9C7?=
+ =?us-ascii?Q?EKQh1XyEBliaarzYCJ3KSehZ77Do4eBMto19piN68qanGvuxQkrkp7C4RSms?=
+ =?us-ascii?Q?5zGzPvzcn2Nq6u3TFHYVsHqsruFY11V3XXBPpGXJEclHKYSlklpTUpzrKGFd?=
+ =?us-ascii?Q?feF2Cw/fVt78LQIZczQhSjJYLq/u0VAWX4eNalP8HccDWL04jstMfMVhjJph?=
+ =?us-ascii?Q?j9udaOv5YwWUoS1C5uWF80rSNXl5F7V0XAP8sC5Roe++lkuK9eTjsuLXJoPH?=
+ =?us-ascii?Q?OKeliLDVxv1W2z9S4Ooa7UIOGlBf1ODwFGjZdAPbjq+UqfDizKj/k+960qRL?=
+ =?us-ascii?Q?3FcW4HeRXu+usSAh/YvoC5HyhgCdx0ogBbtrMOZFIEj3imdQCpJJsPQY12Fc?=
+ =?us-ascii?Q?UXLz2GmOPHplCxO5UQnfkQIP3kU/X3CGVrjeURuhFrymyfT1l/E5tZhBZ4Bv?=
+ =?us-ascii?Q?jLIfGy67UzHSUuRWnVtStFFYpTHIdSelBcWoytF2djSvB5TgcEoecVjBIIiJ?=
+ =?us-ascii?Q?8xaDgw427WRHkFMG+zZelcSGDPJHh3aX11g0y/Fem4U4BzV6UvFx1jDONYPj?=
+ =?us-ascii?Q?BNBh/Z4c0BsKIiFM4hwqz/TJ2tkLdr4nYvAqn2X04gfwHcZxAJ8hxt7qtT/c?=
+ =?us-ascii?Q?rcEdAdUQ2cXKlMHJCvWCtlBePOAAwoU2Y+hqqT8zDf5Oass2baHVmL2O0u35?=
+ =?us-ascii?Q?fClHnZe8IQTy/WLfkDw4a2Wc8eFNUfpUo/C4rixWe8R9WGjT+ebPwxmzzwkC?=
+ =?us-ascii?Q?riLlRTQxa5KIq1qKM5Gp4H/1yYMuECvcHcnJjVSv57EE6GISf8dCgmjM+ipL?=
+ =?us-ascii?Q?sdX0aRlndwUWpZkhh1WBIgnWztc/QwAM6ZpmTFfxewkJxBrnpd86P5gOfgMj?=
+ =?us-ascii?Q?ciFSqXkDd9rwAZCnxiGS7ajl96Qg6ieX+Ue1M0RE75yIr8WeamKCxEWYQJ56?=
+ =?us-ascii?Q?260CfV6YCB5pnPl+nWleoWvWjFcbZHtYPIp5pb20DjWMXUSz/l3ie5mJcxeh?=
+ =?us-ascii?Q?0cbL83BBSSiS4kHwyIg=3D?=
+X-Forefront-Antispam-Report: CIP:216.228.118.232;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc7edge1.nvidia.com;CAT:NONE;SFS:(13230040)(376014)(36860700013)(82310400026)(1800799024);DIR:OUT;SFP:1101;
+X-OriginatorOrg: Nvidia.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Dec 2025 02:48:08.8284
  (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: hUPHzli8SUmvklHqDcxsLce5Z5tOJrpn3H01zoSwR1rkYFIgBiB5zRfZAnK5WJ4Cq5cGIzTLat0zVjWl9ktdpw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS1PR04MB9582
+X-MS-Exchange-CrossTenant-Network-Message-Id: 5cca15f5-6132-4be9-a57e-08de3216646b
+X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.118.232];Helo=[mail.nvidia.com]
+X-MS-Exchange-CrossTenant-AuthSource: CO1PEPF000044EF.namprd05.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SA1PR12MB8968
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251202_082930_655497_9722F20E 
-X-CRM114-Status: GOOD (  25.41  )
+X-CRM114-CacheID: sfid-20251202_184818_111034_AA068D53 
+X-CRM114-Status: UNSURE (   8.43  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -159,91 +152,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Tanjeff,
+From: Haotien Hsu <haotienh@nvidia.com>
 
-On Tue, Dec 02, 2025 at 12:12:26PM +0100, Tanjeff Moos wrote:
-> Hello Vladimir,
-> 
-> I want to use your Lynx 10G SerDes driver (plus fman and fsl_guts) on
-> our OpenWRT kernel (6.6.110) and don't know how to integrate it properly.
-> 
-> I only found the driver in the NXP kernel[1]. Did you send patch to a
-> linux kernel mailing list that I may apply?
-> 
-> Kind regards, Tanjeff
-> 
-> 
-> [1] https://github.com/nxp-imx/linux-imx.git
->
+The UTMIP sleepwalk programming sequence requires asserting both
+LINEVAL_WALK_EN and WAKE_WALK_EN when enabling the sleepwalk logic.
+However, the current code mistakenly cleared WAKE_WALK_EN, which
+prevents the sleepwalk trigger from operating correctly.
 
-(I'm unsure why you CCed linux-phy, but OK)
+Fix this by asserting WAKE_WALK_EN together with LINEVAL_WALK_EN.
 
-Picking the right base kernel seems to be of utmost importance. From
-what I know, OpenWRT maintain their own kernel version and don't use
-vendor kernels (they import patches from vendor kernels as .patch files,
-however).
+Fixes: 1f9cab6cc20c ("phy: tegra: xusb: Add wake/sleepwalk for Tegra186")
+Cc: stable@vger.kernel.org
+Signed-off-by: Haotien Hsu <haotienh@nvidia.com>
+Signed-off-by: Wayne Chang <waynec@nvidia.com>
+---
+ drivers/phy/tegra/xusb-tegra186.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
 
-I see this commit in OpenWRT:
+diff --git a/drivers/phy/tegra/xusb-tegra186.c b/drivers/phy/tegra/xusb-tegra186.c
+index e818f6c3980e..b2a76710c0c4 100644
+--- a/drivers/phy/tegra/xusb-tegra186.c
++++ b/drivers/phy/tegra/xusb-tegra186.c
+@@ -401,8 +401,7 @@ static int tegra186_utmi_enable_phy_sleepwalk(struct tegra_xusb_lane *lane,
+ 
+ 	/* enable the trigger of the sleepwalk logic */
+ 	value = ao_readl(priv, XUSB_AO_UTMIP_SLEEPWALK_CFG(index));
+-	value |= LINEVAL_WALK_EN;
+-	value &= ~WAKE_WALK_EN;
++	value |= LINEVAL_WALK_EN | WAKE_WALK_EN;
+ 	ao_writel(priv, value, XUSB_AO_UTMIP_SLEEPWALK_CFG(index));
+ 
+ 	/* reset the walk pointer and clear the alarm of the sleepwalk logic,
+-- 
+2.25.1
 
-commit 6942ca412124a1f322e19e2289a59ed8e27b9c24
-Author: Pawel Dembicki <paweldembicki@gmail.com>
-Date:   Sat Nov 1 23:36:36 2025 +0100
-
-    layerscape: switch to Linux 6.12
-
-    Linux 6.12 has been validated on Layerscape platforms, including NXP
-    reference boards and multiple custom designs. Tests covered system
-    boot, networking, storage, and common peripherals, with no regressions
-    observed.
-
-    Enable 6.12 as the default to continue broader testing and integration.
-
-    Signed-off-by: Pawel Dembicki <paweldembicki@gmail.com>
-    Link: https://github.com/openwrt/openwrt/pull/20614
-    Signed-off-by: Christian Marangi <ansuelsmth@gmail.com>
-
-To integrate the Lynx 10G driver, you'll need to do that on your own as
-patches. The correct git tree used by Layerscape boards in Linux Factory is:
-https://github.com/nxp-qoriq/linux/tree/lf-6.12.34-2.1.0
-
-My strong recommendation, assuming you want something stable, is to
-integrate the NXP Linux Factory patches, which you'll receive some
-official NXP support for.
-
-The rest of the email is just for the sake of full transparency. I will
-be talking about my development work, which I strongly recommend that
-you do not integrate into OpenWrt at this stage.
-
-The SerDes patches (both for the 10G and the 28G Lynx) are being
-constantly reworked in an attempt to get as much upstream as possible.
-Since the 10G and the 28G Lynx SerDes blocks are very similar, they
-should share a lot of code. For that reason, adding a new driver for the
-10G Lynx depends on some changes being made in the 28G Lynx.
-
-I am keeping a personal development branch on top of linux-next here:
-https://github.com/vladimiroltean/linux/commits/net-phy-upstreaming
-*However* I modify it frequently, *and* I only retest those
-modifications rigorously when I need to (i.e. when I need to submit some
-patches upstream). I am doing this because any time I am making a change
-as a result of a review comment, it has to propagate during rebase like
-a shock wave through a huge stack of dishes.
-
-So if you pick up the patches from this branch today, there is no
-guarantee you will find them in the same state next week.
-
-The bottleneck is on the patches being accepted into linux-phy.
-Currently a group of 15 patches from this development branch have been
-submitted to the mailing list a week ago:
-https://lore.kernel.org/linux-phy/20251125114847.804961-1-vladimir.oltean@nxp.com/
-and that's about it. There are 22 more linux-phy patches on top of that
-to be accepted until mainline gains some support for the 10G Lynx. And
-that isn't considering:
-- device trees, which are also waiting for the acceptance of the driver
-- networking consumer driver changes (I'm moving SerDes handling into
-  the Lynx PCS driver, in order for not just dpaa-eth to benefit from
-  it, but also enetc, felix, dpaa2)
-
-Out of curiosity, for what platform and what use case do you need the patches?
 
 -- 
 linux-phy mailing list
