@@ -4,208 +4,147 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7F36FD12D4A
-	for <linux-phy@archiver.kernel.org>; Wed,  3 Dec 2025 11:41:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 28BE6D12D56
+	for <linux-phy@archiver.kernel.org>; Wed,  3 Dec 2025 12:26:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:References:Cc:To:
-	Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=uyGqA94YlDhZ5XEbj6cs5VWQpC9V45OsHcr4UEZ3iZk=; b=YcBO5P88vS9vTtaxQEZksCFgcr
-	O7+6jPSL+rzT4ROuFnsAR6sN26+PB0sqFD+YFixDoI4AD7mRjgOKjiHU5eVR2FSAmcHDdinIpWFyz
-	dTSEklUB9eKuxcu9vHHVst6ICo9Bz9ojz7pFq/6qH0b4EWCtZw6Xjj8i+5gyVr1Ip2k6uX4LhL3fF
-	rCpJJNCOIhznnCeBb7k9PbeuPPA/f1bcCxFq1sjn9/vO0+ZD1TrP7LxQJg2UgHpaIsYj62z+2Aqwp
-	oBOsyW9PriStBvtMoFTkXvhZYrWS0YT+huGS8NQFIlBB1d+KKnTnI8RtlBwOJTKw6JKB6cYIF7lQm
-	ebhWPhPQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KmVZd+C2U1RQ3Qp1rXAdFivVAb81Ah3QrzGkHMObuew=; b=Ndh6TCycyo5/Yf
+	do0pMN0eTAN2fIA2r7emVs99pTWO136BsPZBCliXvQfiWVrgSKG7xxlMmOfdCwLFIUW4SfvVj2wY9
+	OpUhpCHebyhnbID25Va8n0IHQuxNJVuVaxy/hlfQLvllElOT0F7sKEw8LrOJU5bizay3mQh5ozJnl
+	XFinirXJs0JOHyyTSRtLfqK5w6fin+5LlneHsTkJlOScpmjTBo9YC4JBEH8Cn79NMcIW4H9uZOay7
+	pZ7dHoCOXgu2h+pF9UxV/r372mF0PuTePhplfDrL43GDAcOVoiW1cR6H+3ajoDMUoBExLtxE1aNPs
+	8VSE5MhJMoaIMNsS1h2w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vQlEe-00000006VfC-2Sku;
-	Wed, 03 Dec 2025 11:41:28 +0000
-Received: from mx08-0057a101.pphosted.com ([185.183.31.45])
+	id 1vQlvw-00000006YmK-2U9m;
+	Wed, 03 Dec 2025 12:26:12 +0000
+Received: from mail-westeuropeazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c201::3] helo=AS8PR04CU009.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vQlEb-00000006Vek-15nL
+	id 1vQlvu-00000006Ylt-1sGq
 	for linux-phy@lists.infradead.org;
-	Wed, 03 Dec 2025 11:41:26 +0000
-Received: from pps.filterd (m0214196.ppops.net [127.0.0.1])
-	by mx07-0057a101.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 5B3512Sp2907141;
-	Wed, 3 Dec 2025 12:41:20 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=westermo.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=270620241; bh=
-	xpE465sry/yizfzeWPBcByoiykyrb5vTkqhgJczmOLA=; b=m8nNwNJWYuY0pGnl
-	XAFWH7cGOgQ+g0rzgpbEZMWVzMyGwCAN3evzkr9aLp9a0G6j1ONLCpMuzun9fTl1
-	uZXD+sGUETa/RRApyCuc7Hwi7WBQNcLr3cAst2Q+SY7IsPVFkAW85ozXK94GZxKY
-	k2/7Yagd0eKfUS91lSC76QNDVhhsHcmjUiAHdgisLDzZ7JO1JJ+QKbG9mraJpQvh
-	sSbW2wUuLJPbnAhvmhN0OR4jL/7WddChH2TjzTWtDHi+HAsEiNpEkTI5SX9Y83uQ
-	e2zDZxwnYfySXMe0LJE7z1wv1gXyNJ1KROBW7T7LEg/97W2Mx/Pv+IFuj1OZL6i4
-	gakR7g==
-Received: from am0pr83cu005.outbound.protection.outlook.com (mail-westeuropeazon11020087.outbound.protection.outlook.com [52.101.69.87])
-	by mx07-0057a101.pphosted.com (PPS) with ESMTPS id 4aqnq4utph-1
-	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT);
-	Wed, 03 Dec 2025 12:41:19 +0100 (CET)
+	Wed, 03 Dec 2025 12:26:11 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=e1bH8RCjiPhMvQWCDJ1/XtL4kRM2yPqS1Lx3kPg5ST+6ez1bGeIaaD3lziJkInOZWksPbWjAtJrHe2PJ8R0BROw6Cgon0SRJ1KxcjoDTuxEtaLpE3+8IMO/vN8fe81e0jRNAX7vouOUSESkVh9cIF8Uwin2BdBfHIisxEYcDc2K8pd94PbP3uLHcsMVQy05hYui1QscHFIUg/aetpGbGvktkW2X/rlUDIorTx9nZl3v6LBsZzFPcrahTqnetcmVN4AqFDna9NSW8eq866miGFMOGkZWggqn8owWcW/WUkcmVLKS4iB1OxoAQ7RnwNeIkHt+nY+5hoS6ourvzlHTheQ==
+ b=c/X7VamT4pwKyGCW1K5d/FrfnEdjAQr3pNF8uA7yZEls3dWeHXpX3rPE5/ZVoXl27qsuaE4lVxu9BnfJTMO3GSTDbeJaValltOeO8FAwyTje0AIXTwRfN541dnm53Pxz56VsjYaLINaW3m+F5CJrePqOCjRq9hVl74MrN0wh+K+yVjiIrDv3Ngu1EBhwSU1OJ8t3yH4EcPBFmSJnub5CMxtTVWgZHut0XLPyQS82MtoXpnW35RIGmk/ERpRIjrfO3Po6lWM/A0J/MEK+tGkQtLIYZNqeOVkIHcBNL52KCILoG8BqiuE+5Y8ESFBps/g/0WYemP1Q/Ld2v7T+0OZgUw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=xpE465sry/yizfzeWPBcByoiykyrb5vTkqhgJczmOLA=;
- b=DN14ZpV1upt/oJGqH4rGdyjzBotslLpFDi7UfQby5+VbL8SrMkBCreGFOh231w3IW/RHmjx6CcHUJ+OBsI7vrrlh7QvRrSJIPuUp1algOkesUcKzOcEBuGm5hb0iptBMNlz1379pFYV/GhYh1SeXIeOnD+fIDYeJuOo8sKzNwyZguiGJkFS+ccx9LDhrhNH6n7x/NV/aW4RmoRQuX28dU1dAO7XmvJXc94btxmbBojq/9rH2nrTVVL5qIqTZDtj463oLRldwonIrA5nuYUwTA4I9KxL038nhUZGVcMllKwLJsHO2jDQU//rpGl/Dui7ClnyOw0mfolGcNjIRhXYAqQ==
+ bh=9JG+byJaWMmyqo2p+WVG0DZkNlx9EeiX+qMFGKu7RDI=;
+ b=f+mJvMzJqOwIJ1k9OVvJ+InVg50fken3lq9BqUi8zCl+d4fN3pt6SJ296XnvKJhhFwSaJvUqQQkm5hK0a/GfLtPti4Bo8H3XzcsM/IFm9Kr2WCq+clloLKaW+1IGHGXA0JiMycuhFkrocGM3v4KuUkacDRexB5vlCwaciFtWZBpD3csLI+v+u3Wyzcxsioxx1ELlWms4+n9yA85ONI3lf555ifu9uYktxsUhd7R2Z2PeOPCX/1VxV8k7DSO5mLpBfo8fLITlOX4z5FzGqzy9TZEHOI0b3Jj+RB3UoQDnTRQ+EgR9rsZkq0IPQasnThXr30pNi0U8/xnAD81yeFTtrg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=westermo.com; dmarc=pass action=none header.from=westermo.com;
- dkim=pass header.d=westermo.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=beijerelectronicsab.onmicrosoft.com;
- s=selector1-beijerelectronicsab-onmicrosoft-com;
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=xpE465sry/yizfzeWPBcByoiykyrb5vTkqhgJczmOLA=;
- b=IJ36+u4WV2j9nOGKYCXXjXDacIRWtxLHzbuxHbfCzjxcI7w1O6bbX2FSRnfPvdOGizIBjaGvHbCNCKPeOjWvVHIZ5lfkOLfUCuZZoB2SD291DvxNY/yWYQRAYvRmOmsPygjvy0yBMdUZxOXF8LGSlv4WaGLpmFzbMVaMBCrbLFI=
-Received: from DU0P192MB2856.EURP192.PROD.OUTLOOK.COM (2603:10a6:10:5a2::5) by
- PA6P192MB3325.EURP192.PROD.OUTLOOK.COM (2603:10a6:102:513::13) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.9366.17; Wed, 3 Dec 2025 11:41:18 +0000
-Received: from DU0P192MB2856.EURP192.PROD.OUTLOOK.COM
- ([fe80::2fe7:101c:b862:7313]) by DU0P192MB2856.EURP192.PROD.OUTLOOK.COM
- ([fe80::2fe7:101c:b862:7313%5]) with mapi id 15.20.9366.012; Wed, 3 Dec 2025
- 11:41:18 +0000
-Message-ID: <a1dc8a14-56f2-4082-8081-0e29e2dbe35c@westermo.com>
-Date: Wed, 3 Dec 2025 12:41:16 +0100
-User-Agent: Mozilla Thunderbird
-Subject: Re: Lynx 10G SerDes Driver on my kernel
-To: Vladimir Oltean <vladimir.oltean@nxp.com>
+ bh=9JG+byJaWMmyqo2p+WVG0DZkNlx9EeiX+qMFGKu7RDI=;
+ b=P9allcY4Wtufrq6/fgmrZQkGwdTXftl/uVCn8m+5yiEfxmy1wXnfHrNMaG+iZPGzXgBhOXAiSbAH5X+ZsUSBU3HJ+N/1A8TkJqx+wWInMEVNEmLzBlwqYxiYGtX9GCoGt5Wkx/tO5+VTELoWzorNVx6ybGbWfgGeiAIlhK+5uO2e/EwWRLL+jIKdDxm+TvBEYdt6NsrDF888uPH+CTzjQmcz0aHtyW/nFzeRfujfd+tikuVelNS0lwo2KNqh6egYep3p7GcJegrxf+At0R4l5eAHKJlnJtsflj+ti7PvFw3ipBhXQUtoNJa1/Mba3cqm7XKwxoaODuYLx7Y4SVIA2w==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AM9PR04MB8585.eurprd04.prod.outlook.com (2603:10a6:20b:438::13)
+ by AS8PR04MB8835.eurprd04.prod.outlook.com (2603:10a6:20b:42e::21) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9366.17; Wed, 3 Dec
+ 2025 12:26:04 +0000
+Received: from AM9PR04MB8585.eurprd04.prod.outlook.com
+ ([fe80::8063:666f:9a2e:1dab]) by AM9PR04MB8585.eurprd04.prod.outlook.com
+ ([fe80::8063:666f:9a2e:1dab%5]) with mapi id 15.20.9366.012; Wed, 3 Dec 2025
+ 12:26:04 +0000
+Date: Wed, 3 Dec 2025 14:26:01 +0200
+From: Vladimir Oltean <vladimir.oltean@nxp.com>
+To: Tanjeff Moos <Tanjeff.Moos@westermo.com>
 Cc: Sean Anderson <sean.anderson@seco.com>,
-        "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>
+	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>
+Subject: Re: Lynx 10G SerDes Driver on my kernel
+Message-ID: <20251203122601.72cwwpsp6loqpkpj@skbuf>
 References: <a95dcad3-c684-4c2d-834c-07e92132eb85@westermo.com>
  <20251202162919.ow53dn7c3x2lguqr@skbuf>
-Content-Language: en-US
-From: Tanjeff Moos <Tanjeff.Moos@westermo.com>
-In-Reply-To: <20251202162919.ow53dn7c3x2lguqr@skbuf>
-X-ClientProxiedBy: GVZP280CA0045.SWEP280.PROD.OUTLOOK.COM
- (2603:10a6:150:26f::16) To DU0P192MB2856.EURP192.PROD.OUTLOOK.COM
- (2603:10a6:10:5a2::5)
+ <a1dc8a14-56f2-4082-8081-0e29e2dbe35c@westermo.com>
+Content-Disposition: inline
+In-Reply-To: <a1dc8a14-56f2-4082-8081-0e29e2dbe35c@westermo.com>
+X-ClientProxiedBy: VI1PR04CA0104.eurprd04.prod.outlook.com
+ (2603:10a6:803:64::39) To AM9PR04MB8585.eurprd04.prod.outlook.com
+ (2603:10a6:20b:438::13)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DU0P192MB2856:EE_|PA6P192MB3325:EE_
-X-MS-Office365-Filtering-Correlation-Id: ad07d238-d3db-4c8f-c369-08de3260df75
+X-MS-TrafficTypeDiagnostic: AM9PR04MB8585:EE_|AS8PR04MB8835:EE_
+X-MS-Office365-Filtering-Correlation-Id: ad5c411a-90e4-463a-cdf4-08de32672062
+X-LD-Processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|376014|1800799024;
-X-Microsoft-Antispam-Message-Info: =?utf-8?B?WDQwWXZScEFqeGV6YXQ0V2Rad3pxb0Z1T3dzNm1vUUtUOXNvWHFQc3RLU05j?=
- =?utf-8?B?WDhCUFB6K1VMOGJWUENJNm5zWFA0ZXdFWFBxTUY2djVmY3o5aklwU2d2c3Nh?=
- =?utf-8?B?TzdkT0Nhd3hnZ1IzenhSQ0taUlJWU1MzYUQzb09VblVFUFUybWZZc3hMOTBY?=
- =?utf-8?B?b3pCektIUTZRL1IrbktNRXR5ajBsOVpnTTBna2RlaFVxUDROWkxMNGdFUjhS?=
- =?utf-8?B?UTY2N242YUNVaEIrZmVtbHcvUXVaTktpSi9RZk5hMkdkeTc0VittRTdoUVFu?=
- =?utf-8?B?ZU9FRkVldllpTEJheWRha2g1am85NS9zSyt4MGlpd0t1WXZqcG5DY2dUekJv?=
- =?utf-8?B?cmVYUlA2cUZHSXhoeWdwbFF3eVByTHh6RDV4N21JUkYzTXNQY3E5blBkbXFW?=
- =?utf-8?B?RWs0akpGYi92V3BDQ25PcVhQNURrcGZvM2ZlRjZSTUVodVlMMVdPQjRjSHhH?=
- =?utf-8?B?YmY2TWtWZURGaGRZMXJqTmQwMWJveGRqbk9ZTHFrVjVobERVRS9UcEgwTHY3?=
- =?utf-8?B?Slh2MW12YnVyTVlSQ3dWcHNqTkZBY2c3ejl5dEhTSHg0YlIwMkVqMi83bzM1?=
- =?utf-8?B?U1NHUWNFYkwxNlZYR2FpLytaZFhkaStmbXc3Y3N3dlpHd25aVHZvOStJTGZI?=
- =?utf-8?B?TlNQamJrSG9TVU9qZEV0bU5wcytuMVpUMlJ1cExndHlvZnc2WlZYNHA4Qlph?=
- =?utf-8?B?SFpxdzRUTjA2WFd4aDlGaEM1dG1KSjZ3WENhbVREdkFranZNNER1M1ZZNzV1?=
- =?utf-8?B?anFZRzdLaVBqU1Zzem9pT0Q5dUh4RUZnM0FuUklybS9XNmhkVlRoWFg1RHVj?=
- =?utf-8?B?Nklxa2pFeE5QTjcvZ09iUDlEK2xYU0lRY3JqQmpicDluVTlySlk2Qi9PcGky?=
- =?utf-8?B?Rldma0YrdjR0NU1CUHc0UTZGeGpKdnBxSENrVjNzbm82bWJMcEpiek5SMXVL?=
- =?utf-8?B?b3JSTWZjK3RzNVBNaEZTcGtrMXRMVU1XeTZzcGFTTjllOWhValRsVUdiRDZF?=
- =?utf-8?B?Wno5V25VRXVqcGp0WS9Xa2V2MDJqVjBFMk9JREJuS01GRzRWSEU1Vmp1N09h?=
- =?utf-8?B?UGRQRXZTZ2U5Y2huQXlTaTU0cUVrMnRLb3ROSFlucm5ackx1cm1GU05YK0lL?=
- =?utf-8?B?Y0Z0QVBWWHYvL1ozZ1RhSjMzWVplZ3F3bVZld1pVcHdrdDl4MWMraWtnS1hX?=
- =?utf-8?B?MlJNeTlJRWJXQWp3TTltSHlhQTJJL2lnaWRlV1hVR2kxZHpDYVRpUXlQZ21O?=
- =?utf-8?B?aGRITU1YWFBhS0xOcGRGOGw3aXFwSCtEanZEems0eWR3dlRYdmo4dFgrUEF0?=
- =?utf-8?B?bnk0YW9QTWFvM2F5NW1MRVFmd1hlNEtydkY1dGxSd3VGaXZDVU5wRWFTNnNH?=
- =?utf-8?B?WjRGSFdWZnFlQ0FUd2gyZWpmR3JRcmhwTFQxZXMybkRLNzl2aUNxSkxzQW80?=
- =?utf-8?B?Rk1vd1A2bjJtaS95ai8xWXJQVi9HTGpPMGxPUFVtTlFXazdDbStVQWM2S1hp?=
- =?utf-8?B?SzZBVGpqMzVrVVhQWHk2NHJoeGRmWFByeXQxK3g3djF5dGdPYnEzZ1A5SzJM?=
- =?utf-8?B?WHNKcTVMK2pRTi90YkcwanczYXdORVlXT3pjbktNeTZFRlRQcEpja2ZXZlFa?=
- =?utf-8?B?MEU2V0NKOTRBRE1aZ2JOTjVla1ViQ2lkaGhnWmNDVVJ5ZlpvcUFLMFJRNXZB?=
- =?utf-8?B?MllVd1dqQ0hIVlUvWWhuQWF1cGtFZU5uTFRkZWpyaXJHbm1YWWhib2c4VmZN?=
- =?utf-8?B?enE3QjQzMnovaEsxbTRjTks4MVhlWFhwYmxWcFhZNnh6SGpWdnhmUTNuc0FH?=
- =?utf-8?B?UFM0Kzd3MG0yQ1dIenB6WWl2bXFTV0ljdElCWk84L2dZWHJydU0wV2hzck1v?=
- =?utf-8?B?ZFRMdGVtODdYbUNzUTVSTm5DY0pQWUsvdzVWckVDU1hzaWZtVmNWUkU1RDEr?=
- =?utf-8?B?U1p4VlZKQ1BRaUhTeWVVLyszZDJuSjluSFM1cW8wR1RJMkJlUUF1WHkycCtn?=
- =?utf-8?B?eDYvRHVMSW5RPT0=?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DU0P192MB2856.EURP192.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(366016)(376014)(1800799024);DIR:OUT;SFP:1102;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|10070799003|19092799006|376014|1800799024|366016;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?ql7Kh43333bXEeOE+h6H/K/knNKXR+s3OULy7yzSs7VujUBXRDeCo7fYNYFf?=
+ =?us-ascii?Q?P7ydGoXkyV3ImRN3ro/ywwnlx6twlBnlX3gAgVDvv+I2rSooHGZoL8Avm6q6?=
+ =?us-ascii?Q?RqpmThnOlpxIRt1O3Rt6hzSaRzNS6kGZraa2xd3v5xmxwPpzq0s4zB5hIv5n?=
+ =?us-ascii?Q?wyyHEFsZPTxzXk2T8QM14cGK8otzH6SRmC0kmnZcztnKduwRsIrEBNCXW7rI?=
+ =?us-ascii?Q?aY9Ht9wriDyOji6v7vNiXX3tOEk4JCA+OFkkxomHrUMchZ/7iNn81rPM5fDT?=
+ =?us-ascii?Q?vTRjdWfUPh05MwBvNtb5tpiRQNCuUXOc/4r3h0jNFYQv8Uj0HukZMvtL/pKI?=
+ =?us-ascii?Q?JFnPYmcCLoI3wDkWDX8QfAEFUoVOUwdMHwDHWJspZxivXUIMxO4EX2L9iArM?=
+ =?us-ascii?Q?rsc4kVhVRgdvG7xuRtAD+98NfecKmev4AP8Y/4mCZC4wV1MKrNJ9UzQNLYeS?=
+ =?us-ascii?Q?Eauy9LN0x/kOWQF9Evt2fZbUEOLCH+6Vco0x7+Q/Tp1U0uFtqtGpb337KH+p?=
+ =?us-ascii?Q?fBmiIkSzQTqivL78Qz7uhDSLh1TntFzwAwQiMdwcGpKe5QTF7dG4eoeOyIxC?=
+ =?us-ascii?Q?s7qZLmSXarWi+dYyvy9NvDu30V0iT474eqSWvi/nXOcZS1ZOt27/bGrVmj/X?=
+ =?us-ascii?Q?zezu97CEOIeyjlSxE+7vNxMxEpW+fLLAYnG1YJwzsj/kKgajREJSd12n8PtH?=
+ =?us-ascii?Q?Yd0yRuXW8FLlASb15g//9QHM0RFFtZUR19ROCFSB9f8wSKj2ozpqIU8Fp0wc?=
+ =?us-ascii?Q?5Tfz5s08Gz7EZPerOyjNh8UTsrzJ5+c0mTG4iB7gkJ5ZNChiDAt6vrIs5W4P?=
+ =?us-ascii?Q?wf4itVED1knTZPukmRKP6+mf1Gw/fctdAIxGOcpve26caT75kqGFatE1q8W0?=
+ =?us-ascii?Q?mRBZr9la7yFP+3WcOlPOyPdOKLfQOOchJDMESXGK6W/jE7nQV5AR/R7VBQN0?=
+ =?us-ascii?Q?hHJ1D4pFNGTUlRne7ojbI223+Px1rEGG/6d2G02avBy9khCr1mUu+0sR2qGS?=
+ =?us-ascii?Q?li6uQprThHempUN2H+TsQUY/MN3GJDFOZ0VCUB2FtkhyXXWlih6Z6+cfCHg8?=
+ =?us-ascii?Q?SwDjvg3rB8krpjC9x7Hs0nC9lql11F7xKsvxV9LRCONKh2WRPuOP4Ho/4goG?=
+ =?us-ascii?Q?38qbG65mkfcUZgpptYamjD+mZB2Z73IbqHYMGyd8jvnUTuo/g2+UQqRLVkf/?=
+ =?us-ascii?Q?cMXjz0OAMJIqDg9lhUV0oJCSzDyYXHpOtYI4hqJs6MWxI42MWWOHmsaQIYBK?=
+ =?us-ascii?Q?yKChBVSvGxUhOpavAlSftRv9MYu5ZxkUSrJv8vwVidTz0Qyrrjh30RJXMp/y?=
+ =?us-ascii?Q?fzuj43bY/SDo2s67Bp3QMl/JGYD3yYIy5zhjUaTDfxaO3rq5fBBYrr/H0hS3?=
+ =?us-ascii?Q?pef1Vp1t8jsj7oQUrbhWacrGNFpQPl0tvjgtl0qkFD05OhA2qutR42sRGE2S?=
+ =?us-ascii?Q?BbtCJJGPzBU=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM9PR04MB8585.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(10070799003)(19092799006)(376014)(1800799024)(366016);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?Q1E0UmxNR1lORk56QXBPd3psdTJMUE5kazRYK2tYdmNiTnNTaG91Q2hWaTl4?=
- =?utf-8?B?a2F4Yk5zOFluYmxCN05vOGh3WXZFa3JyMWdyTGtGQWNXaGVqS0k1cmF5M29E?=
- =?utf-8?B?aDFNZERlTXlMdXRwUzM0TitsNDR3bk1BTG1DUFVERENVcmx3VUNSaW1PZzgr?=
- =?utf-8?B?YWlVZ2NLZlU4c1JtZkI2VmU1cjdqYStyYTZLK2xwVEZCK1dqdU92YlFxZVFT?=
- =?utf-8?B?TXhrWHJZZi9td2k3SXU3empoSG8zSnA2Y3d1b0s3S1NlS2c4dlJZbTdtUDlo?=
- =?utf-8?B?WExJSVI5aS8zc3RFUUJGVnEyYit1RmJBYVE2cDZWQm1JRy91T0dlKy9XOXVq?=
- =?utf-8?B?Vlc4QUxRZ0FhbUx6NXU3RjMwajNvL2NTYUNXV3ZxSVdMbldVNkRvZTJCRVBm?=
- =?utf-8?B?TGV2YXRqZ2hxdllRZUVIRkFFMUhXUjBSTTJFbVFEcEhXTXlGcjgyNVJBTWh3?=
- =?utf-8?B?S3lhb3RramtPQ2ZnNytCOW0zd3cxZHRnSVZJSGx1bW9oWWIzWDZhNEIzUE5E?=
- =?utf-8?B?RkJyYW94OFBodzBEVGNjcXo5NW5ZWnpiZzMwNllVVkxNcGFkN1BuYjR2aGcr?=
- =?utf-8?B?NCtNanEzRjFySGYxT0hZb2pTcmpOcTlGTHBldVBIZzRISnU1TFJQVWtSZDM2?=
- =?utf-8?B?WEw0QjE4VzB2cXJBcjgzRy9zTStSTExTRGVFNGExUHY5a0xXNDBncFU1L3cv?=
- =?utf-8?B?SU5WY2tQcW1MZ2R5N0hFckp2ZEprQ0diL2ZLdFdNL2p2ZFQvMHUrTXNUY1hD?=
- =?utf-8?B?WVNNcm1WVzg3ZXM0RlpmNmtBWEhQVW9NQkJodmNuRlFTV050Vnc1aFI2bU9H?=
- =?utf-8?B?ZUI0T2o0R2xMb3QrakFoNVUyNDFRR3ZXM2hZSnlnWkVEVmlSREJud0tod3Nx?=
- =?utf-8?B?Nkg2MENxdjYreWc4dHF6NFhCQXI1ZTh5Z3VUbkNCWGdsbjVvOVNnQWdEYm0y?=
- =?utf-8?B?ZnlodTg3UDV0NDd5UE1rY1dpYy9rYjlTNEZ0NFFsd3ord1B1cUIvZG51eXp2?=
- =?utf-8?B?UWYvNndNcElISXptTW84RHAvam8wQU0vMkhnMjBmQTZ5eXVMaDUwZFl6Rk9s?=
- =?utf-8?B?U290c2NjVjM4QUUxaUdSZGQ0MjMzeFh4amN3WXlTWXp6YWcxN1h1OXl3eXB6?=
- =?utf-8?B?TW51UlBVYUhsY0lHNWozYy9LUU0zK004c29jdFNpMnk0aXYvQkFrREd3V3Jz?=
- =?utf-8?B?L0VQUHlKaWNvUk14UDBJRWVMUWZxdTJHUm1MQnVrSlMwUWlHSXRIRGlCNmpD?=
- =?utf-8?B?TGFqcGttcmlzWC92MlZEbE8vZ1h2UjBtVjBoa09iYkFsQzBwRXNUbGsyZTdH?=
- =?utf-8?B?VGRESzZpODBld090SjFmRUczbVExODhWdkFXNlFhZjdhWmZGQWhHeXBBNklR?=
- =?utf-8?B?NFo3cXkwdmNTQTBUdVRQdnpReUxyUHM1N2hyVk9LVWtybnZkRDh2L2xXNFB5?=
- =?utf-8?B?dC93T3o4djRsTWpIcXd6ZGJVZVJ2bjd1TldUTGpFQ2N1ZytKOUwwU09ZMWFt?=
- =?utf-8?B?amFONFQ2MWRPN3NqdUhjUzd2TTVaMjF0SkQwRllhMFY1WFlDMFgrSmIzVUhS?=
- =?utf-8?B?UlhHb1ZPUjlxd0piejhjU2xMbHJTYlhyRHlrdERsQ01RaFJwVjZTWTdjZDEy?=
- =?utf-8?B?MWNuZ3NEWTNFd2h4NjJzVkU3TitlajcyOXdZRlNSZ29FUlFrZ3c1UFM1WEN6?=
- =?utf-8?B?d29rRUxqajFzZWRlZVNqRHl2QXpqcDdJZ29icndoQTZNVXpqVGQyUk1QY0lo?=
- =?utf-8?B?WHpPS1lGeEFNUGlhRTJvQXUrbU1WUWQrR0pHaUt2Wk12R09IckVYbk5RV1R2?=
- =?utf-8?B?d3JmZndHYysvZlRTSExVVFhqb1RNcTZEbGMvc3kyRTVuaThaekQ1K3g3SWhh?=
- =?utf-8?B?L1o3RnRkL2c2aTc0Y3IrV041dHlNbHJuaVJxaEpWWjJVODFibkN1d29XMUQ1?=
- =?utf-8?B?d3JNd1ZudHFBZTJ0QXNWY2ZDZHg4UVJkK2hBV1ZGQTZkRXBpWjBxZzJnZkcy?=
- =?utf-8?B?TmV5VVJtTXYvdjFQMDdxRWZkTW5INXVrKzArNW1HK3pZb1EwRWhPYk9ncjBL?=
- =?utf-8?B?d3VoTW5oWXlWZ3pOQlVaVVJuQTRiOEVkVHZ5MkhSaHpzZG1wMGVxamFzOVlY?=
- =?utf-8?Q?ssu/pGPuJabOjSXD3MxME0TKS?=
-X-MS-Exchange-AntiSpam-ExternalHop-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-ExternalHop-MessageData-0: PAZVyR1c7wQx3XfXQcpAAI6JReq+xGR/hZn6x0jhBPJBdb0i3N8jDlggZ1A6KqVmoyyMsuh3kxqG+QG+19Uv/odSGtI/GIE2fl+BwpXB4FjFW9cPloJH0RHgDVi3+PHd1t9FkN0c01PNWpI7dzwbFnPPWyi8xfyD/8GOzdoLTTXo8ZEzgV9YzAjgKoUL9cabXFfNnz/V632pAiakQU34OPfGZzcAX3WabbtXtePV2P13tXSG5nPVn/BfyLO1dwzpBcU7Hilo/a0mDIi3v83cC70yCipyaWYiYfM/oaaGsoH0oOaIa6Kyyxaf8WNwz+ryGVXnLib5CdUzF4u9lUilHABm8CPx5oV7CGku5IvjSS4czBj6j1id8JU1POm9+tToJ1cUaiYQQ7Am+XCyTlnbJ6SZQenYlb+uKNRcU9gLzrgrdrNPDtw3VvEzJVnLyVzYG3+Ox5y6CS863iPoUz6G51fKBcedzTQnPMUeP1ItfsfMG8t+9nhvkuJwdTapSqKw+FKlOyrQpepQp4eeVfqfkxn9gaaTLNJvWytpMVuQmOpSF+rWCGVzrRWGJggSFWojQwZSUsZTqhdHbcTx+NvfhFpC2JQHyvRQlUIP1Uaw3qGTMzQDG4v0Qgi1S1t7aCFg
-X-OriginatorOrg: westermo.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ad07d238-d3db-4c8f-c369-08de3260df75
-X-MS-Exchange-CrossTenant-AuthSource: DU0P192MB2856.EURP192.PROD.OUTLOOK.COM
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?rSmdOAokLaPlrGZo4logk8PxsZBidmyRiPrRSyB4x6uS29Br+d7uMIQpBGVM?=
+ =?us-ascii?Q?muVTNwSo2OxJnw3Qhe/zFYCDV34badv3pLEeki5z16GKsW7t0t1Lx3+FmCiA?=
+ =?us-ascii?Q?bYkHvgOpL5YalVd9ymoZe8AtNPJXPMikAh0S8txoX9+Eb/ukfUcZnM6PVCTU?=
+ =?us-ascii?Q?0kQIItS2L0LRaUlQwaGu5Etlg3fpUPuKCv7tML8HRH7joMHQnVz1BIMeOCHw?=
+ =?us-ascii?Q?zKtG+zhEc6vF0+EMyHPW+YSLqO9pXjjCDW9iLvkFxACB0eE5QMsXH/GTeBPT?=
+ =?us-ascii?Q?uh7hrcX2ph60cPVXuZx54K2sgRrw4L6lVNWjX0s3caMKzL2X2QokIx9NbVuA?=
+ =?us-ascii?Q?c/l1zCE+GXgDkdt+Xr5qIiYr2LSd40casqtPNQw8FlxVBNAtZbFDR32WpGM1?=
+ =?us-ascii?Q?XtQAJvXZnZuYqXq/y3AEkPZI755sNApo4nFm8SQTPvW7eM0FtsF8OGtBScgA?=
+ =?us-ascii?Q?FVIHrfnlkH5tOKduO3ROOQEWqebdrIPA04rP9Uo/z45Ou4s0qyzp9/6DlLxi?=
+ =?us-ascii?Q?lbfEo833eXwx8DbXsgCqcEjc40Quyhigx8Auob9ctlFAuSnT4Uq3nRXTzOU7?=
+ =?us-ascii?Q?7JsGIOXa3e3eRPB7WrQh9nUlSS+IDLjpwyPsoIW2edf3x0KCa6oMdcQRwm3i?=
+ =?us-ascii?Q?WZ20rEkt+BAwTPvZ8qhgTlkokMgGGzdvCg6n0suGQUAysonbyp+Tnhbg+m/3?=
+ =?us-ascii?Q?lJmHYBb9xoulQ01R+pY3SrDYVEvvH8xfcR6ZPrgjpOOQ2Yc2Fdl1SxbDv3PN?=
+ =?us-ascii?Q?RxkK+WS7WDY0748wsiB0XF9LnHK6swbnImg3ab80YPz//1S+127Eyc4UZ1sZ?=
+ =?us-ascii?Q?AF9o9F/9+DUMeJmNi91iQx60N/edE1bXtjBEFYRNZrCf7l9J4QT8XHVO2Lay?=
+ =?us-ascii?Q?7EFVguMx37qk78idaOxsWyEgsPT8jffFHa2eGQL2vss6y9UzbcDb+dX2RKNn?=
+ =?us-ascii?Q?k/Zo9tBkNCJs5304PZZzdkxA3I41j5wKb2UMfHj0rMiIHx06yjRaR5r8//xf?=
+ =?us-ascii?Q?c2QRDLdh9nXp4GxHA/ZHZLy1Hnz4DAkE41C8/aOo+0jiFCof/vx5bsqd9/tI?=
+ =?us-ascii?Q?frIxXoVrop1IFihWv+acD2Gm2+SqqNoJS3kTgw22BqQ7POPRXZMpxEkQflRy?=
+ =?us-ascii?Q?vZ0djm9qk4feVTeDyRoHl/xkk2BNdyvNWuG7j6wDAJ8EXkQXAiB2tUplS9ul?=
+ =?us-ascii?Q?ZsPh5aEli2H6wzn/fbMMA/HiNAZ0PWw7xAelUUIlemPCcL09qX8uf6m0Rs/I?=
+ =?us-ascii?Q?bnEX0WcJi8oaQbqFHK/miKRGq0PzdMr7ckxb1qh14P2EUMJfb7BArR303oe8?=
+ =?us-ascii?Q?XRY4BU33E8Rv4IIgfg7Nf5dPvg/7K7zyHX2QMdrgW9QMlUt+UCc2lwRyYruM?=
+ =?us-ascii?Q?dm3GfOEIfWm/oaenCm2GyX4XN1/FKqYdsOEq5HJu0VFExPmn3xdY0h8RAhoH?=
+ =?us-ascii?Q?HlYw/4eOzRoYLPq44y2PR7xxXrhuVDQ/NtiFtAM/tnRLNuAfA5onrOcn1Df+?=
+ =?us-ascii?Q?4eEwIR/n4NLDVbH2MYPFBW+doa9t+QgYX/vwFlBJ8p8OcL6NFV66I7NnKX90?=
+ =?us-ascii?Q?w8vpxTQbssiNcAwYK629cePec5Km8DWbfl1KsWmkPVWsQZbUX4IlQ8kcO0yM?=
+ =?us-ascii?Q?I0xD6k1JVtCD822zAOoi2UUq7LrVYbznkTwnrPsB8iCyACE7Xt9Pp7wakIBH?=
+ =?us-ascii?Q?sZPj4Q=3D=3D?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: ad5c411a-90e4-463a-cdf4-08de32672062
+X-MS-Exchange-CrossTenant-AuthSource: AM9PR04MB8585.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Dec 2025 11:41:18.1232
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Dec 2025 12:26:04.0685
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 4b2e9b91-de77-4ca7-8130-c80faee67059
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: XOE9FOElC0sbZsq1TadtN5yO20NF1fKqRf+4WEV/vhlHnd5VpSHy9ZMh9rUHR4sUhJqLL1ZQ6R4wUSGukOvTPg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA6P192MB3325
-X-MS-Exchange-CrossPremises-AuthSource: DU0P192MB2856.EURP192.PROD.OUTLOOK.COM
-X-MS-Exchange-CrossPremises-AuthAs: Internal
-X-MS-Exchange-CrossPremises-AuthMechanism: 14
-X-MS-Exchange-CrossPremises-Mapi-Admin-Submission: 
-X-MS-Exchange-CrossPremises-MessageSource: StoreDriver
-X-MS-Exchange-CrossPremises-BCC: 
-X-MS-Exchange-CrossPremises-OriginalClientIPAddress: 104.151.95.196
-X-MS-Exchange-CrossPremises-TransportTrafficType: Email
-X-MS-Exchange-CrossPremises-Antispam-ScanContext: DIR:Originating;SFV:NSPM;SKIP:0;
-X-MS-Exchange-CrossPremises-SCL: 1
-X-MS-Exchange-CrossPremises-Processed-By-Journaling: Journal Agent
-X-OrganizationHeadersPreserved: PA6P192MB3325.EURP192.PROD.OUTLOOK.COM
-X-Proofpoint-GUID: 0nOECR_SsRd8JkJvbVgKFIsmP0M0Ai3R
-X-Authority-Analysis: v=2.4 cv=O8Y0fR9W c=1 sm=1 tr=0 ts=693021df cx=c_pps
- a=u6FPrn3+ZOgyttpAjmNOgQ==:117 a=6eWqkTHjU83fiwn7nKZWdM+Sl24=:19
- a=z/mQ4Ysz8XfWz/Q5cLBRGdckG28=:19 a=lCpzRmAYbLLaTzLvsPZ7Mbvzbb8=:19
- a=xqWC_Br6kY4A:10 a=IkcTkHD0fZMA:10 a=wP3pNCr1ah4A:10 a=8gLI3H-aZtYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=NEAV23lmAAAA:8 a=VwQbUJbxAAAA:8 a=8AirrxEcAAAA:8
- a=pGLkceISAAAA:8 a=r8OIAsvAQsj7wpmw2IgA:9 a=QEXdDO2ut3YA:10
- a=ST-jHhOKWsTCqRlWije3:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMjAzMDA5MiBTYWx0ZWRfX2K1jQZDuKbls
- Kyl29T1q4bidp9KWMfeEtoXyCQiRJYstDYmnZ2VZ5+Y6SPGh3nMixccm9iaztbVXG1RO8esfQYZ
- 9vL0iVnELt4jlrcBknbKigiSJbZP6H/SJD4i4LybUdoqVB0eqpdwlay2EMr0kTcu5ZKHOcmCItA
- tCXJPI62jwcSmS9J8iK1BN7jR5fih3858yv9RIHVn7rq6MHhYhv10vkqoF92mbH5YSr31wK/DQl
- pvYH4zecnMOb7h3cApRucsmFQ1HQ01Sa3h+MgXPRD9Lvsup7/GjhwzXMAT8gXVBreC4Ee39Enm3
- 0xDe8JetufafxxjZPOtALp5lKRj29m0lrUryN8nTgwEUrTZLHsdlc2XD9YNCBMKlgUQSiejeWIe
- bbAvDsIid6pqZOj0n8Losn2zYyOifg==
-X-Proofpoint-ORIG-GUID: 0nOECR_SsRd8JkJvbVgKFIsmP0M0Ai3R
+X-MS-Exchange-CrossTenant-UserPrincipalName: iBA2RJtHhsftF4cVmETZyv2MCrnxegU06tS+7wXTHjAtfL5jDeDtYrIvMwrfAc6Dftbu74zu8aY51yRz/SQkxg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB8835
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251203_034125_610883_E4C0F7FF 
-X-CRM114-Status: GOOD (  24.50  )
+X-CRM114-CacheID: sfid-20251203_042610_525768_0D27690E 
+X-CRM114-Status: GOOD (  16.59  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -217,141 +156,62 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Vladimir,
+On Wed, Dec 03, 2025 at 12:41:16PM +0100, Tanjeff Moos wrote:
+> I created the patches for kernel 5.15.167, and they do not apply on
+> v6.6.110. Instead of reworking my patch, I'd rather use your work, which
+> is much cleaner. Also I hope that it supports switching between SGMII
+> and XFI, which would allow our "fast" variant to support all speeds from
+> 100M to 10G.
 
-Am 02.12.25 um 17:29 schrieb Vladimir Oltean:
-> Hi Tanjeff,
-> 
-> On Tue, Dec 02, 2025 at 12:12:26PM +0100, Tanjeff Moos wrote:
->> Hello Vladimir,
->>
->> I want to use your Lynx 10G SerDes driver (plus fman and fsl_guts) on
->> our OpenWRT kernel (6.6.110) and don't know how to integrate it properly.
->>
->> I only found the driver in the NXP kernel[1]. Did you send patch to a
->> linux kernel mailing list that I may apply?
->>
->> Kind regards, Tanjeff
->>
->>
->> [1] https://github.com/nxp-imx/linux-imx.git
->>
-> 
-> (I'm unsure why you CCed linux-phy, but OK)
-> 
-> Picking the right base kernel seems to be of utmost importance. From
-> what I know, OpenWRT maintain their own kernel version and don't use
-> vendor kernels (they import patches from vendor kernels as .patch files,
-> however).
-> 
-> I see this commit in OpenWRT:
-> 
-> commit 6942ca412124a1f322e19e2289a59ed8e27b9c24
-> Author: Pawel Dembicki <paweldembicki@gmail.com>
-> Date:   Sat Nov 1 23:36:36 2025 +0100
-> 
->      layerscape: switch to Linux 6.12
-> 
->      Linux 6.12 has been validated on Layerscape platforms, including NXP
->      reference boards and multiple custom designs. Tests covered system
->      boot, networking, storage, and common peripherals, with no regressions
->      observed.
-> 
->      Enable 6.12 as the default to continue broader testing and integration.
-> 
->      Signed-off-by: Pawel Dembicki <paweldembicki@gmail.com>
->      Link: https://github.com/openwrt/openwrt/pull/20614
->      Signed-off-by: Christian Marangi <ansuelsmth@gmail.com>
-This commit is on the main branch, but not on a release branch. We base 
-our OpenWRT build on the stable version v24.10.4, which still uses 
-kernel v6.6 for layerscape.
+The intention, based on hardware capabilities, is for the SerDes driver
+to read the PLL clock net frequencies at probe time, and build for each
+of the 2 PLLs a list of supported SerDes protocols.
 
-Nevertheless I will consider updating the kernel.
+The phy_validate() API function is supposed to return which SerDes protocols
+can be used on a particular lane. Phylink in particular uses this
+information to build its phylink_config :: supported_interfaces map.
 
-> To integrate the Lynx 10G driver, you'll need to do that on your own as
-> patches. The correct git tree used by Layerscape boards in Linux Factory is:
-> https://github.com/nxp-qoriq/linux/tree/lf-6.12.34-2.1.0
->
-> My strong recommendation, assuming you want something stable, is to
-> integrate the NXP Linux Factory patches, which you'll receive some
-> official NXP support for.
-> 
-> The rest of the email is just for the sake of full transparency. I will
-> be talking about my development work, which I strongly recommend that
-> you do not integrate into OpenWrt at this stage.
-> 
-> The SerDes patches (both for the 10G and the 28G Lynx) are being
-> constantly reworked in an attempt to get as much upstream as possible.
-> Since the 10G and the 28G Lynx SerDes blocks are very similar, they
-> should share a lot of code. For that reason, adding a new driver for the
-> 10G Lynx depends on some changes being made in the 28G Lynx.
-> 
-> I am keeping a personal development branch on top of linux-next here:
-> https://github.com/vladimiroltean/linux/commits/net-phy-upstreaming
-> *However* I modify it frequently, *and* I only retest those
-> modifications rigorously when I need to (i.e. when I need to submit some
-> patches upstream). I am doing this because any time I am making a change
-> as a result of a review comment, it has to propagate during rebase like
-> a shock wave through a huge stack of dishes.
-> 
-> So if you pick up the patches from this branch today, there is no
-> guarantee you will find them in the same state next week.
-> 
-> The bottleneck is on the patches being accepted into linux-phy.
-> Currently a group of 15 patches from this development branch have been
-> submitted to the mailing list a week ago:
-> https://lore.kernel.org/linux-phy/20251125114847.804961-1-vladimir.oltean@nxp.com/
-> and that's about it. There are 22 more linux-phy patches on top of that
-> to be accepted until mainline gains some support for the 10G Lynx. And
-> that isn't considering:
-> - device trees, which are also waiting for the acceptance of the driver
-> - networking consumer driver changes (I'm moving SerDes handling into
->    the Lynx PCS driver, in order for not just dpaa-eth to benefit from
->    it, but also enetc, felix, dpaa2)
-> 
-> Out of curiosity, for what platform and what use case do you need the patches?
-We build WLAN access points for railway (i.e. passenger WLAN). We design 
-the hardware ourselves. Older models are still based on PowerPC QorIQ 
-(T1024 and others), but the most recent model uses a Layerscape LS1046A. 
-This is the one I work with.
+In the SerDes, each lane can be reconfigured to use the clock net
+provided by PLLF or PLLS ("F" = first, "S" - second), further divided or
+multiplied by a configurable power of 2 factor.
 
-We use OpenWRT with our own additions. We build binary images for all 
-devices (PowerPC and ARM) from the same OpenWRT tree, using different 
-configuration files. Currently, all devices use the same kernel version 
-(v6.6.110 + OpenWRT patches + our patches).
+Furthermore, each lane may support only a subset of SerDes protocols
+that its PLL selection can support (depending which protocol converters
+are instantiated on it).
 
-Speaking of the device I'm working with, we connected two Broadcom 
-BCM84891L PHYs (100M / 1G / 2.5G / 5G / 10G) to MAC9 and MAC10. The PHY 
-supports different protocols for different speeds. The only protocol 
-supporting all speeds is USXGMII, but this is not supported by LS1046A. 
-Therefore we use SGMII (for 100M / 1G), 2500Base-X (for 2.5G) and XFI 
-(for 2.5G / 5G / 10G). Yes, we use different protocols for 2.5G; see below.
+For LS1046A, lanes 2 and 3 have all the required protocol converters to
+support LANE_MODE_1000BASEX_SGMII, LANE_MODE_2500BASEX and LANE_MODE_10GBASER:
+https://github.com/nxp-qoriq/linux/blob/lf-6.12.34-2.1.0/drivers/phy/freescale/phy-fsl-lynx-10g.c#L774-L790
 
-So far I didn't manage to switch the LS1046A SerDes between SGMII and 
-XFI protocols without changing the RCW. However, I can switch between 
-SGMII and 2500Base-X at runtime. Therefore we provide different variants 
-of the device:
+but there is an incompatibility between your use case and the PLL frequencies.
+Each SerDes protocol requires a different clock net frequency:
+- LANE_MODE_1000BASEX_SGMII requires PLLnCR0_FRATE_5G
+- LANE_MODE_2500BASEX requires PLLnCR0_FRATE_3_125G
+- LANE_MODE_10GBASER requires PLLnCR0_FRATE_5_15625G
+https://github.com/nxp-qoriq/linux/blob/lf-6.12.34-2.1.0/drivers/phy/freescale/phy-fsl-lynx-10g.c#L2273-L2298
 
-- "Slow" Ethernet (100M / 1G / 2.5G), switching between SGMII and
-   2500Base-X at runtime. Here we use the BCM54991L PHY (only up to 2.5G,
-   otherwise identical), but this is not relevant for my problem.
+The problem is that 2 PLLs can't provide 3 distinct clock net frequencies.
+So you can either support 1G and 2.5G, or 1G and 10G, or 2.5G and 10G.
 
-- "Fast" Ethernet (2.5G / 5G / 10G), using XFI + rate limiting in the
-   MAC.
+Reading your message carefully, it seems that you aren't requesting the
+"fast" Ethernet device to support the 2.5G media speed via LANE_MODE_2500BASEX,
+because that isn't going to be possible.
 
-I patched fman and fman_memac to alter SerDes settings when the PHY 
-reports speed changes. This is rude, but worked...
+You are just requesting to support the 10G, 5G and 2.5G media speeds via
+LANE_MODE_10GBASER (with pause-based rate adaptation in the Ethernet PHY),
+and the 1G and 100M media speeds via LANE_MODE_1000BASEX_SGMII.
+That second case *is* going to be possible, provided that your PLL clock
+net frequencies are properly provisioned.
 
-I created the patches for kernel 5.15.167, and they do not apply on 
-v6.6.110. Instead of reworking my patch, I'd rather use your work, which 
-is much cleaner. Also I hope that it supports switching between SGMII 
-and XFI, which would allow our "fast" variant to support all speeds from 
-100M to 10G.
+Look at the output from lynx_10g_pll_dump() to avoid any unpleasant
+surprises. It should tell you that PLLF supports LANE_MODE_1000BASEX_SGMII,
+and PLLS supports LANE_MODE_10GBASER. If it doesn't, you need to make
+changes to your hardware design.
 
 -- 
 linux-phy mailing list
