@@ -4,43 +4,43 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AE06FD1D871
-	for <linux-phy@archiver.kernel.org>; Thu,  4 Dec 2025 06:32:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8C655D1D872
+	for <linux-phy@archiver.kernel.org>; Thu,  4 Dec 2025 06:32:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fG7e63QgXgWnntls9HquXUgXp6ysh8sLe8rEQrlpI2g=; b=1WWxY6FBs/vndT
-	CusiNDRUGbZeWaMzD6nT+iMBggEWQftAouMHgYQk1ezDtFeSxmu3VuBXGMnsXi7mhrX+DBuoHzyIS
-	xsQ3voqWsD0iy4W78Ag+R44S8PO7R0/G0uY50fJt4pFUlyYF6DW7WFS83Ve9w6Hv74j1TiAGNvukf
-	2SJs9PhkXj6sLYj+RpDGEdkLE49kywC2aPZwm4vxU8bw4FsOWS1Zw+2QJHcmFU3FwUT1DLbjQdPKR
-	XkpNyMQh3QF86lPaEF5dqaHkjJwXy9Kzp0xxguWOlWkCpt8Etn3rgrn+5cgtwWK1B5d+caw+JTquC
-	7yt+tVpVUq73rnr36K3g==;
+	List-Owner; bh=v6si0wgsJuDHB/2bCyrf1g+bSaTkKDJjp6hSuUhH0K8=; b=UaD6zbNVADqMI/
+	nH9UH95QfYEtJI0AOZxbQDDb4MvF1PRMG3UHyJJGenpJt2GscUyNHF1SC30ymGM7YZSuSlyFW3T0c
+	5uo6z8ba4+PZI5V0zoiXH7qBw3XnzDn3KUSqTSRuDeSHnWAHy7ap3HWbfVfqbjOlOnBsUSlmnkJTW
+	iKoTYahKbMhO/RjdCG/Fr3peiY1GSn9+7Pgh5p0+X24410DbBlJTyEwaHWH2BP9mEcLKWY0is0ilF
+	sEXkuPCrIHb2bkoOaqlo4GrzVRf5F3ODGsxi3Dp7xV2Ukg5i619N1km3wQ5HvJxGDrqiACohYb7XP
+	Wb0ZIc3f45iSq0kfDqUQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vR2tA-00000007YD2-1oyG;
-	Thu, 04 Dec 2025 06:32:28 +0000
-Received: from smtpbgau2.qq.com ([54.206.34.216])
+	id 1vR2tB-00000007YEJ-1F3s;
+	Thu, 04 Dec 2025 06:32:29 +0000
+Received: from smtpbg154.qq.com ([15.184.224.54])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vR2t6-00000007Y3b-2VzT;
-	Thu, 04 Dec 2025 06:32:26 +0000
+	id 1vR2t5-00000007Y3U-3hFM;
+	Thu, 04 Dec 2025 06:32:27 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=airkyi.com;
-	s=altu2504; t=1764829903;
-	bh=26BNys9MtzTfRweLMQzeXqwDzhVXLyZIh9kJ9w6YpoA=;
+	s=altu2504; t=1764829891;
+	bh=9oGlaHNtIhbTx7QkJKVpo4Ol7UjzU3rpuzSq9kjRP4w=;
 	h=From:To:Subject:Date:Message-Id;
-	b=kRpgUhhNfYRaZx76DsJIRb1mmAzUV1NkacCSW0mab+vovGTToU+BdDWRnANi2FbaC
-	 6oT9ZvwvuIV9PK3dhl/e7FXxj2bfq8iBqqcn7pWnYZyTVUzdtNQIZQlhfYJPedTbDF
-	 qmcsbXiJK6CWE/WdasX7UGAYOX+5UXtXZZSj8wZ8=
-X-QQ-mid: esmtpsz21t1764829901t850da7da
-X-QQ-Originating-IP: wgvjrv/PRLD41HmZk2wez7kJyb7vhhQ1dL/YivSoVYc=
+	b=eeMnGU3jK8jtn9w8UQOkBCGqSy2kaUb2KZDynNxn5Gk9u87Zuu0fRZWtHflPr2pXa
+	 eGdJMVVrlyDoeCdqG9FxKIgYYzsb4vIl/eQ3KMmOl1FiPDDtiYnwVSACWiYIf+lsIX
+	 tF8coF75Py/S/8Xp2QOH6qLFaqXrj8PcpA9kf7IM=
+X-QQ-mid: esmtpsz21t1764829888t35ff679a
+X-QQ-Originating-IP: kpCg3rmbDMu7YW/T8tSReERndLggkBplSug+8Go0WqA=
 Received: from DESKTOP-8BT1A2O.localdomain ( [58.22.7.114])
 	by bizesmtp.qq.com (ESMTP) with 
-	id ; Thu, 04 Dec 2025 14:31:38 +0800 (CST)
+	id ; Thu, 04 Dec 2025 14:31:25 +0800 (CST)
 X-QQ-SSF: 0000000000000000000000000000000
 X-QQ-GoodBg: 0
-X-BIZMAIL-ID: 4498374680737007808
+X-BIZMAIL-ID: 17088035227337033504
 From: Chaoyi Chen <kernel@airkyi.com>
 To: Heikki Krogerus <heikki.krogerus@linux.intel.com>,
 	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
@@ -81,36 +81,34 @@ Cc: linux-usb@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org,
 	linux-rockchip@lists.infradead.org,
 	dri-devel@lists.freedesktop.org
-Subject: [RESEND PATCH v11 05/11] dt-bindings: phy: rockchip: rk3399-typec-phy: Support mode-switch
-Date: Thu,  4 Dec 2025 14:31:03 +0800
-Message-Id: <20251204063109.104-6-kernel@airkyi.com>
+Subject: [RESEND PATCH v11 02/11] usb: typec: Export typec bus and typec altmode device type
+Date: Thu,  4 Dec 2025 14:31:00 +0800
+Message-Id: <20251204063109.104-3-kernel@airkyi.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20251204063109.104-1-kernel@airkyi.com>
 References: <20251204063109.104-1-kernel@airkyi.com>
 X-QQ-SENDSIZE: 520
 Feedback-ID: esmtpsz:airkyi.com:qybglogicsvrgz:qybglogicsvrgz6b-0
-X-QQ-XMAILINFO: OAowhIcaKHQtd6oVjnadb7YVmufdYoLBT/Wp62DQ6NveB2hMCubXS72/
-	GWhhVMJnPV3eKOXm71403zTDlQG7Wf4sSPaUgsZkLenDPrELy/tJhDJZPWRSyXJDuHRkFIj
-	w78S9rQlf4pldZDmrtxhdayzNblLj6TVIYvZuIP2p75Y4GNgZASTRkMki/pw9kyQkb3l76p
-	ypBuRBt7D580ou3NqWiBPXuSz/+HJ/H18xw5BaIIrHJxTlgBcN6fSaCTFXc6Re/XSjEfvFW
-	f6Ca1BOvY7HnJx5Qty00iShx6D3yosc+MSiXm82C9S2vvmI41X3xSOTMX+Q+l7VugvBFh9T
-	Vnxd6cRso0bJIWZTs2Ec86a6ZrKdeJHjM50VehRbI2M+DNKLx10ttqvq9yXzkaFPPSZ6ikX
-	9MrKGkhSj6NDWdmt1UYd7HPylSzOQnT5DH53ueyrKbeoacgMvcR86UlNCcYpSKhcIhL8VrE
-	2xVj3hleGvayOA2sgy/lhbdeQjEkjarcnvb0/2EY0+rWm6SUCFkudlt9rgWq7QfJGJ/OKh+
-	zh93EbnSJQAeyVq9BFX8gsCahNs9SgWqRfvR65aQLOfCdTPVDs0VNsnsAr0VxkdbxBa7LzM
-	hcrGqIbVUgCR3MBNR/KEJ4E3GuqWTFzVMSyMQzE73wPul7CGyMMYOTj+3y27CCcp8YbXdV/
-	lf5lwCWPloqZIfN736f8O/CWE5krt9+Q6rVz+jYlK/mi6n4JW8svclPeUxrY31OQq6t0Z7W
-	LKDqVdb/jGqpD9qAN7hoY9KyJJMDwoT1NwENDPxZbg7yickBxUltxDBZBryNcdoPj2VYn0I
-	GeIPYXbVF5x42JZLkHugJYzvIAPSPQ59Cb9yt+i3KR6Tq9jSon4Pk6YX1xjqVKJzX9mk14o
-	k9FM2RufWsforlYV0rdpz9LeepVjcy+MxMzUsClLcdCsAN7/C9MF/VqBVOSuZFSN1qfy6WG
-	LjM+Mh3kEOu0E8X4O+gEnNjRBbTgBxU0j59PE+ZAS1hJZOIAzZvWsWui5z2XBVm1LF5PG7t
-	hFvasZkvo058WoYfszDraavYoT6gN04R+ilxNYoA==
-X-QQ-XMRINFO: NS+P29fieYNw95Bth2bWPxk=
+X-QQ-XMAILINFO: Mo8ayuSLF3j9QxrZKtGk6kKkW/H+u39FFu7es7peju+Vts8wBr0hUV+3
+	N29zGWHkJfBV69U3GKlDPBv1ItUf8BWF10zjDUyDeaT7JNFEWMiKAZIgVgZpyUg3/eWK2Qi
+	RaMlKeekZfGu8n4bDlUEZBq/cKD1t/z+rhiJTyBSoGIsdP6cn/Nykuzqc6NtcHqrzM8uDj6
+	CPKbEGUNO1oDyQfmskjsTcQ+MU4rasi2uoIAVUOvxGRMQyPKRKhxdcYcpUncgL4DfLaYIDu
+	QjkOHhpCvPPOKtkft2jpERXO7eQoU0SkusZoIk3TrVylFpAGBtCgC+JFLqA18ZwPpkVuJFt
+	bl1GCOaVf79BHXENSgs7nfcM2yZrJUJl67AbqauExJc2pVXXBMWkYkBGO7j+xYFy9pJraMO
+	vq0mE99bwlBHe7BDPeZ8ViJWj0n9u4U7B0YFS8No7ZRIpFNh1rNTKZrLFTFNHFNqnl6TMzk
+	Xo2F0ysYvsNCGZPGX1vMk9vBeNHVcCGq4g9Yt46UEDz67VqmrGJnG9k5DP33lmGjPolnnU4
+	eERFPSexlCdTdbwmvxUKEIv4rAYl8uRSR9FD+yXQgarsOdEmJ3eFXila72wy/6mGv01AJxx
+	HLZHmlsq34+aoegzmKZhrrIeYDy3iSXb34He41qMAsm96uRtj6w1N0DnikatGJBiSMd0hEE
+	qTX+2nawJsIAs4g2zSFolScQT7fv9Xa/p6vj13dj+N+3W2IyG0T/mMTUZTxgY/Z5Fax7A8O
+	/E1ogTziceJOhUo8LS3G4OasH0NoAhg/EQNYHnGhxbgjIcYSISIw3wiPZa9ZnI0AZmdjy9N
+	OeSk4YxCb0RqV7bGp1GvYmKtrJuHNCqGTTW3pJY0hkqWz6mtqNdNpC/DpNwQhOAqLgiUVMB
+	bmMMBL1yT6tQzesGaLVbkoZQMIKEexYiDK1JT/ecMXlSLD2/u2VUNwvE/oBFL8EmaOoCZrC
+	PnTmb3cfWy+q787DO6cwbhJSv9Sd6G8Px2opgkIRF0KTmM4CL7zulMyvCc4TVUOK/rAU=
+X-QQ-XMRINFO: Nq+8W0+stu50PRdwbJxPCL0=
 X-QQ-RECHKSPAM: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251203_223225_659421_FEEEFFD7 
-X-CRM114-Status: UNSURE (   9.63  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20251203_223225_671633_9902C4CF 
+X-CRM114-Status: GOOD (  13.28  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -130,58 +128,128 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
 
-The RK3399 SoC integrates two USB/DP combo PHYs, each of which
-supports software-configurable pin mapping and DisplayPort lane
-assignment. These capabilities enable the PHY itself to handle both
-mode switching and orientation switching, based on the Type-C plug
-orientation and USB PD negotiation results.
+The DRM may want to register a notifier on the typec bus to know when
+a typec altmode device is added, and distinguish between different
+types of typec altmode device.
 
-While an external Type-C controller is still required to detect cable
-attachment and report USB PD events, the actual mode and orientation
-switching is performed internally by the PHY through software
-configuration. This allows the PHY to act as a Type-C multiplexer for
-both data role and DP altmode configuration.
-
-To reflect this hardware design, this patch introduces a new
-"mode-switch" property for the dp-port node in the device tree bindings.
-This property indicates that the connected PHY is capable of handling
-Type-C mode switching itself.
+Export these things.
 
 Signed-off-by: Chaoyi Chen <chaoyi.chen@rock-chips.com>
-Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 ---
 
-(no changes since v5)
+Changes in v11:
+- Also export typec bus.
+- Add more detailed comments.
 
-Changes in v4:
-- Remove "|" in description.
+(no changes since v9)
 
-Changes in v3:
-- Add more descriptions to clarify the role of the PHY in switching.
+ drivers/usb/typec/bus.c           |  1 +
+ drivers/usb/typec/bus.h           | 10 ----------
+ drivers/usb/typec/class.c         |  3 +++
+ include/linux/usb/typec.h         |  3 +++
+ include/linux/usb/typec_altmode.h |  8 ++++++++
+ 5 files changed, 15 insertions(+), 10 deletions(-)
 
-Changes in v2:
-- Reuse dp-port/usb3-port in rk3399-typec-phy binding.
-
- .../devicetree/bindings/phy/rockchip,rk3399-typec-phy.yaml  | 6 ++++++
- 1 file changed, 6 insertions(+)
-
-diff --git a/Documentation/devicetree/bindings/phy/rockchip,rk3399-typec-phy.yaml b/Documentation/devicetree/bindings/phy/rockchip,rk3399-typec-phy.yaml
-index 91c011f68cd0..83ebcde096ea 100644
---- a/Documentation/devicetree/bindings/phy/rockchip,rk3399-typec-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/rockchip,rk3399-typec-phy.yaml
-@@ -51,6 +51,12 @@ properties:
-       '#phy-cells':
-         const: 0
+diff --git a/drivers/usb/typec/bus.c b/drivers/usb/typec/bus.c
+index a33da7f458a5..e84b134a3381 100644
+--- a/drivers/usb/typec/bus.c
++++ b/drivers/usb/typec/bus.c
+@@ -569,3 +569,4 @@ const struct bus_type typec_bus = {
+ 	.probe = typec_probe,
+ 	.remove = typec_remove,
+ };
++EXPORT_SYMBOL_GPL(typec_bus);
+diff --git a/drivers/usb/typec/bus.h b/drivers/usb/typec/bus.h
+index b58e131450d1..7df5deb1dd3a 100644
+--- a/drivers/usb/typec/bus.h
++++ b/drivers/usb/typec/bus.h
+@@ -5,7 +5,6 @@
  
-+      mode-switch:
-+        description:
-+          Indicates the PHY can handle altmode switching. In this case,
-+          requires an external USB Type-C controller to report USB PD message.
-+        type: boolean
+ #include <linux/usb/typec_altmode.h>
+ 
+-struct bus_type;
+ struct typec_mux;
+ struct typec_retimer;
+ 
+@@ -28,13 +27,4 @@ struct altmode {
+ 
+ #define to_altmode(d) container_of(d, struct altmode, adev)
+ 
+-extern const struct bus_type typec_bus;
+-extern const struct device_type typec_port_altmode_dev_type;
+-extern const struct device_type typec_plug_altmode_dev_type;
+-extern const struct device_type typec_partner_altmode_dev_type;
+-
+-#define is_typec_port_altmode(dev) ((dev)->type == &typec_port_altmode_dev_type)
+-#define is_typec_plug_altmode(dev) ((dev)->type == &typec_plug_altmode_dev_type)
+-#define is_typec_partner_altmode(dev) ((dev)->type == &typec_partner_altmode_dev_type)
+-
+ #endif /* __USB_TYPEC_ALTMODE_H__ */
+diff --git a/drivers/usb/typec/class.c b/drivers/usb/typec/class.c
+index d6b88317f8a4..c4ff4310ff58 100644
+--- a/drivers/usb/typec/class.c
++++ b/drivers/usb/typec/class.c
+@@ -537,18 +537,21 @@ const struct device_type typec_port_altmode_dev_type = {
+ 	.groups = typec_altmode_groups,
+ 	.release = typec_altmode_release,
+ };
++EXPORT_SYMBOL_GPL(typec_port_altmode_dev_type);
+ 
+ const struct device_type typec_plug_altmode_dev_type = {
+ 	.name = "typec_plug_alternate_mode",
+ 	.groups = typec_altmode_groups,
+ 	.release = typec_altmode_release,
+ };
++EXPORT_SYMBOL_GPL(typec_plug_altmode_dev_type);
+ 
+ const struct device_type typec_partner_altmode_dev_type = {
+ 	.name = "typec_partner_alternate_mode",
+ 	.groups = typec_altmode_groups,
+ 	.release = typec_altmode_release,
+ };
++EXPORT_SYMBOL_GPL(typec_partner_altmode_dev_type);
+ 
+ static struct typec_altmode *
+ typec_register_altmode(struct device *parent,
+diff --git a/include/linux/usb/typec.h b/include/linux/usb/typec.h
+index 309251572e2e..c6fd46902fce 100644
+--- a/include/linux/usb/typec.h
++++ b/include/linux/usb/typec.h
+@@ -20,12 +20,15 @@ struct typec_port;
+ struct typec_altmode_ops;
+ struct typec_cable_ops;
+ 
++struct bus_type;
+ struct fwnode_handle;
+ struct device;
+ 
+ struct usb_power_delivery;
+ struct usb_power_delivery_desc;
+ 
++extern const struct bus_type typec_bus;
 +
-       port:
-         $ref: /schemas/graph.yaml#/properties/port
-         description: Connection to USB Type-C connector
+ enum typec_port_type {
+ 	TYPEC_PORT_SRC,
+ 	TYPEC_PORT_SNK,
+diff --git a/include/linux/usb/typec_altmode.h b/include/linux/usb/typec_altmode.h
+index f7db3bd4c90e..9197a4637a93 100644
+--- a/include/linux/usb/typec_altmode.h
++++ b/include/linux/usb/typec_altmode.h
+@@ -9,6 +9,14 @@
+ 
+ #define MODE_DISCOVERY_MAX	6
+ 
++extern const struct device_type typec_port_altmode_dev_type;
++extern const struct device_type typec_plug_altmode_dev_type;
++extern const struct device_type typec_partner_altmode_dev_type;
++
++#define is_typec_port_altmode(dev) ((dev)->type == &typec_port_altmode_dev_type)
++#define is_typec_plug_altmode(dev) ((dev)->type == &typec_plug_altmode_dev_type)
++#define is_typec_partner_altmode(dev) ((dev)->type == &typec_partner_altmode_dev_type)
++
+ struct typec_altmode_ops;
+ 
+ /**
 -- 
 2.51.1
 
