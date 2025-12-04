@@ -4,118 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A89C5D216B2
-	for <linux-phy@archiver.kernel.org>; Thu,  4 Dec 2025 16:49:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40FEBD24451
+	for <linux-phy@archiver.kernel.org>; Thu,  4 Dec 2025 17:48:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Kyr8dgntkj8+7DNVRw39WP20AbwzOoCkQYzvXF3NIhc=; b=cH+ha96UGXx62Y
-	xTBGGgzN4CUU2Z3G4blMWv0AUNuAdet/kAmVVOEbKN+gO94QmhecICuLZqjFiv3PxL6YEFTeJupgY
-	dqFwephiOhbyhlYzmsg02C8YIuvDqGmraEC+c8pba5c9yEwTLERyg0CTSC1XKN2N3jq/pSl9iaMX+
-	Kg8s0yWwA2Z4ugHiFt5SMQ+FU7PsxnH+T45CIp3WO4xoSvqljpg9AokCqXsvbJFgqxQg9Agh8o6Ez
-	LxGuM9vsUTydqtVXAf+7ueTqGbUrQxHUlmIG57xJ1Lj7x26qPbQnysAs/7tnslftfTlwCfUSbHOIx
-	oPvgm6qoe8S3M9QJhItw==;
+	List-Owner; bh=ieRcRNkhJUJhC2SAxBBL46Jp2ofeZvxDTGwVYwUrmjA=; b=zaNYvxjKc9CatE
+	bZgU5h0CSuDIkTxuD/X6DRpB0+NUc79s7xV4TnxlP87y21snavH26mBanEvhGy06zhJy5jpn0E1tA
+	lxF+HGBSHR9WNwRxW1FBfgLQrbodqKtuIYLA2AtEUSTLtCD+yrTaqs3kaeIa6qpNkqb1qd2beZZTg
+	TSPdabHmhb8BRZcWYT9pfm0PaIZ83tzGoBopt/MpnsYd7rm/I3njauRgCPxXJ/2HBqGaEIvozAn3B
+	0C50FJTMWgn2nIRkoF8l7uu/I0zhGr7xBSe2Fdjg5da8EyFsQPLa6cg83CzBv5zP1xyuKMRKEy0m+
+	NZgI4e0b4s5Gl1xfw/2w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vRCVv-00000008Jhu-0yfK;
-	Thu, 04 Dec 2025 16:49:07 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1vRDRH-00000008On3-3RXa;
+	Thu, 04 Dec 2025 17:48:23 +0000
+Received: from a7-32.smtp-out.eu-west-1.amazonses.com ([54.240.7.32])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vRCVs-00000008Jh6-3oQP;
-	Thu, 04 Dec 2025 16:49:05 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 56CED601FD;
-	Thu,  4 Dec 2025 16:49:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C0A99C4CEFB;
-	Thu,  4 Dec 2025 16:48:58 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1764866944;
-	bh=s/jCJ2FpUP11SPYO8fzMlmRQfnOVawPPT6/iEbGbJgI=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=ftGKXrNeYQ1po2piaPKUeDZLuQnVyRpTPq6K+3sZBQXbxanU6cohAuPxppl3YF6be
-	 74WjFWEFuqAf6m8ukmUuAKAUfjosXj1p/I/cL2DXvV4YpvZNnPnzoIxZMZ3F4iUpcR
-	 ZQ+w5Fc959ptz8BoYeoe7mM/t1ds4JR1/NfJhwMttDPIClXQtiAk76cr7GTn1HhZW+
-	 afDxEKUmf8Te0PUCMFK6NiIE9P9kbIYUCQZTpMbyMtlGN5muEV6SGlJ20GOnEESW2i
-	 bVtRWNuchIk6g3xwwpJ9XxoIjNEfsluUc+hk/HDi3v9GoaWCKPXyCIAmzj9bS3O843
-	 wjdy5KCVy6BEg==
-Message-ID: <c7cbdaaa-e786-4842-9346-e2fde998fde5@kernel.org>
-Date: Thu, 4 Dec 2025 17:48:57 +0100
+	id 1vRDRF-00000008OmY-2V7R;
+	Thu, 04 Dec 2025 17:48:23 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=5uqmrq7mz5dkaze44elodgxarejai7vg; d=collabora.com; t=1764870497;
+	h=Message-ID:Date:MIME-Version:Subject:To:Cc:References:From:In-Reply-To:Content-Type:Content-Transfer-Encoding;
+	bh=16Wn0lQW8kKPXKmHoDG0CVbwJTQ2tCjlkPsSCWmeuKY=;
+	b=e5VOgMYfFdxFaOJi5sPPXb3rnuya2KmOJopWwfOuyZ79JpWsZQQAhMU7lw79DA7+
+	2WZjhIgmGejNJNpd6OBvddg66OfGqPAHmLVYlC0IunD4cuxmgSkvM63+8WHPw1UZXGy
+	9upEuuPSzRDPo+rSWTTd8z4ko+RQfqWQwiJ5hVBXSlacUKqxAGJ7gBMKN+orCo9PI11
+	TXUYN+ydHIeJShgdHhzY9crFzG7JqXmxrqSnieYxlE2NJaCGI4eIja3HBMFmW/I4Qip
+	4zj88vz6QqWwFhYKKkP9CkNI6CwBc1NUZ6cRrBZ+atc2rAs/iGOODj1S9lhzS1pHyQy
+	Q6duny5gdg==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=ihchhvubuqgjsxyuhssfvqohv7z3u4hn; d=amazonses.com; t=1764870497;
+	h=Message-ID:Date:MIME-Version:Subject:To:Cc:References:From:In-Reply-To:Content-Type:Content-Transfer-Encoding:Feedback-ID;
+	bh=16Wn0lQW8kKPXKmHoDG0CVbwJTQ2tCjlkPsSCWmeuKY=;
+	b=lgBm4VvOK7kNJ0MGPWVx6tnFKcdYEcKVj4SuC7tPRqpVvcXnODWC6VUXK4+5/nVR
+	enyanw+ttrjApK2Vcjad2jzk1qWVbQZwqhU8FJAIu4bOh8tzOrv5bBO314vPsrJGUlg
+	ZPbyrmj3IsUtcIhYfnO5kdMknDotcg+/csErLzbE=
+Message-ID: <0102019aea7aa358-97e812cb-8010-4699-9a0e-ec041d6d9316-000000@eu-west-1.amazonses.com>
+Date: Thu, 4 Dec 2025 17:48:17 +0000
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH net-next 5/9] phy: add phy_get_rx_polarity() and
- phy_get_tx_polarity()
-To: Vladimir Oltean <vladimir.oltean@nxp.com>, Vinod Koul <vkoul@kernel.org>,
- Jakub Kicinski <kuba@kernel.org>
-Cc: netdev@vger.kernel.org, devicetree@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
- Daniel Golle <daniel@makrotopia.org>,
- Horatiu Vultur <horatiu.vultur@microchip.com>, Andrew Lunn <andrew@lunn.ch>,
- Heiner Kallweit <hkallweit1@gmail.com>, Russell King
- <linux@armlinux.org.uk>, "David S. Miller" <davem@davemloft.net>,
- Eric Dumazet <edumazet@google.com>, Paolo Abeni <pabeni@redhat.com>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
- Eric Woudstra <ericwouds@gmail.com>, =?UTF-8?B?TWFyZWsgQmVo4oia4oirbg==?=
- <kabel@kernel.org>, Lee Jones <lee@kernel.org>,
- Patrice Chotard <patrice.chotard@foss.st.com>
-References: <20251122193341.332324-1-vladimir.oltean@nxp.com>
- <20251122193341.332324-6-vladimir.oltean@nxp.com>
- <20251124200121.5b82f09e@kernel.org> <aS1T5i3pCHsNVql6@vaman>
- <69ac21ea-eed2-449a-b231-c43e3cd0bdc0@kernel.org>
- <20251204153401.tinrt57ifjthw55r@skbuf>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
- cFgcqTTuNHjAvxtUG8pQgGTHAObYs6xeYJtjUH0ZX6ndJ33FJYf5V3yXqqjcZ30FgHzJCFUu
- JMp7PSyMPzpUXfU12yfcRYVEMQrmplNZssmYhiTeVicuOOypWugZKVLGNm0IweVCaZ/DJDIH
- gNbpvVwjcKYrx85m9cBVEBUGaQP6AT7qlVCkrf50v8bofSIyVa2xmubbAwwFA1oxoOusjPIE
- J3iadrwpFvsZjF5uHAKS+7wHLoW9hVzOnLbX6ajk5Hf8Pb1m+VH/E8bPBNNYKkfTtypTDUCj
- NYcd27tjnXfG+SDs/EXNUAIRefCyvaRG7oRYF3Ec+2RgQDRnmmjCjoQNbFrJvJkFHlPeHaeS
- BosGY+XWKydnmsfY7SSnjAzLUGAFhLd/XDVpb1Een2XucPpKvt9ORF+48gy12FA5GduRLhQU
- vK4tU7ojoem/G23PcowM1CwPurC8sAVsQb9KmwTGh7rVz3ks3w/zfGBy3+WmLg++C2Wct6nM
- Pd8/6CBVjEWqD06/RjI2AnjIq5fSEH/BIfXXfC68nMp9BZoy3So4ZsbOlBmtAPvMYX6U8VwD
- TNeBxJu5Ex0Izf1NV9CzC3nNaFUYOY8KfN01X5SExAoVTr09ewARAQABzSVLcnp5c3p0b2Yg
- S296bG93c2tpIDxrcnprQGtlcm5lbC5vcmc+wsGVBBMBCgA/AhsDBgsJCAcDAgYVCAIJCgsE
- FgIDAQIeAQIXgBYhBJvQfg4MUfjVlne3VBuTQ307QWKbBQJoF1BKBQkWlnSaAAoJEBuTQ307
- QWKbHukP/3t4tRp/bvDnxJfmNdNVn0gv9ep3L39IntPalBFwRKytqeQkzAju0whYWg+R/rwp
- +r2I1Fzwt7+PTjsnMFlh1AZxGDmP5MFkzVsMnfX1lGiXhYSOMP97XL6R1QSXxaWOpGNCDaUl
- ajorB0lJDcC0q3xAdwzRConxYVhlgmTrRiD8oLlSCD5baEAt5Zw17UTNDnDGmZQKR0fqLpWy
- 786Lm5OScb7DjEgcA2PRm17st4UQ1kF0rQHokVaotxRM74PPDB8bCsunlghJl1DRK9s1aSuN
- hL1Pv9VD8b4dFNvCo7b4hfAANPU67W40AaaGZ3UAfmw+1MYyo4QuAZGKzaP2ukbdCD/DYnqi
- tJy88XqWtyb4UQWKNoQqGKzlYXdKsldYqrLHGoMvj1UN9XcRtXHST/IaLn72o7j7/h/Ac5EL
- 8lSUVIG4TYn59NyxxAXa07Wi6zjVL1U11fTnFmE29ALYQEXKBI3KUO1A3p4sQWzU7uRmbuxn
- naUmm8RbpMcOfa9JjlXCLmQ5IP7Rr5tYZUCkZz08LIfF8UMXwH7OOEX87Y++EkAB+pzKZNNd
- hwoXulTAgjSy+OiaLtuCys9VdXLZ3Zy314azaCU3BoWgaMV0eAW/+gprWMXQM1lrlzvwlD/k
- whyy9wGf0AEPpLssLVt9VVxNjo6BIkt6d1pMg6mHsUEVzsFNBFVDXDQBEADNkrQYSREUL4D3
- Gws46JEoZ9HEQOKtkrwjrzlw/tCmqVzERRPvz2Xg8n7+HRCrgqnodIYoUh5WsU84N03KlLue
- MNsWLJBvBaubYN4JuJIdRr4dS4oyF1/fQAQPHh8Thpiz0SAZFx6iWKB7Qrz3OrGCjTPcW6ei
- OMheesVS5hxietSmlin+SilmIAPZHx7n242u6kdHOh+/SyLImKn/dh9RzatVpUKbv34eP1wA
- GldWsRxbf3WP9pFNObSzI/Bo3kA89Xx2rO2roC+Gq4LeHvo7ptzcLcrqaHUAcZ3CgFG88CnA
- 6z6lBZn0WyewEcPOPdcUB2Q7D/NiUY+HDiV99rAYPJztjeTrBSTnHeSBPb+qn5ZZGQwIdUW9
- YegxWKvXXHTwB5eMzo/RB6vffwqcnHDoe0q7VgzRRZJwpi6aMIXLfeWZ5Wrwaw2zldFuO4Dt
- 91pFzBSOIpeMtfgb/Pfe/a1WJ/GgaIRIBE+NUqckM+3zJHGmVPqJP/h2Iwv6nw8U+7Yyl6gU
- BLHFTg2hYnLFJI4Xjg+AX1hHFVKmvl3VBHIsBv0oDcsQWXqY+NaFahT0lRPjYtrTa1v3tem/
- JoFzZ4B0p27K+qQCF2R96hVvuEyjzBmdq2esyE6zIqftdo4MOJho8uctOiWbwNNq2U9pPWmu
- 4vXVFBYIGmpyNPYzRm0QPwARAQABwsF8BBgBCgAmAhsMFiEEm9B+DgxR+NWWd7dUG5NDfTtB
- YpsFAmgXUF8FCRaWWyoACgkQG5NDfTtBYptO0w//dlXJs5/42hAXKsk+PDg3wyEFb4NpyA1v
- qmx7SfAzk9Hf6lWwU1O6AbqNMbh6PjEwadKUk1m04S7EjdQLsj/MBSgoQtCT3MDmWUUtHZd5
- RYIPnPq3WVB47GtuO6/u375tsxhtf7vt95QSYJwCB+ZUgo4T+FV4hquZ4AsRkbgavtIzQisg
- Dgv76tnEv3YHV8Jn9mi/Bu0FURF+5kpdMfgo1sq6RXNQ//TVf8yFgRtTUdXxW/qHjlYURrm2
- H4kutobVEIxiyu6m05q3e9eZB/TaMMNVORx+1kM3j7f0rwtEYUFzY1ygQfpcMDPl7pRYoJjB
- dSsm0ZuzDaCwaxg2t8hqQJBzJCezTOIkjHUsWAK+tEbU4Z4SnNpCyM3fBqsgYdJxjyC/tWVT
- AQ18NRLtPw7tK1rdcwCl0GFQHwSwk5pDpz1NH40e6lU+NcXSeiqkDDRkHlftKPV/dV+lQXiu
- jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
- zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
- XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <20251204153401.tinrt57ifjthw55r@skbuf>
+Subject: Re: [PATCH 1/2] phy: rockchip: samsung-hdptx: Pre-compute HDMI PLL
+ config for 461.10125 MHz output
+To: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>, 
+	Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, 
+	Heiko Stuebner <heiko@sntech.de>, 
+	Dmitry Baryshkov <lumag@kernel.org>
+Cc: kernel@collabora.com, linux-phy@lists.infradead.org, 
+	linux-arm-kernel@lists.infradead.org, 
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20251204-phy-hdptx-pll-fix-v1-0-d94fd6cfd59b@collabora.com>
+ <20251204-phy-hdptx-pll-fix-v1-1-d94fd6cfd59b@collabora.com>
+Content-Language: en-CA
+From: Derek Foreman <derek.foreman@collabora.com>
+In-Reply-To: <20251204-phy-hdptx-pll-fix-v1-1-d94fd6cfd59b@collabora.com>
+Feedback-ID: ::1.eu-west-1.YpP9ZbxnARFfy3Cb5pfsLd/pdsXBCNK0KEM7HforL4k=:AmazonSES
+X-SES-Outgoing: 2025.12.04-54.240.7.32
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20251204_094822_293370_87CEEAEE 
+X-CRM114-Status: GOOD (  19.68  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -127,82 +78,68 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 04/12/2025 16:34, Vladimir Oltean wrote:
-> On Mon, Dec 01, 2025 at 09:41:21AM +0100, Krzysztof Kozlowski wrote:
->> On 01/12/2025 09:37, Vinod Koul wrote:
->>> On 24-11-25, 20:01, Jakub Kicinski wrote:
->>>> On Sat, 22 Nov 2025 21:33:37 +0200 Vladimir Oltean wrote:
->>>>> Add helpers in the generic PHY folder which can be used using 'select
->>>>> GENERIC_PHY_COMMON_PROPS' from Kconfig, without otherwise needing to
->>>>> enable GENERIC_PHY.
->>>>>
->>>>> These helpers need to deal with the slight messiness of the fact that
->>>>> the polarity properties are arrays per protocol, and with the fact that
->>>>> there is no default value mandated by the standard properties, all
->>>>> default values depend on driver and protocol (PHY_POL_NORMAL may be a
->>>>> good default for SGMII, whereas PHY_POL_AUTO may be a good default for
->>>>> PCIe).
->>>>>
->>>>> Push the supported mask of polarities to these helpers, to simplify
->>>>> drivers such that they don't need to validate what's in the device tree
->>>>> (or other firmware description).
->>>>>
->>>>> The proposed maintainership model is joint custody between netdev and
->>>>> linux-phy, because of the fact that these properties can be applied to
->>>>> Ethernet PCS blocks just as well as Generic PHY devices. I've added as
->>>>> maintainers those from "ETHERNET PHY LIBRARY", "NETWORKING DRIVERS" and
->>>>> "GENERIC PHY FRAMEWORK".
->>>>
->>>> I dunno.. ain't no such thing as "joint custody" maintainership.
->>>> We have to pick one tree. Given the set of Ms here, I suspect 
->>>> the best course of action may be to bubble this up to its own tree.
->>>> Ask Konstantin for a tree in k.org, then you can "co-post" the patches
->>>> for review + PR link in the cover letter (e.g. how Tony from Intel
->>>> submits their patches). This way not networking and PHY can pull
->>>> the shared changes with stable commit IDs.
->>>
->>> How much is the volume of the changes that we are talking about, we can
->>> always ack and pull into each other trees..?
->>
->> That's just one C file, isn't it? Having dedicated tree for one file
->> feels like huge overhead.
-> 
-> I have to admit, no matter how we define what pertains to this presumed
-> new git tree, the fact is that the volume of patches will be quite low.
-> 
-> Since the API provider always sits in drivers/phy/ in every case that I
-> can think about, technically all situations can be resolved by linux-phy
-> providing these stable PR branches to netdev. In turn, to netdev it
-> makes no difference whether the branches are coming from linux-phy or a
-> third git tree. Whereas to linux-phy, things would even maybe a bit
-> simpler, due to already having the patches vs needing to pull them from
-> the 3rd tree.
-> 
-> From my perspective, if I'm perfectly honest, the idea was attractive
-> because of the phenomenal difference in turnaround times between netdev
-> and linux-phy review&merge processes (very fast in netdev, very slow and
-> patchy in linux-phy). If there's a set like this, where all API consumers
-> are in netdev for now but the API itself is in linux-phy, you'd have to
-> introduce 1000 NOP cycles just to wait for the PR branch.
-> 
-> In that sense, having more people into the mix would help just because
-> there's more people (i.e. fewer points of failure), even though overall
-> there's more overhead.
-> 
-> IDK, these are my 2 cents, I can resubmit this set in 2 weeks with the
-> maintainership of the PHY common properties exclusive to linux-phy.
+On 12/3/25 5:54 PM, Cristian Ciocaltea wrote:
+> Attempting to make use of the 1080p@120Hz HDMI mode with 10 bpc RGB on
+> my Acer XV275K P3 monitor results in a blank image.  A similar behavior
+> has been reported on Philips 279M1RV.
 
+Hello,
 
-Jakub supported the idea, so I also do not oppose, and if that helps you
-folks, then go ahead.
+I'm the Philips 279M1RV complaint, and this patch fixes the problem on 
+that monitor for me.
 
-Best regards,
-Krzysztof
+Tested-by: Derek Foreman <derek.foreman@collabora.com>
+
+Thanks,
+Derek
+
+> The faulty modeline is created by drm_gtf_mode_complex() based on the
+> following EDID entry from the Standard Timings block:
+>
+>    GTF:  1920x1080  119.999987 Hz  16:9    138.840 kHz    368.759000 MHz
+>
+> It's worth noting the computed pixel clock ends up being slightly higher
+> at 368.881000 MHz.  Nevertheless, this seems to work consistently fine
+> with 8 bpc RGB.
+>
+> After switching to 10 bpc, the TMDS character rate expected for the mode
+> increases to 461.101250 MHz, as per drm_hdmi_compute_mode_clock().
+>
+> Since there is no entry for this rate in the ropll_tmds_cfg table, the
+> necessary HDMI PLL configuration parameters are calculated dynamically
+> by rk_hdptx_phy_clk_pll_calc().  However, the resulting output rate is
+> not quite a perfect match, i.e. 461.100000 MHz, that proved to be the
+> actual root cause of the problem.
+>
+> Add a new entry to the TMDS configuration table and provide the
+> necessary frequency division coefficients for the PHY PLL to generate
+> the expected 461.101250 MHz output.
+>
+> Fixes: 9d0ec51d7c22 ("phy: rockchip: samsung-hdptx: Add high color depth management")
+> Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+> ---
+>   drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 2 ++
+>   1 file changed, 2 insertions(+)
+>
+> diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+> index 29de2f7bdae8..cafa618d70fd 100644
+> --- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+> +++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+> @@ -414,6 +414,8 @@ struct rk_hdptx_phy {
+>   static const struct ropll_config ropll_tmds_cfg[] = {
+>   	{ 594000000ULL, 124, 124, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 62, 1, 16, 5, 0,
+>   	  1, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
+> +	{ 461101250ULL, 97, 97, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 71, 1, 53, 2, 6,
+> +	  35, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
+>   	{ 371250000ULL, 155, 155, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 62, 1, 16, 5, 0,
+>   	  1, 1, 0, 0x20, 0x0c, 1, 0x0e, 0, 0, },
+>   	{ 297000000ULL, 124, 124, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 62, 1, 16, 5, 0,
+>
 
 -- 
 linux-phy mailing list
