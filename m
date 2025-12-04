@@ -4,68 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A3607D29FB2
-	for <linux-phy@archiver.kernel.org>; Thu,  4 Dec 2025 19:54:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B94E7D2A545
+	for <linux-phy@archiver.kernel.org>; Thu,  4 Dec 2025 21:37:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SCktXTKwluEPFaQTsLeg/YQhVgcKH5pH2klOaEm4Jq0=; b=ayDyKlEVPbdauw
-	1riQyQT1dAdmZblhwfl8DwdjXrHw/gZygDcWIqrdwbk6PNT9XTAjt3PwxYqlpwwXpqY0SYqJdqUJ6
-	Zpyk9omWs2lp/XhoGOb86oLeWlh0o1ZXCdDEbkJ0fTMSDL/ZD9ayHmoNGhW9ZgaOoCBqc2pSr8IHR
-	IuIYUHszyAO5CyC64dPP7KMOmoWOVF+8MI5h2hnVnb2OOL2WCyA6lcBaD8OblwVvux9Uxv85aOfrB
-	Yv6upOEbp1zk7EqVBlqO6YJ7BDMF0C1LSzIET2OcrDxRkG3oPmk1UNXhKFaNPPiIVd6LstM+jp2ps
-	40uYv5gGnPVMdFnDSp5g==;
+	List-Owner; bh=NnylrFKnPOK5CrqCDZPHvoHQdRRFwp8qb+z60qYKWCM=; b=PfQ2eoU52oH3pJ
+	1WQnEKLS6DQfoBNrUnYuJtCDitspQmBpVoHKJNN5UQxXUTpyYItvlkyYZmWMdq/UdWNaV/JCs1Tdu
+	mBTS8Hxbe9f/wYubKdjRGUIvhqvEUxeInwy2lWVKNhHh2HL2KT4hRVrdn74yFDYGuvjhKnorXpLx5
+	PcVVBDKxYK2X/n0drGFutf/5azIW9gIzl232ebMrhozWxA1QbXX42Z6j8YvE9ndRUZeoFbKkMcmSS
+	W10tMgtxAbgP/B55yhhDt94XjbK5gPIzKyxqHwtLhAu7tfZPAkYKDtzJqVtqYF54WPBYpWq/vRAIA
+	h5tCLS9Ae6s3r/fJJg1A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vRFOr-00000008X1t-0ghk;
-	Thu, 04 Dec 2025 19:54:01 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1vRH0j-00000008gY0-1C1X;
+	Thu, 04 Dec 2025 21:37:13 +0000
+Received: from smtp1.tecnico.ulisboa.pt ([193.136.128.21])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vRFOp-00000008X1P-1mPz;
-	Thu, 04 Dec 2025 19:53:59 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 8E5D06017F;
-	Thu,  4 Dec 2025 19:53:58 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0DC75C4CEFB;
-	Thu,  4 Dec 2025 19:53:57 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1764878038;
-	bh=IlWhPGE3xUkVs9noGqN8k3YfY0Ubf/0Tz/7YbiNoNOw=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=CRDyqcy+7t1NqBpjwfvt6EVa8fBQkxIXQGm3UhSM6pF/wQO2GB/GsLsPVU/5x5GEi
-	 ISuzg0kUbHZykMWfUetqINwESVLOMc5Fmkby09hgB/u7SERCzYnp0wawyGV2PlT7/n
-	 5l87bi2MeH9BDcFb4RYVZv5QJbaJ1y96IceT5JXqsVQb4D3G9VqtQmvZmKYyR8TlJc
-	 Kvw7JWiTUYPVYuFB9UIihbWz7Pzyesd0xuz9ohN9oj0Fd4ZSSgOfGwZqBkdh2dU7D4
-	 SjUBhWCsYAnJLC6nKdnqRUem9TAlPRZT3hfEV3yMJUy6kE89pMlaWtQcaBAKjIyVu9
-	 WVBxr11PatfhA==
-Date: Thu, 4 Dec 2025 13:53:55 -0600
-From: Rob Herring <robh@kernel.org>
-To: Jacky Chou <jacky_chou@aspeedtech.com>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
-	Andrew Jeffery <andrew@codeconstruct.com.au>,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Linus Walleij <linus.walleij@linaro.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	linux-aspeed@lists.ozlabs.org, linux-pci@vger.kernel.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
-	Andrew Jeffery <andrew@aj.id.au>, openbmc@lists.ozlabs.org,
-	linux-gpio@vger.kernel.org
-Subject: Re: [PATCH v6 0/7] Add ASPEED PCIe Root Complex support
-Message-ID: <20251204195355.GA1975043-robh@kernel.org>
-References: <20251201-upstream_pcie_rc-v6-0-8c8800c56b16@aspeedtech.com>
+	id 1vRH0f-00000008gVe-18wp
+	for linux-phy@lists.infradead.org;
+	Thu, 04 Dec 2025 21:37:12 +0000
+Received: from localhost (localhost.localdomain [127.0.0.1])
+	by smtp1.tecnico.ulisboa.pt (Postfix) with ESMTP id 636D26007C0E;
+	Thu,  4 Dec 2025 21:27:30 +0000 (WET)
+X-Virus-Scanned: by amavis-2.13.0 (20230106) (Debian) at tecnico.ulisboa.pt
+Received: from smtp1.tecnico.ulisboa.pt ([127.0.0.1])
+ by localhost (smtp1.tecnico.ulisboa.pt [127.0.0.1]) (amavis, port 10025)
+ with LMTP id BGUSO3u_jN07; Thu,  4 Dec 2025 21:27:28 +0000 (WET)
+Received: from mail1.tecnico.ulisboa.pt (mail1.ist.utl.pt [IPv6:2001:690:2100:1::b3dd:b9ac])
+	by smtp1.tecnico.ulisboa.pt (Postfix) with ESMTPS id E1D0D6007C1A;
+	Thu,  4 Dec 2025 21:27:25 +0000 (WET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tecnico.ulisboa.pt;
+	s=mail2; t=1764883646;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=i2xJ/PFmcIyGi2LSxLsJ2Rs5bQ0h4NEOjIa44Tuehhw=;
+	b=caq+uw9wNmaYLrBjvqhTf7/lFDUe9ka5PtWeIlUrVyBZRPzqO1ZGVGONmW90vhOTs05ai9
+	VWJuGEz3e4P9WBw2C/r0pTi4Lo2QwyNWcNdB6qEKzULsY1KkKM4dHNJYOr/pKIfScQHMdc
+	VLV/E1eHRACHg55Nm0phIWWkLVuaImKr+C2VF93JY+zc6CdASHVWBfCuUlxFJ1FdBjaThW
+	tnXujGa92x5Gy5d+OAi7rnjJQ92cqhRqgMcAH0KScW+HVeGWKLzTUb8GBkCLjyFNQq6kCL
+	DRv7Q+r63gQmfa2ONzwhWYOlXRw6h7Xbs60yopU7nHPlUccmR2hL4LrTLSfKuQ==
+Received: from [192.168.1.151] (unknown [IPv6:2001:8a0:57db:f00:3ee2:38aa:e2c9:7dde])
+	(Authenticated sender: ist187313)
+	by mail1.tecnico.ulisboa.pt (Postfix) with ESMTPSA id B968436013A;
+	Thu,  4 Dec 2025 21:27:25 +0000 (WET)
+From: Diogo Ivo <diogo.ivo@tecnico.ulisboa.pt>
+Date: Thu, 04 Dec 2025 21:27:17 +0000
+Subject: [PATCH 1/5] usb: host: tegra: Remove redundant
+ pm_runtime_mark_last_busy() call
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20251201-upstream_pcie_rc-v6-0-8c8800c56b16@aspeedtech.com>
+Message-Id: <20251204-diogo-tegra_phy-v1-1-51a2016d0be8@tecnico.ulisboa.pt>
+References: <20251204-diogo-tegra_phy-v1-0-51a2016d0be8@tecnico.ulisboa.pt>
+In-Reply-To: <20251204-diogo-tegra_phy-v1-0-51a2016d0be8@tecnico.ulisboa.pt>
+To: Mathias Nyman <mathias.nyman@intel.com>, 
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+ Thierry Reding <thierry.reding@gmail.com>, 
+ Jonathan Hunter <jonathanh@nvidia.com>, JC Kuo <jckuo@nvidia.com>, 
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>
+Cc: linux-usb@vger.kernel.org, linux-tegra@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, Diogo Ivo <diogo.ivo@tecnico.ulisboa.pt>
+X-Mailer: b4 0.14.3
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1764883644; l=780;
+ i=diogo.ivo@tecnico.ulisboa.pt; s=20240529; h=from:subject:message-id;
+ bh=7Bhceul0Djmy/FTqFXQ8yH/nOs3uT2cr4R1ec8CPF5U=;
+ b=MSFpWziUnBc/OPf/yhVMRKv6Ok/jVF90lG2n6xG4zPodbFDYWpxS6sqYuBVXaUgIVZHBYEOuu
+ zcCx9l7YBjkBXgP/LpUKBo3mcNEBo57EXVFGdhxhMwKm+/I/7MbwEx8
+X-Developer-Key: i=diogo.ivo@tecnico.ulisboa.pt; a=ed25519;
+ pk=BRGXhMh1q5KDlZ9y2B8SodFFY8FGupal+NMtJPwRpUQ=
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20251204_133709_761278_0797410A 
+X-CRM114-Status: UNSURE (   8.12  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,36 +99,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Dec 01, 2025 at 02:29:10PM +0800, Jacky Chou wrote:
-> This patch series adds support for the ASPEED PCIe Root Complex,
-> including device tree bindings, pinctrl support, and the PCIe host controller
-> driver. The patches introduce the necessary device tree nodes, pinmux groups,
-> and driver implementation to enable PCIe functionality on ASPEED platforms.
-> Currently, the ASPEED PCIe Root Complex only supports a single port.
-> 
-> Summary of changes:
-> - Add device tree binding documents for ASPEED PCIe PHY, PCIe Config, and PCIe RC
-> - Update MAINTAINERS for new bindings and driver
-> - Add PCIe RC node and PERST control pin to aspeed-g6 device tree
-> - Implement ASPEED PCIe PHY driver
-> - Implement ASPEED PCIe Root Complex host controller driver
-> 
-> This series has been tested on AST2600/AST2700 platforms and enables PCIe device
-> enumeration and operation.
-> 
-> Signed-off-by: Jacky Chou <jacky_chou@aspeedtech.com>
-> ---
-> Changes in v6:
-> - Refer to pci-cpi-bridge.yaml to update aspeed,ast2600-pcie.yaml and
->   the pcie node of aspeed-g6.dtsi.
+As pm_runtime_put_autosuspend() called at the end of tegra_xhci_id_work()
+already calls pm_runtime_mark_last_busy() remove the prior redundant call.
 
-Where is this? You don't describe the root port and its properties at 
-all now.
+Signed-off-by: Diogo Ivo <diogo.ivo@tecnico.ulisboa.pt>
+---
+ drivers/usb/host/xhci-tegra.c | 2 --
+ 1 file changed, 2 deletions(-)
 
-> - 'dt-bindings: pinctrl: aspeed,ast2600-pinctrl: Add PCIe RC PERST#
->   group' have applied, remove it from this version.
-> - Adjust the defnitions in pci.h. 
-> - Link to v5: https://lore.kernel.org/r/20251117-upstream_pcie_rc-v5-0-b4a198576acf@aspeedtech.com
+diff --git a/drivers/usb/host/xhci-tegra.c b/drivers/usb/host/xhci-tegra.c
+index 5255b1002893..9c69fccdc6e8 100644
+--- a/drivers/usb/host/xhci-tegra.c
++++ b/drivers/usb/host/xhci-tegra.c
+@@ -1399,8 +1399,6 @@ static void tegra_xhci_id_work(struct work_struct *work)
+ 		}
+ 
+ 		tegra_xhci_set_port_power(tegra, true, true);
+-		pm_runtime_mark_last_busy(tegra->dev);
+-
+ 	} else {
+ 		if (tegra->otg_usb3_port >= 0)
+ 			tegra_xhci_set_port_power(tegra, false, false);
+
+-- 
+2.52.0
+
 
 -- 
 linux-phy mailing list
