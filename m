@@ -4,57 +4,46 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AF6B8D216A4
-	for <linux-phy@archiver.kernel.org>; Thu,  4 Dec 2025 15:34:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5D2C5D216A6
+	for <linux-phy@archiver.kernel.org>; Thu,  4 Dec 2025 15:52:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qq0kFr6sk20pQMuT3cTM3pPYAAdufscVU/COnm0l+rU=; b=iJI4gfK2zzKTJ3
-	sAmLu10b1nFSuphSKCmRCdQ0VXUbvYA3PIX3rFp9E5CUkFA3o7MQ3OGILXzgkWhSEijCVC5o/WA2Y
-	+0IbsZtT/wYIY+C+14pVCzyYa5KoS8KYQtHhRglL+fzz3uGskFJhSFKv6KfOlUh277oEaovXiij3Y
-	6qiXTxbdUI8KUpLS4kl2zjAqv8m2gZPfn/Mw7jz7y2KzDIVnTOxYElyxRjWADK66A/PK6X+syk5xv
-	ZfUscXLvIP8Pf2bDIm0j/Va2Opl7v4vzQ5GOyyBd37T1OnMZ5/dywLdPGVmR0ar5r/xjd8bP4uHgl
-	3rRydF5hBRjXgOe/U16Q==;
+	List-Owner; bh=ZF6XUrxf9+xv6eEaU6TanK390SlsQodcNbbtRVlnC44=; b=yYJSnrgBOckhqj
+	mNGbj12/6SHPf90ZdCGDQvcKcY7BUQDYKJxr4ZGEwzYOQXsgUnT5tpziI4uLdar7BzaHoZPu+cAs7
+	sOFRAjf6skdphPhZMG1+CcrhCKDwh/8tImshGdRE/RRnJV135w20bD3S3jhX+FVSzSdQKBIqFXxky
+	tUDiwLWc+0eDv7v/8SwsPDe0WDzjpA5CIGIaEIEt5W59rrg08t/LSxinqLGirzpUypxCKI0BZQHwS
+	oSghWszkg3huJPlnBIabQg1MEZ5OQa/UnS1Oq1CKEeT+Idab4VW7E5DQsDcGdALlWbhzZkFJbl8hx
+	ET1Uv2P796G0oDDLqh7Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vRBLT-00000008DEj-0APp;
-	Thu, 04 Dec 2025 15:34:15 +0000
-Received: from mail-francesouthazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c207::3] helo=MRWPR03CU001.outbound.protection.outlook.com)
+	id 1vRBd4-00000008EWs-2fZy;
+	Thu, 04 Dec 2025 15:52:26 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vRBLQ-00000008DDX-0Pnr;
-	Thu, 04 Dec 2025 15:34:13 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=MMDc0HKyERAl5APac9H+lvaH+nq21CYA9OlGb+KC0AjtQQYfmlKvjVN1gc/RoaWyEutboy6tp4kpUH+JQm5Snl6JkCNI6pDuytK/siOwezX5a3s0Ga2xZZD2MxfNFR/WpK9UQ8gzt8/xHVPPfQ4ebjFB0/h0oLkFRwpkXnuqFxw7Cp324rMI9MSMvQ3ThMTajn4u2wARN5Xb5qzSWnYLc7vdj6PFlA0Gb1G+UyTzs45pqFWQe7ilTm5Fyy9cCB0mtq0p5bhyz7VAZ1JQ0tGoyfOKeTB0clXk6VuAbNqg7ZPwBLqCs4YVo9Od4ulNqQQ+7l9bNTNRJ8D3boebnIQK6g==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=ZYW7bEb9/GSHgbvO9qbG+Xqx87nVx92gULGVO2e+jLE=;
- b=FJRNEbzyEkQMpe1B/wmIvHn6gv0jVQ68L8n2Qn13qxahqcdWVfWNtp3ePpJpJ3NiVEaxMOoJFEaSo0sob1O4ftgiPAmbRiECzt881rI0C+v85LDvODim2aZqEx58El5cotA832+qHFAFeE2Y7zVLSiFDqbBCNiCaUj3oRhCb6/jDt+o9kKagLe1ZJXP6mvbo2d0r4cTRmt+OrV2mYMrpUruPCiQhl4DflXPcp/MQ+h7EvRvWyHnH3TDTyjddMP/XWeHALiawFfGOo7g35KNOmMVrWEXNCQaUHcKHptKMl8AwnQpCL24sSNSqPZ/eV77sNvP3nELEo80YFD5aEnj9AA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ZYW7bEb9/GSHgbvO9qbG+Xqx87nVx92gULGVO2e+jLE=;
- b=Wnf+8WDcLfa6/KFmqAmo2g8JAN6pyxTSwGemOo8L8MeoY2tczAB5kRZkbrOTjwvjOCj6E4lDqoj7D2V1sAE+o01PanQy+tFtbjcMesq4SCMI1JLEkamlquhZ41ef6FA36DmhBseYn0SMvN5/FBdFFINUlPDWHzF9b/lDDmhsVf1I5hVYoqbS6KXa1+D3u6ZkxV1bc8/SIA4N+5wE845YDigLqChjAfOoiRF5KQ4xfUA3Ryta1dYWMbRvGWEIdVRM40ooXqhYc75evzLmzz8TDUZfTKW3vC+CFuxVw9ay+kvkc01Zld+PpZmkIBP4OGain99pPU2F+iIhIq6gFw4ohQ==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from AM9PR04MB8585.eurprd04.prod.outlook.com (2603:10a6:20b:438::13)
- by AS4PR04MB9505.eurprd04.prod.outlook.com (2603:10a6:20b:4e4::20) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9388.9; Thu, 4 Dec
- 2025 15:34:05 +0000
-Received: from AM9PR04MB8585.eurprd04.prod.outlook.com
- ([fe80::8063:666f:9a2e:1dab]) by AM9PR04MB8585.eurprd04.prod.outlook.com
- ([fe80::8063:666f:9a2e:1dab%5]) with mapi id 15.20.9388.009; Thu, 4 Dec 2025
- 15:34:04 +0000
-Date: Thu, 4 Dec 2025 17:34:01 +0200
-From: Vladimir Oltean <vladimir.oltean@nxp.com>
-To: Krzysztof Kozlowski <krzk@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Jakub Kicinski <kuba@kernel.org>
+	id 1vRBd2-00000008EWD-1LpB;
+	Thu, 04 Dec 2025 15:52:24 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 6235E60200;
+	Thu,  4 Dec 2025 15:52:23 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 86CC3C116B1;
+	Thu,  4 Dec 2025 15:52:22 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1764863543;
+	bh=gx0KCllM9ErS+DGIJRYM6/W4bjQJj3kqWBhKLjr1UiU=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=Pg0bWHfT+vnpAFNxfwug+IPFq3ujzrQQrYpfkTaS3FonIi5FMu78d2lTK/UKD7QcW
+	 ToRRj1eimPm5gCrHIg/crnJnFJLSoxWi+xFof3gDd61UALe+SdpaSva/wmsNHuj2NA
+	 gogMqrb90UOV1WVz0UgkFd5GK7LTBlRbdm7dF97mJzTAPKmPbWwBOVBNWO2GLSYMe5
+	 4Hv/UoAoNt2IP55W5uSQWQz1w71o6R+YsYvhDkGcQTG3Z2v0/KHQxxM2IHDOgOXFRt
+	 cHNVS9DrtbBXmR03dXTIoab+ImcJIpyzNDIcMh5ak72Ce6BswZgf0FjAK1aZZSCsPK
+	 5Ynr68VeIVy+A==
+Date: Thu, 4 Dec 2025 09:52:19 -0600
+From: Rob Herring <robh@kernel.org>
+To: Vladimir Oltean <vladimir.oltean@nxp.com>
 Cc: netdev@vger.kernel.org, devicetree@vger.kernel.org,
 	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org,
@@ -65,107 +54,25 @@ Cc: netdev@vger.kernel.org, devicetree@vger.kernel.org,
 	Heiner Kallweit <hkallweit1@gmail.com>,
 	Russell King <linux@armlinux.org.uk>,
 	"David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>, Paolo Abeni <pabeni@redhat.com>,
-	Rob Herring <robh@kernel.org>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
 	Matthias Brugger <matthias.bgg@gmail.com>,
 	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
 	Eric Woudstra <ericwouds@gmail.com>,
-	Marek =?utf-8?B?QmVo4oia4oirbg==?= <kabel@kernel.org>,
+	Marek =?iso-8859-1?Q?Beh=FAn?= <kabel@kernel.org>,
 	Lee Jones <lee@kernel.org>,
 	Patrice Chotard <patrice.chotard@foss.st.com>
-Subject: Re: [PATCH net-next 5/9] phy: add phy_get_rx_polarity() and
- phy_get_tx_polarity()
-Message-ID: <20251204153401.tinrt57ifjthw55r@skbuf>
+Subject: Re: [PATCH net-next 2/9] dt-bindings: phy-common-props: create a
+ reusable "protocol-names" definition
+Message-ID: <20251204155219.GA1533839-robh@kernel.org>
 References: <20251122193341.332324-1-vladimir.oltean@nxp.com>
- <20251122193341.332324-6-vladimir.oltean@nxp.com>
- <20251124200121.5b82f09e@kernel.org>
- <aS1T5i3pCHsNVql6@vaman>
- <69ac21ea-eed2-449a-b231-c43e3cd0bdc0@kernel.org>
-Content-Disposition: inline
-In-Reply-To: <69ac21ea-eed2-449a-b231-c43e3cd0bdc0@kernel.org>
-X-ClientProxiedBy: VI1P194CA0044.EURP194.PROD.OUTLOOK.COM
- (2603:10a6:803:3c::33) To AM9PR04MB8585.eurprd04.prod.outlook.com
- (2603:10a6:20b:438::13)
+ <20251122193341.332324-3-vladimir.oltean@nxp.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AM9PR04MB8585:EE_|AS4PR04MB9505:EE_
-X-MS-Office365-Filtering-Correlation-Id: 8a713417-1a60-4e8e-1988-08de334a8ea5
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|376014|7416014|10070799003|1800799024|366016;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?G6T8rqE4u/ToDyfuhTnfDnHys60QnRcxAj1KtKKQjTaN74722oIXoyxRWqtr?=
- =?us-ascii?Q?/gEHy5O1NkM33pTNzJFHfcrEhQ38yvQz8fubtVtxobLIsNfWSJUJyy7fk5az?=
- =?us-ascii?Q?pj+6bBsDYZi1NHstBoEHe4MMnz0J9146cLAxtMRwm56vkZWKPhH7K+KKK+Gx?=
- =?us-ascii?Q?QZTxpVhxMcdS9Sd9BpYIDTGqyWR4ka4cark5T39HqQmAaUl5pnpEDIqbCMsx?=
- =?us-ascii?Q?sw0gSGbkckNaLU5WvNnt2bGgpmGwKEFKiIveyi8z1DjZB+YrMm2whld0xxPO?=
- =?us-ascii?Q?/qLMl6V4pqZNmheNRm9VQbnTcaEtcK528fRR8RL8jGij1TIsovB2r1JQ76o9?=
- =?us-ascii?Q?RsFCtfx5YHaQKvVRlLw34maCrtlYOjtoXDGqHJly2vtkkuz86KI/V1fsWZJk?=
- =?us-ascii?Q?/33n7mNGkro35Gck+Bk5umnzlAu6uQVzG9leKNNn1ex2CsBtp361hy0eV0hb?=
- =?us-ascii?Q?x7H/0ZeI2BdTlu9yFZUgThcBEK1o4p/CuSxM2n9q4s2y/d+mLqM+qmoQpMI0?=
- =?us-ascii?Q?cQ9UazAzzWM08zIsOxgy7M6LagnY+GsxH8R2JFS72oAW5xlLmTtAYeqXir5+?=
- =?us-ascii?Q?vrKi73P7Jn/KdpIdxV8yW3su+2AVQTfBsduxZJiVD/Bpzz5itFguL9Mac+HB?=
- =?us-ascii?Q?wccVGudb9T4Ei6awUxLujQPgk8LJTd+lwpK2xEFYTa4yFYINcAPyurYWBAvQ?=
- =?us-ascii?Q?ZMoFpSZCHTRXuCHsGaetHKmyMX6f3tzc9D838hpeVXSFzu9ofeoh0zcSIg1W?=
- =?us-ascii?Q?vp4NTaB/TCdF9YwuhHdj+Yj97r0OrNcsGSErRzAZSSEJMZil+EB9PK3sZuTc?=
- =?us-ascii?Q?5yMnPZ3kiEkDhKXkH3YGnBrAUC9tK//Q5nDdIn7k2VnOvIq+9szBBytzpGh1?=
- =?us-ascii?Q?uMzenauxwZlJIohErxVanWdjWf3qePMqqQ18llXdoelmDIcHXB3MuElvjaGJ?=
- =?us-ascii?Q?SjpOJapScI8zeGGyePc+cgcXI7vnHeygT1oAY8Bb8Nz/OV1pumt2I6ZLW9sI?=
- =?us-ascii?Q?0aQp9md7z1ElsG40iz80Nk1A8UeIdyizI7muzKcTbZm8AkTgQNdTbHgeUv38?=
- =?us-ascii?Q?G1PEjMIUxe2hkmw98kEh72yu8/t67KRotWovElcsY5zx/CHVqIJaXcU1COmS?=
- =?us-ascii?Q?14Df8Umd+yUiESPUfITORMSVdWW/HhgtCFjcqc2H9Jl77L8wRrHfJNXXmb+S?=
- =?us-ascii?Q?+Vp2uT85dArOmEdPq/iqpvwHEFzvLQv9tQXEwxIaOaCAWs6ocif4dMZ+fxPX?=
- =?us-ascii?Q?2D/1svVMxux90l3NFvCA+ftt3FiV4JoD8Lpi7zhPDB0RbQhrBmlkJl5/30FD?=
- =?us-ascii?Q?xPGRtTGwU0kXXKAjWELXxdDa0NpQBs5LIIGsgF4XBOWE5T/fCrFcyvR55JRO?=
- =?us-ascii?Q?18fCeKj56kN4MCLoOkUZ0t9hXP9Eo7uln0ejZHIOo3eK4eCNKOX6y01ZsB55?=
- =?us-ascii?Q?HIRlyvbylOt+zap4sP6pW2/kPgRRMG6C?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM9PR04MB8585.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(376014)(7416014)(10070799003)(1800799024)(366016);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?zP8ba20l5sjbEMjqKsg/myIGg8CiFcvSivqbtOKxTTF2u5ZSwllwvRSNGmPE?=
- =?us-ascii?Q?nB32btiO4S5lm30jhJwyPF1nAlVQxUuYlms1E50mTSbHwx7ngV0hZZ2x1CNE?=
- =?us-ascii?Q?r9urQvXygTURK+fnqlqtYg3ugE/qMZdLZWXEDaepV3z8Q739Q84/7sItuQAZ?=
- =?us-ascii?Q?3tTcxuHc7j6xU9anovZQu2rEWN+akR4Ayk48LaSt8bAHqvnoiEMpwBmXzcpJ?=
- =?us-ascii?Q?j2YiV2x8EiOf4Ry6bU977IPuxVqHB4dyIVIQNcOZNW96sF+39uK8kSFfBgKz?=
- =?us-ascii?Q?dUmo6ql8WnCYqmmSCT1Miw2SLs4ZpuBMlzwxBY5ynL41j9SCjwgtbVkpjFcL?=
- =?us-ascii?Q?n0v6qy3FG2tmCbyzAyPAeiuEeIteUeeky/wwxey2Mhx+bxLSySlb2mbetchU?=
- =?us-ascii?Q?WD7za4umVfoODhii3ko5elMzvqqm/dLNyBU5qSqVcO4r/ORooudJxyRLtxLU?=
- =?us-ascii?Q?0VRqXSDmSNmShBHmQc8o25MKRiVoc2MC1hmdzLtwXfTW6iGhWBNMGrHwJmLn?=
- =?us-ascii?Q?hLDSBw3lpQv0pE10xqwobP21i2RXcj44db30Ez0b+gE6TeJ/KEtjwcZm7e9o?=
- =?us-ascii?Q?RyzHS8eAGM+SIJSGadRA7ey3MbZsudsg7DOvwhi3OBolmycyiCtfJe1YAsYx?=
- =?us-ascii?Q?rpLQFN8acy3MYZ2tdbeMMfFDUmxcuj6ZAhJTxiwK6UUM0tOIPVhl+aqDFhkW?=
- =?us-ascii?Q?nllcPR7+wqCpASyO3+onHw3Cq9Z6c8v5tnx+ECvtzifxczGS/IwO2bFC6iU8?=
- =?us-ascii?Q?FGwNi94PjJuoozFCc6m+oeNGABKTg2MmuENd2cOey1cOhejWZDpUUyNgBbgr?=
- =?us-ascii?Q?kstgiyPk6Nveb79h1l4IA9kMHxSB8d2spQzXWSwfhChcW+AFUy6a2yNKhZ7l?=
- =?us-ascii?Q?SeVfqv3atUfzbjfZNhQ6n6/7BIuUo457ymrMUiqM/vZTlSp8IZz0gfHzv/Ax?=
- =?us-ascii?Q?wimQoSQ7n6UCpuL6a7/i5SSqx4E30eeDe13KhenmORz+W8CAlga94g6eNJoH?=
- =?us-ascii?Q?Ma8EZ5S9T/70F6d+dtFnkDtxGxE8NsSpicZpzFNk/rn0f2VwvIETIXrn2dUA?=
- =?us-ascii?Q?adN9GX6YSfZrQB9QrjJV00oxX77GfyROMgIsGsJb3ONdzyrNn20cBRJyO2yL?=
- =?us-ascii?Q?osOsIxKOPLSuqhR842DJEBrHMoMbWf2VvmQha0KOELq14LRG7PDmO4k0f3jy?=
- =?us-ascii?Q?iBEC8hZsMLp5kLKl8nJGq2XlATRlhypDVVxtx89Vm9/IywKMMf/AsQFSVhfA?=
- =?us-ascii?Q?+QNgf3veKwndy+WOQyVlaDk5JqOT5yMTqxCxcszhOcrU695Fk84bw4knSQ3i?=
- =?us-ascii?Q?dS6/VlzTtUMfbRAi/SCl8wV62EMrj0Qq6qCwn9ZGTa/zczbEWEutx9JLnQsf?=
- =?us-ascii?Q?kh2RPH0eWDioirxw/r3pI0sIY7klHvN1GTiiYoX7TuTQh15TxVGQnLY8E21I?=
- =?us-ascii?Q?dZOiVA4AQ+fWUOM5hlMr6qrZXaaG2+Fcx0af6NvQrcnvUprYD3R8ceN/O+PV?=
- =?us-ascii?Q?cH46gScymi9AYgCjJlfCEIhNHntZ9URQwtSQ5/R46U9MZ1b79eRi5RxTJbbk?=
- =?us-ascii?Q?EkUGpEhye+D7jRWEsjimugA5b7SYE2PkOaFavyWg9uNhTsLHEt3uqP7zwN20?=
- =?us-ascii?Q?oVIjFpwQqHA73BG3dUVcFaVrgtUuFKFzm1JL3SIa6V34gCe/u6K46nRuGkXI?=
- =?us-ascii?Q?mvzRfg=3D=3D?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 8a713417-1a60-4e8e-1988-08de334a8ea5
-X-MS-Exchange-CrossTenant-AuthSource: AM9PR04MB8585.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Dec 2025 15:34:04.9456
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: xhRQ/+D3EWu8bycKJ7qvp97ICaKSvLmjAN+9rCFEEwjkpsm90OndCWT+qszLMOLBZJc4E7Nc+4eFJEKfBOjeyA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS4PR04MB9505
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251204_073412_187955_35D219C3 
-X-CRM114-Status: GOOD (  26.68  )
+Content-Disposition: inline
+In-Reply-To: <20251122193341.332324-3-vladimir.oltean@nxp.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -177,76 +84,101 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Dec 01, 2025 at 09:41:21AM +0100, Krzysztof Kozlowski wrote:
-> On 01/12/2025 09:37, Vinod Koul wrote:
-> > On 24-11-25, 20:01, Jakub Kicinski wrote:
-> >> On Sat, 22 Nov 2025 21:33:37 +0200 Vladimir Oltean wrote:
-> >>> Add helpers in the generic PHY folder which can be used using 'select
-> >>> GENERIC_PHY_COMMON_PROPS' from Kconfig, without otherwise needing to
-> >>> enable GENERIC_PHY.
-> >>>
-> >>> These helpers need to deal with the slight messiness of the fact that
-> >>> the polarity properties are arrays per protocol, and with the fact that
-> >>> there is no default value mandated by the standard properties, all
-> >>> default values depend on driver and protocol (PHY_POL_NORMAL may be a
-> >>> good default for SGMII, whereas PHY_POL_AUTO may be a good default for
-> >>> PCIe).
-> >>>
-> >>> Push the supported mask of polarities to these helpers, to simplify
-> >>> drivers such that they don't need to validate what's in the device tree
-> >>> (or other firmware description).
-> >>>
-> >>> The proposed maintainership model is joint custody between netdev and
-> >>> linux-phy, because of the fact that these properties can be applied to
-> >>> Ethernet PCS blocks just as well as Generic PHY devices. I've added as
-> >>> maintainers those from "ETHERNET PHY LIBRARY", "NETWORKING DRIVERS" and
-> >>> "GENERIC PHY FRAMEWORK".
-> >>
-> >> I dunno.. ain't no such thing as "joint custody" maintainership.
-> >> We have to pick one tree. Given the set of Ms here, I suspect 
-> >> the best course of action may be to bubble this up to its own tree.
-> >> Ask Konstantin for a tree in k.org, then you can "co-post" the patches
-> >> for review + PR link in the cover letter (e.g. how Tony from Intel
-> >> submits their patches). This way not networking and PHY can pull
-> >> the shared changes with stable commit IDs.
-> > 
-> > How much is the volume of the changes that we are talking about, we can
-> > always ack and pull into each other trees..?
-> 
-> That's just one C file, isn't it? Having dedicated tree for one file
-> feels like huge overhead.
+On Sat, Nov 22, 2025 at 09:33:34PM +0200, Vladimir Oltean wrote:
+> Other properties also need to be defined per protocol than just
+> tx-p2p-microvolt-names. Create a common definition to avoid copying a 55
+> line property.
+> =
 
-I have to admit, no matter how we define what pertains to this presumed
-new git tree, the fact is that the volume of patches will be quite low.
+> Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
+> ---
+>  .../bindings/phy/phy-common-props.yaml        | 34 +++++++++++--------
+>  1 file changed, 19 insertions(+), 15 deletions(-)
+> =
 
-Since the API provider always sits in drivers/phy/ in every case that I
-can think about, technically all situations can be resolved by linux-phy
-providing these stable PR branches to netdev. In turn, to netdev it
-makes no difference whether the branches are coming from linux-phy or a
-third git tree. Whereas to linux-phy, things would even maybe a bit
-simpler, due to already having the patches vs needing to pull them from
-the 3rd tree.
+> diff --git a/Documentation/devicetree/bindings/phy/phy-common-props.yaml =
+b/Documentation/devicetree/bindings/phy/phy-common-props.yaml
+> index 255205ac09cd..775f4dfe3cc3 100644
+> --- a/Documentation/devicetree/bindings/phy/phy-common-props.yaml
+> +++ b/Documentation/devicetree/bindings/phy/phy-common-props.yaml
+> @@ -13,22 +13,12 @@ description:
+>  maintainers:
+>    - Marek Beh=FAn <kabel@kernel.org>
+>  =
 
-From my perspective, if I'm perfectly honest, the idea was attractive
-because of the phenomenal difference in turnaround times between netdev
-and linux-phy review&merge processes (very fast in netdev, very slow and
-patchy in linux-phy). If there's a set like this, where all API consumers
-are in netdev for now but the API itself is in linux-phy, you'd have to
-introduce 1000 NOP cycles just to wait for the PR branch.
+> -properties:
+> -  tx-p2p-microvolt:
+> +$defs:
+> +  protocol-names:
+>      description:
+> -      Transmit amplitude voltages in microvolts, peak-to-peak. If this p=
+roperty
+> -      contains multiple values for various PHY modes, the
+> -      'tx-p2p-microvolt-names' property must be provided and contain
+> -      corresponding mode names.
+> -
+> -  tx-p2p-microvolt-names:
+> -    description: |
+> -      Names of the modes corresponding to voltages in the 'tx-p2p-microv=
+olt'
+> -      property. Required only if multiple voltages are provided.
+> -
+> -      If a value of 'default' is provided, the system should use it for =
+any PHY
+> -      mode that is otherwise not defined here. If 'default' is not provi=
+ded, the
+> -      system should use manufacturer default value.
+> +      Names of the PHY modes. If a value of 'default' is provided, the s=
+ystem
+> +      should use it for any PHY mode that is otherwise not defined here.=
+ If
+> +      'default' is not provided, the system should use manufacturer defa=
+ult value.
+>      minItems: 1
+>      maxItems: 16
+>      items:
+> @@ -89,6 +79,20 @@ properties:
+>          - mipi-dphy-univ
+>          - mipi-dphy-v2.5-univ
+>  =
 
-In that sense, having more people into the mix would help just because
-there's more people (i.e. fewer points of failure), even though overall
-there's more overhead.
+> +properties:
+> +  tx-p2p-microvolt:
+> +    description:
+> +      Transmit amplitude voltages in microvolts, peak-to-peak. If this p=
+roperty
+> +      contains multiple values for various PHY modes, the
+> +      'tx-p2p-microvolt-names' property must be provided and contain
+> +      corresponding mode names.
+> +
+> +  tx-p2p-microvolt-names:
+> +    description:
+> +      Names of the modes corresponding to voltages in the 'tx-p2p-microv=
+olt'
+> +      property. Required only if multiple voltages are provided.
+> +    $ref: "#/$defs/protocol-names"
 
-IDK, these are my 2 cents, I can resubmit this set in 2 weeks with the
-maintainership of the PHY common properties exclusive to linux-phy.
+The default for .*-names is the entries don't have to be unique. That's =
 
--- 
+for the exception, but unfortunately everyone else has to define the =
+
+type (type.yaml#/definitons/string).
+
+Each user needs to define the names of the entries which will enforce =
+
+the length. So defining the length 1-16 here doesn't do much. So I think =
+
+you can drop that and then the $defs is not needed either.
+
+Rob
+
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
