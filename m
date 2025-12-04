@@ -4,100 +4,168 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E30ED20695
-	for <linux-phy@archiver.kernel.org>; Thu,  4 Dec 2025 13:42:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AF6B8D216A4
+	for <linux-phy@archiver.kernel.org>; Thu,  4 Dec 2025 15:34:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TkwOrKiylX3z0mmoa8F5GFgXarLS0kj8E6Bv1TpGMXs=; b=mK7Uvo3Y8Lb66W
-	/Owiv0k8rL3Kg/r5b6LpnpBWdnqwCa0bsDBWfDxUrNxQvEuo+aHTWct2Nk+Y1xKIFnJYUvRYEGTrG
-	vEP2MZpMG7/VPopfE+Ou3Dlx2ZJtiS9oRvgUY+kbK2NAp82OUyC7CpsLcAz0+G/ppJgl2OQVOtfmU
-	E2QKHx+9rJAJbCfWAQ4yD3tUcfW9XsiKBRPi50s2dUHVFoV9LrVUQqRPE+q4miG7vZH7AzVT/3JZC
-	Iq3sr9K6wdnK/2wjlJdgm27ymCAjpw3JteixrHlyXrLCUHPBFi/vu4axjISTLPR8wIwd0Q6xLiV/k
-	jVCv1aS5u/NwymgioHrw==;
+	List-Owner; bh=qq0kFr6sk20pQMuT3cTM3pPYAAdufscVU/COnm0l+rU=; b=iJI4gfK2zzKTJ3
+	sAmLu10b1nFSuphSKCmRCdQ0VXUbvYA3PIX3rFp9E5CUkFA3o7MQ3OGILXzgkWhSEijCVC5o/WA2Y
+	+0IbsZtT/wYIY+C+14pVCzyYa5KoS8KYQtHhRglL+fzz3uGskFJhSFKv6KfOlUh277oEaovXiij3Y
+	6qiXTxbdUI8KUpLS4kl2zjAqv8m2gZPfn/Mw7jz7y2KzDIVnTOxYElyxRjWADK66A/PK6X+syk5xv
+	ZfUscXLvIP8Pf2bDIm0j/Va2Opl7v4vzQ5GOyyBd37T1OnMZ5/dywLdPGVmR0ar5r/xjd8bP4uHgl
+	3rRydF5hBRjXgOe/U16Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vR9bE-000000084Ow-0Z0Y;
-	Thu, 04 Dec 2025 13:42:24 +0000
-Received: from mgamail.intel.com ([192.198.163.14])
+	id 1vRBLT-00000008DEj-0APp;
+	Thu, 04 Dec 2025 15:34:15 +0000
+Received: from mail-francesouthazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c207::3] helo=MRWPR03CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vR9b9-000000084Nw-2hAj;
-	Thu, 04 Dec 2025 13:42:23 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1764855739; x=1796391739;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=30wP0TX1VK3UbNCz19GHE9bCOLKLD8pr5Gzk2VuxvGw=;
-  b=J7OdXf88VyB6clJ4hxA884AlVbem4J/36zELpUTUsx2ijzaaLFdQ76Aq
-   Y79iBGYKWX7fMJkm9Mke+XENN8f1GzDZrqXeJoYI4I0jnK49FhvwW5iQp
-   3aJfqeOhaNFbbSWHViBXRxP3Nl9umH6EApoKeuICF1r/RKU5tfCwz0azw
-   C6XrxAxqrlUOfT4pXb62Ls1SND/XqGHcnbDfaBDUQ7qhq+nU0zyHi5gtV
-   Sdxzu215tt3yUwzC/h+hp9yHPDpjz2YFKpASLBUxgbNATh7b/a6HGCgKZ
-   jhPcbt59Zd1N7eNRiNPFovFZneaWsFJJIkw71M8Rq1nbJK/SDr0fdv3vY
-   g==;
-X-CSE-ConnectionGUID: NwMioDJ2SEW5Q/KTl+h45g==
-X-CSE-MsgGUID: 5l76NYeUTuO+er16hLYgtg==
-X-IronPort-AV: E=McAfee;i="6800,10657,11632"; a="66911018"
-X-IronPort-AV: E=Sophos;i="6.20,248,1758610800"; 
-   d="scan'208";a="66911018"
-Received: from orviesa003.jf.intel.com ([10.64.159.143])
-  by fmvoesa108.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 Dec 2025 05:42:18 -0800
-X-CSE-ConnectionGUID: DxyftxzaSmuGPOccXE4iKQ==
-X-CSE-MsgGUID: kBWCfuAfTk6HBNfipdewYA==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.20,248,1758610800"; 
-   d="scan'208";a="199164378"
-Received: from rfrazer-mobl3.amr.corp.intel.com (HELO kuha) ([10.124.220.149])
-  by orviesa003.jf.intel.com with SMTP; 04 Dec 2025 05:42:05 -0800
-Received: by kuha (sSMTP sendmail emulation); Thu, 04 Dec 2025 15:41:56 +0200
-Date: Thu, 4 Dec 2025 15:41:56 +0200
-From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
-To: Chaoyi Chen <kernel@airkyi.com>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
-	Peter Chen <hzpeterchen@gmail.com>,
-	Luca Ceresoli <luca.ceresoli@bootlin.com>,
+	id 1vRBLQ-00000008DDX-0Pnr;
+	Thu, 04 Dec 2025 15:34:13 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=MMDc0HKyERAl5APac9H+lvaH+nq21CYA9OlGb+KC0AjtQQYfmlKvjVN1gc/RoaWyEutboy6tp4kpUH+JQm5Snl6JkCNI6pDuytK/siOwezX5a3s0Ga2xZZD2MxfNFR/WpK9UQ8gzt8/xHVPPfQ4ebjFB0/h0oLkFRwpkXnuqFxw7Cp324rMI9MSMvQ3ThMTajn4u2wARN5Xb5qzSWnYLc7vdj6PFlA0Gb1G+UyTzs45pqFWQe7ilTm5Fyy9cCB0mtq0p5bhyz7VAZ1JQ0tGoyfOKeTB0clXk6VuAbNqg7ZPwBLqCs4YVo9Od4ulNqQQ+7l9bNTNRJ8D3boebnIQK6g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=ZYW7bEb9/GSHgbvO9qbG+Xqx87nVx92gULGVO2e+jLE=;
+ b=FJRNEbzyEkQMpe1B/wmIvHn6gv0jVQ68L8n2Qn13qxahqcdWVfWNtp3ePpJpJ3NiVEaxMOoJFEaSo0sob1O4ftgiPAmbRiECzt881rI0C+v85LDvODim2aZqEx58El5cotA832+qHFAFeE2Y7zVLSiFDqbBCNiCaUj3oRhCb6/jDt+o9kKagLe1ZJXP6mvbo2d0r4cTRmt+OrV2mYMrpUruPCiQhl4DflXPcp/MQ+h7EvRvWyHnH3TDTyjddMP/XWeHALiawFfGOo7g35KNOmMVrWEXNCQaUHcKHptKMl8AwnQpCL24sSNSqPZ/eV77sNvP3nELEo80YFD5aEnj9AA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=ZYW7bEb9/GSHgbvO9qbG+Xqx87nVx92gULGVO2e+jLE=;
+ b=Wnf+8WDcLfa6/KFmqAmo2g8JAN6pyxTSwGemOo8L8MeoY2tczAB5kRZkbrOTjwvjOCj6E4lDqoj7D2V1sAE+o01PanQy+tFtbjcMesq4SCMI1JLEkamlquhZ41ef6FA36DmhBseYn0SMvN5/FBdFFINUlPDWHzF9b/lDDmhsVf1I5hVYoqbS6KXa1+D3u6ZkxV1bc8/SIA4N+5wE845YDigLqChjAfOoiRF5KQ4xfUA3Ryta1dYWMbRvGWEIdVRM40ooXqhYc75evzLmzz8TDUZfTKW3vC+CFuxVw9ay+kvkc01Zld+PpZmkIBP4OGain99pPU2F+iIhIq6gFw4ohQ==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AM9PR04MB8585.eurprd04.prod.outlook.com (2603:10a6:20b:438::13)
+ by AS4PR04MB9505.eurprd04.prod.outlook.com (2603:10a6:20b:4e4::20) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9388.9; Thu, 4 Dec
+ 2025 15:34:05 +0000
+Received: from AM9PR04MB8585.eurprd04.prod.outlook.com
+ ([fe80::8063:666f:9a2e:1dab]) by AM9PR04MB8585.eurprd04.prod.outlook.com
+ ([fe80::8063:666f:9a2e:1dab%5]) with mapi id 15.20.9388.009; Thu, 4 Dec 2025
+ 15:34:04 +0000
+Date: Thu, 4 Dec 2025 17:34:01 +0200
+From: Vladimir Oltean <vladimir.oltean@nxp.com>
+To: Krzysztof Kozlowski <krzk@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Jakub Kicinski <kuba@kernel.org>
+Cc: netdev@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-mediatek@lists.infradead.org,
+	Daniel Golle <daniel@makrotopia.org>,
+	Horatiu Vultur <horatiu.vultur@microchip.com>,
+	Andrew Lunn <andrew@lunn.ch>,
+	Heiner Kallweit <hkallweit1@gmail.com>,
+	Russell King <linux@armlinux.org.uk>,
+	"David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>, Paolo Abeni <pabeni@redhat.com>,
 	Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
 	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
-	Andy Yan <andy.yan@rock-chips.com>,
-	Yubing Zhang <yubing.zhang@rock-chips.com>,
-	Frank Wang <frank.wang@rock-chips.com>,
-	Andrzej Hajda <andrzej.hajda@intel.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Robert Foss <rfoss@kernel.org>,
-	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
-	Jonas Karlman <jonas@kwiboo.se>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
-	Amit Sunil Dhamne <amitsd@google.com>,
-	Chaoyi Chen <chaoyi.chen@rock-chips.com>,
-	Dragan Simic <dsimic@manjaro.org>, Johan Jonker <jbx6244@gmail.com>,
-	Diederik de Haas <didi.debian@cknow.org>,
-	Peter Robinson <pbrobinson@gmail.com>, linux-usb@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org
-Subject: Re: [RESEND PATCH v11 02/11] usb: typec: Export typec bus and typec
- altmode device type
-Message-ID: <aTGPpInIEzFhftf4@kuha>
-References: <20251204063109.104-1-kernel@airkyi.com>
- <20251204063109.104-3-kernel@airkyi.com>
-MIME-Version: 1.0
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	Eric Woudstra <ericwouds@gmail.com>,
+	Marek =?utf-8?B?QmVo4oia4oirbg==?= <kabel@kernel.org>,
+	Lee Jones <lee@kernel.org>,
+	Patrice Chotard <patrice.chotard@foss.st.com>
+Subject: Re: [PATCH net-next 5/9] phy: add phy_get_rx_polarity() and
+ phy_get_tx_polarity()
+Message-ID: <20251204153401.tinrt57ifjthw55r@skbuf>
+References: <20251122193341.332324-1-vladimir.oltean@nxp.com>
+ <20251122193341.332324-6-vladimir.oltean@nxp.com>
+ <20251124200121.5b82f09e@kernel.org>
+ <aS1T5i3pCHsNVql6@vaman>
+ <69ac21ea-eed2-449a-b231-c43e3cd0bdc0@kernel.org>
 Content-Disposition: inline
-In-Reply-To: <20251204063109.104-3-kernel@airkyi.com>
+In-Reply-To: <69ac21ea-eed2-449a-b231-c43e3cd0bdc0@kernel.org>
+X-ClientProxiedBy: VI1P194CA0044.EURP194.PROD.OUTLOOK.COM
+ (2603:10a6:803:3c::33) To AM9PR04MB8585.eurprd04.prod.outlook.com
+ (2603:10a6:20b:438::13)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM9PR04MB8585:EE_|AS4PR04MB9505:EE_
+X-MS-Office365-Filtering-Correlation-Id: 8a713417-1a60-4e8e-1988-08de334a8ea5
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|376014|7416014|10070799003|1800799024|366016;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?G6T8rqE4u/ToDyfuhTnfDnHys60QnRcxAj1KtKKQjTaN74722oIXoyxRWqtr?=
+ =?us-ascii?Q?/gEHy5O1NkM33pTNzJFHfcrEhQ38yvQz8fubtVtxobLIsNfWSJUJyy7fk5az?=
+ =?us-ascii?Q?pj+6bBsDYZi1NHstBoEHe4MMnz0J9146cLAxtMRwm56vkZWKPhH7K+KKK+Gx?=
+ =?us-ascii?Q?QZTxpVhxMcdS9Sd9BpYIDTGqyWR4ka4cark5T39HqQmAaUl5pnpEDIqbCMsx?=
+ =?us-ascii?Q?sw0gSGbkckNaLU5WvNnt2bGgpmGwKEFKiIveyi8z1DjZB+YrMm2whld0xxPO?=
+ =?us-ascii?Q?/qLMl6V4pqZNmheNRm9VQbnTcaEtcK528fRR8RL8jGij1TIsovB2r1JQ76o9?=
+ =?us-ascii?Q?RsFCtfx5YHaQKvVRlLw34maCrtlYOjtoXDGqHJly2vtkkuz86KI/V1fsWZJk?=
+ =?us-ascii?Q?/33n7mNGkro35Gck+Bk5umnzlAu6uQVzG9leKNNn1ex2CsBtp361hy0eV0hb?=
+ =?us-ascii?Q?x7H/0ZeI2BdTlu9yFZUgThcBEK1o4p/CuSxM2n9q4s2y/d+mLqM+qmoQpMI0?=
+ =?us-ascii?Q?cQ9UazAzzWM08zIsOxgy7M6LagnY+GsxH8R2JFS72oAW5xlLmTtAYeqXir5+?=
+ =?us-ascii?Q?vrKi73P7Jn/KdpIdxV8yW3su+2AVQTfBsduxZJiVD/Bpzz5itFguL9Mac+HB?=
+ =?us-ascii?Q?wccVGudb9T4Ei6awUxLujQPgk8LJTd+lwpK2xEFYTa4yFYINcAPyurYWBAvQ?=
+ =?us-ascii?Q?ZMoFpSZCHTRXuCHsGaetHKmyMX6f3tzc9D838hpeVXSFzu9ofeoh0zcSIg1W?=
+ =?us-ascii?Q?vp4NTaB/TCdF9YwuhHdj+Yj97r0OrNcsGSErRzAZSSEJMZil+EB9PK3sZuTc?=
+ =?us-ascii?Q?5yMnPZ3kiEkDhKXkH3YGnBrAUC9tK//Q5nDdIn7k2VnOvIq+9szBBytzpGh1?=
+ =?us-ascii?Q?uMzenauxwZlJIohErxVanWdjWf3qePMqqQ18llXdoelmDIcHXB3MuElvjaGJ?=
+ =?us-ascii?Q?SjpOJapScI8zeGGyePc+cgcXI7vnHeygT1oAY8Bb8Nz/OV1pumt2I6ZLW9sI?=
+ =?us-ascii?Q?0aQp9md7z1ElsG40iz80Nk1A8UeIdyizI7muzKcTbZm8AkTgQNdTbHgeUv38?=
+ =?us-ascii?Q?G1PEjMIUxe2hkmw98kEh72yu8/t67KRotWovElcsY5zx/CHVqIJaXcU1COmS?=
+ =?us-ascii?Q?14Df8Umd+yUiESPUfITORMSVdWW/HhgtCFjcqc2H9Jl77L8wRrHfJNXXmb+S?=
+ =?us-ascii?Q?+Vp2uT85dArOmEdPq/iqpvwHEFzvLQv9tQXEwxIaOaCAWs6ocif4dMZ+fxPX?=
+ =?us-ascii?Q?2D/1svVMxux90l3NFvCA+ftt3FiV4JoD8Lpi7zhPDB0RbQhrBmlkJl5/30FD?=
+ =?us-ascii?Q?xPGRtTGwU0kXXKAjWELXxdDa0NpQBs5LIIGsgF4XBOWE5T/fCrFcyvR55JRO?=
+ =?us-ascii?Q?18fCeKj56kN4MCLoOkUZ0t9hXP9Eo7uln0ejZHIOo3eK4eCNKOX6y01ZsB55?=
+ =?us-ascii?Q?HIRlyvbylOt+zap4sP6pW2/kPgRRMG6C?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM9PR04MB8585.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(376014)(7416014)(10070799003)(1800799024)(366016);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?zP8ba20l5sjbEMjqKsg/myIGg8CiFcvSivqbtOKxTTF2u5ZSwllwvRSNGmPE?=
+ =?us-ascii?Q?nB32btiO4S5lm30jhJwyPF1nAlVQxUuYlms1E50mTSbHwx7ngV0hZZ2x1CNE?=
+ =?us-ascii?Q?r9urQvXygTURK+fnqlqtYg3ugE/qMZdLZWXEDaepV3z8Q739Q84/7sItuQAZ?=
+ =?us-ascii?Q?3tTcxuHc7j6xU9anovZQu2rEWN+akR4Ayk48LaSt8bAHqvnoiEMpwBmXzcpJ?=
+ =?us-ascii?Q?j2YiV2x8EiOf4Ry6bU977IPuxVqHB4dyIVIQNcOZNW96sF+39uK8kSFfBgKz?=
+ =?us-ascii?Q?dUmo6ql8WnCYqmmSCT1Miw2SLs4ZpuBMlzwxBY5ynL41j9SCjwgtbVkpjFcL?=
+ =?us-ascii?Q?n0v6qy3FG2tmCbyzAyPAeiuEeIteUeeky/wwxey2Mhx+bxLSySlb2mbetchU?=
+ =?us-ascii?Q?WD7za4umVfoODhii3ko5elMzvqqm/dLNyBU5qSqVcO4r/ORooudJxyRLtxLU?=
+ =?us-ascii?Q?0VRqXSDmSNmShBHmQc8o25MKRiVoc2MC1hmdzLtwXfTW6iGhWBNMGrHwJmLn?=
+ =?us-ascii?Q?hLDSBw3lpQv0pE10xqwobP21i2RXcj44db30Ez0b+gE6TeJ/KEtjwcZm7e9o?=
+ =?us-ascii?Q?RyzHS8eAGM+SIJSGadRA7ey3MbZsudsg7DOvwhi3OBolmycyiCtfJe1YAsYx?=
+ =?us-ascii?Q?rpLQFN8acy3MYZ2tdbeMMfFDUmxcuj6ZAhJTxiwK6UUM0tOIPVhl+aqDFhkW?=
+ =?us-ascii?Q?nllcPR7+wqCpASyO3+onHw3Cq9Z6c8v5tnx+ECvtzifxczGS/IwO2bFC6iU8?=
+ =?us-ascii?Q?FGwNi94PjJuoozFCc6m+oeNGABKTg2MmuENd2cOey1cOhejWZDpUUyNgBbgr?=
+ =?us-ascii?Q?kstgiyPk6Nveb79h1l4IA9kMHxSB8d2spQzXWSwfhChcW+AFUy6a2yNKhZ7l?=
+ =?us-ascii?Q?SeVfqv3atUfzbjfZNhQ6n6/7BIuUo457ymrMUiqM/vZTlSp8IZz0gfHzv/Ax?=
+ =?us-ascii?Q?wimQoSQ7n6UCpuL6a7/i5SSqx4E30eeDe13KhenmORz+W8CAlga94g6eNJoH?=
+ =?us-ascii?Q?Ma8EZ5S9T/70F6d+dtFnkDtxGxE8NsSpicZpzFNk/rn0f2VwvIETIXrn2dUA?=
+ =?us-ascii?Q?adN9GX6YSfZrQB9QrjJV00oxX77GfyROMgIsGsJb3ONdzyrNn20cBRJyO2yL?=
+ =?us-ascii?Q?osOsIxKOPLSuqhR842DJEBrHMoMbWf2VvmQha0KOELq14LRG7PDmO4k0f3jy?=
+ =?us-ascii?Q?iBEC8hZsMLp5kLKl8nJGq2XlATRlhypDVVxtx89Vm9/IywKMMf/AsQFSVhfA?=
+ =?us-ascii?Q?+QNgf3veKwndy+WOQyVlaDk5JqOT5yMTqxCxcszhOcrU695Fk84bw4knSQ3i?=
+ =?us-ascii?Q?dS6/VlzTtUMfbRAi/SCl8wV62EMrj0Qq6qCwn9ZGTa/zczbEWEutx9JLnQsf?=
+ =?us-ascii?Q?kh2RPH0eWDioirxw/r3pI0sIY7klHvN1GTiiYoX7TuTQh15TxVGQnLY8E21I?=
+ =?us-ascii?Q?dZOiVA4AQ+fWUOM5hlMr6qrZXaaG2+Fcx0af6NvQrcnvUprYD3R8ceN/O+PV?=
+ =?us-ascii?Q?cH46gScymi9AYgCjJlfCEIhNHntZ9URQwtSQ5/R46U9MZ1b79eRi5RxTJbbk?=
+ =?us-ascii?Q?EkUGpEhye+D7jRWEsjimugA5b7SYE2PkOaFavyWg9uNhTsLHEt3uqP7zwN20?=
+ =?us-ascii?Q?oVIjFpwQqHA73BG3dUVcFaVrgtUuFKFzm1JL3SIa6V34gCe/u6K46nRuGkXI?=
+ =?us-ascii?Q?mvzRfg=3D=3D?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 8a713417-1a60-4e8e-1988-08de334a8ea5
+X-MS-Exchange-CrossTenant-AuthSource: AM9PR04MB8585.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Dec 2025 15:34:04.9456
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: xhRQ/+D3EWu8bycKJ7qvp97ICaKSvLmjAN+9rCFEEwjkpsm90OndCWT+qszLMOLBZJc4E7Nc+4eFJEKfBOjeyA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS4PR04MB9505
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251204_054219_697065_0FF367DA 
-X-CRM114-Status: GOOD (  20.54  )
+X-CRM114-CacheID: sfid-20251204_073412_187955_35D219C3 
+X-CRM114-Status: GOOD (  26.68  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,139 +182,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Thu, Dec 04, 2025 at 02:31:00PM +0800, Chaoyi Chen kirjoitti:
-> From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+On Mon, Dec 01, 2025 at 09:41:21AM +0100, Krzysztof Kozlowski wrote:
+> On 01/12/2025 09:37, Vinod Koul wrote:
+> > On 24-11-25, 20:01, Jakub Kicinski wrote:
+> >> On Sat, 22 Nov 2025 21:33:37 +0200 Vladimir Oltean wrote:
+> >>> Add helpers in the generic PHY folder which can be used using 'select
+> >>> GENERIC_PHY_COMMON_PROPS' from Kconfig, without otherwise needing to
+> >>> enable GENERIC_PHY.
+> >>>
+> >>> These helpers need to deal with the slight messiness of the fact that
+> >>> the polarity properties are arrays per protocol, and with the fact that
+> >>> there is no default value mandated by the standard properties, all
+> >>> default values depend on driver and protocol (PHY_POL_NORMAL may be a
+> >>> good default for SGMII, whereas PHY_POL_AUTO may be a good default for
+> >>> PCIe).
+> >>>
+> >>> Push the supported mask of polarities to these helpers, to simplify
+> >>> drivers such that they don't need to validate what's in the device tree
+> >>> (or other firmware description).
+> >>>
+> >>> The proposed maintainership model is joint custody between netdev and
+> >>> linux-phy, because of the fact that these properties can be applied to
+> >>> Ethernet PCS blocks just as well as Generic PHY devices. I've added as
+> >>> maintainers those from "ETHERNET PHY LIBRARY", "NETWORKING DRIVERS" and
+> >>> "GENERIC PHY FRAMEWORK".
+> >>
+> >> I dunno.. ain't no such thing as "joint custody" maintainership.
+> >> We have to pick one tree. Given the set of Ms here, I suspect 
+> >> the best course of action may be to bubble this up to its own tree.
+> >> Ask Konstantin for a tree in k.org, then you can "co-post" the patches
+> >> for review + PR link in the cover letter (e.g. how Tony from Intel
+> >> submits their patches). This way not networking and PHY can pull
+> >> the shared changes with stable commit IDs.
+> > 
+> > How much is the volume of the changes that we are talking about, we can
+> > always ack and pull into each other trees..?
 > 
-> The DRM may want to register a notifier on the typec bus to know when
-> a typec altmode device is added, and distinguish between different
-> types of typec altmode device.
-> 
-> Export these things.
-> 
-> Signed-off-by: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+> That's just one C file, isn't it? Having dedicated tree for one file
+> feels like huge overhead.
 
-Reviewed-by: Heikki Krogerus <heikki.krogerus@linux.intel.com>
+I have to admit, no matter how we define what pertains to this presumed
+new git tree, the fact is that the volume of patches will be quite low.
 
-> ---
-> 
-> Changes in v11:
-> - Also export typec bus.
-> - Add more detailed comments.
-> 
-> (no changes since v9)
-> 
->  drivers/usb/typec/bus.c           |  1 +
->  drivers/usb/typec/bus.h           | 10 ----------
->  drivers/usb/typec/class.c         |  3 +++
->  include/linux/usb/typec.h         |  3 +++
->  include/linux/usb/typec_altmode.h |  8 ++++++++
->  5 files changed, 15 insertions(+), 10 deletions(-)
-> 
-> diff --git a/drivers/usb/typec/bus.c b/drivers/usb/typec/bus.c
-> index a33da7f458a5..e84b134a3381 100644
-> --- a/drivers/usb/typec/bus.c
-> +++ b/drivers/usb/typec/bus.c
-> @@ -569,3 +569,4 @@ const struct bus_type typec_bus = {
->  	.probe = typec_probe,
->  	.remove = typec_remove,
->  };
-> +EXPORT_SYMBOL_GPL(typec_bus);
-> diff --git a/drivers/usb/typec/bus.h b/drivers/usb/typec/bus.h
-> index b58e131450d1..7df5deb1dd3a 100644
-> --- a/drivers/usb/typec/bus.h
-> +++ b/drivers/usb/typec/bus.h
-> @@ -5,7 +5,6 @@
->  
->  #include <linux/usb/typec_altmode.h>
->  
-> -struct bus_type;
->  struct typec_mux;
->  struct typec_retimer;
->  
-> @@ -28,13 +27,4 @@ struct altmode {
->  
->  #define to_altmode(d) container_of(d, struct altmode, adev)
->  
-> -extern const struct bus_type typec_bus;
-> -extern const struct device_type typec_port_altmode_dev_type;
-> -extern const struct device_type typec_plug_altmode_dev_type;
-> -extern const struct device_type typec_partner_altmode_dev_type;
-> -
-> -#define is_typec_port_altmode(dev) ((dev)->type == &typec_port_altmode_dev_type)
-> -#define is_typec_plug_altmode(dev) ((dev)->type == &typec_plug_altmode_dev_type)
-> -#define is_typec_partner_altmode(dev) ((dev)->type == &typec_partner_altmode_dev_type)
-> -
->  #endif /* __USB_TYPEC_ALTMODE_H__ */
-> diff --git a/drivers/usb/typec/class.c b/drivers/usb/typec/class.c
-> index d6b88317f8a4..c4ff4310ff58 100644
-> --- a/drivers/usb/typec/class.c
-> +++ b/drivers/usb/typec/class.c
-> @@ -537,18 +537,21 @@ const struct device_type typec_port_altmode_dev_type = {
->  	.groups = typec_altmode_groups,
->  	.release = typec_altmode_release,
->  };
-> +EXPORT_SYMBOL_GPL(typec_port_altmode_dev_type);
->  
->  const struct device_type typec_plug_altmode_dev_type = {
->  	.name = "typec_plug_alternate_mode",
->  	.groups = typec_altmode_groups,
->  	.release = typec_altmode_release,
->  };
-> +EXPORT_SYMBOL_GPL(typec_plug_altmode_dev_type);
->  
->  const struct device_type typec_partner_altmode_dev_type = {
->  	.name = "typec_partner_alternate_mode",
->  	.groups = typec_altmode_groups,
->  	.release = typec_altmode_release,
->  };
-> +EXPORT_SYMBOL_GPL(typec_partner_altmode_dev_type);
->  
->  static struct typec_altmode *
->  typec_register_altmode(struct device *parent,
-> diff --git a/include/linux/usb/typec.h b/include/linux/usb/typec.h
-> index 309251572e2e..c6fd46902fce 100644
-> --- a/include/linux/usb/typec.h
-> +++ b/include/linux/usb/typec.h
-> @@ -20,12 +20,15 @@ struct typec_port;
->  struct typec_altmode_ops;
->  struct typec_cable_ops;
->  
-> +struct bus_type;
->  struct fwnode_handle;
->  struct device;
->  
->  struct usb_power_delivery;
->  struct usb_power_delivery_desc;
->  
-> +extern const struct bus_type typec_bus;
-> +
->  enum typec_port_type {
->  	TYPEC_PORT_SRC,
->  	TYPEC_PORT_SNK,
-> diff --git a/include/linux/usb/typec_altmode.h b/include/linux/usb/typec_altmode.h
-> index f7db3bd4c90e..9197a4637a93 100644
-> --- a/include/linux/usb/typec_altmode.h
-> +++ b/include/linux/usb/typec_altmode.h
-> @@ -9,6 +9,14 @@
->  
->  #define MODE_DISCOVERY_MAX	6
->  
-> +extern const struct device_type typec_port_altmode_dev_type;
-> +extern const struct device_type typec_plug_altmode_dev_type;
-> +extern const struct device_type typec_partner_altmode_dev_type;
-> +
-> +#define is_typec_port_altmode(dev) ((dev)->type == &typec_port_altmode_dev_type)
-> +#define is_typec_plug_altmode(dev) ((dev)->type == &typec_plug_altmode_dev_type)
-> +#define is_typec_partner_altmode(dev) ((dev)->type == &typec_partner_altmode_dev_type)
-> +
->  struct typec_altmode_ops;
->  
->  /**
-> -- 
-> 2.51.1
+Since the API provider always sits in drivers/phy/ in every case that I
+can think about, technically all situations can be resolved by linux-phy
+providing these stable PR branches to netdev. In turn, to netdev it
+makes no difference whether the branches are coming from linux-phy or a
+third git tree. Whereas to linux-phy, things would even maybe a bit
+simpler, due to already having the patches vs needing to pull them from
+the 3rd tree.
 
--- 
-heikki
+From my perspective, if I'm perfectly honest, the idea was attractive
+because of the phenomenal difference in turnaround times between netdev
+and linux-phy review&merge processes (very fast in netdev, very slow and
+patchy in linux-phy). If there's a set like this, where all API consumers
+are in netdev for now but the API itself is in linux-phy, you'd have to
+introduce 1000 NOP cycles just to wait for the PR branch.
+
+In that sense, having more people into the mix would help just because
+there's more people (i.e. fewer points of failure), even though overall
+there's more overhead.
+
+IDK, these are my 2 cents, I can resubmit this set in 2 weeks with the
+maintainership of the PHY common properties exclusive to linux-phy.
 
 -- 
 linux-phy mailing list
