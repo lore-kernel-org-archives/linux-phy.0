@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5D2C5D216A6
-	for <linux-phy@archiver.kernel.org>; Thu,  4 Dec 2025 15:52:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B986ED216A5
+	for <linux-phy@archiver.kernel.org>; Thu,  4 Dec 2025 16:11:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZF6XUrxf9+xv6eEaU6TanK390SlsQodcNbbtRVlnC44=; b=yYJSnrgBOckhqj
-	mNGbj12/6SHPf90ZdCGDQvcKcY7BUQDYKJxr4ZGEwzYOQXsgUnT5tpziI4uLdar7BzaHoZPu+cAs7
-	sOFRAjf6skdphPhZMG1+CcrhCKDwh/8tImshGdRE/RRnJV135w20bD3S3jhX+FVSzSdQKBIqFXxky
-	tUDiwLWc+0eDv7v/8SwsPDe0WDzjpA5CIGIaEIEt5W59rrg08t/LSxinqLGirzpUypxCKI0BZQHwS
-	oSghWszkg3huJPlnBIabQg1MEZ5OQa/UnS1Oq1CKEeT+Idab4VW7E5DQsDcGdALlWbhzZkFJbl8hx
-	ET1Uv2P796G0oDDLqh7Q==;
+	List-Owner; bh=k6LtJj8VZCiskAfduhvQZLEFy+8blQiRnhst1NYHMoQ=; b=2QRykPVVZzV+J+
+	52NwIDntIBHGbpHxaZhvN9AsfmW4mFlJ2WCrakicFq00wBuGltv2bok9A7dHQyqaNKuaKy5yhox8f
+	UlbhFASRbjyHWfXofUNCQM0V9eD+W+9I/88O/jLJq993ODZuLwbprhNGKbNNB9gniz2dYM42b+exr
+	LutKuALatUJoHsVIsgriF/O2ro+IB5WFHVKEOdtYljYgMwwJSeEZunkqXwers5V4tokXJ3WJ0YuNS
+	UBlM3YMhHM7VVfqVQ1x7jvYUwJpQjLtDh4OBedBYZsgHo5v3WrWlyC2x5FE0w+NMhCRNSl5eguT9C
+	wFrue97yVxfH/wdPd24w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vRBd4-00000008EWs-2fZy;
-	Thu, 04 Dec 2025 15:52:26 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1vRBvh-00000008G3W-0Iow;
+	Thu, 04 Dec 2025 16:11:41 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vRBd2-00000008EWD-1LpB;
-	Thu, 04 Dec 2025 15:52:24 +0000
+	id 1vRBvd-00000008G2f-2eYS;
+	Thu, 04 Dec 2025 16:11:38 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 6235E60200;
-	Thu,  4 Dec 2025 15:52:23 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 86CC3C116B1;
-	Thu,  4 Dec 2025 15:52:22 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id F188B444A6;
+	Thu,  4 Dec 2025 16:11:36 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9D08CC4CEFB;
+	Thu,  4 Dec 2025 16:11:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1764863543;
-	bh=gx0KCllM9ErS+DGIJRYM6/W4bjQJj3kqWBhKLjr1UiU=;
+	s=k20201202; t=1764864696;
+	bh=CVuOLrbFf23as2x6m7jdts/Xxbl0EPPcIHwQ3xEZ3e4=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=Pg0bWHfT+vnpAFNxfwug+IPFq3ujzrQQrYpfkTaS3FonIi5FMu78d2lTK/UKD7QcW
-	 ToRRj1eimPm5gCrHIg/crnJnFJLSoxWi+xFof3gDd61UALe+SdpaSva/wmsNHuj2NA
-	 gogMqrb90UOV1WVz0UgkFd5GK7LTBlRbdm7dF97mJzTAPKmPbWwBOVBNWO2GLSYMe5
-	 4Hv/UoAoNt2IP55W5uSQWQz1w71o6R+YsYvhDkGcQTG3Z2v0/KHQxxM2IHDOgOXFRt
-	 cHNVS9DrtbBXmR03dXTIoab+ImcJIpyzNDIcMh5ak72Ce6BswZgf0FjAK1aZZSCsPK
-	 5Ynr68VeIVy+A==
-Date: Thu, 4 Dec 2025 09:52:19 -0600
+	b=CeeilhjLemmcxt8wXOkDzoU5/QELoEaVxtMC9rzpvBPvNuXoZt0zdcOtxJWmiLGPr
+	 u2FT/8IAyKS6fxsE3aBu+6mmr4BV/oLKqFjqV8uegQH35Yq4yYLlVAF1RHT7Eaflzj
+	 RFK0K5GdQrGGD6EUaAq0IN6DfkwzMWUyDna8i9FI21CybLYF4y8nB8kb9WPLsR4CIQ
+	 I44R7Ptda9pKB/TuZkiTYSLFccS+qcLbb34xebQ92ZXT9/CDWMnv3GNTzK2YF+wHu3
+	 5cDWPOuEYvdMM54laVGdauVzrMnp3w2Aqf/+kfbrUX6vwBxKaDKc+7b8eQ0qoGKbwm
+	 DmGFB0eI/chaw==
+Date: Thu, 4 Dec 2025 10:11:33 -0600
 From: Rob Herring <robh@kernel.org>
 To: Vladimir Oltean <vladimir.oltean@nxp.com>
 Cc: netdev@vger.kernel.org, devicetree@vger.kernel.org,
@@ -67,12 +67,16 @@ Cc: netdev@vger.kernel.org, devicetree@vger.kernel.org,
 	Patrice Chotard <patrice.chotard@foss.st.com>
 Subject: Re: [PATCH net-next 2/9] dt-bindings: phy-common-props: create a
  reusable "protocol-names" definition
-Message-ID: <20251204155219.GA1533839-robh@kernel.org>
+Message-ID: <20251204161133.GA1574692-robh@kernel.org>
 References: <20251122193341.332324-1-vladimir.oltean@nxp.com>
  <20251122193341.332324-3-vladimir.oltean@nxp.com>
+ <20251204155219.GA1533839-robh@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20251122193341.332324-3-vladimir.oltean@nxp.com>
+In-Reply-To: <20251204155219.GA1533839-robh@kernel.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20251204_081137_729298_16F721E2 
+X-CRM114-Status: GOOD (  25.96  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,91 +93,100 @@ Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, Nov 22, 2025 at 09:33:34PM +0200, Vladimir Oltean wrote:
-> Other properties also need to be defined per protocol than just
-> tx-p2p-microvolt-names. Create a common definition to avoid copying a 55
-> line property.
+On Thu, Dec 04, 2025 at 09:52:19AM -0600, Rob Herring wrote:
+> On Sat, Nov 22, 2025 at 09:33:34PM +0200, Vladimir Oltean wrote:
+> > Other properties also need to be defined per protocol than just
+> > tx-p2p-microvolt-names. Create a common definition to avoid copying a 55
+> > line property.
+> > =
+
+> > Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
+> > ---
+> >  .../bindings/phy/phy-common-props.yaml        | 34 +++++++++++--------
+> >  1 file changed, 19 insertions(+), 15 deletions(-)
+> > =
+
+> > diff --git a/Documentation/devicetree/bindings/phy/phy-common-props.yam=
+l b/Documentation/devicetree/bindings/phy/phy-common-props.yaml
+> > index 255205ac09cd..775f4dfe3cc3 100644
+> > --- a/Documentation/devicetree/bindings/phy/phy-common-props.yaml
+> > +++ b/Documentation/devicetree/bindings/phy/phy-common-props.yaml
+> > @@ -13,22 +13,12 @@ description:
+> >  maintainers:
+> >    - Marek Beh=FAn <kabel@kernel.org>
+> >  =
+
+> > -properties:
+> > -  tx-p2p-microvolt:
+> > +$defs:
+> > +  protocol-names:
+> >      description:
+> > -      Transmit amplitude voltages in microvolts, peak-to-peak. If this=
+ property
+> > -      contains multiple values for various PHY modes, the
+> > -      'tx-p2p-microvolt-names' property must be provided and contain
+> > -      corresponding mode names.
+> > -
+> > -  tx-p2p-microvolt-names:
+> > -    description: |
+> > -      Names of the modes corresponding to voltages in the 'tx-p2p-micr=
+ovolt'
+> > -      property. Required only if multiple voltages are provided.
+> > -
+> > -      If a value of 'default' is provided, the system should use it fo=
+r any PHY
+> > -      mode that is otherwise not defined here. If 'default' is not pro=
+vided, the
+> > -      system should use manufacturer default value.
+> > +      Names of the PHY modes. If a value of 'default' is provided, the=
+ system
+> > +      should use it for any PHY mode that is otherwise not defined her=
+e. If
+> > +      'default' is not provided, the system should use manufacturer de=
+fault value.
+> >      minItems: 1
+> >      maxItems: 16
+> >      items:
+> > @@ -89,6 +79,20 @@ properties:
+> >          - mipi-dphy-univ
+> >          - mipi-dphy-v2.5-univ
+> >  =
+
+> > +properties:
+> > +  tx-p2p-microvolt:
+> > +    description:
+> > +      Transmit amplitude voltages in microvolts, peak-to-peak. If this=
+ property
+> > +      contains multiple values for various PHY modes, the
+> > +      'tx-p2p-microvolt-names' property must be provided and contain
+> > +      corresponding mode names.
+> > +
+> > +  tx-p2p-microvolt-names:
+> > +    description:
+> > +      Names of the modes corresponding to voltages in the 'tx-p2p-micr=
+ovolt'
+> > +      property. Required only if multiple voltages are provided.
+> > +    $ref: "#/$defs/protocol-names"
 > =
 
-> Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
-> ---
->  .../bindings/phy/phy-common-props.yaml        | 34 +++++++++++--------
->  1 file changed, 19 insertions(+), 15 deletions(-)
+> The default for .*-names is the entries don't have to be unique. That's =
+
+> for the exception, but unfortunately everyone else has to define the =
+
+> type (type.yaml#/definitons/string).
 > =
 
-> diff --git a/Documentation/devicetree/bindings/phy/phy-common-props.yaml =
-b/Documentation/devicetree/bindings/phy/phy-common-props.yaml
-> index 255205ac09cd..775f4dfe3cc3 100644
-> --- a/Documentation/devicetree/bindings/phy/phy-common-props.yaml
-> +++ b/Documentation/devicetree/bindings/phy/phy-common-props.yaml
-> @@ -13,22 +13,12 @@ description:
->  maintainers:
->    - Marek Beh=FAn <kabel@kernel.org>
->  =
+> Each user needs to define the names of the entries which will enforce =
 
-> -properties:
-> -  tx-p2p-microvolt:
-> +$defs:
-> +  protocol-names:
->      description:
-> -      Transmit amplitude voltages in microvolts, peak-to-peak. If this p=
-roperty
-> -      contains multiple values for various PHY modes, the
-> -      'tx-p2p-microvolt-names' property must be provided and contain
-> -      corresponding mode names.
-> -
-> -  tx-p2p-microvolt-names:
-> -    description: |
-> -      Names of the modes corresponding to voltages in the 'tx-p2p-microv=
-olt'
-> -      property. Required only if multiple voltages are provided.
-> -
-> -      If a value of 'default' is provided, the system should use it for =
-any PHY
-> -      mode that is otherwise not defined here. If 'default' is not provi=
-ded, the
-> -      system should use manufacturer default value.
-> +      Names of the PHY modes. If a value of 'default' is provided, the s=
-ystem
-> +      should use it for any PHY mode that is otherwise not defined here.=
- If
-> +      'default' is not provided, the system should use manufacturer defa=
-ult value.
->      minItems: 1
->      maxItems: 16
->      items:
-> @@ -89,6 +79,20 @@ properties:
->          - mipi-dphy-univ
->          - mipi-dphy-v2.5-univ
->  =
+> the length. So defining the length 1-16 here doesn't do much. So I think =
 
-> +properties:
-> +  tx-p2p-microvolt:
-> +    description:
-> +      Transmit amplitude voltages in microvolts, peak-to-peak. If this p=
-roperty
-> +      contains multiple values for various PHY modes, the
-> +      'tx-p2p-microvolt-names' property must be provided and contain
-> +      corresponding mode names.
-> +
-> +  tx-p2p-microvolt-names:
-> +    description:
-> +      Names of the modes corresponding to voltages in the 'tx-p2p-microv=
-olt'
-> +      property. Required only if multiple voltages are provided.
-> +    $ref: "#/$defs/protocol-names"
+> you can drop that and then the $defs is not needed either.
 
-The default for .*-names is the entries don't have to be unique. That's =
+I missed that all the names are defined here. Nevermind on the 2nd =
 
-for the exception, but unfortunately everyone else has to define the =
+point. We probably still need either a $ref or 'uniqueItems: true'. =
 
-type (type.yaml#/definitons/string).
-
-Each user needs to define the names of the entries which will enforce =
-
-the length. So defining the length 1-16 here doesn't do much. So I think =
-
-you can drop that and then the $defs is not needed either.
+Either way should work.
 
 Rob
 
