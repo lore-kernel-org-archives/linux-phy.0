@@ -4,57 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 86517D2068A
-	for <linux-phy@archiver.kernel.org>; Thu,  4 Dec 2025 13:19:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9A38AD20694
+	for <linux-phy@archiver.kernel.org>; Thu,  4 Dec 2025 13:41:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IE+lL1DKqIoNQc/2z0s68Cl+efONACIRbrHnQWL0qnQ=; b=uAqShfnhao9drb
-	Ma6bQWleRVcQMZuRbJBoWvNePiXH1jQZK4fIh7jZo6WBr3X6rGkHZYEByfD5iAuY4fokr/Nwiksy2
-	ZDyPL4dmJ4Jvxq17awLqi7m1EXmqxyyQOLFt64ezV+XvQvSYXJhgRH9ceg1g9Z4YhLAapt7t2oZz1
-	r3ibdyHUgTUTeV6AecaqbHvhGbt+9ljm/Fm/qnfjVdXTVrGaolQb0bP2yhVlVkyydI+sDeJsnmg1M
-	auMWh26+BwLAe3tEPKKvF1UkxTq1iVrg/NnjJWPR9TVoYUCNb9LLczE0dhuZJ7aRo/QNC5sKam65Z
-	phrNppcHNAC4+hrdkrow==;
+	List-Owner; bh=Tu78hC3FHWdcGbAO1pDSfIAvBon34ZhhCL4DYQ6dP9Y=; b=SpaSzQbn62MNrU
+	rtq6IVxZSGqjTvSfTq10UhCwWk9bKVIovlwGZJQKDbdABbdrwHy05RdmcFewpnL0YKKsLGcQK9oLr
+	GENZ/37aQOYaiB49h7W29+goOzMYTtzz0+rGfgJ++dCteJH1LzWRqiMIXCoFDt1NF1NonvGj6mBg0
+	ynb2xyF1E9WbxHzlLjRftj8qzyVuzKhDF8HHsneWkDFxlyRlpFjyK21l7K9ZakQ5QXNasY+O1sLre
+	jC81HWdRwi59jtVTbypd9TuvZkkFoKx9m/NnaIVdrYy6YFsWxn9EPY52ak21T4+WrYqC2rqAm73EU
+	O4HTswuSLrwSfuP81nog==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vR9El-000000082tt-4Bz5;
-	Thu, 04 Dec 2025 13:19:12 +0000
+	id 1vR9aC-000000084Gd-0uXg;
+	Thu, 04 Dec 2025 13:41:20 +0000
 Received: from mgamail.intel.com ([192.198.163.9])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vR9Ej-000000082tL-1Kwo;
-	Thu, 04 Dec 2025 13:19:10 +0000
+	id 1vR9a9-000000084Fx-15NZ;
+	Thu, 04 Dec 2025 13:41:18 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1764854349; x=1796390349;
+  t=1764855677; x=1796391677;
   h=date:from:to:cc:subject:message-id:references:
    mime-version:in-reply-to;
-  bh=xqFQrU44fEiJ1KuRpa3rRjXuBbQsUbuhOFIk0S/39e0=;
-  b=kPMP9FQvJg5NMbZ2n6JBYrcBxyAvluk9M4zaxITtrjo9c9KMuQieUNVo
-   aE80kAxyL3Tc/AvLV1+keeyJLQIO9ilto2tMuN4NJhl02Wa41N0t+osVr
-   l/7IwAdvq/rZtOb6Ho9TJAXjE/SU9bu6pdVclZQyWpJEAvlNXeNEQ43Xa
-   cOL81pYbfXEcppGq1Z+iwUE2fB/XDVaA46fuwHp9MhEEWbdF5CBTRFWgr
-   YA6kxWTtH4rv3kyxVcZT46WMnt84+slNKFCXJ5SC3lCUfoXkxubhAwkVh
-   oQWl6MEPgzpDR5fy/OM9FrYQrU8Pu4efelxZ53qD5P+hskGBwH4cO/27q
+  bh=5vrRVcLYPFCpzhwyAw2L34Cd/fwmvirgk6ahEYjKQ3Y=;
+  b=iA42RosM/IRGnCyWiVmbhNQ5nHSLRsIAmFMHcU47Q4ulifAYXAjiW824
+   guG5BEW2tMXYqAeMCfUuxDPNisnmvLLccJBow93N0+rqP3G/xrlC2TTAd
+   WaRpMbgxXYHy809Pf3GgZC3pEyrYrEJTsepLheeqq+ICroPfjIY1I+DmL
+   0dSleuuRF19U8bf2lPwJ/+EIyrLcony9IxZFAgtTkViING9Rw3iTO1OHf
+   SuLz3MyjrGvpFgUXh0nlSvpLnHsSTJvkb3+gkkMTkSFEUxaY5EBlh2Jjq
+   UrvwlVJC7GYwIBgRcnbouJdY8JOzwo8FTZH0BfepMgwWUnmFqUD2IVBok
    g==;
-X-CSE-ConnectionGUID: 6ObgTrl9QeCIOr6GUpyWrg==
-X-CSE-MsgGUID: 46D2TUU2SRe36n4UlrmEOw==
-X-IronPort-AV: E=McAfee;i="6800,10657,11632"; a="77553073"
+X-CSE-ConnectionGUID: DKUeBG9GTf2pLVRqCviPrA==
+X-CSE-MsgGUID: sMzuahD9SU6VaIE1sPBwjw==
+X-IronPort-AV: E=McAfee;i="6800,10657,11632"; a="77554968"
 X-IronPort-AV: E=Sophos;i="6.20,248,1758610800"; 
-   d="scan'208";a="77553073"
-Received: from fmviesa004.fm.intel.com ([10.60.135.144])
-  by fmvoesa103.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 Dec 2025 05:19:08 -0800
-X-CSE-ConnectionGUID: 6hnV95oCRRiK6KPTByZfvQ==
-X-CSE-MsgGUID: HfWUZWD7SnmB6CaIbu9f3w==
+   d="scan'208";a="77554968"
+Received: from orviesa006.jf.intel.com ([10.64.159.146])
+  by fmvoesa103.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 Dec 2025 05:41:16 -0800
+X-CSE-ConnectionGUID: cEDuTO85SkOa/8dziq4Xxg==
+X-CSE-MsgGUID: B4wj07nmRam/YVp9CHTeNw==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.20,248,1758610800"; 
-   d="scan'208";a="199943225"
+   d="scan'208";a="194056172"
 Received: from rfrazer-mobl3.amr.corp.intel.com (HELO kuha) ([10.124.220.149])
-  by fmviesa004.fm.intel.com with SMTP; 04 Dec 2025 05:18:57 -0800
-Received: by kuha (sSMTP sendmail emulation); Thu, 04 Dec 2025 15:18:48 +0200
-Date: Thu, 4 Dec 2025 15:18:48 +0200
+  by orviesa006.jf.intel.com with SMTP; 04 Dec 2025 05:41:05 -0800
+Received: by kuha (sSMTP sendmail emulation); Thu, 04 Dec 2025 15:40:56 +0200
+Date: Thu, 4 Dec 2025 15:40:56 +0200
 From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
 To: Chaoyi Chen <kernel@airkyi.com>
 Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
@@ -87,17 +87,17 @@ Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
 	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
 	linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org
-Subject: Re: [PATCH v11 03/11] drm/bridge: Implement generic USB Type-C DP
- HPD bridge
-Message-ID: <aTGKODdf7vsHFY72@kuha>
-References: <20251128020405.90-1-kernel@airkyi.com>
- <20251128020405.90-4-kernel@airkyi.com>
+Subject: Re: [RESEND PATCH v11 03/11] drm/bridge: Implement generic USB
+ Type-C DP HPD bridge
+Message-ID: <aTGPaJmwd7uHfrnV@kuha>
+References: <20251204063109.104-1-kernel@airkyi.com>
+ <20251204063109.104-4-kernel@airkyi.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20251128020405.90-4-kernel@airkyi.com>
+In-Reply-To: <20251204063109.104-4-kernel@airkyi.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251204_051909_370337_3EC44A29 
-X-CRM114-Status: GOOD (  16.61  )
+X-CRM114-CacheID: sfid-20251204_054117_343744_86A63AEB 
+X-CRM114-Status: GOOD (  17.47  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -116,7 +116,9 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 Hi,
 
-Fri, Nov 28, 2025 at 10:03:57AM +0800, Chaoyi Chen kirjoitti:
+I don't know what's going on here - this series is the 12th?
+In any case, you need to fix this..
+
 > diff --git a/drivers/gpu/drm/bridge/aux-hpd-typec-dp-bridge.c b/drivers/gpu/drm/bridge/aux-hpd-typec-dp-bridge.c
 > new file mode 100644
 > index 000000000000..94be3d5f69e9
@@ -142,10 +144,12 @@ Fri, Nov 28, 2025 at 10:03:57AM +0800, Chaoyi Chen kirjoitti:
 > +	if (is_typec_partner_altmode(&alt->dev) || alt->svid != USB_TYPEC_DP_SID)
 > +		goto done;
 
-There are also plug altmodes. Just make sure it's a plug altmode.
+That's still not enough because of the plug altmodes. You need to
+check that it's a port altmode:
 
-	if (!is_typec_plug_altmode(&alt->dev) || alt->svid != USB_TYPEC_DP_SID)
-                goto done;
+        if (is_typec_port_altmode(&alt->dev) && alt->svid == USB_TYPEC_DP_SID)
+        	drm_dp_hpd_bridge_register(alt->dev.parent->parent,
+        				   to_of_node(alt->dev.parent->fwnode));
 
 > +	/*
 > +	 * alt->dev.parent->parent : USB-C controller device
