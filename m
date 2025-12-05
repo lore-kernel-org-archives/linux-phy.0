@@ -4,124 +4,112 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 85564D33987
-	for <linux-phy@archiver.kernel.org>; Fri,  5 Dec 2025 16:04:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CCED1D33992
+	for <linux-phy@archiver.kernel.org>; Fri,  5 Dec 2025 17:13:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=oADUNon5m1t/VZwXHG5oGXrk121c6R1IuxfmpXqgUpg=; b=ulyoxSbeJ4CYO7
-	LAM5AM2VmioEzUhuXJG2z4jOLxe4ZbZk9RDN0gUOLT4sP3/Fj42/8SLEecNn1mBU57CidfrEcoCYR
-	2n5Rchcrt0UP7qtI9AIVB/4F+5BUP9MrIenOECMqTiySN1Tdx8jRAqetOqw397LSh21TMw0pfTrz3
-	j6q5PTRD6k4/o+s5S1G4Xrwhj6DsO7hRxrTqtDLcszfMWz1SNPqEloLARFACiLjp5IVDUw0Ar2QFo
-	Hbf76w9EHP9hLNjqizcsOiw7EY+sPGgsgoFmxXJpxMqICWxjiojxExJ9oxP+U0C5t7yf/e7vAtrwe
-	YeYbLLlR/juRq1hCq5Tg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=gy5P/sKI7XTdVuwXAE62Rg83HreBcVYT6R66HOCWSW8=; b=Qd3CLQS/e6qRMC
+	RRzMyNEDRA1zTbix/k36PwM/V2qcHDsbh47ET6lBp/7mu7LBhXeDs4XSa5lGNtxNw5DYHBRyZ4vab
+	urjbo+8XUkBlF/jxs4tT7cT3Mwpj+ekfhsgo/XCOq4IInbaIZeAc9e+6jI0wx8QEaO33AycEBQiVC
+	pGccAQTboVaJQAHnDXMhsDUurPQkwYt7zO2lst3hXlaWLm2CzrzSS1Gs1RrDm+etibVxTHvRZIDLz
+	wKRl9aSIdCSfZ7j+9FpnJIEuSd4D+A9R+K4UyXM6NXU2Q1L8sccBg2sl53jL03g1ec4qSUjDlEOjb
+	F45VVzbv7FykgFTAmTNQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vRYIZ-00000009gaY-2oTH;
-	Fri, 05 Dec 2025 16:04:47 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1vRZN9-00000009k1j-48jK;
+	Fri, 05 Dec 2025 17:13:35 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vRYIW-00000009ga8-1suY
-	for linux-phy@lists.infradead.org;
-	Fri, 05 Dec 2025 16:04:45 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 5B5FBPm6887501
-	for <linux-phy@lists.infradead.org>; Fri, 5 Dec 2025 16:04:42 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:message-id:mime-version
-	:subject:to; s=qcppdkim1; bh=S0NnzglkMPPQB2vvQXKO7guesAoNPG9cmtU
-	s+J/UQDU=; b=U7LOy5bboGSbSlLwVZs4P2CcL7nc86zcNEulufT1cOlbj5AcZNk
-	+wM0glNsuJo/fLo7dSS28dEi0hMV6C8TcKTH8ZYf534RNfTJXbMTfc6sG9rZbOFA
-	Bx15WNc1tFKnOsgnMsc0WSnBDPDLoVVzBUef9x+b30behK/Hwyp5U9Nd0ldkzZdn
-	cimhA2wwSggmpdbdnOMR6VwTw3D9OZ2hv00jythJCiMoDavsuSvIgADfTOmdZaFT
-	tZ6z57Ab5iHszvSzSFASGQ20OVX+96T1Gx5B7kF/XJXBTeL9qzrlyL9l15GmlEWz
-	w942Hig/k1mwlXs4Rbw6NX4tFuW2wmawOWw==
-Received: from mail-vs1-f71.google.com (mail-vs1-f71.google.com [209.85.217.71])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4aurwvhrxn-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Fri, 05 Dec 2025 16:04:42 +0000 (GMT)
-Received: by mail-vs1-f71.google.com with SMTP id ada2fe7eead31-5dbcf848bc9so1131476137.1
-        for <linux-phy@lists.infradead.org>; Fri, 05 Dec 2025 08:04:42 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1764950681; x=1765555481; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=S0NnzglkMPPQB2vvQXKO7guesAoNPG9cmtUs+J/UQDU=;
-        b=i8dS1177lHzGf+rjLCKBgcghMn0dJRcZ6CUxBf5YI5mCpBYsvk6wm/WbU4t34uwE5d
-         /qpg+tE3Tq0f9U0oglpLlnvsdM7zpG2amX810ipwflhIChzo7E+ta+9lqBAGRsMTpvS/
-         8NsJ+MKYLlm/aoFoLpj3eoGlTqH862zG5Rki2Unip8BwbahfTs35MFv0uz7W57SMaqbG
-         lxOcF3kWloYfNOT3D4z/sPW4QSz3JZ7mdbPFw37DzBdTGkzyNyTGIXW+smoSl0tLc6EB
-         BSsxuLDMI3C8VMUzpWaLbRFD61ARc+/6NyBAiXEJS2s/6qd4xyERmKz7LEZNcoe/yC+6
-         S33A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1764950681; x=1765555481;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=S0NnzglkMPPQB2vvQXKO7guesAoNPG9cmtUs+J/UQDU=;
-        b=AIRAI+2VSc3wVIciTPAxfD745FcLBDAMzDjun48sYqcHCQYo6EofR8ar74MkW5CCsH
-         PMU/MANedK/ML0ziv7Z3EZDWHVuXPdY4UdY6HFwkFxKtAUn0GR2bBUVWvuyf/n4jpNdq
-         2uLw0O5FzoTUuy55C/5QpHrK6vwcAGbbokn/JFI7EnhsZRY1l58lwhmR+xIvBNi1D/54
-         +2mvmfD/L79oSLxGwsPslMEBUKvAAXpeZqH8mTijT4AI/b2H38Ny07GDfp6fg8NcgSQa
-         7Jx1uIROaq00t11xwdGvyosSI6JPFx3hSaL1ROOF1cFUfCNDKn1ZetOVs3yqcsA7MuXx
-         eklA==
-X-Forwarded-Encrypted: i=1; AJvYcCWk1bzpjpKM87Jdp5UgAjdishY5brm/XxMRkW4r5UQ7uPYRNV1gVzVTqLEzdhq7uzA4gOFyMeK4aDM=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yz115frLLOyDVJ0RcrkYWLASnTS0GV19Y52qzCRu9dZmywHzT7T
-	q1Qz8E9xdQ1PAKOYegmVeQilAKwlbne7Ci2w5+skSoDphbzpxiuG14WEO5d2ocaUbihdGWKcJyN
-	atEcrjFjOgQrRHfxX5Gv+HHSc50LtiuPqfr302HfyMI0wUe8xJCyEPmyOLftmNHml/JZW
-X-Gm-Gg: ASbGncvPAsEEWaY+OY5lw04m2enjuEwLHkHsQE/jPLKO1NDx/ZufzBN0VKvuKA2WZNa
-	mn6r3rWNgV2Yrj/AK04VZ5++V0rTnzi9QmexINca9pBNSDSzW6XU8BfFpE4Yeg4YQouacfjOOdR
-	0UiaiFecPgFHFXKLKisB8VI15lypNq0sOuGDZRF2KKvUKUKisvfIiV+eCa7MT91WaW4+cdpUp29
-	QaC0UcBSIZJ0BRSkLNqKEN7n+2FLIs5rwDZOeU5GJaOK/bCSwIohGsFTb8gjEJy6GZ+83x5DM3B
-	uBf8susuRmFrRiHjlPc27XHl3AOKatHj9zfateRZl+IYm54l4fp8jrbRWnf63mqe5xxl9HnS3tO
-	Bb/6uJ5fNGkpXIKIG9MZfYqx+9jgVxHYq5vUEMyWvPNEHt6gRVZZBy/Z1xGf1noXIAOHf7BKzfj
-	Yk
-X-Received: by 2002:a05:6102:15c9:b0:5db:dd12:3d16 with SMTP id ada2fe7eead31-5e490d80fdfmr2719343137.6.1764950680820;
-        Fri, 05 Dec 2025 08:04:40 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IEaamrW4vWITSAODt1Bj33kiLJnhqkPdX7g//zCQ60dzLvhU2D7W/7Fdpzw5zqhi8E2RsWqKQ==
-X-Received: by 2002:a05:6102:15c9:b0:5db:dd12:3d16 with SMTP id ada2fe7eead31-5e490d80fdfmr2719292137.6.1764950680312;
-        Fri, 05 Dec 2025 08:04:40 -0800 (PST)
-Received: from QCOM-eG0v1AUPpu.qualcomm.com ([2a01:e0a:82c:5f0:f840:4916:e7c3:a857])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-42f7d2231dfsm9660990f8f.26.2025.12.05.08.04.39
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 05 Dec 2025 08:04:39 -0800 (PST)
-From: Loic Poulain <loic.poulain@oss.qualcomm.com>
-To: vkoul@kernel.org, kishon@kernel.org
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        dmitry.baryshkov@oss.qualcomm.com,
-        Loic Poulain <loic.poulain@oss.qualcomm.com>
-Subject: [PATCH] phy: qcom-qusb2: Fix NULL pointer dereference on early suspend
-Date: Fri,  5 Dec 2025 17:04:37 +0100
-Message-Id: <20251205160437.259125-1-loic.poulain@oss.qualcomm.com>
-X-Mailer: git-send-email 2.34.1
+	id 1vRZN7-00000009k1A-1RPb;
+	Fri, 05 Dec 2025 17:13:34 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 2A926435CD;
+	Fri,  5 Dec 2025 17:13:32 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 387F1C4CEF1;
+	Fri,  5 Dec 2025 17:13:27 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1764954812;
+	bh=4G9Kt5ZYk1+ldZzyiWEvbKsl4PYFjTqYeP0O5U3nRXc=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=tz5VUxI8+BlhSRztOKjfn1mfVx7a6K/JOnY5Ika35qmAUFzeT8rxr9/WEgljk9GQ6
+	 CMlkvdoXHsjMMp9JoeBx9RWWq74t3sY2nDibM/MjtHSNE4ceU3M2DCSMiqOx9qDRJl
+	 6yipdpqsN2m8b7BADwmcIqBYIKPLBxnNaa8say2bjt37ld0nzyuwsm5FbVkTBD82aK
+	 QjGX/NWfi1auS2D6KHKQKe60INfhl4pRI2E2xWP2LNDHSJhYd9PY1DvlE2Sf72tt1Q
+	 f5PAVNswaw1vRwMK6XcVApZlPCnSnJKccml0uQcmlSS1QvRyDS0DBBCiTclxB1jGV2
+	 SdW+5yveQ1CQQ==
+Message-ID: <18eeb1c5-d21b-4505-b6a4-472f6e191864@kernel.org>
+Date: Fri, 5 Dec 2025 18:13:26 +0100
 MIME-Version: 1.0
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMjA1MDExNyBTYWx0ZWRfX4m2Ykc5Wwvsv
- PmSa3/WN9/AVhnuX7+iXs8zCvuuvbdm2BU6LIWLKVp854QjUOGF1mw/1LqnmTLI93EKHC71Om37
- wVYdARKBWbMjbT1sxwyu3FC1PTPMiIulctBQeKHoH0UnbGp5A9rmlT99Vp+5B6vzT+9qxzPWpUC
- fpbpWY2DiROCATcmIG9aYQfcDbP+eZ0BLpiqC4D/DOVzZuqDOssexXy09bxSjaVVxdOc3trgEFl
- ziWNUSQH7x2ttpI85YSoLf5xlH9wlW6OXgf2F44scwjxVgxfT78Z7MIaWccCmVzklB4qz7hBNF2
- cHNzmbshbeblMfMzVCKDzXnX9b3T1sJn4EB19L3L+DGNfiIXv4/NfEA/8ESHmg3QQfmjeW+hxDL
- xhPwdiVsavjqnv7ZaBH4xtPbkcgROg==
-X-Authority-Analysis: v=2.4 cv=Yd2wJgRf c=1 sm=1 tr=0 ts=6933029a cx=c_pps
- a=P2rfLEam3zuxRRdjJWA2cw==:117 a=xqWC_Br6kY4A:10 a=wP3pNCr1ah4A:10
- a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22 a=EUspDBNiAAAA:8
- a=7wYnoen6nUP2Isxy0IEA:9 a=ODZdjJIeia2B_SHc_B0f:22
-X-Proofpoint-GUID: 3kx7X-1c4E00oQhOS8EftW1M6IQeqEfl
-X-Proofpoint-ORIG-GUID: 3kx7X-1c4E00oQhOS8EftW1M6IQeqEfl
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
- definitions=2025-12-05_05,2025-12-04_04,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1011 phishscore=0 priorityscore=1501 adultscore=0 suspectscore=0
- bulkscore=0 impostorscore=0 malwarescore=0 spamscore=0 lowpriorityscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2510240001 definitions=main-2512050117
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v8 1/2] dt-bindings: phy: google: Add Google Tensor G5 USB
+ PHY
+To: Roy Luo <royluo@google.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Peter Griffin <peter.griffin@linaro.org>,
+ =?UTF-8?Q?Andr=C3=A9_Draszik?= <andre.draszik@linaro.org>,
+ Tudor Ambarus <tudor.ambarus@linaro.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>
+Cc: Badhri Jagan Sridharan <badhri@google.com>,
+ Doug Anderson <dianders@google.com>, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
+ Joy Chakraborty <joychakr@google.com>, Naveen Kumar <mnkumar@google.com>
+References: <20251205-phyb4-v8-0-c59ea80a4458@google.com>
+ <20251205-phyb4-v8-1-c59ea80a4458@google.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 a/A=
+In-Reply-To: <20251205-phyb4-v8-1-c59ea80a4458@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251205_080444_625029_6F0FBD6E 
-X-CRM114-Status: GOOD (  12.86  )
+X-CRM114-CacheID: sfid-20251205_091333_432451_D8C3CB68 
+X-CRM114-Status: GOOD (  12.58  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -138,54 +126,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Reorder runtime PM setup to ensure pm_runtime_forbid() is applied before
-enabling runtime PM. This avoids possible early autosuspend and prevents
-qusb2_phy_runtime_suspend() from being called before driver data is
-initialized, which could otherwise lead to a NULL pointer dereference:
+On 05/12/2025 04:54, Roy Luo wrote:
+> Document the device tree bindings for the USB PHY interfaces integrated
+> with the DWC3 controller on Google Tensor SoCs, starting with G5
+> generation (Laguna). The USB PHY on Tensor G5 includes two integrated
+> Synopsys PHY IPs: the eUSB 2.0 PHY IP and the USB 3.2/DisplayPort combo
+> PHY IP.
+> 
+> Due to a complete architectural overhaul in the Google Tensor G5, the
+> existing Samsung/Exynos USB PHY binding for older generations of Google
+> silicons such as gs101 are no longer compatible, necessitating this new
+> device tree binding.
+> 
+> Signed-off-by: Roy Luo <royluo@google.com>
 
-```
-Unable to handle kernel NULL pointer dereference at virtual address 00000000000000a1
-[...]
-CPU: 0 UID: 0 PID: 11 Comm: kworker/0:1 Not tainted 6.16.7+ #116 PREEMPT
-Workqueue: pm pm_runtime_work
-pstate: 20000005 (nzCv daif -PAN -UAO -TCO -DIT -SSBS BTYPE=--)
-pc : qusb2_phy_runtime_suspend+0x14/0x1e0 [phy_qcom_qusb2]
-lr : pm_generic_runtime_suspend+0x2c/0x44
-[...]
-```
+Why intentionally dropping the tag? How are you handling this patchset?
+Rewrite every time from scratch?
 
-Fixes: 891a96f65ac3 ("phy: qcom-qusb2: Add support for runtime PM")
-Signed-off-by: Loic Poulain <loic.poulain@oss.qualcomm.com>
----
- drivers/phy/qualcomm/phy-qcom-qusb2.c | 9 +++++----
- 1 file changed, 5 insertions(+), 4 deletions(-)
+<form letter>
+This is a friendly reminder during the review process.
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qusb2.c b/drivers/phy/qualcomm/phy-qcom-qusb2.c
-index b5514a32ff8f..97bc3755a390 100644
---- a/drivers/phy/qualcomm/phy-qcom-qusb2.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qusb2.c
-@@ -1093,13 +1093,14 @@ static int qusb2_phy_probe(struct platform_device *pdev)
- 		or->hsdisc_trim.override = true;
- 	}
- 
--	pm_runtime_set_active(dev);
--	pm_runtime_enable(dev);
-+
- 	/*
--	 * Prevent runtime pm from being ON by default. Users can enable
--	 * it using power/control in sysfs.
-+	 * Enable runtime PM support, but forbid it by default.
-+	 * Users can allow it again via the power/control attribute in sysfs.
- 	 */
-+	pm_runtime_set_active(dev);
- 	pm_runtime_forbid(dev);
-+	pm_runtime_enable(dev);
- 
- 	generic_phy = devm_phy_create(dev, NULL, &qusb2_phy_gen_ops);
- 	if (IS_ERR(generic_phy)) {
--- 
-2.34.1
+It looks like you received a tag and forgot to add it.
 
+If you do not know the process, here is a short explanation:
+Please add Acked-by/Reviewed-by/Tested-by tags when posting new versions
+of patchset, under or above your Signed-off-by tag, unless patch changed
+significantly (e.g. new properties added to the DT bindings). Tag is
+"received", when provided in a message replied to you on the mailing
+list. Tools like b4 can help here. However, there's no need to repost
+patches *only* to add the tags. The upstream maintainer will do that for
+tags received on the version they apply.
+
+Please read:
+https://elixir.bootlin.com/linux/v6.12-rc3/source/Documentation/process/submitting-patches.rst#L577
+
+If a tag was not added on purpose, please state why and what changed.
+</form letter>
+
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
