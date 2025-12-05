@@ -4,56 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E0D8D374A8
-	for <linux-phy@archiver.kernel.org>; Fri,  5 Dec 2025 21:30:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C78FAD374B9
+	for <linux-phy@archiver.kernel.org>; Fri,  5 Dec 2025 22:36:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uLzpmACvF1bvjgbb5BXHHQjxuY9MNB+Us3BSfezZDaY=; b=oASFwIVg56QvWZ
-	Akz1qyZqfuRxtLqLJ+BHDZMXxbfGXL8ffPQCdpSVHyu2H123jXbYPxc9jMtCJ6YQhln6wDF8Nz7FE
-	Ol3ySR9w+76MApIHon2g2aCJGEWcTEYS+Vx1aBtiWjwlnvk2AMleVNqEfyDrQCEgjxMSAGtMnE0A4
-	/n1gaRIegtSE6xV8fCB5TuZTQhIc4kd2AyX8UMVapIvZBYGwI60FSuwg+ueh/x67fPDPxiIaStAe0
-	8VxxHrGiGwN2Sd7wFT42BIj1hPuJyrEvzdORBH5srsbiHVwdv8D8CLrFio5Km2ao0u1WlB8Y5Xvi3
-	8elAKS1hqd+5K6NH4AEQ==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
+	In-Reply-To:To:Cc:MIME-Version:Date:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=RhrYk0OV9jHzaLmQigR8dlZqPp8sIRLNNe8yBw0OAmw=; b=4bt7KOQm9LJo9pvvgHXzN/0qN3
+	vUcjZjYfi6yjAijooniyFxYXLtWrMzveztjM/4mIrJPOYjD1zKHzMu7aTFNo7QaPB3Lw5YUw6HjiW
+	fsWQJYOAOYICA/sv51dL/FXy2QbhK3n4TYJ2WdWhv9dFxi0521Y8NFcBrTm1rk/hbX0plsx11q/Aw
+	yQff6V/cupGjW3mfBU7sU7ABA5ag7Lq1vrXCXozvkHt5yZ9sMCxEe45eOPsBWOB7tzgvsO303VA7V
+	HVhh8JtrlT6WB9w+U5PM6XlUqdhObZ8TIhM5zi6fbiVIPJdNMDr9cmtIy2lAObWfs/MBTTBhoT0nV
+	8dYiD4aA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vRdNK-0000000A48Y-4C0u;
-	Fri, 05 Dec 2025 21:30:03 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vReQ0-0000000A9WZ-2Mo1;
+	Fri, 05 Dec 2025 22:36:52 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vRdNJ-0000000A48M-11Eh
+	id 1vRePy-0000000A9TD-0Rtb
 	for linux-phy@lists.infradead.org;
-	Fri, 05 Dec 2025 21:30:01 +0000
+	Fri, 05 Dec 2025 22:36:51 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 4724A60138;
-	Fri,  5 Dec 2025 21:30:00 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3697FC4CEF1;
-	Fri,  5 Dec 2025 21:29:59 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id CB507441D3;
+	Fri,  5 Dec 2025 22:36:49 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7B729C19422;
+	Fri,  5 Dec 2025 22:36:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1764970200;
-	bh=Wat73citxRfjTfvKv7uOEzz1Pks+to1ns7XuxiJ2Xpg=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=GF7xIsZEevHR2TvzVOgtaQJYt3cX4vrLPuut4at/iIrOgwImO3H6pKRj5M8uoTQCh
-	 KYxV+nJBWFo9XgBP1tGrX8t8mXg4ikQ+CjFHieyT2lH9vVLbm8aCskI9MGUbcrVd57
-	 tjnide0sHBrtBAFQqsMSJ9DAY34Gn/9NgZwUt3KOid+qt6k4247XB9pftKYXXH/ZzW
-	 CIqA9LDExgb5mTE/N6vWqL5lHNUcdD2bJPL7uvDKrJrJ0LTfEH1IkkHZWLv15maede
-	 MYyq/MLd85bFzyCHMNJdzZeioyP5zb7DWJ/VBAnXsuPOrZN3qpcEqVd0sy2ua8BsLj
-	 FL+wB90fOkq+g==
-Date: Fri, 5 Dec 2025 15:36:18 -0600
-From: Bjorn Andersson <andersson@kernel.org>
-To: Loic Poulain <loic.poulain@oss.qualcomm.com>
-Cc: vkoul@kernel.org, kishon@kernel.org, linux-arm-msm@vger.kernel.org, 
-	linux-phy@lists.infradead.org, dmitry.baryshkov@oss.qualcomm.com
-Subject: Re: [PATCH] phy: qcom-qusb2: Fix NULL pointer dereference on early
- suspend
-Message-ID: <r33k3aif4lzwfwashvkstqbxyncrr2yrtqejobfj6pm65wasi3@gyy3zex3u7lx>
-References: <20251205160437.259125-1-loic.poulain@oss.qualcomm.com>
+	s=k20201202; t=1764974209;
+	bh=fozoT2mIHoqlaC/dIcUWXWiqeKFS54g8S0cfQ4C96mc=;
+	h=From:Date:Cc:To:In-Reply-To:References:Subject:From;
+	b=qQ06qna44Yx7eukWkJ5er0z168gA9PNBFZ9s0IewUszxj7u+iap3qm3VxGwydyei6
+	 SDlHlwMeQZguV/AjhbmqOIRiHqHjrhSA5mAI3W2RkUPw+P2CeK9QqkVlZGm2PeQ86T
+	 HStDYp0ioSaWzKHhqrEqU8740sr03W9527l0lVv3NVNBgl13g7/HXlyY//3PqrK/c+
+	 Tdh4arNZt2fBtLtA41+PowHDAt7bziXnsp7OP3+yPH3g0UxGqGAO135jj/Ny+pICaK
+	 G3MuvxnJhYGlbmeykaMDGXQ0ayeYj5hWBIsTnbXarbZBqI8RVFdZrybkHCqNWcrdMo
+	 nVXJfuY7XHr8A==
+From: Rob Herring <robh@kernel.org>
+Date: Fri, 05 Dec 2025 16:36:47 -0600
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20251205160437.259125-1-loic.poulain@oss.qualcomm.com>
+Cc: Thierry Reding <thierry.reding@gmail.com>, linux-tegra@vger.kernel.org, 
+ JC Kuo <jckuo@nvidia.com>, Jonathan Hunter <jonathanh@nvidia.com>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, linux-kernel@vger.kernel.org, 
+ Mathias Nyman <mathias.nyman@intel.com>, Conor Dooley <conor+dt@kernel.org>, 
+ devicetree@vger.kernel.org, linux-usb@vger.kernel.org, 
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+ linux-phy@lists.infradead.org
+To: Diogo Ivo <diogo.ivo@tecnico.ulisboa.pt>
+In-Reply-To: <20251204-diogo-tegra_phy-v1-0-51a2016d0be8@tecnico.ulisboa.pt>
+References: <20251204-diogo-tegra_phy-v1-0-51a2016d0be8@tecnico.ulisboa.pt>
+Message-Id: <176497381829.863612.7431013132555369131.robh@kernel.org>
+Subject: Re: [PATCH 0/5] Fixes to Tegra USB role switching and Smaug USB
+ role switching enablement
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20251205_143650_186614_E6050042 
+X-CRM114-Status: GOOD (  25.00  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,96 +79,101 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Dec 05, 2025 at 05:04:37PM +0100, Loic Poulain wrote:
-> Reorder runtime PM setup to ensure pm_runtime_forbid() is applied before
-> enabling runtime PM.
 
-Your commit message is pretty good, but in the future please consider
-following the documentation [1] and really start your commit message by
-establishing the problem. The "most significant bit" of your change
-request isn't "let's reorder something", it's something along the line
-of "enable before forbid can result in autosuspend, which results in
-NULL pointer dereference".
-
-[1] https://docs.kernel.org/process/submitting-patches.html#describe-your-changes
-
-> This avoids possible early autosuspend and prevents
-> qusb2_phy_runtime_suspend() from being called before driver data is
-> initialized, which could otherwise lead to a NULL pointer dereference:
+On Thu, 04 Dec 2025 21:27:16 +0000, Diogo Ivo wrote:
+> Hello,
 > 
-> ```
-> Unable to handle kernel NULL pointer dereference at virtual address 00000000000000a1
-> [...]
-> CPU: 0 UID: 0 PID: 11 Comm: kworker/0:1 Not tainted 6.16.7+ #116 PREEMPT
-> Workqueue: pm pm_runtime_work
-> pstate: 20000005 (nzCv daif -PAN -UAO -TCO -DIT -SSBS BTYPE=--)
-> pc : qusb2_phy_runtime_suspend+0x14/0x1e0 [phy_qcom_qusb2]
-> lr : pm_generic_runtime_suspend+0x2c/0x44
-
-If you pipe the log through "./scripts/decode_stacktrace.sh vmlinux . ."
-we get these decoded.
-
-But that said, I'm pretty sure that what fails is the attempt to pull
-cfg out of NULL on the second line?
-
-> [...]
-> ```
+> This patch series contains two fixes for USB role switching on the
+> Tegra210 SoC, as well as enabling this feature on the Pixel C.
 > 
-> Fixes: 891a96f65ac3 ("phy: qcom-qusb2: Add support for runtime PM")
-> Signed-off-by: Loic Poulain <loic.poulain@oss.qualcomm.com>
+> The first patch addresses a wrong check on the logic that disables the
+> VBUS regulator.
+> 
+> The second patch guarantees proper ordering of events when switching PHY
+> roles.
+> 
+> The third and fourth patches then add the necessary nodes and properties
+> in the Smaug DT in order for role switching to work. Currently with this
+> patch series this feature can only be controlled from userspace by writing
+> the desired role to sysfs as
+> 
+> echo "role" > /sys/class/usb_role/usb2-0-role-switch/role
+> 
+> with role being one of {device, host, none}.
+> 
+> Further patches will enable automatic role switching via the 'cros_ec_typec'
+> driver which is currently broken on Smaug.
+> 
+> N.B: This series does not add a 'connector' node under the 'usb-role-switch'
+> property added on patch 04/04 because for Smaug the connector should instead
+> be under the node for 'cros_ec_typec' node and as stated above this
+> driver is currently broken for this device. If it is deemed better to
+> describe it but explicitly disable the node let me know and I will send
+> out a v2.
+> 
+> Signed-off-by: Diogo Ivo <diogo.ivo@tecnico.ulisboa.pt>
 > ---
->  drivers/phy/qualcomm/phy-qcom-qusb2.c | 9 +++++----
->  1 file changed, 5 insertions(+), 4 deletions(-)
+> Diogo Ivo (5):
+>       usb: host: tegra: Remove redundant pm_runtime_mark_last_busy() call
+>       phy: tegra: xusb: Fix USB2 port regulator disable logic
+>       phy: tegra: xusb: Fix ordering issue when switching roles on USB2 ports
+>       arm64: tegra: smaug: Complete and enable tegra-udc node
+>       arm64: tegra: smaug: Add usb-role-switch support
 > 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-qusb2.c b/drivers/phy/qualcomm/phy-qcom-qusb2.c
-> index b5514a32ff8f..97bc3755a390 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-qusb2.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-qusb2.c
-> @@ -1093,13 +1093,14 @@ static int qusb2_phy_probe(struct platform_device *pdev)
->  		or->hsdisc_trim.override = true;
->  	}
->  
-> -	pm_runtime_set_active(dev);
-> -	pm_runtime_enable(dev);
-> +
-
-Doesn't this end up being two blank lines?
-
->  	/*
-> -	 * Prevent runtime pm from being ON by default. Users can enable
-> -	 * it using power/control in sysfs.
-> +	 * Enable runtime PM support, but forbid it by default.
-> +	 * Users can allow it again via the power/control attribute in sysfs.
-
-I think this warrants adding "TODO: Removing the pm_runtime_forbid()
-might allow autosuspend to invoke qusb2_phy_runtime_suspend() to
-dereference the NULL drvdata" here.
-
-
-But, if we know what the problem is, perhaps we should just fix it right
-away?
-
-Looks like the fix for the NULL pointer dereference is to move the
-dev_set_drvdata() and phy_set_drvdata() above thus hunk.
-
-And the "problem statement" stating why we're doing this change (which
-still makes sense) is that "a wasteful autosuspend might happen between
-pm_runtime_enable() and the pm_runtime_forbid()".
-
-Regards,
-Bjorn
-
->  	 */
-> +	pm_runtime_set_active(dev);
->  	pm_runtime_forbid(dev);
-> +	pm_runtime_enable(dev);
->  
->  	generic_phy = devm_phy_create(dev, NULL, &qusb2_phy_gen_ops);
->  	if (IS_ERR(generic_phy)) {
-> -- 
-> 2.34.1
+>  arch/arm64/boot/dts/nvidia/tegra210-smaug.dts | 13 +++++++++++++
+>  drivers/phy/tegra/xusb-tegra210.c             |  5 +++--
+>  drivers/phy/tegra/xusb.c                      | 23 +++++++++++++++++++++++
+>  drivers/phy/tegra/xusb.h                      |  1 +
+>  drivers/usb/gadget/udc/tegra-xudc.c           |  4 ++++
+>  drivers/usb/host/xhci-tegra.c                 | 17 ++++++++++-------
+>  include/linux/phy/tegra/xusb.h                |  1 +
+>  7 files changed, 55 insertions(+), 9 deletions(-)
+> ---
+> base-commit: a8817ff3b5cd99b0a5af57a92d1a3a7980612550
+> change-id: 20251201-diogo-tegra_phy-86c89cab7377
+> 
+> Best regards,
+> --
+> Diogo Ivo <diogo.ivo@tecnico.ulisboa.pt>
 > 
 > 
+> 
+
+
+My bot found new DTB warnings on the .dts files added or changed in this
+series.
+
+Some warnings may be from an existing SoC .dtsi. Or perhaps the warnings
+are fixed by another series. Ultimately, it is up to the platform
+maintainer whether these warnings are acceptable or not. No need to reply
+unless the platform maintainer has comments.
+
+If you already ran DT checks and didn't see these error(s), then
+make sure dt-schema is up to date:
+
+  pip3 install dtschema --upgrade
+
+
+This patch series was applied (using b4) to base:
+ Base: base-commit a8817ff3b5cd99b0a5af57a92d1a3a7980612550 not known, ignoring
+ Base: attempting to guess base-commit...
+ Base: tags/v6.18-rc7-8-gf402ecd7a8b6 (exact match)
+ Base: tags/v6.18-rc7-8-gf402ecd7a8b6 (use --merge-base to override)
+
+If this is not the correct base, please add 'base-commit' tag
+(or use b4 which does this automatically)
+
+New warnings running 'make CHECK_DTBS=y for arch/arm64/boot/dts/nvidia/' for 20251204-diogo-tegra_phy-v1-0-51a2016d0be8@tecnico.ulisboa.pt:
+
+arch/arm64/boot/dts/nvidia/tegra210-smaug.dtb: padctl@7009f000 (nvidia,tegra210-xusb-padctl): ports:usb2-0: 'role-switch-default-mode' does not match any of the regexes: '^pinctrl-[0-9]+$'
+	from schema $id: http://devicetree.org/schemas/phy/nvidia,tegra210-xusb-padctl.yaml
+arch/arm64/boot/dts/nvidia/tegra210-smaug.dtb: padctl@7009f000 (nvidia,tegra210-xusb-padctl): ports:usb2-0: 'connector' is a dependency of 'usb-role-switch'
+	from schema $id: http://devicetree.org/schemas/phy/nvidia,tegra210-xusb-padctl.yaml
+
+
+
+
+
 
 -- 
 linux-phy mailing list
