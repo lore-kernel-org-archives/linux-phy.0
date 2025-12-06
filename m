@@ -4,65 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C78FAD374B9
-	for <linux-phy@archiver.kernel.org>; Fri,  5 Dec 2025 22:36:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0B67DD3ABC1
+	for <linux-phy@archiver.kernel.org>; Sat,  6 Dec 2025 00:08:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
-	In-Reply-To:To:Cc:MIME-Version:Date:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=RhrYk0OV9jHzaLmQigR8dlZqPp8sIRLNNe8yBw0OAmw=; b=4bt7KOQm9LJo9pvvgHXzN/0qN3
-	vUcjZjYfi6yjAijooniyFxYXLtWrMzveztjM/4mIrJPOYjD1zKHzMu7aTFNo7QaPB3Lw5YUw6HjiW
-	fsWQJYOAOYICA/sv51dL/FXy2QbhK3n4TYJ2WdWhv9dFxi0521Y8NFcBrTm1rk/hbX0plsx11q/Aw
-	yQff6V/cupGjW3mfBU7sU7ABA5ag7Lq1vrXCXozvkHt5yZ9sMCxEe45eOPsBWOB7tzgvsO303VA7V
-	HVhh8JtrlT6WB9w+U5PM6XlUqdhObZ8TIhM5zi6fbiVIPJdNMDr9cmtIy2lAObWfs/MBTTBhoT0nV
-	8dYiD4aA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4Qu/scuFdlRKZTiWwICvyIzpJBvUGwdbKj+dPOZ9fN8=; b=zxQ2GT7pK9eRVA
+	HcbOHoMi7BM44pWu46Se5qiprevR+wMrpoMucQitbWYs+bmNbLp8/dSMgVK5QvK5TyVNaZtqYzjhO
+	nTEcPX36R815ZOKEhSHAZtRaPdwg+QxFjqeHDleUNIjHSzEefb51s8DDsyf1zfDntz4kCU/9yPT0F
+	Hj9cib5uBcfjwQJlRqxOgH+VK4/SqV5gQ/0UrJ4ZwwLoqafrKwBFzayHgi4OSHoRVwekWlJVumSvU
+	U+KQeNi84qGIbjtP28/EpO3QlRTLsTTAPlnofZsxUghbNHzvO7BkRm98EIyT3RXjh+5IhnBpvXbqv
+	jMsWoA0mY8ad/TSGnFEw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vReQ0-0000000A9WZ-2Mo1;
-	Fri, 05 Dec 2025 22:36:52 +0000
+	id 1vRfqP-0000000ADeL-1XYx;
+	Sat, 06 Dec 2025 00:08:13 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vRePy-0000000A9TD-0Rtb
-	for linux-phy@lists.infradead.org;
-	Fri, 05 Dec 2025 22:36:51 +0000
+	id 1vRfqL-0000000ADde-3ZqN;
+	Sat, 06 Dec 2025 00:08:10 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id CB507441D3;
-	Fri,  5 Dec 2025 22:36:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7B729C19422;
-	Fri,  5 Dec 2025 22:36:49 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 06D2A40229;
+	Sat,  6 Dec 2025 00:08:09 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A97FAC4CEF1;
+	Sat,  6 Dec 2025 00:08:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1764974209;
-	bh=fozoT2mIHoqlaC/dIcUWXWiqeKFS54g8S0cfQ4C96mc=;
-	h=From:Date:Cc:To:In-Reply-To:References:Subject:From;
-	b=qQ06qna44Yx7eukWkJ5er0z168gA9PNBFZ9s0IewUszxj7u+iap3qm3VxGwydyei6
-	 SDlHlwMeQZguV/AjhbmqOIRiHqHjrhSA5mAI3W2RkUPw+P2CeK9QqkVlZGm2PeQ86T
-	 HStDYp0ioSaWzKHhqrEqU8740sr03W9527l0lVv3NVNBgl13g7/HXlyY//3PqrK/c+
-	 Tdh4arNZt2fBtLtA41+PowHDAt7bziXnsp7OP3+yPH3g0UxGqGAO135jj/Ny+pICaK
-	 G3MuvxnJhYGlbmeykaMDGXQ0ayeYj5hWBIsTnbXarbZBqI8RVFdZrybkHCqNWcrdMo
-	 nVXJfuY7XHr8A==
+	s=k20201202; t=1764979688;
+	bh=R7HsQDGBjcjXJ81DGGnBQnRnfKReTGHiJmsZwWhTh6Y=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=jMarMEwPMDpFmOeAE6CeeAxtIrqgmlAO3jdHip31Ld+9XQox+jFZKJmkWBNUFYhOY
+	 J7S6GEyYhVsXristA3lxrwkN/2idujDP6kV1nOLtAPb/yVsXB+hI7ec0g2XB08s9HP
+	 61xlxNiWckbr4jPP0TM7nN3xlBE0ccvt6NqM548uJdtzfUzxt4sC+lYJzO+Plmk3tr
+	 cbS1t+wmnVO6UKA+13SyT//0y2nxOD0zykoPZHAz8bDGvix8dC/AWUMJKbXLkPUMJG
+	 qBMq3HaR7ezCM9BRmfIFxBKSnzNziHti3mhlf0Yv2u8M0IRsIym/CMdG+GKtb+9VS8
+	 h2IQo5Tgu0UdQ==
+Date: Fri, 5 Dec 2025 18:08:06 -0600
 From: Rob Herring <robh@kernel.org>
-Date: Fri, 05 Dec 2025 16:36:47 -0600
+To: Jacky Chou <jacky_chou@aspeedtech.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
+	Andrew Jeffery <andrew@codeconstruct.com.au>,
+	Bjorn Helgaas <bhelgaas@google.com>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Linus Walleij <linus.walleij@linaro.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	"linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>,
+	"linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+	"linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+	Andrew Jeffery <andrew@aj.id.au>,
+	"openbmc@lists.ozlabs.org" <openbmc@lists.ozlabs.org>,
+	"linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>
+Subject: Re: [PATCH v6 0/7] Add ASPEED PCIe Root Complex support
+Message-ID: <20251206000806.GA969079-robh@kernel.org>
+References: <20251201-upstream_pcie_rc-v6-0-8c8800c56b16@aspeedtech.com>
+ <20251204195355.GA1975043-robh@kernel.org>
+ <SEYPR06MB5134D0D5911E3C86D869151E9DA7A@SEYPR06MB5134.apcprd06.prod.outlook.com>
 MIME-Version: 1.0
-Cc: Thierry Reding <thierry.reding@gmail.com>, linux-tegra@vger.kernel.org, 
- JC Kuo <jckuo@nvidia.com>, Jonathan Hunter <jonathanh@nvidia.com>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, linux-kernel@vger.kernel.org, 
- Mathias Nyman <mathias.nyman@intel.com>, Conor Dooley <conor+dt@kernel.org>, 
- devicetree@vger.kernel.org, linux-usb@vger.kernel.org, 
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>, 
- linux-phy@lists.infradead.org
-To: Diogo Ivo <diogo.ivo@tecnico.ulisboa.pt>
-In-Reply-To: <20251204-diogo-tegra_phy-v1-0-51a2016d0be8@tecnico.ulisboa.pt>
-References: <20251204-diogo-tegra_phy-v1-0-51a2016d0be8@tecnico.ulisboa.pt>
-Message-Id: <176497381829.863612.7431013132555369131.robh@kernel.org>
-Subject: Re: [PATCH 0/5] Fixes to Tegra USB role switching and Smaug USB
- role switching enablement
+Content-Disposition: inline
+In-Reply-To: <SEYPR06MB5134D0D5911E3C86D869151E9DA7A@SEYPR06MB5134.apcprd06.prod.outlook.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251205_143650_186614_E6050042 
-X-CRM114-Status: GOOD (  25.00  )
+X-CRM114-CacheID: sfid-20251205_160809_914053_89115E85 
+X-CRM114-Status: GOOD (  14.30  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,101 +91,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Thu, 04 Dec 2025 21:27:16 +0000, Diogo Ivo wrote:
-> Hello,
+On Fri, Dec 05, 2025 at 12:12:35AM +0000, Jacky Chou wrote:
+> Hi Rob,
 > 
-> This patch series contains two fixes for USB role switching on the
-> Tegra210 SoC, as well as enabling this feature on the Pixel C.
+> Thanks for your comments.
 > 
-> The first patch addresses a wrong check on the logic that disables the
-> VBUS regulator.
+> > > Changes in v6:
+> > > - Refer to pci-cpi-bridge.yaml to update aspeed,ast2600-pcie.yaml and
+> > >   the pcie node of aspeed-g6.dtsi.
+> > 
+> > Where is this? You don't describe the root port and its properties at all now.
+> > 
 > 
-> The second patch guarantees proper ordering of events when switching PHY
-> roles.
-> 
-> The third and fourth patches then add the necessary nodes and properties
-> in the Smaug DT in order for role switching to work. Currently with this
-> patch series this feature can only be controlled from userspace by writing
-> the desired role to sysfs as
-> 
-> echo "role" > /sys/class/usb_role/usb2-0-role-switch/role
-> 
-> with role being one of {device, host, none}.
-> 
-> Further patches will enable automatic role switching via the 'cros_ec_typec'
-> driver which is currently broken on Smaug.
-> 
-> N.B: This series does not add a 'connector' node under the 'usb-role-switch'
-> property added on patch 04/04 because for Smaug the connector should instead
-> be under the node for 'cros_ec_typec' node and as stated above this
-> driver is currently broken for this device. If it is deemed better to
-> describe it but explicitly disable the node let me know and I will send
-> out a v2.
-> 
-> Signed-off-by: Diogo Ivo <diogo.ivo@tecnico.ulisboa.pt>
-> ---
-> Diogo Ivo (5):
->       usb: host: tegra: Remove redundant pm_runtime_mark_last_busy() call
->       phy: tegra: xusb: Fix USB2 port regulator disable logic
->       phy: tegra: xusb: Fix ordering issue when switching roles on USB2 ports
->       arm64: tegra: smaug: Complete and enable tegra-udc node
->       arm64: tegra: smaug: Add usb-role-switch support
-> 
->  arch/arm64/boot/dts/nvidia/tegra210-smaug.dts | 13 +++++++++++++
->  drivers/phy/tegra/xusb-tegra210.c             |  5 +++--
->  drivers/phy/tegra/xusb.c                      | 23 +++++++++++++++++++++++
->  drivers/phy/tegra/xusb.h                      |  1 +
->  drivers/usb/gadget/udc/tegra-xudc.c           |  4 ++++
->  drivers/usb/host/xhci-tegra.c                 | 17 ++++++++++-------
->  include/linux/phy/tegra/xusb.h                |  1 +
->  7 files changed, 55 insertions(+), 9 deletions(-)
-> ---
-> base-commit: a8817ff3b5cd99b0a5af57a92d1a3a7980612550
-> change-id: 20251201-diogo-tegra_phy-86c89cab7377
-> 
-> Best regards,
-> --
-> Diogo Ivo <diogo.ivo@tecnico.ulisboa.pt>
-> 
-> 
-> 
+> May I confirm whether the pcie@8,0 in aspeed-g6.dtsi is not considered the 
+> root port? From my understanding, that node represents the root port, so I 
+> want to make sure I'm aligning with your expectation before updating the binding.
 
+I believe you told me it was the root port.
 
-My bot found new DTB warnings on the .dts files added or changed in this
-series.
+> Could you help clarify how you would like the root port and its properties to 
+> be described in the schema?
 
-Some warnings may be from an existing SoC .dtsi. Or perhaps the warnings
-are fixed by another series. Ultimately, it is up to the platform
-maintainer whether these warnings are acceptable or not. No need to reply
-unless the platform maintainer has comments.
+properties:
+  pcie@8,0:
+    $ref: /schemas/pci/pci-pci-bridge.yaml#
+    unevaluatedProperties: false
 
-If you already ran DT checks and didn't see these error(s), then
-make sure dt-schema is up to date:
+    properties:
 
-  pip3 install dtschema --upgrade
+And then add all the properties you have which are not defined in 
+pci-pci-bridge.yaml (and pci-device.yaml by reference) (i.e. clocks, 
+resets, phys, etc.).
 
-
-This patch series was applied (using b4) to base:
- Base: base-commit a8817ff3b5cd99b0a5af57a92d1a3a7980612550 not known, ignoring
- Base: attempting to guess base-commit...
- Base: tags/v6.18-rc7-8-gf402ecd7a8b6 (exact match)
- Base: tags/v6.18-rc7-8-gf402ecd7a8b6 (use --merge-base to override)
-
-If this is not the correct base, please add 'base-commit' tag
-(or use b4 which does this automatically)
-
-New warnings running 'make CHECK_DTBS=y for arch/arm64/boot/dts/nvidia/' for 20251204-diogo-tegra_phy-v1-0-51a2016d0be8@tecnico.ulisboa.pt:
-
-arch/arm64/boot/dts/nvidia/tegra210-smaug.dtb: padctl@7009f000 (nvidia,tegra210-xusb-padctl): ports:usb2-0: 'role-switch-default-mode' does not match any of the regexes: '^pinctrl-[0-9]+$'
-	from schema $id: http://devicetree.org/schemas/phy/nvidia,tegra210-xusb-padctl.yaml
-arch/arm64/boot/dts/nvidia/tegra210-smaug.dtb: padctl@7009f000 (nvidia,tegra210-xusb-padctl): ports:usb2-0: 'connector' is a dependency of 'usb-role-switch'
-	from schema $id: http://devicetree.org/schemas/phy/nvidia,tegra210-xusb-padctl.yaml
-
-
-
-
-
+Rob
 
 -- 
 linux-phy mailing list
