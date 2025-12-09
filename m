@@ -4,93 +4,110 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0740D3B7EA
-	for <linux-phy@archiver.kernel.org>; Tue,  9 Dec 2025 06:53:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8AD06D3B7EA
+	for <linux-phy@archiver.kernel.org>; Tue,  9 Dec 2025 08:26:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Ld44TaAAraMW657Qxf6z+BP5eExXUSU/bVxGbYkOvi0=; b=oAJByv4dJuVF9P
-	OUuLGyN5ZUQ0KhalppSEIy5uJ3ycF46IK+LGg0AgNbffGfSosUAD1SWvE44E1tgKEQut6Gyq2yeU1
-	HIu6aGZxHBQ0fE+8BQqeOg8UoVeh3WKcd7yCADt/6peYB1IYu3aZx//q1tseA5dEqQn3VAofeqgcQ
-	9WBGa+gutNxU1Jgv9rJlhlyXyUXf+lZOxPZJ3PkVSQF2w/8lHC6fWedtMFw5ZD7KxFZM2XkAr+D2D
-	oYJlMF7DwsLN8pSx0TV3sCUZvEMwOAo0ZsbeTrqqvSI9zGXHuTcaLF8EcQ/1iuFEKTY5j/+wYCuiy
-	0tJyjhKQh7XDjBvRC7EA==;
+	List-Owner; bh=gdBV2bay97LrdVEePt+HciTRxoDiCKMvOOiHwxzWvNY=; b=1wQ3bq59vMA+GD
+	c0P1VqG716e9Y4KsDZzSOG8JaWtshxN5aoc6ZfoWZPoBq08kQuawUrJwsZ2wE6RFsUdss3KfhoAJ2
+	sgHPG6r9RVrpWw9/LRKrfRuq3rbWiGqSiNcrEN5QLPyAcNRP09cX9zE+mh/rIZfOdu4ZY+0IG8n2n
+	fTSkwIM3xVAbe5Q+gt4DgSSLMdCx3d6M1gV9AYQV8Rv9UAKP4biWEp3Qfrsaht5aQgQUk2enccgbO
+	G2Ptr8iIEXv8ojbGiqIBfdPnBhlJnl5YhWgHxrCsn96hll6+QFkDEUYql8k77QYr+XTerkIqhwMC7
+	xD0IprCIzVkaqGv0X9og==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vSrbW-0000000DueZ-22sZ;
-	Tue, 09 Dec 2025 06:53:46 +0000
-Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
+	id 1vSt3K-0000000DzYk-0UTs;
+	Tue, 09 Dec 2025 08:26:34 +0000
+Received: from smtpout-04.galae.net ([185.171.202.116])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vSrbT-0000000Dudg-1v6t
-	for linux-phy@lists.infradead.org;
-	Tue, 09 Dec 2025 06:53:45 +0000
-Received: by mail-wm1-x331.google.com with SMTP id 5b1f17b1804b1-4777771ed1aso43203165e9.2
-        for <linux-phy@lists.infradead.org>; Mon, 08 Dec 2025 22:53:42 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1765263221; x=1765868021; darn=lists.infradead.org;
-        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=qpimlZdEDtuP7WR2mZA0+z1H7nFjtx/bFty3v8hsXUU=;
-        b=A3t8X2xwWFG2Ah40rYlB4M8GTk5Tt1DDi+RZVuPAPWEb44RRVVXbiNQqpBnNmH0Rz4
-         osAYU31xSHI6NhHzv9aUT4osLkYnZ0Hhn1GeWx0wynQTOxl9QhKV4gzjHcZusr4FscM3
-         tk+nclOz+prIOq6+qUWZXRzl/RNltexVJeuTb9lGFoHYr9xKTzJnelXQBoYYTmx7INO4
-         Z0h/osUaQMlG8DAgCocngBmdODf46rflSxpMMo4SQQhpmnFZichV/lmZr414sjjGGoSX
-         Uxy1lCOazWS5Qfv/NDv7XHGE6TRVp1LKRSrcG3F1L4kTf0/0AJTvy0gVv/gjqxMZSk4m
-         tYuw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1765263221; x=1765868021;
-        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
-         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=qpimlZdEDtuP7WR2mZA0+z1H7nFjtx/bFty3v8hsXUU=;
-        b=aNSOHE3ftWEYLzGyj84waWg7Y2Vim2/bQ+Rn7dTa17rvFLJkwMe61ACNOIL5sPw//T
-         jQ4nOcpBxzY+ABk84QcU7eJF7bPwtFy+XLda66j+E3c3CKU7gz7h3/g4obh26x40yiBf
-         fjvqv+Zlep4HA1dL2ws4O2ZFS92bLv0xguhH9Wlt691OTyu5StZRVpG41NrMh8dFaOJQ
-         ej1SIhZCxzNxn8icOG9DfwL5giV4z8JHwaESF7Zz3p3FaHRE5WQwnTqhEOR2bQX7C0uS
-         ke5JR6gbM7MF0rDNS/W+qaHiFJjJxX31X7o1qhBP2fQCPJofV2PZTZxgP+9XumtA7FfE
-         C/Zg==
-X-Forwarded-Encrypted: i=1; AJvYcCUIjQWCFmR4k3lXESJ1awnhDBBLfR9A6zhN/cyjlCkzWdS6AmMpIO3bu1BDEoPN6gpid2H+YkNlVrI=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yxl/WDAnCxGC92MLT+6273fpIYJVQRu/WKlUmstWFSDXKxLDsU5
-	9e6Yn3axFlpc0JxGUEZTYF8YngCsMvxOLd6nsj5I6apBJlShpouuGgGmCXYnbCWBTEk=
-X-Gm-Gg: ASbGncu31yEmA1lXiaJ+mYbrhn6ppC/PSy1B2mUHBT0XBDUfje4en2XtUNtun50jpqG
-	YcFUgPugEByxPUyDWulvJSpKs5UelmobhMWBdSR4jQO90c+CY9JMAFk6YqWLVNRFdk+jn5MgKHz
-	C4wog3WGX/cBlrvtxe6fkWO5FFTn15kTsJekc1E4R9tjgRQJdTBoesGKJwVKTlU2N+KKQNJXqyo
-	0Ry1w7Z29DkPMxA447PgEp3bjo78gzb/4QtBYdUfPXgTqGkJQgPdz5bk68GkVQ4Oazuo1c4TVjd
-	ucjcejiyHOUqEwKQCuS68+Skto6ZciOeI31giKhWWENF8v2X0cQMCOpolTRCWdxinT4IMk8811M
-	3UBg8R05fZ5HAj4LYTSs+0+9WfYAsYE4SVrbXHPRuBYpo/wKechCjhYsViyxGQoen2C1o3ufzx3
-	vqQUmxvra8WsxAnWPc
-X-Google-Smtp-Source: AGHT+IGaTnV6DUM6NZ8B996sUpARBrir70sGaGW5NyYdRK9/TvpgGM9K+ozidhKmYpB4+XkFZ3zK7g==
-X-Received: by 2002:a05:600c:1990:b0:477:73e9:dbe7 with SMTP id 5b1f17b1804b1-47939e4d013mr112666895e9.35.1765263220857;
-        Mon, 08 Dec 2025 22:53:40 -0800 (PST)
-Received: from localhost ([196.207.164.177])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-47a7d35713asm11916255e9.1.2025.12.08.22.53.39
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 08 Dec 2025 22:53:40 -0800 (PST)
-Date: Tue, 9 Dec 2025 09:53:36 +0300
-From: Dan Carpenter <dan.carpenter@linaro.org>
-To: Amelie Delaunay <amelie.delaunay@st.com>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
-	Alexandre Torgue <alexandre.torgue@foss.st.com>,
-	Johan Hovold <johan+linaro@kernel.org>,
-	Fengguang Wu <fengguang.wu@intel.com>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	linux-phy@lists.infradead.org,
-	linux-stm32@st-md-mailman.stormreply.com,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
-	kernel-janitors@vger.kernel.org
-Subject: [PATCH] phy: stm32-usphyc: Fix off by one in probe()
-Message-ID: <aTfHcMJK1wFVnvEe@stanley.mountain>
+	id 1vSt3G-0000000DzXz-0zuj;
+	Tue, 09 Dec 2025 08:26:32 +0000
+Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
+	by smtpout-04.galae.net (Postfix) with ESMTPS id 348EBC180DF;
+	Tue,  9 Dec 2025 08:26:02 +0000 (UTC)
+Received: from mail.galae.net (mail.galae.net [212.83.136.155])
+	by smtpout-01.galae.net (Postfix) with ESMTPS id E33E8606E2;
+	Tue,  9 Dec 2025 08:26:25 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 0CD79102F0BF6;
+	Tue,  9 Dec 2025 09:26:03 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
+	t=1765268783; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 content-transfer-encoding; bh=wcg04tlEy44VWHetyJPa6vtgrSi9hQkJ8Wr3ssO16Z0=;
+	b=fHyy3p3RXDvWm/ScQ573O19lBfA7i99dTtnNMKIgZo6j5P27qUaUjbhNTv08DA8IFMfpHy
+	AgxHwoL/NW76FusS9uDh40xSgmfteD+0AIKiUzKm6X50QBH9u+CGQe/shfCBYk6cYKg2TZ
+	8gN2cTM7D1TIOGI5CBJ9VtNcRcbmeEPaK0KH5amKURGuYmw9NosAHrgGe3H35kv5rwXRKw
+	4FLoSOslR05puLB4/PTfDmvtHxQZ+eNY+xwyZu7eIBJfZyxeM1KAbSzgzSDiYTjCGWaCLA
+	VyDhDTs5Dy0D0lluZeF/pIm4ZgCjPNF9eHgaCtNllGMYqa2jowZM4WLyZc41kQ==
+From: Romain Gantois <romain.gantois@bootlin.com>
+Subject: [PATCH v2 0/2] iio: inkern: Use namespaced exports
+Date: Tue, 09 Dec 2025 09:25:54 +0100
+Message-Id: <20251209-iio-inkern-use-namespaced-exports-v2-0-9799a33c4b7f@bootlin.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-X-Mailer: git-send-email haha only kidding
+X-B4-Tracking: v=1; b=H4sIABLdN2kC/42NQQ6CMBAAv0J6dk13gRA8+Q/DoZRFNkpLWiQYw
+ t+t+AGPM4eZTUUOwlFdsk0FXiSKdwnolCk7GHdnkC6xIk0lIlUg4kHcg4ODV2RwZuQ4Gcsd8Dr
+ 5MEcosLe6JsrbklXqTIF7WY/HrUk8SJx9eB/LBb/2VyeNf9QXBITOYJ2XfaWpyK+t9/NT3Nn6U
+ TX7vn8Avu6Bn9QAAAA=
+X-Change-ID: 20251127-iio-inkern-use-namespaced-exports-41fc09223b5e
+To: MyungJoo Ham <myungjoo.ham@samsung.com>, 
+ Chanwoo Choi <cw00.choi@samsung.com>, Guenter Roeck <linux@roeck-us.net>, 
+ Peter Rosin <peda@axentia.se>, Jonathan Cameron <jic23@kernel.org>, 
+ David Lechner <dlechner@baylibre.com>, 
+ =?utf-8?q?Nuno_S=C3=A1?= <nuno.sa@analog.com>, 
+ Andy Shevchenko <andy@kernel.org>, Lars-Peter Clausen <lars@metafoo.de>, 
+ Michael Hennerich <Michael.Hennerich@analog.com>, 
+ Mariel Tinaco <Mariel.Tinaco@analog.com>, 
+ Kevin Tsai <ktsai@capellamicro.com>, 
+ Linus Walleij <linus.walleij@linaro.org>, 
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>, 
+ Eugen Hristev <eugen.hristev@linaro.org>, Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Sebastian Reichel <sre@kernel.org>, Chen-Yu Tsai <wens@csie.org>, 
+ Hans de Goede <hansg@kernel.org>, 
+ Support Opensource <support.opensource@diasemi.com>, 
+ Paul Cercueil <paul@crapouillou.net>, Iskren Chernev <me@iskren.info>, 
+ Krzysztof Kozlowski <krzk@kernel.org>, 
+ Marek Szyprowski <m.szyprowski@samsung.com>, 
+ Matheus Castello <matheus@castello.eng.br>, 
+ Saravanan Sekar <sravanhome@gmail.com>, 
+ Matthias Brugger <matthias.bgg@gmail.com>, 
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
+ Casey Connolly <casey.connolly@linaro.org>, 
+ =?utf-8?q?Pali_Roh=C3=A1r?= <pali@kernel.org>, 
+ Orson Zhai <orsonzhai@gmail.com>, 
+ Baolin Wang <baolin.wang@linux.alibaba.com>, 
+ Chunyan Zhang <zhang.lyra@gmail.com>, Amit Kucheria <amitk@kernel.org>, 
+ Thara Gopinath <thara.gopinath@gmail.com>, 
+ "Rafael J. Wysocki" <rafael@kernel.org>, 
+ Daniel Lezcano <daniel.lezcano@linaro.org>, Zhang Rui <rui.zhang@intel.com>, 
+ Lukasz Luba <lukasz.luba@arm.com>, 
+ Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>, 
+ Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, 
+ Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>, 
+ Sylwester Nawrocki <s.nawrocki@samsung.com>, 
+ Olivier Moysan <olivier.moysan@foss.st.com>, 
+ Arnaud Pouliquen <arnaud.pouliquen@foss.st.com>, 
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>, 
+ Alexandre Torgue <alexandre.torgue@foss.st.com>
+Cc: Thomas Petazzoni <thomas.petazzoni@bootlin.com>, 
+ linux-kernel@vger.kernel.org, linux-hwmon@vger.kernel.org, 
+ linux-iio@vger.kernel.org, linux-input@vger.kernel.org, 
+ linux-phy@lists.infradead.org, linux-pm@vger.kernel.org, 
+ linux-mips@vger.kernel.org, linux-mediatek@lists.infradead.org, 
+ linux-arm-msm@vger.kernel.org, linux-sound@vger.kernel.org, 
+ linux-stm32@st-md-mailman.stormreply.com, 
+ Romain Gantois <romain.gantois@bootlin.com>, 
+ Sebastian Reichel <sebastian.reichel@collabora.com>, 
+ Andy Shevchenko <andriy.shevchenko@intel.com>
+X-Mailer: b4 0.14.3
+X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251208_225343_526916_12186EDF 
-X-CRM114-Status: GOOD (  13.70  )
+X-CRM114-CacheID: sfid-20251209_002630_951388_16F8944C 
+X-CRM114-Status: UNSURE (   8.88  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,33 +124,88 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The "index" variable is used as an index into the usbphyc->phys[] array
-which has usbphyc->nphys elements.  So if it is equal to usbphyc->nphys
-then it is one element out of bounds.  The "index" comes from the
-device tree so it's data that we trust and it's unlikely to be wrong,
-however it's obviously still worth fixing the bug.  Change the > to >=.
+Hello everyone,
 
-Fixes: 94c358da3a05 ("phy: stm32: add support for STM32 USB PHY Controller (USBPHYC)")
-Signed-off-by: Dan Carpenter <dan.carpenter@linaro.org>
+This is version two of my series which introduces namespaced exports for
+the IIO consumer API.
+
+Best Regards,
+
+Romain
+
+Signed-off-by: Romain Gantois <romain.gantois@bootlin.com>
 ---
- drivers/phy/st/phy-stm32-usbphyc.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Changes in v2:
+- Separated out ds4424 changes.
+- Improved commit descriptions.
+- Link to v1: https://lore.kernel.org/r/20251201-iio-inkern-use-namespaced-exports-v1-1-da1935f70243@bootlin.com
 
-diff --git a/drivers/phy/st/phy-stm32-usbphyc.c b/drivers/phy/st/phy-stm32-usbphyc.c
-index 27fe92f73f33..b44afbff8616 100644
---- a/drivers/phy/st/phy-stm32-usbphyc.c
-+++ b/drivers/phy/st/phy-stm32-usbphyc.c
-@@ -712,7 +712,7 @@ static int stm32_usbphyc_probe(struct platform_device *pdev)
- 		}
- 
- 		ret = of_property_read_u32(child, "reg", &index);
--		if (ret || index > usbphyc->nphys) {
-+		if (ret || index >= usbphyc->nphys) {
- 			dev_err(&phy->dev, "invalid reg property: %d\n", ret);
- 			if (!ret)
- 				ret = -EINVAL;
+---
+Romain Gantois (2):
+      iio: dac: ds4424: drop unused include IIO consumer header
+      iio: inkern: Use namespaced exports
+
+ drivers/extcon/extcon-adc-jack.c                |  1 +
+ drivers/hwmon/iio_hwmon.c                       |  1 +
+ drivers/hwmon/ntc_thermistor.c                  |  1 +
+ drivers/iio/adc/envelope-detector.c             |  1 +
+ drivers/iio/afe/iio-rescale.c                   |  1 +
+ drivers/iio/buffer/industrialio-buffer-cb.c     |  1 +
+ drivers/iio/buffer/industrialio-hw-consumer.c   |  1 +
+ drivers/iio/dac/ad8460.c                        |  1 +
+ drivers/iio/dac/dpot-dac.c                      |  1 +
+ drivers/iio/dac/ds4424.c                        |  1 -
+ drivers/iio/inkern.c                            | 54 ++++++++++++-------------
+ drivers/iio/light/cm3605.c                      |  1 +
+ drivers/iio/light/gp2ap002.c                    |  1 +
+ drivers/iio/multiplexer/iio-mux.c               |  1 +
+ drivers/iio/potentiostat/lmp91000.c             |  1 +
+ drivers/input/joystick/adc-joystick.c           |  1 +
+ drivers/input/keyboard/adc-keys.c               |  1 +
+ drivers/input/touchscreen/colibri-vf50-ts.c     |  1 +
+ drivers/input/touchscreen/resistive-adc-touch.c |  1 +
+ drivers/phy/motorola/phy-cpcap-usb.c            |  1 +
+ drivers/power/supply/ab8500_btemp.c             |  1 +
+ drivers/power/supply/ab8500_charger.c           |  1 +
+ drivers/power/supply/ab8500_fg.c                |  1 +
+ drivers/power/supply/axp20x_ac_power.c          |  1 +
+ drivers/power/supply/axp20x_battery.c           |  1 +
+ drivers/power/supply/axp20x_usb_power.c         |  1 +
+ drivers/power/supply/axp288_fuel_gauge.c        |  1 +
+ drivers/power/supply/cpcap-battery.c            |  1 +
+ drivers/power/supply/cpcap-charger.c            |  1 +
+ drivers/power/supply/da9150-charger.c           |  1 +
+ drivers/power/supply/generic-adc-battery.c      |  1 +
+ drivers/power/supply/ingenic-battery.c          |  1 +
+ drivers/power/supply/intel_dc_ti_battery.c      |  1 +
+ drivers/power/supply/lego_ev3_battery.c         |  1 +
+ drivers/power/supply/lp8788-charger.c           |  1 +
+ drivers/power/supply/max17040_battery.c         |  1 +
+ drivers/power/supply/mp2629_charger.c           |  1 +
+ drivers/power/supply/mt6370-charger.c           |  1 +
+ drivers/power/supply/qcom_smbx.c                |  1 +
+ drivers/power/supply/rn5t618_power.c            |  1 +
+ drivers/power/supply/rx51_battery.c             |  1 +
+ drivers/power/supply/sc27xx_fuel_gauge.c        |  1 +
+ drivers/power/supply/twl4030_charger.c          |  1 +
+ drivers/power/supply/twl4030_madc_battery.c     |  1 +
+ drivers/power/supply/twl6030_charger.c          |  1 +
+ drivers/thermal/qcom/qcom-spmi-adc-tm5.c        |  1 +
+ drivers/thermal/qcom/qcom-spmi-temp-alarm.c     |  1 +
+ drivers/thermal/renesas/rzg3s_thermal.c         |  1 +
+ drivers/thermal/thermal-generic-adc.c           |  1 +
+ sound/soc/codecs/audio-iio-aux.c                |  1 +
+ sound/soc/samsung/aries_wm8994.c                |  1 +
+ sound/soc/samsung/midas_wm1811.c                |  1 +
+ sound/soc/stm/stm32_adfsdm.c                    |  1 +
+ 53 files changed, 78 insertions(+), 28 deletions(-)
+---
+base-commit: 99fece7ab29c9654d7945312b275b527757ac4b3
+change-id: 20251127-iio-inkern-use-namespaced-exports-41fc09223b5e
+
+Best regards,
 -- 
-2.51.0
+Romain Gantois <romain.gantois@bootlin.com>
 
 
 -- 
