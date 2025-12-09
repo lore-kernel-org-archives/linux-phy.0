@@ -4,123 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C8400D3B7E2
-	for <linux-phy@archiver.kernel.org>; Mon,  8 Dec 2025 21:52:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4D7E7D3B7EA
+	for <linux-phy@archiver.kernel.org>; Tue,  9 Dec 2025 00:11:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yeemzPQC8TdptwXjGasPiUKwO64XR+3042U+NhG72zM=; b=pH+Sxi6SNZON1t
-	1m3xQa2ZbHMLlOcgoCELaImPaDqn6WNLLRbSgR8Y0Dg/rSu9Akx5vlUPtXWgLXHT3ROxMPcKUhEVp
-	6zkeix5mxzrmzCZZNuAXVl9XgWVsIuWFLix5AJ+LjFyk2ZehpxgZDK94d5xqrRhJMm82LhP4YrOSZ
-	N9zDNQnAL253XpOc6Lrgm4jszDOVFxPzoY2czChMYpdF3deRYujTiFdgOfyIKN3hD8NuavjBbEIHA
-	XtK/fSseU7THNiDfLarCMBphxIOVIWP0a7eSphB/yCls3pgjUbE6Cgjf1gosPQSF7x4hbAsahhvfA
-	3F5wuZXY2yDrZD3TkbZA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=HuxuySerENbnpqYXY+0UOj9Ps/rWZB6CdFdiehDeNnY=; b=lY8YWmXfZpxr5X
+	2mkZw06jITm41u2L6Dy7u6sjy7zCObROiH7pNrvLIVeeMV9n5GXAxYKGRN5mYhTSYMazeA/lb0Ii2
+	jL9SenpF6tzu2DamhFiO6LlU4El2plG31lQLbwUW5ok16qhmShYwa+TrDXlsXN/p6f9UNFtrXdy1b
+	NeaM9IqxZC/qWnthWjtzRLrs79ujNIhmETgg3DHXziqn0WkfkzmUVFPCu5AheJ7kg2KnDcmFSH+r6
+	rIi2ORfP1oF+YLb6hwUqW2cVuu8O/ZbvAX2CnHnQ5kLp9uQY69nstSN6y3SfUgDbJJ2SWJ5EWMyu7
+	dAnY1mAy5vIUwheR91sg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vSjA2-0000000DZ5O-01uy;
-	Mon, 08 Dec 2025 21:52:50 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1vSlJv-0000000DeCw-43pD;
+	Tue, 09 Dec 2025 00:11:11 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vSj9y-0000000DZ4z-3uQp
-	for linux-phy@lists.infradead.org;
-	Mon, 08 Dec 2025 21:52:48 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 5B8IceIC459746
-	for <linux-phy@lists.infradead.org>; Mon, 8 Dec 2025 21:52:45 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	oqTS0Tct4IrdjazqxdZHqMaIuUGqzq8Y7NDwmG+AE5g=; b=pK8dULURYSuVFl9q
-	i2m7FchacIfi1bUy8oihubHk9r7aTvURQo62evM6yKDco4Pt+iqA8Upjnqdg6RWf
-	DauZbku9j0kdd9WnCImaNWLpzcL8I1gcx98ZyCDrsvReERlUdZdJ7WhEYtiVzPi/
-	q7f6lFG8hi9xl4yPSLYcTxB2693XcR+9BDQQrpEiccO+RW94GjYLuctZHhM56YG6
-	wf2Mc9zG4hifJ1dY11/xkvlObpSazFS808bwXdywwhxGp9GkAgc+gnAPcok3eOm3
-	JUZOlED2kk96HhzC2N+mQMF5HlirOvoUhx2F/txO8dM8OJXPSFZ1KtdQq1muJ0Gq
-	kFnLDg==
-Received: from mail-qt1-f200.google.com (mail-qt1-f200.google.com [209.85.160.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4awwgmhuff-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Mon, 08 Dec 2025 21:52:45 +0000 (GMT)
-Received: by mail-qt1-f200.google.com with SMTP id d75a77b69052e-4eff973c491so108850141cf.1
-        for <linux-phy@lists.infradead.org>; Mon, 08 Dec 2025 13:52:45 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1765230764; x=1765835564; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=oqTS0Tct4IrdjazqxdZHqMaIuUGqzq8Y7NDwmG+AE5g=;
-        b=NWzLrdz2w4NNpaSd0H5D1zxYvlqOp9RMh0U2G4sQ12ybELIN7W6iLWaDI6s72c20vf
-         R5/kwwYaI+9H5xCO+RyXlnemKmzUldGLvA7DzkroLJpRf1YQZvazhrgIIIZbVSTufYXI
-         Ei/8upMiEmQ3gKC0oe2MqyyEfG/zh0OqwpKzzTglKB1g9ywjC6ZxZV2FgGEk2mHX36l2
-         3bHLyeDklP/DWOV0pPpxMJATL0x2d2SdpPVENK+id3BBuq+go+JL58RwPPSY4AjW9rxB
-         1u8m6FfvqpcM75PUCtQX9OYeYnI4jhrzMzdw/BgbOjoDn6s2k0qdyVunm0NjU5ToJBn2
-         v/LQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1765230764; x=1765835564;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=oqTS0Tct4IrdjazqxdZHqMaIuUGqzq8Y7NDwmG+AE5g=;
-        b=cnNQyR9iJqMrXp+H5zYrU6s8fBOACrIKovKywq2hZNbm/RVkWvTwJlm9DLkiTZ8fyg
-         lAOF7GQROjBrAypM4HjTiTkFPsFZcYMl/A+5dVTEF39r/LcMDfwQA4XANDuwsLOWNRXU
-         iz4KJj7+ri9pipGI47PmhhwTC6Mk/HjzlEBHNJTwyYPUyUxqSRgq3ktRf90ENHcGokCp
-         6FcGchW3u31/m/XNo4otUvZbH/gODZLgSVSmL73gxhfwdtnp+T0czoZONYidoaReP/d1
-         kAkPLzw7mqTJ4ZZ0Slmbn5iX3R8lHo+N7TnEp1qmk8jHO5cSDhv47XzCKHN3ckDPF/Sj
-         0O5g==
-X-Forwarded-Encrypted: i=1; AJvYcCXdHmBKKWftkZs1NYD7+7tOz2BSJGZMzc8/qVWriOoEsUPTzPflV/4WXF8eiQFCFIEGZY/dZijBnvI=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxlhKiiTmOnjb0TQQg7w1UVVb3N2ir/zIF8qYclYi2yQ5YtEtTw
-	pmZpY4ln/WOoM0Lm2HZ2he1ucGUHzVl9va4RKzNPxQgY7V8VRZVMhvuVCO5MwBZx/9CKJcsHNtg
-	IjSqJ/E87dnRRbq1aFF51zpJFuBVAQ38wbi6MBt+OaUFqcHwNEaAIqxiY7sF0cfkB4WKcUf5Gpq
-	/gsMjaoXprsomvSz49cUZHqZcEkt9PiV8UfETs/j07V/0t3OXAeecv9w==
-X-Gm-Gg: ASbGncvAX47POXW/09HPpEtSGTZSO9yuha56iMXExfGe5dgQNHPLzb00Yj8VhAiwsq3
-	y9YL35wf/ajCTOC4koWktZFEW6DfIJCP4lKHXZOMajQ5nS/Ld/QRI32r5BCg71mZvbhHQcGvv8/
-	e8V4xPEoqV1Qn4bvH7AD6ltULgVs+wH6e8OzUQjakpGp63iAnRpNyBAtQIc5B8G2GB5y7t6VcRC
-	SZqPriMJ+N1Va4yAm/TK6BHEqLO
-X-Received: by 2002:a05:622a:1104:b0:4ee:26bd:1401 with SMTP id d75a77b69052e-4f03ff1618fmr131974581cf.72.1765230763890;
-        Mon, 08 Dec 2025 13:52:43 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IFQlY/xxqaC1fvA0toKGgeuU6suJgg5SATcyujgCwrFMEU0vwqsl/RTELFWVdraPRMaak4uD+Sop1eVlj64uQo=
-X-Received: by 2002:a05:622a:1104:b0:4ee:26bd:1401 with SMTP id
- d75a77b69052e-4f03ff1618fmr131974361cf.72.1765230763455; Mon, 08 Dec 2025
- 13:52:43 -0800 (PST)
+	id 1vSlJu-0000000DeCf-0p7P;
+	Tue, 09 Dec 2025 00:11:10 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 31F6060125;
+	Tue,  9 Dec 2025 00:11:09 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AF78BC4CEF1;
+	Tue,  9 Dec 2025 00:11:08 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1765239068;
+	bh=7ptARhGnIW0rweJs/X7vTtC/SQB8ulRmWeebM2Urvl0=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:From;
+	b=Nzqe2YsLmvHdUUpvvSUvm6rLElIkqyZsP8E7UC7VgLN1jMvslaQaB65EuuR2M3tQD
+	 ++rs5KQFBsdOe7SSQ8hVf+DJAugUoPM5Mqrfs69Wm5NDb1BwhrWGYUAduiY2Yokwcw
+	 UnX/Dznj2igM6Bvu9sfjXeM7bTJaA4vS7oKDjiqP6a78W6GKZiw//u+Q7WQb61e+KS
+	 HRkk6gQ/8ovRTrwFr5gibfZmzjuyR5eHFLZzYqvj1cKSwTFL0LbWpbU7omxzWiVhGp
+	 mAEOHH5Lmz7F8T0wk0TahZiroHww1QftElDdmGAe4Dk+Qfg0wy4JVD6zQ794GMZXJu
+	 /flhU9gTQ0Z9A==
+Date: Mon, 8 Dec 2025 18:11:07 -0600
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Jacky Chou <jacky_chou@aspeedtech.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
+	Andrew Jeffery <andrew@codeconstruct.com.au>,
+	Bjorn Helgaas <bhelgaas@google.com>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Linus Walleij <linus.walleij@linaro.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	linux-aspeed@lists.ozlabs.org, linux-pci@vger.kernel.org,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+	Andrew Jeffery <andrew@aj.id.au>, openbmc@lists.ozlabs.org,
+	linux-gpio@vger.kernel.org
+Subject: Re: [PATCH v6 6/7] PCI: aspeed: Add ASPEED PCIe RC driver
+Message-ID: <20251209001107.GA3430423@bhelgaas>
 MIME-Version: 1.0
-References: <20251205160437.259125-1-loic.poulain@oss.qualcomm.com> <r33k3aif4lzwfwashvkstqbxyncrr2yrtqejobfj6pm65wasi3@gyy3zex3u7lx>
-In-Reply-To: <r33k3aif4lzwfwashvkstqbxyncrr2yrtqejobfj6pm65wasi3@gyy3zex3u7lx>
-From: Loic Poulain <loic.poulain@oss.qualcomm.com>
-Date: Mon, 8 Dec 2025 22:52:30 +0100
-X-Gm-Features: AQt7F2p0VmA_IkuQAYSme4kXiXphTi6Hr3cSIsncWSFubbCfhMpb33g5YfAbq3Y
-Message-ID: <CAFEp6-3Gv_F7RZD=b_aXfwFdM-mR7xh1DcO=efnmNy1ZaT738A@mail.gmail.com>
-Subject: Re: [PATCH] phy: qcom-qusb2: Fix NULL pointer dereference on early suspend
-To: Bjorn Andersson <andersson@kernel.org>
-Cc: vkoul@kernel.org, kishon@kernel.org, linux-arm-msm@vger.kernel.org,
-        linux-phy@lists.infradead.org, dmitry.baryshkov@oss.qualcomm.com
-X-Authority-Analysis: v=2.4 cv=RtnI7SmK c=1 sm=1 tr=0 ts=693748ad cx=c_pps
- a=JbAStetqSzwMeJznSMzCyw==:117 a=IkcTkHD0fZMA:10 a=wP3pNCr1ah4A:10
- a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22 a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8
- a=Ily-Lp4ULqXFMyuIuh4A:9 a=QEXdDO2ut3YA:10 a=-_B0kFfA75AA:10
- a=uxP6HrT_eTzRwkO_Te1X:22
-X-Proofpoint-ORIG-GUID: KCZkOnmlvIwdMhjozyZKIO1t56GS7K0X
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMjA4MDE4NSBTYWx0ZWRfXyZ3uhhNS5Lhx
- I1UoyncqD/TDLF7E/Ty4ZRkhHTb4I7nRGqswqPCMb5J6pHQ/PweuPtjl/83PCoiUwKA9G81+UAV
- Vb+cilQNWXPnUw3pl75PQ7IkKoeyAvfVLLxUMuS0V3uL2XWtvc7m9mirM2wvH7L6+UxN8vzac3X
- 47JntF9siqDmrgX9w+hwNWZt6YpeIdIwZBkEN6zsu1+bfm7ftkwg1pmCrsyqqSNyJXDlrHWcL0d
- KvhwR4l0gb8gwnk6Jdy2Oj5+SnGB8GRBLn5JOi4SYrCAm+YdAbVoAzi/DP1mprINzgOuPG0GxP1
- HhiqWi9zMkVcWTez/0Cp8zzrFULiRFS9g2EAgn/aqAp5cwzj0MUnZEZwN66JF3sefeTRG6rOGg5
- EXi3QC/wLTJpnDX0+1bLvx+ZVqnMOQ==
-X-Proofpoint-GUID: KCZkOnmlvIwdMhjozyZKIO1t56GS7K0X
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
- definitions=2025-12-06_02,2025-12-04_04,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- malwarescore=0 suspectscore=0 lowpriorityscore=0 spamscore=0 adultscore=0
- phishscore=0 impostorscore=0 clxscore=1015 bulkscore=0 priorityscore=1501
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2510240001 definitions=main-2512080185
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251208_135247_006541_40634C61 
-X-CRM114-Status: GOOD (  34.98  )
+Content-Disposition: inline
+In-Reply-To: <20251201-upstream_pcie_rc-v6-6-8c8800c56b16@aspeedtech.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -132,85 +77,224 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gRnJpLCBEZWMgNSwgMjAyNSBhdCAxMDozMOKAr1BNIEJqb3JuIEFuZGVyc3NvbiA8YW5kZXJz
-c29uQGtlcm5lbC5vcmc+IHdyb3RlOgo+Cj4gT24gRnJpLCBEZWMgMDUsIDIwMjUgYXQgMDU6MDQ6
-MzdQTSArMDEwMCwgTG9pYyBQb3VsYWluIHdyb3RlOgo+ID4gUmVvcmRlciBydW50aW1lIFBNIHNl
-dHVwIHRvIGVuc3VyZSBwbV9ydW50aW1lX2ZvcmJpZCgpIGlzIGFwcGxpZWQgYmVmb3JlCj4gPiBl
-bmFibGluZyBydW50aW1lIFBNLgo+Cj4gWW91ciBjb21taXQgbWVzc2FnZSBpcyBwcmV0dHkgZ29v
-ZCwgYnV0IGluIHRoZSBmdXR1cmUgcGxlYXNlIGNvbnNpZGVyCj4gZm9sbG93aW5nIHRoZSBkb2N1
-bWVudGF0aW9uIFsxXSBhbmQgcmVhbGx5IHN0YXJ0IHlvdXIgY29tbWl0IG1lc3NhZ2UgYnkKPiBl
-c3RhYmxpc2hpbmcgdGhlIHByb2JsZW0uIFRoZSAibW9zdCBzaWduaWZpY2FudCBiaXQiIG9mIHlv
-dXIgY2hhbmdlCj4gcmVxdWVzdCBpc24ndCAibGV0J3MgcmVvcmRlciBzb21ldGhpbmciLCBpdCdz
-IHNvbWV0aGluZyBhbG9uZyB0aGUgbGluZQo+IG9mICJlbmFibGUgYmVmb3JlIGZvcmJpZCBjYW4g
-cmVzdWx0IGluIGF1dG9zdXNwZW5kLCB3aGljaCByZXN1bHRzIGluCj4gTlVMTCBwb2ludGVyIGRl
-cmVmZXJlbmNlIi4KPgo+IFsxXSBodHRwczovL2RvY3Mua2VybmVsLm9yZy9wcm9jZXNzL3N1Ym1p
-dHRpbmctcGF0Y2hlcy5odG1sI2Rlc2NyaWJlLXlvdXItY2hhbmdlcwo+Cj4gPiBUaGlzIGF2b2lk
-cyBwb3NzaWJsZSBlYXJseSBhdXRvc3VzcGVuZCBhbmQgcHJldmVudHMKPiA+IHF1c2IyX3BoeV9y
-dW50aW1lX3N1c3BlbmQoKSBmcm9tIGJlaW5nIGNhbGxlZCBiZWZvcmUgZHJpdmVyIGRhdGEgaXMK
-PiA+IGluaXRpYWxpemVkLCB3aGljaCBjb3VsZCBvdGhlcndpc2UgbGVhZCB0byBhIE5VTEwgcG9p
-bnRlciBkZXJlZmVyZW5jZToKPiA+Cj4gPiBgYGAKPiA+IFVuYWJsZSB0byBoYW5kbGUga2VybmVs
-IE5VTEwgcG9pbnRlciBkZXJlZmVyZW5jZSBhdCB2aXJ0dWFsIGFkZHJlc3MgMDAwMDAwMDAwMDAw
-MDBhMQo+ID4gWy4uLl0KPiA+IENQVTogMCBVSUQ6IDAgUElEOiAxMSBDb21tOiBrd29ya2VyLzA6
-MSBOb3QgdGFpbnRlZCA2LjE2LjcrICMxMTYgUFJFRU1QVAo+ID4gV29ya3F1ZXVlOiBwbSBwbV9y
-dW50aW1lX3dvcmsKPiA+IHBzdGF0ZTogMjAwMDAwMDUgKG56Q3YgZGFpZiAtUEFOIC1VQU8gLVRD
-TyAtRElUIC1TU0JTIEJUWVBFPS0tKQo+ID4gcGMgOiBxdXNiMl9waHlfcnVudGltZV9zdXNwZW5k
-KzB4MTQvMHgxZTAgW3BoeV9xY29tX3F1c2IyXQo+ID4gbHIgOiBwbV9nZW5lcmljX3J1bnRpbWVf
-c3VzcGVuZCsweDJjLzB4NDQKPgo+IElmIHlvdSBwaXBlIHRoZSBsb2cgdGhyb3VnaCAiLi9zY3Jp
-cHRzL2RlY29kZV9zdGFja3RyYWNlLnNoIHZtbGludXggLiAuIgo+IHdlIGdldCB0aGVzZSBkZWNv
-ZGVkLgo+Cj4gQnV0IHRoYXQgc2FpZCwgSSdtIHByZXR0eSBzdXJlIHRoYXQgd2hhdCBmYWlscyBp
-cyB0aGUgYXR0ZW1wdCB0byBwdWxsCj4gY2ZnIG91dCBvZiBOVUxMIG9uIHRoZSBzZWNvbmQgbGlu
-ZT8KCk5vdCBleGFjdGx5LiBUaGUgYWN0dWFsIE5VTEwgZGVyZWZlcmVuY2UgaGFwcGVucyBvbiBs
-aW5lIDc6CiAgICBpZiAoIXFwaHktPnBoeV9pbml0aWFsaXplZCkgewpJIGFzc3VtZSB0aGUgc2Vj
-b25kIGxpbmUgaXMgb3B0aW1pemVkIGFuZCB0aGUgY29tcGlsZXIgZGVmZXJzIHRoZSBsb2FkCnVu
-dGlsIGNmZyBpcyBhY3R1YWxseSB1c2VkLgoKVGhpcyBpcyB3aGF0IEkgZ290IHdoZW4gZGVidWdn
-aW5nIHRoaXM6Ci9zY3JpcHRzL2ZhZGRyMmxpbmUgZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFj
-b20tcXVzYjIua28KcXVzYjJfcGh5X3J1bnRpbWVfc3VzcGVuZCsweDE0CnF1c2IyX3BoeV9ydW50
-aW1lX3N1c3BlbmQrMHgxNC8weDFlMDoKcXVzYjJfcGh5X3J1bnRpbWVfc3VzcGVuZCBhdCBkcml2
-ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1xdXNiMi5jOjYzOQoKPgo+ID4gWy4uLl0KPiA+IGBg
-YAo+ID4KPiA+IEZpeGVzOiA4OTFhOTZmNjVhYzMgKCJwaHk6IHFjb20tcXVzYjI6IEFkZCBzdXBw
-b3J0IGZvciBydW50aW1lIFBNIikKPiA+IFNpZ25lZC1vZmYtYnk6IExvaWMgUG91bGFpbiA8bG9p
-Yy5wb3VsYWluQG9zcy5xdWFsY29tbS5jb20+Cj4gPiAtLS0KPiA+ICBkcml2ZXJzL3BoeS9xdWFs
-Y29tbS9waHktcWNvbS1xdXNiMi5jIHwgOSArKysrKy0tLS0KPiA+ICAxIGZpbGUgY2hhbmdlZCwg
-NSBpbnNlcnRpb25zKCspLCA0IGRlbGV0aW9ucygtKQo+ID4KPiA+IGRpZmYgLS1naXQgYS9kcml2
-ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1xdXNiMi5jIGIvZHJpdmVycy9waHkvcXVhbGNvbW0v
-cGh5LXFjb20tcXVzYjIuYwo+ID4gaW5kZXggYjU1MTRhMzJmZjhmLi45N2JjMzc1NWEzOTAgMTAw
-NjQ0Cj4gPiAtLS0gYS9kcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1xdXNiMi5jCj4gPiAr
-KysgYi9kcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1xdXNiMi5jCj4gPiBAQCAtMTA5Mywx
-MyArMTA5MywxNCBAQCBzdGF0aWMgaW50IHF1c2IyX3BoeV9wcm9iZShzdHJ1Y3QgcGxhdGZvcm1f
-ZGV2aWNlICpwZGV2KQo+ID4gICAgICAgICAgICAgICBvci0+aHNkaXNjX3RyaW0ub3ZlcnJpZGUg
-PSB0cnVlOwo+ID4gICAgICAgfQo+ID4KPiA+IC0gICAgIHBtX3J1bnRpbWVfc2V0X2FjdGl2ZShk
-ZXYpOwo+ID4gLSAgICAgcG1fcnVudGltZV9lbmFibGUoZGV2KTsKPiA+ICsKPgo+IERvZXNuJ3Qg
-dGhpcyBlbmQgdXAgYmVpbmcgdHdvIGJsYW5rIGxpbmVzPwoKSG1tLCB5ZXMgZ29vZCBjYXRjaC4K
-Cj4KPiA+ICAgICAgIC8qCj4gPiAtICAgICAgKiBQcmV2ZW50IHJ1bnRpbWUgcG0gZnJvbSBiZWlu
-ZyBPTiBieSBkZWZhdWx0LiBVc2VycyBjYW4gZW5hYmxlCj4gPiAtICAgICAgKiBpdCB1c2luZyBw
-b3dlci9jb250cm9sIGluIHN5c2ZzLgo+ID4gKyAgICAgICogRW5hYmxlIHJ1bnRpbWUgUE0gc3Vw
-cG9ydCwgYnV0IGZvcmJpZCBpdCBieSBkZWZhdWx0Lgo+ID4gKyAgICAgICogVXNlcnMgY2FuIGFs
-bG93IGl0IGFnYWluIHZpYSB0aGUgcG93ZXIvY29udHJvbCBhdHRyaWJ1dGUgaW4gc3lzZnMuCj4K
-PiBJIHRoaW5rIHRoaXMgd2FycmFudHMgYWRkaW5nICJUT0RPOiBSZW1vdmluZyB0aGUgcG1fcnVu
-dGltZV9mb3JiaWQoKQo+IG1pZ2h0IGFsbG93IGF1dG9zdXNwZW5kIHRvIGludm9rZSBxdXNiMl9w
-aHlfcnVudGltZV9zdXNwZW5kKCkgdG8KPiBkZXJlZmVyZW5jZSB0aGUgTlVMTCBkcnZkYXRhIiBo
-ZXJlLgo+Cj4KPiBCdXQsIGlmIHdlIGtub3cgd2hhdCB0aGUgcHJvYmxlbSBpcywgcGVyaGFwcyB3
-ZSBzaG91bGQganVzdCBmaXggaXQgcmlnaHQKPiBhd2F5Pwo+Cj4gTG9va3MgbGlrZSB0aGUgZml4
-IGZvciB0aGUgTlVMTCBwb2ludGVyIGRlcmVmZXJlbmNlIGlzIHRvIG1vdmUgdGhlCj4gZGV2X3Nl
-dF9kcnZkYXRhKCkgYW5kIHBoeV9zZXRfZHJ2ZGF0YSgpIGFib3ZlIHRodXMgaHVuay4KPgo+IEFu
-ZCB0aGUgInByb2JsZW0gc3RhdGVtZW50IiBzdGF0aW5nIHdoeSB3ZSdyZSBkb2luZyB0aGlzIGNo
-YW5nZSAod2hpY2gKPiBzdGlsbCBtYWtlcyBzZW5zZSkgaXMgdGhhdCAiYSB3YXN0ZWZ1bCBhdXRv
-c3VzcGVuZCBtaWdodCBoYXBwZW4gYmV0d2Vlbgo+IHBtX3J1bnRpbWVfZW5hYmxlKCkgYW5kIHRo
-ZSBwbV9ydW50aW1lX2ZvcmJpZCgpIi4KClRoYXQncyBjb3JyZWN0LiBNeSBpbml0aWFsIGxhenkg
-YXBwcm9hY2ggd2FzIGEgYml0IHNpbXBsaXN0aWMsIGp1c3QKc3dhcHBpbmcgcG1fcnVudGltZV9l
-bmFibGUoKSBhbmQgcG1fcnVudGltZV9mb3JiaWQoKSB0byBpbmRpcmVjdGx5CnByZXZlbnRzIHRo
-ZSBOVUxMIGRlcmVmZXJlbmNlIGJ5IGF2b2lkaW5nIHJ1bnRpbWUgc3VzcGVuZCwgYnV0CmlkZWFs
-bHksIHdlIHNob3VsZCBhcHBseSBib3RoLCBzd2FwIHRoZSBjYWxscyB0byBwcmV2ZW50IHVubmVj
-ZXNzYXJ5CnN1c3BlbmQsIGFuZCByZW9yZGVyIHRoZW0gd2l0aCBkZXZfc2V0X2RydmRhdGEoKSB0
-byByZXN0b3JlIHByb3Blcgppbml0aWFsaXphdGlvbiBsb2dpYy4gPT4gV2lsbCBkbyB0aGlzIGlu
-IHYyLgoKTm90ZSB0aGF0IE9uY2UgdGhpcyBjaGFuZ2UgaXMgYWNjZXB0ZWQsIEkgcGxhbiBhIHNl
-cmllcyB0byByZXBsaWNhdGUKdGhlIGZpeCBpbiBvdGhlciBQSFkgZHJpdmVycyB0aGF0IGV4aGli
-aXQgdGhlIHNhbWUgaXNzdWUgKGUuZy4sCnBoeS1xY29tLXFtcC11c2JjLCBwaHktcWNvbS1xbXAt
-Y29tYm8sIGV0Yy4pLgoKVGhhbmtzLApMb2ljCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdAps
-aW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcv
-bWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+On Mon, Dec 01, 2025 at 02:29:16PM +0800, Jacky Chou wrote:
+> Introduce PCIe Root Complex driver for ASPEED SoCs. Support RC
+> initialization, reset, clock, IRQ domain, and MSI domain setup.
+> Implement platform-specific setup and register configuration for
+> ASPEED. And provide PCI config space read/write and INTx/MSI
+> interrupt handling.
+> ...
+
+> +struct aspeed_pcie {
+> +	struct pci_host_bridge *host;
+> +	struct device *dev;
+> +	void __iomem *reg;
+> +	struct regmap *ahbc;
+> +	struct regmap *cfg;
+> +	const struct aspeed_pcie_rc_platform *platform;
+> +	struct list_head ports;
+> +
+> +	u8 tx_tag;
+> +	int host_bus_num;
+
+Only needs a u8.
+
+> +static int aspeed_pcie_port_init(struct aspeed_pcie_port *port)
+> +{
+> +	struct aspeed_pcie *pcie = port->pcie;
+> +	struct device *dev = pcie->dev;
+> +	int ret;
+> +
+> +	ret = clk_prepare_enable(port->clk);
+> +	if (ret)
+> +		return dev_err_probe(dev, ret,
+> +				     "failed to set clock for slot (%d)\n",
+> +				     port->slot);
+> +
+> +	ret = phy_init(port->phy);
+> +	if (ret)
+> +		return dev_err_probe(dev, ret,
+> +				     "failed to init phy pcie for slot (%d)\n",
+> +				     port->slot);
+> +
+> +	ret = phy_set_mode_ext(port->phy, PHY_MODE_PCIE, PHY_MODE_PCIE_RC);
+> +	if (ret)
+> +		return dev_err_probe(dev, ret,
+> +				     "failed to set phy mode for slot (%d)\n",
+> +				     port->slot);
+> +
+> +	reset_control_deassert(port->perst);
+> +	mdelay(PCIE_RESET_CONFIG_WAIT_MS);
+
+I think this should use msleep().
+
+> +static int aspeed_ast2600_setup(struct platform_device *pdev)
+> +{
+> +	struct aspeed_pcie *pcie = platform_get_drvdata(pdev);
+> +	struct device *dev = pcie->dev;
+> +
+> +	pcie->ahbc = syscon_regmap_lookup_by_phandle(dev->of_node,
+> +						     "aspeed,ahbc");
+> +	if (IS_ERR(pcie->ahbc))
+> +		return dev_err_probe(dev, PTR_ERR(pcie->ahbc),
+> +				     "failed to map ahbc base\n");
+> +
+> +	aspeed_host_reset(pcie);
+> +
+> +	regmap_write(pcie->ahbc, ASPEED_AHBC_KEY, ASPEED_AHBC_UNLOCK_KEY);
+> +	regmap_update_bits(pcie->ahbc, ASPEED_AHBC_ADDR_MAPPING,
+> +			   ASPEED_PCIE_RC_MEMORY_EN, ASPEED_PCIE_RC_MEMORY_EN);
+> +	regmap_write(pcie->ahbc, ASPEED_AHBC_KEY, ASPEED_AHBC_UNLOCK);
+> +
+> +	/* Due to the BAR assignment is fixed mapping on 0x6000_0000.*/
+> +	writel(ASPEED_AHB_REMAP_LO_ADDR(0x600) | ASPEED_AHB_MASK_LO_ADDR(0xe00),
+> +	       pcie->reg + ASPEED_H2X_AHB_ADDR_CONFIG0);
+> +	writel(ASPEED_AHB_REMAP_HI_ADDR(0),
+> +	       pcie->reg + ASPEED_H2X_AHB_ADDR_CONFIG1);
+
+I assume this ASPEED_H2X_AHB_ADDR_CONFIG is doing basically the same
+thing as aspeed_ast2700_remap_pci_addr() below, so see the comments
+there.
+
+> +	writel(ASPEED_AHB_MASK_HI_ADDR(~0),
+> +	       pcie->reg + ASPEED_H2X_AHB_ADDR_CONFIG2);
+> +	writel(ASPEED_H2X_BRIDGE_EN, pcie->reg + ASPEED_H2X_CTRL);
+> +
+> +	writel(ASPEED_PCIE_RX_DMA_EN | ASPEED_PCIE_RX_LINEAR |
+> +	       ASPEED_PCIE_RX_MSI_SEL | ASPEED_PCIE_RX_MSI_EN |
+> +	       ASPEED_PCIE_WAIT_RX_TLP_CLR | ASPEED_PCIE_RC_RX_ENABLE |
+> +	       ASPEED_PCIE_RC_ENABLE,
+> +	       pcie->reg + ASPEED_H2X_DEV_CTRL);
+> +
+> +	writel(ASPEED_RC_TLP_TX_TAG_NUM, pcie->reg + ASPEED_H2X_DEV_TX_TAG);
+> +
+> +	pcie->host->ops = &aspeed_ast2600_pcie_ops;
+> +	pcie->host->child_ops = &aspeed_ast2600_pcie_child_ops;
+> +
+> +	return 0;
+> +}
+> +
+> +static int aspeed_ast2700_remap_pci_addr(struct aspeed_pcie *pcie)
+> +{
+> +	struct device_node *dev_node = pcie->dev->of_node;
+> +	struct of_pci_range range;
+> +	struct of_pci_range_parser parser;
+> +	int ret;
+> +
+> +	ret = of_pci_range_parser_init(&parser, dev_node);
+> +	if (ret)
+> +		return ret;
+> +
+> +	for_each_of_pci_range(&parser, &range) {
+> +		if ((range.flags & IORESOURCE_TYPE_BITS) == IORESOURCE_MEM) {
+> +			writel(ASPEED_REMAP_PCI_ADDR_31_12(range.pci_addr),
+> +			       pcie->reg + ASPEED_H2X_REMAP_PCI_ADDR_LO);
+> +			writel(ASPEED_REMAP_PCI_ADDR_63_32(range.pci_addr),
+> +			       pcie->reg + ASPEED_H2X_REMAP_PCI_ADDR_HI);
+> +			return 0;
+
+It looks like this is essentially hardcoding the offset between the
+parent-bus-address and the child-bus-address in the DT 'ranges'
+property.  Since ASPEED_REMAP_PCI_ADDR_31_12() and
+ASPEED_REMAP_PCI_ADDR_63_32() do nothing except mask out the low 12
+bits, I assume that offset is zero.
+
+But this should not be hard-coded at all; it should be extracted from
+'ranges'.  I don't think we really have a consistent way of doing
+this, but you can take a look at how these other drivers program
+"outbound" mappings like this using bridge->windows:
+
+  cdns_pcie_hpa_host_init_address_translation()
+  dw_pcie_iatu_setup()
+  mobiveil_host_init()
+  xgene_pcie_map_ranges()
+  iproc_pcie_map_ranges()
+  rzg3s_pcie_parse_map_ranges()
+
+> +static int aspeed_pcie_parse_dt(struct aspeed_pcie *pcie)
+> +{
+> +	struct device *dev = pcie->dev;
+> +	struct device_node *node = dev->of_node;
+> +	int ret;
+> +
+> +	for_each_available_child_of_node_scoped(node, child) {
+> +		int slot;
+> +		const char *type;
+> +
+> +		ret = of_property_read_string(child, "device_type", &type);
+> +		if (ret || strcmp(type, "pci"))
+> +			continue;
+> +
+> +		ret = of_pci_get_devfn(child);
+> +		if (ret < 0)
+> +			return dev_err_probe(dev, ret,
+> +					     "failed to parse devfn\n");
+> +
+> +		slot = PCI_SLOT(ret);
+> +
+> +		ret = aspeed_pcie_parse_port(pcie, child, slot);
+> +		if (ret)
+> +			return ret;
+
+It looks unnecessarily complicated to put each port on a list in
+aspeed_pcie_parse_port() and then iterate over that list in
+aspeed_pcie_init_ports().
+
+I think you could just do something like:
+
+  aspeed_pcie_parse_port();
+  aspeed_pcie_port_init();
+
+and get rid of the list completely.
+
+> +	}
+> +
+> +	if (list_empty(&pcie->ports))
+> +		return dev_err_probe(dev, -ENODEV,
+> +				     "No PCIe port found in DT\n");
+> +
+> +	return 0;
+> +}
+> +
+> +static int aspeed_pcie_probe(struct platform_device *pdev)
+> +{
+> +	struct device *dev = &pdev->dev;
+> +	struct pci_host_bridge *host;
+> +	struct aspeed_pcie *pcie;
+> +	struct resource_entry *entry;
+> +	const struct aspeed_pcie_rc_platform *md;
+> +	int irq, ret;
+> +
+> +	md = of_device_get_match_data(dev);
+> +	if (!md)
+> +		return -ENODEV;
+> +
+> +	host = devm_pci_alloc_host_bridge(dev, sizeof(*pcie));
+> +	if (!host)
+> +		return -ENOMEM;
+> +
+> +	pcie = pci_host_bridge_priv(host);
+> +	pcie->dev = dev;
+> +	pcie->tx_tag = 0;
+> +	platform_set_drvdata(pdev, pcie);
+> +
+> +	pcie->platform = md;
+> +	pcie->host = host;
+> +	INIT_LIST_HEAD(&pcie->ports);
+> +
+> +	/* Get root bus num for cfg command to decide tlp type 0 or type 1 */
+> +	entry = resource_list_first_type(&host->windows, IORESOURCE_BUS);
+> +	if (entry)
+> +		pcie->host_bus_num = entry->res->start;
+
+s/host_bus_num/root_bus_nr/   to match struct altera_pcie
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
