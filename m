@@ -4,51 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7DCD3D3B986
-	for <linux-phy@archiver.kernel.org>; Tue,  9 Dec 2025 16:35:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C47A9D3B7FF
+	for <linux-phy@archiver.kernel.org>; Tue,  9 Dec 2025 16:35:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DSl3T4jYvY3IMiJ0T6i40RjAnhRxc+Uoxj9uGg2bKfU=; b=TvkXg82Mgiu7cO
-	tSmYDLpFD7s0mfHE9q1rLhmBf02VhfK+7N+pUTlPdV+Is/zAvTmouaxoj7UAiSwwQEu2borAerO1A
-	6Att5GI9e3HZOolHoX+8ruAvh4wG4mnQC++IFM2/JbVkL3lPGX+NaVmCOdnJjCZ69AUXD7gtQibtb
-	EmcL91nEPhRhS8J2sQ4Qb7tl2eNObFbjWWCq5fRjTgsDpOKtP48lPh9vTsrGcVkqKuqQHJYvjJgBp
-	rtrBCLFHKHNPcKiDIz7sOs6L2rrenFUL9NXfjKaTrgzuUsdPTWm3MAlg1cK5mvJlDxPWPfM4Ae9bv
-	NBwiJWwgblwqeuE+sZpQ==;
+	List-Owner; bh=xCpv/7i1oWmGRuzdkabKd0Z2RdQr4ghEv2HL0c9Oieg=; b=tAipvn4tblrFGt
+	2LgRpteWA0Z0pFcA4dGKSosKbmxenZz7IOBT6/wHlpSuEJPQs8ok7AlkamJYBmK+B2+E6HD0Bw0nq
+	6wO9g1F/0Nbzia6ifW3nC97GwlO3SIjkxzm0B0fp6/6Y6usxU30dL2/CpmyheVH0JgoypBfhbHH8J
+	a6gAO9lluCbBaATVSrJfU+MsLI7eCI8lPuS2iaGVExatYHOcarRImiH4tYVoCedwoylXKA1la4t7N
+	ZNW5qROjIEn3mcN+EWfrnsDxXN+cUgFO6qKVSWV2RSiE7kBkLpvd2NkBXnxrNfwzATYj5pLZE+0ex
+	Ulz4Lagl+bdBeLqapG8g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vT0gD-0000000EX73-2gjt;
-	Tue, 09 Dec 2025 16:35:13 +0000
+	id 1vT0gJ-0000000EXDy-0izm;
+	Tue, 09 Dec 2025 16:35:19 +0000
 Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vT0fu-0000000EWbY-2czM;
-	Tue, 09 Dec 2025 16:34:56 +0000
+	id 1vT0fw-0000000EWe0-2JU9;
+	Tue, 09 Dec 2025 16:34:58 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1765298091;
-	bh=v2QuPDw9K0n6FNZS6s1RdjJ61am2N+d7TzADHlSeuNI=;
+	s=mail; t=1765298093;
+	bh=k+v8SYao3ZD64CLFD+XjDGMvWoE/ID1iLX1nmD/fyWk=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=D3RVUUdDjjnBYMmisNeyHg/xGhQjYItz6+5ENmBlRYYA88TXiRHn5EN58mdX2eRgO
-	 Tonj/eoR7hM52IQ7XYNUsbKFo2azsZaeN0XkWWtb3P+b8LhFf8qGfW8gA86T9QdIq/
-	 NuZ9MR9C82DQlPT7/3CJDfrsDYHdrS4BawxGqjSaeNpjjonYqYX1wcuNYdwObUrB+R
-	 5DgRhmed7fw4i65QWf1gscABXD1t4Rqylds4YeWoMN+q2OXwe1CpI5jErHTWFoDfd+
-	 Nm3hvkycTUU3VbfaHshyret4SMpmXOnFiDseL0+6AMtS9OJ5MQqfJ7dCJI7kSifxJ7
-	 XN7K551odTkiw==
+	b=iQ5E1FAxg7BAous/wFhxg2sXRLNoq91F9H6tbB9wyU1e6XCXxb8mQdnCEM6F13jmy
+	 6+9OCwCzbPiRSeKA1Mib7DfZ6sgIaEt/+LhJIidIv6ArUVY9pkPK+kPEInVPJZCAjb
+	 PWNSD9DXAW4BVJ9Zi0F2tZz1XwB08zEIIwkFGyYHTz3jwJ7v5HKMUuaUJUk7R/9QtH
+	 ewlfYzl8jwexjroBqrCKGBkMzFBMTwaemV7gEtMV+W1sw/kkvFNDBG7sDWWI+K+oCG
+	 5UwE88Eyo4X6t3kVFCBI3fVRjcOb/YITAKbam04/1s96YYmv1uZIIzSvIIvxaajwSs
+	 fBcRSTWhC2YoQ==
 Received: from yukiji.home (amontpellier-657-1-116-247.w83-113.abo.wanadoo.fr [83.113.51.247])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: laeyraud)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 0FED717E15C9;
-	Tue,  9 Dec 2025 17:34:51 +0100 (CET)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id C74D217E1423;
+	Tue,  9 Dec 2025 17:34:52 +0100 (CET)
 From: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
-Date: Tue, 09 Dec 2025 17:34:38 +0100
-Subject: [PATCH 08/12] arm64: dts: mediatek: mt8395-radxa-nio-12l: Enable
+Date: Tue, 09 Dec 2025 17:34:40 +0100
+Subject: [PATCH 10/12] arm64: dts: mediatek: mt8395-genio-common: Enable
  HDMI output
 MIME-Version: 1.0
-Message-Id: <20251209-mtk-genio-evk-hdmi-support-v1-8-9a6106effba6@collabora.com>
+Message-Id: <20251209-mtk-genio-evk-hdmi-support-v1-10-9a6106effba6@collabora.com>
 References: <20251209-mtk-genio-evk-hdmi-support-v1-0-9a6106effba6@collabora.com>
 In-Reply-To: <20251209-mtk-genio-evk-hdmi-support-v1-0-9a6106effba6@collabora.com>
 To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>, 
@@ -66,16 +66,16 @@ Cc: kernel@collabora.com, Krzysztof Kozlowski <krzk@kernel.org>,
  linux-kernel@vger.kernel.org, 
  Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1765298083; l=3996;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1765298083; l=3939;
  i=louisalexis.eyraud@collabora.com; s=20250113; h=from:subject:message-id;
- bh=2k32lAvL+oS+oCDLIGRUdNxvio3a5abaLFyOgFe4WZE=;
- b=DkvEw4jjCy8/G9Cxzn+fIvvRAIsdDwTI7MEyObRJRUi7J9Apzra24g5ZNkOLSxH/e8WXmO5pZ
- 1y/HseRToIGARVIEukPOKaUVHSGaFTWe7mU9MRl0Ue6IIJtETAcr1VS
+ bh=k+v8SYao3ZD64CLFD+XjDGMvWoE/ID1iLX1nmD/fyWk=;
+ b=xOZmRSyRS6SGYE1QtlojErchRM0ucaN59o0UNH5pfxIYSUyHnpWzC2b9KnpxW0OVEukA4MEl/
+ RHY7cBsJYDtC5vRF/uVzpcPXDU9eEuXGuUCE4JCz7O0QN5WdQhO0LY/
 X-Developer-Key: i=louisalexis.eyraud@collabora.com; a=ed25519;
  pk=CHFBDB2Kqh4EHc6JIqFn69GhxJJAzc0Zr4e8QxtumuM=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251209_083455_056114_94392D74 
-X-CRM114-Status: GOOD (  10.30  )
+X-CRM114-CacheID: sfid-20251209_083456_855214_104D808C 
+X-CRM114-Status: GOOD (  10.32  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,23 +92,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-
 Add a definition for the on-board HDMI connector, enable and add
 the relevant configuration for the HDMI PHY and controller, and
 define the pins used by those.
 
-Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 Signed-off-by: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
 ---
- .../boot/dts/mediatek/mt8395-radxa-nio-12l.dts     | 142 +++++++++++++++++++++
+ .../boot/dts/mediatek/mt8395-genio-common.dtsi     | 142 +++++++++++++++++++++
  1 file changed, 142 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/mediatek/mt8395-radxa-nio-12l.dts b/arch/arm64/boot/dts/mediatek/mt8395-radxa-nio-12l.dts
-index d32f973f5e0528bc3233ff01f029006dbe6ef894..b0e18876bd5d2341c6f17f47e9f11433be807ccd 100644
---- a/arch/arm64/boot/dts/mediatek/mt8395-radxa-nio-12l.dts
-+++ b/arch/arm64/boot/dts/mediatek/mt8395-radxa-nio-12l.dts
-@@ -37,6 +37,20 @@ chosen {
+diff --git a/arch/arm64/boot/dts/mediatek/mt8395-genio-common.dtsi b/arch/arm64/boot/dts/mediatek/mt8395-genio-common.dtsi
+index 2b7167804e71d0ced33c048ecb2040667b5fece1..345fc5ac9e039de8660ae325f36ae6265ef3a7c8 100644
+--- a/arch/arm64/boot/dts/mediatek/mt8395-genio-common.dtsi
++++ b/arch/arm64/boot/dts/mediatek/mt8395-genio-common.dtsi
+@@ -26,6 +26,20 @@ chosen {
  		stdout-path = "serial0:921600n8";
  	};
  
@@ -129,8 +126,8 @@ index d32f973f5e0528bc3233ff01f029006dbe6ef894..b0e18876bd5d2341c6f17f47e9f11433
  	firmware {
  		optee {
  			compatible = "linaro,optee-tz";
-@@ -245,6 +259,18 @@ port@1 {
- 	};
+@@ -247,6 +261,18 @@ &dmic_codec {
+ 	wakeup-delay-ms = <200>;
  };
  
 +&dpi1 {
@@ -145,10 +142,10 @@ index d32f973f5e0528bc3233ff01f029006dbe6ef894..b0e18876bd5d2341c6f17f47e9f11433
 +	remote-endpoint = <&hdmi0_in>;
 +};
 +
- &eth {
- 	phy-mode = "rgmii-rxid";
- 	phy-handle = <&rgmii_phy>;
-@@ -265,11 +291,61 @@ rgmii_phy: ethernet-phy@1 {
+ &dsi0 {
+ 	#address-cells = <1>;
+ 	#size-cells = <0>;
+@@ -313,6 +339,35 @@ eth_phy0: ethernet-phy@1 {
  	};
  };
  
@@ -181,8 +178,10 @@ index d32f973f5e0528bc3233ff01f029006dbe6ef894..b0e18876bd5d2341c6f17f47e9f11433
 +	};
 +};
 +
- &gpu {
- 	mali-supply = <&mt6315_7_vbuck1>;
+ &gamma0_out {
+ 	remote-endpoint = <&dither0_in>;
+ };
+@@ -329,6 +384,27 @@ &i2c0 {
  	status = "okay";
  };
  
@@ -207,10 +206,10 @@ index d32f973f5e0528bc3233ff01f029006dbe6ef894..b0e18876bd5d2341c6f17f47e9f11433
 +	status = "okay";
 +};
 +
- &i2c2 {
+ &i2c1 {
  	clock-frequency = <400000>;
- 	pinctrl-0 = <&i2c2_pins>;
-@@ -448,6 +524,35 @@ typec_con_mux: endpoint {
+ 	pinctrl-0 = <&i2c1_pins>;
+@@ -533,6 +609,35 @@ mt6360_ssusb_sbu_ep: endpoint {
  	};
  };
  
@@ -246,7 +245,7 @@ index d32f973f5e0528bc3233ff01f029006dbe6ef894..b0e18876bd5d2341c6f17f47e9f11433
  &mfg0 {
  	domain-supply = <&mt6315_7_vbuck1>;
  };
-@@ -647,6 +752,31 @@ pins {
+@@ -762,6 +867,31 @@ pins {
  		};
  	};
  
@@ -275,11 +274,11 @@ index d32f973f5e0528bc3233ff01f029006dbe6ef894..b0e18876bd5d2341c6f17f47e9f11433
 +		};
 +	};
 +
- 	i2c2_pins: i2c2-pins {
- 		pins-bus {
- 			pinmux = <PINMUX_GPIO12__FUNC_SDA2>,
-@@ -1058,6 +1188,18 @@ &ssusb2 {
- 	status = "okay";
+ 	i2c0_pins: i2c0-pins {
+ 		pins {
+ 			pinmux = <PINMUX_GPIO8__FUNC_SDA0>,
+@@ -1212,6 +1342,18 @@ vdosys0_ep_main: endpoint@0 {
+ 	};
  };
  
 +&vdosys1 {
@@ -295,8 +294,8 @@ index d32f973f5e0528bc3233ff01f029006dbe6ef894..b0e18876bd5d2341c6f17f47e9f11433
 +};
 +
  &xhci0 {
- 	vbus-supply = <&otg_vbus_regulator>;
  	status = "okay";
+ };
 
 -- 
 2.52.0
