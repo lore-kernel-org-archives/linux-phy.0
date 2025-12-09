@@ -4,132 +4,129 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 552CCD3B9AD
-	for <linux-phy@archiver.kernel.org>; Tue,  9 Dec 2025 23:10:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19390D3B9AE
+	for <linux-phy@archiver.kernel.org>; Tue,  9 Dec 2025 23:10:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cRKeeBoAfKkYb9QjXgmkeVlY/pbcJeXYhGFHaCjTPzY=; b=DS2MmNG8roK7rh
-	EHGtCqmBwOuSJA4eWArtBSdofIdWtTo7gNx7bwvNw55EF3ExFszwpBzIwdFBAmd/d1SoEJnAJk5EA
-	+rCxY6TUhbJN7909MhdyTiLHJFITpkfz6XDmN1F8zSMVu4l0Kom9SGih3yn1j2wkE/S5zQYLKoDmn
-	da1VdFcahnDg2UTVAHaQP0UZBVHJudxJvbpw6mJJ+hOvG2TscPjvMQJC3Az9nruDRi9XAnexpKJx3
-	x1a5JAuBcy0OmLour8jmXvfkvNz7R9Rww+hY0W92V9tVHlkPIpASsT4XvhNu6lRZum+9/HuhNoYS7
-	NkNlgDm7BOyLLD06w6Jw==;
+	List-Owner; bh=kaFFzTwlZRk0oayRL+eAPNK+DEI3Tzr/fkmtHVvfTi8=; b=DwW3CxZdDFGn8j
+	9AUKpUhy8L2LrBmxSIkUyGIIl1GHmsqv2uSMX9DDnC507coDK1lSJcm5pQHUlQU+2Hn/Y5mOSv+PX
+	oUGuRQsDrSIovcRsAGilNTJW0dtqyf9av5H+HlLLZ0SfiruLmmVMhrMzcPvYUfW3qKWpofGwAZxpy
+	ofh2zb2curIYH6sLAewHkQDzlOxsdmSihWv9bGpQ5dDcy0Gu0eFzQBgUP8akwYEAd1ZJfWbLZRTZv
+	EmdmeqS64dE0tn3HM1sHnpl3+kVQZqWZyapnhIKA8SW1K3FyAXfoYfTe6BE08SRs+7pmbLX2klTvd
+	irwuIHoMADmrYdLsX2sg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vT6qI-0000000EthV-466F;
+	id 1vT6qJ-0000000EtiL-3Siw;
 	Tue, 09 Dec 2025 23:10:03 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vT6qF-0000000EtdX-0Gtq
+	id 1vT6qG-0000000Etdn-1Q9i
 	for linux-phy@lists.infradead.org;
-	Tue, 09 Dec 2025 23:10:01 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 5B9MnBuP300897
-	for <linux-phy@lists.infradead.org>; Tue, 9 Dec 2025 23:09:58 GMT
+	Tue, 09 Dec 2025 23:10:02 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 5B9MlXYF1513070
+	for <linux-phy@lists.infradead.org>; Tue, 9 Dec 2025 23:09:59 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	7rY6AOO08FTFDr3QMZMuJvPPweOurIOm1pIHPEjG3fg=; b=gM4yK+Lln9CmwwmK
-	nyy7SzsQ4Z79pkh4D7TlQgmR//NVWhWGwQug67ofOu/7CENdayJZthmIOE5D/TWJ
-	GdXsGqcVvatDM8+YoRDovasC5mEeg3hMrf64qqxUFp3YpwP2ayurBOS1XX0FZsGz
-	7vQoesKOSOWbUY4MBdgFORvxb29enNByA1tPJOMtUgEAWWZXZkiPqYvF1TZ0uyfp
-	ElByiyFr34R5C55KDWug72SjWqsuKjASD7LfcnY5k+J7ulhxHlOFBKRiCFyEg/2V
-	F86cnpHbsj5cVqUhGvOumWHMJO6Ab27yfvwuN/SsVg+Sm6NquSFnFvL0oh2Gqodd
-	t/JFLg==
-Received: from mail-dl1-f71.google.com (mail-dl1-f71.google.com [74.125.82.71])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4axp4vseas-1
+	Aya1WOTuu+dgGKyP2Dxh0Z7YBqOlan8lduHMFD16RW4=; b=YwLiYPvMLrjiTDTY
+	FTSajn0+Pf/xGaBAhKAHgmn0uqrBM1r4aIDVnwzs4Vs8MgLfMg2SqHW8SgAo8LTn
+	QnWnGUNM1Fj0ox4l9RmG3pRKOkJdA2/NpPqrPkTV5iKiBLjnNGBntJqf7BcrkvOW
+	e6v7RIMlU6PHQwN4eFZVVL0AFCmGqeS4Lg/G3xTu5f7XamlmS88Z5Qa/ZWeUR2Bw
+	CFqpYHl/lRaxxukTJohqjSjHqAkdc49sX7PEXigbI/vmrJnC/adfvd8HPHUjxdHL
+	F6Affj0lb1Na3QYuc/omT2NRX4Km7N00RUEs6DpIgUYSnn9dxjkvw06UnWQLl9qy
+	aBvgIg==
+Received: from mail-pj1-f72.google.com (mail-pj1-f72.google.com [209.85.216.72])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4axqu58yyc-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Tue, 09 Dec 2025 23:09:58 +0000 (GMT)
-Received: by mail-dl1-f71.google.com with SMTP id a92af1059eb24-11bd7a827fdso472209c88.1
+	for <linux-phy@lists.infradead.org>; Tue, 09 Dec 2025 23:09:59 +0000 (GMT)
+Received: by mail-pj1-f72.google.com with SMTP id 98e67ed59e1d1-349a2f509acso6432045a91.1
         for <linux-phy@lists.infradead.org>; Tue, 09 Dec 2025 15:09:58 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=oss.qualcomm.com; s=google; t=1765321798; x=1765926598; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=7rY6AOO08FTFDr3QMZMuJvPPweOurIOm1pIHPEjG3fg=;
-        b=EoGAkcVEswQ1yQkdZ8z2bF3PyPz1W1uC01qfxWJxglZ29UlRT1SfGuaeu02q1PTB3I
-         tweMDA2H/rsf/Yt6WUYU8YH4XbsWcNKvSvRFZPXNV28ZsQoURBHGhiOgmJe28ufcYz35
-         kGEd6gEzO2ptI9bTfYWn9uXLO8cUD5gjYPxSu4BX47mLem0Q5qM3LvUrPmCgc9UWDhYE
-         i9Wg1CYltpOpbv85Coeb1VMldLtttxPhZjj3MjX3JaG2PKK1tApq847hWM1Gr4bNT2GM
-         TMuVqiizyZDrhZxlWC+gD0SugnJQdcnu8NUD3oy5RX1EsnsDlkkdV31fG9qdWDRyV40+
-         mivw==
+        bh=Aya1WOTuu+dgGKyP2Dxh0Z7YBqOlan8lduHMFD16RW4=;
+        b=jrPD82PMBLhYMYc+YfAsRfN8m4kxVrdGaWTBIAhKniYiJASenn2/x9m3X9kzcstHlO
+         orF3GmHunv+JO/3DbxSPl8X2mbdHFZe6sO6588Lcy5HbTViWjUwwK/3EsCq7MDHec4WG
+         RNMp2dgkw9EZIpyfTSXNMDWE119DUzdUhIYwR36wXPU2mLf1E7W9A/oPtWHtyumdC5rS
+         idxfxdty1cVxqXruM/Zm2BGiWB3U2uPiL6c0V/R52is1rkqLUzyKor/E6Y4mje232nBo
+         A4fuxj3GS7cxCvrcj0rAvPfZnaHJ9bSnyzdGCYO7XLnc1N1dexV4UEHFyh6qqtbmsgB7
+         hqCA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20230601; t=1765321798; x=1765926598;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to;
-        bh=7rY6AOO08FTFDr3QMZMuJvPPweOurIOm1pIHPEjG3fg=;
-        b=EjkPMATO99NJGXvzngeZTJ3+VWHKjH0XDFv8HFQwMdjfIXir2HHkgDY/peCQxyS+NV
-         3hSHoInILZ/UQccUAmDT4yTVaYDwGDXF+sp3bq1/DcG4W07HDWcUtfCBjsyX59b/a+cq
-         0kEOkB+wm0r5FGiCfhliF1gr6mV5FrdhYftQZWKWI4BH3Brt1k5mKC263tTHR1zrD+Kf
-         9eRVsGjYxV8NJSbmy0WzhpoShsJO4M5vEwzLeLIW7X1QuucaxoXGUI/sOgJeM0sTXxzW
-         FwKBkAIHBFurfCe8LXcXZE3hgGI1KtjgctgMxYojKnEUAQlXI7MQR9reNDWlu8k1HjYE
-         zQVQ==
-X-Forwarded-Encrypted: i=1; AJvYcCXUNeOVMf8/zZj2uUqOU0+0K5XtASqbtMOLc2BNcQqF/sSV/OhXpC7+wc9UZ6St6W01FBG+x4YG2G0=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwtnGbL8Zc3ABGHLh/fuXZPp3NJFgaNWuCDHUK4PXvnCVTB+OPa
-	e0D4TWftbg5x6HlE3K+Vz7dURaJz04qODJt6Onxcoe+Tsg5QxOLFpx9W9oCtmsHBK7ZQO0Qjiv9
-	67UJ0Qh0FKyB6Mf1WSBZzWJQhjTtP+S+0rjVBUjvLJJwUDoAhwd1hUooYy3Bh1PhSFEXL
-X-Gm-Gg: ASbGncvGvBp8BUOkymbFQbdnp+Fff5lOsq3oMFLi5+AES8MVBPU/yV9L+IuOgPJEb+G
-	yZd0UngCLGu/VJheaZ5vTBInWEmdaYIqigWhNyR031kJh0bb/EyzIl/KuI9l8jW0B3/XeRFuG7a
-	DWNxMHk4XfNlYusvr0kITBgJsepeYWc+Xf+lgEY8A9SLM8Nd64/mwgmHYOt67sL9S1k8AJUefxo
-	/hYIU76mdJM0OQomsLYetoPrknO3dugI4yJPlNUAHrhPLR32HBfCindlVS6A0ULw8a2XtC15s4B
-	HCe2NH5E/jZo/0bIRImA9uj93qRzwDpdHlF1B9U1OeaJHUu30MN0U67jZXI1cf3W5FC8tFZUYZP
-	XSZWW4LUROHT2FFOtrYWXv+nQSReN14qb1ncZyzSFiJ6nzmKSlW64NIToGWn/hw==
-X-Received: by 2002:a05:7022:f017:b0:11e:3e9:3e8f with SMTP id a92af1059eb24-11f2946acc7mr303196c88.24.1765321797578;
+        bh=Aya1WOTuu+dgGKyP2Dxh0Z7YBqOlan8lduHMFD16RW4=;
+        b=LV5YLzSoHjoXPvBda9mJc3n6n5tp83EcorIQtV713odubUkSkf7cw/LSO2cYrcvc/C
+         eBmRdyga/CuZhdIIRdXu6HgVlosW5P6GkIpNJtscvWKf3VoypfU4p+OyKoOFfakaiPUi
+         Iup/BQhyL55IFDl3LZSYUwbCyTS7qqIaNpK67K+u4tEMv0xQMSDcjl+dF4JdAQDVhLaz
+         ahGa+ipb1hBJaOXUAF3fSzM6MZ6VGUejxmu8O2YevnuFKht08xLMDEbJmmCGB8KOVwmg
+         hb8wEh1k9hwYmCiOhdasBKuetWyWljl2Kh4Dcx72BKu89nuMLHVbJfWj+afxqpr96rhz
+         muKQ==
+X-Forwarded-Encrypted: i=1; AJvYcCXKAnQcKGSNk9E8H81L9Ic3rqbvVOXyXqiLUQYT6Hvm2UtM87Tu9S0vc/EgpeRa+72acyW9Z3XOiWg=@lists.infradead.org
+X-Gm-Message-State: AOJu0Ywyp7MJPHz85DkLqUAzmo4vN0c++OEkbJqE+77Sp5oLiYtXJmeo
+	cGGJfaJl392OyUeKv87rBEr8VkqsIx2YfEW/IZCR9YrKf5sfpp2yYRwb+GrScQNPq1SWfTNogu5
+	QXDaBS/QKmkyRCWbav8rOoxWzpn6wpwUTVetWJ++sQnbYWXqlHpasMjGzd+Gc44pQaIMx
+X-Gm-Gg: ASbGnctzCD9jbWgPPD1mhP74RivBQileA6c6odij7OuSQfSO9GOn5z12xkeFKpWiPqx
+	H3qM1XECScSFHIPflZ27lDkbvo6EAPVuxJbrsAirxyCuWOR7CTBuNoh8LyeSgiyENupl4m4D/kL
+	3SDskBW7NP1a6+8orCyiDTAN3BZsrG3P1hzfTEWd8eFjRydIaX4Dghw33WUgWqFNpJjMyEjYLOz
+	+0k2W5Ugu3d+RGx6z8tW8wTLakN12DeAvllMlac9j9D8S/RwXIpGjn0jQtcSbPLYHfGaxn66375
+	y50N8ZGT96f11Gkn49tsyukfOG42SRnSxlxJg//FunVJ3/ZP6ST+WWPF/Kg9nsSW01cqoww5j3a
+	Yhcn+Z/m5w7RQuWZk8Pe3+SaPLzO2ljldMZqLjS1wNzXmSH86WobKShV51Dx2cA==
+X-Received: by 2002:a05:7022:a9e:b0:11b:7824:5c97 with SMTP id a92af1059eb24-11f296c56b8mr293067c88.40.1765321797003;
         Tue, 09 Dec 2025 15:09:57 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IGlhgZt1P/WhUsjkzOnw5FTcS8s21n4FsN8PsrHBxyeenFMRaptqNGy/PIh+GChACyXopvMwQ==
-X-Received: by 2002:a05:7022:f017:b0:11e:3e9:3e8f with SMTP id a92af1059eb24-11f2946acc7mr303172c88.24.1765321796880;
-        Tue, 09 Dec 2025 15:09:56 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGrXzvals8q7d1pGMbO8gbUb3MBKcaeDB7BRKnBmB5zzv/yMbRUyrtMthZ6cnmmYkSJAXmOiA==
+X-Received: by 2002:a05:7022:a9e:b0:11b:7824:5c97 with SMTP id a92af1059eb24-11f296c56b8mr293027c88.40.1765321795961;
+        Tue, 09 Dec 2025 15:09:55 -0800 (PST)
 Received: from hu-wcheng-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-11f283d4811sm3338933c88.11.2025.12.09.15.09.56
+        by smtp.gmail.com with ESMTPSA id a92af1059eb24-11f283d4811sm3338933c88.11.2025.12.09.15.09.55
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 09 Dec 2025 15:09:56 -0800 (PST)
+        Tue, 09 Dec 2025 15:09:55 -0800 (PST)
 From: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
 To: krzk+dt@kernel.org, abel.vesa@linaro.org, conor+dt@kernel.org,
         dmitry.baryshkov@oss.qualcomm.com, vkoul@kernel.org, robh@kernel.org
 Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
         devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        Abel Vesa <abelvesa@kernel.org>,
         Wesley Cheng <wesley.cheng@oss.qualcomm.com>
-Subject: [PATCH v8 9/9] phy: qualcomm: qmp-combo: Add DP offsets and settings for Glymur platforms
-Date: Tue,  9 Dec 2025 15:09:45 -0800
-Message-Id: <20251209-linux-next-12825-v8-9-42133596bda0@oss.qualcomm.com>
+Subject: [PATCH v8 8/9] phy: qualcomm: qmp-combo: Update QMP PHY with Glymur settings
+Date: Tue,  9 Dec 2025 15:09:44 -0800
+Message-Id: <20251209-linux-next-12825-v8-8-42133596bda0@oss.qualcomm.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20251209-linux-next-12825-v8-0-42133596bda0@oss.qualcomm.com>
 References: <20251209-linux-next-12825-v8-0-42133596bda0@oss.qualcomm.com>
 MIME-Version: 1.0
-X-Proofpoint-GUID: CC79SLbeeKwNlfmMKIRS6Ax_KqQWcf8T
-X-Proofpoint-ORIG-GUID: CC79SLbeeKwNlfmMKIRS6Ax_KqQWcf8T
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMjA5MDE4MSBTYWx0ZWRfX71r+pOFaOHYP
- W+b2n1nqpUsknpr80PSksv1gOxRxn0Mzc4/ROYaltu0jC4E7zwcId8ob2Pou+CEZXeubF8LFveO
- z2G+kTIB8oytObnMVVGBJOvMHx9Fh7pvq1kyZ9lzvLVxRHVFi5NZOk4mMdzw/8zqLzZ9PKS9yui
- BIs/+Mkywgyx1WAVVT1omLezxMa3tjbrxbRTvwa5vPK4yGBdzjH3igUeZDdmkKxnbp3lMwXLF6H
- vbI234oCIR/n2XJDOpnEgeos5ZShYDOBeudKVA2INees/ztijjO1dsdjGUmBGByf0qJSwb8hV1o
- bQ60pMNb/YMF2AOiIzupEF0KXlPWeOkqN3wmCoh9+MzNxWJvRIeMz1RS6V9ya8zf/Zxai7ZLzuU
- oomcrH7BVtcWc7CuAYF+nmsVU+o5OA==
-X-Authority-Analysis: v=2.4 cv=IoYTsb/g c=1 sm=1 tr=0 ts=6938ac46 cx=c_pps
- a=JYo30EpNSr/tUYqK9jHPoA==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+X-Proofpoint-GUID: NVcS0gPHMfNNa1rsUhGJxOG_hJ9_Fwrt
+X-Authority-Analysis: v=2.4 cv=Y7/1cxeN c=1 sm=1 tr=0 ts=6938ac47 cx=c_pps
+ a=RP+M6JBNLl+fLTcSJhASfg==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
  a=IkcTkHD0fZMA:10 a=wP3pNCr1ah4A:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=KKAkSRfTAAAA:8
- a=4fk61GXhQWy7FS_8SScA:9 a=QEXdDO2ut3YA:10 a=Fk4IpSoW4aLDllm1B1p-:22
- a=cvBusfyB2V15izCimMoJ:22
+ a=VkNPw1HP01LnGYTKEx00:22 a=EUspDBNiAAAA:8 a=nE-6qLORNptjhdMLsvQA:9
+ a=QEXdDO2ut3YA:10 a=iS9zxrgQBfv6-_F4QbHw:22
+X-Proofpoint-ORIG-GUID: NVcS0gPHMfNNa1rsUhGJxOG_hJ9_Fwrt
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMjA5MDE4MSBTYWx0ZWRfXy/2oWJaicg2L
+ Wc6OaLWgrWkHd+fZgCuOuVxyPCjk/OqmEiDljD5G4IXj6bzzWOo+mZwEs/SnpysyI03SvY7AjbU
+ wfv/PGTX8F2b1BM3tn5xCFDnjHXIofuCPk0Z9Q8a1NvbroX7ylJa0ZNHJ6lK2ne9T5euHfUvzXp
+ DuJUH7iJFEZ2TY76E8hISK9472ZPcDpkSU44h2N6nDDQp4l2gS0v2Kih2NGVJYEKl6egNmyoM+x
+ 9Croi4fsxUiPVJGU4sGFi7ZwuII5bU1RWbsRi22ey2ubMY83KL2dlBt+BOM2/FTa7lP29nX3wAz
+ jlKFKPyit3450lzxiEEC5VGJRRohTTD2mHR8BT3g2qczzVV07cvZUcfFl4b/ShXn3hoRdTo3cdy
+ /BB7IuDIighKvXS0VpTIFVSBD56WuA==
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
  definitions=2025-12-09_05,2025-12-09_03,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- adultscore=0 impostorscore=0 priorityscore=1501 spamscore=0
- lowpriorityscore=0 malwarescore=0 bulkscore=0 phishscore=0 suspectscore=0
- clxscore=1015 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2510240001
- definitions=main-2512090181
+ clxscore=1015 impostorscore=0 lowpriorityscore=0 suspectscore=0 spamscore=0
+ phishscore=0 bulkscore=0 priorityscore=1501 adultscore=0 malwarescore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2510240001 definitions=main-2512090181
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251209_151000_285564_90640418 
-X-CRM114-Status: GOOD (  14.76  )
+X-CRM114-CacheID: sfid-20251209_151000_680089_FEA5B245 
+X-CRM114-Status: GOOD (  16.98  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -146,665 +143,1372 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Abel Vesa <abelvesa@kernel.org>
+For SuperSpeed USB to work properly, there is a set of HW settings that
+need to be programmed into the USB blocks within the QMP PHY.  Ensure that
+these settings follow the latest settings mentioned in the HW programming
+guide.  The QMP USB PHY on Glymur is a USB43 based PHY that will have some
+new ways to define certain registers, such as the replacement of TXA/RXA
+and TXB/RXB register sets.  This was replaced with the LALB register set.
 
-Starting with Glymur, the PCIe and DP PHYs qserdes register offsets differ
-for the same version number. So in order to be able to differentiate
-between them, add these ones with DP prefix.
+There are also some PHY init updates to modify the PCS MISC register space.
+Without these, the QMP PHY PLL locking fails.
 
-Add the necessary PHY setting tables for enabling the DP path within the
-QMP subsystem.  Introduced some new callbacks for v8 specific sequences,
-such as for clock configurations based on the different link speeds.
-
-Wesley Cheng added some updated settings from the hardware programming
-guides on existing PHY tables and clock settings.
-
-Co-developed-by: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
-Signed-off-by: Abel Vesa <abel.vesa@linaro.org>
 Signed-off-by: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c          | 355 ++++++++++++++++++++-
- drivers/phy/qualcomm/phy-qcom-qmp-dp-phy-v8.h      |  25 ++
- .../phy/qualcomm/phy-qcom-qmp-dp-qserdes-com-v8.h  |  52 +++
- 3 files changed, 428 insertions(+), 4 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c          | 285 +++++++++
+ drivers/phy/qualcomm/phy-qcom-qmp-pcs-aon-v8.h     |  17 +
+ drivers/phy/qualcomm/phy-qcom-qmp-pcs-misc-v8.h    |  12 +
+ .../phy/qualcomm/phy-qcom-qmp-qserdes-lalb-v8.h    | 639 +++++++++++++++++++++
+ drivers/phy/qualcomm/phy-qcom-qmp-usb43-pcs-v8.h   |  33 ++
+ .../qualcomm/phy-qcom-qmp-usb43-qserdes-com-v8.h   | 224 ++++++++
+ drivers/phy/qualcomm/phy-qcom-qmp.h                |   2 +
+ 7 files changed, 1212 insertions(+)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-index 32a3f3a4ab05..97c6ff46c373 100644
+index 59a8c6a535ee..32a3f3a4ab05 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-@@ -48,6 +48,7 @@
- #include "phy-qcom-qmp-dp-phy-v4.h"
+@@ -31,9 +31,11 @@
+ 
+ #include "phy-qcom-qmp.h"
+ #include "phy-qcom-qmp-pcs-aon-v6.h"
++#include "phy-qcom-qmp-pcs-aon-v8.h"
+ #include "phy-qcom-qmp-pcs-misc-v3.h"
+ #include "phy-qcom-qmp-pcs-misc-v4.h"
+ #include "phy-qcom-qmp-pcs-misc-v5.h"
++#include "phy-qcom-qmp-pcs-misc-v8.h"
+ #include "phy-qcom-qmp-pcs-usb-v4.h"
+ #include "phy-qcom-qmp-pcs-usb-v5.h"
+ #include "phy-qcom-qmp-pcs-usb-v6.h"
+@@ -47,6 +49,8 @@
  #include "phy-qcom-qmp-dp-phy-v5.h"
  #include "phy-qcom-qmp-dp-phy-v6.h"
-+#include "phy-qcom-qmp-dp-phy-v8.h"
  
- #include "phy-qcom-qmp-usb43-pcs-v8.h"
- 
-@@ -103,6 +104,7 @@ enum qphy_reg_layout {
++#include "phy-qcom-qmp-usb43-pcs-v8.h"
++
+ /* QPHY_V3_DP_COM_RESET_OVRD_CTRL register bits */
+ /* DP PHY soft reset */
+ #define SW_DPPHY_RESET				BIT(0)
+@@ -98,6 +102,7 @@ enum qphy_reg_layout {
+ 	QPHY_TX_HIGHZ_DRVR_EN,
  	QPHY_TX_TRANSCEIVER_BIAS_EN,
  
- 	QPHY_AON_TOGGLE_ENABLE,
-+	QPHY_DP_AON_TOGGLE_ENABLE,
++	QPHY_AON_TOGGLE_ENABLE,
  	/* Keep last to ensure regs_layout arrays are properly initialized */
  	QPHY_LAYOUT_SIZE
  };
-@@ -277,12 +279,16 @@ static const unsigned int qmp_v8_n3_usb43dpphy_regs_layout[QPHY_LAYOUT_SIZE] = {
- 
- 	[QPHY_PCS_CLAMP_ENABLE]			= QPHY_V8_PCS_AON_USB3_AON_CLAMP_ENABLE,
- 	[QPHY_AON_TOGGLE_ENABLE]		= QPHY_V8_PCS_AON_USB3_AON_TOGGLE_ENABLE,
-+	[QPHY_DP_AON_TOGGLE_ENABLE]		= QPHY_V8_PCS_AON_DP_AON_TOGGLE_ENABLE,
- 
- 	[QPHY_COM_RESETSM_CNTRL]		= QSERDES_V8_COM_RESETSM_CNTRL,
- 	[QPHY_COM_C_READY_STATUS]		= QSERDES_V8_COM_C_READY_STATUS,
- 	[QPHY_COM_CMN_STATUS]			= QSERDES_V8_COM_CMN_STATUS,
- 	[QPHY_COM_BIAS_EN_CLKBUFLR_EN]	= QSERDES_V8_COM_BIAS_EN_CLKBUFLR_EN,
- 
-+	[QPHY_DP_PHY_STATUS]			= QSERDES_V8_DP_PHY_STATUS,
-+	[QPHY_DP_PHY_VCO_DIV]			= QSERDES_V8_DP_PHY_VCO_DIV,
-+
- 	[QPHY_TX_TX_DRV_LVL]			= QSERDES_V8_LALB_TX0_DRV_LVL,
- 	[QPHY_TX_TX_EMP_POST1_LVL]		= QSERDES_V8_LALB_TX0_EMP_POST1_LVL,
- 	[QPHY_TX_HIGHZ_DRVR_EN]			= QSERDES_V8_LALB_HIGHZ_DRVR_EN,
-@@ -1378,6 +1384,38 @@ static const struct qmp_phy_init_tbl qmp_v6_n4_dp_serdes_tbl[] = {
- 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_CORE_CLK_EN, 0x0f),
+@@ -260,6 +265,233 @@ static const unsigned int qmp_v8_usb3phy_regs_layout[QPHY_LAYOUT_SIZE] = {
+ 	[QPHY_TX_TRANSCEIVER_BIAS_EN]	= QSERDES_V8_TX_TRANSCEIVER_BIAS_EN,
  };
  
-+static const struct qmp_phy_init_tbl qmp_v8_dp_serdes_tbl[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SSC_STEP_SIZE2_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_CP_CTRL_MODE0, 0x06),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_PLL_RCTRL_MODE1, 0x10),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_PLL_CCTRL_MODE1, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_CORECLK_DIV_MODE0, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DIV_FRAC_START1_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_INTEGLOOP_GAIN0_MODE0, 0x3f),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_INTEGLOOP_GAIN1_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_BG_TIMER, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SSC_EN_CENTER, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SSC_ADJ_PER1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SSC_PER1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SSC_PER2, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_CLK_ENABLE1, 0x0c),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SYS_CLK_CTRL, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SYSCLK_BUF_ENABLE, 0x06),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_PLL_IVCO, 0x07),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SYSCLK_EN_SEL, 0x3b),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_LOCK_CMP_EN, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_VCO_TUNE_CTRL, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_VCO_TUNE_MAP, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_CLK_SELECT, 0x30),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_CORE_CLK_EN, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_CMN_CONFIG_1, 0x56),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SVS_MODE_CLK_SEL, 0x15),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_CMN_MODE_CONTD1, 0x24),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DCC_CAL_1, 0x40),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DCC_CAL_3, 0x60),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_PSM_CAL_EN, 0x01),
++static const unsigned int qmp_v8_n3_usb43dpphy_regs_layout[QPHY_LAYOUT_SIZE] = {
++	[QPHY_SW_RESET]			= QPHY_V8_USB43_PCS_SW_RESET,
++	[QPHY_START_CTRL]			= QPHY_V8_USB43_PCS_START_CONTROL,
++	[QPHY_PCS_STATUS]			= QPHY_V8_USB43_PCS_PCS_STATUS1,
++	[QPHY_PCS_POWER_DOWN_CONTROL]	= QPHY_V8_USB43_PCS_POWER_DOWN_CONTROL,
++
++	/* In PCS_USB */
++	[QPHY_PCS_AUTONOMOUS_MODE_CTRL]	= QPHY_V8_PCS_USB_AUTONOMOUS_MODE_CTRL,
++	[QPHY_PCS_LFPS_RXTERM_IRQ_CLEAR]	= QPHY_V8_PCS_USB_LFPS_RXTERM_IRQ_CLEAR,
++
++	[QPHY_PCS_CLAMP_ENABLE]			= QPHY_V8_PCS_AON_USB3_AON_CLAMP_ENABLE,
++	[QPHY_AON_TOGGLE_ENABLE]		= QPHY_V8_PCS_AON_USB3_AON_TOGGLE_ENABLE,
++
++	[QPHY_COM_RESETSM_CNTRL]		= QSERDES_V8_COM_RESETSM_CNTRL,
++	[QPHY_COM_C_READY_STATUS]		= QSERDES_V8_COM_C_READY_STATUS,
++	[QPHY_COM_CMN_STATUS]			= QSERDES_V8_COM_CMN_STATUS,
++	[QPHY_COM_BIAS_EN_CLKBUFLR_EN]	= QSERDES_V8_COM_BIAS_EN_CLKBUFLR_EN,
++
++	[QPHY_TX_TX_DRV_LVL]			= QSERDES_V8_LALB_TX0_DRV_LVL,
++	[QPHY_TX_TX_EMP_POST1_LVL]		= QSERDES_V8_LALB_TX0_EMP_POST1_LVL,
++	[QPHY_TX_HIGHZ_DRVR_EN]			= QSERDES_V8_LALB_HIGHZ_DRVR_EN,
++	[QPHY_TX_TRANSCEIVER_BIAS_EN]	= QSERDES_V8_LALB_TRANSMITTER_EN_CTRL,
 +};
 +
- static const struct qmp_phy_init_tbl qmp_v6_dp_tx_tbl[] = {
- 	QMP_PHY_INIT_CFG(QSERDES_V6_TX_VMODE_CTRL1, 0x40),
- 	QMP_PHY_INIT_CFG(QSERDES_V6_TX_PRE_STALL_LDO_BOOST_EN, 0x30),
-@@ -1405,6 +1443,33 @@ static const struct qmp_phy_init_tbl qmp_v6_n4_dp_tx_tbl[] = {
- 	QMP_PHY_INIT_CFG(QSERDES_V6_N4_TX_TX_BAND, 0x1),
- };
- 
-+static const struct qmp_phy_init_tbl qmp_v8_n3p_dp_tx_tbl[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_TRANSMITTER_EN_CTRL, 0x3f),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_VMODE_CTRL1, 0x40),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_ANA_INTERFACE_SELECT1, 0x07),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_ANA_INTERFACE_SELECT2, 0x18),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_PCS_INTERFACE_SELECT1, 0x50),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_LANE_MODE_1, 0x0d),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CLKBUF_ENABLE, 0x07),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RESET_TSYNC_EN_CTRL, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_TX_LVL_UPDATE_CTRL, 0x0f),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_TRAN_DRVR_EMP_EN, 0x5f),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_TX0_EMP_POST1_LVL, 0x20),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_TX1_EMP_POST1_LVL, 0x20),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_TX0_PRE1_EMPH, 0x20),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_TX1_PRE1_EMPH, 0x20),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_TX0_DRV_LVL, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_TX1_DRV_LVL, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_HIGHZ_DRVR_EN, 0x30),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_LANE_MODE_2, 0x50),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_LANE_MODE_3, 0x51),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_TX_DCC_ANA_CTRL2, 0x00),
++static const struct qmp_phy_init_tbl glymur_usb43dp_serdes_tbl[] = {
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SSC_STEP_SIZE1_MODE1, 0xe1),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SSC_STEP_SIZE2_MODE1, 0x01),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_CP_CTRL_MODE1, 0x06),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_PLL_RCTRL_MODE1, 0x16),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_PLL_CCTRL_MODE1, 0x36),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_CORECLK_DIV_MODE1, 0x02),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_LOCK_CMP1_MODE1, 0x1a),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_LOCK_CMP2_MODE1, 0x41),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DEC_START_MODE1, 0x41),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DEC_START_MSB_MODE1, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DIV_FRAC_START1_MODE1, 0xab),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DIV_FRAC_START2_MODE1, 0xaa),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DIV_FRAC_START3_MODE1, 0x01),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_HSCLK_SEL_1, 0x13),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_INTEGLOOP_GAIN0_MODE1, 0x3f),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_VCO_TUNE1_MODE1, 0x4d),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_VCO_TUNE2_MODE1, 0x03),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_BIN_VCOCAL_CMP_CODE1_MODE1, 0x95),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_BIN_VCOCAL_CMP_CODE2_MODE1, 0x1e),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_BIN_VCOCAL_CMP_CODE1_MODE0, 0x4b),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_BIN_VCOCAL_CMP_CODE2_MODE0, 0x0f),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SSC_STEP_SIZE1_MODE0, 0xe1),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SSC_STEP_SIZE2_MODE0, 0x01),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_CP_CTRL_MODE0, 0x06),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_PLL_RCTRL_MODE0, 0x16),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_PLL_CCTRL_MODE0, 0x36),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_CORECLK_DIV_MODE0, 0x05),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_LOCK_CMP1_MODE0, 0x0a),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_LOCK_CMP2_MODE0, 0x1a),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DEC_START_MODE0, 0x41),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DEC_START_MSB_MODE0, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DIV_FRAC_START1_MODE0, 0xab),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DIV_FRAC_START2_MODE0, 0xaa),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DIV_FRAC_START3_MODE0, 0x01),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_HSCLK_HS_SWITCH_SEL_1, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_INTEGLOOP_GAIN0_MODE0, 0x3f),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_VCO_TUNE1_MODE0, 0x4d),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_VCO_TUNE2_MODE0, 0x03),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_BG_TIMER, 0x0a),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SSC_EN_CENTER, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SSC_PER1, 0x62),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SSC_PER2, 0x02),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SYSCLK_BUF_ENABLE, 0x0a),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_PLL_IVCO, 0x0f),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_PLL_IVCO_MODE1, 0x0f),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SYSCLK_EN_SEL, 0x1a),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_LOCK_CMP_EN, 0x04),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_LOCK_CMP_CFG, 0x04),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_VCO_TUNE_CTRL, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_VCO_TUNE_MAP, 0x14),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_CORE_CLK_EN, 0xa0),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_CMN_CONFIG_1, 0x76),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SVS_MODE_CLK_SEL, 0x0a),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_BIN_VCOCAL_HSCLK_SEL_1, 0x01),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_PLL_SPARE_FOR_ECO, 0x40),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DCC_CAL_1, 0x40),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DCC_CAL_2, 0x01),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DCC_CAL_3, 0x60),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_PSM_CAL_EN, 0x05),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_CLK_FWD_CONFIG_1, 0x33),
++	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_IP_CTRL_AND_DP_SEL, 0xaf),
++};
++
++static const struct qmp_phy_init_tbl glymur_usb43dp_pcs_misc_tbl[] = {
++	QMP_PHY_INIT_CFG(QPHY_V8_PCS_MISC_PCS_MISC_CONFIG1, 0x01),
++};
++
++static const struct qmp_phy_init_tbl glymur_usb43dp_pcs_tbl[] = {
++	QMP_PHY_INIT_CFG(QPHY_V8_USB43_PCS_LOCK_DETECT_CONFIG1, 0xc4),
++	QMP_PHY_INIT_CFG(QPHY_V8_USB43_PCS_LOCK_DETECT_CONFIG2, 0x89),
++	QMP_PHY_INIT_CFG(QPHY_V8_USB43_PCS_LOCK_DETECT_CONFIG3, 0x20),
++	QMP_PHY_INIT_CFG(QPHY_V8_USB43_PCS_LOCK_DETECT_CONFIG6, 0x13),
++	QMP_PHY_INIT_CFG(QPHY_V8_USB43_PCS_REFGEN_REQ_CONFIG1, 0x21),
++	QMP_PHY_INIT_CFG(QPHY_V8_USB43_PCS_RX_SIGDET_LVL, 0x55),
++	QMP_PHY_INIT_CFG(QPHY_V8_USB43_PCS_RCVR_DTCT_DLY_P1U2_L, 0xe7),
++	QMP_PHY_INIT_CFG(QPHY_V8_USB43_PCS_RCVR_DTCT_DLY_P1U2_H, 0x03),
++	QMP_PHY_INIT_CFG(QPHY_V8_USB43_PCS_TSYNC_RSYNC_TIME, 0xa4),
++	QMP_PHY_INIT_CFG(QPHY_V8_USB43_PCS_RX_CONFIG, 0x0a),
++	QMP_PHY_INIT_CFG(QPHY_V8_USB43_PCS_TSYNC_DLY_TIME, 0x04),
++	QMP_PHY_INIT_CFG(QPHY_V8_USB43_PCS_ALIGN_DETECT_CONFIG1, 0xd4),
++	QMP_PHY_INIT_CFG(QPHY_V8_USB43_PCS_ALIGN_DETECT_CONFIG2, 0x30),
++	QMP_PHY_INIT_CFG(QPHY_V8_USB43_PCS_PCS_TX_RX_CONFIG, 0x0c),
++	QMP_PHY_INIT_CFG(QPHY_V8_USB43_PCS_EQ_CONFIG1, 0x4b),
++	QMP_PHY_INIT_CFG(QPHY_V8_USB43_PCS_EQ_CONFIG5, 0x10),
++};
++
++static const struct qmp_phy_init_tbl glymur_usb43dp_pcs_usb_tbl[] = {
++	QMP_PHY_INIT_CFG(QPHY_V8_PCS_USB_LFPS_DET_HIGH_COUNT_VAL, 0xf8),
++	QMP_PHY_INIT_CFG(QPHY_V8_PCS_USB_RXEQTRAINING_DFE_TIME_S2, 0x07),
++};
++
++static const struct qmp_phy_init_tbl glymur_usb43dp_lalb_tbl[] = {
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CLKBUF_ENABLE, 0x81),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_TX_LVL_UPDATE_CTRL, 0x0d),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_PCIE5_TOP_LDO_CODE_CTRL1, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_PCIE5_TOP_LDO_CODE_CTRL2, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_PCIE5_TOP_LDO_CODE_CTRL3, 0x80),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_PCIE5_TOP_LDO_CODE_CTRL4, 0x8D),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_TRANSMITTER_EN_CTRL, 0x13),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_LANE_MODE_1, 0x0c),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_LANE_MODE_2, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_LANE_MODE_3, 0x11),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_LANE_MODE_4, 0x11),
 +	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_TX0_RESTRIM_CAL_CTRL, 0x20),
 +	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_TX1_RESTRIM_CAL_CTRL, 0x02),
 +	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_TX0_RESTRIM_POST_CAL_OFFSET, 0x10),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_TX1_RESTRIM_POST_CAL_OFFSET, 0x10),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_TX0_RESTRIM_VREF_SEL, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_TX1_RESTRIM_VREF_SEL, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_ANA_INTERFACE_SELECT2, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_PCS_INTERFACE_SELECT1, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_MODE_RATE_0_1_B0, 0xa4),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_MODE_RATE_0_1_B1, 0xa2),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_MODE_RATE_0_1_B2, 0x6e),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_MODE_RATE_0_1_B3, 0x51),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_MODE_RATE_0_1_B4, 0x0a),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_MODE_RATE_0_1_B5, 0x26),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_MODE_RATE_0_1_B6, 0x12),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_MODE_RATE_0_1_B7, 0x2a),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_MODE_RATE2_B0, 0x4c),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_MODE_RATE2_B1, 0xc4),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_MODE_RATE2_B2, 0x38),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_MODE_RATE2_B3, 0x64),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_MODE_RATE2_B4, 0x0c),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_MODE_RATE2_B5, 0x4b),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_MODE_RATE2_B6, 0x12),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_MODE_RATE2_B7, 0x0a),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_TX_DCC_ANA_CTRL2, 0x0c),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_VCO_CTUNE_MEAS_CNT1_RATE1, 0x26),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_VCO_CTUNE_MEAS_CNT2_RATE1, 0x26),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_VCO_CTUNE_MEAS_CNT1_RATE2, 0x26),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_VCO_CTUNE_MEAS_CNT2_RATE2, 0x26),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_KVCO_INIT_RATE_0_1, 0x11),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_KVCO_INIT_RATE_2_3, 0x11),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_KVCO_CODE_OVRD_RATE1, 0x03),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_KVCO_CODE_OVRD_RATE2, 0x03),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_KVCO_IDEAL_FREQ_DIFF1_RATE1, 0x15),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_KVCO_IDEAL_FREQ_DIFF2_RATE1, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_KVCO_IDEAL_FREQ_DIFF1_RATE2, 0x22),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_KVCO_IDEAL_FREQ_DIFF2_RATE2, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_KP_CODE_OVRD_RATE_2_3, 0x22),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_KP_CAL_UPPER_FREQ_DIFF_BND1_RATE1, 0xff),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_KP_CAL_UPPER_FREQ_DIFF_BND2_RATE1, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_KP_CAL_UPPER_FREQ_DIFF_BND1_RATE2, 0xff),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_KP_CAL_UPPER_FREQ_DIFF_BND2_RATE2, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_KP_CAL_LOWER_FREQ_DIFF_BND_RATE1, 0x07),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_KP_CAL_LOWER_FREQ_DIFF_BND_RATE2, 0x09),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_SUMMER_CAL_SPD_MODE_RATE_0123, 0x2f),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_IVCM_CAL_CODE_OVERRIDE_RATE1, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_IVCM_CAL_CODE_OVERRIDE_RATE2, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_IVCM_CAL_CTRL2, 0x85),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_IVCM_CAL_CTRL3, 0x45),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_IVCM_POSTCAL_OFFSET_RATE1, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_IVCM_POSTCAL_OFFSET_RATE2, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_SIGDET_ENABLES, 0x0c),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_SIGDET_CNTRL, 0xa3),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_SIGDET_LVL, 0x04),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_SIGDET_DEGLITCH_CNTRL, 0x0e),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_SIGDET_CAL_CTRL1, 0x14),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_SIGDET_CAL_CTRL2_AND_CDR_LOCK_EDGE, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_SIGDET_CAL_TRIM, 0x66),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_FREQ_LOCK_DET_DLY_RATE1, 0xff),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_FREQ_LOCK_DET_DLY_RATE2, 0x32),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_CP_CUR_FLL_RATE1, 0x07),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_CP_CUR_FLL_RATE2, 0x0a),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_CP_CUR_PLL_RATE1, 0x02),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_CP_CUR_PLL_RATE2, 0x04),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_LOOP_CCODE_RATE_01, 0x76),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_LOOP_CCODE_RATE_23, 0x67),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_LOOP_RCODE_FAST_RATE_0_1, 0x20),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_LOOP_RCODE_FAST_RATE_2_3, 0x02),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_LOOP_RCODE_FLL_RATE_0_1, 0x33),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_LOOP_RCODE_FLL_RATE_2_3, 0x43),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_LOOP_RCODE_PLL_RATE_0_1, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_LOOP_RCODE_PLL_RATE_2_3, 0x51),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_FLL_DIV_RATIO_RATE_0123, 0xe5),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_VCO_CAP_CODE_RATE_0123, 0xf5),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_VCO_TYPE_CONFIG, 0x1f),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_VCO_EN_LOWFREQ, 0x07),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_LOOP_FUNC_CTRL, 0xd0),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_GM_CAL_EN, 0x1f),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_GM_CAL_RES_RATE0_1, 0x88),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_GM_CAL_RES_RATE2_3, 0x88),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_AUX_CLK_CTRL, 0x20),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_EOM_CTRL1, 0x10),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_EQU_ADAPTOR_CNTRL2, 0x0a),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_EQU_ADAPTOR_CNTRL3, 0x0a),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_RX_EQU_ADAPTOR_CNTRL4, 0xaa),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CTLE_POST_CAL_OFFSET_RATE_0_1_2, 0x77),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_VGA_CAL_CNTRL1, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_VGA_CAL_MAN_VAL_RATE0_1, 0xdd),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_VGA_CAL_MAN_VAL_RATE2_3, 0xd8),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_DFE_TAP1_DAC_ENABLE, 0x1c),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_DFE_TAP2_DAC_ENABLE, 0x1c),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_DFE_TAP345_DAC_ENABLE, 0x18),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_DFE_TAP67_DAC_ENABLE, 0x10),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_IQTUNE_CTRL, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_IQTUNE_MAN_INDEX, 0x10),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_IQTUNE_DIV2_CTRL_RATE0123, 0x1C),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_CDR_VCO_CAP_CODE_OVRD_MUXES, 0x00),
++	QMP_PHY_INIT_CFG(QSERDES_V8_LALB_DIG_BKUP_CTRL16, 0x37),
 +};
 +
- static const struct qmp_phy_init_tbl qmp_v6_dp_serdes_tbl_rbr[] = {
- 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_HSCLK_SEL_1, 0x05),
- 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_DEC_START_MODE0, 0x34),
-@@ -1521,6 +1586,109 @@ static const struct qmp_phy_init_tbl qmp_v6_n4_dp_serdes_tbl_hbr3[] = {
- 	QMP_PHY_INIT_CFG(QSERDES_V6_COM_SSC_STEP_SIZE2_MODE0, 0x01),
+ static const struct qmp_phy_init_tbl qmp_v3_usb3_serdes_tbl[] = {
+ 	QMP_PHY_INIT_CFG(QSERDES_V3_COM_PLL_IVCO, 0x07),
+ 	QMP_PHY_INIT_CFG(QSERDES_V3_COM_SYSCLK_EN_SEL, 0x14),
+@@ -1663,6 +1895,12 @@ static struct regulator_bulk_data qmp_phy_vreg_l[] = {
+ 	{ .supply = "vdda-pll", .init_load_uA = 36000, },
  };
  
-+static const struct qmp_phy_init_tbl qmp_v8_dp_serdes_tbl_rbr[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_HSCLK_SEL_1, 0x05),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_BIN_VCOCAL_CMP_CODE1_MODE0, 0x7a),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_BIN_VCOCAL_CMP_CODE2_MODE0, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SSC_STEP_SIZE1_MODE0, 0x83),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_LOCK_CMP1_MODE0, 0x37),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_LOCK_CMP2_MODE0, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DEC_START_MODE0, 0x54),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DIV_FRAC_START2_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DIV_FRAC_START3_MODE0, 0x06),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_VCO_TUNE1_MODE0, 0xfe),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_VCO_TUNE2_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_BIN_VCOCAL_HSCLK_SEL_1, 0x05),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_CMN_MODE_CONTD3, 0x07),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_CLK_FWD_CONFIG_1, 0x30),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_IP_CTRL_AND_DP_SEL, 0xa4),
++static struct regulator_bulk_data qmp_phy_vreg_refgen[] = {
++	{ .supply = "vdda-phy", .init_load_uA = 21800 },
++	{ .supply = "vdda-pll", .init_load_uA = 36000 },
++	{ .supply = "refgen", .init_load_uA = 3270 },
 +};
 +
-+static const struct qmp_phy_init_tbl qmp_v8_dp_serdes_tbl_hbr[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_HSCLK_SEL_1, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_BIN_VCOCAL_CMP_CODE1_MODE0, 0x21),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_BIN_VCOCAL_CMP_CODE2_MODE0, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SSC_STEP_SIZE1_MODE0, 0x18),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_LOCK_CMP1_MODE0, 0x07),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_LOCK_CMP2_MODE0, 0x07),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DEC_START_MODE0, 0x46),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DIV_FRAC_START2_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DIV_FRAC_START3_MODE0, 0x05),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_VCO_TUNE1_MODE0, 0xae),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_VCO_TUNE2_MODE0, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_BIN_VCOCAL_HSCLK_SEL_1, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_CMN_MODE_CONTD3, 0x07),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_CLK_FWD_CONFIG_1, 0x3f),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_IP_CTRL_AND_DP_SEL, 0xa3),
+ static const u8 qmp_dp_v3_pre_emphasis_hbr3_hbr2[4][4] = {
+ 	{ 0x00, 0x0c, 0x15, 0x1a },
+ 	{ 0x02, 0x0e, 0x16, 0xff },
+@@ -1807,6 +2045,8 @@ struct qmp_phy_cfg {
+ 	int pcs_tbl_num;
+ 	const struct qmp_phy_init_tbl *pcs_usb_tbl;
+ 	int pcs_usb_tbl_num;
++	const struct qmp_phy_init_tbl *pcs_misc_tbl;
++	int pcs_misc_tbl_num;
+ 
+ 	const struct qmp_phy_init_tbl *dp_serdes_tbl;
+ 	int dp_serdes_tbl_num;
+@@ -2000,6 +2240,19 @@ static const struct qmp_combo_offsets qmp_combo_offsets_v8 = {
+ 	.dp_dp_phy	= 0x3c00,
+ };
+ 
++static const struct qmp_combo_offsets qmp_combo_usb43dp_offsets_v8 = {
++	.com		= 0x0000,
++	.usb3_pcs_aon	= 0x0100,
++	.usb3_serdes	= 0x1000,
++	.usb3_pcs_misc	= 0x1400,
++	.usb3_pcs	= 0x1600,
++	.usb3_pcs_usb	= 0x1900,
++	.dp_serdes	= 0x2000,
++	.dp_dp_phy	= 0x2400,
++	.txa		= 0x4000,
++	.txb		= 0x5000,
 +};
 +
-+static const struct qmp_phy_init_tbl qmp_v8_dp_serdes_tbl_hbr2[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_HSCLK_SEL_1, 0x03),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_BIN_VCOCAL_CMP_CODE1_MODE0, 0xf6),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_BIN_VCOCAL_CMP_CODE2_MODE0, 0x20),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SSC_STEP_SIZE1_MODE0, 0x0),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_PLL_RCTRL_MODE0, 0x16),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_PLL_CCTRL_MODE0, 0x36),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_LOCK_CMP1_MODE0, 0x10),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_LOCK_CMP2_MODE0, 0x0e),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DEC_START_MODE0, 0x46),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DIV_FRAC_START2_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DIV_FRAC_START3_MODE0, 0x05),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_VCO_TUNE1_MODE0, 0xae),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_VCO_TUNE2_MODE0, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_BIN_VCOCAL_HSCLK_SEL_1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_IP_CTRL_AND_DP_SEL, 0xbf),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_BIAS_EN_CLKBUFLR_EN, 0x1c),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_RESETSM_CNTRL, 0x20),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_CMN_MODE_CONTD3, 0x03),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_CLK_FWD_CONFIG_1, 0x3f),
+ static const struct qmp_phy_cfg sar2130p_usb3dpphy_cfg = {
+ 	.offsets		= &qmp_combo_offsets_v3,
+ 
+@@ -2544,6 +2797,27 @@ static const struct qmp_phy_cfg sm8750_usb3dpphy_cfg = {
+ 	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
+ };
+ 
++static const struct qmp_phy_cfg glymur_usb3dpphy_cfg = {
++	.offsets		= &qmp_combo_usb43dp_offsets_v8,
++
++	.serdes_tbl		= glymur_usb43dp_serdes_tbl,
++	.serdes_tbl_num		= ARRAY_SIZE(glymur_usb43dp_serdes_tbl),
++	.tx_tbl			= glymur_usb43dp_lalb_tbl,
++	.tx_tbl_num		= ARRAY_SIZE(glymur_usb43dp_lalb_tbl),
++	.pcs_tbl		= glymur_usb43dp_pcs_tbl,
++	.pcs_tbl_num		= ARRAY_SIZE(glymur_usb43dp_pcs_tbl),
++	.pcs_usb_tbl		= glymur_usb43dp_pcs_usb_tbl,
++	.pcs_usb_tbl_num	= ARRAY_SIZE(glymur_usb43dp_pcs_usb_tbl),
++	.pcs_misc_tbl		= glymur_usb43dp_pcs_misc_tbl,
++	.pcs_misc_tbl_num	= ARRAY_SIZE(glymur_usb43dp_pcs_misc_tbl),
++
++	.regs			= qmp_v8_n3_usb43dpphy_regs_layout,
++	.reset_list		= msm8996_usb3phy_reset_l,
++	.num_resets		= ARRAY_SIZE(msm8996_usb3phy_reset_l),
++	.vreg_list		= qmp_phy_vreg_refgen,
++	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_refgen),
 +};
 +
-+static const struct qmp_phy_init_tbl qmp_v8_dp_serdes_tbl_hbr3[] = {
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_HSCLK_SEL_1, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_BIN_VCOCAL_CMP_CODE1_MODE0, 0x63),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_BIN_VCOCAL_CMP_CODE2_MODE0, 0x0c),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SSC_STEP_SIZE1_MODE0, 0x5b),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SSC_STEP_SIZE2_MODE0, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_CP_CTRL_MODE0, 0x06),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_PLL_RCTRL_MODE0, 0x16),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_PLL_CCTRL_MODE0, 0x36),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_CORECLK_DIV_MODE0, 0x0a),
-+
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_LOCK_CMP1_MODE0, 0x17),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_LOCK_CMP2_MODE0, 0x15),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DEC_START_MODE0, 0x4f),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DIV_FRAC_START1_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DIV_FRAC_START2_MODE0, 0xa0),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_DIV_FRAC_START3_MODE0, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_INTEGLOOP_GAIN0_MODE0, 0x3f),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_INTEGLOOP_GAIN1_MODE0, 0x00),
-+
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_VCO_TUNE1_MODE0, 0xa0),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_VCO_TUNE2_MODE0, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SSC_ADJ_PER1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SSC_PER1, 0x6b),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SSC_PER2, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_CLK_ENABLE1, 0x0c),
-+
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SYS_CLK_CTRL, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SYSCLK_BUF_ENABLE, 0x06),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_PLL_IVCO, 0x07),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SYSCLK_EN_SEL, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_VCO_TUNE_CTRL, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_VCO_TUNE_MAP, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_CLK_SELECT, 0x30),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_CORE_CLK_EN, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_CMN_CONFIG_1, 0x16),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_SVS_MODE_CLK_SEL, 0x15),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_CLK_FWD_CONFIG_1, 0x30),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_BIAS_EN_CLKBUFLR_EN, 0x10),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_CMN_MODE_CONTD3, 0x05),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_CMN_MODE_CONTD1, 0x24),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_BIN_VCOCAL_HSCLK_SEL_1, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_V8_USB43_COM_IP_CTRL_AND_DP_SEL, 0x84),
-+};
-+
- static const struct qmp_phy_init_tbl sc8280xp_usb43dp_serdes_tbl[] = {
- 	QMP_PHY_INIT_CFG(QSERDES_V5_COM_SSC_EN_CENTER, 0x01),
- 	QMP_PHY_INIT_CFG(QSERDES_V5_COM_SSC_PER1, 0x31),
-@@ -2070,6 +2238,7 @@ struct qmp_phy_cfg {
- 	const u8 (*pre_emphasis_hbr3_hbr2)[4][4];
- 
- 	/* DP PHY callbacks */
-+	int (*configure_dp_clocks)(struct qmp_combo *qmp);
- 	int (*configure_dp_phy)(struct qmp_combo *qmp);
- 	void (*configure_dp_tx)(struct qmp_combo *qmp);
- 	int (*calibrate_dp_phy)(struct qmp_combo *qmp);
-@@ -2147,6 +2316,7 @@ struct qmp_combo {
- 
- static void qmp_v3_dp_aux_init(struct qmp_combo *qmp);
- static void qmp_v3_configure_dp_tx(struct qmp_combo *qmp);
-+static int qmp_v3_configure_dp_clocks(struct qmp_combo *qmp);
- static int qmp_v3_configure_dp_phy(struct qmp_combo *qmp);
- static int qmp_v3_calibrate_dp_phy(struct qmp_combo *qmp);
- 
-@@ -2155,6 +2325,10 @@ static void qmp_v4_configure_dp_tx(struct qmp_combo *qmp);
- static int qmp_v4_configure_dp_phy(struct qmp_combo *qmp);
- static int qmp_v4_calibrate_dp_phy(struct qmp_combo *qmp);
- 
-+static void qmp_v8_dp_aux_init(struct qmp_combo *qmp);
-+static int qmp_v8_configure_dp_clocks(struct qmp_combo *qmp);
-+static int qmp_v8_configure_dp_phy(struct qmp_combo *qmp);
-+
- static inline void qphy_setbits(void __iomem *base, u32 offset, u32 val)
- {
- 	u32 reg;
-@@ -2288,6 +2462,7 @@ static const struct qmp_phy_cfg sar2130p_usb3dpphy_cfg = {
- 
- 	.dp_aux_init		= qmp_v4_dp_aux_init,
- 	.configure_dp_tx	= qmp_v4_configure_dp_tx,
-+	.configure_dp_clocks	= qmp_v3_configure_dp_clocks,
- 	.configure_dp_phy	= qmp_v4_configure_dp_phy,
- 	.calibrate_dp_phy	= qmp_v4_calibrate_dp_phy,
- 
-@@ -2423,6 +2598,7 @@ static const struct qmp_phy_cfg sc8180x_usb3dpphy_cfg = {
- 
- 	.dp_aux_init		= qmp_v4_dp_aux_init,
- 	.configure_dp_tx	= qmp_v4_configure_dp_tx,
-+	.configure_dp_clocks	= qmp_v3_configure_dp_clocks,
- 	.configure_dp_phy	= qmp_v4_configure_dp_phy,
- 	.calibrate_dp_phy	= qmp_v4_calibrate_dp_phy,
- 
-@@ -2469,6 +2645,7 @@ static const struct qmp_phy_cfg sc8280xp_usb43dpphy_cfg = {
- 
- 	.dp_aux_init		= qmp_v4_dp_aux_init,
- 	.configure_dp_tx	= qmp_v4_configure_dp_tx,
-+	.configure_dp_clocks	= qmp_v3_configure_dp_clocks,
- 	.configure_dp_phy	= qmp_v4_configure_dp_phy,
- 	.calibrate_dp_phy	= qmp_v4_calibrate_dp_phy,
- 
-@@ -2514,6 +2691,7 @@ static const struct qmp_phy_cfg x1e80100_usb3dpphy_cfg = {
- 
- 	.dp_aux_init		= qmp_v4_dp_aux_init,
- 	.configure_dp_tx	= qmp_v4_configure_dp_tx,
-+	.configure_dp_clocks	= qmp_v3_configure_dp_clocks,
- 	.configure_dp_phy	= qmp_v4_configure_dp_phy,
- 	.calibrate_dp_phy	= qmp_v4_calibrate_dp_phy,
- 
-@@ -2602,6 +2780,7 @@ static const struct qmp_phy_cfg sm8250_usb3dpphy_cfg = {
- 
- 	.dp_aux_init		= qmp_v4_dp_aux_init,
- 	.configure_dp_tx	= qmp_v4_configure_dp_tx,
-+	.configure_dp_clocks	= qmp_v3_configure_dp_clocks,
- 	.configure_dp_phy	= qmp_v4_configure_dp_phy,
- 	.calibrate_dp_phy	= qmp_v4_calibrate_dp_phy,
- 
-@@ -2650,6 +2829,7 @@ static const struct qmp_phy_cfg sm8350_usb3dpphy_cfg = {
- 
- 	.dp_aux_init		= qmp_v4_dp_aux_init,
- 	.configure_dp_tx	= qmp_v4_configure_dp_tx,
-+	.configure_dp_clocks	= qmp_v3_configure_dp_clocks,
- 	.configure_dp_phy	= qmp_v4_configure_dp_phy,
- 	.calibrate_dp_phy	= qmp_v4_calibrate_dp_phy,
- 
-@@ -2697,6 +2877,7 @@ static const struct qmp_phy_cfg sm8550_usb3dpphy_cfg = {
- 
- 	.dp_aux_init		= qmp_v4_dp_aux_init,
- 	.configure_dp_tx	= qmp_v4_configure_dp_tx,
-+	.configure_dp_clocks	= qmp_v3_configure_dp_clocks,
- 	.configure_dp_phy	= qmp_v4_configure_dp_phy,
- 	.calibrate_dp_phy	= qmp_v4_calibrate_dp_phy,
- 
-@@ -2742,6 +2923,7 @@ static const struct qmp_phy_cfg sm8650_usb3dpphy_cfg = {
- 
- 	.dp_aux_init		= qmp_v4_dp_aux_init,
- 	.configure_dp_tx	= qmp_v4_configure_dp_tx,
-+	.configure_dp_clocks	= qmp_v3_configure_dp_clocks,
- 	.configure_dp_phy	= qmp_v4_configure_dp_phy,
- 	.calibrate_dp_phy	= qmp_v4_calibrate_dp_phy,
- 
-@@ -2787,6 +2969,7 @@ static const struct qmp_phy_cfg sm8750_usb3dpphy_cfg = {
- 
- 	.dp_aux_init		= qmp_v4_dp_aux_init,
- 	.configure_dp_tx	= qmp_v4_configure_dp_tx,
-+	.configure_dp_clocks	= qmp_v3_configure_dp_clocks,
- 	.configure_dp_phy	= qmp_v4_configure_dp_phy,
- 	.calibrate_dp_phy	= qmp_v4_calibrate_dp_phy,
- 
-@@ -2811,6 +2994,31 @@ static const struct qmp_phy_cfg glymur_usb3dpphy_cfg = {
- 	.pcs_misc_tbl		= glymur_usb43dp_pcs_misc_tbl,
- 	.pcs_misc_tbl_num	= ARRAY_SIZE(glymur_usb43dp_pcs_misc_tbl),
- 
-+	.dp_serdes_tbl		= qmp_v8_dp_serdes_tbl,
-+	.dp_serdes_tbl_num	= ARRAY_SIZE(qmp_v8_dp_serdes_tbl),
-+	.dp_tx_tbl		= qmp_v8_n3p_dp_tx_tbl,
-+	.dp_tx_tbl_num		= ARRAY_SIZE(qmp_v8_n3p_dp_tx_tbl),
-+
-+	.serdes_tbl_rbr		= qmp_v8_dp_serdes_tbl_rbr,
-+	.serdes_tbl_rbr_num	= ARRAY_SIZE(qmp_v8_dp_serdes_tbl_rbr),
-+	.serdes_tbl_hbr		= qmp_v8_dp_serdes_tbl_hbr,
-+	.serdes_tbl_hbr_num	= ARRAY_SIZE(qmp_v8_dp_serdes_tbl_hbr),
-+	.serdes_tbl_hbr2	= qmp_v8_dp_serdes_tbl_hbr2,
-+	.serdes_tbl_hbr2_num	= ARRAY_SIZE(qmp_v8_dp_serdes_tbl_hbr2),
-+	.serdes_tbl_hbr3	= qmp_v8_dp_serdes_tbl_hbr3,
-+	.serdes_tbl_hbr3_num	= ARRAY_SIZE(qmp_v8_dp_serdes_tbl_hbr3),
-+
-+	.swing_hbr_rbr		= &qmp_dp_v6_voltage_swing_hbr_rbr,
-+	.pre_emphasis_hbr_rbr	= &qmp_dp_v6_pre_emphasis_hbr_rbr,
-+	.swing_hbr3_hbr2	= &qmp_dp_v5_voltage_swing_hbr3_hbr2,
-+	.pre_emphasis_hbr3_hbr2	= &qmp_dp_v5_pre_emphasis_hbr3_hbr2,
-+
-+	.dp_aux_init		= qmp_v8_dp_aux_init,
-+	.configure_dp_tx	= qmp_v4_configure_dp_tx,
-+	.configure_dp_clocks	= qmp_v8_configure_dp_clocks,
-+	.configure_dp_phy	= qmp_v8_configure_dp_phy,
-+	.calibrate_dp_phy	= qmp_v4_calibrate_dp_phy,
-+
- 	.regs			= qmp_v8_n3_usb43dpphy_regs_layout,
- 	.reset_list		= msm8996_usb3phy_reset_l,
- 	.num_resets		= ARRAY_SIZE(msm8996_usb3phy_reset_l),
-@@ -2980,7 +3188,7 @@ static bool qmp_combo_configure_dp_mode(struct qmp_combo *qmp)
- 	return reverse;
- }
- 
--static int qmp_combo_configure_dp_clocks(struct qmp_combo *qmp)
-+static int qmp_v3_configure_dp_clocks(struct qmp_combo *qmp)
- {
- 	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_opts;
- 	u32 phy_vco_div;
-@@ -3027,7 +3235,7 @@ static int qmp_v3_configure_dp_phy(struct qmp_combo *qmp)
- 	writel(0x05, qmp->dp_dp_phy + QSERDES_V3_DP_PHY_TX0_TX1_LANE_CTL);
- 	writel(0x05, qmp->dp_dp_phy + QSERDES_V3_DP_PHY_TX2_TX3_LANE_CTL);
- 
--	ret = qmp_combo_configure_dp_clocks(qmp);
-+	ret = qmp_v3_configure_dp_clocks(qmp);
- 	if (ret)
- 		return ret;
- 
-@@ -3113,6 +3321,35 @@ static void qmp_v4_dp_aux_init(struct qmp_combo *qmp)
- 	       qmp->dp_dp_phy + QSERDES_V4_DP_PHY_AUX_INTERRUPT_MASK);
- }
- 
-+static void qmp_v8_dp_aux_init(struct qmp_combo *qmp)
-+{
-+	const struct qmp_phy_cfg *cfg = qmp->cfg;
-+
-+	writel(DP_PHY_PD_CTL_PWRDN | DP_PHY_PD_CTL_PSR_PWRDN | DP_PHY_PD_CTL_AUX_PWRDN |
-+	       DP_PHY_PD_CTL_PLL_PWRDN | DP_PHY_PD_CTL_DP_CLAMP_EN,
-+	       qmp->dp_dp_phy + QSERDES_DP_PHY_PD_CTL);
-+
-+	/* Turn on BIAS current for PHY/PLL */
-+	writel(0x1c, qmp->dp_serdes + cfg->regs[QPHY_COM_BIAS_EN_CLKBUFLR_EN]);
-+
-+	writel(0x00, qmp->dp_dp_phy + QSERDES_DP_PHY_AUX_CFG0);
-+	writel(0x13, qmp->dp_dp_phy + QSERDES_DP_PHY_AUX_CFG1);
-+	writel(0x06, qmp->dp_dp_phy + QSERDES_DP_PHY_AUX_CFG2);
-+	writel(0x00, qmp->dp_dp_phy + QSERDES_DP_PHY_AUX_CFG3);
-+	writel(0x0a, qmp->dp_dp_phy + QSERDES_DP_PHY_AUX_CFG4);
-+	writel(0x26, qmp->dp_dp_phy + QSERDES_DP_PHY_AUX_CFG5);
-+	writel(0x0a, qmp->dp_dp_phy + QSERDES_DP_PHY_AUX_CFG6);
-+	writel(0x03, qmp->dp_dp_phy + QSERDES_DP_PHY_AUX_CFG7);
-+	writel(0xb7, qmp->dp_dp_phy + QSERDES_DP_PHY_AUX_CFG8);
-+	writel(0x03, qmp->dp_dp_phy + QSERDES_DP_PHY_AUX_CFG9);
-+	qmp->dp_aux_cfg = 0;
-+
-+	writel(PHY_AUX_STOP_ERR_MASK | PHY_AUX_DEC_ERR_MASK |
-+	       PHY_AUX_SYNC_ERR_MASK | PHY_AUX_ALIGN_ERR_MASK |
-+	       PHY_AUX_REQ_ERR_MASK,
-+	       qmp->dp_dp_phy + QSERDES_V4_DP_PHY_AUX_INTERRUPT_MASK);
-+}
-+
- static void qmp_v4_configure_dp_tx(struct qmp_combo *qmp)
+ static int qmp_combo_dp_serdes_init(struct qmp_combo *qmp)
  {
  	const struct qmp_phy_cfg *cfg = qmp->cfg;
-@@ -3127,6 +3364,58 @@ static void qmp_v4_configure_dp_tx(struct qmp_combo *qmp)
- 	qmp_combo_configure_dp_swing(qmp);
- }
- 
-+static int qmp_v8_configure_dp_clocks(struct qmp_combo *qmp)
-+{
-+	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_opts;
-+	u32 phy_vco_div;
-+	unsigned long pixel_freq;
-+	const struct qmp_phy_cfg *cfg = qmp->cfg;
-+
-+	switch (dp_opts->link_rate) {
-+	case 1620:
-+		phy_vco_div = 0x4;
-+		pixel_freq = 1620000000UL / 2;
-+		break;
-+	case 2700:
-+		phy_vco_div = 0x2;
-+		pixel_freq = 2700000000UL / 2;
-+		break;
-+	case 5400:
-+		phy_vco_div = 0x4;
-+		pixel_freq = 5400000000UL / 4;
-+		break;
-+	case 8100:
-+		phy_vco_div = 0x3;
-+		pixel_freq = 8100000000UL / 6;
-+		break;
-+	default:
-+		/* Other link rates aren't supported */
-+		return -EINVAL;
-+	}
-+	writel(phy_vco_div, qmp->dp_dp_phy + cfg->regs[QPHY_DP_PHY_VCO_DIV]);
-+
-+	/* disable core reset tsync */
-+	writel(0x09, qmp->dp_dp_phy + QSERDES_DP_PHY_CFG);
-+
-+	writel(0x04, qmp->dp_dp_phy + QSERDES_V8_DP_PHY_AUXLESS_SETUP_CYC);
-+	writel(0x08, qmp->dp_dp_phy + QSERDES_V8_DP_PHY_AUXLESS_SILENCE_CYC);
-+	writel(0x08, qmp->dp_dp_phy + QSERDES_V8_DP_PHY_LFPS_CYC);
-+	writel(0x11, qmp->dp_dp_phy + QSERDES_V8_DP_PHY_LFPS_PERIOD);
-+
-+	writel(0x3e, qmp->dp_dp_phy + QSERDES_V8_DP_PHY_TSYNC_OVRD);
-+	writel(0x05, qmp->dp_dp_phy + QSERDES_V8_DP_PHY_TX2_TX3_LANE_CTL);
-+	writel(0x05, qmp->dp_dp_phy + QSERDES_V8_DP_PHY_TX0_TX1_LANE_CTL);
-+	writel(0x01, qmp->dp_dp_phy + QSERDES_V8_DP_PHY_AUXLESS_CFG1);
-+	writel(0x11, qmp->dp_dp_phy + QSERDES_V8_DP_PHY_LFPS_PERIOD);
-+	writel(0x1f, qmp->dp_dp_phy + QSERDES_V8_DP_PHY_LN0_DRV_LVL);
-+	writel(0x1f, qmp->dp_dp_phy + QSERDES_V8_DP_PHY_LN1_DRV_LVL);
-+
-+	clk_set_rate(qmp->dp_link_hw.clk, dp_opts->link_rate * 100000);
-+	clk_set_rate(qmp->dp_pixel_hw.clk, pixel_freq);
-+
-+	return 0;
-+}
-+
- static int qmp_v456_configure_dp_phy(struct qmp_combo *qmp)
+@@ -3040,6 +3314,7 @@ static int qmp_combo_com_init(struct qmp_combo *qmp, bool force)
  {
  	const struct qmp_phy_cfg *cfg = qmp->cfg;
-@@ -3143,7 +3432,7 @@ static int qmp_v456_configure_dp_phy(struct qmp_combo *qmp)
- 	writel(0x05, qmp->dp_dp_phy + QSERDES_V4_DP_PHY_TX0_TX1_LANE_CTL);
- 	writel(0x05, qmp->dp_dp_phy + QSERDES_V4_DP_PHY_TX2_TX3_LANE_CTL);
+ 	void __iomem *com = qmp->com;
++	void __iomem *pcs_aon = qmp->pcs_aon;
+ 	int ret;
+ 	u32 val;
  
--	ret = qmp_combo_configure_dp_clocks(qmp);
-+	ret = qmp->cfg->configure_dp_clocks(qmp);
- 	if (ret)
- 		return ret;
- 
-@@ -3257,6 +3546,62 @@ static int qmp_v4_configure_dp_phy(struct qmp_combo *qmp)
- 	return 0;
- }
- 
-+static int qmp_v8_configure_dp_phy(struct qmp_combo *qmp)
-+{
-+	const struct qmp_phy_cfg *cfg = qmp->cfg;
-+	bool reverse = (qmp->orientation == TYPEC_ORIENTATION_REVERSE);
-+	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_opts;
-+	u32 bias0_en, drvr0_en, bias1_en, drvr1_en;
-+	u32 status;
-+	int ret;
-+
-+	ret = qmp_v456_configure_dp_phy(qmp);
-+	if (ret < 0)
-+		return ret;
-+
-+	if (dp_opts->lanes == 1) {
-+		bias0_en = reverse ? 0x3e : 0x15;
-+		bias1_en = reverse ? 0x15 : 0x3e;
-+		drvr0_en = reverse ? 0x13 : 0x10;
-+		drvr1_en = reverse ? 0x10 : 0x13;
-+	} else if (dp_opts->lanes == 2) {
-+		bias0_en = reverse ? 0x3f : 0x15;
-+		bias1_en = reverse ? 0x15 : 0x3f;
-+		drvr0_en = 0x10;
-+		drvr1_en = 0x10;
-+	} else {
-+		bias0_en = 0x3f;
-+		bias1_en = 0x3f;
-+		drvr0_en = 0x34;
-+		drvr1_en = 0x34;
-+	}
-+
-+	writel(drvr0_en, qmp->dp_tx + cfg->regs[QPHY_TX_HIGHZ_DRVR_EN]);
-+	writel(bias0_en, qmp->dp_tx + cfg->regs[QPHY_TX_TRANSCEIVER_BIAS_EN]);
-+	writel(drvr1_en, qmp->dp_tx2 + cfg->regs[QPHY_TX_HIGHZ_DRVR_EN]);
-+	writel(bias1_en, qmp->dp_tx2 + cfg->regs[QPHY_TX_TRANSCEIVER_BIAS_EN]);
-+
-+	writel(0x08, qmp->dp_dp_phy + QSERDES_DP_PHY_CFG);
-+	udelay(100);
-+	writel(0x09, qmp->dp_dp_phy + QSERDES_DP_PHY_CFG);
-+	udelay(500);
-+
-+	if (readl_poll_timeout(qmp->dp_dp_phy + cfg->regs[QPHY_DP_PHY_STATUS],
-+			status,
-+			((status & BIT(1)) > 0),
-+			500,
-+			10000))
-+		return -ETIMEDOUT;
-+
-+	writel(0x00, qmp->dp_tx + cfg->regs[QPHY_TX_TX_DRV_LVL]);
-+	writel(0x00, qmp->dp_tx2 + cfg->regs[QPHY_TX_TX_DRV_LVL]);
-+
-+	writel(0x2b, qmp->dp_tx + cfg->regs[QPHY_TX_TX_EMP_POST1_LVL]);
-+	writel(0x2b, qmp->dp_tx2 + cfg->regs[QPHY_TX_TX_EMP_POST1_LVL]);
-+
-+	return 0;
-+}
-+
- /*
-  * We need to calibrate the aux setting here as many times
-  * as the caller tries
-@@ -3351,8 +3696,10 @@ static int qmp_combo_com_init(struct qmp_combo *qmp, bool force)
+@@ -3075,6 +3350,10 @@ static int qmp_combo_com_init(struct qmp_combo *qmp, bool force)
+ 			SW_DPPHY_RESET_MUX | SW_DPPHY_RESET |
  			SW_USB3PHY_RESET_MUX | SW_USB3PHY_RESET);
  
- 	/* override hardware control for reset of qmp phy */
--	if (pcs_aon && cfg->regs[QPHY_AON_TOGGLE_ENABLE])
-+	if (pcs_aon && cfg->regs[QPHY_AON_TOGGLE_ENABLE]) {
- 		qphy_clrbits(pcs_aon, cfg->regs[QPHY_AON_TOGGLE_ENABLE], 0x1);
-+		qphy_clrbits(pcs_aon, cfg->regs[QPHY_DP_AON_TOGGLE_ENABLE], 0x1);
-+	}
- 
++	/* override hardware control for reset of qmp phy */
++	if (pcs_aon && cfg->regs[QPHY_AON_TOGGLE_ENABLE])
++		qphy_clrbits(pcs_aon, cfg->regs[QPHY_AON_TOGGLE_ENABLE], 0x1);
++
  	/* Use software based port select and switch on typec orientation */
  	val = SW_PORTSELECT_MUX;
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-dp-phy-v8.h b/drivers/phy/qualcomm/phy-qcom-qmp-dp-phy-v8.h
+ 	if (qmp->orientation == TYPEC_ORIENTATION_REVERSE)
+@@ -3252,6 +3531,8 @@ static int qmp_combo_usb_power_on(struct phy *phy)
+ 	qmp_configure_lane(qmp->dev, rx2, cfg->rx_tbl, cfg->rx_tbl_num, 2);
+ 
+ 	qmp_configure(qmp->dev, pcs, cfg->pcs_tbl, cfg->pcs_tbl_num);
++	qmp_configure(qmp->dev, qmp->pcs_misc, cfg->pcs_misc_tbl, cfg->pcs_misc_tbl_num);
++
+ 
+ 	if (pcs_usb)
+ 		qmp_configure(qmp->dev, pcs_usb, cfg->pcs_usb_tbl,
+@@ -4347,6 +4628,10 @@ static int qmp_combo_probe(struct platform_device *pdev)
+ }
+ 
+ static const struct of_device_id qmp_combo_of_match_table[] = {
++	{
++		.compatible = "qcom,glymur-qmp-usb3-dp-phy",
++		.data = &glymur_usb3dpphy_cfg,
++	},
+ 	{
+ 		.compatible = "qcom,sar2130p-qmp-usb3-dp-phy",
+ 		.data = &sar2130p_usb3dpphy_cfg,
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-aon-v8.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-aon-v8.h
 new file mode 100644
-index 000000000000..b6a8ab59c2ff
+index 000000000000..f6a275c0938f
 --- /dev/null
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-dp-phy-v8.h
-@@ -0,0 +1,25 @@
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-aon-v8.h
+@@ -0,0 +1,17 @@
 +/* SPDX-License-Identifier: GPL-2.0 */
 +/*
-+ * Copyright (c) 2017, The Linux Foundation. All rights reserved.
++ * Copyright (c) 2025, Qualcomm Innovation Center, Inc. All rights reserved.
 + */
 +
-+#ifndef QCOM_PHY_QMP_DP_PHY_V8_H_
-+#define QCOM_PHY_QMP_DP_PHY_V8_H_
++#ifndef QCOM_PHY_QMP_PCS_AON_V8_H_
++#define QCOM_PHY_QMP_PCS_AON_V8_H_
 +
-+/* Only for QMP V8 PHY - DP PHY registers */
-+#define QSERDES_V8_DP_PHY_VCO_DIV			0x070
-+#define QSERDES_V8_DP_PHY_AUX_INTERRUPT_STATUS		0x0e0
-+#define QSERDES_V8_DP_PHY_TSYNC_OVRD			0x074
-+#define QSERDES_V8_DP_PHY_TX0_TX1_LANE_CTL		0x078
-+#define QSERDES_V8_DP_PHY_TX2_TX3_LANE_CTL		0x0bc
-+#define QSERDES_V8_DP_PHY_AUXLESS_CFG1			0x0c8
-+#define QSERDES_V8_DP_PHY_LFPS_PERIOD			0x0d0
-+#define QSERDES_V8_DP_PHY_LFPS_CYC			0x0d4
-+#define QSERDES_V8_DP_PHY_AUXLESS_SETUP_CYC		0x0d8
-+#define QSERDES_V8_DP_PHY_AUXLESS_SILENCE_CYC		0x0d8
-+#define QSERDES_V8_DP_PHY_LN0_DRV_LVL			0x0e0
-+#define QSERDES_V8_DP_PHY_LN1_DRV_LVL			0x0e4
-+#define QSERDES_V8_DP_PHY_STATUS			0x114
-+
++/* Only for QMP V8 PHY - PCS_AON registers */
++#define QPHY_V8_PCS_AON_USB3_AON_CLAMP_ENABLE     0x00
++#define QPHY_V8_PCS_AON_USB4_AON_CLAMP_ENABLE     0x04
++#define QPHY_V8_PCS_AON_USB3_AON_TOGGLE_ENABLE    0x08
++#define QPHY_V8_PCS_AON_USB4_AON_TOGGLE_ENABLE    0x0c
++#define QPHY_V8_PCS_AON_DP_AON_TOGGLE_ENABLE      0x10
++#define QPHY_V8_PCS_AON_DUMMY_STATUS              0x14
 +
 +#endif
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-dp-qserdes-com-v8.h b/drivers/phy/qualcomm/phy-qcom-qmp-dp-qserdes-com-v8.h
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcs-misc-v8.h b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-misc-v8.h
 new file mode 100644
-index 000000000000..2bef1eecdc56
+index 000000000000..a93ef2faa894
 --- /dev/null
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-dp-qserdes-com-v8.h
-@@ -0,0 +1,52 @@
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcs-misc-v8.h
+@@ -0,0 +1,12 @@
 +/* SPDX-License-Identifier: GPL-2.0 */
 +/*
-+ * Copyright (C) 2025 Linaro Ltd.
++ * Copyright (c) 2025 Qualcomm Innovation Center, Inc. All rights reserved.
 + */
 +
-+#ifndef QCOM_PHY_QMP_DP_QSERDES_COM_V8_H_
-+#define QCOM_PHY_QMP_DP_QSERDES_COM_V8_H_
++#ifndef QCOM_PHY_QMP_PCS_MISC_V8_H_
++#define QCOM_PHY_QMP_PCS_MISC_V8_H_
 +
-+/* Only for DP QMP V8 PHY - QSERDES COM registers */
-+#define DP_QSERDES_V8_COM_HSCLK_SEL_1			0x03c
-+#define DP_QSERDES_V8_COM_BIN_VCOCAL_CMP_CODE1_MODE0	0x058
-+#define DP_QSERDES_V8_COM_BIN_VCOCAL_CMP_CODE2_MODE0	0x05c
-+#define DP_QSERDES_V8_COM_SSC_STEP_SIZE1_MODE0		0x060
-+#define DP_QSERDES_V8_COM_SSC_STEP_SIZE2_MODE0		0x064
-+#define DP_QSERDES_V8_COM_CP_CTRL_MODE0			0x070
-+#define DP_QSERDES_V8_COM_PLL_RCTRL_MODE0		0x074
-+#define DP_QSERDES_V8_COM_PLL_CCTRL_MODE0		0x078
-+#define DP_QSERDES_V8_COM_CORECLK_DIV_MODE0		0x07c
-+#define DP_QSERDES_V8_COM_LOCK_CMP1_MODE0		0x080
-+#define DP_QSERDES_V8_COM_LOCK_CMP2_MODE0		0x084
-+#define DP_QSERDES_V8_COM_DEC_START_MODE0		0x088
-+#define DP_QSERDES_V8_COM_DIV_FRAC_START1_MODE0		0x090
-+#define DP_QSERDES_V8_COM_DIV_FRAC_START2_MODE0		0x094
-+#define DP_QSERDES_V8_COM_DIV_FRAC_START3_MODE0		0x098
-+#define DP_QSERDES_V8_COM_INTEGLOOP_GAIN0_MODE0		0x0a0
-+#define DP_QSERDES_V8_COM_VCO_TUNE1_MODE0		0x0a8
-+#define DP_QSERDES_V8_COM_INTEGLOOP_GAIN1_MODE0		0x0a4
-+#define DP_QSERDES_V8_COM_VCO_TUNE2_MODE0		0x0ac
-+#define DP_QSERDES_V8_COM_BG_TIMER			0x0bc
-+#define DP_QSERDES_V8_COM_SSC_EN_CENTER			0x0c0
-+#define DP_QSERDES_V8_COM_SSC_ADJ_PER1			0x0c4
-+#define DP_QSERDES_V8_COM_SSC_PER1			0x0cc
-+#define DP_QSERDES_V8_COM_SSC_PER2			0x0d0
-+#define DP_QSERDES_V8_COM_BIAS_EN_CLKBUFLR_EN		0x0dc
-+#define DP_QSERDES_V8_COM_CLK_ENABLE1			0x0e0
-+#define DP_QSERDES_V8_COM_SYS_CLK_CTRL			0x0e4
-+#define DP_QSERDES_V8_COM_SYSCLK_BUF_ENABLE		0x0e8
-+#define DP_QSERDES_V8_COM_PLL_IVCO			0x0f4
-+#define DP_QSERDES_V8_COM_SYSCLK_EN_SEL			0x110
-+#define DP_QSERDES_V8_COM_RESETSM_CNTRL			0x118
-+#define DP_QSERDES_V8_COM_LOCK_CMP_EN			0x120
-+#define DP_QSERDES_V8_COM_VCO_TUNE_CTRL			0x13c
-+#define DP_QSERDES_V8_COM_VCO_TUNE_MAP			0x140
-+#define DP_QSERDES_V8_COM_CLK_SELECT			0x164
-+#define DP_QSERDES_V8_COM_CORE_CLK_EN			0x170
-+#define DP_QSERDES_V8_COM_CMN_CONFIG_1			0x174
-+#define DP_QSERDES_V8_COM_SVS_MODE_CLK_SEL		0x180
-+#define DP_QSERDES_V8_COM_CLK_FWD_CONFIG_1		0x2f4
-+#define DP_QSERDES_V8_COM_CMN_STATUS			0x314
-+#define DP_QSERDES_V8_COM_C_READY_STATUS		0x33c
++/* Only for QMP V8 PHY - PCS_MISC registers */
++#define QPHY_V8_PCS_MISC_PCS_MISC_CONFIG1		0x08
 +
 +#endif
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-lalb-v8.h b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-lalb-v8.h
+new file mode 100644
+index 000000000000..60ba730620f8
+--- /dev/null
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-lalb-v8.h
+@@ -0,0 +1,639 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * Copyright (c) 2025 Qualcomm Innovation Center, Inc. All rights reserved.
++ */
++
++#ifndef QCOM_PHY_QMP_QSERDES_V8_LALBH_
++#define QCOM_PHY_QMP_QSERDES_V8_LALBH_
++
++#define QSERDES_V8_LALB_BIST_MODE_LANENO	0x0
++#define QSERDES_V8_LALB_BIST_INVERT	0x4
++#define QSERDES_V8_LALB_PERL_LENGTH1	0x8
++#define QSERDES_V8_LALB_PERL_LENGTH2	0xc
++#define QSERDES_V8_LALB_BIST_PATTERN1	0x10
++#define QSERDES_V8_LALB_BIST_PATTERN2	0x14
++#define QSERDES_V8_LALB_BIST_PATTERN3	0x18
++#define QSERDES_V8_LALB_BIST_PATTERN4	0x1c
++#define QSERDES_V8_LALB_BIST_PATTERN5	0x20
++#define QSERDES_V8_LALB_BIST_PATTERN6	0x24
++#define QSERDES_V8_LALB_BIST_PATTERN7	0x28
++#define QSERDES_V8_LALB_BIST_PATTERN8	0x2c
++#define QSERDES_V8_LALB_PRBS_SEED1	0x30
++#define QSERDES_V8_LALB_PRBS_SEED2	0x34
++#define QSERDES_V8_LALB_PRBS_SEED3	0x38
++#define QSERDES_V8_LALB_PRBS_SEED4	0x3c
++#define QSERDES_V8_LALB_PRBS_SEED5	0x40
++#define QSERDES_V8_LALB_PRBS_SEED6	0x44
++#define QSERDES_V8_LALB_PRBS_SEED7	0x48
++#define QSERDES_V8_LALB_SW_RESET_PWRDNB	0x4c
++#define QSERDES_V8_LALB_RESET_GEN	0x50
++#define QSERDES_V8_LALB_RESET_TSYNC_EN_CTRL	0x54
++#define QSERDES_V8_LALB_CDR_EN_RXEQ_RESET	0x58
++#define QSERDES_V8_LALB_CLKBUF_ENABLE	0x5c
++#define QSERDES_V8_LALB_TX0_EMP_POST1_LVL	0x60
++#define QSERDES_V8_LALB_TX1_EMP_POST1_LVL	0x64
++#define QSERDES_V8_LALB_TX0_IDLE_CTRL	0x68
++#define QSERDES_V8_LALB_TX1_IDLE_CTRL	0x6c
++#define QSERDES_V8_LALB_TX0_DRV_LVL	0x70
++#define QSERDES_V8_LALB_TX0_DRV_LVL_OFFSET	0x74
++#define QSERDES_V8_LALB_TX1_DRV_LVL	0x78
++#define QSERDES_V8_LALB_TX1_DRV_LVL_OFFSET	0x7c
++#define QSERDES_V8_LALB_TRAN_DRVR_EMP_EN	0x80
++#define QSERDES_V8_LALB_TX_LVL_UPDATE_CTRL	0x84
++#define QSERDES_V8_LALB_TX0_PRE1_EMPH	0x88
++#define QSERDES_V8_LALB_TX1_PRE1_EMPH	0x8c
++#define QSERDES_V8_LALB_TX0_PRE2_EMPH	0x90
++#define QSERDES_V8_LALB_TX1_PRE2_EMPH	0x94
++#define QSERDES_V8_LALB_STALL_LDO_BOOST_EN	0x98
++#define QSERDES_V8_LALB_PRE_EMPH_EN_CTRL	0x9c
++#define QSERDES_V8_LALB_PCIE5_TOP_LDO_CODE_CTRL1	0xa0
++#define QSERDES_V8_LALB_PCIE5_TOP_LDO_CODE_CTRL2	0xa4
++#define QSERDES_V8_LALB_PCIE5_TOP_LDO_CODE_CTRL3	0xa8
++#define QSERDES_V8_LALB_PCIE5_TOP_LDO_CODE_CTRL4	0xac
++#define QSERDES_V8_LALB_TRANSMITTER_EN_CTRL	0xb0
++#define QSERDES_V8_LALB_HIGHZ_DRVR_EN	0xb4
++#define QSERDES_V8_LALB_TX_MISC_CTRL1	0xb8
++#define QSERDES_V8_LALB_LPB_EN_CTRL1	0xbc
++#define QSERDES_V8_LALB_LBP_EN_CTRL2	0xc0
++#define QSERDES_V8_LALB_TX0_SERDES_BYP_CTRL	0xc4
++#define QSERDES_V8_LALB_TX1_SERDES_BYP_CTRL	0xc8
++#define QSERDES_V8_LALB_LANE_MODE_1	0xcc
++#define QSERDES_V8_LALB_LANE_MODE_2	0xd0
++#define QSERDES_V8_LALB_LANE_MODE_3	0xd4
++#define QSERDES_V8_LALB_LANE_MODE_4	0xd8
++#define QSERDES_V8_LALB_ATB_SEL1	0xdc
++#define QSERDES_V8_LALB_ATB_SEL2	0xe0
++#define QSERDES_V8_LALB_TX0_RES_CODE_LANE	0xe4
++#define QSERDES_V8_LALB_TX0_RESTRIM_ICAL_OVRD	0xe8
++#define QSERDES_V8_LALB_TX0_RESTRIM_CAL_CTRL	0xec
++#define QSERDES_V8_LALB_TX0_RESTRIM_INIT_CODE	0xf0
++#define QSERDES_V8_LALB_TX0_RESTRIM_POST_CAL_OFFSET	0xf4
++#define QSERDES_V8_LALB_TX1_RES_CODE_LANE	0xf8
++#define QSERDES_V8_LALB_TX1_RESTRIM_ICAL_OVRD	0xfc
++#define QSERDES_V8_LALB_TX1_RESTRIM_CAL_CTRL	0x100
++#define QSERDES_V8_LALB_TX1_RESTRIM_INIT_CODE	0x104
++#define QSERDES_V8_LALB_TX1_RESTRIM_POST_CAL_OFFSET	0x108
++#define QSERDES_V8_LALB_TX0_RESTRIM_VREF_SEL	0x10c
++#define QSERDES_V8_LALB_TX1_RESTRIM_VREF_SEL	0x110
++#define QSERDES_V8_LALB_VMODE_CTRL1	0x114
++#define QSERDES_V8_LALB_SLEW_CNTL_RATE01	0x118
++#define QSERDES_V8_LALB_SLEW_CNTL_RATE23	0x11c
++#define QSERDES_V8_LALB_SLEW_CNTL_RATE4	0x120
++#define QSERDES_V8_LALB_ANA_INTERFACE_SELECT1	0x124
++#define QSERDES_V8_LALB_ANA_INTERFACE_SELECT2	0x128
++#define QSERDES_V8_LALB_ANA_INTERFACE_SELECT3	0x12c
++#define QSERDES_V8_LALB_PCS_INTERFACE_SELECT1	0x130
++#define QSERDES_V8_LALB_PCS_INTERFACE_SELECT2	0x134
++#define QSERDES_V8_LALB_LDO_TIMER_CTRL	0x138
++#define QSERDES_V8_LALB_AC_JTAG_ENABLE	0x13c
++#define QSERDES_V8_LALB_AC_JTAG_INITP	0x140
++#define QSERDES_V8_LALB_AC_JTAG_INITN	0x144
++#define QSERDES_V8_LALB_AC_JTAG_LVL	0x148
++#define QSERDES_V8_LALB_AC_JTAG_MODE	0x14c
++#define QSERDES_V8_LALB_AC_JTAG_RESET	0x150
++#define QSERDES_V8_LALB_RX_MODE_RATE_0_1_B0	0x154
++#define QSERDES_V8_LALB_RX_MODE_RATE_0_1_B1	0x158
++#define QSERDES_V8_LALB_RX_MODE_RATE_0_1_B2	0x15c
++#define QSERDES_V8_LALB_RX_MODE_RATE_0_1_B3	0x160
++#define QSERDES_V8_LALB_RX_MODE_RATE_0_1_B4	0x164
++#define QSERDES_V8_LALB_RX_MODE_RATE_0_1_B5	0x168
++#define QSERDES_V8_LALB_RX_MODE_RATE_0_1_B6	0x16c
++#define QSERDES_V8_LALB_RX_MODE_RATE_0_1_B7	0x170
++#define QSERDES_V8_LALB_RX_MODE_RATE2_B0	0x174
++#define QSERDES_V8_LALB_RX_MODE_RATE2_B1	0x178
++#define QSERDES_V8_LALB_RX_MODE_RATE2_B2	0x17c
++#define QSERDES_V8_LALB_RX_MODE_RATE2_B3	0x180
++#define QSERDES_V8_LALB_RX_MODE_RATE2_B4	0x184
++#define QSERDES_V8_LALB_RX_MODE_RATE2_B5	0x188
++#define QSERDES_V8_LALB_RX_MODE_RATE2_B6	0x18c
++#define QSERDES_V8_LALB_RX_MODE_RATE2_B7	0x190
++#define QSERDES_V8_LALB_RX_MODE_RATE3_B0	0x194
++#define QSERDES_V8_LALB_RX_MODE_RATE3_B1	0x198
++#define QSERDES_V8_LALB_RX_MODE_RATE3_B2	0x19c
++#define QSERDES_V8_LALB_RX_MODE_RATE3_B3	0x1a0
++#define QSERDES_V8_LALB_RX_MODE_RATE3_B4	0x1a4
++#define QSERDES_V8_LALB_RX_MODE_RATE3_B5	0x1a8
++#define QSERDES_V8_LALB_RX_MODE_RATE3_B6	0x1ac
++#define QSERDES_V8_LALB_RX_MODE_RATE3_B7	0x1b0
++#define QSERDES_V8_LALB_RX_MODE_RATE4_B0	0x1b4
++#define QSERDES_V8_LALB_RX_MODE_RATE4_B1	0x1b8
++#define QSERDES_V8_LALB_RX_MODE_RATE4_B2	0x1bc
++#define QSERDES_V8_LALB_RX_MODE_RATE4_B3	0x1c0
++#define QSERDES_V8_LALB_RX_MODE_RATE4_B4	0x1c4
++#define QSERDES_V8_LALB_RX_MODE_RATE4_B5	0x1c8
++#define QSERDES_V8_LALB_RX_MODE_RATE4_B6	0x1cc
++#define QSERDES_V8_LALB_RX_MODE_RATE4_B7	0x1d0
++#define QSERDES_V8_LALB_TX_DCC_ANA_CTRL1	0x1d4
++#define QSERDES_V8_LALB_TX_DCC_ANA_CTRL2	0x1d8
++#define QSERDES_V8_LALB_CMUX_DCC_CTRL1	0x1dc
++#define QSERDES_V8_LALB_CMUX_DCC_POSTCAL_OFFSET	0x1e0
++#define QSERDES_V8_LALB_CMUX_DCC_OVRD	0x1e4
++#define QSERDES_V8_LALB_TX_DCC_CTRL	0x1e8
++#define QSERDES_V8_LALB_TX0_CTUNE_DCC_CONFIG	0x1ec
++#define QSERDES_V8_LALB_TX0_CTUNE_DCC_POSTCAL_OFFSET	0x1f0
++#define QSERDES_V8_LALB_TX0_CTUNE_DCC_OVRD	0x1f4
++#define QSERDES_V8_LALB_TX0_FTUNE_MSB_DCC_CONFIG	0x1f8
++#define QSERDES_V8_LALB_TX0_FTUNE_MSB_DCC_OFFSET_AND_OVRD	0x1fc
++#define QSERDES_V8_LALB_TX0_FTUNE_LSB_DCC_CONFIG	0x200
++#define QSERDES_V8_LALB_TX0_FTUNE_LSB_DCC_OFFSET_AND_OVRD	0x204
++#define QSERDES_V8_LALB_TX1_CTUNE_DCC_CONFIG	0x208
++#define QSERDES_V8_LALB_TX1_CTUNE_DCC_POSTCAL_OFFSET	0x20c
++#define QSERDES_V8_LALB_TX1_CTUNE_DCC_OVRD	0x210
++#define QSERDES_V8_LALB_TX1_FTUNE_MSB_DCC_CONFIG	0x214
++#define QSERDES_V8_LALB_TX1_FTUNE_MSB_DCC_OFFSET_AND_OVRD	0x218
++#define QSERDES_V8_LALB_TX1_FTUNE_LSB_DCC_CONFIG	0x21c
++#define QSERDES_V8_LALB_TX1_FTUNE_LSB_DCC_OFFSET_AND_OVRD	0x220
++#define QSERDES_V8_LALB_CDR_VCO_CTUNE_CTRL	0x224
++#define QSERDES_V8_LALB_CDR_VCO_CTUNE_CODE_OVRD_RATE0	0x228
++#define QSERDES_V8_LALB_CDR_VCO_CTUNE_CODE_OVRD_RATE1	0x22c
++#define QSERDES_V8_LALB_CDR_VCO_CTUNE_CODE_OVRD_RATE2	0x230
++#define QSERDES_V8_LALB_CDR_VCO_CTUNE_CODE_OVRD_RATE3	0x234
++#define QSERDES_V8_LALB_CDR_VCO_CTUNE_CODE_OVRD_RATE4	0x238
++#define QSERDES_V8_LALB_CDR_VCO_CAL_CTRL	0x23c
++#define QSERDES_V8_LALB_CDR_VCO_CTUNE_MEAS_CNT1_RATE0	0x240
++#define QSERDES_V8_LALB_CDR_VCO_CTUNE_MEAS_CNT2_RATE0	0x244
++#define QSERDES_V8_LALB_CDR_VCO_CTUNE_MEAS_CNT1_RATE1	0x248
++#define QSERDES_V8_LALB_CDR_VCO_CTUNE_MEAS_CNT2_RATE1	0x24c
++#define QSERDES_V8_LALB_CDR_VCO_CTUNE_MEAS_CNT1_RATE2	0x250
++#define QSERDES_V8_LALB_CDR_VCO_CTUNE_MEAS_CNT2_RATE2	0x254
++#define QSERDES_V8_LALB_CDR_VCO_CTUNE_MEAS_CNT1_RATE3	0x258
++#define QSERDES_V8_LALB_CDR_VCO_CTUNE_MEAS_CNT2_RATE3	0x25c
++#define QSERDES_V8_LALB_CDR_VCO_CTUNE_MEAS_CNT1_RATE4	0x260
++#define QSERDES_V8_LALB_CDR_VCO_CTUNE_MEAS_CNT2_RATE4	0x264
++#define QSERDES_V8_LALB_CDR_VCTRL_RATE_0_1	0x268
++#define QSERDES_V8_LALB_CDR_VCTRL_RATE_2_3	0x26c
++#define QSERDES_V8_LALB_CDR_VCTRL_RATE_4	0x270
++#define QSERDES_V8_LALB_KVCO_INIT_RATE_0_1	0x274
++#define QSERDES_V8_LALB_KVCO_INIT_RATE_2_3	0x278
++#define QSERDES_V8_LALB_KVCO_INIT_RATE_4	0x27c
++#define QSERDES_V8_LALB_KVCO_CODE_OVRD_RATE0	0x280
++#define QSERDES_V8_LALB_KVCO_CODE_OVRD_RATE1	0x284
++#define QSERDES_V8_LALB_KVCO_CODE_OVRD_RATE2	0x288
++#define QSERDES_V8_LALB_KVCO_CODE_OVRD_RATE3	0x28c
++#define QSERDES_V8_LALB_KVCO_CODE_OVRD_RATE4	0x290
++#define QSERDES_V8_LALB_KVCO_CAL_VCTRL_HIGH_RATE_0_1	0x294
++#define QSERDES_V8_LALB_KVCO_CAL_VCTRL_HIGH_RATE_2_3	0x298
++#define QSERDES_V8_LALB_KVCO_CAL_VCTRL_HIGH_RATE_4	0x29c
++#define QSERDES_V8_LALB_KVCO_CAL_VCTRL_LOW_RATE_0_1	0x2a0
++#define QSERDES_V8_LALB_KVCO_CAL_VCTRL_LOW_RATE_2_3	0x2a4
++#define QSERDES_V8_LALB_KVCO_CAL_VCTRL_LOW_RATE_4	0x2a8
++#define QSERDES_V8_LALB_KVCO_IDEAL_FREQ_DIFF1_RATE0	0x2ac
++#define QSERDES_V8_LALB_KVCO_IDEAL_FREQ_DIFF2_RATE0	0x2b0
++#define QSERDES_V8_LALB_KVCO_IDEAL_FREQ_DIFF1_RATE1	0x2b4
++#define QSERDES_V8_LALB_KVCO_IDEAL_FREQ_DIFF2_RATE1	0x2b8
++#define QSERDES_V8_LALB_KVCO_IDEAL_FREQ_DIFF1_RATE2	0x2bc
++#define QSERDES_V8_LALB_KVCO_IDEAL_FREQ_DIFF2_RATE2	0x2c0
++#define QSERDES_V8_LALB_KVCO_IDEAL_FREQ_DIFF1_RATE3	0x2c4
++#define QSERDES_V8_LALB_KVCO_IDEAL_FREQ_DIFF2_RATE3	0x2c8
++#define QSERDES_V8_LALB_KVCO_IDEAL_FREQ_DIFF1_RATE4	0x2cc
++#define QSERDES_V8_LALB_KVCO_IDEAL_FREQ_DIFF2_RATE4	0x2d0
++#define QSERDES_V8_LALB_KP_CDR_UP_DN	0x2d4
++#define QSERDES_V8_LALB_KP_CODE_OVRD_RATE_0_1	0x2d8
++#define QSERDES_V8_LALB_KP_CODE_OVRD_RATE_2_3	0x2dc
++#define QSERDES_V8_LALB_KP_CODE_OVRD_RATE4	0x2e0
++#define QSERDES_V8_LALB_KP_CAL_UPPER_FREQ_DIFF_BND1_RATE0	0x2e4
++#define QSERDES_V8_LALB_KP_CAL_UPPER_FREQ_DIFF_BND2_RATE0	0x2e8
++#define QSERDES_V8_LALB_KP_CAL_UPPER_FREQ_DIFF_BND1_RATE1	0x2ec
++#define QSERDES_V8_LALB_KP_CAL_UPPER_FREQ_DIFF_BND2_RATE1	0x2f0
++#define QSERDES_V8_LALB_KP_CAL_UPPER_FREQ_DIFF_BND1_RATE2	0x2f4
++#define QSERDES_V8_LALB_KP_CAL_UPPER_FREQ_DIFF_BND2_RATE2	0x2f8
++#define QSERDES_V8_LALB_KP_CAL_UPPER_FREQ_DIFF_BND1_RATE3	0x2fc
++#define QSERDES_V8_LALB_KP_CAL_UPPER_FREQ_DIFF_BND2_RATE3	0x300
++#define QSERDES_V8_LALB_KP_CAL_UPPER_FREQ_DIFF_BND1_RATE4	0x304
++#define QSERDES_V8_LALB_KP_CAL_UPPER_FREQ_DIFF_BND2_RATE4	0x308
++#define QSERDES_V8_LALB_KP_CAL_LOWER_FREQ_DIFF_BND_RATE0	0x30c
++#define QSERDES_V8_LALB_KP_CAL_LOWER_FREQ_DIFF_BND_RATE1	0x310
++#define QSERDES_V8_LALB_KP_CAL_LOWER_FREQ_DIFF_BND_RATE2	0x314
++#define QSERDES_V8_LALB_KP_CAL_LOWER_FREQ_DIFF_BND_RATE3	0x318
++#define QSERDES_V8_LALB_KP_CAL_LOWER_FREQ_DIFF_BND_RATE4	0x31c
++#define QSERDES_V8_LALB_CDR_KVCO_KP_CAL_FREQ_MEAS_CTRL	0x320
++#define QSERDES_V8_LALB_PLLLOCK_CMP_DEBUG_CTRL	0x324
++#define QSERDES_V8_LALB_PLLLOCK_CMP_DEBUG_CNT1	0x328
++#define QSERDES_V8_LALB_PLLLOCK_CMP_DEBUG_CNT2	0x32c
++#define QSERDES_V8_LALB_PLLLOCK_CMP_DEBUG_CNT3	0x330
++#define QSERDES_V8_LALB_RX_SUMMER_CAL_SPD_MODE_RATE_0123	0x334
++#define QSERDES_V8_LALB_RX_SUMMER_CAL_SPD_MODE_RATE_4	0x338
++#define QSERDES_V8_LALB_RX_IVCM_CAL_CODE_OVERRIDE_RATE0	0x33c
++#define QSERDES_V8_LALB_RX_IVCM_CAL_CODE_OVERRIDE_RATE1	0x340
++#define QSERDES_V8_LALB_RX_IVCM_CAL_CODE_OVERRIDE_RATE2	0x344
++#define QSERDES_V8_LALB_RX_IVCM_CAL_CODE_OVERRIDE_RATE3	0x348
++#define QSERDES_V8_LALB_RX_IVCM_CAL_CODE_OVERRIDE_RATE4	0x34c
++#define QSERDES_V8_LALB_RX_IVCM_CAL_CTRL1	0x350
++#define QSERDES_V8_LALB_RX_IVCM_CAL_CTRL2	0x354
++#define QSERDES_V8_LALB_RX_IVCM_CAL_CTRL3	0x358
++#define QSERDES_V8_LALB_RX_IVCM_CAL_CTRL4	0x35c
++#define QSERDES_V8_LALB_RX_IVCM_POSTCAL_OFFSET_RATE0	0x360
++#define QSERDES_V8_LALB_RX_IVCM_POSTCAL_OFFSET_RATE1	0x364
++#define QSERDES_V8_LALB_RX_IVCM_POSTCAL_OFFSET_RATE2	0x368
++#define QSERDES_V8_LALB_RX_IVCM_POSTCAL_OFFSET_RATE3	0x36c
++#define QSERDES_V8_LALB_RX_IVCM_POSTCAL_OFFSET_RATE4	0x370
++#define QSERDES_V8_LALB_RX_IDAC_I0_DC_OFFSETS	0x374
++#define QSERDES_V8_LALB_RX_IDAC_I0BAR_DC_OFFSETS	0x378
++#define QSERDES_V8_LALB_RX_IDAC_I1_DC_OFFSETS	0x37c
++#define QSERDES_V8_LALB_RX_IDAC_I1BAR_DC_OFFSETS	0x380
++#define QSERDES_V8_LALB_RX_IDAC_Q_DC_OFFSETS	0x384
++#define QSERDES_V8_LALB_RX_IDAC_QBAR_DC_OFFSETS	0x388
++#define QSERDES_V8_LALB_RX_IDAC_A_DC_OFFSETS	0x38c
++#define QSERDES_V8_LALB_RX_IDAC_ABAR_DC_OFFSETS	0x390
++#define QSERDES_V8_LALB_RX_IDAC_EN	0x394
++#define QSERDES_V8_LALB_DATA_SLICER_INIT_TIMER_CTRL	0x398
++#define QSERDES_V8_LALB_RX_IDAC_ENABLES	0x39c
++#define QSERDES_V8_LALB_RX_IDAC_SIGN	0x3a0
++#define QSERDES_V8_LALB_RX_IDAC_TSETTLE	0x3a4
++#define QSERDES_V8_LALB_SIGDET_ENABLES	0x3a8
++#define QSERDES_V8_LALB_SIGDET_CNTRL	0x3ac
++#define QSERDES_V8_LALB_SIGDET_LVL	0x3b0
++#define QSERDES_V8_LALB_SIGDET_DEGLITCH_CNTRL	0x3b4
++#define QSERDES_V8_LALB_SIGDET_CAL_CTRL1	0x3b8
++#define QSERDES_V8_LALB_SIGDET_CAL_CTRL2_AND_CDR_LOCK_EDGE	0x3bc
++#define QSERDES_V8_LALB_SIGDET_CAL_TRIM	0x3c0
++#define QSERDES_V8_LALB_IA_OFFSET_CENTER_CAL_CTRL	0x3c4
++#define QSERDES_V8_LALB_FREQ_LOCK_DET_DLY_RATE0	0x3c8
++#define QSERDES_V8_LALB_FREQ_LOCK_DET_DLY_RATE1	0x3cc
++#define QSERDES_V8_LALB_FREQ_LOCK_DET_DLY_RATE2	0x3d0
++#define QSERDES_V8_LALB_FREQ_LOCK_DET_DLY_RATE3	0x3d4
++#define QSERDES_V8_LALB_FREQ_LOCK_DET_DLY_RATE4	0x3d8
++#define QSERDES_V8_LALB_CDR_PHASE_LOCK_CNT_RATE0	0x3dc
++#define QSERDES_V8_LALB_CDR_PHASE_LOCK_CNT_RATE1	0x3e0
++#define QSERDES_V8_LALB_CDR_PHASE_LOCK_CNT_RATE2	0x3e4
++#define QSERDES_V8_LALB_CDR_PHASE_LOCK_CNT_RATE3	0x3e8
++#define QSERDES_V8_LALB_CDR_PHASE_LOCK_CNT_RATE4	0x3ec
++#define QSERDES_V8_LALB_CDR_LOCK_CTRL	0x3f0
++#define QSERDES_V8_LALB_CDR_CP_CUR_FLL_RATE0	0x3f4
++#define QSERDES_V8_LALB_CDR_CP_CUR_FLL_RATE1	0x3f8
++#define QSERDES_V8_LALB_CDR_CP_CUR_FLL_RATE2	0x3fc
++#define QSERDES_V8_LALB_CDR_CP_CUR_FLL_RATE3	0x400
++#define QSERDES_V8_LALB_CDR_CP_CUR_FLL_RATE4	0x404
++#define QSERDES_V8_LALB_CDR_CP_CUR_PLL_RATE0	0x408
++#define QSERDES_V8_LALB_CDR_CP_CUR_PLL_RATE1	0x40c
++#define QSERDES_V8_LALB_CDR_CP_CUR_PLL_RATE2	0x410
++#define QSERDES_V8_LALB_CDR_CP_CUR_PLL_RATE3	0x414
++#define QSERDES_V8_LALB_CDR_CP_CUR_PLL_RATE4	0x418
++#define QSERDES_V8_LALB_CDR_FLL_DIV_RATIO_RATE_0123	0x41c
++#define QSERDES_V8_LALB_CDR_FLL_DIV_RATIO_RATE4	0x420
++#define QSERDES_V8_LALB_CDR_LOOP_CCODE_RATE_01	0x424
++#define QSERDES_V8_LALB_CDR_LOOP_CCODE_RATE_23	0x428
++#define QSERDES_V8_LALB_CDR_LOOP_CCODE_RATE4	0x42c
++#define QSERDES_V8_LALB_CDR_LOOP_RCODE_FAST_RATE_0_1	0x430
++#define QSERDES_V8_LALB_CDR_LOOP_RCODE_FAST_RATE_2_3	0x434
++#define QSERDES_V8_LALB_CDR_LOOP_RCODE_FAST_RATE4	0x438
++#define QSERDES_V8_LALB_CDR_LOOP_RCODE_FLL_RATE_0_1	0x43c
++#define QSERDES_V8_LALB_CDR_LOOP_RCODE_FLL_RATE_2_3	0x440
++#define QSERDES_V8_LALB_CDR_LOOP_RCODE_FLL_RATE4	0x444
++#define QSERDES_V8_LALB_CDR_LOOP_RCODE_PLL_RATE_0_1	0x448
++#define QSERDES_V8_LALB_CDR_LOOP_RCODE_PLL_RATE_2_3	0x44c
++#define QSERDES_V8_LALB_CDR_LOOP_RCODE_PLL_RATE4	0x450
++#define QSERDES_V8_LALB_CDR_VCO_CAP_CODE_RATE_0123	0x454
++#define QSERDES_V8_LALB_CDR_VCO_CAP_CODE_RATE4	0x458
++#define QSERDES_V8_LALB_CDR_VCO_TYPE_CONFIG	0x45c
++#define QSERDES_V8_LALB_CDR_VCO_EN_LOWFREQ	0x460
++#define QSERDES_V8_LALB_CDR_FAST_SLOW_VCO_OVRD	0x464
++#define QSERDES_V8_LALB_CDR_LOOP_FUNC_CTRL	0x468
++#define QSERDES_V8_LALB_CDR_FAST_LOCK_EN_CTRL	0x46c
++#define QSERDES_V8_LALB_RX_RCVR_EN	0x470
++#define QSERDES_V8_LALB_LANE_RATE_CTRL	0x474
++#define QSERDES_V8_LALB_RX_TERM_RCVR_CTRL	0x478
++#define QSERDES_V8_LALB_REC_DETECT_CTRL	0x47c
++#define QSERDES_V8_LALB_RCV_DETECT_LVL	0x480
++#define QSERDES_V8_LALB_GM_CAL_EN	0x484
++#define QSERDES_V8_LALB_GM_CAL_RES_RATE0_1	0x488
++#define QSERDES_V8_LALB_GM_CAL_RES_RATE2_3	0x48c
++#define QSERDES_V8_LALB_GM_CAL_RES_RATE4	0x490
++#define QSERDES_V8_LALB_RX_TERM_BW_RATE_0123	0x494
++#define QSERDES_V8_LALB_RX_TERM_BW_RATE4	0x498
++#define QSERDES_V8_LALB_AUX_CLK_CTRL	0x49c
++#define QSERDES_V8_LALB_AUX_OFFSET_CONTROL	0x4a0
++#define QSERDES_V8_LALB_AUXDATA_TB	0x4a4
++#define QSERDES_V8_LALB_EOM_CTRL1	0x4a8
++#define QSERDES_V8_LALB_EOM_CTRL2	0x4ac
++#define QSERDES_V8_LALB_EOM_CTRL3	0x4b0
++#define QSERDES_V8_LALB_EOM_CTRL4	0x4b4
++#define QSERDES_V8_LALB_DFE_EN_TIMER	0x4b8
++#define QSERDES_V8_LALB_RX_EQ_OFFSET_LSB	0x4bc
++#define QSERDES_V8_LALB_RX_EQ_OFFSET_MSB	0x4c0
++#define QSERDES_V8_LALB_RX_EQ_OFFSET_ADAPTOR_CNTRL1	0x4c4
++#define QSERDES_V8_LALB_RX_OFFSET_ADAPTOR_CNTRL2	0x4c8
++#define QSERDES_V8_LALB_RX_OFFSET_ADAPTOR_CNTRL3	0x4cc
++#define QSERDES_V8_LALB_RX_EQU_ADAPTOR_CNTRL1	0x4d0
++#define QSERDES_V8_LALB_RX_EQU_ADAPTOR_CNTRL2	0x4d4
++#define QSERDES_V8_LALB_RX_EQU_ADAPTOR_CNTRL3	0x4d8
++#define QSERDES_V8_LALB_RX_EQU_ADAPTOR_CNTRL4	0x4dc
++#define QSERDES_V8_LALB_RX_EQU_ADAPTOR_CNTRL5	0x4e0
++#define QSERDES_V8_LALB_RX_EQU_KEQ_UP_LSB	0x4e4
++#define QSERDES_V8_LALB_RX_EQU_KEQ_UP_MSB	0x4e8
++#define QSERDES_V8_LALB_RX_EQU_KEQ_DN_LSB	0x4ec
++#define QSERDES_V8_LALB_RX_EQU_KEQ_DN_MSB	0x4f0
++#define QSERDES_V8_LALB_CTLE_ADP_RESET_INIT_CODE_RATE_0_1_2	0x4f4
++#define QSERDES_V8_LALB_CTLE_ADP_RESET_INIT_CODE_RATE_3_4	0x4f8
++#define QSERDES_V8_LALB_CTLE_POST_CAL_OFFSET_RATE_0_1_2	0x4fc
++#define QSERDES_V8_LALB_CTLE_POST_CAL_OFFSET_RATE_3_4	0x500
++#define QSERDES_V8_LALB_RX_VGA_GAIN2_BLK1	0x504
++#define QSERDES_V8_LALB_RX_VGA_GAIN2_BLK2	0x508
++#define QSERDES_V8_LALB_VGA_CAL_CNTRL1	0x50c
++#define QSERDES_V8_LALB_VGA_CAL_CNTRL2	0x510
++#define QSERDES_V8_LALB_VGA_CAL_MAN_VAL_RATE0_1	0x514
++#define QSERDES_V8_LALB_VGA_CAL_MAN_VAL_RATE2_3	0x518
++#define QSERDES_V8_LALB_VGA_CAL_MAN_VAL_RATE4	0x51c
++#define QSERDES_V8_LALB_KVGA_CTRL1	0x520
++#define QSERDES_V8_LALB_KVGA_CTRL2	0x524
++#define QSERDES_V8_LALB_VTHRESH_CAL_CNTRL1	0x528
++#define QSERDES_V8_LALB_VTHRESH_CAL_CNTRL2	0x52c
++#define QSERDES_V8_LALB_VTHRESH_CAL_MAN_VAL_RATE0	0x530
++#define QSERDES_V8_LALB_VTHRESH_CAL_MAN_VAL_RATE1	0x534
++#define QSERDES_V8_LALB_VTHRESH_CAL_MAN_VAL_RATE2	0x538
++#define QSERDES_V8_LALB_VTHRESH_CAL_MAN_VAL_RATE3	0x53c
++#define QSERDES_V8_LALB_VTHRESH_CAL_MAN_VAL_RATE4	0x540
++#define QSERDES_V8_LALB_VTHRESH_CAL_MAN_CAL_PAM3	0x544
++#define QSERDES_V8_LALB_VTH_POST_CAL_OFFSET_RATE_0_1	0x548
++#define QSERDES_V8_LALB_VTH_POST_CAL_OFFSET_RATE_2_3	0x54c
++#define QSERDES_V8_LALB_VTH_POST_CAL_OFFSET_RATE4	0x550
++#define QSERDES_V8_LALB_DFE_TAP1_CTRL	0x554
++#define QSERDES_V8_LALB_DFE_TAP1_MANVAL_KTAP	0x558
++#define QSERDES_V8_LALB_DFE_TAP1_POST_CAL_OFFSET_RATE_0_1_2	0x55c
++#define QSERDES_V8_LALB_DFE_TAP1_POST_CAL_OFFSET_RATE_3_4	0x560
++#define QSERDES_V8_LALB_DFE_TAP2_CTRL	0x564
++#define QSERDES_V8_LALB_DFE_TAP2_MANVAL_KTAP	0x568
++#define QSERDES_V8_LALB_DFE_TAP3_CTRL	0x56c
++#define QSERDES_V8_LALB_DFE_TAP3_MANVAL_KTAP	0x570
++#define QSERDES_V8_LALB_DFE_TAP4_CTRL	0x574
++#define QSERDES_V8_LALB_DFE_TAP4_MANVAL_KTAP	0x578
++#define QSERDES_V8_LALB_DFE_TAP5_CTRL	0x57c
++#define QSERDES_V8_LALB_DFE_TAP5_MANVAL_KTAP	0x580
++#define QSERDES_V8_LALB_DFE_TAP6_CTRL	0x584
++#define QSERDES_V8_LALB_DFE_TAP6_MANVAL_KTAP	0x588
++#define QSERDES_V8_LALB_DFE_TAP7_CTRL	0x58c
++#define QSERDES_V8_LALB_DFE_TAP7_MANVAL_KTAP	0x590
++#define QSERDES_V8_LALB_DFE_TAP1_DAC_ENABLE	0x594
++#define QSERDES_V8_LALB_DFE_TAP2_DAC_ENABLE	0x598
++#define QSERDES_V8_LALB_DFE_TAP345_DAC_ENABLE	0x59c
++#define QSERDES_V8_LALB_DFE_TAP67_DAC_ENABLE	0x5a0
++#define QSERDES_V8_LALB_CDR_IQTUNE_CTRL	0x5a4
++#define QSERDES_V8_LALB_CDR_IQTUNE_GAIN	0x5a8
++#define QSERDES_V8_LALB_CDR_IQTUNE_MAN_INDEX	0x5ac
++#define QSERDES_V8_LALB_CDR_IQTUNE_FILTER_CAL_CTRL1	0x5b0
++#define QSERDES_V8_LALB_CDR_IQTUNE_FILTER_CAL_CTRL2	0x5b4
++#define QSERDES_V8_LALB_CDR_IQTUNE_CLK0_CAL_CODE_RATE0	0x5b8
++#define QSERDES_V8_LALB_CDR_IQTUNE_CLK0_CAL_CODE_RATE1	0x5bc
++#define QSERDES_V8_LALB_CDR_IQTUNE_CLK0_CAL_CODE_RATE2	0x5c0
++#define QSERDES_V8_LALB_CDR_IQTUNE_CLK0_CAL_CODE_RATE3	0x5c4
++#define QSERDES_V8_LALB_CDR_IQTUNE_CLK0_CAL_CODE_RATE4	0x5c8
++#define QSERDES_V8_LALB_CDR_IQTUNE_CLK90_CAL_CODE_RATE0	0x5cc
++#define QSERDES_V8_LALB_CDR_IQTUNE_CLK90_CAL_CODE_RATE1	0x5d0
++#define QSERDES_V8_LALB_CDR_IQTUNE_CLK90_CAL_CODE_RATE2	0x5d4
++#define QSERDES_V8_LALB_CDR_IQTUNE_CLK90_CAL_CODE_RATE3	0x5d8
++#define QSERDES_V8_LALB_CDR_IQTUNE_CLK90_CAL_CODE_RATE4	0x5dc
++#define QSERDES_V8_LALB_CDR_IQTUNE_ANA_CTRL	0x5e0
++#define QSERDES_V8_LALB_CDR_IQTUNE_VDCC_CTRL	0x5e4
++#define QSERDES_V8_LALB_CDR_IQTUNE_DIV2_CTRL_RATE0123	0x5e8
++#define QSERDES_V8_LALB_CDR_IQTUNE_DIV2_CTRL_RATE4	0x5ec
++#define QSERDES_V8_LALB_BLW_CTRL	0x5f0
++#define QSERDES_V8_LALB_BLW_ANA_VER_CTRL	0x5f4
++#define QSERDES_V8_LALB_BLW_GAIN_CAL_CTRL	0x5f8
++#define QSERDES_V8_LALB_BLW_GAIN_FORCE_CODE	0x5fc
++#define QSERDES_V8_LALB_BLW_MAN_VAL_RATE3	0x600
++#define QSERDES_V8_LALB_BLW_MAN_VAL_RATE4	0x604
++#define QSERDES_V8_LALB_IVTH_CAL_CTRL1	0x608
++#define QSERDES_V8_LALB_IVTH_CAL_CTRL2	0x60c
++#define QSERDES_V8_LALB_IVTH_CAL_CTRL3	0x610
++#define QSERDES_V8_LALB_VTH_I_UP_CNTRL_VAL	0x614
++#define QSERDES_V8_LALB_VTH_I_DN_CNTRL_VAL	0x618
++#define QSERDES_V8_LALB_NRZ_EYE_HEIGHT_SEL_VAL	0x61c
++#define QSERDES_V8_LALB_IVTH_CAL_VAL_OVRD_MUX	0x620
++#define QSERDES_V8_LALB_CDR_VCO_CAP_CODE_OVRD_MUXES	0x624
++#define QSERDES_V8_LALB_VCO_CTUNE_LOWER_BND_RATE0	0x628
++#define QSERDES_V8_LALB_VCO_CTUNE_LOWER_BND_RATE1	0x62c
++#define QSERDES_V8_LALB_VCO_CTUNE_LOWER_BND_RATE2	0x630
++#define QSERDES_V8_LALB_VCO_CTUNE_LOWER_BND_RATE3	0x634
++#define QSERDES_V8_LALB_VCO_CTUNE_LOWER_BND_RATE4	0x638
++#define QSERDES_V8_LALB_VCO_CTUNE_UPPER_BND_RATE0	0x63c
++#define QSERDES_V8_LALB_VCO_CTUNE_UPPER_BND_RATE1	0x640
++#define QSERDES_V8_LALB_VCO_CTUNE_UPPER_BND_RATE2	0x644
++#define QSERDES_V8_LALB_VCO_CTUNE_UPPER_BND_RATE3	0x648
++#define QSERDES_V8_LALB_VCO_CTUNE_UPPER_BND_RATE4	0x64c
++#define QSERDES_V8_LALB_CDR_LOCK_KVCO_OFFSET_RATE0	0x650
++#define QSERDES_V8_LALB_CDR_LOCK_KVCO_OFFSET_RATE1	0x654
++#define QSERDES_V8_LALB_CDR_LOCK_KVCO_OFFSET_RATE2	0x658
++#define QSERDES_V8_LALB_CDR_LOCK_KVCO_OFFSET_RATE3	0x65c
++#define QSERDES_V8_LALB_CDR_LOCK_KVCO_OFFSET_RATE4	0x660
++#define QSERDES_V8_LALB_CDR_LOCK_KP_OFFSET_RATE0	0x664
++#define QSERDES_V8_LALB_CDR_LOCK_KP_OFFSET_RATE1	0x668
++#define QSERDES_V8_LALB_CDR_LOCK_KP_OFFSET_RATE2	0x66c
++#define QSERDES_V8_LALB_CDR_LOCK_KP_OFFSET_RATE3	0x670
++#define QSERDES_V8_LALB_CDR_LOCK_KP_OFFSET_RATE4	0x674
++#define QSERDES_V8_LALB_CDR_FASTLOCK_CP_CUR_PLL_RATE0	0x678
++#define QSERDES_V8_LALB_CDR_FASTLOCK_CP_CUR_PLL_RATE1	0x67c
++#define QSERDES_V8_LALB_CDR_FASTLOCK_CP_CUR_PLL_RATE2	0x680
++#define QSERDES_V8_LALB_CDR_FASTLOCK_CP_CUR_PLL_RATE3	0x684
++#define QSERDES_V8_LALB_CDR_FASTLOCK_CP_CUR_PLL_RATE4	0x688
++#define QSERDES_V8_LALB_DEBUG_BUS_SEL	0x68c
++#define QSERDES_V8_LALB_BIST_STATUS	0x690
++#define QSERDES_V8_LALB_BIST_ERROR_COUNT1	0x694
++#define QSERDES_V8_LALB_BIST_ERROR_COUNT2	0x698
++#define QSERDES_V8_LALB_AC_JTAG_OUTP	0x69c
++#define QSERDES_V8_LALB_AC_JTAG_OUTN	0x6a0
++#define QSERDES_V8_LALB_DATA_SLICER_DEBUG_STATUS	0x6a4
++#define QSERDES_V8_LALB_DATA_SLICER_TIMER1_STATUS	0x6a8
++#define QSERDES_V8_LALB_DATA_SLICER_TIMER2_STATUS	0x6ac
++#define QSERDES_V8_LALB_TX0_RESTRIM_CODE_STATUS	0x6b0
++#define QSERDES_V8_LALB_TX0_RESTRIM_ICAL_CODE_STATUS	0x6b4
++#define QSERDES_V8_LALB_TX0_RESTRIM_CAL_STATUS	0x6b8
++#define QSERDES_V8_LALB_TX1_RESTRIM_CODE_STATUS	0x6bc
++#define QSERDES_V8_LALB_TX1_RESTRIM_ICAL_CODE_STATUS	0x6c0
++#define QSERDES_V8_LALB_TX1_RESTRIM_CAL_STATUS	0x6c4
++#define QSERDES_V8_LALB_CMUX_DCC_CAL_FSM_STATUS	0x6c8
++#define QSERDES_V8_LALB_CMUX_DCC_READCODE_STATUS	0x6cc
++#define QSERDES_V8_LALB_TX_DCC_CAL_ANA_STATUS	0x6d0
++#define QSERDES_V8_LALB_TX0_CTUNE_DCC_FSM_DEBUG_STATUS	0x6d4
++#define QSERDES_V8_LALB_TX0_COARSE_DCC_READCODE_STATUS	0x6d8
++#define QSERDES_V8_LALB_TX0_FTUNE_MSB_DCC_FSM_DEBUG_STATUS	0x6dc
++#define QSERDES_V8_LALB_TX0_FTUNE_LSB_DCC_FSM_DEBUG_STATUS	0x6e0
++#define QSERDES_V8_LALB_TX0_FINE_DCC_READCODE_STATUS	0x6e4
++#define QSERDES_V8_LALB_TX1_CTUNE_DCC_FSM_DEBUG_STATUS	0x6e8
++#define QSERDES_V8_LALB_TX1_COARSE_DCC_READCODE_STATUS	0x6ec
++#define QSERDES_V8_LALB_TX1_FTUNE_MSB_DCC_FSM_DEBUG_STATUS	0x6f0
++#define QSERDES_V8_LALB_TX1_FTUNE_LSB_DCC_FSM_DEBUG_STATUS	0x6f4
++#define QSERDES_V8_LALB_TX1_FINE_DCC_READCODE_STATUS	0x6f8
++#define QSERDES_V8_LALB_CDR_VCO_CAL_STATUS	0x6fc
++#define QSERDES_V8_LALB_CDR_VCTRL_STATUS	0x700
++#define QSERDES_V8_LALB_CDR_VCO_CAP_CODE_STATUS	0x704
++#define QSERDES_V8_LALB_KVCO_CAL_DEBUG1_STATUS	0x708
++#define QSERDES_V8_LALB_KVCO_CAL_DEBUG2_STATUS	0x70c
++#define QSERDES_V8_LALB_KP_CAL_DEBUG1_STATUS	0x710
++#define QSERDES_V8_LALB_KP_CAL_DEBUG2_STATUS	0x714
++#define QSERDES_V8_LALB_CDR_VCO_FREQ_DEBUG1_STATUS	0x718
++#define QSERDES_V8_LALB_CDR_VCO_FREQ_DEBUG2_STATUS	0x71c
++#define QSERDES_V8_LALB_CDR_VCO_FREQ_DEBUG3_STATUS	0x720
++#define QSERDES_V8_LALB_CDR_VCO_FREQ_DEBUG4_STATUS	0x724
++#define QSERDES_V8_LALB_IVCM_CAL_STATUS	0x728
++#define QSERDES_V8_LALB_IVCM_CAL_DEBUG_STATUS	0x72c
++#define QSERDES_V8_LALB_IDAC_STATUS_I0	0x730
++#define QSERDES_V8_LALB_IDAC_STATUS_I0BAR	0x734
++#define QSERDES_V8_LALB_IDAC_STATUS_I1	0x738
++#define QSERDES_V8_LALB_IDAC_STATUS_I1BAR	0x73c
++#define QSERDES_V8_LALB_IDAC_STATUS_Q	0x740
++#define QSERDES_V8_LALB_IDAC_STATUS_QBAR	0x744
++#define QSERDES_V8_LALB_IDAC_STATUS_A	0x748
++#define QSERDES_V8_LALB_IDAC_STATUS_ABAR	0x74c
++#define QSERDES_V8_LALB_IDAC_STATUS_SM_ON	0x750
++#define QSERDES_V8_LALB_IDAC_STATUS_SIGNERROR	0x754
++#define QSERDES_V8_LALB_RX_SIGDET_STATUS	0x758
++#define QSERDES_V8_LALB_SIGDET_CAL_CODE_STATUS	0x75c
++#define QSERDES_V8_LALB_SIGDET_CAL_FSM_DEBUG_STATUS	0x760
++#define QSERDES_V8_LALB_CDR_FREQ_LOCK_CNT_STATUS	0x764
++#define QSERDES_V8_LALB_CDR_PHASE_LOCK_CNT_STATUS	0x768
++#define QSERDES_V8_LALB_CDR_LOCK_DEBUG_STATUS	0x76c
++#define QSERDES_V8_LALB_IDATA_HIGH_STATUS1	0x770
++#define QSERDES_V8_LALB_IDATA_HIGH_STATUS2	0x774
++#define QSERDES_V8_LALB_IDATA_HIGH_STATUS3	0x778
++#define QSERDES_V8_LALB_IDATA_HIGH_STATUS4	0x77c
++#define QSERDES_V8_LALB_IDATA_LOW_STATUS1	0x780
++#define QSERDES_V8_LALB_IDATA_LOW_STATUS2	0x784
++#define QSERDES_V8_LALB_IDATA_LOW_STATUS3	0x788
++#define QSERDES_V8_LALB_IDATA_LOW_STATUS4	0x78c
++#define QSERDES_V8_LALB_QDATA_STATUS1	0x790
++#define QSERDES_V8_LALB_QDATA_STATUS2	0x794
++#define QSERDES_V8_LALB_QDATA_STATUS3	0x798
++#define QSERDES_V8_LALB_QDATA_STATUS4	0x79c
++#define QSERDES_V8_LALB_IA_ERROR_COUNTER_LOW	0x7a0
++#define QSERDES_V8_LALB_IA_ERROR_COUNTER_HIGH	0x7a4
++#define QSERDES_V8_LALB_EOM_ERR_CNT_LSB_STATUS	0x7a8
++#define QSERDES_V8_LALB_EOM_ERR_CNT_MSB_STATUS	0x7ac
++#define QSERDES_V8_LALB_EOM_OP_STATUS	0x7b0
++#define QSERDES_V8_LALB_AUX_MIXER_INDEX_STATUS	0x7b4
++#define QSERDES_V8_LALB_AUX_OFFSET_STATUS	0x7b8
++#define QSERDES_V8_LALB_AUXDATA_TB_STATUS	0x7bc
++#define QSERDES_V8_LALB_AUX_MIXER_CTRL_0_STATUS	0x7c0
++#define QSERDES_V8_LALB_AUX_MIXER_CTRL_90_STATUS	0x7c4
++#define QSERDES_V8_LALB_AUX_MIXER_CTRL_180_STATUS	0x7c8
++#define QSERDES_V8_LALB_IQ_MIXER_INDEX_STATUS	0x7cc
++#define QSERDES_V8_LALB_IQTUNE_FLTR_INDEX_STATUS	0x7d0
++#define QSERDES_V8_LALB_IQ_MIXER_CTRL_0_STATUS	0x7d4
++#define QSERDES_V8_LALB_IQ_MIXER_CTRL_90_STATUS	0x7d8
++#define QSERDES_V8_LALB_IQ_MIXER_CTRL_180_STATUS	0x7dc
++#define QSERDES_V8_LALB_READ_EQCODE	0x7e0
++#define QSERDES_V8_LALB_READ_OFFSETCODE	0x7e4
++#define QSERDES_V8_LALB_VGA_READ_CODE	0x7e8
++#define QSERDES_V8_LALB_VTHRESH_READ_CODE	0x7ec
++#define QSERDES_V8_LALB_DFE_TAP1_READ_CODE	0x7f0
++#define QSERDES_V8_LALB_DFE_TAP2_READ_CODE	0x7f4
++#define QSERDES_V8_LALB_DFE_TAP3_READ_CODE	0x7f8
++#define QSERDES_V8_LALB_DFE_TAP4_READ_CODE	0x7fc
++#define QSERDES_V8_LALB_DFE_TAP5_READ_CODE	0x800
++#define QSERDES_V8_LALB_DFE_TAP6_READ_CODE	0x804
++#define QSERDES_V8_LALB_DFE_TAP7_READ_CODE	0x808
++#define QSERDES_V8_LALB_CDR_IQTUNE_FILTER_BIN_CODE	0x80c
++#define QSERDES_V8_LALB_CDR_IQTUNE_FILTER_CLK0_CODE	0x810
++#define QSERDES_V8_LALB_CDR_IQTUNE_FILTER_CLK90_CODE	0x814
++#define QSERDES_V8_LALB_BLW_READ_CODE	0x818
++#define QSERDES_V8_LALB_IA_OFFSET_CAL_DEBUG_STATUS	0x81c
++#define QSERDES_V8_LALB_IA_OFFSET_CAL_STATUS	0x820
++#define QSERDES_V8_LALB_IVTH_CAL_STATUS	0x824
++#define QSERDES_V8_LALB_IVTH_NRZ_EYE_HEIGHT_STATUS	0x828
++#define QSERDES_V8_LALB_IVTH_UPPER_EYE_MAX_STATUS	0x82c
++#define QSERDES_V8_LALB_IVTH_UPPER_EYE_MIN_STATUS	0x830
++#define QSERDES_V8_LALB_IVTH_LOWER_EYE_MAX_STATUS	0x834
++#define QSERDES_V8_LALB_IVTH_LOWER_EYE_MIN_STATUS	0x838
++#define QSERDES_V8_LALB_IVTH_UP_INIT_CTR_STATUS	0x83c
++#define QSERDES_V8_LALB_VTH_I_UP_CNTRL_STATUS	0x840
++#define QSERDES_V8_LALB_VTH_I_DN_CNTRL_STATUS	0x844
++#define QSERDES_V8_LALB_NRZ_EYE_HEIGHT_SEL_STATUS	0x848
++#define QSERDES_V8_LALB_DEBUG_BUS0	0x84c
++#define QSERDES_V8_LALB_DEBUG_BUS1	0x850
++#define QSERDES_V8_LALB_DEBUG_BUS2	0x854
++#define QSERDES_V8_LALB_DEBUG_BUS3	0x858
++#define QSERDES_V8_LALB_DIG_BKUP_CTRL1	0x85c
++#define QSERDES_V8_LALB_DIG_BKUP_CTRL2	0x860
++#define QSERDES_V8_LALB_DIG_BKUP_CTRL3	0x864
++#define QSERDES_V8_LALB_DIG_BKUP_CTRL4	0x868
++#define QSERDES_V8_LALB_DIG_BKUP_CTRL5	0x86c
++#define QSERDES_V8_LALB_DIG_BKUP_CTRL6	0x870
++#define QSERDES_V8_LALB_DIG_BKUP_CTRL7	0x874
++#define QSERDES_V8_LALB_DIG_BKUP_CTRL8	0x878
++#define QSERDES_V8_LALB_DIG_BKUP_CTRL9	0x87c
++#define QSERDES_V8_LALB_DIG_BKUP_CTRL10	0x880
++#define QSERDES_V8_LALB_DIG_BKUP_CTRL11	0x884
++#define QSERDES_V8_LALB_DIG_BKUP_CTRL12	0x888
++#define QSERDES_V8_LALB_DIG_BKUP_CTRL13	0x88c
++#define QSERDES_V8_LALB_DIG_BKUP_CTRL14	0x890
++#define QSERDES_V8_LALB_DIG_BKUP_CTRL15	0x894
++#define QSERDES_V8_LALB_DIG_BKUP_CTRL16	0x898
++#define QSERDES_V8_LALB_DIG_BKUP_CTRL17	0x89c
++#define QSERDES_V8_LALB_DIG_BKUP_CTRL18	0x8a0
++#define QSERDES_V8_LALB_DIG_BKUP_CTRL19	0x8a4
++#define QSERDES_V8_LALB_DIG_BKUP_CTRL20	0x8a8
++#define QSERDES_V8_LALB_DIG_BKUP_CTRL21	0x8ac
++#define QSERDES_V8_LALB_DIG_BKUP_CTRL22	0x8b0
++#define QSERDES_V8_LALB_DIG_BKUP_CTRL23	0x8b4
++#define QSERDES_V8_LALB_DIG_BKUP_CTRL24	0x8b8
++#define QSERDES_V8_LALB_DIG_BKUP_CTRL25	0x8bc
++#define QSERDES_V8_LALB_DIG_BKUP_CTRL26	0x8c0
++#define QSERDES_V8_LALB_DIG_BKUP_CTRL27	0x8c4
++#define QSERDES_V8_LALB_DIG_BKUP_CTRL28	0x8c8
++#define QSERDES_V8_LALB_DIG_BKUP_CTRL29	0x8cc
++#define QSERDES_V8_LALB_DIG_BKUP_CTRL30	0x8d0
++#define QSERDES_V8_LALB_DIG_BKUP_CTRL31	0x8d4
++#define QSERDES_V8_LALB_DIG_BKUP_CTRL32	0x8d8
++#define QSERDES_V8_LALB_DIG_BKUP_CTRL_V2_1	0x8dc
++#define QSERDES_V8_LALB_DIG_BKUP_CTRL_V2_2	0x8e0
++#define QSERDES_V8_LALB_DIG_BKUP_CTRL_V2_3	0x8e4
++#define QSERDES_V8_LALB_DIG_BKUP_CTRL_V2_4	0x8e8
++#define QSERDES_V8_LALB_DIG_BKUP_CTRL_V2_5	0x8ec
++#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS1	0x8f0
++#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS2	0x8f4
++#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS3	0x8f8
++#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS4	0x8fc
++#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS5	0x900
++#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS6	0x904
++#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS7	0x908
++#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS8	0x90c
++#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS9	0x910
++#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS10	0x914
++#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS11	0x918
++#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS12	0x91c
++#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS13	0x920
++#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS14	0x924
++#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS15	0x928
++#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS16	0x92c
++#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS17	0x930
++#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS18	0x934
++#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS19	0x938
++#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS20	0x93c
++#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS21	0x940
++#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS22	0x944
++#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS23	0x948
++#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS24	0x94c
++#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS25	0x950
++#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS26	0x954
++#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS27	0x958
++#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS28	0x95c
++#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS29	0x960
++#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS30	0x964
++#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS31	0x968
++#define QSERDES_V8_LALB_DIG_BKUP_RO_BUS32	0x96c
++#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS1	0x970
++#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS2	0x974
++#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS3	0x978
++#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS4	0x97c
++#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS5	0x980
++#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS6	0x984
++#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS7	0x988
++#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS8	0x98c
++#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS9	0x990
++#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS10	0x994
++#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS11	0x998
++#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS12	0x99c
++#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS13	0x9a0
++#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS14	0x9a4
++#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS15	0x9a8
++#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS16	0x9ac
++#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS17	0x9b0
++#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS18	0x9b4
++#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS19	0x9b8
++#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS20	0x9bc
++#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS21	0x9c0
++#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS22	0x9c4
++#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS23	0x9c8
++#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS24	0x9cc
++#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS25	0x9d0
++#define QSERDES_V8_LALB_DIG_BKUP_RO_V2_BUS26	0x9d4
++#endif /* QCOM_PHY_QMP_QSERDES_V8_LALBH_ */
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb43-pcs-v8.h b/drivers/phy/qualcomm/phy-qcom-qmp-usb43-pcs-v8.h
+new file mode 100644
+index 000000000000..4f387c8ed9e5
+--- /dev/null
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb43-pcs-v8.h
+@@ -0,0 +1,33 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * Copyright (c) 2025 Qualcomm Innovation Center, Inc. All rights reserved.
++ */
++
++#ifndef QCOM_PHY_QMP_USB43_PCS_V8_H_
++#define QCOM_PHY_QMP_USB43_PCS_V8_H_
++
++#define QPHY_V8_USB43_PCS_SW_RESET				0x000
++#define QPHY_V8_USB43_PCS_PCS_STATUS1				0x014
++#define QPHY_V8_USB43_PCS_POWER_DOWN_CONTROL			0x040
++#define QPHY_V8_USB43_PCS_START_CONTROL				0x044
++#define QPHY_V8_USB43_PCS_POWER_STATE_CONFIG1			0x090
++#define QPHY_V8_USB43_PCS_LOCK_DETECT_CONFIG1			0x0c4
++#define QPHY_V8_USB43_PCS_LOCK_DETECT_CONFIG2			0x0c8
++#define QPHY_V8_USB43_PCS_LOCK_DETECT_CONFIG3			0x0cc
++#define QPHY_V8_USB43_PCS_LOCK_DETECT_CONFIG6			0x0d8
++#define QPHY_V8_USB43_PCS_REFGEN_REQ_CONFIG1			0x0dc
++#define QPHY_V8_USB43_PCS_RX_SIGDET_LVL				0x188
++#define QPHY_V8_USB43_PCS_RCVR_DTCT_DLY_P1U2_L			0x190
++#define QPHY_V8_USB43_PCS_RCVR_DTCT_DLY_P1U2_H			0x194
++#define QPHY_V8_USB43_PCS_RATE_SLEW_CNTRL1			0x198
++#define QPHY_V8_USB43_PCS_TSYNC_RSYNC_TIME			0x1ac
++#define QPHY_V8_USB43_PCS_RX_CONFIG				0x1b0
++#define QPHY_V8_USB43_PCS_TSYNC_DLY_TIME			0x1b4
++#define QPHY_V8_USB43_PCS_ALIGN_DETECT_CONFIG1			0x1c0
++#define QPHY_V8_USB43_PCS_ALIGN_DETECT_CONFIG2			0x1c4
++#define QPHY_V8_USB43_PCS_PCS_TX_RX_CONFIG			0x1d0
++#define QPHY_V8_USB43_PCS_EQ_CONFIG1				0x1dc
++#define QPHY_V8_USB43_PCS_EQ_CONFIG2				0x1e0
++#define QPHY_V8_USB43_PCS_EQ_CONFIG5				0x1ec
++
++#endif
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb43-qserdes-com-v8.h b/drivers/phy/qualcomm/phy-qcom-qmp-usb43-qserdes-com-v8.h
+new file mode 100644
+index 000000000000..e9c743fce9d1
+--- /dev/null
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb43-qserdes-com-v8.h
+@@ -0,0 +1,224 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * Copyright (c) 2025 Qualcomm Innovation Center, Inc. All rights reserved.
++ */
++
++#ifndef QCOM_PHY_QMP_USB43_QSERDES_COM_V8_H_
++#define QCOM_PHY_QMP_USB43_QSERDES_COM_V8_H_
++
++#define QSERDES_V8_USB43_COM_SSC_STEP_SIZE1_MODE1		0x000
++#define QSERDES_V8_USB43_COM_SSC_STEP_SIZE2_MODE1		0x004
++#define QSERDES_V8_USB43_COM_SSC_STEP_SIZE3_MODE1		0x008
++#define QSERDES_V8_USB43_COM_CLK_EP_DIV_MODE1			0x00c
++#define QSERDES_V8_USB43_COM_CP_CTRL_MODE1			0x010
++#define QSERDES_V8_USB43_COM_PLL_RCTRL_MODE1			0x014
++#define QSERDES_V8_USB43_COM_PLL_CCTRL_MODE1			0x018
++#define QSERDES_V8_USB43_COM_CORECLK_DIV_MODE1			0x01c
++#define QSERDES_V8_USB43_COM_LOCK_CMP1_MODE1			0x020
++#define QSERDES_V8_USB43_COM_LOCK_CMP2_MODE1			0x024
++#define QSERDES_V8_USB43_COM_DEC_START_MODE1			0x028
++#define QSERDES_V8_USB43_COM_DEC_START_MSB_MODE1		0x02c
++#define QSERDES_V8_USB43_COM_DIV_FRAC_START1_MODE1		0x030
++#define QSERDES_V8_USB43_COM_DIV_FRAC_START2_MODE1		0x034
++#define QSERDES_V8_USB43_COM_DIV_FRAC_START3_MODE1		0x038
++#define QSERDES_V8_USB43_COM_HSCLK_SEL_1			0x03c
++#define QSERDES_V8_USB43_COM_INTEGLOOP_GAIN0_MODE1		0x040
++#define QSERDES_V8_USB43_COM_INTEGLOOP_GAIN1_MODE1		0x044
++#define QSERDES_V8_USB43_COM_VCO_TUNE1_MODE1			0x048
++#define QSERDES_V8_USB43_COM_VCO_TUNE2_MODE1			0x04c
++#define QSERDES_V8_USB43_COM_BIN_VCOCAL_CMP_CODE1_MODE1		0x050
++#define QSERDES_V8_USB43_COM_BIN_VCOCAL_CMP_CODE2_MODE1		0x054
++#define QSERDES_V8_USB43_COM_BIN_VCOCAL_CMP_CODE1_MODE0		0x058
++#define QSERDES_V8_USB43_COM_BIN_VCOCAL_CMP_CODE2_MODE0		0x05c
++#define QSERDES_V8_USB43_COM_SSC_STEP_SIZE1_MODE0		0x060
++#define QSERDES_V8_USB43_COM_SSC_STEP_SIZE2_MODE0		0x064
++#define QSERDES_V8_USB43_COM_SSC_STEP_SIZE3_MODE0		0x068
++#define QSERDES_V8_USB43_COM_CLK_EP_DIV_MODE0			0x06c
++#define QSERDES_V8_USB43_COM_CP_CTRL_MODE0			0x070
++#define QSERDES_V8_USB43_COM_PLL_RCTRL_MODE0			0x074
++#define QSERDES_V8_USB43_COM_PLL_CCTRL_MODE0			0x078
++#define QSERDES_V8_USB43_COM_CORECLK_DIV_MODE0			0x07c
++#define QSERDES_V8_USB43_COM_LOCK_CMP1_MODE0			0x080
++#define QSERDES_V8_USB43_COM_LOCK_CMP2_MODE0			0x084
++#define QSERDES_V8_USB43_COM_DEC_START_MODE0			0x088
++#define QSERDES_V8_USB43_COM_DEC_START_MSB_MODE0		0x08c
++#define QSERDES_V8_USB43_COM_DIV_FRAC_START1_MODE0		0x090
++#define QSERDES_V8_USB43_COM_DIV_FRAC_START2_MODE0		0x094
++#define QSERDES_V8_USB43_COM_DIV_FRAC_START3_MODE0		0x098
++#define QSERDES_V8_USB43_COM_HSCLK_HS_SWITCH_SEL_1		0x09c
++#define QSERDES_V8_USB43_COM_INTEGLOOP_GAIN0_MODE0		0x0a0
++#define QSERDES_V8_USB43_COM_INTEGLOOP_GAIN1_MODE0		0x0a4
++#define QSERDES_V8_USB43_COM_VCO_TUNE1_MODE0			0x0a8
++#define QSERDES_V8_USB43_COM_VCO_TUNE2_MODE0			0x0ac
++#define QSERDES_V8_USB43_COM_ATB_SEL1				0x0b0
++#define QSERDES_V8_USB43_COM_ATB_SEL2				0x0b4
++#define QSERDES_V8_USB43_COM_FREQ_UPDATE			0x0b8
++#define QSERDES_V8_USB43_COM_BG_TIMER				0x0bc
++#define QSERDES_V8_USB43_COM_SSC_EN_CENTER			0x0c0
++#define QSERDES_V8_USB43_COM_SSC_ADJ_PER1			0x0c4
++#define QSERDES_V8_USB43_COM_SSC_ADJ_PER2			0x0c8
++#define QSERDES_V8_USB43_COM_SSC_PER1				0x0cc
++#define QSERDES_V8_USB43_COM_SSC_PER2				0x0d0
++#define QSERDES_V8_USB43_COM_POST_DIV				0x0d4
++#define QSERDES_V8_USB43_COM_POST_DIV_MUX			0x0d8
++#define QSERDES_V8_USB43_COM_BIAS_EN_CLKBUFLR_EN		0x0dc
++#define QSERDES_V8_USB43_COM_CLK_ENABLE1			0x0e0
++#define QSERDES_V8_USB43_COM_SYS_CLK_CTRL			0x0e4
++#define QSERDES_V8_USB43_COM_SYSCLK_BUF_ENABLE			0x0e8
++#define QSERDES_V8_USB43_COM_PLL_EN				0x0ec
++#define QSERDES_V8_USB43_COM_DEBUG_BUS_OVRD			0x0f0
++#define QSERDES_V8_USB43_COM_PLL_IVCO				0x0f4
++#define QSERDES_V8_USB43_COM_PLL_IVCO_MODE1			0x0f8
++#define QSERDES_V8_USB43_COM_CMN_IETRIM				0x0fc
++#define QSERDES_V8_USB43_COM_CMN_IPTRIM				0x100
++#define QSERDES_V8_USB43_COM_EP_CLOCK_DETECT_CTRL		0x104
++#define QSERDES_V8_USB43_COM_PLL_CNTRL				0x108
++#define QSERDES_V8_USB43_COM_BIAS_EN_CTRL_BY_PSM		0x10c
++#define QSERDES_V8_USB43_COM_SYSCLK_EN_SEL			0x110
++#define QSERDES_V8_USB43_COM_CML_SYSCLK_SEL			0x114
++#define QSERDES_V8_USB43_COM_RESETSM_CNTRL			0x118
++#define QSERDES_V8_USB43_COM_RESETSM_CNTRL2			0x11c
++#define QSERDES_V8_USB43_COM_LOCK_CMP_EN			0x120
++#define QSERDES_V8_USB43_COM_LOCK_CMP_CFG			0x124
++#define QSERDES_V8_USB43_COM_INTEGLOOP_INITVAL			0x128
++#define QSERDES_V8_USB43_COM_INTEGLOOP_EN			0x12c
++#define QSERDES_V8_USB43_COM_INTEGLOOP_P_PATH_GAIN0		0x130
++#define QSERDES_V8_USB43_COM_INTEGLOOP_P_PATH_GAIN1		0x134
++#define QSERDES_V8_USB43_COM_VCOCAL_DEADMAN_CTRL		0x138
++#define QSERDES_V8_USB43_COM_VCO_TUNE_CTRL			0x13c
++#define QSERDES_V8_USB43_COM_VCO_TUNE_MAP			0x140
++#define QSERDES_V8_USB43_COM_VCO_TUNE_INITVAL1			0x144
++#define QSERDES_V8_USB43_COM_VCO_TUNE_INITVAL2			0x148
++#define QSERDES_V8_USB43_COM_VCO_TUNE_MINVAL1			0x14c
++#define QSERDES_V8_USB43_COM_VCO_TUNE_MINVAL2			0x150
++#define QSERDES_V8_USB43_COM_VCO_TUNE_MAXVAL1			0x154
++#define QSERDES_V8_USB43_COM_VCO_TUNE_MAXVAL2			0x158
++#define QSERDES_V8_USB43_COM_VCO_TUNE_TIMER1			0x15c
++#define QSERDES_V8_USB43_COM_VCO_TUNE_TIMER2			0x160
++#define QSERDES_V8_USB43_COM_CLK_SELECT				0x164
++#define QSERDES_V8_USB43_COM_PLL_ANALOG				0x168
++#define QSERDES_V8_USB43_COM_SW_RESET				0x16c
++#define QSERDES_V8_USB43_COM_CORE_CLK_EN			0x170
++#define QSERDES_V8_USB43_COM_CMN_CONFIG_1			0x174
++#define QSERDES_V8_USB43_COM_CMN_CONFIG_3			0x178
++#define QSERDES_V8_USB43_COM_CMN_RATE_OVERRIDE			0x17c
++#define QSERDES_V8_USB43_COM_SVS_MODE_CLK_SEL			0x180
++#define QSERDES_V8_USB43_COM_DEBUG_BUS_SEL			0x184
++#define QSERDES_V8_USB43_COM_CMN_MISC1				0x188
++#define QSERDES_V8_USB43_COM_CMN_MODE				0x18c
++#define QSERDES_V8_USB43_COM_CMN_MODE_CONTD			0x190
++#define QSERDES_V8_USB43_COM_CMN_MODE_CONTD1			0x194
++#define QSERDES_V8_USB43_COM_CMN_MODE_CONTD2			0x198
++#define QSERDES_V8_USB43_COM_VCO_DC_LEVEL_CTRL			0x19c
++#define QSERDES_V8_USB43_COM_BIN_VCOCAL_HSCLK_SEL_1		0x1a0
++#define QSERDES_V8_USB43_COM_ADDITIONAL_CTRL_1			0x1a4
++#define QSERDES_V8_USB43_COM_AUTO_GAIN_ADJ_CTRL_1		0x1a8
++#define QSERDES_V8_USB43_COM_AUTO_GAIN_ADJ_CTRL_2		0x1ac
++#define QSERDES_V8_USB43_COM_AUTO_GAIN_ADJ_CTRL_3		0x1b0
++#define QSERDES_V8_USB43_COM_AUTO_GAIN_ADJ_CTRL_4		0x1b4
++#define QSERDES_V8_USB43_COM_ADDITIONAL_MISC			0x1b8
++#define QSERDES_V8_USB43_COM_ADDITIONAL_MISC_2			0x1bc
++#define QSERDES_V8_USB43_COM_ADDITIONAL_MISC_3			0x1c0
++#define QSERDES_V8_USB43_COM_ADDITIONAL_MISC_4			0x1c4
++#define QSERDES_V8_USB43_COM_ADDITIONAL_MISC_5			0x1c8
++#define QSERDES_V8_USB43_COM_SSC_STEP_SIZE1_MODE2		0x1cc
++#define QSERDES_V8_USB43_COM_SSC_STEP_SIZE2_MODE2		0x1d0
++#define QSERDES_V8_USB43_COM_SSC_STEP_SIZE3_MODE2		0x1d4
++#define QSERDES_V8_USB43_COM_CLK_EP_DIV_MODE2			0x1d8
++#define QSERDES_V8_USB43_COM_CP_CTRL_MODE2			0x1dc
++#define QSERDES_V8_USB43_COM_PLL_RCTRL_MODE2			0x1e0
++#define QSERDES_V8_USB43_COM_PLL_CCTRL_MODE2			0x1e4
++#define QSERDES_V8_USB43_COM_CORECLK_DIV_MODE2			0x1e8
++#define QSERDES_V8_USB43_COM_LOCK_CMP1_MODE2			0x1ec
++#define QSERDES_V8_USB43_COM_LOCK_CMP2_MODE2			0x1f0
++#define QSERDES_V8_USB43_COM_DEC_START_MODE2			0x1f4
++#define QSERDES_V8_USB43_COM_DEC_START_MSB_MODE2		0x1f8
++#define QSERDES_V8_USB43_COM_DIV_FRAC_START1_MODE2		0x1fc
++#define QSERDES_V8_USB43_COM_DIV_FRAC_START2_MODE2		0x200
++#define QSERDES_V8_USB43_COM_DIV_FRAC_START3_MODE2		0x204
++#define QSERDES_V8_USB43_COM_INTEGLOOP_GAIN0_MODE2		0x208
++#define QSERDES_V8_USB43_COM_INTEGLOOP_GAIN1_MODE2		0x20c
++#define QSERDES_V8_USB43_COM_VCO_TUNE1_MODE2			0x210
++#define QSERDES_V8_USB43_COM_VCO_TUNE2_MODE2			0x214
++#define QSERDES_V8_USB43_COM_PLL_IVCO_MODE2			0x218
++#define QSERDES_V8_USB43_COM_HSCLK_SEL_2			0x21c
++#define QSERDES_V8_USB43_COM_BIN_VCOCAL_CMP_CODE1_MODE2		0x220
++#define QSERDES_V8_USB43_COM_BIN_VCOCAL_CMP_CODE2_MODE2		0x224
++#define QSERDES_V8_USB43_COM_HSCLK_HS_SWITCH_SEL_2		0x228
++#define QSERDES_V8_USB43_COM_CMN_CONFIG_2			0x22c
++#define QSERDES_V8_USB43_COM_BIN_VCOCAL_HSCLK_SEL_2		0x230
++#define QSERDES_V8_USB43_COM_IVCOCAL_CONFIG_0			0x234
++#define QSERDES_V8_USB43_COM_IVCOCAL_CONFIG_1			0x238
++#define QSERDES_V8_USB43_COM_IVCOCAL_CONFIG_2			0x23c
++#define QSERDES_V8_USB43_COM_IVCOCAL_CONFIG_3			0x240
++#define QSERDES_V8_USB43_COM_IVCOCAL_CONFIG_4			0x244
++#define QSERDES_V8_USB43_COM_IVCOCAL_CONFIG_5			0x248
++#define QSERDES_V8_USB43_COM_LOCK_CMP1_EARLY_MODE0		0x24c
++#define QSERDES_V8_USB43_COM_LOCK_CMP2_EARLY_MODE0		0x250
++#define QSERDES_V8_USB43_COM_LOCK_CMP1_EARLY_MODE1		0x254
++#define QSERDES_V8_USB43_COM_LOCK_CMP2_EARLY_MODE1		0x258
++#define QSERDES_V8_USB43_COM_LOCK_CMP1_EARLY_MODE2		0x25c
++#define QSERDES_V8_USB43_COM_LOCK_CMP2_EARLY_MODE2		0x260
++#define QSERDES_V8_USB43_COM_EARLY_LOCK_CONFIG_0		0x264
++#define QSERDES_V8_USB43_COM_EARLY_LOCK_CONFIG_1		0x268
++#define QSERDES_V8_USB43_COM_ADAPTIVE_ANALOG_CONFIG		0x26c
++#define QSERDES_V8_USB43_COM_CP_CTRL_ADAPTIVE_MODE0		0x270
++#define QSERDES_V8_USB43_COM_PLL_RCCTRL_ADAPTIVE_MODE0		0x274
++#define QSERDES_V8_USB43_COM_PLL_CCTRL_ADAPTIVE_MODE0		0x278
++#define QSERDES_V8_USB43_COM_CP_CTRL_ADAPTIVE_MODE1		0x27c
++#define QSERDES_V8_USB43_COM_PLL_RCCTRL_ADAPTIVE_MODE1		0x280
++#define QSERDES_V8_USB43_COM_PLL_CCTRL_ADAPTIVE_MODE1		0x284
++#define QSERDES_V8_USB43_COM_CP_CTRL_ADAPTIVE_MODE2		0x288
++#define QSERDES_V8_USB43_COM_PLL_RCCTRL_ADAPTIVE_MODE2		0x28c
++#define QSERDES_V8_USB43_COM_PLL_CCTRL_ADAPTIVE_MODE2		0x290
++#define QSERDES_V8_USB43_COM_CMN_MODE_CONTD3			0x294
++#define QSERDES_V8_USB43_COM_CMN_MODE_CONTD4			0x298
++#define QSERDES_V8_USB43_COM_CMN_MODE_CONTD5			0x29c
++#define QSERDES_V8_USB43_COM_CMN_MODE_CONTD6			0x2a0
++#define QSERDES_V8_USB43_COM_ADDITIONAL_MISC_6			0x2a4
++#define QSERDES_V8_USB43_COM_ADDITIONAL_MISC_7			0x2a8
++#define QSERDES_V8_USB43_COM_VCO_WAIT_CYCLES			0x2ac
++#define QSERDES_V8_USB43_COM_BIAS_WAIT_CYCLES			0x2b0
++#define QSERDES_V8_USB43_COM_AUX_CLK_PSM_ENABLE			0x2b4
++#define QSERDES_V8_USB43_COM_PLL_SPARE_FOR_ECO			0x2b8
++#define QSERDES_V8_USB43_COM_PLL_SPARE_FOR_ECO_1		0x2bc
++#define QSERDES_V8_USB43_COM_PLL_SPARE_FOR_ECO_2		0x2c0
++#define QSERDES_V8_USB43_COM_LDO_CAL_1				0x2c4
++#define QSERDES_V8_USB43_COM_LDO_CAL_2				0x2c8
++#define QSERDES_V8_USB43_COM_LDO_CAL_3				0x2cc
++#define QSERDES_V8_USB43_COM_LDO_CAL_4				0x2d0
++#define QSERDES_V8_USB43_COM_LDO_CAL_5				0x2d4
++#define QSERDES_V8_USB43_COM_DCC_CAL_1				0x2d8
++#define QSERDES_V8_USB43_COM_DCC_CAL_2				0x2dc
++#define QSERDES_V8_USB43_COM_DCC_CAL_3				0x2e0
++#define QSERDES_V8_USB43_COM_DCC_CAL_4				0x2e4
++#define QSERDES_V8_USB43_COM_DCC_CAL_5				0x2e8
++#define QSERDES_V8_USB43_COM_DCC_CAL_6				0x2ec
++#define QSERDES_V8_USB43_COM_PSM_CAL_EN				0x2f0
++#define QSERDES_V8_USB43_COM_CLK_FWD_CONFIG_1			0x2f4
++#define QSERDES_V8_USB43_COM_CLK_FWD_CONFIG_2			0x2f8
++#define QSERDES_V8_USB43_COM_IP_CTRL_AND_DP_SEL			0x2fc
++#define QSERDES_V8_USB43_COM_DCC_CAL_7				0x300
++#define QSERDES_V8_USB43_COM_DCC_CAL_8				0x304
++#define QSERDES_V8_USB43_COM_DCC_CAL_9				0x308
++#define QSERDES_V8_USB43_COM_MODE_OPERATION_STATUS		0x30c
++#define QSERDES_V8_USB43_COM_SYSCLK_DET_COMP_STATUS		0x310
++#define QSERDES_V8_USB43_COM_CMN_STATUS				0x314
++#define QSERDES_V8_USB43_COM_RESET_SM_STATUS			0x318
++#define QSERDES_V8_USB43_COM_RESTRIM_CODE_STATUS		0x31c
++#define QSERDES_V8_USB43_COM_PLLCAL_CODE1_STATUS		0x320
++#define QSERDES_V8_USB43_COM_PLLCAL_CODE2_STATUS		0x324
++#define QSERDES_V8_USB43_COM_INTEGLOOP_BINCODE_STATUS		0x328
++#define QSERDES_V8_USB43_COM_DEBUG_BUS0				0x32c
++#define QSERDES_V8_USB43_COM_DEBUG_BUS1				0x330
++#define QSERDES_V8_USB43_COM_DEBUG_BUS2				0x334
++#define QSERDES_V8_USB43_COM_DEBUG_BUS3				0x338
++#define QSERDES_V8_USB43_COM_C_READY_STATUS			0x33c
++#define QSERDES_V8_USB43_COM_READ_DUMMY_1			0x340
++#define QSERDES_V8_USB43_COM_READ_DUMMY_2			0x344
++#define QSERDES_V8_USB43_COM_READ_DUMMY_3			0x348
++#define QSERDES_V8_USB43_COM_IVCO_CAL_CODE_STATUS		0x34c
++#define QSERDES_V8_USB43_COM_PLL_LDO_CAL_STATUS_2		0x350
++#define QSERDES_V8_USB43_COM_PLL_LDO_CAL_STATUS_3		0x354
++
++#endif
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp.h b/drivers/phy/qualcomm/phy-qcom-qmp.h
+index da2a7ad2cdcc..e4060edc8138 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp.h
++++ b/drivers/phy/qualcomm/phy-qcom-qmp.h
+@@ -32,7 +32,9 @@
+ #include "phy-qcom-qmp-qserdes-txrx-v7.h"
+ 
+ #include "phy-qcom-qmp-qserdes-com-v8.h"
++#include "phy-qcom-qmp-usb43-qserdes-com-v8.h"
+ #include "phy-qcom-qmp-qserdes-txrx-v8.h"
++#include "phy-qcom-qmp-qserdes-lalb-v8.h"
+ 
+ #include "phy-qcom-qmp-qserdes-pll.h"
+ 
 
 -- 
 2.34.1
