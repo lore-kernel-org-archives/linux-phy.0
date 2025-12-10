@@ -4,58 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7718BD3C922
-	for <linux-phy@archiver.kernel.org>; Wed, 10 Dec 2025 16:06:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 853D9D3C927
+	for <linux-phy@archiver.kernel.org>; Wed, 10 Dec 2025 16:06:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:From:To:Cc:
 	Subject:Message-Id:Date:Mime-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6J6M8SvKfQCVMXr6PbKI9x/vULFikHFabXVO0YKq6gg=; b=L91WBg+xv3kEbI
-	Xef+UFRn5Xq/gSQmLnarzT7Cy4YoV5hh371xpyUDEk758dEEdQmCeW0+74yOpTAEnaSj1g0o4aVvG
-	n95hSwC3Z6stU5z17ypgZkM/z7wZuAteEpFa4cHMbQycm/oM3UjGj/1LkJeO+Jx6e83Tov4+1N57Y
-	yyzG49glIxgoVXemQEEFa+v+HTaj0WItV+BI5KUTBrGlziyPZr8KI7fyDdCAIKL64zQlWHZUjLZ+L
-	KTJ+uRu3p3McnpBflGE2Az0MK/E2G7ev7AgfZgRN4XgeQB876DSiOo0A1N7Tq8ymd3Yvul/dR/WXB
-	YDvbC3a6dgd8FNFxii6Q==;
+	List-Owner; bh=g4lxSjDwUz1/WQ+8JBqwC5W8Bj7aCxSdKk3IE73/C1E=; b=ybkuJgKd8U+0Jr
+	iYop8NLelhrIz3EE7ElzHCGqisSdPo0sYV6ZwkBT51tetPeDp/lwImYfbuVNfn7fXDS6a84lSRcd5
+	nOYh5a+syze7svRzWTt+QsyGsWknP/Xe+Go3tXEPcYqZAU0Te2MEELF0v+afZmVwEeX0U4dDABmsA
+	Xs14xQKEcsHWzrpWoQIpPBqBzqjyD6xCWkpS+JnCcsrZCBdWT1Zktc6Ieti2jEJ8dYlyA3SceHfsg
+	bdTC2Ac80r1ok49U/P9yB+Ejw97f58zLD6TwaoRRWe/68KOFr9WoijeZzNp9+/Fxr+Qs7qOzGjlxL
+	JjyrRay5Kk66KZrvRxAA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vTMiJ-0000000Fbif-0C0x;
-	Wed, 10 Dec 2025 16:06:51 +0000
+	id 1vTMiN-0000000FblN-1Dsn;
+	Wed, 10 Dec 2025 16:06:55 +0000
 Received: from smtpout-03.galae.net ([185.246.85.4])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vTMiG-0000000FbgJ-0m5f
+	id 1vTMiK-0000000Fbj4-2asD
 	for linux-phy@lists.infradead.org;
-	Wed, 10 Dec 2025 16:06:49 +0000
+	Wed, 10 Dec 2025 16:06:54 +0000
 Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-03.galae.net (Postfix) with ESMTPS id BEB314E41B44;
-	Wed, 10 Dec 2025 16:06:45 +0000 (UTC)
+	by smtpout-03.galae.net (Postfix) with ESMTPS id 3589C4E41B44;
+	Wed, 10 Dec 2025 16:06:51 +0000 (UTC)
 Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id 8DD5A60714;
-	Wed, 10 Dec 2025 16:06:45 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 8B26111931A8C;
-	Wed, 10 Dec 2025 17:06:41 +0100 (CET)
+	by smtpout-01.galae.net (Postfix) with ESMTPS id F33E560714;
+	Wed, 10 Dec 2025 16:06:50 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 28B0F11931A8F;
+	Wed, 10 Dec 2025 17:06:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1765382804; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	t=1765382810; h=from:subject:date:message-id:to:cc:mime-version:content-type:
 	 content-transfer-encoding:in-reply-to:references;
-	bh=IZ7YZNfW8akNqU2m1GJ0qgSiSInP3u3B1ptG7sHFuMU=;
-	b=PyNv6QD+ueNmdfmWHuSzSH6pk6CG9xsrW2BAm2SFPPRN1XfAywkmLLnJad+Emev4UYCUPY
-	6L45UGxXCOrPn00MKmWN/1LmbVwcRdTy2an29imcy4S6kkhtPnwSYZ8vDiwxrb6Lw2W5IZ
-	Ja2b2JRStJ5sGonAOmEL/1mBQFTIMk+2BGN75aSuBmOs8HqigN0LUj4mYAY1OgdNpBqiqD
-	0IdJ3mUE4eTfcrAoUY8sJQf//gkPwrniY6Z/Ww0QbOrs5ZLgegKYuuzyb1vXE+YnMega8G
-	4cI1y3Bv9iuqFHTfFqxJHsKjw7GJ3j2KlIiRgBtdp4d6ptkVLPIGMEkJhyIviQ==
+	bh=j7IMaXSGae8/zSMNH5tabWZidQgz9x1xyATYXrO5kSw=;
+	b=p5gpe+TY6I51MtjCELzk2RuavVYrxS0W4GzteyJMuGq/AobyDzlbDT6HQpOhBePE+lxBjS
+	vh6x8gTEGWxjhkBfVtvruvJWHlZZU1oonAzdrSsn+d4Mlp4QRVgz2SmQ+EATau9Op5jfa9
+	EYXw1yzBETDD2qFZky97F+TMoyIDj/ISZVbsXTHnVP41gA5LDFbE2ncfmAJnVwmmussDaW
+	P/G62UzJbkbnDna9clHZhjRVOnnQA7eeZjksxcw634AyCJH346fAYQTyaU+SU5uglrFRkm
+	BBpvVyqUgkFjprwvoNcIFB9Jt8BvXbHy/OBJzX+rwQKn7HkabEbs3y4uohsHtw==
 Mime-Version: 1.0
-Date: Wed, 10 Dec 2025 17:06:41 +0100
-Message-Id: <DEUNZ2R3L0LU.1CO231RCA18A6@bootlin.com>
-Subject: Re: [PATCH v4 3/7] clk: eyeq: use the auxiliary device creation
- helper
+Date: Wed, 10 Dec 2025 17:06:47 +0100
+Message-Id: <DEUNZ5TYSY2E.1QO656BT3YQ5D@bootlin.com>
+Subject: Re: [PATCH v4 4/7] clk: eyeq: add EyeQ5 children auxiliary device
+ for generic PHYs
 Cc: <linux-mips@vger.kernel.org>, <devicetree@vger.kernel.org>,
  <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
  <linux-clk@vger.kernel.org>, =?utf-8?q?Beno=C3=AEt_Monin?=
  <benoit.monin@bootlin.com>, "Maxime Chevallier"
  <maxime.chevallier@bootlin.com>, "Tawfik Bayouk"
  <tawfik.bayouk@mobileye.com>, "Thomas Petazzoni"
- <thomas.petazzoni@bootlin.com>, "Jerome Brunet" <jbrunet@baylibre.com>
+ <thomas.petazzoni@bootlin.com>
 To: =?utf-8?q?Th=C3=A9o_Lebrun?= <theo.lebrun@bootlin.com>, "Vladimir
  Kondratiev" <vladimir.kondratiev@mobileye.com>,
  =?utf-8?q?Gr=C3=A9gory_Clement?= <gregory.clement@bootlin.com>, "Rob
@@ -68,12 +68,12 @@ To: =?utf-8?q?Th=C3=A9o_Lebrun?= <theo.lebrun@bootlin.com>, "Vladimir
 From: "Luca Ceresoli" <luca.ceresoli@bootlin.com>
 X-Mailer: aerc 0.20.1
 References: <20251124-macb-phy-v4-0-955c625a81a7@bootlin.com>
- <20251124-macb-phy-v4-3-955c625a81a7@bootlin.com>
-In-Reply-To: <20251124-macb-phy-v4-3-955c625a81a7@bootlin.com>
+ <20251124-macb-phy-v4-4-955c625a81a7@bootlin.com>
+In-Reply-To: <20251124-macb-phy-v4-4-955c625a81a7@bootlin.com>
 X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251210_080648_354688_4D47C525 
-X-CRM114-Status: UNSURE (   5.96  )
+X-CRM114-CacheID: sfid-20251210_080652_792152_F7E7A05E 
+X-CRM114-Status: UNSURE (   4.98  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -92,15 +92,11 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 T24gTW9uIE5vdiAyNCwgMjAyNSBhdCAzOjQxIFBNIENFVCwgVGjDqW8gTGVicnVuIHdyb3RlOgo+
-IEZyb206IEplcm9tZSBCcnVuZXQgPGpicnVuZXRAYmF5bGlicmUuY29tPgo+Cj4gVGhlIGF1eGls
-aWFyeSBkZXZpY2UgY3JlYXRpb24gb2YgdGhpcyBkcml2ZXIgaXMgc2ltcGxlIGVub3VnaCB0bwo+
-IHVzZSB0aGUgYXZhaWxhYmxlIGF1eGlsaWFyeSBkZXZpY2UgY3JlYXRpb24gaGVscGVyLgo+Cj4g
-VXNlIGl0IGFuZCByZW1vdmUgc29tZSBib2lsZXJwbGF0ZSBjb2RlLgo+Cj4gVGVzdGVkLWJ5OiBU
-aMOpbyBMZWJydW4gPHRoZW8ubGVicnVuQGJvb3RsaW4uY29tPiAgIyBPbiBNb2JpbGV5ZSBFeWVR
-NQo+IFNpZ25lZC1vZmYtYnk6IEplcm9tZSBCcnVuZXQgPGpicnVuZXRAYmF5bGlicmUuY29tPgo+
-IFNpZ25lZC1vZmYtYnk6IFRow6lvIExlYnJ1biA8dGhlby5sZWJydW5AYm9vdGxpbi5jb20+CgpS
-ZXZpZXdlZC1ieTogTHVjYSBDZXJlc29saSA8bHVjYS5jZXJlc29saUBib290bGluLmNvbT4KCi0t
-Ckx1Y2EgQ2VyZXNvbGksIEJvb3RsaW4KRW1iZWRkZWQgTGludXggYW5kIEtlcm5lbCBlbmdpbmVl
-cmluZwpodHRwczovL2Jvb3RsaW4uY29tCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51
-eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFp
-bG1hbi9saXN0aW5mby9saW51eC1waHkK
+IEdyb3cgb3VyIGNsay1leWVxIGZhbWlseTsgaXQga25vd3MgaG93IHRvIHNwYXduIHJlc2V0IHBy
+b3ZpZGVyIGFuZCBwaW4KPiBjb250cm9sbGVyIGNoaWxkcmVuLiBFeHBhbmQgd2l0aCBhIGdlbmVy
+aWMgUEhZIGRyaXZlciBvbiBFeWVRNS4KPgo+IFNpZ25lZC1vZmYtYnk6IFRow6lvIExlYnJ1biA8
+dGhlby5sZWJydW5AYm9vdGxpbi5jb20+CgpSZXZpZXdlZC1ieTogTHVjYSBDZXJlc29saSA8bHVj
+YS5jZXJlc29saUBib290bGluLmNvbT4KCi0tCkx1Y2EgQ2VyZXNvbGksIEJvb3RsaW4KRW1iZWRk
+ZWQgTGludXggYW5kIEtlcm5lbCBlbmdpbmVlcmluZwpodHRwczovL2Jvb3RsaW4uY29tCgotLSAK
+bGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRw
+czovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
