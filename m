@@ -4,67 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2601ED3E768
-	for <linux-phy@archiver.kernel.org>; Wed, 10 Dec 2025 18:21:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 327B1D3E77B
+	for <linux-phy@archiver.kernel.org>; Wed, 10 Dec 2025 21:13:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=HMxns3+/ZMwU2oVoU3PreDOit7IeWG8ZCl18ZgkblbU=; b=n0trPmbctjkMde2+oEefO9sQJ8
-	LlOkLenRxe+MuUvb3gnFCWeMety74Q/KLeonBYXdJutmWBSg98PZh3CFERxd6g3UU0zJxKkk8MfWM
-	nSxuz+W7C0KsQ4joGauDbf7344IVPBuFGrEofGuok17iRh5sjKqcUMpmp6mdcbtBGoOY1HCXpXVLh
-	rv7uOBV75qWO+IPZNPZCPyuIl7Xk5ymzYIf0TCH7WxcEDYTtl+cXTgOzRfWhnpmzbDJW2DN72zJBX
-	hKYv2y9Z9XKK7lTGBmCJy31A2WE2AFh02Ak8HWL9m3vjgzbm4qfojpq/gT/Z8AxGAlWbGpJ1iGgb1
-	SR1vBODg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fuSaRrcFw7Wy7XN/iIgGevXUVcGLAKhr2dblykzssb0=; b=d1CAEyVAvScyfA
+	osqmYSjiSakHGRszgIEkkVfgSz7JhOTyZUlKjJmX1pO0TvfyNGl9Vno9bmni6egvzKjPvOGHayq82
+	veLZ8Rkx3yasis3UpifJS2v5A2XkH/Sirh85dLvryGRPMCsfoqZajOgclxUDiUvlWKkBIQ32UB4NQ
+	IVh4pgzgVeWd7UnltkZyxdJ07eP4BS8710KtXDY8hh5k+znzv1Fp6cU1lo5zcM4kqgeg33TFQsit2
+	4I4TnlEsUfVIyz9ECz+Q0SPs7Ws/84fT/ikjY/5pUKJfyEMKTJDBal/aZ8Gj4nvGEq19Xln5EwjJO
+	ohDDqZKjkIeUew6sOyRQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vTOoo-0000000Fk0v-1lTq;
-	Wed, 10 Dec 2025 18:21:42 +0000
+	id 1vTRUo-0000000FtA1-0dNw;
+	Wed, 10 Dec 2025 21:13:14 +0000
 Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vTOon-0000000Fk0n-1Pha
-	for linux-phy@lists.infradead.org;
-	Wed, 10 Dec 2025 18:21:41 +0000
+	id 1vTRUm-0000000Ft9Y-2NEY;
+	Wed, 10 Dec 2025 21:13:12 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 6EA786013B;
-	Wed, 10 Dec 2025 18:21:40 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id CB4D6C4CEF1;
-	Wed, 10 Dec 2025 18:21:36 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 83EB1600C4;
+	Wed, 10 Dec 2025 21:13:11 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 01E75C4CEF1;
+	Wed, 10 Dec 2025 21:13:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1765390900;
-	bh=O+bGZbuvV5kBW7ZrBjTqnBm76ibmQ69yjYsTylWkcb4=;
+	s=k20201202; t=1765401191;
+	bh=aoyauFYLJsKITX5t2VCmjFrbwcJN4/7MVdS0dVL08zs=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=BvAVRy0j+eyq40iKGFIWrLwNVP55uSf8AD4b81YFOwB5wOjrt3gLIqkJtmaOmbx6u
-	 /H1NnCpqCcJafwoaygyuMgqITpp+A0bC//qQNcSeBLmNbYti9qiozuFSyqNNzl8zdo
-	 E9VIeIOQUp5PIm8e2JjCPN0UAkrM61i5UgIjNmfK069X0ZnEPtKskxo1nFFlKoV8Df
-	 Gggyb2hHueVniuewm9/BFvUWr7/b4OliGyJW3GAiokao6XQM39anwQ8a6AcKS7Dtgv
-	 PxsPCqT4Q6nJt2i9ekG58XqeWnOQ2dCkfF1KcEEypfh4T2sD2xk6gA08K7/widSsu7
-	 9/N0llidyrzfQ==
-Date: Wed, 10 Dec 2025 18:21:34 +0000
-From: Conor Dooley <conor@kernel.org>
-To: Marc Kleine-Budde <mkl@pengutronix.de>
-Cc: Prabhakar <prabhakar.csengg@gmail.com>,
-	Vincent Mailhol <mailhol@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	b=ogTMVIEld+8E2EIFT3MZeHr2NYaQ1fE2HrZ6Oi7xyw7qYP2t+mVVmOPSI/rGF95Hh
+	 cVVQ//NbvBMC+K6sLl8XuAZ5iPqi9ACzQ0tlsTkSlD0fIpiqkGLEC9Ma9C6b4M61jl
+	 WNivE8HWCI7LJMKwR9TJ9i5Hedu3o7b4GGOVbEf4bIJXCSVsgqTXAkusc6FXrqu4ZF
+	 GbqGIicMtSDG+llfICte7jJrUVCsLtrEdCldMLqC5mv7AAsNeFos9xUOW7qgBF4KCi
+	 TEcQ07RMrg4dFm9BgRPhVoizMCMEhKlaUGF+9zX+eKJdGm4Gksg8Cur9VtqzCvpqNy
+	 c30hNPsjGl3AA==
+Date: Wed, 10 Dec 2025 15:13:08 -0600
+From: "Rob Herring (Arm)" <robh@kernel.org>
+To: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
+Cc: Matthias Brugger <matthias.bgg@gmail.com>,
+	linux-mediatek@lists.infradead.org, Vinod Koul <vkoul@kernel.org>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
 	Conor Dooley <conor+dt@kernel.org>,
-	Aswath Govindraju <a-govindraju@ti.com>,
-	Frank Li <Frank.li@nxp.com>, linux-can@vger.kernel.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
-	Biju Das <biju.das.jz@bp.renesas.com>,
-	Fabrizio Castro <fabrizio.castro.jz@renesas.com>,
-	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-Subject: Re: [PATCH v2] dt-bindings: phy: ti,tcan104x-can: Document TI
- TCAN1046
-Message-ID: <20251210-persuaded-rewire-8ac93b0cc039@spud>
-References: <20251209162119.2038313-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <20251210-mauve-cow-of-hurricane-0f969d-mkl@pengutronix.de>
+	Chun-Kuang Hu <chunkuang.hu@kernel.org>, kernel@collabora.com,
+	Krzysztof Kozlowski <krzk@kernel.org>,
+	linux-phy@lists.infradead.org,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Chunfeng Yun <chunfeng.yun@mediatek.com>,
+	linux-kernel@vger.kernel.org,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Guillaume Ranquet <granquet@baylibre.com>
+Subject: Re: [PATCH 01/12] dt-bindings: phy: mediatek,hdmi-phy: Fix clock
+ output names for MT8195
+Message-ID: <176540118761.3352108.7929645042751556704.robh@kernel.org>
+References: <20251209-mtk-genio-evk-hdmi-support-v1-0-9a6106effba6@collabora.com>
+ <20251209-mtk-genio-evk-hdmi-support-v1-1-9a6106effba6@collabora.com>
 MIME-Version: 1.0
-In-Reply-To: <20251210-mauve-cow-of-hurricane-0f969d-mkl@pengutronix.de>
+Content-Disposition: inline
+In-Reply-To: <20251209-mtk-genio-evk-hdmi-support-v1-1-9a6106effba6@collabora.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,72 +77,38 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============2241346672431340099=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
---===============2241346672431340099==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="IIsQrjuMkvqB7/Hb"
-Content-Disposition: inline
+On Tue, 09 Dec 2025 17:34:31 +0100, Louis-Alexis Eyraud wrote:
+> From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+> 
+> For all of the HDMI PHYs compatible with the one found on MT8195
+> the output clock has a different datasheet name and specifically
+> it is called "hdmi_txpll", differently from the older HDMI PHYs
+> which output block is called "hdmitx_dig_cts".
+> 
+> Replace clock output name string check by max item number one to allow
+> the new name on all of the HDMI PHY IPs that are perfectly compatible
+> with MT8195.
+> 
+> Fixes: c78fe548b062 ("dt-bindings: phy: mediatek: hdmi-phy: Add mt8195 compatible")
+> Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+> [Louis-Alexis Eyraud: splitted patch, addressed previous feedback from
+> mailing list, and reworded description]
+> Signed-off-by: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
+> ---
+>  Documentation/devicetree/bindings/phy/mediatek,hdmi-phy.yaml | 3 +--
+>  1 file changed, 1 insertion(+), 2 deletions(-)
+> 
 
+Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
 
---IIsQrjuMkvqB7/Hb
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Wed, Dec 10, 2025 at 08:52:58AM +0100, Marc Kleine-Budde wrote:
-> On 09.12.2025 16:21:19, Prabhakar wrote:
-> > From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> >
-> > Document the TI TCAN1046 automotive CAN transceiver. The TCAN1046 is a
-> > dual high-speed CAN transceiver with sleep-mode support and no EN pin,
-> > mirroring the behaviour of the NXP TJA1048, which also provides dual
-> > channels and STB1/2 sleep-control lines.
-> >
-> > Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> > ---
-> > TCAN 1046, https://www.ti.com/lit/ds/symlink/tcan1046v-q1.pdf?ts=3D1765=
-297159307&ref_url=3Dhttps%253A%252F%252Fwww.ti.com%252Fproduct%252FTCAN1046=
-V-Q1
-> > NXP TJA1048, https://www.nxp.com/docs/en/data-sheet/TJA1048.pdf
->=20
-> The polarity of the standby line of the chips is different.
->=20
-> You must set the correct active high/low property for the GPIO, as the
-> driver uses logical levels.
->=20
-> Reviewed-by: Marc Kleine-Budde <mkl@pengutronix.de>
-
-What you're saying seems to contradict the tag you've given, is a
-fallback really suitable if the standby polarity is not the same?
-
---IIsQrjuMkvqB7/Hb
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaTm6LgAKCRB4tDGHoIJi
-0rd8AQCVqGYenKiVlmsteQjlS3YKRFO6NfcKVKty99nB08UYYAD9EvjL6s2ARUpL
-Tk/sBch2w9KMamz7vNWItgV48BNsgA8=
-=XC1y
------END PGP SIGNATURE-----
-
---IIsQrjuMkvqB7/Hb--
-
-
---===============2241346672431340099==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============2241346672431340099==--
-
