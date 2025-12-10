@@ -4,63 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5D09DD3E77B
-	for <linux-phy@archiver.kernel.org>; Wed, 10 Dec 2025 21:19:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9E0CAD3E77B
+	for <linux-phy@archiver.kernel.org>; Wed, 10 Dec 2025 21:20:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vM4jh2rNvDJdFAjaYcQosKVQ9ZkZcNO9zzm4SWXLl08=; b=mVuOr3etV7/kz9
-	gYe2DOaC+3xrHs6YuO8DY+xbEChJv9CR9I2azmmp+a2b6sv17EvvzRThSOS0hyxMCjYlUlXBl6IP4
-	N6bFIgxiXp0irVKzCvDNa3J/R/AkbIqueqvbgmiONxFXuF2Kr+sznssDpgy1acHIjjD1TTIiYtwE/
-	iVdfjsaehWDPqKyLu7GTKS6SCP+LcXP5aj5tNhWvbVu3yYhv5VYLN6uw0vo8M0WsGYVfgGto56Uzz
-	sMMUegbir8KqoeMow+zzAAjZ5ljTxe4N2MFV0Gfdmij1rBCxqWz01zL2McjmrqemfgGxKwfIud3l2
-	brdWM5yGOfldCMH3ie3w==;
+	List-Owner; bh=w8dDC0buogfP/D0OmaHklU46luzuE5ot/8DPHTdJNdM=; b=12Sw9jdN41FZzk
+	0IlwLp/5oeevZQRLMzs7NZ5zUiwcp715M5bm9s+vmOCSa2vx4WiNWsYEDf+8wUHlQ9mzNPLETUxcJ
+	juJ6ez2+LCZdRRZSBBTW3f7Dz5rBkVZ0DW9B7e/qlfb/yXygz6WC9iW8tlP9C0dJv2XfizsbT9em9
+	XtfxfLPKyP6bc2Fe59LXsHPM3Pp83kZKn7dul21355rVa0kFmzu4I5M3E5EJSZ7NhScJzAh/WIx6p
+	yc8RNi/7vNJit40S9tGy8/oKoa7A20QlLrOJxSp9zTdTZk5LLMTisejyGW1Raz5ltOeB/OZcw/nE1
+	YykIemwjUybppX/7t8pQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vTRbH-0000000Ftm1-0XbN;
-	Wed, 10 Dec 2025 21:19:55 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1vTRbj-0000000FtpL-1e4k;
+	Wed, 10 Dec 2025 21:20:23 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vTRbE-0000000FtlY-3tCR
+	id 1vTRbf-0000000Fton-2Mqm
 	for linux-phy@lists.infradead.org;
-	Wed, 10 Dec 2025 21:19:53 +0000
+	Wed, 10 Dec 2025 21:20:21 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 8F292400AC;
-	Wed, 10 Dec 2025 21:19:51 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 43982C113D0;
-	Wed, 10 Dec 2025 21:19:51 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id BA76C60122;
+	Wed, 10 Dec 2025 21:20:18 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 42B71C4CEF1;
+	Wed, 10 Dec 2025 21:20:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1765401591;
-	bh=LRy9OKjqzKVMMtq0PqPtKw1sozkQrlq8m/LF5E2xCuE=;
+	s=k20201202; t=1765401618;
+	bh=WGg+czktn0NTNnavdklinGGScWfiYuPPdJCTzdTBBXU=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=KrGdy2wc1+apC6pVUqDgA5YNnPqK+lurEw795lR9UkPstj9zhgP0KCn49qYzKSAIm
-	 NRG+7Sivi5/Y5Tf4M8nGD7SRFm5zm6Rx9j6zZJKRGRsjjx/XqzY6IoJ+NjEEcLrhGN
-	 ylF4GihuO645eTGvIf3Zyrlb7/hxdLwNCNOQuUxDsJqBtL4TS+omQ6LMeDVTLt4ZVt
-	 BdEAOWGJnEROb1c37vZ3jEuL5ny34gLCijLA/iGV8uUlXAscDCVj0cONiGMHZZWUHE
-	 EfCVF8eznDl0IOeyuHBEVxO/M/Zoen0aGeuWz8Wg1Tyx43hdFVYbCBEBg9ObCzmOEa
-	 kyHtxpWTTui+w==
-Date: Wed, 10 Dec 2025 15:19:48 -0600
+	b=mTxRCD//+c4oClMgWXyh7R4MYjutvX3C9EaaTdnZq+hI1SjsxOsRWrN5OMAkWST8J
+	 Nb9hVeX38X4v+j6gvX6S/gSUXsQGI5hA4KnhwCUaOHpK6UL2kPCyJV4oGGD/1Es5+Y
+	 /fsNB+amRaN8O8y+k/zCceEKNie/IOErwF/zn6JYZgh4KjjZ8GhHfTR1faWH3IKN/m
+	 Lx5/LmdDzv3EGcZkaQSzfXyFWSLBON7H3/SKIpQ4Ui3ghalA5o9/RH/wJK8hrvUftv
+	 t+dqKAGmUh4faxRrXO9qVg6WrR/Tk2V+OEoG++tFI9x2QyM4ongloYNvPslnP8xN7M
+	 EkuuS315ZRn/w==
+Date: Wed, 10 Dec 2025 15:20:15 -0600
 From: "Rob Herring (Arm)" <robh@kernel.org>
 To: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
-Cc: conor+dt@kernel.org, dmitry.baryshkov@oss.qualcomm.com,
-	abel.vesa@linaro.org, linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, vkoul@kernel.org, krzk+dt@kernel.org
-Subject: Re: [PATCH v8 1/9] dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp-phy:
- Add Glymur compatible
-Message-ID: <176540158800.3359535.4500963269576510341.robh@kernel.org>
+Cc: vkoul@kernel.org, krzk+dt@kernel.org, dmitry.baryshkov@oss.qualcomm.com,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, abel.vesa@linaro.org,
+	linux-kernel@vger.kernel.org, conor+dt@kernel.org
+Subject: Re: [PATCH v8 2/9] dt-bindings: phy: qcom,qmp-usb: Add Glymur USB
+ UNI PHY compatible
+Message-ID: <176540161525.3360166.13828719898400995208.robh@kernel.org>
 References: <20251209-linux-next-12825-v8-0-42133596bda0@oss.qualcomm.com>
- <20251209-linux-next-12825-v8-1-42133596bda0@oss.qualcomm.com>
+ <20251209-linux-next-12825-v8-2-42133596bda0@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20251209-linux-next-12825-v8-1-42133596bda0@oss.qualcomm.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251210_131952_983194_6D1E87BE 
-X-CRM114-Status: UNSURE (   6.32  )
-X-CRM114-Notice: Please train this message.
+In-Reply-To: <20251209-linux-next-12825-v8-2-42133596bda0@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,14 +74,15 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Tue, 09 Dec 2025 15:09:37 -0800, Wesley Cheng wrote:
-> Define a Glymur compatible string for the QMP combo PHY, along with
-> resource requirements.
+On Tue, 09 Dec 2025 15:09:38 -0800, Wesley Cheng wrote:
+> The Glymur USB subsystem contains a multiport controller, which utilizes
+> two QMP UNI PHYs.  Add the proper compatible string for the Glymur SoC, and
+> the required clkref clock name.
 > 
 > Signed-off-by: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
 > ---
->  .../bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml      | 16 ++++++++++++++++
->  1 file changed, 16 insertions(+)
+>  .../bindings/phy/qcom,sc8280xp-qmp-usb3-uni-phy.yaml   | 18 ++++++++++++++++++
+>  1 file changed, 18 insertions(+)
 > 
 
 Acked-by: Rob Herring (Arm) <robh@kernel.org>
