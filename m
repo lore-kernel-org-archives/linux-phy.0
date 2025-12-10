@@ -4,137 +4,162 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0E940D3B9BA
-	for <linux-phy@archiver.kernel.org>; Wed, 10 Dec 2025 01:51:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8E90CD3C520
+	for <linux-phy@archiver.kernel.org>; Wed, 10 Dec 2025 02:17:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EoyreGDjrf7W8WE//nxBtN/USOPGI+JmcQG5KMfHjSU=; b=zdX5WlbjSg3udX
-	s/AO/z8c4HpCSJIF6/Wc2OJ4m5ljk6zfhRqEVSPTJ3R/ln1U/H1uF7hO82Kh/QSs7IbP0ETxA2Jhk
-	1b4lurKyId2QCM279PX3HUtNaigKHkTqQ8ceSBJovCMynT6z9iVjH+wLfxuDFgeyhwQIdvWFqnOpJ
-	MONd6YFQ8Lzi4xfYMZI8UqpO5iTHf8CWXAUoMCiq0TICXtZzMwCpQ4rIKFImk4eskZyVF9a2EfTC+
-	m3UuSxnP8mizcoHnlYaLoo68+k3WLl5Jon+wkbTNwVdeWCEhKCoA10sJA30P431IHr4NkmfDGQ9LR
-	f4kp7P1csOp46ZuQJREw==;
+	List-Owner; bh=r/FeSi5JV/SZFfeWpk3I7WMpUDGamFlEjG1DEWjkoZc=; b=fVYigtg7uukS6b
+	mBDGjSrY0tPy6es32BuQxNJn5WZ081A7tNxFilYibLQote5cYeKs2E8m/Lua6b3z490Tja308DYJS
+	0Tzmtw0yo0GqSm9OBd0myydbcKlv3WvzUVeDNZ/czpC+hotLRWcwkCLFd10b4j8bZ2P+S4t38MbUM
+	QTmqJZInpwZvWbFuNKYU5Pa2GHMMVS2xSB/OrekPNvNy1PDSP4z88muSjwMdqCwDZUzWVXQ9wOTi0
+	0swhKVWUDU1As2FeFjl9Ep/yU50DkpCVT03Xgyxv0k8u85VuHz90lQBiepSTtbhBwWbt7SVgeTXi2
+	rBYNrLWCymB6FhCWD+Eg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vT9MS-0000000EyuX-175E;
-	Wed, 10 Dec 2025 01:51:24 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1vT9lw-0000000Ezys-2fdT;
+	Wed, 10 Dec 2025 02:17:44 +0000
+Received: from mail-japaneastazon11022115.outbound.protection.outlook.com ([52.101.126.115] helo=TYPPR03CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vT9MQ-0000000Eyu4-0sb1
-	for linux-phy@lists.infradead.org;
-	Wed, 10 Dec 2025 01:51:23 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 5BA0O4Hr507739
-	for <linux-phy@lists.infradead.org>; Wed, 10 Dec 2025 01:51:21 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=BN6Y3dRzDAB252tWRqYve+DU
-	r56IWk9EkE0pgVLLGis=; b=aMFCwmN80io33E3/NmsQd0JF+gqa0aGe7UDu8wDZ
-	SBQeLPhUVcysxYIEatZIcVjQ/eIWRdeNuGVs1f1OaYvMxezsn+r+i61Z2im3fE2u
-	soMT5iFr4BfmBRSC9pUDq2YfmDYeUf0NJlDLNx2QZtV0JRghFLXy3idYJ3eTiqyt
-	Xb0jaHVep9Fri/tlnCO9Q1FaGKN38Ra404HrbzHGn6OX7Rim69PNQhwfESxoSDgm
-	wAsSpu14lDgK3X6Xknf7Cq1Bnfhqa054sanAhZPbnwXqGWIpK0aNukNcUBF9xjWQ
-	gK2NlQNa6FuwuKjVUNgSt5gWGzZEGRMGOG7FtW1/cmanCA==
-Received: from mail-qt1-f197.google.com (mail-qt1-f197.google.com [209.85.160.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4axp4vsxm3-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Wed, 10 Dec 2025 01:51:20 +0000 (GMT)
-Received: by mail-qt1-f197.google.com with SMTP id d75a77b69052e-4edaf9e48ecso163148311cf.0
-        for <linux-phy@lists.infradead.org>; Tue, 09 Dec 2025 17:51:20 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1765331479; x=1765936279; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=BN6Y3dRzDAB252tWRqYve+DUr56IWk9EkE0pgVLLGis=;
-        b=Z5nb5XVARSGn0Sr3IgDsruKN7XgN89xJExCvAtbef6nOFZEB9RbAbZnr4VJocLU+9M
-         M//ibdVDTPP5ij0/jkBNICzv0IW912edjFTos/Km4rJ+NTUlABD5F9ytbRLG48YIjtrd
-         KPFWKP2C/ou6HWtEifuYhQO0COeA2IvMnaobXJkhUOmuG6PjhLIInna9erw2cKVVbAWt
-         +HmACGxf+aCdBr2RqUiCG48Bbjnnkgx6YOSfw1f0hujNmQn5++CarqLncXQyjuSd+zSa
-         O1/8Dp33zbV9TmRvjK/IuLWb7p4aUpc6UxAmDzam67TwuovxTzA1i0E5JzB95ep00lqT
-         CMbA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1765331479; x=1765936279;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=BN6Y3dRzDAB252tWRqYve+DUr56IWk9EkE0pgVLLGis=;
-        b=ZjLjaRNMB8R/XIBNBgiaPCdGzHWCBaX0w2KnO6x4zYubj0R3QbjR2TPC7mfE1K09rW
-         Qe6t+tJqkN9ZIBdWliXG4GfgQOw0vesE+xZbF5bwpZuqCHYu+/3Bj4TGrkjURnkT0/ui
-         sU3OkXYGojWdJ2WcOkcGM0Y9B8AForMolLYVQwagbvJRK8lCJM5SSfHftM1ViSP3VI3C
-         iTddYvMa1UtuAx5hZ2c6QuRlaiJhx5vRKrLlRUwMiXNTgqoGb2dYODL1MwCtivaTkl2c
-         /UzbmPGHfgIqvkTLEOolf72+mFSuIjQYWGzOhc6PjH8CSZYeIeiYRq5tdTtgw9JBv/3U
-         DN7w==
-X-Forwarded-Encrypted: i=1; AJvYcCVnbiOk+adwtqssc0qQyL7mYgV5/Ahv2bF30qNdfkRaFx1rqma/vWAd1W7RNt9OfqLZobxWiUWk8fo=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxDeitTQVoF8mPdkeqO7wZWKpKIOdqVfTaxiNohyVryY2/gzfK0
-	+dwjK7HWK8JsG19bmDlo6UUztKCr3NWPV+RqSfvtRCN3NSLOiSqwMS1oVXgk9yr1U+RlCObMnhd
-	0TVXeObRxfJ9XogfFKhhoYqZIslcyeSc0NnQHlcrRSnTBoVWxJ6G8o3U8wydy7V/CJJYc
-X-Gm-Gg: ASbGncsL7IpVigbyXf6W7DoTRy4uUmp2HxYnQ4KjUouqh7dm7SZISsPW/Q6vlRj62Uf
-	2nRUfS7e625WP5hmQFCVYrsJqJPEN8NhJxKG1Ke4fHIAOUk7KsbU3BcjgmYoCNlUrSrdIHioMaj
-	6UYp4f4LhMrCCujqG19MndgHCTN0kT/v7MOxNjUv/+1ZPEcKrwwlnzQou3qbd5gSKJaNTbGiM7f
-	H6eEvx/W0GyDQwhrwNeq2XU3VQlSFfRni4WvWDjHQ5EFt6RAcLRwRRTogxZTMOwYqyjGVBRBDd4
-	t8Oo89PWInQEFqkgwnCOT9ZjepOsKzl09rNjWMzQCqGwW0YjeugEtPferXw8PXSEy7bbRPe2q2P
-	hedk57MvvwvfYDWdi5ThHKt8+OBdnBln3rliJOxsj9YIq7wXalPsIXUm+kI1FlOsAkI8E0ezVKd
-	SVOxKDzGwF8xslZpZLX/R9BYE=
-X-Received: by 2002:ac8:5810:0:b0:4ee:5aa:9c28 with SMTP id d75a77b69052e-4f1b1ac9555mr11516571cf.70.1765331479400;
-        Tue, 09 Dec 2025 17:51:19 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IGKDZfAbJZWDgNFtvZu50UhNEANWHUxZjw1ARuiOSUMkTBFY/KeHIBYtgGNZZYv/UykqneyFA==
-X-Received: by 2002:ac8:5810:0:b0:4ee:5aa:9c28 with SMTP id d75a77b69052e-4f1b1ac9555mr11516331cf.70.1765331478854;
-        Tue, 09 Dec 2025 17:51:18 -0800 (PST)
-Received: from umbar.lan (2001-14ba-a073-af00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a073:af00:264b:feff:fe8b:be8a])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-597d7b24907sm5807764e87.37.2025.12.09.17.51.16
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 09 Dec 2025 17:51:17 -0800 (PST)
-Date: Wed, 10 Dec 2025 03:51:15 +0200
-From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-To: Qiang Yu <qiang.yu@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>, linux-arm-msm@vger.kernel.org,
-        linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org,
-        Jingyi Wang <jingyi.wang@oss.qualcomm.com>,
-        Abel Vesa <abel.vesa@linaro.org>,
-        Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH v4 5/5] phy: qcom: qmp-pcie: add QMP PCIe PHY tables for
- Kaanapali
-Message-ID: <mudq7gmqs62osuarvflmemt2a2gnuloywabtr4w5oyyddp4b7v@eynaurtfrnyt>
-References: <20251124-kaanapali-pcie-phy-v4-0-d04ee9cca83b@oss.qualcomm.com>
- <20251124-kaanapali-pcie-phy-v4-5-d04ee9cca83b@oss.qualcomm.com>
+	id 1vT9lt-0000000EzyQ-2YwF;
+	Wed, 10 Dec 2025 02:17:42 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=Z2WJDgdG8qEARFSChT570VYmCmHYbrlQQQjTPbL78IfMmblkGRKCApW0aLgjYB3pSuK0JdE/P6nDhBUoXIioAXBbtlueAU37nscKh4jnmYNsDkc5gZ7fQB3w8XRD3OtUFxtwr/eKAJMVnqLRxC69+eyPS1zqooylg+hVbbwZ1AKmPYjG9JqgourX5zDhMWHyWKSSy/1vi54s+k0LwpKvp0yUSepqhp+Mj7QV+aRVIqb9X8VVQLdBYelXphUuy/yh1grirLUVcn1HvvPGf/yhDXfkg9cXFQp8fzXOd7a2ICzFBYqgLOvjTC7KjyVWVYemmBf5XXeCoEMbWdLyxETjWg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=76kyZTOr2fNUh/Z7Kb4mtA1jNzGaTrbt1mV2hfprjAw=;
+ b=p2XeMrQzMmr7eS4sN4JoM5UL+G4ynZncBDxciUgpyE4j9yzfU7BNC+0ujv+oxxN9E2ufmMv7nsiKG3J9jmu0MZKXVMk9mPgr4XRiDeJljGrCm8A1D9rO2oTCmvmoBikrATLPXpCWeloShXOxoorujHRVpV3IZAU5+xl9i0vFySAM5suqsdbg0WY9XXWk6E+dejt+MSOkOUWACTi4LFF+dklGfO+e45sHoV3qvv1Ij34kVBJzfOtPaJyPbSF8XGT+3o65S8Fs5w3exerWeWV8eJwvn0evnk//tsAuDySRKx6CiCoQ2M+PSPsCYtdN2CUUFb5WSN61XAelOjInVyWTGg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=aspeedtech.com; dmarc=pass action=none
+ header.from=aspeedtech.com; dkim=pass header.d=aspeedtech.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aspeedtech.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=76kyZTOr2fNUh/Z7Kb4mtA1jNzGaTrbt1mV2hfprjAw=;
+ b=et4sO8HOruEYiBLqh/2qWZAJ/5oCLFplzktr4LmvxvL5MTtmQ17lGAbmZw4vuKuLgF6sdfdl3i3sWdgc7qMIaueSIpjKQBe6hEg5fhqTDrbeYtwbE9UtPhJKNPxyK7xlMM9aJ6hkn0ra8k5MV5kiCLPo0HVn5Ozqu+2OP5ad6bW100Z1pgOWmDU1BeRGDVuJQvvffNu6zyiyPQn4v08p3xBEbRkjlLXNzhPziPmQuI4jZYqmgkijt/lHIDWGBtBbNDDGq/Vdbi18HMPfL1iqI98fPHWmJIq6+NygxdPBcJWHp+DkLUvKfm2LHunnMscXNNDKB73do+qCjSisciIlvA==
+Received: from SEYPR06MB5134.apcprd06.prod.outlook.com (2603:1096:101:5a::12)
+ by SE1PPF158EAB38C.apcprd06.prod.outlook.com (2603:1096:108:1::40a) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9366.17; Wed, 10 Dec
+ 2025 02:17:32 +0000
+Received: from SEYPR06MB5134.apcprd06.prod.outlook.com
+ ([fe80::6b58:6014:be6e:2f28]) by SEYPR06MB5134.apcprd06.prod.outlook.com
+ ([fe80::6b58:6014:be6e:2f28%6]) with mapi id 15.20.9388.009; Wed, 10 Dec 2025
+ 02:17:31 +0000
+From: Jacky Chou <jacky_chou@aspeedtech.com>
+To: Bjorn Helgaas <helgaas@kernel.org>
+CC: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Joel Stanley <joel@jms.id.au>, Andrew
+ Jeffery <andrew@codeconstruct.com.au>, Bjorn Helgaas <bhelgaas@google.com>,
+	Lorenzo Pieralisi <lpieralisi@kernel.org>,
+	=?iso-8859-2?Q?Krzysztof_Wilczy=F1ski?= <kwilczynski@kernel.org>, Manivannan
+ Sadhasivam <mani@kernel.org>, Linus Walleij <linus.walleij@linaro.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>, "linux-aspeed@lists.ozlabs.org"
+	<linux-aspeed@lists.ozlabs.org>, "linux-pci@vger.kernel.org"
+	<linux-pci@vger.kernel.org>, "linux-phy@lists.infradead.org"
+	<linux-phy@lists.infradead.org>, "devicetree@vger.kernel.org"
+	<devicetree@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
+	<linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+	<linux-kernel@vger.kernel.org>, Andrew Jeffery <andrew@aj.id.au>,
+	"openbmc@lists.ozlabs.org" <openbmc@lists.ozlabs.org>,
+	"linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>
+Subject: [PATCH v6 6/7] PCI: aspeed: Add ASPEED PCIe RC driver
+Thread-Topic: [PATCH v6 6/7] PCI: aspeed: Add ASPEED PCIe RC driver
+Thread-Index: AQHcYovau3E4PFuPz0uUFTRwyGlUlLUYe4mAgAG0h1A=
+Date: Wed, 10 Dec 2025 02:17:31 +0000
+Message-ID: <SEYPR06MB513497D82F1FBBFAC6B9EE309DA0A@SEYPR06MB5134.apcprd06.prod.outlook.com>
+References: <20251201-upstream_pcie_rc-v6-6-8c8800c56b16@aspeedtech.com>
+ <20251209001107.GA3430423@bhelgaas>
+In-Reply-To: <20251209001107.GA3430423@bhelgaas>
+Accept-Language: zh-TW, en-US
+Content-Language: zh-TW
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=aspeedtech.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: SEYPR06MB5134:EE_|SE1PPF158EAB38C:EE_
+x-ms-office365-filtering-correlation-id: dfcc7df3-0376-41d9-a183-08de37924654
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;ARA:13230040|7416014|376014|366016|1800799024|38070700021;
+x-microsoft-antispam-message-info: =?iso-8859-2?Q?M9G+IOzuSspFIPtsDXMvS89O2wCjmb27c3wNdbBXX1sBfNNdzTnYvFgwW2?=
+ =?iso-8859-2?Q?bGd6Ibd2aCMPIYvQ35hgwjdL21HwmQC049n/Ghb46vznAsPVkVuJhdSRsz?=
+ =?iso-8859-2?Q?fuqxUpfPwV2rqFYHoYMlq9fqaKeUey3IrP72gChvJuW0aSNbRDT2oL0Pb1?=
+ =?iso-8859-2?Q?o6SKiwSlS1rIJLgMY0WeD5C0/a6KakJ2jyNoVWA02mOLved7l+ckLxZx5j?=
+ =?iso-8859-2?Q?fLu0iV6uTRol3fH/3wDjqbqZiLIowy0uMwZcWNBm3kxaEOhT1G3hlWSX+2?=
+ =?iso-8859-2?Q?mcanyHgiinAua918T+xNDq9IZwWEj5P3Tr0TY8kxrpVuRVZo9mpRd1FOwK?=
+ =?iso-8859-2?Q?8SgHZmxXZZgwMf/em6624kerTUbRN51Ked/aHfm3HrJVwMZxVPqvkv93Zn?=
+ =?iso-8859-2?Q?i4IBwlr+Lflw7o01heKYUG4n1hCS78WAWpaSv9Yq2hrI8fHV9YyNLVG4dk?=
+ =?iso-8859-2?Q?+kNxeHO+EX3SSl6Scp1MMLB+njg6yyma3p+IWhMk42kGmq5jgs3ENMVIu3?=
+ =?iso-8859-2?Q?xtyGuZmko/wVNx80HaLBLaKXxTg5pF8Rx05TSl6jh9m3Xr0AP9p+CRGQaa?=
+ =?iso-8859-2?Q?QZ5u7kpLbOZuhop0FxOmUGaWHEUvLb/5HDhQwhhgp8L3PwNYmUH7Ji6ZE9?=
+ =?iso-8859-2?Q?yiD6piiP0XHvLTwYdL8jrJJYvg8PnaVrT90VvHsL1EyLyOZsWgqDtqvdjZ?=
+ =?iso-8859-2?Q?IPoDtCEWeH2IHMNaTyWFRWpvD8RdD1UulCPR72hQn5UalzMrYLIuRyQUwh?=
+ =?iso-8859-2?Q?NDRnCxoAKtlmdd2+9934KREFoiNRIhuJK4jT0xBGuMazB6NO0mRw8e5afm?=
+ =?iso-8859-2?Q?LF7yWKdkLFDnMtybqWQ70w8SL8Z+c+vWU8AmSj40XBk7BAosWQKOBD3PW6?=
+ =?iso-8859-2?Q?BwUO/dz07awm7jE8vTSc7sz9EQzYZ9CSbHy6xB5nwe5V7FRtC/iw8XxaiQ?=
+ =?iso-8859-2?Q?CYlLuaw8mZ1tFq3EyVqkNOtRYl0ny1fTAdMRy4RabYFg8yr+CaW6dUo3hg?=
+ =?iso-8859-2?Q?KD7o5IQnbrsKqmYwJRAogmDt73uUBgDZZUVOuENKXiHSl2zJtu+GEIh4h1?=
+ =?iso-8859-2?Q?h/e5yH/TX/kOca4lHeQOQdW3eAuQvc+R4xUcQuleng24QeVzc2XpdTC/XH?=
+ =?iso-8859-2?Q?S9GG2wGNgco/y1g+yY5IcaFZ6/5e5LK0UutF8JVeo7wxn/0RdfStX+eK6s?=
+ =?iso-8859-2?Q?UB+y88KKmfKcK69ITExj/E0v+71VIiUbbs6KXD3QX1O2TB3kfaSzfMu2Uj?=
+ =?iso-8859-2?Q?EIqvlh5LBDp4ojg8Tvso+kPOe+Up65p+Ev4LPr+9SYEwOpx7CcPxYmZh3d?=
+ =?iso-8859-2?Q?16hmz90aFVzgfyMm+eD0Spu1um8n6OkUY4bUOKPy5OrlfNJnqXnmSzvjic?=
+ =?iso-8859-2?Q?A5K8ENhGhnRLMrsurQhYElBKMRcVuXxGa/4rlDm0tkF6weFkxVYhT2+wZK?=
+ =?iso-8859-2?Q?P+NTvFsyhdJXnumh/rH06KSO6Ioli2PRBWPPRSSdv9fdJHKHQEE1EztNWa?=
+ =?iso-8859-2?Q?SHOvLLKuDZHF9o++Xah+8dKsTDb0/su4Lmrc48LMIc177MuMQ929hYALWz?=
+ =?iso-8859-2?Q?QhEWoRPa4KxOGmqswMzZ1ehXfFGf?=
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:zh-tw;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SEYPR06MB5134.apcprd06.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(7416014)(376014)(366016)(1800799024)(38070700021);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?iso-8859-2?Q?7sx3NoGi0me58el+EnjGllsdqg7lw7N9fzeMaQC2o3mknqEsKXTpdhhkFi?=
+ =?iso-8859-2?Q?D4r9Y90+AeevF6c4pX+4BZiqp8wXQxvI5S8iPca1dDCZoS8mGijWy81wqx?=
+ =?iso-8859-2?Q?6Tciqo1iYnljGHeB+6Y8frHtcE00TFaWt3Dg4QpvfhzPpw4TZ3TXiiOMkq?=
+ =?iso-8859-2?Q?T0SKlrmDjCp76YRqyUsDu2jCdxf+Pdr6F5FLaxoCqxmeNh28lVZwqiVPXT?=
+ =?iso-8859-2?Q?k45Kh2Rm23X0gOwi/EgQq6pcmLQ7ouJw+mhNvgv0lOW/ktQLDyqI85+0Yi?=
+ =?iso-8859-2?Q?ICgymqyMq04brQjGV03+RP3ANSLFZlWzLr4dNBZYTTnGDxA2I6rffiORNf?=
+ =?iso-8859-2?Q?Fljc2H0c08TFeO1P9I9m+63fEDDscmJmWUXGt7dtC4jpKXN8GMdk8A0Q8i?=
+ =?iso-8859-2?Q?ejC8aEdF1uU/tGofw1w/G3Ort/ITng0lzgSjq2Xu/nyS2mlGOFv/BGireh?=
+ =?iso-8859-2?Q?LKDcSvXOtfEKqwrCcG9beRGLTxwkmnIBLbSsKVy3nggtX0bIbTeSyGKDOo?=
+ =?iso-8859-2?Q?2iFRzMwHcV4X2RoHlo/W2pNn+fh5i9UK58Uk2fD4FDX7GAyRNZknGBz6UI?=
+ =?iso-8859-2?Q?qBHKzdVvGfGrp9Dc+pO5EIhVAGBZxzTCKXKXX0E6PBvLctLil5AznzWmRy?=
+ =?iso-8859-2?Q?Ecxc4ItI58n1D8UvWoH3VkZRPnaESGJqBUnKArwvToWQBgqulyQTKjKyUh?=
+ =?iso-8859-2?Q?Xicq1jSoMv8IDRkCLa6Qtir/qfyJm3uWr7CNHk0E+6EKN4PDSKCHf0ce5+?=
+ =?iso-8859-2?Q?EYc9SvF2+n5kN3qofh3UE7moM62R2/pUR6bTT044aBZyLVsMlNb4O4lbsf?=
+ =?iso-8859-2?Q?9yJDg+svi+Mr4/dZ93Oqpms80ywB6xMBgdok7HwVbpDT86+bNPMTcWC72+?=
+ =?iso-8859-2?Q?WtsxZecdvl4hQqGB7Gr5C8/lPjMzbqDEPPGWrw7YYzPwR1n6e6ZlLVSMth?=
+ =?iso-8859-2?Q?vleEFH3gRy+S8MUbBvCDPbH51/j98PbtWz9eGYHHdyjrRCf0RMtI0yq68T?=
+ =?iso-8859-2?Q?dmFkwGCLuCwwKZglbtErdhtcxjgG7gBuNK2c8axhFgmHj0W0npsVZiF4KP?=
+ =?iso-8859-2?Q?dSxTXOyksV2X7//aveQe3tDHsHteFSZ0CtFNZEX6gpGHoKw+xEICKajq/e?=
+ =?iso-8859-2?Q?R9SGAUjYBnPlu0I43JDx1H6e4UbFMeg412WaztZFUnNg9pwuGGwSUszDUK?=
+ =?iso-8859-2?Q?7gJNrn7ZmTDGqz3jJ2aNNVYB4e2Bv/HnrhGyKP7MkO53iuhEq+Ajgwpxl4?=
+ =?iso-8859-2?Q?eMYxXyfqOzR0gv3W10NRGZpkUbStvsAih1wIZRCR0KQuYtpNQl4i5EEORp?=
+ =?iso-8859-2?Q?sm7azs4HdFSD6rnMPjFCSqzzxekbmBDOAnUm2VqtwaQ1XhO82rLDvK7ftC?=
+ =?iso-8859-2?Q?dU3rb/zirEIlIgxm4PQP+VQxneatnIMkSqlyrs1dSnF2TWjcpUTQz81C/Q?=
+ =?iso-8859-2?Q?TDiAq7n3KwdP465+V2s53M7SnDAYq3q4vV1s29p6v3byVH7Qwx0R3lxiKf?=
+ =?iso-8859-2?Q?Gkg7obDenfvG5ULDlGPqDXE4mX7IosTmG05bPmdTcejcMii6BXt2ZO8TWq?=
+ =?iso-8859-2?Q?YUvUJiiWeEBAkELrbPU4DzNpDe0bl4vCFxoQqotRykhPPDs0OhDY92zgNP?=
+ =?iso-8859-2?Q?Craf1dTDQHK7q41THOOOKJlw6WKcLevagq?=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20251124-kaanapali-pcie-phy-v4-5-d04ee9cca83b@oss.qualcomm.com>
-X-Proofpoint-GUID: ChFB2EbXbgZSRlYrJjd_HRnfklTWkDQP
-X-Proofpoint-ORIG-GUID: ChFB2EbXbgZSRlYrJjd_HRnfklTWkDQP
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMjEwMDAxNCBTYWx0ZWRfX0KusuW7BwSCo
- T8QTbX4vHZqOhrD7ZqnN82b1HkRT4IknKRxTjh5b12oQo68LTqHEbyJOeJFDWeBRqukK/NP20d/
- N06t4vRSUZbMfBf7DEqxq890E6cuFJlVo0E9kycFSbLA0e4/X408oAarMmmFoSWvwou+b90VCsJ
- Qcrm733V5/oh0Hh/QUYEsZRdLD4rcw8d+k/s0nkbbgr0fuEGdFhb5+EBF4Nw6is83Za8hNqZoR5
- M6KSLc4RYgUdY9c7bYDvmfSjkbWgT10unDRoDwY8lFdtDss43Ak5lJkh/dbMmVc8WS5ia5yT9E/
- rsJxU+1EnW2NuZCaVmN/TgiT/ZCVPqWut97S7BieI0Axzn5FbxzMSPXGKLbudaCqF4/8X6lTkI4
- n9xPFHZ58Is+83/RzN1grZjZ+N7ZHA==
-X-Authority-Analysis: v=2.4 cv=IoYTsb/g c=1 sm=1 tr=0 ts=6938d218 cx=c_pps
- a=EVbN6Ke/fEF3bsl7X48z0g==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
- a=wP3pNCr1ah4A:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=JfrnYn6hAAAA:8 a=EUspDBNiAAAA:8 a=KKAkSRfTAAAA:8 a=prjBgqm01r1IDouUtvIA:9
- a=CjuIK1q_8ugA:10 a=a_PwQJl-kcHnX1M80qC6:22 a=1CNFftbPRP8L7MoqJWF3:22
- a=cvBusfyB2V15izCimMoJ:22
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
- definitions=2025-12-09_05,2025-12-09_03,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- adultscore=0 impostorscore=0 priorityscore=1501 spamscore=0
- lowpriorityscore=0 malwarescore=0 bulkscore=0 phishscore=0 suspectscore=0
- clxscore=1015 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2510240001
- definitions=main-2512100014
+X-OriginatorOrg: aspeedtech.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: SEYPR06MB5134.apcprd06.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: dfcc7df3-0376-41d9-a183-08de37924654
+X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Dec 2025 02:17:31.7665
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 43d4aa98-e35b-4575-8939-080e90d5a249
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: FoQkla87/rhiG4Ei4zUQPPsqJB0pyCJNWq6aYxKNDStgnQQM7XnZI7TbbL3cUkktpu82pnhFwYeBj2bHk5//MjRT5Z4fU8+4aaIBPGNoddA=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SE1PPF158EAB38C
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251209_175122_266509_02CE60BC 
-X-CRM114-Status: GOOD (  17.57  )
+X-CRM114-CacheID: sfid-20251209_181741_768418_2F71FD1B 
+X-CRM114-Status: GOOD (  26.37  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -151,95 +176,228 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Nov 24, 2025 at 02:24:38AM -0800, Qiang Yu wrote:
-> Add QMP PCIe PHY support for the Kaanapali platform.
-> 
-> Signed-off-by: Jingyi Wang <jingyi.wang@oss.qualcomm.com>
-> Reviewed-by: Abel Vesa <abel.vesa@linaro.org>
-> Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
-> Signed-off-by: Qiang Yu <qiang.yu@oss.qualcomm.com>
-> ---
->  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 194 +++++++++++++++++++++++++++++++
->  1 file changed, 194 insertions(+)
-> 
-> @@ -3363,6 +3516,16 @@ static const struct qmp_pcie_offsets qmp_pcie_offsets_v6_30 = {
->  	.ln_shrd	= 0x8000,
->  };
->  
-> +static const struct qmp_pcie_offsets qmp_pcie_offsets_v8_0 = {
+Hi Bjorn,
 
-Is it really 8.0 or 8.20?
+Thank you for your reply.
 
-> +	.serdes		= 0x1000,
-> +	.pcs		= 0x1400,
-> +	.pcs_misc	= 0x1800,
-> +	.tx		= 0x0000,
-> +	.rx		= 0x0200,
-> +	.tx2		= 0x0800,
-> +	.rx2		= 0x0a00,
-> +};
-> +
->  static const struct qmp_pcie_offsets qmp_pcie_offsets_v8_50 = {
->  	.serdes     = 0x8000,
->  	.pcs        = 0x9000,
-> @@ -4425,6 +4588,34 @@ static const struct qmp_phy_cfg qmp_v6_gen4x4_pciephy_cfg = {
->  	.phy_status             = PHYSTATUS_4_20,
->  };
->  
-> +static const struct qmp_phy_cfg qmp_v8_gen3x2_pciephy_cfg = {
-> +	.lanes = 2,
-> +
-> +	.offsets		= &qmp_pcie_offsets_v8_0,
-> +
-> +	.tbls = {
-> +		.serdes			= kaanapali_qmp_gen3x2_pcie_serdes_tbl,
-> +		.serdes_num		= ARRAY_SIZE(kaanapali_qmp_gen3x2_pcie_serdes_tbl),
-> +		.tx			= kaanapali_qmp_gen3x2_pcie_tx_tbl,
-> +		.tx_num			= ARRAY_SIZE(kaanapali_qmp_gen3x2_pcie_tx_tbl),
-> +		.rx			= kaanapali_qmp_gen3x2_pcie_rx_tbl,
-> +		.rx_num			= ARRAY_SIZE(kaanapali_qmp_gen3x2_pcie_rx_tbl),
-> +		.pcs			= kaanapali_qmp_gen3x2_pcie_pcs_tbl,
-> +		.pcs_num		= ARRAY_SIZE(kaanapali_qmp_gen3x2_pcie_pcs_tbl),
-> +		.pcs_misc		= kaanapali_qmp_gen3x2_pcie_pcs_misc_tbl,
-> +		.pcs_misc_num		= ARRAY_SIZE(kaanapali_qmp_gen3x2_pcie_pcs_misc_tbl),
-> +	},
-> +
-> +	.reset_list		= sdm845_pciephy_reset_l,
-> +	.num_resets		= ARRAY_SIZE(sdm845_pciephy_reset_l),
-> +	.vreg_list		= qmp_phy_vreg_l,
-> +	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
-> +	.regs			= pciephy_v8_regs_layout,
-> +
-> +	.pwrdn_ctrl		= SW_PWRDN | REFCLK_DRV_DSBL,
-> +	.phy_status		= PHYSTATUS_4_20,
-> +};
-> +
->  static const struct qmp_phy_cfg glymur_qmp_gen5x4_pciephy_cfg = {
->  	.lanes = 4,
->  
-> @@ -5209,6 +5400,9 @@ static const struct of_device_id qmp_pcie_of_match_table[] = {
->  	}, {
->  		.compatible = "qcom,ipq9574-qmp-gen3x2-pcie-phy",
->  		.data = &ipq9574_gen3x2_pciephy_cfg,
-> +	}, {
-> +		.compatible = "qcom,kaanapali-qmp-gen3x2-pcie-phy",
-> +		.data = &qmp_v8_gen3x2_pciephy_cfg,
->  	}, {
->  		.compatible = "qcom,msm8998-qmp-pcie-phy",
->  		.data = &msm8998_pciephy_cfg,
+> > +	u8 tx_tag;
+> > +	int host_bus_num;
 > 
-> -- 
-> 2.34.1
+> Only needs a u8.
 > 
-> 
-> -- 
-> linux-phy mailing list
-> linux-phy@lists.infradead.org
-> https://lists.infradead.org/mailman/listinfo/linux-phy
 
--- 
-With best wishes
-Dmitry
+Agreed.
+
+> > +static int aspeed_pcie_port_init(struct aspeed_pcie_port *port) {
+> > +	struct aspeed_pcie *pcie = port->pcie;
+> > +	struct device *dev = pcie->dev;
+> > +	int ret;
+> > +
+> > +	ret = clk_prepare_enable(port->clk);
+> > +	if (ret)
+> > +		return dev_err_probe(dev, ret,
+> > +				     "failed to set clock for slot (%d)\n",
+> > +				     port->slot);
+> > +
+> > +	ret = phy_init(port->phy);
+> > +	if (ret)
+> > +		return dev_err_probe(dev, ret,
+> > +				     "failed to init phy pcie for slot (%d)\n",
+> > +				     port->slot);
+> > +
+> > +	ret = phy_set_mode_ext(port->phy, PHY_MODE_PCIE,
+> PHY_MODE_PCIE_RC);
+> > +	if (ret)
+> > +		return dev_err_probe(dev, ret,
+> > +				     "failed to set phy mode for slot (%d)\n",
+> > +				     port->slot);
+> > +
+> > +	reset_control_deassert(port->perst);
+> > +	mdelay(PCIE_RESET_CONFIG_WAIT_MS);
+> 
+> I think this should use msleep().
+> 
+
+Agreed.
+
+> > +static int aspeed_ast2600_setup(struct platform_device *pdev) {
+> > +	struct aspeed_pcie *pcie = platform_get_drvdata(pdev);
+> > +	struct device *dev = pcie->dev;
+> > +
+> > +	pcie->ahbc = syscon_regmap_lookup_by_phandle(dev->of_node,
+> > +						     "aspeed,ahbc");
+> > +	if (IS_ERR(pcie->ahbc))
+> > +		return dev_err_probe(dev, PTR_ERR(pcie->ahbc),
+> > +				     "failed to map ahbc base\n");
+> > +
+> > +	aspeed_host_reset(pcie);
+> > +
+> > +	regmap_write(pcie->ahbc, ASPEED_AHBC_KEY,
+> ASPEED_AHBC_UNLOCK_KEY);
+> > +	regmap_update_bits(pcie->ahbc, ASPEED_AHBC_ADDR_MAPPING,
+> > +			   ASPEED_PCIE_RC_MEMORY_EN,
+> ASPEED_PCIE_RC_MEMORY_EN);
+> > +	regmap_write(pcie->ahbc, ASPEED_AHBC_KEY, ASPEED_AHBC_UNLOCK);
+> > +
+> > +	/* Due to the BAR assignment is fixed mapping on 0x6000_0000.*/
+> > +	writel(ASPEED_AHB_REMAP_LO_ADDR(0x600) |
+> ASPEED_AHB_MASK_LO_ADDR(0xe00),
+> > +	       pcie->reg + ASPEED_H2X_AHB_ADDR_CONFIG0);
+> > +	writel(ASPEED_AHB_REMAP_HI_ADDR(0),
+> > +	       pcie->reg + ASPEED_H2X_AHB_ADDR_CONFIG1);
+> 
+> I assume this ASPEED_H2X_AHB_ADDR_CONFIG is doing basically the same
+> thing as aspeed_ast2700_remap_pci_addr() below, so see the comments
+> there.
+> 
+
+Yes.
+
+> > +	writel(ASPEED_AHB_MASK_HI_ADDR(~0),
+> > +	       pcie->reg + ASPEED_H2X_AHB_ADDR_CONFIG2);
+> > +	writel(ASPEED_H2X_BRIDGE_EN, pcie->reg + ASPEED_H2X_CTRL);
+> > +
+> > +	writel(ASPEED_PCIE_RX_DMA_EN | ASPEED_PCIE_RX_LINEAR |
+> > +	       ASPEED_PCIE_RX_MSI_SEL | ASPEED_PCIE_RX_MSI_EN |
+> > +	       ASPEED_PCIE_WAIT_RX_TLP_CLR |
+> ASPEED_PCIE_RC_RX_ENABLE |
+> > +	       ASPEED_PCIE_RC_ENABLE,
+> > +	       pcie->reg + ASPEED_H2X_DEV_CTRL);
+> > +
+> > +	writel(ASPEED_RC_TLP_TX_TAG_NUM, pcie->reg +
+> ASPEED_H2X_DEV_TX_TAG);
+> > +
+> > +	pcie->host->ops = &aspeed_ast2600_pcie_ops;
+> > +	pcie->host->child_ops = &aspeed_ast2600_pcie_child_ops;
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static int aspeed_ast2700_remap_pci_addr(struct aspeed_pcie *pcie) {
+> > +	struct device_node *dev_node = pcie->dev->of_node;
+> > +	struct of_pci_range range;
+> > +	struct of_pci_range_parser parser;
+> > +	int ret;
+> > +
+> > +	ret = of_pci_range_parser_init(&parser, dev_node);
+> > +	if (ret)
+> > +		return ret;
+> > +
+> > +	for_each_of_pci_range(&parser, &range) {
+> > +		if ((range.flags & IORESOURCE_TYPE_BITS) == IORESOURCE_MEM) {
+> > +			writel(ASPEED_REMAP_PCI_ADDR_31_12(range.pci_addr),
+> > +			       pcie->reg + ASPEED_H2X_REMAP_PCI_ADDR_LO);
+> > +			writel(ASPEED_REMAP_PCI_ADDR_63_32(range.pci_addr),
+> > +			       pcie->reg + ASPEED_H2X_REMAP_PCI_ADDR_HI);
+> > +			return 0;
+> 
+> It looks like this is essentially hardcoding the offset between the
+> parent-bus-address and the child-bus-address in the DT 'ranges'
+> property.  Since ASPEED_REMAP_PCI_ADDR_31_12() and
+> ASPEED_REMAP_PCI_ADDR_63_32() do nothing except mask out the low 12
+> bits, I assume that offset is zero.
+> 
+> But this should not be hard-coded at all; it should be extracted from 'ranges'.
+> I don't think we really have a consistent way of doing this, but you can take a
+> look at how these other drivers program "outbound" mappings like this using
+> bridge->windows:
+> 
+>   cdns_pcie_hpa_host_init_address_translation()
+>   dw_pcie_iatu_setup()
+>   mobiveil_host_init()
+>   xgene_pcie_map_ranges()
+>   iproc_pcie_map_ranges()
+>   rzg3s_pcie_parse_map_ranges()
+> 
+
+Thank you for providing the information.
+We will refer to this information to integrate the PCIe mapping range.
+
+> > +static int aspeed_pcie_parse_dt(struct aspeed_pcie *pcie) {
+> > +	struct device *dev = pcie->dev;
+> > +	struct device_node *node = dev->of_node;
+> > +	int ret;
+> > +
+> > +	for_each_available_child_of_node_scoped(node, child) {
+> > +		int slot;
+> > +		const char *type;
+> > +
+> > +		ret = of_property_read_string(child, "device_type", &type);
+> > +		if (ret || strcmp(type, "pci"))
+> > +			continue;
+> > +
+> > +		ret = of_pci_get_devfn(child);
+> > +		if (ret < 0)
+> > +			return dev_err_probe(dev, ret,
+> > +					     "failed to parse devfn\n");
+> > +
+> > +		slot = PCI_SLOT(ret);
+> > +
+> > +		ret = aspeed_pcie_parse_port(pcie, child, slot);
+> > +		if (ret)
+> > +			return ret;
+> 
+> It looks unnecessarily complicated to put each port on a list in
+> aspeed_pcie_parse_port() and then iterate over that list in
+> aspeed_pcie_init_ports().
+> 
+> I think you could just do something like:
+> 
+>   aspeed_pcie_parse_port();
+>   aspeed_pcie_port_init();
+> 
+> and get rid of the list completely.
+> 
+
+Agreed.
+We will remove the list and initialize the port directly.
+
+> > +	}
+> > +
+> > +	if (list_empty(&pcie->ports))
+> > +		return dev_err_probe(dev, -ENODEV,
+> > +				     "No PCIe port found in DT\n");
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static int aspeed_pcie_probe(struct platform_device *pdev) {
+> > +	struct device *dev = &pdev->dev;
+> > +	struct pci_host_bridge *host;
+> > +	struct aspeed_pcie *pcie;
+> > +	struct resource_entry *entry;
+> > +	const struct aspeed_pcie_rc_platform *md;
+> > +	int irq, ret;
+> > +
+> > +	md = of_device_get_match_data(dev);
+> > +	if (!md)
+> > +		return -ENODEV;
+> > +
+> > +	host = devm_pci_alloc_host_bridge(dev, sizeof(*pcie));
+> > +	if (!host)
+> > +		return -ENOMEM;
+> > +
+> > +	pcie = pci_host_bridge_priv(host);
+> > +	pcie->dev = dev;
+> > +	pcie->tx_tag = 0;
+> > +	platform_set_drvdata(pdev, pcie);
+> > +
+> > +	pcie->platform = md;
+> > +	pcie->host = host;
+> > +	INIT_LIST_HEAD(&pcie->ports);
+> > +
+> > +	/* Get root bus num for cfg command to decide tlp type 0 or type 1 */
+> > +	entry = resource_list_first_type(&host->windows, IORESOURCE_BUS);
+> > +	if (entry)
+> > +		pcie->host_bus_num = entry->res->start;
+> 
+> s/host_bus_num/root_bus_nr/   to match struct altera_pcie
+
+Agreed.
+
+Thanks,
+Jacky
+
 
 -- 
 linux-phy mailing list
