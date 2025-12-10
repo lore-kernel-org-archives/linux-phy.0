@@ -4,68 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 327B1D3E77B
-	for <linux-phy@archiver.kernel.org>; Wed, 10 Dec 2025 21:13:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1CB49D3E77B
+	for <linux-phy@archiver.kernel.org>; Wed, 10 Dec 2025 21:19:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fuSaRrcFw7Wy7XN/iIgGevXUVcGLAKhr2dblykzssb0=; b=d1CAEyVAvScyfA
-	osqmYSjiSakHGRszgIEkkVfgSz7JhOTyZUlKjJmX1pO0TvfyNGl9Vno9bmni6egvzKjPvOGHayq82
-	veLZ8Rkx3yasis3UpifJS2v5A2XkH/Sirh85dLvryGRPMCsfoqZajOgclxUDiUvlWKkBIQ32UB4NQ
-	IVh4pgzgVeWd7UnltkZyxdJ07eP4BS8710KtXDY8hh5k+znzv1Fp6cU1lo5zcM4kqgeg33TFQsit2
-	4I4TnlEsUfVIyz9ECz+Q0SPs7Ws/84fT/ikjY/5pUKJfyEMKTJDBal/aZ8Gj4nvGEq19Xln5EwjJO
-	ohDDqZKjkIeUew6sOyRQ==;
+	List-Owner; bh=aRts8rI01O0pXOVfkh+9gSJWuHkSR+pqdhKACzVclWY=; b=szNt0gtwul5/DU
+	eZ66m3dc4QdogC4O6/lR9GFSzY9F4IyyuRK6Of7zXn1AwKMTDfHTwv2MRWqvHAU+w8zaJzAbJlVsw
+	uuLRVPEUTyrBPup7g4ndIP45/JE2x5izWw6QTk+pKfDCWskr7zaTZTsyoVhqr1H3wu0QlXYmoextn
+	B90UyRjoIm6wFdxszMz2T8jRP5FdiHDmd+J+N0hgUv4SCeoaKtXKZArzqzAnJhP52v16D/3vVE4zF
+	SuyqfEDjVRhXmn2Cu7ILhr1SIBR7cIbbOgBOuPQ2i4HmtQX6U4BGWAlgntBJQ1fbgISOqWI4Ap+IA
+	/fQkbbQ6E9BYF16U+t6g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vTRUo-0000000FtA1-0dNw;
-	Wed, 10 Dec 2025 21:13:14 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vTRaZ-0000000Fth6-3qc2;
+	Wed, 10 Dec 2025 21:19:13 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vTRUm-0000000Ft9Y-2NEY;
-	Wed, 10 Dec 2025 21:13:12 +0000
+	id 1vTRaV-0000000Ftfo-3mV4;
+	Wed, 10 Dec 2025 21:19:09 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 83EB1600C4;
-	Wed, 10 Dec 2025 21:13:11 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 01E75C4CEF1;
-	Wed, 10 Dec 2025 21:13:10 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 05EC160053;
+	Wed, 10 Dec 2025 21:19:07 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 79D8CC4CEF1;
+	Wed, 10 Dec 2025 21:19:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1765401191;
-	bh=aoyauFYLJsKITX5t2VCmjFrbwcJN4/7MVdS0dVL08zs=;
+	s=k20201202; t=1765401546;
+	bh=03sknuYCPkmVcorTKYIKQw77FBLDwfM2hq1bZJa0BtA=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=ogTMVIEld+8E2EIFT3MZeHr2NYaQ1fE2HrZ6Oi7xyw7qYP2t+mVVmOPSI/rGF95Hh
-	 cVVQ//NbvBMC+K6sLl8XuAZ5iPqi9ACzQ0tlsTkSlD0fIpiqkGLEC9Ma9C6b4M61jl
-	 WNivE8HWCI7LJMKwR9TJ9i5Hedu3o7b4GGOVbEf4bIJXCSVsgqTXAkusc6FXrqu4ZF
-	 GbqGIicMtSDG+llfICte7jJrUVCsLtrEdCldMLqC5mv7AAsNeFos9xUOW7qgBF4KCi
-	 TEcQ07RMrg4dFm9BgRPhVoizMCMEhKlaUGF+9zX+eKJdGm4Gksg8Cur9VtqzCvpqNy
-	 c30hNPsjGl3AA==
-Date: Wed, 10 Dec 2025 15:13:08 -0600
-From: "Rob Herring (Arm)" <robh@kernel.org>
+	b=VZQzKcpTIeBrOqwfcANcuGYiBVT/FqdKyu7Qe100DASv6TZAQqwbMmg/h8/sbQshq
+	 MDXbkmvdXbc5pEMMiz+q8R4BnIqFDNmwgCnyKmbPNcUAOCrXUrMswwyWMG+QcWvttM
+	 PhED7BkMQRj4c+rUJHAfaIJodgcN59wcQteZDc7/3U724wUabdqem6mXEs16tGujmK
+	 nMVEulPcm9Ti83MplBvp48iq07FrCgpq29nnDcYnSlrT0JaX5DOeaE8O5t8ohYpt4m
+	 O1JwcrmarbpGLvAcrNWicLX4Dp43PMIOGiWS+KpnOtJa5MrSHUoZahWSJFGLyjMlj5
+	 NkwicSt2OojJQ==
+Date: Wed, 10 Dec 2025 15:19:03 -0600
+From: Rob Herring <robh@kernel.org>
 To: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
-Cc: Matthias Brugger <matthias.bgg@gmail.com>,
-	linux-mediatek@lists.infradead.org, Vinod Koul <vkoul@kernel.org>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+Cc: Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
-	linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
-	Conor Dooley <conor+dt@kernel.org>,
-	Chun-Kuang Hu <chunkuang.hu@kernel.org>, kernel@collabora.com,
-	Krzysztof Kozlowski <krzk@kernel.org>,
-	linux-phy@lists.infradead.org,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Chunfeng Yun <chunfeng.yun@mediatek.com>,
-	linux-kernel@vger.kernel.org,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Guillaume Ranquet <granquet@baylibre.com>
-Subject: Re: [PATCH 01/12] dt-bindings: phy: mediatek,hdmi-phy: Fix clock
- output names for MT8195
-Message-ID: <176540118761.3352108.7929645042751556704.robh@kernel.org>
+	Conor Dooley <conor+dt@kernel.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	Chun-Kuang Hu <chunkuang.hu@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Guillaume Ranquet <granquet@baylibre.com>, kernel@collabora.com,
+	Krzysztof Kozlowski <krzk@kernel.org>,
+	linux-arm-kernel@lists.infradead.org,
+	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	=?iso-8859-1?Q?N=EDcolas_F=2E_R=2E_A=2E?= Prado <nfraprado@collabora.com>
+Subject: Re: [PATCH 03/12] dt-bindings: phy: mediatek,hdmi-phy: Document
+ extra clocks for MT8195
+Message-ID: <20251210211903.GA3352325-robh@kernel.org>
 References: <20251209-mtk-genio-evk-hdmi-support-v1-0-9a6106effba6@collabora.com>
- <20251209-mtk-genio-evk-hdmi-support-v1-1-9a6106effba6@collabora.com>
+ <20251209-mtk-genio-evk-hdmi-support-v1-3-9a6106effba6@collabora.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20251209-mtk-genio-evk-hdmi-support-v1-1-9a6106effba6@collabora.com>
+In-Reply-To: <20251209-mtk-genio-evk-hdmi-support-v1-3-9a6106effba6@collabora.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,38 +77,119 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Tue, Dec 09, 2025 at 05:34:33PM +0100, Louis-Alexis Eyraud wrote:
+> From: "N=EDcolas F. R. A. Prado" <nfraprado@collabora.com>
+> =
 
-On Tue, 09 Dec 2025 17:34:31 +0100, Louis-Alexis Eyraud wrote:
-> From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-> 
-> For all of the HDMI PHYs compatible with the one found on MT8195
-> the output clock has a different datasheet name and specifically
-> it is called "hdmi_txpll", differently from the older HDMI PHYs
-> which output block is called "hdmitx_dig_cts".
-> 
-> Replace clock output name string check by max item number one to allow
-> the new name on all of the HDMI PHY IPs that are perfectly compatible
-> with MT8195.
-> 
-> Fixes: c78fe548b062 ("dt-bindings: phy: mediatek: hdmi-phy: Add mt8195 compatible")
-> Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-> [Louis-Alexis Eyraud: splitted patch, addressed previous feedback from
-> mailing list, and reworded description]
+> MT8195's HDMI PHY block has 4 clocks instead of just a single one.
+> Describe the extra clocks for it.
+> =
+
+> Signed-off-by: N=EDcolas F. R. A. Prado <nfraprado@collabora.com>
 > Signed-off-by: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
 > ---
->  Documentation/devicetree/bindings/phy/mediatek,hdmi-phy.yaml | 3 +--
->  1 file changed, 1 insertion(+), 2 deletions(-)
-> 
+>  .../devicetree/bindings/phy/mediatek,hdmi-phy.yaml | 36 ++++++++++++++++=
++++---
+>  1 file changed, 32 insertions(+), 4 deletions(-)
+> =
 
-Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
+> diff --git a/Documentation/devicetree/bindings/phy/mediatek,hdmi-phy.yaml=
+ b/Documentation/devicetree/bindings/phy/mediatek,hdmi-phy.yaml
+> index cd4ac42ee45e4648ed512f68f6f28d1f3f2e1116..91f8118689d5e838c4d752648=
+22bb09a00fea21b 100644
+> --- a/Documentation/devicetree/bindings/phy/mediatek,hdmi-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/mediatek,hdmi-phy.yaml
+> @@ -38,12 +38,12 @@ properties:
+>      maxItems: 1
+>  =
+
+>    clocks:
+> -    items:
+> -      - description: PLL reference clock
+> +    minItems: 1
+> +    maxItems: 4
+>  =
+
+>    clock-names:
+> -    items:
+> -      - const: pll_ref
+> +    minItems: 1
+> +    maxItems: 4
+>  =
+
+>    clock-output-names:
+>      maxItems: 1
+> @@ -79,6 +79,34 @@ required:
+>    - "#phy-cells"
+>    - "#clock-cells"
+>  =
+
+> +allOf:
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          const: mediatek,mt8195-hdmi-phy
+
+You just said mt8188 is compatible, but it's excluded here. If mt8188 =
+
+can work without knowing about the 3 new clocks (and no driver changes), =
+
+then it is compatible .
+
+> +    then:
+> +      properties:
+> +        clocks:
+> +          items:
+> +            - description: PLL reference clock
+> +            - description: HDMI 26MHz clock
+> +            - description: HDMI PLL1 clock
+> +            - description: HDMI PLL2 clock
+> +        clock-names:
+> +          items:
+> +            - const: pll_ref
+> +            - const: hdmi_26m
+> +            - const: hdmi_pll1
+> +            - const: hdmi_pll2
+
+Move all this to the top-level (so just add entries 2-4) and add =
+
+'minItems: 1'. Here, just put 'minItems: 4' except that I assume it did =
+
+work with 1 clock, so requiring 4 breaks the ABI.
+
+Also, drop 'hdmi_'. It's redundant.
+
+> +    else:
+> +      properties:
+> +        clocks:
+> +          items:
+> +            - description: PLL reference clock
+> +        clock-names:
+> +          items:
+> +            - const: pll_ref
+
+And here, just 'maxItems: 1'
+
+> +
+>  additionalProperties: false
+>  =
+
+>  examples:
+> =
+
+> -- =
+
+> 2.52.0
+> =
 
 
--- 
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
