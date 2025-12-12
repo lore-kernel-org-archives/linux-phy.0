@@ -4,116 +4,138 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 75C4ED4335E
-	for <linux-phy@archiver.kernel.org>; Thu, 11 Dec 2025 23:17:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F3266D43367
+	for <linux-phy@archiver.kernel.org>; Fri, 12 Dec 2025 03:22:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4C1/vRO513UtQw1P7bheDw2k56Ws21QflK/n7SzFTdY=; b=t5A8Bh7/cUvBGQ
-	BhNw6KmTo6jZwzhfRZpdc4BfInzw/6Ai9zdh0Vzu0Nhir6zJEIBvNENxWobwc+cpkm0m75M+C0HyX
-	lb/nJo6GtItVrJ0rP/xZcF7PCrp54puLJwX7ZH4vz0iLJx7ueil9zpVrdRScf8dIvwyaKMUjh2hP1
-	C3u6LcMn5OXxJRRUPSBKlqlAq+DR+YOZnIw5bolMpX016KGJmpsaLzReeFkm1wEpDF5uLa2lnJlUA
-	u53WK0SphEQO2jAan8rfs+kq2vZWIKIzMdc+axG88dCCHNETXMwhXP3j2U2/QhyUw8wCCjarGRezD
-	r2nlBGCITvrUtzda3cFg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=kxeywEN252n8RkW7w9McHEIvT3MUyMs84XoXJvzXXOY=; b=2eIh5TRgT4b8ye
+	xbuEEANOoDSnXA1Ic6LvPtMu4OuxbaQ7v9ybhVBxPg7rFYOvZ8yLXsjwSRvOI0kQQCq8Ul7GrK7/u
+	RSAT3MJlNnMPJ0qMdU0iA5e5uQuLzza6COAeFM5zn4lrrhcw0q9Ta5MMJaE5JJo316P3oEHfj7SsW
+	gUGZKxq49q/uXR+8kfhncrAIz3zVEcvvMm+7dlK9pI00gjis7K9U02/FhH6W03obJONRlmMXqadE7
+	TIs8DXfyd0uG923X2pA5LZHJzwSLWYVFnXOoY3d0hLHapeSZE46pINoJaS5ZMBZfZ0D53nzq4qFn+
+	tlN6pzt+l8e4h/mOxZjg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vTpuy-0000000HPXj-3txM;
-	Thu, 11 Dec 2025 23:17:52 +0000
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
+	id 1vTtjq-000000000oi-2Fmj;
+	Fri, 12 Dec 2025 03:22:38 +0000
+Received: from mail-westus3azon11010050.outbound.protection.outlook.com ([52.101.201.50] helo=PH7PR06CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vTput-0000000HPQG-45y8
+	id 1vTtjo-000000000oJ-1WCR
 	for linux-phy@lists.infradead.org;
-	Thu, 11 Dec 2025 23:17:51 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1765495066;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=WSMzcnKfH5zogbN6xIJkP7sWMqF2vATubBjeteI/qGc=;
-	b=A5OL6V7vr/Gn/Kx8sIwBSz1T4nXxTeSlN3VSVTcrVcwVtK9/9p7t03j6v8JwuFnjNsI2QN
-	R7jHqyVG9ZaipW8RFKT1MscjvbWg56NLjOh+s1zPXeSPl9P4kKDPKTFf2FVcfiRmKGLsIY
-	QwxwWbcR8nXqVJRWndeEhqEYqb7aoTY=
-Received: from mail-qk1-f200.google.com (mail-qk1-f200.google.com
- [209.85.222.200]) by relay.mimecast.com with ESMTP with STARTTLS
- (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
- us-mta-516--LKsGMSyPnC6L0JOSMAgrw-1; Thu, 11 Dec 2025 18:17:45 -0500
-X-MC-Unique: -LKsGMSyPnC6L0JOSMAgrw-1
-X-Mimecast-MFC-AGG-ID: -LKsGMSyPnC6L0JOSMAgrw_1765495065
-Received: by mail-qk1-f200.google.com with SMTP id af79cd13be357-8bb3388703dso49217985a.1
-        for <linux-phy@lists.infradead.org>; Thu, 11 Dec 2025 15:17:45 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1765495065; x=1766099865;
-        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
-         :mime-version:subject:date:from:x-gm-gg:x-gm-message-state:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=WSMzcnKfH5zogbN6xIJkP7sWMqF2vATubBjeteI/qGc=;
-        b=FFtJcYD+w164e1LV3f4uESiHoxtbf4yIudrY9hsdNGN+N6LnXQA2K8w2gOs7v756sh
-         GcLQM2GwKQy6R4QxYu+kDjzir7gYp6+tAxAvO/8/+Rrso+j5JDwe/QcgiO7DoWt9uQHp
-         MHdoVY5rQJqpI7hG3h7OM1jXmU3lmJPbPxjjFeyHs0qfR/xlRv2WvSR3SS10YQXDoaSc
-         0dX/vbE9UCB22eXsRK4WYYuR7FbDR0c0jPNizPVFaeikRfSuvtzPZWvGMNaS/1TRkN0z
-         Oan3WPEuIynWpBOFrtAAUtrAZOoSHyAFtmFcrIOmKaoGFTuXHfHqay1cRGA22woJAFM0
-         TdAQ==
-X-Forwarded-Encrypted: i=1; AJvYcCWfnFWE2xcayhIozNpvjws8NnPqtjAVrmt6s6AcZRGs5aFwv4yX38O0ateXISwzCXdtuSIX/yt1XUQ=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwXlMWfHj9D1QARAUAScU+Ng3BIrzFIZPJy3U8NGF1vmhNYfsyD
-	eNKPbsN5dLb3vdbJTB0monImdCCGK7g+atWxBzXU6EcVyQz82RG9x9JEIF56b7DhSpyoN0pker2
-	VbL8PJDXZgtVq0iIJXkIK0fstNNfYokax2TdYO42rPs/+iVOhAftejhUJGuYkCqAy1a4=
-X-Gm-Gg: AY/fxX6h5MxGjf/rGWSbFYNBq2Uv5U5L5NIkwP3RrQq74tNs00RQgY+1otL87BkWbvN
-	gvklK+NHoCSQ7tFN1n3CR87RPT3fFg401WDBkCSiKAnL2Oe3C7EXK8nHRoRvjh+YE6hxu5hikhK
-	Z7NGIti9Wl9ypO4j+XYfnXXjFjmIsaf1VXu+i/wcLVi9rfT66Nt5rgNe4hGQ1UQKHdX3rkdVzQo
-	qeR57sCprJvKScXcwvRYPasOR/2/SvfQuXciFItIkPJXcMtlJFVfvcDI8o3a/mx9aN3u4G4j6SK
-	3Fdk3Oj0k5fffLmSUaE5xAcX43imUqdvzUZRrLliMYxWcEP88y4F+vWgPtbhK+cA9B1E++7VCKK
-	bcTh0Rigr1Hh1cxp9CoepomWkduZ20SUCSum3JWS6YV/sTqHS5/FMkQ==
-X-Received: by 2002:a05:620a:4416:b0:89e:c659:3f99 with SMTP id af79cd13be357-8bb398d703bmr36053485a.6.1765495065300;
-        Thu, 11 Dec 2025 15:17:45 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IHLYKRP7lHhgawU3OEaYHk6OghheRQMM/cwXxtpO8QhTtXeryEcvWYjXWc+lMjIJt9Bnf4lfQ==
-X-Received: by 2002:a05:620a:4416:b0:89e:c659:3f99 with SMTP id af79cd13be357-8bb398d703bmr36048785a.6.1765495064870;
-        Thu, 11 Dec 2025 15:17:44 -0800 (PST)
-Received: from [192.168.101.129] (c-73-183-52-120.hsd1.pa.comcast.net. [73.183.52.120])
-        by smtp.gmail.com with ESMTPSA id af79cd13be357-8bab5d4edbasm317873585a.51.2025.12.11.15.17.37
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 11 Dec 2025 15:17:44 -0800 (PST)
-From: Brian Masney <bmasney@redhat.com>
-Date: Fri, 12 Dec 2025 08:16:27 +0900
-Subject: [PATCH v3 9/9] phy: ti: phy-j721e-wiz: convert from round_rate()
- to determine_rate()
+	Fri, 12 Dec 2025 03:22:37 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=WnWkJpbnVhW757Oa++GzreJ0/EfTBqZrSTzPsBYiJG6khJuJ/rsQZyqtB611vrdzlHA2rykbLMYL7W3kG9QNmqcrIv1brnomO9zA6zb1511j2ASnFenR03qjThHfY2xYcsB3C0kTNZxJZjeGFJE6VMDh6sGUVpaU3Z8YWS25FAXN3yGOC8e5R0RpnpnxPXVzY4rNSrR4NPvWpCMDq+tZfWLfB5BnasjZgiBcBmQFyOfjDQOyEhuuTp6gBwsgmp5GwUSUVUgpGx4henlaUUK4iMWQsotr2JhuJr5eAQX5V1ME2FHEALQaDVGbCBm5HAPdNQamwjV/lMI3J+WCtgEwFA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=Lvqp80v1hZY7JpyDe1N9bPLp2iDFwrD2pzo9jgoCJAI=;
+ b=jOQQgsX6NZm8AuN8L6qyJy+co2eoukH+MdqHfBCpCa1GzxUYdKPpG8P6Q7XfpEo2yAPSBkr0T1W9No89IAYW1ZhEzQQe0vD5i/0iQ9FPJ5uQ1oLJWYFKoESlzy/fZrZtxI1POJlTO0ixYKNQsJRPSvtvLiSrUBV32eSlXfMQ66QYJks7d6j1EVS6OPd7NCT/YEYNCryd8qoz4NpJGjKIm9C0tcVwJ96v1X/WDWAEwfNNMeqpAAMYCvTiVn8QeZvbpI192BAHE7WB846BCunQfLBM+Sw0ahNTzm6KnWsitrbYvNL9sTWpzE/LEd+3RvzFeDzsNtq7zBoeBMtVybaYhg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 216.228.117.161) smtp.rcpttodomain=kernel.org smtp.mailfrom=nvidia.com;
+ dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
+ dkim=none (message not signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Lvqp80v1hZY7JpyDe1N9bPLp2iDFwrD2pzo9jgoCJAI=;
+ b=lICu5pvvuuPj06V/UGBlbpjL3V89qQsDKWyCpnlShBnEgpHdmd9f2Naxm6r4poKVYRe5phb2iHzqBu5i33up1x/ywQeqYaeOT+bTI+xOlp7ii2KLnYtcNraDaxLB2Y2j6a9ObP+uHrRieysWtchxn6vyzh16hUZu1M0cURVM2qpmFxAr885XPDNM4s26K8mMDu7ElzK+uNEYGCxrByIrgDG5z6qHY3mCP0v6k002JEGLv8U3DY8j7WpjB0Zqg+EmCkFA5KDAXUkeZjjGru7O5mKfS+GIMRUgqI0OE4vkFwIe5eRO4vVijRODNixTFhWz3/hclUfHfT30FAtTjPP1uQ==
+Received: from CY5PR22CA0033.namprd22.prod.outlook.com (2603:10b6:930:1d::33)
+ by BL3PR12MB6378.namprd12.prod.outlook.com (2603:10b6:208:3b1::6) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9412.7; Fri, 12 Dec
+ 2025 03:21:40 +0000
+Received: from CY4PEPF0000E9D3.namprd03.prod.outlook.com
+ (2603:10b6:930:1d:cafe::4f) by CY5PR22CA0033.outlook.office365.com
+ (2603:10b6:930:1d::33) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9412.9 via Frontend Transport; Fri,
+ 12 Dec 2025 03:21:22 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.161)
+ smtp.mailfrom=nvidia.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=nvidia.com;
+Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
+ 216.228.117.161 as permitted sender) receiver=protection.outlook.com;
+ client-ip=216.228.117.161; helo=mail.nvidia.com; pr=C
+Received: from mail.nvidia.com (216.228.117.161) by
+ CY4PEPF0000E9D3.mail.protection.outlook.com (10.167.241.138) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.9388.8 via Frontend Transport; Fri, 12 Dec 2025 03:21:40 +0000
+Received: from rnnvmail202.nvidia.com (10.129.68.7) by mail.nvidia.com
+ (10.129.200.67) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Thu, 11 Dec
+ 2025 19:21:21 -0800
+Received: from rnnvmail201.nvidia.com (10.129.68.8) by rnnvmail202.nvidia.com
+ (10.129.68.7) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Thu, 11 Dec
+ 2025 19:21:20 -0800
+Received: from waynec-Precision-5760.nvidia.com (10.127.8.13) by
+ mail.nvidia.com (10.129.68.8) with Microsoft SMTP Server id 15.2.2562.20 via
+ Frontend Transport; Thu, 11 Dec 2025 19:21:18 -0800
+From: Wayne Chang <waynec@nvidia.com>
+To: <jckuo@nvidia.com>, <vkoul@kernel.org>, <kishon@kernel.org>,
+	<thierry.reding@gmail.com>, <jonathanh@nvidia.com>
+CC: <waynec@nvidia.com>, <haotienh@nvidia.com>,
+	<linux-phy@lists.infradead.org>, <linux-tegra@vger.kernel.org>,
+	<linux-kernel@vger.kernel.org>, <stable@vger.kernel.org>
+Subject: [PATCH 1/1] phy: tegra: xusb: Explicitly configure HS_DISCON_LEVEL to 0x7
+Date: Fri, 12 Dec 2025 11:21:16 +0800
+Message-ID: <20251212032116.768307-1-waynec@nvidia.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Message-Id: <20251212-phy-clk-round-rate-v3-9-beae3962f767@redhat.com>
-References: <20251212-phy-clk-round-rate-v3-0-beae3962f767@redhat.com>
-In-Reply-To: <20251212-phy-clk-round-rate-v3-0-beae3962f767@redhat.com>
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Chun-Kuang Hu <chunkuang.hu@kernel.org>, 
- Philipp Zabel <p.zabel@pengutronix.de>, 
- Chunfeng Yun <chunfeng.yun@mediatek.com>, 
- Matthias Brugger <matthias.bgg@gmail.com>, 
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
- Heiko Stuebner <heiko@sntech.de>, 
- Neil Armstrong <neil.armstrong@linaro.org>, Stephen Boyd <sboyd@kernel.org>, 
- Maxime Ripard <mripard@kernel.org>
-Cc: linux-clk@vger.kernel.org, linux-phy@lists.infradead.org, 
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org, 
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
- linux-rockchip@lists.infradead.org, Brian Masney <bmasney@redhat.com>
-X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1629; i=bmasney@redhat.com;
- s=20250903; h=from:subject:message-id;
- bh=NfOJan9Myaz8PWi/tdBEvmDwiM4IlBdU+UqmIR/UHpw=;
- b=owGbwMvMwCW2/dJd9di6A+2Mp9WSGDKtAy71PRfV83r1eE1XcMbr4193OXztck+aIzTF0fIwx
- 8OmyOXFHaUsDGJcDLJiiixLco0KIlJX2d67o8kCM4eVCWQIAxenAEzkcBnDT8bgg94/bv76LP98
- asNWnk3r2i7mlX2fL39CbHOvzuf29BCGP/wVmU95Y0IeCWi+VV+bOlm/YtKFpXbSLZp8AR0a0lV
- hPAA=
-X-Developer-Key: i=bmasney@redhat.com; a=openpgp;
- fpr=A46D32705865AA3DDEDC2904B7D2DD275D7EC087
-X-Mimecast-Spam-Score: 0
-X-Mimecast-MFC-PROC-ID: gFTfS4C_5J6qGNC-I7Zt5rWTRMym8frdbGbK5FxoGGU_1765495065
-X-Mimecast-Originator: redhat.com
+X-NVConfidentiality: public
+X-NV-OnPremToCloud: ExternallySecured
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: CY4PEPF0000E9D3:EE_|BL3PR12MB6378:EE_
+X-MS-Office365-Filtering-Correlation-Id: 9407c726-9ca8-4a1d-cd5e-08de392d90f3
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|82310400026|36860700013|1800799024|376014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?75IbJdORmZte31d2zWraZpsAjHpusVw2ebJtLR22PYRsXcSS/8uKh5Uw4ULY?=
+ =?us-ascii?Q?7YunMkwh7R8bgrAVWqS086GQOjsAZR3RT0U9vg6GhDszO2UVQZCmAJ+VX1Gl?=
+ =?us-ascii?Q?qpMDC2lsGkMl39sB5Ze3NS8dBQFIzay/7L+pya64peMaBYP0Tv7mfXRV4JEW?=
+ =?us-ascii?Q?idq4+T9NeLFC/Va2yOkiQbtip1r9TsCI/E1hUdQUAbSz2j1tf+Gcy9FO/6Ns?=
+ =?us-ascii?Q?Xy9ItGwHGOTLrAcsvatwysCS4q9tmyScJ+/haOmpZcAa3yHpqJAUoOgyLSbX?=
+ =?us-ascii?Q?pU9zy9BUwYxswJELeglDP9Z/bk6yH0dEGuM8Oi6un8A0XywtKayCf3/4mPbx?=
+ =?us-ascii?Q?rheFm1JjZIdLEvdkwKrCfBV6nTCluOptRWxmUda3pIG5s3DXkNkYMDUXhZsO?=
+ =?us-ascii?Q?seCUMXhi9Kz2IGz+mYBpG/aBqL3Za2tjAwCeTPRZ6B547izIPGjTNA29O9uE?=
+ =?us-ascii?Q?YEpTZvAA2hG5Am0xrgshwpUj6yRbANrZ4u+REjNobMrPlXQSLI3s5yWSVNaA?=
+ =?us-ascii?Q?1L06Q1rZoeUS0H2vb4K2Q90ujTQNqI48b1RefUOxvAq2IasmtHS61hp6sMDY?=
+ =?us-ascii?Q?05VQyB6psNMk4e+Mg3Dv2GzH2pklknwd3q2WyqY0gq5sATWf2LCmSTWBO4XT?=
+ =?us-ascii?Q?rbKwLOMn2COq3S6+dXpu3gI5EBPMJLaHsvr3nIxhWWE3tUAw/QrteBNav3+p?=
+ =?us-ascii?Q?aGnt+3VYagPMSGtd0xg7ex0aNhvXotSi/oHJ2pONdRj//kJZdkDMFxNQhjAi?=
+ =?us-ascii?Q?x9IltA5/PPe/z5RBc4ks9NZKCAC3RHe3lj3gH2e0zXHHKcTo0tsPx9emDZKV?=
+ =?us-ascii?Q?0vOa1XcOMK49AdKE4iniUMYzVQs8t6+SfH06E26OSGshMN1V5sMZdEPfuL4s?=
+ =?us-ascii?Q?xoogLfh7Z7BvVll2HOks6yy9ZC7Zh/mSBSrskhbBI5+NkYAIDYl2m/VYeiKF?=
+ =?us-ascii?Q?4oZktvpXYqZZZCGfnJTAwyDlV44buSOEEgT2kRPzvhApx8cxOHQOyLOl1yod?=
+ =?us-ascii?Q?5z/jvptDmzyk37MdFXhVQacnSnUNs2sNmy1u430UoyYaOCn8UBL3ry36xfE8?=
+ =?us-ascii?Q?RWDM9RlGNjbNxJYI8YLvEEecmNtHpL+EXrkDH2fJPKlFFUs+oXARhFg0GMHk?=
+ =?us-ascii?Q?5Vy+lTVM0hO6qhnZ9rXCRD4JGQQlnIx4w2kc7tW/UpIJaaYSRY5gzktbnefZ?=
+ =?us-ascii?Q?VQH5cTB/S5bpOE6zYjC0FBiCZsW5UtJFqs3gRxFKIoRObWVvIzv+1FnyuR3m?=
+ =?us-ascii?Q?yR5AUE6MhM/R256h8GPObF1Cy3eFvbTMA00k61WfihqgTTQZRNHXALQHT5x3?=
+ =?us-ascii?Q?oZtUwgA3blSnIEWQSfZOci+fGV1gUwqx1zZVW2L6sSNhWfE7MOw8dvYDFfrF?=
+ =?us-ascii?Q?Lg/QpHGEzWW79VuGyk5qa8Agws6IeDjZ/eq+NogzCjugAmG5D2OIf3wrsfJb?=
+ =?us-ascii?Q?DIDJSdM+usHmiamnMTAPM9IT2S0Omk+ytilDqr6v5XijKgtHGSD3t4pz15rd?=
+ =?us-ascii?Q?dRPYyZu3eEMRhwMwtzS2aw/2kuv+25zDrsPplqdvml9DAFL5g98XHHm6mW0Z?=
+ =?us-ascii?Q?nXTzVAjlnF5CE4AJQhI=3D?=
+X-Forefront-Antispam-Report: CIP:216.228.117.161;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge2.nvidia.com;CAT:NONE;SFS:(13230040)(82310400026)(36860700013)(1800799024)(376014);DIR:OUT;SFP:1101;
+X-OriginatorOrg: Nvidia.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 Dec 2025 03:21:40.0264
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 9407c726-9ca8-4a1d-cd5e-08de392d90f3
+X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.161];Helo=[mail.nvidia.com]
+X-MS-Exchange-CrossTenant-AuthSource: CY4PEPF0000E9D3.namprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BL3PR12MB6378
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251211_151748_121456_22CB65EE 
-X-CRM114-Status: GOOD (  10.64  )
+X-CRM114-CacheID: sfid-20251211_192236_416349_3D1F05DA 
+X-CRM114-Status: UNSURE (   6.30  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -130,50 +152,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The round_rate() clk ops is deprecated, so migrate this driver from
-round_rate() to determine_rate() using the Coccinelle semantic patch
-on the cover letter of this series.
+The USB2 Bias Pad Control register manages analog parameters for signal
+detection. Previously, the HS_DISCON_LEVEL relied on hardware reset
+values, which may lead to the detection failure.
 
-Signed-off-by: Brian Masney <bmasney@redhat.com>
+Explicitly configure HS_DISCON_LEVEL to 0x7. This ensures the disconnect
+threshold is sufficient to guarantee reliable detection.
+
+Fixes: bbf711682cd5 ("phy: tegra: xusb: Add Tegra186 support")
+Cc: stable@vger.kernel.org
+Signed-off-by: Wayne Chang <waynec@nvidia.com>
 ---
- drivers/phy/ti/phy-j721e-wiz.c | 11 +++++++----
- 1 file changed, 7 insertions(+), 4 deletions(-)
+ drivers/phy/tegra/xusb-tegra186.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/drivers/phy/ti/phy-j721e-wiz.c b/drivers/phy/ti/phy-j721e-wiz.c
-index a8b440c6c46bb0c754845655f9c2c0ba6b435b8d..cbc98d4dec74560e6403fb899ebe2bb916440f45 100644
---- a/drivers/phy/ti/phy-j721e-wiz.c
-+++ b/drivers/phy/ti/phy-j721e-wiz.c
-@@ -934,12 +934,15 @@ static unsigned long wiz_clk_div_recalc_rate(struct clk_hw *hw,
- 	return divider_recalc_rate(hw, parent_rate, val, div->table, 0x0, 2);
- }
+diff --git a/drivers/phy/tegra/xusb-tegra186.c b/drivers/phy/tegra/xusb-tegra186.c
+index e818f6c3980e..bec9616c4a2e 100644
+--- a/drivers/phy/tegra/xusb-tegra186.c
++++ b/drivers/phy/tegra/xusb-tegra186.c
+@@ -84,6 +84,7 @@
+ #define XUSB_PADCTL_USB2_BIAS_PAD_CTL0		0x284
+ #define  BIAS_PAD_PD				BIT(11)
+ #define  HS_SQUELCH_LEVEL(x)			(((x) & 0x7) << 0)
++#define  HS_DISCON_LEVEL(x)			(((x) & 0x7) << 3)
  
--static long wiz_clk_div_round_rate(struct clk_hw *hw, unsigned long rate,
--				   unsigned long *prate)
-+static int wiz_clk_div_determine_rate(struct clk_hw *hw,
-+				      struct clk_rate_request *req)
- {
- 	struct wiz_clk_divider *div = to_wiz_clk_div(hw);
+ #define XUSB_PADCTL_USB2_BIAS_PAD_CTL1		0x288
+ #define  USB2_TRK_START_TIMER(x)		(((x) & 0x7f) << 12)
+@@ -623,6 +624,8 @@ static void tegra186_utmi_bias_pad_power_on(struct tegra_xusb_padctl *padctl)
+ 	value &= ~BIAS_PAD_PD;
+ 	value &= ~HS_SQUELCH_LEVEL(~0);
+ 	value |= HS_SQUELCH_LEVEL(priv->calib.hs_squelch);
++	value &= ~HS_DISCON_LEVEL(~0);
++	value |= HS_DISCON_LEVEL(0x7);
+ 	padctl_writel(padctl, value, XUSB_PADCTL_USB2_BIAS_PAD_CTL0);
  
--	return divider_round_rate(hw, rate, prate, div->table, 2, 0x0);
-+	req->rate = divider_round_rate(hw, req->rate, &req->best_parent_rate,
-+				       div->table, 2, 0x0);
-+
-+	return 0;
- }
- 
- static int wiz_clk_div_set_rate(struct clk_hw *hw, unsigned long rate,
-@@ -958,7 +961,7 @@ static int wiz_clk_div_set_rate(struct clk_hw *hw, unsigned long rate,
- 
- static const struct clk_ops wiz_clk_div_ops = {
- 	.recalc_rate = wiz_clk_div_recalc_rate,
--	.round_rate = wiz_clk_div_round_rate,
-+	.determine_rate = wiz_clk_div_determine_rate,
- 	.set_rate = wiz_clk_div_set_rate,
- };
- 
-
+ 	udelay(1);
 -- 
-2.52.0
+2.25.1
 
 
 -- 
