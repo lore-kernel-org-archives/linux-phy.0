@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A287DD5B178
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 53F37D5B176
 	for <linux-phy@archiver.kernel.org>; Mon, 15 Dec 2025 12:42:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,45 +12,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jL5rPvUKOXWNvD1XlzmZvE1Hx26xZrU6aw62DczwjJY=; b=a0p1o0Cq0TwD+k
-	PV0bmP50pUNvSe/4xNjK2VfAjUt4M1YrUp2R5tMSOo/hdZUBliNks9ImDXFHL7xd9I37GNQe7yw+0
-	1PWGOPB+9hByRd5Toi+RJFLPyMKjff6oqCcthfjyHj9Yj5/UQC28OtpMQqfnQoIVCaC3W0WIgjOp4
-	F1YxUpOfmP9bmC63CRjKsbNt46PQ0au1Kw4INssDbkGGGc43grP9lfahrvx4Kl2OqUc0CcSo0xFzJ
-	DEKAeYThTUX3I4AGh8bsH0cyyNhVXBhhmFnrcyCJYbIhCZg71GHMMUvp2rhO6blbYzhbLYRxliDt/
-	dSvon8PBoEyInD32jSaQ==;
+	List-Owner; bh=LF1QCVrBQ+dO22ZTMRD/CTvrt/pXrZc9pUab5I8NZX0=; b=poZ9ta3S/GIEUu
+	JRxhTsnBEE9NmURmmG/zT80CANbM6q1C2m2Szh0DKcYfDRL6o6FJ1/OobaAOeRau2XEcV6Ll7op7Q
+	WG/FMClSU/PgluXMJTH8Cz66Aij7LiCFAH2PVV9BtqvNda9TupoTW9EFbFCG/vHz+YESi8cOBO+he
+	rk/AXLnZLin+oI02cD/EYW43J8zwjk1Q/trOREQC9ZnA1Ttl5ixsdxjQuFB3MP+fZBJbzisbJ6+xl
+	tEHSnogwVLo23JoIOA5PJN1d7zxSgmPwry/xY/qUWNIZ16CNlzPppifYgEveVQ8jPbfiJnuTULaZf
+	7c6i57FtW7FlSIT087Sg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vV7uO-00000003eBC-1fgo;
+	id 1vV7uO-00000003eAx-0Cfh;
 	Mon, 15 Dec 2025 12:42:36 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vV7uH-00000003e4r-3fup
+	id 1vV7uI-00000003e5I-0QeJ
 	for linux-phy@lists.infradead.org;
 	Mon, 15 Dec 2025 12:42:31 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id F2DF4444CC;
-	Mon, 15 Dec 2025 12:42:25 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id CF945C2BCB0;
-	Mon, 15 Dec 2025 12:42:25 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 2DFE8444DF;
+	Mon, 15 Dec 2025 12:42:26 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 0CB31C19422;
+	Mon, 15 Dec 2025 12:42:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1765802545;
-	bh=SxeMj0kCjVSEXQo72aMl0rDZYPINLL8BMuXE1qEGPPI=;
+	s=k20201202; t=1765802546;
+	bh=syoDjmwtTkuPNk6NuWfGm11Wtp6aRsixt2eadoST6sc=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=ZnJ6DQK5ot0Tr9XCB4zTXW+1EQyIl5o5Ei0oJj2cbP4omHmubOBR6wu2RaSDTamvm
-	 hpT4unC1t9xjuEOYL52HzJnKdPYD5NGXWSi/kOHKosbs/t2i9dm+84OrUcND2IeArJ
-	 mdHYxUG3SQLqadKfvjVT6prGXICk6g2Rp/8n+cUwxsnzOmtMosIygnzD4Lc+OWkAL8
-	 gaP0ehJNNGkD0LTgSwVT6LXtv/4d1oI+yzfRJMQebVLLSFWzWgZjRjOLt9brV2R6ZY
-	 1Aw83/xzMYn/tv7Mdlp1LxcIxWuACsOjKnURdoXKesOwbSlgIUz2gwxJRm++5Nx1RJ
-	 ggWpybpAN3fyA==
+	b=Uz5Q0T8rVvmuS83g05+O+E3K/IrDADVCo4iDnxlKvpRGriAVs5i+IlrJ6TUSVakH4
+	 w9M42BBJuub1861rM9imDarYPwD+32UsugHlyAe2FHa2YOCY8RQg0Q5gL4vQge4lSA
+	 IZkmFQR5lO4rWXSzM9bfqneeEFTSibMTEVBKf/ARk3q5KHXTc1qxwwX6GK0me59Sb3
+	 5+L2GzE2Gc4s7wTacYy3lXIqRFVR9h+3zS+uhZjHc75tXYeEdS5TXQPVkm/MxNUpur
+	 JNShpge0Z4zwoHuzRdp18w5Wdvn3L2urHCf7732Th/QcP/xo0fg0txm0GKICbtZ5kC
+	 4q+oHxu3UT4Sg==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id C5395D5B16F;
-	Mon, 15 Dec 2025 12:42:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 04707D5B16E;
+	Mon, 15 Dec 2025 12:42:26 +0000 (UTC)
 From: Xiangxu Yin via B4 Relay <devnull+xiangxu.yin.oss.qualcomm.com@kernel.org>
-Date: Mon, 15 Dec 2025 20:42:04 +0800
-Subject: [PATCH v8 08/12] phy: qcom: qmp-usbc: Add TCSR parsing and PHY
- mode setting
+Date: Mon, 15 Dec 2025 20:42:07 +0800
+Subject: [PATCH v8 11/12] phy: qcom: qmp: Add DP v2 PHY register
+ definitions
 MIME-Version: 1.0
-Message-Id: <20251215-add-displayport-support-for-qcs615-platform-v8-8-cbc72c88a44e@oss.qualcomm.com>
+Message-Id: <20251215-add-displayport-support-for-qcs615-platform-v8-11-cbc72c88a44e@oss.qualcomm.com>
 References: <20251215-add-displayport-support-for-qcs615-platform-v8-0-cbc72c88a44e@oss.qualcomm.com>
 In-Reply-To: <20251215-add-displayport-support-for-qcs615-platform-v8-0-cbc72c88a44e@oss.qualcomm.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -66,19 +66,19 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  Konrad Dybcio <konradybcio@kernel.org>, 
  Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1765802542; l=2770;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1765802543; l=10337;
  i=xiangxu.yin@oss.qualcomm.com; s=20241125; h=from:subject:message-id;
- bh=TCyU6xV0jZSERKXzLkDpnsdMnjfdzQb/+uM4BPEfHB4=;
- b=zMlX+0fLr11MpqdlHb3lN6nU/L09NgZNxMYaT2evvudFYzaRy6c2blDAHv5GyJpIDzYYRZZoL
- gb7+EZQGhlmB7FFAlYt0e4DE3xuBBKFrIqka+SgbKnxeVY7htiK5zzF
+ bh=GWjcAhmiyC0lMBjcETZr15esuDIyOq7xezsmZ5A29ow=;
+ b=IT9NlyG4CoUAmlb4FR/HrnbcLFqgBZfzusIZauCL90boTk86PCch0WZl/otftcdH802wtQrul
+ ij/Fm2LmKqjDEDofB8x6wptkKyY5U4IMXMNV7wPi5ncEQF5BwLRaxK1
 X-Developer-Key: i=xiangxu.yin@oss.qualcomm.com; a=ed25519;
  pk=F1TwipJzpywfbt3n/RPi4l/A4AVF+QC89XzCHgZYaOc=
 X-Endpoint-Received: by B4 Relay for xiangxu.yin@oss.qualcomm.com/20241125
  with auth_id=542
 X-Original-From: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251215_044229_978592_AFD84FD9 
-X-CRM114-Status: GOOD (  14.23  )
+X-CRM114-CacheID: sfid-20251215_044230_225194_A56EEEE3 
+X-CRM114-Status: GOOD (  10.75  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,90 +98,244 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
 
-Extend TCSR parsing to read optional dp_phy_mode_reg and add
-qmp_usbc_set_phy_mode() to switch between USB and DP modes when
-supported.
+Add dedicated headers for DP v2 PHY, including QSERDES COM and TX/RX
+register definitions.
 
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
 Signed-off-by: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-usbc.c | 25 +++++++++++++++++++------
- 1 file changed, 19 insertions(+), 6 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-dp-phy-v2.h      |  21 ++++
+ drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com-v2.h | 106 +++++++++++++++++++++
+ .../phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v2.h    |  68 +++++++++++++
+ drivers/phy/qualcomm/phy-qcom-qmp.h                |   3 +
+ 4 files changed, 198 insertions(+)
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c b/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
-index c8e0f9574ba6..0a634ec4029a 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
-@@ -529,6 +529,12 @@ static const struct qmp_phy_cfg qcs615_usb3phy_cfg = {
- 	.regs			= qmp_v3_usb3phy_regs_layout_qcm2290,
- };
- 
-+static void qmp_usbc_set_phy_mode(struct qmp_usbc *qmp, bool is_dp)
-+{
-+	if (qmp->tcsr_map && qmp->dp_phy_mode_reg)
-+		regmap_write(qmp->tcsr_map, qmp->dp_phy_mode_reg, is_dp);
-+}
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-dp-phy-v2.h b/drivers/phy/qualcomm/phy-qcom-qmp-dp-phy-v2.h
+new file mode 100644
+index 000000000000..8b9572d3cdeb
+--- /dev/null
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-dp-phy-v2.h
+@@ -0,0 +1,21 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * Copyright (c) 2017, The Linux Foundation. All rights reserved.
++ */
 +
- static int qmp_usbc_com_init(struct phy *phy)
- {
- 	struct qmp_usbc *qmp = phy_get_drvdata(phy);
-@@ -669,6 +675,8 @@ static int qmp_usbc_usb_enable(struct phy *phy)
- 	if (ret)
- 		goto out_unlock;
- 
-+	qmp_usbc_set_phy_mode(qmp, false);
++#ifndef QCOM_PHY_QMP_DP_PHY_V2_H_
++#define QCOM_PHY_QMP_DP_PHY_V2_H_
 +
- 	ret = qmp_usbc_usb_power_on(phy);
- 	if (ret) {
- 		qmp_usbc_com_exit(phy);
-@@ -1112,6 +1120,7 @@ static int qmp_usbc_typec_switch_set(struct typec_switch_dev *sw,
- 		qmp_usbc_com_exit(qmp->usb_phy);
- 
- 		qmp_usbc_com_init(qmp->usb_phy);
-+		qmp_usbc_set_phy_mode(qmp, false);
- 		qmp_usbc_usb_power_on(qmp->usb_phy);
- 	}
- 
-@@ -1262,15 +1271,16 @@ static int qmp_usbc_parse_dt(struct qmp_usbc *qmp)
- 	return 0;
- }
- 
--static int qmp_usbc_parse_vls_clamp(struct qmp_usbc *qmp)
-+static int qmp_usbc_parse_tcsr(struct qmp_usbc *qmp)
- {
- 	struct of_phandle_args tcsr_args;
- 	struct device *dev = qmp->dev;
--	int ret;
-+	int ret, args_count;
- 
--	/*  for backwards compatibility ignore if there is no property */
--	ret = of_parse_phandle_with_fixed_args(dev->of_node, "qcom,tcsr-reg", 1, 0,
--					       &tcsr_args);
-+	args_count = of_property_count_u32_elems(dev->of_node, "qcom,tcsr-reg");
-+	args_count = args_count - 1;
-+	ret = of_parse_phandle_with_fixed_args(dev->of_node, "qcom,tcsr-reg",
-+					       args_count, 0, &tcsr_args);
- 	if (ret == -ENOENT)
- 		return 0;
- 	else if (ret < 0)
-@@ -1283,6 +1293,9 @@ static int qmp_usbc_parse_vls_clamp(struct qmp_usbc *qmp)
- 
- 	qmp->vls_clamp_reg = tcsr_args.args[0];
- 
-+	if (args_count > 1)
-+		qmp->dp_phy_mode_reg = tcsr_args.args[1];
++// /* Only for QMP V2 PHY - DP PHY registers */
++#define QSERDES_V2_DP_PHY_AUX_INTERRUPT_MASK		0x048
++#define QSERDES_V2_DP_PHY_AUX_INTERRUPT_CLEAR		0x04c
++#define QSERDES_V2_DP_PHY_AUX_BIST_CFG			0x050
 +
- 	return 0;
- }
++#define QSERDES_V2_DP_PHY_VCO_DIV			0x068
++#define QSERDES_V2_DP_PHY_TX0_TX1_LANE_CTL		0x06c
++#define QSERDES_V2_DP_PHY_TX2_TX3_LANE_CTL		0x088
++
++#define QSERDES_V2_DP_PHY_SPARE0			0x0ac
++#define QSERDES_V2_DP_PHY_STATUS			0x0c0
++
++#endif
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com-v2.h b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com-v2.h
+new file mode 100644
+index 000000000000..3ea1884f35dd
+--- /dev/null
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com-v2.h
+@@ -0,0 +1,106 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * Copyright (c) 2017, The Linux Foundation. All rights reserved.
++ */
++
++#ifndef QCOM_PHY_QMP_QSERDES_COM_V2_H_
++#define QCOM_PHY_QMP_QSERDES_COM_V2_H_
++
++/* Only for QMP V2 PHY - QSERDES COM registers */
++#define QSERDES_V2_COM_ATB_SEL1				0x000
++#define QSERDES_V2_COM_ATB_SEL2				0x004
++#define QSERDES_V2_COM_FREQ_UPDATE			0x008
++#define QSERDES_V2_COM_BG_TIMER				0x00c
++#define QSERDES_V2_COM_SSC_EN_CENTER			0x010
++#define QSERDES_V2_COM_SSC_ADJ_PER1			0x014
++#define QSERDES_V2_COM_SSC_ADJ_PER2			0x018
++#define QSERDES_V2_COM_SSC_PER1				0x01c
++#define QSERDES_V2_COM_SSC_PER2				0x020
++#define QSERDES_V2_COM_SSC_STEP_SIZE1			0x024
++#define QSERDES_V2_COM_SSC_STEP_SIZE2			0x028
++#define QSERDES_V2_COM_POST_DIV				0x02c
++#define QSERDES_V2_COM_POST_DIV_MUX			0x030
++#define QSERDES_V2_COM_BIAS_EN_CLKBUFLR_EN		0x034
++#define QSERDES_V2_COM_CLK_ENABLE1			0x038
++#define QSERDES_V2_COM_SYS_CLK_CTRL			0x03c
++#define QSERDES_V2_COM_SYSCLK_BUF_ENABLE		0x040
++#define QSERDES_V2_COM_PLL_EN				0x044
++#define QSERDES_V2_COM_PLL_IVCO				0x048
++#define QSERDES_V2_COM_LOCK_CMP1_MODE0			0x04c
++#define QSERDES_V2_COM_LOCK_CMP2_MODE0			0x050
++#define QSERDES_V2_COM_LOCK_CMP3_MODE0			0x054
++#define QSERDES_V2_COM_LOCK_CMP1_MODE1			0x058
++#define QSERDES_V2_COM_LOCK_CMP2_MODE1			0x05c
++#define QSERDES_V2_COM_LOCK_CMP3_MODE1			0x060
++#define QSERDES_V2_COM_EP_CLOCK_DETECT_CTR		0x068
++#define QSERDES_V2_COM_SYSCLK_DET_COMP_STATUS		0x06c
++#define QSERDES_V2_COM_CLK_EP_DIV			0x074
++#define QSERDES_V2_COM_CP_CTRL_MODE0			0x078
++#define QSERDES_V2_COM_CP_CTRL_MODE1			0x07c
++#define QSERDES_V2_COM_PLL_RCTRL_MODE0			0x084
++#define QSERDES_V2_COM_PLL_RCTRL_MODE1			0x088
++#define QSERDES_V2_COM_PLL_CCTRL_MODE0			0x090
++#define QSERDES_V2_COM_PLL_CCTRL_MODE1			0x094
++#define QSERDES_V2_COM_PLL_CNTRL			0x09c
++#define QSERDES_V2_COM_BIAS_EN_CTRL_BY_PSM		0x0a8
++#define QSERDES_V2_COM_SYSCLK_EN_SEL			0x0ac
++#define QSERDES_V2_COM_CML_SYSCLK_SEL			0x0b0
++#define QSERDES_V2_COM_RESETSM_CNTRL			0x0b4
++#define QSERDES_V2_COM_RESETSM_CNTRL2			0x0b8
++#define QSERDES_V2_COM_LOCK_CMP_EN			0x0c8
++#define QSERDES_V2_COM_LOCK_CMP_CFG			0x0cc
++#define QSERDES_V2_COM_DEC_START_MODE0			0x0d0
++#define QSERDES_V2_COM_DEC_START_MODE1			0x0d4
++#define QSERDES_V2_COM_VCOCAL_DEADMAN_CTRL		0x0d8
++#define QSERDES_V2_COM_DIV_FRAC_START1_MODE0		0x0dc
++#define QSERDES_V2_COM_DIV_FRAC_START2_MODE0		0x0e0
++#define QSERDES_V2_COM_DIV_FRAC_START3_MODE0		0x0e4
++#define QSERDES_V2_COM_DIV_FRAC_START1_MODE1		0x0e8
++#define QSERDES_V2_COM_DIV_FRAC_START2_MODE1		0x0ec
++#define QSERDES_V2_COM_DIV_FRAC_START3_MODE1		0x0f0
++#define QSERDES_V2_COM_VCO_TUNE_MINVAL1			0x0f4
++#define QSERDES_V2_COM_VCO_TUNE_MINVAL2			0x0f8
++#define QSERDES_V2_COM_INTEGLOOP_INITVAL		0x100
++#define QSERDES_V2_COM_INTEGLOOP_EN			0x104
++#define QSERDES_V2_COM_INTEGLOOP_GAIN0_MODE0		0x108
++#define QSERDES_V2_COM_INTEGLOOP_GAIN1_MODE0		0x10c
++#define QSERDES_V2_COM_INTEGLOOP_GAIN0_MODE1		0x110
++#define QSERDES_V2_COM_INTEGLOOP_GAIN1_MODE1		0x114
++#define QSERDES_V2_COM_VCO_TUNE_MAXVAL1			0x118
++#define QSERDES_V2_COM_VCO_TUNE_MAXVAL2			0x11c
++#define QSERDES_V2_COM_VCO_TUNE_CTRL			0x124
++#define QSERDES_V2_COM_VCO_TUNE_MAP			0x128
++#define QSERDES_V2_COM_VCO_TUNE1_MODE0			0x12c
++#define QSERDES_V2_COM_VCO_TUNE2_MODE0			0x130
++#define QSERDES_V2_COM_VCO_TUNE1_MODE1			0x134
++#define QSERDES_V2_COM_VCO_TUNE2_MODE1			0x138
++#define QSERDES_V2_COM_VCO_TUNE_INITVAL1		0x13c
++#define QSERDES_V2_COM_VCO_TUNE_INITVAL2		0x140
++#define QSERDES_V2_COM_VCO_TUNE_TIMER1			0x144
++#define QSERDES_V2_COM_VCO_TUNE_TIMER2			0x148
++#define QSERDES_V2_COM_CMN_STATUS			0x15c
++#define QSERDES_V2_COM_RESET_SM_STATUS			0x160
++#define QSERDES_V2_COM_RESTRIM_CODE_STATUS		0x164
++#define QSERDES_V2_COM_PLLCAL_CODE1_STATUS		0x168
++#define QSERDES_V2_COM_PLLCAL_CODE2_STATUS		0x16c
++#define QSERDES_V2_COM_CLK_SELECT			0x174
++#define QSERDES_V2_COM_HSCLK_SEL			0x178
++#define QSERDES_V2_COM_INTEGLOOP_BINCODE_STATUS		0x17c
++#define QSERDES_V2_COM_PLL_ANALOG			0x180
++#define QSERDES_V2_COM_CORECLK_DIV			0x184
++#define QSERDES_V2_COM_SW_RESET				0x188
++#define QSERDES_V2_COM_CORE_CLK_EN			0x18c
++#define QSERDES_V2_COM_C_READY_STATUS			0x190
++#define QSERDES_V2_COM_CMN_CONFIG			0x194
++#define QSERDES_V2_COM_CMN_RATE_OVERRIDE		0x198
++#define QSERDES_V2_COM_SVS_MODE_CLK_SEL			0x19c
++#define QSERDES_V2_COM_DEBUG_BUS0			0x1a0
++#define QSERDES_V2_COM_DEBUG_BUS1			0x1a4
++#define QSERDES_V2_COM_DEBUG_BUS2			0x1a8
++#define QSERDES_V2_COM_DEBUG_BUS3			0x1ac
++#define QSERDES_V2_COM_DEBUG_BUS_SEL			0x1b0
++#define QSERDES_V2_COM_CMN_MISC1			0x1b4
++#define QSERDES_V2_COM_CMN_MISC2			0x1b8
++#define QSERDES_V2_COM_CORECLK_DIV_MODE1		0x1bc
++
++#endif
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v2.h b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v2.h
+new file mode 100644
+index 000000000000..34919720b7bc
+--- /dev/null
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v2.h
+@@ -0,0 +1,68 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * Copyright (c) 2017, The Linux Foundation. All rights reserved.
++ */
++
++#ifndef QCOM_PHY_QMP_QSERDES_TXRX_V2_H_
++#define QCOM_PHY_QMP_QSERDES_TXRX_V2_H_
++
++/* Only for QMP V2 PHY - TX registers */
++#define QSERDES_V2_TX_BIST_MODE_LANENO			0x000
++#define QSERDES_V2_TX_CLKBUF_ENABLE			0x008
++#define QSERDES_V2_TX_TX_EMP_POST1_LVL			0x00c
++#define QSERDES_V2_TX_TX_DRV_LVL			0x01c
++#define QSERDES_V2_TX_RESET_TSYNC_EN			0x024
++#define QSERDES_V2_TX_PRE_STALL_LDO_BOOST_EN		0x028
++#define QSERDES_V2_TX_TX_BAND				0x02c
++#define QSERDES_V2_TX_SLEW_CNTL				0x030
++#define QSERDES_V2_TX_INTERFACE_SELECT			0x034
++#define QSERDES_V2_TX_RES_CODE_LANE_TX			0x03c
++#define QSERDES_V2_TX_RES_CODE_LANE_RX			0x040
++#define QSERDES_V2_TX_RES_CODE_LANE_OFFSET_TX		0x044
++#define QSERDES_V2_TX_RES_CODE_LANE_OFFSET_RX		0x048
++#define QSERDES_V2_TX_DEBUG_BUS_SEL			0x058
++#define QSERDES_V2_TX_TRANSCEIVER_BIAS_EN		0x05c
++#define QSERDES_V2_TX_HIGHZ_DRVR_EN			0x060
++#define QSERDES_V2_TX_TX_POL_INV			0x064
++#define QSERDES_V2_TX_PARRATE_REC_DETECT_IDLE_EN	0x068
++#define QSERDES_V2_TX_LANE_MODE_1			0x08c
++#define QSERDES_V2_TX_LANE_MODE_2			0x090
++#define QSERDES_V2_TX_LANE_MODE_3			0x094
++#define QSERDES_V2_TX_RCV_DETECT_LVL_2			0x0a4
++#define QSERDES_V2_TX_TRAN_DRVR_EMP_EN			0x0c0
++#define QSERDES_V2_TX_TX_INTERFACE_MODE			0x0c4
++#define QSERDES_V2_TX_VMODE_CTRL1			0x0f0
++
++/* Only for QMP V2 PHY - RX registers */
++#define QSERDES_V2_RX_UCDR_FO_GAIN			0x008
++#define QSERDES_V2_RX_UCDR_SO_GAIN_HALF			0x00c
++#define QSERDES_V2_RX_UCDR_SO_GAIN			0x014
++#define QSERDES_V2_RX_UCDR_SVS_SO_GAIN_HALF		0x024
++#define QSERDES_V2_RX_UCDR_SVS_SO_GAIN_QUARTER		0x028
++#define QSERDES_V2_RX_UCDR_SVS_SO_GAIN			0x02c
++#define QSERDES_V2_RX_UCDR_FASTLOCK_FO_GAIN		0x030
++#define QSERDES_V2_RX_UCDR_SO_SATURATION_AND_ENABLE	0x034
++#define QSERDES_V2_RX_UCDR_FASTLOCK_COUNT_LOW		0x03c
++#define QSERDES_V2_RX_UCDR_FASTLOCK_COUNT_HIGH		0x040
++#define QSERDES_V2_RX_UCDR_PI_CONTROLS			0x044
++#define QSERDES_V2_RX_RX_TERM_BW			0x07c
++#define QSERDES_V2_RX_VGA_CAL_CNTRL1			0x0bc
++#define QSERDES_V2_RX_VGA_CAL_CNTRL2			0x0c0
++#define QSERDES_V2_RX_RX_EQ_GAIN2_LSB			0x0c8
++#define QSERDES_V2_RX_RX_EQ_GAIN2_MSB			0x0cc
++#define QSERDES_V2_RX_RX_EQU_ADAPTOR_CNTRL1		0x0d0
++#define QSERDES_V2_RX_RX_EQU_ADAPTOR_CNTRL2		0x0d4
++#define QSERDES_V2_RX_RX_EQU_ADAPTOR_CNTRL3		0x0d8
++#define QSERDES_V2_RX_RX_EQU_ADAPTOR_CNTRL4		0x0dc
++#define QSERDES_V2_RX_RX_EQ_OFFSET_ADAPTOR_CNTRL1	0x0f8
++#define QSERDES_V2_RX_RX_OFFSET_ADAPTOR_CNTRL2		0x0fc
++#define QSERDES_V2_RX_SIGDET_ENABLES			0x100
++#define QSERDES_V2_RX_SIGDET_CNTRL			0x104
++#define QSERDES_V2_RX_SIGDET_LVL			0x108
++#define QSERDES_V2_RX_SIGDET_DEGLITCH_CNTRL		0x10c
++#define QSERDES_V2_RX_RX_BAND				0x110
++#define QSERDES_V2_RX_RX_INTERFACE_MODE			0x11c
++#define QSERDES_V2_RX_RX_MODE_00			0x164
++#define QSERDES_V2_RX_RX_MODE_01			0x168
++
++#endif
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp.h b/drivers/phy/qualcomm/phy-qcom-qmp.h
+index da2a7ad2cdcc..836a222a2e78 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp.h
++++ b/drivers/phy/qualcomm/phy-qcom-qmp.h
+@@ -9,6 +9,9 @@
+ #include "phy-qcom-qmp-qserdes-com.h"
+ #include "phy-qcom-qmp-qserdes-txrx.h"
  
-@@ -1318,7 +1331,7 @@ static int qmp_usbc_probe(struct platform_device *pdev)
- 	if (ret)
- 		return ret;
- 
--	ret = qmp_usbc_parse_vls_clamp(qmp);
-+	ret = qmp_usbc_parse_tcsr(qmp);
- 	if (ret)
- 		return ret;
++#include "phy-qcom-qmp-qserdes-com-v2.h"
++#include "phy-qcom-qmp-qserdes-txrx-v2.h"
++
+ #include "phy-qcom-qmp-qserdes-com-v3.h"
+ #include "phy-qcom-qmp-qserdes-txrx-v3.h"
  
 
 -- 
