@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6B1FFD5B16F
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AD8A7D5B175
 	for <linux-phy@archiver.kernel.org>; Mon, 15 Dec 2025 12:42:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,45 +12,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=beu/AReRSvEXFX9/z0NpRM4PmwB1IjLlXmPgfY2bW/Y=; b=rMVn2dQCU+3Ld4
-	zkBrUqmFn71FF8uhbW64y2xPqfwP5q56CGAlLLsuIg+xO9HpNaSynG5i1fd5YjQMLcDiK3tS0R9vy
-	SAHSOJOHiRG+VHxFY+rKevxoF4pmMjhp/Ipl9glFv47CnRt4XFNUbMxdC23ifonvtCb0qVy8mJDcX
-	y5/UL9RvTc4oF4Ohj/w/VMa59GoME/fFrp4fgIDReOTRlOY3WsBuRePwUV7k3VGw3uzoWla1gI3Lt
-	lcoQ50P+nlANzTezmgINOjyQzA66nRL5uCOwRTVzpZZXiHFhelO3iu1i0Q9dzrwfcgmFzxLpl6VJi
-	No7k2mB3vm9f/2eYHL3Q==;
+	List-Owner; bh=P9QAvFtG2wVz5Me15UOswdp43wSdRZMDf2G3ZuluDE8=; b=wufbZIv98cwlQ/
+	tGcS9ZLqqlXLIxC3FTLy+hqIe/nrRQnD4VjVR4v384DDoAWzAVZnZp2LigrLvV91+20qebqzJt+YJ
+	kfB60WZnkhRIan4woO40CkG1jOxoh8oMBtRl2OviXudHNIMKgllg+WesHOWyBXy+POIayhExo//HS
+	oXn7PbymMFT9VeXUwrWxyMhc3sShEmgL62Tephl6KUO9Dbsv3QvXGYdDlBSvxtYH2wdVChCiAGe6p
+	PaUjrc50OwkGyn2etRfZM3xc0k3pbESMT7JsiR+D0CiT7t+ojmjA+Q7xsPL5wNbLFHc8yMBM0ZgdI
+	DJOoCeL8ELhoez1/Mwpg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vV7uN-00000003e9t-0Pqn;
+	id 1vV7uN-00000003eAO-1jdC;
 	Mon, 15 Dec 2025 12:42:35 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vV7uG-00000003e3w-3n8k
+	id 1vV7uH-00000003e4s-3hB2
 	for linux-phy@lists.infradead.org;
-	Mon, 15 Dec 2025 12:42:30 +0000
+	Mon, 15 Dec 2025 12:42:31 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id E1CA5444C9;
-	Mon, 15 Dec 2025 12:42:25 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id BB685C2BC9E;
+	by sea.source.kernel.org (Postfix) with ESMTP id 0A5B2444D2;
+	Mon, 15 Dec 2025 12:42:26 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id DFF4DC4CEFB;
 	Mon, 15 Dec 2025 12:42:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1765802545;
-	bh=SswdeNJuwhwRqkWyCwIFOvgeJ5Df5E9p2mXKGfdy/x0=;
+	bh=4L+Hro+GAla8cH6Lmd8kqwa0HKmY1AXsmMwYREPOOeE=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=F9Rrx4eAC4zZjSRGkCVletqjHLQASXTVJjOse6Fe8QqXHfm6qzZeCpl4CsWT9ZHG8
-	 oIU0keDlQ7N1yGwxpaG+Z6DRM27z734QKyAzBUyeURLFWcWBtjh1wV3hB/j0O2bvQN
-	 0Yh1dN/pSSEqhBcxaVZTpVy1knav4lWDqVvg8SiTeQQtkRHk6fmPOdeMIyL4gBVS81
-	 pz5a9S4pLiCfyti4nH+fLMwVZwnRSm63a/jUnZeSzHXxsl09yANxZkqUGwMF+G++ii
-	 2Sf+J+22GvJW4b0jlevJed3HNQPZDRlfElfbA4A0lw6zTOp2HF7hJagpUWlBTxd9nK
-	 pEXVsuB0HND5Q==
+	b=XCGvBZXM2evmYCQ5G7ZD3f7eZSeaTGCZLzOE21fKuJEhdtJVE2RCIl8S7TJrRTptQ
+	 QTdnerT5M8CAdtxDDTUlZrHDWZR3NaHmuLX7tzJbEijwpY8aC+yBEB2Hrhf8p8zmoB
+	 Zn6VneBWU3jUXhJ973MsaXq0XP6MRKcsBaKUJ3pMq/glOlsfZbRTIXmzr/4wuF2Tae
+	 B68GxKG7ENBlCc7z+QmWlSrGzAfg7VMzvwTw9TPz8qCCunTyhZjdRZVoggRzBVLPJU
+	 82KJerlodmLHoYX5v4eFCwFmFOiJer9YZoW2Js5bbJbBtmLvUn0RBWN19neKunn68p
+	 CpJJ61WFazswA==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id B51D0D5B172;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id D7D5CD5B172;
 	Mon, 15 Dec 2025 12:42:25 +0000 (UTC)
 From: Xiangxu Yin via B4 Relay <devnull+xiangxu.yin.oss.qualcomm.com@kernel.org>
-Date: Mon, 15 Dec 2025 20:42:03 +0800
-Subject: [PATCH v8 07/12] phy: qcom: qmp-usbc: Move USB-only init to
- usb_power_on
+Date: Mon, 15 Dec 2025 20:42:05 +0800
+Subject: [PATCH v8 09/12] phy: qcom: qmp-usbc: Add DP PHY ops for USB/DP
+ switchable Type-C PHYs
 MIME-Version: 1.0
-Message-Id: <20251215-add-displayport-support-for-qcs615-platform-v8-7-cbc72c88a44e@oss.qualcomm.com>
+Message-Id: <20251215-add-displayport-support-for-qcs615-platform-v8-9-cbc72c88a44e@oss.qualcomm.com>
 References: <20251215-add-displayport-support-for-qcs615-platform-v8-0-cbc72c88a44e@oss.qualcomm.com>
 In-Reply-To: <20251215-add-displayport-support-for-qcs615-platform-v8-0-cbc72c88a44e@oss.qualcomm.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -66,19 +66,19 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  Konrad Dybcio <konradybcio@kernel.org>, 
  Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1765802542; l=2368;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1765802542; l=6391;
  i=xiangxu.yin@oss.qualcomm.com; s=20241125; h=from:subject:message-id;
- bh=EXEfXs3Ivmqa5GeuWXsnLZUstEPdHV7WBjmZxvoHteo=;
- b=XELmoCp6GC+Uc9AFX3XoXuwoILTOE/MU7aTZEIMJPPBcJPkTpMiQBj/9RGpZ+2IKGeLJkAzOc
- Js8E2QzBdnhA8OfoKFSEwTtEd0/F4ZDz7SVjAd9qLDhQtLHzmslYy+I
+ bh=Q9K4LBFVpKKu2F1VK3k8kdVZYv9UENa5DCDx+kiq3Go=;
+ b=2npS9WRko2m+T3KdCVR1I27xC3mSly8NSnKX1Sj9rmSylijB9+PoQGKZ9bOrOe9KixNbxmqjv
+ PTzhcBAIllBBah+BLlTx2DBD/DqipjV8ddoDioCX1fwWoW9MnJhkewY
 X-Developer-Key: i=xiangxu.yin@oss.qualcomm.com; a=ed25519;
  pk=F1TwipJzpywfbt3n/RPi4l/A4AVF+QC89XzCHgZYaOc=
 X-Endpoint-Received: by B4 Relay for xiangxu.yin@oss.qualcomm.com/20241125
  with auth_id=542
 X-Original-From: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251215_044229_024463_1F4AEF76 
-X-CRM114-Status: GOOD (  11.48  )
+X-CRM114-CacheID: sfid-20251215_044229_979239_1E106E8F 
+X-CRM114-Status: GOOD (  16.01  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,72 +98,249 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
 
-The current implementation programs USB-specific registers in
-qmp_usbc_com_init(), which is shared by both USB and DP modes. This
-causes unnecessary configuration when the PHY is used for DP.
-
-Move USB-only register setup from com_init to qmp_usbc_usb_power_on,
-so it runs only for USB mode.
+Define qmp_usbc_dp_phy_ops struct to support DP mode on USB/DP
+switchable PHYs.
 
 Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
 Signed-off-by: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-usbc.c | 22 ++++++++++------------
- 1 file changed, 10 insertions(+), 12 deletions(-)
+ drivers/phy/qualcomm/phy-qcom-qmp-usbc.c | 194 ++++++++++++++++++++++++++++++-
+ 1 file changed, 193 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c b/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
-index a6431e6d5586..c8e0f9574ba6 100644
+index 0a634ec4029a..1ac755825313 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
-@@ -30,6 +30,8 @@
+@@ -29,6 +29,8 @@
+ #include "phy-qcom-qmp.h"
  #include "phy-qcom-qmp-pcs-misc-v3.h"
  
++#include "phy-qcom-qmp-dp-phy.h"
++
  #define PHY_INIT_COMPLETE_TIMEOUT		10000
-+#define SW_PORTSELECT_VAL			BIT(0)
-+#define SW_PORTSELECT_MUX			BIT(1)
- 
- /* set of registers with offsets different per-PHY */
- enum qphy_reg_layout {
-@@ -531,8 +533,6 @@ static int qmp_usbc_com_init(struct phy *phy)
- {
- 	struct qmp_usbc *qmp = phy_get_drvdata(phy);
- 	const struct qmp_phy_cfg *cfg = qmp->cfg;
--	void __iomem *pcs = qmp->pcs;
--	u32 val = 0;
- 	int ret;
- 
- 	ret = regulator_bulk_enable(cfg->num_vregs, qmp->vregs);
-@@ -557,16 +557,6 @@ static int qmp_usbc_com_init(struct phy *phy)
- 	if (ret)
- 		goto err_assert_reset;
- 
--	qphy_setbits(pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL], SW_PWRDN);
--
--#define SW_PORTSELECT_VAL			BIT(0)
--#define SW_PORTSELECT_MUX			BIT(1)
--	/* Use software based port select and switch on typec orientation */
--	val = SW_PORTSELECT_MUX;
--	if (qmp->orientation == TYPEC_ORIENTATION_REVERSE)
--		val |= SW_PORTSELECT_VAL;
--	writel(val, qmp->pcs_misc);
--
+ #define SW_PORTSELECT_VAL			BIT(0)
+ #define SW_PORTSELECT_MUX			BIT(1)
+@@ -711,6 +713,159 @@ static int qmp_usbc_usb_set_mode(struct phy *phy, enum phy_mode mode, int submod
  	return 0;
+ }
  
- err_assert_reset:
-@@ -599,6 +589,14 @@ static int qmp_usbc_usb_power_on(struct phy *phy)
- 	unsigned int val;
- 	int ret;
++static int qmp_usbc_dp_enable(struct phy *phy)
++{
++	struct qmp_usbc *qmp = phy_get_drvdata(phy);
++	const struct qmp_phy_cfg *cfg = qmp->cfg;
++	int ret;
++
++	if (qmp->dp_init_count) {
++		dev_err(qmp->dev, "DP already inited\n");
++		return 0;
++	}
++
++	mutex_lock(&qmp->phy_mutex);
++
++	ret = qmp_usbc_com_init(phy);
++	if (ret)
++		goto dp_init_unlock;
++
++	qmp_usbc_set_phy_mode(qmp, true);
++
++	cfg->dp_aux_init(qmp);
++
++	qmp->dp_init_count++;
++
++dp_init_unlock:
++	mutex_unlock(&qmp->phy_mutex);
++	return ret;
++}
++
++static int qmp_usbc_dp_disable(struct phy *phy)
++{
++	struct qmp_usbc *qmp = phy_get_drvdata(phy);
++
++	mutex_lock(&qmp->phy_mutex);
++
++	qmp_usbc_com_exit(phy);
++
++	qmp->dp_init_count--;
++
++	mutex_unlock(&qmp->phy_mutex);
++
++	return 0;
++}
++
++static int qmp_usbc_dp_configure(struct phy *phy, union phy_configure_opts *opts)
++{
++	const struct phy_configure_opts_dp *dp_opts = &opts->dp;
++	struct qmp_usbc *qmp = phy_get_drvdata(phy);
++	const struct qmp_phy_cfg *cfg = qmp->cfg;
++
++	mutex_lock(&qmp->phy_mutex);
++
++	memcpy(&qmp->dp_opts, dp_opts, sizeof(*dp_opts));
++	if (qmp->dp_opts.set_voltages) {
++		cfg->configure_dp_tx(qmp);
++		qmp->dp_opts.set_voltages = 0;
++	}
++
++	mutex_unlock(&qmp->phy_mutex);
++
++	return 0;
++}
++
++static int qmp_usbc_dp_calibrate(struct phy *phy)
++{
++	struct qmp_usbc *qmp = phy_get_drvdata(phy);
++	const struct qmp_phy_cfg *cfg = qmp->cfg;
++	int ret = 0;
++
++	mutex_lock(&qmp->phy_mutex);
++
++	if (cfg->calibrate_dp_phy) {
++		ret = cfg->calibrate_dp_phy(qmp);
++		if (ret) {
++			dev_err(qmp->dev, "dp calibrate err(%d)\n", ret);
++			mutex_unlock(&qmp->phy_mutex);
++			return ret;
++		}
++	}
++
++	mutex_unlock(&qmp->phy_mutex);
++	return 0;
++}
++
++static int qmp_usbc_dp_serdes_init(struct qmp_usbc *qmp)
++{
++	const struct qmp_phy_cfg *cfg = qmp->cfg;
++	void __iomem *serdes = qmp->dp_serdes;
++	const struct phy_configure_opts_dp *dp_opts = &qmp->dp_opts;
++
++	qmp_configure(qmp->dev, serdes, cfg->dp_serdes_tbl,
++		      cfg->dp_serdes_tbl_num);
++
++	switch (dp_opts->link_rate) {
++	case 1620:
++		qmp_configure(qmp->dev, serdes, cfg->serdes_tbl_rbr,
++			      cfg->serdes_tbl_rbr_num);
++		break;
++	case 2700:
++		qmp_configure(qmp->dev, serdes, cfg->serdes_tbl_hbr,
++			      cfg->serdes_tbl_hbr_num);
++		break;
++	case 5400:
++		qmp_configure(qmp->dev, serdes, cfg->serdes_tbl_hbr2,
++			      cfg->serdes_tbl_hbr2_num);
++		break;
++	default:
++		/* Other link rates aren't supported */
++		return -EINVAL;
++	}
++
++	return 0;
++}
++
++static int qmp_usbc_dp_power_on(struct phy *phy)
++{
++	struct qmp_usbc *qmp = phy_get_drvdata(phy);
++	const struct qmp_phy_cfg *cfg = qmp->cfg;
++
++	void __iomem *tx = qmp->dp_tx;
++	void __iomem *tx2 = qmp->dp_tx2;
++
++	mutex_lock(&qmp->phy_mutex);
++
++	qmp_usbc_dp_serdes_init(qmp);
++
++	qmp_configure_lane(qmp->dev, tx, cfg->dp_tx_tbl, cfg->dp_tx_tbl_num, 1);
++	qmp_configure_lane(qmp->dev, tx2, cfg->dp_tx_tbl, cfg->dp_tx_tbl_num, 2);
++
++	/* Configure special DP tx tunings */
++	cfg->configure_dp_tx(qmp);
++
++	/* Configure link rate, swing, etc. */
++	cfg->configure_dp_phy(qmp);
++
++	mutex_unlock(&qmp->phy_mutex);
++
++	return 0;
++}
++
++static int qmp_usbc_dp_power_off(struct phy *phy)
++{
++	struct qmp_usbc *qmp = phy_get_drvdata(phy);
++
++	mutex_lock(&qmp->phy_mutex);
++
++	/* Assert DP PHY power down */
++	writel(DP_PHY_PD_CTL_PSR_PWRDN, qmp->dp_dp_phy + QSERDES_DP_PHY_PD_CTL);
++
++	mutex_unlock(&qmp->phy_mutex);
++
++	return 0;
++}
++
+ static const struct phy_ops qmp_usbc_usb_phy_ops = {
+ 	.init		= qmp_usbc_usb_enable,
+ 	.exit		= qmp_usbc_usb_disable,
+@@ -718,6 +873,16 @@ static const struct phy_ops qmp_usbc_usb_phy_ops = {
+ 	.owner		= THIS_MODULE,
+ };
  
-+	qphy_setbits(qmp->pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL], SW_PWRDN);
++static const struct phy_ops qmp_usbc_dp_phy_ops = {
++	.init		= qmp_usbc_dp_enable,
++	.exit		= qmp_usbc_dp_disable,
++	.configure	= qmp_usbc_dp_configure,
++	.calibrate	= qmp_usbc_dp_calibrate,
++	.power_on	= qmp_usbc_dp_power_on,
++	.power_off	= qmp_usbc_dp_power_off,
++	.owner		= THIS_MODULE,
++};
 +
-+	/* Use software based port select and switch on typec orientation */
-+	val = SW_PORTSELECT_MUX;
-+	if (qmp->orientation == TYPEC_ORIENTATION_REVERSE)
-+		val |= SW_PORTSELECT_VAL;
-+	writel(val, qmp->pcs_misc);
+ static void qmp_usbc_enable_autonomous_mode(struct qmp_usbc *qmp)
+ {
+ 	const struct qmp_phy_cfg *cfg = qmp->cfg;
+@@ -1299,6 +1464,23 @@ static int qmp_usbc_parse_tcsr(struct qmp_usbc *qmp)
+ 	return 0;
+ }
+ 
++static struct phy *qmp_usbc_phy_xlate(struct device *dev, const struct of_phandle_args *args)
++{
++	struct qmp_usbc *qmp = dev_get_drvdata(dev);
 +
- 	qmp_configure(qmp->dev, qmp->serdes, cfg->serdes_tbl,
- 		      cfg->serdes_tbl_num);
++	if (args->args_count == 0)
++		return qmp->usb_phy;
++
++	switch (args->args[0]) {
++	case QMP_USB43DP_USB3_PHY:
++		return qmp->usb_phy;
++	case QMP_USB43DP_DP_PHY:
++		return qmp->dp_phy ?: ERR_PTR(-ENODEV);
++	}
++
++	return ERR_PTR(-EINVAL);
++}
++
+ static int qmp_usbc_probe(struct platform_device *pdev)
+ {
+ 	struct device *dev = &pdev->dev;
+@@ -1369,9 +1551,19 @@ static int qmp_usbc_probe(struct platform_device *pdev)
+ 
+ 	phy_set_drvdata(qmp->usb_phy, qmp);
+ 
++	if (qmp->dp_serdes != 0) {
++		qmp->dp_phy = devm_phy_create(dev, np, &qmp_usbc_dp_phy_ops);
++		if (IS_ERR(qmp->dp_phy)) {
++			ret = PTR_ERR(qmp->dp_phy);
++			dev_err(dev, "failed to create PHY: %d\n", ret);
++			goto err_node_put;
++		}
++		phy_set_drvdata(qmp->dp_phy, qmp);
++	}
++
+ 	of_node_put(np);
+ 
+-	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
++	phy_provider = devm_of_phy_provider_register(dev, qmp_usbc_phy_xlate);
+ 
+ 	return PTR_ERR_OR_ZERO(phy_provider);
  
 
 -- 
