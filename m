@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 78E96D5B16F
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5C422D5B16E
 	for <linux-phy@archiver.kernel.org>; Mon, 15 Dec 2025 12:42:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,44 +12,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
 	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gmxyoEIuTh3HL0nfPULQI6gAKRg3/rP3jPhq5+TEeHo=; b=OjzCYRPZn8is2W
-	VvdmbiZgzCMbhmnL0kzEvwD7CfbxS3RpFdZQq/SEnNd48PummPtqZMhMh7ECi1hujeNPF9HW7IFU5
-	UKpDmCcdfBCfiyLf2rEeGEA2uZfzzcmD1GPqHdQMSi26993JL3ahadoInezScTCSH6TzviKnsU9dv
-	6G8pZJSBq2cdR+YN7j8FyDouicLjsBOb0cj6IJOA6CwogIFZW6Xg+fyG/KBjjjZDdkokcakct8zRM
-	svmuB2gQCX2YGWSnif9/8DSnwZwFIvcNyv+BcTrk5EX6Naqt76RF77xeFRjahVXQMp5hWA0V1Cyg8
-	u+kRNfWnql/SXX926rsA==;
+	List-Owner; bh=FI7jOvC/nZLrrihR0atTBWUXpdk8s11HBcVnd/SthOc=; b=Q5PZjLE/dAauSh
+	Y+EvS8xYoN4Pqu4yPzQlShqFks+OSilUGFAI1PgfOH6GWX0NzS5RpbwR1U0VovB7tQCQW7S0DFwrr
+	TWvpMi2SJ/QX5GihraOdjJPopbSInUWWOYkOV5VmP/tiY4Pnc1AWo/RFK7W3+P0h+g/sXuO8YdwW8
+	4gTwC64WjsQIy2drEWc5hnvfnNyvnW4rhWxwSn6DLwTG8HX6fxGNXDvO9A6j/tfQdAF+sgpTK42NF
+	DJQeAQAblpnSwvO2BnKojF7fI4In8QPEGG3e7QCVnCYDYve62f8OZl0h2DUwhzkuWes7ZJYZqS/W+
+	ZgWUzyC8UPOX1Pkj5+yA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vV7uH-00000003e4d-0xIR;
-	Mon, 15 Dec 2025 12:42:29 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
-	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vV7uF-00000003e2H-0cEB
-	for linux-phy@lists.infradead.org;
+	id 1vV7uG-00000003e41-3tBI;
 	Mon, 15 Dec 2025 12:42:28 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1vV7uF-00000003e2K-04O0
+	for linux-phy@lists.infradead.org;
+	Mon, 15 Dec 2025 12:42:27 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 9104F442B4;
-	Mon, 15 Dec 2025 12:42:25 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 69271C16AAE;
+	by tor.source.kernel.org (Postfix) with ESMTP id 092966019B;
+	Mon, 15 Dec 2025 12:42:26 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id AFE65C19425;
 	Mon, 15 Dec 2025 12:42:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1765802545;
-	bh=oZPi5EyJ/MJZ1+Rxh/gbO6jBHriV28sNnHkCk71/260=;
+	bh=B7yPhcKv9wHpjr+TlNGoWcU+7Ga73fL9ccW/SUGGpts=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=HsJ/6soPArN4lHsDwv44a64WxUONrCzBBkbediexAYlXlr/LaQdEFHFRSA1On11H8
-	 T0D/yMEl20FcrBDafRjKurp+ednls3S5ljNVM1/ULgomdjQYYK6QU0prL0uOiowF47
-	 TzC6EuD9S7mZ1weNCQQy+of1tLbMtmaXYQCyUdpD9/SLsP0rQh7C0skzPsmoo8F7uU
-	 /f/G+g1jELEbKYUnFLEnjtslQfBAPwhTsv9cA/g66ZNFWGpL+LfD5NMaesG40O5rY5
-	 /3IwwrSGmvRsZldb/E6QwSG0qNLArDc3peviOQOwcqTmuEVaUxu7SpSSlIl5AepW6a
-	 ECBuExaHtfwWw==
+	b=VdSXdxaLBRy83VdakbXMccvbz1UMIF7rGHWWHvJzIa/iGzUmYajw/p7X/SplbuFrX
+	 X7lL5P0AhCGpZJJRTihmQ5GwHGIyH3FdaTTJbOqwVYfxr6qUNEigQSb0Id/pnqqM22
+	 PrT1opQ79ZAv99F5cBliubax7WofrJJ+nQt4kJ7xcjOTMWPtFpo7ODxmqRuA/fchH2
+	 McirhNopVmgBm+E0uEJ6wnmi+cJk1154FwIpr/RuNzUYzBl3Q0QIB9IeW4nherCkt9
+	 jLkTyUt414gH2ZMhDOUcY1bP8AbM8QTA8eYHyghmFV8uOyXbR1ZWfrIfrmBFFyjnJX
+	 Orge03+D8xVBQ==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 48349D59D99;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id A52D5D59D99;
 	Mon, 15 Dec 2025 12:42:25 +0000 (UTC)
 From: Xiangxu Yin via B4 Relay <devnull+xiangxu.yin.oss.qualcomm.com@kernel.org>
-Date: Mon, 15 Dec 2025 20:41:57 +0800
-Subject: [PATCH v8 01/12] dt-bindings: phy: Add QMP USB3+DP PHY for QCS615
+Date: Mon, 15 Dec 2025 20:42:02 +0800
+Subject: [PATCH v8 06/12] phy: qcom: qmp-usbc: add DP link and vco_div
+ clocks for DP PHY
 MIME-Version: 1.0
-Message-Id: <20251215-add-displayport-support-for-qcs615-platform-v8-1-cbc72c88a44e@oss.qualcomm.com>
+Message-Id: <20251215-add-displayport-support-for-qcs615-platform-v8-6-cbc72c88a44e@oss.qualcomm.com>
 References: <20251215-add-displayport-support-for-qcs615-platform-v8-0-cbc72c88a44e@oss.qualcomm.com>
 In-Reply-To: <20251215-add-displayport-support-for-qcs615-platform-v8-0-cbc72c88a44e@oss.qualcomm.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -65,19 +66,16 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  Konrad Dybcio <konradybcio@kernel.org>, 
  Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1765802541; l=3524;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1765802542; l=8764;
  i=xiangxu.yin@oss.qualcomm.com; s=20241125; h=from:subject:message-id;
- bh=c37lHyKAfNqHHZwzu6h0ZBVIk4rQzgE8GLOefpC2o5U=;
- b=fC7NDEuFJp9TUUUQNoadX34giD5b1dvGKL1/asqCe6PljFG9NfXZnnP61RI84R0+FWCm+02FM
- KqIKij0QfdfAj2faLp84xDR6KN/YgR+MXACq20uOHNNd6Oc+2ml9u9r
+ bh=EfechlnT8nWeeRbx1u0qd5ExGmvffmrxrvtcu0XQmTw=;
+ b=JQTuvtR1rXlGXec1v46+4sg1AD+KTWT9D8M2jVKanRF11dxH4tZu4I+odlvSrQ9phYnaYkaQZ
+ rYjlbUB46D9DC9qJMjao89edBwEm6pMkYniAtBi/2yNjeC/imE15PtK
 X-Developer-Key: i=xiangxu.yin@oss.qualcomm.com; a=ed25519;
  pk=F1TwipJzpywfbt3n/RPi4l/A4AVF+QC89XzCHgZYaOc=
 X-Endpoint-Received: by B4 Relay for xiangxu.yin@oss.qualcomm.com/20241125
  with auth_id=542
 X-Original-From: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251215_044227_237065_6A380C77 
-X-CRM114-Status: GOOD (  10.76  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,134 +95,280 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
 
-Add device tree binding documentation for the Qualcomm QMP USB3+DP PHY
-on QCS615 Platform. This PHY supports both USB3 and DP functionality
-over USB-C, with PHY mode switching capability. It does not support
-combo mode.
+USB3DP PHY requires link and vco_div clocks when operating in DP mode.
+Extend qmp_usbc_register_clocks and the clock provider logic to register
+these clocks along with the existing pipe clock, to support both USB and
+DP configurations.
 
-Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
 Signed-off-by: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
 ---
- .../bindings/phy/qcom,qcs615-qmp-usb3dp-phy.yaml   | 111 +++++++++++++++++++++
- 1 file changed, 111 insertions(+)
+ drivers/phy/qualcomm/phy-qcom-qmp-usbc.c | 209 ++++++++++++++++++++++++++++++-
+ 1 file changed, 203 insertions(+), 6 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,qcs615-qmp-usb3dp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qcs615-qmp-usb3dp-phy.yaml
-new file mode 100644
-index 000000000000..efb465c71c1b
---- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/qcom,qcs615-qmp-usb3dp-phy.yaml
-@@ -0,0 +1,111 @@
-+# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/qcom,qcs615-qmp-usb3dp-phy.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c b/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
+index cff148dc9f01..a6431e6d5586 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
+@@ -22,6 +22,7 @@
+ #include <linux/slab.h>
+ #include <linux/usb/typec.h>
+ #include <linux/usb/typec_mux.h>
++#include <dt-bindings/phy/phy-qcom-qmp.h>
+ 
+ #include "phy-qcom-qmp-common.h"
+ 
+@@ -851,9 +852,23 @@ static int qmp_usbc_clk_init(struct qmp_usbc *qmp)
+ 	return devm_clk_bulk_get_optional(dev, num, qmp->clks);
+ }
+ 
+-static void phy_clk_release_provider(void *res)
++static struct clk_hw *qmp_usbc_clks_hw_get(struct of_phandle_args *clkspec, void *data)
+ {
+-	of_clk_del_provider(res);
++	struct qmp_usbc *qmp = data;
 +
-+title: Qualcomm QMP USB3-DP PHY controller (DP, QCS615)
++	if (clkspec->args_count == 0)
++		return &qmp->pipe_clk_fixed.hw;
 +
-+maintainers:
-+  - Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
++	switch (clkspec->args[0]) {
++	case QMP_USB43DP_USB3_PIPE_CLK:
++		return &qmp->pipe_clk_fixed.hw;
++	case QMP_USB43DP_DP_LINK_CLK:
++		return &qmp->dp_link_hw;
++	case QMP_USB43DP_DP_VCO_DIV_CLK:
++		return &qmp->dp_pixel_hw;
++	}
 +
-+description:
-+  The QMP PHY controller supports physical layer functionality for both USB3
-+  and DisplayPort over USB-C. While it enables mode switching between USB3 and
-+  DisplayPort, but does not support combo mode.
++	return ERR_PTR(-EINVAL);
+ }
+ 
+ /*
+@@ -878,12 +893,14 @@ static int phy_pipe_clk_register(struct qmp_usbc *qmp, struct device_node *np)
+ {
+ 	struct clk_fixed_rate *fixed = &qmp->pipe_clk_fixed;
+ 	struct clk_init_data init = { };
++	char name[64];
+ 	int ret;
+ 
+ 	ret = of_property_read_string(np, "clock-output-names", &init.name);
+ 	if (ret) {
+-		dev_err(qmp->dev, "%pOFn: No clock-output-names\n", np);
+-		return ret;
++		/* Clock name is not mandatory. */
++		snprintf(name, sizeof(name), "%s::pipe_clk", dev_name(qmp->dev));
++		init.name = name;
+ 	}
+ 
+ 	init.ops = &clk_fixed_rate_ops;
+@@ -892,10 +909,183 @@ static int phy_pipe_clk_register(struct qmp_usbc *qmp, struct device_node *np)
+ 	fixed->fixed_rate = 125000000;
+ 	fixed->hw.init = &init;
+ 
+-	ret = devm_clk_hw_register(qmp->dev, &fixed->hw);
++	return devm_clk_hw_register(qmp->dev, &fixed->hw);
++}
 +
-+properties:
-+  compatible:
-+    enum:
-+      - qcom,qcs615-qmp-usb3-dp-phy
++/*
++ * Display Port PLL driver block diagram for branch clocks
++ *
++ *              +------------------------------+
++ *              |         DP_VCO_CLK           |
++ *              |                              |
++ *              |    +-------------------+     |
++ *              |    |   (DP PLL/VCO)    |     |
++ *              |    +---------+---------+     |
++ *              |              v               |
++ *              |   +----------+-----------+   |
++ *              |   | hsclk_divsel_clk_src |   |
++ *              |   +----------+-----------+   |
++ *              +------------------------------+
++ *                              |
++ *          +---------<---------v------------>----------+
++ *          |                                           |
++ * +--------v----------------+                          |
++ * |    dp_phy_pll_link_clk  |                          |
++ * |     link_clk            |                          |
++ * +--------+----------------+                          |
++ *          |                                           |
++ *          |                                           |
++ *          v                                           v
++ * Input to DISPCC block                                |
++ * for link clk, crypto clk                             |
++ * and interface clock                                  |
++ *                                                      |
++ *                                                      |
++ *      +--------<------------+-----------------+---<---+
++ *      |                     |                 |
++ * +----v---------+  +--------v-----+  +--------v------+
++ * | vco_divided  |  | vco_divided  |  | vco_divided   |
++ * |    _clk_src  |  |    _clk_src  |  |    _clk_src   |
++ * |              |  |              |  |               |
++ * |divsel_six    |  |  divsel_two  |  |  divsel_four  |
++ * +-------+------+  +-----+--------+  +--------+------+
++ *         |                 |                  |
++ *         v---->----------v-------------<------v
++ *                         |
++ *              +----------+-----------------+
++ *              |   dp_phy_pll_vco_div_clk   |
++ *              +---------+------------------+
++ *                        |
++ *                        v
++ *              Input to DISPCC block
++ *              for DP pixel clock
++ *
++ */
++static int qmp_dp_pixel_clk_determine_rate(struct clk_hw *hw, struct clk_rate_request *req)
++{
++	switch (req->rate) {
++	case 1620000000UL / 2:
++	case 2700000000UL / 2:
++	/* 5.4 is same link rate as 2.7GHz, i.e. div 4 */
++		return 0;
++	default:
++		return -EINVAL;
++	}
++}
 +
-+  reg:
-+    maxItems: 1
++static unsigned long qmp_dp_pixel_clk_recalc_rate(struct clk_hw *hw, unsigned long parent_rate)
++{
++	const struct qmp_usbc *qmp;
++	const struct phy_configure_opts_dp *dp_opts;
 +
-+  clocks:
-+    maxItems: 4
++	qmp = container_of(hw, struct qmp_usbc, dp_pixel_hw);
 +
-+  clock-names:
-+    items:
-+      - const: aux
-+      - const: ref
-+      - const: cfg_ahb
-+      - const: pipe
++	dp_opts = &qmp->dp_opts;
 +
-+  resets:
-+    maxItems: 2
++	switch (dp_opts->link_rate) {
++	case 1620:
++		return 1620000000UL / 2;
++	case 2700:
++		return 2700000000UL / 2;
++	case 5400:
++		return 5400000000UL / 4;
++	default:
++		return 0;
++	}
++}
 +
-+  reset-names:
-+    items:
-+      - const: phy_phy
-+      - const: dp_phy
++static const struct clk_ops qmp_dp_pixel_clk_ops = {
++	.determine_rate	= qmp_dp_pixel_clk_determine_rate,
++	.recalc_rate	= qmp_dp_pixel_clk_recalc_rate,
++};
 +
-+  vdda-phy-supply: true
++static int qmp_dp_link_clk_determine_rate(struct clk_hw *hw, struct clk_rate_request *req)
++{
++	switch (req->rate) {
++	case 162000000:
++	case 270000000:
++	case 540000000:
++		return 0;
++	default:
++		return -EINVAL;
++	}
++}
 +
-+  vdda-pll-supply: true
++static unsigned long qmp_dp_link_clk_recalc_rate(struct clk_hw *hw, unsigned long parent_rate)
++{
++	const struct qmp_usbc *qmp;
++	const struct phy_configure_opts_dp *dp_opts;
 +
-+  "#clock-cells":
-+    const: 1
-+    description:
-+      See include/dt-bindings/phy/phy-qcom-qmp.h
++	qmp = container_of(hw, struct qmp_usbc, dp_link_hw);
++	dp_opts = &qmp->dp_opts;
 +
-+  "#phy-cells":
-+    const: 1
-+    description:
-+      See include/dt-bindings/phy/phy-qcom-qmp.h
++	switch (dp_opts->link_rate) {
++	case 1620:
++	case 2700:
++	case 5400:
++		return dp_opts->link_rate * 100000;
++	default:
++		return 0;
++	}
++}
 +
-+  qcom,tcsr-reg:
-+    $ref: /schemas/types.yaml#/definitions/phandle-array
-+    items:
-+      - items:
-+          - description: phandle to TCSR hardware block
-+          - description: offset of the VLS CLAMP register
-+          - description: offset of the PHY mode register
-+    description: Clamp and PHY mode register present in the TCSR
++static const struct clk_ops qmp_dp_link_clk_ops = {
++	.determine_rate	= qmp_dp_link_clk_determine_rate,
++	.recalc_rate	= qmp_dp_link_clk_recalc_rate,
++};
 +
-+required:
-+  - compatible
-+  - reg
-+  - clocks
-+  - clock-names
-+  - resets
-+  - reset-names
-+  - vdda-phy-supply
-+  - vdda-pll-supply
-+  - "#clock-cells"
-+  - "#phy-cells"
-+  - qcom,tcsr-reg
++static int phy_dp_clks_register(struct qmp_usbc *qmp, struct device_node *np)
++{
++	struct clk_init_data init = { };
++	char name[64];
++	int ret;
 +
-+additionalProperties: false
++	snprintf(name, sizeof(name), "%s::link_clk", dev_name(qmp->dev));
++	init.ops = &qmp_dp_link_clk_ops;
++	init.name = name;
++	qmp->dp_link_hw.init = &init;
++	ret = devm_clk_hw_register(qmp->dev, &qmp->dp_link_hw);
++	if (ret < 0) {
++		dev_err(qmp->dev, "link clk reg fail ret=%d\n", ret);
++		return ret;
++	}
 +
-+examples:
-+  - |
-+    #include <dt-bindings/clock/qcom,qcs615-gcc.h>
-+    #include <dt-bindings/clock/qcom,rpmh.h>
++	snprintf(name, sizeof(name), "%s::vco_div_clk", dev_name(qmp->dev));
++	init.ops = &qmp_dp_pixel_clk_ops;
++	init.name = name;
++	qmp->dp_pixel_hw.init = &init;
++	ret = devm_clk_hw_register(qmp->dev, &qmp->dp_pixel_hw);
++	if (ret) {
++		dev_err(qmp->dev, "pxl clk reg fail ret=%d\n", ret);
++		return ret;
++	}
 +
-+    phy@88e8000 {
-+      compatible = "qcom,qcs615-qmp-usb3-dp-phy";
-+      reg = <0x88e8000 0x2000>;
++	return 0;
++}
 +
-+      clocks = <&gcc GCC_USB2_SEC_PHY_AUX_CLK>,
-+               <&gcc GCC_USB3_SEC_CLKREF_CLK>,
-+               <&gcc GCC_AHB2PHY_WEST_CLK>,
-+               <&gcc GCC_USB2_SEC_PHY_PIPE_CLK>;
-+      clock-names = "aux",
-+                    "ref",
-+                    "cfg_ahb",
-+                    "pipe";
++static void phy_clk_release_provider(void *res)
++{
++	of_clk_del_provider(res);
++}
 +
-+      resets = <&gcc GCC_USB3PHY_PHY_SEC_BCR>,
-+               <&gcc GCC_USB3_DP_PHY_SEC_BCR>;
-+      reset-names = "phy_phy",
-+                    "dp_phy";
++static int qmp_usbc_register_clocks(struct qmp_usbc *qmp, struct device_node *np)
++{
++	struct clk_fixed_rate *fixed = &qmp->pipe_clk_fixed;
++	int ret;
 +
-+      vdda-phy-supply = <&vreg_l5a>;
-+      vdda-pll-supply = <&vreg_l12a>;
++	ret = phy_pipe_clk_register(qmp, np);
+ 	if (ret)
+ 		return ret;
+ 
++	if (qmp->dp_serdes != 0) {
++		ret = phy_dp_clks_register(qmp, np);
++		if (ret)
++			return ret;
++	}
 +
-+      #clock-cells = <1>;
-+      #phy-cells = <1>;
++	if (np == qmp->dev->of_node)
++		return devm_of_clk_add_hw_provider(qmp->dev, qmp_usbc_clks_hw_get, qmp);
 +
-+      qcom,tcsr-reg = <&tcsr 0xbff0 0xb24c>;
-+    };
+ 	ret = of_clk_add_hw_provider(np, of_clk_hw_simple_get, &fixed->hw);
+ 	if (ret)
+ 		return ret;
+@@ -1040,6 +1230,13 @@ static int qmp_usbc_parse_dt(struct qmp_usbc *qmp)
+ 	if (IS_ERR(base))
+ 		return PTR_ERR(base);
+ 
++	if (offs->dp_serdes != 0) {
++		qmp->dp_serdes = base + offs->dp_serdes;
++		qmp->dp_tx = base + offs->dp_txa;
++		qmp->dp_tx2 = base + offs->dp_txb;
++		qmp->dp_dp_phy = base + offs->dp_dp_phy;
++	}
++
+ 	qmp->serdes = base + offs->serdes;
+ 	qmp->pcs = base + offs->pcs;
+ 	if (offs->pcs_misc)
+@@ -1148,7 +1345,7 @@ static int qmp_usbc_probe(struct platform_device *pdev)
+ 	 */
+ 	pm_runtime_forbid(dev);
+ 
+-	ret = phy_pipe_clk_register(qmp, np);
++	ret = qmp_usbc_register_clocks(qmp, np);
+ 	if (ret)
+ 		goto err_node_put;
+ 
 
 -- 
 2.34.1
