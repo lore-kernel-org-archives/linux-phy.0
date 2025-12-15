@@ -4,59 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1227FD5B16F
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9EEBED5B16E
 	for <linux-phy@archiver.kernel.org>; Mon, 15 Dec 2025 12:42:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id
-	:Date:Subject:From:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=/+SmNjasnJZ4vIqqPyGFxbatJQ4a6FQL+ENRf124xPs=; b=fmUveW24jkKuOd
-	ekd6nY+yW7v6CRJoLsiWIzbsqmShL8vOFJg0oGO6Yn2e+1NswKrQ4LCQsuVU0PHv/dmp+aNBjebi8
-	sUsW3SRMYJ9LzQGyHQ7MXuE3f5AseOYjxW1jVNt+Q5/NG3Lj3IC55ZpPzVjkNbuJnwjPHQGG0l/VL
-	Gv/lBgBQB/fDACRSXKV17nSUS4fVeyD/VP0OaltbbrXvoVsVgR95haC2Tprn9Ry5NVBPEe9aG0g/W
-	5LAIiG0W84c48R8XyOt2ANuVU2KvHvBOZdh36YhjN0pp6RtDruWivX/3nKW/zS69Ndl8Cv92LO8D8
-	GEzwH8vzBro1F/BRZZpQ==;
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
+	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=t4jvImuoIEq7QG3DLdB+d8opjAJ4e9O3HTXQBqqqJU8=; b=HgkpSYjQEmBuXr
+	zwGHouOP0RsChE0ibdgyGgQWL7UxCV68JBr6PaoIR90BgQH4Z2qKUL9PtAG3X0nv7S+uGwBtkoYQb
+	bd/2k6+QvQb0lsGO6SAhvGgPncTR042JNjpaP9k/U7MuvBj9kx7D7ve2GW7yBhereh6KsoYfSvzB/
+	fJjC9L7YDjStEUxTn3ky1bdCPzTDDzzLbsO2+Q1gN1UjJDfwNnrE0uW6zfds/UU16x45oBtfXAdwj
+	793WZ2G3RZDbZ2DKNiGuicF2DKDHOThITtKky7ZeHI+zwZk3BiGs1Hg1Chlbvybs56GD2DB5h7zme
+	Ud9lEkpTk6pcrMGNnZCg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vV7uJ-00000003e80-2rCG;
-	Mon, 15 Dec 2025 12:42:31 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1vV7uK-00000003e8y-1VTi;
+	Mon, 15 Dec 2025 12:42:32 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vV7uF-00000003e2G-0kec
+	id 1vV7uG-00000003e3v-3rTX
 	for linux-phy@lists.infradead.org;
 	Mon, 15 Dec 2025 12:42:30 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 76B49419E9;
+	by sea.source.kernel.org (Postfix) with ESMTP id C5703444B9;
 	Mon, 15 Dec 2025 12:42:25 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 52325C4CEF5;
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 9D2CCC2BC86;
 	Mon, 15 Dec 2025 12:42:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1765802545;
-	bh=10CZqebEtg+gOGFXtLgkn73E6zcRHsYDLNCwoPZ4hH4=;
-	h=From:Subject:Date:To:Cc:Reply-To:From;
-	b=Ho8yBMVw6PTS+DekAQdi2ancB6S0mNL9F2hpW7fYk2FcF4Wmc+2FqHcH90JBI+oZb
-	 C520hO0p8QZBmb0HZjTUX39WgHxoCYvrIR0eH2YigioveJo1OVYwwX0eJXsKZl9bk+
-	 JKjjnzI9ZlEYsHDp++u3Wk0SlfMK+QFuG47thAQSbR0f2hpnwnsyQwFm8g9P7AqsQb
-	 zrp/6EIXrzdo0PMGsEMxGVZAKWkw5iEqZNbsNhVwJ840Bd6Q3ej1FWO9XCf7v2tbOa
-	 Mn/GZWQRoHlpKPQSTtK9B+JlV5KaSIHzgh3TrtcONkr/WkUGWxbjL0UHbtZWe7DY/+
-	 6Tq/XiLxxseUA==
+	bh=2bOS5G59VmU3dJ4AsLSiYKgfCGTtDduQoWXurgiIx2Q=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
+	b=Ce1rmhDiQaKBl2X2hz2h8/uoYdJOGTgPWbBun9zkC9JTFPDqF15vlv0QOS0Gr/ani
+	 8Mgq5ACTlwjdNJMpOaTsULjAfF423w3vfYTVM8jai8++vkyyiwFLhWWAexw+2E1X50
+	 xlyGy3aDbmham0K07fSSNwIhgZitNWPpoCFmViv2DRYS1dNNJwP91dlzKNma/pzO2l
+	 H1Y3TJpWhDa0PCNmOHS2m15uKaei9GGx4104F2w6NRqscbdmom2TBhl42Mm9TAULlB
+	 zENXEzTbzeSVmOLmVmH0AizGMnO8jcPKIPoOEEGa32E6sgwIg8L20qiCMQPSh+7EDw
+	 PBFfoess31+gg==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 349A9D5B16F;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 93254D5B16E;
 	Mon, 15 Dec 2025 12:42:25 +0000 (UTC)
 From: Xiangxu Yin via B4 Relay <devnull+xiangxu.yin.oss.qualcomm.com@kernel.org>
-Subject: [PATCH v8 00/12] Add DisplayPort support for QCS615 platform
-Date: Mon, 15 Dec 2025 20:41:56 +0800
-Message-Id: <20251215-add-displayport-support-for-qcs615-platform-v8-0-cbc72c88a44e@oss.qualcomm.com>
+Date: Mon, 15 Dec 2025 20:42:01 +0800
+Subject: [PATCH v8 05/12] phy: qcom: qmp-usbc: Move reset config into PHY
+ cfg
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIABcCQGkC/5XRy4oCMRAF0F+RrCeSqrxd+R/DLNJ5jAG1H9FmR
- Pz3SQuDLqYXWYWbgnsK6k5KnHIsZLe5kynOueT+XIP52BB/cOfvSHOomSBDySxY6kKgIZfh6G5
- DP11ouQ7PN/UTHX1RIGmdXWo80WSMlFZ3XGpOauMwxZR/ntrnV82HXC79dHviMyy/iyMAsM2Zg
- TLKrBOcm2B5TPvxmn0++63vT2SRZvxrl0wjtrVjbRfYCcY1aEhm35eyHa/uWNtPL4K/CIOsjeC
- VqOt3AWX03PoVQrwIC9BGiEqgZtiF4EDEsELId6LxDLIS0UWlDCTBGK4Q6o1A2Uao5RZgU5RWc
- QN2hdDvhGojdCWClzE455XH7h/i8Xj8Aq1h+jg6AwAA
-X-Change-ID: 20250919-add-displayport-support-for-qcs615-platform-f885597b3573
+Message-Id: <20251215-add-displayport-support-for-qcs615-platform-v8-5-cbc72c88a44e@oss.qualcomm.com>
+References: <20251215-add-displayport-support-for-qcs615-platform-v8-0-cbc72c88a44e@oss.qualcomm.com>
+In-Reply-To: <20251215-add-displayport-support-for-qcs615-platform-v8-0-cbc72c88a44e@oss.qualcomm.com>
 To: Vinod Koul <vkoul@kernel.org>, 
  Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
  Krzysztof Kozlowski <krzk+dt@kernel.org>, 
@@ -68,22 +64,21 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>, 
  Bjorn Andersson <andersson@kernel.org>, 
  Konrad Dybcio <konradybcio@kernel.org>, 
- Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>, 
- Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+ Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1765802541; l=5408;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1765802542; l=3319;
  i=xiangxu.yin@oss.qualcomm.com; s=20241125; h=from:subject:message-id;
- bh=10CZqebEtg+gOGFXtLgkn73E6zcRHsYDLNCwoPZ4hH4=;
- b=2mSbf0am4SyiEPKLQhcY/ElGZXLNJhEfWeadXax+hWL6NfhjTFhvcP3V8vXQqNBk0ACBSWBOr
- 1kwwjdrfiyrCYdiVtWS9ShCOvqIf3uV4zB1rDv4asL0SsKVxSpc6u53
+ bh=eCgwMUdDZVY9fSLD2nPAvwJtYUEUSaUUP4fffLRd95c=;
+ b=bTV1pXY8mbnYha2eURvjNr1+IJV2JO3WKlUOYFvVZKtX2mJV/P0XaCkCxU7YYhH5TMsjhEkme
+ b3Y6Z3cOeaSDRozfkfbtdKefzHD5O/EHOGg4JevO7rJAIm3ViaIugP4
 X-Developer-Key: i=xiangxu.yin@oss.qualcomm.com; a=ed25519;
  pk=F1TwipJzpywfbt3n/RPi4l/A4AVF+QC89XzCHgZYaOc=
 X-Endpoint-Received: by B4 Relay for xiangxu.yin@oss.qualcomm.com/20241125
  with auth_id=542
 X-Original-From: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251215_044227_291431_08C82303 
-X-CRM114-Status: GOOD (  10.67  )
+X-CRM114-CacheID: sfid-20251215_044229_073009_9C8ED467 
+X-CRM114-Status: GOOD (  10.00  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,104 +91,93 @@ List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
 Reply-To: xiangxu.yin@oss.qualcomm.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhpcyBzZXJpZXMgYWltcyB0byBleHRlbmQgdGhlIFVTQi1DIFBIWSB0byBzdXBwb3J0IERQIG1v
-ZGUgYW5kIGVuYWJsZQpEaXNwbGF5UG9ydCBvbiB0aGUgUXVhbGNvbW0gUUNTNjE1IHBsYXRmb3Jt
-LgoKVGhlIGRldmljZXRyZWUgbW9kaWZpY2F0aW9uIGZvciBEaXNwbGF5UG9ydCBvbiBRQ1M2MTUg
-d2lsbCBiZSBwcm92aWRlZAppbiBhIGZ1dHVyZSBwYXRjaC4KClNpZ25lZC1vZmYtYnk6IFhpYW5n
-eHUgWWluIDx4aWFuZ3h1LnlpbkBvc3MucXVhbGNvbW0uY29tPgotLS0KQ2hhbmdlcyBpbiB2ODoK
-LSBGaXggYC0tc3RyaWN0YCBuaXRzOiBpbmRlbnQgYWxpZ25tZW50IGluIHY3WzA0LzE0XTsgZXh0
-cmEgYmxhbmsgbGluZSBpbiB2N1swNi8xNF0KLSBMaW5rIHRvIHY3OiBodHRwczovL2xvcmUua2Vy
-bmVsLm9yZy9yLzIwMjUwOTI2LWFkZC1kaXNwbGF5cG9ydC1zdXBwb3J0LWZvci1xY3M2MTUtcGxh
-dGZvcm0tdjctMC1kYzVlZGFhYzZjMmJAb3NzLnF1YWxjb21tLmNvbQoKQ2hhbmdlcyBpbiB2NzoK
-LSBGaXggUVNFUkRFU19WMl9UWF9MQU5FX01PREVfMSBjb25maWd1cmF0aW9uIGZyb20gQ09NIGlu
-aXQgdGFibGUgdG8gY29uZmlndXJlX2RwX3R4KCkuCi0gTGluayB0byB2NjogaHR0cHM6Ly9sb3Jl
-Lmtlcm5lbC5vcmcvci8yMDI1MDkyNS1hZGQtZGlzcGxheXBvcnQtc3VwcG9ydC1mb3ItcWNzNjE1
-LXBsYXRmb3JtLXY2LTAtNDE5ZmU1OTYzODE5QG9zcy5xdWFsY29tbS5jb20KCkNoYW5nZXMgaW4g
-djY6Ci0gTW92ZSB1c2IzZHBwaHlfcmVzZXRfbCBkZWZpbml0aW9uIHRvIHRoZSBwYXRjaCBhZGRp
-bmcgY29tcGF0aWJsZSBhbmQgcmVsYXRlZCBjb25maWcgZGF0YS4gW0RtaXRyeV0KLSBBZGQgTk9U
-RSBhYm91dCBTV19QT1JUU0VMRUNUL29yaWVudGF0aW9uIGhhbmRsaW5nLiBbRG1pdHJ5XQotIFVz
-ZSBDOTktc3R5bGUgbG9vcCB2YXJpYWJsZSBkZWNsYXJhdGlvbiBpbiBtc21fZHBfbGlua19sYW5l
-X21hcC4gW1JvYl0KLSBVcGRhdGUgY29tbWl0IG1zZyB3aXRoIGlzc3VlIGRlc2NyaXB0aW9uIGZv
-ciBbMDUvMTQsIDA2LzE0LCAwNy8xNO+8jDEyLzE0XS4KLSBMaW5rIHRvIHY1OiBodHRwczovL2xv
-cmUua2VybmVsLm9yZy9yLzIwMjUwOTE5LWFkZC1kaXNwbGF5cG9ydC1zdXBwb3J0LWZvci1xY3M2
-MTUtcGxhdGZvcm0tdjUtMC1lYWU2NjgxZjQwMDJAb3NzLnF1YWxjb21tLmNvbQoKQ2hhbmdlcyBp
-biB2NToKLSBBZGQgbmV3IHBhdGNoIHRvIGludHJvZHVjZSBRU0VSREVTIHYyIENPTS9UWFJYIHJl
-Z2lzdGVyIGhlYWRlcnMuCi0gUmVzdG9yZSBsZWdhY3kgcmVzZXQgJiBjbG9jayByZWdpc3RlciBs
-b2dpYy4gW0RtaXRyeV0KLSBVcGRhdGUgcGh5X3hsYXRlKCkgdG8gcmV0dXJuIEVSUl9QVFIoLUVO
-T0RFVikgd2hlbiBkcF9waHkgaXMgTlVMTC4gW0RtaXRyeV0KLSBSZW5hbWUgaGVscGVyIGZyb20g
-cW1wX2NoZWNrX211dGV4X3BoeSgpIHRvIHFtcF91c2JjX2NoZWNrX3BoeV9zdGF0dXMoKS4gW0Rt
-aXRyeV0KLSBEcm9wIHN0b3Jpbmcgc3RydWN0IGRldmljZSAqZGV2IGluIGRwX2xpbmsgYXMgaXQg
-aXMgb25seSB1c2VkIG9uY2UuIFtEbWl0cnldCi0gQWRkIHJvYnVzdCBsYW5lIG1hcHBpbmc6IGRl
-ZmF1bHQgMToxLCBjb21wbGV0ZSBwYXJ0aWFsIGNvbmZpZ3MuIFtEbWl0cnldCi0gUmVvcmdhbml6
-ZSBzdWItcGF0Y2hlcyB2NVswNy8xNO+8jCAwOC8xNCwgMTEvMTTvvIwgMTIvMTRdIGFzIHN1Z2dl
-c3RlZC4KLSBMaW5rIHRvIHY0OiBodHRwczovL2xvcmUua2VybmVsLm9yZy9hbGwvMjAyNTA5MTEt
-YWRkLWRpc3BsYXlwb3J0LXN1cHBvcnQtZm9yLXFjczYxNS1wbGF0Zm9ybS12NC0wLTI3MDJiZGRh
-MTRlZEBvc3MucXVhbGNvbW0uY29tLwoKQ2hhbmdlcyBpbiB2NDoKLSBEcm9wIHBhdGNoIHYzWzAx
-LzE0ICYgMTMvMTRdLCB3aWxsIHN1dGJtaXQgbmV3IHBhdGNoc2V0cyBiYXNlZCBtc3QgZHQgYmlu
-ZGluZyBzZXJpZXMuCi0gVXBkYXRlIG1haW50YWluZXIgb2YgcWNvbSxxY3M2MTUtcW1wLXVzYjNk
-cC1waHkueWFtbCB0byBteXNlbGYuCi0gQWRkIG1pc3NpbmcgYXV4IGFuZCBwaXBlIGNsb2Nrcy4g
-W0RtaXRyeV0KLSBEcm9wIHNlY29uZCBUQ1NSIHBoYW5kbGU7IHJlZ2lzdGVyIG9mZnNldHMgYXJl
-IGRlc2NyaWJlZCBkaXJlY3RseS4gW0RtaXRyeV0KLSBBZGQgVVNCQyBQSFkgc2VyaWVzIHJlbGF0
-ZWQgaW5pdF9sb2FkX3VBIGNvbmZpZ3MuIFtEbWl0cnldCi0gRHJvcCB2M1swNC8xNF0gcW1wX3Bo
-eV91c2JjX3R5cGUgZGVmaW5lIGFuZCB1c2UgZHBfc2VyZGVzIG9mZnNldHMgdG8gY29uZmlybSBE
-UCBjYXBhYmlsaXR5IFtEbWl0cnldCi0gUmVvcmdhbml6ZSBzdWItcGF0Y2hlcyBhcyBzdWdnZXN0
-ZWQuCi0gTGluayB0byB2MzogaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvYWxsLzIwMjUwODIwLWFk
-ZC1kaXNwbGF5cG9ydC1zdXBwb3J0LWZvci1xY3M2MTUtcGxhdGZvcm0tdjMtMC1hNDNiZDI1ZWMz
-OWNAb3NzLnF1YWxjb21tLmNvbS8KCkNoYW5nZXMgaW4gdjM6Ci0gUmVuYW1lZCBxY29tLHFjczYx
-NS1xbXAtZHAtcGh5LnlhbWwgaW4gdjIgdG8gcWNvbSxxY3M2MTUtcW1wLWRwLXBoeS55YW1sIGlu
-IHYzIGZvciBRQ1M2MTUgVVNCMytEUCBQSFkuCi0gVXBkYXRlZCBwYXRjaCB2M1swMi8xNF0gdG8g
-cmV2aXNlIGJpbmRpbmcgdGl0bGUsIGRlc2NyaXB0aW9uLCBhbmQgcHJvcGVydHkgb3JkZXIuIFtL
-cnp5c3p0b2ZdCi0gVXBkYXRlZCBjb21taXQgbWVzc2FnZXMgaW4gcGF0Y2ggdjNbMDEvMTRdIGFu
-ZCBbMTMvMTRdIHRvIHJlZmxlY3QgdGhlIERUU0kgcmVuYW1lIGFuZCBjbGFyaWZ5IGNvbXBhdGli
-aWxpdHkuIFtLcnp5c3p0b2ZdCi0gQWRkZWQgVVNCMytEUCBtb2RlIGltcGxlbWVudGF0aW9uIGlu
-IHBhdGNoZXMgdjMgWzAwM+KAkzAxMl0sIG9yZ2FuaXplZCBpbiBsb2dpY2FsIGNodW5rcy4gW0Rt
-aXRyeV0KLSBEcm9wcGVkIHBhdGNoIHYyWzAzLzEzXSB0byBtYWludGFpbiBmdWxsIGJhY2t3YXJk
-IGNvbXBhdGliaWxpdHkgd2l0aCBVU0JDLgotIExpbmsgdG8gdjI6IGh0dHBzOi8vbG9yZS5rZXJu
-ZWwub3JnL2FsbC8yMDI1MDcyMi1hZGQtZGlzcGxheXBvcnQtc3VwcG9ydC1mb3ItcWNzNjE1LXBs
-YXRmb3JtLXYyLTAtNDJiNDAzNzE3MWY4QG9zcy5xdWFsY29tbS5jb20vCgpDaGFuZ2VzIGluIHYy
-OgotIEFkZCBuZXcgYmluZGluZyBxY29tLHFjczYxNS1xbXAtZHAtcGh5LnlhbWwgZm9yIFFDUzYx
-NSBzdGFuZGFsb25lIERQCi0gU3BsaXQgRFAgUEhZIGRyaXZlciBpbnRvIHBhdGNoZXMgNC0xMSBi
-eSBsb2dpY2FsIGNodW5rcyBbRG1pdHJ5XQotIFVwZGF0ZSBEUCBQSFkgY29uZmlndXJhdGlvbiBm
-bG93IHRvIGFsaWduIHdpdGggUU1QIENvbWJvIFBIWSBpbXBsZW1lbnRhdGlvbiBbRG1pdHJ5XQot
-IFVwZGF0ZSBhbGwgaGV4IHZhbHVlcyB0byBsb3dlcmNhc2UgW0RtaXRyeV0KLSBSZW1vdmUgcmVk
-dW5kYW50IGNvbW1lbnRzIGluIERQIFBIWSBkcml2ZXIgW0tyenlzenRvZl0KLSBSZW1vdmUgaW52
-YWxpZCBVU0JDIHR5cGUgZGVmaW5lIFtEbWl0cnldCi0gTW92ZSBsYW5lX21hcO+8jCBtYXhfZHBf
-bGFuZXPvvIwgbWF4X2RwX2xpbmtfcmF0ZSBwYXJzaW5nIGxvZ2ljIHRvIGRwX2xpbmsgW0RtaXRy
-eV0KLSBBZGQgVENTUi1iYXNlZCBtdXRleCBsb2dpYyBmb3IgRFAgYW5kIFVTQiBQSFkgY29leGlz
-dGVuY2UgW0RtaXRyeV0KLSBEcm9wIHBhdGNoZXMgNuKAkzggYW5kIHJlbW92ZSByZWxhdGVkIGJp
-bmRpbmcgcHJvcGVydGllcyBhcyByZWplY3RlZCB1cHN0cmVhbQotIExpbmsgdG8gdjE6IGh0dHBz
-Oi8vbG9yZS5rZXJuZWwub3JnL2FsbC8yMDI0MTEyOS1hZGQtZGlzcGxheXBvcnQtc3VwcG9ydC1m
-b3ItcWNzNjE1LXBsYXRmb3JtLXYxLTAtMDlhNDMzOGQ5M2VmQHF1aWNpbmMuY29tLwoKLS0tClhp
-YW5neHUgWWluICgxMik6CiAgICAgIGR0LWJpbmRpbmdzOiBwaHk6IEFkZCBRTVAgVVNCMytEUCBQ
-SFkgZm9yIFFDUzYxNQogICAgICBwaHk6IHFjb206IHFtcC11c2JjOiBSZW5hbWUgVVNCLXNwZWNp
-ZmljIG9wcyB0byBwcmVwYXJlIGZvciBEUCBzdXBwb3J0CiAgICAgIHBoeTogcWNvbTogcW1wLXVz
-YmM6IEFkZCBEUC1yZWxhdGVkIGZpZWxkcyBmb3IgVVNCL0RQIHN3aXRjaGFibGUgUEhZCiAgICAg
-IHBoeTogcWNvbTogcW1wLXVzYmM6IEFkZCByZWd1bGF0b3IgaW5pdF9sb2FkIHN1cHBvcnQKICAg
-ICAgcGh5OiBxY29tOiBxbXAtdXNiYzogTW92ZSByZXNldCBjb25maWcgaW50byBQSFkgY2ZnCiAg
-ICAgIHBoeTogcWNvbTogcW1wLXVzYmM6IGFkZCBEUCBsaW5rIGFuZCB2Y29fZGl2IGNsb2NrcyBm
-b3IgRFAgUEhZCiAgICAgIHBoeTogcWNvbTogcW1wLXVzYmM6IE1vdmUgVVNCLW9ubHkgaW5pdCB0
-byB1c2JfcG93ZXJfb24KICAgICAgcGh5OiBxY29tOiBxbXAtdXNiYzogQWRkIFRDU1IgcGFyc2lu
-ZyBhbmQgUEhZIG1vZGUgc2V0dGluZwogICAgICBwaHk6IHFjb206IHFtcC11c2JjOiBBZGQgRFAg
-UEhZIG9wcyBmb3IgVVNCL0RQIHN3aXRjaGFibGUgVHlwZS1DIFBIWXMKICAgICAgcGh5OiBxY29t
-OiBxbXAtdXNiYzogQWRkIFVTQi9EUCBleGNsdWRlIGhhbmRsaW5nCiAgICAgIHBoeTogcWNvbTog
-cW1wOiBBZGQgRFAgdjIgUEhZIHJlZ2lzdGVyIGRlZmluaXRpb25zCiAgICAgIHBoeTogcWNvbTog
-cW1wLXVzYmM6IEFkZCBRQ1M2MTUgVVNCL0RQIFBIWSBjb25maWcgYW5kIERQIG1vZGUgc3VwcG9y
-dAoKIC4uLi9iaW5kaW5ncy9waHkvcWNvbSxxY3M2MTUtcW1wLXVzYjNkcC1waHkueWFtbCAgIHwg
-IDExMSArKwogZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20tcW1wLWRwLXBoeS12Mi5oICAg
-ICAgfCAgIDIxICsKIGRyaXZlcnMvcGh5L3F1YWxjb21tL3BoeS1xY29tLXFtcC1xc2VyZGVzLWNv
-bS12Mi5oIHwgIDEwNiArKwogLi4uL3BoeS9xdWFsY29tbS9waHktcWNvbS1xbXAtcXNlcmRlcy10
-eHJ4LXYyLmggICAgfCAgIDY4ICsrCiBkcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1xbXAt
-dXNiYy5jICAgICAgICAgICB8IDEwNzEgKysrKysrKysrKysrKysrKysrLS0KIGRyaXZlcnMvcGh5
-L3F1YWxjb21tL3BoeS1xY29tLXFtcC5oICAgICAgICAgICAgICAgIHwgICAgMyArCiA2IGZpbGVz
-IGNoYW5nZWQsIDEyODkgaW5zZXJ0aW9ucygrKSwgOTEgZGVsZXRpb25zKC0pCi0tLQpiYXNlLWNv
-bW1pdDogNGE1NjYzYzA0YmI2Nzk2MzE5ODVhMTVlZmFiNzc0ZGE1OGMzNzgxNQpjaGFuZ2UtaWQ6
-IDIwMjUwOTE5LWFkZC1kaXNwbGF5cG9ydC1zdXBwb3J0LWZvci1xY3M2MTUtcGxhdGZvcm0tZjg4
-NTU5N2IzNTczCgpCZXN0IHJlZ2FyZHMsCi0tIApYaWFuZ3h1IFlpbiA8eGlhbmd4dS55aW5Ab3Nz
-LnF1YWxjb21tLmNvbT4KCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxp
-c3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
-dGluZm8vbGludXgtcGh5Cg==
+From: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
+
+The original reset list only works for USB-only PHYs. USB3DP PHYs require
+different reset names such as "dp_phy", so they need a separate list.
+
+Moving reset configuration into qmp_phy_cfg allows per-PHY customization
+without adding special-case logic in DT parsing. The legacy DT path keeps
+using the old hardcoded list, while non-legacy paths use cfg->reset_list.
+
+Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+Signed-off-by: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
+---
+ drivers/phy/qualcomm/phy-qcom-qmp-usbc.c | 14 +++++++++++---
+ 1 file changed, 11 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c b/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
+index 2c998803fcda..cff148dc9f01 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
+@@ -335,7 +335,8 @@ struct qmp_phy_cfg {
+ 	int (*configure_dp_phy)(struct qmp_usbc *qmp);
+ 	int (*calibrate_dp_phy)(struct qmp_usbc *qmp);
+ 
+-	/* regulators to be requested */
++	const char * const *reset_list;
++	int num_resets;
+ 	const struct regulator_bulk_data *vreg_list;
+ 	int num_vregs;
+ 
+@@ -464,6 +465,8 @@ static const struct qmp_phy_cfg msm8998_usb3phy_cfg = {
+ 	.rx_tbl_num             = ARRAY_SIZE(msm8998_usb3_rx_tbl),
+ 	.pcs_tbl                = msm8998_usb3_pcs_tbl,
+ 	.pcs_tbl_num            = ARRAY_SIZE(msm8998_usb3_pcs_tbl),
++	.reset_list		= usb3phy_reset_l,
++	.num_resets		= ARRAY_SIZE(usb3phy_reset_l),
+ 	.vreg_list              = qmp_phy_msm8998_vreg_l,
+ 	.num_vregs              = ARRAY_SIZE(qmp_phy_msm8998_vreg_l),
+ 	.regs                   = qmp_v3_usb3phy_regs_layout,
+@@ -480,6 +483,8 @@ static const struct qmp_phy_cfg qcm2290_usb3phy_cfg = {
+ 	.rx_tbl_num		= ARRAY_SIZE(qcm2290_usb3_rx_tbl),
+ 	.pcs_tbl		= qcm2290_usb3_pcs_tbl,
+ 	.pcs_tbl_num		= ARRAY_SIZE(qcm2290_usb3_pcs_tbl),
++	.reset_list		= usb3phy_reset_l,
++	.num_resets		= ARRAY_SIZE(usb3phy_reset_l),
+ 	.vreg_list		= qmp_phy_sm2290_vreg_l,
+ 	.num_vregs		= ARRAY_SIZE(qmp_phy_sm2290_vreg_l),
+ 	.regs			= qmp_v3_usb3phy_regs_layout_qcm2290,
+@@ -496,6 +501,8 @@ static const struct qmp_phy_cfg sdm660_usb3phy_cfg = {
+ 	.rx_tbl_num		= ARRAY_SIZE(sdm660_usb3_rx_tbl),
+ 	.pcs_tbl		= qcm2290_usb3_pcs_tbl,
+ 	.pcs_tbl_num		= ARRAY_SIZE(qcm2290_usb3_pcs_tbl),
++	.reset_list		= usb3phy_reset_l,
++	.num_resets		= ARRAY_SIZE(usb3phy_reset_l),
+ 	.vreg_list		= qmp_phy_msm8998_vreg_l,
+ 	.num_vregs		= ARRAY_SIZE(qmp_phy_msm8998_vreg_l),
+ 	.regs			= qmp_v3_usb3phy_regs_layout_qcm2290,
+@@ -512,6 +519,8 @@ static const struct qmp_phy_cfg qcs615_usb3phy_cfg = {
+ 	.rx_tbl_num		= ARRAY_SIZE(qcm2290_usb3_rx_tbl),
+ 	.pcs_tbl		= qcm2290_usb3_pcs_tbl,
+ 	.pcs_tbl_num		= ARRAY_SIZE(qcm2290_usb3_pcs_tbl),
++	.reset_list		= usb3phy_reset_l,
++	.num_resets		= ARRAY_SIZE(usb3phy_reset_l),
+ 	.vreg_list		= qmp_phy_qcs615_vreg_l,
+ 	.num_vregs		= ARRAY_SIZE(qmp_phy_qcs615_vreg_l),
+ 	.regs			= qmp_v3_usb3phy_regs_layout_qcm2290,
+@@ -1051,8 +1060,7 @@ static int qmp_usbc_parse_dt(struct qmp_usbc *qmp)
+ 				     "failed to get pipe clock\n");
+ 	}
+ 
+-	ret = qmp_usbc_reset_init(qmp, usb3phy_reset_l,
+-				 ARRAY_SIZE(usb3phy_reset_l));
++	ret = qmp_usbc_reset_init(qmp, cfg->reset_list, cfg->num_resets);
+ 	if (ret)
+ 		return ret;
+ 
+
+-- 
+2.34.1
+
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
