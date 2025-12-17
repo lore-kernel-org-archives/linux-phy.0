@@ -4,53 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4CDADD6552F
-	for <linux-phy@archiver.kernel.org>; Wed, 17 Dec 2025 10:19:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2C91DD65532
+	for <linux-phy@archiver.kernel.org>; Wed, 17 Dec 2025 10:19:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l3mH80c5XRpT0HIiZao/TFdLHvhX93Ez5zGVrqYa85Y=; b=e56r21xPeZeRWD
-	YEmn2KBu1mTKqgEUbtQm3m50na30yQuTtrqUWE/gxw3xywUD/xP4A1RWens22c/2GeRWAbpBICkoH
-	Duk02JTT4jOCgn/GWBHU1AMvIT+fk725uorRsddOZDY7c9DPmlSX6Zpad8AE5pZhM405bxtureigq
-	M5u5aKwE9xDiQpWyzAFKtc+LPq1slqg8EVTR/Fg3Wh+s36FWOUjQ41byG/ViEi10rfXZTkpLvmvnk
-	I8x7mio9lb3eiqI6EcwdkrGL5clcbPwJ4TzhSq2trZ0PCXZQHqh0aRdXXg5G0cU4ksvsodnJsfSlR
-	nNQZIThD1w38QhO8zxWQ==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=EA3jop2AirgXJ+jy0Vq+N5D/9AuYxTuFioxHskqIrk4=; b=EuOcJD1Snexf4o
+	eGkkVBuWA+3hJ4pIkIi1VSf7FQEH9XdeJO09yj90a1pMRUvv/9/Jx8bdkWzFH8CnRdbyVdKQvbKz/
+	mYyl4WzcfgexI8LUZfWUv9OKTjElejYlseneaCTuNo+EjkWY3QRVkUc6fh91al8b0SlBNnpfyvMvO
+	HlYkPBBS8ecjFDuOP/8YFtqwgCXow7h4Se2kRh56SVGlf2Uh0dvPFU5KDvOXiqHc4gy4wFPUZPb4G
+	B8M2KVD6UuuuEN9dn50k7VvrKRI6xUkiPIcLBIiRUqtZHyVVDrqKOnU8kgP2Hmd4Yqc5vOvyZtWJO
+	DTHG94qNvv+hfjxQ+Kzg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vVodE-00000006bFB-4BwA;
-	Wed, 17 Dec 2025 10:19:45 +0000
-Received: from bali.collaboradmins.com ([148.251.105.195])
+	id 1vVodH-00000006bI7-1MOU;
+	Wed, 17 Dec 2025 10:19:47 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vVodB-00000006bC2-1SgK;
-	Wed, 17 Dec 2025 10:19:42 +0000
+	id 1vVodB-00000006bC0-0aX8;
+	Wed, 17 Dec 2025 10:19:43 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1765966777;
-	bh=jC5+KdoqdVFQgOtEPuJi4tXUBsXqvexvaZVlr3SvnWo=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=Ex1cl9zt4oNB1mZRj71tqKXBm5P6l4YZBNlQFq++F5h+dSdYv64BisGlDZdUgfrg4
-	 lmqEKxzzT3jtuS+eCr3GMJ8aqzmIp2N/l6HkmfmFUVtRC7D56j7hCyxUZM3nQrKXu/
-	 KUopx29a8BN9IP5awepcrcINOar/XLveipnVP1YdToMjuA78a3Uida0nDe4tgH3jrl
-	 a78ANREO9FuU7c7X/X76SZz2ct5UntR4PGr5yjzbNeOFTl/HEipzrnWuymbEHmCrbX
-	 dimDKyfYRVQRmg9CCVNL261tfNB4X6XMxlHnRUmlxyBKZweL/4uQ8POqzxMoxBgRZm
-	 Yb3SsifrLu71g==
+	s=mail; t=1765966776;
+	bh=2uCsiJL3FhY3PhVtUNXzBlzS29fMOK47hX+kAU0prvM=;
+	h=From:Subject:Date:To:Cc:From;
+	b=THOEb6ESP5uwi6VGoS1PsKosEkj0i7ulYgOgyc7NgTxwpzFbyJjWiRyVERbgBgDSQ
+	 ofpGA/1oeAIwD/Pgz6hp/omZJKieqW1yx8HY0H6fcQx1dv2ufqKUNwRbGOOXOj/RtG
+	 5v7dYh2XuLBH+d+3gnkvzqXvNlUwo6zOdmW6TvGuO9tMATnK57FLpWbZiexUWfy/cV
+	 6BdUNOn7XamtBqd6E90wbHczSSDl4UvIAkEZHPDuV8vBduCOVUOb6WmIQ83p3HXZzT
+	 JSOfnEcf/cT5Ny6XtZMH1iLbC7TBEJFJapXOc41qgtRADjiX3s8m9EGilpaxGDj+rc
+	 AL8kOac3LS8Kw==
 Received: from yukiji.home (amontpellier-657-1-116-247.w83-113.abo.wanadoo.fr [83.113.51.247])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: laeyraud)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id D081617E0C87;
-	Wed, 17 Dec 2025 11:19:36 +0100 (CET)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id E38FF17E0506;
+	Wed, 17 Dec 2025 11:19:35 +0100 (CET)
 From: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
-Date: Wed, 17 Dec 2025 11:19:00 +0100
-Subject: [PATCH v2 01/12] dt-bindings: phy: mediatek,hdmi-phy: Fix clock
- output names for MT8195
+Subject: [PATCH v2 00/12] Add HDMI support for Mediatek Genio
+ 510/700/1200-EVK and Radxa NIO-12L boards
+Date: Wed, 17 Dec 2025 11:18:59 +0100
+Message-Id: <20251217-mtk-genio-evk-hdmi-support-v2-0-a994976bb39a@collabora.com>
 MIME-Version: 1.0
-Message-Id: <20251217-mtk-genio-evk-hdmi-support-v2-1-a994976bb39a@collabora.com>
-References: <20251217-mtk-genio-evk-hdmi-support-v2-0-a994976bb39a@collabora.com>
-In-Reply-To: <20251217-mtk-genio-evk-hdmi-support-v2-0-a994976bb39a@collabora.com>
+X-B4-Tracking: v=1; b=H4sIAAAAAAAC/32OzQ6CMBCEX4Xs2TW0BhBOvofhUGCBDT/FthAM4
+ d2t4NnjN8nMNxtYMkwWsmADQwtb1qMHeQmgbNXYEHLlGWQoIyHDGw6uw4ZG1khLh201MNp5mrR
+ xKJJKRSIWd5ko8AOToZrXY/yZn2zoNXuHO0MolCUs9TCwy4KRVoenRyTwLbRsnTbv49wijsbvR
+ /rvxyIwxFTFIoyprgsVP0rd96rQRl29DPJ93z8v28wF+QAAAA==
+X-Change-ID: 20251203-mtk-genio-evk-hdmi-support-17da5161827a
 To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>, 
  Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
  Krzysztof Kozlowski <krzk+dt@kernel.org>, 
@@ -64,18 +67,19 @@ Cc: kernel@collabora.com, Krzysztof Kozlowski <krzk@kernel.org>,
  linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org, 
  linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
  linux-kernel@vger.kernel.org, 
- Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
+ Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>, 
+ =?utf-8?q?N=C3=ADcolas_F=2E_R=2E_A=2E_Prado?= <nfraprado@collabora.com>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1765966775; l=1504;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1765966775; l=3341;
  i=louisalexis.eyraud@collabora.com; s=20250113; h=from:subject:message-id;
- bh=5dxyFZEQPilPUnhA9Vm4qAcH//F/AqE/9KWYhCVl0Bk=;
- b=wS0uVYdevYYtQ8TODoFfPoPGRP5o7SOOEkQHWpg1mS2iAd6rda4UuotYnJ4+CwPRRIcfZVGJX
- ZFM2kG2w3tJCKjYEgxxibCz1gfseUEqSqQE/fT5/r5uo1sqeryX/plD
+ bh=2uCsiJL3FhY3PhVtUNXzBlzS29fMOK47hX+kAU0prvM=;
+ b=DwHgGu3ADpVy9HJNoeg+SuijtIeOfDFwK7PZZIkmgREDdVTFJjHnuHBSl7+F9kKH/iEvKf+Ah
+ oi8yKWg/3y9ApQSePYtEgl9XuwoXwTfSU1xD3VYKXNqcoBbT/xZgRbg
 X-Developer-Key: i=louisalexis.eyraud@collabora.com; a=ed25519;
  pk=CHFBDB2Kqh4EHc6JIqFn69GhxJJAzc0Zr4e8QxtumuM=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251217_021941_548528_EBBBFF6A 
-X-CRM114-Status: GOOD (  10.01  )
+X-CRM114-CacheID: sfid-20251217_021941_360944_487A94D6 
+X-CRM114-Status: GOOD (  13.25  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,53 +91,68 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-
-For all of the HDMI PHYs compatible with the one found on MT8195
-the output clock has a different datasheet name and specifically
-it is called "hdmi_txpll", differently from the older HDMI PHYs
-which output block is called "hdmitx_dig_cts".
-
-Replace clock output name string check by max item number one to allow
-the new name on all of the HDMI PHY IPs that are perfectly compatible
-with MT8195.
-
-[Louis-Alexis Eyraud: split patch, addressed previous feedback from
-mailing list, and reworded description]
-
-Fixes: c78fe548b062 ("dt-bindings: phy: mediatek: hdmi-phy: Add mt8195 compatible")
-Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
-Signed-off-by: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
----
- Documentation/devicetree/bindings/phy/mediatek,hdmi-phy.yaml | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
-
-diff --git a/Documentation/devicetree/bindings/phy/mediatek,hdmi-phy.yaml b/Documentation/devicetree/bindings/phy/mediatek,hdmi-phy.yaml
-index f3a8b0b745d13ffc55d391570bff20830d925ed3..10f1d9326f18dba85b92b4c88f4c0f6cdddc4c25 100644
---- a/Documentation/devicetree/bindings/phy/mediatek,hdmi-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/mediatek,hdmi-phy.yaml
-@@ -42,8 +42,7 @@ properties:
-       - const: pll_ref
- 
-   clock-output-names:
--    items:
--      - const: hdmitx_dig_cts
-+    maxItems: 1
- 
-   "#phy-cells":
-     const: 0
-
--- 
-2.52.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhpcyBwYXRjaCBzZXJpZXMgYWRkcyBhbmQgZW5hYmxlcyB0aGUgSERNSSBvdXRwdXQgc3VwcG9y
+dCBmb3IgdGhlCmZvbGxvd2luZyBib2FyZHM6Ci0gTWVkaWF0ZWsgR2VuaW8gNTEwLUVWSyAoTVQ4
+MzcwKQotIE1lZGlhdGVrIEdlbmlvIDcwMC1FVksgKE1UODM5MCkKLSBNZWRpYXRlayBHZW5pbyAx
+MjAwLUVWSyAoTVQ4Mzk1KQotIFJhZHhhIE5JTy0xMkwgKE1UODM5NSkKClBhdGNoIDEgaXMgYSAn
+bWVkaWF0ZWssaGRtaS1waHknIGR0LWJpbmRpbmcgZml4IGZvciBNVDgxOTUgU29DIGFuZCBhCnJl
+dmlzZWQgdmVyc2lvbiBvZiBbMV0sIHRoYXQgYWRkcmVzc2VzIHByZXZpb3VzIGZlZWRiYWNrIGZy
+b20gbWFpbGluZwpsaXN0IChbMl0pLgpQYXRjaCAyIHdhcyBzcGxpdCBmcm9tIFsxXSBpbnRvIGEg
+c2VwYXJhdGUgcGF0Y2ggYW5kIGFkZHMgYSBNVDgxODggU29DCmNvbXBhdGlibGUgaW4gJ21lZGlh
+dGVrLGhkbWktcGh5JyBkdC1iaW5kaW5nLgpQYXRjaCAzIGRvY3VtZW50cyBpbiAnbWVkaWF0ZWss
+aGRtaS1waHknIGR0LWJpbmRpbmcgZXh0cmEgY2xvY2tzIGZvcgpNVDgxOTUgU29DLgpQYXRjaCA0
+IGFkZHMgYWxsIG9mIHRoZSBub2RlcyB0aGF0IGFyZSByZXF1aXJlZCB0byBlbmFibGUgSERNSSBv
+dXRwdXQKZm9yIE1UODE5NSBTb0MgYW5kIGl0cyB2YXJpYW50IChNVDgzOTUpLgpQYXRjaCA1IGFk
+ZHMgdGhlIHNhbWUgYnV0IGZvciBNVDgxODggU29DIGFuZCBpdHMgdmFyaWFudHMgKE1UODM3MCwK
+TVQ4MzkwKS4KUGF0Y2hlcyA2IHRvIDExIGVuYWJsZSBIRE1JIG91dHB1dCBhbmQgc291bmQgc3Vw
+cG9ydCBmb3IgZWFjaCBib2FyZC4KUGF0Y2ggMTIgZW5hYmxlcyB0aGUgTWVkaWF0ZWsgSERNSXYy
+IGRyaXZlciBhcyBtb2R1bGUgaW4gZGVmY29uZmlnLgoKVGhlIHNlcmllcyBpcyBiYXNlZCBvbiBs
+aW51eC1uZXh0ICh0YWc6IG5leHQtMjAyNTEyMTcpLgoKWzFdIGh0dHBzOi8vbG9yZS5rZXJuZWwu
+b3JnL2xpbnV4LW1lZGlhdGVrLzIwMjUwNzI0MDgzOTE0LjYxMzUxLTE2LWFuZ2Vsb2dpb2FjY2hp
+bm8uZGVscmVnbm9AY29sbGFib3JhLmNvbS8KWzJdIGh0dHBzOi8vbG9yZS5rZXJuZWwub3JnL2xp
+bnV4LW1lZGlhdGVrL2VlNTI1MzEyLWJkZTEtNDcyNC1iMzJmLTgzYmUzMmM4NzY5NkBrZXJuZWwu
+b3JnLwoKU2lnbmVkLW9mZi1ieTogTG91aXMtQWxleGlzIEV5cmF1ZCA8bG91aXNhbGV4aXMuZXly
+YXVkQGNvbGxhYm9yYS5jb20+Ci0tLQpDaGFuZ2VzIGluIHYyOiAKLSBSZWJhc2VkIG92ZXIgbmV4
+dC0yMDE1MTIxNyB0YWcKLSBVcGRhdGVkIHBhdGNoIDMgdG8gdGFrZSBpbnRvIGFjY291bnQgUm9i
+IEhlcnJpbmcgcmVtYXJrcyBhbmQgc2ltcGxpZnkKICBwYXRjaAotIFVwZGF0ZWQgcGF0Y2ggNCB0
+byBhbGlnbiBIRE1JIHBoeSBjbG9jayBuYW1lIGNoYW5nZXMgZG9uZSBpbiBwYXRjaCAzLiAKLSBB
+ZGQgcmV2aWV3ZWQtYnkgdHJhaWxlciBpbiBwYXRjaCAxCi0gTGluayB0byB2MTogaHR0cHM6Ly9s
+b3JlLmtlcm5lbC5vcmcvci8yMDI1MTIwOS1tdGstZ2VuaW8tZXZrLWhkbWktc3VwcG9ydC12MS0w
+LTlhNjEwNmVmZmJhNkBjb2xsYWJvcmEuY29tCgotLS0KQW5nZWxvR2lvYWNjaGlubyBEZWwgUmVn
+bm8gKDUpOgogICAgICBkdC1iaW5kaW5nczogcGh5OiBtZWRpYXRlayxoZG1pLXBoeTogRml4IGNs
+b2NrIG91dHB1dCBuYW1lcyBmb3IgTVQ4MTk1CiAgICAgIGFybTY0OiBkdHM6IG1lZGlhdGVrOiBt
+dDgxOTU6IEFkZCBEUEkxLCBIRE1JLCBIRE1JIFBIWS9EREMgbm9kZXMKICAgICAgYXJtNjQ6IGR0
+czogbWVkaWF0ZWs6IG10ODE4ODogQWRkIERQSTEsIEhETUksIEhETUkgUEhZL0REQyBub2Rlcwog
+ICAgICBhcm02NDogZHRzOiBtZWRpYXRlazogbXQ4MzkwLWdlbmlvLWNvbW1vbjogRW5hYmxlIEhE
+TUkgb3V0cHV0CiAgICAgIGFybTY0OiBkdHM6IG1lZGlhdGVrOiBtdDgzOTUtcmFkeGEtbmlvLTEy
+bDogRW5hYmxlIEhETUkgb3V0cHV0CgpMb3Vpcy1BbGV4aXMgRXlyYXVkICg2KToKICAgICAgZHQt
+YmluZGluZ3M6IHBoeTogbWVkaWF0ZWssaGRtaS1waHk6IEFkZCBzdXBwb3J0IGZvciBNVDgxODgg
+U29DCiAgICAgIGFybTY0OiBkdHM6IG1lZGlhdGVrOiBtdDgzOTAtZ2VuaW8tY29tbW9uOiBBZGQg
+SERNSSBzb3VuZCBvdXRwdXQgc3VwcG9ydAogICAgICBhcm02NDogZHRzOiBtZWRpYXRlazogbXQ4
+Mzk1LXJhZHhhLW5pby0xMmw6IEFkZCBIRE1JIHNvdW5kIG91dHB1dCBzdXBwb3J0CiAgICAgIGFy
+bTY0OiBkdHM6IG1lZGlhdGVrOiBtdDgzOTUtZ2VuaW8tY29tbW9uOiBFbmFibGUgSERNSSBvdXRw
+dXQKICAgICAgYXJtNjQ6IGR0czogbWVkaWF0ZWs6IG10ODM5NS1nZW5pby1jb21tb246IEFkZCBI
+RE1JIHNvdW5kIG91dHB1dCBzdXBwb3J0CiAgICAgIGFybTY0OiBkZWZjb25maWc6IEVuYWJsZSBN
+ZWRpYXRlayBIRE1JdjIgZHJpdmVyCgpOw61jb2xhcyBGLiBSLiBBLiBQcmFkbyAoMSk6CiAgICAg
+IGR0LWJpbmRpbmdzOiBwaHk6IG1lZGlhdGVrLGhkbWktcGh5OiBEb2N1bWVudCBleHRyYSBjbG9j
+a3MgZm9yIE1UODE5NQoKIC4uLi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS9tZWRpYXRlayxoZG1p
+LXBoeS55YW1sIHwgIDI5ICsrKy0KIGFyY2gvYXJtNjQvYm9vdC9kdHMvbWVkaWF0ZWsvbXQ4MTg4
+LmR0c2kgICAgICAgICAgIHwgIDgyICsrKysrKysrKysrCiBhcmNoL2FybTY0L2Jvb3QvZHRzL21l
+ZGlhdGVrL210ODE5NS5kdHNpICAgICAgICAgICB8ICA4NSArKysrKysrKysrKysKIC4uLi9ib290
+L2R0cy9tZWRpYXRlay9tdDgzOTAtZ2VuaW8tY29tbW9uLmR0c2kgICAgIHwgMTUwICsrKysrKysr
+KysrKysrKysrKysrKwogLi4uL2Jvb3QvZHRzL21lZGlhdGVrL210ODM5NS1nZW5pby1jb21tb24u
+ZHRzaSAgICAgfCAxNTAgKysrKysrKysrKysrKysrKysrKysrCiAuLi4vYm9vdC9kdHMvbWVkaWF0
+ZWsvbXQ4Mzk1LXJhZHhhLW5pby0xMmwuZHRzICAgICB8IDE1MCArKysrKysrKysrKysrKysrKysr
+KysKIGFyY2gvYXJtNjQvY29uZmlncy9kZWZjb25maWcgICAgICAgICAgICAgICAgICAgICAgIHwg
+ICAxICsKIDcgZmlsZXMgY2hhbmdlZCwgNjQ1IGluc2VydGlvbnMoKyksIDIgZGVsZXRpb25zKC0p
+Ci0tLQpiYXNlLWNvbW1pdDogYTUxMmJlOWU4ODM4YWZlYzZiYWE4Mzc2N2UyOTFkZmNhODY1NzQx
+MApjaGFuZ2UtaWQ6IDIwMjUxMjAzLW10ay1nZW5pby1ldmstaGRtaS1zdXBwb3J0LTE3ZGE1MTYx
+ODI3YQoKQmVzdCByZWdhcmRzLAotLSAKTG91aXMtQWxleGlzIEV5cmF1ZCA8bG91aXNhbGV4aXMu
+ZXlyYXVkQGNvbGxhYm9yYS5jb20+CgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgt
+cGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
+YW4vbGlzdGluZm8vbGludXgtcGh5Cg==
