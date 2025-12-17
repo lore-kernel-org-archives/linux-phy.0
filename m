@@ -4,75 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 464E7D65C47
-	for <linux-phy@archiver.kernel.org>; Wed, 17 Dec 2025 13:39:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6425AD65C46
+	for <linux-phy@archiver.kernel.org>; Wed, 17 Dec 2025 13:43:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mA8LVXp3KtwLEW+OhuEPx+GH9cw6nUVC4hylIm8jRDo=; b=BmFU7wTuAXXpPk
-	YzxNdrslvV8CVQmkn96z+d1gunl188YzKNQdJtpdt/A29BFHVo/J+H0+0nS6JxwAx5DSCtVpniAFd
-	ismQ7MTZK+96zDY6GpUMkiNYph0SxSuM/BLjrbgPXXfEvDSFBwOmlMx0yj89TjzllpHY22SXMyA3T
-	WuOn0L1RBsCvIgk2dmNXzr8688yIXQLhSm3OU2R3CG4gg6/thPjg/wU1lPV1/t3acek0dU/J+qv9P
-	79dLyPiH4NS2MG0x/eGRJ6Ty7iiO5ejxLrbveF9kqriDCKIasX306PkndhtvhTja/YGwuZ8DPyZeT
-	Q4LD45uCgy5x55ryCbsw==;
+	List-Owner; bh=aTbFdxp0o/Rp3pp2i4B3rNd6QKogwAWzFppP9IQUX5k=; b=BDc7NBpXH1VUzH
+	IuT7ln6Hvsh9PPeo5TjcJr0gIic9SYdrA7vW0C6mrPRVx4z3/w6NIiAYH4ZsZV2JvPZirlqi8gGOu
+	lj0KZk4GPKkX0+hWi7ceyfmfNq7IIQ+r2PZKw55B8G2Evr5qL705xCNUEnPqEDFkIfFMPbr+C21iu
+	E3VkrLrkcG4RZHrZ8L0c3Fc+xbICqGy9VZqX+q0T+tL9qpAURSd5sv83Si6j5BY+Su9lcT87e+sVC
+	cwcxTcqfe88HBm3skBFfule2GZI4PQQu5OfIgd4ymBtrZNCd1EU61a60AkJvPPxHIRHWY7yGFi+R9
+	yCKVlOEVJAKeryzUP4Sw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vVrkV-00000006s7V-431d;
-	Wed, 17 Dec 2025 13:39:27 +0000
-Received: from mail-lj1-x236.google.com ([2a00:1450:4864:20::236])
+	id 1vVro1-00000006sOQ-0YF3;
+	Wed, 17 Dec 2025 13:43:05 +0000
+Received: from mail-lf1-x12d.google.com ([2a00:1450:4864:20::12d])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vVrkS-00000006s76-2xrE
+	id 1vVrnx-00000006sNw-0ZQX
 	for linux-phy@lists.infradead.org;
-	Wed, 17 Dec 2025 13:39:27 +0000
-Received: by mail-lj1-x236.google.com with SMTP id 38308e7fff4ca-37b9728a353so58226321fa.0
-        for <linux-phy@lists.infradead.org>; Wed, 17 Dec 2025 05:39:22 -0800 (PST)
+	Wed, 17 Dec 2025 13:43:04 +0000
+Received: by mail-lf1-x12d.google.com with SMTP id 2adb3069b0e04-5942bac322dso6223346e87.0
+        for <linux-phy@lists.infradead.org>; Wed, 17 Dec 2025 05:43:00 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1765978761; x=1766583561; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1765978979; x=1766583779; darn=lists.infradead.org;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=bnJOOseUNu5bo56mXUg+bkHSCvAL77RptqMYnGxiRP8=;
-        b=A/oQ2P5RjbNj+wzIFGvXykjs0gnfz7yrsRW+bfRvbRaSJXZOcvoVmfQHfqrZnfTO03
-         QqU3Z27JfkKpiNrGY5T7HW9qjTO/n50HcEeo0VLitE1ySx3+gRYCeFU2PLRrOnxVSNXK
-         RE3+8vJzYDbJFC3t152H8BmS/+8cyS/bFQf+4ia0KP7zGRfgtcPNqXALqDFhyEcrc5nN
-         ORofo+V5oOKkGgm4uPercFUoo3r7Xh6UspV2HGvfpiWI2d3mlj5I9fM8CHGZmmU3MT9v
-         r9MglBO86AcxeGSeYLSoA6eeqQCU/nPvChmR+feQsTI82z59lyOtipubhnfKT7RP6lL4
-         u1jw==
+        bh=i+2rCMNUHkZI89lP4N4BumifdRKTsaBf6MC8t3850FA=;
+        b=Fufc6gI5ArL8iUNGbTPsGDm8vG9p4/T/9Sfmic9Z0NeozEE+vvT9UNEY+BprDw09D2
+         jOKTBRsv9sOiJsD38vCaGcH6FUGEaaw3HpDGzIzOCIPnkkB3tnHPvA+c9zMg4rJgMYxh
+         9ATUE17e2/HP7pcBpP1tkIC6Zf3umZVQ7WbcYiOv0TxpAjtqrACWBOM2AZroVLjkCZTH
+         +0YxLc2JTXA/Ah4sdHM1WfBIFhgskmwlupMjhZSPLsbPPbosor20JFV2cVeZM2PUaVyn
+         ePx/PHYJ5SETSObDrHI0wgq9Bn1H3wHyoOfU8PLYHOS6f6GEFs3J/FGTON5lAHBxe5T3
+         iaFA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1765978761; x=1766583561;
+        d=1e100.net; s=20230601; t=1765978979; x=1766583779;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=bnJOOseUNu5bo56mXUg+bkHSCvAL77RptqMYnGxiRP8=;
-        b=T9Nu6R+KjX/9x63pRKykuVzU91n9YIO2QBBzR8vBzIQZIooBcX3lY/dpKA6xjD1J8D
-         IHknX6QfjvLTJFDDlhUF9J1lviCRMOLl/qE7g/9W9edT/2Bq1X6KaQYgnxosDMHlMjae
-         ydjo8D7BMdmVWPX2tvpnY9YhfdoGFrRpSajmTFRhNLVOOfhVXSpOvwkcr1mZAlnl7I8h
-         yr14pEbCVl2NVLtIcWNDnFwZuK5aUl1J1Xg46e0BAtqpKdIeGmGOEaE/u5CrcFjQHG2O
-         JY2hBo8M5wtx1xiusKpg2Ks/OQLK0DrIxaJBqNV0b7e3zeGP8ZB/CfHPzoFzXxmh+bFf
-         a/5Q==
-X-Forwarded-Encrypted: i=1; AJvYcCXTSwvEfz1AD88aazij088wAeOD//N4XFaBVXKUULY+uHB1dh8f2NxAdjpP7MyoFmEIjjHr7xr0Oww=@lists.infradead.org
-X-Gm-Message-State: AOJu0YznHfe6VEp7DgRm8bGMoS70mXUDQaeCjdOBpLxJjA3IOaRZB7UX
-	Jyc2qyWVsq746pjDebya1Ma8h3B6sDXWUX47vMA5aSdJPR1Dh6BtvpM1NydNhHZZvCIBdJRvnHt
-	xBgM8fVjK4zcUWS/MFJk1LVwwv7tccHaB7jlYaConlA==
-X-Gm-Gg: AY/fxX5HLw6YGey913TeOHPyOwCpRoLBJ8r0/IMTSXqrrx2uO0KhTzOzmYxtY/D0AUP
-	EmG1utwrFjmDJbkSUBcPYgBAKAinwpgSpruh5VRJUw7tbYiLHhVNG9R0raU6K+r0ectYlpk7KTX
-	CI/fQ2EpkAIxTR9c3iExNsUHKmAJqYPdNf4wZjw5gvUqi3OdtUhwv5qjU9pWrzrqF6EwzVnO5B9
-	Iv5YK+ASzzaz0WIbOPCTLZmQR2tyczraHHyChGhT43wrOh2Yu1sAJLgA9GTg23Bh/qPSQg=
-X-Google-Smtp-Source: AGHT+IE2DrQoKBO7Um5lmI2G8HeKrmSb1aJ3PKObeClJFdA7DTUpv5Z7rJEzp4iMrT0Jn0x5gpN5DVmp8SJGVUL+/c0=
-X-Received: by 2002:a2e:8f88:0:b0:37a:5990:2ba8 with SMTP id
- 38308e7fff4ca-37fd0877fc9mr48143241fa.23.1765978760510; Wed, 17 Dec 2025
- 05:39:20 -0800 (PST)
+        bh=i+2rCMNUHkZI89lP4N4BumifdRKTsaBf6MC8t3850FA=;
+        b=BX/w0t48dObmvuHEjHc7zCmAam7DUFkoZVjMnN5z98bdCi4/CLp75ON/lSfdRpVzXR
+         EtNwZebG5A3q749172U1XoLTpOFbLP3Fh4auhI3cS3t5XHBkMEMc/EFyUD5PycBrsm5B
+         FEgXkG8MRQrpzwAcYlbIQnktSWzKGLdqF7+/+Mq80yGRtWhwvPc3g00uU/332IKRg5P1
+         KORgkb+YqJr8PHpx9vW/q83x3xKfPa3Y2YnDRQZEJaQYv9ILmoF9Xat2WLdSqCykDLJJ
+         th5Eqb5sS7TW5uFIhYtZ+z+ebMmuURtpH3BwkzXWm7785+kmq381M2Zy67h5vd++enbe
+         XGXg==
+X-Forwarded-Encrypted: i=1; AJvYcCWIAOQvn8n+/taduOI863vCzl26Bc2+j9WCoKWdaMAKgdT7CTb+E243tsJlPucSfjkN5eUFrSBxqQE=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwHD98FeE8Dhj94/Ip+nrusX91Ni4yMqDd9oSrSY3K2pqYkeT/+
+	6nKaplbT3/8K5CI3ky6RJNNDZOe9R9yHGDva5asN0fFeHkeWaLO8vJT6NZlqeY7RjNxUetre9hE
+	jVksbHinjhYecoeCCIAysg9Pe8KxH04mlCRagRVKZ+A==
+X-Gm-Gg: AY/fxX4+f6lvNAY0SdFs/W2RusTFDoKnovb7TGg4cuyTUZgTvNJYcG7WBEVSNorcEea
+	mxtCetr3tWFwvTk7lvHc2n+U4U5aIMizpGBJ3OXsPO1eaBQyT8QBCReuhCLkmkGURhHZ/BeLhE7
+	AIE3TT4x7NiNr24LuzCzaGrpzj/zE3FltigOOy8idCcL+2ALhjUpHGbRxXVGDPoXR0NMydvyD7/
+	+vbTR3hSAuR8zhWXhjPcRUMz7GmKQjMxY2iUXPpeZ/KIoBgoYinBc+0TgwyEioLlsGU+cg=
+X-Google-Smtp-Source: AGHT+IFQ7RFU2XYjhNpz4zPlGBfxB8IQy25jb9NHzoC5kJ0seGo5jh0pCCbvJquopiBKgSSVm6gg0z6EMwvFTEugGus=
+X-Received: by 2002:a05:6512:3a89:b0:598:f262:15c7 with SMTP id
+ 2adb3069b0e04-598faa4d4c4mr4998838e87.25.1765978978821; Wed, 17 Dec 2025
+ 05:42:58 -0800 (PST)
 MIME-Version: 1.0
-References: <20251210-rz-sdio-mux-v3-0-ca628db56d60@solid-run.com> <20251210-rz-sdio-mux-v3-2-ca628db56d60@solid-run.com>
-In-Reply-To: <20251210-rz-sdio-mux-v3-2-ca628db56d60@solid-run.com>
+References: <20251210-rz-sdio-mux-v3-0-ca628db56d60@solid-run.com>
+In-Reply-To: <20251210-rz-sdio-mux-v3-0-ca628db56d60@solid-run.com>
 From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Wed, 17 Dec 2025 14:38:43 +0100
-X-Gm-Features: AQt7F2ritzE1FtCn3rFBAb957an6eyRlRiUWdpCCK7X4DKkbiNs7zTdDOI9qhxU
-Message-ID: <CAPDyKFoYd3WKGrjD3DEzZH8EfgZPmRkrqL=rdoKNuAADrvz3Eg@mail.gmail.com>
-Subject: Re: [PATCH v3 2/6] mux: Add helper functions for getting optional and
- selected mux-state
+Date: Wed, 17 Dec 2025 14:42:21 +0100
+X-Gm-Features: AQt7F2rn4fUAIJmNzeBvaDU3HopJ0wrtd_f0H7TRKpgHGGrU8bW-ugZfTBQ1TVc
+Message-ID: <CAPDyKFr7DCRs_E4VfrY9-NY8-bStT9oAZaYhUZDg_y3KEW9DWQ@mail.gmail.com>
+Subject: Re: [PATCH v3 0/6] mmc: host: renesas_sdhi_core: support configuring
+ an optional sdio mux
 To: Josua Mayer <josua@solid-run.com>
 Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
 	Conor Dooley <conor+dt@kernel.org>, Geert Uytterhoeven <geert+renesas@glider.be>, 
@@ -89,8 +89,8 @@ Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
 	linux-can@vger.kernel.org, linux-phy@lists.infradead.org, 
 	linux-omap@vger.kernel.org, linux-i2c@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251217_053924_925660_0A483D46 
-X-CRM114-Status: GOOD (  32.38  )
+X-CRM114-CacheID: sfid-20251217_054302_741017_E45BCED2 
+X-CRM114-Status: GOOD (  17.01  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,156 +109,67 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On Wed, 10 Dec 2025 at 18:39, Josua Mayer <josua@solid-run.com> wrote:
 >
-> In-tree phy-can-transceiver driver has already implemented a local
-> version of devm_mux_state_get_optional.
+> Some Renesas SoC based boards mux SD and eMMC on a single sdio
+> controller, exposing user control by dip switch and software control by
+> gpio.
 >
-> The omap-i2c driver gets and selects an optional mux in its probe
-> function without using any helper.
+> Purpose is to simplify development and provisioning by selecting boot
+> media at power-on, and again before starting linux.
 >
-> Add new helper functions covering both aforementioned use-cases:
+> Add binding and driver support for linking a (gpio) mux to renesas sdio
+> controller.
 >
-> - devm_mux_state_get_optional:
->   Get a mux-state if specified in dt, return NULL otherwise.
-> - devm_mux_state_get_optional_selected:
->   Get and select a mux-state if specified in dt, return error or NULL.
->
-> Existing mux_get helper function is changed to return -ENOENT in case dt
-> did not specify a mux-state or -control matching given name (if valid).
-> This matches of_parse_phandle_with_args semantics which also returns
-> -ENOENT if the property does nto exists, or its value is zero.
->
-> The new helper functions check for ENOENT to return NULL for optional
-> muxes.
->
-> Commit e153fdea9db04 ("phy: can-transceiver: Re-instate "mux-states"
-> property presence check") noted that "mux_get() always prints an error
-> message in case of an error, including when the property is not present,
-> confusing the user."
->
-> The first error message covers the case that a mux name is not matched
-> in dt. This is removed as the returned error code (-ENOENT) is clear.
->
-> The second error message is based on of_parse_phandle_with_args return
-> value. In case mux description is missing from DT, it returns -ENOENT.
-> Print error message only for other error codes.
->
-> This ensures that the new helper functions will not confuse the user
-> either.
+> Introduce generic helper functions for getting managed and selected
+> mux-state objects, and switch i2c-omap and phy-can-transceiver drivers.
 >
 > Signed-off-by: Josua Mayer <josua@solid-run.com>
 > ---
->  drivers/mux/core.c           | 67 +++++++++++++++++++++++++++++++++++++++-----
->  include/linux/mux/consumer.h |  4 +++
->  2 files changed, 64 insertions(+), 7 deletions(-)
+> Changes in v3:
+> - updated omap-i2c and phy-can-transceiver to use new helpers.
+> - created generic helper functions for getting managed optional mux-state.
+>   (Reported-by: Rob Herring <robh@kernel.org>)
+> - picked up binding ack by Rob Herring.
+> - replaced use of "SDIO" with "SD/SDIO/eMMC" in binding document and
+>   commit descriptions.
+>   (Reported-by: Ulf Hansson <ulf.hansson@linaro.org>)
+> - Link to v2: https://lore.kernel.org/r/20251201-rz-sdio-mux-v2-0-bcb581b88dd7@solid-run.com
 >
-> diff --git a/drivers/mux/core.c b/drivers/mux/core.c
-> index a3840fe0995fe..130ca47a8be37 100644
-> --- a/drivers/mux/core.c
-> +++ b/drivers/mux/core.c
-> @@ -542,11 +542,8 @@ static struct mux_control *mux_get(struct device *dev, const char *mux_name,
->                 else
->                         index = of_property_match_string(np, "mux-control-names",
->                                                          mux_name);
-> -               if (index < 0) {
-> -                       dev_err(dev, "mux controller '%s' not found\n",
-> -                               mux_name);
-> -                       return ERR_PTR(index);
-> -               }
-> +               if (index < 0)
-> +                       return ERR_PTR(-ENOENT);
->         }
+> Changes in v2:
+> - dropped mux-controller node from dt binding example
+>   (Reported-by: Conor Dooley <conor@kernel.org>
+>    Reported-by: Krzysztof Kozlowski <krzk@kernel.org>)
+> - Link to v1: https://lore.kernel.org/r/20251128-rz-sdio-mux-v1-0-1ede318d160f@solid-run.com
 >
->         if (state)
-> @@ -558,8 +555,10 @@ static struct mux_control *mux_get(struct device *dev, const char *mux_name,
->                                                  "mux-controls", "#mux-control-cells",
->                                                  index, &args);
->         if (ret) {
-> -               dev_err(dev, "%pOF: failed to get mux-%s %s(%i)\n",
-> -                       np, state ? "state" : "control", mux_name ?: "", index);
-> +               if (ret != -ENOENT)
-> +                       dev_err(dev, "%pOF: failed to get mux-%s %s(%i)\n",
-> +                               np, state ? "state" : "control",
-> +                               mux_name ?: "", index);
->                 return ERR_PTR(ret);
->         }
+> ---
+> Josua Mayer (6):
+>       phy: can-transceiver: rename temporary helper function to avoid conflict
+>       mux: Add helper functions for getting optional and selected mux-state
+>       phy: can-transceiver: drop temporary helper getting optional mux-state
+>       i2c: omap: switch to new generic helper for getting selected mux-state
+>       dt-bindings: mmc: renesas,sdhi: Add mux-states property
+>       mmc: host: renesas_sdhi_core: support selecting an optional mux
 >
-> @@ -745,6 +744,60 @@ struct mux_state *devm_mux_state_get(struct device *dev,
->  }
->  EXPORT_SYMBOL_GPL(devm_mux_state_get);
+>  .../devicetree/bindings/mmc/renesas,sdhi.yaml      |  6 ++
+>  drivers/i2c/busses/i2c-omap.c                      | 19 ++----
+>  drivers/mmc/host/Kconfig                           |  1 +
+>  drivers/mmc/host/renesas_sdhi.h                    |  1 +
+>  drivers/mmc/host/renesas_sdhi_core.c               | 16 +++++-
+>  drivers/mux/core.c                                 | 67 +++++++++++++++++++---
+>  drivers/phy/phy-can-transceiver.c                  | 10 ----
+>  include/linux/mux/consumer.h                       |  4 ++
+>  8 files changed, 89 insertions(+), 35 deletions(-)
+> ---
+> base-commit: 3a8660878839faadb4f1a6dd72c3179c1df56787
+> change-id: 20251128-rz-sdio-mux-acc5137f1618
 >
-> +/**
-> + * devm_mux_state_get_optional() - Get the optional mux-state for a device,
-> + *                                with resource management.
-> + * @dev: The device that needs a mux-state.
-> + * @mux_name: The name identifying the mux-state.
-> + *
-> + * Return: Pointer to the mux-state, or an ERR_PTR with a negative errno.
-> + */
-> +struct mux_state *devm_mux_state_get_optional(struct device *dev,
-> +                                             const char *mux_name)
-> +{
-> +       struct mux_state *mux_state = devm_mux_state_get(dev, mux_name);
-> +
-> +       if (IS_ERR(mux_state) && PTR_ERR(mux_state) == -ENOENT)
-> +               return NULL;
-> +
-> +       return mux_state;
-> +}
-> +EXPORT_SYMBOL_GPL(devm_mux_state_get_optional);
-> +
-> +/**
-> + * devm_mux_state_get_optional_selected() - Get the optional mux-state for
-> + *                                         a device, with resource management.
-> + * @dev: The device that needs a mux-state.
-> + * @mux_name: The name identifying the mux-state.
-> + *
-> + * Return: Pointer to the mux-state, or an ERR_PTR with a negative errno.
-> + *
-> + * The returned mux-state (if valid) is already selected.
-> + */
-> +struct mux_state *devm_mux_state_get_optional_selected(struct device *dev,
-> +                                                      const char *mux_name)
-> +{
-> +       struct mux_state *mux_state;
-> +       int ret;
-> +
-> +       mux_state = devm_mux_state_get_optional(dev, mux_name);
-> +       if (IS_ERR_OR_NULL(mux_state))
-> +               return mux_state;
-> +
-> +       ret = mux_state_select(mux_state);
-> +       if (ret) {
-> +               if (ret != -EPROBE_DEFER)
-> +                       dev_err(dev, "failed to select mux-state %s: %d\n",
-> +                               mux_name ?: "", ret);
-> +
-> +               mux_state_put(mux_state);
-> +               return ERR_PTR(ret);
-> +       }
-> +
-> +       return mux_state;
-> +}
-> +EXPORT_SYMBOL_GPL(devm_mux_state_get_optional_selected);
-> +
->  /*
->   * Using subsys_initcall instead of module_init here to try to ensure - for
->   * the non-modular case - that the subsystem is initialized when mux consumers
-> diff --git a/include/linux/mux/consumer.h b/include/linux/mux/consumer.h
-> index 2e25c838f8312..a5da2e33a45c0 100644
-> --- a/include/linux/mux/consumer.h
-> +++ b/include/linux/mux/consumer.h
-> @@ -60,5 +60,9 @@ struct mux_control *devm_mux_control_get(struct device *dev,
->                                          const char *mux_name);
->  struct mux_state *devm_mux_state_get(struct device *dev,
->                                      const char *mux_name);
-> +struct mux_state *devm_mux_state_get_optional(struct device *dev,
-> +                                             const char *mux_name);
-> +struct mux_state *devm_mux_state_get_optional_selected(struct device *dev,
-> +                                                      const char *mux_name);
+> Best regards,
+> --
+> Josua Mayer <josua@solid-run.com>
 
-Seems like we need stub-functions of these too. Otherwise
-subsystems/drivers need to have a "depends on MULTIPLEXER" in their
-Kconfigs.
+Looks like this needs to go together or if someone can host the common
+parts via an immutable branch.
+
+Anyway, I am expecting some discussion or update for patch2 first.
 
 Kind regards
 Uffe
