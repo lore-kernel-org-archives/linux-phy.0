@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DB1A9D65530
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F200ED6552F
 	for <linux-phy@archiver.kernel.org>; Wed, 17 Dec 2025 10:20:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,43 +12,42 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Z60PmYNPJyeuNVj7VhFvjClcwmujH0AXYYmy+BLuaVQ=; b=iKdfZxfhc7+9mY
-	IRGqWX2qBUeGPLo8+vn1F6lGMF7jDO+guadDsULsCbpKURus8a2B/o8Ez2wYEME/yfATklXMoK/vH
-	QzUS/3a8VOl0+PMOdv7/fxB/ZYblFGIprC2xlxu3o7nNX8wKKhbtnKdppVzzajtjb3eT7UVGGrOwQ
-	RGiuK/4AmblmvwHvUlPv92bvydN0Nfsn4WL2QNMhUJK9kOqym2ZbqHJVDZFpbUWCYjuUNZzrmL0iS
-	ftFiJUoil1vtKUSQiEQeR1wlSq4DozwQSHyICgPBWBE1/yxR6E4Ji8GLZm+aBQz2QRTudGcycFayv
-	jJimxpEzulX6hbp1oWqA==;
+	List-Owner; bh=zyDm5x6vDlIIQ3oMVe1jbgBXBMgQmNzszvdn0XStsQc=; b=CpJaalDH0zYk2I
+	Ub4gAfAjDbLO6nkPUdkdhBSnogk6CswyXeNvecwZMu/+fDiSRTVpFBBEGT7PzRprRmIaodT/CRU0Q
+	z9ygz1uE7ZhQmZ8zI3Bb693dZJNvUmsYqsTyExKKpesl72QKf3Sa5lTpHp5UVX6VzXcqtMbJw2OCb
+	YxqVnfuNU6CUc0YnoGPGCNGkDvqbzuJVeEZUik5tmpTHyUd/zrKfdWnQmjWJNCcdpS95rNi6VP+xi
+	3/BtywaK/O4kj506PduVSnJCETi5DqIFmTpFsVTv2U1eGe+AvgkTTLqv+eMf878wWzCshCPhEfO8M
+	hmCcRdYNO4oTdYBfkArw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vVoe1-00000006c62-3XYg;
-	Wed, 17 Dec 2025 10:20:33 +0000
+	id 1vVoe2-00000006c75-2GSs;
+	Wed, 17 Dec 2025 10:20:34 +0000
 Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vVodI-00000006bH6-2EdS;
+	id 1vVodJ-00000006bIe-2DsA;
 	Wed, 17 Dec 2025 10:19:51 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1765966786;
-	bh=rasd2yBAbbleQLS5uLsgb/aOApXHNV+JTG3/osBNvzs=;
+	s=mail; t=1765966787;
+	bh=egAszwG9tB/q++tDA1sT9mHPYlbOp6SzpoQMWzWwofQ=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=AQCAQxJDzqIgB0AQMjT/ioa/Qix5bJFwOsvOEVMFNjzgtZn6eWXnlrzQkvE1xfIo7
-	 YPvBf5XXkNDp9fA3sb7GEwYfla0JdHtNek+VwsYXnDyotRUnGxHVeJHC66s6bS2J0C
-	 X5macOwEMOZ0YFqnBy91DpjqK5949yOsurB/dL2CMmRrVahOLZaONorWfEmUaS5VjI
-	 E8jMoxd7Nn/uk8boMlDirjHw8wbJr5WDZXQCjX8pZR9BKpDI8p5Mj2r2wtCOzbzect
-	 zpUzaLwdguSRZ1ZUP/P5pFFt4UM4hJH/39Z9iRpw6T8BC5k8IvOHBXINaaSwJVa84G
-	 91acvDPMmnWOw==
+	b=hI0Okw5M8NBDptDjoVZWfelX4zUbpANDRgk5E8CtCepAf3hrvyDUMTg2MbfX9cxlL
+	 aCwmEh2AX+qWiGnu1Sl7pZjbDMgzd9o609wA0VFqv+6mf1J37aeF5Rx0GBuP6hM1dA
+	 3juuwu8NWQI/L7QmR4HrEvfA3TnUa4cHyWtid5zi/c7pK89ufSNsa9VptPvlV7vSty
+	 KHw0GjbVKIQAUzYi2IQ+ZFzi13SYZA6o2yd7ZZeOuSN3QVg0KjV3bWms8w1rMdHsFN
+	 8WdN/WnMZaWrR1tB5aPMzq5KC6k7yUbZzY4L0IRlARVr3ialCWyK1KkU5kjqaXPATV
+	 kazRVD5JAP8pw==
 Received: from yukiji.home (amontpellier-657-1-116-247.w83-113.abo.wanadoo.fr [83.113.51.247])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: laeyraud)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 9637217E1149;
-	Wed, 17 Dec 2025 11:19:45 +0100 (CET)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 7964117E1154;
+	Wed, 17 Dec 2025 11:19:46 +0100 (CET)
 From: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
-Date: Wed, 17 Dec 2025 11:19:10 +0100
-Subject: [PATCH v2 11/12] arm64: dts: mediatek: mt8395-genio-common: Add
- HDMI sound output support
+Date: Wed, 17 Dec 2025 11:19:11 +0100
+Subject: [PATCH v2 12/12] arm64: defconfig: Enable Mediatek HDMIv2 driver
 MIME-Version: 1.0
-Message-Id: <20251217-mtk-genio-evk-hdmi-support-v2-11-a994976bb39a@collabora.com>
+Message-Id: <20251217-mtk-genio-evk-hdmi-support-v2-12-a994976bb39a@collabora.com>
 References: <20251217-mtk-genio-evk-hdmi-support-v2-0-a994976bb39a@collabora.com>
 In-Reply-To: <20251217-mtk-genio-evk-hdmi-support-v2-0-a994976bb39a@collabora.com>
 To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>, 
@@ -66,16 +65,16 @@ Cc: kernel@collabora.com, Krzysztof Kozlowski <krzk@kernel.org>,
  linux-kernel@vger.kernel.org, 
  Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1765966775; l=861;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1765966775; l=792;
  i=louisalexis.eyraud@collabora.com; s=20250113; h=from:subject:message-id;
- bh=rasd2yBAbbleQLS5uLsgb/aOApXHNV+JTG3/osBNvzs=;
- b=JO21AcO+ZgbZQXgQV92YUZq8r+v9R2am5sevpzr2i2IOdoJCBpaU6rL5sM0ro8spPqCVZrAVU
- wgmVlsTjIZsC/rwdYTNhPNxvi5QhGzeW07Rvz1GHqPJGw1LaM3JNrjz
+ bh=egAszwG9tB/q++tDA1sT9mHPYlbOp6SzpoQMWzWwofQ=;
+ b=7gtSv9z3v5G4gNkpdsay8zynkZN/QfDiWjrlhe9hMdCxd9fpyIgQPWM1Vwta1QWUBOilZO4oq
+ jLMwG5Kbcb+BsTz9s2twbj9FZdOx4XQILA1pZLQPeVWLQXJjfOJ12Us
 X-Developer-Key: i=louisalexis.eyraud@collabora.com; a=ed25519;
  pk=CHFBDB2Kqh4EHc6JIqFn69GhxJJAzc0Zr4e8QxtumuM=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251217_021948_943289_2525F5FF 
-X-CRM114-Status: UNSURE (   8.29  )
+X-CRM114-CacheID: sfid-20251217_021949_752792_69233528 
+X-CRM114-Status: UNSURE (   7.57  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -93,33 +92,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add in the sound node a new dai-link for ETDM3_OUT_BE to add the sound
-output support through the HDMI TX connector.
+In order to enable the HDMI output support on Mediatek Genio 510-EVK,
+700-EVK, and 1200-EVK boards, enable the driver for it in the default
+configuration.
 
 Signed-off-by: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
 ---
- arch/arm64/boot/dts/mediatek/mt8395-genio-common.dtsi | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ arch/arm64/configs/defconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm64/boot/dts/mediatek/mt8395-genio-common.dtsi b/arch/arm64/boot/dts/mediatek/mt8395-genio-common.dtsi
-index 345fc5ac9e039de8660ae325f36ae6265ef3a7c8..d849af4d36134df6a7b9f7967efd0db13c372d7a 100644
---- a/arch/arm64/boot/dts/mediatek/mt8395-genio-common.dtsi
-+++ b/arch/arm64/boot/dts/mediatek/mt8395-genio-common.dtsi
-@@ -1189,6 +1189,14 @@ codec {
- 			sound-dai = <&pmic 0>;
- 		};
- 	};
-+
-+	hdmi-dai-link {
-+		link-name = "ETDM3_OUT_BE";
-+
-+		codec {
-+			sound-dai = <&hdmi 0>;
-+		};
-+	};
- };
- 
- &spi1 {
+diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+index 982b894a36d29ebbdda025a3ae9713ddfd7195d8..975297e8c01a28fe4fd90185635d654e970ae83c 100644
+--- a/arch/arm64/configs/defconfig
++++ b/arch/arm64/configs/defconfig
+@@ -1016,6 +1016,7 @@ CONFIG_DRM_HISI_KIRIN=m
+ CONFIG_DRM_MEDIATEK=m
+ CONFIG_DRM_MEDIATEK_DP=m
+ CONFIG_DRM_MEDIATEK_HDMI=m
++CONFIG_DRM_MEDIATEK_HDMI_V2=m
+ CONFIG_DRM_MXSFB=m
+ CONFIG_DRM_IMX_LCDIF=m
+ CONFIG_DRM_MESON=m
 
 -- 
 2.52.0
