@@ -4,51 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E707AD65533
-	for <linux-phy@archiver.kernel.org>; Wed, 17 Dec 2025 10:20:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E57B0D6552F
+	for <linux-phy@archiver.kernel.org>; Wed, 17 Dec 2025 10:20:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z32xQr0MTkP127NlLVBUwFgc3Nms5sO09B2cmTy7reI=; b=z6gv9xQH3TrB7V
-	X1Ufdnrx7iS0jCo5lbQgzK9I44Gs+J7KU0XL60nphNW0yQLGhkS6ZxoDVwNQZDo5I4Qfuzuo3FdAJ
-	RcVCW3kM8u1gtVdkZs92UX4hSRRW7Uw91AH/05cs1tb3EByOCVh9Q50phnUxIj7g/rjFvecBrE26z
-	cFeUIV80SWC/toKVuLUyPpPLcIUuW2CNlPrYrDcv4rRygbMxOrbKgvs5P3E54BGV9+Wl7nWGvNu8F
-	3QqRrxGuDcXejcgcm+nvTsaLG32M/H8UIMIg22+lMJl04TvpMRQWYC348hHaSj+a6IQaxi9AjE6a/
-	TtmXd76s16F4QfGUMBgw==;
+	List-Owner; bh=xCpv/7i1oWmGRuzdkabKd0Z2RdQr4ghEv2HL0c9Oieg=; b=2uZVw+aURGUR82
+	nsNcbohkCyAHSkuY+0Krk81ggnlyuwtSJ0X87Xz4YCu2noMbhmNO5dq7pb2eUstjyXt0LpswGOJ14
+	KWZpNPJKNzYnAJYdJIt5gH46t9Iy2oi58h5SQZZhxpvW077YMW164H8l9oPXNmMa8o18oJyB2lTi+
+	t01fmV1Y37QSaTYSU/4QOi9361ut1Z5X93O/bD59jjBwdVJxL4nWfWxfkdZTu1dccKlFavGUwyIOJ
+	KYSlhcaKkpCHxi5Zd2X12DHpaQuoI95GF81rEPv2IVsvnqiNUHXtDECNefZKFQpQZMJigcipDlRMl
+	wHM7G9Ws/y0MjIY7rBuw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vVodr-00000006btk-1vAQ;
-	Wed, 17 Dec 2025 10:20:23 +0000
-Received: from bali.collaboradmins.com ([148.251.105.195])
+	id 1vVodu-00000006bxY-0Kn4;
+	Wed, 17 Dec 2025 10:20:26 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vVodH-00000006bFq-1ZXt;
-	Wed, 17 Dec 2025 10:19:49 +0000
+	id 1vVodI-00000006bGc-0wDB;
+	Wed, 17 Dec 2025 10:19:50 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1765966784;
-	bh=GKcOSBIVFDnp+GUxDrITE/MDL4om5/OvUq+7HaEF0uc=;
+	s=mail; t=1765966785;
+	bh=k+v8SYao3ZD64CLFD+XjDGMvWoE/ID1iLX1nmD/fyWk=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=Mob26nBGj2lGKXDvE1y8Np9K1zSpPZSgbfLTHCDdhXW0DO6LKQEPodSUDHxGXRWo1
-	 MnGo1UIxAYaHLNiA56cLZHfyRlr1SyPs5Wdq21bfyRDrir633a/llyWa87scqg9xpI
-	 Px0W5/On43wgZWSjYco2DvDpNOY5LlLgt2TOEC0Gj5unwFqzQaUce2fgDh/95lZ36g
-	 3KwYEaacRPqNf1O34tPF+Rl+y5L8rHZc/XlfCRiGrLj6tlo/n5WxvSr6s00iLyoAcq
-	 JAg0iIVF/xY2mOXjkNHeaKEeThDBQmQ2UFH5K2Q+poez2lcU6WUvZefREDjt8q9Ax/
-	 vWrZh5YfagyKg==
+	b=oN0GpeyrTaG7FAbrXrOQDRUW8PaNc0qv08Xtp6Ug6ImU8nzcseEHtvuKS+48eytzM
+	 5tDaw053BaWHbN2u5rmYgVn+Xowz/yMLRbFVTHTPS8OE0+NnOSb3xKHJvItn90nZ6P
+	 kofqUzQ389+xNcUEf7C0ddnGYF1zZqOVqXTaVbzslIC5B6s3MtzfqqYd5Lr9wTDje6
+	 Vu+srGEOJ2ukqmaLJm+ziKNy3IxCL62j+SOoJb/3jFy1/SwzFo3isSB3c5OaOEDgC4
+	 n1c1mdfzU1QvM4T6Ol1PyAPl2TO7o6zDDnvwVgTwhRQGHmFgGPgT18fQJ5GOH2Dkpm
+	 ADpDWYouEQEIA==
 Received: from yukiji.home (amontpellier-657-1-116-247.w83-113.abo.wanadoo.fr [83.113.51.247])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: laeyraud)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id D79A617E0506;
-	Wed, 17 Dec 2025 11:19:43 +0100 (CET)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id B5E9F17E1146;
+	Wed, 17 Dec 2025 11:19:44 +0100 (CET)
 From: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
-Date: Wed, 17 Dec 2025 11:19:08 +0100
-Subject: [PATCH v2 09/12] arm64: dts: mediatek: mt8395-radxa-nio-12l: Add
- HDMI sound output support
+Date: Wed, 17 Dec 2025 11:19:09 +0100
+Subject: [PATCH v2 10/12] arm64: dts: mediatek: mt8395-genio-common: Enable
+ HDMI output
 MIME-Version: 1.0
-Message-Id: <20251217-mtk-genio-evk-hdmi-support-v2-9-a994976bb39a@collabora.com>
+Message-Id: <20251217-mtk-genio-evk-hdmi-support-v2-10-a994976bb39a@collabora.com>
 References: <20251217-mtk-genio-evk-hdmi-support-v2-0-a994976bb39a@collabora.com>
 In-Reply-To: <20251217-mtk-genio-evk-hdmi-support-v2-0-a994976bb39a@collabora.com>
 To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>, 
@@ -66,17 +66,16 @@ Cc: kernel@collabora.com, Krzysztof Kozlowski <krzk@kernel.org>,
  linux-kernel@vger.kernel.org, 
  Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1765966775; l=861;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1765966775; l=3939;
  i=louisalexis.eyraud@collabora.com; s=20250113; h=from:subject:message-id;
- bh=GKcOSBIVFDnp+GUxDrITE/MDL4om5/OvUq+7HaEF0uc=;
- b=DiWsci2ktePoDxP4wOEu5rgVoipXQeW7ZXO1Rys/kmVajV/S3m8/lF0QSCb0eEyQ/4eAeLXC9
- sKBZ9hONNeWAivruooZMPJRyB12pju0dy9/F5wG4WakejxhhocYgYe4
+ bh=k+v8SYao3ZD64CLFD+XjDGMvWoE/ID1iLX1nmD/fyWk=;
+ b=iCH9l+9ECj5gnRoKQfLZvXchacGc8ddZF3G59cMvsTh43xSFWn0a4o6ef0unqV0vSNnuwJKdZ
+ sWawKAMLLb/C+BIwqG7ehZkrNL08ZA4JnnKlp7GFh0GnhDps9rEF/o1
 X-Developer-Key: i=louisalexis.eyraud@collabora.com; a=ed25519;
  pk=CHFBDB2Kqh4EHc6JIqFn69GhxJJAzc0Zr4e8QxtumuM=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251217_021947_696519_99793153 
-X-CRM114-Status: UNSURE (   8.29  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20251217_021948_926652_54E75D3B 
+X-CRM114-Status: GOOD (  10.21  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,33 +92,210 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add in the sound node a new dai-link for ETDM3_OUT_BE to add the sound
-output support through the HDMI TX connector.
+Add a definition for the on-board HDMI connector, enable and add
+the relevant configuration for the HDMI PHY and controller, and
+define the pins used by those.
 
 Signed-off-by: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
 ---
- arch/arm64/boot/dts/mediatek/mt8395-radxa-nio-12l.dts | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ .../boot/dts/mediatek/mt8395-genio-common.dtsi     | 142 +++++++++++++++++++++
+ 1 file changed, 142 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/mediatek/mt8395-radxa-nio-12l.dts b/arch/arm64/boot/dts/mediatek/mt8395-radxa-nio-12l.dts
-index b0e18876bd5d2341c6f17f47e9f11433be807ccd..1cd4b84e98615be6c5cb13d01b7baed0e017c3be 100644
---- a/arch/arm64/boot/dts/mediatek/mt8395-radxa-nio-12l.dts
-+++ b/arch/arm64/boot/dts/mediatek/mt8395-radxa-nio-12l.dts
-@@ -1072,6 +1072,14 @@ codec {
- 			sound-dai = <&pmic 0>;
- 		};
+diff --git a/arch/arm64/boot/dts/mediatek/mt8395-genio-common.dtsi b/arch/arm64/boot/dts/mediatek/mt8395-genio-common.dtsi
+index 2b7167804e71d0ced33c048ecb2040667b5fece1..345fc5ac9e039de8660ae325f36ae6265ef3a7c8 100644
+--- a/arch/arm64/boot/dts/mediatek/mt8395-genio-common.dtsi
++++ b/arch/arm64/boot/dts/mediatek/mt8395-genio-common.dtsi
+@@ -26,6 +26,20 @@ chosen {
+ 		stdout-path = "serial0:921600n8";
  	};
+ 
++	connector {
++		compatible = "hdmi-connector";
++		label = "hdmi";
++		type = "a";
++		ddc-i2c-bus = <&hdmitx_ddc>;
++		hdmi-pwr-supply = <&hdmi_phy>;
 +
-+	hdmi-dai-link {
-+		link-name = "ETDM3_OUT_BE";
-+
-+		codec {
-+			sound-dai = <&hdmi 0>;
++		port {
++			hdmi_connector_in: endpoint {
++				remote-endpoint = <&hdmi0_out>;
++			};
 +		};
 +	};
++
+ 	firmware {
+ 		optee {
+ 			compatible = "linaro,optee-tz";
+@@ -247,6 +261,18 @@ &dmic_codec {
+ 	wakeup-delay-ms = <200>;
  };
  
- &spi1 {
++&dpi1 {
++	status = "okay";
++};
++
++&dpi1_in {
++	remote-endpoint = <&merge5_out>;
++};
++
++&dpi1_out {
++	remote-endpoint = <&hdmi0_in>;
++};
++
+ &dsi0 {
+ 	#address-cells = <1>;
+ 	#size-cells = <0>;
+@@ -313,6 +339,35 @@ eth_phy0: ethernet-phy@1 {
+ 	};
+ };
+ 
++&ethdr0 {
++	ports {
++		#address-cells = <1>;
++		#size-cells = <0>;
++
++		port@0 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <0>;
++
++			ethdr0_in: endpoint@1 {
++				reg = <1>;
++				remote-endpoint = <&vdosys1_ep_ext>;
++			};
++		};
++
++		port@1 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <1>;
++
++			ethdr0_out: endpoint@1 {
++				reg = <1>;
++				remote-endpoint = <&merge5_in>;
++			};
++		};
++	};
++};
++
+ &gamma0_out {
+ 	remote-endpoint = <&dither0_in>;
+ };
+@@ -329,6 +384,27 @@ &i2c0 {
+ 	status = "okay";
+ };
+ 
++&hdmi {
++	pinctrl-names = "default";
++	pinctrl-0 = <&hdmi_pins>;
++	status = "okay";
++};
++
++&hdmi0_in {
++	remote-endpoint = <&dpi1_out>;
++};
++
++&hdmi0_out {
++	remote-endpoint = <&hdmi_connector_in>;
++};
++
++&hdmi_phy {
++	pinctrl-names = "default";
++	pinctrl-0 = <&hdmi_vreg_pins>;
++
++	status = "okay";
++};
++
+ &i2c1 {
+ 	clock-frequency = <400000>;
+ 	pinctrl-0 = <&i2c1_pins>;
+@@ -533,6 +609,35 @@ mt6360_ssusb_sbu_ep: endpoint {
+ 	};
+ };
+ 
++&merge5 {
++	ports {
++		#address-cells = <1>;
++		#size-cells = <0>;
++
++		port@0 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <0>;
++
++			merge5_in: endpoint@1 {
++				reg = <1>;
++				remote-endpoint = <&ethdr0_out>;
++			};
++		};
++
++		port@1 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <1>;
++
++			merge5_out: endpoint@1 {
++				reg = <1>;
++				remote-endpoint = <&dpi1_in>;
++			};
++		};
++	};
++};
++
+ &mfg0 {
+ 	domain-supply = <&mt6315_7_vbuck1>;
+ };
+@@ -762,6 +867,31 @@ pins {
+ 		};
+ 	};
+ 
++	hdmi_vreg_pins: hdmi-vreg-pins {
++		pins-pwr {
++			pinmux = <PINMUX_GPIO31__FUNC_HDMITX20_PWR5V>;
++			bias-disable;
++		};
++	};
++
++	hdmi_pins: hdmi-pins {
++		pins-hotplug {
++			pinmux = <PINMUX_GPIO32__FUNC_HDMITX20_HTPLG>;
++			bias-pull-down;
++		};
++
++		pins-ddc {
++			pinmux = <PINMUX_GPIO34__FUNC_HDMITX20_SCL>,
++				 <PINMUX_GPIO35__FUNC_HDMITX20_SDA>;
++			drive-strength = <10>;
++		};
++
++		pins-cec {
++			pinmux = <PINMUX_GPIO33__FUNC_HDMITX20_CEC>;
++			bias-disable;
++		};
++	};
++
+ 	i2c0_pins: i2c0-pins {
+ 		pins {
+ 			pinmux = <PINMUX_GPIO8__FUNC_SDA0>,
+@@ -1212,6 +1342,18 @@ vdosys0_ep_main: endpoint@0 {
+ 	};
+ };
+ 
++&vdosys1 {
++	port {
++		#address-cells = <1>;
++		#size-cells = <0>;
++
++		vdosys1_ep_ext: endpoint@1 {
++			reg = <1>;
++			remote-endpoint = <&ethdr0_in>;
++		};
++	};
++};
++
+ &xhci0 {
+ 	status = "okay";
+ };
 
 -- 
 2.52.0
