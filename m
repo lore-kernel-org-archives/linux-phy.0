@@ -4,69 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3128CE66882
-	for <linux-phy@archiver.kernel.org>; Fri, 19 Dec 2025 20:52:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9B478E6688C
+	for <linux-phy@archiver.kernel.org>; Fri, 19 Dec 2025 20:52:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/cqqNcshHF3LZpXhGSH2iodA0MrnoS898OhgmNVETbM=; b=NUJRjtatscZiSn
-	m6167OobzhYWKGHQ1uaBYpa1cAzDbBrEJDKVKq+uBiNL2vEb/K7kNF76guydrv246DfuC4aoEoYCD
-	w2DV/h+u7WgiOClBMgzRE4DCaWArwXXZi9FlW69kk5e4D3CutJgoG5iJvnHkXnpmNxVKfQNdwucbZ
-	bae/x0UnEfJ3E9y4l5VZ/FyOudGMjvNolF0pv0aaQpnkRo4HMnrthSIC2Kt6+kDisFGqgriBeFhol
-	hd0L4hIRJWZxx/vghrEg7bkb6dOwseOzS0lbXsxjTo9bqLMk3z3mi/FeY2hOeZffZlNRRY8pvYhAG
-	3ZcGTuGD2fpXbG6tIL0w==;
+	List-Owner; bh=iaiQgSAVMou48u+MKg2sp13GK1erI4fyyuAnzw5GlZU=; b=MT3gbfQR61my6K
+	UOd37TusK2G0iRDbbVooHSwN5B9BPqkZA72tT49iFKwWBOwe7vEPWj5L+5lYrlajHgxcNLdqui8L8
+	Q5AyAqN0g3VHVB7u806SHqwBhhgWE5DT2QQDdD26A1zuBXbfwMuYL14Qw1PCV1EOehO5fCX7KbclJ
+	gwHqPWmpvcXIB/bMMniWoIbN+4KShJSyI2G9wqvjBWVZJDCrwwXkdwbgLHeIMHdpfKSMHr6gxbmKm
+	Kto+4n8nvbdYhF7JFNlplXepJBBtSqWUjXc2V423+Ep2uXrIrJJGuX254e9RTi2T12iCgSkm97mtH
+	lT+wufrq7Dn21KICyFMw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vWhSQ-0000000AyKd-34fH;
-	Fri, 19 Dec 2025 20:52:14 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1vWhSw-0000000AyUL-1Zdp;
+	Fri, 19 Dec 2025 20:52:46 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vWhSO-0000000AyJc-1wkD;
-	Fri, 19 Dec 2025 20:52:12 +0000
+	id 1vWhSs-0000000AyS8-1dDF;
+	Fri, 19 Dec 2025 20:52:44 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 4D45860008;
-	Fri, 19 Dec 2025 20:52:11 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C7098C4CEF1;
-	Fri, 19 Dec 2025 20:52:10 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 66BC244274;
+	Fri, 19 Dec 2025 20:52:41 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0D428C4CEF1;
+	Fri, 19 Dec 2025 20:52:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1766177531;
-	bh=IfN5Dcnu7w/fq70aai0mm7T/3vR0HXA+EKmz+kfT6XU=;
+	s=k20201202; t=1766177561;
+	bh=HyEXNSVwwJgnE6ov3GXL7SMN9dCPD1vkRVDgcRsTz6I=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=jq1tQtSS/JSCOocX/vIVsiOD5D9gS1yjIp+Grqn/3RTPO307bYj+41/DcUdH6/GRe
-	 YIVF7sjtezyVdaSW1ztPfWvX2kXCnfnd7QwoimHJGaZDeVUDmBvd0TE2jCCoqPY3Q0
-	 Y5GeDEipTvoQOAzB3uRM81xTft9LfvBxybKkCteBjB1woJ47kbihrI8NJ+mql6jQX0
-	 3kYNT8JCuQ0aKutiRFVaZkfXGnRMPBrwXF36aNPqxNyQZqoeEf78p0WVaK2C7YKc7f
-	 uuoa294UBUMFCp9e+GdvHgPulI5N1UmQY9BJG24oJgTMlixqXdN14Bp8KGSpd6XLLv
-	 D3vyQsVNbdGsg==
-Date: Fri, 19 Dec 2025 14:52:08 -0600
+	b=RIcAEJSjVpkzzY619Hqed58ruVEMCqaKwc3IBfQ9EJVEYPoBUiPM+e+8S5gccITKh
+	 rn5WIMEco3yV4E36pSScZznRkkrIBSurURccCp89Y+QNC1xKqs8+v/tmdhqW2Cj6bj
+	 MT6bdZTt/GnwLB0zy5s1CX/pnZjKhCVo2FKVrXVDtqeprDexXhzquq2sxHavRLtVBR
+	 nJCrq4aJvTbSzGfqwoDD6XYhEh4nruDeq6yfft67YHgW3W0ax7yu6slAEqD6LTXSkV
+	 6y1NrQHjzETgbPzoqFlSXIDgU/dv9JKBr+DArCYVQUt++Ke6BxA2rRYkImgryjWK8+
+	 CCdm7GLunJonw==
+Date: Fri, 19 Dec 2025 14:52:38 -0600
 From: "Rob Herring (Arm)" <robh@kernel.org>
 To: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>,
-	Guillaume Ranquet <granquet@baylibre.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Krzysztof Kozlowski <krzk@kernel.org>,
+Cc: linux-mediatek@lists.infradead.org,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
-	Conor Dooley <conor+dt@kernel.org>,
-	linux-mediatek@lists.infradead.org,
+	Chunfeng Yun <chunfeng.yun@mediatek.com>,
+	Krzysztof Kozlowski <krzk@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	=?iso-8859-1?Q?N=EDcolas_F=2E_R=2E_A=2E?= Prado <nfraprado@collabora.com>,
+	linux-kernel@vger.kernel.org, Conor Dooley <conor+dt@kernel.org>,
+	Chun-Kuang Hu <chunkuang.hu@kernel.org>, kernel@collabora.com,
+	Guillaume Ranquet <granquet@baylibre.com>,
+	linux-arm-kernel@lists.infradead.org,
+	Neil Armstrong <neil.armstrong@linaro.org>,
 	Matthias Brugger <matthias.bgg@gmail.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Chun-Kuang Hu <chunkuang.hu@kernel.org>,
-	linux-kernel@vger.kernel.org,
-	Chunfeng Yun <chunfeng.yun@mediatek.com>, kernel@collabora.com,
-	devicetree@vger.kernel.org
-Subject: Re: [PATCH v2 02/12] dt-bindings: phy: mediatek,hdmi-phy: Add
- support for MT8188 SoC
-Message-ID: <176617752769.3912550.11182398487708653155.robh@kernel.org>
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	Vinod Koul <vkoul@kernel.org>
+Subject: Re: [PATCH v2 03/12] dt-bindings: phy: mediatek,hdmi-phy: Document
+ extra clocks for MT8195
+Message-ID: <176617755777.3913354.15520009809669313727.robh@kernel.org>
 References: <20251217-mtk-genio-evk-hdmi-support-v2-0-a994976bb39a@collabora.com>
- <20251217-mtk-genio-evk-hdmi-support-v2-2-a994976bb39a@collabora.com>
+ <20251217-mtk-genio-evk-hdmi-support-v2-3-a994976bb39a@collabora.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20251217-mtk-genio-evk-hdmi-support-v2-2-a994976bb39a@collabora.com>
+In-Reply-To: <20251217-mtk-genio-evk-hdmi-support-v2-3-a994976bb39a@collabora.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20251219_125242_444785_7BBCC1A7 
+X-CRM114-Status: UNSURE (   8.77  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,26 +82,35 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Wed, 17 Dec 2025 11:19:01 +0100, Louis-Alexis Eyraud wrote:
-> Add compatible string for the HDMI PHY IP on MT8188 SoC, that is
-> compatible with the one found on MT8195 SoC.
-> 
+On Wed, 17 Dec 2025 11:19:02 +0100, Louis-Alexis Eyraud wrote:
+> From: "N=EDcolas F. R. A. Prado" <nfraprado@collabora.com>
+> =
+
+> MT8195's HDMI PHY block has 4 clocks instead of just a single one.
+> Describe the extra clocks for it.
+> =
+
+> Signed-off-by: N=EDcolas F. R. A. Prado <nfraprado@collabora.com>
+> [Louis-Alexis Eyraud: addressed feedback from mailing list]
 > Signed-off-by: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
 > ---
->  Documentation/devicetree/bindings/phy/mediatek,hdmi-phy.yaml | 4 ++++
->  1 file changed, 4 insertions(+)
-> 
+>  .../devicetree/bindings/phy/mediatek,hdmi-phy.yaml | 22 ++++++++++++++++=
+++++++
+>  1 file changed, 22 insertions(+)
+> =
+
 
 Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
 
 
--- 
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
