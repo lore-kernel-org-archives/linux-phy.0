@@ -4,72 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9B478E6688C
-	for <linux-phy@archiver.kernel.org>; Fri, 19 Dec 2025 20:52:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AC0D9D68BD5
+	for <linux-phy@archiver.kernel.org>; Sun, 21 Dec 2025 10:36:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iaiQgSAVMou48u+MKg2sp13GK1erI4fyyuAnzw5GlZU=; b=MT3gbfQR61my6K
-	UOd37TusK2G0iRDbbVooHSwN5B9BPqkZA72tT49iFKwWBOwe7vEPWj5L+5lYrlajHgxcNLdqui8L8
-	Q5AyAqN0g3VHVB7u806SHqwBhhgWE5DT2QQDdD26A1zuBXbfwMuYL14Qw1PCV1EOehO5fCX7KbclJ
-	gwHqPWmpvcXIB/bMMniWoIbN+4KShJSyI2G9wqvjBWVZJDCrwwXkdwbgLHeIMHdpfKSMHr6gxbmKm
-	Kto+4n8nvbdYhF7JFNlplXepJBBtSqWUjXc2V423+Ep2uXrIrJJGuX254e9RTi2T12iCgSkm97mtH
-	lT+wufrq7Dn21KICyFMw==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=L1qrNbQyevw2WslckXazFWjJycLF78MuXdPVuB5EZvA=; b=aXaRMn6uFcpiLb
+	BE4GcrmkbNHafIa+ZXojUSs5LdUX1fr/FsPSO6zb/es8xZqECfVO9YKgVqESLgpLcb5RuxttKmjRF
+	c/okrJRSG35gLjgS1lP2q5gOgdnmsBLk7/rbvV6IEFW1xyy0LupqKsDL4J/2p5rm46js8VhKQkmqJ
+	sc4KKZaU98gO1pPOCeL5DIFPeYQ98VQ0JGS1jxVfeU1d/pigmJ6N1lxVONqVA47GLQACqqhQ5WFfB
+	AFpiIDr2FFcmep6Vpyc142dyyI0v3CmD9lcVI/nLQP5Epmg9cGykrMrwJR0UEtPSKPlW8lQjCZV30
+	xLFJaDIXqOmyaP5ID6WA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vWhSw-0000000AyUL-1Zdp;
-	Fri, 19 Dec 2025 20:52:46 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1vXGo3-0000000CKEm-1a0c;
+	Sun, 21 Dec 2025 10:36:55 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vWhSs-0000000AyS8-1dDF;
-	Fri, 19 Dec 2025 20:52:44 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 66BC244274;
-	Fri, 19 Dec 2025 20:52:41 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0D428C4CEF1;
-	Fri, 19 Dec 2025 20:52:40 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1766177561;
-	bh=HyEXNSVwwJgnE6ov3GXL7SMN9dCPD1vkRVDgcRsTz6I=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=RIcAEJSjVpkzzY619Hqed58ruVEMCqaKwc3IBfQ9EJVEYPoBUiPM+e+8S5gccITKh
-	 rn5WIMEco3yV4E36pSScZznRkkrIBSurURccCp89Y+QNC1xKqs8+v/tmdhqW2Cj6bj
-	 MT6bdZTt/GnwLB0zy5s1CX/pnZjKhCVo2FKVrXVDtqeprDexXhzquq2sxHavRLtVBR
-	 nJCrq4aJvTbSzGfqwoDD6XYhEh4nruDeq6yfft67YHgW3W0ax7yu6slAEqD6LTXSkV
-	 6y1NrQHjzETgbPzoqFlSXIDgU/dv9JKBr+DArCYVQUt++Ke6BxA2rRYkImgryjWK8+
-	 CCdm7GLunJonw==
-Date: Fri, 19 Dec 2025 14:52:38 -0600
-From: "Rob Herring (Arm)" <robh@kernel.org>
-To: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
-Cc: linux-mediatek@lists.infradead.org,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Chunfeng Yun <chunfeng.yun@mediatek.com>,
-	Krzysztof Kozlowski <krzk@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	=?iso-8859-1?Q?N=EDcolas_F=2E_R=2E_A=2E?= Prado <nfraprado@collabora.com>,
-	linux-kernel@vger.kernel.org, Conor Dooley <conor+dt@kernel.org>,
-	Chun-Kuang Hu <chunkuang.hu@kernel.org>, kernel@collabora.com,
-	Guillaume Ranquet <granquet@baylibre.com>,
-	linux-arm-kernel@lists.infradead.org,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Vinod Koul <vkoul@kernel.org>
-Subject: Re: [PATCH v2 03/12] dt-bindings: phy: mediatek,hdmi-phy: Document
- extra clocks for MT8195
-Message-ID: <176617755777.3913354.15520009809669313727.robh@kernel.org>
-References: <20251217-mtk-genio-evk-hdmi-support-v2-0-a994976bb39a@collabora.com>
- <20251217-mtk-genio-evk-hdmi-support-v2-3-a994976bb39a@collabora.com>
+	id 1vXGny-0000000CKC2-3Aq0;
+	Sun, 21 Dec 2025 10:36:52 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1766313405;
+	bh=ujVnojW6AgiKVSa/eIq7ThAvbxoWp74PA0F4JYID/3M=;
+	h=From:Subject:Date:To:Cc:From;
+	b=fkxDi6l7+h67pGPxGJlYpP/Vx5jgg8nzfijMzPNfFSA5jIZXf+AKP1OspMR/Ai2Mr
+	 71m+IbZGYPq7kqSJOV/BQJWPWpjBFO1+UoTmGJdTeul19gcvVGRJmT8sCEAyc7wYX9
+	 a77aJZ1o5Yb4tIa5mzg8b7VLYKf5gZNHnFkcJUJ+KYF7qjLqYJ/+2FWkwARk5p42Vu
+	 FztH0nZqQlnGU9mAYvpYcCFuw1MYwC3k0kBavXWzFqQvksZBkusqNYVX2SvPpumosz
+	 POXzFPV17LRFQOccCj46PtfeSPEL78qkap7Djk7BUNMHO+1dqeph+DuTgbSXqCkBCW
+	 vNN0UPqilOEJA==
+Received: from localhost (unknown [82.79.138.145])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange ECDHE (prime256v1) server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: cristicc)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 5E85417E12C4;
+	Sun, 21 Dec 2025 11:36:45 +0100 (CET)
+From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+Subject: [PATCH v2 0/2] Fixup HDMI PLL for phy-rockchip-samsung-hdptx
+Date: Sun, 21 Dec 2025 12:36:22 +0200
+Message-Id: <20251221-phy-hdptx-pll-fix-v2-0-ae4abf7f75a1@collabora.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20251217-mtk-genio-evk-hdmi-support-v2-3-a994976bb39a@collabora.com>
+X-B4-Tracking: v=1; b=H4sIAKbNR2kC/32NQQ6DIBBFr2Jm3WmQaK1d9R6NC4ShkFAhYIjGc
+ PdSD9Dle8l//4BE0VKCR3NApGyT9UsFfmlAGrG8Ca2qDJzxvuWsw2B2NCqsGwbnUNsN2XAf5Mi
+ JSU1QdyFS1WfzNVU2Nq0+7udFbn/2Xy23yFCNnVY3qVU/zk/pnROzj+Iq/QemUsoXSVB2g7YAA
+ AA=
+X-Change-ID: 20251204-phy-hdptx-pll-fix-0787c92e0cfe
+To: Vinod Koul <vkoul@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Heiko Stuebner <heiko@sntech.de>, Dmitry Baryshkov <lumag@kernel.org>
+Cc: kernel@collabora.com, linux-phy@lists.infradead.org, 
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, Derek Foreman <derek.foreman@collabora.com>
+X-Mailer: b4 0.14.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251219_125242_444785_7BBCC1A7 
-X-CRM114-Status: UNSURE (   8.77  )
+X-CRM114-CacheID: sfid-20251221_023650_973249_A0FF5281 
+X-CRM114-Status: UNSURE (   7.44  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -82,35 +75,45 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+The Samsung HDMI/eDP TX PHY is currently not able to provide an accurate
+enough PLL output frequency to match the TMDS rate of a 1080p@120Hz
+display mode, when used with 10 bpc RGB.
 
-On Wed, 17 Dec 2025 11:19:02 +0100, Louis-Alexis Eyraud wrote:
-> From: "N=EDcolas F. R. A. Prado" <nfraprado@collabora.com>
-> =
+This patch set adds a new entry to the TMDS configuration table,
+providing the necessary frequency division coefficients for the PHY PLL
+to generate the expected 461.101250 MHz output.
 
-> MT8195's HDMI PHY block has 4 clocks instead of just a single one.
-> Describe the extra clocks for it.
-> =
+Additionally, it drops a bunch of unused members from struct
+ropll_config and makes the configuration table more readable.
 
-> Signed-off-by: N=EDcolas F. R. A. Prado <nfraprado@collabora.com>
-> [Louis-Alexis Eyraud: addressed feedback from mailing list]
-> Signed-off-by: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
-> ---
->  .../devicetree/bindings/phy/mediatek,hdmi-phy.yaml | 22 ++++++++++++++++=
-++++++
->  1 file changed, 22 insertions(+)
-> =
+Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+---
+Changes in v2:
+- Dropped one more unused member from struct ropll_config (sdm_clk_div)
+- Swapped the TMDS config entry corresponding to the 108000000ULL rate
+  with 106500000ULL, to fix an unspotted ordering issue
+- Collected Tested-by tag from Derek
+- Rebased series onto v6.19-rc1
+- Link to v1: https://lore.kernel.org/r/20251204-phy-hdptx-pll-fix-v1-0-d94fd6cfd59b@collabora.com
+
+---
+Cristian Ciocaltea (2):
+      phy: rockchip: samsung-hdptx: Pre-compute HDMI PLL config for 461.10125 MHz output
+      phy: rockchip: samsung-hdptx: Cleanup TMDS PLL config table
+
+ drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 80 +++++++----------------
+ 1 file changed, 24 insertions(+), 56 deletions(-)
+---
+base-commit: 8f0b4cce4481fb22653697cced8d0d04027cb1e8
+change-id: 20251204-phy-hdptx-pll-fix-0787c92e0cfe
 
 
-Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
-
-
--- =
-
+-- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
