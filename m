@@ -4,143 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A5B4AE6748D
-	for <linux-phy@archiver.kernel.org>; Mon, 22 Dec 2025 10:14:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 92255D711D5
+	for <linux-phy@archiver.kernel.org>; Mon, 22 Dec 2025 10:15:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=M6RZc9cMre7Zeg7uKMxdUfc9K7PviP/Rijf4geRDvVw=; b=4T0n5FnJuiXLVG
-	N9r5zeKQAMQ6CnkOKKpVMakt8ZJe2T/cv+xNaagpZrF1lT1ORZJfU9m46/IShzWFL7GRpSlzK2K6/
-	r9rNFq1xyFCJ4zCCDBhPSv2GNcfplrPQDOk7J6ZrrUfoBrzXW6jrM/X+f0e9ellTFmvtEIbOkMyaC
-	4ymS8DdfeRkFKPrWiHbFk64QVn03ZANInF103A3F/0/MUsb4Zk1uEChKlF1ZWOEFsQcn24l+sGDdk
-	XEiXb6ktDYPdxTxDiIZbSoPgPd84pizMHh/yuGYCT/MMvM5BmavlvVM1q8zZyWg+1gLq7LWU+mzcw
-	fojjg4lCQlZpRmfm9ukA==;
+	List-Owner; bh=DFsILzoQBcLwjOWOvj63xq4zwb3gdW0XpYPdPuwdUNw=; b=2vQbvtXIBQpXiy
+	CtNgoOdbm9RslCVITdOPanyFwWTYVjCeIT25ICqgwA8EUCswIOb9mbdGn5IMG+YFk8arB3IBDEVqf
+	igJI6WuPmH8x4wBs2wSMuVqAJsb4ixBOTv9a1Aloziw5vlUZzMv3uy1GaWAwZ3Tlg6lm/A3BwzcaG
+	7ZB7aBHSpdheqbAmbVx9irXDoJuRurzmK5plpnXYg3NLwThulE0FtlRJfCOi0Wh1iFpN8W2qHJHJI
+	Ui1w00/2LYkjvmnMXOI1PDcmPXluBLcwZ1sMOxtDqiLnlOUvvr4126o4smeSf5EPU0YQ+ssggZq15
+	f60Gtq/xhsqPrRbzrO7g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vXcvh-0000000DbW2-1iTJ;
-	Mon, 22 Dec 2025 10:14:17 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1vXcwr-0000000DbaO-1HRU;
+	Mon, 22 Dec 2025 10:15:29 +0000
+Received: from mail-ot1-f49.google.com ([209.85.210.49])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vXcvd-0000000DbVf-46Lc
+	id 1vXcwo-0000000DbZz-1eAg
 	for linux-phy@lists.infradead.org;
-	Mon, 22 Dec 2025 10:14:15 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 5BM8EFHW3799601
-	for <linux-phy@lists.infradead.org>; Mon, 22 Dec 2025 10:14:13 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	3V9BlQkZLQipKWuaG8qu9blXB9mSR0ZfVvmqlvjHZJE=; b=EC9x/eFhqo3CQZ1/
-	M+Mu6ztAmnwIKUed0FrzOWQe/tn4hgX0JrFpaz3BgZ2s5x/V+eaeBgHaIyjIbk4e
-	eNlIjr/qgyGcvrAz1Lps6GqFKUqkEYAySpXncopbZWwi/DHrdZiGBQbOzTG1lDGq
-	sBqvszwQcDfg+mScte6SeGjFER33g/fojAb1lj/jPdUfLPKrt68kKeHo4H5nyjcY
-	ig/hlU3cPB8MW1p1tmwKhkHm61gXUcW0nw7z7rdYAM/oc0X3+jQNipUinjh4Rl2Q
-	DikNUtTQeAgM9ez3lRNwKP0qBKehMwFshBf76hmj8okL2tSWXJ6+gV3PtiUYHPZ6
-	3PrZLw==
-Received: from mail-qt1-f200.google.com (mail-qt1-f200.google.com [209.85.160.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4b5mry4k1t-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Mon, 22 Dec 2025 10:14:12 +0000 (GMT)
-Received: by mail-qt1-f200.google.com with SMTP id d75a77b69052e-4f1e17aa706so20814311cf.2
-        for <linux-phy@lists.infradead.org>; Mon, 22 Dec 2025 02:14:12 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1766398452; x=1767003252; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=3V9BlQkZLQipKWuaG8qu9blXB9mSR0ZfVvmqlvjHZJE=;
-        b=THdwGmb2H/jAahc1O3XRg5gDbT3ykQ2k3t241cYdLqpwgsDtg84u1R12QuvYE05zlA
-         X34Kk6C9I803sgw+JRY+36WUkRje2q7jc25LEkmXstTRzrEqUt64lKqDnv+sK5n4LHH5
-         nKS7wJLLPpHp8EdlFDLDeQsroLJYV1mesQFRiotilm+JsTJMPC10/dKJuQeC2pfUwoby
-         d+MfxILhZD5pdZjD1EKKnvcxdXqutItuioDQ4ycodZVTBQcz39X0z9VkR5HqdW7noqDH
-         4phgRL2dk2JvX/uvukJCx0IhYUsfiNrkNoZ6kqafFRtdqXhV2vQP8Sol8cOBHar9mL5N
-         tpAg==
+	Mon, 22 Dec 2025 10:15:28 +0000
+Received: by mail-ot1-f49.google.com with SMTP id 46e09a7af769-7c76f65feb5so2772767a34.0
+        for <linux-phy@lists.infradead.org>; Mon, 22 Dec 2025 02:15:25 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1766398452; x=1767003252;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=3V9BlQkZLQipKWuaG8qu9blXB9mSR0ZfVvmqlvjHZJE=;
-        b=ve5EUXDWgkVP5/7HvPMFW5zK+B36LG+HsFa5tEKQ/zTY1cs3ZsFIb3CnZ6w7pXagZ7
-         0S6en9wnqYwqflNwHJ7HHcqskIshjbYQ9Z5kWhvJtcly3SHfRKB/LsOypJFGYejAH09q
-         BMWOTmCL7gqtVlkz537M0CDQ6oUuEAvqe/SjmfyKezyo5NHpRplnQzQUdvA6dSQxvQXk
-         DHVfcPBU5YGRT+towDyGSwQZIcRS/q6yBoLoAdeRBxjDW+TNlFt01ESrtUNZuMXTc8Ri
-         8kmVYSrd74uuY9YQT9FhPSKSTLPCHuEKN5KZDJN/s5XM9CPoGi5SrHCBQ9t0j1zM/uM8
-         MYrw==
-X-Forwarded-Encrypted: i=1; AJvYcCWLsU97a2K1Og+YsUD8FK8+r/5IgA/5QvgILsN6VvNtoaiiC/tCaU9A2vKSPguxpYxPzr9MPGjeZ5M=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyaZkn3QHKB+reUo8olxfktWWyG3+8NCtocX7Lu0Gw4kFAAmH6A
-	guswDAyTMN3NDo7KhvW/zx6aoiaMfL4bN/Ovuvv7+SyvvKxog2DgGqEKfd1qzLB1f+PRbsfZvbt
-	rBGEjLp2MOSYUgb0amXPQqBlPJnZnXyKSJpdnJp2OhoyUAkFYOTPqu1EjmudNP4Dse8DB
-X-Gm-Gg: AY/fxX6X2hSvfwVG9IF8hLMMOheLcPmEf36cdc11lWniCd1IQV7MUHmSeDLYttjTkng
-	L25v0ZGYwJ43K3HAB4v912rjdCW5PPtholDL9bvoNqoBoChdMILRYlxLXCPiePdIMJQ9W5sx+c2
-	wtAEeVkwGa9UTTLG0K48Ue1PoU8C6IJzEq7cBCIyq+k9GQfLNxGwkYiX4QQAOgTODU7Df89IHEi
-	ENX4BzOBRxotoaEAXnlQxD6j6jFL/M3H47i9mc9ddHptbigfFFUnFcMEtS57pfNRGQrQkd82wzo
-	oLAbaBBuDofbpQS9mGzIJOGJR597MGzSRWddeOeJzwNQaQh/NgG3gnJzrgtpbgjZIZv0ABinhMX
-	FqWGazEPK63v/N+fNwRg5B94KrrRjonC1qRontTkHaZbNB6POtdgIYBrTYMay5Lq3HQ==
-X-Received: by 2002:ac8:7c49:0:b0:4ed:b409:ca27 with SMTP id d75a77b69052e-4f4abde36bemr116179891cf.10.1766398452453;
-        Mon, 22 Dec 2025 02:14:12 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IGpUW/VkwoTMh2B420Zn5LwR/JNf5B3JEYqbroYu1Ar5nKTjpDAYc/M+WvypJlROlgMf697dQ==
-X-Received: by 2002:ac8:7c49:0:b0:4ed:b409:ca27 with SMTP id d75a77b69052e-4f4abde36bemr116179621cf.10.1766398451958;
-        Mon, 22 Dec 2025 02:14:11 -0800 (PST)
-Received: from [192.168.119.72] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-b8037de1421sm1051847666b.41.2025.12.22.02.14.09
+        d=1e100.net; s=20230601; t=1766398525; x=1767003325;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=VEzlntz/A3Digs4sjukIlKb5qv62LH8yawTgFzZ88fo=;
+        b=axflIHgmqtzP/gs1Dp0BqJ52D0hBN2LdhCJw9m5nhhRKSUHgRDG6IxmmGcHwflvaG7
+         AyglieKt4tZHiIP1hY6ic0LaCzvVugbKoYs/u8UTkOStdYEOn4+7F6ZhDRkicmXnyxRf
+         71EofUGeisZrn3Pk2Ib3R5Jx+OuQLUGCVkvaBTfvNF0w/OTIZsYiEmN8Euu3anD8TIld
+         yu5KFDRkv/A4OjytR6Ggc5wTV/E8u8InqVUerJPljSnsUux2pW8KdXRdhYpOM6mWzZUr
+         OJl3czIFR4MhJ6ka5YaGldQCNetP31n64gcvWVcbqoGEdnX/3Elbh4PYKxnmXAJZrnY3
+         HTWA==
+X-Forwarded-Encrypted: i=1; AJvYcCV4B/eF6XAWSplirTALKJrAgVSTrLntqRhgfICrFjn8RYanGHi5FHMdizExQbSnAPRyLZLBnw/WSCw=@lists.infradead.org
+X-Gm-Message-State: AOJu0YySHPQU7M+08bO/qHnzho3WYqGFdH5DMGh8bIZ7SXcRHBC8I8eR
+	CyxCXLvgJxY2eWpFVo6Zt6TbPYA3mSkYhl8Exhj4pNU2zvmm4dyOB6VHfnAhHPIT
+X-Gm-Gg: AY/fxX7JKbxkK2gV4hAfFQwii2nGeZgYbARJF/k5itdALLu7utuBh63Zk5ksN3IRqKF
+	G8BbZkUfeQE/r4bKczw+O8T79Xf+mqymV+Suqt1iEl/vmGQqaJyMEsGYUwmisvqtKBqxlEr0xs+
+	jKCJkhCGCaqaC+uiktfKwtPITj3l+GZG57TF0X4vVWjG0VtFotwaUxPQ9/j8aCTSrXZfI7zxArH
+	v09BU5qag1C4eJlq/Aab7j0Onh54urmAHyFewbwx5hTNGCRl3ROiLeCbMAmQ8qoizGw0uUMGiWM
+	H7VtmyQCU5CPSwaLMeqxRIFB8C/d4nIw9uEu/zy4KsWiCYpOocWnnVgRquuiSIcZt2x4Bcz4kcV
+	pQm+/Odgf1tKAXhP88jShqA/vKUYaHdza7sTLkv0lCCLmcmTFy5C6zch2VQc+2fZApEThg9Oo8w
+	4rMuy3/hyiunulGfwzrkMKRrvL8do7F0QT1e7Meo9FBayF49LsV9gT
+X-Google-Smtp-Source: AGHT+IGrO+kxYxbwDYc/uL1GBgqYGyPj4okScXa2xuyme4CLxKUUf/0aTIYMs6z1x9jW4SsPArQfNA==
+X-Received: by 2002:a05:6830:6c08:b0:7c5:307e:3d8d with SMTP id 46e09a7af769-7cc66a28b87mr5211715a34.30.1766398524648;
+        Mon, 22 Dec 2025 02:15:24 -0800 (PST)
+Received: from mail-oi1-f174.google.com (mail-oi1-f174.google.com. [209.85.167.174])
+        by smtp.gmail.com with ESMTPSA id 46e09a7af769-7cc667d4f62sm7157558a34.19.2025.12.22.02.15.24
+        for <linux-phy@lists.infradead.org>
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 22 Dec 2025 02:14:11 -0800 (PST)
-Message-ID: <e9c484b3-5c4d-4013-9d62-83b3c7c61ff0@oss.qualcomm.com>
-Date: Mon, 22 Dec 2025 11:14:08 +0100
+        Mon, 22 Dec 2025 02:15:24 -0800 (PST)
+Received: by mail-oi1-f174.google.com with SMTP id 5614622812f47-455bef556a8so2643344b6e.1
+        for <linux-phy@lists.infradead.org>; Mon, 22 Dec 2025 02:15:24 -0800 (PST)
+X-Forwarded-Encrypted: i=1; AJvYcCX19pDUFUc4q0dU0rFtOVqssrquazOUPHkVxmSgA+HADHchAamraU+n+GedVI/1lD4fuBjyVNkgnAQ=@lists.infradead.org
+X-Received: by 2002:a05:6102:3a0e:b0:5d7:de89:8dc6 with SMTP id
+ ada2fe7eead31-5eb1a616c74mr2760273137.6.1766398102025; Mon, 22 Dec 2025
+ 02:08:22 -0800 (PST)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 3/3] arm64: dts: qcom: sm8750-mtp: Add eusb2 repeater
- tuning parameters
-To: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>,
-        Neil Armstrong <neil.armstrong@linaro.org>,
-        Vinod Koul <vkoul@kernel.org>, Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>,
-        Abel Vesa <abelvesa@kernel.org>, Pengyu Luo <mitltlatltl@gmail.com>,
-        Johan Hovold <johan+linaro@kernel.org>,
-        Luca Weiss <luca.weiss@fairphone.com>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        Abel Vesa <abel.vesa@oss.qualcomm.com>
-References: <20251219173108.2119296-1-krishna.kurapati@oss.qualcomm.com>
- <20251219173108.2119296-4-krishna.kurapati@oss.qualcomm.com>
-Content-Language: en-US
-From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <20251219173108.2119296-4-krishna.kurapati@oss.qualcomm.com>
-X-Authority-Analysis: v=2.4 cv=cbbfb3DM c=1 sm=1 tr=0 ts=694919f4 cx=c_pps
- a=JbAStetqSzwMeJznSMzCyw==:117 a=FpWmc02/iXfjRdCD7H54yg==:17
- a=IkcTkHD0fZMA:10 a=wP3pNCr1ah4A:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=EUspDBNiAAAA:8 a=TQMmuo1XrLmmHmFwc4MA:9
- a=QEXdDO2ut3YA:10 a=uxP6HrT_eTzRwkO_Te1X:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMjIyMDA5MiBTYWx0ZWRfXzXWtW/LXgNV5
- ypOZg4V6WC+2fNDblDHnyLk1gXSgFyfhhRpGcZ/Z1lEVbF2652g7n19rG3TR87tMJavtWt92MN6
- pJjFM35CkCbpmlH2y8gl8YDCNhlltCw79sGLuSRl37cfcdRrJmxmgg3MC2pvKu3EQ18ePzyjmOh
- TIsGQYimDFpjYN27FhE/6SLdVeUSzxJZ8PWAZAL0NVAVaxbMBjYPgL9KhBjAMZDNsj7ZE/6I6BM
- nb3BuHSqrHmsxviMgqLXtATC9V3o2/WuB4BcgT65Xyk7sJXjcrgFe3Fv+HuJfB4ryTb+jpMX0CH
- gz1qlC2FIfoP0j+wl2z8vKJSeelb7PGn8lhLaBOHEkj92ZoB4t96+IAtrnpQeMgvpEPyB0Ak2K/
- lefQ7OEXgq1beqQUf/CKCOyHMe7oQoQiAShMC4cvn5yB227Vs7nHh1psF70sTg/hKpEj3KJh948
- ebF8YpozxE4zpuh6oIQ==
-X-Proofpoint-GUID: RKjr9p-8tZiV6K9Ji81N2__EHgV22J9N
-X-Proofpoint-ORIG-GUID: RKjr9p-8tZiV6K9Ji81N2__EHgV22J9N
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
- definitions=2025-12-21_05,2025-12-19_02,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 clxscore=1015 phishscore=0 malwarescore=0 adultscore=0
- lowpriorityscore=0 impostorscore=0 bulkscore=0 suspectscore=0 spamscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2512120000 definitions=main-2512220092
+References: <20251210-rz-sdio-mux-v3-0-ca628db56d60@solid-run.com> <20251210-rz-sdio-mux-v3-2-ca628db56d60@solid-run.com>
+In-Reply-To: <20251210-rz-sdio-mux-v3-2-ca628db56d60@solid-run.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Mon, 22 Dec 2025 11:08:11 +0100
+X-Gmail-Original-Message-ID: <CAMuHMdXjAS6HOYy5=uxcK0RZL5X6agRoHG67QUw4xh5+ovZaJQ@mail.gmail.com>
+X-Gm-Features: AQt7F2qgJlv5WWEn-8R7_EQWn45G6An5kBRt8R2C89e3bKVxcY7XZ_y43fEdjFs
+Message-ID: <CAMuHMdXjAS6HOYy5=uxcK0RZL5X6agRoHG67QUw4xh5+ovZaJQ@mail.gmail.com>
+Subject: Re: [PATCH v3 2/6] mux: Add helper functions for getting optional and
+ selected mux-state
+To: Josua Mayer <josua@solid-run.com>
+Cc: Ulf Hansson <ulf.hansson@linaro.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Geert Uytterhoeven <geert+renesas@glider.be>, Magnus Damm <magnus.damm@gmail.com>, 
+	Wolfram Sang <wsa+renesas@sang-engineering.com>, Marc Kleine-Budde <mkl@pengutronix.de>, 
+	Vincent Mailhol <mailhol@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Peter Rosin <peda@axentia.se>, 
+	Aaro Koskinen <aaro.koskinen@iki.fi>, Andreas Kemnade <andreas@kemnade.info>, 
+	Kevin Hilman <khilman@baylibre.com>, Roger Quadros <rogerq@kernel.org>, 
+	Tony Lindgren <tony@atomide.com>, Vignesh R <vigneshr@ti.com>, 
+	Janusz Krzysztofik <jmkrzyszt@gmail.com>, Andi Shyti <andi.shyti@kernel.org>, 
+	Mikhail Anikin <mikhail.anikin@solid-run.com>, Yazan Shhady <yazan.shhady@solid-run.com>, 
+	Jon Nettleton <jon@solid-run.com>, linux-mmc@vger.kernel.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org, 
+	linux-can@vger.kernel.org, linux-phy@lists.infradead.org, 
+	linux-omap@vger.kernel.org, linux-i2c@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251222_021414_310504_E175858F 
-X-CRM114-Status: UNSURE (   8.45  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20251222_021526_502558_3546387A 
+X-CRM114-Status: GOOD (  32.76  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -157,19 +110,97 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 12/19/25 6:31 PM, Krishna Kurapati wrote:
-> Add eusb2 repeater tuning parameters for MTP platform.
-> 
-> Signed-off-by: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
-> Reviewed-by: Abel Vesa <abel.vesa@oss.qualcomm.com>
-> ---
+Hi Josua,
 
-I don't see this override in the random downstream tag I opened,
-but I assume you're adding this for a reason
+On Wed, 10 Dec 2025 at 18:39, Josua Mayer <josua@solid-run.com> wrote:
+> In-tree phy-can-transceiver driver has already implemented a local
+> version of devm_mux_state_get_optional.
+>
+> The omap-i2c driver gets and selects an optional mux in its probe
+> function without using any helper.
+>
+> Add new helper functions covering both aforementioned use-cases:
+>
+> - devm_mux_state_get_optional:
+>   Get a mux-state if specified in dt, return NULL otherwise.
+> - devm_mux_state_get_optional_selected:
+>   Get and select a mux-state if specified in dt, return error or NULL.
+>
+> Existing mux_get helper function is changed to return -ENOENT in case dt
+> did not specify a mux-state or -control matching given name (if valid).
+> This matches of_parse_phandle_with_args semantics which also returns
+> -ENOENT if the property does nto exists, or its value is zero.
+>
+> The new helper functions check for ENOENT to return NULL for optional
+> muxes.
+>
+> Commit e153fdea9db04 ("phy: can-transceiver: Re-instate "mux-states"
+> property presence check") noted that "mux_get() always prints an error
+> message in case of an error, including when the property is not present,
+> confusing the user."
+>
+> The first error message covers the case that a mux name is not matched
+> in dt. This is removed as the returned error code (-ENOENT) is clear.
+>
+> The second error message is based on of_parse_phandle_with_args return
+> value. In case mux description is missing from DT, it returns -ENOENT.
+> Print error message only for other error codes.
+>
+> This ensures that the new helper functions will not confuse the user
+> either.
+>
+> Signed-off-by: Josua Mayer <josua@solid-run.com>
 
-Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+Thanks for your patch!
 
-Konrad
+> --- a/drivers/mux/core.c
+> +++ b/drivers/mux/core.c
+> @@ -542,11 +542,8 @@ static struct mux_control *mux_get(struct device *dev, const char *mux_name,
+>                 else
+>                         index = of_property_match_string(np, "mux-control-names",
+>                                                          mux_name);
+> -               if (index < 0) {
+> -                       dev_err(dev, "mux controller '%s' not found\n",
+> -                               mux_name);
+> -                       return ERR_PTR(index);
+> -               }
+> +               if (index < 0)
+> +                       return ERR_PTR(-ENOENT);
+>         }
+>
+>         if (state)
+> @@ -558,8 +555,10 @@ static struct mux_control *mux_get(struct device *dev, const char *mux_name,
+>                                                  "mux-controls", "#mux-control-cells",
+>                                                  index, &args);
+>         if (ret) {
+> -               dev_err(dev, "%pOF: failed to get mux-%s %s(%i)\n",
+> -                       np, state ? "state" : "control", mux_name ?: "", index);
+> +               if (ret != -ENOENT)
+
+I think the non-optional variant should still print an error message in
+case of -ENOENT, else this has to be duplicated in all drivers using it.
+
+This is typically handled by having a non-printing core helper function,
+and having printing non-optional, and non-printing/ignoring optional wrappers
+around the former.
+
+> +                       dev_err(dev, "%pOF: failed to get mux-%s %s(%i)\n",
+> +                               np, state ? "state" : "control",
+> +                               mux_name ?: "", index);
+>                 return ERR_PTR(ret);
+>         }
+>
+
+Gr{oetje,eeting}s,
+
+                        Geert
+
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 -- 
 linux-phy mailing list
