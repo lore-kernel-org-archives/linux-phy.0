@@ -4,98 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 80F35E677EA
-	for <linux-phy@archiver.kernel.org>; Mon, 22 Dec 2025 16:18:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 10C4FE6ADE7
+	for <linux-phy@archiver.kernel.org>; Mon, 22 Dec 2025 20:37:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=QzKKPfTxjrS4E+SjDnE+/wXJFEAXWiImVWY0qXlcSPI=; b=J8lb+971WMPzgE
-	Kn0GlBQ31RXX5rlesuVS5RxuKf8PS09UQ7RebHcBvEv/0KdQ4vEP3BPX+xe8DbF0eYrRmE31h932p
-	oAf74OXY6KJTGuvhi87+IBRHfBKl//GJcD6l15uJpNI1fzyrP+eXW3wVYcVpeAi2hx1HjONeSGf9K
-	D/+RS5b247LQ7jBww0A9ek32mKjfVmy4+CpkOUkxXcqZiiVQqKKIFZXgyeF0GP/6cGD6Thwka7x1E
-	K4Ia6pKZTva1mInI+3wNJFwRCKwrtOcRKAVmMGdnhSHcCfFwm6/1lPexZl33dWUFyUTgEhla5/bIS
-	P2h5DAisAbK3VrSutiKA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=53At6FkoPfSH67SdA99GJCVSnKHjR8qr89gqLt4+q2c=; b=sD1NGUd/xjpHnP
+	QX+6rvNV9e3SEjCkLtrsh9Fh19b99xYhOl4hycUBCrNRGoakq/5rGYV0qE7B0RWga+SsY17Edqgpi
+	rW+kyQLRJQ0hQrtwGeHe4UE265Ujuir1XzBWbYIY6+5XCTe46SopbIfPtp+gUMI1fIDJBs5e8dq7L
+	0wvTcKsNMVLhll+JmR9qUK/S6XA+pDGx1//ZSR4W0qjBqB3ZyQeeIQR4q1YVw62UIQkDkFulcSiLv
+	Ft8Y7w5KYUo3c48IgtLFHcTaSDNsuXJpSPppMc6lY10JPR/aCdo0X0tSmXt16gBVIAU614k2W1ZdS
+	gv/6qdPYNtF81QEFnqUg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vXicb-0000000DxfF-3dt6;
-	Mon, 22 Dec 2025 16:18:57 +0000
-Received: from mail-wm1-x32a.google.com ([2a00:1450:4864:20::32a])
+	id 1vXmeo-0000000E91h-2B2A;
+	Mon, 22 Dec 2025 20:37:30 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vXicZ-0000000Dxev-2KRo
+	id 1vXmen-0000000E91S-46l5
 	for linux-phy@lists.infradead.org;
-	Mon, 22 Dec 2025 16:18:56 +0000
-Received: by mail-wm1-x32a.google.com with SMTP id 5b1f17b1804b1-47a80d4a065so21068695e9.2
-        for <linux-phy@lists.infradead.org>; Mon, 22 Dec 2025 08:18:54 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1766420333; x=1767025133; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=6Wn+1o5H5M2D3/1CjW1oNLSmHryy2WgYugla7KkAVPw=;
-        b=iQMBkuPS21MgSU2NsU55i8X2UBthuEXtFS+xw3NwQZQ5qxrIlO+XxuFVStkyasclWg
-         UYjo4a9iG1FBF+JcSMD/S5c0McuolG83+cyJNa01ZVjbv3JDQoTJkrRCVwshOfPD1eWS
-         a/6JxJrpFaQdLm9xvX1h+t/OY4HVmZ73aXGikj2Ig1RHg3Dbh4weNH4KFrtg1XOQb7+S
-         uwgWXw2DvVMxq7pCMLvXAlyaqlgEg3DpMyXczAxEaF4WdW7Ov8cnE8H9XyrNhK6QWbDz
-         8yj/t3SCQOIDORbTWzGE7X0F8UBQT5azVQ74YEKzWr3FP5jaodam+jOd/OxTgDiXIBF7
-         Sw7A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1766420333; x=1767025133;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=6Wn+1o5H5M2D3/1CjW1oNLSmHryy2WgYugla7KkAVPw=;
-        b=tkVM89B5G9FM31H+sIMjGoNd9e7c8xQ72mUSaCl9DQoJc9sRJo5o63rXh1A81dq9ov
-         9MBUMz/H9/ThJ87Czl30lYjKj+UORQ01Ff/dcyQYVXsDSW0L4Uml69yR1Rw0YZd9BDas
-         xZKhI+yyjaeAcZKQPuEZx6o8bavZYwyGNljDXXGy+qoAwp9GmcKsRMeUvVF1rIpu9bjF
-         c55xXFYxfnusTLqHkXf0g8HD8M3fErrUHisxnprwJD7EoyB1VYCVWN5vdidCNfBIDMTg
-         pNCNAwWLrOuEHhsrY5QaU9hmeXCioTlk5Hn9OUzk37qpTeYacK5hANnNRVzOPoLPj0vk
-         JIOw==
-X-Gm-Message-State: AOJu0Yy822DF0krY/c863Uai7nZ8StibzKadOt7gsGsO4E4gU/mkNMPT
-	VVpYcBVwQqqN0twF93ZjwE4XNO5Fnt/KZ+y1l7rdbe3ykmBoW17mEuDW
-X-Gm-Gg: AY/fxX7jsMqqPEbD6eMzQHnkkyKxFbPSxTTa2Aj6Z5T8wvlUNP9IrTmkVsGF07N96nn
-	hSkx6m4qaB+S47dxwEkPsBkxtw+FpiYHlWftlcVWHujY5ngB6vVhvtXDDTXAtP5OyWaiuv0B9Pe
-	zoD1qzmmqPFb7xKVAjQqqVgIXXG66J9sw62WAzdaM8vyWL88bb+1e5FW266KQ8COwGBHO4xHFzS
-	FzVP75V+tyIs0vDpFyXNndCr9/T0Cm6ghGGD61y6Z7ToYBCKiacsOkXU4XBrv611ZkGsj7ScS4Y
-	EGfEVjyyrQ85U2cpKti0CcAy+6niRKrC1Q/8GSc34+yT37KfGDuy4KTAtFTnJcDZuIjIkgRDg54
-	DE/uvgm9Zam/Uc6GCgJ9NOlGB/ZwE5XXReC8rHApc0t2tpmG2xHjHTB1WAk6PYRe5IzJYLXek0M
-	I8N5pFU23JVusFKkac2mWmVCojvdJqX25VHgIx5sJFzAjFhjcrXc6tJ8Hi8hNgijMKHwC6E3L03
-	YDs3MkzxwbixbPAyHEBEpTn3q8QwHTYlg==
-X-Google-Smtp-Source: AGHT+IG3GUrdE4PQHrsdSst16Dgk6RAbxwgJpO7Qwn77alrqhBYIPCIPtLmfjtOzLdRdyTl/fZZyVA==
-X-Received: by 2002:a05:600c:35c4:b0:475:dd9a:f791 with SMTP id 5b1f17b1804b1-47d195869e7mr135907925e9.28.1766420332821;
-        Mon, 22 Dec 2025 08:18:52 -0800 (PST)
-Received: from iku.Home ([2a06:5906:61b:2d00:4dd:df38:7864:a996])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-47be279c637sm238662805e9.11.2025.12.22.08.18.52
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 22 Dec 2025 08:18:52 -0800 (PST)
-From: Prabhakar <prabhakar.csengg@gmail.com>
-X-Google-Original-From: Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-To: Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Geert Uytterhoeven <geert+renesas@glider.be>,
-	Magnus Damm <magnus.damm@gmail.com>,
-	Biju Das <biju.das.jz@bp.renesas.com>
-Cc: linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-renesas-soc@vger.kernel.org,
-	Prabhakar <prabhakar.csengg@gmail.com>,
-	Fabrizio Castro <fabrizio.castro.jz@renesas.com>,
-	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
-	Krzysztof Kozlowski <krzk@kernel.org>
-Subject: [PATCH v2] dt-bindings: phy: renesas,rzg3e-usb3-phy: Add RZ/V2H(P) and RZ/V2N support
-Date: Mon, 22 Dec 2025 16:18:46 +0000
-Message-ID: <20251222161846.152952-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
-X-Mailer: git-send-email 2.52.0
+	Mon, 22 Dec 2025 20:37:30 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id EFD576014C;
+	Mon, 22 Dec 2025 20:37:28 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6D0D2C4CEF1;
+	Mon, 22 Dec 2025 20:37:27 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1766435848;
+	bh=BalUs0JaXGi9OEmgkh/o3sCoR/ci4kiU4w+LxMxmaAg=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=tDK1d+RmL8Ni+b6WPepahaEUjZSB/6ml5cMNbGjTiBbyH8ObLOC5d045kwGj/7fUC
+	 70kB8IGIJ1+9R5e6v4U/A9JUdHi7Ohf77QfqjFrUmHCwtGpo1drxX6yKt8YzczHhUV
+	 kG6bxFPosM9kY/d/3XwWKK8XnDFqep7wIMxiroHAz90hJJpYJGO4ykb0H1XTvnEZOj
+	 jyC81TBJhOyhnSVbNjir/8dhy0ABmzU8gm5mGcqW+6bxwO6b7VS0MqiDBWJZBL56N7
+	 dRrgKXOdod1uMxBGZ5iji/wk7JrpIZ3r/IbpFnfTgYK3vgtYVqlBi7/rwSNhvQ9QZs
+	 Zv84rZAqDQtow==
+From: "Rafael J. Wysocki" <rafael@kernel.org>
+To: Linux PM <linux-pm@vger.kernel.org>
+Cc: LKML <linux-kernel@vger.kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>,
+ Brian Norris <briannorris@chromium.org>, Vinod Koul <vkoul@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>, linux-phy@lists.infradead.org
+Subject: [PATCH v1 15/23] phy: core: Discard pm_runtime_put() return values
+Date: Mon, 22 Dec 2025 21:22:48 +0100
+Message-ID: <2556645.jE0xQCEvom@rafael.j.wysocki>
+Organization: Linux Kernel Development
+In-Reply-To: <6245770.lOV4Wx5bFT@rafael.j.wysocki>
+References: <6245770.lOV4Wx5bFT@rafael.j.wysocki>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251222_081855_614405_1055C238 
-X-CRM114-Status: UNSURE (   9.22  )
-X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -112,45 +70,91 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+From: Rafael J. Wysocki <rafael.j.wysocki@intel.com>
 
-Add compatibles for the USB3.0 PHY used in the RZ/V2H(P) and RZ/V2N SoCs.
-These SoCs integrate the same USB3 PHY IP block as the RZ/G3E, so the
-RZ/G3E compatible is used as a fallback for both.
+The PHY core defines phy_pm_runtime_put() to return an int, but that
+return value is never used.  It also passes the return value of
+pm_runtime_put() to the caller which is not very useful.
 
-Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-Acked-by: Krzysztof Kozlowski <krzk@kernel.org>
+Returning an error code from pm_runtime_put() merely means that it has
+not queued up a work item to check whether or not the device can be
+suspended and there are many perfectly valid situations in which that
+can happen, like after writing "on" to the devices' runtime PM "control"
+attribute in sysfs for one example.
+
+Modify phy_pm_runtime_put() to discard the pm_runtime_put() return
+value and change its return type to void.  Also drop the redundant
+pm_runtime_enabled() call from there.
+
+No intentional functional impact.
+
+This will facilitate a planned change of the pm_runtime_put() return
+type to void in the future.
+
+Signed-off-by: Rafael J. Wysocki <rafael.j.wysocki@intel.com>
 ---
-v1->v2:
-- Added Acked-by tag.
 
-v1: https://lore.kernel.org/all/20251118180712.4191384-1-prabhakar.mahadev-lad.rj@bp.renesas.com/
+This patch is part of a series, but it doesn't depend on anything else
+in that series.  The last patch in the series depends on it.
+
+It can be applied by itself and if you decide to do so, please let me
+know.
+
+Otherwise, an ACK or equivalent will be appreciated, but also the lack
+of specific criticism will be eventually regarded as consent.
+
 ---
- .../devicetree/bindings/phy/renesas,rzg3e-usb3-phy.yaml  | 9 ++++++++-
- 1 file changed, 8 insertions(+), 1 deletion(-)
+ drivers/phy/phy-core.c  |    9 +++------
+ include/linux/phy/phy.h |    7 ++-----
+ 2 files changed, 5 insertions(+), 11 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/renesas,rzg3e-usb3-phy.yaml b/Documentation/devicetree/bindings/phy/renesas,rzg3e-usb3-phy.yaml
-index b86dc7a291a4..6d97e038a927 100644
---- a/Documentation/devicetree/bindings/phy/renesas,rzg3e-usb3-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/renesas,rzg3e-usb3-phy.yaml
-@@ -11,7 +11,14 @@ maintainers:
+--- a/drivers/phy/phy-core.c
++++ b/drivers/phy/phy-core.c
+@@ -190,15 +190,12 @@ int phy_pm_runtime_get_sync(struct phy *
+ }
+ EXPORT_SYMBOL_GPL(phy_pm_runtime_get_sync);
  
- properties:
-   compatible:
--    const: renesas,r9a09g047-usb3-phy
-+    oneOf:
-+      - const: renesas,r9a09g047-usb3-phy # RZ/G3E
-+
-+      - items:
-+          - enum:
-+              - renesas,r9a09g056-usb3-phy # RZ/V2N
-+              - renesas,r9a09g057-usb3-phy # RZ/V2H(P)
-+          - const: renesas,r9a09g047-usb3-phy
+-int phy_pm_runtime_put(struct phy *phy)
++void phy_pm_runtime_put(struct phy *phy)
+ {
+ 	if (!phy)
+-		return 0;
++		return;
  
-   reg:
-     maxItems: 1
--- 
-2.52.0
+-	if (!pm_runtime_enabled(&phy->dev))
+-		return -ENOTSUPP;
+-
+-	return pm_runtime_put(&phy->dev);
++	pm_runtime_put(&phy->dev);
+ }
+ EXPORT_SYMBOL_GPL(phy_pm_runtime_put);
+ 
+--- a/include/linux/phy/phy.h
++++ b/include/linux/phy/phy.h
+@@ -232,7 +232,7 @@ static inline void *phy_get_drvdata(stru
+ #if IS_ENABLED(CONFIG_GENERIC_PHY)
+ int phy_pm_runtime_get(struct phy *phy);
+ int phy_pm_runtime_get_sync(struct phy *phy);
+-int phy_pm_runtime_put(struct phy *phy);
++void phy_pm_runtime_put(struct phy *phy);
+ int phy_pm_runtime_put_sync(struct phy *phy);
+ int phy_init(struct phy *phy);
+ int phy_exit(struct phy *phy);
+@@ -312,11 +312,8 @@ static inline int phy_pm_runtime_get_syn
+ 	return -ENOSYS;
+ }
+ 
+-static inline int phy_pm_runtime_put(struct phy *phy)
++static inline void phy_pm_runtime_put(struct phy *phy)
+ {
+-	if (!phy)
+-		return 0;
+-	return -ENOSYS;
+ }
+ 
+ static inline int phy_pm_runtime_put_sync(struct phy *phy)
+
+
 
 
 -- 
