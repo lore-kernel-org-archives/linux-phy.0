@@ -4,70 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BBBA9E6F095
-	for <linux-phy@archiver.kernel.org>; Tue, 23 Dec 2025 15:38:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5CFD6E6F09F
+	for <linux-phy@archiver.kernel.org>; Tue, 23 Dec 2025 15:48:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MRSLwZMRnpWpOWFlV0vhi590CQCzzx6U0mUNXToWi9U=; b=rcVqDbGas3VZzN
-	zmQpS+w4t4j1C7FqF74I7yAaPSt4ijB8mv08PuJgXTUUz+ESLB3vvIKv91wHvba8yaHLHbsoMHtl+
-	HoysGuOAnAgP3jTNOBJwEEL16WdSS2DJuJjRlnnMHkO3Gk0HbBDWUSVXVOhXpMhxKXOYi/ARmq4xe
-	TvDHp79HtzBTcyA+EtvdgSQcTtW7N1okXL8MFcDLKGGazA6ACbWuwjctOSufEETbqT4wBc4pMG0ob
-	hdc/PPE2M9pb0/FtCudKe9hA4rYXKillQV08dJH7RP6MNAiJeeoCEdlfra0kQ1qxwu0CU1pVMxYn+
-	1q5M2LddWYmopIQwrYLA==;
+	List-Owner; bh=RlT9TFkeCz+he2EcIVxxWQuIq+TNc9PuJPHqKSryHhk=; b=2mf/RR1nqTKb8r
+	Av1moaLGmIFxbSngSqIKpfef5IUYozrJ8/y8BceIzOJXqTgTontXrZ6CZ7UnO+ziKMrOQuU9ifIzo
+	WBcn/pUYJ6ksoRch7vwszMnPGEOVu7JgoUr6AUgoC0Zdv6n2ndbDr38VwUUb+oGdcwH36Aj3wVJs2
+	V8aF6vlLHZR7otsFlKMmsso6HgFwiNd0u607652BbH3gkDQOgsCTqsKv6uW9jScRSwacxVhEg/Sbt
+	WXDN5TAhAS2G5piZfXdNOTJyNn/mFvgpIapSzoTvjKVfO1pAhq6EZOm/YJKy+DXpEkn1Ak7kPPIIG
+	nKVWqkuI1XPeojObjl0Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vY4TL-0000000FiKQ-1CwD;
-	Tue, 23 Dec 2025 15:38:51 +0000
+	id 1vY4cu-0000000FiqO-0VL5;
+	Tue, 23 Dec 2025 15:48:44 +0000
 Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vY4TJ-0000000FiKB-3HQy;
-	Tue, 23 Dec 2025 15:38:49 +0000
+	id 1vY4cs-0000000Fiq2-249o
+	for linux-phy@lists.infradead.org;
+	Tue, 23 Dec 2025 15:48:42 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 04E5660123;
-	Tue, 23 Dec 2025 15:38:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 03767C113D0;
-	Tue, 23 Dec 2025 15:38:47 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 95A506013B;
+	Tue, 23 Dec 2025 15:48:41 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 93DFBC113D0;
+	Tue, 23 Dec 2025 15:48:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1766504328;
-	bh=+TcYH6TIplkug/gQDHnsv7nQ7tnduk4LL2LEZzCzTXM=;
+	s=k20201202; t=1766504921;
+	bh=PfrdJjYesmSwYkHNAziVHb+UM+TYIC/Of5TWQUotgXk=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=gUVBe1kCA7fLdvKrVG0h5qsIh/rC+egrV6e7Up8wRserT+b4oT/cWBgXvVYtRkJLx
-	 XXmXOeV3PxUG3J6sTPqcRTPX6LN057jv6T2BTlX/9rvwal2APvWfFe+BdErlJyDw2/
-	 AdgMW+/5AJFvJXeW+knuJIjBvt1lFeHqRZtfjjN77djedCv8pi6aVbcEpHrgQoZWxa
-	 tzBOBqGG5uOt/ASGMox4RtJLubgZXl89Hd6b3x5sbC9M2QvYme51dj+U2EYfFZi87X
-	 raWvWn/d6vOn0FQPFRvGcHrgW9bENrAKpJLfdCk792XxCYhGdFOgxeBqhFZ8siwtx0
-	 zd+8TbCtNY6rg==
-Date: Tue, 23 Dec 2025 21:08:44 +0530
+	b=GiSG+bv1Yauo0XY/SVwC94sWXGAB0e13EahM6WsVRmvarK4JsQJTA9WyyYUjdKzDa
+	 CbReXXUsz1ZJbIz2erQZzaDlRO6vUes+66iIwRhtt4pUG2OfYm5+dArQB8eA5g4npH
+	 kYp6HYZpgDLGWulLPLpOay4DmKqCpDbOWO09TkQJoFnz9uKCqqmwRHHn6A9/Sc6Ixf
+	 8Usu6038NjQirmGSO++oXNb7M0iq8IXXcHETEUhuQ5WoUSRqnp6RlAoN4T9v03eHbU
+	 FpDXeINOYJrxIAubQqf4aXDPjlEDFwTZn0rIwJe8aVm44GSgprNv1fB0nvWRNZnd0J
+	 cTqcxFlYJd9ZQ==
+Date: Tue, 23 Dec 2025 21:18:37 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Jacky Chou <jacky_chou@aspeedtech.com>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Cc: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
 	Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
-	Andrew Jeffery <andrew@codeconstruct.com.au>,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Linus Walleij <linus.walleij@linaro.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	linux-aspeed@lists.ozlabs.org, linux-pci@vger.kernel.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
-	Andrew Jeffery <andrew@aj.id.au>, openbmc@lists.ozlabs.org,
-	linux-gpio@vger.kernel.org
-Subject: Re: [PATCH v7 4/7] PHY: aspeed: Add ASPEED PCIe PHY driver
-Message-ID: <aUq3hF7Xfk-f35Nh@vaman>
-References: <20251216-upstream_pcie_rc-v7-0-4aeb0f53c4ce@aspeedtech.com>
- <20251216-upstream_pcie_rc-v7-4-4aeb0f53c4ce@aspeedtech.com>
+	Conor Dooley <conor+dt@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Konrad Dybcio <konradybcio@kernel.org>,
+	Abel Vesa <abelvesa@kernel.org>, Pengyu Luo <mitltlatltl@gmail.com>,
+	Johan Hovold <johan+linaro@kernel.org>,
+	Luca Weiss <luca.weiss@fairphone.com>,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+Subject: Re: [PATCH v3 1/3] dt-bindings: phy: qcom,snps-eusb2-repeater: Add
+ squelch param update
+Message-ID: <aUq51TxXwiJE2DWb@vaman>
+References: <20251219173108.2119296-1-krishna.kurapati@oss.qualcomm.com>
+ <20251219173108.2119296-2-krishna.kurapati@oss.qualcomm.com>
+ <aUqjG4pVXWN3H88N@vaman>
+ <bb775051-8635-4e2d-a1f9-46d6f0e6bc15@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20251216-upstream_pcie_rc-v7-4-4aeb0f53c4ce@aspeedtech.com>
+In-Reply-To: <bb775051-8635-4e2d-a1f9-46d6f0e6bc15@kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,123 +84,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 16-12-25, 09:50, Jacky Chou wrote:
-> Introduce support for Aspeed PCIe PHY controller available in
-> AST2600/2700.
+On 23-12-25, 15:16, Krzysztof Kozlowski wrote:
+> On 23/12/2025 15:11, Vinod Koul wrote:
+> > On 19-12-25, 23:01, Krishna Kurapati wrote:
+> >> Add squelch detect parameter update for synopsys eusb2 repeater. The
+> >> values (indicated in basis-points) depict a percentage change with
+> >> respect to the nominal value.
+> >>
+> >> Signed-off-by: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
+> >> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+> >> ---
+> >>  .../devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml | 8 ++++++++
+> >>  1 file changed, 8 insertions(+)
+> >>
+> >> diff --git a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
+> >> index 5bf0d6c9c025..f2afcf0e986a 100644
+> >> --- a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
+> >> +++ b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
+> >> @@ -59,6 +59,14 @@ properties:
+> >>      minimum: 0
+> >>      maximum: 7
+> >>  
+> >> +  qcom,squelch-detector-bp:
+> >> +    description:
+> >> +      This adjusts the voltage level for the threshold used to detect valid
+> >> +      high-speed data.
+> >> +    minimum: -6000
+> > 
+> > 6000Volts, mV, can you please document the units?
+> 
+> 
+> Code is correct, the '-bp' is the unit here. Unless the suffix was
+> chosen incorrectly?
 
-What is with the uppercase "PHY" in patch title instead of lowercase
-'phy' as is the convention
+I was hoping it will be commented in the description here.
+For my reference, what is bp and where is it documented ?
 
 > 
-> Signed-off-by: Jacky Chou <jacky_chou@aspeedtech.com>
-> ---
->  drivers/phy/Kconfig                  |   1 +
->  drivers/phy/Makefile                 |   1 +
->  drivers/phy/aspeed/Kconfig           |  15 +++
->  drivers/phy/aspeed/Makefile          |   2 +
->  drivers/phy/aspeed/phy-aspeed-pcie.c | 209 +++++++++++++++++++++++++++++++++++
->  5 files changed, 228 insertions(+)
 > 
-> diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
-> index 678dd0452f0a..f6a8f06fd244 100644
-> --- a/drivers/phy/Kconfig
-> +++ b/drivers/phy/Kconfig
-> @@ -103,6 +103,7 @@ config PHY_NXP_PTN3222
->  
->  source "drivers/phy/allwinner/Kconfig"
->  source "drivers/phy/amlogic/Kconfig"
-> +source "drivers/phy/aspeed/Kconfig"
->  source "drivers/phy/broadcom/Kconfig"
->  source "drivers/phy/cadence/Kconfig"
->  source "drivers/phy/freescale/Kconfig"
-> diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
-> index bfb27fb5a494..18990c87dfb0 100644
-> --- a/drivers/phy/Makefile
-> +++ b/drivers/phy/Makefile
-> @@ -15,6 +15,7 @@ obj-$(CONFIG_PHY_AIROHA_PCIE)		+= phy-airoha-pcie.o
->  obj-$(CONFIG_PHY_NXP_PTN3222)		+= phy-nxp-ptn3222.o
->  obj-y					+= allwinner/	\
->  					   amlogic/	\
-> +					   aspeed/	\
->  					   broadcom/	\
->  					   cadence/	\
->  					   freescale/	\
-> diff --git a/drivers/phy/aspeed/Kconfig b/drivers/phy/aspeed/Kconfig
-> new file mode 100644
-> index 000000000000..6aeeca84091f
-> --- /dev/null
-> +++ b/drivers/phy/aspeed/Kconfig
-> @@ -0,0 +1,15 @@
-> +# SPDX-License-Identifier: GPL-2.0-only
-> +#
-> +# Phy drivers for Aspeed platforms
-> +#
-> +config PHY_ASPEED_PCIE
-> +	tristate "ASPEED PCIe PHY driver"
-> +	select GENERIC_PHY
-> +	depends on ARCH_ASPEED
-> +	default y
-
-NO! why should this driver be default!
-
-> +	help
-> +	  This option enables support for the ASPEED PCIe PHY driver.
-> +	  The driver provides the necessary interface to control and
-> +	  configure the PCIe PHY hardware found on ASPEED SoCs.
-> +	  It is required for proper operation of PCIe devices on
-> +	  platforms using ASPEED chips.
-> \ No newline at end of file
-
-??
-
-> diff --git a/drivers/phy/aspeed/Makefile b/drivers/phy/aspeed/Makefile
-> new file mode 100644
-> index 000000000000..7203152f44bf
-> --- /dev/null
-> +++ b/drivers/phy/aspeed/Makefile
-> @@ -0,0 +1,2 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +obj-$(CONFIG_PHY_ASPEED_PCIE)		+= phy-aspeed-pcie.o
-> \ No newline at end of file
-
-Are we expecting more drivers for aspeed, if not move it to drivers/phy/
-once we have couple of them we can add a directory
-
-> diff --git a/drivers/phy/aspeed/phy-aspeed-pcie.c b/drivers/phy/aspeed/phy-aspeed-pcie.c
-> new file mode 100644
-> index 000000000000..3de43a86ac17
-> --- /dev/null
-> +++ b/drivers/phy/aspeed/phy-aspeed-pcie.c
-> @@ -0,0 +1,209 @@
-> +// SPDX-License-Identifier: GPL-2.0+
-> +/*
-> + * Copyright 2025 Aspeed Technology Inc.
-> + */
-> +
-> +#include <linux/clk.h>
-> +#include <linux/clk-provider.h>
-> +#include <linux/delay.h>
-> +#include <linux/err.h>
-> +#include <linux/io.h>
-> +#include <linux/iopoll.h>
-> +#include <linux/kernel.h>
-> +#include <linux/mfd/syscon.h>
-> +#include <linux/module.h>
-> +#include <linux/of.h>
-> +#include <linux/of_address.h>
-
-why do you need this
-
-> +#include <linux/phy/pcie.h>
-> +#include <linux/phy/phy.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/regmap.h>
-> +#include <linux/regulator/consumer.h>
-> +#include <linux/reset.h>
-> +#include <linux/slab.h>
-
-
-Do you need all headers here?
+> Best regards,
+> Krzysztof
 
 -- 
 ~Vinod
