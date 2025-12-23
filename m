@@ -4,61 +4,106 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EC512E6F096
-	for <linux-phy@archiver.kernel.org>; Tue, 23 Dec 2025 14:43:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 583FEE6F095
+	for <linux-phy@archiver.kernel.org>; Tue, 23 Dec 2025 15:03:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H23Pi3RwRGLwH1ZNoBGizm1pu9g9IoXJJbAUJC60HUA=; b=pFAiNVfY8NIOKV
-	uzOV9Xl41gShC+WQdoLBHESxBGKfXK1LA942OpePFA5NpLPy83EJnPePPaOTijDz+G+x2+VEJtvxk
-	HYULVMsCKVqh2RYJB4nBaRvCR+aUIHtvZ55/0pCFYQF1p67SNZi+/vN6PrbUT5yeZcdBlbV8Fvg+x
-	18smyUDIA4NqJsLsRyzBYlYWAEUdOGRPd5k1ntGA2lWAVBn9to2ivYhR2Dv1CUf0XK/Rr4d9Sd7Ct
-	r2Ui28VAifSjGt0RYmCqhdsjVIItfcA7urnO8VMnzJyttQu5xyJbZX/caJXTlZDW2/iJ3WpBQ7NDL
-	t8QaG6t9Q0HYQNsMN7aw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=t6Ft9N84dtOXR0KfitRvnErOTVscu6e0Oc4e1lp2bhs=; b=1AwF8dqprWUvlR
+	rBD+ye8X5OXnYI2Op9ICNfYvCIjCCcZd/er6RVTORwy9GYCm1sdQfJX1y4Z/FfzC6HvJBJR5kvzgm
+	RkJU8VABhGLy2JuZUP31vidCrat9Xedh2yH0XgScKy/KYQ3/Gs7tgBvsR/0+M3CZf9ROJbHlvE+wk
+	+YyF4pe9wTI9rLoOhA1aNfovXb9heSlSug5ucscbYZAtZbbiDVLKIyBiYIutXEy5rTdAOcSUKpnLJ
+	uW/pYNwkL2coiL/j71fTVKEdW+bW7pC4y9N1786Bh3DuVJeoVwxj7ifn/QOnTxamkiOTY77n8JNs6
+	aAr+oB8EPHOyLocilDgQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vY3bQ-0000000FdNs-1cIz;
-	Tue, 23 Dec 2025 14:43:08 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vY3vJ-0000000FeTe-40WV;
+	Tue, 23 Dec 2025 15:03:41 +0000
+Received: from fout-a6-smtp.messagingengine.com ([103.168.172.149])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vY3bP-0000000FdNb-0LTA;
-	Tue, 23 Dec 2025 14:43:07 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id EEC1F6013A;
-	Tue, 23 Dec 2025 14:43:05 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C53F5C113D0;
-	Tue, 23 Dec 2025 14:43:04 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1766500985;
-	bh=dGSBxeN+GJn8mz9SDAWxeBi3X526sNdmyiKL7f116Nw=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=SyEpcvzH4PwQr/eYYz4pV3Iuv3i/sytNejmHJENaBgTrHpnSJoSMnGv8sH/OPw4Ho
-	 YPEmxA6fUIEyBjWOtCgMACSdqd+C38RQQsv+/6uBEdDFda46W05bYcZkH35M9gg33B
-	 FguIvh641Y2VVbc3+ZSpCZjLXs90S4jGfqgbvP/rrBp3v7+703iaLTBmfLNv5R1vfo
-	 icyIZ+s7TQnI0q4PW0nDAM1DtIIuDRIZWwXr7faZu+nS5Pzaxsolyuavt4TmezVWvU
-	 4EIYNUh3yHfdmNvtGMfUuoCPviIsFVwC0onrs6n+7xtUj3PaCdqSzVAXf3Mhsyl+eH
-	 4xpWkzlI0tmSw==
-Date: Tue, 23 Dec 2025 15:43:01 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Tzu-Hao Wei <twei@axiado.com>
-Cc: SriNavmani A <srinavmani@axiado.com>, 
-	Prasad Bolisetty <pbolisetty@axiado.com>, Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Harshit Shah <hshah@axiado.com>, Ulf Hansson <ulf.hansson@linaro.org>, 
-	Adrian Hunter <adrian.hunter@intel.com>, Michal Simek <michal.simek@amd.com>, 
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
-	linux-kernel@vger.kernel.org, linux-mmc@vger.kernel.org
-Subject: Re: [PATCH 5/8] dt-bindings: mmc: axiado: Add axiado eMMC variant
-Message-ID: <20251223-ludicrous-carmine-mushroom-983c69@quoll>
-References: <20251222-axiado-ax3000-add-emmc-host-driver-support-v1-0-5457d0ebcdb4@axiado.com>
- <20251222-axiado-ax3000-add-emmc-host-driver-support-v1-5-5457d0ebcdb4@axiado.com>
+	id 1vY3vE-0000000FeSc-2Nox;
+	Tue, 23 Dec 2025 15:03:40 +0000
+Received: from phl-compute-06.internal (phl-compute-06.internal [10.202.2.46])
+	by mailfout.phl.internal (Postfix) with ESMTP id 3C2B2EC0108;
+	Tue, 23 Dec 2025 10:03:33 -0500 (EST)
+Received: from phl-frontend-04 ([10.202.2.163])
+  by phl-compute-06.internal (MEProxy); Tue, 23 Dec 2025 10:03:33 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=beims.me; h=cc
+	:cc:content-transfer-encoding:content-type:date:date:from:from
+	:in-reply-to:message-id:mime-version:reply-to:subject:subject:to
+	:to; s=fm1; t=1766502213; x=1766588613; bh=l+VjmMpqeoXGTdow4O/go
+	ELngynUtd1mvs6oU6B69Iw=; b=CDV/8891CofWQWPqwYChTmHxoYzVHnsoY6MrQ
+	3/URfht+XVI9IhW8rqu3xgnOcweSKd6Ie8cL+GQN3ni1vENjAPoFEa9XMCADgdfP
+	YTlvKjta6InrF3U7rzMrfiU1WhPZY/8kcvCVEaWH8eq707QXb9J24jKuNNr9UFnf
+	mrqspHvjelSrzScyOF9bgL+NfQCVEaksih126ozwDDfXCq35PEdlAOhv34/GQIhL
+	UNo/8yJx3zoRN7OknSPvCFB+Hy8xHoNO1CDCehFwLW6Ktb6vCYTkD7a6IWbeHBqR
+	SxMOYkWhEMXleYPhPlES7FGEOs4+neZjMh8nDbnh5QFu6tLEw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:cc:content-transfer-encoding
+	:content-type:date:date:feedback-id:feedback-id:from:from
+	:in-reply-to:message-id:mime-version:reply-to:subject:subject:to
+	:to:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; t=
+	1766502213; x=1766588613; bh=l+VjmMpqeoXGTdow4O/goELngynUtd1mvs6
+	oU6B69Iw=; b=PUqnhElF83bqeU43vdBA1Fly2kzVcoNBeLKYPcj9poDqObPhum6
+	A2QKkevf1KyLn3U8e7jcOoZ/Kp43E2X4YFaJyrnQC9n3LwCm6Dd0S0yXgduc3osm
+	oUC6gEni/+dtuK9tif6z/4IiS0+27VNaeJSOzhCo1VKG55R1Fq2WLBfc5pFCpuXP
+	qZfAMf29fPvx+V446FZOTgkuy4mdoc9yIsb7VBFQZIafrVLy1hR+/PkIK67eTPBT
+	aWfH//RdqdhBehZNCBhAuz8bf+S7V+io1ioiADsHEjg7e9Y+MIqRiwof9I1+xxld
+	2dn7KLOi3Kv6DdG3CM00XC+rrV5eYePx+Zw==
+X-ME-Sender: <xms:RK9KaY6aof43jCLbXSsdN8LOhnx2I9FN4py5cDz3ttVwaPRq-zDlcQ>
+    <xme:RK9KafGpEmuYjq7OpiZF16goaKDRZQzLHJLmIfaTjzbxK5f-yWTkTH9Xod4f5lzhC
+    wA7Gt5sNxBdhcms-ZsWpSnCgJ5b5QDOhS7wYHPaQ4GIP4G4KBJQ5g>
+X-ME-Received: <xmr:RK9Kaa1pNyPZ_WC8_22yux42EgQwK2-7Z7OvokiRxoaS3nHF_yOnhklvHkSgCobXQdIn>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeefgedrtddtgdeitddufecutefuodetggdotefrod
+    ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpuffrtefokffrpgfnqfghnecuuegr
+    ihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenucfjug
+    hrpefhvfevufffkffoggfgsedtkeertdertddtnecuhfhrohhmpeftrghfrggvlhcuuegv
+    ihhmshcuoehrrghfrggvlhessggvihhmshdrmhgvqeenucggtffrrghtthgvrhhnpeegje
+    dvhfetlefhveeljefhtefhjeejffdutefhvdeludfhgfeutdetheeggeekgeenucffohhm
+    rghinhepnhigphdrtghomhenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmh
+    grihhlfhhrohhmpehrrghfrggvlhessggvihhmshdrmhgvpdhnsggprhgtphhtthhopedu
+    fedpmhhouggvpehsmhhtphhouhhtpdhrtghpthhtohepvhhkohhulheskhgvrhhnvghlrd
+    horhhgpdhrtghpthhtohepnhgvihhlrdgrrhhmshhtrhhonhhgsehlihhnrghrohdrohhr
+    ghdprhgtphhtthhopehshhgrfihnghhuoheskhgvrhhnvghlrdhorhhgpdhrtghpthhtoh
+    epshdrhhgruhgvrhesphgvnhhguhhtrhhonhhigidruggvpdhrtghpthhtohepkhgvrhhn
+    vghlsehpvghnghhuthhrohhnihigrdguvgdprhgtphhtthhopehfvghsthgvvhgrmhesgh
+    hmrghilhdrtghomhdprhgtphhtthhopehlihhnuhigqdhphhihsehlihhsthhsrdhinhhf
+    rhgruggvrggurdhorhhgpdhrtghpthhtohepihhmgieslhhishhtshdrlhhinhhugidrug
+    gvvhdprhgtphhtthhopehrrghfrggvlhdrsggvihhmshesthhorhgruggvgidrtghomh
+X-ME-Proxy: <xmx:RK9KacqrI9d4KmL_0975qBKl1XfaZyVNZTg4v1Z-yPiGk4ZzTXWE3A>
+    <xmx:RK9KaXM0OxMBqlCIDiVmQrrwagF_FzsiAsTwQ27ZeL6gA3OoqbOxDQ>
+    <xmx:RK9KaeUmObZlQ8h3-imcqqfQVMf_cWjfpxaW9GOl4hUqWlJbs2Ex7Q>
+    <xmx:RK9KaaveHqM9h8nHqSTumXpXiimXjRFkOTvS0JSw17O9CwjYSHDhFQ>
+    <xmx:Ra9Kad522RH4sJuvJUdZqhFBxfez1fV4qGTD5o5ugPPV_vvZm_UAXa-O>
+Feedback-ID: idc214666:Fastmail
+Received: by mail.messagingengine.com (Postfix) with ESMTPA; Tue,
+ 23 Dec 2025 10:03:30 -0500 (EST)
+From: Rafael Beims <rafael@beims.me>
+To: Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Shawn Guo <shawnguo@kernel.org>,
+	Sascha Hauer <s.hauer@pengutronix.de>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>
+Cc: linux-phy@lists.infradead.org,
+	imx@lists.linux.dev,
+	Rafael Beims <rafael.beims@toradex.com>,
+	Sahaj Sarup <sahaj.sarup@linaro.org>,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: [PATCH] phy: freescale: imx8m-pcie: assert phy reset during power on
+Date: Tue, 23 Dec 2025 12:02:54 -0300
+Message-ID: <20251223150254.1075221-1-rafael@beims.me>
+X-Mailer: git-send-email 2.51.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20251222-axiado-ax3000-add-emmc-host-driver-support-v1-5-5457d0ebcdb4@axiado.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20251223_070336_858633_157CF8E4 
+X-CRM114-Status: UNSURE (   7.59  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,49 +120,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Dec 22, 2025 at 04:45:04PM +0800, Tzu-Hao Wei wrote:
-> From: SriNavmani A <srinavmani@axiado.com>
-> 
-> Add device tree binding variant for the Axiado AX3000 Arasan eMMC
-> controller. This variant identifies the specific eMMC controller
-> implementation used on the AX3000 SoC and enables the appropriate
-> driver configuration.
-> 
-> Signed-off-by: Tzu-Hao Wei <twei@axiado.com>
-> ---
->  .../devicetree/bindings/mmc/arasan,sdhci.yaml          | 18 ++++++++++++++++++
->  1 file changed, 18 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/mmc/arasan,sdhci.yaml b/Documentation/devicetree/bindings/mmc/arasan,sdhci.yaml
-> index 8e79de97b242a698a2c555b0b94e2975b1761710..47d0e35efea00bf7b1927bd0cfa39c86f0137d44 100644
-> --- a/Documentation/devicetree/bindings/mmc/arasan,sdhci.yaml
-> +++ b/Documentation/devicetree/bindings/mmc/arasan,sdhci.yaml
-> @@ -106,6 +106,12 @@ properties:
->          description:
->            For this device it is strongly suggested to include
->            arasan,soc-ctl-syscon.
-> +      - items:
-> +          - const: axiado,ax3000-sdhci-5.1-emmc
-> +          - const: arasan,sdhci-5.1
-> +        description:
-> +          For this device it is strongly suggested to include
-> +          clock-output-names and '#clock-cells'.
->  
->    reg:
->      maxItems: 1
-> @@ -334,3 +340,15 @@ examples:
->                     <&scmi_clk KEEM_BAY_PSS_SD0>;
->            arasan,soc-ctl-syscon = <&sd0_phy_syscon>;
->      };
-> +
-> +  - |
-> +    mmc@86000000 {
+From: Rafael Beims <rafael.beims@toradex.com>
 
-No need for a new example. Please writing bindings and writing schema
-docs first.
+After U-Boot initializes PCIe with "pcie enum", Linux fails to detect
+an NVMe disk on some boot cycles with:
 
-Best regards,
-Krzysztof
+  phy phy-32f00000.pcie-phy.0: phy poweron failed --> -110
+
+Discussion with NXP identified that the iMX8MP PCIe PHY PLL may fail to
+lock when re-initialized without a reset cycle [1].
+
+The issue reproduces on 7% of tested hardware platforms, with a 30-40%
+failure rate per affected device across boot cycles.
+
+Insert a reset cycle in the power-on routine to ensure the PHY is
+initialized from a known state.
+
+[1] https://community.nxp.com/t5/i-MX-Processors/iMX8MP-PCIe-initialization-in-U-Boot/m-p/2248437#M242401
+
+Signed-off-by: Rafael Beims <rafael.beims@toradex.com>
+Cc: stable@vger.kernel.org
+---
+ drivers/phy/freescale/phy-fsl-imx8m-pcie.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/phy/freescale/phy-fsl-imx8m-pcie.c b/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
+index 68fcc8114d75..7f5600103a00 100644
+--- a/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
++++ b/drivers/phy/freescale/phy-fsl-imx8m-pcie.c
+@@ -89,7 +89,8 @@ static int imx8_pcie_phy_power_on(struct phy *phy)
+ 			writel(imx8_phy->tx_deemph_gen2,
+ 			       imx8_phy->base + PCIE_PHY_TRSV_REG6);
+ 		break;
+-	case IMX8MP: /* Do nothing. */
++	case IMX8MP:
++		reset_control_assert(imx8_phy->reset);
+ 		break;
+ 	}
+ 
+-- 
+2.51.0
 
 
 -- 
