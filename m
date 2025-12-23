@@ -4,70 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5CFD6E6F09F
-	for <linux-phy@archiver.kernel.org>; Tue, 23 Dec 2025 15:48:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8508EE6FE20
+	for <linux-phy@archiver.kernel.org>; Tue, 23 Dec 2025 15:54:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RlT9TFkeCz+he2EcIVxxWQuIq+TNc9PuJPHqKSryHhk=; b=2mf/RR1nqTKb8r
-	Av1moaLGmIFxbSngSqIKpfef5IUYozrJ8/y8BceIzOJXqTgTontXrZ6CZ7UnO+ziKMrOQuU9ifIzo
-	WBcn/pUYJ6ksoRch7vwszMnPGEOVu7JgoUr6AUgoC0Zdv6n2ndbDr38VwUUb+oGdcwH36Aj3wVJs2
-	V8aF6vlLHZR7otsFlKMmsso6HgFwiNd0u607652BbH3gkDQOgsCTqsKv6uW9jScRSwacxVhEg/Sbt
-	WXDN5TAhAS2G5piZfXdNOTJyNn/mFvgpIapSzoTvjKVfO1pAhq6EZOm/YJKy+DXpEkn1Ak7kPPIIG
-	nKVWqkuI1XPeojObjl0Q==;
+	List-Owner; bh=ftq+F3P28i45sDL+oFiLA2SivxU2S5PqI6QEZ54mq5g=; b=1fVUcHq90CZwNg
+	vQcXxCTDEqGiXdffYGcS2asDJX/N80pFbsXk07QAFERodsawqipNotwqBBtSs/roaSDXKqe74AAf+
+	9s1WcDJLla9dWrhZlcPtX/aPpTNKC/xM7EsawiFiFgWKS3xSaOOixADn+NiQBqRepHsfPga6TZRqB
+	O36izZtpzBRBw3Hnd1qrQr54qzKbEUXqe6ggYRecSkXs7gSTn8/xe2ec+++uiNPEeevSQzCFmAG4f
+	QbaBOkXYW79+rPaGoM2LvEQ/C6R6p37CxZbNephfgz/uE/7lh2sFTUIqDOaj879dgX8VwHJRcW1dx
+	+yAfs2nu0O2r8/WOD1RA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vY4cu-0000000FiqO-0VL5;
-	Tue, 23 Dec 2025 15:48:44 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vY4i2-0000000Fj4O-07Zq;
+	Tue, 23 Dec 2025 15:54:02 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vY4cs-0000000Fiq2-249o
+	id 1vY4hz-0000000Fj3x-2yYi
 	for linux-phy@lists.infradead.org;
-	Tue, 23 Dec 2025 15:48:42 +0000
+	Tue, 23 Dec 2025 15:54:00 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 95A506013B;
-	Tue, 23 Dec 2025 15:48:41 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 93DFBC113D0;
-	Tue, 23 Dec 2025 15:48:40 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 016EE40A40;
+	Tue, 23 Dec 2025 15:53:59 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2644DC116C6;
+	Tue, 23 Dec 2025 15:53:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1766504921;
-	bh=PfrdJjYesmSwYkHNAziVHb+UM+TYIC/Of5TWQUotgXk=;
+	s=k20201202; t=1766505238;
+	bh=CZrJo1LdW7bruNZUu+2L6WzM2CBpusjxOX4oWgrjvAg=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=GiSG+bv1Yauo0XY/SVwC94sWXGAB0e13EahM6WsVRmvarK4JsQJTA9WyyYUjdKzDa
-	 CbReXXUsz1ZJbIz2erQZzaDlRO6vUes+66iIwRhtt4pUG2OfYm5+dArQB8eA5g4npH
-	 kYp6HYZpgDLGWulLPLpOay4DmKqCpDbOWO09TkQJoFnz9uKCqqmwRHHn6A9/Sc6Ixf
-	 8Usu6038NjQirmGSO++oXNb7M0iq8IXXcHETEUhuQ5WoUSRqnp6RlAoN4T9v03eHbU
-	 FpDXeINOYJrxIAubQqf4aXDPjlEDFwTZn0rIwJe8aVm44GSgprNv1fB0nvWRNZnd0J
-	 cTqcxFlYJd9ZQ==
-Date: Tue, 23 Dec 2025 21:18:37 +0530
+	b=ML9nBi3A2UxEqoBQvpJw2FYCOwagkl8EmF2lJKZv9Tf3x0t0MNrXw6kXbWS/7OV5C
+	 NrWKOpuV6HgLsf3UgsmQxITSXQMBv05/cmh9m5DAMTPnLz1ouHyKDKe2Wrtai7MmrO
+	 CCDhEltgaIINL00jfFxonf3Pi9bXQi/qkIX7l1g+gLeI2YXHpMAOG5BiPCmeqm+Qz9
+	 GuH3rWjCWp2lhyORyacmg9DJefht43b9N8eqdf/kHAul2ZVdlixE6PWzYfqw9c8zVd
+	 NhANqpA1pmGmX4CXVImx74zY/V0hyl5DmFeZPhZ/pSxc0uyQmlxNVhtDvfw4oxYhGQ
+	 A37UT8IbO3a1A==
+Date: Tue, 23 Dec 2025 21:23:55 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Cc: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
+To: =?iso-8859-1?Q?Th=E9o?= Lebrun <theo.lebrun@bootlin.com>
+Cc: Vladimir Kondratiev <vladimir.kondratiev@mobileye.com>,
+	=?iso-8859-1?Q?Gr=E9gory?= Clement <gregory.clement@bootlin.com>,
 	Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
 	Conor Dooley <conor+dt@kernel.org>,
-	Bjorn Andersson <andersson@kernel.org>,
-	Konrad Dybcio <konradybcio@kernel.org>,
-	Abel Vesa <abelvesa@kernel.org>, Pengyu Luo <mitltlatltl@gmail.com>,
-	Johan Hovold <johan+linaro@kernel.org>,
-	Luca Weiss <luca.weiss@fairphone.com>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
-Subject: Re: [PATCH v3 1/3] dt-bindings: phy: qcom,snps-eusb2-repeater: Add
- squelch param update
-Message-ID: <aUq51TxXwiJE2DWb@vaman>
-References: <20251219173108.2119296-1-krishna.kurapati@oss.qualcomm.com>
- <20251219173108.2119296-2-krishna.kurapati@oss.qualcomm.com>
- <aUqjG4pVXWN3H88N@vaman>
- <bb775051-8635-4e2d-a1f9-46d6f0e6bc15@kernel.org>
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	linux-mips@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-clk@vger.kernel.org,
+	=?iso-8859-1?Q?Beno=EEt?= Monin <benoit.monin@bootlin.com>,
+	Tawfik Bayouk <tawfik.bayouk@mobileye.com>,
+	Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+	Luca Ceresoli <luca.ceresoli@bootlin.com>
+Subject: Re: [PATCH v5 2/7] phy: Add driver for EyeQ5 Ethernet PHY wrapper
+Message-ID: <aUq7E4yh0OgTfdxF@vaman>
+References: <20251215-macb-phy-v5-0-a9dfea39da34@bootlin.com>
+ <20251215-macb-phy-v5-2-a9dfea39da34@bootlin.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <bb775051-8635-4e2d-a1f9-46d6f0e6bc15@kernel.org>
+In-Reply-To: <20251215-macb-phy-v5-2-a9dfea39da34@bootlin.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20251223_075359_795756_F10CA0EC 
+X-CRM114-Status: GOOD (  28.49  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,56 +84,330 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 23-12-25, 15:16, Krzysztof Kozlowski wrote:
-> On 23/12/2025 15:11, Vinod Koul wrote:
-> > On 19-12-25, 23:01, Krishna Kurapati wrote:
-> >> Add squelch detect parameter update for synopsys eusb2 repeater. The
-> >> values (indicated in basis-points) depict a percentage change with
-> >> respect to the nominal value.
-> >>
-> >> Signed-off-by: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
-> >> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
-> >> ---
-> >>  .../devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml | 8 ++++++++
-> >>  1 file changed, 8 insertions(+)
-> >>
-> >> diff --git a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
-> >> index 5bf0d6c9c025..f2afcf0e986a 100644
-> >> --- a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
-> >> +++ b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
-> >> @@ -59,6 +59,14 @@ properties:
-> >>      minimum: 0
-> >>      maximum: 7
-> >>  
-> >> +  qcom,squelch-detector-bp:
-> >> +    description:
-> >> +      This adjusts the voltage level for the threshold used to detect valid
-> >> +      high-speed data.
-> >> +    minimum: -6000
-> > 
-> > 6000Volts, mV, can you please document the units?
-> 
-> 
-> Code is correct, the '-bp' is the unit here. Unless the suffix was
-> chosen incorrectly?
+On 15-12-25, 17:26, Th=E9o Lebrun wrote:
+> EyeQ5 embeds a system-controller called OLB. It features many unrelated
+> registers, and some of those are registers used to configure the
+> integration of the RGMII/SGMII Cadence PHY used by MACB/GEM instances.
+> =
 
-I was hoping it will be commented in the description here.
-For my reference, what is bp and where is it documented ?
+> Wrap in a neat generic PHY provider, exposing two PHYs with standard
+> phy_init() / phy_set_mode() / phy_power_on() operations.
+> =
 
-> 
-> 
-> Best regards,
-> Krzysztof
+> Reviewed-by: Luca Ceresoli <luca.ceresoli@bootlin.com>
+> Signed-off-by: Th=E9o Lebrun <theo.lebrun@bootlin.com>
+> ---
+>  MAINTAINERS                 |   1 +
+>  drivers/phy/Kconfig         |  13 +++
+>  drivers/phy/Makefile        |   1 +
+>  drivers/phy/phy-eyeq5-eth.c | 249 ++++++++++++++++++++++++++++++++++++++=
+++++++
+>  4 files changed, 264 insertions(+)
+> =
 
--- 
+> diff --git a/MAINTAINERS b/MAINTAINERS
+> index 5b11839cba9d..2f67ec9fad57 100644
+> --- a/MAINTAINERS
+> +++ b/MAINTAINERS
+> @@ -17605,6 +17605,7 @@ F:	arch/mips/boot/dts/mobileye/
+>  F:	arch/mips/configs/eyeq5_defconfig
+>  F:	arch/mips/mobileye/board-epm5.its.S
+>  F:	drivers/clk/clk-eyeq.c
+> +F:	drivers/phy/phy-eyeq5-eth.c
+>  F:	drivers/pinctrl/pinctrl-eyeq5.c
+>  F:	drivers/reset/reset-eyeq.c
+>  F:	include/dt-bindings/clock/mobileye,eyeq5-clk.h
+> diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
+> index 678dd0452f0a..1aa6eff12dbc 100644
+> --- a/drivers/phy/Kconfig
+> +++ b/drivers/phy/Kconfig
+> @@ -101,6 +101,19 @@ config PHY_NXP_PTN3222
+>  	  schemes. It supports all three USB 2.0 data rates: Low Speed, Full
+>  	  Speed and High Speed.
+>  =
+
+> +config PHY_EYEQ5_ETH
+
+sorted please
+
+> +	tristate "Ethernet PHY Driver on EyeQ5"
+> +	depends on OF
+> +	depends on MACH_EYEQ5 || COMPILE_TEST
+> +	select AUXILIARY_BUS
+> +	select GENERIC_PHY
+> +	default MACH_EYEQ5
+
+hmmm why should it be default? Maybe add this is respective defconfig for
+platform instead..?
+
+> +	help
+> +	  Enable this to support the Ethernet PHY integrated on EyeQ5.
+> +	  It supports both RGMII and SGMII. Registers are located in a
+> +	  shared register region called OLB. If M is selected, the
+> +	  module will be called phy-eyeq5-eth.
+> +
+>  source "drivers/phy/allwinner/Kconfig"
+>  source "drivers/phy/amlogic/Kconfig"
+>  source "drivers/phy/broadcom/Kconfig"
+> diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
+> index bfb27fb5a494..8289497ece55 100644
+> --- a/drivers/phy/Makefile
+> +++ b/drivers/phy/Makefile
+> @@ -13,6 +13,7 @@ obj-$(CONFIG_PHY_SNPS_EUSB2)		+=3D phy-snps-eusb2.o
+>  obj-$(CONFIG_USB_LGM_PHY)		+=3D phy-lgm-usb.o
+>  obj-$(CONFIG_PHY_AIROHA_PCIE)		+=3D phy-airoha-pcie.o
+>  obj-$(CONFIG_PHY_NXP_PTN3222)		+=3D phy-nxp-ptn3222.o
+> +obj-$(CONFIG_PHY_EYEQ5_ETH)		+=3D phy-eyeq5-eth.o
+
+sorted please
+
+>  obj-y					+=3D allwinner/	\
+>  					   amlogic/	\
+>  					   broadcom/	\
+> diff --git a/drivers/phy/phy-eyeq5-eth.c b/drivers/phy/phy-eyeq5-eth.c
+> new file mode 100644
+> index 000000000000..6e28f7e24835
+> --- /dev/null
+> +++ b/drivers/phy/phy-eyeq5-eth.c
+> @@ -0,0 +1,249 @@
+> +// SPDX-License-Identifier: GPL-2.0-only
+> +
+> +#include <linux/auxiliary_bus.h>
+> +#include <linux/bitfield.h>
+> +#include <linux/bits.h>
+> +#include <linux/delay.h>
+> +#include <linux/device.h>
+> +#include <linux/err.h>
+> +#include <linux/errno.h>
+> +#include <linux/gfp_types.h>
+> +#include <linux/init.h>
+> +#include <linux/io.h>
+> +#include <linux/iopoll.h>
+> +#include <linux/mod_devicetable.h>
+> +#include <linux/module.h>
+> +#include <linux/of.h>
+> +#include <linux/phy.h>
+> +#include <linux/phy/phy.h>
+> +#include <linux/slab.h>
+> +#include <linux/types.h>
+> +
+> +#define EQ5_PHY_COUNT	2
+> +
+> +#define EQ5_PHY0_GP	0x128
+> +#define EQ5_PHY1_GP	0x12c
+> +#define EQ5_PHY0_SGMII	0x134
+> +#define EQ5_PHY1_SGMII	0x138
+> +
+> +#define EQ5_GP_TX_SWRST_DIS	BIT(0)		// Tx SW reset
+> +#define EQ5_GP_TX_M_CLKE	BIT(1)		// Tx M clock enable
+> +#define EQ5_GP_SYS_SWRST_DIS	BIT(2)		// Sys SW reset
+> +#define EQ5_GP_SYS_M_CLKE	BIT(3)		// Sys clock enable
+> +#define EQ5_GP_SGMII_MODE	BIT(4)		// SGMII mode
+> +#define EQ5_GP_RGMII_DRV	GENMASK(8, 5)	// RGMII drive strength
+> +
+> +#define EQ5_SGMII_PWR_EN	BIT(0)
+> +#define EQ5_SGMII_RST_DIS	BIT(1)
+> +#define EQ5_SGMII_PLL_EN	BIT(2)
+> +#define EQ5_SGMII_SIG_DET_SW	BIT(3)
+> +#define EQ5_SGMII_PWR_STATE	BIT(4)
+> +#define EQ5_SGMII_PLL_ACK	BIT(18)
+> +#define EQ5_SGMII_PWR_STATE_ACK	GENMASK(24, 20)
+> +
+> +struct eq5_phy_inst {
+> +	struct eq5_phy_private	*priv;
+> +	struct phy		*phy;
+> +	void __iomem		*gp, *sgmii;
+> +	phy_interface_t		phy_interface;
+> +};
+> +
+> +struct eq5_phy_private {
+> +	struct device		*dev;
+> +	struct eq5_phy_inst	phys[EQ5_PHY_COUNT];
+> +};
+> +
+> +static int eq5_phy_init(struct phy *phy)
+> +{
+> +	struct eq5_phy_inst *inst =3D phy_get_drvdata(phy);
+> +	struct eq5_phy_private *priv =3D inst->priv;
+> +	struct device *dev =3D priv->dev;
+> +	u32 reg;
+> +
+> +	dev_dbg(dev, "phy_init(inst=3D%td)\n", inst - priv->phys);
+> +
+> +	writel(0, inst->gp);
+> +	writel(0, inst->sgmii);
+> +
+> +	udelay(5);
+> +
+> +	reg =3D readl(inst->gp) | EQ5_GP_TX_SWRST_DIS | EQ5_GP_TX_M_CLKE |
+> +	      EQ5_GP_SYS_SWRST_DIS | EQ5_GP_SYS_M_CLKE |
+> +	      FIELD_PREP(EQ5_GP_RGMII_DRV, 0x9);
+> +	writel(reg, inst->gp);
+> +
+> +	return 0;
+> +}
+> +
+> +static int eq5_phy_exit(struct phy *phy)
+> +{
+> +	struct eq5_phy_inst *inst =3D phy_get_drvdata(phy);
+> +	struct eq5_phy_private *priv =3D inst->priv;
+> +	struct device *dev =3D priv->dev;
+> +
+> +	dev_dbg(dev, "phy_exit(inst=3D%td)\n", inst - priv->phys);
+> +
+> +	writel(0, inst->gp);
+> +	writel(0, inst->sgmii);
+> +	udelay(5);
+
+this is same patter in init as well...?
+
+> +
+> +	return 0;
+> +}
+> +
+> +static int eq5_phy_set_mode(struct phy *phy, enum phy_mode mode, int sub=
+mode)
+> +{
+> +	struct eq5_phy_inst *inst =3D phy_get_drvdata(phy);
+> +	struct eq5_phy_private *priv =3D inst->priv;
+> +	struct device *dev =3D priv->dev;
+> +
+> +	dev_dbg(dev, "phy_set_mode(inst=3D%td, mode=3D%d, submode=3D%d)\n",
+> +		inst - priv->phys, mode, submode);
+
+these are good for debug but not for upstream, please drop
+
+> +
+> +	if (mode !=3D PHY_MODE_ETHERNET)
+> +		return -EOPNOTSUPP;
+> +
+> +	if (!phy_interface_mode_is_rgmii(submode) &&
+> +	    submode !=3D PHY_INTERFACE_MODE_SGMII)
+> +		return -EOPNOTSUPP;
+> +
+> +	inst->phy_interface =3D submode;
+> +	return 0;
+> +}
+> +
+> +static int eq5_phy_power_on(struct phy *phy)
+> +{
+> +	struct eq5_phy_inst *inst =3D phy_get_drvdata(phy);
+> +	struct eq5_phy_private *priv =3D inst->priv;
+> +	struct device *dev =3D priv->dev;
+> +	u32 reg;
+> +
+> +	dev_dbg(dev, "phy_power_on(inst=3D%td)\n", inst - priv->phys);
+> +
+> +	if (inst->phy_interface =3D=3D PHY_INTERFACE_MODE_SGMII) {
+> +		writel(readl(inst->gp) | EQ5_GP_SGMII_MODE, inst->gp);
+> +
+> +		reg =3D EQ5_SGMII_PWR_EN | EQ5_SGMII_RST_DIS | EQ5_SGMII_PLL_EN;
+> +		writel(reg, inst->sgmii);
+> +
+> +		if (readl_poll_timeout(inst->sgmii, reg,
+> +				       reg & EQ5_SGMII_PLL_ACK, 1, 100)) {
+> +			dev_err(dev, "PLL timeout\n");
+> +			return -ETIMEDOUT;
+> +		}
+> +
+> +		reg =3D readl(inst->sgmii);
+> +		reg |=3D EQ5_SGMII_PWR_STATE | EQ5_SGMII_SIG_DET_SW;
+> +		writel(reg, inst->sgmii);
+> +	} else {
+> +		writel(readl(inst->gp) & ~EQ5_GP_SGMII_MODE, inst->gp);
+> +		writel(0, inst->sgmii);
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static int eq5_phy_power_off(struct phy *phy)
+> +{
+> +	struct eq5_phy_inst *inst =3D phy_get_drvdata(phy);
+> +	struct eq5_phy_private *priv =3D inst->priv;
+> +	struct device *dev =3D priv->dev;
+> +
+> +	dev_dbg(dev, "phy_power_off(inst=3D%td)\n", inst - priv->phys);
+> +
+> +	writel(readl(inst->gp) & ~EQ5_GP_SGMII_MODE, inst->gp);
+> +	writel(0, inst->sgmii);
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct phy_ops eq5_phy_ops =3D {
+> +	.init		=3D eq5_phy_init,
+> +	.exit		=3D eq5_phy_exit,
+> +	.set_mode	=3D eq5_phy_set_mode,
+> +	.power_on	=3D eq5_phy_power_on,
+> +	.power_off	=3D eq5_phy_power_off,
+> +};
+> +
+> +static struct phy *eq5_phy_xlate(struct device *dev,
+> +				 const struct of_phandle_args *args)
+> +{
+> +	struct eq5_phy_private *priv =3D dev_get_drvdata(dev);
+> +
+> +	if (args->args_count !=3D 1 || args->args[0] >=3D EQ5_PHY_COUNT)
+> +		return ERR_PTR(-EINVAL);
+> +
+> +	return priv->phys[args->args[0]].phy;
+> +}
+> +
+> +static int eq5_phy_probe_phy(struct eq5_phy_private *priv, unsigned int =
+index,
+> +			     void __iomem *base, unsigned int gp,
+> +			     unsigned int sgmii)
+> +{
+> +	struct eq5_phy_inst *inst =3D &priv->phys[index];
+> +	struct device *dev =3D priv->dev;
+> +	struct phy *phy;
+> +
+> +	phy =3D devm_phy_create(dev, dev->of_node, &eq5_phy_ops);
+> +	if (IS_ERR(phy))
+> +		return dev_err_probe(dev, PTR_ERR(phy),
+> +				     "failed to create PHY %u\n", index);
+> +
+> +	inst->priv =3D priv;
+> +	inst->phy =3D phy;
+> +	inst->gp =3D base + gp;
+> +	inst->sgmii =3D base + sgmii;
+> +	inst->phy_interface =3D PHY_INTERFACE_MODE_NA;
+> +	phy_set_drvdata(phy, inst);
+> +
+> +	return 0;
+> +}
+> +
+> +static int eq5_phy_probe(struct auxiliary_device *adev,
+> +			 const struct auxiliary_device_id *id)
+> +{
+> +	struct device *dev =3D &adev->dev;
+> +	struct phy_provider *provider;
+> +	struct eq5_phy_private *priv;
+> +	void __iomem *base;
+> +	int ret;
+> +
+> +	priv =3D devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
+> +	if (!priv)
+> +		return -ENOMEM;
+> +
+> +	priv->dev =3D dev;
+> +	dev_set_drvdata(dev, priv);
+> +
+> +	base =3D (void __iomem *)dev_get_platdata(dev);
+
+no need to cast for void *
+-- =
+
 ~Vinod
 
--- 
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
