@@ -4,70 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4C0EAE6F086
-	for <linux-phy@archiver.kernel.org>; Tue, 23 Dec 2025 17:44:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 87489E6FE28
+	for <linux-phy@archiver.kernel.org>; Tue, 23 Dec 2025 17:44:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QkPweCsH/qa2k4c6PcqF8FbUAxDBSiVmmKBwpYnM8uQ=; b=nQg8OQWcnUMono
-	WCkQRDL5TCtHSzE7iaOQwFMJP8bIpvakK4F2fNPrbFTzEdJCoeNpVw0vAmoO6NuS3HRIhP5gQZ3QP
-	EJQuHwzWE2TeCUWW5Fa6u2p8Z+j+3T+IEKvtpJIDXQPVW93e5fVE7J/ajG4dFIg6+AUYPFPCbnnAZ
-	piCppPZu5HQl9TlQ06Ts++jLLOsmbAKKFmfZ8W/+xweUBowl9+eKVNUO5zjy0UqB0gtIh+LnH8kLi
-	my2SzZFAnajbMDgRWqrVXnduocIlcBum5jkTshx4oYTtqQjBhkE8y1Sd5QPCRQmY9KLEZ7+4PeG8T
-	3CjmxRPw4B9aMZu1SmQA==;
+	List-Owner; bh=81hqvZbYXX4P6Cqlj90I2+eSxaVJrxKX6xnrF8Tuqzo=; b=vLYq0Myl5ba0DS
+	oH38BCxU2V18eVbv/t1ROfEXk/4EAe0RvTEmk6Fn7+DIY0GwnythvlMbKIlmFLpoKetGCfAVaR0N/
+	WlPer0AsyCV7O5nXHcyF/ps2s4acu297JG+gtpLBcV0UyS+eeEMUQOCiBIq3hC/S+q29EAxSiotN/
+	9U6/hRvLEVzUVEFZdGYr6rAreg/25+LBslytl2pQBVJtZeGDzRfavcBZ9DJiUXEAQQdEzRyfJ8ir6
+	FGhI3coUWJiWbRJLXUXprZNx75CRkPicWxb2L7Ne0e9mD+NMvSgpKm/zWUc8KHu8+E795mYyMSYK3
+	wby6BruKpF+3iClGDd6A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vY6RD-0000000FqwT-05OJ;
-	Tue, 23 Dec 2025 17:44:47 +0000
+	id 1vY6RH-0000000Fqzi-1AmK;
+	Tue, 23 Dec 2025 17:44:51 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vY6R8-0000000FqtB-1c1o;
-	Tue, 23 Dec 2025 17:44:43 +0000
+	id 1vY6RE-0000000Fqx9-0pZQ;
+	Tue, 23 Dec 2025 17:44:49 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 0D4CB4085E;
+	by sea.source.kernel.org (Postfix) with ESMTP id C36AE43913;
+	Tue, 23 Dec 2025 17:44:47 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 86FFEC116D0;
 	Tue, 23 Dec 2025 17:44:42 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0F482C116D0;
-	Tue, 23 Dec 2025 17:44:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1766511881;
-	bh=PLc3ggjOm8pNxE0mUFygpy5myL/Add/ECkFcmWDsJv4=;
+	s=k20201202; t=1766511887;
+	bh=u9s4C03Sf2XKogwbD7mhFLbiulZJk9l/PuE/DfgTUVI=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=fTamgbyDxueAuqzoR9INSRwthaBzUMhXpEdygryva+7DYO4SeZMDwBavCCXhjiJdH
-	 hcZcpyiGn9+XeMsDkXGtt5gkMIOsgfycGsGnykYFyDdB6HsLBViAUZlaRXnYHGwv2k
-	 r7U9QTD33CDFoKVGEx0k8DHHPuUe5sS7q9FrQBIxSIFce+VlzxfcqaUYqVUZeh3+ZQ
-	 AgRrp/701JuNokeo489S5Dq7Pdqlu8Bjo9seUYBU6gEV47ORyhiUvquWz5cfDzRFhw
-	 LMKbW/UmYQkyYFs3mOdDEafdTF1BqQ+Tlf7MERjlytvEuTLM/rfYrYFsnuvg+vtBKc
-	 jVn6whfYs3j0Q==
+	b=nqI2BwH0sU7SrGT8Feun1SdQnIrOMtoS82VK5TGHE+bHyxzvzGJevsNDBj6Iz//5T
+	 XjzpQ/FuDQchSCnvEX4XjhZQlJwr1xK3SXGKs3CIAN0KoRs0nIoALL9h4l7+xCDrAx
+	 VQzTZ4TeBPhAFGTbaOJ7UIehh/xbaPEVx3aJJ1bvUI6smkVzZ8uHK1tbE1/+zvx13+
+	 HPbQavT1kqbYXV6/A/T0Ot/Zw9XdulPBQuSOHlnDa6ASCDcZhagK0tEU9p5c5ehWyl
+	 xaJ1pSTo+2L9mYNGAEkkAzft9RjRwOXV/EIe23CTIwRf6fmC/JDKPgrw50RRxmcU27
+	 CDh3MO16zqAug==
 From: Vinod Koul <vkoul@kernel.org>
-To: Chunfeng Yun <chunfeng.yun@mediatek.com>, 
- Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Matthias Brugger <matthias.bgg@gmail.com>, 
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
- Chun-Kuang Hu <chunkuang.hu@kernel.org>, 
- Philipp Zabel <p.zabel@pengutronix.de>, 
- Guillaume Ranquet <granquet@baylibre.com>, 
- Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>
-Cc: kernel@collabora.com, Krzysztof Kozlowski <krzk@kernel.org>, 
- linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org, 
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, 
- =?utf-8?q?N=C3=ADcolas_F=2E_R=2E_A=2E_Prado?= <nfraprado@collabora.com>
-In-Reply-To: <20251217-mtk-genio-evk-hdmi-support-v2-0-a994976bb39a@collabora.com>
-References: <20251217-mtk-genio-evk-hdmi-support-v2-0-a994976bb39a@collabora.com>
-Subject: Re: (subset) [PATCH v2 00/12] Add HDMI support for Mediatek Genio
- 510/700/1200-EVK and Radxa NIO-12L boards
-Message-Id: <176651187669.759340.13955241073309104035.b4-ty@kernel.org>
-Date: Tue, 23 Dec 2025 23:14:36 +0530
+To: dlan@gentoo.org, robh@kernel.org, krzk+dt@kernel.org, 
+ conor+dt@kernel.org, kishon@kernel.org, Alex Elder <elder@riscstar.com>
+Cc: ziyao@disroot.org, aurelien@aurel32.net, johannes@erdfelt.com, 
+ pjw@kernel.org, palmer@dabbelt.com, aou@eecs.berkeley.edu, alex@ghiti.fr, 
+ p.zabel@pengutronix.de, guodong@riscstar.com, devicetree@vger.kernel.org, 
+ linux-phy@lists.infradead.org, spacemit@lists.linux.dev, 
+ linux-riscv@lists.infradead.org, linux-kernel@vger.kernel.org
+In-Reply-To: <20251218151235.454997-1-elder@riscstar.com>
+References: <20251218151235.454997-1-elder@riscstar.com>
+Subject: Re: (subset) [PATCH v7 0/5] Introduce SpacemiT K1 PCIe phy support
+Message-Id: <176651188218.759340.4259216266995514459.b4-ty@kernel.org>
+Date: Tue, 23 Dec 2025 23:14:42 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251223_094442_448928_8EF8CFC2 
-X-CRM114-Status: UNSURE (   7.66  )
+X-CRM114-CacheID: sfid-20251223_094448_285875_2BD9BF91 
+X-CRM114-Status: UNSURE (   6.80  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -86,24 +77,24 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Wed, 17 Dec 2025 11:18:59 +0100, Louis-Alexis Eyraud wrote:
-> This patch series adds and enables the HDMI output support for the
-> following boards:
-> - Mediatek Genio 510-EVK (MT8370)
-> - Mediatek Genio 700-EVK (MT8390)
-> - Mediatek Genio 1200-EVK (MT8395)
-> - Radxa NIO-12L (MT8395)
+On Thu, 18 Dec 2025 09:12:26 -0600, Alex Elder wrote:
+> This series introduces a PHY driver to support PCIe on the SpacemiT K1
+> SoC.  The PCIe controller implementation is derived from a Synopsys
+> DesignWare PCIe IP.  The PHY driver supports one combination PCIe/USB
+> PHY as well as two PCIe-only PHYs.  The combo PHY port uses one PCIe
+> lane, and the other two ports each have two lanes.  All PCIe ports
+> operate at 5 GT/second.
 > 
 > [...]
 
 Applied, thanks!
 
-[01/12] dt-bindings: phy: mediatek,hdmi-phy: Fix clock output names for MT8195
-        commit: 65790df6dcd2f41fab2288ed3d2c3bca00d8dfd4
-[02/12] dt-bindings: phy: mediatek,hdmi-phy: Add support for MT8188 SoC
-        commit: 6226f616c8e9ac30c294b86ff59e3a9566e2a8d0
-[03/12] dt-bindings: phy: mediatek,hdmi-phy: Document extra clocks for MT8195
-        commit: ff89cea2385b6236790f3be2727d9ae527daf4a0
+[1/5] dt-bindings: phy: spacemit: Add SpacemiT PCIe/combo PHY
+      commit: f6194de7df023ecfd5156caf8e2762487be07ef7
+[2/5] dt-bindings: phy: spacemit: Introduce PCIe PHY
+      commit: 326a278a3682d390269699f68e597b5ef5a57d26
+[3/5] phy: spacemit: Introduce PCIe/combo PHY
+      commit: 57e920b92724dd568526990c04e79ed54241c5fc
 
 Best regards,
 -- 
