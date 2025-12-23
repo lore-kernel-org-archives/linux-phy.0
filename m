@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9B0F0E6F090
-	for <linux-phy@archiver.kernel.org>; Tue, 23 Dec 2025 14:08:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 22981E6F090
+	for <linux-phy@archiver.kernel.org>; Tue, 23 Dec 2025 14:08:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=44cv+eMkgQD+PyrwqWYBSR3TE/iG8GmzHD8xFJG/XuE=; b=ASkz+un60yzcVN
-	mhtkfhKENvQ7FvUcSwyAn0HGOLE8fUzmX4lDTqOMciDlHCGdyfV1a5ZZbj2U5wJ5+2jaIQpPaL2Hr
-	N/IYk06OjDQEABh0uKeKZiv/QTvl5sIkfV65+ULaXv/ClIH8qQ0aY769NF/t3kLneb7HRbkquCjVw
-	ynTTtSIzD3CFI7PEtdAUExKDHvGLS9aHjsVGPxuZooqzdNEbtegx0ZXJ318DxxuRLkbx8sgIPhZ/9
-	ZxqA2Wm7lx1JP2btqYEVa53OjyAIuksKZFCodi1FjQZ0RJa+ML/mZ/lS8QeSj59t5ROdE5Mu+0q3d
-	L9Mwbk1b9ltkkQOLvvOg==;
+	List-Owner; bh=xfDVoJdrJXiV91nkZdemEXDubYkVdZh6PkDxSzu0u5A=; b=k2cNRNJERCN8j9
+	9Fk1k6tIC65JcSju70yRnxmmgyJQ32IkszvRgL8I6WfchHLlv3m7hHp7KdThh9vfeYGuhde3/yxEt
+	TSe1bxFQ7hNXi0aIaE3Q3cQR6UEhh7x/RM40PVInD2hgkZ/syAWXMPTrgMtdvVzMdAf+8wDJEWcQf
+	QNL4TGZz9yKUKQi/HxGNOzlqFs7dELA2RFqUiARDwtaTLINsNpLsgtgYibgeXXVnRXXZh3gsbb4tp
+	3vjN3kfmEBdRBw5XVlo01tyMGCK+DegY4L4p0k8LeoUagWIPgIYnwCuECWDLMjOhuuT9uabWv+Vq+
+	q270yUg3Vy74psvJ/6/A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vY347-0000000Fa4l-0hzC;
-	Tue, 23 Dec 2025 14:08:43 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1vY34M-0000000FaA1-1LGA;
+	Tue, 23 Dec 2025 14:08:58 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vY344-0000000Fa47-1eF0
+	id 1vY34K-0000000Fa9T-1kMc
 	for linux-phy@lists.infradead.org;
-	Tue, 23 Dec 2025 14:08:41 +0000
+	Tue, 23 Dec 2025 14:08:56 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 0B99C4417B;
-	Tue, 23 Dec 2025 14:08:40 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 35536C116C6;
-	Tue, 23 Dec 2025 14:08:39 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 51DDB6013B;
+	Tue, 23 Dec 2025 14:08:55 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4A539C116D0;
+	Tue, 23 Dec 2025 14:08:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1766498919;
-	bh=MdmWcNW1Zb6GLJFXqBycbEfFaJZYZafZJCbHnv8TMLk=;
+	s=k20201202; t=1766498935;
+	bh=5qmy0n6c+VcfOh3+PZggyom8IE8rgbXoja6CYarjlfU=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=ZZ3qXTKfL5NsvljqiD4YQMx11IsCJ/azyd94EbwtPLo5gJ4ebMwxEKETsqhz1RQoX
-	 BgIE7C4jJecy0JFFch5tJlp2gUBVhLUcdO7gytSPcEIJrvSm0XkA/m4u5DwRBrownB
-	 +k6UEgOxbFAZCQ2Wd4HrQZfsJjn7ZBsgFhDnz5JE+pqh4yA/m+rsxtfFN6xdB8ZbMA
-	 0ixRaQ1WFk+UYeTaa+Mxws4V1ZkdcyR+ZKZ+cP2XAUnn1M+Q6VS8zFEZAdwxfVsE3F
-	 qSTAzTDnjOVt8nay9XTMyLWudpNgYCmh6fdmdp5mmWESY2UIk5Rn4+gQj7LearY1Lw
-	 Jn7LiA79jIWWg==
-Date: Tue, 23 Dec 2025 19:38:36 +0530
+	b=QiAvrOSXialvakW8plMcuE0l/1cFOMyvnBebndbziROuJmBlXlXTJhclBPDiWvQ6T
+	 UzEVGnRxJPeD0+cW2i3/0bPJFVgabcVeuMvePN8KnWxQXLiazG40a8obuPUs+Ci3dK
+	 O2PX4oQWDjog7IjcWRtVOC7vkwB5MUzSNZuWkaXyQmLA3971XmtvFf0I8UBCpHrSrn
+	 U9giHSKsJQz3I/t5dDYiNbbIgzYkQV3kghU8BK018tYkhj5W8a2eDs3vNlKVNKoxPB
+	 jCrKFtDLYCG0wlC3q4iDt6iMn8wmB3g3neNy9KibEbQhZOyllAieKjm28URTKKyINr
+	 61PkaiBy1pIEA==
+Date: Tue, 23 Dec 2025 19:38:51 +0530
 From: Vinod Koul <vkoul@kernel.org>
 To: Josua Mayer <josua@solid-run.com>
 Cc: Ulf Hansson <ulf.hansson@linaro.org>, Rob Herring <robh@kernel.org>,
@@ -68,18 +68,14 @@ Cc: Ulf Hansson <ulf.hansson@linaro.org>, Rob Herring <robh@kernel.org>,
 	linux-renesas-soc@vger.kernel.org, linux-can@vger.kernel.org,
 	linux-phy@lists.infradead.org, linux-omap@vger.kernel.org,
 	linux-i2c@vger.kernel.org
-Subject: Re: [PATCH v3 1/6] phy: can-transceiver: rename temporary helper
- function to avoid conflict
-Message-ID: <aUqiZOco5brL71bx@vaman>
+Subject: Re: [PATCH v3 3/6] phy: can-transceiver: drop temporary helper
+ getting optional mux-state
+Message-ID: <aUqic6tjQVPiY1yO@vaman>
 References: <20251210-rz-sdio-mux-v3-0-ca628db56d60@solid-run.com>
- <20251210-rz-sdio-mux-v3-1-ca628db56d60@solid-run.com>
+ <20251210-rz-sdio-mux-v3-3-ca628db56d60@solid-run.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20251210-rz-sdio-mux-v3-1-ca628db56d60@solid-run.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251223_060840_451690_7C56C741 
-X-CRM114-Status: UNSURE (   5.27  )
-X-CRM114-Notice: Please train this message.
+In-Reply-To: <20251210-rz-sdio-mux-v3-3-ca628db56d60@solid-run.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,8 +93,8 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 10-12-25, 18:38, Josua Mayer wrote:
-> Rename the temporary devm_mux_state_get_optional function to avoid
-> conflict with upcoming implementation in multiplexer subsystem.
+> Multiplexer subsystem has now added helpers for getting managed optional
+> mux-state.
 
 Acked-by: Vinod Koul <vkoul@kernel.org>
 
