@@ -4,64 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 98F25E6F071
-	for <linux-phy@archiver.kernel.org>; Tue, 23 Dec 2025 08:37:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46836E6B272
+	for <linux-phy@archiver.kernel.org>; Tue, 23 Dec 2025 12:09:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wVvKJZU7T20Dmc4p0AgWaIgvYJbvp50jRgoAc0H++30=; b=3ttENJUIXtjn79
-	52r8W7hGSZnY9enM5vwiiNcpotUkhT38ykFDGmEopqxTwAL4EY2JNhpSxeMQBeL/8Gu6o7saRadcK
-	5RuXfKPhwB0xO2q6m+QeD4lxy1lerebqhiLj2G2KAHeGxBD+k3O1F8rQ8pMwtXFIEkle8/oQVR42Z
-	Ag5KhJxVTuN/AjRTEGkujs4rdNUsyIyFVCz7H88FPWplyT5fL/kdaelSAPzvr964tZExOkc8YC57R
-	PcomoEOZXcIpWKuiylBmybs5Y0cce9yE06SIFbNzOvBXV/ZAGsK/AEW/wNVA4JpTgucPXmc8Xo797
-	8DYX7UwZDLApcQgWMDpg==;
+	List-Owner; bh=OZbDFiWRtfjixtlQ8UWFL+GBhfdSz+KnvBZ6uIcq7tA=; b=LmR60ziGyPUkIr
+	jOovmpUK0ihbK5dO5Z1Y0NWqnWMBu8ROJ6MS5RXbEudV/7lg7Lk7NOSIgJ4/e8oNctLfocoL8cgMK
+	CFyJ0LKZ49e5lHzJn0JDMpxWH5xVB2y5CwGRLuGLYlHgQRABqv/FLcWH30nzj5wj+oRv3ktyCRbbh
+	8ArXMo98fr7mIKPOGiy2KzbWM2Xc+EbrcRit2NEiIezQOb0uo7nSMInItrd7UnMGTl4+QghER44oR
+	UnrYysYm34xIMqdOUFlctCsxV84B0qo7eVcgojp2CxxxjuLKAu6DnwzEhsSKrXE91G6EnP6VlUQ2k
+	e6Z8y0iOKSAhE238bNdA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vXxtn-0000000EgiK-2JtJ;
-	Tue, 23 Dec 2025 08:37:43 +0000
-Received: from mail11.truemail.it ([217.194.8.81])
+	id 1vY1Cf-0000000FOp6-1gxj;
+	Tue, 23 Dec 2025 12:09:25 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vXxti-0000000Egh3-2XgF;
-	Tue, 23 Dec 2025 08:37:41 +0000
-Received: from francesco-nb (xcpe-178-82-120-96.dyn.res.sunrise.net [178.82.120.96])
-	by mail11.truemail.it (Postfix) with ESMTPA id 75CBB1FA65;
-	Tue, 23 Dec 2025 09:37:30 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dolcini.it;
-	s=default; t=1766479051;
-	bh=8wuJHDWjaGLzXiqjbQ5KAqwu4/yLolE49hadsWsYnko=; h=From:To:Subject;
-	b=LsYd986y7/LfVxODKxkxdM5aXB2gjX4iwNaf0oAmaFBcA197ohCba+C/DTd+oNO3d
-	 RX5hKR5by9NkKfnrqcl+PO9rReCmhnjQjE4m0y33VaeGEnOnq7z9BRs5sSACVuirwr
-	 YDT03Mt88p5bq+wC414JpVEPkhTfc4I79FhXWol013I/HDFqn4+9w2e/Edd+Iv6a7l
-	 kVOhu6KtDki1QAow1qszh9uwE8ML5JWW0F81RQ0XwyV0HFc9bh9a6L6bHBJYCQkc6s
-	 Felrmzyst9VlG97uAQTOzRuDAauh8hWzE/KInMbppa+9EYZPDiHQ4AlbHlQjVR44U2
-	 c7TrSQpvl7Rig==
-Date: Tue, 23 Dec 2025 09:37:26 +0100
-From: Francesco Dolcini <francesco@dolcini.it>
-To: Vinod Koul <vkoul@kernel.org>, Franz Schnyder <fra.schnyder@gmail.com>
-Cc: Kishon Vijay Abraham I <kishon@kernel.org>,
-	Shawn Guo <shawnguo@kernel.org>,
-	Sascha Hauer <s.hauer@pengutronix.de>,
-	Pengutronix Kernel Team <kernel@pengutronix.de>,
-	Fabio Estevam <festevam@gmail.com>,
-	Franz Schnyder <franz.schnyder@toradex.com>,
-	linux-phy@lists.infradead.org, imx@lists.linux.dev,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
-	Francesco Dolcini <francesco.dolcini@toradex.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>, stable@vger.kernel.org,
-	Xu Yang <xu.yang_2@nxp.com>
-Subject: Re: [PATCH v2] phy: fsl-imx8mq-usb: fix typec orientation switch
- when built as module
-Message-ID: <20251223083726.GA24283@francesco-nb>
-References: <20251126140136.1202241-1-fra.schnyder@gmail.com>
+	id 1vY18U-0000000FJcs-1qOS;
+	Tue, 23 Dec 2025 12:05:06 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
+	:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=vvoXd0olczu9y6nMznlZ+Q9E5vlmItS5Dhf1dTQ+L50=; b=U+KYDNaEUHfrGNKfImMM68nv/n
+	Vo1S8cVJV+qHh8OOpg7c3D6dPEdlYkYKBkKsDPr70d1pG9l2vbp4weelAki3vtF3v1tC5FQ8pfgt5
+	HuQ6zZ0j2a6ehjymkyfvuyl1+BRDnq25mfdBI+GGax6w8dRE6ExGAKIJntamm69Q8vtnxKb/H3Opc
+	wanwb4u3mCs6t+kb8t2iMG1uNrjwYhp9hnrK5vuNB4C6dF7XN+Hh1xXJVAq5ewKSSqtVlDp5LCBiJ
+	rJ/yeVW7a3LqcsWkldSxFLT2UJ8Qo+ct6n5N0hNvV0w7L6SO/SS6ZkqiaPCsS8yB/uhzL/nhm0oT7
+	0JVk61Kg==;
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1vY0Gy-0000000GgzE-0aQ0;
+	Tue, 23 Dec 2025 11:09:51 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1766491495;
+	bh=YBuvzt/NhTYWhzP+XmcIESOEGPy6LMoYjTaUBOofg0o=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=jEOrOCkFycldj1VQlKzLPZ2QbJwhvQDjQ9yat1fYpn21EmGho3vxEKzrBIKqTYatI
+	 wqSjnv9K40+cNzQB2bqONNJEB6cXB3g1My5TnMbmFuLkROFSqxxBBrj+gu2GFpbOEd
+	 9b2U3/U8XN1BWup+cbV00mXqXJ+BuSgZQLsiO4nRgjgtErolMNBK0Dyxbunhor64GA
+	 aXFyXyDhtJjKVOofDnRzC32Xfl9P8s3gEeUJ/5Hr2UtVtwcgef74+C7j2/SYcLJlRU
+	 +/un8LadHThntKUc7/SgNGBZKMt7ceYLm4eWpDWFg759Rtk9W0IaDBOZ+/KQZ/D73o
+	 6d6/oofkxuPkQ==
+Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: kholk11)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id D93B617E0125;
+	Tue, 23 Dec 2025 13:04:53 +0100 (CET)
+Message-ID: <ddff4617-884d-4ac2-bc24-28f669104b2e@collabora.com>
+Date: Tue, 23 Dec 2025 13:04:53 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20251126140136.1202241-1-fra.schnyder@gmail.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v4 00/25] MediaTek UFS Cleanup and MT8196 Enablement
+To: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>,
+ Alim Akhtar <alim.akhtar@samsung.com>, Avri Altman <avri.altman@wdc.com>,
+ Bart Van Assche <bvanassche@acm.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Peter Wang <peter.wang@mediatek.com>, Stanley Jhu <chu.stanley@gmail.com>,
+ "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
+ "Martin K. Petersen" <martin.petersen@oracle.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Liam Girdwood <lgirdwood@gmail.com>,
+ Mark Brown <broonie@kernel.org>, Chaotian Jing <Chaotian.Jing@mediatek.com>,
+ Neil Armstrong <neil.armstrong@linaro.org>
+Cc: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>,
+ kernel@collabora.com, linux-scsi@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
+ linux-phy@lists.infradead.org
+References: <20251218-mt8196-ufs-v4-0-ddec7a369dd2@collabora.com>
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Content-Language: en-US
+In-Reply-To: <20251218-mt8196-ufs-v4-0-ddec7a369dd2@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251223_003739_746080_A443208C 
-X-CRM114-Status: GOOD (  10.38  )
+X-CRM114-CacheID: sfid-20251223_110948_312948_4D1BE512 
+X-CRM114-Status: GOOD (  24.83  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,35 +98,76 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello Vinod,
-
-On Wed, Nov 26, 2025 at 03:01:33PM +0100, Franz Schnyder wrote:
-> From: Franz Schnyder <franz.schnyder@toradex.com>
+Il 18/12/25 13:54, Nicolas Frattaroli ha scritto:
+> In this series, the existing MediaTek UFS binding is expanded and
+> completed to correctly describe not just the existing compatibles, but
+> also to introduce a new compatible in the from of the MT8196 SoC.
 > 
-> Currently, the PHY only registers the typec orientation switch when it
-> is built in. If the typec driver is built as a module, the switch
-> registration is skipped due to the preprocessor condition, causing
-> orientation detection to fail.
+> The resets, which until now were completely absent from both the UFS
+> host controller binding and the UFS PHY binding, are introduced to both.
+> This also means the driver's undocumented and, in mainline, unused reset
+> logic is reworked. In particular, the PHY reset is no longer a reset of
+> the host controller node, but of the PHY node.
 > 
-> With commit
-> 45fe729be9a6 ("usb: typec: Stub out typec_switch APIs when CONFIG_TYPEC=n")
-> the preprocessor condition is not needed anymore and the orientation
-> switch is correctly registered for both built-in and module builds.
+> This means the host controller can reset the PHY through the common PHY
+> framework.
 > 
-> Fixes: b58f0f86fd61 ("phy: fsl-imx8mq-usb: add tca function driver for imx95")
-> Cc: stable@vger.kernel.org
-> Suggested-by: Xu Yang <xu.yang_2@nxp.com>
-> Signed-off-by: Franz Schnyder <franz.schnyder@toradex.com>
+> The resets remain optional.
+> 
+> Additionally, a massive number of driver cleanups are introduced. These
+> were prompted by me inspecting the driver more closely as I was
+> adjusting it to correspond to the binding.
+> 
+> The driver still implements vendor properties that are undocumented in
+> the binding. I did not touch most of those, as I neither want to
+> convince the bindings maintainers that they are needed without knowing
+> precisely what they're for, nor do I want to argue with the driver
+> authors when removing them.
+> 
+> Due to the "Marie Kondo with a chainsaw" nature of the driver cleanup
+> patches, I humbly request that reviewers do not comment on displeasing
+> code they see in the context portion of a patch before they've read the
+> whole patch series, as that displeasing code may in fact be reworked in
+> a subsequent patch of this series. Please keep comments focused on the
+> changed lines of the diff; I know there's more that can be done, but it
+> doesn't necessarily need to be part of this series.
+> 
+> Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+> ---
+> Changes in v4:
+> - bindings: Redo the supply situation, as the avdd pins don't describe
+>    the vcc(q2) card supplies.
+> - bindings: format clock in mt8196 example more tersely.
+> - phy: use devm_reset_control_get_optional_exclusive directly
+> - driver: get and enable/disable the aforementioned avdd supplies.
+> - Link to v3: https://lore.kernel.org/r/20251023-mt8196-ufs-v3-0-0f04b4a795ff@collabora.com
+> 
+> Changes in v3:
+> - Split mediatek,ufs bindings change into two patches, one for
+>    completing the existing binding, one for the MT8196
+> - Add over a dozen driver cleanup patches
+> - Add explicit support for the MT8196 compatible to the driver
+> - Note: next-20251023, on which I based this, currently has a broken
+>    build due to an unrelated OPP core change that was merged with no
+>    build testing. I can't use next-20251022 either, as that lacks the
+>    recent mediatek UFS changes. It is what it is.
+> - Link to v2: https://lore.kernel.org/r/20251016-mt8196-ufs-v2-0-c373834c4e7a@collabora.com
+> 
+> Changes in v2:
+> - Reorder define in mtk_sip_svc.h
+> - Use bulk reset APIs in UFS host driver
+> - Link to v1: https://lore.kernel.org/r/20251014-mt8196-ufs-v1-0-195dceb83bc8@collabora.com
+> 
 
-Just a gentle ping on this.
+Whole series is
 
-Thanks,
-Francesco
+Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+
 
 
 -- 
