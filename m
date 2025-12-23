@@ -4,70 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0A1F2E6FE26
-	for <linux-phy@archiver.kernel.org>; Tue, 23 Dec 2025 17:14:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2A5F6E6F086
+	for <linux-phy@archiver.kernel.org>; Tue, 23 Dec 2025 17:33:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jX1KKAkbZDy/hnDQEdHdwGGHB9AGdBpSZG/PGg9aMt0=; b=LOb4okLt34bhFI
-	nTB7rgZAQ5lW2X36rOUDlDrNSEhvhsI+GF2PqsaJHf2VgR893B/Up89FUcy3OgcCxg0uPc/b4U/AY
-	xjiJYBq9ZnJEu/x1m+P5VEPvnplh2PguzUdvFU+Zc7TmHBhH6twfoK/5N46eO9XDpqzCsi+KvkFaf
-	/Mog1c35BlHk21if7Rs3HH5osZdRZz9XjK7jj2PeYLtTDKBXbq6QFykxtbMNc2qDUZyKafVKXWGnW
-	2HVXbx8YmLIF2WKcKUpXv1+9yr1wVR31lL3q6f43uhWvaHXIaPv9hXY3aPVWt7nQ4PiTYfp/zJXLz
-	BN0HXAfvtgmxeg7G3LPA==;
+	List-Owner; bh=Ca76jKzWTchNzFX8Tx4hxGgEsCSYg1l1Lcm0vBRptQs=; b=03oOX77weTZT2T
+	41E7eVnTodzMSbx2Ch0DIg0edEucMVcivHa89pOSMJZ8+Obn25wFBeReUd/fBwUtOLv23LvoEYm2I
+	wNoIhycKJtEhKyAj3b2d03JVu0jIb6MZTdk+iARSO+rfa7Yu4d4GWWFEW4ADsNx+5tcdK+m6jv3Q3
+	3GY0p8VTtIOLt6fQULp5UVf6RxUyBNUAVAejFagfd86kYCumMk2BPH/gFwiLsum+Ll9CGSiEwp1yv
+	1rzbTJR+X9I26Qz35GQvytD8Y2TJKHynzs1uumHaZGdBjq8eq1pZF9gQVpvU/x4KdfrA1e1mX9GQC
+	AgRpvHDuCIUUlQeP3U5A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vY5xg-0000000Foaz-2bUL;
-	Tue, 23 Dec 2025 17:14:16 +0000
-Received: from mail.andi.de1.cc ([2a02:c205:3004:2154::1])
+	id 1vY6G2-0000000FpWx-2XG3;
+	Tue, 23 Dec 2025 17:33:14 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vY5xe-0000000FoaK-0iFX
+	id 1vY6G0-0000000FpWr-3yQB
 	for linux-phy@lists.infradead.org;
-	Tue, 23 Dec 2025 17:14:15 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=kemnade.info; s=20220719; h=References:In-Reply-To:Cc:From:Sender:Reply-To:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID;
-	bh=W2QYj+Rp/ihQDRGeJxJWo7r32vv1mpFGwwybC+Tpkcw=; b=ydfrMiRjmmu47GyHyrYMYssfkJ
-	HMcK/nzzXAgAFg3OTFQs7+aVFPGNiepo0KKdNVp9MhlTYE8XTq1euoC2O0S0c8SxyGepYV4BiEiNX
-	W2UNq3AcPHQwbhVj+YaIGNoKK+H1ZzdsMCxPUZhP5p5nTnfBz3iZ3bnb7A2eU44bgbLbDabxF8KKD
-	XOG9hzQkMoaQ2ub5lCTcF2UcM21MWJwJY1XsfDyFWlV9SrwFAzF2u7aKaxHI4/RPIza1tE0SV7Yom
-	TolVoDNd6GD9w56z/QL3+6HrQSMQM24VqWDUP23VNW1H2ENDElUJrkb3hjpaAvHM2L8RRI3WcDZW6
-	BKMfj8VA==;
-Date: Tue, 23 Dec 2025 18:11:43 +0100
-From: Andreas Kemnade <andreas@kemnade.info>
-To: Josua Mayer <josua@solid-run.com>
-Cc: Ulf Hansson <ulf.hansson@linaro.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Geert Uytterhoeven <geert+renesas@glider.be>, Magnus
- Damm <magnus.damm@gmail.com>, Wolfram Sang
- <wsa+renesas@sang-engineering.com>, Marc Kleine-Budde <mkl@pengutronix.de>,
- Vincent Mailhol <mailhol@kernel.org>, Vinod Koul <vkoul@kernel.org>, Kishon
- Vijay Abraham I <kishon@kernel.org>, Peter Rosin <peda@axentia.se>, Aaro
- Koskinen <aaro.koskinen@iki.fi>, Kevin Hilman <khilman@baylibre.com>, Roger
- Quadros <rogerq@kernel.org>, Tony Lindgren <tony@atomide.com>, Vignesh R
- <vigneshr@ti.com>, Janusz Krzysztofik <jmkrzyszt@gmail.com>, Andi Shyti
- <andi.shyti@kernel.org>, Mikhail Anikin <mikhail.anikin@solid-run.com>,
- Yazan Shhady <yazan.shhady@solid-run.com>, Jon Nettleton
- <jon@solid-run.com>, linux-mmc@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
- linux-can@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-omap@vger.kernel.org, linux-i2c@vger.kernel.org
-Subject: Re: [PATCH v3 4/6] i2c: omap: switch to new generic helper for
- getting selected mux-state
-Message-ID: <20251223181143.10d35211@kemnade.info>
-In-Reply-To: <20251210-rz-sdio-mux-v3-4-ca628db56d60@solid-run.com>
-References: <20251210-rz-sdio-mux-v3-0-ca628db56d60@solid-run.com>
-	<20251210-rz-sdio-mux-v3-4-ca628db56d60@solid-run.com>
-X-Mailer: Claws Mail 4.3.1 (GTK 3.24.49; aarch64-unknown-linux-gnu)
+	Tue, 23 Dec 2025 17:33:13 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id E771E60123;
+	Tue, 23 Dec 2025 17:33:11 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 68B14C116B1;
+	Tue, 23 Dec 2025 17:33:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1766511191;
+	bh=omGwGLKu+amFxrkn8sr0EraNhTwGj2HokUaFJLyoq6U=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=BPGjmqooLPzq3mMFX9ehYZElO+y3l4zzEJcPdrG5c4wDwkCCfLIXcZXtp4ecJD+VJ
+	 fwAkUTQdoN2cyf2yAudv+UsQ/0Pk7M7AaXM5Dz+AiZZ7l0kz0RlBPxkJpv2ykqQNes
+	 DpKsRc6aVaV8HWkIZz3VN6u57TnGfqixb2Sei8GWvj0vbYWkFjTA+8LrJy8LFEwSUW
+	 pEpY5NRlZCTOgWcKUfuEOo+od1+q2dYmew2iry2SWLSvMbDbLDDEMZqIuuHYxDdpma
+	 +SpBgslVp7bXs041buXuoV7ObGY3Uuj1Kg/NeR+Jjbnk0R8X8335VzFUeoxLe566/D
+	 wMJyNBgzaJbMQ==
+From: Vinod Koul <vkoul@kernel.org>
+To: lpieralisi@kernel.org, kwilczynski@kernel.org, robh@kernel.org, 
+ bhelgaas@google.com, krzk+dt@kernel.org, neil.armstrong@linaro.org, 
+ abel.vesa@linaro.org, conor+dt@kernel.org, kishon@kernel.org, 
+ andersson@kernel.org, konradybcio@kernel.org, 
+ Manivannan Sadhasivam <mani@kernel.org>, 
+ =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
+ Ziyue Zhang <quic_ziyuzhan@quicinc.com>
+Cc: linux-arm-msm@vger.kernel.org, linux-pci@vger.kernel.org, 
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, quic_qianyu@quicinc.com, 
+ quic_krichai@quicinc.com, quic_vbadigan@quicinc.com
+In-Reply-To: <20250529035635.4162149-1-quic_ziyuzhan@quicinc.com>
+References: <20250529035635.4162149-1-quic_ziyuzhan@quicinc.com>
+Subject: Re: (subset) [PATCH v6 0/6] pci: qcom: Add QCS8300 PCIe support
+Message-Id: <176651118606.749296.7445159215784702009.b4-ty@kernel.org>
+Date: Tue, 23 Dec 2025 23:03:06 +0530
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251223_091414_217629_3BBB407C 
-X-CRM114-Status: UNSURE (   6.63  )
-X-CRM114-Notice: Please train this message.
+X-Mailer: b4 0.13.0
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,19 +77,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, 10 Dec 2025 18:38:38 +0100
-Josua Mayer <josua@solid-run.com> wrote:
 
-> Multiplexer subsystem has added generic helper functiosn for getting an
-> already selected mux-state object.
+On Thu, 29 May 2025 11:56:29 +0800, Ziyue Zhang wrote:
+> This series depend on the sa8775p gcc_aux_clock and link_down reset change
+> https://lore.kernel.org/all/20250529035416.4159963-1-quic_ziyuzhan@quicinc.com/
 > 
-> Replace existing logic in probe with the equivalent helper function.
+> This series adds document, phy, configs support for PCIe in QCS8300.
+> It also adds 'link_down' reset for sa8775p.
 > 
-> This change is only compile-tested.
+> Have follwing changes:
+> 	- Add dedicated schema for the PCIe controllers found on QCS8300.
+> 	- Add compatible for qcs8300 platform.
+> 	- Add configurations in devicetree for PCIe0, including registers, clocks, interrupts and phy setting sequence.
+> 	- Add configurations in devicetree for PCIe1, including registers, clocks, interrupts and phy setting sequence.
 > 
-> Signed-off-by: Josua Mayer <josua@solid-run.com>
+> [...]
 
-Reviewed-by: Andreas Kemnade <andreas@kemnade.info>
+Applied, thanks!
+
+[1/6] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Update pcie phy bindings for qcs8300
+      commit: 393e132efcc5e3fc4ef2bd9bbed2a096096c9359
+
+Best regards,
+-- 
+~Vinod
+
 
 
 -- 
