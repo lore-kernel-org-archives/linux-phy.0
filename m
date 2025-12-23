@@ -4,57 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9E7D7E6FE23
-	for <linux-phy@archiver.kernel.org>; Tue, 23 Dec 2025 17:33:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 52F85E6F086
+	for <linux-phy@archiver.kernel.org>; Tue, 23 Dec 2025 17:34:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8b6AEZD0Jq2KcVUAWjbcVo00m32NZLjoPBuH75T5idY=; b=16CWc8UXeuhA7v
-	FKJjcglznzW5ocGcRyrbsac1s9g2tbAysY7KU9PHLf5zqz/V0D5JeJ8cYElNlo3EQGUL16Wn5+QxC
-	NZILsc8t9hlmwkWlBSpKYtwI+gUSOXQ/ruNfhI9C+Tgf0P4/FOnDU6jKyK9mHqf7LiO7we3x0+A5x
-	oqOFOcsrrkrMbqvYI3QzU68QKOaK7mafySk/nHiGzLwAPa5fdPqzwfr9Xki1aK6OBij1h/S3kE1iJ
-	LFXY9AbIP/OES3/8tdscCxb9PZFtktdmLRODcxKg8/RIQGFjrljxBPHOVSH8EOFGg3xzGQ92jLL8C
-	IdGqHFOMq5csAgS7lgyQ==;
+	List-Owner; bh=ZvGzHwDA31rwW7k9vc8ckC2NfNCi/0tSsSRCUV+mUkQ=; b=dCradNw8SFeQEG
+	7+rCStkwfU8rS+oLBRmPc0rXX+e+F1bqHutnZMuEMNbkOFa2DKQqpCxnZhmYZODI+tesBDZgh6+BQ
+	RPipWhxu99UjjFKVCXx98OvpnkF6DEuKAOQiEGgrqlMqPVUD13rZtMLqjslodTC8x3ThCSVZkmm18
+	gIL/3ejGA5YGv4teC7otxqILrAN45fAS4UD0vgIrDbCQqbE0PrEfYQhuiCHYuiDh5d3oGgGNlNGnJ
+	a2tVpBbM2JGdQxSKP5C+u0XyHaUXjUKzA42CWRP4dvXjleDfDEeXrmwzmF7bFeIz/tglXZgjIrYTn
+	Mu+bAA24QM4ytUJPE8jw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vY6Gj-0000000FpfV-1byE;
-	Tue, 23 Dec 2025 17:33:57 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vY6Gp-0000000FphQ-0I1O;
+	Tue, 23 Dec 2025 17:34:03 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vY6Gi-0000000Fpf9-15pW
-	for linux-phy@lists.infradead.org;
-	Tue, 23 Dec 2025 17:33:56 +0000
+	id 1vY6Gm-0000000FpgJ-01Y6;
+	Tue, 23 Dec 2025 17:34:01 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id B343460123;
+	by sea.source.kernel.org (Postfix) with ESMTP id 6C5AE44093;
+	Tue, 23 Dec 2025 17:33:59 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 08883C19423;
 	Tue, 23 Dec 2025 17:33:55 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8E8A8C19421;
-	Tue, 23 Dec 2025 17:33:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1766511235;
-	bh=v8zte2v/K+J876rOP8zQ5mxBjYpcNNsbcPhghDEfu6Y=;
+	s=k20201202; t=1766511239;
+	bh=Xhadf7WxNcbHexZkIdejQDCjOzzfeofXi1dqZAVER/U=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=ImAZa2GiCmxn9wXhBA+wyiResrJlkc2wLUBF0q0R8ndbQV0y4m0MBSEbnvFseEx1X
-	 5p+2GOoKPF1nS7vkjN5d4UQq01kGRG13VEKbdzGXXALdBE0hFBy0lgVD1egmaxeOqe
-	 qGxbM+SxyRoKFiddJe/0kUQnRsvERNX9DwZ7AhtdHxNEZUmkGYrmHXpxKJaNtCh2x2
-	 tXzaQFc9Lh2pB/I1ewEa2aa03Bnxs61gLfqg6GlG9FJY8fTn0uPC3B2veNK7uENNbA
-	 7w5vSGO9oPtVaYNoZEnVFbGgJFRT1ftyWcMmgvBelZahFeTo2ZwXhFbxRRLsnHu10h
-	 mhq2zImllEotQ==
+	b=RoXUVWJcWo5rR+PJhTILIkGMHhVBFPBj9jxUcbPpmJDrqsZnNb1Dv9Uravd+RSnom
+	 HSpJPfeAbyx0c2R41TgA4HZDueCZiHayXBiAYKhmtsARsQl6XpZRsAjOCMEbRcAj+J
+	 8RQ2Kap8hqnQvv1PHjuTih2H64AigYb5HbVsOwCw7fuPwtekQ65Pb89qd44gJfmHq5
+	 vbgbnrAB2mivdHNJtA1oz8yAk1NP/x6y5AvaKDBg3qvlPyXqKrcyPEr7YPwMtuxhWh
+	 LZFUmdvUL+uvCpLx8af+lzQzIf70FzjXZ7p3DmA5ufb1AQn8kGEtk/fTNYYWOPcL0p
+	 9uPGD2xuHJiEQ==
 From: Vinod Koul <vkoul@kernel.org>
-To: kishon@kernel.org, Loic Poulain <loic.poulain@oss.qualcomm.com>
-Cc: dmitry.baryshkov@oss.qualcomm.com, abel.vesa@oss.qualcomm.com, 
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- andersson@kernel.org
-In-Reply-To: <20251219085640.114473-1-loic.poulain@oss.qualcomm.com>
-References: <20251219085640.114473-1-loic.poulain@oss.qualcomm.com>
-Subject: Re: [PATCH v4] phy: qcom-qusb2: Fix NULL pointer dereference on
- early suspend
-Message-Id: <176651123322.749296.4504100315872807969.b4-ty@kernel.org>
-Date: Tue, 23 Dec 2025 23:03:53 +0530
+To: Amelie Delaunay <amelie.delaunay@st.com>, 
+ Dan Carpenter <dan.carpenter@linaro.org>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>, 
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>, 
+ Alexandre Torgue <alexandre.torgue@foss.st.com>, 
+ Johan Hovold <johan+linaro@kernel.org>, 
+ Fengguang Wu <fengguang.wu@intel.com>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, linux-phy@lists.infradead.org, 
+ linux-stm32@st-md-mailman.stormreply.com, 
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ kernel-janitors@vger.kernel.org
+In-Reply-To: <aTfHcMJK1wFVnvEe@stanley.mountain>
+References: <aTfHcMJK1wFVnvEe@stanley.mountain>
+Subject: Re: [PATCH] phy: stm32-usphyc: Fix off by one in probe()
+Message-Id: <176651123567.749296.7003388912771665169.b4-ty@kernel.org>
+Date: Tue, 23 Dec 2025 23:03:55 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20251223_093400_071438_1A260AE6 
+X-CRM114-Status: UNSURE (   7.85  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,30 +81,20 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Fri, 19 Dec 2025 09:56:40 +0100, Loic Poulain wrote:
-> Enabling runtime PM before attaching the QPHY instance as driver data
-> can lead to a NULL pointer dereference in runtime PM callbacks that
-> expect valid driver data. There is a small window where the suspend
-> callback may run after PM runtime enabling and before runtime forbid.
-> This causes a sporadic crash during boot:
+On Tue, 09 Dec 2025 09:53:36 +0300, Dan Carpenter wrote:
+> The "index" variable is used as an index into the usbphyc->phys[] array
+> which has usbphyc->nphys elements.  So if it is equal to usbphyc->nphys
+> then it is one element out of bounds.  The "index" comes from the
+> device tree so it's data that we trust and it's unlikely to be wrong,
+> however it's obviously still worth fixing the bug.  Change the > to >=.
 > 
-> ```
-> Unable to handle kernel NULL pointer dereference at virtual address 00000000000000a1
-> [...]
-> CPU: 0 UID: 0 PID: 11 Comm: kworker/0:1 Not tainted 6.16.7+ #116 PREEMPT
-> Workqueue: pm pm_runtime_work
-> pstate: 20000005 (nzCv daif -PAN -UAO -TCO -DIT -SSBS BTYPE=--)
-> pc : qusb2_phy_runtime_suspend+0x14/0x1e0 [phy_qcom_qusb2]
-> lr : pm_generic_runtime_suspend+0x2c/0x44
-> [...]
-> ```
 > 
 > [...]
 
 Applied, thanks!
 
-[1/1] phy: qcom-qusb2: Fix NULL pointer dereference on early suspend
-      commit: 1ca52c0983c34fca506921791202ed5bdafd5306
+[1/1] phy: stm32-usphyc: Fix off by one in probe()
+      commit: cabd25b57216ddc132efbcc31f972baa03aad15a
 
 Best regards,
 -- 
