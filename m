@@ -4,61 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C717FE6FE24
-	for <linux-phy@archiver.kernel.org>; Tue, 23 Dec 2025 17:34:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0FD76E6FE23
+	for <linux-phy@archiver.kernel.org>; Tue, 23 Dec 2025 17:34:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ps8BU/sLEmr50vCjgbEwfVNmRdcl9cdg+oqfcqdG1CA=; b=scW9yrqKnQRHxn
-	QiYQQGLTgNpH2u5Xs74TFUHts/+W01CFqIHDcjOKPE9IBGX/hQhoHYTHv29Hy+1TLLRliNAi0Ym9x
-	t5uLWdnGCgfQIKgQTl6CoOxEL+MClJVUQU6waIpYdPSMwSvMhz2A2Sp7qO2Su5otCzwfMcPb82bNu
-	WIiBv7UPiJshmYFbhmiE0Mmz/DsU9UGKdJHaNnCu9GAE6UQ0mMVC7Wi2vddZAHtz2UL1ZDjcMVvje
-	tYhb1AUotJnLSh2r0deHRxIbVKOq1FZQUlzgIAt1nIBdq0Ka7SCGByIxDoNeV+qRGveUpmnezFNsV
-	zlQT/sZa7DMh/8BpuHvQ==;
+	List-Owner; bh=lxc/iKgljxa08aE5Rs7YHUgFOCWf2YUIGr2Hn39Zies=; b=i4SYyFW6Zg7VC3
+	BVDRX/Do5/XM7bMNTqcxW11ZNdI4mg1v2ZwI4WbI8XvBsjXluaHE2gGSziNuePsf5Z+K+e8Km8PWL
+	Fj2369FI51Bas1SWNzJ+3VKPAGYUH2vOrKGYEEn9AvZA/Q7wnT1V3rc0kJ2QNpNQVSE7N70uG+1EY
+	TEmMI3LC2dMUCC5XhW1twx/oFMz2D2c34z/RSLGTR45HSwPhJEBwufgsWeWVo7s/ukDbIWx9quYgb
+	MsotYrB2ciSYj6MezZvX1mKVQVIUDWFAJYzs7OCHFuFgS6dmHnV6/65FENogkURb4kuscP54NqqAt
+	5UK9jQe4EdCAfMueeubw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vY6Gs-0000000FpjJ-2NK1;
-	Tue, 23 Dec 2025 17:34:06 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1vY6Gu-0000000FpkF-3OuC;
+	Tue, 23 Dec 2025 17:34:08 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vY6Gq-0000000FpiF-1gAq
+	id 1vY6Gs-0000000FpjO-483X
 	for linux-phy@lists.infradead.org;
-	Tue, 23 Dec 2025 17:34:05 +0000
+	Tue, 23 Dec 2025 17:34:07 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 10F66441BE;
+	by tor.source.kernel.org (Postfix) with ESMTP id 6B7716013F;
+	Tue, 23 Dec 2025 17:34:06 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 829BFC113D0;
 	Tue, 23 Dec 2025 17:34:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D2EF3C113D0;
-	Tue, 23 Dec 2025 17:34:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1766511243;
-	bh=AG69nAwUcvK++nj1QFAhfK8uYJfU8jcuUUO7GyAnV1g=;
+	s=k20201202; t=1766511246;
+	bh=klibO99i4aB/Xo+DGoJGR3MAFXB2GespfAli0mACiiY=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=QnSRPRLX33lIiU2/ry0zSC+C/9PiDzc/ZdHwntn/EI/zoIaVDCyjGNrWms7KSCYEk
-	 xtoceRucbKRccm0koihtY6/Vf/2PhZfgf38zTXofddRp/yo4e7wLruO9ppIY8voqsX
-	 al9wTTBvm9V1qCRIRdaueUBWZjA1XfCCoEiB/BzidIK7FEAZQnEXvqNEi+KDEreVFj
-	 +7JIpL1xhvP/50eeOROXqMW3q2DiY45mrMWqqM28RGeHawNPKa7FwQCpzpwhvAZujG
-	 J/dXUBwgqy+UvajPBbBsBVpusMHqWq0vbG45vz9ID811u2/UlCcBquUPasgZIQBDck
-	 +G+Ovp6RYaW5A==
+	b=fWjsUYjBYwBHX0lth5HUJME9v3vKSMhgJqk6s0xHSjrNPOjTMpgpP+Er25++AbAQf
+	 oQ0FtZ1I3ZIz+G1B8+eyptX4zTF05vQj7D7/CFed+kw9cB3+UQhGoXt5HHTHpPMMEs
+	 e5h3QSXH83wcSz9/hcwXe5DX7iwWDNI90dFvUzZFGzZzqB/q950heyjJC460swEXQI
+	 aNi1VUV4uUegBdS3IQcMRqM8jYB+XfDvSZPVNxoyOS2UCPVq4btU6ciBjKd2CTA11i
+	 x5H1OMLNpKBrVBKLrbBJmFSJIU15Zq3TyZbMCokyUzs4vQAOdno+fnZkCa/KeM9ER+
+	 GzVQ7bJOswwzg==
 From: Vinod Koul <vkoul@kernel.org>
-To: kishon@kernel.org, geert+renesas@glider.be, herve.codina@bootlin.com, 
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
- Robert Marko <robert.marko@sartura.hr>
-Cc: luka.perkov@sartura.hr, Daniel Machon <daniel.machon@microchip.com>
-In-Reply-To: <20251031121834.665987-1-robert.marko@sartura.hr>
-References: <20251031121834.665987-1-robert.marko@sartura.hr>
-Subject: Re: [PATCH v2] phy: sparx5-serdes: make it selectable for
- ARCH_LAN969X
-Message-Id: <176651124150.749296.12927372202154691784.b4-ty@kernel.org>
-Date: Tue, 23 Dec 2025 23:04:01 +0530
+To: Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Johan Hovold <johan@kernel.org>
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ stable@vger.kernel.org, Andrew Davis <afd@ti.com>
+In-Reply-To: <20251127134834.2030-1-johan@kernel.org>
+References: <20251127134834.2030-1-johan@kernel.org>
+Subject: Re: [PATCH] phy: ti: gmii-sel: fix regmap leak on probe failure
+Message-Id: <176651124417.749296.3744607103286976233.b4-ty@kernel.org>
+Date: Tue, 23 Dec 2025 23:04:04 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251223_093404_464864_7A638F7B 
-X-CRM114-Status: UNSURE (   4.59  )
-X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,16 +71,18 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Fri, 31 Oct 2025 13:18:12 +0100, Robert Marko wrote:
-> LAN969x uses the SparX-5 SERDES driver, so make it selectable for
-> ARCH_LAN969X.
+On Thu, 27 Nov 2025 14:48:34 +0100, Johan Hovold wrote:
+> The mmio regmap that may be allocated during probe is never freed.
+> 
+> Switch to using the device managed allocator so that the regmap is
+> released on probe failures (e.g. probe deferral) and on driver unbind.
 > 
 > 
 
 Applied, thanks!
 
-[1/1] phy: sparx5-serdes: make it selectable for ARCH_LAN969X
-      commit: d543d3eb06873f0ab8edb0d1f8364e9af93544a0
+[1/1] phy: ti: gmii-sel: fix regmap leak on probe failure
+      commit: 4914d67da947031d6f645c81c74f7879e0844d5d
 
 Best regards,
 -- 
