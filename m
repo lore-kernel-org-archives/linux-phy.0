@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 52F85E6F086
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8BE9BE6FE24
 	for <linux-phy@archiver.kernel.org>; Tue, 23 Dec 2025 17:34:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,58 +12,48 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZvGzHwDA31rwW7k9vc8ckC2NfNCi/0tSsSRCUV+mUkQ=; b=dCradNw8SFeQEG
-	7+rCStkwfU8rS+oLBRmPc0rXX+e+F1bqHutnZMuEMNbkOFa2DKQqpCxnZhmYZODI+tesBDZgh6+BQ
-	RPipWhxu99UjjFKVCXx98OvpnkF6DEuKAOQiEGgrqlMqPVUD13rZtMLqjslodTC8x3ThCSVZkmm18
-	gIL/3ejGA5YGv4teC7otxqILrAN45fAS4UD0vgIrDbCQqbE0PrEfYQhuiCHYuiDh5d3oGgGNlNGnJ
-	a2tVpBbM2JGdQxSKP5C+u0XyHaUXjUKzA42CWRP4dvXjleDfDEeXrmwzmF7bFeIz/tglXZgjIrYTn
-	Mu+bAA24QM4ytUJPE8jw==;
+	List-Owner; bh=dcDraw1pfhvx65Xz1iOqnAKNZ7IsaZUqJqhiC4pRG3Y=; b=4cAH6Pb8iMEGsl
+	S29JhuZr9aJ7wZmernVrA0FATT4wCNJLgyQW+3+/QzV01TwbThcUX/ihBl73Jj9eeAMPYO1Cqu0jE
+	YYsPSeahFY31NibvuV0WAL2d+4n9NOc7mrUfh0VBZJmyb1fcmOqeWtW4p0dnK5nOGPJ1wCehOsVzG
+	PWQCpyC6rUaMCbQQVHE8MNDA2nGKvqUecftZ3/gcacR39iZA3v3hmIx59le6Oeh/Qmh3ap+G25ykF
+	nYtJR5XxJa5Tl+qHsT2wkfoEr3PM5PxgchF7sxd0StKtW0ZrJIJxG9/+AgJsMLUNmmq+ojNDxTCXx
+	emA9qkvmpnTthO0VxAqg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vY6Gp-0000000FphQ-0I1O;
+	id 1vY6Gp-0000000Fphc-1KJc;
 	Tue, 23 Dec 2025 17:34:03 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vY6Gm-0000000FpgJ-01Y6;
-	Tue, 23 Dec 2025 17:34:01 +0000
+	id 1vY6Go-0000000Fpgt-0VDL
+	for linux-phy@lists.infradead.org;
+	Tue, 23 Dec 2025 17:34:02 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 6C5AE44093;
+	by tor.source.kernel.org (Postfix) with ESMTP id 8BB946013D;
+	Tue, 23 Dec 2025 17:34:01 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DA9F7C116B1;
 	Tue, 23 Dec 2025 17:33:59 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 08883C19423;
-	Tue, 23 Dec 2025 17:33:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1766511239;
-	bh=Xhadf7WxNcbHexZkIdejQDCjOzzfeofXi1dqZAVER/U=;
+	s=k20201202; t=1766511241;
+	bh=Hk+bJmPYeR2MBcMwrql3q2wz2dX5vNKc0tgRJA5z4vU=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=RoXUVWJcWo5rR+PJhTILIkGMHhVBFPBj9jxUcbPpmJDrqsZnNb1Dv9Uravd+RSnom
-	 HSpJPfeAbyx0c2R41TgA4HZDueCZiHayXBiAYKhmtsARsQl6XpZRsAjOCMEbRcAj+J
-	 8RQ2Kap8hqnQvv1PHjuTih2H64AigYb5HbVsOwCw7fuPwtekQ65Pb89qd44gJfmHq5
-	 vbgbnrAB2mivdHNJtA1oz8yAk1NP/x6y5AvaKDBg3qvlPyXqKrcyPEr7YPwMtuxhWh
-	 LZFUmdvUL+uvCpLx8af+lzQzIf70FzjXZ7p3DmA5ufb1AQn8kGEtk/fTNYYWOPcL0p
-	 9uPGD2xuHJiEQ==
+	b=AGLUj7tRxaE8kSwpYac5rZAK9gVeqdNwMP20nhvXC84gYQTCnOp5eeOr6hdV1r48K
+	 56O7RrlUW4oQ1TyQAuOrTXRoVfi64lMy27W4YKgeJLgGxC0cVDoRMpbvuFkblnJQfx
+	 ub3g2Wg06vTqAQy6wjq8CMmS6k1YNVLaZzmBRpWepxqp0nklQGuQNgOqE5skG0Ezg1
+	 X4Fbov2krHSfhj1TUTHtmwiTBCm/6C/q8BsSIomrKoAj/W138dH/pQgJ1eobSlpCu4
+	 9H2QTmdkEAHgTSz8ryyh8g7XI1QH8xJLeKQ7BScxHk5ng3IQEAppELB610Tn9h/Xrb
+	 7S9179Gq+5KEA==
 From: Vinod Koul <vkoul@kernel.org>
-To: Amelie Delaunay <amelie.delaunay@st.com>, 
- Dan Carpenter <dan.carpenter@linaro.org>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>, 
- Maxime Coquelin <mcoquelin.stm32@gmail.com>, 
- Alexandre Torgue <alexandre.torgue@foss.st.com>, 
- Johan Hovold <johan+linaro@kernel.org>, 
- Fengguang Wu <fengguang.wu@intel.com>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, linux-phy@lists.infradead.org, 
- linux-stm32@st-md-mailman.stormreply.com, 
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, 
- kernel-janitors@vger.kernel.org
-In-Reply-To: <aTfHcMJK1wFVnvEe@stanley.mountain>
-References: <aTfHcMJK1wFVnvEe@stanley.mountain>
-Subject: Re: [PATCH] phy: stm32-usphyc: Fix off by one in probe()
-Message-Id: <176651123567.749296.7003388912771665169.b4-ty@kernel.org>
-Date: Tue, 23 Dec 2025 23:03:55 +0530
+To: kishon@kernel.org, neil.armstrong@linaro.org, 
+ Haotian Zhang <vulab@iscas.ac.cn>
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+In-Reply-To: <20251124105734.1027-1-vulab@iscas.ac.cn>
+References: <20251124105734.1027-1-vulab@iscas.ac.cn>
+Subject: Re: [PATCH v2] phy: ti: da8xx-usb: Handle devm_pm_runtime_enable()
+ errors
+Message-Id: <176651123953.749296.6443352481052227479.b4-ty@kernel.org>
+Date: Tue, 23 Dec 2025 23:03:59 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251223_093400_071438_1A260AE6 
-X-CRM114-Status: UNSURE (   7.85  )
-X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,20 +71,22 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Tue, 09 Dec 2025 09:53:36 +0300, Dan Carpenter wrote:
-> The "index" variable is used as an index into the usbphyc->phys[] array
-> which has usbphyc->nphys elements.  So if it is equal to usbphyc->nphys
-> then it is one element out of bounds.  The "index" comes from the
-> device tree so it's data that we trust and it's unlikely to be wrong,
-> however it's obviously still worth fixing the bug.  Change the > to >=.
+On Mon, 24 Nov 2025 18:57:34 +0800, Haotian Zhang wrote:
+> devm_pm_runtime_enable() can fail due to memory allocation. The current
+> code ignores its return value after calling pm_runtime_set_active(),
+> leaving the device in an inconsistent state if runtime PM initialization
+> fails.
 > 
+> Check the return value of devm_pm_runtime_enable() and return on
+> failure. Also move the declaration of 'ret' to the function scope
+> to support this check.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/1] phy: stm32-usphyc: Fix off by one in probe()
-      commit: cabd25b57216ddc132efbcc31f972baa03aad15a
+[1/1] phy: ti: da8xx-usb: Handle devm_pm_runtime_enable() errors
+      commit: 08aa19de72110df8ac10c9e67349dd884eeed41d
 
 Best regards,
 -- 
