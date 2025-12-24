@@ -4,166 +4,140 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 86499E74903
-	for <linux-phy@archiver.kernel.org>; Wed, 24 Dec 2025 05:32:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 76954E74903
+	for <linux-phy@archiver.kernel.org>; Wed, 24 Dec 2025 05:48:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=R2RcsD4fYWxLDgwSS5P2IecH07Jc5z5NNc84/xiogNU=; b=qC1CyPqXWyq9Yu
-	8AcGpvlfn7eaSd5r91WHRA7RDKJrXA9OfnFY/qsTF8hWw8h60O69DX/MYgn4OfKmlRZrwhW8T/t3V
-	8/5D8ZQ+E3VhqDHAH/MT/03DBjDyiLNwzQX5I40KNsUWcftzhyHGcxDzfDUSvUoVq/1Njke21WYcW
-	h4EMT/q3YiYzkKegYU6Z/bt0eykgOkpsAemJxYBfffihPeKY0tIUXJIqqjWcZVajMxv93IAsiFDFC
-	X4NjgTWl48LtyDy6H2/3yyZudtFWegbd4LYLDNWMYwu59amRjlup7NxXe5tDmzJ1yE5a/b8zOOZRg
-	a9pmvfpwbZy1GSGjyuRg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=PzeaPMXt3g8QTIgkU/QdkWRXz8rRG62LHApdlibbEFo=; b=W+BuZR6sOwH01O
+	Zb9nwlSyKxrhom67nKUOdUu+33Qan3GP1ktyd47ZhH4nf6xsywe20JUSdZ0JoMZi7g+ddjkKD9Pc1
+	gDEq2qnqPb67f6gW+TtpHgN9uxGDqRYx/4t02Qp4aur1J5n74wFLquFg4yPAs8gfF0lpnDzC+W7UM
+	Ria//q2PM1C8s9KHqIoQpNbw7+4HYrZQUQw5osuAY2/CrzmQbHt/Rv7rjYDt5ffxLWEP2/HWbaUpX
+	R6NWhDM66pbWJ+POG3p5lHUOTqWojcb7yaCHfPnZxPJBYriEoXOYIjBmItzpBVPsSqe//lR4FROdD
+	02LfldeNrgWAl1vqsHZw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vYHTr-0000000GR6i-17vr;
-	Wed, 24 Dec 2025 05:32:15 +0000
-Received: from mail-japaneastazon11022088.outbound.protection.outlook.com ([52.101.126.88] helo=TYPPR03CU001.outbound.protection.outlook.com)
+	id 1vYHje-0000000GSaD-0VkE;
+	Wed, 24 Dec 2025 05:48:34 +0000
+Received: from mail-northcentralusazon11010036.outbound.protection.outlook.com ([52.101.193.36] helo=CH1PR05CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vYHTo-0000000GR67-0FeF;
-	Wed, 24 Dec 2025 05:32:13 +0000
+	id 1vYHja-0000000GSZC-33gA;
+	Wed, 24 Dec 2025 05:48:32 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=t/iCJR9rz/bcwpX3U9Mf+1Z05QuWnX5speZ2JALIyoa6XRHvCvyLTblaaK/JjO+uM7sX3jY63XWMf85upe+4zj+1nRoa/iq8F51SOI2AVNk7+n9zIXLIXUUGWPx0hjAvAYF4g/EevTkZcytvB0qwOhQ6uL15sL9+whSAQ/EpGYXa8D9rZTbcJGoA20ApCV8OT8Mya5ZtbQQFRUru/2+RZMTN8APkqz7EJhdexRYlmsUBSPBRTQaFge9JlGJesHmzafpNO4XgWSnKY4cIfKd2iGWoASchsv3g0d2eKvX+6u1gCNFhKVzlDMJnNALCunxEW9aWRCo0/uQ5NqrP8VV4iw==
+ b=yCqXd0G3L/jodQ8MynkRloTwGqmgE92JONgGM2L3FuBntegCmoQDYCbWPBvqviv7NxNfW8dL8ArZvgPsnVRzz4K1fyVYr1EJN3BTQRmKIJZSG7MyGoAZzLV9JBV3UtOwCgkDXwhIwKO4pD+HE+rbKYHW5P0YuRIzZ0iQZOwVbWiInUPvZOKBFIfpvSYXWLklPpvWUgjrvUUtc5YDHII51Pn8p6KEJBLbs8w96v7qWLTOf84KPvy9Ki3eJhE8b0C9jvyvxa+jFouCwu6uOjgvW/yF9HV7saNEYc3cPXTXfoJOadjjMbiw/+IGuTIOFJP8vEW6sZijquD6rjct1PK4KQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=MnupctpBpZx80ILeiUo9M+sDSWIYxASWnF6PmTij0Gg=;
- b=c71JJgk34xRQ2ZV3Bsrd+U37+5r0GECBOwwebM51QRUd3z8oNMuUSh2FqrX9uCmjZxtLVzgbikpmQw2/I9cmd+c0GR7BgzHWlR4nqo9D6+/EhHYaXelpvDjh+52FxHYU9MxEP7Fs1WqfCJaw/ywGJY0MCwqEVmGixN0lpfRszbQXXQ/Mjx7IG+TQGGPD53PAhAf+UxFJ/mL2KzcMc2dxYT09GdsZIOTK9IbF0fsCOog77ei/ld0WS0Q/CiRzAF+OiI08m1zqSTpwiVB0hR+Bm0oi8c8ghmsbmqoJy0OA2bOK6bbtQ2HmRsxoeSrId1CoRtgw1C7IyOgXinSc3qEloQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=aspeedtech.com; dmarc=pass action=none
- header.from=aspeedtech.com; dkim=pass header.d=aspeedtech.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aspeedtech.com;
- s=selector1;
+ bh=gH8LmJoteiaUZxJqoEwUuE4+1g3h/SxdE5LVkkwvZHs=;
+ b=VL/nFVJznZ6BpywU4DUzk8M0n2oDicwZTlItWZ8xZ1wJwTFYjGvcw2OYx/4UuoioYnqPPfis9mYPn8LkjR3sRf+J7XKjwZ9Ww3zyZ7DCB6meph7kgYbzM0G6yuZts5oVfW7RZHgRFtcH34Za8aurtuWlQ7y0M10JpInlz9mvgDazTpsm7ZIQI66IGnOVFW0BQ9eJomU7iDDT9ToxnloWOtF/YtY/lGFDqRSAAQd59FB2U1RCYq9y4B4/jhVvQ5h62Oj1lAf9XBgSkvdbtBbnxlM2Rx3E+mZJFTV+JoetLnoBBV62TJxzWE+ZdoGQ74xrq4yVjp7JtK955CDRwPalBw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 198.47.21.195) smtp.rcpttodomain=lists.infradead.org smtp.mailfrom=ti.com;
+ dmarc=pass (p=quarantine sp=none pct=100) action=none header.from=ti.com;
+ dkim=none (message not signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=MnupctpBpZx80ILeiUo9M+sDSWIYxASWnF6PmTij0Gg=;
- b=lFgsXZR5t6E+LRbXeEz1ZHSQjSebvx/+2Z65ZhwWjIozhsAYngquSU3vWIufpEqHpMGHWktDTwFpTRRqVCHuO4wMeBPddYvReHTkjCDagMvtr2G8AIs0wAXc89UWth+8tVYNaJuPggYmeRpQ90ffXnU6d8uUArrtfst5ySk5CzvPVSIPyjflkoaWUyO1iQvGpMdT4asxhnkd117YgdnXOsHGh1K/u3LociU5NWEHSy6I76UPlT7NyWpdDUaTorUU5BtPG2yeAFy7ENhvjcWovzlfpGXvEeA3z2f+GcTq8suAQ9m7JjkWrBxnx4U62VdwJOVKwW7EVJj0kzsiMCki3A==
-Received: from SEYPR06MB5134.apcprd06.prod.outlook.com (2603:1096:101:5a::12)
- by TY0PR06MB6854.apcprd06.prod.outlook.com (2603:1096:405:10::7) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9434.11; Wed, 24 Dec
- 2025 05:32:00 +0000
-Received: from SEYPR06MB5134.apcprd06.prod.outlook.com
- ([fe80::6b58:6014:be6e:2f28]) by SEYPR06MB5134.apcprd06.prod.outlook.com
- ([fe80::6b58:6014:be6e:2f28%6]) with mapi id 15.20.9412.011; Wed, 24 Dec 2025
- 05:32:00 +0000
-From: Jacky Chou <jacky_chou@aspeedtech.com>
-To: Vinod Koul <vkoul@kernel.org>
-CC: Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>,
-	Joel Stanley <joel@jms.id.au>, Andrew Jeffery <andrew@codeconstruct.com.au>,
-	Bjorn Helgaas <bhelgaas@google.com>, Lorenzo Pieralisi
-	<lpieralisi@kernel.org>, =?iso-8859-2?Q?Krzysztof_Wilczy=F1ski?=
-	<kwilczynski@kernel.org>, Manivannan Sadhasivam <mani@kernel.org>, Linus
- Walleij <linus.walleij@linaro.org>, Philipp Zabel <p.zabel@pengutronix.de>,
-	Neil Armstrong <neil.armstrong@linaro.org>, "linux-aspeed@lists.ozlabs.org"
-	<linux-aspeed@lists.ozlabs.org>, "linux-pci@vger.kernel.org"
-	<linux-pci@vger.kernel.org>, "linux-phy@lists.infradead.org"
-	<linux-phy@lists.infradead.org>, "devicetree@vger.kernel.org"
-	<devicetree@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
-	<linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
-	<linux-kernel@vger.kernel.org>, Andrew Jeffery <andrew@aj.id.au>,
-	"openbmc@lists.ozlabs.org" <openbmc@lists.ozlabs.org>,
-	"linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>
-Subject: [PATCH v7 4/7] PHY: aspeed: Add ASPEED PCIe PHY driver
-Thread-Topic: [PATCH v7 4/7] PHY: aspeed: Add ASPEED PCIe PHY driver
-Thread-Index: AQHcbi5Sg3H9Wgp35E2Sp8TbUiyc77UvaBQAgADmf4A=
-Date: Wed, 24 Dec 2025 05:32:00 +0000
-Message-ID: <SEYPR06MB51340F64E40B19975A2FD9D79DB2A@SEYPR06MB5134.apcprd06.prod.outlook.com>
-References: <20251216-upstream_pcie_rc-v7-0-4aeb0f53c4ce@aspeedtech.com>
- <20251216-upstream_pcie_rc-v7-4-4aeb0f53c4ce@aspeedtech.com>
- <aUq3hF7Xfk-f35Nh@vaman>
-In-Reply-To: <aUq3hF7Xfk-f35Nh@vaman>
-Accept-Language: zh-TW, en-US
-Content-Language: zh-TW
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=aspeedtech.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: SEYPR06MB5134:EE_|TY0PR06MB6854:EE_
-x-ms-office365-filtering-correlation-id: acf746f4-ee2a-455b-b9a8-08de42adc326
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230040|366016|1800799024|7416014|376014|38070700021;
-x-microsoft-antispam-message-info: =?iso-8859-2?Q?c3yVevG88P/6vPa6o8eM3Cxj4P8IM1hgr40kAGC5iZ3FvTO3NW/96+Sm9G?=
- =?iso-8859-2?Q?DrQ1XhiJKJYWT6XRrVIDgxiJuyI99nz/RYz7rzLj/jB4G8VGPaos10bGbo?=
- =?iso-8859-2?Q?5zznQwE5X2Q2lrcDvzR0xKq3gZicgcf/NoRH6iIfh+Px+vFsGgkmeHLgsU?=
- =?iso-8859-2?Q?5OeaD7TV3fFo3pDEEmM6Lv2ASDgrEtAIBn7X3kMD27ZNW6Ev0R8IKU5akh?=
- =?iso-8859-2?Q?X7Ox5ZGlHbVs37Et1iMaompAtWejREE4TU9QyUiUcZsWcY7W1Fclp7R0mx?=
- =?iso-8859-2?Q?t+DE2PdlXGOEbNDc8l+CjGm1HIca1RXZwuFnb/sg1sJrCRf8bfy5xJ5c1w?=
- =?iso-8859-2?Q?4KBchSbBIVFaeDBCSdFzHLGjsEzmBRQt+9eH784LE6tsmBfQbk9sZbDc/Q?=
- =?iso-8859-2?Q?xfsDWMmvTNWZoxwslYRv1z6xjdCZ8nheb+/0/BcMy8GG0PMkqrkpL7EXWs?=
- =?iso-8859-2?Q?mwKN0O9aFvJzUMNLJ6IP6sfpE3ZUVLkfsf8S05IEa+fT84DghFkzd//F9M?=
- =?iso-8859-2?Q?XseJecwiNW+PuP/7i8+DWTNBxVshL9cAZTkyVTjYNJ/hBC8R2NqRtnFXSO?=
- =?iso-8859-2?Q?O4R4835lzDbyFtsm9oCBgGcuHtfWiHFsSPsqgXjUJ4iwwz5L/MAK7SJJ5h?=
- =?iso-8859-2?Q?1rpKdUugRLUgkq4ZwR/96N2CWj4mJUmlWf+Lh8lKwjnN0mVj6O9Bq5SbJd?=
- =?iso-8859-2?Q?P2bkP2IHaynfJXfEnIUexjzx6Vbf7LmFJJqkNOAIUqzHfK/faOWTXoQ8sc?=
- =?iso-8859-2?Q?rlMv4fBQXl7gQ7dx6PTD20Wtb8WBNI+801BlnGAX6hmv5jaNr5LN6Ee277?=
- =?iso-8859-2?Q?i0mxEvTHJ6qavJ+3YWkEOhZx6CxxSJrCF+CGeGWIwLsqCOAC8NQcC68z+O?=
- =?iso-8859-2?Q?jV2SKIaHIEh3ccQ8Vmh/O4Xx/6LsDx/u7rZzzSydSHv/3PEBNe5sp9UaHd?=
- =?iso-8859-2?Q?prelKe/nJaG5Xvlk26p+3/9rlbeRkFempWkqUIUzRX4EOL+JgzPZAhBQwn?=
- =?iso-8859-2?Q?hZ3GrFlVh81EjV+7g5t04NhNSab/WpSfmMTAQnpn3KcwuXN0NIWDKdOJLa?=
- =?iso-8859-2?Q?ZEzGC0eKWwTkUGM8O0QCDpHjc5oxx55JXT4bz2AD0234eU/onBKngF/tWP?=
- =?iso-8859-2?Q?4ZFPDBH2SdPeDekpqmXYpoYjKD8pbWlCTTgmeB/DXCKU1Ml93Wd2Taxw41?=
- =?iso-8859-2?Q?18TOIXc6JaooTqUc1nvz8XiQHi1y0Iy20MmlSUwW0W3+7duQhOqe/QEsgx?=
- =?iso-8859-2?Q?jizrxWZ0YCLGiQCMK7AZQlrk7dKmbRWZDn3iVMIGxqRm+IQA8SmmbuoGlQ?=
- =?iso-8859-2?Q?UsoR8XHGFH3376chmlgkru0a9tuBGgGFblltXDtYzmyoGZlwKiVsHkjpbN?=
- =?iso-8859-2?Q?hvFKigThNgOIxmHVvPjJelytBRcRjO0TiSPgzn+cgvaFt7Jlpip09okRpB?=
- =?iso-8859-2?Q?1hdWj7LbLErM0+BKKeW7CC4qLmEeP8g8jmQBy7J/u8qPe+iPy+4wQW+kMh?=
- =?iso-8859-2?Q?B9lrlYMakCkbWcaiwcILU3t/RKqXIA2qnzBrhakBsTlLHjm4RLKlMWvtok?=
- =?iso-8859-2?Q?aBdhRKUxC9lptzR9vBXI9vY6IWwS?=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:zh-tw;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SEYPR06MB5134.apcprd06.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(7416014)(376014)(38070700021);DIR:OUT;SFP:1102;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?iso-8859-2?Q?oq03pIl1Bo3FOA1zL85vSDNwvvRGw+56u+c3lkwm2JHWtt8fC0B05gOX7J?=
- =?iso-8859-2?Q?wlYTCKIKbl1oof/qIzFhWq3fMMtU2nZItL27/b08i1zFU6/yr3Y1ntou9q?=
- =?iso-8859-2?Q?8+2jpYw/BNeEFekMacIrUrL34vUzAkN+VuM/ru1TaLhcPpAgTusAlv8JTm?=
- =?iso-8859-2?Q?PDAjubL9uaTUsJS7f2Txgm4yxgwmK5VS9W/qPUtZdYqzLsaDJc4qeqNgjB?=
- =?iso-8859-2?Q?XycUTTCWwYyPmWcHLpK45jSxZw2qWkDTFHbVmb9kta2bYFoqCnzJp/2gXY?=
- =?iso-8859-2?Q?SFprLEtGVEnd26CmQCc87bx3yqBKEnWq1HhWORBc7emqYSVPGnlA9TwSet?=
- =?iso-8859-2?Q?NBKpSc1P7XPdf1N/KafYcVOx1MBEIZDBmVh2I0jXmXojNqQuTP8ais1azm?=
- =?iso-8859-2?Q?i3KkgC19dYkMLU/s67LwdtnYiXjsyrYsGf7sGzdH2pvHBaIEoOc1tvUdTh?=
- =?iso-8859-2?Q?P71kd+8gpRjRsG4I4RJIGXRRiyxBuVKo0GmZpBVKsz+wqq2Jnx82K/nW7H?=
- =?iso-8859-2?Q?jeDoF5ZXt6os5A9bn7KYKzg5lhcF/+KHbx5FoXNpXvHnyR6M88T4xPHVpV?=
- =?iso-8859-2?Q?uCagkHvzjXMlplAH045gUN0YrIBk0qUuBvmg21Yu4Dq7oeXSvJL2cfGm4w?=
- =?iso-8859-2?Q?9IzT2FhFeqnVa3sRJQmNWBHq17G4YWxLyl8UGzVLPI2o/DAmw3vx5xUdSd?=
- =?iso-8859-2?Q?5nBxFHE0IG/71SF6sEJY2/D2mn5i/4zZZ5ZXjiCsu9Yezz/mJMHMVpyEAD?=
- =?iso-8859-2?Q?H3XJEnLJ2cmattkljPO8xUYxI3hg3MQjT7TmDAQIgNUJgCNIaoGTMb6FFV?=
- =?iso-8859-2?Q?JbeLs5kWv16UvhJ5l8qPlVD3ypMjq8N9lMtMGVg6gW//JJ3ygOipG7zshL?=
- =?iso-8859-2?Q?Dn71rQo+nwIItafzVNHn7Z631KaE8hL68JSGYWzaJkle/qHdcdLcKZ3UKy?=
- =?iso-8859-2?Q?CUMt8MwakwY966+RkNH15SQYib3kdtUN0pZAFicWVx0d8TbOl7EAFgbQ0H?=
- =?iso-8859-2?Q?Jel2IfOw2CVy8A/+Iroj8TYZ0AublVhW9F9KpHzb1HxhI+O18FEIsC+gwQ?=
- =?iso-8859-2?Q?z6T9EU/B+bzwI6idnACllYqxH19WwzN9CNlL4PxlM6g+j6uvt7H4LnO/+I?=
- =?iso-8859-2?Q?mzgjealuXs2SHJCWtlHXPijC8v0wUyQNyrB6hamM0ZtHJnXeqpx7Tuwn7v?=
- =?iso-8859-2?Q?TRE6XJ9aJOcaTXq0cvYTl29bXJQ5mLJU5ioKomiKxIm110DgvO4i9W1BK/?=
- =?iso-8859-2?Q?JlXjAAV91OLIWMA/ZbD0NB3bqdqULY0hj62f5K6ICZglkuuf0vwLvIzxAh?=
- =?iso-8859-2?Q?0sdWRQAAsNCwustWK2cCkOp/GaZSCf40DJnxJ5qNZ2SPlTahO2RZBHDFqy?=
- =?iso-8859-2?Q?CeSBHnAf3saUHRN+PATeU8ldGLQeLggtzIC3tG7nRIKl23peHvfOSozceC?=
- =?iso-8859-2?Q?r8dYFc6K98MLPDUwKohsGH2/4J3wFzDrSPUHgcRTc9JTw7r0cS5ufMRTH8?=
- =?iso-8859-2?Q?xW7s8ABJVheAgK6tEjSC7rQ5yqnlXnPyiwMEIQ0yR46DJ/uC1FTbklv74J?=
- =?iso-8859-2?Q?j1ei76no+5NBxOJC2SecbxC4p1OBqg98gCNzsVv0BRdnV84PoNQx2A2YJl?=
- =?iso-8859-2?Q?0BA6zmUtOP0tRAtC0JdlduLYvVzv3me62UPaKSZeixDuSovwepEfpHzMsl?=
- =?iso-8859-2?Q?2kSf55T4YjhXHGB+3/lx6cTAIol3860E9/6OsghO3LbAfeLrGWVU0s4KOo?=
- =?iso-8859-2?Q?Iev7K9jv7/no73YzloVb2n0siTOyndZm5lP0ZpYgwv8vtuB2O5oIpQPI1t?=
- =?iso-8859-2?Q?a2qEnzPh5w=3D=3D?=
+ bh=gH8LmJoteiaUZxJqoEwUuE4+1g3h/SxdE5LVkkwvZHs=;
+ b=cTI2gmIaaBTzGw616G+42zK2PHRyGG6q3V5TbHJosKwe8dCkCDD3XYwYRVcTUBKlO1BJWsrjhN/2mQciC1ZRJNVMt75yn+Cpc62/uHuOjKeoW1mkXw039gTO9U/sEa6R+mtHyJsxi/cxt04P/84WtX1B4s4RkWiydqwCzmEvu5k=
+Received: from CH5P221CA0019.NAMP221.PROD.OUTLOOK.COM (2603:10b6:610:1f2::26)
+ by DS7PR10MB5902.namprd10.prod.outlook.com (2603:10b6:8:86::5) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.9456.11; Wed, 24 Dec 2025 05:48:25 +0000
+Received: from CH2PEPF00000143.namprd02.prod.outlook.com
+ (2603:10b6:610:1f2:cafe::81) by CH5P221CA0019.outlook.office365.com
+ (2603:10b6:610:1f2::26) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9456.11 via Frontend Transport; Wed,
+ 24 Dec 2025 05:48:24 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 198.47.21.195)
+ smtp.mailfrom=ti.com; dkim=none (message not signed) header.d=none;dmarc=pass
+ action=none header.from=ti.com;
+Received-SPF: Pass (protection.outlook.com: domain of ti.com designates
+ 198.47.21.195 as permitted sender) receiver=protection.outlook.com;
+ client-ip=198.47.21.195; helo=flwvzet201.ext.ti.com; pr=C
+Received: from flwvzet201.ext.ti.com (198.47.21.195) by
+ CH2PEPF00000143.mail.protection.outlook.com (10.167.244.100) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.9456.9 via Frontend Transport; Wed, 24 Dec 2025 05:48:24 +0000
+Received: from DFLE204.ent.ti.com (10.64.6.62) by flwvzet201.ext.ti.com
+ (10.248.192.32) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Tue, 23 Dec
+ 2025 23:48:19 -0600
+Received: from DFLE212.ent.ti.com (10.64.6.70) by DFLE204.ent.ti.com
+ (10.64.6.62) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Tue, 23 Dec
+ 2025 23:48:19 -0600
+Received: from lelvem-mr05.itg.ti.com (10.180.75.9) by DFLE212.ent.ti.com
+ (10.64.6.70) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20 via Frontend
+ Transport; Tue, 23 Dec 2025 23:48:19 -0600
+Received: from toolbox.dhcp.ti.com (uda0492258.dhcp.ti.com [10.24.73.74])
+	by lelvem-mr05.itg.ti.com (8.18.1/8.18.1) with ESMTP id 5BO5mFtC079101;
+	Tue, 23 Dec 2025 23:48:15 -0600
+From: Siddharth Vadapalli <s-vadapalli@ti.com>
+To: <vkoul@kernel.org>, <neil.armstrong@linaro.org>, <robh@kernel.org>,
+	<krzk+dt@kernel.org>, <conor+dt@kernel.org>, <sjakhade@cadence.com>,
+	<rogerq@kernel.org>
+CC: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+	<devicetree@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+	<srk@ti.com>, <s-vadapalli@ti.com>
+Subject: [PATCH 0/2] Cadence: Torrent: Enable PCIe + XAUI multilink configuration
+Date: Wed, 24 Dec 2025 11:18:57 +0530
+Message-ID: <20251224054905.763399-1-s-vadapalli@ti.com>
+X-Mailer: git-send-email 2.51.1
 MIME-Version: 1.0
-X-OriginatorOrg: aspeedtech.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: SEYPR06MB5134.apcprd06.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: acf746f4-ee2a-455b-b9a8-08de42adc326
-X-MS-Exchange-CrossTenant-originalarrivaltime: 24 Dec 2025 05:32:00.3716
+X-C2ProcessedOrg: 333ef613-75bf-4e12-a4b1-8e3623f5dcea
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: CH2PEPF00000143:EE_|DS7PR10MB5902:EE_
+X-MS-Office365-Filtering-Correlation-Id: dfcc8e44-0ead-4eb8-2639-08de42b00d83
+X-LD-Processed: e5b49634-450b-4709-8abb-1e2b19b982b7,ExtAddr
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|36860700013|82310400026|7416014|376014|1800799024;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?qJ2BCxk0ykhOS1fi1yOyB8bL+ST8WHcBsTNZwF0uODUs5WUyj722bHLuBGKu?=
+ =?us-ascii?Q?8TzrTP3w4Ah8BAsHNB6tgdIJDquBekoEJqVVLGRQ/PCENutB8m+2XxulhQVy?=
+ =?us-ascii?Q?sVS6rMRmbdLRri9pYm/AX9kkupwP1Kxuc0GqnvrWKm/tdgntF/J7ECMBCGWb?=
+ =?us-ascii?Q?bEO0+rY+HDCqZMBP0p2hapf9fI90YUuM/tXyhVz9tMK6cNpGKSG+TKgVXX4x?=
+ =?us-ascii?Q?JR+6FSKXtWEJyfD0sjlJ7snsEjJeOjvckjGnYo9S8hhgyIMERrZZl8yaU692?=
+ =?us-ascii?Q?3W2QoUhair7NnRpACR+I66L4zGMvS8i/cuRyjwEmtMeusXM1hJiKw2B8tOff?=
+ =?us-ascii?Q?zqaa9O6JHL/xfEXMC1PiFKg207YSS97LS0yJv2MEaMXoBVp9hjH0tM/j3kfj?=
+ =?us-ascii?Q?cbQNBGecPIaYW8FuFKwtJ0NNqUe+UI+uL4dN6RtOA32Mj8aloEEGz3Vu+APp?=
+ =?us-ascii?Q?r34jdzkQqknHVJ9oMZq7uBJqfaKLyMFkOM4pWe9XE09pIOV2Njikqyj2ySAx?=
+ =?us-ascii?Q?Sou35tC04dArdIUuYfJWgc0oT7dw5GBLMAX1yFyUMN1wfZ6BtSCfTnY8PeCI?=
+ =?us-ascii?Q?nFwP34I6V2FPjSW7YAJmZ4JkKtO/fyHAp+LMl/7ONvGiNm5kzy6/PzuoJR+b?=
+ =?us-ascii?Q?I+IPs39G4tL3/2zTNBXLnfZG9A68ejqCcph0O39Yp9XliBnTwbfkrdjS3eor?=
+ =?us-ascii?Q?XZVBNXqwXccSEZZTmsgLbbc+tOXP+WcbY0i+MrHmw+Iqldggng6joo9IsxKc?=
+ =?us-ascii?Q?xfJcDMR3Bt2SoFyLzOnNjHH2ExgjFWjyVctV80yXkOmz8VHgbT+6fViSk3wU?=
+ =?us-ascii?Q?/NMNfrRZN4ubQOjmnTQoOl14WVSbxBCxkAEKhv7sl1pt08t6j3EDwgYS3pRL?=
+ =?us-ascii?Q?IaZuJy8tPnYuHlT3WZZEKMeKgdl8i4pyXnrP/rfuhfbZC+fGomSN3/jEZehu?=
+ =?us-ascii?Q?86Ow7qvsn7pA3mG9otjzkQKNa1ei8cDqE9mSWH4AjxP2tfQObneZSLmpZGLu?=
+ =?us-ascii?Q?sZcPBqj2mRTz4bmp7xeENNkZ2MQhogxniq/5WDtA2tD4RI9MVbsobsnexjKb?=
+ =?us-ascii?Q?LFu5I7K/N2jeMqr3Q/aYCzK39h5/+kEN/k/G9DqNAXbQT+147CHcO0GMCCRl?=
+ =?us-ascii?Q?PA3vc+XH5vVb8s/dp98U1f26JgIWfeeMKKB8KAzD8gjC9ZTZvpHwJOr0bkJC?=
+ =?us-ascii?Q?b7e+Ug0TsuBSzZb66RGXVLdY6SlYSbTfr8uQVpzJiQQ1CakEtuGMRHRxO1IF?=
+ =?us-ascii?Q?kCoWgSOSlgLFB2w7xLnvteTXzYHnXIlWPo/YOorxQwI/Qv3iX4/ggEmrfrJb?=
+ =?us-ascii?Q?XWkaPC5KPNpy0HL8iVwry+Yy3wdLJlom2URS1dqGfhqUa7xYxKG0Eo/9R8eN?=
+ =?us-ascii?Q?vFIY2dcka9nwWJDP2DrXJjgx4LMgZIQ1xyS3wu0Qa1Ts65JaZbCrzJdBuzrE?=
+ =?us-ascii?Q?DViI4wpQLWGE0/CTw0oUMoKz7SvxW/9z9a5yPkJHrq+8IgEWruq4sWqPda+1?=
+ =?us-ascii?Q?k/WI2SgmUwtf3HrllFwTFqwlBE64HsXXTcB8qJ0ChAcfS4AsKwkWgE/MHZDG?=
+ =?us-ascii?Q?7bL2zLEtZTEc41GEYvA=3D?=
+X-Forefront-Antispam-Report: CIP:198.47.21.195;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:flwvzet201.ext.ti.com;PTR:ErrorRetry;CAT:NONE;SFS:(13230040)(36860700013)(82310400026)(7416014)(376014)(1800799024);DIR:OUT;SFP:1101;
+X-OriginatorOrg: ti.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 24 Dec 2025 05:48:24.0854
  (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 43d4aa98-e35b-4575-8939-080e90d5a249
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: AmhT+g2tDVcVgHhJBs+M8O27Kb7oGJRv23zt/QWMfKNeGWK15CFhpwswLr0sdEq43qCijhrfD2U1lLe/wWboDql9URUU69bRMcqVPcJsc/U=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: TY0PR06MB6854
+X-MS-Exchange-CrossTenant-Network-Message-Id: dfcc8e44-0ead-4eb8-2639-08de42b00d83
+X-MS-Exchange-CrossTenant-Id: e5b49634-450b-4709-8abb-1e2b19b982b7
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=e5b49634-450b-4709-8abb-1e2b19b982b7;Ip=[198.47.21.195];Helo=[flwvzet201.ext.ti.com]
+X-MS-Exchange-CrossTenant-AuthSource: CH2PEPF00000143.namprd02.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DS7PR10MB5902
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251223_213212_398427_4B8C737C 
-X-CRM114-Status: GOOD (  27.24  )
+X-CRM114-CacheID: sfid-20251223_214830_881181_55085440 
+X-CRM114-Status: UNSURE (   7.28  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -180,110 +154,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Vinod,
+Hello,
 
-Thank you for your reply.
+This patch series adds the dt-binding for PHY_TYPE_XAUI and adds the
+driver support for enabling PCIe + XAUI multilink configuration.
 
-> > Introduce support for Aspeed PCIe PHY controller available in
-> > AST2600/2700.
-> 
-> What is with the uppercase "PHY" in patch title instead of lowercase 'phy' as is
-> the convention
-> 
+Patch series is based on linux-next tagged next-20251219.
 
-Got it. I will change the title to lowercase 'phy' in next version.
+Regards,
+Siddharth.
 
-> > +++ b/drivers/phy/aspeed/Kconfig
-> > @@ -0,0 +1,15 @@
-> > +# SPDX-License-Identifier: GPL-2.0-only # # Phy drivers for Aspeed
-> > +platforms # config PHY_ASPEED_PCIE
-> > +	tristate "ASPEED PCIe PHY driver"
-> > +	select GENERIC_PHY
-> > +	depends on ARCH_ASPEED
-> > +	default y
-> 
-> NO! why should this driver be default!
-> 
+Swapnil Jakhade (2):
+  dt-bindings: phy: Add PHY_TYPE_XAUI definition
+  phy: cadence-torrent: Add PCIe + XAUI multilink configuration for
+    100MHz refclk
 
-Agreed - this should not be default.
-I'll remove `default y` in the next revision.
+ drivers/phy/cadence/phy-cadence-torrent.c | 143 ++++++++++++++++++++--
+ include/dt-bindings/phy/phy.h             |   1 +
+ 2 files changed, 137 insertions(+), 7 deletions(-)
 
-> > +	help
-> > +	  This option enables support for the ASPEED PCIe PHY driver.
-> > +	  The driver provides the necessary interface to control and
-> > +	  configure the PCIe PHY hardware found on ASPEED SoCs.
-> > +	  It is required for proper operation of PCIe devices on
-> > +	  platforms using ASPEED chips.
-> > \ No newline at end of file
-> 
-> ??
-> 
-
-I'll add the missing newline at end of file in the next revision.
-
-> > diff --git a/drivers/phy/aspeed/Makefile b/drivers/phy/aspeed/Makefile
-> > new file mode 100644 index 000000000000..7203152f44bf
-> > --- /dev/null
-> > +++ b/drivers/phy/aspeed/Makefile
-> > @@ -0,0 +1,2 @@
-> > +# SPDX-License-Identifier: GPL-2.0
-> > +obj-$(CONFIG_PHY_ASPEED_PCIE)		+= phy-aspeed-pcie.o
-> > \ No newline at end of file
-> 
-> Are we expecting more drivers for aspeed, if not move it to drivers/phy/ once
-> we have couple of them we can add a directory
-> 
-
-Yes, we are expecting more PHY drivers for ASPEED.
-
-This is the first ASPEED PHY driver, and additional ASPEED-specific
-PHY drivers will be submitted later, so having a dedicated
-drivers/phy/aspeed/ directory is intentional.
-
-> > diff --git a/drivers/phy/aspeed/phy-aspeed-pcie.c
-> > b/drivers/phy/aspeed/phy-aspeed-pcie.c
-> > new file mode 100644
-> > index 000000000000..3de43a86ac17
-> > --- /dev/null
-> > +++ b/drivers/phy/aspeed/phy-aspeed-pcie.c
-> > @@ -0,0 +1,209 @@
-> > +// SPDX-License-Identifier: GPL-2.0+
-> > +/*
-> > + * Copyright 2025 Aspeed Technology Inc.
-> > + */
-> > +
-> > +#include <linux/clk.h>
-> > +#include <linux/clk-provider.h>
-> > +#include <linux/delay.h>
-> > +#include <linux/err.h>
-> > +#include <linux/io.h>
-> > +#include <linux/iopoll.h>
-> > +#include <linux/kernel.h>
-> > +#include <linux/mfd/syscon.h>
-> > +#include <linux/module.h>
-> > +#include <linux/of.h>
-> > +#include <linux/of_address.h>
-> 
-> why do you need this
-> 
-> > +#include <linux/phy/pcie.h>
-> > +#include <linux/phy/phy.h>
-> > +#include <linux/platform_device.h>
-> > +#include <linux/regmap.h>
-> > +#include <linux/regulator/consumer.h> #include <linux/reset.h>
-> > +#include <linux/slab.h>
-> 
-> 
-> Do you need all headers here?
-> 
-
-Thanks for pointing this out.
-
-I'll confirm which headers are actually required and clean up
-the unused includes in the next revision.
-
-Thanks,
-Jacky
+-- 
+2.51.1
 
 
 -- 
