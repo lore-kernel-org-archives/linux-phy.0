@@ -4,58 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8E39FE75458
-	for <linux-phy@archiver.kernel.org>; Wed, 24 Dec 2025 13:51:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C0E67E78491
+	for <linux-phy@archiver.kernel.org>; Wed, 24 Dec 2025 21:53:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:Cc:From:Subject:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MkfVwio6c+gKA5nKCVftrhAoSRKOet+iA/R/837yEfo=; b=BQF8uakgBqnJp7
-	FvL4QOzVT9nfMCDpMuatneFb3i8BM8tVMb72gOVClttXf9IcTeL34zCG8Z2ym5RWqdUQ/W2JwJSXf
-	FdzsCgcmpyFT9VAIfUvQiCD3FKicOVBpkrK09b4QIKvSw5qPM0F7HuqzGnEgT4Xb5NqToAVxrAUea
-	9ulaEJtNXL24+K6+BZO8Mw3gRR0sJYDCCKIODafle4/XUBUScfeYYyO7wgsBOSMr0iqyVdsp6GZ7X
-	6OHp9mDu5vYzoCkTcHr2XtLEdrBVy6hagol0raRMe+5TlyOmu+x8OCTUzJ+0liK0JuutJ6C7HdMlu
-	yghGVsxhfFwSi+OU2+2A==;
+	List-Owner; bh=Axc0ICoKpAebDbb0RGUzvl0Df2IKc7cX3ZslEkvqvng=; b=R7vfDJS5oOtrt7
+	LzIm4MzyGp+1cYnXWJu+Xk4xx57TWnODz+PI6Po6DNyqnSwPaO+QYWgd9xRytVdGrOSMOkqixOvAH
+	Oz1w2UYtn2G0/sUuvCqWmwVJfaViFRDPk5qgUOUDKMSpP7XY1j989hzaf3XcpUIfIEJ/GccpLyrLr
+	/KGrGmf1R/uFMbOmGU8e1D8soudyHoH02IVQrAOSLQZm8PcmZgEMBSvAorhSbagUzWhGj57ZXEvKZ
+	GRoRkSDbdf8ZK1SU7yz6Mht3cvH3bRncXplO76a0HGNlzhB4FiANfP6+vvAlrft+6GIjj+OiXjGV4
+	G26Njcfu56wGc43PGz1A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vYPGu-0000000Gv79-3zOD;
-	Wed, 24 Dec 2025 13:51:24 +0000
-Received: from vps0.lunn.ch ([156.67.10.101])
+	id 1vYWnp-0000000HQsX-0qhx;
+	Wed, 24 Dec 2025 21:53:53 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vYPGs-0000000Gv5t-3plO;
-	Wed, 24 Dec 2025 13:51:23 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
-	s=20171124; h=In-Reply-To:Content-Transfer-Encoding:Content-Disposition:
-	Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:From:
-	Sender:Reply-To:Subject:Date:Message-ID:To:Cc:MIME-Version:Content-Type:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Content-Disposition:
-	In-Reply-To:References; bh=ZcZ9ud6MrIIt3E5p0vRM1dPZEBiHBks0OHn0td+hkMI=; b=Zb
-	U3d3vtlqyDpe1L0fl3J7uYSGVrTcxGTwWZyWJjYAasK025G+XWWmsgTC/01EkPP1TThtZskrv+/CE
-	c7VheYUc/Lg1IsCZ5Si+3l5Du+jUXmJoFrTmClnFjl+FegAJVTyXK8uT/ekBqYMgqbl+gqSmWj8t2
-	R/38FW45C93M/EI=;
-Received: from andrew by vps0.lunn.ch with local (Exim 4.94.2)
-	(envelope-from <andrew@lunn.ch>)
-	id 1vYPGh-000QDv-2y; Wed, 24 Dec 2025 14:51:11 +0100
-Date: Wed, 24 Dec 2025 14:51:11 +0100
-From: Andrew Lunn <andrew@lunn.ch>
-To: Xu Yang <xu.yang_2@nxp.com>
-Cc: vkoul@kernel.org, neil.armstrong@linaro.org, shawnguo@kernel.org,
-	kernel@pengutronix.de, festevam@gmail.com, jun.li@nxp.com,
-	Frank.Li@nxp.com, linux-phy@lists.infradead.org,
-	imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2] phy: fsl-imx8mq-usb: add debugfs to access control
- register
-Message-ID: <9870fd41-bafb-4ab0-91ff-8fcea53ca0a9@lunn.ch>
-References: <20251224111716.2925597-1-xu.yang_2@nxp.com>
+	id 1vYWnk-0000000HQs6-2ZZ0;
+	Wed, 24 Dec 2025 21:53:50 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 94C4960010;
+	Wed, 24 Dec 2025 21:53:47 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 154BDC4CEF7;
+	Wed, 24 Dec 2025 21:53:46 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1766613227;
+	bh=jBtUeNJRO+RbhNPQJjWLbiBQiPsGJ9VvONJQVLV0Q1c=;
+	h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
+	b=C7KSL8HLRTy1Rk1rIfQkwTEDk+GAA7eqse4JiJ11JBbVPOp9zcd+4E+g3RRAUbTs4
+	 KinvoQ/FKT32X7ZJqskw6uFUnCH0qXEATSskCo7yhDmKB7Hm5uHr/XBb8jY2q5K0ck
+	 jSyXCbdZO5E2aetjKXi/ns+jPd1X1ZpQr6og2NXOYv0RGZuBp0X4SeEf3B0TAatLnS
+	 vMzH9uvgjAv+1qTEY3KS/4SuX9KN/B70QJ6ix/RhVGURosukgDjftpbxLO6g2WBCjS
+	 gtOJesCpyd1vP8p1pVqS2UqZuOUAt8f4toWDUdbha5uTIJD/a17dQ2JKVFPXHvtv5g
+	 uKeORvnnmAZyw==
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20251224111716.2925597-1-xu.yang_2@nxp.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251224_055122_949438_58CD198E 
-X-CRM114-Status: GOOD (  14.11  )
+In-Reply-To: <176656156358.817806.16966474957670370356.b4-ty@kernel.org>
+References: <20251212-phy-clk-round-rate-v3-0-beae3962f767@redhat.com> <176656156358.817806.16966474957670370356.b4-ty@kernel.org>
+Subject: Re: [PATCH v3 0/9] phy: convert from clk round_rate() to determine_rate()
+From: Stephen Boyd <sboyd@kernel.org>
+Cc: linux-clk@vger.kernel.org, linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>, Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, Brian Masney <bmasney@redhat.com>, Chun-Kuang Hu <chunkuang.hu@kernel.org>, Chunfeng Yun <chunfeng.yun@mediatek.com>, Heiko Stuebner <heiko@sntech.de>, Kishon Vijay Abraham I <kishon@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>, Maxime Ripard <mripard@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, Philipp Zabel <p.zabel@pengutronix.de>, Vinod Koul <vkoul@kernel.org>
+Date: Wed, 24 Dec 2025 11:53:43 -1000
+Message-ID: <176661322399.4169.14248756511703978007@lazor>
+User-Agent: alot/0.11
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -67,30 +62,20 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gV2VkLCBEZWMgMjQsIDIwMjUgYXQgMDc6MTc6MTZQTSArMDgwMCwgWHUgWWFuZyB3cm90ZToK
-PiBUaGUgQ1IgcG9ydCBpcyBhIHNpbXBsZSAxNi1iaXQgZGF0YS9hZGRyZXNzIHBhcmFsbGVsIHBv
-cnQgdGhhdCBpcwo+IHByb3ZpZGVkIGZvciBvbi1jaGlwIGFjY2VzcyB0byB0aGUgY29udHJvbCBy
-ZWdpc3RlcnMgaW5zaWRlIHRoZQo+IFVTQiAzLjAgZmVtdG9QSFkuIFdoaWxlIGFjY2VzcyB0byB0
-aGVzZSByZWdpc3RlcnMgaXMgbm90IHJlcXVpcmVkCj4gZm9yIG5vcm1hbCBQSFkgb3BlcmF0aW9u
-LCB0aGlzIGludGVyZmFjZSBlbmFibGVzIHlvdSB0byBhY2Nlc3MKPiBzb21lIG9mIHRoZSBQSFni
-gJlzIGRpYWdub3N0aWMgZmVhdHVyZXMgZHVyaW5nIG5vcm1hbCBvcGVyYXRpb24gb3IKPiB0byBv
-dmVycmlkZSBzb21lIGJhc2ljIFBIWSBjb250cm9sIHNpZ25hbHMuCj4gCj4gMyBkZWJ1Z2ZzIGZp
-bGVzIGFyZSBjcmVhdGVkIHRvIHJlYWQgYW5kIHdyaXRlIGNvbnRyb2wgcmVnaXN0ZXJzLAo+IGFs
-bCB1c2UgaGV4YWRlY2ltYWwgZm9ybWF0Ogo+IGN0cmxfcmVnX2Jhc2U6IHRoZSByZWdpc3RlciBv
-ZmZzZXQgdG8gd3JpdGUsIG9yIHRoZSBzdGFydCBvZmZzZXQKPiAgICAgICAgICAgICAgICB0byBy
-ZWFkLgo+IGN0cmxfcmVnX2NvdW50OiBob3cgbWFueSBjb250aW51b3VzIHJlZ2lzdGVycyB0byBi
-ZSByZWFkLgo+IGN0cmxfcmVnX3ZhbHVlOiByZWFkIHRvIHNob3cgdGhlIGNvbnRpbnVvdXMgcmVn
-aXN0ZXJzIHZhbHVlIGZyb20KPiAgICAgICAgICAgICAgICAgdGhlIG9mZnNldCBpbiBjdHJsX3Jl
-Z19iYXNlLCB0byBjdHJsX3JlZ19iYXNlCj4gICAgICAgICAgICAgICAgICsgY3RybF9yZWdfY291
-bnQgLSAxLCBvbmUgbGluZSBmb3Igb25lIHJlZ2lzdGVyLgo+ICAgICAgICAgICAgICAgICB3aGVu
-IHdyaXRlLCBvdmVycmlkZSB0aGUgcmVnaXN0ZXIgYXQgY3RybF9yZWdfYmFzZSwKPiAgICAgICAg
-ICAgICAgICAgb25lIHRpbWUgY2FuIG9ubHkgY2hhbmdlIG9uZSAxNmJpdHMgcmVnaXN0ZXIuCgpB
-cmUgdGhlIHJlZ2lzdGVycyBvcGVubHkgZG9jdW1lbnRlZCBzb21ld2hlcmU/IENvdWxkIHlvdSBp
-bmNsdWRlIGEKbGluayBpbiB0aGUgY29tbWl0IG1lc3NhZ2UuCgogICAgIEFuZHJldwoKLS0gCmxp
-bnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6
-Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+Quoting Vinod Koul (2025-12-23 21:32:43)
+> 
+> Applied, thanks!
+> 
+
+Thanks Vinod! Can you provide a tag or immutable branch so I can remove
+round rate from the clk core in linux-next?
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
