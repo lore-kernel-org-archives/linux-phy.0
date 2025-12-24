@@ -4,31 +4,31 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5C094E7491E
-	for <linux-phy@archiver.kernel.org>; Wed, 24 Dec 2025 07:10:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B4E9EE7491E
+	for <linux-phy@archiver.kernel.org>; Wed, 24 Dec 2025 07:10:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=EqZbj3GzSTKSRXOLfB2nQYeFUlgthZnyoED8rFTAfbY=; b=4HSryapva7oWzK
-	PYYS8O7hNpj8P4az7OcswAvBl/+7avjIp/BN7JxeIgco1WRzBt0mdt4h9Pkbk8Q3ZOQf35vYGn0uE
-	nvjz34e3JOS0BEQZv9Gh1reIKXdsd3mn6usZmelu8RtBlFHKWn6nKmp+BJFDNoxEr0L/Y1QBfyd0c
-	cgLZJ+K01PCjmeBjBZagjUaom2qGDvY3cG22vxzY2RAQiRH/t4ViTxTcmRwBkCI0G5RZFwUyGqopP
-	Tt/OkmjaUi+Eb4Pq14lufMBxWtDv2c8su5ieoOtcWqZB2HKadaMoAGQtdJpKQNyA6ny8zJEv6lvJD
-	qJ2VrrnTHAStCCSke/QA==;
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3+FO2MUhQVVSKurvw2bYqjsJjTjazog9yJi6bHKUCO0=; b=iWh9fxMGGlfrF3
+	PwmJNx+v9cUzHznHJLACBYi4w2QnS52JAeuJHSUmBOUsNbVzBObK39YuLIuUCQGcqL0sHfvu15don
+	oUPNoHC+fdwjK21wCyQWLgjtb2lKl/7IIeURuYOoTu3UULU5RJ7HjMxHEAMLiKRtdUtqnWlMRMJH3
+	M20IBw//mms2Mzd3rUqXrplAjz1Z2uc70WrZA/IQzlDT/i/rRVu5BfvU0zp9rvswN7IkB0rtQWcl+
+	6EdVShVtHJMR3q5wuaetBCeeeALrpinaoPFoNzTrSR79kqyt8GfR/rnTc/00U8PEcAxUW+Y7kLwsP
+	MMNp7IISIXwzDZCdQozQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vYJ1D-0000000GWZO-3mhO;
-	Wed, 24 Dec 2025 07:10:47 +0000
-Received: from mail-m49219.qiye.163.com ([45.254.49.219])
+	id 1vYJ1M-0000000GWbA-1fgZ;
+	Wed, 24 Dec 2025 07:10:56 +0000
+Received: from mail-m49233.qiye.163.com ([45.254.49.233])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vYJ1B-0000000GWYm-2BCl;
-	Wed, 24 Dec 2025 07:10:47 +0000
+	id 1vYJ1J-0000000GWaH-1X5l;
+	Wed, 24 Dec 2025 07:10:54 +0000
 Received: from localhost.localdomain (unknown [58.22.7.114])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 2e63ea73d;
-	Wed, 24 Dec 2025 15:10:33 +0800 (GMT+08:00)
+	by smtp.qiye.163.com (Hmail) with ESMTP id 2e63ea78c;
+	Wed, 24 Dec 2025 15:10:48 +0800 (GMT+08:00)
 From: Shawn Lin <shawn.lin@rock-chips.com>
 To: Manivannan Sadhasivam <mani@kernel.org>,
 	Bjorn Helgaas <bhelgaas@google.com>,
@@ -40,24 +40,25 @@ Cc: linux-pci@vger.kernel.org,
 	Neil Armstrong <neil.armstrong@linaro.org>,
 	Sebastian Reichel <sebastian.reichel@collabora.com>,
 	Shawn Lin <shawn.lin@rock-chips.com>
-Subject: [PATCH 0/5] Add calibration for Synopsys PCIe PHY and Controller
-Date: Wed, 24 Dec 2025 15:10:05 +0800
-Message-Id: <1766560210-100883-1-git-send-email-shawn.lin@rock-chips.com>
+Subject: [PATCH 1/5] PCI: dw-rockchip: Add phy_calibrate() to check PHY lock status
+Date: Wed, 24 Dec 2025 15:10:06 +0800
+Message-Id: <1766560210-100883-2-git-send-email-shawn.lin@rock-chips.com>
 X-Mailer: git-send-email 2.7.4
-X-HM-Tid: 0a9b4f31f8b109cckunm34e2a83f3c29b2
+In-Reply-To: <1766560210-100883-1-git-send-email-shawn.lin@rock-chips.com>
+References: <1766560210-100883-1-git-send-email-shawn.lin@rock-chips.com>
+X-HM-Tid: 0a9b4f32340d09cckunm34e2a83f3c2a70
 X-HM-MType: 1
 X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZGUJCTlYaHk8dGkkfGENOSUtWFRQJFh
+	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZGhoZQlZOSU4dSE8YGkxKH0JWFRQJFh
 	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSU9PT0
 	hVSktLVUpCS0tZBg++
 DKIM-Signature: a=rsa-sha256;
-	b=gh5/+vL0A5QZWNvpxrXt6g0tTM1y0jo5WlymP6ICW55+k3ArpRsLM/B+hts7Ac5bMMaVC4/fmDxwoWIsASG7NH0tfsQTkUNg2yu/6Wf1ZZoBYCyNEMo+GbZ+XgRWmgf8oan41gK77RSep4OsoV6sXnV5hgYBbsYvvBlVusNrcV8=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
-	bh=yBptviF9T5YX5SPBqB7UXmBB5g56SIiXZoIROiFrrzw=;
+	b=fXN+rH/SRZfYnwscvqoSqYTEjcehEY+7m0VATktGPyBc5q+Sr8vHX9/FFAUmWt3xIx71RB0HFKIkId26Gc1UrAPnMycD7vMOP6yiv/+4tmSZkGkCnF0QX6r+rXFWCGk/X1gBl2yTev/3jACQHcx9peNbiPQovAZGA56jr9zSsHE=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
+	bh=nmApjKhdRDMPDmEy+/sym/t5MR+4fczg/gJfQLzXJfs=;
 	h=date:mime-version:subject:message-id:from;
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251223_231046_104305_4B46AA7A 
-X-CRM114-Status: UNSURE (   8.94  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20251223_231053_600020_676FFF13 
+X-CRM114-Status: GOOD (  12.23  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,35 +76,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Current we keep controller in reset state when initializing PHY which
+is the right thing to do. But this case, the PHY is also reset because
+it refers to a signal from controller. Now we check PHY lock status
+inside .phy_init() callback which may be bogus for certain type of PHY,
+because of the fact above. Add phy_calibrate() to better check PHY lock
+status if provided.
 
-Currently, when pcie-dw-rockchip uses the Synopsys PHY, it relies on
-the phy_init() callback of the phy-rockchip-snps-pcie3 driver to
-perform calibration. This is incorrect because the controller is
-still held in reset at that time, preventing the PHY from accurately
-reflecting the actual PLL lock and calibration status.
+Signed-off-by: Shawn Lin <shawn.lin@rock-chips.com>
+---
 
-To fix this, this series:
-1. Calls phy_calibrate() in the pcie-dw-rockchip driver (if supported)
-   after the controller is out of reset, ensuring the PHY can
-   properly synchronize with the controller state.
-2. Adds the necessary calibration support in the Synopsys PHY driver
-   to implement this callback.
+ drivers/pci/controller/dwc/pcie-dw-rockchip.c | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
 
-Please review and test.
-
-
-
-Shawn Lin (5):
-  PCI: dw-rockchip: Add phy_calibrate() to check PHY lock status
-  phy: rockchip-snps-pcie3: Add phy_calibrate() support
-  phy: rockchip-snps-pcie3: Increase sram init timeout
-  phy: rockchip-snps-pcie3: Check more sram init status for RK3588
-  phy: rockchip-snps-pcie3: Only check PHY1 status when using it
-
- drivers/pci/controller/dwc/pcie-dw-rockchip.c  |  9 +++-
- drivers/phy/rockchip/phy-rockchip-snps-pcie3.c | 61 +++++++++++++++++++++-----
- 2 files changed, 57 insertions(+), 13 deletions(-)
-
+diff --git a/drivers/pci/controller/dwc/pcie-dw-rockchip.c b/drivers/pci/controller/dwc/pcie-dw-rockchip.c
+index f8605fe..75d6306 100644
+--- a/drivers/pci/controller/dwc/pcie-dw-rockchip.c
++++ b/drivers/pci/controller/dwc/pcie-dw-rockchip.c
+@@ -705,6 +705,12 @@ static int rockchip_pcie_probe(struct platform_device *pdev)
+ 	if (ret)
+ 		goto deinit_phy;
+ 
++	ret = phy_calibrate(rockchip->phy);
++	if (ret) {
++		dev_err(dev, "phy lock failed\n");
++		goto assert_controller;
++	}
++
+ 	ret = rockchip_pcie_clk_init(rockchip);
+ 	if (ret)
+ 		goto deinit_phy;
+@@ -727,7 +733,8 @@ static int rockchip_pcie_probe(struct platform_device *pdev)
+ 	}
+ 
+ 	return 0;
+-
++assert_controller:
++	reset_control_assert(rockchip->rst);
+ deinit_clk:
+ 	clk_bulk_disable_unprepare(rockchip->clk_cnt, rockchip->clks);
+ deinit_phy:
 -- 
 2.7.4
 
