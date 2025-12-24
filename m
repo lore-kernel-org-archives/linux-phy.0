@@ -4,61 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D8855E7491C
-	for <linux-phy@archiver.kernel.org>; Wed, 24 Dec 2025 07:11:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 00D62E7491E
+	for <linux-phy@archiver.kernel.org>; Wed, 24 Dec 2025 07:27:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gLRxVKm7rCG7Xsw8SAOe8UToZLrUkscHVN5LySZN4jE=; b=HJWaxzgIhUUQCL
-	pPdHSjmRcESbG3O18Bwg2HDYy3G145MK5bZJ50WaiR5UKSkSs/ozXcfYtXn4QxTFHKyhRdBkFzHG3
-	4+zBw606D2Fq8vj8E6Wn/Yc3NwR2LwIOI17cJz+0wH4pDHe7JxDkWSV85m5eiuTvJTsShVYOX6vDW
-	Skii1xdZEL1/gH11qdnXKEcsq11T1yQJpKNU+Xpo+eDLCjVKoSv/2+afT2grL4fuzLbMN9h2UagcJ
-	MxMNo1rztKVV3BVh9dvVyxkqWH2Sy+kSrXTIL47jgT3Bh3Dry4/dvXJ0cLhZSzY8/lMOnenTXAD0U
-	IIwd0gV3dzMClwrj2WVg==;
+	List-Owner; bh=vYW79tj2enhyXAlPuyrZc1LBTTLMIrG/yTyq7tVR7RA=; b=5Baf0VCem9ueX+
+	rzbU7UOY90a3ucQHkWL7LTteESvRM6L6fI5d3Mbss9UYa/ftpvCmjw9d/ofWcCXhAqz7X9Lx1DZGN
+	bKdHeaoJrnNip6rO7jA/woqhJdRYTKDLGAktp4EzEGTXCXDxg3m52pWFnXOlSn7yXlVKudEyMyqNe
+	w+XwTmu+wEtSSlEVjeDbr95sXF+v4vE6EvYRlLj5m5rLTp7UJHx1206oh3IM1WbSj+d0nl6sUFi7q
+	S7NESdM1SXsJY3Xz/HmkElorghJDh96jFkypXJ95q5NuqikBscqVb6S5gDXbld1jcm1yRHBgNbJQM
+	cA812o999Cfj3QpExTpQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vYJ2L-0000000GWmt-2WD9;
-	Wed, 24 Dec 2025 07:11:57 +0000
-Received: from mail-m3274.qiye.163.com ([220.197.32.74])
+	id 1vYJHM-0000000GXIL-1CAZ;
+	Wed, 24 Dec 2025 07:27:28 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vYJ2J-0000000GWlF-1YcR;
-	Wed, 24 Dec 2025 07:11:56 +0000
-Received: from localhost.localdomain (unknown [58.22.7.114])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 2e63ea8ca;
-	Wed, 24 Dec 2025 15:11:50 +0800 (GMT+08:00)
-From: Shawn Lin <shawn.lin@rock-chips.com>
-To: Manivannan Sadhasivam <mani@kernel.org>,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	Vinod Koul <vkoul@kernel.org>
-Cc: linux-pci@vger.kernel.org,
-	linux-rockchip@lists.infradead.org,
-	linux-phy@lists.infradead.org,
-	Heiko Stuebner <heiko@sntech.de>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Sebastian Reichel <sebastian.reichel@collabora.com>,
-	Shawn Lin <shawn.lin@rock-chips.com>
-Subject: [PATCH 5/5] phy: rockchip-snps-pcie3: Only check PHY1 status when using it
-Date: Wed, 24 Dec 2025 15:10:10 +0800
-Message-Id: <1766560210-100883-6-git-send-email-shawn.lin@rock-chips.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1766560210-100883-1-git-send-email-shawn.lin@rock-chips.com>
-References: <1766560210-100883-1-git-send-email-shawn.lin@rock-chips.com>
-X-HM-Tid: 0a9b4f3325d609cckunm34e2a83f3c2d9f
-X-HM-MType: 1
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZGkIeHlYaHUhJSkJPQx4dSh1WFRQJFh
-	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSU9PT0
-	hVSktLVUpCS0tZBg++
-DKIM-Signature: a=rsa-sha256;
-	b=TmLgWE9U7J1vkop2lo1vEeOw97p0kk+Be/2U3TnE2Eek1d/kfquCEwnGLLvkp3zlUQmwNK7tTiEHQoh+mbs3GOUGNgpqfdb147CRvHji6dySuTGBQZgeQVYqR7EiwsK+KqGZWGKuxnFfbUdIgpArqyTP5gLb6AVyczeyc3Exk5k=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
-	bh=HVTGJgDhwCKjeXI1BckdM02NnUQgr1hJwOomGYZB9m8=;
-	h=date:mime-version:subject:message-id:from;
+	id 1vYJHK-0000000GXHy-20iu
+	for linux-phy@lists.infradead.org;
+	Wed, 24 Dec 2025 07:27:27 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 4AEC843ABD;
+	Wed, 24 Dec 2025 07:27:25 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 727DFC116B1;
+	Wed, 24 Dec 2025 07:27:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1766561245;
+	bh=JY2lcXxoeMbJufbIaJQJRdhuPVac3qiyPS8DddeWjJM=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=cktWmzZ1FFP566/R2jDRETYoEABvEMR5YTW0m/eh+bZHMdgFnSfabSHT9Z5txNB53
+	 J85BjTbYEAiCEErtcCwrKTVaYG+KoabiDIE0MatbzFIALlWSwEIrNCyurMR6oUz93Q
+	 Qvby/ZC+GYWK3T3BJE88JuCJTgEEzx1vMolQraCV9fNE4sqOj7SV/4ZhycpMlvNeG+
+	 FOW8ZFTOY3njimbxo4vPfXSJw65Z5J0Tnk7DCxY3O+MHT2G/mbP7spbesZDUk9nn8J
+	 zI3prJ2FpmSFrpQ17R+ZbGFv4mgDHizGI1UctY+2bM+4+3qlaqsEsGGOEl6WPGzLSQ
+	 3pLl5kVNvanvQ==
+Date: Wed, 24 Dec 2025 12:57:21 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Diogo Ivo <diogo.ivo@tecnico.ulisboa.pt>,
+	Jonathan Hunter <jonathanh@nvidia.com>
+Cc: Mathias Nyman <mathias.nyman@intel.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Thierry Reding <thierry.reding@gmail.com>,
+	Jonathan Hunter <jonathanh@nvidia.com>, JC Kuo <jckuo@nvidia.com>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, linux-usb@vger.kernel.org,
+	linux-tegra@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org
+Subject: Re: [PATCH 2/5] phy: tegra: xusb: Fix USB2 port regulator disable
+ logic
+Message-ID: <aUuV2ZYKmM_aYgTv@vaman>
+References: <20251204-diogo-tegra_phy-v1-0-51a2016d0be8@tecnico.ulisboa.pt>
+ <20251204-diogo-tegra_phy-v1-2-51a2016d0be8@tecnico.ulisboa.pt>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20251204-diogo-tegra_phy-v1-2-51a2016d0be8@tecnico.ulisboa.pt>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251223_231155_564290_C3CA590F 
-X-CRM114-Status: GOOD (  10.45  )
+X-CRM114-CacheID: sfid-20251223_232726_637578_C1008B8A 
+X-CRM114-Status: GOOD (  25.21  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,55 +78,78 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-RK3588_LANE_AGGREGATION and RK3588_BIFURCATION_LANE_2_3 should be
-used to check if it need to check PHY1 status. Because in other
-cases, only PHY0 could show locked status.
+On 04-12-25, 21:27, Diogo Ivo wrote:
+> The USB2 PHY mode handling on Tegra210 incorrectly relied on
+> regulator_is_enabled() when determining whether the VBUS supply should
+> be disabled during role changes. This is because regulator_is_enabled()
+> reports exactly what is states and not if there is an unbalanced number
+> of calls between regulator_enable() and regulator_disable(). For
+> example, regulator_is_enabled() always reports true on a fixed-regulator
+> with no enable gpio, which is the case on the Pixel C.
+> 
+> This then leads to the PHY driver wrongfully calling regulator_disable()
+> when transitioning from USB_ROLE_DEVICE to USB_ROLE_NONE since the driver
+> did not previously call the corresponding regulator_enable().
+> 
+> Fix this by keeping track of the current role and updating the logic to
+> disable the regulator only when the previous role was USB_ROLE_HOST.
+> 
+> While at it fix a small typo in a comment.
 
-Signed-off-by: Shawn Lin <shawn.lin@rock-chips.com>
----
+Never mix a patch with something else please. More imp if it is fix
+which will go to rcX. Please send a different patch for typo
 
- drivers/phy/rockchip/phy-rockchip-snps-pcie3.c | 12 ++++++++----
- 1 file changed, 8 insertions(+), 4 deletions(-)
+> 
+> Signed-off-by: Diogo Ivo <diogo.ivo@tecnico.ulisboa.pt>
+> ---
+>  drivers/phy/tegra/xusb-tegra210.c | 5 +++--
+>  drivers/phy/tegra/xusb.h          | 1 +
+>  2 files changed, 4 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/phy/tegra/xusb-tegra210.c b/drivers/phy/tegra/xusb-tegra210.c
+> index 3409924498e9..63ad57d95514 100644
+> --- a/drivers/phy/tegra/xusb-tegra210.c
+> +++ b/drivers/phy/tegra/xusb-tegra210.c
+> @@ -1934,9 +1934,9 @@ static int tegra210_usb2_phy_set_mode(struct phy *phy, enum phy_mode mode,
+>  			/*
+>  			 * When port is peripheral only or role transitions to
+>  			 * USB_ROLE_NONE from USB_ROLE_DEVICE, regulator is not
+> -			 * be enabled.
+> +			 * enabled.
+>  			 */
+> -			if (regulator_is_enabled(port->supply))
+> +			if (port->role == USB_ROLE_HOST)
+>  				regulator_disable(port->supply);
+>  
+>  			tegra210_xusb_padctl_id_override(padctl, false);
+> @@ -1944,6 +1944,7 @@ static int tegra210_usb2_phy_set_mode(struct phy *phy, enum phy_mode mode,
+>  		}
+>  	}
+>  
+> +	port->role = submode;
+>  	mutex_unlock(&padctl->lock);
+>  
+>  	return err;
+> diff --git a/drivers/phy/tegra/xusb.h b/drivers/phy/tegra/xusb.h
+> index d2b5f9565132..273af147dfd3 100644
+> --- a/drivers/phy/tegra/xusb.h
+> +++ b/drivers/phy/tegra/xusb.h
+> @@ -317,6 +317,7 @@ struct tegra_xusb_usb2_port {
+>  	enum usb_dr_mode mode;
+>  	bool internal;
+>  	int usb3_port_fake;
+> +	enum usb_role role;
+>  };
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-snps-pcie3.c b/drivers/phy/rockchip/phy-rockchip-snps-pcie3.c
-index 6cc38e3..36b2142 100644
---- a/drivers/phy/rockchip/phy-rockchip-snps-pcie3.c
-+++ b/drivers/phy/rockchip/phy-rockchip-snps-pcie3.c
-@@ -183,6 +183,7 @@ static int rockchip_p3phy_rk3588_init(struct rockchip_p3phy_priv *priv)
- 	}
- 
- 	reg = mode;
-+	priv->pcie30_phymode = mode;
- 	regmap_write(priv->phy_grf, RK3588_PCIE3PHY_GRF_CMN_CON0,
- 		     RK3588_PCIE30_PHY_MODE_EN | reg);
- 
-@@ -208,10 +209,13 @@ static int rockchip_p3phy_rk3588_calibrate(struct rockchip_p3phy_priv *priv)
- 				       RK3588_PCIE3PHY_GRF_PHY0_STATUS1,
- 				       reg, RK3588_SRAM_INIT_DONE(reg),
- 				       0, RK_SRAM_INIT_TIMEOUT_US);
--	ret |= regmap_read_poll_timeout(priv->phy_grf,
--					RK3588_PCIE3PHY_GRF_PHY1_STATUS1,
--					reg, RK3588_SRAM_INIT_DONE(reg),
--					0, RK_SRAM_INIT_TIMEOUT_US);
-+	if (priv->pcie30_phymode & (RK3588_LANE_AGGREGATION | RK3588_BIFURCATION_LANE_2_3)) {
-+		ret |= regmap_read_poll_timeout(priv->phy_grf,
-+						RK3588_PCIE3PHY_GRF_PHY1_STATUS1,
-+						reg, RK3588_SRAM_INIT_DONE(reg),
-+						0, RK_SRAM_INIT_TIMEOUT_US);
-+	}
-+
- 	if (ret)
- 		dev_err(&priv->phy->dev, "lock failed 0x%x, check input refclk and power supply\n",
- 			reg);
+Jonathan can we get some t-b for these two patches
+
 -- 
-2.7.4
-
+~Vinod
 
 -- 
 linux-phy mailing list
