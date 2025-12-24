@@ -4,142 +4,139 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 17F6AE7491B
-	for <linux-phy@archiver.kernel.org>; Wed, 24 Dec 2025 05:48:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7AE76E7491C
+	for <linux-phy@archiver.kernel.org>; Wed, 24 Dec 2025 06:14:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VDS/3QAg9Ka2mrEm9ptFoxfL3dH02A3+8AaKRUWQJew=; b=Gqpo28Xr/o+/rM
-	cC38JNWpgbhAMWhSla5X6Ykp7wQ8e8TC4k5IPWpyXJVHlsErMYsqvy+DMYVJnfJAqVjxbSjKM3WIM
-	AcpzmsyPsYajmdnLyZq9mvYrPP1BMRDYhI/qkdz4iW1h3WcHcruHUAOfYT0s37smKGL++vSgSal22
-	JCI5WX5mTykiokPU5l+2VeDMWPfj1XQBMt5L20U9nFA7G+UBg9OdqENXu81fbfsEYg6c+frtZR9vE
-	cwtanoxT+gcCLAN+aoQggqcxuSTWdq2pLUvzg0dKiO0YmvvY0zrIwEAChFd81XIu7cNUIEeLOEG6G
-	wdLGQWB42VNvk4hYJqDw==;
+	List-Owner; bh=jUH4L0JXn/q3pnbLYzOwYcgd04hiFU6v24Axb0eghJU=; b=REHellgR+HWqW6
+	0yf75YqOWcXhWLae+a8950H1qwFf4UiW+ns7ouit1gzT35xoG7gdTiK3bwhi/PC0zjODnzB/4ma3p
+	9HXXZuIfPpj0IBshaJf2/b1D1BG8rLFPqSiJsjNKxU8CizniUSjajV/lAWmaailI+C7A6luCSJLPM
+	Ls3/dork1NsqsrhWN158E+7ASVRrVvlogtaFZ4OBfMUPIpbKqd1Zv72YtWQYVi+YVNhwm03g6o7hB
+	pWbjpQLmX+5OBvQY5Yx02oWKVmTc2HAvoUkLARChn3+KttZiSaUf8ZhbQoDjxWLZ/UrZKblXV7mx0
+	vJOFCQrbAluGm9wAZK6A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vYHjk-0000000GSd8-36sy;
-	Wed, 24 Dec 2025 05:48:40 +0000
-Received: from mail-westus3azon11010023.outbound.protection.outlook.com ([52.101.201.23] helo=PH7PR06CU001.outbound.protection.outlook.com)
+	id 1vYI90-0000000GTwT-0LyE;
+	Wed, 24 Dec 2025 06:14:46 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vYHjf-0000000GSaP-33op;
-	Wed, 24 Dec 2025 05:48:36 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=gGa0zCeJHGbjONYC8n25ZFZkfLKWETE3ifNGoIdEgCJBqysjYAX4B3awKPCqQS1j/RC1RI0mdi+MVYgk2NLmeZSXEEk7hK+jxIYKarLprNP1ShUTGPmCW2AAKwr/77lQ35q7hgk0Zv9g9HYFQSy29oyD0snWj7mKV8c5zLXii0hNY6Q7x+G5JUwm44E9rFs3dMfYbKn2IozIvTsBEHeUIBxFj5S32VL2ccUb5gUD8zbAfymCh2IEG/9gUXId2/Z3HNAwHdHZ4CPXFri1ZFUpHSPQik0Fgfi7LxIbgLuKNpTN3Koge1bpQpgcGSt6tNEFekbI2UR/PQ+dfzI17P/9Vw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=i8gWbB02EUhMW53pST/VyoRtkxSCuXqs5ibMue9LsRw=;
- b=NdsCBWVFa/e35jbC6W3VynCthVo/cY+Uh6pMZ1GWu+j5ZxNNhpHKGh96oXN0l/DSYLRUn5o+z7v/qHe6Fns+L/HasJRfPknUlUd7czZXv7RrXIGMSSJ/E8CnH9hegcxUzMLtBh5WGv39pjw3zzyO+QV9Gg5nXqHav625L/JzL+jdl/R+1/tV4izIB+0wjH8aBwy+MX+md/aAr8JHZeKDGowm2f03ME0HwhFhbmoPTfM/Past4jIMJG6GZFA/Sk0pZ8+HzoXUpNplHKUvKUvOzTuR4mj0MbJzpSsi6JGieBt345nyz88Gky0fc7kzzgGL2ljqsu0BgLeZQ8bujDZ7Dw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 198.47.21.195) smtp.rcpttodomain=lists.infradead.org smtp.mailfrom=ti.com;
- dmarc=pass (p=quarantine sp=none pct=100) action=none header.from=ti.com;
- dkim=none (message not signed); arc=none (0)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=i8gWbB02EUhMW53pST/VyoRtkxSCuXqs5ibMue9LsRw=;
- b=RM6b87Zsw3vuTeCwNlPzU5EZ7luROc57rWMut+HSwY0XNRFfK74zkN3pXid9hZaFzCNfGYJrnbKL933x1hpCTV/YNNpNZ13yevwutEVI/d7UHwatYvjj87UTRN8zvKlC4zQGpdc9CGkXfGBc2PykNFCFm7XXpAIlZepPrygUDuk=
-Received: from SJ0PR03CA0366.namprd03.prod.outlook.com (2603:10b6:a03:3a1::11)
- by SA3PR10MB6952.namprd10.prod.outlook.com (2603:10b6:806:31b::19) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9434.11; Wed, 24 Dec
- 2025 05:48:31 +0000
-Received: from CO1PEPF000075ED.namprd03.prod.outlook.com
- (2603:10b6:a03:3a1:cafe::b8) by SJ0PR03CA0366.outlook.office365.com
- (2603:10b6:a03:3a1::11) with Microsoft SMTP Server (version=TLS1_3,
- cipher=TLS_AES_256_GCM_SHA384) id 15.20.9456.11 via Frontend Transport; Wed,
- 24 Dec 2025 05:48:25 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 198.47.21.195)
- smtp.mailfrom=ti.com; dkim=none (message not signed) header.d=none;dmarc=pass
- action=none header.from=ti.com;
-Received-SPF: Pass (protection.outlook.com: domain of ti.com designates
- 198.47.21.195 as permitted sender) receiver=protection.outlook.com;
- client-ip=198.47.21.195; helo=flwvzet201.ext.ti.com; pr=C
-Received: from flwvzet201.ext.ti.com (198.47.21.195) by
- CO1PEPF000075ED.mail.protection.outlook.com (10.167.249.36) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.9456.9 via Frontend Transport; Wed, 24 Dec 2025 05:48:30 +0000
-Received: from DFLE202.ent.ti.com (10.64.6.60) by flwvzet201.ext.ti.com
- (10.248.192.32) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Tue, 23 Dec
- 2025 23:48:26 -0600
-Received: from DFLE200.ent.ti.com (10.64.6.58) by DFLE202.ent.ti.com
- (10.64.6.60) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Tue, 23 Dec
- 2025 23:48:26 -0600
-Received: from lelvem-mr05.itg.ti.com (10.180.75.9) by DFLE200.ent.ti.com
- (10.64.6.58) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20 via Frontend
- Transport; Tue, 23 Dec 2025 23:48:26 -0600
-Received: from toolbox.dhcp.ti.com (uda0492258.dhcp.ti.com [10.24.73.74])
-	by lelvem-mr05.itg.ti.com (8.18.1/8.18.1) with ESMTP id 5BO5mFtE079101;
-	Tue, 23 Dec 2025 23:48:23 -0600
-From: Siddharth Vadapalli <s-vadapalli@ti.com>
-To: <vkoul@kernel.org>, <neil.armstrong@linaro.org>, <robh@kernel.org>,
-	<krzk+dt@kernel.org>, <conor+dt@kernel.org>, <sjakhade@cadence.com>,
-	<rogerq@kernel.org>
-CC: <linux-phy@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-	<devicetree@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
-	<srk@ti.com>, <s-vadapalli@ti.com>
-Subject: [PATCH 2/2] phy: cadence-torrent: Add PCIe + XAUI multilink configuration for 100MHz refclk
-Date: Wed, 24 Dec 2025 11:18:59 +0530
-Message-ID: <20251224054905.763399-3-s-vadapalli@ti.com>
-X-Mailer: git-send-email 2.51.1
-In-Reply-To: <20251224054905.763399-1-s-vadapalli@ti.com>
-References: <20251224054905.763399-1-s-vadapalli@ti.com>
+	id 1vYI8w-0000000GTvR-2rfi
+	for linux-phy@lists.infradead.org;
+	Wed, 24 Dec 2025 06:14:44 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 5BNNF15l1123243
+	for <linux-phy@lists.infradead.org>; Wed, 24 Dec 2025 06:14:41 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=y4Y2eJpd01HJFBoLg61yskNy
+	Rk+YHfsRYzlZDofyEvs=; b=EkmxE1dJax0sqron4lSpSGL9jF6pJr6tmmNMRWPP
+	brbzcPzXYT0+CZC+phy9PCKoFll+tgH3Irb/9vKzrOnmwTzTIbG1ndXKVyQDqYcw
+	FGDi1GrOIgSXnkhwNZPsxtExgbZs8fETTcZiKBGv7abQtEOLG/cYhv5AHRnTTks8
+	TQ6iFbGU1wfErsptEhLY39uJTeRC9C8O+glLvIX7zOtaoXEyVeqM1uMsRxO+FHtE
+	OuTcYTtarEO0MfKHvfkMo8I9v2X1AqXDU0pBOQoYzvIVaLTZRJ5GLL+xf+eqt4E2
+	LVt2SXb3v77h1b8bt+nhmXL9pa7ZmTzoMBDaPXttlfFivw==
+Received: from mail-pg1-f199.google.com (mail-pg1-f199.google.com [209.85.215.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4b81mt9acf-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Wed, 24 Dec 2025 06:14:41 +0000 (GMT)
+Received: by mail-pg1-f199.google.com with SMTP id 41be03b00d2f7-c196fa94049so3972485a12.0
+        for <linux-phy@lists.infradead.org>; Tue, 23 Dec 2025 22:14:40 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1766556880; x=1767161680; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=y4Y2eJpd01HJFBoLg61yskNyRk+YHfsRYzlZDofyEvs=;
+        b=jX3Dp68NAkubd1m0DoxJvaVwlvQoCUwxnDvy8NUdidnOM+1pnkaJHCdIwtRDy4l8UZ
+         CIvw/NX9BW57PvVPGu89YDhYXRMmzilBm4+hcMBzhWF0wfCyH+kXS5v4bV8OG6DwqluA
+         q4Q6RXqaqYafhFW/fqfXjpqvY+8Yazji5AE6wUNKFqTV7ulzuS3yg32MgaAhtk15Usfn
+         kOods/N6X/H/LfwVRd/NJm0KiAR511Q1ozYdU63lorTWg1s0ULNQ5hWbIJ7NrefPdfbx
+         nSX9W5hDantLO4MTrC8TGeSPlJgyw/XQeTBpgS2FR2iRsjdH7+6NMdjDMmYuF8daU9zX
+         5BRg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1766556880; x=1767161680;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=y4Y2eJpd01HJFBoLg61yskNyRk+YHfsRYzlZDofyEvs=;
+        b=r9CNZjPG3m2pb2LiLSuaxryU6e7Cs01l57XuthCrVHgNmX6Qe+rF1hABgSm6qrDLOy
+         LmfC4SvG25ZH8Bs21rKWwTVKO5H906Edb2gKIDXNiYMmVdMAB938K8VA7a1ccK70Zvgs
+         Vr1E6bgbpOIsbnIGAa5TeIGtbzhmP2hiVvpnibe73mk/kbcOD9goQxafK3XPcgYP6abw
+         GE/APYHP3smx29RAyaUe/tfa6CHwDvSBafjiJLb/PmdG7phfxT0SOmRPnk1ys0af+/mf
+         lKtaeythPNrWMzQeFJUVyZvWnLP5mxwX4GMdxzPlhHD99nFFcz7+ElmfqINU/YgsBEpL
+         msnA==
+X-Forwarded-Encrypted: i=1; AJvYcCXbdNMNv8F8/LICR0Mllis4BqpvOaGmdrLEA6MfxsbcmzK0bs/iSZouwMaxODwJ/OlElpA25zFC+3A=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzU7JGJjSapmy6FpzaYkODUolfK4eSi2ag/Mv/AzoP9enxy9lco
+	+xo7ImQ4ec4dtT0Snh+fAFR7U+KrAESvcEiFShci1MzQo9ACO3YKxpcJo0Q0XRTtov5Vg+knZ4Z
+	vGxrVyPJL94aiAh4uTi2nN+RwyKcMeI3kmAeVccAme7EhMnMZPIM/ppW875DPNvRrhO3gcgTewS
+	tkGZfXwUO7Rb+TpgHPH827+8FFzy2ObrS2jOgZ5g30SEQ=
+X-Gm-Gg: AY/fxX6fOpMr2QMiFrwqz49cWGhYpoSkWbQ8osBaHiOLO6xz/NPVY12iR3OkISOQx1m
+	AJHNi4merLevHHGAKrXxgS0NlVc3+qi6yu4n4r+Vxdn+THiRu6Zy/aP8pCzzB6c880kBwQ1Ojq4
+	8xUOQjC0P2nsTnmLaoD0D8jmDxeWC43I15iyV0rvN7zCmoojm7P3Aud2N/04UDmKkShab89nIwO
+	KOxDgmj
+X-Received: by 2002:a05:6a20:549d:b0:35f:84c7:4012 with SMTP id adf61e73a8af0-3769f92fca1mr15946109637.29.1766556879573;
+        Tue, 23 Dec 2025 22:14:39 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IH4JuSjzOmAsYq60WqT+iMGYoFGCeh7KItyGvZg/ifrCgKqS9atvgGzJQBVQMSMXaQOfMr1tOIJ3hW1Wqil7pA=
+X-Received: by 2002:a05:6a20:549d:b0:35f:84c7:4012 with SMTP id
+ adf61e73a8af0-3769f92fca1mr15946075637.29.1766556878842; Tue, 23 Dec 2025
+ 22:14:38 -0800 (PST)
 MIME-Version: 1.0
-X-C2ProcessedOrg: 333ef613-75bf-4e12-a4b1-8e3623f5dcea
-X-EOPAttributedMessage: 0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: CO1PEPF000075ED:EE_|SA3PR10MB6952:EE_
-X-MS-Office365-Filtering-Correlation-Id: ef405a7e-a98f-4bca-24a4-08de42b01157
-X-LD-Processed: e5b49634-450b-4709-8abb-1e2b19b982b7,ExtAddr
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|7416014|82310400026|1800799024|36860700013;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?Ikkxwg9bqGGwgtDSt0dbaYug+OK2XAGZISi6gdrpHwl8LS3l58zY3nO4SsSa?=
- =?us-ascii?Q?tKGevInrlV2guEJpt6DN+V4xX4JsmBpt64ERJO2TMjmyLwNo/m4FgufUEmQ6?=
- =?us-ascii?Q?darMC/7ctvAQI1bgK4FNUGMWvUxR0H8rIiBf39Ic0zCxCe1+n/17C7t37C9g?=
- =?us-ascii?Q?rR37RQuuU7f5ZF0L45RQgeJe0dH/zosMNOBVnaW49DU7zOP4q7HAwAa+OYwe?=
- =?us-ascii?Q?HA6eXGR2h/xJyIXQrzsdLpm7rmfkPAba7LXF1Yw/6k/GqrEWCiJwW7L+B1HX?=
- =?us-ascii?Q?cbZ9e9x/NzWXzuotA5yEbxvbHdkMiWsWD+istM2sE9Azu7yWBpj1ObhkX1qx?=
- =?us-ascii?Q?DRpv/Xyx4lTssNsAXd64uqtg8Eh0wejLdEGcK5ajiHUSIhzOYYNd8WRIXstW?=
- =?us-ascii?Q?Wp6BFJsQX8XCGxfHzMxzdCTu9Oj937kdS8zCQsU64chtxegMDJg1BB14dEBE?=
- =?us-ascii?Q?p4aSw/cPtlXTTwiXyaSxdagB9tfXAiwuSE9MFff6f++Zwfv87quKf3qoS6VG?=
- =?us-ascii?Q?Nhv7IWbz1Lfzg9P9xb8a+PHkurdgWMQDsDyRW9pW26flFmQIn/rAWEQihrYh?=
- =?us-ascii?Q?E1OeVz+igsnudIPKaKyH/3It0lL40Bw7l3z/6TURNjSdgp4m8Ic9zp+Rl+lC?=
- =?us-ascii?Q?IeqGCEAKwlQMv5birPiP3Pq7qz1muAO9mycoJAhQEiWihVasmDEwAyK/vox5?=
- =?us-ascii?Q?RM8oM+CbIdiNpE6Ka4Mo5UNoSOGxQc0X9McEAhqj0gUMWOc3V2GN1TuUIBmq?=
- =?us-ascii?Q?Ivk0McryEAp5pb8hm5kF+SckPnqps+HBwEgpmPIhVHERGbh7qXt9weVrb78U?=
- =?us-ascii?Q?BDUkWF+jOKFqk5/PruL7mIn5U0QqOQNezTAsvEJI1p9N7ZPf88WKsiEE6ukG?=
- =?us-ascii?Q?8fM/TF9I56oZexnCP2wlyQWVS7nIqX8QiDGjWV0yyebr8XOdgS7YKYWITwF/?=
- =?us-ascii?Q?6bXgR8V1actjvmh4wKusft8ZzmEW0P2NpeYsG3KD5x1ZicAqjReQ35SF9vJz?=
- =?us-ascii?Q?Q9qooAUwsUb7nJANmyVsUneRa/vDOLMHcy9Ls60TmgW9PnCjksoKuu1LKjny?=
- =?us-ascii?Q?Qnu6aTTsxH82OIYBDMKZIC52U7MMWbJRW7It9xpICB1dLGSYk1AHm61be9PO?=
- =?us-ascii?Q?KqAdYEF10VtdIT8hMGNTdM/f2aXwhmytJd/RWzxUny3Tr4ZT3p4qDLSa13XS?=
- =?us-ascii?Q?iSxtRTBQgIOKZi0zFz9h1n0Bllm3vWXzJEPYKEO1Py0JjcxWqtTIwM9Y3PNO?=
- =?us-ascii?Q?bniMin8CdrVTtS/Uzbdoj96NL2JDCTehU/yGrBpYjku8U/07OeBYO2fvp1ao?=
- =?us-ascii?Q?yopb3yI+UwAiWKhkbzpd5cq3X06gCDmMl9piISaLlFqbbiZNKnBLB36Ltdvb?=
- =?us-ascii?Q?ku4ilqV2AT8Se1vZmTWRQ8tcR72MJ58nGr4bWMWvUAF/Go3I17EREAmFKJlo?=
- =?us-ascii?Q?99fW/sXwrHbVnume0tDqgOh6BQsMe9Zn+Ri2y+x+WeXjJ1GQYqvO8m3dv5/g?=
- =?us-ascii?Q?fik4fZaBpv04RU2VUUgadbD+KU6hugSwpVYcfgME7ATGCzHQHaBElxK/TYjn?=
- =?us-ascii?Q?G/LTWZoiHaD9V2wgE18=3D?=
-X-Forefront-Antispam-Report: CIP:198.47.21.195;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:flwvzet201.ext.ti.com;PTR:ErrorRetry;CAT:NONE;SFS:(13230040)(376014)(7416014)(82310400026)(1800799024)(36860700013);DIR:OUT;SFP:1101;
-X-OriginatorOrg: ti.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 24 Dec 2025 05:48:30.4561
- (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: ef405a7e-a98f-4bca-24a4-08de42b01157
-X-MS-Exchange-CrossTenant-Id: e5b49634-450b-4709-8abb-1e2b19b982b7
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=e5b49634-450b-4709-8abb-1e2b19b982b7;Ip=[198.47.21.195];Helo=[flwvzet201.ext.ti.com]
-X-MS-Exchange-CrossTenant-AuthSource: CO1PEPF000075ED.namprd03.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SA3PR10MB6952
+References: <20251219173108.2119296-1-krishna.kurapati@oss.qualcomm.com>
+ <20251219173108.2119296-2-krishna.kurapati@oss.qualcomm.com>
+ <aUqjG4pVXWN3H88N@vaman> <bb775051-8635-4e2d-a1f9-46d6f0e6bc15@kernel.org>
+ <aUq51TxXwiJE2DWb@vaman> <niverh5ydbah6axshbtop56wjsoluen64anojp3nvizcn4bthr@h4yickq6gtea>
+ <aUt6E-AVVVkmo6E5@vaman>
+In-Reply-To: <aUt6E-AVVVkmo6E5@vaman>
+From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+Date: Wed, 24 Dec 2025 08:14:27 +0200
+X-Gm-Features: AQt7F2p-49_voSHeXukQjIp0q4XfVcdPaPXZp-io6T989hQWj_PsEKJ6SPIeXbA
+Message-ID: <CAO9ioeVst77YgcSZCp5p-e9V7iztnmeHhQ10TdLzDKHVZJ=zag@mail.gmail.com>
+Subject: Re: [PATCH v3 1/3] dt-bindings: phy: qcom,snps-eusb2-repeater: Add
+ squelch param update
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Krzysztof Kozlowski <krzk@kernel.org>,
+        Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>,
+        Neil Armstrong <neil.armstrong@linaro.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>,
+        Abel Vesa <abelvesa@kernel.org>, Pengyu Luo <mitltlatltl@gmail.com>,
+        Johan Hovold <johan+linaro@kernel.org>,
+        Luca Weiss <luca.weiss@fairphone.com>, linux-arm-msm@vger.kernel.org,
+        linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org,
+        Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+X-Authority-Analysis: v=2.4 cv=e/ILiKp/ c=1 sm=1 tr=0 ts=694b84d1 cx=c_pps
+ a=Oh5Dbbf/trHjhBongsHeRQ==:117 a=IkcTkHD0fZMA:10 a=wP3pNCr1ah4A:10
+ a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22 a=YG64nluAAAAA:20
+ a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=itlchkg5PgSt1WyP9K8A:9 a=QEXdDO2ut3YA:10
+ a=_Vgx9l1VpLgwpw_dHYaR:22 a=bA3UWDv6hWIuX7UZL3qL:22
+X-Proofpoint-GUID: USiZAPV6eOdEcAPDO-HZ8Dw-oiFrK1MQ
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMjI0MDA0OCBTYWx0ZWRfXztKXwsz/7WLJ
+ xXNIZ4Z875/QTpiQoSdcM50QSUPfAPmnV/KSjZfvzm2RuVf3p+40QI2CrzhSYXlFM2ivoYwaAv8
+ DmthTeWdghuWY0oCQ0MY9tkeSHqEeeHV6wKbbCyllT1CpQoBiZBMngvaTmN8IAyys493rYcvjSG
+ IRwYgRyFh6jz+/WvpiIl2V624BYK/uQqmtOCe/Gt5nNLQXAmHm4V7wECC5ldtMJxTIKUH31J934
+ 2JCPeyixRewyCgD9Shp5NItIqgTyiWDMrZH5keooWnfSPd9dmCDqAV9YU98r67OvesiBaOXvZNt
+ 1jI0r1msNteoyCN61F7Tzhdsben5Same7Jti3diPAdSjINEBIbinezXzvMlnfrEquNCnRzGRgTP
+ 8chij6svioeT9TlHRn7iH+SNXsc0g1rG82TRotMYXVAesJ2VFQIQMKWPXdc1finGgHoLs4abhBe
+ XfnpCPpNbSzE0rXqXBA==
+X-Proofpoint-ORIG-GUID: USiZAPV6eOdEcAPDO-HZ8Dw-oiFrK1MQ
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
+ definitions=2025-12-24_02,2025-12-22_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501 clxscore=1015 phishscore=0 adultscore=0 suspectscore=0
+ spamscore=0 lowpriorityscore=0 malwarescore=0 impostorscore=0 bulkscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2512120000 definitions=main-2512240048
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251223_214835_797064_D4838D45 
-X-CRM114-Status: GOOD (  11.85  )
+X-CRM114-CacheID: sfid-20251223_221442_838700_42FF9B64 
+X-CRM114-Status: GOOD (  22.00  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -156,329 +153,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Swapnil Jakhade <sjakhade@cadence.com>
+On Wed, 24 Dec 2025 at 07:28, Vinod Koul <vkoul@kernel.org> wrote:
+>
+> On 23-12-25, 21:16, Dmitry Baryshkov wrote:
+> > On Tue, Dec 23, 2025 at 09:18:37PM +0530, Vinod Koul wrote:
+> > > On 23-12-25, 15:16, Krzysztof Kozlowski wrote:
+> > > > On 23/12/2025 15:11, Vinod Koul wrote:
+> > > > > On 19-12-25, 23:01, Krishna Kurapati wrote:
+> > > > >> Add squelch detect parameter update for synopsys eusb2 repeater. The
+> > > > >> values (indicated in basis-points) depict a percentage change with
+> > > > >> respect to the nominal value.
+> > > > >>
+> > > > >> Signed-off-by: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
+> > > > >> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+> > > > >> ---
+> > > > >>  .../devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml | 8 ++++++++
+> > > > >>  1 file changed, 8 insertions(+)
+> > > > >>
+> > > > >> diff --git a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
+> > > > >> index 5bf0d6c9c025..f2afcf0e986a 100644
+> > > > >> --- a/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
+> > > > >> +++ b/Documentation/devicetree/bindings/phy/qcom,snps-eusb2-repeater.yaml
+> > > > >> @@ -59,6 +59,14 @@ properties:
+> > > > >>      minimum: 0
+> > > > >>      maximum: 7
+> > > > >>
+> > > > >> +  qcom,squelch-detector-bp:
+> > > > >> +    description:
+> > > > >> +      This adjusts the voltage level for the threshold used to detect valid
+> > > > >> +      high-speed data.
+> > > > >> +    minimum: -6000
+> > > > >
+> > > > > 6000Volts, mV, can you please document the units?
+> > > >
+> > > >
+> > > > Code is correct, the '-bp' is the unit here. Unless the suffix was
+> > > > chosen incorrectly?
+> > >
+> > > I was hoping it will be commented in the description here.
+> > > For my reference, what is bp and where is it documented ?
+> >
+> > Base points, 0.01%
+>
+> Thanks Dmitry, where is this documented for people who dont know
 
-Add register sequences for PCIe + XAUI multilink configuration for
-100MHz reference clock.
+https://github.com/devicetree-org/dt-schema/blob/main/dtschema/schemas/property-units.yaml#L48
 
-Signed-off-by: Swapnil Jakhade <sjakhade@cadence.com>
-Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
----
- drivers/phy/cadence/phy-cadence-torrent.c | 143 ++++++++++++++++++++--
- 1 file changed, 136 insertions(+), 7 deletions(-)
-
-diff --git a/drivers/phy/cadence/phy-cadence-torrent.c b/drivers/phy/cadence/phy-cadence-torrent.c
-index 37fa4bad6bd7..f0d870886cca 100644
---- a/drivers/phy/cadence/phy-cadence-torrent.c
-+++ b/drivers/phy/cadence/phy-cadence-torrent.c
-@@ -300,6 +300,7 @@ enum cdns_torrent_phy_type {
- 	TYPE_USB,
- 	TYPE_USXGMII,
- 	TYPE_PCIE_ML,
-+	TYPE_XAUI,
- };
- 
- enum cdns_torrent_ref_clk {
-@@ -320,14 +321,14 @@ enum cdns_torrent_ssc_mode {
- /* Unique key id for vals table entry
-  * REFCLK0_RATE | REFCLK1_RATE | LINK0_TYPE | LINK1_TYPE | SSC_TYPE
-  */
--#define REFCLK0_SHIFT	12
--#define REFCLK0_MASK	GENMASK(14, 12)
--#define REFCLK1_SHIFT	9
--#define REFCLK1_MASK	GENMASK(11, 9)
--#define LINK0_SHIFT	6
--#define LINK0_MASK	GENMASK(8, 6)
-+#define REFCLK0_SHIFT	15
-+#define REFCLK0_MASK	GENMASK(18, 15)
-+#define REFCLK1_SHIFT	11
-+#define REFCLK1_MASK	GENMASK(14, 11)
-+#define LINK0_SHIFT	7
-+#define LINK0_MASK	GENMASK(10, 7)
- #define LINK1_SHIFT	3
--#define LINK1_MASK	GENMASK(5, 3)
-+#define LINK1_MASK	GENMASK(6, 3)
- #define SSC_SHIFT	0
- #define SSC_MASK	GENMASK(2, 0)
- 
-@@ -708,6 +709,8 @@ static const char *cdns_torrent_get_phy_type(enum cdns_torrent_phy_type phy_type
- 		return "USB";
- 	case TYPE_USXGMII:
- 		return "USXGMII";
-+	case TYPE_XAUI:
-+		return "XAUI";
- 	default:
- 		return "None";
- 	}
-@@ -3020,6 +3023,9 @@ static int cdns_torrent_phy_probe(struct platform_device *pdev)
- 		case PHY_TYPE_USXGMII:
- 			cdns_phy->phys[node].phy_type = TYPE_USXGMII;
- 			break;
-+		case PHY_TYPE_XAUI:
-+			cdns_phy->phys[node].phy_type = TYPE_XAUI;
-+			break;
- 		default:
- 			dev_err(dev, "Unsupported protocol\n");
- 			ret = -EINVAL;
-@@ -3382,6 +3388,95 @@ static DEFINE_NOIRQ_DEV_PM_OPS(cdns_torrent_phy_pm_ops,
- 			       cdns_torrent_phy_suspend_noirq,
- 			       cdns_torrent_phy_resume_noirq);
- 
-+/* PCIe and XAUI link configuration */
-+static const struct cdns_reg_pairs pcie_xaui_link_cmn_regs[] = {
-+	{0x0003, PHY_PLL_CFG},
-+	{0x0600, CMN_PDIAG_PLL1_CLK_SEL_M0}
-+};
-+
-+static const struct cdns_reg_pairs xaui_pcie_xcvr_diag_ln_regs[] = {
-+	{0x0011, XCVR_DIAG_HSCLK_SEL},
-+	{0x0089, XCVR_DIAG_PLLDRC_CTRL}
-+};
-+
-+static const struct cdns_torrent_vals pcie_xaui_link_cmn_vals = {
-+	.reg_pairs = pcie_xaui_link_cmn_regs,
-+	.num_regs = ARRAY_SIZE(pcie_xaui_link_cmn_regs),
-+};
-+
-+static const struct cdns_torrent_vals xaui_pcie_xcvr_diag_ln_vals = {
-+	.reg_pairs = xaui_pcie_xcvr_diag_ln_regs,
-+	.num_regs = ARRAY_SIZE(xaui_pcie_xcvr_diag_ln_regs),
-+};
-+
-+/* XAUI 100 MHz Ref clk, no SSC */
-+static const struct cdns_reg_pairs xaui_100_no_ssc_cmn_regs[] = {
-+	{0x0004, CMN_PLL1_DSM_DIAG_M0},
-+	{0x0B17, CMN_PDIAG_PLL1_CP_PADJ_M0},
-+	{0x0E01, CMN_PDIAG_PLL1_CP_IADJ_M0},
-+	{0x0D05, CMN_PDIAG_PLL1_FILT_PADJ_M0},
-+	{0x003E, CMN_PLL1_INTDIV_M0},
-+	{0x8000, CMN_PLL1_FRACDIVL_M0},
-+	{0x0002, CMN_PLL1_FRACDIVH_M0},
-+	{0x002A, CMN_PLL1_HIGH_THR_M0},
-+	{0x3102, CMN_PDIAG_PLL1_CTRL_M0},
-+	{0x007F, CMN_TXPUCAL_TUNE},
-+	{0x007F, CMN_TXPDCAL_TUNE}
-+};
-+
-+static const struct cdns_reg_pairs xaui_100_no_ssc_tx_ln_regs[] = {
-+	{0x00F3, TX_PSC_A0},
-+	{0x04A2, TX_PSC_A2},
-+	{0x04A2, TX_PSC_A3 },
-+	{0x0000, TX_TXCC_CPOST_MULT_00}
-+};
-+
-+static const struct cdns_reg_pairs ti_xaui_100_no_ssc_tx_ln_regs[] = {
-+	{0x00F3, TX_PSC_A0},
-+	{0x04A2, TX_PSC_A2},
-+	{0x04A2, TX_PSC_A3 },
-+	{0x0000, TX_TXCC_CPOST_MULT_00},
-+	{0x4000, XCVR_DIAG_RXCLK_CTRL}
-+};
-+
-+static const struct cdns_reg_pairs xaui_100_no_ssc_rx_ln_regs[] = {
-+	{0x091D, RX_PSC_A0},
-+	{0x0900, RX_PSC_A2},
-+	{0x0100, RX_PSC_A3},
-+	{0x03C7, RX_REE_GCSM1_EQENM_PH1},
-+	{0x01C7, RX_REE_GCSM1_EQENM_PH2},
-+	{0x0000, RX_DIAG_DFE_CTRL},
-+	{0x0019, RX_REE_TAP1_CLIP},
-+	{0x0019, RX_REE_TAP2TON_CLIP},
-+	{0x0098, RX_DIAG_NQST_CTRL},
-+	{0x0C01, RX_DIAG_DFE_AMP_TUNE_2},
-+	{0x0000, RX_DIAG_DFE_AMP_TUNE_3},
-+	{0x0000, RX_DIAG_PI_CAP},
-+	{0x0031, RX_DIAG_PI_RATE},
-+	{0x0001, RX_DIAG_ACYA},
-+	{0x018C, RX_CDRLF_CNFG},
-+};
-+
-+static const struct cdns_torrent_vals xaui_100_no_ssc_cmn_vals = {
-+	.reg_pairs = xaui_100_no_ssc_cmn_regs,
-+	.num_regs = ARRAY_SIZE(xaui_100_no_ssc_cmn_regs),
-+};
-+
-+static const struct cdns_torrent_vals xaui_100_no_ssc_tx_ln_vals = {
-+	.reg_pairs = xaui_100_no_ssc_tx_ln_regs,
-+	.num_regs = ARRAY_SIZE(xaui_100_no_ssc_tx_ln_regs),
-+};
-+
-+static const struct cdns_torrent_vals ti_xaui_100_no_ssc_tx_ln_vals = {
-+	.reg_pairs = ti_xaui_100_no_ssc_tx_ln_regs,
-+	.num_regs = ARRAY_SIZE(ti_xaui_100_no_ssc_tx_ln_regs),
-+};
-+
-+static const struct cdns_torrent_vals xaui_100_no_ssc_rx_ln_vals = {
-+	.reg_pairs = xaui_100_no_ssc_rx_ln_regs,
-+	.num_regs = ARRAY_SIZE(xaui_100_no_ssc_rx_ln_regs),
-+};
-+
- /* USB and DP link configuration */
- static const struct cdns_reg_pairs usb_dp_link_cmn_regs[] = {
- 	{0x0002, PHY_PLL_CFG},
-@@ -4853,6 +4948,7 @@ static const struct cdns_torrent_vals_entry link_cmn_vals_entries[] = {
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_PCIE, TYPE_USB), &pcie_usb_link_cmn_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_PCIE, TYPE_DP), &pcie_dp_link_cmn_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_PCIE, TYPE_USXGMII), &pcie_usxgmii_link_cmn_vals},
-+	{CDNS_TORRENT_KEY_ANYCLK(TYPE_PCIE, TYPE_XAUI), &pcie_xaui_link_cmn_vals},
- 
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_PCIE_ML, TYPE_USB), &ml_pcie_usb_link_cmn_vals},
- 
-@@ -4879,6 +4975,8 @@ static const struct cdns_torrent_vals_entry link_cmn_vals_entries[] = {
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_USXGMII, TYPE_PCIE), &pcie_usxgmii_link_cmn_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_USXGMII, TYPE_SGMII), &usxgmii_sgmii_link_cmn_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_USXGMII, TYPE_QSGMII), &usxgmii_sgmii_link_cmn_vals},
-+
-+	{CDNS_TORRENT_KEY_ANYCLK(TYPE_XAUI, TYPE_PCIE), &pcie_xaui_link_cmn_vals},
- };
- 
- static const struct cdns_torrent_vals_entry xcvr_diag_vals_entries[] = {
-@@ -4893,6 +4991,7 @@ static const struct cdns_torrent_vals_entry xcvr_diag_vals_entries[] = {
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_PCIE, TYPE_USB), &pcie_usb_xcvr_diag_ln_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_PCIE, TYPE_DP), &pcie_dp_xcvr_diag_ln_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_PCIE, TYPE_USXGMII), &pcie_usxgmii_xcvr_diag_ln_vals},
-+	{CDNS_TORRENT_KEY_ANYCLK(TYPE_PCIE, TYPE_XAUI), NULL},
- 
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_PCIE_ML, TYPE_USB), &ml_pcie_usb_xcvr_diag_ln_vals},
- 
-@@ -4919,6 +5018,8 @@ static const struct cdns_torrent_vals_entry xcvr_diag_vals_entries[] = {
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_USXGMII, TYPE_PCIE), &usxgmii_pcie_xcvr_diag_ln_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_USXGMII, TYPE_SGMII), &usxgmii_sgmii_xcvr_diag_ln_vals},
- 	{CDNS_TORRENT_KEY_ANYCLK(TYPE_USXGMII, TYPE_QSGMII), &usxgmii_sgmii_xcvr_diag_ln_vals},
-+
-+	{CDNS_TORRENT_KEY_ANYCLK(TYPE_XAUI, TYPE_PCIE), &xaui_pcie_xcvr_diag_ln_vals},
- };
- 
- static const struct cdns_torrent_vals_entry pcs_cmn_vals_entries[] = {
-@@ -4960,6 +5061,8 @@ static const struct cdns_torrent_vals_entry cmn_vals_entries[] = {
- 
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_DP, NO_SSC), NULL},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_XAUI, NO_SSC), NULL},
-+
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, NO_SSC), &ml_pcie_100_no_ssc_cmn_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, EXTERNAL_SSC), &ml_pcie_100_no_ssc_cmn_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, INTERNAL_SSC), &ml_pcie_100_int_ssc_cmn_vals},
-@@ -5010,6 +5113,8 @@ static const struct cdns_torrent_vals_entry cmn_vals_entries[] = {
- 
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_DP, NO_SSC), &usb_100_no_ssc_cmn_vals},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_XAUI, TYPE_PCIE, NO_SSC), &xaui_100_no_ssc_cmn_vals},
-+
- 	{CDNS_TORRENT_KEY(CLK_156_25_MHZ, CLK_156_25_MHZ, TYPE_USXGMII, TYPE_NONE, NO_SSC), &sl_usxgmii_156_25_no_ssc_cmn_vals},
- 
- 	/* Dual refclk */
-@@ -5054,6 +5159,8 @@ static const struct cdns_torrent_vals_entry cdns_tx_ln_vals_entries[] = {
- 
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_DP, NO_SSC), NULL},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_XAUI, NO_SSC), NULL},
-+
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, NO_SSC), NULL},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, EXTERNAL_SSC), NULL},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, INTERNAL_SSC), NULL},
-@@ -5104,6 +5211,8 @@ static const struct cdns_torrent_vals_entry cdns_tx_ln_vals_entries[] = {
- 
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_DP, NO_SSC), &usb_100_no_ssc_tx_ln_vals},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_XAUI, TYPE_PCIE, NO_SSC), &xaui_100_no_ssc_tx_ln_vals},
-+
- 	{CDNS_TORRENT_KEY(CLK_156_25_MHZ, CLK_156_25_MHZ, TYPE_USXGMII, TYPE_NONE, NO_SSC), &usxgmii_156_25_no_ssc_tx_ln_vals},
- 
- 	/* Dual refclk */
-@@ -5148,6 +5257,8 @@ static const struct cdns_torrent_vals_entry cdns_rx_ln_vals_entries[] = {
- 
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_DP, NO_SSC), &pcie_100_no_ssc_rx_ln_vals},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_XAUI, NO_SSC), &ml_pcie_100_no_ssc_rx_ln_vals},
-+
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, NO_SSC), &ml_pcie_100_no_ssc_rx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, EXTERNAL_SSC), &ml_pcie_100_no_ssc_rx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, INTERNAL_SSC), &ml_pcie_100_no_ssc_rx_ln_vals},
-@@ -5198,6 +5309,8 @@ static const struct cdns_torrent_vals_entry cdns_rx_ln_vals_entries[] = {
- 
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_DP, NO_SSC), &usb_100_no_ssc_rx_ln_vals},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_XAUI, TYPE_PCIE, NO_SSC), &xaui_100_no_ssc_rx_ln_vals},
-+
- 	{CDNS_TORRENT_KEY(CLK_156_25_MHZ, CLK_156_25_MHZ, TYPE_USXGMII, TYPE_NONE, NO_SSC), &usxgmii_156_25_no_ssc_rx_ln_vals},
- 
- 	/* Dual refclk */
-@@ -5278,6 +5391,8 @@ static const struct cdns_torrent_vals_entry ti_tx_ln_vals_entries[] = {
- 
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_DP, NO_SSC), NULL},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_XAUI, NO_SSC), NULL},
-+
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, NO_SSC), NULL},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, EXTERNAL_SSC), NULL},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, INTERNAL_SSC), NULL},
-@@ -5328,6 +5443,8 @@ static const struct cdns_torrent_vals_entry ti_tx_ln_vals_entries[] = {
- 
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_DP, NO_SSC), &usb_100_no_ssc_tx_ln_vals},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_XAUI, TYPE_PCIE, NO_SSC), &ti_xaui_100_no_ssc_tx_ln_vals},
-+
- 	{CDNS_TORRENT_KEY(CLK_156_25_MHZ, CLK_156_25_MHZ, TYPE_USXGMII, TYPE_NONE, NO_SSC), &usxgmii_156_25_no_ssc_tx_ln_vals},
- 
- 	/* Dual refclk */
-@@ -5406,6 +5523,8 @@ static const struct cdns_torrent_vals_entry ti_j7200_cmn_vals_entries[] = {
- 
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_DP, NO_SSC), NULL},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_XAUI, NO_SSC), NULL},
-+
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, NO_SSC), &ml_pcie_100_no_ssc_cmn_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, EXTERNAL_SSC), &ml_pcie_100_no_ssc_cmn_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, INTERNAL_SSC), &ml_pcie_100_int_ssc_cmn_vals},
-@@ -5456,6 +5575,8 @@ static const struct cdns_torrent_vals_entry ti_j7200_cmn_vals_entries[] = {
- 
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_DP, NO_SSC), &usb_100_no_ssc_cmn_vals},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_XAUI, TYPE_PCIE, NO_SSC), &xaui_100_no_ssc_cmn_vals},
-+
- 	{CDNS_TORRENT_KEY(CLK_156_25_MHZ, CLK_156_25_MHZ, TYPE_USXGMII, TYPE_NONE, NO_SSC), &sl_usxgmii_156_25_no_ssc_cmn_vals},
- 
- 	/* Dual refclk */
-@@ -5500,6 +5621,8 @@ static const struct cdns_torrent_vals_entry ti_j7200_tx_ln_vals_entries[] = {
- 
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_DP, NO_SSC), NULL},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_XAUI, NO_SSC), NULL},
-+
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, NO_SSC), NULL},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, EXTERNAL_SSC), NULL},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, INTERNAL_SSC), NULL},
-@@ -5550,6 +5673,8 @@ static const struct cdns_torrent_vals_entry ti_j7200_tx_ln_vals_entries[] = {
- 
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_DP, NO_SSC), &usb_100_no_ssc_tx_ln_vals},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_XAUI, TYPE_PCIE, NO_SSC), &ti_xaui_100_no_ssc_tx_ln_vals},
-+
- 	{CDNS_TORRENT_KEY(CLK_156_25_MHZ, CLK_156_25_MHZ, TYPE_USXGMII, TYPE_NONE, NO_SSC), &usxgmii_156_25_no_ssc_tx_ln_vals},
- 
- 	/* Dual refclk */
-@@ -5594,6 +5719,8 @@ static const struct cdns_torrent_vals_entry ti_j7200_rx_ln_vals_entries[] = {
- 
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_DP, NO_SSC), &pcie_100_no_ssc_rx_ln_vals},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE, TYPE_XAUI, NO_SSC), &pcie_100_no_ssc_rx_ln_vals},
-+
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, NO_SSC), &pcie_100_no_ssc_rx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, EXTERNAL_SSC), &pcie_100_no_ssc_rx_ln_vals},
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_PCIE_ML, TYPE_USB, INTERNAL_SSC), &pcie_100_no_ssc_rx_ln_vals},
-@@ -5644,6 +5771,8 @@ static const struct cdns_torrent_vals_entry ti_j7200_rx_ln_vals_entries[] = {
- 
- 	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_USB, TYPE_DP, NO_SSC), &usb_100_no_ssc_rx_ln_vals},
- 
-+	{CDNS_TORRENT_KEY(CLK_100_MHZ, CLK_100_MHZ, TYPE_XAUI, TYPE_PCIE, NO_SSC), &xaui_100_no_ssc_rx_ln_vals},
-+
- 	{CDNS_TORRENT_KEY(CLK_156_25_MHZ, CLK_156_25_MHZ, TYPE_USXGMII, TYPE_NONE, NO_SSC), &usxgmii_156_25_no_ssc_rx_ln_vals},
- 
- 	/* Dual refclk */
 -- 
-2.51.1
-
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
