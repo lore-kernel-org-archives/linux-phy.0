@@ -4,66 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 90263E7491C
-	for <linux-phy@archiver.kernel.org>; Wed, 24 Dec 2025 07:32:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5EA48E7491C
+	for <linux-phy@archiver.kernel.org>; Wed, 24 Dec 2025 07:32:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aS/9ylM679aEjl4qLrz0bAuZYiwa7yKRfyK1aqaHJi8=; b=MOU2+fLUJlsrRO
-	s3VjzjIWS2A98EcTjcqMvNNGzGRKwpZWeQJBGUmgyhL6VsYhKNOm3mwkMPiYC8jThnmcdFkYQmKhs
-	zcwGS5zNv371M7+Kza0umhMlmNCseCTTXMKL0JKnKvONMQfchhR/in1nteChi4u+5PNiISigck7CJ
-	2soyP8Bv2i7mh5J7oXvoEQJt32D4BCkYlFet4xEBlfJlGGRjbEIMBaiGSYQ3Tlz4V8Nv7ZdJSY3+V
-	llWNY0dZtPg6Vv6owM4fkFLdv7qyb4CHXY/ISbscB/Q32v7lgsxyUaOGU8neUoVl5XLwRfbV8lkgn
-	PnDj7HSDorUMOrXlqy6A==;
+	List-Owner; bh=giSvWixzWqkCMjvF0vcWWxGyMql9UhmS3aJ1BYTR76c=; b=EGoGbPZ5stOwyJ
+	KH2pN5rr6XKYuL1o8di/5iDDSo3WozmF+71C6hHmlcH9O0DJTTO2UgG0+i2nDa0T/35oGD5bJfU4W
+	FU2JU6SHfpqkKjRhxF7oNoriiXhHCYyYEpsVa4j5B+YroDvOSrwIj/SyVefKYE3Jyh4bSm4MAhce6
+	kdT8ZPy3CU1iDo8IBMyLSh55si2Kdk0M37v8w3bSwpxqlo50KAY6cW+MMkdnRes3FQP5bqMHW1q/b
+	QnFyLwChFd+GYmOaTm23whvOqp9318xv4eO1pBtwF72GRY5Bgy1srHp/lnW6wP6fnhRFzMVeJambO
+	c99TMr3rbs7ageJ9AUjA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vYJMU-0000000GXzM-1MwR;
-	Wed, 24 Dec 2025 07:32:46 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1vYJMb-0000000GY0Y-0Z8x;
+	Wed, 24 Dec 2025 07:32:53 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vYJMS-0000000GXym-0pjk
-	for linux-phy@lists.infradead.org;
-	Wed, 24 Dec 2025 07:32:45 +0000
+	id 1vYJMY-0000000GXzp-2TvQ;
+	Wed, 24 Dec 2025 07:32:50 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 6DA3A441ED;
+	by tor.source.kernel.org (Postfix) with ESMTP id 97B9860151;
+	Wed, 24 Dec 2025 07:32:49 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EE239C4CEFB;
 	Wed, 24 Dec 2025 07:32:43 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3CDB7C4CEFB;
-	Wed, 24 Dec 2025 07:32:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1766561563;
-	bh=ylJP+93JfVCyvVbLsNC+iyO0mJirMHcMZA2YaclsNzo=;
+	s=k20201202; t=1766561569;
+	bh=w5e9TnrVP5ABegEPA7dNb4tZYj1u9bTP/vBnZ/hS2tY=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=DcZforZFCtQ09DeUye0vTlp5wv2lsP7PB8bcBUR08JNKQfbUtXvQz1fKlGjZeKh+P
-	 qVZjEY05PMSIGL6NO0kXfiIggwv6fZvSjwpqTwvQqekyOm7CR7uXDspqUim8BfUrxE
-	 cveSbjbce1TIBOiBnu22VF+lX5n8INcMOseTQ12JMeVgmvnzTS7KkeVnvJvzwpNyDL
-	 1pzJKJbCuPp2DG4RpawJoPrKCqRBdvC5CxScMYJcaDyamB9cvIJeH5qRNenNhHLoZx
-	 VQk25LGSMgGHu/Uhkb95Nf0vJhFDWXxhrD+PJKw4bbv0AR1BFtodCLMMveHQgXzd+O
-	 1F8kHBiecJoRg==
+	b=hf1E8ILlRZDpG0ZPukbun9DVqpea0FkRG2ChgsNG6vJJBC/qZAY3i5nFfeheALSMK
+	 IDNhzn7UIoC5XgGSVEH7yG0Atxm8YwHRK/yI0HFaOKxrbe3JLB5p34lUm9hVaBOi3O
+	 ZBy0HMOjSekxO45JZlZRDyYMFDB3rkLlbLShcQJzeGOiTWtgUdgkz60UsKhnRLq0Gp
+	 dkcloG7u9WNzoPep08Fg9yyLTwED9YFtErdQcV1H/6QiTCsN2EbJ9rCEezAAS6xlpf
+	 l0ttNUllE7L4749pz57ZD8GkevkZPlkZEu/Tmo4OnwYFZ17FF3P/9PxIg+RY+rp4ba
+	 YaTgX2NXFfA3w==
 From: Vinod Koul <vkoul@kernel.org>
-To: Neil Armstrong <neil.armstrong@linaro.org>, 
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
- Konrad Dybcio <konradybcio@kernel.org>, Abel Vesa <abelvesa@kernel.org>, 
- Pengyu Luo <mitltlatltl@gmail.com>, Johan Hovold <johan+linaro@kernel.org>, 
- Luca Weiss <luca.weiss@fairphone.com>, 
- Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-In-Reply-To: <20251219173108.2119296-1-krishna.kurapati@oss.qualcomm.com>
-References: <20251219173108.2119296-1-krishna.kurapati@oss.qualcomm.com>
-Subject: Re: [PATCH v3 0/3] Add eusb2 repeater squelch detect parameter
- override
-Message-Id: <176656155885.817806.9341828805932941339.b4-ty@kernel.org>
-Date: Wed, 24 Dec 2025 13:02:38 +0530
+To: Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Chun-Kuang Hu <chunkuang.hu@kernel.org>, 
+ Philipp Zabel <p.zabel@pengutronix.de>, 
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, 
+ Matthias Brugger <matthias.bgg@gmail.com>, 
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
+ Heiko Stuebner <heiko@sntech.de>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, Stephen Boyd <sboyd@kernel.org>, 
+ Maxime Ripard <mripard@kernel.org>, Brian Masney <bmasney@redhat.com>
+Cc: linux-clk@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org, 
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
+ linux-rockchip@lists.infradead.org, 
+ Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>, 
+ Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+In-Reply-To: <20251212-phy-clk-round-rate-v3-0-beae3962f767@redhat.com>
+References: <20251212-phy-clk-round-rate-v3-0-beae3962f767@redhat.com>
+Subject: Re: [PATCH v3 0/9] phy: convert from clk round_rate() to
+ determine_rate()
+Message-Id: <176656156358.817806.16966474957670370356.b4-ty@kernel.org>
+Date: Wed, 24 Dec 2025 13:02:43 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251223_233244_264034_C726B63F 
-X-CRM114-Status: UNSURE (   6.44  )
-X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,28 +82,41 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Fri, 19 Dec 2025 23:01:05 +0530, Krishna Kurapati wrote:
-> Add support for eusb2 repeater squelch detect parameter override via DT.
+On Fri, 12 Dec 2025 08:16:18 +0900, Brian Masney wrote:
+> The round_rate() clk ops is deprecated in the clk framework in favor
+> of the determine_rate() clk ops, so let's go ahead and convert the
+> drivers in the phy subsystem using the Coccinelle semantic patch
+> posted below. I did a few minor cosmetic cleanups of the code in a
+> few cases.
 > 
-> Squelch detect parameter adjusts the voltage level for the threshold used
-> to detect valid high-speed data.
-> 
-> Changes in v3:
-> - Moved status property to end of repeater node.
-> - Updated commit text as per comments received in bindings patch.
-> - Retained Krzysztof and Abel RB tags (since its upating commit text adding
->   information in bindings code and moving status property in dt code)
+> Changes since v2:
+> - Patch 8 (phy-rockchip-samsung-hdptx): fixed merge conflict so this now
+>   applies against next-20251211. Cristian / Heiko: I kept your
+>   Reviewed-by since structurally the code is still the same as before.
+> - Link to v2: https://lore.kernel.org/r/20250810-phy-clk-round-rate-v2-0-9162470bb9f2@redhat.com
 > 
 > [...]
 
 Applied, thanks!
 
-[1/3] dt-bindings: phy: qcom,snps-eusb2-repeater: Add squelch param update
-      commit: a590c0f935349b9f3ae72d9fdec002689915519d
-[2/3] phy: qualcomm: phy-qcom-eusb2-repeater: Add squelch detect param update
-      commit: 5c87da0308f9395700fd3072fcc45b43234366fb
-[3/3] arm64: dts: qcom: sm8750-mtp: Add eusb2 repeater tuning parameters
-      (no commit info)
+[1/9] phy: freescale: phy-fsl-samsung-hdmi: convert from round_rate() to determine_rate()
+      commit: efc389fa00d1b93df8f95974c4f8c11da63671da
+[2/9] phy: mediatek: phy-mtk-hdmi-mt2701: convert from round_rate() to determine_rate()
+      commit: ebed08490d667141085ed873309aec5806dbb3a9
+[3/9] phy: mediatek: phy-mtk-hdmi-mt8173: convert from round_rate() to determine_rate()
+      commit: be4267241c196745e1f649afb7d232fe4440073a
+[4/9] phy: mediatek: phy-mtk-hdmi-mt8195: convert from round_rate() to determine_rate()
+      commit: 7a4ce5a9b674654ab04961a9ea03d15d71edb2a9
+[5/9] phy: mediatek: phy-mtk-mipi-dsi-mt8173: convert from round_rate() to determine_rate()
+      commit: 8e6bb53203d5c0a0cbc4f5cd90d8b2c6f20818ba
+[6/9] phy: mediatek: phy-mtk-mipi-dsi-mt8183: convert from round_rate() to determine_rate()
+      commit: 0484168a352f0f75a82d9917df4b23f5466726b7
+[7/9] phy: rockchip: phy-rockchip-inno-hdmi: convert from round_rate() to determine_rate()
+      commit: 2f7870297ae073b0fd6e1f875a9b84c5de0dea00
+[8/9] phy: rockchip: phy-rockchip-samsung-hdptx: convert from round_rate() to determine_rate()
+      commit: 3d4ffdfcf108e73b7c5bf07e0358d0fe8fac28d4
+[9/9] phy: ti: phy-j721e-wiz: convert from round_rate() to determine_rate()
+      commit: 27287e3b52b5954b73203d32ee76ffd5f53f5074
 
 Best regards,
 -- 
