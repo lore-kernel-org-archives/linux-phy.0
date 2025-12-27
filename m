@@ -4,82 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 700A3E8FDB0
-	for <linux-phy@archiver.kernel.org>; Sat, 27 Dec 2025 02:02:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 620D9E8FDCC
+	for <linux-phy@archiver.kernel.org>; Sat, 27 Dec 2025 12:50:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:Subject:References:Cc:
-	To:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=v5Yi15LNwMC5QNOYvuw9ulCOgAYx6bZkGqt9fdEQsc4=; b=eIxKuoFs5UfZ4i
-	lrq0sax6MOiN3UEfOV3zWP7ko/zsYP1VE8WfhU+7CtNHbDysaSlqG/+O6eR9V2tedmGO7+oeGWE53
-	mVAOI6yBiR7Xk58tQAElvFsyFk5xHicRbgOdTPmmfgW+xKmCLSGXrmpOGzxEHwOfZa2P0vX+Mtp49
-	JD+CwOdhJsv9A4VsIzvZEjtxtjLC1HACcDt5SJFbbyXc+/M5a2dBM4SSoUL1tl5iKZcNWSyzisATZ
-	DynBjQ/qFyMxXvpmONClAUWxwDilUKAn6BDtchJD6tGlWLMEmEd+xVon4GIe99jMXd6CTk/K6bM1v
-	m4ae8Lo/i84wvOw5/lpQ==;
+	List-Owner; bh=bB4md7aQWqlNAqsIIM+JIH9ij8JbzIN1Y02PG7KupzM=; b=jHZVHUSX/kxILj
+	EwPA9RvCFRRzVRfxMHF3yxs0heTSNYQelUM+aUD6mjjtmKTMK+T0Q2uxXuH+NBHVm5XHYzB9ry9gK
+	JA1fqKCR5hWV8iXr6eE1UM3gNF5nthzFyPQW9AkRZ9EuGrqzZ/k/qztaUPYNVDhm6peUc02fBcFTx
+	Y8yeZJWkIgtnGN+YK9sB8ZCxPeS8/cLyghXUCCY2IPg7cL02ZYzGmAo9sIlBmUVTLBjYS8RoTR87x
+	fAkx/VX9T76XnT4rFJ1G6JxwlPE2mpTBynzfoU1g/i1MEJHXqNFXFIFdohueGzAZoR4DyDXx26vnI
+	1JmvUPOrBBwKSQnsQ/6Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vZJdw-00000001dk5-3B6J;
-	Sat, 27 Dec 2025 02:02:56 +0000
-Received: from smtpbgbr1.qq.com ([54.207.19.206])
+	id 1vZTky-00000001z9I-3VlF;
+	Sat, 27 Dec 2025 12:50:52 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vZJdr-00000001dj7-0K5x;
-	Sat, 27 Dec 2025 02:02:53 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.spacemit.com;
-	s=mxsw2412; t=1766800912;
-	bh=p41JuVTqBNxRCHQKjtwk9ihG/E0dETrJ8qiujU9CX/Q=;
-	h=Message-ID:Date:MIME-Version:To:Subject:From;
-	b=pF42UkQ7UIaMmac2wQ4OC5IlW210rQM8nscuXdslVME1hNkX9OP5yZDlZwu3CCeKb
-	 wEe8liH40que5BfnHpKAb4/gUkmGyYD01XaOr8BHy/c5ImK4oc3ocmEqYOFGd+JUmF
-	 bgv8/ZFI1nWuVlgx85uAz7wLoUw9HjSkHzsM6+8A=
-X-QQ-mid: esmtpsz10t1766800904t01fdd883
-X-QQ-Originating-IP: XEmEg72aS76MD4WYEtk9iltG/a16lqIcS6dJYB0LFMQ=
-Received: from [10.0.90.81] ( [120.237.158.181])
-	by bizesmtp.qq.com (ESMTP) with 
-	id ; Sat, 27 Dec 2025 10:01:42 +0800 (CST)
-X-QQ-SSF: 0000000000000000000000000000000
-X-QQ-GoodBg: 0
-X-BIZMAIL-ID: 992677309466334211
-Message-ID: <F78A665DD30EECAD+3a96ec99-07a5-4077-946a-85cf2241cf9d@linux.spacemit.com>
-Date: Sat, 27 Dec 2025 10:01:42 +0800
+	id 1vZTkx-00000001z94-03KC;
+	Sat, 27 Dec 2025 12:50:51 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 1EEE460010;
+	Sat, 27 Dec 2025 12:50:50 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2A08BC4CEF1;
+	Sat, 27 Dec 2025 12:50:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1766839849;
+	bh=NoIiabkLSrEfm+Wn2XfQIhp2qSUkWHgkyhkvdmrWEUs=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=czEyINwSV/6DJ3pY5shcwPoPwK3alLx1nRFTnjf5SW768UJ26RrFupOJEwMaQcI6P
+	 vCoutClLn8Fez7ZsXkieVXWo2ksY4a+IQ7cPjOtX0j92J3ENCWpHQSlwGb8Jgo2lOS
+	 gO5LDAxGuHIbrMloAymOBazQyBpdL0/lnCR0kT7dUPVhuFSk+LRu5KYnU2n+D0JeY6
+	 5eF79SRu+y3116Ip/NiZ0ls+hz1u3H5ONZxDDVCVyddmOk98r39U16eByR2+PWvbqh
+	 7R19EYGNWrRbCXtE9bw/qy4zhsmexDq7O5rNqt9NwZGIwn4Pmcz/dBeMT1/qK8g38+
+	 vGJjzkPoF3UXg==
+Date: Sat, 27 Dec 2025 13:50:47 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Tzu-Hao Wei <twei@axiado.com>
+Cc: SriNavmani A <srinavmani@axiado.com>, 
+	Prasad Bolisetty <pbolisetty@axiado.com>, Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Harshit Shah <hshah@axiado.com>, Ulf Hansson <ulf.hansson@linaro.org>, 
+	Adrian Hunter <adrian.hunter@intel.com>, Michal Simek <michal.simek@amd.com>, 
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+	linux-kernel@vger.kernel.org, linux-mmc@vger.kernel.org
+Subject: Re: [PATCH 5/8] dt-bindings: mmc: axiado: Add axiado eMMC variant
+Message-ID: <20251227-industrious-mammoth-of-culture-ff9dbe@quoll>
+References: <20251222-axiado-ax3000-add-emmc-host-driver-support-v1-0-5457d0ebcdb4@axiado.com>
+ <20251222-axiado-ax3000-add-emmc-host-driver-support-v1-5-5457d0ebcdb4@axiado.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-To: huang.ze@linux.dev
-Cc: conor+dt@kernel.org, devicetree@vger.kernel.org, dlan@gentoo.org,
- huangze@whut.edu.cn, kishon@kernel.org, krzk+dt@kernel.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-riscv@lists.infradead.org, robh@kernel.org, spacemit@lists.linux.dev,
- vkoul@kernel.org
-References: <20251017-k1-usb2phy-v6-0-7cf9ea2477a1@linux.dev>
-Subject: Re: [PATCH v6 0/2] Add USB2.0 PHY support for SpacemiT K1
-Content-Language: en-US
-From: Junzhong Pan <panjunzhong@linux.spacemit.com>
-In-Reply-To: <20251017-k1-usb2phy-v6-0-7cf9ea2477a1@linux.dev>
-X-QQ-SENDSIZE: 520
-Feedback-ID: esmtpsz:linux.spacemit.com:qybglogicsvrgz:qybglogicsvrgz5b-2
-X-QQ-XMAILINFO: NAtipnnbTPeag2ufG0IrQBlJF3XY/Xj2fFKDUM0ICmCBHifY8wHxcGxO
-	/VadelyRLAGDIStX0WtaMOeoTrc2rqZO46GFzZtWTC/RzgbkRCV6VxVKc0FkALjPV33ZftR
-	wi8hH6BPCZ6LhAGGqIzsu9455mWNsxL1FCqCVxO3t8KPgxm5zt2KfO3Fo4ftEb7an2csJFr
-	RkYosnK1DZj9c0xJwDsh/W46fPoCnybgJEbLfc2uiju3+kyt0C0lKWSUJ8nc58bqdRkZKri
-	bAePDnO3J4u6Vas/kjSUlzqfXwawT+RgiCdHpnL/l1uNjUeZi8I3bsh1cmn2bv5kRxr3Wms
-	ftvInoA4eYQGgTDC5RwasS271ggxbd3LOWtUa77qlYtqiCcl4ceyImYa2N3ZulgLHUkOk/M
-	deTbGNJDX1bwQGp1diLLMuTgp/0a2KOhWo7d+Mga4ZEuKq9aUCyZ5hT1Oni6bCmnzHbJIl/
-	rdQmjTznlBRPjWjyPu2QQANpgyKDVvgQgje0sPQ3KixbIgAet+ELcREZ2Tl+OsWH7fKHsEe
-	VMzaoCRrUr9XhwCjWaSQ4nKIFYFTAA0wXtzARsrcxJyH8ROmf2U27WkL3YOOC21ZFvsqfGF
-	25l+j07I12p7rjIMnKxYMMkuYV60A+a8wIN6vGGfo/pvxbpgKMkE07oZPknPxjKiDPNEHVD
-	4DaBEs6svAdFdRCugIK2SyyfUon7xw69hcnDWu1NuDbUnA66aQ02+JoWL3p4P2Wmyg4h8q3
-	NJkW0opolWcr7kN/Oey70nr7BVvgRyN7n2bk96s2ujpEyogf6Ycp7YRjhFve8glH/n2CcKn
-	CDSIDX729v/MlzsF+tGrlubgo7cFdhn3v8NpQ8+fcF4+n6moRhqv4iXympDhVoau/UGAixY
-	aUCDDVRp7KsQdet4ykytYQ1Qb2jmYRvN3dQaPPxwVnYq9AazDKbnq+1OWmHiH5qSWW96G4T
-	zNRKX9wyefG6lsAoWk3nlOeQr/ge4FUcemoU2btQhwv5cZ6OyMYZNOMjWLO2Z+IOcV2Pdkd
-	eUvjzZ5U31OX8CPTl5dPXCvc94E9E=
-X-QQ-XMRINFO: NI4Ajvh11aEjEMj13RCX7UuhPEoou2bs1g==
-X-QQ-RECHKSPAM: 0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251226_180252_007128_4659B16D 
-X-CRM114-Status: UNSURE (   8.05  )
-X-CRM114-Notice: Please train this message.
+Content-Disposition: inline
+In-Reply-To: <20251222-axiado-ax3000-add-emmc-host-driver-support-v1-5-5457d0ebcdb4@axiado.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,25 +75,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, 17 Oct 2025 22:49:51 +0800, Ze Huang wrote:
-> This patch series introduces support for the USB2.0 PHY on the SpacemiT
-> K1 SoC. The implementation has been tested on the Milk-V Jupiter and
-> BananaPi-f3.
+On Mon, Dec 22, 2025 at 04:45:04PM +0800, Tzu-Hao Wei wrote:
+> From: SriNavmani A <srinavmani@axiado.com>
 > 
-> K1 includes three USB ports as follows[1]:
-> - A USB2.0 OTG Port
-> - A USB2.0 Host Only Port
-> - A USB3.0 Port with a USB2.0 DRD interface
+> Add device tree binding variant for the Axiado AX3000 Arasan eMMC
+> controller. This variant identifies the specific eMMC controller
+> implementation used on the AX3000 SoC and enables the appropriate
+> driver configuration.
 > 
-> Each of these ports is connected to a USB2.0 PHY responsible for USB2
-> transmission.
-> 
-> This series is based on 6.18-rc1.
-> 
-> Link: https://developer.spacemit.com/documentation?token=AjHDwrW78igAAEkiHracBI9HnTb#part5 [1]
-> 
-> Signed-off-by: Ze Huang <huangze@whut.edu.cn>
-Tested-by: Junzhong Pan <panjunzhong@linux.spacemit.com>
+> Signed-off-by: Tzu-Hao Wei <twei@axiado.com>
+
+Incorrect DCO chain.
+
+
+Best regards,
+Krzysztof
 
 
 -- 
