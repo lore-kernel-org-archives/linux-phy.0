@@ -4,248 +4,100 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8CF17E9272A
-	for <linux-phy@archiver.kernel.org>; Mon, 29 Dec 2025 14:28:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B51DFD3B7E5
+	for <linux-phy@archiver.kernel.org>; Mon, 29 Dec 2025 14:47:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Cc:To:In-Reply-To:
-	References:Message-Id:Subject:Date:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=PG39jx3xVzmTvFKH5h82bIeM9cq29v8sSNzYlU8I5Qg=; b=OMpUkCECPvjkHIEF/7y7L/0xz/
-	jLFGB/iY6Knim+qkmffAaZNWTbpeoR7vsp6wqU/T9Z5FCLEloJRG7jxU6OZr/yEP2/++Xe/fW+uH6
-	bEf2t3fWCKlZfxCuQD4UZDBvRiRhaT62PELuWOK2ilWHk8rDpIju+EYaFyf6oK44/OgGFAC62itZe
-	24wRg2AypFrbkguuVF62bKCwCLG7IhfJlHipktMsgq9u6Q6UkgvqmwcYk0fjF2qNrWZ7Ojca2DGZV
-	Q4rjZnp4cfff3ePnISjOHdOp71n2Sh14qzFulLxxbBHAlDi0yc1nYuR5Xy5ZPTdxb2tFNUFok3Ppq
-	kTDlGErQ==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9oSe22Klx2bbJY2fofEP4LNW8Sl2cYnkUHLFdwwr/H8=; b=lqYVSHB+dXcDLK
+	S7YT0DHF9sva4V56vD/mvUF/gkPZmoBfcK1SuzRM/HVEdJVjQTu08seDtwyhO9aWkUNrGdjDUGDrg
+	KXVZdS8S90287SrEXS47JU1jC5+O3WBzstL+XiU+g35HAlgoHjtj9FnbiROiDVTfSx6yDMjPrzwgB
+	jNK+qqMJbCiZQ5Ne8FXArKc6XAZzUUfWR3EGIwRx7eV2t88pt5WuBTUb8luORPbP3n4ZWEfl1IsWm
+	AWzK1IMV9QJRT11eydIMnWj4F6bYf6Hh/afb8EAE5jlel9v/jLLCcMbKASxdSrC0c8Fkx9o7VWSeZ
+	ems9UqmUmB56NWEKRmTA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vaEEC-00000003mZh-10tz;
-	Mon, 29 Dec 2025 14:28:08 +0000
-Received: from mail-francecentralazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c20a::7] helo=PA4PR04CU001.outbound.protection.outlook.com)
+	id 1vaEWf-00000003nXo-1PEY;
+	Mon, 29 Dec 2025 14:47:13 +0000
+Received: from mail-yx1-xb12e.google.com ([2607:f8b0:4864:20::b12e])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vaEEA-00000003mY0-1t3A
+	id 1vaEWc-00000003nXL-3Pri
 	for linux-phy@lists.infradead.org;
-	Mon, 29 Dec 2025 14:28:07 +0000
-ARC-Seal: i=3; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=pass;
- b=xRt+rMcG3hrjnTaYXhlCM3DthTPREVMfdBJ8r8py/RCms9x+/hFwPAIB1g4tLxprG8spMVZe1Egr2IYqz1tVjes6cb9ENMJGxGJunvRoj257tgL78Nxy2dFQZ5S9U7FNGy3em0vEo7nEQwSpvJHXvYziaOilvOhNLonq5g4gGCvkb1kkvd9euKGdORcv4GGlTD0GyiKmgqzm4i8wLTHKJIfngvsAlmZD3ETeqFt6ZywbQNvY9QVDDTryDkapCrf3Q7kE8LO1Awi/n8M3JZoFCg/k1Ab8W1cDV55piNuHqjUd666z09Mb4VHSxu9HWJaqYhqKVhRNw9H23OT/lzD26w==
-ARC-Message-Signature: i=3; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=9AAuWmpq0f12820kqaoUBSmEEGNtdrVUgaK+Q/Ce7Ww=;
- b=upPoqdQQAFV1TN7RY3i83GcW1sQNtCmPXOecvcoRKBxxV5TKoV9WqBRvFxSYkyoZNcT2Vz1202CzndBRcMl3nLGYAD2VgwvIAleJ5pqKSNFwRRo6e3zhRCW7S6ApjCIJCqGncLj9DhoAPo6b3rRcBA4QOwO9cPJ/gcPL9CmNhQLXKjbP2ytYqAX7CcuVFvE6pkfrHi0J2IDTRLPvjwelnDFBu5nIIDMGs5wQdVtOXBITtlRAATPPzHSbAdH4tc45UjLb0BZBcq542g2BsW6g+ptq4KujyCC4RPVtOBanxYkezrSZ0bQouBGk4l5P3n4NzVlGWmZgu2GdQ49ZL9FNnw==
-ARC-Authentication-Results: i=3; mx.microsoft.com 1; spf=fail (sender ip is
- 52.17.62.50) smtp.rcpttodomain=atomide.com smtp.mailfrom=solid-run.com;
- dmarc=fail (p=none sp=none pct=100) action=none header.from=solid-run.com;
- dkim=pass (signature was verified) header.d=solidrn.onmicrosoft.com; arc=pass
- (0 oda=1 ltdi=1 spf=[1,1,smtp.mailfrom=solid-run.com]
- dkim=[1,1,header.d=solid-run.com] dmarc=[1,1,header.from=solid-run.com])
+	Mon, 29 Dec 2025 14:47:12 +0000
+Received: by mail-yx1-xb12e.google.com with SMTP id 956f58d0204a3-6467c5acb7dso4858757d50.1
+        for <linux-phy@lists.infradead.org>; Mon, 29 Dec 2025 06:47:10 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=solidrn.onmicrosoft.com; s=selector1-solidrn-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=9AAuWmpq0f12820kqaoUBSmEEGNtdrVUgaK+Q/Ce7Ww=;
- b=hDZYEYhzp03LeGaCBPQzOArlEeVPkOzreNbP+DDG1rgAY8EhYRpZL0//vCVIMPw84iY5qq1G7Znn5Lj3Vq9zLw1JQQXjoaOEuu9pIkpI+3Pf3TdgG4VLIM8EfXEheqyVN+YpGIx0rDgM0/D/guCwzW+FNv6pn2JpoJ5fNPq88Fs=
-Received: from AM8P190CA0022.EURP190.PROD.OUTLOOK.COM (2603:10a6:20b:219::27)
- by GV1PR04MB10195.eurprd04.prod.outlook.com (2603:10a6:150:1a8::6) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9456.11; Mon, 29 Dec
- 2025 14:27:59 +0000
-Received: from AM2PEPF0001C70A.eurprd05.prod.outlook.com
- (2603:10a6:20b:219:cafe::ad) by AM8P190CA0022.outlook.office365.com
- (2603:10a6:20b:219::27) with Microsoft SMTP Server (version=TLS1_3,
- cipher=TLS_AES_256_GCM_SHA384) id 15.20.9456.14 via Frontend Transport; Mon,
- 29 Dec 2025 14:27:59 +0000
-X-MS-Exchange-Authentication-Results: spf=fail (sender IP is 52.17.62.50)
- smtp.mailfrom=solid-run.com; dkim=pass (signature was verified)
- header.d=solidrn.onmicrosoft.com;dmarc=fail action=none
- header.from=solid-run.com;
-Received-SPF: Fail (protection.outlook.com: domain of solid-run.com does not
- designate 52.17.62.50 as permitted sender) receiver=protection.outlook.com;
- client-ip=52.17.62.50; helo=eu-dlp.cloud-sec-av.com;
-Received: from eu-dlp.cloud-sec-av.com (52.17.62.50) by
- AM2PEPF0001C70A.mail.protection.outlook.com (10.167.16.198) with Microsoft
- SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.9478.4
- via Frontend Transport; Mon, 29 Dec 2025 14:27:59 +0000
-Received: from emails-4196750-12-mt-prod-cp-eu-2.checkpointcloudsec.com (ip-10-20-5-157.eu-west-1.compute.internal [10.20.5.157])
-	by mta-outgoing-dlp-834-mt-prod-cp-eu-2.checkpointcloudsec.com (Postfix) with ESMTPS id 0220180426;
-	Mon, 29 Dec 2025 14:27:59 +0000 (UTC)
-ARC-Authentication-Results: i=2; mx.checkpointcloudsec.com;
- arc=pass;
- dkim=none header.d=none
-ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed;
- d=checkpointcloudsec.com; s=arcselector01; t=1767018478; h=from : to :
- subject : date : message-id : content-type : mime-version;
- bh=9AAuWmpq0f12820kqaoUBSmEEGNtdrVUgaK+Q/Ce7Ww=;
- b=ZoKsxCPbk0FwFWOj4lU3ltMWn/w7bFwl8lGNvVLID7IuWnbflHVrw6NzC0gKg8JTG/rhl
- A2Bbe24WovpmjckFya+DhaIxFB4WmV8OvamC/sM9gy2uf+Qrj289f2fiorkfraZM+tBR62d
- LRomt8JpVbZ6BtgpPGOjR7UHXT+W8rk=
-ARC-Seal: i=2; cv=pass; a=rsa-sha256; d=checkpointcloudsec.com;
- s=arcselector01; t=1767018478;
- b=HQhMsCasIfRJsbWZycIHfxybtKWYuAS5bmrHNE3wtyUka0Nt++gnE9D4WttnKsA7vQTzA
- vmpr8CzKKdRN0ttqty93QA27eOBx3yI6Clep9ANkofn49dGFNDhS9gVk1kn+HTiqPOPEFxR
- nuGWElQSqFjVBuSPvF4ul+w/D02ccCw=
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=vruiTnMSQ9VZOEDx15H+gQy9LreTWEBNoY7pzmKYPTS3iIAoPJk4TNs8Goo/Ryi8U4u/fbltUpiaagUQX2HJ+WLipnEHsKbp9ii2OhlzuiaJRtSfVCGrv99aKl5PAUs+IT7REK0ef51AXKNb7IMDWsoL23N8TA3txtEFwLPT+dVC8/4Q4wF2o1/dqNN1arijvnB7khUuxDSD4a4u7yMpZqicfkIfh52VDegDdQstaFxIBZFOXNxhKzKjuoQNhne/ZykQtaOhJBueMT3BR0TY7XzprIRsgKzg3K1iBgjrKxnCBlAEuThYLplbtT9go4ZXqtBMpZl+rIlIBpTYIPeWAQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=9AAuWmpq0f12820kqaoUBSmEEGNtdrVUgaK+Q/Ce7Ww=;
- b=aw0dRo9Zd4tv4NtH1QnY2CLO250ciMr+h+DD4gZ4yeT7al0/7752J6+w0VJIWFjWb5Xg4Q2aMlTUizWoiE4pqM0jihF/aR4Wz0D6e3pgnPRQYa18hpv4/3+1xayIL1zW/Ldo4SpmNgiEPHpp6aPNYjLPOMTR1mQRssNiBosxpEdmtMFnKRVwvRmPrBgP2Lu+6QWDkPPpMaB0qry3OSaYzHi6ngEtKYBDQOIIyV5HiaRUFqaN6pxIRKD7ovxZ5ciPPw7wA1LzhqdrdvqwOcfmIeVPBJpstmM3hvjEatMp6VUjGKBcTSADa4LbNoUA8KJzz9oAorMMqAq0fnPodkQzWg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=solid-run.com; dmarc=pass action=none
- header.from=solid-run.com; dkim=pass header.d=solid-run.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=solidrn.onmicrosoft.com; s=selector1-solidrn-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=9AAuWmpq0f12820kqaoUBSmEEGNtdrVUgaK+Q/Ce7Ww=;
- b=hDZYEYhzp03LeGaCBPQzOArlEeVPkOzreNbP+DDG1rgAY8EhYRpZL0//vCVIMPw84iY5qq1G7Znn5Lj3Vq9zLw1JQQXjoaOEuu9pIkpI+3Pf3TdgG4VLIM8EfXEheqyVN+YpGIx0rDgM0/D/guCwzW+FNv6pn2JpoJ5fNPq88Fs=
-Received: from PAXPR04MB8749.eurprd04.prod.outlook.com (2603:10a6:102:21f::22)
- by DU0PR04MB9417.eurprd04.prod.outlook.com (2603:10a6:10:358::11) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9456.14; Mon, 29 Dec
- 2025 14:27:45 +0000
-Received: from PAXPR04MB8749.eurprd04.prod.outlook.com
- ([fe80::aa83:81a0:a276:51f6]) by PAXPR04MB8749.eurprd04.prod.outlook.com
- ([fe80::aa83:81a0:a276:51f6%4]) with mapi id 15.20.9456.013; Mon, 29 Dec 2025
- 14:27:44 +0000
-From: Josua Mayer <josua@solid-run.com>
-Date: Mon, 29 Dec 2025 15:27:30 +0100
-Subject: [PATCH v4 6/7] dt-bindings: mmc: renesas,sdhi: Add mux-states
- property
-Message-Id: <20251229-rz-sdio-mux-v4-6-a023e55758fe@solid-run.com>
-References: <20251229-rz-sdio-mux-v4-0-a023e55758fe@solid-run.com>
-In-Reply-To: <20251229-rz-sdio-mux-v4-0-a023e55758fe@solid-run.com>
-To: Ulf Hansson <ulf.hansson@linaro.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Magnus Damm <magnus.damm@gmail.com>,
- Wolfram Sang <wsa+renesas@sang-engineering.com>,
- Marc Kleine-Budde <mkl@pengutronix.de>,
- Vincent Mailhol <mailhol@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Peter Rosin <peda@axentia.se>,
- Aaro Koskinen <aaro.koskinen@iki.fi>,
- Andreas Kemnade <andreas@kemnade.info>, Kevin Hilman <khilman@baylibre.com>,
- Roger Quadros <rogerq@kernel.org>, Tony Lindgren <tony@atomide.com>,
- Vignesh R <vigneshr@ti.com>, Janusz Krzysztofik <jmkrzyszt@gmail.com>,
- Andi Shyti <andi.shyti@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>
-Cc: Mikhail Anikin <mikhail.anikin@solid-run.com>,
- Yazan Shhady <yazan.shhady@solid-run.com>,
- Jon Nettleton <jon@solid-run.com>, linux-mmc@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-renesas-soc@vger.kernel.org, linux-can@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-omap@vger.kernel.org,
- linux-i2c@vger.kernel.org, Josua Mayer <josua@solid-run.com>
-X-Mailer: b4 0.14.3
-X-ClientProxiedBy: FR4P281CA0096.DEUP281.PROD.OUTLOOK.COM
- (2603:10a6:d10:cb::10) To PAXPR04MB8749.eurprd04.prod.outlook.com
- (2603:10a6:102:21f::22)
+        d=linaro.org; s=google; t=1767019629; x=1767624429; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=hiFIGGOCel6e4RtTn/5DW6H0+gmbweG5rl/mIaIEv30=;
+        b=CZ5dYzP2f2rNWx7OaJHCUGrcxuK4Ciy6tcbmafuz9Uf/jWTmfbOheUELjcedGTiyZh
+         li4eERQ5z2hE3sarRBSaJ36DaO1ivbzUdzIPFL8fIFVkup4PqaJCwVPtUAX7E9+uXd8l
+         KaK8kCgVGGt7hseIAoX9r9VVz897rjfbpQjKRd2DrggTOXeqV5iW9+iK54QUv2qq4DDe
+         6XoASsLTKLHM+nreVfb/I13WGikgBnKcpn4v0uHUZc62enL3NlISJYNYJMLopL+ar6UD
+         RhNOZmrnpvqYbXL1D7vJsbxl0FlaSjJ2AohtQaOlAiC3+CW/nWBMlZS+UV3dmDXMN8l6
+         +Hbw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1767019629; x=1767624429;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=hiFIGGOCel6e4RtTn/5DW6H0+gmbweG5rl/mIaIEv30=;
+        b=h8qlQ/3IGPVPAiRM9gVYR95HuJ45Ad9Axzmd6spU9oZBqoM8kkdB/BCvEKp9qf5t/5
+         BEYZMgsATH9e18QlIJwn7+XQh+xn+/33DY1KqIRjTfcLZ8fT6UAQRw/0fLAuEfILD7DV
+         0YSz3+7iEoSGghjQchPKcT7spnQNZaYKbnaPIap1r+TaYXzgXbTPetWz05rdeKcqKeb6
+         jk+4xLKk8HVyH16JL0Xe7UxvOpD+1UFuTS0MZVUjYBFS6160H/sT6j00Zw2zDrDPsUkl
+         Dp7GrmZyeERMwzJLN0nUuaWsqptCHoiBLSvWBi8EpmEtX1Bu8GS3z698Uo+dQrEWESB5
+         kO8g==
+X-Forwarded-Encrypted: i=1; AJvYcCXR3SCqpMczOYjK5kOYo+lkKmMYfCXhLiAezYi4YwG9PHd4Znk5kzJAwKFoIDRaaqWBL8jmGu7oMgI=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyCv/LaA19AYY+fYwfH/XWGQDCuoLJvZ7xypKnWlxuIjSb9OepG
+	pE71l+5ozvz0Bt+1YqkwifRAaggQBMnYIgPRksI9fLly47nIzQXHXM8sZNpLVuUZ0K40UwEUWea
+	8AOgmcMAF0BvGGJ615L6oMKL1axdPBsHhFBdRO1+/dA==
+X-Gm-Gg: AY/fxX6Y9Gu5DWF6fZubcESQbK8wzEx65PusaYM0mWLHljCFE3362Si2hZ0NsY4zEQc
+	bD45I9EJ6yCoicsZAcWWpiRAzvOh0S6fTYu29p1KIJvQrs7uqnlbVQTY1wu4sAjIj+JxRIudOOg
+	8bHehxBPm3xaMcDvpT+IwxmWrfRAhZqLW1HqD3JwZcpkn0UzK2BFGd/G1m7geV3VA7NGRVkq/Wn
+	+XC47hq7+0D/lIrvOqvb8lZE3q10RV9QxgFhpEXjPBaQGx6zvkGXOVe3Y2vsJ2LShtUQ9mM
+X-Google-Smtp-Source: AGHT+IGO4whynDnDczZe5aUSFNc6rZ7ClmyTEypWHVE9Jxyg/qzrfMWaETUGVpcInjLrsVhW/aWOBEshOk4ENImI9iE=
+X-Received: by 2002:a05:690e:1881:b0:646:7a21:f05c with SMTP id
+ 956f58d0204a3-6467a21f232mr21185393d50.50.1767019629379; Mon, 29 Dec 2025
+ 06:47:09 -0800 (PST)
 MIME-Version: 1.0
-X-MS-TrafficTypeDiagnostic: PAXPR04MB8749:EE_|DU0PR04MB9417:EE_|AM2PEPF0001C70A:EE_|GV1PR04MB10195:EE_
-X-MS-Office365-Filtering-Correlation-Id: d6c1c5b2-796c-441b-33b9-08de46e6777f
-X-CLOUD-SEC-AV-Info: solidrun,office365_emails,sent,inline
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam-Untrusted: BCL:0;ARA:13230040|376014|52116014|366016|7416014|1800799024|38350700014|921020;
-X-Microsoft-Antispam-Message-Info-Original: =?utf-8?B?U0ZjMDRCS3NMZHhHL0IvSXAzTEVtNkIrbkVhdFYvT2JneXhuVjY0Z2pYTE9h?=
- =?utf-8?B?a1piR0RBa2pNRUI5VE1aTVNpcHF1MlpCZm1VSndTZXlrVDZleEgxUDdVeFl4?=
- =?utf-8?B?WGZJSDBUbmtmeTRyK1J4eFNhOHNYQWllbXEvekRnL1ErUWdNeGJtSzJYNXBR?=
- =?utf-8?B?NFJXMG1PTUp5Z1FjR3pscXJ0SzRFWnJMUjFzVUpWbUg1VGJydEw2WHQ2dUhk?=
- =?utf-8?B?UTN6cDFIZXZuTDlpV3RKZHh1S2Fvc2c5VHlxRWVVeUlYbUtSK0NGb0F2aE12?=
- =?utf-8?B?eTZYNWlUZlNzVElMOWdiSkV1YnR3S1NBR1Q2cDRwbFBQZm90TzlWcDFtT0J3?=
- =?utf-8?B?T0UyZjFRVzk1QlhZZkZsTWJsTE85MjJyUnNiSjhYWFZ4VHhHSmJsdldxK3Fw?=
- =?utf-8?B?UWpRc21zSm5CMWMyZzltRXk0L3VGTDg4UjFXeHZpVXA5WWZ2NHI3T2ZFL1Ru?=
- =?utf-8?B?ZzJmTzBFSnNCUkYwbXRhV2xhZGV2QmdFTjdQSTRGZ3hRVGhmeXFveUJhaWtG?=
- =?utf-8?B?d25MOEFJMTJubVM0RGYzcjJMcmlEV3d4Z09PbDRrNHcyeTZYMU1CRkJTN0JL?=
- =?utf-8?B?MitydG96clkyakNBblVyVXFVc1RpaDJZNk1ZZUFkNkZjbEk0UWcyaER5UExq?=
- =?utf-8?B?UkhmYWtNdWxQN3dCMWRGbFVTUTUrdzd5cXEyNDVMQnlwbUpITTQ2cG5FVUF6?=
- =?utf-8?B?UTgwYVY4aFZkd1I5QVZhOTBLZFFrc1J3Ym5ieDBlcWN5RUVzeWljaG9zMVJE?=
- =?utf-8?B?M0lwTnVzMGI4SEJQVFU5dzc2cjlvVklNLzlnVk4vTHFqbnVzNVMxNUJrdjAz?=
- =?utf-8?B?NFZxa0h0bkM2N1RhaFUrcUFFM1AzVkYyOFBXNEdSSlhtSDhwMUNRVS9WTmZh?=
- =?utf-8?B?aEVabnZhUWlEa0RyeWxrM29mbktscENzN0kydWJqZytZKzNsV2s5STJ4L2wr?=
- =?utf-8?B?WmFMd1cxUjhCMDNRWWxRYWw0QzlTdnZoZGRrVmxZa1dHcWZncGttQi9wcnJU?=
- =?utf-8?B?dm1zLzhCWG9qL2lWS1NXOVNMRkpjTXR6aU40eSs4UWtUVXRaQTFseVlvV2xp?=
- =?utf-8?B?aDBmeUhIQWMxbWhxMVpicUk4MFJxc2N4K1RHbGhMcTN6SHF5RmNoc25RcmM0?=
- =?utf-8?B?OHlSbUluT2NIQWU3eVA2aE94cDExQ1FENW1HaDl1SVJvOFY4YWIxb21zVStq?=
- =?utf-8?B?K2ZzcGFHbEY3ZWtVYVQ1bmttbUg4emZ0VmNKMW5FZ0VQVk9LZmg5a3BGQ09D?=
- =?utf-8?B?dVRGUzlya2s0aWQ5SFhJYnRsa1orVk8vd1Y5bUZ5ZWhuSXZEYnI2QXNWYWpp?=
- =?utf-8?B?bkRkR3ZIQ1dPMGFGcEU2Rzg1R20rVTE5QU1icWVYeVZENnpxNCt6Zjg3Z2U5?=
- =?utf-8?B?RHpZZ1ovQjJlZUM3L2dKUTRWRlFSa0VZM3kybXczOWNrRE9ydE9wWGk3MHZx?=
- =?utf-8?B?alpubW1MMXhyWmRYNElXZ0JpSUNrQndLVldQeG1lY1lFcTc2SkZqNFRpYkNG?=
- =?utf-8?B?ZlhoeEJMS3Q3SHF5ZzcrRlM1aUY5TjV1N0U1MUpEbXRVZ3o4LzRTM2RxYjJl?=
- =?utf-8?B?MjdsV25RSmpSYXNoMVpCRWJLNzl6ZlplNXdiZ05LQ3BoZXNkK1pSQmRZanBB?=
- =?utf-8?B?SVR2UlV1OEtpLytMWGtwS1gzTmZDYkN1b0hnZWo3cWxFa1NLR3QyZSswMFVk?=
- =?utf-8?B?elYrczlNQ202Y09nR0pLejIwOEg2REJXOVl4L0d0c0tZZzZnY0kxOS9GdXZF?=
- =?utf-8?B?R25DbUFUYnJiMG9YcWFEU2NhMkJEdmlSbWo5bDFPbTZJdk80d3FmSnRaTERk?=
- =?utf-8?B?UG5QMDdLQkR0MWhNcjhMSnlvTWRuTGxiaUNJcHBJMzJkQ1EzaEw0MndrMjFI?=
- =?utf-8?B?cHZ1ZzJsN1Q1K1VvTUViWXFWdE5BM2FsY3A0TVpGVWRLczNvR29FczRQTmdz?=
- =?utf-8?B?VWVhME9nL3Rwa0FRc3dWQXIvV0ZabE9Sdm03NjMyN2RmMVhZMGpXdWFMOXhE?=
- =?utf-8?B?VWdUQ01ORUdFUTRhOG5lN2VjMUxBeG5DeE80OVM0TlBIRmRmVy93Z2xhb0dj?=
- =?utf-8?B?ekl0S010QVdUZVo1bWkzcXNBZlhDbHhCdmJKQT09?=
-X-Forefront-Antispam-Report-Untrusted: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB8749.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(52116014)(366016)(7416014)(1800799024)(38350700014)(921020);DIR:OUT;SFP:1102;
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU0PR04MB9417
-X-CLOUD-SEC-AV-INT-Relay: sent<mta-outgoing-dlp-mt-prod-cp-eu-2.checkpointcloudsec.com>
-X-CLOUD-SEC-AV-UUID: 5582d792e53044bdb2afb48ef6519ca5:solidrun,office365_emails,sent,inline:645ecd6cca06b82d0b30cc7ad8f78726
-Authentication-Results-Original: mx.checkpointcloudsec.com; arc=pass;
- dkim=none header.d=none
-X-EOPAttributedMessage: 0
-X-MS-Exchange-Transport-CrossTenantHeadersStripped: AM2PEPF0001C70A.eurprd05.prod.outlook.com
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id-Prvs: a07d94d7-18de-4298-482e-08de46e66eb1
-X-Microsoft-Antispam: BCL:0;ARA:13230040|36860700013|376014|7416014|82310400026|1800799024|35042699022|14060799003|921020;
-X-Microsoft-Antispam-Message-Info: =?utf-8?B?M2VhbnpZZEpuYWt1ZEpVcFRsUkkxRU1Wc2NrSlVuRTdOVWRBTlF4ZVlsSVk4?=
- =?utf-8?B?ZlBob0JpWjV4TGtiUjgvcFhISUIxMC9UWllDYndrcGxSR2tyaVRKdi96aFg2?=
- =?utf-8?B?S0lpY05YaGNoUHlhN3A4L3RWbGFabGR4L1VUUklBN004a0FOcy9zYjNJbFUz?=
- =?utf-8?B?NlIzUTJDRmF1dW9yYnNlU3krVmpjWDUrM0hUaW5wc2d5ZHVXd0FCSGwxWm95?=
- =?utf-8?B?cXV2VklhdFNOY0s5eWdKQmc3MnJIbGR6b2xWK25nZytFZFZ6dGY1b0xiQUxF?=
- =?utf-8?B?Wm1TbTUwNFRKaEZvZG5NR2FBLzNhZ1BXZ3FiZmFBS2JPeFk3dUpaZHV6WlZJ?=
- =?utf-8?B?K3ZPdm81emNHZzNhQk9oZkp1ZEVUQlROdzJNYXBJcEpHWElCcGFKVC9ONGNy?=
- =?utf-8?B?WW5jamxzSkcyS1IvaFdQQTdiK1JIZGpaVkY5cUJnc05pemJmeTlHNnIwcWkz?=
- =?utf-8?B?ZDdwTENlKy9zdkFTaFBZaStBRTJ3Z2Q3eUNHcTByajlTQmp3ODNJSTZCbFdV?=
- =?utf-8?B?Qk5zTVBXalJ0R2I3eUVOZVZqSWdXOUVURjAyMlRNOU5FNlQxb2xCWVFtVXQw?=
- =?utf-8?B?Y1pjS2gzcElLeWkxY25VdW5rblRhNFNsT0ZnTmgvbW1QbjlQVWtRanQ4TDNX?=
- =?utf-8?B?TTVkdUtCcURINm04QmlUS2JhUkZFckJ3WTJ4TmpYNlNxOWVrc29qTEpoVWEx?=
- =?utf-8?B?M0RYWjJvdkdxRUcrdnZUbTFpa3pWRE82cVVFam5JbTl4cjFmY0hQRW4wM1J6?=
- =?utf-8?B?R0diTlFTeXBMWWpqRkNDS2c5RzVJbHd1Y3BXWlNrazNiNlFjSlVUMnVKR29D?=
- =?utf-8?B?Um5GUFNyNXJ1RkhZODJ1NXBuUGU5amVVL2FMZWgrY1lNczY5MUVLVzYybURG?=
- =?utf-8?B?a2o1bzN6WUVteEdlMDJFWCswTVlZbjliRUtjSTM5VlBodUF1RFo2VkdCUVlH?=
- =?utf-8?B?aTZ2L3lwSWRuUVpIZUhVczZYUXNJVWtvcGlpOWorcnR6blRwMmxUK3E3ZCt4?=
- =?utf-8?B?QnI4NmU0TGpzVk9vNzY5dFpzRUx2aHo1RExrR3FxWlVTaFBhNFN0Sk5JS2Zz?=
- =?utf-8?B?ellwRmlyRHZ4bEswR25nZ1Y5NzI5SXlFL3phSHdwMzF2Zlo2clg0bGlGa2Vm?=
- =?utf-8?B?ZjUyclBHMjlPa2t6aW0zUUVSaEVSS3BHb1dNZitqTEtFN3FjK3Q2QU54aGVs?=
- =?utf-8?B?MktKS1UwODFvZHYrZXlzai8zYVM4ZmZERm9DYkVueVBtM3ZWc3R3OVloTmRC?=
- =?utf-8?B?MVl4UTRyU0grZ1RsdkRicjVSL28xbmFJbGR3RGZNVWRtT3RqUEp4VXBibnhB?=
- =?utf-8?B?a001U0Z1WnJmbEpyWVR2djh2VlBTT3I4YSs2RGU5QUs0bEwyckhRZFQ4RVBv?=
- =?utf-8?B?V01HT0p0TjJNblVNeGVtcTV5a2Z1UHlQQmF2Z2NvYmgyRmhidEh3RUVpTGhy?=
- =?utf-8?B?amt6bXhhVVNyM3dyM3czb0wzS0Y5NElab3E0YlBNTWpFdWpsaEtTQ2FsaXlX?=
- =?utf-8?B?VXJ2ckxYbzJtdFZQcUFMUk1tQ0xpV0tOUG5NdkU1MVFnTktFK2pYbnUzNHFU?=
- =?utf-8?B?V3JIYjRoZWRkVnFIakFFQ3lBVmlFS1NhdHU0bnd1aXc4eEhQSzk2ZlNEbW41?=
- =?utf-8?B?Q05kdTh4OXYyVjZuWWd2ZUtBTFN2NjNnd28wbWo2b0JkK1RXei8wSGlESFNz?=
- =?utf-8?B?Yk5KZDNKcCsvcHpEUlpYVUhpS0M1SHplWDdCdU5Za3NWMnVUTHlVN3NpcUFp?=
- =?utf-8?B?VXJlRmpSRmVGTnNFTzh5TDEzVGNLNy9wYmRTQ1l3bHArR2xhQ2xUenphcTc2?=
- =?utf-8?B?ZnovdFFZRFovTnRCek5YbUZQQW5aYkl3MGtMS2hKaFRRUVlBcC93RTZTdUR3?=
- =?utf-8?B?UlBIYml5blNnbGtmQkEwdWJNY2FRVWNqWUpyemdlQWIwcFdMVnRWdjA2TnJv?=
- =?utf-8?B?bjkrRzBIWll4MWovbHd5cDBqckZldUxoQWE3S0dlcG5mMStFU1FUT0Q2QXY1?=
- =?utf-8?B?ZTlKNUE1c0VPT2NWQm9MY2V1bVZkZUM4ZDhQWnVLMElRN3NMRW9RSGh1RU00?=
- =?utf-8?B?cWllQTFZci9NeFpYWWFGTnhzWnRKNktoT3NjWkZUeUc0RFV3RG1NWkVKTXhC?=
- =?utf-8?Q?CD5s=3D?=
-X-Forefront-Antispam-Report: CIP:52.17.62.50;CTRY:IE;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:eu-dlp.cloud-sec-av.com;PTR:eu-dlp.cloud-sec-av.com;CAT:NONE;SFS:(13230040)(36860700013)(376014)(7416014)(82310400026)(1800799024)(35042699022)(14060799003)(921020);DIR:OUT;SFP:1102;
-X-OriginatorOrg: solid-run.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 29 Dec 2025 14:27:59.3446
- (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: d6c1c5b2-796c-441b-33b9-08de46e6777f
-X-MS-Exchange-CrossTenant-Id: a4a8aaf3-fd27-4e27-add2-604707ce5b82
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=a4a8aaf3-fd27-4e27-add2-604707ce5b82;Ip=[52.17.62.50];Helo=[eu-dlp.cloud-sec-av.com]
-X-MS-Exchange-CrossTenant-AuthSource: AM2PEPF0001C70A.eurprd05.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV1PR04MB10195
+References: <20251210-rz-sdio-mux-v3-0-ca628db56d60@solid-run.com>
+ <20251210-rz-sdio-mux-v3-2-ca628db56d60@solid-run.com> <CAPDyKFoYd3WKGrjD3DEzZH8EfgZPmRkrqL=rdoKNuAADrvz3Eg@mail.gmail.com>
+ <20f2128c-c6cb-4b13-aa08-b93e540f5bd9@solid-run.com> <CAPDyKFo2jsV02qSDBSZTewJjV09AMO8iETU5Uxqz+GBnd0JY6g@mail.gmail.com>
+ <e8b0579d-21b9-4072-857b-5afab92c42e6@solid-run.com>
+In-Reply-To: <e8b0579d-21b9-4072-857b-5afab92c42e6@solid-run.com>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Mon, 29 Dec 2025 15:46:32 +0100
+X-Gm-Features: AQt7F2qjavw22v0M0v4JRnBk0tlNXPSxJSyNw5ogCiPk3Bm42fj5er9DVY64ELg
+Message-ID: <CAPDyKFqN1Yq0atE6YaeigzR75n1Q1BSU8JjLno=ioUBwN8=FSQ@mail.gmail.com>
+Subject: Re: [PATCH v3 2/6] mux: Add helper functions for getting optional and
+ selected mux-state
+To: Josua Mayer <josua@solid-run.com>
+Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+	Conor Dooley <conor+dt@kernel.org>, Geert Uytterhoeven <geert+renesas@glider.be>, 
+	Magnus Damm <magnus.damm@gmail.com>, Wolfram Sang <wsa+renesas@sang-engineering.com>, 
+	Marc Kleine-Budde <mkl@pengutronix.de>, Vincent Mailhol <mailhol@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Peter Rosin <peda@axentia.se>, 
+	Aaro Koskinen <aaro.koskinen@iki.fi>, Andreas Kemnade <andreas@kemnade.info>, 
+	Kevin Hilman <khilman@baylibre.com>, Roger Quadros <rogerq@kernel.org>, 
+	Tony Lindgren <tony@atomide.com>, Vignesh R <vigneshr@ti.com>, 
+	Janusz Krzysztofik <jmkrzyszt@gmail.com>, Andi Shyti <andi.shyti@kernel.org>, 
+	Mikhail Anikin <mikhail.anikin@solid-run.com>, Yazan Shhady <yazan.shhady@solid-run.com>, 
+	Jon Nettleton <jon@solid-run.com>, "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>, 
+	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>, 
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, 
+	"linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>, 
+	"linux-can@vger.kernel.org" <linux-can@vger.kernel.org>, 
+	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>, 
+	"linux-omap@vger.kernel.org" <linux-omap@vger.kernel.org>, 
+	"linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251229_062806_645596_C1AC22B7 
-X-CRM114-Status: UNSURE (   5.90  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20251229_064710_883861_8BB2FD3B 
+X-CRM114-Status: GOOD (  28.07  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -262,55 +114,62 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add mux controller support for data or control lines that are muxed
-between a host and multiple cards.
+On Mon, 29 Dec 2025 at 12:30, Josua Mayer <josua@solid-run.com> wrote:
+>
+> Am 22.12.25 um 15:47 schrieb Ulf Hansson:
+> > On Sun, 21 Dec 2025 at 11:38, Josua Mayer <josua@solid-run.com> wrote:
+> >> Hi Ulf,
+> >>
+> >> Am 17.12.25 um 14:38 schrieb Ulf Hansson:
+> >>> On Wed, 10 Dec 2025 at 18:39, Josua Mayer <josua@solid-run.com> wrote:
+> >> cut
+> >>
+> >>>>  /*
+> >>>>   * Using subsys_initcall instead of module_init here to try to ensure - for
+> >>>>   * the non-modular case - that the subsystem is initialized when mux consumers
+> >>>> diff --git a/include/linux/mux/consumer.h b/include/linux/mux/consumer.h
+> >>>> index 2e25c838f8312..a5da2e33a45c0 100644
+> >>>> --- a/include/linux/mux/consumer.h
+> >>>> +++ b/include/linux/mux/consumer.h
+> >>>> @@ -60,5 +60,9 @@ struct mux_control *devm_mux_control_get(struct device *dev,
+> >>>>                                          const char *mux_name);
+> >>>>  struct mux_state *devm_mux_state_get(struct device *dev,
+> >>>>                                      const char *mux_name);
+> >>>> +struct mux_state *devm_mux_state_get_optional(struct device *dev,
+> >>>> +                                             const char *mux_name);
+> >>>> +struct mux_state *devm_mux_state_get_optional_selected(struct device *dev,
+> >>>> +                                                      const char *mux_name);
+> >>> Seems like we need stub-functions of these too. Otherwise
+> >>> subsystems/drivers need to have a "depends on MULTIPLEXER" in their
+> >>> Kconfigs.
+> >> Currently the drivers that can use a mux select MULTIPLEXER in Kconfig.
+> > Yes, but that's not generally how we do this. The driver may not need
+> > MULTIPLEXER for all platforms that driver is being used on.
+> >
+> >> There already exist a few mux helpers both for mux-state and for mux-control,
+> >> and they might all need stubs.
+> > Correct. I think we should add subs for all of them.
+> >
+> >> I'd prefer the restructuring of kconfig dependencies being independent from
+> >> adding mux-state functionality to renesas sdhi driver.
+> > I understand your point, but adding the stubs isn't really a big thing
+> > - unless someone has some good arguments not to!?
+> >
+> > Moreover, since the series changes the mux-core anyways - and
+> > subsequent changes depend on it, I don't see an issue to fold in yet
+> > another patch to add the stubs.
+> Would this also cause changing all the Kconfig "select MULTIPLEXER"?
+> If it is only the stubs - sure.
+>
+> And then in the renesas sdhi patch I can drop my change to kconfig.
 
-There are several devices supporting a choice of eMMC or SD on a single
-board by both dip switch and gpio, e.g. Renesas RZ/G2L SMARC SoM and
-SolidRun RZ/G2L SoM.
+Correct!
 
-In-tree dts for the Renesas boards currently rely on preprocessor macros
-and gpio hogs to describe the respective cards.
+Typically, it's better to do a "select MULTIPLEXER" in the platform's
+Kconfig for those platforms that really need it.
 
-By adding mux-states property to sdhi controller description, boards can
-correctly describe the mux that already exists in hardware - and drivers
-can coordinate between mux selection and probing for cards.
-
-Acked-by: Rob Herring (Arm) <robh@kernel.org>
-Signed-off-by: Josua Mayer <josua@solid-run.com>
----
- Documentation/devicetree/bindings/mmc/renesas,sdhi.yaml | 6 ++++++
- 1 file changed, 6 insertions(+)
-
-diff --git a/Documentation/devicetree/bindings/mmc/renesas,sdhi.yaml b/Documentation/devicetree/bindings/mmc/renesas,sdhi.yaml
-index c754ea71f51f7..64fac0d11329a 100644
---- a/Documentation/devicetree/bindings/mmc/renesas,sdhi.yaml
-+++ b/Documentation/devicetree/bindings/mmc/renesas,sdhi.yaml
-@@ -106,6 +106,11 @@ properties:
-   iommus:
-     maxItems: 1
- 
-+  mux-states:
-+    description:
-+      mux controller node to route the SD/SDIO/eMMC signals from SoC to cards.
-+    maxItems: 1
-+
-   power-domains:
-     maxItems: 1
- 
-@@ -275,6 +280,7 @@ examples:
-         max-frequency = <195000000>;
-         power-domains = <&sysc R8A7790_PD_ALWAYS_ON>;
-         resets = <&cpg 314>;
-+        mux-states = <&mux 0>;
-     };
- 
-     sdhi1: mmc@ee120000 {
-
--- 
-2.51.0
-
-
+Kind regards
+Uffe
 
 -- 
 linux-phy mailing list
