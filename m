@@ -4,50 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EEE66E8FDB1
-	for <linux-phy@archiver.kernel.org>; Mon, 29 Dec 2025 07:12:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 88F04D3B7E5
+	for <linux-phy@archiver.kernel.org>; Mon, 29 Dec 2025 07:13:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8rmqBzRHWeWoj+TyKqZMNHhddD39JPFThkAHsDqFJEI=; b=wsfatta+H3GgW6
-	cPpi4/wwZ5LGrO3NohKi/3Iqn0wtIhuzvy3qUSP7jik/4bCJ0A3ul3kZVdTBPA2B/0jtvO52+RhK4
-	4x8mbt0Zjs+3H7bbOvbofD1iDJu7fgOIGtQd9c1jHnytemFB0UMIgyZ9N3QWOfnNG+zPOd2edxvx6
-	4kXvRUeOd30lrSwk5UFtpyRV7jIaC0cUumKfU/PY6rihizMuOwqwiBkWtQx3Klk97pnCD93NfAMl4
-	lUyiut0b1R3e64Odp2HnoKm91CjOhUk8JSLNzlXNFfNHVKuxeFQyvX0PYr7ubZxRZTnLarGgjJoKa
-	NCrxVb/1rHeaVCcOLY7w==;
+	List-Owner; bh=2I9VI4et7ZTQuMYoy9JRTIAeK9ITOLULw6XARAY+0Xs=; b=M+q5v9gUfpW7DD
+	UwDLdCauIA+D3imkjk7CLOFns6T87uUIuc59vcrUptV2PkYxI163iF9WmwJ4qpdZlD7D332lwso4f
+	whXaII9usp0AtM4N6j+fuZZmYP6GuIGYBHVCys8TYcuok6AHkAkUbdyvDmfUBO06m7MUYhzTIAtWW
+	3IMENRK3N0ktGdaanorOLQSMvcpqRpwwjZUmR09aOFrSNytdAy2ibv3IOtooXWBarepcIzJd9615v
+	l0WSOLVtob6iIw2xoTXvDxc0h/5Clhr4ISSBvePMf8fKHjb3yln8flup6DpEoO6YhuojKQH8e54zu
+	Y+uwcH/ERCBjlRxMlfKA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1va7QB-00000003PSS-20rz;
-	Mon, 29 Dec 2025 07:12:03 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1va7RZ-00000003PWQ-1CFR;
+	Mon, 29 Dec 2025 07:13:29 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1va7Q9-00000003PS5-0Npl
+	id 1va7RY-00000003PVv-29kr
 	for linux-phy@lists.infradead.org;
-	Mon, 29 Dec 2025 07:12:02 +0000
+	Mon, 29 Dec 2025 07:13:28 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 38A4E4399D;
-	Mon, 29 Dec 2025 07:12:00 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 176D0C4CEF7;
-	Mon, 29 Dec 2025 07:11:54 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 90DF86001A;
+	Mon, 29 Dec 2025 07:13:27 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2AC66C4CEF7;
+	Mon, 29 Dec 2025 07:13:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1766992320;
-	bh=w+EQN4BKYGz+6m9nwb8toGppiuWQhMP7Gh1a+mXh/PQ=;
+	s=k20201202; t=1766992407;
+	bh=5Vi/GObvU8QN0K2K0AXY6SR8LJZXeeQpllqvML422rQ=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=kix3k7684uS1EW5mx2CCwazHUnrYbnNnoEO3mRjx3dvqEJTWV+I8Le4Kc5Ji+x5Q4
-	 /1rDwhx40c8BM87SHgZ4guLHcASfWeFJ4g6EttB+qZKQuZRJJMPVUVjnmiaPpe1SEH
-	 qy40msXPt3lFz7AwAuRjzcy7U4VhjbHhzQBaVf3un1nURA/Ztdue6cw1FWrN3hRVaf
-	 5HmfyVsg8EjXutcNgiL9KXeGrcN3B4qOcGYde/1RS2nf55hJciz4AUpiQ9RvsAxHIE
-	 08ARUfbc2pHeuxwVWnEkwTYP7VYD6Olukbqk3iCJcyXlcvfYno/8hB9vgsC/f/r8/3
-	 MyH5Jd++NPhag==
-Message-ID: <f87a8caf-6c65-48b8-a372-1ebff95cb6f8@kernel.org>
-Date: Mon, 29 Dec 2025 08:11:52 +0100
+	b=OZ4vQFjFfNd1GeBy4eSXcR4h5D3HpNLtjcuT9DZSr+qc5dZZ18HwacQofkvBq7aty
+	 McpCDiBV9PNALQgSa0FnWmGP+qxQ1kA2xtw7yzQdK+/1WCAovvK+JR0DIgbVyUlB4Z
+	 8jOfe5vOphGAaTYR0L8uhuAp4l4qIZpiT+WAobhh5Sej89Hv5TCI+PimRavMN4aklI
+	 uOsfsSkJTW5T9zvrQxGj2oJ682v6zbPo/diUrNTTbZdry0A+GpO1CznnWLMI0iY9tr
+	 hUaNXqf87vCey48s+89/e8ssahMl9TqtNUmG1a0h+5TtN+TU7DXjZbccTyfI0ReuDw
+	 LjwDujQz8unoA==
+Message-ID: <9d3c21ad-c265-4e22-b804-ef8c39b7e787@kernel.org>
+Date: Mon, 29 Dec 2025 08:13:20 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH V1 1/4] scsi: ufs: phy: dt-bindings: Add QMP UFS PHY
- compatible for Hamoa
+Subject: Re: [PATCH V1 2/4] scsi: ufs: qcom: dt-bindings: Add UFSHC compatible
+ for Hamoa
 To: Pradeep P V K <pradeep.pragallapati@oss.qualcomm.com>, vkoul@kernel.org,
  neil.armstrong@linaro.org, robh@kernel.org, krzk+dt@kernel.org,
  conor+dt@kernel.org, martin.petersen@oracle.com, andersson@kernel.org,
@@ -57,7 +57,7 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-scsi@vger.kernel.org, nitin.rawat@oss.qualcomm.com
 References: <20251229060642.2807165-1-pradeep.pragallapati@oss.qualcomm.com>
- <20251229060642.2807165-2-pradeep.pragallapati@oss.qualcomm.com>
+ <20251229060642.2807165-3-pradeep.pragallapati@oss.qualcomm.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -103,11 +103,7 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <20251229060642.2807165-2-pradeep.pragallapati@oss.qualcomm.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251228_231201_180494_2244638C 
-X-CRM114-Status: UNSURE (   6.42  )
-X-CRM114-Notice: Please train this message.
+In-Reply-To: <20251229060642.2807165-3-pradeep.pragallapati@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -125,14 +121,24 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 29/12/2025 07:06, Pradeep P V K wrote:
-> Document the QMP UFS PHY compatible for Qualcomm Hamoa to support
-> physical layer functionality for UFS found on the SoC. Use fallback to
-> indicate the compatibility of the QMP UFS PHY on the Hamoa with that
-> on the SM8550.
+> Document the UFSHC compatible for Qualcomm Hamoa SoC. Use fallback
+> to indicate the compatibility of UFSHC on Hamoa with that on the
+> SM8550.
 
-Last sentence is pointless. You keep explaining what you did, but you
-did not say why. Why Hamoa is compatible with SM8550, but not with SM8650?
+Same problem.
 
+> 
+> Signed-off-by: Pradeep P V K <pradeep.pragallapati@oss.qualcomm.com>
+> ---
+>  .../devicetree/bindings/ufs/qcom,sc7180-ufshc.yaml          | 6 +++++-
+>  1 file changed, 5 insertions(+), 1 deletion(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/ufs/qcom,sc7180-ufshc.yaml b/Documentation/devicetree/bindings/ufs/qcom,sc7180-ufshc.yaml
+> index d94ef4e6b85a..3b5a95db7831 100644
+> --- a/Documentation/devicetree/bindings/ufs/qcom,sc7180-ufshc.yaml
+> +++ b/Documentation/devicetree/bindings/ufs/qcom,sc7180-ufshc.yaml
+
+That's older devices binding. Why would Hamoa fit here?
 
 Best regards,
 Krzysztof
