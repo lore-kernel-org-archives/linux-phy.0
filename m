@@ -4,74 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 88DFCE92FC4
-	for <linux-phy@archiver.kernel.org>; Mon, 29 Dec 2025 20:15:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 00BD9E92FD7
+	for <linux-phy@archiver.kernel.org>; Mon, 29 Dec 2025 20:39:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AMnARpd9uzwy7Xt9g/keD1Y5OFN4noM9SIuGvmkY+Hs=; b=zgQmiOhIKjdQzg
-	13d1bD9hG2iFEP78NzLg+sfxbWBgHyUEtFPLOnSCaumiA5RjGEd9khqcOMfJPFoGwIKI7/PJnhgZe
-	o45vFUjoN6EtHPP1kz87o/HbeWUuCbV9F2rZ5LMcHplMAXZ7HkNVnDx0pxKKq6bPDqZkYq6y1eZYP
-	Ar7rARaXFt2lVYoLBahxH5r6UO6MUCAxluBUXEuWIx2r42rXpMZAsozjv/PpM80jRmx2unmDQEyaf
-	9rjXXp50Cvlz6hk/pJH09VRxEoH6kGCuyy7SNHbZ6K+T5ryrlEIMiWhnItyBv8YsgR1jbXMlToUi0
-	ELmeTVpm1PCMgPDMn7ag==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
+	In-Reply-To:To:Cc:MIME-Version:Date:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=dPA9WrF0uL7/HVjwZcJlJqT8RDTlrKXW8dFhyX5Xq8g=; b=ujDTkYw3L/ZsRtAPBf1eB/sEUt
+	z69AqMUyBgwvSxD8vXbvyF3Ck9KqOiJp+DxNKnu6BYFcGsgLmAAwbpbWLMhKZdZdQv3MbRs8LPJKi
+	iE+o7qn5FNyTG0nKFOG1yoG3nrnGnzakWfb9EQ4GMaQ/SWB3FVKwSBAAdHBo+SEs09NBFsHWRl67D
+	ocYWCaMiGQSpTVtfE6X7Xg3+5fK1RLX9i6W//DFRqkwpH479AGZ9srccykd8S+yft8F/FkxLvvG1o
+	0XLQolNRDBWWwFZBo4IdlyY5bCiIBFtuCSiE1wMaPjwoAjR3yjlL9JsU9qk9VB2MV6tTnMVFq+0a6
+	VTf0hH7g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vaJdv-000000042LX-0BK7;
-	Mon, 29 Dec 2025 20:15:03 +0000
-Received: from hall.aurel32.net ([2001:bc8:30d7:100::1])
+	id 1vaK1c-000000043No-2Jxj;
+	Mon, 29 Dec 2025 20:39:32 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vaJdr-000000042KS-2ppL;
-	Mon, 29 Dec 2025 20:15:01 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=aurel32.net
-	; s=202004.hall; h=In-Reply-To:Content-Type:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Content-Transfer-Encoding:From:Reply-To:
-	Subject:Content-ID:Content-Description:X-Debbugs-Cc;
-	bh=ehhD4wbRH7wTUpUt/VpjfWrT/bv2UxVguaxZJATB154=; b=Zp4437afYBpglBIfsU9Cu7FhPk
-	GOGNSR+oUYd6yiPvLfJUI977dPzBKtmKDt3Qw2RdwgwVHDJk0zOADkDXiwYB+cXfvImJr3n5mgDEC
-	vcoVLWkkifPkpoJMWJR2NgtekkCiM7NH1gYa6uHAAMkABkip9XREI2FqPa/scESAOtjSXgdN4wWcI
-	VmFckGOq8jSUxWwsbEWlxUeh0SWDzaagBfT/IKb65LcpxXdjX6gHDri3SRrrQJk4SlhUO/AIH5Qi4
-	+jJu0IfV3yTVpkMNt82k5RxUSwqpPNEpQYAun05CiSBULG1Ow3yLrakboKUl2KzdlBPK80I30vfJP
-	yyH31Wrg==;
-Received: from [2a01:e34:ec5d:a741:1ee1:92ff:feb4:5ec0] (helo=ohm.rr44.fr)
-	by hall.aurel32.net with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.98.2)
-	(envelope-from <aurelien@aurel32.net>)
-	id 1vaJdk-00000003dMJ-0mmb;
-	Mon, 29 Dec 2025 21:14:52 +0100
-Date: Mon, 29 Dec 2025 21:14:51 +0100
-From: Aurelien Jarno <aurelien@aurel32.net>
-To: Ze Huang <huang.ze@linux.dev>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Yixun Lan <dlan@gentoo.org>,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-riscv@lists.infradead.org, spacemit@lists.linux.dev,
-	linux-kernel@vger.kernel.org, Ze Huang <huangze@whut.edu.cn>
-Subject: Re: [PATCH v6 0/2] Add USB2.0 PHY support for SpacemiT K1
-Message-ID: <aVLhO9hAZBBNUEnP@aurel32.net>
-Mail-Followup-To: Ze Huang <huang.ze@linux.dev>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Yixun Lan <dlan@gentoo.org>,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-riscv@lists.infradead.org, spacemit@lists.linux.dev,
-	linux-kernel@vger.kernel.org, Ze Huang <huangze@whut.edu.cn>
-References: <20251017-k1-usb2phy-v6-0-7cf9ea2477a1@linux.dev>
+	id 1vaK1b-000000043NI-0xTL
+	for linux-phy@lists.infradead.org;
+	Mon, 29 Dec 2025 20:39:31 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id B8EDC60051;
+	Mon, 29 Dec 2025 20:39:29 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4EA48C4CEF7;
+	Mon, 29 Dec 2025 20:39:29 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1767040769;
+	bh=XGh5orjYJVOlb27ci2eCjWYMdfOs+ekovdXWlKs6kbU=;
+	h=From:Date:Cc:To:In-Reply-To:References:Subject:From;
+	b=t3T1pC6BqU8OuNqrTMYMnfQhQIBVP1CPcQpvFMSVu7TaI4h47TdyqX+ZVOHXJGLGT
+	 33PVTHdntWqSVNXkv/lJHNt21EB92iQmiUVCfjy8OA/e4rWu0UsESEVydkaNYKzuMH
+	 tiyQFTE+xTgytmQGJ5Pu9l8VDHc7cccEtD8Id7wwjo3Bvm39u7XW+3EghS7z7K1o0a
+	 vbDi5OgT9g45uxoL1SjnC3TNnxQk5FnnLSbwdxjRGQD39eXfg0okyLHScUZdZTOqir
+	 KVxymUqzlsU4b1Nsrjq33XW0++IVw1HvbiHIhWEjmF+kJaQDlb9tXEgLn7uuNJVGz8
+	 4p6GmsgyoL0pw==
+From: Rob Herring <robh@kernel.org>
+Date: Mon, 29 Dec 2025 14:39:28 -0600
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20251017-k1-usb2phy-v6-0-7cf9ea2477a1@linux.dev>
-User-Agent: Mutt/2.2.13 (2024-03-09)
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251229_121500_161763_F4AD4ACE 
-X-CRM114-Status: GOOD (  19.36  )
+Cc: vkoul@kernel.org, nitin.rawat@oss.qualcomm.com, conor+dt@kernel.org, 
+ konradybcio@kernel.org, linux-phy@lists.infradead.org, 
+ taniya.das@oss.qualcomm.com, krzk+dt@kernel.org, devicetree@vger.kernel.org, 
+ dmitry.baryshkov@oss.qualcomm.com, linux-arm-msm@vger.kernel.org, 
+ linux-scsi@vger.kernel.org, neil.armstrong@linaro.org, 
+ martin.petersen@oracle.com, linux-kernel@vger.kernel.org, 
+ andersson@kernel.org
+To: Pradeep P V K <pradeep.pragallapati@oss.qualcomm.com>
+In-Reply-To: <20251229060642.2807165-1-pradeep.pragallapati@oss.qualcomm.com>
+References: <20251229060642.2807165-1-pradeep.pragallapati@oss.qualcomm.com>
+Message-Id: <176703895745.2172976.13195227223157301598.robh@kernel.org>
+Subject: Re: [PATCH V1 0/4] Add UFS support for Hamoa SoC
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,88 +74,1166 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 2025-10-17 22:49, Ze Huang wrote:
-> This patch series introduces support for the USB2.0 PHY on the SpacemiT
-> K1 SoC. The implementation has been tested on the Milk-V Jupiter and
-> BananaPi-f3.
-> 
-> K1 includes three USB ports as follows[1]:
-> - A USB2.0 OTG Port
-> - A USB2.0 Host Only Port
-> - A USB3.0 Port with a USB2.0 DRD interface
-> 
-> Each of these ports is connected to a USB2.0 PHY responsible for USB2
-> transmission.
-> 
-> This series is based on 6.18-rc1.
-> 
-> Link: https://developer.spacemit.com/documentation?token=AjHDwrW78igAAEkiHracBI9HnTb#part5 [1]
-> 
-> Signed-off-by: Ze Huang <huangze@whut.edu.cn>
-> ---
-> Changes in v6:
-> - phy: spacemit: k1-usb2-phy:
->   - Fix clock API usage and ensure proper clock disabling in error paths.
->   - Refactor Register Definitions: Replace address/number-based macros with
->     feature-based names
-> - Link to v5: https://lore.kernel.org/all/20250527-b4-k1-usb3-phy-v2-v5-3-2d366b0af999@whut.edu.cn
-> 
-> Changes in v5:
-> - phy driver for usb2:
->   - convert readl/writel to regmap
->   - fix typo: sentinal -> sentinel
-> - Link to v4: https://lore.kernel.org/r/20250526-b4-k1-usb3-phy-v2-v4-0-eca668fc16a2@whut.edu.cn
-> 
-> Changes in v4:
-> - combphy driver:
->   - add in-code comments to indicate that PCIe mode is not yet supported.
->   - replace custom spacemit_reg_update() with standard regmap API.
->   - drop spacemit_combphy_wait_ready helper function as only used once.
->   - Fix PHY init timeout handling: ensure proper error reporting when PLL
->     lock fails during USB3 PHY initialization
-> - Link to v3: https://lore.kernel.org/r/20250517-b4-k1-usb3-phy-v2-v3-0-e0655613a163@whut.edu.cn
-> 
-> Changes in v3:
-> - improve commit message, provide more info about phy hardware
-> - drop superfluous local variable in `spacemit_combphy_wait_ready`
-> - replace devm_reset_control_get with devm_reset_control_get_exclusive
-> - Link to v2: https://lore.kernel.org/r/20250418-b4-k1-usb3-phy-v2-v2-0-b69e02da84eb@whut.edu.cn
-> 
-> Changes in v2:
-> - combphy dt-bindings:
->   - fix reg-names
->   - describe reg
->   - describe #phy-cells argument
-> - drop stale ".owner" in driver struct
-> - add support for usb lfps_thres in combphy
-> - fix Kconfig depends on
-> - Link to v1: https://lore.kernel.org/all/20250407-b4-k1-usb3-v3-2-v1-0-bf0bcc41c9ba@whut.edu.cn
-> 
-> Signed-off-by: Ze Huang <huang.ze@linux.dev>
-> 
-> ---
-> Ze Huang (2):
->       dt-bindings: phy: spacemit: add K1 USB2 PHY
->       phy: spacemit: support K1 USB2.0 PHY controller
-> 
->  .../devicetree/bindings/phy/spacemit,usb2-phy.yaml |  40 +++++
->  drivers/phy/Kconfig                                |   1 +
->  drivers/phy/Makefile                               |   1 +
->  drivers/phy/spacemit/Kconfig                       |  13 ++
->  drivers/phy/spacemit/Makefile                      |   2 +
->  drivers/phy/spacemit/phy-k1-usb2.c                 | 200 +++++++++++++++++++++
->  6 files changed, 257 insertions(+)
-> ---
-> base-commit: cb6649f6217c0331b885cf787f1d175963e2a1d2
-> change-id: 20251017-k1-usb2phy-a53ed4ea51b0
 
-The whole series is:
+On Mon, 29 Dec 2025 11:36:38 +0530, Pradeep P V K wrote:
+> Add UFSPHY, UFSHC compatible binding names and UFS devicetree
+> enablement changes for Qualcomm Hamoa SoC.
+> 
+> Pradeep P V K (4):
+>   scsi: ufs: phy: dt-bindings: Add QMP UFS PHY compatible for Hamoa
+>   scsi: ufs: qcom: dt-bindings: Add UFSHC compatible for Hamoa
+>   arm64: dts: qcom: hamoa: Add UFS nodes for hamoa SoC
+>   arm64: dts: qcom: hamoa-iot-evk: Enable UFS
+> 
+>  .../phy/qcom,sc8280xp-qmp-ufs-phy.yaml        |   4 +
+>  .../bindings/ufs/qcom,sc7180-ufshc.yaml       |   6 +-
+>  arch/arm64/boot/dts/qcom/hamoa-iot-evk.dts    |  18 +++
+>  arch/arm64/boot/dts/qcom/hamoa.dtsi           | 119 +++++++++++++++++-
+>  4 files changed, 145 insertions(+), 2 deletions(-)
+> 
+> --
+> 2.34.1
+> 
+> 
+> 
 
-Tested-by: Aurelien Jarno <aurelien@aurel32.net>
 
--- 
-Aurelien Jarno                          GPG: 4096R/1DDD8C9B
-aurelien@aurel32.net                     http://aurel32.net
+My bot found new DTB warnings on the .dts files added or changed in this
+series.
+
+Some warnings may be from an existing SoC .dtsi. Or perhaps the warnings
+are fixed by another series. Ultimately, it is up to the platform
+maintainer whether these warnings are acceptable or not. No need to reply
+unless the platform maintainer has comments.
+
+If you already ran DT checks and didn't see these error(s), then
+make sure dt-schema is up to date:
+
+  pip3 install dtschema --upgrade
+
+
+This patch series was applied (using b4) to base:
+ Base: attempting to guess base-commit...
+ Base: tags/next-20251219 (exact match)
+ Base: tags/next-20251219 (use --merge-base to override)
+
+If this is not the correct base, please add 'base-commit' tag
+(or use b4 which does this automatically)
+
+New warnings running 'make CHECK_DTBS=y for arch/arm64/boot/dts/qcom/' for 20251229060642.2807165-1-pradeep.pragallapati@oss.qualcomm.com:
+
+arch/arm64/boot/dts/qcom/x1e80100-asus-zenbook-a14.dtb: clock-controller@100000 (qcom,x1e80100-gcc): clocks: [[50], [51], [52], [53], [54], [55], [0], [56, 0], [57, 0], [58, 0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [59, 0], [59, 1], [59, 2]] is too long
+	from schema $id: http://devicetree.org/schemas/clock/qcom,x1e80100-gcc.yaml
+arch/arm64/boot/dts/qcom/msm8998-mtp.dtb: ufshc@1da4000 (qcom,msm8998-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,msm8998-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,msm8998-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/msm8998-fxtec-pro1.dtb: ufshc@1da4000 (qcom,msm8998-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,msm8998-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,msm8998-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sm7125-xiaomi-curtana.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sm7325-nothing-spacewar.dtb: ufshc@1d84000 (qcom,sc7280-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7280-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7280-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/x1e80100-asus-zenbook-a14.dtb: ufs@1d84000 (qcom,hamoa-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,hamoa-ufshc', 'qcom,sm8550-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,hamoa-ufshc' is not one of ['qcom,msm8998-ufshc', 'qcom,qcs8300-ufshc', 'qcom,sa8775p-ufshc', 'qcom,sc7180-ufshc', 'qcom,sc7280-ufshc', 'qcom,sc8180x-ufshc', 'qcom,sc8280xp-ufshc', 'qcom,sm8250-ufshc', 'qcom,sm8350-ufshc', 'qcom,sm8450-ufshc', 'qcom,sm8550-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/x1e80100-dell-xps13-9345.dtb: clock-controller@100000 (qcom,x1e80100-gcc): clocks: [[50], [51], [52], [53], [54], [55], [0], [56, 0], [57, 0], [58, 0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [59, 0], [59, 1], [59, 2]] is too long
+	from schema $id: http://devicetree.org/schemas/clock/qcom,x1e80100-gcc.yaml
+arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dtb: ufshc@1d84000 (qcom,sc8280xp-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc8280xp-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc8280xp-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dtb: ufshc@1da4000 (qcom,sc8280xp-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc8280xp-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc8280xp-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-r3-lte.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/x1e80100-dell-xps13-9345.dtb: ufs@1d84000 (qcom,hamoa-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,hamoa-ufshc', 'qcom,sm8550-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,hamoa-ufshc' is not one of ['qcom,msm8998-ufshc', 'qcom,qcs8300-ufshc', 'qcom,sa8775p-ufshc', 'qcom,sc7180-ufshc', 'qcom,sc7280-ufshc', 'qcom,sc8180x-ufshc', 'qcom,sc8280xp-ufshc', 'qcom,sm8250-ufshc', 'qcom,sm8350-ufshc', 'qcom,sm8450-ufshc', 'qcom,sm8550-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7280-herobrine-crd-pro.dtb: ufshc@1d84000 (qcom,sc7280-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7280-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7280-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/msm8998-sony-xperia-yoshino-maple.dtb: ufshc@1da4000 (qcom,msm8998-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,msm8998-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,msm8998-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/x1e78100-lenovo-thinkpad-t14s-oled.dtb: clock-controller@100000 (qcom,x1e80100-gcc): clocks: [[50], [51], [52], [53], [54], [55], [0], [56, 0], [57, 0], [58, 0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [59, 0], [59, 1], [59, 2]] is too long
+	from schema $id: http://devicetree.org/schemas/clock/qcom,x1e80100-gcc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-limozeen-r4.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/qcs6490-rb3gen2.dtb: ufshc@1d84000 (qcom,sc7280-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7280-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7280-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-pazquel360-wifi.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-coachz-r1-lte.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/x1e78100-lenovo-thinkpad-t14s-oled.dtb: ufs@1d84000 (qcom,hamoa-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,hamoa-ufshc', 'qcom,sm8550-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,hamoa-ufshc' is not one of ['qcom,msm8998-ufshc', 'qcom,qcs8300-ufshc', 'qcom,sa8775p-ufshc', 'qcom,sc7180-ufshc', 'qcom,sc7280-ufshc', 'qcom,sc8180x-ufshc', 'qcom,sc8280xp-ufshc', 'qcom,sm8250-ufshc', 'qcom,sm8350-ufshc', 'qcom,sm8450-ufshc', 'qcom,sm8550-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/x1e80100-dell-latitude-7455.dtb: clock-controller@100000 (qcom,x1e80100-gcc): clocks: [[50], [51], [52], [53], [54], [55], [0], [56, 0], [57, 0], [58, 0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [59, 0], [59, 1], [59, 2]] is too long
+	from schema $id: http://devicetree.org/schemas/clock/qcom,x1e80100-gcc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-quackingstick-r0.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/x1e80100-dell-latitude-7455.dtb: ufs@1d84000 (qcom,hamoa-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,hamoa-ufshc', 'qcom,sm8550-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,hamoa-ufshc' is not one of ['qcom,msm8998-ufshc', 'qcom,qcs8300-ufshc', 'qcom,sa8775p-ufshc', 'qcom,sc7180-ufshc', 'qcom,sc7280-ufshc', 'qcom,sc8180x-ufshc', 'qcom,sc8280xp-ufshc', 'qcom,sm8250-ufshc', 'qcom,sm8350-ufshc', 'qcom,sm8450-ufshc', 'qcom,sm8550-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7280-herobrine-zombie.dtb: ufshc@1d84000 (qcom,sc7280-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7280-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7280-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/x1e80100-lenovo-yoga-slim7x.dtb: clock-controller@100000 (qcom,x1e80100-gcc): clocks: [[50], [51], [52], [53], [54], [55], [0], [56, 0], [57, 0], [58, 0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [59, 0], [59, 1], [59, 2]] is too long
+	from schema $id: http://devicetree.org/schemas/clock/qcom,x1e80100-gcc.yaml
+arch/arm64/boot/dts/qcom/qrb5165-rb5.dtb: ufshc@1d84000 (qcom,sm8250-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sm8250-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sm8250-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sm8550-qrd.dtb: ufshc@1d84000 (qcom,sm8550-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sm8550-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sm8550-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/x1e80100-lenovo-yoga-slim7x.dtb: ufs@1d84000 (qcom,hamoa-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,hamoa-ufshc', 'qcom,sm8550-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,hamoa-ufshc' is not one of ['qcom,msm8998-ufshc', 'qcom,qcs8300-ufshc', 'qcom,sa8775p-ufshc', 'qcom,sc7180-ufshc', 'qcom,sc7280-ufshc', 'qcom,sc8180x-ufshc', 'qcom,sc8280xp-ufshc', 'qcom,sm8250-ufshc', 'qcom,sm8350-ufshc', 'qcom,sm8450-ufshc', 'qcom,sm8550-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-wormdingler-rev1-inx.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc8280xp-microsoft-arcata.dtb: ufshc@1d84000 (qcom,sc8280xp-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc8280xp-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc8280xp-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-limozeen-nots-r4.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc8280xp-microsoft-arcata.dtb: ufshc@1da4000 (qcom,sc8280xp-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc8280xp-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc8280xp-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sm8550-sony-xperia-yodo-pdx234.dtb: ufshc@1d84000 (qcom,sm8550-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sm8550-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sm8550-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-coachz-r1.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-r10.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sm8250-samsung-x1q.dtb: ufshc@1d84000 (qcom,sm8250-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sm8250-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sm8250-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sm8550-mtp.dtb: ufshc@1d84000 (qcom,sm8550-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sm8550-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sm8550-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/qcm6490-idp.dtb: ufshc@1d84000 (qcom,sc7280-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7280-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7280-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/x1p42100-crd.dtb: clock-controller@100000 (qcom,x1p42100-gcc): clocks: [[40], [41], [42], [43], [44], [45], [0], [46, 0], [47, 0], [48, 0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [49, 0], [49, 1], [49, 2]] is too long
+	from schema $id: http://devicetree.org/schemas/clock/qcom,x1e80100-gcc.yaml
+arch/arm64/boot/dts/qcom/sm8350-microsoft-surface-duo2.dtb: ufshc@1d84000 (qcom,sm8350-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sm8350-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sm8350-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sm8250-mtp.dtb: ufshc@1d84000 (qcom,sm8250-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sm8250-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sm8250-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/x1p42100-crd.dtb: ufs@1d84000 (qcom,hamoa-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,hamoa-ufshc', 'qcom,sm8550-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,hamoa-ufshc' is not one of ['qcom,msm8998-ufshc', 'qcom,qcs8300-ufshc', 'qcom,sa8775p-ufshc', 'qcom,sc7180-ufshc', 'qcom,sc7280-ufshc', 'qcom,sc8180x-ufshc', 'qcom,sc8280xp-ufshc', 'qcom,sm8250-ufshc', 'qcom,sm8350-ufshc', 'qcom,sm8450-ufshc', 'qcom,sm8550-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sm8250-xiaomi-elish-csot.dtb: ufshc@1d84000 (qcom,sm8250-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sm8250-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sm8250-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-limozeen-nots-r9.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/msm8998-xiaomi-sagit.dtb: ufshc@1da4000 (qcom,msm8998-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,msm8998-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,msm8998-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/qcm6490-particle-tachyon.dtb: ufshc@1d84000 (qcom,sc7280-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7280-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7280-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/qcs8550-aim300-aiot.dtb: ufshc@1d84000 (qcom,sm8550-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sm8550-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sm8550-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sm8250-xiaomi-elish-boe.dtb: ufshc@1d84000 (qcom,sm8250-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sm8250-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sm8250-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/qcs9100-ride.dtb: ufshc@1d84000 (qcom,sa8775p-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sa8775p-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sa8775p-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/x1e001de-devkit.dtb: clock-controller@100000 (qcom,x1e80100-gcc): clocks: [[50], [51], [52], [53], [54], [55], [0], [56, 0], [57, 0], [58, 0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [59, 0], [59, 1], [59, 2]] is too long
+	from schema $id: http://devicetree.org/schemas/clock/qcom,x1e80100-gcc.yaml
+arch/arm64/boot/dts/qcom/sa8775p-ride.dtb: ufshc@1d84000 (qcom,sa8775p-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sa8775p-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sa8775p-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/x1e001de-devkit.dtb: ufs@1d84000 (qcom,hamoa-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,hamoa-ufshc', 'qcom,sm8550-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,hamoa-ufshc' is not one of ['qcom,msm8998-ufshc', 'qcom,qcs8300-ufshc', 'qcom,sa8775p-ufshc', 'qcom,sc7180-ufshc', 'qcom,sc7280-ufshc', 'qcom,sc8180x-ufshc', 'qcom,sc8280xp-ufshc', 'qcom,sm8250-ufshc', 'qcom,sm8350-ufshc', 'qcom,sm8450-ufshc', 'qcom,sm8550-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc8180x-lenovo-flex-5g.dtb: ufshc@1d84000 (qcom,sc8180x-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc8180x-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc8180x-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7280-herobrine-crd.dtb: ufshc@1d84000 (qcom,sc7280-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7280-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7280-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-r3-kb.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7280-idp.dtb: ufshc@1d84000 (qcom,sc7280-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7280-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7280-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7280-herobrine-evoker-lte.dtb: ufshc@1d84000 (qcom,sc7280-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7280-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7280-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-homestar-r4.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sm8250-xiaomi-pipa.dtb: ufshc@1d84000 (qcom,sm8250-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sm8250-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sm8250-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7280-idp2.dtb: ufshc@1d84000 (qcom,sc7280-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7280-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7280-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sm8250-samsung-r8q.dtb: ufshc@1d84000 (qcom,sm8250-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sm8250-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sm8250-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/msm8998-lenovo-miix-630.dtb: ufshc@1da4000 (qcom,msm8998-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,msm8998-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,msm8998-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-r1.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/x1p42100-hp-omnibook-x14.dtb: clock-controller@100000 (qcom,x1p42100-gcc): clocks: [[40], [41], [42], [43], [44], [45], [0], [46, 0], [47, 0], [48, 0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [49, 0], [49, 1], [49, 2]] is too long
+	from schema $id: http://devicetree.org/schemas/clock/qcom,x1e80100-gcc.yaml
+arch/arm64/boot/dts/qcom/sc7180-acer-aspire1.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-kingoftown.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7280-herobrine-evoker.dtb: ufshc@1d84000 (qcom,sc7280-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7280-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7280-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/x1p42100-hp-omnibook-x14.dtb: ufs@1d84000 (qcom,hamoa-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,hamoa-ufshc', 'qcom,sm8550-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,hamoa-ufshc' is not one of ['qcom,msm8998-ufshc', 'qcom,qcs8300-ufshc', 'qcom,sa8775p-ufshc', 'qcom,sc7180-ufshc', 'qcom,sc7280-ufshc', 'qcom,sc8180x-ufshc', 'qcom,sc8280xp-ufshc', 'qcom,sm8250-ufshc', 'qcom,sm8350-ufshc', 'qcom,sm8450-ufshc', 'qcom,sm8550-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/msm8998-asus-novago-tp370ql.dtb: ufshc@1da4000 (qcom,msm8998-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,msm8998-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,msm8998-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-pompom-r2-lte.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sm8350-sony-xperia-sagami-pdx215.dtb: ufshc@1d84000 (qcom,sm8350-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sm8350-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sm8350-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/x1e80100-hp-omnibook-x14.dtb: clock-controller@100000 (qcom,x1e80100-gcc): clocks: [[50], [51], [52], [53], [54], [55], [0], [56, 0], [57, 0], [58, 0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [59, 0], [59, 1], [59, 2]] is too long
+	from schema $id: http://devicetree.org/schemas/clock/qcom,x1e80100-gcc.yaml
+arch/arm64/boot/dts/qcom/qcs9100-ride-r3.dtb: ufshc@1d84000 (qcom,sa8775p-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sa8775p-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sa8775p-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/x1e80100-hp-omnibook-x14.dtb: ufs@1d84000 (qcom,hamoa-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,hamoa-ufshc', 'qcom,sm8550-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,hamoa-ufshc' is not one of ['qcom,msm8998-ufshc', 'qcom,qcs8300-ufshc', 'qcom,sa8775p-ufshc', 'qcom,sc7180-ufshc', 'qcom,sc7280-ufshc', 'qcom,sc8180x-ufshc', 'qcom,sc8280xp-ufshc', 'qcom,sm8250-ufshc', 'qcom,sm8350-ufshc', 'qcom,sm8450-ufshc', 'qcom,sm8550-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-limozeen-r9.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/msm8998-sony-xperia-yoshino-lilac.dtb: ufshc@1da4000 (qcom,msm8998-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,msm8998-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,msm8998-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-pazquel360-lte.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-r3.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7280-herobrine-zombie-lte.dtb: ufshc@1d84000 (qcom,sc7280-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7280-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7280-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/monaco-evk.dtb: ufs@1d84000 (qcom,qcs8300-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,qcs8300-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,qcs8300-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7280-herobrine-herobrine-r1.dtb: ufshc@1d84000 (qcom,sc7280-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7280-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7280-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sm8350-hdk.dtb: ufshc@1d84000 (qcom,sm8350-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sm8350-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sm8350-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sm8250-sony-xperia-edo-pdx203.dtb: ufshc@1d84000 (qcom,sm8250-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sm8250-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sm8250-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sm8450-hdk.dtb: ufshc@1d84000 (qcom,sm8450-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sm8450-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sm8450-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sm8250-sony-xperia-edo-pdx206.dtb: ufshc@1d84000 (qcom,sm8250-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sm8250-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sm8250-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/x1e80100-qcp.dtb: clock-controller@100000 (qcom,x1e80100-gcc): clocks: [[50], [51], [52], [53], [54], [55], [0], [56, 0], [57, 0], [58, 0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [59, 0], [59, 1], [59, 2]] is too long
+	from schema $id: http://devicetree.org/schemas/clock/qcom,x1e80100-gcc.yaml
+arch/arm64/boot/dts/qcom/x1e80100-qcp.dtb: ufs@1d84000 (qcom,hamoa-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,hamoa-ufshc', 'qcom,sm8550-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,hamoa-ufshc' is not one of ['qcom,msm8998-ufshc', 'qcom,qcs8300-ufshc', 'qcom,sa8775p-ufshc', 'qcom,sc7180-ufshc', 'qcom,sc7280-ufshc', 'qcom,sc8180x-ufshc', 'qcom,sc8280xp-ufshc', 'qcom,sm8250-ufshc', 'qcom,sm8350-ufshc', 'qcom,sm8450-ufshc', 'qcom,sm8550-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7280-herobrine-zombie-nvme-lte.dtb: ufshc@1d84000 (qcom,sc7280-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7280-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7280-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sm8450-qrd.dtb: ufshc@1d84000 (qcom,sm8450-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sm8450-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sm8450-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-homestar-r3.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-r1-kb.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/x1e80100-asus-vivobook-s15.dtb: clock-controller@100000 (qcom,x1e80100-gcc): clocks: [[50], [51], [52], [53], [54], [55], [0], [56, 0], [57, 0], [58, 0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [59, 0], [59, 1], [59, 2]] is too long
+	from schema $id: http://devicetree.org/schemas/clock/qcom,x1e80100-gcc.yaml
+arch/arm64/boot/dts/qcom/x1e78100-lenovo-thinkpad-t14s.dtb: clock-controller@100000 (qcom,x1e80100-gcc): clocks: [[50], [51], [52], [53], [54], [55], [0], [56, 0], [57, 0], [58, 0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [59, 0], [59, 1], [59, 2]] is too long
+	from schema $id: http://devicetree.org/schemas/clock/qcom,x1e80100-gcc.yaml
+arch/arm64/boot/dts/qcom/x1e80100-asus-vivobook-s15.dtb: ufs@1d84000 (qcom,hamoa-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,hamoa-ufshc', 'qcom,sm8550-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,hamoa-ufshc' is not one of ['qcom,msm8998-ufshc', 'qcom,qcs8300-ufshc', 'qcom,sa8775p-ufshc', 'qcom,sc7180-ufshc', 'qcom,sc7280-ufshc', 'qcom,sc8180x-ufshc', 'qcom,sc8280xp-ufshc', 'qcom,sm8250-ufshc', 'qcom,sm8350-ufshc', 'qcom,sm8450-ufshc', 'qcom,sm8550-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/x1e78100-lenovo-thinkpad-t14s.dtb: ufs@1d84000 (qcom,hamoa-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,hamoa-ufshc', 'qcom,sm8550-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,hamoa-ufshc' is not one of ['qcom,msm8998-ufshc', 'qcom,qcs8300-ufshc', 'qcom,sa8775p-ufshc', 'qcom,sc7180-ufshc', 'qcom,sc7280-ufshc', 'qcom,sc8180x-ufshc', 'qcom,sc8280xp-ufshc', 'qcom,sm8250-ufshc', 'qcom,sm8350-ufshc', 'qcom,sm8450-ufshc', 'qcom,sm8550-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc8180x-primus.dtb: ufshc@1d84000 (qcom,sc8180x-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc8180x-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc8180x-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-r10-lte.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-idp.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/x1p42100-asus-zenbook-a14.dtb: clock-controller@100000 (qcom,x1p42100-gcc): clocks: [[40], [41], [42], [43], [44], [45], [0], [46, 0], [47, 0], [48, 0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [49, 0], [49, 1], [49, 2]] is too long
+	from schema $id: http://devicetree.org/schemas/clock/qcom,x1e80100-gcc.yaml
+arch/arm64/boot/dts/qcom/x1e80100-hp-elitebook-ultra-g1q.dtb: clock-controller@100000 (qcom,x1e80100-gcc): clocks: [[50], [51], [52], [53], [54], [55], [0], [56, 0], [57, 0], [58, 0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [59, 0], [59, 1], [59, 2]] is too long
+	from schema $id: http://devicetree.org/schemas/clock/qcom,x1e80100-gcc.yaml
+arch/arm64/boot/dts/qcom/x1p42100-asus-zenbook-a14.dtb: ufs@1d84000 (qcom,hamoa-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,hamoa-ufshc', 'qcom,sm8550-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,hamoa-ufshc' is not one of ['qcom,msm8998-ufshc', 'qcom,qcs8300-ufshc', 'qcom,sa8775p-ufshc', 'qcom,sc7180-ufshc', 'qcom,sc7280-ufshc', 'qcom,sc8180x-ufshc', 'qcom,sc8280xp-ufshc', 'qcom,sm8250-ufshc', 'qcom,sm8350-ufshc', 'qcom,sm8450-ufshc', 'qcom,sm8550-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/x1e80100-microsoft-romulus15.dtb: clock-controller@100000 (qcom,x1e80100-gcc): clocks: [[50], [51], [52], [53], [54], [55], [0], [56, 0], [57, 0], [58, 0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [59, 0], [59, 1], [59, 2]] is too long
+	from schema $id: http://devicetree.org/schemas/clock/qcom,x1e80100-gcc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-limozeen-r10.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/x1e80100-hp-elitebook-ultra-g1q.dtb: ufs@1d84000 (qcom,hamoa-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,hamoa-ufshc', 'qcom,sm8550-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,hamoa-ufshc' is not one of ['qcom,msm8998-ufshc', 'qcom,qcs8300-ufshc', 'qcom,sa8775p-ufshc', 'qcom,sc7180-ufshc', 'qcom,sc7280-ufshc', 'qcom,sc8180x-ufshc', 'qcom,sc8280xp-ufshc', 'qcom,sm8250-ufshc', 'qcom,sm8350-ufshc', 'qcom,sm8450-ufshc', 'qcom,sm8550-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7280-herobrine-zombie-nvme.dtb: ufshc@1d84000 (qcom,sc7280-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7280-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7280-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/x1e80100-microsoft-romulus15.dtb: ufs@1d84000 (qcom,hamoa-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,hamoa-ufshc', 'qcom,sm8550-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,hamoa-ufshc' is not one of ['qcom,msm8998-ufshc', 'qcom,qcs8300-ufshc', 'qcom,sa8775p-ufshc', 'qcom,sc7180-ufshc', 'qcom,sc7280-ufshc', 'qcom,sc8180x-ufshc', 'qcom,sc8280xp-ufshc', 'qcom,sm8250-ufshc', 'qcom,sm8350-ufshc', 'qcom,sm8450-ufshc', 'qcom,sm8550-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/msm8998-hp-envy-x2.dtb: ufshc@1da4000 (qcom,msm8998-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,msm8998-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,msm8998-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-pazquel-parade.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-wormdingler-rev1-boe-rt5682s.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-wormdingler-rev1-boe.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-r9-kb.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7280-crd-r3.dtb: ufshc@1d84000 (qcom,sc7280-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7280-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7280-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sa8775p-ride-r3.dtb: ufshc@1d84000 (qcom,sa8775p-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sa8775p-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sa8775p-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-coachz-r3-lte.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-pazquel-ti.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/hamoa-iot-evk.dtb: clock-controller@100000 (qcom,x1e80100-gcc): clocks: [[50], [51], [52], [53], [54], [55], [0], [56, 0], [57, 0], [58, 0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [59, 0], [59, 1], [59, 2]] is too long
+	from schema $id: http://devicetree.org/schemas/clock/qcom,x1e80100-gcc.yaml
+arch/arm64/boot/dts/qcom/sc7280-herobrine-villager-r1.dtb: ufshc@1d84000 (qcom,sc7280-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7280-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7280-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sm8450-samsung-r0q.dtb: ufshc@1d84000 (qcom,sm8450-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sm8450-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sm8450-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/qcs8300-ride.dtb: ufs@1d84000 (qcom,qcs8300-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,qcs8300-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,qcs8300-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/hamoa-iot-evk.dtb: ufs@1d84000 (qcom,hamoa-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,hamoa-ufshc', 'qcom,sm8550-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,hamoa-ufshc' is not one of ['qcom,msm8998-ufshc', 'qcom,qcs8300-ufshc', 'qcom,sa8775p-ufshc', 'qcom,sc7180-ufshc', 'qcom,sc7280-ufshc', 'qcom,sc8180x-ufshc', 'qcom,sc8280xp-ufshc', 'qcom,sm8250-ufshc', 'qcom,sm8350-ufshc', 'qcom,sm8450-ufshc', 'qcom,sm8550-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/qcm6490-shift-otter.dtb: ufshc@1d84000 (qcom,sc7280-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7280-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7280-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-pompom-r1-lte.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/x1e80100-dell-inspiron-14-plus-7441.dtb: clock-controller@100000 (qcom,x1e80100-gcc): clocks: [[50], [51], [52], [53], [54], [55], [0], [56, 0], [57, 0], [58, 0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [59, 0], [59, 1], [59, 2]] is too long
+	from schema $id: http://devicetree.org/schemas/clock/qcom,x1e80100-gcc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-r9.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-coachz-r3.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/x1e80100-dell-inspiron-14-plus-7441.dtb: ufs@1d84000 (qcom,hamoa-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,hamoa-ufshc', 'qcom,sm8550-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,hamoa-ufshc' is not one of ['qcom,msm8998-ufshc', 'qcom,qcs8300-ufshc', 'qcom,sa8775p-ufshc', 'qcom,sc7180-ufshc', 'qcom,sc7280-ufshc', 'qcom,sc8180x-ufshc', 'qcom,sc8280xp-ufshc', 'qcom,sm8250-ufshc', 'qcom,sm8350-ufshc', 'qcom,sm8450-ufshc', 'qcom,sm8550-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-r1-lte.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/lemans-evk.dtb: ufshc@1d84000 (qcom,sa8775p-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sa8775p-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sa8775p-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/x1e80100-crd.dtb: clock-controller@100000 (qcom,x1e80100-gcc): clocks: [[50], [51], [52], [53], [54], [55], [0], [56, 0], [57, 0], [58, 0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [59, 0], [59, 1], [59, 2]] is too long
+	from schema $id: http://devicetree.org/schemas/clock/qcom,x1e80100-gcc.yaml
+arch/arm64/boot/dts/qcom/x1p42100-lenovo-thinkbook-16.dtb: clock-controller@100000 (qcom,x1p42100-gcc): clocks: [[40], [41], [42], [43], [44], [45], [0], [46, 0], [47, 0], [48, 0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [49, 0], [49, 1], [49, 2]] is too long
+	from schema $id: http://devicetree.org/schemas/clock/qcom,x1e80100-gcc.yaml
+arch/arm64/boot/dts/qcom/x1e80100-crd.dtb: ufs@1d84000 (qcom,hamoa-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,hamoa-ufshc', 'qcom,sm8550-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,hamoa-ufshc' is not one of ['qcom,msm8998-ufshc', 'qcom,qcs8300-ufshc', 'qcom,sa8775p-ufshc', 'qcom,sc7180-ufshc', 'qcom,sc7280-ufshc', 'qcom,sc8180x-ufshc', 'qcom,sc8280xp-ufshc', 'qcom,sm8250-ufshc', 'qcom,sm8350-ufshc', 'qcom,sm8450-ufshc', 'qcom,sm8550-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-r9-lte.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/x1p42100-lenovo-thinkbook-16.dtb: ufs@1d84000 (qcom,hamoa-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,hamoa-ufshc', 'qcom,sm8550-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,hamoa-ufshc' is not one of ['qcom,msm8998-ufshc', 'qcom,qcs8300-ufshc', 'qcom,sa8775p-ufshc', 'qcom,sc7180-ufshc', 'qcom,sc7280-ufshc', 'qcom,sc8180x-ufshc', 'qcom,sc8280xp-ufshc', 'qcom,sm8250-ufshc', 'qcom,sm8350-ufshc', 'qcom,sm8450-ufshc', 'qcom,sm8550-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-pazquel-lte-ti.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sa8295p-adp.dtb: ufshc@1d84000 (qcom,sc8280xp-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc8280xp-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc8280xp-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sa8295p-adp.dtb: ufshc@1da4000 (qcom,sc8280xp-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc8280xp-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc8280xp-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-pompom-r3.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/msm8998-oneplus-dumpling.dtb: ufshc@1da4000 (qcom,msm8998-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,msm8998-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,msm8998-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/x1e80100-microsoft-romulus13.dtb: clock-controller@100000 (qcom,x1e80100-gcc): clocks: [[50], [51], [52], [53], [54], [55], [0], [56, 0], [57, 0], [58, 0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [59, 0], [59, 1], [59, 2]] is too long
+	from schema $id: http://devicetree.org/schemas/clock/qcom,x1e80100-gcc.yaml
+arch/arm64/boot/dts/qcom/sm8550-hdk.dtb: ufshc@1d84000 (qcom,sm8550-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sm8550-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sm8550-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/x1e80100-medion-sprchrgd-14-s1.dtb: clock-controller@100000 (qcom,x1e80100-gcc): clocks: [[50], [51], [52], [53], [54], [55], [0], [56, 0], [57, 0], [58, 0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [59, 0], [59, 1], [59, 2]] is too long
+	from schema $id: http://devicetree.org/schemas/clock/qcom,x1e80100-gcc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-r1-lte.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/x1e80100-microsoft-romulus13.dtb: ufs@1d84000 (qcom,hamoa-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,hamoa-ufshc', 'qcom,sm8550-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,hamoa-ufshc' is not one of ['qcom,msm8998-ufshc', 'qcom,qcs8300-ufshc', 'qcom,sa8775p-ufshc', 'qcom,sc7180-ufshc', 'qcom,sc7280-ufshc', 'qcom,sc8180x-ufshc', 'qcom,sc8280xp-ufshc', 'qcom,sm8250-ufshc', 'qcom,sm8350-ufshc', 'qcom,sm8450-ufshc', 'qcom,sm8550-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/x1e80100-medion-sprchrgd-14-s1.dtb: ufs@1d84000 (qcom,hamoa-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,hamoa-ufshc', 'qcom,sm8550-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,hamoa-ufshc' is not one of ['qcom,msm8998-ufshc', 'qcom,qcs8300-ufshc', 'qcom,sa8775p-ufshc', 'qcom,sc7180-ufshc', 'qcom,sc7280-ufshc', 'qcom,sc8180x-ufshc', 'qcom,sc8280xp-ufshc', 'qcom,sm8250-ufshc', 'qcom,sm8350-ufshc', 'qcom,sm8450-ufshc', 'qcom,sm8550-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc8280xp-huawei-gaokun3.dtb: ufshc@1d84000 (qcom,sc8280xp-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc8280xp-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc8280xp-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc8280xp-huawei-gaokun3.dtb: ufshc@1da4000 (qcom,sc8280xp-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc8280xp-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc8280xp-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-wormdingler-rev1-inx-rt5682s.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-pompom-r2.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/qcm6490-fairphone-fp5.dtb: ufshc@1d84000 (qcom,sc7280-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7280-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7280-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/x1p42100-asus-zenbook-a14-lcd.dtb: clock-controller@100000 (qcom,x1p42100-gcc): clocks: [[40], [41], [42], [43], [44], [45], [0], [46, 0], [47, 0], [48, 0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [0], [49, 0], [49, 1], [49, 2]] is too long
+	from schema $id: http://devicetree.org/schemas/clock/qcom,x1e80100-gcc.yaml
+arch/arm64/boot/dts/qcom/x1p42100-asus-zenbook-a14-lcd.dtb: ufs@1d84000 (qcom,hamoa-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,hamoa-ufshc', 'qcom,sm8550-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,hamoa-ufshc' is not one of ['qcom,msm8998-ufshc', 'qcom,qcs8300-ufshc', 'qcom,sa8775p-ufshc', 'qcom,sc7180-ufshc', 'qcom,sc7280-ufshc', 'qcom,sc8180x-ufshc', 'qcom,sc8280xp-ufshc', 'qcom,sm8250-ufshc', 'qcom,sm8350-ufshc', 'qcom,sm8450-ufshc', 'qcom,sm8550-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-homestar-r2.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sm8250-hdk.dtb: ufshc@1d84000 (qcom,sm8250-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sm8250-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sm8250-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-pazquel-lte-parade.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc8280xp-crd.dtb: ufshc@1d84000 (qcom,sc8280xp-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc8280xp-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc8280xp-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc8280xp-crd.dtb: ufshc@1da4000 (qcom,sc8280xp-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc8280xp-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc8280xp-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc8280xp-microsoft-blackrock.dtb: ufshc@1d84000 (qcom,sc8280xp-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc8280xp-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc8280xp-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc8280xp-microsoft-blackrock.dtb: ufshc@1da4000 (qcom,sc8280xp-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc8280xp-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc8280xp-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-limozeen-nots-r5.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-r10-kb.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-pompom-r3-lte.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7280-herobrine-villager-r1-lte.dtb: ufshc@1d84000 (qcom,sc7280-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7280-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7280-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/msm8998-sony-xperia-yoshino-poplar.dtb: ufshc@1da4000 (qcom,msm8998-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,msm8998-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,msm8998-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/qcs6490-radxa-dragon-q6a.dtb: ufshc@1d84000 (qcom,sc7280-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7280-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7280-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sm8350-sony-xperia-sagami-pdx214.dtb: ufshc@1d84000 (qcom,sm8350-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sm8350-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sm8350-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sa8540p-ride.dtb: ufshc@1d84000 (qcom,sc8280xp-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc8280xp-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc8280xp-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sa8540p-ride.dtb: ufshc@1da4000 (qcom,sc8280xp-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc8280xp-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc8280xp-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sm8350-mtp.dtb: ufshc@1d84000 (qcom,sm8350-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sm8350-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sm8350-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-r1.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sm8550-samsung-q5q.dtb: ufshc@1d84000 (qcom,sm8550-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sm8550-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sm8550-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-pompom-r1.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/msm8998-oneplus-cheeseburger.dtb: ufshc@1da4000 (qcom,msm8998-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,msm8998-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,msm8998-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7280-herobrine-villager-r0.dtb: ufshc@1d84000 (qcom,sc7280-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7280-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7280-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sm7125-xiaomi-joyeuse.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-lazor-limozeen-nots-r10.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sc7180-trogdor-quackingstick-r0-lte.dtb: ufshc@1d84000 (qcom,sc7180-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sc7180-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sc7180-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sm8450-sony-xperia-nagara-pdx223.dtb: ufshc@1d84000 (qcom,sm8450-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sm8450-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sm8450-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+arch/arm64/boot/dts/qcom/sm8450-sony-xperia-nagara-pdx224.dtb: ufshc@1d84000 (qcom,sm8450-ufshc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['qcom,sm8450-ufshc', 'qcom,ufshc', 'jedec,ufs-2.0'] is too long
+	'qcom,sm8450-ufshc' is not one of ['qcom,hamoa-ufshc']
+	'qcom,ufshc' was expected
+	'jedec,ufs-2.0' was expected
+	'qcom,sm8550-ufshc' was expected
+	from schema $id: http://devicetree.org/schemas/ufs/qcom,sc7180-ufshc.yaml
+
+
+
+
+
 
 -- 
 linux-phy mailing list
