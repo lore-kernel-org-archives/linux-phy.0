@@ -4,86 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C8A16EE020A
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Dec 2025 15:05:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1C0B8EE4983
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Dec 2025 16:18:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=geIK4DETJSfaged7qFK008YdHdnb5De8PBIjSXk3tUA=; b=MxRBOMaB3Cg4mH
-	D2KS8tZQ7C5Sh2H82eBbiN3rfojAC2YM1F6p3rXAdvbODhU8yRo42oRNFsxZ3qfL72Di+6RtCkqAn
-	3feE1+O08YFYmdeMXCeOf4EwbdDyQ9W0r3Bh+obrDmD/KIc3MbGCoeOGRM0vvndJS3/VV1fR4cIQz
-	BkI5VpSnXVmNCWWouZZ0kaVIhcWb9vFjFRzjOFnre40xeWuQ+r2uf7Qbwizr+mNWW2YVk6KgqlQ6h
-	GWEYGSKt5hi+ZhgU34z3vqMw0RNTwAg39rLqZEK4sNWu0CBh0HrDuO5P3HF0djCfLOUkd+QZ+sDcy
-	No1GDub/YRIXWqAbYZOw==;
+	List-Owner; bh=7LY8Mb9PofSib/Dl8fr2dMS+3NQJmcvFvlN/vTBgEr0=; b=AyMxgUAtL4nHFr
+	AQq9wzdCFqP9aZJTYH7xJEGKlU0MbA+zO6KLQ/zCpG7qen+bcJzHZG4ifMFSAOVa9wbF+Nfy6D7Kd
+	Y6i0Lgz8fwrQuD5TOGCOOvtiAiPp5iRSp6b2dKe7xKHe6AtDbljUvL1oPd5zdQYL9cSfuyMpcGsQj
+	Uwni2u86tqGwLQCbgasaMaElm3BYhB5vYsdSG1FcaMB0F9WM2gDwQJQbx6DH16mbC6Tt2HoTgKHfA
+	RLq0wivhihvkRD84KDt4jcmN7QNm8zdzy0RRMOQnMquHm9QTKB7DIlOB/cBFD8FYjhyXJ+Zo+a7md
+	aO+s03rIZZ1Iil2+l+DQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vabHr-00000004yX9-2Gij;
-	Tue, 30 Dec 2025 15:05:27 +0000
-Received: from mail-vk1-f169.google.com ([209.85.221.169])
+	id 1vacQ7-00000005345-2ZWG;
+	Tue, 30 Dec 2025 16:18:03 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vabHo-00000004yUb-0oyd
+	id 1vacQ5-0000000533j-10UE
 	for linux-phy@lists.infradead.org;
-	Tue, 30 Dec 2025 15:05:25 +0000
-Received: by mail-vk1-f169.google.com with SMTP id 71dfb90a1353d-5599688d574so2709460e0c.2
-        for <linux-phy@lists.infradead.org>; Tue, 30 Dec 2025 07:05:23 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1767107123; x=1767711923;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=n3bghUu0vru4RrxnbMTcftVq/cqOVIrTFnZfWBS4mDw=;
-        b=wydXZaLETG7J2jStyJmKnj6/aKzuI2mVPdr9hwvmka4jQDh2pPKH7mD4aOXmTQTG8g
-         D4zEYTGptIgsMcyWppnHPAGAHxzFeJuA8rFpKupXquQb+7PAUC+odznOzsX4UzA1qtpV
-         AA2kYLaW+0ByobXcTnB2iswor+dmbFGuW4zspSzz5VVOYBXhMo4qMlvH980LgP87kMNL
-         +PK7kbMpLUTt3Q9kRqFRIW6bNdfsTcChhUNddcEl9ltE5js93lSmsfHOsWudCT2U39gr
-         /mUN5urUhNeqcG5ZVmIKYipV0O/BQ0EtzXXJadXnBIQqUz2ATIoNFw5d6QwINB0sblGr
-         Ms3w==
-X-Forwarded-Encrypted: i=1; AJvYcCXxncqOnkWazgUz1Rul8rKUm3lPw8kc8r4/Q06AxPLzdwI7AyZjZJcBIN1GypVc0aA9DRt7uUgISnw=@lists.infradead.org
-X-Gm-Message-State: AOJu0YystkS1nwz++ETG+xBuMUWEkSp46tZmLDNkoaImzxm1qux0DLdc
-	2ECFykWkx1fOVEuTCSUQYhxlTBuyD+WYc0mrbIWPDdkp7XzAowyZGJl4ZX0of0Ji
-X-Gm-Gg: AY/fxX7cYChc3s9qLzt5oLiON681MhKZbPpshNkIQL/tX3mnKoNzC//39d5j/hAh7N0
-	URKYHWTf82SfE0MGltKfX1S/lSMFT1zuS4XYBRzA248hGgyMYdaQ0++nE/mvjkqHBXBLg0LxVkJ
-	USgVurhaeei+PpZXdrc8ItOuYMtTB/XAUgQdGmStNZjJc7Sba5ejONZcW9ahdelFOfV2k6frm68
-	cCdXL5+u26233VIUpRKN5ALR+E0TONFjmPcTooT4B0nK713GFYSlosawjf6bXWv9nhodavE7tCL
-	y0vCSoJrCxarvqlXPuJnXx2Js7lcGyMzyNwcjloA220TsPWpgHXKnFC/DAyrH2nca5ii8OQ8j6r
-	QtK7YJ6wPm0sZcCBwM6HkU+gYv8ee+FDhAIJMW8kopEH40NMNfh71sRKsMwU9/xJx2ZamHI1r1y
-	5qtm6aKa6MLa94msTR65vvA7ruZU+wTukIXGHs4n18h0hmfljf+6wP
-X-Google-Smtp-Source: AGHT+IFP1iwqI+FLrYIPzMFZ3QwC4FYF1HX+vUzgpRU/kGf2fg2dgn/yiNUF9GvL75yTlUDP6NXZvg==
-X-Received: by 2002:a05:6122:4019:b0:557:c467:7994 with SMTP id 71dfb90a1353d-5615bce6afdmr7850387e0c.2.1767107122591;
-        Tue, 30 Dec 2025 07:05:22 -0800 (PST)
-Received: from mail-vk1-f173.google.com (mail-vk1-f173.google.com. [209.85.221.173])
-        by smtp.gmail.com with ESMTPSA id 71dfb90a1353d-5615d04b70fsm10419867e0c.4.2025.12.30.07.05.22
-        for <linux-phy@lists.infradead.org>
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 30 Dec 2025 07:05:22 -0800 (PST)
-Received: by mail-vk1-f173.google.com with SMTP id 71dfb90a1353d-55b26461e78so2609943e0c.3
-        for <linux-phy@lists.infradead.org>; Tue, 30 Dec 2025 07:05:22 -0800 (PST)
-X-Forwarded-Encrypted: i=1; AJvYcCX6j308UajpHS97Z5PtgEZGS1o/JEvMx2cGuAS2aW8csLYARypINF3pO0KRNFE8/DLo1oAu09bOTqI=@lists.infradead.org
-X-Received: by 2002:a05:6122:1354:b0:55b:305b:4e3b with SMTP id
- 71dfb90a1353d-5615beb8214mr9695143e0c.17.1767107122056; Tue, 30 Dec 2025
- 07:05:22 -0800 (PST)
+	Tue, 30 Dec 2025 16:18:02 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 619D943D98
+	for <linux-phy@lists.infradead.org>; Tue, 30 Dec 2025 16:17:59 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 41892C19421
+	for <linux-phy@lists.infradead.org>; Tue, 30 Dec 2025 16:17:59 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1767111479;
+	bh=VEY4Cb5jc6lnJsaQHLgbiRjhF3KHmAUR5XwBio5g9jg=;
+	h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+	b=TSRIXQP88/SwcyieF2OFf3akY7ze9/s843ItQyYPFVueX/KlH3Q+Qsp/H1b/ZI1b7
+	 DnAZd/jDIPFdoSjMp/5YQ/C/9Zhh7zCakHU3yyS9gF3gqh6YIOUugPYSHzeCaNMtua
+	 BYLjhHoRr+o1+KYdyGs9hAz0OcfpktcA8AyIZNSagQ88h9rvnsWfTwjOUc1k9yEg6r
+	 z2l5Pj0mAWF36HuYGzC/2C2Re6byFSKsIePAyLTo7BPtJqArF0ryYCb7a3DZlJ1GDA
+	 u1aUr8PpJ5ZTFJHZNDqDCUpxeQ7EpbpATb29Ewb3W01GjxRjpJd5M1OsB+9kugsFwC
+	 QHx8uSJ56teXw==
+Received: by mail-oo1-f45.google.com with SMTP id 006d021491bc7-65cfb4beabcso6309331eaf.3
+        for <linux-phy@lists.infradead.org>; Tue, 30 Dec 2025 08:17:59 -0800 (PST)
+X-Forwarded-Encrypted: i=1; AJvYcCVUUCd3cI8Y+iminajEhSMop21+MgGRe6H8k6GfqUcT1I2b10kR7SvczwuVbhnF1ASN3iVflZyZd3k=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yyhna5UPtCoIyP+JBA5iDIo9oheI00nzF+n1MYBuwIaTKLlfD1d
+	WiQo2FaeaswfpZfX9Izk92D+btQGGlCJnnIoMbsbcPJmGpKDbO/nb6Jfl/57C3FdB2sTNDAYa5g
+	bwoURRKROHbKbytgUX+UUs9qQp9rXDHQ=
+X-Google-Smtp-Source: AGHT+IGqDWcQ17YvGmngpzLFMCVN7IFD3mBl45UeHMfJhujCrVsAMj1aofBPXJY0M8PXWnf/GD3wVU2PvQyIXeDk1WI=
+X-Received: by 2002:a05:6820:611:b0:659:9a49:8fd6 with SMTP id
+ 006d021491bc7-65d0ec2650cmr15565301eaf.79.1767111478359; Tue, 30 Dec 2025
+ 08:17:58 -0800 (PST)
 MIME-Version: 1.0
 References: <6245770.lOV4Wx5bFT@rafael.j.wysocki> <2556645.jE0xQCEvom@rafael.j.wysocki>
  <CAMuHMdVMFQebA43FJ53PBnd67C8fxWAC21cr4jWTGDwg-HV53w@mail.gmail.com> <CAMuHMdWshJOjzD5DGzyRUG66jvPC6PPVBgaT=UdWy+XOk_T5Pw@mail.gmail.com>
 In-Reply-To: <CAMuHMdWshJOjzD5DGzyRUG66jvPC6PPVBgaT=UdWy+XOk_T5Pw@mail.gmail.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Tue, 30 Dec 2025 16:05:11 +0100
-X-Gmail-Original-Message-ID: <CAMuHMdVeHY7+9Jz60OX521iaEorGOcrxuGC8iuzDRUA-tkEvLQ@mail.gmail.com>
-X-Gm-Features: AQt7F2rwnAcC5lQxf8KDSlHqxdZgmhT_kPKehxVIuLLpkwUasjT0-vp_jZiOQQo
-Message-ID: <CAMuHMdVeHY7+9Jz60OX521iaEorGOcrxuGC8iuzDRUA-tkEvLQ@mail.gmail.com>
+From: "Rafael J. Wysocki" <rafael@kernel.org>
+Date: Tue, 30 Dec 2025 17:17:44 +0100
+X-Gmail-Original-Message-ID: <CAJZ5v0jtck8SYvXE2Env36MkK8zvK==U_7CANNrQWxFuQf2rWg@mail.gmail.com>
+X-Gm-Features: AQt7F2ocK3gV_BF4thHLc9hfJbDk4QtxfyJrWP4X7jV60IIvVc6wuKzFseGDX3E
+Message-ID: <CAJZ5v0jtck8SYvXE2Env36MkK8zvK==U_7CANNrQWxFuQf2rWg@mail.gmail.com>
 Subject: Re: [PATCH v1 15/23] phy: core: Discard pm_runtime_put() return values
-To: "Rafael J. Wysocki" <rafael@kernel.org>
-Cc: Linux PM <linux-pm@vger.kernel.org>, LKML <linux-kernel@vger.kernel.org>, 
-	Ulf Hansson <ulf.hansson@linaro.org>, Brian Norris <briannorris@chromium.org>, 
-	Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
-	linux-phy@lists.infradead.org, 
+To: Geert Uytterhoeven <geert@linux-m68k.org>
+Cc: "Rafael J. Wysocki" <rafael@kernel.org>, Linux PM <linux-pm@vger.kernel.org>, 
+	LKML <linux-kernel@vger.kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>, 
+	Brian Norris <briannorris@chromium.org>, Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, linux-phy@lists.infradead.org, 
 	Linux-Renesas <linux-renesas-soc@vger.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251230_070524_245374_5D88A96D 
-X-CRM114-Status: GOOD (  38.51  )
+X-CRM114-CacheID: sfid-20251230_081801_321473_F9CF211C 
+X-CRM114-Status: GOOD (  29.49  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,91 +82,60 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, 30 Dec 2025 at 11:54, Geert Uytterhoeven <geert@linux-m68k.org> wrote:
-> On Tue, 30 Dec 2025 at 11:34, Geert Uytterhoeven <geert@linux-m68k.org> wrote:
-> > On Mon, 22 Dec 2025 at 21:40, Rafael J. Wysocki <rafael@kernel.org> wrote:
-> > > From: Rafael J. Wysocki <rafael.j.wysocki@intel.com>
-> > >
-> > > The PHY core defines phy_pm_runtime_put() to return an int, but that
-> > > return value is never used.  It also passes the return value of
-> > > pm_runtime_put() to the caller which is not very useful.
-> > >
-> > > Returning an error code from pm_runtime_put() merely means that it has
-> > > not queued up a work item to check whether or not the device can be
-> > > suspended and there are many perfectly valid situations in which that
-> > > can happen, like after writing "on" to the devices' runtime PM "control"
-> > > attribute in sysfs for one example.
-> > >
-> > > Modify phy_pm_runtime_put() to discard the pm_runtime_put() return
-> > > value and change its return type to void.  Also drop the redundant
-> > > pm_runtime_enabled() call from there.
-> > >
-> > > No intentional functional impact.
-> > >
-> > > This will facilitate a planned change of the pm_runtime_put() return
-> > > type to void in the future.
-> > >
-> > > Signed-off-by: Rafael J. Wysocki <rafael.j.wysocki@intel.com>
-> >
-> > Thanks for your patch, which is now commit caad07ae07e3fb17 ("phy:
-> > core: Discard pm_runtime_put() return values") in phy/next.
-> >
-> > This is causing several messages like
-> >
-> >     phy phy-e6590100.usb-phy-controller.2: Runtime PM usage count underflow!
-> >
-> > during boot, and s2ram on Koelsch (R-Car M2-W).
->
-> On R-Car Gen3, there are no such messages, as e.g.
-> drivers/phy/renesas/phy-rcar-gen3-usb2.c does support Runtime PM.
-> R-Car Gen2 uses drivers/phy/renesas/phy-rcar-gen2.c, which does not
-> use Runtime PM yet, but still relies on explicit clock management.
->
-> > > --- a/drivers/phy/phy-core.c
-> > > +++ b/drivers/phy/phy-core.c
-> > > @@ -190,15 +190,12 @@ int phy_pm_runtime_get_sync(struct phy *
-> > >  }
-> > >  EXPORT_SYMBOL_GPL(phy_pm_runtime_get_sync);
-> > >
-> > > -int phy_pm_runtime_put(struct phy *phy)
-> > > +void phy_pm_runtime_put(struct phy *phy)
-> > >  {
-> > >         if (!phy)
-> > > -               return 0;
-> > > +               return;
-> > >
-> > > -       if (!pm_runtime_enabled(&phy->dev))
-> > > -               return -ENOTSUPP;
-> >
-> > Adding some instrumentation shows that this branch was taken before,
-> > thus skipping the call to pm_runtime_put().
-> >
-> > Can I just put the check back, or is there an underlying problem that
-> > should be fixed instead?
->
-> I assume the PHY core should support both drivers that do and do not
-> support Runtime PM.
-
-I have sent a patch:
-https://lore.kernel.org/3ca9f8166d21685bfbf97535da30172f74822130.1767107014.git.geert+renesas@glider.be
-
-Gr{oetje,eeting}s,
-
-                        Geert
-
--- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gVHVlLCBEZWMgMzAsIDIwMjUgYXQgMTE6NTTigK9BTSBHZWVydCBVeXR0ZXJob2V2ZW4KPGdl
+ZXJ0QGxpbnV4LW02OGsub3JnPiB3cm90ZToKPgo+IE9uIFR1ZSwgMzAgRGVjIDIwMjUgYXQgMTE6
+MzQsIEdlZXJ0IFV5dHRlcmhvZXZlbiA8Z2VlcnRAbGludXgtbTY4ay5vcmc+IHdyb3RlOgo+ID4g
+T24gTW9uLCAyMiBEZWMgMjAyNSBhdCAyMTo0MCwgUmFmYWVsIEouIFd5c29ja2kgPHJhZmFlbEBr
+ZXJuZWwub3JnPiB3cm90ZToKPiA+ID4gRnJvbTogUmFmYWVsIEouIFd5c29ja2kgPHJhZmFlbC5q
+Lnd5c29ja2lAaW50ZWwuY29tPgo+ID4gPgo+ID4gPiBUaGUgUEhZIGNvcmUgZGVmaW5lcyBwaHlf
+cG1fcnVudGltZV9wdXQoKSB0byByZXR1cm4gYW4gaW50LCBidXQgdGhhdAo+ID4gPiByZXR1cm4g
+dmFsdWUgaXMgbmV2ZXIgdXNlZC4gIEl0IGFsc28gcGFzc2VzIHRoZSByZXR1cm4gdmFsdWUgb2YK
+PiA+ID4gcG1fcnVudGltZV9wdXQoKSB0byB0aGUgY2FsbGVyIHdoaWNoIGlzIG5vdCB2ZXJ5IHVz
+ZWZ1bC4KPiA+ID4KPiA+ID4gUmV0dXJuaW5nIGFuIGVycm9yIGNvZGUgZnJvbSBwbV9ydW50aW1l
+X3B1dCgpIG1lcmVseSBtZWFucyB0aGF0IGl0IGhhcwo+ID4gPiBub3QgcXVldWVkIHVwIGEgd29y
+ayBpdGVtIHRvIGNoZWNrIHdoZXRoZXIgb3Igbm90IHRoZSBkZXZpY2UgY2FuIGJlCj4gPiA+IHN1
+c3BlbmRlZCBhbmQgdGhlcmUgYXJlIG1hbnkgcGVyZmVjdGx5IHZhbGlkIHNpdHVhdGlvbnMgaW4g
+d2hpY2ggdGhhdAo+ID4gPiBjYW4gaGFwcGVuLCBsaWtlIGFmdGVyIHdyaXRpbmcgIm9uIiB0byB0
+aGUgZGV2aWNlcycgcnVudGltZSBQTSAiY29udHJvbCIKPiA+ID4gYXR0cmlidXRlIGluIHN5c2Zz
+IGZvciBvbmUgZXhhbXBsZS4KPiA+ID4KPiA+ID4gTW9kaWZ5IHBoeV9wbV9ydW50aW1lX3B1dCgp
+IHRvIGRpc2NhcmQgdGhlIHBtX3J1bnRpbWVfcHV0KCkgcmV0dXJuCj4gPiA+IHZhbHVlIGFuZCBj
+aGFuZ2UgaXRzIHJldHVybiB0eXBlIHRvIHZvaWQuICBBbHNvIGRyb3AgdGhlIHJlZHVuZGFudAo+
+ID4gPiBwbV9ydW50aW1lX2VuYWJsZWQoKSBjYWxsIGZyb20gdGhlcmUuCj4gPiA+Cj4gPiA+IE5v
+IGludGVudGlvbmFsIGZ1bmN0aW9uYWwgaW1wYWN0Lgo+ID4gPgo+ID4gPiBUaGlzIHdpbGwgZmFj
+aWxpdGF0ZSBhIHBsYW5uZWQgY2hhbmdlIG9mIHRoZSBwbV9ydW50aW1lX3B1dCgpIHJldHVybgo+
+ID4gPiB0eXBlIHRvIHZvaWQgaW4gdGhlIGZ1dHVyZS4KPiA+ID4KPiA+ID4gU2lnbmVkLW9mZi1i
+eTogUmFmYWVsIEouIFd5c29ja2kgPHJhZmFlbC5qLnd5c29ja2lAaW50ZWwuY29tPgo+ID4KPiA+
+IFRoYW5rcyBmb3IgeW91ciBwYXRjaCwgd2hpY2ggaXMgbm93IGNvbW1pdCBjYWFkMDdhZTA3ZTNm
+YjE3ICgicGh5Ogo+ID4gY29yZTogRGlzY2FyZCBwbV9ydW50aW1lX3B1dCgpIHJldHVybiB2YWx1
+ZXMiKSBpbiBwaHkvbmV4dC4KPiA+Cj4gPiBUaGlzIGlzIGNhdXNpbmcgc2V2ZXJhbCBtZXNzYWdl
+cyBsaWtlCj4gPgo+ID4gICAgIHBoeSBwaHktZTY1OTAxMDAudXNiLXBoeS1jb250cm9sbGVyLjI6
+IFJ1bnRpbWUgUE0gdXNhZ2UgY291bnQgdW5kZXJmbG93IQo+ID4KPiA+IGR1cmluZyBib290LCBh
+bmQgczJyYW0gb24gS29lbHNjaCAoUi1DYXIgTTItVykuCj4KPiBPbiBSLUNhciBHZW4zLCB0aGVy
+ZSBhcmUgbm8gc3VjaCBtZXNzYWdlcywgYXMgZS5nLgo+IGRyaXZlcnMvcGh5L3JlbmVzYXMvcGh5
+LXJjYXItZ2VuMy11c2IyLmMgZG9lcyBzdXBwb3J0IFJ1bnRpbWUgUE0uCj4gUi1DYXIgR2VuMiB1
+c2VzIGRyaXZlcnMvcGh5L3JlbmVzYXMvcGh5LXJjYXItZ2VuMi5jLCB3aGljaCBkb2VzIG5vdAo+
+IHVzZSBSdW50aW1lIFBNIHlldCwgYnV0IHN0aWxsIHJlbGllcyBvbiBleHBsaWNpdCBjbG9jayBt
+YW5hZ2VtZW50Lgo+Cj4gPiA+IC0tLSBhL2RyaXZlcnMvcGh5L3BoeS1jb3JlLmMKPiA+ID4gKysr
+IGIvZHJpdmVycy9waHkvcGh5LWNvcmUuYwo+ID4gPiBAQCAtMTkwLDE1ICsxOTAsMTIgQEAgaW50
+IHBoeV9wbV9ydW50aW1lX2dldF9zeW5jKHN0cnVjdCBwaHkgKgo+ID4gPiAgfQo+ID4gPiAgRVhQ
+T1JUX1NZTUJPTF9HUEwocGh5X3BtX3J1bnRpbWVfZ2V0X3N5bmMpOwo+ID4gPgo+ID4gPiAtaW50
+IHBoeV9wbV9ydW50aW1lX3B1dChzdHJ1Y3QgcGh5ICpwaHkpCj4gPiA+ICt2b2lkIHBoeV9wbV9y
+dW50aW1lX3B1dChzdHJ1Y3QgcGh5ICpwaHkpCj4gPiA+ICB7Cj4gPiA+ICAgICAgICAgaWYgKCFw
+aHkpCj4gPiA+IC0gICAgICAgICAgICAgICByZXR1cm4gMDsKPiA+ID4gKyAgICAgICAgICAgICAg
+IHJldHVybjsKPiA+ID4KPiA+ID4gLSAgICAgICBpZiAoIXBtX3J1bnRpbWVfZW5hYmxlZCgmcGh5
+LT5kZXYpKQo+ID4gPiAtICAgICAgICAgICAgICAgcmV0dXJuIC1FTk9UU1VQUDsKPiA+Cj4gPiBB
+ZGRpbmcgc29tZSBpbnN0cnVtZW50YXRpb24gc2hvd3MgdGhhdCB0aGlzIGJyYW5jaCB3YXMgdGFr
+ZW4gYmVmb3JlLAo+ID4gdGh1cyBza2lwcGluZyB0aGUgY2FsbCB0byBwbV9ydW50aW1lX3B1dCgp
+Lgo+ID4KPiA+IENhbiBJIGp1c3QgcHV0IHRoZSBjaGVjayBiYWNrLCBvciBpcyB0aGVyZSBhbiB1
+bmRlcmx5aW5nIHByb2JsZW0gdGhhdAo+ID4gc2hvdWxkIGJlIGZpeGVkIGluc3RlYWQ/CgpTb3Jy
+eSBmb3IgYnJlYWtpbmcgdGhpcyEKCj4gSSBhc3N1bWUgdGhlIFBIWSBjb3JlIHNob3VsZCBzdXBw
+b3J0IGJvdGggZHJpdmVycyB0aGF0IGRvIGFuZCBkbyBub3QKPiBzdXBwb3J0IFJ1bnRpbWUgUE0u
+CgpZZXMsIGl0IHNob3VsZCBiZSBzdWZmaWNpZW50IHRvIHJlc3RvcmUgdGhlIHBtX3J1bnRpbWVf
+ZW5hYmxlZCgpIGNoZWNrLgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxp
+c3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
+dGluZm8vbGludXgtcGh5Cg==
