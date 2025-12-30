@@ -4,110 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B8510E95A6C
-	for <linux-phy@archiver.kernel.org>; Tue, 30 Dec 2025 12:08:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 92392E95A8D
+	for <linux-phy@archiver.kernel.org>; Tue, 30 Dec 2025 13:15:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wcaJkLQy30y6JcoYbGQfkJsWQCGuAZqiPuG28ZcvgZc=; b=HgkAYCJshJSzWM
-	Zu+k8Di9X4TKfzCdw6/Id0US5xVis0Xpq6s+j6uvKGLFXM6wHgQHmJmuTQPZbhcA7W1aUAzUkX8Pd
-	hQHaK+vD1TYQKosjPVtEwAk0y5Jk/SZ++lhWhzxNqJ/UW32wF4TOSGyl26/WacYl3WrNw9sb3RQFv
-	WV9uT31j6YyK2pB2ISFRxU1WKwvs4dTDvcIY0cB36v2ByFAqxfBDWG3ZqOBA3ryEpcfw4Tn+9RnuP
-	rVBvhzzzwqRQCnyXPPQcQnSk2FsdW7bJjDafTWzbvxPmy11A7+TKNZP6FsRqi5nYCq5H9+Vg7Rdcl
-	sTNhfn0LgUBP+kNjGhCQ==;
+	List-Owner; bh=j3kgjODB/91Ef1YEFrMAlbMRIE7QFtoepTCdC8BtJf8=; b=qs0ORPMq8PHhh5
+	BTvomTVUzJUtRlsFf4CsrzVIVCXorqIQnWhHomFU2CXIwvvT7qF2QlaGon416gocaXDrBfuHvLsPP
+	s7KzyAwowTkIqtvnpG8CK+JSA9sCzIllQdZPoIh9RgPMQVCTGLDWYT8lg7qaDF063fv2ZwAXYZSob
+	MxKqS5f3UE41xbxrRL+lx74f/e+5R7WKFsM0l4ayf9hpAUg72CGOVPDLV7qJivmjMg+E6pfdHR1yD
+	UILi4Ddg1yPj2CFLEdu8IsfkGf9SK4PYwJ/QSURFwfqf/0PEb1UHV+kGbyfTNFy1VPJx7eOjUzOvz
+	lisIFKQcYA0JNsxyr63A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vaYWQ-00000004mrO-3eiT;
-	Tue, 30 Dec 2025 12:08:18 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vaZZC-00000004qzW-0bfF;
+	Tue, 30 Dec 2025 13:15:14 +0000
+Received: from smtp84.cstnet.cn ([159.226.251.84] helo=cstnet.cn)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vaYWP-00000004mrG-2Fsr
-	for linux-phy@lists.infradead.org;
-	Tue, 30 Dec 2025 12:08:17 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id A6DAB6000A;
-	Tue, 30 Dec 2025 12:08:16 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id EC652C4CEFB;
-	Tue, 30 Dec 2025 12:08:12 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1767096496;
-	bh=yI5DF24jsKj3Y3wOxiB313GUjr7v1Y9NV/pzVMsBSI4=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=bNdibkoz2LKycuUdpOc+1nmnA5eYwk735lwBq/E5VBbcVpL/jJ0o7LT5EVwLGxzyI
-	 TOp1ncpMiEDTQd5WKwxej3QPYtInaTsxzJxslIPKKMdVUelM1TNbiW3eyIRfKmMZZ+
-	 BgQQBj4yvNICXQWWDTcbuSs8VpCKTsXQsaWr0kZyPG2w0/NmjxMdtqheBd5hfUePwY
-	 qWSR8ltBSXDq11ngaMiiG5DcB3x/V6d8yPdwJLpT2zxlBVy2WtoA569xdpcuAkZxZG
-	 P2X+1jFV39HF6FsZ6xp8n8xN8E2+kxj2XbKyCiR4Y4EWsnRpYVKHSKi38+UiDCfeLB
-	 SeRats5yCXRCA==
-Message-ID: <dad6d254-d833-451e-bff1-eeb35876a2b0@kernel.org>
-Date: Tue, 30 Dec 2025 13:08:11 +0100
+	id 1vaZZ7-00000004qys-3V31;
+	Tue, 30 Dec 2025 13:15:12 +0000
+Received: from duge-virtual-machine (unknown [183.192.221.253])
+	by APP-05 (Coremail) with SMTP id zQCowADHWAw00FNpCvqIAg--.28864S2;
+	Tue, 30 Dec 2025 21:14:30 +0800 (CST)
+Date: Tue, 30 Dec 2025 21:14:28 +0800
+From: Jiayu Du <jiayu.riscv@isrc.iscas.ac.cn>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Cc: conor@kernel.org, vkoul@kernel.org, gregkh@linuxfoundation.org,
+	pjw@kernel.org, palmer@dabbelt.com, aou@eecs.berkeley.edu,
+	alex@ghiti.fr, neil.armstrong@linaro.org, krzk+dt@kernel.org,
+	linux-riscv@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-usb@vger.kernel.org
+Subject: Re: [PATCH 2/5] dt-bindings: soc: canaan: Add top syscon for Canaan
+ K230 SoC
+Message-ID: <aVPQNIhyfR/Da/gk@duge-virtual-machine>
+References: <20251230023725.15966-1-jiayu.riscv@isrc.iscas.ac.cn>
+ <20251230023725.15966-3-jiayu.riscv@isrc.iscas.ac.cn>
+ <20251230-jumping-visionary-coyote-c0be31@quoll>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH V1 1/4] scsi: ufs: phy: dt-bindings: Add QMP UFS PHY
- compatible for Hamoa
-To: Pradeep Pragallapati <pradeep.pragallapati@oss.qualcomm.com>,
- vkoul@kernel.org, neil.armstrong@linaro.org, robh@kernel.org,
- krzk+dt@kernel.org, conor+dt@kernel.org, martin.petersen@oracle.com,
- andersson@kernel.org, konradybcio@kernel.org, taniya.das@oss.qualcomm.com,
- dmitry.baryshkov@oss.qualcomm.com
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-scsi@vger.kernel.org, nitin.rawat@oss.qualcomm.com
-References: <20251229060642.2807165-1-pradeep.pragallapati@oss.qualcomm.com>
- <20251229060642.2807165-2-pradeep.pragallapati@oss.qualcomm.com>
- <f87a8caf-6c65-48b8-a372-1ebff95cb6f8@kernel.org>
- <86c649c8-7529-45c0-be13-93ff8f05aa44@oss.qualcomm.com>
- <9514be98-2bb4-423a-919c-eacd4b384f79@kernel.org>
- <d3d63b08-43ba-4b25-a939-416d5d647098@oss.qualcomm.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
- cFgcqTTuNHjAvxtUG8pQgGTHAObYs6xeYJtjUH0ZX6ndJ33FJYf5V3yXqqjcZ30FgHzJCFUu
- JMp7PSyMPzpUXfU12yfcRYVEMQrmplNZssmYhiTeVicuOOypWugZKVLGNm0IweVCaZ/DJDIH
- gNbpvVwjcKYrx85m9cBVEBUGaQP6AT7qlVCkrf50v8bofSIyVa2xmubbAwwFA1oxoOusjPIE
- J3iadrwpFvsZjF5uHAKS+7wHLoW9hVzOnLbX6ajk5Hf8Pb1m+VH/E8bPBNNYKkfTtypTDUCj
- NYcd27tjnXfG+SDs/EXNUAIRefCyvaRG7oRYF3Ec+2RgQDRnmmjCjoQNbFrJvJkFHlPeHaeS
- BosGY+XWKydnmsfY7SSnjAzLUGAFhLd/XDVpb1Een2XucPpKvt9ORF+48gy12FA5GduRLhQU
- vK4tU7ojoem/G23PcowM1CwPurC8sAVsQb9KmwTGh7rVz3ks3w/zfGBy3+WmLg++C2Wct6nM
- Pd8/6CBVjEWqD06/RjI2AnjIq5fSEH/BIfXXfC68nMp9BZoy3So4ZsbOlBmtAPvMYX6U8VwD
- TNeBxJu5Ex0Izf1NV9CzC3nNaFUYOY8KfN01X5SExAoVTr09ewARAQABzSVLcnp5c3p0b2Yg
- S296bG93c2tpIDxrcnprQGtlcm5lbC5vcmc+wsGVBBMBCgA/AhsDBgsJCAcDAgYVCAIJCgsE
- FgIDAQIeAQIXgBYhBJvQfg4MUfjVlne3VBuTQ307QWKbBQJoF1BKBQkWlnSaAAoJEBuTQ307
- QWKbHukP/3t4tRp/bvDnxJfmNdNVn0gv9ep3L39IntPalBFwRKytqeQkzAju0whYWg+R/rwp
- +r2I1Fzwt7+PTjsnMFlh1AZxGDmP5MFkzVsMnfX1lGiXhYSOMP97XL6R1QSXxaWOpGNCDaUl
- ajorB0lJDcC0q3xAdwzRConxYVhlgmTrRiD8oLlSCD5baEAt5Zw17UTNDnDGmZQKR0fqLpWy
- 786Lm5OScb7DjEgcA2PRm17st4UQ1kF0rQHokVaotxRM74PPDB8bCsunlghJl1DRK9s1aSuN
- hL1Pv9VD8b4dFNvCo7b4hfAANPU67W40AaaGZ3UAfmw+1MYyo4QuAZGKzaP2ukbdCD/DYnqi
- tJy88XqWtyb4UQWKNoQqGKzlYXdKsldYqrLHGoMvj1UN9XcRtXHST/IaLn72o7j7/h/Ac5EL
- 8lSUVIG4TYn59NyxxAXa07Wi6zjVL1U11fTnFmE29ALYQEXKBI3KUO1A3p4sQWzU7uRmbuxn
- naUmm8RbpMcOfa9JjlXCLmQ5IP7Rr5tYZUCkZz08LIfF8UMXwH7OOEX87Y++EkAB+pzKZNNd
- hwoXulTAgjSy+OiaLtuCys9VdXLZ3Zy314azaCU3BoWgaMV0eAW/+gprWMXQM1lrlzvwlD/k
- whyy9wGf0AEPpLssLVt9VVxNjo6BIkt6d1pMg6mHsUEVzsFNBFVDXDQBEADNkrQYSREUL4D3
- Gws46JEoZ9HEQOKtkrwjrzlw/tCmqVzERRPvz2Xg8n7+HRCrgqnodIYoUh5WsU84N03KlLue
- MNsWLJBvBaubYN4JuJIdRr4dS4oyF1/fQAQPHh8Thpiz0SAZFx6iWKB7Qrz3OrGCjTPcW6ei
- OMheesVS5hxietSmlin+SilmIAPZHx7n242u6kdHOh+/SyLImKn/dh9RzatVpUKbv34eP1wA
- GldWsRxbf3WP9pFNObSzI/Bo3kA89Xx2rO2roC+Gq4LeHvo7ptzcLcrqaHUAcZ3CgFG88CnA
- 6z6lBZn0WyewEcPOPdcUB2Q7D/NiUY+HDiV99rAYPJztjeTrBSTnHeSBPb+qn5ZZGQwIdUW9
- YegxWKvXXHTwB5eMzo/RB6vffwqcnHDoe0q7VgzRRZJwpi6aMIXLfeWZ5Wrwaw2zldFuO4Dt
- 91pFzBSOIpeMtfgb/Pfe/a1WJ/GgaIRIBE+NUqckM+3zJHGmVPqJP/h2Iwv6nw8U+7Yyl6gU
- BLHFTg2hYnLFJI4Xjg+AX1hHFVKmvl3VBHIsBv0oDcsQWXqY+NaFahT0lRPjYtrTa1v3tem/
- JoFzZ4B0p27K+qQCF2R96hVvuEyjzBmdq2esyE6zIqftdo4MOJho8uctOiWbwNNq2U9pPWmu
- 4vXVFBYIGmpyNPYzRm0QPwARAQABwsF8BBgBCgAmAhsMFiEEm9B+DgxR+NWWd7dUG5NDfTtB
- YpsFAmgXUF8FCRaWWyoACgkQG5NDfTtBYptO0w//dlXJs5/42hAXKsk+PDg3wyEFb4NpyA1v
- qmx7SfAzk9Hf6lWwU1O6AbqNMbh6PjEwadKUk1m04S7EjdQLsj/MBSgoQtCT3MDmWUUtHZd5
- RYIPnPq3WVB47GtuO6/u375tsxhtf7vt95QSYJwCB+ZUgo4T+FV4hquZ4AsRkbgavtIzQisg
- Dgv76tnEv3YHV8Jn9mi/Bu0FURF+5kpdMfgo1sq6RXNQ//TVf8yFgRtTUdXxW/qHjlYURrm2
- H4kutobVEIxiyu6m05q3e9eZB/TaMMNVORx+1kM3j7f0rwtEYUFzY1ygQfpcMDPl7pRYoJjB
- dSsm0ZuzDaCwaxg2t8hqQJBzJCezTOIkjHUsWAK+tEbU4Z4SnNpCyM3fBqsgYdJxjyC/tWVT
- AQ18NRLtPw7tK1rdcwCl0GFQHwSwk5pDpz1NH40e6lU+NcXSeiqkDDRkHlftKPV/dV+lQXiu
- jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
- zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
- XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <d3d63b08-43ba-4b25-a939-416d5d647098@oss.qualcomm.com>
+Content-Disposition: inline
+In-Reply-To: <20251230-jumping-visionary-coyote-c0be31@quoll>
+X-CM-TRANSID: zQCowADHWAw00FNpCvqIAg--.28864S2
+X-Coremail-Antispam: 1UD129KBjvJXoW7Zr13ZF43Xry3Kr4xZF4UCFg_yoW8uFyUpF
+	y7GFWjkF4DXr4Fyr48try8WF9xG3yDKrZ8Zr1rtryDJ398uFW0yF4jgF93ur4UWFs7Zw42
+	vF45Zas7Cr1DJaDanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDU0xBIdaVrnRJUUUvlb7Iv0xC_Kw4lb4IE77IF4wAFF20E14v26r4j6ryUM7CY07I2
+	0VC2zVCF04k26cxKx2IYs7xG6r1S6rWUM7CIcVAFz4kK6r1j6r18M28lY4IEw2IIxxk0rw
+	A2F7IY1VAKz4vEj48ve4kI8wA2z4x0Y4vE2Ix0cI8IcVAFwI0_Jr0_JF4l84ACjcxK6xII
+	jxv20xvEc7CjxVAFwI0_Gr0_Cr1l84ACjcxK6I8E87Iv67AKxVWUJVW8JwA2z4x0Y4vEx4
+	A2jsIEc7CjxVAFwI0_Gr1j6F4UJwAS0I0E0xvYzxvE52x082IY62kv0487Mc02F40EFcxC
+	0VAKzVAqx4xG6I80ewAv7VC0I7IYx2IY67AKxVWUJVWUGwAv7VC2z280aVAFwI0_Jr0_Gr
+	1lOx8S6xCaFVCjc4AY6r1j6r4UM4x0Y48IcVAKI48JM4IIrI8v6xkF7I0E8cxan2IY04v7
+	MxkF7I0En4kS14v26r1q6r43MxAIw28IcxkI7VAKI48JMxC20s026xCaFVCjc4AY6r1j6r
+	4UMI8I3I0E5I8CrVAFwI0_Jr0_Jr4lx2IqxVCjr7xvwVAFwI0_JrI_JrWlx4CE17CEb7AF
+	67AKxVWUtVW8ZwCIc40Y0x0EwIxGrwCI42IY6xIIjxv20xvE14v26r1j6r1xMIIF0xvE2I
+	x0cI8IcVCY1x0267AKxVW8JVWxJwCI42IY6xAIw20EY4v20xvaj40_Jr0_JF4lIxAIcVC2
+	z280aVAFwI0_Jr0_Gr1lIxAIcVC2z280aVCY1x0267AKxVW8Jr0_Cr1UYxBIdaVFxhVjvj
+	DU0xZFpf9x07betCcUUUUU=
+X-Originating-IP: [183.192.221.253]
+X-CM-SenderInfo: 5mld534oul2uny6l223fol2u1dvotugofq/
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20251230_051510_250766_5218A34C 
+X-CRM114-Status: GOOD (  17.37  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,47 +80,91 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMzAvMTIvMjAyNSAxMjoxMywgUHJhZGVlcCBQcmFnYWxsYXBhdGkgd3JvdGU6Cj4gCj4gT24g
-MTIvMzAvMjAyNSAzOjA4IFBNLCBLcnp5c3p0b2YgS296bG93c2tpIHdyb3RlOgo+PiBPbiAzMC8x
-Mi8yMDI1IDEwOjA1LCBQcmFkZWVwIFByYWdhbGxhcGF0aSB3cm90ZToKPj4+IE9uIDEyLzI5LzIw
-MjUgMTI6NDEgUE0sIEtyenlzenRvZiBLb3psb3dza2kgd3JvdGU6Cj4+Pj4gT24gMjkvMTIvMjAy
-NSAwNzowNiwgUHJhZGVlcCBQIFYgSyB3cm90ZToKPj4+Pj4gRG9jdW1lbnQgdGhlIFFNUCBVRlMg
-UEhZIGNvbXBhdGlibGUgZm9yIFF1YWxjb21tIEhhbW9hIHRvIHN1cHBvcnQKPj4+Pj4gcGh5c2lj
-YWwgbGF5ZXIgZnVuY3Rpb25hbGl0eSBmb3IgVUZTIGZvdW5kIG9uIHRoZSBTb0MuIFVzZSBmYWxs
-YmFjayB0bwo+Pj4+PiBpbmRpY2F0ZSB0aGUgY29tcGF0aWJpbGl0eSBvZiB0aGUgUU1QIFVGUyBQ
-SFkgb24gdGhlIEhhbW9hIHdpdGggdGhhdAo+Pj4+PiBvbiB0aGUgU004NTUwLgo+Pj4+IExhc3Qg
-c2VudGVuY2UgaXMgcG9pbnRsZXNzLiBZb3Uga2VlcCBleHBsYWluaW5nIHdoYXQgeW91IGRpZCwg
-YnV0IHlvdQo+Pj4+IGRpZCBub3Qgc2F5IHdoeS4gV2h5IEhhbW9hIGlzIGNvbXBhdGlibGUgd2l0
-aCBTTTg1NTAsIGJ1dCBub3Qgd2l0aCBTTTg2NTA/Cj4+PiBpIHdpbGwgdXBkYXRlIGluIG15IG5l
-eHQgcGF0Y2hzZXQuCj4+IEFjdHVhbGx5IHRoZSBwcm9ibGVtIGlzIHRoYXQgeW91IGludHJvZHVj
-ZWQgY29tcGxldGVseSBuZXcgU29DIG5hbWUgLQo+PiBIYW1vYSAtIHNvIHRoYXQncyB3aHkgSSB3
-YXMgd29uZGVyaW5nLiBJZiB5b3UgdXNlZCBjb3JyZWN0IG5hbWUsIFgxRSwgaXQKPj4gd291bGQg
-YmUgbW9yZSBsb2dpY2FsIGFzIGl0IGlzIGJhc2ljYWxseSBTTTg1NTAuCj4+Cj4+IEJ1dCB0aGVu
-IGZvbGxvdyB1cCBxdWVzdGlvbiAtIHdoeSBhcmUgeW91IGR1cGxpY2F0aW5nIGV4aXN0aW5nIHBh
-dGNoZXM/Cj4+Cj4+IGh0dHBzOi8vbG9yZS5rZXJuZWwub3JnL2xpbnV4LWRldmljZXRyZWUvMjAy
-NTA4MTQwMDU5MDQuMzkxNzMtMi1oYXJyaXNvbi52YW5kZXJieWxAZ21haWwuY29tLwo+IAo+IEhp
-IEtyenlzenRvZiwKPiAKPiBJ4oCZbSBub3QgZmFtaWxpYXIgd2l0aCB0aGVzZSBwYXRjaGVzIGlu
-IGRldGFpbCwgYnV0IEkgbm90aWNlZCBzZXZlcmFsIGdhcHM6Cj4gCj4gICAqIFRoZSBVRlNIQyBj
-b21wYXRpYmlsaXR5IHN0cmluZyB3YXMgbm90IGFkZGVkIGluIHRoZSBjb3JyZWN0IGZpbGUuCj4g
-ICAqIEZhbGxiYWNrIGNvbXBhdGliaWxpdHkgd2FzIG5vdCB1dGlsaXplZC4KPiAgICogQSBQSFkg
-Y2xvY2sgZW50cnkgaXMgbWlzc2luZy4KPiAgICogT1BQIGZyYW1ld29yayBpcyBub3QgdXNlZCBm
-b3IgY2xvY2sgZnJlcXVlbmN5IGNvbmZpZ3VyYXRpb24uCj4gICAqIHxkbWEtY29oZXJlbmN5fCBl
-bnRyeSBpcyBtaXNzaW5nLgo+ICAgKiBVRlMgbm9kZXMgYXJlIG5vdCBzb3J0ZWQuCj4gICAqIENs
-b2NrIHByb3ZpZGVyIGVudHJpZXMgZm9yIHRoZSBHQ0Mgbm9kZSBhcmUgbWlzc2luZy4KPiAKPiBB
-ZGRpdGlvbmFsbHksIHRoZXJlIGhhc27igJl0IGJlZW4gYW55IGZvbGxvdy11cCBvbiB0aGUgY29t
-bWVudHMgc2luY2UgCj4gQXVndXN0IDIwMjUuIFNvLCBJ4oCZZCBsaWtlIHRvIHRha2UgdGhpcyB1
-cCB3aXRoIG15Cj4gCj4gY3VycmVudCBzZXJpZXMuCj4gCj4gUGxlYXNlIGxldCBtZSBrbm93IHlv
-dXIgdGhvdWdodHMuCj4gCj4+Cj4+IGh0dHBzOi8vbG9yZS5rZXJuZWwub3JnL2xpbnV4LWRldmlj
-ZXRyZWUvcDNtaHRqMnJwNnkyZXp1d3BkMmd1N2R3eDVjYmNrZnU0czRwYXpjdWRpNGoyd29ndHJA
-NHllY2IyYmtleW1zLwoKVGhlIG9uZXMgaGVyZSByZWNlaXZlZCByZXZpZXcuIEkgcHJlZmVyIG5v
-dCB0byByZS1yZXZpZXcganVzdCBiZWNhdXNlCnlvdSB3YW50IHRvIGdvIHdpdGggeW91ciBzZXJp
-ZXMuLi4KCkJ1dCBpZiB5b3UgaW5zaXN0LCBhdCBsZWFzdCBkbyBpdCByaWdodC4gWW91IGFyZSBy
-ZS1kb2luZyB0aGUgc2FtZSB3b3JrCmluIHdvcnNlIHdheS4KCkJlc3QgcmVnYXJkcywKS3J6eXN6
-dG9mCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFk
-Lm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1w
-aHkK
+On Tue, Dec 30, 2025 at 08:39:19AM +0100, Krzysztof Kozlowski wrote:
+> On Tue, Dec 30, 2025 at 10:37:21AM +0800, Jiayu Du wrote:
+> > The Canaan K230 SoC top system controller provides register access
+> > to configure related modules. It includes a USB2 PHY and eMMC/SDIO PHY.
+> > 
+> > Signed-off-by: Jiayu Du <jiayu.riscv@isrc.iscas.ac.cn>
+...
+> > +
+> > +  "#size-cells":
+> > +    const: 1
+> > +
+> > +  usb-phy@70:
+> > +    $ref: schemas/phy/canaan,k230-usb-phy.yaml#
+> 
+> So that's why you did not have example there? But where did you explain
+> merging strategy/constraints/dependencies? How maintainers can now they
+> can apply this or not?
+
+Sorry, I will update in v2.
+
+> 
+> 
+> > +    unevaluatedProperties: false
+> > +
+> > +  usb-phy@90:
+> > +    $ref: schemas/phy/canaan,k230-usb-phy.yaml#
+> > +    unevaluatedProperties: false
+> 
+> Anyway, these are not really real children. Defining child per phy,
+> where each such phy is just few registers, is way too granular. Instead
+> define one phy with phy-cells=2.
+> 
+> You also MUST make this device - hisys - binding complete. If you do
+> not, then my review is: fold the children here, because you do not have
+> any other resources for the parent.
+
+This hisys memory area not only includes the usbphy registers,
+but also contains the registers of sd/mmc phy. Therefore, the
+hisys node is necessary and cannot be folded.
+
+
+If what I said above is accepted by you, do I still need to
+merge the two usb phy nodes by defining one phy with phy-cells=2?
+
+> 
+> > +
+> > +required:
+> > +  - compatible
+> > +  - reg
+> > +
+> > +additionalProperties: false
+> > +
+> > +examples:
+> > +  - |
+> > +    hi_sys_config: syscon@91585000 {
+> > +        compatible = "canaan,k230-hisys-cfg", "syscon", "simple-mfd";
+> > +        reg = <0x91585000 0x400>;
+> > +        #address-cells = <1>;
+> > +        #size-cells = <1>;
+> > +
+> > +        usbphy0: usb-phy@70 {
+> > +            compatible = "canaan,k230-usb-phy";
+> > +            reg = <0x70 0x1C>, <0xb0 0x8>;
+> > +            clocks = <&sysclk K230_HS_USB0_AHB_GATE>;
+> 
+> You never bothered to test your code. Community is not a testing
+> service. It's your job to TEST IT before sending.
+
+Sorry, I've realized this now. I'll test it.
+
+Best regards,
+jiayu
+
+>
+> Best regards,
+> Krzysztof
+> 
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
