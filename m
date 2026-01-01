@@ -4,97 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2DFF9EE645E
-	for <linux-phy@archiver.kernel.org>; Wed, 31 Dec 2025 19:19:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 18372EEB57E
+	for <linux-phy@archiver.kernel.org>; Thu,  1 Jan 2026 10:48:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eNKzJPYylRiYZyGToEWjnEeqCdPyLjHNpjK3LER8aCE=; b=lzGKOFs4THNQKM
-	xATPXQJrt94QBQfF4OZBzAbwmDWanCXrSIAq6bNS5eRu8zxxyvXZu9C7yvpw9d6Kra6c/YVkT5Tpc
-	kPxbu7HL5KFIInXjBKxfPg2OfwNNONeCu71iw87hRtvOnEfVXuwvSCoZjEfFhKPvk+3aHbZNZO0n3
-	BaSOVmcsmRa/FU0il+iCHkmPmbPEUyJKfVWhV0w95pbuiP2WHdx21xpUL8ETwJINH3HPu9TpedmrF
-	QI7CgHHVB/XVSCFT8CdOEN+HbULvkRzhJUCtnFM5ZcCCjQsOGGH0zLhG4Xk0y2N2YdGrtl6vkLSsf
-	rB2X6xOt+x/xrwRVl4eg==;
+	List-Owner; bh=Mf0lQcfv/+VssfhEuL2cn/KngiziX8PLjpeuKIKQbkU=; b=OdPLOfUAz8CtUz
+	oTmUTz8MUd5CjWA8Z63IHLMnYlp08HZav/A59I1wWcjXKoFpRj9BULKdD4ZufXANQ+FWO4k2ZKmVC
+	eJ+HbzbhbGDoAdWyUQqEP9uraR724vMzlAVFz5BmZSfSs0MNK6F1Iue8BRyy2a0/9YdyqcvcGMdDD
+	xfrTojxnArnn65piXHRBzhElZkRUaj4oXPlPR+eLk7zdgWMTGBhNGr9gxn81hSQLFcqwTGBOgSAW6
+	1wNO6cnX8Rf4qAPP/KpmpkET2s9jdyUHQBJn/bOfQemgCjfCuo9oq6oIZ7nCp2+9Kuggnc/OBFIvB
+	rwibTpuzhfp/JQ7LWn4A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vb1jE-00000006GWQ-2N0W;
-	Wed, 31 Dec 2025 19:19:28 +0000
-Received: from mgamail.intel.com ([198.175.65.9])
+	id 1vbGDw-00000006nFJ-2E3t;
+	Thu, 01 Jan 2026 10:48:08 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vb1jA-00000006GVx-14I7
-	for linux-phy@lists.infradead.org;
-	Wed, 31 Dec 2025 19:19:26 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1767208764; x=1798744764;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=bPZviCypgh2u3aDPG0qAxGyvZa+1OR4fditZ2kWyeUA=;
-  b=PDVHfejJm99eynbcYcBgDU8Un9w9BfSE7iT8zYSiQmYo0DEt8q07nqek
-   NvQ12rAJcNck1NK6WvlZISwlMaQQjKEBB+/RZa0Wom/4knX5jbtoKrZ8M
-   4+q3ChmQtorTB5kfHvFXz09CRkA2wgPwCxTxX9W3HPTxNNIn46jUl6xFX
-   aRJAVLknuwr2vbEvzB04zU13MWIowFMiFjA0MuHDg/LisVCkec+k4Mwvo
-   3T4icYn4XhI/eqz8Z28lMQVAnrpBAm+FZkXPNi+nvLTf9dwVV+ZwTuZyu
-   bOsHZP3+O+9K+OmBGS3bYStK31YYA8w5LxZ1L31WJFHUg524RB1MfZh2g
-   Q==;
-X-CSE-ConnectionGUID: Wen5Nq8yS9KmgAR0jK2dLg==
-X-CSE-MsgGUID: KrIgyBbcT6SYRDXoP68j/A==
-X-IronPort-AV: E=McAfee;i="6800,10657,11658"; a="91429088"
-X-IronPort-AV: E=Sophos;i="6.21,192,1763452800"; 
-   d="scan'208";a="91429088"
-Received: from fmviesa002.fm.intel.com ([10.60.135.142])
-  by orvoesa101.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 31 Dec 2025 11:19:19 -0800
-X-CSE-ConnectionGUID: EYoTpA++R2SJpSRjqjNTsQ==
-X-CSE-MsgGUID: 3topCqpnQqml1KUIzQPeLg==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.21,192,1763452800"; 
-   d="scan'208";a="224990122"
-Received: from lkp-server01.sh.intel.com (HELO c9aa31daaa89) ([10.239.97.150])
-  by fmviesa002.fm.intel.com with ESMTP; 31 Dec 2025 11:19:12 -0800
-Received: from kbuild by c9aa31daaa89 with local (Exim 4.98.2)
-	(envelope-from <lkp@intel.com>)
-	id 1vb1iw-000000001QT-1ofA;
-	Wed, 31 Dec 2025 19:19:10 +0000
-Date: Thu, 1 Jan 2026 03:18:51 +0800
-From: kernel test robot <lkp@intel.com>
-To: Josua Mayer <josua@solid-run.com>, Ulf Hansson <ulf.hansson@linaro.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Geert Uytterhoeven <geert+renesas@glider.be>,
-	Magnus Damm <magnus.damm@gmail.com>,
-	Wolfram Sang <wsa-dev@sang-engineering.com>,
-	Marc Kleine-Budde <mkl@pengutronix.de>,
-	Vincent Mailhol <mailhol@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Peter Rosin <peda@axentia.se>, Aaro Koskinen <aaro.koskinen@iki.fi>,
-	Andreas Kemnade <andreas@kemnade.info>,
-	Kevin Hilman <khilman@baylibre.com>,
-	Roger Quadros <rogerq@kernel.org>, Tony Lindgren <tony@atomide.com>,
-	Vignesh R <vigneshr@ti.com>,
-	Janusz Krzysztofik <jmkrzyszt@gmail.com>,
-	Andi Shyti <andi.shyti@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>
-Cc: oe-kbuild-all@lists.linux.dev,
-	Mikhail Anikin <mikhail.anikin@solid-run.com>,
-	Yazan Shhady <yazan.shhady@solid-run.com>,
-	Jon Nettleton <jon@solid-run.com>, linux-mmc@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-renesas-soc@vger.kernel.org, linux-can@vger.kernel.org,
-	linux-phy@lists.infradead.org
-Subject: Re: [PATCH v4 2/7] mux: Add helper functions for getting optional
- and selected mux-state
-Message-ID: <202601010305.tpY47HE4-lkp@intel.com>
-References: <20251229-rz-sdio-mux-v4-2-a023e55758fe@solid-run.com>
+	id 1vbGDu-00000006nEt-3bIB;
+	Thu, 01 Jan 2026 10:48:08 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 0FBE744404;
+	Thu,  1 Jan 2026 10:48:05 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 33A5CC4CEF7;
+	Thu,  1 Jan 2026 10:48:03 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1767264484;
+	bh=R0DOglverepptSmEjV6vsOv1lb25BtPMXmjL3NRM0Sc=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=f65EGWF21o5v2DTtbG1ujgxxdDrGwkgzF0Vcg3wmXGaHeIEGquQV5L2zMHHoLVxxH
+	 DS8cdr5Km3j7i6cQC5YxKnOcsyBOUKiX3DMmNN0n7+WsCGw9uNRgKWB7WnYgMepifn
+	 2albIziaBgRchlR/NTxAm0plcNO7PNyPNCr10fnR9ZOOexAi/jLpFo3vlneNB+aQgi
+	 Cy/tGvZHndLd2DRKrcsfzjBarNMqDVHBWxel+5042uFqCPlH9hfREnx+L6E4naaZW2
+	 t34v30AME7TVWeEUmpF9BzIdj0h21xZemWK+b5ZHnHJEq9il0L2KhVRo8heOWmCZGp
+	 P4RM95qVoK8cw==
+Date: Thu, 1 Jan 2026 16:18:01 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Jiayu Du <jiayu.riscv@isrc.iscas.ac.cn>
+Cc: conor@kernel.org, gregkh@linuxfoundation.org, pjw@kernel.org,
+	palmer@dabbelt.com, aou@eecs.berkeley.edu, alex@ghiti.fr,
+	neil.armstrong@linaro.org, krzk+dt@kernel.org,
+	linux-riscv@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-usb@vger.kernel.org
+Subject: Re: [PATCH 4/5] phy: usb: Add driver for Canaan K230 USB 2.0 PHY
+Message-ID: <aVZQ4YVXGryHz0ds@vaman>
+References: <20251230023725.15966-1-jiayu.riscv@isrc.iscas.ac.cn>
+ <20251230023725.15966-5-jiayu.riscv@isrc.iscas.ac.cn>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20251229-rz-sdio-mux-v4-2-a023e55758fe@solid-run.com>
+In-Reply-To: <20251230023725.15966-5-jiayu.riscv@isrc.iscas.ac.cn>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251231_111924_413908_0090C20C 
-X-CRM114-Status: GOOD (  11.47  )
+X-CRM114-CacheID: sfid-20260101_024806_967683_B4C6B399 
+X-CRM114-Status: GOOD (  28.44  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,449 +76,373 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Josua,
+On 30-12-25, 10:37, Jiayu Du wrote:
+> Add driver for the USB 2.0 PHY in Canaan K230 SoC, which supports PHY
+> initialization, power management and USB mode switching.
+> 
+> Add Kconfig/Makefile under drivers/phy/canaan/.
+> 
+> Signed-off-by: Jiayu Du <jiayu.riscv@isrc.iscas.ac.cn>
+> ---
+>  drivers/phy/Kconfig               |   1 +
+>  drivers/phy/Makefile              |   1 +
+>  drivers/phy/canaan/Kconfig        |  14 ++
+>  drivers/phy/canaan/Makefile       |   2 +
+>  drivers/phy/canaan/phy-k230-usb.c | 272 ++++++++++++++++++++++++++++++
+>  5 files changed, 290 insertions(+)
+>  create mode 100644 drivers/phy/canaan/Kconfig
+>  create mode 100644 drivers/phy/canaan/Makefile
+>  create mode 100644 drivers/phy/canaan/phy-k230-usb.c
+> 
+> diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
+> index 678dd0452f0a..95e630749350 100644
+> --- a/drivers/phy/Kconfig
+> +++ b/drivers/phy/Kconfig
+> @@ -105,6 +105,7 @@ source "drivers/phy/allwinner/Kconfig"
+>  source "drivers/phy/amlogic/Kconfig"
+>  source "drivers/phy/broadcom/Kconfig"
+>  source "drivers/phy/cadence/Kconfig"
+> +source "drivers/phy/canaan/Kconfig"
+>  source "drivers/phy/freescale/Kconfig"
+>  source "drivers/phy/hisilicon/Kconfig"
+>  source "drivers/phy/ingenic/Kconfig"
+> diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
+> index bfb27fb5a494..f07c68f2e283 100644
+> --- a/drivers/phy/Makefile
+> +++ b/drivers/phy/Makefile
+> @@ -17,6 +17,7 @@ obj-y					+= allwinner/	\
+>  					   amlogic/	\
+>  					   broadcom/	\
+>  					   cadence/	\
+> +					   canaan/	\
+>  					   freescale/	\
+>  					   hisilicon/	\
+>  					   ingenic/	\
+> diff --git a/drivers/phy/canaan/Kconfig b/drivers/phy/canaan/Kconfig
+> new file mode 100644
+> index 000000000000..1ff8831846d5
+> --- /dev/null
+> +++ b/drivers/phy/canaan/Kconfig
+> @@ -0,0 +1,14 @@
+> +# SPDX-License-Identifier: GPL-2.0-only
+> +#
+> +# Phy drivers for Canaan platforms
+> +#
+> +config PHY_CANAAN_USB
+> +	tristate "Canaan USB2 PHY Driver"
+> +	depends on (ARCH_CANAAN || COMPILE_TEST) && OF
+> +	select GENERIC_PHY
+> +	help
+> +	Enable this driver to support the USB 2.0 PHY controller
+> +	on Canaan K230 RISC-V SoCs. This PHY controller
+> +	provides physical layer functionality for USB 2.0 devices.
+> +	If you have a Canaan K230 board and need USB 2.0 support,
+> +	say Y or M here.
+> diff --git a/drivers/phy/canaan/Makefile b/drivers/phy/canaan/Makefile
+> new file mode 100644
+> index 000000000000..d73857ba284e
+> --- /dev/null
+> +++ b/drivers/phy/canaan/Makefile
+> @@ -0,0 +1,2 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +obj-$(CONFIG_PHY_CANAAN_USB)		+= phy-k230-usb.o
+> diff --git a/drivers/phy/canaan/phy-k230-usb.c b/drivers/phy/canaan/phy-k230-usb.c
+> new file mode 100644
+> index 000000000000..668618fb2188
+> --- /dev/null
+> +++ b/drivers/phy/canaan/phy-k230-usb.c
+> @@ -0,0 +1,272 @@
+> +// SPDX-License-Identifier: GPL-2.0-only
+> +/*
+> + * Canaan usb PHY driver
+> + *
+> + * Copyright (C) 2025 Jiayu Du <jiayu.riscv@isrc.iscas.ac.cn>
+> + */
+> +
+> +#include <linux/bitfield.h>
+> +#include <linux/clk.h>
+> +#include <linux/mfd/syscon.h>
+> +#include <linux/of.h>
+> +#include <linux/phy/phy.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/regmap.h>
+> +
+> +#define TEST_CTL3_OFFSET	0x0C
 
-kernel test robot noticed the following build errors:
+Lowercase hex values please.. do you need a test register :-)
 
-[auto build test ERROR on 8f0b4cce4481fb22653697cced8d0d04027cb1e8]
+> +#define CTL0_OFFSET		0x00
+> +#define CTL1_OFFSET		0x04
+> +#define USB_IDPULLUP0		BIT(4)
+> +#define USB_DMPULLDOWN0		BIT(8)
+> +#define USB_DPPULLDOWN0		BIT(9)
+> +
+> +/* USB control register 0 in HiSysConfig system controller */
+> +/* PLL Integral Path Tune */
+> +#define USB_CTL0_PLLITUNE_MASK		GENMASK(23, 22)
+> +
+> +/* PLL Proportional Path Tune */
+> +#define USB_CTL0_PLLPTUNE_MASK		GENMASK(21, 18)
+> +
+> +/* PLL Bandwidth Adjustment */
+> +#define USB_CTL0_PLLBTUNE_MASK		GENMASK(17, 17)
+> +
+> +/* VReg18 Bypass Control */
+> +#define USB_CTL0_VREGBYPASS_MASK	GENMASK(16, 16)
+> +
+> +/* Retention Mode Enable */
+> +#define USB_CTL0_RETENABLEN_MASK	GENMASK(15, 15)
+> +
+> +/* Reserved Request Input */
+> +#define USB_CTL0_RESREQIN_MASK		GENMASK(14, 14)
+> +
+> +/* External VBUS Valid Select */
+> +#define USB_CTL0_VBUSVLDEXTSEL0_MASK	GENMASK(13, 13)
+> +
+> +/* OTG Block Disable Control */
+> +#define USB_CTL0_OTGDISABLE0_MASK	GENMASK(12, 12)
+> +
+> +/* Drive VBUS Enable */
+> +#define USB_CTL0_DRVVBUS0_MASK		GENMASK(11, 11)
+> +
+> +/* Autoresume Mode Enable */
+> +#define USB_CTL0_AUTORSMENB0_MASK	GENMASK(10, 10)
+> +
+> +/* HS Transceiver Asynchronous Control */
+> +#define USB_CTL0_HSXCVREXTCTL0_MASK	GENMASK(9, 9)
+> +
+> +/* USB 1.1 Transmit Data */
+> +#define USB_CTL0_FSDATAEXT0_MASK	GENMASK(8, 8)
+> +
+> +/* USB 1.1 SE0 Generation */
+> +#define USB_CTL0_FSSE0EXT0_MASK		GENMASK(7, 7)
+> +
+> +/* USB 1.1 Data Enable */
+> +#define USB_CTL0_TXENABLEN0_MASK	GENMASK(6, 6)
+> +
+> +/* Disconnect Threshold */
+> +#define USB_CTL0_COMPDISTUNE0_MASK	GENMASK(5, 3)
+> +
+> +/* Squelch Threshold */
+> +#define USB_CTL0_SQRXTUNE0_MASK		GENMASK(2, 0)
+> +
+> +/* USB control register 1 in HiSysConfig system controller */
+> +/* Data Detect Voltage */
+> +#define USB_CTL1_VDATREFTUNE0_MASK	GENMASK(23, 22)
+> +
+> +/* VBUS Valid Threshold */
+> +#define USB_CTL1_OTGTUNE0_MASK		GENMASK(21, 19)
+> +
+> +/* Transmitter High-Speed Crossover */
+> +#define USB_CTL1_TXHSXVTUNE0_MASK	GENMASK(18, 17)
+> +
+> +/* FS/LS Source Impedance */
+> +#define USB_CTL1_TXFSLSTUNE0_MASK	GENMASK(16, 13)
+> +
+> +/* HS DC Voltage Level */
+> +#define USB_CTL1_TXVREFTUNE0_MASK	GENMASK(12, 9)
+> +
+> +/* HS Transmitter Rise/Fall Time */
+> +#define USB_CTL1_TXRISETUNE0_MASK	GENMASK(8, 7)
+> +
+> +/* USB Source Impedance */
+> +#define USB_CTL1_TXRESTUNE0_MASK	GENMASK(6, 5)
+> +
+> +/* HS Transmitter Pre-Emphasis Current Control */
+> +#define USB_CTL1_TXPREEMPAMPTUNE0_MASK	GENMASK(4, 3)
+> +
+> +/* HS Transmitter Pre-Emphasis Duration Control */
+> +#define USB_CTL1_TXPREEMPPULSETUNE0_MASK	GENMASK(2, 2)
+> +
+> +/* charging detection */
+> +#define USB_CTL1_CHRGSRCPUENB0_MASK	GENMASK(1, 0)
+> +
+> +#define K230_PHY_CTL0_VAL \
+> +( \
+> +	FIELD_PREP(USB_CTL0_PLLITUNE_MASK, 0x0) | \
+> +	FIELD_PREP(USB_CTL0_PLLPTUNE_MASK, 0xC) | \
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Josua-Mayer/phy-can-transceiver-rename-temporary-helper-function-to-avoid-conflict/20251229-223153
-base:   8f0b4cce4481fb22653697cced8d0d04027cb1e8
-patch link:    https://lore.kernel.org/r/20251229-rz-sdio-mux-v4-2-a023e55758fe%40solid-run.com
-patch subject: [PATCH v4 2/7] mux: Add helper functions for getting optional and selected mux-state
-config: parisc-randconfig-002-20260101 (https://download.01.org/0day-ci/archive/20260101/202601010305.tpY47HE4-lkp@intel.com/config)
-compiler: hppa-linux-gcc (GCC) 10.5.0
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20260101/202601010305.tpY47HE4-lkp@intel.com/reproduce)
+lower hex here and rest
 
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202601010305.tpY47HE4-lkp@intel.com/
+> +	FIELD_PREP(USB_CTL0_PLLBTUNE_MASK, 0x1) | \
+> +	FIELD_PREP(USB_CTL0_VREGBYPASS_MASK, 0x1) | \
+> +	FIELD_PREP(USB_CTL0_RETENABLEN_MASK, 0x1) | \
+> +	FIELD_PREP(USB_CTL0_RESREQIN_MASK, 0x0) | \
+> +	FIELD_PREP(USB_CTL0_VBUSVLDEXTSEL0_MASK, 0x0) | \
+> +	FIELD_PREP(USB_CTL0_OTGDISABLE0_MASK, 0x0) | \
+> +	FIELD_PREP(USB_CTL0_DRVVBUS0_MASK, 0x1) | \
+> +	FIELD_PREP(USB_CTL0_AUTORSMENB0_MASK, 0x0) | \
+> +	FIELD_PREP(USB_CTL0_HSXCVREXTCTL0_MASK, 0x0) | \
+> +	FIELD_PREP(USB_CTL0_FSDATAEXT0_MASK, 0x0) | \
+> +	FIELD_PREP(USB_CTL0_FSSE0EXT0_MASK, 0x0) | \
+> +	FIELD_PREP(USB_CTL0_TXENABLEN0_MASK, 0x0) | \
+> +	FIELD_PREP(USB_CTL0_COMPDISTUNE0_MASK, 0x3) | \
+> +	FIELD_PREP(USB_CTL0_SQRXTUNE0_MASK, 0x3) \
+> +)
+> +
+> +#define K230_PHY_CTL1_VAL \
+> +( \
+> +	FIELD_PREP(USB_CTL1_VDATREFTUNE0_MASK, 0x1) | \
+> +	FIELD_PREP(USB_CTL1_OTGTUNE0_MASK, 0x3) | \
+> +	FIELD_PREP(USB_CTL1_TXHSXVTUNE0_MASK, 0x3) | \
+> +	FIELD_PREP(USB_CTL1_TXFSLSTUNE0_MASK, 0x3) | \
+> +	FIELD_PREP(USB_CTL1_TXVREFTUNE0_MASK, 0x3) | \
+> +	FIELD_PREP(USB_CTL1_TXRISETUNE0_MASK, 0x1) | \
+> +	FIELD_PREP(USB_CTL1_TXRESTUNE0_MASK, 0x1) | \
+> +	FIELD_PREP(USB_CTL1_TXPREEMPAMPTUNE0_MASK, 0x0) | \
+> +	FIELD_PREP(USB_CTL1_TXPREEMPPULSETUNE0_MASK, 0x0) | \
+> +	FIELD_PREP(USB_CTL1_CHRGSRCPUENB0_MASK, 0x0) \
+> +)
+> +
+> +struct k230_usb_phy {
+> +	struct regmap *regmap;
+> +	u32 reg_ctl_offset;
+> +	u32 reg_test_offset;
+> +	struct clk *clk;
+> +};
+> +
+> +static int k230_usb_phy_power_on(struct phy *_phy)
+> +{
+> +	struct k230_usb_phy *phy = phy_get_drvdata(_phy);
+> +	int ret;
+> +	u32 val;
+> +
+> +	ret = clk_prepare_enable(phy->clk);
+> +	if (ret)
+> +		return ret;
+> +
+> +	ret = regmap_write(phy->regmap, phy->reg_ctl_offset + CTL0_OFFSET,
+> +			   K230_PHY_CTL0_VAL);
+> +	if (ret)
+> +		goto err_disable_clk;
+> +
+> +	ret = regmap_write(phy->regmap, phy->reg_ctl_offset + CTL1_OFFSET,
+> +			   K230_PHY_CTL1_VAL);
+> +	if (ret)
+> +		goto err_disable_clk;
+> +
+> +	val |= USB_IDPULLUP0 | USB_DMPULLDOWN0 | USB_DPPULLDOWN0;
+> +
+> +	ret = regmap_update_bits(phy->regmap, phy->reg_test_offset +
+> +				 TEST_CTL3_OFFSET, val, val);
 
-All error/warnings (new ones prefixed by >>):
+so we are writing to a test register..?
 
-   In file included from drivers/mux/core.c:19:
-   include/linux/mux/consumer.h: In function 'mux_control_put':
->> include/linux/mux/consumer.h:138:9: warning: 'return' with a value, in function returning void [-Wreturn-type]
-     138 |  return -EOPNOTSUPP;
-         |         ^
-   include/linux/mux/consumer.h:136:20: note: declared here
-     136 | static inline void mux_control_put(struct mux_control *mux)
-         |                    ^~~~~~~~~~~~~~~
-   drivers/mux/core.c: At top level:
->> drivers/mux/core.c:302:14: error: redefinition of 'mux_control_states'
-     302 | unsigned int mux_control_states(struct mux_control *mux)
-         |              ^~~~~~~~~~~~~~~~~~
-   In file included from drivers/mux/core.c:19:
-   include/linux/mux/consumer.h:70:28: note: previous definition of 'mux_control_states' was here
-      70 | static inline unsigned int mux_control_states(struct mux_control *mux)
-         |                            ^~~~~~~~~~~~~~~~~~
->> drivers/mux/core.c:365:5: error: redefinition of 'mux_control_select_delay'
-     365 | int mux_control_select_delay(struct mux_control *mux, unsigned int state,
-         |     ^~~~~~~~~~~~~~~~~~~~~~~~
-   In file included from drivers/mux/core.c:19:
-   include/linux/mux/consumer.h:74:32: note: previous definition of 'mux_control_select_delay' was here
-      74 | static inline int __must_check mux_control_select_delay(struct mux_control *mux,
-         |                                ^~~~~~~~~~~~~~~~~~~~~~~~
->> drivers/mux/core.c:403:5: error: redefinition of 'mux_state_select_delay'
-     403 | int mux_state_select_delay(struct mux_state *mstate, unsigned int delay_us)
-         |     ^~~~~~~~~~~~~~~~~~~~~~
-   In file included from drivers/mux/core.c:19:
-   include/linux/mux/consumer.h:79:32: note: previous definition of 'mux_state_select_delay' was here
-      79 | static inline int __must_check mux_state_select_delay(struct mux_state *mstate,
-         |                                ^~~~~~~~~~~~~~~~~~~~~~
->> drivers/mux/core.c:425:5: error: redefinition of 'mux_control_try_select_delay'
-     425 | int mux_control_try_select_delay(struct mux_control *mux, unsigned int state,
-         |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   In file included from drivers/mux/core.c:19:
-   include/linux/mux/consumer.h:84:32: note: previous definition of 'mux_control_try_select_delay' was here
-      84 | static inline int __must_check mux_control_try_select_delay(struct mux_control *mux,
-         |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
->> drivers/mux/core.c:459:5: error: redefinition of 'mux_state_try_select_delay'
-     459 | int mux_state_try_select_delay(struct mux_state *mstate, unsigned int delay_us)
-         |     ^~~~~~~~~~~~~~~~~~~~~~~~~~
-   In file included from drivers/mux/core.c:19:
-   include/linux/mux/consumer.h:90:32: note: previous definition of 'mux_state_try_select_delay' was here
-      90 | static inline int __must_check mux_state_try_select_delay(struct mux_state *mstate,
-         |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~
->> drivers/mux/core.c:477:5: error: redefinition of 'mux_control_deselect'
-     477 | int mux_control_deselect(struct mux_control *mux)
-         |     ^~~~~~~~~~~~~~~~~~~~
-   In file included from drivers/mux/core.c:19:
-   include/linux/mux/consumer.h:118:19: note: previous definition of 'mux_control_deselect' was here
-     118 | static inline int mux_control_deselect(struct mux_control *mux)
-         |                   ^~~~~~~~~~~~~~~~~~~~
->> drivers/mux/core.c:503:5: error: redefinition of 'mux_state_deselect'
-     503 | int mux_state_deselect(struct mux_state *mstate)
-         |     ^~~~~~~~~~~~~~~~~~
-   In file included from drivers/mux/core.c:19:
-   include/linux/mux/consumer.h:122:19: note: previous definition of 'mux_state_deselect' was here
-     122 | static inline int mux_state_deselect(struct mux_state *mstate)
-         |                   ^~~~~~~~~~~~~~~~~~
->> drivers/mux/core.c:625:21: error: redefinition of 'mux_control_get'
-     625 | struct mux_control *mux_control_get(struct device *dev, const char *mux_name)
-         |                     ^~~~~~~~~~~~~~~
-   In file included from drivers/mux/core.c:19:
-   include/linux/mux/consumer.h:127:35: note: previous definition of 'mux_control_get' was here
-     127 | static inline struct mux_control *mux_control_get(struct device *dev, const char *mux_name)
-         |                                   ^~~~~~~~~~~~~~~
->> drivers/mux/core.c:638:21: error: redefinition of 'mux_control_get_optional'
-     638 | struct mux_control *mux_control_get_optional(struct device *dev, const char *mux_name)
-         |                     ^~~~~~~~~~~~~~~~~~~~~~~~
-   In file included from drivers/mux/core.c:19:
-   include/linux/mux/consumer.h:131:35: note: previous definition of 'mux_control_get_optional' was here
-     131 | static inline struct mux_control *mux_control_get_optional(struct device *dev,
-         |                                   ^~~~~~~~~~~~~~~~~~~~~~~~
->> drivers/mux/core.c:650:6: error: redefinition of 'mux_control_put'
-     650 | void mux_control_put(struct mux_control *mux)
-         |      ^~~~~~~~~~~~~~~
-   In file included from drivers/mux/core.c:19:
-   include/linux/mux/consumer.h:136:20: note: previous definition of 'mux_control_put' was here
-     136 | static inline void mux_control_put(struct mux_control *mux)
-         |                    ^~~~~~~~~~~~~~~
->> drivers/mux/core.c:671:21: error: redefinition of 'devm_mux_control_get'
-     671 | struct mux_control *devm_mux_control_get(struct device *dev,
-         |                     ^~~~~~~~~~~~~~~~~~~~
-   In file included from drivers/mux/core.c:19:
-   include/linux/mux/consumer.h:141:35: note: previous definition of 'devm_mux_control_get' was here
-     141 | static inline struct mux_control *devm_mux_control_get(struct device *dev, const char *mux_name)
-         |                                   ^~~~~~~~~~~~~~~~~~~~
->> drivers/mux/core.c:774:19: error: redefinition of 'devm_mux_state_get'
-     774 | struct mux_state *devm_mux_state_get(struct device *dev, const char *mux_name)
-         |                   ^~~~~~~~~~~~~~~~~~
-   In file included from drivers/mux/core.c:19:
-   include/linux/mux/consumer.h:145:33: note: previous definition of 'devm_mux_state_get' was here
-     145 | static inline struct mux_state *devm_mux_state_get(struct device *dev, const char *mux_name)
-         |                                 ^~~~~~~~~~~~~~~~~~
->> drivers/mux/core.c:788:19: error: redefinition of 'devm_mux_state_get_optional'
-     788 | struct mux_state *devm_mux_state_get_optional(struct device *dev, const char *mux_name)
-         |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
-   In file included from drivers/mux/core.c:19:
-   include/linux/mux/consumer.h:149:33: note: previous definition of 'devm_mux_state_get_optional' was here
-     149 | static inline struct mux_state *devm_mux_state_get_optional(struct device *dev,
-         |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~
->> drivers/mux/core.c:838:19: error: redefinition of 'devm_mux_state_get_selected'
-     838 | struct mux_state *devm_mux_state_get_selected(struct device *dev, const char *mux_name)
-         |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
-   In file included from drivers/mux/core.c:19:
-   include/linux/mux/consumer.h:154:33: note: previous definition of 'devm_mux_state_get_selected' was here
-     154 | static inline struct mux_state *devm_mux_state_get_selected(struct device *dev,
-         |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~
->> drivers/mux/core.c:854:19: error: redefinition of 'devm_mux_state_get_optional_selected'
-     854 | struct mux_state *devm_mux_state_get_optional_selected(struct device *dev,
-         |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   In file included from drivers/mux/core.c:19:
-   include/linux/mux/consumer.h:159:33: note: previous definition of 'devm_mux_state_get_optional_selected' was here
-     159 | static inline struct mux_state *devm_mux_state_get_optional_selected(struct device *dev,
-         |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
---
-   In file included from core.c:19:
-   include/linux/mux/consumer.h: In function 'mux_control_put':
->> include/linux/mux/consumer.h:138:9: warning: 'return' with a value, in function returning void [-Wreturn-type]
-     138 |  return -EOPNOTSUPP;
-         |         ^
-   include/linux/mux/consumer.h:136:20: note: declared here
-     136 | static inline void mux_control_put(struct mux_control *mux)
-         |                    ^~~~~~~~~~~~~~~
-   core.c: At top level:
-   core.c:302:14: error: redefinition of 'mux_control_states'
-     302 | unsigned int mux_control_states(struct mux_control *mux)
-         |              ^~~~~~~~~~~~~~~~~~
-   In file included from core.c:19:
-   include/linux/mux/consumer.h:70:28: note: previous definition of 'mux_control_states' was here
-      70 | static inline unsigned int mux_control_states(struct mux_control *mux)
-         |                            ^~~~~~~~~~~~~~~~~~
-   core.c:365:5: error: redefinition of 'mux_control_select_delay'
-     365 | int mux_control_select_delay(struct mux_control *mux, unsigned int state,
-         |     ^~~~~~~~~~~~~~~~~~~~~~~~
-   In file included from core.c:19:
-   include/linux/mux/consumer.h:74:32: note: previous definition of 'mux_control_select_delay' was here
-      74 | static inline int __must_check mux_control_select_delay(struct mux_control *mux,
-         |                                ^~~~~~~~~~~~~~~~~~~~~~~~
-   core.c:403:5: error: redefinition of 'mux_state_select_delay'
-     403 | int mux_state_select_delay(struct mux_state *mstate, unsigned int delay_us)
-         |     ^~~~~~~~~~~~~~~~~~~~~~
-   In file included from core.c:19:
-   include/linux/mux/consumer.h:79:32: note: previous definition of 'mux_state_select_delay' was here
-      79 | static inline int __must_check mux_state_select_delay(struct mux_state *mstate,
-         |                                ^~~~~~~~~~~~~~~~~~~~~~
-   core.c:425:5: error: redefinition of 'mux_control_try_select_delay'
-     425 | int mux_control_try_select_delay(struct mux_control *mux, unsigned int state,
-         |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   In file included from core.c:19:
-   include/linux/mux/consumer.h:84:32: note: previous definition of 'mux_control_try_select_delay' was here
-      84 | static inline int __must_check mux_control_try_select_delay(struct mux_control *mux,
-         |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   core.c:459:5: error: redefinition of 'mux_state_try_select_delay'
-     459 | int mux_state_try_select_delay(struct mux_state *mstate, unsigned int delay_us)
-         |     ^~~~~~~~~~~~~~~~~~~~~~~~~~
-   In file included from core.c:19:
-   include/linux/mux/consumer.h:90:32: note: previous definition of 'mux_state_try_select_delay' was here
-      90 | static inline int __must_check mux_state_try_select_delay(struct mux_state *mstate,
-         |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~
-   core.c:477:5: error: redefinition of 'mux_control_deselect'
-     477 | int mux_control_deselect(struct mux_control *mux)
-         |     ^~~~~~~~~~~~~~~~~~~~
-   In file included from core.c:19:
-   include/linux/mux/consumer.h:118:19: note: previous definition of 'mux_control_deselect' was here
-     118 | static inline int mux_control_deselect(struct mux_control *mux)
-         |                   ^~~~~~~~~~~~~~~~~~~~
-   core.c:503:5: error: redefinition of 'mux_state_deselect'
-     503 | int mux_state_deselect(struct mux_state *mstate)
-         |     ^~~~~~~~~~~~~~~~~~
-   In file included from core.c:19:
-   include/linux/mux/consumer.h:122:19: note: previous definition of 'mux_state_deselect' was here
-     122 | static inline int mux_state_deselect(struct mux_state *mstate)
-         |                   ^~~~~~~~~~~~~~~~~~
-   core.c:625:21: error: redefinition of 'mux_control_get'
-     625 | struct mux_control *mux_control_get(struct device *dev, const char *mux_name)
-         |                     ^~~~~~~~~~~~~~~
-   In file included from core.c:19:
-   include/linux/mux/consumer.h:127:35: note: previous definition of 'mux_control_get' was here
-     127 | static inline struct mux_control *mux_control_get(struct device *dev, const char *mux_name)
-         |                                   ^~~~~~~~~~~~~~~
-   core.c:638:21: error: redefinition of 'mux_control_get_optional'
-     638 | struct mux_control *mux_control_get_optional(struct device *dev, const char *mux_name)
-         |                     ^~~~~~~~~~~~~~~~~~~~~~~~
-   In file included from core.c:19:
-   include/linux/mux/consumer.h:131:35: note: previous definition of 'mux_control_get_optional' was here
-     131 | static inline struct mux_control *mux_control_get_optional(struct device *dev,
-         |                                   ^~~~~~~~~~~~~~~~~~~~~~~~
-   core.c:650:6: error: redefinition of 'mux_control_put'
-     650 | void mux_control_put(struct mux_control *mux)
-         |      ^~~~~~~~~~~~~~~
-   In file included from core.c:19:
-   include/linux/mux/consumer.h:136:20: note: previous definition of 'mux_control_put' was here
-     136 | static inline void mux_control_put(struct mux_control *mux)
-         |                    ^~~~~~~~~~~~~~~
-   core.c:671:21: error: redefinition of 'devm_mux_control_get'
-     671 | struct mux_control *devm_mux_control_get(struct device *dev,
-         |                     ^~~~~~~~~~~~~~~~~~~~
-   In file included from core.c:19:
-   include/linux/mux/consumer.h:141:35: note: previous definition of 'devm_mux_control_get' was here
-     141 | static inline struct mux_control *devm_mux_control_get(struct device *dev, const char *mux_name)
-         |                                   ^~~~~~~~~~~~~~~~~~~~
-   core.c:774:19: error: redefinition of 'devm_mux_state_get'
-     774 | struct mux_state *devm_mux_state_get(struct device *dev, const char *mux_name)
-         |                   ^~~~~~~~~~~~~~~~~~
-   In file included from core.c:19:
-   include/linux/mux/consumer.h:145:33: note: previous definition of 'devm_mux_state_get' was here
-     145 | static inline struct mux_state *devm_mux_state_get(struct device *dev, const char *mux_name)
-         |                                 ^~~~~~~~~~~~~~~~~~
-   core.c:788:19: error: redefinition of 'devm_mux_state_get_optional'
-     788 | struct mux_state *devm_mux_state_get_optional(struct device *dev, const char *mux_name)
-         |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
-   In file included from core.c:19:
-   include/linux/mux/consumer.h:149:33: note: previous definition of 'devm_mux_state_get_optional' was here
-     149 | static inline struct mux_state *devm_mux_state_get_optional(struct device *dev,
-         |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~
-   core.c:838:19: error: redefinition of 'devm_mux_state_get_selected'
-     838 | struct mux_state *devm_mux_state_get_selected(struct device *dev, const char *mux_name)
-         |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+> +	if (ret)
+> +		goto err_disable_clk;
+> +
+> +	return 0;
+> +
+> +err_disable_clk:
+> +	clk_disable_unprepare(phy->clk);
+> +	return ret;
+> +}
+> +
+> +static int k230_usb_phy_power_off(struct phy *_phy)
+> +{
+> +	struct k230_usb_phy *phy = phy_get_drvdata(_phy);
+> +	int ret;
+> +	u32 val;
+> +
+> +	val = USB_DMPULLDOWN0 | USB_DPPULLDOWN0;
+> +
+> +	ret = regmap_update_bits(phy->regmap, phy->reg_test_offset +
+> +				 TEST_CTL3_OFFSET, val, 0);
+> +	if (ret)
+> +		return ret;
+> +
+> +	clk_disable_unprepare(phy->clk);
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct phy_ops k230_usb_phy_ops = {
+> +	.power_on = k230_usb_phy_power_on,
+> +	.power_off = k230_usb_phy_power_off,
+> +	.owner = THIS_MODULE,
+> +};
+> +
+> +static int k230_usb_phy_probe(struct platform_device *pdev)
+> +{
+> +	int ret;
+> +	u32 offset;
+> +	struct regmap *regmap;
+> +	struct phy *generic_phy;
+> +	struct k230_usb_phy *phy;
+> +	struct phy_provider *provider;
+> +	struct device *dev = &pdev->dev;
 
+reverse christmas  tree order would look better...
 
-vim +/mux_control_states +302 drivers/mux/core.c
+> +	regmap = syscon_node_to_regmap(dev->parent->of_node);
+> +	if (IS_ERR(regmap))
+> +		return dev_err_probe(dev, PTR_ERR(regmap),
+> +				     "failed to get syscon regmap\n");
+> +
+> +	phy = devm_kzalloc(dev, sizeof(*phy), GFP_KERNEL);
+> +	if (!phy)
+> +		return -ENOMEM;
+> +
+> +	phy->regmap = regmap;
+> +
+> +
 
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  295  
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  296  /**
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  297   * mux_control_states() - Query the number of multiplexer states.
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  298   * @mux: The mux-control to query.
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  299   *
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  300   * Return: The number of multiplexer states.
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  301   */
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14 @302  unsigned int mux_control_states(struct mux_control *mux)
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  303  {
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  304  	return mux->states;
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  305  }
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  306  EXPORT_SYMBOL_GPL(mux_control_states);
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  307  
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  308  /*
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  309   * The mux->lock must be down when calling this function.
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  310   */
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  311  static int __mux_control_select(struct mux_control *mux, int state)
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  312  {
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  313  	int ret;
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  314  
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  315  	if (WARN_ON(state < 0 || state >= mux->states))
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  316  		return -EINVAL;
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  317  
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  318  	if (mux->cached_state == state)
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  319  		return 0;
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  320  
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  321  	ret = mux_control_set(mux, state);
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  322  	if (ret >= 0)
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  323  		return 0;
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  324  
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  325  	/* The mux update failed, try to revert if appropriate... */
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  326  	if (mux->idle_state != MUX_IDLE_AS_IS)
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  327  		mux_control_set(mux, mux->idle_state);
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  328  
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  329  	return ret;
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  330  }
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  331  
-17b5b576ff5faf drivers/mux/core.c     Vincent Whitchurch 2021-10-07  332  static void mux_control_delay(struct mux_control *mux, unsigned int delay_us)
-17b5b576ff5faf drivers/mux/core.c     Vincent Whitchurch 2021-10-07  333  {
-17b5b576ff5faf drivers/mux/core.c     Vincent Whitchurch 2021-10-07  334  	ktime_t delayend;
-17b5b576ff5faf drivers/mux/core.c     Vincent Whitchurch 2021-10-07  335  	s64 remaining;
-17b5b576ff5faf drivers/mux/core.c     Vincent Whitchurch 2021-10-07  336  
-17b5b576ff5faf drivers/mux/core.c     Vincent Whitchurch 2021-10-07  337  	if (!delay_us)
-17b5b576ff5faf drivers/mux/core.c     Vincent Whitchurch 2021-10-07  338  		return;
-17b5b576ff5faf drivers/mux/core.c     Vincent Whitchurch 2021-10-07  339  
-17b5b576ff5faf drivers/mux/core.c     Vincent Whitchurch 2021-10-07  340  	delayend = ktime_add_us(mux->last_change, delay_us);
-17b5b576ff5faf drivers/mux/core.c     Vincent Whitchurch 2021-10-07  341  	remaining = ktime_us_delta(delayend, ktime_get());
-17b5b576ff5faf drivers/mux/core.c     Vincent Whitchurch 2021-10-07  342  	if (remaining > 0)
-17b5b576ff5faf drivers/mux/core.c     Vincent Whitchurch 2021-10-07  343  		fsleep(remaining);
-17b5b576ff5faf drivers/mux/core.c     Vincent Whitchurch 2021-10-07  344  }
-17b5b576ff5faf drivers/mux/core.c     Vincent Whitchurch 2021-10-07  345  
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  346  /**
-17b5b576ff5faf drivers/mux/core.c     Vincent Whitchurch 2021-10-07  347   * mux_control_select_delay() - Select the given multiplexer state.
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  348   * @mux: The mux-control to request a change of state from.
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  349   * @state: The new requested state.
-17b5b576ff5faf drivers/mux/core.c     Vincent Whitchurch 2021-10-07  350   * @delay_us: The time to delay (in microseconds) if the mux state is changed.
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  351   *
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  352   * On successfully selecting the mux-control state, it will be locked until
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  353   * there is a call to mux_control_deselect(). If the mux-control is already
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  354   * selected when mux_control_select() is called, the caller will be blocked
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  355   * until mux_control_deselect() or mux_state_deselect() is called (by someone
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  356   * else).
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  357   *
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  358   * Therefore, make sure to call mux_control_deselect() when the operation is
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  359   * complete and the mux-control is free for others to use, but do not call
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  360   * mux_control_deselect() if mux_control_select() fails.
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  361   *
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  362   * Return: 0 when the mux-control state has the requested state or a negative
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  363   * errno on error.
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  364   */
-17b5b576ff5faf drivers/mux/core.c     Vincent Whitchurch 2021-10-07 @365  int mux_control_select_delay(struct mux_control *mux, unsigned int state,
-17b5b576ff5faf drivers/mux/core.c     Vincent Whitchurch 2021-10-07  366  			     unsigned int delay_us)
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  367  {
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  368  	int ret;
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  369  
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  370  	ret = down_killable(&mux->lock);
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  371  	if (ret < 0)
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  372  		return ret;
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  373  
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  374  	ret = __mux_control_select(mux, state);
-17b5b576ff5faf drivers/mux/core.c     Vincent Whitchurch 2021-10-07  375  	if (ret >= 0)
-17b5b576ff5faf drivers/mux/core.c     Vincent Whitchurch 2021-10-07  376  		mux_control_delay(mux, delay_us);
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  377  
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  378  	if (ret < 0)
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  379  		up(&mux->lock);
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  380  
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  381  	return ret;
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  382  }
-17b5b576ff5faf drivers/mux/core.c     Vincent Whitchurch 2021-10-07  383  EXPORT_SYMBOL_GPL(mux_control_select_delay);
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  384  
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  385  /**
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  386   * mux_state_select_delay() - Select the given multiplexer state.
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  387   * @mstate: The mux-state to select.
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  388   * @delay_us: The time to delay (in microseconds) if the mux state is changed.
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  389   *
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  390   * On successfully selecting the mux-state, its mux-control will be locked
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  391   * until there is a call to mux_state_deselect(). If the mux-control is already
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  392   * selected when mux_state_select() is called, the caller will be blocked
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  393   * until mux_state_deselect() or mux_control_deselect() is called (by someone
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  394   * else).
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  395   *
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  396   * Therefore, make sure to call mux_state_deselect() when the operation is
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  397   * complete and the mux-control is free for others to use, but do not call
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  398   * mux_state_deselect() if mux_state_select() fails.
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  399   *
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  400   * Return: 0 when the mux-state has been selected or a negative
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  401   * errno on error.
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  402   */
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07 @403  int mux_state_select_delay(struct mux_state *mstate, unsigned int delay_us)
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  404  {
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  405  	return mux_control_select_delay(mstate->mux, mstate->state, delay_us);
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  406  }
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  407  EXPORT_SYMBOL_GPL(mux_state_select_delay);
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  408  
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  409  /**
-17b5b576ff5faf drivers/mux/core.c     Vincent Whitchurch 2021-10-07  410   * mux_control_try_select_delay() - Try to select the given multiplexer state.
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  411   * @mux: The mux-control to request a change of state from.
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  412   * @state: The new requested state.
-17b5b576ff5faf drivers/mux/core.c     Vincent Whitchurch 2021-10-07  413   * @delay_us: The time to delay (in microseconds) if the mux state is changed.
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  414   *
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  415   * On successfully selecting the mux-control state, it will be locked until
-f22d1117b9c3e2 drivers/mux/core.c     Peter Rosin        2022-01-07  416   * mux_control_deselect() is called.
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  417   *
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  418   * Therefore, make sure to call mux_control_deselect() when the operation is
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  419   * complete and the mux-control is free for others to use, but do not call
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  420   * mux_control_deselect() if mux_control_try_select() fails.
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  421   *
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  422   * Return: 0 when the mux-control state has the requested state or a negative
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  423   * errno on error. Specifically -EBUSY if the mux-control is contended.
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  424   */
-17b5b576ff5faf drivers/mux/core.c     Vincent Whitchurch 2021-10-07 @425  int mux_control_try_select_delay(struct mux_control *mux, unsigned int state,
-17b5b576ff5faf drivers/mux/core.c     Vincent Whitchurch 2021-10-07  426  				 unsigned int delay_us)
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  427  {
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  428  	int ret;
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  429  
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  430  	if (down_trylock(&mux->lock))
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  431  		return -EBUSY;
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  432  
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  433  	ret = __mux_control_select(mux, state);
-17b5b576ff5faf drivers/mux/core.c     Vincent Whitchurch 2021-10-07  434  	if (ret >= 0)
-17b5b576ff5faf drivers/mux/core.c     Vincent Whitchurch 2021-10-07  435  		mux_control_delay(mux, delay_us);
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  436  
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  437  	if (ret < 0)
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  438  		up(&mux->lock);
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  439  
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  440  	return ret;
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  441  }
-17b5b576ff5faf drivers/mux/core.c     Vincent Whitchurch 2021-10-07  442  EXPORT_SYMBOL_GPL(mux_control_try_select_delay);
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  443  
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  444  /**
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  445   * mux_state_try_select_delay() - Try to select the given multiplexer state.
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  446   * @mstate: The mux-state to select.
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  447   * @delay_us: The time to delay (in microseconds) if the mux state is changed.
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  448   *
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  449   * On successfully selecting the mux-state, its mux-control will be locked
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  450   * until mux_state_deselect() is called.
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  451   *
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  452   * Therefore, make sure to call mux_state_deselect() when the operation is
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  453   * complete and the mux-control is free for others to use, but do not call
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  454   * mux_state_deselect() if mux_state_try_select() fails.
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  455   *
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  456   * Return: 0 when the mux-state has been selected or a negative errno on
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  457   * error. Specifically -EBUSY if the mux-control is contended.
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  458   */
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07 @459  int mux_state_try_select_delay(struct mux_state *mstate, unsigned int delay_us)
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  460  {
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  461  	return mux_control_try_select_delay(mstate->mux, mstate->state, delay_us);
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  462  }
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  463  EXPORT_SYMBOL_GPL(mux_state_try_select_delay);
-84564481bc4520 drivers/mux/core.c     Aswath Govindraju  2022-01-07  464  
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  465  /**
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  466   * mux_control_deselect() - Deselect the previously selected multiplexer state.
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  467   * @mux: The mux-control to deselect.
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  468   *
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  469   * It is required that a single call is made to mux_control_deselect() for
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  470   * each and every successful call made to either of mux_control_select() or
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  471   * mux_control_try_select().
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  472   *
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  473   * Return: 0 on success and a negative errno on error. An error can only
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  474   * occur if the mux has an idle state. Note that even if an error occurs, the
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  475   * mux-control is unlocked and is thus free for the next access.
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  476   */
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14 @477  int mux_control_deselect(struct mux_control *mux)
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  478  {
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  479  	int ret = 0;
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  480  
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  481  	if (mux->idle_state != MUX_IDLE_AS_IS &&
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  482  	    mux->idle_state != mux->cached_state)
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  483  		ret = mux_control_set(mux, mux->idle_state);
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  484  
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  485  	up(&mux->lock);
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  486  
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  487  	return ret;
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  488  }
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  489  EXPORT_SYMBOL_GPL(mux_control_deselect);
-a3b02a9c6591ce drivers/mux/mux-core.c Peter Rosin        2017-05-14  490  
+why two lines...?
+
+> +	ret = of_property_read_u32_index(dev->of_node, "reg", 0, &offset);
+> +	if (ret)
+> +		return dev_err_probe(dev, ret, "missing first reg offset\n");
+> +	phy->reg_test_offset = offset;
+> +
+> +	ret = of_property_read_u32_index(dev->of_node, "reg", 2, &offset);
+> +	if (ret)
+> +		return dev_err_probe(dev, ret, "missing second reg offset\n");
+> +	phy->reg_ctl_offset = offset;
+> +
+> +	phy->clk = devm_clk_get(dev, NULL);
+> +	if (IS_ERR(phy->clk))
+> +		return dev_err_probe(dev, PTR_ERR(phy->clk),
+> +				     "failed to get clock\n");
+> +
+> +	generic_phy = devm_phy_create(dev, dev->of_node, &k230_usb_phy_ops);
+> +
+> +	if (IS_ERR(generic_phy))
+> +		return dev_err_probe(dev, PTR_ERR(generic_phy),
+> +				     "failed to create PHY\n");
+> +
+> +	phy_set_drvdata(generic_phy, phy);
+> +
+> +	provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
+> +	if (IS_ERR(provider))
+> +		return dev_err_probe(dev, PTR_ERR(provider),
+> +				     "failed to register phy provider\n");
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct of_device_id k230_usb_phy_of_match[] = {
+> +	{ .compatible = "canaan,k230-usb-phy" },
+> +	{}
+> +};
+> +MODULE_DEVICE_TABLE(of, k230_usb_phy_of_match);
+> +
+> +static struct platform_driver k230_usb_phy_driver = {
+> +	.probe = k230_usb_phy_probe,
+> +	.driver = {
+> +		.name = "k230-usb-phy",
+> +		.of_match_table = k230_usb_phy_of_match,
+> +	},
+> +};
+> +module_platform_driver(k230_usb_phy_driver);
+> +
+> +MODULE_DESCRIPTION("Canaan Kendryte K230 USB 2.0 PHY driver");
+> +MODULE_AUTHOR("Jiayu Du <jiayu.riscv@isrc.iscas.ac.cn>");
+> +MODULE_LICENSE("GPL");
+> -- 
+> 2.52.0
 
 -- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+~Vinod
 
 -- 
 linux-phy mailing list
