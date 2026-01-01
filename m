@@ -4,66 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 38271EEB57D
-	for <linux-phy@archiver.kernel.org>; Thu,  1 Jan 2026 11:08:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0D0BEE57C5
+	for <linux-phy@archiver.kernel.org>; Thu,  1 Jan 2026 11:08:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WbElkDlVVImJOhsB7msp2c0+emTUllU+G/lGn3AgXCI=; b=nffma5q1IIRdM0
-	g2zw6E8rL/+kvQ7eEx4fVLSLQB1xLyOiL4HFdUaOXOrw1HIxnqvQvjxgYYYaF0NBh4MjfBJ5+YK1V
-	nMPOIgnbHEgKzCRVFJ+gWJ2BXoZQnARA1NpOZLRqe1U+SOv3Mws4nxsmE9brOAC2AZZKE/7yYq7Xw
-	+l19+ydgx2pVFp403rhZUXE4iO6bpUqmAQsOVQFX3x6BCXWxMUprLDOrni6rtaZaEpDhnhgXCiODj
-	xgq9XOHp6vzqNDIykeIc86/NEbvZW6EqqSr8B0SA23FKoskjtgLQQK6N+gGi1fMZlVjifdqjSOrrS
-	7LEwHvCJA6pKGjzC6epg==;
+	List-Owner; bh=QX0thNb8FznZ+7rRkDJ9F+zPaUOMH3TvLnQCKYstwp0=; b=Fr9v+8RzayvbTf
+	oSaLy0FiSCf1yOyI8zdnKu8w/hwfUHifxLjOUVWwt7gKniKmGmXqZQgWUZSg89sEi8AFkoNbTuHOz
+	Hu5/X/GAq/3ipFi4h6zClExgAZE9V0AFKnHPsSi4wbHTrQ3rHb2x9SxvNwaluTUVsm7t5UANN31i1
+	qJEROqLATBqFtNLd1npCzSmxvEMnMDT3F2uJrq1C3EuSnrTP4pUZ00dxTco/us3Xq5jE1uwf0ISTj
+	J/lS1G+JBF7uxI1hrW+4S63V2Li2OHmsHJ8PwBDq2B3wRPxkNDPF47EZ5oieEGAXxlK9jaOCbhU1U
+	GYiVDmzjzchFrOLz8GFQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vbGXG-00000006nt6-2g3e;
-	Thu, 01 Jan 2026 11:08:06 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1vbGXI-00000006nti-3pA2;
+	Thu, 01 Jan 2026 11:08:08 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vbGXC-00000006nsT-37KP
-	for linux-phy@lists.infradead.org;
-	Thu, 01 Jan 2026 11:08:03 +0000
+	id 1vbGXG-00000006nsx-0N2F;
+	Thu, 01 Jan 2026 11:08:06 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 3394143AF9;
+	by tor.source.kernel.org (Postfix) with ESMTP id 70A0160017;
+	Thu,  1 Jan 2026 11:08:03 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A6753C116B1;
 	Thu,  1 Jan 2026 11:07:59 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id ABA0BC4CEF7;
-	Thu,  1 Jan 2026 11:07:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1767265679;
-	bh=W+vJxAgBNm+n//Wn2RLew3QSjtXlLO4Nn+RTa2qEUQk=;
+	s=k20201202; t=1767265683;
+	bh=gp6INFoQIq+43goOk9oT04JrR78Bq4E+oz5E4M6bfiQ=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=L/7uM5NCpXTvhIBUkYeNbAgBPF9OZg4ciSNZ8BL+KE8mqF96fUxLICS5cjmpeClG4
-	 4W/s/DugJtCmBSY3aK1JiWHa4y5P0g7Wj9uuct1Xo4cy4Th7YIVntKHy+VNNK6dNTQ
-	 g4XYY44nBN7U1s83HC/zlk52+Yv4t+bFUusC4NMIVLer5Lb7JMdW3/R02p322MIu4i
-	 1CKoCQLYhqY88aGO6wq9j974Sr9yKmmxmBh2Yauh70WsC3TBv0h/YtZOiFporn1QZh
-	 qB7Q/fjjVPxpjuOVKJBAM2+hs6aaVB0xWE/pkZfmF5ggTj4BLhwHh3wXrx5+iPjNq2
-	 YW7uJOR5UW9Fw==
+	b=GGV10kGkKqFcf14C5Upi5Cp3QL/wbrh4VI6T8Ueqa6PsJRMWmcOtw0fRl+PBA7lQl
+	 BaboTeuIvtUjkRezkQ47SQ9aiR4YAahqom6C10TrcKt+X814EW5/XXRwXgd04ieomC
+	 CQcATpRqCutGzxFZHRjYe7ajSsHAXZn6A+om9sG0wk9KwIZHHwCUC8xHELH8LMbVIU
+	 fnWO1q+vhQ/Qs7vWBarnf/y0K2C0FzeQ9BU2vBNQxAfz+asfP43imMamyOAwKFSyju
+	 YoorE+vOfapEuKDhn+ewxYbHpTr/8udBzhnrxj+1prGOhpe+SaUNTmwK69OqamWE60
+	 YStqjnX/KzbKQ==
 From: Vinod Koul <vkoul@kernel.org>
-To: Kishon Vijay Abraham I <kishon@kernel.org>, 
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Abel Vesa <abel.vesa@oss.qualcomm.com>
-Cc: Wenbin Yao <wenbin.yao@oss.qualcomm.com>, linux-arm-msm@vger.kernel.org, 
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, Abel Vesa <abelvesa@kernel.org>, 
- Krzysztof Kozlowski <krzk@kernel.org>
-In-Reply-To: <20251216-phy-qcom-pcie-add-glymur-v2-0-566a75672599@oss.qualcomm.com>
-References: <20251216-phy-qcom-pcie-add-glymur-v2-0-566a75672599@oss.qualcomm.com>
-Subject: Re: [PATCH v2 0/2] phy: qcom: qmp-pcie: Add support for Glymur
- PCIe Gen4x2 PHY
-Message-Id: <176726567533.201416.1560335358869706527.b4-ty@kernel.org>
-Date: Thu, 01 Jan 2026 16:37:55 +0530
+To: neil.armstrong@linaro.org, Alex Elder <elder@riscstar.com>
+Cc: dlan@gentoo.org, pjw@kernel.org, palmer@dabbelt.com, 
+ aou@eecs.berkeley.edu, alex@ghiti.fr, guodong@riscstar.com, 
+ linux-phy@lists.infradead.org, spacemit@lists.linux.dev, 
+ linux-riscv@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ kernel test robot <lkp@intel.com>
+In-Reply-To: <20251226173228.2020411-1-elder@riscstar.com>
+References: <20251226173228.2020411-1-elder@riscstar.com>
+Subject: Re: [PATCH] phy: Kconfig: spacemit: add COMMON_CLK dependency
+Message-Id: <176726567931.201416.8144273654305302884.b4-ty@kernel.org>
+Date: Thu, 01 Jan 2026 16:37:59 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260101_030802_809177_5EA3BFC3 
-X-CRM114-Status: UNSURE (   5.10  )
-X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,19 +72,17 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Tue, 16 Dec 2025 10:25:03 +0200, Abel Vesa wrote:
-> The Glymur platform comes with two PCIe Gen4 2-lanes controllers.
-> 
-> Add support for their PHYs and document the compatible.
+On Fri, 26 Dec 2025 11:32:27 -0600, Alex Elder wrote:
+> The SpacemiT PCIe PHY driver depends on the common clock framework.
+> Not specifying that led to a failure when doing a COMPILE_TEST build
+> for the SPARC architecture.
 > 
 > 
 
 Applied, thanks!
 
-[1/2] dt-bindings: phy: sc8280xp-qmp-pcie: Document Glymur PCIe Gen4 2-lanes PHY
-      commit: 25671c37821006392ff8c66e980475747bee4cde
-[2/2] phy: qcom: qmp-pcie: Add support for Glymur PCIe Gen4x2 PHY
-      commit: 085ba7c91df34e05366f9fecc9fa7a037598c30e
+[1/1] phy: Kconfig: spacemit: add COMMON_CLK dependency
+      commit: 8df20813eb01fe29b4507fd470d73675bda3e1dd
 
 Best regards,
 -- 
