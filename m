@@ -4,63 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BDBD4EE57C5
-	for <linux-phy@archiver.kernel.org>; Thu,  1 Jan 2026 11:08:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7DD4EEEB57D
+	for <linux-phy@archiver.kernel.org>; Thu,  1 Jan 2026 11:08:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DujxFEPb4QX2R5IbWUa5hCWEcbhACxsXEqC4PcySuzY=; b=LdAB2fAj+sD3v1
-	+e+1BchL6Awr0v7kyplFluyGXQrt0r/XNm+lFPpf0ujzbY93YfVKvy8JUkB3eLYqYBcjLCmqrJdQN
-	bX2BoNLlk9/pUIY4DpDIVDuVZhaj0BRHf0vazlLUA65o3DoieDD5SYN6FxdEsCRmQtv1OEzTSQ1Fj
-	H1G4+gb95g/bjiyavaoCNvQrVDurSZ2wScLp6g7Qc9b+NUNdFoqCF6HEX8oE/0/HbWYzjr21dseLY
-	f/P6hT1KLujZA4IpmOqklvy8pvT3dWJnCZwNgYLDJ9872GXfafF6WlZDK/QcV7g960ZfqNkGo/St6
-	e7MRiT4XW3IEOQAuRiFA==;
+	List-Owner; bh=fGvzBLPCnEhRREAD5aX0Cvy+nm4AqWn6Hp/yKQByyss=; b=MzKvPjSDDT4NP8
+	a93kFreRlLpEqXnYcVfSTaBe9qNqWmS1DR2IGFdMgLlAWNVqrWiL9P1G9fS5tUzwrtf9zUJw125VZ
+	DueER6nTM2n6qSxjDA5/hC5nsQjgD5ArJhYXlc2sYHbLot3LQnEWUi1GvLKCETSM5zbkug83LVlgj
+	Ec0cPs1DX4KVe177co/CEdRtW5lHLpQi9U3hIjB+J92Z7gFqO84vduAMoe7MB0UD9tSKQjm4MsZjS
+	RaUlBx/S4Mvi2ZkF4BtmN9J8iYhdsCAr4dVY1qhqVWCMdxbYh28jCn2VTjDbKJB+GCI1M+tmRbhFX
+	dNKG2B5/FZy6GJyQKjMA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vbGXY-00000006o1T-2Aqe;
-	Thu, 01 Jan 2026 11:08:24 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1vbGXb-00000006o34-18AK;
+	Thu, 01 Jan 2026 11:08:27 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vbGXV-00000006nzs-0s4r;
-	Thu, 01 Jan 2026 11:08:22 +0000
+	id 1vbGXZ-00000006o24-361X
+	for linux-phy@lists.infradead.org;
+	Thu, 01 Jan 2026 11:08:25 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id C8332443DF;
-	Thu,  1 Jan 2026 11:08:20 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 15080C116B1;
-	Thu,  1 Jan 2026 11:08:17 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 3028060008;
+	Thu,  1 Jan 2026 11:08:25 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 472BBC19422;
+	Thu,  1 Jan 2026 11:08:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1767265700;
-	bh=oDX9OY3aMzQan91I3g8b+LhbDuDdQqiBxOgdnT9r130=;
-	h=From:To:In-Reply-To:References:Subject:Date:From;
-	b=GWOsDNdxz2NIQGByn4jsxvXUao/5a52yd5gNMaHfXOQOT+5kLGTdiz06Bwam00uD+
-	 0IgLgGTTAQotzc4Ud2nlMG1GWtdZHPRYYhtsmOO6maQWHSrse6MxT65rcbhQG8C32g
-	 8vdae/OMGHzZWPgw45+d1Mpref8xc3SU5HQoFnAnsgJTbhQpDHUQ6NjxCGnHbQXdf4
-	 zm51WKVJ4Pim0i5+Io3w2ni+p0iISEhDwgKG0IZ0u2SvH5pj/mJ0ajmkAJIN9v90rO
-	 EJ5SFt7OZYCTepC+ZOolQFfo4qCRXpVlxFkk8I1Q5jNu1iyWVXEiKoB12L2tqWPimN
-	 qyYhaskoXB53Q==
+	s=k20201202; t=1767265704;
+	bh=ToKlYUMhvoalOWqpF9ZeGMqXOoOysB+sEs8bAsqqLoM=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=baxmvc6Y9ow0RIhmu20ZovU+DjhPRkczRDf65NtWTpLVeTG+DP9Qr0F5xTsmxxlii
+	 HA1vVt3EIeX9LLyiiuRtRhVqnuhI5ZJVxeC0jSydB4WTc3AYnlDZ0dA9lC/r+ThJaz
+	 zRY8nKlmHm0WiUsAm4yJY5sWNlORW/hRnMholyDOofi89rAJZFWfoe3i2fVXz6SchC
+	 9j8mULmxncTeVOQ4AR0m7M8pn0dJ3qbrX55axwRxcyrqV89bPoRcQy5VuUb3ec7wmO
+	 +C4opmCCm9zPzsO4qp8u28RZqiLIEgs14SXL/nGKfWLdM/Q9y0/sosR6VLjbbdQvLD
+	 XzhKDVRMTCuYQ==
 From: Vinod Koul <vkoul@kernel.org>
-To: Neil Armstrong <neil.armstrong@linaro.org>, 
- Geert Uytterhoeven <geert+renesas@glider.be>, 
- Magnus Damm <magnus.damm@gmail.com>, Heiko Stuebner <heiko@sntech.de>, 
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
- linux-renesas-soc@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- linux-rockchip@lists.infradead.org, 
- Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
-In-Reply-To: <20251224124407.208354-4-krzysztof.kozlowski@oss.qualcomm.com>
-References: <20251224124407.208354-4-krzysztof.kozlowski@oss.qualcomm.com>
-Subject: Re: [PATCH 1/3] phy: rockchip: usb: Simplify with scoped for each
- OF child loop
-Message-Id: <176726569771.201416.11757049759201403821.b4-ty@kernel.org>
-Date: Thu, 01 Jan 2026 16:38:17 +0530
+To: Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Abel Vesa <abel.vesa@oss.qualcomm.com>
+Cc: Wenbin Yao <wenbin.yao@oss.qualcomm.com>, linux-arm-msm@vger.kernel.org, 
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, Abel Vesa <abel.vesa@linaro.org>, 
+ Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>, 
+ Krzysztof Kozlowski <krzk@kernel.org>
+In-Reply-To: <20251224-phy-qcom-pcie-add-glymur-v3-0-57396145bc22@oss.qualcomm.com>
+References: <20251224-phy-qcom-pcie-add-glymur-v3-0-57396145bc22@oss.qualcomm.com>
+Subject: Re: [PATCH v3 0/2] phy: qcom: qmp-pcie: Add support for Glymur
+ PCIe Gen4x2 PHY
+Message-Id: <176726570092.201416.12927506062894433372.b4-ty@kernel.org>
+Date: Thu, 01 Jan 2026 16:38:20 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260101_030821_292340_15FB076B 
-X-CRM114-Status: UNSURE (   5.41  )
-X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,20 +78,19 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Wed, 24 Dec 2025 13:44:08 +0100, Krzysztof Kozlowski wrote:
-> Use scoped for-each loop when iterating over device nodes to make code a
-> bit simpler.
+On Wed, 24 Dec 2025 12:35:00 +0200, Abel Vesa wrote:
+> The Glymur platform comes with two PCIe Gen4 2-lanes controllers.
+> 
+> Add support for their PHYs and document the compatible.
 > 
 > 
 
 Applied, thanks!
 
-[1/3] phy: rockchip: usb: Simplify with scoped for each OF child loop
-      commit: 943dbe1470529d7191dccdb56ee0bff83d3606c5
-[2/3] phy: core: Simplify with scoped for each OF child loop
-      commit: 175b46f31fe60d7772fae19f731f282327cb333f
-[3/3] phy: renesas: rcar-gen2: Simplify with scoped for each OF child loop
-      commit: b64b32791fb557f922beebddf74c47baf338cef0
+[1/2] dt-bindings: phy: sc8280xp-qmp-pcie: Document Glymur PCIe Gen4 2-lanes PHY
+      commit: 25671c37821006392ff8c66e980475747bee4cde
+[2/2] phy: qcom: qmp-pcie: Add support for Glymur PCIe Gen4x2 PHY
+      commit: 085ba7c91df34e05366f9fecc9fa7a037598c30e
 
 Best regards,
 -- 
