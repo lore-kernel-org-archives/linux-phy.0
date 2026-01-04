@@ -4,169 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C081EFC618D
-	for <linux-phy@archiver.kernel.org>; Sat,  3 Jan 2026 21:05:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 44113C2A069
+	for <linux-phy@archiver.kernel.org>; Sun,  4 Jan 2026 01:37:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dFJj9EMjBhygOd+WPcYknG/WfOPfhdzxeM3i+jul/wo=; b=tYhOQrD9a/YSDO
-	H9KQA+85lMl7I3Azb9CA8GCvlndQiEEXeib7oFNsxB/gnf0CKgmPCyKPengbRy/6qlMPHjkvqM/bM
-	YHSkoLa8juhHatuLivFo6m0g6oihvBwdma0I9GmLZXWd/wOvkQ7sNCJwHVXuoiHUT7snv3LCQonvg
-	oM+RNTVb2uWm71E3DfFOYUdZed5q2HLEOLdwawfGl7IegeRDQvgErisFNgibfI/h8pMLIA/nWk2EQ
-	cEsvhqsnmd0hO0tT1mLQ6eNkPusZpBo0kFVTmCCNDjloObgg/cveIdAx+6BcMnc8oHCU2b+lnp9xU
-	/7oVKOsIp2EQeJXOiuEA==;
+	List-Owner; bh=UMLaeQwsPnPcfwbZpMs1bcPStfp6M2YNDOKxsWKipP8=; b=NFQFksjqfM3MT/
+	QhK9EyceAfzQiw4v31bfk1r1fHUaL01N46VUIDo9oCQciNFlbErkgabEVoioOAwMCqKcJJAm0OKP+
+	CwknKfhY22vsiorbLG45Y81OEUEeS0bs+BWRRZqwlQrUQHLuIRAoJp1TFdhH/wwKt6TvxGbOI4SlB
+	pUTDaM6kG9R7DDlGQ3sMWqGrgloMHwq4tp01zvyjoCBC5Pr1tjBnmh4oh2l78oj26ZEVuFSnxdEtE
+	BlkGlfCgBfqhT1GTAnA0X1gDrfB/CYsbD4l5j3oPbsKoKXOKYjAJg5kq8V8Y4+Mu4wgUXeiE9gnSj
+	dmXv+MfGnhfqIJeihs0Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vc8oi-00000009p9S-0aUM;
-	Sat, 03 Jan 2026 21:05:44 +0000
-Received: from mail-westeuropeazon11011036.outbound.protection.outlook.com ([52.101.70.36] helo=AS8PR04CU009.outbound.protection.outlook.com)
+	id 1vcD4A-00000009wOp-2bPZ;
+	Sun, 04 Jan 2026 01:37:58 +0000
+Received: from smtp81.cstnet.cn ([159.226.251.81] helo=cstnet.cn)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vc8oW-00000009oIP-1c6U;
-	Sat, 03 Jan 2026 21:05:36 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=yQ8S0UY6AJoeL1PcvC95nn+IViLdjySLux7sGnhICYRR/LtwTAVYXJG8d68N5VzCPhOHkryZJ5T35PNrF7HYTB4SZT/xTVmN89f/lFIPv57/D/qtxRWFpzLgkDb9yqskxtq/3n7NKhrsOQERc4CISV2D/j9jNEcjXwSsRjm4e9Unm+ul8s3ARYbYbV1gv5eYU+nM0u3fahdM9nzGTIxqTwNVhqDFedYngsqRmYZk215pS6PsDjcWgRwfzvyhE6h2HJnpKKtagTgqjGFtBv5Lex1G5mOHyQerC2je2IycMUzFXS0IuBv9nHm34S2QweQsxzLLyRxpg7LWbgpxIelumw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=+Eg89aQ9YDc9eStp3LDIEe/pefNUfKptlKojX+qfGOE=;
- b=bafORXPYgD8E3IbT0xs2Bvd95ZrL6NqVfIXCTKbOefWUI7gEdlmNh+D0PXVlgdC2y1qQew8ScL4XQ1j6OPbEREKjn39pvUMjX52W2Ejm4wVUkCPQytTooWIZgb68xDE6QVu1/SwWgLivjbXN3AA7gq+7xdtgs27nRTXDi0dJIP2bdK8fq41KPH0zNJ1B8KzudfrscA7FK6Ablmo7ExxioL0vpDnZAk/qzWANppMtMuiMqRYAQ+ealbh7lH9gUqbsWcJGFBGGxf3fAExTWe8wnKeqv/NNpJQTxvhabKCn8qd0MP0cKqaRmS40OAUsV2EPMA3QTBn9klNDmWu5Roy/bQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=+Eg89aQ9YDc9eStp3LDIEe/pefNUfKptlKojX+qfGOE=;
- b=IiXQxnAVLvCUDG/hBOKgyVr83sVJ0GojEzC1Y8F448BtSfiyjo2Z8gkemG9FoWZIhyJ9gAAKulKY9pqEYLze3qGuMWEG+qcgFDfeIr6pZ84lnTgHb145FenRKcC1yaFbmirsUr3cShg2I6wlcBv+J+A5t4kNQgSC0tmzYdOt8Wpfwr50ndFq5h3hXvnh//O9XEK+H64ppWWWfqxbeTk6pQrkfqpOqV+6YPLRZYwoMmCeq5nLiN3dvAn6Wphr60TK2bFMhRt/nzSdGrA8xrt/ePxMqqoI0SL49v+eOzLF70hKEs+yluGuS9gPBViUzdOfCiIqZr7iWhh8YfyzfahRKw==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from DU2PR04MB8584.eurprd04.prod.outlook.com (2603:10a6:10:2db::24)
- by AS8PR04MB8088.eurprd04.prod.outlook.com (2603:10a6:20b:3f7::24) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9478.4; Sat, 3 Jan
- 2026 21:05:21 +0000
-Received: from DU2PR04MB8584.eurprd04.prod.outlook.com
- ([fe80::3f9d:4a01:f53c:952d]) by DU2PR04MB8584.eurprd04.prod.outlook.com
- ([fe80::3f9d:4a01:f53c:952d%3]) with mapi id 15.20.9456.013; Sat, 3 Jan 2026
- 21:05:21 +0000
-From: Vladimir Oltean <vladimir.oltean@nxp.com>
-To: netdev@vger.kernel.org,
-	devicetree@vger.kernel.org,
-	linux-phy@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org,
-	Daniel Golle <daniel@makrotopia.org>,
-	Horatiu Vultur <horatiu.vultur@microchip.com>,
-	=?UTF-8?q?Bj=C3=B8rn=20Mork?= <bjorn@mork.no>,
-	Andrew Lunn <andrew@lunn.ch>,
-	Heiner Kallweit <hkallweit1@gmail.com>,
-	Russell King <linux@armlinux.org.uk>,
-	"David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>,
-	Paolo Abeni <pabeni@redhat.com>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Eric Woudstra <ericwouds@gmail.com>,
-	=?UTF-8?q?Marek=20Beh=C3=BAn?= <kabel@kernel.org>,
-	Lee Jones <lee@kernel.org>,
-	Patrice Chotard <patrice.chotard@foss.st.com>
-Subject: [PATCH v2 net-next 10/10] net: pcs: pcs-mtk-lynxi: deprecate "mediatek,pnswap"
-Date: Sat,  3 Jan 2026 23:04:03 +0200
-Message-Id: <20260103210403.438687-11-vladimir.oltean@nxp.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20260103210403.438687-1-vladimir.oltean@nxp.com>
-References: <20260103210403.438687-1-vladimir.oltean@nxp.com>
-X-ClientProxiedBy: AS4P195CA0027.EURP195.PROD.OUTLOOK.COM
- (2603:10a6:20b:5d6::16) To DU2PR04MB8584.eurprd04.prod.outlook.com
- (2603:10a6:10:2db::24)
+	id 1vcD46-00000009wNu-3jb4;
+	Sun, 04 Jan 2026 01:37:57 +0000
+Received: from duge-virtual-machine (unknown [223.160.207.26])
+	by APP-03 (Coremail) with SMTP id rQCowAAXFbxDxFlp5eBIAw--.15S2;
+	Sun, 04 Jan 2026 09:37:09 +0800 (CST)
+Date: Sun, 4 Jan 2026 09:37:07 +0800
+From: Jiayu Du <jiayu.riscv@isrc.iscas.ac.cn>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: conor@kernel.org, gregkh@linuxfoundation.org, pjw@kernel.org,
+	palmer@dabbelt.com, aou@eecs.berkeley.edu, alex@ghiti.fr,
+	neil.armstrong@linaro.org, krzk+dt@kernel.org,
+	linux-riscv@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-usb@vger.kernel.org
+Subject: Re: [PATCH 4/5] phy: usb: Add driver for Canaan K230 USB 2.0 PHY
+Message-ID: <aVnEQ4+coOd397Hk@duge-virtual-machine>
+References: <20251230023725.15966-1-jiayu.riscv@isrc.iscas.ac.cn>
+ <20251230023725.15966-5-jiayu.riscv@isrc.iscas.ac.cn>
+ <aVZQ4YVXGryHz0ds@vaman>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DU2PR04MB8584:EE_|AS8PR04MB8088:EE_
-X-MS-Office365-Filtering-Correlation-Id: 3e3f67d3-5518-455b-577e-08de4b0bcd24
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|7416014|52116014|376014|1800799024|366016|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?VSkvHjXzV7o2JOAEpIGg70AqdYSVk5fMT6zrRDKpAuXVGGUA0mtNwS1LPGAe?=
- =?us-ascii?Q?V5fbulgwjb71wZL0eGpBj9gmr1Uxf4FF90Uf2h5CAE834+D66aSeXVxIyYHN?=
- =?us-ascii?Q?RgkywFtWmJQrVDgPQpD4FVXJgJAdaucL7N0Tv4TdZyugVtVQOg678Y7P0P+s?=
- =?us-ascii?Q?2hKAwlWFETokfVoP0TA17ejgtJhMTzEiIbPFCsnCFVzFVObbKMNN4P2jKr63?=
- =?us-ascii?Q?asHZSNq34MRV5WxyFFraqRta2rIAaOVG4x6fvfYnrZTok1Ky8jbGIJmvmrd/?=
- =?us-ascii?Q?OCqaYV7CKug7CeyBvzLOie+MdMJwVUwoqXQ2zD7akGljj4OQwZFsaURiLneD?=
- =?us-ascii?Q?NdGSPv8HR1Yk6VWh1hdPiuY5NgFe7DBs397QmwziWM+MJPAjBi333qShDGlb?=
- =?us-ascii?Q?b2kOP0hVOxXwgKKJ3dIYLS9u9pykOQWHmGVxITotGgh3tZxOk7ePOhuDN0me?=
- =?us-ascii?Q?3Csk4ePX9V8y+QpeqTLMKQSCtXmYrQTVJAtFScISja0WAqiQs00YhTOiUOrR?=
- =?us-ascii?Q?bEuQQswUek6KlmC9NI/ppV8/JfaSQuHNksQ5L9CAJAVvrgxtoX5tkUniBi6g?=
- =?us-ascii?Q?H2/XiDeqh6Mb88BTrn4nEcZZ7u0DnzgoyMKiQvpJ2yA/YE5ZhVVf5gltDU9e?=
- =?us-ascii?Q?AjlXLGLoVRWnFm8jTTWje/bsS14S63N1b5L5JcfotHAs2/Gnf5qkeO1CutLx?=
- =?us-ascii?Q?4cR6KY874U24Gf11jUfDKJMqwlUyRkxx3Rz5AIcEdOdscwD+iWqXV1nXq9W/?=
- =?us-ascii?Q?iUDmKUfzLRqRjOOFaaqfto4V4d5rBYxI04H4udmnBG0GCfd43MBBrow6s/2L?=
- =?us-ascii?Q?nOkNER09kNr0rKaq5GTc4ONhLxJz9RuDTX9iyMkx65TI5fxrnmHOMN30/6l6?=
- =?us-ascii?Q?c5IqF9LM7uovTUPLmHmiijV4UDmCmBFh1sgfDwzkgkFOrfkGMDhGcD7x0yxW?=
- =?us-ascii?Q?lIcn/RmYcZUnIF3iVPs66poxCKzcn5ND+yufBMjKnAbnktxYP2/aWgqH2ftg?=
- =?us-ascii?Q?8F83w53dahto6Qvi5hEjIDRbdGN/rGFQE+SxoP6RHP/p1ugzp5lP59Iv7XfQ?=
- =?us-ascii?Q?3wanxyHxDS8F6SgY9NCV05RhVcvxVcykYYsEw5hwdWZCSqMH8dSoDoTQORlg?=
- =?us-ascii?Q?27MZ4Qu4PRqcuBduo2jLYBIQTWGd8zDov1BHjHcOBDIAzhPLabkPzRf1XpSs?=
- =?us-ascii?Q?OSbsjLT2kND/AlIuo2sjaQL8pIoF03IwSi1Y89hx7vYLEro/lJSqSX0Wh8xd?=
- =?us-ascii?Q?tgjaTIKtCgr3gjmPhUmwrqBVe/HpKgE+x4SFRqtG3XW3BleqbDx7f0kvV4eE?=
- =?us-ascii?Q?03nFVWaP3M0qCcAhaYKYWQ+95P4+pV3MU53fFOVGAUnX73UzrnZKbIQMx881?=
- =?us-ascii?Q?cmqmQ2ffK0InPp2X+M+kyECnLy8kUvnAhpXW4diycVL64JrbBEqfRn2bZRSh?=
- =?us-ascii?Q?QPleEN265nx54dSiS6tBWfhZZEpORmFwGfG3gTiN/1l40V+dUV2jmwkYbjT+?=
- =?us-ascii?Q?MMRumKV8hJzdwAak1nbaJ1mtDqbaLa6nmwkI?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DU2PR04MB8584.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(7416014)(52116014)(376014)(1800799024)(366016)(38350700014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?lf+o/qfk0EWFeHX0AfhD72XvAl5HJxTJmHwWNIrNj7zqEonF83Ph4KVbJ3Ab?=
- =?us-ascii?Q?frlVo9OEfSWbGPm/MMZWMvn+qqk5szzJu6361Yfuvd7nYImMoS1GDaClHI9w?=
- =?us-ascii?Q?jYbrt7muud7jJrjeu1QE1lmELgKdqwOD7qWMq2bdH0dx5+5F6snCMWqAbsc4?=
- =?us-ascii?Q?Oed2pq/Ags298o3lA7KVz8u01YqKhv+rbJUsqif/jUd5i/AOylLCwSTEhsmT?=
- =?us-ascii?Q?63lNZJwXYBBR5+7OsoZSKx7x7qhTxJMPgtFKwY0EoSqNZ5Tqg1FgutkHhm+v?=
- =?us-ascii?Q?i23qyzz2un1Uj0i0Rp1gvU95uwRxJb8cGn3oGTriC8CuxTHFhB+o3EHqBaFZ?=
- =?us-ascii?Q?iRTYEDmHk/+BdT7TgE4HScb3/UlxiVJrGNKotJAxwuyYXHvrsndfpj1LPMj8?=
- =?us-ascii?Q?AjnZ7XinddpQ7mUdxDf5FVrTyFebAfSTsQKT0Ii1eHXh/aSx3TWwAqjj1jSK?=
- =?us-ascii?Q?P7z9zZiYl0Q1m+RHZ1TzAAbF3g7kLRZwYnzBntZZ5U0nFayV1mKz8c14MkfW?=
- =?us-ascii?Q?cqcGLPnTwyVtr/66U5G4yr364FQBmQP6OZQkXfu3yJqyOjGSXa+Gaf3A22ZA?=
- =?us-ascii?Q?UeWbpzTpa+mDP72Aku6xvaHfdXwO2iBujuCxTPhYkI/+YFVDGkdgBBTDETp7?=
- =?us-ascii?Q?eqlFlYiFL2v/wTg8SMESbrd4KcLg/V2Q/cdYQ2RPSFd0Xinq6jOPXV8WPVoE?=
- =?us-ascii?Q?Jo9HdgKlsqYVIy+XV09eDo2zIWigbiz3n9E0pGKsU6oclnauOHPWIAoCXuf2?=
- =?us-ascii?Q?6mwvt4bM6VSQvZQ8bZoKujYWp3f8MtNoxOK2rdM9YjwcfpO3xRG5YL+U9dXi?=
- =?us-ascii?Q?cShbLMypd7G9+z+Gi3BF9FhyMjRJPdg/DeIoKIBsZUe3XXT3FF6b93/aKukG?=
- =?us-ascii?Q?pJDpDYfmWeN0b/enV05QU/RSi9CgH2EczexzAlUagOPJgx73CfPv8OZ+33XA?=
- =?us-ascii?Q?zoEvB3lb4f2nqwXjUQt3j+39pKcKBFrt7dGT3+Dz5zGq1Hd9dS3t2TWxtQcS?=
- =?us-ascii?Q?5DpyiBUZqYuFMW/pR9WawLoFU1b9Vfr2AxaKu1670+sadh8SAi9+unBpQe9D?=
- =?us-ascii?Q?PP96E6cQGUCAg09cveVunsJd5I84N0F0lDQuYaMwfxZYw/t0UyKyXnrrsG4u?=
- =?us-ascii?Q?GLdKxUu78S8emv05kWyYKJuem71qCpmY+fq3qsVHSIlqMN1w33PhSrovAQ5S?=
- =?us-ascii?Q?sVBkPmpGvTXNL3n7Chryo6RXzASW8bQUsmo07O7QqfvTEZFceOsj3kGnUkIc?=
- =?us-ascii?Q?1YnXJJMcr2aahNoA1VaIAKkSZaccbTwQMNyoMmwUEtvMt87KDqz5x+pbrh+Q?=
- =?us-ascii?Q?n9S8d79ZopGBo/gT+XhPUfq6aax7nriuISpEFRUp8GGHuAVw/P5COWCBoEzb?=
- =?us-ascii?Q?y0rSmxFxBqwsRhryEN0IO7RbOWt3RqyRDVyTTTshAbi4D/CvzulqqSVIBhZb?=
- =?us-ascii?Q?2+Tp5pauoZn37KfM7eXZlaID8iSvuMIlwzoHYvC7tA0nEtTxWbdECQ/pKUDx?=
- =?us-ascii?Q?xlY7eNOgcRTAXSmHF5nP108tx4x9cIQ0pbgdIWsQ9y1xQMlNZ8MItAGodQ4H?=
- =?us-ascii?Q?BZ/qgfS9rsnytNSLZ4bpD+rCXe+iUnBG+Q1iEIwin75CppiPf2RVx2SD6W+0?=
- =?us-ascii?Q?8HNpy/j4sMYs5RVvTJWEkj86rwoTGndK8rqeJdl2+jmxfB57B/PJJR7vmD2w?=
- =?us-ascii?Q?Ls7H2p6lNLUNjitpQw/i0+Fig7sDTUV3C4r/I8bmaEgInaYxMMjcMuE3dy9l?=
- =?us-ascii?Q?j8YuYJOrKAuL9IcH4RLGw/ouyMKOkyM=3D?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 3e3f67d3-5518-455b-577e-08de4b0bcd24
-X-MS-Exchange-CrossTenant-AuthSource: DU2PR04MB8584.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Jan 2026 21:05:21.0347
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: tuRHOYFqpsbTVsTQgen5cJjRRXahlEf4RFqC1rlBLqNGsX4UPFw3vHG3++yMRzuymN0Vul3obuEPFOS3rMxdZg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB8088
+Content-Disposition: inline
+In-Reply-To: <aVZQ4YVXGryHz0ds@vaman>
+X-CM-TRANSID: rQCowAAXFbxDxFlp5eBIAw--.15S2
+X-Coremail-Antispam: 1UD129KBjvJXoW7WFykWr1xAryUKFy5uw1ftFb_yoW8WFWxpa
+	95Ja1UtFs7WF40vFsF9w18Ja4SqFZ3GwnI9w15CrWvqas0qrW0kFy3CFs8Z3Z7WF1kZr10
+	yrW8ta48uFn8uaDanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDU0xBIdaVrnRJUUUvvb7Iv0xC_Kw4lb4IE77IF4wAFF20E14v26r4j6ryUM7CY07I2
+	0VC2zVCF04k26cxKx2IYs7xG6r1S6rWUM7CIcVAFz4kK6r1j6r18M28lY4IEw2IIxxk0rw
+	A2F7IY1VAKz4vEj48ve4kI8wA2z4x0Y4vE2Ix0cI8IcVAFwI0_Jr0_JF4l84ACjcxK6xII
+	jxv20xvEc7CjxVAFwI0_Gr0_Cr1l84ACjcxK6I8E87Iv67AKxVWUJVW8JwA2z4x0Y4vEx4
+	A2jsIEc7CjxVAFwI0_Gr0_Gr1UM2AIxVAIcxkEcVAq07x20xvEncxIr21l5I8CrVACY4xI
+	64kE6c02F40Ex7xfMcIj6xIIjxv20xvE14v26r1j6r18McIj6I8E87Iv67AKxVWUJVW8Jw
+	Am72CE4IkC6x0Yz7v_Jr0_Gr1lF7xvr2IY64vIr41lFIxGxcIEc7CjxVA2Y2ka0xkIwI1l
+	c7CjxVAaw2AFwI0_Jw0_GFyl42xK82IYc2Ij64vIr41l4I8I3I0E4IkC6x0Yz7v_Jr0_Gr
+	1lx2IqxVAqx4xG67AKxVWUJVWUGwC20s026x8GjcxK67AKxVWUGVWUWwC2zVAF1VAY17CE
+	14v26r1q6r43MIIYrxkI7VAKI48JMIIF0xvE2Ix0cI8IcVAFwI0_Jr0_JF4lIxAIcVC0I7
+	IYx2IY6xkF7I0E14v26r4j6F4UMIIF0xvE42xK8VAvwI8IcIk0rVWUJVWUCwCI42IY6I8E
+	87Iv67AKxVWUJVW8JwCI42IY6I8E87Iv6xkF7I0E14v26r4j6r4UJbIYCTnIWIevJa73Uj
+	IFyTuYvjxUqiFxDUUUU
+X-Originating-IP: [223.160.207.26]
+X-CM-SenderInfo: 5mld534oul2uny6l223fol2u1dvotugofq/
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260103_130532_473652_BC5DDEEC 
-X-CRM114-Status: GOOD (  17.97  )
+X-CRM114-CacheID: sfid-20260103_173755_299361_80CFA6D9 
+X-CRM114-Status: GOOD (  13.65  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -183,130 +84,75 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Prefer the new "rx-polarity" and "tx-polarity" properties, which in this
-case have the advantage that polarity inversion can be specified per
-direction (and per protocol, although this isn't useful here).
+On Thu, Jan 01, 2026 at 04:18:01PM +0530, Vinod Koul wrote:
+> On 30-12-25, 10:37, Jiayu Du wrote:
+> > Add driver for the USB 2.0 PHY in Canaan K230 SoC, which supports PHY
+> > initialization, power management and USB mode switching.
+> > 
+> > Add Kconfig/Makefile under drivers/phy/canaan/.
+> > 
+> > Signed-off-by: Jiayu Du <jiayu.riscv@isrc.iscas.ac.cn>
+...
+> > +#define TEST_CTL3_OFFSET	0x0C
+> 
+> Lowercase hex values please.. do you need a test register :-)
 
-We use the vendor specific ones as fallback if the standard description
-doesn't exist.
+Sorry, I will convert the hex to lowercase.
 
-Daniel, referring to the Mediatek SDK, clarifies that the combined
-SGMII_PN_SWAP_TX_RX register field should be split like this: bit 0 is
-TX and bit 1 is RX:
-https://lore.kernel.org/linux-phy/aSW--slbJWpXK0nv@makrotopia.org/
+In the TRM manual, the registers are named TEST_CTL and they are
+used to describe the otg0 phy port control. The TRM manual is here[1].
+The description of this register is located on page 1015.
 
-Suggested-by: Daniel Golle <daniel@makrotopia.org>
-Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
----
-v1->v2: patch is new
+Therefore, I have retained the names as stated in the TRM manual.
 
- drivers/net/pcs/Kconfig         |  1 +
- drivers/net/pcs/pcs-mtk-lynxi.c | 50 +++++++++++++++++++++++++++++----
- 2 files changed, 45 insertions(+), 6 deletions(-)
+Link:
+https://kendryte-download.canaan-creative.com/developer/k230/HDK/K230%E7%A1%AC%E4%BB%B6%E6%96%87%E6%A1%A3/K230_Technical_Reference_Manual_V0.3.1_20241118.pdf
+[1]
 
-diff --git a/drivers/net/pcs/Kconfig b/drivers/net/pcs/Kconfig
-index ecbc3530e780..5f94a11f6332 100644
---- a/drivers/net/pcs/Kconfig
-+++ b/drivers/net/pcs/Kconfig
-@@ -20,6 +20,7 @@ config PCS_LYNX
- 
- config PCS_MTK_LYNXI
- 	tristate
-+	select GENERIC_PHY_COMMON_PROPS
- 	select REGMAP
- 	help
- 	  This module provides helpers to phylink for managing the LynxI PCS
-diff --git a/drivers/net/pcs/pcs-mtk-lynxi.c b/drivers/net/pcs/pcs-mtk-lynxi.c
-index 7f719da5812e..74dbce205f71 100644
---- a/drivers/net/pcs/pcs-mtk-lynxi.c
-+++ b/drivers/net/pcs/pcs-mtk-lynxi.c
-@@ -11,6 +11,7 @@
- #include <linux/mdio.h>
- #include <linux/of.h>
- #include <linux/pcs/pcs-mtk-lynxi.h>
-+#include <linux/phy/phy-common-props.h>
- #include <linux/phylink.h>
- #include <linux/regmap.h>
- 
-@@ -62,8 +63,9 @@
- 
- /* Register to QPHY wrapper control */
- #define SGMSYS_QPHY_WRAP_CTRL		0xec
--#define SGMII_PN_SWAP_MASK		GENMASK(1, 0)
--#define SGMII_PN_SWAP_TX_RX		(BIT(0) | BIT(1))
-+#define SGMII_PN_SWAP_RX		BIT(1)
-+#define SGMII_PN_SWAP_TX		BIT(0)
-+
- 
- /* struct mtk_pcs_lynxi -  This structure holds each sgmii regmap andassociated
-  *                         data
-@@ -121,6 +123,42 @@ static void mtk_pcs_lynxi_get_state(struct phylink_pcs *pcs,
- 					 FIELD_GET(SGMII_LPA, adv));
- }
- 
-+static int mtk_pcs_config_polarity(struct mtk_pcs_lynxi *mpcs,
-+				   phy_interface_t interface)
-+{
-+	struct fwnode_handle *fwnode = mpcs->fwnode, *pcs_fwnode;
-+	unsigned int pol, default_pol = PHY_POL_NORMAL;
-+	unsigned int val = 0;
-+	int ret;
-+
-+	if (fwnode_property_read_bool(fwnode, "mediatek,pnswap"))
-+		default_pol = PHY_POL_INVERT;
-+
-+	pcs_fwnode = fwnode_get_named_child_node(fwnode, "pcs");
-+
-+	ret = phy_get_rx_polarity(pcs_fwnode, phy_modes(interface),
-+				  BIT(PHY_POL_NORMAL) | BIT(PHY_POL_INVERT),
-+				  default_pol, &pol);
-+	if (ret) {
-+		fwnode_handle_put(pcs_fwnode);
-+		return ret;
-+	}
-+	if (pol == PHY_POL_INVERT)
-+		val |= SGMII_PN_SWAP_RX;
-+
-+	ret = phy_get_tx_polarity(pcs_fwnode, phy_modes(interface),
-+				  BIT(PHY_POL_NORMAL) | BIT(PHY_POL_INVERT),
-+				  default_pol, &pol);
-+	fwnode_handle_put(pcs_fwnode);
-+	if (ret)
-+		return ret;
-+	if (pol == PHY_POL_INVERT)
-+		val |= SGMII_PN_SWAP_TX;
-+
-+	return regmap_update_bits(mpcs->regmap, SGMSYS_QPHY_WRAP_CTRL,
-+				  SGMII_PN_SWAP_RX | SGMII_PN_SWAP_TX, val);
-+}
-+
- static int mtk_pcs_lynxi_config(struct phylink_pcs *pcs, unsigned int neg_mode,
- 				phy_interface_t interface,
- 				const unsigned long *advertising,
-@@ -130,6 +168,7 @@ static int mtk_pcs_lynxi_config(struct phylink_pcs *pcs, unsigned int neg_mode,
- 	bool mode_changed = false, changed;
- 	unsigned int rgc3, sgm_mode, bmcr;
- 	int advertise, link_timer;
-+	int ret;
- 
- 	advertise = phylink_mii_c22_pcs_encode_advertisement(interface,
- 							     advertising);
-@@ -169,10 +208,9 @@ static int mtk_pcs_lynxi_config(struct phylink_pcs *pcs, unsigned int neg_mode,
- 		regmap_set_bits(mpcs->regmap, SGMSYS_RESERVED_0,
- 				SGMII_SW_RESET);
- 
--		if (fwnode_property_read_bool(mpcs->fwnode, "mediatek,pnswap"))
--			regmap_update_bits(mpcs->regmap, SGMSYS_QPHY_WRAP_CTRL,
--					   SGMII_PN_SWAP_MASK,
--					   SGMII_PN_SWAP_TX_RX);
-+		ret = mtk_pcs_config_polarity(mpcs, interface);
-+		if (ret)
-+			return ret;
- 
- 		if (interface == PHY_INTERFACE_MODE_2500BASEX)
- 			rgc3 = SGMII_PHY_SPEED_3_125G;
--- 
-2.34.1
+> > +	FIELD_PREP(USB_CTL0_PLLPTUNE_MASK, 0xC) | \
+> 
+> lower hex here and rest
+
+I will fix it in v2.
+
+> 
+> > +	ret = regmap_update_bits(phy->regmap, phy->reg_test_offset +
+> > +				 TEST_CTL3_OFFSET, val, val);
+> 
+> so we are writing to a test register..?
+
+As I mentioned above, this is actually otg0 phy port control
+register.
+
+> > +	int ret;
+> > +	u32 offset;
+> > +	struct regmap *regmap;
+> > +	struct phy *generic_phy;
+> > +	struct k230_usb_phy *phy;
+> > +	struct phy_provider *provider;
+> > +	struct device *dev = &pdev->dev;
+> 
+> reverse christmas  tree order would look better...
+
+I will fix it in v2.
+
+> > +
+> > +
+> 
+> why two lines...?
+
+I will fix it in v2.
+
+> 
+> > +MODULE_LICENSE("GPL");
+> > -- 
+> > 2.52.0
+> 
+> -- 
+> ~Vinod
+
+Regards,
+Jiayu Du
 
 
 -- 
