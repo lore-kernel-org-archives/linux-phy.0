@@ -4,154 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0E38CC2A074
-	for <linux-phy@archiver.kernel.org>; Sun,  4 Jan 2026 11:46:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0DF47C2A06C
+	for <linux-phy@archiver.kernel.org>; Sun,  4 Jan 2026 21:18:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NMGfy1GpJafLp8O1bgMtUGaT9/WWgThtDFawDq1cjwc=; b=B3CegUz667GEPb
-	4uE9jc/E4ZjEebBLfMG+ywoUhHbj8BpezvWlqpYcB26nedEGPvFCYQbQSH4I3a5DqWfp1axcFUEaQ
-	MuSqYYOnVRE1SQdyl1fCsjux7Ak30/C3dJORDvYS47n3hw7johIhKNjWlUf/vcVJnTQRl+ihoBIq9
-	qQWf9K4Mtsc3ezYQ09lTuLtBiLtH1qcVi7jGQxJPKJXEg/aLCuvIe213T2XEC8Ea7Zmmn5JRcr2o/
-	8sxoZBXUD3ZKV+jN1BaOdqERisRdtLOLQS94wZUBikc0IsUBTAJD210hhWlHJoqwrDszH6AmFyDXE
-	rCph6+tVej3FoTxGQuXA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
+	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=byTMuRuOIr5RdkjeggUH713K9WTjXqsk2oDl0kB/nxo=; b=ZM0/+OFYuh3NtP
+	6ssWkw597Sy7lMdJ9Fp0wjlEZm2JIU3xyjUBpODrzwfnCina/2ZIDCBkEhhxAihRvvmI8RNRmoj2P
+	adWIQwyuRs3efKgJRzDX5c45vfOY2XavcT6LGuo+5sRnJht5U1ClPiJdqINfHjHbq7O2zrK8b/n36
+	HdatNsJ7vmvVZzvgtp7tIZXkvIfvSMXB+tYch0xwzHH34Qya4TSXRM5XwO7I/raEUniBNkAIt3MYn
+	yfF0ZqbDuPs3hhZa8bUcfb2ngtf3/Ox5CYFvSCOdjkqH43kgigNJZBoE5HiK8BMN/nUf3cNZKQ3PI
+	2QGUAwsPEE4K4eADcscQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vcMZR-0000000ACdj-355a;
-	Sun, 04 Jan 2026 11:46:53 +0000
-Received: from mail-northcentralusazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c105::1] helo=CH1PR05CU001.outbound.protection.outlook.com)
+	id 1vcVUo-0000000ASqq-2VYs;
+	Sun, 04 Jan 2026 21:18:42 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vcMZO-0000000ACcz-1bTR;
-	Sun, 04 Jan 2026 11:46:51 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=gYzv3SADKEWc/vTYrEJpHn/u2TKLIG7l0ehBel73SPbtYzHETHCcVjuoMj7h7EuC9k3GwogteVdEOCqt8h/vZHMsw6sCgIdSVTWSbkW8qpqIW6ZZYWfzwtg3DUR82pBG+5m0g9DbY87tJgY4LKA78M4O1GnaDMjJle6H/nb5B1s/A8kjOQKQH5BVbY91lEDfrVBi4OYISbWbatcbLMQKjxdAUw98zGFxVUfbXllepSTUwaOA4uJ7GDc1nFgPlkjb8iQAx8rpClyiG8IJq74F5rDGUDXf8w1RHlNyvtHm+tz7CpFEkpKQgl/Uya/4I+mCo6S4b8jadbkmekT2GGQ/yQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=fea+kQGkvvXPIv49NDxKAAnZ1Rg/TYrLnMgNtwsPdXE=;
- b=ybnybQXGJV53WN7F21OEWWrZOWZMFUZF3jmKZgokR9TH17q7KGrrHictN1PlI8V7Z1ZZ6XmUJGoysaPrBUhFZYTlt+8K7V9LJln2Gtc1LMS2ZfTTcuDEf3CW8qUFHfPUsIXU3yq4s1/xouHVVFNk0zx1irWkYDpL9ntbLVczJz4YLU1aR6FgxmLce6XNptWYF5wiOHZGpG9PzeveUeaSIE8FT0qTX8/qSUPcP4xIMths9c6JGBV7iBGwkbLZJTiBVFnG8/UekZGrnKti/C0c+1dtMecm+4lveL7FWe0X1nBapqC/iXwEw2VFPGb8lZ4a+ThZ8oOrPBAabTOHS4L4KA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 198.47.23.195) smtp.rcpttodomain=lists.infradead.org smtp.mailfrom=ti.com;
- dmarc=pass (p=quarantine sp=none pct=100) action=none header.from=ti.com;
- dkim=none (message not signed); arc=none (0)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=fea+kQGkvvXPIv49NDxKAAnZ1Rg/TYrLnMgNtwsPdXE=;
- b=ciHXd6JPbkQTSMOeYRpiptKp+kjNNnpEVLb8Qb+KPUlo9CvpHYrnqIWgf60SBuLtOtXM+hop6U6GX8K8HiamzPJmotJQ/YtI6KeyOzOMwZX42uaDeM0/yVMATSZ/w9DoJuRhiL56pp2h3nzoSnSabzpiqo2uHdnIDNSSxqNxglg=
-Received: from BY5PR04CA0026.namprd04.prod.outlook.com (2603:10b6:a03:1d0::36)
- by BN0PR10MB4917.namprd10.prod.outlook.com (2603:10b6:408:116::12) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9478.4; Sun, 4 Jan
- 2026 11:46:46 +0000
-Received: from SJ1PEPF00002319.namprd03.prod.outlook.com
- (2603:10b6:a03:1d0:cafe::fc) by BY5PR04CA0026.outlook.office365.com
- (2603:10b6:a03:1d0::36) with Microsoft SMTP Server (version=TLS1_3,
- cipher=TLS_AES_256_GCM_SHA384) id 15.20.9478.4 via Frontend Transport; Sun, 4
- Jan 2026 11:46:45 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 198.47.23.195)
- smtp.mailfrom=ti.com; dkim=none (message not signed) header.d=none;dmarc=pass
- action=none header.from=ti.com;
-Received-SPF: Pass (protection.outlook.com: domain of ti.com designates
- 198.47.23.195 as permitted sender) receiver=protection.outlook.com;
- client-ip=198.47.23.195; helo=lewvzet201.ext.ti.com; pr=C
-Received: from lewvzet201.ext.ti.com (198.47.23.195) by
- SJ1PEPF00002319.mail.protection.outlook.com (10.167.242.229) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.9499.1 via Frontend Transport; Sun, 4 Jan 2026 11:46:45 +0000
-Received: from DLEE202.ent.ti.com (157.170.170.77) by lewvzet201.ext.ti.com
- (10.4.14.104) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Sun, 4 Jan
- 2026 05:46:43 -0600
-Received: from DLEE203.ent.ti.com (157.170.170.78) by DLEE202.ent.ti.com
- (157.170.170.77) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Sun, 4 Jan
- 2026 05:46:43 -0600
-Received: from lelvem-mr06.itg.ti.com (10.180.75.8) by DLEE203.ent.ti.com
- (157.170.170.78) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20 via Frontend
- Transport; Sun, 4 Jan 2026 05:46:43 -0600
-Received: from [10.249.139.123] ([10.249.139.123])
-	by lelvem-mr06.itg.ti.com (8.18.1/8.18.1) with ESMTP id 604BkbYI3541868;
-	Sun, 4 Jan 2026 05:46:38 -0600
-Message-ID: <34f809e1-4a39-4c8c-bc63-3f66d1ef355b@ti.com>
-Date: Sun, 4 Jan 2026 17:16:36 +0530
+	id 1vcVUl-0000000ASqJ-16ps;
+	Sun, 04 Jan 2026 21:18:40 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 1F0C1409B3;
+	Sun,  4 Jan 2026 21:18:38 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id E81C4C4CEF7;
+	Sun,  4 Jan 2026 21:18:37 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1767561518;
+	bh=qmsbKPbX1+sTQZ0QzAzI0MrRK6GYbgNVPa9s4pvCfbc=;
+	h=From:Date:Subject:To:Cc:From;
+	b=aCl9K+CB2+aZuzO65xUsu9TKwmmGuVlnCCobp4NwalzEh9zavwlCG1D/cRf6fGpMy
+	 gkNnngON4M6X77TNYSlCLiyJK5nuyj6E0aHLIM9C3QkR7xvD8KC69vBFOkQL5CJI+t
+	 FWwCitey73izmA0WpJ2c1s89JGvTHODpSenyQ8y2Ok19EsKHBsbrMieLhRzGacljYE
+	 dFA268A1/8fiPS2UDwjSkgayWQXoPRLAgFTI9TV9Z6qJiWTOBhXAkVsR4gxI5TQY+N
+	 5greOSht/FkAJeoCGShLrOFTmfQIoFYzraOsKelMTHoayFEifvsga2b4+8BJ7Im8Fk
+	 i/UeLHfMSwUSw==
+Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
+	by smtp.lore.kernel.org (Postfix) with ESMTP id DFA84C2A06C;
+	Sun,  4 Jan 2026 21:18:37 +0000 (UTC)
+From: Sven Peter <sven@kernel.org>
+Date: Sun, 04 Jan 2026 22:18:31 +0100
+Subject: [PATCH next] phy: apple: atc: Actually check return value of
+ devm_apple_tunable_parse
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/2] dt-bindings: phy: Add PHY_TYPE_XAUI definition
-To: Krzysztof Kozlowski <krzk@kernel.org>
-CC: <vkoul@kernel.org>, <neil.armstrong@linaro.org>, <robh@kernel.org>,
-	<krzk+dt@kernel.org>, <conor+dt@kernel.org>, <sjakhade@cadence.com>,
-	<rogerq@kernel.org>, <linux-phy@lists.infradead.org>,
-	<linux-kernel@vger.kernel.org>, <devicetree@vger.kernel.org>,
-	<linux-arm-kernel@lists.infradead.org>, <srk@ti.com>, <s-vadapalli@ti.com>
-References: <20251224054905.763399-1-s-vadapalli@ti.com>
- <20251224054905.763399-2-s-vadapalli@ti.com>
- <20251227-airborne-energetic-kingfisher-adc4fb@quoll>
-Content-Language: en-US
-From: Siddharth Vadapalli <s-vadapalli@ti.com>
-In-Reply-To: <20251227-airborne-energetic-kingfisher-adc4fb@quoll>
-X-C2ProcessedOrg: 333ef613-75bf-4e12-a4b1-8e3623f5dcea
-X-EOPAttributedMessage: 0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: SJ1PEPF00002319:EE_|BN0PR10MB4917:EE_
-X-MS-Office365-Filtering-Correlation-Id: 780a457c-1eae-4f8e-7a6e-08de4b86f008
-X-LD-Processed: e5b49634-450b-4709-8abb-1e2b19b982b7,ExtAddr
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|82310400026|1800799024|36860700013|7416014|376014;
-X-Microsoft-Antispam-Message-Info: =?utf-8?B?SjFvbTNPaVlEbEppbS9QQVovdjg3V0tkQ2pBK0hraVdlR3UvNWt2ZVRteW5M?=
- =?utf-8?B?NzkzWkxza3k1Y2dOQ1VZQzVDK3dsUStXUGVNS0IxM2FuTXJic0xBRjF5ZE1v?=
- =?utf-8?B?bTRYZGRneUdYa1dWQ1IrNlQrRUFjY0pEUms4QUtKVGZpTVNqa0h3RXRpNGZU?=
- =?utf-8?B?L3JUUjdFZnFwUkZtVUt1Z0VzTDJ0TUZlMEcwNndpZU9sTlFoY1NCK3IxM1R2?=
- =?utf-8?B?emU2LzBrN0xUTTBaOG1XN1lpRzdWbTU3d2tnZzJEZkZtemRYZkp2ZE5uMFEx?=
- =?utf-8?B?aUFGRndzakNvT3BBUlpXSW03QTdXc1ZNVkFkZ2J2NEs5YmYvZ2RETjVpc1hS?=
- =?utf-8?B?dGM5WWFqdlpDKzFVQ1ZoTzFWVTFqYWN4aWlUTUJyLzl3cGxLMXBBRE9KcnRj?=
- =?utf-8?B?cUVJL0tYeHFhQ09XOVNaa2ZUMFo2cUdrb2ZqVTJqRGJhWWxKSmN1SlBpZGNM?=
- =?utf-8?B?Wmd4andUelkzYnJaYWc2djVJL0RidVhRemRrQ3Y2di9DYWVYU2kwQjZJV01a?=
- =?utf-8?B?aks2bHRkTTJzUkp6SzhGelNZTEcwNnVOMjYwc0RqcTR6bmlXU0tBcm52ZU1s?=
- =?utf-8?B?SlRIaHNDNHpaR2kwZGtBTDNFVjFMMFJyNUU0VG1oVWx5NGJnMFB0MGNMY0lq?=
- =?utf-8?B?L1VTUGdQamUrREZ4M3N3bXNzaDgyZ3ZuRHpvS3VCRGt4Y2lNWUhiTjE0aUtJ?=
- =?utf-8?B?eHlNT01PMzE0ZkQycjhxcUJxMjRNWU9KcUtSNEZYZzBPcThlRG1xRi9Vcm5w?=
- =?utf-8?B?RG5LSlBGc2Q3aUF0cW9qa0xaUHJsYTdON1JsbGJtTnljL0RzcE8zTWZ5K2hw?=
- =?utf-8?B?WHRtTklVamcyNUxwd3Z1S0FTbVBVbFprTHl0V1puOUNOcC9EY3R3azZ6ckky?=
- =?utf-8?B?TmNWVkFzVzlQSzRic0pMbExWV2gwT2FJMjVJTGJWeWVCWklTanBkY1V6VEx1?=
- =?utf-8?B?MU5LRHlNbmw0VG1GbFpTYlA0WXZyQW1MVFBuQW1SNU9vdGlmYXF5dUtBRUM3?=
- =?utf-8?B?VkM4TlZzVnc2Umk3dWFub3lTbHlCSFd2dmxRQlIxUHFWRDVRMVpOZkJvSmQz?=
- =?utf-8?B?dzNLVDBaVVNyeVpLaGVkbDZuMWx3TUpXQVVWM1NlcUVCdHlwK1hHVUorZTc4?=
- =?utf-8?B?T0QwOEFPemFtNmFDLzVOVW9FWHVmbzhOaHNkTlFjUkthTWhnSUdUYUVrRXho?=
- =?utf-8?B?blRmbVdsUmF5QmNrcm1wTFVydHRBK0dqZEh0Q3dQUkNERVdFbkYzMkhjTkRp?=
- =?utf-8?B?TlcxN1dPWlM2aVV0OGU4Zk5UZWZRTE4zYWNZUm9mTlh4RklrdU9WdzdCQmtV?=
- =?utf-8?B?bFdSbjhmejBENWxzYU9rVURoVDhpWkZXOG41alNPdzlDWUlLbnIwUUxaWWVG?=
- =?utf-8?B?azF0a0lwd3YyeUpNWnRya1l5eUwwRU5hdDE0aFdSbEtTQml1eXhZZkFhOVVP?=
- =?utf-8?B?SDMwSFVxOFRhdVJPYm5YaVg1Ukx3NytZSzFkbEN4VzhaaHZ3RzJqa3k2WHFn?=
- =?utf-8?B?U0dGZ3RyKzVydHNJYTJ0YjlET3NNS1pmMTFtQ3V1RVZoSlV6ZmNram9uMGhh?=
- =?utf-8?B?NVdyRmNGR1p3eVRidGQ0anQrZmEvTmtpcWFCdjFROE5UUDViV0lyZmxVQjQz?=
- =?utf-8?B?ZDkyQ1NibWg2VTFacElUcHpTTWgyUThoOXUvK2dudlhtRmIzQ0dyVktkMUpI?=
- =?utf-8?B?K2I4K2FRSVhmVm9ZbldyVXVqK1B5K1ZtTFkzcEQ3bkNtUE1tZ1hwdlFQMmp2?=
- =?utf-8?B?SXExUjNybTVmenJ4a3d6aXVDbmp4Y0hCZzlXTFpLODU0V3NiaWxORElCR1dL?=
- =?utf-8?B?eHFscTlsaXB1UHZtRlBDZldkVWhsUTY0Tk5GWDQ4bC9KSnBoQXBXRXdtSFVn?=
- =?utf-8?B?bHdRNzV4UEZFT3gxZ2JRQ2p5b2R3bHdJNi9xbTZ5TUl3ZUVCaitxdlhNc2dt?=
- =?utf-8?B?SUIzNTQxYVpsTUwvNWNaclc5RmNiVjROR0pTZnFGQmgyTkFlekdOK2J5N01T?=
- =?utf-8?B?aGQzTHhSSGhDeW05d0M4bzRSWVhtZXJ1QXNIV1FMcmkya1FXLzNZSGtWZ1Yx?=
- =?utf-8?B?N1lkRnBrMGNrVCtTdDkyakVQdnBjRjBRNFBXRGR5RnpuVHhaNDZGdHNkY2g1?=
- =?utf-8?Q?9LvY=3D?=
-X-Forefront-Antispam-Report: CIP:198.47.23.195;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:lewvzet201.ext.ti.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(82310400026)(1800799024)(36860700013)(7416014)(376014);DIR:OUT;SFP:1101;
-X-OriginatorOrg: ti.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Jan 2026 11:46:45.6567
- (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 780a457c-1eae-4f8e-7a6e-08de4b86f008
-X-MS-Exchange-CrossTenant-Id: e5b49634-450b-4709-8abb-1e2b19b982b7
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=e5b49634-450b-4709-8abb-1e2b19b982b7;Ip=[198.47.23.195];Helo=[lewvzet201.ext.ti.com]
-X-MS-Exchange-CrossTenant-AuthSource: SJ1PEPF00002319.namprd03.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN0PR10MB4917
+Message-Id: <20260104-atcphy-tunable-fix-v1-1-40bf00feaac0@kernel.org>
+X-B4-Tracking: v=1; b=H4sIACbZWmkC/x2MQQqAIBAAvxJ7bkGlLPpKdLBcayEs1KKI/p50n
+ IGZByIFpghd8UCgkyNvPoMsC5gW42dCtplBCaWFFBWaNO3LjenwZlwJHV9Yy6ZV2mpHzkIO90B
+ Z/9MePF0Jhvf9AOlMAr1qAAAA
+X-Change-ID: 20260104-atcphy-tunable-fix-517826d6fefd
+To: Janne Grunau <j@jannau.net>, Neal Gompa <neal@gompa.dev>, 
+ Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>
+Cc: asahi@lists.linux.dev, linux-arm-kernel@lists.infradead.org, 
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ Thomas Glanzmann <thomas@glanzmann.de>, Sven Peter <sven@kernel.org>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=openpgp-sha256; l=3484; i=sven@kernel.org;
+ h=from:subject:message-id;
+ bh=qmsbKPbX1+sTQZ0QzAzI0MrRK6GYbgNVPa9s4pvCfbc=;
+ b=owGbwMvMwCXmIlirolUq95LxtFoSQ2bUTe3pSZWHQk0WVMpvdHxZcLpp0gkxf/0n51f+idksd
+ HDZnYBzHaUsDGJcDLJiiizb99ubPnn4RnDppkvvYeawMoEMYeDiFICJ9Bkw/A9fmLPN/tvt5H9J
+ akkBktq9fi0KHhOUl5vJnPgdUZu3m4Xhr3zIV2XVuNWfHGUnT2Kc/bQkIPyQn+TJaSeeTXkXIel
+ TygUA
+X-Developer-Key: i=sven@kernel.org; a=openpgp;
+ fpr=A1E3E34A2B3C820DBC4955E5993B08092F131F93
+X-Endpoint-Received: by B4 Relay for sven@kernel.org/default with
+ auth_id=407
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260104_034650_455985_ABD8CF38 
-X-CRM114-Status: GOOD (  10.63  )
+X-CRM114-CacheID: sfid-20260104_131839_349911_F6340EFC 
+X-CRM114-Status: GOOD (  12.65  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -163,30 +85,81 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 27/12/25 6:33 PM, Krzysztof Kozlowski wrote:
-> On Wed, Dec 24, 2025 at 11:18:58AM +0530, Siddharth Vadapalli wrote:
->> From: Swapnil Jakhade <sjakhade@cadence.com>
->>
->> Add definition for XAUI phy type.
-> 
-> What is XAUI?
-> 
-> Your commit msg duplicates subject and is obvious - repeats what is
-> in the diff. Pretty pointless.
+Let's actually check the return value of devm_apple_tunable_parse
+instead of trying to check IS_ERR on a pointer to the return value which
+is always going to be valid. This prevent a oops when the tunables are
+invalid or when they don't exist:
 
-I have posted the v2 series at:
-https://lore.kernel.org/r/20260104114422.2868321-1-s-vadapalli@ti.com/
-providing a detailed description of XAUI in the commit message.
+[   42.819119] ------------[ cut here ]------------
+[   42.819121] WARNING: CPU: 6 PID: 88 at drivers/phy/apple/atc.c:2145 atcphy_mux_set+0xf60/0x1128 [phy_apple_atc]
+[   42.819302] CPU: 6 UID: 0 PID: 88 Comm: kworker/6:1 Tainted: G S                  6.18+unreleased-asahi #1 PREEMPTLAZY  Debian 6.18.2-0-1~exp1
+[   42.819311] Tainted: [S]=CPU_OUT_OF_SPEC
+[   42.819314] Hardware name: Apple Mac mini (M1, 2020) (DT)
+[   42.819316] Workqueue: events cd321x_update_work [tps6598x]
+[   42.819332] pstate: 81400009 (Nzcv daif +PAN -UAO -TCO +DIT -SSBS BTYPE=--)
+[   42.819338] pc : atcphy_mux_set+0xf60/0x1128 [phy_apple_atc]
+[   42.819344] lr : atcphy_mux_set+0x30/0x1128 [phy_apple_atc]
+[   42.819348] sp : ffffc000813c7c00
+[   42.819350] x29: ffffc000813c7c00 x28: ffff800016babeb8 x27: ffff800016babc80
+[   42.819357] x26: 0000000000000001 x25: 0000000000000001 x24: 0000000000000000
+[   42.819364] x23: ffff800016babec0 x22: 00000000ffffffa1 x21: 0000000000000003
+[   42.819371] x20: ffff80000c1b3680 x19: ffff80000dcdd080 x18: 0000000000000000
+[   42.819376] x17: 0000000000000000 x16: ffffd42e6ede6e08 x15: 0000000000000000
+[   42.819382] x14: ffffd42e707b6980 x13: 0000000000025c68 x12: 726f703d54524f50
+[   42.819388] x11: 0000000000000040 x10: 0000000000000000 x9 : ffffd42e555ed9c0
+[   42.819394] x8 : 0000000000000006 x7 : ffff80000a000dd8 x6 : 0000000000000002
+[   42.819399] x5 : 0000000000000000 x4 : 0000000000000000 x3 : 0000000000000001
+[   42.819404] x2 : 0000000000000005 x1 : 000000000000ff01 x0 : 0000000000000001
+[   42.819410] Call trace:
+[   42.819412]  atcphy_mux_set+0xf60/0x1128 [phy_apple_atc] (P)
+[   42.819419]  typec_mux_set+0x74/0xd8 [typec]
+[   42.819444]  cd321x_update_work+0x440/0x8a8 [tps6598x]
+[   42.819453]  process_one_work+0x170/0x3e0
+[   42.819466]  worker_thread+0x25c/0x390
+[   42.819473]  kthread+0x148/0x240
+[   42.819479]  ret_from_fork+0x10/0x20
+[   42.819488] ---[ end trace 0000000000000000 ]---
 
-Thank you for the feedback.
+Reported-by: Thomas Glanzmann <thomas@glanzmann.de>
+Fixes: 8e98ca1e74db ("phy: apple: Add Apple Type-C PHY")
+Signed-off-by: Sven Peter <sven@kernel.org>
+---
+ drivers/phy/apple/atc.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-Regards,
-Siddharth.
+diff --git a/drivers/phy/apple/atc.c b/drivers/phy/apple/atc.c
+index c8a58ee64b7aad3205df51cf16ae778471ad2c5d..716c1e70de38ca604803739fedaa543d91f7501b 100644
+--- a/drivers/phy/apple/atc.c
++++ b/drivers/phy/apple/atc.c
+@@ -2178,10 +2178,10 @@ static int atcphy_load_tunables(struct apple_atcphy *atcphy)
+ 	for (int i = 0; i < ARRAY_SIZE(tunables); i++) {
+ 		*tunables[i].tunable = devm_apple_tunable_parse(
+ 			atcphy->dev, atcphy->np, tunables[i].dt_name, tunables[i].res);
+-		if (IS_ERR(tunables[i].tunable)) {
++		if (IS_ERR(*tunables[i].tunable)) {
+ 			dev_err(atcphy->dev, "Failed to read tunable %s: %ld\n",
+-				tunables[i].dt_name, PTR_ERR(tunables[i].tunable));
+-			return PTR_ERR(tunables[i].tunable);
++				tunables[i].dt_name, PTR_ERR(*tunables[i].tunable));
++			return PTR_ERR(*tunables[i].tunable);
+ 		}
+ 	}
+ 
+
+---
+base-commit: add66a6673bc4aacd0ef0f3c4a51271501770b17
+change-id: 20260104-atcphy-tunable-fix-517826d6fefd
+
+Best regards,
+-- 
+Sven Peter <sven@kernel.org>
+
+
 
 -- 
 linux-phy mailing list
