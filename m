@@ -4,155 +4,117 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DF085C79F9F
-	for <linux-phy@archiver.kernel.org>; Mon,  5 Jan 2026 15:17:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6D7D0C79F9F
+	for <linux-phy@archiver.kernel.org>; Mon,  5 Jan 2026 15:28:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zQM7uc37+RWj817obBMZWegEvkZF1ZzrqcaE8E5M3dA=; b=IPRv1RokVV88Qo
-	3fqTNEsDKX532QafBFAAZCdY/UNkLESuU9jQeX/yUTFfjQNDzjSBTm5W8mtn/dD40C2aqEOO4WtKg
-	mimWWhk/Mta3KjHtLRhJ22xrnNhMY+d/ic+iwPCg89eB+aL9ao07w2yqJVRV+BEz90dg6iLufuXro
-	nZ0x/iTs7zAH05wLA825N0T9Mw5cZlo5Yh9yDjIaRgKiAKvCE2lwooyJgGdP2EnqqR9z9AZZWOGQu
-	1elTVRxUuwgj1uSbe7Kn4amOwOumW/MwFQCs0ThVB72Rhs9iq8QSYy2efvJMcIvJvk8bqgwEjkQ4S
-	1b3XMLFJrcw/cywqbT2w==;
+	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
+	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=S43HaKKC56tTUrF/cKqBHhvtO53rOGbQiK3Y6j3eWvE=; b=z/ZjMey8Cq8qMv1mPWUMHNzTP9
+	EbU//m/UnGbQ3IFWmTruZ15JLCe9UXDWAKxqgGrsZXQ1Ovs7IRczLGXZPX6B8j5X09zZOnxq8k1qn
+	kFc8BeJsFGn6YQUshyEzzbkvPK6DQJxIyb3ySn4SXTIUW75WF2KZXUEKEQ0XNqhGbpfRTS6DPs1CP
+	ickmwLOFGKaOwgd66pjOdhFPUtgZfFuF7cPvCdgKNlvi/w2RiJmcvrmZt8tcRLRhO5VYss+JcoX02
+	ZY592Jz535+t79cARrF14pTE3BWsePF9HAMY9FtcD11au5JSf8+y2Plkxi2sik3HTfxSB8j5pPHKL
+	fbmDJg1g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vcmLF-0000000BbGf-28Jq;
-	Mon, 05 Jan 2026 15:17:57 +0000
-Received: from mail-westcentralusazon11013024.outbound.protection.outlook.com ([40.93.201.24] helo=CY3PR05CU001.outbound.protection.outlook.com)
+	id 1vcmVM-0000000Bbtu-05p5;
+	Mon, 05 Jan 2026 15:28:24 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vcmLC-0000000BbG9-1bjL;
-	Mon, 05 Jan 2026 15:17:55 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=uYZcu8zxyEPBSPdzXwarH7YHMCY0IKLHswLHcejxoI5CYhvHn4VB3sV4trI6f0ZF5cXJUC5g5Xx2e3dG0xoQXxcC48KG76ExImWRr8yHb9bOJQl6afrWsKBhk3HDWiMcQklb3Uu4IQLbSuD07El5Y4wpa7lBKsIZdmj+lHkJ5xdM6YiB6F9V6DZLaWzCIoWJLs+/NvDXHoyCnIezUhKsJzyY6WN2A6ENWVCWwPiYv4wxvNySZm4jAWTwtEEjOqBvgHKGbazvrpdshM6+4iei2KRh867wcl7YmVGnCjHdmzIIdtGw12YZNlqwvwZl9rL8vKyXvxCiXidorNZZoCnxCQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=hA5Eb8jjhZAFgp1b3JMkV/ZsS3xVH/UHBSvLtkEWLts=;
- b=P2k2/zNXSca3LHIlV/FMBo3BTDX4vPNAe46XW64zXpbiuO57mOWSJ9e6XtVOP46NyQTcDDcKYH+9HPvoAROHADqS2bsHtcH91or+L3vjBiLxweNN/EToNDm1SfOmAradmEQoH1tp7EV6xso764LFI5sS/iYzFSYd6PNZLgjzF39duteT3LOsdfPCxNIbrxibGtZ1lSZkfS9j4W7BN8GA98KRNrFrOjrPfxQUG4sLkXfsuxG3UQzNwpAxvNL2yZsgM79VlnMWrqLthAWe3DrOgu0iyXB3yTaHm6OTfb72dIb2GB5+qkM4jiC/w+LD16xm5yKDtiCd3hDgGwJBVIaoFg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 198.47.23.195) smtp.rcpttodomain=lists.infradead.org smtp.mailfrom=ti.com;
- dmarc=pass (p=quarantine sp=none pct=100) action=none header.from=ti.com;
- dkim=none (message not signed); arc=none (0)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=hA5Eb8jjhZAFgp1b3JMkV/ZsS3xVH/UHBSvLtkEWLts=;
- b=rCYpzVeXeJKqEbrDFANEzCnXozdegdJpcbaqHScYHLQmHNitQjly15sZ/y3A4G3ylqHvZj862hq9/NSg+DUTOX8+FC1/yJKtmsupv8yJymN+eTLfjSqzP7Yn7jHVrNl5KrqF+CrbHIoKnNVQKrIcN1W4q/WlvQUq93Tyvuwyk+g=
-Received: from BN9PR03CA0040.namprd03.prod.outlook.com (2603:10b6:408:fb::15)
- by DS0PR10MB8031.namprd10.prod.outlook.com (2603:10b6:8:200::16) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9478.4; Mon, 5 Jan
- 2026 15:17:47 +0000
-Received: from BN1PEPF00004687.namprd05.prod.outlook.com
- (2603:10b6:408:fb:cafe::58) by BN9PR03CA0040.outlook.office365.com
- (2603:10b6:408:fb::15) with Microsoft SMTP Server (version=TLS1_3,
- cipher=TLS_AES_256_GCM_SHA384) id 15.20.9478.4 via Frontend Transport; Mon, 5
- Jan 2026 15:17:32 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 198.47.23.195)
- smtp.mailfrom=ti.com; dkim=none (message not signed) header.d=none;dmarc=pass
- action=none header.from=ti.com;
-Received-SPF: Pass (protection.outlook.com: domain of ti.com designates
- 198.47.23.195 as permitted sender) receiver=protection.outlook.com;
- client-ip=198.47.23.195; helo=lewvzet201.ext.ti.com; pr=C
-Received: from lewvzet201.ext.ti.com (198.47.23.195) by
- BN1PEPF00004687.mail.protection.outlook.com (10.167.243.132) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.9499.1 via Frontend Transport; Mon, 5 Jan 2026 15:17:46 +0000
-Received: from DLEE201.ent.ti.com (157.170.170.76) by lewvzet201.ext.ti.com
- (10.4.14.104) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Mon, 5 Jan
- 2026 09:17:43 -0600
-Received: from DLEE201.ent.ti.com (157.170.170.76) by DLEE201.ent.ti.com
- (157.170.170.76) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Mon, 5 Jan
- 2026 09:17:43 -0600
-Received: from lelvem-mr06.itg.ti.com (10.180.75.8) by DLEE201.ent.ti.com
- (157.170.170.76) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20 via Frontend
- Transport; Mon, 5 Jan 2026 09:17:43 -0600
-Received: from [10.249.139.123] ([10.249.139.123])
-	by lelvem-mr06.itg.ti.com (8.18.1/8.18.1) with ESMTP id 605FHcXm1349835;
-	Mon, 5 Jan 2026 09:17:38 -0600
-Message-ID: <81639035-8fc5-4ee6-b0c5-4cfdf5b2425a@ti.com>
-Date: Mon, 5 Jan 2026 20:47:35 +0530
+	id 1vcmVJ-0000000BbtA-29yq
+	for linux-phy@lists.infradead.org;
+	Mon, 05 Jan 2026 15:28:22 +0000
+Received: by mail-wm1-x342.google.com with SMTP id 5b1f17b1804b1-4779ce2a624so218305e9.2
+        for <linux-phy@lists.infradead.org>; Mon, 05 Jan 2026 07:28:20 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1767626900; x=1768231700; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:organization:autocrypt
+         :content-language:references:cc:to:subject:reply-to:from:user-agent
+         :mime-version:date:message-id:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=JiUuiG11sjb3RVF8qKsN43KHgfxfg8lfjAm8EVRs7z8=;
+        b=AWKl+DNe7w8bsXqZmndFQCkXBNXbaDxzOs6jLoqxU+2irhvxqo7UveaHMEo1bcvMhq
+         fGbUpnc8HbhOUP28i607nQiGdTs4CINXdVEH5LqzYfHUO9L2fzzhKt9V36s5lGfO1Zxx
+         19PItoYhwGfA50nRXdWvp1nP711yK9AS2P9uj+KwpHP26N++Efp3hWR9NNYMRMhQz5/B
+         wp7RBzy/FyDBd4JRrpjmi0fwEy8TL0+wtGCyctHEVtnGYb4ovd5gBafoV19udvA/5Pjt
+         5mOanOntO7ImcRwOW/7do+UEP/wi4Ok1XHpuI8M5vqjxxZ2Tf73KFRVfUXyW904ziKyZ
+         MCwQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1767626900; x=1768231700;
+        h=content-transfer-encoding:in-reply-to:organization:autocrypt
+         :content-language:references:cc:to:subject:reply-to:from:user-agent
+         :mime-version:date:message-id:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=JiUuiG11sjb3RVF8qKsN43KHgfxfg8lfjAm8EVRs7z8=;
+        b=nAeTEADWvf7zU0lFwlEqWCo7J2YoL9L8fIKMzCsBIXa4VWyxWSfGTjMAy4wPA6BGUq
+         xq/p+qegQpJgVagE/+K1SG+84FnekECVJ/xnwYXazpHIq5JE3eHexN/aC2bTy0ArZeWa
+         ZwKgxcBepETfFGhY/ifG6ptE/QTWZObRCNhTdpb9yWsfpfGQd4h4MfXZ+X7H1aA7JtJP
+         GmcGF9kJJ/IzSqrQXFEa/ufyPe8Sit7nFeUcIykvd2Oh+k9kHV9g8DE0hmy+j4t30w9p
+         SdAtT2IyLZsNWBp5OskxIQiUlqG1M3Ucbkryj2I1ZGgwBqxtl/vb1CnqytrvNv0704/g
+         a47g==
+X-Forwarded-Encrypted: i=1; AJvYcCWt8G6uUgmStL/pt0IgRQYuO+O+JGs56kdKJCdm/C8Gz2w3FRvpv9GEtfEUF8GIFLvt3kcxkvJngG4=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yx6S0/Gk+ZTz1HOFv43/yrAJtuiIwozrKrulkaN139gKx0y0NsT
+	RJ3DadSJdLGzms65zni1Rn+9/CC21FySMwee0RumKKh46MUqv/vVu6KjkhkBX94cFNM=
+X-Gm-Gg: AY/fxX4rPYH8Ndr4wFLOFRvXC/XC6mE56YS/k9/IdmY3iQHip/hDmin0nx3HTZVWUgy
+	fR1cBVXH/FW+52LMbtf9pl52mT+hmMi9SkwopPXOc5pwdErISSVHEzS35EhRjGMKGYgAeYb0Vo9
+	VUEFtO+sEPWbjUMDKA+mVn2sNZJZKeWIeJlGn1I8sevoDPn9VkUDu62te5PKMjQfS1FhScJidrb
+	i07F1kdTVb+FUGvL0BJ/K8VZ5ylQebh81b7eic7P47RiKThuEKR/DK3TpPdswZP2lzgFW2bTRkp
+	U8zib7uzYa5Lf8bYYAH446qM1oAEfxOvJMaHgKHIHJDOtHNR/gLvIZeRBqYs6vcEWXWI681nvRl
+	MmxXcqsGrMiJ0psq/jE6X2YwqG5IqR+rngFB4Z+wetV5ZjkfC1D5Ped/Xh6RSiEaF0PypCWJ6i8
+	i49hlZs3F2V5ZU1gro88BVglXRdfgka1sKKGAUbnQFzrlqooPWtzKNFosKs8jo+js=
+X-Google-Smtp-Source: AGHT+IFE8e5sC3B0bF5zrvpWL/oFWYMQNfCjja3Nw/1swqUnOWasg9DxOhRiNiaKDKikllRi6k1+zQ==
+X-Received: by 2002:a05:600c:a0d:b0:46e:6d5f:f68 with SMTP id 5b1f17b1804b1-47d34de634cmr534951085e9.12.1767626899465;
+        Mon, 05 Jan 2026 07:28:19 -0800 (PST)
+Received: from ?IPV6:2a01:e0a:3d9:2080:d4c1:5589:eadb:1033? ([2a01:e0a:3d9:2080:d4c1:5589:eadb:1033])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-47d6d452c69sm198773955e9.9.2026.01.05.07.28.18
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 05 Jan 2026 07:28:19 -0800 (PST)
+Message-ID: <b671ca2c-1fb1-4c4f-b0af-45dd33402b0c@linaro.org>
+Date: Mon, 5 Jan 2026 16:28:18 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 2/2] phy: cadence-torrent: Add PCIe + XAUI multilink
- configuration for 100MHz refclk
-To: Andrew Lunn <andrew@lunn.ch>
-CC: <vkoul@kernel.org>, <neil.armstrong@linaro.org>, <robh@kernel.org>,
-	<krzk+dt@kernel.org>, <conor+dt@kernel.org>, <sjakhade@cadence.com>,
-	<rogerq@kernel.org>, <krzk@kernel.org>, <linux-phy@lists.infradead.org>,
-	<linux-kernel@vger.kernel.org>, <devicetree@vger.kernel.org>,
-	<linux-arm-kernel@lists.infradead.org>, <srk@ti.com>, <s-vadapalli@ti.com>
-References: <20260104114422.2868321-1-s-vadapalli@ti.com>
- <20260104114422.2868321-3-s-vadapalli@ti.com>
- <7fd42221-d602-4ce4-9f7f-6754ed91e7aa@lunn.ch>
-Content-Language: en-US
-From: Siddharth Vadapalli <s-vadapalli@ti.com>
-In-Reply-To: <7fd42221-d602-4ce4-9f7f-6754ed91e7aa@lunn.ch>
-X-C2ProcessedOrg: 333ef613-75bf-4e12-a4b1-8e3623f5dcea
-X-EOPAttributedMessage: 0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: BN1PEPF00004687:EE_|DS0PR10MB8031:EE_
-X-MS-Office365-Filtering-Correlation-Id: 3399ee7d-b471-4f63-fa45-08de4c6d951b
-X-LD-Processed: e5b49634-450b-4709-8abb-1e2b19b982b7,ExtAddr
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|7416014|1800799024|36860700013|82310400026;
-X-Microsoft-Antispam-Message-Info: =?utf-8?B?ei8xdlVLdHBFaXRIbmpyUDlkbTNNdGtLNEFpTWxpaHRibU93SzR1WWs1cHRa?=
- =?utf-8?B?dXlKV0ZlNEpvUmQ2bzNFall0dGRLZ2tOeHpxQnFraTNKejcyOUZhWVhYdktT?=
- =?utf-8?B?ajdzWTUwejk5OTg0aG92bTBqbUdXTEIzR2ZCeWk3OUc2NkVxNTAvVTNEb0M4?=
- =?utf-8?B?R0o1TXFDWDQ1dzd3djRXRm53Ym5sQjA2VkJ5ZHd2ODJKemNHL0UxbFhZNG5B?=
- =?utf-8?B?QUxOWlMzNXNvTkxnWjJsMytmZjVIQzhjOW5hVFpqYlh2ZHA5Q0FhU3c2SVZi?=
- =?utf-8?B?V1dUVE8xSUFDK3NiWFQrL0N3ZjBuUGg0UWptR0laRk9oNFBiOHRsblhKeWhO?=
- =?utf-8?B?QjlxK0FHNklDNUtzN1FOemw5S1p2ZVNzTy9nZkRPVmRTZUpIN3JWNFF3ek50?=
- =?utf-8?B?OUN6SGpJYXlMTWFxYXNWZlJUYjd2Ly9CWmNMUVZsUUJRaGR2aTV6U1NvV1Jz?=
- =?utf-8?B?bm04R1pYQWcrMVpwSHFkYVBqdDR1T2ZmcDBQZHRzU3VqVnRpYUY5ejBkV0U0?=
- =?utf-8?B?NXQrbTFkNytTSnE4YXI0UnBuMkQzOWV2aTQ0WEJtZGxsYWxIQkZqZzlyVmpm?=
- =?utf-8?B?S1pzRUNxeDdMeTVzNEFVTDcwRzhhMTNPWFF5TG1pRCtWMDIxM3F1TlRvRllQ?=
- =?utf-8?B?RVh3K3RLaGRrZ3gzRGpteUhtUmtwelRoSExFQkh3ZDh5K2FRWGltM3VrelJl?=
- =?utf-8?B?UVJWVzZHQUVQZDVVa0ZFRUF3aWt6UVJPWTZzSjlCN0Q5dHZyc3BweDgralVB?=
- =?utf-8?B?RUZBK2tEMWxRNzdMamxVc0pwS1J5Mm11MDN5bXl2TVFmT29PS3BNcFZnaTB0?=
- =?utf-8?B?MGdEWjYrT2FYM1B2Q1dPdWpQdURPUElzeG9WaW5uSGhSRDEycVdiR0Q1cXNN?=
- =?utf-8?B?Vk9qd1JPV3djVU9CemU4ckE1VGdtMnpBM1REYmFRdmdJNTBSdS9TcTRUVjMx?=
- =?utf-8?B?blJhU25ONGFuaks3WGlxdjkyUWE0SUREU3ZjaTc3b3Z0ZHdSdDRldnd1NlFt?=
- =?utf-8?B?Y3pwcW9DRzN0cm5xMG1vdXRjTHRjZFVpd2NtaEZ1Nno5MmgxdFJqYzNqWWhl?=
- =?utf-8?B?dkF3UzNPY2FXTjZiNGFLQ2EyZFpjTEgzWXJjN2F6L0g4bWNwMzl1U3dOUFZQ?=
- =?utf-8?B?RTh2UkpaU1A2cGFYbGZ1eUpuSlQzV3lZbnNLdW11Y1JWSHNRWXFRRlZ0aFJN?=
- =?utf-8?B?d1FRdjNNSlp3bUUwaG5vMVRob0JkSHRueXNGQXlaZGhXRUNoKzd3R0MzVlln?=
- =?utf-8?B?ek1RblpVRUVTMi92cUgwQUQ2RGNjazMrVldsOXNOZkhZVHFycmFMbWhaaHAz?=
- =?utf-8?B?U0hRNzluUGFsTVorM1NVaWlzY3Zqd09DME5rRmo3MjlUMFo0blFuT25sc0JD?=
- =?utf-8?B?dkZzWnMwTUo1OS8rNHM5d29oZkM0cTgyRUVma1ZlMXF2VFFtaHhRNmRUdGlF?=
- =?utf-8?B?aXNNbUhZR3o2SlgranFrNDl0VVVoL0huS2lMa3QzeE14Qk9tZHpoME4vUXVm?=
- =?utf-8?B?Z2p6enZYNkVYdnVrVlJ1eXE1RVcyMjZCcFNxWWRxWFBiUFNlQXZjbVpCNlZ0?=
- =?utf-8?B?VHozblR2enMvMm5Dd2hCdG1PNWdVUWE5STVKOUx3dWI3MG9PU09Qb2ZMZm9a?=
- =?utf-8?B?N1REVk5ZdzZKQ1FRM1Faa3JpM2RiZ1l6a0ZnbFBXcUtRa3AvenE5TWNEdS9I?=
- =?utf-8?B?SzVMMTFWVW9vYlhucE9wOEJlUk9FejNPK21kbnlkT3pJRHRIVTJaTmlhc0hI?=
- =?utf-8?B?aUh0QmdNNHJVV3N2MDcrYXB6L2dWSEZLTGVIQUVFTkhzcFZzM3Z5Zi9TZS9T?=
- =?utf-8?B?MVc3NlZRZWhjVkpqY01XQTJhMzhwNGVqV21BZHJTVFdxeFBMWDFUenFYSlZF?=
- =?utf-8?B?NnY2QnozVmY3ZEdHOGVheSswTEI0NVdpWHA0cnNCSTMyVGYxOE9OVUlUNlJY?=
- =?utf-8?B?K1NxeXdLYmRmTVgzakNUNmh0TFdOd0o1d2VXUVF3cWRPYndRV0kwMTJ5czhE?=
- =?utf-8?B?emVET0pIR2thVXlFNC9VM29NNkxxZHNkT3g0MEJJUHhoSVRkbHkvNWFzejlJ?=
- =?utf-8?B?UFVNdzlRN0RQWng5UWxMVlNYZmp5VWlvQWdpWUlPcTduMEQySzZPZGY4aXNu?=
- =?utf-8?Q?WCSo=3D?=
-X-Forefront-Antispam-Report: CIP:198.47.23.195;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:lewvzet201.ext.ti.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(376014)(7416014)(1800799024)(36860700013)(82310400026);DIR:OUT;SFP:1101;
-X-OriginatorOrg: ti.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Jan 2026 15:17:46.8748
- (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 3399ee7d-b471-4f63-fa45-08de4c6d951b
-X-MS-Exchange-CrossTenant-Id: e5b49634-450b-4709-8abb-1e2b19b982b7
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=e5b49634-450b-4709-8abb-1e2b19b982b7;Ip=[198.47.23.195];Helo=[lewvzet201.ext.ti.com]
-X-MS-Exchange-CrossTenant-AuthSource: BN1PEPF00004687.namprd05.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DS0PR10MB8031
+From: Neil Armstrong <neil.armstrong@linaro.org>
+Subject: Re: [PATCH next v2] phy: apple: atc: Actually check return value of
+ devm_apple_tunable_parse
+To: Sven Peter <sven@kernel.org>, Janne Grunau <j@jannau.net>,
+ Neal Gompa <neal@gompa.dev>, Vinod Koul <vkoul@kernel.org>
+Cc: asahi@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Thomas Glanzmann <thomas@glanzmann.de>
+References: <20260104-atcphy-tunable-fix-v2-1-84e5c2a57aaa@kernel.org>
+Content-Language: en-US, fr
+Autocrypt: addr=neil.armstrong@linaro.org; keydata=
+ xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
+ GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
+ BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
+ qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
+ 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
+ AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
+ OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
+ Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
+ YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
+ GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
+ UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
+ GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
+ yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
+ QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
+ SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
+ 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
+ Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
+ oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
+ M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
+ 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
+ KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
+ 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
+ QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
+Organization: Linaro
+In-Reply-To: <20260104-atcphy-tunable-fix-v2-1-84e5c2a57aaa@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260105_071754_456570_695D6518 
-X-CRM114-Status: GOOD (  17.80  )
+X-CRM114-CacheID: sfid-20260105_072821_600450_CE7E80F2 
+X-CRM114-Status: GOOD (  18.33  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -164,116 +126,101 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Reply-To: Neil Armstrong <neil.armstrong@linaro.org>
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 05/01/26 3:27 AM, Andrew Lunn wrote:
-> On Sun, Jan 04, 2026 at 05:14:18PM +0530, Siddharth Vadapalli wrote:
->> From: Swapnil Jakhade <sjakhade@cadence.com>
->>
->> Add register sequences for PCIe + XAUI multilink configuration for
->> 100MHz reference clock.
->>
->> Signed-off-by: Swapnil Jakhade <sjakhade@cadence.com>
->> Signed-off-by: Siddharth Vadapalli <s-vadapalli@ti.com>
->> ---
->>
->> v1 of this patch is at:
->> https://lore.kernel.org/r/20251224054905.763399-3-s-vadapalli@ti.com/
->> No changes since v1.
->>
->> Regards,
->> Siddharth.
->>
->>   drivers/phy/cadence/phy-cadence-torrent.c | 143 ++++++++++++++++++++--
->>   1 file changed, 136 insertions(+), 7 deletions(-)
->>
->> diff --git a/drivers/phy/cadence/phy-cadence-torrent.c b/drivers/phy/cadence/phy-cadence-torrent.c
->> index 37fa4bad6bd7..f0d870886cca 100644
->> --- a/drivers/phy/cadence/phy-cadence-torrent.c
->> +++ b/drivers/phy/cadence/phy-cadence-torrent.c
->> @@ -300,6 +300,7 @@ enum cdns_torrent_phy_type {
->>   	TYPE_USB,
->>   	TYPE_USXGMII,
->>   	TYPE_PCIE_ML,
->> +	TYPE_XAUI,
->>   };
->>   
->>   enum cdns_torrent_ref_clk {
->> @@ -320,14 +321,14 @@ enum cdns_torrent_ssc_mode {
->>   /* Unique key id for vals table entry
->>    * REFCLK0_RATE | REFCLK1_RATE | LINK0_TYPE | LINK1_TYPE | SSC_TYPE
->>    */
->> -#define REFCLK0_SHIFT	12
->> -#define REFCLK0_MASK	GENMASK(14, 12)
->> -#define REFCLK1_SHIFT	9
->> -#define REFCLK1_MASK	GENMASK(11, 9)
->> -#define LINK0_SHIFT	6
->> -#define LINK0_MASK	GENMASK(8, 6)
->> +#define REFCLK0_SHIFT	15
->> +#define REFCLK0_MASK	GENMASK(18, 15)
->> +#define REFCLK1_SHIFT	11
->> +#define REFCLK1_MASK	GENMASK(14, 11)
->> +#define LINK0_SHIFT	7
->> +#define LINK0_MASK	GENMASK(10, 7)
+On 1/4/26 22:56, Sven Peter wrote:
+> Let's actually check the return value of devm_apple_tunable_parse
+> instead of trying to check IS_ERR on a pointer to the return value which
+> is always going to be valid. This prevent a oops when the tunables are
+> invalid or when they don't exist:
 > 
-> Why do these change? It would be good to add an explanation to the
-> commit message about this, because it is not obvious why these need to
-> change.
+> [   57.664567] Unable to handle kernel paging request at virtual address fffffffffffffffe
+> [   57.664584] Mem abort info:
+> [   57.664589]   ESR = 0x0000000096000007
+> [   57.664595]   EC = 0x25: DABT (current EL), IL = 32 bits
+> [   57.664602]   SET = 0, FnV = 0
+> [   57.664607]   EA = 0, S1PTW = 0
+> [   57.664611]   FSC = 0x07: level 3 translation fault
+> [   57.664617] Data abort info:
+> [   57.664621]   ISV = 0, ISS = 0x00000007, ISS2 = 0x00000000
+> [   57.664626]   CM = 0, WnR = 0, TnD = 0, TagAccess = 0
+> [   57.664631]   GCS = 0, Overlay = 0, DirtyBit = 0, Xs = 0
+> [   57.664640] swapper pgtable: 16k pages, 47-bit VAs, pgdp=0000000b4391c000
+> [   57.664647] [fffffffffffffffe] pgd=0000000000000000, p4d=0000000000000000, pud=0000000b44188403, pmd=0000000b4418c403, pte=0000000000000000
+> [   57.664670] Internal error: Oops: 0000000096000007 [#1]  SMP
+> [   57.665047] CPU: 1 UID: 0 PID: 23 Comm: kworker/1:0 Tainted: G S                  6.18.2+ #2 PREEMPTLAZY
+> [   57.665061] Tainted: [S]=CPU_OUT_OF_SPEC
+> [   57.665066] Hardware name: Apple Mac mini (M1, 2020) (DT)
+> [   57.665072] Workqueue: events cd321x_update_work [tps6598x]
+> [   57.665100] pstate: 61400009 (nZCv daif +PAN -UAO -TCO +DIT -SSBS BTYPE=--)
+> [   57.665111] pc : apple_tunable_apply+0x8/0x80 [apple_tunable]
+> [   57.665121] lr : atcphy_mux_set+0x3e0/0x1138 [phy_apple_atc]
+> [   57.665133] sp : ffffc000802a7c00
+> [   57.665138] x29: ffffc000802a7c00 x28: 0000000000000003 x27: ffff800016c84080
+> [   57.665151] x26: 0000000000000002 x25: ffff800016c84090 x24: ffff800016c8408f
+> [   57.665163] x23: 0000000000020004 x22: 0000000000000001 x21: 0000000000000006
+> [   57.665175] x20: ffff80000d6da9b0 x19: ffff80000d6da880 x18: 0000000000000002
+> [   57.665188] x17: 0000000000000000 x16: ffffe22de59e0e38 x15: 0000000000000002
+> [   57.665199] x14: ffffe22de76ecff8 x13: 0000000000000001 x12: ffff9dd5f90bc000
+> [   57.665211] x11: 00000000000000c0 x10: 048abc15ceba0919 x9 : ffffe22dbc5fde10
+> [   57.665223] x8 : ffff80000175e0d8 x7 : 0000000000000004 x6 : 0000000000000000
+> [   57.665234] x5 : 0000000000000001 x4 : 0000000d6d132db7 x3 : 00000000000155db
+> [   57.665246] x2 : 0000000000000000 x1 : fffffffffffffffe x0 : ffffc00082b80000
+> [   57.665258] Call trace:
+> [   57.665265]  apple_tunable_apply+0x8/0x80 [apple_tunable] (P)
+> [   57.665276]  typec_mux_set+0x74/0xe0 [typec]
+> [   57.665315]  cd321x_update_work+0x440/0x8c0 [tps6598x]
+> [   57.665332]  process_one_work+0x178/0x3d0
+> [   57.665346]  worker_thread+0x260/0x390
+> [   57.665354]  kthread+0x150/0x250
+> [   57.665369]  ret_from_fork+0x10/0x20
+> [   57.665386] Code: e69a0ae8 ffffe22d aa1e03e9 d503201f (f9400022)
+> [   57.665394] ---[ end trace 0000000000000000 ]---
+> 
+> Reported-by: Thomas Glanzmann <thomas@glanzmann.de>
+> Fixes: 8e98ca1e74db ("phy: apple: Add Apple Type-C PHY")
+> Signed-off-by: Sven Peter <sven@kernel.org>
+> ---
+> Changes in v2:
+> - Copy/paste error: Copied a WARN instead of the kernel oops this patch fixes
+> - Link to v1: https://patch.msgid.link/20260104-atcphy-tunable-fix-v1-1-40bf00feaac0@kernel.org
+> ---
+>   drivers/phy/apple/atc.c | 6 +++---
+>   1 file changed, 3 insertions(+), 3 deletions(-)
+> 
+> diff --git a/drivers/phy/apple/atc.c b/drivers/phy/apple/atc.c
+> index c8a58ee64b7aad3205df51cf16ae778471ad2c5d..716c1e70de38ca604803739fedaa543d91f7501b 100644
+> --- a/drivers/phy/apple/atc.c
+> +++ b/drivers/phy/apple/atc.c
+> @@ -2178,10 +2178,10 @@ static int atcphy_load_tunables(struct apple_atcphy *atcphy)
+>   	for (int i = 0; i < ARRAY_SIZE(tunables); i++) {
+>   		*tunables[i].tunable = devm_apple_tunable_parse(
+>   			atcphy->dev, atcphy->np, tunables[i].dt_name, tunables[i].res);
+> -		if (IS_ERR(tunables[i].tunable)) {
+> +		if (IS_ERR(*tunables[i].tunable)) {
+>   			dev_err(atcphy->dev, "Failed to read tunable %s: %ld\n",
+> -				tunables[i].dt_name, PTR_ERR(tunables[i].tunable));
+> -			return PTR_ERR(tunables[i].tunable);
+> +				tunables[i].dt_name, PTR_ERR(*tunables[i].tunable));
+> +			return PTR_ERR(*tunables[i].tunable);
+>   		}
+>   	}
+>   
+> 
+> ---
+> base-commit: add66a6673bc4aacd0ef0f3c4a51271501770b17
+> change-id: 20260104-atcphy-tunable-fix-517826d6fefd
+> 
+> Best regards,
 
-The 'key id' is supposed to be a unique value defined as the following 
-Bitwise OR:
-REFCLK0_RATE | REFCLK1_RATE | LINK0_TYPE | LINK1_TYPE | SSC_TYPE
+Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 
-The 'LINK_TYPE' parameter corresponds to the protocol (PHY Type). In the 
-phy-cadence-torrent.c driver, the following enum describes the supported 
-'LINK_TYPE's:
-enum cdns_torrent_phy_type {
-	TYPE_NONE,
-	TYPE_DP,
-	TYPE_PCIE,
-	TYPE_SGMII,
-	TYPE_QSGMII,
-	TYPE_USB,
-	TYPE_USXGMII,
-	TYPE_PCIE_ML,
-};
-The last entry which is TYPE_PCIE_ML has the value of '7' (TYPE_NONE is 
-'0'). Therefore, 'LINK_MASK' happened to be a 3-bit mask:
-	#define LINK0_MASK	GENMASK(8, 6)
-	#define LINK1_MASK	GENMASK(5, 3)
-With the addition of TYPE_XAUI in the current patch, 'LINK_MASK' has to 
-be extended to a 4-bit mask.
-
-The 'REFCLK_RATE' parameter corresponds to the reference clock rates 
-defined which are again described by the following enum in the driver:
-enum cdns_torrent_ref_clk {
-	CLK_19_2_MHZ,
-	CLK_25_MHZ,
-	CLK_100_MHZ,
-	CLK_156_25_MHZ,
-	CLK_ANY,
-};
-The last entry which is CLK_ANY has the value of '4' (CLK_19_2_MHZ is 
-'0'). Although the existing macros defined as:
-	#define REFCLK0_MASK	GENMASK(14, 12)
-	#define REFCLK1_MASK	GENMASK(11, 9)
-are 3-bit masks and can fit values until '7', for the sake of 
-future-proofing the driver (the SERDES Hardware supports more reference 
-clocks which are not yet enabled in the driver), 'REFCLK_MASK' has been 
-extended to a 4-bit mask as well.
-
-The shifts associated with the masks have been updated accordingly.
-
-I shall include a summary of the above in the commit message of the v3 
-series.
-
-Thank you for reviewing the patch and providing feedback.
-
-Regards,
-Siddharth.
+Thanks,
+Neil
 
 -- 
 linux-phy mailing list
