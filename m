@@ -4,112 +4,130 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1B44EC79F86
-	for <linux-phy@archiver.kernel.org>; Mon,  5 Jan 2026 12:14:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 834B0C79F9F
+	for <linux-phy@archiver.kernel.org>; Mon,  5 Jan 2026 14:47:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wsxW1XJYdJQxwBI3UPT/B8qhEQBRTFyqj6iNI3Deq6U=; b=xCqt8ZSHXSyoTF
-	yIcL417oaHN67UQuIS2FskGfoIuUqX3I3KjbUxOE3+DTryuCwW6NLzFPg/WxITabxeSRZUS2Mebgg
-	GWz2RrFquarjzo4JieOC4GK/FH4PwIwzCJYAVj3QzvrlOt78jWuuj1yvZCPq8eDVPPKH7Kn6GgpRp
-	kbygpkOh31hZeM9cAEU3hPDVH61+o4aOWUVM313bpktMvzop9ZG4KGVRr5XPerQSv871RHe9H9twf
-	+/mtDxKHDQpfvzBQOyueX/FN6Sj7LsP2stKtVj+88d0TkpW+QoFKDhbkRBfBPPBTn1AiOXvJjAgO3
-	/yi+UPIMgENmqoT3686A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=lF8Su2Sj6rQ4WLzL96tSSmnuZEvFWJEoPQb9tvWp4p4=; b=iNkAWUVmYOR+z+
+	9pzFbIpLtqvymgZbt/Ggy2XCb5UB8wSth2eS+bSpJT2IHOXkLFtbkDco3POFf2YiMfhlKAPDwxTI9
+	nREmzVR49QueTTXAfoCDnl8fAx4x49kvjJPZaxULcrn7J44+7CMovZggklJjoq9P37t9u5AX3JwwH
+	HsDyVv7MRtSfV4+KZHjD5c44PdMl/a2sR0bjaRbVg7PT1tifcp0TSrk6P/Ml7I5psfwe1IzSiad2g
+	AkVjEm35KYYOWEbTNsFCMj6AVEHQwDpqaZlvDJWmZebMcaz9MFKkgWapWxlvf5h2yfy93tj8rwR8q
+	eonuPwmzhkD1TmcjK+Kg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vcjU7-0000000BGFw-2zge;
-	Mon, 05 Jan 2026 12:14:55 +0000
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
+	id 1vclrL-0000000BZ9n-0Mih;
+	Mon, 05 Jan 2026 14:47:03 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vcjU4-0000000BGDj-1Ubl
+	id 1vclrI-0000000BZ9F-0Cv5
 	for linux-phy@lists.infradead.org;
-	Mon, 05 Jan 2026 12:14:54 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1767615289;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=pALCUxgG0Sih3gS1zvT5EYeP9u7uxFAHJ/wplVNqgIA=;
-	b=CL8esZY1GYAaPV/IZ7WsWlwGBj13y/IQcaqsIRArVMNb5/Q+NTkVPMf6qcDry5aokXap+e
-	Qp3p7aLxStjtEwdF7suBn1LLJZHAcxe29ykATjuPh/UQWkCkZjh/RbkOKXgCNOGU26R51K
-	fLMcj8qiKFH4EZ8ys6ngGpc5mZR7w5M=
-Received: from mail-qk1-f198.google.com (mail-qk1-f198.google.com
- [209.85.222.198]) by relay.mimecast.com with ESMTP with STARTTLS
- (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
- us-mta-614-rsXoMmROP-yOf94rTUQFjw-1; Mon, 05 Jan 2026 07:14:48 -0500
-X-MC-Unique: rsXoMmROP-yOf94rTUQFjw-1
-X-Mimecast-MFC-AGG-ID: rsXoMmROP-yOf94rTUQFjw_1767615287
-Received: by mail-qk1-f198.google.com with SMTP id af79cd13be357-8b2ea3d12fcso2321048185a.0
-        for <linux-phy@lists.infradead.org>; Mon, 05 Jan 2026 04:14:47 -0800 (PST)
+	Mon, 05 Jan 2026 14:47:01 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6058VV5I3941636
+	for <linux-phy@lists.infradead.org>; Mon, 5 Jan 2026 14:46:59 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:date:from:message-id:mime-version
+	:subject:to; s=qcppdkim1; bh=PZ93jr1D4zRH7N9PpSQt+IsQHrrWM2+KK0h
+	qm7sbJpE=; b=B0wUgMuSvwjHM4Cg9T+rd5/SchNztsFXn7K0XNDmJo9pCZXxbmQ
+	tv6vxpH6Mmq2GswfpfLSacUbWBJsV6jWoFE2+oVei6AkmndVsTd0zqHoz7bTjqXZ
+	tqOx1cT58b/ev/NDwHIN+9s0sL5Ns2NBCimNfl6LXFDMPYPSS802I4kaAcLcwjZB
+	6Lh8yUWgcIi6EC3jNcZ2w0yQh0oK2yDYCsomAYqlrY4UkE4tVVUQsWjRkkClpu6M
+	Fis7pXtIkRwGG2xK/Hio0Y52OYVczlhMY/1p9GaKrxHPzbTg+/xNFzNPISUPbf2W
+	bdDbY+GwxZJPYpO3NvNqRxP41tg2ftuEEOg==
+Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4bfyx0j8mr-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Mon, 05 Jan 2026 14:46:59 +0000 (GMT)
+Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-29f1f79d6afso198982085ad.0
+        for <linux-phy@lists.infradead.org>; Mon, 05 Jan 2026 06:46:58 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1767624418; x=1768229218; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=PZ93jr1D4zRH7N9PpSQt+IsQHrrWM2+KK0hqm7sbJpE=;
+        b=HyWc3CZCvmn0I8aTMPq//UzoYM+98vfD3q/N9+FwfZcT0wV1/1t9Nu4ytLM0139SfA
+         wM8EVC/HwZZYEPLxhTDQpqJ5juSxj7pg07ek23j+LOcstSrAIov4O6jBQVjmK7OjfGgN
+         dnjobpCCgxKPz/SA7kigRrPhsWWn0GWodXUh9Ea2Zi/z8zjc9KnQvxP3xHfThFZK5scu
+         8Koj/JY56kZUmUPYK1CoCNVYtZ/gXdBWRNqqsdzig0WA3ITRNn7PxzhzRB4MgpeQjkM4
+         FNn9bxIcoho60OgQoZ9B3afXRAs5udlCXOxYK+vAD/RTCMGlkpjw1dWqvXx+AzeV3OPb
+         ZL/g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1767615287; x=1768220087;
-        h=user-agent:in-reply-to:content-disposition:mime-version:references
-         :message-id:subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=pALCUxgG0Sih3gS1zvT5EYeP9u7uxFAHJ/wplVNqgIA=;
-        b=R8XcBYDdTNT6c2be95s3HCJUBnNA2LSUF/SQJEaoBwCKtq9s5yB3olcEIjte4a/ZQL
-         qShldoc6trr5dCGGdB3rQIRWNqbvgCmIcIh7l2cnZ0KfpZ6TqqDVDi66HC6ls9emfWb4
-         7UNw/x581zagXQwTw+U+0DMnrUazdJ8zqSnSlN0krdwKPdwgS6uIVBn1J+KINPsOIbpb
-         p/apibnD50iGvpGrxPoJYxzi/F0TeJOCSl5U/YXQ4/qVEBpu/xeVks95GPBJpqPs+BRI
-         RbarYQQA7S7DBFFPJGVLRk+Zo7Y1mE6S7tfXAqezVVT34Bq/G1BqmOfUalP2X8DwKKtx
-         DdPA==
-X-Forwarded-Encrypted: i=1; AJvYcCXtIODPv5xz1th4kOu2FY2rilxKoNWwQyASSEMtexDmYl6jbNQgb6BgxNiW5gzP/p1npYtzUvAGDMM=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzhroRqAYyeyP3KWCdLlZ0WLLK38JzMuroSj6rnvMRTQ4oEpU5d
-	qb7x4oDJ9SJhW8TavzjiVGgFhe8l0UoT7jL9iupAxcEEgLPcAzokp0HIJz/AdzXjXdHiZwLFVtr
-	iUtupKp1swvJdPA/5JzJB2ZdK9q2ac7UeufXbinX7KfR06xrn6sJx+zUBZx6ADU8wM5+yQpulak
-	0=
-X-Gm-Gg: AY/fxX6J/jxyGWK5iQjV5nz7chR/ApyR/IRJ/u5gqFHFAao5V9FqHKNrFzqd/b5IYMT
-	EDqkKbJHlhbmbCYHtXmk0/dYJEnM8S5HPO7q05+i0tRJNe0IgufdIaMad40LyYuy8K3tpVZc4Yx
-	m/JJG78WaCzvAoS3m9AARo9Kuua6KPAFzW5T/PK14xzG1ny1lWPbjfOYzqdofCLhtroY9WLiQTP
-	+dPhSrvMH5pYa9L5Hl61kIb5BYEY7RDgPT5i0pR9DOE1yP8JUdenxwkPcilA0TZOyxfGQXkw+4W
-	tgpQeNZDAGERz3sVzNfTg9q8iHvY4lIkxvdkhfDdgJzR048MdKejlEuSUdAJorzjYOdPW8tfHEM
-	78V2lKiYL2UZg39Lcjvvvu8C3NDT6U0+k+bdJbw4vsZf6
-X-Received: by 2002:a05:620a:44d5:b0:8b2:d6eb:8203 with SMTP id af79cd13be357-8c090501db3mr7123130885a.69.1767615287423;
-        Mon, 05 Jan 2026 04:14:47 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IFX37kzKtyI4pVa2B6zkJ45mbfVDYf5b4bq6gq1EC+G2OfHkde7TEgVCraCyU1NH7StTtKeCg==
-X-Received: by 2002:a05:620a:44d5:b0:8b2:d6eb:8203 with SMTP id af79cd13be357-8c090501db3mr7123126885a.69.1767615286882;
-        Mon, 05 Jan 2026 04:14:46 -0800 (PST)
-Received: from redhat.com (c-73-183-52-120.hsd1.pa.comcast.net. [73.183.52.120])
-        by smtp.gmail.com with ESMTPSA id af79cd13be357-8c0971ee247sm3701650785a.27.2026.01.05.04.14.44
+        d=1e100.net; s=20230601; t=1767624418; x=1768229218;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=PZ93jr1D4zRH7N9PpSQt+IsQHrrWM2+KK0hqm7sbJpE=;
+        b=Eg3hNiGxqdlnQWwgX61xrcPRpG4/yWtChXNIZv5FjY81CKAPdUWEtSJXbB16iVvOyG
+         dT13Y44L+7r0t9xnq/cDMvO3/HlDslvWeTiljmU4kDsW1k1ktUAawKfYIfKPmIai7JqZ
+         xT6DobdrohYxgU2Kjz8AdR51kuE9N+njn9SPUzLKpbBAeKh17TJTcJE5tDVbLyh6NxFn
+         6Tncl5Hv/qm+ktfM0lG9IIenQ9ZlRyvp4eQllyuqLccFzSCsp4x01HnNPYP4e2QvAJsT
+         8M+SQbqZejXxVEXqLABXkP0OpOsP4/KfE1tsHww+A0JmYQch5aFZMARmwsSk7EG6tn/w
+         Da2w==
+X-Forwarded-Encrypted: i=1; AJvYcCUbrJrVWeGRzMxj7gbg7jcBBdQRZrqFbxZRzvrJjhFDAT3+lWngbUYybLN5fsbV741OeVCRDjep62c=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yw6fK23JEdJWvfMjHmlclw0eBPgnQ29v91gChlofmI0L8al2P90
+	w/S6CcjS+MJ5PjYtCJ6gAEt3Bx+jSVVcwo7PZwskK8DY5nFTxIG4R/bOIotVi0+610n8pxhUrbp
+	ZfbWiTIl/F4KvryDW7pfS+DGRbwvhFlxqi0sZxnLOy35HyP20A8IYuOtnbkkgqBEAmNCX
+X-Gm-Gg: AY/fxX4GAUHB1L++L+p2pXdj9Es10qtQoX+Gf0fRZm+9gMDxY25uQRb3b2R5BJY68/F
+	Dt6kFvOzTOKkoIAI5VId6sniJrV/9UTldgj6dpVstlzPub9TFA4OzGZLVW4xjuJLajxyi/ZjsaW
+	KSqGmoFwJ9EW8O5GyGh6UGM4qfA8TQTH4KhuFBYFrUC6KXa3hfqEkigpEYYXfrL8Q4QmNkwuyrm
+	t7GHc/yLvn2G37LmgknJh5OelvqqKnYKgMAX5Ww+L4Z6lWcM+J18mZFve5TRNArH01k6+8F2UNh
+	eEaJoUPWvldgPMqbO7p+uf41V2eVZn45PU+57eMIdJ1iz7jiFU5bcUnPavA/vjUFEgtKL223KLj
+	BgWLErP8cqahPiNcCYXWQc33X4thzktynlc9TbHFcaF2BPkUGIDi1
+X-Received: by 2002:a17:90b:580e:b0:34e:5516:6655 with SMTP id 98e67ed59e1d1-34e92143ca1mr39102501a91.9.1767624418160;
+        Mon, 05 Jan 2026 06:46:58 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEtgxrBJy+KlEiCPbQnnuwqMX4vv2QGV7RNNjtLOl6mRIRz3nWiVPztFg2wB2/6dl+kJEARIw==
+X-Received: by 2002:a17:90b:580e:b0:34e:5516:6655 with SMTP id 98e67ed59e1d1-34e92143ca1mr39102485a91.9.1767624417667;
+        Mon, 05 Jan 2026 06:46:57 -0800 (PST)
+Received: from hu-pragalla-hyd.qualcomm.com ([202.46.23.25])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-34f476ec311sm6634868a91.4.2026.01.05.06.46.51
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 05 Jan 2026 04:14:45 -0800 (PST)
-Date: Mon, 5 Jan 2026 07:14:43 -0500
-From: Brian Masney <bmasney@redhat.com>
-To: Geert Uytterhoeven <geert@linux-m68k.org>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Chun-Kuang Hu <chunkuang.hu@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Chunfeng Yun <chunfeng.yun@mediatek.com>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Heiko Stuebner <heiko@sntech.de>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Stephen Boyd <sboyd@kernel.org>, Maxime Ripard <mripard@kernel.org>,
-	linux-clk@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
-	linux-mediatek@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org
-Subject: Re: [PATCH v3 9/9] phy: ti: phy-j721e-wiz: convert from round_rate()
- to determine_rate()
-Message-ID: <aVurM1XRqiYlzi1B@redhat.com>
-References: <20251212-phy-clk-round-rate-v3-0-beae3962f767@redhat.com>
- <20251212-phy-clk-round-rate-v3-9-beae3962f767@redhat.com>
- <CAMuHMdXudWW3MPKqP0-d+DyMNRF-X62oyHRnj=MM_9MSpJw6sw@mail.gmail.com>
+        Mon, 05 Jan 2026 06:46:57 -0800 (PST)
+From: Pradeep P V K <pradeep.pragallapati@oss.qualcomm.com>
+To: vkoul@kernel.org, neil.armstrong@linaro.org, robh@kernel.org,
+        krzk+dt@kernel.org, conor+dt@kernel.org, martin.petersen@oracle.com,
+        andersson@kernel.org, konradybcio@kernel.org,
+        taniya.das@oss.qualcomm.com, dmitry.baryshkov@oss.qualcomm.com,
+        manivannan.sadhasivam@oss.qualcomm.com
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        linux-scsi@vger.kernel.org, nitin.rawat@oss.qualcomm.com,
+        Pradeep P V K <pradeep.pragallapati@oss.qualcomm.com>
+Subject: [PATCH V3 0/4] Add UFS support for x1e80100 SoC
+Date: Mon,  5 Jan 2026 20:16:39 +0530
+Message-Id: <20260105144643.669344-1-pradeep.pragallapati@oss.qualcomm.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-In-Reply-To: <CAMuHMdXudWW3MPKqP0-d+DyMNRF-X62oyHRnj=MM_9MSpJw6sw@mail.gmail.com>
-User-Agent: Mutt/2.2.14 (2025-02-20)
-X-Mimecast-Spam-Score: 0
-X-Mimecast-MFC-PROC-ID: U3aaH9lgVpRSbHrcVRN_Yz3M6hna0dzIxBS3YJQX4Pc_1767615287
-X-Mimecast-Originator: redhat.com
-Content-Disposition: inline
+X-Authority-Analysis: v=2.4 cv=CZYFJbrl c=1 sm=1 tr=0 ts=695bcee3 cx=c_pps
+ a=JL+w9abYAAE89/QcEU+0QA==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
+ a=vUbySO9Y5rIA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
+ a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=g41jKqSBfOdEa1tnm9UA:9
+ a=324X-CrmTo6CU4MGRt3R:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMTA1MDEyOSBTYWx0ZWRfX1dUcqGPGVYj/
+ 1m04t8LXxli886iisRT+itX93dbS9Rp8eY4tjpo8OSvenCGBi2nJ+YT+vFhXrJsmn48fyD7rGP1
+ UMZCYseXudVcMgKVsMNIluizKHWbK1LrniU6hHS5xa/kS31/CakBQaWjoGlXQgRFUX7zIeij7sq
+ PP12nkWRDWs7AoyceYLbOvReh4YqBS7JfjQVCVPJVK/kWPWRz25A8XwoMjvPbqMqncGU24h/IAA
+ 7A2EvEBvj5v6zA7xZKK7mUmddSkdS8YnDdrBJUbxzDvkyYaBJcMIaNJnG/JZOtcaUzxD3oOVZxA
+ 8A4tChfCSVV3jxu60l495cHRW2/tWI+ZgY0niUVW6/unHCb+WTQNrrVPV4lbfQwxsJ9ayL+s1MW
+ ADG6AiUrnq/XL+/DkwZa0r/N/t+46qqvI+d1gW2/l3vct7DwDaaVWM7wu1fP7jvlsBeE6rxTve0
+ y9NHT10DOhiYz5/f/VA==
+X-Proofpoint-GUID: avoOEUpsttaNiwRe4XY9wia5d1MLZAUw
+X-Proofpoint-ORIG-GUID: avoOEUpsttaNiwRe4XY9wia5d1MLZAUw
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
+ definitions=2026-01-05_01,2026-01-05_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ clxscore=1015 priorityscore=1501 spamscore=0 bulkscore=0 lowpriorityscore=0
+ impostorscore=0 suspectscore=0 adultscore=0 phishscore=0 malwarescore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2512120000 definitions=main-2601050129
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260105_041452_456453_947941C8 
-X-CRM114-Status: GOOD (  22.36  )
+X-CRM114-CacheID: sfid-20260105_064700_201558_19E79846 
+X-CRM114-Status: GOOD (  11.98  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -126,53 +144,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Geert,
+Add UFSPHY, UFSHC compatible binding names and UFS devicetree
+enablement changes for Qualcomm x1e80100 SoC.
 
-On Mon, Dec 29, 2025 at 11:18:52AM +0100, Geert Uytterhoeven wrote:
-> Hi Brian,
-> 
-> On Fri, 12 Dec 2025 at 00:21, Brian Masney <bmasney@redhat.com> wrote:
-> > The round_rate() clk ops is deprecated, so migrate this driver from
-> > round_rate() to determine_rate() using the Coccinelle semantic patch
-> > on the cover letter of this series.
-> >
-> > Signed-off-by: Brian Masney <bmasney@redhat.com>
-> 
-> Thanks for your patch, which is now commit 27287e3b52b5954b ("phy:
-> ti: phy-j721e-wiz: convert from round_rate() to determine_rate()")
-> in phy/next
-> 
-> > --- a/drivers/phy/ti/phy-j721e-wiz.c
-> > +++ b/drivers/phy/ti/phy-j721e-wiz.c
-> > @@ -934,12 +934,15 @@ static unsigned long wiz_clk_div_recalc_rate(struct clk_hw *hw,
-> >         return divider_recalc_rate(hw, parent_rate, val, div->table, 0x0, 2);
-> >  }
-> >
-> > -static long wiz_clk_div_round_rate(struct clk_hw *hw, unsigned long rate,
-> > -                                  unsigned long *prate)
-> > +static int wiz_clk_div_determine_rate(struct clk_hw *hw,
-> > +                                     struct clk_rate_request *req)
-> >  {
-> >         struct wiz_clk_divider *div = to_wiz_clk_div(hw);
-> >
-> > -       return divider_round_rate(hw, rate, prate, div->table, 2, 0x0);
-> > +       req->rate = divider_round_rate(hw, req->rate, &req->best_parent_rate,
-> > +                                      div->table, 2, 0x0);
-> 
-> Is this correct?  divider_round_rate() can return a negative error code
-> (from divider_ro_determine_rate()), which is not handled here?
-> 
-> Looks like several other users of divider_round_rate() use this
-> same logic, and thus are affected, too.
+Changes in V3:
+- Update all dt-bindings commit messages with concise and informative
+  statements [Krzysztof]
+- keep the QMP UFS PHY order by last compatible in numerical ascending
+  order [Krzysztof]
+- Remove qcom,x1e80100-ufshc from select: enum: list of
+  qcom,sc7180-ufshc.yaml file [Krzysztof]
+- Update subject prefix for all dt-bindings [Krzysztof]
+- Add RB-by for SoC dtsi [Konrad, Abel, Taniya]
+- Add RB-by for board dts [Konrad]
+- Link to V2:
+  https://lore.kernel.org/all/20251231101951.1026163-1-pradeep.pragallapati@oss.qualcomm.com
 
-Thanks for the review! You are correct that this is a bug.
+---
+Pradeep P V K (4):
+  dt-bindings: phy: qcom,sc8280xp-qmp-ufs-phy: Add QMP UFS PHY
+    compatible
+  dt-bindings: ufs: qcom,sc7180-ufshc: Add UFSHC compatible for x1e80100
+  arm64: dts: qcom: hamoa: Add UFS nodes for x1e80100 SoC
+  arm64: dts: qcom: hamoa-iot-evk: Enable UFS
 
-I had planned once round_rate is removed from the clk core to post a
-series to remove divider_round_rate() and divider_ro_round_rate() (plus
-the _parent functions) since they call the corresponding determine_rate
-functions. I'll bump that up on my todo list this week.
+ .../phy/qcom,sc8280xp-qmp-ufs-phy.yaml        |   4 +
+ .../bindings/ufs/qcom,sc7180-ufshc.yaml       |  37 +++---
+ arch/arm64/boot/dts/qcom/hamoa-iot-evk.dts    |  18 +++
+ arch/arm64/boot/dts/qcom/hamoa.dtsi           | 123 +++++++++++++++++-
+ 4 files changed, 164 insertions(+), 18 deletions(-)
 
-Brian
+-- 
+2.34.1
 
 
 -- 
