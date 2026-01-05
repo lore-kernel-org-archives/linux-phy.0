@@ -4,74 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8804AC79FBB
-	for <linux-phy@archiver.kernel.org>; Mon,  5 Jan 2026 19:16:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D413EC79FB3
+	for <linux-phy@archiver.kernel.org>; Mon,  5 Jan 2026 19:16:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yr+zvCZARNOcdUBSteG+vuoeeS5TAzDfD0eXy7AY5h8=; b=WShRdbUfNDuKca
-	Jum/69TT1gzGfH3kndA10QY9rqz1R07mblBKzFH1QRuvYguHoIp2an+4UZfKUCcKooGIZVxBbNDLy
-	ExqYmVbH7dzFQv8vIUcTlXa18qvzO5V/QbwzQ+S3amoLa/ULGYp82nT/BQpIzN8NAVG67JNWMQCKm
-	RR6CgcLm6NjgB7rlElEsiiP05zJW7aRPvHcOHKqH1KNG7rHBCvnTCpm9WCFoLKmtyylx4GqQmQSY4
-	KT5Gat5bTOhDW7FkzdsVcIPDxuwfy2HorXql+5JaHxFmWMdtPYPTOJ9Yh545hSn9IEo702Ra7pcn9
-	/aW4ZHUPRA3Hx1rDERZg==;
+	List-Owner; bh=dxmzfrt1W/zugQ18Zs0nDqQjENO+yGXjsdQ/IRfJVRM=; b=UVKD3E5gxeHKlM
+	D/Yq69Oxol+xP+mhbRNU3NJegFCTXCsEKZ76asPuPX6/X4voDhISI1JM9VGXNiqblfgsukZriFBzc
+	t7T9bIHJOB7jIWRTv+f77ZvfORvQ8J531ar13o6AsF83T/AVOuoMegSrhDLd15o/b23APAyuEuuuF
+	7t82NWi+iTaq8FcN4NaEp+ze8S4VfYpv28AIv0iD8TQRQ4aFNpKzfRjspmb4gBNFm1+GHscOryeNF
+	VuH6G8lonsjS2qbgNOGNdNNjWa1DhxdUquC1EQFk1yfj1Z/apWzgpuA6eYbhyJwnm1tWdrBSNR1xq
+	bBqInkI/Dqdz+lyL3cAA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vcq4F-0000000Bxss-00Vi;
-	Mon, 05 Jan 2026 19:16:39 +0000
+	id 1vcq4M-0000000BxuO-26Ox;
+	Mon, 05 Jan 2026 19:16:46 +0000
 Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vcq4B-0000000BxsM-25cI
+	id 1vcq4K-0000000Bxtw-2r3J
 	for linux-phy@lists.infradead.org;
-	Mon, 05 Jan 2026 19:16:37 +0000
+	Mon, 05 Jan 2026 19:16:45 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 9AD514186B;
-	Mon,  5 Jan 2026 19:16:34 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1EB85C116D0;
-	Mon,  5 Jan 2026 19:16:33 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 66F1340DEF;
+	Mon,  5 Jan 2026 19:16:44 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2D88AC19422;
+	Mon,  5 Jan 2026 19:16:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1767640594;
-	bh=povE5y5MY7Uwze3qy6H5gHZ1SQ221k5BK3sT4JoYWGs=;
+	s=k20201202; t=1767640604;
+	bh=PrjmIebn6x7x+kTJN8YuN3S+cBkcKFEhmP6QFXPNwrM=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=ZLilpzwuyqmHP8n/r5pXfEADIgh+en0I5Bz/Oqta/W9EVsmck2dKAAnlGrWTJ5Olq
-	 Fo7saD73xUX6XAK5tMtR0fgkYgamXHid3fkt+YSw8kQnWqtqQ0l3Y4w6We6TqbQWkE
-	 rXYEUpt2hdNs/7141RHssAmVmxGpeP48gTA9gHRNKvTz8nX5oFBi4FIGGd0LKe5zeA
-	 u3iDPdRCfPkH3fq+FpaeuLR92EGa8cYD4ZcmLdjoiLUibaylMFFaYBaPgOsHh8s6eW
-	 ZgR0IhX7iNCDEH8IApQa9xI1fIgwQglQvrAyJF3I2zs59vOGoeblzEdeh0NhEaPeef
-	 hJf27d+Y2vpDw==
+	b=srvTsG/2mc2jvYZsk7CuXBhVaf2sA5s1ORQ7Qo/9DRTTQhzx3PhTCnmbvmyfn4UcM
+	 yHyOdWXiyvvzuEmHv6lBz5A8XkC+e3hxH6ad6Y/7l3TfqV4vCgpoyy7YWw+wjYq1kX
+	 kh/phfloUSk6fSWogO9VBgK1dhabJvLIdpF/7zdAhkLB+px1SD18jEPKIyz3QnpK0D
+	 n50PPFqR0u//0UbWVl0iJeEtCNqr7dxmL+X0ALlwPjT+Ny+n7BvmuvTcfQQDHmjkNj
+	 CiMHXnlvxUVG2UoLks/Aolov/U3cMnuMe5fBs/KTa8tQ98tPC1z9iakztj7mJsEcaE
+	 GcdJVGemCO0Mw==
 From: Bjorn Andersson <andersson@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
+To: Neil Armstrong <neil.armstrong@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>,
 	Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
 	Conor Dooley <conor+dt@kernel.org>,
-	Dmitry Baryshkov <lumag@kernel.org>,
 	Konrad Dybcio <konradybcio@kernel.org>,
-	Sibi Sankar <sibi.sankar@oss.qualcomm.com>,
-	Rajendra Nayak <quic_rjendra@quicinc.com>,
-	Abel Vesa <abel.vesa@oss.qualcomm.com>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>,
-	linux-arm-msm@vger.kernel.org,
+	Abel Vesa <abelvesa@kernel.org>,
+	Pengyu Luo <mitltlatltl@gmail.com>,
+	Johan Hovold <johan+linaro@kernel.org>,
+	Luca Weiss <luca.weiss@fairphone.com>,
+	Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
+Cc: linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	Krzysztof Kozlowski <krzk@kernel.org>,
-	Abel Vesa <abelvesa@kernel.org>,
-	stable@vger.kernel.org,
-	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Subject: Re: [PATCH RESEND v5 0/3] phy: qcom: edp: Add missing ref clock to x1e80100
-Date: Mon,  5 Jan 2026 13:16:15 -0600
-Message-ID: <176764058412.2961867.5718279320057221936.b4-ty@kernel.org>
+	linux-kernel@vger.kernel.org
+Subject: Re: (subset) [PATCH v3 0/3] Add eusb2 repeater squelch detect parameter override
+Date: Mon,  5 Jan 2026 13:16:23 -0600
+Message-ID: <176764058409.2961867.1947297193392128715.b4-ty@kernel.org>
 X-Mailer: git-send-email 2.52.0
-In-Reply-To: <20251224-phy-qcom-edp-add-missing-refclk-v5-0-3f45d349b5ac@oss.qualcomm.com>
-References: <20251224-phy-qcom-edp-add-missing-refclk-v5-0-3f45d349b5ac@oss.qualcomm.com>
+In-Reply-To: <20251219173108.2119296-1-krishna.kurapati@oss.qualcomm.com>
+References: <20251219173108.2119296-1-krishna.kurapati@oss.qualcomm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260105_111635_558457_07BB6634 
-X-CRM114-Status: GOOD (  11.76  )
+X-CRM114-CacheID: sfid-20260105_111644_761092_2B0637F6 
+X-CRM114-Status: UNSURE (   7.77  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,27 +86,24 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Wed, 24 Dec 2025 12:53:26 +0200, Abel Vesa wrote:
-> According to documentation, the DP PHY on x1e80100 has another clock
-> called ref.
+On Fri, 19 Dec 2025 23:01:05 +0530, Krishna Kurapati wrote:
+> Add support for eusb2 repeater squelch detect parameter override via DT.
 > 
-> The current X Elite devices supported upstream work fine without this
-> clock, because the boot firmware leaves this clock enabled. But we should
-> not rely on that. Also, when it comes to power management, this clock
-> needs to be also disabled on suspend. So even though this change breaks
-> the ABI, it is needed in order to make we disable this clock on runtime
-> PM, when that is going to be enabled in the driver.
+> Squelch detect parameter adjusts the voltage level for the threshold used
+> to detect valid high-speed data.
+> 
+> Changes in v3:
+> - Moved status property to end of repeater node.
+> - Updated commit text as per comments received in bindings patch.
+> - Retained Krzysztof and Abel RB tags (since its upating commit text adding
+>   information in bindings code and moving status property in dt code)
 > 
 > [...]
 
 Applied, thanks!
 
-[1/3] dt-bindings: phy: qcom-edp: Add missing clock for X Elite
-      (no commit info)
-[2/3] phy: qcom: edp: Make the number of clocks flexible
-      (no commit info)
-[3/3] arm64: dts: qcom: x1e80100: Add missing TCSR ref clock to the DP PHYs
-      commit: 0907cab01ff9746ecf08592edd9bd85d2636be58
+[3/3] arm64: dts: qcom: sm8750-mtp: Add eusb2 repeater tuning parameters
+      commit: 09d87fdd83894bf3df4ecb79296d03c7a1ac24c3
 
 Best regards,
 -- 
