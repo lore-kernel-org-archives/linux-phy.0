@@ -4,96 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 84965C47BDF
-	for <linux-phy@archiver.kernel.org>; Tue,  6 Jan 2026 10:30:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B827CCDC193
+	for <linux-phy@archiver.kernel.org>; Tue,  6 Jan 2026 12:23:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-reply-to:
-	Date:Subject:Cc:To:From:References:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8tNVAtg7jRzqG479fDw6DNz3zd+c6aLfEfWHi0lyo1Y=; b=ZJDgi/lS13LxYU
-	hh08B1dPjohGqKZkHjsezIOYFi/80+fhaNc+z8Nj0vHpNd0Ny/JotQR3kQCvI47XDXFC5IzY1Blw8
-	EOMhjAsXYEPLOn5qXdWSs9g1ZRzMUCrKL+ijtToa967PlHvZRtln3sgDtzvjOV4kkTSQNoHxztrOO
-	DRZUzM3qwgsS/bAuIkoYlReDGvzDQ9E0aQyXH8ItKiMBZ6sRLyVKJJ393E+RDAHkS1eYnA9BD0UMK
-	1ij16mFJef0kFj0bcIDBJRbfWmJn+UjCOkNBh9MCvuMdUkDA5Nbv2v0ShPgZWRmpX6uAl9LPklL/w
-	T8z6sNYWVpInErV3GH2Q==;
+	List-Owner; bh=2p0e5G0UWwuS8MLMbVhyyw+WudO/As/KA8q9O0F1uLA=; b=0PunFcoBoWqFnA
+	Lew/sgKGWQoE5iI72IQ9K2KJW3x8cX3Sc/BRXo6CFW+zGqRHVPM6aBbeM/1KP2PzpjUpqaD95arnP
+	yPEQSGvnfvUWGZFqt1j92EH/0sOQ7VPyZRW/W4AQctw0MlEvnnb57qvC+u1r22CsF94LuoesVyky/
+	hXNmtEAoaT3lyA0wu76E7zKWjbsjvzFZlWecI994YPlcY6AMZUNdrDcaGqnqnCLJX+hvH7xGUlni/
+	kgSd99jG5Ix2jYjFSL570wvav1BQpx1fYlI2KY0EQ1L5a/uywU7b4yc9dZGlinwi3cvSzVFaGrTzJ
+	iGFO3F2e7tM7Sq+ornXQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vd4Kk-0000000Cnim-19e2;
-	Tue, 06 Jan 2026 10:30:38 +0000
-Received: from mail-lf1-x129.google.com ([2a00:1450:4864:20::129])
+	id 1vd65m-0000000CzSv-1HyN;
+	Tue, 06 Jan 2026 12:23:18 +0000
+Received: from mail-pg1-x531.google.com ([2607:f8b0:4864:20::531])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vd4Kh-0000000CniL-3MJR
+	id 1vd65j-0000000CzSC-41mt
 	for linux-phy@lists.infradead.org;
-	Tue, 06 Jan 2026 10:30:36 +0000
-Received: by mail-lf1-x129.google.com with SMTP id 2adb3069b0e04-59577c4c7c1so2827483e87.1
-        for <linux-phy@lists.infradead.org>; Tue, 06 Jan 2026 02:30:34 -0800 (PST)
+	Tue, 06 Jan 2026 12:23:17 +0000
+Received: by mail-pg1-x531.google.com with SMTP id 41be03b00d2f7-c2a9a9b43b1so644495a12.2
+        for <linux-phy@lists.infradead.org>; Tue, 06 Jan 2026 04:23:15 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1767695433; x=1768300233; darn=lists.infradead.org;
-        h=mime-version:message-id:in-reply-to:date:subject:cc:to:from
-         :user-agent:references:from:to:cc:subject:date:message-id:reply-to;
-        bh=NsJJOzya3cvYihpIwq796R0nHpBIF37n18oyXT0fuvE=;
-        b=H6VuoHlQi/Rm3D0r2xL+AS3qt6CF9cLFI21if1nqaHjG/RzXsJDuufuzNNQ7AkvOPo
-         UyCFLlB9vRkkQzVCLOjFLtb5IvM/ElONERnfVL3cNxr8oPkVkmfoLTTD/7h+rucXgQSQ
-         Zhwf/vH8iDGZKLFiGy58jKrQpA8v+ACypVdqUqG+XItN4w/HelDN9ns+h4UanrW7GgLn
-         0ugjG+fD/slqf4ULPeIxvWR1CfmAUe6/SUWBF4BFQanL18wOUM22X9Xx+iMQaHj0CmGL
-         Okx2/VS1pXz+K6QVIwLZH8RBB9P0YVR0CmLqnUDcdXtwpDWRprXs9WFL6LoNcmORltI+
-         dn/A==
+        d=gmail.com; s=20230601; t=1767702195; x=1768306995; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=kq3C2EX5go7tonSsueKHleKcgx8MdpUmDsXaRxdCcZY=;
+        b=diME+uA8e/m8YI0PMIL8otqnfB7K6u9fRUE7mQO5w3c0mJ/oAj72spqw1BVGT6Ty6b
+         kx6h3X98bn0peioJAAYz8he8z5P6GHvFfjdNt5FrurBM+6CpTXaXN1Ese0JjlJwOUJmB
+         Pen4LopZ2i0EM9QmLbJ9023E3DSj1zdy96QTLHI7HO93JF4K2sgR2TENHrBm91qDroTl
+         13nBv65I5I1PL+4o0YbeAIbwsqZjjzCUEPCGfs77S/lnR1Ue15a8Gbh452hfWtZVon5g
+         kbK96pkFjmSyEdg0WAdx2QwOv07ySJEiGs4P+pCSUqgRgAmz9tT4TO0LYojLGYrNhQ9h
+         MHlw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1767695433; x=1768300233;
-        h=mime-version:message-id:in-reply-to:date:subject:cc:to:from
-         :user-agent:references:x-gm-gg:x-gm-message-state:from:to:cc:subject
-         :date:message-id:reply-to;
-        bh=NsJJOzya3cvYihpIwq796R0nHpBIF37n18oyXT0fuvE=;
-        b=q72NfT3HrRfQpsUzI0rSFcOqUzuH41+uS1lM+GO8v6pTHxVEYh9bW6rt5IMfoobyFe
-         x/NqcqYh3MHZof71DnaJPtnAiQbUxTtQbQO5YhQAfsxoRUWPfp9pgccagIG9jxGzFI3H
-         AKY5BNFKMwS8ct8xsw9y2gjPnkWSsdnsqMYNOY49rTaJsp7FvS7usuMyXbyn+yzx3THJ
-         7bg9DrUDnPyEqO303/rLMQVeg0aO0Bsj//VF4q0i+FGorQFKIDj83NB/kUUS2mTIgfro
-         uXVezWAr86qfiFgk1MGs1o/wRp346mzKdXZVf/PNDb3O2HDPpoQv2Q3EChViPgHNYWTe
-         1LqA==
-X-Forwarded-Encrypted: i=1; AJvYcCXuQ8pJSDA7L6BNrp4inTAeJjYs+aVUPgnXYU6kuoyMDtN6/SUy8BapqZX0OdBooS6oCjOmBIvO7BI=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyFXtfjEYlsap4HwJwbsI+PtzKuJctVyBx2Bt1Tib6b9Q4VcQ53
-	ng0ebFEMaPg5GzIuZ4rWrYsJlBLOfgUsNN7iOn84Df8U5NZ4yf5lXlSk
-X-Gm-Gg: AY/fxX51TB2Fq+ftu0+vAsFbzVEVrou3u32iJ2lmV7175nobstM1MAi1oAcvPSGHyMj
-	o2gIe9A4QjXhG/03RgGX69sJb3ZDx0zK/Ykff7Xv/f6u+1Ubpaa9VPiVF3SlqIYAE+4y9mBSCTd
-	mnEWTOak1Ua5ZIaiz7razOtA0eg2fL+xqYPHukudHVSTg4/UQpzGsC5EncZUo/V8ZfLyqO4gP+Z
-	NrpCGkhTHR2a2TDQEvD9YPGKOxJkZnP8vzWpH/QUNsPE+kpCQqxOPgtggzCvqHamNfCpBlCJhOO
-	ED/XNFqnNwmC8DSZ38g7uQc15BwUEeOm5CVygc2fwCxA1whTV559wn0mX83h97jYiTHk+1WtT4B
-	9PY9mWawh42FobWt6DQgUM2z5canHJdeIXBPy65zXRZ4+8HZjtyFexFbEvdMCNxK2u9Ty4RH+
-X-Google-Smtp-Source: AGHT+IFmb+80wkKZdKxRHpidfReqxOHlUmLsipFT1rzzTuNx9rKmNHYR/9f9tfCpJuYk6MXE4I4WOw==
-X-Received: by 2002:a05:651c:1148:b0:37b:9361:711d with SMTP id 38308e7fff4ca-382eae68ac5mr6985121fa.8.1767695432846;
-        Tue, 06 Jan 2026 02:30:32 -0800 (PST)
-Received: from razdolb ([77.220.204.220])
-        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-382eb8dadc0sm4315921fa.33.2026.01.06.02.30.27
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 06 Jan 2026 02:30:32 -0800 (PST)
-References: <20251216-upstream_pcie_rc-v7-0-4aeb0f53c4ce@aspeedtech.com>
-User-agent: mu4e 1.10.9; emacs 30.2
-From: Mikhail Rudenko <mike.rudenko@gmail.com>
-To: Jacky Chou <jacky_chou@aspeedtech.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>, Rob Herring <robh@kernel.org>, Krzysztof Kozlowski
- <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Joel Stanley
- <joel@jms.id.au>, Andrew  Jeffery <andrew@codeconstruct.com.au>, Bjorn
- Helgaas <bhelgaas@google.com>, Lorenzo Pieralisi <lpieralisi@kernel.org>,
- Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>, Manivannan
-  Sadhasivam
- <mani@kernel.org>, Linus Walleij <linus.walleij@linaro.org>, Philipp Zabel
- <p.zabel@pengutronix.de>, Neil Armstrong <neil.armstrong@linaro.org>,
- linux-aspeed@lists.ozlabs.org, linux-pci@vger.kernel.org,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, Andrew
- Jeffery <andrew@aj.id.au>, openbmc@lists.ozlabs.org,
- linux-gpio@vger.kernel.org, Mikhail Rudenko <mike.rudenko@gmail.com>
-Subject: Re: [PATCH v7 0/7] Add ASPEED PCIe Root Complex support
-Date: Tue, 06 Jan 2026 12:58:40 +0300
-In-reply-to: <20251216-upstream_pcie_rc-v7-0-4aeb0f53c4ce@aspeedtech.com>
-Message-ID: <875x9fuj7i.fsf@gmail.com>
+        d=1e100.net; s=20230601; t=1767702195; x=1768306995;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=kq3C2EX5go7tonSsueKHleKcgx8MdpUmDsXaRxdCcZY=;
+        b=JnOeTZgOl15mrubTdIBo+P7Kl9Pd01HjSM4nDMv+m6g9rm/AUx7S94pcEUYBN7+9uV
+         q3mRuHfx5uxGfFMsEpnyG/v/Qph9uN0MaWGd6xAj2BP8HB3lORh/DzrT9gmjU7tAonx/
+         9oAZFwmiEJmTHq7AYtZWOrKEOsQaAmGzclHGNeNPUDI/f0kA2vnsUAlyf6C+EXreVTJ0
+         sfWbdiMaPthO5rdjOYiPDiL4YpUSw3JcRJdIgGACeD0pYgDeNOwzQB0sQ+mr5z8COO44
+         vtPZqfMrP0i6/t4MavWJlwSCMMEl8BcHbMSkbL4c+pu2eWJoUteFjL9GZVxj4Kp4t5mJ
+         oSUg==
+X-Forwarded-Encrypted: i=1; AJvYcCV0GpaBML5RKhpXsa95el2yzkAqAHqnGYkIZNhESfHIx8Knq6MdhYpgYJjFyAstMcFK89vFqlCG3gw=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyU9hJQDpq4iex/Puk3rxVprPAzGz0zwDrsSIStYM9gD5aIRYK1
+	EL/fx37E+ba8RtxCvUv3qQPti8uXE/lEqJ9bUJkSP0o81cUqfTDtkagm
+X-Gm-Gg: AY/fxX4FN95jqtkt97Vftszr4n3ZGfZ/a/B0t31UdCvYADVlOCY7smt1AcvhBkKh434
+	43ZZgg7ETbX/OHL5M/qBM1uzSDPlKco+JjWtA4D8UJ2Txj0nmdkZ8hR5d/6r6KussFJGPcU1Hs3
+	7yIqQMEZFltfurNKZpnttEa6fuYeUv8dIrLaEo8gyswGwl5HLMdNy3KJjAlNaiSnrJEn2EW9XDb
+	cDLb6knnkfdGnc/rSg8u+pbVHCa6LLRXk8m4rzBmWi/R5UvuHPupsdPxojPnSHHjyScQO2FrOV1
+	MqkunBgqhIgSd13+ZHacyK4WtEl7EXCJIvkdbLsuzYSse9QTMgWIEwvTKqL4PpJ29ifKtAMk/Ar
+	TEXRIKVfAC2d5KFplCESNZB6EjRT7Lw1U7+mus+CKhqwIxucEJ6aqQVDai6rRoCaJMa7yjW9SYd
+	PpuOJ7vYdJyOvx3HtBJzDjM1M9o/UbB/Eu
+X-Google-Smtp-Source: AGHT+IHCXWckuv1AxdRWanWDxivNrmKr0XWM9dXpBTiU3chSVncH2Joe2Ulg4UuoyBz40JzMDf/qag==
+X-Received: by 2002:a05:6a20:3d81:b0:2e5:655c:7f93 with SMTP id adf61e73a8af0-38982336877mr2593001637.33.1767702194775;
+        Tue, 06 Jan 2026 04:23:14 -0800 (PST)
+Received: from [192.168.1.6] ([27.7.214.154])
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-c4cc95d5c66sm2299581a12.24.2026.01.06.04.23.12
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 06 Jan 2026 04:23:14 -0800 (PST)
+Message-ID: <35bc3e4e-5fc2-4578-85d8-33d20313cc86@gmail.com>
+Date: Tue, 6 Jan 2026 17:53:09 +0530
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] dt-bindings: phy: ti,control-phy-otghs: convert to DT
+ schema
+To: Rob Herring <robh@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
+ <neil.armstrong@linaro.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <20260103-ti-phy-v1-1-8c3f5e2cbd63@gmail.com>
+ <20260105220859.GA3498531-robh@kernel.org>
+Content-Language: en-US
+From: Charan Pedumuru <charan.pedumuru@gmail.com>
+In-Reply-To: <20260105220859.GA3498531-robh@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260106_023035_860140_924951FB 
-X-CRM114-Status: GOOD (  18.63  )
+X-CRM114-CacheID: sfid-20260106_042316_020267_FC666A0B 
+X-CRM114-Status: GOOD (  21.45  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,55 +106,170 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Jacky,
 
-On 2025-12-16 at 09:49 +08, Jacky Chou <jacky_chou@aspeedtech.com> wrote:
 
-> This patch series adds support for the ASPEED PCIe Root Complex,
-> including device tree bindings, pinctrl support, and the PCIe host controller
-> driver. The patches introduce the necessary device tree nodes, pinmux groups,
-> and driver implementation to enable PCIe functionality on ASPEED platforms.
-> Currently, the ASPEED PCIe Root Complex only supports a single port.
->
-> Summary of changes:
-> - Add device tree binding documents for ASPEED PCIe PHY and PCIe RC
-> - Update MAINTAINERS for new bindings and driver
-> - Implement ASPEED PCIe PHY driver
-> - Implement ASPEED PCIe Root Complex host controller driver
->
-> This series has been tested on AST2600/AST2700 platforms and enables PCIe device
-> enumeration and operation.
+On 06-01-2026 03:38, Rob Herring wrote:
+> On Sat, Jan 03, 2026 at 11:06:10AM +0000, Charan Pedumuru wrote:
+>> Convert TI OMAP Control PHY and PIPE3 PHY binding to YAML format.
+>> Changes during conversion:
+>> - Define a new pattern 'pciephy'and 'control-phy' to match nodes
+>>   defined in DT.
+>>
+>> Signed-off-by: Charan Pedumuru <charan.pedumuru@gmail.com>
+>> ---
+>>  .../bindings/phy/ti,control-phy-otghs.yaml         | 206 +++++++++++++++++++++
+>>  Documentation/devicetree/bindings/phy/ti-phy.txt   |  98 ----------
+>>  2 files changed, 206 insertions(+), 98 deletions(-)
+>>
+>> diff --git a/Documentation/devicetree/bindings/phy/ti,control-phy-otghs.yaml b/Documentation/devicetree/bindings/phy/ti,control-phy-otghs.yaml
+>> new file mode 100644
+>> index 000000000000..830be2af5fb6
+>> --- /dev/null
+>> +++ b/Documentation/devicetree/bindings/phy/ti,control-phy-otghs.yaml
+>> @@ -0,0 +1,206 @@
+>> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+>> +%YAML 1.2
+>> +---
+>> +$id: http://devicetree.org/schemas/phy/ti,control-phy-otghs.yaml#
+>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>> +
+>> +title: TI PHYs for TI Platforms (OMAP Control PHY and PIPE3 PHY)
+>> +
+>> +maintainers:
+>> +  - Vinod Koul <vkoul@kernel.org>
+> 
+> No, this should be a TI person or someone with the h/w.
 
-First of all, thank you for your efforts in getting this driver
-upstreamed! I am trying to understand whether this driver supports
-PCIe devices that have an I/O port BAR, where CPU access to I/O ports
-is required for proper device operation.
+Okay, I will look into it.
 
-If I understand correctly, this line in the Aspeed 2600 dtsi file
-declares the I/O port range:
+> 
+>> +
+>> +description:
+>> +  This device tree binding describes the TI PHYs used in TI platforms.
+>> +  Two types of PHYs are supported.
+>> +  1. OMAP Control PHY - Simple control PHYs for power control
+>> +  2. PIPE3 PHY - High-speed PIPE3 PHYs for USB3, SATA, PCIe
+>> +
+>> +properties:
+>> +  $nodename:
+>> +    pattern: "^(pciephy|control-phy|usb3phy|phy)(@[0-9a-fA-F]+)?$"
+> 
+> Only phy, pcie-phy, or usb3-phy are valid node names.
 
-    ranges = <0x01000000 0x0 0x00018000 0x00018000 0x0 0x00008000
+Yeah, but control-phy was defined in DTS, so included it here.
 
-During system initialization, the pci_remap_iospace() function in
-arch/arm/mm/ioremap.c maps the physical address range
-0x00018000-0x00020000 to the virtual address PCI_IO_VIRT_BASE
-(0xfee00000). After this mapping, inb() and outb() calls work by
-converting I/O port addresses to virtual addresses starting at
-PCI_IO_VIRT_BASE, then performing reads and writes to those virtual
-addresses.
+> 
+> A-F is not valid for unit-addresses either.
 
-What I don't understand is this: according to the Aspeed 2600
-datasheet, the address range 0x00000000-0x0fffffff (which contains
-0x00018000-0x00020000) is mapped to Firmware SPI Memory. This would
-mean that outb() operations get routed to memory-mapped SPI flash
-instead of PCIe.
+Sure, I will remove it.
 
-It seems like there's a missing piece to this puzzle. Could you help
-clarify how this is supposed to work?
+> 
+>> +
+>> +  compatible:
+>> +    oneOf:
+>> +      - description: OMAP Control PHY compatibles
+>> +        items:
+>> +          enum:
+>> +            - ti,control-phy-otghs
+>> +            - ti,control-phy-usb2
+>> +            - ti,control-phy-pipe3
+>> +            - ti,control-phy-pcie
+>> +            - ti,control-phy-usb2-dra7
+>> +            - ti,control-phy-usb2-am437
+>> +      - description: PIPE3 high-speed PHY compatibles
+>> +        items:
+>> +          enum:
+>> +            - ti,phy-usb3
+>> +            - ti,phy-pipe3-sata
+>> +            - ti,phy-pipe3-pcie
+>> +            - ti,omap-usb3
+> 
+> IMO, these 2 bindings are completely unrelated and should be split to 2 
+> schema files.
 
---
-Kind regards,
-Mikhail Rudenko
+Okay, I will create 2 bindings in 2 separate patches then.
+
+> 
+>> +
+>> +  reg:
+>> +    minItems: 1
+>> +    maxItems: 4
+>> +
+>> +  reg-names:
+>> +    oneOf:
+>> +      - description: OMAP Control PHY
+>> +        items:
+>> +          enum: [otghs_control, power, pcie_pcs, control_sma]
+>> +      - description: PIPE3 high-speed PHY
+>> +        items:
+>> +          enum: [phy_rx, phy_tx, pll_ctrl]
+> 
+> Here's one example why.
+> 
+>> +
+>> +  "#phy-cells":
+>> +    const: 0
+>> +
+>> +  clocks:
+>> +    minItems: 2
+>> +    maxItems: 7
+>> +
+>> +  clock-names:
+>> +    minItems: 2
+>> +    maxItems: 7
+>> +    items:
+>> +      enum: [wkupclk, sysclk, refclk, dpll_ref,
+>> +             dpll_ref_m2, phy-div, div-clk]
+>> +
+>> +# Optional Properties
+>> +  id:
+>> +    description:
+>> +      Instance ID for multiple instances of same PHY type.
+>> +      Used for multi-lane PCIe PHYs.
+>> +    $ref: /schemas/types.yaml#/definitions/uint32
+>> +    default: 1
+> 
+> There aren't any users of this that I see. Drop it (and note that in the 
+> commit msg).
+
+Sure.
+
+> 
+>> +
+>> +  syscon-phy-power:
+>> +    $ref: /schemas/types.yaml#/definitions/phandle-array
+>> +    description:
+>> +      Phandle/offset pair to system control module register for PHY
+>> +      power on/off.
+>> +
+>> +  syscon-pllreset:
+>> +    $ref: /schemas/types.yaml#/definitions/phandle-array
+>> +    description:
+>> +      Phandle/offset pair to CTRL_CORE_SMA_SW_0 register containing
+>> +      SATA_PLL_SOFT_RESET bit (SATA PHY only).
+>> +
+>> +  syscon-pcs:
+>> +    $ref: /schemas/types.yaml#/definitions/phandle-array
+>> +    description:
+>> +      Phandle/offset pair to system control module for writing PCS delay value.
+>> +
+>> +  ctrl-module:
+>> +    $ref: /schemas/types.yaml#/definitions/phandle
+>> +    description:
+>> +      Phandle of control module for PHY power on.
+>> +    deprecated: true
+> 
+> I believe all these phandle props only apply to the PIPE3 binding.
+
+Yes, I will add them to PIPE3 binding seperately.
+
+> 
+> Rob
+
+-- 
+Best Regards,
+Charan.
+
 
 -- 
 linux-phy mailing list
