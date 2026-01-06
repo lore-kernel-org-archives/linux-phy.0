@@ -4,146 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 36E81CD0438
-	for <linux-phy@archiver.kernel.org>; Tue,  6 Jan 2026 05:09:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 71180C2A071
+	for <linux-phy@archiver.kernel.org>; Tue,  6 Jan 2026 06:30:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VmCUerbuJFuYwg2Tr8yR1T4+i1X+aDvEL6t66i2Eufc=; b=s/khbkfENB7LpH
-	0WtTaJAP+JJJnUF5l1e0edOIVRvcCeHEMf1wWOQi6ywrPMzlOs7Z/CWQusA4jU1nrFlV2+d/7sEYt
-	h3Qys+F1mjsXxqGDBHGXLzGw02UDMJV7h/5e0ewt2QF8lpdDSsNLYcztfnucLIMxuI5lCUbkIuvor
-	aqhUMv2immDWbnlKAyN7GnovAE79Ili+B3f2LwHK+0s5B6i0va12kHCjcjVilvGZenDFq/QmwGf0e
-	S9iF8bjqtMOUlfQ+cTX1C7knPWnuAvQEnc2Npr+nLxFjN8tGdrtLIi2Gh011Se54fxzQSjUqIYGMq
-	WiRyMra8+osnhCBlGh4A==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Oob7nmRQoWRF8cOVL27F/slSWN4V0BeGzIMNj+dFgt4=; b=EdxAq0LTlGY6gb
+	MGYcIcyEMcLNMUHpwmYAK2NRTVTc2cVURBS/2HdKxK6s5Rnn8E4VFTCxBqGljTQWl6DLE2XnZQ8dy
+	+Vvd1U1cUfe4GuuyIs0UZL/R9rF0Tc9czjqoFsZ1nZ/fEPjlRgivx/M4by3XIBYReafivl2/fs4zU
+	a1n0QyoRIyEfXPpIKkd3l9Idm5wjdbSoECINr8RKH9lriWDvsUegyliJx2hmnT/1kktNZX5zmScFO
+	BS2Rn+DxFuY2lPV6CnGaxIrFSJWHfmsiMhjO+sfpoEXiZslTr8kk99EQVzNhr4LO1iuS578wEwC22
+	yoZ7Hz5HdojPTs2rXbww==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vczK5-0000000CQsz-39KE;
-	Tue, 06 Jan 2026 05:09:37 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
-	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vczK3-0000000CQsb-1Ceq
+	id 1vd0aS-0000000CTGM-3uWM;
+	Tue, 06 Jan 2026 06:30:36 +0000
+Received: from azure-sdnproxy.icoremail.net ([52.237.72.81])
+	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1vd0aO-0000000CTEA-3QY7
 	for linux-phy@lists.infradead.org;
-	Tue, 06 Jan 2026 05:09:36 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6063QPUn2922946
-	for <linux-phy@lists.infradead.org>; Tue, 6 Jan 2026 05:09:34 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	2SOD3/kMNlfHRzbXU46DK5ZMa8EeIhEik++3HN8TI8M=; b=oTYb+aAgfp2A9v2J
-	orEbkKgpTBwvRdFlaqhGnsrOvu11w6tIS0w2/5KJ0819eaGHV4lGAhjw4MBiYjSS
-	r+UPeIyW4T5LZjLcvRasq/kcGBUQOpeolPhpqUmd2sNJ0DrA37bU4Q3nFmnTZpPi
-	/oH4j+aiNqoWJzs62DiaqObqZ+tnbNvu9uK1mnVKcEv7MowI/ET32QqdgJt1mvT6
-	QrUoPaJbpKkL2YKzC7oz6y3CbzVwkT/1k54es74bODoqLgz0v/q/J/hptgauJWNm
-	gi6gCLwQfLebAwmMhOiwvI8VWpW0ycMt7NigMWgWFh2eTfjYd6b8uBiA6wPaoW9P
-	e1qpng==
-Received: from mail-pg1-f200.google.com (mail-pg1-f200.google.com [209.85.215.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4bgscy8d18-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Tue, 06 Jan 2026 05:09:34 +0000 (GMT)
-Received: by mail-pg1-f200.google.com with SMTP id 41be03b00d2f7-b630b4d8d52so508469a12.3
-        for <linux-phy@lists.infradead.org>; Mon, 05 Jan 2026 21:09:34 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1767676174; x=1768280974; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=2SOD3/kMNlfHRzbXU46DK5ZMa8EeIhEik++3HN8TI8M=;
-        b=J2Exm0XGQZ4zUVNXY+PyZuUPKCdjnR2AOv5Z2gi3g70QLtWDErhiuXwIymX3Z+Iqdz
-         ZuE3qIA2d/dX/9lb9DlsYAHzEeuk/HGt61+k4NbKr1xNVRlYe6pvqMLWa3VSI9xl5kRd
-         bIELAz3TM+O+Pl+Ewd4DkHyaaW7rKznfTnrXy7fLmpvhm9LvmKVV7/wYKhKIAeKwHD0/
-         ys+KgMB57nEq8aFAcB/3HwV1CDA4J+vGeMADEzJPbPSrtb4lvl5/w6O2YIqYm/MAyJoI
-         CjtdAGXqMv1zXCSXvT9aau3W2ZueTeoqE3pMDPLtRQVUEYEaMkjfkqJA4KWbATewvFJ5
-         TM4g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1767676174; x=1768280974;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=2SOD3/kMNlfHRzbXU46DK5ZMa8EeIhEik++3HN8TI8M=;
-        b=b4wAOQbHDCzogZwPBjT77VawtK4XoTfFU3Qz29/RYrxXO66x2OanH1MnmjRSgkCL+I
-         SjgYZXxsCHyba2FfUTAvCUZLgNlTKY+cSwL2hMh7rnjdqFVymbnkbTU1GQdDR/ewRH7B
-         rEJU/yM+bGSseF2PMfKc2O3wBCO1hjeqPkkCrT5QcJz5zlkAKRrUTYHVYHT+T9ArudPp
-         yYTAwAxyLDkB397BJHconglb82IjQp5Z4E1g0vf9QBaGWmuh/igezIsrIObz3NTEnHR5
-         JnpKq0WE7oJUF6ruNbl3rEZrugs9zK261zluN+DcjydeiYStJqW983XHSyQvIWzmd5o3
-         PUnw==
-X-Forwarded-Encrypted: i=1; AJvYcCUvwwd3CwlfG29OkFadb6LTfa6uh5PR0I9VqHDk7R/KkQK8On/Ie0Ks4xt7R3JvGV9EKzFsWKhvSUk=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yy1Gxrpg9qI6ar0KHgRFP/hm+cPBIof5a2TDZqb8kgtGvSnLkJ4
-	Ry+q8bthHVOlr3YIvZtHK9HBYg5a9iq9PW+TxHudV36/jDhmqIfUmhdzuwnxr/SI738H2bevOSX
-	92hI/qftIHItV7f1qoIktICiUf/GMLCtuVpvV2UCfeNVLvtC9W5ug3z01PkYzlAOcXYlv
-X-Gm-Gg: AY/fxX5AX2BCbebtEKwX7LZqfw1g57zG9Ux8Ju82j7Jy4j+LuIwVielTZ2797p4a132
-	mjGhzXapdlrgBN+v4D2pCfx59PkXUyBm7OTqGRSqf9Tyl91ZQZs1wCqXuJATqnezyFN2O8jwdqf
-	F8jRfHl7rzD+3ItelGVbsjAt1RvGrYygFKHYNz7y93vEm9NuRbgHxQjCPEzmQ32Nf8yLrR4OAd6
-	3zBFZbb8VO4l65LLzdCqWUP5QULpS5m0KSHyYFH5+YKWWgKqsQmHaTv261e9QAyG2CNoWP3mFy8
-	qxGRw2289J0/Bi4mmktZzsroADRfgmlf1NyznNmTdTBfoKovEEg7fbgoTw0QzlC6yadZpbrXlFm
-	QTAxrKWnOcq71XcFuACX6/ERzFFQMCuS3hX3BQYGBr3nTOg==
-X-Received: by 2002:a05:7022:61a6:b0:11b:baa5:f4d1 with SMTP id a92af1059eb24-121f188c67fmr1608364c88.6.1767676173660;
-        Mon, 05 Jan 2026 21:09:33 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IFThhMjB++4/K7Cfub+aD0s+vY0i2Zl9hrVvNzgeOKOfo4k5ujmMqUBKzWI1psutADRpneDZw==
-X-Received: by 2002:a05:7022:61a6:b0:11b:baa5:f4d1 with SMTP id a92af1059eb24-121f188c67fmr1608336c88.6.1767676173072;
-        Mon, 05 Jan 2026 21:09:33 -0800 (PST)
-Received: from [10.217.219.121] ([202.46.22.19])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-121f248c239sm2032747c88.9.2026.01.05.21.09.25
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 05 Jan 2026 21:09:32 -0800 (PST)
-Message-ID: <bdf65a65-baee-4afa-a4ed-4dc51298c304@oss.qualcomm.com>
-Date: Tue, 6 Jan 2026 10:39:23 +0530
+	Tue, 06 Jan 2026 06:30:35 +0000
+Received: from E0006800LT.eswin.cn (unknown [10.12.96.77])
+	by app1 (Coremail) with SMTP id TAJkCgDX0Wn6q1xp+JqQAA--.64521S2;
+	Tue, 06 Jan 2026 14:30:20 +0800 (CST)
+From: Yulin Lu <luyulin@eswincomputing.com>
+To: vkoul@kernel.org,
+	neil.armstrong@linaro.org,
+	robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	p.zabel@pengutronix.de,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Cc: ningyu@eswincomputing.com,
+	zhengyu@eswincomputing.com,
+	linmin@eswincomputing.com,
+	huangyifeng@eswincomputing.com,
+	fenglin@eswincomputing.com,
+	lianghujun@eswincomputing.com,
+	Yulin Lu <luyulin@eswincomputing.com>
+Subject: [PATCH v7 0/2] Add driver support for Eswin EIC7700 SoC SATA PHY
+Date: Tue,  6 Jan 2026 14:29:44 +0800
+Message-Id: <20260106062944.1529-1-luyulin@eswincomputing.com>
+X-Mailer: git-send-email 2.31.1.windows.1
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 2/4] dt-bindings: phy: qcom,m31-eusb2-phy: Document M31
- eUSB2 PHY for Kaanapali
-To: Krzysztof Kozlowski <krzk@kernel.org>,
-        Jingyi Wang <jingyi.wang@oss.qualcomm.com>
-Cc: aiqun.yu@oss.qualcomm.com, tingwei.zhang@oss.qualcomm.com,
-        trilok.soni@oss.qualcomm.com, yijie.yang@oss.qualcomm.com,
-        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        linux-usb@vger.kernel.org,
-        Ronak Raheja <ronak.raheja@oss.qualcomm.com>,
-        Vinod Koul <vkoul@kernel.org>,
-        Kishon Vijay Abraham I <kishon@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Wesley Cheng <quic_wcheng@quicinc.com>,
-        Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-References: <20251021-knp-usb-v2-0-a2809fffcfab@oss.qualcomm.com>
- <20251021-knp-usb-v2-2-a2809fffcfab@oss.qualcomm.com>
- <41f71be9-595f-4a81-b089-27bdcc778c8a@kernel.org>
-Content-Language: en-US
-From: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
-In-Reply-To: <41f71be9-595f-4a81-b089-27bdcc778c8a@kernel.org>
-X-Proofpoint-GUID: 4Khq7GHZelIX1Cv8tNAsHkwcDLj77RQQ
-X-Authority-Analysis: v=2.4 cv=fOw0HJae c=1 sm=1 tr=0 ts=695c990e cx=c_pps
- a=oF/VQ+ItUULfLr/lQ2/icg==:117 a=fChuTYTh2wq5r3m49p7fHw==:17
- a=IkcTkHD0fZMA:10 a=vUbySO9Y5rIA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=EUspDBNiAAAA:8 a=KKAkSRfTAAAA:8
- a=ocyYg2yDLqSr0WdFaBIA:9 a=QEXdDO2ut3YA:10 a=3WC7DwWrALyhR5TkjVHa:22
- a=cvBusfyB2V15izCimMoJ:22
-X-Proofpoint-ORIG-GUID: 4Khq7GHZelIX1Cv8tNAsHkwcDLj77RQQ
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMTA2MDA0MSBTYWx0ZWRfX9HIEqj3qXUVT
- O4OEGcXWJuDFrkVsscU3lEjPpLQHti8YIAlHVEpDXcGX0khfkwNOQwmNN7+hnNccLLnVyDWugcr
- v8w6Hpa2kI18aum9M5cWTFrAxhQxSwwaoKfZ7AYrMv6PsGVxH0acXOjn2sMy5x+HjOfrMHgvxVW
- y6HmeOxB3GN3QS/xXclbiB7DzUErX3XdsqhndE43qppUBQptjr2mG8CFKxp7LtiEtfuizZWZdjs
- jH9lAMdnbg55t0Xl2gjpIw+UKdjN2kZYmJHNN3c/X2/1dzOqteXX1mxVf2UUghDb8KjLa2VNLt+
- nd2EmmqCP5r4oEaFYlYXXGYiBgtQ65HMgdFU8FMXnYORYDNnOWZWS8QvvRlZtrCkXOp4YfZ599x
- MPPkzJvIYCPBJNi/QL5UsvGQeP5ISxB8Ff60/6wMVsUM0H6FhJh1hmaXxn7G5/42YG3An2YsIbo
- JffS9ImfEbiUlTSIYIA==
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
- definitions=2026-01-05_02,2026-01-05_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 priorityscore=1501 suspectscore=0 bulkscore=0 malwarescore=0
- lowpriorityscore=0 adultscore=0 phishscore=0 spamscore=0 impostorscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2512120000 definitions=main-2601060041
+X-CM-TRANSID: TAJkCgDX0Wn6q1xp+JqQAA--.64521S2
+X-Coremail-Antispam: 1UD129KBjvJXoWxKF1rAryUAw1rur4UZF43Jrb_yoW7KF4fpa
+	ykCry7Grn5tryIqaykA3WI9FySvan7JFW3ur4fJw1Uuws8ZFyvvrsak3WYvF9rAr4kK34Y
+	qF4aqF98CFyUAFJanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDU0xBIdaVrnRJUUU9G14x267AKxVW8JVW5JwAFc2x0x2IEx4CE42xK8VAvwI8IcIk0
+	rVWrJVCq3wAFIxvE14AKwVWUJVWUGwA2ocxC64kIII0Yj41l84x0c7CEw4AK67xGY2AK02
+	1l84ACjcxK6xIIjxv20xvE14v26w1j6s0DM28EF7xvwVC0I7IYx2IY6xkF7I0E14v26r4U
+	JVWxJr1l84ACjcxK6I8E87Iv67AKxVW0oVCq3wA2z4x0Y4vEx4A2jsIEc7CjxVAFwI0_Gc
+	CE3s1le2I262IYc4CY6c8Ij28IcVAaY2xG8wAqx4xG64xvF2IEw4CE5I8CrVC2j2WlYx0E
+	2Ix0cI8IcVAFwI0_Jr0_Jr4lYx0Ex4A2jsIE14v26r1j6r4UMcvjeVCFs4IE7xkEbVWUJV
+	W8JwACjcxG0xvY0x0EwIxGrwACjI8F5VA0II8E6IAqYI8I648v4I1lFIxGxcIEc7CjxVA2
+	Y2ka0xkIwI1lc7CjxVAaw2AFwI0_Jw0_GFylc2xSY4AK6svPMxAIw28IcxkI7VAKI48JMx
+	C20s026xCaFVCjc4AY6r1j6r4UMI8I3I0E5I8CrVAFwI0_Jr0_Jr4lx2IqxVCjr7xvwVAF
+	wI0_JrI_JrWlx4CE17CEb7AF67AKxVW8ZVWrXwCIc40Y0x0EwIxGrwCI42IY6xIIjxv20x
+	vE14v26r1j6r1xMIIF0xvE2Ix0cI8IcVCY1x0267AKxVW8JVWxJwCI42IY6xAIw20EY4v2
+	0xvaj40_Jr0_JF4lIxAIcVC2z280aVAFwI0_Jr0_Gr1lIxAIcVC2z280aVCY1x0267AKxV
+	W8JVW8JrUvcSsGvfC2KfnxnUUI43ZEXa7VUbGQ6JUUUUU==
+X-CM-SenderInfo: pox13z1lq6v25zlqu0xpsx3x1qjou0bp/
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260105_210935_350979_71D86E95 
-X-CRM114-Status: GOOD (  13.37  )
+X-CRM114-CacheID: sfid-20260105_223033_034428_DABFD167 
+X-CRM114-Status: GOOD (  22.29  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -155,57 +84,131 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Updates:
+  v7 -> v6:
+    - phy-eic7700-sata.c
+      - Rename PHY_READY_TIMEOUT to PLL_LOCK_TIMEOUT_US with value 1000.
+      - Add macro PLL_LOCK_SLEEP_US set to 10.
+      - Add "goto disable_clk" in the eic7700_sata_phy_init function.
+      - Modify Copyright year from 2024 to 2026.
+    - Link to v6: https://lore.kernel.org/lkml/20251201060737.868-1-luyulin@eswincomputing.com/
 
+  v6 -> v5:
+    - eswin,eic7700-ahci.yaml
+      - Delete this file and it has already been applied in reply[1].
+    - eswin,eic7700-sata-phy.yaml
+      - Add clock and reset related properties.
+    - phy-eic7700-sata.c
+      - Map the io resource with platform_get_resource and devm_ioremap instead of
+        devm_platform_ioremap_resource API. Because the address region of sata-phy falls
+        into the region of hsp clock&reset which has been got by hsp clock&reset driver.
+      - Use regmap_read_poll_timeout in wait_for_phy_ready to replace the while loop check.
+      - Use devm_regmap_init_mmio and regmap_write to replace writel.
+      - Adapt to the clock and reset driver framework, replacing the original readl and writel.
+        Because we are implementing the HSP layer clock and reset drivers, the corresponding
+        clock and reset registers can be registered into the driver framework. And I have tested
+        on the Sifive HiFive Premier P550 board.
+    - Link to v5: https://lore.kernel.org/lkml/20250930083754.15-1-luyulin@eswincomputing.com/
 
-On 10/23/2025 9:09 PM, Krzysztof Kozlowski wrote:
-> On 22/10/2025 08:50, Jingyi Wang wrote:
->> From: Ronak Raheja <ronak.raheja@oss.qualcomm.com>
->>
->> Document M31 eUSB2 PHY for Kaanapali which handles the USB2 path. Use
->> fallback to indicate the compatibility of the M31 eUSB2 PHY on the
->> Kaanapali with that on the SM8750.
->>
->> Signed-off-by: Ronak Raheja <ronak.raheja@oss.qualcomm.com>
->> Co-developed-by: Jingyi Wang <jingyi.wang@oss.qualcomm.com>
->> Signed-off-by: Jingyi Wang <jingyi.wang@oss.qualcomm.com>
->> ---
-> 
-> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-> 
+  v5 -> v4:
+    - eswin,eic7700-ahci.yaml
+      - Add "dt-bindings: ata:" prefix to the subject.
+      - Wrap at 80 characters in the YAML description field.
+    - Link to v4: https://lore.kernel.org/lkml/20250915125902.375-1-luyulin@eswincomputing.com/
 
-Hi Krzysztof,
+  v4 -> v3:
+    - eswin,eic7700-ahci.yaml
+      - Fix grammatical errors in patch subject and commit message
+      - Add an explanation in the commit message of patch 1 for retaining the
+        "ports-implemented" field, which Rob Herring suggested to remove
+        in the review comments on v2.
+        Link to Rob Herring's review:
+        https://lore.kernel.org/lkml/CAL_JsqKFotNLZZXwiy7S6K8qXLdGRAnsa-1zvZRDQBE39Gf5kg@mail.gmail.com/
+        Link to my question and Niklas Cassel's reply:
+        https://lore.kernel.org/lkml/aLBUC116MdJqDGIJ@flawful.org/
+        In this reply, Niklas Cassel mentioned his view:
+        If the ports-implemented register gets reset from
+        ahci_platform_assert_rsts(), then it seems acceptable to
+        retain the ports-implemented property in the device tree.
+        This aligns with our design.
+        Link to my reply:
+        https://lore.kernel.org/lkml/4ab70c6a.8be.198f47da494.Coremail.luyulin@eswincomputing.com/
+        Link to Niklas Cassel's question and my further explanation:
+        https://lore.kernel.org/lkml/aLlYkZWBaI5Yz6fo@ryzen/
+        https://lore.kernel.org/lkml/7206383a.d98.19918c22570.Coremail.luyulin@eswincomputing.com/
+    - eswin,eic7700-sata-phy.yaml
+      - Fix grammatical errors in patch subject and commit message
+      - Adjust the position of reg in the properties and required arrays
+      - Add reviewed-by tag of Krzysztof Kozlowski
+    - phy-eic7700-sata.c
+      - Correct the loop condition in wait_for_phy_ready() to use the current
+        jiffies instead of the fixed start time
+      - Change the return value from -EFAULT to -ETIMEDOUT to correctly
+        indicate a timeout condition
+      - Remove redundant clock disable handling in probe error path, as
+        SATA_SYS_CLK_EN is managed in phy_init() and phy_exit()
+      - Use dev_err_probe return in probe
+      - Reorder local variables to follow reverse Xmas tree order
+      - Wrap each line in the extended comments to 80 columns before splitting lines
+      - Adjust the position of `#include <linux/io.h>` for proper ordering
+    - Link to v3: https://lore.kernel.org/lkml/20250904063427.1954-1-luyulin@eswincomputing.com/
 
-  Thanks for the RB.
+  v2 -> v3:
+    - Use full name in "From" and "Signed-off-by" fields information
+    - eswin,eic7700-ahci.yaml
+      - Remove the introduction to the reg, interrupts, phys, and phy-names fields
+      - Modify the usage of the clocks field in the examples
+      - Correct the order of dt properties
+    - phy-eic7700-sata.c
+      - Register operations use the GENMASK macro and FIELD_PREP instead of
+        the original bit offset method, and add "#include <linux/bitfield.h>"
+      - Modify some macro definition names.
+      - Remove the redundant initialization assignments for "ret" and "val"
+      - Delete ".suppress_bind_attrs = true"
+      - Modify the driver name
+      - Add "#include <linux/io.h>" to fix the robot test issue
+    - Link to v2: https://lore.kernel.org/lkml/20250819134722.220-1-luyulin@eswincomputing.com/
 
-  I was about to rebase this series (phy binding patches).
+  v2 -> v1:
+    - Delete the original controller driver and use ahci_dwc.c instead
+    - Add eswin,eic7700-ahci.yaml
+      - Correct the descriptions of reset, interrupt and other
+        hardware resources for the sata controller on EIC7700 SoC
+      - The clocks for both sata controller and sata PHY are controlled
+        via a register bit in the HSP bus and are not registered in the
+        clock tree. Clock are managed within the PHY driver, therefore
+        it is not described in this document
+      - Add $ref: snps,dwc-ahci-common.yaml#.
+    - Add eswin,eic7700-sata-phy.yaml
+      - Add this file to include the description of the PHY on EIC7700 SoC
+    - Add an eswin directory under the PHY driver path, and include the SATA
+      PHY driver code for EIC7700 SoC
+    - Link to v1: https://lore.kernel.org/all/20250515085114.1692-1-hehuan1@eswincomputing.com/
 
-  And wanted to send the following after fixing conflicts (as glymur got 
-merged):
+Yulin Lu (2):
+  dt-bindings: phy: eswin: Document the EIC7700 SoC SATA PHY
+  phy: eswin: Create eswin directory and add EIC7700 SATA PHY driver
 
-diff --git 
-a/Documentation/devicetree/bindings/phy/qcom,m31-eusb2-phy.yaml 
-b/Documentation/devicetree/bindings/phy/qcom,m31-eusb2-phy.yaml
-index 409803874c97..cd6b84213a7c 100644
---- a/Documentation/devicetree/bindings/phy/qcom,m31-eusb2-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,m31-eusb2-phy.yaml
-@@ -19,6 +19,7 @@ properties:
-        - items:
-            - enum:
-                - qcom,glymur-m31-eusb2-phy
-+              - qcom,kaanapali-m31-eusb2-phy
-            - const: qcom,sm8750-m31-eusb2-phy
-        - const: qcom,sm8750-m31-eusb2-phy
+ .../bindings/phy/eswin,eic7700-sata-phy.yaml  |  58 +++++
+ drivers/phy/Kconfig                           |   1 +
+ drivers/phy/Makefile                          |   1 +
+ drivers/phy/eswin/Kconfig                     |  14 ++
+ drivers/phy/eswin/Makefile                    |   2 +
+ drivers/phy/eswin/phy-eic7700-sata.c          | 221 ++++++++++++++++++
+ 6 files changed, 297 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/eswin,eic7700-sata-phy.yaml
+ create mode 100644 drivers/phy/eswin/Kconfig
+ create mode 100644 drivers/phy/eswin/Makefile
+ create mode 100644 drivers/phy/eswin/phy-eic7700-sata.c
 
+-- 
+2.25.1
 
-Can I still retain your RB tag ?
-
-Regards,
-Krishna,
 
 -- 
 linux-phy mailing list
