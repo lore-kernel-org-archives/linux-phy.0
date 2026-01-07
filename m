@@ -4,80 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DA1DBCFD65B
-	for <linux-phy@archiver.kernel.org>; Wed,  7 Jan 2026 16:11:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E77B6CFD65B
+	for <linux-phy@archiver.kernel.org>; Wed,  7 Jan 2026 16:11:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
-	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=BuAPAqBYPSgKlX4iQSVJwLBFjajDp/VUww2VBpxSAaU=; b=4px1/HVkQMUn7N
-	wfDM/u14ZMJ9u3jUso74MfsDpqU2CixuzR9N4WgsFm0OVXUSrTHB1aZLI7FGSDrwTwiq/3BHzzdL/
-	a+hTcTzwpenVWFoIUj/bPgXRQ8PyzZwEf8JNLB+C/UHgx6G9y9N2NGiElkh9Hqj2bTwX9Dczfksxl
-	fJnKP3dLQFqITiDNC47OzFgWFXwKOLMsSupT4dSPfi+CeM/ae0DQ0hKgLO6EMu3VnNbxSKeF8sIM8
-	Umg8DkSQskewWL1XMrnsDSkWG+NRklsIjPmyDLBva8ua720ZbkVHxC1kdnCm7uwMCDg2RNb1ULgW8
-	M6y5gSMITn3CN+Kf2R+w==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qNs8Kh0ml6XhUytlG04TQ/E37mpLorWi12EY1sYniOM=; b=TkAzEVoT736YXj
+	GZGDco/qgxSSw5pYE/P36zJpx5gNfsepLdobgFFKv4GzY+2TnqIWF7MVKFr6U+BmV9WdPahvIitC+
+	fcr9wnaYdV1BvH5kFmqFzSXc45K0UmgpyAIWxTNOwVexgXaVC7WHDTv4PCzGl7+dPZi4EOaPhT9MG
+	B6oWFnWp/i3X2i2ZhxF0mtg+kKXqD38jLVI7FJ3K2HLf9DOWd1Pj7GHVjaNoPh8uOdn7j+NKgoUuF
+	LBKq183bVGIoqrCO4nZmlbsk1TrJ0C0ICs0w02I6VwG6OmPDF56UuduVTMLjezKAPaAbduLCmND0L
+	FqmWzYa+PDwTllgkSFww==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vdW8F-0000000FEl9-1k1e;
-	Wed, 07 Jan 2026 16:11:35 +0000
-Received: from mail-pf1-x430.google.com ([2607:f8b0:4864:20::430])
+	id 1vdW8K-0000000FEmN-2ltR;
+	Wed, 07 Jan 2026 16:11:40 +0000
+Received: from mail-pf1-x435.google.com ([2607:f8b0:4864:20::435])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vdW8C-0000000FEkG-3yxR
+	id 1vdW8G-0000000FElL-1O7y
 	for linux-phy@lists.infradead.org;
-	Wed, 07 Jan 2026 16:11:34 +0000
-Received: by mail-pf1-x430.google.com with SMTP id d2e1a72fcca58-7f121c00dedso2132203b3a.0
-        for <linux-phy@lists.infradead.org>; Wed, 07 Jan 2026 08:11:32 -0800 (PST)
+	Wed, 07 Jan 2026 16:11:37 +0000
+Received: by mail-pf1-x435.google.com with SMTP id d2e1a72fcca58-7b75e366866so696727b3a.2
+        for <linux-phy@lists.infradead.org>; Wed, 07 Jan 2026 08:11:36 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1767802291; x=1768407091; darn=lists.infradead.org;
-        h=cc:to:content-transfer-encoding:mime-version:message-id:date
-         :subject:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=WcdUfhv9PmkySnePknemKHn6SsLx3bTbcdvg5pHIo6A=;
-        b=db4y+GMXD74Bm08X91g7WSG/Yh7RfiS6dFAX0WFpqrkrZPftR0Wf+zGYc25rdY8RUg
-         KKcJAlOVPNztltShp0u0M2QMUw4ShRWOchPrHcmNW9b03u9edU/Z9SsKZiUP4kT/jW4+
-         guujGkbyoqhRpjwpJ0KMf4b7VGoXLtDIxVkfufaNo3pFtB+qTICa6hxgrY8V+GOpQHQ2
-         jXeQVkKXZsBEA6fBSRPZXNKuu+ys1VQwdHLOHNslzLmN8mQite2h4mjXwEU66s0RlC+m
-         TEnguw0rxGIwUqLgiGJTIGyYc/LJ03VU1XfUdfncESillB+oJve3xwhB4tCvEQTJL1gh
-         AD/g==
+        d=gmail.com; s=20230601; t=1767802295; x=1768407095; darn=lists.infradead.org;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=pe34QthE2chIVUbWGjUbfbDZatyb2j7KncedE+Emmac=;
+        b=YcbNIoWPd22XZY36i+gej39cEa76nWyi4b0ZQRH0107YGnvZEveTjqVIeLmh/fFKda
+         i+tngEnRH4Mb22d0ZcnvDh5BwBa7f1LWZ8RAu0qv7sWc1juBu+fmAlbSh+tX+WaxaocF
+         0VK8VO1z+LW9xqiVICQh/s4uwaBBxjwogScHq5mjyYINQgrrzHBxYpuVbugjgTMK6u+H
+         o8491HpWOHDc9xRPmktC/GuWqdXBhFQfNOoWWC0KMz/sd4/jCY++fztZTa7GlfhjxuwX
+         qbY/YyD24FCBlxF728O4ZYtiIHr1DJPOEME4sjKAIqWbMtjZWxdxmxzLp9anYHDDMNGD
+         WiSA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1767802291; x=1768407091;
-        h=cc:to:content-transfer-encoding:mime-version:message-id:date
-         :subject:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=WcdUfhv9PmkySnePknemKHn6SsLx3bTbcdvg5pHIo6A=;
-        b=C6/IGMuOrkSTIvfnS+kdLrbUDOQu1vtCvFskhzc7ZYhVG58uV9gYHoIpmnzAWTDufA
-         ODwR0Bdmgww9qUZBQpQs05IhDLGF9550Y4R089rA2hFfuBz0awQnPKV7+MkRxEZFUjw4
-         CjyIuGEYQD2QB05F+N3tA07oAxa35bFJbiTc1lW/E0KZZKwGXAJylwUy0l9KjcjrlWan
-         9ZOiPgb35zYrSei9QqFroSSyR/5/72zZgKtfQ0oPE455Enin7OkQP4rCPr5H9j+tltFd
-         v2Ci5x7szI+LgYgMmC2HgLBu/oIFO5YArg1M5Li0IbOF91f0SGvCXXUeSHzmRskkKiQV
-         fl9w==
-X-Gm-Message-State: AOJu0Yz1NgMzuxfGlq3L/9tLt3LPmRLpNDp35stb0H6IMLwImu2S/WbF
-	eUl8aj+hHERzR9oU+PZHwaF6tkD7L1SQU9/Yb137R7Y9Gby2cWDM5eIy
-X-Gm-Gg: AY/fxX7iAm5Ih2dj8PTe6yvMxEAScdxE1cDTHw0Uu/zbXpK0YQ8LFDzjn6POcF4Akq1
-	gpE1bjJXlgy3r7tiKpObmb76cHU33Gy2fcKcaVpeST+gokGNIphOF1/G7UUjQNEuvbI4ChQOtsM
-	OEnz6nF931Lk1C6kr9m/yuf4Y3hrxUCDFeIz+DeamQOVf2KtdZ9jZ2I0RG60Vb+mqqvBRDwFt+C
-	69AXrDNVc82U5Z3P4XIZskR5MyHFLql9pBgvRsCB6XudD8UTZa0n9PHlfUieRRzLUwmxH6afj9Q
-	wxFlVsGa3y18kprM4oIE4GxWiZE8sO0/bqCqA5v8x+L3KsSzroKD1V3l93RoAxwFl4CIXnW1YlA
-	NfH03qmvRphrs/+MRpeCX4IlYwadj+mNHJ4b3sPzmTyA4DH72+G7Tr8XtUV6wa2nVlnal8nyVBb
-	GOk//SA/GewlWF/C1W/Ozo8dLAcBNOurL1Bz4b+g==
-X-Google-Smtp-Source: AGHT+IHo4QEFd2Cz2lPkEiku1PqfKCJ172v98MX9v11PuwfeWjgii0vt6ch3UHrFQ4lDPqqQkbvHHg==
-X-Received: by 2002:a05:6a00:e15:b0:7f7:5783:fc6d with SMTP id d2e1a72fcca58-81b7f7e1900mr2615654b3a.41.1767802291567;
-        Wed, 07 Jan 2026 08:11:31 -0800 (PST)
+        d=1e100.net; s=20230601; t=1767802295; x=1768407095;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:x-gm-gg:x-gm-message-state:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=pe34QthE2chIVUbWGjUbfbDZatyb2j7KncedE+Emmac=;
+        b=p1h8FS9142UYcVRfHMv8aF9jVGyjvOBV+1WPskhaLPVZrxSBB9TwWPdgW8xCz4a+Zh
+         ONmSlJgKzNwfLj7ab+qz9uUUJd9u5uvLyCG8daki9BNyqAAXjRQPjuWoymqYb8KjYHhi
+         ID31kPapIDOehuB2W5nPrdjttNLjhV1Wjc5xkuydFYwG8PkunWWQ0GA4ohevCC0yROWS
+         tyFV2tpSKrNZogtOQVUYPbb67hrya1wYcq7iAYk3CWS8PCPQrQ6eaU9nM+Z2MP1ZhzJq
+         cI7lgE9jTW4AWe4Jz2yebHguMVB7HrcGLpHFh9eizy1KP4sE7ZFWld6GakzoMy6+u6qC
+         BLlA==
+X-Gm-Message-State: AOJu0Yz8suBqFbSU3T/nJvMyV1NpySFW7XnpyKPFJdoV6tEn6s1st0do
+	CpEHnKlZhKonPD5n3FPrD5wUWFs5BlL1QAibR6B3jv/6wmdnDH6SZLCgsH2cDg==
+X-Gm-Gg: AY/fxX4hSzTM2m0NxbPqc9eB9zCqPIPaiystSZilsSi2YxBcvtHMfFmBT4mRUCWWFuq
+	/dG01o82PJdD/01gCXI2VKvycZfUl5ZmhY4IEaA6lm90F9zatVNt0V4T2oLGgmlsR0B+Ysdvo9/
+	DWqIBrwJVqcQH2uf20fASndnezgGSwa1U83KPxt17WhrQTX3rXi4rudbB4ovBZIReXZYTnmpwmd
+	ZKa7Dxkl1sAmSLpwJ//y1k99GvH/dWfVTs4zkw3uW5m82kunnKUBXkhca6ReG119Jd+YkgG9LaR
+	7r+YMPOZ/WIr8MwFlweBuagcYh/xWNfv4jHoSOTbc4dmNnf3QgBuJhmlOYDh9rz9gbAbJXvpmj5
+	zYyhRkavlk8LTw1DnVdGQCMWwJ8GHM1ros6AqpvyKPjK1r0NDf08p9mwGpod7AggKvZxYNQziXh
+	4q/X6RC4wm7XXyOPsOdPlaciLwNOxHkgcatILF1A==
+X-Google-Smtp-Source: AGHT+IGcBv2Xui1pdUOXBGHztQKHuZvOmj7hk3Q/NO9rK95ub6dbTkDiwRAZBtLsvG5kC7WXvMErgQ==
+X-Received: by 2002:a05:6a00:bc2:b0:81c:717b:9d38 with SMTP id d2e1a72fcca58-81c717ba501mr369105b3a.47.1767802295232;
+        Wed, 07 Jan 2026 08:11:35 -0800 (PST)
 Received: from Black-Pearl.localdomain ([157.50.178.147])
-        by smtp.googlemail.com with ESMTPSA id d2e1a72fcca58-819bafe98d5sm5373079b3a.21.2026.01.07.08.11.27
+        by smtp.googlemail.com with ESMTPSA id d2e1a72fcca58-819bafe98d5sm5373079b3a.21.2026.01.07.08.11.31
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 07 Jan 2026 08:11:31 -0800 (PST)
+        Wed, 07 Jan 2026 08:11:34 -0800 (PST)
 From: Charan Pedumuru <charan.pedumuru@gmail.com>
-Subject: [PATCH v2 0/2] dt-bindings: phy: Convert TI OMAP control and PIPE3
- PHY to DT schema
-Date: Wed, 07 Jan 2026 16:11:14 +0000
-Message-Id: <20260107-ti-phy-v2-0-a1ec27401fff@gmail.com>
+Date: Wed, 07 Jan 2026 16:11:15 +0000
+Subject: [PATCH v2 1/2] dt-bindings: phy: ti,phy-usb3: convert to DT schema
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIAKKFXmkC/zXMSwqDMBSF4a3IHTclDyKxo+5DHGi80QvVSCKhI
- tl7o9Dhfzh8J0QMhBFe1QkBE0Xyawn5qMDO/Toho7E0SC61kEqwndg2H0ybYWhQGetsA+W8BXT
- 0vaG2Kz1T3H04bjeJa72Imguu/kQSTDBjldMo7TDW6j0tPX2e1i/Q5Zx/A26vZZwAAAA=
-X-Change-ID: 20251231-ti-phy-58bb9e38cfc9
+Message-Id: <20260107-ti-phy-v2-1-a1ec27401fff@gmail.com>
+References: <20260107-ti-phy-v2-0-a1ec27401fff@gmail.com>
+In-Reply-To: <20260107-ti-phy-v2-0-a1ec27401fff@gmail.com>
 To: Vinod Koul <vkoul@kernel.org>, 
  Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
  Krzysztof Kozlowski <krzk+dt@kernel.org>, 
@@ -87,9 +85,8 @@ Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, Charan Pedumuru <charan.pedumuru@gmail.com>
 X-Mailer: b4 0.14.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260107_081132_994594_F8022259 
-X-CRM114-Status: UNSURE (   7.37  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260107_081136_379340_7DD5AA87 
+X-CRM114-Status: GOOD (  12.73  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,37 +103,152 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This series converts the old text-based DeviceTree bindings for TI OMAP
-Control PHY and TI PIPE3 PHY to modern JSON-schema (YAML) format.
+Convert TI PIPE3 PHY binding to DT schema.
+Changes during conversion:
+- Define a new pattern 'pciephy' to match nodes defined in DT.
+- Drop obsolete "id" property from the schema.
 
 Signed-off-by: Charan Pedumuru <charan.pedumuru@gmail.com>
 ---
-Changes in v2:
-- ti,control-phy-otghs: Update commit message to reflect the latest
-  binding changes.
-- ti,phy-usb3: Drop the obsolete "id" property from the schema.
-- Both bindings: Update maintainers list, modify node pattern and improve
-  node descriptions for clarity.
-- ti,phy-usb3: Introduce new YAML schema with properly defined optional
-  properties for the PIPE3 PHY.
-- Link to v1: https://lore.kernel.org/r/20260103-ti-phy-v1-1-8c3f5e2cbd63@gmail.com
-
----
-Charan Pedumuru (2):
-      dt-bindings: phy: ti,phy-usb3: convert to DT schema
-      dt-bindings: phy: ti,control-phy-otghs: convert to DT schema
-
- .../bindings/phy/ti,control-phy-otghs.yaml         |  94 +++++++++++++++
  .../devicetree/bindings/phy/ti,phy-usb3.yaml       | 127 +++++++++++++++++++++
- Documentation/devicetree/bindings/phy/ti-phy.txt   |  98 ----------------
- 3 files changed, 221 insertions(+), 98 deletions(-)
----
-base-commit: cc3aa43b44bdb43dfbac0fcb51c56594a11338a8
-change-id: 20251231-ti-phy-58bb9e38cfc9
+ 1 file changed, 127 insertions(+)
 
-Best regards,
+diff --git a/Documentation/devicetree/bindings/phy/ti,phy-usb3.yaml b/Documentation/devicetree/bindings/phy/ti,phy-usb3.yaml
+new file mode 100644
+index 000000000000..41b3828723ae
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/ti,phy-usb3.yaml
+@@ -0,0 +1,127 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/ti,phy-usb3.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: TI PIPE3 PHY Module
++
++maintainers:
++  - Kishon Vijay Abraham I <kishon@ti.com>
++
++description:
++  The TI PIPE3 PHY is a high-speed SerDes (Serializer/Deserializer)
++  transceiver integrated in OMAP5, DRA7xx/AM57xx, and similar SoCs.
++  It supports multiple protocols (USB3, SATA, PCIe) using the PIPE3
++  interface standard, which defines a common physical layer for
++  high-speed serial interfaces.
++
++properties:
++  $nodename:
++    pattern: "^(pciephy|usb3phy|phy)(@[0-9a-f]+)?$"
++
++  compatible:
++    enum:
++      - ti,phy-usb3
++      - ti,phy-pipe3-sata
++      - ti,phy-pipe3-pcie
++      - ti,omap-usb3
++
++  reg:
++    minItems: 2
++    maxItems: 3
++
++  reg-names:
++    minItems: 2
++    maxItems: 3
++    items:
++      enum:
++        - phy_rx
++        - phy_tx
++        - pll_ctrl
++
++  "#phy-cells":
++    const: 0
++
++  clocks:
++    minItems: 2
++    maxItems: 7
++
++  clock-names:
++    minItems: 2
++    maxItems: 7
++    items:
++      enum: [wkupclk, sysclk, refclk, dpll_ref,
++             dpll_ref_m2, phy-div, div-clk]
++
++  syscon-phy-power:
++    $ref: /schemas/types.yaml#/definitions/phandle-array
++    description:
++      Phandle/offset pair to system control module register for PHY
++      power on/off.
++
++  syscon-pllreset:
++    $ref: /schemas/types.yaml#/definitions/phandle-array
++    description:
++      Phandle/offset pair to CTRL_CORE_SMA_SW_0 register containing
++      SATA_PLL_SOFT_RESET bit (SATA PHY only).
++
++  syscon-pcs:
++    $ref: /schemas/types.yaml#/definitions/phandle-array
++    description:
++      Phandle/offset pair to system control module for writing PCS delay value.
++
++  ctrl-module:
++    $ref: /schemas/types.yaml#/definitions/phandle
++    description:
++      Phandle of control module for PHY power on.
++    deprecated: true
++
++dependencies:
++  syscon-pllreset:
++    properties:
++      compatible:
++        contains:
++          const: ti,phy-pipe3-sata
++
++required:
++  - reg
++  - compatible
++  - reg-names
++  - "#phy-cells"
++  - clocks
++  - clock-names
++
++unevaluatedProperties: false
++
++examples:
++  - |
++    /* TI PIPE3 USB3 PHY */
++    usb3phy@4a084400 {
++        compatible = "ti,phy-usb3";
++        reg = <0x4a084400 0x80>,
++              <0x4a084800 0x64>,
++              <0x4a084c00 0x40>;
++        reg-names = "phy_rx", "phy_tx", "pll_ctrl";
++        #phy-cells = <0>;
++        clocks = <&usb_phy_cm_clk32k>,
++                 <&sys_clkin>,
++                 <&usb_otg_ss_refclk960m>;
++        clock-names = "wkupclk", "sysclk", "refclk";
++        ctrl-module = <&omap_control_usb>;
++    };
++
++  - |
++    /* TI PIPE3 SATA PHY */
++    phy@4a096000 {
++        compatible = "ti,phy-pipe3-sata";
++        reg = <0x4A096000 0x80>,  /* phy_rx */
++              <0x4A096400 0x64>,  /* phy_tx */
++              <0x4A096800 0x40>;  /* pll_ctrl */
++        reg-names = "phy_rx", "phy_tx", "pll_ctrl";
++        clocks = <&sys_clkin1>, <&sata_ref_clk>;
++        clock-names = "sysclk", "refclk";
++        syscon-pllreset = <&scm_conf 0x3fc>;
++        #phy-cells = <0>;
++    };
++...
+
 -- 
-Charan Pedumuru <charan.pedumuru@gmail.com>
+2.52.0
 
 
 -- 
