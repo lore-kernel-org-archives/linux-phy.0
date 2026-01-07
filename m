@@ -4,115 +4,102 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EC45DCFD627
-	for <linux-phy@archiver.kernel.org>; Wed,  7 Jan 2026 13:15:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D5B22CFD62D
+	for <linux-phy@archiver.kernel.org>; Wed,  7 Jan 2026 13:45:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-reply-to:
+	Date:Subject:Cc:To:From:References:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dPpMNhsLuvU/ddvbXcPczb3GRuE0S7lHe/hcLd39ej4=; b=kb36P/LMW2RW95
-	SKSNFjA7n5hzq6raZeiN16H/NTiVfxs/UHtklVZ4V4GUdlypXgp+L9UdWKNpAL17gWucqesJyT6Yl
-	x/ZbC3afP0+Kh70nfInK+UlAnemA/7nkBZxItNqU6hbJ+I94YUZwu+wysOf8Jd57aljtd9QS6tDMP
-	zuWWLYf3UHFA8IaOCDozPazuXiC90xnjPRGNUB7rh+7Pu8PMBNfx7Kz+72QhRXGz9+sdy05c4Adro
-	QSkQVKor43j8+OaXUWh8rgFe291hfRnRj6O1O7B8SoZlDVjze49WvRcNd8C+Hdi9mH//fHVMJK3h2
-	knYDH+1rUn25RMglPv9g==;
+	List-Owner; bh=JG5pRkCjhHAD+YMAAwKZE5hM+WxW6ajReAeP8YOCL0U=; b=cU3vg0oPck6mss
+	RcoUmC1McRc0NYyAatWZzCPW/L0IHpKaEyxWODXx7bIzDKTTYCSgFWqG6Q6WmD/kbwHvc1a4PwEoo
+	vubmJTjDEotBGyW8LC5eAnLLsRHpgYmFuWiy4TgEUWqw04RXNIwIGpqFz+KKT/yXHWNbAItjZHPNp
+	C+vD0UZ9A9RzBidGa4qhHFiFqK8vX0CEVt9IVavE0Ix+4pHwQdpg0LznW+6KdPhppTgyN/+N3Y3PH
+	kAKh22k8zBZ7kgp+fkJ29YA1xIACJ6sQFnA5kY8xVsgJGpwnOI3lWmv9nlzIolj/RD4n+TcKt+rp2
+	4BDaa/Vhp8/SQNIZKV8w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vdTNV-0000000EzIG-2D9G;
-	Wed, 07 Jan 2026 13:15:09 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1vdTrD-0000000F1vH-1thN;
+	Wed, 07 Jan 2026 13:45:51 +0000
+Received: from mail-lf1-x130.google.com ([2a00:1450:4864:20::130])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vdTNT-0000000EzHQ-3sf2
+	id 1vdTrA-0000000F1uG-2hfY
 	for linux-phy@lists.infradead.org;
-	Wed, 07 Jan 2026 13:15:09 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 2D8C743AD4;
-	Wed,  7 Jan 2026 13:15:07 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D37CAC4CEF7;
-	Wed,  7 Jan 2026 13:15:02 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1767791707;
-	bh=Uq6qHiL187oGhkMX1M/B8DY+XSlvVgxdy6xs5XH3V40=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=P+k95DjAUdvZgpvf54zzuWe4Kd2xIiUnjNAyrCKdM3C6uYscMN/zwsBdS07popgV3
-	 a8WY9l4M/tfQprdr5XznUjIk4mvvlAw+RYHiJDXsxgs0dHt4xqZf3GIxwPKG1FgXVn
-	 gCCVk4Gy1rdSalr4sxS5XHvmC30koE4JatzLirNPp0HD9HlmHSIIZdGtKx9zjVHs+a
-	 OaAZAb8QNTaoCMpNGo3p0/4JjXIuVCkA8leC+rz57g2Gzzv8HvvBac5JJAU2yqicfJ
-	 l6rNb5pq0hzD62/zVG7gyB0cZ8ZLAoGCr769afIUZKo50ovTA2fehGrAFayUuLUFx7
-	 afluaNzyvQOnA==
-Message-ID: <3854f9f5-4fdc-4eea-9770-84ccfdb58624@kernel.org>
-Date: Wed, 7 Jan 2026 14:15:01 +0100
+	Wed, 07 Jan 2026 13:45:49 +0000
+Received: by mail-lf1-x130.google.com with SMTP id 2adb3069b0e04-59b6c89d306so1293997e87.0
+        for <linux-phy@lists.infradead.org>; Wed, 07 Jan 2026 05:45:47 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1767793546; x=1768398346; darn=lists.infradead.org;
+        h=mime-version:message-id:in-reply-to:date:subject:cc:to:from
+         :user-agent:references:from:to:cc:subject:date:message-id:reply-to;
+        bh=zbg60yhotFqS4lYQ4SPbRRNfljX1PZuvfnI5dpwkZJ8=;
+        b=HHJ50zaXo9K465bL6iEICxP/p4Jq9MtU1zrfSEH/8WpTy99ML1CzCi5dgSYyVoyV/M
+         ZZiGcEqJg6lyEXPBM4IBkmXb3XRDEy3LQmAKILF85TKZSv0Bh2peJGsrhs+DkmTy/IRD
+         dJP9Khbe8/dnv1zhPpZ2p58C7/bu7Vb2LdvMqCF/TJ2cQ/HiY48Lq8KnafIN4ETUvcBx
+         jUWdpFEu5yXPD45x/xVhTjLRXuDS62yr2hMOWVqfVu0U+v3WqymewJacOFkpfkP3Ft7h
+         0WHIoqmKp1RNOZ3kJKZRxqXTwK1MBGQyWECwSv7Znc2MhYuz5/WO8CQYgyZE8ZXVriMO
+         FCLA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1767793546; x=1768398346;
+        h=mime-version:message-id:in-reply-to:date:subject:cc:to:from
+         :user-agent:references:x-gm-gg:x-gm-message-state:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=zbg60yhotFqS4lYQ4SPbRRNfljX1PZuvfnI5dpwkZJ8=;
+        b=pcVe63A4MrwP83LdgzPpOW8j3H6/T83w6wiIOdqwr2zs3ScW1cevLa81EEpOPKtD3i
+         Q33aTcWh5+BH1zGqvKDayxhx6KjH1uyWbQzdKYwf9itrJ7Xfr7eaWiYe04qooPYoOS/U
+         167Klcsp9taBbuyl8yZ3b0ghr5thOuvm8inlqbo5BCykfgWExxgPjOJ70o0V0VRyFK18
+         R/deYrdS7a7udZO+L4TncnSZj/0FSnxYeHRc8aWly/2fpYs7Lui3txouUVrG5LZqXfo8
+         4B8VjOI/9i3kjveElKS2j0GJ+Ws6WaE3d6uZP92DlBwnwAy7hRrwwJvPa6ip/jvIada+
+         RhAw==
+X-Forwarded-Encrypted: i=1; AJvYcCXfreWQ3LgTxBSeS3eU/QAuTs8uKt770BjbKHU9EyX01TbhaxOPGV2d1B4JPESIm3YZY7thU+u2gYY=@lists.infradead.org
+X-Gm-Message-State: AOJu0YypUOl8jhORZytHq6folnmAHFbZ9UlDXljY3JcSSX25fdFbwZYW
+	QAVwX26Q8UVxZybxNzpBR7WyXJdnXot/Tq9r+Ccx/0AMxtvwA157c+rR
+X-Gm-Gg: AY/fxX6Hga1NatO9DtX+aPw5K9NZE32A1iVIqijwDFe5DWI930X9g7VUJAe2g1TDprU
+	dmNLrZIoUnJf4rdb7IKaHq/sPA7kxsL1KLT1WafJtJAH5eszOJLZlURChRurKnqG0aW7rqIXeJr
+	DlXMHDhrNo/h40xZATm9xL5+rciAcwgpMTckPTYM6QeHQBSIr/6DKOyn02a2SIUe176mUQGu79U
+	+9vnQxO7Xs7zcVtJENJMUBHh1hRcp9qraChPRK1xwORJYm3+FKJKxp/tIBMGK6PZ29C1Nu0pVn5
+	zC/1mNmH5nPPpwlE6LjUsd6B6bf1jii/I7e7fsq9uV3N7xL0AcxsHzQafTiMGX3DlxL4nnr4aXx
+	ONJeUY4ZQJNDNxE3gL2K04kETNoT+n4/3aRGjHgWiZYJWcnoFx9hesh6EV8BGErD5WCZnoixw
+X-Google-Smtp-Source: AGHT+IFBvFdbxlKvEOgpHQQ8YktwaenfQmmG9RkrtS+47ehkEyiqafqKukfyFwzDbyon83pp4CA81A==
+X-Received: by 2002:a05:6512:2399:b0:59b:730d:4a57 with SMTP id 2adb3069b0e04-59b730d4b44mr510415e87.39.1767793545398;
+        Wed, 07 Jan 2026 05:45:45 -0800 (PST)
+Received: from razdolb ([77.220.204.220])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-59b669418b6sm1224545e87.20.2026.01.07.05.45.38
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 07 Jan 2026 05:45:45 -0800 (PST)
+References: <20251216-upstream_pcie_rc-v7-0-4aeb0f53c4ce@aspeedtech.com>
+ <875x9fuj7i.fsf@gmail.com>
+ <SEYPR06MB513404EB419B7850159F3CC29D84A@SEYPR06MB5134.apcprd06.prod.outlook.com>
+User-agent: mu4e 1.10.9; emacs 30.2
+From: Mikhail Rudenko <mike.rudenko@gmail.com>
+To: Jacky Chou <jacky_chou@aspeedtech.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
+ <kishon@kernel.org>, Rob Herring <robh@kernel.org>, Krzysztof Kozlowski
+ <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Joel Stanley
+ <joel@jms.id.au>, Andrew  Jeffery <andrew@codeconstruct.com.au>, Bjorn
+ Helgaas <bhelgaas@google.com>, Lorenzo Pieralisi <lpieralisi@kernel.org>,
+ Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>, Manivannan
+  Sadhasivam
+ <mani@kernel.org>, Linus Walleij <linus.walleij@linaro.org>, Philipp Zabel
+ <p.zabel@pengutronix.de>, Neil Armstrong <neil.armstrong@linaro.org>,
+ "linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>,
+ "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+ "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>, Andrew Jeffery <andrew@aj.id.au>,
+ "openbmc@lists.ozlabs.org" <openbmc@lists.ozlabs.org>,
+ "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>
+Subject: Re: [PATCH v7 0/7] Add ASPEED PCIe Root Complex support
+Date: Wed, 07 Jan 2026 16:40:09 +0300
+In-reply-to: <SEYPR06MB513404EB419B7850159F3CC29D84A@SEYPR06MB5134.apcprd06.prod.outlook.com>
+Message-ID: <875x9dcz9c.fsf@gmail.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 2/6] scsi: ufs: qcom,sc7180-ufshc: dt-bindings: Document
- the Milos UFS Controller
-To: Luca Weiss <luca.weiss@fairphone.com>,
- Herbert Xu <herbert@gondor.apana.org.au>,
- "David S. Miller" <davem@davemloft.net>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
- Alim Akhtar <alim.akhtar@samsung.com>, Avri Altman <avri.altman@wdc.com>,
- Bart Van Assche <bvanassche@acm.org>, Vinod Koul <vkoul@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>,
- Konrad Dybcio <konradybcio@kernel.org>
-Cc: ~postmarketos/upstreaming@lists.sr.ht, phone-devel@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, linux-crypto@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-scsi@vger.kernel.org, linux-phy@lists.infradead.org
-References: <20260107-milos-ufs-v1-0-6982ab20d0ac@fairphone.com>
- <20260107-milos-ufs-v1-2-6982ab20d0ac@fairphone.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 a/A=
-In-Reply-To: <20260107-milos-ufs-v1-2-6982ab20d0ac@fairphone.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260107_051508_008668_1EDAE433 
-X-CRM114-Status: UNSURE (   6.53  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260107_054548_709181_396A31F9 
+X-CRM114-Status: GOOD (  18.88  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -129,20 +116,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 07/01/2026 09:05, Luca Weiss wrote:
-> Document the UFS Controller on the Milos SoC.
-> 
-> Signed-off-by: Luca Weiss <luca.weiss@fairphone.com>
-> ---
->  Documentation/devicetree/bindings/ufs/qcom,sc7180-ufshc.yaml | 2 ++
->  1 file changed, 2 insertions(+)
+
+Hi Jacky,
+
+On 2026-01-07 at 02:28 GMT, Jacky Chou <jacky_chou@aspeedtech.com> wrote:
+
+> Hi Mikhail Rudenko,
+>
+>> First of all, thank you for your efforts in getting this driver upstreamed! I am
+>> trying to understand whether this driver supports PCIe devices that have an I/O
+>> port BAR, where CPU access to I/O ports is required for proper device
+>> operation.
+>>
+>> If I understand correctly, this line in the Aspeed 2600 dtsi file declares the I/O
+>> port range:
+>>
+>>     ranges = <0x01000000 0x0 0x00018000 0x00018000 0x0 0x00008000
+>>
+>> During system initialization, the pci_remap_iospace() function in
+>> arch/arm/mm/ioremap.c maps the physical address range
+>> 0x00018000-0x00020000 to the virtual address PCI_IO_VIRT_BASE
+>> (0xfee00000). After this mapping, inb() and outb() calls work by converting I/O
+>> port addresses to virtual addresses starting at PCI_IO_VIRT_BASE, then
+>> performing reads and writes to those virtual addresses.
+>>
+>> What I don't understand is this: according to the Aspeed 2600 datasheet, the
+>> address range 0x00000000-0x0fffffff (which contains
+>> 0x00018000-0x00020000) is mapped to Firmware SPI Memory. This would
+>> mean that outb() operations get routed to memory-mapped SPI flash instead of
+>> PCIe.
+>>
+>> It seems like there's a missing piece to this puzzle. Could you help clarify how
+>> this is supposed to work?
+>>
+>
+> Thank you for pointing this out, and sorry for the confusion.
+>
+> You are correct that, as things stand, this does not make sense from a real hardware perspective.
+>
+> In fact, the I/O addressing support you noticed was something we experimented with internally
+> only. There is no actual hardware design on AST2600 that supports PCIe I/O port addressing in
+> this way. To enable those experiments, we modified our internal kernel accordingly, but this was
+> never intended to represent real, supported hardware behavior.
+>
+> This is our mistake for leaving this description in the DTS, as it can indeed be misleading. We
+> will remove this part to avoid further confusion.
+>
+> Thank you again for your careful review and for bringing this to our attention.
+
+Thank you for prompt reply and for getting this clarified!
+
+> Thanks,
+> Jacky
 
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
-
-
-Best regards,
-Krzysztof
+--
+Kind regards,
+Mikhail
 
 -- 
 linux-phy mailing list
