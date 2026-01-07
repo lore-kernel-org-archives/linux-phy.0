@@ -4,50 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BAF2CCFD63E
-	for <linux-phy@archiver.kernel.org>; Wed,  7 Jan 2026 14:18:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0B194CFD646
+	for <linux-phy@archiver.kernel.org>; Wed,  7 Jan 2026 14:19:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gP0oKZ1Ylrzw3wW/jEQ4K8ESMTLTwHzxmD9lv3xybLo=; b=E+xIx+74E7laVr
-	3iQ3igc+YmaS97phw7dguMQnqD9znbi63/5hhChrWSvNe3kWhmoZWqBctHNew41/R9tWRWBbRl/X1
-	iGnqxtCzxsRwFJzTSPz4BGeRw4W9BJJEI4lZJwMbyO8G2Cr1qRt527bw6fekS5CHmLP6WGEnSGmn3
-	5mADwsU9/C3nYt5HTFGc2ruvQ6rEB1dwkOr36Nzms5vVD+yukocuHgiLScaoiLjhZIxZO+6DQNhch
-	T3UgnE8f2yy5eAXeqTvAX6WYRQswhN2cnRnrMdijdfNtFj0xAkbh386hcUiksNzIgmsCJvSqWzo5I
-	+xfYAllzBodAROX3r1pw==;
+	List-Owner; bh=U/tMnjYQ53bx05B8a0VZwQNE0gg5Ci0tF9Bz2Iq1euk=; b=EC9Ni+JayMOGdq
+	zlu81+hoso7GeCkhBNGa3koZjWFy6Nklct5Qr4ygZZTq0J3ARGVdBteX9y2A4CA+GuwMnNNrVi2Bm
+	3jo6YfBN1ExKFgsy15tM3lVp0yNzop3LQ1Lg+V7iCoCIec2/UCWGIVrcETye9POxdmfCXTGwvU8N6
+	I9pdcC4w6sg32UEIFHxp2BmjYxgrNcwyp02pF+fSQzJZWrcTHkjscSEVmQ0fXBizWtv/q85rRrgv5
+	Z2YOYwfTKeMetf2K6acKn3FjMKHMwikX6Dq1jQwqGmYfgNnPLl6+FoNUNubhrY9hJzHTtV0/BPuQC
+	MrGin01z/IwshniHNMug==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vdUMc-0000000F4iW-16ni;
-	Wed, 07 Jan 2026 14:18:18 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1vdUNd-0000000F4pM-2ra4;
+	Wed, 07 Jan 2026 14:19:21 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vdUMY-0000000F4hb-01G6
+	id 1vdUNc-0000000F4pF-1A4O
 	for linux-phy@lists.infradead.org;
-	Wed, 07 Jan 2026 14:18:15 +0000
+	Wed, 07 Jan 2026 14:19:20 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 6D16642E21;
-	Wed,  7 Jan 2026 14:18:13 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 29451C4CEF1;
-	Wed,  7 Jan 2026 14:18:08 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id AC6D760007;
+	Wed,  7 Jan 2026 14:19:19 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 05293C4CEF1;
+	Wed,  7 Jan 2026 14:19:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1767795493;
-	bh=oaU6c2WnN5qqHgA65soH/Tit7bcM5//KWWPGIZ+MTTc=;
+	s=k20201202; t=1767795559;
+	bh=NrKcL0K9ADZrDd40Kubu2XrKTn83JBz7p/hudoTIFHw=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=LqRiFW1D4GnjSTedLLUU2mJBkolXcWU70mRlrFT/sVljH2mtckhsweWbOImiH7wjN
-	 W8Au0/N/22RA4cvKKSjDHlx1fI8Ijfz7WCHULsDIthM/1z0C0zjsOBPZnSi/HkyVsz
-	 J1wu4P49Iv7rRt1GJ7UP0u2yIbfxB93Obb2nVtOeLUISiv7jDutn5Z0gjEWOIJ2jNp
-	 Eo3RsvTyJkk8aOwiWhux+GrWM4tLX4GqglNrDKa/9+f+DFVrsC5couNXZgoGlRJ2M6
-	 WMeE5DAyn4GHnaighAxpYmLvcqlio/2GexeXP6hu3Oxjw1+oaL/LaFGB9Sv1RcGWpl
-	 dqiV1r0fxtlCA==
-Message-ID: <d51c9d8b-b0ec-4110-869e-dee4c4b41ff5@kernel.org>
-Date: Wed, 7 Jan 2026 15:18:07 +0100
+	b=Ff2XA2uknvs1WDIcNLPV/0KOKg+KJ9M5ydg9C31mg/NhaMX4Q6vujWS/UcJ1WTfTm
+	 w+QAjvsHC/Xo+q8f8RUmE9n+gF5XpwvTfjj2IQKfK0k8GUmFyGFsBhVn14qpmbZMUV
+	 b0tnzuyS/g0dXndOU9iIkpxUK32DWcQ20//a0GUYo1WPvw4O6Dnci/YRSV3WnuNMR8
+	 /1sBiqfEw1Rfz7pRg26G2ObP1ASzp201ffnIJsfAGno2G22ajMsMa2K008S5lF9bbu
+	 nP84YrGX0g4oqfQSu6mAohVZjchDtoui2kiLSd2N4rduxy2DDsQ6QoC4DZhZ3bxiPC
+	 5J4RbQdCgYNQA==
+Message-ID: <00cbcb95-2bd4-4a15-a250-963af30076b6@kernel.org>
+Date: Wed, 7 Jan 2026 15:19:13 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/6] dt-bindings: crypto: qcom,inline-crypto-engine:
- document the Milos ICE
+Subject: Re: [PATCH 3/6] dt-bindings: phy: qcom,sc8280xp-qmp-ufs-phy: document
+ the Milos QMP UFS PHY
 To: Luca Weiss <luca.weiss@fairphone.com>,
  Herbert Xu <herbert@gondor.apana.org.au>,
  "David S. Miller" <davem@davemloft.net>, Rob Herring <robh@kernel.org>,
@@ -62,7 +62,7 @@ Cc: ~postmarketos/upstreaming@lists.sr.ht, phone-devel@vger.kernel.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-scsi@vger.kernel.org, linux-phy@lists.infradead.org
 References: <20260107-milos-ufs-v1-0-6982ab20d0ac@fairphone.com>
- <20260107-milos-ufs-v1-1-6982ab20d0ac@fairphone.com>
+ <20260107-milos-ufs-v1-3-6982ab20d0ac@fairphone.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -108,11 +108,7 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <20260107-milos-ufs-v1-1-6982ab20d0ac@fairphone.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260107_061814_607466_F2A8FC85 
-X-CRM114-Status: UNSURE (   5.15  )
-X-CRM114-Notice: Please train this message.
+In-Reply-To: <20260107-milos-ufs-v1-3-6982ab20d0ac@fairphone.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -130,11 +126,16 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 07/01/2026 09:05, Luca Weiss wrote:
-> Document the Inline Crypto Engine (ICE) on the Milos SoC.
+> Document the QMP UFS PHY on the Milos SoC.
 > 
 > Signed-off-by: Luca Weiss <luca.weiss@fairphone.com>
+> ---
+>  Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml | 2 ++
+>  1 file changed, 2 insertions(+)
 
-Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+
+
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
 
 Best regards,
 Krzysztof
