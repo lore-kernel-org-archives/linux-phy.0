@@ -4,83 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 93A0CD185EA
-	for <linux-phy@archiver.kernel.org>; Thu,  8 Jan 2026 12:16:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7DB26D185EB
+	for <linux-phy@archiver.kernel.org>; Thu,  8 Jan 2026 12:16:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1nqCerb8/bgFYeQBhl+KKRXN2B5/3PusWfxCmazTeu8=; b=hxpk4B+GHAQlpL
-	2URIs5FkVchDkAvlhMoU1SQWvQJUPKvMgItnvsRFOlgOan4S9ENmN9xTCOSTm6kiunjz4wYA4oEWU
-	ycr3+Ews6yIIXmysNJykUF31ZmotRsxpdtDkMZno0t5MwS0Y8Htu3UDr+mzNBtaLnBTHkIU39CwcW
-	2oSODn/s364Uk/aDAK+BQV9XTAxtoE4vOt/jczLRPdN+qgD5hmAq8UoPoRK4PAt2tAR3T2+r7YTnu
-	SRKd8N+KfEpg1c+2Kh0Feij0UaDHac5nSabLLTMPreWvip9O9hU9au+k6nK8xP5tAug1KfRcoFtBg
-	vun+/HN6Ywww2BSzlQ1g==;
+	List-Owner; bh=lEmuLgH/SX4ncajfXZJiwmko6PiSCPsQ4qqHPui3OYU=; b=2O7gAl9KYnGXcu
+	4TgnXqSeGcIam7yeS6xN2ADnAviDHxY7OZqP2QRK9oeHNi5sxaZk/H/p8m9AlvRbYCvNbw9k19n/h
+	ymXyyZ7KUUS9IFSPWP+zW5i0uMH0qN/MSuNUnHCfrQAQwz1obOSZRvTxjfxFENDkZYYSHhbhQTabi
+	zu84vjYtoWIl682EBswlGHoy+i2EoGi8b4hrb+LHT13virUEy5Fk/YhJbTAJcY1tpbB7eLdk+c9EJ
+	cVJ3X4jIs78mAX+mSSak7eYF4rEU6BnjUssA/Jy9p5Uuu5dpukENlryMcHeV4hRMny4naM1tNKMfZ
+	HijqB7sRAwsTBqq+QhDA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vdow0-0000000GxTV-1GNR;
-	Thu, 08 Jan 2026 12:16:12 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1vdowe-0000000Gxce-0qeP;
+	Thu, 08 Jan 2026 12:16:52 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vdovw-0000000GxSG-41tN;
-	Thu, 08 Jan 2026 12:16:10 +0000
+	id 1vdowc-0000000Gxb2-0GKt;
+	Thu, 08 Jan 2026 12:16:50 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 8821A4423C;
-	Thu,  8 Jan 2026 12:16:08 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9AFD2C116C6;
-	Thu,  8 Jan 2026 12:16:02 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 242EE60130;
+	Thu,  8 Jan 2026 12:16:49 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2A40CC116C6;
+	Thu,  8 Jan 2026 12:16:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1767874568;
-	bh=FcopaEUh/j7G1ACOGZTfkC61bb/blGywpKi5bSo0NTM=;
+	s=k20201202; t=1767874608;
+	bh=gEl+IGUFdOf6I39ZmGq4+GhoNGeNRIouAWMgiu49Weo=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=e2agQWWfAtizhDQSZCJTNXtaNkT5LV2Z0EWCjw8kfVryLzQayfwB0n00mrJBwhgRJ
-	 R9fAYsIhwH0FkYip5EN4CC5954T/VK0LebJMfdgexSmXC4WjFfcE777uh23w9PC0MI
-	 WykVQ2gGkVluNvX00bFbLyUvTYycunGQ3DjCREqG7SVWYb91kpgKye1yEyOZtdZ2X1
-	 AOP/seaVmOf1AjuZv2BGb198x1wGDkliTY9CtP83X3PXIfLkBx58d2VJwg3S7f+LXt
-	 6Frj1gyde74ryyGzp83h0xBn3Albs9k1e/xt60b++YYJMSEzQJ9q1Iils+sMBEeJWB
-	 UnwGDoM88Tt5Q==
-Message-ID: <512d7012-971a-4626-bcf7-cfbd7a9e6296@kernel.org>
-Date: Thu, 8 Jan 2026 13:16:00 +0100
+	b=PGhHcJEAbS/6jLBB7EsrbLkPZX8hpLX39bYjJVL9QCNdp2ehUw3hQnd8TIhOXlfHU
+	 NtgVZAiyoPKtMtgQKyhH4I6fqU8aVfLwfF9PwsKCD+XJtAvcNTyed51WFT30cJ1lx/
+	 X7AWIy3LSOojhFOlrZ/4/08Ie2K/UJoM2ww49dXo2RSYPnCkehQrYiDlWK8oRsFocK
+	 ivv9FGKYZvk/jHf/y5Mnt8LgBty+SUTV602plm3pkhUTGu5Bux7acdBJywp/zkr5s7
+	 z4SlRUnoYanXPLaBvv1ULCzMv3vF+LorjCeZBpC73klvLQbggUNHrh5/6+HJpt6Bv9
+	 UUnTlEOKDI/Pw==
+Message-ID: <b562c545-fabf-4e30-8397-e2d75633e03a@kernel.org>
+Date: Thu, 8 Jan 2026 13:16:41 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 12/25] scsi: ufs: mediatek: Remove vendor kernel quirks
+Subject: Re: [PATCH v5 12/24] scsi: ufs: mediatek: Remove vendor kernel quirks
  cruft
-To: =?UTF-8?B?UGV0ZXIgV2FuZyAo546L5L+h5Y+LKQ==?= <peter.wang@mediatek.com>,
- "chu.stanley@gmail.com" <chu.stanley@gmail.com>,
- "robh@kernel.org" <robh@kernel.org>,
- =?UTF-8?B?Q2h1bmZlbmcgWXVuICjkupHmmKXls7Ap?= <Chunfeng.Yun@mediatek.com>,
- "kishon@kernel.org" <kishon@kernel.org>,
- "James.Bottomley@HansenPartnership.com"
- <James.Bottomley@HansenPartnership.com>,
- "bvanassche@acm.org" <bvanassche@acm.org>,
+To: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>,
+ Alim Akhtar <alim.akhtar@samsung.com>, Avri Altman <avri.altman@wdc.com>,
+ Bart Van Assche <bvanassche@acm.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>,
  AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
- "neil.armstrong@linaro.org" <neil.armstrong@linaro.org>,
- "conor+dt@kernel.org" <conor+dt@kernel.org>,
- =?UTF-8?B?Q2hhb3RpYW4gSmluZyAo5LqV5pyd5aSpKQ==?=
- <Chaotian.Jing@mediatek.com>, "lgirdwood@gmail.com" <lgirdwood@gmail.com>,
- "nicolas.frattaroli@collabora.com" <nicolas.frattaroli@collabora.com>,
- "vkoul@kernel.org" <vkoul@kernel.org>,
- "krzk+dt@kernel.org" <krzk+dt@kernel.org>,
- "p.zabel@pengutronix.de" <p.zabel@pengutronix.de>,
- "alim.akhtar@samsung.com" <alim.akhtar@samsung.com>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- "avri.altman@wdc.com" <avri.altman@wdc.com>,
- "martin.petersen@oracle.com" <martin.petersen@oracle.com>,
- "broonie@kernel.org" <broonie@kernel.org>
-Cc: "linux-scsi@vger.kernel.org" <linux-scsi@vger.kernel.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>,
- "kernel@collabora.com" <kernel@collabora.com>
-References: <20251218-mt8196-ufs-v4-0-ddec7a369dd2@collabora.com>
- <20251218-mt8196-ufs-v4-12-ddec7a369dd2@collabora.com>
- <1bbc263bafe14343b2d60a230ae6ce5dadffbf7c.camel@mediatek.com>
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Peter Wang <peter.wang@mediatek.com>, Stanley Jhu <chu.stanley@gmail.com>,
+ "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
+ "Martin K. Petersen" <martin.petersen@oracle.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Liam Girdwood <lgirdwood@gmail.com>,
+ Mark Brown <broonie@kernel.org>, Chaotian Jing <Chaotian.Jing@mediatek.com>,
+ Neil Armstrong <neil.armstrong@linaro.org>
+Cc: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>,
+ kernel@collabora.com, linux-scsi@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
+ linux-phy@lists.infradead.org
+References: <20260108-mt8196-ufs-v5-0-49215157ec41@collabora.com>
+ <20260108-mt8196-ufs-v5-12-49215157ec41@collabora.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -126,10 +113,7 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <1bbc263bafe14343b2d60a230ae6ce5dadffbf7c.camel@mediatek.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260108_041609_035540_414CBB02 
-X-CRM114-Status: GOOD (  12.18  )
+In-Reply-To: <20260108-mt8196-ufs-v5-12-49215157ec41@collabora.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -141,26 +125,29 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMDYvMDEvMjAyNiAxNDoyNSwgUGV0ZXIgV2FuZyAo546L5L+h5Y+LKSB3cm90ZToKPiBPbiBU
-aHUsIDIwMjUtMTItMTggYXQgMTM6NTUgKzAxMDAsIE5pY29sYXMgRnJhdHRhcm9saSB3cm90ZToK
-Pj4KPj4gQm90aCB1ZnNfbXRrX3ZyZWdfZml4X3ZjYyBhbmQgdWZzX210a192cmVnX2ZpeF92Y2Nx
-eCBsb29rIGxpa2UgdGhleQo+PiBhcmUKPj4gdmVuZG9yIGtlcm5lbCBoYWNrcyB0byB3b3JrIGFy
-b3VuZCBleGlzdGluZyBkb3duc3RyZWFtIGRldmljZSB0cmVlcy4KPj4gTWFpbmxpbmUgZG9lcyBu
-b3QgbmVlZCBvciB3YW50IHRoZW0sIHNvIHJlbW92ZSB0aGVtLgo+Pgo+IAo+IEhpIE5pY29sYXMs
-Cj4gCj4gVGhpcyBpcyBhIGZsZXhpYmxlIGFwcHJvYWNoIHRvIGltcGxlbWVudCBvbmUgc29mdHdh
-cmUgc3VwcG9ydGluZwo+IG11bHRpcGxlCj4gaGFyZHdhcmUgY29uZmlndXJhdGlvbnMuIEJlY2F1
-c2UgeW91IGNhbm5vdCBndWFyYW50ZWUgdGhhdCB5b3VyIFNPQwo+IHdpbGwgCgpXZSBkbyBub3Qg
-c3RvcmUgZGVhZCBjb2RlIGZvciB5b3VyIHZlbmRvciwgZG93bnN0cmVhbSBrZXJuZWwuIFdlIGFs
-cmVhZHkKZGlzY3Vzc2VkIGl0IG1vbnRocyBhZ28gd2hlcmUgeW91IHdlcmUgcHVzaGluZyBzYW1l
-IGFnZW5kYS4KClN0b3Agd2l0aCB0aGlzIGRvd25zdHJlYW0gYXBwcm9hY2ggYW5kIHVuZGVyc3Rh
-bmQgdGhhdCB5b3VyIGRvd25zdHJlYW0KYWJzb2x1dGVseSBkb2VzIG5vdCBtYXR0ZXIgYW5kIGRv
-ZXMgbm90IGV4aXN0IGZvciB1cy4KCj4gYWx3YXlzIHVzZSBVRlMgMi4wIG9yIFVGUyAzLjAsIG9y
-IHRoYXQgdGhlIFBNSUMgeW91IHVzZSB3aWxsIG9ubHkgaGF2ZQo+IG9uZSBzZXQuCj4gCj4gVGhh
-bmtzCj4gUGV0ZXIKPiAKPiAKCgpCZXN0IHJlZ2FyZHMsCktyenlzenRvZgoKLS0gCmxpbnV4LXBo
-eSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0
-cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On 08/01/2026 11:49, Nicolas Frattaroli wrote:
+> Both ufs_mtk_vreg_fix_vcc and ufs_mtk_vreg_fix_vccqx look like they are
+> vendor kernel hacks to work around existing downstream device trees.
+> Mainline does not need or want them, so remove them.
+> 
+> Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+> Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+
+Just in case Mediatek again promotes their downstream vendor kernel as
+justification for upstream (which is really unacceptable and was told to
+Mediatek more than once):
+
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+
+Best regards,
+Krzysztof
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
