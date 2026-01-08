@@ -4,82 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8FDC3D185EA
-	for <linux-phy@archiver.kernel.org>; Thu,  8 Jan 2026 12:19:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8200FD185EB
+	for <linux-phy@archiver.kernel.org>; Thu,  8 Jan 2026 12:22:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yweitCj+OScgncpbKyWnVXcNcjbIuRSszOqUb2EAFQk=; b=HFtlm0KgAorFGq
-	a+2rV9fzqb5/dUxc3uQsshKtZ33AUwUUDFMzDrKHLd0QlzeNtlwmtDp038UtjGXTcNMMUTD+hPtzP
-	VnW4f5JWM06jLlHhcMnuuq+z9HYRqXDw/KxrXIduYMHp3HJIZjSZ36iEr1afwMLEfoJC8Qac+hjwA
-	+iGwu9wsvBi3QbTVNzHxhiYgpxZfRAPkNMhptGYI8sE1P9LM4cNCc2dRErhjCLdAtPTKStboTayDQ
-	2qN5HWpxAUTwJiR6U96+zsTE1898nwTvbE1PJ6iSHb2nWob/urhiTBiY0otRbMsrVQfn4B4+ho7Uj
-	zdB1tp+ugCwjvpNI8kpQ==;
+	List-Owner; bh=TFyC1DUpnye1JaodcCFPPKcaeL+KKchU71Z0Ot6qOKQ=; b=O5o1sSmU0Y7BE2
+	EKGjzhY+7MznQwADknMMH085XTa16t7y6hT2JyLyRB34yX5OLpRhkF3AQtbsS/vaz+3hEY3EY3Lye
+	ID6EtpgUY5rpTc7P4EqkgoZTpC8ExLfCcpl+rh9E6RzQjpSY6QqPjUYhK02l8oGfTU/GZXbs2y6bB
+	pYfh4UvX6xKMiOfTrIEUMN98FAerZ3WWw+kqe0F3MO2WPs0x5qxK5zKJ11Ojen1kPzt+LQ2ANF2rc
+	TOavdNlMAMOfoflwihCLgKz8gbVj06TPe7ibGnIrlRY8lHDDyloXdvhRnv2ITEDz9tPctIoHNmWjU
+	DuYnwDwntXr2JFe8ACWg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vdoz3-0000000Gy2k-1FbA;
-	Thu, 08 Jan 2026 12:19:21 +0000
+	id 1vdp1v-0000000GyiE-0zFe;
+	Thu, 08 Jan 2026 12:22:19 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vdoz0-0000000Gy1F-2mRN;
-	Thu, 08 Jan 2026 12:19:19 +0000
+	id 1vdp1p-0000000GygW-3bkM;
+	Thu, 08 Jan 2026 12:22:14 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 2911840376;
-	Thu,  8 Jan 2026 12:19:18 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 62D9FC116C6;
-	Thu,  8 Jan 2026 12:19:12 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 89647435DE;
+	Thu,  8 Jan 2026 12:22:12 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A2856C116C6;
+	Thu,  8 Jan 2026 12:22:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1767874758;
-	bh=KjsGhf6tGBRyqz1EhCK1fS6iJsnkXaTR6w1ZlTXKRDw=;
+	s=k20201202; t=1767874932;
+	bh=KReDG0ObiRiuDDh5D/U3gEUgH7EEOt+MoyvPkfZEGTE=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=lOKxG2p/FRgp+8OYkLzrCnvz55qNyj0cbW2YWwbQ94LJ1/hC83S5W/bsGtt04ww6j
-	 OQNa0gvzOihQscBfKpdPgpsJek3Kd0XDIzzeyFMu+IxfCfkZUfzQc4RWAcr57Fc6Vp
-	 BdbWBl+gCb7bJTaXG3rxguTciSC/rMZ/e8xN1VSBD/xi26HEjDp3qHHPI7dlh/YExT
-	 /CrFzx1kZuu/0jVn+5iy0r64NaC8zj6as7Kxf8VNEoeee3Uai2IfOwqNjkzGB1O1q1
-	 LryGj12kuCHnZKG/XPysK0cVhxut6TMQ5eAFKE5K1inrUxhOVOYuUtX0SF5quA1BBq
-	 K/UwGXsuYSOWg==
-Message-ID: <1e365223-8e20-4519-b290-d8ecff548d84@kernel.org>
-Date: Thu, 8 Jan 2026 13:19:10 +0100
+	b=iJ4EIuE3PGgXb4m9MMjUwF4obO8M8960KgR/Vw00s0LByGuCndpRgznyV9Upz7eca
+	 O8SnhJWlqI9Otnvrh7zYd9lDuh6CMYvCvPKd3sCn9yANbG/n1bf6Ium8Je+LqpUUno
+	 IMFYWVPCWVVrbhVXmBHB1diagUa0nnfwFL9G3jeq9roN4wLOscgYjXeLBWqcADrciw
+	 DaeSTabhqj2uxV8RIo5hdy9EOzJUHn52A6GJ8SeP5znN1LEOP5eCljYN2xCoidyxz7
+	 dVwncZT05hGTcuIpHuRfeJZJ202pnzYXlw7qxsuxZrScI3uFA9tKmGwlqxxZTP5fT6
+	 6vKGYHhPAgQqA==
+Message-ID: <f3bf5118-eb75-450f-85e2-6d3ee775c8c5@kernel.org>
+Date: Thu, 8 Jan 2026 13:22:04 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 11/25] scsi: ufs: mediatek: Rework probe function
-To: =?UTF-8?B?UGV0ZXIgV2FuZyAo546L5L+h5Y+LKQ==?= <peter.wang@mediatek.com>,
- "chu.stanley@gmail.com" <chu.stanley@gmail.com>,
- "robh@kernel.org" <robh@kernel.org>,
- =?UTF-8?B?Q2h1bmZlbmcgWXVuICjkupHmmKXls7Ap?= <Chunfeng.Yun@mediatek.com>,
- "kishon@kernel.org" <kishon@kernel.org>,
- "James.Bottomley@HansenPartnership.com"
- <James.Bottomley@HansenPartnership.com>,
- "bvanassche@acm.org" <bvanassche@acm.org>,
+Subject: Re: [PATCH v5 17/24] scsi: ufs: mediatek: Add vendor prefix to
+ clk-scale-up-vcore-min
+To: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>,
+ Alim Akhtar <alim.akhtar@samsung.com>, Avri Altman <avri.altman@wdc.com>,
+ Bart Van Assche <bvanassche@acm.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>,
  AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
- "neil.armstrong@linaro.org" <neil.armstrong@linaro.org>,
- "conor+dt@kernel.org" <conor+dt@kernel.org>,
- =?UTF-8?B?Q2hhb3RpYW4gSmluZyAo5LqV5pyd5aSpKQ==?=
- <Chaotian.Jing@mediatek.com>, "lgirdwood@gmail.com" <lgirdwood@gmail.com>,
- "nicolas.frattaroli@collabora.com" <nicolas.frattaroli@collabora.com>,
- "vkoul@kernel.org" <vkoul@kernel.org>,
- "krzk+dt@kernel.org" <krzk+dt@kernel.org>,
- "p.zabel@pengutronix.de" <p.zabel@pengutronix.de>,
- "alim.akhtar@samsung.com" <alim.akhtar@samsung.com>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- "avri.altman@wdc.com" <avri.altman@wdc.com>,
- "martin.petersen@oracle.com" <martin.petersen@oracle.com>,
- "broonie@kernel.org" <broonie@kernel.org>
-Cc: "linux-scsi@vger.kernel.org" <linux-scsi@vger.kernel.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>,
- "kernel@collabora.com" <kernel@collabora.com>
-References: <20251218-mt8196-ufs-v4-0-ddec7a369dd2@collabora.com>
- <20251218-mt8196-ufs-v4-11-ddec7a369dd2@collabora.com>
- <213d3077835fc86d15579c0a0a91f64fd84b1059.camel@mediatek.com>
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Peter Wang <peter.wang@mediatek.com>, Stanley Jhu <chu.stanley@gmail.com>,
+ "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
+ "Martin K. Petersen" <martin.petersen@oracle.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Liam Girdwood <lgirdwood@gmail.com>,
+ Mark Brown <broonie@kernel.org>, Chaotian Jing <Chaotian.Jing@mediatek.com>,
+ Neil Armstrong <neil.armstrong@linaro.org>
+Cc: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>,
+ kernel@collabora.com, linux-scsi@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
+ linux-phy@lists.infradead.org
+References: <20260108-mt8196-ufs-v5-0-49215157ec41@collabora.com>
+ <20260108-mt8196-ufs-v5-17-49215157ec41@collabora.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -125,10 +113,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <213d3077835fc86d15579c0a0a91f64fd84b1059.camel@mediatek.com>
+In-Reply-To: <20260108-mt8196-ufs-v5-17-49215157ec41@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260108_041918_955633_932EFFF3 
-X-CRM114-Status: UNSURE (   9.96  )
+X-CRM114-CacheID: sfid-20260108_042213_943795_6B7833FB 
+X-CRM114-Status: UNSURE (   9.06  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -141,19 +129,30 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMDYvMDEvMjAyNiAxNDoyMywgUGV0ZXIgV2FuZyAo546L5L+h5Y+LKSB3cm90ZToKPiBPbiBU
-aHUsIDIwMjUtMTItMTggYXQgMTM6NTUgKzAxMDAsIE5pY29sYXMgRnJhdHRhcm9saSB3cm90ZToK
-Pj4KPj4gUmVtb3ZlIHRoZSB0aSxzeXNjb24tcmVzZXQgY3J1ZnQuCj4+Cj4gCj4gSGkgTmljb2xh
-cywKPiAKPiBXaHkgZG8gd2UgbmVlZCB0byByZW1vdmUgdGhlIHJlc2V0IG5vZGU/IElmIGFuIGVy
-cm9yIG9jY3VycyBhbmQgdGhlCgpDb21taXQgbXNnIHNob3VsZCBiZSBpbXByb3ZlZCBhbmQgcHJv
-dmlkZSB0aGUgcmVhc29uLCBlLmcuIGJlY2F1c2UgaXQgaXMKdW5kb2N1bWVudGVkIGFuZCB1bnVz
-ZWQgQUJJLgoKPiBob3N0IAo+IGRvZXMgbm90IHBlcmZvcm0gYSByZXNldCwgaXQgY291bGQgbGVh
-ZCB0byBlcnJvciByZWNvdmVyeSBmYWlsdXJlLgoKVGhpcyBpcyBub3QgYSByZWFzb24gdG8gdXNl
-IHVuZG9jdW1lbnRlZCBBQkkuCgpCZXN0IHJlZ2FyZHMsCktyenlzenRvZgoKLS0gCmxpbnV4LXBo
-eSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0
-cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On 08/01/2026 11:49, Nicolas Frattaroli wrote:
+> Device Tree properties other than the standard properties must be
+> prefixed with the vendor's name. The "clk-scale-up-vcore-min" property,
+> which this driver uses, and the binding did not previously document,
+> lacked a vendor prefix.
+> 
+> Add the missing "mediatek," vendor prefix and clean up the error print.
+
+Sorry, but no, because it is still undocumented. You cannot add new
+undocumented API (at least according to git grep and first three patches
+here).
+
+Please instead drop the property completely. Mediatek is not allowed to
+push downstream code here.
+
+Best regards,
+Krzysztof
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
