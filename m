@@ -4,76 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 50916D1D478
-	for <linux-phy@archiver.kernel.org>; Thu,  8 Jan 2026 19:04:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 22A50D1D486
+	for <linux-phy@archiver.kernel.org>; Thu,  8 Jan 2026 19:12:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zapfpbcJWXU6WjAM2J+UiAx6QqDorPFOayYBhA8Jmdk=; b=t8wk/faxtdUr8Z
-	8rxDe6lntyWB+3zkHp7B4E2fHErd8P0qJcxYtEodNsvYa1YI2Gx0D7xvxGwApYiGZDn8SoD0LhQMC
-	UGdYccSaOBj3D2Nj29Sn81euoiIDEK7g2dtsf0WjgdUQi8MIOXnhkmFyI28yk/+tJ+nZlO7+ntz3K
-	WZk9+IjNGz9CvIPgw9DxDQpZuQxJ3AqwejzIvBcTreM5E9fdjni+u8TsAVDH+b0skNz8fA8CsuEWJ
-	1ebpwz5wojpYiDRFmK8AAN2YoMldX2pz6vR50oaLB4wLu2wzL5ndsbD5KMAlT+j4u6BmPO7x0PsBY
-	PoO7NCY/x5GCL0M98Auw==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
+	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Bdw7mV7UELWrSIB5kktfWioqn/NDopJfCTG/27uEhrY=; b=ftAc9logxR7rRw
+	tzOYQPn7fHwShVO9Ybn3nmDyTZ7XDfhrp001ZDJzZnvudQS6rfGMPUMwN62/jDzZtMwGXOpRP/gtX
+	rfL+HxTL8LHKnKNW2WQKlSdHXKzk45xi2GRKmRBs0oiBSqPCleHk2gMf/vNhu1VpebqgQxAi4b5R2
+	SXBQnqDhDf40KlOnJUbythYgu1a/7h7i5H+eRNP2EAK6N+Sdfd8eST5vonCTDZxbqBMStTb+DjKg9
+	9bwqwzJ1J4BVRcq8dgZt3Wdr0pSnvCYHFzaM39U3aS86bYwg0us2gUN16/XADEZALLs4qFfXyl4T+
+	Cz8piQuYgaoNt7YN2KcA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vdvJW-00000000hhN-3qjE;
-	Thu, 08 Jan 2026 19:04:54 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1vdvQj-00000000iua-3d2f;
+	Thu, 08 Jan 2026 19:12:21 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vdvJT-00000000hee-2LQw;
-	Thu, 08 Jan 2026 19:04:52 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
-	s=gloria202408; h=Content-Transfer-Encoding:Content-Type:MIME-Version:
-	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Reply-To;
-	bh=WBscWiAcWdp/hFnULczKZ/bdY9UUlluznf57AoT+VeU=; b=BD6a4vJXOQQcwp946mh2IuOht6
-	QCqrXoCfVvwFYyjRpEyGtotTZjI5gEECIGbVWgYpFVizelst7RqVFw7V6ipRBUFYfFi//vrk4t02L
-	lNoyQTwoyh6tdVBIwGrPBP8PfuUrgw6itGx7kyw66jq2iLAcjOai7M3FeJv+sFgRtctCEMgYmLvnb
-	x8JqNBdRGMFgDMN3XldtxauDM2KgODhvWrNSBTAwsiCqPKlneKIL76yBa2XnEYfyIwPoF52M62eRo
-	KIjeQBcXHdkmxNDvAJrgK/7opHfNwQ3j3hYAUyPcsT2u/A/RapUegEkebxEOeHdfMgMm3QKZkEIdT
-	UNqPZt/g==;
-Received: from [192.76.154.238] (helo=phil.dip.tu-dresden.de)
-	by gloria.sntech.de with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <heiko@sntech.de>)
-	id 1vdvJI-001XT5-Fo; Thu, 08 Jan 2026 20:04:41 +0100
-From: Heiko Stuebner <heiko@sntech.de>
-To: Neil Armstrong <neil.armstrong@linaro.org>,
-	Jessica Zhang <jessica.zhang@oss.qualcomm.com>,
-	David Airlie <airlied@gmail.com>,
-	Simona Vetter <simona@ffwll.ch>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Sandy Huang <hjc@rock-chips.com>,
-	Andy Yan <andy.yan@rock-chips.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Chaoyi Chen <kernel@airkyi.com>
-Cc: Heiko Stuebner <heiko@sntech.de>,
-	dri-devel@lists.freedesktop.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	linux-phy@lists.infradead.org,
-	Chaoyi Chen <chaoyi.chen@rock-chips.com>
-Subject: Re: (subset) [PATCH 0/9] drm/rockchip: Introduce Rockchip RK3506 VOP
-Date: Thu,  8 Jan 2026 20:04:36 +0100
-Message-ID: <176789904486.3303270.3558903343785181315.b4-ty@sntech.de>
-X-Mailer: git-send-email 2.47.2
-In-Reply-To: <20251106020632.92-1-kernel@airkyi.com>
-References: <20251106020632.92-1-kernel@airkyi.com>
+	id 1vdvQh-00000000ito-3m9Y;
+	Thu, 08 Jan 2026 19:12:21 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 3F61643A35;
+	Thu,  8 Jan 2026 19:12:19 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CA272C19422;
+	Thu,  8 Jan 2026 19:12:16 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1767899539;
+	bh=z58YjI9naACNod9LOsx9aXafudrnXjr+TBbt5HgVpuw=;
+	h=From:Date:Subject:To:Cc:From;
+	b=P4IlBCPxK+RgWYdPuBKzOhldC9QrcojKaimIn1KA1HarklnzxHE/qtfcVYeOvl1hv
+	 gbiDS2rs0jD24ganiJOAn5KNo0fBXnVzeOt8QY3hfewRpXgdRQfrocCYmuIeIxSkRo
+	 cPtI+u2lhjN3/uSkJmb5HN3hhY8/CeSUg77CXYnkqMDaR7N0dOnOUfkj+scnGDJ4YC
+	 CAN580zxHSuUeIfkDdxTMiFcDeGqESvvfQCIKvC8xaee0ch2Ufk6EH3Dq8ZkM2YVKW
+	 B+kqSViwLtdfut3lny7UTEGOmqe7H0eQ2IzN51hFvKL5FvHjSXuzw6w69FC5WE6o9h
+	 MDfsCVaIG5eSQ==
+From: Sven Peter <sven@kernel.org>
+Date: Thu, 08 Jan 2026 20:12:06 +0100
+Subject: [PATCH next] phy: apple: atc: Reset USB2 PHY during probe as well
 MIME-Version: 1.0
+Message-Id: <20260108-atcphy-coldboot-fix-v1-1-01c41c6e84f2@kernel.org>
+X-B4-Tracking: v=1; b=H4sIAIYBYGkC/x2MQQqDMBAAvyJ77sIaYyz9SulBk7UulESSICmSv
+ xs8zsDMCYmjcIJXd0LkQ5IE36B/dGC32X8ZxTUGRcpQTxPO2e7bH234uSWEjKsUpKcZldOkBz1
+ BK/fITd/XN3guGT61XhGkcgtrAAAA
+X-Change-ID: 20260107-atcphy-coldboot-fix-08652d404347
+To: Janne Grunau <j@jannau.net>, Neal Gompa <neal@gompa.dev>, 
+ Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>
+Cc: asahi@lists.linux.dev, linux-arm-kernel@lists.infradead.org, 
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ James Calligeros <jcalligeros99@gmail.com>, Sven Peter <sven@kernel.org>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1444; i=sven@kernel.org;
+ h=from:subject:message-id; bh=z58YjI9naACNod9LOsx9aXafudrnXjr+TBbt5HgVpuw=;
+ b=owGbwMvMwCXmIlirolUq95LxtFoSQ2YCY9+UzFuyso9/fGfdmF0iU8AsMPePwHd1n0exE1qV9
+ Vcvkz3dUcrCIMbFICumyLJ9v73pk4dvBJduuvQeZg4rE8gQBi5OAZhIuQbDf/+JjxUvnNc+tGxt
+ 1h3ZrzPFiltui8u2Md4+x/ZUc92lg/aMDLN8PO92z9xZt+FspcbhGcabT5ksLjlxi3PTvWmaHU6
+ Ne1gA
+X-Developer-Key: i=sven@kernel.org; a=openpgp;
+ fpr=A1E3E34A2B3C820DBC4955E5993B08092F131F93
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260108_110451_596031_F7870ADD 
-X-CRM114-Status: UNSURE (   8.14  )
+X-CRM114-CacheID: sfid-20260108_111219_993593_3A03CEC2 
+X-CRM114-Status: UNSURE (   8.43  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -91,31 +84,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Now that the upstream Type-C PHY code is getting broader test coverage we
+got reports of USB devices plugged in during boot or those plugged in for
+the first time after boot occasionally not working correctly.
+This is partially caused by the USB2 parts of the PHY being left in an
+unknown state by the previous boot stages. We reset all other parts during
+probe but forgot about the USB2 PHY so let's fix that and actually reset
+and power off the USB2 PHY as well.
 
-On Thu, 06 Nov 2025 10:06:23 +0800, Chaoyi Chen wrote:
-> The VOP on rk3506:
-> - Support 2 lane MIPI DSI interface, 1.5Gbps/lane.
-> - Support RGB interface.
-> - Max output resolution is 1280x1280@60fps.
-> - WIN1 layer support RGB888/ARGB8888/RGB565.
-> - Support Gamma LUT.
-> 
-> [...]
+Reported-by: James Calligeros <jcalligeros99@gmail.com>
+Reported-by: Janne Grunau <j@jannau.net>
+Fixes: 8e98ca1e74db ("phy: apple: Add Apple Type-C PHY")
+Signed-off-by: Sven Peter <sven@kernel.org>
+---
+ drivers/phy/apple/atc.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-Applied, thanks!
+diff --git a/drivers/phy/apple/atc.c b/drivers/phy/apple/atc.c
+index c8a58ee64b7aad3205df51cf16ae778471ad2c5d..ab0b40b72533f1b3878b646b59820c730239e85c 100644
+--- a/drivers/phy/apple/atc.c
++++ b/drivers/phy/apple/atc.c
+@@ -2227,6 +2227,7 @@ static int atcphy_probe_finalize(struct apple_atcphy *atcphy)
+ 	_atcphy_dwc3_reset_assert(atcphy);
+ 
+ 	/* Reset atcphy to clear any state potentially left by the bootloader */
++	atcphy_usb2_power_off(atcphy);
+ 	atcphy_power_off(atcphy);
+ 	atcphy_setup_pipehandler(atcphy);
+ 
 
-[3/9] dt-bindings: display: rockchip,dw-mipi-dsi: Add compatible for rk3506
-      commit: 3af0f4d5d433921fa399bbe6396221c8a9985869
-[4/9] dt-bindings: display: rockchip,vop: Add compatible for rk3506
-      commit: 7919273e495b9154cc7e5f7713f002290f4d9597
-[7/9] drm/rockchip: dsi: Add support for rk3506
-      commit: cabeacc7eadc2d0033a2fc7304dfb900f9a32095
-[9/9] drm/rockchip: vop: Add support for rk3506
-      commit: ec27500c8f2b65a3be6ce39a5844d6d246d1b2b0
+---
+base-commit: add66a6673bc4aacd0ef0f3c4a51271501770b17
+change-id: 20260107-atcphy-coldboot-fix-08652d404347
 
 Best regards,
 -- 
-Heiko Stuebner <heiko@sntech.de>
+Sven Peter <sven@kernel.org>
+
 
 -- 
 linux-phy mailing list
