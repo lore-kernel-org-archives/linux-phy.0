@@ -4,222 +4,142 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3F70D232E2
-	for <linux-phy@archiver.kernel.org>; Fri,  9 Jan 2026 06:23:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 81A7DD232E9
+	for <linux-phy@archiver.kernel.org>; Fri,  9 Jan 2026 07:21:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:CC:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=trmxFjvsFVKGQSWBTAXWvIKmYTmb67FSq+xIH0dd0eQ=; b=3lDUjMOGSVOHwK
-	cmHk+1SHcL9elBd004MYs9YTEjpA3Za0kiSPjYVhCoCuM7TqZO9zHS0jNOkNPd4vvJSn4xki0zfJD
-	Zr6G4IKI2oz7eJmIX7KEI9ci7i1C47Y7ICSVcjYCwbayPbGUVKbfMOXS/NGai9acHzcyniCEPfzf1
-	+pk2vkczlZtb0rrWv58AHgJpE/9ehRB7C/9GxTMqbf4TTc1L1Gvak9glGdNsWQsbFoirOg/xSbYUK
-	KhmNDLYmJFaGP+gI+nMZ9Yk501a2SWf0Dzy4jAP0qM5qoDuQB8nysUtyVPHYkNG3XNU8k/vyWPSyn
-	ybhoW78VcFg6Tzv+i16g==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=San6DIrzWOpdou8l2ooi/xsnBkIEUoqfA/vDFtcA0D4=; b=HB+/MjNdI4FIpb
+	3mHsqILUYWtKthDdY1NTwIbNtch8INvpUWtvmhhRwTF/StTWtxaYxjKXnkhFR4O8GEJy2qSzPI4WO
+	6NglzuwhdmHy9eoCE5saqsTax2N+rXr+CmURTs74fsdA7AfhYVmzD6yU59U5LAjRnLiw9+wBJX955
+	kqB5WSjVvdK6Y46QSjQwaQ77kuH3Rs+D1eD1dFziGKK0OKyPWBTCIIvdxByblRjM6oPZMNtm6qG2h
+	p6BJ6d+nHYZLDpxAZgoOpgWU6vylLz4f3uhfTjpKP7vlYigoHPCk+aFPW0ThckRaMOmJLtisHsK5q
+	F9kUZEoSLYb2V06eN8NA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ve5tn-00000001Z2m-06Ai;
-	Fri, 09 Jan 2026 06:23:03 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1ve6oH-00000001hDz-14vP;
+	Fri, 09 Jan 2026 07:21:25 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ve5tj-00000001Z0x-3zip;
-	Fri, 09 Jan 2026 06:23:01 +0000
-X-UUID: a2ae9daeed2311f08b17dd397dc63300-20260108
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
-	h=MIME-Version:Content-Transfer-Encoding:Content-ID:Content-Type:In-Reply-To:References:Message-ID:Date:Subject:CC:To:From; bh=8LtctvtYiqrySq89Y7LHzBJitRXttKmvKM1WUTA4i9U=;
-	b=kXxUDsUc1868NIQBXjVEOyxw3TAYSEhp/Jk+Vegyw9qeMzEYfAod54XuvHsH9V3iHDY4hfNtw9yed5qtVkj5IjDVb2sbkLikPnvXx6liYemgBYd/uYG+LWXMW8jESuUYUVZh03ONAwbyOMZIBoBEJ9t7M+jUdeBZ4TMUNTrw9Fg=;
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.3.9,REQID:946fd671-98dc-41f5-bb29-4d0a55c93302,IP:0,UR
-	L:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:r
-	elease,TS:0
-X-CID-META: VersionHash:5047765,CLOUDID:56279779-8c8a-4fc4-88c0-3556e7711556,B
-	ulkID:nil,BulkQuantity:0,Recheck:0,SF:80|81|82|83|102|110|111|836|888|898,
-	TC:-5,Content:0|15|50,EDM:-3,IP:nil,URL:0,File:130,RT:0,Bulk:nil,QS:nil,BE
-	C:nil,COL:0,OSI:0,OSA:0,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
-X-CID-BVR: 2,SSN|SDN
-X-CID-BAS: 2,SSN|SDN,0,_
-X-CID-FACTOR: TF_CID_SPAM_SNR
-X-CID-RHF: D41D8CD98F00B204E9800998ECF8427E
-X-UUID: a2ae9daeed2311f08b17dd397dc63300-20260108
-Received: from mtkmbs09n1.mediatek.inc [(172.21.101.35)] by mailgw02.mediatek.com
-	(envelope-from <peter.wang@mediatek.com>)
-	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
-	with ESMTP id 1367412655; Thu, 08 Jan 2026 23:22:55 -0700
-Received: from mtkmbs10n2.mediatek.inc (172.21.101.183) by
- mtkmbs10n1.mediatek.inc (172.21.101.34) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.29; Fri, 9 Jan 2026 14:22:52 +0800
-Received: from SI4PR04CU001.outbound.protection.outlook.com (172.21.101.237)
- by mtkmbs10n2.mediatek.inc (172.21.101.183) with Microsoft SMTP Server id
- 15.2.2562.29 via Frontend Transport; Fri, 9 Jan 2026 14:22:52 +0800
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=LwM0uMnzam0yQzqg6/YVhFjxsri0+A76mRtmC0f6DazLOt0/pbr4ZMjOnOVleMy0jC+ySYWh/KWYQagDrUfttA6TwH5rq7Ycqm3fWZW95f9nA9rL1MhJmDxKUOgf28gbWVRIKIPWjX3F/rvd90lPHv9s2Yg4XLNn91KwIZCKbeah4z+bTGOcKKpn/lPVtX2umEY0Dxjwc97wflOdm4NbTvkYIQg4p+gnSbFO9K/1gXInIJP1b4GvY2Zh6wMiUGyTJDjVSmZqo0mmtcbBTbylwPaUSsm3GtGz8HMW3RbisqFgBiy0HyJkd6izLTXeOjdn5dZ19C9gwVZ1kodLQT0dtw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=8LtctvtYiqrySq89Y7LHzBJitRXttKmvKM1WUTA4i9U=;
- b=w83SkNRDr3FweMyEBa7vCatgzTOgr+HdNMAtmOLA2cxDvQiBIalASJpmxY5E0+FzgcIo9/YHXW+8IkzhbbmAssKkrQMJsHp7DV+cuIy3cu1Pdw2k4sd9Qyw5OCwjGNRE9Kf4Lh2Se0xTZd0BJb1o1V6L2IxAcnGP3CHKskZlQg600RmKiQf/krqJ3cl3ow3liwV3KqFiwFp4Tors9tMTn+awOoe7TnWcTpMX4kgyqCTVCBnB2wyqsMXBcnhqDXGhu2gSXMOCxpMh5M+Fc/6VW4EJvFLtwjzcq7qBDHmWPcJj3zfvjF+UyZzzauwuW4C+wV0pXKMUy5IeiUbxyIEIew==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=mediatek.com; dmarc=pass action=none header.from=mediatek.com;
- dkim=pass header.d=mediatek.com; arc=none
+	id 1ve6o9-00000001hAj-3y6K
+	for linux-phy@lists.infradead.org;
+	Fri, 09 Jan 2026 07:21:24 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6094t2Gg2706815
+	for <linux-phy@lists.infradead.org>; Fri, 9 Jan 2026 07:21:16 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=w8/JF4/tv+7RolLNf/bATg
+	nZLPU/tYClxfiouVTfnE8=; b=BoEBzhfiEu9C8OxNDpUZR1L+WlHQxrirT5yAj9
+	cWij1FcNbWSZPZu2AFk72pzlUpAmaRgyQOUaqzTlDtswEGmPB4aQ61hH49+L1rq9
+	DCwJyqz+ssfW8Ywi39mERZd0atmz9n6qLbioJwZVyEUAP0NQJhgNF/OiTeO1/lwP
+	0Zuxs1/6wsFsQbH8HigyMVdqndX/YiqWBrBW6R2NnUA3NZM/l0LEFOEZAgxXoL5e
+	LqwLU13M2WdLeOj2A6oiLta8HjFmAgjzzekVXZSmSQ+XOPmKwIKbMXzuDFb4tJSb
+	caGpJRlIOzYDBnV6f57LR/wGOzolr2AcxYtloEbC7+lKg3CQ==
+Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4bj9hqun4e-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Fri, 09 Jan 2026 07:21:15 +0000 (GMT)
+Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-29f1f69eec6so43722535ad.1
+        for <linux-phy@lists.infradead.org>; Thu, 08 Jan 2026 23:21:15 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=mediateko365.onmicrosoft.com; s=selector2-mediateko365-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=8LtctvtYiqrySq89Y7LHzBJitRXttKmvKM1WUTA4i9U=;
- b=o8oymI+5t3wIwx+O44Dl+ZIIkWvNMs6He44Lk2vgK0GiC2h42D3ixiC78xxZh76LdkyTrACw2ikyvLIMLxoiFy4KCui/Msx7V9g5yfwGDxnHKEkbZpH0LL9/VCtvzumS6jfDVZSA+YtpCr/8ylsfdW11AnEjpMuVeEroYzcb48g=
-Received: from PSAPR03MB5605.apcprd03.prod.outlook.com (2603:1096:301:66::6)
- by KL1PR03MB7453.apcprd03.prod.outlook.com (2603:1096:820:e3::7) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9499.4; Fri, 9 Jan
- 2026 06:22:49 +0000
-Received: from PSAPR03MB5605.apcprd03.prod.outlook.com
- ([fe80::165:d36a:3f76:2925]) by PSAPR03MB5605.apcprd03.prod.outlook.com
- ([fe80::165:d36a:3f76:2925%4]) with mapi id 15.20.9499.003; Fri, 9 Jan 2026
- 06:22:49 +0000
-From: =?utf-8?B?UGV0ZXIgV2FuZyAo546L5L+h5Y+LKQ==?= <peter.wang@mediatek.com>
-To: "chu.stanley@gmail.com" <chu.stanley@gmail.com>, "robh@kernel.org"
-	<robh@kernel.org>, =?utf-8?B?Q2h1bmZlbmcgWXVuICjkupHmmKXls7Ap?=
-	<Chunfeng.Yun@mediatek.com>, "kishon@kernel.org" <kishon@kernel.org>,
-	"James.Bottomley@HansenPartnership.com"
-	<James.Bottomley@HansenPartnership.com>, "bvanassche@acm.org"
-	<bvanassche@acm.org>, AngeloGioacchino Del Regno
-	<angelogioacchino.delregno@collabora.com>, "neil.armstrong@linaro.org"
-	<neil.armstrong@linaro.org>, "conor+dt@kernel.org" <conor+dt@kernel.org>,
-	=?utf-8?B?Q2hhb3RpYW4gSmluZyAo5LqV5pyd5aSpKQ==?=
-	<Chaotian.Jing@mediatek.com>, "lgirdwood@gmail.com" <lgirdwood@gmail.com>,
-	"nicolas.frattaroli@collabora.com" <nicolas.frattaroli@collabora.com>,
-	"vkoul@kernel.org" <vkoul@kernel.org>, "krzk+dt@kernel.org"
-	<krzk+dt@kernel.org>, "alim.akhtar@samsung.com" <alim.akhtar@samsung.com>,
-	"p.zabel@pengutronix.de" <p.zabel@pengutronix.de>, "krzk@kernel.org"
-	<krzk@kernel.org>, "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
-	"avri.altman@wdc.com" <avri.altman@wdc.com>, "martin.petersen@oracle.com"
-	<martin.petersen@oracle.com>, "broonie@kernel.org" <broonie@kernel.org>
-CC: "linux-scsi@vger.kernel.org" <linux-scsi@vger.kernel.org>,
-	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-	"linux-arm-kernel@lists.infradead.org"
-	<linux-arm-kernel@lists.infradead.org>, "linux-phy@lists.infradead.org"
-	<linux-phy@lists.infradead.org>, "linux-mediatek@lists.infradead.org"
-	<linux-mediatek@lists.infradead.org>, Louis-Alexis Eyraud
-	<louisalexis.eyraud@collabora.com>, "kernel@collabora.com"
-	<kernel@collabora.com>
-Subject: Re: [PATCH v5 11/24] scsi: ufs: mediatek: Rework probe function
-Thread-Topic: [PATCH v5 11/24] scsi: ufs: mediatek: Rework probe function
-Thread-Index: AQHcgIzex50QwHB34kulYV8QY4/tvrVIMsMAgAEs4YA=
-Date: Fri, 9 Jan 2026 06:22:49 +0000
-Message-ID: <dd2eba99adaddf7517f06acf7805d32e261fafa4.camel@mediatek.com>
-References: <20260108-mt8196-ufs-v5-0-49215157ec41@collabora.com>
-	 <20260108-mt8196-ufs-v5-11-49215157ec41@collabora.com>
-	 <81ed17eb-2170-4e97-b56d-488b5335ff5c@kernel.org>
-In-Reply-To: <81ed17eb-2170-4e97-b56d-488b5335ff5c@kernel.org>
-Accept-Language: zh-TW, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=mediatek.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: PSAPR03MB5605:EE_|KL1PR03MB7453:EE_
-x-ms-office365-filtering-correlation-id: 5e954ecb-e9a2-4cc6-5c37-08de4f478334
-x-ld-processed: a7687ede-7a6b-4ef6-bace-642f677fbe31,ExtAddr
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230040|1800799024|366016|7416014|376014|38070700021|921020;
-x-microsoft-antispam-message-info: =?utf-8?B?bG1FN0t0VW5hUGNjaVhFTTFPRDNybk9EL082aG5weVlFdzJIWWtMTlRiZ3NE?=
- =?utf-8?B?ZFpiOW1ldExoQ0pXUGVIdmxzZGlKbnV6VzVZeHg2eXVoYjY1KzFLRWZVVlh3?=
- =?utf-8?B?L29MeWc2L2RmZzV6eDBSbjBUNEZoNVRubGtqQ0M3MnhRMnErUk1jSytXRzFi?=
- =?utf-8?B?TFJ0K0t5ZkpNUTA2c2UwbDBJUGxSdWdEdHVJNmlsS0hVc2lRaFNiYk9ucHJr?=
- =?utf-8?B?bzlhb2p6N2p3cmllaGtoMVBKbXJIdExUclp6T1FZbGZ4V1JIUWRXMGtueXhD?=
- =?utf-8?B?K2xEa0tjdWtLWTZ6TUdHOHRmVGxzekZ6Z004UkoxSVMzdDRSR1hPZlpYa01U?=
- =?utf-8?B?TnliM054bXF1RzZwaUFWRW9qL3cydG9FaUphQ2FqUG8yM3RYRk1jRURveGVP?=
- =?utf-8?B?ckpaelhNTVU1dkJ5Z25xTkxNdGRLYlVFb0I1ejVtcHNoazR6VldseWF6VW05?=
- =?utf-8?B?UGZhayt2SCtNQTJtZWdvVzJHdmpCMVMzWTM4V1RGNkVNSjUyN1ZuYWJhckRw?=
- =?utf-8?B?ZW1DVU5JMktPaCthYUhKcDhTTlZOUTlCRHFRdElJbEhxVTVnSGc0ODU1amI4?=
- =?utf-8?B?TVZFQ3ZmWkJwb3FsUWJzSGFlL2hiTlQyaTdJS3FkcURXdG55ZVpnWEhxb3Z3?=
- =?utf-8?B?VHZJUzNIQXE4Z3ZKS3czdnZHYUYyK0c1K3E1azRkczJLUitmd3BGbDI2TGNK?=
- =?utf-8?B?dkI2V1VaMmpHUlYxWXVPVjVLb3FWazhvY2hqSTF0dTZ1NEw1cGJUOUZyODN3?=
- =?utf-8?B?MU5HRzFBb01LNGN0b3ZRYy9KeTZXMEl4L3dhVG14WThPcjdLbDJhMXYzUzl1?=
- =?utf-8?B?ekFyQ0kwakM1TmcxVXdTdCtPa29MdDdwR0ZjOEZoVTdHTHMvRlNlZkx0a21H?=
- =?utf-8?B?NEQybFUwTDB3N2t5QUxTUVRONmh4Szk4VXA1aE1QYlBwcWJmeDJkL3l6V1RJ?=
- =?utf-8?B?ZDBzdm83WXVkRUtXRTJhV0VaRXZnUjc0Wm85SFA5YTE0Kyt0d0J5ZEE3ei9o?=
- =?utf-8?B?MWpyYkg2bGE3UnZSNjNjWFQvKy94YVpnVWFjblJZSHpaSWVSZWozbVdyWDND?=
- =?utf-8?B?WU9uSlZsMFlFeFg2VlJlemZibkNMNHMwdEh6TmkwbWU0TWI2eFRwUkRjSVFM?=
- =?utf-8?B?Z2haRHJyYXVnM281alVGRVFoclQ3eUlRZmZhTFRuN0lhL1RIOUlPbXpYTnNV?=
- =?utf-8?B?SFpleXZQcHROTlBXOHpiVUVQd0ZadTJIU0JOdW9wcXM2TjJBU21NT2p6ZmJJ?=
- =?utf-8?B?TWlEa0h2UE1jV08rR202ZEZBTmwwTCtXQ3h4WXJxVjg2UEZFZ09oL1JOc1Ez?=
- =?utf-8?B?SDIxTVdyMWdmNCtGUWdXTnpzU1Fodk9EdjVMbDVoMDB0MVRQL1dwK3AyUGly?=
- =?utf-8?B?ak5wNHhid2JkekJEbjdHS0llMG9mN2w3Zld2Q0hMeVY0aVhwSDBINXY2RGtk?=
- =?utf-8?B?M2huQ1N3dU8wZVhCbEI1cysxOWQwbU9aMzVtTjkzYnp4N3A5dnQ2ZHhiQ2F5?=
- =?utf-8?B?ZENka2ZKcVVFYmNqNXQ1NVhmT1ZnMFRqdTRvMmltQS9kYy9relNVOGpVN1FN?=
- =?utf-8?B?WHNQaHM0cWplamxsU2cyTDI1dmRKaW9HTWcrYWtCZ3VxTUdrU1hKWGNuK3Zw?=
- =?utf-8?B?TEVUalZFbERaVWFHdWlpUHJ5dWNlSk0xbHg3Smcxa1Z6OEZkK3hZVFB5d04x?=
- =?utf-8?B?NnpIbHpIWnQ0aFkvZmZ5dWR5TDBOalFPd3JPMlFURy9tSTBlNjZ4YVBxcVFn?=
- =?utf-8?B?VXloVjJ5VnR1eDZDZ0xKTFQ5eFpmb3RBMnZMeW5HdlcwOGthK1lpaEZrRWEy?=
- =?utf-8?B?QzZmTlJmMThWSmtoYi9NWm9vUzFCck9obGpOT1ZjYnFBd2xxK1pyRTV5SnZ0?=
- =?utf-8?B?MWkvTERoRDNveVliSkwvUUlMbEUyQmtWM1FXM2Vob3h6ZFRMYmdERWkzclI3?=
- =?utf-8?B?bGtvZkNTRXVXczBYbnFTTlV5TitYMnRQNnl1YTNveWdpb1NMcWIxTllRRGk5?=
- =?utf-8?B?cEFzT3NTQ2VCRXAzNFdhaGhPMEJmYUZMSkRqdlV5bGRVWi9GUWNsTktMc3E5?=
- =?utf-8?B?cEx0M3MzekVGZ0p3Yno0NmNaMG9TMTJyWWNDUT09?=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PSAPR03MB5605.apcprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(7416014)(376014)(38070700021)(921020);DIR:OUT;SFP:1101;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?utf-8?B?cDdVNHlENmJGanNoMHEvcVUvczBmc1RvL0tQSTUwMWpVcVkzeU92aUFNVFky?=
- =?utf-8?B?UnRJSmVxbHNla1pyQWlrOVdSVEh2aDlPTjlUV3o5Y1Y3TkN5QzhsRVNrN0dK?=
- =?utf-8?B?dkVFVituSjZhSnBjQVdjdlhycWM4c0RSVjBVcytKai9zWVZwZ01qQkpIZDN3?=
- =?utf-8?B?akJucEFKZ2hWNU9uTkROSW9ZUjdXU0prWVE0WW5LZVloemlIRjZWNGVBd25a?=
- =?utf-8?B?b1QwSU5TQm1FU3RnK3BFc2x0dk4ybnFVR3doUDZhbEY3ZlRsYWEvSzExaDVa?=
- =?utf-8?B?WkNhaUxHWUs2b2NpaWtZdVViVng3bXZiMlRxc3A0eUhEVVFUcys1QWFIL21Y?=
- =?utf-8?B?Uk5SNHkrT2YzQ2pnbFBFVkNxNHU4RWpKZG1pSythZGJxWVhRTkl5TXNOdXk4?=
- =?utf-8?B?WDg5V2h5Ym5GcFFMV1orSktRQXFqVDZDcXFDRjI0VFJoQ2hHRng1ZVNuV0tz?=
- =?utf-8?B?UXNhdG9XaFAwb0RhRGZOQlJtWVozaEhoWm5ERUtTSFJFaTVoMW1QTUgyZ1dw?=
- =?utf-8?B?VmxYV3Uwb0J0MngzWlRGUHo3YTVGeUgyaytlTTd5aUFSVHp1SHRkcTltMDZj?=
- =?utf-8?B?VTEwYmlWL3VsK1FITllpZFp6U3ZHU3dVMFFKT1FHSGxmVTN2OHFLM1liZjV4?=
- =?utf-8?B?SWszOE5teGVmbGNKRlYreVNGLzlWWGxTa1pvTlc2dC8vaEcrd1NGaWdKbzVL?=
- =?utf-8?B?UmFldVFNUGJDeHFEbTRTUUMyQjlheEd4c0IveEtCeGJyWGtDRE02SDMvYnBt?=
- =?utf-8?B?eGhEbVNYSHAzQXhBcmZRM3lSbW5ZMlErMmdFUEdybGdZQ3V2T05PRllHdDI0?=
- =?utf-8?B?V3JoZ3BoREI5cTRCNTZiSTZSMHBTdDhaazZHTXpGUUt4L3I1TUNEbDVCdnNh?=
- =?utf-8?B?Rk5ZdHZ2d2tOdkxiejIzNjlUeE9wVGVNK2xSem15VHlEOUFPNW84NlhMQ1pK?=
- =?utf-8?B?VzBHbHJCV01aa0xWSm43cktLT0hzU0dFbXZmTGNVL0lpQjFUTXFiV3p5bklp?=
- =?utf-8?B?d05XRm1raDdocUxReFFLZDgyUW5LMTJxWjlEb1d1T0FUK3lCcE5DR2I4RWc2?=
- =?utf-8?B?N0pZT05OYVBoWlp4MXdSazNpTHYzY0pLeHpFa0pzMlNqeXN1ejV0KzV5ZHA1?=
- =?utf-8?B?enRTNkRqOFFKUWNPNWlaMWlzaUgwaHFRVW9QdzFEcmdWbWZlbU1SNUlEZFBF?=
- =?utf-8?B?bkJGVUZNVksxRGxUMk9QUDAwa3diTmtxRHo4NW1SR0FnNk9TS2R0M2NISnEr?=
- =?utf-8?B?a1VMLzlqZkt4REY3czB4T1BzUWFYbXY3Y2czVENmWWNUblFPQWVzMDJ5OHhO?=
- =?utf-8?B?cFpNbGtnMUVNNjdPamd0dHFqR0Vod09DbjFCNzBIVHFLRnlFNHNuSW52TVdt?=
- =?utf-8?B?a2xnZUVKMklPYkRud3EzS0swSTJXYk5QOUdNTlNqWWFCUmRxOEFYVmplcG1p?=
- =?utf-8?B?dlJWVmNYWTg2eTdNZUtPMGpCRys1NzMyOWQ1MTV6MG5mVUJnOHRrZ0VXV0hn?=
- =?utf-8?B?TTlPckQ0RlVZNXlTeHlhQVQzNVNBQUhUODk5WC96T1hCb1ZTM3czZ3VRTEx4?=
- =?utf-8?B?cXN0NzJKZVpsVm9GMFRnZWl0a25sd3l6bDNmRHhHQ0NVeDBpd3dqQlRMc3BP?=
- =?utf-8?B?QStkbFBrOHR0OVJYaTJ5dkIvdjV2RWtBenMxd2g2cXZkRjhBZlluWHhmWVp4?=
- =?utf-8?B?T3dzQmg1NWpCWlMyZ1VuUzhTaFplTldkOGV1MnREbEozQm9BUlhZTnQ3aHNN?=
- =?utf-8?B?SkNyN0RkQlB6YXdQaVdpZzd1YSs2SHdPMUh4NWJSZmtVWFU0RjFxYWJXS1RT?=
- =?utf-8?B?VHNZUlF0Wkx0MGxZa1dxeXpwLzEzMGRlWlczbWcxL3NRRkRyU0NFRGNlWEUx?=
- =?utf-8?B?Q252Wm9WRnQxaUJCVHdYaUd2V1pibTNCM3M0aDNkRFREdExCYmdrR05KMjRr?=
- =?utf-8?B?ODd1ZEJQa1NLMWUvM0JxYk1mRXM5ajgwYlg3K21QUHJYWHJEL3BaT2FURGl2?=
- =?utf-8?B?K2JBNUdyYXBVT3VPTEJtdDFoVFdwYkc5cW5VMHZ0bXpnLzg5d0VRNXJudUNj?=
- =?utf-8?B?WGs4Slo4TkVnYnprTndUNktmREFzKzVsNjFzN2MyTnFhdXNFV3FsNTF6OTcx?=
- =?utf-8?B?SmF5cC9TcHIxODJDckg3SSsyWHNhejQ2ZjIrbG44YnZZNEg4M0tBd3JkdEdE?=
- =?utf-8?B?eGpRZzlsUm4xSWNvMEhqbmJ4NDRYdlEvdG40am5JaVpjUm5nb2hjR0lBV3Ez?=
- =?utf-8?B?RkNaOGhpaXRrRlkvSjBWenlucElLclk5NTVqYWdkS3FyUnFhQnF6MU15QzdB?=
- =?utf-8?B?ZlhsVDlqeENJdU5iUERiYVRYU3daNXdqZmc4TUxwYXBSWDJXYTlhMHFEWEdL?=
- =?utf-8?Q?RHeUyZzM6jY32DEI=3D?=
-Content-ID: <6E809865CA7A8547B2C77EFE60AA8951@apcprd03.prod.outlook.com>
+        d=oss.qualcomm.com; s=google; t=1767943275; x=1768548075; darn=lists.infradead.org;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=w8/JF4/tv+7RolLNf/bATgnZLPU/tYClxfiouVTfnE8=;
+        b=NS0Fbh4UpZyr5qbxCVXkAOclTMpGvXBRIYsZuNvpOxRUXqzMgLOKyMBM4JayM/udz7
+         SMy5D25mgy4JSZwfBdP0fj6bogMZrv3Ux06drVvw3WQpA3gtRqP7ux3AE9WaFmzBMw3S
+         nS///i38IYuISD0dN6eg909DVXWfyUDV7ksMn+6kySo67wepjCC6SAg6ZpLOK/Sh2xM7
+         00KCcMuxfFcVtHdUMkVHdQs0ZZDkqf/lVUI7beQ55u3cvIT0/ew+Rd3jt8XPqj2sBeRx
+         kON3nFdXoAHvrKWh1HR+EiNUZeQTOCPPdGB5d7VLPgJMxxVQ2ZpfcVPHt7bb3Z8eVAIa
+         CsBA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1767943275; x=1768548075;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=w8/JF4/tv+7RolLNf/bATgnZLPU/tYClxfiouVTfnE8=;
+        b=rX9iuNTHe6oguzv9ACgYqvMYfytSQSt9P79H5kwLuawEIXX3UIImS7HORGIFQ6I49m
+         b+QkjSt6hCMj/QsFVsi3afVoSCg6R/iEaRwca6a33082Kr+2+uvURDLPLqJXV/qpYgdf
+         LKPfRgg1YT8FDlJ6DBiSqWt//ecCW/cQZmlNohGYgGbuqdIE/xaz+i0wXprbgbSyOl9a
+         8uKFcO+qjCeMdyEPR8Cda5AdH2hRjjRJofgi18PpDAFAV8NvqWDw9BJqEPNrRwuP+lZZ
+         99OO9AGf2iFrn9Nn0Jja5OwjmEzEfy9onMfLY8u78gNhBTU02IqE/sXAgvriNARFo+a0
+         rGXw==
+X-Forwarded-Encrypted: i=1; AJvYcCUMxZxLKoiD/PnVxJOyPikOdh7XDz6IdJ5y9dzVgTdD12HfMKt47sGty6FixSQXtibzQNe693dF50g=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz7KjY+zNGcgsBeOJVnfFyJxsI8Fk23muntDJHHmv+pAtpHJmpd
+	+DcAlvDK+lv25837FWD0pdx72mbdX1gz1hTTgVGcWMGo9/M6VKUp5eIxsa+A5t4WeTwq4PMk2x5
+	EM8ISb5w/eVvIbFndex/xIXesERDhHCbrIg1zBBexeJF7JymNHN3Ce1PSZlXkYDaHS7zj
+X-Gm-Gg: AY/fxX4yqdzw4SVJ6Kw4WaXRxiEREcLp8vvA0n3kIkZ4gU2ygxMdeVyEuIdo3HeVAsY
+	mPsIlXQXTZE7czzeNuF17GRUiqE0Dq/scMM5dys9UVVNJypLH76GeoIXR+vKz03+dkP+mxZJ9HY
+	JyXXIgQordTEuEDs9HKZeZtQaBSSEBesASImauXsG6dquCbJSDco8QtAp9z9xY8NJkTxWQXHz7k
+	Y33v9Do4De8NKDpCvlbzUEKNhZsaJxwgp1PNsn8MUCbiSrRjItldl1tX7Ei6jNe86LoyQ3WKQA5
+	osF/NfiAkPhJmpYZDc/NvW9AJcOh6vWeUzG6WRn4uazbPvZ4BaA/YQ0NHFs+Yk1brRdixDI/Xy1
+	Al41W/1bPqV8Qx5tnUAxbm5+pPC13JBJsBXd22eSMZ8Ob
+X-Received: by 2002:a17:903:19c8:b0:2a3:1b33:ae30 with SMTP id d9443c01a7336-2a3ee4a653cmr68655945ad.51.1767943275031;
+        Thu, 08 Jan 2026 23:21:15 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFmX85K7l00KBW1kA6f3TQ3NMAR6fIywTS9QpDPhMAiF3kY9dOi0NzcCSQ3m6cZ6XwkDmcefw==
+X-Received: by 2002:a17:903:19c8:b0:2a3:1b33:ae30 with SMTP id d9443c01a7336-2a3ee4a653cmr68655745ad.51.1767943274505;
+        Thu, 08 Jan 2026 23:21:14 -0800 (PST)
+Received: from hu-krichai-hyd.qualcomm.com ([202.46.23.25])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-819bb4c85bfsm9510369b3a.30.2026.01.08.23.21.10
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 08 Jan 2026 23:21:14 -0800 (PST)
+From: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
+Subject: [PATCH 0/5] PCI: qcom: Add link retention support
+Date: Fri, 09 Jan 2026 12:51:05 +0530
+Message-Id: <20260109-link_retain-v1-0-7e6782230f4b@oss.qualcomm.com>
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: PSAPR03MB5605.apcprd03.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 5e954ecb-e9a2-4cc6-5c37-08de4f478334
-X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Jan 2026 06:22:49.5248
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: a7687ede-7a6b-4ef6-bace-642f677fbe31
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 4lnNks7huGKo5zW2tFGoFe0YeFBlL/RAxQiIJeCCwQar5qJu6tiHQMz+yudJ6obySS8UF/hw727qhPyJ2piPaA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: KL1PR03MB7453
-X-MTK: N
+X-B4-Tracking: v=1; b=H4sIAGGsYGkC/6tWKk4tykwtVrJSqFYqSi3LLM7MzwNyDHUUlJIzE
+ vPSU3UzU4B8JSMDI1NDAwND3ZzMvOz4otSSxMw83TRDC0NjA3NLE/NUEyWgjoKi1LTMCrBp0bG
+ 1tQDBpc5xXQAAAA==
+X-Change-ID: 20251001-link_retain-f181307947e4
+To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
+        Philipp Zabel <p.zabel@pengutronix.de>,
+        Jingoo Han <jingoohan1@gmail.com>,
+        Manivannan Sadhasivam <mani@kernel.org>,
+        Lorenzo Pieralisi <lpieralisi@kernel.org>,
+        =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
+        Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
+        Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1767943270; l=2484;
+ i=krishna.chundru@oss.qualcomm.com; s=20230907; h=from:subject:message-id;
+ bh=2iLTHGWWp4AzJ7oli8atcmBSsHfhHA2O0yBWHWcnRNs=;
+ b=ieJv0ul7NIphohRIMQNN6yUm+5gKS7whPVUUZtuXY2TeKz3puKJwi0QVvzHH5JsVCQwJ30t9W
+ nWs5yjR+ZeRBqwJ15FQLxGnQ+FCMeD5fWD3NrNzUS04gRCgUgnsQ7eN
+X-Developer-Key: i=krishna.chundru@oss.qualcomm.com; a=ed25519;
+ pk=10CL2pdAKFyzyOHbfSWHCD0X0my7CXxj8gJScmn1FAg=
+X-Authority-Analysis: v=2.4 cv=GN8F0+NK c=1 sm=1 tr=0 ts=6960ac6b cx=c_pps
+ a=JL+w9abYAAE89/QcEU+0QA==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
+ a=IkcTkHD0fZMA:10 a=vUbySO9Y5rIA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=EUspDBNiAAAA:8 a=gKsALX6-UOwXnLYYSJMA:9
+ a=QEXdDO2ut3YA:10 a=324X-CrmTo6CU4MGRt3R:22
+X-Proofpoint-GUID: mR6jdR-G6TJhAwpHnTT-d54pqF9cZRs5
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMTA5MDA1MCBTYWx0ZWRfX42qGh/0KBCK5
+ Ea//zDoJyFOKhXjfW80c9VPDm/Bn2oCqj+7ZmO/LuNmh+n2dqivz/UprQIgqQhJ0Djx8I4Y0Uyk
+ 3gqvSoOYVvIbkntbsicqeBVLa+u0y5qxXmkeXqLNKsP1wMwZbcpT5PJT3j/19M/D1dvLig9zbsT
+ DwJqLGJaBp6s6Yda5lEhmn06q7IEd0Q8rIQ2jPKaVjAOPA0Lxpoon3Aoj5V3FeFE/kRk3fvdT7a
+ OHTSdLGoQg0mL2c1Y4OpwHKq9/2n4mU6SQagJ9tg5/g6Wo6QOL/JYIafmC+3IAMuSfbDzPhoF6f
+ 2kic3rIQmCBFg0RFjziwLSUJikhS7T3XfJus5KQVPtT81PCshXcnZsESHklNSiG/TMS9TXa/oow
+ emcN9NSki8KJe1KXlZo2YTUuBgZAfZmbAC02zM88c9mjdfo0fQVC3wHjKatkLEmiZHyKJEaNp3U
+ YoMWXJApJPKM/oLjPiw==
+X-Proofpoint-ORIG-GUID: mR6jdR-G6TJhAwpHnTT-d54pqF9cZRs5
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
+ definitions=2026-01-09_02,2026-01-08_02,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ adultscore=0 priorityscore=1501 clxscore=1015 phishscore=0 lowpriorityscore=0
+ bulkscore=0 spamscore=0 malwarescore=0 impostorscore=0 suspectscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2512120000 definitions=main-2601090050
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260108_222259_996338_A8FF63E3 
-X-CRM114-Status: GOOD (  11.47  )
+X-CRM114-CacheID: sfid-20260108_232120_606387_7474EB61 
+X-CRM114-Status: GOOD (  16.45  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -236,29 +156,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, 2026-01-08 at 13:25 +0100, Krzysztof Kozlowski wrote:
-> 
-> Please provide here reason, e.g. undocumented ABI. Normally I would
-> ask
-> about ABI impact, but considering this is was just copied from some
-> downstream code I would just not care.
-> 
+This patch series introduces support for retaining the PCIe link across
+bootloader and kernel handoff on Qualcomm platforms, specifically
+X1E80100. The goal is to reduce boot time and avoid unnecessary link
+reinitialization  when the link is already up.
 
-Is it sufficient for us to supplement the ABI document?
-This ABI might affect the ability to reset and recover after 
-an UFS error in upstream world.
+We are not enabling link retantion support for all the targets, as there
+is no guarantee that the bootloader on all targets has initialized the
+PCIe link in max supported speed. So we are enabling for hamoa & glymur
+target only for now based on the config flag.
 
-> Mediatek should really stop and rethink their upstream process.
-> 
-> Best regards,
-> Krzysztof
+If the link is up and has link_retain is set to true in the
+ithe driver config data then enable retain logic in the controller.
 
-Yes, you are right.
-MediaTek does have some shortcomings in the upstream process.
-We will make improvements.
+In phy as we already have skip init logic, the phy patch uses same
+assumption that if there is phy no csr and bootloader has done the init
+then driver can skip resetting the phy when phy status indicates it is
+up.
 
-Thanks.
-Peter
+Problem:-
+1) As part of late init calls of clock & GENPD(for power domains) the
+framework is disabling all the unvoted resources by that time and also
+there is no sync state to keep them enabled till the probe is completed.
+Due to dependencies with regulators and phy, qcom pcie probe is happening
+after late init which is causing the resources(clocks & power domains) to
+be off which causes the link to go down. To avoid this we need to use these
+two kernel command line arguments (clk_ignore_unused & pd_ignore_unused)
+to skip disabling clocks and gendp power domains as part of late init
+for initial version. Once it is resolved we can avoid those kernel command
+line arguments.
+
+Signed-off-by: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
+---
+Krishna Chaitanya Chundru (5):
+      phy: qcom: qmp-pcie: Skip PHY reset if already up
+      PCI: dwc: Add support for retaining link during host init
+      PCI: qcom: Keep PERST# GPIO state as-is during probe
+      PCI: qcom: Add link retention support
+      PCI: qcom: enable Link retain logic for Hamoa
+
+ drivers/pci/controller/dwc/pcie-designware-host.c | 11 ++--
+ drivers/pci/controller/dwc/pcie-designware.h      |  1 +
+ drivers/pci/controller/dwc/pcie-qcom.c            | 62 ++++++++++++++++++++---
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c          | 28 ++++++----
+ 4 files changed, 83 insertions(+), 19 deletions(-)
+---
+base-commit: fc065cadc7ed048bedbb23cb6b7c4475198f431c
+change-id: 20251001-link_retain-f181307947e4
+
+Best regards,
+-- 
+Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
+
+
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
