@@ -4,108 +4,134 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CAE0FD16809
-	for <linux-phy@archiver.kernel.org>; Fri,  9 Jan 2026 10:45:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E2122D1680B
+	for <linux-phy@archiver.kernel.org>; Fri,  9 Jan 2026 10:49:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0kFXrZssvhxpHvmWxZRfmRCOmipmLEd1otsOquTXrl4=; b=dSuNyjau62GzQU
-	CrYBvpPI8AfA5Vyp+vwTjHep/qOUomdu5jtoyHy4NeTvLYap7fm8JwtWkp+lWGlbrGRqFAUo8YJtE
-	E124AGKDsv8XWdRmJ32E+POzBlUS8Gk7mMB0/376qa25kyGRR7BYrn7L6T5gXAiXTZmmy6vLXfh80
-	YQkj/VKrptpKxDXM/ueLrl3fySkdr3X28VMwyOuUz4mAesCR866/L5koMp0iSnp+8hwM82JgwB0DC
-	2vKuTr9mZfGQo4nhmx/8dUGnwRSEI2ok1+Yu3vZkG5nbFBpMYtM7Apq/mLUukOAkcGJZEKBRMgZ1K
-	tq1jZqFdyzIWpeOasDIQ==;
+	List-Owner; bh=+jC55smcwl+Slvjm9W73B4PbUwUg0Mz3BWkgqExNK5Y=; b=FjWrAWGnoKAN54
+	bI4m1H1eCHlEsFJY8SNCESyQWkz36arpiVSIpQvBcRIDAn045TbeEvWngqF+LGrJl1mV6UQLGbh+X
+	gYMyAdk5PClMhvKKmsb3Wl2id9rB9cfbY2Ri0QRDVjoQg7RC9EQDaz+W5OqZBJ6gu8X6oJsWodlWU
+	4hZZwxL3PQnm3FXsTfj8y5fWF+oBZilms3ep7KXiPFbLtQASuW56VlBG57UiEEhGF1QqJArfUq2lT
+	KutDDoC22aikdTGpVi1sqSF/4ezBi3D00zLJqmxupetK4QnWxK5aPOjqocmud2OyiEV6iU+Le7ms4
+	b9O2b6fXYkytJxEJTwZg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ve9zo-000000029ph-2Ri5;
-	Fri, 09 Jan 2026 10:45:32 +0000
+	id 1veA3k-00000002A0r-2lvX;
+	Fri, 09 Jan 2026 10:49:36 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ve9zm-000000029oN-18LH
+	id 1veA3i-00000002A0O-2Dgh
 	for linux-phy@lists.infradead.org;
-	Fri, 09 Jan 2026 10:45:31 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6099N9wS472846;
-	Fri, 9 Jan 2026 10:45:19 GMT
+	Fri, 09 Jan 2026 10:49:35 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 60982WP12183974
+	for <linux-phy@lists.infradead.org>; Fri, 9 Jan 2026 10:49:33 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=74F6HprV81y
-	g26/Yb/dQKd0rGRI459HNGis0OvpCGr8=; b=SNSzK9wcINm4v0TdZDEEDYyrQRB
-	udPyKNz5fLmMjbeMJMbIvql0jqeL2T1KYLkdKVt9TOBDXx2NEXUsfYU+C+KogB/j
-	n2B6rafh9TFtfjrsx6I51KIDOUmXVW/0PMkk7eDNWpzFtEL07tTW4B+eVN8E/g6a
-	7tvEsCHo5fFvIF1MGSZRZvIUuxcEwgoJBIGEHUMX1Ol2WZ8sYRM4Rlyb4ukLaoG7
-	cGadyvHIWVgUaBj24xkX3BJi2aaIetq/LcAfYA0xkPWfcHvllJVNYtAp92jX1lQn
-	sdzsjGPNzShFQXFbNG39cy/a6HeUluwm+wmHEh6VxTyOOL42Zfb1dMVw9Bg==
-Received: from aptaippmta02.qualcomm.com (tpe-colo-wan-fw-bordernet.qualcomm.com [103.229.16.4])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4bjy0a084c-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 09 Jan 2026 10:45:19 +0000 (GMT)
-Received: from pps.filterd (APTAIPPMTA02.qualcomm.com [127.0.0.1])
-	by APTAIPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 609AjHeD007216;
-	Fri, 9 Jan 2026 10:45:17 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by APTAIPPMTA02.qualcomm.com (PPS) with ESMTPS id 4bev6mpxxv-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 09 Jan 2026 10:45:17 +0000
-Received: from APTAIPPMTA02.qualcomm.com (APTAIPPMTA02.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 609AjGLT007202;
-	Fri, 9 Jan 2026 10:45:16 GMT
-Received: from cse-cd02-lnx.ap.qualcomm.com (smtphost-taiwan.qualcomm.com [10.249.136.33])
-	by APTAIPPMTA02.qualcomm.com (PPS) with ESMTPS id 609AjGiK007195
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 09 Jan 2026 10:45:16 +0000
-Received: by cse-cd02-lnx.ap.qualcomm.com (Postfix, from userid 4438065)
-	id 0293277E; Fri,  9 Jan 2026 18:45:15 +0800 (CST)
-From: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
-To: andersson@kernel.org, konradybcio@kernel.org, robh@kernel.org,
-        krzk+dt@kernel.org, conor+dt@kernel.org, ziyue.zhang@oss.qualcomm.com,
-        jingoohan1@gmail.com, mani@kernel.org, lpieralisi@kernel.org,
-        kwilczynski@kernel.org, bhelgaas@google.com, johan+linaro@kernel.org,
-        vkoul@kernel.org, kishon@kernel.org, neil.armstrong@linaro.org,
-        abel.vesa@linaro.org, kw@linux.com
-Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
-        linux-phy@lists.infradead.org, qiang.yu@oss.qualcomm.com,
-        quic_krichai@quicinc.com, quic_vbadigan@quicinc.com
-Subject: [PATCH v4 1/3] arm64: dts: qcom: hamoa: Move PHY, PERST, and Wake GPIOs to PCIe port nodes and add port Nodes for all PCIe ports
-Date: Fri,  9 Jan 2026 18:45:02 +0800
-Message-Id: <20260109104504.3147745-2-ziyue.zhang@oss.qualcomm.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20260109104504.3147745-1-ziyue.zhang@oss.qualcomm.com>
-References: <20260109104504.3147745-1-ziyue.zhang@oss.qualcomm.com>
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	gF51mEvG4UeNNiUkScsa3C3kNkmiu6kc2Haqu7j3LQo=; b=bjnBgW18HM23IIIg
+	7yplMCrIxwbp1qRc/Bd1WZ2lxgTTlWOAmjwnYMIDZDKeB1+ptlfmtrGrsICQKk8I
+	F0Wf/uwFgqHhKpY9t+ZqgKLbVzNptZLd/mbLO6iJ1NhX52QrTLl3SeeReuwr/Dt1
+	ugFsnRAaBrK17g01HIz44SFVFqNnLYKScw28ImjwuE/5PVKqSHW4Uk9uKKmBPB8h
+	JrTt/VfR8kK7j5I2rdjvPexJ5jIRfaKdeM+IB6P65z20qJLfmryOGDyqdTJMuGog
+	TzQ68twuu1a7c/vRtPFho8P+ySC+DLgi/cnlNBk4MptIXUJlWv4cz+Ih5ZWZs954
+	GabsaA==
+Received: from mail-qt1-f197.google.com (mail-qt1-f197.google.com [209.85.160.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4bjwtn8hnm-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Fri, 09 Jan 2026 10:49:33 +0000 (GMT)
+Received: by mail-qt1-f197.google.com with SMTP id d75a77b69052e-4f77be4f283so6510461cf.2
+        for <linux-phy@lists.infradead.org>; Fri, 09 Jan 2026 02:49:33 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1767955772; x=1768560572; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=gF51mEvG4UeNNiUkScsa3C3kNkmiu6kc2Haqu7j3LQo=;
+        b=CfXUBdgyNONP5OQE7IE1VWVaJsMGvrTI0bhHa8Foib5KB8/UuKsxt/RoIeU+pwhRG8
+         3USJwyT0Ixl53p/6hnCHy7Hux7REjfMUwwK3Zy+ycn2H2slFdxbuvcEUw3yv/6Tnqpr7
+         x2LT4yeNz3bvsfpjPwZxtQVMbN3+3T9Wz+0lYOR8PAta54WP0CHSqzLNfHqxJDgV3cKo
+         aoWzFizQepA6DDyILBAsbaviv3J+UpUxF6X2VwOkc+dfKGUjdvlQ9u5N+C84N0Znf3aW
+         oqD6UWNihXSZLL6rBLWuASgsdTSroE0WrVZeszdhy1THoNT8hBt+jkpO6Yap9cdcv7po
+         0+ww==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1767955772; x=1768560572;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=gF51mEvG4UeNNiUkScsa3C3kNkmiu6kc2Haqu7j3LQo=;
+        b=r6LCcqw7QvEkxD0uvIoT9Vf3onm0kjHPX1aHzH8t7mfYfIS6ENDTilVAY3lxDFrK48
+         dnDVkm+wlBNbAHQ8Ggbgx/Up0ZSj/TfBIWIgI1XvxCXM2NqGcTbMW2DoJXW8DNFSg412
+         0dmat5XhjtFq59McGKQzwbYWa26btnT6BetxOK85oJsm+9u9TFNpNnjTSxqLQ4mP3Suu
+         Uw8LjYbi7pZNgITJdSu5JEPAjn4vkYlHAKtaMgk4ZmOOOvbwkaAzuyTlYBM5KQTw8zya
+         RG9zyyb+WUYa6Lugoh211cXyrFOJ5mApGkO5tZ+akgQ2hjcHV96t/b49hZWFzxLJpKkr
+         spUQ==
+X-Forwarded-Encrypted: i=1; AJvYcCWAPuu/o7/KRl0WX0ZTwjR8mfiG/YUVbvt9yx0LDXsKck2eAvHPNmneoURcnkQB674fJUX8/YjUoUM=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyQYmWW8R/tXgURhw37CINYMWakj0JG6Rum7T9T5TwdlpqxDXyG
+	GMPBoU80CCr1jo8JDrGdWPzVUOskD1HhxPFT6OIMS9O682HJcDWvQZZt0rfgghSHwgsgM1UdqgX
+	MTn+Z4Hv7l2H35SaIEdgGoOte4e+KA9QLYIOa76iMJMP62vT1dSaWXxhmQRqO0qkOWIte
+X-Gm-Gg: AY/fxX7Nwo7j1SUZRruYN+4gD4ylmeAAA6cZfPoQos6ZNSkYCHcn0hJiy9kvqGqImHF
+	7+6gV2tbjaEULcO/98/CyK04i1zSX1yZB74Xg8722o4kJLmsXwdq3nQfERVZ+4z2xqScuV6yjcK
+	gyW+lh45LifwpNg6ulQV2ETA+SoA+kzo53xlAQ2RRQQ/NzGA+B3R7Hly3OoL2bx7kn/ixJRYCVi
+	t7Fnz5W5ScbQ7o5241+mDXM2cNu4Rb/F/TG4eO6b0aXiHAGurZuL1vUCe6rVtIKEaaOQbN/InBk
+	oE2nz3m8O+ui2+XrlozZQJv9jOwDqoFMGCNMU+JxuNCH1viSRPcs/NnxKC/oU0g4WJosyF5QoVB
+	LZ7Dvov7NxNlomsyBXOdfblv9wyIIJFQZD4+heiVoz2k4ixYuKd9x/JjEanhPh900Mks=
+X-Received: by 2002:ac8:5d4d:0:b0:4ef:be12:7b28 with SMTP id d75a77b69052e-4ffb4a54ff2mr101486101cf.9.1767955772365;
+        Fri, 09 Jan 2026 02:49:32 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IE34C1rSk2bsxT2qW4/hAMnMPSjiOmm8OXFZ84ylaKTmq5w3ox6qX+TvXPP+TFiQ98bJ1mxWw==
+X-Received: by 2002:ac8:5d4d:0:b0:4ef:be12:7b28 with SMTP id d75a77b69052e-4ffb4a54ff2mr101485991cf.9.1767955771995;
+        Fri, 09 Jan 2026 02:49:31 -0800 (PST)
+Received: from [192.168.119.254] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
+        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-6507b8c4454sm10039009a12.3.2026.01.09.02.49.30
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 09 Jan 2026 02:49:31 -0800 (PST)
+Message-ID: <bc08f938-a315-4797-931b-5c11d402670b@oss.qualcomm.com>
+Date: Fri, 9 Jan 2026 11:49:29 +0100
 MIME-Version: 1.0
-X-QCInternal: smtphost
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMTA5MDA3OCBTYWx0ZWRfXzXpu1DDYh7Wh
- XMf+PaIta7OWnPn9FmtZIJefmrh7ArhCDN8mXLy6j6Ii4k/l0GI7W5+827cNy9xWZgF4zdl+Vns
- GBxqhyk4A3WS/3sEQr1X4ANycniY9lOVkAMHNd3RTaV2VnfjGLJJuSzt44D7N2Km8tNIjkg6kyx
- wVRQjf1WAMj+AS81tgJRJX2vGdEQCzga80YkvXsrxD7n/F5EZROeLx178gL1eD1GJmADcYr864L
- ekCc4Yih9QaJIr6UncVe6InRAhDAojd8HXl4VWFRZ4pDnP+EjxpYoCWG7y7gh0ps126jehgvzfy
- 8bl3H58JdXF091ljMRgA5vCqCCd5dqREwmP0dgyH6jFcKvmhHMpA4Q95She0+9Gf43F7yJ+Vp37
- Tje1XB6ROfIHMepUDFI7qS+r6lbY45M+2iAn4FF0tZXb1qSPv47wgd5B6YFK3r5G2unwoQ6Igjl
- xkZw+GNnnrc+4sjC5/Q==
-X-Proofpoint-ORIG-GUID: 3HaNlheKjElwUT99LnPjCtvnD2mMpzav
-X-Proofpoint-GUID: 3HaNlheKjElwUT99LnPjCtvnD2mMpzav
-X-Authority-Analysis: v=2.4 cv=QPFlhwLL c=1 sm=1 tr=0 ts=6960dc3f cx=c_pps
- a=nuhDOHQX5FNHPW3J6Bj6AA==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
- a=vUbySO9Y5rIA:10 a=VkNPw1HP01LnGYTKEx00:22 a=EUspDBNiAAAA:8
- a=aKaZ7cjhLP4wjK1lvm8A:9
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] phy: qcom: edp: Fix NULL pointer dereference for phy v6
+ (x1e80100)
+To: Val Packett <val@packett.cool>, Vinod Koul <vkoul@kernel.org>,
+        Neil Armstrong <neil.armstrong@linaro.org>,
+        Abel Vesa <abelvesa@kernel.org>,
+        Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-kernel@vger.kernel.org
+References: <20260109045214.5983-1-val@packett.cool>
+Content-Language: en-US
+From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+In-Reply-To: <20260109045214.5983-1-val@packett.cool>
+X-Proofpoint-GUID: Amnh-xGopenXJ4pd8F1o1Xghif-o_qes
+X-Proofpoint-ORIG-GUID: Amnh-xGopenXJ4pd8F1o1Xghif-o_qes
+X-Authority-Analysis: v=2.4 cv=Uohu9uwB c=1 sm=1 tr=0 ts=6960dd3d cx=c_pps
+ a=EVbN6Ke/fEF3bsl7X48z0g==:117 a=FpWmc02/iXfjRdCD7H54yg==:17
+ a=IkcTkHD0fZMA:10 a=vUbySO9Y5rIA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=Bah9ZvdxITrzPEqZxngA:9 a=QEXdDO2ut3YA:10
+ a=a_PwQJl-kcHnX1M80qC6:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMTA5MDA3OCBTYWx0ZWRfXwxB2U2Pdht6Y
+ lCXkSPicc8O4bV1E6vozgF429Vp4WeDxfty9iqDLUiLjgNITlkOnyz79rBVePzRBybYhrQm1xvt
+ iOiV5Odi0hkipHMgB8sX0T0dRev8XtF0fLINpZ7uw8/H9UJSVrhNSNU+n9rjeizgOpyaE7PKJXX
+ CB+4bkTs+xKgNMWS0OgJnRWmXgVYXaKzAN2ZxVGqEQ8rVP8vAJvAKruM81gOZAxy4x8diwOxrhH
+ S5om/IsZ83h4zLb3lmR9ebssvfErl7OUEYkwnCdrFC7F5zp340Sr6/cGxt3XKjfE8mUEMXrMmXr
+ 0j5YKVar+kvYGCcfYTUr/SrOC02I1yJyAfa8Tnth64AB59AXUc0vWGxmd8lPkOF+r0s1ODRAp95
+ /0VhOO4Km62UzV7qI9bBwwqwtdkd7K80UZ2+rVZryTx0lmXAHqhObbp+vGdLnNMXuWgG2fozYJp
+ o1Yv/8ELF84GYycimJw==
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
  definitions=2026-01-09_03,2026-01-08_02,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1011 adultscore=0 spamscore=0 bulkscore=0 lowpriorityscore=0
- priorityscore=1501 malwarescore=0 impostorscore=0 suspectscore=0 phishscore=0
+ priorityscore=1501 spamscore=0 phishscore=0 lowpriorityscore=0 adultscore=0
+ bulkscore=0 suspectscore=0 malwarescore=0 clxscore=1015 impostorscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2512120000 definitions=main-2601090078
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260109_024530_315863_7DA27B2A 
-X-CRM114-Status: GOOD (  11.00  )
+X-CRM114-CacheID: sfid-20260109_024934_583815_DCED56D8 
+X-CRM114-Status: GOOD (  18.20  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -122,511 +148,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Since describing the PCIe PHY directly under the RC node is now
-deprecated, move the references to the respective PCIe port nodes,
-creating them where necessary.Also add port nodes for PCIe5 and PCIe6a
-with proper PHY references.
+On 1/9/26 5:50 AM, Val Packett wrote:
+> For Glymur SoC support, the com_clk_fwd_cfg callback was added, and a
+> stub implementation was added for the v4 of the hardware. However it
+> was omitted for the v6, causing a NULL pointer dereference oops on
+> Hamoa/Purwa (X1E/X1P) SoC devices. Fix by adding the appropriate stub.
+> 
+> Fixes: add66a6673bc ("phy: qcom: edp: Add Glymur platform support")
+> Signed-off-by: Val Packett <val@packett.cool>
+> ---
+>  drivers/phy/qualcomm/phy-qcom-edp.c | 6 ++++++
+>  1 file changed, 6 insertions(+)
+> 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-edp.c b/drivers/phy/qualcomm/phy-qcom-edp.c
+> index 13feab99feec..a17492db21d8 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-edp.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-edp.c
+> @@ -613,6 +613,11 @@ static int qcom_edp_phy_com_resetsm_cntrl_v6(const struct qcom_edp *edp)
+>  				     val, val & BIT(0), 500, 10000);
+>  }
+>  
+> +static int qcom_edp_com_clk_fwd_cfg_v6(const struct qcom_edp *edp)
+> +{
+> +	return 0;
+> +}
+> +
+>  static int qcom_edp_com_bias_en_clkbuflr_v6(const struct qcom_edp *edp)
+>  {
+>  	/* Turn on BIAS current for PHY/PLL */
+> @@ -758,6 +763,7 @@ static const struct phy_ver_ops qcom_edp_phy_ops_v6 = {
+>  	.com_power_on		= qcom_edp_phy_power_on_v6,
+>  	.com_resetsm_cntrl	= qcom_edp_phy_com_resetsm_cntrl_v6,
+>  	.com_bias_en_clkbuflr	= qcom_edp_com_bias_en_clkbuflr_v6,
+> +	.com_clk_fwd_cfg	= qcom_edp_com_clk_fwd_cfg_v6,
 
-And also move the PCIe PERST and wake GPIOs from the controller nodes to
-the corresponding PCIe port nodes on Hamoa-based platforms:
+Let's just point it to the existing qcom_edp_com_clk_fwd_cfg_v4
 
- - x1e001de-devkit
- - x1e78100-lenovo-thinkpad-t14s
- - x1e80100-asus-vivobook-s15
- - x1e80100-asus-zenbook-a14
- - x1e80100-dell-xps13-9345
- - x1e80100-lenovo-yoga-slim7x
- - x1e80100-microsoft-romulus
- - x1e80100-qcp
-
-Signed-off-by: Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
----
- arch/arm64/boot/dts/qcom/hamoa.dtsi           | 42 +++++++++++++------
- arch/arm64/boot/dts/qcom/x1e001de-devkit.dts  | 24 +++++++----
- .../qcom/x1e78100-lenovo-thinkpad-t14s.dtsi   | 24 +++++++----
- .../dts/qcom/x1e80100-asus-vivobook-s15.dts   | 14 ++++---
- .../dts/qcom/x1e80100-asus-zenbook-a14.dts    |  3 ++
- .../dts/qcom/x1e80100-dell-xps13-9345.dts     | 14 ++++---
- .../dts/qcom/x1e80100-lenovo-yoga-slim7x.dts  |  8 ++--
- .../dts/qcom/x1e80100-microsoft-romulus.dtsi  | 19 ++++++---
- arch/arm64/boot/dts/qcom/x1e80100-qcp.dts     | 21 ++++++----
- 9 files changed, 108 insertions(+), 61 deletions(-)
-
-diff --git a/arch/arm64/boot/dts/qcom/hamoa.dtsi b/arch/arm64/boot/dts/qcom/hamoa.dtsi
-index a559f6340af9..f464ff3b89cb 100644
---- a/arch/arm64/boot/dts/qcom/hamoa.dtsi
-+++ b/arch/arm64/boot/dts/qcom/hamoa.dtsi
-@@ -3261,9 +3261,6 @@ &mc_virt SLAVE_EBI1 QCOM_ICC_TAG_ALWAYS>,
- 
- 			power-domains = <&gcc GCC_PCIE_3_GDSC>;
- 
--			phys = <&pcie3_phy>;
--			phy-names = "pciephy";
--
- 			eq-presets-8gts = /bits/ 16 <0x5555 0x5555 0x5555 0x5555
- 						     0x5555 0x5555 0x5555 0x5555>;
- 			eq-presets-16gts = /bits/ 8 <0x55 0x55 0x55 0x55 0x55 0x55 0x55 0x55>;
-@@ -3404,12 +3401,14 @@ opp-128000000-4 {
- 				};
- 			};
- 
--			pcie3_port: pcie@0 {
-+			pcie3_port0: pcie@0 {
- 				device_type = "pci";
- 				compatible = "pciclass,0604";
- 				reg = <0x0 0x0 0x0 0x0 0x0>;
- 				bus-range = <0x01 0xff>;
- 
-+				phys = <&pcie3_phy>;
-+
- 				#address-cells = <3>;
- 				#size-cells = <2>;
- 				ranges;
-@@ -3538,13 +3537,22 @@ &mc_virt SLAVE_EBI1 QCOM_ICC_TAG_ALWAYS>,
- 			power-domains = <&gcc GCC_PCIE_6A_GDSC>;
- 			required-opps = <&rpmhpd_opp_nom>;
- 
--			phys = <&pcie6a_phy>;
--			phy-names = "pciephy";
--
- 			eq-presets-8gts = /bits/ 16 <0x5555 0x5555 0x5555 0x5555>;
- 			eq-presets-16gts = /bits/ 8 <0x55 0x55 0x55 0x55>;
- 
- 			status = "disabled";
-+
-+			pcie6a_port0: pcie@0 {
-+				device_type = "pci";
-+				reg = <0x0 0x0 0x0 0x0 0x0>;
-+				bus-range = <0x01 0xff>;
-+
-+				phys = <&pcie6a_phy>;
-+
-+				#address-cells = <3>;
-+				#size-cells = <2>;
-+				ranges;
-+			};
- 		};
- 
- 		pcie6a_phy: phy@1bfc000 {
-@@ -3670,12 +3678,21 @@ &mc_virt SLAVE_EBI1 QCOM_ICC_TAG_ALWAYS>,
- 			power-domains = <&gcc GCC_PCIE_5_GDSC>;
- 			required-opps = <&rpmhpd_opp_nom>;
- 
--			phys = <&pcie5_phy>;
--			phy-names = "pciephy";
--
- 			eq-presets-8gts = /bits/ 16 <0x5555 0x5555>;
- 
- 			status = "disabled";
-+
-+			pcie5_port0: pcie@0 {
-+				device_type = "pci";
-+				reg = <0x0 0x0 0x0 0x0 0x0>;
-+				bus-range = <0x01 0xff>;
-+
-+				phys = <&pcie5_phy>;
-+
-+				#address-cells = <3>;
-+				#size-cells = <2>;
-+				ranges;
-+			};
- 		};
- 
- 		pcie5_phy: phy@1c06000 {
-@@ -3800,9 +3817,6 @@ &mc_virt SLAVE_EBI1 QCOM_ICC_TAG_ALWAYS>,
- 			power-domains = <&gcc GCC_PCIE_4_GDSC>;
- 			required-opps = <&rpmhpd_opp_nom>;
- 
--			phys = <&pcie4_phy>;
--			phy-names = "pciephy";
--
- 			eq-presets-8gts = /bits/ 16 <0x5555 0x5555>;
- 
- 			status = "disabled";
-@@ -3812,6 +3826,8 @@ pcie4_port0: pcie@0 {
- 				reg = <0x0 0x0 0x0 0x0 0x0>;
- 				bus-range = <0x01 0xff>;
- 
-+				phys = <&pcie4_phy>;
-+
- 				#address-cells = <3>;
- 				#size-cells = <2>;
- 				ranges;
-diff --git a/arch/arm64/boot/dts/qcom/x1e001de-devkit.dts b/arch/arm64/boot/dts/qcom/x1e001de-devkit.dts
-index a9643cd746d5..d5a60671a383 100644
---- a/arch/arm64/boot/dts/qcom/x1e001de-devkit.dts
-+++ b/arch/arm64/boot/dts/qcom/x1e001de-devkit.dts
-@@ -1003,9 +1003,6 @@ &mdss_dp2_out {
- };
- 
- &pcie4 {
--	perst-gpios = <&tlmm 146 GPIO_ACTIVE_LOW>;
--	wake-gpios = <&tlmm 148 GPIO_ACTIVE_LOW>;
--
- 	pinctrl-0 = <&pcie4_default>;
- 	pinctrl-names = "default";
- 
-@@ -1019,10 +1016,12 @@ &pcie4_phy {
- 	status = "okay";
- };
- 
--&pcie5 {
--	perst-gpios = <&tlmm 149 GPIO_ACTIVE_LOW>;
--	wake-gpios = <&tlmm 151 GPIO_ACTIVE_LOW>;
-+&pcie4_port0 {
-+	reset-gpios = <&tlmm 146 GPIO_ACTIVE_LOW>;
-+	wake-gpios = <&tlmm 148 GPIO_ACTIVE_LOW>;
-+};
- 
-+&pcie5 {
- 	vddpe-3v3-supply = <&vreg_wwan>;
- 
- 	pinctrl-0 = <&pcie5_default>;
-@@ -1038,10 +1037,12 @@ &pcie5_phy {
- 	status = "okay";
- };
- 
--&pcie6a {
--	perst-gpios = <&tlmm 152 GPIO_ACTIVE_LOW>;
--	wake-gpios = <&tlmm 154 GPIO_ACTIVE_LOW>;
-+&pcie5_port0 {
-+	reset-gpios = <&tlmm 149 GPIO_ACTIVE_LOW>;
-+	wake-gpios = <&tlmm 151 GPIO_ACTIVE_LOW>;
-+};
- 
-+&pcie6a {
- 	vddpe-3v3-supply = <&vreg_nvme>;
- 
- 	pinctrl-names = "default";
-@@ -1057,6 +1058,11 @@ &pcie6a_phy {
- 	status = "okay";
- };
- 
-+&pcie6a_port0 {
-+	reset-gpios = <&tlmm 152 GPIO_ACTIVE_LOW>;
-+	wake-gpios = <&tlmm 154 GPIO_ACTIVE_LOW>;
-+};
-+
- &pm8550_gpios {
- 	rtmr0_default: rtmr0-reset-n-active-state {
- 		pins = "gpio10";
-diff --git a/arch/arm64/boot/dts/qcom/x1e78100-lenovo-thinkpad-t14s.dtsi b/arch/arm64/boot/dts/qcom/x1e78100-lenovo-thinkpad-t14s.dtsi
-index 7aee9a20c6df..b45e377a22c6 100644
---- a/arch/arm64/boot/dts/qcom/x1e78100-lenovo-thinkpad-t14s.dtsi
-+++ b/arch/arm64/boot/dts/qcom/x1e78100-lenovo-thinkpad-t14s.dtsi
-@@ -1113,9 +1113,6 @@ &mdss_dp3_phy {
- };
- 
- &pcie4 {
--	perst-gpios = <&tlmm 146 GPIO_ACTIVE_LOW>;
--	wake-gpios = <&tlmm 148 GPIO_ACTIVE_LOW>;
--
- 	pinctrl-0 = <&pcie4_default>;
- 	pinctrl-names = "default";
- 
-@@ -1129,10 +1126,12 @@ &pcie4_phy {
- 	status = "okay";
- };
- 
--&pcie5 {
--	perst-gpios = <&tlmm 149 GPIO_ACTIVE_LOW>;
--	wake-gpios = <&tlmm 151 GPIO_ACTIVE_LOW>;
-+&pcie4_port0 {
-+	reset-gpios = <&tlmm 146 GPIO_ACTIVE_LOW>;
-+	wake-gpios = <&tlmm 148 GPIO_ACTIVE_LOW>;
-+};
- 
-+&pcie5 {
- 	vddpe-3v3-supply = <&vreg_wwan>;
- 
- 	pinctrl-0 = <&pcie5_default>;
-@@ -1148,10 +1147,12 @@ &pcie5_phy {
- 	status = "okay";
- };
- 
--&pcie6a {
--	perst-gpios = <&tlmm 152 GPIO_ACTIVE_LOW>;
--	wake-gpios = <&tlmm 154 GPIO_ACTIVE_LOW>;
-+&pcie5_port0 {
-+	reset-gpios = <&tlmm 149 GPIO_ACTIVE_LOW>;
-+	wake-gpios = <&tlmm 151 GPIO_ACTIVE_LOW>;
-+};
- 
-+&pcie6a {
- 	vddpe-3v3-supply = <&vreg_nvme>;
- 
- 	pinctrl-0 = <&pcie6a_default>;
-@@ -1167,6 +1168,11 @@ &pcie6a_phy {
- 	status = "okay";
- };
- 
-+&pcie6a_port0 {
-+	reset-gpios = <&tlmm 152 GPIO_ACTIVE_LOW>;
-+	wake-gpios = <&tlmm 154 GPIO_ACTIVE_LOW>;
-+};
-+
- &pm8550_gpios {
- 	rtmr0_default: rtmr0-reset-n-active-state {
- 		pins = "gpio10";
-diff --git a/arch/arm64/boot/dts/qcom/x1e80100-asus-vivobook-s15.dts b/arch/arm64/boot/dts/qcom/x1e80100-asus-vivobook-s15.dts
-index 34467b84a2fa..17269eb0638a 100644
---- a/arch/arm64/boot/dts/qcom/x1e80100-asus-vivobook-s15.dts
-+++ b/arch/arm64/boot/dts/qcom/x1e80100-asus-vivobook-s15.dts
-@@ -907,9 +907,6 @@ &mdss_dp3_phy {
- };
- 
- &pcie4 {
--	perst-gpios = <&tlmm 146 GPIO_ACTIVE_LOW>;
--	wake-gpios = <&tlmm 148 GPIO_ACTIVE_LOW>;
--
- 	pinctrl-0 = <&pcie4_default>;
- 	pinctrl-names = "default";
- 
-@@ -924,6 +921,9 @@ &pcie4_phy {
- };
- 
- &pcie4_port0 {
-+	reset-gpios = <&tlmm 146 GPIO_ACTIVE_LOW>;
-+	wake-gpios = <&tlmm 148 GPIO_ACTIVE_LOW>;
-+
- 	wifi@0 {
- 		compatible = "pci17cb,1107";
- 		reg = <0x10000 0x0 0x0 0x0 0x0>;
-@@ -941,9 +941,6 @@ wifi@0 {
- };
- 
- &pcie6a {
--	perst-gpios = <&tlmm 152 GPIO_ACTIVE_LOW>;
--	wake-gpios = <&tlmm 154 GPIO_ACTIVE_LOW>;
--
- 	vddpe-3v3-supply = <&vreg_nvme>;
- 
- 	pinctrl-0 = <&pcie6a_default>;
-@@ -959,6 +956,11 @@ &pcie6a_phy {
- 	status = "okay";
- };
- 
-+&pcie6a_port0 {
-+	reset-gpios = <&tlmm 152 GPIO_ACTIVE_LOW>;
-+	wake-gpios = <&tlmm 154 GPIO_ACTIVE_LOW>;
-+};
-+
- &pm8550_gpios {
- 	rtmr0_default: rtmr0-reset-n-active-state {
- 		pins = "gpio10";
-diff --git a/arch/arm64/boot/dts/qcom/x1e80100-asus-zenbook-a14.dts b/arch/arm64/boot/dts/qcom/x1e80100-asus-zenbook-a14.dts
-index 0408ade7150f..b42318c75ed2 100644
---- a/arch/arm64/boot/dts/qcom/x1e80100-asus-zenbook-a14.dts
-+++ b/arch/arm64/boot/dts/qcom/x1e80100-asus-zenbook-a14.dts
-@@ -82,6 +82,9 @@ &gpu_zap_shader {
- };
- 
- &pcie4_port0 {
-+	reset-gpios = <&tlmm 146 GPIO_ACTIVE_LOW>;
-+	wake-gpios = <&tlmm 148 GPIO_ACTIVE_LOW>;
-+
- 	wifi@0 {
- 		compatible = "pci17cb,1107";
- 		reg = <0x10000 0x0 0x0 0x0 0x0>;
-diff --git a/arch/arm64/boot/dts/qcom/x1e80100-dell-xps13-9345.dts b/arch/arm64/boot/dts/qcom/x1e80100-dell-xps13-9345.dts
-index 2f533e56c8c8..4c95b1af2c64 100644
---- a/arch/arm64/boot/dts/qcom/x1e80100-dell-xps13-9345.dts
-+++ b/arch/arm64/boot/dts/qcom/x1e80100-dell-xps13-9345.dts
-@@ -941,9 +941,6 @@ &mdss_dp3_phy {
- };
- 
- &pcie4 {
--	perst-gpios = <&tlmm 146 GPIO_ACTIVE_LOW>;
--	wake-gpios = <&tlmm 148 GPIO_ACTIVE_LOW>;
--
- 	pinctrl-0 = <&pcie4_default>;
- 	pinctrl-names = "default";
- 
-@@ -958,6 +955,9 @@ &pcie4_phy {
- };
- 
- &pcie4_port0 {
-+	reset-gpios = <&tlmm 146 GPIO_ACTIVE_LOW>;
-+	wake-gpios = <&tlmm 148 GPIO_ACTIVE_LOW>;
-+
- 	wifi@0 {
- 		compatible = "pci17cb,1107";
- 		reg = <0x10000 0x0 0x0 0x0 0x0>;
-@@ -975,9 +975,6 @@ wifi@0 {
- };
- 
- &pcie6a {
--	perst-gpios = <&tlmm 152 GPIO_ACTIVE_LOW>;
--	wake-gpios = <&tlmm 154 GPIO_ACTIVE_LOW>;
--
- 	vddpe-3v3-supply = <&vreg_nvme>;
- 
- 	pinctrl-0 = <&pcie6a_default>;
-@@ -993,6 +990,11 @@ &pcie6a_phy {
- 	status = "okay";
- };
- 
-+&pcie6a_port0 {
-+	reset-gpios = <&tlmm 152 GPIO_ACTIVE_LOW>;
-+	wake-gpios = <&tlmm 154 GPIO_ACTIVE_LOW>;
-+};
-+
- &pm8550_gpios {
- 	rtmr0_default: rtmr0-reset-n-active-state {
- 		pins = "gpio10";
-diff --git a/arch/arm64/boot/dts/qcom/x1e80100-lenovo-yoga-slim7x.dts b/arch/arm64/boot/dts/qcom/x1e80100-lenovo-yoga-slim7x.dts
-index 4c31d14a07bc..d6472e5a3f9f 100644
---- a/arch/arm64/boot/dts/qcom/x1e80100-lenovo-yoga-slim7x.dts
-+++ b/arch/arm64/boot/dts/qcom/x1e80100-lenovo-yoga-slim7x.dts
-@@ -1160,9 +1160,6 @@ wifi@0 {
- };
- 
- &pcie6a {
--	perst-gpios = <&tlmm 152 GPIO_ACTIVE_LOW>;
--	wake-gpios = <&tlmm 154 GPIO_ACTIVE_LOW>;
--
- 	vddpe-3v3-supply = <&vreg_nvme>;
- 
- 	pinctrl-0 = <&pcie6a_default>;
-@@ -1178,6 +1175,11 @@ &pcie6a_phy {
- 	status = "okay";
- };
- 
-+&pcie6a_port0 {
-+	reset-gpios = <&tlmm 152 GPIO_ACTIVE_LOW>;
-+	wake-gpios = <&tlmm 154 GPIO_ACTIVE_LOW>;
-+};
-+
- &pm8550_gpios {
- 	rtmr0_default: rtmr0-reset-n-active-state {
- 		pins = "gpio10";
-diff --git a/arch/arm64/boot/dts/qcom/x1e80100-microsoft-romulus.dtsi b/arch/arm64/boot/dts/qcom/x1e80100-microsoft-romulus.dtsi
-index 7e1e808ea983..37539a09b76e 100644
---- a/arch/arm64/boot/dts/qcom/x1e80100-microsoft-romulus.dtsi
-+++ b/arch/arm64/boot/dts/qcom/x1e80100-microsoft-romulus.dtsi
-@@ -1094,9 +1094,6 @@ &mdss_dp3_phy {
- };
- 
- &pcie3 {
--	perst-gpios = <&tlmm 143 GPIO_ACTIVE_LOW>;
--	wake-gpios = <&tlmm 145 GPIO_ACTIVE_HIGH>;
--
- 	pinctrl-0 = <&pcie3_default>;
- 	pinctrl-names = "default";
- 
-@@ -1112,6 +1109,11 @@ &pcie3_phy {
- 	status = "okay";
- };
- 
-+&pcie3_port0 {
-+	reset-gpios = <&tlmm 143 GPIO_ACTIVE_LOW>;
-+	wake-gpios = <&tlmm 145 GPIO_ACTIVE_LOW>;
-+};
-+
- &pcie4 {
- 	status = "okay";
- };
-@@ -1124,6 +1126,9 @@ &pcie4_phy {
- };
- 
- &pcie4_port0 {
-+	reset-gpios = <&tlmm 146 GPIO_ACTIVE_LOW>;
-+	wake-gpios = <&tlmm 148 GPIO_ACTIVE_LOW>;
-+
- 	wifi@0 {
- 		compatible = "pci17cb,1107";
- 		reg = <0x10000 0x0 0x0 0x0 0x0>;
-@@ -1141,9 +1146,6 @@ wifi@0 {
- };
- 
- &pcie6a {
--	perst-gpios = <&tlmm 152 GPIO_ACTIVE_LOW>;
--	wake-gpios = <&tlmm 154 GPIO_ACTIVE_LOW>;
--
- 	vddpe-3v3-supply = <&vreg_nvme>;
- 
- 	pinctrl-0 = <&pcie6a_default>;
-@@ -1159,6 +1161,11 @@ &pcie6a_phy {
- 	status = "okay";
- };
- 
-+&pcie6a_port0 {
-+	reset-gpios = <&tlmm 152 GPIO_ACTIVE_LOW>;
-+	wake-gpios = <&tlmm 154 GPIO_ACTIVE_LOW>;
-+};
-+
- &pm8550_gpios {
- 	rtmr0_default: rtmr0-reset-n-active-state {
- 		pins = "gpio10";
-diff --git a/arch/arm64/boot/dts/qcom/x1e80100-qcp.dts b/arch/arm64/boot/dts/qcom/x1e80100-qcp.dts
-index b742aabd9c04..1d402ef86512 100644
---- a/arch/arm64/boot/dts/qcom/x1e80100-qcp.dts
-+++ b/arch/arm64/boot/dts/qcom/x1e80100-qcp.dts
-@@ -979,8 +979,6 @@ pm_sde7_main_3p3_en: pcie-main-3p3-default-state {
- &pcie3 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&pcie3_default>;
--	perst-gpios = <&tlmm 143 GPIO_ACTIVE_LOW>;
--	wake-gpios = <&tlmm 145 GPIO_ACTIVE_LOW>;
- 
- 	status = "okay";
- };
-@@ -992,16 +990,16 @@ &pcie3_phy {
- 	status = "okay";
- };
- 
--&pcie3_port {
-+&pcie3_port0 {
- 	vpcie12v-supply = <&vreg_pcie_12v>;
- 	vpcie3v3-supply = <&vreg_pcie_3v3>;
- 	vpcie3v3aux-supply = <&vreg_pcie_3v3_aux>;
-+
-+	reset-gpios = <&tlmm 143 GPIO_ACTIVE_LOW>;
-+	wake-gpios = <&tlmm 145 GPIO_ACTIVE_LOW>;
- };
- 
- &pcie4 {
--	perst-gpios = <&tlmm 146 GPIO_ACTIVE_LOW>;
--	wake-gpios = <&tlmm 148 GPIO_ACTIVE_LOW>;
--
- 	pinctrl-0 = <&pcie4_default>;
- 	pinctrl-names = "default";
- 
-@@ -1016,6 +1014,9 @@ &pcie4_phy {
- };
- 
- &pcie4_port0 {
-+	reset-gpios = <&tlmm 146 GPIO_ACTIVE_LOW>;
-+	wake-gpios = <&tlmm 148 GPIO_ACTIVE_LOW>;
-+
- 	wifi@0 {
- 		compatible = "pci17cb,1107";
- 		reg = <0x10000 0x0 0x0 0x0 0x0>;
-@@ -1033,9 +1034,6 @@ wifi@0 {
- };
- 
- &pcie6a {
--	perst-gpios = <&tlmm 152 GPIO_ACTIVE_LOW>;
--	wake-gpios = <&tlmm 154 GPIO_ACTIVE_LOW>;
--
- 	vddpe-3v3-supply = <&vreg_nvme>;
- 
- 	pinctrl-names = "default";
-@@ -1051,6 +1049,11 @@ &pcie6a_phy {
- 	status = "okay";
- };
- 
-+&pcie6a_port0 {
-+	reset-gpios = <&tlmm 152 GPIO_ACTIVE_LOW>;
-+	wake-gpios = <&tlmm 154 GPIO_ACTIVE_LOW>;
-+};
-+
- &qupv3_0 {
- 	status = "okay";
- };
--- 
-2.34.1
-
+Konrad
 
 -- 
 linux-phy mailing list
