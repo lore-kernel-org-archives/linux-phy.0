@@ -4,96 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8D6F1D232EA
-	for <linux-phy@archiver.kernel.org>; Fri,  9 Jan 2026 07:21:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B54B9D232E9
+	for <linux-phy@archiver.kernel.org>; Fri,  9 Jan 2026 07:21:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y2LIECDqzkx5L5d6S0bk+ImAcE1xZnb9XUg8D1XJl0U=; b=j2ibBge27/EQHe
-	tcCGL1VSD3F9CrKWCYNYX1q7LXVg6JJ7kTAj+vYSey0MUGNejBCjpgIqW2PQQL9d3a76ivtZXLWro
-	DuXX0t1GmC8V8dIKIvkbpNGwQL/gfGkuJ9w9jvA13ELWgEBMcVGX3mJHJs+LsDlMUZs7JQnPXW1Do
-	uCyMz2aGB9k0HoR0n8jX0d5FakYUPhwZNr5UpA2T5WSaw8gp2Iq8STpTNZUmdXkBiHNNm+LGYVn+F
-	EUEgq6isY4y4Xs95iqdr8bwSenRi8Hq/a+/ggeCF/HAQ/v/5XEbuu6qr+JxZDwEM9DguwHXnBtRGc
-	tPJ0/VvLAVEd+4k0O72A==;
+	List-Owner; bh=2uI4ukxJFWWZybQdakPJRwdwD6sRhNnKHZ65E1nU6yw=; b=TK8sOwAtD7019U
+	DkAPJyG45iw94qWQg0SrxNaJjwkKvp5X9kkvF+h2kjVLltYbvL9hiZRc0UWb4f5Ej3WPqJl7WuKqh
+	0qxRoO8Sl114GHQWnAVBFlKChviPrMU4FacN8OUnxanzNGLc0EBeh6c2LUF7d+dbAvMSauZdx1CeW
+	WSAwh4mJ9Pa0i9M50E40N+DxWAzsDyq19+yX9DscyH4v8RCJHf7fmEM8xfdAhTeLDd/mWzIhBhn6d
+	8h1YkezuM05V+DQWCwtaNrJyPbmduWi/Y6G9aGJ9333h28c3yJoSgbXqF6wj38kpJAMU2FN789ZKe
+	Jd17UZvWo+4CTlR7BKkQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ve6oU-00000001hK8-1CKK;
-	Fri, 09 Jan 2026 07:21:38 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1ve6oW-00000001hLG-1HXW;
+	Fri, 09 Jan 2026 07:21:40 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ve6oQ-00000001hIG-0yOr
+	id 1ve6oT-00000001hJV-1Vht
 	for linux-phy@lists.infradead.org;
-	Fri, 09 Jan 2026 07:21:37 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 608MmYpH3214264
-	for <linux-phy@lists.infradead.org>; Fri, 9 Jan 2026 07:21:33 GMT
+	Fri, 09 Jan 2026 07:21:38 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6094os1Z3167579
+	for <linux-phy@lists.infradead.org>; Fri, 9 Jan 2026 07:21:37 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	72S83sFcJLczdJt8oEW24FAL+N/F40XzrhBECgz9llc=; b=FdOinPKaTYDaHT4h
-	fQToOCGUwhBzCHAGgahjXuDn6HqKxW3zHbrFvSl4wuwsfAmtpkcyOpg0gFXeweiy
-	grH6Yg44JTuzVq/mVqGlZ1Kb3aPHZo2b2uNV+y/LlSJTCCrSOXtYgGTFqZUxNbWq
-	1EuFLO9vFg2HDCEhCi5RuY0+U/NW4YWTvOBC7MP45frAnLDKbdirpS/kh4laBTBh
-	RuOJwRrbb8d805eZvUaOm1Wcy1/RaKTKtNJoNg44iP9YXh5d+Z6H5+gdehM2PSZg
-	f1A5I35RGuUzUAI5TZ9/I7B2p+X7mgYj2yUegnumUiSpu2re8SsrSNdAd2XYDaip
-	IJoukg==
-Received: from mail-pf1-f200.google.com (mail-pf1-f200.google.com [209.85.210.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4bjjt0hkft-1
+	MWLM+x08j2mwTQLmHLC3ONhPhRCtuCvxS6wZ5AjUj04=; b=UfyDZENurunldCrr
+	Y9/dJ2zroDAmVR/RMM4wHwsVVf7V4nuIDmjOjck7MxdsO5mzrFTnruLU9grlWnzz
+	uNNy3uH87kfxlIBAY4QUJSp2F3wU45tKXtFjNthPtLI7hidI0YAoWQ2sjcNtWTuX
+	mQeBXu9ApZ5A/WntG9zkJB7op6Zc2rK2k/gExs349t8WEzOWaCSG81XCqsjawCtU
+	P4PAJRpJnykjUZW0VCkvhjXUntQZsQrHMpuoPG6a5w7RfupVjtL4NDKGBOY7Jy7W
+	odgHgJrGdoyGiPoIInR67wjarNJUBvF8+rXXjOJd2rESdtNUoIqvFMBjT7HONw7P
+	Pr3NUQ==
+Received: from mail-pf1-f199.google.com (mail-pf1-f199.google.com [209.85.210.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4bj8923xqu-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Fri, 09 Jan 2026 07:21:32 +0000 (GMT)
-Received: by mail-pf1-f200.google.com with SMTP id d2e1a72fcca58-81c68fef4d4so3240415b3a.2
-        for <linux-phy@lists.infradead.org>; Thu, 08 Jan 2026 23:21:32 -0800 (PST)
+	for <linux-phy@lists.infradead.org>; Fri, 09 Jan 2026 07:21:36 +0000 (GMT)
+Received: by mail-pf1-f199.google.com with SMTP id d2e1a72fcca58-7d24bbb9278so6930916b3a.0
+        for <linux-phy@lists.infradead.org>; Thu, 08 Jan 2026 23:21:36 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1767943292; x=1768548092; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1767943296; x=1768548096; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=72S83sFcJLczdJt8oEW24FAL+N/F40XzrhBECgz9llc=;
-        b=Nr0xjVDA4pHkjMoIjabIjTvAYIZIq7AIe0efizh0DR8AtQhDqs0if+41GRu9+Q2ZzQ
-         LXjJKBwYxwQopDanoMPMu6ZeBWyaaQTvMdQFF98bfDUPNDzhLcLFzZntxG5qfzRnJ4Tc
-         km1zboBnG2/bdPnU32jU/wiTmSfaLnyEAt/qJFfnEecfa+BizBlmrxB5DrPfY/0z8B9u
-         NRNNU7XS0xupvomtsVsa3fqtjPARRxokkT9l122zkn79ajpU1qzQnwRFxn43b/r6oKwB
-         7KRKCW/uuBHDQAQSFCGc9WjgeFa2grQCw4wEUxqBabzOO0VZtkXre5kcOIPXRpfASxax
-         Ie/Q==
+        bh=MWLM+x08j2mwTQLmHLC3ONhPhRCtuCvxS6wZ5AjUj04=;
+        b=DIpdJ2BQApYaDT9qM3DwB8OcAohGrN+8HoZKgJoY0sOCx2cR9JidIhhg8oXFt47CvQ
+         rzYlHao0RWe1ULtRA2xvkoH83AMqNHKLgzg9Kwv5gq8eqcGsow+wrU3iJjGwt90BRG3Y
+         moBbm4sCufg2wFaBz02jUHHfZ+EsXn2vJFFmD4OYehsLrQ4BE5e0bkslhlSDRCbw2PEf
+         dQj3vdXJCnqwuLPvcUyIsZPMpc9u0UJLQlpOKsdl4I8PdarJPaSq8qLzGSS0PdKemGPI
+         BJsMHW/hisvVTMjrI+nyltnggzV6VKMOrUA1+Mx+CBprJyX8IoqsHOTzBmTLT3/XutoU
+         SAUA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1767943292; x=1768548092;
+        d=1e100.net; s=20230601; t=1767943296; x=1768548096;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-gg:x-gm-message-state:from:to
          :cc:subject:date:message-id:reply-to;
-        bh=72S83sFcJLczdJt8oEW24FAL+N/F40XzrhBECgz9llc=;
-        b=BMhsRPiYDEQsoBWKZBhNrL3p+f6DRHqCkuKsCX6f8Wdt2VVoUlspmSuw1HgBHjvxHY
-         wcLvreagN2IalEzO4K/x4KM7V6H0s2dd6p4n01ZF8Lq8PI23CjWprtlAWDATTOsVN+BY
-         eeix8LygGQ2xPzl7o4QE/LlTp0LIkLL5VS0KJb0aBHGdFN664zg76UWZAITogQKi4FJp
-         NwDNdqyI8edvq91YcnraiErZe10Xl0DPaF2gTD9500VixABlxJBOsAC+xzYJpoTqcF7o
-         6NVUCzPXFVo2eTzvg27hE+M2xX7PdwrvEGT2FAy0y5gDkyiA3fl+n9XIdm7CpCW46i1q
-         hbdQ==
-X-Forwarded-Encrypted: i=1; AJvYcCXQG+jpDdY2ea+mH4Dw/gvOoVYqHiriyu3a9zBpXi+LO1vPcnGLhilhsF8RBolsbpjnAwEB7FqSm8c=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx7nyNoJMWiRldPZkW7Gf2pjbaumdnvzgnd2VK5d1SYJ94af42P
-	CpLbofW2D7IWl1QKOVtpjldWzj9YteliRlhp3mdUSgfPtBULBIh67DoQkojmYxBeYEByZGz+FhD
-	YO7JaZTMuyWQrmVvfyBRotKKZnjQJijvk/xL9tbPSW6EBBAPKdCkoUeG+4GrEwK3ECtDr
-X-Gm-Gg: AY/fxX5ooLNK9MGGAVvJ5u0oS94vrn17LAFr9QKvuudNWngSJm0W0qKf5UZqVVUCM9j
-	beCvHMCk0x0CZL6xi9RIoDlttuJ4/X7iuyIbLqN76IcNsxSV6/CU5VKE9JrM6j2YOekrhrIAZ/l
-	jThadjDSbMR/B6ISDVqiDhG3UT32cLP0DGtxS8SYxA1sK0AYDIoclaAq6oaxNKPMR4YJCAOL1BI
-	fko4Tpu4OJzdiK5S7Q/1tziN0VR7/8+b4CJQSNl4mZsPt0fOYlzsYNhWxOiU4hKYkrgXvqFBNwC
-	AwqqID/QdA6zW5IMyZzT36jUwpPcJyUGTTNhQfLt9803I42RrkXk7ednUcEc5TsJGuVNf464ppU
-	tXSP0ZOGpT5stV+EgshO1WcYvMni8AMXouYeyvHRZrxc5
-X-Received: by 2002:a05:6a00:e19:b0:7e8:43f5:bd18 with SMTP id d2e1a72fcca58-81b7f3f1ff7mr7879186b3a.45.1767943291776;
-        Thu, 08 Jan 2026 23:21:31 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IHBsaYWHr8eZog5Woy39kTSosevSsQ2EU8sshvTGXJv+BXUHaeNfYg7ku/1jVEn99TS7RH7bA==
-X-Received: by 2002:a05:6a00:e19:b0:7e8:43f5:bd18 with SMTP id d2e1a72fcca58-81b7f3f1ff7mr7879143b3a.45.1767943291246;
-        Thu, 08 Jan 2026 23:21:31 -0800 (PST)
+        bh=MWLM+x08j2mwTQLmHLC3ONhPhRCtuCvxS6wZ5AjUj04=;
+        b=pp2UHsCIy51cFBmFy0puL+ZZTW/M/JtK60hqDhFOk/yBuS2j5oo/2jG8XZp3+dgjQF
+         EcEhqRnPA5qRRAD2bvLigs7dOk5812oqrdKZ25FKbLkPPYYgqxeS3dog4KM02AKvanNH
+         xLTr1teuD6yBD4ukwRYAG9+U7nc6STtN6KfZFQbJR2WjL2LN4RyPPqf+S+u2HjB8F9Ne
+         2SDCe4az9xF/yBDtjtap4ndCwOFeWCz6suUV+E5KcPoANTQkrgzx5+5hv0fAJw/QDvxG
+         P5Hh9sk17CiCJlQ9HiDlBfiGL8z/bpY0Vr4ySQQGF1Gu2XsuMGgIh2flHKOAyngpi3yp
+         ODag==
+X-Forwarded-Encrypted: i=1; AJvYcCUtXgEJl7nTky253nYpCYGKmF2gs/D0ocbCRUAQvRJsWS9mwMT/kcwibZEs7lC3H2pKBgrYccVFDJg=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yws8lsn3CL7Cud22b8DE6Ev2+bSUOPpHDXoyy1icKnTZahbfFZs
+	w+Op91OuNPbVjr8xA+PAu31nqqY7q+pLGyCuTLmznOG2mAqLJC6E4tJzvymK+JjV5p2Tfkn/9aI
+	2MhZ5Y6Jgo2x8N+7lyjWYc4JWcG9bTH81vpb9RFplCHSDdz8xgUvgXcl2goc0CmMFe9SR
+X-Gm-Gg: AY/fxX71zUJr47VEQkxv+qwx/CTGoMgSz33mXZvhtwdJqAg6nMLPqGDdXNgbxtGkuT+
+	9Ol3BWkamTb+tacTG+2C5Ep8fNY6z8pAfMJSDzzlm45/nAlvDbqMNMPyQ8Ld5NgT5HaDJ3/Jo8+
+	6bfB0VBfMMUkFJ8br8N5Twl+m7d+9EahOcVFMu1nAmjp1OraNXwySjXGvzNerlpqMXNOQ+I38qM
+	44B201iaYs0FsXmERkZj3CQ26AILwetwY2CDTs3o5vMTJwQdpQ8C6pATNpo5dV10HbJ1IqKZO8y
+	M11RqQHRb+LKQmGuOai9MEGEg0EWOcho28ISZYRTi+G4Pk9ruJA5QFdZKGtkyLaamVuBdWuApQP
+	rtHRyNmXrB1xjw8sTvR4jjcpXBSrJ5ORC0Mx0njK5csd+
+X-Received: by 2002:a05:6a00:408c:b0:7e8:43f5:bd21 with SMTP id d2e1a72fcca58-81b7f9d4d7dmr8834818b3a.54.1767943295897;
+        Thu, 08 Jan 2026 23:21:35 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IF5oswvUvt2eSKOV/gIHmGq+k+j9ho0bKbXCQiNsUMKePo3mhru5IonqVUsfFuQd52XyRbzRQ==
+X-Received: by 2002:a05:6a00:408c:b0:7e8:43f5:bd21 with SMTP id d2e1a72fcca58-81b7f9d4d7dmr8834799b3a.54.1767943295422;
+        Thu, 08 Jan 2026 23:21:35 -0800 (PST)
 Received: from hu-krichai-hyd.qualcomm.com ([202.46.23.25])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-819bb4c85bfsm9510369b3a.30.2026.01.08.23.21.27
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-819bb4c85bfsm9510369b3a.30.2026.01.08.23.21.31
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 08 Jan 2026 23:21:30 -0800 (PST)
+        Thu, 08 Jan 2026 23:21:35 -0800 (PST)
 From: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
-Date: Fri, 09 Jan 2026 12:51:09 +0530
-Subject: [PATCH 4/5] PCI: qcom: Add link retention support
+Date: Fri, 09 Jan 2026 12:51:10 +0530
+Subject: [PATCH 5/5] PCI: qcom: enable Link retain logic for Hamoa
 MIME-Version: 1.0
-Message-Id: <20260109-link_retain-v1-4-7e6782230f4b@oss.qualcomm.com>
+Message-Id: <20260109-link_retain-v1-5-7e6782230f4b@oss.qualcomm.com>
 References: <20260109-link_retain-v1-0-7e6782230f4b@oss.qualcomm.com>
 In-Reply-To: <20260109-link_retain-v1-0-7e6782230f4b@oss.qualcomm.com>
 To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
@@ -107,40 +107,40 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
         linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
         Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1767943270; l=4282;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1767943270; l=1470;
  i=krishna.chundru@oss.qualcomm.com; s=20230907; h=from:subject:message-id;
- bh=sATat5gXi+RmClCqAUl81QS783eB44xkTcOkPS41g74=;
- b=/zFkBrsSntluR8iQc/wubd+dohrF5L/1t1GC/liOmhwA0+Vxai9BpzHpjhct44yyHtNpaSt6d
- 70jOpWu4WP0Aofc9GwjUx9bfI/LQXB3Oy5Huej4BYcKA8AjhCv1Naim
+ bh=zejg997ZSWXmNp4lbxFPzukiCXSgprPeCxqQHhJcU0U=;
+ b=ecroe9T2ZoReGjqBPMd9o0jNW9qHm6mLLPK+GU5EYr6zawWa3YYes2XYS1rF24v+W69OfgEkE
+ LE2BGNylqYfD079R1I5yn0tCkuLwCH2KxX2PO1LpFGylbeXS0VFLHT4
 X-Developer-Key: i=krishna.chundru@oss.qualcomm.com; a=ed25519;
  pk=10CL2pdAKFyzyOHbfSWHCD0X0my7CXxj8gJScmn1FAg=
-X-Proofpoint-GUID: dOChtCTV4xi2nOe2M5Rd8p6hFIqJ_aNx
-X-Authority-Analysis: v=2.4 cv=VJzQXtPX c=1 sm=1 tr=0 ts=6960ac7c cx=c_pps
- a=mDZGXZTwRPZaeRUbqKGCBw==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
+X-Authority-Analysis: v=2.4 cv=M45A6iws c=1 sm=1 tr=0 ts=6960ac80 cx=c_pps
+ a=WW5sKcV1LcKqjgzy2JUPuA==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
  a=IkcTkHD0fZMA:10 a=vUbySO9Y5rIA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=EUspDBNiAAAA:8 a=S-wDCh2AgS0RhsWIeBgA:9
- a=QEXdDO2ut3YA:10 a=zc0IvFSfCIW2DFIPzwfm:22
-X-Proofpoint-ORIG-GUID: dOChtCTV4xi2nOe2M5Rd8p6hFIqJ_aNx
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMTA5MDA1MCBTYWx0ZWRfX9p0NprvLyteJ
- r58VJp2XIVBeEEQkG3A2d6TnCvoD225CSlMJ5HvjL3KsCtUabY7t2jbVdMCXwCndR5bJFaF7IDW
- HyzX3FQTk/icn1hDtMWf8CzjqrMu/gXtst3o8f9O9pl/39F6hh+5F3dPtmMmKbX690JvxCAG/Cd
- V7c5yaE2Fn9VyJTX6zvNt0ic3qD/svyNDKbizCTxH6nU3i+8g4Bpq7UP4NgMNm5WrhUQ2BTnZeW
- RE1LtHXrAEGoTVEZiFvBjP0MKlqOhfDpkUxI5FtqkYscWtvXl7O5YD6gKN+cNn3wFHiAysiOtDF
- 04aMd8cJs3CvmOrgwoRuL8RHhnl2Abgi3fgc6oN5CzNUYf9ci55OkDqYLh/rIB4tnF+auw6YRyr
- vT0df0jbavDgIQEVhgfhcoA/dFhdO1sBVpH+pjHaZIICgyvmP58aKQzuZ6Y91qB6Z7Dh3wvV/ws
- bwBG/zk+7KHmjAGCDAw==
+ a=VkNPw1HP01LnGYTKEx00:22 a=EUspDBNiAAAA:8 a=Py5lcOcq67Lbq8UMOfUA:9
+ a=QEXdDO2ut3YA:10 a=OpyuDcXvxspvyRM73sMx:22
+X-Proofpoint-ORIG-GUID: TL2GBAuYB2TACdMf0k2o_6Spt9RbhwIA
+X-Proofpoint-GUID: TL2GBAuYB2TACdMf0k2o_6Spt9RbhwIA
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMTA5MDA1MCBTYWx0ZWRfXyFX9+quUKSr/
+ SWrzxm0qalBHDmP3axr/njnCsZ60qynAdtsZluJCqfg9cX6+gBA3xEVzWZ3xtcFu2y1zXW+Lp4p
+ 8r8PgedrvJKYbY/tGFr5NH5EKnWNigy83B6uHZVX0Obup60Iyf4HozFYSTwpPX1YeTmWbb36Jqf
+ y2d49WtycUOE1VF5qTjM1IMj1V01+YD0HjSzRgoCL8xO0/lC/Dvx7ixYuNmfGVsJBsVVfXfaMv6
+ E3fxqLfzGcHN/tugiU7l+Z9FA8xlMQgqshYoVk+XZksllHaqcypnVA3CxuxbU+ZTcOzKCPfb3dE
+ NR5QGkMy35vTBFfhSdsUPEEVA3SfRQxcBAKkSppLo1FT4Gqc3myzmW55K4gk1LXNYGgkfCmPqGt
+ 2xAwaZM9JcT0dqS4qvxXNQ3cLawNVDEPm8E22leWb4F3Jtb5kO6jv/yZYPFp0ROJBIFhqZT91ml
+ EKatIyeihNFFcb3er0Q==
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
  definitions=2026-01-09_02,2026-01-08_02,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- malwarescore=0 suspectscore=0 spamscore=0 phishscore=0 clxscore=1015
- priorityscore=1501 adultscore=0 bulkscore=0 lowpriorityscore=0
- impostorscore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ priorityscore=1501 impostorscore=0 lowpriorityscore=0 bulkscore=0
+ phishscore=0 suspectscore=0 clxscore=1011 spamscore=0 malwarescore=0
+ adultscore=0 classifier=typeunknown authscore=0 authtc= authcc=
  route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2512120000
  definitions=main-2601090050
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260108_232135_964198_658C6167 
-X-CRM114-Status: GOOD (  20.01  )
+X-CRM114-CacheID: sfid-20260108_232137_448717_DBE849F8 
+X-CRM114-Status: GOOD (  12.38  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -157,134 +157,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Some platforms keep the PCIe link active across bootloader and kernel
-handoff. Reinitializing the controller and toggling PERST# in such cases
-is unnecessary if driver doesn't want to do link training again.
-
-Introduce link_retain in both qcom_pcie_cfg and qcom_pcie to
-indicate when link retention is supported. During initialization, check
-the LTSSM state, if the link is already in L0 or L1 idle and LTSSM is
-enabled, set pp.link_retain and skip controller reset, PERST# toggling,
-and other post-init steps.
-
-If there is a devicetree property to restrict PCIe data rate and lane
-width go with the normal execution instead of link retantion logic.
-
-Configure DBI and ATU base in this scenerio, since bootloader DBI & ATU
-base may differ from HLOS one. So use the DBI & ATU provided from the
-devicetree.
+The Hamoa platform supports keeping the PCIe link active across
+bootloader and kernel handoff. To take advantage of this, introduce a
+specific configuration (cfg_x1e80100) with link_retain = true and
+update the device match table to use it.
 
 Signed-off-by: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
 ---
- drivers/pci/controller/dwc/pcie-qcom.c | 50 ++++++++++++++++++++++++++++++++--
- 1 file changed, 47 insertions(+), 3 deletions(-)
+ drivers/pci/controller/dwc/pcie-qcom.c | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/pci/controller/dwc/pcie-qcom.c b/drivers/pci/controller/dwc/pcie-qcom.c
-index 9342f9c75f1c3017b55614069a7aa821a6fb8da7..bdd5bdb462c5f6814c8311be96411173456b6b14 100644
+index bdd5bdb462c5f6814c8311be96411173456b6b14..975671a0dd4757074600d5a0966e94220bb18d8c 100644
 --- a/drivers/pci/controller/dwc/pcie-qcom.c
 +++ b/drivers/pci/controller/dwc/pcie-qcom.c
-@@ -259,12 +259,14 @@ struct qcom_pcie_ops {
-   * @override_no_snoop: Override NO_SNOOP attribute in TLP to enable cache
-   * snooping
-   * @firmware_managed: Set if the Root Complex is firmware managed
-+  * @link_retain: Set if controller supports link retain from bootloader
-   */
- struct qcom_pcie_cfg {
- 	const struct qcom_pcie_ops *ops;
- 	bool override_no_snoop;
- 	bool firmware_managed;
- 	bool no_l0s;
-+	bool link_retain;
+@@ -1531,6 +1531,12 @@ static const struct qcom_pcie_cfg cfg_sc8280xp = {
+ 	.no_l0s = true,
  };
  
- struct qcom_pcie_port {
-@@ -965,6 +967,35 @@ static int qcom_pcie_get_resources_2_7_0(struct qcom_pcie *pcie)
- 	return 0;
- }
++static const struct qcom_pcie_cfg cfg_x1e80100 = {
++	.ops = &ops_1_21_0,
++	.no_l0s = true,
++	.link_retain = true,
++};
++
+ static const struct qcom_pcie_cfg cfg_fw_managed = {
+ 	.firmware_managed = true,
+ };
+@@ -2168,7 +2174,7 @@ static const struct of_device_id qcom_pcie_match[] = {
+ 	{ .compatible = "qcom,pcie-sm8450-pcie0", .data = &cfg_1_9_0 },
+ 	{ .compatible = "qcom,pcie-sm8450-pcie1", .data = &cfg_1_9_0 },
+ 	{ .compatible = "qcom,pcie-sm8550", .data = &cfg_1_9_0 },
+-	{ .compatible = "qcom,pcie-x1e80100", .data = &cfg_sc8280xp },
++	{ .compatible = "qcom,pcie-x1e80100", .data = &cfg_x1e80100 },
+ 	{ }
+ };
  
-+static bool qcom_pcie_check_link_retain(struct qcom_pcie *pcie)
-+{
-+	u32 cap, speed, val, ltssm, width;
-+	struct dw_pcie *pci = pcie->pci;
-+	u8 offset;
-+
-+	val = readl(pcie->parf + PARF_LTSSM);
-+	ltssm = val & 0x1f;
-+	if ((val & LTSSM_EN) &&
-+	    (ltssm == DW_PCIE_LTSSM_L0 || ltssm == DW_PCIE_LTSSM_L1_IDLE)) {
-+		qcom_pcie_configure_dbi_atu_base(pcie);
-+
-+		offset = dw_pcie_find_capability(pci, PCI_CAP_ID_EXP);
-+		cap = dw_pcie_readl_dbi(pci, offset + PCI_EXP_LNKCAP);
-+		speed = FIELD_GET(PCI_EXP_LNKCAP_SLS, cap);
-+		width = dw_pcie_link_get_max_link_width(pci);
-+
-+		if (pci->max_link_speed > 0 && speed < pci->max_link_speed)
-+			return false;
-+
-+		if (pci->num_lanes > 0 && width > pci->num_lanes)
-+			return false;
-+
-+		return true;
-+	}
-+
-+	return false;
-+}
-+
- static int qcom_pcie_init_2_7_0(struct qcom_pcie *pcie)
- {
- 	struct qcom_pcie_resources_2_7_0 *res = &pcie->res.v2_7_0;
-@@ -983,6 +1014,14 @@ static int qcom_pcie_init_2_7_0(struct qcom_pcie *pcie)
- 	if (ret < 0)
- 		goto err_disable_regulators;
- 
-+	if (pcie->cfg->link_retain) {
-+		pci->pp.link_retain = qcom_pcie_check_link_retain(pcie);
-+		if (pci->pp.link_retain) {
-+			dev_info(dev, "Enabling link retain\n");
-+			return 0;
-+		}
-+	}
-+
- 	ret = reset_control_assert(res->rst);
- 	if (ret) {
- 		dev_err(dev, "reset assert failed (%d)\n", ret);
-@@ -1043,6 +1082,9 @@ static int qcom_pcie_post_init_2_7_0(struct qcom_pcie *pcie)
- {
- 	const struct qcom_pcie_cfg *pcie_cfg = pcie->cfg;
- 
-+	if (pcie->pci->pp.link_retain)
-+		return 0;
-+
- 	if (pcie_cfg->override_no_snoop)
- 		writel(WR_NO_SNOOP_OVERRIDE_EN | RD_NO_SNOOP_OVERRIDE_EN,
- 				pcie->parf + PARF_NO_SNOOP_OVERRIDE);
-@@ -1300,12 +1342,13 @@ static int qcom_pcie_host_init(struct dw_pcie_rp *pp)
- 	struct qcom_pcie *pcie = to_qcom_pcie(pci);
- 	int ret;
- 
--	qcom_ep_reset_assert(pcie);
--
- 	ret = pcie->cfg->ops->init(pcie);
- 	if (ret)
- 		return ret;
- 
-+	if (!pp->link_retain)
-+		qcom_ep_reset_assert(pcie);
-+
- 	ret = qcom_pcie_phy_power_on(pcie);
- 	if (ret)
- 		goto err_deinit;
-@@ -1316,7 +1359,8 @@ static int qcom_pcie_host_init(struct dw_pcie_rp *pp)
- 			goto err_disable_phy;
- 	}
- 
--	qcom_ep_reset_deassert(pcie);
-+	if (!pp->link_retain)
-+		qcom_ep_reset_deassert(pcie);
- 
- 	if (pcie->cfg->ops->config_sid) {
- 		ret = pcie->cfg->ops->config_sid(pcie);
 
 -- 
 2.34.1
