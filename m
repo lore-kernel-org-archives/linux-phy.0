@@ -4,98 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 613FAD232FF
-	for <linux-phy@archiver.kernel.org>; Sat, 10 Jan 2026 19:11:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 43C89D232FF
+	for <linux-phy@archiver.kernel.org>; Sat, 10 Jan 2026 19:11:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vtUtomeLjfEroli42Lz30jLOwiCwKgnq6w3UnA4mkSo=; b=s7/AEUsSyAMpd/
-	RAZ5USYMRBYK+4QKVbgLFm2yjr89WJLBnYYPYKa1A0U4jADbOafoMX3mDJp+eOytxYRQA5hmnt0Tj
-	ynQlkZmY0AxFRguta4hev6D97XrA2pI6mV4ddbKeMkZ61BrtGIXmuYWRLSkCd04mEFxYbp0QdzKKI
-	4u/2HjcCI7lBlgl9y0srFOOF/QcT47BdurNG92qxpjulixoPmef9ZIxHV43Ebcps1TWwgB3n/diZZ
-	J6k7FPj2lwegVxVZVnc1sU2kBmbWocVQEvSImt6qr9CuIdrPvW0Kp5WsJAFqv3TFPJByiIp/eCvZV
-	K+nFZWdDOVDQQypFGcIw==;
+	List-Owner; bh=xQ+Ah1tHCwJthysbpMckpgtsCQWq8vzEO4fiAKtpwvg=; b=NZOAIBTeKxQhUG
+	7QqA/tgAY0jhrxC8N0JQyhU21QpoiX13gptK3g/jw6aek6nZ4SJ8a8ZMuo/0Vb1c4SzjgctiKDLNE
+	kyGVPaXnXzfjXwiAPD6HEEnFnUAPiqBI9U4jueWa3QE2qCtSl6XIQft6pRsGFQKYRVTkA/UPzzMHs
+	BN5euAvQDJGb4Ar3bWZtUGfRWbXpbJdkbTrP5pmsmLbntUrcAM/SERvlZMW3pCG89VEkTnHeBJO/v
+	J0cEP5zI2V9WmumihcHBnqSnPgqkSCGVI799EM2luXtsXB4DasRQVXykwuBc7WfEXtZdKcu5PrFo4
+	TPJKkktiepQ9Sb56mTmw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1veeN6-00000003cMC-3QNU;
-	Sat, 10 Jan 2026 19:11:36 +0000
+	id 1veeNG-00000003cOk-04w6;
+	Sat, 10 Jan 2026 19:11:46 +0000
 Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1veeN5-00000003cLq-0iSB;
-	Sat, 10 Jan 2026 19:11:35 +0000
+	id 1veeNF-00000003cOU-19li
+	for linux-phy@lists.infradead.org;
+	Sat, 10 Jan 2026 19:11:45 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 6D2D260168;
-	Sat, 10 Jan 2026 19:11:34 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 22EEFC4CEF1;
-	Sat, 10 Jan 2026 19:11:31 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id B75856016A;
+	Sat, 10 Jan 2026 19:11:44 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CFCA2C16AAE;
+	Sat, 10 Jan 2026 19:11:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1768072294;
-	bh=ifQtDtBDcokzLccqf8aQCht97s3eipcMMEmXbpDw6Aw=;
+	s=k20201202; t=1768072304;
+	bh=ORk9zLyAqSVC4BjhBEwJU6A588Pq49HoT3tn4kCPsqM=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=qCiyrFAU2xicKCibTXPIf3XhBQmk0g6ZWmSgHHXVP1B02QbrV77FWTZFOP1VjWDCw
-	 qjMrQb+XKb5f4XadhrY/24Ap8FT4i3zPkyp8Hq83pZ7Qd05yBLYY/SjBLAoBYN1J91
-	 tZcXYUR9WCowuaBnwQNH+5l+izoJ34YwXyJn9pNjN9mFqtBAcF6dVgtvosb5DN2PQH
-	 UkWDCIMetOEIB1XAkKVOYI7Wkyc0F3Lm5PBO/vh7rnB4GSTP0L4HqCSOjm7fLM7dry
-	 DJ/5zv35sUADTSmPEivxJvudoLJxOMiPSlaVLC0wreck+xhcPR7Tw1K+pdiPCNoYJW
-	 fAQibqBj2d1ug==
+	b=I1yv9Q0carRpGXDNN3gPGL/6wihqvcW/sidEG5pRQs+jlCNEUCOuPzP2vgKorGJz4
+	 d9Fc0p5AGNOMIlD7YUmJVUI41zZ1o851XH4EeLuWu26VLB3ymmMCta/JvouLRSw8Ch
+	 y3D54RMdtuOxrT/9r1CZfeQqCf1PsRy2HrfSaqb9nBAhRk2rcpD1x9Tnzf2QK7KSUK
+	 FcgpNxwmMCKtNGQ5UcsbwPvi+Lj/oXR+VPyX322kBo43h9o/+D0mQIO1YLooTbe9V9
+	 IiVrmKyeQmRN5aIuuGmH+nJPSii4TYweja+Fg1uDJyfPwnBc859maMxp1TiuHU8Nr5
+	 0B1yUCS8X3/og==
 From: Bjorn Andersson <andersson@kernel.org>
-To: Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>,
-	Brian Masney <bmasney@redhat.com>
-Cc: linux-clk@vger.kernel.org,
+To: konradybcio@kernel.org,
+	robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	jingoohan1@gmail.com,
+	mani@kernel.org,
+	lpieralisi@kernel.org,
+	kwilczynski@kernel.org,
+	bhelgaas@google.com,
+	johan+linaro@kernel.org,
+	vkoul@kernel.org,
+	kishon@kernel.org,
+	neil.armstrong@linaro.org,
+	Abel Vesa <abelvesa@kernel.org>,
+	Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
+Cc: linux-arm-msm@vger.kernel.org,
+	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
-	Chen Wang <unicorn_wang@outlook.com>,
-	Inochi Amaoto <inochiama@gmail.com>,
-	sophgo@lists.linux.dev,
-	Chen-Yu Tsai <wens@kernel.org>,
-	Maxime Ripard <mripard@kernel.org>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Samuel Holland <samuel@sholland.org>,
-	linux-arm-kernel@lists.infradead.org,
-	linux-sunxi@lists.linux.dev,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	linux-rtc@vger.kernel.org,
-	=?UTF-8?q?Andreas=20F=C3=A4rber?= <afaerber@suse.de>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	linux-actions@lists.infradead.org,
-	Keguang Zhang <keguang.zhang@gmail.com>,
-	linux-mips@vger.kernel.org,
-	Taichi Sugaya <sugaya.taichi@socionext.com>,
-	Takao Orito <orito.takao@socionext.com>,
-	Jacky Huang <ychuang3@nuvoton.com>,
-	Shan-Chun Hung <schung@nuvoton.com>,
-	Vladimir Zapolskiy <vz@mleia.com>,
-	Piotr Wojtaszczyk <piotr.wojtaszczyk@timesys.com>,
-	linux-arm-msm@vger.kernel.org,
-	Orson Zhai <orsonzhai@gmail.com>,
-	Baolin Wang <baolin.wang@linux.alibaba.com>,
-	Chunyan Zhang <zhang.lyra@gmail.com>,
-	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
-	Alexandre Torgue <alexandre.torgue@foss.st.com>,
-	linux-stm32@st-md-mailman.stormreply.com,
-	Michal Simek <michal.simek@amd.com>,
-	Rob Clark <robin.clark@oss.qualcomm.com>,
-	Dmitry Baryshkov <lumag@kernel.org>,
-	David Airlie <airlied@gmail.com>,
-	Simona Vetter <simona@ffwll.ch>,
-	Abhinav Kumar <abhinav.kumar@linux.dev>,
-	Jessica Zhang <jesszhan0024@gmail.com>,
-	Sean Paul <sean@poorly.run>,
-	Marijn Suijten <marijn.suijten@somainline.org>,
-	dri-devel@lists.freedesktop.org,
-	freedreno@lists.freedesktop.org,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	linux-phy@lists.infradead.org
-Subject: Re: (subset) [PATCH 00/27] clk: remove deprecated API divider_round_rate() and friends
-Date: Sat, 10 Jan 2026 13:11:17 -0600
-Message-ID: <176807228457.3708332.10766520174431957453.b4-ty@kernel.org>
+	linux-pci@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	qiang.yu@oss.qualcomm.com,
+	quic_krichai@quicinc.com,
+	quic_vbadigan@quicinc.com,
+	Ziyue Zhang <quic_ziyuzhan@quicinc.com>
+Subject: Re: [PATCH v4 0/3] Add PCIe3 and PCIe5 support for HAMOA-IOT-EVK board
+Date: Sat, 10 Jan 2026 13:11:27 -0600
+Message-ID: <176807228439.3708332.9264264204240911796.b4-ty@kernel.org>
 X-Mailer: git-send-email 2.52.0
-In-Reply-To: <20260108-clk-divider-round-rate-v1-0-535a3ed73bf3@redhat.com>
-References: <20260108-clk-divider-round-rate-v1-0-535a3ed73bf3@redhat.com>
+In-Reply-To: <20260109104504.3147745-1-ziyue.zhang@oss.qualcomm.com>
+References: <20260109104504.3147745-1-ziyue.zhang@oss.qualcomm.com>
 MIME-Version: 1.0
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -114,26 +91,25 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Thu, 08 Jan 2026 16:16:18 -0500, Brian Masney wrote:
-> Here's a series that gets rid of the deprecated APIs
-> divider_round_rate(), divider_round_rate_parent(), and
-> divider_ro_round_rate_parent() since these functions are just wrappers
-> for the determine_rate variant.
+On Fri, 09 Jan 2026 18:45:01 +0800, Ziyue Zhang wrote:
+> From: Ziyue Zhang <quic_ziyuzhan@quicinc.com>
 > 
-> Note that when I converted some of these drivers from round_rate to
-> determine_rate, this was mistakenly converted to the following in some
-> cases:
+> This patch series adds support for PCIe3 and PCIe5 on the HAMOA-IOT-EVK
+> board.
+> 
+> PCIe3 is a Gen4 x8 slot intended for sata controller.
+> PCIe5 is a Gen3 x2 slot designed for external modem connectivity.
 > 
 > [...]
 
 Applied, thanks!
 
-[14/27] clk: qcom: alpha-pll: convert from divider_round_rate() to divider_determine_rate()
-        commit: e1f08613e113f02a3ec18c9a7964de97f940acbf
-[15/27] clk: qcom: regmap-divider: convert from divider_ro_round_rate() to divider_ro_determine_rate()
-        commit: 35a48f41b63f67c490f3a2a89b042536be67cf0f
-[16/27] clk: qcom: regmap-divider: convert from divider_round_rate() to divider_determine_rate()
-        commit: b2f36d675e09299d9aee395c6f83d8a95d4c9441
+[1/3] arm64: dts: qcom: hamoa: Move PHY, PERST, and Wake GPIOs to PCIe port nodes and add port Nodes for all PCIe ports
+      commit: 960609b22be58baa16823103894de3c6858e6cf4
+[2/3] arm64: dts: qcom: Add PCIe3 and PCIe5 support for HAMOA-IOT-SOM platform
+      commit: a395b859ecacedc6ff28e6b62e43a7cd1abc34ee
+[3/3] arm64: dts: qcom: Add PCIe3 and PCIe5 regulators for HAMAO-IOT-EVK board
+      commit: ac62730dbc71e4e2320b368e86e0c6ea3e41f1f5
 
 Best regards,
 -- 
