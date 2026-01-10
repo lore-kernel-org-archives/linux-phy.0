@@ -4,63 +4,175 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 584E5D26D6B
-	for <linux-phy@archiver.kernel.org>; Fri,  9 Jan 2026 15:53:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C95EBD1A63D
+	for <linux-phy@archiver.kernel.org>; Sat, 10 Jan 2026 18:04:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=QU7h55Xj4QFkhJJ9bbAtNgtKHbyPtaen9aGMcnNYvkU=; b=o1mpwQBnP5p+ax
-	HvGwfecC7w39R8fwYbd4cEBRTHgfQuO1yQrbLFrLZY58dRz5D0tRcjWtI4YWt3yxV8dfZC0E9LD14
-	Upc0QhDBIP1zH2P6kMTQx7c8xCJ/eiSwp2g4FVtWDjP3QoEb2ofwBTFD6vBMQHrdq6d5LUelbzgQ2
-	zEElPqhUayXXj/IETM8dLUiDT8RAj6QSUeFlwOPMR8oEK0VPJsJqJX3qxrYB1HXyf+tgKBZ9950tu
-	0RQDdAw+zgQyayVe3YQkW+oxCmIxYUB5oE07o1IkOYQ4O6xx46eieEoKHGGmRcHnf4R1IRt05ijVB
-	m6zHXigpkMl1bXuz+mDw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=NOVUbzH+k7DqWt/1rXx4QhTw7f37+BuI75A6Flr4jDE=; b=C6wOl5p/t+imGv
+	jmlE+mHocIIjqemrUUfFWohIZ7lv1Ch+wxoYyW5bNtJS2sq71+hlgOi54N1nv9ieIPsGZ8KtvjAEQ
+	zDVkUyki/Z15rSstpDqaObUy6e1/9jH4DwwqKj1JnBwgU/uu/FRittN0rzXu3Idehx9g+gOcaXndL
+	DUpsGpjRI/VOCwC8UdLADeS/sEdTfdDU1oK85+d6BnniiG6ArJed6oQqS9A689uAazXSoDy6PDagS
+	3hTLqBOVDUP64m8H8JnvsbADgGf7jaDSxWZ0mBFlVCZkWSxBy2OZ3rzdJiE+caBBvUHLncc4hpVUU
+	oekwvCQ4bzmiH5J18AJQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1veEoF-00000002XMD-0Kv9;
-	Fri, 09 Jan 2026 15:53:55 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vedKV-00000003aVo-0u7t;
+	Sat, 10 Jan 2026 18:04:51 +0000
+Received: from mail-francesouthazon11011036.outbound.protection.outlook.com ([40.107.130.36] helo=MRWPR03CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1veEoD-00000002XLv-1f0k
-	for linux-phy@lists.infradead.org;
-	Fri, 09 Jan 2026 15:53:53 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 6DFB460132;
-	Fri,  9 Jan 2026 15:53:52 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 06978C4CEF1;
-	Fri,  9 Jan 2026 15:53:51 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1767974032;
-	bh=zK0zjHRUg0EscVVeO0n2jsonL23Wr5elXJuCtQlfIvk=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:From;
-	b=nhdOUxd1lM18hERN+FcC1kmau3i2OjE4BlxSBRaiAzLUMZv1JsAEAbAjHgrRHrdD+
-	 AsPy6IDmAIInpzBYpN6EEwRhmi7oP9XRmoShYZ4o0BgSPgAJNXRVNtEEr9Jk3sjoBk
-	 cqqaPPoRDuidy47fVBzdphqqnG4yZkmwvSiSFIdpvNV3bKdZUEhdogogHqhZqfWk2V
-	 SCpG/goOIC+C2cbwH4qji80ADLcLZt7gJzQyV3bEkaEbph3Yo0LLo0//4iMW/a3D/X
-	 xMOTj0Yxs4AcQM/dumYzVEcza1O0YfbqVUfL4M0kHjubZd88mAbiR6zHKiGoH2eKWQ
-	 NUjY7Cuy1q7bQ==
-Date: Fri, 9 Jan 2026 09:53:50 -0600
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>,
+	id 1vedKR-00000003aV9-2upb;
+	Sat, 10 Jan 2026 18:04:48 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=O1yV+rcdzgEa4YGwJnsHGCOrlGNO6KtnOW9hF+9tl/wuYT5JTjGYiGwPvIp2W5JrOteWRtCn+cOALG73UmVEtYveS9AGVUnU/BxrDLdNqoE+p5mjbNhdnVxTq+BjnFb2m6PCCXZjTiUdNr9YaJKLhov8+DeWhklSZ78OMpbBGTzX+mMYGJ3z3XY5ezUw1gjV1Rhd+H8ZPfHz5V5eEAAWNrkKpA8G8BH+YqHWHaQqKGRjttgZgaUaFbcllWCfUam9l57MS+cwBYCnL/scY10kN962rqj69A2C2ZxwFT69ubFKXRhjPZ4WO5cJwwVN55v/ElecBBIZkrBvsGLT4pqybw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=isWjE2MMgE8o6xT9r6NOaa+RzJZlMswAeuuEWlHP0OA=;
+ b=MU6bZCqkboelYOdGv/nyYxV8o9zWJTXcqzy7XzZkFCMXaJtigschS+J9USVWjmYbbNoEtZqKP5JDimFXe+FZcuqz+TsXYjWkx+SA1y1cmzDU3xXrBYsKA89dMuBI6CQHNsJZxCnJEPQTA4GWYH4uCQPHIoWTSbiby1ODmmZvTW06WuNuge3KOELGkZRtS+lTAFkvo/XgjXA0shhTpBRcCzMeRDypKfRVso8bJPNH5Gc5MAGikNhNLL7+Bmgf9SOn+xHM16WJJPFH6MTYPAdrI55AkYcThiP82stfMWQTa9jA3+53i252JZ8pDIdM0heA5Y+9OIWxMa2iUIzQDW+bbw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=isWjE2MMgE8o6xT9r6NOaa+RzJZlMswAeuuEWlHP0OA=;
+ b=Yoq6c1aBsDEtVyf+/0UAYVdMrbOPDIY0GL4r8065id/OZztY1OxDCV8B8SxhVu7Z9jiowSgJvLcCz1sYWx2n9KMPdbLt4NSwsV0N76pERi/gYv+jG7kw0/BjceWcED2Ixf/pse1uhf5R2MaNg3RYozPeuC9tmLDvrj340QaVYlpteUsnzRFQ987bucQSutvFe6Wdchqm1hMpfKxQAT7VgmS858TbynFjgCYQV+kHR5cAr7iTWIEmQZbDYXAajmYvclxDUxyUpYNPgnJTh5JXDnC2Dqk3iEhejOUxWvPmETCRdQ3ykmW2qWYkjlJ/yyNqBTqTIuWY7/kt0uNcRIdZFg==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AM9PR04MB8585.eurprd04.prod.outlook.com (2603:10a6:20b:438::13)
+ by VI2PR04MB11051.eurprd04.prod.outlook.com (2603:10a6:800:26f::12) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9499.6; Sat, 10 Jan
+ 2026 18:04:38 +0000
+Received: from AM9PR04MB8585.eurprd04.prod.outlook.com
+ ([fe80::f010:fca8:7ef:62f4]) by AM9PR04MB8585.eurprd04.prod.outlook.com
+ ([fe80::f010:fca8:7ef:62f4%4]) with mapi id 15.20.9499.005; Sat, 10 Jan 2026
+ 18:04:38 +0000
+Date: Sat, 10 Jan 2026 20:04:33 +0200
+From: Vladimir Oltean <vladimir.oltean@nxp.com>
+To: =?utf-8?B?QmrDuHJu?= Mork <bjorn@mork.no>
+Cc: netdev@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-mediatek@lists.infradead.org,
+	Daniel Golle <daniel@makrotopia.org>,
+	Horatiu Vultur <horatiu.vultur@microchip.com>,
+	Andrew Lunn <andrew@lunn.ch>,
+	Heiner Kallweit <hkallweit1@gmail.com>,
+	Russell King <linux@armlinux.org.uk>,
+	"David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Jingoo Han <jingoohan1@gmail.com>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
-	Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org
-Subject: Re: [PATCH 2/5] PCI: dwc: Add support for retaining link during host
- init
-Message-ID: <20260109155350.GA546142@bhelgaas>
-MIME-Version: 1.0
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	Eric Woudstra <ericwouds@gmail.com>,
+	Marek =?utf-8?B?QmVow7pu?= <kabel@kernel.org>,
+	Lee Jones <lee@kernel.org>,
+	Patrice Chotard <patrice.chotard@foss.st.com>
+Subject: Re: [PATCH v2 net-next 05/10] phy: add phy_get_rx_polarity() and
+ phy_get_tx_polarity()
+Message-ID: <20260110180433.bfg2hxbdjkfllkiq@skbuf>
+References: <20260103210403.438687-1-vladimir.oltean@nxp.com>
+ <20260103210403.438687-6-vladimir.oltean@nxp.com>
+ <20260103210403.438687-1-vladimir.oltean@nxp.com>
+ <20260103210403.438687-6-vladimir.oltean@nxp.com>
+ <87jyxtaljn.fsf@miraculix.mork.no>
+ <87jyxtaljn.fsf@miraculix.mork.no>
 Content-Disposition: inline
-In-Reply-To: <20260109-link_retain-v1-2-7e6782230f4b@oss.qualcomm.com>
+In-Reply-To: <87jyxtaljn.fsf@miraculix.mork.no>
+ <87jyxtaljn.fsf@miraculix.mork.no>
+X-ClientProxiedBy: VI1PR04CA0115.eurprd04.prod.outlook.com
+ (2603:10a6:803:f0::13) To AM9PR04MB8585.eurprd04.prod.outlook.com
+ (2603:10a6:20b:438::13)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM9PR04MB8585:EE_|VI2PR04MB11051:EE_
+X-MS-Office365-Filtering-Correlation-Id: 4b7f90ce-7c8b-4f1e-d7c4-08de5072b817
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|366016|376014|7416014|10070799003|1800799024;
+X-Microsoft-Antispam-Message-Info: =?iso-8859-1?Q?SerYDNWolUvD7E2cl4QNCAreujnQprk5QTIrsrD0ollvffg0eUn2O7dZEx?=
+ =?iso-8859-1?Q?edxrqv2+i1zQJyTBGwn4QtOKXLrQTwm2jP3ihyv62QUl+0/BJqQlfbO/Pb?=
+ =?iso-8859-1?Q?QMPQl34qC7cbLVhaDYB58f/+mT/o0m7MJiUl8cZ8rfirD2y9iIqlSVlX59?=
+ =?iso-8859-1?Q?PwffHy68gc6PXesDGn3ozDgJUd4J3xhDvzKk2h2y5RQ2KpWsecomQvEXU8?=
+ =?iso-8859-1?Q?18gmPi59F734AqOoKBDYpRxD0C44z3/sZPBDbOh0KkfBff+Pru6XrUqeqf?=
+ =?iso-8859-1?Q?XnLsMswC+RV9ShC4nFVhcO8FZ2P8e5Hc4t5/NYAKyIlwRL3uNzYNJGD9Lf?=
+ =?iso-8859-1?Q?EegYYZyfCNLaTmDcfQsrnSeWrAvack2ssPcW3+9OWYnxz4yvSSxznNC6iB?=
+ =?iso-8859-1?Q?5cG/Ech8meaHWVjUB18KGJyCJNCmRHqPOXaIPgxLiMtlle9+55m8AM+zgX?=
+ =?iso-8859-1?Q?4oSXXKVhWb3mYrGd0HRwXvFLW9cDRcscDn/v0xD3Ce4oFiFdbVHf0TncXP?=
+ =?iso-8859-1?Q?V/U/BjEON5L22UoswqdUJXwniQrGNvPHNPVLxoS0FLE6jzz5fSeN689gPa?=
+ =?iso-8859-1?Q?JpRFZ8QqsBi2Xsh2vyGrb4EaWrYdh+nposB3Kd+kMPfvlcDKn1TjnUdDgr?=
+ =?iso-8859-1?Q?9yJNVbcLzHOtzxhSsLyEBdgDE8Twg/M25u8wj1N4IrXWO1IGeimP8ouktr?=
+ =?iso-8859-1?Q?PJuneIH6qHxx+iENrlZFxbQ4LZKrnqALnsZu60njYauCyavPgoKS7wCA6j?=
+ =?iso-8859-1?Q?6SM5JI/G8Wn5HiXHpCc2R8gY5wGwb5b9fG3HKetkldA2MfDiaqz99iAnzY?=
+ =?iso-8859-1?Q?frtL7aQsd5f56R9RBU97dFLDca1YRLWDs9nnyvNh8xYnQQ4zouiyjeG8De?=
+ =?iso-8859-1?Q?hJQpy66riwILQcckk5LmUsm5OZQP4Ba+QBXFP60kGQGYqHg5x1yk7dpcsE?=
+ =?iso-8859-1?Q?XqDN5d7uF6cDkOCJqoSMxVHvKxYB4lYRnrSSpmBWbh1BZ2TI2nlIkQ6rj6?=
+ =?iso-8859-1?Q?Ks9P9VYoCnE6cxuuga5qVXpH7zfkFwQdhhROwmdVMQYc9WXC2bk9zAcR6p?=
+ =?iso-8859-1?Q?wfGhn4OBxezR5ZJOWJY3hbuSsiN+dOOuXtsKmN7yzYqciSh8EAOoKejV2V?=
+ =?iso-8859-1?Q?EtBxl4kb7q9TQtr8RLVTsblN5J3AlWvN5Mb2ZaDrSy/O6CEj+GnGAgNU8z?=
+ =?iso-8859-1?Q?jI/ZFVa4g7U07XrmwG8FYIVh3PGghjnjml2H06d2nkTrBDblYNsFuHdKGZ?=
+ =?iso-8859-1?Q?W/BWMvysCF0L99ksSLqLEs9T9+MhLqA0mAOZT8H40qGWRVPH0lne1rCaLf?=
+ =?iso-8859-1?Q?s3iTyT3YtZ4L6Q4YwpHpdf6FuMY4yd1piAXUh4A1dEEqVXJsc+RI1rWxt3?=
+ =?iso-8859-1?Q?3j+hiNz9641FuCOLL0fDajLz0B48zRgCtBYOlZ6VuvwGcSW0BAoIoDdZgh?=
+ =?iso-8859-1?Q?52O4m/f+0VPxqri/VTVrBtwuhihYXgFv77/Y9xxA1gslad7b/xpkoG8bX9?=
+ =?iso-8859-1?Q?GXrlLAg0LlmXDVW6qsZfVD?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM9PR04MB8585.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(366016)(376014)(7416014)(10070799003)(1800799024);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 2
+X-MS-Exchange-AntiSpam-MessageData-0: =?iso-8859-1?Q?nC6Oc+WAAD1T1epEOzBBI74XDwUzySaL1A030WNH4Jv+Kd+QKVa7ElBkxg?=
+ =?iso-8859-1?Q?hRETrI0uaRGO8qDbSsX38h/H54o+UDrxRC7TmbJ4yuzMkLcj7qEYO57ac2?=
+ =?iso-8859-1?Q?dGMkT90zzkW+UkufIiEKKz20F7SHfUHzTjKFcay3Ht4zmLQPsUiP2Wo1kb?=
+ =?iso-8859-1?Q?a1uj4DaxBhen0IkCO2jnUciYNhvuXf7JEgvwFuyHLUBxZzsP9YWVzCF5Q5?=
+ =?iso-8859-1?Q?ZMNFBd/aHobmtg2y+mcvZ+UGsr5A5gWVZ4SvjmFIP0xLulaOqWLnEolmrz?=
+ =?iso-8859-1?Q?en0C3DUoePxM4iAKXkKSqysl452GDyeLPhw3E8acOvzfJX9JmZJ4mfrkj8?=
+ =?iso-8859-1?Q?Ira0kVi6IiU9v9vIZMgr8go2nyaZRnNjZJAmVZEzVAEUMHlZr7Eb9bHMZW?=
+ =?iso-8859-1?Q?fUPzo1/2ztixo94saJab8SHx8HUeNOCvaNb+FzYT+0srKl0AM9CD71n8c5?=
+ =?iso-8859-1?Q?jvXOdFpxswcV6R4ZwHJPzSZgdZw8chyk3DfgTSwdB79tnGYZJYnoeG2ciK?=
+ =?iso-8859-1?Q?Ubr5YbP0Rf2IqvHiN1py97E7zdlONBwTJ9O4MMlnaDqa4zLAJGU1/8QtTZ?=
+ =?iso-8859-1?Q?VTK5M5LFNyKWzfAywl7C1PHkb2V5/wjQhPZtSVbIoC8svGfQT5C83He6wu?=
+ =?iso-8859-1?Q?BtIiWNnWlu7um8KQiA2A2Scu0BoLfxkmmqCw9fIIgq+ewT5u9c1V8ZIYrs?=
+ =?iso-8859-1?Q?eAKGNcVQiIY6sR4rOPOdIRjQaUGInrDkuEMS0uJj2t6efdAHRqF8bIj1+e?=
+ =?iso-8859-1?Q?olFor340aO6aN4EofR+roxMIEs12Fy5qg/mHfB17tRwx6jgUg/c9LJxSEU?=
+ =?iso-8859-1?Q?UZpfjixrCUsAQN0lGd8S4TteVbW2s3q9wKMFFtAr7CYLizsKkO1R2f5Bbd?=
+ =?iso-8859-1?Q?8h37fyRtPogFxa830Tmm0nxKmNPg03YBF1YGQMxciTNJqPeeId9IY+I+fH?=
+ =?iso-8859-1?Q?MVdFhugXk7++Z6aq4lpfUm2dT6yKG/cXuK36S9NECvGZOqcmys7mFLeU/v?=
+ =?iso-8859-1?Q?tASO/HeFXcNPWDbbMRLAvHlwW3y3emI7hoWxvdGkq+9PBSjFwflOtNlxw0?=
+ =?iso-8859-1?Q?e9y2w/VYdYMPprM5vHZQAHk0vz0Arb5G/hu7a5UAD3MTmB8oDLeBfbhXwM?=
+ =?iso-8859-1?Q?WMy9aeqJzkSA+0XyPMyh6U6yvDfZSc4Guy0aCzPK83BaXXz2rDwX3eBCsZ?=
+ =?iso-8859-1?Q?W/Hk3BMVegOSBjpDjacE0Ixsd765+UnTP5n58/pCqpnkmhbnQcv3UJiubL?=
+ =?iso-8859-1?Q?mDZ1SSjdltgo8g+HgfexRQ9PuW8sde3jYrM+KiB+M2uD9tY7a9Mhmla2d+?=
+ =?iso-8859-1?Q?7eHjmVJEv935lIRryMHZGe9Gvd04/ZyHH8ag5XtFvPC6wKtRV7bi6Axbi5?=
+ =?iso-8859-1?Q?iR6yXOoRJz+19oSK9pEYlSkSoJo6/QkUaGWjTRgVUxbqsS7hpoHd8nIbu+?=
+ =?iso-8859-1?Q?DcixgGfSGLTTxkyK0I1zigPGd/TfNE3zH6KSxIWqX6KjiPC4kj/78geWNF?=
+ =?iso-8859-1?Q?n97O+Rr63MWIZiYlDvqpLmmbWokH/pSPjWUVhWPgwiIl/Zo/EZonqxPDaJ?=
+ =?iso-8859-1?Q?HlEuoup8agWJ7FQhMmf/Q9TdIQ5h0vMkQqR6m/juvbCZ7x7xvcRiG2pEm7?=
+ =?iso-8859-1?Q?v/sWdnyzTrPo9y974AaM4Q5N0q0P1Y6G5hz5+wvSl/6ySl2o9PIQ2Mokwb?=
+ =?iso-8859-1?Q?uVzD2CwjzQixDk9nA7HtnPj/yW3/lnWSJb6iY8ws22tPwjQuI8g9Mag3Gz?=
+ =?iso-8859-1?Q?sfgnOwj1hFKxGd01OhkS2JF5pmmbFqT7vdJc3FMQ8LPGZlp9kqALsns6b8?=
+ =?iso-8859-1?Q?PeCimgBP8K6e4QiJNpIextgK7bCYOfwJcOZW4AQL5r7cLVrDusGZym6xH8?=
+ =?iso-8859-1?Q?HS?=
+X-MS-Exchange-AntiSpam-MessageData-1: +/KELZ4Z0lhiTA==
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4b7f90ce-7c8b-4f1e-d7c4-08de5072b817
+X-MS-Exchange-CrossTenant-AuthSource: AM9PR04MB8585.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 Jan 2026 18:04:38.1323
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: rum4weFlV02sx0CFOpDXK1yvOFlrz0IT8AIFTolJvTnXyTBH/aGmahWyj9lH1BTPIueKrUNIed8TEMiexVgReg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI2PR04MB11051
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260110_100447_741334_AE63BC12 
+X-CRM114-Status: GOOD (  23.57  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,91 +184,96 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Jan 09, 2026 at 12:51:07PM +0530, Krishna Chaitanya Chundru wrote:
-> Some platforms keep the PCIe link up across bootloader and kernel
-> handoff. In such cases, reinitializing the root complex is unnecessary
-> if the DWC glue drivers wants to retain the PCIe link.
-> 
-> Introduce a link_retain flag in struct dw_pcie_rp to indicate that
-> the link should be preserved. When this flag is set by DWC glue drivers,
-> skip dw_pcie_setup_rc() and only initialize MSI, avoiding redundant
-> configuration steps.
+Hi Bj=F8rn,
 
-It sounds like this adds an assumption that the bootloader
-initialization is the same as what dw_pcie_setup_rc() would do.  This
-assumption also applies to future changes in dw_pcie_setup_rc().
+On Wed, Jan 07, 2026 at 09:12:28AM +0100, Bj=F8rn Mork wrote:
+> Vladimir Oltean <vladimir.oltean@nxp.com> writes:
+> =
 
-It looks like you mention an issue like this in [PATCH 4/5]; DBI & ATU
-base being different than "HLOS" (whatever that is).  This sounds like
-a maintenance issue keeping bootloader and kernel driver assumptions
-synchronized.
+> > +static int fwnode_get_u32_prop_for_name(struct fwnode_handle *fwnode,
+> > +					const char *name,
+> > +					const char *props_title,
+> > +					const char *names_title,
+> > +					unsigned int default_val,
+> > +					unsigned int *val)
+> > +{
+> > +	int err, n_props, n_names, idx =3D -1;
+> > +	u32 *props;
+> > +
+> > +	if (!name) {
+> > +		pr_err("Lookup key inside \"%s\" is mandatory\n", names_title);
+> > +		return -EINVAL;
+> > +	}
+> > +
+> > +	if (!fwnode) {
+> > +		*val =3D default_val;
+> > +		return 0;
+> > +	}
+> > +
+> > +	err =3D fwnode_property_count_u32(fwnode, props_title);
+> > +	if (err < 0)
+> > +		return err;
+> > +	if (err =3D=3D 0) {
+> > +		*val =3D default_val;
+> > +		return 0;
+> > +	}
+> > +	n_props =3D err;
+> =
 
-Is there something in dw_pcie_setup_rc() that takes a lot of time or
-forces a link retrain?  You mentioned some clock and GENPD issues in
-the cover letter, but I don't see the connection between those and
-dw_pcie_setup_rc().  If there is a connection, please include it in
-this commit log and include a code comment about why
-dw_pcie_setup_rc() is being skipped.
+> I tried using this in the air_en8811h driver and started wondering if I
+> have misunderstood something.
+> =
 
-> Signed-off-by: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
-> ---
->  drivers/pci/controller/dwc/pcie-designware-host.c | 11 ++++++++---
->  drivers/pci/controller/dwc/pcie-designware.h      |  1 +
->  2 files changed, 9 insertions(+), 3 deletions(-)
-> 
-> diff --git a/drivers/pci/controller/dwc/pcie-designware-host.c b/drivers/pci/controller/dwc/pcie-designware-host.c
-> index 372207c33a857b4c98572bb1e9b61fa0080bc871..d050df3f22e9507749a8f2fedd4c24fca43fb410 100644
-> --- a/drivers/pci/controller/dwc/pcie-designware-host.c
-> +++ b/drivers/pci/controller/dwc/pcie-designware-host.c
-> @@ -655,9 +655,14 @@ int dw_pcie_host_init(struct dw_pcie_rp *pp)
->  	if (ret)
->  		goto err_free_msi;
->  
-> -	ret = dw_pcie_setup_rc(pp);
-> -	if (ret)
-> -		goto err_remove_edma;
-> +	if (!pp->link_retain) {
+> The problem I have is that fwnode_property_count_u32() returns -EINVAL
+> if props_title is missing.  So if you have a node with the legacy
+> "airoha,pnswap-rx" property instead of "rx-polarity", or more common: no
+> polariy property at all, then we see -EINVAL returned from
+> phy_get_rx_polarity().  Which is propagated back to config_init() and
+> the phy fails to attach.  That can't be the intention?
+> =
 
-Use positive logic if possible (test "pp->link_retain" instead of
-"!pp->link_retain").
+> The behaviour I expected is described by this test:
+> =
 
-I suspect this would be more maintainable if you identified specific
-things *inside* dw_pcie_setup_rc() that need to be skipped, and you
-added tests there.
+> =
 
-> +		ret = dw_pcie_setup_rc(pp);
-> +		if (ret)
-> +			goto err_remove_edma;
-> +	} else {
-> +		dw_pcie_msi_init(pp);
-> +	}
-> +
->  
->  	if (!dw_pcie_link_up(pci)) {
->  		ret = dw_pcie_start_link(pci);
-> diff --git a/drivers/pci/controller/dwc/pcie-designware.h b/drivers/pci/controller/dwc/pcie-designware.h
-> index 31685951a080456b8834aab2bf79a36c78f46639..8acab751b66a06e8322e027ab55dc0ecfdcf634c 100644
-> --- a/drivers/pci/controller/dwc/pcie-designware.h
-> +++ b/drivers/pci/controller/dwc/pcie-designware.h
-> @@ -439,6 +439,7 @@ struct dw_pcie_rp {
->  	struct pci_config_window *cfg;
->  	bool			ecam_enabled;
->  	bool			native_ecam;
-> +	bool			link_retain;
->  };
->  
->  struct dw_pcie_ep_ops {
-> 
-> -- 
-> 2.34.1
-> 
+> /* Test: tx-polarity property is missing */
+> static void phy_test_tx_polarity_is_missing(struct kunit *test)
+> {
+> 	static const struct property_entry entries[] =3D {
+> 		{}
+> 	};
+> 	struct fwnode_handle *node;
+> 	unsigned int val;
+> 	int ret;
+> =
 
--- 
+> 	node =3D fwnode_create_software_node(entries, NULL);
+> 	KUNIT_ASSERT_NOT_ERR_OR_NULL(test, node);
+> =
+
+> 	ret =3D phy_get_manual_tx_polarity(node, "sgmi", &val);
+> 	KUNIT_EXPECT_EQ(test, ret, 0);
+> 	KUNIT_EXPECT_EQ(test, val, PHY_POL_NORMAL);
+> =
+
+> 	fwnode_remove_software_node(node);
+> }
+
+Thanks for debugging and for the test! This is a regression from v1,
+where I just checked the fwnode_property_count_u32() return code for
+being <=3D 0.
+
+I've integrated your test and added one more for RX. Do you have any
+further comments, or shall I send an updated v3?
+
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
