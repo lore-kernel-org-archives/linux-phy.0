@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5AEC7D2502F
-	for <linux-phy@archiver.kernel.org>; Sun, 11 Jan 2026 10:37:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5391ED2502E
+	for <linux-phy@archiver.kernel.org>; Sun, 11 Jan 2026 10:40:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=shck3feQ4AJ0BVyP9gJSZ9LGDYWZEtbJWhu7lkxkozY=; b=coNvUd8iovcfon
-	mw2W3ZHGoQITtGqF+A9T1cLC3oWrpC1e2at6B13M5K5X8pKLSSdM/gLYW22imavnKDg5CXUhz885O
-	Uu9ABa5viROom5GJy4hViM8keCVmLFJikDuE18pAorkg5ANUfpwLW94kRxitEoR85/l0/qk2XcnGg
-	AUpNj+n5dkkLEVaOgsOC//C3Y0w103KEerUKtl96WlD/yAFsDN7YQ+y70OM1RRYLd+8C4zO1AA1/0
-	0Q661U1Qz1M2zAfHC//f99nad8da81k002+lEPbFVMdhsBO4ZeptaujwXUUUUewIsXNQanAPZCjEF
-	EZEHFj6MdVPbRaWOccbw==;
+	List-Owner; bh=mDhf3XVCLJ47LAEwgHI3Z1S2ZsPWP3Y72QAiLYVut1Y=; b=MdlESy5eoiRHuM
+	G1s3Xol2pkkBxcihc7dOye5pCSdPwpDV38ijX76gt9r87wAU4Wy+v/gKtv7J2dCtBk85MqCEEHR9C
+	wcVmq4qHEmWzejB4c6ZTImf39MloBXZR3zDRp+j/HS2C9exG9kJ7GnvKs1UlM0VswMRioo3FFq370
+	CUARV2rI5N8kA48/aB7cwzWjpgN8ShMmovuhdbddw/00BHner05RRCIp7qXivtkzhXQcE6QG3ycqg
+	UoGhoyrD61VzuKJ39a624xyLPrK/BGKuZGaksMHhZ4OmgE8vMcoemdeVrZB3U1N8HGwaFaiJyOFKi
+	Zuvpr1uHLHF38ZKtutmA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vespJ-000000048Gm-3DVV;
-	Sun, 11 Jan 2026 10:37:41 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vess9-000000048X6-0C7C;
+	Sun, 11 Jan 2026 10:40:37 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vespI-000000048GZ-3C4n;
-	Sun, 11 Jan 2026 10:37:40 +0000
+	id 1vess6-000000048WW-1S36;
+	Sun, 11 Jan 2026 10:40:34 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id E185460122;
-	Sun, 11 Jan 2026 10:37:39 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1642FC19423;
-	Sun, 11 Jan 2026 10:37:38 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 5ABD560121;
+	Sun, 11 Jan 2026 10:40:33 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 849A4C4CEF7;
+	Sun, 11 Jan 2026 10:40:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1768127859;
-	bh=9UpBDNHe5jcoYRtrv4gn8uXXwDp4yiBsR/f8enh8Hyo=;
+	s=k20201202; t=1768128033;
+	bh=jNXP3T+QGdDwl9VpGDdEjw5Gc/3zONZuRVJyjdi8Pkk=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=Xzq9hh3MT9GZEifu4fhQWEdPRgrFYoGfUw/Mq8y6aLgmNrR2+0GaLHljvBgfM8oJR
-	 9jhngsGNLPJRNF4O6ih3LAGfUT8aU2xTusklouJdDYjWG7BtghzqGA49HJ0Ry3m+e5
-	 pkP2iGldANmKazxyiE2e7rCOeXUFx9JAFKiEPJbwwi8LISnBFe1IzGHb/pT3cx66AB
-	 cfj+Bst1f7ujbj0Li/YO7hgNbiNpGNfF0g4cjHd5L8UtX2EYvzRDyN0WN9qF2jbVN5
-	 B3eHxP1EL81ClisWyH7VbgzGaIgc3d0rxBT8p6LZhzqSDdtQeUFm3gheMUSuUDKuna
-	 9P0ihrFiF3kqg==
-Date: Sun, 11 Jan 2026 11:37:37 +0100
+	b=LEpqqfbTdpthCVE6J0syaQoiZT2GHX1BJ0Vi6SGyDNQPjuBqWFhDD7Fhln71NRRhL
+	 vZAKijff4tkh2P/A7H0F0C2A9iCldzCSkBc+q0I3JGFhbqYDb8EMELwOxJE61Q+Nqh
+	 153M5K85RLeQSY2/3iPPKDWSfZiNPzuW99J5ba/rGBwJhIWK2XpXvgjqkolYfEvRRo
+	 uPML9sqLEL3uzznP9whlcMWiW5b5VMvr3SWc+ZJacbQvMjbObiTC5hDIGTpvdEk9I5
+	 u/rUfkCDl1rys1yiHWfSZ+ZL6ehammbuff6iFUUxFRa0LK5R04Z1BnbEda1jnR1UmF
+	 aQs09toTbrGjg==
+Date: Sun, 11 Jan 2026 11:40:30 +0100
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Tzu-Hao Wei <twei@axiado.com>
 Cc: SriNavmani A <srinavmani@axiado.com>, 
@@ -50,14 +50,13 @@ Cc: SriNavmani A <srinavmani@axiado.com>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
 	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
 	linux-kernel@vger.kernel.org, openbmc@lists.ozlabs.org
-Subject: Re: [PATCH 1/4] dt-bindings: phy: axiado,ax3000-emmc-phy: add Axiado
- eMMC PHY
-Message-ID: <20260111-camouflaged-shiny-wrasse-796dbd@quoll>
+Subject: Re: [PATCH 3/4] MAINTAINERS: Add Axiado AX3000 eMMC PHY driver
+Message-ID: <20260111-watchful-pigeon-of-brotherhood-6ada05@quoll>
 References: <20260109-axiado-ax3000-add-emmc-phy-driver-support-v1-0-dd43459dbfea@axiado.com>
- <20260109-axiado-ax3000-add-emmc-phy-driver-support-v1-1-dd43459dbfea@axiado.com>
+ <20260109-axiado-ax3000-add-emmc-phy-driver-support-v1-3-dd43459dbfea@axiado.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260109-axiado-ax3000-add-emmc-phy-driver-support-v1-1-dd43459dbfea@axiado.com>
+In-Reply-To: <20260109-axiado-ax3000-add-emmc-phy-driver-support-v1-3-dd43459dbfea@axiado.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,17 +73,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Jan 09, 2026 at 05:43:29PM +0800, Tzu-Hao Wei wrote:
-> From: SriNavmani A <srinavmani@axiado.com>
+On Fri, Jan 09, 2026 at 05:43:31PM +0800, Tzu-Hao Wei wrote:
+> Add SriNavmani, Prasad and me as maintainers for Axiado AX3000 eMMC PHY
+> driver
 > 
-> Axiado AX3000 SoC contains Arasan PHY which provides the interface to the
-> HS200 eMMC host controller.
-> 
-> Signed-off-by: SriNavmani A <srinavmani@axiado.com>
 > Signed-off-by: Tzu-Hao Wei <twei@axiado.com>
 > ---
+>  MAINTAINERS | 10 ++++++++++
+>  1 file changed, 10 insertions(+)
+> 
+> diff --git a/MAINTAINERS b/MAINTAINERS
+> index a0dd762f5648b7e4e6fc62560662e43720422e01..6d1af11eb289ffb7c0d8634ac7d8f903aed1799c 100644
+> --- a/MAINTAINERS
+> +++ b/MAINTAINERS
+> @@ -4250,6 +4250,16 @@ W:	https://ez.analog.com/linux-software-drivers
+>  F:	Documentation/devicetree/bindings/hwmon/adi,axi-fan-control.yaml
+>  F:	drivers/hwmon/axi-fan-control.c
+>  
+> +AXIADO EMMC PHY DRIVER
+> +M:	SriNavmani A <srinavmani@axiado.com>
 
-You did not bother to test your code...
+No activity:
+https://lore.kernel.org/all/?q=f%3Asrinavmani%40axiado.com
+
+> +M:	Tzu-Hao Wei <twei@axiado.com>
+> +M:	Prasad Bolisetty <pbolisetty@axiado.com>
+
+No reviews:
+https://lore.kernel.org/all/?q=f%3Apbolisetty%40axiado.com
+
+Are these maintainers going to actually maintain code? At least Prasad
+should provide proper review now.
+
+> +L:	linux-phy@lists.infradead.org (moderated for non-subscribers)
+> +S:	Maintained
+> +F:	Documentation/devicetree/bindings/phy/axiado,ax3000-emmc-phy.yaml
+
+> +F:	drivers/phy/axiado/Kconfig
+> +F:	drivers/phy/axiado/phy-axiado-emmc.c
+
+If you are a maintainer of Kconfig you imply you maintain everything, so
+simply entire directory...
+
 
 Best regards,
 Krzysztof
