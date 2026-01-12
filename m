@@ -4,58 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40586D25051
-	for <linux-phy@archiver.kernel.org>; Mon, 12 Jan 2026 08:30:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E8DA6D25050
+	for <linux-phy@archiver.kernel.org>; Mon, 12 Jan 2026 08:32:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nejuCbOFM1HBRNxxJFFEpW74KKckhixfJZR3K7J22JU=; b=zkUy1sQZ7Xbvn3
-	rqn/S0HC0BagY6mSQ5ApkVUi8nltsKnl7kagaPYbgPhjSyTLW3SWIR89YJkXwWZF9aNu4DcVOO+wW
-	l5ep9H3yiiYRj/PLtGTUkwNOEyzTyueZFb9dKTt2a6Ek7hJtRNgMtrFAClmPthJj5NbMCsoUmvjDq
-	byNNLRHdFwUbupt9jjw4/qsCm2ajeeSOAJRvstRKsGAOE1FuNA5TpUqRN0Xy8pO0NjVBYR1WAZ0vU
-	3ikRK4UOVY8UGiffJqb8bZ8SQBxxVpnF2P551SXlSXo2uGZ8q52Z+tbuSkxU84qN7N4ndjsGJNpfJ
-	NBfmtRAew04DwDGeMUeQ==;
+	List-Owner; bh=GlD9pvYUtmKctSWtDvi3XGTNV97P02xqKI64i/t2u7o=; b=42ky+V34ZS1uct
+	Re7Y+BP0RT+Dmyo6R2cQGsYAa7l48JwibAnfx374OgKUhbZOXHr1TOqR+b4xtQs9+TNmzXLESHGQM
+	Qy8GJ93JI+w7Ftk+fRy5V5DhYyM+faQs2QOJw9hI1/l3lRCmHG8LLm2QCwV7bNCyGDC3tg50SlnlW
+	pw4y0/idQlubdQ4dRyjtIDdvR1VX5EBvRPG+MHExPuV3o+jEex1zAmayACRCsOMBeR3S3IBJvlqT6
+	3qTxkPRrUNsV/fasXXTv8zrFVu5Uc1sz5s+Mke8KdWkxT8BICQ5HcB0Mx5oZ1kZ28FFe+t1OgvfM5
+	4E1FE9BBYHyDxP3saQFg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vfDJo-00000004zXx-49Wc;
-	Mon, 12 Jan 2026 08:30:32 +0000
+	id 1vfDM8-00000004ztA-2vlF;
+	Mon, 12 Jan 2026 08:32:56 +0000
 Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vfDJm-00000004zX5-3yX3;
-	Mon, 12 Jan 2026 08:30:32 +0000
+	id 1vfDM5-00000004zsB-3i9d;
+	Mon, 12 Jan 2026 08:32:55 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 429F643DB0;
-	Mon, 12 Jan 2026 08:30:30 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9F168C116D0;
-	Mon, 12 Jan 2026 08:30:26 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 803ED44462;
+	Mon, 12 Jan 2026 08:32:53 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 99368C116D0;
+	Mon, 12 Jan 2026 08:32:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1768206630;
-	bh=S/2O9k6BAmXtV41W0BCUF8zMdfng6qfMm7Fbec/Ssp8=;
+	s=k20201202; t=1768206773;
+	bh=5NpKbb5d/pvUHiup5RnvYALNkAbAryBwn/L0XuOoao8=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=u5kVPdf1hGojtOP370/DPw/VDkNYiUOO/E2eJUbqmWev+mClSmfVZ6Rf2keN+7bMQ
-	 9Mi1dLL8kr/FNeAio7m7sVJ33JbnUexbxlezW8uU3+CMrCIC70W7UfjMUd+Ein62hO
-	 3MhWCRZMko4CVG2AkV6rJH13LbfmrWpjN8kpQtzXd412fyJjM7Qbh4V0LXXlG0FXr9
-	 SPc2uxCLx+SS/r0ABR25AYgDSiVu0gCWPLZKIll7PLNJdXBP74L5CMrtYFk+wZGvsS
-	 zGt9WDNFiEeafegkjRXUbfFleP4fzbFbPLZ5HYTBdH+e2sVh2aHAQNssBSm+yTKd8I
-	 6mv8xhGsQ0W0Q==
-Message-ID: <55a2c060-014f-4077-85a1-15f6f799d263@kernel.org>
-Date: Mon, 12 Jan 2026 09:30:24 +0100
+	b=Gkk/jaHBmYBnSxlRwKQVZvNkbiiu1Dct4T5GYn22tSzAI8ytnrmn5U/OFwYwcQwAr
+	 9UqERHRfKcJNEitb/3Zua/zRDPXp9M7Hthmzyvjlnzu2dRU3pE58qU4OeAP61oeVmI
+	 1TTdfmFU1esIH0rEIlzOeS0Om64qnSyFLV8boW/Y2t5eVn4XahPql9R+84y+TPXbwN
+	 PIFN1Sx+hEOQfC62WH48S9u4f1u2/UfZz9cDX7FcToZs/sIgw0jDlHRy6N7v09xlfh
+	 gjs/VbtXqgifJkflOPsCh8tUTnMcXS+AilxJhdvSv8N1VtUeRBiPn++CgxI1JdJDlD
+	 xskharAgKNYvg==
+Message-ID: <85c3fe42-22a1-4b8d-85a6-f7541d8c942e@kernel.org>
+Date: Mon, 12 Jan 2026 09:32:49 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 0/2] Add Axiado AX3000 eMMC Host Controller Support
+Subject: Re: [PATCH 0/4] Add eMMC PHY support for Axiado AX3000 SoC
 To: Tzu-Hao Wei <twei@axiado.com>, SriNavmani A <srinavmani@axiado.com>,
  Prasad Bolisetty <pbolisetty@axiado.com>, Vinod Koul <vkoul@kernel.org>,
  Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>,
- Adrian Hunter <adrian.hunter@intel.com>, Michal Simek <michal.simek@amd.com>
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>
 Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-mmc@vger.kernel.org, openbmc@lists.ozlabs.org
-References: <20260109-axiado-ax3000-add-emmc-host-driver-support-v2-0-934f1a61f7c0@axiado.com>
+ openbmc@lists.ozlabs.org
+References: <20260109-axiado-ax3000-add-emmc-phy-driver-support-v1-0-dd43459dbfea@axiado.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -101,10 +99,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <20260109-axiado-ax3000-add-emmc-host-driver-support-v2-0-934f1a61f7c0@axiado.com>
+In-Reply-To: <20260109-axiado-ax3000-add-emmc-phy-driver-support-v1-0-dd43459dbfea@axiado.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260112_003031_033660_9366ED6A 
-X-CRM114-Status: GOOD (  11.96  )
+X-CRM114-CacheID: sfid-20260112_003254_389928_D72EC83F 
+X-CRM114-Status: GOOD (  11.47  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -121,41 +119,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 09/01/2026 10:46, Tzu-Hao Wei wrote:
-> Axiado AX3000 SoC eMMC controller is based on Arasan eMMC controller.
+On 09/01/2026 10:43, Tzu-Hao Wei wrote:
+> Axiado AX3000 SoC contains Arasan PHY which provides the interface to the
+> HS200 eMMC controller.
 > 
 > This series includes:
-> 1. Add bindings for AX3000 SoC eMMC controller
-> 2. Add arasan sdhci support for eMMC in Axiado AX3000
+> 1. Add bindings for Axiado AX3000 eMMC PHY
+> 2. Add Axiado AX3000 eMMC phy driver
+> 3. Update MAINTAINERS for the new driver
+> 4. Update Axiado AX3000 device tree
 > 
-> Signed-off-by: Tzu-Hao Wei <twei@axiado.com>
-> ---
-> Changes in v2:
-> - Keep host controller changes in this patchset
-> - Use pdata instead of mix compatible string
-> - Fix coding style
-> - Link to v1: https://lore.kernel.org/r/20251222-axiado-ax3000-add-emmc-host-driver-support-v1-0-5457d0ebcdb4@axiado.com
+> Changes: (The previous version was mixed with Host driver, so I separate
+> the PHY driver as a new thread)
+> - Fix property order in required section to match properties section
+> - Fixed example to use lowercase hex and proper node naming
+> - Removed wrapper functions, use readl/writel directly
+> - Replaced manual polling loops with read_poll_timeout macro
+> - Used devm_platform_ioremap_resource instead of separate calls
+> - Removed unnecessary of_match_node check
+> - Used dev_err_probe for error reporting
+> - Added proper Kconfig dependencies (ARCH_AXIADO || COMPILE_TEST)
+> - Fixed various coding style issues
+> - Link to previous patches: https://lore.kernel.org/all/20251222-axiado-ax3000-add-emmc-host-driver-support-v1-0-5457d0ebcdb4@axiado.com/
 > 
-> ---
-> SriNavmani A (2):
->       dt-bindings: mmc: arasan,sdhci: Add Axiado AX3000 SoC
->       mmc: sdhci-of-arasan: add support on Axiado AX3000 SoC
-> 
->  Documentation/devicetree/bindings/mmc/arasan,sdhci.yaml |  3 +++
->  drivers/mmc/host/sdhci-of-arasan.c                      | 14 ++++++++++++++
->  2 files changed, 17 insertions(+)
-> ---
-> base-commit: f10c325a345fef0a688a2bcdfab1540d1c924148
-> change-id: 20251222-axiado-ax3000-add-emmc-host-driver-support-2cc84a8f889a
-> prerequisite-change-id: 20260108-axiado-ax3000-add-emmc-phy-driver-support-d61aead8f622:v1
-> prerequisite-patch-id: 03617f4dadb7ed33653d1e0b3c03e732ed4948c5
-> prerequisite-patch-id: 454a64fb94f3c1b6cf6fb7fbfce97f706933b7e3
-> prerequisite-patch-id: 7961935b88d6c3056b55b4058c1ba878aa00490c
-> prerequisite-patch-id: f87b65e3c93f8f1edf2305784ea3f81a04c4ad58
 
-Huh, why and how?
-
-It's impossible to apply this.
+So v2. Always version your patches correctly.
 
 Best regards,
 Krzysztof
