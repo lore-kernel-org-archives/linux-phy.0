@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 60B27CF45D9
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9679ACF45D7
 	for <linux-phy@archiver.kernel.org>; Mon, 12 Jan 2026 23:21:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,57 +12,57 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NV5Ja2zpQMnpFxp6viQsg4GKS1Pum3Uvblp/mVVTEEg=; b=DaEFJ4TR0EoN+U
-	d1UesKnInKHWNQT2Qb902pma1jKpxVs8RQx5VC5cyy0Nswn/w71WBKBmWWnbfIxfkgrLa+27HBJsJ
-	Hi+Ww7LO3GU1CGaBcjLJmoSDZMJ+og3R+Lp4TxtBf2NYBwqB8s3kZoWJ//O92uYIkNEpEIYnGCggN
-	v3YpuGgsQnslv1MFzYLo9ty6VdyA8bypCJh6FULiIv8g1XdBgOubD5WnN+0U2arRCafxyD5j1fScd
-	DWzyxkUBbkP7cm4EMaGhtiWh9CVPhZcAGM1avkazGZVrrG3JZMJXEGcaHbHnBq1Th1HZ4dSpeOA+A
-	/zU0oXUmtaDd4bVIPNVw==;
+	List-Owner; bh=Y2W2+0Ff1pvowmjbmSapY5eKG2eUWWiC6F1PLcsC/d0=; b=rqQSVjsXmtZfOz
+	E1BhuAMInGArB39sBfUrVhL06xX0OG0c8p3U9kR5wlS3I2AVwNBzztnBn3LMctoN6oFWJfrt2logE
+	K3ezsAftl2yOcjAT1aJuW4SIKzROD+fPhU5GAccQT7f8CervsVVyulGgfEP3jsaD9ri4eD9sk+MoV
+	z7DCQtaYZ7w4AdaNmJ4sDAdEBjaac0G7tMR2jD0qy7jYlHawsKSYFk1AV8oF5XgZCXYk8EDjuzqTb
+	pDj1QtdJRSGsaA3uJa6CCa6qjU2pW9Yk53y1uoZ+2e1szbhLfOj25sH01sHF0YQfSZSJVyYl+/MTW
+	RehEIUWwelNa0dS2ph2g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vfRE5-00000006INM-39Ni;
-	Mon, 12 Jan 2026 23:21:33 +0000
+	id 1vfRE6-00000006IOI-0Usb;
+	Mon, 12 Jan 2026 23:21:34 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vfRDs-00000006I6N-3Wqm;
+	id 1vfRDs-00000006I6Q-3jZc;
 	Mon, 12 Jan 2026 23:21:20 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=Cc:To:In-Reply-To:References:
 	Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Sender:Reply-To:Content-ID:Content-Description;
-	bh=esATcOkCbjA9eI6BTSPcL6i1wZQ6NjofOkzIEkkkXz4=; b=nOrN5Ly9lAyVyDn95419xScfx5
-	GsUKpeGUTmwkV2oR+Cddjc74XGlTfYMjengSPVfNQiYfEU6t6F7RtXr/9Vf5vOlshOkm9LI59zbWt
-	f9fjtBq2Gz/843ezZpB5xphghkjspx51aUYuJuFbJnCcJw4fxvxVbUukusja3Fq2VAwjEhUZpGMQm
-	jLAr6wWx8Ayrv1qgC7u2O00E10F3+qDB/oDUiCidjMQLWCwxLVvEVnHxK39cciK+EciHgBFYvvStr
-	kThF9bC+xYDnbmofXOmx8w1+uPZtL+yytigbNdLu/M3e1Nb0Dt7LLa2jV4EGonYSQ5nJ/EHqBj5+C
-	3jAmSvMw==;
+	bh=1UGMMC0nG0FND8mknCYe94lRh9ZMSOjbOzRlZ+IrEaM=; b=qCseVTYIlCp1HNwIlR7LjZFbtK
+	0C8kkBW7ZSWClQBzacBM1oo40pOBfd8GLKS4HvDf/6Ua6nIewHpj5RmTW00m3QeWYS31aAM9pbjLN
+	Gtv+0JAl0fHpOwpX2JCLCs1kDbOYb/UUYHJDJIqa50cKIBhv3KTp2OfLQNXhd6HaZK8pECkvwnxGT
+	XbF2OIBwnwFjLzDJfnKhcM+L3vjpRbpqgjTDLK887JUSxPCKXydH+7jUUZeeB4jl+DWc4WK/TaOOd
+	XskZCdMoiykrUNBTeeqbtc6ZTl6OX0mD2pI01yEK5nXSyXChT5rxZ6hiGCuF9Ph8GXtSuULsX4PVP
+	XWUGIyFg==;
 Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vfRDg-00000001oPR-3XhR;
-	Mon, 12 Jan 2026 23:21:11 +0000
+	id 1vfRDg-00000001oPQ-3HMi;
+	Mon, 12 Jan 2026 23:21:17 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1768260065;
-	bh=yhHswPhK8Uv+ThYv0TpEvbUInvVl/XTpXkzaWxs8TNI=;
+	s=mail; t=1768260066;
+	bh=UTvAhpGPD94aGV3BTlshKqJj1GF2Jg+pTmK83rcvKFc=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=S7w0Kfx0vPtbQYVk3/CXXqN48x7Kzr7LV8rmBl+4oS/MIWJg1L31NSqYchdQGLvDt
-	 ncj7gJJiKQo56HSZGt7qjDNkrqQu5L6E+95ALwatvMjYFTAnncznjBxeu8W4b+xpYb
-	 2O2mboQ7uQytXqI/vXZXyGHTbG6dnH/9WGo+QB7RTnp9yx3prlKFKQ3/qJn8lXOH01
-	 YNBPqrEKGdLHW87FncJuUwTCFxm0mK/cVbWSyZ3EuxbYDsWb0WBd2Vy41qK7wDvLQB
-	 v3/cPXlnoOz2HoLsYQSm6sjLwyvWlX7GerH9ErSJhuLy9Tdl93D5WENisJjrFdwZs2
-	 +938MaULX1ewA==
+	b=jLZ7zjTVubi9lSjC3hwxf8/yJB8k0eq03ORqcRGhSnBrg/AsJhXlyhTwqsOn05sjw
+	 NSdBuzMkTfRopCFx4xn466ePdSAhvwVZqYyaKPP7qnY+omW3AiVli+b02czF72DO6H
+	 R7e4MOWH+TWvtKgvar0neQzGnpgpsDlUrtwgnkQC6zz7BzNijJpKo1gHtm2sEjj7by
+	 Q50+gC3itCNttJP9Isr1gptsJR5RG769/6Vb+2Ge+/lRQ9uDLGUoj1RKNTu1/PN0n5
+	 aEAYeh9y0Y3DNIx/NQZTp5GALI8FoioNp0pJy6E88yttmmYHVhYODZdEwnktdukezt
+	 SIll6b0CH/R2g==
 Received: from localhost (unknown [82.79.138.145])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange ECDHE (prime256v1) server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: cristicc)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id E69A117E0E30;
-	Tue, 13 Jan 2026 00:21:04 +0100 (CET)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 9589017E1543;
+	Tue, 13 Jan 2026 00:21:06 +0100 (CET)
 From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-Date: Tue, 13 Jan 2026 01:20:55 +0200
-Subject: [PATCH v6 08/11] phy: rockchip: samsung-hdptx: Drop hw_rate driver
- data
+Date: Tue, 13 Jan 2026 01:20:57 +0200
+Subject: [PATCH v6 10/11] phy: rockchip: samsung-hdptx: Extend
+ rk_hdptx_phy_verify_hdmi_config() helper
 MIME-Version: 1.0
-Message-Id: <20260113-phy-hdptx-frl-v6-8-8d5f97419c0b@collabora.com>
+Message-Id: <20260113-phy-hdptx-frl-v6-10-8d5f97419c0b@collabora.com>
 References: <20260113-phy-hdptx-frl-v6-0-8d5f97419c0b@collabora.com>
 In-Reply-To: <20260113-phy-hdptx-frl-v6-0-8d5f97419c0b@collabora.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -75,8 +75,8 @@ Cc: kernel@collabora.com, linux-phy@lists.infradead.org,
  linux-rockchip@lists.infradead.org
 X-Mailer: b4 0.14.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260112_232109_435627_13B037C8 
-X-CRM114-Status: GOOD (  13.75  )
+X-CRM114-CacheID: sfid-20260112_232109_655441_EF1E602C 
+X-CRM114-Status: GOOD (  13.74  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,63 +93,113 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The ->hw_rate member of struct rk_hdptx_phy was mainly used to keep
-track of the clock rate programmed in hardware and support implementing
-the ->recalc_rate() callback in hdptx_phy_clk_ops.
+In order to facilitate introduction of HDMI 2.1 FRL support and to avoid
+recomputing the link rate after verifying the HDMI configuration given
+as input, extend rk_hdptx_phy_verify_hdmi_config() by providing an
+optional output parameter to store the validated configuration.
 
-Computing the clock rate from the actual PHY PLL configuration seems to
-work reliably, hence remove the now redundant struct member.
+For improved code readability, also rename the existing hdmi input
+parameter.
 
 Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
 ---
- drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 13 ++-----------
- 1 file changed, 2 insertions(+), 11 deletions(-)
+ drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 35 ++++++++++++-----------
+ 1 file changed, 18 insertions(+), 17 deletions(-)
 
 diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-index 3cc8976e10e6..6297a5171e78 100644
+index f1cad0264952..c9942aaf2766 100644
 --- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
 +++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-@@ -387,7 +387,6 @@ struct rk_hdptx_phy {
- 
- 	/* clk provider */
- 	struct clk_hw hw;
--	unsigned long hw_rate;
- 	bool restrict_rate_change;
- 
- 	atomic_t usage_count;
-@@ -931,7 +930,7 @@ static int rk_hdptx_tmds_ropll_cmn_config(struct rk_hdptx_phy *hdptx)
- {
- 	const struct ropll_config *cfg = NULL;
- 	struct ropll_config rc = {0};
--	int ret, i;
-+	int i;
- 
- 	if (!hdptx->hdmi_cfg.tmds_char_rate)
- 		return 0;
-@@ -993,12 +992,7 @@ static int rk_hdptx_tmds_ropll_cmn_config(struct rk_hdptx_phy *hdptx)
- 	regmap_update_bits(hdptx->regmap, CMN_REG(0086), PLL_PCG_CLK_EN_MASK,
- 			   FIELD_PREP(PLL_PCG_CLK_EN_MASK, 0x1));
- 
--	ret = rk_hdptx_post_enable_pll(hdptx);
--	if (!ret)
--		hdptx->hw_rate = DIV_ROUND_CLOSEST_ULL(hdptx->hdmi_cfg.tmds_char_rate * 8,
--						       hdptx->hdmi_cfg.bpc);
--
--	return ret;
-+	return rk_hdptx_post_enable_pll(hdptx);
+@@ -1439,25 +1439,24 @@ static int rk_hdptx_phy_power_off(struct phy *phy)
  }
  
- static int rk_hdptx_tmds_ropll_mode_config(struct rk_hdptx_phy *hdptx)
-@@ -1903,9 +1897,6 @@ static unsigned long rk_hdptx_phy_clk_recalc_rate(struct clk_hw *hw,
- 	u64 rate;
+ static int rk_hdptx_phy_verify_hdmi_config(struct rk_hdptx_phy *hdptx,
+-					   struct phy_configure_opts_hdmi *hdmi)
++					   struct phy_configure_opts_hdmi *hdmi_in,
++					   struct rk_hdptx_hdmi_cfg *hdmi_out)
+ {
+ 	int i;
+ 
+-	if (!hdmi->tmds_char_rate || hdmi->tmds_char_rate > HDMI20_MAX_RATE)
++	if (!hdmi_in->tmds_char_rate || hdmi_in->tmds_char_rate > HDMI20_MAX_RATE)
+ 		return -EINVAL;
+ 
+ 	for (i = 0; i < ARRAY_SIZE(rk_hdptx_tmds_ropll_cfg); i++)
+-		if (hdmi->tmds_char_rate == rk_hdptx_tmds_ropll_cfg[i].rate)
++		if (hdmi_in->tmds_char_rate == rk_hdptx_tmds_ropll_cfg[i].rate)
+ 			break;
+ 
+ 	if (i == ARRAY_SIZE(rk_hdptx_tmds_ropll_cfg) &&
+-	    !rk_hdptx_phy_clk_pll_calc(hdmi->tmds_char_rate, NULL))
++	    !rk_hdptx_phy_clk_pll_calc(hdmi_in->tmds_char_rate, NULL))
+ 		return -EINVAL;
+ 
+-	if (!hdmi->bpc)
+-		hdmi->bpc = 8;
+-
+-	switch (hdmi->bpc) {
++	switch (hdmi_in->bpc) {
++	case 0:
+ 	case 8:
+ 	case 10:
+ 	case 12:
+@@ -1467,6 +1466,11 @@ static int rk_hdptx_phy_verify_hdmi_config(struct rk_hdptx_phy *hdptx,
+ 		return -EINVAL;
+ 	}
+ 
++	if (hdmi_out) {
++		hdmi_out->rate = hdmi_in->tmds_char_rate;
++		hdmi_out->bpc = hdmi_in->bpc ?: 8;
++	}
++
+ 	return 0;
+ }
+ 
+@@ -1732,17 +1736,15 @@ static int rk_hdptx_phy_configure(struct phy *phy, union phy_configure_opts *opt
  	int ret;
  
--	if (hdptx->hw_rate)
--		return hdptx->hw_rate;
+ 	if (mode != PHY_MODE_DP) {
+-		ret = rk_hdptx_phy_verify_hdmi_config(hdptx, &opts->hdmi);
++		ret = rk_hdptx_phy_verify_hdmi_config(hdptx, &opts->hdmi, &hdptx->hdmi_cfg);
+ 		if (ret) {
+ 			dev_err(hdptx->dev, "invalid hdmi params for phy configure\n");
+ 		} else {
+-			hdptx->hdmi_cfg.rate = opts->hdmi.tmds_char_rate;
+-			hdptx->hdmi_cfg.bpc = opts->hdmi.bpc;
+ 			hdptx->restrict_rate_change = true;
++			dev_dbg(hdptx->dev, "%s rate=%llu bpc=%u\n", __func__,
++				hdptx->hdmi_cfg.rate, hdptx->hdmi_cfg.bpc);
+ 		}
+ 
+-		dev_dbg(hdptx->dev, "%s rate=%llu bpc=%u\n", __func__,
+-			hdptx->hdmi_cfg.rate, hdptx->hdmi_cfg.bpc);
+ 		return ret;
+ 	}
+ 
+@@ -1786,7 +1788,7 @@ static int rk_hdptx_phy_validate(struct phy *phy, enum phy_mode mode,
+ 	struct rk_hdptx_phy *hdptx = phy_get_drvdata(phy);
+ 
+ 	if (mode != PHY_MODE_DP)
+-		return rk_hdptx_phy_verify_hdmi_config(hdptx, &opts->hdmi);
++		return rk_hdptx_phy_verify_hdmi_config(hdptx, &opts->hdmi, NULL);
+ 
+ 	return rk_hdptx_phy_verify_dp_config(hdptx, &opts->dp);
+ }
+@@ -1926,12 +1928,11 @@ static int rk_hdptx_phy_clk_determine_rate(struct clk_hw *hw,
+ 		struct phy_configure_opts_hdmi hdmi = {
+ 			.tmds_char_rate = req->rate,
+ 		};
+-		int ret = rk_hdptx_phy_verify_hdmi_config(hdptx, &hdmi);
++
++		int ret = rk_hdptx_phy_verify_hdmi_config(hdptx, &hdmi, &hdptx->hdmi_cfg);
+ 
+ 		if (ret)
+ 			return ret;
 -
- 	ret = regmap_read(hdptx->grf, GRF_HDPTX_CON0, &status);
- 	if (ret || !(status & HDPTX_I_PLL_EN))
- 		return 0;
+-		hdptx->hdmi_cfg.rate = req->rate;
+ 	}
+ 
+ 	/*
 
 -- 
 2.52.0
