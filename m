@@ -4,65 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0484CF45D9
-	for <linux-phy@archiver.kernel.org>; Mon, 12 Jan 2026 23:21:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E57D3CF45DB
+	for <linux-phy@archiver.kernel.org>; Mon, 12 Jan 2026 23:21:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fXBt/uc2GoKRbLLMEys3Rmns72WNbFH+eVYosQWObVs=; b=QFV3NExKySjS6f
-	lqs+LVyCQ2JurAk6T16aYaKrun3+aOP2w38Ukr0B/NmlCRYEF76196OdEImw5h2ufEoTQ8qbVHKbg
-	29v54uMQKOFLxdknBTm5rMBQ1vHhk5Z0PuTYsjZ81cVqGcQTEC71wqQOIy/lbsqHIjhq9jg41NlZ7
-	49AvADYoJkqwjXrqlidhLxP2vmgP+82rRAafmi74yVcYGQ4vz5jW/bb/ibUlr4ei7HZDOmfjupgkk
-	9G69Eq+tTGu4VcxDMpO0MqmszFBLQlU5O3bZWMSi+rFHFielJlcL4jI7nK9I0lTxWxs1aUxV+Tbv1
-	/d9SXP7cZqIMSqPqMfDw==;
+	List-Owner; bh=/SInBbCoNaqwthWniWXLnKgt+Xi0HcKgHzW2ISOie8M=; b=HULp9YczTyIUkX
+	ju6bIlZxC+e61gB38OkmVb5nnupfv5hxaBtvAaSdPGgZ8HyF9xNao5STt/TtdxutlUbWCgNpq2bY3
+	mKUZhVJOPgH6FfHJwwkug9BNXTxFHj5xElnSaUAErSpg8vfQzw8eIkBKBIDkkkEacRjo9pIv/+a9R
+	lD8wwhyKQUOWlfmvuh8A9Y4e83CHzKQRfEarEYKOLTbTTURw+C4rvY8X1Zb5lvpndQFYQ4bz7Uodh
+	jFKxxJBRQdnzSW+QGbV1ZGxpF1CWvvyYXlnpfow2HAaMrPfQBVvCwOpXMfN5JG+X1YGM1pFFAPgc5
+	TlVIfJ8vlV7pUzxMow5A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vfRDl-00000006Hxg-0ulN;
-	Mon, 12 Jan 2026 23:21:13 +0000
+	id 1vfRDm-00000006Hzi-2miS;
+	Mon, 12 Jan 2026 23:21:14 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vfRDg-00000006Hsw-3CNQ;
-	Mon, 12 Jan 2026 23:21:08 +0000
+	id 1vfRDh-00000006Htn-1kY7;
+	Mon, 12 Jan 2026 23:21:09 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=Cc:To:In-Reply-To:References:
 	Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
 	From:Sender:Reply-To:Content-ID:Content-Description;
-	bh=2Hg/mQCj/eaueiT3Gt1Ye8e/iIh785R0cc8mnklrcIg=; b=SCB5QHGJWvfLFcTQPqW3g56bsJ
-	dUeI2SDaxxeQEllinBLW3nBedL53zTrzNe5g1nJmfx+dFTRPssh7F9FfPzP61yfuAxuLwE4x8dc7s
-	jTQmxpERwNktj4RymeUaYdclJ8iKjoPG3Y5BxCgrmP4v3Z3bUvjC02Cde1esB6Ht0Cl9MBGtcxF6X
-	1YUDPmUQenI5NlN9QwP/5ANJekmpqte+vcVse5GQDybFR7Mgpz92cCHrvZD2Mr0vvgtNObzII4Srp
-	a8j3zYY9NylYZjvf9uK8nNAsHRmhwFF2Fu3+oACi7Qew+piaQmEe80N+6v1QCSUwYKlMLI/ROB1bw
-	431Xbt+g==;
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	bh=pQ1oqR6flngVgQCZ/N2fRFagRwftgC8EzK5dR2TavOM=; b=dTGYv6rsfKPqBs4mA4T/+oIsmB
+	oIOv949BJdcQ9KhaI+hoersyd4oGwXwgXx3ThB6kxYdoElWxmTASxbM9yVR/RFaidu+GjTjDRT+Ji
+	MwNp9NeC4ql96D31W5ueoTjh0ZsLkvnaBrAzMfW6SLjmGTGNcPUodsI3v5jBYUFZbOzh4x588bJGt
+	P2WGGxeZhGMAiCq8my4+t1LSwM8fo+w0JOLfb14WrbAMl0iljhjZvZrfpnHxjSJzlcy757xapzdiT
+	XkxUXKHmNWEUr3QhVndiuhIp1a8EqonqLE6pe6jIhnMJtREnglNi0q1OpDlTIS1j3d/XNhC7KHF0w
+	5oeJ8bCw==;
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vfRDa-00000001oNu-2heb;
-	Mon, 12 Jan 2026 23:21:07 +0000
+	id 1vfRDa-00000001oNh-3ABN;
+	Mon, 12 Jan 2026 23:21:08 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1768260061;
-	bh=GapllIFE0EDg+WlX20BM3yTCFntHyqDn2P0gVDeiK0A=;
+	s=mail; t=1768260060;
+	bh=KLY3/5FYOtbcL49AzwCGiqkdVvb9UF8bBOYJdOQPcj4=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=ZQZRJJFidp9qnkRVUTcfBxX+yE1fAkGok4KKe5Y49ChzbYxUGaeQf/BgkKcBhOlgd
-	 X6TUivV9QKi8w+vgsKwlrcL+X+m+KScpsuJQyxV/VVGrqntF5FU7s8R1hOFQCzJBiw
-	 jZd6T2cloKuqxFw5CSyURarpPVKgJolHqaZhflRgaQ07ogrUzRnD9vcifwvmEoGZgm
-	 TlwW6Fs1+fuyLP8OB53DM31Y+RmTLR9wRqklxMkrWR19w/ixKzW7Bjw5LezQSKDaGL
-	 1+l1Oep+lkPTxJObPUxW7f5Jov6MhDBMBJm3sWDOWWfvd1FBIdnURaTx7QbP0RUmY5
-	 hL0xdO1EKGLgw==
+	b=mGtV1XaDKqRCqM/DF3TmwnR/eIh9+7E6Kb6rMv9zzWxr2HHvwyRkwo93SlgoYvSI0
+	 v99g7DOatsU1RqVdzrN1MSCrJdVgFUdKJ0R4VGNDOKew92hOJO02/EZ9VJhDgkCStw
+	 SadAWTj7EKjAhpKgHTlCkw+68PcjawnWtUi4Cb2Omksf3l4nxgM8SA0GP3XAmhWNW5
+	 jklrT/7MFpULWLT4ktbAKtugF18jjGyLrJ9/UzS+8un+RuIvMTgTc6cPgJ0PndJuKB
+	 EjegJvMom84a/qKasP+212soyKaAbMnzBxT565AEc0uW7RgpgFx+XVs/T0wjAAS3/1
+	 KSN3g+ijL2tzA==
 Received: from localhost (unknown [82.79.138.145])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange ECDHE (prime256v1) server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: cristicc)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id C892E17E1416;
-	Tue, 13 Jan 2026 00:21:00 +0100 (CET)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id F29B617E10F4;
+	Tue, 13 Jan 2026 00:20:59 +0100 (CET)
 From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-Date: Tue, 13 Jan 2026 01:20:50 +0200
-Subject: [PATCH v6 03/11] phy: rockchip: samsung-hdptx: Fix coding style
- alignment
+Date: Tue, 13 Jan 2026 01:20:49 +0200
+Subject: [PATCH v6 02/11] phy: rockchip: samsung-hdptx: Use usleep_range()
+ instead of udelay()
 MIME-Version: 1.0
-Message-Id: <20260113-phy-hdptx-frl-v6-3-8d5f97419c0b@collabora.com>
+Message-Id: <20260113-phy-hdptx-frl-v6-2-8d5f97419c0b@collabora.com>
 References: <20260113-phy-hdptx-frl-v6-0-8d5f97419c0b@collabora.com>
 In-Reply-To: <20260113-phy-hdptx-frl-v6-0-8d5f97419c0b@collabora.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -75,8 +75,8 @@ Cc: kernel@collabora.com, linux-phy@lists.infradead.org,
  linux-rockchip@lists.infradead.org
 X-Mailer: b4 0.14.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260112_232103_115340_738EF54F 
-X-CRM114-Status: UNSURE (   8.08  )
+X-CRM114-CacheID: sfid-20260112_232103_151630_B9F2CBCC 
+X-CRM114-Status: UNSURE (   9.63  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -94,61 +94,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Handle a bunch of reported checkpatch.pl complaints:
-
-  CHECK: Alignment should match open parenthesis
+rk_hdptx_dp_reset() is allowed to sleep, hence replace the busy waiting
+with usleep_range(), to allow other threads to run.
 
 Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
 ---
- drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 12 ++++++------
- 1 file changed, 6 insertions(+), 6 deletions(-)
+ drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-index 89710066d70c..3f8a7f4f5cd8 100644
+index a65e96694237..89710066d70c 100644
 --- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
 +++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-@@ -1624,11 +1624,11 @@ static void rk_hdptx_phy_set_voltage(struct rk_hdptx_phy *hdptx,
- 		regmap_update_bits(hdptx->regmap, LANE_REG(030a) + offset,
- 				   LN_TX_JEQ_EVEN_CTRL_RBR_MASK,
- 				   FIELD_PREP(LN_TX_JEQ_EVEN_CTRL_RBR_MASK,
--				   ctrl->tx_jeq_even_ctrl));
-+					      ctrl->tx_jeq_even_ctrl));
- 		regmap_update_bits(hdptx->regmap, LANE_REG(030c) + offset,
- 				   LN_TX_JEQ_ODD_CTRL_RBR_MASK,
- 				   FIELD_PREP(LN_TX_JEQ_ODD_CTRL_RBR_MASK,
--				   ctrl->tx_jeq_odd_ctrl));
-+					      ctrl->tx_jeq_odd_ctrl));
- 		regmap_update_bits(hdptx->regmap, LANE_REG(0311) + offset,
- 				   LN_TX_SER_40BIT_EN_RBR_MASK,
- 				   FIELD_PREP(LN_TX_SER_40BIT_EN_RBR_MASK, 0x1));
-@@ -1638,11 +1638,11 @@ static void rk_hdptx_phy_set_voltage(struct rk_hdptx_phy *hdptx,
- 		regmap_update_bits(hdptx->regmap, LANE_REG(030b) + offset,
- 				   LN_TX_JEQ_EVEN_CTRL_HBR_MASK,
- 				   FIELD_PREP(LN_TX_JEQ_EVEN_CTRL_HBR_MASK,
--				   ctrl->tx_jeq_even_ctrl));
-+					      ctrl->tx_jeq_even_ctrl));
- 		regmap_update_bits(hdptx->regmap, LANE_REG(030d) + offset,
- 				   LN_TX_JEQ_ODD_CTRL_HBR_MASK,
- 				   FIELD_PREP(LN_TX_JEQ_ODD_CTRL_HBR_MASK,
--				   ctrl->tx_jeq_odd_ctrl));
-+					      ctrl->tx_jeq_odd_ctrl));
- 		regmap_update_bits(hdptx->regmap, LANE_REG(0311) + offset,
- 				   LN_TX_SER_40BIT_EN_HBR_MASK,
- 				   FIELD_PREP(LN_TX_SER_40BIT_EN_HBR_MASK, 0x1));
-@@ -1653,11 +1653,11 @@ static void rk_hdptx_phy_set_voltage(struct rk_hdptx_phy *hdptx,
- 		regmap_update_bits(hdptx->regmap, LANE_REG(030b) + offset,
- 				   LN_TX_JEQ_EVEN_CTRL_HBR2_MASK,
- 				   FIELD_PREP(LN_TX_JEQ_EVEN_CTRL_HBR2_MASK,
--				   ctrl->tx_jeq_even_ctrl));
-+					      ctrl->tx_jeq_even_ctrl));
- 		regmap_update_bits(hdptx->regmap, LANE_REG(030d) + offset,
- 				   LN_TX_JEQ_ODD_CTRL_HBR2_MASK,
- 				   FIELD_PREP(LN_TX_JEQ_ODD_CTRL_HBR2_MASK,
--				   ctrl->tx_jeq_odd_ctrl));
-+					      ctrl->tx_jeq_odd_ctrl));
- 		regmap_update_bits(hdptx->regmap, LANE_REG(0311) + offset,
- 				   LN_TX_SER_40BIT_EN_HBR2_MASK,
- 				   FIELD_PREP(LN_TX_SER_40BIT_EN_HBR2_MASK, 0x1));
+@@ -1042,7 +1042,7 @@ static void rk_hdptx_dp_reset(struct rk_hdptx_phy *hdptx)
+ 	reset_control_assert(hdptx->rsts[RST_INIT].rstc);
+ 
+ 	reset_control_assert(hdptx->rsts[RST_APB].rstc);
+-	udelay(10);
++	usleep_range(10, 15);
+ 	reset_control_deassert(hdptx->rsts[RST_APB].rstc);
+ 
+ 	regmap_update_bits(hdptx->regmap, LANE_REG(0301),
 
 -- 
 2.52.0
