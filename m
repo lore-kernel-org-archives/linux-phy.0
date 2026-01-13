@@ -4,87 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 48B4AD29DE0
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Jan 2026 08:11:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A4861D29DE4
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Jan 2026 08:12:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
 	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=SgX4wWWjSdGYjucCJD7OJlgHtnZVPU6CNbN3+Hjdz58=; b=GMVbfFYOKOSBqHChE6qOZLQsL0
-	G+gCP7oR18ApVDDH/iXotIvshKPLhSEclc0DgTe1WbsexIhoE2VCzrk0kid0EEjt0tHu5VKgU6REj
-	HxAayfNeWRjuyfbTkV3ZkPtuMMJzdSe7h9Aafy0A78tw8hv+aMgKNztfcNx6N2vwk7XIY7gSvK9qv
-	M+MCE5EIOsWe1FoyOmT4uzneGD7HA9lyw7CpT2ZGH6ixEHCQmRZNAp8CdRDlxw19mGLWlDYUsEzJG
-	6Jx3smpbQqeMRkK4+w3EBaZwDOcA8MrKri5bzPshRmS4lLTs1xoFQhcDXRWSDY8TC6hFDw/aODC6C
-	17qXYg0w==;
+	bh=diM53KjR3efAk4xvr3MFC0ofIjMe+qprMNGyC8zDagE=; b=jxcEJdhKJxrWhib1Y9LIgmTn1X
+	tEKfO/kyIJmmg4bbDYDmJLftSLzlQfBmAy67VVJGmkKCtDXLtdvdLlOEMffKJiNBrgn/oH3qEirMl
+	lCrinnsec6kkBG+vxsNWeXSrZaZcLQv/riL25cdyYz7FDACvZoFF8CtuqjSueIFg10eqns9D5Rku6
+	rLaMOln11YGqqtfEZ++wB9B2bw4YJQZ8eTThAAVePihN7gYVhR1CCG+ogzaCvvS53LGnNypfbpIB4
+	PuXwtBRGVUsVCw4pO3yLjGyY15ORu2Uxso5Xrh4OZg5X/KTFWvWvYPEp9zqTuAIz6fYZHoTn5SYxT
+	H4leOEWg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vfZUV-00000006i0x-0AOx;
-	Tue, 13 Jan 2026 08:11:03 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1vfZVT-00000006i3y-1R5t;
+	Tue, 13 Jan 2026 08:12:03 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vfZUS-00000006i0d-1WDg
+	id 1vfZVR-00000006i2p-2NzU
 	for linux-phy@lists.infradead.org;
-	Tue, 13 Jan 2026 08:11:01 +0000
-Received: by mail-wm1-x341.google.com with SMTP id 5b1f17b1804b1-4779adb38d3so49340935e9.2
-        for <linux-phy@lists.infradead.org>; Tue, 13 Jan 2026 00:10:59 -0800 (PST)
+	Tue, 13 Jan 2026 08:12:02 +0000
+Received: by mail-wr1-x444.google.com with SMTP id ffacd0b85a97d-432d28870ddso2711342f8f.3
+        for <linux-phy@lists.infradead.org>; Tue, 13 Jan 2026 00:12:01 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1768291858; x=1768896658; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1768291920; x=1768896720; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=bwW+ygfqdK5UYdKdlacSQmA5THvQFOrd2NY1OQuLwqQ=;
-        b=HAWyk5r4xLhISGOJTLcb0VLHkxlnUGKbStDD3/MRQoz00E1gbks05Vcd3mqFduF1di
-         tir3cyK9wlDQR3vMoM2aeIDixxBSFH64DKvKWHakhQ8nOfqz5J8tOP6wRGaGqSrk/e7z
-         2ZBmKbG78tHZ5G/tyYcejEK35EiHOYLU02nx/WU+j20O3L2tesF8aOftsJFya0EBP4Q5
-         T822ttbMjEQSOuT1GXjcXsa/FVdFQ/hJDtzR50WXPIFPMoxEhzDMX+wTVCT6YXXK82c3
-         qjtttHuPC5sa26ECjzwusgZ7+l1b583kjqYsAMt+nJSGEQ089PI/B8sY8BSYRBQDC2zB
-         pajw==
+        bh=0/MQilqGTab22ugg1CT5X4KmAKEpSnq+i+RZKZLJx6I=;
+        b=xrerd7SOs+54/3fJp5P0hWG+NWb181dEaxyjyQVJSwiz8p6o+P4nkM62D1Q+1gUiVT
+         jnDkj4KmOhT0XlLUITWAFVDbe3+SLE4gx7dH+j2V8t98vWMOjlmJvIg0XUy9FhZ5q7fi
+         GJ8ToPQJlMaLY/lIR8RllxoWXToeHFrQU5x6GDGrojGPsPye2ejXLNgqrEkuE6CrmwnT
+         I9bIMg/UmI1mtCKaTnSTKXd4htKYXceEqw6iotlk7SzEtq5Cir56hMvwpsHhdvegsPDp
+         VibXDZPpFEzgj02tgqfonjD0A9hGZKKtB3/AJ+hnVqRq9KBNdrprIIojU4GUwv7MiRU5
+         baWw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1768291858; x=1768896658;
+        d=1e100.net; s=20230601; t=1768291920; x=1768896720;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:x-gm-gg:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=bwW+ygfqdK5UYdKdlacSQmA5THvQFOrd2NY1OQuLwqQ=;
-        b=kht4JmbxUwJptVPQZevlJT4oL3c1Wnc4muRoSRLM17fr1Jtev9VQ4qRmHSpvVSokyf
-         AbV1U/ns/zSU2T3pSo/X6K3SD1QDDB4eM63YDZu1DK4UUiKP0FwQ9XnB95ybq1/XNKUW
-         5retVyfLb7pr78/4kzWAjnVncdN9IwNRf7/YodQjDlthhtDtvzskOhjPOjQR4Wt3EGxT
-         xEuR7uc9cJPuuIT5GTgK0eC06b5Pir5vJdSz+jy5pWuyEpp9jq+8kErFHYxwNU8opHDQ
-         dz1EDhZTJk0U64/yXowO7xWGzXG0eVWXeHs+RGWQR5ylSxSAQo8dKn8g7YiTuiTQBMAJ
-         cmbQ==
-X-Forwarded-Encrypted: i=1; AJvYcCX1RC6NuOS+WwLtOBwSUSTcXj482giKqH5KK1dlcyi1nBh6qjKpDwdUBmVOC8uy58D5ZazfTyGIJtA=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx46JkMUhFuDYNhpZbhP3CCWPKvFVNqVwtNOQ87oS5KiKMPbeuq
-	MiqiEyXUF6ZZRYW91+PzQZ5k7F2cOtKfFvn4RiNnFHmq2xoBfnQOW1Gcf5LxOj+Nwbw=
-X-Gm-Gg: AY/fxX4WMvpcrwjRXcsq+GOGHRaPjbRWhmUmStOVMYgCqLv846II0952ko/gbivcp+5
-	bDne6AtUQmTZrr4O0AsPrueH93DTX8gEU5U7XxshG2Ml1Yg+B+lToDUiHQxltB/dtTboQ+z3wSO
-	yiQeM5SfB+FjY6gzs3XgUoIFo4++bMhDnwUA1ti86RX3nKzRtVl6EspDfXd3pGm0JsxAercpMz6
-	sWRxxnnjIV4PSg+TTeDoUrhEYhEm32iMxQd2K2JW6BkBonJPX9WcHv0ATHqBIIyXGZeH9uQ6Giv
-	qIjT3Wh1fcNKamDhKWHFfcZaW+BOowZSPrkqaDru9tEpIsQaaDC5Dt+MUeaLYb9OZtl+qShM8Yu
-	myEnTEbF7V2dwvhoZizgvznORXCmGbImMdhzZALlvu1q2PVWcL/1qvFk/+48K4YjpoNHEvoPtp9
-	4HIHCY+51Jl/7vVehi8wb6bivsDS/oIfupVRr4eqA=
-X-Google-Smtp-Source: AGHT+IHVubdkYVXRdCYANXMR0ISA+TInCn3bu5ON04/WkSf5bxAVISHMRL30pKlB6Nx3R6Ym8XxdTQ==
-X-Received: by 2002:a05:600c:3484:b0:479:2a0b:180d with SMTP id 5b1f17b1804b1-47d84b20fd7mr244456025e9.11.1768291858442;
-        Tue, 13 Jan 2026 00:10:58 -0800 (PST)
+        bh=0/MQilqGTab22ugg1CT5X4KmAKEpSnq+i+RZKZLJx6I=;
+        b=xBKTaK5cLAoK7++eluraQR9wFz8IXiVmSC9008OC3kNXIX9kMJZqvDcBCVw0lXpaxv
+         Py//K1K2oIqnea2a7m77X9hXpORQbd7ycVZ89QdpSEJzJ0M4b5vl26xMHj/hoFw4tTkX
+         5YFx4wtSFGx6rYPISb4qEbIfwnjPn4H1DMjDcIjw1HGSr0Fi4euTLvo6JZ+PEdjHd1XP
+         zlvW8rQ1wlCafi6AcPTIYrqVvMOj1O8GfVQXnOh51C9s0noNHa4NzbZl164H0Fz+eEDQ
+         Q50Ga4mDX41Jbbxor2o+AmwjgTf0TOkUSV+vvFiRWrhX8wj7ttmo5uaPnyqI7cvScLLp
+         ZTsA==
+X-Forwarded-Encrypted: i=1; AJvYcCV60plH5WA+YoT0lDNJV9bVk6q+7YMzxQveMiA7WJHPewQn7+6qLNfVY5D/Y/k7P59bcQsdpY1SB+o=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yyc2e5vX2D1U4N/qLnKlvzu1EqjUaryylRPD9N1xPR1rU+qFk8N
+	nZyEZfif3hMFGC4B7GzItWpRxR9mPlR8PW/mAw12fvQHWj7huETLXCiuWW2HxymacKU=
+X-Gm-Gg: AY/fxX4/6pEeQTNfn7Kg7HiVh/YxpKiLTWeFdU1VsXd2FPdGmHDgEfxeL+Aq2JHsk6J
+	LO1rOHNRxWwa7Cty6GFRL1D+ByDoCNYreTg+8xEAv5c920uDOUQAkHvJv2BsF8EJYqBGtbtmPq3
+	a9pqNZmGMGDsJs/MzQFKpY+MjnO66M330os6LdSoEeN71F6uvJGs1AojVGnq+QDgbQ3sa3dHZIj
+	BQLHX9pn7QMcA3UwQTpNzzJgRtmWvvGk32cm+1XpjA60krV8AraZYI+9t16lpa92WQSnWdDxLgs
+	xdmMYYHNy+T+rVWKhaxp2+A1H9AeyePEspnyv9F/61GNLQw3e4z5MUeMJ2T6YY+hb0EBJx4h+Uz
+	U6KPX8q4KDqyOwKsqC2spt23iowhA7cyvZ4V/b/7L1e7YSWoQBQppT0MMd1oZYd+bw/AC+Ur1B7
+	mBp2rEM34AKDwyww6zvC+gn2qlpLOA4oMd3Y0uF4U=
+X-Google-Smtp-Source: AGHT+IF/E4DZmoNj85KKl/suQ05NfvV4pzSTyO36+Rt7tlIRyvZ+VngI5jHuau30KK8jUlb3532Tjw==
+X-Received: by 2002:a05:6000:4013:b0:432:8585:6830 with SMTP id ffacd0b85a97d-432c3760f78mr24536676f8f.45.1768291919604;
+        Tue, 13 Jan 2026 00:11:59 -0800 (PST)
 Received: from ?IPV6:2a01:e0a:3d9:2080::fa42:7768? ([2a01:e0a:3d9:2080::fa42:7768])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-47edc05b267sm16025705e9.15.2026.01.13.00.10.57
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-432bd0dacd1sm42043981f8f.4.2026.01.13.00.11.55
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 13 Jan 2026 00:10:57 -0800 (PST)
-Message-ID: <2d07b633-becc-4b79-adfa-932ae2847671@linaro.org>
-Date: Tue, 13 Jan 2026 09:10:57 +0100
+        Tue, 13 Jan 2026 00:11:55 -0800 (PST)
+Message-ID: <bc3d3416-2f7c-4f4a-a90e-2b3d086ff568@linaro.org>
+Date: Tue, 13 Jan 2026 09:11:54 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 From: Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH v2] phy: qcom: edp: Fix NULL pointer dereference for phy
- v6 (x1e80100)
-To: Val Packett <val@packett.cool>, Vinod Koul <vkoul@kernel.org>,
- Abel Vesa <abelvesa@kernel.org>,
- Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Cc: Abel Vesa <abel.vesa@oss.qualcomm.com>, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-References: <20260111083317.604754-1-val@packett.cool>
+Subject: Re: [PATCH v6 03/11] phy: rockchip: samsung-hdptx: Fix coding style
+ alignment
+To: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Heiko Stuebner <heiko@sntech.de>, Algea Cao <algea.cao@rock-chips.com>,
+ Dmitry Baryshkov <lumag@kernel.org>
+Cc: kernel@collabora.com, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+References: <20260113-phy-hdptx-frl-v6-0-8d5f97419c0b@collabora.com>
+ <20260113-phy-hdptx-frl-v6-3-8d5f97419c0b@collabora.com>
 Content-Language: en-US, fr
 Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
@@ -111,10 +114,10 @@ Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
  QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
 Organization: Linaro
-In-Reply-To: <20260111083317.604754-1-val@packett.cool>
+In-Reply-To: <20260113-phy-hdptx-frl-v6-3-8d5f97419c0b@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260113_001100_612411_4302DB57 
-X-CRM114-Status: GOOD (  11.93  )
+X-CRM114-CacheID: sfid-20260113_001201_646559_4964A56D 
+X-CRM114-Status: GOOD (  11.25  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -132,34 +135,63 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 1/11/26 09:25, Val Packett wrote:
-> For Glymur SoC support, the com_clk_fwd_cfg callback was added, and a
-> stub implementation was added for the v4 of the hardware. However it
-> was omitted for the v6, causing a NULL pointer dereference oops on
-> Hamoa/Purwa (X1E/X1P) SoC devices. Fix by adding the appropriate stub.
+On 1/13/26 00:20, Cristian Ciocaltea wrote:
+> Handle a bunch of reported checkpatch.pl complaints:
 > 
-> Fixes: add66a6673bc ("phy: qcom: edp: Add Glymur platform support")
-> Reviewed-by: Abel Vesa <abel.vesa@oss.qualcomm.com>
-> Signed-off-by: Val Packett <val@packett.cool>
+>    CHECK: Alignment should match open parenthesis
+> 
+> Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
 > ---
-> v2: pull R-b, reuse v4 function as suggested by Konrad
-> v1: https://lore.kernel.org/all/20260109045214.5983-1-val@packett.cool/
+>   drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 12 ++++++------
+>   1 file changed, 6 insertions(+), 6 deletions(-)
 > 
->   drivers/phy/qualcomm/phy-qcom-edp.c | 1 +
->   1 file changed, 1 insertion(+)
+> diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+> index 89710066d70c..3f8a7f4f5cd8 100644
+> --- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+> +++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+> @@ -1624,11 +1624,11 @@ static void rk_hdptx_phy_set_voltage(struct rk_hdptx_phy *hdptx,
+>   		regmap_update_bits(hdptx->regmap, LANE_REG(030a) + offset,
+>   				   LN_TX_JEQ_EVEN_CTRL_RBR_MASK,
+>   				   FIELD_PREP(LN_TX_JEQ_EVEN_CTRL_RBR_MASK,
+> -				   ctrl->tx_jeq_even_ctrl));
+> +					      ctrl->tx_jeq_even_ctrl));
+>   		regmap_update_bits(hdptx->regmap, LANE_REG(030c) + offset,
+>   				   LN_TX_JEQ_ODD_CTRL_RBR_MASK,
+>   				   FIELD_PREP(LN_TX_JEQ_ODD_CTRL_RBR_MASK,
+> -				   ctrl->tx_jeq_odd_ctrl));
+> +					      ctrl->tx_jeq_odd_ctrl));
+>   		regmap_update_bits(hdptx->regmap, LANE_REG(0311) + offset,
+>   				   LN_TX_SER_40BIT_EN_RBR_MASK,
+>   				   FIELD_PREP(LN_TX_SER_40BIT_EN_RBR_MASK, 0x1));
+> @@ -1638,11 +1638,11 @@ static void rk_hdptx_phy_set_voltage(struct rk_hdptx_phy *hdptx,
+>   		regmap_update_bits(hdptx->regmap, LANE_REG(030b) + offset,
+>   				   LN_TX_JEQ_EVEN_CTRL_HBR_MASK,
+>   				   FIELD_PREP(LN_TX_JEQ_EVEN_CTRL_HBR_MASK,
+> -				   ctrl->tx_jeq_even_ctrl));
+> +					      ctrl->tx_jeq_even_ctrl));
+>   		regmap_update_bits(hdptx->regmap, LANE_REG(030d) + offset,
+>   				   LN_TX_JEQ_ODD_CTRL_HBR_MASK,
+>   				   FIELD_PREP(LN_TX_JEQ_ODD_CTRL_HBR_MASK,
+> -				   ctrl->tx_jeq_odd_ctrl));
+> +					      ctrl->tx_jeq_odd_ctrl));
+>   		regmap_update_bits(hdptx->regmap, LANE_REG(0311) + offset,
+>   				   LN_TX_SER_40BIT_EN_HBR_MASK,
+>   				   FIELD_PREP(LN_TX_SER_40BIT_EN_HBR_MASK, 0x1));
+> @@ -1653,11 +1653,11 @@ static void rk_hdptx_phy_set_voltage(struct rk_hdptx_phy *hdptx,
+>   		regmap_update_bits(hdptx->regmap, LANE_REG(030b) + offset,
+>   				   LN_TX_JEQ_EVEN_CTRL_HBR2_MASK,
+>   				   FIELD_PREP(LN_TX_JEQ_EVEN_CTRL_HBR2_MASK,
+> -				   ctrl->tx_jeq_even_ctrl));
+> +					      ctrl->tx_jeq_even_ctrl));
+>   		regmap_update_bits(hdptx->regmap, LANE_REG(030d) + offset,
+>   				   LN_TX_JEQ_ODD_CTRL_HBR2_MASK,
+>   				   FIELD_PREP(LN_TX_JEQ_ODD_CTRL_HBR2_MASK,
+> -				   ctrl->tx_jeq_odd_ctrl));
+> +					      ctrl->tx_jeq_odd_ctrl));
+>   		regmap_update_bits(hdptx->regmap, LANE_REG(0311) + offset,
+>   				   LN_TX_SER_40BIT_EN_HBR2_MASK,
+>   				   FIELD_PREP(LN_TX_SER_40BIT_EN_HBR2_MASK, 0x1));
 > 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-edp.c b/drivers/phy/qualcomm/phy-qcom-edp.c
-> index 13feab99feec..7372de05a0b8 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-edp.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-edp.c
-> @@ -758,6 +758,7 @@ static const struct phy_ver_ops qcom_edp_phy_ops_v6 = {
->   	.com_power_on		= qcom_edp_phy_power_on_v6,
->   	.com_resetsm_cntrl	= qcom_edp_phy_com_resetsm_cntrl_v6,
->   	.com_bias_en_clkbuflr	= qcom_edp_com_bias_en_clkbuflr_v6,
-> +	.com_clk_fwd_cfg	= qcom_edp_com_clk_fwd_cfg_v4,
->   	.com_configure_pll	= qcom_edp_com_configure_pll_v6,
->   	.com_configure_ssc	= qcom_edp_com_configure_ssc_v6,
->   };
 
 Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 
