@@ -4,79 +4,173 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 68347CF45DB
-	for <linux-phy@archiver.kernel.org>; Mon, 12 Jan 2026 23:21:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4D9A2D29DC7
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Jan 2026 03:38:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=//2uLqBeIk4n8O1i/KAlVd/p1DxmmBtfEk5u3/7UTOY=; b=kY01nHkdMtgtir
-	0QCDI8qmJ9CaM8VQE0FZHt2EdnHkq7dXkItAxQwipkcPKM+Rq2faPWyHbqYH1Za43/lYNwS8AXGr6
-	oHFWUs282if946Q5HTjErVZhK2Ci+jg2ViUp8yPs9ewda4BtdkmaHszNBR5faJzI98iD1QTbK3KHK
-	yKfWryxBya/oHgAhGtGfchx8fPCk6ojT0XjTrPzsWOGx1NJEUu+XYhkM+QAlwLLBILBZp77HF6qsn
-	Uo+M1D1zJgfxgVPELEHCu9JRcQotwfIjH/22AW5hU9Zy+oS91+JhdyzTMNLBHuQ+U9Fr93CI4i+HR
-	qBj85TIJrXehB9Qrrpzg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
+	References:Cc:To:Subject:Date:Message-ID:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=dTgJyxF6S5cy/1mfpFOTA3CYLrVL4hETp5LsN6ewIUk=; b=t2+FrMuNVct0mMIOiTJ5HhXWjA
+	tJWtuoK7c/zlB+GBWyGLW4cRfIo3rgNyGC+/kaUoEk1FwGh00QmvDjPQQbzPqInhW0MCLFzLlsjfr
+	HafwiCsyuBFSQsWP9akt1HI+qgmwyZMOjgOiUN2AI+uUO1dHFRfr82iCBLlr2N54wRUeQ+ivNE9iD
+	UvQ6B2Jm1RMKKcNNLbP/rhQngJArvo+2bGbXucUlwcOgW9YgkJQEOs9amKZOqKWHCMVF9i3WT85U2
+	2HIXz3egPYEui+H6A4XYoKf46uP7Uq74Jpjcif4zYn74KdFZ1ZsGQkgHVrfC8treK/XRUu+espL8r
+	em0xQCkw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vfRE6-00000006IPx-3dL3;
-	Mon, 12 Jan 2026 23:21:34 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1vfVF3-00000006UcI-0ETD;
+	Tue, 13 Jan 2026 03:38:49 +0000
+Received: from mail-westusazlp170120002.outbound.protection.outlook.com ([2a01:111:f403:c001::2] helo=SJ2PR03CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vfRDs-00000006I6V-3rqW;
-	Mon, 12 Jan 2026 23:21:21 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Cc:To:In-Reply-To:References:
-	Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
-	From:Sender:Reply-To:Content-ID:Content-Description;
-	bh=DEqfV2UwTgpnlrzjOytrNN4Kua0QujQDwIka3kvrsqk=; b=oxwj13ASPon9JpF8HTw9Wof21F
-	tVHoR/BpTbh8HKTW0oJyn3brBzPupz/074mSFlTzwQkPt+rmBo+UKv37B2Z+LIoQhTS0uVqVf46qv
-	MfPtwLZ1QWTGXtbYfZPGMvLT1H2iHL6GCTXK1RB+HGnI3fhnk/J1SX+zpVeUXqcnp5dogTWFdBBPL
-	hiG0MZn9U7bHDbLJGBxS2UQlOoWBNh7Z/LkFom6sjU9d9SjH/jWseIR8JbOcnwwYqgxi12+xCEPHd
-	vhde2yh5jlQxipJ/gk0abDOfRHKegEzZji59eY1L2aZqH6H6gIravaBPW5MYaUvxb272/5ee0BUFn
-	WB83xG3Q==;
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vfRDh-00000001oPU-2EkI;
-	Mon, 12 Jan 2026 23:21:17 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1768260067;
-	bh=2Nc96hv08Y4Jh+HxFE/ihb9BgcOpL6vNNN5rkOwcsCs=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=Gp/082wDI6Sa/QjGc8/bhLRVN3L2GAMbjAZH8Qg2mM2OZapuOQixSbmvzaf1AeJnw
-	 QnymmVlJfpo/zRJNJuV773tALU1Lxd9ywAgUKWPAYhIh7c4122jB7B8nXKz+5p4gi3
-	 V19CsFfdCZ78nUzJv+r/NIJoSrEh1fUnMapVQaAI2SLalvtxpxcWm4klaWzy4z4xci
-	 YBrV12//GiC8X8QXtLB5wewvXULjaFKm8cQ4BLzHMTmQdrubckkI1a4WNskN7i15jj
-	 fyv5Fy9hk3p5SOmyu7UgZ6x0CF6NunlXmcELeDfFsLdt4RTeAQ6EcoBJnxVFiD16gP
-	 UaNG0xpVQytMA==
-Received: from localhost (unknown [82.79.138.145])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (prime256v1) server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: cristicc)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 7889917E1513;
-	Tue, 13 Jan 2026 00:21:07 +0100 (CET)
-From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-Date: Tue, 13 Jan 2026 01:20:58 +0200
-Subject: [PATCH v6 11/11] phy: rockchip: samsung-hdptx: Add HDMI 2.1 FRL
- support
+	id 1vfVEz-00000006UbQ-46n8;
+	Tue, 13 Jan 2026 03:38:47 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=cxWwPCoYqrh4+pTTxPki3meXcHZdT2nlPPvGTtSxeTZQEitEF55Qwn+gBR6ffpQ71QW99HyOA4ny8j5BrpwAqyfjroxS0TSh5URHwTKauaTnKWz1OqlMrIi5+odeVoSAxtYZYL3UMoTAi1OEfN4iHpKqcQyapMo8dTmQJyoG9CTnvmHo38vweEt96lVcntPsRZMayKJYNQeQHj5tiHcE122AnZdD823OHTp98Epv4nbEY2W4dnekwCFTv74KFh1uSxq9YRHh/d2BOY6puHLeZxc/frMXPjmowlUaxgYC7szHPCzaTlXGilSiuiQkv7gjxblEKhiGOmQKBbSgkvgHKw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=mkn174s9Gi7/x7kveHTMV+IY0L+Fse2qkREHmFR4lEs=;
+ b=Ij5CV+xEpIxkvTvBVHydNZlyIEq5EKLG63AcbZbqpOqOc38p1gFT7k2Z38QW3qbhhobUO36Uiqj+ipqQ/xjRKbdJywHV9GnfEKkwHcpgijySxdXUdC2n4M3km9X4r62cbYuKQUQm+Cyi2hob0pvF0ujHlQprcDCxv+N964T96JIJq0qiX8pOPh3bHQ0/L48sSh/KRQmttJnTOyyrrMayRNSMsiennVEzwcWaHGOHOl5jFyFNY7kA4VUN8La6EsO7K58UpmLxrfPxlMw9KotM0LO2sTM7ocn0TcAXgMxUuTa9fxdiD4li3fFm30xThHd/zf6eLdWziMb4QesFFFDVew==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=axiado.com; dmarc=pass action=none header.from=axiado.com;
+ dkim=pass header.d=axiado.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=axiado.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=mkn174s9Gi7/x7kveHTMV+IY0L+Fse2qkREHmFR4lEs=;
+ b=fp1coUA17X0wmlGKD6w5lZuhyJjBu/olaF4amSnl6PWIV5LcS4ATkrVPac7rJLlfyCexo2mVm3ioy4RCMJ1TnsB8m8zgO2PZekvfqTYUZ5/aobKmJTi6TdlJ7AeqeVhgZ31MU31mxA9pvBfXITWFLikMlyHspxncyGbU+D4SJI5rl7ZXRR1kT9T4tB0BNsQfn1JzhkX4BhinbLGwN1qG/482FpbjHL9Q/rDxe9UQr9o62j1gR2w+RA8JzbA/HUznbGBFN8AaQMRs4gs2Q3caXLZDxbAbi24gNGsJ6X/DallYOV8aBrXBBnsf86mnJYmGSh8na+qYJLQ5xGuTIbPpZQ==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=axiado.com;
+Received: from PH0PR18MB4558.namprd18.prod.outlook.com (2603:10b6:510:ac::13)
+ by PH0PR18MB4005.namprd18.prod.outlook.com (2603:10b6:510:2d::11) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9499.7; Tue, 13 Jan
+ 2026 03:38:40 +0000
+Received: from PH0PR18MB4558.namprd18.prod.outlook.com
+ ([fe80::7a75:75a5:694b:2311]) by PH0PR18MB4558.namprd18.prod.outlook.com
+ ([fe80::7a75:75a5:694b:2311%4]) with mapi id 15.20.9499.005; Tue, 13 Jan 2026
+ 03:38:40 +0000
+Message-ID: <0642a1b1-bdb8-4c04-bfa2-1253044e4b77@axiado.com>
+Date: Tue, 13 Jan 2026 11:38:32 +0800
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 3/4] MAINTAINERS: Add Axiado AX3000 eMMC PHY driver
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Cc: SriNavmani A <srinavmani@axiado.com>,
+ Prasad Bolisetty <pbolisetty@axiado.com>, Vinod Koul <vkoul@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, openbmc@lists.ozlabs.org
+References: <20260109-axiado-ax3000-add-emmc-phy-driver-support-v1-0-dd43459dbfea@axiado.com>
+ <20260109-axiado-ax3000-add-emmc-phy-driver-support-v1-3-dd43459dbfea@axiado.com>
+ <20260111-watchful-pigeon-of-brotherhood-6ada05@quoll>
+Content-Language: en-US
+From: Tzu-Hao Wei <twei@axiado.com>
+In-Reply-To: <20260111-watchful-pigeon-of-brotherhood-6ada05@quoll>
+X-ClientProxiedBy: SN6PR2101CA0010.namprd21.prod.outlook.com
+ (2603:10b6:805:106::20) To PH0PR18MB4558.namprd18.prod.outlook.com
+ (2603:10b6:510:ac::13)
 MIME-Version: 1.0
-Message-Id: <20260113-phy-hdptx-frl-v6-11-8d5f97419c0b@collabora.com>
-References: <20260113-phy-hdptx-frl-v6-0-8d5f97419c0b@collabora.com>
-In-Reply-To: <20260113-phy-hdptx-frl-v6-0-8d5f97419c0b@collabora.com>
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Heiko Stuebner <heiko@sntech.de>, Algea Cao <algea.cao@rock-chips.com>, 
- Dmitry Baryshkov <lumag@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>
-Cc: kernel@collabora.com, linux-phy@lists.infradead.org, 
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- linux-rockchip@lists.infradead.org
-X-Mailer: b4 0.14.3
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PH0PR18MB4558:EE_|PH0PR18MB4005:EE_
+X-MS-Office365-Filtering-Correlation-Id: 8da3fc17-b22e-4d34-72a5-08de52553e2f
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|366016|7416014|42112799006|1800799024;
+X-Microsoft-Antispam-Message-Info: =?utf-8?B?OVdsNzI4dmpQY2R0bzdxU2hQTFNvYWYwejJ6RlBSOXJPU2N4Z0IzdnYwdDZ2?=
+ =?utf-8?B?NG1IbjY5TjBYRitXaUszZjgyb1Zhd1U4YjJpN3JFZUhVK2JvYVVWeDBQZ3pk?=
+ =?utf-8?B?bUxEeFd0K0NvblQ3RGNBSDNlZDkyeEJ5MWVnTmdoYmF5ZForMEt6bCs0a1Zh?=
+ =?utf-8?B?ZHFGcDR6S2hHemxxY2xnQXhpREx1YUxJUEJJVzUxbDhERXRQWE10MVlHTVk2?=
+ =?utf-8?B?RE96T292OGlMWm1UZ3ZBUVRvRUhkVGxWVlNLdDZwVjlnRWNiOFZoaXdhUzUz?=
+ =?utf-8?B?eEgza0VPcUN0OVgzdXFaL3Q1NlU0OTlCdDg1eThwanUyS0Nuc2g5dmdwVmg3?=
+ =?utf-8?B?WmsyNldkdFVxckVwSGlPUW9CQlUySUM5QnluV01BRnlTM0k3MUJlSzB4Ykxz?=
+ =?utf-8?B?UDl1dHIzeGlMejNGQ2lBSUlkZStJQ3ZkL2RUNldCdnpMdTRleEFqU2NrcXFE?=
+ =?utf-8?B?N3lGSG5kWkcvNVkrZGxGeUFacUVOZGhuSDNRd09lRTBJWVRZTjIzVXNJM0NC?=
+ =?utf-8?B?S1JodDNSdUlYMlhYZEdRTVNueWhlVTFjdWN2cnFIMnlPRTM1ZlNkNDhiNEtN?=
+ =?utf-8?B?QnVLdDQ3cFNtWmdTaDZ2Q0JiNHlPeFJvWFdYNXBxQm45b3A1ejJNaC91N3d3?=
+ =?utf-8?B?MjdLRjFkSWYzMS9Jc2c1VUs4SUMwMFU0MzN1SGRoSmFVS1MyYXdtYnVoaTli?=
+ =?utf-8?B?OHpFQUhFeElnOWZPSGx5RHJ2eW1pWFBzb2tqbWZicVg3TFk0MU4vaFJWYk1Z?=
+ =?utf-8?B?VC9ZalJyWWpJMUJoY0RIR2FJcFk3SnpOejNZZ2pNd3M5NjlXbitKN2RQbVZO?=
+ =?utf-8?B?N2pIckZHaTFlQUhCbmFici9pYUJRbnlDOVhyelJJOXlYbjFtQzhzdG00WGtC?=
+ =?utf-8?B?QllLS0RBVUlCQjcybEh2RG4yZmdYeG5zRVJtRmQ1OStDdGJuYTBiWUUwK1VW?=
+ =?utf-8?B?TDVYQWVPc1ZncloxM2JBcHcvZmhBZjhOdzJwamNhVlArRDhwelhzczI1d0dE?=
+ =?utf-8?B?VG95aHpuRGdNU2xieUNQbEFJTVRubTh0dzhwOTVBZkVuT3k1dFdGb21tLzd0?=
+ =?utf-8?B?MlhxNTExbFBXbXFMM1Y3c0IrUE8rVmtsczJYVEE5aFBKVDFDMVNWVkNEamh3?=
+ =?utf-8?B?WG5wYjByRHplWmlzT004Nm9EbFRSRjI4VjlIVlZsS1YvZEt4SUtPbU1LM3NR?=
+ =?utf-8?B?c3huL3IvY1QxWnlZeGFhWEFuMXVtSlZWYml1LzR0NnJ0OE9ScDJIaXFuY1lY?=
+ =?utf-8?B?SVRIR1greTNOUEppUWNSSkNJTCtkVWp3WVprRm5OaDVBN1Z4dkhTTmJkUlFF?=
+ =?utf-8?B?SkEra05YNG1ibm1ScEZFNkNpbjlwcnRRL1FZNS92S0lvdmZabU5BVms3bGMx?=
+ =?utf-8?B?RkFBMUxlcjlQYlN1b1FBcVcreU5CSTVJOUxXYWxSNHV3a2hlbnNDRUFXT1lY?=
+ =?utf-8?B?cHJrdnZidnV4WUJxWkpCY0Y4SWJOZEtxMjNPYmlhN1g2d0gvTXhlVHM4aVZQ?=
+ =?utf-8?B?OTRsL3BJTTE1d0ZMOTI0UTVGdGo1Rzd5MlJrZ2tESWJRWFVmeEZndEtJSnNq?=
+ =?utf-8?B?bGJEbWVoNFdkRlBQdXZxaUtFY2FSNXVFSklpS1NjTEtMS0Y4bFE1K3dLU0VS?=
+ =?utf-8?B?OHdsbTJDeENvWkdBT2Z6THgvUXdVQWo0SVpYMGNhazdLZzE2SmtwdWRVQWtI?=
+ =?utf-8?B?azc4RUxDaGovbDdaMHB2ZDZ2amxaQUhDMmdwSnhLR3FiN0JuUVZTYURUVWp0?=
+ =?utf-8?B?bzd6cTdldFJBZi9hL0VJVVAzT3ZOM3RxOTN0NnZTMTZER2Yva0NHYnZNYUNl?=
+ =?utf-8?B?SXFMSk5xMFRSN20vaEx5eFQrN0s3MEovdFBlWkZ5MERRRFBDN0kvN0JpakFp?=
+ =?utf-8?B?aUZCREROcHFLcUkvSHc1WUo3NlZveDh5dEtndCtBWWpCY2g3Q210L2h4NlRJ?=
+ =?utf-8?B?QWY4UkJ5SVFtN0FQTEtSRWhkQU9jZmUwc1VJWGE3TmIzckJIZ1AwbXpKbk1q?=
+ =?utf-8?B?bHNsMXR4OC93PT0=?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PH0PR18MB4558.namprd18.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(366016)(7416014)(42112799006)(1800799024);DIR:OUT;SFP:1102;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?Zzd1Z3A0dmdxVjZMM3Y3NjRjZm1TN1FFL1VPdG5nM1NvdFBSQ0h4K0Y1c3Zm?=
+ =?utf-8?B?eWwySyt1cE9pTFdrczY3UU1VTFdJMW5UOEw5ZTRBdVFNSnJEMk5iUnNlNTBW?=
+ =?utf-8?B?WUd2YTh1WTIvT2dsZ1RmTEhXdk1VdmJaWTRmS0oxYzBTVS9tM3lBWVlMa1I0?=
+ =?utf-8?B?WjBhUlVkVGhzaTBVeEVFM1A5ZXpqNmFNeGFlZVlDdnFFZUtiMkpoUkR4VTZk?=
+ =?utf-8?B?ZDF6c3lXaG5aNnpmUEJyb3RHc04za0EvRHEyenJoYVl6N2prb1BaZFE2b2R0?=
+ =?utf-8?B?QTB5c3VmOEt6RGFBTzlieVZRNG8wUnFUV3g4Y1hVejNxMll4RGduZkVpTGFC?=
+ =?utf-8?B?ZFRVNjNmUkJRakRYSVJKeURMaXB1K0dlbXpVWVc1eXZxYk01N0lXRk5OUVMx?=
+ =?utf-8?B?Ri96WVJ1MkR1SU1aU1J2aVJHSGFMa1JnTndBUU04RzNaYk5sVVFUZ3ozNk1v?=
+ =?utf-8?B?SWlKbWtkMWx3WmtnbnFGenNIUG8rOGk2blM3SmRUdzhtekRxY1NPLzNzRWNG?=
+ =?utf-8?B?bnBvZW4xUWpUUWxra3FWeldlODFQeWwxL2Z5cytJbWpvTVNBaUVNcGcxMEpO?=
+ =?utf-8?B?ZGdSRmYwdE50SG1xNEpPK00xc3hGZ04wYlRMcU03dkZQdHg4ZkJSbUR4TnJI?=
+ =?utf-8?B?WWkzNzBSSm1yK3hpZXZzRXRNNkIzVC96eEI0U3VtNHVkQi9VQVIzdGF4QW9J?=
+ =?utf-8?B?YlM0Kzk0ejNMa3BBSXBqcDNLM1BsRnRuNk92L2h2UFlKbm0yejJmdSt2dVVy?=
+ =?utf-8?B?R01xVGhMd056b3VqMm4zdDhaSm44RzJvV3ZvSVQzVHRPbW45OFR3aGNhbFZR?=
+ =?utf-8?B?Wm5GYllDRy9zVHkwYno4S2ZrU1lDeXFyZXBGemtRTEQ2UWdHTXQ0dGFRTjdl?=
+ =?utf-8?B?aEd3RjVremhDQUJqK1BlYWVHY2xlV2FyN1hHb0FMb3VGcXdsZzlDb0h1Z3A5?=
+ =?utf-8?B?OUhTSFJoRU9jWjdGWUpSbjA4RGJNRC9DL0prdzBwZ05WZFZReUFjMThxUGVB?=
+ =?utf-8?B?VjFqKzVka3g4RXF2MkwrTGdXVGtCSWpja0FFWE1LNW9ZSFo2Q29yK1FGRENq?=
+ =?utf-8?B?amJnYnc1dkhlb2ozdEJPMHhhV2xPNm1qV3grRmJCd0hydEFmMlJQM0w4VVhB?=
+ =?utf-8?B?MmI1c05LaFVrTGZTOHB5aHhpaG9zMnkrL3c0bmhZUmFWNUhjdUFVbmF5S0VL?=
+ =?utf-8?B?bDJjUGFIWmM5anpuamZiMlc3UU5oQlA0cWNaRmxDWmVMck5ObktrcGhWWmlw?=
+ =?utf-8?B?Y2ZDRjNMUWQ1bWhNNUIwUmxZRWplQTd3TEN3aXBEMWkzdndMZzJxZThublBU?=
+ =?utf-8?B?WitpWkVNV0JtVzFmYVM1K2RMUG9qanVseWQ5WWNxYXRRR1BiY0VmSlg2Qmsr?=
+ =?utf-8?B?dVlsYWRzdzFqQjUzaG9DaWVJTWRoaWxxWEtON0JEMnJKZS9rVlpOY3p5WGZH?=
+ =?utf-8?B?dmZtUnZXWWJkQ0EwaDR0SE9CVXNUK2NPeUluOXBEUnUrS1JGK0lkTVZzQytj?=
+ =?utf-8?B?Z3JFa3hmVGV6dDlhRXpsaVh2ZlpYMy9jZEpyVUpKQTVNZHVTcUVKZlhpTmtr?=
+ =?utf-8?B?c1hwaXFDL2h3TnVrSHRYeUVJSHMrWmRreHJxenVjOUo5SkIzckxKck1ZRXZL?=
+ =?utf-8?B?Zi9IS1Fzclh4NUVFNFg3eVlyYU52NHBaZ0VJcmdFOFJTN2pHMk54RVBoTTll?=
+ =?utf-8?B?M0tNOWgzY2o4R0t0em5jV3BNRkJmNlQxRWhHYUtyZzhyZktmaWUwOXFRaHlS?=
+ =?utf-8?B?ampNYjFRVUhoQjZSMFBtM1dFSDBQaFFxMlBWdWhESzUvaDdqaEZlS3daYlJm?=
+ =?utf-8?B?MXRpanhvVzhLeUlMdGM2WG40LzJUL3hxSWlsQmJPZlRLeG5scmxGdThrSUMz?=
+ =?utf-8?B?UGluMGkzSUt3eTU5bUs2d3I3czVKUis3YTFSUUVIcnlpRHBWTUVzUk9pbDUz?=
+ =?utf-8?B?a2QwZCtSRjlKSDkrS2p3MVpnNDdwdzJVTlFOQlRBeStUWFdYcXlNNkljU3B4?=
+ =?utf-8?B?SDVIOHg3dTVRUWJmbGRpK3ZoRWhBYjc1U04vcUhpbXVkYk1NeUZpa0xzWTNJ?=
+ =?utf-8?B?ZDNUckVLUDBYWDdwYzZ4RWNlNW5OK2JpbkdqL3Rid1ZOb3U2MS9jN3F3enVH?=
+ =?utf-8?B?M0d0TE5XTXRGV3MrZXhZMXdOSmFPVmhlWEJ3dmVvUUZIWUFsSWgwcE9QSGtO?=
+ =?utf-8?B?SGdxMSs3aDVNWDNtV2htMDdjWnExZkprbWFxb050dzlILzNkT0p6SGFYL3V3?=
+ =?utf-8?B?NmlRb0w3cExjSkUxcVhCbm53MDlKb0VlZm1FdGN4R2U0bzhrcnluWGY4T3I5?=
+ =?utf-8?B?RXB0cjV3Y0c1VzhvVzJjS3MzSUhhK3orNlFiLzB0dzJtUEdsK0Vzdz09?=
+X-OriginatorOrg: axiado.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 8da3fc17-b22e-4d34-72a5-08de52553e2f
+X-MS-Exchange-CrossTenant-AuthSource: PH0PR18MB4558.namprd18.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Jan 2026 03:38:40.4053
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: ff2db17c-4338-408e-9036-2dee8e3e17d7
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: +ZPz6BE6KO19WWR5Kv0QCph9I52KlIkTLJLPvqG+FSoS7fKC0X3riaSvvhLjIE7i
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PH0PR18MB4005
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260112_232110_477706_F8C427D6 
-X-CRM114-Status: GOOD (  18.66  )
+X-CRM114-CacheID: sfid-20260112_193846_039486_3F3DC88F 
+X-CRM114-Status: UNSURE (   7.55  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,652 +187,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The PHY is capable of handling four HDMI 2.1 Fixed Rate Link (FRL)
-lanes, and each one can operate at any of the rates of 3Gbps, 6Gbps,
-8Gbps, 10Gbps or 12Gbps.
+On 1/11/2026 6:40 PM, Krzysztof Kozlowski wrote:
+>>
+>> +AXIADO EMMC PHY DRIVER
+>> +M:   SriNavmani A <srinavmani@axiado.com>
+> 
+> No activity:
+> https://lore.kernel.org/all/?q=f%3Asrinavmani%40axiado.com
+> 
+>> +M:   Tzu-Hao Wei <twei@axiado.com>
+>> +M:   Prasad Bolisetty <pbolisetty@axiado.com>
+> 
+> No reviews:
+> https://lore.kernel.org/all/?q=f%3Apbolisetty%40axiado.com
+> 
+> Are these maintainers going to actually maintain code? At least Prasad
+> should provide proper review now.
+> 
+I'll ask them to Ack/Review the patches. 
 
-Add the necessary driver changes to support the feature.
+>> +L:   linux-phy@lists.infradead.org (moderated for non-subscribers)
+>> +S:   Maintained
+>> +F:   Documentation/devicetree/bindings/phy/axiado,ax3000-emmc-phy.yaml
+> 
+>> +F:   drivers/phy/axiado/Kconfig
+>> +F:   drivers/phy/axiado/phy-axiado-emmc.c
+> 
+> If you are a maintainer of Kconfig you imply you maintain everything, so
+> simply entire directory...
+> 
+Yes, we will maintain everything in drivers/phy/axiado/
 
-Co-developed-by: Algea Cao <algea.cao@rock-chips.com>
-Signed-off-by: Algea Cao <algea.cao@rock-chips.com>
-Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
----
- drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 441 ++++++++++++++++++++--
- 1 file changed, 418 insertions(+), 23 deletions(-)
-
-diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-index c9942aaf2766..2d973bc37f07 100644
---- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-+++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-@@ -22,6 +22,7 @@
- #include <linux/reset.h>
- 
- #define GRF_HDPTX_CON0			0x00
-+#define LC_REF_CLK_SEL			BIT(11)
- #define HDPTX_I_PLL_EN			BIT(7)
- #define HDPTX_I_BIAS_EN			BIT(6)
- #define HDPTX_I_BGR_EN			BIT(5)
-@@ -322,6 +323,9 @@
- 
- #define HDMI14_MAX_RATE			340000000
- #define HDMI20_MAX_RATE			600000000
-+#define FRL_3G3L_RATE			900000000
-+#define FRL_6G3L_RATE			1800000000
-+#define FRL_8G4L_RATE			3200000000
- 
- enum dp_link_rate {
- 	DP_BW_RBR,
-@@ -329,6 +333,22 @@ enum dp_link_rate {
- 	DP_BW_HBR2,
- };
- 
-+struct lcpll_config {
-+	unsigned long long rate;
-+	u8 lcvco_mode_en;
-+	u8 pi_en;
-+	u8 clk_en_100m;
-+	u8 pms_mdiv;
-+	u8 pms_mdiv_afc;
-+	u8 pms_pdiv;
-+	u8 pms_refdiv;
-+	u8 pms_sdiv;
-+	u8 sdm_deno;
-+	u8 sdm_num_sign;
-+	u8 sdm_num;
-+	u8 sdc_n;
-+};
-+
- struct ropll_config {
- 	unsigned long long rate;
- 	u8 pms_mdiv;
-@@ -374,6 +394,7 @@ struct rk_hdptx_phy_cfg {
- };
- 
- struct rk_hdptx_hdmi_cfg {
-+	enum phy_hdmi_mode mode;
- 	unsigned long long rate;
- 	unsigned int bpc;
- };
-@@ -401,6 +422,16 @@ struct rk_hdptx_phy {
- 	unsigned int lanes;
- };
- 
-+static const struct lcpll_config rk_hdptx_frl_lcpll_cfg[] = {
-+	/*                                |              pms             |      sdm       |      */
-+	/*         rate, lcen, pien, cken, mdiv, mdafc, pdiv, rdiv, sdiv, deno, nsig, num, sdcn, */
-+	{ 4800000000ULL,    1,    0,    0,  125,   125,    1,    1,    0,    1,    0,   0,    2, },
-+	{ 4000000000ULL,    1,    1,    0,  104,   104,    1,    1,    0,    9,    0,   1,    1, },
-+	{ 2400000000ULL,    1,    0,    0,  125,   125,    1,    1,    1,    1,    0,   0,    2, },
-+	{ 1800000000ULL,    1,    0,    0,  125,   125,    1,    1,    1,    1,    0,   0,    2, },
-+	{  900000000ULL,    1,    0,    0,  125,   125,    1,    1,    3,    1,    0,   0,    2, },
-+};
-+
- static const struct ropll_config rk_hdptx_tmds_ropll_cfg[] = {
- 	/*             |              pms             |        sdm         |     sdc     | */
- 	/*        rate, mdiv, mdafc, pdiv, rdiv, sdiv, en, deno, nsig, num,  n, num, deno, */
-@@ -500,6 +531,110 @@ static const struct reg_sequence rk_hdptx_common_cmn_init_seq[] = {
- 	REG_SEQ0(CMN_REG(009a), 0x11),
- };
- 
-+static const struct reg_sequence rk_hdptx_frl_lcpll_cmn_init_seq[] = {
-+	REG_SEQ0(CMN_REG(0011), 0x00),
-+	REG_SEQ0(CMN_REG(0017), 0x00),
-+	REG_SEQ0(CMN_REG(0025), 0x10),
-+	REG_SEQ0(CMN_REG(0026), 0x53),
-+	REG_SEQ0(CMN_REG(0027), 0x01),
-+	REG_SEQ0(CMN_REG(0028), 0x0d),
-+	REG_SEQ0(CMN_REG(002e), 0x02),
-+	REG_SEQ0(CMN_REG(002f), 0x0d),
-+	REG_SEQ0(CMN_REG(0030), 0x00),
-+	REG_SEQ0(CMN_REG(0031), 0x20),
-+	REG_SEQ0(CMN_REG(0032), 0x30),
-+	REG_SEQ0(CMN_REG(0033), 0x0b),
-+	REG_SEQ0(CMN_REG(0034), 0x23),
-+	REG_SEQ0(CMN_REG(003d), 0x00),
-+	REG_SEQ0(CMN_REG(0042), 0xb8),
-+	REG_SEQ0(CMN_REG(0046), 0xff),
-+	REG_SEQ0(CMN_REG(0048), 0x44),
-+	REG_SEQ0(CMN_REG(004e), 0x14),
-+	REG_SEQ0(CMN_REG(0051), 0x00),
-+	REG_SEQ0(CMN_REG(0055), 0x00),
-+	REG_SEQ0(CMN_REG(0059), 0x11),
-+	REG_SEQ0(CMN_REG(005a), 0x03),
-+	REG_SEQ0(CMN_REG(005c), 0x05),
-+	REG_SEQ0(CMN_REG(005d), 0x0c),
-+	REG_SEQ0(CMN_REG(005e), 0x07),
-+	REG_SEQ0(CMN_REG(0060), 0x01),
-+	REG_SEQ0(CMN_REG(0064), 0x07),
-+	REG_SEQ0(CMN_REG(0065), 0x00),
-+	REG_SEQ0(CMN_REG(0069), 0x00),
-+	REG_SEQ0(CMN_REG(006b), 0x04),
-+	REG_SEQ0(CMN_REG(006c), 0x00),
-+	REG_SEQ0(CMN_REG(0070), 0x01),
-+	REG_SEQ0(CMN_REG(0073), 0x30),
-+	REG_SEQ0(CMN_REG(0074), 0x00),
-+	REG_SEQ0(CMN_REG(0081), 0x09),
-+	REG_SEQ0(CMN_REG(0086), 0x01),
-+	REG_SEQ0(CMN_REG(0087), 0x0c),
-+	REG_SEQ0(CMN_REG(0089), 0x02),
-+	REG_SEQ0(CMN_REG(0095), 0x00),
-+	REG_SEQ0(CMN_REG(0097), 0x00),
-+	REG_SEQ0(CMN_REG(0099), 0x00),
-+	REG_SEQ0(CMN_REG(009b), 0x10),
-+};
-+
-+static const struct reg_sequence rk_hdptx_frl_lcpll_ropll_cmn_init_seq[] = {
-+	REG_SEQ0(CMN_REG(0008), 0xd0),
-+	REG_SEQ0(CMN_REG(0011), 0x00),
-+	REG_SEQ0(CMN_REG(0017), 0x00),
-+	REG_SEQ0(CMN_REG(001e), 0x35),
-+	REG_SEQ0(CMN_REG(0020), 0x6b),
-+	REG_SEQ0(CMN_REG(0021), 0x6b),
-+	REG_SEQ0(CMN_REG(0022), 0x11),
-+	REG_SEQ0(CMN_REG(0024), 0x00),
-+	REG_SEQ0(CMN_REG(0025), 0x10),
-+	REG_SEQ0(CMN_REG(0026), 0x53),
-+	REG_SEQ0(CMN_REG(0027), 0x15),
-+	REG_SEQ0(CMN_REG(0028), 0x0d),
-+	REG_SEQ0(CMN_REG(002a), 0x09),
-+	REG_SEQ0(CMN_REG(002b), 0x01),
-+	REG_SEQ0(CMN_REG(002c), 0x02),
-+	REG_SEQ0(CMN_REG(002d), 0x02),
-+	REG_SEQ0(CMN_REG(002e), 0x0d),
-+	REG_SEQ0(CMN_REG(002f), 0x61),
-+	REG_SEQ0(CMN_REG(0030), 0x00),
-+	REG_SEQ0(CMN_REG(0031), 0x20),
-+	REG_SEQ0(CMN_REG(0032), 0x30),
-+	REG_SEQ0(CMN_REG(0033), 0x0b),
-+	REG_SEQ0(CMN_REG(0034), 0x23),
-+	REG_SEQ0(CMN_REG(0037), 0x00),
-+	REG_SEQ0(CMN_REG(003d), 0xc0),
-+	REG_SEQ0(CMN_REG(0042), 0xb8),
-+	REG_SEQ0(CMN_REG(0046), 0xff),
-+	REG_SEQ0(CMN_REG(0048), 0x44),
-+	REG_SEQ0(CMN_REG(004e), 0x14),
-+	REG_SEQ0(CMN_REG(0054), 0x19),
-+	REG_SEQ0(CMN_REG(0058), 0x19),
-+	REG_SEQ0(CMN_REG(0059), 0x11),
-+	REG_SEQ0(CMN_REG(005b), 0x30),
-+	REG_SEQ0(CMN_REG(005c), 0x25),
-+	REG_SEQ0(CMN_REG(005d), 0x14),
-+	REG_SEQ0(CMN_REG(005e), 0x0e),
-+	REG_SEQ0(CMN_REG(0063), 0x01),
-+	REG_SEQ0(CMN_REG(0064), 0x0e),
-+	REG_SEQ0(CMN_REG(0068), 0x00),
-+	REG_SEQ0(CMN_REG(0069), 0x02),
-+	REG_SEQ0(CMN_REG(006b), 0x00),
-+	REG_SEQ0(CMN_REG(006f), 0x00),
-+	REG_SEQ0(CMN_REG(0073), 0x02),
-+	REG_SEQ0(CMN_REG(0074), 0x00),
-+	REG_SEQ0(CMN_REG(007a), 0x00),
-+	REG_SEQ0(CMN_REG(0081), 0x09),
-+	REG_SEQ0(CMN_REG(0086), 0x11),
-+	REG_SEQ0(CMN_REG(0087), 0x0c),
-+	REG_SEQ0(CMN_REG(0089), 0x00),
-+	REG_SEQ0(CMN_REG(0095), 0x03),
-+	REG_SEQ0(CMN_REG(0097), 0x00),
-+	REG_SEQ0(CMN_REG(0099), 0x00),
-+	REG_SEQ0(CMN_REG(009b), 0x10),
-+	REG_SEQ0(CMN_REG(009e), 0x03),
-+	REG_SEQ0(CMN_REG(009f), 0xff),
-+	REG_SEQ0(CMN_REG(00a0), 0x60),
-+};
-+
- static const struct reg_sequence rk_hdptx_tmds_cmn_init_seq[] = {
- 	REG_SEQ0(CMN_REG(0008), 0x00),
- 	REG_SEQ0(CMN_REG(0011), 0x01),
-@@ -553,6 +688,16 @@ static const struct reg_sequence rk_hdptx_common_sb_init_seq[] = {
- 	REG_SEQ0(SB_REG(0117), 0x00),
- };
- 
-+static const struct reg_sequence rk_hdptx_frl_lntop_init_seq[] = {
-+	REG_SEQ0(LNTOP_REG(0200), 0x04),
-+	REG_SEQ0(LNTOP_REG(0201), 0x00),
-+	REG_SEQ0(LNTOP_REG(0202), 0x00),
-+	REG_SEQ0(LNTOP_REG(0203), 0xf0),
-+	REG_SEQ0(LNTOP_REG(0204), 0xff),
-+	REG_SEQ0(LNTOP_REG(0205), 0xff),
-+	REG_SEQ0(LNTOP_REG(0206), 0x05),
-+};
-+
- static const struct reg_sequence rk_hdptx_tmds_lntop_highbr_seq[] = {
- 	REG_SEQ0(LNTOP_REG(0201), 0x00),
- 	REG_SEQ0(LNTOP_REG(0202), 0x00),
-@@ -624,6 +769,38 @@ static const struct reg_sequence rk_hdptx_common_lane_init_seq[] = {
- 	REG_SEQ0(LANE_REG(0620), 0xa0),
- };
- 
-+static const struct reg_sequence rk_hdptx_frl_lane_init_seq[] = {
-+	REG_SEQ0(LANE_REG(0312), 0x3c),
-+	REG_SEQ0(LANE_REG(0412), 0x3c),
-+	REG_SEQ0(LANE_REG(0512), 0x3c),
-+	REG_SEQ0(LANE_REG(0612), 0x3c),
-+	REG_SEQ0(LANE_REG(0303), 0x2f),
-+	REG_SEQ0(LANE_REG(0403), 0x2f),
-+	REG_SEQ0(LANE_REG(0503), 0x2f),
-+	REG_SEQ0(LANE_REG(0603), 0x2f),
-+	REG_SEQ0(LANE_REG(0305), 0x03),
-+	REG_SEQ0(LANE_REG(0405), 0x03),
-+	REG_SEQ0(LANE_REG(0505), 0x03),
-+	REG_SEQ0(LANE_REG(0605), 0x03),
-+	REG_SEQ0(LANE_REG(0306), 0xfc),
-+	REG_SEQ0(LANE_REG(0406), 0xfc),
-+	REG_SEQ0(LANE_REG(0506), 0xfc),
-+	REG_SEQ0(LANE_REG(0606), 0xfc),
-+	REG_SEQ0(LANE_REG(0305), 0x4f),
-+	REG_SEQ0(LANE_REG(0405), 0x4f),
-+	REG_SEQ0(LANE_REG(0505), 0x4f),
-+	REG_SEQ0(LANE_REG(0605), 0x4f),
-+	REG_SEQ0(LANE_REG(0304), 0x14),
-+	REG_SEQ0(LANE_REG(0404), 0x14),
-+	REG_SEQ0(LANE_REG(0504), 0x14),
-+	REG_SEQ0(LANE_REG(0604), 0x14),
-+	/* Keep Inter-Pair Skew in the limits */
-+	REG_SEQ0(LANE_REG(031e), 0x02),
-+	REG_SEQ0(LANE_REG(041e), 0x02),
-+	REG_SEQ0(LANE_REG(051e), 0x02),
-+	REG_SEQ0(LANE_REG(061e), 0x02),
-+};
-+
- static const struct reg_sequence rk_hdptx_tmds_lane_init_seq[] = {
- 	REG_SEQ0(LANE_REG(0312), 0x00),
- 	REG_SEQ0(LANE_REG(0412), 0x00),
-@@ -787,7 +964,12 @@ static int rk_hdptx_post_enable_lane(struct rk_hdptx_phy *hdptx)
- 	       HDPTX_I_BIAS_EN | HDPTX_I_BGR_EN;
- 	regmap_write(hdptx->grf, GRF_HDPTX_CON0, val);
- 
--	regmap_write(hdptx->regmap, LNTOP_REG(0207), 0x0f);
-+	/* 3 lanes FRL mode */
-+	if (hdptx->hdmi_cfg.rate == FRL_6G3L_RATE ||
-+	    hdptx->hdmi_cfg.rate == FRL_3G3L_RATE)
-+		regmap_write(hdptx->regmap, LNTOP_REG(0207), 0x07);
-+	else
-+		regmap_write(hdptx->regmap, LNTOP_REG(0207), 0x0f);
- 
- 	ret = regmap_read_poll_timeout(hdptx->grf, GRF_HDPTX_STATUS, val,
- 				       (val & HDPTX_O_PHY_RDY) &&
-@@ -931,6 +1113,80 @@ static bool rk_hdptx_phy_clk_pll_calc(unsigned long long rate,
- 	return true;
- }
- 
-+static int rk_hdptx_frl_lcpll_cmn_config(struct rk_hdptx_phy *hdptx)
-+{
-+	const struct lcpll_config *cfg = NULL;
-+	int i;
-+
-+	dev_dbg(hdptx->dev, "%s rate=%llu\n", __func__, hdptx->hdmi_cfg.rate);
-+
-+	for (i = 0; i < ARRAY_SIZE(rk_hdptx_frl_lcpll_cfg); i++) {
-+		if (hdptx->hdmi_cfg.rate == rk_hdptx_frl_lcpll_cfg[i].rate) {
-+			cfg = &rk_hdptx_frl_lcpll_cfg[i];
-+			break;
-+		}
-+	}
-+
-+	if (!cfg) {
-+		dev_err(hdptx->dev, "%s cannot find pll cfg for rate=%llu\n",
-+			__func__, hdptx->hdmi_cfg.rate);
-+		return -EINVAL;
-+	}
-+
-+	rk_hdptx_pre_power_up(hdptx);
-+
-+	regmap_write(hdptx->grf, GRF_HDPTX_CON0, LC_REF_CLK_SEL << 16);
-+
-+	rk_hdptx_multi_reg_write(hdptx, rk_hdptx_common_cmn_init_seq);
-+	rk_hdptx_multi_reg_write(hdptx, rk_hdptx_frl_lcpll_cmn_init_seq);
-+
-+	regmap_update_bits(hdptx->regmap, CMN_REG(0008),
-+			   LCPLL_EN_MASK | LCPLL_LCVCO_MODE_EN_MASK,
-+			   FIELD_PREP(LCPLL_EN_MASK, 1) |
-+			   FIELD_PREP(LCPLL_LCVCO_MODE_EN_MASK, cfg->lcvco_mode_en));
-+
-+	regmap_update_bits(hdptx->regmap, CMN_REG(001e),
-+			   LCPLL_PI_EN_MASK | LCPLL_100M_CLK_EN_MASK,
-+			   FIELD_PREP(LCPLL_PI_EN_MASK, cfg->pi_en) |
-+			   FIELD_PREP(LCPLL_100M_CLK_EN_MASK, cfg->clk_en_100m));
-+
-+	regmap_write(hdptx->regmap, CMN_REG(0020), cfg->pms_mdiv);
-+	regmap_write(hdptx->regmap, CMN_REG(0021), cfg->pms_mdiv_afc);
-+	regmap_write(hdptx->regmap, CMN_REG(0022),
-+		     (cfg->pms_pdiv << 4) | cfg->pms_refdiv);
-+	regmap_write(hdptx->regmap, CMN_REG(0023),
-+		     (cfg->pms_sdiv << 4) | cfg->pms_sdiv);
-+	regmap_write(hdptx->regmap, CMN_REG(002a), cfg->sdm_deno);
-+	regmap_write(hdptx->regmap, CMN_REG(002b), cfg->sdm_num_sign);
-+	regmap_write(hdptx->regmap, CMN_REG(002c), cfg->sdm_num);
-+
-+	regmap_update_bits(hdptx->regmap, CMN_REG(002d), LCPLL_SDC_N_MASK,
-+			   FIELD_PREP(LCPLL_SDC_N_MASK, cfg->sdc_n));
-+
-+	regmap_update_bits(hdptx->regmap, CMN_REG(0086), PLL_PCG_POSTDIV_SEL_MASK,
-+			   FIELD_PREP(PLL_PCG_POSTDIV_SEL_MASK, cfg->pms_sdiv));
-+	regmap_update_bits(hdptx->regmap, CMN_REG(0086), PLL_PCG_CLK_SEL_MASK,
-+			   FIELD_PREP(PLL_PCG_CLK_SEL_MASK, (hdptx->hdmi_cfg.bpc - 8) >> 1));
-+
-+	return rk_hdptx_post_enable_pll(hdptx);
-+}
-+
-+static int rk_hdptx_frl_lcpll_ropll_cmn_config(struct rk_hdptx_phy *hdptx)
-+{
-+	dev_dbg(hdptx->dev, "%s rate=%llu\n", __func__, hdptx->hdmi_cfg.rate);
-+
-+	rk_hdptx_pre_power_up(hdptx);
-+
-+	/* ROPLL input reference clock from LCPLL (cascade mode) */
-+	regmap_write(hdptx->grf, GRF_HDPTX_CON0,
-+		     (LC_REF_CLK_SEL << 16) | LC_REF_CLK_SEL);
-+
-+	rk_hdptx_multi_reg_write(hdptx, rk_hdptx_common_cmn_init_seq);
-+	rk_hdptx_multi_reg_write(hdptx, rk_hdptx_frl_lcpll_ropll_cmn_init_seq);
-+
-+	return rk_hdptx_post_enable_pll(hdptx);
-+}
-+
- static int rk_hdptx_tmds_ropll_cmn_config(struct rk_hdptx_phy *hdptx)
- {
- 	const struct ropll_config *cfg = NULL;
-@@ -962,6 +1218,8 @@ static int rk_hdptx_tmds_ropll_cmn_config(struct rk_hdptx_phy *hdptx)
- 
- 	rk_hdptx_pre_power_up(hdptx);
- 
-+	regmap_write(hdptx->grf, GRF_HDPTX_CON0, LC_REF_CLK_SEL << 16);
-+
- 	rk_hdptx_multi_reg_write(hdptx, rk_hdptx_common_cmn_init_seq);
- 	rk_hdptx_multi_reg_write(hdptx, rk_hdptx_tmds_cmn_init_seq);
- 
-@@ -1000,6 +1258,28 @@ static int rk_hdptx_tmds_ropll_cmn_config(struct rk_hdptx_phy *hdptx)
- 	return rk_hdptx_post_enable_pll(hdptx);
- }
- 
-+static int rk_hdptx_pll_cmn_config(struct rk_hdptx_phy *hdptx)
-+{
-+	if (hdptx->hdmi_cfg.rate <= HDMI20_MAX_RATE)
-+		return rk_hdptx_tmds_ropll_cmn_config(hdptx);
-+
-+	if (hdptx->hdmi_cfg.rate == FRL_8G4L_RATE)
-+		return rk_hdptx_frl_lcpll_ropll_cmn_config(hdptx);
-+
-+	return rk_hdptx_frl_lcpll_cmn_config(hdptx);
-+}
-+
-+static int rk_hdptx_frl_lcpll_mode_config(struct rk_hdptx_phy *hdptx)
-+{
-+	rk_hdptx_multi_reg_write(hdptx, rk_hdptx_common_sb_init_seq);
-+	rk_hdptx_multi_reg_write(hdptx, rk_hdptx_frl_lntop_init_seq);
-+
-+	rk_hdptx_multi_reg_write(hdptx, rk_hdptx_common_lane_init_seq);
-+	rk_hdptx_multi_reg_write(hdptx, rk_hdptx_frl_lane_init_seq);
-+
-+	return rk_hdptx_post_enable_lane(hdptx);
-+}
-+
- static int rk_hdptx_tmds_ropll_mode_config(struct rk_hdptx_phy *hdptx)
- {
- 	rk_hdptx_multi_reg_write(hdptx, rk_hdptx_common_sb_init_seq);
-@@ -1076,7 +1356,7 @@ static int rk_hdptx_phy_consumer_get(struct rk_hdptx_phy *hdptx)
- 	if (mode == PHY_MODE_DP) {
- 		rk_hdptx_dp_reset(hdptx);
- 	} else {
--		ret = rk_hdptx_tmds_ropll_cmn_config(hdptx);
-+		ret = rk_hdptx_pll_cmn_config(hdptx);
- 		if (ret)
- 			goto dec_usage;
- 	}
-@@ -1377,7 +1657,7 @@ static int rk_hdptx_phy_power_on(struct phy *phy)
- 	int ret, lane;
- 
- 	if (mode != PHY_MODE_DP) {
--		if (!hdptx->hdmi_cfg.rate) {
-+		if (!hdptx->hdmi_cfg.rate && hdptx->hdmi_cfg.mode != PHY_HDMI_MODE_FRL) {
- 			/*
- 			 * FIXME: Temporary workaround to setup TMDS char rate
- 			 * from the RK DW HDMI QP bridge driver.
-@@ -1423,7 +1703,11 @@ static int rk_hdptx_phy_power_on(struct phy *phy)
- 		regmap_write(hdptx->grf, GRF_HDPTX_CON0,
- 			     HDPTX_MODE_SEL << 16 | FIELD_PREP(HDPTX_MODE_SEL, 0x0));
- 
--		ret = rk_hdptx_tmds_ropll_mode_config(hdptx);
-+		if (hdptx->hdmi_cfg.mode == PHY_HDMI_MODE_FRL)
-+			ret = rk_hdptx_frl_lcpll_mode_config(hdptx);
-+		else
-+			ret = rk_hdptx_tmds_ropll_mode_config(hdptx);
-+
- 		if (ret)
- 			rk_hdptx_phy_consumer_put(hdptx, true);
- 	}
-@@ -1444,16 +1728,49 @@ static int rk_hdptx_phy_verify_hdmi_config(struct rk_hdptx_phy *hdptx,
- {
- 	int i;
- 
--	if (!hdmi_in->tmds_char_rate || hdmi_in->tmds_char_rate > HDMI20_MAX_RATE)
--		return -EINVAL;
-+	if (hdptx->hdmi_cfg.mode == PHY_HDMI_MODE_FRL) {
-+		unsigned long long frl_rate = 100000000ULL * hdmi_in->frl.lanes *
-+					      hdmi_in->frl.rate_per_lane;
- 
--	for (i = 0; i < ARRAY_SIZE(rk_hdptx_tmds_ropll_cfg); i++)
--		if (hdmi_in->tmds_char_rate == rk_hdptx_tmds_ropll_cfg[i].rate)
-+		switch (hdmi_in->frl.rate_per_lane) {
-+		case 3:
-+		case 6:
-+		case 8:
-+		case 10:
-+		case 12:
- 			break;
-+		default:
-+			return -EINVAL;
-+		}
- 
--	if (i == ARRAY_SIZE(rk_hdptx_tmds_ropll_cfg) &&
--	    !rk_hdptx_phy_clk_pll_calc(hdmi_in->tmds_char_rate, NULL))
--		return -EINVAL;
-+		if (!hdmi_in->frl.lanes || hdmi_in->frl.lanes > 4)
-+			return -EINVAL;
-+
-+		if (frl_rate != FRL_8G4L_RATE) {
-+			for (i = 0; i < ARRAY_SIZE(rk_hdptx_frl_lcpll_cfg); i++)
-+				if (frl_rate == rk_hdptx_frl_lcpll_cfg[i].rate)
-+					break;
-+			if (i == ARRAY_SIZE(rk_hdptx_frl_lcpll_cfg))
-+				return -EINVAL;
-+		}
-+
-+		if (hdmi_out)
-+			hdmi_out->rate = frl_rate;
-+	} else {
-+		if (!hdmi_in->tmds_char_rate || hdmi_in->tmds_char_rate > HDMI20_MAX_RATE)
-+			return -EINVAL;
-+
-+		for (i = 0; i < ARRAY_SIZE(rk_hdptx_tmds_ropll_cfg); i++)
-+			if (hdmi_in->tmds_char_rate == rk_hdptx_tmds_ropll_cfg[i].rate)
-+				break;
-+
-+		if (i == ARRAY_SIZE(rk_hdptx_tmds_ropll_cfg) &&
-+		    !rk_hdptx_phy_clk_pll_calc(hdmi_in->tmds_char_rate, NULL))
-+			return -EINVAL;
-+
-+		if (hdmi_out)
-+			hdmi_out->rate = hdmi_in->tmds_char_rate;
-+	}
- 
- 	switch (hdmi_in->bpc) {
- 	case 0:
-@@ -1466,10 +1783,8 @@ static int rk_hdptx_phy_verify_hdmi_config(struct rk_hdptx_phy *hdptx,
- 		return -EINVAL;
- 	}
- 
--	if (hdmi_out) {
--		hdmi_out->rate = hdmi_in->tmds_char_rate;
-+	if (hdmi_out)
- 		hdmi_out->bpc = hdmi_in->bpc ?: 8;
--	}
- 
- 	return 0;
- }
-@@ -1729,6 +2044,31 @@ static int rk_hdptx_phy_set_voltages(struct rk_hdptx_phy *hdptx,
- 	return 0;
- }
- 
-+static int rk_hdptx_phy_set_mode(struct phy *phy, enum phy_mode mode, int submode)
-+{
-+	struct rk_hdptx_phy *hdptx = phy_get_drvdata(phy);
-+
-+	if (mode == PHY_MODE_DP)
-+		return 0;
-+
-+	if (mode != PHY_MODE_HDMI) {
-+		dev_err(&phy->dev, "invalid PHY mode: %d\n", mode);
-+		return -EINVAL;
-+	}
-+
-+	switch (submode) {
-+	case PHY_HDMI_MODE_TMDS:
-+	case PHY_HDMI_MODE_FRL:
-+		hdptx->hdmi_cfg.mode = submode;
-+		break;
-+	default:
-+		dev_err(&phy->dev, "invalid HDMI mode: %d\n", submode);
-+		return -EINVAL;
-+	}
-+
-+	return 0;
-+}
-+
- static int rk_hdptx_phy_configure(struct phy *phy, union phy_configure_opts *opts)
- {
- 	struct rk_hdptx_phy *hdptx = phy_get_drvdata(phy);
-@@ -1796,6 +2136,7 @@ static int rk_hdptx_phy_validate(struct phy *phy, enum phy_mode mode,
- static const struct phy_ops rk_hdptx_phy_ops = {
- 	.power_on  = rk_hdptx_phy_power_on,
- 	.power_off = rk_hdptx_phy_power_off,
-+	.set_mode = rk_hdptx_phy_set_mode,
- 	.configure = rk_hdptx_phy_configure,
- 	.validate  = rk_hdptx_phy_validate,
- 	.owner	   = THIS_MODULE,
-@@ -1824,17 +2165,62 @@ static void rk_hdptx_phy_clk_unprepare(struct clk_hw *hw)
- 
- static u64 rk_hdptx_phy_clk_calc_rate_from_pll_cfg(struct rk_hdptx_phy *hdptx)
- {
-+	struct lcpll_config lcpll_hw;
- 	struct ropll_config ropll_hw;
- 	u64 fout, sdm;
- 	u32 mode, val;
--	int ret;
-+	int ret, i;
- 
- 	ret = regmap_read(hdptx->regmap, CMN_REG(0008), &mode);
- 	if (ret)
- 		return 0;
- 
--	if (mode & LCPLL_LCVCO_MODE_EN_MASK)
-+	if (mode & LCPLL_LCVCO_MODE_EN_MASK) {
-+		ret = regmap_read(hdptx->regmap, CMN_REG(0020), &val);
-+		if (ret)
-+			return 0;
-+		lcpll_hw.pms_mdiv = val;
-+
-+		ret = regmap_read(hdptx->regmap, CMN_REG(0023), &val);
-+		if (ret)
-+			return 0;
-+		lcpll_hw.pms_sdiv = val & 0xf;
-+
-+		ret = regmap_read(hdptx->regmap, CMN_REG(002B), &val);
-+		if (ret)
-+			return 0;
-+		lcpll_hw.sdm_num_sign = val;
-+
-+		ret = regmap_read(hdptx->regmap, CMN_REG(002C), &val);
-+		if (ret)
-+			return 0;
-+		lcpll_hw.sdm_num = val;
-+
-+		ret = regmap_read(hdptx->regmap, CMN_REG(002A), &val);
-+		if (ret)
-+			return 0;
-+		lcpll_hw.sdm_deno = val;
-+
-+		ret = regmap_read(hdptx->regmap, CMN_REG(002D), &val);
-+		if (ret)
-+			return 0;
-+		lcpll_hw.sdc_n = (val & LCPLL_SDC_N_MASK) >> 1;
-+
-+		for (i = 0; i < ARRAY_SIZE(rk_hdptx_frl_lcpll_cfg); i++) {
-+			const struct lcpll_config *cfg = &rk_hdptx_frl_lcpll_cfg[i];
-+
-+			if (cfg->pms_mdiv == lcpll_hw.pms_mdiv &&
-+			    cfg->pms_sdiv == lcpll_hw.pms_sdiv &&
-+			    cfg->sdm_num_sign == lcpll_hw.sdm_num_sign &&
-+			    cfg->sdm_num == lcpll_hw.sdm_num &&
-+			    cfg->sdm_deno == lcpll_hw.sdm_deno &&
-+			    cfg->sdc_n == lcpll_hw.sdc_n)
-+				return cfg->rate;
-+		}
-+
-+		dev_dbg(hdptx->dev, "%s no FRL match found\n", __func__);
- 		return 0;
-+	}
- 
- 	ret = regmap_read(hdptx->regmap, CMN_REG(0051), &val);
- 	if (ret)
-@@ -1911,6 +2297,9 @@ static unsigned long rk_hdptx_phy_clk_recalc_rate(struct clk_hw *hw,
- 
- 	rate = rk_hdptx_phy_clk_calc_rate_from_pll_cfg(hdptx);
- 
-+	if (hdptx->hdmi_cfg.mode == PHY_HDMI_MODE_FRL)
-+		return rate;
-+
- 	return DIV_ROUND_CLOSEST_ULL(rate * 8, hdptx->hdmi_cfg.bpc);
- }
- 
-@@ -1919,6 +2308,9 @@ static int rk_hdptx_phy_clk_determine_rate(struct clk_hw *hw,
- {
- 	struct rk_hdptx_phy *hdptx = to_rk_hdptx_phy(hw);
- 
-+	if (hdptx->hdmi_cfg.mode == PHY_HDMI_MODE_FRL)
-+		return hdptx->hdmi_cfg.rate;
-+
- 	/*
- 	 * FIXME: Temporarily allow altering TMDS char rate via CCF.
- 	 * To be dropped as soon as the RK DW HDMI QP bridge driver
-@@ -1949,23 +2341,26 @@ static int rk_hdptx_phy_clk_set_rate(struct clk_hw *hw, unsigned long rate,
- 				     unsigned long parent_rate)
- {
- 	struct rk_hdptx_phy *hdptx = to_rk_hdptx_phy(hw);
--	unsigned long long tmds_rate = DIV_ROUND_CLOSEST_ULL(rate * hdptx->hdmi_cfg.bpc, 8);
-+	unsigned long long link_rate = rate;
-+
-+	if (hdptx->hdmi_cfg.mode != PHY_HDMI_MODE_FRL)
-+		link_rate = DIV_ROUND_CLOSEST_ULL(rate * hdptx->hdmi_cfg.bpc, 8);
- 
--	/* Revert any unlikely TMDS char rate change since determine_rate() */
--	if (hdptx->hdmi_cfg.rate != tmds_rate) {
-+	/* Revert any unlikely link rate change since determine_rate() */
-+	if (hdptx->hdmi_cfg.rate != link_rate) {
- 		dev_warn(hdptx->dev, "Reverting unexpected rate change from %llu to %llu\n",
--			 tmds_rate, hdptx->hdmi_cfg.rate);
--		hdptx->hdmi_cfg.rate = tmds_rate;
-+			 link_rate, hdptx->hdmi_cfg.rate);
-+		hdptx->hdmi_cfg.rate = link_rate;
- 	}
- 
- 	/*
--	 * The TMDS char rate would be normally programmed in HW during
-+	 * The link rate would be normally programmed in HW during
- 	 * phy_ops.power_on() or clk_ops.prepare() callbacks, but it might
- 	 * happen that the former gets fired too late, i.e. after this call,
- 	 * while the latter being executed only once, i.e. when clock remains
- 	 * in the prepared state during rate changes.
- 	 */
--	return rk_hdptx_tmds_ropll_cmn_config(hdptx);
-+	return rk_hdptx_pll_cmn_config(hdptx);
- }
- 
- static const struct clk_ops hdptx_phy_clk_ops = {
-
--- 
-2.52.0
-
+Best regards,
+TH
 
 -- 
 linux-phy mailing list
