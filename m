@@ -4,120 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 36555D29DE4
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Jan 2026 08:13:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AAB91D29DEF
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Jan 2026 09:07:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
-	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=bS/55tW+GCrNEY8RBFR0T3bLKwJknS0vqovQlGx8ieA=; b=Kqwaif149TCejp+Eumt9JVX5T+
-	FsoH8Vmyhg5sH+c7UdrrweNr32iubwNdVLtATeOg4uTAqD/ZP+eEl3MnOjH0h1GW3hu9OvMGrsyJD
-	ujdNbvDa/sNxr/U8ksXb1T8OFRx+TPPYLwUGKvEYP4WNT78n+6jcXHr9aCrWwmRyIEn//kPzx6Oyk
-	jwu3oxwbDwMHs05Zr983dBZgmMq7v0/jFLwvavBrn4SlFg9/3kImai2e/8Onxw81o5dTl1UB90Ozd
-	9arnD73lOkIl08XLvURx8q9HFMlVC26F79Ce2/EC+EmUsXctFydOfbBzrFoNysOS4XDar4JrWG+zB
-	UKo33Spw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=P5y02XxQTgU45u6rF0HRy5Op8NFVN0s406aGr0lzY5g=; b=o6/+Md/DecWs+b
+	aDG3px4hF0shaGYdwY0LVCtvq7MZz+VMUKmNqzKgDFLrXrqh4Uycn75AqCN1fdxfJKlVUpkwcItEw
+	8lA7NXcSGSkCZaWgK4oZYkmvuMlVK63698ckrz0pNMLZsph1TyxjzTxMRHK3bIWKviagNJMaaMTsN
+	kVd+VcQTK8usyvCasTswi65MneBTRdTXkSEI4aBV2gqGFYnwY4iIWmZSlsvfE8THOjRyPCc7GwzDP
+	0yfKpKR1Qjr40p7xBM/hUEYCGB99F2+Ou6QH/vFx8eCM+HgQ4dYZ9REcLxF/QYJtXkonjR6woQ61B
+	70oNZ2ZXWC2nNQhKhsug==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vfZWi-00000006iSl-40bv;
-	Tue, 13 Jan 2026 08:13:20 +0000
-Received: from mail-wm1-x32a.google.com ([2a00:1450:4864:20::32a])
+	id 1vfaMx-00000006nei-1lmX;
+	Tue, 13 Jan 2026 09:07:19 +0000
+Received: from mail-lf1-x130.google.com ([2a00:1450:4864:20::130])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vfZWc-00000006iQK-3UNe
+	id 1vfaMt-00000006ndW-0xft
 	for linux-phy@lists.infradead.org;
-	Tue, 13 Jan 2026 08:13:16 +0000
-Received: by mail-wm1-x32a.google.com with SMTP id 5b1f17b1804b1-47774d3536dso52507965e9.0
-        for <linux-phy@lists.infradead.org>; Tue, 13 Jan 2026 00:13:14 -0800 (PST)
+	Tue, 13 Jan 2026 09:07:18 +0000
+Received: by mail-lf1-x130.google.com with SMTP id 2adb3069b0e04-59b710d46ceso6294281e87.3
+        for <linux-phy@lists.infradead.org>; Tue, 13 Jan 2026 01:07:13 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1768291993; x=1768896793; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=1mR25HREBGLu0uxiDk/Wk1hfEZP7iw5HJ5+Ly8j4Vgk=;
-        b=VSNxDNx3nn2ogJ8N+baXacYpV27NMC6Re1aYfe0O/NormMFyWMGavINAkb6cWPVaAd
-         7tlEJMnPYtxzRbf7H6WY48mGHcFvF9I9emLxy1X4X2xKgbFIHHDU8+wUOSssylXEMeBF
-         E6CSqIqYRUWTfiXBanTggPFkUPrrXVujPjSLAEB+Zvp208V8WQ8NwYEneg253P+AW+mA
-         Gi8hJHLd3NAwTHaZwBT2fE36DZzRMDGfJSidJ2SjwfmoIJLM/zmXv3uMOiCuFMkONsbF
-         2SgbzH1on+7XxYGR/uRQCbG6QagS4PC/22wX0yzoC3VwDZLR9J+DfoR7Ib2o4TAh6M40
-         zeFg==
+        d=suse.com; s=google; t=1768295232; x=1768900032; darn=lists.infradead.org;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=/i3Juaj0N8yH4MFpXlG+cGqZ2qEdPdNcnpSqQBlYTGU=;
+        b=GdjdKD8GJ0+xLLmEPWVOIP+1B9o9jn4hG7pSryYJL5g/KXk/3N6Nx47XsZDo8JRHGE
+         J8V+Go6PRbz0zZ/12hFCc7uiaRlw4OcgY8heSlRln1eC06SNMmYil2IWzoLNI/2+sLtZ
+         XBrO3XC9ILrJhNrSMaLnNMPdEiLO/XwxggKkujH+hx+9ZpnaK6mZLiEATdrzkv8JR9rG
+         m1aKP+NbKLDhYNcz14iz72rzDTA/scvvtT3MbwOi15UP4bnYZ302P6FJWIaSN/Df2IiL
+         9b51m1Lkw5OTlXg0c+f6IsKflwKgglHohGXybCzffkNiL0MHH/n4vN50YknJWUjI4RPZ
+         7Yvw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1768291993; x=1768896793;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=1mR25HREBGLu0uxiDk/Wk1hfEZP7iw5HJ5+Ly8j4Vgk=;
-        b=P1rhqUdnSt3Bgy5k5Gu2hODugmZHFy3GVuDXxIgwbpbWX3IwpRxg/R6whI6Ye/9IEI
-         gFrTH2O0cunmsyvZ8Ml2A8jtopT4wBkX1kWX6dCSwd6c1JjlLA7t/wWEbFoEaZJ/kcrH
-         SmQQLxapjxo84UmQbwNebHaf/GW7FZ6pTOtPXMoC9zyZusLM9zp24/dJ3hip45V4XdkX
-         rBxiteJgO4an5t8JQna1PWn8WjzVfOzg9tvIUEcy/v4MsHMWt1kCSugUlxKVPEvuqA8c
-         p+cENnhOXCeKC+Xvpl+X5dzf4QcIjW+Q4uZTtbvXIQCFWIolMK3YOpAMgeUp51CxcWwA
-         o6fw==
-X-Forwarded-Encrypted: i=1; AJvYcCXfejYtIoa5Pyd7NvwTmwsqH0/MlOUKlYzFIPT8g9BR7zx32s5qe71aaJ8cYm4bNrLNB2SmMV+r+A4=@lists.infradead.org
-X-Gm-Message-State: AOJu0YywWPh3dF7qH/rOijN3Q1yuiaKBY0pkAbM9qBSx7I1BU1WPcb8n
-	Y/zYVyvihRT/p9PLVJ0rJ4In3th/KDq2fiPhCWoo9vgg6xwEIWWb4JKKYTPALlCxAbk=
-X-Gm-Gg: AY/fxX6up1PwmSExi1KOKPnF+x7wVniH54dLu1VYKr9fyWago7N+C9y0MStr9AuVx5f
-	cRQh63VR94uC/Aor0hyTolEOLZ0SvBsMzjGygZb1BXH1KF5+LxJSYSG6EdaYl94enriaGKX8lTt
-	BUZhvbSCpbeZcGXxNKIEu5QKVZ2GodtZYR9dkhTebYtIyoxZLsmbD08xoyrB/zzzUmaA0DUPZzv
-	oNpcm8263t2PCpPRUNS2uP9Rc1QA/xBtZv6CiIzQ/33XhCFT62FMXhtJ8/UC89dxBShDoT9wfLx
-	ipgDyObRIfzbsh9Bkl+NVqBv8s2j4aHQx4/RGhznGKbglDouePTIWm9ZhUD9wWNNgQ/st+Z8ygh
-	Ufl/bhlWIQlpzquuxCcI+xGqh6PBDLs5J3iCQnc27oDsJ48cE0T4Hj7RkqJmJWjjmqs6VHEjDr1
-	uU1HgcpVqXlpYqvpXeiRIk2WKx6FvSk5PfnPObAb9qjz8Es5wIIQ==
-X-Google-Smtp-Source: AGHT+IEgcmY72rCqI7X0/U8zwBCvN2BlRfRJApLQbN0adnG2w5XdOoMooZI08ASkrAExinOsOkzGNQ==
-X-Received: by 2002:a05:600c:3103:b0:477:a289:d854 with SMTP id 5b1f17b1804b1-47ed7c061f5mr28881005e9.5.1768291992907;
-        Tue, 13 Jan 2026 00:13:12 -0800 (PST)
-Received: from ?IPV6:2a01:e0a:3d9:2080::fa42:7768? ([2a01:e0a:3d9:2080::fa42:7768])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-47edee4cbc2sm574315e9.4.2026.01.13.00.13.11
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 13 Jan 2026 00:13:11 -0800 (PST)
-Message-ID: <ea0a9ee9-3cb1-4d08-aa6f-91bb91bda816@linaro.org>
-Date: Tue, 13 Jan 2026 09:13:11 +0100
+        d=1e100.net; s=20230601; t=1768295232; x=1768900032;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to;
+        bh=/i3Juaj0N8yH4MFpXlG+cGqZ2qEdPdNcnpSqQBlYTGU=;
+        b=DAe7a9QZhO3hPdlDETnjeuOzGAn/MZrms3XMAa0Bi+ecCK9yLWiuaGRd+XDHn58/e4
+         YgiAzFpxA5wKaMuKBZ6HCbymB3430SD6f5VLo0Kk+H/Tmoq1YmIMxpMWaPp+SJgK6F9A
+         +1Qgr4vmcUO9AINcEchvlRl4YqtdyKmmLaSOdctTZRXqFxcdZ9hyD1zv2GReWlGpvigr
+         67RCdydppG7PQLKOzXbVTPoEd3hBPABVy4FeyGgFtTY+v6tgBa23Sgie7OOPeoeTFcwC
+         B6uZyj6kkHD+LA2isUsPgfIZNr3Yq52OpidnuOgUXjWN7k/dwguMBfFyU/UOv/Fw27bG
+         c/VQ==
+X-Forwarded-Encrypted: i=1; AJvYcCXdwoRawF06i4U582gh/UmFEaS4oAQNf5slOCCkSRVsZsmOCHBajbCrSE2hOcUJ6DGFG1XhTh/PcnE=@lists.infradead.org
+X-Gm-Message-State: AOJu0YybcLliCGUs1LgKGFyu1DMvwWH4wio19gLr2/P0or5rGwmdtPmD
+	ZMJoxUAFnbBlVTAGXwcFPI8F7lyCZMGeoRAWxU3FOTvVpzyT6TwbCGYp4ddfZ33ijaXmsilGmAK
+	4lwF7fmBvfzOPo9023olGs24yGQv/xZbERGP+xPlTyA==
+X-Gm-Gg: AY/fxX5bM9ZD39n4iP1yJFfzhlsLrA7uf4Qszpft2ABg5UH9PTUqZmwN4AIKmsG7I4z
+	Nwtnh7TGxDQ5EBGw58AB3xL9tDpazJcJKn0zcyV9QUZ9a6UV0U8/51AbjvQeMb775X/g9IMxbgu
+	w9iHeUcTAg71EuBARnhoyt2mOPAhxsbFcPDt1RYoSUCmlC2ap0nCMkZL2j/EpgK2kYi06tg9xs0
+	eVe8D/KCZz8nk2dxruJO2PX6P7hW7YbnXyLb8yRZqvpVGyL+izcSHNMvgB2139D3SyiC4kvdwvm
+	9bo40ylKNegN/JDicBIZvb8h6RQL
+X-Google-Smtp-Source: AGHT+IGftEHtLClyb69mOyaEsN3lAH2/jF+5CBMjP/ZmjjcqXy+C8GOSWAl6T7IxwZIVnFTBz/aNdum5oAdTU7TVZB0=
+X-Received: by 2002:a05:6512:3041:b0:595:9152:b932 with SMTP id
+ 2adb3069b0e04-59b6f03e5a9mr7195718e87.47.1768295232445; Tue, 13 Jan 2026
+ 01:07:12 -0800 (PST)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-From: Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH v6 02/11] phy: rockchip: samsung-hdptx: Use usleep_range()
- instead of udelay()
-To: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Heiko Stuebner <heiko@sntech.de>, Algea Cao <algea.cao@rock-chips.com>,
- Dmitry Baryshkov <lumag@kernel.org>
-Cc: kernel@collabora.com, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
-References: <20260113-phy-hdptx-frl-v6-0-8d5f97419c0b@collabora.com>
- <20260113-phy-hdptx-frl-v6-2-8d5f97419c0b@collabora.com>
-Content-Language: en-US, fr
-Autocrypt: addr=neil.armstrong@linaro.org; keydata=
- xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
- GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
- BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
- qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
- 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
- AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
- OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
- Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
- YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
- GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
- UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
- GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
- yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
- QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
- SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
- 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
- Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
- oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
- M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
- 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
- KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
- 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
- QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
-Organization: Linaro
-In-Reply-To: <20260113-phy-hdptx-frl-v6-2-8d5f97419c0b@collabora.com>
+References: <20251105152023.259813-1-marco.crivellari@suse.com>
+In-Reply-To: <20251105152023.259813-1-marco.crivellari@suse.com>
+From: Marco Crivellari <marco.crivellari@suse.com>
+Date: Tue, 13 Jan 2026 10:07:01 +0100
+X-Gm-Features: AZwV_QhM0_519Wp7eCusKGLkLbDhbtlDLW63gw69Hikozl3LItms4ZWAJbUiCUI
+Message-ID: <CAAofZF423Fmsxb4c+J5q4Nf4t6YO+=-SBjna+7TvqJ=C1K0DYQ@mail.gmail.com>
+Subject: Re: [PATCH] phy: sun4i-usb: replace use of system_wq with system_percpu_wq
+To: linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
+	linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev
+Cc: Tejun Heo <tj@kernel.org>, Lai Jiangshan <jiangshanlai@gmail.com>, 
+	Frederic Weisbecker <frederic@kernel.org>, Sebastian Andrzej Siewior <bigeasy@linutronix.de>, 
+	Michal Hocko <mhocko@suse.com>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Chen-Yu Tsai <wens@csie.org>, 
+	Jernej Skrabec <jernej.skrabec@gmail.com>, Samuel Holland <samuel@sholland.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260113_001314_878397_25938FE6 
-X-CRM114-Status: GOOD (  12.27  )
+X-CRM114-CacheID: sfid-20260113_010715_276136_A5F3305F 
+X-CRM114-Status: UNSURE (   6.75  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -129,42 +96,15 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: Neil Armstrong <neil.armstrong@linaro.org>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 1/13/26 00:20, Cristian Ciocaltea wrote:
-> rk_hdptx_dp_reset() is allowed to sleep, hence replace the busy waiting
-> with usleep_range(), to allow other threads to run.
-> 
-> Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-> ---
->   drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 2 +-
->   1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-> index a65e96694237..89710066d70c 100644
-> --- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-> +++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-> @@ -1042,7 +1042,7 @@ static void rk_hdptx_dp_reset(struct rk_hdptx_phy *hdptx)
->   	reset_control_assert(hdptx->rsts[RST_INIT].rstc);
->   
->   	reset_control_assert(hdptx->rsts[RST_APB].rstc);
-> -	udelay(10);
-> +	usleep_range(10, 15);
->   	reset_control_deassert(hdptx->rsts[RST_APB].rstc);
->   
->   	regmap_update_bits(hdptx->regmap, LANE_REG(0301),
-> 
-
-Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
-
-Thanks,
-Neil
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gV2VkLCBOb3YgNSwgMjAyNSBhdCA0OjIw4oCvUE0gTWFyY28gQ3JpdmVsbGFyaQo8bWFyY28u
+Y3JpdmVsbGFyaUBzdXNlLmNvbT4gd3JvdGU6Cj4gWy4uLl0KPiAgZHJpdmVycy9waHkvYWxsd2lu
+bmVyL3BoeS1zdW40aS11c2IuYyB8IDE0ICsrKysrKystLS0tLS0tCj4gIDEgZmlsZSBjaGFuZ2Vk
+LCA3IGluc2VydGlvbnMoKyksIDcgZGVsZXRpb25zKC0pCgoKR2VudGxlIHBpbmcuCgpUaGFua3Mh
+CgotLSAKCk1hcmNvIENyaXZlbGxhcmkKCkwzIFN1cHBvcnQgRW5naW5lZXIKCi0tIApsaW51eC1w
+aHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlz
+dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
