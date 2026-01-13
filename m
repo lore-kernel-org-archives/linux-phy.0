@@ -4,81 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A4861D29DE4
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Jan 2026 08:12:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DF92CD29DE4
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Jan 2026 08:12:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
 	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=diM53KjR3efAk4xvr3MFC0ofIjMe+qprMNGyC8zDagE=; b=jxcEJdhKJxrWhib1Y9LIgmTn1X
-	tEKfO/kyIJmmg4bbDYDmJLftSLzlQfBmAy67VVJGmkKCtDXLtdvdLlOEMffKJiNBrgn/oH3qEirMl
-	lCrinnsec6kkBG+vxsNWeXSrZaZcLQv/riL25cdyYz7FDACvZoFF8CtuqjSueIFg10eqns9D5Rku6
-	rLaMOln11YGqqtfEZ++wB9B2bw4YJQZ8eTThAAVePihN7gYVhR1CCG+ogzaCvvS53LGnNypfbpIB4
-	PuXwtBRGVUsVCw4pO3yLjGyY15ORu2Uxso5Xrh4OZg5X/KTFWvWvYPEp9zqTuAIz6fYZHoTn5SYxT
-	H4leOEWg==;
+	bh=5MFDr7mS0TaU/1sAkfEnzXwAVCc9HjveA3h096+2wjU=; b=x1IIJXIm5WwaFJ8EisCgWS4npf
+	Dluc7xjpwbUTW0xz31/llDgYbxAz5Jr3kQxiQMlh176HKeFfHaBGFtKKEv0OpmUfOjZ7lydV5csh/
+	WtfltLvfF3MIaoA9KL5ZjgGUz4J5Y38diw0MDb0sdeVA9aNj3nHZiJhQI09Lu7JM3TKL7OD83HUqg
+	/vA9zgono8fzdPN2DnyzqDn9udj5wvvpK53cpaDxSHrxYZ/RH72rj1sgQEznOpvRM2eOsIAqSuI/c
+	X9qv7DD4b5/eKaNzQRIBjm4bzJ4qA5WQkWqoXK1bS0SSDUDo1amR6FcTm6KD3qIdWIhXOjhXxO81f
+	sr2HHdGA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vfZVT-00000006i3y-1R5t;
-	Tue, 13 Jan 2026 08:12:03 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1vfZWA-00000006iGh-2mt3;
+	Tue, 13 Jan 2026 08:12:46 +0000
+Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vfZVR-00000006i2p-2NzU
+	id 1vfZW4-00000006iCz-3Gaz
 	for linux-phy@lists.infradead.org;
-	Tue, 13 Jan 2026 08:12:02 +0000
-Received: by mail-wr1-x444.google.com with SMTP id ffacd0b85a97d-432d28870ddso2711342f8f.3
-        for <linux-phy@lists.infradead.org>; Tue, 13 Jan 2026 00:12:01 -0800 (PST)
+	Tue, 13 Jan 2026 08:12:42 +0000
+Received: by mail-wm1-x32c.google.com with SMTP id 5b1f17b1804b1-47edd6111b4so1188665e9.1
+        for <linux-phy@lists.infradead.org>; Tue, 13 Jan 2026 00:12:40 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1768291920; x=1768896720; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1768291959; x=1768896759; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=0/MQilqGTab22ugg1CT5X4KmAKEpSnq+i+RZKZLJx6I=;
-        b=xrerd7SOs+54/3fJp5P0hWG+NWb181dEaxyjyQVJSwiz8p6o+P4nkM62D1Q+1gUiVT
-         jnDkj4KmOhT0XlLUITWAFVDbe3+SLE4gx7dH+j2V8t98vWMOjlmJvIg0XUy9FhZ5q7fi
-         GJ8ToPQJlMaLY/lIR8RllxoWXToeHFrQU5x6GDGrojGPsPye2ejXLNgqrEkuE6CrmwnT
-         I9bIMg/UmI1mtCKaTnSTKXd4htKYXceEqw6iotlk7SzEtq5Cir56hMvwpsHhdvegsPDp
-         VibXDZPpFEzgj02tgqfonjD0A9hGZKKtB3/AJ+hnVqRq9KBNdrprIIojU4GUwv7MiRU5
-         baWw==
+        bh=gev8tBZXzrScGOKML2HBhgZmz0MNPdrJkzrKL0fVg8s=;
+        b=IIlhc2x5sb+VY+zGFqZYl/o2St+leIzxY02ec8rqtqlWSEkfSS5bh4R9cHl6IkVx1k
+         fD5e3bdSszcUuAUYPVxSKiPgd5WQdT/fbnWfTl6IVvuvvJXXZ0pG09Lr/BDjQHaYUCAq
+         w97HAyxZV5cDUn6GUYX1DcfJ40ctmrKCDIgZ+UvkX2NRm626LiLlTi4Ip59gWVWRu3Ci
+         2cPrC4S+ZpzWpk9ouZeqSGcnSTpEVeCbbzpmacfQ6kqepA9ctz9uH/J4BynqlqOmxyhg
+         hmH3d1IiLnk+K0Y2Wez1DtCYVqltay+W8Lch6NfvrMxaIxv7QTCCSiKwiv2qPT+ut9lO
+         JCIw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1768291920; x=1768896720;
+        d=1e100.net; s=20230601; t=1768291959; x=1768896759;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:x-gm-gg:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=0/MQilqGTab22ugg1CT5X4KmAKEpSnq+i+RZKZLJx6I=;
-        b=xBKTaK5cLAoK7++eluraQR9wFz8IXiVmSC9008OC3kNXIX9kMJZqvDcBCVw0lXpaxv
-         Py//K1K2oIqnea2a7m77X9hXpORQbd7ycVZ89QdpSEJzJ0M4b5vl26xMHj/hoFw4tTkX
-         5YFx4wtSFGx6rYPISb4qEbIfwnjPn4H1DMjDcIjw1HGSr0Fi4euTLvo6JZ+PEdjHd1XP
-         zlvW8rQ1wlCafi6AcPTIYrqVvMOj1O8GfVQXnOh51C9s0noNHa4NzbZl164H0Fz+eEDQ
-         Q50Ga4mDX41Jbbxor2o+AmwjgTf0TOkUSV+vvFiRWrhX8wj7ttmo5uaPnyqI7cvScLLp
-         ZTsA==
-X-Forwarded-Encrypted: i=1; AJvYcCV60plH5WA+YoT0lDNJV9bVk6q+7YMzxQveMiA7WJHPewQn7+6qLNfVY5D/Y/k7P59bcQsdpY1SB+o=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yyc2e5vX2D1U4N/qLnKlvzu1EqjUaryylRPD9N1xPR1rU+qFk8N
-	nZyEZfif3hMFGC4B7GzItWpRxR9mPlR8PW/mAw12fvQHWj7huETLXCiuWW2HxymacKU=
-X-Gm-Gg: AY/fxX4/6pEeQTNfn7Kg7HiVh/YxpKiLTWeFdU1VsXd2FPdGmHDgEfxeL+Aq2JHsk6J
-	LO1rOHNRxWwa7Cty6GFRL1D+ByDoCNYreTg+8xEAv5c920uDOUQAkHvJv2BsF8EJYqBGtbtmPq3
-	a9pqNZmGMGDsJs/MzQFKpY+MjnO66M330os6LdSoEeN71F6uvJGs1AojVGnq+QDgbQ3sa3dHZIj
-	BQLHX9pn7QMcA3UwQTpNzzJgRtmWvvGk32cm+1XpjA60krV8AraZYI+9t16lpa92WQSnWdDxLgs
-	xdmMYYHNy+T+rVWKhaxp2+A1H9AeyePEspnyv9F/61GNLQw3e4z5MUeMJ2T6YY+hb0EBJx4h+Uz
-	U6KPX8q4KDqyOwKsqC2spt23iowhA7cyvZ4V/b/7L1e7YSWoQBQppT0MMd1oZYd+bw/AC+Ur1B7
-	mBp2rEM34AKDwyww6zvC+gn2qlpLOA4oMd3Y0uF4U=
-X-Google-Smtp-Source: AGHT+IF/E4DZmoNj85KKl/suQ05NfvV4pzSTyO36+Rt7tlIRyvZ+VngI5jHuau30KK8jUlb3532Tjw==
-X-Received: by 2002:a05:6000:4013:b0:432:8585:6830 with SMTP id ffacd0b85a97d-432c3760f78mr24536676f8f.45.1768291919604;
-        Tue, 13 Jan 2026 00:11:59 -0800 (PST)
+        bh=gev8tBZXzrScGOKML2HBhgZmz0MNPdrJkzrKL0fVg8s=;
+        b=abOf8tyx7zSRjtrfntqrVBwj7w1qOSGvYB2rXr+JSK8T/qzzVjA0b1h9Owgs3PRrAB
+         c/c3TTqSskhOF+H4CWPYJaSIqJHAxIdW2Q9+KA1a0SrzUey5RwDF5R9Eh+hLq/dCDc+K
+         RU/ye/fFsYMasswNuJ7/vjoJofQFZ1/i6pYN//s4kDlUD4zpAcbiE5Ugqkt/Q0H6EvsR
+         2Y03Klg9Apz3jtNam303wCASkoTVsCbYwznuvE4Rk313MbuD9tzJYDcbr5MNse5Wgz4B
+         kaP3MqbP21sOxPKMLLqRLjbmPtPTJVXDhLyElEhixct3jHQdti+7nfVKf2Frr+1d5pu/
+         6IEQ==
+X-Forwarded-Encrypted: i=1; AJvYcCU0rtMKzOTDJJbCk9OAHRUGq6rGOzjoqg3G4mflMF39EMcCpk/WzBx8WSFv5p+gDdOmxj7ruqlWe5Q=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxtizBKjSV77mlqEubFo2DplvnVcmzL468SmHZD0c7hNRPvMASS
+	v9arqt4Z6om3qXaWvJFtEjHPF5/Zjbjd4yd5X0lvISZCZbPqLmo7J2c0tiSAAP0USII=
+X-Gm-Gg: AY/fxX5At4aGVg9lvXnUVERhshcZARhqQGhsqZTztZzm36IrFwKF3I07gzNqtKRv4JW
+	Z1ztj6Kf2CxFXVoZ7WKLRPCLLoUSVK5RPN1m1OMBUW7sGYbqb0Zf2mEHImkvrlheu0G4gKiE7SW
+	NIemAgtWNqjBHcpnZ9jSTMJ1WCMDGufzcuck09GyBYQ456aWLYQYSD1XxE3mxoHFIslWHgx/6V+
+	dAnTjJSfZF4KX8jZNgG/piGdsZQmp7zCJKWUxEBhpHbBVFZqZKE1QbH2bmyV/nzs9zJcscPswgn
+	DUxuRWbYutzM4ceDYC1KJf7IeLYc0lKH4NBvoH1xYuZ6wvOK6xHyZ5AFUa3SWpaaQCihO8Qo8tB
+	7ZZ497DJuUCpZudmWt+rFStYBntbkz+eZs9pi2KV8CzMo9r3je+7YxOpT1vGeSomGFG3wWQtT7y
+	nS2jJawkU1AyrF9xRHTbfaGr07HfMNSCcvmLWgOd4=
+X-Google-Smtp-Source: AGHT+IEUvQPIsbGq5LkW9n7Jk5Wyh3BEzNuRx6xCdwOIEmf7rMSQ55YXE+iq1Ow72pvMBxBUtlYtTg==
+X-Received: by 2002:a05:600c:3556:b0:477:5af7:6fa with SMTP id 5b1f17b1804b1-47d84b3b52dmr246601805e9.32.1768291958788;
+        Tue, 13 Jan 2026 00:12:38 -0800 (PST)
 Received: from ?IPV6:2a01:e0a:3d9:2080::fa42:7768? ([2a01:e0a:3d9:2080::fa42:7768])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-432bd0dacd1sm42043981f8f.4.2026.01.13.00.11.55
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-47ed98abad1sm24088115e9.10.2026.01.13.00.12.37
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 13 Jan 2026 00:11:55 -0800 (PST)
-Message-ID: <bc3d3416-2f7c-4f4a-a90e-2b3d086ff568@linaro.org>
-Date: Tue, 13 Jan 2026 09:11:54 +0100
+        Tue, 13 Jan 2026 00:12:38 -0800 (PST)
+Message-ID: <134b8df9-24a5-4f92-9505-1e7c31fdff1e@linaro.org>
+Date: Tue, 13 Jan 2026 09:12:37 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 From: Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH v6 03/11] phy: rockchip: samsung-hdptx: Fix coding style
- alignment
+Subject: Re: [PATCH v6 04/11] phy: rockchip: samsung-hdptx: Consistently use
+ [rk_]hdptx_[tmds_] prefixes
 To: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>,
  Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
  Heiko Stuebner <heiko@sntech.de>, Algea Cao <algea.cao@rock-chips.com>,
@@ -87,7 +87,7 @@ Cc: kernel@collabora.com, linux-phy@lists.infradead.org,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-rockchip@lists.infradead.org
 References: <20260113-phy-hdptx-frl-v6-0-8d5f97419c0b@collabora.com>
- <20260113-phy-hdptx-frl-v6-3-8d5f97419c0b@collabora.com>
+ <20260113-phy-hdptx-frl-v6-4-8d5f97419c0b@collabora.com>
 Content-Language: en-US, fr
 Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
@@ -114,10 +114,10 @@ Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
  QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
 Organization: Linaro
-In-Reply-To: <20260113-phy-hdptx-frl-v6-3-8d5f97419c0b@collabora.com>
+In-Reply-To: <20260113-phy-hdptx-frl-v6-4-8d5f97419c0b@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260113_001201_646559_4964A56D 
-X-CRM114-Status: GOOD (  11.25  )
+X-CRM114-CacheID: sfid-20260113_001240_900635_1510EADE 
+X-CRM114-Status: GOOD (  20.41  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -136,61 +136,223 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 1/13/26 00:20, Cristian Ciocaltea wrote:
-> Handle a bunch of reported checkpatch.pl complaints:
+> Fix the naming inconsistencies for some of the functions and global
+> variables:
 > 
->    CHECK: Alignment should match open parenthesis
+> * Add the missing 'rk_hdptx_' prefix to ropll_tmds_cfg variable
+> * Replace '_ropll_tmds_' with '_tmds_ropll_' globally
+> * Replace 'hdtpx' with 'hdptx' globally
 > 
 > Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
 > ---
->   drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 12 ++++++------
->   1 file changed, 6 insertions(+), 6 deletions(-)
+>   drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 62 +++++++++++------------
+>   1 file changed, 31 insertions(+), 31 deletions(-)
 > 
 > diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-> index 89710066d70c..3f8a7f4f5cd8 100644
+> index 3f8a7f4f5cd8..3c6eb6dbadd0 100644
 > --- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
 > +++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-> @@ -1624,11 +1624,11 @@ static void rk_hdptx_phy_set_voltage(struct rk_hdptx_phy *hdptx,
->   		regmap_update_bits(hdptx->regmap, LANE_REG(030a) + offset,
->   				   LN_TX_JEQ_EVEN_CTRL_RBR_MASK,
->   				   FIELD_PREP(LN_TX_JEQ_EVEN_CTRL_RBR_MASK,
-> -				   ctrl->tx_jeq_even_ctrl));
-> +					      ctrl->tx_jeq_even_ctrl));
->   		regmap_update_bits(hdptx->regmap, LANE_REG(030c) + offset,
->   				   LN_TX_JEQ_ODD_CTRL_RBR_MASK,
->   				   FIELD_PREP(LN_TX_JEQ_ODD_CTRL_RBR_MASK,
-> -				   ctrl->tx_jeq_odd_ctrl));
-> +					      ctrl->tx_jeq_odd_ctrl));
->   		regmap_update_bits(hdptx->regmap, LANE_REG(0311) + offset,
->   				   LN_TX_SER_40BIT_EN_RBR_MASK,
->   				   FIELD_PREP(LN_TX_SER_40BIT_EN_RBR_MASK, 0x1));
-> @@ -1638,11 +1638,11 @@ static void rk_hdptx_phy_set_voltage(struct rk_hdptx_phy *hdptx,
->   		regmap_update_bits(hdptx->regmap, LANE_REG(030b) + offset,
->   				   LN_TX_JEQ_EVEN_CTRL_HBR_MASK,
->   				   FIELD_PREP(LN_TX_JEQ_EVEN_CTRL_HBR_MASK,
-> -				   ctrl->tx_jeq_even_ctrl));
-> +					      ctrl->tx_jeq_even_ctrl));
->   		regmap_update_bits(hdptx->regmap, LANE_REG(030d) + offset,
->   				   LN_TX_JEQ_ODD_CTRL_HBR_MASK,
->   				   FIELD_PREP(LN_TX_JEQ_ODD_CTRL_HBR_MASK,
-> -				   ctrl->tx_jeq_odd_ctrl));
-> +					      ctrl->tx_jeq_odd_ctrl));
->   		regmap_update_bits(hdptx->regmap, LANE_REG(0311) + offset,
->   				   LN_TX_SER_40BIT_EN_HBR_MASK,
->   				   FIELD_PREP(LN_TX_SER_40BIT_EN_HBR_MASK, 0x1));
-> @@ -1653,11 +1653,11 @@ static void rk_hdptx_phy_set_voltage(struct rk_hdptx_phy *hdptx,
->   		regmap_update_bits(hdptx->regmap, LANE_REG(030b) + offset,
->   				   LN_TX_JEQ_EVEN_CTRL_HBR2_MASK,
->   				   FIELD_PREP(LN_TX_JEQ_EVEN_CTRL_HBR2_MASK,
-> -				   ctrl->tx_jeq_even_ctrl));
-> +					      ctrl->tx_jeq_even_ctrl));
->   		regmap_update_bits(hdptx->regmap, LANE_REG(030d) + offset,
->   				   LN_TX_JEQ_ODD_CTRL_HBR2_MASK,
->   				   FIELD_PREP(LN_TX_JEQ_ODD_CTRL_HBR2_MASK,
-> -				   ctrl->tx_jeq_odd_ctrl));
-> +					      ctrl->tx_jeq_odd_ctrl));
->   		regmap_update_bits(hdptx->regmap, LANE_REG(0311) + offset,
->   				   LN_TX_SER_40BIT_EN_HBR2_MASK,
->   				   FIELD_PREP(LN_TX_SER_40BIT_EN_HBR2_MASK, 0x1));
+> @@ -32,17 +32,17 @@
+>   #define HDPTX_O_PHY_RDY			BIT(1)
+>   #define HDPTX_O_SB_RDY			BIT(0)
+>   
+> -#define HDTPX_REG(_n, _min, _max)				\
+> +#define HDPTX_REG(_n, _min, _max)				\
+>   	(							\
+>   		BUILD_BUG_ON_ZERO((0x##_n) < (0x##_min)) +	\
+>   		BUILD_BUG_ON_ZERO((0x##_n) > (0x##_max)) +	\
+>   		((0x##_n) * 4)					\
+>   	)
+>   
+> -#define CMN_REG(n)			HDTPX_REG(n, 0000, 00a7)
+> -#define SB_REG(n)			HDTPX_REG(n, 0100, 0129)
+> -#define LNTOP_REG(n)			HDTPX_REG(n, 0200, 0229)
+> -#define LANE_REG(n)			HDTPX_REG(n, 0300, 062d)
+> +#define CMN_REG(n)			HDPTX_REG(n, 0000, 00a7)
+> +#define SB_REG(n)			HDPTX_REG(n, 0100, 0129)
+> +#define LNTOP_REG(n)			HDPTX_REG(n, 0200, 0229)
+> +#define LANE_REG(n)			HDPTX_REG(n, 0300, 062d)
+>   
+>   /* CMN_REG(0008) */
+>   #define OVRD_LCPLL_EN_MASK		BIT(7)
+> @@ -397,7 +397,7 @@ struct rk_hdptx_phy {
+>   	unsigned int lanes;
+>   };
+>   
+> -static const struct ropll_config ropll_tmds_cfg[] = {
+> +static const struct ropll_config rk_hdptx_tmds_ropll_cfg[] = {
+>   	/*             |              pms             |        sdm         |     sdc     | */
+>   	/*        rate, mdiv, mdafc, pdiv, rdiv, sdiv, en, deno, nsig, num,  n, num, deno, */
+>   	{ 594000000ULL,  124,   124,    1,    1,    0,  1,   62,    1,  16,  5,   0,    1, },
+> @@ -424,7 +424,7 @@ static const struct ropll_config ropll_tmds_cfg[] = {
+>   	{  25175000ULL,   84,    84,    1,    1,   15,  1,  168,    1,  16,  4,   1,    1, },
+>   };
+>   
+> -static const struct reg_sequence rk_hdtpx_common_cmn_init_seq[] = {
+> +static const struct reg_sequence rk_hdptx_common_cmn_init_seq[] = {
+>   	REG_SEQ0(CMN_REG(0009), 0x0c),
+>   	REG_SEQ0(CMN_REG(000a), 0x83),
+>   	REG_SEQ0(CMN_REG(000b), 0x06),
+> @@ -514,7 +514,7 @@ static const struct reg_sequence rk_hdtpx_common_cmn_init_seq[] = {
+>   	REG_SEQ0(CMN_REG(009b), 0x10),
+>   };
+>   
+> -static const struct reg_sequence rk_hdtpx_tmds_cmn_init_seq[] = {
+> +static const struct reg_sequence rk_hdptx_tmds_cmn_init_seq[] = {
+>   	REG_SEQ0(CMN_REG(0008), 0x00),
+>   	REG_SEQ0(CMN_REG(0011), 0x01),
+>   	REG_SEQ0(CMN_REG(0017), 0x20),
+> @@ -556,14 +556,14 @@ static const struct reg_sequence rk_hdtpx_tmds_cmn_init_seq[] = {
+>   	REG_SEQ0(CMN_REG(009b), 0x00),
+>   };
+>   
+> -static const struct reg_sequence rk_hdtpx_common_sb_init_seq[] = {
+> +static const struct reg_sequence rk_hdptx_common_sb_init_seq[] = {
+>   	REG_SEQ0(SB_REG(0114), 0x00),
+>   	REG_SEQ0(SB_REG(0115), 0x00),
+>   	REG_SEQ0(SB_REG(0116), 0x00),
+>   	REG_SEQ0(SB_REG(0117), 0x00),
+>   };
+>   
+> -static const struct reg_sequence rk_hdtpx_tmds_lntop_highbr_seq[] = {
+> +static const struct reg_sequence rk_hdptx_tmds_lntop_highbr_seq[] = {
+>   	REG_SEQ0(LNTOP_REG(0201), 0x00),
+>   	REG_SEQ0(LNTOP_REG(0202), 0x00),
+>   	REG_SEQ0(LNTOP_REG(0203), 0x0f),
+> @@ -571,7 +571,7 @@ static const struct reg_sequence rk_hdtpx_tmds_lntop_highbr_seq[] = {
+>   	REG_SEQ0(LNTOP_REG(0205), 0xff),
+>   };
+>   
+> -static const struct reg_sequence rk_hdtpx_tmds_lntop_lowbr_seq[] = {
+> +static const struct reg_sequence rk_hdptx_tmds_lntop_lowbr_seq[] = {
+>   	REG_SEQ0(LNTOP_REG(0201), 0x07),
+>   	REG_SEQ0(LNTOP_REG(0202), 0xc1),
+>   	REG_SEQ0(LNTOP_REG(0203), 0xf0),
+> @@ -579,7 +579,7 @@ static const struct reg_sequence rk_hdtpx_tmds_lntop_lowbr_seq[] = {
+>   	REG_SEQ0(LNTOP_REG(0205), 0x1f),
+>   };
+>   
+> -static const struct reg_sequence rk_hdtpx_common_lane_init_seq[] = {
+> +static const struct reg_sequence rk_hdptx_common_lane_init_seq[] = {
+>   	REG_SEQ0(LANE_REG(0303), 0x0c),
+>   	REG_SEQ0(LANE_REG(0307), 0x20),
+>   	REG_SEQ0(LANE_REG(030a), 0x17),
+> @@ -634,7 +634,7 @@ static const struct reg_sequence rk_hdtpx_common_lane_init_seq[] = {
+>   	REG_SEQ0(LANE_REG(0620), 0xa0),
+>   };
+>   
+> -static const struct reg_sequence rk_hdtpx_tmds_lane_init_seq[] = {
+> +static const struct reg_sequence rk_hdptx_tmds_lane_init_seq[] = {
+>   	REG_SEQ0(LANE_REG(0312), 0x00),
+>   	REG_SEQ0(LANE_REG(0412), 0x00),
+>   	REG_SEQ0(LANE_REG(0512), 0x00),
+> @@ -938,7 +938,7 @@ static bool rk_hdptx_phy_clk_pll_calc(unsigned long long rate,
+>   	return true;
+>   }
+>   
+> -static int rk_hdptx_ropll_tmds_cmn_config(struct rk_hdptx_phy *hdptx)
+> +static int rk_hdptx_tmds_ropll_cmn_config(struct rk_hdptx_phy *hdptx)
+>   {
+>   	const struct ropll_config *cfg = NULL;
+>   	struct ropll_config rc = {0};
+> @@ -947,9 +947,9 @@ static int rk_hdptx_ropll_tmds_cmn_config(struct rk_hdptx_phy *hdptx)
+>   	if (!hdptx->hdmi_cfg.tmds_char_rate)
+>   		return 0;
+>   
+> -	for (i = 0; i < ARRAY_SIZE(ropll_tmds_cfg); i++)
+> -		if (hdptx->hdmi_cfg.tmds_char_rate == ropll_tmds_cfg[i].rate) {
+> -			cfg = &ropll_tmds_cfg[i];
+> +	for (i = 0; i < ARRAY_SIZE(rk_hdptx_tmds_ropll_cfg); i++)
+> +		if (hdptx->hdmi_cfg.tmds_char_rate == rk_hdptx_tmds_ropll_cfg[i].rate) {
+> +			cfg = &rk_hdptx_tmds_ropll_cfg[i];
+>   			break;
+>   		}
+>   
+> @@ -969,8 +969,8 @@ static int rk_hdptx_ropll_tmds_cmn_config(struct rk_hdptx_phy *hdptx)
+>   
+>   	rk_hdptx_pre_power_up(hdptx);
+>   
+> -	rk_hdptx_multi_reg_write(hdptx, rk_hdtpx_common_cmn_init_seq);
+> -	rk_hdptx_multi_reg_write(hdptx, rk_hdtpx_tmds_cmn_init_seq);
+> +	rk_hdptx_multi_reg_write(hdptx, rk_hdptx_common_cmn_init_seq);
+> +	rk_hdptx_multi_reg_write(hdptx, rk_hdptx_tmds_cmn_init_seq);
+>   
+>   	regmap_write(hdptx->regmap, CMN_REG(0051), cfg->pms_mdiv);
+>   	regmap_write(hdptx->regmap, CMN_REG(0055), cfg->pms_mdiv_afc);
+> @@ -1012,25 +1012,25 @@ static int rk_hdptx_ropll_tmds_cmn_config(struct rk_hdptx_phy *hdptx)
+>   	return ret;
+>   }
+>   
+> -static int rk_hdptx_ropll_tmds_mode_config(struct rk_hdptx_phy *hdptx)
+> +static int rk_hdptx_tmds_ropll_mode_config(struct rk_hdptx_phy *hdptx)
+>   {
+> -	rk_hdptx_multi_reg_write(hdptx, rk_hdtpx_common_sb_init_seq);
+> +	rk_hdptx_multi_reg_write(hdptx, rk_hdptx_common_sb_init_seq);
+>   
+>   	regmap_write(hdptx->regmap, LNTOP_REG(0200), 0x06);
+>   
+>   	if (hdptx->hdmi_cfg.tmds_char_rate > HDMI14_MAX_RATE) {
+>   		/* For 1/40 bitrate clk */
+> -		rk_hdptx_multi_reg_write(hdptx, rk_hdtpx_tmds_lntop_highbr_seq);
+> +		rk_hdptx_multi_reg_write(hdptx, rk_hdptx_tmds_lntop_highbr_seq);
+>   	} else {
+>   		/* For 1/10 bitrate clk */
+> -		rk_hdptx_multi_reg_write(hdptx, rk_hdtpx_tmds_lntop_lowbr_seq);
+> +		rk_hdptx_multi_reg_write(hdptx, rk_hdptx_tmds_lntop_lowbr_seq);
+>   	}
+>   
+>   	regmap_write(hdptx->regmap, LNTOP_REG(0206), 0x07);
+>   	regmap_write(hdptx->regmap, LNTOP_REG(0207), 0x0f);
+>   
+> -	rk_hdptx_multi_reg_write(hdptx, rk_hdtpx_common_lane_init_seq);
+> -	rk_hdptx_multi_reg_write(hdptx, rk_hdtpx_tmds_lane_init_seq);
+> +	rk_hdptx_multi_reg_write(hdptx, rk_hdptx_common_lane_init_seq);
+> +	rk_hdptx_multi_reg_write(hdptx, rk_hdptx_tmds_lane_init_seq);
+>   
+>   	return rk_hdptx_post_enable_lane(hdptx);
+>   }
+> @@ -1089,7 +1089,7 @@ static int rk_hdptx_phy_consumer_get(struct rk_hdptx_phy *hdptx)
+>   	if (mode == PHY_MODE_DP) {
+>   		rk_hdptx_dp_reset(hdptx);
+>   	} else {
+> -		ret = rk_hdptx_ropll_tmds_cmn_config(hdptx);
+> +		ret = rk_hdptx_tmds_ropll_cmn_config(hdptx);
+>   		if (ret)
+>   			goto dec_usage;
+>   	}
+> @@ -1436,7 +1436,7 @@ static int rk_hdptx_phy_power_on(struct phy *phy)
+>   		regmap_write(hdptx->grf, GRF_HDPTX_CON0,
+>   			     HDPTX_MODE_SEL << 16 | FIELD_PREP(HDPTX_MODE_SEL, 0x0));
+>   
+> -		ret = rk_hdptx_ropll_tmds_mode_config(hdptx);
+> +		ret = rk_hdptx_tmds_ropll_mode_config(hdptx);
+>   		if (ret)
+>   			rk_hdptx_phy_consumer_put(hdptx, true);
+>   	}
+> @@ -1459,11 +1459,11 @@ static int rk_hdptx_phy_verify_hdmi_config(struct rk_hdptx_phy *hdptx,
+>   	if (!hdmi->tmds_char_rate || hdmi->tmds_char_rate > HDMI20_MAX_RATE)
+>   		return -EINVAL;
+>   
+> -	for (i = 0; i < ARRAY_SIZE(ropll_tmds_cfg); i++)
+> -		if (hdmi->tmds_char_rate == ropll_tmds_cfg[i].rate)
+> +	for (i = 0; i < ARRAY_SIZE(rk_hdptx_tmds_ropll_cfg); i++)
+> +		if (hdmi->tmds_char_rate == rk_hdptx_tmds_ropll_cfg[i].rate)
+>   			break;
+>   
+> -	if (i == ARRAY_SIZE(ropll_tmds_cfg) &&
+> +	if (i == ARRAY_SIZE(rk_hdptx_tmds_ropll_cfg) &&
+>   	    !rk_hdptx_phy_clk_pll_calc(hdmi->tmds_char_rate, NULL))
+>   		return -EINVAL;
+>   
+> @@ -1891,7 +1891,7 @@ static int rk_hdptx_phy_clk_set_rate(struct clk_hw *hw, unsigned long rate,
+>   	 * while the latter being executed only once, i.e. when clock remains
+>   	 * in the prepared state during rate changes.
+>   	 */
+> -	return rk_hdptx_ropll_tmds_cmn_config(hdptx);
+> +	return rk_hdptx_tmds_ropll_cmn_config(hdptx);
+>   }
+>   
+>   static const struct clk_ops hdptx_phy_clk_ops = {
 > 
 
 Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
