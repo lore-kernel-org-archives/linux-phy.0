@@ -4,79 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EDCFAD2D109
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Jan 2026 14:05:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 218E3D2D108
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Jan 2026 14:19:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p8w3UGDUnfgvLG/Sm8jAeu7PGSJXG0efcDSv4FPX33I=; b=f5YaAGvtsW9y4z
-	C5UrAWCarhNnwpJnd+kfFERxkDZfJoWlT+YyZTdwWn8fDjskxomqnZ/+OvlwAEEUFMKy4xHssPpck
-	vvL3a0XAtb0BC3Uj4XENObi7L9f5nbdWVepRgnQu/Uic6li5BNGD+DqkNzboyFYxTmMP4+H14aGil
-	d/8T5H+bTGY9nN50xdiqRqYF9/NsXfaDx2YuHSMB4XrdE9ePe4bckk5j9Kyagwr0xZQaCporM6FU4
-	uGHTyA4MfYpwD2xm68975jdszSx4tP1rM2lfnBnwYCzFFoZwCrxwSusnqmzgr9cUnlP9UX8Qoniu6
-	N7NWRiAjsKDkoQMfc6kQ==;
+	List-Owner; bh=qraExUfTGMwkdtPi3oBw7oLYscUbe+gpfQBLYjGHNA4=; b=XEnHfLh793+o4r
+	0CVYeac8M1kJvLEkYJwXMez0OSdas0JQq0/r/xa0HmkgxEnHEhMXiwl+Nas43ckOGcCxof7s/OtGH
+	RcuotVy/lYUmb/nH0KMa7LNC7/vNqim4qs7AyIA1hOvmU4yk0/ea8kPK0MMb4mv/MSA+eMaAXNkWT
+	Rtv5iFTaEgtxkfZ6BLb2pG8n+kJdWZUGpVOya75HBU1bFCJ/A9zSGA5cewgc8PLNCcINhQBDwMhri
+	4yGNab4FJ7Fjq8Co0KjNf5kxkaMliCMTJxmvVdPjJlTvsnoy5Qdj55ian0eEPItrWXptdp2NyGKPV
+	04OpvuQi7V6YgxBg+3ww==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vff1O-00000007CXK-2rXx;
-	Tue, 13 Jan 2026 14:05:22 +0000
-Received: from smtp1.tecnico.ulisboa.pt ([2001:690:2100:1::15])
+	id 1vffF9-00000007Eh5-2mHE;
+	Tue, 13 Jan 2026 14:19:35 +0000
+Received: from mail-vk1-f180.google.com ([209.85.221.180])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vff1M-00000007CWR-3Hyn
+	id 1vffEz-00000007EdU-408u
 	for linux-phy@lists.infradead.org;
-	Tue, 13 Jan 2026 14:05:22 +0000
-Received: from localhost (localhost.localdomain [127.0.0.1])
-	by smtp1.tecnico.ulisboa.pt (Postfix) with ESMTP id C1EEC600140C;
-	Tue, 13 Jan 2026 14:05:18 +0000 (WET)
-X-Virus-Scanned: by amavis-2.13.0 (20230106) (Debian) at tecnico.ulisboa.pt
-Received: from smtp1.tecnico.ulisboa.pt ([127.0.0.1])
- by localhost (smtp1.tecnico.ulisboa.pt [127.0.0.1]) (amavis, port 10025)
- with LMTP id DD9nfRmJoBh4; Tue, 13 Jan 2026 14:05:16 +0000 (WET)
-Received: from mail1.tecnico.ulisboa.pt (mail1.ist.utl.pt [193.136.128.10])
-	by smtp1.tecnico.ulisboa.pt (Postfix) with ESMTPS id 3E9986002991;
-	Tue, 13 Jan 2026 14:05:16 +0000 (WET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tecnico.ulisboa.pt;
-	s=mail2; t=1768313116;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=z7n8wksu/3JrjxuLRTNuz4hWvUhYdtUmBvv385ffnm4=;
-	b=oRAIoYSsggSbtT8Ueiu2Wq9NdoWTRI4WhmrIhareLtskg9A0rgMGybNYUWWXIbG/OYP7Do
-	F66//LidT8oTWgQCR5JlFT61WMSnDNil4ZDF0TACJBl5fuvdMpCwFQUKqUK3eqd40Xmy/i
-	CQbKT8lT5u1DvrIqzrjdTCMmCPygdZhWrUytDwps1ilZts3DR5H2rEJmCeFNry2OigE770
-	QoM81tnzPQbb5+3Ik/lOoRZF2VRlW7krpLLN/42OzPptYLcRrHbAUIlr9kMCudrGJt/AD5
-	rFXhDzvTzbGMD3LN6ynFyJhE7eNq49O3NYg/xq3s7h5MJxFz4WapZlfEJ/1foA==
-Received: from [192.168.2.110] (unknown [148.63.39.39])
-	(Authenticated sender: ist187313)
-	by mail1.tecnico.ulisboa.pt (Postfix) with ESMTPSA id D022F36008A;
-	Tue, 13 Jan 2026 14:05:15 +0000 (WET)
-Message-ID: <ae36f759-e889-4371-8c08-b8ffd1b69250@tecnico.ulisboa.pt>
-Date: Tue, 13 Jan 2026 14:05:12 +0000
+	Tue, 13 Jan 2026 14:19:28 +0000
+Received: by mail-vk1-f180.google.com with SMTP id 71dfb90a1353d-5635f3eff8aso1430669e0c.1
+        for <linux-phy@lists.infradead.org>; Tue, 13 Jan 2026 06:19:25 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1768313964; x=1768918764;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=xwGbtz4WHBgjbaUVUACc9YQ7tp8fqM7Cfldv3SNB0Jo=;
+        b=LFklkWIShTJZwJQqW9MLBSSC6ee7iRXZHZgneMBIntofADFfBql4fTl08Uy0ShoN3A
+         tipKLsTrup/V+iIVCHuJqNObpLArLmgEb7lGOY+/WgQmwIfX8ow61PU+1CPNfiUimrll
+         02RJdN7er+eGmKdLRuAz9prQiOULHSKy1pbeo5e2rHiDB8S2PLA51PFc6wmaKxVPT0wj
+         KPuskfqhVOHbB4+dCgsfMDVOC0pA2HDoTRS8Vxgmwf+W2rfNkHdalgRINM6hu4bzopVV
+         IpkSFGAlllIXag0gQl2cKRw0gVL5GNwSz7Xz16vByWD90uQ8dJJgtXbUDgu6apyRXQXe
+         7eFw==
+X-Forwarded-Encrypted: i=1; AJvYcCW0hK71HG+fOIWM5UFcDespBfX7VoUjTa1MQh+EyH+5J4d/joD3A51cCxNQVdtIouL0Xbk023cEvTU=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyhmxrpLVPL9YiNlasjOOM81Xz3kvQEkCPKWo+56V74LG+IJkuR
+	Q8ObiTffudrBdX+pbapmxeEU/1il1YGoMPVXPT+4nVUriCVcrURSGLI/whS9UeVR
+X-Gm-Gg: AY/fxX6erT3InL8S5me56YMqdnx2Njrb9gXbkgDMXp2pfFtR2qbTG8FRu/xMW//ob3+
+	TwJnaruiq1+EsyEVc56xIDcVsG+tVF80m9cv12qU96ZHkKmeObZxncPPgpmhD9wl+4gZjjS2Ea0
+	L/AZCXB2Uk4azzulIX+Am6630dHsw9Q4W84XJp+68N+KR2Cs38d9f3OTnr9fFaa8ceg+HmrHxJ8
+	3y8jXLOiT7LsN220Fjj2C9Ixp7KsxJcW+9c8ch2JGjCj3W0VphU8FOCm6ZaSFiWV7Qi1Nsybmtb
+	APD2O4hN+qNiBQbTi/suWXKMiAEI3JG1e0/HR9BjoS40bB4yMIrRH6FB41miWCW+YSEbOjc7728
+	5qJ7WuHuVbrpsPJ+WMtQ0fIURKpd282iHCaFRJaSPNHCCWEg+EZFoAe0qB7gChwxZ+fLLTN0SPT
+	0l/bnU6Sf9KlyExVVpIfg+tG6840332mU4prwwDYzZ8ZE6p0GXcT7HvJKikgU=
+X-Google-Smtp-Source: AGHT+IG08TiNTAyM41MOs2udIGQXpLrqThwXon/DehAKrv2YE4sbp9mA2Opu+Exh9nGCrRKXHk6azQ==
+X-Received: by 2002:a05:6122:1d0d:b0:563:72d8:ea6 with SMTP id 71dfb90a1353d-56372d810f9mr4281466e0c.10.1768313962859;
+        Tue, 13 Jan 2026 06:19:22 -0800 (PST)
+Received: from mail-ua1-f52.google.com (mail-ua1-f52.google.com. [209.85.222.52])
+        by smtp.gmail.com with ESMTPSA id 71dfb90a1353d-5634e959afbsm17675178e0c.1.2026.01.13.06.19.21
+        for <linux-phy@lists.infradead.org>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 13 Jan 2026 06:19:21 -0800 (PST)
+Received: by mail-ua1-f52.google.com with SMTP id a1e0cc1a2514c-93f5774571eso2528683241.1
+        for <linux-phy@lists.infradead.org>; Tue, 13 Jan 2026 06:19:21 -0800 (PST)
+X-Forwarded-Encrypted: i=1; AJvYcCXs+J3W1Zjx2S1+UQpiaU4Of0KRRZ86jSv82JHPuVgqTyd5PYTbJkVTpiyXyTsfpk5KyNYvklWHMkM=@lists.infradead.org
+X-Received: by 2002:a05:6102:5120:b0:5f1:55c9:11a2 with SMTP id
+ ada2fe7eead31-5f155c91443mr2213235137.43.1768313960828; Tue, 13 Jan 2026
+ 06:19:20 -0800 (PST)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 3/5] phy: tegra: xusb: Fix ordering issue when switching
- roles on USB2 ports
-To: Jon Hunter <jonathanh@nvidia.com>, Mathias Nyman
- <mathias.nyman@intel.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Thierry Reding <thierry.reding@gmail.com>, JC Kuo <jckuo@nvidia.com>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>
-Cc: linux-usb@vger.kernel.org, linux-tegra@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org
-References: <20251204-diogo-tegra_phy-v1-0-51a2016d0be8@tecnico.ulisboa.pt>
- <20251204-diogo-tegra_phy-v1-3-51a2016d0be8@tecnico.ulisboa.pt>
- <86cd3ff0-1609-44cb-911c-f0e97652ca1b@nvidia.com>
-Content-Language: en-US
-From: Diogo Ivo <diogo.ivo@tecnico.ulisboa.pt>
-In-Reply-To: <86cd3ff0-1609-44cb-911c-f0e97652ca1b@nvidia.com>
+References: <20260101203938.159161-1-marek.vasut+renesas@mailbox.org>
+In-Reply-To: <20260101203938.159161-1-marek.vasut+renesas@mailbox.org>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Tue, 13 Jan 2026 15:19:08 +0100
+X-Gmail-Original-Message-ID: <CAMuHMdVyQpOBT+Ho+mXY07fndFN9bKJdaaWGn91WOFnnYErLyg@mail.gmail.com>
+X-Gm-Features: AZwV_Qgc2H6REA8fgJsKnqRk5KR8TM9uu7EdHnPsHrNotI7sbZvhls2j-N9ukmU
+Message-ID: <CAMuHMdVyQpOBT+Ho+mXY07fndFN9bKJdaaWGn91WOFnnYErLyg@mail.gmail.com>
+Subject: Re: [PATCH 00/11] Describe PCIe/USB3.0 clock generator on R-Car Gen3
+To: Marek Vasut <marek.vasut+renesas@mailbox.org>
+Cc: linux-arm-kernel@lists.infradead.org, Conor Dooley <conor+dt@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Magnus Damm <magnus.damm@gmail.com>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
+	Vinod Koul <vkoul@kernel.org>, Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, 
+	devicetree@vger.kernel.org, linux-phy@lists.infradead.org, 
+	linux-renesas-soc@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260113_060521_105113_C818A2F7 
-X-CRM114-Status: GOOD (  27.82  )
+X-CRM114-CacheID: sfid-20260113_061926_023912_96123422 
+X-CRM114-Status: GOOD (  26.85  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,106 +95,138 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-CgpPbiAxLzEzLzI2IDExOjU2LCBKb24gSHVudGVyIHdyb3RlOgo+IAo+IE9uIDA0LzEyLzIwMjUg
-MjE6MjcsIERpb2dvIEl2byB3cm90ZToKPj4gVGhlIGN1cnJlbnQgaW1wbGVtZW50YXRpb24gb2Yg
-VVNCMiByb2xlIHN3aXRjaGluZyBvbiBUZWdyYSByZWxpZXMgb24KPj4gd2hpY2hldmVyIHRoZSBw
-cmV2aW91cyBVU0IgY29udHJvbGxlciBkcml2ZXIgd2FzIHVzaW5nIHRoZSBQSFkgdG8gZmlyc3QK
-Pj4gInlpZWxkIiBpdCBiYWNrIHRvIFVTQl9ST0xFX05PTkUgYmVmb3JlIHRoZSBuZXh0IGNvbnRy
-b2xsZXIgY29uZmlndXJlcwo+PiBpdCBmb3IgdGhlIG5ldyByb2xlLiBIb3dldmVyLCBubyBtZWNo
-YW5pc20gdG8gZ3VhcmFudGVlIHRoaXMgb3JkZXJpbmcKPj4gd2FzIGltcGxlbWVudGVkLCBhbmQg
-Y3VycmVudGx5LCBpbiB0aGUgZ2VuZXJhbCBjYXNlLCB0aGUgY29uZmlndXJhdGlvbgo+PiBmdW5j
-dGlvbnMgdGVncmFfeGhjaV9pZF93b3JrKCkgYW5kIHRlZ3JhX3h1ZGNfdXNiX3JvbGVfc3dfd29y
-aygpIGVuZCB1cAo+PiBydW5uaW5nIGluIHRoZSBzYW1lIG9yZGVyIHJlZ2FyZGxlc3Mgb2YgdGhl
-IHRyYW5zaXRpb24gYmVpbmcgSE9TVC0+REVWSUNFCj4+IG9yIERFVklDRS0+SE9TVCwgbGVhZGlu
-ZyB0byBvbmUgb2YgdGhlc2UgdHJhbnNpdGlvbnMgZW5kaW5nIHVwIGluIGEKPj4gbm9uLXdvcmtp
-bmcgc3RhdGUgZHVlIHRvIHRoZSBuZXcgY29uZmlndXJhdGlvbiBiZWluZyBjbG9iYmVyZWQgYnkg
-dGhlCj4+IHByZXZpb3VzIGNvbnRyb2xsZXIgZHJpdmVyIHNldHRpbmcgVVNCX1JPTEVfTk9ORSBh
-ZnRlciB0aGUgZmFjdC4KPj4KPj4gRml4IHRoaXMgYnkgaW50cm9kdWNpbmcgYSBoZWxwZXIgdGhh
-dCB3YWl0cyBmb3IgdGhlIFVTQjIgcG9ydOKAmXMgY3VycmVudAo+PiByb2xlIHRvIGJlY29tZSBV
-U0JfUk9MRV9OT05FIGFuZCBhZGQgaXQgaW4gdGhlIGNvbmZpZ3VyYXRpb24gZnVuY3Rpb25zCj4+
-IGFib3ZlIGJlZm9yZSBzZXR0aW5nIHRoZSByb2xlIHRvIGVpdGhlciBVU0JfUk9MRV9IT1NUIG9y
-Cj4+IFVTQl9ST0xFX0RFVklDRS4gVGhlIHNwZWNpZmljIHBhcmFtZXRlcnMgb2YgdGhlIGhlbHBl
-ciBmdW5jdGlvbiBhcmUKPj4gY2hvaWNlcyB0aGF0IHNlZW0gcmVhc29uYWJsZSBpbiBteSB0ZXN0
-aW5nIGFuZCBoYXZlIG5vIG90aGVyIGJhc2lzLgo+IAo+IFRoaXMgaXMgbm8gaW5mb3JtYXRpb24g
-aGVyZSBhYm91dCB3aHkgNiAqIDUwLzYwdXMgaXMgZGVlbWVkIHRvIGJlIAo+IHN1ZmZpY2llbnQ/
-IE1heSBiZSBpdCBpcywgYnV0IGEgY29tbWVudCB3b3VsZCBiZSBuaWNlLgo+IAo+PiBUaGlzIHdh
-cyB0ZXN0ZWQgb24gYSBUZWdyYTIxMCBwbGF0Zm9ybSAoU21hdWcpLiBIb3dldmVyLCBkdWUgdG8g
-dGhlIAo+PiBzaW1pbGFyCj4+IGFwcHJvYWNoIGluIFRlZ3JhMTg2IGl0IGlzIGxpa2VseSB0aGF0
-IG5vdCBvbmx5IHRoaXMgcHJvYmxlbSBleGlzdHMgdGhlcmUKPj4gYnV0IHRoYXQgdGhpcyBwYXRj
-aCBhbHNvIGZpeGVzIGl0Lgo+Pgo+PiBTaWduZWQtb2ZmLWJ5OiBEaW9nbyBJdm8gPGRpb2dvLml2
-b0B0ZWNuaWNvLnVsaXNib2EucHQ+Cj4+IC0tLQo+PiAgIGRyaXZlcnMvcGh5L3RlZ3JhL3h1c2Iu
-YyAgICAgICAgICAgIHwgMjMgKysrKysrKysrKysrKysrKysrKysrKysKPj4gICBkcml2ZXJzL3Vz
-Yi9nYWRnZXQvdWRjL3RlZ3JhLXh1ZGMuYyB8ICA0ICsrKysKPj4gICBkcml2ZXJzL3VzYi9ob3N0
-L3hoY2ktdGVncmEuYyAgICAgICB8IDE1ICsrKysrKysrKystLS0tLQo+PiAgIGluY2x1ZGUvbGlu
-dXgvcGh5L3RlZ3JhL3h1c2IuaCAgICAgIHwgIDEgKwo+PiAgIDQgZmlsZXMgY2hhbmdlZCwgMzgg
-aW5zZXJ0aW9ucygrKSwgNSBkZWxldGlvbnMoLSkKPj4KPj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMv
-cGh5L3RlZ3JhL3h1c2IuYyBiL2RyaXZlcnMvcGh5L3RlZ3JhL3h1c2IuYwo+PiBpbmRleCBjODlk
-Zjk1YWE2Y2EuLmUwNWMzZjJkMTQyMSAxMDA2NDQKPj4gLS0tIGEvZHJpdmVycy9waHkvdGVncmEv
-eHVzYi5jCj4+ICsrKyBiL2RyaXZlcnMvcGh5L3RlZ3JhL3h1c2IuYwo+PiBAQCAtNzQwLDYgKzc0
-MCwyOSBAQCBzdGF0aWMgdm9pZCAKPj4gdGVncmFfeHVzYl9wYXJzZV91c2Jfcm9sZV9kZWZhdWx0
-X21vZGUoc3RydWN0IHRlZ3JhX3h1c2JfcG9ydCAqcG9ydCkKPj4gICAgICAgfQo+PiAgIH0KPj4g
-K2Jvb2wgdGVncmFfeHVzYl91c2IyX3BvcnRfd2FpdF9yb2xlX25vbmUoc3RydWN0IHRlZ3JhX3h1
-c2JfcGFkY3RsIAo+PiAqcGFkY3RsLCBpbnQgaW5kZXgpCj4+ICt7Cj4+ICsgICAgc3RydWN0IHRl
-Z3JhX3h1c2JfdXNiMl9wb3J0ICp1c2IyID0gCj4+IHRlZ3JhX3h1c2JfZmluZF91c2IyX3BvcnQo
-cGFkY3RsLAo+PiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBpbmRleCk7
-Cj4+ICsgICAgaW50IHJldHJpZXMgPSA1Owo+PiArCj4+ICsgICAgaWYgKCF1c2IyKSB7Cj4+ICsg
-ICAgICAgIGRldl9lcnIoJnVzYjItPmJhc2UuZGV2LCAibm8gcG9ydCBmb3VuZCBmb3IgVVNCMiBs
-YW5lICV1XG4iLCAKPj4gaW5kZXgpOwo+IAo+IFRoaXMgYXBwZWFycyB0byBiZSBhIGJ1Zy4gSWYg
-IXVzYjIgdGhlbiBkZXJlZmVyZW5jZSB1c2IyLT5iYXNlIGFueXdheS4KCkl0IGlzIGEgYnVnLCB3
-aWxsIGZpeCBpbiB2Mi4KCj4+ICsgICAgICAgIHJldHVybiBmYWxzZTsKPj4gKyAgICB9Cj4+ICsK
-Pj4gKyAgICBkbyB7Cj4+ICsgICAgICAgIGlmICh1c2IyLT5yb2xlID09IFVTQl9ST0xFX05PTkUp
-Cj4+ICsgICAgICAgICAgICByZXR1cm4gdHJ1ZTsKPj4gKwo+PiArICAgICAgICB1c2xlZXBfcmFu
-Z2UoNTAsIDYwKTsKPj4gKyAgICB9IHdoaWxlIChyZXRyaWVzLS0pOwo+PiArCj4+ICsgICAgZGV2
-X2VycigmdXNiMi0+YmFzZS5kZXYsICJ0aW1lZCBvdXQgd2FpdGluZyBmb3IgVVNCX1JPTEVfTk9O
-RSIpOwo+PiArCj4+ICsgICAgcmV0dXJuIGZhbHNlOwo+PiArfQo+PiArCj4+ICAgc3RhdGljIGlu
-dCB0ZWdyYV94dXNiX3VzYjJfcG9ydF9wYXJzZV9kdChzdHJ1Y3QgdGVncmFfeHVzYl91c2IyX3Bv
-cnQgCj4+ICp1c2IyKQo+PiAgIHsKPj4gICAgICAgc3RydWN0IHRlZ3JhX3h1c2JfcG9ydCAqcG9y
-dCA9ICZ1c2IyLT5iYXNlOwo+PiBkaWZmIC0tZ2l0IGEvZHJpdmVycy91c2IvZ2FkZ2V0L3VkYy90
-ZWdyYS14dWRjLmMgYi9kcml2ZXJzL3VzYi9nYWRnZXQvIAo+PiB1ZGMvdGVncmEteHVkYy5jCj4+
-IGluZGV4IDBjMzhmYzM3YjZlNi4uNzJkNzI1NjU5ZTVmIDEwMDY0NAo+PiAtLS0gYS9kcml2ZXJz
-L3VzYi9nYWRnZXQvdWRjL3RlZ3JhLXh1ZGMuYwo+PiArKysgYi9kcml2ZXJzL3VzYi9nYWRnZXQv
-dWRjL3RlZ3JhLXh1ZGMuYwo+PiBAQCAtNjk4LDggKzY5OCwxMiBAQCBzdGF0aWMgdm9pZCB0ZWdy
-YV94dWRjX3Jlc3RvcmVfcG9ydF9zcGVlZChzdHJ1Y3QgCj4+IHRlZ3JhX3h1ZGMgKnh1ZGMpCj4+
-ICAgc3RhdGljIHZvaWQgdGVncmFfeHVkY19kZXZpY2VfbW9kZV9vbihzdHJ1Y3QgdGVncmFfeHVk
-YyAqeHVkYykKPj4gICB7Cj4+ICsgICAgaW50IHBvcnQgPSB0ZWdyYV94dXNiX3BhZGN0bF9nZXRf
-cG9ydF9udW1iZXIoeHVkYy0+Y3Vycl91dG1pX3BoeSk7Cj4+ICAgICAgIGludCBlcnI7Cj4+ICsg
-ICAgaWYgKCF0ZWdyYV94dXNiX3VzYjJfcG9ydF93YWl0X3JvbGVfbm9uZSh4dWRjLT5wYWRjdGws
-IHBvcnQpKQo+PiArICAgICAgICByZXR1cm47Cj4+ICsKPj4gICAgICAgcG1fcnVudGltZV9nZXRf
-c3luYyh4dWRjLT5kZXYpOwo+PiAgICAgICB0ZWdyYV9waHlfeHVzYl91dG1pX3BhZF9wb3dlcl9v
-bih4dWRjLT5jdXJyX3V0bWlfcGh5KTsKPj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvdXNiL2hvc3Qv
-eGhjaS10ZWdyYS5jIGIvZHJpdmVycy91c2IvaG9zdC94aGNpLSAKPj4gdGVncmEuYwo+PiBpbmRl
-eCA5YzY5ZmNjZGM2ZTguLjk5NDQ1OTMxNjZhMyAxMDA2NDQKPj4gLS0tIGEvZHJpdmVycy91c2Iv
-aG9zdC94aGNpLXRlZ3JhLmMKPj4gKysrIGIvZHJpdmVycy91c2IvaG9zdC94aGNpLXRlZ3JhLmMK
-Pj4gQEAgLTEzNTIsMTggKzEzNTIsMjMgQEAgc3RhdGljIHZvaWQgdGVncmFfeGhjaV9pZF93b3Jr
-KHN0cnVjdCAKPj4gd29ya19zdHJ1Y3QgKndvcmspCj4+ICAgICAgIHN0cnVjdCB0ZWdyYV94dXNi
-X21ib3hfbXNnIG1zZzsKPj4gICAgICAgc3RydWN0IHBoeSAqcGh5ID0gdGVncmFfeHVzYl9nZXRf
-cGh5KHRlZ3JhLCAidXNiMiIsCj4+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHRlZ3Jh
-LT5vdGdfdXNiMl9wb3J0KTsKPj4gKyAgICBlbnVtIHVzYl9yb2xlIHJvbGUgPSBVU0JfUk9MRV9O
-T05FOwo+PiAgICAgICB1MzIgc3RhdHVzOwo+PiAgICAgICBpbnQgcmV0Owo+PiAgICAgICBkZXZf
-ZGJnKHRlZ3JhLT5kZXYsICJob3N0IG1vZGUgJXNcbiIsIHN0cl9vbl9vZmYodGVncmEtIAo+PiA+
-aG9zdF9tb2RlKSk7Cj4+IC0gICAgbXV0ZXhfbG9jaygmdGVncmEtPmxvY2spOwo+IAo+IEV4dHJh
-IGJsYW5rIGxpbmUgaGVyZS4KCldpbGwgZml4IGluIHYyLgoKPj4gLSAgICBpZiAodGVncmEtPmhv
-c3RfbW9kZSkKPj4gLSAgICAgICAgcGh5X3NldF9tb2RlX2V4dChwaHksIFBIWV9NT0RFX1VTQl9P
-VEcsIFVTQl9ST0xFX0hPU1QpOwo+PiAtICAgIGVsc2UKPj4gLSAgICAgICAgcGh5X3NldF9tb2Rl
-X2V4dChwaHksIFBIWV9NT0RFX1VTQl9PVEcsIFVTQl9ST0xFX05PTkUpOwo+PiArICAgIGlmICh0
-ZWdyYS0+aG9zdF9tb2RlKSB7Cj4+ICsgICAgICAgIGlmICghdGVncmFfeHVzYl91c2IyX3BvcnRf
-d2FpdF9yb2xlX25vbmUodGVncmEtPnBhZGN0bCwKPj4gKyAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgdGVncmEtPm90Z191c2IyX3BvcnQpKQo+PiArICAgICAgICAgICAgcmV0dXJuOwo+PiAr
-ICAgICAgICByb2xlID0gVVNCX1JPTEVfSE9TVDsKPj4gKyAgICB9Cj4+ICsKPj4gKyAgICBtdXRl
-eF9sb2NrKCZ0ZWdyYS0+bG9jayk7Cj4+ICsgICAgcGh5X3NldF9tb2RlX2V4dChwaHksIFBIWV9N
-T0RFX1VTQl9PVEcsIHJvbGUpOwo+PiAgICAgICBtdXRleF91bmxvY2soJnRlZ3JhLT5sb2NrKTsK
-PiAKPiBJIGFtIHRyeWluZyB0byB1bmRlcnN0YW5kIHdoeSB5b3Ugb3B0ZWQgdG8gaW1wbGVtZW50
-IGl0IHRoaXMgd2F5IGFyb3VuZCAKPiBhbmQgbm90IGFkZCB0aGUgd2FpdCBsb29wIGFmdGVyIHNl
-dHRpbmcgdG8gdGhlIG1vZGUgdG8gVVNCX1JPTEVfTk9ORSBpbiAKPiB0aGUgb3JpZ2luYWwgY29k
-ZSBhbGwgd2l0aGluIHRoZSBjb250ZXh0IG9mIHRoZSBtdXRleD8KCkkgZGlkIHRoYXQgdG8gbWlu
-aW1pemUgdGhlIGFtb3VudCBvZiB0aW1lIHdlIHdhaXQgd2hpbGUgaG9sZGluZyB0aGUKbXV0ZXgs
-IGFzIHdlIGNhbiBub3cgcG9zc2libHkgd2FpdCBhIHNpZ25pZmljYW50IGFtb3VudCBvZiB0aW1l
-IGZvciB0aGUKcm9sZSBzd2l0Y2guIElzIHRoaXMgYW4gdW5uZWNjZXNzYXJ5IG9wdGltaXphdGlv
-bj8KClRoYW5rcywKRGlvZ28KCj4gVGhhbmtzCj4gSm9uCgotLSAKbGludXgtcGh5IG1haWxpbmcg
-bGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVh
-ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+Hi Marek,
+
+On Thu, 1 Jan 2026 at 21:39, Marek Vasut
+<marek.vasut+renesas@mailbox.org> wrote:
+> Describe the 9FGV0841 PCIe and USB3.0 clock generator present on various
+> R-Car Gen3 boards. The clock generator supplies 100 MHz differential clock
+> for PCIe ports, USB 3.0 PHY and SATA.
+>
+> The series effectively has three parts, the first three patches are part 1,
+> which fills in the missing USB 3.0 PHY on R-Car E3 Ebisu and enables it,
+> thus aligning the Ebisu USB 3.0 support with the rest of the Gen3 boards.
+>
+> The second part is description of PCIe root ports on R-Car Gen3 SoCs where
+> applicable, in this case that is H3/M3W/M3N/E3. The root port is used with
+> PCIe port power control to also control the PCIe port clock. This is needed
+> on Gen3 boards, because they often use separate clock output from the PCIe
+> clock generator 9FGV0841 to supply clock to the controller and to the PCIe
+> port.
+>
+> The third part is enablement of the 9FGV0841 PCIe clock controller on the
+> R-Car Salvator-X/XS, ULCB and Ebisu boards. The boards use the PCIe clock
+> controller outputs in a slightly different manner, all use the outputs to
+> supply PCIe controllers and slots, as well as USB 3.0 SuperSpeed PHY. The
+> ULCB board also uses the 9FGV0841 to supply SATA IP, but this is not yet
+> described in DT, therefore it is also not part of this series.
+>
+> Marek Vasut (11):
+>   dt-bindings: phy: renesas: usb3-phy: add r8a77990 support
+>   arm64: dts: renesas: r8a77990: Add USB 3.0 PHY and USB3S0 clock nodes
+>   arm64: dts: renesas: ebisu: Enable USB 3.0 PHY
+>   arm64: dts: renesas: r8a77951: Describe PCIe root ports
+>   arm64: dts: renesas: r8a77960: Describe PCIe root ports
+>   arm64: dts: renesas: r8a77961: Describe PCIe root ports
+>   arm64: dts: renesas: r8a77965: Describe PCIe root ports
+>   arm64: dts: renesas: r8a77990: Describe PCIe root port
+>   arm64: dts: renesas: salvator-common: Describe PCIe/USB3.0 clock
+>     generator
+>   arm64: dts: renesas: ulcb: ulcb-kf: Describe PCIe/USB3.0 clock
+>     generator
+>   arm64: dts: renesas: ebisu: Describe PCIe/USB3.0 clock generator
+
+Thanks for your series!
+
+This causes a crash during s2idle on e.g. Salvator-XS with R-Car
+H3 ES2.0:
+
+    PM: suspend entry (s2idle)
+    Filesystems sync: 0.014 seconds
+    Unable to handle kernel NULL pointer dereference at virtual
+address 0000000000000008
+    Mem abort info:
+      ESR = 0x0000000096000004
+      EC = 0x25: DABT (current EL), IL = 32 bits
+      SET = 0, FnV = 0
+      EA = 0, S1PTW = 0
+      FSC = 0x04: level 0 translation fault
+    Data abort info:
+      ISV = 0, ISS = 0x00000004, ISS2 = 0x00000000
+      CM = 0, WnR = 0, TnD = 0, TagAccess = 0
+      GCS = 0, Overlay = 0, DirtyBit = 0, Xs = 0
+    user pgtable: 4k pages, 48-bit VAs, pgdp=0000000504be2000
+    [0000000000000008] pgd=0000000000000000, p4d=0000000000000000
+    Internal error: Oops: 0000000096000004 [#1]  SMP
+    CPU: 2 UID: 0 PID: 1000 Comm: s2idle Not tainted
+6.19.0-rc5-arm64-renesas-04116-g331b300b41b0 #3416 PREEMPT
+    Hardware name: Renesas Salvator-X 2nd version board based on r8a77951 (DT)
+    pstate: a00000c5 (NzCv daIF -PAN -UAO -TCO -DIT -SSBS BTYPE=--)
+    pc : devres_for_each_res+0x60/0xe8
+    lr : devres_for_each_res+0x48/0xe8
+    sp : ffff800083263a70
+    x29: ffff800083263a70 x28: 0000000000000000 x27: ffff0004c125aec8
+    x26: ffff800083263af8 x25: ffff80008167bd38 x24: ffff800083263af8
+    x23: ffff80008071b2f4 x22: ffff0004c125aed0 x21: ffff80008071acd8
+    x20: ffff80008071ad44 x19: ffff0004c125ac20 x18: 0000000000000001
+    x17: 00000000ffffffff x16: ffff800081b93ac8 x15: 0056c6b8a4d0b0e4
+    x14: 00001998170d3e20 x13: 188a4fd930ce7024 x12: 0000000529c8ad17
+    x11: 00000000000000c0 x10: 0000000000000960 x9 : ffff800083263a50
+    x8 : ffff800083263b38 x7 : 0000000000000000 x6 : ffff0004c0dc36c0
+    x5 : ffff800083263af8 x4 : 0000000000000000 x3 : 0000000000000001
+    x2 : 0000000000000000 x1 : 0000000000000000 x0 : 0000000000000000
+    Call trace:
+     devres_for_each_res+0x60/0xe8 (P)
+     dev_cache_fw_image+0x5c/0x1a8
+     dpm_for_each_dev+0x50/0x80
+     fw_pm_notify+0xc0/0xec
+     blocking_notifier_call_chain_robust+0x70/0xdc
+     pm_notifier_call_chain_robust+0x24/0x40
+     pm_suspend+0x13c/0x1e0
+     state_store+0x7c/0x100
+     kobj_attr_store+0x14/0x24
+     sysfs_kf_write+0x78/0x8c
+     kernfs_fop_write_iter+0x128/0x1d0
+     vfs_write+0x210/0x390
+     ksys_write+0x6c/0x100
+     __arm64_sys_write+0x18/0x20
+     invoke_syscall+0x44/0x100
+     el0_svc_common.constprop.0+0x3c/0xd4
+     do_el0_svc+0x18/0x20
+     el0_svc+0x24/0xd8
+     el0t_64_sync_handler+0x98/0xdc
+     el0t_64_sync+0x154/0x158
+    Code: f94004dc eb1600df 540000e1 14000018 (f9400780)
+    ---[ end trace 0000000000000000 ]---
+    note: s2idle[1000] exited with irqs disabled
+    note: s2idle[1000] exited with preempt_count 1
+
+I do not know what is the actual issue.  Adding debug prints to
+rs9_suspend() and rs9_resume() shows these functions are not called,
+while adding 'status = "disabled"' to the renesas,9fgv0841 clock node
+in arch/arm64/boot/dts/renesas/salvator-common.dtsi does fix the issue.
+
+Perhaps you have pending patches for the rs9 or PCIe drivers?
+Do you have a clue?
+Thanks!
+
+Gr{oetje,eeting}s,
+
+                        Geert
+
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
