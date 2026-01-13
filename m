@@ -4,87 +4,171 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AAB91D29DEF
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Jan 2026 09:07:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 712F1D0C84D
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Jan 2026 10:58:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P5y02XxQTgU45u6rF0HRy5Op8NFVN0s406aGr0lzY5g=; b=o6/+Md/DecWs+b
-	aDG3px4hF0shaGYdwY0LVCtvq7MZz+VMUKmNqzKgDFLrXrqh4Uycn75AqCN1fdxfJKlVUpkwcItEw
-	8lA7NXcSGSkCZaWgK4oZYkmvuMlVK63698ckrz0pNMLZsph1TyxjzTxMRHK3bIWKviagNJMaaMTsN
-	kVd+VcQTK8usyvCasTswi65MneBTRdTXkSEI4aBV2gqGFYnwY4iIWmZSlsvfE8THOjRyPCc7GwzDP
-	0yfKpKR1Qjr40p7xBM/hUEYCGB99F2+Ou6QH/vFx8eCM+HgQ4dYZ9REcLxF/QYJtXkonjR6woQ61B
-	70oNZ2ZXWC2nNQhKhsug==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:References:Cc:To:
+	Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=qprAg1GOGNyE7kRuvu2KzphFmAsbX/vkocXY/lR07nY=; b=J4W00OZc92xHyqSkI1BFb8fZwO
+	4E2N7m/hTxHdXjc+4s2bO9DQbxHhf/Zmp4/Xt0GTa99pqkB176hRy3mymfumouXSwWHDmo1qrACZI
+	CuI4nwsayo5JduaAwymWyv2WCilZEeHebr+E/35Um5e1TJgA3hNqicyS3XReSfY0EUbvzs882iIDI
+	BdBW+q5V0rtgaxVdHAL0wpS2ZlVVroVZiCsujksB9XmKz8G2OlOhA+XJToit4Vo6gk8Zz0HWmt3LP
+	1ATpAmRCFUZI8sXzobzO+llGRTrm1Vv529363K6SfiLxI6iGlWSQDZavGcfMs9wJIuonjqQRSyq6t
+	RWL9VioQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vfaMx-00000006nei-1lmX;
-	Tue, 13 Jan 2026 09:07:19 +0000
-Received: from mail-lf1-x130.google.com ([2a00:1450:4864:20::130])
+	id 1vfc6u-00000006wUk-49Tp;
+	Tue, 13 Jan 2026 10:58:53 +0000
+Received: from mail-northcentralusazlp170120005.outbound.protection.outlook.com ([2a01:111:f403:c105::5] helo=CH5PR02CU005.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vfaMt-00000006ndW-0xft
+	id 1vfc6s-00000006wUP-0wz2
 	for linux-phy@lists.infradead.org;
-	Tue, 13 Jan 2026 09:07:18 +0000
-Received: by mail-lf1-x130.google.com with SMTP id 2adb3069b0e04-59b710d46ceso6294281e87.3
-        for <linux-phy@lists.infradead.org>; Tue, 13 Jan 2026 01:07:13 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=suse.com; s=google; t=1768295232; x=1768900032; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=/i3Juaj0N8yH4MFpXlG+cGqZ2qEdPdNcnpSqQBlYTGU=;
-        b=GdjdKD8GJ0+xLLmEPWVOIP+1B9o9jn4hG7pSryYJL5g/KXk/3N6Nx47XsZDo8JRHGE
-         J8V+Go6PRbz0zZ/12hFCc7uiaRlw4OcgY8heSlRln1eC06SNMmYil2IWzoLNI/2+sLtZ
-         XBrO3XC9ILrJhNrSMaLnNMPdEiLO/XwxggKkujH+hx+9ZpnaK6mZLiEATdrzkv8JR9rG
-         m1aKP+NbKLDhYNcz14iz72rzDTA/scvvtT3MbwOi15UP4bnYZ302P6FJWIaSN/Df2IiL
-         9b51m1Lkw5OTlXg0c+f6IsKflwKgglHohGXybCzffkNiL0MHH/n4vN50YknJWUjI4RPZ
-         7Yvw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1768295232; x=1768900032;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=/i3Juaj0N8yH4MFpXlG+cGqZ2qEdPdNcnpSqQBlYTGU=;
-        b=DAe7a9QZhO3hPdlDETnjeuOzGAn/MZrms3XMAa0Bi+ecCK9yLWiuaGRd+XDHn58/e4
-         YgiAzFpxA5wKaMuKBZ6HCbymB3430SD6f5VLo0Kk+H/Tmoq1YmIMxpMWaPp+SJgK6F9A
-         +1Qgr4vmcUO9AINcEchvlRl4YqtdyKmmLaSOdctTZRXqFxcdZ9hyD1zv2GReWlGpvigr
-         67RCdydppG7PQLKOzXbVTPoEd3hBPABVy4FeyGgFtTY+v6tgBa23Sgie7OOPeoeTFcwC
-         B6uZyj6kkHD+LA2isUsPgfIZNr3Yq52OpidnuOgUXjWN7k/dwguMBfFyU/UOv/Fw27bG
-         c/VQ==
-X-Forwarded-Encrypted: i=1; AJvYcCXdwoRawF06i4U582gh/UmFEaS4oAQNf5slOCCkSRVsZsmOCHBajbCrSE2hOcUJ6DGFG1XhTh/PcnE=@lists.infradead.org
-X-Gm-Message-State: AOJu0YybcLliCGUs1LgKGFyu1DMvwWH4wio19gLr2/P0or5rGwmdtPmD
-	ZMJoxUAFnbBlVTAGXwcFPI8F7lyCZMGeoRAWxU3FOTvVpzyT6TwbCGYp4ddfZ33ijaXmsilGmAK
-	4lwF7fmBvfzOPo9023olGs24yGQv/xZbERGP+xPlTyA==
-X-Gm-Gg: AY/fxX5bM9ZD39n4iP1yJFfzhlsLrA7uf4Qszpft2ABg5UH9PTUqZmwN4AIKmsG7I4z
-	Nwtnh7TGxDQ5EBGw58AB3xL9tDpazJcJKn0zcyV9QUZ9a6UV0U8/51AbjvQeMb775X/g9IMxbgu
-	w9iHeUcTAg71EuBARnhoyt2mOPAhxsbFcPDt1RYoSUCmlC2ap0nCMkZL2j/EpgK2kYi06tg9xs0
-	eVe8D/KCZz8nk2dxruJO2PX6P7hW7YbnXyLb8yRZqvpVGyL+izcSHNMvgB2139D3SyiC4kvdwvm
-	9bo40ylKNegN/JDicBIZvb8h6RQL
-X-Google-Smtp-Source: AGHT+IGftEHtLClyb69mOyaEsN3lAH2/jF+5CBMjP/ZmjjcqXy+C8GOSWAl6T7IxwZIVnFTBz/aNdum5oAdTU7TVZB0=
-X-Received: by 2002:a05:6512:3041:b0:595:9152:b932 with SMTP id
- 2adb3069b0e04-59b6f03e5a9mr7195718e87.47.1768295232445; Tue, 13 Jan 2026
- 01:07:12 -0800 (PST)
+	Tue, 13 Jan 2026 10:58:51 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=Z/06zntHFh5vsv4Zwvy7W6pZm56+JJ76YL7lJFuG6a0X+06rC14ADqZ8XH1LWLBSoP15E4DveOUNoZ3wqd50SE6q5fbkkIUksL6wMatCXT2KLMPojcrLG7aWPRahEl33sDQNicEyrCck6tX9ZPDakIds8cdiDf9E7N0AXXrzskm8Y6UUIoEWOZAiqIpj59GjRsJF0fSmqzCJbEpsfcVj5078L4oZVjgCpJCibYYYJMm/NYW1GDdrCl1und4daEVhW4TlqkoaBaJ45/Jtu8wBaTP04JrL9NTGRCzEmfKISUU5yH31QZbWVYlANf+lstiGaeMFFT1kmu4oLrnQI5JDuA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=lkXBvzWu9rCoT1uTvODYEBfmm5pzaXb2cUTCKXxR4RA=;
+ b=EPu3MZHRh9u6lT5xPbosbUldJsAQnSDBCJ3oLQQCPYOsA5l0SDEkD37Ruf9PSjfhQ5DitJ7p032fEJ6/RDkn5fs5RK8MlLOh2TETtDFdNx++0Ku8vychieqEmnYnD8DVAVx0t2DZFie8oyZHH42JjF/1Oeelmv/nyU4hRmDqb3hUAHmWQN7WRBqA0IqLyao0YNonF2yhsNnTRutJDw4CTDHTddBgu1cOGXiXrb6cUTahlVFtEfOsa0OYLHtVWc8B6qLQIIZPH0VDBTPjpEmvitFdQQWe/6ab0iLy+8u0VQYxr1tmTstAkVEWU24RTUZDRxbs92VvREoikET3v1XlGg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nvidia.com; dmarc=pass action=none header.from=nvidia.com;
+ dkim=pass header.d=nvidia.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=lkXBvzWu9rCoT1uTvODYEBfmm5pzaXb2cUTCKXxR4RA=;
+ b=cHKnIIrjPnYDP6nkLAybJSo5OHB5KHwjoTNGxv+NRSZh2MehEEtMkOlcndqfPknGNzicFaDmlmpNJjB4rG1JybF9yNrhPbhSE2erQLh9D7LbgSaQQe6jwPotThCx3kiy50hiMpCvJUoBA95TJeP/Cf05ttwuYkt9StcIQPl5n1TWrPyqowyOSUM6otisykHDjmqjvKz6e2+mDJPaGBel6ZD+0s22fXWzfnCFmU3NyNKNSXuoi1xPPZmo8BOd0jHz8bS264y0G+VUoj1fsAyluCKyr4XovvmjIRQ7seTTg5ri7QJD1Jr686myMkQrceS0csYKkL7tLky9Cq1l097D7Q==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nvidia.com;
+Received: from DS2PR12MB9750.namprd12.prod.outlook.com (2603:10b6:8:2b0::12)
+ by DS0PR12MB6559.namprd12.prod.outlook.com (2603:10b6:8:d1::6) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.9478.4; Tue, 13 Jan 2026 10:58:45 +0000
+Received: from DS2PR12MB9750.namprd12.prod.outlook.com
+ ([fe80::56a8:d6bf:e24c:b391]) by DS2PR12MB9750.namprd12.prod.outlook.com
+ ([fe80::56a8:d6bf:e24c:b391%5]) with mapi id 15.20.9499.005; Tue, 13 Jan 2026
+ 10:58:45 +0000
+Message-ID: <06c3595f-7aa6-449f-bd91-55b4db377579@nvidia.com>
+Date: Tue, 13 Jan 2026 10:58:40 +0000
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 0/5] Fixes to Tegra USB role switching and Smaug USB role
+ switching enablement
+To: Rob Herring <robh@kernel.org>, Diogo Ivo <diogo.ivo@tecnico.ulisboa.pt>
+Cc: Thierry Reding <thierry.reding@gmail.com>, linux-tegra@vger.kernel.org,
+ JC Kuo <jckuo@nvidia.com>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ linux-kernel@vger.kernel.org, Mathias Nyman <mathias.nyman@intel.com>,
+ Conor Dooley <conor+dt@kernel.org>, devicetree@vger.kernel.org,
+ linux-usb@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ linux-phy@lists.infradead.org
+References: <20251204-diogo-tegra_phy-v1-0-51a2016d0be8@tecnico.ulisboa.pt>
+ <176497381829.863612.7431013132555369131.robh@kernel.org>
+From: Jon Hunter <jonathanh@nvidia.com>
+Content-Language: en-US
+In-Reply-To: <176497381829.863612.7431013132555369131.robh@kernel.org>
+X-ClientProxiedBy: LO2P123CA0083.GBRP123.PROD.OUTLOOK.COM
+ (2603:10a6:600:138::16) To DS2PR12MB9750.namprd12.prod.outlook.com
+ (2603:10b6:8:2b0::12)
 MIME-Version: 1.0
-References: <20251105152023.259813-1-marco.crivellari@suse.com>
-In-Reply-To: <20251105152023.259813-1-marco.crivellari@suse.com>
-From: Marco Crivellari <marco.crivellari@suse.com>
-Date: Tue, 13 Jan 2026 10:07:01 +0100
-X-Gm-Features: AZwV_QhM0_519Wp7eCusKGLkLbDhbtlDLW63gw69Hikozl3LItms4ZWAJbUiCUI
-Message-ID: <CAAofZF423Fmsxb4c+J5q4Nf4t6YO+=-SBjna+7TvqJ=C1K0DYQ@mail.gmail.com>
-Subject: Re: [PATCH] phy: sun4i-usb: replace use of system_wq with system_percpu_wq
-To: linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
-	linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev
-Cc: Tejun Heo <tj@kernel.org>, Lai Jiangshan <jiangshanlai@gmail.com>, 
-	Frederic Weisbecker <frederic@kernel.org>, Sebastian Andrzej Siewior <bigeasy@linutronix.de>, 
-	Michal Hocko <mhocko@suse.com>, Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Chen-Yu Tsai <wens@csie.org>, 
-	Jernej Skrabec <jernej.skrabec@gmail.com>, Samuel Holland <samuel@sholland.org>
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DS2PR12MB9750:EE_|DS0PR12MB6559:EE_
+X-MS-Office365-Filtering-Correlation-Id: a5eddbbe-d9d7-4378-c567-08de5292b8a1
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|7416014|376014|1800799024|13003099007;
+X-Microsoft-Antispam-Message-Info: =?utf-8?B?YjhlaGdwdHM2c3hOL3FlTjl4a0JRZ0xwd2RMQk9DeGNIbGkyazYvN011T01X?=
+ =?utf-8?B?SnkzUlhNdzZ0ZmgvSDhCSFU0NXNrd0NxbXNUR2VMT0VkbHoyNGxpb3ozTmhV?=
+ =?utf-8?B?bmFnUHcvdWRxbjVMU0lITzdJaFdCampXQWM1cUhEUTlLRmpsQ2M3dU5XbXZB?=
+ =?utf-8?B?elQ3eGZRU1dHRlhxMlI1VmtpdUxVZDVpWHRoVGVzZ3c0Z2tBZ1k3MGk0ekN2?=
+ =?utf-8?B?TmdMS2h0MzY0UTdPVVdVWFR0S3VMNnNxVC9pVHpnNVlWcVpialQvUjFXWGMy?=
+ =?utf-8?B?dWNyRGZCQjg0RldLaTdTT2tUNXY0NkVURGhnaXh4RlJEVEpZSDFTZzQvZHFa?=
+ =?utf-8?B?SFdlQmRWWlQ3cWdDL3BPNUFxWndZUWlBLzBUczVML3pVaHk3VkUzaVE3Y0pr?=
+ =?utf-8?B?dHc1dlpJTGlHT0NycmtXZ3RTaFE3U3lEMlFhcWV2UTQzMS9URFJ3NVhOVTc5?=
+ =?utf-8?B?TCsvaWkrMllXaVVmKzhIZ3JsRXBDTzc0MUZYMjIrMlZWUVRVUlB3TURON2t5?=
+ =?utf-8?B?amFydnJDRzFCZ1NHcUtPTUtac0FHNFJjOXVMR2l3cVhudnlqbjNPL3F6UC9M?=
+ =?utf-8?B?WUFkLzYybUhHOWtXUnh2MGh3OVlYREtqcjVpUVdZK3FmZGFDa1o0VHBkcWxO?=
+ =?utf-8?B?NnVjSEVGRk9SNnVFNEJGZVFxdC91MmVrZnRhcXNUU2VaaXdMbzBZdStxWExQ?=
+ =?utf-8?B?ZUxKRm82ZnROS1lMSk5XcUtCeXR1ZXJPNHcrSExJaGN2UVZxVU5qTmVkK2J4?=
+ =?utf-8?B?VXRtMkM1ZlNxNzJiTW4zbXRtaERmNlc5bHBISHRJdHNvVXJnYko5YlJIQXc2?=
+ =?utf-8?B?UGUrQi9sY3M5WnFrUzhLekxnM3dTL3ZNTWVmZDIzQngwZCt2b3AzMXVRWjlB?=
+ =?utf-8?B?Y2l5WXBDUDByTVRHRzRQTmVSSFVkaUpTdHMvaEJSclpEU0FGdGF1dmNMMVVu?=
+ =?utf-8?B?WEZlQ0ord1FqTlZOUHVweS9IcTJMVFVTQ0xwOS9kYmE5OEc4bmFJRW51M1Np?=
+ =?utf-8?B?VmJsbXNHSUg2dUV3bXhYbHdSajBLV2lPdUl1UTdCdGxoRFZudVkrRWRIc3lz?=
+ =?utf-8?B?U0hxTEwxLzg3ZzVnQmpZMU5FQ0laQVVyamhHYStWWmNCa1NhcU5BVEgvWVVD?=
+ =?utf-8?B?TlphZGFlRlYyMGJGaGZiOGw0OE14cWR2OTNKeldJdWdLeU52ODMxWkhLQ3Z4?=
+ =?utf-8?B?b3NDNkM1U25URGJUYk84NFFjRU9EYWtjQ0lQd2Rya01sdTFib2crS0hPZlAw?=
+ =?utf-8?B?Z3VVTHR4ZWUydXVXeXlRREJpa0x4elgySFRCOC8rUW05MW4xZ1R3NmhQaC9x?=
+ =?utf-8?B?amRqcGJBSFNuYXNVZ2JIaXJRYVRWeFhkN1F1ZmVVQkE0YVY5Q2ZZaXlXZGNN?=
+ =?utf-8?B?ZXQzdzJDM2VtQnd3ckltcmJFbFZDQVFlRGZ6eWNrZzRmblh6WGRLYXFjS3pl?=
+ =?utf-8?B?eTdZRjdwd0NoV0s0bTJJNG1mamVLUzd1bktmRmdwbjlSUHV5YWVPZDNseGlr?=
+ =?utf-8?B?UG9iUGRxUE8zUUFwSk5PZVh1UzhkK1lzblozYkZsWkRDVG1CMkRIZDJoR0N1?=
+ =?utf-8?B?UWovMnJYQXFsZ2lHUHJQSGhhSVZ0SlQ4R1pxUVpvWnR5dHZJTzd3MVdjdDVV?=
+ =?utf-8?B?WW9XRk5zcjJ5WktOeUhJeDhJNlRoUVNLOUN6VGZDNy9Zb3BHMVNaQXlKeXNI?=
+ =?utf-8?B?dXE3alZ2UG9yZzdIZkFEQVRUL2lPc1A0cStISTZkS0RtdjNKK2E2b3kwY1F6?=
+ =?utf-8?B?SlhaL0RaRm10emd0ODczKy9wMDd0ekF2RmlOOUppSlphdEV2dzJBR2lXVGZL?=
+ =?utf-8?B?eU1BVXFmcUtGeTVDcjVtQk43WlYxQ0oyYlBjWlpjS2xkZFNLcUhiT2xVUW8w?=
+ =?utf-8?B?dnVqMHRRWk5NcVNHTi8zYnBGQkZ4dXVsQXQ4cEhRY3VlVjJrM2I3YjJ6bjRL?=
+ =?utf-8?B?S3B4Wm1WREtUSzd2L1BubVUzRTQvK1grdkJZcVk4ZTYvSkNEWjRjWkJ2cnRV?=
+ =?utf-8?B?eEZJSStQK29nPT0=?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DS2PR12MB9750.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(7416014)(376014)(1800799024)(13003099007);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?S2RWSWQ3cC94alRERlhIclc2RkpBaW5ZTm80Vk0zdmhHQXZNMERScE5qWXJW?=
+ =?utf-8?B?MFlabis3RVRCVTQxWXVJL2ZpQzBTOFdoMVUzNUlBK2VIbzlZZzZJZ0tRVUND?=
+ =?utf-8?B?YUhqZm9SOWFmM2E3cHZxSWNwV3B0UWtmSEdRZWg3cW41V2pzZEtjaVdLZ0p3?=
+ =?utf-8?B?ZXgxYVFJQ3c0Vy9ybTlyV2JUQnpWNGZ1V3FwM0FJNEJlSHhiRFdZNy80Q3Nz?=
+ =?utf-8?B?LzdxSDI4NStGTlBJZXFrSGFBN1gzdktmVEduY1k1anM1Um9YcWgyTDdsT2xP?=
+ =?utf-8?B?N25HT0VxVmVINE1sTVNyQzU0dzcrMWtBd0ZzQWRHNkR2Z3YvZmZwb20xZkUr?=
+ =?utf-8?B?WDZjYmE1ek5Lek5UQUxCS3JNUEVQdFFKSTlJU1hURkNrOVNBb3l4T0hPMHNY?=
+ =?utf-8?B?K1F0MVp3TFpIQllSckxzYllhNTlnTXEvS0ZaczcwVW1ZWEFmOGk0OUVDMllO?=
+ =?utf-8?B?OVYweHNHN2twQVgzU1RaZG8zcmpKc1Y1RG9YcTY4VU1EQno0TmNGNVNrR1Nz?=
+ =?utf-8?B?RnVEQmcwaDJoRkJNTkxXdFR6UXcwYWx2azhxU3hVeDM3TGs3bG1XOE8zRGdH?=
+ =?utf-8?B?RkhIN1htYlh6NUdqQi83b285bjF5eHhPOTE4Q0VoR0JhSmpLQnR5MThFWm5n?=
+ =?utf-8?B?Nk5KemY2RFo5MHZaekxEY0xPMXVrT09zUDFHV3lxa1hjOXZpR3BvbUhYY1Bo?=
+ =?utf-8?B?T29VdmNjRnBEWDIrcExtRnZ6azNXUDRpck9mc095WUxJbHVVVy9TVmtZQk1X?=
+ =?utf-8?B?SDVWbUVhN2NEWWgvTzVnWktvUHZRQW1WZmU5dEppZjRDb2p4N0xLZEs5UjVO?=
+ =?utf-8?B?b2xQVVhWNDAxWXE5Sk9SNmg0Y1cvV29wMUdlVmtHK1JhM083TlIvdldyOHhP?=
+ =?utf-8?B?ajgrTnZONnp4U1FUUFQwcEhlazFqUFlHYzhFM1ZVVVRHamYyaEgwZ3R2TCtx?=
+ =?utf-8?B?eWpSMVE0TXNzcGdLWW5MMDZ0WGVuVDRqVjhjTU5BRDIrRGR0SkYxaU9XZ2Fw?=
+ =?utf-8?B?TzAzVEhqRUtvVVRjSjlNY3JTcUh3cFp5ZXFuSkpPOGhVZ1g0bTBmTDAwby9q?=
+ =?utf-8?B?Q01FdFlNa0VyUktlN0ozTDR0SFFRWkpaWHlRa005SVlaK2tMVUhmUG1lYy8v?=
+ =?utf-8?B?c1BMVzlXbVZWbnZmVHdvNzFXRlhvc0xIbXNFamFiVnovcWZDQ00vMzhuTmdB?=
+ =?utf-8?B?aERhdUVvTWIvbXF5b0Eya25qbVN6RmhXTDAzVmxQTEhiQmM4eE5GNk5GU29h?=
+ =?utf-8?B?dGRrc0diUDJBZWFmZUpQR0lJSmxpeU92V3k0eE93bUthcElRMGMyOXh3Y29G?=
+ =?utf-8?B?UlN1b2loM2swaFlDUlo3WE1xZC9wZ21yVXE5bXkvUkJacU54endRWnMyUlFC?=
+ =?utf-8?B?TlJGMWRIclQxdE9aUXFZdmRURXlHT01JMnBRcEI5WkVHN0srSk1yWmZpb05q?=
+ =?utf-8?B?R3hlNmhmandsaTBWV2NtbW5DcG03Q05jQ0pRWmtoZ0QrMGhkNWtoM2ZMZmRJ?=
+ =?utf-8?B?V29sMVZJZGpwcWJta3kwU2FEK2RKSFoyMmdiT2RNY0lvZnpuR2NuMVhmSHhq?=
+ =?utf-8?B?ZFVxMER2azRmeW9xVEZUUkxuTDZJSSt6VE9QcVVoazA0ZVNwcDdXTEpYTzRk?=
+ =?utf-8?B?ZndQSWNtTzVLdnMveFFtbFFsOEFrYjNpTHlubWRKdUx0RHZqMXV5c2REdS81?=
+ =?utf-8?B?VjRqM01qZkVkdThCRloyOG5MQlZKL1p1UXhLVVRSZHFXSXo2eFYzSzlUVmFO?=
+ =?utf-8?B?NDRBcnJBY0xGbGQwQ0JHbDRiaVJ3MkpyL1U3ZlRoUk1ldSt6L0M4VUk1RXFp?=
+ =?utf-8?B?RkdSZHNFcVVPZzBPcm9ZT1pBMG5XMWtUT3FJaE83QnBRTHJBamwrMXR6a3Vr?=
+ =?utf-8?B?K3VGTndrVjZGcVVZSjl4YldaL2Q5MzgyRUR5UXBad21yVnZiNGFZZmJnRGVw?=
+ =?utf-8?B?SXE1NXNkN00rY3Q1R1VoRjRVejlFSkVVc2tIRVB6Vk1MQnBOVDJCWi85aXh0?=
+ =?utf-8?B?NG9nRU9CT3FIdHJYc3JJb1c3Y1R0dExiUzIwTWZTSGFqN25MYmhrWStFWGZz?=
+ =?utf-8?B?ZnlGekMyMzJoK1lvNHpjamowcHZIT1FQK1hpMDNNMVlRa21OZEJ3VHgxUFha?=
+ =?utf-8?B?NmVOQlJ0L0FhdkwwakhqOGt5TnUxUVB5UkhaaEdRKzVrWDA3RUc1d2VsQkps?=
+ =?utf-8?B?c0o2Vm8reW9ud2p0UGp3NkZWZmRnWDV6Mm83b0NpVFhhazh5ZmtpR2k5ZEh1?=
+ =?utf-8?B?NDZmNWQ4UDhhYlAvdXdSbU04N3pZWFFiUVJCWlhOeXZNdHo0N1lJWDNqdTN1?=
+ =?utf-8?B?STc4RFlCZktwcUtDNVhHV2dsM3g2aTA1b0RxSUJFMFVZMDh6cGpTZz09?=
+X-OriginatorOrg: Nvidia.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: a5eddbbe-d9d7-4378-c567-08de5292b8a1
+X-MS-Exchange-CrossTenant-AuthSource: DS2PR12MB9750.namprd12.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Jan 2026 10:58:45.0321
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 6vuh8BoFhrtMfR3/iXhwgxErCn5VPxVC6W2r2ZCmP183LL1uC+/tHPL9vq2Ub/CEnZzwP6XSHguUwnzpOQJM0Q==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DS0PR12MB6559
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260113_010715_276136_A5F3305F 
-X-CRM114-Status: UNSURE (   6.75  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260113_025850_336728_9E71A774 
+X-CRM114-Status: GOOD (  28.34  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,15 +180,116 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gV2VkLCBOb3YgNSwgMjAyNSBhdCA0OjIw4oCvUE0gTWFyY28gQ3JpdmVsbGFyaQo8bWFyY28u
-Y3JpdmVsbGFyaUBzdXNlLmNvbT4gd3JvdGU6Cj4gWy4uLl0KPiAgZHJpdmVycy9waHkvYWxsd2lu
-bmVyL3BoeS1zdW40aS11c2IuYyB8IDE0ICsrKysrKystLS0tLS0tCj4gIDEgZmlsZSBjaGFuZ2Vk
-LCA3IGluc2VydGlvbnMoKyksIDcgZGVsZXRpb25zKC0pCgoKR2VudGxlIHBpbmcuCgpUaGFua3Mh
-CgotLSAKCk1hcmNvIENyaXZlbGxhcmkKCkwzIFN1cHBvcnQgRW5naW5lZXIKCi0tIApsaW51eC1w
-aHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlz
-dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+Hi Diogo,
+
+On 05/12/2025 22:36, Rob Herring wrote:
+> 
+> On Thu, 04 Dec 2025 21:27:16 +0000, Diogo Ivo wrote:
+>> Hello,
+>>
+>> This patch series contains two fixes for USB role switching on the
+>> Tegra210 SoC, as well as enabling this feature on the Pixel C.
+>>
+>> The first patch addresses a wrong check on the logic that disables the
+>> VBUS regulator.
+>>
+>> The second patch guarantees proper ordering of events when switching PHY
+>> roles.
+>>
+>> The third and fourth patches then add the necessary nodes and properties
+>> in the Smaug DT in order for role switching to work. Currently with this
+>> patch series this feature can only be controlled from userspace by writing
+>> the desired role to sysfs as
+>>
+>> echo "role" > /sys/class/usb_role/usb2-0-role-switch/role
+>>
+>> with role being one of {device, host, none}.
+>>
+>> Further patches will enable automatic role switching via the 'cros_ec_typec'
+>> driver which is currently broken on Smaug.
+>>
+>> N.B: This series does not add a 'connector' node under the 'usb-role-switch'
+>> property added on patch 04/04 because for Smaug the connector should instead
+>> be under the node for 'cros_ec_typec' node and as stated above this
+>> driver is currently broken for this device. If it is deemed better to
+>> describe it but explicitly disable the node let me know and I will send
+>> out a v2.
+>>
+>> Signed-off-by: Diogo Ivo <diogo.ivo@tecnico.ulisboa.pt>
+>> ---
+>> Diogo Ivo (5):
+>>        usb: host: tegra: Remove redundant pm_runtime_mark_last_busy() call
+>>        phy: tegra: xusb: Fix USB2 port regulator disable logic
+>>        phy: tegra: xusb: Fix ordering issue when switching roles on USB2 ports
+>>        arm64: tegra: smaug: Complete and enable tegra-udc node
+>>        arm64: tegra: smaug: Add usb-role-switch support
+>>
+>>   arch/arm64/boot/dts/nvidia/tegra210-smaug.dts | 13 +++++++++++++
+>>   drivers/phy/tegra/xusb-tegra210.c             |  5 +++--
+>>   drivers/phy/tegra/xusb.c                      | 23 +++++++++++++++++++++++
+>>   drivers/phy/tegra/xusb.h                      |  1 +
+>>   drivers/usb/gadget/udc/tegra-xudc.c           |  4 ++++
+>>   drivers/usb/host/xhci-tegra.c                 | 17 ++++++++++-------
+>>   include/linux/phy/tegra/xusb.h                |  1 +
+>>   7 files changed, 55 insertions(+), 9 deletions(-)
+>> ---
+>> base-commit: a8817ff3b5cd99b0a5af57a92d1a3a7980612550
+>> change-id: 20251201-diogo-tegra_phy-86c89cab7377
+>>
+>> Best regards,
+>> --
+>> Diogo Ivo <diogo.ivo@tecnico.ulisboa.pt>
+>>
+>>
+>>
+> 
+> 
+> My bot found new DTB warnings on the .dts files added or changed in this
+> series.
+> 
+> Some warnings may be from an existing SoC .dtsi. Or perhaps the warnings
+> are fixed by another series. Ultimately, it is up to the platform
+> maintainer whether these warnings are acceptable or not. No need to reply
+> unless the platform maintainer has comments.
+> 
+> If you already ran DT checks and didn't see these error(s), then
+> make sure dt-schema is up to date:
+> 
+>    pip3 install dtschema --upgrade
+> 
+> 
+> This patch series was applied (using b4) to base:
+>   Base: base-commit a8817ff3b5cd99b0a5af57a92d1a3a7980612550 not known, ignoring
+>   Base: attempting to guess base-commit...
+>   Base: tags/v6.18-rc7-8-gf402ecd7a8b6 (exact match)
+>   Base: tags/v6.18-rc7-8-gf402ecd7a8b6 (use --merge-base to override)
+> 
+> If this is not the correct base, please add 'base-commit' tag
+> (or use b4 which does this automatically)
+> 
+> New warnings running 'make CHECK_DTBS=y for arch/arm64/boot/dts/nvidia/' for 20251204-diogo-tegra_phy-v1-0-51a2016d0be8@tecnico.ulisboa.pt:
+> 
+> arch/arm64/boot/dts/nvidia/tegra210-smaug.dtb: padctl@7009f000 (nvidia,tegra210-xusb-padctl): ports:usb2-0: 'role-switch-default-mode' does not match any of the regexes: '^pinctrl-[0-9]+$'
+> 	from schema $id: http://devicetree.org/schemas/phy/nvidia,tegra210-xusb-padctl.yaml
+> arch/arm64/boot/dts/nvidia/tegra210-smaug.dtb: padctl@7009f000 (nvidia,tegra210-xusb-padctl): ports:usb2-0: 'connector' is a dependency of 'usb-role-switch'
+> 	from schema $id: http://devicetree.org/schemas/phy/nvidia,tegra210-xusb-padctl.yaml
+
+Per the report above and my other email, this series adds more warnings 
+and we are trying to avoid that, even if such warnings are seen on other 
+Tegra platforms.
+
+Jon
+
+-- 
+nvpublic
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
