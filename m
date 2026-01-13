@@ -4,81 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DF92CD29DE4
-	for <linux-phy@archiver.kernel.org>; Tue, 13 Jan 2026 08:12:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 36555D29DE4
+	for <linux-phy@archiver.kernel.org>; Tue, 13 Jan 2026 08:13:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
 	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=5MFDr7mS0TaU/1sAkfEnzXwAVCc9HjveA3h096+2wjU=; b=x1IIJXIm5WwaFJ8EisCgWS4npf
-	Dluc7xjpwbUTW0xz31/llDgYbxAz5Jr3kQxiQMlh176HKeFfHaBGFtKKEv0OpmUfOjZ7lydV5csh/
-	WtfltLvfF3MIaoA9KL5ZjgGUz4J5Y38diw0MDb0sdeVA9aNj3nHZiJhQI09Lu7JM3TKL7OD83HUqg
-	/vA9zgono8fzdPN2DnyzqDn9udj5wvvpK53cpaDxSHrxYZ/RH72rj1sgQEznOpvRM2eOsIAqSuI/c
-	X9qv7DD4b5/eKaNzQRIBjm4bzJ4qA5WQkWqoXK1bS0SSDUDo1amR6FcTm6KD3qIdWIhXOjhXxO81f
-	sr2HHdGA==;
+	bh=bS/55tW+GCrNEY8RBFR0T3bLKwJknS0vqovQlGx8ieA=; b=Kqwaif149TCejp+Eumt9JVX5T+
+	FsoH8Vmyhg5sH+c7UdrrweNr32iubwNdVLtATeOg4uTAqD/ZP+eEl3MnOjH0h1GW3hu9OvMGrsyJD
+	ujdNbvDa/sNxr/U8ksXb1T8OFRx+TPPYLwUGKvEYP4WNT78n+6jcXHr9aCrWwmRyIEn//kPzx6Oyk
+	jwu3oxwbDwMHs05Zr983dBZgmMq7v0/jFLwvavBrn4SlFg9/3kImai2e/8Onxw81o5dTl1UB90Ozd
+	9arnD73lOkIl08XLvURx8q9HFMlVC26F79Ce2/EC+EmUsXctFydOfbBzrFoNysOS4XDar4JrWG+zB
+	UKo33Spw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vfZWA-00000006iGh-2mt3;
-	Tue, 13 Jan 2026 08:12:46 +0000
-Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
+	id 1vfZWi-00000006iSl-40bv;
+	Tue, 13 Jan 2026 08:13:20 +0000
+Received: from mail-wm1-x32a.google.com ([2a00:1450:4864:20::32a])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vfZW4-00000006iCz-3Gaz
+	id 1vfZWc-00000006iQK-3UNe
 	for linux-phy@lists.infradead.org;
-	Tue, 13 Jan 2026 08:12:42 +0000
-Received: by mail-wm1-x32c.google.com with SMTP id 5b1f17b1804b1-47edd6111b4so1188665e9.1
-        for <linux-phy@lists.infradead.org>; Tue, 13 Jan 2026 00:12:40 -0800 (PST)
+	Tue, 13 Jan 2026 08:13:16 +0000
+Received: by mail-wm1-x32a.google.com with SMTP id 5b1f17b1804b1-47774d3536dso52507965e9.0
+        for <linux-phy@lists.infradead.org>; Tue, 13 Jan 2026 00:13:14 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1768291959; x=1768896759; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1768291993; x=1768896793; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=gev8tBZXzrScGOKML2HBhgZmz0MNPdrJkzrKL0fVg8s=;
-        b=IIlhc2x5sb+VY+zGFqZYl/o2St+leIzxY02ec8rqtqlWSEkfSS5bh4R9cHl6IkVx1k
-         fD5e3bdSszcUuAUYPVxSKiPgd5WQdT/fbnWfTl6IVvuvvJXXZ0pG09Lr/BDjQHaYUCAq
-         w97HAyxZV5cDUn6GUYX1DcfJ40ctmrKCDIgZ+UvkX2NRm626LiLlTi4Ip59gWVWRu3Ci
-         2cPrC4S+ZpzWpk9ouZeqSGcnSTpEVeCbbzpmacfQ6kqepA9ctz9uH/J4BynqlqOmxyhg
-         hmH3d1IiLnk+K0Y2Wez1DtCYVqltay+W8Lch6NfvrMxaIxv7QTCCSiKwiv2qPT+ut9lO
-         JCIw==
+        bh=1mR25HREBGLu0uxiDk/Wk1hfEZP7iw5HJ5+Ly8j4Vgk=;
+        b=VSNxDNx3nn2ogJ8N+baXacYpV27NMC6Re1aYfe0O/NormMFyWMGavINAkb6cWPVaAd
+         7tlEJMnPYtxzRbf7H6WY48mGHcFvF9I9emLxy1X4X2xKgbFIHHDU8+wUOSssylXEMeBF
+         E6CSqIqYRUWTfiXBanTggPFkUPrrXVujPjSLAEB+Zvp208V8WQ8NwYEneg253P+AW+mA
+         Gi8hJHLd3NAwTHaZwBT2fE36DZzRMDGfJSidJ2SjwfmoIJLM/zmXv3uMOiCuFMkONsbF
+         2SgbzH1on+7XxYGR/uRQCbG6QagS4PC/22wX0yzoC3VwDZLR9J+DfoR7Ib2o4TAh6M40
+         zeFg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1768291959; x=1768896759;
+        d=1e100.net; s=20230601; t=1768291993; x=1768896793;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:x-gm-gg:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=gev8tBZXzrScGOKML2HBhgZmz0MNPdrJkzrKL0fVg8s=;
-        b=abOf8tyx7zSRjtrfntqrVBwj7w1qOSGvYB2rXr+JSK8T/qzzVjA0b1h9Owgs3PRrAB
-         c/c3TTqSskhOF+H4CWPYJaSIqJHAxIdW2Q9+KA1a0SrzUey5RwDF5R9Eh+hLq/dCDc+K
-         RU/ye/fFsYMasswNuJ7/vjoJofQFZ1/i6pYN//s4kDlUD4zpAcbiE5Ugqkt/Q0H6EvsR
-         2Y03Klg9Apz3jtNam303wCASkoTVsCbYwznuvE4Rk313MbuD9tzJYDcbr5MNse5Wgz4B
-         kaP3MqbP21sOxPKMLLqRLjbmPtPTJVXDhLyElEhixct3jHQdti+7nfVKf2Frr+1d5pu/
-         6IEQ==
-X-Forwarded-Encrypted: i=1; AJvYcCU0rtMKzOTDJJbCk9OAHRUGq6rGOzjoqg3G4mflMF39EMcCpk/WzBx8WSFv5p+gDdOmxj7ruqlWe5Q=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxtizBKjSV77mlqEubFo2DplvnVcmzL468SmHZD0c7hNRPvMASS
-	v9arqt4Z6om3qXaWvJFtEjHPF5/Zjbjd4yd5X0lvISZCZbPqLmo7J2c0tiSAAP0USII=
-X-Gm-Gg: AY/fxX5At4aGVg9lvXnUVERhshcZARhqQGhsqZTztZzm36IrFwKF3I07gzNqtKRv4JW
-	Z1ztj6Kf2CxFXVoZ7WKLRPCLLoUSVK5RPN1m1OMBUW7sGYbqb0Zf2mEHImkvrlheu0G4gKiE7SW
-	NIemAgtWNqjBHcpnZ9jSTMJ1WCMDGufzcuck09GyBYQ456aWLYQYSD1XxE3mxoHFIslWHgx/6V+
-	dAnTjJSfZF4KX8jZNgG/piGdsZQmp7zCJKWUxEBhpHbBVFZqZKE1QbH2bmyV/nzs9zJcscPswgn
-	DUxuRWbYutzM4ceDYC1KJf7IeLYc0lKH4NBvoH1xYuZ6wvOK6xHyZ5AFUa3SWpaaQCihO8Qo8tB
-	7ZZ497DJuUCpZudmWt+rFStYBntbkz+eZs9pi2KV8CzMo9r3je+7YxOpT1vGeSomGFG3wWQtT7y
-	nS2jJawkU1AyrF9xRHTbfaGr07HfMNSCcvmLWgOd4=
-X-Google-Smtp-Source: AGHT+IEUvQPIsbGq5LkW9n7Jk5Wyh3BEzNuRx6xCdwOIEmf7rMSQ55YXE+iq1Ow72pvMBxBUtlYtTg==
-X-Received: by 2002:a05:600c:3556:b0:477:5af7:6fa with SMTP id 5b1f17b1804b1-47d84b3b52dmr246601805e9.32.1768291958788;
-        Tue, 13 Jan 2026 00:12:38 -0800 (PST)
+        bh=1mR25HREBGLu0uxiDk/Wk1hfEZP7iw5HJ5+Ly8j4Vgk=;
+        b=P1rhqUdnSt3Bgy5k5Gu2hODugmZHFy3GVuDXxIgwbpbWX3IwpRxg/R6whI6Ye/9IEI
+         gFrTH2O0cunmsyvZ8Ml2A8jtopT4wBkX1kWX6dCSwd6c1JjlLA7t/wWEbFoEaZJ/kcrH
+         SmQQLxapjxo84UmQbwNebHaf/GW7FZ6pTOtPXMoC9zyZusLM9zp24/dJ3hip45V4XdkX
+         rBxiteJgO4an5t8JQna1PWn8WjzVfOzg9tvIUEcy/v4MsHMWt1kCSugUlxKVPEvuqA8c
+         p+cENnhOXCeKC+Xvpl+X5dzf4QcIjW+Q4uZTtbvXIQCFWIolMK3YOpAMgeUp51CxcWwA
+         o6fw==
+X-Forwarded-Encrypted: i=1; AJvYcCXfejYtIoa5Pyd7NvwTmwsqH0/MlOUKlYzFIPT8g9BR7zx32s5qe71aaJ8cYm4bNrLNB2SmMV+r+A4=@lists.infradead.org
+X-Gm-Message-State: AOJu0YywWPh3dF7qH/rOijN3Q1yuiaKBY0pkAbM9qBSx7I1BU1WPcb8n
+	Y/zYVyvihRT/p9PLVJ0rJ4In3th/KDq2fiPhCWoo9vgg6xwEIWWb4JKKYTPALlCxAbk=
+X-Gm-Gg: AY/fxX6up1PwmSExi1KOKPnF+x7wVniH54dLu1VYKr9fyWago7N+C9y0MStr9AuVx5f
+	cRQh63VR94uC/Aor0hyTolEOLZ0SvBsMzjGygZb1BXH1KF5+LxJSYSG6EdaYl94enriaGKX8lTt
+	BUZhvbSCpbeZcGXxNKIEu5QKVZ2GodtZYR9dkhTebYtIyoxZLsmbD08xoyrB/zzzUmaA0DUPZzv
+	oNpcm8263t2PCpPRUNS2uP9Rc1QA/xBtZv6CiIzQ/33XhCFT62FMXhtJ8/UC89dxBShDoT9wfLx
+	ipgDyObRIfzbsh9Bkl+NVqBv8s2j4aHQx4/RGhznGKbglDouePTIWm9ZhUD9wWNNgQ/st+Z8ygh
+	Ufl/bhlWIQlpzquuxCcI+xGqh6PBDLs5J3iCQnc27oDsJ48cE0T4Hj7RkqJmJWjjmqs6VHEjDr1
+	uU1HgcpVqXlpYqvpXeiRIk2WKx6FvSk5PfnPObAb9qjz8Es5wIIQ==
+X-Google-Smtp-Source: AGHT+IEgcmY72rCqI7X0/U8zwBCvN2BlRfRJApLQbN0adnG2w5XdOoMooZI08ASkrAExinOsOkzGNQ==
+X-Received: by 2002:a05:600c:3103:b0:477:a289:d854 with SMTP id 5b1f17b1804b1-47ed7c061f5mr28881005e9.5.1768291992907;
+        Tue, 13 Jan 2026 00:13:12 -0800 (PST)
 Received: from ?IPV6:2a01:e0a:3d9:2080::fa42:7768? ([2a01:e0a:3d9:2080::fa42:7768])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-47ed98abad1sm24088115e9.10.2026.01.13.00.12.37
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-47edee4cbc2sm574315e9.4.2026.01.13.00.13.11
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 13 Jan 2026 00:12:38 -0800 (PST)
-Message-ID: <134b8df9-24a5-4f92-9505-1e7c31fdff1e@linaro.org>
-Date: Tue, 13 Jan 2026 09:12:37 +0100
+        Tue, 13 Jan 2026 00:13:11 -0800 (PST)
+Message-ID: <ea0a9ee9-3cb1-4d08-aa6f-91bb91bda816@linaro.org>
+Date: Tue, 13 Jan 2026 09:13:11 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 From: Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH v6 04/11] phy: rockchip: samsung-hdptx: Consistently use
- [rk_]hdptx_[tmds_] prefixes
+Subject: Re: [PATCH v6 02/11] phy: rockchip: samsung-hdptx: Use usleep_range()
+ instead of udelay()
 To: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>,
  Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
  Heiko Stuebner <heiko@sntech.de>, Algea Cao <algea.cao@rock-chips.com>,
@@ -87,7 +87,7 @@ Cc: kernel@collabora.com, linux-phy@lists.infradead.org,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-rockchip@lists.infradead.org
 References: <20260113-phy-hdptx-frl-v6-0-8d5f97419c0b@collabora.com>
- <20260113-phy-hdptx-frl-v6-4-8d5f97419c0b@collabora.com>
+ <20260113-phy-hdptx-frl-v6-2-8d5f97419c0b@collabora.com>
 Content-Language: en-US, fr
 Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
@@ -114,10 +114,10 @@ Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
  QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
 Organization: Linaro
-In-Reply-To: <20260113-phy-hdptx-frl-v6-4-8d5f97419c0b@collabora.com>
+In-Reply-To: <20260113-phy-hdptx-frl-v6-2-8d5f97419c0b@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260113_001240_900635_1510EADE 
-X-CRM114-Status: GOOD (  20.41  )
+X-CRM114-CacheID: sfid-20260113_001314_878397_25938FE6 
+X-CRM114-Status: GOOD (  12.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -136,223 +136,27 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 1/13/26 00:20, Cristian Ciocaltea wrote:
-> Fix the naming inconsistencies for some of the functions and global
-> variables:
-> 
-> * Add the missing 'rk_hdptx_' prefix to ropll_tmds_cfg variable
-> * Replace '_ropll_tmds_' with '_tmds_ropll_' globally
-> * Replace 'hdtpx' with 'hdptx' globally
+> rk_hdptx_dp_reset() is allowed to sleep, hence replace the busy waiting
+> with usleep_range(), to allow other threads to run.
 > 
 > Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
 > ---
->   drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 62 +++++++++++------------
->   1 file changed, 31 insertions(+), 31 deletions(-)
+>   drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c | 2 +-
+>   1 file changed, 1 insertion(+), 1 deletion(-)
 > 
 > diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-> index 3f8a7f4f5cd8..3c6eb6dbadd0 100644
+> index a65e96694237..89710066d70c 100644
 > --- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
 > +++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-> @@ -32,17 +32,17 @@
->   #define HDPTX_O_PHY_RDY			BIT(1)
->   #define HDPTX_O_SB_RDY			BIT(0)
+> @@ -1042,7 +1042,7 @@ static void rk_hdptx_dp_reset(struct rk_hdptx_phy *hdptx)
+>   	reset_control_assert(hdptx->rsts[RST_INIT].rstc);
 >   
-> -#define HDTPX_REG(_n, _min, _max)				\
-> +#define HDPTX_REG(_n, _min, _max)				\
->   	(							\
->   		BUILD_BUG_ON_ZERO((0x##_n) < (0x##_min)) +	\
->   		BUILD_BUG_ON_ZERO((0x##_n) > (0x##_max)) +	\
->   		((0x##_n) * 4)					\
->   	)
+>   	reset_control_assert(hdptx->rsts[RST_APB].rstc);
+> -	udelay(10);
+> +	usleep_range(10, 15);
+>   	reset_control_deassert(hdptx->rsts[RST_APB].rstc);
 >   
-> -#define CMN_REG(n)			HDTPX_REG(n, 0000, 00a7)
-> -#define SB_REG(n)			HDTPX_REG(n, 0100, 0129)
-> -#define LNTOP_REG(n)			HDTPX_REG(n, 0200, 0229)
-> -#define LANE_REG(n)			HDTPX_REG(n, 0300, 062d)
-> +#define CMN_REG(n)			HDPTX_REG(n, 0000, 00a7)
-> +#define SB_REG(n)			HDPTX_REG(n, 0100, 0129)
-> +#define LNTOP_REG(n)			HDPTX_REG(n, 0200, 0229)
-> +#define LANE_REG(n)			HDPTX_REG(n, 0300, 062d)
->   
->   /* CMN_REG(0008) */
->   #define OVRD_LCPLL_EN_MASK		BIT(7)
-> @@ -397,7 +397,7 @@ struct rk_hdptx_phy {
->   	unsigned int lanes;
->   };
->   
-> -static const struct ropll_config ropll_tmds_cfg[] = {
-> +static const struct ropll_config rk_hdptx_tmds_ropll_cfg[] = {
->   	/*             |              pms             |        sdm         |     sdc     | */
->   	/*        rate, mdiv, mdafc, pdiv, rdiv, sdiv, en, deno, nsig, num,  n, num, deno, */
->   	{ 594000000ULL,  124,   124,    1,    1,    0,  1,   62,    1,  16,  5,   0,    1, },
-> @@ -424,7 +424,7 @@ static const struct ropll_config ropll_tmds_cfg[] = {
->   	{  25175000ULL,   84,    84,    1,    1,   15,  1,  168,    1,  16,  4,   1,    1, },
->   };
->   
-> -static const struct reg_sequence rk_hdtpx_common_cmn_init_seq[] = {
-> +static const struct reg_sequence rk_hdptx_common_cmn_init_seq[] = {
->   	REG_SEQ0(CMN_REG(0009), 0x0c),
->   	REG_SEQ0(CMN_REG(000a), 0x83),
->   	REG_SEQ0(CMN_REG(000b), 0x06),
-> @@ -514,7 +514,7 @@ static const struct reg_sequence rk_hdtpx_common_cmn_init_seq[] = {
->   	REG_SEQ0(CMN_REG(009b), 0x10),
->   };
->   
-> -static const struct reg_sequence rk_hdtpx_tmds_cmn_init_seq[] = {
-> +static const struct reg_sequence rk_hdptx_tmds_cmn_init_seq[] = {
->   	REG_SEQ0(CMN_REG(0008), 0x00),
->   	REG_SEQ0(CMN_REG(0011), 0x01),
->   	REG_SEQ0(CMN_REG(0017), 0x20),
-> @@ -556,14 +556,14 @@ static const struct reg_sequence rk_hdtpx_tmds_cmn_init_seq[] = {
->   	REG_SEQ0(CMN_REG(009b), 0x00),
->   };
->   
-> -static const struct reg_sequence rk_hdtpx_common_sb_init_seq[] = {
-> +static const struct reg_sequence rk_hdptx_common_sb_init_seq[] = {
->   	REG_SEQ0(SB_REG(0114), 0x00),
->   	REG_SEQ0(SB_REG(0115), 0x00),
->   	REG_SEQ0(SB_REG(0116), 0x00),
->   	REG_SEQ0(SB_REG(0117), 0x00),
->   };
->   
-> -static const struct reg_sequence rk_hdtpx_tmds_lntop_highbr_seq[] = {
-> +static const struct reg_sequence rk_hdptx_tmds_lntop_highbr_seq[] = {
->   	REG_SEQ0(LNTOP_REG(0201), 0x00),
->   	REG_SEQ0(LNTOP_REG(0202), 0x00),
->   	REG_SEQ0(LNTOP_REG(0203), 0x0f),
-> @@ -571,7 +571,7 @@ static const struct reg_sequence rk_hdtpx_tmds_lntop_highbr_seq[] = {
->   	REG_SEQ0(LNTOP_REG(0205), 0xff),
->   };
->   
-> -static const struct reg_sequence rk_hdtpx_tmds_lntop_lowbr_seq[] = {
-> +static const struct reg_sequence rk_hdptx_tmds_lntop_lowbr_seq[] = {
->   	REG_SEQ0(LNTOP_REG(0201), 0x07),
->   	REG_SEQ0(LNTOP_REG(0202), 0xc1),
->   	REG_SEQ0(LNTOP_REG(0203), 0xf0),
-> @@ -579,7 +579,7 @@ static const struct reg_sequence rk_hdtpx_tmds_lntop_lowbr_seq[] = {
->   	REG_SEQ0(LNTOP_REG(0205), 0x1f),
->   };
->   
-> -static const struct reg_sequence rk_hdtpx_common_lane_init_seq[] = {
-> +static const struct reg_sequence rk_hdptx_common_lane_init_seq[] = {
->   	REG_SEQ0(LANE_REG(0303), 0x0c),
->   	REG_SEQ0(LANE_REG(0307), 0x20),
->   	REG_SEQ0(LANE_REG(030a), 0x17),
-> @@ -634,7 +634,7 @@ static const struct reg_sequence rk_hdtpx_common_lane_init_seq[] = {
->   	REG_SEQ0(LANE_REG(0620), 0xa0),
->   };
->   
-> -static const struct reg_sequence rk_hdtpx_tmds_lane_init_seq[] = {
-> +static const struct reg_sequence rk_hdptx_tmds_lane_init_seq[] = {
->   	REG_SEQ0(LANE_REG(0312), 0x00),
->   	REG_SEQ0(LANE_REG(0412), 0x00),
->   	REG_SEQ0(LANE_REG(0512), 0x00),
-> @@ -938,7 +938,7 @@ static bool rk_hdptx_phy_clk_pll_calc(unsigned long long rate,
->   	return true;
->   }
->   
-> -static int rk_hdptx_ropll_tmds_cmn_config(struct rk_hdptx_phy *hdptx)
-> +static int rk_hdptx_tmds_ropll_cmn_config(struct rk_hdptx_phy *hdptx)
->   {
->   	const struct ropll_config *cfg = NULL;
->   	struct ropll_config rc = {0};
-> @@ -947,9 +947,9 @@ static int rk_hdptx_ropll_tmds_cmn_config(struct rk_hdptx_phy *hdptx)
->   	if (!hdptx->hdmi_cfg.tmds_char_rate)
->   		return 0;
->   
-> -	for (i = 0; i < ARRAY_SIZE(ropll_tmds_cfg); i++)
-> -		if (hdptx->hdmi_cfg.tmds_char_rate == ropll_tmds_cfg[i].rate) {
-> -			cfg = &ropll_tmds_cfg[i];
-> +	for (i = 0; i < ARRAY_SIZE(rk_hdptx_tmds_ropll_cfg); i++)
-> +		if (hdptx->hdmi_cfg.tmds_char_rate == rk_hdptx_tmds_ropll_cfg[i].rate) {
-> +			cfg = &rk_hdptx_tmds_ropll_cfg[i];
->   			break;
->   		}
->   
-> @@ -969,8 +969,8 @@ static int rk_hdptx_ropll_tmds_cmn_config(struct rk_hdptx_phy *hdptx)
->   
->   	rk_hdptx_pre_power_up(hdptx);
->   
-> -	rk_hdptx_multi_reg_write(hdptx, rk_hdtpx_common_cmn_init_seq);
-> -	rk_hdptx_multi_reg_write(hdptx, rk_hdtpx_tmds_cmn_init_seq);
-> +	rk_hdptx_multi_reg_write(hdptx, rk_hdptx_common_cmn_init_seq);
-> +	rk_hdptx_multi_reg_write(hdptx, rk_hdptx_tmds_cmn_init_seq);
->   
->   	regmap_write(hdptx->regmap, CMN_REG(0051), cfg->pms_mdiv);
->   	regmap_write(hdptx->regmap, CMN_REG(0055), cfg->pms_mdiv_afc);
-> @@ -1012,25 +1012,25 @@ static int rk_hdptx_ropll_tmds_cmn_config(struct rk_hdptx_phy *hdptx)
->   	return ret;
->   }
->   
-> -static int rk_hdptx_ropll_tmds_mode_config(struct rk_hdptx_phy *hdptx)
-> +static int rk_hdptx_tmds_ropll_mode_config(struct rk_hdptx_phy *hdptx)
->   {
-> -	rk_hdptx_multi_reg_write(hdptx, rk_hdtpx_common_sb_init_seq);
-> +	rk_hdptx_multi_reg_write(hdptx, rk_hdptx_common_sb_init_seq);
->   
->   	regmap_write(hdptx->regmap, LNTOP_REG(0200), 0x06);
->   
->   	if (hdptx->hdmi_cfg.tmds_char_rate > HDMI14_MAX_RATE) {
->   		/* For 1/40 bitrate clk */
-> -		rk_hdptx_multi_reg_write(hdptx, rk_hdtpx_tmds_lntop_highbr_seq);
-> +		rk_hdptx_multi_reg_write(hdptx, rk_hdptx_tmds_lntop_highbr_seq);
->   	} else {
->   		/* For 1/10 bitrate clk */
-> -		rk_hdptx_multi_reg_write(hdptx, rk_hdtpx_tmds_lntop_lowbr_seq);
-> +		rk_hdptx_multi_reg_write(hdptx, rk_hdptx_tmds_lntop_lowbr_seq);
->   	}
->   
->   	regmap_write(hdptx->regmap, LNTOP_REG(0206), 0x07);
->   	regmap_write(hdptx->regmap, LNTOP_REG(0207), 0x0f);
->   
-> -	rk_hdptx_multi_reg_write(hdptx, rk_hdtpx_common_lane_init_seq);
-> -	rk_hdptx_multi_reg_write(hdptx, rk_hdtpx_tmds_lane_init_seq);
-> +	rk_hdptx_multi_reg_write(hdptx, rk_hdptx_common_lane_init_seq);
-> +	rk_hdptx_multi_reg_write(hdptx, rk_hdptx_tmds_lane_init_seq);
->   
->   	return rk_hdptx_post_enable_lane(hdptx);
->   }
-> @@ -1089,7 +1089,7 @@ static int rk_hdptx_phy_consumer_get(struct rk_hdptx_phy *hdptx)
->   	if (mode == PHY_MODE_DP) {
->   		rk_hdptx_dp_reset(hdptx);
->   	} else {
-> -		ret = rk_hdptx_ropll_tmds_cmn_config(hdptx);
-> +		ret = rk_hdptx_tmds_ropll_cmn_config(hdptx);
->   		if (ret)
->   			goto dec_usage;
->   	}
-> @@ -1436,7 +1436,7 @@ static int rk_hdptx_phy_power_on(struct phy *phy)
->   		regmap_write(hdptx->grf, GRF_HDPTX_CON0,
->   			     HDPTX_MODE_SEL << 16 | FIELD_PREP(HDPTX_MODE_SEL, 0x0));
->   
-> -		ret = rk_hdptx_ropll_tmds_mode_config(hdptx);
-> +		ret = rk_hdptx_tmds_ropll_mode_config(hdptx);
->   		if (ret)
->   			rk_hdptx_phy_consumer_put(hdptx, true);
->   	}
-> @@ -1459,11 +1459,11 @@ static int rk_hdptx_phy_verify_hdmi_config(struct rk_hdptx_phy *hdptx,
->   	if (!hdmi->tmds_char_rate || hdmi->tmds_char_rate > HDMI20_MAX_RATE)
->   		return -EINVAL;
->   
-> -	for (i = 0; i < ARRAY_SIZE(ropll_tmds_cfg); i++)
-> -		if (hdmi->tmds_char_rate == ropll_tmds_cfg[i].rate)
-> +	for (i = 0; i < ARRAY_SIZE(rk_hdptx_tmds_ropll_cfg); i++)
-> +		if (hdmi->tmds_char_rate == rk_hdptx_tmds_ropll_cfg[i].rate)
->   			break;
->   
-> -	if (i == ARRAY_SIZE(ropll_tmds_cfg) &&
-> +	if (i == ARRAY_SIZE(rk_hdptx_tmds_ropll_cfg) &&
->   	    !rk_hdptx_phy_clk_pll_calc(hdmi->tmds_char_rate, NULL))
->   		return -EINVAL;
->   
-> @@ -1891,7 +1891,7 @@ static int rk_hdptx_phy_clk_set_rate(struct clk_hw *hw, unsigned long rate,
->   	 * while the latter being executed only once, i.e. when clock remains
->   	 * in the prepared state during rate changes.
->   	 */
-> -	return rk_hdptx_ropll_tmds_cmn_config(hdptx);
-> +	return rk_hdptx_tmds_ropll_cmn_config(hdptx);
->   }
->   
->   static const struct clk_ops hdptx_phy_clk_ops = {
+>   	regmap_update_bits(hdptx->regmap, LANE_REG(0301),
 > 
 
 Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
