@@ -4,56 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 676CDD30CFE
-	for <linux-phy@archiver.kernel.org>; Wed, 14 Jan 2026 16:09:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4C723D38FEC
+	for <linux-phy@archiver.kernel.org>; Wed, 14 Jan 2026 16:50:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5iA+fRyOdIAjqsyCpf54nqewR/eZikw1rgGivFgWWR4=; b=q4wl33rerLuj5n
-	tWU+ze2wTuAmaP/+7lVAWeGcy7mDNQIe1EZRq5avy8xNUhbz4YWavwz6nelyR8563oDvXffISFzBE
-	uGiO4w4lCZwPCTSlWTDmDYzqblPP1T7f+bthjEIjD91ALh6r4MIBzn2352csX4Z+unA21Jqecok/E
-	bgMfe/MMUxVUzESXso82MB9Pb+b2mXoQJV6Jfv7WBt9RdlyHOkJ8R23roVfwmsgp3EqkF4vO45VGK
-	vk1/Pu5g4fQmucjNaeRW+T8V5i5uKFO9Cvc/wmOv3JKuyJKzoM6nyKzBTQl/rTrxtTnobyNRvx/gR
-	+yqbatn1Cx75uIDgScMA==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
+	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=jAovxCjIawTDbfzJmZv3KOSEyZxP6SblWC0lMMP16p0=; b=Wb8u+K26yRkR6Q
+	gGgOXqwIsMYDc60LH/MBxZAGL21aDK2TlevH2ExmLnySTfu7Hl44ypFpxKqw4OJc83N7DYON97Sro
+	xm4o/Mji3D19+JWM13tgJBBccrDOnllOhrrT1opICz5FINQmHar5Yed84jxcOHfIleYKFPbbMGo+2
+	tgoLdhhnTgyW2vvK21OjN5cvN8R6EG49rGmq4V5tw/DX5cEZqNDgys5bYIbVvTihgH5IiopIFYjFP
+	qR6jDAzAtxDZkKxN5PvDPb3DfknorUe8BnUyNxUmjtuBckAQ6I5HHPOGqy9agfNCmU0ZCoqsWYbeQ
+	WN/FTWe9/sNxcQhH+51w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vg3Ql-00000009rzY-2Tng;
-	Wed, 14 Jan 2026 16:09:11 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vg44u-00000009zAe-3YCk;
+	Wed, 14 Jan 2026 16:50:40 +0000
+Received: from smtpout-04.galae.net ([185.171.202.116])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vg3Qj-00000009ryu-3Hvo;
-	Wed, 14 Jan 2026 16:09:09 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id C89E56000A;
-	Wed, 14 Jan 2026 16:09:08 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0ECE9C4CEF7;
-	Wed, 14 Jan 2026 16:09:07 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1768406948;
-	bh=RcWDWr8WdqPhjE1J0vAZphz5xlYpd8I6Uc8jAUxHLV4=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=SNON+7sMgvAO846vVwuFiwEchPZY5sEB8s+BwIKxwK+FoldG+9Rc0SfCB6XBlDrOQ
-	 yWaA24WCZwBS+INft/dKuws0m8eFL0s8/oYvLas3DIgWLeqWtdacie+fz/FB/ZdB5c
-	 OIs9f0++VWq3LLygegd0fBNBqD9dh0hRa13NAdrHsbG/IWuyGyDCDMb7ex/oeks0/D
-	 B5zgWE+alovSasC99A+EGt7qShwFFdVF2lpCYcFbqJFoW2jDNc/aSiMjFObRN7WPTY
-	 GG6vBsj/RugTAlB5zN7qSHBbmCNr2hZcoJEUfrm4CNfcCb/pK0jw+iikU40Jr/snS2
-	 jpJbm5gt6kegA==
-Date: Wed, 14 Jan 2026 21:39:04 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Xu Yang <xu.yang_2@nxp.com>
-Cc: neil.armstrong@linaro.org, shawnguo@kernel.org, kernel@pengutronix.de,
-	festevam@gmail.com, jun.li@nxp.com, Frank.Li@nxp.com,
-	linux-phy@lists.infradead.org, imx@lists.linux.dev,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2] phy: fsl-imx8mq-usb: enable RxTermination_override_sel
-Message-ID: <aWe_oNDOqHnQo0X2@vaman>
-References: <20251224111807.2925675-1-xu.yang_2@nxp.com>
+	id 1vg44r-00000009z8Y-17np
+	for linux-phy@lists.infradead.org;
+	Wed, 14 Jan 2026 16:50:39 +0000
+Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
+	by smtpout-04.galae.net (Postfix) with ESMTPS id E1B4EC1F6DB;
+	Wed, 14 Jan 2026 16:50:06 +0000 (UTC)
+Received: from mail.galae.net (mail.galae.net [212.83.136.155])
+	by smtpout-01.galae.net (Postfix) with ESMTPS id 682FE6074A;
+	Wed, 14 Jan 2026 16:50:33 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 0EF3910B682A0;
+	Wed, 14 Jan 2026 17:50:29 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
+	t=1768409432; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 content-transfer-encoding; bh=FZchd0EVjeZPDpfSc5KLMc9HueJ8+rJRI0TjdGf6xTs=;
+	b=gmUPcwmnox7arbqkymc/qtB90PaAhg2we8YkoV33vJaDAMGVKGXNW90hJDwel3tDiEEtAr
+	+uHLWRzLz1XDiruulPXjwsx9xm4pQg2Kd7H9RkI5rxIn1RrwuFZaMN3FKxLmLNO8u0OESD
+	TNxQfePqwfX0NUA42bZUx9nQQTcGVE53LW9jQgWvxlxkfMvgPThOkS7sh5EHvH7ZZoPGC8
+	5eizFw6nCyGx8GM10Mvn3h9x53w0wyY+JkUvzs0iy2RRgxbHaLt0sBu/7IpNDgKn/HKSz6
+	Ilb5BYrkqTikoLh0a6wDrdgOqiLHwbiIf/Rb2/mORE6JjqkRJnsDwdwVKQ0Zdg==
+From: Thomas Richard <thomas.richard@bootlin.com>
+Date: Wed, 14 Jan 2026 17:50:23 +0100
+Subject: [PATCH] phy: freescale: imx8qm-hsio: fix NULL pointer dereference
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20251224111807.2925675-1-xu.yang_2@nxp.com>
+Message-Id: <20260114-phy-fsl-imx8qm-hsio-fix-null-pointer-dereference-v1-1-730e941be464@bootlin.com>
+X-B4-Tracking: v=1; b=H4sIAE7JZ2kC/x2NwQrCMBBEf6Xs2YWk1UT8FfGg7cYspNuYaImU/
+ ruLhzk8hjezQaXCVOHSbVBo5cqLKNhDB2O8y5OQJ2XoTe+MtUfM8YuhJuS5nV8zRhUwcEP5pIR
+ 5YXlTwYkKBY2MhM4/rDVuOAXvQWezVtz+l9fbvv8A6zmjQYIAAAA=
+X-Change-ID: 20260114-phy-fsl-imx8qm-hsio-fix-null-pointer-dereference-67b110635f77
+To: Vinod Koul <vkoul@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, Shawn Guo <shawnguo@kernel.org>, 
+ Sascha Hauer <s.hauer@pengutronix.de>, 
+ Pengutronix Kernel Team <kernel@pengutronix.de>, 
+ Fabio Estevam <festevam@gmail.com>, Frank Li <Frank.Li@nxp.com>, 
+ Richard Zhu <hongxing.zhu@nxp.com>
+Cc: Thomas Petazzoni <thomas.petazzoni@bootlin.com>, 
+ linux-phy@lists.infradead.org, imx@lists.linux.dev, 
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ Thomas Richard <thomas.richard@bootlin.com>
+X-Mailer: b4 0.14.3
+X-Last-TLS-Session-Version: TLSv1.3
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260114_085037_453043_5FB45A00 
+X-CRM114-Status: GOOD (  11.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,85 +83,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 24-12-25, 19:18, Xu Yang wrote:
+During the probe the refclk_pad pointer is set to NULL if the
+'fsl,refclk-pad-mode' property is not defined in the devicetree node. But
+in imx_hsio_configure_clk_pad() this pointer is unconditionally used which
+could result in a NULL pointer dereference. So check the pointer before to
+use it.
 
-What is the with the CamelCase on the patch title! We dont do that
-please
+Fixes: 82c56b6dd24f ("phy: freescale: imx8qm-hsio: Add i.MX8QM HSIO PHY driver support")
+Signed-off-by: Thomas Richard <thomas.richard@bootlin.com>
+---
+ drivers/phy/freescale/phy-fsl-imx8qm-hsio.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-> This is to resolve the problem of wakeup system by USB3 device insertion
-> if HSIOMIX on, in that case, the USB3 device detects RX term on so the
-> USB3 device doesn't downgrade to high-speed, we can't expect CONN wakeup
-> (for USB3) happen because the 24MHz OSC is required ON to trigger it.
-> Because the device works at Super-speed so DP/DM wakeup can't happen
-> either. Then the entire systen can't be waken up by such device attach
-> event.
-> 
-> With this override bit we can force the RX term off when enters system
-> suspend, and disable the override after system resume. Therefore, the
-> USB3 device will always downgrade to High-speed, then DP/DM wakeup can
-> always happen. It will correctly switch to Super-speed later when the
-> host reset it after the system resume back.
-> 
-> Signed-off-by: Li Jun <jun.li@nxp.com>
-> Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
-> 
-> ---
-> Changes in v2:
->  - rephase the message
-> ---
->  drivers/phy/freescale/phy-fsl-imx8mq-usb.c | 15 ++++++++++++++-
->  1 file changed, 14 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-> index 92c5c233bad9..e991a480b882 100644
-> --- a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-> +++ b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-> @@ -51,6 +51,7 @@
->  #define PHY_CTRL5_PCS_TX_SWING_FULL_MASK	GENMASK(6, 0)
->  
->  #define PHY_CTRL6			0x18
-> +#define PHY_CTRL6_RXTERM_OVERRIDE_SEL	BIT(29)
->  #define PHY_CTRL6_ALT_CLK_EN		BIT(1)
->  #define PHY_CTRL6_ALT_CLK_SEL		BIT(0)
->  
-> @@ -630,6 +631,7 @@ static int imx8mp_usb_phy_init(struct phy *phy)
->  static int imx8mq_phy_power_on(struct phy *phy)
->  {
->  	struct imx8mq_usb_phy *imx_phy = phy_get_drvdata(phy);
-> +	u32 value;
->  	int ret;
->  
->  	ret = regulator_enable(imx_phy->vbus);
-> @@ -646,12 +648,23 @@ static int imx8mq_phy_power_on(struct phy *phy)
->  		return ret;
->  	}
->  
-> -	return ret;
-> +	/* Disable rx term override */
-> +	value = readl(imx_phy->base + PHY_CTRL6);
-> +	value &= ~PHY_CTRL6_RXTERM_OVERRIDE_SEL;
-> +	writel(value, imx_phy->base + PHY_CTRL6);
-> +
-> +	return 0;
->  }
->  
->  static int imx8mq_phy_power_off(struct phy *phy)
->  {
->  	struct imx8mq_usb_phy *imx_phy = phy_get_drvdata(phy);
-> +	u32 value;
-> +
-> +	/* Override rx term to be 0 */
-> +	value = readl(imx_phy->base + PHY_CTRL6);
-> +	value |= PHY_CTRL6_RXTERM_OVERRIDE_SEL;
-> +	writel(value, imx_phy->base + PHY_CTRL6);
->  
->  	clk_disable_unprepare(imx_phy->alt_clk);
->  	clk_disable_unprepare(imx_phy->clk);
-> -- 
-> 2.34.1
+diff --git a/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c b/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c
+index 977d21d753a5..279b8ac7822d 100644
+--- a/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c
++++ b/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c
+@@ -251,7 +251,7 @@ static void imx_hsio_configure_clk_pad(struct phy *phy)
+ 	struct imx_hsio_lane *lane = phy_get_drvdata(phy);
+ 	struct imx_hsio_priv *priv = lane->priv;
+ 
+-	if (strncmp(priv->refclk_pad, "output", 6) == 0) {
++	if (priv->refclk_pad && strncmp(priv->refclk_pad, "output", 6) == 0) {
+ 		pll = true;
+ 		regmap_update_bits(priv->misc, HSIO_CTRL0,
+ 				   HSIO_IOB_A_0_TXOE | HSIO_IOB_A_0_M1M0_MASK,
 
+---
+base-commit: c537e12daeecaecdcd322c56a5f70659d2de7bde
+change-id: 20260114-phy-fsl-imx8qm-hsio-fix-null-pointer-dereference-67b110635f77
+
+Best regards,
 -- 
-~Vinod
+Thomas Richard <thomas.richard@bootlin.com>
+
 
 -- 
 linux-phy mailing list
