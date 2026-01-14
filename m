@@ -4,69 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 87CF7D38FED
-	for <linux-phy@archiver.kernel.org>; Wed, 14 Jan 2026 16:52:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A5690D39000
+	for <linux-phy@archiver.kernel.org>; Wed, 14 Jan 2026 17:45:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HNcwXFPXiZa6Z0xA5XPIEIiXvKzoLloQjNzT0SPgSy4=; b=3JMsMur5zJZHO0
-	sy6lfOzy9624emUgobKXdvkrpxb0/IudkCAPBMHrgNWgeFD/Ss3KaPyhedjhGViXUxa6gSvUfFEyM
-	1uvL1lb4w7NLL6f22PYXlfJjZDth0y9bCwVcxdTc8Ur3AcE8dyqO4thWPLe2gomYp1/kg0gvAVW/g
-	cWne6q/QtNTqo6rBFnw960X2IXEaM2V5Rwzd3FmWasrvt488YomY4Pshlf4IzeA0iUpXlKTUqeVD5
-	51crNr3dx3ujh3eLfvpdrD9Z5jHOFJFotYx698ynfbuSED14MEXw+L7aqQtes5Ikqw6KuQbVYBEfc
-	Cb1FH5Zbdq4l8seNiwoQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Qw/SKUAROWPy7hptgLYSoTAP9FOqYtCUbcmUUJaXTTA=; b=dZ+A9VBEJxLtLY
+	zXOH2n0O8hb/Xo8+1CxeYLkvgYhERUbIJESWfbJyUABM4m+fh4U2z6fsksFCZcirgfdlnbCkb7Ck7
+	Oq18jkpI59fBi1Yts/z0B8Tp/0iYONXG+sc+AK1dtnlqsmELFRWzfWJL+inM5BNJ5dKwM9Eu601IM
+	Spl8P1TQojN+k0r5x5CuhuCwgLTMOtsY3NvuUo/88QGspIYf/pKX/3JmXWfVT4LSIZDVzzt2+aaax
+	AxbSHk/NpPr+TLfVxC6YlAY976FN8E54ps33Lb+Ij+W52ePUizOIf76YwUe0d1TLwLVDOKHz9KpNJ
+	jOAvYYjItTwSkM3JbfhA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vg46e-00000009zvD-1B0i;
-	Wed, 14 Jan 2026 16:52:28 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1vg4vY-0000000AB2t-13rV;
+	Wed, 14 Jan 2026 17:45:04 +0000
+Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vg46J-00000009zi6-3vJB;
-	Wed, 14 Jan 2026 16:52:09 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 93B4C419FE;
-	Wed, 14 Jan 2026 16:52:07 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 67B5EC4CEF7;
-	Wed, 14 Jan 2026 16:52:02 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1768409527;
-	bh=UNYfWTgs2Wu0kYNxydtgUIcaXgFHmwIxZQCk0gOPwM0=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=LCDZ5kcyZcLkuJBrwbw9oNMtXV5ea2Rxx/LOEwxzgyDHPNn8fXQGdLGge4grZWutn
-	 1FgeDa8FsHPk5bIrMvfqyNAl/8ZgWgdb/SDWRKRo0i7CU720s5//HUeVlT2dzeystu
-	 phuWpamonrsqKCqmamppizZ4i7jN0658W0KP2xLNIAYEwhEv5OWG1H78L4Gspb/pUo
-	 ddB8mp8J+ZkUrLEHcqcz7mXIInkYHmUcJjG0jQAxQHG4nbhF10ZPD9Q0wIQqMEFS5X
-	 u+aKzkO5hqm0yT1E192TnszKiM9iuNAVzyk8gPx0SP58x8EPWkR5IZT53BCQ1HzX2D
-	 k5IsO8ASysBEg==
-From: Vinod Koul <vkoul@kernel.org>
-To: Kishon Vijay Abraham I <kishon@kernel.org>, 
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Peter Griffin <peter.griffin@linaro.org>, 
- =?utf-8?q?Andr=C3=A9_Draszik?= <andre.draszik@linaro.org>, 
- Tudor Ambarus <tudor.ambarus@linaro.org>, 
- Philipp Zabel <p.zabel@pengutronix.de>, 
- Neil Armstrong <neil.armstrong@linaro.org>, Roy Luo <royluo@google.com>
-Cc: Badhri Jagan Sridharan <badhri@google.com>, 
- Doug Anderson <dianders@google.com>, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org, 
- Joy Chakraborty <joychakr@google.com>, Naveen Kumar <mnkumar@google.com>, 
- Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
-In-Reply-To: <20251227-phyb4-v10-0-e8caf6b93fe7@google.com>
-References: <20251227-phyb4-v10-0-e8caf6b93fe7@google.com>
-Subject: Re: [PATCH v10 0/2] Add Google Tensor SoC USB PHY support
-Message-Id: <176840952204.979558.17473922474901235501.b4-ty@kernel.org>
-Date: Wed, 14 Jan 2026 22:22:02 +0530
+	id 1vg4vV-0000000AB1G-1Pta;
+	Wed, 14 Jan 2026 17:45:02 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=armlinux.org.uk; s=pandora-2019; h=Sender:Content-Type:MIME-Version:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
+	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=scRAdhkpBEa1sP7qto95bUZ35HnVpoIUOKEI+bSNLTU=; b=ZLrJ1s7+sNZxYY9RpLkzOl3Vos
+	HjagT4ovRn2G2Wl/+/wJXLDlSHN9C4VZ7+MoXMFNo2vba41USFN4MhpFYkq+apxeTXJDqYEWGO8Su
+	0InLP9VDv+JqqS1qzhpOOgdX7DOJKxOOdRwQlul6kVklnIANS6RQVFX5CGxXcrIJjDo+sOGmMudyC
+	TsVkhrP6J2KuIMS2QyR+ERdYh/83honmsAGb4pXc5s3BwTTfednfjUygR1zCjT2sd1X8VKSMdDKQz
+	kVYRVXeMLfA/vMmRlItVey+/Rm7q58iP03eHFaHVhiD6GcpgREhNoe+oZMqGDHic4QIixOD7tY45v
+	rGmMvQgg==;
+Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:55380)
+	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.98.2)
+	(envelope-from <linux@armlinux.org.uk>)
+	id 1vg4vL-000000000Sc-030p;
+	Wed, 14 Jan 2026 17:44:51 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.98.2)
+	(envelope-from <linux@shell.armlinux.org.uk>)
+	id 1vg4vG-000000001qO-1yKX;
+	Wed, 14 Jan 2026 17:44:46 +0000
+Date: Wed, 14 Jan 2026 17:44:46 +0000
+From: "Russell King (Oracle)" <linux@armlinux.org.uk>
+To: Andrew Lunn <andrew@lunn.ch>, Heiner Kallweit <hkallweit1@gmail.com>
+Cc: Alexandre Torgue <alexandre.torgue@foss.st.com>,
+	Andrew Lunn <andrew+netdev@lunn.ch>,
+	"David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
+	linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-stm32@st-md-mailman.stormreply.com,
+	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+	Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>, netdev@vger.kernel.org,
+	Paolo Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>
+Subject: [PATCH RFC net-next 00/14] net: stmmac: SerDes, PCS, BASE-X, and
+ inband goodies
+Message-ID: <aWfWDsCoBc3YRKKo@shell.armlinux.org.uk>
 MIME-Version: 1.0
-X-Mailer: b4 0.13.0
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260114_085208_040629_CC92166B 
-X-CRM114-Status: UNSURE (   8.00  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260114_094501_384445_DF8CD4EC 
+X-CRM114-Status: GOOD (  25.78  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,33 +88,80 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Mentioned previously, I've been trying to sort out the PCS support in
+stmmac, and this series represents the current state of play.
 
-On Sat, 27 Dec 2025 00:53:27 +0000, Roy Luo wrote:
-> This series introduces USB PHY support for the Google Tensor G5
-> SoC (codename: Laguna), a new generation of Google silicon first
-> launched with Pixel 10 devices.
-> 
-> The Tensor G5 represents a significant architectural overhaul compared
-> to previous Tensor generations (e.g., gs101), which were based on Samsung
-> Exynos IP. Although the G5 still utilizes Synopsys IP for the USB
-> components, the custom top-level integration introduces a completely new
-> design for clock, reset scheme, register interfaces and programming
-> sequence, necessitating new drivers and device tree bindings.
-> 
-> [...]
+Previous posted patches centred around merely getting autonegotiation
+to be configured correctly, to a point where the manual configuration
+can be removed from the qcom-ethqos driver. The qcom-ethqos driver
+uses both SGMII and 2500BASE-X, manually configuring the dwmac's
+integrated PCS appropriately.
 
-Applied, thanks!
+This *untested* series attempts to take this further. The patches:
 
-[1/2] dt-bindings: phy: google: Add Google Tensor G5 USB PHY
-      commit: 876dc58c3fa532e38cd1b287a7b8143a1a4c5dc7
-[2/2] phy: Add Google Tensor SoC USB PHY driver
-      commit: cbce66669c82ee9ae0e26523c0fcd3c721fcfe85
+- clean up qcom-ethqos only-written mac_base member.
+- convert qcom-ethqos to use the set_clk_tx_rate() method for setting
+  the link clock rate.
+- add support for phy_set_mode_ext() to the qcom "SGMII" ethernet
+  SerDes driver (which is really only what it needs. Note that
+  phy_set_mode_ext() is an expected call to be made, where as
+  phy_set_speed() is optional and not. See PHY documentation.)
+- add platform-glue independent SerDes support to the stmmac core
+  driver. Currently, only qcom-ethqos will make use of this, and
+  I suspect as we haven't had this, it's going to be difficult to
+  convert other platform glue to use this - but had this existed
+  earlier, we could've pushed people to use PHY to abstract some
+  of the platform glue differences. Adding it now makes it available
+  for future platform glue.
+- convert qcom-ethqos to use this core SerDes support.
+- arrange for stmmac_pcs.c to supply the phy_intf_sel field value
+  if the integrated PCS will be used. (PHY_INTF_SEL_SGMII requires
+  the integrated PCS rather than an external PCS.)
+- add BASE-X support to the integrated PCS driver, and use it for
+  BASE-X modes. This fully supports in-band mode, including reading
+  the link partner advertisement.
+- add in-band support for SGMII, reading the state from the RGSMII
+  status field.
 
-Best regards,
+As we leave qcom-ethqos' manual configuration of the PCS in place at
+the moment, the last patch adds reporting of any changes in its
+configuration that the qcom-ethqos driver does beyond what phylink
+requested, thus providing a path to debug and eventually remove
+qcom-ethqos' manual configuration.
+
+One patch is not included in this set - which adds a phy_intf_sel
+value for external PCS (using PHY_INTF_SEL_GMII_MII). I believe all
+external PCS use this mode when connected to a MAC capable of up to
+2.5G. However, no platform glue that provides the mac_select_pcs()
+method also provide the set_phy_intf_sel() method, so we can safely
+ignore this for now.
+
+I would like to get this into net-next before the next merge window,
+so testing would be appreciated. If there are issues with these patches
+applied, please check whether the issue exists without these patches
+and only report regressions caused by this patch set. For example,
+I'm aware that qcom-ethqos has issues with 10Mbps mode due to an AQR
+PHY being insanely provisioned to use SGMII in 1000M mode but with
+rate matching with 10M media. This is not an issue that is relevant
+to this patch series, but a problem with the PHY provisioning.
+
+ drivers/net/ethernet/stmicro/stmmac/Makefile       |   2 +-
+ drivers/net/ethernet/stmicro/stmmac/common.h       |   1 -
+ .../ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c    |  74 ++-----
+ .../net/ethernet/stmicro/stmmac/dwmac1000_core.c   |   9 +-
+ drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c  |   8 +-
+ drivers/net/ethernet/stmicro/stmmac/stmmac_main.c  |  69 +++++--
+ drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.c   | 218 +++++++++++++++++++--
+ drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.h   |  53 ++---
+ .../net/ethernet/stmicro/stmmac/stmmac_serdes.c    | 111 +++++++++++
+ .../net/ethernet/stmicro/stmmac/stmmac_serdes.h    |  16 ++
+ drivers/phy/qualcomm/phy-qcom-sgmii-eth.c          |  42 ++++
+ include/linux/stmmac.h                             |   2 +
+ 12 files changed, 480 insertions(+), 125 deletions(-)
+
 -- 
-~Vinod
-
-
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTP is here! 80Mbps down 10Mbps up. Decent connectivity at last!
 
 -- 
 linux-phy mailing list
