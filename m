@@ -4,61 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CDC88D37E39
-	for <linux-phy@archiver.kernel.org>; Wed, 14 Jan 2026 14:01:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8FCF1D37E37
+	for <linux-phy@archiver.kernel.org>; Wed, 14 Jan 2026 14:01:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ikjXW0n5zJuO7HTJO074LEfHGl01knA/rYdAo3QDGGU=; b=j3VXxanuHUD8VV
-	pDeR1vfzodGcKg0M7aFmWbZ/mqZpaURx5ylHSgwMT9n4HxDEaNh5SENLdqR6CorQnDF2YW3sNi4SX
-	6aW5rMHIT5ZoOy4x3ClpMPAnjbqwuiRNiC/anWnHbhDi008ymIjVuBC4q/DMI71lfcT7XqRLsrEkA
-	JwBqa1E5koOG9Dd+cWdAVL16nP4Rt4THOf54ovgTTy7WZVoyUR3fjuiZByWjy/gpSfSJxUWmdRWb7
-	s7KYM5i9Sdc4ex2ekwOubPVrlAJAQ/fXDnR/hLJ7SBBcdND8LhZafoYLnSU1fMmbwx9Sl2A/ZquM3
-	TgTOffkpz7UUxpbARQ9A==;
+	List-Owner; bh=b033yDum93uofQcxgxQ0KeHlYxUs1pTDwn0XxqperEg=; b=oAOLNsPmVcr3qy
+	7PtIoJsT51W/9lmhGzbcSuXT+0/E6uIhwJOr1pNq9h8KhqExxQAqnYXoxu8fvGBe297jrVPKLZcri
+	xt+50R3Xg8v3g1nDPZdHQ2qPAdwVDWW8BRP9rh5lEKpbnEMtniw/7WSgtpQrZ2YQxYvwymwFK/L+J
+	r9AuyujgfLJd8/Rg03v7P2DLST95cfqptFrQur17c+NWRw2PJPgZL8fHOlwX3tE9FzqAQrH2h2fo6
+	0edY03EJ+56lBgQ8FPb9LM2rDeQMOhyrGn8f9ctaq3BQjcikXQXoZvNscrU+TtlFNVIUJqr0Dy0kV
+	mOl6KRz8/cqM7gQQ892Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vg1RZ-00000009RNw-2KCo;
-	Wed, 14 Jan 2026 14:01:53 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1vg1Rb-00000009ROv-1Ktq;
+	Wed, 14 Jan 2026 14:01:55 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vg1RW-00000009RMl-2Pzp;
-	Wed, 14 Jan 2026 14:01:51 +0000
+	id 1vg1RZ-00000009RNv-3oTY
+	for linux-phy@lists.infradead.org;
+	Wed, 14 Jan 2026 14:01:53 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 3D56B43624;
+	by tor.source.kernel.org (Postfix) with ESMTP id 5AD2A600B0;
+	Wed, 14 Jan 2026 14:01:53 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A8E76C4CEF7;
 	Wed, 14 Jan 2026 14:01:50 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7D78FC4CEF7;
-	Wed, 14 Jan 2026 14:01:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1768399310;
-	bh=JhUn9TqR1P15NoVS+X8zJgLMi4jcAWVe91/hg+g8+XQ=;
+	s=k20201202; t=1768399313;
+	bh=MHTXNpJPFQg545t1nBhA5Hxy7M5eBdT3G3Q2/R91vrg=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=Ujjep2OnS5oFpyvmoHdhTj2gamsTcVSU4u2dMzbdeUj9Ames4AbCRjiZ4scWPntoO
-	 Mr62FQH2GPiYqNOj+b3PT2JKHlzOajo7w/EHzRhcbQKb0QW0sWPzveOlisNjhliRu5
-	 NWXSv7F1APi52affZvTC4Wl9DKUWiSuSun7USJu7tNwhw6P4nKHuShoVePZlgFl/Qs
-	 5/vuIHzt1xrDvuN0r9ngeUiDmL8W7rLbsHLG6vctEdtcomKytQOPrShFx0sBtAn7/O
-	 EkOnt4lY4E80bInnl5tZZwvWdV/lgDv5+IRxDyqLQz5nLckFYMo7DaVVI3NuRCeTA8
-	 nysyN2h98geGQ==
+	b=JfUeG8OSOyzDoS4QPo9ky/aPctN9gJfNsdyjk7jpxexuz61MJXVMw8gnHapVtPMMF
+	 wu9c8mZKBdpzDKEFVg8fONBD3CTGM342NEg5jgUtYqkUezB7eIHo/3ijqXd3vKI21T
+	 UMEiTMRfIwBVTq1Tsc4oYYFF0pE9EAZhT27ZZz4Z3wyZ/3dknoF/GOnefW183UsRjb
+	 8Q48XXVVvZlM2aklxbvo/AgaRmXKPERS7dADnUvKF98XWFEWxjORpuKlVrO1i+oq35
+	 3DNY6LIriBPWSeNO8vdjy9RGK01/EcGVh7mhln2ZSGCctnkqd58jpVr8x5fd1siln5
+	 FtWU/4GQR/LkA==
 From: Vinod Koul <vkoul@kernel.org>
-To: neil.armstrong@linaro.org, robh@kernel.org, krzk+dt@kernel.org, 
- conor+dt@kernel.org, sjakhade@cadence.com, rogerq@kernel.org, 
- thomas.richard@bootlin.com, Siddharth Vadapalli <s-vadapalli@ti.com>
-Cc: andrew@lunn.ch, linux-phy@lists.infradead.org, 
- linux-kernel@vger.kernel.org, devicetree@vger.kernel.org, 
- linux-arm-kernel@lists.infradead.org, srk@ti.com
-In-Reply-To: <20260112054636.108027-1-s-vadapalli@ti.com>
-References: <20260112054636.108027-1-s-vadapalli@ti.com>
-Subject: Re: [PATCH v3 0/2] Cadence: Torrent: Enable PCIe + XAUI multilink
- configuration
-Message-Id: <176839930614.937923.15521389501056523456.b4-ty@kernel.org>
-Date: Wed, 14 Jan 2026 19:31:46 +0530
+To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
+Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
+In-Reply-To: <20260108052459.1819970-1-krishna.kurapati@oss.qualcomm.com>
+References: <20260108052459.1819970-1-krishna.kurapati@oss.qualcomm.com>
+Subject: Re: [PATCH v3 0/2] phy: qcom: Introduce USB support for Kaanapali
+Message-Id: <176839931031.937923.8605452740220301145.b4-ty@kernel.org>
+Date: Wed, 14 Jan 2026 19:31:50 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260114_060150_648939_82F802CE 
-X-CRM114-Status: GOOD (  10.61  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,30 +73,22 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Mon, 12 Jan 2026 11:16:29 +0530, Siddharth Vadapalli wrote:
-> This patch series adds the dt-binding for PHY_TYPE_XAUI and adds the
-> driver support for enabling PCIe + XAUI multilink configuration.
+On Thu, 08 Jan 2026 10:54:57 +0530, Krishna Kurapati wrote:
+> Add support for the PHYs used for USB on Kaanapali SoCs.
 > 
-> Patch series is based on linux-next tagged next-20260109.
+> On v2, the usb controller bindings have been split and v3 was sent and it
+> got merged.
 > 
-> v2 of this patch series is at:
-> https://lore.kernel.org/r/20260104114422.2868321-1-s-vadapalli@ti.com/
-> Changes since v2:
-> - Collected Acked-by tag from Rob Herring (Arm) <robh@kernel.org>
->   https://lore.kernel.org/r/176772419699.2512006.6478554353373580831.robh@kernel.org/
-> - The commit message in the second patch has been updated to explain the
->   changes made to the LINKx_MASK/SHIFT and REFCLKx_MASK/SHIFT macros to
->   address feedback from Andrew Lunn <andrew@lunn.ch> at:
->   https://lore.kernel.org/r/7fd42221-d602-4ce4-9f7f-6754ed91e7aa@lunn.ch/
+> The m31 eusb2 defconfig patch also got merged.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/2] dt-bindings: phy: Add PHY_TYPE_XAUI definition
-      commit: a632a2a0db8b4d24076a03889efa25c6058d0746
-[2/2] phy: cadence-torrent: Add PCIe + XAUI multilink configuration for 100MHz refclk
-      commit: 02cf3710c55d55d956f080e6610b841e2b6ddca0
+[1/2] dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp-phy: Add Kaanapali QMP PHY
+      commit: 69efc71162b5742381de29f661c913013b254c2b
+[2/2] dt-bindings: phy: qcom,m31-eusb2-phy: Document M31 eUSB2 PHY for Kaanapali
+      commit: a6a9aeaba36f42ed6dc4cdb865ae6b7ded4e855b
 
 Best regards,
 -- 
