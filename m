@@ -4,62 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BCC00D37E3A
-	for <linux-phy@archiver.kernel.org>; Wed, 14 Jan 2026 14:01:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0B6F4D37E37
+	for <linux-phy@archiver.kernel.org>; Wed, 14 Jan 2026 14:01:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rLsSjHah145uXY48SRC+VJOqP8Os1a4fBHiE27C+8UQ=; b=vxw25ek79kxtR1
-	Z+OKIA1FnSX/cLrOLofmkFs8TqRywXvoC7BqehSMPt+H0ih/HuQv849H2SzyqBxs2vbueZG9mx96r
-	R7YGoHOdnxEEDavwm2QTnjlMl1DhdzpMH7NjrP6MGD7Lifjah0kggTedRlXegD5IjWxbtrruHD2SJ
-	sdrE50cA+7o/c/llZw05yUIEoE9XlnKlRpljQ4WAbhjv6js9lpflKlsMNrbnWGROxt7TBMp+GnL8R
-	3hsTmoaV9AqWKGws9sg3TKLqQ+70nHHFzqBWywQhAAQ805aKVLSP6BukG/6fQh1hLau2HjA0Syn6u
-	NY9LSZZArLAnDU+vhyrQ==;
+	List-Owner; bh=MB0ljoGLy1qifw6zQCuRyVoYJ32EHRzk3qWJu9mw6PY=; b=DL0BBRz6GAyKAn
+	xBFEMYKsX2xiOSWfPm/CpBXfBeg7lViq0H+nwrVsupTUEaqbtF+esgSCxT9TpU5QF/tKD6zD/wtsX
+	dB+1Kt+kmsO1p53YJeCTSRTSDDP5STM9KroM+h4/1Ar+4Y1rxHd67E41jQdlO0jDBPRErpvWow/gV
+	BubGQqxQqmzGeAt3+IyM2fmu1KVLQTW3sCqao5KmSUw+FKZDdPrherw1MojDWJO2Wxp9TKQlptu50
+	zAmLN3CWn4uEjeEXd475IP0OKBLhiU7+Aos9XkQlEFWezqo8WRdfTl6VJuA10m/Q3FkfQHIAAW5UX
+	7MhVrE8aFu0mG+Z4NKoA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vg1RM-00000009RJb-25iY;
-	Wed, 14 Jan 2026 14:01:40 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1vg1RS-00000009RLS-38ua;
+	Wed, 14 Jan 2026 14:01:46 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vg1RJ-00000009RHu-0g9B
+	id 1vg1RP-00000009RKX-3B54
 	for linux-phy@lists.infradead.org;
-	Wed, 14 Jan 2026 14:01:39 +0000
+	Wed, 14 Jan 2026 14:01:46 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 62EAE4360F;
+	by sea.source.kernel.org (Postfix) with ESMTP id 1173C43624;
+	Wed, 14 Jan 2026 14:01:43 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E1AFEC4CEF7;
 	Wed, 14 Jan 2026 14:01:36 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 228A6C4CEF7;
-	Wed, 14 Jan 2026 14:01:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1768399296;
-	bh=qsyHjUwkY0nxEJlAVVtGXwHiPYNJv+cAJVY64U8He2g=;
+	s=k20201202; t=1768399302;
+	bh=enCvrz8y/9rxsUlw1ssbCZBDFIf1yBnbNn8Z6/4K4hA=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=izGnrmi1Xi5mqc1+k/VAn5XqxpLTOyJDwEaLYBGIIOB2C+bkJMzWnVPCbJI4981V4
-	 aI1HM40PDlHhvNF4gcZ6hkjxHD3eYDXhneyQM3S7Lx5jQgzO2Ix2Gftt7gZr4eL8cw
-	 8m2Li0IOFBCU4sRGDPLoDtI6+EDAfVUNzwbjuclOuoo0BRRDhc8/eGJJBrPvG3ZWS9
-	 LtAEAxrsQeOxWSqtAMCm7RCj9PpGXm68uFTmko53L+BhBRghuBxby4TFfd+Wfch5EA
-	 PlQ5FOHzYNtrtLDwDh7FJpVPloM67GjYnJGrG5hYv7OGojEVpxr2xLLVO+TEzDTkjS
-	 V7AprclsA5buA==
+	b=QTbhI3eYuVO9pJXj0FPP9M9Z53GRE4eX9s7MgRSPPMH6LfCa2vPcyrbsf/sJtwCID
+	 BT+gk+12FZyqsoZvMHQHzLHsyrc6Ut2vZOuB2VuMcZFd1rBiAsk9ZIfjahQDGXeh9x
+	 1A8Jrm4lptla50UGAqWVu4gCqX+yO+cGkKAc4k9Py6hN5Qq11GWn1O2/wvLY8XLFwB
+	 2+0MWgPfMi/U/NxKOMSPpoKczXetlS4IcWSv6DqKhVIeL40k8aH9JPcBohB7RjApXJ
+	 Wx1jW3LAPcfdcH4OMkzVsVqjW/KnDuUkbSeP+5rLeHXe9qQ2oM1TSmWSRcIqxojxHf
+	 i4QxvH0jplnTQ==
 From: Vinod Koul <vkoul@kernel.org>
-To: Neil Armstrong <neil.armstrong@linaro.org>, 
- Abel Vesa <abelvesa@kernel.org>, 
- Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>, 
- Val Packett <val@packett.cool>
-Cc: Abel Vesa <abel.vesa@oss.qualcomm.com>, linux-arm-msm@vger.kernel.org, 
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-In-Reply-To: <20260111083317.604754-1-val@packett.cool>
-References: <20260111083317.604754-1-val@packett.cool>
-Subject: Re: [PATCH v2] phy: qcom: edp: Fix NULL pointer dereference for
- phy v6 (x1e80100)
-Message-Id: <176839929376.937923.9426049740721011950.b4-ty@kernel.org>
-Date: Wed, 14 Jan 2026 19:31:33 +0530
+To: Herbert Xu <herbert@gondor.apana.org.au>, 
+ "David S. Miller" <davem@davemloft.net>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
+ Alim Akhtar <alim.akhtar@samsung.com>, Avri Altman <avri.altman@wdc.com>, 
+ Bart Van Assche <bvanassche@acm.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Konrad Dybcio <konradybcio@kernel.org>, 
+ Luca Weiss <luca.weiss@fairphone.com>
+Cc: ~postmarketos/upstreaming@lists.sr.ht, phone-devel@vger.kernel.org, 
+ linux-arm-msm@vger.kernel.org, linux-crypto@vger.kernel.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ linux-scsi@vger.kernel.org, linux-phy@lists.infradead.org, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>, 
+ Abel Vesa <abel.vesa@oss.qualcomm.com>, 
+ Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, 
+ Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+In-Reply-To: <20260112-milos-ufs-v2-0-d3ce4f61f030@fairphone.com>
+References: <20260112-milos-ufs-v2-0-d3ce4f61f030@fairphone.com>
+Subject: Re: (subset) [PATCH v2 0/6] Enable UFS support on Milos
+Message-Id: <176839929655.937923.9686904791516121188.b4-ty@kernel.org>
+Date: Wed, 14 Jan 2026 19:31:36 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260114_060138_279431_0BE71859 
-X-CRM114-Status: UNSURE (   4.57  )
+X-CRM114-CacheID: sfid-20260114_060144_595748_6D3C145C 
+X-CRM114-Status: UNSURE (   5.10  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -78,18 +88,18 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Sun, 11 Jan 2026 05:25:59 -0300, Val Packett wrote:
-> For Glymur SoC support, the com_clk_fwd_cfg callback was added, and a
-> stub implementation was added for the v4 of the hardware. However it
-> was omitted for the v6, causing a NULL pointer dereference oops on
-> Hamoa/Purwa (X1E/X1P) SoC devices. Fix by adding the appropriate stub.
+On Mon, 12 Jan 2026 14:53:13 +0100, Luca Weiss wrote:
+> Add inline-crypto-engine and UFS bindings & driver parts, then add them
+> to milos dtsi and enable the UFS storage on Fairphone (Gen. 6).
 > 
 > 
 
 Applied, thanks!
 
-[1/1] phy: qcom: edp: Fix NULL pointer dereference for phy v6 (x1e80100)
-      commit: 70812056fbfb9348788e35b7641ff959b711840e
+[3/6] dt-bindings: phy: qcom,sc8280xp-qmp-ufs-phy: document the Milos QMP UFS PHY
+      commit: ed0a26aa453b6ec7faec32ddb4fb3d4360e1676c
+[4/6] phy: qcom-qmp-ufs: Add Milos support
+      commit: 3554ded4f02aa8e95af66911aa666b2cd192022d
 
 Best regards,
 -- 
