@@ -4,60 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1D0EED37E39
-	for <linux-phy@archiver.kernel.org>; Wed, 14 Jan 2026 14:02:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9A0EED37E39
+	for <linux-phy@archiver.kernel.org>; Wed, 14 Jan 2026 14:02:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qf6n3Ml5RluqHA14UIUGgYNsbfjbHwI4W3xOeR/Tn4Q=; b=aBP35NRXnRw1z/
-	k8e1L9qqE5Bvsk8N+G/QeLTsUGgXGhKLU085bmQofhXzKl018b+88Yf+LMLxTS3T/NZxgpj62nZXM
-	vWONbJhBU48g2uhTPztsK+r5oJdawJYf1/anKfCJr/BpH20YP0lVkUwqkOmMLCnw4dBL1x8+okHXk
-	ZYRxK0c0ozqOYzygBLLReMZry20hOT8ULtCZrNGgrCD7teGHXGTjBLjtMfVwPMrXUvU1WNhtofI7Q
-	IwMrmcYeVCSZ5x2sscz7zcT3LSdWWZs/MAaRW1ZRSh7PGHlS7VGmQq1oPS77XEjgGSdzrNCzge0vl
-	1PmjU8F4N58V/TZMcbWg==;
+	List-Owner; bh=pqEc8m44ZxAZAIrDN6WI82fqtOT1PzhZzc2rrI9sNok=; b=UQYDmWtVWQDv6b
+	LF/DCY+prCNamQ9Yy1qrDsfl25i0wWthD6pXTjibdt1evV6VZ3CD48j8nvc238XKt1kHU2kfEgmlh
+	KT6LmkuahZC7xFtL0Jug0EiOBIcB9g0/DfcSo0Y3I+/Ru67olbialfl2H0IuFDhRxrdDLXHJbxYeN
+	ElbDYGeXUyk2mkgn4zzLCems0284e6dUVlwqM+m5rc9MJZMe/wf70/x+hwwCdIOTCwfGG8oP2gHJf
+	pEK0mNtuaBrJPV9WNuLisxPJ4J6RRgoaANzfh+NEFM5464fD8sd5SN4tXav5eCzPAmJSMvSMc8awi
+	iwtu3ozNYiGxr4yHAFrw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vg1Rg-00000009RQn-2LjO;
-	Wed, 14 Jan 2026 14:02:00 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vg1Ro-00000009RU2-1Uvm;
+	Wed, 14 Jan 2026 14:02:08 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vg1Re-00000009RQE-3lUF
-	for linux-phy@lists.infradead.org;
-	Wed, 14 Jan 2026 14:01:58 +0000
+	id 1vg1Rm-00000009RSh-0WPY;
+	Wed, 14 Jan 2026 14:02:07 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 4BCFB60121;
+	by sea.source.kernel.org (Postfix) with ESMTP id A154F43624;
+	Wed, 14 Jan 2026 14:02:05 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A1352C2BC86;
 	Wed, 14 Jan 2026 14:01:58 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A7CE2C16AAE;
-	Wed, 14 Jan 2026 14:01:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1768399318;
-	bh=kJhvl3EkrS4B0d2VSCeSVXXCmsFOhMvFP2J20W/nJW4=;
+	s=k20201202; t=1768399325;
+	bh=haCM6T+YzB8uXZZd8uUQUcECd5pePHN87zdScN5Eg9c=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=OOIhG+T8Lu31VSqPSEo81r4DzfrvCUJ8Iuj5SP8MXGkRkkM2iMy+T2o60MWfSskfR
-	 RTMu8aXCJWxluNabl8JiTX6GRnxHlLnCrHBdtSiTNJL8gR7iTi+t73WbRdAtJX0p4d
-	 x/gHVyGiM7ee8ffelzXQcAqRXnBa7iOXslDhBUMMvtCl+EB6XGMfTkZ48Vgz8IRANN
-	 mqjTKQYHzm4LwkV4xR6y4sMB7Hwpw6Jh5wrfpZa2caA3Vav5zsTmkROQvkyl4+PTfz
-	 G2c32phJuOC01ddzzZDLlgq15+GWGAiOhSoKHaq+1xtJeg+i+dgc/GqDXNL9mrE+nt
-	 Wr5UCYnib6uAw==
+	b=M8EystbPzjf3hIbat0l79Q5+uB24T3/rSm58fwr9j9jsIzZ6HHh1yxy06+ycFdWzA
+	 kCQ/MsWRHRVcN9TXxklMfR/x8Gk1woAJjz6RiF50A5XDghuMMg7BczGpkZ01mlMkeB
+	 g5um/0dqrqfSquRa4qmC5hiqJhsuVU9WMvitJ2M1N6PNGw1Un8+te/jW4S3aatLO8Z
+	 kkE/AwbTuxO/UzQVfVgNXt56CiAQLxiqLQfvk/vFy/Bid+4YUXdVf3S6I9vRQCiADp
+	 FNOY60maEkzw6Ms0vCj/ulWN2D6c4GcZWL99ODS+so9OJciWAK+JmthSByE0ctjfYo
+	 WvWwYUk6P2leQ==
 From: Vinod Koul <vkoul@kernel.org>
-To: neil.armstrong@linaro.org, robh@kernel.org, krzk+dt@kernel.org, 
- conor+dt@kernel.org, martin.petersen@oracle.com, andersson@kernel.org, 
- konradybcio@kernel.org, taniya.das@oss.qualcomm.com, 
- dmitry.baryshkov@oss.qualcomm.com, manivannan.sadhasivam@oss.qualcomm.com, 
- Pradeep P V K <pradeep.pragallapati@oss.qualcomm.com>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- linux-scsi@vger.kernel.org, nitin.rawat@oss.qualcomm.com
-In-Reply-To: <20260106154207.1871487-1-pradeep.pragallapati@oss.qualcomm.com>
-References: <20260106154207.1871487-1-pradeep.pragallapati@oss.qualcomm.com>
-Subject: Re: (subset) [PATCH V4 0/4] Add UFS support for x1e80100 SoC
-Message-Id: <176839931330.937923.4419261616983851594.b4-ty@kernel.org>
-Date: Wed, 14 Jan 2026 19:31:53 +0530
+To: netdev@vger.kernel.org, devicetree@vger.kernel.org, 
+ linux-phy@lists.infradead.org, Vladimir Oltean <vladimir.oltean@nxp.com>
+Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-mediatek@lists.infradead.org, Daniel Golle <daniel@makrotopia.org>, 
+ Horatiu Vultur <horatiu.vultur@microchip.com>, 
+ =?utf-8?q?Bj=C3=B8rn_Mork?= <bjorn@mork.no>, Andrew Lunn <andrew@lunn.ch>, 
+ Heiner Kallweit <hkallweit1@gmail.com>, 
+ Russell King <linux@armlinux.org.uk>, 
+ "David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
+ Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Matthias Brugger <matthias.bgg@gmail.com>, 
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
+ Eric Woudstra <ericwouds@gmail.com>, 
+ =?utf-8?q?Marek_Beh=C3=BAn?= <kabel@kernel.org>, Lee Jones <lee@kernel.org>, 
+ Patrice Chotard <patrice.chotard@foss.st.com>
+In-Reply-To: <20260111093940.975359-1-vladimir.oltean@nxp.com>
+References: <20260111093940.975359-1-vladimir.oltean@nxp.com>
+Subject: Re: (subset) [PATCH v3 net-next 00/10] PHY polarity inversion via
+ generic device tree properties
+Message-Id: <176839931828.937923.5236613118963138163.b4-ty@kernel.org>
+Date: Wed, 14 Jan 2026 19:31:58 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260114_060206_187247_470FDEE9 
+X-CRM114-Status: UNSURE (   6.99  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,29 +89,30 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Tue, 06 Jan 2026 21:12:03 +0530, Pradeep P V K wrote:
-> Add UFSPHY, UFSHC compatible binding names and UFS devicetree
-> enablement changes for Qualcomm x1e80100 SoC.
+On Sun, 11 Jan 2026 11:39:29 +0200, Vladimir Oltean wrote:
+> Introduce "rx-polarity" and "tx-polarity" device tree properties.
+> Convert two existing networking use cases - the EN8811H Ethernet PHY and
+> the Mediatek LynxI PCS.
 > 
-> Changes in V4:
-> - Update ufs@ with ufshc@ in SoC dtsi [Mani]
-> - Retain complete change history in cover letter [Dmitry]
-> - Remove "jedec,ufs-2.0" compatible from ufshc dt-bindings
->   and SoC dtsi files [Krzysztof, Mani]
-> - Remove RB-by tag from Krzysztof and AB-by tag from Mani on
->   UFSHC dt-binding file as it has changes and needs re-review.
-> - Add RB-by for QMP UFS PHY dt-binding [Krzysztof]
-> - Add RB-by for SoC dtsi [Konrad, Abel, Taniya, Mani]
-> - Add RB-by for board dts [Konrad]
-> - Link to V3:
->   https://lore.kernel.org/all/0689ae93-0684-4bf8-9bce-f9f32e56fe06@oss.qualcomm.com
+> Requested merge strategy:
+> Patches 1-5 through linux-phy
+> linux-phy provides stable branch or tag to netdev
+> patches 6-10 through netdev
 > 
 > [...]
 
 Applied, thanks!
 
-[1/4] dt-bindings: phy: qcom,sc8280xp-qmp-ufs-phy: Add QMP UFS PHY compatible
-      commit: be9d2cf10b46bc2c177aa9cb27b71d665d1e0e7e
+[01/10] dt-bindings: phy: rename transmit-amplitude.yaml to phy-common-props.yaml
+        commit: b7b4dcd96e3dfbb955d152c9ce4b490498b0f4b4
+[02/10] dt-bindings: phy-common-props: create a reusable "protocol-names" definition
+        commit: 33c79865c7d3cc84705ed133c101794902e60269
+[03/10] dt-bindings: phy-common-props: ensure protocol-names are unique
+        commit: 01fc2215940c20bbb22fa196a331ec9d50e45452
+[04/10] dt-bindings: phy-common-props: RX and TX lane polarity inversion
+        commit: fceb17ac05e772ffc82f1f008e876bf7752f0576
+[05/10] phy: add phy_get_rx_polarity() and phy_get_tx_polarity()
+        commit: e7556b59ba65179612bce3fa56bb53d1b4fb20db
 
 Best regards,
 -- 
