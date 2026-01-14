@@ -4,61 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 43D81D37E39
-	for <linux-phy@archiver.kernel.org>; Wed, 14 Jan 2026 14:01:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CDC88D37E39
+	for <linux-phy@archiver.kernel.org>; Wed, 14 Jan 2026 14:01:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=loBu1qZTq1mQp5bg9Os2w4PJr7Wm2CcUkMle/kh6gDI=; b=yJ2AbryZE9VaFl
-	1vRpIjdr/hgVLU+UzzwjsNGBmUw7rVjT/MaqHaRUdlsyCgBBlMoOmX9y3I/tqrZGYZko5QMsX5UPZ
-	ISGhEOrae8jZB4s4Fz9oSfGu4BdwMZp8/z5t6XlLpIjJwXrQeYybUliZ9G0gO8KFvG0jQCRchq/bg
-	BefREMmo2E8sS/ltOlExE0o1bO2AOPfcR9z0rcVxLxcX+4D4vTTZkMXLkBl/S0QWJe4CKUy6PUETs
-	Qs6+Wi8wpdbSw36mR8EP8NCh6NCt4lIV5pckl1bUhoxaafF8484aOINu4xgcRaOFAwGdhoGT/zGX6
-	KSWYFElbY2fheQz7QPIw==;
+	List-Owner; bh=ikjXW0n5zJuO7HTJO074LEfHGl01knA/rYdAo3QDGGU=; b=j3VXxanuHUD8VV
+	pDeR1vfzodGcKg0M7aFmWbZ/mqZpaURx5ylHSgwMT9n4HxDEaNh5SENLdqR6CorQnDF2YW3sNi4SX
+	6aW5rMHIT5ZoOy4x3ClpMPAnjbqwuiRNiC/anWnHbhDi008ymIjVuBC4q/DMI71lfcT7XqRLsrEkA
+	JwBqa1E5koOG9Dd+cWdAVL16nP4Rt4THOf54ovgTTy7WZVoyUR3fjuiZByWjy/gpSfSJxUWmdRWb7
+	s7KYM5i9Sdc4ex2ekwOubPVrlAJAQ/fXDnR/hLJ7SBBcdND8LhZafoYLnSU1fMmbwx9Sl2A/ZquM3
+	TgTOffkpz7UUxpbARQ9A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vg1RU-00000009RM6-04OZ;
-	Wed, 14 Jan 2026 14:01:48 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vg1RZ-00000009RNw-2KCo;
+	Wed, 14 Jan 2026 14:01:53 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vg1RS-00000009RLM-3XtH
-	for linux-phy@lists.infradead.org;
-	Wed, 14 Jan 2026 14:01:46 +0000
+	id 1vg1RW-00000009RMl-2Pzp;
+	Wed, 14 Jan 2026 14:01:51 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 3486B600BB;
+	by sea.source.kernel.org (Postfix) with ESMTP id 3D56B43624;
+	Wed, 14 Jan 2026 14:01:50 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7D78FC4CEF7;
 	Wed, 14 Jan 2026 14:01:46 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 823AEC4CEF7;
-	Wed, 14 Jan 2026 14:01:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1768399305;
-	bh=z1PZ3HGUC5DzEECbp98GiBNXztyK9h1Ncbkz9ixmhkY=;
+	s=k20201202; t=1768399310;
+	bh=JhUn9TqR1P15NoVS+X8zJgLMi4jcAWVe91/hg+g8+XQ=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=UMkJHL6w8+MAAkORQs/QfOtfPC910oZC4CxhNpE3Kxp3RKLxVA8GGfwQQYrQT+13d
-	 XG4XDGawsL3/W8fDzTDwb0ln22oxoGEal6askORJYSplzm36hQW7zzlaT/FPBBXajs
-	 gBWAvJz+jLmZUafa4lNj8vNHjp48KrJ3cSNEbMQJWDOYO5r4qnSXTrRTHqt3BTzrOL
-	 IYl0Hz9VSujZy3xcgK8zIZl+GnGhk/lZhceRDifC4+AVf6R+7nPiwpVFIWSsbOWVYc
-	 +eTVgnCZ1rQAQ9u2NVClJrRE16XtAl7qYutWpCp+rU1JCahkPLNp3t6YI4NJeDppqp
-	 ywZNhBLo3McDw==
+	b=Ujjep2OnS5oFpyvmoHdhTj2gamsTcVSU4u2dMzbdeUj9Ames4AbCRjiZ4scWPntoO
+	 Mr62FQH2GPiYqNOj+b3PT2JKHlzOajo7w/EHzRhcbQKb0QW0sWPzveOlisNjhliRu5
+	 NWXSv7F1APi52affZvTC4Wl9DKUWiSuSun7USJu7tNwhw6P4nKHuShoVePZlgFl/Qs
+	 5/vuIHzt1xrDvuN0r9ngeUiDmL8W7rLbsHLG6vctEdtcomKytQOPrShFx0sBtAn7/O
+	 EkOnt4lY4E80bInnl5tZZwvWdV/lgDv5+IRxDyqLQz5nLckFYMo7DaVVI3NuRCeTA8
+	 nysyN2h98geGQ==
 From: Vinod Koul <vkoul@kernel.org>
-To: Kishon Vijay Abraham I <kishon@kernel.org>, 
- Dmitry Baryshkov <lumag@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, 
- Krzysztof Kozlowski <krzk@kernel.org>, 
- Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- linux-kernel@vger.kernel.org
-In-Reply-To: <20251017203438.744197-1-krishna.kurapati@oss.qualcomm.com>
-References: <20251017203438.744197-1-krishna.kurapati@oss.qualcomm.com>
-Subject: Re: [PATCH] phy: qcom: qmp-combo: Add polarity inversion support
- for SAR2130P
-Message-Id: <176839930316.937923.6727107841048707223.b4-ty@kernel.org>
-Date: Wed, 14 Jan 2026 19:31:43 +0530
+To: neil.armstrong@linaro.org, robh@kernel.org, krzk+dt@kernel.org, 
+ conor+dt@kernel.org, sjakhade@cadence.com, rogerq@kernel.org, 
+ thomas.richard@bootlin.com, Siddharth Vadapalli <s-vadapalli@ti.com>
+Cc: andrew@lunn.ch, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, devicetree@vger.kernel.org, 
+ linux-arm-kernel@lists.infradead.org, srk@ti.com
+In-Reply-To: <20260112054636.108027-1-s-vadapalli@ti.com>
+References: <20260112054636.108027-1-s-vadapalli@ti.com>
+Subject: Re: [PATCH v3 0/2] Cadence: Torrent: Enable PCIe + XAUI multilink
+ configuration
+Message-Id: <176839930614.937923.15521389501056523456.b4-ty@kernel.org>
+Date: Wed, 14 Jan 2026 19:31:46 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260114_060150_648939_82F802CE 
+X-CRM114-Status: GOOD (  10.61  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,20 +76,30 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Sat, 18 Oct 2025 02:04:38 +0530, Krishna Kurapati wrote:
-> On SAR2130P QXR Platform, the CC Lines are inverted and the lane
-> programming is to be done reverse compared to other targets.
+On Mon, 12 Jan 2026 11:16:29 +0530, Siddharth Vadapalli wrote:
+> This patch series adds the dt-binding for PHY_TYPE_XAUI and adds the
+> driver support for enabling PCIe + XAUI multilink configuration.
 > 
-> As per the HW specifics, Bit-2 of TYPEC_CTRL register indicates
-> port select polarity. This bit is to be set for SAR2130P.
+> Patch series is based on linux-next tagged next-20260109.
 > 
+> v2 of this patch series is at:
+> https://lore.kernel.org/r/20260104114422.2868321-1-s-vadapalli@ti.com/
+> Changes since v2:
+> - Collected Acked-by tag from Rob Herring (Arm) <robh@kernel.org>
+>   https://lore.kernel.org/r/176772419699.2512006.6478554353373580831.robh@kernel.org/
+> - The commit message in the second patch has been updated to explain the
+>   changes made to the LINKx_MASK/SHIFT and REFCLKx_MASK/SHIFT macros to
+>   address feedback from Andrew Lunn <andrew@lunn.ch> at:
+>   https://lore.kernel.org/r/7fd42221-d602-4ce4-9f7f-6754ed91e7aa@lunn.ch/
 > 
 > [...]
 
 Applied, thanks!
 
-[1/1] phy: qcom: qmp-combo: Add polarity inversion support for SAR2130P
-      commit: 24991bfbbd84d68d5710e1563752047914db941a
+[1/2] dt-bindings: phy: Add PHY_TYPE_XAUI definition
+      commit: a632a2a0db8b4d24076a03889efa25c6058d0746
+[2/2] phy: cadence-torrent: Add PCIe + XAUI multilink configuration for 100MHz refclk
+      commit: 02cf3710c55d55d956f080e6610b841e2b6ddca0
 
 Best regards,
 -- 
