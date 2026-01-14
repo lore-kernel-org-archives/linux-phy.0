@@ -4,58 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 33799D37E55
-	for <linux-phy@archiver.kernel.org>; Wed, 14 Jan 2026 15:44:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 676CDD30CFE
+	for <linux-phy@archiver.kernel.org>; Wed, 14 Jan 2026 16:09:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fdbl/AMUfiEjGetoSJvKvl5DN+LpX4wVsPPRhKpA/k4=; b=C+x/FoJjvYkT3D
-	EYSj0nKUaXXs3AumghPEBDIXCVWttXQT7lA9QQw/n2NE1ENuvfQRIIFcKYwRxyWPiNvg9CNR/VjKI
-	qa3pXNrahoLaCGXepzPUT6YumVXfveB25L5MBK09ZI2ZZgQoW9lQsY9U43v7Xb33lfKF7ITDKE1nG
-	F7oCSdbb46/Yth0leE4DEOBbjcGyJwCeepc/Dc9MZ5QZfus8qUwr5vGSaMQhmG/7/VoYyJQoSAEp8
-	phqNPvGWmUituAZzaaOfUAWDM9Af4Ol4zo3ORc8Ys52HuoMijyTsCBys9W4Tk22KVRS2yzUvIko69
-	W2jYuOU086/meDCKANjQ==;
+	List-Owner; bh=5iA+fRyOdIAjqsyCpf54nqewR/eZikw1rgGivFgWWR4=; b=q4wl33rerLuj5n
+	tWU+ze2wTuAmaP/+7lVAWeGcy7mDNQIe1EZRq5avy8xNUhbz4YWavwz6nelyR8563oDvXffISFzBE
+	uGiO4w4lCZwPCTSlWTDmDYzqblPP1T7f+bthjEIjD91ALh6r4MIBzn2352csX4Z+unA21Jqecok/E
+	bgMfe/MMUxVUzESXso82MB9Pb+b2mXoQJV6Jfv7WBt9RdlyHOkJ8R23roVfwmsgp3EqkF4vO45VGK
+	vk1/Pu5g4fQmucjNaeRW+T8V5i5uKFO9Cvc/wmOv3JKuyJKzoM6nyKzBTQl/rTrxtTnobyNRvx/gR
+	+yqbatn1Cx75uIDgScMA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vg32Q-00000009l9g-31ze;
-	Wed, 14 Jan 2026 15:44:02 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1vg3Ql-00000009rzY-2Tng;
+	Wed, 14 Jan 2026 16:09:11 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vg32P-00000009l96-0t3J;
-	Wed, 14 Jan 2026 15:44:01 +0000
+	id 1vg3Qj-00000009ryu-3Hvo;
+	Wed, 14 Jan 2026 16:09:09 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 5EFD760128;
-	Wed, 14 Jan 2026 15:44:00 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3155BC16AAE;
-	Wed, 14 Jan 2026 15:43:58 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id C89E56000A;
+	Wed, 14 Jan 2026 16:09:08 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0ECE9C4CEF7;
+	Wed, 14 Jan 2026 16:09:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1768405440;
-	bh=ReVz6cPlRsm4lE4yj8qgNYX22f2C5+7rwEPvVzG9M+Q=;
+	s=k20201202; t=1768406948;
+	bh=RcWDWr8WdqPhjE1J0vAZphz5xlYpd8I6Uc8jAUxHLV4=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=t6H+7e2dbK9gQEvEZJKxd76IWSbrl5frhABmypwBkBSe9/hSV1JA+4/TRUsjzkl5w
-	 XQEZ1EISjXhn47N72nETB4OFNxb7Lsio8Sz0v77iL/NIBXmw4NRPzMMKcBkmee+gzp
-	 UuJZakX/7QiK0Jto7I52nmYYQUgT7XroBKqdcNCmSVRUM56w1rTDGIm3d9tNZ/wdan
-	 Ds5w84/WQgFGuxoEYkU0ORjWDlKOBID7SYhI6+PAvnT0xOG+wxCIOtA9r7h0AnNA8+
-	 PkMGMTv8WY0Tgb7nY7IsVGFeDpSht3jygHKnLmdBhkyM5alXbV4JdzK270X3LyXATw
-	 vM8Uz3eOiZcVA==
-Date: Wed, 14 Jan 2026 16:43:53 +0100
-From: Niklas Cassel <cassel@kernel.org>
-To: Shawn Lin <shawn.lin@rock-chips.com>
-Cc: Manivannan Sadhasivam <mani@kernel.org>,
-	Bjorn Helgaas <bhelgaas@google.com>, Vinod Koul <vkoul@kernel.org>,
-	linux-pci@vger.kernel.org, linux-rockchip@lists.infradead.org,
-	linux-phy@lists.infradead.org, Heiko Stuebner <heiko@sntech.de>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Sebastian Reichel <sebastian.reichel@collabora.com>
-Subject: Re: [PATCH 0/5] Add calibration for Synopsys PCIe PHY and Controller
-Message-ID: <aWe5s5mqFt26lRGL@ryzen>
-References: <1766560210-100883-1-git-send-email-shawn.lin@rock-chips.com>
+	b=SNON+7sMgvAO846vVwuFiwEchPZY5sEB8s+BwIKxwK+FoldG+9Rc0SfCB6XBlDrOQ
+	 yWaA24WCZwBS+INft/dKuws0m8eFL0s8/oYvLas3DIgWLeqWtdacie+fz/FB/ZdB5c
+	 OIs9f0++VWq3LLygegd0fBNBqD9dh0hRa13NAdrHsbG/IWuyGyDCDMb7ex/oeks0/D
+	 B5zgWE+alovSasC99A+EGt7qShwFFdVF2lpCYcFbqJFoW2jDNc/aSiMjFObRN7WPTY
+	 GG6vBsj/RugTAlB5zN7qSHBbmCNr2hZcoJEUfrm4CNfcCb/pK0jw+iikU40Jr/snS2
+	 jpJbm5gt6kegA==
+Date: Wed, 14 Jan 2026 21:39:04 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Xu Yang <xu.yang_2@nxp.com>
+Cc: neil.armstrong@linaro.org, shawnguo@kernel.org, kernel@pengutronix.de,
+	festevam@gmail.com, jun.li@nxp.com, Frank.Li@nxp.com,
+	linux-phy@lists.infradead.org, imx@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v2] phy: fsl-imx8mq-usb: enable RxTermination_override_sel
+Message-ID: <aWe_oNDOqHnQo0X2@vaman>
+References: <20251224111807.2925675-1-xu.yang_2@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1766560210-100883-1-git-send-email-shawn.lin@rock-chips.com>
+In-Reply-To: <20251224111807.2925675-1-xu.yang_2@nxp.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,43 +70,85 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Dec 24, 2025 at 03:10:05PM +0800, Shawn Lin wrote:
+On 24-12-25, 19:18, Xu Yang wrote:
+
+What is the with the CamelCase on the patch title! We dont do that
+please
+
+> This is to resolve the problem of wakeup system by USB3 device insertion
+> if HSIOMIX on, in that case, the USB3 device detects RX term on so the
+> USB3 device doesn't downgrade to high-speed, we can't expect CONN wakeup
+> (for USB3) happen because the 24MHz OSC is required ON to trigger it.
+> Because the device works at Super-speed so DP/DM wakeup can't happen
+> either. Then the entire systen can't be waken up by such device attach
+> event.
 > 
-> Currently, when pcie-dw-rockchip uses the Synopsys PHY, it relies on
-> the phy_init() callback of the phy-rockchip-snps-pcie3 driver to
-> perform calibration. This is incorrect because the controller is
-> still held in reset at that time, preventing the PHY from accurately
-> reflecting the actual PLL lock and calibration status.
-
-Hello Shawn,
-
-I can see that you move the calibration code from .phy_init() to
-.phy_calibrate().
-
-And I understandthat the controller is still held in reset.
-
-I understand that the the PHY calibration is supposed to be done
-when the controller is not held in reset, and that alone is
-enough to warrant a fix.
-
-The Synopsys Gen3 PHY is used in e.g. Rock5b, and link training
-currently works fine with this PHY, so what is the actual
-implications of performing the PHY calibration when the controller
-is held in reset?
-
-Will it somehow it improve signal integrity?
-
-
-Kind regards,
-Niklas
-
+> With this override bit we can force the RX term off when enters system
+> suspend, and disable the override after system resume. Therefore, the
+> USB3 device will always downgrade to High-speed, then DP/DM wakeup can
+> always happen. It will correctly switch to Super-speed later when the
+> host reset it after the system resume back.
 > 
-> To fix this, this series:
-> 1. Calls phy_calibrate() in the pcie-dw-rockchip driver (if supported)
->    after the controller is out of reset, ensuring the PHY can
->    properly synchronize with the controller state.
-> 2. Adds the necessary calibration support in the Synopsys PHY driver
->    to implement this callback.
+> Signed-off-by: Li Jun <jun.li@nxp.com>
+> Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
+> 
+> ---
+> Changes in v2:
+>  - rephase the message
+> ---
+>  drivers/phy/freescale/phy-fsl-imx8mq-usb.c | 15 ++++++++++++++-
+>  1 file changed, 14 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
+> index 92c5c233bad9..e991a480b882 100644
+> --- a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
+> +++ b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
+> @@ -51,6 +51,7 @@
+>  #define PHY_CTRL5_PCS_TX_SWING_FULL_MASK	GENMASK(6, 0)
+>  
+>  #define PHY_CTRL6			0x18
+> +#define PHY_CTRL6_RXTERM_OVERRIDE_SEL	BIT(29)
+>  #define PHY_CTRL6_ALT_CLK_EN		BIT(1)
+>  #define PHY_CTRL6_ALT_CLK_SEL		BIT(0)
+>  
+> @@ -630,6 +631,7 @@ static int imx8mp_usb_phy_init(struct phy *phy)
+>  static int imx8mq_phy_power_on(struct phy *phy)
+>  {
+>  	struct imx8mq_usb_phy *imx_phy = phy_get_drvdata(phy);
+> +	u32 value;
+>  	int ret;
+>  
+>  	ret = regulator_enable(imx_phy->vbus);
+> @@ -646,12 +648,23 @@ static int imx8mq_phy_power_on(struct phy *phy)
+>  		return ret;
+>  	}
+>  
+> -	return ret;
+> +	/* Disable rx term override */
+> +	value = readl(imx_phy->base + PHY_CTRL6);
+> +	value &= ~PHY_CTRL6_RXTERM_OVERRIDE_SEL;
+> +	writel(value, imx_phy->base + PHY_CTRL6);
+> +
+> +	return 0;
+>  }
+>  
+>  static int imx8mq_phy_power_off(struct phy *phy)
+>  {
+>  	struct imx8mq_usb_phy *imx_phy = phy_get_drvdata(phy);
+> +	u32 value;
+> +
+> +	/* Override rx term to be 0 */
+> +	value = readl(imx_phy->base + PHY_CTRL6);
+> +	value |= PHY_CTRL6_RXTERM_OVERRIDE_SEL;
+> +	writel(value, imx_phy->base + PHY_CTRL6);
+>  
+>  	clk_disable_unprepare(imx_phy->alt_clk);
+>  	clk_disable_unprepare(imx_phy->clk);
+> -- 
+> 2.34.1
+
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
