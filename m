@@ -4,73 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 07EACD39007
-	for <linux-phy@archiver.kernel.org>; Wed, 14 Jan 2026 18:47:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F8DED3900E
+	for <linux-phy@archiver.kernel.org>; Wed, 14 Jan 2026 18:55:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZcEamyx9AvKvHU/3JQIpbJcuRSeGeH6oMK0DjHr+H8M=; b=QTgoCbn0IYDXEO
-	UGK6YwCt2dEnGm6HytGRtNhnWxx6edXm3Kny+FZ4xoZlbOa6bHGolQ0zBL1GI8mOoFHWnRFpNgiIW
-	GAHDkMJnQ7cSN++IXlyuWGkG522gVlprfAKnO1Qc02+asmXP2CGF869Zhq+UlIGqLEiECmFKu5lG6
-	DHEYWnIp9kkY5qz1hJfl+z+E+kr5VCPVdIts7JdrfryBnpLheV8vcGBRMWbN98xQCvPybvGOA2HV1
-	WiIrcWN+JpF16LTXR2/ZfUtZeociPsaRbSFz0kn0Br0ZBHyQ/XkiMf3ix6rKl8tkysDjFTmV6Z6aM
-	ClT2t58Bn1+lLWU96YxA==;
+	List-Owner; bh=kwEmrcwGkXj11nMe0R4OvV9vlWOD/EFhmmeAvaAuYJI=; b=QrtM+CIldjme5X
+	dM1Hev5Po4nCaXTF9l0cakGv0XY1aWBJkA814FddDM2dYA2bb/xRpm0n1qw2BqZ5O0vQlaazcRWaR
+	PUnqI0qDGWv5juCC7hkJF1aPk5Ra7bqFZyLjRt9a7xTV0OLFZ5OJnnSPpCEj+hiCiUCea8vuMX/YP
+	rk6nBQB5+2cZZtLN2oK7PZ3H6/UvCqek/mB4Q0GcMYThKkquUTRw9Zl/3vkpBGohvxZsspP1qHw/F
+	81lpA8KmGOx8PzFTVxg0FAaYfDWAu1OwShpAX1hhWCenM0T5BDr3mCmHVwBacVK4csvyufIWJUWo1
+	qf24X3t1JHrWbmSboS9A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vg5ti-0000000ANEQ-2Bzf;
-	Wed, 14 Jan 2026 18:47:14 +0000
-Received: from mail-ed1-x534.google.com ([2a00:1450:4864:20::534])
+	id 1vg624-0000000AOf0-34tu;
+	Wed, 14 Jan 2026 18:55:52 +0000
+Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vg5tg-0000000ANDS-0Hnk
-	for linux-phy@lists.infradead.org;
-	Wed, 14 Jan 2026 18:47:13 +0000
-Received: by mail-ed1-x534.google.com with SMTP id 4fb4d7f45d1cf-64b6f22bc77so13373a12.1
-        for <linux-phy@lists.infradead.org>; Wed, 14 Jan 2026 10:47:11 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1768416430; x=1769021230; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=J9ken08GWaBvhZybEJhtrMx7vEhMPkB4XYNJbjZoLig=;
-        b=geWuAwJ8C0N17skAiO155plU3dmZ25fGT6bFg8Vl34br7sWkebRj/3rMd3lGEGsCqq
-         SJB0PCvdLsKlmLC1y25hz8EwfAMvqX0gI8CXQem+aY8BJQeN6HcLQKAFlrSiXDpwU9jg
-         xR8ZOYY75a64Tr2aHZ0F1JuQmqY6OZsRRNv/NvthKBhEnQJrGC8A9iQDp6KI2X1psVVF
-         7shuBnsoQ72LMIeEgaxXGFH8tjkfhQxpG17Zj21vobm4BTW/WAUyHCsY4Cyr7i6FLWfZ
-         P00rZj7XAFemuG26mQfQUjEO1fKx84W9x+Q363X7W7pRdvrf/hvTkKnEfSIu5e9zDMvp
-         ZG0Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1768416430; x=1769021230;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=J9ken08GWaBvhZybEJhtrMx7vEhMPkB4XYNJbjZoLig=;
-        b=Vbfb4YJWXGZDVsuI1PjU+AoAyRqLdTlTqFptayzbINgftvbiR5RSI2YOiHu8IFCm1/
-         IjfOzPyu+kEIfXtjj6HR+e/+vxkmfMP8YdAmey2qsQEVuVBjnXCDtXw6O1YShYLLVaV6
-         9qEsEAdqfGvreip0FMD4QVsr8AN3pFIApSR+G39qlQysTBEWFA6c0n31PKpFlGZkq0BU
-         /sEZw6KXJSMlwG6c6xHlBPlWNhHLftP2U+Hus2Zq+aRu63lDtMSokB6x12xjOQbWChY5
-         JEsenSlAOC14FL6t/sKD+yaRREc/0VinysB+WRs7OL5Imhg38P99PUoiPV0MCfHTkHQ6
-         GFIQ==
-X-Forwarded-Encrypted: i=1; AJvYcCVr/jMz69BdCNlC17NRmHBWJ7VzQ6M5vq0pktiN60EkI1Eb0eOTSYKM57Nck8k5bqz2eBoaBdc4XW4=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzW6dbVu4LG1n9i9rv2weGfc1e88ZTstaGWqTD28XnsZHKcz63d
-	vmvPKWLm4iPzpzD/jyuCIyUK5yNOghu4gAMoOYSg5j5DFgCOfJ0IymsE
-X-Gm-Gg: AY/fxX4DyKDFfhM4X4lsUA79g4aGIqXWIzfRl17fDyan09UeKrhgGPiamXfAoQiBvyv
-	6FhKYJ0a57gm83UJqx2COYWPBu7XZ6aUSv6XI3Iz0nwbuB2eL/NiL9jd3aACb5uUx6O3R/06vxL
-	pMkg9T88bwrAFOWL3bScFNojRPVLKnxvAALfbH1UEyCschXjKyBjbrkM3UvzAl2goswVUQs9fiM
-	QQnB9T7hja0kYJl5+1ATIE67DkyO23Hu8qhr6hoyYqBC5bXR2SDyeGAohxnPk8xp/GC/0DQIILP
-	gT3HcJmZM3iQ7vNkS/JS+mjmSEuCqrjBjqdpvbmUej/ctW/BqbqeoDfeKbaSZt/0hYnM3iQ6BME
-	Ww//e5o9p3OXX5HloiYImi1FNdOdffGnrDAcAVflTUd4u9ZSCRTqX08QPWroZmEjWUklR5eI7ow
-	I9H10=
-X-Received: by 2002:a05:6402:1ed6:b0:64d:46f:320 with SMTP id 4fb4d7f45d1cf-653ec47b906mr1748710a12.7.1768416429553;
-        Wed, 14 Jan 2026 10:47:09 -0800 (PST)
-Received: from skbuf ([2a02:2f04:d703:5400:9b39:8144:8a26:667e])
-        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-65411882043sm327189a12.11.2026.01.14.10.47.07
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 14 Jan 2026 10:47:08 -0800 (PST)
-Date: Wed, 14 Jan 2026 20:47:05 +0200
-From: Vladimir Oltean <olteanv@gmail.com>
-To: "Russell King (Oracle)" <rmk+kernel@armlinux.org.uk>
+	id 1vg620-0000000AOdj-427E;
+	Wed, 14 Jan 2026 18:55:51 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=iTNLp10Ro+X5fPkwXrfSV4iRZlIf0RMpE69VDQnSaDU=; b=1LhRzFKXkFPsaaOO+voWBOqmCx
+	WlnkLzJfHlydzw2SupdC0FtuHxJFpWUTE3rHxleSIvoNimmsJ74c4uQvhjZ5mKgk1erkai5LToTCu
+	KGmiXHFeAVwhRvi7Dr7f08JrQRzAfcc9+n1xowSCaSCfv74kEjtro56lOmizuDoQHXoweuV6H04bA
+	ATi3Udti/sDsrn/o9G3B40TwksP84ndpiOAovq7FyzWG+L++U1By4AXv4Q1+iLLOGqE4SWX74XiWb
+	zisnyNCoVk3fB4Ad/jxIeqn8mldsG2eB5Re8HQizk8XYDzCQuP/9mG7DR3gHc8DKVBNFTX2s9SJQa
+	Viw5474Q==;
+Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:40706)
+	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.98.2)
+	(envelope-from <linux@armlinux.org.uk>)
+	id 1vg61r-000000000b8-1JiZ;
+	Wed, 14 Jan 2026 18:55:39 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.98.2)
+	(envelope-from <linux@shell.armlinux.org.uk>)
+	id 1vg61n-000000001sW-0Hze;
+	Wed, 14 Jan 2026 18:55:35 +0000
+Date: Wed, 14 Jan 2026 18:55:34 +0000
+From: "Russell King (Oracle)" <linux@armlinux.org.uk>
+To: Vladimir Oltean <olteanv@gmail.com>
 Cc: Andrew Lunn <andrew@lunn.ch>, Heiner Kallweit <hkallweit1@gmail.com>,
 	Alexandre Torgue <alexandre.torgue@foss.st.com>,
 	Andrew Lunn <andrew+netdev@lunn.ch>,
@@ -87,18 +67,18 @@ Cc: Andrew Lunn <andrew@lunn.ch>, Heiner Kallweit <hkallweit1@gmail.com>,
 	Paolo Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>
 Subject: Re: [PATCH net-next 03/14] phy: qcom-sgmii-eth: add .set_mode() and
  .validate() methods
-Message-ID: <20260114184705.djvad5phrnfen6wx@skbuf>
+Message-ID: <aWfmpq-dJ-mUCvz1@shell.armlinux.org.uk>
 References: <aWfWDsCoBc3YRKKo@shell.armlinux.org.uk>
  <aWfWDsCoBc3YRKKo@shell.armlinux.org.uk>
  <E1vg4vs-00000003SFt-1Fje@rmk-PC.armlinux.org.uk>
  <E1vg4vs-00000003SFt-1Fje@rmk-PC.armlinux.org.uk>
+ <20260114184705.djvad5phrnfen6wx@skbuf>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <E1vg4vs-00000003SFt-1Fje@rmk-PC.armlinux.org.uk>
- <E1vg4vs-00000003SFt-1Fje@rmk-PC.armlinux.org.uk>
+In-Reply-To: <20260114184705.djvad5phrnfen6wx@skbuf>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260114_104712_120960_C7BD4096 
-X-CRM114-Status: GOOD (  11.26  )
+X-CRM114-CacheID: sfid-20260114_105549_284234_07D28374 
+X-CRM114-Status: GOOD (  14.01  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,27 +95,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jan 14, 2026 at 05:45:24PM +0000, Russell King (Oracle) wrote:
-> qcom-sgmii-eth is an Ethernet SerDes supporting only Ethernet mode
-> using SGMII, 1000BASE-X and 2500BASE-X.
+On Wed, Jan 14, 2026 at 08:47:05PM +0200, Vladimir Oltean wrote:
+> On Wed, Jan 14, 2026 at 05:45:24PM +0000, Russell King (Oracle) wrote:
+> > qcom-sgmii-eth is an Ethernet SerDes supporting only Ethernet mode
+> > using SGMII, 1000BASE-X and 2500BASE-X.
+> > 
+> > Add an implementation of the .set_mode() method, which can be used
+> > instead of or as well as the .set_speed() method. The Ethernet
+> > interface modes mentioned above all have a fixed data rate, so
+> > setting the mode is sufficient to fully specify the operating
+> > parameters.
+> > 
+> > Add an implementation of the .validate() method, which will be
+> > necessary to allow discovery of the SerDes capabilities for platform
+> > independent SerDes support in the stmmac netowrk driver.
 > 
-> Add an implementation of the .set_mode() method, which can be used
-> instead of or as well as the .set_speed() method. The Ethernet
-> interface modes mentioned above all have a fixed data rate, so
-> setting the mode is sufficient to fully specify the operating
-> parameters.
+> s/netowrk/network/
 > 
-> Add an implementation of the .validate() method, which will be
-> necessary to allow discovery of the SerDes capabilities for platform
-> independent SerDes support in the stmmac netowrk driver.
-
-s/netowrk/network/
-
+> > 
+> > Signed-off-by: Russell King (Oracle) <rmk+kernel@armlinux.org.uk>
+> > ---
 > 
-> Signed-off-by: Russell King (Oracle) <rmk+kernel@armlinux.org.uk>
-> ---
+> Reviewed-by: Vladimir Oltean <vladimir.oltean@nxp.com>
 
-Reviewed-by: Vladimir Oltean <vladimir.oltean@nxp.com>
+According to patchwork (I forgot the RFC tag on the patches) it needs
+linux/phy.h included. Plesae let me know if you'd like me to retain
+your r-b. Thanks.
+
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTP is here! 80Mbps down 10Mbps up. Decent connectivity at last!
 
 -- 
 linux-phy mailing list
