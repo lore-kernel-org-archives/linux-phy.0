@@ -4,54 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ED0ABD37E37
-	for <linux-phy@archiver.kernel.org>; Wed, 14 Jan 2026 14:01:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4905AD37E39
+	for <linux-phy@archiver.kernel.org>; Wed, 14 Jan 2026 14:01:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Q9iPRIkHnzOmuvGUypbp5aXz3u+MfmgQF0v5SljpFgI=; b=S94WR5FpQepcBF
-	3MHPjmTH30s2MA1subX7BKk/p1jUskzhX/xTHZZIe3fjFPuK5DsGSzvmQwhyVLZx4Sc11/fQaJ9Rp
-	IXgEy5cViPeBKvReAUkBfXUdPaSF3UiC0AjLkiDN8I+I/hpd36vV7Ct4SLBL9j7jaf7/Zz8hwgUGO
-	o6D4SLna2tbfeC9R+E/W7LzNqgjgmiBVckwmLpRpIpB1z7LUnXiGz3ZzKCQR9GqSWDbemp4mqO2lL
-	Cl3brUTYxa0P6lEP02Aen4FWjHpduJVMjgkOdwy3fFsjkeZyX9MmV/23efyrAnJlYLsY3M8FxvvsK
-	kwtTH77Vc94Z1/LksOhg==;
+	List-Owner; bh=shL6rcOHpUx+WmKXnfj+1LdzkQGhfLIuCNG3jRw0d7E=; b=VKsfKp3YQhu/Fh
+	OYUPNZU9znMGtwENK4d0FkDwEI0A/7c2IzqOzYeJQh+QBpiSWZ3c3D1Wh3gWfkaZc8PvlmUxYrcnR
+	Rw088N4V0649lxuhtJUGajLeGAAM//vxnZIhrdGjKK3Nrii4mSrqeyAfwTIAte0JgwL9pKs/lpk3N
+	RjpMs6qkoq/RPocMAZmBtYsIKWmMN4soohfED0ZCV/vsTzhMImf9tOH0rEbeeHshCwfNE2VTQ0t0R
+	XFMgUf1rhgpCiClrnnQdIJBOp/XbOLA3Aw/Y0nNJ2cBfzkwIPak56ffAAa2enmtM5OMBGc83R9eHm
+	Wt8idpja89OE9oIjEiDA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vg1R4-00000009RDr-1Nws;
-	Wed, 14 Jan 2026 14:01:22 +0000
+	id 1vg1RI-00000009RHr-0cmR;
+	Wed, 14 Jan 2026 14:01:37 +0000
 Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vg1R2-00000009RDG-31j5;
-	Wed, 14 Jan 2026 14:01:20 +0000
+	id 1vg1RG-00000009RH9-1Zc7;
+	Wed, 14 Jan 2026 14:01:34 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id C640960053;
-	Wed, 14 Jan 2026 14:01:19 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 44EB4C4CEF7;
-	Wed, 14 Jan 2026 14:01:17 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id CC32F600AA;
+	Wed, 14 Jan 2026 14:01:33 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DF47CC19422;
+	Wed, 14 Jan 2026 14:01:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1768399279;
-	bh=NS4GOW/krUAkmuANNp5aNWD+Uu/DsbkydKZkOF5PdlE=;
+	s=k20201202; t=1768399293;
+	bh=+PlGFhehw9pvT1fTeNTIF8koULdH0BUOJ+fDH8yqZwY=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=psHXlupZoLOYoS0KNWN769c7cdM6cZnylgU3MwlGG+gB5xjJUKWlsfJXUt6whVYC7
-	 Y+eCjtsLDEXrfsRM0EybQAVifnNUK1Yy5pxLZ6hTF2twHYM27qY/GfCzbjvwkkczLm
-	 3Ce2UDgUjwuLDdMsHuuzof2yQDjZKEROGsNjOzP9vcTwKJQ1s/sHzdg9ZVOoYzFf9m
-	 AE5sGACEdh5nMo8qH4yEkHPTfGaDMb3wgw+UafgsnHfZqzQ3RA9MyPCklAik04dTbo
-	 KH3nS2taen0nQZUoXwg+XKRkqHlo2Y08JfFTMuWi9Pk0OhoOmS9/Sb8nD7AkDJv4pR
-	 ybQBGERh7dGHQ==
+	b=Ugq2Q7NMaYTXFV1ThT3q7e3DBYSOPt5A5bWniBbCjgJXaA05WP/krfSl5A9BbkAGX
+	 BTZwYp7zx0Zrm/Z7kw76XROcjIZVCBX/4KwGQ/P6kqE2GSxSiALKqjwCyC+aSXSFr4
+	 0nX7SOjhtqgmL611RkqV7D+ScQM8xafLX89pziD86o6Ax6/LuWtQbeh82PZ6mkJLh3
+	 Tz3v8cz/PVjXFsztQv35sTwE8Stzg20MW66DmT4SJMbD8GghbNumwbTOal/Z3+B1p0
+	 2wjDQn3sWPuqdC2Guy9TeUUank2Rg16llMwtHneJzS7ZifJosxHckmcZgdNXNP2lKO
+	 VOkPUF6U1iVfw==
 From: Vinod Koul <vkoul@kernel.org>
-To: kishon@kernel.org, heiko@sntech.de, Wentao Liang <vulab@iscas.ac.cn>
-Cc: linux-phy@lists.infradead.org, linux-rockchip@lists.infradead.org, 
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- stable@vger.kernel.org
-In-Reply-To: <20260109154626.2452034-1-vulab@iscas.ac.cn>
-References: <20260109154626.2452034-1-vulab@iscas.ac.cn>
-Subject: Re: [PATCH v2] phy: rockchip: inno-usb2: Fix a double free bug in
- rockchip_usb2phy_probe()
-Message-Id: <176839927689.937835.2359558250567308193.b4-ty@kernel.org>
-Date: Wed, 14 Jan 2026 19:31:16 +0530
+To: linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev, 
+ Marco Crivellari <marco.crivellari@suse.com>
+Cc: Tejun Heo <tj@kernel.org>, Lai Jiangshan <jiangshanlai@gmail.com>, 
+ Frederic Weisbecker <frederic@kernel.org>, 
+ Sebastian Andrzej Siewior <bigeasy@linutronix.de>, 
+ Michal Hocko <mhocko@suse.com>, Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Jernej Skrabec <jernej.skrabec@gmail.com>, 
+ Samuel Holland <samuel@sholland.org>, Chen-Yu Tsai <wens@kernel.org>
+In-Reply-To: <20251105152023.259813-1-marco.crivellari@suse.com>
+References: <20251105152023.259813-1-marco.crivellari@suse.com>
+Subject: Re: [PATCH] phy: sun4i-usb: replace use of system_wq with
+ system_percpu_wq
+Message-Id: <176839928954.937923.15095865192573263958.b4-ty@kernel.org>
+Date: Wed, 14 Jan 2026 19:31:29 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
 X-BeenThere: linux-phy@lists.infradead.org
@@ -71,21 +76,21 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Fri, 09 Jan 2026 15:46:26 +0000, Wentao Liang wrote:
-> The for_each_available_child_of_node() calls of_node_put() to
-> release child_np in each success loop. After breaking from the
-> loop with the child_np has been released, the code will jump to
-> the put_child label and will call the of_node_put() again if the
-> devm_request_threaded_irq() fails. These cause a double free bug.
+On Wed, 05 Nov 2025 16:20:23 +0100, Marco Crivellari wrote:
+> Currently if a user enqueues a work item using schedule_delayed_work() the
+> used wq is "system_wq" (per-cpu wq) while queue_delayed_work() use
+> WORK_CPU_UNBOUND (used when a cpu is not specified). The same applies to
+> schedule_work() that is using system_wq and queue_work(), that makes use
+> again of WORK_CPU_UNBOUND.
 > 
-> Fix by returning directly to avoid the duplicate of_node_put().
+> This lack of consistency cannot be addressed without refactoring the API.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/1] phy: rockchip: inno-usb2: Fix a double free bug in rockchip_usb2phy_probe()
-      commit: e07dea3de508cd6950c937cec42de7603190e1ca
+[1/1] phy: sun4i-usb: replace use of system_wq with system_percpu_wq
+      commit: 877686f9f42b58b04e4e25d07034bc95cadc20f3
 
 Best regards,
 -- 
