@@ -4,57 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 60C96D31A26
-	for <linux-phy@archiver.kernel.org>; Wed, 14 Jan 2026 08:51:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 06723D31A25
+	for <linux-phy@archiver.kernel.org>; Wed, 14 Jan 2026 08:57:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Klzp4w8/aDSy8vapC1In2bqiGd+4zcp2HOwequsvox4=; b=iGcVtsLmM9NX8i
-	BWsrd/+fcNGqNTPYbwhzqk7pWrI8MxFJ95zsYcUf4J9+VotzLtrkSjARBY06/c7sCULU5gniSZxQT
-	rJceag70+40eZtNXjDCOylVg1gKiuKK3szmgDYqp6f81QmLiovFXhqK9M8INIUUJBSWu5t89aYXaF
-	ijbe2CIH05TR5tGzLKVbqnkGDP/4fwFPQu8FJgL3rvV0GiFNCVOy8B4C7BKHS+79b45Vs32f8o4LX
-	k/oxkfKINTVf0CPCiDAzW55Lb0Z+gpTtqMMNCH5aEvuG8Jzl+DvDDVkCOwXdo27HIvghZfkn1EEq+
-	ZBva3Q/FqOGFTwMZOrZg==;
+	List-Owner; bh=qf+r8cMLKh8HV6etk6YnR8ubyLs0J0sNd4DtrlDeOkA=; b=TPQvBPvub48Nfj
+	taSV1YyidMDQ8oIQMn+6bWzE9QE8F4e8a/HHnPY0sxSmFcVolctGKopAcSzWbjrOnKsTgcra+ZQln
+	VhlFHB58l1EeNv0GswoOR6KmhCkw7U8ybPzFSjeLnvYv7HZ8lZkm2oDaKdz1sFXDBnjuepbV3N1Mz
+	sJAKYsYWDmXFXB0hxJHcoMMhGUK7683sTdQJV3B8i+MjlsJegyk/pSrgJtkq2QkTKBAwZWLwk5SME
+	3pCnTmNScqGKo0yIsNvC+6BysVUoIIbLJuxfQJMO27a246GLbdDshbvA3EcEdB23pv3uAp8YVX1xo
+	tIYN8aqHCK9nFFxwSj7Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vfwb8-00000008PXM-0dPT;
-	Wed, 14 Jan 2026 08:51:26 +0000
-Received: from mgamail.intel.com ([192.198.163.7])
+	id 1vfwgk-00000008QVD-32yB;
+	Wed, 14 Jan 2026 08:57:14 +0000
+Received: from mgamail.intel.com ([198.175.65.15])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vfwb5-00000008PWT-3QNz
+	id 1vfwgi-00000008QUe-0DAo
 	for linux-phy@lists.infradead.org;
-	Wed, 14 Jan 2026 08:51:24 +0000
+	Wed, 14 Jan 2026 08:57:13 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1768380683; x=1799916683;
+  t=1768381033; x=1799917033;
   h=date:from:to:cc:subject:message-id:references:
    mime-version:in-reply-to;
-  bh=dgAZttYLRaCe9m5TzCKJ6+TFt2wSCjRKjFsbXPtQkvI=;
-  b=mrUcMEUuxoEEpb4rYcTSFJNSveqlA4iiKUeTdJJFlpkQ82U5Ig5y+jRx
-   hrXxueBW13RS8iW+eb4p1ukFtGSBJbJB5zLdz3x+e/ADnHnW64GK4fomo
-   CIP+1YxnpAuYWvhJWHlqNOR4ULz15Fba5kTI//49O7TxdU1Qsn1li3iTT
-   8dsg7louQ9pB9fJOLwtLlYJNzrLmF5zMhOdlm9+X9ZHGhJVhB+NtWcfVN
-   74wpuDRdW+XrSlOqHDlL0az5zAcoTpeCvc5IpkmoXqK7uCuU2CAmfgHrN
-   kbPfjMfHEY4RmOIWpJHTctijHCtlWxWwMqAMVW/S1Oq5hqP1VOB8KO0C9
-   g==;
-X-CSE-ConnectionGUID: OOlCRhxbT/yZPkLzQIZe0Q==
-X-CSE-MsgGUID: Dq/fAvEcQTOkNz3XhZf4AA==
-X-IronPort-AV: E=McAfee;i="6800,10657,11670"; a="95150905"
+  bh=HIkzILhgmWy3kG68XFN5wNFScMmkW6IPVLk8hi5sn5g=;
+  b=V04i9tqPkg33M9RV+8MuWPddDqOxTMwzHdkuXgEbcA/pzF1x4UGy1ofN
+   QRmXjnVmHrmBbVDEMyhYPO00fn10fBvY/79MMfDZfVBfkswwH9ZfwuJAq
+   HGemqSy+0+ZCyyVal2ee5/3zRQOF3efUZ8CEI6BQLX2REeycsL0pzOi/o
+   kEs9Zg2w+Vpcj1eXPBbOVvLSB/Ssie/TKJhbethMUKMW3i8vyI6MWm14g
+   rehULQKfh1wJIA9FTVlxgoHQh4Ee7JK9QW873Xs2A8ibZxbDuQDs8Knxc
+   rSOMzexsAhqI1lM4BYDoKk3aJOjAfnn9qf0EM57aXqUd19tnG+rkmnWNI
+   w==;
+X-CSE-ConnectionGUID: lR5kdMMASyS7GU0aytb4MQ==
+X-CSE-MsgGUID: cAMQUqXyRFibaVzRL3RY+A==
+X-IronPort-AV: E=McAfee;i="6800,10657,11670"; a="73311207"
 X-IronPort-AV: E=Sophos;i="6.21,225,1763452800"; 
-   d="scan'208";a="95150905"
-Received: from fmviesa004.fm.intel.com ([10.60.135.144])
-  by fmvoesa101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 14 Jan 2026 00:51:23 -0800
-X-CSE-ConnectionGUID: w5KBXLSkT5GwlKETmfz/1g==
-X-CSE-MsgGUID: 20YHxAaLTi6mkDSnYbmoqw==
+   d="scan'208";a="73311207"
+Received: from fmviesa003.fm.intel.com ([10.60.135.143])
+  by orvoesa107.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 14 Jan 2026 00:57:10 -0800
+X-CSE-ConnectionGUID: JwC21BClT52N5BFbRPnySQ==
+X-CSE-MsgGUID: RAtdZy/tSs2IStYTIHc58g==
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.21,225,1763452800"; 
-   d="scan'208";a="209465922"
 Received: from pgcooper-mobl3.ger.corp.intel.com (HELO localhost) ([10.245.244.83])
-  by fmviesa004-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 14 Jan 2026 00:51:17 -0800
-Date: Wed, 14 Jan 2026 10:51:15 +0200
+  by fmviesa003-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 14 Jan 2026 00:56:59 -0800
+Date: Wed, 14 Jan 2026 10:56:57 +0200
 From: Andy Shevchenko <andriy.shevchenko@intel.com>
 To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 Cc: jic23@kernel.org, dlechner@baylibre.com, nuno.sa@analog.com,
@@ -68,21 +66,20 @@ Cc: jic23@kernel.org, dlechner@baylibre.com, nuno.sa@analog.com,
 	mitltlatltl@gmail.com, krishna.kurapati@oss.qualcomm.com,
 	linux-arm-msm@vger.kernel.org, linux-iio@vger.kernel.org,
 	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-pm@vger.kernel.org, kernel@collabora.com,
-	Jonathan Cameron <jonathan.cameron@huawei.com>
-Subject: Re: [PATCH v7 04/10] spmi: Implement spmi_subdevice_alloc_and_add()
- and devm variant
-Message-ID: <aWdZAyqQQ4KwCJx-@smile.fi.intel.com>
+	linux-pm@vger.kernel.org, kernel@collabora.com
+Subject: Re: [PATCH v7 05/10] nvmem: qcom-spmi-sdam: Migrate to
+ devm_spmi_subdevice_alloc_and_add()
+Message-ID: <aWdaWY2tWUMllOHH@smile.fi.intel.com>
 References: <20260114083957.9945-1-angelogioacchino.delregno@collabora.com>
- <20260114083957.9945-5-angelogioacchino.delregno@collabora.com>
+ <20260114083957.9945-6-angelogioacchino.delregno@collabora.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260114083957.9945-5-angelogioacchino.delregno@collabora.com>
+In-Reply-To: <20260114083957.9945-6-angelogioacchino.delregno@collabora.com>
 Organization: Intel Finland Oy - BIC 0357606-4 - c/o Alberga Business Park, 6
  krs, Bertel Jungin Aukio 5, 02600 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260114_005123_896088_33632A63 
-X-CRM114-Status: GOOD (  20.52  )
+X-CRM114-CacheID: sfid-20260114_005712_137943_417EA596 
+X-CRM114-Status: GOOD (  13.70  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,115 +96,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jan 14, 2026 at 09:39:51AM +0100, AngeloGioacchino Del Regno wrote:
-> Some devices connected over the SPMI bus may be big, in the sense
-> that those may be a complex of devices managed by a single chip
-> over the SPMI bus, reachable through a single SID.
+On Wed, Jan 14, 2026 at 09:39:52AM +0100, AngeloGioacchino Del Regno wrote:
+> Some Qualcomm PMICs integrate a SDAM device, internally located in
+> a specific address range reachable through SPMI communication.
 > 
-> Add new functions aimed at managing sub-devices of a SPMI device
-> spmi_subdevice_alloc_and_add() and a spmi_subdevice_put_and_remove()
-> for adding a new subdevice and removing it respectively, and also
-> add their devm_* variants.
+> Instead of using the parent SPMI device (the main PMIC) as a kind
+> of syscon in this driver, register a new SPMI sub-device for SDAM
+> and initialize its own regmap with this sub-device's specific base
+> address, retrieved from the devicetree.
 > 
-> The need for such functions comes from the existence of	those
-> complex Power Management ICs (PMICs), which feature one or many
-> sub-devices, in some cases with these being even addressable on
-> the chip in form of SPMI register ranges.
-> 
-> Examples of those devices can be found in both Qualcomm platforms
-> with their PMICs having PON, RTC, SDAM, GPIO controller, and other
-> sub-devices, and in newer MediaTek platforms showing similar HW
-> features and a similar layout with those also having many subdevs.
-> 
-> Also, instead of generally exporting symbols, export them with a
-> new "SPMI" namespace: all users will have to import this namespace
-> to make use of the newly introduced exports.
+> This allows to stop manually adding the register base address to
+> every R/W call in this driver, as this can be, and is now, handled
+> by the regmap API instead.
 
 ...
 
-> +static void devm_spmi_subdevice_remove(void *res)
+> +	struct regmap_config sdam_regmap_config = {
+> +		.reg_bits = 16,
+> +		.val_bits = 8,
 
-For better readability we usually call the variable with a meaningful name, and
-sub_sdev here seems the best.
+> +		.max_register = 0x100,
 
-> +{
-> +	spmi_subdevice_remove(res);
-> +}
+Are you sure? This might be a bad naming, but here max == the last accessible.
+I bet it has to be 0xff (but since the address is 16-bit it might be actually
+257 registers, but sounds very weird).
+
+> +		.fast_io = true,
+> +	};
 
 ...
 
-> + * Pointer to newly allocated SPMI sub-device for success or negative ERR_PTR.
+> +	rc = of_property_read_u32(dev->of_node, "reg", &sdam_regmap_config.reg_base);
 
-This is "negative ERR_PTR" nonsense. Either "negative errno" or "error pointer".
-Or something alike.
+Why not device_property_read_u32(dev, ...) ?
 
-> +struct spmi_subdevice *spmi_subdevice_alloc_and_add(struct spmi_device *sparent)
-> +{
-> +	struct spmi_subdevice *sub_sdev;
-> +	struct spmi_device *sdev;
-> +	int ret;
-> +
-> +	sub_sdev = kzalloc(sizeof(*sub_sdev), GFP_KERNEL);
-> +	if (!sub_sdev)
-> +		return ERR_PTR(-ENOMEM);
-> +
-> +	ret = ida_alloc(&spmi_subdevice_ida, GFP_KERNEL);
-> +	if (ret < 0) {
-> +		kfree(sub_sdev);
-> +		return ERR_PTR(ret);
-> +	}
-> +
-> +	sdev = &sub_sdev->sdev;
-> +	sdev->ctrl = sparent->ctrl;
-> +	device_initialize(&sdev->dev);
-> +	sdev->dev.parent = &sparent->dev;
-> +	sdev->dev.bus = &spmi_bus_type;
-> +	sdev->dev.type = &spmi_subdev_type;
+...
 
-> +	sub_sdev->devid = ret;
+> +	sdam->regmap = devm_regmap_init_spmi_ext(&sub_sdev->sdev, &sdam_regmap_config);
+> +	if (IS_ERR(sdam->regmap))
+> +		return dev_err_probe(&pdev->dev, PTR_ERR(sdam->regmap),
 
-Too far, may be prone to mistakes in the future. The rewritten one would look
-like
+You have "dev".
 
-	sub_sdev = kzalloc(sizeof(*sub_sdev), GFP_KERNEL);
-	if (!sub_sdev)
-		return ERR_PTR(-ENOMEM);
-
-	sdev = &sub_sdev->sdev;
-	sdev->ctrl = sparent->ctrl;
-
-	ret = ida_alloc(&spmi_subdevice_ida, GFP_KERNEL);
-	if (ret < 0) {
-		kfree(sub_sdev);
-		return ERR_PTR(ret);
-	}
-	sub_sdev->devid = ret;
-
-	device_initialize(&sdev->dev);
-	sdev->dev.parent = &sparent->dev;
-	sdev->dev.bus = &spmi_bus_type;
-	sdev->dev.type = &spmi_subdev_type;
-
-
-> +	sdev->usid = sparent->usid;
-> +
-> +	ret = dev_set_name(&sdev->dev, "%d-%02x.%d.auto",
-> +			   sdev->ctrl->nr, sdev->usid, sub_sdev->devid);
-> +	if (ret)
-> +		goto err_put_dev;
-> +
-> +	ret = device_add(&sdev->dev);
-> +	if (ret) {
-> +		dev_err(&sdev->dev, "Can't add device, status %pe\n", ERR_PTR(ret));
-> +		goto err_put_dev;
-> +	}
-> +
-> +	return sub_sdev;
-> +
-> +err_put_dev:
-> +	put_device(&sdev->dev);
-> +	return ERR_PTR(ret);
-> +}
+> +				     "Failed to get regmap handle\n");
 
 -- 
 With Best Regards,
