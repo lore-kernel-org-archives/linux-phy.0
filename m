@@ -4,57 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AE62CD31A3A
-	for <linux-phy@archiver.kernel.org>; Wed, 14 Jan 2026 09:40:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0CA9BD31A3A
+	for <linux-phy@archiver.kernel.org>; Wed, 14 Jan 2026 09:42:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=THXJp//10GYKuTnO5wCXUGaN/hX7FkWj3hR8jRd1i3U=; b=SDujOMLwzXMJqT
-	5Tsh4dhn58LQozudoFO+WC8qVR3Wgl691CIFQjEJ1OjHz3EebO2tK+VgrDxKtCsaaDf6N2iaSGPdm
-	MMrhTXXaQC2X7RBfAcxUdBueLd95Ur1uCL7AFe+Xr2ikP4QYAGewFVLSxi36eoF5pUQpC1OfHekcK
-	5YPYdB+/jl+dBjhSKDR4VBGz79BEJw7rIZQfv2nI0Q56eGuhfC6se02mocTgg/15KFebMaMUxmKeW
-	tfpi2lQ8WwhlVhXwjIzx8xRKJ9H42yzQ4VA84bg3K91FodFC3TjStONWSf2UGlevcWvnE5XdYSeRu
-	gbU3HYatPN4BucWGQ4TA==;
+	List-Owner; bh=Z8in5zB47dALRp9vOrNpM0b/Yl2eUEnGMscKgDWRGaY=; b=0WLXETzcXcoUKh
+	uXuFNGMwTuL5lQfvZeOkuodmrtrafhjf4Ag/xQ39z5kEL7XyP4zMepyv7DTdpydDRCQ1kPyQ5Vi6m
+	/Zoex/nArMMmNxA3tlI/HdEJt1JO5L6T/9jhxgqRtym+XiuyAA/Zco5WPdZity8w4XkQcEAXkyQg5
+	qQJiv2MulByAr2QQiDOTI9DZmE0YBSws/M01nA+VRmHV7CTbMXgE70weZqkIQ1xl3w7+o5auRocqY
+	U65WCc1XXQ20x0upn+vo5Pi4bcuaPQfSn86LMC0xN6QQ8OsK+ProtaSHqkQ1Ud+EvOD0r4CsbnsRX
+	VGdOABWqc8RIDWmiRSVA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vfxMz-00000008bdV-1lfU;
-	Wed, 14 Jan 2026 09:40:53 +0000
-Received: from mgamail.intel.com ([192.198.163.8])
+	id 1vfxOe-00000008btw-3Iiy;
+	Wed, 14 Jan 2026 09:42:36 +0000
+Received: from mgamail.intel.com ([198.175.65.10])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vfxMs-00000008bbo-3ZkQ
+	id 1vfxOc-00000008bt0-2UJd
 	for linux-phy@lists.infradead.org;
-	Wed, 14 Jan 2026 09:40:50 +0000
+	Wed, 14 Jan 2026 09:42:35 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1768383647; x=1799919647;
+  t=1768383754; x=1799919754;
   h=date:from:to:cc:subject:message-id:references:
    mime-version:in-reply-to;
-  bh=1qCJbDf3LNBQnokPmnk8fcBE3EDda534imX16lpluf8=;
-  b=FyYyp1k0nK0l1VMNxfYh+LPufx7wPmQTjpAohcUDYMAnDEG52x92O1TL
-   +H2LdgrTQHIaoYjkKhuTYHl4ms4+xvVUf2kA66I9r7MdxhG/5aLAfGd9C
-   R85fluXakBs0k+BDJ1rxrDzGxjzw/ABqn+w1hPB07tgQtrSGjbQfTvD+m
-   rFjWZJhGgTs7w8z8vW8hH1oWcaX1tSO+Rxt+L1Gzkhnmxw6J/a/tKf/rs
-   K+7F4Mz7YfxQmYUa9XkUUksdaGwdu1402QnrNXKx7ukMjeLJysdeuxqLj
-   tQtI8VinDoyphpIzboeJQ2JzCTTLqnfEt0ziIZKipUWOOKslt3z5Q1sVD
-   w==;
-X-CSE-ConnectionGUID: Nc4ale0MRqya1CeI5vSs/Q==
-X-CSE-MsgGUID: ynt3UMvgQ3KS/4wzWZwB9A==
-X-IronPort-AV: E=McAfee;i="6800,10657,11670"; a="87259332"
+  bh=MAXJVCpBtOrZVOvzDnY3H5JvAag0UgPrscTnLJ7u8yk=;
+  b=CjE/6MzvYxdURYnucUgIHu3ovN1a6Vbsg9NyQNMcR6vFHilkF+LiUs5x
+   0yh+tpK0l/lqrsReBelC/B5MiT6CT0tN3awz2HiafAXeO+g3omCbbx5Yw
+   o17zdpeJmRzW/4IDr99NjmOG9NFvev8jNDOEK51Gj/dNYH9nysjnARckl
+   o2Q6/QSp9mo+BkJ4uqJ6osZGWOyPcwW/EqJrKpIswmDzSSkY4FHOe96mi
+   u1QMbjIWRGcWE4CzWzxkSykWbIL2AMtwBCoUQe1hwlSCs6u4ltBGaXxOb
+   TaHGdbdVXkDdGWhf7soZMXU/HGIEd/npOV5lTQqHG4avENfit5N55+J0b
+   g==;
+X-CSE-ConnectionGUID: Jio1FBmcSymNg+XogfiZnA==
+X-CSE-MsgGUID: xIdLWhs5Qc28QNCWDLw43g==
+X-IronPort-AV: E=McAfee;i="6800,10657,11670"; a="87094047"
 X-IronPort-AV: E=Sophos;i="6.21,225,1763452800"; 
-   d="scan'208";a="87259332"
-Received: from fmviesa004.fm.intel.com ([10.60.135.144])
-  by fmvoesa102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 14 Jan 2026 01:40:46 -0800
-X-CSE-ConnectionGUID: mw6jqSNOTz6KKRVCXQZMUg==
-X-CSE-MsgGUID: HUqMSmL5QUeIkI8VEWpavw==
+   d="scan'208";a="87094047"
+Received: from orviesa010.jf.intel.com ([10.64.159.150])
+  by orvoesa102.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 14 Jan 2026 01:42:27 -0800
+X-CSE-ConnectionGUID: ZQxiu0mMRRurcnuwza5aGA==
+X-CSE-MsgGUID: /xvIp0n/QjW4Ffw80xNq+g==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.21,225,1763452800"; 
-   d="scan'208";a="209478599"
+   d="scan'208";a="203850428"
 Received: from pgcooper-mobl3.ger.corp.intel.com (HELO localhost) ([10.245.244.83])
-  by fmviesa004-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 14 Jan 2026 01:40:40 -0800
-Date: Wed, 14 Jan 2026 11:40:38 +0200
+  by orviesa010-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 14 Jan 2026 01:42:20 -0800
+Date: Wed, 14 Jan 2026 11:42:17 +0200
 From: Andy Shevchenko <andriy.shevchenko@intel.com>
 To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 Cc: jic23@kernel.org, dlechner@baylibre.com, nuno.sa@analog.com,
@@ -68,23 +68,26 @@ Cc: jic23@kernel.org, dlechner@baylibre.com, nuno.sa@analog.com,
 	mitltlatltl@gmail.com, krishna.kurapati@oss.qualcomm.com,
 	linux-arm-msm@vger.kernel.org, linux-iio@vger.kernel.org,
 	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-pm@vger.kernel.org, kernel@collabora.com,
-	Abel Vesa <abel.vesa@linaro.org>
-Subject: Re: [PATCH v7 07/10] phy: qualcomm: eusb2-repeater: Migrate to
+	linux-pm@vger.kernel.org, kernel@collabora.com
+Subject: Re: [PATCH v7 05/10] nvmem: qcom-spmi-sdam: Migrate to
  devm_spmi_subdevice_alloc_and_add()
-Message-ID: <aWdklo0u1g0oHn3z@smile.fi.intel.com>
+Message-ID: <aWdk-RP-59cJeCBo@smile.fi.intel.com>
 References: <20260114083957.9945-1-angelogioacchino.delregno@collabora.com>
- <20260114083957.9945-8-angelogioacchino.delregno@collabora.com>
- <aWdbB4vJ6Z8k0g4s@smile.fi.intel.com>
- <8f5c79e0-5f7e-4fe4-b9d7-60375e779892@collabora.com>
+ <20260114083957.9945-6-angelogioacchino.delregno@collabora.com>
+ <aWdaWY2tWUMllOHH@smile.fi.intel.com>
+ <8bf79979-0946-4ed9-b8d4-c442a6e54833@collabora.com>
+ <aWdbPze-f_2_5EbL@smile.fi.intel.com>
+ <401c5e7b-ff33-44e8-98a5-8cc6af4f2a87@collabora.com>
+ <aWdcy2ouQHtkPd6q@smile.fi.intel.com>
+ <647b4acc-3310-4329-ac7a-77e86bab74a3@collabora.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <8f5c79e0-5f7e-4fe4-b9d7-60375e779892@collabora.com>
+In-Reply-To: <647b4acc-3310-4329-ac7a-77e86bab74a3@collabora.com>
 Organization: Intel Finland Oy - BIC 0357606-4 - c/o Alberga Business Park, 6
  krs, Bertel Jungin Aukio 5, 02600 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260114_014046_900524_917983C5 
-X-CRM114-Status: GOOD (  17.03  )
+X-CRM114-CacheID: sfid-20260114_014234_702956_447BF0D8 
+X-CRM114-Status: GOOD (  17.36  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,35 +104,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jan 14, 2026 at 10:26:42AM +0100, AngeloGioacchino Del Regno wrote:
-> Il 14/01/26 09:59, Andy Shevchenko ha scritto:
-> > On Wed, Jan 14, 2026 at 09:39:54AM +0100, AngeloGioacchino Del Regno wrote:
+On Wed, Jan 14, 2026 at 10:09:45AM +0100, AngeloGioacchino Del Regno wrote:
+> Il 14/01/26 10:07, Andy Shevchenko ha scritto:
+> > On Wed, Jan 14, 2026 at 10:03:57AM +0100, AngeloGioacchino Del Regno wrote:
+> > > Il 14/01/26 10:00, Andy Shevchenko ha scritto:
+> > > > On Wed, Jan 14, 2026 at 09:59:40AM +0100, AngeloGioacchino Del Regno wrote:
+> > > > > Il 14/01/26 09:56, Andy Shevchenko ha scritto:
+> > > > > > On Wed, Jan 14, 2026 at 09:39:52AM +0100, AngeloGioacchino Del Regno wrote:
 
 ...
 
-> > > +	struct regmap_config eusb2_regmap_config = {
-> > > +		.reg_bits = 16,
-> > > +		.val_bits = 8,
-> > > +		.max_register = 0x100,
-> > > +		.fast_io = true,
-> > > +	};
+> > > > > > > +	struct regmap_config sdam_regmap_config = {
+> > > > > > > +		.reg_bits = 16,
+> > > > > > > +		.val_bits = 8,
+> > > > > > 
+> > > > > > > +		.max_register = 0x100,
+> > > > > > 
+> > > > > > Are you sure? This might be a bad naming, but here max == the last accessible.
+> > > > > > I bet it has to be 0xff (but since the address is 16-bit it might be actually
+> > > > > > 257 registers, but sounds very weird).
+> > > > > 
+> > > > > Yes, I'm sure.
+> > > > 
+> > > > So, what is resided on address 0x100 ?
+> > > 
+> > > I don't remember, this is research from around 5 months ago, when I've sent
+> > > the v1 of this.
+> > > 
+> > > If you really want though, I can incorrectly set max_register to 0xff.
 > > 
-> > This is third time of the same. Make it part of SPMI core and export to
-> > the users. Or are they semantically different like different slices?
-> > In that case you can export it under generic name like
-> > 
-> > 	spmi_default_slice_regmap_config
+> > Why incorrectly? Can you dig into the datasheet and check, please? We don't
+> > know what is the 0x100 address means.
 > 
-> There are more complicated devices around that I didn't port to the new
-> spmi subdevices, and I really don't want to make a default for now.
-> 
-> At least some of those need different params (including some MediaTek ones
-> that are not upstream yet).
-> 
-> Can we please let this in and *then* see how much can be commonized after
-> the majority of more complicated drivers are migrated in the future?
+> I don't have any datasheets for Qualcomm IPs.
 
-Sure, but it looks like a pattern currently...
+Hmm... Can we have somebody from QC to check on this?
+Perhaps Dmitry?
+
+> > > > > > > +		.fast_io = true,
+> > > > > > > +	};
 
 -- 
 With Best Regards,
