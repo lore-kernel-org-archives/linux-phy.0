@@ -4,65 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 160E3D41159
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Jan 2026 10:12:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F0087D41163
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Jan 2026 10:24:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LoP/2S2YZyCLIJBLezX/Q7+N/oIBbv0IFM04GKOJG2Y=; b=irrrRQlKbK282U
-	GhcPulQ036zRXZbpARcL38BDGXhEQKzoCCFI3OmYRbVya1sWC9RTAxRUvVlt/MIhR5mNXz18Tr1IL
-	UVeNHeuk6Gk7Uz6WdUe3tVLdhjwokiA0kscaZ6mvqhFArD0JuIKPVhOmsGZWdY2HQZ5pAN5veX6jx
-	87lNO/+pZEwclyNst09s0zhNnCvBSyJqSNIoZYv/5C3x4vQ65DvZLGuUqOkDB5jLOadBR+3i4UINu
-	sQ7shqxvoIA7xhozYG/n3j0ESnSlpZMrVPfRFBZVaJ35uEwMdgxOAxPM1ozU/4sEZL2oIThTv3Qss
-	cBcrRNgGnlRc+r3QPXqg==;
+	List-Owner; bh=A0k5tesffxh+/pZAGXib+0B11TJ66OWZpm1dV1WpU4c=; b=aD0Co2c6GMlWWk
+	p3vFjGamswawRL9SnZApoMYuOnqtyC4io3SFrl1NzArqXddGAEDgSQreuy43JZhpmj5m4ST+3VWyQ
+	y2/QMPjV1uNvjzwUpPwdfIgrUgETBZGAn+zDbQ2fb94Zr9nHXR+pbCs9Cp2bCqLnrnBhPNAPNDcEE
+	u9ZLPhyiDs82lOVisRWzWX6l/8SGfz+xn/jnGoQVgFCWqTF7EUC34ITpkNApr9kmpeT08oHzHwJIH
+	8WydoIXtvShRfg7qH6KGTz1k1rDlCIkdEqOPjHkewQxC/NdSa5ZptrV7wc6OxjDWrTySAyKZKnRX1
+	xkym9oxpELgxq08dCT7Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vgKKl-0000000C80V-348b;
-	Thu, 15 Jan 2026 10:12:07 +0000
-Received: from mgamail.intel.com ([192.198.163.7])
+	id 1vgKWN-0000000C9Ty-2NYG;
+	Thu, 15 Jan 2026 10:24:07 +0000
+Received: from mgamail.intel.com ([192.198.163.19])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vgKKi-0000000C7ze-2Iq0;
-	Thu, 15 Jan 2026 10:12:06 +0000
+	id 1vgKWK-0000000C9TJ-2yHN;
+	Thu, 15 Jan 2026 10:24:05 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1768471924; x=1800007924;
+  t=1768472645; x=1800008645;
   h=date:from:to:cc:subject:message-id:references:
    mime-version:in-reply-to;
-  bh=tx5ox7cf+WJOeQAnUn6eddrERLDC/s/3WemE93oK43A=;
-  b=POF05RWlkKz1INdDgo6JSw+jRw776MhGmLx71NRKSglQu4lCqqs5f1cG
-   /ZRXTjemP2lFiMndn1v6CI/rIYa0ogrmtpHb+YiHdmlduTuYeOe5QTLCc
-   S5JefrjdEnJwa/AJSogzNLBRDF3qajt/amw9gxJCJbcfwDbZh3GRl12tP
-   WS9bhl1tIpgK67gphrndT9AU9mP1BWRcy/kuWycCA/GNWJKN7EIghiocF
-   jSUV3GWunPWra5ADaemPh3uCyFPHdpkuVfzdg5vN3jHWokyzHgFDuZpV6
-   njVGc+G8LxlbKbNewQiCpHOUx3YXwut+009qjVfGM/vz2Ev+irKpPhuU8
-   g==;
-X-CSE-ConnectionGUID: jPlpBMicS/qBiHXkxNJV1A==
-X-CSE-MsgGUID: I4pFq5mpS9Orvn/b/6n4fQ==
-X-IronPort-AV: E=McAfee;i="6800,10657,11671"; a="95253467"
-X-IronPort-AV: E=Sophos;i="6.21,226,1763452800"; 
-   d="scan'208";a="95253467"
-Received: from orviesa002.jf.intel.com ([10.64.159.142])
-  by fmvoesa101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 15 Jan 2026 02:12:02 -0800
-X-CSE-ConnectionGUID: pTIX+ck0SgKrV1X6qCteVg==
-X-CSE-MsgGUID: bH39DakyT76AUG+yMF9u4A==
+  bh=p9miV0nNryyvHyd1FyrzdZUkZX6TLv1ioe/BqF8c1NU=;
+  b=jRjRqbcwrVvgD4v2swy7XNyecUwR5mCapexxWS0KLD/0ePG523r74JxF
+   ZXNdz7qygSeCj3IYjrNffeOK3pWl36lmlDc8Q50USe3KxiM2KF4t0S+nt
+   p28WW1DQOp9GHDG+Lo78U8qDCtByKjtTL4bfsWL7byJY4EVNZuWkbRKgP
+   Pj8T0lMNpaFAZzoGTzjXWRU3GzBvIoHOb0/qJ76Du8NKPOEbbG6epPvP6
+   XCfOJ97D7h+CvlDQCLisfwyca/sHwrDkkghxJts9QPgjByKeWKkn1MQ31
+   DOwlRVqfZl/xqPR0eYQvG+dxqRHTPl/yOHNZ1t5J81QESy6T/um0XNyUR
+   Q==;
+X-CSE-ConnectionGUID: wFQ7inWkTuaFo5eaKQPLlQ==
+X-CSE-MsgGUID: izvHOQvtTFOfkjrj/c1m+w==
+X-IronPort-AV: E=McAfee;i="6800,10657,11671"; a="68787905"
+X-IronPort-AV: E=Sophos;i="6.21,228,1763452800"; 
+   d="scan'208";a="68787905"
+Received: from fmviesa005.fm.intel.com ([10.60.135.145])
+  by fmvoesa113.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 15 Jan 2026 02:24:02 -0800
+X-CSE-ConnectionGUID: 1DP/q8OUSOaiDbgrzWpjsw==
+X-CSE-MsgGUID: +4l+nVOsSCmGCnreoNkZIQ==
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.21,226,1763452800"; 
-   d="scan'208";a="235630095"
+X-IronPort-AV: E=Sophos;i="6.21,228,1763452800"; 
+   d="scan'208";a="209393799"
 Received: from lkp-server01.sh.intel.com (HELO 765f4a05e27f) ([10.239.97.150])
-  by orviesa002.jf.intel.com with ESMTP; 15 Jan 2026 02:11:57 -0800
+  by fmviesa005.fm.intel.com with ESMTP; 15 Jan 2026 02:23:58 -0800
 Received: from kbuild by 765f4a05e27f with local (Exim 4.98.2)
 	(envelope-from <lkp@intel.com>)
-	id 1vgKKY-00000000HpY-2zGP;
-	Thu, 15 Jan 2026 10:11:54 +0000
-Date: Thu, 15 Jan 2026 18:11:39 +0800
+	id 1vgKWB-00000000HqG-0nOs;
+	Thu, 15 Jan 2026 10:23:55 +0000
+Date: Thu, 15 Jan 2026 18:23:48 +0800
 From: kernel test robot <lkp@intel.com>
 To: "Russell King (Oracle)" <rmk+kernel@armlinux.org.uk>,
 	Andrew Lunn <andrew@lunn.ch>,
 	Heiner Kallweit <hkallweit1@gmail.com>
-Cc: oe-kbuild-all@lists.linux.dev,
+Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
 	Alexandre Torgue <alexandre.torgue@foss.st.com>,
 	Eric Dumazet <edumazet@google.com>,
 	Jakub Kicinski <kuba@kernel.org>,
@@ -76,14 +76,15 @@ Cc: oe-kbuild-all@lists.linux.dev,
 	Paolo Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>
 Subject: Re: [PATCH net-next 03/14] phy: qcom-sgmii-eth: add .set_mode() and
  .validate() methods
-Message-ID: <202601151714.J1BAilHy-lkp@intel.com>
+Message-ID: <202601151700.IjgxseKd-lkp@intel.com>
 References: <E1vg4vs-00000003SFt-1Fje@rmk-PC.armlinux.org.uk>
 MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <E1vg4vs-00000003SFt-1Fje@rmk-PC.armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260115_021205_030234_E5F603D7 
-X-CRM114-Status: GOOD (  12.36  )
+X-CRM114-CacheID: sfid-20260115_022404_784728_09ECFF0D 
+X-CRM114-Status: UNSURE (   8.85  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,29 +111,27 @@ url:    https://github.com/intel-lab-lkp/linux/commits/Russell-King-Oracle/net-s
 base:   net-next/main
 patch link:    https://lore.kernel.org/r/E1vg4vs-00000003SFt-1Fje%40rmk-PC.armlinux.org.uk
 patch subject: [PATCH net-next 03/14] phy: qcom-sgmii-eth: add .set_mode() and .validate() methods
-config: microblaze-randconfig-r073-20260115 (https://download.01.org/0day-ci/archive/20260115/202601151714.J1BAilHy-lkp@intel.com/config)
-compiler: microblaze-linux-gcc (GCC) 14.3.0
-smatch version: v0.5.0-8985-g2614ff1a
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20260115/202601151714.J1BAilHy-lkp@intel.com/reproduce)
+config: powerpc-randconfig-002-20260115 (https://download.01.org/0day-ci/archive/20260115/202601151700.IjgxseKd-lkp@intel.com/config)
+compiler: clang version 22.0.0git (https://github.com/llvm/llvm-project 9b8addffa70cee5b2acc5454712d9cf78ce45710)
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20260115/202601151700.IjgxseKd-lkp@intel.com/reproduce)
 
 If you fix the issue in a separate patch/commit (i.e. not just a new version of
 the same patch/commit), kindly add following tags
 | Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202601151714.J1BAilHy-lkp@intel.com/
+| Closes: https://lore.kernel.org/oe-kbuild-all/202601151700.IjgxseKd-lkp@intel.com/
 
 All errors (new ones prefixed by >>):
 
-   drivers/phy/qualcomm/phy-qcom-sgmii-eth.c: In function 'qcom_dwmac_sgmii_phy_speed':
->> drivers/phy/qualcomm/phy-qcom-sgmii-eth.c:294:24: error: 'PHY_INTERFACE_MODE_SGMII' undeclared (first use in this function)
+>> drivers/phy/qualcomm/phy-qcom-sgmii-eth.c:294:17: error: use of undeclared identifier 'PHY_INTERFACE_MODE_SGMII'
      294 |         if (submode == PHY_INTERFACE_MODE_SGMII ||
          |                        ^~~~~~~~~~~~~~~~~~~~~~~~
-   drivers/phy/qualcomm/phy-qcom-sgmii-eth.c:294:24: note: each undeclared identifier is reported only once for each function it appears in
->> drivers/phy/qualcomm/phy-qcom-sgmii-eth.c:295:24: error: 'PHY_INTERFACE_MODE_1000BASEX' undeclared (first use in this function)
+>> drivers/phy/qualcomm/phy-qcom-sgmii-eth.c:295:17: error: use of undeclared identifier 'PHY_INTERFACE_MODE_1000BASEX'
      295 |             submode == PHY_INTERFACE_MODE_1000BASEX)
          |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
->> drivers/phy/qualcomm/phy-qcom-sgmii-eth.c:298:24: error: 'PHY_INTERFACE_MODE_2500BASEX' undeclared (first use in this function)
+>> drivers/phy/qualcomm/phy-qcom-sgmii-eth.c:298:17: error: use of undeclared identifier 'PHY_INTERFACE_MODE_2500BASEX'
      298 |         if (submode == PHY_INTERFACE_MODE_2500BASEX)
          |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   3 errors generated.
 
 
 vim +/PHY_INTERFACE_MODE_SGMII +294 drivers/phy/qualcomm/phy-qcom-sgmii-eth.c
