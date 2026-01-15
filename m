@@ -4,178 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7F43ED41156
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Jan 2026 10:04:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 160E3D41159
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Jan 2026 10:12:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OthEstBFY6MCW9EBgW+wVY174SGOwZ+v70iuNsNV1hk=; b=fWuMkRbbl905cZ
-	pIsnIicv7TExR2YloQVHchE9pkNqnx4MUJgnNDVEyMiaI6t4LDSO4AekhUYwN5JQzySiT1NmLFFZP
-	yvuwqwexfmM3D7vt4InDTAJsKisKTCndKc9OmTg0pcOla3G81E4jPV9Vn68yxIpwUg+24dCPZytPv
-	rwE5zB4Oc95D81S6zUMVgDuqVc8Khai4tvkQXGKghPp6po2IVAvRCpPX/AmymQDC6GZOZ1BYb1KbK
-	VzCE+AiMOe8oFAneLYazAoWmdEoesep53EZtbscpAkgbONF3ud/hZV9/ldl62xy22M13X2c+W7gaI
-	deuIz234+7oL7ZhQEjpw==;
+	List-Owner; bh=LoP/2S2YZyCLIJBLezX/Q7+N/oIBbv0IFM04GKOJG2Y=; b=irrrRQlKbK282U
+	GhcPulQ036zRXZbpARcL38BDGXhEQKzoCCFI3OmYRbVya1sWC9RTAxRUvVlt/MIhR5mNXz18Tr1IL
+	UVeNHeuk6Gk7Uz6WdUe3tVLdhjwokiA0kscaZ6mvqhFArD0JuIKPVhOmsGZWdY2HQZ5pAN5veX6jx
+	87lNO/+pZEwclyNst09s0zhNnCvBSyJqSNIoZYv/5C3x4vQ65DvZLGuUqOkDB5jLOadBR+3i4UINu
+	sQ7shqxvoIA7xhozYG/n3j0ESnSlpZMrVPfRFBZVaJ35uEwMdgxOAxPM1ozU/4sEZL2oIThTv3Qss
+	cBcrRNgGnlRc+r3QPXqg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vgKCr-0000000C7WT-10Mb;
-	Thu, 15 Jan 2026 10:03:59 +0000
-Received: from mail-koreacentralazlp170130006.outbound.protection.outlook.com ([2a01:111:f403:c40f::6] helo=SEYPR02CU001.outbound.protection.outlook.com)
+	id 1vgKKl-0000000C80V-348b;
+	Thu, 15 Jan 2026 10:12:07 +0000
+Received: from mgamail.intel.com ([192.198.163.7])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vgKCo-0000000C7Vj-3o2J;
-	Thu, 15 Jan 2026 10:03:56 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=Nrh3dg5eyZylTc3eVXIrNbjWlO5fNQqpc8KIuDa/LiDZDQ+W8Yj2bsHEGYBfwF2MoUWFCTnYlJLDlvDIhSeAmZ/+JpQMRIDCwJWwxmX+CvVbERw5TTqxr1qPRdZAVttyGNiogVRj8M8AgP9jfkBDjmf7ESrAl1rVDMDqoOimw0fuGCFqG0KoxcL+SGfDTuM2WJaucm90UUEoc0JTSujfUWTxzDdMkFSLKca7EDNEGYLDaSR2aMpj1LZx9yoysgqjGfjMwQDGlHGWdtanIG7pycSicEA2wq3eG4saRQ+CPWQ9aTFbpLviXGVeoxjSuYnir5mIt53BORoGt2c5yvRPkg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=w5L12ICrahOOdDT2dLN4ObhrxLbCfDNoAgpDYpT0zKI=;
- b=RAtxuXSKSCHCJFvndh7BdwXpCSJg54TKFQbxnuQR+HIeXptTsKKmZ60ib3CREm5COr1oOKrDX32gAyqc8OIdZ0nwPr6dIAeNaZHvIxkMWfQGBOKlMPRA6tquLji53EsJVMud0kmbPI3fwyjiptEpAi2jRy9EWWUWcclBTfWJD1dfwV+YL6F4g3RUOtj45qfGJjZaiP3ZDgw1Ca6UA3SW816vzRoYHPNCNZonLgFSvWYeN4XQqDNRUz2Fu0D8fpsb9CluucMj7OdpGlhYpvM99LBMtr2PUADIQuyp9ya0PMbh1/UKoy3H5gHCZQvWX3xttl3aM4IWLU1m430ZWlpk4Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=aspeedtech.com; dmarc=pass action=none
- header.from=aspeedtech.com; dkim=pass header.d=aspeedtech.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aspeedtech.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=w5L12ICrahOOdDT2dLN4ObhrxLbCfDNoAgpDYpT0zKI=;
- b=rqpme+R7VkDG/y5NnZ2KksmDsoByVY8UEvOHWUsWbzcWAmeRrgl+0Ht/9ec1sC6FUu1U8k5ZBXzeANnMJK2gtiI8Y3ViYvKD8QAneeZV0Wx7zwLAoW4wor6odldq4K8P0+nnFO195/Rk7P592wvbxWWQFQtWR3GXo4gYrY7U+7PGU9s6Anm80JXjYNllFtLdyXmnSQz2L4qcNBddKOJtaXl2va3plbm7+i8f8mlsydaNQHJaz/Gy2t3ebvrWjtw1sPlerMdVv2HjnEU40mkX/88bvhOFlbsHCgzZk3IgoKY7YeDoaie2qCdQM1qV6/9Q93w04wQRIMxkk15kkBkPaw==
-Received: from TY2PPF5CB9A1BE6.apcprd06.prod.outlook.com (2603:1096:408::791)
- by TYPPR06MB7970.apcprd06.prod.outlook.com (2603:1096:405:2b7::10) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9520.5; Thu, 15 Jan
- 2026 10:03:41 +0000
-Received: from TY2PPF5CB9A1BE6.apcprd06.prod.outlook.com
- ([fe80::df4f:b1a1:1825:4a80]) by TY2PPF5CB9A1BE6.apcprd06.prod.outlook.com
- ([fe80::df4f:b1a1:1825:4a80%7]) with mapi id 15.20.9499.005; Thu, 15 Jan 2026
- 10:03:41 +0000
-From: Ryan Chen <ryan_chen@aspeedtech.com>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-CC: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Joel Stanley <joel@jms.id.au>, Andrew
- Jeffery <andrew@codeconstruct.com.au>, Philipp Zabel
-	<p.zabel@pengutronix.de>, "linux-phy@lists.infradead.org"
-	<linux-phy@lists.infradead.org>, "devicetree@vger.kernel.org"
-	<devicetree@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
-	<linux-arm-kernel@lists.infradead.org>, "linux-aspeed@lists.ozlabs.org"
-	<linux-aspeed@lists.ozlabs.org>, "linux-kernel@vger.kernel.org"
-	<linux-kernel@vger.kernel.org>
-Subject: RE: [PATCH 1/3] dt-bindings: phy: aspeed: Document AST2700 USB3.0 PHY
-Thread-Topic: [PATCH 1/3] dt-bindings: phy: aspeed: Document AST2700 USB3.0
- PHY
-Thread-Index: AQHchSVBNAHlpZisWE+jalWIPjF+j7VS/3QAgAACmGA=
-Date: Thu, 15 Jan 2026 10:03:41 +0000
-Message-ID: <TY2PPF5CB9A1BE61C4D545AED6155DF2614F28CA@TY2PPF5CB9A1BE6.apcprd06.prod.outlook.com>
-References: <20260114-upstream_usb3phy-v1-0-2e59590be2d7@aspeedtech.com>
- <20260114-upstream_usb3phy-v1-1-2e59590be2d7@aspeedtech.com>
- <20260115-tricky-invaluable-snake-abec06@quoll>
-In-Reply-To: <20260115-tricky-invaluable-snake-abec06@quoll>
-Accept-Language: zh-TW, en-US
-Content-Language: zh-TW
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=aspeedtech.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: TY2PPF5CB9A1BE6:EE_|TYPPR06MB7970:EE_
-x-ms-office365-filtering-correlation-id: 98ae56c5-31c5-4828-2bc6-08de541d5cab
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230040|1800799024|366016|7416014|376014|38070700021;
-x-microsoft-antispam-message-info: =?utf-8?B?ZlAvbUFvRVh2QjBpcm9nV3AzZWE4TGhIZ216aEh2N1hFeWdXSkxHTjRrUVNl?=
- =?utf-8?B?OEk3bHF0SXhRZm1CNDQydG42NVl6RXl4bUdscDBSSVFBbXZrR2c2aXlCWWVz?=
- =?utf-8?B?bWtDYUFzL005RFExK3diVW5WZ080RmN6NmIzY1BheTdmSDRWaGQvMFNCSGpI?=
- =?utf-8?B?NCs0OHVlN1g3U1dpS1dqNXNtVWZUK0t2cm0rR04zbENYNURtaDBaODh4TmZj?=
- =?utf-8?B?bm1IdnY0REtiUWNIWWI3TEtEaGFYZm5OVys1ZmNRZFZFTlNobUxoR2YzT2Vo?=
- =?utf-8?B?clZtMDdWMWRDZjJhc2pibWt4R0FKTm15WVZpUVNxbkxPaTNDdzUrOEgzUjFP?=
- =?utf-8?B?REJJUElWdWtveFNkZVJpcFZYa0plQUdDL3h0WHhlTmMzYmFBUTlhT1pQNkdK?=
- =?utf-8?B?QjFpMU0vTUJ2Z0Q5bWxLQ0NYZEs4aEdxL2t6STZsSjVzZmpRaGcvQmZva1JM?=
- =?utf-8?B?UzJuTXlkS0dVaUFXWE04cHlMcHlpNGVuODVBQjRHVUIwaWtZQWU5dlZrejUw?=
- =?utf-8?B?ejFiUXVDSHgrSGVJQlByYUV4MGRzdWpWV3VubUZBUGgxZmdPaXJESjZNdjJ0?=
- =?utf-8?B?bjhFbmdJbll6dmhpdE42ck1yTkZ0a3BKckZsYTZvUjB2RHBvck1UY2E0SStm?=
- =?utf-8?B?YWtVUWpKK1EzQmY0Nnd5NUR2ZUJsaExTUnZYbVE5YUdRTExHMnoxSzN5NWZv?=
- =?utf-8?B?dkdjckdhb21rOG5FSEpYZFlkZUhRVzd1VmRXVURrczd0Z1VBY1dlazdnMkdq?=
- =?utf-8?B?SHFudVQrWmtKaklmUkZOM2RFcGNUNnZJQnk4VkI1WUhZeWlDVlhmMzQvWVpS?=
- =?utf-8?B?cGRHZmo1MWpGVHBWaUU0S1U4SUZ1R1hzdGYwVHVsVCtLanhRN1VkZXJtc2V0?=
- =?utf-8?B?Wk9zNzU0RExaQS93SVRKQ2hwSXltVER2VjRFdFVmanNVUXlnMFdVSm9LcUtO?=
- =?utf-8?B?Q2Z5dzBWeklYMVZybTZvRlNtd1J2RmhhSlhQclQ2ZW0wMUt5dXBjdUVMakxJ?=
- =?utf-8?B?QVV0MDBJR09DRGRiL1ZKRzZSQlBSSlVsZ2dOSCtaRHUrRUJwd25aR0FTY1FX?=
- =?utf-8?B?bGRHMHVuM1lEeEhjc0hNR1B3ZERYNksvbEE2U0ZlTHpSd3YyelBSc1kwVkxr?=
- =?utf-8?B?cGV2TS96Y2FyMlZwVE5ITW45R3kvTjNibnRWTUZVT2xQcDVqWXhzMitUVnF3?=
- =?utf-8?B?RHp5Mllsa2RjUGIzRHdOQlYzVUQ4MlNja2doZG9wZzRMME5WUldWYW9memlZ?=
- =?utf-8?B?Tm5EcyttMjlLN3V2QmhFT1krbmx0dW81VHBZY1BKSW1XTm5QTHRMSElYbVNJ?=
- =?utf-8?B?NlFrbUhFcjI0SENhZVU5QXlWQ3o2OThjOTAwY3J6ekZOSExxWnVEU3c1KzJK?=
- =?utf-8?B?ZGNQSnNJeE1zelN3WFFxUlZpVjBDRmhkSzBLOGFoWUUwTkRxZ2U3SmJScEFV?=
- =?utf-8?B?YzkzRk5URGR3WlY5QWxQZlBvMFFJWmZGTDJZc21OS0ZMRVQ1eHpMbDR1a3Nr?=
- =?utf-8?B?TW5yQWM2TFdzWndYNEFxN20rdkNWQ3BtMFhUVXZDRFRick1HM2JVc1RGdE1H?=
- =?utf-8?B?R2dyS2tFV3JvT1E4Q2RRanZEY0llbW54eW55UWNhZHRQVVdjdmNBTVhrem43?=
- =?utf-8?B?b3dGQmxHNmVQSXg2Q2xzM2hpZHRZNktJRkY1emp5UWZteGt5MkZUdDRFSjJ0?=
- =?utf-8?B?Uk5qTDB0ckxwYjR6bnpLaGp3MVdKWVdBQXo4UW10ZmZDMkY0d1k5aUJMTmFQ?=
- =?utf-8?B?UTlXVW9ZWDNac09vWFhJMjQ2UDZNWEkzUWt3M0R2Nm80eEJid0pXU3lwNmkr?=
- =?utf-8?B?MnZobEp3OXJWUHk0bE8vd0J6R2NjZHpBY2dOYmdWWW5qZGhHWXp6dGFDR0M1?=
- =?utf-8?B?SnY5eEs4ejA4MGRja0N6aXpZWERPbXRJNU1MSllPQ2tqQ1g0S3E1WjJualpx?=
- =?utf-8?B?dE1nSVdSWXRnakQ0S1lwakZncHEyMm1aUk0xS2htci9jZWhmVGlnZnhOTkpy?=
- =?utf-8?B?SFVpRit4UnlzSU9ZSWN6aFdyMVV5WWpJL0lpZ1FiUmFIcExQWDZ6QnEyLytS?=
- =?utf-8?B?Wi93QlFvWXNTWVNtTFBQOGcyQ0Z6TDdUb1gvMERuWU5XQUQ5QllJMzRUK2tR?=
- =?utf-8?Q?MB/BPZ9Z2W9g0YNLu4xyRnkwN?=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:zh-tw;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TY2PPF5CB9A1BE6.apcprd06.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(7416014)(376014)(38070700021);DIR:OUT;SFP:1102;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?utf-8?B?K09rdVpQZjhQUzBGemhBVEFQTHFsSkFRcjNxZUpBNzF6ODZvU01ML3A0ZGZx?=
- =?utf-8?B?N0pVeFpENFhZMUdCamFxY3ZFaUo0eUsrbGJLMno4YTFYSFFvdHZkbVZJbDIv?=
- =?utf-8?B?ZGlEbzMwenRVeERBdEVuVHk3N1Fqc2RxMmRvRHBpT0s5bTlpTTVNaTZ1UW14?=
- =?utf-8?B?V016SE8yZDZycGE0ZlBoODlNTllNS2wrcmN1TXBFL3pmeFQ1WHczNDR0NDNZ?=
- =?utf-8?B?V0VkcjQ1eVlmN1pSSHFBaDVDNzZaZkswZnVwSTE1d0FEdWQ1Q3JpaGRsMUow?=
- =?utf-8?B?YzhRQm15K0Y3L2JNQkNTMkQvNEl1L2hCQUgwT1ZQUWhTdlJZclF6cVFVbVR6?=
- =?utf-8?B?UHYzRHc2TWVCMDJRRWJiTGpleE1Pbi9ONXhsK1V6eWRkNDBXRFNVdE1PcEl4?=
- =?utf-8?B?aWdqN3FETUdwdTV0clh5ZnE1M1NrSFJQditreDBNVi9ValVoMFlIRGJsbjlG?=
- =?utf-8?B?TXRTV0ViSVlMc0JwdDNZa1F5WDBCZU4xdHlnN2xaYWtvN1hCYVVoazFldEhM?=
- =?utf-8?B?WmUxMFF6SHcxeWtsWWh0UUtYWVQ0Qk85Lzl4RThpNmNFZFhLL1RmTTMvUmdC?=
- =?utf-8?B?WmFEOUVlaGtJYkdmbWZXb09UcGhuTHFqcmJpbG9iUXo3bkFUMzdoRUlCUy9k?=
- =?utf-8?B?cWRNdTk3Y1pudjYrUFN5bzE3OTZYSHpvRWlwMEJkNXJ5MTlvaXp5aXFSQVpm?=
- =?utf-8?B?ckRUWGJraHV4N3pKYmYyem1ZbVNhQ1Q3OGVzOGxMTW5qV0hrVzVhb1hjb1ZJ?=
- =?utf-8?B?ZlF4Zm44YWYrWDV0UUpLYlU3VG1TMzd5M1MwaHVoYWxteENWa05xZDJ1S21h?=
- =?utf-8?B?bFJ0R3JmMlBBcTY1ZFlpWjlXY3B0Ui9ZQmYrQ2dScFB3ejV4L0FhWE1hZG96?=
- =?utf-8?B?NHRrbWZoZ2l1RENvN3ZrWFh6UGttS1pwWjZ4N05UbzFxTXZZRzh0YnBCRHBE?=
- =?utf-8?B?eXl4cjFtRXhNN3JOOVRUUVRneFpSQitVNHQ3VVlHb0FjUVd0VXlSQWpxZXhk?=
- =?utf-8?B?d0hNK1ZFSmRGaEVGZ0FNOVNCQ1BvZ3BvR21wbVFFVmp5TG5wckRRRk5oMzdB?=
- =?utf-8?B?bW9xRDkyZTNnRnN0QlZTcTl4dlU0bmJVRW93aGY5QklKazJZQ2tEUW1SSXVF?=
- =?utf-8?B?SVpXdjE1MHc4R1JBazl4aXdtRVBWU3VWNTBwaTl5Zi8rc3pSVy81a3BNV0hP?=
- =?utf-8?B?cG1xT1FqMjNsbUcyNGh1bDhxQUxrY2FRQkdSR3I2ZHVZT2t5dXFOSWZwbng2?=
- =?utf-8?B?Yzk2cStnZWhxbUhiK1BxMW9LSmF5ZWRTUzlKRFJ6RmRKM3Y2TTdNWEFVWS8r?=
- =?utf-8?B?OXB6ZC8rRXpPR1ZLVFRaSHoyUnFlR2FaK1RVZUpNQTZjUFN6ckF5WWVYRVdF?=
- =?utf-8?B?T25mZWEyU3NiSkFGdGl5OG5xeUd3c3lhM29DaTlabVczSDE2R1gzUm9XbENo?=
- =?utf-8?B?SHNIR2xsZHJ5eGdwTkVOZWN2T1ppdEdYQ2V0MVUrQ2tQRDA0d2xBTURBcnpV?=
- =?utf-8?B?VGFqdGgzdDE0L3FGYkdsTUI4emovOVFTVi9TQmlvdG5Nc1V4dUpUTWNwS1Na?=
- =?utf-8?B?WnhhRWJmWk9pM2ZHRWVNSWpVOTlFV0NwN091ZzA4cEc5RTNEU0lWeHlKWXlF?=
- =?utf-8?B?c3ZCT2xQWENldlhMS2NpbkhpcDJwQnoyM3FJNzBOMElFNlZKM0JXRzVWWmlz?=
- =?utf-8?B?dms5MGV0cUZ3anRvQ2R6czU4WlhMRkpjVjdVSjhtd2ZXRmpFK3d3enpOb29n?=
- =?utf-8?B?eGFrUnNJMVA0TFdzWGc1SnB5NHhIbzlTR1E5MitFV3VJTmdtRm90QWVvYTBn?=
- =?utf-8?B?WThObWRDWTFZbHJtVVUrbHB3WEY0WUtXTUhIT2ljemhEeEJGMlpCcGRRQWpD?=
- =?utf-8?B?c3FaMGYvYndJbVExeVg5cFhTdWJXOEJtbE1kWm03UWNmYjh6WnFnZlpRZ3Zr?=
- =?utf-8?B?WGF3ZXJXcVhaV0pwS2I4eDh1RzBMcTluNXNFTklGc3JObHdsSFB3cGRkSnNw?=
- =?utf-8?B?MGp6eEMxLzM2QnNKQWxjV1E2UTVwaHpRL3hvTGdWUmQySGtSNnNpbGg1YjJC?=
- =?utf-8?B?cHRmV0JlQjJrMzhzN0ZoZ3Bhek9UR2VGMU5VbjQ3WUdLTi82ajNtRUFGVU5u?=
- =?utf-8?B?em9HaCtyT1NhbDNKcGFaWjN0SmVDQTFkNkk4aE8wb3BYaGtRbnkvYndFQmhZ?=
- =?utf-8?B?Nnh2ZzJkbWd3SVdmOCtteWwxYlJ4QTB0RmJLYTlpUU0va2JXQnpLbDdMM1F5?=
- =?utf-8?B?UEVIVWdjb3BNUmlDK2VYVW9WVlZsenBCT0ZzbldNU05ieUx6YVBkbmhMdUJT?=
- =?utf-8?B?a3NVZjZDSklZQy9DRVArV2tLMEZ5SlE5aHQ1VzVycUlRT1MybVpEQT09?=
+	id 1vgKKi-0000000C7ze-2Iq0;
+	Thu, 15 Jan 2026 10:12:06 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1768471924; x=1800007924;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=tx5ox7cf+WJOeQAnUn6eddrERLDC/s/3WemE93oK43A=;
+  b=POF05RWlkKz1INdDgo6JSw+jRw776MhGmLx71NRKSglQu4lCqqs5f1cG
+   /ZRXTjemP2lFiMndn1v6CI/rIYa0ogrmtpHb+YiHdmlduTuYeOe5QTLCc
+   S5JefrjdEnJwa/AJSogzNLBRDF3qajt/amw9gxJCJbcfwDbZh3GRl12tP
+   WS9bhl1tIpgK67gphrndT9AU9mP1BWRcy/kuWycCA/GNWJKN7EIghiocF
+   jSUV3GWunPWra5ADaemPh3uCyFPHdpkuVfzdg5vN3jHWokyzHgFDuZpV6
+   njVGc+G8LxlbKbNewQiCpHOUx3YXwut+009qjVfGM/vz2Ev+irKpPhuU8
+   g==;
+X-CSE-ConnectionGUID: jPlpBMicS/qBiHXkxNJV1A==
+X-CSE-MsgGUID: I4pFq5mpS9Orvn/b/6n4fQ==
+X-IronPort-AV: E=McAfee;i="6800,10657,11671"; a="95253467"
+X-IronPort-AV: E=Sophos;i="6.21,226,1763452800"; 
+   d="scan'208";a="95253467"
+Received: from orviesa002.jf.intel.com ([10.64.159.142])
+  by fmvoesa101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 15 Jan 2026 02:12:02 -0800
+X-CSE-ConnectionGUID: pTIX+ck0SgKrV1X6qCteVg==
+X-CSE-MsgGUID: bH39DakyT76AUG+yMF9u4A==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.21,226,1763452800"; 
+   d="scan'208";a="235630095"
+Received: from lkp-server01.sh.intel.com (HELO 765f4a05e27f) ([10.239.97.150])
+  by orviesa002.jf.intel.com with ESMTP; 15 Jan 2026 02:11:57 -0800
+Received: from kbuild by 765f4a05e27f with local (Exim 4.98.2)
+	(envelope-from <lkp@intel.com>)
+	id 1vgKKY-00000000HpY-2zGP;
+	Thu, 15 Jan 2026 10:11:54 +0000
+Date: Thu, 15 Jan 2026 18:11:39 +0800
+From: kernel test robot <lkp@intel.com>
+To: "Russell King (Oracle)" <rmk+kernel@armlinux.org.uk>,
+	Andrew Lunn <andrew@lunn.ch>,
+	Heiner Kallweit <hkallweit1@gmail.com>
+Cc: oe-kbuild-all@lists.linux.dev,
+	Alexandre Torgue <alexandre.torgue@foss.st.com>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
+	linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-stm32@st-md-mailman.stormreply.com,
+	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+	Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>, netdev@vger.kernel.org,
+	Paolo Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>
+Subject: Re: [PATCH net-next 03/14] phy: qcom-sgmii-eth: add .set_mode() and
+ .validate() methods
+Message-ID: <202601151714.J1BAilHy-lkp@intel.com>
+References: <E1vg4vs-00000003SFt-1Fje@rmk-PC.armlinux.org.uk>
 MIME-Version: 1.0
-X-OriginatorOrg: aspeedtech.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: TY2PPF5CB9A1BE6.apcprd06.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 98ae56c5-31c5-4828-2bc6-08de541d5cab
-X-MS-Exchange-CrossTenant-originalarrivaltime: 15 Jan 2026 10:03:41.8193
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 43d4aa98-e35b-4575-8939-080e90d5a249
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: H4t0deTqMfzhsXowYlRGxDHcScnSLv6Uj1Yzq/oc8X43hQ1xgJ9VxwF9sPTgAsb/GsJ+SLcGBWnXsPwENxx1GZacPxsJqZdySsvH3HbNsDg=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYPPR06MB7970
+Content-Disposition: inline
+In-Reply-To: <E1vg4vs-00000003SFt-1Fje@rmk-PC.armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260115_020354_950113_3E8AD332 
-X-CRM114-Status: GOOD (  17.30  )
+X-CRM114-CacheID: sfid-20260115_021205_030234_E5F603D7 
+X-CRM114-Status: GOOD (  12.36  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -192,78 +100,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-> Subject: Re: [PATCH 1/3] dt-bindings: phy: aspeed: Document AST2700 USB3.0
-> PHY
-> 
-> On Wed, Jan 14, 2026 at 03:13:10PM +0800, Ryan Chen wrote:
-> > Document AST2700 USB3.2 PHY. This IP is connected between
-> > USB3 controller and PHY module.
-> >
-> > Signed-off-by: Ryan Chen <ryan_chen@aspeedtech.com>
-> > ---
-> >  .../bindings/phy/aspeed,ast2700-usb3-phy.yaml      | 50
-> ++++++++++++++++++++++
-> >  1 file changed, 50 insertions(+)
-> >
-> > diff --git
-> > a/Documentation/devicetree/bindings/phy/aspeed,ast2700-usb3-phy.yaml
-> > b/Documentation/devicetree/bindings/phy/aspeed,ast2700-usb3-phy.yaml
-> > new file mode 100644
-> > index 000000000000..83da224d99b1
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/phy/aspeed,ast2700-usb3-phy.ya
-> > +++ ml
-> > @@ -0,0 +1,50 @@
-> > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause) %YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/phy/aspeed,ast2700-usb3-phy.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: ASPEED AST2700 USB 3.2 PHY
-> > +
-> > +maintainers:
-> > +  - Ryan Chen <ryan_chen@aspeedtech.com>
-> > +
-> > +properties:
-> > +  compatible:
-> > +    const: aspeed,ast2700-usb3-phy
-> > +
-> > +  reg:
-> > +    maxItems: 1
-> > +
-> > +  clocks:
-> > +    maxItems: 1
-> > +    description: USB 3.0 PHY clock
-> 
-> Drop description, obvious, you just repeated the block name\
-Will remove 
-> 
-> > +
-> > +  resets:
-> > +    maxItems: 1
-> > +    description: USB 3.0 PHY reset
-> 
-> Ditto
-Will remove
-> 
-> > +
-> > +  '#phy-cells':
-> > +    const: 0
-> > +
-> > +required:
-> > +  - compatible
-> > +  - reg
-> > +  - clocks
-> > +  - resets
-> > +  - '#phy-cells'
-> 
-Thanks your review.
+Hi Russell,
+
+kernel test robot noticed the following build errors:
+
+[auto build test ERROR on net-next/main]
+
+url:    https://github.com/intel-lab-lkp/linux/commits/Russell-King-Oracle/net-stmmac-qcom-ethqos-remove-mac_base/20260115-054728
+base:   net-next/main
+patch link:    https://lore.kernel.org/r/E1vg4vs-00000003SFt-1Fje%40rmk-PC.armlinux.org.uk
+patch subject: [PATCH net-next 03/14] phy: qcom-sgmii-eth: add .set_mode() and .validate() methods
+config: microblaze-randconfig-r073-20260115 (https://download.01.org/0day-ci/archive/20260115/202601151714.J1BAilHy-lkp@intel.com/config)
+compiler: microblaze-linux-gcc (GCC) 14.3.0
+smatch version: v0.5.0-8985-g2614ff1a
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20260115/202601151714.J1BAilHy-lkp@intel.com/reproduce)
+
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202601151714.J1BAilHy-lkp@intel.com/
+
+All errors (new ones prefixed by >>):
+
+   drivers/phy/qualcomm/phy-qcom-sgmii-eth.c: In function 'qcom_dwmac_sgmii_phy_speed':
+>> drivers/phy/qualcomm/phy-qcom-sgmii-eth.c:294:24: error: 'PHY_INTERFACE_MODE_SGMII' undeclared (first use in this function)
+     294 |         if (submode == PHY_INTERFACE_MODE_SGMII ||
+         |                        ^~~~~~~~~~~~~~~~~~~~~~~~
+   drivers/phy/qualcomm/phy-qcom-sgmii-eth.c:294:24: note: each undeclared identifier is reported only once for each function it appears in
+>> drivers/phy/qualcomm/phy-qcom-sgmii-eth.c:295:24: error: 'PHY_INTERFACE_MODE_1000BASEX' undeclared (first use in this function)
+     295 |             submode == PHY_INTERFACE_MODE_1000BASEX)
+         |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+>> drivers/phy/qualcomm/phy-qcom-sgmii-eth.c:298:24: error: 'PHY_INTERFACE_MODE_2500BASEX' undeclared (first use in this function)
+     298 |         if (submode == PHY_INTERFACE_MODE_2500BASEX)
+         |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
-> 
-> Best regards,
-> Krzysztof
+vim +/PHY_INTERFACE_MODE_SGMII +294 drivers/phy/qualcomm/phy-qcom-sgmii-eth.c
+
+   288	
+   289	static int qcom_dwmac_sgmii_phy_speed(enum phy_mode mode, int submode)
+   290	{
+   291		if (mode != PHY_MODE_ETHERNET)
+   292			return -EINVAL;
+   293	
+ > 294		if (submode == PHY_INTERFACE_MODE_SGMII ||
+ > 295		    submode == PHY_INTERFACE_MODE_1000BASEX)
+   296			return SPEED_1000;
+   297	
+ > 298		if (submode == PHY_INTERFACE_MODE_2500BASEX)
+   299			return SPEED_2500;
+   300	
+   301		return -EINVAL;
+   302	}
+   303	
+
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-phy mailing list
