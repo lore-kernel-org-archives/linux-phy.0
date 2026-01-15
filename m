@@ -4,61 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A240BD3CCAB
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Jan 2026 03:35:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 319FDD3CCAE
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Jan 2026 04:41:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References:Message-ID
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rtm2aUnz24DlDID8xsETPJxBBkm38PnkbxGzKpq/hjY=; b=TXFSD2jKg/AFvf
-	ggb8IjEbZTm5RwnrEDQlITjzzshK3BBMaTKfqrPUWTxpr/1t14469pWV+sWEmMBPC1ud45gnJ9XF5
-	92tKk/zMnGRQgTqjsFVJIGQeAf3BiOrTu1HBrregyTV4zok73uSMiYUqdc1LDazRUfVVhw5ROUOqS
-	Rfp9iNSdTgVzGG08wzkBtHzYmIGQ8lBNAJURSP0GAUwyRHYp67a4+7ZPL+xxNQaVEGpWuOL+PjLc/
-	bK/AuR2JxaGbwYD4WQgPb019QrJZS25c9FDDkDaMLd5JrPylDSHCwyrxKpqJFt2HhHA9fz9usMkmi
-	fB43ZsjN2JMwUbqb3W+w==;
+	List-Owner; bh=yinrKR6+8uOi03iqaDCaolkWkt0msdmUUr8GsCRmIIg=; b=Ep7c1K3FjHOARp
+	r1RRrXEnjRAQsLD+08oyfXOIP7onNPpbDz4lEFfyqpKMn1M5hgOQmxgNaGIg3WfQsT7Xj4EyThrUc
+	Ecum4+aJcqH59j533m885ZCGgH7qSUz6l8f7m3vN44poe5Tz9eZp66PXJK73BOmwGXFaMhp2ynnCK
+	L3YJv4GkZ27UfF5kSm4OTftqSo5QFmmFMOvFdV8tSZSKcJcB1YY8132dVlOP9iwKpF2lhDM7okRlQ
+	7rnDx5RNum0+eJu8Gop8bBfHY8de890vy64gvxN3ObZR5H2zjuzTXgj4NSJ2vX2So8dZajMHwLl62
+	D04UjtaUbOEAnk3VMYAQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vgE9F-0000000Bgl5-0ywT;
-	Thu, 15 Jan 2026 03:35:49 +0000
-Received: from mail.aspeedtech.com ([211.20.114.72] helo=TWMBX01.aspeed.com)
+	id 1vgFAa-0000000BmU3-2FKF;
+	Thu, 15 Jan 2026 04:41:16 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vgE9C-0000000BgfU-25X3;
-	Thu, 15 Jan 2026 03:35:47 +0000
-Received: from TWMBX01.aspeed.com (192.168.0.62) by TWMBX01.aspeed.com
- (192.168.0.62) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.10; Thu, 15 Jan
- 2026 11:35:29 +0800
-Received: from [127.0.1.1] (192.168.10.13) by TWMBX01.aspeed.com
- (192.168.0.62) with Microsoft SMTP Server id 15.2.1748.10 via Frontend
- Transport; Thu, 15 Jan 2026 11:35:29 +0800
-From: Jacky Chou <jacky_chou@aspeedtech.com>
-Date: Thu, 15 Jan 2026 11:35:31 +0800
-Subject: [PATCH v9 3/3] MAINTAINERS: Add ASPEED PCIe PHY driver
+	id 1vgFAX-0000000BmTs-24fa
+	for linux-phy@lists.infradead.org;
+	Thu, 15 Jan 2026 04:41:13 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 96FBF6013D;
+	Thu, 15 Jan 2026 04:41:12 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 91134C116D0;
+	Thu, 15 Jan 2026 04:41:11 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1768452072;
+	bh=UHjpx22YuJnHJqWtXfiObY3dVQjR1JqwODWSHMIZ4LY=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=DDCJMgAdEqBM+yeGhiaIkOF1MpOCbkjrUcoa8nswVmnxj7KyFV+wDhrIpdyo6nHyJ
+	 eZ8EBPPsrpCmasWZ2LZKOM+qOFvd546Ye3WNggXzV13MM+9Ypy55oxK9oAe3UE4/QA
+	 eN6cGRYrqLlCOmsU5mvsspdn5ABG4GjHoaemTIKRR8aCqrZT9qTpeGBTVXkPV9k8tP
+	 dpNl/+/an9sji6wqrZP+4k4cb42KW+YSG/XQHgAmzVunbnOUSaRZ7LVsomvMiL5KDu
+	 vgAUsdyAj+SozFdXEwGktwAheMEX3jRd2Zmy0Mhl15HMwXikp1W/52kRUSgni0mTuu
+	 vixbBd9GbbgaA==
+Date: Thu, 15 Jan 2026 10:11:08 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Charan Pedumuru <charan.pedumuru@gmail.com>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v2 1/2] dt-bindings: phy: ti,phy-usb3: convert to DT
+ schema
+Message-ID: <aWhv5IDnSqqCFoNE@vaman>
+References: <20260107-ti-phy-v2-0-a1ec27401fff@gmail.com>
+ <20260107-ti-phy-v2-1-a1ec27401fff@gmail.com>
+ <aWelQ7P1kjKrQMG9@vaman>
+ <b86695e3-9d61-4e9b-aed2-d2585d8646b5@gmail.com>
 MIME-Version: 1.0
-Message-ID: <20260115-upstream_pcie_rc-v9-3-d6c82a1556a7@aspeedtech.com>
-References: <20260115-upstream_pcie_rc-v9-0-d6c82a1556a7@aspeedtech.com>
-In-Reply-To: <20260115-upstream_pcie_rc-v9-0-d6c82a1556a7@aspeedtech.com>
-To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Joel Stanley <joel@jms.id.au>, "Andrew
- Jeffery" <andrew@codeconstruct.com.au>
-CC: <linux-aspeed@lists.ozlabs.org>, <linux-phy@lists.infradead.org>,
-	<devicetree@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
-	<linux-kernel@vger.kernel.org>, Jacky Chou <jacky_chou@aspeedtech.com>
-X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1768448129; l=878;
- i=jacky_chou@aspeedtech.com; s=20251031; h=from:subject:message-id;
- bh=ukzk8V/+iAWF9vSX9HcoXRh6kD8Xte6R6G0Qmwo0orU=;
- b=Gd49zuaoYFSMlRUbrx/0CcYL0v85DMGnAT15UunB5qirAWWKqhtQBGZ0mNuX9C1azisZvb01Y
- Dmr5JiU/CshCdJ35bT2bREho6WwUWC6sG1gkYxiiAXHjTtHPelXSBg/
-X-Developer-Key: i=jacky_chou@aspeedtech.com; a=ed25519;
- pk=8XBx7KFM1drEsfCXTH9QC2lbMlGU4XwJTA6Jt9Mabdo=
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260114_193546_548772_9F0723D9 
-X-CRM114-Status: UNSURE (   6.82  )
-X-CRM114-Notice: Please train this message.
+Content-Disposition: inline
+In-Reply-To: <b86695e3-9d61-4e9b-aed2-d2585d8646b5@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,36 +78,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add maintainer entry for ASPEED PCIe PHY driver.
+On 14-01-26, 20:16, Charan Pedumuru wrote:
+> 
+> 
+> On 14-01-2026 19:46, Vinod Koul wrote:
+> > On 07-01-26, 16:11, Charan Pedumuru wrote:
+> >> Convert TI PIPE3 PHY binding to DT schema.
+> >> Changes during conversion:
+> >> - Define a new pattern 'pciephy' to match nodes defined in DT.
+> >> - Drop obsolete "id" property from the schema.
+> >>
+> >> Signed-off-by: Charan Pedumuru <charan.pedumuru@gmail.com>
+> >> ---
+> >>  .../devicetree/bindings/phy/ti,phy-usb3.yaml       | 127 +++++++++++++++++++++
+> >>  1 file changed, 127 insertions(+)
+> >>
+> >> diff --git a/Documentation/devicetree/bindings/phy/ti,phy-usb3.yaml b/Documentation/devicetree/bindings/phy/ti,phy-usb3.yaml
+> >> new file mode 100644
+> >> index 000000000000..41b3828723ae
+> >> --- /dev/null
+> >> +++ b/Documentation/devicetree/bindings/phy/ti,phy-usb3.yaml
+> >> @@ -0,0 +1,127 @@
+> >> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> >> +%YAML 1.2
+> >> +---
+> >> +$id: http://devicetree.org/schemas/phy/ti,phy-usb3.yaml#
+> >> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> >> +
+> >> +title: TI PIPE3 PHY Module
+> >> +
+> >> +maintainers:
+> >> +  - Kishon Vijay Abraham I <kishon@ti.com>
+> > 
+> > That is not correct, please check the current people on TI for this.
+> 
+> I checked the driver author and MAINTAINERS, I couldn't find anyone.
+> No one seems to have updated the MAINTAINER.
 
-Signed-off-by: Jacky Chou <jacky_chou@aspeedtech.com>
----
- MAINTAINERS | 8 ++++++++
- 1 file changed, 8 insertions(+)
-
-diff --git a/MAINTAINERS b/MAINTAINERS
-index cf755238c429..a1979c574759 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -3844,6 +3844,14 @@ S:	Maintained
- F:	Documentation/devicetree/bindings/crypto/aspeed,*
- F:	drivers/crypto/aspeed/
- 
-+ASPEED PCIE PHY DRIVER
-+M:	Jacky Chou <jacky_chou@aspeedtech.com>
-+L:	linux-aspeed@lists.ozlabs.org (moderated for non-subscribers)
-+L:	linux-phy@lists.infradead.org
-+S:	Maintained
-+F:	Documentation/devicetree/bindings/phy/aspeed,ast2600-pcie-phy.yaml
-+F:	drivers/phy/aspeed/pcie-phy-aspeed.c
-+
- ASPEED PECI CONTROLLER
- M:	Iwona Winiarska <iwona.winiarska@intel.com>
- L:	linux-aspeed@lists.ozlabs.org (moderated for non-subscribers)
+Please chekc in git log about recent contributions from TI people
 
 -- 
-2.34.1
-
+~Vinod
 
 -- 
 linux-phy mailing list
