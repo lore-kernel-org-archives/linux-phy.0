@@ -4,134 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 41DF4D3CC9E
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Jan 2026 02:16:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 249A0D3CCA8
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Jan 2026 03:35:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zYemRD58g6YI8aw4ErxHArCVvLGdFjxWqRuUD/ai9Sk=; b=nttQQYtgrlqRqL
-	RUIpy9z22ypqEAnPknet+MMhyGUWQicQg+HtBVVkaXYRWcbCN0LkT9W5Mzi7WZxLA8xvtWKceZu2/
-	1FxokRIxU7yGiFXi/zREOYhnyBpgPm7YjwpSXLu89axccMcINS1y3Sm3CXGMwDxUFAn6CC3/Hea7n
-	U6WvAZiwxpK2BvkAGgmjKtIqfHLPaxSdMQoqm7CdMG22JbTAsMJs9qbYyq9UERVRIIgmKWB3O+uXq
-	849ss/6L2ajsE9nv48dGVo3AID0Th4jbLbegedMoPVDdgSo48ZMzqnV5Xd0nJm/g4Zmm0OyY6LS/f
-	hyabDd4vASTHiJF7/W4g==;
+	List-Archive:List-Unsubscribe:List-Id:CC:To:MIME-Version:Message-ID:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=K4jyqgDBGBeupNqOjflXA9ua8+dGzf2skQBcbheWYfs=; b=uerRRsYfZg9Lg2
+	qwVWJ0+iz8L8J/u+14mdhQ21kOpV1Vpdkp0DEL/5JWy59rhR2akvPtbo1O6qS011VLNwFm5EflfZ2
+	unTcBLajSx6iNNtQ5KvCRcR9a/4IklWK6X6Nn/Z2BlyEsf579EHBppmyV18jaXO5QuNvogpK5arSm
+	ByYZ6RwV/zdPZffg44RhQoOcc7jq4JRYTzknyMqPfu1qR+gcmVyiwJ+jI1PtS6Jueahw7TGLYxdLP
+	n9RY35naqgv0vBqZy3Db9VtOHsXaAzzEccTJ1Cnh6gWpjtuRJIeY0mvkte9yTQNppDajxdGrzyIXL
+	N8vjxXqoFeVx49o4069w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vgCuV-0000000BWAR-3U9T;
-	Thu, 15 Jan 2026 02:16:31 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1vgE99-0000000BggQ-1ldc;
+	Thu, 15 Jan 2026 03:35:43 +0000
+Received: from mail.aspeedtech.com ([211.20.114.72] helo=TWMBX01.aspeed.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vgCuS-0000000BW9L-3FC8
-	for linux-phy@lists.infradead.org;
-	Thu, 15 Jan 2026 02:16:30 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 60EMgpgL3820399
-	for <linux-phy@lists.infradead.org>; Thu, 15 Jan 2026 02:16:27 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=y6Nz50atGe4ppbMfJdSspqFK
-	hDiCNfLuXTq78OiHIm8=; b=Ly4cuAb+gE5B+z36T4mwsz6tJmefkbZMWKV9iEWY
-	/ofcZF55Hj+hjytzF0J6qWrAAuLwGAmVJUtporSSUMP6/p/j4THmQ7Rywi7jVBCc
-	weQRzH3Bo9m7LYTyAWIFw/IiadUYkp48NR4EKg5nYdBXEeo/XZcCkmw+77ehiS5c
-	1V7YkTYgKGQe15k78tIbL4QsAerPJzMiygeQO9LuwHMO9x2l6o8OUL9BnNW3ZL3+
-	BRZeXBzGevBbIoI7taWWTn6c+L9/+VoxJsIPKZ1WJCbp/ctJ0vuOByJ9ul6DP/RZ
-	2cmn9CtZTZWt6SGdmRZnkygL9Y4L4mkqH1kwyzvdXT40Jw==
-Received: from mail-dy1-f200.google.com (mail-dy1-f200.google.com [74.125.82.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4bp7b6uc2q-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Thu, 15 Jan 2026 02:16:26 +0000 (GMT)
-Received: by mail-dy1-f200.google.com with SMTP id 5a478bee46e88-2b062c1aa44so1244488eec.0
-        for <linux-phy@lists.infradead.org>; Wed, 14 Jan 2026 18:16:26 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1768443386; x=1769048186; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=y6Nz50atGe4ppbMfJdSspqFKhDiCNfLuXTq78OiHIm8=;
-        b=dDAcsHxVrK/XVCD/huEFGXLQoc6vuZWn8Zzd7nONQbRzPG5xX/MmTSYVYppAGCL8HM
-         k/vXlb4tcQNiZMKUq192LN1rSF/Ewhwypshus0hNp2FU1cuTNgCd4pbbNIgAyc88o+rY
-         ANGYxJ0HjXUYO10PxNgHBMrmWjyP4H1fHmMwx0S+xhhWcsc0PSGdADNRLQn6Dbz32nJb
-         52eAAQwhdPYWjzMd2QZazODn8OGwThmnkdweTQANAJu2CtnLepY6MCsWYuxRhG6bAMHw
-         nkF4s1QescRoaXeKBk6T3rJUTtNu9NpLgtXcg8PM086/YpAnvKaqRZPpjksx+88QTh7H
-         hSlg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1768443386; x=1769048186;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=y6Nz50atGe4ppbMfJdSspqFKhDiCNfLuXTq78OiHIm8=;
-        b=HgYyG2xFnqGBAHpRL3LqGubrM/M36pGojQ8hB7isvXCG3Sgh2Wl3bnuriuAP51f552
-         dX3GLblYN03SW66efHGZe9tgWarED7ixeCVyUDRoUxU9wwLteRmU6spoBctmQuq2jddl
-         GAnOxKptMyLjwn74PDvSDUvkks/mGx4Ps7sKuM90xq5MAshAcd2MYOS89hmBSAJogvnl
-         Cs945aIAHoiEql5bPfEa/ljz5Ps75GnjNr6BCeB02IZkt6TznTNNbnKeIrpvf+U8czaY
-         ZMuwjHBPX/M+uLOIAGx6vKu8w5qOrGF+1JnL8t/juIFJssJ7dEeOtrxiEVSifkUJn+pi
-         cIVA==
-X-Forwarded-Encrypted: i=1; AJvYcCW1YFIyAfHd8tJ8hUOuafjDglk+4akYl6P7nlE6h4aPxS5Wy2SwdWVqumH0AV4EqgAiacD1gCv8M3o=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx2ePIBiOiJjVdCS0jpR2neLKScEwdqmSqBqfZpp/bNNnrhlD/Y
-	7eQNlZDmu0rMqm0lI9A0nsZmay/U/gwNXT7SY/dbZUKnnz2IEgwNSh9MhC/b/0t1de8ObQnFoe/
-	jGr9MUgwi/YfdmKekA2PJUHNOg7XgwCiHq9ZuD85yM6DzbP+mqX9/9KzNZpUMFnycUoGlGj2lJX
-	iJ4O8=
-X-Gm-Gg: AY/fxX6so3jLHat1wTimCxGXyq5GAgjQ7tUvj4iYQJp58Cq5iyqNlOfDXos24444/BZ
-	edNfCixKRN0x8MV1+JCu832gcIOD0qpCnwE5d0vcMdDcFPtkQHjt0ub4iJ7RdYGzGDbi+PUkyXh
-	aOKsjB4JI8oPrZAusIWNWF960dc7wb2Ief4VmQu2Trkfktnm0tG5whUXg8MHACrF95k2HZpcO2d
-	anqWsd/ajcQdR94AViW6Iaptyn0cl3zGLs5Vt+Gpgj/cDjEjap1b+ZxHHQZh6YUbdN+UqChE/02
-	618oZ4/Zgt1ag1rSa8EOoLydTJJaXm1ZUCNpSsR2BKaPtcVs5ZspykcVvp+PzllFaFwTnjbd6rM
-	pgx1jLRjpm4B8LMz55xpsjmWlrnS7RNOdvTWN5y6HxPFgbhtPQM/QGNau
-X-Received: by 2002:a05:693c:3944:b0:2b0:580b:856c with SMTP id 5a478bee46e88-2b486f68038mr6473600eec.28.1768443385638;
-        Wed, 14 Jan 2026 18:16:25 -0800 (PST)
-X-Received: by 2002:a05:693c:3944:b0:2b0:580b:856c with SMTP id 5a478bee46e88-2b486f68038mr6473559eec.28.1768443385055;
-        Wed, 14 Jan 2026 18:16:25 -0800 (PST)
-Received: from hu-qianyu-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-2b6a49173b2sm293974eec.31.2026.01.14.18.16.24
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 14 Jan 2026 18:16:24 -0800 (PST)
-Date: Wed, 14 Jan 2026 18:16:22 -0800
-From: Qiang Yu <qiang.yu@oss.qualcomm.com>
-To: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
-        Philipp Zabel <p.zabel@pengutronix.de>,
-        Jingoo Han <jingoohan1@gmail.com>,
-        Manivannan Sadhasivam <mani@kernel.org>,
-        Lorenzo Pieralisi <lpieralisi@kernel.org>,
-        Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
-        Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
-        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org
-Subject: Re: [PATCH 0/5] PCI: qcom: Add link retention support
-Message-ID: <aWhN9nlsma5T5ixf@hu-qianyu-lv.qualcomm.com>
-References: <20260109-link_retain-v1-0-7e6782230f4b@oss.qualcomm.com>
+	id 1vgE96-0000000BgfU-0woG;
+	Thu, 15 Jan 2026 03:35:41 +0000
+Received: from TWMBX01.aspeed.com (192.168.0.62) by TWMBX01.aspeed.com
+ (192.168.0.62) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.10; Thu, 15 Jan
+ 2026 11:35:29 +0800
+Received: from [127.0.1.1] (192.168.10.13) by TWMBX01.aspeed.com
+ (192.168.0.62) with Microsoft SMTP Server id 15.2.1748.10 via Frontend
+ Transport; Thu, 15 Jan 2026 11:35:29 +0800
+From: Jacky Chou <jacky_chou@aspeedtech.com>
+Subject: [PATCH v9 0/3] Add ASPEED PCIe PHY support
+Date: Thu, 15 Jan 2026 11:35:28 +0800
+Message-ID: <20260115-upstream_pcie_rc-v9-0-d6c82a1556a7@aspeedtech.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260109-link_retain-v1-0-7e6782230f4b@oss.qualcomm.com>
-X-Proofpoint-ORIG-GUID: LpauF4NwT-__16UgP5e_Q35j7dokDoIP
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMTE1MDAxMSBTYWx0ZWRfX27SE+grwX+m1
- E7sKStKzBux1CaRl8LTH+3sTijECBGZYWewJNdYlOdlJKYmEFmnpL5z2fc1DbZba0ntp2LGWsnl
- pVI9GVB9fUZV5GHZ1QcNrzru6pW32CH1Mb13VPeWiuxkTmViSsOfOsm6hWo/GICUzrm/BLCMsiK
- AlQJmnQzowFwqDPLDlFmTjU/Iz1esvYrlKm1KS/vK1HXcALf1bdP5aANC1+8XSQHVZyWYgertDv
- DyXXmBOtKVMEUSsSYXyN+S5vK0UR4K9o+XbHuL2JZc8RV33XYYdLk76k4v5oy2A+mDx+7ZIWKgu
- ockyAEGDGvqWcG4SYFeUR7cpbb4Vet1KYT9wf4YcgzY9qcuz1evgR472MqXR/hhPnLsbXQ56SsF
- PJZRdvu87lEQB1manhnT/rejEqDBwY+BLoSNQLqYme+ol8hv0VANPl2GMSuucXlsof+mHkvmMC/
- 9Oojner4Ie35Qv1EiGg==
-X-Authority-Analysis: v=2.4 cv=W+w1lBWk c=1 sm=1 tr=0 ts=69684dfa cx=c_pps
- a=PfFC4Oe2JQzmKTvty2cRDw==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=kj9zAlcOel0A:10 a=vUbySO9Y5rIA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=EUspDBNiAAAA:8 a=ietwBVO8KLLdgrj2ZJ4A:9
- a=CjuIK1q_8ugA:10 a=6Ab_bkdmUrQuMsNx7PHu:22
-X-Proofpoint-GUID: LpauF4NwT-__16UgP5e_Q35j7dokDoIP
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
- definitions=2026-01-15_01,2026-01-14_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 impostorscore=0 malwarescore=0 spamscore=0
- lowpriorityscore=0 clxscore=1015 adultscore=0 suspectscore=0 phishscore=0
- bulkscore=0 classifier=typeunknown authscore=0 authtc= authcc= route=outbound
- adjust=0 reason=mlx scancount=1 engine=8.22.0-2512120000
- definitions=main-2601150011
+X-B4-Tracking: v=1; b=H4sIAIBgaGkC/43QTWrDMBCG4asErSszo9Hop6veo5Qgy0qtlsTGd
+ kxDyN2rZFEHYkiXn+B9BnQWYxpyGsXr5iyGNOcxd4cy/MtGxDYcPpPMTdlCgWJEIHnsx2lIYb/
+ tY07bIUqnNVv2Te2QRMn6Ie3yz418/yi7zePUDafbhRmvrzcMDBIQAWBFyGTISpRfIX6ftrHtj
+ m9h7FNqphTbKnZ7cZVmtdQWGUiTgkoxk/tPTUvtAYHZK1VhqZnhea3/agRlwbNTXKFDNPg85iV
+ GtI9/OLMEWeuA3rE1Ie5WFbMoCnBFMUVx0TmAyKZGs6rYOwXNimKLokOqYccUdUyrirtTCFYUV
+ xQg9i42jYPYPCiXy+UXEdQd1n4CAAA=
+X-Change-ID: 20251103-upstream_pcie_rc-8445759db813
+To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
+	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Joel Stanley <joel@jms.id.au>, "Andrew
+ Jeffery" <andrew@codeconstruct.com.au>
+CC: <linux-aspeed@lists.ozlabs.org>, <linux-phy@lists.infradead.org>,
+	<devicetree@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+	<linux-kernel@vger.kernel.org>, Jacky Chou <jacky_chou@aspeedtech.com>
+X-Mailer: b4 0.14.3
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1768448129; l=5317;
+ i=jacky_chou@aspeedtech.com; s=20251031; h=from:subject:message-id;
+ bh=+ZKi5Nj/LRHiFgYwNq73TzvEGVM7ASddgqK3aHZnfC0=;
+ b=gtBigwRJNwxJrArJmhqntrVevDM2ps4H1FHjgP5PenY0FIPu7yvTLT9ztQObYjJy4fNWqRguf
+ MLS/JFEF9SaD983sRCJLUjJ+OGk1Y9t3rOvaQZpaKMErdkXHwBFseRg
+X-Developer-Key: i=jacky_chou@aspeedtech.com; a=ed25519;
+ pk=8XBx7KFM1drEsfCXTH9QC2lbMlGU4XwJTA6Jt9Mabdo=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260114_181628_926294_CD2001E3 
-X-CRM114-Status: GOOD (  26.65  )
+X-CRM114-CacheID: sfid-20260114_193540_278695_AA152CDF 
+X-CRM114-Status: GOOD (  17.94  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -148,64 +79,124 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Jan 09, 2026 at 12:51:05PM +0530, Krishna Chaitanya Chundru wrote:
-> This patch series introduces support for retaining the PCIe link across
-> bootloader and kernel handoff on Qualcomm platforms, specifically
-> X1E80100. The goal is to reduce boot time and avoid unnecessary link
-> reinitialization  when the link is already up.
-> 
-> We are not enabling link retantion support for all the targets, as there
-> is no guarantee that the bootloader on all targets has initialized the
-> PCIe link in max supported speed. So we are enabling for hamoa & glymur
-> target only for now based on the config flag.
-> 
-> If the link is up and has link_retain is set to true in the
-> ithe driver config data then enable retain logic in the controller.
-> 
-> In phy as we already have skip init logic, the phy patch uses same
-> assumption that if there is phy no csr and bootloader has done the init
-> then driver can skip resetting the phy when phy status indicates it is
-> up.
-> 
-> Problem:-
-> 1) As part of late init calls of clock & GENPD(for power domains) the
-> framework is disabling all the unvoted resources by that time and also
-> there is no sync state to keep them enabled till the probe is completed.
-> Due to dependencies with regulators and phy, qcom pcie probe is happening
-> after late init which is causing the resources(clocks & power domains) to
-> be off which causes the link to go down. To avoid this we need to use these
-> two kernel command line arguments (clk_ignore_unused & pd_ignore_unused)
-> to skip disabling clocks and gendp power domains as part of late init
-> for initial version. Once it is resolved we can avoid those kernel command
-> line arguments.
-> 
-> Signed-off-by: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
+This patch series adds support for the ASPEED PCIe PHY,
+including device tree bindings and PCIe PHY driver. 
+The patches introduce the necessary device tree nodes.
 
-Tested on Hamoa QCP and Glymur CRD, so
+Summary of changes:
+- Add device tree binding documents for ASPEED PCIe PHY
+- Update MAINTAINERS for new bindings and driver
+- Implement ASPEED PCIe PHY driver
 
-Tested-by: Qiang Yu <qiang.yu@oss.qualcomm.com>
-> ---
-> Krishna Chaitanya Chundru (5):
->       phy: qcom: qmp-pcie: Skip PHY reset if already up
->       PCI: dwc: Add support for retaining link during host init
->       PCI: qcom: Keep PERST# GPIO state as-is during probe
->       PCI: qcom: Add link retention support
->       PCI: qcom: enable Link retain logic for Hamoa
-> 
->  drivers/pci/controller/dwc/pcie-designware-host.c | 11 ++--
->  drivers/pci/controller/dwc/pcie-designware.h      |  1 +
->  drivers/pci/controller/dwc/pcie-qcom.c            | 62 ++++++++++++++++++++---
->  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c          | 28 ++++++----
->  4 files changed, 83 insertions(+), 19 deletions(-)
-> ---
-> base-commit: fc065cadc7ed048bedbb23cb6b7c4475198f431c
-> change-id: 20251001-link_retain-f181307947e4
-> 
-> Best regards,
-> -- 
-> Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
-> 
-> 
+This series has been tested on AST2600/AST2700 platforms and enables PCIe device
+enumeration and operation.
+
+Signed-off-by: Jacky Chou <jacky_chou@aspeedtech.com>
+---
+Changes in v9:
+- Remove '[v8,2/4] ARM: dts: aspeed-g6: Add PCIe RC and PCIe PHY node'
+  and send it separately.
+- Use FIELD_MODIFY to configure register.
+- Link to v8: https://lore.kernel.org/r/20251230-upstream_pcie_rc-v8-0-03598cdd80cd@aspeedtech.com
+
+Changes in v8:
+- Update the title of cover letter
+- Remove 'default y' from Kconfig
+- Change 'PHY:' to 'phy:' in the title of ASPEED PCIe PHY commit.
+- Remove unnecessary headers from phy-aspeed-pcie.c.
+- Add ASPEED PCIe PHY MAINTAINERS
+- Remove applied patches
+  [v7,2/7] dt-bindings: PCI: Add ASPEED PCIe RC support
+  [v7,5/7] PCI: Add FMT, TYPE and CPL status definition for TLP header
+  [v7,6/7] PCI: aspeed: Add ASPEED PCIe RC driver
+  [v7,7/7] MAINTAINERS: Add ASPEED PCIe RC driver
+- Link to v7: https://lore.kernel.org/r/20251216-upstream_pcie_rc-v7-0-4aeb0f53c4ce@aspeedtech.com
+
+Changes in v7:
+- Add PCIe port into aspeed,ast2600-pci.yaml.
+- Remove aspeed_pcie_init_ports() and merge aspeed_pcie_port_init() to
+  aspeed_pcie_parse_port()
+- Refactor aspeed remap pcie addr to aspeed_pcie_map_ranges()
+- Link to v6: https://lore.kernel.org/r/20251201-upstream_pcie_rc-v6-0-8c8800c56b16@aspeedtech.com
+
+Changes in v6:
+- Refer to pci-cpi-bridge.yaml to update aspeed,ast2600-pcie.yaml and
+  the pcie node of aspeed-g6.dtsi.
+- 'dt-bindings: pinctrl: aspeed,ast2600-pinctrl: Add PCIe RC PERST#
+  group' have applied, remove it from this version.
+- Adjust the defnitions in pci.h. 
+- Link to v5: https://lore.kernel.org/r/20251117-upstream_pcie_rc-v5-0-b4a198576acf@aspeedtech.com
+
+Changes in v5:
+- Remove legacy-interrupt-controller and the INTx points to pcie node itself.
+- Correct bar mapping description and implementation to PCIe address
+  configuration in pcie-aspeed.c driver.
+- Link to v4: https://lore.kernel.org/r/20251027095825.181161-1-jacky_chou@aspeedtech.com/
+
+Changes in v4:
+- Remove aspeed,ast2700-pcie-cfg.yaml
+- Add more descriptions for AST2600 PCIe RC in aspeed,ast2600-pcie.yaml
+- Change interrupt-controller to legacy-interrupt-controller in yaml
+  and dtsi
+- Remove msi-parent property in yaml and dtsi
+- Modify the bus range to starting from 0x00 in aspeed-g6.dtsi
+- Fixed the typo on MODULE_DEVICE_TABLE() in phy-aspeed-pcie.c
+- Add PCIE_CPL_STS_SUCCESS definition in pci/pci.h
+- Add prefix ASPEED_ for register definition in RC driver
+- Add a flag to indicate clear msi status twice for AST2700 workaround
+- Remove getting domain number
+- Remove scanning AST2600 HOST bridge on device number 0
+- Remove all codes about CONFIG_PCI_MSI
+- Get root but number from resouce list by IORESOURCE_BUS
+- Change module_platform_driver to builtin_platform_driver
+- Link to v3: https://lore.kernel.org/r/20250901055922.1553550-1-jacky_chou@aspeedtech.com/
+
+Changes in v3:
+- Add ASPEED PCIe PHY driver
+- Remove the aspeed,pciecfg property from AST2600 RC node, merged into RC node
+- Update the binding doc for aspeed,ast2700-pcie-cfg to reflect the changes
+- Update the binding doc for aspeed,ast2600-pcie to reflect the changes
+- Update the binding doc for aspeed,ast2600-pinctrl to reflect the changes
+- Update the device tree source to reflect the changes
+- Adjusted the use of mutex in RC drivers to use GRAND
+- Updated from reviewer comments
+- Link to v2: https://lore.kernel.org/r/20250715034320.2553837-1-jacky_chou@aspeedtech.com/
+
+Changes in v2:
+- Moved ASPEED PCIe PHY yaml binding to `soc/aspeed` directory and
+  changed it as syscon
+- Added `MAINTAINERS` entry for the new PCIe RC driver
+- Updated device tree bindings to reflect the new structure
+- Refactored configuration read and write functions to main bus and
+  child bus ops
+- Refactored initialization to implement multiple ports support
+- Added PCIe FMT and TYPE definitions for TLP header in
+  `include/uapi/linux/pci_regs.h`
+- Updated from reviewer comments
+- Link to v1: https://lore.kernel.org/r/20250613033001.3153637-1-jacky_chou@aspeedtech.com/
+
+---
+Jacky Chou (3):
+      dt-bindings: phy: aspeed: Add ASPEED PCIe PHY
+      phy: aspeed: Add ASPEED PCIe PHY driver
+      MAINTAINERS: Add ASPEED PCIe PHY driver
+
+ .../bindings/phy/aspeed,ast2600-pcie-phy.yaml      |  42 +++++
+ MAINTAINERS                                        |   8 +
+ drivers/phy/Kconfig                                |   1 +
+ drivers/phy/Makefile                               |   1 +
+ drivers/phy/aspeed/Kconfig                         |  14 ++
+ drivers/phy/aspeed/Makefile                        |   2 +
+ drivers/phy/aspeed/phy-aspeed-pcie.c               | 194 +++++++++++++++++++++
+ 7 files changed, 262 insertions(+)
+---
+base-commit: 944aacb68baf7624ab8d277d0ebf07f025ca137c
+change-id: 20251103-upstream_pcie_rc-8445759db813
+
+Best regards,
+-- 
+Jacky Chou <jacky_chou@aspeedtech.com>
+
 
 -- 
 linux-phy mailing list
