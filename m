@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E7B6BD41151
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Jan 2026 09:53:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 75522D41150
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Jan 2026 09:54:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KV9HtrZg5zWLxUYu3kl0Faqmr5K9aAqsr6KUlqPdc58=; b=Yj/oT16Xgr7ETi
-	LC+U8IOqTKDUsUFXjw3y2BAoB2KfIN/kfqipKX1fLCO1EuaSCp25QngbLTDsaRQPk6T5vddKZbRZN
-	JcWbgtVVMGx38IndWRfxhnisH1nzwG5I3pOVdiVf9cigjooM/+y/Qkpl2jh+rBvsvR/ZiL/1Q5aOW
-	p/cUAYWiyA7/lWCq1qqAhc+FZ/krEIGhpLbNv25QzbtbeG2RqEYU38vTLfUQH5PrlD2o92QVEA81X
-	RAFfT7urcZqyCrpIeizokVEWJef6or90cYEEMO+djHBFfio6owmzQ3c9u5bskEixM9nJ8yNrVrd1i
-	kZjyTFiSF61diQj95IIA==;
+	List-Owner; bh=HtpXkHVy0RyqwJSisQVvPmPBdNa8mZjxORh8lF0DxCE=; b=4hMlwj6dvsIhNa
+	0Gf4G5LyWzmqOsF1UxSxYBbEDxzKQfuctJKl/08Ck0+9nliq10hP8qspgbDsqc0rLF4qMWaYzxzYR
+	YKHvnKgvvbn6ck+4q0wCWbAuD/XU6Yp9d+rD5W6a5IvjHKTkbeyrlsjAQQXYwG1O4xaq9AyXRgaHc
+	TkG8rU52Wa9AvqkLMhXdsp5PtGJ6sWSliK0KBr852pOUW5Ij3fRcLzad5itpWSH/DlKDEDsvGFJvJ
+	nS8VSyq6Cf14OMQfi4szDRVucCiCdRX/NUKTOOy+M14y3vKL4Speo4LvCsOPU4FMQvhbQxZjHfrCk
+	aQRV8F/ya9GP9lQWvvVQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vgK2T-0000000C6uF-2GVK;
-	Thu, 15 Jan 2026 09:53:13 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1vgK3J-0000000C71C-0rQG;
+	Thu, 15 Jan 2026 09:54:05 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vgK2P-0000000C6tD-3xv1;
-	Thu, 15 Jan 2026 09:53:10 +0000
+	id 1vgK3H-0000000C70e-3wmK;
+	Thu, 15 Jan 2026 09:54:03 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 2397B601B9;
-	Thu, 15 Jan 2026 09:53:09 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4D54CC116D0;
-	Thu, 15 Jan 2026 09:53:08 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 4DA94601B3;
+	Thu, 15 Jan 2026 09:54:03 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 76C13C116D0;
+	Thu, 15 Jan 2026 09:54:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1768470788;
-	bh=nQRGCmfmTv/HFL3TGgfPhp5kkEYvJqdN5RCn3LswyN0=;
+	s=k20201202; t=1768470843;
+	bh=rkwmLhl2NdMkUxqtMKpON4EP2ZPIE5XSzoXvo0xv198=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=SEb+448vdOLkMsqGqmm0r51xQieYMuN9whjnOzn4yQXYQueUi2b3wJijiiBXFQKHh
-	 vMjUi9ELwJx1NtfnQAWQIaWi5vuNYyaCkeWxCeVBYFb7wlXbuTqB47Pq+yHplO34/p
-	 e04Q5DJm4FtFwXf77ev6yugp+uUgJ0OY2we+6CyfBpoWoYF6l4aVtuxEzVsZAg2X/F
-	 JrcFBBk9IvPQpz8hqDdObSP6ckWaPhvMxdR9u4/RhPaGNzUyi6lowmf2rBh3F3VVNw
-	 AYEVLGihQzQFfc5bO7VjTGroJzZCzRXJV0tErqiv/7JUT0WmF1qXrcJMtAJ7g7gKsf
-	 Dhi+Fp29CRTZg==
-Date: Thu, 15 Jan 2026 10:53:06 +0100
+	b=lGYM9Ku4NOF+zHabNVCMzyZz6JHwydepB5DeMtLL8+Gi5kFK2EGFz7vjFpQTErOk/
+	 +yTyrBwGatJcfNAlQ+ArcnCg45NghWuqqOHz6nItZV6lMvm+/5CA8m3nme7TtP3Dd/
+	 r9S3RJYxgG/G6WYCr/TyQfqPpeMw9NuaV5Ms4jXSweXjHK1eye66cxaAYFeR32/3hN
+	 nxeyEOIzQWgUQIKcp3tU7lbnTw2E15qsmOtNOrI/Uzq78NC737x5pVnCqYYg3V6msS
+	 JMEN8vUVdQiEzqep2nnhYDxQrYn3aUCYQqt5wZNUT7OgnzpHzXFtDmP/529+Ma9XGA
+	 xRbAXI5W9eMKw==
+Date: Thu, 15 Jan 2026 10:54:00 +0100
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Ryan Chen <ryan_chen@aspeedtech.com>
 Cc: Vinod Koul <vkoul@kernel.org>, 
@@ -50,13 +50,13 @@ Cc: Vinod Koul <vkoul@kernel.org>,
 	Joel Stanley <joel@jms.id.au>, Andrew Jeffery <andrew@codeconstruct.com.au>, 
 	Philipp Zabel <p.zabel@pengutronix.de>, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
 	linux-arm-kernel@lists.infradead.org, linux-aspeed@lists.ozlabs.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 2/3] phy: add AST2700 usb3.2 phy driver
-Message-ID: <20260115-jaguarundi-of-optimal-fruition-09d32e@quoll>
+Subject: Re: [PATCH 1/3] dt-bindings: phy: aspeed: Document AST2700 USB3.0 PHY
+Message-ID: <20260115-tricky-invaluable-snake-abec06@quoll>
 References: <20260114-upstream_usb3phy-v1-0-2e59590be2d7@aspeedtech.com>
- <20260114-upstream_usb3phy-v1-2-2e59590be2d7@aspeedtech.com>
+ <20260114-upstream_usb3phy-v1-1-2e59590be2d7@aspeedtech.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260114-upstream_usb3phy-v1-2-2e59590be2d7@aspeedtech.com>
+In-Reply-To: <20260114-upstream_usb3phy-v1-1-2e59590be2d7@aspeedtech.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,38 +73,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jan 14, 2026 at 03:13:11PM +0800, Ryan Chen wrote:
-> Add AST2700 USB3.2 PHY driver support.
+On Wed, Jan 14, 2026 at 03:13:10PM +0800, Ryan Chen wrote:
+> Document AST2700 USB3.2 PHY. This IP is connected between
+> USB3 controller and PHY module.
 > 
 > Signed-off-by: Ryan Chen <ryan_chen@aspeedtech.com>
 > ---
->  drivers/phy/aspeed/Kconfig           |  13 ++
->  drivers/phy/aspeed/Makefile          |   2 +
->  drivers/phy/aspeed/phy-aspeed-usb3.c | 236 +++++++++++++++++++++++++++++++++++
->  3 files changed, 251 insertions(+)
+>  .../bindings/phy/aspeed,ast2700-usb3-phy.yaml      | 50 ++++++++++++++++++++++
+>  1 file changed, 50 insertions(+)
 > 
-> diff --git a/drivers/phy/aspeed/Kconfig b/drivers/phy/aspeed/Kconfig
+> diff --git a/Documentation/devicetree/bindings/phy/aspeed,ast2700-usb3-phy.yaml b/Documentation/devicetree/bindings/phy/aspeed,ast2700-usb3-phy.yaml
 > new file mode 100644
-> index 000000000000..93bb5a913633
+> index 000000000000..83da224d99b1
 > --- /dev/null
-> +++ b/drivers/phy/aspeed/Kconfig
-> @@ -0,0 +1,13 @@
-> +# SPDX-License-Identifier: GPL-2.0-only
+> +++ b/Documentation/devicetree/bindings/phy/aspeed,ast2700-usb3-phy.yaml
+> @@ -0,0 +1,50 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/aspeed,ast2700-usb3-phy.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > +
-> +#
-> +# PHY drivers for ASPEED
-> +#
+> +title: ASPEED AST2700 USB 3.2 PHY
 > +
-> +config PHY_ASPEED_USB3
-> +	tristate "ASPEED USB3 PHY driver"
-> +	select GENERIC_PHY
-> +	depends on ARCH_ASPEED
+> +maintainers:
+> +  - Ryan Chen <ryan_chen@aspeedtech.com>
+> +
+> +properties:
+> +  compatible:
+> +    const: aspeed,ast2700-usb3-phy
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    maxItems: 1
+> +    description: USB 3.0 PHY clock
 
-COMPILE_TEST
+Drop description, obvious, you just repeated the block name
 
-> +	default n
+> +
+> +  resets:
+> +    maxItems: 1
+> +    description: USB 3.0 PHY reset
 
-It's the default, so maybe you meant 'ARCH_ASPEED'?
+Ditto
+
+> +
+> +  '#phy-cells':
+> +    const: 0
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - clocks
+> +  - resets
+> +  - '#phy-cells'
+
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
 
 Best regards,
 Krzysztof
