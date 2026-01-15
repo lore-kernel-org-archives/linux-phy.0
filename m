@@ -4,100 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9B260D44C48
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Jan 2026 14:18:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 20086D44C51
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Jan 2026 14:35:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+uN1fQQzq9MhTl7K9BcXx8MkAb1xk0n+X+EkzHl6aB4=; b=PfmTCVGrQ6Q234
-	39P0C7s6DfCkHbLoSfC0xkih+rJWgHxwiQE0E6Q+u643baA3l01ZVQ1H6gE7CC0Q99FsckY/AbOA4
-	C/RaZ0iz9+o31Fobsu6gDmyUTChjx8Z37Xj+BI4N1hs3hvMW7BuRd2+ec42GQBA0Z5A5N3c9p7/PC
-	WI6Yeh8tzZxjs8acqHMBY74f0obcL3iTdLCl2qe47d8js4xX4DI7lV7UYc877zvY9aHd9mw9CSsHq
-	eJcoQCg6FWz9DCIPLcn/bCdAcLr1rVja/1RvIxPVNyCvFd706lh1bh0sS7VpdzE44465vd++jwn7k
-	BtloxQRmtTmXvrS2JdsA==;
+	List-Owner; bh=H4aV8G4qQ6hw/f0W269XMtW3P2Uh+7LbqwrjNg0QDfA=; b=RadWuz2QFh2oU1
+	VndPQIejIQVuqoT/lspqwzfShjpBROsFTBSGMom6AePZ5+TwZ+9PchIRzVYS9r/CdNZvRO3MI/51/
+	U3lpSgLhvaUd9oNRmNoVRUFlvSF+ZhAhykeTcYdQKJvi31erPWAj2qx9RK3SanOSqpjQUSpqL/eFq
+	RDOd+6nDlOX29LMisOyhXcpeRmPF38ARjR1Nu1XktGvXA3K8P8cLkMwIUziMBnDdA64cz3BxsmKoj
+	CWwaEb6/M41Cfhv5tXegWrpM9au830yl+uRKumLdZAZgpBN9zbenhmUas+SU2d7/DmMYFTQocDERz
+	p9CzAKr5lZuvyYeQuHwQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vgOBE-0000000CT3Z-0eJx;
-	Thu, 15 Jan 2026 14:18:32 +0000
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
+	id 1vgOS6-0000000CUdC-3a67;
+	Thu, 15 Jan 2026 14:35:58 +0000
+Received: from smtp84.cstnet.cn ([159.226.251.84] helo=cstnet.cn)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vgOBA-0000000CT08-3KeF
-	for linux-phy@lists.infradead.org;
-	Thu, 15 Jan 2026 14:18:30 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1768486706;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=t4RC+ObhpewYzGNMozpFt20pSaSgz2F7mC9Tp5X8J9U=;
-	b=TnUytmAmpJtfpqkjhQFamxMMZm6RCIrpU92o05qtxZLB372rMncrbU0vUSK1ih03MyiQzG
-	FWM+yYhvAZKTRYkBq7Vf0Cu2hcGOew1JwfT6P8cM3IEyuA5yg7HgoPpl8Af/IlR0kF4ott
-	6FaXQovWFpdLqS7DvcrmxsxJqB9NvXg=
-Received: from mail-qv1-f70.google.com (mail-qv1-f70.google.com
- [209.85.219.70]) by relay.mimecast.com with ESMTP with STARTTLS
- (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
- us-mta-626-5-QVm74-NiW6f6LXQEIkTQ-1; Thu, 15 Jan 2026 09:18:24 -0500
-X-MC-Unique: 5-QVm74-NiW6f6LXQEIkTQ-1
-X-Mimecast-MFC-AGG-ID: 5-QVm74-NiW6f6LXQEIkTQ_1768486704
-Received: by mail-qv1-f70.google.com with SMTP id 6a1803df08f44-8887c0d3074so28343406d6.2
-        for <linux-phy@lists.infradead.org>; Thu, 15 Jan 2026 06:18:24 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1768486704; x=1769091504;
-        h=user-agent:in-reply-to:content-disposition:mime-version:references
-         :message-id:subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=t4RC+ObhpewYzGNMozpFt20pSaSgz2F7mC9Tp5X8J9U=;
-        b=aKsGTJo6tJ8FgpyK0sBYl07G1/hSTZ0cxkETs3/O9D9xn2kVeDnnHz/sOT/Fig5nQR
-         b698+X5YBhSA1aHFLBzbvnloIg4czHm2wdITMMQTmO6TbHZDNj+Gf3gU1946w7kS4GQo
-         kfI4aEIAQ0cEQVdjE7wECvPU2oayUGQh9athnHeYEktyEMQ3VKazJv3iope9YJ/6V2Md
-         NLaZ3vKin6A/ykYclzusqxe1y3GQH3y5TsArvn8q3V0549mbcMvaOo6CBxwhMy/slhw8
-         CptGj7guNrA10EVBp3QTlLyX1z7zniwiRXQ4MWDtzJC3aQd//k+BEQ38eF3Aj+/FrW94
-         fbRA==
-X-Forwarded-Encrypted: i=1; AJvYcCX3K3Wa5h7wrWtlSB7p6AW6t8c9gPlpA6NgP7B9eFd5++W0lrEYd8c/zoimTy8LHNyLi/3Ci0Tso1c=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzXu9/1TD2Yt4yvV9aq7cdGwV1a3N1eLxlS1bXlum7lk3BtZsuv
-	nKv8fYlIuiVm/VLguby0oxtWvqM19RhHrleKQCkM1fDLg9foEt4R0ARAx5kvUTI7NIDEu70rvfZ
-	n/ChFk9fPdS03oJC90Qs3m2sq7Nunut8syb7g6yv4Tsy6YO7NJ+M/sgUsZD6k6/kYEr0=
-X-Gm-Gg: AY/fxX5Vx6d0kvgJkkaqoLPoJwN+lxqqkgt5qni3Z1sHwJlkEhf7lWB1xtqzeBpVWYH
-	umTmdH35757AOnuLecKa6dLrq0ulDrtxoeg1opKIqInL9EEbzOay22tJVQ+s/Ie8tbWlQm9qigP
-	NN3yR5TWSskYxvysJfW1MR+7shFbnPMw96eZtl/tUSoq6kqhMy7MeDVvh9piVRhLFZiTBTdXIQF
-	MM0ksysdXZdAhIOjM+4/7JHa7c4OYmYlWycY+NOjZtmt9bKBmm8BSbproZaZfYGujgnxWQUs42p
-	Joh7lQgmHwEWV+5p4AgATxBd9jHf9DND5l+852Kj7ALCWzGxx5RE/aXFAXQJUJNvYBCxge4hIIs
-	nSWTM/M4=
-X-Received: by 2002:a05:6214:508e:b0:880:38ba:a4d9 with SMTP id 6a1803df08f44-8927445deb6mr82449796d6.67.1768486703842;
-        Thu, 15 Jan 2026 06:18:23 -0800 (PST)
-X-Received: by 2002:a05:6214:508e:b0:880:38ba:a4d9 with SMTP id 6a1803df08f44-8927445deb6mr82449266d6.67.1768486703308;
-        Thu, 15 Jan 2026 06:18:23 -0800 (PST)
-Received: from redhat.com ([2600:382:8103:a511:9f9:74cd:13ab:4d59])
-        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-890770e2a8fsm201085636d6.16.2026.01.15.06.18.21
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 15 Jan 2026 06:18:22 -0800 (PST)
-Date: Thu, 15 Jan 2026 09:18:20 -0500
-From: Brian Masney <bmasney@redhat.com>
+	id 1vgOS2-0000000CUcS-1Q3a;
+	Thu, 15 Jan 2026 14:35:57 +0000
+Received: from duge-virtual-machine (unknown [183.192.221.134])
+	by APP-05 (Coremail) with SMTP id zQCowAAXqw4f+2hpvPUXBQ--.42438S2;
+	Thu, 15 Jan 2026 22:35:13 +0800 (CST)
+Date: Thu, 15 Jan 2026 22:35:11 +0800
+From: Jiayu Du <jiayu.riscv@isrc.iscas.ac.cn>
 To: Vinod Koul <vkoul@kernel.org>
-Cc: Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>, linux-clk@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	linux-phy@lists.infradead.org
-Subject: Re: [PATCH 25/27] phy: ti: phy-j721e-wiz: convert from
- divider_round_rate() to divider_determine_rate()
-Message-ID: <aWj3LPq37Dr9OLU6@redhat.com>
-References: <20260108-clk-divider-round-rate-v1-0-535a3ed73bf3@redhat.com>
- <20260108-clk-divider-round-rate-v1-25-535a3ed73bf3@redhat.com>
- <aWelbtaZjS4SZGQO@vaman>
+Cc: conor@kernel.org, neil.armstrong@linaro.org, gregkh@linuxfoundation.org,
+	robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+	pjw@kernel.org, palmer@dabbelt.com, aou@eecs.berkeley.edu,
+	alex@ghiti.fr, 18771902331@163.com, cyy@cyyself.name,
+	TroyMitchell988@gmail.com, kingxukai@zohomail.com,
+	linux-phy@lists.infradead.org, linux-usb@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-riscv@lists.infradead.org, gaohan@iscas.ac.cn
+Subject: Re: [PATCH v2 3/4] phy: usb: Add driver for Canaan K230 USB 2.0 PHY
+Message-ID: <aWj7HyeDQU6ytGz3@duge-virtual-machine>
+References: <20260115064223.21926-1-jiayu.riscv@isrc.iscas.ac.cn>
+ <20260115064223.21926-4-jiayu.riscv@isrc.iscas.ac.cn>
+ <aWjYHK1cTj8Dbz2B@vaman>
 MIME-Version: 1.0
-In-Reply-To: <aWelbtaZjS4SZGQO@vaman>
-User-Agent: Mutt/2.2.14 (2025-02-20)
-X-Mimecast-Spam-Score: 0
-X-Mimecast-MFC-PROC-ID: Q_OJGPpp0f1uLsoPSimGEDrao1hFH41l1aWCXB9vqzE_1768486704
-X-Mimecast-Originator: redhat.com
 Content-Disposition: inline
+In-Reply-To: <aWjYHK1cTj8Dbz2B@vaman>
+X-CM-TRANSID: zQCowAAXqw4f+2hpvPUXBQ--.42438S2
+X-Coremail-Antispam: 1UD129KBjvJXoW7ZF45Kry8Jw1UAw1xCrW5GFg_yoW8WFy7pF
+	Z5XF1jqF43Jr97WrWSvF4kGr1Svws5Kw1UCryak3yrWwnIvr4xCayjg3y5Zwn5ZFZ5AFyI
+	9r1jqFyxCFZIkrDanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDU0xBIdaVrnRJUUUvlb7Iv0xC_Kw4lb4IE77IF4wAFF20E14v26ryj6rWUM7CY07I2
+	0VC2zVCF04k26cxKx2IYs7xG6rWj6s0DM7CIcVAFz4kK6r1j6r18M28lY4IEw2IIxxk0rw
+	A2F7IY1VAKz4vEj48ve4kI8wA2z4x0Y4vE2Ix0cI8IcVAFwI0_Jr0_JF4l84ACjcxK6xII
+	jxv20xvEc7CjxVAFwI0_Gr0_Cr1l84ACjcxK6I8E87Iv67AKxVW8JVWxJwA2z4x0Y4vEx4
+	A2jsIEc7CjxVAFwI0_Gr1j6F4UJwAS0I0E0xvYzxvE52x082IY62kv0487Mc02F40EFcxC
+	0VAKzVAqx4xG6I80ewAv7VC0I7IYx2IY67AKxVWUJVWUGwAv7VC2z280aVAFwI0_Jr0_Gr
+	1lOx8S6xCaFVCjc4AY6r1j6r4UM4x0Y48IcVAKI48JM4IIrI8v6xkF7I0E8cxan2IY04v7
+	MxkF7I0En4kS14v26r4a6rW5MxAIw28IcxkI7VAKI48JMxC20s026xCaFVCjc4AY6r1j6r
+	4UMI8I3I0E5I8CrVAFwI0_Jr0_Jr4lx2IqxVCjr7xvwVAFwI0_JrI_JrWlx4CE17CEb7AF
+	67AKxVW8ZVWrXwCIc40Y0x0EwIxGrwCI42IY6xIIjxv20xvE14v26r1j6r1xMIIF0xvE2I
+	x0cI8IcVCY1x0267AKxVW8JVWxJwCI42IY6xAIw20EY4v20xvaj40_Jr0_JF4lIxAIcVC2
+	z280aVAFwI0_Gr0_Cr1lIxAIcVC2z280aVCY1x0267AKxVW8Jr0_Cr1UYxBIdaVFxhVjvj
+	DU0xZFpf9x07bIBTOUUUUU=
+X-Originating-IP: [183.192.221.134]
+X-CM-SenderInfo: 5mld534oul2uny6l223fol2u1dvotugofq/
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260115_061828_906885_3551584C 
-X-CRM114-Status: GOOD (  17.70  )
+X-CRM114-CacheID: sfid-20260115_063554_746004_21334940 
+X-CRM114-Status: GOOD (  10.69  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,40 +86,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Vinod,
-
-On Wed, Jan 14, 2026 at 07:47:18PM +0530, Vinod Koul wrote:
-> On 08-01-26, 16:16, Brian Masney wrote:
-> > The divider_round_rate() function is now deprecated, so let's migrate
-> > to divider_determine_rate() instead so that this deprecated API can be
-> > removed.
-> > 
-> > Note that when the main function itself was migrated to use
-> > determine_rate, this was mistakenly converted to:
-> > 
-> >     req->rate = divider_round_rate(...)
-> > 
-> > This is invalid in the case when an error occurs since it can set the
-> > rate to a negative value.
+On Thu, Jan 15, 2026 at 05:35:48PM +0530, Vinod Koul wrote:
+> On 15-01-26, 14:42, Jiayu Du wrote:
 > 
-> Acked-by: Vinod Koul <vkoul@kernel.org>
+> > +static struct phy *k230_usb_phy_xlate(struct device *dev,
+> > +				      const struct of_phandle_args *args)
+> > +{
+> > +	struct k230_usb_phy_global *global = dev_get_drvdata(dev);
+> > +	struct k230_usb_phy_instance *phy_inst;
+> > +	struct phy *phy;
+> > +
+> > +	if (args->args[0] >= MAX_PHYS)
+> > +		return ERR_PTR(-EINVAL);
+> > +
+> > +	phy_inst = devm_kzalloc(dev, sizeof(*phy_inst), GFP_KERNEL);
+> > +	if (!phy_inst)
+> > +		return ERR_PTR(-ENOMEM);
+> > +
+> > +	phy_inst->global = global;
+> > +	phy_inst->index = args->args[0];
+> > +
+> > +	phy = devm_phy_create(dev, NULL, &k230_usb_phy_ops);
+> > +	if (IS_ERR(phy))
+> > +		return ERR_PTR(PTR_ERR(phy));
+> > +
+> > +	phy_set_drvdata(phy, phy_inst);
+> 
+> This seems wrong place, why is this not done in the driver probe?
 
-Thanks for the Acked-by.
+You are right, creating phy instances in the xlate function is not
+the right place. I will move the allocation and devm_phy_creat to
+the probe phase to create both instances.
 
-However, this patch depends on this other series of mine that's merged
-into your phy tree:
+> > +	global->reg_test_offset[0] = 0x70;
+> > +	global->reg_ctl_offset[0] = 0xb0;
+> > +	global->reg_test_offset[1] = 0x90;
+> > +	global->reg_ctl_offset[1] = 0xb8;
+> 
+> Where are these magic values coming from?
 
-https://lore.kernel.org/linux-clk/176661322399.4169.14248756511703978007@lazor/
+These offsets are from K230 Technical Reference Manual section 12.6.4.2.
+The TRM is here[1]. I will define them as macros with descriptive names.
 
-Stephen asked for an Acked-by for that series or an immutable branch.
+Link:
+https://kendryte-download.canaan-creative.com/developer/k230/HDK/K230%E7%A1%AC%E4%BB%B6%E6%96%87%E6%A1%A3/K230_Technical_Reference_Manual_V0.3.1_20241118.pdf[1]
 
-This will allow us to remove round_rate from the clk core.
+I will send v2 with these changes soon.
 
-I also have a small series to post that's dependent on all of this that
-lets us get rid of the noop determine_rate implementations that only
-'return 0'. I haven't posted that because of the dependencies.
-
-Brian
+Regards,
+Jiayu Du
 
 
 -- 
