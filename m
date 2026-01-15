@@ -4,73 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EE8C5D44C56
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Jan 2026 14:48:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 063B0D44C5C
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Jan 2026 14:51:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hSXQ9h0lVpgbaFvBvYZKd/gZhX0fdslED2EQJ2GzyWU=; b=mJVUzNHG2neVD0
-	ep66h5/mvRegiSyI02ZKzTFdW83gT/9km5sOmnPUmDr8+3RshRINr2DX2oXH+KbPwOgc0cOKOiofg
-	q2RszBHrlQN2zcZvzNzBN1JD3u7hsc16tQbebDaPTtOJ/Fb/CAGzUz/1cDkrmCfBq7Yd/HMyU0S35
-	xxObg67VwG6vZnl71ldKJ5PrAUVQ7VgnhlVV13SJ0GrDwELwK+lukeg/y/xA9rkClArDZKOSyKMwF
-	E90JRZri5owffJ8UqVIMoNihvsKM+Iz2mM1U7rIGSaXVP0SqKchHUel4yLpu8gR3nz27VFa2wo8N5
-	T4wvhS188LrdOFbikvdQ==;
+	List-Owner; bh=+jH/PwpiW63JOYZfQB2EtbQ7j7oeQz0FpiuND8/Rb+E=; b=fuJGxTk3nUpNqp
+	IC6h/yRti+ptjmoE7wTgY829oaOz+iPbD4fYowdrZ2vhgBpc512kHTfSIW7svY6UE/sqk01ReyCDN
+	AFAbjwDlxYK7f2uKSvsLPatnfBDiS9Re77Tfim9LqkUF1V49FKfnSr+eSWOGQ4qevF3RlGI2xlRCs
+	6KeTWbBhSW2E8wkwfpKj3WdzwEkGL80uhmarz74xaQKjYYaszkV5YoZ9fj+/9655hQ++pGbYVpiZ3
+	jGSGJu7AVlNCJWiAAlzKmmFQymQA2Hv678pS6l+0hIw5kISxsxZWH7wA9TbNmbBrTU4nooXTLrQGE
+	yaAYfq9M2t5y0RfzTwug==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vgOeY-0000000CWnp-2reB;
-	Thu, 15 Jan 2026 14:48:50 +0000
-Received: from smtpout-02.galae.net ([185.246.84.56])
+	id 1vgOhI-0000000CXGW-35Xm;
+	Thu, 15 Jan 2026 14:51:40 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vgOeV-0000000CWmy-21vN;
-	Thu, 15 Jan 2026 14:48:48 +0000
-Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-02.galae.net (Postfix) with ESMTPS id D273B1A2880;
-	Thu, 15 Jan 2026 14:48:45 +0000 (UTC)
-Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id A0645606B6;
-	Thu, 15 Jan 2026 14:48:45 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 0368510B685B3;
-	Thu, 15 Jan 2026 15:48:40 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1768488524; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 content-transfer-encoding:content-language:in-reply-to:references;
-	bh=+QYowkF0ylQwr81E7dNDCYNQ4alDslj2K3oqmZv522g=;
-	b=oUheIc45ljAvwXYhk0Aau0jRxamfAh6xH0rQ4hZbzgdHLYgXV/BtH6dfKAGDefWVtGM4lo
-	iaHN8MCwCkmjKP1GF4/BS7krnuSlGSpac7jaH25lzfm6/aQMOFQTQm+NKX3Y/hGOhsaZ/P
-	snd1qOC5zqOk5oBGrCwOQIGzRGwc9UAUPWjtzJQyGXzNSbsN7a1a1doSqVOydrHPsa/0nz
-	LDNcnsM0eeB1E+PNzjAoI/LO3TCcJs61WnLDcaoxlGHsvaIoqRKE2abbphB2UZnXXNOImm
-	XMcheO6zkttudxz3PTioR0vMaAaB79bo7QXKFMj1RE8UETvfKnraWS7O9OBVBQ==
-Message-ID: <a91a0937-93cd-40f2-9759-8823fb08f48c@bootlin.com>
-Date: Thu, 15 Jan 2026 15:48:40 +0100
+	id 1vgOhH-0000000CXGG-2MJn
+	for linux-phy@lists.infradead.org;
+	Thu, 15 Jan 2026 14:51:39 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 53ACB60195;
+	Thu, 15 Jan 2026 14:51:38 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E4559C116D0;
+	Thu, 15 Jan 2026 14:51:37 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1768488698;
+	bh=TWF81yy1xgtmRFWocZ1eiYr0ym2w1ajgLPheFFGHTeM=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=HGft4Q6OGiARgXQn7TPJrqI8Lt/ixWBKU8hcxsXkJkb6f1NxrUWug+5r5Ch9aYll+
+	 BrR0fglPrvU8GMI3aGjD209ZLxFvrOOAhNGFu/AiSrd98oixFMVO9ZbcBpGpfE8iRK
+	 xPKvfnZdx94Jqk3INsJhNOLEUnEfNj+dQ2iDhXJwsbw8w9c/3REPSmuRpAJt8KaS1r
+	 k1vquYea3uhZeZre+iZiNEfkJSMp5g9Ni+U/19RWWLNUGzrKiqCqm1hNiVHHmpA4aZ
+	 ZbHjYlbksMFhhZWbqW6SF6I2Yj7Mfo1fHulwCPu3m2fK0PIMzQN+XGHQhXWYQhpY6K
+	 0xGO6Pu/GU6Bg==
+Date: Thu, 15 Jan 2026 08:51:37 -0600
+From: Rob Herring <robh@kernel.org>
+To: Charan Pedumuru <charan.pedumuru@gmail.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v2 2/2] dt-bindings: phy: ti,control-phy-otghs: convert
+ to DT schema
+Message-ID: <20260115145137.GB3319937-robh@kernel.org>
+References: <20260107-ti-phy-v2-0-a1ec27401fff@gmail.com>
+ <20260107-ti-phy-v2-2-a1ec27401fff@gmail.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH net-next 05/14] net: stmmac: add stmmac core serdes
- support
-To: "Russell King (Oracle)" <rmk+kernel@armlinux.org.uk>,
- Andrew Lunn <andrew@lunn.ch>, Heiner Kallweit <hkallweit1@gmail.com>
-Cc: Alexandre Torgue <alexandre.torgue@foss.st.com>,
- Andrew Lunn <andrew+netdev@lunn.ch>, "David S. Miller"
- <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>,
- Jakub Kicinski <kuba@kernel.org>,
- Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
- linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-stm32@st-md-mailman.stormreply.com,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>,
- Neil Armstrong <neil.armstrong@linaro.org>, netdev@vger.kernel.org,
- Paolo Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>
-References: <aWfWDsCoBc3YRKKo@shell.armlinux.org.uk>
- <E1vg4w2-00000003SG5-2FH5@rmk-PC.armlinux.org.uk>
-From: Maxime Chevallier <maxime.chevallier@bootlin.com>
-Content-Language: en-US
-In-Reply-To: <E1vg4w2-00000003SG5-2FH5@rmk-PC.armlinux.org.uk>
-X-Last-TLS-Session-Version: TLSv1.3
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260115_064847_804651_B83E64AC 
-X-CRM114-Status: GOOD (  33.70  )
+Content-Disposition: inline
+In-Reply-To: <20260107-ti-phy-v2-2-a1ec27401fff@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,368 +76,244 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Russell,
-
-On 14/01/2026 18:45, Russell King (Oracle) wrote:
-> Rather than having platform glue implement SerDes PHY support, add it
-> to the core driver, specifically to the stmmac integrated PCS driver
-> as the SerDes is connected to the integrated PCS.
+On Wed, Jan 07, 2026 at 04:11:16PM +0000, Charan Pedumuru wrote:
+> Convert TI OMAP Control PHY binding to DT schema.
+> Changes during conversion:
+> - Define a new pattern 'control-phy' to match nodes defined in DT.
 > 
-> Platforms using external PCS can also populate plat->serdes, and the
-> core driver will call phy_init() and phy_exit() when the administrative
-> state of the interface changes, but the other phy methods will not be
-> called.
-> 
-> Signed-off-by: Russell King (Oracle) <rmk+kernel@armlinux.org.uk>
-
-Unfortunately I have no way to test. But still,
-
-Reviewed-by: Maxime Chevallier <maxime.chevallier@bootlin.com>
-
-Maxime
-
+> Signed-off-by: Charan Pedumuru <charan.pedumuru@gmail.com>
 > ---
->  drivers/net/ethernet/stmicro/stmmac/Makefile  |   2 +-
->  .../net/ethernet/stmicro/stmmac/stmmac_main.c |  14 ++-
->  .../net/ethernet/stmicro/stmmac/stmmac_pcs.c  |  38 +++++-
->  .../net/ethernet/stmicro/stmmac/stmmac_pcs.h  |   1 +
->  .../ethernet/stmicro/stmmac/stmmac_serdes.c   | 111 ++++++++++++++++++
->  .../ethernet/stmicro/stmmac/stmmac_serdes.h   |  16 +++
->  include/linux/stmmac.h                        |   2 +
->  7 files changed, 180 insertions(+), 4 deletions(-)
->  create mode 100644 drivers/net/ethernet/stmicro/stmmac/stmmac_serdes.c
->  create mode 100644 drivers/net/ethernet/stmicro/stmmac/stmmac_serdes.h
+>  .../bindings/phy/ti,control-phy-otghs.yaml         | 94 +++++++++++++++++++++
+>  Documentation/devicetree/bindings/phy/ti-phy.txt   | 98 ----------------------
+>  2 files changed, 94 insertions(+), 98 deletions(-)
 > 
-> diff --git a/drivers/net/ethernet/stmicro/stmmac/Makefile b/drivers/net/ethernet/stmicro/stmmac/Makefile
-> index c9263987ef8d..a3c2cd5d0c91 100644
-> --- a/drivers/net/ethernet/stmicro/stmmac/Makefile
-> +++ b/drivers/net/ethernet/stmicro/stmmac/Makefile
-> @@ -7,7 +7,7 @@ stmmac-objs:= stmmac_main.o stmmac_ethtool.o stmmac_mdio.o ring_mode.o	\
->  	      dwmac4_dma.o dwmac4_lib.o dwmac4_core.o dwmac5.o hwif.o \
->  	      stmmac_tc.o dwxgmac2_core.o dwxgmac2_dma.o dwxgmac2_descs.o \
->  	      stmmac_xdp.o stmmac_est.o stmmac_fpe.o stmmac_vlan.o \
-> -	      stmmac_pcs.o $(stmmac-y)
-> +	      stmmac_pcs.o stmmac_serdes.o $(stmmac-y)
->  
->  stmmac-$(CONFIG_STMMAC_SELFTESTS) += stmmac_selftests.o
->  
-> diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-> index 24a2555ca329..6c515f9efbe7 100644
-> --- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-> +++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-> @@ -48,6 +48,7 @@
->  #include "stmmac_fpe.h"
->  #include "stmmac.h"
->  #include "stmmac_pcs.h"
-> +#include "stmmac_serdes.h"
->  #include "stmmac_xdp.h"
->  #include <linux/reset.h>
->  #include <linux/of_mdio.h>
-> @@ -3549,12 +3550,16 @@ static void stmmac_safety_feat_configuration(struct stmmac_priv *priv)
->  
->  static void stmmac_clk_rx_i_require(struct stmmac_priv *priv)
->  {
-> +	dwmac_serdes_power_on(priv);
-> +	/* Only sets the SerDes mode if it wasn't already configured. */
-> +	dwmac_serdes_init_mode(priv, priv->plat->phy_interface);
->  	phylink_rx_clk_stop_block(priv->phylink);
->  }
->  
->  static void stmmac_clk_rx_i_release(struct stmmac_priv *priv)
->  {
->  	phylink_rx_clk_stop_unblock(priv->phylink);
-> +	dwmac_serdes_power_off(priv);
->  }
->  
->  /**
-> @@ -4152,10 +4157,14 @@ static int stmmac_open(struct net_device *dev)
->  	if (ret)
->  		goto err_runtime_pm;
->  
-> -	ret = __stmmac_open(dev, dma_conf);
-> +	ret = dwmac_serdes_init(priv);
->  	if (ret)
->  		goto err_disconnect_phy;
->  
-> +	ret = __stmmac_open(dev, dma_conf);
-> +	if (ret)
-> +		goto err_serdes;
-> +
->  	kfree(dma_conf);
->  
->  	/* We may have called phylink_speed_down before */
-> @@ -4163,6 +4172,8 @@ static int stmmac_open(struct net_device *dev)
->  
->  	return ret;
->  
-> +err_serdes:
-> +	dwmac_serdes_exit(priv);
->  err_disconnect_phy:
->  	phylink_disconnect_phy(priv->phylink);
->  err_runtime_pm:
-> @@ -4226,6 +4237,7 @@ static int stmmac_release(struct net_device *dev)
->  
->  	__stmmac_release(dev);
->  
-> +	dwmac_serdes_exit(priv);
->  	phylink_disconnect_phy(priv->phylink);
->  	pm_runtime_put(priv->device);
->  
-> diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.c
-> index 2f826fe7229b..4d1902f3a58f 100644
-> --- a/drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.c
-> +++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.c
-> @@ -1,12 +1,25 @@
->  // SPDX-License-Identifier: GPL-2.0-only
->  #include "stmmac.h"
->  #include "stmmac_pcs.h"
-> +#include "stmmac_serdes.h"
->  
->  static int dwmac_integrated_pcs_enable(struct phylink_pcs *pcs)
->  {
->  	struct stmmac_pcs *spcs = phylink_pcs_to_stmmac_pcs(pcs);
-> +	struct stmmac_priv *priv = spcs->priv;
-> +	int ret;
->  
-> -	stmmac_mac_irq_modify(spcs->priv, 0, spcs->int_mask);
-> +	ret = dwmac_serdes_power_on(priv);
-> +	if (ret)
-> +		return ret;
-> +
-> +	if (spcs->interface != PHY_INTERFACE_MODE_NA) {
-> +		ret = dwmac_serdes_set_mode(priv, spcs->interface);
-> +		if (ret)
-> +			return ret;
-> +	}
-> +
-> +	stmmac_mac_irq_modify(priv, 0, spcs->int_mask);
->  
->  	return 0;
->  }
-> @@ -14,8 +27,11 @@ static int dwmac_integrated_pcs_enable(struct phylink_pcs *pcs)
->  static void dwmac_integrated_pcs_disable(struct phylink_pcs *pcs)
->  {
->  	struct stmmac_pcs *spcs = phylink_pcs_to_stmmac_pcs(pcs);
-> +	struct stmmac_priv *priv = spcs->priv;
->  
-> -	stmmac_mac_irq_modify(spcs->priv, spcs->int_mask, 0);
-> +	stmmac_mac_irq_modify(priv, spcs->int_mask, 0);
-> +
-> +	dwmac_serdes_power_off(priv);
->  }
->  
->  static void dwmac_integrated_pcs_get_state(struct phylink_pcs *pcs,
-> @@ -32,6 +48,15 @@ static int dwmac_integrated_pcs_config(struct phylink_pcs *pcs,
->  				       bool permit_pause_to_mac)
->  {
->  	struct stmmac_pcs *spcs = phylink_pcs_to_stmmac_pcs(pcs);
-> +	int ret;
-> +
-> +	if (spcs->interface != interface) {
-> +		ret = dwmac_serdes_set_mode(spcs->priv, interface);
-> +		if (ret)
-> +			return ret;
-> +
-> +		spcs->interface = interface;
-> +	}
->  
->  	dwmac_ctrl_ane(spcs->base, 0, 1, spcs->priv->hw->reverse_sgmii_enable);
->  
-> @@ -71,6 +96,7 @@ int stmmac_integrated_pcs_init(struct stmmac_priv *priv, unsigned int offset,
->  			       u32 int_mask)
->  {
->  	struct stmmac_pcs *spcs;
-> +	int ret;
->  
->  	spcs = devm_kzalloc(priv->device, sizeof(*spcs), GFP_KERNEL);
->  	if (!spcs)
-> @@ -81,6 +107,14 @@ int stmmac_integrated_pcs_init(struct stmmac_priv *priv, unsigned int offset,
->  	spcs->int_mask = int_mask;
->  	spcs->pcs.ops = &dwmac_integrated_pcs_ops;
->  
-> +	if (priv->plat->serdes) {
-> +		ret = dwmac_serdes_validate(priv, PHY_INTERFACE_MODE_SGMII);
-> +		if (ret)
-> +			dev_warn(priv->device,
-> +				 "serdes does not support SGMII: %pe\n",
-> +				 ERR_PTR(ret));
-> +	}
-> +
->  	__set_bit(PHY_INTERFACE_MODE_SGMII, spcs->pcs.supported_interfaces);
->  
->  	priv->integrated_pcs = spcs;
-> diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.h b/drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.h
-> index c4e6b242d390..36bf75fdf478 100644
-> --- a/drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.h
-> +++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.h
-> @@ -53,6 +53,7 @@ struct stmmac_pcs {
->  	struct stmmac_priv *priv;
->  	void __iomem *base;
->  	u32 int_mask;
-> +	phy_interface_t interface;
->  	struct phylink_pcs pcs;
->  };
->  
-> diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_serdes.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_serdes.c
+> diff --git a/Documentation/devicetree/bindings/phy/ti,control-phy-otghs.yaml b/Documentation/devicetree/bindings/phy/ti,control-phy-otghs.yaml
 > new file mode 100644
-> index 000000000000..3003e1ae38d2
+> index 000000000000..2c91609cac35
 > --- /dev/null
-> +++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_serdes.c
-> @@ -0,0 +1,111 @@
-> +#include <linux/phy/phy.h>
+> +++ b/Documentation/devicetree/bindings/phy/ti,control-phy-otghs.yaml
+> @@ -0,0 +1,94 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/ti,control-phy-otghs.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > +
-> +#include "stmmac.h"
-> +#include "stmmac_serdes.h"
+> +title: TI OMAP Control PHY Module
 > +
-> +static phy_interface_t dwmac_serdes_phy_modes[] = {
-> +	PHY_INTERFACE_MODE_SGMII,
-> +	PHY_INTERFACE_MODE_1000BASEX,
-> +	PHY_INTERFACE_MODE_2500BASEX
-> +};
+> +maintainers:
+> +  - Kishon Vijay Abraham I <kishon@ti.com>
 > +
-> +int dwmac_serdes_validate(struct stmmac_priv *priv, phy_interface_t interface)
-> +{
-> +	return phy_validate(priv->plat->serdes, PHY_MODE_ETHERNET, interface,
-> +			    NULL);
-> +}
+> +description:
+> +  The TI OMAP Control PHY module is a hardware block within the system
+> +  control module (SCM) of Texas Instruments OMAP SoCs. It provides
+> +  centralized control over power, configuration, and auxiliary features
+> +  for multiple on-chip PHYs. This module is essential for proper PHY
+> +  operation in power-constrained embedded systems.
 > +
-> +int dwmac_serdes_init(struct stmmac_priv *priv)
-> +{
-> +	size_t i;
-> +	int ret;
-> +
-> +	if (!priv->plat->serdes)
-> +		return 0;
-> +
-> +	/* Encourage good implementation of the SerDes PHY driver, so that
-> +	 * we can discover which Ethernet modes the SerDes supports.
-> +	 * Unfortunately, some implementations are noisy (bad), others
-> +	 * require phy_set_speed() to select the correct speed first
-> +	 * (which then reprograms the SerDes, negating the whole point of
-> +	 * phy_validate().) Weed out these incompatible implementations.
-> +	 */
-> +	for (i = 0; i < ARRAY_SIZE(dwmac_serdes_phy_modes); i++) {
-> +		ret = phy_validate(priv->plat->serdes, PHY_MODE_ETHERNET,
-> +				   dwmac_serdes_phy_modes[i], NULL);
-> +		if (ret == 0 || ret == -EOPNOTSUPP)
-> +			break;
-> +	}
-> +
-> +	if (ret == -EOPNOTSUPP)
-> +		dev_warn(priv->device,
-> +			 "SerDes driver does not implement phy_validate()\n");
-> +	if (ret) {
-> +		/* The SerDes PHY failed validation, refuse to use it. */
-> +		dev_warn(priv->device,
-> +			 "SerDes driver fails to validate SGMII, 1000BASE-X nor 2500BASE-X\n");
-> +		return -EINVAL;
-> +	}
-> +
-> +	ret = phy_init(priv->plat->serdes);
-> +	if (ret)
-> +		dev_err(priv->device, "failed to initialize SerDes: %pe\n",
-> +			ERR_PTR(ret));
-> +
-> +	return ret;
-> +}
-> +
-> +int dwmac_serdes_power_on(struct stmmac_priv *priv)
-> +{
-> +	int ret;
-> +
-> +	ret = phy_power_on(priv->plat->serdes);
-> +	if (ret)
-> +		dev_err(priv->device, "failed to power on SerDes: %pe\n",
-> +			ERR_PTR(ret));
-> +
-> +	return ret;
-> +}
-> +
-> +int dwmac_serdes_init_mode(struct stmmac_priv *priv, phy_interface_t interface)
-> +{
-> +	struct phy *serdes = priv->plat->serdes;
-> +
-> +	if (phy_get_mode(serdes) == PHY_MODE_ETHERNET)
-> +		return 0;
-> +
-> +	return dwmac_serdes_set_mode(priv, interface);
-> +}
-> +
-> +int dwmac_serdes_set_mode(struct stmmac_priv *priv, phy_interface_t interface)
-> +{
-> +	struct phy *serdes = priv->plat->serdes;
-> +	int ret;
-> +
-> +	ret = phy_set_mode_ext(serdes, PHY_MODE_ETHERNET, interface);
-> +	if (ret)
-> +		dev_err(priv->device,
-> +			"failed to set SerDes mode %s: %pe\n",
-> +			phy_modes(interface), ERR_PTR(ret));
-> +
-> +	return ret;
-> +}
-> +
-> +void dwmac_serdes_power_off(struct stmmac_priv *priv)
-> +{
-> +	int ret;
-> +
-> +	ret = phy_power_off(priv->plat->serdes);
-> +	if (ret)
-> +		dev_err(priv->device, "failed to power off SerDes: %pe\n",
-> +			ERR_PTR(ret));
-> +}
-> +
-> +void dwmac_serdes_exit(struct stmmac_priv *priv)
-> +{
-> +	int ret = phy_exit(priv->plat->serdes);
-> +
-> +	if (ret)
-> +		dev_err(priv->device, "failed to shutdown SerDes: %pe\n",
-> +			ERR_PTR(ret));
-> +}
-> diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_serdes.h b/drivers/net/ethernet/stmicro/stmmac/stmmac_serdes.h
-> new file mode 100644
-> index 000000000000..a31e6c9e0570
-> --- /dev/null
-> +++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_serdes.h
-> @@ -0,0 +1,16 @@
-> +#ifndef STMMAC_SERDES_H
-> +#define STMMAC_SERDES_H
-> +
-> +#include <linux/phy.h>
-> +
-> +struct stmmac_priv;
-> +
-> +int dwmac_serdes_validate(struct stmmac_priv *priv, phy_interface_t interface);
-> +int dwmac_serdes_init(struct stmmac_priv *priv);
-> +int dwmac_serdes_power_on(struct stmmac_priv *priv);
-> +int dwmac_serdes_init_mode(struct stmmac_priv *priv, phy_interface_t interface);
-> +int dwmac_serdes_set_mode(struct stmmac_priv *priv, phy_interface_t interface);
-> +void dwmac_serdes_power_off(struct stmmac_priv *priv);
-> +void dwmac_serdes_exit(struct stmmac_priv *priv);
-> +
-> +#endif
-> diff --git a/include/linux/stmmac.h b/include/linux/stmmac.h
-> index f1054b9c2d8a..4db506e5cf13 100644
-> --- a/include/linux/stmmac.h
-> +++ b/include/linux/stmmac.h
-> @@ -193,6 +193,7 @@ enum dwmac_core_type {
->  #define STMMAC_FLAG_HWTSTAMP_CORRECT_LATENCY	BIT(13)
->  
->  struct mac_device_info;
-> +struct phy;
->  
->  struct plat_stmmacenet_data {
->  	enum dwmac_core_type core_type;
-> @@ -222,6 +223,7 @@ struct plat_stmmacenet_data {
->  	 * that phylink uses.
->  	 */
->  	phy_interface_t phy_interface;
-> +	struct phy *serdes;
->  	struct stmmac_mdio_bus_data *mdio_bus_data;
->  	struct device_node *phy_node;
->  	struct fwnode_handle *port_node;
+> +properties:
+> +  $nodename:
+> +    pattern: "^control-phy(@[0-9a-f]+)?$"
 
+Drop. Non-standard.
+
+> +
+> +  compatible:
+> +    enum:
+> +      - ti,control-phy-otghs
+> +      - ti,control-phy-usb2
+> +      - ti,control-phy-pipe3
+> +      - ti,control-phy-pcie
+> +      - ti,control-phy-usb2-dra7
+> +      - ti,control-phy-usb2-am437
+
+Alphabetical order
+
+> +
+> +  reg:
+> +    minItems: 1
+> +    maxItems: 4
+
+With the constraints below, there is no case that allows 4 entries.
+
+> +
+> +  reg-names:
+> +    minItems: 1
+> +    maxItems: 4
+> +    items:
+> +      enum: [otghs_control, power, pcie_pcs, control_sma]
+> +
+> +allOf:
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - ti,control-phy-otghs
+> +    then:
+> +      properties:
+> +        reg-names:
+> +          const: otghs_control
+> +
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - ti,control-phy-pcie
+
+There's no .dts with this compatible. Do you really need this 
+compatible or can drop it?
+
+> +    then:
+> +      properties:
+> +        reg-names:
+> +          items:
+> +            - enum: [power, pcie_pcs, control_sma]
+
+It's really 1 entry of 3 possible names?
+
+> +
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            enum:
+> +              - ti,control-phy-usb2
+> +              - ti,control-phy-usb2-dra7
+> +              - ti,control-phy-usb2-am437
+> +              - ti,control-phy-pipe3
+> +    then:
+> +      properties:
+> +        reg-names:
+> +          const: power
+> +
+> +required:
+> +  - reg
+> +  - compatible
+> +  - reg-names
+> +
+> +unevaluatedProperties: false
+> +
+> +examples:
+> +  - |
+> +    control-phy@4a00233c {
+
+phy@...
+
+> +        compatible = "ti,control-phy-otghs";
+> +        reg = <0x4a00233c 0x4>;
+> +        reg-names = "otghs_control";
+> +    };
+> +...
+> diff --git a/Documentation/devicetree/bindings/phy/ti-phy.txt b/Documentation/devicetree/bindings/phy/ti-phy.txt
+> deleted file mode 100644
+> index 7c7936b89f2c..000000000000
+> --- a/Documentation/devicetree/bindings/phy/ti-phy.txt
+> +++ /dev/null
+> @@ -1,98 +0,0 @@
+> -TI PHY: DT DOCUMENTATION FOR PHYs in TI PLATFORMs
+> -
+> -OMAP CONTROL PHY
+> -
+> -Required properties:
+> - - compatible: Should be one of
+> - "ti,control-phy-otghs" - if it has otghs_control mailbox register as on OMAP4.
+> - "ti,control-phy-usb2" - if it has Power down bit in control_dev_conf register
+> -                        e.g. USB2_PHY on OMAP5.
+> - "ti,control-phy-pipe3" - if it has DPLL and individual Rx & Tx power control
+> -                        e.g. USB3 PHY and SATA PHY on OMAP5.
+> - "ti,control-phy-pcie" - for pcie to support external clock for pcie and to
+> -			set PCS delay value.
+> -			e.g. PCIE PHY in DRA7x
+> - "ti,control-phy-usb2-dra7" - if it has power down register like USB2 PHY on
+> -                        DRA7 platform.
+> - "ti,control-phy-usb2-am437" - if it has power down register like USB2 PHY on
+> -                        AM437 platform.
+> - - reg : register ranges as listed in the reg-names property
+> - - reg-names: "otghs_control" for control-phy-otghs
+> -	      "power", "pcie_pcs" and "control_sma" for control-phy-pcie
+> -	      "power" for all other types
+> -
+> -omap_control_usb: omap-control-usb@4a002300 {
+> -        compatible = "ti,control-phy-otghs";
+> -        reg = <0x4a00233c 0x4>;
+> -        reg-names = "otghs_control";
+> -};
+> -
+> -TI PIPE3 PHY
+> -
+> -Required properties:
+> - - compatible: Should be "ti,phy-usb3", "ti,phy-pipe3-sata" or
+> -   "ti,phy-pipe3-pcie. "ti,omap-usb3" is deprecated.
+> - - reg : Address and length of the register set for the device.
+> - - reg-names: The names of the register addresses corresponding to the registers
+> -   filled in "reg".
+> - - #phy-cells: determine the number of cells that should be given in the
+> -   phandle while referencing this phy.
+> - - clocks: a list of phandles and clock-specifier pairs, one for each entry in
+> -   clock-names.
+> - - clock-names: should include:
+> -   * "wkupclk" - wakeup clock.
+> -   * "sysclk" - system clock.
+> -   * "refclk" - reference clock.
+> -   * "dpll_ref" - external dpll ref clk
+> -   * "dpll_ref_m2" - external dpll ref clk
+> -   * "phy-div" - divider for apll
+> -   * "div-clk" - apll clock
+> -
+> -Optional properties:
+> - - id: If there are multiple instance of the same type, in order to
+> -   differentiate between each instance "id" can be used (e.g., multi-lane PCIe
+> -   PHY). If "id" is not provided, it is set to default value of '1'.
+> - - syscon-pllreset: Handle to system control region that contains the
+> -   CTRL_CORE_SMA_SW_0 register and register offset to the CTRL_CORE_SMA_SW_0
+> -   register that contains the SATA_PLL_SOFT_RESET bit. Only valid for sata_phy.
+> - - syscon-pcs : phandle/offset pair. Phandle to the system control module and the
+> -   register offset to write the PCS delay value.
+> -
+> -Deprecated properties:
+> - - ctrl-module : phandle of the control module used by PHY driver to power on
+> -   the PHY.
+> -
+> -Recommended properties:
+> - - syscon-phy-power : phandle/offset pair. Phandle to the system control
+> -   module and the register offset to power on/off the PHY.
+> -
+> -This is usually a subnode of ocp2scp to which it is connected.
+> -
+> -usb3phy@4a084400 {
+> -	compatible = "ti,phy-usb3";
+> -	reg = <0x4a084400 0x80>,
+> -	      <0x4a084800 0x64>,
+> -	      <0x4a084c00 0x40>;
+> -	reg-names = "phy_rx", "phy_tx", "pll_ctrl";
+> -	ctrl-module = <&omap_control_usb>;
+> -	#phy-cells = <0>;
+> -	clocks = <&usb_phy_cm_clk32k>,
+> -		 <&sys_clkin>,
+> -		 <&usb_otg_ss_refclk960m>;
+> -	clock-names =	"wkupclk",
+> -			"sysclk",
+> -			"refclk";
+> -};
+> -
+> -sata_phy: phy@4a096000 {
+> -	compatible = "ti,phy-pipe3-sata";
+> -	reg = <0x4A096000 0x80>, /* phy_rx */
+> -	      <0x4A096400 0x64>, /* phy_tx */
+> -	      <0x4A096800 0x40>; /* pll_ctrl */
+> -	reg-names = "phy_rx", "phy_tx", "pll_ctrl";
+> -	ctrl-module = <&omap_control_sata>;
+> -	clocks = <&sys_clkin1>, <&sata_ref_clk>;
+> -	clock-names = "sysclk", "refclk";
+> -	syscon-pllreset = <&scm_conf 0x3fc>;
+> -	#phy-cells = <0>;
+> -};
+> 
+> -- 
+> 2.52.0
+> 
 
 -- 
 linux-phy mailing list
