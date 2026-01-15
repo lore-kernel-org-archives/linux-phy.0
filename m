@@ -4,178 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DDA81D46624
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Jan 2026 21:06:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 33881D4662B
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Jan 2026 22:22:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Mh3X3lnFbgLKA3SSBuF4Qa9yT7jsAkWWZSeIXvLutA8=; b=x7ngH9n3Lr0CZc
-	MMoJZpr1fnXc1nXyO/7RppKz5zF6FTQs+UAlFZIh6aO1kjKY/fwO/KdA1hKwmIFTa0qD2Ove3HMUN
-	dEaXz6cg6JERLkKP5t3xpeYWfbBBYIPoJ87LHjHRHiqiosYunkbgqVEbPB8KtyRpPASAlW9urZLt7
-	a83533qJRRXBmsKQn1fPeAehfIihKPPejPYHOQBlXgyU+T+gjmaGpDcbOsnBnvm1LcUbmEFwEI+1Q
-	dge2n7X73ZH6f8U+y1RC8HTeqe91mkFxAd4xQuhAunJwLdqaZ72K/Wx1attEzONjB9duIF4oBIYPY
-	mTtC5Oy386aZa2xEPeAg==;
+	List-Owner; bh=Ey4zfx7s9rGz8+Vw1pzWjoEJTuPKodW800hn7AI3EKs=; b=mOypSWssCdf23I
+	BClMSJQ2kBH7I07DbxBhFQtU4H+sFnVF78LmZ5GrsEI8iAyL0ge2QKzTZaPYqE/6pjM3C3awoMYLl
+	Qqw/bkwDxbua+mYADUCgYIudeN+7BDavikcFB+h39mH3Ay4iU7FAkAbaAYD83irVYnpUyDukzn6ZE
+	Di2R3yLBGkWegITxKtitWwICuN4XOaNTA/ODfARYf/UND0Kws8APDfPVQhkBtlZ+ZmDgIVeW++iEp
+	iVgClvhAGxrFPMwx0jsCVMrzUrjaxfv9x/uxxNdR4d2uSUD3WvocTFFP3oHYDrwVpB6G4STgEM2q4
+	A0PEpqFHhqWBTXI5S6og==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vgUXa-0000000DCLu-1bYt;
-	Thu, 15 Jan 2026 21:06:02 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1vgVjX-0000000DH3R-2gxE;
+	Thu, 15 Jan 2026 22:22:27 +0000
+Received: from mgamail.intel.com ([192.198.163.12])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vgUXY-0000000DCLT-09m1
-	for linux-phy@bombadil.infradead.org;
-	Thu, 15 Jan 2026 21:06:01 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:Content-Type:
-	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender
-	:Reply-To:Content-ID:Content-Description;
-	bh=WLhM43u7KTCNMftZSAW1g9y9SRicJ/aCzV4l0MaawTE=; b=LJDFLCrYV45/LSxd/YrcJFttsp
-	NXwyrJ7R658oJEKX1DN1Y+wlor1+an5I/UjHTOkMUPoQUiMVxnUT9hT7ZFN1Ps+y9lfR8G+MX6qn3
-	LoIi/tlnSBenkHsMdpQQfp4+Vfk0KtDS+/xfW5a1AIufefiR2Fl3bGf2I1DhBFm64OIqVaAp/QHQV
-	v2Tofl4v3MjbuvC6QUIv4tN8BFHKNcIOTQN8bvCyLwUvwBCykD3VjPewC6JQ6zp+pI2/60pS9eXxd
-	lEs5b0FuKWjRSn0i83tG3EUeGWvx4lA897HX0Z/mJ8XbZ/ijJWghrskvXbwiX0Ku8hskEsRO6KpgS
-	84AAUv7w==;
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
-	by casper.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vgUXU-00000008SVv-1A62
-	for linux-phy@lists.infradead.org;
-	Thu, 15 Jan 2026 21:05:59 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 60FFY9G32673513
-	for <linux-phy@lists.infradead.org>; Thu, 15 Jan 2026 21:05:51 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	WLhM43u7KTCNMftZSAW1g9y9SRicJ/aCzV4l0MaawTE=; b=LcyP4ZgHar0lfCNc
-	erfRehhLm+Jly3LD5YZe+gnbNWLMPpKpCHqXWqbxOusksc+bO9tXicyW7jh//NJi
-	usIGfOEjO9AEv9gpfGj/98YCcHfrTukl/zYmQLydJsdQKttHrSPAJdyOP2ZwhZgo
-	JBQMEwdzMGLiVdBk1W/SXyZVvNdc5NRZT+FM7qpEx7/7NvdPOy5frXysA8s0gU8J
-	ZqNYay2ewVXzcLHlbBz3ecFwu6edWv5ajyjydAsDG19/Yj+LuCA7AN0opCmt5loq
-	k4QJeBZL720AEGIBMtghVzSNUa8Qz2OgpGPhh0XGju56X61amGvdnRG64wNypL3C
-	6E2Taw==
-Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com [209.85.222.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4bpyduhm0f-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Thu, 15 Jan 2026 21:05:51 +0000 (GMT)
-Received: by mail-qk1-f197.google.com with SMTP id af79cd13be357-8c52c67f65cso505691285a.1
-        for <linux-phy@lists.infradead.org>; Thu, 15 Jan 2026 13:05:51 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1768511151; x=1769115951; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=WLhM43u7KTCNMftZSAW1g9y9SRicJ/aCzV4l0MaawTE=;
-        b=fYlk3Er8QjpTwQrT/YEHJwd7gsSEnU2jaAayPP/3j5YWBImwuaYDgDhuS3VGjbdeww
-         Bpk9qtH/xwJwL/JDuoPiRmXQz1f+Nt4De2MOKEf67er38gjl68yi6tMIz145UXHpQj15
-         zUo+3qTGmS+Fhnoyt6AbXfkBdU6cuCt1B6L9JPIwgc5ymrehCrHBEEhtslSveXwegc90
-         eqw8mnZAw4kh/pHAJY7NeHd/GtB3jJ8X5AEQFBzkSNawr9UuP0s11Grwjk5tSsPgAuix
-         aA+HOe9/PxTrZysTKge1ufFkzPsGI/Vu0P+vTgMMO25F6TEwFmLNt7/JmSNGmWrMMnLT
-         EIgA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1768511151; x=1769115951;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=WLhM43u7KTCNMftZSAW1g9y9SRicJ/aCzV4l0MaawTE=;
-        b=sKl7vEyk/TFvIWeYiT6UrPs6nUyL4YH1pztg4X1Q829b8EJj9bsjP2LGQUqOyCxVjm
-         INNqs3hB/3p+2Xxfh4TLYAWqn7SWlV7ytJJPFAkW8gvJVXAYbxyiN0i/9P0yqh9JrVmd
-         Sl7nAf0WLsa8zahFUPqXAmkvpM0OfLIieUCCmUeMRNutappNlH08A8gkF4uraxBPyYVv
-         N0ZU3LgD1/B4nsrYvgA/+KitAHcgL3BtT2+xcYqEJKo08D6Nu5hJtbfk1BZtRj9yHtVn
-         mmplcY/j/IyzR4hfpNeuW6yV17soEQhUpvAGkH+9EzOWVatzNZBj3keTHZj1/nGLUJKN
-         7Xmg==
-X-Forwarded-Encrypted: i=1; AJvYcCXlZLesG8ZGOJu/Ixunf1bO78jLD22hfP6JL4kYP+nW4CxGA8gBWGjQ8Cep7gM2KiSI2wrzZ6P4u/Q=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yypc1T+iD7QL5WYTiBdxldNAl25yGjg8oxX2KMhh8HXi91ZUt+U
-	EsPqW35HjL9CIYgNMYoE4nFiLBW3rnO6+xVIQWMhcGL2LQiqEbNKqdOwZUhAtJ2RILItrdDI18I
-	9CYOdJAvr0EVSisXpxMPUW8ejJAAOZAu8kBM2H+CmkjdtO3RZs+htzoLVAVqkXKgZeMqy
-X-Gm-Gg: AY/fxX7BnmzOCQdwOI9drhcIZg36iHWECLnR7/Cy5vr17YDifnKvvgTV0lpd9pmvmnk
-	tC25hMhNSXQKadAnHYXkwy4eSV3jLi4v+RetfpaRrqW2mF7CLg5/NppriHch1ScJjepeG63Srao
-	KPhe8cYZyJKGUJZ2T/46Ys3wQ93nw+LuCwt28rFJP/K5BvX8LVaZXk5DiQfI014f2B3Ajr8cM68
-	+Sy1K8TlM7L2vI+BOFxCNHtVaSRUpYnEXvuQEpXbO/3yUnmMB+qvPWFQffhE3A8ZAW5uD6sUACc
-	CtFhHelIwqsgRbASVnSBuT287bRsHNVFNXASvsQznG2fmCftQT+WOfveyh0qFRzYzjTjmJFA1bi
-	Ih5uL0A7ZdeqVFzqPIZ7Jlm7CXImpOuHe+ZeFevZqlVXvKSFZ+BPVYsp9FyBo9hsIoV5k30dp9P
-	8+Whiz6lGJkLqpW408+eirxs0=
-X-Received: by 2002:a05:620a:1723:b0:8b2:dfda:66c4 with SMTP id af79cd13be357-8c6a68d2f67mr120079685a.8.1768511150908;
-        Thu, 15 Jan 2026 13:05:50 -0800 (PST)
-X-Received: by 2002:a05:620a:1723:b0:8b2:dfda:66c4 with SMTP id af79cd13be357-8c6a68d2f67mr120072385a.8.1768511150340;
-        Thu, 15 Jan 2026 13:05:50 -0800 (PST)
-Received: from umbar.lan (2001-14ba-a073-af00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a073:af00:264b:feff:fe8b:be8a])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-59baf397672sm155740e87.61.2026.01.15.13.05.49
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 15 Jan 2026 13:05:49 -0800 (PST)
-From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-To: Michael Turquette <mturquette@baylibre.com>,
-        Stephen Boyd <sboyd@kernel.org>, Brian Masney <bmasney@redhat.com>
-Cc: linux-clk@vger.kernel.org, linux-kernel@vger.kernel.org,
-        Chen Wang <unicorn_wang@outlook.com>,
-        Inochi Amaoto <inochiama@gmail.com>, sophgo@lists.linux.dev,
-        Chen-Yu Tsai <wens@kernel.org>, Maxime Ripard <mripard@kernel.org>,
-        Jernej Skrabec <jernej.skrabec@gmail.com>,
-        Samuel Holland <samuel@sholland.org>,
-        linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
-        Alexandre Belloni <alexandre.belloni@bootlin.com>,
-        linux-rtc@vger.kernel.org,
-        =?UTF-8?q?Andreas=20F=C3=A4rber?= <afaerber@suse.de>,
-        Manivannan Sadhasivam <mani@kernel.org>,
-        linux-actions@lists.infradead.org,
-        Keguang Zhang <keguang.zhang@gmail.com>, linux-mips@vger.kernel.org,
-        Taichi Sugaya <sugaya.taichi@socionext.com>,
-        Takao Orito <orito.takao@socionext.com>,
-        Jacky Huang <ychuang3@nuvoton.com>,
-        Shan-Chun Hung <schung@nuvoton.com>, Vladimir Zapolskiy <vz@mleia.com>,
-        Piotr Wojtaszczyk <piotr.wojtaszczyk@timesys.com>,
-        Bjorn Andersson <andersson@kernel.org>, linux-arm-msm@vger.kernel.org,
-        Orson Zhai <orsonzhai@gmail.com>,
-        Baolin Wang <baolin.wang@linux.alibaba.com>,
-        Chunyan Zhang <zhang.lyra@gmail.com>,
-        Maxime Coquelin <mcoquelin.stm32@gmail.com>,
-        Alexandre Torgue <alexandre.torgue@foss.st.com>,
-        linux-stm32@st-md-mailman.stormreply.com,
-        Michal Simek <michal.simek@amd.com>,
-        Rob Clark <robin.clark@oss.qualcomm.com>,
-        Dmitry Baryshkov <lumag@kernel.org>, David Airlie <airlied@gmail.com>,
-        Simona Vetter <simona@ffwll.ch>,
-        Abhinav Kumar <abhinav.kumar@linux.dev>,
-        Jessica Zhang <jesszhan0024@gmail.com>, Sean Paul <sean@poorly.run>,
-        Marijn Suijten <marijn.suijten@somainline.org>,
-        dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
-        Vinod Koul <vkoul@kernel.org>,
-        Neil Armstrong <neil.armstrong@linaro.org>,
-        linux-phy@lists.infradead.org
-Subject: Re: [PATCH 00/27] clk: remove deprecated API divider_round_rate() and friends
-Date: Thu, 15 Jan 2026 23:05:48 +0200
-Message-ID: <176851027322.3933285.17869583744437773979.b4-ty@oss.qualcomm.com>
-X-Mailer: git-send-email 2.47.3
-In-Reply-To: <20260108-clk-divider-round-rate-v1-0-535a3ed73bf3@redhat.com>
-References: <20260108-clk-divider-round-rate-v1-0-535a3ed73bf3@redhat.com>
+	id 1vgVjU-0000000DH33-1q0V;
+	Thu, 15 Jan 2026 22:22:25 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1768515744; x=1800051744;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=GlSRthmmIe146YTP1TyKrEKATP5VoHXNP14ZSFLxRDI=;
+  b=X7NF3ea2D2Nu76TbrvB41lZsQsXr/PgQqSKDZo2iAl0i2omU2dV3CHzu
+   4bE8TXiblpi076xOy4HgdIrULDS0RD4XILIYYqtNTNSCBnVUUEiOyP+56
+   QzvVTMPwmPrOUvNmlax9H98xO3QnqKnGaJ8467mXHalyMjnaghham3I44
+   VCP5btvjvAZ1J8qw/nC+L8s7Wp6QVNxfa1hpG5vrKo3v2i7JtCzVu/ZcS
+   RupUa7vIfCy8htJwr1YbIzEoaH1ZTkfzIOC3KgrsE8k0gm7wbrk4sU5Am
+   waZBozsATJxWKW0nUkV6/iUBd/pMz9oplzEEiLLslp27UPrbMgEdBLlAQ
+   A==;
+X-CSE-ConnectionGUID: SeNPU4IoTwK+gB4vDOCK7Q==
+X-CSE-MsgGUID: 7tdw2VC4QFe4xxwmXPHvfA==
+X-IronPort-AV: E=McAfee;i="6800,10657,11672"; a="73683712"
+X-IronPort-AV: E=Sophos;i="6.21,229,1763452800"; 
+   d="scan'208";a="73683712"
+Received: from fmviesa002.fm.intel.com ([10.60.135.142])
+  by fmvoesa106.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 15 Jan 2026 14:22:21 -0800
+X-CSE-ConnectionGUID: JKJfZTyAT8SvyZZ64I1AXg==
+X-CSE-MsgGUID: S39XQe80ROehLb43Zu6oZg==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.21,229,1763452800"; 
+   d="scan'208";a="228127414"
+Received: from lkp-server01.sh.intel.com (HELO 765f4a05e27f) ([10.239.97.150])
+  by fmviesa002.fm.intel.com with ESMTP; 15 Jan 2026 14:22:18 -0800
+Received: from kbuild by 765f4a05e27f with local (Exim 4.98.2)
+	(envelope-from <lkp@intel.com>)
+	id 1vgVjM-00000000K3s-0tal;
+	Thu, 15 Jan 2026 22:22:16 +0000
+Date: Fri, 16 Jan 2026 06:22:08 +0800
+From: kernel test robot <lkp@intel.com>
+To: Tzu-Hao Wei <twei@axiado.com>, SriNavmani A <srinavmani@axiado.com>,
+	Prasad Bolisetty <pbolisetty@axiado.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>
+Cc: oe-kbuild-all@lists.linux.dev, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org, openbmc@lists.ozlabs.org,
+	Tzu-Hao Wei <twei@axiado.com>
+Subject: Re: [PATCH 2/4] phy: axiado: add Axiado eMMC PHY driver
+Message-ID: <202601160610.y8FbB5x1-lkp@intel.com>
+References: <20260109-axiado-ax3000-add-emmc-phy-driver-support-v1-2-dd43459dbfea@axiado.com>
 MIME-Version: 1.0
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMTE1MDE2NSBTYWx0ZWRfX0GXeAXkqCLQH
- psAr9oD5Nv71HI6BPt6opqM0UJ9uSQjkfNc4GAJj3ZgCMjTtB6BfFCu9j16+chdkfFGJ1jqK687
- XuyY0FA//Ml3GSGxj12h+ofs22jIKa+vdbPPHUKCX5J29aUAGWMqsgrSU2L1ax1WPoqNkzFimpq
- HJ+z3axloz2X2OvSn5Q1hVnTZxJBkteXA7M+iQiF/1FApcN45sXO8l1KSlu5+3y36RdJUJ81neN
- +K/mou7LwD4BK9F2eXeMwxp3HIz+iLGcp1k2Gt2jzMBl+YHy2qT13OPxyhxOf+FTs5oQvkfqKsE
- pyHR0bUuqwDnWfXWm0vgB1B36SC2P2fGtPCESSekI3tPFCG7hlojz5sQrjW2N2vP4QUqcSvuj6B
- q49hyvHszuXg74k33iJ4f8QrV5mD6ZkRV/agSW1PpJhNAaAlV5C4vBzRIzBICyo/DUqI8WoMBPz
- NOFvF4gEKuAwJjBCl7w==
-X-Proofpoint-ORIG-GUID: pFU6VP36Pjy1KxvTneCuj7c-btrGDrsM
-X-Authority-Analysis: v=2.4 cv=NafrFmD4 c=1 sm=1 tr=0 ts=696956af cx=c_pps
- a=50t2pK5VMbmlHzFWWp8p/g==:117 a=xqWC_Br6kY4A:10 a=IkcTkHD0fZMA:10
- a=vUbySO9Y5rIA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=e5mUnYsNAAAA:8 a=whp_R4xS9ENlu3RGya8A:9 a=QEXdDO2ut3YA:10
- a=IoWCM6iH3mJn3m4BftBB:22 a=Vxmtnl_E_bksehYqCbjh:22
-X-Proofpoint-GUID: pFU6VP36Pjy1KxvTneCuj7c-btrGDrsM
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
- definitions=2026-01-15_06,2026-01-15_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 impostorscore=0 bulkscore=0 lowpriorityscore=0 suspectscore=0
- phishscore=0 clxscore=1015 priorityscore=1501 malwarescore=0 adultscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2512120000 definitions=main-2601150165
+Content-Disposition: inline
+In-Reply-To: <20260109-axiado-ax3000-add-emmc-phy-driver-support-v1-2-dd43459dbfea@axiado.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260115_210556_554722_478C3ED0 
-X-CRM114-Status: GOOD (  11.26  )
+X-CRM114-CacheID: sfid-20260115_142224_502135_072DF39A 
+X-CRM114-Status: GOOD (  11.28  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -192,29 +95,131 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, 08 Jan 2026 16:16:18 -0500, Brian Masney wrote:
-> Here's a series that gets rid of the deprecated APIs
-> divider_round_rate(), divider_round_rate_parent(), and
-> divider_ro_round_rate_parent() since these functions are just wrappers
-> for the determine_rate variant.
-> 
-> Note that when I converted some of these drivers from round_rate to
-> determine_rate, this was mistakenly converted to the following in some
-> cases:
-> 
-> [...]
+Hi Tzu-Hao,
 
-Applied to msm-next, thanks!
+kernel test robot noticed the following build errors:
 
-[24/27] drm/msm/dsi_phy_14nm: convert from divider_round_rate() to divider_determine_rate()
-        https://gitlab.freedesktop.org/lumag/msm/-/commit/1d232f793d4d
+[auto build test ERROR on f0b9d8eb98dfee8d00419aa07543bdc2c1a44fb1]
 
-Best regards,
+url:    https://github.com/intel-lab-lkp/linux/commits/Tzu-Hao-Wei/dt-bindings-phy-axiado-ax3000-emmc-phy-add-Axiado-eMMC-PHY/20260109-174938
+base:   f0b9d8eb98dfee8d00419aa07543bdc2c1a44fb1
+patch link:    https://lore.kernel.org/r/20260109-axiado-ax3000-add-emmc-phy-driver-support-v1-2-dd43459dbfea%40axiado.com
+patch subject: [PATCH 2/4] phy: axiado: add Axiado eMMC PHY driver
+config: m68k-allmodconfig (https://download.01.org/0day-ci/archive/20260116/202601160610.y8FbB5x1-lkp@intel.com/config)
+compiler: m68k-linux-gcc (GCC) 15.2.0
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20260116/202601160610.y8FbB5x1-lkp@intel.com/reproduce)
+
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202601160610.y8FbB5x1-lkp@intel.com/
+
+All errors (new ones prefixed by >>):
+
+   In file included from include/linux/swab.h:5,
+                    from include/uapi/linux/byteorder/big_endian.h:14,
+                    from include/linux/byteorder/big_endian.h:5,
+                    from arch/m68k/include/uapi/asm/byteorder.h:5,
+                    from include/asm-generic/bitops/le.h:6,
+                    from arch/m68k/include/asm/bitops.h:569,
+                    from include/linux/bitops.h:67,
+                    from include/linux/thread_info.h:27,
+                    from include/asm-generic/preempt.h:5,
+                    from ./arch/m68k/include/generated/asm/preempt.h:1,
+                    from include/linux/preempt.h:79,
+                    from arch/m68k/include/asm/processor.h:11,
+                    from include/linux/sched.h:13,
+                    from include/linux/delay.h:13,
+                    from drivers/phy/axiado/phy-axiado-emmc.c:11:
+   drivers/phy/axiado/phy-axiado-emmc.c: In function 'axiado_emmc_phy_power_on':
+>> drivers/phy/axiado/phy-axiado-emmc.c:69:34: error: implicit declaration of function 'FIELD_PREP' [-Wimplicit-function-declaration]
+      69 | #define OTAP_SEL(x)             (FIELD_PREP(OTAP_SEL_MASK, x) | OTAPDLY_EN)
+         |                                  ^~~~~~~~~~
+   include/uapi/linux/swab.h:118:38: note: in definition of macro '__swab32'
+     118 |         (__u32)(__builtin_constant_p(x) ?       \
+         |                                      ^
+   include/linux/byteorder/generic.h:88:21: note: in expansion of macro '__cpu_to_le32'
+      88 | #define cpu_to_le32 __cpu_to_le32
+         |                     ^~~~~~~~~~~~~
+   arch/m68k/include/asm/io_mm.h:373:26: note: in expansion of macro 'out_le32'
+     373 | #define writel(val,addr) out_le32((addr),(val))
+         |                          ^~~~~~~~
+   drivers/phy/axiado/phy-axiado-emmc.c:147:9: note: in expansion of macro 'writel'
+     147 |         writel(val | OTAP_SEL(OTAP_DLY), ax_phy->reg_base + PHY_CTRL_2);
+         |         ^~~~~~
+   drivers/phy/axiado/phy-axiado-emmc.c:147:22: note: in expansion of macro 'OTAP_SEL'
+     147 |         writel(val | OTAP_SEL(OTAP_DLY), ax_phy->reg_base + PHY_CTRL_2);
+         |                      ^~~~~~~~
+
+
+vim +/FIELD_PREP +69 drivers/phy/axiado/phy-axiado-emmc.c
+
+  > 11	#include <linux/delay.h>
+    12	#include <linux/io.h>
+    13	#include <linux/iopoll.h>
+    14	#include <linux/module.h>
+    15	#include <linux/of.h>
+    16	#include <linux/phy/phy.h>
+    17	#include <linux/platform_device.h>
+    18	
+    19	/* Arasan eMMC 5.1 - PHY configuration registers */
+    20	#define CAP_REG_IN_S1_LSB		0x00
+    21	#define CAP_REG_IN_S1_MSB		0x04
+    22	#define PHY_CTRL_1			0x38
+    23	#define PHY_CTRL_2			0x3C
+    24	#define PHY_CTRL_3			0x40
+    25	#define STATUS				0x50
+    26	
+    27	#define DLL_ENBL	BIT(26)
+    28	#define RTRIM_EN	BIT(21)
+    29	#define PDB_ENBL	BIT(23)
+    30	#define RETB_ENBL	BIT(1)
+    31	
+    32	#define REN_STRB	BIT(27)
+    33	#define REN_CMD		BIT(12)
+    34	#define REN_DAT0	BIT(13)
+    35	#define REN_DAT1	BIT(14)
+    36	#define REN_DAT2	BIT(15)
+    37	#define REN_DAT3	BIT(16)
+    38	#define REN_DAT4	BIT(17)
+    39	#define REN_DAT5	BIT(18)
+    40	#define REN_DAT6	BIT(19)
+    41	#define REN_DAT7	BIT(20)
+    42	#define REN_CMD_EN	(REN_CMD | REN_DAT0 | REN_DAT1 | REN_DAT2 | \
+    43			REN_DAT3 | REN_DAT4 | REN_DAT5 | REN_DAT6 | REN_DAT7)
+    44	
+    45	/* Pull-UP Enable on CMD Line */
+    46	#define PU_CMD		BIT(3)
+    47	#define PU_DAT0		BIT(4)
+    48	#define PU_DAT1		BIT(5)
+    49	#define PU_DAT2		BIT(6)
+    50	#define PU_DAT3		BIT(7)
+    51	#define PU_DAT4		BIT(8)
+    52	#define PU_DAT5		BIT(9)
+    53	#define PU_DAT6		BIT(10)
+    54	#define PU_DAT7		BIT(11)
+    55	#define PU_CMD_EN (PU_CMD | PU_DAT0 | PU_DAT1 | PU_DAT2 | PU_DAT3 | \
+    56			PU_DAT4 | PU_DAT5 | PU_DAT6 | PU_DAT7)
+    57	
+    58	/* Selection value for the optimum delay from 1-32 output tap lines */
+    59	#define OTAP_DLY	0x02
+    60	/* DLL charge pump current trim default [1000] */
+    61	#define DLL_TRM_ICP	0x08
+    62	/* Select the frequency range of DLL Operation */
+    63	#define FRQ_SEL	0x01
+    64	
+    65	#define OTAP_SEL_MASK		GENMASK(10, 7)
+    66	#define DLL_TRM_MASK		GENMASK(25, 22)
+    67	#define DLL_FRQSEL_MASK		GENMASK(27, 25)
+    68	
+  > 69	#define OTAP_SEL(x)		(FIELD_PREP(OTAP_SEL_MASK, x) | OTAPDLY_EN)
+    70	#define DLL_TRM(x)		(FIELD_PREP(DLL_TRM_MASK, x) | DLL_ENBL)
+    71	#define DLL_FRQSEL(x)	FIELD_PREP(DLL_FRQSEL_MASK, x)
+    72	
+
 -- 
-With best wishes
-Dmitry
-
-
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-phy mailing list
