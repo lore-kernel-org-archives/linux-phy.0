@@ -4,85 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3BF6AD3CCB2
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Jan 2026 06:43:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 04086D33A07
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Jan 2026 08:30:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6OPzJPRSn0WrM7+mV6Mo81SDqqdifLxbh+MgQ953/3s=; b=av+HCsoy7HOIDK
-	pZ/mB9Wi39n7TNfttdM3GlrEc2bc3OQZG8lPHUppJ3VtdEFf6E2VoVboBvexdVr7jMw4gkuvd1ucK
-	7Aa5SAmuZoeVBCn1vnF8D9sYYHaFJsrbWKHA+IytzUJ0WuLbKTkL6a0Vm78ZBRgPmxcatiduAnmGO
-	KZKJBQKyLiZEzCk5tClJ8qaP8F/9iBylIyd0ruaWH/TZkWbFXEMPElYhFo49XXfWHmS5eEvVZpDHe
-	fC3ZwvCyCoYm7PRsP64kO6FbfOezlHJng3OGugp8aJ+B6kwE4ZYXvA4URHAZmdcoPAUfe4GMmdxAJ
-	e7TvYLANnypjJk0/aIew==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
+	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=BC98dqUDRWWVqyfZb0BAFQObVXaU+p++i+zw8PoRWho=; b=NWB0nhMyEMREsKrDggF3wt12Ga
+	38otPndfS5XqxR1opMLNLBPA0FN53A0HTmYZH/nqaCsVZyWPjoZOpAAgWDwd2lelZQghz07we+ADs
+	8tlUPEJd+o84QEAP4vCjjCu/82E9jTEJQ/4c7nFZTUfVzLHC7i0U1l6dErZaP8MuTJ6cTL5WYVGes
+	/40kb26hMoYO+X1mJ03uAsh7WH3wirUQlit88Fnhg/r1LTnU2xU+yJowy7SKTswDWbJhGtVhCwIes
+	5E8fUoBoGZNr6ecq2bl32giPS47x0WzCK4X/3WWGv1FQpvv6CrQ7cK/dWZIhXxkXNByPcYdUqz4FS
+	gm6qEshQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vgH58-0000000Bs6k-43GL;
-	Thu, 15 Jan 2026 06:43:46 +0000
-Received: from smtp21.cstnet.cn ([159.226.251.21] helo=cstnet.cn)
+	id 1vgIk2-0000000Bzsr-2W9j;
+	Thu, 15 Jan 2026 08:30:06 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vgH55-0000000Bs4R-3vT9;
-	Thu, 15 Jan 2026 06:43:45 +0000
-Received: from duge-virtual-machine (unknown [223.160.207.69])
-	by APP-01 (Coremail) with SMTP id qwCowAAn0GtWjGhpw5fDBA--.30809S6;
-	Thu, 15 Jan 2026 14:43:06 +0800 (CST)
-From: Jiayu Du <jiayu.riscv@isrc.iscas.ac.cn>
-To: conor@kernel.org
-Cc: vkoul@kernel.org,
-	neil.armstrong@linaro.org,
-	gregkh@linuxfoundation.org,
-	robh@kernel.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	pjw@kernel.org,
-	palmer@dabbelt.com,
-	aou@eecs.berkeley.edu,
-	alex@ghiti.fr,
-	jiayu.riscv@isrc.iscas.ac.cn,
-	18771902331@163.com,
-	cyy@cyyself.name,
-	TroyMitchell988@gmail.com,
-	kingxukai@zohomail.com,
-	linux-phy@lists.infradead.org,
-	linux-usb@vger.kernel.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-riscv@lists.infradead.org,
-	gaohan@iscas.ac.cn
-Subject: [PATCH v2 4/4] riscv: dts: canaan: Add syscon and USB nodes for K230
-Date: Thu, 15 Jan 2026 14:42:22 +0800
-Message-ID: <20260115064223.21926-5-jiayu.riscv@isrc.iscas.ac.cn>
-X-Mailer: git-send-email 2.52.0
-In-Reply-To: <20260115064223.21926-1-jiayu.riscv@isrc.iscas.ac.cn>
-References: <20260115064223.21926-1-jiayu.riscv@isrc.iscas.ac.cn>
+	id 1vgIk2-0000000Bzsg-0cYe;
+	Thu, 15 Jan 2026 08:30:06 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id EB172601B9;
+	Thu, 15 Jan 2026 08:30:04 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8DAE1C116D0;
+	Thu, 15 Jan 2026 08:30:04 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1768465804;
+	bh=PlgI399ItX0zMEfC+5UwO2zrl+leB7wgtmhP+blcFv0=;
+	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
+	b=RnQ994vFURPycFo5eH7iciU0c8aDtEfA3XTf2fteC4M2RdxCH/Wy0LV4MeMX2lezD
+	 eBJtkvpMvKEM4imHd7vHiXCOrCc9xlJUEnuhMY+QtK8zf4D7ATwR/CkfYOPSsFe4L/
+	 2VBF3B8PlgJHPz59osAebBvMSRtw0R1MKOLFMrjpPBg+qWgb5ykCifOi7+2zsFjPlY
+	 EJixz4uiv1s97M8mQx0GOO8HIwC90bb6GFPIpPiZckZnnSESokCqDePwMs5DGmR33I
+	 WHrehNQZq8yYtiK/Kza9X/Yfct7nxHeETZjlzyEj9dnEwy4aCdiydioD9weYjGIpSp
+	 1KwXL8JxrkkoQ==
+Date: Thu, 15 Jan 2026 02:30:03 -0600
 MIME-Version: 1.0
-X-CM-TRANSID: qwCowAAn0GtWjGhpw5fDBA--.30809S6
-X-Coremail-Antispam: 1UD129KBjvJXoW7tF1xZr1fCrykZF47JFy5Jwb_yoW8tw4xp3
-	srCFZ8G3sagr4S93Wak34vgF1fGF4kGFyfWrn8AryUGr4UZas09w1fJ34fXFyUXw47J3y2
-	9F9YqryxKF4jyw7anT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
-	9KBjDU0xBIdaVrnRJUUUmv14x267AKxVWrJVCq3wAFc2x0x2IEx4CE42xK8VAvwI8IcIk0
-	rVWrJVCq3wAFIxvE14AKwVWUJVWUGwA2048vs2IY020E87I2jVAFwI0_JF0E3s1l82xGYI
-	kIc2x26xkF7I0E14v26ryj6s0DM28lY4IEw2IIxxk0rwA2F7IY1VAKz4vEj48ve4kI8wA2
-	z4x0Y4vE2Ix0cI8IcVAFwI0_JFI_Gr1l84ACjcxK6xIIjxv20xvEc7CjxVAFwI0_Gr1j6F
-	4UJwA2z4x0Y4vEx4A2jsIE14v26r4j6F4UM28EF7xvwVC2z280aVCY1x0267AKxVW8Jr0_
-	Cr1UM2AIxVAIcxkEcVAq07x20xvEncxIr21l5I8CrVACY4xI64kE6c02F40Ex7xfMcIj6x
-	IIjxv20xvE14v26r1Y6r17McIj6I8E87Iv67AKxVWUJVW8JwAm72CE4IkC6x0Yz7v_Jr0_
-	Gr1lF7xvr2IYc2Ij64vIr41lF7I21c0EjII2zVCS5cI20VAGYxC7M4IIrI8v6xkF7I0E8c
-	xan2IY04v7MxkF7I0En4kS14v26r4a6rW5MxAIw28IcxkI7VAKI48JMxC20s026xCaFVCj
-	c4AY6r1j6r4UMI8I3I0E5I8CrVAFwI0_Jr0_Jr4lx2IqxVCjr7xvwVAFwI0_JrI_JrWlx4
-	CE17CEb7AF67AKxVW8ZVWrXwCIc40Y0x0EwIxGrwCI42IY6xIIjxv20xvE14v26r1I6r4U
-	MIIF0xvE2Ix0cI8IcVCY1x0267AKxVW8Jr0_Cr1UMIIF0xvE42xK8VAvwI8IcIk0rVWUJV
-	WUCwCI42IY6I8E87Iv67AKxVWUJVW8JwCI42IY6I8E87Iv6xkF7I0E14v26r4UJVWxJrUv
-	cSsGvfC2KfnxnUUI43ZEXa7sRRjg43UUUUU==
-X-Originating-IP: [223.160.207.69]
-X-CM-SenderInfo: 5mld534oul2uny6l223fol2u1dvotugofq/
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260114_224344_352152_09FE3E24 
-X-CRM114-Status: UNSURE (   5.95  )
-X-CRM114-Notice: Please train this message.
+From: "Rob Herring (Arm)" <robh@kernel.org>
+Cc: vkoul@kernel.org, linux-usb@vger.kernel.org, conor+dt@kernel.org, 
+ krzk+dt@kernel.org, linux-kernel@vger.kernel.org, cyy@cyyself.name, 
+ alex@ghiti.fr, pjw@kernel.org, kingxukai@zohomail.com, conor@kernel.org, 
+ aou@eecs.berkeley.edu, linux-riscv@lists.infradead.org, palmer@dabbelt.com, 
+ neil.armstrong@linaro.org, gaohan@iscas.ac.cn, 
+ linux-phy@lists.infradead.org, gregkh@linuxfoundation.org, 
+ 18771902331@163.com, devicetree@vger.kernel.org, TroyMitchell988@gmail.com
+To: Jiayu Du <jiayu.riscv@isrc.iscas.ac.cn>
+In-Reply-To: <20260115064223.21926-3-jiayu.riscv@isrc.iscas.ac.cn>
+References: <20260115064223.21926-1-jiayu.riscv@isrc.iscas.ac.cn>
+ <20260115064223.21926-3-jiayu.riscv@isrc.iscas.ac.cn>
+Message-Id: <176846580373.38125.3306033410225962520.robh@kernel.org>
+Subject: Re: [PATCH v2 2/4] dt-bindings: usb: dwc2: Add support for Canaan
+ K230 SoC
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,87 +75,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add top syscon and USB PHY subdevice nodes, USB0/USB1 dwc2 controller
-to K230 DTSI, and enable UART0 and USB0/USB1 in DshanPI DT.
 
-Signed-off-by: Jiayu Du <jiayu.riscv@isrc.iscas.ac.cn>
----
- .../boot/dts/canaan/k230-canmv-dshanpi.dts    | 17 +++++++++
- arch/riscv/boot/dts/canaan/k230.dtsi          | 35 +++++++++++++++++++
- 2 files changed, 52 insertions(+)
+On Thu, 15 Jan 2026 14:42:20 +0800, Jiayu Du wrote:
+> Add 'canaan,k230-usb' compatible string with 'snps,dwc2' as fallback
+> for the DWC2 IP which is used by Canaan K230.
+> 
+> Signed-off-by: Jiayu Du <jiayu.riscv@isrc.iscas.ac.cn>
+> ---
+>  Documentation/devicetree/bindings/usb/dwc2.yaml | 3 +++
+>  1 file changed, 3 insertions(+)
+> 
 
-diff --git a/arch/riscv/boot/dts/canaan/k230-canmv-dshanpi.dts b/arch/riscv/boot/dts/canaan/k230-canmv-dshanpi.dts
-index 4f95b534ee87..55197cfc25b4 100644
---- a/arch/riscv/boot/dts/canaan/k230-canmv-dshanpi.dts
-+++ b/arch/riscv/boot/dts/canaan/k230-canmv-dshanpi.dts
-@@ -80,3 +80,20 @@ &uart0 {
- 	pinctrl-0 = <&uart0_pins>;
- 	status = "okay";
- };
-+
-+&usb0 {
-+	vusb_d-supply = <&vdd_3v3>;
-+	vusb_a-supply = <&vdd_1v8>;
-+	status = "okay";
-+};
-+
-+&usb1 {
-+	dr_mode = "host";
-+	vusb_d-supply = <&vdd_3v3>;
-+	vusb_a-supply = <&vdd_1v8>;
-+	status = "okay";
-+};
-+
-+&usbphy {
-+	status = "okay";
-+};
-diff --git a/arch/riscv/boot/dts/canaan/k230.dtsi b/arch/riscv/boot/dts/canaan/k230.dtsi
-index b815a65e02b9..6dcb086f7046 100644
---- a/arch/riscv/boot/dts/canaan/k230.dtsi
-+++ b/arch/riscv/boot/dts/canaan/k230.dtsi
-@@ -148,5 +148,40 @@ uart4: serial@91404000 {
- 			reg-shift = <2>;
- 			status = "disabled";
- 		};
-+
-+		usb0: usb@91500000 {
-+			compatible = "canaan,k230-usb", "snps,dwc2";
-+			reg = <0x0 0x91500000 0x0 0x40000>;
-+			interrupts = <173 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&sysclk K230_HS_USB0_AHB_GATE>;
-+			clock-names = "otg";
-+			g-rx-fifo-size = <512>;
-+			g-np-tx-fifo-size = <64>;
-+			g-tx-fifo-size = <512 1024 64 64 64 64>;
-+			phys = <&usbphy 0>;
-+			phy-names = "usb2-phy";
-+			status = "disabled";
-+		};
-+
-+		usb1: usb@91540000 {
-+			compatible = "canaan,k230-usb", "snps,dwc2";
-+			reg = <0x0 0x91540000 0x0 0x40000>;
-+			interrupts = <174 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&sysclk K230_HS_USB1_AHB_GATE>;
-+			clock-names = "otg";
-+			g-rx-fifo-size = <512>;
-+			g-np-tx-fifo-size = <64>;
-+			g-tx-fifo-size = <512 1024 64 64 64 64>;
-+			phys = <&usbphy 1>;
-+			phy-names = "usb2-phy";
-+			status = "disabled";
-+		};
-+
-+		usbphy: usb-phy@91585000 {
-+			compatible = "canaan,k230-usb-phy";
-+			reg = <0x0 0x91585000 0x0 0x400>;
-+			#phy-cells = <1>;
-+			status = "disabled";
-+		};
- 	};
- };
--- 
-2.52.0
+My bot found errors running 'make dt_binding_check' on your patch:
+
+yamllint warnings/errors:
+
+dtschema/dtc warnings/errors:
+/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/canaan,k230-usb-phy.example.dtb: usb-phy@91585000 (canaan,k230-usb-phy): reg: [[0, 2438483968], [0, 1024]] is too long
+	from schema $id: http://devicetree.org/schemas/phy/canaan,k230-usb-phy.yaml
+
+doc reference errors (make refcheckdocs):
+
+See https://patchwork.kernel.org/project/devicetree/patch/20260115064223.21926-3-jiayu.riscv@isrc.iscas.ac.cn
+
+The base for the series is generally the latest rc1. A different dependency
+should be noted in *this* patch.
+
+If you already ran 'make dt_binding_check' and didn't see the above
+error(s), then make sure 'yamllint' is installed and dt-schema is up to
+date:
+
+pip3 install dtschema --upgrade
+
+Please check and re-submit after running the above command yourself. Note
+that DT_SCHEMA_FILES can be set to your schema file to speed up checking
+your schema. However, it must be unset to test all examples with your schema.
 
 
 -- 
