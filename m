@@ -4,61 +4,178 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8EABBD4661E
-	for <linux-phy@archiver.kernel.org>; Thu, 15 Jan 2026 20:03:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DDA81D46624
+	for <linux-phy@archiver.kernel.org>; Thu, 15 Jan 2026 21:06:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xlgEFtCj6Kc58KGdhcQA7Ca+HJx9p6VRyWf0sj57RO4=; b=Om4U1YSYCmat8e
-	4QynsOwtMD4XOynugY7aab67zR0aePl269auriyVro+sAsx964Y5+wfU4XsUnaVvdM1owDjhEHxJ/
-	ueY+cNZucnusxD9rxdmvQpoMqOYAc/ltKkA7qHk+dk471FTeeFoXSczG73EqZAi1cfzI3HbYkZZW/
-	eej0qu33FixJJZyyiApzy62timfYypGI4HAOzGIyzXCxbFT0oltuLyKNYuZp1xWe8DV7IaNX7+VU1
-	uCiSWxnV98T4SdekD9Eqg6ruZPJGULSIB1Q51AZ6nCV5Q5WW1AO4oN5m9EIT76lgG+orOeWo6YR5a
-	6mn9Bb42W1YqbaCAzEdw==;
+	List-Owner; bh=Mh3X3lnFbgLKA3SSBuF4Qa9yT7jsAkWWZSeIXvLutA8=; b=x7ngH9n3Lr0CZc
+	MMoJZpr1fnXc1nXyO/7RppKz5zF6FTQs+UAlFZIh6aO1kjKY/fwO/KdA1hKwmIFTa0qD2Ove3HMUN
+	dEaXz6cg6JERLkKP5t3xpeYWfbBBYIPoJ87LHjHRHiqiosYunkbgqVEbPB8KtyRpPASAlW9urZLt7
+	a83533qJRRXBmsKQn1fPeAehfIihKPPejPYHOQBlXgyU+T+gjmaGpDcbOsnBnvm1LcUbmEFwEI+1Q
+	dge2n7X73ZH6f8U+y1RC8HTeqe91mkFxAd4xQuhAunJwLdqaZ72K/Wx1attEzONjB9duIF4oBIYPY
+	mTtC5Oy386aZa2xEPeAg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vgTZG-0000000D751-0OyG;
-	Thu, 15 Jan 2026 20:03:42 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1vgUXa-0000000DCLu-1bYt;
+	Thu, 15 Jan 2026 21:06:02 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vgTZE-0000000D74q-2fCs;
-	Thu, 15 Jan 2026 20:03:40 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 9AA8760130;
-	Thu, 15 Jan 2026 20:03:39 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 172D2C116D0;
-	Thu, 15 Jan 2026 20:03:39 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1768507419;
-	bh=j0KMSJRPUjr0OGr37u5/m98sK59dQ45lZHv+bXjm7mU=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=TrTC0jBHSmn8QGKzqMX8HTO4kXIUNriQQwBPluePdsYnmgqz2sotFCffJGTzS+xcZ
-	 mrj1zD7uV9XIDRVGtq1CXXlTtKz0zu4H+YDfiDCxp8AQWbS6fQY3B+MKnQvv+lS1hi
-	 4HRBMAt3fPwlMOSxY4J8dqXTgNyX8cQCPFUAdiZS/jPdle+sx9Sp3GUnZCFi9UsWV5
-	 rEKhpfwuNywvLmfEEXl4kb1d9XRhfCXlNujxVJ7kbLu1IL1J/uGjpUW9C0XtNMPaD2
-	 vRIU2977NPMb48Ct3kGIyHEVwlq17Wy9Ipg4ZqpEuk/qnNIrz3KzpVQC84+ABHY86a
-	 G9B6KF4lKkOog==
-Date: Thu, 15 Jan 2026 14:03:37 -0600
-From: "Rob Herring (Arm)" <robh@kernel.org>
-To: Jiayu Du <jiayu.riscv@isrc.iscas.ac.cn>
-Cc: devicetree@vger.kernel.org, vkoul@kernel.org, TroyMitchell988@gmail.com,
-	linux-usb@vger.kernel.org, conor@kernel.org, kingxukai@zohomail.com,
-	linux-riscv@lists.infradead.org, alex@ghiti.fr, pjw@kernel.org,
-	linux-kernel@vger.kernel.org, krzk+dt@kernel.org,
-	gaohan@iscas.ac.cn, cyy@cyyself.name, gregkh@linuxfoundation.org,
-	linux-phy@lists.infradead.org, aou@eecs.berkeley.edu,
-	neil.armstrong@linaro.org, conor+dt@kernel.org, palmer@dabbelt.com,
-	18771902331@163.com
-Subject: Re: [PATCH v2 1/4] dt-bindings: phy: Add Canaan K230 USB PHY
-Message-ID: <176850741658.1095207.11658679131593700073.robh@kernel.org>
-References: <20260115064223.21926-1-jiayu.riscv@isrc.iscas.ac.cn>
- <20260115064223.21926-2-jiayu.riscv@isrc.iscas.ac.cn>
+	id 1vgUXY-0000000DCLT-09m1
+	for linux-phy@bombadil.infradead.org;
+	Thu, 15 Jan 2026 21:06:01 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:Content-Type:
+	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender
+	:Reply-To:Content-ID:Content-Description;
+	bh=WLhM43u7KTCNMftZSAW1g9y9SRicJ/aCzV4l0MaawTE=; b=LJDFLCrYV45/LSxd/YrcJFttsp
+	NXwyrJ7R658oJEKX1DN1Y+wlor1+an5I/UjHTOkMUPoQUiMVxnUT9hT7ZFN1Ps+y9lfR8G+MX6qn3
+	LoIi/tlnSBenkHsMdpQQfp4+Vfk0KtDS+/xfW5a1AIufefiR2Fl3bGf2I1DhBFm64OIqVaAp/QHQV
+	v2Tofl4v3MjbuvC6QUIv4tN8BFHKNcIOTQN8bvCyLwUvwBCykD3VjPewC6JQ6zp+pI2/60pS9eXxd
+	lEs5b0FuKWjRSn0i83tG3EUeGWvx4lA897HX0Z/mJ8XbZ/ijJWghrskvXbwiX0Ku8hskEsRO6KpgS
+	84AAUv7w==;
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	by casper.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1vgUXU-00000008SVv-1A62
+	for linux-phy@lists.infradead.org;
+	Thu, 15 Jan 2026 21:05:59 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 60FFY9G32673513
+	for <linux-phy@lists.infradead.org>; Thu, 15 Jan 2026 21:05:51 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	WLhM43u7KTCNMftZSAW1g9y9SRicJ/aCzV4l0MaawTE=; b=LcyP4ZgHar0lfCNc
+	erfRehhLm+Jly3LD5YZe+gnbNWLMPpKpCHqXWqbxOusksc+bO9tXicyW7jh//NJi
+	usIGfOEjO9AEv9gpfGj/98YCcHfrTukl/zYmQLydJsdQKttHrSPAJdyOP2ZwhZgo
+	JBQMEwdzMGLiVdBk1W/SXyZVvNdc5NRZT+FM7qpEx7/7NvdPOy5frXysA8s0gU8J
+	ZqNYay2ewVXzcLHlbBz3ecFwu6edWv5ajyjydAsDG19/Yj+LuCA7AN0opCmt5loq
+	k4QJeBZL720AEGIBMtghVzSNUa8Qz2OgpGPhh0XGju56X61amGvdnRG64wNypL3C
+	6E2Taw==
+Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com [209.85.222.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4bpyduhm0f-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Thu, 15 Jan 2026 21:05:51 +0000 (GMT)
+Received: by mail-qk1-f197.google.com with SMTP id af79cd13be357-8c52c67f65cso505691285a.1
+        for <linux-phy@lists.infradead.org>; Thu, 15 Jan 2026 13:05:51 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1768511151; x=1769115951; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=WLhM43u7KTCNMftZSAW1g9y9SRicJ/aCzV4l0MaawTE=;
+        b=fYlk3Er8QjpTwQrT/YEHJwd7gsSEnU2jaAayPP/3j5YWBImwuaYDgDhuS3VGjbdeww
+         Bpk9qtH/xwJwL/JDuoPiRmXQz1f+Nt4De2MOKEf67er38gjl68yi6tMIz145UXHpQj15
+         zUo+3qTGmS+Fhnoyt6AbXfkBdU6cuCt1B6L9JPIwgc5ymrehCrHBEEhtslSveXwegc90
+         eqw8mnZAw4kh/pHAJY7NeHd/GtB3jJ8X5AEQFBzkSNawr9UuP0s11Grwjk5tSsPgAuix
+         aA+HOe9/PxTrZysTKge1ufFkzPsGI/Vu0P+vTgMMO25F6TEwFmLNt7/JmSNGmWrMMnLT
+         EIgA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1768511151; x=1769115951;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to;
+        bh=WLhM43u7KTCNMftZSAW1g9y9SRicJ/aCzV4l0MaawTE=;
+        b=sKl7vEyk/TFvIWeYiT6UrPs6nUyL4YH1pztg4X1Q829b8EJj9bsjP2LGQUqOyCxVjm
+         INNqs3hB/3p+2Xxfh4TLYAWqn7SWlV7ytJJPFAkW8gvJVXAYbxyiN0i/9P0yqh9JrVmd
+         Sl7nAf0WLsa8zahFUPqXAmkvpM0OfLIieUCCmUeMRNutappNlH08A8gkF4uraxBPyYVv
+         N0ZU3LgD1/B4nsrYvgA/+KitAHcgL3BtT2+xcYqEJKo08D6Nu5hJtbfk1BZtRj9yHtVn
+         mmplcY/j/IyzR4hfpNeuW6yV17soEQhUpvAGkH+9EzOWVatzNZBj3keTHZj1/nGLUJKN
+         7Xmg==
+X-Forwarded-Encrypted: i=1; AJvYcCXlZLesG8ZGOJu/Ixunf1bO78jLD22hfP6JL4kYP+nW4CxGA8gBWGjQ8Cep7gM2KiSI2wrzZ6P4u/Q=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yypc1T+iD7QL5WYTiBdxldNAl25yGjg8oxX2KMhh8HXi91ZUt+U
+	EsPqW35HjL9CIYgNMYoE4nFiLBW3rnO6+xVIQWMhcGL2LQiqEbNKqdOwZUhAtJ2RILItrdDI18I
+	9CYOdJAvr0EVSisXpxMPUW8ejJAAOZAu8kBM2H+CmkjdtO3RZs+htzoLVAVqkXKgZeMqy
+X-Gm-Gg: AY/fxX7BnmzOCQdwOI9drhcIZg36iHWECLnR7/Cy5vr17YDifnKvvgTV0lpd9pmvmnk
+	tC25hMhNSXQKadAnHYXkwy4eSV3jLi4v+RetfpaRrqW2mF7CLg5/NppriHch1ScJjepeG63Srao
+	KPhe8cYZyJKGUJZ2T/46Ys3wQ93nw+LuCwt28rFJP/K5BvX8LVaZXk5DiQfI014f2B3Ajr8cM68
+	+Sy1K8TlM7L2vI+BOFxCNHtVaSRUpYnEXvuQEpXbO/3yUnmMB+qvPWFQffhE3A8ZAW5uD6sUACc
+	CtFhHelIwqsgRbASVnSBuT287bRsHNVFNXASvsQznG2fmCftQT+WOfveyh0qFRzYzjTjmJFA1bi
+	Ih5uL0A7ZdeqVFzqPIZ7Jlm7CXImpOuHe+ZeFevZqlVXvKSFZ+BPVYsp9FyBo9hsIoV5k30dp9P
+	8+Whiz6lGJkLqpW408+eirxs0=
+X-Received: by 2002:a05:620a:1723:b0:8b2:dfda:66c4 with SMTP id af79cd13be357-8c6a68d2f67mr120079685a.8.1768511150908;
+        Thu, 15 Jan 2026 13:05:50 -0800 (PST)
+X-Received: by 2002:a05:620a:1723:b0:8b2:dfda:66c4 with SMTP id af79cd13be357-8c6a68d2f67mr120072385a.8.1768511150340;
+        Thu, 15 Jan 2026 13:05:50 -0800 (PST)
+Received: from umbar.lan (2001-14ba-a073-af00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a073:af00:264b:feff:fe8b:be8a])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-59baf397672sm155740e87.61.2026.01.15.13.05.49
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 15 Jan 2026 13:05:49 -0800 (PST)
+From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+To: Michael Turquette <mturquette@baylibre.com>,
+        Stephen Boyd <sboyd@kernel.org>, Brian Masney <bmasney@redhat.com>
+Cc: linux-clk@vger.kernel.org, linux-kernel@vger.kernel.org,
+        Chen Wang <unicorn_wang@outlook.com>,
+        Inochi Amaoto <inochiama@gmail.com>, sophgo@lists.linux.dev,
+        Chen-Yu Tsai <wens@kernel.org>, Maxime Ripard <mripard@kernel.org>,
+        Jernej Skrabec <jernej.skrabec@gmail.com>,
+        Samuel Holland <samuel@sholland.org>,
+        linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
+        Alexandre Belloni <alexandre.belloni@bootlin.com>,
+        linux-rtc@vger.kernel.org,
+        =?UTF-8?q?Andreas=20F=C3=A4rber?= <afaerber@suse.de>,
+        Manivannan Sadhasivam <mani@kernel.org>,
+        linux-actions@lists.infradead.org,
+        Keguang Zhang <keguang.zhang@gmail.com>, linux-mips@vger.kernel.org,
+        Taichi Sugaya <sugaya.taichi@socionext.com>,
+        Takao Orito <orito.takao@socionext.com>,
+        Jacky Huang <ychuang3@nuvoton.com>,
+        Shan-Chun Hung <schung@nuvoton.com>, Vladimir Zapolskiy <vz@mleia.com>,
+        Piotr Wojtaszczyk <piotr.wojtaszczyk@timesys.com>,
+        Bjorn Andersson <andersson@kernel.org>, linux-arm-msm@vger.kernel.org,
+        Orson Zhai <orsonzhai@gmail.com>,
+        Baolin Wang <baolin.wang@linux.alibaba.com>,
+        Chunyan Zhang <zhang.lyra@gmail.com>,
+        Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+        Alexandre Torgue <alexandre.torgue@foss.st.com>,
+        linux-stm32@st-md-mailman.stormreply.com,
+        Michal Simek <michal.simek@amd.com>,
+        Rob Clark <robin.clark@oss.qualcomm.com>,
+        Dmitry Baryshkov <lumag@kernel.org>, David Airlie <airlied@gmail.com>,
+        Simona Vetter <simona@ffwll.ch>,
+        Abhinav Kumar <abhinav.kumar@linux.dev>,
+        Jessica Zhang <jesszhan0024@gmail.com>, Sean Paul <sean@poorly.run>,
+        Marijn Suijten <marijn.suijten@somainline.org>,
+        dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
+        Vinod Koul <vkoul@kernel.org>,
+        Neil Armstrong <neil.armstrong@linaro.org>,
+        linux-phy@lists.infradead.org
+Subject: Re: [PATCH 00/27] clk: remove deprecated API divider_round_rate() and friends
+Date: Thu, 15 Jan 2026 23:05:48 +0200
+Message-ID: <176851027322.3933285.17869583744437773979.b4-ty@oss.qualcomm.com>
+X-Mailer: git-send-email 2.47.3
+In-Reply-To: <20260108-clk-divider-round-rate-v1-0-535a3ed73bf3@redhat.com>
+References: <20260108-clk-divider-round-rate-v1-0-535a3ed73bf3@redhat.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260115064223.21926-2-jiayu.riscv@isrc.iscas.ac.cn>
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMTE1MDE2NSBTYWx0ZWRfX0GXeAXkqCLQH
+ psAr9oD5Nv71HI6BPt6opqM0UJ9uSQjkfNc4GAJj3ZgCMjTtB6BfFCu9j16+chdkfFGJ1jqK687
+ XuyY0FA//Ml3GSGxj12h+ofs22jIKa+vdbPPHUKCX5J29aUAGWMqsgrSU2L1ax1WPoqNkzFimpq
+ HJ+z3axloz2X2OvSn5Q1hVnTZxJBkteXA7M+iQiF/1FApcN45sXO8l1KSlu5+3y36RdJUJ81neN
+ +K/mou7LwD4BK9F2eXeMwxp3HIz+iLGcp1k2Gt2jzMBl+YHy2qT13OPxyhxOf+FTs5oQvkfqKsE
+ pyHR0bUuqwDnWfXWm0vgB1B36SC2P2fGtPCESSekI3tPFCG7hlojz5sQrjW2N2vP4QUqcSvuj6B
+ q49hyvHszuXg74k33iJ4f8QrV5mD6ZkRV/agSW1PpJhNAaAlV5C4vBzRIzBICyo/DUqI8WoMBPz
+ NOFvF4gEKuAwJjBCl7w==
+X-Proofpoint-ORIG-GUID: pFU6VP36Pjy1KxvTneCuj7c-btrGDrsM
+X-Authority-Analysis: v=2.4 cv=NafrFmD4 c=1 sm=1 tr=0 ts=696956af cx=c_pps
+ a=50t2pK5VMbmlHzFWWp8p/g==:117 a=xqWC_Br6kY4A:10 a=IkcTkHD0fZMA:10
+ a=vUbySO9Y5rIA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
+ a=e5mUnYsNAAAA:8 a=whp_R4xS9ENlu3RGya8A:9 a=QEXdDO2ut3YA:10
+ a=IoWCM6iH3mJn3m4BftBB:22 a=Vxmtnl_E_bksehYqCbjh:22
+X-Proofpoint-GUID: pFU6VP36Pjy1KxvTneCuj7c-btrGDrsM
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
+ definitions=2026-01-15_06,2026-01-15_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ spamscore=0 impostorscore=0 bulkscore=0 lowpriorityscore=0 suspectscore=0
+ phishscore=0 clxscore=1015 priorityscore=1501 malwarescore=0 adultscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2512120000 definitions=main-2601150165
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260115_210556_554722_478C3ED0 
+X-CRM114-Status: GOOD (  11.26  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,19 +192,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Thu, 15 Jan 2026 14:42:19 +0800, Jiayu Du wrote:
-> K230 SoC USB PHY requires configuring registers for control and
-> configuration. Add USB phy bindings for K230 SoC.
+On Thu, 08 Jan 2026 16:16:18 -0500, Brian Masney wrote:
+> Here's a series that gets rid of the deprecated APIs
+> divider_round_rate(), divider_round_rate_parent(), and
+> divider_ro_round_rate_parent() since these functions are just wrappers
+> for the determine_rate variant.
 > 
-> Signed-off-by: Jiayu Du <jiayu.riscv@isrc.iscas.ac.cn>
-> ---
->  .../bindings/phy/canaan,k230-usb-phy.yaml     | 35 +++++++++++++++++++
->  1 file changed, 35 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/canaan,k230-usb-phy.yaml
+> Note that when I converted some of these drivers from round_rate to
+> determine_rate, this was mistakenly converted to the following in some
+> cases:
 > 
+> [...]
 
-Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
+Applied to msm-next, thanks!
+
+[24/27] drm/msm/dsi_phy_14nm: convert from divider_round_rate() to divider_determine_rate()
+        https://gitlab.freedesktop.org/lumag/msm/-/commit/1d232f793d4d
+
+Best regards,
+-- 
+With best wishes
+Dmitry
+
 
 
 -- 
