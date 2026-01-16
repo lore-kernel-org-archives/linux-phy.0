@@ -4,54 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 68EE3D4A5E2
-	for <linux-phy@archiver.kernel.org>; Fri, 16 Jan 2026 02:09:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B0EFAD4A5ED
+	for <linux-phy@archiver.kernel.org>; Fri, 16 Jan 2026 02:53:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:Cc:From:Subject:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kpaoZOYQircJqbfZUdTxq9nTjIv5NQEjH+M4USNhPq0=; b=lf26wh6qOkdXmJ
-	uI+WmTQswix3sM69StIcjeilfnj6ArcRy+BYfQ9+v2uOjdrNMceTx+5wBHHGZ4KFRY8v11vC33pqr
-	lQgKkkH5D8KHwKO8GDUY05z0Tx1Y+NS63SXh9bYkjLWlb9R5mCIHcE3G6R2Lu4OauN40tzzRrBMZ8
-	/TwkEFXMvV6f3ktGAVqvTaoulQaqcHDhJY2bSihTrZ58fP+QA+FMrZDY0amUFbDHS/mKZbYF5IdsI
-	OeiAvyUbpnJIqx/TG+g9d24unR5R1YhcFWcl+i9u9zE40OvPQ32yFonSt4pKJU9l/n/rI5I6YEuI4
-	jSUS8yLs8spc+0jc0zig==;
+	List-Archive:List-Unsubscribe:List-Id:CC:To:MIME-Version:Message-ID:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=7Q3VnwVMPie2xrOBOkaFSDAkkLbc9McK9cByUxQhWEk=; b=MJRrkufsX1H3cR
+	d10hqiCMIpp4ihdvYP/cr/ti5itOumJll4rhiJ42M5ZlVj1iQ4zw6XWAyNVnm/O7/LJ+D1hvB7CZh
+	UwuYHgBDSnEGEzm90DIuJbfHIbGI1fXOeL4jUIBGB8e/LUZpSryHDdjHqNwqmf48jlxBdBcV6RaBU
+	6ct/l1H/Ur3Hr3Gp2fO+/nKfFbGFboEVjJ6FDn/IKx1vMyNhfw2j3biVFv9GEtRdicEGeDWw5IXmJ
+	dtpt00VqE9GxCjvWfhJ8Qd3JcbAcRvt/7d0fpvItPzscc+KQgydoLGySpX5jbSFM8YQm33rrofBzv
+	xyaK6BrPdOTRUh6uE31g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vgZGm-0000000DRoJ-0bpq;
-	Fri, 16 Jan 2026 02:09:00 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vgZxz-0000000DUio-15Jq;
+	Fri, 16 Jan 2026 02:53:39 +0000
+Received: from mail.aspeedtech.com ([211.20.114.72] helo=TWMBX01.aspeed.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vgZGj-0000000DRoD-3qWM
-	for linux-phy@lists.infradead.org;
-	Fri, 16 Jan 2026 02:08:57 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id D577C6016B;
-	Fri, 16 Jan 2026 02:08:56 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7890FC116D0;
-	Fri, 16 Jan 2026 02:08:56 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1768529336;
-	bh=sno2tWjsBNPmpnaKlE6qtXy545sE4ON2GCYjm2//rew=;
-	h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
-	b=cUxzyPH1/GE0ZbZk/CuOg6tqprq5nDKPLtaNV16nL6PhCDMsGPF4JERgpWvmcBnw4
-	 NerEoIpBdO0aQQtqMbQW1zF/darIsPRQGttdVTiyqJw422E8tgVSCdcqFJ1gcYtGH4
-	 QA529vsED10PaXQsIYI7m4BEja+zsTXygdvMKGbX9naiUsMBchvwU4M4m5aeEGVGAP
-	 oP1q6+//9LFe36a+QFuxXdb8BJo2w0LGzfIkKPHE3AAgpP5Xl3kcxXlXeLi+Q6ws/P
-	 6E6VcGnYdUxAE6K771ftOhrTHpudxLP5G8Qy5y3vD1Lt2WUI9Tqoe+ZXDWPV3H1vtt
-	 lMP79gf5Nt1vQ==
+	id 1vgZxv-0000000DUhk-3vtS;
+	Fri, 16 Jan 2026 02:53:37 +0000
+Received: from TWMBX01.aspeed.com (192.168.0.62) by TWMBX01.aspeed.com
+ (192.168.0.62) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.10; Fri, 16 Jan
+ 2026 10:53:26 +0800
+Received: from [127.0.1.1] (192.168.10.13) by TWMBX01.aspeed.com
+ (192.168.0.62) with Microsoft SMTP Server id 15.2.1748.10 via Frontend
+ Transport; Fri, 16 Jan 2026 10:53:25 +0800
+From: Ryan Chen <ryan_chen@aspeedtech.com>
+Subject: [PATCH v2 0/3] Add AST2700 USB3.2 PHY driver
+Date: Fri, 16 Jan 2026 10:53:23 +0800
+Message-ID: <20260116-upstream_usb3phy-v2-0-0b0c9f3eb6f4@aspeedtech.com>
 MIME-Version: 1.0
-In-Reply-To: <20260114092742.13231-5-angelogioacchino.delregno@collabora.com>
-References: <20260114092742.13231-1-angelogioacchino.delregno@collabora.com> <20260114092742.13231-5-angelogioacchino.delregno@collabora.com>
-Subject: Re: [PATCH v8 04/10] spmi: Implement spmi_subdevice_alloc_and_add() and devm variant
-From: Stephen Boyd <sboyd@kernel.org>
-Cc: dlechner@baylibre.com, nuno.sa@analog.com, andy@kernel.org, arnd@arndb.de, gregkh@linuxfoundation.org, srini@kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org, sre@kernel.org, angelogioacchino.delregno@collabora.com, krzk@kernel.org, dmitry.baryshkov@oss.qualcomm.com, quic_wcheng@quicinc.com, melody.olvera@oss.qualcomm.com, quic_nsekar@quicinc.com, ivo.ivanov.ivanov1@gmail.com, abelvesa@kernel.org, luca.weiss@fairphone.com, konrad.dybcio@oss.qualcomm.com, mitltlatltl@gmail.com, krishna.kurapati@oss.qualcomm.com, linux-arm-msm@vger.kernel.org, linux-iio@vger.kernel.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, linux-pm@vger.kernel.org, kernel@collabora.com, Jonathan Cameron <jonathan.cameron@huawei.com>
-To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, jic23@kernel.org
-Date: Thu, 15 Jan 2026 20:08:54 -0600
-Message-ID: <176852933471.16445.12620793496789127631@lazor>
-User-Agent: alot/0.11
+X-B4-Tracking: v=1; b=H4sIACOoaWkC/2WNwQ6CMBAFf4Xs2Zq2ChVO/ochBuhie4A2XWgkp
+ P9uJfHkcSZ583YgDBYJmmKHgNGSdXMGeSpgMN38QmZ1ZpBcVlwIyVZPS8Bueq7UX7zZmBKiGm9
+ 6RKVqyDMfcLTvI/loMxtLiwvb8RDF1/5i1/9YFIwziWVd1rxHqdW9I4+oFxzMeXATtCmlD4Yzd
+ Ea1AAAA
+X-Change-ID: 20260112-upstream_usb3phy-7116f8dfe779
+To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
+	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Joel Stanley <joel@jms.id.au>, "Andrew
+ Jeffery" <andrew@codeconstruct.com.au>, Philipp Zabel
+	<p.zabel@pengutronix.de>
+CC: <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
+	<linux-arm-kernel@lists.infradead.org>, <linux-aspeed@lists.ozlabs.org>,
+	<linux-kernel@vger.kernel.org>, Ryan Chen <ryan_chen@aspeedtech.com>,
+	Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+X-Mailer: b4 0.14.3
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1768532005; l=1184;
+ i=ryan_chen@aspeedtech.com; s=20251126; h=from:subject:message-id;
+ bh=skzeJJpNld7RftFrKl/uW1Nm9mq66q5prekuES1h6y0=;
+ b=ZzNEGJC7S2ExCx1ucmhgJ/IaHbV9SFe7rxJCCD51oPhRXQLVkf+lUDG03WfXhwcplV/XRpzF6
+ Y9nEy1qscYmAZjW4izS0qaAz9Dum99NrQm3UmW7MONiJiVKZKmpS40O
+X-Developer-Key: i=ryan_chen@aspeedtech.com; a=ed25519;
+ pk=Xe73xY6tcnkuRjjbVAB/oU30KdB3FvG4nuJuILj7ZVc=
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260115_185336_005462_667B6504 
+X-CRM114-Status: UNSURE (   5.27  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -68,36 +80,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Quoting AngeloGioacchino Del Regno (2026-01-14 03:27:36)
-> Some devices connected over the SPMI bus may be big, in the sense
-> that those may be a complex of devices managed by a single chip
-> over the SPMI bus, reachable through a single SID.
-> 
-> Add new functions aimed at managing sub-devices of a SPMI device
-> spmi_subdevice_alloc_and_add() and a spmi_subdevice_put_and_remove()
-> for adding a new subdevice and removing it respectively, and also
-> add their devm_* variants.
-> 
-> The need for such functions comes from the existence of those
-> complex Power Management ICs (PMICs), which feature one or many
-> sub-devices, in some cases with these being even addressable on
-> the chip in form of SPMI register ranges.
-> 
-> Examples of those devices can be found in both Qualcomm platforms
-> with their PMICs having PON, RTC, SDAM, GPIO controller, and other
-> sub-devices, and in newer MediaTek platforms showing similar HW
-> features and a similar layout with those also having many subdevs.
-> 
-> Also, instead of generally exporting symbols, export them with a
-> new "SPMI" namespace: all users will have to import this namespace
-> to make use of the newly introduced exports.
-> 
-> Reviewed-by: Jonathan Cameron <jonathan.cameron@huawei.com>
-> Tested-by: Neil Armstrong <neil.armstrong@linaro.org> # on SM8650-QRD
-> Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-> ---
+Add AST2700 USB3.2 PHY support.
+ - Supports Super Speed Plus Gen2x1 (10 Gbps), Super Speed (5 Gbps),
+   High Speed (480 Mbps), Full Speed (12Mbps), and Low Speed (1.5 Mbps).
 
-Acked-by: Stephen Boyd <sboyd@kernel.org>
+Signed-off-by: Ryan Chen <ryan_chen@aspeedtech.com>
+---
+Changes in v2:
+- aspeed,ast2700-usb3-phy.yaml
+ - Drop clocks, resets descripton.
+- Kconfig
+ - add COMPILE_TEST, remove default n
+- Link to v1: https://lore.kernel.org/r/20260114-upstream_usb3phy-v1-0-2e59590be2d7@aspeedtech.com
+
+---
+Ryan Chen (3):
+      dt-bindings: phy: aspeed: Document AST2700 USB3.0 PHY
+      phy: add AST2700 usb3.2 phy driver
+      MAINTAINERS: Add ASPEED USB3 PHY driver
+
+ .../bindings/phy/aspeed,ast2700-usb3-phy.yaml      |  48 +++++
+ MAINTAINERS                                        |   8 +
+ drivers/phy/aspeed/Kconfig                         |  12 ++
+ drivers/phy/aspeed/Makefile                        |   2 +
+ drivers/phy/aspeed/phy-aspeed-usb3.c               | 236 +++++++++++++++++++++
+ 5 files changed, 306 insertions(+)
+---
+base-commit: 8f0b4cce4481fb22653697cced8d0d04027cb1e8
+change-id: 20260112-upstream_usb3phy-7116f8dfe779
+
+Best regards,
+-- 
+Ryan Chen <ryan_chen@aspeedtech.com>
+
 
 -- 
 linux-phy mailing list
