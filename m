@@ -4,73 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1414CD4A5EE
-	for <linux-phy@archiver.kernel.org>; Fri, 16 Jan 2026 02:58:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 267E2D4A5EE
+	for <linux-phy@archiver.kernel.org>; Fri, 16 Jan 2026 03:16:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=E6TxRx2QfFOqUqRt++oXhsLbbZ2+DokiwDWuutqjHU8=; b=ayng7+A092vVP/
-	FrsDtgCrcGCeh21JcJKlOrOUMC+Q3Zx2kimlo6pe7QmhbDXL+o/jzGSEmrpZHe0VuyoSWYUOvDOLd
-	6C0Hgb7f351Ng6U008AhIwVhRCCMluYuKMH6aToRlTxq3VktIiZtrqIkswiRVXVfn/MHNnXDu5T8z
-	Uq75Gc1R5iNBQrxcZP3VieguIQUPsbLoSlzCFlOr1aT5rfPXNrEhX4A0zHztgfVunew07zAhmJELO
-	XGt8Z/QGtvfpS19lrcOAsHp/pyEFpuIWBpmOZpE8WGEMHXVqetufYgoPmeetq2BVmQzFJh4xWjwaA
-	ZKaxeBG0YFr+7dnVV52g==;
+	List-Owner; bh=uj2rFJtjnHx0JujObqCLu+8NJ4ko8YBLArxl3xmGXys=; b=BXhEHs2c9T+wJ9
+	+99b1KA05Zc/ArFlptIqgFfIc59oRMWIKRiXglBvw04lwx8oQy8Oo3qluZr+PS67Cw+Xzhw32Olk/
+	7TPS3LTQsJ2+6OwCxIgHluGV+s/MVSfdIWNnnDBbCKucxqNO3KR16gLoXC+ccKOToKdB/oHjK91SH
+	EHvaFqbVWW908KYnwx8WpUaITGvgx9fJ2xpQOXrLlA6sQI4BqNBceepYfTLHI1wekb9zgkTtf+W4/
+	h3BJoBdN/jWp4WZZgVro/tW9tys/9zHdUi8UDAxyFpUxriA9oo010Ccx0K9f669787Ua8mayJcyAt
+	vlB5Z+IbGiIB25OCFPrw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vga38-0000000DVJ0-3IMp;
-	Fri, 16 Jan 2026 02:58:58 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1vgaKG-0000000DWAo-2mGx;
+	Fri, 16 Jan 2026 03:16:40 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vga35-0000000DVHJ-3wX2;
-	Fri, 16 Jan 2026 02:58:57 +0000
+	id 1vgaKE-0000000DWAB-2fzg;
+	Fri, 16 Jan 2026 03:16:38 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id C331C43300;
-	Fri, 16 Jan 2026 02:58:54 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D4182C116D0;
-	Fri, 16 Jan 2026 02:58:53 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id B04E560167;
+	Fri, 16 Jan 2026 03:16:37 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3BFD6C19421;
+	Fri, 16 Jan 2026 03:16:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1768532334;
-	bh=J/VRZLz5Y13tzcUGlFZbC7tPCdmM0aLjt2QZN4qLbrg=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=FdOT9TPHU+LhbSrLGTtlmmXFRb1e6bgdCDXom0+7F83Nhzdx6GFQHbHoylT0WRGhY
-	 3vMt2nNaJi45xR+kJ2+XJtImNvh78p9oakYeN86wlMKpA7MvPvL4uo+5mrEJhJ6Lul
-	 /OUfOOLRHeEZZgXKS1wojHxAezR6vin9l7vDm6r693cNm9+oUpKs2qUO5/8pjyJkyK
-	 rTHvDrxtGqo9p/M3HlKefCnRkiqpfb8QFjA08pSNQ+aDQKMTmKqjdYN731LjtAe09N
-	 f8rpw+Bqo1v9arayO+ZjUyuMTbvS3iKqICfyMJXr6Jz6m4NZmOrUnfR8ffVqWuQ6oY
-	 zkDxxmGBLUocQ==
+	s=k20201202; t=1768533397;
+	bh=B2+FCAQTC6FVsVubt6CQsBCJNComdynPbHPZmy46ChI=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+	b=OadD1y5pzThcRXgoOGbwyy0e3rC1wHFHn/FBWBj07osgVMonggwCQ8i9/uRKUtQrV
+	 B6GWHgrlHd6WyvQ1VATKmGsDNNcrm7Ox0DUuCGCQHzqgL/s6qgceLdNAo++4UGLS3t
+	 5sbDj1BVZau4SPy8PTe1tUFZNYjZ0xh2OLzBOUK8ImjRU5st7F3peTEWJMl+HckT91
+	 Rb1gi7AUhdEAAM+/swupIlSqiaJXQZAuoKFOcn+NZbtiC2HMKbzIDc68P+jjLdamul
+	 1KUDgLwQXNwcgUBDpGyu4lPCPiRPyij+kXEVxSMB3gs8hqJ0I3TpVM+HoaU3Vasck3
+	 2AdDsM7LITAdg==
+Date: Thu, 15 Jan 2026 19:16:35 -0800
 From: Jakub Kicinski <kuba@kernel.org>
-To: rmk+kernel@armlinux.org.uk
-Cc: Jakub Kicinski <kuba@kernel.org>,
-	andrew+netdev@lunn.ch,
-	alexandre.torgue@foss.st.com,
-	hkallweit1@gmail.com,
-	vkoul@kernel.org,
-	mohd.anwar@oss.qualcomm.com,
-	konrad.dybcio@oss.qualcomm.com,
-	andrew@lunn.ch,
-	edumazet@google.com,
-	netdev@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	davem@davemloft.net,
-	linux-arm-msm@vger.kernel.org,
-	neil.armstrong@linaro.org,
-	linux-arm-kernel@lists.infradead.org,
-	pabeni@redhat.com,
-	mcoquelin.stm32@gmail.com,
-	linux-stm32@st-md-mailman.stormreply.com
-Subject: Re: [net-next,12/14] net: stmmac: add support for reading inband SGMII status
-Date: Thu, 15 Jan 2026 18:58:52 -0800
-Message-ID: <20260116025852.354716-1-kuba@kernel.org>
-X-Mailer: git-send-email 2.52.0
-In-Reply-To: <E1vg4wc-00000003SGl-1dZi@rmk-PC.armlinux.org.uk>
-References: <E1vg4wc-00000003SGl-1dZi@rmk-PC.armlinux.org.uk>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Vladimir Oltean <vladimir.oltean@nxp.com>, netdev@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-mediatek@lists.infradead.org, Daniel Golle <daniel@makrotopia.org>,
+ Horatiu Vultur <horatiu.vultur@microchip.com>, =?UTF-8?B?QmrDuHJu?= Mork
+ <bjorn@mork.no>, Andrew Lunn <andrew@lunn.ch>, Heiner Kallweit
+ <hkallweit1@gmail.com>, Russell King <linux@armlinux.org.uk>, "David S.
+ Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, Paolo
+ Abeni <pabeni@redhat.com>, Rob Herring <robh@kernel.org>, Krzysztof
+ Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Neil
+ Armstrong <neil.armstrong@linaro.org>, Matthias Brugger
+ <matthias.bgg@gmail.com>, AngeloGioacchino Del Regno
+ <angelogioacchino.delregno@collabora.com>, Eric Woudstra
+ <ericwouds@gmail.com>, Marek =?UTF-8?B?QmVow7pu?= <kabel@kernel.org>, Lee
+ Jones <lee@kernel.org>, Patrice Chotard <patrice.chotard@foss.st.com>
+Subject: Re: [PATCH v3 net-next 00/10] PHY polarity inversion via generic
+ device tree properties
+Message-ID: <20260115191635.33897ee8@kernel.org>
+In-Reply-To: <aWeXvFcGNK5T6As9@vaman>
+References: <20260111093940.975359-1-vladimir.oltean@nxp.com>
+	<aWeXvFcGNK5T6As9@vaman>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260115_185856_008015_83C25DC3 
-X-CRM114-Status: GOOD (  13.93  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,59 +82,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This is an AI-generated review of your patch. The human sending this
-email has considered the AI review valid, or at least plausible.
+On Wed, 14 Jan 2026 18:48:52 +0530 Vinod Koul wrote:
+> Subject: Re: [PATCH v3 net-next 00/10] PHY polarity inversion via generic device tree properties
 
-For local reproduction steps see https://netdev-ai.bots.linux.dev/ai-local.html
----
-net: stmmac: add support for reading inband SGMII status
-
-This commit adds support for reading link status, speed, and duplex for
-SGMII links from the RGSMII status register.
-
-> diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.c
-> index 73fc56ce5e55..12fc5038d913 100644
-> --- a/drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.c
-> +++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.c
-
-[ ... ]
-
-> @@ -97,7 +107,7 @@ static void dwmac_integrated_pcs_get_state(struct phylink_pcs *pcs,
->  					   struct phylink_link_state *state)
->  {
->  	struct stmmac_pcs *spcs = phylink_pcs_to_stmmac_pcs(pcs);
-> -	u32 status, lpa;
-> +	u32 status, lpa, rgsmii;
->
->  	status = readl(spcs->base + GMAC_AN_STATUS);
->
-> @@ -111,7 +121,35 @@ static void dwmac_integrated_pcs_get_state(struct phylink_pcs *pcs,
->
->  		phylink_mii_c22_pcs_decode_state(state, neg_mode, status, lpa);
->  	} else {
-> -		state->link = false;
-> +		rgsmii = field_get(spcs->rgsmii_status_mask,
-> +				   readl(spcs->rgsmii));
-> +		state->link = !!(status & GMAC_RGSMIII_LNKSTS);
-                            ^^^^^^
-
-Should this be checking rgsmii instead of status here? The status
-variable contains the GMAC_AN_STATUS register which is equivalent to
-MII_BMSR according to the comment at line 7. In BMSR, the link status
-bit is BMSR_LSTATUS (bit 2), not bit 3.
-
-GMAC_RGSMIII_LNKSTS is defined as BIT(3), which is the correct bit
-position for the RGSMII status register (matching GMAC_RGSMIIIS_LNKSTS
-in dwmac1000.h), but it appears to be applied to the wrong register
-variable.
-
-The code later uses rgsmii correctly for speed and duplex extraction.
-Was the intent to use rgsmii for the link status check as well?
-
-> +
-> +		if (state->link && neg_mode == PHYLINK_PCS_NEG_INBAND_ENABLED) {
-
-[ ... ]
+You can submit the PR in reply to the series, but please rewrite the
+subject to a typical PR format. Patchwork does not register this reply
+as a submission.
 
 -- 
 linux-phy mailing list
