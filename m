@@ -4,28 +4,28 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1989FD4A5EB
-	for <linux-phy@archiver.kernel.org>; Fri, 16 Jan 2026 02:53:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2C76BD4A5F5
+	for <linux-phy@archiver.kernel.org>; Fri, 16 Jan 2026 02:53:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References:Message-ID
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EC0fQ3g845Nm1K9zORinjvTUy0BAqA0sYl5MmhPVVac=; b=dSlpYVFV5KB+PN
-	zLIfPbU8xrBTZqHPYfO4crWgLy5Q1cPaJNv1r/EJyJlIj7U0TKt5WLcFn4plgDC20K8gR9zc+QIWv
-	o9B45DVRavErja+tc65FqKTydFzWuXyHzOh5/3N61XYlADJa3w9goTnpgFnIFE0fqfdQjZmAtJG++
-	IybVG1NcD5PyqVHAPWG5nIn5T8gaV+Ns8s9n8pFYzz3jStGAks3FblSjgh174m/V373GG4elgvLTG
-	xexoYV/QldTXwguGAJ8QZF/1vaOpx7WFmMdXXaNs1rQrELilUvtgDZI2Zvnj9WjQD1f7ORd7IfEYg
-	AtOZB5M9A5v1fbi4GgEg==;
+	List-Owner; bh=yicdqLFvnydQeQbceBeRLvsi1PvDP6wKG4jU5Su6OR0=; b=NPsgESCqjO7jBd
+	hUwfgczqvj/+DtVR2SPlokwBD1mZOMB1SXksJMDynSBU5GRsf+sAIUj3Jzss6FgqQwomwfFF57Ka3
+	NnJuYFO7mvbYOzrbkK/Motlk7lJZ2ervRf1Tmid4zu08LByJA5JuF7MoohGCFg5TSmWWyAekPid0G
+	h2sTVuyc8zvlnSiPNYd74HXhikJOGQGpsjc5wDn66T2s65p2cHh4bXDYO7ebNgvkEgC3eU07WDP7k
+	dBfMi2k21dLCNuTjTGMkmy2ZmM71DFZAWHomPBYO9RX0CicWs9AGOFFiKw4JUOCcMCQVfovMa51Ve
+	PPM6mhWPTN4V7CFXtJ6Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vgZy2-0000000DUkj-3WBF;
-	Fri, 16 Jan 2026 02:53:42 +0000
+	id 1vgZy6-0000000DUmj-3mKu;
+	Fri, 16 Jan 2026 02:53:46 +0000
 Received: from mail.aspeedtech.com ([211.20.114.72] helo=TWMBX01.aspeed.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vgZxy-0000000DUhk-0sKJ;
-	Fri, 16 Jan 2026 02:53:39 +0000
+	id 1vgZy2-0000000DUhk-01QR;
+	Fri, 16 Jan 2026 02:53:43 +0000
 Received: from TWMBX01.aspeed.com (192.168.0.62) by TWMBX01.aspeed.com
  (192.168.0.62) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.10; Fri, 16 Jan
@@ -34,11 +34,10 @@ Received: from [127.0.1.1] (192.168.10.13) by TWMBX01.aspeed.com
  (192.168.0.62) with Microsoft SMTP Server id 15.2.1748.10 via Frontend
  Transport; Fri, 16 Jan 2026 10:53:26 +0800
 From: Ryan Chen <ryan_chen@aspeedtech.com>
-Date: Fri, 16 Jan 2026 10:53:24 +0800
-Subject: [PATCH v2 1/3] dt-bindings: phy: aspeed: Document AST2700 USB3.0
- PHY
+Date: Fri, 16 Jan 2026 10:53:26 +0800
+Subject: [PATCH v2 3/3] MAINTAINERS: Add ASPEED USB3 PHY driver
 MIME-Version: 1.0
-Message-ID: <20260116-upstream_usb3phy-v2-1-0b0c9f3eb6f4@aspeedtech.com>
+Message-ID: <20260116-upstream_usb3phy-v2-3-0b0c9f3eb6f4@aspeedtech.com>
 References: <20260116-upstream_usb3phy-v2-0-0b0c9f3eb6f4@aspeedtech.com>
 In-Reply-To: <20260116-upstream_usb3phy-v2-0-0b0c9f3eb6f4@aspeedtech.com>
 To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
@@ -48,19 +47,18 @@ To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
 	<p.zabel@pengutronix.de>
 CC: <linux-phy@lists.infradead.org>, <devicetree@vger.kernel.org>,
 	<linux-arm-kernel@lists.infradead.org>, <linux-aspeed@lists.ozlabs.org>,
-	<linux-kernel@vger.kernel.org>, Ryan Chen <ryan_chen@aspeedtech.com>,
-	Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+	<linux-kernel@vger.kernel.org>, Ryan Chen <ryan_chen@aspeedtech.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1768532005; l=1695;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1768532005; l=861;
  i=ryan_chen@aspeedtech.com; s=20251126; h=from:subject:message-id;
- bh=PMotyQehgGrEVoSSxouKDsCZuOfMr0EXxz1QwPMc58k=;
- b=TLOnZh02m+/Up0zRoHQbLThVN/r3iglizLZ8jmW6X+BGCPJ45K/Mrt14d+2RLPQ7FAawyRpnO
- tjqBYK2LhvbDEbSpKHUiH2NfesEDTtfn8WStcS7gVBuV8ZNsv0HVFS4
+ bh=QIuVZToJwsol7VdY+5pSQWFYnqd8me80J57qWsI+AEA=;
+ b=7vGbc2YKRv3P5Cdpi4dbHki6edSiimkSoqQt2ayS1DAMWLyhUFcYAqYMzBIYw9rcYaoBp6aR6
+ sYljnV8q6z+BhPgiiKcj8ASywERueoioB1bcDaI/5/ydLWqGmwOUEQE
 X-Developer-Key: i=ryan_chen@aspeedtech.com; a=ed25519;
  pk=Xe73xY6tcnkuRjjbVAB/oU30KdB3FvG4nuJuILj7ZVc=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260115_185338_254466_E95E00ED 
-X-CRM114-Status: UNSURE (   9.30  )
+X-CRM114-CacheID: sfid-20260115_185342_044354_8BE9AD4B 
+X-CRM114-Status: UNSURE (   7.42  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -78,69 +76,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Document AST2700 USB3.2 PHY. This IP is connected between
-USB3 controller and PHY module.
+Add maintainer entry for ASPEED USB3 PHY driver.
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
 Signed-off-by: Ryan Chen <ryan_chen@aspeedtech.com>
 ---
- .../bindings/phy/aspeed,ast2700-usb3-phy.yaml      | 48 ++++++++++++++++++++++
- 1 file changed, 48 insertions(+)
+ MAINTAINERS | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/phy/aspeed,ast2700-usb3-phy.yaml b/Documentation/devicetree/bindings/phy/aspeed,ast2700-usb3-phy.yaml
-new file mode 100644
-index 000000000000..b83037aa0438
---- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/aspeed,ast2700-usb3-phy.yaml
-@@ -0,0 +1,48 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/aspeed,ast2700-usb3-phy.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 5b11839cba9d..ad1d12f346f2 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -3894,6 +3894,14 @@ S:	Maintained
+ F:	Documentation/devicetree/bindings/usb/aspeed,ast2600-udc.yaml
+ F:	drivers/usb/gadget/udc/aspeed_udc.c
+ 
++ASPEED USB3 PHY DRIVER
++M:	Ryan Chen <ryan_chen@aspeedtech.com>
++L:	linux-aspeed@lists.ozlabs.org (moderated for non-subscribers)
++L:	linux-phy@lists.infradead.org
++S:	Maintained
++F:	Documentation/devicetree/bindings/phy/aspeed,ast2700-usb3-phy.yaml
++F:	drivers/phy/aspeed/phy-aspeed-usb3.c
 +
-+title: ASPEED AST2700 USB 3.2 PHY
-+
-+maintainers:
-+  - Ryan Chen <ryan_chen@aspeedtech.com>
-+
-+properties:
-+  compatible:
-+    const: aspeed,ast2700-usb3-phy
-+
-+  reg:
-+    maxItems: 1
-+
-+  clocks:
-+    maxItems: 1
-+
-+  resets:
-+    maxItems: 1
-+
-+  '#phy-cells':
-+    const: 0
-+
-+required:
-+  - compatible
-+  - reg
-+  - clocks
-+  - resets
-+  - '#phy-cells'
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/clock/aspeed,ast2700-scu.h>
-+    #include <dt-bindings/reset/aspeed,ast2700-scu.h>
-+
-+    usb-phy@12010000 {
-+        compatible = "aspeed,ast2700-usb3-phy";
-+        reg = <0x12010000 0xc0>;
-+        clocks = <&syscon0 SCU0_CLK_GATE_PORTAUSB2CLK>;
-+        resets = <&syscon0 SCU0_RESET_PORTA_PHY3>;
-+        #phy-cells = <0>;
-+    };
+ ASPEED VIDEO ENGINE DRIVER
+ M:	Eddie James <eajames@linux.ibm.com>
+ L:	linux-media@vger.kernel.org
 
 -- 
 2.34.1
