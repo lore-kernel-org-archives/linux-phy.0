@@ -4,62 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6956DD4A5F4
-	for <linux-phy@archiver.kernel.org>; Sun, 18 Jan 2026 13:51:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7B112C9832F
+	for <linux-phy@archiver.kernel.org>; Sun, 18 Jan 2026 13:51:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fKhbMRcYgw4o1PuBEVOi0cAf1geLNszlAnB93oLn8iM=; b=14kc9ZzFOd8SsZ
-	Vzof15ZIew6fugfV9qXCxOXuvhEjHZOwu10ISljoC7h1AwtuLrTxeESDjcnRC83yvmkpNGpcAmQAA
-	jW9xHE1PaXdhdcNRa5eDBdH7ncUqFr5h0hCDtZhgJ+4uii8iNjVDwKeRjDVK81wQadPEjJ/tWyvTu
-	4zy2d2vRUnT8wFx67+BuYI3qIaXFd71qRlVAvbQfVB4RVx6JCcRNpD+dWBVXiAAt6Izr4pGIJuUlT
-	vfHUdcT3Q8TA5oTU0cXf24WWY1FPwW9hdv1qXmQWNR6rbUczTXf6dYQzqvSaAgr1j6HBhBL1wTREk
-	HH/ByOYHtbzBdUq4QUrw==;
+	List-Owner; bh=1P5F5/1x7+428HK1arcoNRT1uQ64TgkRRMinkqyJGKc=; b=09SbKy1jCRSDg6
+	Dlr2JYPCPoj/9Yo3y0WwEqkDDQTe9ippJuG0lTBXfaxA2bhajgVc/ZxUliD3YdeghDPqG2sKR9gB/
+	D27MYbB3GGdaTJ38vn0308EH5nqn2cSHb6/GrWHRo5lMS2RIgSJhfJJXdQ7R1S7y5f+tZCBcGloVm
+	HZEJHzvuBNGLG4s54k2G3h5zWCc6JrTThjPHbQc7DGIrwQrMgURJ4uBBNtw3JKlCmOMX2Q+i4cNza
+	ntY8hDsD9PmnqY3Ay0UTlS4dLYZV0Sa2+bz03CZdpeyj1Z7v+UOEITHXKxfpIjspIer9T9XG6bX/y
+	kSbEgT6CyxgbtrkMreMw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vhTC3-000000009eC-3Oh5;
-	Sun, 18 Jan 2026 13:51:52 +0000
+	id 1vhTC7-000000009iL-0jcn;
+	Sun, 18 Jan 2026 13:51:55 +0000
 Received: from mout-p-101.mailbox.org ([2001:67c:2050:0:465::101])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vhTBj-000000009PI-1MYG;
-	Sun, 18 Jan 2026 13:51:32 +0000
-Received: from smtp202.mailbox.org (smtp202.mailbox.org [IPv6:2001:67c:2050:b231:465::202])
+	id 1vhTBl-000000009Rs-0nfv;
+	Sun, 18 Jan 2026 13:51:41 +0000
+Received: from smtp202.mailbox.org (smtp202.mailbox.org [10.196.197.202])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
-	by mout-p-101.mailbox.org (Postfix) with ESMTPS id 4dvFPD4K8Yz9tdy;
-	Sun, 18 Jan 2026 14:51:28 +0100 (CET)
+	by mout-p-101.mailbox.org (Postfix) with ESMTPS id 4dvFPG6ys1z9tj6;
+	Sun, 18 Jan 2026 14:51:30 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailbox.org; s=mail20150812;
+	t=1768744291;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=v0bVHsCY7UsPDUQ9Hr2u2yyp6GJ/5zKUxBjM//vPrbo=;
+	b=QSv8kLzXK9KZRHM3j8MfBt8VIdXiBxvF3nwBSi2HCF7FyuDq2ULfNPj+1t4l5eghZ9gB/4
+	8ILD8YlAMUBimjUtES6RRoV0fWuOJ+f+IEHV7/aduMN0Kd1Swkrv+PQ0W30KIzg1tW6KXd
+	keJnIoZGVEn8ySom3nVaP6V3Avh4r+KC1HGpbdncSbUZr6Xo89Zjx6RLgSGISlwKTaKVt0
+	f2XvAoyrVIrMW0KN15bZNeeeP9p4jPYn4roJRyLNcVpQUr/RWdpAvAKpG7ebXT+3mhQ1zq
+	2B/QCkb1i6OsclPFuuBLFFePG7lQH2JSDk39soJrWeIdTXYozIskZhrOKqnhDA==
+From: Marek Vasut <marek.vasut+renesas@mailbox.org>
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailbox.org; s=mail20150812;
 	t=1768744289;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=4XYuex0QeLqf/2qVUA70rdQFdW1DfuO89ydiRHewS/4=;
-	b=ieXjbrSQr5JtSN2nG0yzvf2K7c3rfRghnTSeQlymfTRhqSE0Zh0ICbjuog+qXlPGAvqBNf
-	x9qky71uzvFrNIIilo3OR6nqwcZaEHj81VmViV5baJDxZWp+hAmgR8ODJyGcQwCAJp0HD3
-	Iux3OSGh7UyQT08zgZvG4rGApOxkZm3pqEHZSmHwBbg/4JrQa/6YM3z2tJKp0YIS+XM3na
-	bEzV2e5wn+h4ishFqaNg1H+NJT5HWvMMWg7sOu+2+sH6VtSWWwpNBcVpKn8261u4vBWcdq
-	SR1K5E79NPWxfo/U3bURHPkFrlz4xEBAUgzFCmSR+XTT+lEHZU0I23g9arVfbA==
-Authentication-Results: outgoing_mbo_mout;
-	dkim=pass header.d=mailbox.org header.s=mail20150812 header.b="a/RDxqmV";
-	spf=pass (outgoing_mbo_mout: domain of marek.vasut+renesas@mailbox.org designates 2001:67c:2050:b231:465::202 as permitted sender) smtp.mailfrom=marek.vasut+renesas@mailbox.org
-From: Marek Vasut <marek.vasut+renesas@mailbox.org>
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailbox.org; s=mail20150812;
-	t=1768744287;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=4XYuex0QeLqf/2qVUA70rdQFdW1DfuO89ydiRHewS/4=;
-	b=a/RDxqmVmmQLJaRk5siKEbPTEBTouccUBqVQfno4xFycU9xrvtAybs39AXYSNZcQGWC4FE
-	QOqf5wlUA3rTqTpuI7K5rcQ1+1WX02MoYGSxPg7nFiFAz+JlcR6DXBa+Sk7w+SC89rOd1O
-	wzfHtByKfVVMtvgn/8jpcOvtgQs4lQz5O9cRDsiRuXJc4gRpHmVGrW9kVOSLBjdIjwQKdT
-	2KfUCHD7RF8OcbhMagdOtzdZY874HuVg9TTOBYZ8j3/FoYwWYYOP9VE1P3RNgj5aHWyOu9
-	G8HIPbqeEjoB4lt6CIAaYy0Q9UHX6420Ya9I7QcL+R13eZc/+Vj4ThQ1oxf4rw==
+	bh=v0bVHsCY7UsPDUQ9Hr2u2yyp6GJ/5zKUxBjM//vPrbo=;
+	b=WtM8NSEVVCbKS6WvOG1bENI1MqfnvIZmhe3KCYOKaahoTP4U/5EGlH4bMPX7V1gV7hgoiN
+	cQk34t+EbsbvlPL959vD3t8j30g9A4eoqpzNRMAgNsyKRYRyXMEP9wpX8JWcJrPmTT6xQw
+	CO6VazpkXlzMRAWr14f/UxOqXpqWOQaesLEizhWag7b0aJjCuvdw2plwii3InB3yDVcGQy
+	kX4hXhBLnXMx3ec1JH+p24YTJWS7y1X9bdVK56duZcABTX463d0UVHcyQGge5P5PXovFo8
+	HMQu18nTfD5ltvct9ttKjgaUZhZKwpJovaH8xv89x4pbUblwN2iN+ijCU9x8dQ==
 To: linux-arm-kernel@lists.infradead.org
 Cc: Marek Vasut <marek.vasut+renesas@mailbox.org>,
 	Conor Dooley <conor+dt@kernel.org>,
@@ -73,18 +70,18 @@ Cc: Marek Vasut <marek.vasut+renesas@mailbox.org>,
 	devicetree@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	linux-renesas-soc@vger.kernel.org
-Subject: [PATCH v2 6/9] arm64: dts: renesas: r8a77990: Add USB 3.0 PHY and USB3S0 clock nodes
-Date: Sun, 18 Jan 2026 14:49:54 +0100
-Message-ID: <20260118135038.8033-7-marek.vasut+renesas@mailbox.org>
+Subject: [PATCH v2 7/9] arm64: dts: renesas: salvator-common: Describe PCIe/USB3.0 clock generator
+Date: Sun, 18 Jan 2026 14:49:55 +0100
+Message-ID: <20260118135038.8033-8-marek.vasut+renesas@mailbox.org>
 In-Reply-To: <20260118135038.8033-1-marek.vasut+renesas@mailbox.org>
 References: <20260118135038.8033-1-marek.vasut+renesas@mailbox.org>
 MIME-Version: 1.0
-X-MBO-RS-META: xdp448xsbzao4m1d1tqce3p75czkmebd
-X-MBO-RS-ID: 89f67c90aec460c75b0
-X-Rspamd-Queue-Id: 4dvFPD4K8Yz9tdy
+X-MBO-RS-ID: 802bed468735546f758
+X-MBO-RS-META: q1cajjbnhxwxp63mhgpyfhh6eqo8t83j
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260118_055131_577706_513B1409 
-X-CRM114-Status: GOOD (  10.76  )
+X-CRM114-CacheID: sfid-20260118_055135_786072_44B92678 
+X-CRM114-Status: UNSURE (   8.90  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,11 +98,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add USB 3.0 PHY and PHY clock node for R8877990 E3 . The PHY node is
-different in that it does not have control registers and extal clock,
-which are not routed to the SoC pads on E3, therefore describe the
-PHY as usb-nop-xceiv simple PHY. Add USB3S0 clock pad fixed-clock
-node, the frequency has to be overridden at board level.
+Describe the 9FGV0841 PCIe and USB3.0 clock generator present on both
+Salvator-X and Salvator-XS boards. The clock generator supplies 100 MHz
+differential clock for both PCIe ports, as well as for the USB 3.0 PHY.
 
 Signed-off-by: Marek Vasut <marek.vasut+renesas@mailbox.org>
 ---
@@ -121,37 +116,84 @@ Cc: devicetree@vger.kernel.org
 Cc: linux-phy@lists.infradead.org
 Cc: linux-renesas-soc@vger.kernel.org
 ---
-V2: Describe PHY as usb-nop-xceiv and update commit message
+V2: No change
 ---
- arch/arm64/boot/dts/renesas/r8a77990.dtsi | 17 +++++++++++++++++
- 1 file changed, 17 insertions(+)
+ .../boot/dts/renesas/salvator-common.dtsi     | 26 +++++++++++++++++++
+ 1 file changed, 26 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/renesas/r8a77990.dtsi b/arch/arm64/boot/dts/renesas/r8a77990.dtsi
-index 82e9ab458b05b..f2641ce567e8e 100644
---- a/arch/arm64/boot/dts/renesas/r8a77990.dtsi
-+++ b/arch/arm64/boot/dts/renesas/r8a77990.dtsi
-@@ -2207,4 +2207,21 @@ timer {
- 			     <GIC_PPI 10 (GIC_CPU_MASK_SIMPLE(2) | IRQ_TYPE_LEVEL_LOW)>;
- 		interrupt-names = "sec-phys", "phys", "virt", "hyp-phys";
+diff --git a/arch/arm64/boot/dts/renesas/salvator-common.dtsi b/arch/arm64/boot/dts/renesas/salvator-common.dtsi
+index d4a921bed4c39..9a8c569484c03 100644
+--- a/arch/arm64/boot/dts/renesas/salvator-common.dtsi
++++ b/arch/arm64/boot/dts/renesas/salvator-common.dtsi
+@@ -75,6 +75,12 @@ backlight: backlight {
+ 		enable-gpios = <&gpio6 7 GPIO_ACTIVE_HIGH>;
  	};
-+
-+	/* External USB clocks - can be overridden by the board */
-+	usb3s0_clk: usb3s0 {
+ 
++	pcie_usb_refclk: clk-x7 {
 +		compatible = "fixed-clock";
 +		#clock-cells = <0>;
-+		clock-frequency = <0>;
++		clock-frequency = <25000000>;
 +	};
 +
-+	usb3_phy0: usb-phy {
-+		compatible = "usb-nop-xceiv";
-+		clocks = <&usb3s0_clk>;
-+		clock-names = "main_clk";
-+		clock-frequency = <100000000>;
-+		power-domains = <&sysc R8A77990_PD_ALWAYS_ON>;
-+		#phy-cells = <0>;
-+		status = "disabled";
+ 	cvbs-in {
+ 		compatible = "composite-video-connector";
+ 		label = "CVBS IN";
+@@ -523,6 +529,13 @@ pca9654: gpio@20 {
+ 		#gpio-cells = <2>;
+ 	};
+ 
++	pcie_usb_clk: clk@68 {
++		compatible = "renesas,9fgv0841";
++		reg = <0x68>;
++		clocks = <&pcie_usb_refclk>;
++		#clock-cells = <1>;
 +	};
++
+ 	video-receiver@70 {
+ 		compatible = "adi,adv7482";
+ 		reg = <0x70 0x71 0x72 0x73 0x74 0x75
+@@ -641,16 +654,27 @@ &ohci1 {
+ 
+ &pcie_bus_clk {
+ 	clock-frequency = <100000000>;
++	status = "disabled";
  };
+ 
+ &pciec0 {
++	clocks = <&cpg CPG_MOD 319>, <&pcie_usb_clk 1>;
+ 	status = "okay";
+ };
+ 
++&pciec0_rp {
++	clocks = <&pcie_usb_clk 3>;
++};
++
+ &pciec1 {
++	clocks = <&cpg CPG_MOD 318>, <&pcie_usb_clk 2>;
+ 	status = "okay";
+ };
+ 
++&pciec1_rp {
++	clocks = <&pcie_usb_clk 4>;
++};
++
+ &pfc {
+ 	pinctrl-0 = <&scif_clk_pins>;
+ 	pinctrl-names = "default";
+@@ -1038,11 +1062,13 @@ &usb3_peri0 {
+ };
+ 
+ &usb3_phy0 {
++	clocks = <&cpg CPG_MOD 328>, <&pcie_usb_clk 6>, <&usb_extal_clk>;
+ 	status = "okay";
+ };
+ 
+ &usb3s0_clk {
+ 	clock-frequency = <100000000>;
++	status = "disabled";
+ };
+ 
+ &vin0 {
 -- 
 2.51.0
 
