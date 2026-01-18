@@ -4,60 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 01A5BC9832F
-	for <linux-phy@archiver.kernel.org>; Sun, 18 Jan 2026 13:51:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C15CDD4A5F4
+	for <linux-phy@archiver.kernel.org>; Sun, 18 Jan 2026 13:51:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=nYnWmnJfu7byhzJ5E8VJdf/B/qDwOsLS+tU/2vCrF8g=; b=Q3mYm9xeTmCgvV
-	YkYGVzyuHdavJMH17Cb5z0GCrggyjwLR4gRpwYbjCJsVQojGQa90ooaK6TdyEzHTAzrveiGkHFh3o
-	6M8AuzTgjuwfeeuIC2DkS6c/oK6dWi90L7ylJQTwwAWYZROcV67L6A0aiJH6wni9dL3uGoYIGydeJ
-	c2K/I3vnew42Xmf8VqffexPVWsGlFv2wwVlhexUAStGmPjI7oF8J6rJQtLpoB4DoQJ3+HcSiIBNpc
-	lGqmC8ayQ1vLAZP+TYraVVYGJjNBu3CWb3hGJ5/XgIEtbGk8alXr3lDxbcByEKiy3RYyVsXs/fnEA
-	LeB/h/9CxTTdwG0c/tyw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=sI1CXEkMPC585xy53+7H76CaQokCwAVIc9Loe07PpCE=; b=unixE8x9WQq0uw
+	Uoh0xKfpOBvabEBe2zB04IoupEWwddj5f0ZweFG8yBQJKTChUWIROBVeHWQbuSgtQwFwtvZBt/fkN
+	FHOfSIQwDvnuNEYCqIEHzgyufIn+Iis4qmgx/kS+xPeQSCIzt+B7M34jUSqlwMFP6B34c/s3qcbRW
+	8T+r3bNeZ55BjI6jslSJJnEMIwjKW8SeubgRpubkxPqq24PsDn9rioER8vfP/KUFz7RyF0W2NsouQ
+	DDhUCDDFszm9v1CsFG2kmGR02UB53YUOE0mVGkwTd50CSRof3t3jsQOW4Jo6wIi65kDx2lRjoPnzW
+	BDscPOgw1u0l2YglO26w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vhTBg-000000009Oc-2E2A;
-	Sun, 18 Jan 2026 13:51:28 +0000
-Received: from mout-p-201.mailbox.org ([2001:67c:2050:0:465::201])
+	id 1vhTBk-000000009S5-0iDK;
+	Sun, 18 Jan 2026 13:51:32 +0000
+Received: from mout-p-201.mailbox.org ([80.241.56.171])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vhTBZ-000000009KY-0a8z;
-	Sun, 18 Jan 2026 13:51:22 +0000
-Received: from smtp202.mailbox.org (smtp202.mailbox.org [IPv6:2001:67c:2050:b231:465::202])
+	id 1vhTBZ-000000009L8-1Z5D;
+	Sun, 18 Jan 2026 13:51:26 +0000
+Received: from smtp202.mailbox.org (smtp202.mailbox.org [10.196.197.202])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
-	by mout-p-201.mailbox.org (Postfix) with ESMTPS id 4dvFNx6R4xz9thH;
-	Sun, 18 Jan 2026 14:51:13 +0100 (CET)
+	by mout-p-201.mailbox.org (Postfix) with ESMTPS id 4dvFP3077Zz9tnr;
+	Sun, 18 Jan 2026 14:51:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailbox.org; s=mail20150812;
-	t=1768744273;
+	t=1768744279;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:
-	 content-transfer-encoding:content-transfer-encoding;
-	bh=jtJ0JHkBONXN8QFPUokfERKmqgzusHvWZDDChLmbMm8=;
-	b=LG/UH7x7IzsqbvD5MbwNTy1O/ghryF3obqHx1GvSzllD43dOamqzVxEkU35cqW2MJYgY0H
-	IfVj6oBjWfViXgAJITuzM574P/q+Odq1rzrlKLhiQI1XeYC0u0ZdGiJAjjYHNXewuW3+3J
-	XXYw39pGvec5e1ty6ldEPivJV0LL2ik6lVAVwHH2oHTwX7umRCA1LzDK1TrLvK60gbzBqN
-	MHn4+CjIicFcvrFru0IOi6R0rEcaPAPweX1HgivcJ54TbOlCrYJA1RsRGDOMQnx/s5+Se8
-	qPxZPIONwaWRRvwSyNAt5ECKz/xI/PGzd/ctOPKGIiJFgfuEad0yWIap5ix1XA==
-Authentication-Results: outgoing_mbo_mout;
-	dkim=pass header.d=mailbox.org header.s=mail20150812 header.b=wx9SJXwH;
-	spf=pass (outgoing_mbo_mout: domain of marek.vasut+renesas@mailbox.org designates 2001:67c:2050:b231:465::202 as permitted sender) smtp.mailfrom=marek.vasut+renesas@mailbox.org
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=ATEJOv5JRXd5mDEFh5TKeAEKiCU39svbKkcn8dQQ6kA=;
+	b=AyKVMLIU82YPC5uzQmcTkvWKSbvjzIGCqZjgt4iOLHzKpud1fqlfDI5l/ukPCiMkHcqmkG
+	RNnN+sPJXTwhYdrPnaVWoAYbG+D8Y+lnYVE/HD4dkA/SzvaH6JH5dVnFcd5F4EviYb2eAB
+	KV5oHqLkK581J2FONq569Ka4DeY54kXMuo3tCOqfL51SB/bG/6sxs3+p7zWUvnATdgWqS7
+	hoBMeC2uJ6Rl8+eCasq3zERw/59chB+Nqo3M5ZszbUuoY6EuoeyfCmUWC5PzmKtMrriTHD
+	z3n4k3wzFxUZPv7iKjVd5QD25UFSKHQuMkNwzEiQQuofE3hnejVWNuYH2jUGoQ==
 From: Marek Vasut <marek.vasut+renesas@mailbox.org>
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailbox.org; s=mail20150812;
-	t=1768744271;
+	t=1768744277;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:
-	 content-transfer-encoding:content-transfer-encoding;
-	bh=jtJ0JHkBONXN8QFPUokfERKmqgzusHvWZDDChLmbMm8=;
-	b=wx9SJXwHPUrYm7huy1+FQ3XdlH3yeE2gGXkdsgEtDUgda8Sior5juch57dY65xrPo0lufG
-	7/YZ45pQy8PmOBVo2btZpV4dFPYBCgeBG1Hke4TyBMfDVnAf80rA7rDiTdws5+KplERruv
-	QD3/upfIwzYc93ay4VOpz0kuefVHxYHzDPEtRfE+sNjU642AOZn3+WqJIXmQo1gqvZyEHz
-	fIniWPVcSLHvq1RXPq4yldDmBOCLSHGdyrZYGFayxM0rSfTspH91sq1JWAB1nu+RwffxHe
-	aHfIOgd3f0eO5vmXCCh6JBshuxonxUBEv4OoIxxMd8tYUneJJLN7jpo0tSM3Qw==
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=ATEJOv5JRXd5mDEFh5TKeAEKiCU39svbKkcn8dQQ6kA=;
+	b=Qv4AhdJ07o9L6xHdrzyU1A1SHFrIFTXDezDCnykBAQdBk+kdaaLeNxDBDPCMPjdXtr+SbL
+	HL50IJqmCdqqmYsM0qP7jHj0da8jRCSJmGbuX4u9e+ygA5rGQB95LapPu/yQ6l6soab8Gl
+	G46G1BFGNPh3m/epcN3jfvu7sBAUg2QWAXn8p71H6Gd702NOMDqzwb9NWGpc5VArL5YPS1
+	k0cHwtynF/vLvoy1qw8IQlRB1DkPJz2tMd0wLd+6eOutBRXj1D/LHd0H6G6dNRhiqTtxRQ
+	f90pHL3ujsdlO8FolKoECSACdw+AaxngLPQPjCNhLUWNAZFBkf9bYfm2Atz1sA==
 To: linux-arm-kernel@lists.infradead.org
 Cc: Marek Vasut <marek.vasut+renesas@mailbox.org>,
 	Conor Dooley <conor+dt@kernel.org>,
@@ -71,16 +70,17 @@ Cc: Marek Vasut <marek.vasut+renesas@mailbox.org>,
 	devicetree@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	linux-renesas-soc@vger.kernel.org
-Subject: [PATCH v2 0/9] Describe PCIe/USB3.0 clock generator on R-Car Gen3
-Date: Sun, 18 Jan 2026 14:49:48 +0100
-Message-ID: <20260118135038.8033-1-marek.vasut+renesas@mailbox.org>
+Subject: [PATCH v2 2/9] arm64: dts: renesas: r8a77960: Describe PCIe root ports
+Date: Sun, 18 Jan 2026 14:49:50 +0100
+Message-ID: <20260118135038.8033-3-marek.vasut+renesas@mailbox.org>
+In-Reply-To: <20260118135038.8033-1-marek.vasut+renesas@mailbox.org>
+References: <20260118135038.8033-1-marek.vasut+renesas@mailbox.org>
 MIME-Version: 1.0
-X-MBO-RS-ID: aeaf430141668aae5a9
-X-MBO-RS-META: z7y9zyqpix9wcqxp6nkri4jzedid9w9z
-X-Rspamd-Queue-Id: 4dvFNx6R4xz9thH
+X-MBO-RS-META: 6qzzupo9auurkjxax49ksd8prsxnfg71
+X-MBO-RS-ID: da2ec94324d16aa443f
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260118_055121_379254_C3704CED 
-X-CRM114-Status: UNSURE (   9.47  )
+X-CRM114-CacheID: sfid-20260118_055121_570428_8440D223 
+X-CRM114-Status: UNSURE (   9.77  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -98,56 +98,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Describe the 9FGV0841 PCIe and USB3.0 clock generator present on
-various R-Car Gen3 boards. The clock generator supplies 100 MHz
-differential clock for PCIe ports, USB 3.0 PHY and SATA.
+Add nodes which describe the root ports in the PCIe controller DT nodes.
+This can be used together with the pwrctrl driver to control clock and
+power supply to a PCIe slot.
 
-The series effectively has three parts. The first part is description
-of PCIe root ports on R-Car Gen3 SoCs where applicable, in this case
-that is H3/M3W/M3N/E3. The root port is used with PCIe port power
-control to also control the PCIe port clock. This is needed on Gen3
-boards, because they often use separate clock output from the PCIe
-clock generator 9FGV0841 to supply clock to the controller and to the
-PCIe port.
-
-The second part is a single patch, which fills in the missing USB 3.0
-PHY on R-Car E3 as usb-nop-xceiv, thus aligning the R-Car E3 USB 3.0
-support with the rest of the Gen3 SoCs.
-
-The third part is enablement of the 9FGV0841 PCIe clock controller on
-the R-Car Salvator-X/XS, ULCB and Ebisu boards. The boards use the
-PCIe clock controller outputs in a slightly different manner, all use
-the outputs to supply PCIe controllers and slots, as well as USB 3.0
-SuperSpeed PHY. The ULCB board also uses the 9FGV0841 to supply SATA
-IP, but this is not yet described in DT, therefore it is also not part
-of this series.
-
-DEPENDS: https://lore.kernel.org/linux-clk/20260118025756.96377-1-marek.vasut+renesas@mailbox.org/
-
-Marek Vasut (9):
-  arm64: dts: renesas: r8a77951: Describe PCIe root ports
-  arm64: dts: renesas: r8a77960: Describe PCIe root ports
-  arm64: dts: renesas: r8a77961: Describe PCIe root ports
-  arm64: dts: renesas: r8a77965: Describe PCIe root ports
-  arm64: dts: renesas: r8a77990: Describe PCIe root port
-  arm64: dts: renesas: r8a77990: Add USB 3.0 PHY and USB3S0 clock nodes
-  arm64: dts: renesas: salvator-common: Describe PCIe/USB3.0 clock
-    generator
-  arm64: dts: renesas: ulcb: ulcb-kf: Describe PCIe/USB3.0 clock
-    generator
-  arm64: dts: renesas: ebisu: Describe PCIe/USB3.0 clock generator
-
- arch/arm64/boot/dts/renesas/ebisu.dtsi        | 43 +++++++++++++++++++
- arch/arm64/boot/dts/renesas/r8a77951.dtsi     | 20 +++++++++
- arch/arm64/boot/dts/renesas/r8a77960.dtsi     | 20 +++++++++
- arch/arm64/boot/dts/renesas/r8a77961.dtsi     | 20 +++++++++
- arch/arm64/boot/dts/renesas/r8a77965.dtsi     | 20 +++++++++
- arch/arm64/boot/dts/renesas/r8a77990.dtsi     | 27 ++++++++++++
- .../boot/dts/renesas/salvator-common.dtsi     | 26 +++++++++++
- arch/arm64/boot/dts/renesas/ulcb-kf.dtsi      | 21 +++++++++
- arch/arm64/boot/dts/renesas/ulcb.dtsi         | 13 ++++++
- 9 files changed, 210 insertions(+)
-
+Signed-off-by: Marek Vasut <marek.vasut+renesas@mailbox.org>
 ---
 Cc: Conor Dooley <conor+dt@kernel.org>
 Cc: Geert Uytterhoeven <geert+renesas@glider.be>
@@ -160,7 +115,50 @@ Cc: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
 Cc: devicetree@vger.kernel.org
 Cc: linux-phy@lists.infradead.org
 Cc: linux-renesas-soc@vger.kernel.org
+---
+V2: No change
+---
+ arch/arm64/boot/dts/renesas/r8a77960.dtsi | 20 ++++++++++++++++++++
+ 1 file changed, 20 insertions(+)
 
+diff --git a/arch/arm64/boot/dts/renesas/r8a77960.dtsi b/arch/arm64/boot/dts/renesas/r8a77960.dtsi
+index e64c7b1aebc47..ad36aa8e75435 100644
+--- a/arch/arm64/boot/dts/renesas/r8a77960.dtsi
++++ b/arch/arm64/boot/dts/renesas/r8a77960.dtsi
+@@ -2619,6 +2619,16 @@ pciec0: pcie@fe000000 {
+ 			iommu-map = <0 &ipmmu_hc 0 1>;
+ 			iommu-map-mask = <0>;
+ 			status = "disabled";
++
++			/* PCIe bridge, Root Port */
++			pciec0_rp: pci@0,0 {
++				#address-cells = <3>;
++				#size-cells = <2>;
++				reg = <0x0 0x0 0x0 0x0 0x0>;
++				compatible = "pciclass,0604";
++				device_type = "pci";
++				ranges;
++			};
+ 		};
+ 
+ 		pciec1: pcie@ee800000 {
+@@ -2648,6 +2658,16 @@ pciec1: pcie@ee800000 {
+ 			iommu-map = <0 &ipmmu_hc 1 1>;
+ 			iommu-map-mask = <0>;
+ 			status = "disabled";
++
++			/* PCIe bridge, Root Port */
++			pciec1_rp: pci@0,0 {
++				#address-cells = <3>;
++				#size-cells = <2>;
++				reg = <0x0 0x0 0x0 0x0 0x0>;
++				compatible = "pciclass,0604";
++				device_type = "pci";
++				ranges;
++			};
+ 		};
+ 
+ 		imr-lx4@fe860000 {
 -- 
 2.51.0
 
