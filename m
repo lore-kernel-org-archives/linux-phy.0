@@ -4,59 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C15CDD4A5F4
-	for <linux-phy@archiver.kernel.org>; Sun, 18 Jan 2026 13:51:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 81D52C9832F
+	for <linux-phy@archiver.kernel.org>; Sun, 18 Jan 2026 13:51:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sI1CXEkMPC585xy53+7H76CaQokCwAVIc9Loe07PpCE=; b=unixE8x9WQq0uw
-	Uoh0xKfpOBvabEBe2zB04IoupEWwddj5f0ZweFG8yBQJKTChUWIROBVeHWQbuSgtQwFwtvZBt/fkN
-	FHOfSIQwDvnuNEYCqIEHzgyufIn+Iis4qmgx/kS+xPeQSCIzt+B7M34jUSqlwMFP6B34c/s3qcbRW
-	8T+r3bNeZ55BjI6jslSJJnEMIwjKW8SeubgRpubkxPqq24PsDn9rioER8vfP/KUFz7RyF0W2NsouQ
-	DDhUCDDFszm9v1CsFG2kmGR02UB53YUOE0mVGkwTd50CSRof3t3jsQOW4Jo6wIi65kDx2lRjoPnzW
-	BDscPOgw1u0l2YglO26w==;
+	List-Owner; bh=4J5qiYrFf9Iu2USvWIgM+DUVw5OTyRt0b1dOVbJPsS8=; b=bMAwbQww2OMFx0
+	MhPM+30AgcIGxREqZzmqsZcDh0y+peh7G8AeWFV5Tq8kRy6kpzAceL06FFOACra5z6iC/djIu0uKV
+	jHceK99IIqRVZXxfYcL4XqQtzWoYuOK/QL6LdzzpCYrtfvgvchBv2pnbYe0iFwednFlZ1TE7W+VYC
+	iKxem5IJhnyc+wKjpx7J7m/vpY6rMxugZbLNK0R4AgJDowBfyavFlAHq9t+0x2tg2Lqu22jslKqLG
+	VCTMyCVvkZ/EKObHIjMJghVZ5OaZYi4HHohE3tSlDp76Xtd4nOviMXy/xUnH8HFOs+kR28z42GHUA
+	Kf4QNGoRCKNAPJzM90bg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vhTBk-000000009S5-0iDK;
-	Sun, 18 Jan 2026 13:51:32 +0000
-Received: from mout-p-201.mailbox.org ([80.241.56.171])
+	id 1vhTBl-000000009TU-1Yvr;
+	Sun, 18 Jan 2026 13:51:35 +0000
+Received: from mout-p-202.mailbox.org ([2001:67c:2050:0:465::202])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vhTBZ-000000009L8-1Z5D;
-	Sun, 18 Jan 2026 13:51:26 +0000
-Received: from smtp202.mailbox.org (smtp202.mailbox.org [10.196.197.202])
+	id 1vhTBc-000000009Lr-0Qtr;
+	Sun, 18 Jan 2026 13:51:27 +0000
+Received: from smtp202.mailbox.org (smtp202.mailbox.org [IPv6:2001:67c:2050:b231:465::202])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
-	by mout-p-201.mailbox.org (Postfix) with ESMTPS id 4dvFP3077Zz9tnr;
-	Sun, 18 Jan 2026 14:51:19 +0100 (CET)
+	by mout-p-202.mailbox.org (Postfix) with ESMTPS id 4dvFP565rTz9tpB;
+	Sun, 18 Jan 2026 14:51:21 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailbox.org; s=mail20150812;
+	t=1768744281;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=HvBE8+SKwTjBSKMw2l/9Ug2dxlc4yNoGR1L7gNyligc=;
+	b=v2cvH6hwyP/IDKdU0hZoiWSTXqy8amn6v1JACc/sm+WxDzdmGR2bpiCSw3+EVlKJPWIom9
+	1ZdNqATvp+MpXxHSzO5v6cfdT/wfDhL7PMENEbcJ91l7uHWDAwSjpsaD7M+56fmHj112p9
+	zCNDMOTUaSc96fgS5hvVvKL4PbOnbQV8ZvJO7EPt3WES/lJwKqz0uzneSeMtrPk9261SH8
+	xnAJji1soezRxC/Ms7hE33nolJxd4X/GkMGp69hD5bpZiY7H0Yejmry8m0KjGAeZEfFDhs
+	2xDK3UtEWWTaKqcly5al4R7T4E1TUCtQVO4XfiWtB32tRwhuPur3TVqUKtGo/Q==
+Authentication-Results: outgoing_mbo_mout;
+	dkim=pass header.d=mailbox.org header.s=mail20150812 header.b=pMsh0H4Z;
+	spf=pass (outgoing_mbo_mout: domain of marek.vasut+renesas@mailbox.org designates 2001:67c:2050:b231:465::202 as permitted sender) smtp.mailfrom=marek.vasut+renesas@mailbox.org
+From: Marek Vasut <marek.vasut+renesas@mailbox.org>
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailbox.org; s=mail20150812;
 	t=1768744279;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=ATEJOv5JRXd5mDEFh5TKeAEKiCU39svbKkcn8dQQ6kA=;
-	b=AyKVMLIU82YPC5uzQmcTkvWKSbvjzIGCqZjgt4iOLHzKpud1fqlfDI5l/ukPCiMkHcqmkG
-	RNnN+sPJXTwhYdrPnaVWoAYbG+D8Y+lnYVE/HD4dkA/SzvaH6JH5dVnFcd5F4EviYb2eAB
-	KV5oHqLkK581J2FONq569Ka4DeY54kXMuo3tCOqfL51SB/bG/6sxs3+p7zWUvnATdgWqS7
-	hoBMeC2uJ6Rl8+eCasq3zERw/59chB+Nqo3M5ZszbUuoY6EuoeyfCmUWC5PzmKtMrriTHD
-	z3n4k3wzFxUZPv7iKjVd5QD25UFSKHQuMkNwzEiQQuofE3hnejVWNuYH2jUGoQ==
-From: Marek Vasut <marek.vasut+renesas@mailbox.org>
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailbox.org; s=mail20150812;
-	t=1768744277;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=ATEJOv5JRXd5mDEFh5TKeAEKiCU39svbKkcn8dQQ6kA=;
-	b=Qv4AhdJ07o9L6xHdrzyU1A1SHFrIFTXDezDCnykBAQdBk+kdaaLeNxDBDPCMPjdXtr+SbL
-	HL50IJqmCdqqmYsM0qP7jHj0da8jRCSJmGbuX4u9e+ygA5rGQB95LapPu/yQ6l6soab8Gl
-	G46G1BFGNPh3m/epcN3jfvu7sBAUg2QWAXn8p71H6Gd702NOMDqzwb9NWGpc5VArL5YPS1
-	k0cHwtynF/vLvoy1qw8IQlRB1DkPJz2tMd0wLd+6eOutBRXj1D/LHd0H6G6dNRhiqTtxRQ
-	f90pHL3ujsdlO8FolKoECSACdw+AaxngLPQPjCNhLUWNAZFBkf9bYfm2Atz1sA==
+	bh=HvBE8+SKwTjBSKMw2l/9Ug2dxlc4yNoGR1L7gNyligc=;
+	b=pMsh0H4ZqsZQHlVEvIiY30oy5iPTVXWUWyCQj0YSBeu9wITfWVVb/7vUcDGDLPB3fmQCZ2
+	HQyU5PaAUt3/bt97W6aSFvQNfXgxJhdqF41JnOSF12E/HNk/5SQDqhgtydDKUtXbcQd7PE
+	kQevb/wp1WW+mMhhK+CHMTjhNJ/xruhQzC9YZY/C0XYJq9dyygAr73S9cZ0l8cofWETjCR
+	ZH/8jPD9GnEMWY+W2+XknVfs6P6M1mW1KUix1FlbdPMByIC0+4ZiHDF0h2Vh0kl4EaONAD
+	TtsPbvXajNx6g5b8WrPpDrvLKz8KupjYBMDjsrgsibHWLPdDtT5Ngm1L/rGFVg==
 To: linux-arm-kernel@lists.infradead.org
 Cc: Marek Vasut <marek.vasut+renesas@mailbox.org>,
 	Conor Dooley <conor+dt@kernel.org>,
@@ -70,17 +73,18 @@ Cc: Marek Vasut <marek.vasut+renesas@mailbox.org>,
 	devicetree@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	linux-renesas-soc@vger.kernel.org
-Subject: [PATCH v2 2/9] arm64: dts: renesas: r8a77960: Describe PCIe root ports
-Date: Sun, 18 Jan 2026 14:49:50 +0100
-Message-ID: <20260118135038.8033-3-marek.vasut+renesas@mailbox.org>
+Subject: [PATCH v2 3/9] arm64: dts: renesas: r8a77961: Describe PCIe root ports
+Date: Sun, 18 Jan 2026 14:49:51 +0100
+Message-ID: <20260118135038.8033-4-marek.vasut+renesas@mailbox.org>
 In-Reply-To: <20260118135038.8033-1-marek.vasut+renesas@mailbox.org>
 References: <20260118135038.8033-1-marek.vasut+renesas@mailbox.org>
 MIME-Version: 1.0
-X-MBO-RS-META: 6qzzupo9auurkjxax49ksd8prsxnfg71
-X-MBO-RS-ID: da2ec94324d16aa443f
+X-MBO-RS-META: enij98tb8kyy8i87mgasaxn1acg1751r
+X-MBO-RS-ID: 260d75be11ba1f38994
+X-Rspamd-Queue-Id: 4dvFP565rTz9tpB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260118_055121_570428_8440D223 
-X-CRM114-Status: UNSURE (   9.77  )
+X-CRM114-CacheID: sfid-20260118_055126_073452_E2AB8E00 
+X-CRM114-Status: UNSURE (   9.81  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -118,14 +122,14 @@ Cc: linux-renesas-soc@vger.kernel.org
 ---
 V2: No change
 ---
- arch/arm64/boot/dts/renesas/r8a77960.dtsi | 20 ++++++++++++++++++++
+ arch/arm64/boot/dts/renesas/r8a77961.dtsi | 20 ++++++++++++++++++++
  1 file changed, 20 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/renesas/r8a77960.dtsi b/arch/arm64/boot/dts/renesas/r8a77960.dtsi
-index e64c7b1aebc47..ad36aa8e75435 100644
---- a/arch/arm64/boot/dts/renesas/r8a77960.dtsi
-+++ b/arch/arm64/boot/dts/renesas/r8a77960.dtsi
-@@ -2619,6 +2619,16 @@ pciec0: pcie@fe000000 {
+diff --git a/arch/arm64/boot/dts/renesas/r8a77961.dtsi b/arch/arm64/boot/dts/renesas/r8a77961.dtsi
+index 89f6c052c5e06..9d76e39eab72e 100644
+--- a/arch/arm64/boot/dts/renesas/r8a77961.dtsi
++++ b/arch/arm64/boot/dts/renesas/r8a77961.dtsi
+@@ -2499,6 +2499,16 @@ pciec0: pcie@fe000000 {
  			iommu-map = <0 &ipmmu_hc 0 1>;
  			iommu-map-mask = <0>;
  			status = "disabled";
@@ -142,7 +146,7 @@ index e64c7b1aebc47..ad36aa8e75435 100644
  		};
  
  		pciec1: pcie@ee800000 {
-@@ -2648,6 +2658,16 @@ pciec1: pcie@ee800000 {
+@@ -2528,6 +2538,16 @@ pciec1: pcie@ee800000 {
  			iommu-map = <0 &ipmmu_hc 1 1>;
  			iommu-map-mask = <0>;
  			status = "disabled";
@@ -158,7 +162,7 @@ index e64c7b1aebc47..ad36aa8e75435 100644
 +			};
  		};
  
- 		imr-lx4@fe860000 {
+ 		fcpf0: fcp@fe950000 {
 -- 
 2.51.0
 
