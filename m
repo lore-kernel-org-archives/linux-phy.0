@@ -4,71 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AFD89CCF2EE
-	for <linux-phy@archiver.kernel.org>; Mon, 19 Jan 2026 11:48:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 60FAFCCF2EF
+	for <linux-phy@archiver.kernel.org>; Mon, 19 Jan 2026 12:33:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
-	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=GJZJYODpyS9YjRB2ebOqqii3dlbUCcHdDvgzt95/YxI=; b=XCEnS6RDDNKbRB
-	h3jYCr1kv0s3PQza6o+CivyeQBGhuEPMLnAa0GQhp+2wxXm4BbQX5Pe7csqEX+DgARDnmgA6jw1PE
-	9DVRHp6UxLNUEm6B4/t++CSt0vvdWN8nd4CPyKV2ht9Fg9KKCCnrnglTHb9PhxWF/gCAd79ND4O2D
-	vpU3mk2k/a2+lRYCxSXXuJ2p0zf19pP3NuXq/UwwMtUZtCTuA3SRE9XZllrZI5bXcBfTj03AFVn4N
-	e03zNaqLN6ul0o5QDG0/d2HRTUy+SvmvwdLAVE7V1r1LccO25J6KgHxpZ0OZTq8iQcvC6sr0ncXFE
-	cTogVJafV7Klas2ZsDlQ==;
+	List-Owner; bh=mY08h78y/gBXsXshUVE7N03Y07+JQL8VOkwM5cZ5GZE=; b=zbN1XGAjL+XjDU
+	FiH3uic3Ba4EWpB+x4UbsHa6u2+v6MN0oI7fxg+52aXRFsBWlLK2iOEgJh8X5239Y3pJxMlvnxMgq
+	pVqZ/11uv9FVytUT0I+IEVL7h0fMBdRCXPRC+ysgt73jJH97LIbfrrmI1Lj9aNsICjvSdEDiXVoa7
+	0NtiLqPtzSbbuWqYB9NKP2h4eK8Ostz9dfSx/3i2ZEsUeHnaPNoQeC7UEjgtmvIVetabsnA50tJsi
+	nVai2k3e9dhMLbD5jHrzgdsvU047kDnwx2rRyDhZBQItIXDtvvHpjx2tOaCFzcb3QtVd3Qf+sdBz0
+	pMUywJDGiuCfCl0fcuMQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vhnk8-00000001v21-0V2M;
-	Mon, 19 Jan 2026 11:48:24 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1vhoRT-000000020fK-0MNM;
+	Mon, 19 Jan 2026 12:33:11 +0000
+Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vhnk5-00000001v1f-3uSD
-	for linux-phy@lists.infradead.org;
-	Mon, 19 Jan 2026 11:48:22 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 0629B60155;
-	Mon, 19 Jan 2026 11:48:21 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B0655C116C6;
-	Mon, 19 Jan 2026 11:48:16 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1768823300;
-	bh=m6fiWE2pnNbhhpX2oZo1w8HwzGDymsBUVv89HVOO69U=;
-	h=From:Date:Subject:To:Cc:From;
-	b=dGpWhgAurL7BUnf4WTlLuqSPiBQMLfaJ+N4lNv78Mqtkq6aOvXdiNKHYVnTFQq3Gg
-	 +BVC6XpwEtrGE27QhPeKoor+bKLLEDwAcmx/RUiaAkkUxYcWZqIrYvJVLWQcInXPOQ
-	 ylySNStLJ8At2aG6CyVM8D5BukbjCuc+GZ/rLfMRZ96j/z0QfJtxn9JTfETdBzPStM
-	 HqYAjgVM98kJrpJtqyd1hBu7OS3zdqU/8sNkJ2dcpQ5pCIClyNZY0z5MZE7X4OnC+f
-	 ILjJu6T0+H3Eibk/w3W5AGWdBuuP8R4+uVrcYBzG6CHDou8/S207qOO1hXqVJr5EL6
-	 3hGumzdCnjm/w==
-From: Konrad Dybcio <konradybcio@kernel.org>
-Date: Mon, 19 Jan 2026 12:48:02 +0100
-Subject: [PATCH] dt-bindings: phy: sc8280xp-qmp-pcie: Disallow bifurcation
- register on Purwa
+	id 1vhoRF-000000020cq-3jCA;
+	Mon, 19 Jan 2026 12:33:00 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=armlinux.org.uk; s=pandora-2019; h=Sender:Content-Type:MIME-Version:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
+	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=ru0nxSOEAUS0c1CIJ001g/HVYfV6kPWDtKRmcrJjgng=; b=kObIpteAPzCuUxauZeML37Pk7E
+	pk151CM3jRglHjSj9s073pEL6WuAapJhIvJZdtVR7cZXkv2KIfkGK3kQTz38a841qfLNrgqjkRQev
+	q/jgyT1H/R0yP006BvGPaWHNbEi5hELEfS5AplPbSIS2gOyDtVoSBGD7LtStxhTrPGaFp3dBPD5AG
+	5Ok+rz/tlc/VHSbviizcy5+yMMHW5a5Y/UoTEhLHjXzASkAzvr4lMnj0fOQB15fA72Hu0Ib+XOHdS
+	ojjqx8TnSoG/OeBbo+y0F+ciPOub6obVqBapbNYhLzFDLR8KHg2GujY1oHbfnpxkw2Yy3EmfROUQc
+	V2xtvRpQ==;
+Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:40468)
+	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.98.2)
+	(envelope-from <linux@armlinux.org.uk>)
+	id 1vhoR4-00000000517-35y5;
+	Mon, 19 Jan 2026 12:32:46 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.98.2)
+	(envelope-from <linux@shell.armlinux.org.uk>)
+	id 1vhoR0-000000006Y5-2Egz;
+	Mon, 19 Jan 2026 12:32:42 +0000
+Date: Mon, 19 Jan 2026 12:32:42 +0000
+From: "Russell King (Oracle)" <linux@armlinux.org.uk>
+To: Andrew Lunn <andrew@lunn.ch>, Heiner Kallweit <hkallweit1@gmail.com>
+Cc: Alexandre Torgue <alexandre.torgue@foss.st.com>,
+	Andrew Lunn <andrew+netdev@lunn.ch>,
+	"David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
+	linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-stm32@st-md-mailman.stormreply.com,
+	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+	Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>, netdev@vger.kernel.org,
+	Paolo Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>
+Subject: [PATCH net-next 00/14] net: stmmac: SerDes, PCS, BASE-X, and inband
+ goodies
+Message-ID: <aW4kakF3Ly7VaxN6@shell.armlinux.org.uk>
 MIME-Version: 1.0
-Message-Id: <20260119-topic-purwa_phy_shutup_warning-v1-1-997a692b31c6@oss.qualcomm.com>
-X-B4-Tracking: v=1; b=H4sIAAAAAAAC/x3NMQ6DMAxA0asgz41EMiDCVaoqcsEQL8FySClC3
- J2I8S3/n5BJmTIMzQlKP868pgr7amCMmBYyPFWDa13XWuvNtgqPRoruGCQeIceyFQk7auK0mN5
- b6hG/zs8OakSUZv4/g/fnum6VGMFkcAAAAA==
-X-Change-ID: 20260119-topic-purwa_phy_shutup_warning-891e8aab29f2
-To: Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- Krzysztof Kozlowski <krzk@kernel.org>, 
- YijieYang <yijie.yang@oss.qualcomm.com>, 
- Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1768823296; l=1939;
- i=konrad.dybcio@oss.qualcomm.com; s=20230215; h=from:subject:message-id;
- bh=zafLI2H+tXlTDyy9bg4Qs3Rs79fUkAKI4Fp2LAgvkag=;
- b=xMtsEXOFlGjBtcLWdBg61jlatkGD/wYUEzbmPAYeQhklx4IQ70ZSTFCzFs9+IO93tnU6QAYA9
- UO8+tyvJDlxDvGch8lq32075lXJNwX6bGI+2xuSCiRKOUz8TQ9KYG/R
-X-Developer-Key: i=konrad.dybcio@oss.qualcomm.com; a=ed25519;
- pk=iclgkYvtl2w05SSXO5EjjSYlhFKsJ+5OSZBjOkQuEms=
+Content-Disposition: inline
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260119_043257_931410_AAB4EB6A 
+X-CRM114-Status: GOOD (  29.26  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,63 +88,90 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+This is the v1 submission: if it doesn't get tested but review goes
+well, it'll end up in net-next and mainline without testing on the
+affected hardware!
 
-Neither of the two Gen4x4 PHYs found on Purwa supports bifurcation.
-The PHY is however physically laid out as if it were to, since there
-are two separate ports (A/B).
+Mentioned previously, I've been trying to sort out the PCS support in
+stmmac, and this series represents the current state of play.
 
-Split out a new if-then block to un-require the bifurcation register
-handle to squash this warning:
+Previous posted patches centred around merely getting autonegotiation
+to be configured correctly, to a point where the manual configuration
+can be removed from the qcom-ethqos driver. The qcom-ethqos driver
+uses both SGMII and 2500BASE-X, manually configuring the dwmac's
+integrated PCS appropriately.
 
-purwa-iot-evk.dtb: phy@1bd4000 (qcom,x1p42100-qmp-gen4x4-pcie-phy): 'qcom,4ln-config-sel' is a required property
+This *untested* series attempts to take this further. The patches:
 
-Fixes: 2e1ffd4c1805 ("dt-bindings: phy: qcom,qmp-pcie: Add X1P42100 PCIe Gen4x4 PHY")
-Reported-by: Rob Herring <robh@kernel.org>
-Closes: https://lore.kernel.org/linux-arm-msm/176857775469.1631885.16133311938753588148.robh@kernel.org/
-Signed-off-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
----
- .../devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml | 13 +++++++++++--
- 1 file changed, 11 insertions(+), 2 deletions(-)
+- clean up qcom-ethqos only-written mac_base member.
+- convert qcom-ethqos to use the set_clk_tx_rate() method for setting
+  the link clock rate.
+- add support for phy_set_mode_ext() to the qcom "SGMII" ethernet
+  SerDes driver (which is really only what it needs. Note that
+  phy_set_mode_ext() is an expected call to be made, where as
+  phy_set_speed() is optional and not. See PHY documentation.)
+- add platform-glue independent SerDes support to the stmmac core
+  driver. Currently, only qcom-ethqos will make use of this, and
+  I suspect as we haven't had this, it's going to be difficult to
+  convert other platform glue to use this - but had this existed
+  earlier, we could've pushed people to use PHY to abstract some
+  of the platform glue differences. Adding it now makes it available
+  for future platform glue.
+- convert qcom-ethqos to use this core SerDes support.
+- arrange for stmmac_pcs.c to supply the phy_intf_sel field value
+  if the integrated PCS will be used. (PHY_INTF_SEL_SGMII requires
+  the integrated PCS rather than an external PCS.)
+- add BASE-X support to the integrated PCS driver, and use it for
+  BASE-X modes. This fully supports in-band mode, including reading
+  the link partner advertisement.
+- add in-band support for SGMII, reading the state from the RGSMII
+  status field.
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-index 3a35120a77ec..431e8cb5df84 100644
---- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-@@ -136,13 +136,22 @@ allOf:
-           items:
-             - description: port a
-             - description: port b
--      required:
--        - qcom,4ln-config-sel
-     else:
-       properties:
-         reg:
-           maxItems: 1
- 
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            enum:
-+              - qcom,sc8280xp-qmp-gen3x4-pcie-phy
-+              - qcom,x1e80100-qmp-gen4x4-pcie-phy
-+    then:
-+      required:
-+        - qcom,4ln-config-sel
-+
-   - if:
-       properties:
-         compatible:
+As we leave qcom-ethqos' manual configuration of the PCS in place at
+the moment, the last patch adds reporting of any changes in its
+configuration that the qcom-ethqos driver does beyond what phylink
+requested, thus providing a path to debug and eventually remove
+qcom-ethqos' manual configuration.
 
----
-base-commit: 46fe65a2c28ecf5df1a7475aba1f08ccf4c0ac1b
-change-id: 20260119-topic-purwa_phy_shutup_warning-891e8aab29f2
+One patch is not included in this set - which adds a phy_intf_sel
+value for external PCS (using PHY_INTF_SEL_GMII_MII). I believe all
+external PCS use this mode when connected to a MAC capable of up to
+2.5G. However, no platform glue that provides the mac_select_pcs()
+method also provide the set_phy_intf_sel() method, so we can safely
+ignore this for now.
 
-Best regards,
+I would like to get this into net-next before the next merge window,
+so testing would be appreciated. If there are issues with these patches
+applied, please check whether the issue exists without these patches
+and only report regressions caused by this patch set. For example,
+I'm aware that qcom-ethqos has issues with 10Mbps mode due to an AQR
+PHY being insanely provisioned to use SGMII in 1000M mode but with
+rate matching with 10M media. This is not an issue that is relevant
+to this patch series, but a problem with the PHY provisioning.
+
+rfc->v1:
+ - fix SGMII link status
+ - avoid calling phy_get_mode() if PHY is null
+
+ drivers/net/ethernet/stmicro/stmmac/Makefile       |   2 +-
+ drivers/net/ethernet/stmicro/stmmac/common.h       |   1 -
+ .../ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c    |  74 ++-----
+ .../net/ethernet/stmicro/stmmac/dwmac1000_core.c   |   9 +-
+ drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c  |   8 +-
+ drivers/net/ethernet/stmicro/stmmac/stmmac_main.c  |  69 +++++--
+ drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.c   | 220 +++++++++++++++++++--
+ drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.h   |  53 ++---
+ .../net/ethernet/stmicro/stmmac/stmmac_serdes.c    | 111 +++++++++++
+ .../net/ethernet/stmicro/stmmac/stmmac_serdes.h    |  16 ++
+ drivers/phy/qualcomm/phy-qcom-sgmii-eth.c          |  43 ++++
+ include/linux/stmmac.h                             |   2 +
+ 12 files changed, 483 insertions(+), 125 deletions(-)
+ create mode 100644 drivers/net/ethernet/stmicro/stmmac/stmmac_serdes.c
+ create mode 100644 drivers/net/ethernet/stmicro/stmmac/stmmac_serdes.h
+
 -- 
-Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTP is here! 80Mbps down 10Mbps up. Decent connectivity at last!
 
 -- 
 linux-phy mailing list
