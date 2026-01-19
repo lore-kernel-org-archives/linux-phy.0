@@ -4,8 +4,8 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1DFDBD29C2D
-	for <linux-phy@archiver.kernel.org>; Mon, 19 Jan 2026 14:00:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D05D2D29C2D
+	for <linux-phy@archiver.kernel.org>; Mon, 19 Jan 2026 14:00:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -13,58 +13,59 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	References:MIME-Version:In-Reply-To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=M+8ct+Rq7EKYK3ANXs3TWJr5avZPNPnWQkof3qUd7N0=; b=x3N6Zk9aMcR01e5+tkjOpltXKV
-	FMW+Mo/xUt/LEJXJpcUJer8CBVaPPVfwkkm8+LCXhVlpDZTytxveKYUHcS50pIXN4MrjvbnTGjMBL
-	oo9Tvp2zT9hrnWbUxOPORc9VdzhwCzuZCWyY2rCcE54AUevzH6ZiBOeUoe6pGVE4rNSTUdU5Vi093
-	jmEhBXxAoJZmxG/Yh2ozVopiU4+rQyR9oiLfkoDNSwIPLK54NH0pK/ZvYfDexbfCgv36xNzN+jwZn
-	W219khyRTA+OuQE9S41rAaVoszTTwyK05UXAOVmGw0bbfaYrMjp/+IKzw/nHMRQA7DX9bGJKpetfb
-	qG+zTCFg==;
+	bh=p5xfPldcotb7uS4gDY+LbVAVAm4KIQEK/CQHaiPASyM=; b=MK5UdjTQgv8zk65J8IL2z2hiQO
+	FuCL8clkwAIXpacopWkjmM7zsrZLiCm/+yDsDvlnP19Jfd5XYoCXKSiN7ZYL9WsIgdKzoKTgAwm40
+	mpeQbVKAybbR3mIz3RhmdI6BinlMq/2qfzk0pTJV7UM6XNbLt3BVg+qIElvPEeTLCqxjr6drrkjhL
+	/2HyMvNO07EAP+4IabRVsbm3vE6qWE5WJK+CBzD3n6iXqOYoKjZ9KeKtbVkMTJ6aFES14t8poUu0Y
+	dqQSbhpTPrWYwNCmg3o2ogf3BymC+C/OoA/CL5QWb1iJHYLPStlbcf1Dv6dYoYT6VirIa767e9MW3
+	udL7Y2ww==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vhpnY-00000002Cgd-1vRM;
-	Mon, 19 Jan 2026 14:00:04 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vhpnz-00000002CnU-2T4n;
+	Mon, 19 Jan 2026 14:00:31 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vhpnX-00000002Cfu-0qgf
+	id 1vhpnw-00000002Cmd-0kHh
 	for linux-phy@lists.infradead.org;
-	Mon, 19 Jan 2026 14:00:03 +0000
+	Mon, 19 Jan 2026 14:00:30 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 40AAD60054
-	for <linux-phy@lists.infradead.org>; Mon, 19 Jan 2026 14:00:02 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E2E37C19425
-	for <linux-phy@lists.infradead.org>; Mon, 19 Jan 2026 14:00:01 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 9ACC360140
+	for <linux-phy@lists.infradead.org>; Mon, 19 Jan 2026 14:00:27 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 51608C4AF0B
+	for <linux-phy@lists.infradead.org>; Mon, 19 Jan 2026 14:00:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1768831201;
-	bh=MIrQUfbJ2zL+AhG7FyLFIXu3ha5qK8PBOAlkOqBeaxM=;
+	s=k20201202; t=1768831227;
+	bh=nNTJfPbd1YV6us6RVjuHf5jxYqDR5Sbvdeb3Dsc1xvI=;
 	h=From:In-Reply-To:References:Date:Subject:To:Cc:From;
-	b=EX+6RBfHN6arCnN820LmhTyye+ap4LvfT2Vs/A2m6HXJ4BHOWpLAKyRD74+KgJuaL
-	 VUR1Ex6JYPUkdQJ6EhnWtpYkQi6tUSQ8l7P0CNvl9QChWXNTJHOgvcK4TjJrI1cH5x
-	 E8C3plpVN9xmQM6N4dqPx6PTgTrMK9ORvQv8LobxTG9WLBDQwvEZsSj1YoJY1in/WV
-	 IAeJVuZWYuMn3i/0puonnl4zJtICLn9X/ym7f0mTD/ZBibz/+6y5OqO0EDrbBY6Dua
-	 5METEPk2nVfmmG0P34OxCytQmjkAxShRvtq54c0eKQTN2/Cb7FvQlnA41gP14L1wTQ
-	 LnUuzUGyhsg/A==
-Received: by mail-lf1-f46.google.com with SMTP id 2adb3069b0e04-59b78886454so5379626e87.2
-        for <linux-phy@lists.infradead.org>; Mon, 19 Jan 2026 06:00:01 -0800 (PST)
-X-Forwarded-Encrypted: i=1; AJvYcCWLFEdIeB+QmeFcoVwJfJkhakA4wTXZiQYBCGjiJYfC5J4fqOyezm7Djs9UiVspfjVSLVkVBEgqedg=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzSwBstTTdRUHgZB0DYTdkyGCkxs58E1s3QSwD5YDUAIX1r7WCi
-	iHlUitLsJCk6y24QCvRqjH0AcCmwYqeq6/6rDkRkCerdq1kBFS1K9qnYxzSy+/SbH475XUhwAxv
-	8vWQ/AH4Q26miSc658O1GZmGj/qFwBthOTLF/2RrwgA==
-X-Received: by 2002:a05:6512:3d9f:b0:594:347e:e679 with SMTP id
- 2adb3069b0e04-59baeee6123mr4166539e87.43.1768831200472; Mon, 19 Jan 2026
- 06:00:00 -0800 (PST)
+	b=r/yXWD0ncsL2nyj0HdwR3sH/Th7Kg/j5/M3SisKCKyBMwdLtzXqvEWLvtqcxGuVa1
+	 kUrswwItcjh0YT/v+N+4EogiYiD2tKkVBc1Vjux1Fvx6MOFcEuVrIe0ebUHSZr7Loh
+	 bcblPCxkN7qFc9o0+nlW60HhdWA/LUf+O6d1xq4dHPr+EB0cxhSGhOCBNJHLSSHUkw
+	 IKgqimkhjoiouLXZ3v/z1Bv9pKIG9H9+YbVclnB57aFmmj95YNA7FllRPz0vFlfZ3z
+	 MEy58VFZcdA2Rp+WCM16+c5x6yObn0yRQrbwgJ1rPK/iEMd4U7sNfLfWle36jE9poS
+	 yGa2VHpzM+zKQ==
+Received: by mail-lf1-f47.google.com with SMTP id 2adb3069b0e04-59b6f59c4f5so5173893e87.3
+        for <linux-phy@lists.infradead.org>; Mon, 19 Jan 2026 06:00:27 -0800 (PST)
+X-Forwarded-Encrypted: i=1; AJvYcCU7UAfuYowI8S86og2xXrHx5yOg6CWRCy8Nw2MwlpXtxJvMc2d5Ii2PA+NCA/6XkpMd+AE24DLWQFc=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzskFTh8N0v+mlTVFjDT44zyqSTBHfKchF0D5wMpnC1WEjCsGiv
+	epFexR2AuJNfJ+8L9wv1syI8BwraB0pf13HXEAohqZ/m75/IAlvTyfrRubV5MEffm/vtbg6JI5v
+	qyGxCXUHjLkPVffEN3XB+5Evvqx1a8pgtNi07tyhIMg==
+X-Received: by 2002:a05:6512:3c90:b0:59b:809c:f659 with SMTP id
+ 2adb3069b0e04-59baef00064mr3462366e87.40.1768831225908; Mon, 19 Jan 2026
+ 06:00:25 -0800 (PST)
 Received: from 969154062570 named unknown by gmailapi.google.com with
- HTTPREST; Mon, 19 Jan 2026 13:59:58 +0000
+ HTTPREST; Mon, 19 Jan 2026 14:00:24 +0000
 Received: from 969154062570 named unknown by gmailapi.google.com with
- HTTPREST; Mon, 19 Jan 2026 13:59:58 +0000
+ HTTPREST; Mon, 19 Jan 2026 14:00:24 +0000
 From: Bartosz Golaszewski <brgl@kernel.org>
-In-Reply-To: <E1vhoRx-00000005H1H-0YoL@rmk-PC.armlinux.org.uk>
+In-Reply-To: <E1vhoS2-00000005H1N-12dx@rmk-PC.armlinux.org.uk>
 MIME-Version: 1.0
-References: <aW4kakF3Ly7VaxN6@shell.armlinux.org.uk> <E1vhoRx-00000005H1H-0YoL@rmk-PC.armlinux.org.uk>
-Date: Mon, 19 Jan 2026 13:59:58 +0000
-X-Gmail-Original-Message-ID: <CAMRc=Mc-URPkVzEc5Cu54bA021+XaDh3-kZZDSKyNt0V1YQB3Q@mail.gmail.com>
-X-Gm-Features: AZwV_QgrQLlVOMTh-pKGr5woCaDOT6WzYHt89q8m_3zdKt2vs_AoPCBMlqv3zPI
-Message-ID: <CAMRc=Mc-URPkVzEc5Cu54bA021+XaDh3-kZZDSKyNt0V1YQB3Q@mail.gmail.com>
-Subject: Re: [PATCH net-next 01/14] net: stmmac: qcom-ethqos: remove mac_base
+References: <aW4kakF3Ly7VaxN6@shell.armlinux.org.uk> <E1vhoS2-00000005H1N-12dx@rmk-PC.armlinux.org.uk>
+Date: Mon, 19 Jan 2026 14:00:24 +0000
+X-Gmail-Original-Message-ID: <CAMRc=Me9wAstONC60jdu0z1QrADZ01_2+goZ1pOXbAx04W5LDA@mail.gmail.com>
+X-Gm-Features: AZwV_QiictzFqKNrCGHQtJGJYIyDzY-qHcNhS9W5nbIYTCl5UyVNn5jCiAv_d8c
+Message-ID: <CAMRc=Me9wAstONC60jdu0z1QrADZ01_2+goZ1pOXbAx04W5LDA@mail.gmail.com>
+Subject: Re: [PATCH net-next 02/14] net: stmmac: qcom-ethqos: convert to
+ set_clk_tx_rate() method
 To: "Russell King (Oracle)" <rmk+kernel@armlinux.org.uk>
 Cc: Alexandre Torgue <alexandre.torgue@foss.st.com>, Andrew Lunn <andrew+netdev@lunn.ch>, 
 	"David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
@@ -91,44 +92,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, 19 Jan 2026 13:33:41 +0100, "Russell King (Oracle)"
+On Mon, 19 Jan 2026 13:33:46 +0100, "Russell King (Oracle)"
 <rmk+kernel@armlinux.org.uk> said:
-> In commit 9b443e58a896 ("net: stmmac: qcom-ethqos: remove MAC_CTRL_REG
-> modification"), ethqos->mac_base is only written, never read. Let's
-> remove it.
+> Set the RGMII link clock using the set_clk_tx_rate() method rather than
+> coding it into the .fix_mac_speed() method. This simplifies ethqos's
+> ethqos_fix_mac_speed().
 >
-> Reviewed-by: Andrew Lunn <andrew@lunn.ch>
 > Signed-off-by: Russell King (Oracle) <rmk+kernel@armlinux.org.uk>
 > ---
->  drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c | 3 ---
->  1 file changed, 3 deletions(-)
->
-> diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
-> index 0826a7bd32ff..869f924f3cde 100644
-> --- a/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
-> +++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
-> @@ -100,7 +100,6 @@ struct ethqos_emac_driver_data {
->  struct qcom_ethqos {
->  	struct platform_device *pdev;
->  	void __iomem *rgmii_base;
-> -	void __iomem *mac_base;
->  	int (*configure_func)(struct qcom_ethqos *ethqos, int speed);
->
->  	unsigned int link_clk_rate;
-> @@ -772,8 +771,6 @@ static int qcom_ethqos_probe(struct platform_device *pdev)
->  		return dev_err_probe(dev, PTR_ERR(ethqos->rgmii_base),
->  				     "Failed to map rgmii resource\n");
->
-> -	ethqos->mac_base = stmmac_res.addr;
-> -
->  	data = of_device_get_match_data(dev);
->  	ethqos->por = data->por;
->  	ethqos->num_por = data->num_por;
-> --
-> 2.47.3
->
->
->
 
 Reviewed-by: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
 
