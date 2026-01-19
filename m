@@ -4,66 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 04F6DD29C40
-	for <linux-phy@archiver.kernel.org>; Mon, 19 Jan 2026 16:07:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8F4A7D29C4D
+	for <linux-phy@archiver.kernel.org>; Mon, 19 Jan 2026 19:21:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DS1P1mad8uSqpWeVUByk6ruv/oGyqg5pIcQBW1A6axg=; b=vOSeUAPDdQE5FV
-	Ck9qLdAKr4UYKhHMY5QgRcRxBSUrlgqd/37C73fMP07YYR1HMhdEpNldIvW3grMuLnRDoewFzdREn
-	G7b1/ptPlHsATfaumAYZbOkyFJWZsNkalh6fNuNEs8pHnURMzeHyrIzL+JpI3CMkvT7l55KqzzHF+
-	TGWp516FWJ+8B1532GBPvN/5cwzQdVeujdn3aQ3Z7rs/C0VuaIaEun1VEFnkLXR6wBOebA7aS9Zsc
-	W29C/TXeBknamKOIuczdbcBhFBjfw4qCPbmKDCv1ih5mFefroAunMkjWK/8GLCbKTMH+GLK9F/Wvt
-	LOIS9HF5DwEQnSKQblhA==;
+	List-Owner; bh=fRjyHDrQ8yzw0YZZ39xFn7wxtCbXiOA1KmYudiU6oGY=; b=WaPVEkBuwkVtn9
+	FpDZv8df0M+uCsEYwCbF4uswgaPh355e4VAmGitJRYOeQM+LNdjxmyVR0fn4mWbgHurQGlWygGBt4
+	Iq7h4soJ0r5098TMocgNzd4dn0HkwPbFotvqdIdoY0DXv10nyxMv8ZYkS4NYVM5Tw20TrJzjkquYF
+	56h9wez00KZphjNzFtcFZiXO3/vVfUk7s2wq54qOqdYlge4eYeXPD0MFl+LspNR2RJWd2xgKSrE5n
+	7wSMQcr1bZuT1/jE3baaMdj7mwBAUvfrYprvczDGiRKzboux4V74s7VRQb17zswQiPIc7JzkVf7Ui
+	SBdVSLf5VqRE5SwdnHCw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vhrnI-00000002Qb5-3Edh;
-	Mon, 19 Jan 2026 16:07:56 +0000
-Received: from smtp81.cstnet.cn ([159.226.251.81] helo=cstnet.cn)
+	id 1vhuon-00000002lhx-3eDL;
+	Mon, 19 Jan 2026 19:21:41 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vhrnE-00000002QaO-46w1;
-	Mon, 19 Jan 2026 16:07:55 +0000
-Received: from duge-virtual-machine (unknown [183.192.221.134])
-	by APP-03 (Coremail) with SMTP id rQCowAAHEcjLVm5p0gLQBQ--.57727S2;
-	Tue, 20 Jan 2026 00:07:41 +0800 (CST)
-Date: Tue, 20 Jan 2026 00:07:38 +0800
-From: Jiayu Du <jiayu.riscv@isrc.iscas.ac.cn>
-To: vkoul@kernel.org, gregkh@linuxfoundation.org, conor@kernel.org
-Cc: neil.armstrong@linaro.org, robh@kernel.org, krzk+dt@kernel.org,
-	pjw@kernel.org, palmer@dabbelt.com, aou@eecs.berkeley.edu,
-	alex@ghiti.fr, linux-phy@lists.infradead.org,
-	linux-usb@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-riscv@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v3 0/4] Add USB support for Canaan K230
-Message-ID: <aW5WyizgDyQJaKLQ@duge-virtual-machine>
-References: <20260119093836.316007-1-jiayu.riscv@isrc.iscas.ac.cn>
+	id 1vhuoi-00000002lgx-2804;
+	Mon, 19 Jan 2026 19:21:37 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 851EA600CB;
+	Mon, 19 Jan 2026 19:21:35 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6584DC116C6;
+	Mon, 19 Jan 2026 19:21:34 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1768850495;
+	bh=bTvnpQwyMWeQprejsCLPF19PUoNVMU+Bj/o+xuFRyPw=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=RhYHaSve1QmWIrv5TyLGaTbwpfcsUaMF8FmzVrt0/wMD7H60mLj0P0CBONBIlAk6s
+	 2MgpJYvIMV7hr9yTFTfVZPsAthBZKM5rvBncUfeuowcaSgkSHprRyQjAIxq2cHizxO
+	 iOClmclqVBvGQ4Ccloghkcpp1igKQnhoCD14gXvLRsI9ktg+aa8Ae+uagcSBh5lXCj
+	 ga5CJxyB8jFbJrpTJ44TqoMj/+MFMo2cCAr94PZY4Aap4TArOrQOgR/5C4KKNVvwJ6
+	 8aiS8FbuE4ysLrue1Ekh2MSuivawyRRIG4ad5DRekXMoDopYCtF5Z+Ocg2SkgN8cr2
+	 mjoSI+jRrDnNw==
+From: Jakub Kicinski <kuba@kernel.org>
+To: rmk+kernel@armlinux.org.uk
+Cc: Jakub Kicinski <kuba@kernel.org>,
+	linux-phy@lists.infradead.org,
+	davem@davemloft.net,
+	maxime.chevallier@bootlin.com,
+	alexandre.torgue@foss.st.com,
+	mohd.anwar@oss.qualcomm.com,
+	neil.armstrong@linaro.org,
+	hkallweit1@gmail.com,
+	mcoquelin.stm32@gmail.com,
+	netdev@vger.kernel.org,
+	edumazet@google.com,
+	linux-arm-msm@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	vkoul@kernel.org,
+	andrew@lunn.ch,
+	pabeni@redhat.com,
+	andrew+netdev@lunn.ch,
+	linux-stm32@st-md-mailman.stormreply.com
+Subject: Re: [net-next,05/14] net: stmmac: add stmmac core serdes support
+Date: Mon, 19 Jan 2026 11:21:25 -0800
+Message-ID: <20260119192125.1245102-1-kuba@kernel.org>
+X-Mailer: git-send-email 2.52.0
+In-Reply-To: <E1vhoSH-00000005H1f-2cq9@rmk-PC.armlinux.org.uk>
+References: <E1vhoSH-00000005H1f-2cq9@rmk-PC.armlinux.org.uk>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260119093836.316007-1-jiayu.riscv@isrc.iscas.ac.cn>
-X-CM-TRANSID: rQCowAAHEcjLVm5p0gLQBQ--.57727S2
-X-Coremail-Antispam: 1UD129KBjDUn29KB7ZKAUJUUUUU529EdanIXcx71UUUUU7v73
-	VFW2AGmfu7bjvjm3AaLaJ3UjIYCTnIWjp_UUUY67k0a2IF6w1UM7kC6x804xWl14x267AK
-	xVW8JVW5JwAFc2x0x2IEx4CE42xK8VAvwI8IcIk0rVWrJVCq3wAFIxvE14AKwVWUJVWUGw
-	A2ocxC64kIII0Yj41l84x0c7CEw4AK67xGY2AK021l84ACjcxK6xIIjxv20xvE14v26r1j
-	6r1xM28EF7xvwVC0I7IYx2IY6xkF7I0E14v26r4j6F4UM28EF7xvwVC2z280aVAFwI0_Jr
-	0_Gr1l84ACjcxK6I8E87Iv6xkF7I0E14v26r4j6r4UJwAS0I0E0xvYzxvE52x082IY62kv
-	0487Mc02F40EFcxC0VAKzVAqx4xG6I80ewAv7VC0I7IYx2IY67AKxVWUJVWUGwAv7VC2z2
-	80aVAFwI0_Jr0_Gr1lOx8S6xCaFVCjc4AY6r1j6r4UM4x0Y48IcVAKI48JM4IIrI8v6xkF
-	7I0E8cxan2IY04v7MxAIw28IcxkI7VAKI48JMxAqzxv26xkF7I0En4kS14v26r1q6r43Mx
-	C20s026xCaFVCjc4AY6r1j6r4UMI8I3I0E5I8CrVAFwI0_Jr0_Jr4lx2IqxVCjr7xvwVAF
-	wI0_JrI_JrWlx4CE17CEb7AF67AKxVWUtVW8ZwCIc40Y0x0EwIxGrwCI42IY6xIIjxv20x
-	vE14v26r1j6r1xMIIF0xvE2Ix0cI8IcVCY1x0267AKxVW8JVWxJwCI42IY6xAIw20EY4v2
-	0xvaj40_Jr0_JF4lIxAIcVC2z280aVAFwI0_Jr0_Gr1lIxAIcVC2z280aVCY1x0267AKxV
-	W8JVW8JrUvcSsGvfC2KfnxnUUI43ZEXa7IU8489tUUUUU==
-X-Originating-IP: [183.192.221.134]
-X-CM-SenderInfo: 5mld534oul2uny6l223fol2u1dvotugofq/
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260119_080753_565845_2B870FC0 
-X-CRM114-Status: UNSURE (   5.50  )
-X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,14 +84,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Jan 19, 2026 at 05:38:31PM +0800, Jiayu Du wrote:
+This is an AI-generated review of your patch. The human sending this
+email has considered the AI review valid, or at least plausible.
 
-This is series is the RESEND of the series here[1]. I resend it
-because I mistakenly sent the wrong USBPHY driver code.
+For local reproduction steps see https://netdev-ai.bots.linux.dev/ai-local.html
+---
+net: stmmac: add stmmac core serdes support
 
-Link: https://lore.kernel.org/all/20260119093836.316007-1-jiayu.riscv@isrc.iscas.ac.cn/ [1]
-]
+This commit adds SerDes PHY support to the stmmac core driver, moving it
+from platform glue into the integrated PCS driver. The SerDes is managed
+through phy_init/phy_exit for lifecycle and phy_power_on/phy_power_off
+for the power state.
 
+> diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.c
+> index 2f826fe7229b..4d1902f3a58f 100644
+> --- a/drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.c
+> +++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.c
+
+[ ... ]
+
+> static int dwmac_integrated_pcs_enable(struct phylink_pcs *pcs)
+> {
+> 	struct stmmac_pcs *spcs = phylink_pcs_to_stmmac_pcs(pcs);
+> +	struct stmmac_priv *priv = spcs->priv;
+> +	int ret;
+>
+> -	stmmac_mac_irq_modify(spcs->priv, 0, spcs->int_mask);
+> +	ret = dwmac_serdes_power_on(priv);
+> +	if (ret)
+> +		return ret;
+> +
+> +	if (spcs->interface != PHY_INTERFACE_MODE_NA) {
+> +		ret = dwmac_serdes_set_mode(priv, spcs->interface);
+> +		if (ret)
+> +			return ret;
+                        ^^^^^^^^^^
+
+If dwmac_serdes_set_mode() fails here, doesn't this leave the SerDes in
+a powered-on state? dwmac_serdes_power_on() succeeded at this point but
+there's no corresponding dwmac_serdes_power_off() call before returning
+the error.
+
+Looking at phylink_major_config(), it appears to discard the return
+value from phylink_pcs_enable(), so the caller won't know to call
+pcs_disable() to clean up the power state.
+
+Should this be something like:
+
+    if (spcs->interface != PHY_INTERFACE_MODE_NA) {
+        ret = dwmac_serdes_set_mode(priv, spcs->interface);
+        if (ret) {
+            dwmac_serdes_power_off(priv);
+            return ret;
+        }
+    }
+
+> +	}
+> +
+> +	stmmac_mac_irq_modify(priv, 0, spcs->int_mask);
+>
+> 	return 0;
+> }
+
+[ ... ]
 
 -- 
 linux-phy mailing list
