@@ -4,50 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 41ECDCCF2F7
-	for <linux-phy@archiver.kernel.org>; Mon, 19 Jan 2026 12:43:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7D756CCF2F7
+	for <linux-phy@archiver.kernel.org>; Mon, 19 Jan 2026 12:43:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:MIME-Version:Subject:Cc
 	:To:From:References:In-Reply-To:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xNl+5TP1wljvcUx5SadmvIchFZaqExaC/YtEkA9AUW4=; b=NNlw/1HCFvOeNt
-	N/zuWcJv0BwMB9BzL9yYs27coZKATGFtC4oeJTjZVAQFFi3HI/v1JAHN/ipCfqLmOhEphkKwIxQtL
-	dHvlKo1gLHssECLRFx244QbFaLr3hN0moMx0KNXxqHKapP1nK8N0ittJkrz3mLVVhAXY5r7asNEW5
-	3Lhd2gs50PczJgs97ds8azid1D7SYkA3u/buAdCWpglw3JgUVU8qah8Yp8srBxvl/l1cvoABv+0Tt
-	GKEHjzwiIwVDaYX61E3HG/zguEHLmFBXYazcBL+v0P3LeYJ9zYmV0zdX/NcVQgsQwn66zEYuT03Pj
-	ukXW09mLZ869eVJTJxpw==;
+	List-Owner; bh=kMjI/tW/Toa3tbTe4ybym+HZDgHTHZX5P9P6cIdwLdk=; b=i4jaUhrDYLY7sC
+	HwjlaSVXZmdmucuganTDDwef76POiJY/y/R86x0G2zena+4MhQ4ETsSstXX77PdNcroj4zmzWdFmU
+	hDLFUqwVGeE8s00VvuVxIPE1JTYh9MzcvoI5+nlvxBamZkWy8XsorYIX+CzgblBrtMabxPiURcJoC
+	ltReA54q0TkrinMeUd4wNcoRnWQ5xz5lM+liF6jwgJukgGl1FB/2q3vsz8kuW9yf+SjNdyTN1Q/yX
+	YIjQiSAP4aIpKNa2VFAoGTie5uHkebbJOL1BE0yeyndaNAhHtFNj+QG1FLNgUezDAGV4fXKe8m+ln
+	BLoCnc37Q+RqR4/KH9RQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vhobW-000000022Tm-45dB;
-	Mon, 19 Jan 2026 12:43:35 +0000
+	id 1vhobo-000000022b8-0uhH;
+	Mon, 19 Jan 2026 12:43:52 +0000
 Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vhobU-000000022SF-1ksX;
-	Mon, 19 Jan 2026 12:43:33 +0000
+	id 1vhobj-000000022Yv-0fHj;
+	Mon, 19 Jan 2026 12:43:48 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=armlinux.org.uk; s=pandora-2019; h=Date:Sender:Message-Id:Content-Type:
 	Content-Transfer-Encoding:MIME-Version:Subject:Cc:To:From:References:
 	In-Reply-To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
 	List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=RIxtW9pHgFoSB9hWlBfDu5uAWfxTZyga1Fv2xaSrx3E=; b=t+ITliaCoeUPZ8eY6voAno2L8Q
-	yn8GfIxRXDaaFiIu29f6e3tGIOQP1Mp4ffyH2xmWiOQ97qK+EwVBGhDWASQ3dy1Gdh29QCUiErkF4
-	7oKNEy/fcWmMBHJgeUQ77j4+vbGP2oVdLPXZapJM98ulvGw1+trDmCtV4lz0HYaLsO0WNd8nhUbIK
-	343hnB9PBSMwcU4scoWxNgz6VnK3OKwyyRUILAWMlQNVIdsCS5TcL/q4+HG4Ha4C5tsAExv5t16vp
-	XWkkG1xKC3uu1J85tI+yHih4uJev7KLL7EM7267qUYhrdAx4zj0qc1gxbSKXj9PfayFpG0j3Oy22L
-	kQfobhVA==;
-Received: from e0022681537dd.dyn.armlinux.org.uk ([fd8f:7570:feb6:1:222:68ff:fe15:37dd]:36888 helo=rmk-PC.armlinux.org.uk)
+	bh=rVE0ichfCCZBPxaV5iFEVGkv6qOUUWRLscyvBIVG1Cw=; b=VXD9XtlTrwqp2iFObc8SpvyvfD
+	qK3o/iLfigIhubYNhujRW8xr+T9v/Q8wNHNoc2WN8zrMClJnPtJuk3HAGIR9HTmLX5gnfNpupHAEj
+	6c55NoRjc7iTYCrSah8LTL0MyXBfvJgNZtaJJVP4PLzyO7JrBTpaV38y9VZRUt3ZAbgJfkVii+E8P
+	FJKfRoKym2PzBiuRTuIpYb7JqtFYcTnMzSBuwBnsrEaiEZJ9GTuohK48ffot9zQvdqERnb/LR0e81
+	n7WXt9H9JBCLQiFTrt4QxQ5D+0wGteUgMWq4lq7kzb1jZjJTcFVdzZj71A0H60NDfw4J25263Q1hk
+	gd5qY7vQ==;
+Received: from e0022681537dd.dyn.armlinux.org.uk ([fd8f:7570:feb6:1:222:68ff:fe15:37dd]:36892 helo=rmk-PC.armlinux.org.uk)
 	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
 	(Exim 4.98.2)
 	(envelope-from <rmk@armlinux.org.uk>)
-	id 1vhoSy-0000000054y-3iIQ;
-	Mon, 19 Jan 2026 12:34:45 +0000
+	id 1vhoT2-0000000055D-3PEm;
+	Mon, 19 Jan 2026 12:34:48 +0000
 Received: from rmk by rmk-PC.armlinux.org.uk with local (Exim 4.98.2)
 	(envelope-from <rmk@rmk-PC.armlinux.org.uk>)
-	id 1vhoSw-00000005H2T-2oVw;
-	Mon, 19 Jan 2026 12:34:42 +0000
+	id 1vhoT1-00000005H2a-3EnB;
+	Mon, 19 Jan 2026 12:34:47 +0000
 In-Reply-To: <aW4kakF3Ly7VaxN6@shell.armlinux.org.uk>
 References: <aW4kakF3Ly7VaxN6@shell.armlinux.org.uk>
 From: "Russell King (Oracle)" <rmk+kernel@armlinux.org.uk>
@@ -69,15 +69,15 @@ Cc: Alexandre Torgue <alexandre.torgue@foss.st.com>,
 	netdev@vger.kernel.org,
 	Paolo Abeni <pabeni@redhat.com>,
 	Vinod Koul <vkoul@kernel.org>
-Subject: [PATCH net-next 13/14] net: stmmac: configure SGMII AN control
- according to phylink
+Subject: [PATCH net-next 14/14] net: stmmac: report PCS configuration changes
 MIME-Version: 1.0
 Content-Disposition: inline
-Message-Id: <E1vhoSw-00000005H2T-2oVw@rmk-PC.armlinux.org.uk>
-Date: Mon, 19 Jan 2026 12:34:42 +0000
+Message-Id: <E1vhoT1-00000005H2a-3EnB@rmk-PC.armlinux.org.uk>
+Date: Mon, 19 Jan 2026 12:34:47 +0000
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260119_044332_459625_18AFB301 
-X-CRM114-Status: GOOD (  10.99  )
+X-CRM114-CacheID: sfid-20260119_044347_197794_83646C67 
+X-CRM114-Status: UNSURE (   9.03  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,64 +94,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Provide phylink with the integrated PCS autonegotiation capabilities,
-and configure the PCS's AN settings according to phylink's requested
-requirements.
-
-This may cause regressions.
+Report if/when qcom-ethqos changes the PCS configuration. With phylink
+now setting the PCS configuration, there should be no need for drivers
+to change this.
 
 Signed-off-by: Russell King (Oracle) <rmk+kernel@armlinux.org.uk>
 ---
- .../net/ethernet/stmicro/stmmac/stmmac_pcs.c  | 20 ++++++++++++-------
- 1 file changed, 13 insertions(+), 7 deletions(-)
+ drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.h | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.c
-index 9dd7e78cfbc4..0426f608ebdf 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.c
-@@ -65,7 +65,8 @@ static int dwmac_integrated_pcs_validate(struct phylink_pcs *pcs,
- static unsigned int dwmac_integrated_pcs_inband_caps(struct phylink_pcs *pcs,
- 						     phy_interface_t interface)
+diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.h b/drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.h
+index f9e7a7ed840b..6a1e30b10740 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.h
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.h
+@@ -71,6 +71,7 @@ static inline void dwmac_ctrl_ane(void __iomem *ioaddr, u32 reg, bool ane,
+ 				  bool srgmi_ral)
  {
--	if (phy_interface_mode_is_8023z(interface))
-+	if (phy_interface_mode_is_8023z(interface) ||
-+	    interface == PHY_INTERFACE_MODE_SGMII)
- 		return LINK_INBAND_ENABLE | LINK_INBAND_DISABLE;
+ 	u32 value = readl(ioaddr + GMAC_AN_CTRL(reg));
++	u32 old = value, diff;
  
- 	return 0;
-@@ -162,8 +163,9 @@ static int dwmac_integrated_pcs_config(struct phylink_pcs *pcs,
- 				       bool permit_pause_to_mac)
- {
- 	struct stmmac_pcs *spcs = phylink_pcs_to_stmmac_pcs(pcs);
--	bool changed = false, ane = true;
--	u32 adv;
-+	void __iomem *an_control = spcs->base + GMAC_AN_CTRL(0);
-+	bool changed = false;
-+	u32 adv, ctrl;
- 	int ret;
+ 	/* Enable and restart the Auto-Negotiation */
+ 	if (ane)
+@@ -84,6 +85,20 @@ static inline void dwmac_ctrl_ane(void __iomem *ioaddr, u32 reg, bool ane,
+ 	if (srgmi_ral)
+ 		value |= GMAC_AN_CTRL_SGMRAL;
  
- 	if (spcs->interface != interface) {
-@@ -180,12 +182,16 @@ static int dwmac_integrated_pcs_config(struct phylink_pcs *pcs,
- 		if (readl(spcs->base + GMAC_ANE_ADV) != adv)
- 			changed = true;
- 		writel(adv, spcs->base + GMAC_ANE_ADV);
--
--		ane = neg_mode == PHYLINK_PCS_NEG_INBAND_ENABLED;
- 	}
- 
--	dwmac_ctrl_ane(spcs->base, 0, ane,
--		       spcs->priv->hw->reverse_sgmii_enable);
-+	ctrl = readl(an_control) & ~(GMAC_AN_CTRL_ANE | GMAC_AN_CTRL_SGMRAL);
-+	if (spcs->priv->hw->reverse_sgmii_enable)
-+		ctrl |= GMAC_AN_CTRL_SGMRAL | GMAC_AN_CTRL_ANE;
-+	else if (neg_mode == PHYLINK_PCS_NEG_INBAND_ENABLED)
-+		ctrl |= GMAC_AN_CTRL_ANE;
-+	else
-+		ctrl |= GMAC_AN_CTRL_SGMRAL;
-+	writel(ctrl, an_control);
- 
- 	return changed;
++	diff = old ^ value;
++	if (diff & ~GMAC_AN_CTRL_RAN) {
++		pr_warn("dwmac: PCS configuration changed from phylink by glue, please report: 0x%08x -> 0x%08x\n",
++			old & ~GMAC_AN_CTRL_RAN, value & ~GMAC_AN_CTRL_RAN);
++#define REPORT_BIT(x) \
++		if (diff & GMAC_AN_CTRL_##x) \
++			pr_warn("dwmac: %8s %u -> %u\n", #x, \
++				!!(old & GMAC_AN_CTRL_##x), \
++				!!(value & GMAC_AN_CTRL_##x))
++		REPORT_BIT(ANE);
++		REPORT_BIT(SGMRAL);
++#undef REPORT_BIT
++	}
++
+ 	writel(value, ioaddr + GMAC_AN_CTRL(reg));
  }
+ #endif /* __STMMAC_PCS_H__ */
 -- 
 2.47.3
 
