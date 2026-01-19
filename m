@@ -4,82 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0420CD29C2D
-	for <linux-phy@archiver.kernel.org>; Mon, 19 Jan 2026 14:01:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 512D5D29C2E
+	for <linux-phy@archiver.kernel.org>; Mon, 19 Jan 2026 14:27:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:
-	References:MIME-Version:In-Reply-To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=/zokWa5vPctilPKZF2Nx9Nw2P1ypGkwx6rFt2xefXz0=; b=4Yw+Lbv/rDj9QG13QeIEyWxAjn
-	cJuOSIuPBmwBlQYGaehm3twE9wMU6Nv1d9dwZdZierpU4Jdg+E3Kz3x/q/hpFwrwVfnu2zvj0ipPb
-	bdnP7shPVMmaNNb2PYNwwfkItPWhKL59h3hswuKyqUavePIwHwVqZp7iTCW/HwU7KIHM08fkyvoG0
-	Cg5uwZl1eceGtOjEOVaV7ZhuDjCRWRtpine50D6sGAPy+RKU0XaxFpUKPaLkAacn+EIZLcS4hc3/U
-	NjQOWgc4J9LFw2HUXebuRiCoJfOzr89BGRRSIpsI+yb/wv4i+p36rjxP3tNGhvn15pxv1Vj/qp2l3
-	REhZZUOA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JIIHZNKU42IA5n6i5IHrsUi2JLOtzhZBlJ8sC+uyNN0=; b=3f096bAo2fGv3y
+	DZx7HfOHnfNqa+SyH5jsJkMERZpoxVBynLIfDxdjT3L5YfzeEk3jJ0b7OkGf7/jJ/eBtSuU/OR3FR
+	4UfQ3EKnMj1jh+kRO5zaMCd8XVqwOqb+qk0SU2P8GYuTJA5J5iNTzKcgLOoc8Hx8NVUMp5J5kvIoJ
+	eTRrHvjktAxh7QeKFkBlMsj9Mjh1ZsRt15cRZS5nllMT+roSKyBzf6f72L4Pi/lX/4M0gXwoliJAy
+	TG/aplb+Z/LWLe0RteuBi5cband4ztVmaU8NSb+C6bissBKTP5KBIs1gbDpvznB7e8Kswxdtt0eYi
+	k6a1F3XqrWE8UPXH9H8Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vhpoR-00000002CuD-42EF;
-	Mon, 19 Jan 2026 14:01:01 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1vhqEQ-00000002G4Y-3gF9;
+	Mon, 19 Jan 2026 14:27:50 +0000
+Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vhpoK-00000002CsR-0zug
-	for linux-phy@lists.infradead.org;
-	Mon, 19 Jan 2026 14:00:58 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id A01B843E30
-	for <linux-phy@lists.infradead.org>; Mon, 19 Jan 2026 14:00:51 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 784FFC2BC86
-	for <linux-phy@lists.infradead.org>; Mon, 19 Jan 2026 14:00:51 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1768831251;
-	bh=HE73SGFgiopqRikw2FKculLOZOlYZlR6rqxK/wanCFk=;
-	h=From:In-Reply-To:References:Date:Subject:To:Cc:From;
-	b=jwVKJjp9fns1b9wcslCE68MTZcgIfU6F5IeoOia67oQxU9ZTsL4T0ai4jPeX69jDG
-	 vY1+fpZmZcEYK0lqiSXuyy9QJSxNLWqzrEJvUVQuQFWSFaaGmfjPGWH1SzDLo2xz61
-	 vxns494nw4qas7fTVfZDKloTP6zl1HSMaWQQn2OQoZ69mZ221Udsr5vyEM/Im+rtx+
-	 tthgza1ro0XjZPTbDSjT1FhE/nNXT0A4u6m6k+nd8e9/ATR2K1gxUmPzsrtEi0Q2U8
-	 1DvpW+Au1cbaon6rQDxzuh5jY43wdtpylbec8gATzBbHxp53/osb5a2zmVxPuEwco2
-	 WFyTE1ioCZqAQ==
-Received: by mail-lf1-f53.google.com with SMTP id 2adb3069b0e04-59b6a987346so3942000e87.3
-        for <linux-phy@lists.infradead.org>; Mon, 19 Jan 2026 06:00:51 -0800 (PST)
-X-Forwarded-Encrypted: i=1; AJvYcCWVHZPAqIdh0xTdfiNdEn5rHl7lxtUW7aBUFgzTVKwAdoEnWNAUQDtXVqwhbIN8+56GruvfvSVRsTg=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yyi9/KM1n30cqBiWsK5upgXLyB+tuTsHWxbBPP2dX3nTWMvuv6O
-	10vcHb3T7o4dDLWlnTv2tQcLWkSKNfAF8TRS2BvWqfhmyW+BsqbcDVnjudr/A2ERhi/4ypDX0wP
-	ttLlw2uvs0KRL5FL3/cJ0W3MjscB4Xd6uTg7126LfeA==
-X-Received: by 2002:a05:6512:3c88:b0:59b:9f6f:20b1 with SMTP id
- 2adb3069b0e04-59bafeb6f0dmr3932244e87.21.1768831250152; Mon, 19 Jan 2026
- 06:00:50 -0800 (PST)
-Received: from 969154062570 named unknown by gmailapi.google.com with
- HTTPREST; Mon, 19 Jan 2026 14:00:49 +0000
-Received: from 969154062570 named unknown by gmailapi.google.com with
- HTTPREST; Mon, 19 Jan 2026 14:00:49 +0000
-From: Bartosz Golaszewski <brgl@kernel.org>
-In-Reply-To: <E1vhoS7-00000005H1T-1dXt@rmk-PC.armlinux.org.uk>
+	id 1vhqEO-00000002G1F-3UmX;
+	Mon, 19 Jan 2026 14:27:50 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=oa6ROnre6vr29aI4SNzN9w1inyxLiiLWv/B/wldB++Y=; b=EByHMWRUchgU/DLs8hq0L/dHWD
+	5zjuKjJVshFuMrahXJ97rRLOWXT4lg8Khdi+FurcsHRmp9K23Qrr+pb9Ni802OPXiWGImH1MB9899
+	5YA6gGkGVdQdoZSZnI+kqH67ez+gy3ye1dCYk1mn5x97JQ1Jga0290Ng8Fb/XNyttVviHN9IadMhS
+	PCzgIDyYIoJ2+mVJzUsBlBKiqRex1wSbhd3dBWFvXjw/SkAr1K0VYS8HkVag3ITLGt5mOLMyCjt31
+	JAeD9vVdIE81zOjAwOyJJQRjGN8+Nqsh0jMUmARIYdqc18JVL18kVri1ry9Cr/E2+NMB5a27FijmA
+	+KotNvRA==;
+Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:45064)
+	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.98.2)
+	(envelope-from <linux@armlinux.org.uk>)
+	id 1vhqEH-000000005IS-46Rj;
+	Mon, 19 Jan 2026 14:27:42 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.98.2)
+	(envelope-from <linux@shell.armlinux.org.uk>)
+	id 1vhqEE-000000006d8-2VLt;
+	Mon, 19 Jan 2026 14:27:38 +0000
+Date: Mon, 19 Jan 2026 14:27:38 +0000
+From: "Russell King (Oracle)" <linux@armlinux.org.uk>
+To: Andrew Lunn <andrew@lunn.ch>, Heiner Kallweit <hkallweit1@gmail.com>
+Cc: Alexandre Torgue <alexandre.torgue@foss.st.com>,
+	Andrew Lunn <andrew+netdev@lunn.ch>,
+	"David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>,
+	linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-stm32@st-md-mailman.stormreply.com,
+	Maxime Chevallier <maxime.chevallier@bootlin.com>,
+	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+	Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>, netdev@vger.kernel.org,
+	Paolo Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>
+Subject: Re: [PATCH net-next 14/14] net: stmmac: report PCS configuration
+ changes
+Message-ID: <aW4_WsnDdhpajY93@shell.armlinux.org.uk>
+References: <aW4kakF3Ly7VaxN6@shell.armlinux.org.uk>
+ <E1vhoT1-00000005H2a-3EnB@rmk-PC.armlinux.org.uk>
 MIME-Version: 1.0
-References: <aW4kakF3Ly7VaxN6@shell.armlinux.org.uk> <E1vhoS7-00000005H1T-1dXt@rmk-PC.armlinux.org.uk>
-Date: Mon, 19 Jan 2026 14:00:49 +0000
-X-Gmail-Original-Message-ID: <CAMRc=MfqJiHi1Ug92izGoL9CVty7-ijP0+6-m6hMyEJbZeLyBA@mail.gmail.com>
-X-Gm-Features: AZwV_QghYvQWH9GY8wcodXLcC8y2z84EtqfT-DXsw94HUPeCH7ZRyaHEOMNrN9A
-Message-ID: <CAMRc=MfqJiHi1Ug92izGoL9CVty7-ijP0+6-m6hMyEJbZeLyBA@mail.gmail.com>
-Subject: Re: [PATCH net-next 03/14] phy: qcom-sgmii-eth: add .set_mode() and
- .validate() methods
-To: "Russell King (Oracle)" <rmk+kernel@armlinux.org.uk>
-Cc: Alexandre Torgue <alexandre.torgue@foss.st.com>, Andrew Lunn <andrew+netdev@lunn.ch>, 
-	"David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
-	Jakub Kicinski <kuba@kernel.org>, linux-arm-kernel@lists.infradead.org, 
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	linux-stm32@st-md-mailman.stormreply.com, 
-	Maxime Chevallier <maxime.chevallier@bootlin.com>, Maxime Coquelin <mcoquelin.stm32@gmail.com>, 
-	Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>, Neil Armstrong <neil.armstrong@linaro.org>, 
-	netdev@vger.kernel.org, Paolo Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>, 
-	Andrew Lunn <andrew@lunn.ch>, Heiner Kallweit <hkallweit1@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <E1vhoT1-00000005H2a-3EnB@rmk-PC.armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260119_060057_455100_743B7923 
-X-CRM114-Status: UNSURE (   8.96  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260119_062748_873317_FED5741E 
+X-CRM114-Status: GOOD (  16.92  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,26 +91,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, 19 Jan 2026 13:33:51 +0100, "Russell King (Oracle)"
-<rmk+kernel@armlinux.org.uk> said:
-> qcom-sgmii-eth is an Ethernet SerDes supporting only Ethernet mode
-> using SGMII, 1000BASE-X and 2500BASE-X.
->
-> Add an implementation of the .set_mode() method, which can be used
-> instead of or as well as the .set_speed() method. The Ethernet
-> interface modes mentioned above all have a fixed data rate, so
-> setting the mode is sufficient to fully specify the operating
-> parameters.
->
-> Add an implementation of the .validate() method, which will be
-> necessary to allow discovery of the SerDes capabilities for platform
-> independent SerDes support in the stmmac network driver.
->
-> Reviewed-by: Vladimir Oltean <vladimir.oltean@nxp.com>
+On Mon, Jan 19, 2026 at 12:34:47PM +0000, Russell King (Oracle) wrote:
+> Report if/when qcom-ethqos changes the PCS configuration. With phylink
+> now setting the PCS configuration, there should be no need for drivers
+> to change this.
+> 
 > Signed-off-by: Russell King (Oracle) <rmk+kernel@armlinux.org.uk>
 > ---
+>  drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.h | 15 +++++++++++++++
+>  1 file changed, 15 insertions(+)
+> 
+> diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.h b/drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.h
+> index f9e7a7ed840b..6a1e30b10740 100644
+> --- a/drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.h
+> +++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.h
+> @@ -71,6 +71,7 @@ static inline void dwmac_ctrl_ane(void __iomem *ioaddr, u32 reg, bool ane,
+>  				  bool srgmi_ral)
+>  {
+>  	u32 value = readl(ioaddr + GMAC_AN_CTRL(reg));
+> +	u32 old = value, diff;
+>  
+>  	/* Enable and restart the Auto-Negotiation */
+>  	if (ane)
+> @@ -84,6 +85,20 @@ static inline void dwmac_ctrl_ane(void __iomem *ioaddr, u32 reg, bool ane,
+>  	if (srgmi_ral)
+>  		value |= GMAC_AN_CTRL_SGMRAL;
+>  
+> +	diff = old ^ value;
+> +	if (diff & ~GMAC_AN_CTRL_RAN) {
+> +		pr_warn("dwmac: PCS configuration changed from phylink by glue, please report: 0x%08x -> 0x%08x\n",
+> +			old & ~GMAC_AN_CTRL_RAN, value & ~GMAC_AN_CTRL_RAN);
+> +#define REPORT_BIT(x) \
+> +		if (diff & GMAC_AN_CTRL_##x) \
+> +			pr_warn("dwmac: %8s %u -> %u\n", #x, \
+> +				!!(old & GMAC_AN_CTRL_##x), \
+> +				!!(value & GMAC_AN_CTRL_##x))
+> +		REPORT_BIT(ANE);
+> +		REPORT_BIT(SGMRAL);
+> +#undef REPORT_BIT
 
-Reviewed-by: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+I notice in patchwork, checkpatch doesn't like the "if" starting the in
+the macro definition. While that would be true of definitions in kernel
+header files which can be used anwhere, for such a simple limited usage
+here, wrapping the thing in do { } while(0) is needless baggage, over-
+complicates the code, and makes it less readable. So, IMHO, checkpatch
+is wrong.
+
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTP is here! 80Mbps down 10Mbps up. Decent connectivity at last!
 
 -- 
 linux-phy mailing list
