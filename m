@@ -4,157 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D739D2ECF7
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Jan 2026 14:49:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 45D40D2ECF7
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Jan 2026 14:50:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2BXxdJ/GAF/H4HMU7tHMsFmOADYGzNrlzP5vQu4iVrE=; b=J9wvRAJGIvrhKU
-	H1Dg7Hr655UbW6VFWsuqRfJrzFza+MLfoy4RN043zT0P68jAjffEUBXsxeacNfZK3hDHUQoDLb/Jg
-	LQqEUsHdfoyCbo+eF+eoakdW1WAEP/VKklA7+0I4QheKffXUnuDzcdcOComZtNnFnPtqEZRGVjJHB
-	+MzxPAWSeZmd/b22ded/JaaftNad2W7HE/QfMlB6miLpi7K4Ww7nidGMTTUJEe34Q1tTncd2sFbic
-	kj/vXOtdARJZzOCqKwSR9tLKZgILb0tqtKTor/jPK7qLYcrVr927Krp5q+/Faoqe5q9LpkGxStO6r
-	hz5mOhaSew4SiVT9QSpQ==;
+	List-Owner; bh=3NSpZLbPKSbpKlA9YXAbQ6j7UtjKHlUU+ID3/QRkgAA=; b=vHScqScwAt5XYS
+	ViENNEy6JIFhqvgWglCKHKBimvAVsQaLwfC7G39HUUbkA5jfrs9jjXs8EUvPAF2YpvtnoYAzfm4G/
+	aCdkb0qvJc4nUrQTtVZRKRsConkXt4LJOBysAVAyucJ0oarEIWP+qFiSuOEr7+XDaF+cH4SM/Irns
+	8TPDkqZ1PTNsmRFb5O5Z7cU+R12Z1sHqcPJEhQ8noamzYlsYgXwDEW6Gba7G8MRjmfDWTX6frU4ik
+	lZNGf4C41mydk7CLEMFUfDNGTDLZuUe2ndgCXBiZiicsBtgmN1P7P63PVdOLanBZe6FvLOdcgdIJh
+	zFFZi9w5Z01W9OOWfeMQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1viD36-000000041JA-2pP7;
-	Tue, 20 Jan 2026 14:49:40 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1viD3s-000000041MS-45NR;
+	Tue, 20 Jan 2026 14:50:28 +0000
+Received: from mail-pf1-x42b.google.com ([2607:f8b0:4864:20::42b])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1viD34-000000041Iv-47mf
-	for linux-phy@bombadil.infradead.org;
-	Tue, 20 Jan 2026 14:49:39 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=In-Reply-To:Content-Type:MIME-Version:
-	References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description;
-	bh=LVjRE4VxYV0zLdBnpQoBaqo4k87tJBm7GQsAW6vpzJo=; b=qrQAQ228B3arLyzaDu6f4eul6N
-	qZEvJQ+tz5cPCUG3SpumAZiE5Of3QAW5TEilkdbyXnvIZoqyFAj7dNOf5CkGu8Z5wVbjOuejP7hhP
-	OExTNcu19NDO/xUP/MBGDVOtIK0uV+jKVIIxyrzwmOq7b/HTlhaOr+rDVqlwluDEv0QrlQQZdTOOg
-	R1zTuTQdTDvfZGrXHIhqrTObDHgB4P2niUUng3pZBem3pyh/dpfG7C5cFagb+K2fkApP8UjQuePd+
-	1TMlB2eHG7oYlmdvhSXm9nUSdcSemsNksNOA6oF6BUj2XX8PAKvYi3b4X0tKQREG7fBUJ1796yODa
-	lgfjFUlQ==;
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1viD31-0000000EFRo-3Snt
+	id 1viD3q-000000041M4-1Oy5
 	for linux-phy@lists.infradead.org;
-	Tue, 20 Jan 2026 14:49:37 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 60KD9FrK511395
-	for <linux-phy@lists.infradead.org>; Tue, 20 Jan 2026 14:49:31 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=LVjRE4VxYV0zLdBnpQoBaqo4
-	k87tJBm7GQsAW6vpzJo=; b=khOALW+bmfx8LK59WwyLADZYon7JsYdr2uxX9Mns
-	jt9gJUfTD4WM1Xm+/YST1wZkuRNDD82fzK7xaFJLio/6A4tjrnrobr6vckTTqtCn
-	MfwEAyWQDRRSBwsmQ+haNjLdXMWA1VJxF7twx6M7wdqgnfIYBk1IUPsa0a3hEFM/
-	PyJWoLy7TirDtPszqrXKF0PBTB2nWM89Js5V10/xXdH5jCHeXw++ORSNU7FfTwV6
-	T/eJDbqHiAXixM/vmIKrEdJZubJYx4Q89KxZyEZTSlS92BcGigeXZW66iENFRQus
-	tN1ElgnqcN48ETp0LgGAkC6uCiqnKJgPWE2dn2hXjErk1Q==
-Received: from mail-qk1-f198.google.com (mail-qk1-f198.google.com [209.85.222.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4btabe09rn-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Tue, 20 Jan 2026 14:49:31 +0000 (GMT)
-Received: by mail-qk1-f198.google.com with SMTP id af79cd13be357-8c52c67f65cso136139085a.1
-        for <linux-phy@lists.infradead.org>; Tue, 20 Jan 2026 06:49:31 -0800 (PST)
+	Tue, 20 Jan 2026 14:50:28 +0000
+Received: by mail-pf1-x42b.google.com with SMTP id d2e1a72fcca58-81f416c0473so4661321b3a.3
+        for <linux-phy@lists.infradead.org>; Tue, 20 Jan 2026 06:50:25 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1768920570; x=1769525370; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=LVjRE4VxYV0zLdBnpQoBaqo4k87tJBm7GQsAW6vpzJo=;
-        b=gzklqIaDFVfe4RhyF9ZXnczZ/mBVY8D/sutc+geEcTtUyJHE1Lr/0d/ERAOtKGd+Hb
-         ZFardcVF3UKoSWpVx8BARCRMbNqF19mb0aApIXgtoqC7vm5tKKuKuSUyz5Ky2JVQiv/G
-         V9jTJDdkO/rUyrj24/aTEBBSzgSN44Nkm/JKZQzXVfPBCzQyjAkTqgbHojeFoz6pNn5J
-         Z3uIqqKo204cqeJFwfc+kNAwBKu4fGuryIGLqDSsz0uabo4vt3OzR0OrkCo7MHwv0hKo
-         JB4hHmbL7/j2jxYSrhmB62TBNehHWUTgpIW7aqK0TgbsQV+Za4gVPxQ76ssWNFEEL0v0
-         XtFg==
+        d=gmail.com; s=20230601; t=1768920625; x=1769525425; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=bIm0elalg2KtUJFISn8Zrfv+qOvCEqd9XEPFzu+c7x8=;
+        b=IBKbhLdIU7ixI9lg2dRN9uGUg2J637dJNrx/HpxuaPUfVWxdgyhhgCecJmlietmhhS
+         RoFQqtlcDcrrmGgUQshC1bocik20q+bqziSMM99i9ls/2COmpY29A+tsRxWfSsrIy5go
+         PYYJD8fQ0hlr9MdrynQ92bJ+YUtgolTS/+Lx22N/P8KA296S6FKgOLdLHLqVIMqouGxb
+         YBQhJRi25RmfoAQO3EZR5fEq2VFwY6Se4PO43JyZFLfbtKkY6vwVSMTxxtw9kSUXwd4O
+         +7gL9PGZiGtMheKJ+RYcdR2z1BCVxW7m8n0XBbD4yL3RTHj0MQO28L/PmfqMFw9bIpxY
+         uiFQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1768920570; x=1769525370;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=LVjRE4VxYV0zLdBnpQoBaqo4k87tJBm7GQsAW6vpzJo=;
-        b=kVcz5r9573vWA7jlu1QPwLopFqhSBknKP2WH9jYFPlU+ALZpyzDJY/WEz7C1aTN1lu
-         TFuT5BFyiUTdF8/RO2DtUQ70S31NglHyqAoDT+WTXwZBok02TN1iaeWd5wFz2vVKzgiF
-         TTdWogqcdie6rOhufbJNJIidOkb2i4PVLLWt8j70iBVZWF2t+0fK9yP8fHwiiJ3mzrvn
-         sYLE8gIhrGoiKL5IuG6ieFoLGJ4Q74P80h9qV02UFaVu+9VRIN8tqTMvl42sPjbI4BBb
-         hs989jAjGs7OubLFR22y2kXvgIcTqldNqV/dCFDeS9De+5a5TzihEr36LFpqOE/UB2W6
-         U4kA==
-X-Forwarded-Encrypted: i=1; AJvYcCXTP+6AAmaRHrWdeDq01nsn/GdUHd4dm5daD0wEKtzOZaYgjgdPFkXz5SCnvJdEe/4y80dXQIR+ArQ=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yzfi6mG3eCKKbfJbg+FJ+u/YK/trG8wByJAribtV6oaHknqerYe
-	hgbkAYhL9dGlGyT7H7BPzGqTkv5CXhK7Axz/2qsneU175IWE2OIOYohNB7k+ufP+tpnqeumBH25
-	gLlv87X8QhFVWrIVGT7/MFfDL1Zi7C4zm0o5qQNdDeQn4jaeZShSo9lHAshFt9BA9wObW
-X-Gm-Gg: AY/fxX7Dad6LCoQ18q4foYM3bJZH2/LO9Rgn2hCiYqruh1S7Up9wnkGuF8cQC7lIIgC
-	qbDzE2lOxOXZPGFgyk/ksA5e7TfArk1gaVdIKDrvi/ngcOzJHLnwc9HqEpUS7Wp96m7Ssd9ft3x
-	knPFUn6irsMH0vuqpNMbhblgoO5DuPHWGghQUtyxOO5Fa6b54c37HlxV+mP3CuJ9q4DLTzlcjyn
-	XC6NLZEde34wxhKGlj1hoGQCW2gP5napBUWRLSIVdVueSpjkGUcrrv4+Yfolx3hEfpzb1ezX+oR
-	9qoOxFgtIxb+YJ7ztkTaKtcMNE+G5IRyVus7C/gkFFpl6jk5Qsu1Fqi5CU2g+2wT4DIb4IOyvzy
-	XQ72uDg7hlNzuP/yv+5ZNjq60
-X-Received: by 2002:a05:620a:17a3:b0:8b2:f182:694e with SMTP id af79cd13be357-8c6a6945228mr1898005485a.54.1768920570017;
-        Tue, 20 Jan 2026 06:49:30 -0800 (PST)
-X-Received: by 2002:a05:620a:17a3:b0:8b2:f182:694e with SMTP id af79cd13be357-8c6a6945228mr1898000585a.54.1768920569328;
-        Tue, 20 Jan 2026 06:49:29 -0800 (PST)
-Received: from oss.qualcomm.com ([86.121.163.152])
-        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-654534c8791sm13235856a12.24.2026.01.20.06.49.27
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 20 Jan 2026 06:49:28 -0800 (PST)
-Date: Tue, 20 Jan 2026 16:49:26 +0200
-From: Abel Vesa <abel.vesa@oss.qualcomm.com>
-To: Luca Weiss <luca.weiss@fairphone.com>
-Cc: Herbert Xu <herbert@gondor.apana.org.au>,
-        "David S. Miller" <davem@davemloft.net>, Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Bjorn Andersson <andersson@kernel.org>,
-        Alim Akhtar <alim.akhtar@samsung.com>,
-        Avri Altman <avri.altman@wdc.com>,
-        Bart Van Assche <bvanassche@acm.org>, Vinod Koul <vkoul@kernel.org>,
-        Neil Armstrong <neil.armstrong@linaro.org>,
-        Konrad Dybcio <konradybcio@kernel.org>,
-        ~postmarketos/upstreaming@lists.sr.ht, phone-devel@vger.kernel.org,
-        linux-arm-msm@vger.kernel.org, linux-crypto@vger.kernel.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        linux-scsi@vger.kernel.org, linux-phy@lists.infradead.org,
-        Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
-        Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Subject: Re: [PATCH v2 5/6] arm64: dts: qcom: milos: Add UFS nodes
-Message-ID: <zvagnaxqgrpm6bagw6zuov4oi6o4b7vmy673oh5st22tec2swl@abvblxgray2s>
-References: <20260112-milos-ufs-v2-0-d3ce4f61f030@fairphone.com>
- <20260112-milos-ufs-v2-5-d3ce4f61f030@fairphone.com>
+        d=1e100.net; s=20230601; t=1768920625; x=1769525425;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=bIm0elalg2KtUJFISn8Zrfv+qOvCEqd9XEPFzu+c7x8=;
+        b=EL/1xte5cNIruVPl1LMD0fCH5PcdI0u6uZoqMcliCmhEN4bHeaXcQbq5up75vuXoYl
+         W6pNCkQqRDe0R0/Zt5K5yoR/7W8UYWf9I31oFUhZJ07Outpt0u/y1TyLbYF39uCiTLIb
+         RNr0q8OUGPQdf9hLZgAR1LpyUL37pfAYKocbrjHdzlUFQxnQydEkPJM/Z4gpBtakJmgx
+         64YBLwR0VxNuwwZbaa7x8yIhSyvK+Ar+BKI3KNR2nPMIKZcQHfAmpw0u/3lv6T19dBFy
+         BGVHOwc10Ud8sk5zTYq5YtewuKGTwTYxVH0akdy/LhaikYqo5ck2sEsiZHq3seVWhcGa
+         bR5g==
+X-Forwarded-Encrypted: i=1; AJvYcCV+gO8GD2f/bxVBDalhiTmnB4OojmMKrmaCmZbjGg103KdyL66dygDAYmnrp7jcs8CcLWAf65Cg1pQ=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyDX8BAWlnVLJO15IGL4OM9Zv5lwKrR9ZoYmgtpWOgtA/9w9FGE
+	uovos4saqw+zUWYDqovOv/rvMCiX2tUldTSFUltxbsTCLJPDqkrgz9w/
+X-Gm-Gg: AZuq6aLnzPQHLikgxtZVcEZwmIAzi6fyiH0t7N6iv3cSJeSqMEfNebIsC3QIDfTFbSl
+	Bw1+qtoHY+KE/jujQ/kZaaCzEWzRbG87Gm/cd7M3T22OsO5H7dnoMrlBhKfIC+f98l+lKRxMvM1
+	yttoun+Eoacce6addwi4CF4h3gndtYjOhWABhyfu8SN3GaxOXZN4BOnnqYVbTZh3ur6NkPItiBP
+	8dccUvz2Ht4LTsBzm+kh9PD/IFzCmK2ngaMLKOCjJvXwfU1UhaERcOblNTtrRlU/QGsJkqERIWI
+	njef5NPhnJyrXCicNMa9zL0uhdqrdLaJColhyx4A9aY9aixcIHPeLcAAVGZL/hXgq24L1TCW6ul
+	24nYvjfXIvGCGUs6LaTaWI58H/X8ivSVXFeeE0NsstHViLXLkgqwgRElRfyNd+ibUqcWLK/ZIbM
+	cl4jLc0Zd+pEzpMXQVmFBcXxC0CgjH5MS2MvQ=
+X-Received: by 2002:a05:6a00:1bcc:b0:7b8:ac7f:5969 with SMTP id d2e1a72fcca58-81fe87b2942mr2099646b3a.4.1768920624786;
+        Tue, 20 Jan 2026 06:50:24 -0800 (PST)
+Received: from [192.168.1.7] ([115.99.251.203])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-81fa108c4dbsm12573861b3a.5.2026.01.20.06.50.21
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 20 Jan 2026 06:50:24 -0800 (PST)
+Message-ID: <b626470b-f1e2-4869-baea-bd7629b2feaa@gmail.com>
+Date: Tue, 20 Jan 2026 20:20:19 +0530
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260112-milos-ufs-v2-5-d3ce4f61f030@fairphone.com>
-X-Proofpoint-GUID: PzbkHGFQmvBlqjgiwStsf-mR5n4x1k8B
-X-Authority-Analysis: v=2.4 cv=Q43fIo2a c=1 sm=1 tr=0 ts=696f95fb cx=c_pps
- a=qKBjSQ1v91RyAK45QCPf5w==:117 a=RUlelSpolvTNyr7Sls5SJA==:17
- a=kj9zAlcOel0A:10 a=vUbySO9Y5rIA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=EUspDBNiAAAA:8 a=6H0WHjuAAAAA:8
- a=0k69HSTtqGF5rPJBr-4A:9 a=CjuIK1q_8ugA:10 a=NFOGd7dJGGMPyQGDc5-O:22
- a=Soq9LBFxuPC4vsCAQt-j:22
-X-Proofpoint-ORIG-GUID: PzbkHGFQmvBlqjgiwStsf-mR5n4x1k8B
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMTIwMDEyMyBTYWx0ZWRfX+laQTo+cV5XE
- QzKNR6QxTHmuGIMQRwISmzrwAghJ6jj/9X9b3hMpHTvoouIDR0Ldo5xJ2VMYOEaivxfxWFLukKp
- szafwG0vObmGVChPKYdPG/QAugdQizw7qXQuqCUl3zstSMZHRI3ZZ/agj8G2C9Hb8kEOXPUMNZW
- lz2wh1x2Degpvwk3uD+WBomi2CYAesAU2OB0hKwljx483e0+rr76kRqMFm7EDcNJHoLWZTAqV86
- ONFGGDJDrC0YD0vns+eIViWhcWRJo2wsp/p980VtTiDMfmcpMxpoq0CsRLqkq5qGPULnglhI2P9
- de4K9unlgmsX1r7kSoV5lEKtcv+KnTBBm3DtjdJ/WS7T6A8PFCqI3E7rrDsfnnwlPHpC3hgvFsa
- 8yOUXaHFzJnqXiAM5vsAOrQOsMwveXCA7ZEead4CT8HT+pD7CfAXw18cHjXjqjUSpPHPHMSTyqn
- 3OH9vtAzfmnpRVdvRsA==
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.20,FMLib:17.12.100.49
- definitions=2026-01-20_04,2026-01-20_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- adultscore=0 impostorscore=0 phishscore=0 bulkscore=0 suspectscore=0
- spamscore=0 lowpriorityscore=0 priorityscore=1501 clxscore=1015
- malwarescore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2601150000
- definitions=main-2601200123
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 1/2] dt-bindings: phy: ti,phy-usb3: convert to DT
+ schema
+To: Rob Herring <robh@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
+ <neil.armstrong@linaro.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <20260107-ti-phy-v2-0-a1ec27401fff@gmail.com>
+ <20260107-ti-phy-v2-1-a1ec27401fff@gmail.com>
+ <20260115144541.GA3319937-robh@kernel.org>
+Content-Language: en-US
+From: Charan Pedumuru <charan.pedumuru@gmail.com>
+In-Reply-To: <20260115144541.GA3319937-robh@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260120_144936_200653_BB89DC49 
-X-CRM114-Status: GOOD (  20.45  )
+X-CRM114-CacheID: sfid-20260120_065026_411074_A54ADFC2 
+X-CRM114-Status: GOOD (  25.96  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -171,65 +107,234 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 26-01-12 14:53:18, Luca Weiss wrote:
-> Add the nodes for the UFS PHY and UFS host controller, along with the
-> ICE used for UFS.
-> 
-> Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-> Signed-off-by: Luca Weiss <luca.weiss@fairphone.com>
-> ---
->  arch/arm64/boot/dts/qcom/milos.dtsi | 129 +++++++++++++++++++++++++++++++++++-
->  1 file changed, 126 insertions(+), 3 deletions(-)
-> 
-> diff --git a/arch/arm64/boot/dts/qcom/milos.dtsi b/arch/arm64/boot/dts/qcom/milos.dtsi
-> index e1a51d43943f..7c8a84bfaee1 100644
-> --- a/arch/arm64/boot/dts/qcom/milos.dtsi
-> +++ b/arch/arm64/boot/dts/qcom/milos.dtsi
-> @@ -1151,6 +1151,129 @@ aggre2_noc: interconnect@1700000 {
->  			qcom,bcm-voters = <&apps_bcm_voter>;
->  		};
->  
-> +		ufs_mem_phy: phy@1d80000 {
-> +			compatible = "qcom,milos-qmp-ufs-phy";
-> +			reg = <0x0 0x01d80000 0x0 0x2000>;
-> +
-> +			clocks = <&rpmhcc RPMH_CXO_CLK>,
-> +				 <&gcc GCC_UFS_PHY_PHY_AUX_CLK>,
-> +				 <&tcsr TCSR_UFS_CLKREF_EN>;
-> +			clock-names = "ref",
-> +				      "ref_aux",
-> +				      "qref";
-> +
-> +			resets = <&ufs_mem_hc 0>;
-> +			reset-names = "ufsphy";
-> +
-> +			power-domains = <&gcc UFS_MEM_PHY_GDSC>;
-> +
-> +			#clock-cells = <1>;
-> +			#phy-cells = <0>;
-> +
-> +			status = "disabled";
-> +		};
-> +
-> +		ufs_mem_hc: ufshc@1d84000 {
-> +			compatible = "qcom,milos-ufshc", "qcom,ufshc", "jedec,ufs-2.0";
-> +			reg = <0x0 0x01d84000 0x0 0x3000>;
-> +
-> +			interrupts = <GIC_SPI 265 IRQ_TYPE_LEVEL_HIGH 0>;
-> +
-> +			clocks = <&gcc GCC_UFS_PHY_AXI_CLK>,
-> +				 <&gcc GCC_AGGRE_UFS_PHY_AXI_CLK>,
-> +				 <&gcc GCC_UFS_PHY_AHB_CLK>,
-> +				 <&gcc GCC_UFS_PHY_UNIPRO_CORE_CLK>,
-> +				 <&tcsr TCSR_UFS_PAD_CLKREF_EN>,
 
-Maybe I'm looking at the wrong documentation, but it doesn't seem to exist
-such clock on Milos. It does exist on SM8650 though. So maybe the TCSR CC
-driver is not really that much compatible between these two platforms.
 
-I take it that the UFS works. Maybe because the actual TCSR UFS clkref
-is left enabled at boot?
+On 15-01-2026 20:15, Rob Herring wrote:
+> On Wed, Jan 07, 2026 at 04:11:15PM +0000, Charan Pedumuru wrote:
+>> Convert TI PIPE3 PHY binding to DT schema.
+>> Changes during conversion:
+>> - Define a new pattern 'pciephy' to match nodes defined in DT.
+>> - Drop obsolete "id" property from the schema.
+>>
+>> Signed-off-by: Charan Pedumuru <charan.pedumuru@gmail.com>
+>> ---
+>>  .../devicetree/bindings/phy/ti,phy-usb3.yaml       | 127 +++++++++++++++++++++
+>>  1 file changed, 127 insertions(+)
+>>
+>> diff --git a/Documentation/devicetree/bindings/phy/ti,phy-usb3.yaml b/Documentation/devicetree/bindings/phy/ti,phy-usb3.yaml
+>> new file mode 100644
+>> index 000000000000..41b3828723ae
+>> --- /dev/null
+>> +++ b/Documentation/devicetree/bindings/phy/ti,phy-usb3.yaml
+>> @@ -0,0 +1,127 @@
+>> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+>> +%YAML 1.2
+>> +---
+>> +$id: http://devicetree.org/schemas/phy/ti,phy-usb3.yaml#
+>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>> +
+>> +title: TI PIPE3 PHY Module
+>> +
+>> +maintainers:
+>> +  - Kishon Vijay Abraham I <kishon@ti.com>
+>> +
+>> +description:
+>> +  The TI PIPE3 PHY is a high-speed SerDes (Serializer/Deserializer)
+>> +  transceiver integrated in OMAP5, DRA7xx/AM57xx, and similar SoCs.
+>> +  It supports multiple protocols (USB3, SATA, PCIe) using the PIPE3
+>> +  interface standard, which defines a common physical layer for
+>> +  high-speed serial interfaces.
+>> +
+>> +properties:
+>> +  $nodename:
+>> +    pattern: "^(pciephy|usb3phy|phy)(@[0-9a-f]+)?$"
+> 
+> Again, don't define your own patterns. Either update the .dts files to 
+> use the established patterns (pcie-phy, usb3-phy, phy) or leave it 
+> undefined here.
+
+Sure, I will try to update them in dts.
+
+> 
+> Plus the unit-address is not optional as 'reg' is not optional...
+
+Okay.
+
+> 
+>> +
+>> +  compatible:
+>> +    enum:
+>> +      - ti,phy-usb3
+>> +      - ti,phy-pipe3-sata
+>> +      - ti,phy-pipe3-pcie
+>> +      - ti,omap-usb3
+> 
+> Alphabetical order please.
+
+Sure.
+
+> 
+>> +
+>> +  reg:
+>> +    minItems: 2
+>> +    maxItems: 3
+>> +
+>> +  reg-names:
+>> +    minItems: 2
+>> +    maxItems: 3
+>> +    items:
+>> +      enum:
+>> +        - phy_rx
+>> +        - phy_tx
+>> +        - pll_ctrl
+> 
+> Do this really need to be any order? Looks to me like this works for all 
+> users in tree:
+> 
+> minItems: 2
+> items:
+>   - const: phy_rx
+>   - const: phy_tx
+>   - const: pll_ctrl
+
+This will work, I tested it now.
+
+> 
+>> +
+>> +  "#phy-cells":
+>> +    const: 0
+>> +
+>> +  clocks:
+>> +    minItems: 2
+>> +    maxItems: 7
+>> +
+>> +  clock-names:
+>> +    minItems: 2
+>> +    maxItems: 7
+>> +    items:
+>> +      enum: [wkupclk, sysclk, refclk, dpll_ref,
+>> +             dpll_ref_m2, phy-div, div-clk]
+>> +
+>> +  syscon-phy-power:
+>> +    $ref: /schemas/types.yaml#/definitions/phandle-array
+>> +    description:
+>> +      Phandle/offset pair to system control module register for PHY
+>> +      power on/off.
+> 
+> Needs constrants on the size:
+> 
+> items:
+>   - items:
+>       - description: phandle to ...
+>       - description: offset of ...
+
+Sure, I will change for the other properties too.
+
+> 
+>> +
+>> +  syscon-pllreset:
+>> +    $ref: /schemas/types.yaml#/definitions/phandle-array
+>> +    description:
+>> +      Phandle/offset pair to CTRL_CORE_SMA_SW_0 register containing
+>> +      SATA_PLL_SOFT_RESET bit (SATA PHY only).
+> 
+> Same here.
+> 
+>> +
+>> +  syscon-pcs:
+>> +    $ref: /schemas/types.yaml#/definitions/phandle-array
+>> +    description:
+>> +      Phandle/offset pair to system control module for writing PCS delay value.
+> 
+> Same here.
+> 
+>> +
+>> +  ctrl-module:
+>> +    $ref: /schemas/types.yaml#/definitions/phandle
+>> +    description:
+>> +      Phandle of control module for PHY power on.
+>> +    deprecated: true
+>> +
+>> +dependencies:
+>> +  syscon-pllreset:
+>> +    properties:
+>> +      compatible:
+>> +        contains:
+>> +          const: ti,phy-pipe3-sata
+> 
+> Usually we express this the other way around:
+> 
+> if:
+>   properties:
+>     compatible:
+>       contains:
+>         const: ti,phy-pipe3-sata
+> then:
+>   required:
+>     - syscon-pllreset
+> else:
+>   properties:
+>     syscon-pllreset: false
+> 
+> But that's slightly different as syscon-pllreset is optional for 
+> ti,phy-pipe3-sata in your case. Seems like it should be required if 
+> ti,phy-pipe3-sata?
+
+I checked the DTS, it is not a required property. So, I will not change the format.
+
+> 
+> 
+>> +
+>> +required:
+>> +  - reg
+>> +  - compatible
+>> +  - reg-names
+>> +  - "#phy-cells"
+>> +  - clocks
+>> +  - clock-names
+>> +
+>> +unevaluatedProperties: false
+>> +
+>> +examples:
+>> +  - |
+>> +    /* TI PIPE3 USB3 PHY */
+>> +    usb3phy@4a084400 {
+>> +        compatible = "ti,phy-usb3";
+>> +        reg = <0x4a084400 0x80>,
+>> +              <0x4a084800 0x64>,
+>> +              <0x4a084c00 0x40>;
+>> +        reg-names = "phy_rx", "phy_tx", "pll_ctrl";
+>> +        #phy-cells = <0>;
+>> +        clocks = <&usb_phy_cm_clk32k>,
+>> +                 <&sys_clkin>,
+>> +                 <&usb_otg_ss_refclk960m>;
+>> +        clock-names = "wkupclk", "sysclk", "refclk";
+>> +        ctrl-module = <&omap_control_usb>;
+>> +    };
+>> +
+>> +  - |
+>> +    /* TI PIPE3 SATA PHY */
+>> +    phy@4a096000 {
+>> +        compatible = "ti,phy-pipe3-sata";
+>> +        reg = <0x4A096000 0x80>,  /* phy_rx */
+>> +              <0x4A096400 0x64>,  /* phy_tx */
+>> +              <0x4A096800 0x40>;  /* pll_ctrl */
+>> +        reg-names = "phy_rx", "phy_tx", "pll_ctrl";
+>> +        clocks = <&sys_clkin1>, <&sata_ref_clk>;
+>> +        clock-names = "sysclk", "refclk";
+>> +        syscon-pllreset = <&scm_conf 0x3fc>;
+>> +        #phy-cells = <0>;
+>> +    };
+>> +...
+>>
+>> -- 
+>> 2.52.0
+>>
+
+-- 
+Best Regards,
+Charan.
+
 
 -- 
 linux-phy mailing list
