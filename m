@@ -4,95 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D948AD2ED0F
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Jan 2026 09:49:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BCA9ED2ECF7
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Jan 2026 10:12:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=696FZudQSkM0ZHrpg0+WDuxbRbwFJav56xVurLTO9Zs=; b=Gr6VEXE50Pj5Qj
-	uOsl39LYyBzhexTbGztDlN9SgRKD5r/Hm0H3+Qan3Kvj1o08g2y9zwmGnmgIQM4NQMLqYeCwU49q8
-	tupmaXl5/qIAIyW470RCyZdSPMWK7iCfGjIa5qgxeYJowuN6nhUni1Awcs3M9/hKPtyrg5za/p8mU
-	4JNWOCafx3u1vRyZP4PgsFYKuqiajhg3qoDvEHfF5aArKGnjfW9mVqDCx5MlL3xq88+KRELEfPccy
-	MNOKG27vIC96Xk04+Tjn50uZCrAumqXetv//pXnbE6Dai0k30pfZ5rCdxJ/673LSFdCDRbA/zEiTI
-	9dWbKqnIUELrh/eq8oxA==;
+	List-Owner; bh=LfCYOiDHrqZn9djvcVDw7X/VYIPGNSX5CiNzSKmIDMs=; b=ZbO7hXjCJNl+AV
+	Cj+qljmaQUMWQWphL4QCd94z86KwbQutV5+DkscHleoQNe79r3ES9A/Z1MA+HNm/czTMdI2VcYnpU
+	byVCbFpEAGxSZ0efvO1xoot28uaWdX5X7YjU6aApEL5wDxZDTr6b2Nz01D+7SiH2kC1k06BUkmC1z
+	/rfSmNJM8cvVk9ezoDAdJGsW5btaZqBSkp8Vk2ugX7CncSn/s6C1U5T8UHFRflXbRbqBMO2g8jD+G
+	7Zm+dfA2UJrSsVAAyIkM+7u0nVN2rDbmfSa7qknH8jzB2QEBXMqW20TpeQXRVaIKbhyyylHSalNe6
+	1SBUvmReF7kIkysuiGNg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vi8Mv-00000003YoY-2bwm;
-	Tue, 20 Jan 2026 09:49:49 +0000
-Received: from mail-vk1-f196.google.com ([209.85.221.196])
+	id 1vi8jK-00000003aYT-1Vju;
+	Tue, 20 Jan 2026 10:12:58 +0000
+Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vi8Mr-00000003YoD-0pNn
-	for linux-phy@lists.infradead.org;
-	Tue, 20 Jan 2026 09:49:47 +0000
-Received: by mail-vk1-f196.google.com with SMTP id 71dfb90a1353d-5636227a6e6so1456407e0c.3
-        for <linux-phy@lists.infradead.org>; Tue, 20 Jan 2026 01:49:44 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1768902584; x=1769507384;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=cMqHiB2kIqqBrLa59wdqxa2/T5exJBY1xL1A1svqwlE=;
-        b=YFjeIbtTSBp5P6m3/4frBboF/cXFLR/ww93jx5qngq3LBQCghKb0m4GbmKEPpsmJ8+
-         AcuwRqSUvqfhkJwykx7d7y/doUxs7bES+D7FzVRviy7gZG3NobuVMP3vdeii+Hh5xwDf
-         A3O5fk3DUHpZwuNpZWIjbQXnJvCRVvYu19s2vuXseHFZ4eFfNxuessk1J/tqE+OhnjTn
-         0/YAY7u34YYEsgxUxnft06p5qNb+z0Re6KyxHxuIIa72sBMAyqcoMRk4JNrY7hkF2Dqz
-         ZVSiR3GEE8emM5CuyDshSWdamhjnwRfhbx5UbuLn4Bl59CNG8lD1ozRBcpSiNItzTCue
-         yE0A==
-X-Forwarded-Encrypted: i=1; AJvYcCXwFpzicjlb9HDb4zCdRYQFGs38QaOEvs8Z4uv0gDjFZJIwpwB2vas0xY/8H+zagr4RMkJCV4Zg6ow=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yz6PDKLN0aoP6Rsb+5vYqjBcmZfl7M/s0XX3X3/30z4em8XRUR9
-	Ez5aPt+de+zhDOIpvPxOqBUNsOsKgw5AktufyeSMcfNJO05WzI/R3H0B9ejFHGoabZw=
-X-Gm-Gg: AZuq6aKZC+HWfwTCL4kPw/7EqZFS89vaqC6OgEsfA7UYV+NThC7eJrwVDzrYQcvcrTq
-	9hy8VsJARnBVoowGqy8GYLGhLKg9bx/Zdhm3KdumphTRvG+wFCvZq9i0gBpIE5RrUMj4jSZsnwh
-	ECRKQHh7izx9s8N0PINNNwVPesyNKSdGPDcTm9aX7+TlqkgH0+z9hCovlWG1cptT3WpVEtBgy9S
-	SPIkSBSIkWCpZMvnXDnUJ+d22Yqq5jOG41vsXiaBKmXW9K0HNw9pHamQg5qVTdEDV1IxWxvktZH
-	Bt4FrfsNWdOdpk9e7S8dTy8DiVEdC+ugJn+bIIlONpH1voRk2Ww4x1HWJxlM1GuW8Io0jVycbMJ
-	HsKKaWkeP05Pu3NMeEG/DPsowzooLKhN7v1vEUbjJZow03JfcjurYNj5RPpxVi56a3+HSQPxLln
-	DITi/EhfkVRVIKw4K23q8DejI1Hhz2vm8KoSNWQ85+PxU5SoxlC6I5//51ZQ8=
-X-Received: by 2002:a05:6122:1d4e:b0:55b:d85:507a with SMTP id 71dfb90a1353d-565d6f920afmr273080e0c.7.1768902583714;
-        Tue, 20 Jan 2026 01:49:43 -0800 (PST)
-Received: from mail-ua1-f51.google.com (mail-ua1-f51.google.com. [209.85.222.51])
-        by smtp.gmail.com with ESMTPSA id 71dfb90a1353d-563b6fdaf9bsm3466172e0c.5.2026.01.20.01.49.43
-        for <linux-phy@lists.infradead.org>
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 20 Jan 2026 01:49:43 -0800 (PST)
-Received: by mail-ua1-f51.google.com with SMTP id a1e0cc1a2514c-948029fb1f2so146282241.0
-        for <linux-phy@lists.infradead.org>; Tue, 20 Jan 2026 01:49:43 -0800 (PST)
-X-Forwarded-Encrypted: i=1; AJvYcCX6aVZw8TzF3T+DnYSDxwzkK1eLLjjO0goHEnqHT/JKLefFzdKXLpD12Mfbh98BGL89tx+mfVq6dOk=@lists.infradead.org
-X-Received: by 2002:a05:6102:2928:b0:5db:f6ef:560 with SMTP id
- ada2fe7eead31-5f50ae0a099mr264663137.28.1768902583158; Tue, 20 Jan 2026
- 01:49:43 -0800 (PST)
+	id 1vi8jI-00000003aXC-0fUz;
+	Tue, 20 Jan 2026 10:12:57 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=MfnfHEO5iuaJRI+62YTPm5+K8bMNJD7kcoNtFyzxGKs=; b=rBMPbugFWYyVL5qpyUg71WmJgk
+	NsW+d5r8l/3OJR/bH+uny7K63JHwn6EexwsD9LgRY6e5O2AoGA0soxQOIcSdqKe3mQ+gXM9DhhvNo
+	3KG7Z5FvIKpjDOcFokazR26jpXg0ukCqkxia45m632A7Xe22PwgqMfLqJI9IRIo84tkzvOmWADB0M
+	pv42xrrZ6Rzee5VmvTyIbxH8lOov3zAKwed6WTCS3yxxp6LYPcbJ4QgQ/AJPkBTRGUHVtYWQa06FJ
+	UO4Ic0BM3GjKTXZWTbufGLAIVl3iNTAXQw9/5JLdrWJoHlNavESs15lsvZcwxIGTgY+VGhp3SaXto
+	6nDc20Fg==;
+Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:43312)
+	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.98.2)
+	(envelope-from <linux@armlinux.org.uk>)
+	id 1vi8jC-00000000645-2Cga;
+	Tue, 20 Jan 2026 10:12:50 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.98.2)
+	(envelope-from <linux@shell.armlinux.org.uk>)
+	id 1vi8j8-000000007RE-1CJk;
+	Tue, 20 Jan 2026 10:12:46 +0000
+Date: Tue, 20 Jan 2026 10:12:46 +0000
+From: "Russell King (Oracle)" <linux@armlinux.org.uk>
+To: Vladimir Oltean <olteanv@gmail.com>
+Cc: Jakub Kicinski <kuba@kernel.org>, linux-phy@lists.infradead.org,
+	davem@davemloft.net, maxime.chevallier@bootlin.com,
+	alexandre.torgue@foss.st.com, mohd.anwar@oss.qualcomm.com,
+	neil.armstrong@linaro.org, hkallweit1@gmail.com,
+	mcoquelin.stm32@gmail.com, netdev@vger.kernel.org,
+	edumazet@google.com, linux-arm-msm@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org, vkoul@kernel.org,
+	andrew@lunn.ch, pabeni@redhat.com, andrew+netdev@lunn.ch,
+	linux-stm32@st-md-mailman.stormreply.com
+Subject: Re: [net-next,05/14] net: stmmac: add stmmac core serdes support
+Message-ID: <aW9VHt6meEJFxV0I@shell.armlinux.org.uk>
+References: <E1vhoSH-00000005H1f-2cq9@rmk-PC.armlinux.org.uk>
+ <20260119192125.1245102-1-kuba@kernel.org>
+ <aW8M9ZiiftGBQIRM@shell.armlinux.org.uk>
+ <20260120081844.7e6aq2urhxrylywi@skbuf>
 MIME-Version: 1.0
-References: <20260118-rz-sdio-mux-v5-0-3c37e8872683@solid-run.com> <20260118-rz-sdio-mux-v5-7-3c37e8872683@solid-run.com>
-In-Reply-To: <20260118-rz-sdio-mux-v5-7-3c37e8872683@solid-run.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Tue, 20 Jan 2026 10:49:32 +0100
-X-Gmail-Original-Message-ID: <CAMuHMdU5shzYs27wO2A0SoisGBMo8RHf9DO-ubC6VrhWECEPCw@mail.gmail.com>
-X-Gm-Features: AZwV_QjEUqevj8OUxZ5xnP3V3BgNbEzQSiuy0CgomAkdvyQGaaSlv633jCWavtA
-Message-ID: <CAMuHMdU5shzYs27wO2A0SoisGBMo8RHf9DO-ubC6VrhWECEPCw@mail.gmail.com>
-Subject: Re: [PATCH v5 7/7] mmc: host: renesas_sdhi_core: support selecting an
- optional mux
-To: Josua Mayer <josua@solid-run.com>
-Cc: Marc Kleine-Budde <mkl@pengutronix.de>, Vincent Mailhol <mailhol@kernel.org>, 
-	Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
-	Peter Rosin <peda@axentia.se>, Aaro Koskinen <aaro.koskinen@iki.fi>, 
-	Andreas Kemnade <andreas@kemnade.info>, Kevin Hilman <khilman@baylibre.com>, 
-	Roger Quadros <rogerq@kernel.org>, Tony Lindgren <tony@atomide.com>, 
-	Janusz Krzysztofik <jmkrzyszt@gmail.com>, Vignesh R <vigneshr@ti.com>, 
-	Andi Shyti <andi.shyti@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>, 
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Magnus Damm <magnus.damm@gmail.com>, Wolfram Sang <wsa+renesas@sang-engineering.com>, 
-	Yazan Shhady <yazan.shhady@solid-run.com>, Jon Nettleton <jon@solid-run.com>, 
-	Mikhail Anikin <mikhail.anikin@solid-run.com>, linux-can@vger.kernel.org, 
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	linux-omap@vger.kernel.org, linux-i2c@vger.kernel.org, 
-	linux-mmc@vger.kernel.org, devicetree@vger.kernel.org, 
-	linux-renesas-soc@vger.kernel.org
+Content-Disposition: inline
+In-Reply-To: <20260120081844.7e6aq2urhxrylywi@skbuf>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260120_014946_759027_FA261721 
-X-CRM114-Status: GOOD (  19.57  )
+X-CRM114-CacheID: sfid-20260120_021256_196998_53380CDE 
+X-CRM114-Status: UNSURE (   7.68  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,38 +89,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sun, 18 Jan 2026 at 11:29, Josua Mayer <josua@solid-run.com> wrote:
-> Some hardware designs route data or control signals through a mux to
-> support multiple devices on a single sdhi controller.
->
-> In particular SolidRun RZ/G2L/G2LC/V2L System on Module use a mux for
-> switching between soldered eMMC and an optional microSD on a carrier
-> board, e.g. for development or provisioning.
->
-> SD/SDIO/eMMC are not well suited for runtime switching between different
-> cards, however boot-time selection is possible and useful - in
-> particular considering dt overlays.
->
-> Add support for an optional SD/SDIO/eMMC mux defined in dt, and select
-> it during probe.
->
-> Similar functionality already exists in other places, e.g. i2c-omap.
->
-> Signed-off-by: Josua Mayer <josua@solid-run.com>
+First, I'll say I'm on a very short fuse today; no dinner last night,
+at the hospital up until 5:30am, and a fucking cold caller rang the door
+bell at 10am this morning. Just fucking our luck.
 
-LGTM, so
-Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
+On Tue, Jan 20, 2026 at 10:18:44AM +0200, Vladimir Oltean wrote:
+> Isn't it sufficient to set pl->pcs to NULL when pcs_enable() fails and
+> after calling pcs_disable(), though?
 
-Gr{oetje,eeting}s,
-
-                        Geert
+No. We've already called mac_prepare(), pcs_pre_config(),
+pcs_post_config() by this time, we're past the point of being able to
+unwind.
 
 -- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTP is here! 80Mbps down 10Mbps up. Decent connectivity at last!
 
 -- 
 linux-phy mailing list
