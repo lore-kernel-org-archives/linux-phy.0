@@ -4,150 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9ADD9CA5FA2
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Jan 2026 16:29:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DEB4BCA5FBB
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Jan 2026 17:51:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kIlVE/ewCnqKxXAzUATu3fZ4LuvkwVrB95PlwySNDl0=; b=NvX9buYR8aM7TK
-	1t7LvUEFFs2i6wli/8WHZzIeqfJPeUbv4QJHCXVVjOixPgC1S7J2e+UF/T+9yOhHa1X15UXXj0Orc
-	gd0ZgUgiCT1P1P4eM1ftsGlEVUNFLygg2cjKrZNT+z6qNaDm53XzvDudOfPQQqwolXUt6dmbJ/o4C
-	ynC2GiOOU/1RNt6y2E1yenk6nqJoIjuoaMdHQYMsK4ok5LxACiD9zGXDeJ6lMqlj96OyVU1rxJI4g
-	gr3gO45HLTi9/3k/lm3pjW7UFqTJOe+6/lXB8n58kBukg7FAcSpS4X0CdpAmWPIVMlHhCHM7fZotl
-	tI1rfUquextoFo/e/+CQ==;
+	List-Owner; bh=KuYD8+KehGHTuCyTg2/73d4poKU9nNImHfYr1M//ovw=; b=nzsSGxnaTSj7Dt
+	1PkFFh/yc9DKetzU9kbjmh5/VTKltjfQRNoCiBn/tFXsw1VLXy60SP+RauuIpe/xELVm4hZogC2XP
+	pj7UgjXygXTCtZjThc+ZMnlnwadptcBpVh2P14RN7BuhuYUQcT8MXbfGihM8YM3gyDhf01VX3zz0Y
+	CbdBNR/Mmzr/Mq3LsZ6BuhEsMFmaXu939bJblheS88IU07TFw3BJCqN+dr+LLdVb4bGDUhkbLaQZd
+	tzwby1iMSmy06PlGJt5iqt8O3IbV4D9LZH970oWdSJThqSSVhv398Gu5k0QdwnvRuw2TwojsDf1io
+	rdNUGTDeU85E5ztK2R/g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1viEbP-00000004AOJ-1V3J;
-	Tue, 20 Jan 2026 16:29:11 +0000
-Received: from mail-westeuropeazon11010017.outbound.protection.outlook.com ([52.101.69.17] helo=AM0PR83CU005.outbound.protection.outlook.com)
+	id 1viFt6-00000004GOa-1NMh;
+	Tue, 20 Jan 2026 17:51:32 +0000
+Received: from mail-dy1-f181.google.com ([74.125.82.181])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1viEbM-00000004ANt-2UQO;
-	Tue, 20 Jan 2026 16:29:09 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=o3PUZ4UU/ssYCH80IUaLqNyuITw69j+lTr+lrrbuRyaaqKhmnQP+83UhNUbcweGI8k5jGMTZx3R2bUKJFt6FO4G4x8rFaVsEiXByhRFu1kGsaKar4sp3c0JHSFrz7dYTe0XzdZHhnYPj4weoPsK6Wx+xBWgBrJcHfdruF1S+6FmP0Hd5OnagtMT3Vv+mrzx724sRPrwvjgKqgij71sBU0jMu9VsAY667WnSnXYBjRM3/p7H3cJiep5OF8ljbMkcuA68ggOMlydO7qeasFw6O/aB02GPeZg10LmRbvYaQzn0wAJwnRRekFcjYxxINqYTVxoevaSoSkowwJ8H423IkZA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=i0SS8GPc9Gld1n/1MQEph6KHI7+Fvesu07AbOUg3jcQ=;
- b=ZpZPU5fF6g/RWccrg6uKI+OfraicE79yFnvGQn6v+n6/avSE9/VGRh60ufutRdvDRRKYEyJ6zYoxbu24g1WrzF1KffKM9lUbt2Vsz9rbYISMzSuwenxR3Asi+P6tkPRZtb/GaM7eSgr8lv8cjb6TOZOmdd43qrSpuAi/j7my+VVsQAjQffZiPRDMC57x+qyvjnKB56w1OtNeBFdcBo9nckpwWxAgPMLnS9C/xBqOM6qZ/LgkWygU4bzRJZyxzayyetkSJmDTIFKrDf8GC1r+E4Luqj+fbgOZoaENeU4IrPYj2X+xJAIyJOop1ZT+0R0rW5CwPaKZrFcxxAzs/SI9KA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=i0SS8GPc9Gld1n/1MQEph6KHI7+Fvesu07AbOUg3jcQ=;
- b=kY8u4/qc6DgGJTlbLRYph9p0zeSdl/mfHLMsf68BhMpxzJGkzpuPHcFUsy6RZZXxUfrXD1GKRpKE/hY+lz/ZbG55A0MUz5YWteYwXzPuWgV5HrKhp7IhnLZJ5K3w5IqbDFUly6ixYH+nXOJY2K8kx9XOxAswugtA7p4Puq1x/EFrAWeSjR3Hj4ZKgTqNGSFn727F4CVtgoXQu9qHMOK9cSbmDVYDqXGeCqECSeNXyaLOk5SnQGuaGmnZsFegAFl5n4Eetr/2jdOgMRuUc8YplV4rG8R1Mszj3x+HMLj7xhW6slgTfHVXlWgLpiIi7d6gEKyhHeKb6cepBC5mj1iP/w==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from DU2PR04MB8951.eurprd04.prod.outlook.com (2603:10a6:10:2e2::22)
- by DU2PR04MB8902.eurprd04.prod.outlook.com (2603:10a6:10:2e1::20) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9499.2; Tue, 20 Jan
- 2026 16:29:03 +0000
-Received: from DU2PR04MB8951.eurprd04.prod.outlook.com
- ([fe80::753c:468d:266:196]) by DU2PR04MB8951.eurprd04.prod.outlook.com
- ([fe80::753c:468d:266:196%4]) with mapi id 15.20.9520.011; Tue, 20 Jan 2026
- 16:29:03 +0000
-Date: Tue, 20 Jan 2026 11:28:56 -0500
-From: Frank Li <Frank.li@nxp.com>
-To: Xu Yang <xu.yang_2@nxp.com>
-Cc: vkoul@kernel.org, neil.armstrong@linaro.org, shawnguo@kernel.org,
-	kernel@pengutronix.de, festevam@gmail.com, jun.li@nxp.com,
-	linux-phy@lists.infradead.org, imx@lists.linux.dev,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] phy: fsl-imx8mq-usb: disable bind/unbind platform driver
- feature
-Message-ID: <aW+tSO3V+MEnXeu8@lizhi-Precision-Tower-5810>
-References: <20260120111712.3159782-1-xu.yang_2@nxp.com>
-Content-Disposition: inline
-In-Reply-To: <20260120111712.3159782-1-xu.yang_2@nxp.com>
-X-ClientProxiedBy: SJ0P220CA0029.NAMP220.PROD.OUTLOOK.COM
- (2603:10b6:a03:41b::13) To DU2PR04MB8951.eurprd04.prod.outlook.com
- (2603:10a6:10:2e2::22)
+	id 1viFt0-00000004GNo-3kgH
+	for linux-phy@lists.infradead.org;
+	Tue, 20 Jan 2026 17:51:31 +0000
+Received: by mail-dy1-f181.google.com with SMTP id 5a478bee46e88-2ad70765db9so6381718eec.1
+        for <linux-phy@lists.infradead.org>; Tue, 20 Jan 2026 09:51:26 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1768931485; x=1769536285;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=dcPNSr1vco6+E9e0XJi5xyBPxmbRiBl/7/yDisLqrnI=;
+        b=gtMBIn9oH9ZC2w93L73HKYuG2oPrybk0GgkbUk0dF15Eu3k03yFU70oZHHHbuLIbU5
+         RWWXU5TDcS/Mv2/y2f0Y+KYJELwu6hwaSPdyD9tqr+ycc59mnbvQvnEPxZ8qYln8nj0l
+         jllVjeTopsiJKengh2Cwow9FEWCKBMmLpO+0Ks9X5T9SGtKV8IxdmODjUWXlp1OoibLU
+         9/UKMEFfej1LSEaOXooYAeuoGuk8NYo42rMRz27h+eKMSa2JuZGQuLL01ODs6yPvM5XZ
+         Mx6E1xZQ5KZ/uAAhh1jPUgk8tsKh+jwtZYjxabQdCXi8cOxXits35rn4u//ySkQfequz
+         8lZQ==
+X-Forwarded-Encrypted: i=1; AJvYcCVD5bZ4bYWiAW5L0ZmFGtkmRdKF3g5zn25lHEgF0SNfCshm0agFvFOmKmPX+2ZOZq6fJn8y/fTYt/E=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyZSqNttouujcl7dy10OUqezPG+DFdxdeQYxEkw+N5+NDbdUbzb
+	HYemR2zAl6IQEUtloSF62jd9szozgv49Q5y3KbK4qW+aMeR1FFvkIeSLKGIaYguY
+X-Gm-Gg: AZuq6aIguKIcmeJ0fdx5ZjUUDt6jNAjE43yL70kz7ncTKcN7sNIiJcqEKVcEcuA7gjk
+	g7m5xei/70eHq+ra9DVdo2foohAiYFvT0DD1hCpuIu3oFy0AdTTzjuIVHTiRxa+NOjrPbl1u8BM
+	E8nlqUWl+Sd93kSNeVlR7kJXl3G6M9NUBDh+k/bNIMhXGwVCHQ1qi8T1Cp/yUZetDXPqlqPOyec
+	rMQOJV0goGOoUCYlPQAwLT0FreOomM6/PKmDlrjB5/JCNm7vA+FaypaH61X2V5O1DmCK3ZVw/HZ
+	/57jZQJTs0Hv4SVm1oS4QYs/mX/bcn3alUhrrASX4TZfV7X9K3xO8zdGCFAqNSkfOXFCUOHeHn0
+	tknoKvdWXNkkraqv6nXGY4Gl7WE/B3zWLepTVCR5oseIb+xoLNY/hp6Jvr6sh/Rg+UdYANi1IuN
+	6X/HsyavmAycLzqckLAxosFxMF2HHKj0Zou7uH1nkSQfan0zSBXWs=
+X-Received: by 2002:a17:90b:2e0b:b0:32b:baaa:21b0 with SMTP id 98e67ed59e1d1-3527313bf04mr11928843a91.6.1768925132557;
+        Tue, 20 Jan 2026 08:05:32 -0800 (PST)
+Received: from mail-dy1-f173.google.com (mail-dy1-f173.google.com. [74.125.82.173])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-352677c90easm14968600a91.4.2026.01.20.08.05.32
+        for <linux-phy@lists.infradead.org>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 20 Jan 2026 08:05:32 -0800 (PST)
+Received: by mail-dy1-f173.google.com with SMTP id 5a478bee46e88-2b0ea1edf11so10219416eec.0
+        for <linux-phy@lists.infradead.org>; Tue, 20 Jan 2026 08:05:32 -0800 (PST)
+X-Forwarded-Encrypted: i=1; AJvYcCVHNwmJW2lqTtycpKw8hoZePP7OzLAk4BFmPbAS/eEZm7q1mtimRJOmzOCq/9EvRfL1m3ZnLpMhIZU=@lists.infradead.org
+X-Received: by 2002:a05:6102:b15:b0:5df:c094:628d with SMTP id
+ ada2fe7eead31-5f1a6fa3ca2mr4116825137.3.1768924652088; Tue, 20 Jan 2026
+ 07:57:32 -0800 (PST)
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DU2PR04MB8951:EE_|DU2PR04MB8902:EE_
-X-MS-Office365-Filtering-Correlation-Id: 3c991b44-d170-42d4-b909-08de5841065c
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|366016|1800799024|376014|52116014|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?fbsgNuEtw2zUUjnBkXeTlz72cfq0nYUXCVlQuC8lHEsH6NH1MqAGJ9Fd40py?=
- =?us-ascii?Q?c0JAK1alJeBu8dvDVwP7IiMjQ/CqE9jOUmPgy4fitjJuu7Aw8NizW4QEKm3Z?=
- =?us-ascii?Q?jm9NH2W647PVMgHzZ1PXoSI3/3Yd7s/3x11wdXPSFnxBvHqgInGXueNhGvUD?=
- =?us-ascii?Q?c1XMYoMp6kA5exKHlFaSPTeViFBa22yai/+XvCUGhCUDUw4Osz1kWX8DMsB3?=
- =?us-ascii?Q?Dova/hqUxaBEvjP1pskS5JCjCoWaNK/jmuKFywEeiffJBm7WAKwWg4qfOKyi?=
- =?us-ascii?Q?k7EqEqJm1XlPChQFIs/k/0sXz2u41GbyepDK9VdmhSJkj55VV/WjcZWlo6yA?=
- =?us-ascii?Q?+NFSC+15/bSCHEbovNt41FiVxnqFkg5KUGBLh/2s0VrKfqoBVcyPnyrcfBpO?=
- =?us-ascii?Q?elNQs0qNQ3FLZsZ96howfubRnszuWljEGosvpEGJeh7r5/TMJdBXf3cUfe6k?=
- =?us-ascii?Q?wByQstFt76484tb0zVH/1RgBnhQidmNbEizCFHZOB17L5MvVh7PhmWcx5chL?=
- =?us-ascii?Q?ZtoLcFHK6Y7Nxohh8pjyirUZB3yrL6uQj7YV3oBXdK5jCglyXryz676miHdl?=
- =?us-ascii?Q?fLncmhtVwVxXV2fOSKwNwYXdxeKlDPYMD8PJQyBw5//WzJErCOtIELiHUkgB?=
- =?us-ascii?Q?DePcZX41d/QXRwIuHZYSgLg3RPPeu4x3abowE+KGwl+Wyx8vQodsD2NB0+p9?=
- =?us-ascii?Q?ROY1+pIMoCDFm5ke0Np7s8vgdjO+VHpTgUBx+P2uCaVfpLOIfxXOdt8KSJgP?=
- =?us-ascii?Q?lqQrbq99pDJ1n/k97XAUXwJK/VJ6QB46b3lwUBm3kuPTzM+WZY8sQQnyJ9YH?=
- =?us-ascii?Q?rFUFUShRkCmtjsyTOJy3LM8v/4Tvql2zpctGcHStfpu2h/Q41QNRiVj2F8xL?=
- =?us-ascii?Q?NcoYXBl/E833izkUslZfl+lKLR8JFbaLhAtWbL1jdXSzY4xDUN3e3+wDvbOu?=
- =?us-ascii?Q?zIxbN0gvYUmpNO1f2Zim5jtpadXLgg4swj6StreEdOtDVlGztXS5ql9J9Elq?=
- =?us-ascii?Q?0WxywRvx/xD46+ZQuQyPLSKLFdrhOCpxCrpDemHGQ0LZrhWZa5UWcf12oGQL?=
- =?us-ascii?Q?m0nq/qfCqK6Y+eFCbJXlgOLJYw8gqJ3pM1pOclOHbWys8omB1RMQ0tB+tR2n?=
- =?us-ascii?Q?qqyrN184Kj5hz+ixyG3SoNfQYAYZG6/d9UaTctq/wTYn1E6mYH7RxoJQDMHk?=
- =?us-ascii?Q?iUgVBiFZ7G6VthUGjZz2pj8p0+sXFwOL6Vnq0VirFVZ5msCoqJDR3HD+GVzx?=
- =?us-ascii?Q?X1ra9HI+T/4kQ388YGD7sacGKCEfTcj5ray7djOHy4T63tVrh1bE/p35sgrA?=
- =?us-ascii?Q?94ULA8oQU5skKsnFrQ6On7g/LVB9xr/gcmcgL96HGHc6isTyL6JZGUSIMp3E?=
- =?us-ascii?Q?PgRRMfpW0fDJNP4d+nAmflaKsorSdglCauUvFNegxFwh1fid8e5z7UPBQYcj?=
- =?us-ascii?Q?hrV+jTJTCPgWyTMWwM2JqXxMCXcUQYfuu58yZGh7Ggxsn7ZP69MyveXRe3UJ?=
- =?us-ascii?Q?Rl7uWRCLcciJEOW0vm8/3YHRbl+bXttTc4n0MtBYhe4jI3+WS82pjGyWvuwi?=
- =?us-ascii?Q?AWtj+WaQcHAZz1x/Dv9Qu941SvOEuMHnLLm3ToHCe1r+62ht4ct5lgzDGKvC?=
- =?us-ascii?Q?CLewx+7H69BV6CEHae32zXM=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DU2PR04MB8951.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(366016)(1800799024)(376014)(52116014)(38350700014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?mw1KA3vslJCt3NM3i8szX+B0YTRPGby7vVbukTdMNhRAk77oKsE4WFO57kLc?=
- =?us-ascii?Q?+wG+VfspwhHtLe3GyU5Zr0ElYXdOgeX5oQGmNbBsnQUjtmxlppKgvmrWSnjs?=
- =?us-ascii?Q?o1BryiTjpJWqGFgwEUSaGvarbgdcmEY8bGmL4zYqIYj7Bkc+G5WSZKopMqcW?=
- =?us-ascii?Q?evpD/hV83V17tr/1LK+EaIzZhBezdxPHMjt6Ns63nNH2W+MBTEIVpGaXvfyN?=
- =?us-ascii?Q?0zs5vE0gi04ANCBFMiOJ50Atah2djgkXrZuDfkZQ2S/HmhqMYDP3wan9Qv70?=
- =?us-ascii?Q?TEjDYWJvAQxFi0pe/2IpZDhHPg7e7HUv8u5+L/zjJ2ZoM1J9D1WshKXoJ0cg?=
- =?us-ascii?Q?odLy5/D2ed3ALzkHqDpGSpD9WMtH7QqBrqmzZJ7cUcVXHyl07XhDD9E8yoYi?=
- =?us-ascii?Q?lfBUuEWBSz8ygOKsUNoAYJicdxKumaSa4QVpERA/I2NObRbsshNvHfynBgeA?=
- =?us-ascii?Q?xnGHRlsyLK/oW1kAPWG98MiQNt6biZNW9n+hceeJFqcq5c2/MDRTRhd3giYS?=
- =?us-ascii?Q?Bhq6fKL202c6UW6PNWUrNicQ0es3yW5qAUvSdqZ6UXFt3SMxaUL11aEfjPOx?=
- =?us-ascii?Q?QNn+xAjG1Hfz67wNfCrtwc4BniSiVe/LXwZy27NhqMmN+fk0dfisw9F1SS7i?=
- =?us-ascii?Q?B6KhAps1S1vfwtKjhmMr/MGyvuc0UfabGSuvDQG2R0Xtt2luvqbzOY1sNHzN?=
- =?us-ascii?Q?KwZHzAWyeSu/UkRnEtwy0Ps6cCGDW5tRGW7pvxCqj/hqV73/OtK71RCIZXXL?=
- =?us-ascii?Q?e9RlTYXYulWgOVcfLKxAR12ibvzZCE/VQ2DayRonl3bsbU59i/tRmwz50Hmf?=
- =?us-ascii?Q?oE4970zoeormjdLnOg0V6h1aMzSfkEgbuGW3yvO/p4GE58mM3mPwlz4EQT3M?=
- =?us-ascii?Q?K+Ijk8LhW1H5SnjLQeDnv8USLsdoNJN3+MlWQgQPTzd5EauM3rMcjq5Pd/oG?=
- =?us-ascii?Q?8BxHV9Jh0ukp6TyOIfAx2uDbiQTr2to50PJ3iQiQ1Sf1TQYZDG1obae0wwF+?=
- =?us-ascii?Q?09iiCxxAetEG4a9XjJO7LCKnac3ZW++WMtR1OtKfntiNvMvSDscFuyRAmwLn?=
- =?us-ascii?Q?MZwuWhh4zYZhDg0DcLZtf1qd9NmLaKB9JYbVIKyMOxhCjb2l7Gh92BAyIcsK?=
- =?us-ascii?Q?yp6n4rh9La2ZIik7rpeeaXwabe3A7dTCUnyafuTuooRjQOHmPXqADpZxflY9?=
- =?us-ascii?Q?FcTGYY6U52zmnJS4Y9klXJfJVXJbeh0oFcOcfHPwuknQaHQA3h9jo4j4YUvi?=
- =?us-ascii?Q?f2GC8CSEuJhEhKXQiyRYN6Ub+PYimOAo69QuplSnJkd7pSi7dyVdmTylw4uo?=
- =?us-ascii?Q?0T5Mb+0Namm1SsTzLhm5ICMJHA1IuTfE9onKIJk5jc6vhY8KwxZjhZgrMh4m?=
- =?us-ascii?Q?btoBV6Pusj/L9HvE/f8tQXlwHMCsJmEKGMF3ONJjdYdpPVV5KZ8NZBal95hA?=
- =?us-ascii?Q?HN2w632Ka1S7GhyH3wCjCtFNM2odYC0xfBKl7sRtOx9MjLDwCACfB41uHOLU?=
- =?us-ascii?Q?oJjwMYYu28ZRUFRgcinSibNN1BGidY91/H4YCY2m8TLiaCV+CCT3v5STIbCy?=
- =?us-ascii?Q?o8m+MX4B3G2J+SEXzLVX76x7ShuFWrmcrYuwNjf6R4b45DsLOQ0oxtHxjvZw?=
- =?us-ascii?Q?klUmLRriWz6lvyR5mfjmDalT4r41/nLfuwIaTCaPATklftU4oM+bL58ErnPv?=
- =?us-ascii?Q?Lscoj+rkHR0AGN+FxsYwykoch4Kd2NbPk8vjR5rC7ZFvP5J7miQAtmU+LDnI?=
- =?us-ascii?Q?VG82Q4YSPA=3D=3D?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 3c991b44-d170-42d4-b909-08de5841065c
-X-MS-Exchange-CrossTenant-AuthSource: DU2PR04MB8951.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 Jan 2026 16:29:03.6941
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: zNgl0Trvy2BEEZnbxWtugFMi0Y4Y3p/md9bLBQZGu8SHyqqz5qIdsrRHzis9Po95qUGT7nO1tpvX21RYXg6P3w==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU2PR04MB8902
+References: <20260118-rz-sdio-mux-v5-0-3c37e8872683@solid-run.com> <20260118-rz-sdio-mux-v5-2-3c37e8872683@solid-run.com>
+In-Reply-To: <20260118-rz-sdio-mux-v5-2-3c37e8872683@solid-run.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Tue, 20 Jan 2026 16:57:21 +0100
+X-Gmail-Original-Message-ID: <CAMuHMdU=wDmDJFYvtzxptAkkOQ8r7sPGUxp9u71e64ikY85+Zw@mail.gmail.com>
+X-Gm-Features: AZwV_QgiDRrYV1BByFjO2lg9vbxQpf_lMefb8OE6E5E-nZ3iF4svsU32o-Zkiz4
+Message-ID: <CAMuHMdU=wDmDJFYvtzxptAkkOQ8r7sPGUxp9u71e64ikY85+Zw@mail.gmail.com>
+Subject: Re: [PATCH v5 2/7] mux: Add helper functions for getting optional and
+ selected mux-state
+To: Josua Mayer <josua@solid-run.com>
+Cc: Marc Kleine-Budde <mkl@pengutronix.de>, Vincent Mailhol <mailhol@kernel.org>, 
+	Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
+	Peter Rosin <peda@axentia.se>, Aaro Koskinen <aaro.koskinen@iki.fi>, 
+	Andreas Kemnade <andreas@kemnade.info>, Kevin Hilman <khilman@baylibre.com>, 
+	Roger Quadros <rogerq@kernel.org>, Tony Lindgren <tony@atomide.com>, 
+	Janusz Krzysztofik <jmkrzyszt@gmail.com>, Vignesh R <vigneshr@ti.com>, 
+	Andi Shyti <andi.shyti@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>, 
+	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Geert Uytterhoeven <geert+renesas@glider.be>, Magnus Damm <magnus.damm@gmail.com>, 
+	Wolfram Sang <wsa+renesas@sang-engineering.com>, 
+	Yazan Shhady <yazan.shhady@solid-run.com>, Jon Nettleton <jon@solid-run.com>, 
+	Mikhail Anikin <mikhail.anikin@solid-run.com>, linux-can@vger.kernel.org, 
+	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+	linux-omap@vger.kernel.org, linux-i2c@vger.kernel.org, 
+	linux-mmc@vger.kernel.org, devicetree@vger.kernel.org, 
+	linux-renesas-soc@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260120_082908_638057_CB1CFCF4 
-X-CRM114-Status: GOOD (  16.80  )
+X-CRM114-CacheID: sfid-20260120_095126_936294_A726216F 
+X-CRM114-Status: GOOD (  36.52  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -164,33 +110,117 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jan 20, 2026 at 07:17:12PM +0800, Xu Yang wrote:
-> Disabling PHYs in runtime usually causes the client with external abort
-> exception or similar issue due to lack of API to notify clients about PHY
-> removal. This patch removes the possibility to unbind i.MX PHY drivers in
-> runtime.
+Hi Josua,
+
+On Sun, 18 Jan 2026 at 11:29, Josua Mayer <josua@solid-run.com> wrote:
+> In-tree phy-can-transceiver driver has already implemented a local
+> version of devm_mux_state_get_optional.
 >
-> Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
-> ---
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
->  drivers/phy/freescale/phy-fsl-imx8mq-usb.c | 1 +
->  1 file changed, 1 insertion(+)
+> The omap-i2c driver gets and selects an optional mux in its probe
+> function without using any helper.
 >
-> diff --git a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-> index 028c4c9dea40..abfa6ac3ae3f 100644
-> --- a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-> +++ b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-> @@ -837,6 +837,7 @@ static struct platform_driver imx8mq_usb_phy_driver = {
->  	.driver = {
->  		.name	= "imx8mq-usb-phy",
->  		.of_match_table	= imx8mq_usb_phy_of_match,
-> +		.suppress_bind_attrs = true,
->  	}
+> Add new helper functions covering both aforementioned use-cases:
+>
+> - mux_control_get_optional:
+>   Get a mux-control if specified in dt, return NULL otherwise.
+> - devm_mux_state_get_optional:
+>   Get a mux-state if specified in dt, return NULL otherwise.
+> - devm_mux_state_get_selected:
+>   Get and select a mux-state specified in dt, return error otherwise.
+> - devm_mux_state_get_optional_selected:
+>   Get and select a mux-state if specified in dt, return error or NULL.
+>
+> Existing mux_get helper function is changed to take an extra argument
+> indicating whether the mux is optional.
+> In this case no error is printed, and NULL returned in case of ENOENT.
+>
+> Calling code is adapted to handle NULL return case, and to pass optional
+> argument as required.
+>
+> To support automatic deselect for _selected helper, a new structure is
+> created storing an exit pointer similar to clock core which is called on
+> release.
+>
+> To facilitate code sharing between optional/mandatory/selected helpers,
+> a new internal helper function is added to handle quiet (optional) and
+> verbose (mandatory) errors, as well as storing the correct callback for
+> devm release: __devm_mux_state_get
+>
+> Due to this structure devm_mux_state_get_*_selected can no longer print
+> a useful error message when select fails. Instead callers should print
+> errors where needed.
+>
+> Commit e153fdea9db04 ("phy: can-transceiver: Re-instate "mux-states"
+> property presence check") noted that "mux_get() always prints an error
+> message in case of an error, including when the property is not present,
+> confusing the user."
+>
+> The first error message covers the case that a mux name is not matched
+> in dt. The second error message is based on of_parse_phandle_with_args
+> return value.
+>
+> In optional case no error is printed and NULL is returned.
+> This ensures that the new helper functions will not confuse the user
+> either.
+>
+> With the addition of optional helper functions it became clear that
+> drivers should compile and link even if CONFIG_MULTIPLEXER was not enabled.
+> Add stubs for all symbols exported by mux core.
+>
+> Signed-off-by: Josua Mayer <josua@solid-run.com>
+
+Thanks for your patch!
+
+> --- a/drivers/mux/core.c
+> +++ b/drivers/mux/core.c
+> @@ -46,6 +46,16 @@ static const struct class mux_class = {
+>         .name = "mux",
 >  };
->  module_platform_driver(imx8mq_usb_phy_driver);
-> --
-> 2.34.1
 >
+> +/*
+> + * struct devm_mux_state_state -       Tracks managed resources for mux-state objects.
+
+Please run scripts/checkpatch.pl:
+
+    WARNING: please, no space before tabs
+    #80: FILE: drivers/mux/core.c:50:
+    + * struct devm_mux_state_state - ^ITracks managed resources for
+mux-state objects.$
+
+> + * @mux:                               Pointer to a mux state.
+> + * @exit:                              An optional callback to execte before free.
+> + */
+> +struct devm_mux_state_state {
+> +       struct mux_state *mstate;
+> +       int (*exit)(struct mux_state *mstate);
+> +};
+> +
+>  static DEFINE_IDA(mux_ida);
+>
+>  static int __init mux_init(void)
+
+> --- a/include/linux/mux/consumer.h
+> +++ b/include/linux/mux/consumer.h
+
+> +static inline void mux_control_put(struct mux_control *mux)
+> +{
+> +       return;
+> +}
+
+    WARNING: void function return statements are not generally useful
+    #441: FILE: include/linux/mux/consumer.h:139:
+    + return;
+
+Gr{oetje,eeting}s,
+
+                        Geert
+
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 -- 
 linux-phy mailing list
