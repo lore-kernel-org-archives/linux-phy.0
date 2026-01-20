@@ -4,108 +4,152 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7A570D2ECF7
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Jan 2026 08:42:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2E7B0D2ECF7
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Jan 2026 09:28:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+8H/ne2k3gknsbDIlkXJ3UqIhuLStrhc8xdUMBUHnsA=; b=WnNgASKpVFWrF6
-	TA9/twg114UReNdjxSqeD5Xw+ecoEr6dj3hkPhiqGF62IXFpLlcxPY79/l2M2hxmF8dqyvboBgyEg
-	wNVzaymJRbPddhnIYJJaMIFgFt9QQkgiOl4uCkvlRofX7Le+KKLxDOkU1XbgQHqsO9FHtUGPFVl7W
-	GOmTUcPqWg78A3JiHeo9zQA0nq0aZOI8gso4nFO/tAENN5zou4oTGdtvx9EafnqmIwWpU+dRTnqT+
-	JKQMHb8trAx99oMnKlg5ZOb3QzI/yObCNDqhF7xFumZBJFRRV0xN+7MLff46F/gS++tb1zp0itO90
-	X4Yj92/TfUZ7BopjzJzA==;
+	List-Owner; bh=I6wmrwUDv7KPaNxLorDzJ4UDXiRFNzjrHW3tIizLphw=; b=eo/E8XdyC7cqY6
+	XbTrWzn3tZpGDlYQsLFcakWNEfR1toTyoLZPFcYrZeMvYxACp1MR6kKpr3ZUt8PR4VJJ/twenpdIE
+	Q9EUrraRdyW/6CGIH65YywllWkrhMmSR2UcWZ9cYgb1lrUggBavJ3GsqWaGEeiVkxPDnd3GvgXtv9
+	bzdYLEzXoIkMACQnqsC5sGk9aU/fvFpvg1h4DEOUqIRBQEpN+qYuEkmh8sCGYzmzCyFqJcW65nhPW
+	e2+IR5CDrBaKj7xbMTtbcXorz0UjiJtCLQthdCgcH0rhui9/lGT67mgJdQQOed6Md/trcqzLVvdcA
+	zWgARXhfR1vp44PwguJA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vi7Ju-00000003TfT-0KPh;
-	Tue, 20 Jan 2026 08:42:38 +0000
+	id 1vi82L-00000003X6Q-3e2E;
+	Tue, 20 Jan 2026 09:28:33 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vi7Js-00000003Tf5-0WGB
+	id 1vi82K-00000003X66-009y
 	for linux-phy@bombadil.infradead.org;
-	Tue, 20 Jan 2026 08:42:36 +0000
+	Tue, 20 Jan 2026 09:28:32 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=In-Reply-To:Content-Type:MIME-Version:
-	References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description;
-	bh=Xxc76MSYJQhrdh5EUR+3rjpNU84KqL6b3u3m7jeyrTQ=; b=GdOGvrQoz+T4RQ4tpUK9JUXMuC
-	n0cYtVP3WBfnO25zPUi/+Ooa+q2NlJ8eJ0kSkYQrfWV1in+vdzsxP0pIjBHdX1fqABlbTg67EaNhf
-	Lhq+xeskrs9ZiNt9HLAxvYbrrvi0z/m6IWUzzAGoRJ5lpLxclfhjEW2cJr+OdUUL9WEatQFPQnFVt
-	9/jlpbYU1DRnOgRx9RFfIATwfMT045kE8sHLIqKdXlTLmQ1E0hWFPJW9iBVVgBAjuK3A4cLVc5fyU
-	67cVU95C7Z08Ndzmnee4GkzWAPBOpcVf0xmIND63XkoDfBG4LRNYK/wcdlPMOqnDga0iUHDbsn3hd
-	/Vj9Af/g==;
-Received: from mail-ed1-x533.google.com ([2a00:1450:4864:20::533])
+	d=infradead.org; s=desiato.20200630; h=In-Reply-To:Content-Transfer-Encoding:
+	Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=LDuluuRcOj3oAhAhMzTa0gmYjYkM3opUPACJ58+MEtE=; b=CJUKey10lOjSQBKS31Al++GcHf
+	9fGw62rgFqVkr2MO3tiRFeRshWic4IZipe0YhILiRyPvEuRkY8njcK+nikzoJ2tgtm5LPSLHqlN/m
+	QDE/ZaCIdRa16rc6u9v92UR2GvS7MJGzTW0Kio5oLzcVGqFdW9g1M8ucZZ8NpUrkkBUltNdQR0ncO
+	bcTH8b5DiHB4+Tk5OuiSbJMo+jZLqVZzaXpnGyuHf1QHZbPiXG2gIVVlctgaT8zW2DOZosDuAPDFf
+	mRnZjm9B3HxZcftNLb/e2J1GuItrIgEEijwTGanvDhbHjXm/aSz3QBVJ32A5VuJjUxLkeCdeV3WPG
+	NjTnmztQ==;
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vi7Jp-0000000DcJT-0ndZ
+	id 1vi82G-0000000DhYJ-2ewL
 	for linux-phy@lists.infradead.org;
-	Tue, 20 Jan 2026 08:42:35 +0000
-Received: by mail-ed1-x533.google.com with SMTP id 4fb4d7f45d1cf-64b7d213fd6so938712a12.0
-        for <linux-phy@lists.infradead.org>; Tue, 20 Jan 2026 00:42:32 -0800 (PST)
+	Tue, 20 Jan 2026 09:28:30 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 60K33Gif3805028
+	for <linux-phy@lists.infradead.org>; Tue, 20 Jan 2026 09:28:24 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	LDuluuRcOj3oAhAhMzTa0gmYjYkM3opUPACJ58+MEtE=; b=Pu1b26T5tSG6utZ2
+	TaoC6xael9Gy22SPMpmzawqJx+4/39VDfJHLYvSLMAQrSagsK4Pblp0WGz4aiNGl
+	+DgxtKBDcL42TK0WFMIcxiXxW4bOcu+q+1aqE6ExVzzc5MxMYpl00CqRWJ3wOJoa
+	GoVpmDDxISgc0MFeVzYVPWOZ46CglGgnQTZo4u3vtW+uqsJPAZYCHrg80uBYOWl6
+	KXfv6G+yRDDe7PH7i7DdGdgGouYtQbjfbeDioAN0IO3GKVUBB2DCMxqXD38wVUqQ
+	wTf3DyWZEiApifjFg3qJUVIr/rgxpLBYMbzntJ/PAj0Hzc4/MpYfzW3E4uLIfMLL
+	qIL4/g==
+Received: from mail-qv1-f71.google.com (mail-qv1-f71.google.com [209.85.219.71])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4bt1f8923c-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Tue, 20 Jan 2026 09:28:23 +0000 (GMT)
+Received: by mail-qv1-f71.google.com with SMTP id 6a1803df08f44-88888397482so132643646d6.1
+        for <linux-phy@lists.infradead.org>; Tue, 20 Jan 2026 01:28:23 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1768898551; x=1769503351; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=Xxc76MSYJQhrdh5EUR+3rjpNU84KqL6b3u3m7jeyrTQ=;
-        b=d2mkjZMPLWwDJQLYujUkqUcyKGQOsDUHMNbLa4L35EmM77gymR5SddbRoOvUL+Moi5
-         sScMjtHKYmhIaHdHvaiCqKPf44myrzg64w3W8XJL9URcYdGjsSp83kq+HB5h0Xr3XI2A
-         78RV5WmK5c1yLt0T5DgFA0FcZQD0zEl30EJfu/RICKFJn3UzxE4AqVBVY15Lisq8odQl
-         mlMOMxBFcSZeA8j8mmFtn79QU2avXvtxEcZKSh2FOfdh+ifXsug3UiSjVoWV01bLNVI9
-         MLB77eDgMaf6IZMfTQoNlYhB8QU/fvpCdy0/OGaHHd/FEpbne4DF/w/UbXkfEOkVgigl
-         pkzw==
+        d=oss.qualcomm.com; s=google; t=1768901302; x=1769506102; darn=lists.infradead.org;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=LDuluuRcOj3oAhAhMzTa0gmYjYkM3opUPACJ58+MEtE=;
+        b=EbZjpzldujx6T6ToIIyry3kV3Lzjl6JNUS+XxKQTUXENpQw8nAgfklA1qnaRnWGzPT
+         rwmCJRiIX+J6UwGEb508omH0+PYL4oOrnuHiVKJWD77QAWIafraJIF+44PKsmt4VyZHQ
+         XW8dS8AQd/E/KXsy9mTI/lT1qjZ6hZ2kg664+NUOrhJ90m82J7wAOiZHVs+g3jTbtb1q
+         k2c0eS3GjMOe0M9aSTQaKxs2TtWAciw3kNOG9lmFPrl5EShrCWZ0dTExq1ZGEu69Ejpb
+         h7DMgbYZmwq2fbPnM5Z9zexG7MIiygUld56hhbwbKWhw+0yTL4rIYj63/VZVkrR09/i1
+         VSOg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1768898551; x=1769503351;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=Xxc76MSYJQhrdh5EUR+3rjpNU84KqL6b3u3m7jeyrTQ=;
-        b=RGAu0YH1v8sWdot0vde6zgtLoM7cVp5LWHQGFfjwRKRKhJYUYi5a/Ulln1MaDeLJWt
-         M1jCCz3afPHzDFFX/mC6uy1ZfPCDBIl8JF6sj8GE89RvBgTLciCDhr429On/sw8DVcM6
-         lrfAi9Pw4QRsL63ifjfBoWgHI0pIyfuo8NUTE0Xu/1KZWFYGEeUswX2XX62mWg0UUpC2
-         SJByVWPnOOYR/asMlpYXfcyzNmfthNQ+EFt1kDmyT+5KEbRvMv/Sqd15FJ+v+Ik7t9jg
-         YrjBdXY/K2vYf0uGRnSxIvc7LbkuyHBXSWE65Dsn5ds5lMzKFTLHpIxWfHFei3v7jTNv
-         g0fA==
-X-Forwarded-Encrypted: i=1; AJvYcCXV1FJ74y9qMISmDC4aYIxgYEHWLeioboCVboRNm6rLEzH0b8Vy+86AH2vbkT1B+NRUZOk+PqaE9w4=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzJ9b1MakP4roZTuLo191wti/1BYXHa/5pC8+HzSu4GHPhaBJ8t
-	YUvJk7IRTV7mz1Jr3InI1QB8kFPNF7yqqDtYmYmVP56KeeyILIt4s0KF
-X-Gm-Gg: AZuq6aKJQIuWpvV0hMlzNYLQqMVsmz5XFiI/nTGIYkpnjUwSlAdtLpMqRH4nJI0hyQc
-	CPmhZ5NIr+arUcwA1yBKXhd7wS0OpZrrE49G2IQXEK957wGPs8tXY5hZloev6q+vgoCzG1akoYZ
-	Ce+4l3IpegyuVogRLLl5NjICCGxAjPk0wt082rwU+Diiz3ohoCUdX4CQno4I+46RH6B4RUM02G5
-	NM1dAbEiu0iPGMZSPl12VV7bnoA98FtooAJdbTSGTa8PV3KmzXKk8PB7mrl3WrUILcu2H+cWSlm
-	k+ioq+NW1g/XFLw67v9uRmVpG7Gon7RzLdTWeLNWW4zmJ4NU2qWJgQnVD5WlnoQIowlgIn4KMcM
-	TiT6Vw3y/W6tWi+SMVgSUUD5Cf22JRUsdNSOJ0uGAf9ZNJ31Z3Dwddjow1/LtbaYcp+dzYmQDfq
-	7iQXk=
-X-Received: by 2002:a05:6402:348d:b0:64c:9e19:982d with SMTP id 4fb4d7f45d1cf-654523cc85bmr6267784a12.1.1768898550768;
-        Tue, 20 Jan 2026 00:42:30 -0800 (PST)
-Received: from skbuf ([2a02:2f04:d501:d900:619a:24df:1726:f869])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-b879513e72asm1348612966b.11.2026.01.20.00.42.29
+        d=1e100.net; s=20230601; t=1768901302; x=1769506102;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=LDuluuRcOj3oAhAhMzTa0gmYjYkM3opUPACJ58+MEtE=;
+        b=DaYAjSyEktozvqv8woPXMcO5xDrc7rKOdMysBp+F15gL0BoY+gzwyOs4MaKW8m9pP0
+         0/PE159IrkNGExKykE9MzSHZzHZ7I/efKaFaxlaByqWNFJv/D4+RUr1hyploLei8FxXd
+         8HzjgBb+UGHwx5V6V2/FNnc5MlULDZVcYEOMKP3ml9xL1RDP/sIJLEk7OcX136ATke/g
+         lx/2q3jZuiOhxQqr+j6yEHT3eluen4ifVaQKZY5lYzBpLFQTI0IkK4lXqfRABLP+92cP
+         CYaYf0h1yVSwdH8CM5mDP45x+NMsg0hZKGox0U/AacjGvBI9ZyYCd9r3KjVUzgJeAlu4
+         5R9g==
+X-Forwarded-Encrypted: i=1; AJvYcCVB36/dXpbNA8wsvKnR4DLO40aUrzJzFB4YArKvrjCnJUy3hjOWFfvYT46029WFNmY11d0MdgctW1M=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxXW9St1sbTy7mMNI0v1aE5eViFehaKOAhzP7ktMWJomyBajIFD
+	oVmhOozM1yzBwDwy7ItxHjO7Mm5yhIJzMwZ3d0UJRL0Vub494OsjvmqAMqNiBuatWSMSmwWcLdl
+	jpEioScjCInlULCrmPHkyXoMvEtxAVPV8haHjw7xjG1QZkfDk5YyTffgEp0ikyWqB0qGv
+X-Gm-Gg: AZuq6aII3gYv2cihVvVpn0yyBSw0Z/g6e+odA1CQdJMSu91GVhwKnD7A8UY/4abB4x3
+	ZzocSit76ZwVjGGpYsO/hK68FEb0w+ihrrkrXAGsQOXe8Ru5+gzVJ+ktCqvIH3cfD4ihBfqLEaD
+	gBP9scK/VG5OMGyLqcBTkQs/jdErmP9lERTT8t/651rD5ijEcgbW/SezzSp9DveQo8dEjYQ2nqm
+	3e1tPPEqAIQlC8dciT41cJ+XPWn8VKzEqWBSrhVhD1lPlKueM+WqlfW7nGng9DNDzW385G4wXzm
+	KnXcNU4BPslgKUkOGbZlLqq2L9pP6JHqD2WmUrDR8vPyUK/7Te6JSBc3xe1+kGETfF666PcV18w
+	c2t903IZm+nYtLF5xy9yooPt75poU0wrxKkLH2RiBNsZVIdg4kG1Swm7ymWj9MX+FQfxk7LEi/A
+	FPRVEdcofW6zrGqadUUFRCWRw=
+X-Received: by 2002:a05:6214:194f:b0:786:8f81:42f with SMTP id 6a1803df08f44-894638dca24mr16257536d6.39.1768901302426;
+        Tue, 20 Jan 2026 01:28:22 -0800 (PST)
+X-Received: by 2002:a05:6214:194f:b0:786:8f81:42f with SMTP id 6a1803df08f44-894638dca24mr16257396d6.39.1768901301998;
+        Tue, 20 Jan 2026 01:28:21 -0800 (PST)
+Received: from umbar.lan (2001-14ba-a073-af00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a073:af00:264b:feff:fe8b:be8a])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-59bfce7da74sm3120178e87.40.2026.01.20.01.28.20
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 20 Jan 2026 00:42:30 -0800 (PST)
-Date: Tue, 20 Jan 2026 10:42:27 +0200
-From: Vladimir Oltean <olteanv@gmail.com>
-To: "Russell King (Oracle)" <linux@armlinux.org.uk>
-Cc: Jakub Kicinski <kuba@kernel.org>, linux-phy@lists.infradead.org,
-	davem@davemloft.net, maxime.chevallier@bootlin.com,
-	alexandre.torgue@foss.st.com, mohd.anwar@oss.qualcomm.com,
-	neil.armstrong@linaro.org, hkallweit1@gmail.com,
-	mcoquelin.stm32@gmail.com, netdev@vger.kernel.org,
-	edumazet@google.com, linux-arm-msm@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org, vkoul@kernel.org,
-	andrew@lunn.ch, pabeni@redhat.com, andrew+netdev@lunn.ch,
-	linux-stm32@st-md-mailman.stormreply.com
-Subject: Re: [net-next,05/14] net: stmmac: add stmmac core serdes support
-Message-ID: <20260120084227.j2wgbmjsrpmycpgn@skbuf>
-References: <E1vhoSH-00000005H1f-2cq9@rmk-PC.armlinux.org.uk>
- <20260119192125.1245102-1-kuba@kernel.org>
- <aW8M9ZiiftGBQIRM@shell.armlinux.org.uk>
+        Tue, 20 Jan 2026 01:28:21 -0800 (PST)
+Date: Tue, 20 Jan 2026 11:28:19 +0200
+From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+To: Yongxing Mou <yongxing.mou@oss.qualcomm.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
+        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-kernel@vger.kernel.org, stable@vger.kernel.org,
+        Abel Vesa <abel.vesa@oss.qualcomm.com>
+Subject: Re: [PATCH v2] drm/msm/dp: Correct LeMans/Monaco DP phy
+ Swing/Emphasis setting
+Message-ID: <bq4usuzu7dl42ruduy4whbgnfamgnmyj7wuyd2oa472qet6tyv@pdku43m6e45x>
+References: <20260119-klm_dpphy-v2-1-52252190940b@oss.qualcomm.com>
+ <47skckagggxijdhinmmibtrd3dydixtj6pccrgjwyczs7bj2te@2rq2iprmzvyf>
+ <749e716e-a6cb-4adb-8ffc-0d6f4c6d56c4@oss.qualcomm.com>
+ <5ytgf7saw6yfvqzqmy4gtjygo4cx52vomi7mwswc7hgedzz3rb@eiqxiqs2cjmb>
+ <8c63a77c-1676-461a-bfcf-55202e723718@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <aW8M9ZiiftGBQIRM@shell.armlinux.org.uk>
+In-Reply-To: <8c63a77c-1676-461a-bfcf-55202e723718@oss.qualcomm.com>
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMTIwMDA3OCBTYWx0ZWRfXzX78m1KbdugP
+ +w06JpNRzar0VT0rhqVkycYHKJXfkOfqTm0ghPMIq36oFEzubFv9VE4ickYw5OH94AgNQdfyr0D
+ Z053yyHZ5UrMMpDORcpPwcjTjai6mu8QRfVvmjja+aDxKQhgXzWokmGsDMXkG9UBMwh/WIbaMRs
+ i+ECWzsvk/i34Krr4SJx1qz//EWpPP09FKf+TXQbCWGBHAewcGSLLOxVB1VpZBF6t1ljiCTkduF
+ YPX6j7W6/9pjA/4B251gUMWX8VBFMxkrx9rRA7L9/gUj2+i449IItj0r/qJ9m2jTI42l5CDWAzJ
+ d1iWZNoM+3d1RTx0YjwIeewPPwQdHrwExcHrB2OzaeOqq0DmO3wRRWMud9lLWNFMPrNCIq6Xoil
+ 4xVHfnkVCS5YctrzvYuIGKI5a2P4mC6yOfcGu48OVAO2XZJ0a9luv6qCl2TIfxJyn+o9w2cttMZ
+ yJ3+v/qdpAx2okZjJjg==
+X-Proofpoint-GUID: WE37A2TJAhP4NHUfEDQel3CHVbLVe9ri
+X-Proofpoint-ORIG-GUID: WE37A2TJAhP4NHUfEDQel3CHVbLVe9ri
+X-Authority-Analysis: v=2.4 cv=LdQxKzfi c=1 sm=1 tr=0 ts=696f4ab7 cx=c_pps
+ a=UgVkIMxJMSkC9lv97toC5g==:117 a=xqWC_Br6kY4A:10 a=IkcTkHD0fZMA:10
+ a=vUbySO9Y5rIA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
+ a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=JfrnYn6hAAAA:8 a=SNWZ2FZe9L-OGZU4zVUA:9
+ a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10 a=1HOtulTD9v-eNWfpl4qZ:22
+ a=1CNFftbPRP8L7MoqJWF3:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
+ definitions=2026-01-20_02,2026-01-19_03,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ phishscore=0 bulkscore=0 clxscore=1015 impostorscore=0 spamscore=0
+ priorityscore=1501 lowpriorityscore=0 adultscore=0 suspectscore=0
+ malwarescore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2601150000
+ definitions=main-2601200078
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260120_084233_296076_34A537DA 
-X-CRM114-Status: GOOD (  32.86  )
+X-CRM114-CacheID: sfid-20260120_092829_019890_8543DA54 
+X-CRM114-Status: GOOD (  31.29  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,85 +161,50 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jan 20, 2026 at 05:04:53AM +0000, Russell King (Oracle) wrote:
-> On Mon, Jan 19, 2026 at 11:21:25AM -0800, Jakub Kicinski wrote:
-> > This is an AI-generated review of your patch. The human sending this
-> > email has considered the AI review valid, or at least plausible.
-> > 
-> > For local reproduction steps see https://netdev-ai.bots.linux.dev/ai-local.html
-> > ---
-> > net: stmmac: add stmmac core serdes support
-> > 
-> > This commit adds SerDes PHY support to the stmmac core driver, moving it
-> > from platform glue into the integrated PCS driver. The SerDes is managed
-> > through phy_init/phy_exit for lifecycle and phy_power_on/phy_power_off
-> > for the power state.
-> > 
-> > > diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.c
-> > > index 2f826fe7229b..4d1902f3a58f 100644
-> > > --- a/drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.c
-> > > +++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.c
-> > 
-> > [ ... ]
-> > 
-> > > static int dwmac_integrated_pcs_enable(struct phylink_pcs *pcs)
-> > > {
-> > > 	struct stmmac_pcs *spcs = phylink_pcs_to_stmmac_pcs(pcs);
-> > > +	struct stmmac_priv *priv = spcs->priv;
-> > > +	int ret;
-> > >
-> > > -	stmmac_mac_irq_modify(spcs->priv, 0, spcs->int_mask);
-> > > +	ret = dwmac_serdes_power_on(priv);
-> > > +	if (ret)
-> > > +		return ret;
-> > > +
-> > > +	if (spcs->interface != PHY_INTERFACE_MODE_NA) {
-> > > +		ret = dwmac_serdes_set_mode(priv, spcs->interface);
-> > > +		if (ret)
-> > > +			return ret;
-> >                         ^^^^^^^^^^
-> > 
-> > If dwmac_serdes_set_mode() fails here, doesn't this leave the SerDes in
-> > a powered-on state? dwmac_serdes_power_on() succeeded at this point but
-> > there's no corresponding dwmac_serdes_power_off() call before returning
-> > the error.
-> > 
-> > Looking at phylink_major_config(), it appears to discard the return
-> > value from phylink_pcs_enable(), so the caller won't know to call
-> > pcs_disable() to clean up the power state.
-> 
-> This AI analysis is incorrect.
-> 
-> By the time phylink_pcs_enable() has been called, the PCS is already
-> plumbed in to phylink. It _will_ have phylink_pcs_disable() called on
-> it at some point in the future, either by having the PCS displaced
-> by another in a subsequent phylink_major_config(), or by a driver
-> calling phylink_stop().
-> 
-> If we clean up here, then we will call dwmac_serdes_power_off() twice.
-> 
-> Yes, it's not "nice" but that's the way phylink is right now, and
-> without reworking phylink to record that pcs_enable() has failed
-> to avoid a subsequent pcs_disable(), and to stop the major config
-> (which then potentially causes a whole bunch of other issues). I
-> don't even want to think about that horrid scenario at the moment.
-
-More to the point, if dwmac_integrated_pcs_enable() fails at
-dwmac_serdes_power_on() (thus, the SerDes is _not_ powered on), by your
-own admission of this PCS calling convention, sooner or later
-dwmac_integrated_pcs_disable() -> dwmac_serdes_power_off() will still be
-called, leading to a negative phy->power_count.
-
-That is to say, if the model is "irrespective of whether pcs_enable()
-succeeds or fails mid way, pcs_disable is called anyway()", then these
-methods are not prepared to handle that reliably.
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gVHVlLCBKYW4gMjAsIDIwMjYgYXQgMDM6NTY6MTBQTSArMDgwMCwgWW9uZ3hpbmcgTW91IHdy
+b3RlOgo+IAo+IAo+IE9uIDEvMjAvMjAyNiAxMToxMiBBTSwgRG1pdHJ5IEJhcnlzaGtvdiB3cm90
+ZToKPiA+IE9uIFR1ZSwgSmFuIDIwLCAyMDI2IGF0IDEwOjQzOjQ2QU0gKzA4MDAsIFlvbmd4aW5n
+IE1vdSB3cm90ZToKPiA+ID4gCj4gPiA+IAo+ID4gPiBPbiAxLzE5LzIwMjYgODo1NSBQTSwgRG1p
+dHJ5IEJhcnlzaGtvdiB3cm90ZToKPiA+ID4gPiBPbiBNb24sIEphbiAxOSwgMjAyNiBhdCAwODoz
+NzoyMFBNICswODAwLCBZb25neGluZyBNb3Ugd3JvdGU6Cj4gPiA+ID4gPiBDdXJyZW50bHksIHRo
+ZSBMZU1hbnMvTW9uYWNvIGRldmljZXMgYW5kIHRoZWlyIGRlcml2YXRpdmUgcGxhdGZvcm1zCj4g
+PiA+ID4gPiBvcGVyYXRlIGluIERQIG1vZGUgcmF0aGVyIHRoYW4gZURQIG1vZGUuIFBlciB0aGUg
+UEhZIEhQRywgdGhlIFN3aW5nIGFuZAo+ID4gPiA+ID4gRW1waGFzaXMgc2V0dGluZ3MgbmVlZCB0
+byBiZSBjb3JyZWN0ZWQgdG8gdGhlIHByb3BlciB2YWx1ZXMuCj4gPiA+ID4gCj4gPiA+ID4gTm8s
+IHRoZXkgbmVlZCB0byBiZSBjb25maWd1cmVkIGR5bmFtaWNhbGx5LiBJIHdyb3RlIGVhcmxpZXIg
+dGhhdCB0aGUKPiA+ID4gPiBkcml2ZXIgbmVlZHMgcmVmYWN0b3JpbmcuCj4gPiA+ID4gCj4gPiA+
+IEhpLCBEbWl0cnkuIEkgcGxhbiB0byBzdWJtaXQgdGhlbSBpbiB0aGlzIG9yZGVyOiB0aGlzIHBh
+dGNoIOKGkiBMRE8gcGF0Y2gg4oaSCj4gPiA+IHJlZmFjdG9yLgo+ID4gPiBTaW5jZSB0aGUgcmVm
+YWN0b3IgaW52b2x2ZXMgbW9yZSBwbGF0Zm9ybXMgYW5kIG1heSB0YWtlIHNvbWUgdGltZSwgSeKA
+mWQgbGlrZQo+ID4gPiB0byBnZXQgdGhpcyBwYXRjaCBtZXJnZWQgZmlyc3QuCj4gPiAKPiA+IFRo
+aXMgcGF0Y2ggaXMgaW5jb3JyZWN0LiBJdCB0cmFkZXMgd29ya2luZyBvbiBzb21lIHBsYXRmb3Jt
+cyAoRFApIHZzCj4gPiB3b3JraW5nIG9mIHNvbWVvIHRoZXIgcGxhdGZvcm1zIChlRFApLiBJIGRv
+bid0IHRoaW5rIGl0IGlzIGEgcHJvcGVyIGZpeAo+ID4gZm9yIGFueSBwcm9ibGVtLgo+ID4gCj4g
+R290IGl0Li4gd2lsbCBwb3N0IHJlZmFjdG9yIHNlcmllcy4KClRoYW5rcyEgSSBkb24ndCBzZWUg
+YSBnb29kIHdheSB0byBmaXggeW91ciBpc3N1ZSB3aXRob3V0IHJlc3RydWN0dXJpbmcKdGhlIGRy
+aXZlci4KCk5vdGUsIHRoZSBkcml2ZXIgaGFzIHRvIHN1cHBvcnQgYm90aCBvbGRlciBEVCAod2hp
+Y2ggdXNlZCBzZXBhcmF0ZSAtZWRwCmFuZCAtZHAgY29tcGF0cykgYW5kIHRoZSBjdXJyZW50IG9u
+ZS4KCj4gPiA+ID4gPiAKPiA+ID4gPiA+IFRoaXMgd2lsbCBoZWxwIGFjaGlldmUgc3VjY2Vzc2Z1
+bCBsaW5rIHRyYWluaW5nIG9uIHNvbWUgZG9uZ2xlcy4KPiA+ID4gPiA+IAo+ID4gPiA+ID4gQ2M6
+IHN0YWJsZUB2Z2VyLmtlcm5lbC5vcmcKPiA+ID4gPiA+IEZpeGVzOiAzZjEyYmYxNjIxM2MgKCJw
+aHk6IHFjb206IGVkcDogQWRkIHN1cHBvcnQgZm9yIGVEUCBQSFkgb24gU0E4Nzc1UCIpCj4gPiA+
+ID4gPiBSZXZpZXdlZC1ieTogQWJlbCBWZXNhIDxhYmVsLnZlc2FAb3NzLnF1YWxjb21tLmNvbT4K
+PiA+ID4gPiA+IFNpZ25lZC1vZmYtYnk6IFlvbmd4aW5nIE1vdSA8eW9uZ3hpbmcubW91QG9zcy5x
+dWFsY29tbS5jb20+Cj4gPiA+ID4gPiAtLS0KPiA+ID4gPiA+IENoYW5nZXMgaW4gdjI6Cj4gPiA+
+ID4gPiAtIFNlcGFyYXRlIHRoZSBMRE8gY2hhbmdlIG91dC5bS29ucmFkXVtEbWl0cnldCj4gPiA+
+ID4gPiAtIE1vZGlmeSB0aGUgY29tbWl0IG1lc3NhZ2UuW0RtaXRyeV0KPiA+ID4gPiA+IC0gTGlu
+ayB0byB2MTogaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvci8yMDI2MDEwOS1rbG1fZHBwaHktdjEt
+MS1hNmI2YWJlMzgyZGVAb3NzLnF1YWxjb21tLmNvbQo+ID4gPiA+ID4gLS0tCj4gPiA+ID4gPiAg
+ICBkcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1lZHAuYyB8IDIzICsrKysrKysrKysrKysr
+KysrKysrKystCj4gPiA+ID4gPiAgICAxIGZpbGUgY2hhbmdlZCwgMjIgaW5zZXJ0aW9ucygrKSwg
+MSBkZWxldGlvbigtKQo+ID4gPiA+ID4gCj4gPiA+ID4gCj4gPiA+IAo+ID4gPiAKPiA+ID4gLS0g
+Cj4gPiA+IGxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKPiA+ID4gbGludXgtcGh5QGxpc3RzLmluZnJh
+ZGVhZC5vcmcKPiA+ID4gaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGlu
+Zm8vbGludXgtcGh5Cj4gPiAKPiAKCi0tIApXaXRoIGJlc3Qgd2lzaGVzCkRtaXRyeQoKLS0gCmxp
+bnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6
+Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
