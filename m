@@ -4,76 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 24C40D2ECF7
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Jan 2026 09:45:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D948AD2ED0F
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Jan 2026 09:49:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yIOoywQ+CcFdISf5m99+HuW1gt4IG31lifIOVFa+6J4=; b=huor4CpYi/DLSV
-	p/AHFFqikxiTml1c28YsoVGpoMr3YzwKODamjsjv/k5Yezf4EOvcxmZKmgqw4CJJhm76P9HHyY4P1
-	oJRqayA7MP1UNc0jG8M+Fuu3L1d2wTlbSgK8xV9zUElKHRdyPKOASDQ5FfWrucpd1ywFvDBKrug6g
-	j+nTSmsnxjVBdiYV3iNbZh6sprdY6GU1N7IbBltqACYLWrzF0hK4bTcO8u2pqdBw4ioqGAfYu0AVJ
-	zgtg32zYlybldLFOF/Z0J/Ia6pU49v3Qi6QS6jkCIL8yNMWrb4nFXik2bYKuwvPyojaHVYZChKY7v
-	RJ+KL/oXjhbgpVXVH0cA==;
+	List-Owner; bh=696FZudQSkM0ZHrpg0+WDuxbRbwFJav56xVurLTO9Zs=; b=Gr6VEXE50Pj5Qj
+	uOsl39LYyBzhexTbGztDlN9SgRKD5r/Hm0H3+Qan3Kvj1o08g2y9zwmGnmgIQM4NQMLqYeCwU49q8
+	tupmaXl5/qIAIyW470RCyZdSPMWK7iCfGjIa5qgxeYJowuN6nhUni1Awcs3M9/hKPtyrg5za/p8mU
+	4JNWOCafx3u1vRyZP4PgsFYKuqiajhg3qoDvEHfF5aArKGnjfW9mVqDCx5MlL3xq88+KRELEfPccy
+	MNOKG27vIC96Xk04+Tjn50uZCrAumqXetv//pXnbE6Dai0k30pfZ5rCdxJ/673LSFdCDRbA/zEiTI
+	9dWbKqnIUELrh/eq8oxA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vi8J1-00000003YQ4-2wML;
-	Tue, 20 Jan 2026 09:45:47 +0000
-Received: from mail-vk1-f178.google.com ([209.85.221.178])
+	id 1vi8Mv-00000003YoY-2bwm;
+	Tue, 20 Jan 2026 09:49:49 +0000
+Received: from mail-vk1-f196.google.com ([209.85.221.196])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vi8Iz-00000003YOy-0mw9
+	id 1vi8Mr-00000003YoD-0pNn
 	for linux-phy@lists.infradead.org;
-	Tue, 20 Jan 2026 09:45:46 +0000
-Received: by mail-vk1-f178.google.com with SMTP id 71dfb90a1353d-56367b39e3eso4334321e0c.1
-        for <linux-phy@lists.infradead.org>; Tue, 20 Jan 2026 01:45:44 -0800 (PST)
+	Tue, 20 Jan 2026 09:49:47 +0000
+Received: by mail-vk1-f196.google.com with SMTP id 71dfb90a1353d-5636227a6e6so1456407e0c.3
+        for <linux-phy@lists.infradead.org>; Tue, 20 Jan 2026 01:49:44 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1768902344; x=1769507144;
+        d=1e100.net; s=20230601; t=1768902584; x=1769507384;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=l18hDtqu7l45yo1vlmek39RB1c0Zv/I56SgfcgBEbBk=;
-        b=aYK/q3Lp4u1Ct/knTfXCKN1GKPf0lmLtWYbGOfwfo543npAUeKZoLVu6/8ioYJ54Yb
-         Q9G+JHEH3RHiLOlA6Ove9EoY09WmySg0IPzBbxT0RgnChOCYm9v9GxSWeOF/Ef9mfoCE
-         PgQFUcdQQG6l6ZAk/auPl6FA5qa+SnMgDt7btNCxkQvTJntBfDDTE75ZAy/DRGe5JZtM
-         8h30TgqJEjpO9RuHLZyeyphItVtDx4eWNJxUiCoqKy52nCMeFfQefVoS7hHTrqWbbsiX
-         VV7ad9/OBU7yq9S/V5QAzLSlpDgJODz6IwT97QmCg7BpJPbokSIVaRdCEJ9z63ux3CGF
-         HY9A==
-X-Forwarded-Encrypted: i=1; AJvYcCWTDffRZZVIMt03ap+KqLuAVLPD6gISJT/LRLRr5kWL3j1MS4SpckHTCSKgvBSlw66MdIkKc48bW94=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yy9u9m6Z7nSFYh/Lmw7FKeepQBHftYjaObFJjFIyeoGb9FzAAv8
-	Cqqd1V+/Yvi4zmj3ozeFdGEA0zm34iNI9jqxkmOyMFXBveQoixl+ulwEUHg+8Pr9
-X-Gm-Gg: AZuq6aLx6WNdWdgffEcwJTxhITCLQuAWBoMISJb7xmF5p7jUJ3BTLGnMBz3+vbub5kF
-	NtQ2XXgmL/fWVZVowS24i7veYdxZEjp+6dFoDS7GAeRAexfizplsIBD8W6/ePccsZh+5pCiVOgA
-	mnqOMexUSIM6Ut7rTNF0KvWV8p8rSJEEIjNSvdUZGZ/6+IvOEv5jPBHxvzAeC9KP6aSJctO4FqA
-	WLgqrY35OPXlB6/Dl6AaccjSMUx9I+O1mA0w1tcF7HkoQOOJ6mkepZ7T6A6kd61ce2JQUmBlzfV
-	s9dX8XGac+X78Bk4PB65WWKIxjcydJADAJgXTTa+xdZayuUiLBPo2ORjOVidvaYgNXaGuPux3Ln
-	df1RpreX4uc8DEDUGXf1lKC/FmLT0lOGu1CWpqUx20QprhEw71hHu55uKSpk8uPbOyoNjRr2ykj
-	jGiHNN/wIdIMPjdDOCDT99kwPQ1HKR+JJ8HVNnVQPLYYwy4ETe
-X-Received: by 2002:a05:6122:2a46:b0:563:77a9:e929 with SMTP id 71dfb90a1353d-563aa9d91c5mr5807621e0c.8.1768902343689;
-        Tue, 20 Jan 2026 01:45:43 -0800 (PST)
-Received: from mail-vs1-f48.google.com (mail-vs1-f48.google.com. [209.85.217.48])
-        by smtp.gmail.com with ESMTPSA id 71dfb90a1353d-563b70e6036sm3655496e0c.14.2026.01.20.01.45.42
+        bh=cMqHiB2kIqqBrLa59wdqxa2/T5exJBY1xL1A1svqwlE=;
+        b=YFjeIbtTSBp5P6m3/4frBboF/cXFLR/ww93jx5qngq3LBQCghKb0m4GbmKEPpsmJ8+
+         AcuwRqSUvqfhkJwykx7d7y/doUxs7bES+D7FzVRviy7gZG3NobuVMP3vdeii+Hh5xwDf
+         A3O5fk3DUHpZwuNpZWIjbQXnJvCRVvYu19s2vuXseHFZ4eFfNxuessk1J/tqE+OhnjTn
+         0/YAY7u34YYEsgxUxnft06p5qNb+z0Re6KyxHxuIIa72sBMAyqcoMRk4JNrY7hkF2Dqz
+         ZVSiR3GEE8emM5CuyDshSWdamhjnwRfhbx5UbuLn4Bl59CNG8lD1ozRBcpSiNItzTCue
+         yE0A==
+X-Forwarded-Encrypted: i=1; AJvYcCXwFpzicjlb9HDb4zCdRYQFGs38QaOEvs8Z4uv0gDjFZJIwpwB2vas0xY/8H+zagr4RMkJCV4Zg6ow=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz6PDKLN0aoP6Rsb+5vYqjBcmZfl7M/s0XX3X3/30z4em8XRUR9
+	Ez5aPt+de+zhDOIpvPxOqBUNsOsKgw5AktufyeSMcfNJO05WzI/R3H0B9ejFHGoabZw=
+X-Gm-Gg: AZuq6aKZC+HWfwTCL4kPw/7EqZFS89vaqC6OgEsfA7UYV+NThC7eJrwVDzrYQcvcrTq
+	9hy8VsJARnBVoowGqy8GYLGhLKg9bx/Zdhm3KdumphTRvG+wFCvZq9i0gBpIE5RrUMj4jSZsnwh
+	ECRKQHh7izx9s8N0PINNNwVPesyNKSdGPDcTm9aX7+TlqkgH0+z9hCovlWG1cptT3WpVEtBgy9S
+	SPIkSBSIkWCpZMvnXDnUJ+d22Yqq5jOG41vsXiaBKmXW9K0HNw9pHamQg5qVTdEDV1IxWxvktZH
+	Bt4FrfsNWdOdpk9e7S8dTy8DiVEdC+ugJn+bIIlONpH1voRk2Ww4x1HWJxlM1GuW8Io0jVycbMJ
+	HsKKaWkeP05Pu3NMeEG/DPsowzooLKhN7v1vEUbjJZow03JfcjurYNj5RPpxVi56a3+HSQPxLln
+	DITi/EhfkVRVIKw4K23q8DejI1Hhz2vm8KoSNWQ85+PxU5SoxlC6I5//51ZQ8=
+X-Received: by 2002:a05:6122:1d4e:b0:55b:d85:507a with SMTP id 71dfb90a1353d-565d6f920afmr273080e0c.7.1768902583714;
+        Tue, 20 Jan 2026 01:49:43 -0800 (PST)
+Received: from mail-ua1-f51.google.com (mail-ua1-f51.google.com. [209.85.222.51])
+        by smtp.gmail.com with ESMTPSA id 71dfb90a1353d-563b6fdaf9bsm3466172e0c.5.2026.01.20.01.49.43
         for <linux-phy@lists.infradead.org>
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 20 Jan 2026 01:45:43 -0800 (PST)
-Received: by mail-vs1-f48.google.com with SMTP id ada2fe7eead31-5ec838c33e6so2267855137.0
-        for <linux-phy@lists.infradead.org>; Tue, 20 Jan 2026 01:45:42 -0800 (PST)
-X-Forwarded-Encrypted: i=1; AJvYcCXvfs8szydrPjZZzdkgL+Q+r+3AH0zeRNaG4jStVbjyiyo4OSAgi/in5Y0P0pL30r9BgCy3VCUr+e8=@lists.infradead.org
-X-Received: by 2002:a05:6102:cd1:b0:5ef:233e:6b25 with SMTP id
- ada2fe7eead31-5f192508654mr6479996137.13.1768902342092; Tue, 20 Jan 2026
- 01:45:42 -0800 (PST)
+        Tue, 20 Jan 2026 01:49:43 -0800 (PST)
+Received: by mail-ua1-f51.google.com with SMTP id a1e0cc1a2514c-948029fb1f2so146282241.0
+        for <linux-phy@lists.infradead.org>; Tue, 20 Jan 2026 01:49:43 -0800 (PST)
+X-Forwarded-Encrypted: i=1; AJvYcCX6aVZw8TzF3T+DnYSDxwzkK1eLLjjO0goHEnqHT/JKLefFzdKXLpD12Mfbh98BGL89tx+mfVq6dOk=@lists.infradead.org
+X-Received: by 2002:a05:6102:2928:b0:5db:f6ef:560 with SMTP id
+ ada2fe7eead31-5f50ae0a099mr264663137.28.1768902583158; Tue, 20 Jan 2026
+ 01:49:43 -0800 (PST)
 MIME-Version: 1.0
-References: <20260118-rz-sdio-mux-v5-0-3c37e8872683@solid-run.com> <20260118-rz-sdio-mux-v5-2-3c37e8872683@solid-run.com>
-In-Reply-To: <20260118-rz-sdio-mux-v5-2-3c37e8872683@solid-run.com>
+References: <20260118-rz-sdio-mux-v5-0-3c37e8872683@solid-run.com> <20260118-rz-sdio-mux-v5-7-3c37e8872683@solid-run.com>
+In-Reply-To: <20260118-rz-sdio-mux-v5-7-3c37e8872683@solid-run.com>
 From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Tue, 20 Jan 2026 10:45:30 +0100
-X-Gmail-Original-Message-ID: <CAMuHMdWnpci1v1oQb34_QRtU-P3S8TSormmNudajT0e34EO14w@mail.gmail.com>
-X-Gm-Features: AZwV_Qh1sWLkk903wC1dLdg8mLxjiEBVkYZdOb9H2O-Zh60PCWOHx0RPYuQB8LA
-Message-ID: <CAMuHMdWnpci1v1oQb34_QRtU-P3S8TSormmNudajT0e34EO14w@mail.gmail.com>
-Subject: Re: [PATCH v5 2/7] mux: Add helper functions for getting optional and
- selected mux-state
+Date: Tue, 20 Jan 2026 10:49:32 +0100
+X-Gmail-Original-Message-ID: <CAMuHMdU5shzYs27wO2A0SoisGBMo8RHf9DO-ubC6VrhWECEPCw@mail.gmail.com>
+X-Gm-Features: AZwV_QjEUqevj8OUxZ5xnP3V3BgNbEzQSiuy0CgomAkdvyQGaaSlv633jCWavtA
+Message-ID: <CAMuHMdU5shzYs27wO2A0SoisGBMo8RHf9DO-ubC6VrhWECEPCw@mail.gmail.com>
+Subject: Re: [PATCH v5 7/7] mmc: host: renesas_sdhi_core: support selecting an
+ optional mux
 To: Josua Mayer <josua@solid-run.com>
 Cc: Marc Kleine-Budde <mkl@pengutronix.de>, Vincent Mailhol <mailhol@kernel.org>, 
 	Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
@@ -83,8 +83,7 @@ Cc: Marc Kleine-Budde <mkl@pengutronix.de>, Vincent Mailhol <mailhol@kernel.org>
 	Janusz Krzysztofik <jmkrzyszt@gmail.com>, Vignesh R <vigneshr@ti.com>, 
 	Andi Shyti <andi.shyti@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>, 
 	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Geert Uytterhoeven <geert+renesas@glider.be>, Magnus Damm <magnus.damm@gmail.com>, 
-	Wolfram Sang <wsa+renesas@sang-engineering.com>, 
+	Magnus Damm <magnus.damm@gmail.com>, Wolfram Sang <wsa+renesas@sang-engineering.com>, 
 	Yazan Shhady <yazan.shhady@solid-run.com>, Jon Nettleton <jon@solid-run.com>, 
 	Mikhail Anikin <mikhail.anikin@solid-run.com>, linux-can@vger.kernel.org, 
 	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
@@ -92,8 +91,8 @@ Cc: Marc Kleine-Budde <mkl@pengutronix.de>, Vincent Mailhol <mailhol@kernel.org>
 	linux-mmc@vger.kernel.org, devicetree@vger.kernel.org, 
 	linux-renesas-soc@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260120_014545_242388_738DBD93 
-X-CRM114-Status: GOOD (  36.32  )
+X-CRM114-CacheID: sfid-20260120_014946_759027_FA261721 
+X-CRM114-Status: GOOD (  19.57  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,101 +109,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Josua,
-
 On Sun, 18 Jan 2026 at 11:29, Josua Mayer <josua@solid-run.com> wrote:
-> In-tree phy-can-transceiver driver has already implemented a local
-> version of devm_mux_state_get_optional.
+> Some hardware designs route data or control signals through a mux to
+> support multiple devices on a single sdhi controller.
 >
-> The omap-i2c driver gets and selects an optional mux in its probe
-> function without using any helper.
+> In particular SolidRun RZ/G2L/G2LC/V2L System on Module use a mux for
+> switching between soldered eMMC and an optional microSD on a carrier
+> board, e.g. for development or provisioning.
 >
-> Add new helper functions covering both aforementioned use-cases:
+> SD/SDIO/eMMC are not well suited for runtime switching between different
+> cards, however boot-time selection is possible and useful - in
+> particular considering dt overlays.
 >
-> - mux_control_get_optional:
->   Get a mux-control if specified in dt, return NULL otherwise.
-> - devm_mux_state_get_optional:
->   Get a mux-state if specified in dt, return NULL otherwise.
-> - devm_mux_state_get_selected:
->   Get and select a mux-state specified in dt, return error otherwise.
-> - devm_mux_state_get_optional_selected:
->   Get and select a mux-state if specified in dt, return error or NULL.
+> Add support for an optional SD/SDIO/eMMC mux defined in dt, and select
+> it during probe.
 >
-> Existing mux_get helper function is changed to take an extra argument
-> indicating whether the mux is optional.
-> In this case no error is printed, and NULL returned in case of ENOENT.
->
-> Calling code is adapted to handle NULL return case, and to pass optional
-> argument as required.
->
-> To support automatic deselect for _selected helper, a new structure is
-> created storing an exit pointer similar to clock core which is called on
-> release.
->
-> To facilitate code sharing between optional/mandatory/selected helpers,
-> a new internal helper function is added to handle quiet (optional) and
-> verbose (mandatory) errors, as well as storing the correct callback for
-> devm release: __devm_mux_state_get
->
-> Due to this structure devm_mux_state_get_*_selected can no longer print
-> a useful error message when select fails. Instead callers should print
-> errors where needed.
->
-> Commit e153fdea9db04 ("phy: can-transceiver: Re-instate "mux-states"
-> property presence check") noted that "mux_get() always prints an error
-> message in case of an error, including when the property is not present,
-> confusing the user."
->
-> The first error message covers the case that a mux name is not matched
-> in dt. The second error message is based on of_parse_phandle_with_args
-> return value.
->
-> In optional case no error is printed and NULL is returned.
-> This ensures that the new helper functions will not confuse the user
-> either.
->
-> With the addition of optional helper functions it became clear that
-> drivers should compile and link even if CONFIG_MULTIPLEXER was not enabled.
-> Add stubs for all symbols exported by mux core.
+> Similar functionality already exists in other places, e.g. i2c-omap.
 >
 > Signed-off-by: Josua Mayer <josua@solid-run.com>
 
-Thanks for your patch!
-
-> --- a/drivers/mux/core.c
-> +++ b/drivers/mux/core.c
-
-> @@ -677,7 +707,7 @@ EXPORT_SYMBOL_GPL(devm_mux_control_get);
->   *
->   * Return: A pointer to the mux-state, or an ERR_PTR with a negative errno.
->   */
-> -static struct mux_state *mux_state_get(struct device *dev, const char *mux_name)
-> +static struct mux_state *mux_state_get(struct device *dev, const char *mux_name, bool optional)
->  {
->         struct mux_state *mstate;
->
-> @@ -685,12 +715,10 @@ static struct mux_state *mux_state_get(struct device *dev, const char *mux_name)
->         if (!mstate)
->                 return ERR_PTR(-ENOMEM);
->
-> -       mstate->mux = mux_get(dev, mux_name, &mstate->state);
-> -       if (IS_ERR(mstate->mux)) {
-> -               int err = PTR_ERR(mstate->mux);
-> -
-> +       mstate->mux = mux_get(dev, mux_name, &mstate->state, optional);
-> +       if (IS_ERR_OR_NULL(mstate->mux)) {
->                 kfree(mstate);
-
-mstate is freed here...
-
-> -               return ERR_PTR(err);
-> +               return ERR_CAST(mstate->mux);
-
-... and dereferenced here, leading to a use after free.
-
->         }
->
->         return mstate;
+LGTM, so
+Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
 
 Gr{oetje,eeting}s,
 
