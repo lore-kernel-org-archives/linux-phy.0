@@ -4,154 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F3ED2D2ECF9
-	for <linux-phy@archiver.kernel.org>; Tue, 20 Jan 2026 07:56:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CA864D2ED0F
+	for <linux-phy@archiver.kernel.org>; Tue, 20 Jan 2026 08:18:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=82A3gZUtjTWb7L8nqfyf5jT+QmqhJb1zid0VagRYU5I=; b=ely8fEJnOaYi79
-	t3ccPCdg1lMc0+bcQ5uL4YDEK8vGe2FVQhFnlpxDFDxqWvayYV26UaxZ0WCUzrI7TgqFX55D/It2D
-	PkQudijUVAkwlE+eIpJdB6ZKWmT2wEnTfPKJLmUSjIoePAUuA99S4OkV5uZ557hzKgLLWjMAyy3sR
-	drGy6HQcLuyZweBuGrPizYaY1WtDJ9lnSPp5JC5vFOaHX3Y6ShsbOoptDsJBih0DcgSwKmE4VaJwC
-	B0uXkvQZHA4n60wyX0OZlfKvEypS04dEWHg3yy64evSKuIqLYEuN75rrl2yamfllO4qJJoBAEfHf5
-	yUS1Yyv29IKjfPh5QMJw==;
+	List-Owner; bh=Be6PMF6AwjxRRHM86bofFp1bNF31jj/cB55ZlQvG6tY=; b=UhVWmMkdgHgfaw
+	rnOnFVAkSaoGGgWT6LYiIZIXdPXVS1mTwioCHXN2Q/iq8u3/LkPWiB0AZG/Ucr3rr3/tOlTgQotFl
+	M5WvCg1LLmYm2kVIf7CY4xzxE5s+AGT0gYCTSFAj6vNZiBRPUv0t81wrARknio9EhQEPV57Hq/Qas
+	DwUmehUA810fQ9FRxK4QMCq1JBVPMN1p2nCmOb/wCS6jn/pt8fgvpDBjkMa07Wce1b5xh0SlpS6fV
+	tCbHuoSbTA/nAK5/R48ihEd0/CiY01CKzlE9EC6w0Zub6vVL7UqthBGgigKGI2bM+fnWqu3wFqNIw
+	axvAMRbHPxF+rUZLnUrg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vi6bC-00000003Nsq-2ZBa;
-	Tue, 20 Jan 2026 07:56:26 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1vi6wv-00000003S5g-1HWq;
+	Tue, 20 Jan 2026 08:18:53 +0000
+Received: from mail-ej1-x631.google.com ([2a00:1450:4864:20::631])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vi6bA-00000003Nsb-3yF4
-	for linux-phy@bombadil.infradead.org;
-	Tue, 20 Jan 2026 07:56:25 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
-	:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=AKsLovc3KARkhs/4j/9k3GVlFSpps4fzd+8+jeJ5Fh4=; b=VuKujZ/+DfVnUa/5fdhnpCgMWj
-	6PwpjIzP11c78PTH8c1AP+FudLgzoFfwdAx2T6uxYk0A6FNTIZtWE8nmXbfgZElxcuqmgUuJydbMW
-	KDZJaxYKj8reSOcTumpbxsbb4HyTriZR6mZR/uLTANNkZwi/fYWrY5M/PxTfEJW66B5b8EvIGTpOe
-	EviMhc+EJlm05sir0fiJFIc23EBruJ6jx87RQOXs0mcm66aj4wcXlVmnLcbueTWU1w3I2kzUomhvD
-	UpROmG2NH4y8Wz/odhYcNx66FFJZHGxvc98RJM6YvaWm38HsdfKkQ69e7gMw32tQXN0TV3bCutCsa
-	KRqth6aw==;
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vi6b7-0000000DWXO-1Q1J
+	id 1vi6wt-00000003S4v-0h47
 	for linux-phy@lists.infradead.org;
-	Tue, 20 Jan 2026 07:56:23 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 60K33EcK3805012
-	for <linux-phy@lists.infradead.org>; Tue, 20 Jan 2026 07:56:16 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	AKsLovc3KARkhs/4j/9k3GVlFSpps4fzd+8+jeJ5Fh4=; b=ov4gbPkhPBvrGYXK
-	9JUcYDfDzemzidbvJ6mol5gOOB3uaC1K7XuOkKAS9zJTUJIW2V/X/+Xg2kEbQSOk
-	SzTUEiX4k9SVWqJJhf1RnNZHS5Z5lFHSnnUMw0xeXeAv0e6PRK546BfAgtINTPQt
-	ftXbMUP1nBV1eGHNDG6DBoEUzlVv555D/GHW1LWSyv74vYy6OB8tGOw+Ub6GS8Tg
-	YabxkTumRm+aUYNeQIJQl4wre8iwIkcg67gZcq0IU8yjeZaM+9YbNd0tbXnfAQHk
-	MxWGZO/ZCp93aDUkjPChU6/wrt8bEs/UnjEEnNIjnhbY8Ts2MWOQ+FSze8E04xrb
-	CCt4QA==
-Received: from mail-pf1-f200.google.com (mail-pf1-f200.google.com [209.85.210.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4bt1f88rqf-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Tue, 20 Jan 2026 07:56:16 +0000 (GMT)
-Received: by mail-pf1-f200.google.com with SMTP id d2e1a72fcca58-81e81fbbb8cso4915183b3a.3
-        for <linux-phy@lists.infradead.org>; Mon, 19 Jan 2026 23:56:16 -0800 (PST)
+	Tue, 20 Jan 2026 08:18:52 +0000
+Received: by mail-ej1-x631.google.com with SMTP id a640c23a62f3a-b8712506a3eso33920666b.3
+        for <linux-phy@lists.infradead.org>; Tue, 20 Jan 2026 00:18:49 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1768895776; x=1769500576; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=AKsLovc3KARkhs/4j/9k3GVlFSpps4fzd+8+jeJ5Fh4=;
-        b=iInXzKVMmTK8jYUO9POY70bcr8aM2tsWlhiz2Trp7shydOTJHF35dCa80UJuGmZT0z
-         Q3+FqsxHwDW1RQtd+l6hZVmeqwszh6pmjNJaF2HAAxoz1izItBHjqTDdTp+HhteCmier
-         8F/4nWOgra0ZfVHO8EnCoqvMaQUaEvL+wAMwjeXc/WvSh3G/cMXSFnHiRax1QjEQSYL8
-         aFfk17WG1x3Fjes8eGJW4l7sCPzmUWXNvLja19lQ5YV/CVmCUsZz0o9ku4WjF3JDlS8B
-         9cBJq45RBKaiDt60u7kGAQ5NI4gV6viy7Kxgbrlm8gNSRBb7oFT4PnQsL2bFa6CsOibP
-         stxw==
+        d=gmail.com; s=20230601; t=1768897128; x=1769501928; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=TJbdw+xcDYuOTpLf6yNuSRnoYdJpj1gSQsdBtW0Vq6o=;
+        b=XTynsIko3n0EOyj4jPDDElmS3FuRLY9sJsGwULxbzadikPi84TUB4dx4Q8427YLBTS
+         9gvRCA5oTt7C+eUoSzL+OADY/jvLZPLlBoG3QucJUvptLGO5XVM2oqLyyOSulxbEOjk1
+         M2XgXeJ0DQI82DbuA39GCyNy8y5BMFeqpi90tTFLeTJKbtZZxECUt1jkaRHgfOuGC0zN
+         hQ8vPTfUPgI/EJhXmGDStXLkelkdheLGZGwmflc5mCEoFL1HLQFJ0A/P9FQ82LwwkmwD
+         MpYEj5JcBLOh7q51iEdrusEnZblfuO9jMcrTdRoaMY0hHMtwM4h+WS9dHCm3lPnzgSIQ
+         u9vA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1768895776; x=1769500576;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=AKsLovc3KARkhs/4j/9k3GVlFSpps4fzd+8+jeJ5Fh4=;
-        b=iq2QcUEQVUCuDBs6t5i7LXdupAVKGOdMsGbvJvYY8Aev8Vwy/wxBsTR//fV3iWterT
-         iPoR6Pb3z2DDSHWDvyal/tIe+J1hl30UZkWCLrTkSRHDWZEUa5p0AcP1GmTATYJBha02
-         Iy6+BtVvvptpwrukukHCPh/K1BMw+m1Wi3NWIAe/pdqrm3tauFCngeU274MVfOawOAT1
-         ymmVr8INABJz3jFHSI1F2HFJm9Cp41GEqbvntp9hmCZJBq+qBH8N4LBzzP/1CJLdVii0
-         gc9GkEJCzR8bUm6tx7wQcQf16E0KX/12VUo2UhJqb75rjKoIEsIBKaJHic8GVC0rPYiT
-         ri9A==
-X-Forwarded-Encrypted: i=1; AJvYcCUzubgvTSNt+0Ag/VPcVauvdUR73CvhuUFMCNEm8i9ibp0dQ0hfwzPUQA2/yLNeblkFvmciSBWG/+0=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx3JyPIbDHse2MB8m5tE18MF16gfsZhlsTQBhE35nj2qlolPIN8
-	tfs+JF5ZIG/4kLWS7yrtQsVyeCdGPjwnHLg7NgcGsEFCGRYmN2osNL+DvHrvfAzKZHs1Hwryugs
-	enAmBkV1OQRb2nuKL4LAgDDf04Yj+trpXMdlTQIK3l5UZi99Sc7+u3JmGVK7AMA0VNBTQ
-X-Gm-Gg: AZuq6aL06kqX9lioWpN149vNy2uulIN4tJT4SQJwF/P0myl2eI8MtYNxSNzrvhpeWn1
-	cXecsCY65qUk1wugCKSW7viOe/aTkESftVzAx67Ij0zK8Jxf7LaUTT/p3XojV0zMEwc84v1hzcM
-	AArNzpJXhKd4EdpdAa0L1eVoTzJb1rLdikivd5tDOrt+6OUQRDiGQ3aiUV9ltNtWp6lPTxDGPBF
-	MAw2O45QDMx2D6yT9i1K7kpLp/crQI/tQ0tS5ndPk5K/lZ8tT2sspZ7tw0dWLtAdm9G0O9vdMsB
-	NV+2Czu1RQsFr7caY0ZB8PW1q1M4YgoG4aA8uU3i1emv2Yzg4ceCK2glpGFXbAxSk6F8zTv+jp3
-	hk2g8/4nbxI27PpZZw2oUXqlUSViF5hd4R3sJzz63tuf9yNN1THXKhZo6I9obftitqq3BwbLPwB
-	TTTq7H
-X-Received: by 2002:a05:6a00:3a0d:b0:81f:4346:6870 with SMTP id d2e1a72fcca58-81f9fce68ccmr13367833b3a.28.1768895775875;
-        Mon, 19 Jan 2026 23:56:15 -0800 (PST)
-X-Received: by 2002:a05:6a00:3a0d:b0:81f:4346:6870 with SMTP id d2e1a72fcca58-81f9fce68ccmr13367810b3a.28.1768895775371;
-        Mon, 19 Jan 2026 23:56:15 -0800 (PST)
-Received: from [10.133.33.57] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-81fa1291135sm11142535b3a.47.2026.01.19.23.56.12
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 19 Jan 2026 23:56:15 -0800 (PST)
-Message-ID: <8c63a77c-1676-461a-bfcf-55202e723718@oss.qualcomm.com>
-Date: Tue, 20 Jan 2026 15:56:10 +0800
+        d=1e100.net; s=20230601; t=1768897128; x=1769501928;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=TJbdw+xcDYuOTpLf6yNuSRnoYdJpj1gSQsdBtW0Vq6o=;
+        b=uI+eE36q85IyWTcXIp9LDNZfY22wxfRnuiDiBG8YBgg3XEpjmQHZgyaIjuAULUEyrv
+         2/rfCx7xlwcLD+sAYI7iOPVhOhj7Ukj1ky/L918DBcLdPDGDvmdaiRRshGujeD75glO3
+         vdis3aN7MHQNK7YQTH0HYFN/rE/nTSoMC8fj64IkP1s0Y0/vf/1g/6zLvrw7wwuj9wpt
+         cDBaKsnM6q2VfM5yv6SWT9RunzVqNzcCIf6d1N2WbKZuqLOpRDnUxczojKOFbyx8x8QS
+         Y5rPmgbBe1SDYajMTE7StI2z1+lJH//pqja7x0NHwoTZRZ/rPKmNnKAtOElmXYhK/g9a
+         Te+A==
+X-Forwarded-Encrypted: i=1; AJvYcCUEiuVkcZhKZ8M0xHsMFPmKMask3hd6O8GIicI0S5cJEyYqwnaSqaCzZo9XqX4XXWQ2KrIvXsNokCQ=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yzu1st2KXGN1/poLSvIkdsxxCd4IALvMUhQK3IuoQpjT5jrkCo7
+	veaPU6sDiJPFGHLR5G2uea97Wxbj7g64opsifBuOlKII8WqcI6eGEnTL
+X-Gm-Gg: AY/fxX4DhcEaXfOkRZTjiEWB91rnR0nF9M3zgErgQ59AfYwYfyCsa/gH7XLraWT28in
+	X6ZphRP6jUrNuskevk6q+bdIU3+uXSW/AEHUibWBu951tS4xfPZyjXvYYpHPXwDu4psVcQEanOw
+	FjiSSWCMt8KGBWmqyz1fJyEAHsCEqyNB9B6ZC67QKZ9+9kq73qShjIEb5SYZZMMVbPKj+7dFge4
+	vU9AXiNwuKOA3D5vo225Q9hvOy3VPXz5sw65rwE97eL6bArfHU9JTOIVtvATY9zWHOHkNH/IINK
+	yx7X6LwoTloMl8OGuiF1BIVse2HaF68Fx6pDKtK09b/gTp2UHUBi7y9Uwam5dKQgXGFPLIf6t5+
+	E02mG9IvVwqT+6fTxMzvdJ6l+8bo+YlwSRhtEEXQMZTafOw4i6CwYnUEHxxVSexly2UCyz0XslB
+	auFGE=
+X-Received: by 2002:a17:907:3c8a:b0:b87:6f58:a844 with SMTP id a640c23a62f3a-b8792b3a359mr743051066b.0.1768897127986;
+        Tue, 20 Jan 2026 00:18:47 -0800 (PST)
+Received: from skbuf ([2a02:2f04:d501:d900:619a:24df:1726:f869])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-b8795c38208sm1344223966b.71.2026.01.20.00.18.46
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 20 Jan 2026 00:18:47 -0800 (PST)
+Date: Tue, 20 Jan 2026 10:18:44 +0200
+From: Vladimir Oltean <olteanv@gmail.com>
+To: "Russell King (Oracle)" <linux@armlinux.org.uk>
+Cc: Jakub Kicinski <kuba@kernel.org>, linux-phy@lists.infradead.org,
+	davem@davemloft.net, maxime.chevallier@bootlin.com,
+	alexandre.torgue@foss.st.com, mohd.anwar@oss.qualcomm.com,
+	neil.armstrong@linaro.org, hkallweit1@gmail.com,
+	mcoquelin.stm32@gmail.com, netdev@vger.kernel.org,
+	edumazet@google.com, linux-arm-msm@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org, vkoul@kernel.org,
+	andrew@lunn.ch, pabeni@redhat.com, andrew+netdev@lunn.ch,
+	linux-stm32@st-md-mailman.stormreply.com
+Subject: Re: [net-next,05/14] net: stmmac: add stmmac core serdes support
+Message-ID: <20260120081844.7e6aq2urhxrylywi@skbuf>
+References: <E1vhoSH-00000005H1f-2cq9@rmk-PC.armlinux.org.uk>
+ <20260119192125.1245102-1-kuba@kernel.org>
+ <aW8M9ZiiftGBQIRM@shell.armlinux.org.uk>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2] drm/msm/dp: Correct LeMans/Monaco DP phy
- Swing/Emphasis setting
-To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
- <neil.armstrong@linaro.org>,
-        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        linux-kernel@vger.kernel.org, stable@vger.kernel.org,
-        Abel Vesa <abel.vesa@oss.qualcomm.com>
-References: <20260119-klm_dpphy-v2-1-52252190940b@oss.qualcomm.com>
- <47skckagggxijdhinmmibtrd3dydixtj6pccrgjwyczs7bj2te@2rq2iprmzvyf>
- <749e716e-a6cb-4adb-8ffc-0d6f4c6d56c4@oss.qualcomm.com>
- <5ytgf7saw6yfvqzqmy4gtjygo4cx52vomi7mwswc7hgedzz3rb@eiqxiqs2cjmb>
-Content-Language: en-US
-From: Yongxing Mou <yongxing.mou@oss.qualcomm.com>
-In-Reply-To: <5ytgf7saw6yfvqzqmy4gtjygo4cx52vomi7mwswc7hgedzz3rb@eiqxiqs2cjmb>
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMTIwMDA2NSBTYWx0ZWRfXwx4H3A2A3zhH
- skCYhyHgqEAkx3YdCpeY4LhIuabWxN6t4FbGkTBjtXrmALsJelAyt3IbWoQ2W2A3HUcAfwYn12p
- 7vKB3xfL6lPXNIqoQ0FY/H5SjZkIZGmfX0+QwF6K9yab18fnM+QvugvB38hwMzcSco04LQrzm9C
- PzGp/g2u4p1/R+fHc03yGT7AE8Iyh12Ja7QL4zpl2x4nLqo9sviW35R4roYI+Q0ajdsnp5hbqn1
- qTko15IDek5w+A2p6wbRF2E9423MGKoCj11Fao/oAmlfC8lZ3Z7XORBA8upkCrGvhkEdvxQdKCF
- ilCjFtK9VFKk1gWFJCyu+/CGIX7NaeK0WIjhwtrQq0HCPfMAJI5bzGCu1Fb0sTStIgbAhubpYoi
- cF5DO1wG2DmQ52oHcQeJIbw+s7TE3lW0bN77H1vWDGtHEpUutMewZ5GLwzbQ3ENielZR5ug9HJV
- Vp5xDQ1I9m+0YQLhFKQ==
-X-Proofpoint-GUID: QTJtlKJ2HULJP95WfCI_IGIxbL-GVR4r
-X-Proofpoint-ORIG-GUID: QTJtlKJ2HULJP95WfCI_IGIxbL-GVR4r
-X-Authority-Analysis: v=2.4 cv=LdQxKzfi c=1 sm=1 tr=0 ts=696f3520 cx=c_pps
- a=mDZGXZTwRPZaeRUbqKGCBw==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
- a=IkcTkHD0fZMA:10 a=vUbySO9Y5rIA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=JfrnYn6hAAAA:8
- a=TcOkVFdsAhurElaN6YEA:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
- a=zc0IvFSfCIW2DFIPzwfm:22 a=1CNFftbPRP8L7MoqJWF3:22
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
- definitions=2026-01-20_02,2026-01-19_03,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- phishscore=0 bulkscore=0 clxscore=1015 impostorscore=0 spamscore=0
- priorityscore=1501 lowpriorityscore=0 adultscore=0 suspectscore=0
- malwarescore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2601150000
- definitions=main-2601200065
+Content-Disposition: inline
+In-Reply-To: <aW8M9ZiiftGBQIRM@shell.armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260120_075621_840223_840FC0A6 
-X-CRM114-Status: GOOD (  18.35  )
+X-CRM114-CacheID: sfid-20260120_001851_275668_F73FEF5B 
+X-CRM114-Status: GOOD (  47.05  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -163,42 +102,200 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-CgpPbiAxLzIwLzIwMjYgMTE6MTIgQU0sIERtaXRyeSBCYXJ5c2hrb3Ygd3JvdGU6Cj4gT24gVHVl
-LCBKYW4gMjAsIDIwMjYgYXQgMTA6NDM6NDZBTSArMDgwMCwgWW9uZ3hpbmcgTW91IHdyb3RlOgo+
-Pgo+Pgo+PiBPbiAxLzE5LzIwMjYgODo1NSBQTSwgRG1pdHJ5IEJhcnlzaGtvdiB3cm90ZToKPj4+
-IE9uIE1vbiwgSmFuIDE5LCAyMDI2IGF0IDA4OjM3OjIwUE0gKzA4MDAsIFlvbmd4aW5nIE1vdSB3
-cm90ZToKPj4+PiBDdXJyZW50bHksIHRoZSBMZU1hbnMvTW9uYWNvIGRldmljZXMgYW5kIHRoZWly
-IGRlcml2YXRpdmUgcGxhdGZvcm1zCj4+Pj4gb3BlcmF0ZSBpbiBEUCBtb2RlIHJhdGhlciB0aGFu
-IGVEUCBtb2RlLiBQZXIgdGhlIFBIWSBIUEcsIHRoZSBTd2luZyBhbmQKPj4+PiBFbXBoYXNpcyBz
-ZXR0aW5ncyBuZWVkIHRvIGJlIGNvcnJlY3RlZCB0byB0aGUgcHJvcGVyIHZhbHVlcy4KPj4+Cj4+
-PiBObywgdGhleSBuZWVkIHRvIGJlIGNvbmZpZ3VyZWQgZHluYW1pY2FsbHkuIEkgd3JvdGUgZWFy
-bGllciB0aGF0IHRoZQo+Pj4gZHJpdmVyIG5lZWRzIHJlZmFjdG9yaW5nLgo+Pj4KPj4gSGksIERt
-aXRyeS4gSSBwbGFuIHRvIHN1Ym1pdCB0aGVtIGluIHRoaXMgb3JkZXI6IHRoaXMgcGF0Y2gg4oaS
-IExETyBwYXRjaCDihpIKPj4gcmVmYWN0b3IuCj4+IFNpbmNlIHRoZSByZWZhY3RvciBpbnZvbHZl
-cyBtb3JlIHBsYXRmb3JtcyBhbmQgbWF5IHRha2Ugc29tZSB0aW1lLCBJ4oCZZCBsaWtlCj4+IHRv
-IGdldCB0aGlzIHBhdGNoIG1lcmdlZCBmaXJzdC4KPiAKPiBUaGlzIHBhdGNoIGlzIGluY29ycmVj
-dC4gSXQgdHJhZGVzIHdvcmtpbmcgb24gc29tZSBwbGF0Zm9ybXMgKERQKSB2cwo+IHdvcmtpbmcg
-b2Ygc29tZW8gdGhlciBwbGF0Zm9ybXMgKGVEUCkuIEkgZG9uJ3QgdGhpbmsgaXQgaXMgYSBwcm9w
-ZXIgZml4Cj4gZm9yIGFueSBwcm9ibGVtLgo+IApHb3QgaXQuLiB3aWxsIHBvc3QgcmVmYWN0b3Ig
-c2VyaWVzLgo+Pj4+Cj4+Pj4gVGhpcyB3aWxsIGhlbHAgYWNoaWV2ZSBzdWNjZXNzZnVsIGxpbmsg
-dHJhaW5pbmcgb24gc29tZSBkb25nbGVzLgo+Pj4+Cj4+Pj4gQ2M6IHN0YWJsZUB2Z2VyLmtlcm5l
-bC5vcmcKPj4+PiBGaXhlczogM2YxMmJmMTYyMTNjICgicGh5OiBxY29tOiBlZHA6IEFkZCBzdXBw
-b3J0IGZvciBlRFAgUEhZIG9uIFNBODc3NVAiKQo+Pj4+IFJldmlld2VkLWJ5OiBBYmVsIFZlc2Eg
-PGFiZWwudmVzYUBvc3MucXVhbGNvbW0uY29tPgo+Pj4+IFNpZ25lZC1vZmYtYnk6IFlvbmd4aW5n
-IE1vdSA8eW9uZ3hpbmcubW91QG9zcy5xdWFsY29tbS5jb20+Cj4+Pj4gLS0tCj4+Pj4gQ2hhbmdl
-cyBpbiB2MjoKPj4+PiAtIFNlcGFyYXRlIHRoZSBMRE8gY2hhbmdlIG91dC5bS29ucmFkXVtEbWl0
-cnldCj4+Pj4gLSBNb2RpZnkgdGhlIGNvbW1pdCBtZXNzYWdlLltEbWl0cnldCj4+Pj4gLSBMaW5r
-IHRvIHYxOiBodHRwczovL2xvcmUua2VybmVsLm9yZy9yLzIwMjYwMTA5LWtsbV9kcHBoeS12MS0x
-LWE2YjZhYmUzODJkZUBvc3MucXVhbGNvbW0uY29tCj4+Pj4gLS0tCj4+Pj4gICAgZHJpdmVycy9w
-aHkvcXVhbGNvbW0vcGh5LXFjb20tZWRwLmMgfCAyMyArKysrKysrKysrKysrKysrKysrKysrLQo+
-Pj4+ICAgIDEgZmlsZSBjaGFuZ2VkLCAyMiBpbnNlcnRpb25zKCspLCAxIGRlbGV0aW9uKC0pCj4+
-Pj4KPj4+Cj4+Cj4+Cj4+IC0tIAo+PiBsaW51eC1waHkgbWFpbGluZyBsaXN0Cj4+IGxpbnV4LXBo
-eUBsaXN0cy5pbmZyYWRlYWQub3JnCj4+IGh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
-bWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo+IAoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0Cmxp
-bnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
-YWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+On Tue, Jan 20, 2026 at 05:04:53AM +0000, Russell King (Oracle) wrote:
+> On Mon, Jan 19, 2026 at 11:21:25AM -0800, Jakub Kicinski wrote:
+> > This is an AI-generated review of your patch. The human sending this
+> > email has considered the AI review valid, or at least plausible.
+> > 
+> > For local reproduction steps see https://netdev-ai.bots.linux.dev/ai-local.html
+> > ---
+> > net: stmmac: add stmmac core serdes support
+> > 
+> > This commit adds SerDes PHY support to the stmmac core driver, moving it
+> > from platform glue into the integrated PCS driver. The SerDes is managed
+> > through phy_init/phy_exit for lifecycle and phy_power_on/phy_power_off
+> > for the power state.
+> > 
+> > > diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.c
+> > > index 2f826fe7229b..4d1902f3a58f 100644
+> > > --- a/drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.c
+> > > +++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.c
+> > 
+> > [ ... ]
+> > 
+> > > static int dwmac_integrated_pcs_enable(struct phylink_pcs *pcs)
+> > > {
+> > > 	struct stmmac_pcs *spcs = phylink_pcs_to_stmmac_pcs(pcs);
+> > > +	struct stmmac_priv *priv = spcs->priv;
+> > > +	int ret;
+> > >
+> > > -	stmmac_mac_irq_modify(spcs->priv, 0, spcs->int_mask);
+> > > +	ret = dwmac_serdes_power_on(priv);
+> > > +	if (ret)
+> > > +		return ret;
+> > > +
+> > > +	if (spcs->interface != PHY_INTERFACE_MODE_NA) {
+> > > +		ret = dwmac_serdes_set_mode(priv, spcs->interface);
+> > > +		if (ret)
+> > > +			return ret;
+> >                         ^^^^^^^^^^
+> > 
+> > If dwmac_serdes_set_mode() fails here, doesn't this leave the SerDes in
+> > a powered-on state? dwmac_serdes_power_on() succeeded at this point but
+> > there's no corresponding dwmac_serdes_power_off() call before returning
+> > the error.
+> > 
+> > Looking at phylink_major_config(), it appears to discard the return
+> > value from phylink_pcs_enable(), so the caller won't know to call
+> > pcs_disable() to clean up the power state.
+> 
+> This AI analysis is incorrect.
+> 
+> By the time phylink_pcs_enable() has been called, the PCS is already
+> plumbed in to phylink. It _will_ have phylink_pcs_disable() called on
+> it at some point in the future, either by having the PCS displaced
+> by another in a subsequent phylink_major_config(), or by a driver
+> calling phylink_stop().
+> 
+> If we clean up here, then we will call dwmac_serdes_power_off() twice.
+> 
+> Yes, it's not "nice" but that's the way phylink is right now, and
+> without reworking phylink to record that pcs_enable() has failed
+> to avoid a subsequent pcs_disable(), and to stop the major config
+> (which then potentially causes a whole bunch of other issues). I
+> don't even want to think about that horrid scenario at the moment.
+
+Isn't it sufficient to set pl->pcs to NULL when pcs_enable() fails and
+after calling pcs_disable(), though?
+
+I had to deal with the same issue when preparing patches that integrate
+SerDes support into the Lynx PCS.
+
+I had these patches (please pardon the unadapted commit messages for the
+present situation):
+
+-- >8 --
+Subject: [PATCH] net: phylink: handle return code from phylink_pcs_enable()
+
+I am trying to make phylink_pcs_ops :: pcs_enable() something that is
+handled sufficiently carefully by phylink, such that we can expect that
+when we return an error code here, no other phylink_pcs_ops call is
+being made. This way, the API can be considered sufficiently reliable to
+allocate memory in pcs_enable() which is freed in pcs_disable().
+
+Currently this does not take place. The pcs_enable() method has an int
+return code, which is ignored. If the PCS returns an error, the
+initialization of the phylink instance is not stopped, but continues on
+like a train, most likely triggering faults somewhere else.
+
+Like this:
+
+$ ip link set endpmac2 up
+fsl_dpaa2_eth dpni.1 endpmac2: configuring for c73/10gbase-kr link mode
+fsl_dpaa2_eth dpni.1 endpmac2: pcs_enable() failed: -ENOMEM // added by me
+Unable to handle kernel paging request at virtual address fffffffffffffff4
+Call trace:
+ mtip_backplane_get_state+0x34/0x2b4
+ lynx_pcs_get_state+0x30/0x180
+ phylink_resolve+0x2c0/0x764
+ process_scheduled_works+0x228/0x330
+ worker_thread+0x28c/0x450
+
+Do a minimal handling of the error by clearing pl->pcs, so that we lose
+access to its ops, and thus are unable to call anything else (which
+would be invalid anyway).
+
+Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
+---
+ drivers/net/phy/phylink.c | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/net/phy/phylink.c b/drivers/net/phy/phylink.c
+index 32ffa4f9e5b2..a8459116b701 100644
+--- a/drivers/net/phy/phylink.c
++++ b/drivers/net/phy/phylink.c
+@@ -1315,8 +1315,15 @@ static void phylink_major_config(struct phylink *pl, bool restart,
+ 		}
+ 	}
+ 
+-	if (pl->pcs_state == PCS_STATE_STARTING || pcs_changed)
+-		phylink_pcs_enable(pl->pcs);
++	if (pl->pcs_state == PCS_STATE_STARTING || pcs_changed) {
++		err = phylink_pcs_enable(pl->pcs);
++		if (err < 0) {
++			phylink_err(pl, "pcs_enable() failed: %pe\n",
++				    ERR_PTR(err));
++			pl->pcs = NULL;
++			return;
++		}
++	}
+ 
+ 	err = phylink_pcs_config(pl->pcs, pl->pcs_neg_mode, state,
+ 				 !!(pl->link_config.pause & MLO_PAUSE_AN));
+-- >8 --
+
+-- >8 --
+Subject: [PATCH] net: phylink: suppress pcs->ops->pcs_get_state() calls after
+ phylink_stop()
+
+I am attempting to make phylink_pcs_ops :: pcs_disable() treated
+sufficiently carefully by phylink so as to be able to free memory
+allocations from this PCS callback, and do not suffer from faults
+attempting to access that memory later from other phylink_pcs callbacks.
+
+Currently, nothing prevents this situation from happening:
+
+$ ip link set endpmac2 up
+$ ip link set endpmac2 down
+$ ethtool endpmac2
+Unable to handle kernel paging request at virtual address 0000100000000034
+Call trace:
+ __mutex_lock+0xb8/0x574
+ __mutex_lock_slowpath+0x14/0x20
+ mutex_lock+0x24/0x58
+ mtip_backplane_get_state+0x44/0x24c
+ lynx_pcs_get_state+0x30/0x180
+ phylink_ethtool_ksettings_get+0x178/0x218
+ dpaa2_eth_get_link_ksettings+0x54/0xa4
+ __ethtool_get_link_ksettings+0x68/0xa8
+ linkmodes_prepare_data+0x44/0xc4
+ ethnl_default_doit+0x118/0x39c
+ genl_rcv_msg+0x29c/0x314
+ netlink_rcv_skb+0x11c/0x134
+ genl_rcv+0x34/0x4c
+
+However, the case where "ethtool endpmac2" is executed as the first
+thing (before the interface is brought up) does not crash. What's
+different is that second situation is that phylink_major_config() did
+not run yet, so pl->pcs is still NULL inside phylink_mac_pcs_get_state().
+In plain English, "as long as the PCS is disabled, the link is naturally
+down, no need to ask".
+
+Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
+---
+ drivers/net/phy/phylink.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/drivers/net/phy/phylink.c b/drivers/net/phy/phylink.c
+index a8459116b701..f78d0e0f7cfb 100644
+--- a/drivers/net/phy/phylink.c
++++ b/drivers/net/phy/phylink.c
+@@ -2527,6 +2527,7 @@ void phylink_stop(struct phylink *pl)
+ 	pl->pcs_state = PCS_STATE_DOWN;
+
+ 	phylink_pcs_disable(pl->pcs);
++	pl->pcs = NULL;
+ }
+ EXPORT_SYMBOL_GPL(phylink_stop);
+
+-- >8 --
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
