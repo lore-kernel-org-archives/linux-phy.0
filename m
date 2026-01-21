@@ -4,31 +4,31 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A2CE0C44536
-	for <linux-phy@archiver.kernel.org>; Wed, 21 Jan 2026 14:55:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 35E5ED46944
+	for <linux-phy@archiver.kernel.org>; Wed, 21 Jan 2026 14:55:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=HrwMPZrJtVxKsawIvZdNyFqSqnfFMbPZ/QURCt2izJ8=; b=zyOlurYaElBjlS
-	YWeQtFMSFz+k0RYPeuk+fnitXhCEfTVMRvnVc7dpirnN9+/mR8orf8lU1Ltl7xn9P/yIm1FdPG36a
-	5FwFK4lR5lP/bJvH114MMFcAg+DJyURtESZOE6FojG+Cd8GRlMGpPpGUXD3qWwE+1pi8eYo3/eRm+
-	k8YC41qbiHGLhP+7kmjNgBc2pHgQVgps5eBdt++B3dvTZMvQh22FTkKIqABHNbKA3ayD22P6q/jXY
-	4vb5OpBIAKf55XMAwDDXPPdrb+O+tyjdSpk8roqhGj5Wm9UKoJiJpCuS5jruaSDk9lc5jzD0yJ8Jq
-	ynHzbaLnrC28X2wpA17w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=TNogXdrAgyZRnJklnOUATX1MJLQlZNa3i+HtB1JlKvI=; b=pJHOuh7FHRx3OK
+	a2zNZ1EXlYxR9ne2ZHaoJTriLz9hEaFhBQ/uXv26ZQit4a0mSZAvWrfTDqbfxPkhaMV5gGoldEUue
+	tkU4774UREm8QvBHQ3gBZ3QUO60n9D2w1GuzJxldDUUcaYaTIcolw6f6O9rheV5L8Gwas8o549ikq
+	E/njeB/qKdGRKRFWpofNEysMyZc+8OYPLvQ0LaJ/enQxbjDXTAIwD42UMfXMruqI7sKCpxH0soFjN
+	XafT4hVTM81sinYiMsUBCgstoLDMnMyHvqkjlFAeSHOQsfjOydK/GiKWvpCFOpHIRymW85nj9au4F
+	50jPNn0+gxn3eeDjHWdA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1viZcd-00000005gGX-1HZR;
-	Wed, 21 Jan 2026 14:55:51 +0000
+	id 1viZcf-00000005gHb-3vXZ;
+	Wed, 21 Jan 2026 14:55:53 +0000
 Received: from smtp21.cstnet.cn ([159.226.251.21] helo=cstnet.cn)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1viZcZ-00000005gFX-3v5k;
-	Wed, 21 Jan 2026 14:55:50 +0000
+	id 1viZcb-00000005gFc-35zi;
+	Wed, 21 Jan 2026 14:55:51 +0000
 Received: from duge-virtual-machine (unknown [183.192.221.134])
-	by APP-01 (Coremail) with SMTP id qwCowACXP2vl6HBpCoqlBQ--.20720S2;
-	Wed, 21 Jan 2026 22:55:34 +0800 (CST)
+	by APP-01 (Coremail) with SMTP id qwCowACXP2vl6HBpCoqlBQ--.20720S3;
+	Wed, 21 Jan 2026 22:55:36 +0800 (CST)
 From: Jiayu Du <jiayu.riscv@isrc.iscas.ac.cn>
 To: vkoul@kernel.org,
 	gregkh@linuxfoundation.org,
@@ -46,33 +46,37 @@ Cc: neil.armstrong@linaro.org,
 	devicetree@vger.kernel.org,
 	linux-riscv@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH v5 0/4] Add USB support for Canaan K230
-Date: Wed, 21 Jan 2026 22:55:21 +0800
-Message-ID: <20260121145526.14672-1-jiayu.riscv@isrc.iscas.ac.cn>
+Subject: [PATCH v5 1/4] dt-bindings: phy: Add Canaan K230 USB PHY
+Date: Wed, 21 Jan 2026 22:55:22 +0800
+Message-ID: <20260121145526.14672-2-jiayu.riscv@isrc.iscas.ac.cn>
 X-Mailer: git-send-email 2.52.0
+In-Reply-To: <20260121145526.14672-1-jiayu.riscv@isrc.iscas.ac.cn>
+References: <20260121145526.14672-1-jiayu.riscv@isrc.iscas.ac.cn>
 MIME-Version: 1.0
-X-CM-TRANSID: qwCowACXP2vl6HBpCoqlBQ--.20720S2
-X-Coremail-Antispam: 1UD129KBjvJXoW7uF1UZryxGw18Jr1xJFyrZwb_yoW8tFW5pa
-	y7CFW3uFsrtFW2qan3tw48WF9xX3Z5Jry3Wryaq345Xa1UZFyUAws3urW5ZF1UGFsrCFWj
-	vFs0kFyxGFWUAaDanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
-	9KBjDU0xBIdaVrnRJUUU9Y14x267AKxVW8JVW5JwAFc2x0x2IEx4CE42xK8VAvwI8IcIk0
-	rVWrJVCq3wAFIxvE14AKwVWUJVWUGwA2ocxC64kIII0Yj41l84x0c7CEw4AK67xGY2AK02
-	1l84ACjcxK6xIIjxv20xvE14v26r1j6r1xM28EF7xvwVC0I7IYx2IY6xkF7I0E14v26r4j
-	6F4UM28EF7xvwVC2z280aVAFwI0_Gr0_Cr1l84ACjcxK6I8E87Iv6xkF7I0E14v26r4UJV
-	WxJr1le2I262IYc4CY6c8Ij28IcVAaY2xG8wAqx4xG64xvF2IEw4CE5I8CrVC2j2WlYx0E
-	2Ix0cI8IcVAFwI0_Jr0_Jr4lYx0Ex4A2jsIE14v26r1j6r4UMcvjeVCFs4IE7xkEbVWUJV
-	W8JwACjcxG0xvY0x0EwIxGrwACjI8F5VA0II8E6IAqYI8I648v4I1lFIxGxcIEc7CjxVA2
-	Y2ka0xkIwI1lc7CjxVAaw2AFwI0_Jw0_GFyl42xK82IYc2Ij64vIr41l4I8I3I0E4IkC6x
-	0Yz7v_Jr0_Gr1lx2IqxVAqx4xG67AKxVWUJVWUGwC20s026x8GjcxK67AKxVWUGVWUWwC2
-	zVAF1VAY17CE14v26r4a6rW5MIIYrxkI7VAKI48JMIIF0xvE2Ix0cI8IcVAFwI0_Jr0_JF
-	4lIxAIcVC0I7IYx2IY6xkF7I0E14v26r4j6F4UMIIF0xvE42xK8VAvwI8IcIk0rVWUJVWU
-	CwCI42IY6I8E87Iv67AKxVWUJVW8JwCI42IY6I8E87Iv6xkF7I0E14v26r4j6r4UJbIYCT
-	nIWIevJa73UjIFyTuYvjfUonmRUUUUU
+X-CM-TRANSID: qwCowACXP2vl6HBpCoqlBQ--.20720S3
+X-Coremail-Antispam: 1UD129KBjvJXoW7uFW7ZrW7Cr4DCryfJr18Zrb_yoW8Gw1kpa
+	s7uFyvgrsagF1ayws3KF18CFy3ArWkCFyfKr13t34UKr1DW3WYy3yakr15Zw1UJFs7GFWj
+	qFZa9Fy7Kr1qyw7anT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDU0xBIdaVrnRJUUUm014x267AKxVWrJVCq3wAFc2x0x2IEx4CE42xK8VAvwI8IcIk0
+	rVWrJVCq3wAFIxvE14AKwVWUJVWUGwA2048vs2IY020E87I2jVAFwI0_Jr4l82xGYIkIc2
+	x26xkF7I0E14v26r4j6ryUM28lY4IEw2IIxxk0rwA2F7IY1VAKz4vEj48ve4kI8wA2z4x0
+	Y4vE2Ix0cI8IcVAFwI0_Jr0_JF4l84ACjcxK6xIIjxv20xvEc7CjxVAFwI0_Gr0_Cr1l84
+	ACjcxK6I8E87Iv67AKxVW8JVWxJwA2z4x0Y4vEx4A2jsIEc7CjxVAFwI0_Gr1j6F4UJwAS
+	0I0E0xvYzxvE52x082IY62kv0487Mc02F40EFcxC0VAKzVAqx4xG6I80ewAv7VC0I7IYx2
+	IY67AKxVWUJVWUGwAv7VC2z280aVAFwI0_Jr0_Gr1lOx8S6xCaFVCjc4AY6r1j6r4UM4x0
+	Y48IcxkI7VAKI48JM4x0x7Aq67IIx4CEVc8vx2IErcIFxwACI402YVCY1x02628vn2kIc2
+	xKxwCY1x0262kKe7AKxVWUtVW8ZwCF04k20xvY0x0EwIxGrwCFx2IqxVCFs4IE7xkEbVWU
+	JVW8JwC20s026c02F40E14v26r1j6r18MI8I3I0E7480Y4vE14v26r106r1rMI8E67AF67
+	kF1VAFwI0_GFv_WrylIxkGc2Ij64vIr41lIxAIcVC0I7IYx2IY67AKxVWUJVWUCwCI42IY
+	6xIIjxv20xvEc7CjxVAFwI0_Gr0_Cr1lIxAIcVCF04k26cxKx2IYs7xG6r1j6r1xMIIF0x
+	vEx4A2jsIE14v26r1j6r4UMIIF0xvEx4A2jsIEc7CjxVAFwI0_Gr0_Gr1UYxBIdaVFxhVj
+	vjDU0xZFpf9x0JU4OJ5UUUUU=
 X-Originating-IP: [183.192.221.134]
 X-CM-SenderInfo: 5mld534oul2uny6l223fol2u1dvotugofq/
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260121_065548_436908_E9ADF84F 
-X-CRM114-Status: GOOD (  13.98  )
+X-CRM114-CacheID: sfid-20260121_065550_242128_A6894460 
+X-CRM114-Status: UNSURE (   9.33  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,58 +93,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add support for the USB PHY and DWC2 IP which is used by Canaan K230,
-and made relevant changes to the DTS.
+K230 SoC USB PHY requires configuring registers for control and
+configuration. Add USB phy bindings for K230 SoC.
 
-This series is based on the initial 100ask K230 DshanPi series [1] which
-is based on the clock and pinctrl series. Check the details in the link.
-
-Link: https://lore.kernel.org/all/20260115060801.16819-1-jiayu.riscv@isrc.iscas.ac.cn/ [1]
-
-Changes in v5:
-- Changed the year of Copyright to 2026.
-- Add blank line after the declaration of variables
-- Fix wrong alignment.
-- Link to v4: https://lore.kernel.org/all/20260120143243.71937-1-jiayu.riscv@isrc.iscas.ac.cn/
-
-Changes in v4:
-- Shrink reg length to match the address/size-cells in k230-usb-phy yaml.
-- Move all PHY instance creation and initialization from xlate to probe.
-- Modify xlate function to only perform index lookup for PHY instances.
-- Define all register base offsets macros at the top of file instead of
-  hard-coding magic numbers directly in probe.
-- Link to v2: https://lore.kernel.org/all/20260115064223.21926-1-jiayu.riscv@isrc.iscas.ac.cn/
-
-Changes in v3:
-- Please ignore v3.
-
-Changes in v2:
-- Fold the child into the parent in dtsi.
-- Define one usbphy with phy-cells=1.
-- Delete the clock of the usbphy as it is not needed.
-- Link to v1: https://lore.kernel.org/all/20251230023725.15966-1-jiayu.riscv@isrc.iscas.ac.cn/
-
-Jiayu Du (4):
-  dt-bindings: phy: Add Canaan K230 USB PHY
-  dt-bindings: usb: dwc2: Add support for Canaan K230 SoC
-  phy: usb: Add driver for Canaan K230 USB 2.0 PHY
-  riscv: dts: canaan: Add syscon and USB nodes for K230
-
- .../bindings/phy/canaan,k230-usb-phy.yaml     |  35 +++
- .../devicetree/bindings/usb/dwc2.yaml         |   3 +
- .../boot/dts/canaan/k230-canmv-dshanpi.dts    |  17 ++
- arch/riscv/boot/dts/canaan/k230.dtsi          |  35 +++
- drivers/phy/Kconfig                           |   1 +
- drivers/phy/Makefile                          |   1 +
- drivers/phy/canaan/Kconfig                    |  14 +
- drivers/phy/canaan/Makefile                   |   2 +
- drivers/phy/canaan/phy-k230-usb.c             | 284 ++++++++++++++++++
- 9 files changed, 392 insertions(+)
+Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
+Signed-off-by: Jiayu Du <jiayu.riscv@isrc.iscas.ac.cn>
+---
+ .../bindings/phy/canaan,k230-usb-phy.yaml     | 35 +++++++++++++++++++
+ 1 file changed, 35 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/phy/canaan,k230-usb-phy.yaml
- create mode 100644 drivers/phy/canaan/Kconfig
- create mode 100644 drivers/phy/canaan/Makefile
- create mode 100644 drivers/phy/canaan/phy-k230-usb.c
 
+diff --git a/Documentation/devicetree/bindings/phy/canaan,k230-usb-phy.yaml b/Documentation/devicetree/bindings/phy/canaan,k230-usb-phy.yaml
+new file mode 100644
+index 000000000000..b959b381c44c
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/canaan,k230-usb-phy.yaml
+@@ -0,0 +1,35 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/canaan,k230-usb-phy.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Canaan K230 USB2.0 PHY
++
++maintainers:
++  - Jiayu Du <jiayu.riscv@isrc.iscas.ac.cn>
++
++properties:
++  compatible:
++    const: canaan,k230-usb-phy
++
++  reg:
++    maxItems: 1
++
++  "#phy-cells":
++    const: 1
++
++required:
++  - compatible
++  - reg
++  - "#phy-cells"
++
++additionalProperties: false
++
++examples:
++  - |
++    usbphy: usb-phy@91585000 {
++        compatible = "canaan,k230-usb-phy";
++        reg = <0x91585000 0x400>;
++        #phy-cells = <1>;
++    };
 -- 
 2.52.0
 
