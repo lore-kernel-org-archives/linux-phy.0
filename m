@@ -4,95 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 50451C44503
-	for <linux-phy@archiver.kernel.org>; Wed, 21 Jan 2026 11:00:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 51D41C44503
+	for <linux-phy@archiver.kernel.org>; Wed, 21 Jan 2026 11:00:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JgnBf5mjTdfOFET/yU73OQuzQpG0jwvaR9FxwiweFe8=; b=qFAtPnd5aurvfX
-	dug3NCRYIZziVrBXSuGF2E/yh3uuEsFsP7h3eo9UJvT7F0PUyC0OxJhZEvVfA/6At2LlBDMgV2icb
-	m2qfRc3bSDVxBiZ/+71ryH/SRGm0BJu4T+Pk+t/tWLSTRVxno+ZYfIprcADHiTeB2a57K0F/fY0RD
-	joLApIeEwTSO+TO9zrTbMb6gjThLR4CmHHTemjtadWTvD88lCEKaP+Mi7pz9rHeEw708Y0zIE7p65
-	OqNOCF32crbHROwhxqXj1aamCIeeNAA+AwrHT5JSb3qWJVFeacYgwJ/pO0OJPvGMjFgXUiutpQZVH
-	PEgIc9le/I+IiFNXJgzQ==;
+	List-Owner; bh=G0atkyTOPKxEdwXVMBGxCxSS0ujrvXCCM+xecncSj2w=; b=S1s0KPRx+kb4In
+	0rNnwjJTjewEZi6Nu4+RJDiTOxs/MlF28is/alAJcwuwslK9sMtMgeU5h77mQoFebZ8qkWjuts0VK
+	A/dV+RPIPGjgwOa2EkO14n7Zq7BCVb1R9NWM4ug8nswmr7UBNZrzv38Fy1QxxR7Q+Be2qj64W5eiq
+	B2TKGTO9vXABmNVm1/4KoTeWOlG5bhLkrvIZVDTGej2yXJ2VW0iPp+u8y8vYWrLk2onJMhhl1Bxjl
+	4NHvotyHQoqpy4Szw3LKqUZSUjHGA6yRcPVb/UHI6l8l2k0wuZbqq7Qkkj+9hwxi+oH+NXED2a7YZ
+	WZ995e8wOIi8cLarrqpg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1viVwb-00000005JVI-37kp;
-	Wed, 21 Jan 2026 11:00:13 +0000
-Received: from mail-vs1-f41.google.com ([209.85.217.41])
+	id 1viVx7-00000005JXC-0CFS;
+	Wed, 21 Jan 2026 11:00:45 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1viVwY-00000005JUt-3gwR
+	id 1viVx3-00000005JWR-3Vt1
 	for linux-phy@lists.infradead.org;
-	Wed, 21 Jan 2026 11:00:12 +0000
-Received: by mail-vs1-f41.google.com with SMTP id ada2fe7eead31-5eb8f9be588so5580894137.3
-        for <linux-phy@lists.infradead.org>; Wed, 21 Jan 2026 03:00:10 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1768993209; x=1769598009;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=VSYJm8i9wWqRvGvRTZz6VIsl7/oMewZT8tw/+hAgWzw=;
-        b=e9n33yNCYhdoxtfxFjYs51yNKnViizrThUhVpObVZozRvDxQNC2pvDLS2xaQGcXYXD
-         Cbi0Zd7CqkB2JI06P99JxHclxIcxGACyvmwi1pyjRh5wtJ73LtH6wnANKZBT6SPJb2tl
-         OffhBk4hmoBPgfPRj1z4gyu8VnviyhyswTshPLmeggQ9+NeMMCGyf2hb//AbZ1Y6A4eR
-         wa2hz4uVf06wEqqnRkOqUWhBFUkzitxp1wXTLkrTgRALcyG5bu9hOmU6B6qviGc5y9Bo
-         SBApd+EiEX24adpYUGmurU6wlsicUvfwd8ZGuTH8Sg347odF0gWenEJPfPr/e1KcS+uR
-         Bb2Q==
-X-Forwarded-Encrypted: i=1; AJvYcCUVYwTWmtNOUNkZ7zNvZnOIQUlhFv/XmLQEXNBUVe4uON33/JB1vZbfn0MfDPLOXbsshvlix24TUlI=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwSgs+xxD8pYN7UcNT4iJSBsr1iZTdgFQpEk8K5C+wvOxsAf2J3
-	UYqFAVrkBwhDlTDF0wbQvn7Vq5Z1ps1ashj7qUg8soNOBx9aTZbIa8kExvm0wzcI
-X-Gm-Gg: AZuq6aK7PNeIzyKyVFfCoeA+DfEijjkVVdeYR0DZl3bTJd/ZxtzT1lKf6IZCq4dpwFt
-	IqHjP3HSH2JztIWsJpJpCR73Yp1MPe4iOCw+YMQWMqxQ72va/NUNKvFv0BUyLdh/IzijDtv5Glq
-	DEqf7wfk97w8ktzr1Mo7iBs8SEX/vD9oBSCb+leRjl/fKh5ce7ab5+g+12i7YPHPgxsiiERlEL3
-	B6H2BlmlWoJsBH7PYNrG1UzQaOEg75pNlLeZAbf+qmkp9Z0mC7e96Zlqn0bF9oqmMHZ4LvM4VL7
-	U9es60Ie9zFm7vXiYXJQexcO0cBJwAqdLSrtAvJHDyNXFfQK2jb7wOm2Od7NZtrAByRH/Nog5A9
-	F3PU2C0L8nCoidDV2J+z9zgWUNCEMOqOS+9MXVHChMlg8Rn/SZtn2SkMd93nkubGpjr6f348j2i
-	hmJD/TFtjdiGQuSxTtx2ffeeKFJVeT0sepP0xt7+fuBbVuj5fE
-X-Received: by 2002:a05:6102:6cf:b0:5ec:c528:4df8 with SMTP id ada2fe7eead31-5f1a7129a0bmr6126069137.28.1768993209131;
-        Wed, 21 Jan 2026 03:00:09 -0800 (PST)
-Received: from mail-ua1-f51.google.com (mail-ua1-f51.google.com. [209.85.222.51])
-        by smtp.gmail.com with ESMTPSA id ada2fe7eead31-5f1a694494asm5031580137.8.2026.01.21.03.00.04
-        for <linux-phy@lists.infradead.org>
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 21 Jan 2026 03:00:08 -0800 (PST)
-Received: by mail-ua1-f51.google.com with SMTP id a1e0cc1a2514c-93f56804894so4079024241.3
-        for <linux-phy@lists.infradead.org>; Wed, 21 Jan 2026 03:00:04 -0800 (PST)
-X-Forwarded-Encrypted: i=1; AJvYcCVGfVvpg3lgbNg79NLUmzdtNbhNQuhsBTbIvP1poKrRQWs+xgItreJz608/nuO/OCfRTereS8PEToM=@lists.infradead.org
-X-Received: by 2002:a05:6102:2ad6:b0:5ef:248b:d533 with SMTP id
- ada2fe7eead31-5f1a716fcbcmr6150752137.31.1768993204250; Wed, 21 Jan 2026
- 03:00:04 -0800 (PST)
+	Wed, 21 Jan 2026 11:00:43 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1768993236;
+	bh=CPqjiGgQY57li5aXt25BpNtAGFutGP2VOe84plwT8Eo=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=g8BT0PRTHGg2kixBPhMdHWcTZwQNGQh0wRQ2n1fI4CzGGuCXoibcIHd9XhepPyf64
+	 QXoL0OTfuj1fpnWNBN8vgUTI3G2zW2f0p6NWj5yIAoRjK0k4P2hJrloe8JDQE6U0dN
+	 6T3hzmTc/aYdCSHwaMeaqRV7OLAUdMQi4zqSAPrENWdoIWnRwc8ws893TKD7mkI1uh
+	 m4ZtTM4QmU1Y4WFAiYjvD2RL++SXUdj1O+LaA3hZKYuuxV7qEF+S1k9tVPSeLdxK01
+	 RplFVIodHnydB6udEqgf3itY7St4gQtQ7JKR3fQC+Kd0CvU/O41R/C2g+XiY6eECgn
+	 IEfQ9UL4VzOhw==
+Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: kholk11)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id DEF4217E0DB7;
+	Wed, 21 Jan 2026 12:00:35 +0100 (CET)
+Message-ID: <de08d697-4202-499c-9784-2bb8d3d614b6@collabora.com>
+Date: Wed, 21 Jan 2026 12:00:35 +0100
 MIME-Version: 1.0
-References: <20260121-rz-sdio-mux-v6-0-38aa39527928@solid-run.com> <20260121-rz-sdio-mux-v6-3-38aa39527928@solid-run.com>
-In-Reply-To: <20260121-rz-sdio-mux-v6-3-38aa39527928@solid-run.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Wed, 21 Jan 2026 11:59:52 +0100
-X-Gmail-Original-Message-ID: <CAMuHMdX_rKgfusHP5qVny8OZufU6VAiA6sqg1LP3T2jikSz7yQ@mail.gmail.com>
-X-Gm-Features: AZwV_QifTISU05sQ0lYySqx5XyPjAzUqa1H8fmOUOfLhWhGN7rzCzfM2UGq26-s
-Message-ID: <CAMuHMdX_rKgfusHP5qVny8OZufU6VAiA6sqg1LP3T2jikSz7yQ@mail.gmail.com>
-Subject: Re: [PATCH v6 3/7] mux: add help text for MULTIPLEXER config option
-To: Josua Mayer <josua@solid-run.com>
-Cc: Marc Kleine-Budde <mkl@pengutronix.de>, Vincent Mailhol <mailhol@kernel.org>, 
-	Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
-	Peter Rosin <peda@axentia.se>, Aaro Koskinen <aaro.koskinen@iki.fi>, 
-	Andreas Kemnade <andreas@kemnade.info>, Kevin Hilman <khilman@baylibre.com>, 
-	Roger Quadros <rogerq@kernel.org>, Tony Lindgren <tony@atomide.com>, 
-	Janusz Krzysztofik <jmkrzyszt@gmail.com>, Vignesh R <vigneshr@ti.com>, 
-	Andi Shyti <andi.shyti@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>, 
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Geert Uytterhoeven <geert+renesas@glider.be>, Magnus Damm <magnus.damm@gmail.com>, 
-	Wolfram Sang <wsa+renesas@sang-engineering.com>, 
-	Yazan Shhady <yazan.shhady@solid-run.com>, Jon Nettleton <jon@solid-run.com>, 
-	Mikhail Anikin <mikhail.anikin@solid-run.com>, linux-can@vger.kernel.org, 
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	linux-omap@vger.kernel.org, linux-i2c@vger.kernel.org, 
-	linux-mmc@vger.kernel.org, devicetree@vger.kernel.org, 
-	linux-renesas-soc@vger.kernel.org
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v8 00/10] SPMI: Implement sub-devices and migrate drivers
+To: jic23@kernel.org, sboyd@kernel.org
+Cc: dlechner@baylibre.com, nuno.sa@analog.com, andy@kernel.org,
+ arnd@arndb.de, gregkh@linuxfoundation.org, srini@kernel.org,
+ vkoul@kernel.org, neil.armstrong@linaro.org, sre@kernel.org,
+ krzk@kernel.org, dmitry.baryshkov@oss.qualcomm.com, quic_wcheng@quicinc.com,
+ melody.olvera@oss.qualcomm.com, quic_nsekar@quicinc.com,
+ ivo.ivanov.ivanov1@gmail.com, abelvesa@kernel.org, luca.weiss@fairphone.com,
+ konrad.dybcio@oss.qualcomm.com, mitltlatltl@gmail.com,
+ krishna.kurapati@oss.qualcomm.com, linux-arm-msm@vger.kernel.org,
+ linux-iio@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-pm@vger.kernel.org, kernel@collabora.com
+References: <20260114092742.13231-1-angelogioacchino.delregno@collabora.com>
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Content-Language: en-US
+In-Reply-To: <20260114092742.13231-1-angelogioacchino.delregno@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260121_030010_929979_809E1410 
-X-CRM114-Status: GOOD (  21.30  )
+X-CRM114-CacheID: sfid-20260121_030042_044823_90FDA1D8 
+X-CRM114-Status: GOOD (  38.69  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,72 +78,178 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Josua,
+Il 14/01/26 10:27, AngeloGioacchino Del Regno ha scritto:
+> Changes in v8:
 
-On Wed, 21 Jan 2026 at 11:02, Josua Mayer <josua@solid-run.com> wrote:
-> Add help text for CONFIG_MULTIPLEXER to allow enabling this option
-> through the kernel configuration without explicit "select" driver
-> dependencies.
->
-> Signed-off-by: Josua Mayer <josua@solid-run.com>
+With this series being finally fully reviewed and having lots of acks, and
+since I think that the main part of this is in SPMI subsystem rather than
+others....
 
-Thanks for your patch!
+....Stephen or Jonathan, can you please pick at least the SPMI code so that
+it goes in for this merge window and doesn't get forgotten again?
 
-> --- a/drivers/mux/Kconfig
-> +++ b/drivers/mux/Kconfig
-> @@ -5,6 +5,14 @@
->
->  config MULTIPLEXER
->         tristate
-> +       help
-> +         Generic Multiplexer Support.
-> +
-> +         This framework is designed to abstract multiplexer handling for
-> +         devices via various GPIO-, MMIO/Regmap or specific multiplexer
-> +         controller chips.
-> +
-> +         If unsure, say no.
->
->  menu "Multiplexer drivers"
->         depends on MULTIPLEXER
->
+That also makes it easier for the other maintainers who didn't give an ack (and
+that don't want their subsystem patches to go through SPMI) to apply the patches
+in the next merge window, IMO.
 
-Unfortunately it doesn't work like that. As the tristate has no prompt
-specified, the user will never be asked about this.
-You should use something like below:
+Thanks,
+Angelo
 
---- a/drivers/mux/Kconfig
-+++ b/drivers/mux/Kconfig
-@@ -4,10 +4,8 @@
- #
 
- config MULTIPLEXER
--       tristate
-+       tristate "Generic Multiplexer Support" if COMPILE_TEST
-        help
--         Generic Multiplexer Support.
--
-          This framework is designed to abstract multiplexer handling for
-          devices via various GPIO-, MMIO/Regmap or specific multiplexer
-          controller chips.
+>   - Renamed *res to *sub_sdev in devm_spmi_subdevice_remove() (Andy)
+>   - Changed kerneldoc wording to "error pointer" for function
+>     spmi_subdevice_alloc_and_add() (Andy)
+>   - Shuffled around some assignments in spmi_subdevice_alloc_and_add() (Andy)
+>   - Used device_property_read_u32() instead of of_property_read_u32()
+>     in all of the migrated drivers (Andy)
+>   - Changed .max_register field in all of the migrated drivers from
+>     0x100 to 0xff (Andy)
+>   - Kept `sta1` declaration in reversed xmas tree order in function
+>     iadc_poll_wait_eoc() of qcom-spmi-iadc.c (Andy)
+> 
+> Changes in v7:
+>   - Added commit to cleanup redundant dev_name() in the pre-existing
+>     spmi_device_add() function
+>   - Added commit removing unneeded goto and improving spmi_device_add()
+>     readability by returning error in error path, and explicitly zero
+>     for success at the end.
+> 
+> Changes in v6:
+>   - Added commit to convert spmi.c to %pe error format and used
+>     %pe error format in spmi_subdevice code as wanted by Uwe Kleine-Konig
+> 
+> Changes in v5:
+>   - Changed dev_err to dev_err_probe in qcom-spmi-sdam (and done
+>     that even though I disagree - because I wanted this series to
+>     *exclusively* introduce the minimum required changes to
+>     migrate to the new API, but okay, whatever....!);
+>   - Added missing REGMAP dependency in Kconfig for qcom-spmi-sdam,
+>     phy-qcom-eusb2-repeater and qcom-coincell to resolve build
+>     issues when the already allowed COMPILE_TEST is enabled
+>     as pointed out by the test robot's randconfig builds.
+> 
+> Changes in v4:
+>   - Added selection of REGMAP_SPMI in Kconfig for qcom-coincell and
+>     for phy-qcom-eusb2-repeater to resolve undefined references when
+>     compiled with some randconfig
+> 
+> Changes in v3:
+>   - Fixed importing "SPMI" namespace in spmi-devres.c
+>   - Removed all instances of defensive programming, as pointed out by
+>     jic23 and Sebastian
+>   - Removed explicit casting as pointed out by jic23
+>   - Moved ida_free call to spmi_subdev_release() and simplified error
+>     handling in spmi_subdevice_alloc_and_add() as pointed out by jic23
+> 
+> Changes in v2:
+>   - Fixed missing `sparent` initialization in phy-qcom-eusb2-repeater
+>   - Changed val_bits to 8 in all Qualcomm drivers to ensure
+>     compatibility as suggested by Casey
+>   - Added struct device pointer in all conversion commits as suggested
+>     by Andy
+>   - Exported newly introduced functions with a new "SPMI" namespace
+>     and imported the same in all converted drivers as suggested by Andy
+>   - Added missing error checking for dev_set_name() call in spmi.c
+>     as suggested by Andy
+>   - Added comma to last entry of regmap_config as suggested by Andy
+> 
+> While adding support for newer MediaTek platforms, featuring complex
+> SPMI PMICs, I've seen that those SPMI-connected chips are internally
+> divided in various IP blocks, reachable in specific contiguous address
+> ranges... more or less like a MMIO, but over a slow SPMI bus instead.
+> 
+> I recalled that Qualcomm had something similar... and upon checking a
+> couple of devicetrees, yeah - indeed it's the same over there.
+> 
+> What I've seen then is a common pattern of reading the "reg" property
+> from devicetree in a struct member and then either
+>   A. Wrapping regmap_{read/write/etc}() calls in a function that adds
+>      the register base with "base + ..register", like it's done with
+>      writel()/readl() calls; or
+>   B. Doing the same as A. but without wrapper functions.
+> 
+> Even though that works just fine, in my opinion it's wrong.
+> 
+> The regmap API is way more complex than MMIO-only readl()/writel()
+> functions for multiple reasons (including supporting multiple busses
+> like SPMI, of course) - but everyone seemed to forget that regmap
+> can manage register base offsets transparently and automatically in
+> its API functions by simply adding a `reg_base` to the regmap_config
+> structure, which is used for initializing a `struct regmap`.
+> 
+> So, here we go: this series implements the software concept of an SPMI
+> Sub-Device (which, well, also reflects how Qualcomm and MediaTek's
+> actual hardware is laid out anyway).
+> 
+>                 SPMI Controller
+>                       |                ______
+>                       |               /       Sub-Device 1
+>                       V              /
+>                SPMI Device (PMIC) ----------- Sub-Device 2
+>                                      \
+>                                       \______ Sub-Device 3
+> 
+> As per this implementation, an SPMI Sub-Device can be allocated/created
+> and added in any driver that implements a... well.. subdevice (!) with
+> an SPMI "main" device as its parent: this allows to create and finally
+> to correctly configure a regmap that is specific to the sub-device,
+> operating on its specific address range and reading, and writing, to
+> its registers with the regmap API taking care of adding the base address
+> of a sub-device's registers as per regmap API design.
+> 
+> All of the SPMI Sub-Devices are therefore added as children of the SPMI
+> Device (usually a PMIC), as communication depends on the PMIC's SPMI bus
+> to be available (and the PMIC to be up and running, of course).
+> 
+> Summarizing the dependency chain (which is obvious to whoever knows what
+> is going on with Qualcomm and/or MediaTek SPMI PMICs):
+>      "SPMI Sub-Device x...N" are children "SPMI Device"
+>      "SPMI Device" is a child of "SPMI Controller"
+> 
+> (that was just another way to say the same thing as the graph above anyway).
+> 
+> Along with the new SPMI Sub-Device registration functions, I have also
+> performed a conversion of some Qualcomm SPMI drivers and only where the
+> actual conversion was trivial.
+> 
+> I haven't included any conversion of more complex Qualcomm SPMI drivers
+> because I don't have the required bandwidth to do so (and besides, I think,
+> but haven't exactly verified, that some of those require SoCs that I don't
+> have for testing anyway).
+> 
+> AngeloGioacchino Del Regno (10):
+>    spmi: Remove redundant dev_name() print in spmi_device_add()
+>    spmi: Print error status with %pe format
+>    spmi: Remove unneeded goto in spmi_device_add() error path
+>    spmi: Implement spmi_subdevice_alloc_and_add() and devm variant
+>    nvmem: qcom-spmi-sdam: Migrate to devm_spmi_subdevice_alloc_and_add()
+>    power: reset: qcom-pon: Migrate to devm_spmi_subdevice_alloc_and_add()
+>    phy: qualcomm: eusb2-repeater: Migrate to
+>      devm_spmi_subdevice_alloc_and_add()
+>    misc: qcom-coincell: Migrate to devm_spmi_subdevice_alloc_and_add()
+>    iio: adc: qcom-spmi-iadc: Migrate to
+>      devm_spmi_subdevice_alloc_and_add()
+>    iio: adc: qcom-spmi-iadc: Remove regmap R/W wrapper functions
+> 
+>   drivers/iio/adc/qcom-spmi-iadc.c              | 109 ++++++++----------
+>   drivers/misc/Kconfig                          |   2 +
+>   drivers/misc/qcom-coincell.c                  |  38 ++++--
+>   drivers/nvmem/Kconfig                         |   1 +
+>   drivers/nvmem/qcom-spmi-sdam.c                |  38 ++++--
+>   drivers/phy/qualcomm/Kconfig                  |   2 +
+>   .../phy/qualcomm/phy-qcom-eusb2-repeater.c    |  55 +++++----
+>   drivers/power/reset/qcom-pon.c                |  33 ++++--
+>   drivers/spmi/spmi-devres.c                    |  24 ++++
+>   drivers/spmi/spmi.c                           |  95 +++++++++++++--
+>   include/linux/spmi.h                          |  16 +++
+>   11 files changed, 290 insertions(+), 123 deletions(-)
+> 
 
-Sorry for not noticing before.
-
-Gr{oetje,eeting}s,
-
-                        Geert
-
--- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
 
 -- 
 linux-phy mailing list
