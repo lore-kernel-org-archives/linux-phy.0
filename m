@@ -4,102 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0FDDCC4450D
-	for <linux-phy@archiver.kernel.org>; Wed, 21 Jan 2026 12:13:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2423BC4453B
+	for <linux-phy@archiver.kernel.org>; Wed, 21 Jan 2026 13:48:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=toCOAvdBF02K6ZAOK4aPT4BT5Jn3412yiUrhPqvKCZc=; b=w/JfhtnFkuJmCm
-	Au4g6aflOoQk0x+EqL1mPWRD96dYNMEFWu3qopwom6USBw4JqoGlexTsrHDbc4Xo4VdAIkmLb4/vl
-	xigKEskHp61TYCawAvhrImjKpau5MXxm8y0hQIm3AHuU/4PqBZ21v+3sclx775/IPzvIx0WUruxh1
-	s/qXLA7rKpfttoQ0h/0/XeZ//Ozo3gjl/M9TINEb37HaPu+29aQViAvMald0KYIu4qBZwtIDKTAbT
-	in3xHclt5SFUaOB2bSMjeDcm966yCbuxbWFqbQPTQs5WK25c8SikRL3q7MBfPQZpYxPejOgZo33gj
-	9qg6ehHyrYcYeEyB20dA==;
+	List-Owner; bh=a8V/R66875UIAEoiB3b8fipe2QVqXOX95qES5AzU44w=; b=V4n50Q5j2O1+c7
+	NUXb/lHHvuyvCnhKmUnO47w5jqJ15MRCez7eTQ0pcWsKZRj0SXI0CdRKtXWKES6fjBc3hCwJZZloj
+	PbcHpbid9snOssviidH4vfjTWxlbvEEro6aicf+vHOvPeZ5yscmRq9IV/71nsMwHHBB/EGKhS+y0I
+	kS7k8yVzxABaJfJOaZm6I6h/eWvujy+px0ghfpPzR4MT8glLREA5K6sn4+CToC6JGNl5M9pBlpuwc
+	l7oYci8U15IS1slHw98br/g8cumuedifFhHrTReqGQoTsC0UjwfSs935X3I7l4O5QqNB8xxAd+wQQ
+	igmYy+KLdJuPptAyH1eg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1viX5Q-00000005OgL-2hm5;
-	Wed, 21 Jan 2026 12:13:24 +0000
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
+	id 1viYZL-00000005Wfb-0Aof;
+	Wed, 21 Jan 2026 13:48:23 +0000
+Received: from mail-ua1-f52.google.com ([209.85.222.52])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1viX5N-00000005OfX-1Grw
+	id 1viYZF-00000005WYx-1pw6
 	for linux-phy@lists.infradead.org;
-	Wed, 21 Jan 2026 12:13:23 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1768997597;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=pR1+T8ar2wUy/+ZR9alOHlg05/eYLbiG2l/Es9gVEDs=;
-	b=UTI88+isirTMk2r8imUMZpOm+6uR1Gzdy+DSVXuZOUt7dpI0GwmWe4ix8MpWLcGdpXP0MA
-	1wN/mnp5xcLsbTpOEMc2ryu44CrOlvXbc6EVgwz+A0ja0AUNPTUnBtlyEhD1UR6NomvJiM
-	5KeilWZOhbykPpTGGU4QlusQVf9JuM8=
-Received: from mail-qv1-f70.google.com (mail-qv1-f70.google.com
- [209.85.219.70]) by relay.mimecast.com with ESMTP with STARTTLS
- (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
- us-mta-659-TNgP72VsP_KuP-6stM1nAw-1; Wed, 21 Jan 2026 07:13:16 -0500
-X-MC-Unique: TNgP72VsP_KuP-6stM1nAw-1
-X-Mimecast-MFC-AGG-ID: TNgP72VsP_KuP-6stM1nAw_1768997595
-Received: by mail-qv1-f70.google.com with SMTP id 6a1803df08f44-89471437f64so23560656d6.3
-        for <linux-phy@lists.infradead.org>; Wed, 21 Jan 2026 04:13:16 -0800 (PST)
+	Wed, 21 Jan 2026 13:48:19 +0000
+Received: by mail-ua1-f52.google.com with SMTP id a1e0cc1a2514c-9480078b2fbso583402241.1
+        for <linux-phy@lists.infradead.org>; Wed, 21 Jan 2026 05:48:16 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1768997595; x=1769602395;
-        h=user-agent:in-reply-to:content-disposition:mime-version:references
-         :message-id:subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=pR1+T8ar2wUy/+ZR9alOHlg05/eYLbiG2l/Es9gVEDs=;
-        b=VLAonSA7LUedY3JsdUb2O9i9Cx/TcD1SaHJuUjy884pJ9tGL9dJPAdcGEjJVobt1Cm
-         +aM8ckr4I9h7ufmYoI+be/R8zX8Wk3OmdJ4fxZvKQe47+ydJONXLsNO3OL5ZH/+4d7al
-         sYEez2JqQZV/sqnj3TqCbwUOHr3vOKU+L/sN/h44lBHSIzWInsyHyxTubS50Ja4p31Y1
-         xKLq1S5X7oqK0SlWvFSaJD5gaetAs09mCDHh/fmUqXFidQheyfaFmtLtTOesy3lePU4y
-         G+L3ZYuNjcpTpZT1umVL4IXoXkTFD+4FdKAVEyuByP2pABzGrMs0CyHckj0fgJydCBvl
-         ftoA==
-X-Forwarded-Encrypted: i=1; AJvYcCU8H1m+U3+Edo4l4o8gLu9T8yp+hvfbm3U4jlgd9xHdpeycKvNEJQvqMA9fTqnFTqKrSuGfvK2zQC0=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yyg7p39n58Dg5rDUs20nGnMoJQ1GQutp34MOgzFI3Oo0pMzHNnr
-	aCAVOKBzRBuFb0E4rQfuO+bZmbqyhNGHnZo+HruoGtocnYI9uYFcSKUGA8VaFZe+E5scXgRFvy5
-	N0AUmhqWwXPrQfcCYUAb1uA81kNla3pJuHq1pH+CB4c8N9qQLW7AYPUzUl9SxiQjjEFs=
-X-Gm-Gg: AZuq6aIaQg0NMU958b5e4p4OqwSFs8N15aM/lioDIINjbT8csrRJSB+/WdAMoHUZ5EK
-	ID4IxtexOntUi1VWCXqPmLoNfA7MlBXrO/v9MMPoLKYswqY9oIPAEpdNXg+k6NoH7rk+XNo4XGy
-	OGCv0sSr5+cCAMtJg05+ZHEEmE4XPuyHoozFBBO4jxMG1fuNhtQzf3MeswfjElQcdBdxnzB36CO
-	VdY6ti7aaR7XJ4gbk1QmrsgnTRsm+n+VgX8kgDy5XwvavsqSSwTGBCsZ3zmoXO1z+zcZoEAtbpC
-	sNjajWCkWCzkdmeBCeT39cuHQmhignsn1m0/5FtPnujH5UoPaZ7qF+0tceBj1iG2sQ0MLJrGljB
-	Vuv/YkcawirmKlmxpLRdQ4QpPh04/bkFJFKQ5a7yXDbUY
-X-Received: by 2002:a05:6214:5181:b0:888:4938:49e5 with SMTP id 6a1803df08f44-89463ec1bbcmr67876376d6.69.1768997595492;
-        Wed, 21 Jan 2026 04:13:15 -0800 (PST)
-X-Received: by 2002:a05:6214:5181:b0:888:4938:49e5 with SMTP id 6a1803df08f44-89463ec1bbcmr67876096d6.69.1768997595126;
-        Wed, 21 Jan 2026 04:13:15 -0800 (PST)
-Received: from redhat.com (c-73-183-52-120.hsd1.pa.comcast.net. [73.183.52.120])
-        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-8942e60428dsm133105716d6.22.2026.01.21.04.13.14
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 21 Jan 2026 04:13:14 -0800 (PST)
-Date: Wed, 21 Jan 2026 07:13:13 -0500
-From: Brian Masney <bmasney@redhat.com>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>, linux-clk@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	linux-phy@lists.infradead.org
-Subject: Re: [PATCH 25/27] phy: ti: phy-j721e-wiz: convert from
- divider_round_rate() to divider_determine_rate()
-Message-ID: <aXDC2ZVzLU6nUbPb@redhat.com>
-References: <20260108-clk-divider-round-rate-v1-0-535a3ed73bf3@redhat.com>
- <20260108-clk-divider-round-rate-v1-25-535a3ed73bf3@redhat.com>
- <aWelbtaZjS4SZGQO@vaman>
- <aWj3LPq37Dr9OLU6@redhat.com>
- <aXCGlW4lgIImN8Eb@vaman>
+        d=1e100.net; s=20230601; t=1769003295; x=1769608095;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=FDhI8tIlTzFkDL9hKs3tIMe24M9SzYYyQ7hRvEJ46wo=;
+        b=mNxNO9SaLdjWh9GHE/P8prDPBBUZ05ROVRo8gh0IM10AeT4JyLvswpvqizTYYqiwfg
+         0UhMRjSVbrQTKBJe9JJdXOQgwugUoHdkdsSfdOFelDiV8nBWRlnz3LyiJCHz62edIY+0
+         Sm3qEEbw7NCjXFovWUauwkwdWX/+kNoFnKuaXe0bRYtEEe9P7EVKPuqIcxAkSHGpe3L9
+         A3p4KTwa3hHmJEaKI6aO5mG80uerAaNBzaPek6IXVVyXcwYQwOqNWjcpnlIqG4GLVX1K
+         9WwQFi/xdi5eYZAkhiTA8HZlS1ttIzsSYc67cYCeKcgjNXbMJOGg+c16VekcscTTjopD
+         R7+Q==
+X-Forwarded-Encrypted: i=1; AJvYcCXmHnxNZff3ikxecWVmTF00piYTwyncXPZKRBNxj9jfPrqGksIL2kCUEuZUrtb3WG9kxujVNMAuj9c=@lists.infradead.org
+X-Gm-Message-State: AOJu0YweBpiCJlMmQMfrT1gH6Z1n17voVHYZJAicyO+H0VDzMu8LXI81
+	kOhfSpGd29H45S4xCj7xHxjgfxmnkHJMaZRAbfeHEKX/e70KzQvtycYIaYNwZS7z
+X-Gm-Gg: AZuq6aK3pDCD2yljhpFGTbBDe95Z+gAjxP3Ri3KgbIAcfb8ZTtpl+47hUv1FYD1K6e4
+	dAcdRicaBOXz4wFpdWtF1u/rp7Ze+m++WXjJNvIHpVkTwYT0T6mrWCSl9qjjONLCkyA4X8ejVYh
+	ao3EquO8AolDdRqXaLxmzbXaIOJ3AYcTXE+6xqYRS4110TmaNjH8XpR6qtmNRUtSXOPiVjeuSTp
+	9L5HonzCe+bDtF6/rVIPYdQY0udPKJbNF8aWhw+zDNVE/4WOdhEVbA7Yw2tLO6QnafWr6LLdtpb
+	AAa+pNEMj3y3/7ChskiEfAPz1iMUyzPrkyUDFfhY3wNqydMlzuENNDYWGv/NXqaB+caCwtLG7Vp
+	LegqA0SfBv/l/UyXWOXGMnvGtR/4W8RLeGSpsB53HFJSKPXauEsNPFG/RS6SbEflD8sIwAMVWWK
+	fYwTqn+ZiYdH4GsMjrh5HFSquPlpEeANzSs7MExBirOPxJKdJ1
+X-Received: by 2002:a67:ff16:0:b0:5f5:259b:66e1 with SMTP id ada2fe7eead31-5f5259b6a52mr336717137.3.1769003294951;
+        Wed, 21 Jan 2026 05:48:14 -0800 (PST)
+Received: from mail-ua1-f44.google.com (mail-ua1-f44.google.com. [209.85.222.44])
+        by smtp.gmail.com with ESMTPSA id a1e0cc1a2514c-947d03c29d7sm4937816241.2.2026.01.21.05.48.13
+        for <linux-phy@lists.infradead.org>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 21 Jan 2026 05:48:13 -0800 (PST)
+Received: by mail-ua1-f44.google.com with SMTP id a1e0cc1a2514c-93f523bba52so534675241.1
+        for <linux-phy@lists.infradead.org>; Wed, 21 Jan 2026 05:48:13 -0800 (PST)
+X-Forwarded-Encrypted: i=1; AJvYcCWiT4SDKCAdOS4THMyN34KnkMCawxgvALUd7MK/KeO5tyOWznwOwfXAeUYcV7ULnIMru4ibmV0hsiM=@lists.infradead.org
+X-Received: by 2002:a05:6102:d92:b0:5ed:ab0:e5d1 with SMTP id
+ ada2fe7eead31-5f192539f6amr7680722137.15.1769003293334; Wed, 21 Jan 2026
+ 05:48:13 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <aXCGlW4lgIImN8Eb@vaman>
-User-Agent: Mutt/2.2.14 (2025-02-20)
-X-Mimecast-Spam-Score: 0
-X-Mimecast-MFC-PROC-ID: wuMc1wI2KJP4Wtaoj8Dp_fYpLwbuIoAsJK6u4jXsVMU_1768997595
-X-Mimecast-Originator: redhat.com
-Content-Disposition: inline
+References: <20260118135038.8033-1-marek.vasut+renesas@mailbox.org> <20260118135038.8033-10-marek.vasut+renesas@mailbox.org>
+In-Reply-To: <20260118135038.8033-10-marek.vasut+renesas@mailbox.org>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Wed, 21 Jan 2026 14:48:02 +0100
+X-Gmail-Original-Message-ID: <CAMuHMdWfkHMQFvUzaHpso-fMFAS5u8ABHpEA9ZXq1fxcR-oN6Q@mail.gmail.com>
+X-Gm-Features: AZwV_Qi-WLBK0O_q5kA0yh25XZR3hcQUNirELFZFoxr2VQqkUKi0-PPk2Bs3v1s
+Message-ID: <CAMuHMdWfkHMQFvUzaHpso-fMFAS5u8ABHpEA9ZXq1fxcR-oN6Q@mail.gmail.com>
+Subject: Re: [PATCH v2 9/9] arm64: dts: renesas: ebisu: Describe PCIe/USB3.0
+ clock generator
+To: Marek Vasut <marek.vasut+renesas@mailbox.org>
+Cc: linux-arm-kernel@lists.infradead.org, Conor Dooley <conor+dt@kernel.org>, 
+	Geert Uytterhoeven <geert+renesas@glider.be>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+	Magnus Damm <magnus.damm@gmail.com>, Neil Armstrong <neil.armstrong@linaro.org>, 
+	Rob Herring <robh@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
+	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, devicetree@vger.kernel.org, 
+	linux-phy@lists.infradead.org, linux-renesas-soc@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260121_041321_444329_2BAC1CFB 
-X-CRM114-Status: GOOD (  26.52  )
+X-CRM114-CacheID: sfid-20260121_054817_511152_174874B2 
+X-CRM114-Status: GOOD (  24.48  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -116,57 +100,108 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jan 21, 2026 at 01:26:05PM +0530, Vinod Koul wrote:
-> On 15-01-26, 09:18, Brian Masney wrote:
-> > Hi Vinod,
-> > 
-> > On Wed, Jan 14, 2026 at 07:47:18PM +0530, Vinod Koul wrote:
-> > > On 08-01-26, 16:16, Brian Masney wrote:
-> > > > The divider_round_rate() function is now deprecated, so let's migrate
-> > > > to divider_determine_rate() instead so that this deprecated API can be
-> > > > removed.
-> > > > 
-> > > > Note that when the main function itself was migrated to use
-> > > > determine_rate, this was mistakenly converted to:
-> > > > 
-> > > >     req->rate = divider_round_rate(...)
-> > > > 
-> > > > This is invalid in the case when an error occurs since it can set the
-> > > > rate to a negative value.
-> > > 
-> > > Acked-by: Vinod Koul <vkoul@kernel.org>
-> > 
-> > Thanks for the Acked-by.
-> > 
-> > However, this patch depends on this other series of mine that's merged
-> > into your phy tree:
-> 
-> Should I pick this one then..? If there are no other dependencies...
+Hi Marek,
 
-Yes, this patch stands on it's own, and it would be great if you could
-pick up this patch in your tree this dev cycle.
+On Sun, 18 Jan 2026 at 14:51, Marek Vasut
+<marek.vasut+renesas@mailbox.org> wrote:
+> Describe the 9FGV0841 PCIe and USB3.0 clock generator present on Ebisu
+> board. The clock generator supplies 100 MHz differential clock for both
+> PCIe slot and BT/WLAN expansion port, as well as for the USB 3.0 PHY.
+>
+> This configuration is valid for SW49 in OFF position, which means the
+> PCIe signals are routed to the PCIe slot and U11 9FGV0841 PCIe clock
+> generator output 3 supplies clock to the PCIe slot.
+>
+> In case the SW49 is set to ON position, which means the PCIe signals
+> are routed to the EX BT/WLAN expansion port, and U11 9FGV0841 PCIe
+> clock generator output 4 supplies clock to the port and &pciec0_rp
+> clocks should be changed to "clocks = <&pcie_usb_clk 4>;". Once the
+> BT/WLAN port is tested, this can be implemented using a DTO. Until
+> then, assume SW49 is set to OFF position.
+>
+> Signed-off-by: Marek Vasut <marek.vasut+renesas@mailbox.org>
 
-Thanks,
+Thanks for your patch!
 
-Brian
+> --- a/arch/arm64/boot/dts/renesas/ebisu.dtsi
+> +++ b/arch/arm64/boot/dts/renesas/ebisu.dtsi
+> @@ -53,6 +53,12 @@ backlight: backlight {
+>                 power-supply = <&reg_12p0v>;
+>         };
+>
+> +       pcie_usb_refclk: clk-x7 {
+> +               compatible = "fixed-clock";
+> +               #clock-cells = <0>;
+> +               clock-frequency = <25000000>;
+> +       };
+> +
+>         cvbs-in {
+>                 compatible = "composite-video-connector";
+>                 label = "CVBS IN";
+> @@ -439,6 +445,13 @@ adv7511_out: endpoint {
+>                 };
+>         };
+>
+> +       pcie_usb_clk: clk@68 {
+> +               compatible = "renesas,9fgv0841";
+> +               reg = <0x68>;
+> +               clocks = <&pcie_usb_refclk>;
+> +               #clock-cells = <1>;
+> +       };
 
+During boot, the rs9 prints a warning:
 
-> > https://lore.kernel.org/linux-clk/176661322399.4169.14248756511703978007@lazor/
-> > 
-> > Stephen asked for an Acked-by for that series or an immutable branch.
-> > 
-> > This will allow us to remove round_rate from the clk core.
-> > 
-> > I also have a small series to post that's dependent on all of this that
-> > lets us get rid of the noop determine_rate implementations that only
-> > 'return 0'. I haven't posted that because of the dependencies.
-> > 
-> > Brian
-> 
-> -- 
-> ~Vinod
-> 
+    clk-renesas-pcie-9series 0-0068: No cache defaults, reading back from HW
 
+which probably shouldn't be printed at the warning level?
+
+> +
+>         video-receiver@70 {
+>                 compatible = "adi,adv7482";
+>                 reg = <0x70>;
+
+> @@ -871,7 +902,19 @@ &usb2_phy0 {
+>         status = "okay";
+>  };
+>
+> +&usb3_phy0 {
+> +       clocks = <&pcie_usb_clk 6>;
+> +       status = "okay";
+> +};
+
+This does not work, probing fails with:
+
+    usb_phy_generic usb-phy: dummy supplies not allowed for exclusive
+requests (id=vbus)
+
+Adding a fixed regulator that serves as vbus-supply like in commit
+fec2d8fcdedaeeb0 ("arm64: dts: freescale: imx93-phyboard-nash: Add USB
+vbus regulators") fixes that issue (and my USB3.0 FLASH driver is
+detected, yeah!), but a more accurate description would be better.
+
+> +
+> +&usb3s0_clk {
+> +       clock-frequency = <100000000>;
+> +       status = "disabled";
+> +};
+> +
+>  &usb3_peri0 {
+> +       phys = <&usb3_phy0>;
+> +       phy-names = "usb";
+>         companion = <&xhci0>;
+>         status = "okay";
+>  };
+
+Gr{oetje,eeting}s,
+
+                        Geert
+
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 -- 
 linux-phy mailing list
