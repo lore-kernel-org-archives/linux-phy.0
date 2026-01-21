@@ -4,62 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D78ED262B2
-	for <linux-phy@archiver.kernel.org>; Wed, 21 Jan 2026 07:56:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E1FBAC44502
+	for <linux-phy@archiver.kernel.org>; Wed, 21 Jan 2026 08:52:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gWthZsDZy4SHfjbNbTAMjNUGdnsAnCRu9i3Hqbi8YX0=; b=Y+A4/j7drA/Y1Q
-	FqkZZPbOZ6pAzCe7tpuHE8wMhukUbA3ej3lnW459iinxpDC5UxhZkSyiefhGBHtBdEAeL7zwEJ6cN
-	xX6SipdaGzVsEF45lXH5JE2EoZ+nfHNCFf2AWln59QbJoK37tIrg5+2jBmvmsPzXuubEPZsulo89q
-	d9p0zna5V2ThszTptOgvvQWhS/qJEutyllOMwqdgwcApHX2GKNT7ccSEvxhM0kF3R4guHVvJJoreP
-	CP9hWv5NFYccHFPCcxRn419F7zGaOxSegDRna4GIOblZdIOltRM0MpP04/a0satNBgCKYhcimROQu
-	NywyqCcV3HyssLtA46Ww==;
+	List-Owner; bh=QpB3u1M0NCYCJHCFpaJ4+aghP3GVSM237EbilVhhgT0=; b=DW0mFa4gwd8txG
+	Co6sbJHZ96L9vwRGxw6k02JIl7wnm/GK77FMJ119qLR/MqGVRdteLs8P2VB3mKQOVQa0vUsYrsIGB
+	SiamW8/D4X6RGO4uvSt8Aa1V1uuV1Ad6bbw1b5Ew/7Qa9jUOWNxF//QxgRaKINOLWt3jOnFYtP0Qs
+	j5KVdob97B2RNqSYm/lAjPWoYqzf+S2FThy6rTGoRzD8pY+j8prZVbg2mA9rYsIN1HqJir+RzOBKp
+	RH7fxBQ0/zbMJW1hcURTsSFQTsSiJe5I9OneWobOV71lkqxZVCScgIbJw2kXEjnFpw53jorWkYaj3
+	Spue9REYyo3JXOEV5wHA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1viT4o-000000052w1-1nLD;
-	Wed, 21 Jan 2026 07:56:30 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1viTwW-000000057V5-2890;
+	Wed, 21 Jan 2026 08:52:00 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1viT4n-000000052va-30fK
-	for linux-phy@lists.infradead.org;
-	Wed, 21 Jan 2026 07:56:29 +0000
+	id 1viTwU-000000057UX-1IfX;
+	Wed, 21 Jan 2026 08:51:58 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 3E41A600B0;
-	Wed, 21 Jan 2026 07:56:11 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4D1C1C116D0;
-	Wed, 21 Jan 2026 07:56:10 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id BAEA460051;
+	Wed, 21 Jan 2026 08:51:56 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7334BC116D0;
+	Wed, 21 Jan 2026 08:51:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1768982170;
-	bh=bGS3DYFuYzc1mQZhuBVKOcCjlKpV4bvavaupi72/plU=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=Ai4aS2F2x1psS1W0ckXYGK0Z0RUMdhLwfJZgEp7on9p7Wi+TeHQ3GiYGf5MMfLAOd
-	 VCVO/ZSKGhp4qzmo3Bcljewmv79f61fSEmOORwt5SZRsypQa8XYtCYd5g+X6k4+65l
-	 GSKSoPA/WMOziPbpwzKjkFfEO6V34l7g64XOoJQiJnESO4nVnH+N2fb9+o4qbSBE0U
-	 2bOSMy70CEklNqF5HCe+vpDKm2UP3A4n9AuiFYA5gedkCIqkv448CQmZ0yDXYjHQJ0
-	 daAOPHfRTqNAYsI+miG3lGx/+ukXzMV2YmqBQMo+ziSgNlE6jc5gR6WtnTkbotYrFC
-	 AIxwVCZ5Sheqw==
-Date: Wed, 21 Jan 2026 13:26:05 +0530
+	s=k20201202; t=1768985516;
+	bh=b1OkaZbNKUB0kzLe7Q/SqmLQZt0wkkv/yFCuw4NH4Cs=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=JRox7huEDz8nFWjSs4ZCXM5FZBDddqq3Hbm0Fc8HE36ratOpY588+7QfjRwnqaBcI
+	 MJnHocoLBWWAm2tYtnOcO57kCvQ5KdvPjZp7KWpkPN7ruiujb740/53CENj7XQcjMu
+	 MAwUXv8UiXZGzarjbnl2opyXRkFC9gAK60D5N4+Rz/BEzq1fuEJauwM5CHWYfeEtza
+	 ub2sxpomfTBZmFt06nBF/xrL+XQ4r/IBQCHmN+2HZD8XtPtb7nQ9EgG/qmRvFz4ZU0
+	 2M4RM68hgh3K/fBNLWcxNm45GckJf2MFfRonCnhAPBrQEShersIDi0VeEQuBeGtPBX
+	 MSPFcXuYROycQ==
 From: Vinod Koul <vkoul@kernel.org>
-To: Brian Masney <bmasney@redhat.com>
-Cc: Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>, linux-clk@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	linux-phy@lists.infradead.org
-Subject: Re: [PATCH 25/27] phy: ti: phy-j721e-wiz: convert from
- divider_round_rate() to divider_determine_rate()
-Message-ID: <aXCGlW4lgIImN8Eb@vaman>
-References: <20260108-clk-divider-round-rate-v1-0-535a3ed73bf3@redhat.com>
- <20260108-clk-divider-round-rate-v1-25-535a3ed73bf3@redhat.com>
- <aWelbtaZjS4SZGQO@vaman>
- <aWj3LPq37Dr9OLU6@redhat.com>
+To: Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Heiko Stuebner <heiko@sntech.de>, Algea Cao <algea.cao@rock-chips.com>, 
+ Dmitry Baryshkov <lumag@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+Cc: kernel@collabora.com, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-rockchip@lists.infradead.org
+In-Reply-To: <20251221-phy-hdptx-frl-v5-0-dac390a780be@collabora.com>
+References: <20251221-phy-hdptx-frl-v5-0-dac390a780be@collabora.com>
+Subject: Re: [PATCH v5 00/11] Add HDMI 2.1 FRL support to
+ phy-rockchip-samsung-hdptx
+Message-Id: <176898551090.1268719.6685367481494669298.b4-ty@kernel.org>
+Date: Wed, 21 Jan 2026 14:21:50 +0530
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <aWj3LPq37Dr9OLU6@redhat.com>
+X-Mailer: b4 0.13.0
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,47 +74,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 15-01-26, 09:18, Brian Masney wrote:
-> Hi Vinod,
-> 
-> On Wed, Jan 14, 2026 at 07:47:18PM +0530, Vinod Koul wrote:
-> > On 08-01-26, 16:16, Brian Masney wrote:
-> > > The divider_round_rate() function is now deprecated, so let's migrate
-> > > to divider_determine_rate() instead so that this deprecated API can be
-> > > removed.
-> > > 
-> > > Note that when the main function itself was migrated to use
-> > > determine_rate, this was mistakenly converted to:
-> > > 
-> > >     req->rate = divider_round_rate(...)
-> > > 
-> > > This is invalid in the case when an error occurs since it can set the
-> > > rate to a negative value.
-> > 
-> > Acked-by: Vinod Koul <vkoul@kernel.org>
-> 
-> Thanks for the Acked-by.
-> 
-> However, this patch depends on this other series of mine that's merged
-> into your phy tree:
 
-Should I pick this one then..? If there are no other dependencies...
+On Sun, 21 Dec 2025 12:46:47 +0200, Cristian Ciocaltea wrote:
+> The Samsung HDMI/eDP Transmitter Combo PHY is capable of handling four
+> HDMI 2.1 Fixed Rate Link (FRL) lanes, while each lane can operate at
+> 3Gbps, 6Gbps, 8Gbps, 10Gbps or 12Gbps.
+> 
+> This patchset extends the HDMI PHY configuration API to manage the FRL
+> mode and provides all the required HDMI driver changes to enable FRL in
+> addition to the already supported TMDS mode.
+> 
+> [...]
 
-> 
-> https://lore.kernel.org/linux-clk/176661322399.4169.14248756511703978007@lazor/
-> 
-> Stephen asked for an Acked-by for that series or an immutable branch.
-> 
-> This will allow us to remove round_rate from the clk core.
-> 
-> I also have a small series to post that's dependent on all of this that
-> lets us get rid of the noop determine_rate implementations that only
-> 'return 0'. I haven't posted that because of the dependencies.
-> 
-> Brian
+Applied, thanks!
 
+[01/11] phy: hdmi: Add HDMI 2.1 FRL configuration options
+        commit: 41c6cac6decd5123db1da8ca240a9c808b0ae6ce
+[02/11] phy: rockchip: samsung-hdptx: Use usleep_range() instead of udelay()
+        commit: 0ef8dd1034e3656e40d020911bb7aa14e7084663
+[03/11] phy: rockchip: samsung-hdptx: Fix coding style alignment
+        commit: 4f310f180373bd0e68311debee7a0dddb14c1656
+[04/11] phy: rockchip: samsung-hdptx: Consistently use [rk_]hdptx_[tmds_] prefixes
+        commit: 925f26a4f8c65e5686e1820f0bdc7e0a237edba7
+[05/11] phy: rockchip: samsung-hdptx: Enable lane output in common helper
+        commit: 8e8aa072b19d0d16afbfd690c8e50628176db3ef
+[06/11] phy: rockchip: samsung-hdptx: Cleanup *_cmn_init_seq lists
+        commit: df74a964e4354e65fefef60c9c50765ff32cd26e
+[07/11] phy: rockchip: samsung-hdptx: Compute clk rate from PLL config
+        commit: 3481fc04d969bc1528c2d1f7c02443a9fccf1a83
+[08/11] phy: rockchip: samsung-hdptx: Drop hw_rate driver data
+        commit: 66d76b6d958d7ca195c8b3f43828b12a206fb731
+[09/11] phy: rockchip: samsung-hdptx: Switch to driver specific HDMI config
+        commit: ac079c1207e492924237fdfb12c93664265b2e23
+[10/11] phy: rockchip: samsung-hdptx: Extend rk_hdptx_phy_verify_hdmi_config() helper
+        commit: b14fec4dbda301d61603c047277b4f447837b3e3
+[11/11] phy: rockchip: samsung-hdptx: Add HDMI 2.1 FRL support
+        commit: de5dba83311842cf208735b37bea84073688d470
+
+Best regards,
 -- 
 ~Vinod
+
+
 
 -- 
 linux-phy mailing list
