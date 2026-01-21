@@ -4,97 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0556CC44506
-	for <linux-phy@archiver.kernel.org>; Wed, 21 Jan 2026 17:18:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 28E87C44508
+	for <linux-phy@archiver.kernel.org>; Wed, 21 Jan 2026 17:33:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
-	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=OUAEmODXqrhPS28LXb8g29+D7ix+cuU0Ir1DksdFEzk=; b=WDJW4i6v/BKgNh
-	jMmHNB76N6bsY80HfSXmEI3eZVsHHbQJrNSJvIxiwXVqhUKnJf+L52gEy1NCDZGmK7hbqZZ+GbS4X
-	issnc11q/eIy8t1ljQ9AH9FfVlWBkCVZHTb6j3dC9nw4es0rCHXhuF8slKZkztdMBtg7OrZAXEvSX
-	nOhIaf9SYU485vpWoUW0Kc7mVLdLyskds/D/fkSWrNuq9tIdF3BZCaUjfy8LSW7drkOoJZgzeQjuv
-	Hp0CDxlkXOdlZ2sSe58dGqCcfUa0VwDT33l6YvI3lD5kxNkJ+MC70n+MYfnC8GKTQVUujWoZIM1As
-	0Z6MHo+6SeXZlUj1aDyg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+YcE0wLmY2KZF+TVMPVjjM9unl+8GPVWkdwBhmdmfSc=; b=TQaUbhRrRQHysP
+	Yv8qavSQhYAayxwHfY3ClDEgKR73HBVo2hpdgJdObCFnOUdhx1q2LuNDvKjRFjx1f31wJZbbrKCB4
+	VQsLacEFmBsXlieucWEMQTo7AHLdfZwsYZ4oOpkVTXFJGc7wZ1nYdTNKw9mlRT4KY2xO6hXtubSTe
+	HGmcTzBQ4LbveeyU453v+zW+/nPOw5gLdLRdo0V3s73qGBHnDATXMPZ7sZmVL1Y2kTtaaSaaBBE3F
+	AJ630KF01hWnGzCVBD1pJgCxECKiHqC4sJ0hnC+SraEArERktJeDADuKfoSXp86PN/z0jMokTX1BC
+	fv+pSPFkSyigIqVJXVUA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vibqt-00000005rXh-20uo;
-	Wed, 21 Jan 2026 17:18:43 +0000
-Received: from mail-pf1-x42a.google.com ([2607:f8b0:4864:20::42a])
+	id 1vic5L-00000005s4R-3SLp;
+	Wed, 21 Jan 2026 17:33:39 +0000
+Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vibqq-00000005rXA-0yE7
-	for linux-phy@lists.infradead.org;
-	Wed, 21 Jan 2026 17:18:41 +0000
-Received: by mail-pf1-x42a.google.com with SMTP id d2e1a72fcca58-81e9d0cd082so114806b3a.0
-        for <linux-phy@lists.infradead.org>; Wed, 21 Jan 2026 09:18:39 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1769015919; x=1769620719; darn=lists.infradead.org;
-        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
-         :date:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=il9ScNaZ/4lvJ8pqBzNVyrIlC8QNAqPRN5DcAZnyMcI=;
-        b=M4rnGr2cpnMXbTXJwHkjRGCga6BpSWY4P8/BApZglqo9AdBry4eFMWx7gh1olfQYMZ
-         AWe575NNtNejPAMOpu1bvu8HMr3cfCBIsrpeIZO62VA+prwKgSEzc9Yxs1Z1pU26iSNz
-         3TwZMsy8f5nBieZ4KYA5KOotpKw51jH+HrivHDDmhqxil5ONjfVF7uiQVshMZD8Os2OH
-         3zjN1gVtfoVNPJRoByw9ArcdDyKWKDEpa9I+1pxcxH02BZqaAS2XlEYh7x9n/Irrq/nw
-         DG6TpzdEwd5TqKK/ObU/Y2yJeHLUctnmlk8tjiwQ0AST5BDuXX0LATk9X19GrGgJ+Xa/
-         MEPw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1769015919; x=1769620719;
-        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
-         :date:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=il9ScNaZ/4lvJ8pqBzNVyrIlC8QNAqPRN5DcAZnyMcI=;
-        b=mBIAWqMQvIZMv28VmkKiBaDzTxn7Cd4QMCfJYilaUlniWUXUHHrfGq5t2S/hd0hgxI
-         Oj3usnJPZmF/GPBv+reEYEX11YT+6ri2oYIHFEDz1nYL3YxxaLW/3yMd9FtSuw3sxxtc
-         aoqNuR/+g/5demGDSa4zV13GxCQjK+bEyAb8MclHIU98J2nBBrkId9GYpOI97BczedMf
-         fNzQAAdrPmoe1c+xhFR8C9qcQ/1k5rneTTjKRq5YHHNTsFHfPZBgWJd4580r1/mMIUIm
-         mW44dYRvefX6SJXyr08hJfso3Itmmc60uvwwB+76iaRdPPagWHuPJryUwTClzZohTtSG
-         NT3g==
-X-Gm-Message-State: AOJu0YznDah4F+rOSFZJOWctIAZ51zsfYR5rRo8cmAcSjHM+ySxyZytE
-	Nx7KKkktQ09D3vqDIeC+lZv/nVSAxVUpx/YkUseXCkNa19HQRpiX+MGn
-X-Gm-Gg: AZuq6aJg28jUZhR5ZBikvcym0on6gK2U+5GZZKodtweVSvUb4cMOiTDlIhaJd7/wLkL
-	7dcNMc/aJGr2ASSifQj7LWwDK3YLvpjaN0QE51tCywFbTLAtIK0hDxV4rvpAoeW4VRqwjvsxe+x
-	HDiMAxFlZrhBY+hfBDSvAIZtnBFC4XzwZ38JIbElYN8dGMSch7H1yAt+eXegILQXY7WHsVxXAc4
-	F5zVTI7KBUyBz9/TRBko1MiuRSCbNNBpcasEQtTf2pc/ydbBX5lvWRRXNKsSqhlTBFLbJAgO6JA
-	O/qaNdUAM15lPGO8seZQA/EcQtdjdI0YCKSPhxOYuVaPBLlFNUj/ML7CIqvg53scPTsVsfl0f+J
-	2z+Tffz4E+SSru2AqrHxUM+ZGpcuLpM9mWEx4Es61p6tlPnLOq2sV310wjl8GqNt9fZhcfahPqH
-	qAMLKI9FxPsskhL8346UZ0Fbw4
-X-Received: by 2002:a05:6a20:6a0d:b0:320:3da8:34d7 with SMTP id adf61e73a8af0-38e00c2eedamr17438423637.22.1769015918821;
-        Wed, 21 Jan 2026 09:18:38 -0800 (PST)
-Received: from junjungu-PC.localdomain ([188.253.124.88])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2a7190ce6a9sm162768155ad.34.2026.01.21.09.18.35
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 21 Jan 2026 09:18:38 -0800 (PST)
-From: Felix Gu <ustc.gu@gmail.com>
-Date: Thu, 22 Jan 2026 01:18:32 +0800
-Subject: [PATCH] phy: ti: phy-omap-usb2: Fix a reference leak in
- omap_usb2_probe()
+	id 1vic5J-00000005s41-2cgg;
+	Wed, 21 Jan 2026 17:33:39 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=ZwVQ7DVnwRsf/W7oc0aqwTt7dOJIeDibahFoGDhgMVo=; b=RGQRrLafnzAKAK9bhLuJbuYq9m
+	cw3YwU4Mmw1YcwJGdmmV+AKinp/sIzQLOusOyBiHud9uW0hCPFU6pAOzdGvp1BVxiYu/1xJMH7YdE
+	S8PvtpPsGXrcBdF0rlGWVEGhe9m5ZuuMRGLK4rsc5sPx293nNUjtUbL1xrS4Mriibo39YoAh/wqib
+	smF510gFCIRAzz4sGVGA2CvR6zMmrUxzvFcHqjqh1Z5ZtHoZdlhdnJdEM9HW1e++AIWMtv4JRf12s
+	nPb3esoJDFqohvi7oFuZ3NH2gCyFtR711mxtWFOA88fY8/wLU9ip+P5piOsKU1S/VFHHvuvMDoI2p
+	rTa3Rd9A==;
+Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:40482)
+	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.98.2)
+	(envelope-from <linux@armlinux.org.uk>)
+	id 1vic5E-000000007oR-1qPB;
+	Wed, 21 Jan 2026 17:33:32 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.98.2)
+	(envelope-from <linux@shell.armlinux.org.uk>)
+	id 1vic5A-000000000Bp-1guX;
+	Wed, 21 Jan 2026 17:33:28 +0000
+Date: Wed, 21 Jan 2026 17:33:28 +0000
+From: "Russell King (Oracle)" <linux@armlinux.org.uk>
+To: Vladimir Oltean <olteanv@gmail.com>
+Cc: Jakub Kicinski <kuba@kernel.org>, linux-phy@lists.infradead.org,
+	davem@davemloft.net, maxime.chevallier@bootlin.com,
+	alexandre.torgue@foss.st.com, mohd.anwar@oss.qualcomm.com,
+	neil.armstrong@linaro.org, hkallweit1@gmail.com,
+	mcoquelin.stm32@gmail.com, netdev@vger.kernel.org,
+	edumazet@google.com, linux-arm-msm@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org, vkoul@kernel.org,
+	andrew@lunn.ch, pabeni@redhat.com, andrew+netdev@lunn.ch,
+	linux-stm32@st-md-mailman.stormreply.com
+Subject: Re: [net-next,05/14] net: stmmac: add stmmac core serdes support
+Message-ID: <aXEN6B5_T9uFzVvu@shell.armlinux.org.uk>
+References: <E1vhoSH-00000005H1f-2cq9@rmk-PC.armlinux.org.uk>
+ <20260119192125.1245102-1-kuba@kernel.org>
+ <aW8M9ZiiftGBQIRM@shell.armlinux.org.uk>
+ <20260120081844.7e6aq2urhxrylywi@skbuf>
+ <aW9VHt6meEJFxV0I@shell.armlinux.org.uk>
+ <20260120121114.2aedgu42i2wax3yp@skbuf>
+ <aXDm0jVOYOZ9l6Wu@shell.armlinux.org.uk>
+ <20260121162345.4jpzvwqhfqxd7tl7@skbuf>
 MIME-Version: 1.0
-Message-Id: <20260122-phy-omap-usb2-v1-1-a7018b48d740@gmail.com>
-X-B4-Tracking: v=1; b=H4sIAGcKcWkC/6tWKk4tykwtVrJSqFYqSi3LLM7MzwNyDHUUlJIzE
- vPSU3UzU4B8JSMDIzMDQyMj3YKMSt383MQC3dLiJCNdg5S0NPMkA1PTFBNDJaCegqLUtMwKsHn
- RsbW1AOeyPdZfAAAA
-X-Change-ID: 20260122-phy-omap-usb2-0dff7b055d41
-To: Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
- Roger Quadros <rogerq@ti.com>
-Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
- Felix Gu <ustc.gu@gmail.com>
-X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1769015914; l=1037;
- i=ustc.gu@gmail.com; h=from:subject:message-id;
- bh=nYu1/dfOfVBU2rwbGD34zzyA3Zt3fXvN6gq2sAHbYo0=;
- b=E5x+hNjrALNhxU70MAlQzSa7D6r9sMCfIQw4ehEEzZKwC7L9UYpmx3ooFJDOmOPWtzpuASF6V
- QiytzWAxvL5AOhmDrAM7B1HmkgWOSRORXinIbQW/nd34Idny7Gc/63l
-X-Developer-Key: i=ustc.gu@gmail.com; a=ed25519;
- pk=fjUXwmjchVN7Ja6KGP55IXOzFeCl9edaHoQIEUA+/hw=
+Content-Disposition: inline
+In-Reply-To: <20260121162345.4jpzvwqhfqxd7tl7@skbuf>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260121_091840_276401_52565005 
-X-CRM114-Status: UNSURE (   8.67  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260121_093337_667141_63B7C612 
+X-CRM114-Status: GOOD (  34.15  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,38 +92,77 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-In omap_usb2_probe(), control_node is obtained via of_parse_phandle(),
-which increments the refcount.
-Add a missing of_node_put() after of_find_device_by_node() to prevent
-a reference leak.
+On Wed, Jan 21, 2026 at 06:23:45PM +0200, Vladimir Oltean wrote:
+> On Wed, Jan 21, 2026 at 02:46:42PM +0000, Russell King (Oracle) wrote:
+> > On Tue, Jan 20, 2026 at 02:11:14PM +0200, Vladimir Oltean wrote:
+> > > On Tue, Jan 20, 2026 at 10:12:46AM +0000, Russell King (Oracle) wrote:
+> > > > First, I'll say I'm on a very short fuse today; no dinner last night,
+> > > > at the hospital up until 5:30am, and a fucking cold caller rang the door
+> > > > bell at 10am this morning. Just fucking our luck.
+> > > 
+> > > Sorry to hear that.
+> > > 
+> > > > On Tue, Jan 20, 2026 at 10:18:44AM +0200, Vladimir Oltean wrote:
+> > > > > Isn't it sufficient to set pl->pcs to NULL when pcs_enable() fails and
+> > > > > after calling pcs_disable(), though?
+> > > >
+> > > > No. We've already called mac_prepare(), pcs_pre_config(),
+> > > > pcs_post_config() by this time, we're past the point of being able to
+> > > > unwind.
+> > > 
+> > > I'm set out to resolve a much smaller problem.
+> > > 
+> > > Calling it a full "unwind" is perhaps a bit much, because pcs_pre_config()
+> > > and pcs_post_config() don't have unwinding equivalents, unlike how
+> > > pcs_enable() has pcs_disable(). I don't see what API convention would be
+> > > violated if phylink decided to drop a PCS whose enable() returned an error.
+> > 
+> > While pcs_pre_config() and pcs_post_config() do not have unwinding
+> > equivalents (what would they be?) the issue here is that these could
+> > have changed any state that isn't simply undone by calling
+> > pcs_disable().
+> > 
+> > For example, pcs_pre_config() could have reprogrammed signal routing,
+> > clocking, or power supplies to blocks.
+> > 
+> > This already applies to Marvell DSA pcs-639x.c, where the pre/post
+> > config hooks change the power state of the PCS block (for errata
+> > handling), and the only way that gets undone is via a call to
+> > pcs_disable() which explicitly disables IRQs and power for the PCS. Its
+> > pcs_disable() isn't a strict reversal of pcs_enable(), it does more.
+> > 
+> > We already declare the interface to be dead on pcs_post_config()
+> > failure, but we don't do that for pcs_enable() failure.
+> > 
+> > Maybe I need to explicitly state that pcs_disable() does not directly
+> > balance pcs_enable(), but that _and_ the effects of pcs_pre_config()
+> > and pcs_post_config(). However, that itself will add to the problems.
+> > What if pcs_pre_config() and pcs_post_config() succeed but not
+> > pcs_enable()? pcs-639x needs pcs_disable() to be called, but if we
+> > require pcs_disable() to be balanced with a successful call to
+> > pcs_enable(), that messes up that driver, and pretty much makes it
+> > impossible to work around the errata.
+> 
+> What if we reordered phylink_major_config() such that phylink_pcs_enable()
+> comes first, followed by phylink_pcs_pre_config() -> phylink_mac_config() ->
+> phylink_pcs_post_config()? Superficially looking at pcs-639x, I don't
+> think it would break.
 
-Fixes: 478b6c7436c2 ("usb: phy: omap-usb2: Don't use omap_get_control_dev()")
-Signed-off-by: Felix Gu <ustc.gu@gmail.com>
----
- drivers/phy/ti/phy-omap-usb2.c | 1 +
- 1 file changed, 1 insertion(+)
+I'm sorry, but I don't have time to continue this discussion today. I
+woke late, we're trying to cram in the meals (in the middle of delayed
+lunch-time dinner right now), work wants a quick call to discuss a
+project that I missed the meeting for yesterday (which I haven't yet
+had time for...)
 
-diff --git a/drivers/phy/ti/phy-omap-usb2.c b/drivers/phy/ti/phy-omap-usb2.c
-index 1eb252604441..660df3181e4f 100644
---- a/drivers/phy/ti/phy-omap-usb2.c
-+++ b/drivers/phy/ti/phy-omap-usb2.c
-@@ -426,6 +426,7 @@ static int omap_usb2_probe(struct platform_device *pdev)
- 		}
- 
- 		control_pdev = of_find_device_by_node(control_node);
-+		of_node_put(control_node);
- 		if (!control_pdev) {
- 			dev_err(&pdev->dev, "Failed to get control device\n");
- 			return -EINVAL;
+Sorry, but while you may wish to get this sorted, for me this is a very
+low priority issue that can be addressed later. Don't think I will have
+time to review anything you send - and that's not a personal attack,
+it's because I'm barely managing to hold everything together at my
+end, and I don't have the time.
 
----
-base-commit: 053966c344dbd346e71305f530e91ea77916189f
-change-id: 20260122-phy-omap-usb2-0dff7b055d41
-
-Best regards,
 -- 
-Felix Gu <ustc.gu@gmail.com>
-
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTP is here! 80Mbps down 10Mbps up. Decent connectivity at last!
 
 -- 
 linux-phy mailing list
