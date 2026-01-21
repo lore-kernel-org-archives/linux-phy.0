@@ -4,96 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6F26FC44536
-	for <linux-phy@archiver.kernel.org>; Wed, 21 Jan 2026 14:49:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A2CE0C44536
+	for <linux-phy@archiver.kernel.org>; Wed, 21 Jan 2026 14:55:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Gv5BnJ/vMFgdT9n6hA6mtd0QkbJYo+wt+Ak+fvY/FU4=; b=ydd5UiLazBG31W
-	gWI8gJxut1UWOQAPMg44xcxCl14sI2IyHR+iqxX7qIIxCypnZX8+JoZreAt53rpVwTfhU+NeFFi1B
-	zOum5GyULi3EBr5YobeTOeB+dOgNZqAbzSo8Ejy/i1o3lX0mvv7UbUauUOxFW0LsnlkjGk6RQ2YWz
-	buNQXZ+8H+pRM5XBT33SP54QCICJEqM5is/Eo38xayK7XMHupdM/NvqIhfpdWDguOllHlqE4WqEHf
-	7Vu7IBvSP16ZvKV1u78CqQVl8hGcnvcI18K9/r/d4dOlNCsk9wXZHIU8D11iE1cg6ns8/qH12xlUq
-	oCjlM+D61NzOuQ8C1tKQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=HrwMPZrJtVxKsawIvZdNyFqSqnfFMbPZ/QURCt2izJ8=; b=zyOlurYaElBjlS
+	YWeQtFMSFz+k0RYPeuk+fnitXhCEfTVMRvnVc7dpirnN9+/mR8orf8lU1Ltl7xn9P/yIm1FdPG36a
+	5FwFK4lR5lP/bJvH114MMFcAg+DJyURtESZOE6FojG+Cd8GRlMGpPpGUXD3qWwE+1pi8eYo3/eRm+
+	k8YC41qbiHGLhP+7kmjNgBc2pHgQVgps5eBdt++B3dvTZMvQh22FTkKIqABHNbKA3ayD22P6q/jXY
+	4vb5OpBIAKf55XMAwDDXPPdrb+O+tyjdSpk8roqhGj5Wm9UKoJiJpCuS5jruaSDk9lc5jzD0yJ8Jq
+	ynHzbaLnrC28X2wpA17w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1viZWr-00000005fo4-0hdE;
-	Wed, 21 Jan 2026 14:49:53 +0000
-Received: from mgamail.intel.com ([198.175.65.14])
+	id 1viZcd-00000005gGX-1HZR;
+	Wed, 21 Jan 2026 14:55:51 +0000
+Received: from smtp21.cstnet.cn ([159.226.251.21] helo=cstnet.cn)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1viZWn-00000005fmV-2d2s
-	for linux-phy@lists.infradead.org;
-	Wed, 21 Jan 2026 14:49:51 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1769006990; x=1800542990;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=6LTNJOg2E8MaKxl1xCHKvy5jwJaoAeaRCG+agnK2yY8=;
-  b=Suuiw+yBHaRopvzEsI+a60EcxBuD4QgXR2wwwj612+SChP+XFoARH0I8
-   5YzfkeN/4lXoQwZSEOQP9jrj0xSDBBu/lBpgl0qnArEuTjCtahpOVgo4L
-   MA7YsbZxclVnUlaZL/0Rx5DtN3RW5XSe9pp/KRCNRh6Cnk508a9QDM+V3
-   C7nNDYu6y76IRDaictQ3ad8iO5zX7MlUUWRuznfVmUCPxqYkEPNDlwbUR
-   0UlmtGtPFnoiQw8TfsqSTG16OPZalR1BEStVyroE/xS28Z84kXPz+LM2p
-   4iZJ1mMFnbbV5WLIG+bXpltFL3CuDJmrRIcN3i8068yE9zxkc8gXKOvJB
-   A==;
-X-CSE-ConnectionGUID: /y4MCfkwQvWRKv6hRfDd/Q==
-X-CSE-MsgGUID: 7iL/OLQxSnCYeX1Rn0FuXg==
-X-IronPort-AV: E=McAfee;i="6800,10657,11678"; a="74087008"
-X-IronPort-AV: E=Sophos;i="6.21,242,1763452800"; 
-   d="scan'208";a="74087008"
-Received: from fmviesa002.fm.intel.com ([10.60.135.142])
-  by orvoesa106.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 21 Jan 2026 06:49:48 -0800
-X-CSE-ConnectionGUID: n3tKdQlJR0Kh2goUKtuKHg==
-X-CSE-MsgGUID: FgiU5irsRD68qf9iNbOS1g==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.21,242,1763452800"; 
-   d="scan'208";a="229432837"
-Received: from lkp-server01.sh.intel.com (HELO 765f4a05e27f) ([10.239.97.150])
-  by fmviesa002.fm.intel.com with ESMTP; 21 Jan 2026 06:49:41 -0800
-Received: from kbuild by 765f4a05e27f with local (Exim 4.98.2)
-	(envelope-from <lkp@intel.com>)
-	id 1viZWc-00000000RJx-31ND;
-	Wed, 21 Jan 2026 14:49:38 +0000
-Date: Wed, 21 Jan 2026 22:49:09 +0800
-From: kernel test robot <lkp@intel.com>
-To: Josua Mayer <josua@solid-run.com>,
-	Marc Kleine-Budde <mkl@pengutronix.de>,
-	Vincent Mailhol <mailhol@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Peter Rosin <peda@axentia.se>, Aaro Koskinen <aaro.koskinen@iki.fi>,
-	Andreas Kemnade <andreas@kemnade.info>,
-	Kevin Hilman <khilman@baylibre.com>,
-	Roger Quadros <rogerq@kernel.org>, Tony Lindgren <tony@atomide.com>,
-	Janusz Krzysztofik <jmkrzyszt@gmail.com>,
-	Vignesh R <vigneshr@ti.com>, Andi Shyti <andi.shyti@kernel.org>,
-	Ulf Hansson <ulf.hansson@linaro.org>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Geert Uytterhoeven <geert+renesas@glider.be>,
-	Magnus Damm <magnus.damm@gmail.com>,
-	Wolfram Sang <wsa-dev@sang-engineering.com>
-Cc: oe-kbuild-all@lists.linux.dev,
-	Yazan Shhady <yazan.shhady@solid-run.com>,
-	Jon Nettleton <jon@solid-run.com>,
-	Mikhail Anikin <mikhail.anikin@solid-run.com>,
-	linux-can@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org, linux-omap@vger.kernel.org,
-	linux-i2c@vger.kernel.org, linux-mmc@vger.kernel.org,
-	devicetree@vger.kernel.org
-Subject: Re: [PATCH v6 2/7] mux: Add helper functions for getting optional
- and selected mux-state
-Message-ID: <202601212215.qNGA0wVh-lkp@intel.com>
-References: <20260121-rz-sdio-mux-v6-2-38aa39527928@solid-run.com>
+	id 1viZcZ-00000005gFX-3v5k;
+	Wed, 21 Jan 2026 14:55:50 +0000
+Received: from duge-virtual-machine (unknown [183.192.221.134])
+	by APP-01 (Coremail) with SMTP id qwCowACXP2vl6HBpCoqlBQ--.20720S2;
+	Wed, 21 Jan 2026 22:55:34 +0800 (CST)
+From: Jiayu Du <jiayu.riscv@isrc.iscas.ac.cn>
+To: vkoul@kernel.org,
+	gregkh@linuxfoundation.org,
+	conor@kernel.org
+Cc: neil.armstrong@linaro.org,
+	robh@kernel.org,
+	krzk+dt@kernel.org,
+	pjw@kernel.org,
+	palmer@dabbelt.com,
+	aou@eecs.berkeley.edu,
+	alex@ghiti.fr,
+	jiayu.riscv@isrc.iscas.ac.cn,
+	linux-phy@lists.infradead.org,
+	linux-usb@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	linux-riscv@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH v5 0/4] Add USB support for Canaan K230
+Date: Wed, 21 Jan 2026 22:55:21 +0800
+Message-ID: <20260121145526.14672-1-jiayu.riscv@isrc.iscas.ac.cn>
+X-Mailer: git-send-email 2.52.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260121-rz-sdio-mux-v6-2-38aa39527928@solid-run.com>
+X-CM-TRANSID: qwCowACXP2vl6HBpCoqlBQ--.20720S2
+X-Coremail-Antispam: 1UD129KBjvJXoW7uF1UZryxGw18Jr1xJFyrZwb_yoW8tFW5pa
+	y7CFW3uFsrtFW2qan3tw48WF9xX3Z5Jry3Wryaq345Xa1UZFyUAws3urW5ZF1UGFsrCFWj
+	vFs0kFyxGFWUAaDanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDU0xBIdaVrnRJUUU9Y14x267AKxVW8JVW5JwAFc2x0x2IEx4CE42xK8VAvwI8IcIk0
+	rVWrJVCq3wAFIxvE14AKwVWUJVWUGwA2ocxC64kIII0Yj41l84x0c7CEw4AK67xGY2AK02
+	1l84ACjcxK6xIIjxv20xvE14v26r1j6r1xM28EF7xvwVC0I7IYx2IY6xkF7I0E14v26r4j
+	6F4UM28EF7xvwVC2z280aVAFwI0_Gr0_Cr1l84ACjcxK6I8E87Iv6xkF7I0E14v26r4UJV
+	WxJr1le2I262IYc4CY6c8Ij28IcVAaY2xG8wAqx4xG64xvF2IEw4CE5I8CrVC2j2WlYx0E
+	2Ix0cI8IcVAFwI0_Jr0_Jr4lYx0Ex4A2jsIE14v26r1j6r4UMcvjeVCFs4IE7xkEbVWUJV
+	W8JwACjcxG0xvY0x0EwIxGrwACjI8F5VA0II8E6IAqYI8I648v4I1lFIxGxcIEc7CjxVA2
+	Y2ka0xkIwI1lc7CjxVAaw2AFwI0_Jw0_GFyl42xK82IYc2Ij64vIr41l4I8I3I0E4IkC6x
+	0Yz7v_Jr0_Gr1lx2IqxVAqx4xG67AKxVWUJVWUGwC20s026x8GjcxK67AKxVWUGVWUWwC2
+	zVAF1VAY17CE14v26r4a6rW5MIIYrxkI7VAKI48JMIIF0xvE2Ix0cI8IcVAFwI0_Jr0_JF
+	4lIxAIcVC0I7IYx2IY6xkF7I0E14v26r4j6F4UMIIF0xvE42xK8VAvwI8IcIk0rVWUJVWU
+	CwCI42IY6I8E87Iv67AKxVWUJVW8JwCI42IY6I8E87Iv6xkF7I0E14v26r4j6r4UJbIYCT
+	nIWIevJa73UjIFyTuYvjfUonmRUUUUU
+X-Originating-IP: [183.192.221.134]
+X-CM-SenderInfo: 5mld534oul2uny6l223fol2u1dvotugofq/
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260121_064949_807136_55F7DB1A 
-X-CRM114-Status: GOOD (  11.83  )
+X-CRM114-CacheID: sfid-20260121_065548_436908_E9ADF84F 
+X-CRM114-Status: GOOD (  13.98  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,33 +89,61 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Josua,
+Add support for the USB PHY and DWC2 IP which is used by Canaan K230,
+and made relevant changes to the DTS.
 
-kernel test robot noticed the following build warnings:
+This series is based on the initial 100ask K230 DshanPi series [1] which
+is based on the clock and pinctrl series. Check the details in the link.
 
-[auto build test WARNING on 8f0b4cce4481fb22653697cced8d0d04027cb1e8]
+Link: https://lore.kernel.org/all/20260115060801.16819-1-jiayu.riscv@isrc.iscas.ac.cn/ [1]
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Josua-Mayer/phy-can-transceiver-rename-temporary-helper-function-to-avoid-conflict/20260121-173607
-base:   8f0b4cce4481fb22653697cced8d0d04027cb1e8
-patch link:    https://lore.kernel.org/r/20260121-rz-sdio-mux-v6-2-38aa39527928%40solid-run.com
-patch subject: [PATCH v6 2/7] mux: Add helper functions for getting optional and selected mux-state
-config: i386-randconfig-001-20260121 (https://download.01.org/0day-ci/archive/20260121/202601212215.qNGA0wVh-lkp@intel.com/config)
-compiler: gcc-14 (Debian 14.2.0-19) 14.2.0
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20260121/202601212215.qNGA0wVh-lkp@intel.com/reproduce)
+Changes in v5:
+- Changed the year of Copyright to 2026.
+- Add blank line after the declaration of variables
+- Fix wrong alignment.
+- Link to v4: https://lore.kernel.org/all/20260120143243.71937-1-jiayu.riscv@isrc.iscas.ac.cn/
 
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202601212215.qNGA0wVh-lkp@intel.com/
+Changes in v4:
+- Shrink reg length to match the address/size-cells in k230-usb-phy yaml.
+- Move all PHY instance creation and initialization from xlate to probe.
+- Modify xlate function to only perform index lookup for PHY instances.
+- Define all register base offsets macros at the top of file instead of
+  hard-coding magic numbers directly in probe.
+- Link to v2: https://lore.kernel.org/all/20260115064223.21926-1-jiayu.riscv@isrc.iscas.ac.cn/
 
-All warnings (new ones prefixed by >>):
+Changes in v3:
+- Please ignore v3.
 
->> Warning: drivers/mux/core.c:56 struct member 'mstate' not described in 'devm_mux_state_state'
->> Warning: drivers/mux/core.c:56 struct member 'mstate' not described in 'devm_mux_state_state'
+Changes in v2:
+- Fold the child into the parent in dtsi.
+- Define one usbphy with phy-cells=1.
+- Delete the clock of the usbphy as it is not needed.
+- Link to v1: https://lore.kernel.org/all/20251230023725.15966-1-jiayu.riscv@isrc.iscas.ac.cn/
+
+Jiayu Du (4):
+  dt-bindings: phy: Add Canaan K230 USB PHY
+  dt-bindings: usb: dwc2: Add support for Canaan K230 SoC
+  phy: usb: Add driver for Canaan K230 USB 2.0 PHY
+  riscv: dts: canaan: Add syscon and USB nodes for K230
+
+ .../bindings/phy/canaan,k230-usb-phy.yaml     |  35 +++
+ .../devicetree/bindings/usb/dwc2.yaml         |   3 +
+ .../boot/dts/canaan/k230-canmv-dshanpi.dts    |  17 ++
+ arch/riscv/boot/dts/canaan/k230.dtsi          |  35 +++
+ drivers/phy/Kconfig                           |   1 +
+ drivers/phy/Makefile                          |   1 +
+ drivers/phy/canaan/Kconfig                    |  14 +
+ drivers/phy/canaan/Makefile                   |   2 +
+ drivers/phy/canaan/phy-k230-usb.c             | 284 ++++++++++++++++++
+ 9 files changed, 392 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/phy/canaan,k230-usb-phy.yaml
+ create mode 100644 drivers/phy/canaan/Kconfig
+ create mode 100644 drivers/phy/canaan/Makefile
+ create mode 100644 drivers/phy/canaan/phy-k230-usb.c
 
 -- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+2.52.0
+
 
 -- 
 linux-phy mailing list
