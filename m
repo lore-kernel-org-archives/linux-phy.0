@@ -4,80 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 12593D489BF
-	for <linux-phy@archiver.kernel.org>; Thu, 22 Jan 2026 17:54:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 265E4D3EE9F
+	for <linux-phy@archiver.kernel.org>; Thu, 22 Jan 2026 17:54:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
-	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=eEjABkJYCqhYaAvpoOrm3e09wnibrVDRYqXl38Nu4Xs=; b=GsWvJSwU0GLu8m
-	UfRrJUT6NfQlBOVVqKA3TuidHq7rhau+3j3hPDfaVbKbtHLe98kJYE8qdowryFRCjRExD4ILyOZVp
-	8ls64Gvw9zFBV+CKFmNWenNhnS/qgV+ur9lDDcEcsBDuhrK31tx8T5PTdRU/2GXV4fFqZL7+qx87b
-	hi7aoHCPnNKXerC8ptb+RDB/piagAR9OZFM9x3ljY+fj2ZAoWYVJcS88G6ImsPw8gin/Xh0C46o5i
-	XRHE1O/oOslvUp8INNDvqwGCjAOPM9Sj7shUs4D0MM/EqKt1dc+o4DAJmcGt3C5mVs6J/sRSRkkeY
-	SmgsDi/SDO62G9IPG6RA==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5N4gL9TqygkWusSCwbCVukCxC6tt6Yb/OilMck01k6o=; b=YBt8VenaVqUsTe
+	mZ/1MvvHskRiC0sRQljoC96idAIM5UuBfTUC9CHkgYJHgceTwb3DyDoqi7V2Huro8SdEKHdQ1eRYV
+	zfFMzLx/Egmdi7PdWbVf3KeG6aXAWAPfPaPsPvlapw4ceK8ffD+E3nRB91Gu/j0PYUmhvWbYxHXQ4
+	f0GsNWrRM07dO6jciHjZcgvamRV0Fs+ap+AiQ1oEo2KCefigmlhRZy3skul97VVlhvgZNHWPj3jBx
+	LxwY0Gh2sRS7N3m1TrzJD9ovbK5HxlHMtvI+Gf7+afxxdoODXv8MoAOEq3ba9G0aPAPh961skk3dP
+	CaC5ub2UrQdhmutGV9kQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1viyt1-00000007b0y-0SVc;
-	Thu, 22 Jan 2026 17:54:27 +0000
-Received: from mail-pl1-x62d.google.com ([2607:f8b0:4864:20::62d])
+	id 1viyt4-00000007b29-3OSF;
+	Thu, 22 Jan 2026 17:54:30 +0000
+Received: from mail-pl1-x632.google.com ([2607:f8b0:4864:20::632])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1viysx-00000007azs-3stC
+	id 1viyt2-00000007b1G-1S0Z
 	for linux-phy@lists.infradead.org;
-	Thu, 22 Jan 2026 17:54:25 +0000
-Received: by mail-pl1-x62d.google.com with SMTP id d9443c01a7336-2a0d52768ccso9737025ad.1
-        for <linux-phy@lists.infradead.org>; Thu, 22 Jan 2026 09:54:23 -0800 (PST)
+	Thu, 22 Jan 2026 17:54:29 +0000
+Received: by mail-pl1-x632.google.com with SMTP id d9443c01a7336-2a09d981507so8809995ad.1
+        for <linux-phy@lists.infradead.org>; Thu, 22 Jan 2026 09:54:28 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1769104463; x=1769709263; darn=lists.infradead.org;
-        h=cc:to:content-transfer-encoding:mime-version:message-id:date
-         :subject:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=IzyR4xVrpsSybc4UKBr7Yf9UVEuXH3UQn5bgnz7MscY=;
-        b=S0So27TmHwZdyXRE1Evrj22FYy6DS0raDSE86CGtN+sVgn3CfNjvaCyqkFtYrAa5ZU
-         pQ5ZCLKcFZJ9MDYl2V0h/apjKpdnoS4hTRiUwdQLnOiNzN2Ks2GB2/nPkBZP9unlZBtJ
-         hj+f/rOb4ikhdoptRwCxIyNVZDx4n1Jk7145hEj/5t2N6JH7vgoEav7BbvwtDDxfVmgM
-         8XyjUyWcD9r+yNZC7bwRnGRqZ5rCW/udvb0OOl37G4t0bBa31qTJelG/61kXhsP5vAMB
-         I2vy4rSQCwp1EMhLpD3XBzHaPerfeOfo9uL7u8m5dW7CumvP9rTqmGbj84duKBZJMLdG
-         CUBg==
+        d=gmail.com; s=20230601; t=1769104467; x=1769709267; darn=lists.infradead.org;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=PcWylPv8TJyXsVhSrUUC23A8HhbSPg4cc6ltX4FBb+c=;
+        b=ikiLlQa3SM5Kfruf9nCFqmDXrtIceNL/Htx78VfC8R/A2r8coCbRpTQ2HvsPdm09HV
+         GvqLM3ShnU7MwDxDhfdK0NtQJ8IFvGFfMCFb5tuXn8cgiWJ883YgmyD7gv8HnseaPrqZ
+         aCDuA8JectlQcJsbpBrNgSTKM6dm0iEXOu9GtKmU1H5i5aKzvb9KWem3nMz7S6x91YAz
+         7YVx/I1KMF9Jpb96rPm2ZjuJHAQoYA/kLn1E+Tf5SzRApurrrTlgsaSUIl8/NAUi6SeG
+         jWfyPpcYxrh8sUvZVupOr1/3pQoNCpduITID4o8sC6uySRuy4aKoU2woXA8gzMQU45Ay
+         RKCw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1769104463; x=1769709263;
-        h=cc:to:content-transfer-encoding:mime-version:message-id:date
-         :subject:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=IzyR4xVrpsSybc4UKBr7Yf9UVEuXH3UQn5bgnz7MscY=;
-        b=hsYjOVQRibajusmxcaSKdHhNN3nLSLNnRUKgorWT1AHIZd6MElUdA6r48ifi4dzLaq
-         fWRAjf8Udqo0eT02uI80upi3jDuuxICymdgzHhC5pkibkHFkzgOs2PGIpof5jmogbjFg
-         VUbP+ibzQwj7YIX8zUjzZujvejerSjluucFKCvQtbi+XyhrA3jUrXJ8/Htk7lfIhrpl1
-         bbuo+BXijVfKr5sJAHLLEIBQqGBPPegF9sVLU8qoizbDIkCaKFO1+cxV5DOJ/6pSTibQ
-         WyQwkE0fb09hPxF2Qp9wyr3IJ5vkNU2FrzPSQda1KVBK6zHZn7kYzO0mDVoUavvLdKou
-         t/PQ==
-X-Gm-Message-State: AOJu0Yx2biMzQqyTmz0mZ1dhhWqVl8PXBakyRgHiAr39Tm6ygExboX06
-	kSBYlWYdFFIrwJOWdjf37awEvdo2jPzrkNDRNxpBqxG93tQmvXxIxuh4
-X-Gm-Gg: AZuq6aKCtKj+PhNnBWPy61Y7UTtJUwfLjoNUpOofIzkW6x47D3UuySVaT1r1k9n3KoT
-	SI0i5qc4HFPsoroXjiLq3+vJyhKvqpvGdkmZp1Qy/xbTdeF8+QWL5ZUj/rVKIgvxgxoeYejAxnp
-	4lNU8YHG5fhPuISqf/mTfpB8/Nk38P5giouwl35M6ROU9OyHRt7LY9e9/rnpyKM/Z3nOltSSNqY
-	a/kEZnRRWaW5qArDCZjUzXWmenUg5oIqR/GiFeu1jy52wXuXWoxA8OhjhtGgOVTIR9SPprO+DYm
-	lXll7P81EBfX74dQ9A++UyZxoDFH+1/WyGNQxeHNfqukK9CrF+F6140rUtZ5SXWHaJOubp7o8DM
-	HC5TZMBun5rZFKBLMYDsHTiyaYlENXBz3HbEtXkt1Vit+sbO+jGptRWg9LZmmNC5cLbzGPCVrya
-	HTPAxZeYSYORQSZbAajr+DjHyUUrXWkXp68A==
-X-Received: by 2002:a17:903:2406:b0:2a7:b412:6cbf with SMTP id d9443c01a7336-2a7fe76fd29mr2007125ad.55.1769104462539;
-        Thu, 22 Jan 2026 09:54:22 -0800 (PST)
+        d=1e100.net; s=20230601; t=1769104467; x=1769709267;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:x-gm-gg:x-gm-message-state:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=PcWylPv8TJyXsVhSrUUC23A8HhbSPg4cc6ltX4FBb+c=;
+        b=vz216p09vFjKrxAlCypdiaQFcBZvJOJ2g/wV8q//3TTtRHIEpxQgKPEkHaAoV+QN6+
+         TSSYeN+cYA7Mp1P5ng7TPg2bklrYJ1IM3e5E1ZLs7Sk1RbXliP6UkljHCdyEfUbYd1h4
+         rbb0h2G/+mC91CAPWUVRLlinQ2RmGBdmJDB9zzkJpzUVWx2Z05ODKr9SafkcPlmGMgF3
+         Mo/EOVVLVu4HLdL6paA0MF6gxUIARnaSoP3XVPCz9HwTNXy/N2pnT/BjQYkdz4VHnuCw
+         nmH+jatzf/BP8dRWA/NbM7/7qz0GwXbz4kTk/stH8IhcHcoRv/xYnxZiaKx7lu0pHDOK
+         sY0w==
+X-Gm-Message-State: AOJu0YwsR1k8QQIP8Q3s5J1b3bRl3aX/EUfXCXpD8Qx8ZEpwcOEnGMB2
+	9ppT41+k3fmnoP6EkQ0UMPuy39RIL1Y6o0b2fRX8uNQFRh/SdjUd09Fq
+X-Gm-Gg: AZuq6aLe5CvwXofF/+ZHu6k0tKsO6R4DOnnK6yd26fMR23XRLJ57b3ynu5Mo8tFHvHd
+	1MT1aLSVblB7MWEU4hhpAOkFuenZCFiW4WdQGOHfIV0Pxq642w7a/d+tfW5PLck23tMqV2Ell4I
+	vZEYR3s9J3WqymlFkp+yLzqp0P26qVUmlDUVSRw1Fb9nsGkOISgD/j1tPab1am3YFpFclLOnUjg
+	VjKxxUcuT2kpIw1Bzcb8NUC75EjeQGwyhi4krF95eRstjGKuXjIrz3OOI93voZky9kt5Sa94/1p
+	B/Ibxd/9xKxGIWY7lQDsMk5m5I96kQISnmhLpAAp5FyVi6bswqop7pKXpqe7O0qOQkqONmRDhD9
+	6a/ohAvVPaEukgT/HLvL5AnIdTDTFlMegA1V1rlNXcFUMnKJs7luvn6Uy6iigZkP++A8n60gHcv
+	XPEi7cb24J0gMUkQv1++94oWdTRoIscthdDA==
+X-Received: by 2002:a17:902:f641:b0:295:28a4:f0c6 with SMTP id d9443c01a7336-2a7fe41e16emr2855545ad.0.1769104467221;
+        Thu, 22 Jan 2026 09:54:27 -0800 (PST)
 Received: from Black-Pearl.localdomain ([115.99.251.203])
-        by smtp.googlemail.com with ESMTPSA id d9443c01a7336-2a7190eee4fsm187745195ad.42.2026.01.22.09.54.17
+        by smtp.googlemail.com with ESMTPSA id d9443c01a7336-2a7190eee4fsm187745195ad.42.2026.01.22.09.54.22
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 22 Jan 2026 09:54:22 -0800 (PST)
+        Thu, 22 Jan 2026 09:54:26 -0800 (PST)
 From: Charan Pedumuru <charan.pedumuru@gmail.com>
-Subject: [PATCH v3 0/3] dt-bindings: phy: Convert TI OMAP control and PIPE3
- PHY to DT schema
-Date: Thu, 22 Jan 2026 17:52:56 +0000
-Message-Id: <20260122-ti-phy-v3-0-751619729433@gmail.com>
+Date: Thu, 22 Jan 2026 17:52:57 +0000
+Subject: [PATCH v3 1/3] arm: dts: ti: omap: align node patterns with
+ established convention
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIAPljcmkC/02MywqDMBBFf0Wy7pRMUl9d9T9KFxonOlAfJBIq4
- r83Ci0uz+WeswpPjsmLe7IKR4E9j0MEfUmE6aqhJeAmslBSpag0wswwdQukRV2XpAtjTSnieXJ
- k+XOEnq/IHft5dMvRDbiveyKTKPUvERAQCqNtSsrUTaYfbV/x+2rGXuyJoM5a/tcUSKiQjMpvE
- q21Z23bti8Tq0Qw0wAAAA==
-X-Change-ID: 20251231-ti-phy-58bb9e38cfc9
+Message-Id: <20260122-ti-phy-v3-1-751619729433@gmail.com>
+References: <20260122-ti-phy-v3-0-751619729433@gmail.com>
+In-Reply-To: <20260122-ti-phy-v3-0-751619729433@gmail.com>
 To: Vinod Koul <vkoul@kernel.org>, 
  Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
  Krzysztof Kozlowski <krzk+dt@kernel.org>, 
@@ -92,9 +90,8 @@ Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
  Charan Pedumuru <charan.pedumuru@gmail.com>
 X-Mailer: b4 0.14.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260122_095423_997238_B83C2530 
-X-CRM114-Status: UNSURE (   9.96  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260122_095428_392018_9FDCA2D4 
+X-CRM114-Status: GOOD (  10.19  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,56 +108,73 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This series converts the old text-based DeviceTree bindings for TI OMAP
-Control PHY and TI PIPE3 PHY to modern JSON-schema (YAML) format.
+Update OMAP DTS node patterns to match established conventions.
 
 Signed-off-by: Charan Pedumuru <charan.pedumuru@gmail.com>
 ---
-Changes in v3:
-- Change maintainer to "Roger Quadros" for both YAML files.
-- dts: Split node pattern updates into a separate patch and align node
-  naming with standard conventions.
-- ti,phy-usb3: Update node pattern to follow standard conventions.
-- ti,phy-usb3: Refine the reg-names property and add constraints for
-  optional phandle-array properties.
-- ti,phy-usb3: Redefine "syscon-pllreset" dependency on the compatible
-  "ti,phy-pipe3-sata" in a correct format.
-- ti,control-phy-otghs: Update node pattern and adjust maxItems for reg
-  and reg-names.
-- ti,control-phy-otghs: Fix the conditional handling for the
-  ti,control-phy-pcie compatible.
-- Link to v2: https://lore.kernel.org/r/20260107-ti-phy-v2-0-a1ec27401fff@gmail.com
+ arch/arm/boot/dts/ti/omap/dra7-l4.dtsi  | 4 ++--
+ arch/arm/boot/dts/ti/omap/omap4-l4.dtsi | 4 ++--
+ arch/arm/boot/dts/ti/omap/omap5-l4.dtsi | 2 +-
+ 3 files changed, 5 insertions(+), 5 deletions(-)
 
-Changes in v2:
-- ti,control-phy-otghs: Update commit message to reflect the latest
-  binding changes.
-- ti,phy-usb3: Drop the obsolete "id" property from the schema.
-- Both bindings: Update maintainers list, modify node pattern and improve
-  node descriptions for clarity.
-- ti,phy-usb3: Introduce new YAML schema with properly defined optional
-  properties for the PIPE3 PHY.
-- Link to v1: https://lore.kernel.org/r/20260103-ti-phy-v1-1-8c3f5e2cbd63@gmail.com
+diff --git a/arch/arm/boot/dts/ti/omap/dra7-l4.dtsi b/arch/arm/boot/dts/ti/omap/dra7-l4.dtsi
+index c9282f57ffa5..ed206eb84d02 100644
+--- a/arch/arm/boot/dts/ti/omap/dra7-l4.dtsi
++++ b/arch/arm/boot/dts/ti/omap/dra7-l4.dtsi
+@@ -328,7 +328,7 @@ ocp2scp@0 {
+ 				ranges = <0 0 0x8000>;
+ 				reg = <0x0 0x20>;
+ 
+-				pcie1_phy: pciephy@4000 {
++				pcie1_phy: pcie-phy@4000 {
+ 					compatible = "ti,phy-pipe3-pcie";
+ 					reg = <0x4000 0x80>, /* phy_rx */
+ 					      <0x4400 0x64>; /* phy_tx */
+@@ -348,7 +348,7 @@ pcie1_phy: pciephy@4000 {
+ 					#phy-cells = <0>;
+ 				};
+ 
+-				pcie2_phy: pciephy@5000 {
++				pcie2_phy: pcie-phy@5000 {
+ 					compatible = "ti,phy-pipe3-pcie";
+ 					reg = <0x5000 0x80>, /* phy_rx */
+ 					      <0x5400 0x64>; /* phy_tx */
+diff --git a/arch/arm/boot/dts/ti/omap/omap4-l4.dtsi b/arch/arm/boot/dts/ti/omap/omap4-l4.dtsi
+index 4ee53dfb71b4..d8b16cbe6c35 100644
+--- a/arch/arm/boot/dts/ti/omap/omap4-l4.dtsi
++++ b/arch/arm/boot/dts/ti/omap/omap4-l4.dtsi
+@@ -72,13 +72,13 @@ scm_conf: scm_conf@0 {
+ 					#size-cells = <1>;
+ 				};
+ 
+-				omap_control_usb2phy: control-phy@300 {
++				omap_control_usb2phy: phy@300 {
+ 					compatible = "ti,control-phy-usb2";
+ 					reg = <0x300 0x4>;
+ 					reg-names = "power";
+ 				};
+ 
+-				omap_control_usbotg: control-phy@33c {
++				omap_control_usbotg: phy@33c {
+ 					compatible = "ti,control-phy-otghs";
+ 					reg = <0x33c 0x4>;
+ 					reg-names = "otghs_control";
+diff --git a/arch/arm/boot/dts/ti/omap/omap5-l4.dtsi b/arch/arm/boot/dts/ti/omap/omap5-l4.dtsi
+index 9f6100c7c34d..5c94db589dd1 100644
+--- a/arch/arm/boot/dts/ti/omap/omap5-l4.dtsi
++++ b/arch/arm/boot/dts/ti/omap/omap5-l4.dtsi
+@@ -472,7 +472,7 @@ usb2_phy: usb2phy@4000 {
+ 				#phy-cells = <0>;
+ 			};
+ 
+-			usb3_phy: usb3phy@4400 {
++			usb3_phy: usb3-phy@4400 {
+ 				compatible = "ti,omap-usb3";
+ 				reg = <0x4400 0x80>,
+ 				<0x4800 0x64>,
 
----
-Charan Pedumuru (3):
-      arm: dts: ti: omap: align node patterns with established convention
-      dt-bindings: phy: ti,phy-usb3: convert to DT schema
-      dt-bindings: phy: ti,control-phy-otghs: convert to DT schema
-
- .../bindings/phy/ti,control-phy-otghs.yaml         |  99 +++++++++++++++
- .../devicetree/bindings/phy/ti,phy-usb3.yaml       | 135 +++++++++++++++++++++
- Documentation/devicetree/bindings/phy/ti-phy.txt   |  98 ---------------
- arch/arm/boot/dts/ti/omap/dra7-l4.dtsi             |   4 +-
- arch/arm/boot/dts/ti/omap/omap4-l4.dtsi            |   4 +-
- arch/arm/boot/dts/ti/omap/omap5-l4.dtsi            |   2 +-
- 6 files changed, 239 insertions(+), 103 deletions(-)
----
-base-commit: cc3aa43b44bdb43dfbac0fcb51c56594a11338a8
-change-id: 20251231-ti-phy-58bb9e38cfc9
-
-Best regards,
 -- 
-Charan Pedumuru <charan.pedumuru@gmail.com>
+2.52.0
 
 
 -- 
