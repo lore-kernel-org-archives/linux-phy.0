@@ -4,111 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 61AACD74EC4
-	for <linux-phy@archiver.kernel.org>; Fri, 23 Jan 2026 13:01:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 80FC3D74EC5
+	for <linux-phy@archiver.kernel.org>; Fri, 23 Jan 2026 13:12:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Do0Iz4JXtW/tq4jsRQxcFYsmrAXVtOJ55J4/S5i5fUs=; b=jVGgyJOiCTcI+r
-	WmPj2G/+YOLNvzY7Ee6pBdYtJW99q2Mypjq8sE8AglaJSeOznGfmKM5mMcc5Lwe7MryTzTfQ61T+A
-	04Q3c/peo5KF+QXn9/b445gT/d6bAG5GLSWWGXnCBE8gcBc8wGULEisDyBGZtK1SquHsfTh4qURR4
-	EGcx7BvarTjfuw1T93ekHX2hLxKkG1bsfl83rsT6A4pY1nZ53XiKQAV9+QRLWh1mMQdrk+V57mhMQ
-	DYHsZJ6WDuEb40IrDc3dJ4t6FDtAYlWIQzcXLVCVZ0xwIESmnXQsAuMfO8BB0N2TBTfEnrf3PkMIQ
-	5q9eK8Y1CxRvimT+Nr2w==;
+	List-Owner; bh=cUffo7zEvIAorenqDzwAGhNG5mm0YSpR5s6tRXtbkrI=; b=lw801r+2Tq995E
+	cGVd+uet0g7xMor4HR9ScmUl/rIDUU8gFG5LpGgNr30ciQqE8JoQGNklgvKkxYiz5iumdc02iham1
+	bz2E2SyBWllZW6iIfSNq8N8EXaO3GoJJ9iNTT4Xs1d93HUbrzR7QUijnmv+56WqeGBlZfXjb0sv6s
+	rV81MeGqIdVivQa8QjeXK9UNq1ESSyxO53gvGa+kyXEbpZfNOAnun021K6+vQnuBDoxJdZsSDSmPM
+	EOj2u0cDq4hJ60yixn4HAMx6upquims84Sec2DbnMSQhrsFYFJKtHwJ8+oGbI+RnqZt8cM5hVOoui
+	ACVwDnimH4jVSR8Y5v2Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vjGnS-00000008wIr-3h8y;
-	Fri, 23 Jan 2026 13:01:54 +0000
-Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
+	id 1vjGxn-00000008wX5-4C5P;
+	Fri, 23 Jan 2026 13:12:36 +0000
+Received: from mail-pj1-x1036.google.com ([2607:f8b0:4864:20::1036])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vjGnP-00000008wIQ-48jx
+	id 1vjGxl-00000008wWj-0YSP
 	for linux-phy@lists.infradead.org;
-	Fri, 23 Jan 2026 13:01:53 +0000
-Received: from pps.filterd (m0360083.ppops.net [127.0.0.1])
-	by mx0a-001b2d01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 60NCONl1028814;
-	Fri, 23 Jan 2026 13:01:48 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ibm.com; h=cc
-	:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=pp1; bh=SjzL1k
-	JakPceUaj7S1H6MzI+kh6xu3kpF6vyjr0DKdI=; b=LqG85AvFl2pE6JOrrB5vYc
-	t7FH5eZW1MzMwSnphJGYBiwuqKLUkSPqkLQI+RLGWpWM2AL7GMwXPHAsggpTYsXR
-	PU+7wMluRhpbe7JmbLevxqoZCO3hJBRt5nIxA0JUBro2/cEHRhfW9QIWFrprHNRF
-	vlil17jjld3N8OAGtZJhnVNPIV5Q33mS2i+rMu+ASbtmc3lB3aKloA15Qaj+7pNw
-	lMBas9tMYIz4x34OtlDC+N703ZAYkTjrda7b54DvsFGqEEjOs4MW+YbC301cNvts
-	Apd4qSyYBySnLfLpkD72ux5EvSXV/rjFvemb8mOgTnYNkb+dlW/ak09XqZXYsgFw
-	==
-Received: from ppma12.dal12v.mail.ibm.com (dc.9e.1632.ip4.static.sl-reverse.com [50.22.158.220])
-	by mx0a-001b2d01.pphosted.com (PPS) with ESMTPS id 4bt60f3mjk-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 23 Jan 2026 13:01:47 +0000 (GMT)
-Received: from pps.filterd (ppma12.dal12v.mail.ibm.com [127.0.0.1])
-	by ppma12.dal12v.mail.ibm.com (8.18.1.2/8.18.1.2) with ESMTP id 60N9oRhi024575;
-	Fri, 23 Jan 2026 13:01:47 GMT
-Received: from smtprelay07.wdc07v.mail.ibm.com ([172.16.1.74])
-	by ppma12.dal12v.mail.ibm.com (PPS) with ESMTPS id 4brxas7emq-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 23 Jan 2026 13:01:46 +0000
-Received: from smtpav05.dal12v.mail.ibm.com (smtpav05.dal12v.mail.ibm.com [10.241.53.104])
-	by smtprelay07.wdc07v.mail.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id 60ND1kVH28770900
-	(version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
-	Fri, 23 Jan 2026 13:01:46 GMT
-Received: from smtpav05.dal12v.mail.ibm.com (unknown [127.0.0.1])
-	by IMSVA (Postfix) with ESMTP id 08EE958067;
-	Fri, 23 Jan 2026 13:01:46 +0000 (GMT)
-Received: from smtpav05.dal12v.mail.ibm.com (unknown [127.0.0.1])
-	by IMSVA (Postfix) with ESMTP id 0E8F558068;
-	Fri, 23 Jan 2026 13:01:43 +0000 (GMT)
-Received: from [9.61.252.89] (unknown [9.61.252.89])
-	by smtpav05.dal12v.mail.ibm.com (Postfix) with ESMTP;
-	Fri, 23 Jan 2026 13:01:42 +0000 (GMT)
-Message-ID: <b06408c4-86cf-46e8-8740-d968cc12d192@linux.ibm.com>
-Date: Fri, 23 Jan 2026 18:31:41 +0530
+	Fri, 23 Jan 2026 13:12:34 +0000
+Received: by mail-pj1-x1036.google.com with SMTP id 98e67ed59e1d1-3530f597ea3so1030106a91.1
+        for <linux-phy@lists.infradead.org>; Fri, 23 Jan 2026 05:12:32 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1769173952; x=1769778752; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=3F6Q0KrzJx/PydalRZY11/eFAiNA4NIIjUoKpRMvjGE=;
+        b=M7vQOnLa87RbxIGtV2A6rgiakRUpPFWO6Xo4ZxpVxqqdhOGDi+IDpc0aua8sxZydo/
+         0d8p8uiVfSUXo7KqbEpNhrh6CZWaUoZbBmaxz5ZGywbSbAU2xUBpDADehc/Myc/RWUYK
+         oG4ucB+dUd/lwKIoxiQftHOPT5S1LFVs2wjVsP9KYEDD4KFvBzxs6c+jbWLoxZ1Irf3y
+         ZNR0NMWAOtsSPNIlJvHTig8XW5lWrCmVNSGNykEAvKf8X1WV7IC7r34xiRZUwoClLYGk
+         Tbtfnj/1YhC+BIuLGKoY6HNEGCQ99dKSzR3RT1lqTGjSGkgyP4MYH7CvlYN9QeMyfyfH
+         u+1w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1769173952; x=1769778752;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=3F6Q0KrzJx/PydalRZY11/eFAiNA4NIIjUoKpRMvjGE=;
+        b=Hqn/lSS9y7j798j862JG2KHxOrfzYfAlF7hJ7GQfX11N5VzkWKrrlTnHxLjsiLn7S5
+         8DOTXS0+iWZ//aC0fHQwu4/mvIecFks73vZgZWUuLVL77dBoVyPz0Soi4DmOdTRVsqL8
+         Tj3fQMuDVNEjXx/Vf4lyY5foX1k4Sbz9YZxKPtPZY4D762dUXp36odlXW7wtzL2eBD7L
+         f1Eu0/qNVDDGmGQFVGGr+UrXDeUYc5dbj3nDhl7xvIIZdkmi852/QV1+ajYRb/8pHAVM
+         NPyPubWzbohfphWnC5oMC3RGu+iYGO9NrTNZgUqsCW8aFiByzqxbe9IekZPRMfcW1ktd
+         WObg==
+X-Forwarded-Encrypted: i=1; AJvYcCXfw59opbgCbDIjP21UgfMJv2kPGe70LKGHBUr+LQiPoe0lRSwo71ubvwIK3hrLKuHmFr1gfrIhcbg=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyJWBoYv78X/ToQUPUIRFhMG6EbpxyJq74nGpPnkJyoUP0a1DEW
+	x3SkCn5rryyG1BCuZ0BEy6jzLl0QIEt0KmiXO7y4Z+OmIhQ5Vdfg3Pd5
+X-Gm-Gg: AZuq6aIEQFA3Ky1jvpKF1+NkwmxvX0a5hPIiVHOhHK7+XoX1lktqmIgUuX9bAntzhDm
+	/1gM/FjaW2BcmnkZmbdU2vrYrrLRrV14tPSLl8DMSQodNL9bZpJdRUVRC6Bw5V4s12oB17Iry7+
+	yNhT6CxYNBNqv1kcMDaQBKpgPzGJd6mUIcLpfpE96vbhkFEdiynU5glaKiV9T+bnOSP29I58TCB
+	UqNZ0OT7Lzk+l/A3H0hY9xGw7uELfTlqktbxk9DRGq3LoY+GhYFUqvr96w08oNZKflHm34Urztc
+	3QczgFPik4spHZTQhYKVYA7A6RxfntTbTbtS0l2ownrfMIbxSHsU3L30jVe16YVXtcxzvGzlUJN
+	QDwtIVwt6EQ023LeCVKfTptfuydDJDrMeAGJz7tnFQ/vtXwJ0+fMjdPqkiWCfOsy+LdfaI8m8hq
+	AqNoT7M5MlQylewUo03wZ5vzO7/XBIVYBBYZ4=
+X-Received: by 2002:a17:90b:2cc3:b0:340:54a1:d6fe with SMTP id 98e67ed59e1d1-353676fbaf3mr2327414a91.15.1769173951647;
+        Fri, 23 Jan 2026 05:12:31 -0800 (PST)
+Received: from [192.168.1.7] ([115.99.251.203])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-35335205bb5sm5183483a91.1.2026.01.23.05.12.27
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 23 Jan 2026 05:12:31 -0800 (PST)
+Message-ID: <7b922a72-f17b-492f-ae04-a97a75738d4d@gmail.com>
+Date: Fri, 23 Jan 2026 18:42:24 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH phy] phy: enter drivers/phy/Makefile even without
- CONFIG_GENERIC_PHY
-Content-Language: en-GB
-To: Vladimir Oltean <vladimir.oltean@nxp.com>, linux-phy@lists.infradead.org,
-        Vinod Koul <vkoul@kernel.org>,
-        Neil Armstrong <neil.armstrong@linaro.org>
-Cc: netdev@vger.kernel.org, Paolo Abeni <pabeni@redhat.com>,
-        =?UTF-8?Q?Bj=C3=B8rn_Mork?= <bjorn@mork.no>,
-        linux-kernel@vger.kernel.org,
-        "Christophe Leroy (CS GROUP)" <chleroy@kernel.org>
-References: <20260123110600.3118561-1-vladimir.oltean@nxp.com>
-From: Venkat Rao Bagalkote <venkat88@linux.ibm.com>
-In-Reply-To: <20260123110600.3118561-1-vladimir.oltean@nxp.com>
-X-TM-AS-GCONF: 00
-X-Authority-Analysis: v=2.4 cv=WMdyn3sR c=1 sm=1 tr=0 ts=6973713b cx=c_pps
- a=bLidbwmWQ0KltjZqbj+ezA==:117 a=bLidbwmWQ0KltjZqbj+ezA==:17
- a=IkcTkHD0fZMA:10 a=vUbySO9Y5rIA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=VwQbUJbxAAAA:8 a=VnNF1IyMAAAA:8 a=8AirrxEcAAAA:8 a=N9vyIDjvMmDcvu0NZNMA:9
- a=QEXdDO2ut3YA:10 a=ST-jHhOKWsTCqRlWije3:22
-X-Proofpoint-GUID: 4KutBShFaPsB7qcJPcuSaOTKIBBvMaHQ
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMTIzMDEwNSBTYWx0ZWRfX8EJHz812+tgK
- StlAW/s11JPJs8EyDx2uNgAPGvDQ8X6DRob07zIoCmCD4FDnCj0MLyXnuku6cfbcoZW/lo+lLnb
- FTyQYcbUea7+QRJoSIkuMVHS9eh/hkT5tWqN6EoaYPUaC6VsWSHsCergEAcFpvfwSv/TEJYnp0t
- hdztwfuaO9UzFu0BmFrdhNM3oDCq0xASw1EfTU79rA97kYeqw8JiQtdL/rXo1XyVRq6qtLFnEKw
- dxYCSmwH46xD5u4BFPuUNBY9RFBN2UqcUsuiRdB3YBym0r6wGGrywI47KapwRzfLWWG9XdGqcpz
- 3fPMljxU1QbqAcMokmAHnF+rZP5RpdUOCSa+IbcEUmkso6Q1mpRBMNX2jlbV+vAcQ4Zu/WG4eia
- GRTW1sYUmKmu6lfbdDFQqXV5rgmXUtrLka3SmQ24e4b2WIRziJRr9hibqnph1S/URrwMH7xrPzE
- B8jGChmR5/GUR9qaM1Q==
-X-Proofpoint-ORIG-GUID: 4KutBShFaPsB7qcJPcuSaOTKIBBvMaHQ
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.20,FMLib:17.12.100.49
- definitions=2026-01-23_02,2026-01-22_02,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- phishscore=0 malwarescore=0 suspectscore=0 bulkscore=0 adultscore=0
- impostorscore=0 spamscore=0 clxscore=1011 priorityscore=1501
- lowpriorityscore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2601150000
- definitions=main-2601230105
+Subject: Re: [PATCH v3 2/3] dt-bindings: phy: ti,phy-usb3: convert to DT
+ schema
+To: Rob Herring <robh@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
+ <neil.armstrong@linaro.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>,
+ Kishon Vijay Abraham I <kishon@kernel.org>,
+ Aaro Koskinen <aaro.koskinen@iki.fi>, Andreas Kemnade
+ <andreas@kemnade.info>, Kevin Hilman <khilman@baylibre.com>,
+ Roger Quadros <rogerq@kernel.org>, Tony Lindgren <tony@atomide.com>,
+ Roger Quadros <rogerq@ti.com>, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-omap@vger.kernel.org
+References: <20260122-ti-phy-v3-0-751619729433@gmail.com>
+ <20260122-ti-phy-v3-2-751619729433@gmail.com>
+ <20260122233309.GA3730160-robh@kernel.org>
+Content-Language: en-US
+From: Charan Pedumuru <charan.pedumuru@gmail.com>
+In-Reply-To: <20260122233309.GA3730160-robh@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260123_050152_033840_C2368BA2 
-X-CRM114-Status: GOOD (  16.43  )
+X-CRM114-CacheID: sfid-20260123_051233_189044_F8A6ACB2 
+X-CRM114-Status: GOOD (  17.32  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,64 +107,202 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On 23/01/26 4:36 pm, Vladimir Oltean wrote:
-> Kconfig option CONFIG_PHY_COMMON_PROPS, which builds
-> drivers/phy/phy-common-props.c, was intended to be selectable
-> independently of CONFIG_GENERIC_PHY. Yet it lives in drivers/phy/, which
-> is entered by the Makefile only if CONFIG_GENERIC_PHY is set.
->
-> Allow the Makefile to enter one level deeper, but stop at drivers/phy/
-> if CONFIG_GENERIC_PHY is unselected (i.e. do not enter vendor folders).
-> The other stuff from drivers/phy/Makefile except for CONFIG_PHY_COMMON_PROPS,
-> like CONFIG_PHY_NXP_PTN3222, all depends on CONFIG_GENERIC_PHY.
->
-> Fixes: e7556b59ba65 ("phy: add phy_get_rx_polarity() and phy_get_tx_polarity()")
-> Closes: https://lore.kernel.org/lkml/43ea0202-891d-4582-980b-5cb557b41114@linux.ibm.com/
-> Reported-by: Venkat Rao Bagalkote <venkat88@linux.ibm.com>
-> Debugged-by: "Christophe Leroy (CS GROUP)" <chleroy@kernel.org>
-> Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
 
+On 23-01-2026 05:03, Rob Herring wrote:
+> On Thu, Jan 22, 2026 at 05:52:58PM +0000, Charan Pedumuru wrote:
+>> Convert TI PIPE3 PHY binding to DT schema.
+>> Changes during conversion:
+>> - Define a new pattern 'pcie-phy' to match nodes defined in DT.
+>> - Drop obsolete "id" property from the schema.
+>>
+>> Signed-off-by: Charan Pedumuru <charan.pedumuru@gmail.com>
+>> ---
+>>  .../devicetree/bindings/phy/ti,phy-usb3.yaml       | 135 +++++++++++++++++++++
+>>  1 file changed, 135 insertions(+)
+>>
+>> diff --git a/Documentation/devicetree/bindings/phy/ti,phy-usb3.yaml b/Documentation/devicetree/bindings/phy/ti,phy-usb3.yaml
+>> new file mode 100644
+>> index 000000000000..605f12f0f79a
+>> --- /dev/null
+>> +++ b/Documentation/devicetree/bindings/phy/ti,phy-usb3.yaml
+>> @@ -0,0 +1,135 @@
+>> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+>> +%YAML 1.2
+>> +---
+>> +$id: http://devicetree.org/schemas/phy/ti,phy-usb3.yaml#
+>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>> +
+>> +title: TI PIPE3 PHY Module
+>> +
+>> +maintainers:
+>> +  - Roger Quadros <rogerq@ti.com>
+>> +
+>> +description:
+>> +  The TI PIPE3 PHY is a high-speed SerDes (Serializer/Deserializer)
+>> +  transceiver integrated in OMAP5, DRA7xx/AM57xx, and similar SoCs.
+>> +  It supports multiple protocols (USB3, SATA, PCIe) using the PIPE3
+>> +  interface standard, which defines a common physical layer for
+>> +  high-speed serial interfaces.
+>> +
+>> +properties:
+>> +  $nodename:
+>> +    pattern: "^(pcie-phy|usb3-phy|phy)@[0-9a-f]+$"
+>> +
+>> +  compatible:
+>> +    enum:
+>> +      - ti,omap-usb3
+>> +      - ti,phy-pipe3-pcie
+>> +      - ti,phy-pipe3-sata
+>> +      - ti,phy-usb3
+>> +
+>> +  reg:
+>> +    minItems: 2
+>> +    maxItems: 3
+>> +
+>> +  reg-names:
+>> +    minItems: 2
+>> +    items:
+>> +      - const: phy_rx
+>> +      - const: phy_tx
+>> +      - const: pll_ctrl
+>> +
+>> +  "#phy-cells":
+>> +    const: 0
+>> +
+>> +  clocks:
+>> +    minItems: 2
+>> +    maxItems: 7
+>> +
+>> +  clock-names:
+>> +    minItems: 2
+>> +    maxItems: 7
+>> +    items:
+>> +      enum: [wkupclk, sysclk, refclk, dpll_ref,
+>> +             dpll_ref_m2, phy-div, div-clk]
+>> +
+>> +  syscon-phy-power:
+>> +    $ref: /schemas/types.yaml#/definitions/phandle-array
+>> +    items:
+>> +      items:
+>> +        - description: Phandle to the system control module
+>> +        - description: Register offset controlling PHY power
+> 
+> This allows N entries of 2 cells each. You need either:
+> 
+> items:
+>   - items:
+>       - description: ...
+>       - description: ...
+> 
+> (the hyphen is important!)
+> 
+> Or:
+> 
+> maxItems: 1
+> items:
+>   items:
+>     - description: ...
+>     - description: ...
 
-Tested-by: Venkat Rao Bagalkote <venkat88@linux.ibm.com>
+Okay, I will use the above format in the next revision.
 
+> 
+>> +
+>> +  syscon-pllreset:
+>> +    $ref: /schemas/types.yaml#/definitions/phandle-array
+>> +    items:
+>> +      items:
+>> +        - description: Phandle to the system control module
+>> +        - description: Register offset of CTRL_CORE_SMA_SW_0
+>> +
+>> +  syscon-pcs:
+>> +    $ref: /schemas/types.yaml#/definitions/phandle-array
+>> +    items:
+>> +      items:
+>> +        - description: Phandle to the system control module
+>> +        - description: Register offset for PCS delay programming
+>> +
+>> +  ctrl-module:
+>> +    $ref: /schemas/types.yaml#/definitions/phandle
+>> +    description:
+>> +      Phandle of control module for PHY power on.
+>> +    deprecated: true
+>> +
+>> +allOf:
+>> +  - if:
+>> +      properties:
+>> +        compatible:
+>> +          contains:
+>> +            const: ti,phy-pipe3-sata
+>> +    then:
+>> +      properties:
+>> +        syscon-pllreset: true
+>> +    else:
+>> +      properties:
+>> +        syscon-pllreset: false
+>> +
+>> +required:
+>> +  - reg
+>> +  - compatible
+>> +  - reg-names
+>> +  - "#phy-cells"
+>> +  - clocks
+>> +  - clock-names
+>> +
+>> +unevaluatedProperties: false
+>> +
+>> +examples:
+>> +  - |
+>> +    /* TI PIPE3 USB3 PHY */
+>> +    usb3-phy@4a084400 {
+>> +        compatible = "ti,phy-usb3";
+>> +        reg = <0x4a084400 0x80>,
+>> +              <0x4a084800 0x64>,
+>> +              <0x4a084c00 0x40>;
+>> +        reg-names = "phy_rx", "phy_tx", "pll_ctrl";
+>> +        #phy-cells = <0>;
+>> +        clocks = <&usb_phy_cm_clk32k>,
+>> +                 <&sys_clkin>,
+>> +                 <&usb_otg_ss_refclk960m>;
+>> +        clock-names = "wkupclk", "sysclk", "refclk";
+>> +        ctrl-module = <&omap_control_usb>;
+>> +    };
+>> +
+>> +  - |
+>> +    /* TI PIPE3 SATA PHY */
+>> +    phy@4a096000 {
+>> +        compatible = "ti,phy-pipe3-sata";
+>> +        reg = <0x4A096000 0x80>,  /* phy_rx */
+>> +              <0x4A096400 0x64>,  /* phy_tx */
+>> +              <0x4A096800 0x40>;  /* pll_ctrl */
+> 
+> Use lowercase hex.
 
-> ---
->   drivers/Makefile     | 2 +-
->   drivers/phy/Makefile | 2 +-
->   2 files changed, 2 insertions(+), 2 deletions(-)
->
-> diff --git a/drivers/Makefile b/drivers/Makefile
-> index ccc05f1eae3e..53fbd2e0acdd 100644
-> --- a/drivers/Makefile
-> +++ b/drivers/Makefile
-> @@ -10,7 +10,7 @@ obj-y				+= cache/
->   obj-y				+= irqchip/
->   obj-y				+= bus/
->   
-> -obj-$(CONFIG_GENERIC_PHY)	+= phy/
-> +obj-y				+= phy/
->   
->   # GPIO must come after pinctrl as gpios may need to mux pins etc
->   obj-$(CONFIG_PINCTRL)		+= pinctrl/
-> diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
-> index 30b150d68de7..93715ea0d010 100644
-> --- a/drivers/phy/Makefile
-> +++ b/drivers/phy/Makefile
-> @@ -15,7 +15,7 @@ obj-$(CONFIG_PHY_SNPS_EUSB2)		+= phy-snps-eusb2.o
->   obj-$(CONFIG_USB_LGM_PHY)		+= phy-lgm-usb.o
->   obj-$(CONFIG_PHY_AIROHA_PCIE)		+= phy-airoha-pcie.o
->   obj-$(CONFIG_PHY_NXP_PTN3222)		+= phy-nxp-ptn3222.o
-> -obj-y					+= allwinner/	\
-> +obj-$(CONFIG_GENERIC_PHY)		+= allwinner/	\
->   					   amlogic/	\
->   					   broadcom/	\
->   					   cadence/	\
+Sure.
+
+> 
+>> +        reg-names = "phy_rx", "phy_tx", "pll_ctrl";
+>> +        clocks = <&sys_clkin1>, <&sata_ref_clk>;
+>> +        clock-names = "sysclk", "refclk";
+>> +        syscon-pllreset = <&scm_conf 0x3fc>;
+>> +        #phy-cells = <0>;
+>> +    };
+>> +...
+>>
+>> -- 
+>> 2.52.0
+>>
+
+-- 
+Best Regards,
+Charan.
+
 
 -- 
 linux-phy mailing list
