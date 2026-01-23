@@ -4,75 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 90CD2D74EC5
-	for <linux-phy@archiver.kernel.org>; Fri, 23 Jan 2026 13:32:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 28C00D74ECB
+	for <linux-phy@archiver.kernel.org>; Fri, 23 Jan 2026 13:32:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Kb15QVZbZwpARnHikkuYmKfFt81g4fr8zRj28Vx7Otg=; b=PoqDm+p1+UoHtm
-	zecZDINebKkjwjs/m7Q5g/EIAJ3XHeat2o5IEUIPtthzcFv5ZFO7xZDuFCjR/hVFoloprNG1FW8iM
-	+si5HL5hJpflr3Ha55OZg0m+wl/quclnLmFzOw+iJkSPBjXF7oXmtKEgAkoCb5V3QuK+B8aEAFLXq
-	zT7mlscKv1IHtIyiWpXWV2a/MANqmdHkjVd4kz+LGSA2CO24opT8p5/bcEo3xmslYYeuAdDyJAQWW
-	gZhZM4nXjB1Btg9+S0CnBtb/G3IkTE9mpAH2zbb+tqQgsnS8OeQbsU2K4v7/udRi8RMgX98YyIPh/
-	SdQdg95WjgbNeXMAZeLw==;
+	List-Owner; bh=gkasz0lkcjhzoWL1AGj7gt0E6Ee5vipYwKt+Emf2+ts=; b=vsWmXJzQDZVX8o
+	e2Y4QBI5OTteNKNhYIyQghmWw2U7lAAy7mzMxVh+KP82tEJWBGtjvOpWPogCgOS1svOTmANkr4ql4
+	e/NzlK8rb/XfXhT+JuWduhkiiNSN9fSnnidpGSkqbvQRNUqusMSE/7Br0UwbdmdTtf+5nzRQqX2Mu
+	u1ZEZS8zsa48Z5pVknBKG8qWnwwNy+rYoxUeUtXqp2dnzn7MJunWrVquaYSOWSDkYP1q37EOqvstu
+	D4TV105nHJrLOKmPtO2j8ZTjOb8rPCIDjoVQmh+UvsLYD9hDrosCJWxSHRQvzLxu7/3YpBEysjXV+
+	5gcfNlSXvp1yuCwAY4ow==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vjHGa-00000008y8u-1KKW;
-	Fri, 23 Jan 2026 13:32:00 +0000
-Received: from mail-vk1-f173.google.com ([209.85.221.173])
+	id 1vjHHA-00000008yIS-3mnp;
+	Fri, 23 Jan 2026 13:32:36 +0000
+Received: from mail-vs1-f44.google.com ([209.85.217.44])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vjHGY-00000008y7m-0SzJ
+	id 1vjHH7-00000008yGV-1Q6X
 	for linux-phy@lists.infradead.org;
-	Fri, 23 Jan 2026 13:31:59 +0000
-Received: by mail-vk1-f173.google.com with SMTP id 71dfb90a1353d-5664393d409so177872e0c.0
-        for <linux-phy@lists.infradead.org>; Fri, 23 Jan 2026 05:31:57 -0800 (PST)
+	Fri, 23 Jan 2026 13:32:34 +0000
+Received: by mail-vs1-f44.google.com with SMTP id ada2fe7eead31-5ec87b1f525so1285894137.0
+        for <linux-phy@lists.infradead.org>; Fri, 23 Jan 2026 05:32:33 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1769175117; x=1769779917;
+        d=1e100.net; s=20230601; t=1769175152; x=1769779952;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=RpS2H3SdIy7+x5vUo7+a2x6ndejrFYA8bNDO09Q1vNI=;
-        b=powNEHLk3Uj78dczj4V6VmYA84xibbX55lh8S7R6eYdYRIanL0gZIA80zBGtpfMGgS
-         vUqNYNCxOM/XSkJrSY6fQDP7zo5FCQUzk2R45T6LXsb+yo6w2Eliw4MKyz96a0MsoZRg
-         VNwUe7ItJTruSzcp+7QvIwJrpzBenNuObERoK+L+BYFW9xVPfosQYHvsZY3YPuWcCwGJ
-         S8r+G/fizUJKCN/QEnYdyEDHDQSw+QZZK8GEVxoPJx8TuN2S9fDie9TL0ZYuzavYmYXi
-         WxTJ62gakksGwtyEXnmXnJkW8MsJO+oJ0gope8xgWk6MsQHFu44hXvI6spS6eV0wihJP
-         t61w==
-X-Forwarded-Encrypted: i=1; AJvYcCWq4o9YvsD+trmAoLDBUydmIvqV0wh50t0V3pDWoaNZtR00GHZu+hvPGTo0/OvomEsvXe0qTo2fKrk=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxcaxKy486JMEc1uJDSF9bxjDqbaJhRUKCHqsDXns5gt78JUe2r
-	Xv7E1+xTR0i3zHLdo91fTJ/WLre2tS8h3ZYxlccx6ETAqOc4ojzeh0q+S8gX7rEH
-X-Gm-Gg: AZuq6aJFvpX0qBPyqSCj68gkd4Sfn/m6FGlVAUzUDBZH9ruh+02K5GRGHBUNTaIcgj+
-	VbQCvCWYezlnjuaYtew1a5GFuSVr2maepNJusZnYAYFdLJu/jkj3CgL9RrSco+sl4vPC5iC5mRW
-	BvPsWm89lufoZQMWN2TfEwaigRB9hMxgO5IxEoLWnp1oGn7Gmrcb2wzdPDPhqS1w9SafBomhBdT
-	n912JWSmdn1/wTgyjVQBChoPAOFNiexBUWMjAsNiHsB+yn4Ulau2GtNuIrMwfTrPGzjuH2toIq7
-	dB2yHms5zTAHdYW+6Ub8DOevkkFwWy6km0A2OCvXJl4VPL9A3ugo6ZxOYHUlf09h++3XvVGC4gp
-	t+neJrUP+KuQjTAl17RsFDhMaFuS7rl51q1AKlyn9BktXSOd6m3mFr8nEGXLfTVRLcf9Vx4h5Py
-	tSINXGtw7ss8tybEfddKqqGhe8P1ei4AjXlV+R6VnKEFQPNege
-X-Received: by 2002:a05:6122:2a47:b0:563:5f68:7a75 with SMTP id 71dfb90a1353d-56645deab9cmr303787e0c.20.1769175116727;
-        Fri, 23 Jan 2026 05:31:56 -0800 (PST)
-Received: from mail-ua1-f50.google.com (mail-ua1-f50.google.com. [209.85.222.50])
-        by smtp.gmail.com with ESMTPSA id 71dfb90a1353d-5663fa96675sm472918e0c.9.2026.01.23.05.31.55
+        bh=ZFcVCUbs6+A4DjohoDcTbMd4NWYz6AemlNmvZZNsXj8=;
+        b=tQQnJLsoUAr0ygN0UFpCptx2nmDfn1WxT8wvdpxpr21bLzx/4Hhg9Mfxn6o0xGoGwa
+         zZk3yFs/ZGotmi/5wD18N083ew8yqLO0zYhO2rX0sYb34Nz/+CaJWGj8m9ELVW3nUe2w
+         pOd+p3zVZg0XkK+r/mJg5UohNghvwIM0t4kAAqxKP10MHzfcDd6PA/2CF9teNockPRbd
+         bR2yMljlfFmQo3DNmEC9NpNDd//S1i/s/tHQnMVZtqi4dNvmSATimj6H72mSXAzT4DLM
+         sYt+sqrO7XnCmn/LUKZNC5l39rzeRUdimUHMSTtNe7GhF+gDGLSqhH17TeDQUtGfu2HM
+         kdaQ==
+X-Forwarded-Encrypted: i=1; AJvYcCWM+m0HL7wSwJ7dQgw4ckJMjUcSoOW6tE+i90OY/JuGpuTNXXW0LeqE1Wkf/H8aEPQFcCw4Ue7TzBs=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxvSCD3UeHyAqYmwPecwLDpWtUNG3J3tG5Bcpjylef3jxqNOTZY
+	M4jsbBqS4gKv68+OL2IJj4SN7fmbYf0EEq82b3w7sq1hxlSiB8L7oDrENwefkVb0
+X-Gm-Gg: AZuq6aKAq6cMutBY7Y6/MJ2d0bkJ4PoEraTH5AqjkCRshHLve6UT/Sbk3mW+7u3B0S4
+	BJY+UbqWFNpac7Ior2E6fyLHuTOh+tr6CxI+V02Ktix3zuduUcuEBMeV3Cz9BGPt566o7s+8A1Q
+	3GAV3vWOnOPHyFqyhSNrMPtjS+WSKVztSHtDmdQCGNA+AcXQQzzipOssweaH3fpjoRAMV08wzLC
+	cLAH4Rc0ZFQGZbejHSod9KLMaNwqvhstBz+cwWhjqBWSWGqIX9turTmrCADcfR+r3GfeNIX8wQ8
+	EXbziGV3C/TmFKqn3sWIbhAiBUuIQigCjY3OgauLAvNwzk0KjeRuqb3Fv+CZvUoekixIP4kj+Nz
+	jT70qQXY+a9lZc9aFgCcD54qWM2Fcl0k0mFdNbOyNlocBCwJVG7leY4nW4BFe0pLWhjdSqd6wTu
+	VR32jsGqUyyCGp0An5psk+0KX2VtQPLUeHtOOzBl2mdy6SmxS2Ounh
+X-Received: by 2002:a67:eb56:0:b0:5f5:4f68:9f7e with SMTP id ada2fe7eead31-5f54f689ffamr497533137.8.1769175152267;
+        Fri, 23 Jan 2026 05:32:32 -0800 (PST)
+Received: from mail-vk1-f177.google.com (mail-vk1-f177.google.com. [209.85.221.177])
+        by smtp.gmail.com with ESMTPSA id ada2fe7eead31-5f54d62ce3fsm548499137.9.2026.01.23.05.32.30
         for <linux-phy@lists.infradead.org>
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 23 Jan 2026 05:31:55 -0800 (PST)
-Received: by mail-ua1-f50.google.com with SMTP id a1e0cc1a2514c-9480c6f8b43so594241241.2
-        for <linux-phy@lists.infradead.org>; Fri, 23 Jan 2026 05:31:55 -0800 (PST)
-X-Forwarded-Encrypted: i=1; AJvYcCWdx2PUuyHnJBxTEfQ+DJjtDZlQOIBPkBeRFaZI8hSsijuVjNfMsx1DO/57TQaMZXvtiLQv/wqH9jI=@lists.infradead.org
-X-Received: by 2002:a05:6102:cd0:b0:5ea:67f4:c1ad with SMTP id
- ada2fe7eead31-5f5586773e5mr314116137.21.1769175115274; Fri, 23 Jan 2026
- 05:31:55 -0800 (PST)
+        Fri, 23 Jan 2026 05:32:31 -0800 (PST)
+Received: by mail-vk1-f177.google.com with SMTP id 71dfb90a1353d-56641b5a471so1023088e0c.2
+        for <linux-phy@lists.infradead.org>; Fri, 23 Jan 2026 05:32:30 -0800 (PST)
+X-Forwarded-Encrypted: i=1; AJvYcCVuYAEKTeYcX7G/Y+mqlM146bDQ5bQk6cW+ZhS9MGA4xq9dXtXoosPaFkYlbsAfdoeNIy54JSH2lSU=@lists.infradead.org
+X-Received: by 2002:a05:6102:f14:b0:5ef:a9fb:f1f3 with SMTP id
+ ada2fe7eead31-5f54bae7a41mr1054952137.11.1769175150254; Fri, 23 Jan 2026
+ 05:32:30 -0800 (PST)
 MIME-Version: 1.0
-References: <20260118135038.8033-1-marek.vasut+renesas@mailbox.org> <20260118135038.8033-6-marek.vasut+renesas@mailbox.org>
-In-Reply-To: <20260118135038.8033-6-marek.vasut+renesas@mailbox.org>
+References: <20260118135038.8033-1-marek.vasut+renesas@mailbox.org> <20260118135038.8033-7-marek.vasut+renesas@mailbox.org>
+In-Reply-To: <20260118135038.8033-7-marek.vasut+renesas@mailbox.org>
 From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Fri, 23 Jan 2026 14:31:43 +0100
-X-Gmail-Original-Message-ID: <CAMuHMdUFjfe-3YTBQ37bbfgH5xXf_1cQZ8_58vLCQNc=5caF1g@mail.gmail.com>
-X-Gm-Features: AZwV_Qhn6Z025XcB1tu3nu-plKR7LvAJNMlqwBqF2kc7a-H-YRSLtx_zGjZz-tc
-Message-ID: <CAMuHMdUFjfe-3YTBQ37bbfgH5xXf_1cQZ8_58vLCQNc=5caF1g@mail.gmail.com>
-Subject: Re: [PATCH v2 5/9] arm64: dts: renesas: r8a77990: Describe PCIe root port
+Date: Fri, 23 Jan 2026 14:32:18 +0100
+X-Gmail-Original-Message-ID: <CAMuHMdUaPJCdzx5nGgmO4=z5TL6UYiYDaEgL1ezWABh6vPJOCA@mail.gmail.com>
+X-Gm-Features: AZwV_QiSLMv1d8wTOd_fggCZcAN0A0pAIafduPy_jaGRkU9OQ3Tlbc0VC45o0gg
+Message-ID: <CAMuHMdUaPJCdzx5nGgmO4=z5TL6UYiYDaEgL1ezWABh6vPJOCA@mail.gmail.com>
+Subject: Re: [PATCH v2 6/9] arm64: dts: renesas: r8a77990: Add USB 3.0 PHY and
+ USB3S0 clock nodes
 To: Marek Vasut <marek.vasut+renesas@mailbox.org>
 Cc: linux-arm-kernel@lists.infradead.org, Conor Dooley <conor+dt@kernel.org>, 
 	Krzysztof Kozlowski <krzk+dt@kernel.org>, Magnus Damm <magnus.damm@gmail.com>, 
@@ -81,8 +82,8 @@ Cc: linux-arm-kernel@lists.infradead.org, Conor Dooley <conor+dt@kernel.org>,
 	devicetree@vger.kernel.org, linux-phy@lists.infradead.org, 
 	linux-renesas-soc@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260123_053158_150156_5A9BC1C5 
-X-CRM114-Status: GOOD (  16.27  )
+X-CRM114-CacheID: sfid-20260123_053233_374240_5CE7C866 
+X-CRM114-Status: GOOD (  17.30  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,11 +102,15 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On Sun, 18 Jan 2026 at 14:51, Marek Vasut
 <marek.vasut+renesas@mailbox.org> wrote:
-> Add node which describes the root port in the PCIe controller DT node.
-> This can be used together with the pwrctrl driver to control clock and
-> power supply to a PCIe slot.
+> Add USB 3.0 PHY and PHY clock node for R8877990 E3 . The PHY node is
+> different in that it does not have control registers and extal clock,
+> which are not routed to the SoC pads on E3, therefore describe the
+> PHY as usb-nop-xceiv simple PHY. Add USB3S0 clock pad fixed-clock
+> node, the frequency has to be overridden at board level.
 >
 > Signed-off-by: Marek Vasut <marek.vasut+renesas@mailbox.org>
+
+> V2: Describe PHY as usb-nop-xceiv and update commit message
 
 Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
 i.e. will queue in renesas-devel for v6.21.
