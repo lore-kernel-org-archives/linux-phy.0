@@ -4,70 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A120DD74EDE
-	for <linux-phy@archiver.kernel.org>; Fri, 23 Jan 2026 15:02:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9669FD74EED
+	for <linux-phy@archiver.kernel.org>; Fri, 23 Jan 2026 15:39:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eP7eAMtuaCpcHX711NrQ4r8jrrbrMVDBfXPvs6vnROA=; b=FtDvYDA3XEbbNk
-	IV+cAt6l1GnKfQZ22NTMNy0ZYSCF89hsi1x5SmkK4tPmNk3dbOQjioP4pYj2yUn2XzXibTWUCMfRU
-	VZ0iveaVK3aBt+eGCs19q63KoSR782DgIx+9sv8CfuzU+ZSbs/Op5K9S//YpGKoEqmZHxdVq4w1nz
-	i9tQVVGREMsWNmlFDs0nZe5+s/61Al/BboslQZ2XFVA0VROIwac7lo+8oi1WFKigL48duJlK3VkfV
-	QJZoi6aP9DRP2eJFBJaIicf0EOsFxnxWc588wUYRD1E8S5Xa7elacFYgzdc1uVlh2SOQ349uR61pZ
-	HvWiinQh02Sa2G0Jqu7A==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=WGwTizs0qLRCa+y3La6zqwcrUT7MYN5P+1KwxghDed0=; b=uUOjaaj6K7bFuO
+	+8fUdc/drdUtIIsWZ2Y6sGf2UQwRGfoIxGLiJbbgLAiO8HH/1jGrsUT/25YFOMiWPyLFh8DCT8pdB
+	kD20OJ7G4bwXhUx9fITUqrrDVv9PWpkY7MsFhK3GHSixCXHLgWSL+lqj856qASrHRUHc+MNagipfc
+	6jgTCifWlbZMOHYEP4Eki9QQbe2Gwiu/jl1mnkwRafxA/n56dVwdZ4aOljb/oaJG4qCmTfgYS08Wc
+	7ZLgjXwaDwkLNq1ViW460Lxnp8htA16xcmVyzamBnfUf3Lhd8tBygvgWQBj/SRltuRm5OBvGMA12t
+	UGPB1ZYZWZeFzll52ZdA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vjIgZ-000000094Zk-39zI;
-	Fri, 23 Jan 2026 15:02:55 +0000
-Received: from mout-p-202.mailbox.org ([80.241.56.172])
+	id 1vjJFv-00000009702-0TPa;
+	Fri, 23 Jan 2026 15:39:27 +0000
+Received: from mail-pl1-x631.google.com ([2607:f8b0:4864:20::631])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vjIgW-000000094Yw-1v5R;
-	Fri, 23 Jan 2026 15:02:54 +0000
-Received: from smtp102.mailbox.org (smtp102.mailbox.org [10.196.197.102])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	by mout-p-202.mailbox.org (Postfix) with ESMTPS id 4dyLl14WMjz9tVF;
-	Fri, 23 Jan 2026 16:02:37 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailbox.org; s=mail20150812;
-	t=1769180557;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=ppwFZXgcvjPvaDl3An5foL2pHBaMM0peRix6xgcemok=;
-	b=gbd2/qmMSN37+mcpyEQnOijscfiBq76dBaqQRZJF96Zptuz48HQJzaS79bSH15aEbfN4lz
-	kIeAy12nCESlq2xTg94Mr9rnumQ/Fw8IOYvZ+v7Fca9q4hQLt1ram4YsF+FezVOJpPc9YM
-	uMcBeZQ4oQnKITRsPqks+R9m6rYO+o/T1kxGZB+zLcery8mVxlsiCLbtZcIlgRptvNRHnt
-	EDHzSZK9Vw8rWthU5mYQD6sgUSWj3S47h061fohYlGtKOlLLu0RZ/EkJHrYAgq/v6qn39S
-	IzDtC2jVtK+wNZnm9LCs+iBkXKzM+Dv7utuhv62Zgs7S9GEr9iWkUNkA28POqA==
-Message-ID: <43bf0bd6-0aea-4323-a64b-26e61a561881@mailbox.org>
-Date: Fri, 23 Jan 2026 16:02:33 +0100
+	id 1vjJFr-000000096zh-3Tsj
+	for linux-phy@lists.infradead.org;
+	Fri, 23 Jan 2026 15:39:25 +0000
+Received: by mail-pl1-x631.google.com with SMTP id d9443c01a7336-2a79ded11a2so14617585ad.3
+        for <linux-phy@lists.infradead.org>; Fri, 23 Jan 2026 07:39:23 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1769182763; x=1769787563; darn=lists.infradead.org;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=AN7Bijlws3Yf4aNS4iNAiLjf2TZ2e4vGXijmqIVGBpI=;
+        b=aiTKFLTjorDLZNc1SvS9jXGwwv7GbnmKwwG9TqSUkETL50AUinIsVuZ9zflhsMzgc8
+         eMvetCsPuix5lGfGjUzYsEWIjp+AWwYHS5vtRuA0wpqnrWWuRHybBzif1voNHJEas5Ij
+         afM7gdhOQmdNtfeMYoC+kfFTizG8hyn9GLOvK8jxLMUx8QCkJTsWKOfO7alJLoZ3vrzH
+         ATBSEQEz44LMiw8J4K0fSSNFY+9PbVBKkIcibHVxFH1UKapnYiVpSF2I1QnScvcKDSZp
+         0nXUj4peFc1twOK3cPWqe7AHVVJNuWmqVjM0DSjo/m0/4g3E8lFH9sxY5sHP8e75v0bn
+         fTyQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1769182763; x=1769787563;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=AN7Bijlws3Yf4aNS4iNAiLjf2TZ2e4vGXijmqIVGBpI=;
+        b=nxELJF0PeTd9L/2P4/NAbseGdmxeCMpPwSSqiS/e1yoY3m6gf7X29euOJlVRV31KXR
+         pO/4hYVTXiim6PeHMVFZIj7b6Nkf/O1HZ/x8atQYzo91FVQ5kz5PJ0I+e6E9jGK6aR8x
+         GolICMakSw9bXEFKR0kkwEe+ELuYgetfRUiVpxzuaWRUJEu/h6kSfZBoGaixgPVidg0m
+         ybHnIrDHdzS4V4ay1BHIZdvWVwJ0gRGN8yZMVYdRucS5G0UyBU8sA79VzneYEwV4PGjh
+         Bsq9xm9rEOo/HlNooMBYyCUuvU39TLHIfP0zueRTqZ5b/RkgDGL2KpaCU7a0HCjSGcqC
+         4roQ==
+X-Gm-Message-State: AOJu0Yw4UQEU+w80rQTUeNTsFTlnxw74O9Ontz8sYNM9M702m9ME5Hr8
+	LcRQ7RyUJUI+A11P370iSsxCymySVtKEH9McYX0Rg6uKvMu5GDe3LrLo
+X-Gm-Gg: AZuq6aI0RUZNG4xhjFxWppdwlfa4THw3TXwRQzh8kAEVUZ+eaiZnw1jjaZaoYqDJ9Cu
+	yGe+L0rwySk9IcC4u96BIZnIGrFPsctbv0acbspZ/2HW4JsgP7IEhIzOvby/WgGWyhxBOP2zhqv
+	gA8k/Sl/QthCQ5emBdTkiYu9Z1oIxA7zEZGU9kslfILpEieflvVdE0+scLbuDRXBcFV5zb8Aqsg
+	XzRbR9oO6SJ5/t23Eul0E/rKv+QlmstC9+YAZt/i2OO/7t4XjWzkhrCoxag/EEmbduj0wt9IXYc
+	AiM9FRAabouDEOFeBLpuOTsx4Zmin9ZJuc+ctPJyz3UIw3OO21LMEjOd5AbwqzJsbtedS/uKyTw
+	4AgyFXUhaa0aRBhDg6Rb9Q5oWJAm78vBdkN3P5EvSZLy6yT9Ag/pi20KE/ORDmnwidMCCoX7+3h
+	tbNPIXVCu0ksUj/R2GwlT9sFJcPMpridUgBQ==
+X-Received: by 2002:a17:902:e5c5:b0:2a0:b461:c883 with SMTP id d9443c01a7336-2a7fe747425mr32040215ad.45.1769182762932;
+        Fri, 23 Jan 2026 07:39:22 -0800 (PST)
+Received: from Black-Pearl.localdomain ([115.99.251.203])
+        by smtp.googlemail.com with ESMTPSA id d9443c01a7336-2a802f9769esm23732205ad.60.2026.01.23.07.39.18
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 23 Jan 2026 07:39:22 -0800 (PST)
+From: Charan Pedumuru <charan.pedumuru@gmail.com>
+Subject: [PATCH v4 0/3] dt-bindings: phy: Convert TI OMAP control and PIPE3
+ PHY to DT schema
+Date: Fri, 23 Jan 2026 15:39:01 +0000
+Message-Id: <20260123-ti-phy-v4-0-b557e2c46e6f@gmail.com>
 MIME-Version: 1.0
-Subject: Re: [PATCH v2 8/9] arm64: dts: renesas: ulcb: ulcb-kf: Describe
- PCIe/USB3.0 clock generator
-To: Geert Uytterhoeven <geert@linux-m68k.org>
-Cc: linux-arm-kernel@lists.infradead.org, Conor Dooley <conor+dt@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Magnus Damm
- <magnus.damm@gmail.com>, Neil Armstrong <neil.armstrong@linaro.org>,
- Rob Herring <robh@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- devicetree@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-renesas-soc@vger.kernel.org
-References: <20260118135038.8033-1-marek.vasut+renesas@mailbox.org>
- <20260118135038.8033-9-marek.vasut+renesas@mailbox.org>
- <CAMuHMdV7UPWCqj4A6097KKT+Es2Zz_mPeJoyJd5qDMudrNx_5A@mail.gmail.com>
-Content-Language: en-US
-From: Marek Vasut <marek.vasut@mailbox.org>
-In-Reply-To: <CAMuHMdV7UPWCqj4A6097KKT+Es2Zz_mPeJoyJd5qDMudrNx_5A@mail.gmail.com>
-X-MBO-RS-META: z5716wskbhzhgn31famzwdrhkjh9xnxg
-X-MBO-RS-ID: 41e6431bbdf3d0e5844
+X-B4-Tracking: v=1; b=H4sIABWWc2kC/12NzQqDMBAGX0Vybkp2Y4z21PcoPWhMNFB/SCRUx
+ HdvFCq2x/nYmV2I185qT27JQpwO1tuhj5BeEqLasm80tXVkggwFIAc6WTq2MxV5VRWa58qogsT
+ j0Wlj33vo8YzcWj8Nbt67AbZ1S2QMGP8mAlCgueJGaFRVnfF705X2dVVDR7ZEwLMmDw0poyVoh
+ TJlYIz51/hJQzw0HjUpIINCYpHyn2/run4AG9J8JgoBAAA=
+X-Change-ID: 20251231-ti-phy-58bb9e38cfc9
+To: Vinod Koul <vkoul@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Aaro Koskinen <aaro.koskinen@iki.fi>, 
+ Andreas Kemnade <andreas@kemnade.info>, Kevin Hilman <khilman@baylibre.com>, 
+ Roger Quadros <rogerq@kernel.org>, Tony Lindgren <tony@atomide.com>, 
+ Roger Quadros <rogerq@ti.com>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, linux-omap@vger.kernel.org, 
+ Charan Pedumuru <charan.pedumuru@gmail.com>
+X-Mailer: b4 0.14.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260123_070252_672358_86591CA3 
-X-CRM114-Status: GOOD (  14.35  )
+X-CRM114-CacheID: sfid-20260123_073923_896998_A6AE97CB 
+X-CRM114-Status: UNSURE (   9.70  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,38 +106,67 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 1/23/26 2:37 PM, Geert Uytterhoeven wrote:
-> Hi Marek,
-> 
-> Thanks for your patch!
-> 
-> On Sun, 18 Jan 2026 at 14:51, Marek Vasut
-> <marek.vasut+renesas@mailbox.org> wrote:
->> Describe the 9FGV0841 PCIe and USB3.0 clock generator present on ULCB
->> board. The clock generator supplies 100 MHz differential clock for both
->> PCIe ports, the USB 3.0 PHY and SATA.
->>
->> SATA is not yet described in the ULCB DT, therefore the connection to
->> this clock generator is not described here either.
->>
->> The H3 ULCB schematic does describe connection from output DIF7 to
->> USB3S1_CLK_*, but these signals do not exist on the SoC, therefore
->> this connection is also not described.
-> 
-> That is the case because the first ULCB came with R-Car H3 ES1.0,
-> which did have two USB3 channels. R-Car H3 ES2.0, M3-W, M3-W+,
-> and M3-N have only a single USB3 channel.
-> 
->> Signed-off-by: Marek Vasut <marek.vasut+renesas@mailbox.org>
-> 
-> Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
-> i.e. will queue in renesas-devel for v6.21.
-Thank you
+This series converts the old text-based DeviceTree bindings for TI OMAP
+Control PHY and TI PIPE3 PHY to modern JSON-schema (YAML) format.
+
+Signed-off-by: Charan Pedumuru <charan.pedumuru@gmail.com>
+---
+Changes in v4:
+- ti,phy-usb3: Limit phandle arrays for optional properties to one entry.
+- ti,phy-usb3: Use lowercase hex for reg values in examples.
+- Link to v3: https://lore.kernel.org/r/20260122-ti-phy-v3-0-751619729433@gmail.com
+
+Changes in v3:
+- Change maintainer to "Roger Quadros" for both YAML files.
+- dts: Split node pattern updates into a separate patch and align node
+  naming with standard conventions.
+- ti,phy-usb3: Update node pattern to follow standard conventions.
+- ti,phy-usb3: Refine the reg-names property and add constraints for
+  optional phandle-array properties.
+- ti,phy-usb3: Redefine "syscon-pllreset" dependency on the compatible
+  "ti,phy-pipe3-sata" in a correct format.
+- ti,control-phy-otghs: Update node pattern and adjust maxItems for reg
+  and reg-names.
+- ti,control-phy-otghs: Fix the conditional handling for the
+  ti,control-phy-pcie compatible.
+- Link to v2: https://lore.kernel.org/r/20260107-ti-phy-v2-0-a1ec27401fff@gmail.com
+
+Changes in v2:
+- ti,control-phy-otghs: Update commit message to reflect the latest
+  binding changes.
+- ti,phy-usb3: Drop the obsolete "id" property from the schema.
+- Both bindings: Update maintainers list, modify node pattern and improve
+  node descriptions for clarity.
+- ti,phy-usb3: Introduce new YAML schema with properly defined optional
+  properties for the PIPE3 PHY.
+- Link to v1: https://lore.kernel.org/r/20260103-ti-phy-v1-1-8c3f5e2cbd63@gmail.com
+
+---
+Charan Pedumuru (3):
+      arm: dts: ti: omap: align node patterns with established convention
+      dt-bindings: phy: ti,phy-usb3: convert to DT schema
+      dt-bindings: phy: ti,control-phy-otghs: convert to DT schema
+
+ .../bindings/phy/ti,control-phy-otghs.yaml         |  99 +++++++++++++++
+ .../devicetree/bindings/phy/ti,phy-usb3.yaml       | 138 +++++++++++++++++++++
+ Documentation/devicetree/bindings/phy/ti-phy.txt   |  98 ---------------
+ arch/arm/boot/dts/ti/omap/dra7-l4.dtsi             |   4 +-
+ arch/arm/boot/dts/ti/omap/omap4-l4.dtsi            |   4 +-
+ arch/arm/boot/dts/ti/omap/omap5-l4.dtsi            |   2 +-
+ 6 files changed, 242 insertions(+), 103 deletions(-)
+---
+base-commit: cc3aa43b44bdb43dfbac0fcb51c56594a11338a8
+change-id: 20251231-ti-phy-58bb9e38cfc9
+
+Best regards,
+-- 
+Charan Pedumuru <charan.pedumuru@gmail.com>
+
 
 -- 
 linux-phy mailing list
