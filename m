@@ -4,75 +4,111 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 68986D72372
-	for <linux-phy@archiver.kernel.org>; Fri, 23 Jan 2026 11:13:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 61AACD74EC4
+	for <linux-phy@archiver.kernel.org>; Fri, 23 Jan 2026 13:01:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=clSsQm9PB162oogqAQm2jkU30Hny4zErIlc+8xhv22E=; b=GxLrzIZrGLM/xy
-	Mv6Y4xWqQ8GqZjcJr1PydDcWokcQCtazjrsiUjGEQ9hcOt4+G4Sv1J8fzp9AOqQGQCDRW4cBqqTvp
-	NhLZkZW+zaWe5FpJ+E8HbgzafPvef0PdGxVIMi+ulDUmvnPLvCe94zr0ct1WDWpuN2Cgr93Rs9s7n
-	5Hbh6AfE04a3Ysze44FiJhZoWetZFriC2LKXzDJV83FdOKYOUTcFAVfw11mPTgMpofsZe4HBoLbFJ
-	CokwM2P/yr0rtfGN1UMvW2EpBLFG+EDrLKv+1c2rNxGaaC3+XajWxWdYoRrMcrvxkEvBFuVmLa2X2
-	5q5aSXeUlxL8hc9+br7Q==;
+	List-Owner; bh=Do0Iz4JXtW/tq4jsRQxcFYsmrAXVtOJ55J4/S5i5fUs=; b=jVGgyJOiCTcI+r
+	WmPj2G/+YOLNvzY7Ee6pBdYtJW99q2Mypjq8sE8AglaJSeOznGfmKM5mMcc5Lwe7MryTzTfQ61T+A
+	04Q3c/peo5KF+QXn9/b445gT/d6bAG5GLSWWGXnCBE8gcBc8wGULEisDyBGZtK1SquHsfTh4qURR4
+	EGcx7BvarTjfuw1T93ekHX2hLxKkG1bsfl83rsT6A4pY1nZ53XiKQAV9+QRLWh1mMQdrk+V57mhMQ
+	DYHsZJ6WDuEb40IrDc3dJ4t6FDtAYlWIQzcXLVCVZ0xwIESmnXQsAuMfO8BB0N2TBTfEnrf3PkMIQ
+	5q9eK8Y1CxRvimT+Nr2w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vjF6h-00000008ohb-4AwD;
-	Fri, 23 Jan 2026 11:13:40 +0000
-Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
+	id 1vjGnS-00000008wIr-3h8y;
+	Fri, 23 Jan 2026 13:01:54 +0000
+Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vjF6e-00000008ogh-1RVu;
-	Fri, 23 Jan 2026 11:13:38 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
-	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
-	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=rW6hIs7kbRE6sqC+VHhb8yfuCQxkSIbxM4EYUPiSqtQ=; b=zlxp6bbSAdrUvEEckC6IDgQkwS
-	smUH7veqqcf/A7ifQVrNarkgkN6fyrAyh3Wv9wXroHnUW1bGNyYswwd5gBGipBhCXXr/rouJDvOMn
-	e8L4drbydog/ojOmYaOIufuu3h8sPcPxTRcvhK9TtkuzOJ381J8hnTW+JNGn1KuSw3e98I4p+y/2q
-	tRG88KVUkDCOeiLMp26CFEdZDCOEUx303vTo87F9X9yacUkoK5+gEuN6C0dMaUzZtvaKhvvHxAwoT
-	zh/oFMfJltVh8yijjuPpiNLrclGxwHjLL1AqiNQzC0u9QkaGSpJN7zV7MFB8hLR1LsaU++zvruHgs
-	urysKlsA==;
-Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:39500)
-	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.98.2)
-	(envelope-from <linux@armlinux.org.uk>)
-	id 1vjF6X-000000001uQ-3Rne;
-	Fri, 23 Jan 2026 11:13:29 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.98.2)
-	(envelope-from <linux@shell.armlinux.org.uk>)
-	id 1vjF6V-0000000022q-0aE9;
-	Fri, 23 Jan 2026 11:13:27 +0000
-Date: Fri, 23 Jan 2026 11:13:26 +0000
-From: "Russell King (Oracle)" <linux@armlinux.org.uk>
-To: Andrew Lunn <andrew@lunn.ch>
-Cc: Alexandre Torgue <alexandre.torgue@foss.st.com>,
-	Andrew Lunn <andrew+netdev@lunn.ch>,
-	"David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
-	linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-stm32@st-md-mailman.stormreply.com,
-	Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>, netdev@vger.kernel.org,
-	Paolo Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>
-Subject: Re: [PATCH net-next v2 00/14] net: stmmac: SerDes, PCS, BASE-X, and
- inband goodies
-Message-ID: <aXNX1oi7nWLcPK28@shell.armlinux.org.uk>
-References: <aXNEwBW3OA1xLEUj@shell.armlinux.org.uk>
+	id 1vjGnP-00000008wIQ-48jx
+	for linux-phy@lists.infradead.org;
+	Fri, 23 Jan 2026 13:01:53 +0000
+Received: from pps.filterd (m0360083.ppops.net [127.0.0.1])
+	by mx0a-001b2d01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 60NCONl1028814;
+	Fri, 23 Jan 2026 13:01:48 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ibm.com; h=cc
+	:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=pp1; bh=SjzL1k
+	JakPceUaj7S1H6MzI+kh6xu3kpF6vyjr0DKdI=; b=LqG85AvFl2pE6JOrrB5vYc
+	t7FH5eZW1MzMwSnphJGYBiwuqKLUkSPqkLQI+RLGWpWM2AL7GMwXPHAsggpTYsXR
+	PU+7wMluRhpbe7JmbLevxqoZCO3hJBRt5nIxA0JUBro2/cEHRhfW9QIWFrprHNRF
+	vlil17jjld3N8OAGtZJhnVNPIV5Q33mS2i+rMu+ASbtmc3lB3aKloA15Qaj+7pNw
+	lMBas9tMYIz4x34OtlDC+N703ZAYkTjrda7b54DvsFGqEEjOs4MW+YbC301cNvts
+	Apd4qSyYBySnLfLpkD72ux5EvSXV/rjFvemb8mOgTnYNkb+dlW/ak09XqZXYsgFw
+	==
+Received: from ppma12.dal12v.mail.ibm.com (dc.9e.1632.ip4.static.sl-reverse.com [50.22.158.220])
+	by mx0a-001b2d01.pphosted.com (PPS) with ESMTPS id 4bt60f3mjk-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 23 Jan 2026 13:01:47 +0000 (GMT)
+Received: from pps.filterd (ppma12.dal12v.mail.ibm.com [127.0.0.1])
+	by ppma12.dal12v.mail.ibm.com (8.18.1.2/8.18.1.2) with ESMTP id 60N9oRhi024575;
+	Fri, 23 Jan 2026 13:01:47 GMT
+Received: from smtprelay07.wdc07v.mail.ibm.com ([172.16.1.74])
+	by ppma12.dal12v.mail.ibm.com (PPS) with ESMTPS id 4brxas7emq-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Fri, 23 Jan 2026 13:01:46 +0000
+Received: from smtpav05.dal12v.mail.ibm.com (smtpav05.dal12v.mail.ibm.com [10.241.53.104])
+	by smtprelay07.wdc07v.mail.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id 60ND1kVH28770900
+	(version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+	Fri, 23 Jan 2026 13:01:46 GMT
+Received: from smtpav05.dal12v.mail.ibm.com (unknown [127.0.0.1])
+	by IMSVA (Postfix) with ESMTP id 08EE958067;
+	Fri, 23 Jan 2026 13:01:46 +0000 (GMT)
+Received: from smtpav05.dal12v.mail.ibm.com (unknown [127.0.0.1])
+	by IMSVA (Postfix) with ESMTP id 0E8F558068;
+	Fri, 23 Jan 2026 13:01:43 +0000 (GMT)
+Received: from [9.61.252.89] (unknown [9.61.252.89])
+	by smtpav05.dal12v.mail.ibm.com (Postfix) with ESMTP;
+	Fri, 23 Jan 2026 13:01:42 +0000 (GMT)
+Message-ID: <b06408c4-86cf-46e8-8740-d968cc12d192@linux.ibm.com>
+Date: Fri, 23 Jan 2026 18:31:41 +0530
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <aXNEwBW3OA1xLEUj@shell.armlinux.org.uk>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH phy] phy: enter drivers/phy/Makefile even without
+ CONFIG_GENERIC_PHY
+Content-Language: en-GB
+To: Vladimir Oltean <vladimir.oltean@nxp.com>, linux-phy@lists.infradead.org,
+        Vinod Koul <vkoul@kernel.org>,
+        Neil Armstrong <neil.armstrong@linaro.org>
+Cc: netdev@vger.kernel.org, Paolo Abeni <pabeni@redhat.com>,
+        =?UTF-8?Q?Bj=C3=B8rn_Mork?= <bjorn@mork.no>,
+        linux-kernel@vger.kernel.org,
+        "Christophe Leroy (CS GROUP)" <chleroy@kernel.org>
+References: <20260123110600.3118561-1-vladimir.oltean@nxp.com>
+From: Venkat Rao Bagalkote <venkat88@linux.ibm.com>
+In-Reply-To: <20260123110600.3118561-1-vladimir.oltean@nxp.com>
+X-TM-AS-GCONF: 00
+X-Authority-Analysis: v=2.4 cv=WMdyn3sR c=1 sm=1 tr=0 ts=6973713b cx=c_pps
+ a=bLidbwmWQ0KltjZqbj+ezA==:117 a=bLidbwmWQ0KltjZqbj+ezA==:17
+ a=IkcTkHD0fZMA:10 a=vUbySO9Y5rIA:10 a=VkNPw1HP01LnGYTKEx00:22
+ a=VwQbUJbxAAAA:8 a=VnNF1IyMAAAA:8 a=8AirrxEcAAAA:8 a=N9vyIDjvMmDcvu0NZNMA:9
+ a=QEXdDO2ut3YA:10 a=ST-jHhOKWsTCqRlWije3:22
+X-Proofpoint-GUID: 4KutBShFaPsB7qcJPcuSaOTKIBBvMaHQ
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMTIzMDEwNSBTYWx0ZWRfX8EJHz812+tgK
+ StlAW/s11JPJs8EyDx2uNgAPGvDQ8X6DRob07zIoCmCD4FDnCj0MLyXnuku6cfbcoZW/lo+lLnb
+ FTyQYcbUea7+QRJoSIkuMVHS9eh/hkT5tWqN6EoaYPUaC6VsWSHsCergEAcFpvfwSv/TEJYnp0t
+ hdztwfuaO9UzFu0BmFrdhNM3oDCq0xASw1EfTU79rA97kYeqw8JiQtdL/rXo1XyVRq6qtLFnEKw
+ dxYCSmwH46xD5u4BFPuUNBY9RFBN2UqcUsuiRdB3YBym0r6wGGrywI47KapwRzfLWWG9XdGqcpz
+ 3fPMljxU1QbqAcMokmAHnF+rZP5RpdUOCSa+IbcEUmkso6Q1mpRBMNX2jlbV+vAcQ4Zu/WG4eia
+ GRTW1sYUmKmu6lfbdDFQqXV5rgmXUtrLka3SmQ24e4b2WIRziJRr9hibqnph1S/URrwMH7xrPzE
+ B8jGChmR5/GUR9qaM1Q==
+X-Proofpoint-ORIG-GUID: 4KutBShFaPsB7qcJPcuSaOTKIBBvMaHQ
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.20,FMLib:17.12.100.49
+ definitions=2026-01-23_02,2026-01-22_02,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ phishscore=0 malwarescore=0 suspectscore=0 bulkscore=0 adultscore=0
+ impostorscore=0 spamscore=0 clxscore=1011 priorityscore=1501
+ lowpriorityscore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2601150000
+ definitions=main-2601230105
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260123_031337_012940_A2AD4A13 
-X-CRM114-Status: GOOD (  45.05  )
+X-CRM114-CacheID: sfid-20260123_050152_033840_C2368BA2 
+X-CRM114-Status: GOOD (  16.43  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,122 +120,64 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-According to patchwork, this doesn't apply to net-next. That's odd,
-it was generated on last night's net next, and although there has been
-further work, it rebases cleanly on top of this morning's. How can
-these changes:
 
- drivers/net/ethernet/stmicro/stmmac/dwmac-imx.c   |  6 +++++-
- drivers/net/ethernet/stmicro/stmmac/stmmac_main.c | 20 ++++++++++++++++----
- 2 files changed, 21 insertions(+), 5 deletions(-)
+On 23/01/26 4:36 pm, Vladimir Oltean wrote:
+> Kconfig option CONFIG_PHY_COMMON_PROPS, which builds
+> drivers/phy/phy-common-props.c, was intended to be selectable
+> independently of CONFIG_GENERIC_PHY. Yet it lives in drivers/phy/, which
+> is entered by the Makefile only if CONFIG_GENERIC_PHY is set.
+>
+> Allow the Makefile to enter one level deeper, but stop at drivers/phy/
+> if CONFIG_GENERIC_PHY is unselected (i.e. do not enter vendor folders).
+> The other stuff from drivers/phy/Makefile except for CONFIG_PHY_COMMON_PROPS,
+> like CONFIG_PHY_NXP_PTN3222, all depends on CONFIG_GENERIC_PHY.
+>
+> Fixes: e7556b59ba65 ("phy: add phy_get_rx_polarity() and phy_get_tx_polarity()")
+> Closes: https://lore.kernel.org/lkml/43ea0202-891d-4582-980b-5cb557b41114@linux.ibm.com/
+> Reported-by: Venkat Rao Bagalkote <venkat88@linux.ibm.com>
+> Debugged-by: "Christophe Leroy (CS GROUP)" <chleroy@kernel.org>
+> Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
 
-which happened in net-next overnight result in this change in patch 1:
 
- drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c | 3 ---
- 1 file changed, 3 deletions(-)
+Tested-by: Venkat Rao Bagalkote <venkat88@linux.ibm.com>
 
-failing to apply?
 
-No, patchwork is clearly wrong.
-
-On Fri, Jan 23, 2026 at 09:52:00AM +0000, Russell King (Oracle) wrote:
-> This is the v1 submission: if it doesn't get tested but review goes
-> well, it'll end up in net-next and mainline without testing on the
-> affected hardware!
-> 
-> Mentioned previously, I've been trying to sort out the PCS support in
-> stmmac, and this series represents the current state of play.
-> 
-> Previous posted patches centred around merely getting autonegotiation
-> to be configured correctly, to a point where the manual configuration
-> can be removed from the qcom-ethqos driver. The qcom-ethqos driver
-> uses both SGMII and 2500BASE-X, manually configuring the dwmac's
-> integrated PCS appropriately.
-> 
-> This *untested* series attempts to take this further. The patches:
-> 
-> - clean up qcom-ethqos only-written mac_base member.
-> - convert qcom-ethqos to use the set_clk_tx_rate() method for setting
->   the link clock rate.
-> - add support for phy_set_mode_ext() to the qcom "SGMII" ethernet
->   SerDes driver (which is really only what it needs. Note that
->   phy_set_mode_ext() is an expected call to be made, where as
->   phy_set_speed() is optional and not. See PHY documentation.)
-> - add platform-glue independent SerDes support to the stmmac core
->   driver. Currently, only qcom-ethqos will make use of this, and
->   I suspect as we haven't had this, it's going to be difficult to
->   convert other platform glue to use this - but had this existed
->   earlier, we could've pushed people to use PHY to abstract some
->   of the platform glue differences. Adding it now makes it available
->   for future platform glue.
-> - convert qcom-ethqos to use this core SerDes support.
-> - arrange for stmmac_pcs.c to supply the phy_intf_sel field value
->   if the integrated PCS will be used. (PHY_INTF_SEL_SGMII requires
->   the integrated PCS rather than an external PCS.)
-> - add BASE-X support to the integrated PCS driver, and use it for
->   BASE-X modes. This fully supports in-band mode, including reading
->   the link partner advertisement.
-> - add in-band support for SGMII, reading the state from the RGSMII
->   status field.
-> 
-> As we leave qcom-ethqos' manual configuration of the PCS in place at
-> the moment, the last patch adds reporting of any changes in its
-> configuration that the qcom-ethqos driver does beyond what phylink
-> requested, thus providing a path to debug and eventually remove
-> qcom-ethqos' manual configuration.
-> 
-> One patch is not included in this set - which adds a phy_intf_sel
-> value for external PCS (using PHY_INTF_SEL_GMII_MII). I believe all
-> external PCS use this mode when connected to a MAC capable of up to
-> 2.5G. However, no platform glue that provides the mac_select_pcs()
-> method also provide the set_phy_intf_sel() method, so we can safely
-> ignore this for now.
-> 
-> I would like to get this into net-next before the next merge window,
-> so testing would be appreciated. If there are issues with these patches
-> applied, please check whether the issue exists without these patches
-> and only report regressions caused by this patch set. For example,
-> I'm aware that qcom-ethqos has issues with 10Mbps mode due to an AQR
-> PHY being insanely provisioned to use SGMII in 1000M mode but with
-> rate matching with 10M media. This is not an issue that is relevant
-> to this patch series, but a problem with the PHY provisioning.
-> 
-> rfc->v1:
->  - fix SGMII link status
->  - avoid calling phy_get_mode() if PHY is null
-> v2:
->  - fix further AI review bot dribble that could've been raised on
->    the rfc version but wasn't.
->  
->  drivers/net/ethernet/stmicro/stmmac/Makefile       |   2 +-
->  drivers/net/ethernet/stmicro/stmmac/common.h       |   1 -
->  .../ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c    |  74 ++-----
->  drivers/net/ethernet/stmicro/stmmac/dwmac1000.h    |  12 +-
->  .../net/ethernet/stmicro/stmmac/dwmac1000_core.c   |  11 +-
->  drivers/net/ethernet/stmicro/stmmac/dwmac4.h       |  10 +-
->  drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c  |  10 +-
->  drivers/net/ethernet/stmicro/stmmac/stmmac_main.c  |  69 +++++--
->  drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.c   | 222 +++++++++++++++++++--
->  drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.h   |  53 ++---
->  .../net/ethernet/stmicro/stmmac/stmmac_serdes.c    | 111 +++++++++++
->  .../net/ethernet/stmicro/stmmac/stmmac_serdes.h    |  16 ++
->  drivers/phy/qualcomm/phy-qcom-sgmii-eth.c          |  43 ++++
->  include/linux/stmmac.h                             |   2 +
->  14 files changed, 491 insertions(+), 145 deletions(-)
-> 
-> -- 
-> RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-> FTTP is here! 80Mbps down 10Mbps up. Decent connectivity at last!
-> 
-
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTP is here! 80Mbps down 10Mbps up. Decent connectivity at last!
+> ---
+>   drivers/Makefile     | 2 +-
+>   drivers/phy/Makefile | 2 +-
+>   2 files changed, 2 insertions(+), 2 deletions(-)
+>
+> diff --git a/drivers/Makefile b/drivers/Makefile
+> index ccc05f1eae3e..53fbd2e0acdd 100644
+> --- a/drivers/Makefile
+> +++ b/drivers/Makefile
+> @@ -10,7 +10,7 @@ obj-y				+= cache/
+>   obj-y				+= irqchip/
+>   obj-y				+= bus/
+>   
+> -obj-$(CONFIG_GENERIC_PHY)	+= phy/
+> +obj-y				+= phy/
+>   
+>   # GPIO must come after pinctrl as gpios may need to mux pins etc
+>   obj-$(CONFIG_PINCTRL)		+= pinctrl/
+> diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
+> index 30b150d68de7..93715ea0d010 100644
+> --- a/drivers/phy/Makefile
+> +++ b/drivers/phy/Makefile
+> @@ -15,7 +15,7 @@ obj-$(CONFIG_PHY_SNPS_EUSB2)		+= phy-snps-eusb2.o
+>   obj-$(CONFIG_USB_LGM_PHY)		+= phy-lgm-usb.o
+>   obj-$(CONFIG_PHY_AIROHA_PCIE)		+= phy-airoha-pcie.o
+>   obj-$(CONFIG_PHY_NXP_PTN3222)		+= phy-nxp-ptn3222.o
+> -obj-y					+= allwinner/	\
+> +obj-$(CONFIG_GENERIC_PHY)		+= allwinner/	\
+>   					   amlogic/	\
+>   					   broadcom/	\
+>   					   cadence/	\
 
 -- 
 linux-phy mailing list
