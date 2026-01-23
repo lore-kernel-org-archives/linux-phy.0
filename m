@@ -4,62 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9279CD72372
-	for <linux-phy@archiver.kernel.org>; Fri, 23 Jan 2026 11:09:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 68986D72372
+	for <linux-phy@archiver.kernel.org>; Fri, 23 Jan 2026 11:13:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/Sx3NH5zX73fH2bB8LOPpmf4h9OjXGpIZPAmfJWwuE8=; b=IEHqS9j3L2Bv2D
-	UWRDVqWp66BQflvHUX/mhq/BkZBoJaSguhvaACakR4wtTywULutXg1PUp9RtCyMGQZ4bzoPzWY62i
-	xXPQaLx6aAYYcMwK25LRDSlGMaV2WvOgEdnVTD1FH+Vz+BGw0y6JSdYIVaG3bD2VjfoAhYZxt4OT0
-	UvfIv+flngmRAq6ooIsE1NUghSOaTxjTpDT8VgZipqkZwqpyRHlDiKtdLfns05ogqB2Bx1CQQUojX
-	20MGSN/10GwsSMU1lig413s7Z8gepZByRa5UZaRCGHRfJhrFDKdRx2cLIt+hby2gHO5YRPbvfwXpT
-	pgMy3Sad/UYG7ocVrHAw==;
+	List-Owner; bh=clSsQm9PB162oogqAQm2jkU30Hny4zErIlc+8xhv22E=; b=GxLrzIZrGLM/xy
+	Mv6Y4xWqQ8GqZjcJr1PydDcWokcQCtazjrsiUjGEQ9hcOt4+G4Sv1J8fzp9AOqQGQCDRW4cBqqTvp
+	NhLZkZW+zaWe5FpJ+E8HbgzafPvef0PdGxVIMi+ulDUmvnPLvCe94zr0ct1WDWpuN2Cgr93Rs9s7n
+	5Hbh6AfE04a3Ysze44FiJhZoWetZFriC2LKXzDJV83FdOKYOUTcFAVfw11mPTgMpofsZe4HBoLbFJ
+	CokwM2P/yr0rtfGN1UMvW2EpBLFG+EDrLKv+1c2rNxGaaC3+XajWxWdYoRrMcrvxkEvBFuVmLa2X2
+	5q5aSXeUlxL8hc9+br7Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vjF2S-00000008oTJ-1WTY;
-	Fri, 23 Jan 2026 11:09:16 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1vjF6h-00000008ohb-4AwD;
+	Fri, 23 Jan 2026 11:13:40 +0000
+Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vjF2Q-00000008oSy-01wo
-	for linux-phy@lists.infradead.org;
-	Fri, 23 Jan 2026 11:09:15 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 075DA403B0;
-	Fri, 23 Jan 2026 11:09:13 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B57A8C4CEF1;
-	Fri, 23 Jan 2026 11:09:10 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1769166552;
-	bh=DU4R/vh6HtH41Phs1tX6pkE7/HJlTdL2Clho8TNvyR0=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=YPiiP8wal8toWFTCjQ1NRIGngEzybNfyLzM2Pyzfggp0b43TzPT2KLr0hCVNUIVaa
-	 Cl9CB4AvVPelSZBsh08uLettW1pf6iZlDAvS0sRrmkRtFZqyHToaFF2kjJ/Pqo8Gyu
-	 vjBCBR8OA1zxqKCNTz3fRqE0dpM8EjwiB7vyFEbatMgyYXVnRylybMX4OD5tw7RRtg
-	 fz8Vd6/nyx1La5ZMBvs9soQqZFNejYv0CHaCtawjiApUNZBcuccQusDHV6o9T+voz/
-	 OMgm+j9uMTH0zKIfz7En2mWSmmfeu/Yhaw03S9DHMaXTuG62mMFAnIkTbsTsR2uy6P
-	 24GoH6Ey2CdSw==
-Message-ID: <06da8493-b8a5-4497-8cf6-54aaf44b70b1@kernel.org>
-Date: Fri, 23 Jan 2026 12:09:08 +0100
+	id 1vjF6e-00000008ogh-1RVu;
+	Fri, 23 Jan 2026 11:13:38 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=rW6hIs7kbRE6sqC+VHhb8yfuCQxkSIbxM4EYUPiSqtQ=; b=zlxp6bbSAdrUvEEckC6IDgQkwS
+	smUH7veqqcf/A7ifQVrNarkgkN6fyrAyh3Wv9wXroHnUW1bGNyYswwd5gBGipBhCXXr/rouJDvOMn
+	e8L4drbydog/ojOmYaOIufuu3h8sPcPxTRcvhK9TtkuzOJ381J8hnTW+JNGn1KuSw3e98I4p+y/2q
+	tRG88KVUkDCOeiLMp26CFEdZDCOEUx303vTo87F9X9yacUkoK5+gEuN6C0dMaUzZtvaKhvvHxAwoT
+	zh/oFMfJltVh8yijjuPpiNLrclGxwHjLL1AqiNQzC0u9QkaGSpJN7zV7MFB8hLR1LsaU++zvruHgs
+	urysKlsA==;
+Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:39500)
+	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.98.2)
+	(envelope-from <linux@armlinux.org.uk>)
+	id 1vjF6X-000000001uQ-3Rne;
+	Fri, 23 Jan 2026 11:13:29 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.98.2)
+	(envelope-from <linux@shell.armlinux.org.uk>)
+	id 1vjF6V-0000000022q-0aE9;
+	Fri, 23 Jan 2026 11:13:27 +0000
+Date: Fri, 23 Jan 2026 11:13:26 +0000
+From: "Russell King (Oracle)" <linux@armlinux.org.uk>
+To: Andrew Lunn <andrew@lunn.ch>
+Cc: Alexandre Torgue <alexandre.torgue@foss.st.com>,
+	Andrew Lunn <andrew+netdev@lunn.ch>,
+	"David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>,
+	Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
+	linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-stm32@st-md-mailman.stormreply.com,
+	Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>, netdev@vger.kernel.org,
+	Paolo Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>
+Subject: Re: [PATCH net-next v2 00/14] net: stmmac: SerDes, PCS, BASE-X, and
+ inband goodies
+Message-ID: <aXNX1oi7nWLcPK28@shell.armlinux.org.uk>
+References: <aXNEwBW3OA1xLEUj@shell.armlinux.org.uk>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH phy] phy: enter drivers/phy/Makefile even without
- CONFIG_GENERIC_PHY
-To: Vladimir Oltean <vladimir.oltean@nxp.com>, linux-phy@lists.infradead.org,
- Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>
-Cc: netdev@vger.kernel.org, Paolo Abeni <pabeni@redhat.com>,
- =?UTF-8?Q?Bj=C3=B8rn_Mork?= <bjorn@mork.no>, linux-kernel@vger.kernel.org,
- Venkat Rao Bagalkote <venkat88@linux.ibm.com>
-References: <20260123110600.3118561-1-vladimir.oltean@nxp.com>
-Content-Language: fr-FR
-From: "Christophe Leroy (CS GROUP)" <chleroy@kernel.org>
-In-Reply-To: <20260123110600.3118561-1-vladimir.oltean@nxp.com>
+Content-Disposition: inline
+In-Reply-To: <aXNEwBW3OA1xLEUj@shell.armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260123_030914_064829_8FE699A7 
-X-CRM114-Status: GOOD (  12.51  )
+X-CRM114-CacheID: sfid-20260123_031337_012940_A2AD4A13 
+X-CRM114-Status: GOOD (  45.05  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,47 +84,124 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-CgpMZSAyMy8wMS8yMDI2IMOgIDEyOjA2LCBWbGFkaW1pciBPbHRlYW4gYSDDqWNyaXTCoDoKPiBL
-Y29uZmlnIG9wdGlvbiBDT05GSUdfUEhZX0NPTU1PTl9QUk9QUywgd2hpY2ggYnVpbGRzCj4gZHJp
-dmVycy9waHkvcGh5LWNvbW1vbi1wcm9wcy5jLCB3YXMgaW50ZW5kZWQgdG8gYmUgc2VsZWN0YWJs
-ZQo+IGluZGVwZW5kZW50bHkgb2YgQ09ORklHX0dFTkVSSUNfUEhZLiBZZXQgaXQgbGl2ZXMgaW4g
-ZHJpdmVycy9waHkvLCB3aGljaAo+IGlzIGVudGVyZWQgYnkgdGhlIE1ha2VmaWxlIG9ubHkgaWYg
-Q09ORklHX0dFTkVSSUNfUEhZIGlzIHNldC4KPiAKPiBBbGxvdyB0aGUgTWFrZWZpbGUgdG8gZW50
-ZXIgb25lIGxldmVsIGRlZXBlciwgYnV0IHN0b3AgYXQgZHJpdmVycy9waHkvCj4gaWYgQ09ORklH
-X0dFTkVSSUNfUEhZIGlzIHVuc2VsZWN0ZWQgKGkuZS4gZG8gbm90IGVudGVyIHZlbmRvciBmb2xk
-ZXJzKS4KPiBUaGUgb3RoZXIgc3R1ZmYgZnJvbSBkcml2ZXJzL3BoeS9NYWtlZmlsZSBleGNlcHQg
-Zm9yIENPTkZJR19QSFlfQ09NTU9OX1BST1BTLAo+IGxpa2UgQ09ORklHX1BIWV9OWFBfUFROMzIy
-MiwgYWxsIGRlcGVuZHMgb24gQ09ORklHX0dFTkVSSUNfUEhZLgo+IAo+IEZpeGVzOiBlNzU1NmI1
-OWJhNjUgKCJwaHk6IGFkZCBwaHlfZ2V0X3J4X3BvbGFyaXR5KCkgYW5kIHBoeV9nZXRfdHhfcG9s
-YXJpdHkoKSIpCj4gQ2xvc2VzOiBodHRwczovL2xvcmUua2VybmVsLm9yZy9sa21sLzQzZWEwMjAy
-LTg5MWQtNDU4Mi05ODBiLTVjYjU1N2I0MTExNEBsaW51eC5pYm0uY29tLwo+IFJlcG9ydGVkLWJ5
-OiBWZW5rYXQgUmFvIEJhZ2Fsa290ZSA8dmVua2F0ODhAbGludXguaWJtLmNvbT4KPiBEZWJ1Z2dl
-ZC1ieTogIkNocmlzdG9waGUgTGVyb3kgKENTIEdST1VQKSIgPGNobGVyb3lAa2VybmVsLm9yZz4K
-PiBTaWduZWQtb2ZmLWJ5OiBWbGFkaW1pciBPbHRlYW4gPHZsYWRpbWlyLm9sdGVhbkBueHAuY29t
-PgoKUmV2aWV3ZWQtYnk6IENocmlzdG9waGUgTGVyb3kgKENTIEdST1VQKSA8Y2hsZXJveUBrZXJu
-ZWwub3JnPgoKPiAtLS0KPiAgIGRyaXZlcnMvTWFrZWZpbGUgICAgIHwgMiArLQo+ICAgZHJpdmVy
-cy9waHkvTWFrZWZpbGUgfCAyICstCj4gICAyIGZpbGVzIGNoYW5nZWQsIDIgaW5zZXJ0aW9ucygr
-KSwgMiBkZWxldGlvbnMoLSkKPiAKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9NYWtlZmlsZSBiL2Ry
-aXZlcnMvTWFrZWZpbGUKPiBpbmRleCBjY2MwNWYxZWFlM2UuLjUzZmJkMmUwYWNkZCAxMDA2NDQK
-PiAtLS0gYS9kcml2ZXJzL01ha2VmaWxlCj4gKysrIGIvZHJpdmVycy9NYWtlZmlsZQo+IEBAIC0x
-MCw3ICsxMCw3IEBAIG9iai15CQkJCSs9IGNhY2hlLwo+ICAgb2JqLXkJCQkJKz0gaXJxY2hpcC8K
-PiAgIG9iai15CQkJCSs9IGJ1cy8KPiAgIAo+IC1vYmotJChDT05GSUdfR0VORVJJQ19QSFkpCSs9
-IHBoeS8KPiArb2JqLXkJCQkJKz0gcGh5Lwo+ICAgCj4gICAjIEdQSU8gbXVzdCBjb21lIGFmdGVy
-IHBpbmN0cmwgYXMgZ3Bpb3MgbWF5IG5lZWQgdG8gbXV4IHBpbnMgZXRjCj4gICBvYmotJChDT05G
-SUdfUElOQ1RSTCkJCSs9IHBpbmN0cmwvCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGh5L01ha2Vm
-aWxlIGIvZHJpdmVycy9waHkvTWFrZWZpbGUKPiBpbmRleCAzMGIxNTBkNjhkZTcuLjkzNzE1ZWEw
-ZDAxMCAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL3BoeS9NYWtlZmlsZQo+ICsrKyBiL2RyaXZlcnMv
-cGh5L01ha2VmaWxlCj4gQEAgLTE1LDcgKzE1LDcgQEAgb2JqLSQoQ09ORklHX1BIWV9TTlBTX0VV
-U0IyKQkJKz0gcGh5LXNucHMtZXVzYjIubwo+ICAgb2JqLSQoQ09ORklHX1VTQl9MR01fUEhZKQkJ
-Kz0gcGh5LWxnbS11c2Iubwo+ICAgb2JqLSQoQ09ORklHX1BIWV9BSVJPSEFfUENJRSkJCSs9IHBo
-eS1haXJvaGEtcGNpZS5vCj4gICBvYmotJChDT05GSUdfUEhZX05YUF9QVE4zMjIyKQkJKz0gcGh5
-LW54cC1wdG4zMjIyLm8KPiAtb2JqLXkJCQkJCSs9IGFsbHdpbm5lci8JXAo+ICtvYmotJChDT05G
-SUdfR0VORVJJQ19QSFkpCQkrPSBhbGx3aW5uZXIvCVwKPiAgIAkJCQkJICAgYW1sb2dpYy8JXAo+
-ICAgCQkJCQkgICBicm9hZGNvbS8JXAo+ICAgCQkJCQkgICBjYWRlbmNlLwlcCgoKLS0gCmxpbnV4
-LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9s
-aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+According to patchwork, this doesn't apply to net-next. That's odd,
+it was generated on last night's net next, and although there has been
+further work, it rebases cleanly on top of this morning's. How can
+these changes:
+
+ drivers/net/ethernet/stmicro/stmmac/dwmac-imx.c   |  6 +++++-
+ drivers/net/ethernet/stmicro/stmmac/stmmac_main.c | 20 ++++++++++++++++----
+ 2 files changed, 21 insertions(+), 5 deletions(-)
+
+which happened in net-next overnight result in this change in patch 1:
+
+ drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c | 3 ---
+ 1 file changed, 3 deletions(-)
+
+failing to apply?
+
+No, patchwork is clearly wrong.
+
+On Fri, Jan 23, 2026 at 09:52:00AM +0000, Russell King (Oracle) wrote:
+> This is the v1 submission: if it doesn't get tested but review goes
+> well, it'll end up in net-next and mainline without testing on the
+> affected hardware!
+> 
+> Mentioned previously, I've been trying to sort out the PCS support in
+> stmmac, and this series represents the current state of play.
+> 
+> Previous posted patches centred around merely getting autonegotiation
+> to be configured correctly, to a point where the manual configuration
+> can be removed from the qcom-ethqos driver. The qcom-ethqos driver
+> uses both SGMII and 2500BASE-X, manually configuring the dwmac's
+> integrated PCS appropriately.
+> 
+> This *untested* series attempts to take this further. The patches:
+> 
+> - clean up qcom-ethqos only-written mac_base member.
+> - convert qcom-ethqos to use the set_clk_tx_rate() method for setting
+>   the link clock rate.
+> - add support for phy_set_mode_ext() to the qcom "SGMII" ethernet
+>   SerDes driver (which is really only what it needs. Note that
+>   phy_set_mode_ext() is an expected call to be made, where as
+>   phy_set_speed() is optional and not. See PHY documentation.)
+> - add platform-glue independent SerDes support to the stmmac core
+>   driver. Currently, only qcom-ethqos will make use of this, and
+>   I suspect as we haven't had this, it's going to be difficult to
+>   convert other platform glue to use this - but had this existed
+>   earlier, we could've pushed people to use PHY to abstract some
+>   of the platform glue differences. Adding it now makes it available
+>   for future platform glue.
+> - convert qcom-ethqos to use this core SerDes support.
+> - arrange for stmmac_pcs.c to supply the phy_intf_sel field value
+>   if the integrated PCS will be used. (PHY_INTF_SEL_SGMII requires
+>   the integrated PCS rather than an external PCS.)
+> - add BASE-X support to the integrated PCS driver, and use it for
+>   BASE-X modes. This fully supports in-band mode, including reading
+>   the link partner advertisement.
+> - add in-band support for SGMII, reading the state from the RGSMII
+>   status field.
+> 
+> As we leave qcom-ethqos' manual configuration of the PCS in place at
+> the moment, the last patch adds reporting of any changes in its
+> configuration that the qcom-ethqos driver does beyond what phylink
+> requested, thus providing a path to debug and eventually remove
+> qcom-ethqos' manual configuration.
+> 
+> One patch is not included in this set - which adds a phy_intf_sel
+> value for external PCS (using PHY_INTF_SEL_GMII_MII). I believe all
+> external PCS use this mode when connected to a MAC capable of up to
+> 2.5G. However, no platform glue that provides the mac_select_pcs()
+> method also provide the set_phy_intf_sel() method, so we can safely
+> ignore this for now.
+> 
+> I would like to get this into net-next before the next merge window,
+> so testing would be appreciated. If there are issues with these patches
+> applied, please check whether the issue exists without these patches
+> and only report regressions caused by this patch set. For example,
+> I'm aware that qcom-ethqos has issues with 10Mbps mode due to an AQR
+> PHY being insanely provisioned to use SGMII in 1000M mode but with
+> rate matching with 10M media. This is not an issue that is relevant
+> to this patch series, but a problem with the PHY provisioning.
+> 
+> rfc->v1:
+>  - fix SGMII link status
+>  - avoid calling phy_get_mode() if PHY is null
+> v2:
+>  - fix further AI review bot dribble that could've been raised on
+>    the rfc version but wasn't.
+>  
+>  drivers/net/ethernet/stmicro/stmmac/Makefile       |   2 +-
+>  drivers/net/ethernet/stmicro/stmmac/common.h       |   1 -
+>  .../ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c    |  74 ++-----
+>  drivers/net/ethernet/stmicro/stmmac/dwmac1000.h    |  12 +-
+>  .../net/ethernet/stmicro/stmmac/dwmac1000_core.c   |  11 +-
+>  drivers/net/ethernet/stmicro/stmmac/dwmac4.h       |  10 +-
+>  drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c  |  10 +-
+>  drivers/net/ethernet/stmicro/stmmac/stmmac_main.c  |  69 +++++--
+>  drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.c   | 222 +++++++++++++++++++--
+>  drivers/net/ethernet/stmicro/stmmac/stmmac_pcs.h   |  53 ++---
+>  .../net/ethernet/stmicro/stmmac/stmmac_serdes.c    | 111 +++++++++++
+>  .../net/ethernet/stmicro/stmmac/stmmac_serdes.h    |  16 ++
+>  drivers/phy/qualcomm/phy-qcom-sgmii-eth.c          |  43 ++++
+>  include/linux/stmmac.h                             |   2 +
+>  14 files changed, 491 insertions(+), 145 deletions(-)
+> 
+> -- 
+> RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+> FTTP is here! 80Mbps down 10Mbps up. Decent connectivity at last!
+> 
+
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTP is here! 80Mbps down 10Mbps up. Decent connectivity at last!
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
