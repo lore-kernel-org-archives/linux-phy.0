@@ -4,77 +4,107 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4DB16D778B3
-	for <linux-phy@archiver.kernel.org>; Fri, 23 Jan 2026 21:32:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 675F3D778B1
+	for <linux-phy@archiver.kernel.org>; Fri, 23 Jan 2026 23:51:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7GqXo+Hr/Kn9M25bOEBE5eqJFB2d7+uFcCOz5lawLQU=; b=o8hDKcwqhjQKvx
-	J7RbLLhqjm0iLd+V1L2non2sfGExgr13r12dK2n47HUvUze4CVEOoR/BlxrpzKF/bfb1KZmiAA/ei
-	kvgkxkutyn6fkpQrTKa9Az0OMoEVYwjMnN8av3IS087tAzWX8FsL8+RlRGiwM6VlzvcDXxjMFpqIy
-	wIyaor4+uvVNog5yOnth4l1Vo5heKUtniCsNGN56/vVGdxDGT6FUctdlPZhbN5eFjcA3Xt0gfAYNL
-	NEmsk2M8Z9tG7T60MbPuXRBpSPJnlGZPhtaGe0RUUdKsLFVNbW3ERW7uGU+k0EkR5T4HL/vseAkV7
-	mulmU6hxFut6vvMJNuQg==;
+	List-Owner; bh=zlaV+4Kgpte4s8C0LMqDy/P2b3WytabVVNW5aKbC53U=; b=fZaFy2Y++3D5DG
+	/mlL2WN0WzlTZ3ZpGwLRUMuc08udH6IB7oXcZcFamtlRosE+VhUOHprq2KsYp52MicK7EeOoyhv9a
+	ZSiMhGACTGsELotWCURl7jEgQqFoA3IIgsCAeMpn8GROGEWBkPlm7CGdUrndHCglzqTd/kGMm+gKQ
+	iLCvyP7D0iWycoeQ7zMhRaLwB2vlNp9a53kDMbkiXf3yc1M65UjgMufqawf9YtS2txHaq5MQTCUy1
+	USBC8AwsJ/5M2RXLcvTA6fhqlwm42oNbJdeemiW/DXO8ZDr3Hy8YFBlXAwJeyqhFF/cWNpd+i4F7a
+	k8lggTsl3cPOJ2B3ypqA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vjOlh-00000009WHk-3crY;
-	Fri, 23 Jan 2026 21:32:37 +0000
-Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
+	id 1vjQwZ-00000009akb-0ViQ;
+	Fri, 23 Jan 2026 23:51:59 +0000
+Received: from mail-dl1-x122b.google.com ([2607:f8b0:4864:20::122b])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vjOle-00000009WHB-1nsd;
-	Fri, 23 Jan 2026 21:32:35 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
-	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
-	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=UId/Vzt9Vm2GMBalR/x7lGAofZBiET9NUSj2/ZXMbKw=; b=UUVNlVPj9g+71IhAhxMULD9ivp
-	frh5NGpDhavuR+455fTIxq4AsTEpiUZgXVk0HasxdIi98K7k3RRP7N+iWhDyCxEh9lh11T4f9Ad/6
-	PkHZeihli1kFmfs5qwHKvpHOI07TrNEtvK+ZiVmZWYLgSWU/ozx5M72kIR/jNtfHAXwDslutBShFe
-	pDtmZQhMAitq6rtrK1c/pSRmDQKWohJzJiPduRvw6pp65OnOtiwP0qXgUQI70/XxvYTr+/9xdihQz
-	SCxnjkqNlqsasxYT6+YN5G8i7Ydi2h2cdI7ifWwETuuMrq1coSffTwsc3dXpsHr9SK8DcpDFrtq8J
-	hiXRr/4g==;
-Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:43970)
-	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.98.2)
-	(envelope-from <linux@armlinux.org.uk>)
-	id 1vjOlV-000000002YU-2dTD;
-	Fri, 23 Jan 2026 21:32:25 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.98.2)
-	(envelope-from <linux@shell.armlinux.org.uk>)
-	id 1vjOlR-000000002QA-2jQL;
-	Fri, 23 Jan 2026 21:32:21 +0000
-Date: Fri, 23 Jan 2026 21:32:21 +0000
-From: "Russell King (Oracle)" <linux@armlinux.org.uk>
-To: Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>
-Cc: Andrew Lunn <andrew@lunn.ch>, Heiner Kallweit <hkallweit1@gmail.com>,
-	Alexandre Torgue <alexandre.torgue@foss.st.com>,
-	Andrew Lunn <andrew+netdev@lunn.ch>,
-	"David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
-	linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-stm32@st-md-mailman.stormreply.com,
-	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>, netdev@vger.kernel.org,
-	Paolo Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>
-Subject: Re: [PATCH net-next v2 00/14] net: stmmac: SerDes, PCS, BASE-X, and
- inband goodies
-Message-ID: <aXPo5R1Q-qWG3r3l@shell.armlinux.org.uk>
-References: <aXNEwBW3OA1xLEUj@shell.armlinux.org.uk>
- <aXN5BFXMshnhwBQ7@oss.qualcomm.com>
+	id 1vjQwW-00000009aju-13Sq
+	for linux-phy@lists.infradead.org;
+	Fri, 23 Jan 2026 23:51:57 +0000
+Received: by mail-dl1-x122b.google.com with SMTP id a92af1059eb24-1233702afd3so4007095c88.0
+        for <linux-phy@lists.infradead.org>; Fri, 23 Jan 2026 15:51:53 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1769212313; cv=none;
+        d=google.com; s=arc-20240605;
+        b=IfFkBkl/Md/cWgPphFcF89W5jioJdFTPkCwYj7Gtmwk8wEELgCqLVvHaH7B4XEh8uU
+         0LIIpRPsdL1S/M87jyLO40gtNUSFanxo6M/HqtiKnP5bEpcqbGxo5QFvYJReJxzBSG+8
+         mFn8ONp4BOA9tDmsIaNRNHOLH+dacmWP5Aw1ZS20xvZ8KExRfD6Nh01pIhbVFN2PWr8b
+         xXx5/zpTo3kAVGB3orzx6hb2b04TuGdkeHOy9xyLIIAI+8dVXDwhUdPaNGLNBLQMrGyZ
+         32NyH46Uialazf7Xx7EDeJxMdSvNdNOag1Z7Fp27rcClvuUce3hBdZVyh8MkkBqT/z23
+         Gg+Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:dkim-signature;
+        bh=NMyJR4UL9NXXcbBjQVATLX3KPNH4xZEghdBa9fkK1fE=;
+        fh=qJbb4USQGOR1Bfpkzdp8FMpW+bFLL+zi7LIkIAWOLHk=;
+        b=ChzNJRK8vq/g/oEVK8KP8051Gxs+94DkSn4YD/aS9kiVKk55CKgM79ZgWTrMrPPgJo
+         FnR5EYVmgDqIdKlYl8XQx2FTWpONmNAnyxTbV8K/2YJlrotKRUrHTnfFUHlCD7t0nA7P
+         X29PZT+GZ6wWzlZuobean8nc5vfg5pbILJoCjFf3GODRkoguXCEpbtCX92U3I1JhTUKw
+         1Wtr1GPXuGBmpcouNHvuTXCSmDrvknOGBy3Q+goPqh4cE/K5kDNTwp/Oo6OFpsFElZAN
+         KwhbgjBB532nElnxrQUL92txBOKoZM6MLINUX86TxFhZxI13mnoL5sKvR7U+FIdynQgt
+         lQEw==;
+        darn=lists.infradead.org
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=google.com; s=20230601; t=1769212313; x=1769817113; darn=lists.infradead.org;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=NMyJR4UL9NXXcbBjQVATLX3KPNH4xZEghdBa9fkK1fE=;
+        b=C+pq8Ml0A7GT2kFquuezSiEUmIyk6zxhD+ExRllA1f67Sl+zUxr/Z/vvWgd1VoDdSf
+         Usff2q+7vE0xAc1zQj0dNcLsV7YdyJH1SFwEWccd78MqNUsdGmyn/T02ZlMy++48iolN
+         yOtpCZbgj0E8SO47ISf5dXb+mRNoAhSmb45KDnk1B4FwJi7FhH6waefeqZylOKgnMuMJ
+         2B8twQkmYkxUXGqL1Iphp8dSwdOBxXMQHBzjVbcTRmEeOSuEkAZD3FHthALzI2caAr0/
+         KXbH3x1V1B5IW83q0xTn9UWDd+zxn3tN1CXdImOJ85zfQI+Wz2PNtO2hJTvDjctSDOrC
+         cc8g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1769212313; x=1769817113;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to;
+        bh=NMyJR4UL9NXXcbBjQVATLX3KPNH4xZEghdBa9fkK1fE=;
+        b=N4fPhLu29M34rDY5aw4yHzPS+DOcLAc7r95BflATnXWnfbLwRWN/k3OxRn9SEWiz7x
+         iYdblUx4SbZXGzABMqOR5eGwebe2MtgTWG9ACQPo5FnmqPb7mwE0chkH1s3VQYViPYyD
+         pkKMNme10RUi2aU5mU1f3DW30bMLtuAZaYr+jcQz+nkLbQB5TEIH/RLhBHCRnn0tC9Ic
+         yo4nphbHeTPkPd/oc/PYZV1S2BgCe8SStqw5dappH6n8pjzDbNXrC1SrxZ5AB5zDcWYB
+         pDq3v0ABBAYhRo7+1A5sWwOgGfLywaffdjmHwOG4h7+4PG97Cy3aLBlEIlP24D4wvoMx
+         E06Q==
+X-Forwarded-Encrypted: i=1; AJvYcCW2fHRLdWKUuj9ZbWKLTpOSWidtl1y4blB+xvTX+bQhkocWSiwEYA9Ffe/O3WRJ2ZxM80iqXYjh3c4=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwLEgF8mUEHM0bX4XCUfJNrE9vrWy+Ozon7jGOAV4PDakw4RM0s
+	GZRLLYXFZ7gJI34GnM7M6y4XOgrj3iswCv6qraeie23Q9d/J05aBs0M/A41zByV7LBvy9srXVsd
+	5RXfXteZfdBWSSdvQbWi0IcOz8r0xqyjrmNMuyqQX
+X-Gm-Gg: AZuq6aJ9SdyJHquj8hUquhT7LqJObnDSCP7M4dQyz4d88Q3ZUo8jkN3TxKVU69TffF4
+	ZSpV0bsGfSp8lCF6aBjgpaQiN2U3rF4XTrpytBBK9eYCpbZzg688tDQ4UMULEvJeX0y+3xUevbv
+	wNc6xIci3f4HyT6pVQ4PUTGktzOkjg8GYBLOGcvoYwo6FdojxeZJgPpfezLwVr1m89yriIOwT08
+	3X2/9Hcy0qQx6yxTT+hEXLupR6Gym0uKZ6J4UOAZR6cXc71e5z5wq9ADT6rLvO6quxuUCPH/yNN
+	OdSbYjtcnloMZfgj2Icdik4mjZbm
+X-Received: by 2002:a05:7022:a8e:b0:11b:9386:a38b with SMTP id
+ a92af1059eb24-1247dc161e4mr2737254c88.46.1769212312767; Fri, 23 Jan 2026
+ 15:51:52 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <aXN5BFXMshnhwBQ7@oss.qualcomm.com>
+References: <20260121-next-v1-1-c18068b091b9@google.com> <7c78f9da40022e7bbf850ae8989c617bdc30cc95.camel@linaro.org>
+ <CA+zupgw5H5rumo+DxaTfA_=bcvjbBOivm6R+Pw31jgE-sMyEtw@mail.gmail.com> <f956ccd3f5f694de7a634819da3f790a8dce132b.camel@linaro.org>
+In-Reply-To: <f956ccd3f5f694de7a634819da3f790a8dce132b.camel@linaro.org>
+From: Roy Luo <royluo@google.com>
+Date: Fri, 23 Jan 2026 15:51:16 -0800
+X-Gm-Features: AZwV_QgoFLO5lJ1lQA8XWJ4HuK52CnYXSZ5eL7UyBrfGdR4s2b17ZCPRTqChT0A
+Message-ID: <CA+zupgwEWM4c9yK1f-Y_Cv5gk=0zYNuUb3kZyZ6O3FDRbPPvKw@mail.gmail.com>
+Subject: Re: [PATCH next] phy: google: fix build dependency for Google Tensor
+ USB PHY
+To: =?UTF-8?Q?Andr=C3=A9_Draszik?= <andre.draszik@linaro.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
+	Peter Griffin <peter.griffin@linaro.org>, Tudor Ambarus <tudor.ambarus@linaro.org>, 
+	Joy Chakraborty <joychakr@google.com>, Naveen Kumar <mnkumar@google.com>, linux-phy@lists.infradead.org, 
+	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+	linux-samsung-soc@vger.kernel.org, kernel test robot <lkp@intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260123_133234_494386_52B47E04 
-X-CRM114-Status: GOOD (  15.35  )
+X-CRM114-CacheID: sfid-20260123_155156_306896_B3F33156 
+X-CRM114-Status: GOOD (  27.61  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,109 +116,62 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Jan 23, 2026 at 07:05:00PM +0530, Mohd Ayaan Anwar wrote:
-> 4. Switching from 1G to 2.5G - similar issues + a NULL pointer
-> dereference. I am checking on the reason for it.
-
-For the NULL pointer dereference, this is a bit weird, and may help to
-point towards the issue.
-
-> 	[ 1235.996004] qcom-ethqos 23040000.ethernet eth1: phy link down 2500base-x/Unknown/Unknown/none/off/nolpi
-> 	[ 1240.517716] qcom-ethqos 23040000.ethernet eth1: phy link up 2500base-x/2.5Gbps/Full/none/off/nolpi
-> 	[ 1240.529470] qcom-ethqos 23040000.ethernet eth1: major config, requested phy/2500base-x
-> 	[ 1240.537642] qcom-ethqos 23040000.ethernet eth1: interface 2500base-x inband modes: pcs=00 phy=00
-> 	[ 1240.546702] qcom-ethqos 23040000.ethernet eth1: major config, active phy/outband/2500base-x
-> 	[ 1240.555441] Unable to handle kernel NULL pointer dereference at virtual address 0000000000000010
-
-> 	[ 1240.880168] Code: d63f0020 f9400e60 b4000040 f900081f (f9000ad3)
-
-This code line disassembles to:
-
-   0:   d63f0020        blr     x1
-   4:   f9400e60        ldr     x0, [x19, #24]
-   8:   b4000040        cbz     x0, 10 <.text+0x10>
-   c:   f900081f        str     xzr, [x0, #16]
-  10:   f9000ad3        str     x19, [x22, #16]
-
-which, after comparing with my disassembly, the blr x1 is the call to
-pcs_disable() inside phylink_pcs_disable() in this code:
-
-        if (pcs_changed) {
-                phylink_pcs_disable(pl->pcs);
-
-                if (pl->pcs)
-                        pl->pcs->phylink = NULL;
-
-                pcs->phylink = pl;
-
-and the failing store is the one for that last line of C code - in
-other words, pcs = NULL.
-
-This means that mac_select_pcs() returned NULL when being asked
-"which PCS should be used for 2500base-X" ?
-
-This suggests that the SerDes detection of support for 2500BASE-X
-isn't working, meaning that stmmac_mac_select_pcs() ends up returning
-NULL, rather than &priv->integrated_pcs->pcs.
-
-That would only happen if:
-
-                /* Only allow 2500Base-X if the SerDes has support. */
-                ret = dwmac_serdes_validate(priv, PHY_INTERFACE_MODE_2500BASEX);
-                if (ret == 0)
-                        __set_bit(PHY_INTERFACE_MODE_2500BASEX,
-                                  spcs->pcs.supported_interfaces);
-
-fails, meaning we don't set that interface mode for the PCS.
-dwmac_serdes_validate() calls phy_validate() for PHY_MODE_ETHERNET
-with the PHY interface mode as the sub mode.
-
-Patch 3 adds the required methods to phy-qcom-sgmii-eth.c to allow
-phy_validate() to indicate whether this is supported or not:
-
-        .validate       = qcom_dwmac_sgmii_phy_validate,
-
-and its implementation is:
-
-        int ret = qcom_dwmac_sgmii_phy_speed(mode, submode);
-
-        return ret < 0 ? ret : 0;
-
-where qcom_dwmac_sgmii_phy_speed() is:
-
-        if (mode != PHY_MODE_ETHERNET)
-                return -EINVAL;
-
-        if (submode == PHY_INTERFACE_MODE_SGMII ||
-            submode == PHY_INTERFACE_MODE_1000BASEX)
-                return SPEED_1000;
-
-        if (submode == PHY_INTERFACE_MODE_2500BASEX)
-                return SPEED_2500;
-
-        return -EINVAL;
-
-So, this should be returning a positive integer (SPEED_2500), which
-should cause phy_validate(serdes, PHY_MODE_ETHERNET,
-PHY_INTERFACE_MODE_2500BASEX, NULL) to return success (zero). That
-should result in PHY_INTERFACE_MODE_2500BASEX being set in
-spcs->pcs.supported_interfaces, and thus &priv->integrated_pcs->pcs
-being returned for PHY_INTERFACE_MODE_2500BASEX.
-
-Is the particular hardware you're running this oopsing test on not
-using a SerDes PHY? If that's the case, how does it switch between
-2.5Gbps and 1Gbps data rate on the SerDes?
-
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTP is here! 80Mbps down 10Mbps up. Decent connectivity at last!
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gVGh1LCBKYW4gMjIsIDIwMjYgYXQgMTA6MjjigK9QTSBBbmRyw6kgRHJhc3ppayA8YW5kcmUu
+ZHJhc3ppa0BsaW5hcm8ub3JnPiB3cm90ZToKPgo+IEhpIFJveSwKPgo+IE9uIFRodSwgMjAyNi0w
+MS0yMiBhdCAxMTowMCAtMDgwMCwgUm95IEx1byB3cm90ZToKPiA+IE9uIFRodSwgSmFuIDIyLCAy
+MDI2IGF0IDI6MznigK9BTSBBbmRyw6kgRHJhc3ppayA8YW5kcmUuZHJhc3ppa0BsaW5hcm8ub3Jn
+PiB3cm90ZToKPiA+ID4KPiA+ID4gSGkgUm95LAo+ID4gPgo+ID4gPiBPbiBXZWQsIDIwMjYtMDEt
+MjEgYXQgMjI6MjEgKzAwMDAsIFJveSBMdW8gd3JvdGU6Cj4gPiA+ID4gVGhlIEdvb2dsZSBUZW5z
+b3IgVVNCIFBIWSBkcml2ZXIgdXNlcyB0aGUgVHlwZS1DIHN3aXRjaCBmcmFtZXdvcmsgdG8KPiA+
+ID4gPiBoYW5kbGUgb3JpZW50YXRpb24gY2hhbmdlcy4gSG93ZXZlciwgdGhlIEtjb25maWcgZGlk
+IG5vdCBzcGVjaWZ5IGEKPiA+ID4gPiBkZXBlbmRlbmN5IG9uIHRoZSBUWVBFQyBmcmFtZXdvcmss
+IGxlYWRpbmcgdG8gdW5kZWZpbmVkIHJlZmVyZW5jZQo+ID4gPiA+IGVycm9ycyB3aGVuIGJ1aWxk
+aW5nIGZvciBhcmNoaXRlY3R1cmVzIG9yIGNvbmZpZ3VyYXRpb25zIHdoZXJlCj4gPiA+ID4gQ09O
+RklHX1RZUEVDIGlzIGRpc2FibGVkIG9yIGNvbmZpZ3VyZWQgYXMgYSBtb2R1bGUuCj4gPiA+ID4K
+PiA+ID4gPiBBZGQgJ2RlcGVuZHMgb24gVFlQRUMnIHRvIHRoZSBQSFlfR09PR0xFX1VTQiBlbnRy
+eSB0byBlbnN1cmUgYWxsCj4gPiA+ID4gcmVxdWlyZWQgc3ltYm9scyBhcmUgYXZhaWxhYmxlIGR1
+cmluZyBsaW5raW5nLgo+ID4gPiA+Cj4gPiA+ID4gRml4ZXM6IGNiY2U2NjY2OWM4MiAoInBoeTog
+QWRkIEdvb2dsZSBUZW5zb3IgU29DIFVTQiBQSFkgZHJpdmVyIikKPiA+ID4gPiBSZXBvcnRlZC1i
+eToga2VybmVsIHRlc3Qgcm9ib3QgPGxrcEBpbnRlbC5jb20+Cj4gPiA+ID4gQ2xvc2VzOiBodHRw
+czovL2xvcmUua2VybmVsLm9yZy9vZS1rYnVpbGQtYWxsLzIwMjYwMTIxMDgyNS5FTHJwUWVFRC1s
+a3BAaW50ZWwuY29tLwo+ID4gPiA+IFNpZ25lZC1vZmYtYnk6IFJveSBMdW8gPHJveWx1b0Bnb29n
+bGUuY29tPgo+ID4gPiA+IC0tLQo+ID4gPiA+ICBkcml2ZXJzL3BoeS9LY29uZmlnIHwgMSArCj4g
+PiA+ID4gIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigrKQo+ID4gPiA+Cj4gPiA+ID4gZGlm
+ZiAtLWdpdCBhL2RyaXZlcnMvcGh5L0tjb25maWcgYi9kcml2ZXJzL3BoeS9LY29uZmlnCj4gPiA+
+ID4gaW5kZXggMTQyZTdiMGVmMmVmYjkyMDk3ODE4MDBlZTQ3YjgyMGE5MWIxMTVhZS4uNTUzMWZm
+MzFkODE1NmNiMTY0YzMyZTNlNTJkNGE1N2IyNmE2MmQ4ZCAxMDA2NDQKPiA+ID4gPiAtLS0gYS9k
+cml2ZXJzL3BoeS9LY29uZmlnCj4gPiA+ID4gKysrIGIvZHJpdmVycy9waHkvS2NvbmZpZwo+ID4g
+PiA+IEBAIC00OSw2ICs0OSw3IEBAIGNvbmZpZyBHRU5FUklDX1BIWV9NSVBJX0RQSFkKPiA+ID4g
+Pgo+ID4gPiA+ICBjb25maWcgUEhZX0dPT0dMRV9VU0IKPiA+ID4gPiAgIHRyaXN0YXRlICJHb29n
+bGUgVGVuc29yIFNvQyBVU0IgUEhZIGRyaXZlciIKPiA+ID4gPiArIGRlcGVuZHMgb24gVFlQRUMK
+PiA+ID4KPiA+ID4gQ2FuIHlvdSBtYWtlIHRoaXMKPiA+ID4KPiA+ID4gZGVwZW5kcyBvbiBUWVBF
+QyB8fCBDT01QSUxFX1RFU1QKPiA+ID4KPiA+ID4gdG8gYWxsb3cgc29tZSBiZXR0ZXIgdGVzdCBj
+b3ZlcmFnZT8KPiA+ID4KPiA+ID4gQ2hlZXJzLAo+ID4gPiBBbmRyZQo+ID4KPiA+IEhpIEFuZHJl
+LAo+ID4KPiA+IFdoZXRoZXIgdG8gYWRkIENPTVBJTEVfVEVTVCBmb3IgYnVpbGQgY292ZXJhZ2Ug
+d2FzIGRpc2N1c3NlZCBpbgo+ID4gYW5vdGhlciB0aHJlYWQgWzFdLiBNeSB0YWtlYXdheSBmcm9t
+IHRoYXQgZGlzY3Vzc2lvbiBpcyB0aGF0Cj4gPiBDT01QSUxFX1RFU1QgaXMgaW50ZW5kZWQgdG8g
+c3Vic3RpdHV0ZSBmb3IgQVJDSF9YWFggaW4gYnVpbGQKPiA+IHRlc3RpbmcgYW5kIHNob3VsZCBu
+b3QgYmUgdXNlZCB3aXRob3V0IGl0LiBPbmNlIEFSQ0hfR09PR0xFIGlzCj4gPiBwcmVzZW50LCB3
+ZSBjYW4gYWRkICJkZXBlbmRzIG9uIChBUkNIX0dPT0dMRSB8fCBDT01QSUxURV9URVNUKSIuCj4K
+PiBDT01QSUxFX1RFU1QgaXMgbm90IGxpbWl0ZWQgdG8gQVJDSF94eHguIEl0IGFsbG93cyBkcml2
+ZXJzIHRvIGJlCj4gY29tcGlsZSB0ZXN0ZWQgZXZlbiBpZiB0aGUgY3VycmVudCBidWlsZCBkb2Vz
+bid0IGVuYWJsZSB3aGF0ZXZlcgo+IG9wdGlvbiAobGlrZSBUWVBFQykuCj4KPiBTZWUgYWxzbyBo
+dHRwczovL3d3dy5rZXJuZWwub3JnL2RvYy9odG1sL2xhdGVzdC9rYnVpbGQva2NvbmZpZy1sYW5n
+dWFnZS5odG1sI2NvbXBpbGUtdGVzdGluZwoKIklmIGEgY29uZmlnIHN5bWJvbCBoYXMgYSBkZXBl
+bmRlbmN5LCBidXQgdGhlIGNvZGUgY29udHJvbGxlZCBieSB0aGUKY29uZmlnIHN5bWJvbCBjYW4g
+c3RpbGwgYmUgY29tcGlsZWQgaWYgdGhlIGRlcGVuZGVuY3kgaXMgbm90IG1ldCIsClRZUEVDIGRv
+ZXNuJ3QgZmFsbCBpbnRvIHRoaXMgY2F0ZWdvcnkgYXMgaXQncyBtYW5kYXRvcnkgZm9yIGNvbXBp
+bGluZwpQSFlfR09PR0xFX1VTQi4KV2l0aCAiZGVwZW5kcyBvbiBUWVBFQyB8fCBDT01QSUxFX1RF
+U1QiLCB0aGlzIHZlcnkgYnVpbGQgZXJyb3IKd291bGQgcmVzdXJmYWNlIHdoZW4gVFlQRUM9biwg
+Q09NUElMRV9URVNUPXkgYW5kClBIWV9HT09HTEVfVVNCPXkuIFBsZWFzZSBsZXQgbWUga25vdyBp
+ZiBJIG1pc3NlZCBhbnl0aGluZy4KClRoYW5rcywKUm95Cgo+Cj4gQ2hlZXJzLAo+IEFuZHJlJwo+
+Cj4KPiA+Cj4gPiBbMV0gaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvYWxsL0NBK3p1cGd3Z2ZLd1BZ
+cWo4RzJ0TmY0cEVYTkVXQSt2TDJXWUpQaEoxNnhFeGdrbzdEd0BtYWlsLmdtYWlsLmNvbS8KPiA+
+Cj4gPiBSZWdhcmRzLAo+ID4gUm95CgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1w
+aHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
+bi9saXN0aW5mby9saW51eC1waHkK
