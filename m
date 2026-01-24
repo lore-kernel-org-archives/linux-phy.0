@@ -4,78 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2CEAAD778BF
-	for <linux-phy@archiver.kernel.org>; Sat, 24 Jan 2026 00:16:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C000ED77898
+	for <linux-phy@archiver.kernel.org>; Sat, 24 Jan 2026 01:00:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K2zUc3FU9JnaPCXtuuiZEhnVfP1Zs5zyFhRvKR1/ODc=; b=W9eA/3/PBNuCOk
-	YJtepyHbOaWWB30n1br+eXJRU+z0xReYaqn6HGSMczUXx7NSMmHFAwZZ7lVYIR0e7WJvDWvkQ1L21
-	BtIrwXKn6B/uGN/2RR6bP0p/VxonrVX9sBJWwpqcOR5CiBPBotslx1gmDGZ9V0TdXpeGmYsm9XoZS
-	pzfed1GomOKi1Hu49OfP8iarFYj0EWYG021hsjFxJjAPHngn4tpOqO0a/5vn5EulA5NdCnkUAR1he
-	n2YldAvHwx8eDmE+VPzSYrjCLMvGZG7r1PAhiCnYJu+hrSZlwC4NqLrN6OBnxvbgdk3UmbXCoEyRD
-	wmqJpsUUDseVj71cqO6w==;
+	List-Owner; bh=vAgEBm/RITb+t8LOGYGV4jXjHxKpLGkaxFM12EVwQ3k=; b=wG2X1XgEjGWmag
+	fULZFrF7iMIwG+Rni5/P8iLANyTdduHXtZRW//Ph1slwr1BGA2G2UVJNXyvv3+aT9oqIoMibVnDdN
+	wXHFnTXowLAurEL2EFYMzl3GvkoJRupZ25RTWOeAXwi+rbrkf6vUMRYQFjPToilOBrg5oMy0oAIB/
+	UEJJzWWCxe6M5uEhJPXpEbJqN4wyNoLOITtpQZTqwzdUPnIynrp7CmiPcajuet9kSZiWk2Vx9QDmb
+	G/3/bd8DR7sIyghYjTcvtdYOKBV7KuG8tRBWpsjcaLq9EiS+89Q83gbHCnUkKtUktwbbXM2QLG47p
+	/p1mrlRFtZ2CuNFBNQVQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vjRKe-00000009bYu-35K4;
-	Sat, 24 Jan 2026 00:16:52 +0000
-Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
+	id 1vjS0Q-00000009fl9-3gVb;
+	Sat, 24 Jan 2026 01:00:02 +0000
+Received: from mail-wr1-x434.google.com ([2a00:1450:4864:20::434])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vjRKb-00000009bYO-49sV;
-	Sat, 24 Jan 2026 00:16:51 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
-	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
-	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=iZB71uqjML4w9rR8etBjxBLKoRFzZrwDxpZiOxS2Ois=; b=vRSuX8oU8/P4wCgCBM9K3rqdta
-	ZFSOeo9EMGRE8fRWUz+5xUaBJKm20kbE8f092osZzm89zIJIQMOMjSriMMCx+XzmPJuvFYIdJShSj
-	C6RH1gHbjhksFQ7BeCFZS5qInVkMFvhmwAXsQYeSqxE6Xfw47SLPKSSm+sJZ1GOhDDbMQtnNxDXb8
-	y/Ce8GNmcD+0y9WBB7GJhtLZ+wXCCKYyAABUYjOQ5L94CV5sVvOuiKsLow80eINl7lIQntrIo3zVZ
-	7wAHOswmVW9EA6HQCubITsqcIvNYR0Zkw7w1IXGFjQPET7Lx6RkeLP39OW85A2itOp5AKlNrfwpdT
-	Qo3GrNvg==;
-Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:33206)
-	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.98.2)
-	(envelope-from <linux@armlinux.org.uk>)
-	id 1vjRKT-000000002e4-0vPd;
-	Sat, 24 Jan 2026 00:16:41 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.98.2)
-	(envelope-from <linux@shell.armlinux.org.uk>)
-	id 1vjRKP-000000002Xd-1kQd;
-	Sat, 24 Jan 2026 00:16:37 +0000
-Date: Sat, 24 Jan 2026 00:16:37 +0000
-From: "Russell King (Oracle)" <linux@armlinux.org.uk>
-To: Vladimir Oltean <olteanv@gmail.com>
-Cc: Andrew Lunn <andrew@lunn.ch>,
+	id 1vjS0L-00000009fji-3ZPU
+	for linux-phy@lists.infradead.org;
+	Sat, 24 Jan 2026 01:00:01 +0000
+Received: by mail-wr1-x434.google.com with SMTP id ffacd0b85a97d-4358e24d3c2so272472f8f.1
+        for <linux-phy@lists.infradead.org>; Fri, 23 Jan 2026 16:59:57 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1769216396; x=1769821196; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=PxQBocjBKjEC4mv4CNajitmiXw7FC5x1mC5Q0V2nZ7g=;
+        b=WRQhXksicJfqY6sxiJq+/quXCYM0jN3/OkaoWZKMSYQh0GlMEnGr9FzMUcrwGBpUaN
+         6HrDNCYWyIfmckoxU0Qy4WAee2NyiMED5VblDJPSfNg7DSdVTsCt5Z1nseK4rU1pqFdA
+         k92IrnPxy45LNd6bijidmqI+R1e2D2EdZ9kFbOz+F9gRnaHeGGU6LivCAdtnyHSS05dN
+         3YyT46/zOLak+DtvLSA8ISTOuEBSP/cw4Yfv13rnZ0fZsGt82U5iOgw+RsWA+u8z/208
+         7o+a0jqeaXDQb6MFvBhmVOKNeBofvYa52kFqMI2IpdO94Ua1P9ktmEQbwGqu9usy3gl6
+         fuGw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1769216396; x=1769821196;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=PxQBocjBKjEC4mv4CNajitmiXw7FC5x1mC5Q0V2nZ7g=;
+        b=ChmoGK3PdTbMJyAKLGHzf0Hgm0dqRoeocEbNT6J9wxYHkc90WGECSiGIIJr9cdT6DP
+         RvIl82AByj4vDLwXfy55r0Lk0xUl7nOU+e5HEqCLuaVZR+gUOiZUzWuch2gWDzIp9W2e
+         hS4nEvCjlNqssfO2+jxfBsD5w3LswAkZUzbNdEc42AnfvYAfa5BmWYLjvmRSyxhIJSN0
+         80qZamdPfCZt2xrBiXjCegY6N2opLhznHRYpzEPEEhlYfbsf3nI9wysbc2OlYS3fC0l4
+         lQadu1MDji+MkB7XGcqrBQMajcW45azM4IHctQjTvoHFPWM0AiEi0Rn/d7TiIwh/9M0y
+         njRA==
+X-Forwarded-Encrypted: i=1; AJvYcCW0IEr12Ddlz+ty7U0G2pmwAw7j6NIu3bBWb1ObdDzbeUYWxJlB0ZR0hfg2DKMqOWM1YRWKQrPCaEM=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzIUhMDMTxQDpqk4NZoNTdsw75SWM7MP5e1ykmeGZop1MOLzPGh
+	9gC0oxLVlsS41PLG9qfcRD9oY8KUiHXHsu3aF2n7JSwoYXYLb0seTBEZ
+X-Gm-Gg: AZuq6aJkfEezNAMwb0E5X7lgB0D9WJ3Ci9XtkitvSngEFVHHkeWWxirC6q38bXviBfv
+	IWPMNMDPP1yWIqT9+fBt6d7VIim1oaL//52vm+rhsmHBY9EitbL8nVQ0qNeUih+R3ItQpd3tEMN
+	eKmy+dhf8GwJsOZxEqclO+tjYTAYe5vhfIRUKIBbwYRnd88rodbNq7HuIk4/WHzgRucizx4Wwy6
+	rLc2fRiqqbfU8BPic1YAhpCxigecBvAUBAv2p+GYQnIAAFbtff35t2Zx9cdxiDOkpFn1nwqeWrS
+	qphHYZs0fyqHBJFrBp1vo5ZZ1LNdBPYEOvMnouG0Tj0Dpr58qDop+ybhY0ric2wSioN92Zz/VPX
+	GhWJmbR2hDqzWTDQQDX76dV+1BvzyXAN6Ya9bO6j04CAG4PJFgpeTbO6MUWrCkdredY1bWnInS0
+	HVOA==
+X-Received: by 2002:a05:6000:420c:b0:435:b068:d3d9 with SMTP id ffacd0b85a97d-435bdff681emr1187921f8f.5.1769216395508;
+        Fri, 23 Jan 2026 16:59:55 -0800 (PST)
+Received: from skbuf ([2a02:2f04:d501:d900:1430:8b48:2d45:6c1])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-435b1e716b6sm10616033f8f.27.2026.01.23.16.59.53
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 23 Jan 2026 16:59:54 -0800 (PST)
+Date: Sat, 24 Jan 2026 02:59:51 +0200
+From: Vladimir Oltean <olteanv@gmail.com>
+To: "Russell King (Oracle)" <rmk+kernel@armlinux.org.uk>
+Cc: Andrew Lunn <andrew@lunn.ch>, Heiner Kallweit <hkallweit1@gmail.com>,
 	Alexandre Torgue <alexandre.torgue@foss.st.com>,
 	Andrew Lunn <andrew+netdev@lunn.ch>,
 	"David S. Miller" <davem@davemloft.net>,
 	Eric Dumazet <edumazet@google.com>,
 	Jakub Kicinski <kuba@kernel.org>,
-	Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
 	linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org,
 	linux-stm32@st-md-mailman.stormreply.com,
+	Maxime Chevallier <maxime.chevallier@bootlin.com>,
+	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
 	Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>,
 	Neil Armstrong <neil.armstrong@linaro.org>, netdev@vger.kernel.org,
 	Paolo Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>
-Subject: Re: [PATCH net-next v2 00/14] net: stmmac: SerDes, PCS, BASE-X, and
- inband goodies
-Message-ID: <aXQPZfRQl2wpQ3Sx@shell.armlinux.org.uk>
+Subject: Re: [PATCH net-next v2 05/14] net: stmmac: add stmmac core serdes
+ support
+Message-ID: <20260124005951.fbkvd2girdqtfxe7@skbuf>
 References: <aXNEwBW3OA1xLEUj@shell.armlinux.org.uk>
- <aXNX1oi7nWLcPK28@shell.armlinux.org.uk>
- <20260124000409.36nsxlvkde4zpddk@skbuf>
+ <E1vjDrM-00000005fQR-0rmB@rmk-PC.armlinux.org.uk>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260124000409.36nsxlvkde4zpddk@skbuf>
+In-Reply-To: <E1vjDrM-00000005fQR-0rmB@rmk-PC.armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260123_161650_038652_79DEE423 
-X-CRM114-Status: GOOD (  17.32  )
+X-CRM114-CacheID: sfid-20260123_165959_525915_7BCBB9F3 
+X-CRM114-Status: GOOD (  25.51  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,46 +112,113 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, Jan 24, 2026 at 02:04:09AM +0200, Vladimir Oltean wrote:
-> On Fri, Jan 23, 2026 at 11:13:26AM +0000, Russell King (Oracle) wrote:
-> > According to patchwork, this doesn't apply to net-next. That's odd,
-> > it was generated on last night's net next, and although there has been
-> > further work, it rebases cleanly on top of this morning's. How can
-> > these changes:
-> > 
-> >  drivers/net/ethernet/stmicro/stmmac/dwmac-imx.c   |  6 +++++-
-> >  drivers/net/ethernet/stmicro/stmmac/stmmac_main.c | 20 ++++++++++++++++----
-> >  2 files changed, 21 insertions(+), 5 deletions(-)
-> > 
-> > which happened in net-next overnight result in this change in patch 1:
-> > 
-> >  drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c | 3 ---
-> >  1 file changed, 3 deletions(-)
-> > 
-> > failing to apply?
-> > 
-> > No, patchwork is clearly wrong.
+On Fri, Jan 23, 2026 at 09:53:44AM +0000, Russell King (Oracle) wrote:
+> Rather than having platform glue implement SerDes PHY support, add it
+> to the core driver, specifically to the stmmac integrated PCS driver
+> as the SerDes is connected to the integrated PCS.
 > 
-> Conflicts with commit dc6597fab3e3 ("net: stmmac: dwmac-imx: keep
-> preamble before sfd on i.MX8MP"), merged in the meantime.
+> Platforms using external PCS can also populate plat->serdes, and the
+> core driver will call phy_init() and phy_exit() when the administrative
+> state of the interface changes, but the other phy methods will not be
+> called.
 > 
-> In include/linux/stmmac.h (your commit "net: stmmac: add stmmac core
-> serdes support" adds a "struct phy;" line, but that other commit
-> modifies the context by inserting:
-> 
-> #define STMMAC_FLAG_KEEP_PREAMBLE_BEFORE_SFD	BIT(14)
-> 
-> (the last stmmac flag in your context, at patch generation time, was:
-> #define STMMAC_FLAG_HWTSTAMP_CORRECT_LATENCY	BIT(13)
-> )
+> Reviewed-by: Maxime Chevallier <maxime.chevallier@bootlin.com>
+> Signed-off-by: Russell King (Oracle) <rmk+kernel@armlinux.org.uk>
+> --
+> rfc->v1: avoid calling phy_get_mode() with NULL serdes PHY
+> v2: add cleanup when dwmac_serdes_set_mode() fails, because AI allegedly
+>   knows better than the author and phylink maintainer, even though this
+>   will result in dwmac_serdes_power_off() being called multiple times
+>   and producing a kernel warning. But if it makes AI happy, then it must
+>   be a good thing. It'll also make Vladimir happy.
 
-I still maintain that this is silly - to mark all patches as such
-and without any details about the problem applying the patches is
-not helpful.
+These gratuitous passive-aggressive comments about what makes me happy,
+based on twisted interpretations of conversations, are best kept to yourself.
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTP is here! 80Mbps down 10Mbps up. Decent connectivity at last!
+I remember Jakub's request was only to add a note in the commit message
+about the reason behind the lack of cleanup, not to add cleanup which
+will be executed twice:
+https://lore.kernel.org/netdev/20260120153248.0636f1e9@kernel.org/
+
+I only expressed dissatisfaction with the phylink_pcs calling convention
+as it is today, and searched for ways to make the calls balanced. I also
+didn't make any suggestion to make the code worse by performing the
+SerDes power down twice, just subscribed to Jakub's request to leave a
+comment why your v1 is the way that it is:
+https://lore.kernel.org/netdev/20260122112913.svzaie4eywk5nc32@skbuf/
+
+Getting over that dissatisfaction and working within the framework of
+the existing calling convention, but also inserting the comment that I
+was looking to see, I believe that functionally correct code would look
+like this (applies on top of your entire v2 patch set):
+
+-- >8 --
+diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_serdes.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_serdes.c
+index d46a071bc383..c4465dca6b93 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_serdes.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_serdes.c
+@@ -59,12 +59,27 @@ int dwmac_serdes_power_on(struct stmmac_priv *priv)
+ {
+ 	int ret;
+ 
++	/* Because the dwmac_integrated_pcs_disable() call path is eventually
++	 * invoked irrespective of the dwmac_integrated_pcs_enable() return
++	 * code, we risk either underflowing the SerDes phy->power_count or
++	 * leaving the lane powered on, depending on the cleanup choice and the
++	 * point of failure. Keeping separate track of the lane power on state
++	 * is a band aid until phylink offers balanced pcs_enable() and
++	 * pcs_disable() calls.
++	 */
++	if (priv->plat->serdes_powered_on)
++		return 0;
++
+ 	ret = phy_power_on(priv->plat->serdes);
+-	if (ret)
++	if (ret) {
+ 		dev_err(priv->device, "failed to power on SerDes: %pe\n",
+ 			ERR_PTR(ret));
++		return ret;
++	}
+ 
+-	return ret;
++	priv->plat->serdes_powered_on = true;
++
++	return 0;
+ }
+ 
+ int dwmac_serdes_init_mode(struct stmmac_priv *priv, phy_interface_t interface)
+@@ -95,10 +110,17 @@ void dwmac_serdes_power_off(struct stmmac_priv *priv)
+ {
+ 	int ret;
+ 
++	if (!priv->plat->serdes_powered_on)
++		return;
++
+ 	ret = phy_power_off(priv->plat->serdes);
+-	if (ret)
++	if (ret) {
+ 		dev_err(priv->device, "failed to power off SerDes: %pe\n",
+ 			ERR_PTR(ret));
++		return;
++	}
++
++	priv->plat->serdes_powered_on = false;
+ }
+ 
+ void dwmac_serdes_exit(struct stmmac_priv *priv)
+diff --git a/include/linux/stmmac.h b/include/linux/stmmac.h
+index 6097f4b6dd12..e62bba38ab60 100644
+--- a/include/linux/stmmac.h
++++ b/include/linux/stmmac.h
+@@ -225,6 +225,7 @@ struct plat_stmmacenet_data {
+ 	 */
+ 	phy_interface_t phy_interface;
+ 	struct phy *serdes;
++	bool serdes_powered_on;
+ 	struct stmmac_mdio_bus_data *mdio_bus_data;
+ 	struct device_node *phy_node;
+ 	struct fwnode_handle *port_node;
+-- >8 --
 
 -- 
 linux-phy mailing list
