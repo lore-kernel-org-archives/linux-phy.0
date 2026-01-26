@@ -4,66 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C8B9AD13C39
-	for <linux-phy@archiver.kernel.org>; Mon, 26 Jan 2026 15:43:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46AF4D19503
+	for <linux-phy@archiver.kernel.org>; Mon, 26 Jan 2026 17:06:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DQpGt1TyU+YIzWsnUPxoDKovC7HHrtB749Ff+k3IYtU=; b=PNddhDEc/b1Hhx
-	KAmD+KzZwCoo5z9qdBE34yw9Q9hDNJrVVSONnmE0BLl6PB+pLzeyXMyg6JMYHtoxGN3ymunJ1CFXU
-	ukphIFpBWheJFUIVru1mwvtBCSWlEHtGoKmVUH/4jdZ8g7fiNxXZ8hXntK9z9Xi4KOTiZG9dzeDOI
-	JNJ9oqjwxnIr6Jyyz5miv+sBcBliRMv6VTqhOckNMTttLjDEaMX29kcR9YkKuBvFpxzB48uNOHiDW
-	3KChIAIFx/7jPI51RXDHE2R2yP8xtQ5F23K4rlbIi/yLKd/ndgzl34yI8KDgmQ3BS7VYrascMk03J
-	/bYUU0OoDMDIieFXThgw==;
+	List-Owner; bh=qcnAJSqm987T1DPXs2R7N7gD8bwwGamBY+JoylzXeK4=; b=ELgTLDgFbKaiZh
+	43sgs+CNkkmn9kRYF6MvEM+ZPcxkKOzY/jzU+6LSPFf9FPOMsI7Q+CKHL2Puslh80E+gPdMeVcUbO
+	ScgkH5JXCNd9F+k6MgML+7v1U6IWmgSfAtl5lFk+PrGbxZf+0UbUtV4nyyt5DXQ7rv9JkXUacsW7k
+	Denfr0RXlO8HUJo6abz/EX3BxSa4jELzfUI/pC+/A/X9xE8nuR2x/Ow430ga/emL7Ex7ldHHkh8wn
+	np2ScH51fgAAPbWEa0XCgJfmJ3FLxNA0SbsqVDfHo7pVQXNCaIP77mxey/2NPYmkZ8I+qmkVwzn28
+	9/H3gLsq19ilfomXBGvw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vkOkl-0000000Cmw9-1DWG;
-	Mon, 26 Jan 2026 15:43:47 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vkQ32-0000000CvA1-2r6D;
+	Mon, 26 Jan 2026 17:06:44 +0000
+Received: from mail-qt1-f179.google.com ([209.85.160.179])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vkOkj-0000000Cmvr-1z0I
+	id 1vkQ2x-0000000Cv9A-0cXA
 	for linux-phy@lists.infradead.org;
-	Mon, 26 Jan 2026 15:43:45 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 830A26013D;
-	Mon, 26 Jan 2026 15:43:44 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1DBA3C116C6;
-	Mon, 26 Jan 2026 15:43:44 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1769442224;
-	bh=6ySox9cmKvJhrP6FpRmvarrNPjCueGbh6a3+rXDpTDo=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=NWbNZmcDP6RPcCwLnaL/B+KQs9WdBKe7U5Cv/AeJU7qEO7THkzIqZ9TI1naNPFy5H
-	 +jOgjLKWrUJno8i+NcTCV41L6aFq8RA0h2t3HXkdwEHfEmC+u8jPwhhOKuimLwf/RT
-	 BGL1mii0f0HOy1XanOt4d1qD2rQ/KrbJb8Zv20w6/Q1aYK3MTG8zrotvEnvl8vcb8h
-	 0qb99n3gkDVgLCQwLPP+u/Mh1rJCYhT3QMhjHrPZjF0GBs0gpZ9zOKMwdLiER9xZuG
-	 +4R97ByVtYCpqbgT1RsJ9UAFhfJtBZQEpVFub9Xvq2iOFWj62FWgscCFyIUlvPm1v3
-	 qFf3R1cHj4PqQ==
-Date: Mon, 26 Jan 2026 09:43:43 -0600
-From: "Rob Herring (Arm)" <robh@kernel.org>
-To: Charan Pedumuru <charan.pedumuru@gmail.com>
-Cc: Conor Dooley <conor+dt@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Andreas Kemnade <andreas@kemnade.info>,
-	Roger Quadros <rogerq@ti.com>, Kevin Hilman <khilman@baylibre.com>,
-	Tony Lindgren <tony@atomide.com>, Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Aaro Koskinen <aaro.koskinen@iki.fi>,
-	Roger Quadros <rogerq@kernel.org>, linux-omap@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v4 2/3] dt-bindings: phy: ti,phy-usb3: convert to DT
- schema
-Message-ID: <176944222247.2468561.9882009575651111970.robh@kernel.org>
-References: <20260123-ti-phy-v4-0-b557e2c46e6f@gmail.com>
- <20260123-ti-phy-v4-2-b557e2c46e6f@gmail.com>
+	Mon, 26 Jan 2026 17:06:40 +0000
+Received: by mail-qt1-f179.google.com with SMTP id d75a77b69052e-50150bc7731so75238011cf.1
+        for <linux-phy@lists.infradead.org>; Mon, 26 Jan 2026 09:06:38 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1769447197; x=1770051997;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=DX+hzkzvZlTATTRkV+7hBeNOQ+pb6333spkvwFjnnA4=;
+        b=dW7CqcCwQv1HLvlG4WEVwspQCVydMr4WEoICVkuqx33g2bdil7FXTe/u9WrFCw/rSZ
+         wPS4HpPhTa6hiYQWdH81mg1Zfnpkm3nB/cx/T7eGffgjm78IEEtK6uJWlk/DmCWxWYQR
+         dgnVCrYo4aF2V9hHFjusn+M3fMAZjDeFNxo/t+d1Gu3PY3PfOKriwzd7IH4VjgfRqiEI
+         GLan0Y78Kg7KyYEn9oN5PSfvhewU9X6f2Ss51emGeP4qd9NJgvbeOsPvtIl07hdiMzoJ
+         eHgC/Vz8p3FKw+m3kAN/PBlIfMZZLmEgj8rhSF/pHXo+yay/OhkApZO7ZvBQ748ngHvx
+         JnXg==
+X-Forwarded-Encrypted: i=1; AJvYcCV6Qm1MSeUPO+QRhUaXZREZktBL4oAvH7AEg7KjGso5zZtSevZI+ywj89FSeddjEp9Sj/pJQ59O/Vc=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy65rpIbIXHjvGRLSwdXn5MU51rIsyGgiysxEXqDfjdCqTlDsmA
+	syLHKL3POKMLVX80z+7NeC1wU0I0NKiH73HPObZLvBHtfFQT/GwS/JOHDrrXMu5c
+X-Gm-Gg: AZuq6aKSN95JtBtcRSOp/N9veU9KW/ysjeWrj+aZmW8K3UCAvaalk3VHEfpyyLh47RY
+	Tj8WRrMlKHN1PAEi7gCReYVf9CgM1HmWPc6laB9nlA0cdp4FmkWgrHucXFa9wbmQWbMto7jRta4
+	ucqjCQbRYil0EaVWccrjGA+xjAEk7P34rBvwksd/0NCZzm3zH+gBJWppZ3RGDkhW7GpulPGtulj
+	wO+E5U5mSwcW28vFMnXzzbl6duUYtF9tAKtpYctKhBSUJyL0f3/VBERo4R6qT6SYzi7H0d8A2sm
+	qvdXWYo1cSD75kgZTRDAV2JQLUuzdIJiZVb0QhjSj82o6y57tpBbzrKh1q+oh+M1rdPK4iD2NR4
+	/w4cnbbRlbxKnphV8NgpSHqP+nld9thKe/W2qr+/T1BRRM76/DxG06V0HQDjbgKRQwejxhsox7i
+	F6rGgJhuv27CfPyGslX5AWo1GY4xoAY+POqO4tP6msAR11zX2gj9R9
+X-Received: by 2002:a05:622a:1454:b0:501:3c88:131 with SMTP id d75a77b69052e-50314bbfa55mr64827651cf.22.1769447197159;
+        Mon, 26 Jan 2026 09:06:37 -0800 (PST)
+Received: from mail-qk1-f179.google.com (mail-qk1-f179.google.com. [209.85.222.179])
+        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-89491850435sm100829306d6.24.2026.01.26.09.06.36
+        for <linux-phy@lists.infradead.org>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 26 Jan 2026 09:06:36 -0800 (PST)
+Received: by mail-qk1-f179.google.com with SMTP id af79cd13be357-8c531473fdcso643432785a.3
+        for <linux-phy@lists.infradead.org>; Mon, 26 Jan 2026 09:06:36 -0800 (PST)
+X-Forwarded-Encrypted: i=1; AJvYcCXZjyVh3FJ+RmLoP4zy2e7GsSsjDL46PzgJy9VSK0doihAvrJ2GLR7E6hO2wacwPIawBmwZ5y6GRIQ=@lists.infradead.org
+X-Received: by 2002:a67:c48a:0:b0:5f1:9641:4f2a with SMTP id
+ ada2fe7eead31-5f57638a4edmr1135520137.18.1769446754221; Mon, 26 Jan 2026
+ 08:59:14 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260123-ti-phy-v4-2-b557e2c46e6f@gmail.com>
+References: <cover.1764241212.git.tommaso.merciai.xr@bp.renesas.com> <63e8022438eb0d485505c262cac383d76c804403.1764241212.git.tommaso.merciai.xr@bp.renesas.com>
+In-Reply-To: <63e8022438eb0d485505c262cac383d76c804403.1764241212.git.tommaso.merciai.xr@bp.renesas.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Mon, 26 Jan 2026 17:59:02 +0100
+X-Gmail-Original-Message-ID: <CAMuHMdVfsO1NVv6+N37C8ss3thKz+sANCtO00PRhgnD5M1cs0Q@mail.gmail.com>
+X-Gm-Features: AZwV_QjJzffyx5kQPgMaSLBq9RR4EDkJTeL5IelsyAZXDhJ2Ar_AWtIKRIoFYWc
+Message-ID: <CAMuHMdVfsO1NVv6+N37C8ss3thKz+sANCtO00PRhgnD5M1cs0Q@mail.gmail.com>
+Subject: Re: [PATCH v5 15/22] arm64: dts: renesas: r9a09g057: Add USB2.0
+ VBUS_SEL mux-controller support
+To: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
+Cc: tomm.merciai@gmail.com, linux-renesas-soc@vger.kernel.org, 
+	biju.das.jz@bp.renesas.com, Peter Rosin <peda@axentia.se>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Fabrizio Castro <fabrizio.castro.jz@renesas.com>, 
+	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>, 
+	Philipp Zabel <p.zabel@pengutronix.de>, 
+	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, Magnus Damm <magnus.damm@gmail.com>, 
+	Guenter Roeck <linux@roeck-us.net>, Mark Brown <broonie@kernel.org>, 
+	Jonathan Cameron <jonathan.cameron@huawei.com>, Georgi Djakov <djakov@kernel.org>, 
+	Bartosz Golaszewski <bartosz.golaszewski@linaro.org>, Arnd Bergmann <arnd@arndb.de>, 
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260126_090639_195820_31CB9BE2 
+X-CRM114-Status: GOOD (  22.33  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,21 +106,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Hi Tommaso,
 
-On Fri, 23 Jan 2026 15:39:03 +0000, Charan Pedumuru wrote:
-> Convert TI PIPE3 PHY binding to DT schema.
-> Changes during conversion:
-> - Define a new pattern 'pcie-phy' to match nodes defined in DT.
-> - Drop obsolete "id" property from the schema.
-> 
-> Signed-off-by: Charan Pedumuru <charan.pedumuru@gmail.com>
-> ---
->  .../devicetree/bindings/phy/ti,phy-usb3.yaml       | 138 +++++++++++++++++++++
->  1 file changed, 138 insertions(+)
-> 
+On Thu, 27 Nov 2025 at 12:51, Tommaso Merciai
+<tommaso.merciai.xr@bp.renesas.com> wrote:
+> Enable control of USB2.0 VBUSEN via the VBUS_SEL bit in the VBENCTL
+> register. According to the RZ/V2H(P) SoC hardware manual, OTG channels
+> require VBUS_SEL set, while HOST-only channels require it cleared.
+>
+> Add `#mux-state-cell` to the usb20phyrst and usb21phyrst reset
+> nodes to expose them as mux controllers.
+>
+> Set the required mux-states in usb2_phy0 (OTG: state 1) and usb2_phy1
+> (HOST: state 0) nodes.
+>
+> This enables proper VBUSEN management for OTG and HOST-only USB2.0
+> channels.
+>
+> Signed-off-by: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
 
-Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
+Thanks for your patch!
 
+> --- a/arch/arm64/boot/dts/renesas/r9a09g057.dtsi
+> +++ b/arch/arm64/boot/dts/renesas/r9a09g057.dtsi
+> @@ -1034,6 +1034,7 @@ usb2_phy0: usb-phy@15800200 {
+>                         resets = <&usb20phyrst>;
+>                         #phy-cells = <1>;
+>                         power-domains = <&cpg>;
+> +                       mux-states = <&usb20phyrst 1>;
+
+I am no USB expert, and didn't really follow the USB specifics of
+this series, but isn't the selection of host (VBUSEN = 1) or function
+(VBUSEN = 0) mode decided at runtime?
+
+>                         status = "disabled";
+>                 };
+>
+> @@ -1047,6 +1048,7 @@ usb2_phy1: usb-phy@15810200 {
+>                         resets = <&usb21phyrst>;
+>                         #phy-cells = <1>;
+>                         power-domains = <&cpg>;
+> +                       mux-states = <&usb21phyrst 0>;
+
+The second controller is always used in host mode, so 0 is correct.
+
+>                         status = "disabled";
+>                 };
+>
+
+Gr{oetje,eeting}s,
+
+                        Geert
+
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 -- 
 linux-phy mailing list
