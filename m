@@ -4,101 +4,129 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8A8E4D74EF7
-	for <linux-phy@archiver.kernel.org>; Mon, 26 Jan 2026 09:22:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8B6C7CF65DB
+	for <linux-phy@archiver.kernel.org>; Mon, 26 Jan 2026 12:01:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EkTIXQ613Jpj7/2bUpjSn8U/jRKNsVKSRJhZOk+/YaI=; b=qykx7L+CizVbG5
-	/BN4tSiK8u2nRInwGlkxHjkcGyAm081l1iOTDbjPyszmHPYXPEKK4Eu4VQ3Kq/XgRsckjK2m05cd0
-	Z9VtS1DOrfJ3Q1xsvjEK1LJjCz4Hq72ULDox5xw5pr5WtHpB+/EqHyPUxdFAMca9xQeGVSp5iRxKO
-	r1Qa0L0F3At1TRch2tVq6vBBQ7XHujJX4fNVe0TSRmh/8fYgyc3yJNl9IZSQMyoJLBavBYzceOOl+
-	fPkjF9XWanOhdPL4EXzfyD40L4ONOL59KkLKN2lRl2ATV4gaWj9gORe0boz/SFSe/RTNw/xGNuCir
-	0hxwJHESBZaxPTHT9KMA==;
+	List-Owner; bh=pMJWHsl8F2eMnMgMFUK1SUgn6y+miOQs11owMIX2uJk=; b=GWEjsYyzal2NM7
+	wsjEdfv9emnuR7qzxPZNeUmuT6aMv+ARwkQes5Z0lCmllSnzinXcnMN6BFb1aBMDjFxREGk/x1zZt
+	3glRLcXfutq1TKk8WNpHua2jvFQKEwzFDvKZxvZGWC0mBcctDPlnhIMpoRx75pC4fWNm5XRDWab4z
+	3uFlpagFeUmRvrOmWeZ/CetRqJSVePCbdxjfgczEiC1u5k5gwEgJe7rouEssXBJhe/7t3P01oCtdK
+	0kf8WBcezfrvIUd+kibKrb/rxhQEu0+WGdn9dRI0PSXiykSsyFYqEvlqnkMEA4wum4VosHCnXsIJv
+	GXhiUxkcSDhIGk2U/5Fw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vkInf-0000000CBNY-0h9T;
-	Mon, 26 Jan 2026 09:22:23 +0000
-Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
+	id 1vkLHb-0000000CTub-37Hv;
+	Mon, 26 Jan 2026 12:01:28 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vkInR-0000000CBBK-0np4
+	id 1vkLHZ-0000000CTtY-28TX
 	for linux-phy@lists.infradead.org;
-	Mon, 26 Jan 2026 09:22:12 +0000
-Received: by mail-wm1-x32c.google.com with SMTP id 5b1f17b1804b1-4801d98cf39so30861725e9.1
-        for <linux-phy@lists.infradead.org>; Mon, 26 Jan 2026 01:22:08 -0800 (PST)
+	Mon, 26 Jan 2026 12:01:26 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 60Q4Wuae031728
+	for <linux-phy@lists.infradead.org>; Mon, 26 Jan 2026 12:01:24 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=puIsZe+lMzBVRjMEvnF4MP6s
+	99iCDRjkRqcNuakVshY=; b=ozYOG1NMbMLRfHVRVEngDX5iR1bNwS1rr7KoZUCw
+	4YYP9CF2w9vPHMDucUfhLI2q2ZkAN0pqgMQQg+kwjoJHsDdgZSbka3Y/HqYlFfuB
+	jFWwk51axblZSnIroViIAbTQmnrdWqGqb27XEdFd7+8g1lTvKIJLEbbebD1HDrZs
+	rZq1jCfIodWLFzyHKXsyliNLqn4dn1BnxUTYtvMLI4CYpEYjVzyzgz780gp2wR8i
+	hMojvk5gWskSwwVdhTwlSMzzKgjeYPHuEhxZJ1Z/e1CKa3sTXGVH4cJsu57lwNSf
+	kw+9gaq6dRJYf+OFdaXY0L8fQ2WBkKXWGl3gX8RKednDfg==
+Received: from mail-qk1-f200.google.com (mail-qk1-f200.google.com [209.85.222.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4bvq2q4bvw-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Mon, 26 Jan 2026 12:01:24 +0000 (GMT)
+Received: by mail-qk1-f200.google.com with SMTP id af79cd13be357-8c53919fbfcso1121747085a.2
+        for <linux-phy@lists.infradead.org>; Mon, 26 Jan 2026 04:01:24 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1769419327; x=1770024127; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=6l0bRB7VVDjDIq+ulMsBVmhmzBjYiR54K3+u8tiEuOs=;
-        b=Q6jKPlK0PED7WFg7ukdwSNntVrL9Bi9VYgAEKLt+A4hQ7Y/FAkLV50Liehf+fqCkCX
-         b+rnk7cVhf1rmjAh2JQnkfl0FJ7XgCQYFo/5P5ZUFDFrCFYJDNxjdX2Ev+isPD6vlf8i
-         6Azvvr4dBqjELLb0JHE14Vk4yfuFwGhhfzFFVW0f/Khd+GaETgCniEIPjp4S5EHsMJrd
-         O8dsD8cMvJzuYd4fEqigWdPpF/4S1roveSH5qmEPjcGqNrpp5mPBMWAoKa1bPZpXKw/X
-         V3nD1AEzvU6I17SV4jrcvO1a5xCjHhkSECuycSd9H56j/iNo9NCHRWILLMDiClRPheRG
-         2IyA==
+        d=oss.qualcomm.com; s=google; t=1769428883; x=1770033683; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=puIsZe+lMzBVRjMEvnF4MP6s99iCDRjkRqcNuakVshY=;
+        b=j1tSdGklyAq2tzqsm/YU4BYc6VAyhr5zecknuK6aEJ0SXnu8H85ZDXyTtxVia2tfpD
+         Ybo0lkG2jy1t8PF+c0crWqjnwrFSHmMM1CYanVnfJx/CkP621ozpIGoTBKYs+5kPMrdb
+         7OGLfu4RPScPSJuSmRHTXNY98QSeWMcOS2086Cnp+G6mlvN6pqOpzVaqsntR5whzHANh
+         w4Xd1QE/AREoam67Vs5wi1i1kPj+88ih54Wx6Q698cmZhJAmcoZBrPvzu85CV57KtwpM
+         vul0FjcVnd/Gn+LQN/uADci2sAOifGCcmuIsEfkiuNLQuaKmiB7tHU8T39gbMSArfrpG
+         CoTA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1769419327; x=1770024127;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=6l0bRB7VVDjDIq+ulMsBVmhmzBjYiR54K3+u8tiEuOs=;
-        b=t4wKYFBAZ7apUuTKjYPaQrH7c8/f9uQU1cKXFh4Nu1xhpfvmVYSfbgVOBP062YjC04
-         EusLpF5e/lt1sBTvmHlhz+n1BtXse3f8AELT5nfvPnHBSUvRIhqUYid4nHT1jvZfWgfW
-         yZzw+19wd1l/NMxktOsOUVysWcOnaQ2HLjmCXrErMWuJzp7sBQzpeGI1C8R2UBFj6EYv
-         p0Tx8Yr46Fiq4mCzMhqul660okbbsCvucJgCqKuxNJRzmEddyCC1m4O/0Jmkly6Wkq6V
-         jb6kjwQiO74D96X9bGeWjFkWrETGHHditB1OYs0MkdA2NEfyZqexvhdPqwyzQpCw2rF0
-         EKRw==
-X-Forwarded-Encrypted: i=1; AJvYcCVkKOHGjjoPcwh1lSjb4vu5OEr9ug/RUNiMhq0lE3Tk380TxiffVkciVAFH7F4nI7LOM68QK+ilmes=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzsAZYfO7BmeRnFLGnfOgBUdkQafhQCQ5HWZjgCYTL3+Jz+IqQR
-	E8WWs5xIpLlyWBZhmrGfbNOlGPAOsbmc+1eL+Krgiq+S2ZWJwOfNgL4YDv/ZZSfjBF0=
-X-Gm-Gg: AZuq6aLOdm6uZT/q97NMAusygC5bLe6k6nPoVAjeIL7FOZBJYK3Ppy2K1W4nWy1epbW
-	AE7Zb/wRm03uOo8AiEb78jZVlHz2aQ32gBepLUkLjnzd8sFM4kPEhzFKXt/Zd0Td3SGv9cUx0ea
-	bpe8dvzeZTA84gm2PDkjEiMeX/yZQpe9vpox3p3dHtfogIGnGlM07jcEohokQc5geSvqZNjLeBO
-	asPCeT1fHCR1PcdbKPxjZKzq8cFPU07bGe9zf/mCW8ntRUZg3mPn8GbATXC/YYoUzfHy+c4jDvp
-	i12SzrynBK3ZZnjHcTy9VqgT9k+ZOj+LgsjDHIfHHo8W+c78xohp3D+BEsQq3vMHOK2MYVDgO16
-	+D8pjoOSEPU9AVR5aRt2af+ayFYgFwnU0sf8JpYWSw5MlNcDjqJU2Iuuk8b+Ntpe6jt7GPphLc6
-	CN24bwqocZ7Lpa9N9Rh4s=
-X-Received: by 2002:a05:600c:3b9d:b0:47e:de23:dd6f with SMTP id 5b1f17b1804b1-4805ce42a6dmr67097725e9.12.1769419327486;
-        Mon, 26 Jan 2026 01:22:07 -0800 (PST)
-Received: from vingu-cube.. ([2a01:e0a:f:6020:e270:a43a:f2fa:900a])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-480470cf1acsm346669855e9.14.2026.01.26.01.22.06
+        d=1e100.net; s=20230601; t=1769428883; x=1770033683;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=puIsZe+lMzBVRjMEvnF4MP6s99iCDRjkRqcNuakVshY=;
+        b=H6OmeZI57jIg1o1Yr3jWtBl672pKr4GDAawe977ouRy8MGSnZLnG6/xZGWTkPjEAzB
+         XgOInnt8+kkuJOFVhqJ3yuMj1ewGIJ10rXcmEHEVHIChJEvLgaz7C2YIHQCk5ljAfdMu
+         8yTCT6/pBxaGiz5EH6NMDT21vE8usGwdTD5BfN3n5//NnzA5N+H36cE7tWQTfxcFn1Lm
+         r8OZtHZkLJcRtJAOhxqWqhxiKOe2PHmvWWFTkaDE0FLsahP43cuboYRWbDqR7iyinjyZ
+         uMnXNUz4i/ZeitPQUjy0APX2TFXnemGJ01aDfKBjDanubtYp6sv8Mj/RiNWuFDgqcbg7
+         ddJQ==
+X-Forwarded-Encrypted: i=1; AJvYcCXSQqIQAipBgK0K1Vaa69bvMK/SoesCe+nDvXY28XRcmGCIhGDG+GSN1ISx/aBFI5qLGsQMtUr2Y4w=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyM4NtbvAi+fh7xbp6Ns1/FCMEXtSBv7qmXxWVkJfEcqS9qb4z/
+	JBcdam/yk9AZuVliKRd1JtaBtgewBGkxamLVJ78DTkGx3HGvmiSnyK8srQyteS/mClUVvkvlPaR
+	f69imDozjhX9ZXq0W3RDY0tRhaoMU+ZoGR8aAoLskcdNIqBWRb3wIIV1Xln1BT8Dc+QFk3I+iHt
+	Ez
+X-Gm-Gg: AZuq6aKUIS9zEjuB04iHtrNsNZhlonOQ7FkpC2X6CcIcmvA0Uej3rixD8H9gmGn3kCT
+	/696Vg3teaofzt2PLqWkgPd2ZMnwWUaNpRyTajJcmOiyzXaS7Of/koGRUJsR+WhgG0rMjaqlr2u
+	xIk1v8QDkxbDLr2bG+TxLdYbHFgL5AW4XHEiTdv2D498ORAC6cWSGZFoRhSPwMPph5WIZMAM9/+
+	mLeOpXHGqy1pLnIF6W+1ajQn6fbFoSMz+CKAxZsCvHpR8W8i5Y8PYsEndDiEwmItcf3vyt1xhp+
+	ERzExdZ0fCi5XYOSwlH6EK5kWsuk7HTXsLxhK0nIpT4bgkbptpgGIXCA7FZSBWef9AC5knr+3Cp
+	KnE3UoJNfv0gPcPP4Bz4MP/kv
+X-Received: by 2002:a05:620a:17a8:b0:8c6:e223:3ee9 with SMTP id af79cd13be357-8c6f9643034mr427986385a.54.1769428883043;
+        Mon, 26 Jan 2026 04:01:23 -0800 (PST)
+X-Received: by 2002:a05:620a:17a8:b0:8c6:e223:3ee9 with SMTP id af79cd13be357-8c6f9643034mr427975785a.54.1769428882163;
+        Mon, 26 Jan 2026 04:01:22 -0800 (PST)
+Received: from oss.qualcomm.com ([86.121.162.109])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-480470472f1sm380540675e9.7.2026.01.26.04.01.20
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 26 Jan 2026 01:22:06 -0800 (PST)
-From: Vincent Guittot <vincent.guittot@linaro.org>
-To: vkoul@kernel.org,
-	neil.armstrong@linaro.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	ciprianmarian.costea@oss.nxp.com,
-	s32@nxp.com,
-	p.zabel@pengutronix.de,
-	linux@armlinux.org.uk,
-	ghennadi.procopciuc@nxp.com,
-	bogdan-gabriel.roman@nxp.com,
-	Ionut.Vicovan@nxp.com,
-	alexandru-catalin.ionita@nxp.com,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	netdev@vger.kernel.org
-Cc: Frank.li@nxp.com
-Subject: [PATCH 4/4] MAINTAINERS: Add MAINTAINER for NXP S32G Serdes driver
-Date: Mon, 26 Jan 2026 10:21:59 +0100
-Message-ID: <20260126092159.815968-5-vincent.guittot@linaro.org>
-X-Mailer: git-send-email 2.43.0
-In-Reply-To: <20260126092159.815968-1-vincent.guittot@linaro.org>
-References: <20260126092159.815968-1-vincent.guittot@linaro.org>
+        Mon, 26 Jan 2026 04:01:21 -0800 (PST)
+Date: Mon, 26 Jan 2026 14:01:20 +0200
+From: Abel Vesa <abel.vesa@oss.qualcomm.com>
+To: Loic Poulain <loic.poulain@oss.qualcomm.com>
+Cc: vkoul@kernel.org, kishon@kernel.org, linux-arm-msm@vger.kernel.org,
+        linux-phy@lists.infradead.org, dmitry.baryshkov@oss.qualcomm.com,
+        neil.armstrong@linaro.org, konrad.dybcio@oss.qualcomm.com
+Subject: Re: [PATCH v2 1/6] phy: qcom: qmp-combo: Prevent unnecessary PM
+ runtime suspend at boot
+Message-ID: <aw4ypn7tar5y3jhyd2lnqfvfw5v3zydabshyt3zgu4e3bl7hn4@rjsfewlzndmi>
+References: <20260121142827.2583-1-loic.poulain@oss.qualcomm.com>
+ <20260121142827.2583-2-loic.poulain@oss.qualcomm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20260121142827.2583-2-loic.poulain@oss.qualcomm.com>
+X-Proofpoint-GUID: aT5HZrlrkF_yAfOb4ik-NgCt1SZ-6_2x
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMTI2MDEwMiBTYWx0ZWRfX/01Cx2ctARry
+ PMcEMZu6lGDIj1udlISuqAWyxT++CF6iMqnm3YCXeTWTLCrWLZxaNerKvQkEJmd4gMtRMNlJopU
+ Bnq2umYGYODGfDiLhgeg93lxFI1/w5h2Uw1ka8qbr/h+/eJqpHLpb09JfzYs7bA4WUE9Whc+Qk0
+ ydlACz2+lrSIQY25DnFedJrjGR/VnepW7Q78x6BFNbStV0dXLi9FqF6wAMHfcyrlQbzFpOs0U0K
+ zkK6CWk7Cat+7Lw21ocMyEq/mskTWabPrEr7ODs1s9cyUfpUkRwIn+kfoGSRbN4mDt2d5JiWV1O
+ sKUIFHeroUsJE7K9YI+hdcQu26dKdcWhs/Gifbdbv69UwS4KKTRbvmEpdVQVjbk377+Rj0KDMrq
+ GPkcDB4LSpmc0M6Xx1dEYkh4mk7n5wYLF9yZLUS/2TCWqfa+M0YccSw/spC7QftvlvRw+BrVeqO
+ yCXEKT/yXjWFjcslvpg==
+X-Proofpoint-ORIG-GUID: aT5HZrlrkF_yAfOb4ik-NgCt1SZ-6_2x
+X-Authority-Analysis: v=2.4 cv=POECOPqC c=1 sm=1 tr=0 ts=69775794 cx=c_pps
+ a=hnmNkyzTK/kJ09Xio7VxxA==:117 a=oauzzCmhM186DRC0Y2yWPg==:17
+ a=kj9zAlcOel0A:10 a=vUbySO9Y5rIA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=EUspDBNiAAAA:8 a=pxQL0frbaL4a0zJdC2sA:9
+ a=CjuIK1q_8ugA:10 a=PEH46H7Ffwr30OY-TuGO:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.20,FMLib:17.12.100.49
+ definitions=2026-01-26_02,2026-01-22_02,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ phishscore=0 malwarescore=0 suspectscore=0 lowpriorityscore=0 clxscore=1015
+ bulkscore=0 priorityscore=1501 spamscore=0 impostorscore=0 adultscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2601150000 definitions=main-2601260102
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260126_012209_257241_2036C2D8 
-X-CRM114-Status: UNSURE (   9.27  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260126_040125_679222_32784089 
+X-CRM114-Status: GOOD (  11.66  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,36 +143,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add a new entry for S32G Serdes driver.
+On 26-01-21 15:28:22, Loic Poulain wrote:
+> There is a small window where the device can suspend after
+> pm_runtime_enable() and before pm_runtime_forbid(), causing an
+> unnecessary suspend/resume cycle while the PHY is not yet registered.
+> 
+> Move pm_runtime_forbid() before pm_runtime_enable() to eliminate
+> this race.
+> 
+> Signed-off-by: Loic Poulain <loic.poulain@oss.qualcomm.com>
+> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
 
-Signed-off-by: Vincent Guittot <vincent.guittot@linaro.org>
----
- MAINTAINERS | 9 +++++++++
- 1 file changed, 9 insertions(+)
-
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 765ad2daa218..888674a308a5 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -3202,6 +3202,15 @@ S:	Maintained
- F:	Documentation/devicetree/bindings/net/nxp,s32-dwmac.yaml
- F:	drivers/net/ethernet/stmicro/stmmac/dwmac-s32.c
- 
-+ARM/NXP S32G SERDES DRIVER
-+M:	Ciprian Marian Costea <ciprianmarian.costea@oss.nxp.com>
-+R:	NXP S32 Linux Team <s32@nxp.com>
-+L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
-+S:	Maintained
-+F:	Documentation/devicetree/bindings/pci/nxp,s32g-serdes.yaml
-+F:	drivers/phy/freescale/phy-nxp-s32g-*
-+F:	include/linux/pcs/pcs-nxp-xpcs.h
-+
- ARM/Orion SoC/Technologic Systems TS-78xx platform support
- M:	Alexander Clouter <alex@digriz.org.uk>
- L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
--- 
-2.43.0
-
+Reviewed-by: Abel Vesa <abel.vesa@oss.qualcomm.com>
 
 -- 
 linux-phy mailing list
