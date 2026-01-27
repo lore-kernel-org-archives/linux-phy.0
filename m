@@ -4,108 +4,138 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5231AD2D8E3
-	for <linux-phy@archiver.kernel.org>; Tue, 27 Jan 2026 10:08:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 76E9BD2F002
+	for <linux-phy@archiver.kernel.org>; Tue, 27 Jan 2026 12:06:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lNa52StAoCHE0tw1wmkQnWEMYSdi305yMbEHJMtu7LE=; b=yHdFOhr18n+2NT
-	70IabUJNVZ0DfyZa12H8GnXu/PK22IGFbfQguGD5ajBOmS1fEcpmkz3KyK3RkmZZKwVtJW59Tvnn+
-	6JmOIPyhE0UqirYE4sTCKUVh0D51Sd+dCjpDFdSvUIaO0OwABhfNR6O0eTWBBF3a7UruQl0Id0xxS
-	uwYAblIhhg7TbMKrmwx0i4GxgjwTUjBZQDQqEPuAtzSby9LIU8cG06LBr2vm183LbWD80EDnNqzwE
-	IT2sXbJWXM8Y5lnyjp75dyFBYkXPgvKTmjogTDtqy47W2U9Njig8Afme08Qtza7/4zGUv/p3yM+kn
-	pA03O0uboCb8gwLLqRVg==;
+	List-Owner; bh=xj7LFAY25z7gElun4pG5Jvpmeuz+ePPQiakhccqdkmg=; b=QyiFux8khNCEcc
+	RDDugknJNt6p0Uk3B5tha3K0jdz8ZLvcvgEP5jiVLYgG/JEUyuSTJiPQPSS9GqMkd+A6Y3xNeCW5D
+	qSG6dAxLIiCrhOicI5mQnkY58M11fA+TVWqwx53Hgsmp1vLJ6lbzB+EoFT3j4WmW20PEND8yM6wd6
+	xkFUPVbMBELuNzy5EHMhX5t98elm4cvdZZ4Dc0MvZaGHzBqHxVCc/pRkloWPysI7wlRBT/W09AFGn
+	N+tIYx78XbTM2R6k9ZR4XT1bpkqWwPwh2F8DyBOdiki8AnZN1ygZed0TbPfsGGyohU8aqvkgzP49G
+	5xcubELk1+n9BnfRe9FQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vkfzb-0000000E1Ur-40H6;
-	Tue, 27 Jan 2026 10:08:15 +0000
-Received: from mail-ed1-x535.google.com ([2a00:1450:4864:20::535])
+	id 1vkhq4-0000000EC3Z-0EVP;
+	Tue, 27 Jan 2026 12:06:32 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vkfzZ-0000000E1Ti-1Sgw
+	id 1vkhpt-0000000EC17-1Dmv
 	for linux-phy@lists.infradead.org;
-	Tue, 27 Jan 2026 10:08:14 +0000
-Received: by mail-ed1-x535.google.com with SMTP id 4fb4d7f45d1cf-658078d6655so10871928a12.3
-        for <linux-phy@lists.infradead.org>; Tue, 27 Jan 2026 02:08:12 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1769508491; cv=none;
-        d=google.com; s=arc-20240605;
-        b=fY/fTgBKFtFfL7eYh1jZvDsndvK7tLzidxagmffBd6ejXrnyLVMm6od7ZqLfmAldLt
-         D6EbNILAJUASHivZUM2NduTbIHqQtn2hoSladPJNBS2IZNtGbk+A+oruMmqBs306I2wH
-         1Tj3FhdVP3RSPr8RK7gmu8j0FePZds0EFgTd0o4eimCGQOWUqWjPGHSM5eUVmlhSJ6SC
-         gCnW5lxgMG1143BSXrjlgk7lAljJXu7LXXNQGDZsDwdpvyXv3ZjeqqrbbRS0c6eYiIrc
-         oFsndTuAQKFu+3a80OMtLzYBV6aihKBEEHhQtQO1xr87H7RfIQ7XTrt5pmoKotjknmY/
-         C+cw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:dkim-signature;
-        bh=bpxQmfY9VK7T+Y3W6DWNgC6rQuK+Ld0siGTt5w9irRg=;
-        fh=OXUROKI3IRSCfUl1Zz/PoU0DzKRFhqvdykqXqQPovq0=;
-        b=XV2MFA5WA+AguOPUzdUML5pFmz/CVS+6WeFrq+QmtIgrfeLLkb237JeNZkLGcEHAkG
-         OdVHiPE03+4Ts7wdi6dkPLsAyHweJ2QJS6qNxqYHYWUB5UFf0G5unkb7NKXqCnCTubGk
-         MFgmZXqphMRA/3uMN+RxqT3YrG1fAJRl/p2YUif84r5ERnImcURJ9eH/KjjmKwjgB6g7
-         gvqCwBkw82MPKKBPSLwX7gEN1PrH3UeHV/2R3kTna2Y7RZo0DV85GFarxnM/iYe71nco
-         Hml53IMVZ/86EBkbcXvnmDLzL2XRzOPLsgQcajfCtGATAPR56+RHZQbadeysgCVI41Kr
-         6lMw==;
-        darn=lists.infradead.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
+	Tue, 27 Jan 2026 12:06:24 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 60R87Lf82379294
+	for <linux-phy@lists.infradead.org>; Tue, 27 Jan 2026 12:06:19 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=oJmDDECkW3iXsL3g4I3qEOxh
+	a59jVBDs+hiTdIwu23k=; b=SFCOd1M44pt3IzqJIWZy8H8I/QoiF7NXN0rgT0ia
+	B19mlTG+dl4OUrVUz+NXmZkqvKzSH2Fy3/oQD+kZqHrZnwT/VkWrDinTkbzmE9N4
+	YN/6CH3qZXc7sLY6wDnxZMMpwUbpoQOXpE0OJJ0mQIgoYkVavb9Ro6QrJhqTa8/f
+	BtArQZVv9m3PyvBX9f7eu7HNoyjTIkDkjvxpexz8b61aHAmo2eufC1MIrq9/1mDB
+	+fR1BvhXvb/Q2Q6Sa1IKodpPpKIjNik88CcAuBXTSBkKa+zINxdheG7EgkxMWIGo
+	Yvlttka2K2gQdZXxgdXi/wn6Lf75pJ+xV3BjyoVHuJNj4Q==
+Received: from mail-pj1-f72.google.com (mail-pj1-f72.google.com [209.85.216.72])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4bxsjr8sqj-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Tue, 27 Jan 2026 12:06:19 +0000 (GMT)
+Received: by mail-pj1-f72.google.com with SMTP id 98e67ed59e1d1-352c7924ebcso5061552a91.3
+        for <linux-phy@lists.infradead.org>; Tue, 27 Jan 2026 04:06:19 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1769508491; x=1770113291; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=bpxQmfY9VK7T+Y3W6DWNgC6rQuK+Ld0siGTt5w9irRg=;
-        b=aVSSXOGel9E6hwNsNG9fePrBVGRlZ6QNvKhq4b5zx135d8Q0VE4mHoRgr3c+MtkuvQ
-         BnMOGLcMXSqG461GBKezdkpLCmZMVPr58GuRd4T5LIjNds+xLMihqHhc9CV2svf0znAE
-         ppSUPaMCjBYVyYaqIXw1fAnUexgls3T7bzCoXntADJOPZwJo33wPPb5x9OPeMCnUDdXU
-         MuHSCtuazRAwELuyR9Tf9G50I9qTGUUBBAFshPTlqWJcLf5X+n7/4vA1W9SW+J6MqNmA
-         zSMuWIf633AWNvT/7rkaVovG+TIQnj7w+XHkOw6q7e5L/Gt/2F3N6Jz6c0EaSBsfGTdM
-         C2ww==
+        d=oss.qualcomm.com; s=google; t=1769515579; x=1770120379; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=oJmDDECkW3iXsL3g4I3qEOxha59jVBDs+hiTdIwu23k=;
+        b=D0qmsqh9D8thkI370q6L4LW3spK0NqpBYl0B1O5VJreiWCtaz59aJ8fC5CEGZAaqno
+         +42tFtszWoA8MFhfNloJxl17TB2TCmqNZApQu1+dIHozYrrHYYTnRADYSsf1lrREC4Jh
+         lV3Tg4HWRvs6UzsX2U4uHbLm+zp1VNLNWrnKP8gLTVhXjtuZMbdZ1As4EoiTyhqf400T
+         Zd1zDodUDq3YVhnGUC6WhioYOC0JxTXZSlYMTOJyX+fL8/NXRor8wNIADNJNmzxLmmcq
+         27S5RHiB1NVXAO3ZA8aMp8ix3/cki07VfqKoPjxqqr6DZI19S3C1jUQ8bMOGV5GlGE3X
+         /FgA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1769508491; x=1770113291;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=bpxQmfY9VK7T+Y3W6DWNgC6rQuK+Ld0siGTt5w9irRg=;
-        b=JeMKTICTHiz5x3dFpN2Ie7XuH2ePkyvXu5+gW87NpjTGWH2ybRvaj0yIvwXPCBnAa/
-         A7c06PwenUxfBqtyM3OQnMrQK4Qm3p0ZPNKv/VEvUI91NiWIWiCbSdPcrSacEPOu+pSl
-         3x5ftl31viJ0HkNXHDHObaKOPuHJcck0ez+H6ADLlTbyv822X/N0od1U4cy9akBW9umh
-         PKhe8fMCuwnGM9yz1ubIYWiwH367FcdBbwOwOOF2Q5KBAqKQNONmcPWC5dXMNU0885iE
-         fGkb/RGAxXQt7OtZbA8J6necZ/jISzAodJJfMBJeG1tlct0EX2pkZBpzdEZnwmi0HjLN
-         f9Qw==
-X-Forwarded-Encrypted: i=1; AJvYcCXmnnFn7LdYPNDxJv0ELwChdRD/xB5aYw5uxFVXnsleOYiugNqUD9rwxvedRLGyoAxGFZkMItw5bGc=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxfuwjZ1jIJ2UqSUYy9dhVHCmf1GL9zI+Dpe9eV3ebkEhJh0FHc
-	pksEcco+G018N8GHqoN0S3NUdhiwg2kc7u2tYlBecbgv4iW5NCqmcvv1z8eetw6/QShVXkDRmkp
-	mVfv3voRYV4PniKKZg58+IVUugkQlyZb2aIAiOHXvAA==
-X-Gm-Gg: AZuq6aL2hzuYxVlbkSKkWwTgSliBE15VkSSB5IqAbBLV4GdGJulGyTXVkj3F5mdUb61
-	zG4WFwiHxCBsDnPrFk3s7HpKrpBXyt0KzO0Mccr4n3dBbIY+PxoKnGN3hfH9HePaC8F6gc9BFjk
-	TjeHDzjKfGMz07jfhN4/VufspjvjQykf8Nqt+hbm4INzW3XTvAPsDJuxp68kOM99wSAl/PHeTqF
-	QJPtwCPTTtjNIBWUQjHTUU4mtYu6tqXQXMzFMt5r2GXeYI21kQ/12Js4wiE98xdio77HeYluYw/
-	jR437DdFE/aVl2GvahexKCfN
-X-Received: by 2002:a05:6402:1d50:b0:64b:6e44:217 with SMTP id
- 4fb4d7f45d1cf-658a5f8e7cdmr891417a12.0.1769508490979; Tue, 27 Jan 2026
- 02:08:10 -0800 (PST)
+        d=1e100.net; s=20230601; t=1769515579; x=1770120379;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=oJmDDECkW3iXsL3g4I3qEOxha59jVBDs+hiTdIwu23k=;
+        b=sTc1U+6YH8ZgX9dll4lxdtx5HoeTzyoIjb2zZMXTbgPbkV4JcuHQv0yl/UhobyFMmV
+         hLJ9QS6vKeY8AFauS/sJi4tyaICaZrGUg9OSJIzrQcLWz8ENIZnyUzh0CD9HGIoHlQFy
+         g7C0OtdGsHOQH1Ps8N/tth7IxYPi8sFndTWtf0EuJ+qzVRZCDRLuWDgX0AR6nS4YInOV
+         CGCeIdmW9uTvicL3N30eH2IFGfZbV9EDuNUoLPCfrRVXA7RDim9MoHX1FxuO72t0geil
+         nYvSpx5mJAx9hP868ESGzGtotenTwzK0t1T7nWZZqnfpt2LY6T9DQdlOB+oY3ot7t8Iy
+         4OKA==
+X-Forwarded-Encrypted: i=1; AJvYcCUSgLv/qC2yJH3VeuoiyU0/56HQN7xyS5OiKlG+HJih/5y6dmUhfI1Ph5SCLdRTEJyCXUfazswDTrA=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyOp5VdQhFAONTM6DXJIGKa06+dmgAWYAxTi6bfknWOZ4h34V2P
+	jwiYpzi0D1BNn8bHO6RMdfaFIX/tL0OQhLPW1uLFZ9gJZJy3yFBsAXiUUtnat0PHSNVHDFuwBtV
+	WaaXXAQZ/Ji13k3/Wub9t4nNqsQALIGb2MQdQKt/2jUnNTL/ZtNdkcbY6VKu8d9+VsWhb
+X-Gm-Gg: AZuq6aK64VSaEzYIZ8qp8sFSd4WMTwir/VfY0zwjCLP5giprdbuqWrda2vj0zfS0z6j
+	10Yvit7eenrGuUpDxbtT06ctBF+NNadd01RkMoW0K3qa/mFmvY7iGE2z4vme9SS0DYj34riflqf
+	hEV5NB9vJgXU5yvQLeyOik58nwHIlO/W+Ka9hl744fmqU08LQCqHTz8GTdhrRfs82HDn7rRaTA2
+	taLWhXN38UOgegGy13hoI1NS4vuQLpRVsZHjHdSbDxo6Go+aJHZF1pV06pJwt8wfKdoO7Jxnaby
+	t+4ikrkfDF4nvQ2QM6udv7n6gXrX/gqrhCd4ptbTlrvOFD3XgdyN/t+5GjVYeHQVwJihROa4Yyu
+	jiYXfBSFaOB/nYsE43xXktjY=
+X-Received: by 2002:a17:90b:2dc9:b0:341:6164:c27d with SMTP id 98e67ed59e1d1-353fecc66admr1463646a91.3.1769515578702;
+        Tue, 27 Jan 2026 04:06:18 -0800 (PST)
+X-Received: by 2002:a17:90b:2dc9:b0:341:6164:c27d with SMTP id 98e67ed59e1d1-353fecc66admr1463627a91.3.1769515578192;
+        Tue, 27 Jan 2026 04:06:18 -0800 (PST)
+Received: from oss.qualcomm.com ([202.46.23.25])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-353f61292bdsm2411832a91.6.2026.01.27.04.06.13
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 27 Jan 2026 04:06:17 -0800 (PST)
+Date: Tue, 27 Jan 2026 17:36:11 +0530
+From: Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>
+To: "Russell King (Oracle)" <rmk+kernel@armlinux.org.uk>
+Cc: Andrew Lunn <andrew@lunn.ch>, Heiner Kallweit <hkallweit1@gmail.com>,
+        Alexandre Torgue <alexandre.torgue@foss.st.com>,
+        Andrew Lunn <andrew+netdev@lunn.ch>,
+        "David S. Miller" <davem@davemloft.net>,
+        Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>,
+        linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
+        linux-phy@lists.infradead.org,
+        linux-stm32@st-md-mailman.stormreply.com,
+        Maxime Chevallier <maxime.chevallier@bootlin.com>,
+        Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+        Neil Armstrong <neil.armstrong@linaro.org>, netdev@vger.kernel.org,
+        Paolo Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>
+Subject: Re: [PATCH net-next v2 01/14] net: stmmac: qcom-ethqos: remove
+ mac_base
+Message-ID: <aXiqM+rYK/QCy6DW@oss.qualcomm.com>
+References: <aXNEwBW3OA1xLEUj@shell.armlinux.org.uk>
+ <E1vjDr1-00000005fQ3-2rcn@rmk-PC.armlinux.org.uk>
 MIME-Version: 1.0
-References: <20260126092159.815968-1-vincent.guittot@linaro.org>
- <20260126092159.815968-3-vincent.guittot@linaro.org> <69592713b7bd419e23df458734ca78070a83e8ac.camel@pengutronix.de>
-In-Reply-To: <69592713b7bd419e23df458734ca78070a83e8ac.camel@pengutronix.de>
-From: Vincent Guittot <vincent.guittot@linaro.org>
-Date: Tue, 27 Jan 2026 11:07:59 +0100
-X-Gm-Features: AZwV_QiOrd8cMHRoDNLhWiUkjdTQ9Am6xMiRSspZlgdv4qBzTDeeYROI1wjEMTk
-Message-ID: <CAKfTPtD+EZ+apAnS7tccY5UrQx3EWXb4j33F_5SkHY80akxz-A@mail.gmail.com>
-Subject: Re: [PATCH 2/4] phy: s32g: Add serdes subsystem phy
-To: Philipp Zabel <p.zabel@pengutronix.de>
-Cc: vkoul@kernel.org, neil.armstrong@linaro.org, krzk+dt@kernel.org, 
-	conor+dt@kernel.org, ciprianmarian.costea@oss.nxp.com, s32@nxp.com, 
-	linux@armlinux.org.uk, ghennadi.procopciuc@nxp.com, 
-	bogdan-gabriel.roman@nxp.com, Ionut.Vicovan@nxp.com, 
-	alexandru-catalin.ionita@nxp.com, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, netdev@vger.kernel.org, 
-	Frank.li@nxp.com
+Content-Disposition: inline
+In-Reply-To: <E1vjDr1-00000005fQ3-2rcn@rmk-PC.armlinux.org.uk>
+X-Proofpoint-GUID: vUPbUpmkc71GRCaoTI67z0m9qI6Z57X9
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMTI3MDA5OCBTYWx0ZWRfX9daUZk7JqKFa
+ W1ozYTVhKJ+kjFndYlOYCgbipwELBLUq8yLngS53tvzJMgYttRwKJ2oKBymG9HU+Cd4qDjA8pGz
+ 5GU7UVT/6ZEyLLhnIuX50RUTlo1y/rpdFDFdNUY7r/guPJS+fY3FKg37GBsqgBSpuKp6mW94CW3
+ 2dyByoTG4980+85/ECj+9CEYL/wpnjwMGbI+PnnAOp5wVqgZrOAIFVDx7aJA6RxMdsh9O2IljF6
+ SYAD1UEnY/Xoj59eS1xohC5SwlL9qXueyFQT968N9zXzPrJdK3TNhpvjMJ/gD0PAM1upE1YytTe
+ 9HzPZ6AqKvsteR/PtVtI0j0yGU6OxSKMXQJzSxoCa251MIBjlymcWTEUKfWX4xSc443irbQ/QxH
+ xoS6Q2gftFjbdg4KqwTzF8cP+Ch1SXLSoadPYfOXw0zsP7R1Q0zbqHFb8wmOjr03+iXh7MzGMzR
+ lL6iC1xKOViZYBEZP2g==
+X-Authority-Analysis: v=2.4 cv=b+i/I9Gx c=1 sm=1 tr=0 ts=6978aa3b cx=c_pps
+ a=RP+M6JBNLl+fLTcSJhASfg==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
+ a=kj9zAlcOel0A:10 a=vUbySO9Y5rIA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=PHq6YzTAAAAA:8 a=EUspDBNiAAAA:8
+ a=2f8CEio2oMm2juszzV8A:9 a=CjuIK1q_8ugA:10 a=iS9zxrgQBfv6-_F4QbHw:22
+ a=ZKzU8r6zoKMcqsNulkmm:22
+X-Proofpoint-ORIG-GUID: vUPbUpmkc71GRCaoTI67z0m9qI6Z57X9
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.51,FMLib:17.12.100.49
+ definitions=2026-01-27_02,2026-01-27_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ malwarescore=0 adultscore=0 lowpriorityscore=0 clxscore=1015 phishscore=0
+ impostorscore=0 bulkscore=0 spamscore=0 priorityscore=1501 suspectscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2601150000 definitions=main-2601270098
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260127_020813_405571_563DF6CA 
-X-CRM114-Status: GOOD (  16.11  )
+X-CRM114-CacheID: sfid-20260127_040623_459928_1532CCE4 
+X-CRM114-Status: GOOD (  18.67  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -122,61 +152,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, 26 Jan 2026 at 14:11, Philipp Zabel <p.zabel@pengutronix.de> wrote:
->
-> On Mo, 2026-01-26 at 10:21 +0100, Vincent Guittot wrote:
-> > s32g SoC family includes 2 serdes subsystems which are made of one PCIe
-> > controller, 2 XPCS and one Phy. The Phy got 2 lanes that can be configure
-> > to output PCIe lanes and/or SGMII.
-> >
-> > Implement PCIe phy support
-> >
-> > Co-developed-by: Ciprian Marian Costea <ciprianmarian.costea@oss.nxp.com>
-> > Signed-off-by: Ciprian Marian Costea <ciprianmarian.costea@oss.nxp.com>
-> > Co-developed-by: Alexandru-Catalin Ionita <alexandru-catalin.ionita@nxp.com>
-> > Signed-off-by: Alexandru-Catalin Ionita <alexandru-catalin.ionita@nxp.com>
-> > Co-developed-by: Ghennadi Procopciuc <ghennadi.procopciuc@nxp.com>
-> > Signed-off-by: Ghennadi Procopciuc <ghennadi.procopciuc@nxp.com>
-> > Co-developed-by: Ionut Vicovan <Ionut.Vicovan@nxp.com>
-> > Signed-off-by: Ionut Vicovan <Ionut.Vicovan@nxp.com>
-> > Co-developed-by: Bogdan Roman <bogdan-gabriel.roman@nxp.com>
-> > Signed-off-by: Bogdan Roman <bogdan-gabriel.roman@nxp.com>
-> > Signed-off-by: Vincent Guittot <vincent.guittot@linaro.org>
-> > ---
-> >  drivers/phy/freescale/Kconfig               |   9 +
-> >  drivers/phy/freescale/Makefile              |   1 +
-> >  drivers/phy/freescale/phy-nxp-s32g-serdes.c | 569 ++++++++++++++++++++
-> >  3 files changed, 579 insertions(+)
-> >  create mode 100644 drivers/phy/freescale/phy-nxp-s32g-serdes.c
-> >
-> [...]
-> > diff --git a/drivers/phy/freescale/phy-nxp-s32g-serdes.c b/drivers/phy/freescale/phy-nxp-s32g-serdes.c
-> > new file mode 100644
-> > index 000000000000..8336c868c8dc
-> > --- /dev/null
-> > +++ b/drivers/phy/freescale/phy-nxp-s32g-serdes.c
-> > @@ -0,0 +1,569 @@
-> [...]
-> > +static int s32g_serdes_get_ctrl_resources(struct platform_device *pdev, struct s32g_serdes *serdes)
-> > +{
-> [...]
-> > +     ctrl->rst = devm_reset_control_get(dev, "serdes");
->
-> Please use devm_reset_control_get_exclusive() directly.
+On Fri, Jan 23, 2026 at 09:53:23AM +0000, Russell King (Oracle) wrote:
+> In commit 9b443e58a896 ("net: stmmac: qcom-ethqos: remove MAC_CTRL_REG
+> modification"), ethqos->mac_base is only written, never read. Let's
+> remove it.
+> 
+> Reviewed-by: Andrew Lunn <andrew@lunn.ch>
+> Signed-off-by: Russell King (Oracle) <rmk+kernel@armlinux.org.uk>
+> ---
+>  drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c | 3 ---
+>  1 file changed, 3 deletions(-)
+> 
+> diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
+> index 0826a7bd32ff..869f924f3cde 100644
+> --- a/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
+> +++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
+> @@ -100,7 +100,6 @@ struct ethqos_emac_driver_data {
+>  struct qcom_ethqos {
+>  	struct platform_device *pdev;
+>  	void __iomem *rgmii_base;
+> -	void __iomem *mac_base;
+>  	int (*configure_func)(struct qcom_ethqos *ethqos, int speed);
+>  
+>  	unsigned int link_clk_rate;
+> @@ -772,8 +771,6 @@ static int qcom_ethqos_probe(struct platform_device *pdev)
+>  		return dev_err_probe(dev, PTR_ERR(ethqos->rgmii_base),
+>  				     "Failed to map rgmii resource\n");
+>  
+> -	ethqos->mac_base = stmmac_res.addr;
+> -
+>  	data = of_device_get_match_data(dev);
+>  	ethqos->por = data->por;
+>  	ethqos->num_por = data->num_por;
+> -- 
+> 2.47.3
+> 
 
-Okay
+Validated this patch on the QCS9100 Ride R3 board, so:
 
->
-> [...]
-> > +static int s32g_serdes_get_pcie_resources(struct platform_device *pdev, struct s32g_serdes *serdes)
-> > +{
-> [...]
-> > +     pcie->rst = devm_reset_control_get(dev, "pcie");
->
-> Same here.
->
-> regards
-> Philipp
+Tested-by: Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>
 
 -- 
 linux-phy mailing list
