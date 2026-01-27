@@ -4,77 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9722CD2FEC2
-	for <linux-phy@archiver.kernel.org>; Tue, 27 Jan 2026 17:10:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 07218D2FED9
+	for <linux-phy@archiver.kernel.org>; Tue, 27 Jan 2026 19:12:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eFYyZ4k6iWr0ThayIxntAji/wsSN8A9DgFnB+gcEEOA=; b=JuUBYuvYNB0kft
-	UbLcFzxilBTIuR8pcXUvQMBAs/nNGpCKu7ksQvpXMr6NMCZDiZsIdROMMrYBQynDL4XpBeRF5kO37
-	NB32aF7Pzwt+aiJQQjtQsoKAuFKmCtTHCFcskcst4zJOTjf1oCPoKawcIHLev8UGsrQnQgMq1pKjM
-	TTwB4uR1tFObQG+HhDLGXx7RUn5q5xXW+KBBapnoc9TaGi0E8Jb+/ePTsfK26ZxSDx9HsHh7GdVE0
-	RgazbI/ofI8vh0b8FTpGPDxZUbygkNBiTRzQPo9/LAClwRXvvVpziSvcInhiRJvTPJwO9IjgOvf1K
-	gW8LcISTkw4MGNngXJhQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=icO0P6kPiFiTuUReb0jMOMcmKXIP02GogidqK3QZIZI=; b=GdTIhXeTt8Y/6k
+	ltyB9NnPsveAIYXUtNMXn0R570Xe6iwZbdQQ1vjnoimhxauW09TMFx0ohnyLX1tm9aY7+OXWfLvU3
+	kG5JAN8+uJJgSVLaDpyb5UnMXrTZX+6IW/8IyCINjuaNVGjnwgJ2ff9VtZ9HJO3Ryn3nG1MXd4Hoe
+	RdsMvaX8gTMzbu6SWWsRZD9hmYRBqzySTOodJXGvbSyqwRhFl+73g9Y6om+x7tvBPr3QfbTl0CWAL
+	Qnv+UCovOfnh1pq1zCJYdi3ljphw2AbhHKxd1D4KZl0wWIPfVLTszN36S7cno41bcBURZY1t7MF2Z
+	ISIY318nYILug6XQUrJQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vkmZk-0000000Ei91-1Cbd;
-	Tue, 27 Jan 2026 17:10:00 +0000
-Received: from smtpout-04.galae.net ([185.171.202.116])
+	id 1vkoUc-0000000EtX0-2bdm;
+	Tue, 27 Jan 2026 19:12:50 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vkmZf-0000000Ei5o-1ZVY
-	for linux-phy@lists.infradead.org;
-	Tue, 27 Jan 2026 17:09:57 +0000
-Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-04.galae.net (Postfix) with ESMTPS id 0C25DC211C8;
-	Tue, 27 Jan 2026 17:09:56 +0000 (UTC)
-Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id DFE6F606F5;
-	Tue, 27 Jan 2026 17:09:53 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id D10E9119A869B;
-	Tue, 27 Jan 2026 18:09:50 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1769533792; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 content-transfer-encoding:in-reply-to:references;
-	bh=BVCjO3PiJ96hjbVyejrX+9TN3cIt/NAX8/w5F1wcAmA=;
-	b=XkA96BVK8WVnRnOW6FNmyFVUCUFlaeVVR4QVINu+C0sU4B/f3vduZBNB64dpb1kjTLDUgu
-	fEsldg3gJe9ADryXAS5vEwM+AcwesXhEH7lZaqyvwX6ssh7MuVxR98Vyp5SmGsiL3+fMjw
-	MJomtUrwF6CCiQltCba0pvdtPLOhucSpTYWQdJUwETByYhhB2bxmk0bi/2ntEVm5n6C0xe
-	pFyRIQWnpf9Ju71pyZyWxoKbr85KlH+EuOKBZ4KpNeVOJItTCY2utRHGuU4w3hdHUKC1qe
-	DfDvCXUXB/aaNr7JfZ9gh91OCHA8JTTFY1h7eQz5UUul+aKEh8YBFQGP+nbklA==
-From: =?utf-8?q?Th=C3=A9o_Lebrun?= <theo.lebrun@bootlin.com>
-Date: Tue, 27 Jan 2026 18:09:36 +0100
-Subject: [PATCH v6 8/8] MIPS: mobileye: eyeq5-epm: add two Cadence GEM
- Ethernet PHYs
+	id 1vkoUZ-0000000EtVc-1UzV;
+	Tue, 27 Jan 2026 19:12:49 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 3B1F740980;
+	Tue, 27 Jan 2026 19:12:46 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 47FE3C116C6;
+	Tue, 27 Jan 2026 19:12:43 +0000 (UTC)
+From: Geert Uytterhoeven <geert+renesas@glider.be>
+To: Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Peter Griffin <peter.griffin@linaro.org>,
+	=?UTF-8?q?Andr=C3=A9=20Draszik?= <andre.draszik@linaro.org>,
+	Tudor Ambarus <tudor.ambarus@linaro.org>,
+	Naveen Kumar <mnkumar@google.com>,
+	Roy Luo <royluo@google.com>,
+	Joy Chakraborty <joychakr@google.com>,
+	Arnd Bergmann <arnd@arndb.de>
+Cc: linux-phy@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-samsung-soc@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	Geert Uytterhoeven <geert+renesas@glider.be>
+Subject: [PATCH] phy: PHY_GOOGLE_USB should depend on ARCH_GOOGLE
+Date: Tue, 27 Jan 2026 20:12:36 +0100
+Message-ID: <0caa3c449b0c3d64944da3f1003d9389bdc13f98.1769541083.git.geert+renesas@glider.be>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-Message-Id: <20260127-macb-phy-v6-8-cdd840588188@bootlin.com>
-References: <20260127-macb-phy-v6-0-cdd840588188@bootlin.com>
-In-Reply-To: <20260127-macb-phy-v6-0-cdd840588188@bootlin.com>
-To: Vladimir Kondratiev <vladimir.kondratiev@mobileye.com>, 
- =?utf-8?q?Gr=C3=A9gory_Clement?= <gregory.clement@bootlin.com>, 
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, 
- Michael Turquette <mturquette@baylibre.com>, 
- Stephen Boyd <sboyd@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>, 
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>, 
- Neil Armstrong <neil.armstrong@linaro.org>
-Cc: linux-mips@vger.kernel.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
- linux-clk@vger.kernel.org, 
- =?utf-8?q?Beno=C3=AEt_Monin?= <benoit.monin@bootlin.com>, 
- Tawfik Bayouk <tawfik.bayouk@mobileye.com>, 
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>, 
- Luca Ceresoli <luca.ceresoli@bootlin.com>, 
- =?utf-8?q?Th=C3=A9o_Lebrun?= <theo.lebrun@bootlin.com>, 
- Andrew Lunn <andrew@lunn.ch>
-X-Mailer: b4 0.14.3
-X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260127_090955_677937_A18FFFC3 
-X-CRM114-Status: UNSURE (   6.86  )
+X-CRM114-CacheID: sfid-20260127_111247_414759_A9E06AC5 
+X-CRM114-Status: UNSURE (   9.93  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -87,28 +66,41 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhlIE1vYmlsZXllIEV5ZVE1IGV2YWwgYm9hcmQgKEVQTSkgZW1iZWRzIHR3byBNRElPIFBIWXMu
-CgpSZXZpZXdlZC1ieTogQW5kcmV3IEx1bm4gPGFuZHJld0BsdW5uLmNoPgpBY2tlZC1ieTogVGhv
-bWFzIEJvZ2VuZG9lcmZlciA8dHNib2dlbmRAYWxwaGEuZnJhbmtlbi5kZT4KU2lnbmVkLW9mZi1i
-eTogVGjDqW8gTGVicnVuIDx0aGVvLmxlYnJ1bkBib290bGluLmNvbT4KLS0tCiBhcmNoL21pcHMv
-Ym9vdC9kdHMvbW9iaWxleWUvZXllcTUtZXBtNS5kdHMgfCAyNiArKysrKysrKysrKysrKysrKysr
-KysrKysrKwogMSBmaWxlIGNoYW5nZWQsIDI2IGluc2VydGlvbnMoKykKCmRpZmYgLS1naXQgYS9h
-cmNoL21pcHMvYm9vdC9kdHMvbW9iaWxleWUvZXllcTUtZXBtNS5kdHMgYi9hcmNoL21pcHMvYm9v
-dC9kdHMvbW9iaWxleWUvZXllcTUtZXBtNS5kdHMKaW5kZXggOWZjMWExYjBhODFiLi5iYWJmNTI3
-MzFlYTYgMTAwNjQ0Ci0tLSBhL2FyY2gvbWlwcy9ib290L2R0cy9tb2JpbGV5ZS9leWVxNS1lcG01
-LmR0cworKysgYi9hcmNoL21pcHMvYm9vdC9kdHMvbW9iaWxleWUvZXllcTUtZXBtNS5kdHMKQEAg
-LTI5LDMgKzI5LDI5IEBAIHRlbXBlcmF0dXJlLXNlbnNvckA0OCB7CiAJCWxhYmVsID0gIlU2MCI7
-CiAJfTsKIH07CisKKyZtYWNiMCB7CisJcGh5LW1vZGUgPSAic2dtaWkiOworCXBoeS1oYW5kbGUg
-PSA8Jm1hY2IwX3BoeT47CisKKwltZGlvIHsKKwkJI2FkZHJlc3MtY2VsbHMgPSA8MT47CisJCSNz
-aXplLWNlbGxzID0gPDA+OworCQltYWNiMF9waHk6IGV0aGVybmV0LXBoeUBlIHsKKwkJCXJlZyA9
-IDwweGU+OworCQl9OworCX07Cit9OworCismbWFjYjEgeworCXBoeS1tb2RlID0gInJnbWlpLWlk
-IjsKKwlwaHktaGFuZGxlID0gPCZtYWNiMV9waHk+OworCisJbWRpbyB7CisJCSNhZGRyZXNzLWNl
-bGxzID0gPDE+OworCQkjc2l6ZS1jZWxscyA9IDwwPjsKKwkJbWFjYjFfcGh5OiBldGhlcm5ldC1w
-aHlAZSB7CisJCQlyZWcgPSA8MHhlPjsKKwkJfTsKKwl9OworfTsKCi0tIAoyLjUyLjAKCgotLSAK
-bGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRw
-czovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+The Google Tensor SoC USB PHY is only present on Google Tensor G5
+(Laguna) SoCs.  Hence add a dependency on ARCH_GOOGLE, to prevent asking
+the user about this driver when configuring a kernel without Google
+Tensor SoC support.
+
+Fixes: cbce66669c82ee9a ("phy: Add Google Tensor SoC USB PHY driver")
+Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+---
+ARCH_GOOGLE is not yet upstream, but that doesn't hurt.
+---
+ drivers/phy/Kconfig | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
+index 142e7b0ef2efb920..3ceda9a20d571038 100644
+--- a/drivers/phy/Kconfig
++++ b/drivers/phy/Kconfig
+@@ -49,6 +49,7 @@ config GENERIC_PHY_MIPI_DPHY
+ 
+ config PHY_GOOGLE_USB
+ 	tristate "Google Tensor SoC USB PHY driver"
++	depends on ARCH_GOOGLE || COMPILE_TEST
+ 	select GENERIC_PHY
+ 	help
+ 	  Enable support for the USB PHY on Google Tensor SoCs, starting with
+-- 
+2.43.0
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
