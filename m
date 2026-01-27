@@ -4,64 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DD762D2F033
-	for <linux-phy@archiver.kernel.org>; Tue, 27 Jan 2026 15:12:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 356C8D2F033
+	for <linux-phy@archiver.kernel.org>; Tue, 27 Jan 2026 15:12:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
-	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=5wKVajvCtxFBeEwqKq5wF1xdkdMhvhXXxbHvPB9J+YE=; b=0IKdGZfiPLlMrb
-	Rx9ygKcu8dF8telNvaRae1orkN+xecf53ATV/9RAJKaLRw2IP3kc3IOx0a8mHP9TuBADL7WZ3mfp8
-	HBfMAyz2zVgtVIWwcmpm+z3B4F1azgt1aIisvlQbgq00hEuUABeiI9vJWM0Zi8jIFImF2moFgDOuO
-	DdyjgxuKQ3CFMntrKzsQtU5ynQabpWXMCgcV8P7Z7rDhP4xR3mAdO3hhopEJB/ougNccNhsrR+rUo
-	LRs3F/2JqNQ1Aeyu79mtylJQFQwrMp94lmhuYbGywfSPrWzVC7H5/RE2CXMdoF6GfJHlDI+3/YmyY
-	U1LDenkGVItkPYBfaovQ==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=iNMgIxP+pnor0H83/QhF9itlA3UmfqbdBztQ9+dOnYQ=; b=FHjy0u7/jnb3bi
+	3ajn5ZjuBI+t6919EEs0Yv9QdEXtC7L0bEI/Xej0GkfVuDJzv9AqIAVp6Pdes3/G5DNVUnRm1MuK2
+	5NGWIfbXJcsVNcWtILsI82KC5SaeR42C+GuTjZLibnEPTKINjknYiqqWHO/rJ+yrBpLto8aOAHyD/
+	YKOARjCkcIWNDVL6F/OFR1Oa8QcLZztI5Gg3tpDJ5Siv30oP9a6DHtM+yf+Tuxy+FzABvU97WqDOW
+	0e/YmPzGCBP6qBWoB8rOmo7ZKPicZs7pvemIzr0de6dgI8Qtuz8N42us26Xvl5n3sz9VtyNOwkdWA
+	Os0Dx17kXfWssL+8pZhQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vkkk7-0000000EVlx-2Ifp;
-	Tue, 27 Jan 2026 15:12:35 +0000
-Received: from smtp1.tecnico.ulisboa.pt ([193.136.128.21])
+	id 1vkkkI-0000000EVp9-42CH;
+	Tue, 27 Jan 2026 15:12:46 +0000
+Received: from smtp1.tecnico.ulisboa.pt ([2001:690:2100:1::15])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vkkk3-0000000EVh3-2Wje
+	id 1vkkk3-0000000EVh0-2VDS
 	for linux-phy@lists.infradead.org;
-	Tue, 27 Jan 2026 15:12:34 +0000
+	Tue, 27 Jan 2026 15:12:35 +0000
 Received: from localhost (localhost.localdomain [127.0.0.1])
-	by smtp1.tecnico.ulisboa.pt (Postfix) with ESMTP id B6EBB60020E1;
+	by smtp1.tecnico.ulisboa.pt (Postfix) with ESMTP id 51F8060020E2;
 	Tue, 27 Jan 2026 15:12:11 +0000 (WET)
 X-Virus-Scanned: by amavis-2.13.0 (20230106) (Debian) at tecnico.ulisboa.pt
 Received: from smtp1.tecnico.ulisboa.pt ([127.0.0.1])
  by localhost (smtp1.tecnico.ulisboa.pt [127.0.0.1]) (amavis, port 10025)
- with LMTP id 5itpaajWBzqb; Tue, 27 Jan 2026 15:12:09 +0000 (WET)
-Received: from mail1.tecnico.ulisboa.pt (mail1.ist.utl.pt [193.136.128.10])
-	by smtp1.tecnico.ulisboa.pt (Postfix) with ESMTPS id 0CD1560022F6;
+ with LMTP id NtwtBI58voT3; Tue, 27 Jan 2026 15:12:09 +0000 (WET)
+Received: from mail1.tecnico.ulisboa.pt (mail1.ist.utl.pt [IPv6:2001:690:2100:1::b3dd:b9ac])
+	by smtp1.tecnico.ulisboa.pt (Postfix) with ESMTPS id 5F06A6002306;
 	Tue, 27 Jan 2026 15:12:08 +0000 (WET)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tecnico.ulisboa.pt;
 	s=mail2; t=1769526728;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding;
-	bh=JNRbm588iHwZF1GxdMteQr8E3PEwbL6XNXp5vje3+7g=;
-	b=VZw7wMzFh65Q/cPZxUF7cvpWg9/0YWNg+8wazANDXB+D2BggUp6u0GrRSzvXl0/8IBQ5hl
-	e7SNMl/bxWF0qH4vadx6JIk9XsLnKeWo8eu22cVFBLYjJspDBpKWxGnN61ub/lbGkSrZVF
-	/RKHItx0dXfifjDeTj6Scd+r6ixa+iJsKYSJ5W2nnvNNLFkX5paL8SyYtCw9A8GUkeWtAF
-	HCEXyYb3H0HJE8XXMMfyMbSKKmAeUtY31hhrASttbZZFwTpDRB9/5BoPxuWSx0iEldinkL
-	1FJY+3bBCfxrxeSMuvA+3GfjBo81jkfmJasWb7NBYR7p2ykdvwrE8rJwIKQEjg==
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=eTz8SZs3WThSgHMDMFip4KxZygxWXRhKo2bE8wjby9M=;
+	b=lvOoVZrj0+6FrLhJHDM2DCVQdOUFJecK92LjorU7ifI+C0Mvd0QAe2lSbJamX6DpABkwnB
+	gbL6Ntj1u5yS2ARSWGI9BXNh4fqC65hDYBgXozHLf4PQIQKSHee1uyR4HHi0hbncckaMVT
+	nQtaa6bpIPi5bnP7MoA2rJw6HlCG3GyyLUrjhnkg6YXlkMgknZZ/i+0d1s6Nk3IbgTgtlu
+	GLDmjUYyjNwukfamwS42LYnMdq9XS4DxQzXpEpejaK+JOR/V6/ydWxmhDNYm+VHEj0U9fh
+	Ajlt12WJYSEpilTC/z2ptnL1xOraHu1vAx/+imF23NrQH7LJWytE+ovwtpy5JQ==
 Received: from [192.168.2.110] (unknown [148.63.39.39])
 	(Authenticated sender: ist187313)
-	by mail1.tecnico.ulisboa.pt (Postfix) with ESMTPSA id 1DB273600A6;
-	Tue, 27 Jan 2026 15:12:06 +0000 (WET)
+	by mail1.tecnico.ulisboa.pt (Postfix) with ESMTPSA id 083073600DD;
+	Tue, 27 Jan 2026 15:12:08 +0000 (WET)
 From: Diogo Ivo <diogo.ivo@tecnico.ulisboa.pt>
-Subject: [PATCH v2 0/6] Fixes to Tegra USB role switching and phy handling
-Date: Tue, 27 Jan 2026 15:11:46 +0000
-Message-Id: <20260127-diogo-tegra_phy-v2-0-787b9eed3ed5@tecnico.ulisboa.pt>
+Date: Tue, 27 Jan 2026 15:11:47 +0000
+Subject: [PATCH v2 1/6] phy: tegra: xusb: Fix USB2 port regulator disable
+ logic
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIAAAAAAAC/2WNwQrCMBAFf6Xs2ZQk2qZ68j+kSJquyYI0JYnFU
- vLvxoInj/PgzWwQMRBGuFQbBFwokp8KyEMFxunJIqOxMEguGyG5YCN561lCG/R9divrWtOdjR7
- UUSkorzngg9678dYXdhSTD+seWMR3/blOf65FMM4aoUunHfmA3TWhmcj4+vWkOHhdzwn6nPMH+
- CEtercAAAA=
-X-Change-ID: 20251201-diogo-tegra_phy-86c89cab7377
+Message-Id: <20260127-diogo-tegra_phy-v2-1-787b9eed3ed5@tecnico.ulisboa.pt>
+References: <20260127-diogo-tegra_phy-v2-0-787b9eed3ed5@tecnico.ulisboa.pt>
+In-Reply-To: <20260127-diogo-tegra_phy-v2-0-787b9eed3ed5@tecnico.ulisboa.pt>
 To: Mathias Nyman <mathias.nyman@intel.com>, 
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
  Thierry Reding <thierry.reding@gmail.com>, 
@@ -75,16 +74,16 @@ Cc: linux-usb@vger.kernel.org, linux-tegra@vger.kernel.org,
  devicetree@vger.kernel.org, Diogo Ivo <diogo.ivo@tecnico.ulisboa.pt>, 
  stable@vger.kernel.org
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1769526725; l=2265;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1769526725; l=2198;
  i=diogo.ivo@tecnico.ulisboa.pt; s=20240529; h=from:subject:message-id;
- bh=PZoMFREOKYb5A2RBb3T/kOEVl2HYfvqsepMW8enuzrU=;
- b=D8MsCp26CqE8ASu3nLdiC1jufNdbt6L1Lp4OgiaNsEVhs6wqPOft+KGYsKf+Yjp1lYoVYNDgS
- 9jzgwMt7t3TDJ+ZE4kXwu+C47Ue/5WIzm5kIWgv16o6n0OskPIs6R2L
+ bh=crMkHAz58/P3KOZ7XNFwuRiIVyBlBe6XUwar7XMSc+Y=;
+ b=DghMWBQc0iCO8oYZES6tibmHzkTLhvT406Glm+R0oVLioUVqxkG6rBc679D0IDjGc5WrdexYC
+ bYwXH4zUn/iAVj84vqWFRScSiXuXt1FSmXjdmkqxLbjI4rw83VqWkXr
 X-Developer-Key: i=diogo.ivo@tecnico.ulisboa.pt; a=ed25519;
  pk=BRGXhMh1q5KDlZ9y2B8SodFFY8FGupal+NMtJPwRpUQ=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260127_071232_633194_FE8ADA0B 
-X-CRM114-Status: GOOD (  10.43  )
+X-CRM114-CacheID: sfid-20260127_071232_642411_8B73DDA0 
+X-CRM114-Status: GOOD (  16.15  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,65 +100,66 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello,
+The USB2 PHY mode handling on Tegra210 incorrectly relied on
+regulator_is_enabled() when determining whether the VBUS supply should
+be disabled during role changes. This is because regulator_is_enabled()
+reports exactly what is states and not if there is an unbalanced number
+of calls between regulator_enable() and regulator_disable(). For
+example, regulator_is_enabled() always reports true on a fixed-regulator
+with no enable gpio, which is the case on the Pixel C.
 
-This patch series contains fixes/improvements for USB role switching on the
-Tegra210 and Tegra186 SoCs.
+This then leads to the PHY driver wrongfully calling regulator_disable()
+when transitioning from USB_ROLE_DEVICE to USB_ROLE_NONE since the driver
+did not previously call the corresponding regulator_enable().
 
-The first patch addresses a wrong check on the logic that disables the
-VBUS regulator.
+Fix this by keeping track of the current role and updating the logic to
+disable the regulator only when the previous role was USB_ROLE_HOST.
 
-The second patch removes a redundant mutex lock when setting the PHY
-mode.
-
-The third patch guarantees proper ordering of events when switching PHY
-roles.
-
-The remaining patches are included to standardize the PHY .set_mode()
-callback between Tegra186 and Tegra210.
-
-With this patch series this feature can only be controlled from userspace,
-by writing the desired role to sysfs as
-
-echo "role" > /sys/class/usb_role/usb2-0-role-switch/role
-
-with role being one of {device, host, none}.
-
-Further patches will enable automatic role switching via the 'cros_ec_typec'
-driver which is currently broken on Smaug.
-
+Cc: stable@vger.kernel.org
 Signed-off-by: Diogo Ivo <diogo.ivo@tecnico.ulisboa.pt>
 ---
-Changes in v2:
-- Remove DT patches already taken to be upstreamed
-- Add standardization between Tegra210 and Tegra186
-- Address review comments from v1, detailed descriptions in each patch
-- Link to v1: https://lore.kernel.org/r/20251204-diogo-tegra_phy-v1-0-51a2016d0be8@tecnico.ulisboa.pt
-
+v1->v2:
+- Do not fix typo in comment
 ---
-Diogo Ivo (6):
-      phy: tegra: xusb: Fix USB2 port regulator disable logic
-      usb: xhci: tegra: Remove redundant mutex when setting phy mode
-      phy: tegra: xusb: Fix ordering issue when switching roles on USB2 ports
-      phy: tegra: xusb: Add ID override support to padctl
-      phy: tegra: xusb: Move .set_mode() to a shared location
-      phy: tegra: xusb: Move T186 .set_mode() to common implementation
+ drivers/phy/tegra/xusb-tegra210.c | 4 +++-
+ drivers/phy/tegra/xusb.h          | 1 +
+ 2 files changed, 4 insertions(+), 1 deletion(-)
 
- drivers/phy/tegra/xusb-tegra186.c   | 73 +++++----------------------------
- drivers/phy/tegra/xusb-tegra210.c   | 42 +------------------
- drivers/phy/tegra/xusb.c            | 80 +++++++++++++++++++++++++++++++++++++
- drivers/phy/tegra/xusb.h            |  4 ++
- drivers/usb/gadget/udc/tegra-xudc.c |  4 ++
- drivers/usb/host/xhci-tegra.c       | 14 ++++---
- include/linux/phy/tegra/xusb.h      |  3 ++
- 7 files changed, 111 insertions(+), 109 deletions(-)
----
-base-commit: b02a5530af8abe0d3cd4852ba48990716e962934
-change-id: 20251201-diogo-tegra_phy-86c89cab7377
+diff --git a/drivers/phy/tegra/xusb-tegra210.c b/drivers/phy/tegra/xusb-tegra210.c
+index 3409924498e9..3abdf0182d67 100644
+--- a/drivers/phy/tegra/xusb-tegra210.c
++++ b/drivers/phy/tegra/xusb-tegra210.c
+@@ -1936,12 +1936,14 @@ static int tegra210_usb2_phy_set_mode(struct phy *phy, enum phy_mode mode,
+ 			 * USB_ROLE_NONE from USB_ROLE_DEVICE, regulator is not
+ 			 * be enabled.
+ 			 */
+-			if (regulator_is_enabled(port->supply))
++			if (port->role == USB_ROLE_HOST)
+ 				regulator_disable(port->supply);
+ 
+ 			tegra210_xusb_padctl_id_override(padctl, false);
+ 			tegra210_xusb_padctl_vbus_override(padctl, false);
+ 		}
++
++		port->role = submode;
+ 	}
+ 
+ 	mutex_unlock(&padctl->lock);
+diff --git a/drivers/phy/tegra/xusb.h b/drivers/phy/tegra/xusb.h
+index d2b5f9565132..273af147dfd3 100644
+--- a/drivers/phy/tegra/xusb.h
++++ b/drivers/phy/tegra/xusb.h
+@@ -317,6 +317,7 @@ struct tegra_xusb_usb2_port {
+ 	enum usb_dr_mode mode;
+ 	bool internal;
+ 	int usb3_port_fake;
++	enum usb_role role;
+ };
+ 
+ static inline struct tegra_xusb_usb2_port *
 
-Best regards,
 -- 
-Diogo Ivo <diogo.ivo@tecnico.ulisboa.pt>
+2.52.0
 
 
 -- 
