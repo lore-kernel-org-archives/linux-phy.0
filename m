@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 037E7D1953D
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 71BE9D25931
 	for <linux-phy@archiver.kernel.org>; Tue, 27 Jan 2026 15:12:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,53 +12,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oCbrC6/IUlgfnVF4L2RmwNMXAAMszzNSNMuHo4EK1I4=; b=gV3Y4H4MHpAwkq
-	0jec34f2tMsBPnlVDUVMjdP9HTesmjGYqK7JQqZ8q2YnrNsdhxSGxRr4+jD/58I1pblVg6hv6vWO/
-	ACe/kITTMs8+brL1FZ55gT7igVD9AfIebjxcy5jehWhXBmQxJ23XPkYdnxWF7N+nWQLpmzBGGqQfZ
-	3WUw/ZJZ13xw80xaG9MZn7h13/sDAhUCXEEvadUYfij8eOtOo8CoOubUijH39JtWTk1abggbrkers
-	C30LUT/erGMm2Z+JdnmEEC9GDV+FG6KNEpYnOtYd1qlwBan4h551UTWgk1z+WiejBU3ghQWtj7zW3
-	eRFG1ZqVT/NNEx0P4Zgg==;
+	List-Owner; bh=oQr27ySNFsd/tmNfFW5N99ynyjkHT4bpu4l/OpjSh10=; b=wzj5or8GPYJDcf
+	Uj+wc5Dxa0MmgC5uMR8VEZYOH5tjGGNdk4r5SmXSixkOpSm+T5PAb+rBpeMCr5xXuZD2peqDHD/KH
+	qN2mQKtmIRofT26sb2jB69cSkmgjxYWmuZQ5yi/JbD4HrFb245fhoF4yS2jKbuY4NQSyG3ttzXiPw
+	oAbKNFkwGUVpThucZl8ka7t73WTWiQTvf1E0OlJbKbqW+jYDxeg0LaUnL96t6oS03tfvnsQO/WCpF
+	hTMJqoVY0OGd+tk29cOdtSJzYMP6u0cNkGjOT1NxwbS9jASrIPy9EWPXabKUk2N6VPkPk4CoiD2By
+	mbro2jkg4OcdQBj2XYMg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vkkkI-0000000EVos-2xJl;
-	Tue, 27 Jan 2026 15:12:46 +0000
+	id 1vkkkJ-0000000EVpS-0p5s;
+	Tue, 27 Jan 2026 15:12:47 +0000
 Received: from smtp1.tecnico.ulisboa.pt ([2001:690:2100:1::15])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vkkk3-0000000EVgy-2VM7
+	id 1vkkk3-0000000EVh1-2Vas
 	for linux-phy@lists.infradead.org;
 	Tue, 27 Jan 2026 15:12:35 +0000
 Received: from localhost (localhost.localdomain [127.0.0.1])
-	by smtp1.tecnico.ulisboa.pt (Postfix) with ESMTP id 4A4476000877;
+	by smtp1.tecnico.ulisboa.pt (Postfix) with ESMTP id A531860020E3;
 	Tue, 27 Jan 2026 15:12:11 +0000 (WET)
 X-Virus-Scanned: by amavis-2.13.0 (20230106) (Debian) at tecnico.ulisboa.pt
 Received: from smtp1.tecnico.ulisboa.pt ([127.0.0.1])
  by localhost (smtp1.tecnico.ulisboa.pt [127.0.0.1]) (amavis, port 10025)
- with LMTP id C_c04pEVdt2E; Tue, 27 Jan 2026 15:12:09 +0000 (WET)
-Received: from mail1.tecnico.ulisboa.pt (mail1.ist.utl.pt [193.136.128.10])
-	by smtp1.tecnico.ulisboa.pt (Postfix) with ESMTPS id F05BB60022EA;
-	Tue, 27 Jan 2026 15:12:08 +0000 (WET)
+ with LMTP id CJAPZUso6mnf; Tue, 27 Jan 2026 15:12:09 +0000 (WET)
+Received: from mail1.tecnico.ulisboa.pt (mail1.ist.utl.pt [IPv6:2001:690:2100:1::b3dd:b9ac])
+	by smtp1.tecnico.ulisboa.pt (Postfix) with ESMTPS id 42DC76001422;
+	Tue, 27 Jan 2026 15:12:09 +0000 (WET)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tecnico.ulisboa.pt;
 	s=mail2; t=1769526729;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=Z4NnWV6yd5QghHP/nbiwEc5aw4U9XE9qIaLHOxudmmY=;
-	b=S+gdGUaopdDzGGNligYh4mVmJKcPzKNJdzjZptEmtljoeDPaYPxH77vn+nR3qpmBms6Xx3
-	c7rEehUnD7tbZvbRJ4DWH+c3bGk//ZnCwGa5xDCka/AyMI1uYQrgH1vaATcpZpoifaeXzc
-	YQjIZcZzlmSz3tWxf9HsUK2GFCz8vVswykEKxB7tts2hWzQ5BIyT4ws/qBO8w+ZfvSGeB5
-	4VBmCnrnI94nQUn5Qij2/LRlB/LT28s051FGbsl8kvjjul6p06MdOArWchZX4j/Fsz7sAf
-	i7DCDBu/iqqDX+Ohuo6aoVFsm5poh3qnFZQGC3ffGFVCbr2WdsGAs23dKVTWzg==
+	bh=p/MLeeQxVGvcYKcpkt+rdaf/nImropKuqiiYGTIb9iQ=;
+	b=PR+4ap7FX9KspWZ5Myo2psscS0GjMZ8ksEebCwXWvbA6dT2OO+NPjokdW9UFGlwvYmz+3f
+	rWZWh6rbToRgZQgT6+jWcJ84uUertGtTcfPBGCcd1uebT3unx+TzrJJaSBN0sqPhy8keOU
+	AQ+Csjy5+UycPAivuaExuV04Sgq7x/MLbzo+AyiHfEM2ONkZNqxiJYXfDiigxVK/tDIcH2
+	TajDVegaJcRyAZSdag6jAKqJd3hppgJr4ux0KFUJgaHZdWeuGCVbGmMruSBJRHcupAU1ua
+	PqXhAXRjbuhToekUbO5RyJrOGee8S8/efEYZ1gP/ftQr6RApJcNspxEmjAZLQA==
 Received: from [192.168.2.110] (unknown [148.63.39.39])
 	(Authenticated sender: ist187313)
-	by mail1.tecnico.ulisboa.pt (Postfix) with ESMTPSA id A3C653600FD;
+	by mail1.tecnico.ulisboa.pt (Postfix) with ESMTPSA id E8B233600FE;
 	Tue, 27 Jan 2026 15:12:08 +0000 (WET)
 From: Diogo Ivo <diogo.ivo@tecnico.ulisboa.pt>
-Date: Tue, 27 Jan 2026 15:11:49 +0000
-Subject: [PATCH v2 3/6] phy: tegra: xusb: Fix ordering issue when switching
- roles on USB2 ports
+Date: Tue, 27 Jan 2026 15:11:50 +0000
+Subject: [PATCH v2 4/6] phy: tegra: xusb: Add ID override support to padctl
 MIME-Version: 1.0
-Message-Id: <20260127-diogo-tegra_phy-v2-3-787b9eed3ed5@tecnico.ulisboa.pt>
+Message-Id: <20260127-diogo-tegra_phy-v2-4-787b9eed3ed5@tecnico.ulisboa.pt>
 References: <20260127-diogo-tegra_phy-v2-0-787b9eed3ed5@tecnico.ulisboa.pt>
 In-Reply-To: <20260127-diogo-tegra_phy-v2-0-787b9eed3ed5@tecnico.ulisboa.pt>
 To: Mathias Nyman <mathias.nyman@intel.com>, 
@@ -73,16 +72,16 @@ Cc: linux-usb@vger.kernel.org, linux-tegra@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
  devicetree@vger.kernel.org, Diogo Ivo <diogo.ivo@tecnico.ulisboa.pt>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1769526725; l=5656;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1769526725; l=3173;
  i=diogo.ivo@tecnico.ulisboa.pt; s=20240529; h=from:subject:message-id;
- bh=vcYmsrJOWfPzE+KTUK50ZYnuiBcAecSsYwnN4BaRBo0=;
- b=SeiFWe/6BZMApaQ1jOCui6fb/63JZz31FZUD6Y7pNti/dVjxS+hyP4rKQrJfQWBuuF1zXjxwh
- wnpOx/K0UfqDhJM0carsgtjF45QM9m7QBw1pBBHzqa4mxDXYqShN+OF
+ bh=WZilSxlFB7epi0aPRUnYdCJn7ILjtGGF0QOrx/FScJY=;
+ b=SSX8pTTLSNB0iUI793ypY55f5XwsHkMKA2+nJ6SI4/PlZVfdJhQvieS+7RfQ7kdaY/2sVln/A
+ 1RYoYqcVBaUBBpo9i50imMu9Ol455+Ouqm1fNHW0BLrb+6sp7EWlayS
 X-Developer-Key: i=diogo.ivo@tecnico.ulisboa.pt; a=ed25519;
  pk=BRGXhMh1q5KDlZ9y2B8SodFFY8FGupal+NMtJPwRpUQ=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260127_071232_630692_0711629B 
-X-CRM114-Status: GOOD (  21.20  )
+X-CRM114-CacheID: sfid-20260127_071232_641706_9F23231C 
+X-CRM114-Status: GOOD (  11.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,107 +93,91 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhlIGN1cnJlbnQgaW1wbGVtZW50YXRpb24gb2YgVVNCMiByb2xlIHN3aXRjaGluZyBvbiBUZWdy
-YSByZWxpZXMgb24Kd2hpY2hldmVyIHRoZSBwcmV2aW91cyBVU0IgY29udHJvbGxlciBkcml2ZXIg
-d2FzIHVzaW5nIHRoZSBQSFkgdG8gZmlyc3QKInlpZWxkIiBpdCBiYWNrIHRvIFVTQl9ST0xFX05P
-TkUgYmVmb3JlIHRoZSBuZXh0IGNvbnRyb2xsZXIgY29uZmlndXJlcwppdCBmb3IgdGhlIG5ldyBy
-b2xlLiBIb3dldmVyLCBubyBtZWNoYW5pc20gdG8gZ3VhcmFudGVlIHRoaXMgb3JkZXJpbmcKd2Fz
-IGltcGxlbWVudGVkLCBhbmQgY3VycmVudGx5LCBpbiB0aGUgZ2VuZXJhbCBjYXNlLCB0aGUgY29u
-ZmlndXJhdGlvbgpmdW5jdGlvbnMgdGVncmFfeGhjaV9pZF93b3JrKCkgYW5kIHRlZ3JhX3h1ZGNf
-dXNiX3JvbGVfc3dfd29yaygpIGVuZCB1cApydW5uaW5nIGluIHRoZSBzYW1lIG9yZGVyIHJlZ2Fy
-ZGxlc3Mgb2YgdGhlIHRyYW5zaXRpb24gYmVpbmcgSE9TVC0+REVWSUNFCm9yIERFVklDRS0+SE9T
-VCwgbGVhZGluZyB0byBvbmUgb2YgdGhlc2UgdHJhbnNpdGlvbnMgZW5kaW5nIHVwIGluIGEKbm9u
-LXdvcmtpbmcgc3RhdGUgZHVlIHRvIHRoZSBuZXcgY29uZmlndXJhdGlvbiBiZWluZyBjbG9iYmVy
-ZWQgYnkgdGhlCnByZXZpb3VzIGNvbnRyb2xsZXIgZHJpdmVyIHNldHRpbmcgVVNCX1JPTEVfTk9O
-RSBhZnRlciB0aGUgZmFjdC4KCkZpeCB0aGlzIGJ5IGludHJvZHVjaW5nIGEgaGVscGVyIHRoYXQg
-d2FpdHMgZm9yIHRoZSBVU0IyIHBvcnTigJlzIGN1cnJlbnQKcm9sZSB0byBiZWNvbWUgVVNCX1JP
-TEVfTk9ORSBhbmQgYWRkIGl0IGluIHRoZSBjb25maWd1cmF0aW9uIGZ1bmN0aW9ucwphYm92ZSBi
-ZWZvcmUgc2V0dGluZyB0aGUgcm9sZSB0byBlaXRoZXIgVVNCX1JPTEVfSE9TVCBvcgpVU0JfUk9M
-RV9ERVZJQ0UuCgpUaGUgc3BlY2lmaWMgcGFyYW1ldGVycyBvZiB0aGUgaGVscGVyIGZ1bmN0aW9u
-IHdlcmUgZGV0ZXJtaW5lZCBiYXNlZCBvbgpteSB0ZXN0aW5nIG9uIGEgVGVncmEyMTAgcGxhdGZv
-cm0sIFNtYXVnLCB3aXRoIHNvbWUgZXh0cmEgc2xhY2sgYWRkZWQgaW4uCldpdGggdGhlc2UgcGFy
-YW1ldGVycyBJIG5ldmVyIG9ic2VydmVkIGFueSB0aW1lb3V0IGluIHJvbGUgc3dpdGNoaW5nLgoK
-QXMgbWVudGlvbmVkLCB0aGlzIHdhcyB0ZXN0ZWQgb24gYSBUZWdyYTIxMCBwbGF0Zm9ybS4gSG93
-ZXZlciwgZHVlIHRvIHRoZQpzaW1pbGFyIGFwcHJvYWNoIGluIFRlZ3JhMTg2IGl0IGlzIGxpa2Vs
-eSB0aGF0IG5vdCBvbmx5IHRoaXMgcHJvYmxlbSBleGlzdHMKdGhlcmUgYnV0IHRoYXQgdGhpcyBw
-YXRjaCBhbHNvIGZpeGVzIGl0LgoKU2lnbmVkLW9mZi1ieTogRGlvZ28gSXZvIDxkaW9nby5pdm9A
-dGVjbmljby51bGlzYm9hLnB0PgotLS0KdjEtPnYyOgotIEVkaXQgY29tbWl0IG1lc3NhZ2UgYW5k
-IGFkZCBjb2RlIGNvbW1lbnQgZXhwbGFpbmluZyBvcmlnaW4gb2Ygd2FpdAogIHBhcmFtZXRlcnMg
-aW4gdGVncmFfeHVzYl91c2IyX3BvcnRfd2FpdF9yb2xlX25vbmUoKQotIEV4cG9ydCB0ZWdyYV94
-dXNiX3VzYjJfcG9ydF93YWl0X3JvbGVfbm9uZSgpCi0gRml4IE5VTEwgcG9pbnRlciBkZXJlZmVy
-ZW5jZSBpbiBlcnJvciBtZXNzYWdlCi0gUmVtb3ZlIGV4dHJhIGJsYW5rIGxpbmUKLS0tCiBkcml2
-ZXJzL3BoeS90ZWdyYS94dXNiLmMgICAgICAgICAgICB8IDMwICsrKysrKysrKysrKysrKysrKysr
-KysrKysrKysrKwogZHJpdmVycy91c2IvZ2FkZ2V0L3VkYy90ZWdyYS14dWRjLmMgfCAgNCArKysr
-CiBkcml2ZXJzL3VzYi9ob3N0L3hoY2ktdGVncmEuYyAgICAgICB8IDE0ICsrKysrKysrKystLS0t
-CiBpbmNsdWRlL2xpbnV4L3BoeS90ZWdyYS94dXNiLmggICAgICB8ICAxICsKIDQgZmlsZXMgY2hh
-bmdlZCwgNDUgaW5zZXJ0aW9ucygrKSwgNCBkZWxldGlvbnMoLSkKCmRpZmYgLS1naXQgYS9kcml2
-ZXJzL3BoeS90ZWdyYS94dXNiLmMgYi9kcml2ZXJzL3BoeS90ZWdyYS94dXNiLmMKaW5kZXggYzg5
-ZGY5NWFhNmNhLi4wM2ZkNjI2OWZkYmUgMTAwNjQ0Ci0tLSBhL2RyaXZlcnMvcGh5L3RlZ3JhL3h1
-c2IuYworKysgYi9kcml2ZXJzL3BoeS90ZWdyYS94dXNiLmMKQEAgLTc0MCw2ICs3NDAsMzYgQEAg
-c3RhdGljIHZvaWQgdGVncmFfeHVzYl9wYXJzZV91c2Jfcm9sZV9kZWZhdWx0X21vZGUoc3RydWN0
-IHRlZ3JhX3h1c2JfcG9ydCAqcG9ydCkKIAl9CiB9CiAKKy8qCisgKiBIZWxwZXIgZnVuY3Rpb24g
-dGhhdCB3YWl0cyBmb3IgdGhlIHBvcnQncyByb2xlIHRvIGJlY29tZSBVU0JfUk9MRV9OT05FLiBB
-cyB0aGUKKyAqIFRSTXMgZG8gbm90IHNwZWNpZnkgaG93IGxvbmcgdGhlIHRyYW5zaXRpb24gaXMg
-ZXhwZWN0ZWQgdG8gdGFrZSB0aGUgc2xlZXAgZHVyYXRpb24KKyAqIGFuZCBudW1iZXIgb2YgcmV0
-cmllcyB3ZXJlIGRldGVybWluZWQgZW1waXJpY2FsbHkgb24gYSBUZWdyYTIxMCBwbGF0Zm9ybSwg
-d2l0aCBzb21lCisgKiBleHRyYSBzbGFjayBhZGRlZCBpbi4KKyAqLworYm9vbCB0ZWdyYV94dXNi
-X3VzYjJfcG9ydF93YWl0X3JvbGVfbm9uZShzdHJ1Y3QgdGVncmFfeHVzYl9wYWRjdGwgKnBhZGN0
-bCwgaW50IGluZGV4KQoreworCXN0cnVjdCB0ZWdyYV94dXNiX3VzYjJfcG9ydCAqdXNiMiA9IHRl
-Z3JhX3h1c2JfZmluZF91c2IyX3BvcnQocGFkY3RsLAorCQkJCQkJCQkgICAgICBpbmRleCk7CisJ
-aW50IHJldHJpZXMgPSA1OworCisJaWYgKCF1c2IyKSB7CisJCWRldl9lcnIocGFkY3RsLT5kZXYs
-ICJubyBwb3J0IGZvdW5kIGZvciBVU0IyIGxhbmUgJXVcbiIsIGluZGV4KTsKKwkJcmV0dXJuIGZh
-bHNlOworCX0KKworCWRvIHsKKwkJaWYgKHVzYjItPnJvbGUgPT0gVVNCX1JPTEVfTk9ORSkKKwkJ
-CXJldHVybiB0cnVlOworCisJCXVzbGVlcF9yYW5nZSg1MCwgNjApOworCX0gd2hpbGUgKHJldHJp
-ZXMtLSk7CisKKwlkZXZfZXJyKCZ1c2IyLT5iYXNlLmRldiwgInRpbWVkIG91dCB3YWl0aW5nIGZv
-ciBVU0JfUk9MRV9OT05FIik7CisKKwlyZXR1cm4gZmFsc2U7Cit9CitFWFBPUlRfU1lNQk9MX0dQ
-TCh0ZWdyYV94dXNiX3VzYjJfcG9ydF93YWl0X3JvbGVfbm9uZSk7CisKIHN0YXRpYyBpbnQgdGVn
-cmFfeHVzYl91c2IyX3BvcnRfcGFyc2VfZHQoc3RydWN0IHRlZ3JhX3h1c2JfdXNiMl9wb3J0ICp1
-c2IyKQogewogCXN0cnVjdCB0ZWdyYV94dXNiX3BvcnQgKnBvcnQgPSAmdXNiMi0+YmFzZTsKZGlm
-ZiAtLWdpdCBhL2RyaXZlcnMvdXNiL2dhZGdldC91ZGMvdGVncmEteHVkYy5jIGIvZHJpdmVycy91
-c2IvZ2FkZ2V0L3VkYy90ZWdyYS14dWRjLmMKaW5kZXggOWQyMDA3ZjQ0OGMwLi4yNGIwYTljZTc1
-ZDkgMTAwNjQ0Ci0tLSBhL2RyaXZlcnMvdXNiL2dhZGdldC91ZGMvdGVncmEteHVkYy5jCisrKyBi
-L2RyaXZlcnMvdXNiL2dhZGdldC91ZGMvdGVncmEteHVkYy5jCkBAIC02OTgsOCArNjk4LDEyIEBA
-IHN0YXRpYyB2b2lkIHRlZ3JhX3h1ZGNfcmVzdG9yZV9wb3J0X3NwZWVkKHN0cnVjdCB0ZWdyYV94
-dWRjICp4dWRjKQogCiBzdGF0aWMgdm9pZCB0ZWdyYV94dWRjX2RldmljZV9tb2RlX29uKHN0cnVj
-dCB0ZWdyYV94dWRjICp4dWRjKQogeworCWludCBwb3J0ID0gdGVncmFfeHVzYl9wYWRjdGxfZ2V0
-X3BvcnRfbnVtYmVyKHh1ZGMtPmN1cnJfdXRtaV9waHkpOwogCWludCBlcnI7CiAKKwlpZiAoIXRl
-Z3JhX3h1c2JfdXNiMl9wb3J0X3dhaXRfcm9sZV9ub25lKHh1ZGMtPnBhZGN0bCwgcG9ydCkpCisJ
-CXJldHVybjsKKwogCXBtX3J1bnRpbWVfZ2V0X3N5bmMoeHVkYy0+ZGV2KTsKIAogCXRlZ3JhX3Bo
-eV94dXNiX3V0bWlfcGFkX3Bvd2VyX29uKHh1ZGMtPmN1cnJfdXRtaV9waHkpOwpkaWZmIC0tZ2l0
-IGEvZHJpdmVycy91c2IvaG9zdC94aGNpLXRlZ3JhLmMgYi9kcml2ZXJzL3VzYi9ob3N0L3hoY2kt
-dGVncmEuYwppbmRleCA5Mjc4NjFjYTE0ZjIuLmI1MWFmYjQwMzZiNSAxMDA2NDQKLS0tIGEvZHJp
-dmVycy91c2IvaG9zdC94aGNpLXRlZ3JhLmMKKysrIGIvZHJpdmVycy91c2IvaG9zdC94aGNpLXRl
-Z3JhLmMKQEAgLTEzNTIsMTUgKzEzNTIsMjEgQEAgc3RhdGljIHZvaWQgdGVncmFfeGhjaV9pZF93
-b3JrKHN0cnVjdCB3b3JrX3N0cnVjdCAqd29yaykKIAlzdHJ1Y3QgdGVncmFfeHVzYl9tYm94X21z
-ZyBtc2c7CiAJc3RydWN0IHBoeSAqcGh5ID0gdGVncmFfeHVzYl9nZXRfcGh5KHRlZ3JhLCAidXNi
-MiIsCiAJCQkJCQkgICAgdGVncmEtPm90Z191c2IyX3BvcnQpOworCWVudW0gdXNiX3JvbGUgcm9s
-ZSA9IFVTQl9ST0xFX05PTkU7CiAJdTMyIHN0YXR1czsKIAlpbnQgcmV0OwogCiAJZGV2X2RiZyh0
-ZWdyYS0+ZGV2LCAiaG9zdCBtb2RlICVzXG4iLCBzdHJfb25fb2ZmKHRlZ3JhLT5ob3N0X21vZGUp
-KTsKIAotCWlmICh0ZWdyYS0+aG9zdF9tb2RlKQotCQlwaHlfc2V0X21vZGVfZXh0KHBoeSwgUEhZ
-X01PREVfVVNCX09URywgVVNCX1JPTEVfSE9TVCk7Ci0JZWxzZQotCQlwaHlfc2V0X21vZGVfZXh0
-KHBoeSwgUEhZX01PREVfVVNCX09URywgVVNCX1JPTEVfTk9ORSk7CisJaWYgKHRlZ3JhLT5ob3N0
-X21vZGUpIHsKKwkJaWYgKCF0ZWdyYV94dXNiX3VzYjJfcG9ydF93YWl0X3JvbGVfbm9uZSh0ZWdy
-YS0+cGFkY3RsLAorCQkJCQkJCSB0ZWdyYS0+b3RnX3VzYjJfcG9ydCkpCisJCQlyZXR1cm47CisK
-KwkJcm9sZSA9IFVTQl9ST0xFX0hPU1Q7CisJfQorCisJcGh5X3NldF9tb2RlX2V4dChwaHksIFBI
-WV9NT0RFX1VTQl9PVEcsIHJvbGUpOwogCiAJdGVncmEtPm90Z191c2IzX3BvcnQgPSB0ZWdyYV94
-dXNiX3BhZGN0bF9nZXRfdXNiM19jb21wYW5pb24odGVncmEtPnBhZGN0bCwKIAkJCQkJCQkJICAg
-IHRlZ3JhLT5vdGdfdXNiMl9wb3J0KTsKZGlmZiAtLWdpdCBhL2luY2x1ZGUvbGludXgvcGh5L3Rl
-Z3JhL3h1c2IuaCBiL2luY2x1ZGUvbGludXgvcGh5L3RlZ3JhL3h1c2IuaAppbmRleCA2Y2E1MWUw
-MDgwZWMuLmEwZDNkNWI3Y2YzMyAxMDA2NDQKLS0tIGEvaW5jbHVkZS9saW51eC9waHkvdGVncmEv
-eHVzYi5oCisrKyBiL2luY2x1ZGUvbGludXgvcGh5L3RlZ3JhL3h1c2IuaApAQCAtMzMsNSArMzMs
-NiBAQCBpbnQgdGVncmFfeHVzYl9wYWRjdGxfZGlzYWJsZV9waHlfc2xlZXB3YWxrKHN0cnVjdCB0
-ZWdyYV94dXNiX3BhZGN0bCAqcGFkY3RsLCBzdAogaW50IHRlZ3JhX3h1c2JfcGFkY3RsX2VuYWJs
-ZV9waHlfd2FrZShzdHJ1Y3QgdGVncmFfeHVzYl9wYWRjdGwgKnBhZGN0bCwgc3RydWN0IHBoeSAq
-cGh5KTsKIGludCB0ZWdyYV94dXNiX3BhZGN0bF9kaXNhYmxlX3BoeV93YWtlKHN0cnVjdCB0ZWdy
-YV94dXNiX3BhZGN0bCAqcGFkY3RsLCBzdHJ1Y3QgcGh5ICpwaHkpOwogYm9vbCB0ZWdyYV94dXNi
-X3BhZGN0bF9yZW1vdGVfd2FrZV9kZXRlY3RlZChzdHJ1Y3QgdGVncmFfeHVzYl9wYWRjdGwgKnBh
-ZGN0bCwgc3RydWN0IHBoeSAqcGh5KTsKK2Jvb2wgdGVncmFfeHVzYl91c2IyX3BvcnRfd2FpdF9y
-b2xlX25vbmUoc3RydWN0IHRlZ3JhX3h1c2JfcGFkY3RsICpwYWRjdGwsIGludCBpbmRleCk7CiAK
-ICNlbmRpZiAvKiBQSFlfVEVHUkFfWFVTQl9IICovCgotLSAKMi41Mi4wCgoKLS0gCmxpbnV4LXBo
-eSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0
-cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+In preparation to move the XUSB PHY .set_mode() callback into a common
+implementation introduce a generic id_override callback in
+tegra_xusb_padctl_ops that delegates to a SoC-specific implementation
+and register Tegra210 with the new callback.
+
+Signed-off-by: Diogo Ivo <diogo.ivo@tecnico.ulisboa.pt>
+---
+v1->v2:
+- New patch
+---
+ drivers/phy/tegra/xusb-tegra210.c |  1 +
+ drivers/phy/tegra/xusb.c          | 10 ++++++++++
+ drivers/phy/tegra/xusb.h          |  1 +
+ include/linux/phy/tegra/xusb.h    |  2 ++
+ 4 files changed, 14 insertions(+)
+
+diff --git a/drivers/phy/tegra/xusb-tegra210.c b/drivers/phy/tegra/xusb-tegra210.c
+index 3abdf0182d67..be03a17afd7e 100644
+--- a/drivers/phy/tegra/xusb-tegra210.c
++++ b/drivers/phy/tegra/xusb-tegra210.c
+@@ -3262,6 +3262,7 @@ static const struct tegra_xusb_padctl_ops tegra210_xusb_padctl_ops = {
+ 	.usb3_set_lfps_detect = tegra210_usb3_set_lfps_detect,
+ 	.hsic_set_idle = tegra210_hsic_set_idle,
+ 	.vbus_override = tegra210_xusb_padctl_vbus_override,
++	.id_override = tegra210_xusb_padctl_id_override,
+ 	.utmi_port_reset = tegra210_utmi_port_reset,
+ };
+ 
+diff --git a/drivers/phy/tegra/xusb.c b/drivers/phy/tegra/xusb.c
+index 03fd6269fdbe..0443465bcf50 100644
+--- a/drivers/phy/tegra/xusb.c
++++ b/drivers/phy/tegra/xusb.c
+@@ -1498,6 +1498,16 @@ int tegra_xusb_padctl_set_vbus_override(struct tegra_xusb_padctl *padctl,
+ }
+ EXPORT_SYMBOL_GPL(tegra_xusb_padctl_set_vbus_override);
+ 
++int tegra_xusb_padctl_set_id_override(struct tegra_xusb_padctl *padctl,
++							bool val)
++{
++	if (padctl->soc->ops->id_override)
++		return padctl->soc->ops->id_override(padctl, val);
++
++	return -ENOTSUPP;
++}
++EXPORT_SYMBOL_GPL(tegra_xusb_padctl_set_id_override);
++
+ int tegra_phy_xusb_utmi_port_reset(struct phy *phy)
+ {
+ 	struct tegra_xusb_lane *lane = phy_get_drvdata(phy);
+diff --git a/drivers/phy/tegra/xusb.h b/drivers/phy/tegra/xusb.h
+index 273af147dfd3..08053a730d54 100644
+--- a/drivers/phy/tegra/xusb.h
++++ b/drivers/phy/tegra/xusb.h
+@@ -411,6 +411,7 @@ struct tegra_xusb_padctl_ops {
+ 	int (*usb3_set_lfps_detect)(struct tegra_xusb_padctl *padctl,
+ 				    unsigned int index, bool enable);
+ 	int (*vbus_override)(struct tegra_xusb_padctl *padctl, bool set);
++	int (*id_override)(struct tegra_xusb_padctl *padctl, bool set);
+ 	int (*utmi_port_reset)(struct phy *phy);
+ 	void (*utmi_pad_power_on)(struct phy *phy);
+ 	void (*utmi_pad_power_down)(struct phy *phy);
+diff --git a/include/linux/phy/tegra/xusb.h b/include/linux/phy/tegra/xusb.h
+index a0d3d5b7cf33..116d0c6609cb 100644
+--- a/include/linux/phy/tegra/xusb.h
++++ b/include/linux/phy/tegra/xusb.h
+@@ -21,6 +21,8 @@ int tegra_xusb_padctl_usb3_set_lfps_detect(struct tegra_xusb_padctl *padctl,
+ 					   unsigned int port, bool enable);
+ int tegra_xusb_padctl_set_vbus_override(struct tegra_xusb_padctl *padctl,
+ 					bool val);
++int tegra_xusb_padctl_set_id_override(struct tegra_xusb_padctl *padctl,
++				      bool val);
+ void tegra_phy_xusb_utmi_pad_power_on(struct phy *phy);
+ void tegra_phy_xusb_utmi_pad_power_down(struct phy *phy);
+ int tegra_phy_xusb_utmi_port_reset(struct phy *phy);
+
+-- 
+2.52.0
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
