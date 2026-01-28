@@ -4,57 +4,112 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 07218D2FED9
-	for <linux-phy@archiver.kernel.org>; Tue, 27 Jan 2026 19:12:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B9C36D25B49
+	for <linux-phy@archiver.kernel.org>; Wed, 28 Jan 2026 11:49:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=icO0P6kPiFiTuUReb0jMOMcmKXIP02GogidqK3QZIZI=; b=GdTIhXeTt8Y/6k
-	ltyB9NnPsveAIYXUtNMXn0R570Xe6iwZbdQQ1vjnoimhxauW09TMFx0ohnyLX1tm9aY7+OXWfLvU3
-	kG5JAN8+uJJgSVLaDpyb5UnMXrTZX+6IW/8IyCINjuaNVGjnwgJ2ff9VtZ9HJO3Ryn3nG1MXd4Hoe
-	RdsMvaX8gTMzbu6SWWsRZD9hmYRBqzySTOodJXGvbSyqwRhFl+73g9Y6om+x7tvBPr3QfbTl0CWAL
-	Qnv+UCovOfnh1pq1zCJYdi3ljphw2AbhHKxd1D4KZl0wWIPfVLTszN36S7cno41bcBURZY1t7MF2Z
-	ISIY318nYILug6XQUrJQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=NYPNp7RcN9H5p2NdP+DVgYugShwm0VZQC3Xww/3+GAQ=; b=DPyXGmbkWR4hjB
+	txmlyFTFmPsJAoD9ztvpPaK5to9TNUQ4Qig2BBD57xEuB+AMZdWvFi7sFmDNUWi3qRk4xcDgAxT8Z
+	eDQlC+DQnqWG2/u6ZSSEZYsmEVfj0LldzqOBTJo5y2SIFlALieuRKTpa18OeFw7e4kFC+zwTLWJV8
+	LDOXAXm7aDcqeCWMaZj81UkrMkFzbo0N88i06bSkBnbK9hvyJeRbpce7qkf7lqQtwQPsGDQ3lPuPT
+	DBBP47XILsmUmj0Q+6mxrOcByFb7L2WtngUvemI7IYRSPbCWklCPsZ4B15FSS8dO5wwg8q4dFHfHD
+	hBfocz2Xk8XtqmkXKoVg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vkoUc-0000000EtX0-2bdm;
-	Tue, 27 Jan 2026 19:12:50 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1vl430-0000000FxJ6-1T2I;
+	Wed, 28 Jan 2026 11:49:22 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vkoUZ-0000000EtVc-1UzV;
-	Tue, 27 Jan 2026 19:12:49 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 3B1F740980;
-	Tue, 27 Jan 2026 19:12:46 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 47FE3C116C6;
-	Tue, 27 Jan 2026 19:12:43 +0000 (UTC)
-From: Geert Uytterhoeven <geert+renesas@glider.be>
-To: Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Peter Griffin <peter.griffin@linaro.org>,
-	=?UTF-8?q?Andr=C3=A9=20Draszik?= <andre.draszik@linaro.org>,
-	Tudor Ambarus <tudor.ambarus@linaro.org>,
-	Naveen Kumar <mnkumar@google.com>,
-	Roy Luo <royluo@google.com>,
-	Joy Chakraborty <joychakr@google.com>,
-	Arnd Bergmann <arnd@arndb.de>
-Cc: linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-samsung-soc@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	Geert Uytterhoeven <geert+renesas@glider.be>
-Subject: [PATCH] phy: PHY_GOOGLE_USB should depend on ARCH_GOOGLE
-Date: Tue, 27 Jan 2026 20:12:36 +0100
-Message-ID: <0caa3c449b0c3d64944da3f1003d9389bdc13f98.1769541083.git.geert+renesas@glider.be>
+	id 1vl42y-0000000FxHy-133a
+	for linux-phy@lists.infradead.org;
+	Wed, 28 Jan 2026 11:49:21 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 60S927XG3920922;
+	Wed, 28 Jan 2026 11:49:09 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:date:from:in-reply-to:message-id
+	:mime-version:references:subject:to; s=qcppdkim1; bh=ggu29vCh8FG
+	9BLQ+55eQDuvMFV8G4ZMF0zOOXZqB8eA=; b=enIz24sje0UCqEf/yFT4i+8ZZSp
+	+JebnJ2/cgZbo18neaXwZ9xDVw5Ds7fWPvlFWrngJJlLt+Ljcp7OFs7PMn/VEnfR
+	SGArdjBxb7MO+saTX5riYywmK2Ir2HzDKZZW8eUEgB/MXUpTG9wfCenfRu0y5sZs
+	geD0Qj+p9JOXEFS2hgZRn6CcOFT3oqloxnIfG1gfBHod2CE/S508T6E2sWEiCyRO
+	9yrKZlt9dSsMb2R5nkunyTaCWbxdwC4hTz1C9+ilsQ5hVlZq9wanl597t/rQsyZR
+	f6Huoqa3Z2aEi095n6t9GchdYXY/5jZEfgUq4R8z0k++E5jR835THQJvyGA==
+Received: from apblrppmta02.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4by211b6aa-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 28 Jan 2026 11:49:09 +0000 (GMT)
+Received: from pps.filterd (APBLRPPMTA02.qualcomm.com [127.0.0.1])
+	by APBLRPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 60SBn5Xv004217;
+	Wed, 28 Jan 2026 11:49:05 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 4bvq5mgshy-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 28 Jan 2026 11:49:05 +0000
+Received: from APBLRPPMTA02.qualcomm.com (APBLRPPMTA02.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 60SBn5dK004096;
+	Wed, 28 Jan 2026 11:49:05 GMT
+Received: from hu-devc-hyd-u22-c.qualcomm.com (hu-riteshk-hyd.qualcomm.com [10.213.102.118])
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 60SBn47D004087
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 28 Jan 2026 11:49:05 +0000
+Received: by hu-devc-hyd-u22-c.qualcomm.com (Postfix, from userid 2314801)
+	id 3D28F5E6; Wed, 28 Jan 2026 17:19:04 +0530 (+0530)
+From: Ritesh Kumar <quic_riteshk@quicinc.com>
+To: robin.clark@oss.qualcomm.com, lumag@kernel.org, abhinav.kumar@linux.dev,
+        sean@poorly.run, marijn.suijten@somainline.org,
+        maarten.lankhorst@linux.intel.com, mripard@kernel.org,
+        tzimmermann@suse.de, airlied@gmail.com, simona@ffwll.ch,
+        robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+        quic_mahap@quicinc.com, andersson@kernel.org, konradybcio@kernel.org,
+        mani@kernel.org, James.Bottomley@HansenPartnership.com,
+        martin.petersen@oracle.com, vkoul@kernel.org, kishon@kernel.org,
+        cros-qcom-dts-watchers@chromium.org
+Cc: Ritesh Kumar <quic_riteshk@quicinc.com>, linux-phy@lists.infradead.org,
+        linux-arm-msm@vger.kernel.org, dri-devel@lists.freedesktop.org,
+        freedreno@lists.freedesktop.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org, linux-scsi@vger.kernel.org,
+        quic_vproddut@quicinc.com
+Subject: [PATCH v4 2/2] arm64: dts: qcom: lemans: Add eDP ref clock for eDP PHYs
+Date: Wed, 28 Jan 2026 17:18:50 +0530
+Message-ID: <20260128114853.2543416-3-quic_riteshk@quicinc.com>
 X-Mailer: git-send-email 2.43.0
+In-Reply-To: <20260128114853.2543416-1-quic_riteshk@quicinc.com>
+References: <20260128114853.2543416-1-quic_riteshk@quicinc.com>
 MIME-Version: 1.0
+X-QCInternal: smtphost
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMTI4MDA5NyBTYWx0ZWRfXxpI0GbnxZH4g
+ Ev26p7QuIa7NHS40L8AhWzcLMpfySFik1imRaDWK5ZaUhJrAocm+4IrKxwnRsC5jsemzFawsvxS
+ vxOy0mY04PsGZfLwE8vAk8XAvj5pwJtDo2pm/CYNAgn4DKXeBbd0pIEc/rIPagoNo31V88hH7RB
+ H9I3jXnchC6ivORa9b37sQ16B0mjyWcM71Ht3xi+nyT/WfSXnpvMNCKlpUR2/J3qiNgaZFf+RyC
+ EqYyUBya2g4cDQ1rubYWXA/l7s8f44pbfuzE1z/aRglnCT2hf13QYAzA2irxKRTtitjQfVBloDl
+ rorxz1M9A8Y0zoABf1DEO+KDjvebZPgAFJNel8q/b4DXGnn22hZbTrxXHvbaUUTVCb9kkDklGp5
+ qqpvwSeHdvMZrMx8l3j5w8cmaPerSLnDPRZrxfHNyGD8P84uH5dr44L0QwpYQbzIsJhDLVpKuGE
+ 5lmtJGg+WpWR7xiL9bg==
+X-Authority-Analysis: v=2.4 cv=GuxPO01C c=1 sm=1 tr=0 ts=6979f7b5 cx=c_pps
+ a=Ou0eQOY4+eZoSc0qltEV5Q==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
+ a=vUbySO9Y5rIA:10 a=VkNPw1HP01LnGYTKEx00:22 a=COk6AnOGAAAA:8
+ a=E4RoOgRz3FB8a9Rhpw4A:9 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-GUID: Wl9CNz26fesAUw8OndlCOmQoK3naGOVa
+X-Proofpoint-ORIG-GUID: Wl9CNz26fesAUw8OndlCOmQoK3naGOVa
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.51,FMLib:17.12.100.49
+ definitions=2026-01-28_02,2026-01-27_03,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ suspectscore=0 adultscore=0 malwarescore=0 lowpriorityscore=0 phishscore=0
+ bulkscore=0 impostorscore=0 spamscore=0 clxscore=1015 priorityscore=1501
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2601150000 definitions=main-2601280097
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260127_111247_414759_A9E06AC5 
-X-CRM114-Status: UNSURE (   9.93  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260128_034920_342363_F0EB0FC8 
+X-CRM114-Status: GOOD (  11.97  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,33 +126,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The Google Tensor SoC USB PHY is only present on Google Tensor G5
-(Laguna) SoCs.  Hence add a dependency on ARCH_GOOGLE, to prevent asking
-the user about this driver when configuring a kernel without Google
-Tensor SoC support.
+The eDP PHY nodes on lemans were missing the reference clock voting.
+This initially went unnoticed because the clock was implicitly enabled
+by the UFS PHY driver, and the eDP PHY happened to rely on that.
 
-Fixes: cbce66669c82ee9a ("phy: Add Google Tensor SoC USB PHY driver")
-Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
----
-ARCH_GOOGLE is not yet upstream, but that doesn't hurt.
----
- drivers/phy/Kconfig | 1 +
- 1 file changed, 1 insertion(+)
+After commit 77d2fa54a945 ("scsi: ufs: qcom : Refactor phy_power_on/off
+calls"), the UFS driver no longer keeps the reference clock enabled.
+As a result, the eDP PHY fails to power on.
 
-diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
-index 142e7b0ef2efb920..3ceda9a20d571038 100644
---- a/drivers/phy/Kconfig
-+++ b/drivers/phy/Kconfig
-@@ -49,6 +49,7 @@ config GENERIC_PHY_MIPI_DPHY
+To fix this, add eDP reference clock for eDP PHYs on lemans chipset
+ensuring reference clock is enabled.
+
+Fixes: e1e3e5673f8d7 ("arm64: dts: qcom: sa8775p: add DisplayPort device nodes")
+Signed-off-by: Ritesh Kumar <quic_riteshk@quicinc.com>
+---
+ arch/arm64/boot/dts/qcom/lemans.dtsi | 12 ++++++++----
+ 1 file changed, 8 insertions(+), 4 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/qcom/lemans.dtsi b/arch/arm64/boot/dts/qcom/lemans.dtsi
+index 808827b83553..1da8e7fb6775 100644
+--- a/arch/arm64/boot/dts/qcom/lemans.dtsi
++++ b/arch/arm64/boot/dts/qcom/lemans.dtsi
+@@ -5301,9 +5301,11 @@ mdss0_dp0_phy: phy@aec2a00 {
+ 				      <0x0 0x0aec2000 0x0 0x1c8>;
  
- config PHY_GOOGLE_USB
- 	tristate "Google Tensor SoC USB PHY driver"
-+	depends on ARCH_GOOGLE || COMPILE_TEST
- 	select GENERIC_PHY
- 	help
- 	  Enable support for the USB PHY on Google Tensor SoCs, starting with
+ 				clocks = <&dispcc0 MDSS_DISP_CC_MDSS_DPTX0_AUX_CLK>,
+-					 <&dispcc0 MDSS_DISP_CC_MDSS_AHB_CLK>;
++					 <&dispcc0 MDSS_DISP_CC_MDSS_AHB_CLK>,
++					 <&gcc GCC_EDP_REF_CLKREF_EN>;
+ 				clock-names = "aux",
+-					      "cfg_ahb";
++					      "cfg_ahb",
++					      "ref";
+ 
+ 				#clock-cells = <1>;
+ 				#phy-cells = <0>;
+@@ -5320,9 +5322,11 @@ mdss0_dp1_phy: phy@aec5a00 {
+ 				      <0x0 0x0aec5000 0x0 0x1c8>;
+ 
+ 				clocks = <&dispcc0 MDSS_DISP_CC_MDSS_DPTX1_AUX_CLK>,
+-					 <&dispcc0 MDSS_DISP_CC_MDSS_AHB_CLK>;
++					 <&dispcc0 MDSS_DISP_CC_MDSS_AHB_CLK>,
++					 <&gcc GCC_EDP_REF_CLKREF_EN>;
+ 				clock-names = "aux",
+-					      "cfg_ahb";
++					      "cfg_ahb",
++					      "ref";
+ 
+ 				#clock-cells = <1>;
+ 				#phy-cells = <0>;
 -- 
-2.43.0
+2.34.1
 
 
 -- 
