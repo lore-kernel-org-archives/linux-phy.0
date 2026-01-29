@@ -4,63 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 15777D6B07A
-	for <linux-phy@archiver.kernel.org>; Thu, 29 Jan 2026 16:20:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B54C5D358D6
+	for <linux-phy@archiver.kernel.org>; Thu, 29 Jan 2026 16:53:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cqtoor2XWWJOV1J57oyy/1NTgnqB54nLWfSosm1JKpk=; b=OJL0K3TEIHPkMz
-	nhygsN2M/aiQPCOCFqOaDtJzoF5DhM0xGWySIkwOC5Oq4P8GMuxvN/vKdsdVXuaRh8I0EmNB1X/xp
-	ZjIQiGHMDUNQIRS6cQCnjYkoPfnEm95ru3unJWnQQLwPzjT1RY6i9VEsls2mJFcZVjx0uZaciKJXn
-	5WmeSVkbQr1iTeZG2jOSg169TdYfGUiobST6JCBrLB3owLOxPuZ7vTzdeUSa4v4bqxT9bxQ8/2r3H
-	yxLWIsXVsHhY2oPvxTf41co4N2Fme781BXTHzvAduv2AxLXDhj5IzgmbmneBNIba3BIO+rvOxusbu
-	DF072THN9/pqOHLi4pJw==;
+	List-Owner; bh=p8sJ/pORrmPwtIKSwA+zpx/z+ThwKV1LmraJSltFub8=; b=xdrY5/Kj2D1Pnn
+	oUukRuhGvFp2Hq1fvLGJpqlu/Ytc57dlnLwPLL1rUPtCG1XHiN9rXETrKridSqR74lmJENaSdm4J0
+	ERz9z6XjkTzyLHYR09IYPw3+oUZtcnXVeiN3NbSA03IFyXoP082HULhT/6mNUhZN6jz1xzMznr/7y
+	DfBlZOLswtVra7FyJotsJS0KY1efF1H9mrQuQpMlGAUq7jRnJ9HrPzQqgISVYvt568CkFHcfbsIli
+	AXXFFkAhnO4EOiOlIXTEQCVXRmWX2rWdP5haDCdz4C4Hd1ijChGbLXDnZ1jUygTzcBPnaJB01CGeG
+	yqX2eZjlu4880mZtoXng==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vlUl4-00000000LEf-2HoB;
-	Thu, 29 Jan 2026 16:20:38 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vlVGU-00000000NJc-1G20;
+	Thu, 29 Jan 2026 16:53:06 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vlUl2-00000000LEQ-20ZL;
-	Thu, 29 Jan 2026 16:20:36 +0000
+	id 1vlVGT-00000000NJS-16BZ
+	for linux-phy@lists.infradead.org;
+	Thu, 29 Jan 2026 16:53:05 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 35A67600C4;
-	Thu, 29 Jan 2026 16:20:34 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6BF5CC19422;
-	Thu, 29 Jan 2026 16:20:30 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 5DFED600C4;
+	Thu, 29 Jan 2026 16:53:04 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E040BC4CEF7;
+	Thu, 29 Jan 2026 16:53:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1769703634;
-	bh=Fz1cXF6f+rJrvUbhHS3fdB4yadryUHMv1k4BpBRxD8U=;
+	s=k20201202; t=1769705584;
+	bh=4Go8r+auphjo22TcuXvyOWWNojSmrb+RGzHfXTGMbzs=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=Qk8qGl+Pkcd4d1ocyt263pGIIb71t4DaBVUNxvGVhL4GjZ+0VFhvreTqIrTOl9min
-	 8TRYYRMyiAqaFRi+sYi/V4FURJnui5PEeeyiYNGGRsOCTbEHfV/k/Rd/efbn4aJw16
-	 3ZuZEWelIPyL13/nkF/pOeQBDfkdqq+kS2QmkNk1F0qyHQ8KFV3zbEbrPJnYv8M87r
-	 JAL/uuvmRFDGH1Ppn1vGBb4mahgzodbqTAWTygv7ryClXuV3gOk2/wm6XYyNCcl8/d
-	 /ueY04E03nuGlhj+h4NdCERf0RQH104yambHI+iDX17QbO79apmkgPv0zLaACAxAZQ
-	 Ur7QUYivF1ZGg==
-Date: Thu, 29 Jan 2026 16:20:28 +0000
-From: Simon Horman <horms@kernel.org>
-To: Vincent Guittot <vincent.guittot@linaro.org>
-Cc: vkoul@kernel.org, neil.armstrong@linaro.org, krzk+dt@kernel.org,
-	conor+dt@kernel.org, ciprianmarian.costea@oss.nxp.com, s32@nxp.com,
-	p.zabel@pengutronix.de, linux@armlinux.org.uk,
-	ghennadi.procopciuc@nxp.com, bogdan-gabriel.roman@nxp.com,
-	Ionut.Vicovan@nxp.com, alexandru-catalin.ionita@nxp.com,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	netdev@vger.kernel.org, Frank.li@nxp.com
-Subject: Re: [PATCH 3/4] phy: s32g: Add serdes xpcs subsystem
-Message-ID: <aXuIzJdZYEGX3XVy@horms.kernel.org>
-References: <20260126092159.815968-1-vincent.guittot@linaro.org>
- <20260126092159.815968-4-vincent.guittot@linaro.org>
- <aXtLsuOkMMryrUs4@horms.kernel.org>
- <CAKfTPtB8xDB8qYUZwGnH+h94ww3+gSyOuZ+RL+zOh5tYGuu_HQ@mail.gmail.com>
+	b=i9GB03m2rvW1q2q52DbPwCtjUQP5aHy6q0i/GQtvQPaBJ77SGI9HEANAdjlN+ue50
+	 cz4KCQVvudBzPtTloSt7N4Bxq+AiQLUVj8DXVEVb6Jp6PlksHW8ir0Xjg1x9AwJqw7
+	 BPg8jwfYNyiCs1SAMC5wdYwvHw4ApXjcGxAGrGoolFt8swmCiXrGX0mck+fC/4epLG
+	 AtBxiVddh00hmQJtFZhy8nvi+gRGAs3QG6/ybnz3rRwvtYa9EH6ATp1RkpXUgrQ6iU
+	 /nyBDnOmmeLghKnZ3q+SvgvkFNEw0yuvjZgXWZEaDcQ/auR7l+TTjmMXkNDl0df/L7
+	 RXZBPHnedKVaw==
+Date: Thu, 29 Jan 2026 10:53:03 -0600
+From: "Rob Herring (Arm)" <robh@kernel.org>
+To: Ritesh Kumar <quic_riteshk@quicinc.com>
+Cc: quic_mahap@quicinc.com, robin.clark@oss.qualcomm.com,
+	mripard@kernel.org, krzk+dt@kernel.org,
+	dri-devel@lists.freedesktop.org, martin.petersen@oracle.com,
+	tzimmermann@suse.de, lumag@kernel.org, simona@ffwll.ch,
+	linux-kernel@vger.kernel.org, maarten.lankhorst@linux.intel.com,
+	sean@poorly.run, kishon@kernel.org,
+	James.Bottomley@hansenpartnership.com,
+	marijn.suijten@somainline.org, devicetree@vger.kernel.org,
+	andersson@kernel.org, cros-qcom-dts-watchers@chromium.org,
+	linux-scsi@vger.kernel.org, vkoul@kernel.org, mani@kernel.org,
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+	quic_vproddut@quicinc.com, abhinav.kumar@linux.dev,
+	conor+dt@kernel.org, konradybcio@kernel.org,
+	freedreno@lists.freedesktop.org, airlied@gmail.com
+Subject: Re: [PATCH v4 1/2] dt-bindings: phy: qcom-edp: Add reference clock
+ for sa8775p eDP PHY
+Message-ID: <176970558251.1269081.4205775234649909264.robh@kernel.org>
+References: <20260128114853.2543416-1-quic_riteshk@quicinc.com>
+ <20260128114853.2543416-2-quic_riteshk@quicinc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAKfTPtB8xDB8qYUZwGnH+h94ww3+gSyOuZ+RL+zOh5tYGuu_HQ@mail.gmail.com>
+In-Reply-To: <20260128114853.2543416-2-quic_riteshk@quicinc.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,94 +83,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Jan 29, 2026 at 02:24:15PM +0100, Vincent Guittot wrote:
-> On Thu, 29 Jan 2026 at 12:59, Simon Horman <horms@kernel.org> wrote:
-> >
-> > On Mon, Jan 26, 2026 at 10:21:58AM +0100, Vincent Guittot wrote:
-> >
-> > ...
-> >
-> > > diff --git a/drivers/phy/freescale/phy-nxp-s32g-serdes.c b/drivers/phy/freescale/phy-nxp-s32g-serdes.c
-> >
-> > ...
-> >
-> > > +static void s32g_serdes_prepare_pma_mode5(struct s32g_serdes *serdes)
-> > > +{
-> > > +     u32 val;
-> > > +     /* Configure TX_VBOOST_LVL and TX_TERM_CTRL */
-> > > +     val = readl(serdes->ctrl.ss_base + S32G_PCIE_PHY_EXT_MISC_CTRL_2);
-> > > +     val &= ~(EXT_TX_VBOOST_LVL_MASK | EXT_TX_TERM_CTRL_MASK);
-> > > +     val |= FIELD_PREP(EXT_TX_VBOOST_LVL_MASK, 0x3) |
-> > > +             FIELD_PREP(EXT_TX_TERM_CTRL_MASK, 0x4);
-> > > +     writel(val, serdes->ctrl.ss_base + S32G_PCIE_PHY_EXT_MISC_CTRL_2);
-> >
-> > This is part of an AI Generated review.
-> > I have looked over it and I think it warrants investigation.
-> > For information on how to reproduce locally, as I did, please see [1].
-> >
-> >         The entire s32g_serdes_prepare_pma_mode5() function is ~70 lines of
-> >         magic numbers with zero explanation. These appear to be
-> >         hardware-specific PLL/PHY tuning parameters for 2.5G mode.
+
+On Wed, 28 Jan 2026 17:18:49 +0530, Ritesh Kumar wrote:
+> The initial sa8775p eDP PHY binding contribution missed adding support for
+> voting on the eDP reference clock. This went unnoticed because the UFS PHY
+> driver happened to enable the same clock.
 > 
-> Unfortunately there is no additional information in the reference
-> manual other than
-> *step 4:
-> - Write 3h to EXT_TX_VBOOST_LVL.
-> - Write 4h to EXT_TX_TERM_CTRL
-
-Understood. Sometimes you have the play the hand you're dealt.
-
+> After commit 77d2fa54a945 ("scsi: ufs: qcom : Refactor phy_power_on/off
+> calls"), the eDP reference clock is no longer kept enabled, which results
+> in the following PHY power-on failure:
 > 
-> >
-> > Please consider using #defines, to give values names.
-> >
-> > ...
-> >
-> > > +static int s32g_serdes_init_clks(struct s32g_serdes *serdes)
-> > > +{
-> > > +     struct s32g_serdes_ctrl *ctrl = &serdes->ctrl;
-> > > +     struct s32g_xpcs_ctrl *xpcs = &serdes->xpcs;
-> > > +     int ret, order[2], xpcs_id;
-> > > +     size_t i;
-> > > +
-> > > +     switch (ctrl->ss_mode) {
-> > > +     case 0:
-> > > +             return 0;
-> > > +     case 1:
-> > > +             order[0] = 0;
-> > > +             order[1] = XPCS_DISABLED;
-> > > +             break;
-> > > +     case 2:
-> > > +     case 5:
-> > > +             order[0] = 1;
-> > > +             order[1] = XPCS_DISABLED;
-> > > +             break;
-> > > +     case 3:
-> > > +             order[0] = 1;
-> > > +             order[1] = 0;
-> > > +             break;
-> > > +     case 4:
-> > > +             order[0] = 0;
-> > > +             order[1] = 1;
-> > > +             break;
-> > > +     default:
-> > > +             return -EINVAL;
-> >
-> > AI review also flags that s32g_serdes_get_ctrl_resources() ensures that
-> > ss_mode is <= 5.  So this check is unnecessary.
+> phy phy-aec2a00.phy.10: phy poweron failed --> -110
 > 
-> okay but providing a default seems a good practice
-
-Yeah, I was of two minds about forwarding on this part of the report.
-
-...
-
-> > AI review also flags that s32g_xpcs_regmap_reg_read and
-> > s32g_xpcs_regmap_reg_write do not protect against concurrent access.
+> To fix this, explicit voting for the eDP reference clock is required.
+> This patch adds the eDP reference clock for sa8775p eDP PHY and updates
+> the corresponding example node.
 > 
-> but regmap framework should
+> Signed-off-by: Ritesh Kumar <quic_riteshk@quicinc.com>
+> ---
+>  .../devicetree/bindings/display/msm/qcom,sa8775p-mdss.yaml  | 6 ++++--
+>  Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml     | 1 +
+>  2 files changed, 5 insertions(+), 2 deletions(-)
+> 
 
-If it does, then I agree there is no problem here.
+Acked-by: Rob Herring (Arm) <robh@kernel.org>
+
 
 -- 
 linux-phy mailing list
