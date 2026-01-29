@@ -4,86 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9F671D358DF
-	for <linux-phy@archiver.kernel.org>; Thu, 29 Jan 2026 08:32:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 71385D358F1
+	for <linux-phy@archiver.kernel.org>; Thu, 29 Jan 2026 09:54:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SHPuJULbsC7vbOapbi0H2Z4194lJ+o8SY9jAJRMfT0c=; b=Mlj8MZ7PpgUkYR
-	6x5BY9bbHDU6sDcb+Egopa6EVQ2K1582z1q1+Lg6Oi3k9ttDvc5YMC8EqD19C0/pWGWnrYqEPnNXC
-	XTj3eHWN9SDKKtni5F//n3YaLoy4QyaKhcxv4bXEhACB29QM8ds/h1hQfo52/Fb1os71P1+E7+pkf
-	4LdoLZt8nevgG3D9B2EI5srO7UKTwts8EWNGZXX7UOwwkwqYvYeuPolQdQfex4BOXYR29J/9dcNjb
-	fFTDLB8USZbQQ3ogCVNwy3Ypj5sXcyt1iPrVEH24mFjcRZB0+KqtYR3ixR2DoT+InwVPRe+swzIqt
-	4oD97BQ0EGWS22Wmsf8A==;
+	List-Owner; bh=MJdUvQaI1vF8BBlBoWZ3a12yHsZf6xytgs+rnPoAI5Q=; b=E8VyZK6zPdPo7k
+	80obModGpg0I2libL4ujilsJhD4Y3rJ2PVBptxvDC12N/8W74wYpvLeDeV5y6J0eEIozQn/BITsF4
+	6YOrqgrJfi84Tw0XjrPemts4R3Pvizppyf3lgk7dS3/xqjfRIByV5V7myqN1YtxHgJa+n+650vg0M
+	1rYHbHd4nF7RWVkHYqs3St0q8aSsKb/BuBWCxRH4qh/7WwSX58jD8PgQtXL8lGWqYEYiJtfmPg8aq
+	1Re0cSmrNrHiynbHTIfPOXrOtQEIb7gQ1dH8ab7GIbu3q3t9+Ob5sL3xkuTD1su+9vdE3yDYBR8pG
+	pQ09WcDhPP/t8SnZC2xg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vlNSN-0000000HSb6-3NJr;
-	Thu, 29 Jan 2026 08:32:51 +0000
-Received: from mail-vk1-f177.google.com ([209.85.221.177])
+	id 1vlOjG-0000000HXH0-06zg;
+	Thu, 29 Jan 2026 09:54:22 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vlNSL-0000000HSaX-46QZ
-	for linux-phy@lists.infradead.org;
-	Thu, 29 Jan 2026 08:32:51 +0000
-Received: by mail-vk1-f177.google.com with SMTP id 71dfb90a1353d-5662c2937fdso613711e0c.0
-        for <linux-phy@lists.infradead.org>; Thu, 29 Jan 2026 00:32:49 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1769675568; x=1770280368;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=iWSiH0vErBGaTqnZZjDiFHXh+s+0x/2ewRQpe7UFdYM=;
-        b=dUfFJolNmBANdtC5MIrFFG2YZa+FAwrBuNEEPkIaFazcG5hFYV8KP/ow7483duFRA6
-         QxLmzALtGAPNoRzy0Pw0EpXEUAk79+K7DEEeZ/GxcquCnMXG6SMJ9SNbPjjs0uiJuj70
-         IrqK2eq9kstv2TvlKgj+Fxmxj+w0OQNFybodJxX1RryIaRkbCIqlVSOhcJucR0wA2XqZ
-         HS5JmqH32Eg7woeGqssAk/3/CaV2XVmrq+ujPjEbtw5VAD34CQMbLbeqtmDmqDhfWekd
-         ZXFQxkwE6ahnY8hLYFUJX70PSC7Ez+ZEyO693+LH7D/H9FQIO7BeQwKjHZI3JdCy9rPn
-         5AQQ==
-X-Forwarded-Encrypted: i=1; AJvYcCVcdwNmlDuYr+FHS26OZqdbGY6ybsiYimceAB3k736xVxXil083WIDcbdh4tN9YAF6Yu98hp+dc5Tk=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yyl9btKV966NeNg1BPD5xmKoKbY1qvMFi0dRNKMmck6L8h5Ij5w
-	Xbe9DSlr6tqUZGE6ir1NR1KUlMmdS0lZP3iZKOlp1ApIw/aCnpllnDkGsZx8XCZI
-X-Gm-Gg: AZuq6aJed5lX77MseEQw0wvzI1u5xVv9QsAQ7EYBEBKTD3Cwh3RYu5Oi+kpzsMKE+30
-	9lY1I3d2Q/2+2LB2mpHBvpJ88EEghfn05atJyOCuNt4zHbbSynr+6rN6Xe2mnGYkOCwcNi5hMjs
-	/NO5KRE4/+eaJ8Z3zlRpU5Dj46TzzCa1vd8vjST2gy6Czkl/A7th/nsDxSPfbrdwBYCJL6yc5/v
-	n9QClIplr27XsH6TIrxkVyu2OEgOaIJlT09NwnXmmBDkRI7bTAOTiBfz10mYcTAIKXf556Bwuco
-	64uQzXisC52Kpre9rJtdvJ/RXddP+fHO5ISIF/GkizDmHCZBqWwDuJR1s4744Nx+br6zXak1HpY
-	sSlJQHhPTu50xPr0WXzH+8QIVifgZQITCBYoBfWpI1KwCM9Y205kf+2XBt0APUc9i7/Xmt8FvZD
-	teOEanA606IgNlJsTbKgg0WubpD+L0LcczUDb8teGGsgU0TEQC
-X-Received: by 2002:a05:6122:8713:b0:563:5bd7:3793 with SMTP id 71dfb90a1353d-56691e2a05fmr621064e0c.3.1769675568458;
-        Thu, 29 Jan 2026 00:32:48 -0800 (PST)
-Received: from mail-vs1-f43.google.com (mail-vs1-f43.google.com. [209.85.217.43])
-        by smtp.gmail.com with ESMTPSA id 71dfb90a1353d-5668599df7asm1207507e0c.0.2026.01.29.00.32.47
-        for <linux-phy@lists.infradead.org>
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 29 Jan 2026 00:32:47 -0800 (PST)
-Received: by mail-vs1-f43.google.com with SMTP id ada2fe7eead31-5f524301a76so1149364137.1
-        for <linux-phy@lists.infradead.org>; Thu, 29 Jan 2026 00:32:47 -0800 (PST)
-X-Forwarded-Encrypted: i=1; AJvYcCUlXNCvdRY/RAi9n1m6topNE+IzoCZYsW3WRM7DZdS0YYvlJ6eNUhjVsiQVXrQdvLS2+2CWJ7Ip4jQ=@lists.infradead.org
-X-Received: by 2002:a05:6102:358a:b0:5f1:b59d:a824 with SMTP id
- ada2fe7eead31-5f8cdbcdd58mr660134137.10.1769675567174; Thu, 29 Jan 2026
- 00:32:47 -0800 (PST)
+	id 1vlOjE-0000000HXGL-0Ti7;
+	Thu, 29 Jan 2026 09:54:20 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 0FB726001A;
+	Thu, 29 Jan 2026 09:54:19 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 48A56C4CEF7;
+	Thu, 29 Jan 2026 09:54:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1769680458;
+	bh=EnOTj/7CZJ9tyZqdurXyWWI0fv+qLb1PjDZ8+646Wj4=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=uKX7li8JfZPEdKeB1hBz8vBzLGN3uCNhd+sHkwTGTkJD5nNgCGxu88Shq8feblZWM
+	 7fb/NUtu1fVDkPOIYo0mlr8zHv9A3KUBNPNnN1Pt50ZycH3lvLgXAl6H7J0xaHtEid
+	 rApdiYCn5zrDIUovDT7gonalq6ycUOIABp9ypiyB4yhTDtiWsRx3XOZBjw3xUMqi+A
+	 0HkyXHWBY0bPE/9w0XWx+R9T+w4uw4MzzSx1nzr+MWICq1lAr4FInbGkUX55Y2+ZgH
+	 LICcilYOu7iiKrVFCMl3SjduswdnI20aCMusYEipXRpakmFazkmWpSEqzOyec3Ck3v
+	 OPQKsuwm5Yl5g==
+Date: Thu, 29 Jan 2026 09:54:13 +0000
+From: Simon Horman <horms@kernel.org>
+To: Vincent Guittot <vincent.guittot@linaro.org>
+Cc: vkoul@kernel.org, neil.armstrong@linaro.org, krzk+dt@kernel.org,
+	conor+dt@kernel.org, ciprianmarian.costea@oss.nxp.com, s32@nxp.com,
+	p.zabel@pengutronix.de, linux@armlinux.org.uk,
+	ghennadi.procopciuc@nxp.com, bogdan-gabriel.roman@nxp.com,
+	Ionut.Vicovan@nxp.com, alexandru-catalin.ionita@nxp.com,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	netdev@vger.kernel.org, Frank.li@nxp.com
+Subject: Re: [PATCH 2/4] phy: s32g: Add serdes subsystem phy
+Message-ID: <aXsuRTZUUnw0kdzV@horms.kernel.org>
+References: <20260126092159.815968-1-vincent.guittot@linaro.org>
+ <20260126092159.815968-3-vincent.guittot@linaro.org>
 MIME-Version: 1.0
-References: <0caa3c449b0c3d64944da3f1003d9389bdc13f98.1769541083.git.geert+renesas@glider.be>
- <e955868c06547ac62d34d594d45dd07aa19e361b.camel@linaro.org>
-In-Reply-To: <e955868c06547ac62d34d594d45dd07aa19e361b.camel@linaro.org>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Thu, 29 Jan 2026 09:32:35 +0100
-X-Gmail-Original-Message-ID: <CAMuHMdUWgrA9Z3d8pzRpuWJ=_P+JtQyUvOoT0eVpOp7Cikzj0A@mail.gmail.com>
-X-Gm-Features: AZwV_QhDAZHfDa69lcwIjPEMriVTWX2j2mEpl3sREl4ukbpmMZGKeuh-Z80oSWU
-Message-ID: <CAMuHMdUWgrA9Z3d8pzRpuWJ=_P+JtQyUvOoT0eVpOp7Cikzj0A@mail.gmail.com>
-Subject: Re: [PATCH] phy: PHY_GOOGLE_USB should depend on ARCH_GOOGLE
-To: =?UTF-8?Q?Andr=C3=A9_Draszik?= <andre.draszik@linaro.org>
-Cc: Geert Uytterhoeven <geert+renesas@glider.be>, Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Peter Griffin <peter.griffin@linaro.org>, 
-	Tudor Ambarus <tudor.ambarus@linaro.org>, Naveen Kumar <mnkumar@google.com>, 
-	Roy Luo <royluo@google.com>, Joy Chakraborty <joychakr@google.com>, Arnd Bergmann <arnd@arndb.de>, 
-	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
-	linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260129_003250_018317_8E8B0E48 
-X-CRM114-Status: GOOD (  25.06  )
+Content-Disposition: inline
+In-Reply-To: <20260126092159.815968-3-vincent.guittot@linaro.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,44 +70,229 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGkgQW5kcsOpLAoKT24gV2VkLCAyOCBKYW4gMjAyNiBhdCAyMTowMywgQW5kcsOpIERyYXN6aWsg
-PGFuZHJlLmRyYXN6aWtAbGluYXJvLm9yZz4gd3JvdGU6Cj4gT24gVHVlLCAyMDI2LTAxLTI3IGF0
-IDIwOjEyICswMTAwLCBHZWVydCBVeXR0ZXJob2V2ZW4gd3JvdGU6Cj4gPiBUaGUgR29vZ2xlIFRl
-bnNvciBTb0MgVVNCIFBIWSBpcyBvbmx5IHByZXNlbnQgb24gR29vZ2xlIFRlbnNvciBHNQo+ID4g
-KExhZ3VuYSkgU29Dcy4gIEhlbmNlIGFkZCBhIGRlcGVuZGVuY3kgb24gQVJDSF9HT09HTEUsIHRv
-IHByZXZlbnQgYXNraW5nCj4gPiB0aGUgdXNlciBhYm91dCB0aGlzIGRyaXZlciB3aGVuIGNvbmZp
-Z3VyaW5nIGEga2VybmVsIHdpdGhvdXQgR29vZ2xlCj4gPiBUZW5zb3IgU29DIHN1cHBvcnQuCj4g
-Pgo+ID4gRml4ZXM6IGNiY2U2NjY2OWM4MmVlOWEgKCJwaHk6IEFkZCBHb29nbGUgVGVuc29yIFNv
-QyBVU0IgUEhZIGRyaXZlciIpCj4gPiBTaWduZWQtb2ZmLWJ5OiBHZWVydCBVeXR0ZXJob2V2ZW4g
-PGdlZXJ0K3JlbmVzYXNAZ2xpZGVyLmJlPgo+ID4gLS0tCj4gPiBBUkNIX0dPT0dMRSBpcyBub3Qg
-eWV0IHVwc3RyZWFtLCBidXQgdGhhdCBkb2Vzbid0IGh1cnQuCj4KPiBJIGNhbiBzZWUgeW91ciBw
-b2ludCwgYW5kIGhhdmUgbm8gb2JqZWN0aW9uLCBidXQgZm9yIGNvbnRleHQsIEdyZWcKPiBoYWQg
-YXNrZWQgdG8gbm90IGFkZCBkZXBlbmRlbmNpZXMgb24gYSBjb25maWcgb3B0aW9uIHRoYXQgbWln
-aHQgb3IKPiBtaWdodCBub3QgZ2V0IGFkZGVkIGluIHRoZSBmdXR1cmUgLSBBUkNIX0dPT0dMRToK
-ClRoZSBleGFjdCBuYW1lIG1heSBpbmRlZWQgc3RpbGwgYmUgdW5kZXIgZGlzY3Vzc2lvbi4gIEJ1
-dCB3ZSBhbGwga25vdwp0aGVyZSBfd2lsbF8gYmUgYSBjb25maWcgb3B0aW9uICh1bmxlc3MgdGhl
-IHBsYXRmb3JtIGlzIGFiYW5kb25lZCBiZWZvcmUKdXBzdHJlYW1pbmcsIGFuZCB0aGlzIGRyaXZl
-ciB3aWxsIGJlIHJlbW92ZWQgYWdhaW4gYW55d2F5IDstKS4KCj4gTWF5YmUgYW4gYWx0ZXJuYXRp
-dmUgd291bGQgYmUgdG8gbWFrZSBpdCBkZWZhdWx0PW4sIGFuZCBjaGFuZ2UgdGhhdAo+IGRlZmF1
-bHQgb25jZSBBUkNIX0dPT0dMRSBnZXRzIGFkZGVkPwoKSXQgYWxyZWFkeSBkZWZhdWx0cyB0byBk
-aXNhYmxlZCwgYXMgImRlZmF1bHQ9biIgaXMgdGhlIGRlZmF1bHQuCgo+ID4gLS0tIGEvZHJpdmVy
-cy9waHkvS2NvbmZpZwo+ID4gKysrIGIvZHJpdmVycy9waHkvS2NvbmZpZwo+ID4gQEAgLTQ5LDYg
-KzQ5LDcgQEAgY29uZmlnIEdFTkVSSUNfUEhZX01JUElfRFBIWQo+ID4KPiA+ICBjb25maWcgUEhZ
-X0dPT0dMRV9VU0IKPiA+ICAgICAgIHRyaXN0YXRlICJHb29nbGUgVGVuc29yIFNvQyBVU0IgUEhZ
-IGRyaXZlciIKPiA+ICsgICAgIGRlcGVuZHMgb24gQVJDSF9HT09HTEUgfHwgQ09NUElMRV9URVNU
-Cj4gPiAgICAgICBzZWxlY3QgR0VORVJJQ19QSFkKPiA+ICAgICAgIGhlbHAKPiA+ICAgICAgICAg
-RW5hYmxlIHN1cHBvcnQgZm9yIHRoZSBVU0IgUEhZIG9uIEdvb2dsZSBUZW5zb3IgU29Dcywgc3Rh
-cnRpbmcgd2l0aAoKR3J7b2V0amUsZWV0aW5nfXMsCgogICAgICAgICAgICAgICAgICAgICAgICBH
-ZWVydAoKLS0gCkdlZXJ0IFV5dHRlcmhvZXZlbiAtLSBUaGVyZSdzIGxvdHMgb2YgTGludXggYmV5
-b25kIGlhMzIgLS0gZ2VlcnRAbGludXgtbTY4ay5vcmcKCkluIHBlcnNvbmFsIGNvbnZlcnNhdGlv
-bnMgd2l0aCB0ZWNobmljYWwgcGVvcGxlLCBJIGNhbGwgbXlzZWxmIGEgaGFja2VyLiBCdXQKd2hl
-biBJJ20gdGFsa2luZyB0byBqb3VybmFsaXN0cyBJIGp1c3Qgc2F5ICJwcm9ncmFtbWVyIiBvciBz
-b21ldGhpbmcgbGlrZSB0aGF0LgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC0tIExp
-bnVzIFRvcnZhbGRzCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMu
-aW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
-by9saW51eC1waHkK
+On Mon, Jan 26, 2026 at 10:21:57AM +0100, Vincent Guittot wrote:
+
+...
+
+> diff --git a/drivers/phy/freescale/phy-nxp-s32g-serdes.c b/drivers/phy/freescale/phy-nxp-s32g-serdes.c
+> new file mode 100644
+> index 000000000000..8336c868c8dc
+> --- /dev/null
+> +++ b/drivers/phy/freescale/phy-nxp-s32g-serdes.c
+> @@ -0,0 +1,569 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/**
+> + * SerDes driver for S32G SoCs
+> + *
+> + * Copyright 2021-2026 NXP
+> + */
+> +
+> +#include <dt-bindings/phy/phy.h>
+> +#include <linux/clk.h>
+> +#include <linux/delay.h>
+
+Hi Vincent, all,
+
+I think that you also need:
+
+#include <linux/iopoll.h>
+
+So that read_poll_timeout() is declared.
+Else this patch causes a transient build failure
+(for x86_64 allmodconfig)
+
+> +#include <linux/module.h>
+> +#include <linux/of_platform.h>
+> +#include <linux/of_address.h>
+> +#include <linux/phy/phy.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/processor.h>
+> +#include <linux/reset.h>
+> +#include <linux/units.h>
+
+...
+
+> +static int s32g_serdes_phy_set_mode_ext(struct phy *p,
+> +					enum phy_mode mode, int submode)
+> +{
+> +	struct s32g_serdes *serdes = phy_get_drvdata(p);
+> +
+> +	if (mode == PHY_MODE_PCIE)
+> +		return -EINVAL;
+
+This is part of an AI Generated review.
+I have looked over it and I think it warrants investigation.
+For information on how to reproduce locally, as I did, please see [1].
+
+[1] https://netdev-ai.bots.linux.dev/ai-local.html
+
+  This returns error if mode IS PHY_MODE_PCIE, but this is a PCIe PHY!
+  This looks like a typo. Should be !=.
+
+> +
+> +	if (!is_pcie_phy_mode_valid(submode))
+> +		return -EINVAL;
+> +
+> +	/*
+> +	 * Do not configure SRIS or CRSS PHY MODE in conjunction
+> +	 * with any SGMII mode on the same SerDes subsystem
+> +	 */
+> +	if ((submode == CRSS || submode == SRIS) &&
+> +	    serdes->ctrl.ss_mode != 0)
+> +		return -EINVAL;
+> +
+> +	/*
+> +	 * Internal reference clock cannot be used with either Common clock
+> +	 * or Spread spectrum, leaving only SRNSS
+> +	 */
+> +	if (submode != SRNS &&  !serdes->ctrl.ext_clk)
+> +		return -EINVAL;
+> +
+> +	serdes->pcie.phy_mode = submode;
+
+The AI review also suggested that it may be unsafe
+to set the submode after s32g_serdes_phy_power_on()
+has been called. And that there is nothing preventing that.
+
+TBH, I am unsure if either of those statements are true.
+But it seems worth validating with you.
+
+> +
+> +	return 0;
+> +}
+
+...
+
+> +static int s32g_serdes_get_ctrl_resources(struct platform_device *pdev, struct s32g_serdes *serdes)
+> +{
+> +	struct s32g_serdes_ctrl *ctrl = &serdes->ctrl;
+> +	struct device *dev = &pdev->dev;
+> +	int ret, idx;
+> +
+> +	ret = of_property_read_u32(dev->of_node, "nxp,sys-mode",
+> +				   &ctrl->ss_mode);
+> +	if (ret) {
+> +		dev_err(dev, "Failed to get SerDes subsystem mode\n");
+> +		return -EINVAL;
+> +	}
+> +
+> +	if (ctrl->ss_mode > S32G_SERDES_MODE_MAX) {
+> +		dev_err(dev, "Invalid SerDes subsystem mode %u\n",
+> +			ctrl->ss_mode);
+> +		return -EINVAL;
+> +	}
+> +
+> +	ctrl->ss_base = devm_platform_ioremap_resource_byname(pdev, "ss_pcie");
+> +	if (IS_ERR(ctrl->ss_base)) {
+> +		dev_err(dev, "Failed to map 'ss_pcie'\n");
+> +		return PTR_ERR(ctrl->ss_base);
+> +	}
+> +
+> +	ctrl->rst = devm_reset_control_get(dev, "serdes");
+> +	if (IS_ERR(ctrl->rst))
+> +		return dev_err_probe(dev, PTR_ERR(ctrl->rst),
+> +				     "Failed to get 'serdes' reset control\n");
+> +
+> +	ctrl->nclks = devm_clk_bulk_get_all(dev, &ctrl->clks);
+> +	if (ctrl->nclks < 1)
+> +		return dev_err_probe(dev, ctrl->nclks,
+> +				     "Failed to get SerDes clocks\n");
+
+If devm_clk_bulk_get_all returns 0 then this value will
+be passed to dev_err_probe(). And 0 will, in turn be returned by
+dev_err_probe() and this function. However, that will be treated
+as success by the caller, even though this is an error condition.
+
+Perhaps something like this is more appropriate if ctrl->nclks
+must be greater than 0. (Completely untested!)
+
+	if (ctrl->nclks < 1) {
+		ret = ctrl->nclks ? : -EINVAL;
+		return dev_err_probe(dev, ret,
+				     "Failed to get SerDes clocks\n");
+	}
+
+Flagged by Smatch.
+
+...
+
+> +static int s32g_serdes_parse_lanes(struct device *dev, struct s32g_serdes *serdes)
+> +{
+> +	int ret;
+> +
+> +	for_each_available_child_of_node_scoped(dev->of_node, of_port) {
+> +		ret = s32g2_serdes_create_phy(serdes, of_port);
+> +		if (ret)
+> +			break;
+> +	}
+> +
+> +	return ret;
+
+Perhaps it cannot occur.
+But if the loop above iterates zero times,
+then ret will be used uninitialised here.
+
+Also flagged by Smatch.
+
+> +}
+> +
+> +static int s32g_serdes_probe(struct platform_device *pdev)
+> +{
+> +	struct s32g_serdes *serdes;
+> +	struct device *dev = &pdev->dev;
+> +	int ret;
+> +
+> +	serdes = devm_kzalloc(dev, sizeof(*serdes), GFP_KERNEL);
+> +	if (!serdes)
+> +		return -ENOMEM;
+> +
+> +	platform_set_drvdata(pdev, serdes);
+> +	serdes->dev = dev;
+> +
+> +	ret = s32g_serdes_get_ctrl_resources(pdev, serdes);
+> +	if (ret)
+> +		return ret;
+> +
+> +	ret = s32g_serdes_get_pcie_resources(pdev, serdes);
+> +	if (ret)
+> +		return ret;
+> +
+> +	ret = s32g_serdes_parse_lanes(dev, serdes);
+> +	if (ret)
+> +		return ret;
+
+The I review also says:
+
+  The probe function calls s32g_serdes_init() which enables clocks,
+  configures hardware, and deasserts reset. However,
+  s32g_serdes_parse_lanes() creates PHY providers via
+  devm_of_phy_provider_register().
+
+  Problem: PHY consumers can start calling PHY ops (like power_on) as soon
+  as the provider is registered, but the hardware isn't initialized until
+  s32g_serdes_init() runs afterward. This creates a race window.
+
+  Recommendation: Move s32g_serdes_init() before s32g_serdes_parse_lanes().
+
+> +
+> +	ret = s32g_serdes_init(serdes);
+> +
+> +	return ret;
+
+nit: This could be more succinctly written as:
+
+	return s32g_serdes_init(serdes);
+
+> +}
+
+...
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
