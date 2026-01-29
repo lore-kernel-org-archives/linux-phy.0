@@ -4,61 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 71385D358F1
-	for <linux-phy@archiver.kernel.org>; Thu, 29 Jan 2026 09:54:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8495AD61003
+	for <linux-phy@archiver.kernel.org>; Thu, 29 Jan 2026 11:17:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MJdUvQaI1vF8BBlBoWZ3a12yHsZf6xytgs+rnPoAI5Q=; b=E8VyZK6zPdPo7k
-	80obModGpg0I2libL4ujilsJhD4Y3rJ2PVBptxvDC12N/8W74wYpvLeDeV5y6J0eEIozQn/BITsF4
-	6YOrqgrJfi84Tw0XjrPemts4R3Pvizppyf3lgk7dS3/xqjfRIByV5V7myqN1YtxHgJa+n+650vg0M
-	1rYHbHd4nF7RWVkHYqs3St0q8aSsKb/BuBWCxRH4qh/7WwSX58jD8PgQtXL8lGWqYEYiJtfmPg8aq
-	1Re0cSmrNrHiynbHTIfPOXrOtQEIb7gQ1dH8ab7GIbu3q3t9+Ob5sL3xkuTD1su+9vdE3yDYBR8pG
-	pQ09WcDhPP/t8SnZC2xg==;
+	List-Owner; bh=W3bThGkwFPbvvuwajRx43atJzPhw6Ref0uhLNfQj5fA=; b=VbnU4IX4Utjgnj
+	gvhAl+atJLkLbnlwOxRdSJcIsBR+qdOZUx34tIs9VCM+uXdpwKBR1JJNtcdQNs+JlTzGDP3oVhKbZ
+	pDMN6CIKFmlo6IQdNyFvRgXfWrL9No7zsCoI7rFUVj8giuZXxcrT06El2m19qaR0okBCKXxYzDsiO
+	89w33uQhfFMPOk5uh2H94ZHzPr2hpJDZPbiSsH7p0G4nUeGgCa0L91NgSh1LpfR7ITSEHaNG91EZd
+	8MHdin43psOOTx+w+P+9MSYZxL5wlWyU8YLQ82Er+ygOgiEcQbPt5WNU4SbeEgOw9Tf+jjS3VH0ZS
+	RhsCjEuqt+JTxFXP629A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vlOjG-0000000HXH0-06zg;
-	Thu, 29 Jan 2026 09:54:22 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1vlQ29-0000000023w-08Py;
+	Thu, 29 Jan 2026 11:17:57 +0000
+Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vlOjE-0000000HXGL-0Ti7;
-	Thu, 29 Jan 2026 09:54:20 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 0FB726001A;
-	Thu, 29 Jan 2026 09:54:19 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 48A56C4CEF7;
-	Thu, 29 Jan 2026 09:54:15 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1769680458;
-	bh=EnOTj/7CZJ9tyZqdurXyWWI0fv+qLb1PjDZ8+646Wj4=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=uKX7li8JfZPEdKeB1hBz8vBzLGN3uCNhd+sHkwTGTkJD5nNgCGxu88Shq8feblZWM
-	 7fb/NUtu1fVDkPOIYo0mlr8zHv9A3KUBNPNnN1Pt50ZycH3lvLgXAl6H7J0xaHtEid
-	 rApdiYCn5zrDIUovDT7gonalq6ycUOIABp9ypiyB4yhTDtiWsRx3XOZBjw3xUMqi+A
-	 0HkyXHWBY0bPE/9w0XWx+R9T+w4uw4MzzSx1nzr+MWICq1lAr4FInbGkUX55Y2+ZgH
-	 LICcilYOu7iiKrVFCMl3SjduswdnI20aCMusYEipXRpakmFazkmWpSEqzOyec3Ck3v
-	 OPQKsuwm5Yl5g==
-Date: Thu, 29 Jan 2026 09:54:13 +0000
-From: Simon Horman <horms@kernel.org>
+	id 1vlQ26-00000000230-2RA3;
+	Thu, 29 Jan 2026 11:17:56 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=xRbGhk3MppX3QDh9iQp/r9WXjYsRk1w3/DNqD5xKN6Y=; b=wQX7OV28trnhd/CmJjo5OstW0W
+	VacPFX0Hr4C4H6AbOwz1lgX2ZqOb0qMQVpvLLDABSpoFhqUNZuAjs3dGP0OY4Sw2nkRfZrHdsf6tz
+	Byj2tuwWQ3clIjdIAOi1F0fYLpc6Cw1NZ3ejgQJewEBjjmLuuepHETy5Kh5NH+qJ15rkPEx1Tu1/2
+	xE/vVczNvP+OKQnO5K2qJfwsR4dGPLdV/a6pNs6k0WN5nGF0Ehp69lQlS6mfqr4lMDzUMlm8ED1KW
+	zE3yJeokfswi0AyQTr0+bfHTh7xiIYTNjiOalKMazWFmGNAEeOVsCN8+fRdBFwN3kFAuOnKkgoCRo
+	FRD67AYw==;
+Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:57138)
+	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.98.2)
+	(envelope-from <linux@armlinux.org.uk>)
+	id 1vlQ1s-000000008S8-0a6Z;
+	Thu, 29 Jan 2026 11:17:40 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.98.2)
+	(envelope-from <linux@shell.armlinux.org.uk>)
+	id 1vlQ1p-000000007v4-3EdQ;
+	Thu, 29 Jan 2026 11:17:37 +0000
+Date: Thu, 29 Jan 2026 11:17:37 +0000
+From: "Russell King (Oracle)" <linux@armlinux.org.uk>
 To: Vincent Guittot <vincent.guittot@linaro.org>
 Cc: vkoul@kernel.org, neil.armstrong@linaro.org, krzk+dt@kernel.org,
 	conor+dt@kernel.org, ciprianmarian.costea@oss.nxp.com, s32@nxp.com,
-	p.zabel@pengutronix.de, linux@armlinux.org.uk,
-	ghennadi.procopciuc@nxp.com, bogdan-gabriel.roman@nxp.com,
-	Ionut.Vicovan@nxp.com, alexandru-catalin.ionita@nxp.com,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	netdev@vger.kernel.org, Frank.li@nxp.com
+	p.zabel@pengutronix.de, ghennadi.procopciuc@nxp.com,
+	bogdan-gabriel.roman@nxp.com, Ionut.Vicovan@nxp.com,
+	alexandru-catalin.ionita@nxp.com, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org, netdev@vger.kernel.org,
+	Frank.li@nxp.com
 Subject: Re: [PATCH 2/4] phy: s32g: Add serdes subsystem phy
-Message-ID: <aXsuRTZUUnw0kdzV@horms.kernel.org>
+Message-ID: <aXtB0QcVOkE_hhny@shell.armlinux.org.uk>
 References: <20260126092159.815968-1-vincent.guittot@linaro.org>
  <20260126092159.815968-3-vincent.guittot@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <20260126092159.815968-3-vincent.guittot@linaro.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260129_031754_642110_65E202B6 
+X-CRM114-Status: GOOD (  14.36  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,47 +86,37 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On Mon, Jan 26, 2026 at 10:21:57AM +0100, Vincent Guittot wrote:
-
-...
-
-> diff --git a/drivers/phy/freescale/phy-nxp-s32g-serdes.c b/drivers/phy/freescale/phy-nxp-s32g-serdes.c
-> new file mode 100644
-> index 000000000000..8336c868c8dc
-> --- /dev/null
-> +++ b/drivers/phy/freescale/phy-nxp-s32g-serdes.c
-> @@ -0,0 +1,569 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/**
-> + * SerDes driver for S32G SoCs
-> + *
-> + * Copyright 2021-2026 NXP
+> +/*
+> + * Until now, there is no generic way to describe and set PCIe clock mode.
+> + * PCIe controller uses the default CRNS = 0 mode.
 > + */
+> +enum pcie_phy_mode {
+> +	CRNS = 0, /* Common Reference Clock, No Spread Spectrum */
+> +	CRSS = 1, /* Common Reference Clock, Spread Spectrum */
+> +	SRNS = 2, /* Separate Reference Clock, No Spread Spectrum */
+> +	SRIS = 3  /* Separate Reference Clock, Spread Spectrum */
+> +};
+
+So this is a PCIe thing. If it's part of the driver's API, then it
+should be common and not driver-private.
+
+> +static inline bool is_pcie_phy_mode_valid(int mode)
+> +{
+> +	switch (mode) {
+> +	case CRNS:
+> +	case CRSS:
+> +	case SRNS:
+> +	case SRIS:
+> +		return true;
+> +	default:
+> +		return false;
+> +	}
+> +}
+
+This checks that the submode is one of the PCIe private modes that this
+driver wants to see.
+
 > +
-> +#include <dt-bindings/phy/phy.h>
-> +#include <linux/clk.h>
-> +#include <linux/delay.h>
-
-Hi Vincent, all,
-
-I think that you also need:
-
-#include <linux/iopoll.h>
-
-So that read_poll_timeout() is declared.
-Else this patch causes a transient build failure
-(for x86_64 allmodconfig)
-
-> +#include <linux/module.h>
-> +#include <linux/of_platform.h>
-> +#include <linux/of_address.h>
-> +#include <linux/phy/phy.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/processor.h>
-> +#include <linux/reset.h>
-> +#include <linux/units.h>
-
-...
-
 > +static int s32g_serdes_phy_set_mode_ext(struct phy *p,
 > +					enum phy_mode mode, int submode)
 > +{
@@ -124,173 +124,19 @@ Else this patch causes a transient build failure
 > +
 > +	if (mode == PHY_MODE_PCIE)
 > +		return -EINVAL;
-
-This is part of an AI Generated review.
-I have looked over it and I think it warrants investigation.
-For information on how to reproduce locally, as I did, please see [1].
-
-[1] https://netdev-ai.bots.linux.dev/ai-local.html
-
-  This returns error if mode IS PHY_MODE_PCIE, but this is a PCIe PHY!
-  This looks like a typo. Should be !=.
-
 > +
 > +	if (!is_pcie_phy_mode_valid(submode))
 > +		return -EINVAL;
-> +
-> +	/*
-> +	 * Do not configure SRIS or CRSS PHY MODE in conjunction
-> +	 * with any SGMII mode on the same SerDes subsystem
-> +	 */
-> +	if ((submode == CRSS || submode == SRIS) &&
-> +	    serdes->ctrl.ss_mode != 0)
-> +		return -EINVAL;
-> +
-> +	/*
-> +	 * Internal reference clock cannot be used with either Common clock
-> +	 * or Spread spectrum, leaving only SRNSS
-> +	 */
-> +	if (submode != SRNS &&  !serdes->ctrl.ext_clk)
-> +		return -EINVAL;
-> +
-> +	serdes->pcie.phy_mode = submode;
 
-The AI review also suggested that it may be unsafe
-to set the submode after s32g_serdes_phy_power_on()
-has been called. And that there is nothing preventing that.
+This checks for the PCIe submode, but notice the test immediately
+above. PCIE mode is being rejected. So, this driver supports
+everything else but PCIe.
 
-TBH, I am unsure if either of those statements are true.
-But it seems worth validating with you.
+That doesn't seem right.
 
-> +
-> +	return 0;
-> +}
-
-...
-
-> +static int s32g_serdes_get_ctrl_resources(struct platform_device *pdev, struct s32g_serdes *serdes)
-> +{
-> +	struct s32g_serdes_ctrl *ctrl = &serdes->ctrl;
-> +	struct device *dev = &pdev->dev;
-> +	int ret, idx;
-> +
-> +	ret = of_property_read_u32(dev->of_node, "nxp,sys-mode",
-> +				   &ctrl->ss_mode);
-> +	if (ret) {
-> +		dev_err(dev, "Failed to get SerDes subsystem mode\n");
-> +		return -EINVAL;
-> +	}
-> +
-> +	if (ctrl->ss_mode > S32G_SERDES_MODE_MAX) {
-> +		dev_err(dev, "Invalid SerDes subsystem mode %u\n",
-> +			ctrl->ss_mode);
-> +		return -EINVAL;
-> +	}
-> +
-> +	ctrl->ss_base = devm_platform_ioremap_resource_byname(pdev, "ss_pcie");
-> +	if (IS_ERR(ctrl->ss_base)) {
-> +		dev_err(dev, "Failed to map 'ss_pcie'\n");
-> +		return PTR_ERR(ctrl->ss_base);
-> +	}
-> +
-> +	ctrl->rst = devm_reset_control_get(dev, "serdes");
-> +	if (IS_ERR(ctrl->rst))
-> +		return dev_err_probe(dev, PTR_ERR(ctrl->rst),
-> +				     "Failed to get 'serdes' reset control\n");
-> +
-> +	ctrl->nclks = devm_clk_bulk_get_all(dev, &ctrl->clks);
-> +	if (ctrl->nclks < 1)
-> +		return dev_err_probe(dev, ctrl->nclks,
-> +				     "Failed to get SerDes clocks\n");
-
-If devm_clk_bulk_get_all returns 0 then this value will
-be passed to dev_err_probe(). And 0 will, in turn be returned by
-dev_err_probe() and this function. However, that will be treated
-as success by the caller, even though this is an error condition.
-
-Perhaps something like this is more appropriate if ctrl->nclks
-must be greater than 0. (Completely untested!)
-
-	if (ctrl->nclks < 1) {
-		ret = ctrl->nclks ? : -EINVAL;
-		return dev_err_probe(dev, ret,
-				     "Failed to get SerDes clocks\n");
-	}
-
-Flagged by Smatch.
-
-...
-
-> +static int s32g_serdes_parse_lanes(struct device *dev, struct s32g_serdes *serdes)
-> +{
-> +	int ret;
-> +
-> +	for_each_available_child_of_node_scoped(dev->of_node, of_port) {
-> +		ret = s32g2_serdes_create_phy(serdes, of_port);
-> +		if (ret)
-> +			break;
-> +	}
-> +
-> +	return ret;
-
-Perhaps it cannot occur.
-But if the loop above iterates zero times,
-then ret will be used uninitialised here.
-
-Also flagged by Smatch.
-
-> +}
-> +
-> +static int s32g_serdes_probe(struct platform_device *pdev)
-> +{
-> +	struct s32g_serdes *serdes;
-> +	struct device *dev = &pdev->dev;
-> +	int ret;
-> +
-> +	serdes = devm_kzalloc(dev, sizeof(*serdes), GFP_KERNEL);
-> +	if (!serdes)
-> +		return -ENOMEM;
-> +
-> +	platform_set_drvdata(pdev, serdes);
-> +	serdes->dev = dev;
-> +
-> +	ret = s32g_serdes_get_ctrl_resources(pdev, serdes);
-> +	if (ret)
-> +		return ret;
-> +
-> +	ret = s32g_serdes_get_pcie_resources(pdev, serdes);
-> +	if (ret)
-> +		return ret;
-> +
-> +	ret = s32g_serdes_parse_lanes(dev, serdes);
-> +	if (ret)
-> +		return ret;
-
-The I review also says:
-
-  The probe function calls s32g_serdes_init() which enables clocks,
-  configures hardware, and deasserts reset. However,
-  s32g_serdes_parse_lanes() creates PHY providers via
-  devm_of_phy_provider_register().
-
-  Problem: PHY consumers can start calling PHY ops (like power_on) as soon
-  as the provider is registered, but the hardware isn't initialized until
-  s32g_serdes_init() runs afterward. This creates a race window.
-
-  Recommendation: Move s32g_serdes_init() before s32g_serdes_parse_lanes().
-
-> +
-> +	ret = s32g_serdes_init(serdes);
-> +
-> +	return ret;
-
-nit: This could be more succinctly written as:
-
-	return s32g_serdes_init(serdes);
-
-> +}
-
-...
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTP is here! 80Mbps down 10Mbps up. Decent connectivity at last!
 
 -- 
 linux-phy mailing list
