@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7ACB4D6100E
-	for <linux-phy@archiver.kernel.org>; Thu, 29 Jan 2026 11:59:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9EE8FD61010
+	for <linux-phy@archiver.kernel.org>; Thu, 29 Jan 2026 12:08:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=v3OauSIAJTSzJj3CH4Vy9W7QVHZ59lcOPijwtBQLP8Q=; b=cYKpdx80E7Wc3W
-	fatJYiQeHFtlEqrjP8H+QCAZuz5eEAI/jZOcLNXKsAJTE6ojk6tmc5h0FdBFQ+Pg/h5DK/Hef+wlE
-	WmstDi92vdFPlPEaaUkjqVPeFtZNPH7MtDoZdfjKrIS7Ki9SMfoyaEyNgyS+f+3f5OlzFRIssEzZm
-	unq0gqCDCHjnjzFAoBeyfPycRMU0mK48SEJQcYQoAETxdaagpAytZNqcxRtYxEFr98fBRSkOXLWya
-	iHQidxePN/PkxDZkT7hXwBlCraxTXBZ402zv462mtqv6vALi5GWmbG/3Cuu8DNA2OenQcyIhnImNz
-	7fDuVfBeL/qFrqgmlqTQ==;
+	List-Owner; bh=ofSrq1Kx9NCJVdcDXmNYEI/Jrzahx3AFUcRwOvqhCQs=; b=uuiio+MKDKqsiF
+	B43la2ZUfLuDA/cShZF69MkjWuBw0R5agOZOD92CxFIN15dCcA/fcIjtYItBbdZm/81b+3d99Fbbd
+	r5BddISfbapWRflalKZv6eJCAEXd7j1q8Vd9j6VSZIoaMel4/Lj9wcDLs530a1mhB8/JiPBUw19wZ
+	KPnEy3nySvtVPGEL3M4XiAuS6crDfsyd8KRU7R9YNCM2zellW6kCK8AHCC1wabhCCQ5wmqLjYTu3P
+	k2gFxghjO7RpJjtV5VMXAcJbeQyCNoxVKC2gmuJcqG2NaggVGzqQNvmyZrk4ElPIXiFP92t2gyc/V
+	ltb2T1O6GRxW7x/Azv0w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vlQgl-000000004JC-3xSq;
-	Thu, 29 Jan 2026 11:59:56 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1vlQoh-000000004uE-1dRY;
+	Thu, 29 Jan 2026 12:08:07 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vlQgj-000000004Iz-3ZoT;
-	Thu, 29 Jan 2026 11:59:53 +0000
+	id 1vlQof-000000004th-3S2n;
+	Thu, 29 Jan 2026 12:08:05 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id D1AA060054;
-	Thu, 29 Jan 2026 11:59:52 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 09D24C4CEF7;
-	Thu, 29 Jan 2026 11:59:48 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 72EAE60126;
+	Thu, 29 Jan 2026 12:08:04 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AE224C116D0;
+	Thu, 29 Jan 2026 12:08:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1769687992;
-	bh=WZ9/YfisJXoXJYN8Rl5hCOUb1qqqV6UazDcJEt0myBQ=;
+	s=k20201202; t=1769688484;
+	bh=wqvYiaougo9MgdPRxH7kVqp/5WhviKS4oyIBj/a1l5Q=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=c+5IdhFDBh4dGy30IROWqL06xxOcVDc8lgV0YqbAXg5ZwBaLp+AT6ofohEKxBZHGm
-	 3JQPyGsaR40cV9I/ltnY6YHvSyK1kKDZtyhJhVaG8Rkf5r9cCSEX4PNDYcGVI+/waT
-	 mIhe4Sin2AmquFmkMgIpIY4JVgfMfeVFolGe5Hl0UTQOYdh5dDtBCBSBtAleSqH9QW
-	 CaUhn8+cpwfCZeaDIskypGEGVhBBI7ZwWJtSmC/bpsGNbN+vTBayO7txPcr1exLsq+
-	 SCMLGrHMscgl2oQ7NxkNGGZJSiRLf+ZMlEnRUobKvTtMuMvbLaibR4ywxeB5hNcfNJ
-	 YEHYiSpoUgKhg==
-Date: Thu, 29 Jan 2026 11:59:46 +0000
+	b=fNm06YzlYWUIvC+UHY6+rfdL/fSPmSiM1O1bwsVae1CYKPEPfGojHo/u4XVeRTkPb
+	 zGJSnVHoGhxlyzAfDSWu+SICeSlFM0FkOQvis9LV7RtZWiJ5aqcO6pMFc5ViLc/Swm
+	 PQOSLglhpraPpwoTUh9tziGgXEqlVZbex8M8TB7ghxffsuMIHvLlVafTkeU5C6Rk0b
+	 yvmeTKpunVYQNE0/gn72MLgzAxTYn3QiGJEfopAEUMEkqQjttlqDmt2I3J051VtWVV
+	 gl+GCccV9vum4vW1FkdtB6btpYMRTQ3LyOxlo5o5Uciwi0oOfWj5r0llS82gWJIlhi
+	 fSnvfFtiNjIoQ==
+Date: Thu, 29 Jan 2026 12:07:57 +0000
 From: Simon Horman <horms@kernel.org>
 To: Vincent Guittot <vincent.guittot@linaro.org>
 Cc: vkoul@kernel.org, neil.armstrong@linaro.org, krzk+dt@kernel.org,
@@ -52,13 +52,14 @@ Cc: vkoul@kernel.org, neil.armstrong@linaro.org, krzk+dt@kernel.org,
 	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
 	netdev@vger.kernel.org, Frank.li@nxp.com
-Subject: Re: [PATCH 3/4] phy: s32g: Add serdes xpcs subsystem
-Message-ID: <aXtLsuOkMMryrUs4@horms.kernel.org>
+Subject: Re: [PATCH 4/4] MAINTAINERS: Add MAINTAINER for NXP S32G Serdes
+ driver
+Message-ID: <20260129120757.GA358439@kernel.org>
 References: <20260126092159.815968-1-vincent.guittot@linaro.org>
- <20260126092159.815968-4-vincent.guittot@linaro.org>
+ <20260126092159.815968-5-vincent.guittot@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260126092159.815968-4-vincent.guittot@linaro.org>
+In-Reply-To: <20260126092159.815968-5-vincent.guittot@linaro.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,218 +76,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Jan 26, 2026 at 10:21:58AM +0100, Vincent Guittot wrote:
+On Mon, Jan 26, 2026 at 10:21:59AM +0100, Vincent Guittot wrote:
+> Add a new entry for S32G Serdes driver.
+> 
+> Signed-off-by: Vincent Guittot <vincent.guittot@linaro.org>
+> ---
+>  MAINTAINERS | 9 +++++++++
+>  1 file changed, 9 insertions(+)
+> 
+> diff --git a/MAINTAINERS b/MAINTAINERS
+> index 765ad2daa218..888674a308a5 100644
+> --- a/MAINTAINERS
+> +++ b/MAINTAINERS
+> @@ -3202,6 +3202,15 @@ S:	Maintained
+>  F:	Documentation/devicetree/bindings/net/nxp,s32-dwmac.yaml
+>  F:	drivers/net/ethernet/stmicro/stmmac/dwmac-s32.c
+>  
+> +ARM/NXP S32G SERDES DRIVER
+> +M:	Ciprian Marian Costea <ciprianmarian.costea@oss.nxp.com>
+> +R:	NXP S32 Linux Team <s32@nxp.com>
+> +L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
+> +S:	Maintained
+> +F:	Documentation/devicetree/bindings/pci/nxp,s32g-serdes.yaml
 
-...
+This patchset adds the following file, not the one above:
 
-> diff --git a/drivers/phy/freescale/phy-nxp-s32g-serdes.c b/drivers/phy/freescale/phy-nxp-s32g-serdes.c
+Documentation/devicetree/bindings/phy/nxp,s32g-serdes.yaml
+                                  ^^^
 
-...
-
-> +static void s32g_serdes_prepare_pma_mode5(struct s32g_serdes *serdes)
-> +{
-> +	u32 val;
-> +	/* Configure TX_VBOOST_LVL and TX_TERM_CTRL */
-> +	val = readl(serdes->ctrl.ss_base + S32G_PCIE_PHY_EXT_MISC_CTRL_2);
-> +	val &= ~(EXT_TX_VBOOST_LVL_MASK | EXT_TX_TERM_CTRL_MASK);
-> +	val |= FIELD_PREP(EXT_TX_VBOOST_LVL_MASK, 0x3) |
-> +		FIELD_PREP(EXT_TX_TERM_CTRL_MASK, 0x4);
-> +	writel(val, serdes->ctrl.ss_base + S32G_PCIE_PHY_EXT_MISC_CTRL_2);
-
-This is part of an AI Generated review.
-I have looked over it and I think it warrants investigation.
-For information on how to reproduce locally, as I did, please see [1].
-
-	The entire s32g_serdes_prepare_pma_mode5() function is ~70 lines of
-	magic numbers with zero explanation. These appear to be
-	hardware-specific PLL/PHY tuning parameters for 2.5G mode.
-
-Please consider using #defines, to give values names.
-
-...
-
-> +static int s32g_serdes_init_clks(struct s32g_serdes *serdes)
-> +{
-> +	struct s32g_serdes_ctrl *ctrl = &serdes->ctrl;
-> +	struct s32g_xpcs_ctrl *xpcs = &serdes->xpcs;
-> +	int ret, order[2], xpcs_id;
-> +	size_t i;
+> +F:	drivers/phy/freescale/phy-nxp-s32g-*
+> +F:	include/linux/pcs/pcs-nxp-xpcs.h
 > +
-> +	switch (ctrl->ss_mode) {
-> +	case 0:
-> +		return 0;
-> +	case 1:
-> +		order[0] = 0;
-> +		order[1] = XPCS_DISABLED;
-> +		break;
-> +	case 2:
-> +	case 5:
-> +		order[0] = 1;
-> +		order[1] = XPCS_DISABLED;
-> +		break;
-> +	case 3:
-> +		order[0] = 1;
-> +		order[1] = 0;
-> +		break;
-> +	case 4:
-> +		order[0] = 0;
-> +		order[1] = 1;
-> +		break;
-> +	default:
-> +		return -EINVAL;
-
-AI review also flags that s32g_serdes_get_ctrl_resources() ensures that
-ss_mode is <= 5.  So this check is unnecessary.
-
-> +	}
-> +
-> +	for (i = 0; i < ARRAY_SIZE(order); i++) {
-> +		xpcs_id = order[i];
-> +
-> +		if (xpcs_id == XPCS_DISABLED)
-> +			continue;
-> +
-> +		ret = s32g_xpcs_init_plls(xpcs->phys[xpcs_id]);
-> +		if (ret)
-> +			return ret;
-> +	}
-> +
-> +	if (ctrl->ss_mode == 5) {
-> +		s32g_serdes_prepare_pma_mode5(serdes);
-> +
-> +		ret = s32g_xpcs_pre_pcie_2g5(xpcs->phys[1]);
-
-Also from the AI review:
-
-	In mode 5, code directly accesses xpcs->phys[1] without checking if
-	it was created. If XPCS1 wasn't created for some reason (DT
-	misconfiguration, probe failure), this NULL dereferences.
-
-...
-
-> @@ -460,6 +741,41 @@ static int s32g2_serdes_create_phy(struct s32g_serdes *serdes, struct device_nod
-
-...
-
-> +		xpcs = devm_kmalloc(dev, sizeof(*xpcs), GFP_KERNEL);
-> +		if (IS_ERR(xpcs)) {
-> +			dev_err(dev, "Failed to allocate xpcs\n");
-> +			return -ENOMEM;
-> +		}
-
-AI review also flags:
-
-	devm_kmalloc() returns NULL on failure, not an error pointer.
-	This check will never trigger.
-
-[1] https://netdev-ai.bots.linux.dev/ai-local.html
-
-> +
-> +		xpcs_ctrl->phys[port] = xpcs;
-> +
-> +		xpcs->an = of_property_read_bool(dev->of_node, "nxp,xpcs_an");
-
-AI review flags that nxp,xpcs_an is not part of the binding.
-
-...
-
-> +struct phylink_pcs *s32g_serdes_pcs_create(struct device *dev, struct device_node *np)
-> +{
-> +	struct platform_device *pdev;
-> +	struct device_node *pcs_np;
-> +	struct s32g_serdes *serdes;
-> +	u32 port;
-> +
-> +	if (of_property_read_u32(np, "reg", &port))
-> +		return ERR_PTR(-EINVAL);
-> +
-> +	if (port > S32G_SERDES_XPCS_MAX)
-> +		return ERR_PTR(-EINVAL);
-> +
-> +	/* The PCS pdev is attached to the parent node */
-> +	pcs_np = of_get_parent(np);
-> +	if (!pcs_np)
-> +		return ERR_PTR(-ENODEV);
-> +
-> +	if (!of_device_is_available(pcs_np)) {
-> +		of_node_put(pcs_np);
-> +		return ERR_PTR(-ENODEV);
-> +	}
-> +
-> +	pdev = of_find_device_by_node(pcs_np);
-> +	of_node_put(pcs_np);
-> +	if (!pdev || !platform_get_drvdata(pdev)) {
-> +		if (pdev)
-> +			put_device(&pdev->dev);
-> +		return ERR_PTR(-EPROBE_DEFER);
-> +	}
-> +
-> +	serdes = platform_get_drvdata(pdev);
-
-Also from the AI review:
-
-	On success, the function gets a reference to pdev but never
-	releases it. This leaks a device reference every time a MAC driver
-	calls s32g_serdes_pcs_create().
-
-> +
-> +	return &serdes->xpcs.phys[port]->pcs;
-
-Also from the AI review:
-
-	The check port > S32G_SERDES_XPCS_MAX allows port=2,
-	but array only has indices 0 and 1.
-
-Also I'm not seeing bounds checking on port in s32g2_serdes_create_phy
-which uses port as an index for the same array both directly and indirectly
-via s32g_serdes_xpcs_init().
-
-...
-
-> diff --git a/drivers/phy/freescale/phy-nxp-s32g-xpcs.c b/drivers/phy/freescale/phy-nxp-s32g-xpcs.c
-
-...
-
-> +static int s32g_xpcs_regmap_reg_read(void *context, unsigned int reg,
-> +				     unsigned int *result)
-> +{
-> +	struct s32g_xpcs *xpcs = context;
-> +	u16 ofsleft = (reg >> 8) & 0xffffU;
-> +	u16 ofsright = (reg & 0xffU);
-> +
-> +	writew(ofsleft, xpcs->base + ADDR1_OFS);
-> +	*result = readw(xpcs->base + (ofsright * 4));
-> +
-> +	return 0;
-> +}
-> +
-> +static int s32g_xpcs_regmap_reg_write(void *context, unsigned int reg,
-> +				      unsigned int val)
-> +{
-> +	struct s32g_xpcs *xpcs = context;
-> +	u16 ofsleft = (reg >> 8) & 0xffffU;
-> +	u16 ofsright = (reg & 0xffU);
-> +
-> +	writew(ofsleft, xpcs->base + ADDR1_OFS);
-> +	writew(val, xpcs->base + (ofsright * 4));
-> +
-> +	return 0;
-> +}
-> +
-> +static const struct regmap_config s32g_xpcs_regmap_config = {
-> +	.reg_bits = 16,
-> +	.val_bits = 16,
-> +	.reg_read = s32g_xpcs_regmap_reg_read,
-> +	.reg_write = s32g_xpcs_regmap_reg_write,
-> +	.wr_table = &s32g_xpcs_wr_table,
-> +	.rd_table = &s32g_xpcs_rd_table,
-> +	.max_register = 0x1F80E1,
-> +};
-
-AI review also flags that s32g_xpcs_regmap_reg_read and
-s32g_xpcs_regmap_reg_write do not protect against concurrent access.
-
-...
+>  ARM/Orion SoC/Technologic Systems TS-78xx platform support
+>  M:	Alexander Clouter <alex@digriz.org.uk>
+>  L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
+> -- 
+> 2.43.0
+> 
 
 -- 
 linux-phy mailing list
