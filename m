@@ -4,106 +4,109 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1891CD61013
-	for <linux-phy@archiver.kernel.org>; Thu, 29 Jan 2026 13:26:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A8A71D61011
+	for <linux-phy@archiver.kernel.org>; Thu, 29 Jan 2026 13:36:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X0SnbEELEXYx0TF6n92wskpSEk3WkGTMJFGnM201lCk=; b=v8uoRnvyv9lklk
-	XO6hSFLer7XZxLmkl5khOKZVGP9hixtXnj1LHsb8XFP4pea4ard5nM3Qxre6vklI8QFr03bumvmDA
-	ucsGJ/t+Xkao4xxZKM/H84eSYldLh/9mvo1di5mM2AF7meAeaRdnmamcvH0u1R9nffSQUkfe9sBL8
-	iLleB0I4RG1/Wp3nGfS4M0Yz4U5cfYlSew/pOdNnideDrpmdChaWVc192mMAAuM0aohBCyWSEq2G0
-	bjKurQ5tA21thEWNKZgW522MtDVOEe9zpagud3akbloecQngDrF5+RS6qPrfhvrurIbYJAkIIqbj8
-	qh+BSOZ2f2Zp3rOD8Wfg==;
+	List-Owner; bh=FAz2iv5nejoKv/fGfdL3bz1WPpiJOdJMeBZZ4tMNAhs=; b=HWnu4ikNaY4HMB
+	BDADJJwELnTXLQiMlF0Dz3f/1lNROGt20X6MJy0N+6Pf2rRPk7PZffFaac+QPrWWdxLOmpnQWu1LP
+	gyNlRXo1Cy9lK6JIevFGNzhL6Ro8W5Cq+wBkAdmvyy2nxzv/VGmAq4IadvcfoEfRPCL0V2iwDQTFP
+	/owdpzow1DglV/3MoJc5Az2qIXWkqQCWeisRBDQcwARlHLV61oa/SQy+gErTVpSYyRQz/rc+ncsY+
+	PFn7IuR/hx+KlXDGUbbFzIWpkaESLTD5B4HDGS6rpe7Ub4Qh51C9H3uiL+hYshkKsvy1LxInDCTB0
+	5FMkReN57B0Ei+5eMWHQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vlS2P-000000009pU-3YEe;
-	Thu, 29 Jan 2026 13:26:21 +0000
-Received: from mail-ed1-x535.google.com ([2a00:1450:4864:20::535])
+	id 1vlSC7-00000000AKo-0l4i;
+	Thu, 29 Jan 2026 13:36:23 +0000
+Received: from mail-dl1-x1229.google.com ([2607:f8b0:4864:20::1229])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vlS2M-000000009on-3g9u
+	id 1vlSC3-00000000AK8-0v6X
 	for linux-phy@lists.infradead.org;
-	Thu, 29 Jan 2026 13:26:20 +0000
-Received: by mail-ed1-x535.google.com with SMTP id 4fb4d7f45d1cf-658078d6655so2052671a12.3
-        for <linux-phy@lists.infradead.org>; Thu, 29 Jan 2026 05:26:18 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1769693177; cv=none;
+	Thu, 29 Jan 2026 13:36:22 +0000
+Received: by mail-dl1-x1229.google.com with SMTP id a92af1059eb24-11f36012fb2so1161821c88.1
+        for <linux-phy@lists.infradead.org>; Thu, 29 Jan 2026 05:36:19 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1769693778; cv=none;
         d=google.com; s=arc-20240605;
-        b=gCePOxUh1m701DBIPCwLulG9544LeXQS9ndIJflAuQ2tsFSE9rxtqyDA90I56htM9j
-         eQf12qUqaCIQuBMRzFWp8jhpkV0ZrG60O9SsAeH3iCHbQIVVtaFz9QEMzKys+MaZycZn
-         UUo0HqvQQuKikv7DFC9kWUm0ipylXjalf2rEDezSeapFtU4vGW8zPPz8Ud82Ms8+le6B
-         ILBaqfa8iUONSOvYaBpZMUhk5t4NYzENqR+3tjpUV5e++pQzjkZX5RpNTyLGHHodq0An
-         mHCBycThMxhER1xXzsKKAqB2y361I8Ja+G9Q/nEtBsq5BBDDCk6DHMoICSSrAF0F74Lr
-         xzdw==
+        b=W9Etz2/DpcXdAArfaZpBFydrcqqIAX9u8TsQ/o1BdAakRTv/NPQIDJ1UsQehsXkT4s
+         PnhuT8NZ0p+l9QM5w5W0rFHd1+gPa0J6WPeJptN3UuQ/YJK0lXRTfSlWuSVEN2KB1eHI
+         31x48GT5zvxE+S29NhaiZGStM8mGcLLZMiI/aAkqmadKvOo4Ru2sT328++lypFdTjZCX
+         r1n6fbo/xAy/7L8sJt470ntOxa3qcmZYPtEAYtmQztYpWmQ4uVcvGp8XNLvPkzbpY9ud
+         AtAP2qnFypQe+TT541u9f8ZLuhkUdXrSoNL/fQOBS95x4R6E6P42tbI7943kzNkF/gF/
+         ls4g==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:dkim-signature;
-        bh=3FAbLg0n8TvG7sx8QobTC/6/6GD1GFWRF9jfzZ0OiBM=;
-        fh=lKESiJpyplb7hb37GwQNfEE0iNs21bcV9aaCqHe/FlM=;
-        b=jf8u4LUJgsDaCefUiZLH7P50E5iMOmZMBvenL0uJHTR3jNjcKd7IaIWyPjKIPBodp2
-         O36KNWJTAlov+CbTzH8tpCr5YcBqQcauJGhTU/7N/vkOHk4Mg2DLnaWqpgJ1qUC1GaB/
-         F7ixX8DeSAjMMG8gJBCgidJXsMNP07lhp7F2j+dc6C+Ngat5AJHEacw4YlMDwsxMAqaE
-         grL8eZTW+WJd6R+SrcTTh479E46pFeHiYuXDLz2qhdwUitysizQcZcvr57PUpYpq9iek
-         VqtfnfIcVHbZo8wKpJNxYedlAYiuVxm4pQRx0MG9WUtNCtqP7olmhCn7JofRMXsx/W2v
-         zRLw==;
+        bh=OUbc9YmxzZyQuCfYvCcWLpHnYb4bvtYeu1C4sFcAeps=;
+        fh=wsCSV+m6Ml5o3gO4HT3v0hKSJzcpslc9NFmdyt9OM3I=;
+        b=fnWir51owVkajQ46Hiw9uRAJ95vh3cSg+Bp7RbaF8zfxMa6I5+ltEJbbpmOP25PT7u
+         0N532P3h38rIsCHPVxq9kfjIpJL4L511VbJmzosr9hePMwkVpsXToFSyp/w7cpidYBs+
+         lcjfoWlohb8J/8jqkpT2pSBY21qREnvV7MVGcbaW4kfNc5xk+mxwczJciMRZf4P9xHmb
+         DFarxkT9UoLTgZwvhwqFkPToDF7LTuLLiqj+ubrKtmdP1R/Kj+VXaBW1OYj45xZLGB5j
+         gqXu1PsRoXcyNKWhS0tx1T8s1ziPJHYvpL4xpi5krSgShzJRrk5RA1sPxfNXeamz9ZGx
+         xBAA==;
         darn=lists.infradead.org
 ARC-Authentication-Results: i=1; mx.google.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1769693177; x=1770297977; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1769693778; x=1770298578; darn=lists.infradead.org;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=3FAbLg0n8TvG7sx8QobTC/6/6GD1GFWRF9jfzZ0OiBM=;
-        b=zal5DVof01PFiRerjUzbSYm0UnOOsslQGaCM7ee9Dpi2WBQnLjO0Tg/yvficndzAfa
-         h6td1ZgbV8FZhgc2ybJNpGrvSOPH35+1UawZ2YqBeNbNhaSP85LjsB59VuAiVqQpRV6q
-         R9d6PwbQ4gVdvTIjhHQFy0x5dxo6r4c5yarxvCEMQT1je06hn+kvKBBD/Fie7oQVTACN
-         mcURaSbwxx6p/xihxIoxivd/+BwI/fHcwrOQeF/6FptQpVKpTcLrsgaDQqKBC6VYJkBn
-         HX65lxWQumKzLCrU7rI5/wY5zd4uS94tR6ve4Of2/lvp0GwXUtq9YFr1whJW1BeTzMz8
-         jthw==
+        bh=OUbc9YmxzZyQuCfYvCcWLpHnYb4bvtYeu1C4sFcAeps=;
+        b=LN+IYv1MG3zFFG/K8g2dkpyYfC206LycGApFA8t6yTnsJuLOf+kK+l1IlCHrSjL097
+         ec1ns/5J8lKYlAM673AMLQWsOlWB1EsU6ld4+FDc29OKmTIzJyW/fYLNVZTMNeD7/Swy
+         5E4RVKytmjC6b6RG0R3TkgOhkroQH3RUnRSDg8dmLeAxyL31/SYh6NvK+aYexP8vTPkd
+         oCqy04hXmONM5wq5S8A5nGElXJcfB8aJDlfDAN31sgeap6T4E/DSjjdEuC9hsvgEVaN7
+         x//FblpA6jbSoC2YV+AN5h5j2E0BwlzBgcawwI6+cz3YVcFwxV0lbZpDrT/jtvZd1zud
+         p8Lw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1769693177; x=1770297977;
+        d=1e100.net; s=20230601; t=1769693778; x=1770298578;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=3FAbLg0n8TvG7sx8QobTC/6/6GD1GFWRF9jfzZ0OiBM=;
-        b=GidVhIYk2RA/0CiaLhrHDAkVOhlLM4eChPfTxuOUOmpe2KAIwPYHFWxyF7XZGGeuuF
-         AA3k7O8ti4aKLN4g3C2Y1P7ZqnMQyzzKEcjkySf+ffuEY7bFFKKLT47thoi5dKhEpH/X
-         ZuyycB4zORVvz2NxMcy0f0M4TkXnq9NBd6Z7M2gFIE/6XEfE5Zgcm7MydgMBG2vEurBI
-         Dto4vbY5vBKUZ/hFTRtfyKvZqCr7D+xNqu2XHVJY878+V1xmcTBu66BElv9xnIobxm2N
-         DwxEfb3fziEMaNKLKWKsith28ahROyAAcnB1YCUlnbs7Rv6sqsOdllLjF3lZISZsUp2O
-         DD/w==
-X-Forwarded-Encrypted: i=1; AJvYcCW16R5SxmrlngI4vawsLqQqUezTfJe4t6d69o4ZtYj4lRmsYHn0hYqOUD0h6k3RDYYhGJJv4qA2nI4=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxqMCL2Jdg/pf8NkQl/ZWzYQnimrrRTlWU7wCzMGwrt9oc1U/WU
-	NOFm2jR9+lmH+bKPCz2+4ITchHWJ9qA0UdHKfgASUETT9XN06ie+C9zF+ckMIWRdQmCeuXCl+Pr
-	WGSuKKD61ff8H1lhNXVPUCcfayGfUWTMNMhG8uRMs9A==
-X-Gm-Gg: AZuq6aIlbXDksn/q+f3Yju9FR/EjL/7tmS0pimnLA/7y1i3ja0eboWRcDuBJgrIF68u
-	PEMQG/+mkN6CCaOxgGE3Jom1PlqEHWR4yR8JI+XyP9ThmG7DNlCI27uJyJqevP1QuTB+VqoDCMk
-	0vz6Ol6xkcWGvWdz/jV9Qn12wMiW4tzwIVTpb/+rr0GQ+zH1ViXu+mUGRHX1Z3vTTJoVNHFLDC8
-	03LLzzSLMEU/gyChTmfLmsB0SzQGsvJ/Ona+DbQXwzjRIubzl3afikdE/RuuvMCmEf7xky23Wla
-	XxTtIgVfDx73tl3K71V04q0h
-X-Received: by 2002:a05:6402:1d50:b0:64b:6e44:217 with SMTP id
- 4fb4d7f45d1cf-658a5f8e7cdmr5148739a12.0.1769693176886; Thu, 29 Jan 2026
- 05:26:16 -0800 (PST)
+        bh=OUbc9YmxzZyQuCfYvCcWLpHnYb4bvtYeu1C4sFcAeps=;
+        b=uJJnZaEJ8NmHJwfFiW+FCJzegXJjnLgtirUqSfERnk4yYPQAEmV7jWUtaFzDXAC75U
+         mbiB1Gk3ESoS8ZPFqIo7uVvOPvo92J2Amtwn2VARPUaFol/dxxfcA+vPf3ZPY6t+CYMQ
+         e4pOZf3WZGwNYLbrx9sbj0t07sE/iKyIQYtYtFosn1ySwWKoK3ib0QGESQMNzm4baKrR
+         oVdjijAyP0sT9ji3JHCz8rvXDe0yuIO7CyrKSel+ttaVbC5N2kU7/98biY5pXilC0O9Y
+         3pnBjn04MbawwM3Fd6Erpmoc2gepcOq+twrY4PG1kVeUHRZXgy8niFcQDNB1om3gs9sZ
+         nSFg==
+X-Forwarded-Encrypted: i=1; AJvYcCUcd+PtbO8VyNqVzetzpmTEuLkv4XtI8KM4ipxoI4RnJiwqdf2DZ35lgB8d8QLTZHuLS5Fvl8u6VmQ=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzMFhpaGioXi/7IoowAgfOY5h9q6BwI2SsRUPnSoDnDCfU8Us59
+	6limaf7ogdRa5vmXvpgxFAFAgUKJE0ASKQ1ykbpN8FKxsp9ZQp6NZT+DPMuNNvFcQbglbpF+J/I
+	QiSjJr1GqRgXLuw1YHTiEEuU1ft5mvgB30nKFTUAmHQ==
+X-Gm-Gg: AZuq6aIIcxOylfi5VMoV97hiSrodk61ODDjZ+WY40580yo0YaWwiY/1eUo623ypF7Ap
+	aTFaEUDxW2DN9trZ5QQBqAhh/kNWvppcbm9z14OYFcQDklgqgwDMVGRlczwiRTaHoDyWVkv/KWb
+	/Xtx3B3YqrHAkO/qa652V61xWhbbkB4SvB5oR9u6fkOWE5FSd0UJiA/jKscLgRHjqgr+/W3okyi
+	ellRIOSdgPGZ2m6Pwj8f/Lyhr6YTDtECTVy9ZoiB9LMkUKjWLUcR/oJy4IXXGMHsOUfTQidmY5z
+	rdOXBrL2PlUcO4DsbMYNOw5o
+X-Received: by 2002:a05:7022:b8f:b0:11b:923d:7753 with SMTP id
+ a92af1059eb24-124a005f58amr6177136c88.3.1769693778067; Thu, 29 Jan 2026
+ 05:36:18 -0800 (PST)
 MIME-Version: 1.0
-References: <20260126092159.815968-1-vincent.guittot@linaro.org> <aXtUNxEmxcvuNj6J@shell.armlinux.org.uk>
-In-Reply-To: <aXtUNxEmxcvuNj6J@shell.armlinux.org.uk>
+References: <20260126092159.815968-1-vincent.guittot@linaro.org>
+ <20260126092159.815968-3-vincent.guittot@linaro.org> <aXsuRTZUUnw0kdzV@horms.kernel.org>
+ <CAKfTPtDfnpzq2CB-isVzvh1ZCWo7kit9KRJvVGoU1C3zZTgdXw@mail.gmail.com> <aXtfVUb0eLwP4R28@shell.armlinux.org.uk>
+In-Reply-To: <aXtfVUb0eLwP4R28@shell.armlinux.org.uk>
 From: Vincent Guittot <vincent.guittot@linaro.org>
-Date: Thu, 29 Jan 2026 14:26:04 +0100
-X-Gm-Features: AZwV_QjGAIu9W6_VpH3QHcTFTkleDIzRR41H4AQo5SaX9LTdvMXOOFKWjz1rXio
-Message-ID: <CAKfTPtC6TOnrHbyS4mH05wF78OFOMp_ST1UOeEgNZ7+hhh8gvw@mail.gmail.com>
-Subject: Re: [PATCH 0/4] Serdes: s32g: Add support for serdes subsystem
+Date: Thu, 29 Jan 2026 14:36:01 +0100
+X-Gm-Features: AZwV_Qg3uPvaKNdmIviHyRFKK8XsxTqMLqCrJ58tO3_TcY5z3DRE4t2Ah-LnutY
+Message-ID: <CAKfTPtCiJcNOdoddZN5N1dKHXfUJBe0=zeWfZ5uENoXDvbMnpQ@mail.gmail.com>
+Subject: Re: [PATCH 2/4] phy: s32g: Add serdes subsystem phy
 To: "Russell King (Oracle)" <linux@armlinux.org.uk>
-Cc: vkoul@kernel.org, neil.armstrong@linaro.org, krzk+dt@kernel.org, 
-	conor+dt@kernel.org, ciprianmarian.costea@oss.nxp.com, s32@nxp.com, 
-	p.zabel@pengutronix.de, ghennadi.procopciuc@nxp.com, Ionut.Vicovan@nxp.com, 
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
-	netdev@vger.kernel.org, Frank.li@nxp.com
+Cc: Simon Horman <horms@kernel.org>, vkoul@kernel.org, neil.armstrong@linaro.org, 
+	krzk+dt@kernel.org, conor+dt@kernel.org, ciprianmarian.costea@oss.nxp.com, 
+	s32@nxp.com, p.zabel@pengutronix.de, ghennadi.procopciuc@nxp.com, 
+	bogdan-gabriel.roman@nxp.com, Ionut.Vicovan@nxp.com, 
+	alexandru-catalin.ionita@nxp.com, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, netdev@vger.kernel.org, 
+	Frank.li@nxp.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260129_052618_932627_74AEEA53 
-X-CRM114-Status: UNSURE (   9.67  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260129_053621_154397_4EEB877C 
+X-CRM114-Status: GOOD (  13.62  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,28 +123,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, 29 Jan 2026 at 13:36, Russell King (Oracle)
+On Thu, 29 Jan 2026 at 14:23, Russell King (Oracle)
 <linux@armlinux.org.uk> wrote:
 >
-> Please drop these addresses from future patch series:
+> On Thu, Jan 29, 2026 at 02:01:13PM +0100, Vincent Guittot wrote:
+> > yes, the usual pattern is :
+> > - phy_set_mode_ext()
+> > - then phy_power_on()
+> > but I can add an additional check
+>
+> Please read Documentation/driver-api/phy/phy.rst section "Order of API
+> calls" which suggests phy_set_mode_ext() after phy_power_on().
 
-Yes, will dorp for next version
+Fair enough.
+That being said, all pcie drivers  that use phy_set_mode_ext(), call
+it before phy_power_on()
 
 >
->   alexandru-catalin.ionita@nxp.com
->     host nxp-com.mail.protection.outlook.com [2a01:111:f403:ca09::7]
->     SMTP error from remote mail server after RCPT TO:<alexandru-catalin.ionita@n
-> xp.com>:
->     550 5.4.1 Recipient address rejected: Access denied. For more information se
-> e https://aka.ms/EXOSmtpErrors [AM4PEPF00027A62.eurprd04.prod.outlook.com 2026-0
-> 1-29T12:31:01.197Z 08DE5971FB66165F]
->   bogdan-gabriel.roman@nxp.com
->     host nxp-com.mail.protection.outlook.com [2a01:111:f403:ca09::6]
->     SMTP error from remote mail server after RCPT TO:<bogdan-gabriel.roman@nxp.c
-> om>:
->     550 5.4.1 Recipient address rejected: Access denied. For more information se
-> e https://aka.ms/EXOSmtpErrors [AM3PEPF0000A798.eurprd04.prod.outlook.com 2026-0
-> 1-29T12:31:00.781Z 08DE596525364766]
+> Having different requirements for different SerDes PHYs quickly becomes
+> annoying for users of the SerDes PHYs.
+>
+> E.g. I'm trying to add SerDes PHY support to stmmac, which is used
+> across different platforms. Having all SerDes PHY drivers behave the
+> same as far as their PHY API calls are concerned means that the whole
+> point of having an abstracted interface is maintained. Otherwise, it's
+> completely pointless.
 >
 > --
 > RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
