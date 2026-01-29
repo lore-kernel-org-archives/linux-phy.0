@@ -4,77 +4,115 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 91B8FD61020
-	for <linux-phy@archiver.kernel.org>; Thu, 29 Jan 2026 14:37:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E3278D6B086
+	for <linux-phy@archiver.kernel.org>; Thu, 29 Jan 2026 16:06:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NKTZuCkxbIvgkJObtOGesF0FMNYGCHJZQI7/0oF69QU=; b=PiH0o5fLhGkZCp
-	HadwCefZDJF9MbNDyg8TRwzQ43imXSkRRwz2TR6WNWl36IjVxCWZhLcl4u9cSF0FM52Qv/e1eJ2sO
-	vFVJQOrrQIzg1OtILbJJuySkh1k0bAAXk+hlNuoKawrXqPNMaX/xA8CdYToHAWeEYM33WzBmyIxpa
-	Hr/h2TlBXNO4JO9W88FAXgm72GF/WxIsOGYe/TzoTwasr4MbztG3/u0bTqlY3tsQymx/gdvy57/SJ
-	7bogH6/ZOsN311QIzPWSP95WXFco5Tac0fvvk5IoStPix8uXWWvhc4yFvaAoTjTKZuTh1dzbL4M/d
-	OtfEa+glxBmlHN+aK7PA==;
+	List-Owner; bh=pfPH4dUOEMgYWzYVohY7wCWWB2bEQLwxewY1tezdoRE=; b=nD55J3+jLHh+16
+	FuMM5piqg7p5fcQpoVIJqCB8gpk82MURmbWAJMgxq3X0VPwvb+PDh5yw8NjbXIWicWimF0nRpmr2L
+	LnOsCn06uU/WY4hNyppXBtBpNYg+QSv9CpvCJikLuQAKMmugHbFcyCz/qTUvLkq0E8LIeip6QJv3P
+	nfbRbsSHfSr+qB2v16/VrgoWWyypMZoyKimwXAXl2LX2onKebKoPdne9tRS7z7Df509GcnybV83iM
+	Z5ub2tTse1tzXakgcopVJtJ0KFe5uLIwsSW+0KJiaJJvG93FtT32COgp8pXYCe6hB0yMPup6DaMUV
+	8Nk0yJrkUadSXoLwBg8w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vlT8m-00000000Ekn-02Op;
-	Thu, 29 Jan 2026 14:37:00 +0000
-Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
+	id 1vlUXk-00000000JlP-11S4;
+	Thu, 29 Jan 2026 16:06:52 +0000
+Received: from mail-lf1-x136.google.com ([2a00:1450:4864:20::136])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vlT8k-00000000EkO-0UCf;
-	Thu, 29 Jan 2026 14:36:59 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
-	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
-	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=gdLx6MqvKMI7VkaiN5mQVnb2eVwGGL9NszyRmXRKFV0=; b=IUnX78XxTN3897xqwPd6BmA4/H
-	EZehdxzJc8Fh5T/UIyymImNbkf0vAUqODyrY9JCzG8ckyviD4xiKe93el/EoD3p1JLof6a0DC3GNf
-	MDMz6/TSocUiQyJUxzcbH9Xd2R6QBCL1sJWpQ6DzeMm3du9sH/8YX4h8VC04CU7DgWI3x87nqo0Fv
-	+svJ8AlhFIV696xHGY3F35RC+v2S0PNnxW/If7wMVr310KDQjvREKy30qgwj74Ld1VIoUlzxxcb6U
-	X8GtPYmrW8kuWScU4XpHe004klCUsff/h6SR7Iekv9OzSEGaTRSe3g9jRbp7X+ShCqfegy8iiMosG
-	lkey1yOQ==;
-Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:37426)
-	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.98.2)
-	(envelope-from <linux@armlinux.org.uk>)
-	id 1vlT8a-000000000BS-2Vfn;
-	Thu, 29 Jan 2026 14:36:48 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.98.2)
-	(envelope-from <linux@shell.armlinux.org.uk>)
-	id 1vlT8Y-0000000083Z-3wB7;
-	Thu, 29 Jan 2026 14:36:46 +0000
-Date: Thu, 29 Jan 2026 14:36:46 +0000
-From: "Russell King (Oracle)" <linux@armlinux.org.uk>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Vincent Guittot <vincent.guittot@linaro.org>, neil.armstrong@linaro.org,
-	Simon Horman <horms@kernel.org>, krzk+dt@kernel.org,
-	conor+dt@kernel.org, ciprianmarian.costea@oss.nxp.com, s32@nxp.com,
-	p.zabel@pengutronix.de, ghennadi.procopciuc@nxp.com,
-	Ionut.Vicovan@nxp.com, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org, netdev@vger.kernel.org,
-	Frank.li@nxp.com
-Subject: Re: [PATCH 2/4] phy: s32g: Add serdes subsystem phy
-Message-ID: <aXtwfj1vqB1cXKFM@shell.armlinux.org.uk>
-References: <20260126092159.815968-1-vincent.guittot@linaro.org>
- <20260126092159.815968-3-vincent.guittot@linaro.org>
- <aXsuRTZUUnw0kdzV@horms.kernel.org>
- <CAKfTPtDfnpzq2CB-isVzvh1ZCWo7kit9KRJvVGoU1C3zZTgdXw@mail.gmail.com>
- <aXtfVUb0eLwP4R28@shell.armlinux.org.uk>
- <CAKfTPtCiJcNOdoddZN5N1dKHXfUJBe0=zeWfZ5uENoXDvbMnpQ@mail.gmail.com>
- <aXtl6eQ8zD_olTdc@shell.armlinux.org.uk>
- <aXtvDn_-pCuKPrnf@vaman>
+	id 1vlUXi-00000000Jl4-13CH
+	for linux-phy@lists.infradead.org;
+	Thu, 29 Jan 2026 16:06:51 +0000
+Received: by mail-lf1-x136.google.com with SMTP id 2adb3069b0e04-59de0b7c28aso1280214e87.1
+        for <linux-phy@lists.infradead.org>; Thu, 29 Jan 2026 08:06:48 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1769702807; cv=none;
+        d=google.com; s=arc-20240605;
+        b=k+MusQODLPdlqEqVlMpmpb5TWjJ/T6/viiSicfPZZ/eX+QOZUesrQav8kZN0rsXfL9
+         Az6CZyQVWs9tT46opUF6UrAAC7yB2p9PBy6HxnRVlKC9tvNrSUwMHbDH5CTVPL+Qbk4e
+         CdiDtRO1G7lhu2jjGPDgan83/EsekRFl7BIUsMlG6o7QHrt1vMZ0ZyuHIA0ZelhzES5o
+         IJCDjAiwBOnJJrtYtR6Gg5KhoykCiRRdcBgdGPBdgkb/0IPKCgeOYy7/+nMxZDe2xBQh
+         Pyk8qYZcRFYSUDcdGjOKCxLKekIycw1QiOkz0sq9qj0BxiFXnBWyLsn+iUANSWbyKzRi
+         qn/g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:dkim-signature;
+        bh=sjBE9CcEx3FGX02UcUqw+G+HOHlTgyZhIWMhdAQnoXg=;
+        fh=CHJQHahcRV3toNxglSCZzPe6+BN1Syv9Pvc56R3IzmM=;
+        b=fP5mgLZtPEkKcxZ477mWcIqrxuiorCoUN/vsiNFZbEIAe/1bBvT5wHDb4y7GBNcs+E
+         VFRnDICANx3JP/ROsXfiS9v5yVrSrcQwX9OMjUYl93fd0qZgRTEVLCOS9Z0hX2wQw8sF
+         nMGzqF4pSTzfTwDgcuwF8A2xouY5ytOuA7RGsDwM4TPXLRI2SZbGo7fZ91Nu6yzHVI6A
+         emBAN0DtxJTmBG6n4cK2JPjBm6HVvV3jVX0Dr+rrU0s1qvP4zxOZCQEIpu8UQBLddt4R
+         fWqUhDVGKTS93TbtB9dDf3tM8Cao4d6iUcQoJO1J48kxRqBhfdlsh9Lha6dHk+R5wJs4
+         APeg==;
+        darn=lists.infradead.org
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1769702807; x=1770307607; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=sjBE9CcEx3FGX02UcUqw+G+HOHlTgyZhIWMhdAQnoXg=;
+        b=U3AHD59omSNPAovkxj77SBFJu0SaensjE9fE83Jm4usAjuzaJzr2fdleIRWUXlgAfU
+         ofu/kDIkcN8FyThVNZw+5u3oK2wkdAirl2fbzBMcLtNbtPG+rKJLJ6N3ixk2fM6Q+vZk
+         fpUgWEF2jz0gPqKMrRrGiPTR75BelqHZ8ttUrICUXDo1nGqzzSIIiHngrfvAZ3tVK1Av
+         dHF67WX6UQVP26vXYgC1EuNsVAKeVagq93gGeCzLLm81XXLcutZO2APRd6ee9Gq8n3Ua
+         d16stf5C4FV00WuNR9KK+M/Ef+kHaBE4r6Yaq0M8Lqf140bcwO8n+Vorh/4VtWUdf4Tr
+         BzAw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1769702807; x=1770307607;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=sjBE9CcEx3FGX02UcUqw+G+HOHlTgyZhIWMhdAQnoXg=;
+        b=uDgX4KtOnzeHW6AoB8usLYNnL3bM05C2Quv2ouhgD7nrE2ebOhXqY9ly8RrnrtoO5p
+         O7527IiUWjok4iPk9i51x1hG2DBcVq6EIDKtWBpW5fYVWvTG9vDA3QKPkxASOSfJoGUL
+         Zwqu+qQ1C5bQZh+/TdssL+f6Jq7BkeIjzxZLLEfqVgCoIc+XZQRvvws0VNNsbK9EAMhD
+         1K7vdaYiVje8L9XJjxMzcy15moicIoGunkdkEgjBkCebArQSgfkneG//TkZred65c3sy
+         XrNRWlAlT6kjcAvQleLV5QczcLZSbwOUcmbeT7xtZbraM55SsnUg3v/facR2Ou3s+nEq
+         OzUQ==
+X-Forwarded-Encrypted: i=1; AJvYcCX4jvXrLWhR85VoY8z05DW7RHTaYB2h9ODIVL64v/IFmYWHFZ15Lg1S+2ffg1EjCflNaf7Z0c0NHvA=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzmN5aQDkj9KkUsf+fm8ajiLvI9YrwQxqcsc/h6F6ekD5pVv796
+	Aqd6qQicaHgNErl214RPX2TmxX65TBS1AoLh+Wmo6P0caCbLnSjnIzRUfjJKBEKp2sBr6x0RCJl
+	t+LVlDG45TALRIwcIsHwAs1un+XHFNbrg5K3NRvnVbw==
+X-Gm-Gg: AZuq6aKxEb5PnKLvL/eppPcV5sEoOahHF6VbAl6RTYzkBNDsEXwcCufgJU1EGQ/iFCI
+	ecosP5eqgJQOYOwfxH9gMpWrXBQTaaKYezTe8XFcTbyzw6iJdOK5qx7XHtcjJTR0/AWLlrgqhcE
+	RKNo21fP5GFHse7V0MuyCQmIzi9B9Z5mSDvVCu83ujUapQxQ9ANL2G0XA3/30JhkHE0G4Zwi0XF
+	EzpGpb+amYMNW1Abax+6VYjazS609ModlUp+vYBRtBu7pUFv4vJ91afMfw6yIccOkVliEhk
+X-Received: by 2002:a05:6512:234e:b0:59d:d799:b7a0 with SMTP id
+ 2adb3069b0e04-59e040299admr4006653e87.36.1769702806877; Thu, 29 Jan 2026
+ 08:06:46 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <aXtvDn_-pCuKPrnf@vaman>
+References: <20260128-rz-sdio-mux-v7-0-92ebb6da0df8@solid-run.com> <20260128-rz-sdio-mux-v7-2-92ebb6da0df8@solid-run.com>
+In-Reply-To: <20260128-rz-sdio-mux-v7-2-92ebb6da0df8@solid-run.com>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Thu, 29 Jan 2026 17:06:10 +0100
+X-Gm-Features: AZwV_QhXWgEPoSG5cEeDEK7X9sYP3SyTXeMqEgA9rOrQCY9Is43DwQw7rMGTcAc
+Message-ID: <CAPDyKFrBuL+747QUJJUejtcvjm0V7Lt=vHwjvcMdCt_h4=sFwg@mail.gmail.com>
+Subject: Re: [PATCH v7 2/7] mux: Add helper functions for getting optional and
+ selected mux-state
+To: Josua Mayer <josua@solid-run.com>
+Cc: Marc Kleine-Budde <mkl@pengutronix.de>, Vincent Mailhol <mailhol@kernel.org>, 
+	Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
+	Peter Rosin <peda@axentia.se>, Aaro Koskinen <aaro.koskinen@iki.fi>, 
+	Andreas Kemnade <andreas@kemnade.info>, Kevin Hilman <khilman@baylibre.com>, 
+	Roger Quadros <rogerq@kernel.org>, Tony Lindgren <tony@atomide.com>, 
+	Janusz Krzysztofik <jmkrzyszt@gmail.com>, Vignesh R <vigneshr@ti.com>, 
+	Andi Shyti <andi.shyti@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Geert Uytterhoeven <geert+renesas@glider.be>, Magnus Damm <magnus.damm@gmail.com>, 
+	Wolfram Sang <wsa+renesas@sang-engineering.com>, 
+	Yazan Shhady <yazan.shhady@solid-run.com>, Jon Nettleton <jon@solid-run.com>, 
+	Mikhail Anikin <mikhail.anikin@solid-run.com>, linux-can@vger.kernel.org, 
+	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+	linux-omap@vger.kernel.org, linux-i2c@vger.kernel.org, 
+	linux-mmc@vger.kernel.org, devicetree@vger.kernel.org, 
+	linux-renesas-soc@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260129_063658_153202_A137856A 
-X-CRM114-Status: GOOD (  20.31  )
+X-CRM114-CacheID: sfid-20260129_080650_345136_E08A1F16 
+X-CRM114-Status: GOOD (  33.31  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,46 +129,162 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Jan 29, 2026 at 08:00:38PM +0530, Vinod Koul wrote:
-> On 29-01-26, 13:51, Russell King (Oracle) wrote:
-> > On Thu, Jan 29, 2026 at 02:36:01PM +0100, Vincent Guittot wrote:
-> > > On Thu, 29 Jan 2026 at 14:23, Russell King (Oracle)
-> > > <linux@armlinux.org.uk> wrote:
-> > > >
-> > > > On Thu, Jan 29, 2026 at 02:01:13PM +0100, Vincent Guittot wrote:
-> > > > > yes, the usual pattern is :
-> > > > > - phy_set_mode_ext()
-> > > > > - then phy_power_on()
-> > > > > but I can add an additional check
-> > > >
-> > > > Please read Documentation/driver-api/phy/phy.rst section "Order of API
-> > > > calls" which suggests phy_set_mode_ext() after phy_power_on().
-> > > 
-> > > Fair enough.
-> > > That being said, all pcie drivers  that use phy_set_mode_ext(), call
-> > > it before phy_power_on()
-> > 
-> > It looks like many ethernet drivers do the same, so I think maybe the
-> > generic PHY documentation is incorrect or misleading, or is expressing
-> > a preference that almost no one follows. Something for the generic PHY
-> > maintainers to look at and/or comment on.
-> 
-> I would feel it makes sense to configure the mode first and then power
-> the phy up. As commented above yes it looks like apart from one tegra
-> driver rest seem to do it this way.
-> 
-> Lets update the documentation
+On Wed, 28 Jan 2026 at 15:46, Josua Mayer <josua@solid-run.com> wrote:
+>
+> In-tree phy-can-transceiver driver has already implemented a local
+> version of devm_mux_state_get_optional.
+>
+> The omap-i2c driver gets and selects an optional mux in its probe
+> function without using any helper.
+>
+> Add new helper functions covering both aforementioned use-cases:
+>
+> - mux_control_get_optional:
+>   Get a mux-control if specified in dt, return NULL otherwise.
+> - devm_mux_state_get_optional:
+>   Get a mux-state if specified in dt, return NULL otherwise.
+> - devm_mux_state_get_selected:
+>   Get and select a mux-state specified in dt, return error otherwise.
+> - devm_mux_state_get_optional_selected:
+>   Get and select a mux-state if specified in dt, return error or NULL.
+>
+> Existing mux_get helper function is changed to take an extra argument
+> indicating whether the mux is optional.
+> In this case no error is printed, and NULL returned in case of ENOENT.
+>
+> Calling code is adapted to handle NULL return case, and to pass optional
+> argument as required.
+>
+> To support automatic deselect for _selected helper, a new structure is
+> created storing an exit pointer similar to clock core which is called on
+> release.
+>
+> To facilitate code sharing between optional/mandatory/selected helpers,
+> a new internal helper function is added to handle quiet (optional) and
+> verbose (mandatory) errors, as well as storing the correct callback for
+> devm release: __devm_mux_state_get
+>
+> Due to this structure devm_mux_state_get_*_selected can no longer print
+> a useful error message when select fails. Instead callers should print
+> errors where needed.
+>
+> Commit e153fdea9db04 ("phy: can-transceiver: Re-instate "mux-states"
+> property presence check") noted that "mux_get() always prints an error
+> message in case of an error, including when the property is not present,
+> confusing the user."
+>
+> The first error message covers the case that a mux name is not matched
+> in dt. The second error message is based on of_parse_phandle_with_args
+> return value.
+>
+> In optional case no error is printed and NULL is returned.
+> This ensures that the new helper functions will not confuse the user
+> either.
+>
+> With the addition of optional helper functions it became clear that
+> drivers should compile and link even if CONFIG_MULTIPLEXER was not enabled.
+> Add stubs for all symbols exported by mux core.
+>
+> Signed-off-by: Josua Mayer <josua@solid-run.com>
+> ---
+>  drivers/mux/core.c           | 178 ++++++++++++++++++++++++++++++++++++-------
+>  include/linux/mux/consumer.h | 108 +++++++++++++++++++++++++-
+>  2 files changed, 253 insertions(+), 33 deletions(-)
+>
+> diff --git a/drivers/mux/core.c b/drivers/mux/core.c
+> index a3840fe0995f..b01ec126caaf 100644
+> --- a/drivers/mux/core.c
+> +++ b/drivers/mux/core.c
 
-Please also indicate in the documentation whether changing the submode
-of the serdes (particularly for ethernet) is permitted without doing a
-phy_power_down()..phy_power_up() dance around the phy_set_mode_ext()
-call.
+[...]
 
-Thanks.
+>  static void devm_mux_state_release(struct device *dev, void *res)
+>  {
+> -       struct mux_state *mstate = *(struct mux_state **)res;
+> +       struct devm_mux_state_state *devm_state = res;
+>
+> -       mux_state_put(mstate);
+> +       if (devm_state->exit)
+> +               devm_state->exit(devm_state->mstate);
+> +
+> +       mux_state_put(devm_state->mstate);
+>  }
+>
+>  /**
+> - * devm_mux_state_get() - Get the mux-state for a device, with resource
+> - *                       management.
+> - * @dev: The device that needs a mux-control.
+> - * @mux_name: The name identifying the mux-control.
+> + * __devm_mux_state_get() - Get the optional mux-state for a device,
+> + *                         with resource management.
+> + * @dev: The device that needs a mux-state.
+> + * @mux_name: The name identifying the mux-state.
+> + * @optional: Whether to return NULL and silence errors when mux doesn't exist.
+> + * @init: Optional function pointer for mux-state object initialisation.
+> + * @exit: Optional function pointer for mux-state object cleanup on release.
+>   *
+>   * Return: Pointer to the mux-state, or an ERR_PTR with a negative errno.
+>   */
+> -struct mux_state *devm_mux_state_get(struct device *dev,
+> -                                    const char *mux_name)
+> +static struct mux_state *__devm_mux_state_get(struct device *dev, const char *mux_name,
+> +                                             bool optional,
+> +                                             int (*init)(struct mux_state *mstate),
+> +                                             int (*exit)(struct mux_state *mstate))
+>  {
+> -       struct mux_state **ptr, *mstate;
+> +       struct devm_mux_state_state *devm_state;
+> +       struct mux_state *mstate;
+> +       int ret;
+>
+> -       ptr = devres_alloc(devm_mux_state_release, sizeof(*ptr), GFP_KERNEL);
+> -       if (!ptr)
+> +       devm_state = devres_alloc(devm_mux_state_release, sizeof(*devm_state), GFP_KERNEL);
+> +       if (!devm_state)
+>                 return ERR_PTR(-ENOMEM);
+>
+> -       mstate = mux_state_get(dev, mux_name);
+> -       if (IS_ERR(mstate)) {
+> -               devres_free(ptr);
+> -               return mstate;
+> +       mstate = mux_state_get(dev, mux_name, optional);
+> +       if (IS_ERR_OR_NULL(mstate)) {
+> +               ret = PTR_ERR(mstate);
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTP is here! 80Mbps down 10Mbps up. Decent connectivity at last!
+Should this be PTR_ERR_OR_ZERO?
+
+> +               goto err_mux_state_get;
+>         }
+>
+> -       *ptr = mstate;
+> -       devres_add(dev, ptr);
+> +       if (init) {
+> +               ret = init(mstate);
+> +               if (ret)
+> +                       goto err_mux_state_init;
+> +       }
+> +
+> +       devm_state->mstate = mstate;
+> +       devm_state->exit = exit;
+> +       devres_add(dev, devm_state);
+>
+>         return mstate;
+> +
+> +err_mux_state_init:
+> +       mux_state_put(mstate);
+> +err_mux_state_get:
+> +       devres_free(devm_state);
+> +       return ERR_PTR(ret);
+
+If PTR_ERR_OR_ZERO is used above as I suggested, ret may be 0 here.
+
+Then it is probably clearer to add a check if (!ret) and return NULL
+explicitly for that case, I think.
+
+[...]
+
+Kind regards
+Uffe
 
 -- 
 linux-phy mailing list
