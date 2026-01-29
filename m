@@ -4,71 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8495AD61003
-	for <linux-phy@archiver.kernel.org>; Thu, 29 Jan 2026 11:17:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7ACB4D6100E
+	for <linux-phy@archiver.kernel.org>; Thu, 29 Jan 2026 11:59:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W3bThGkwFPbvvuwajRx43atJzPhw6Ref0uhLNfQj5fA=; b=VbnU4IX4Utjgnj
-	gvhAl+atJLkLbnlwOxRdSJcIsBR+qdOZUx34tIs9VCM+uXdpwKBR1JJNtcdQNs+JlTzGDP3oVhKbZ
-	pDMN6CIKFmlo6IQdNyFvRgXfWrL9No7zsCoI7rFUVj8giuZXxcrT06El2m19qaR0okBCKXxYzDsiO
-	89w33uQhfFMPOk5uh2H94ZHzPr2hpJDZPbiSsH7p0G4nUeGgCa0L91NgSh1LpfR7ITSEHaNG91EZd
-	8MHdin43psOOTx+w+P+9MSYZxL5wlWyU8YLQ82Er+ygOgiEcQbPt5WNU4SbeEgOw9Tf+jjS3VH0ZS
-	RhsCjEuqt+JTxFXP629A==;
+	List-Owner; bh=v3OauSIAJTSzJj3CH4Vy9W7QVHZ59lcOPijwtBQLP8Q=; b=cYKpdx80E7Wc3W
+	fatJYiQeHFtlEqrjP8H+QCAZuz5eEAI/jZOcLNXKsAJTE6ojk6tmc5h0FdBFQ+Pg/h5DK/Hef+wlE
+	WmstDi92vdFPlPEaaUkjqVPeFtZNPH7MtDoZdfjKrIS7Ki9SMfoyaEyNgyS+f+3f5OlzFRIssEzZm
+	unq0gqCDCHjnjzFAoBeyfPycRMU0mK48SEJQcYQoAETxdaagpAytZNqcxRtYxEFr98fBRSkOXLWya
+	iHQidxePN/PkxDZkT7hXwBlCraxTXBZ402zv462mtqv6vALi5GWmbG/3Cuu8DNA2OenQcyIhnImNz
+	7fDuVfBeL/qFrqgmlqTQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vlQ29-0000000023w-08Py;
-	Thu, 29 Jan 2026 11:17:57 +0000
-Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
+	id 1vlQgl-000000004JC-3xSq;
+	Thu, 29 Jan 2026 11:59:56 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vlQ26-00000000230-2RA3;
-	Thu, 29 Jan 2026 11:17:56 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
-	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
-	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=xRbGhk3MppX3QDh9iQp/r9WXjYsRk1w3/DNqD5xKN6Y=; b=wQX7OV28trnhd/CmJjo5OstW0W
-	VacPFX0Hr4C4H6AbOwz1lgX2ZqOb0qMQVpvLLDABSpoFhqUNZuAjs3dGP0OY4Sw2nkRfZrHdsf6tz
-	Byj2tuwWQ3clIjdIAOi1F0fYLpc6Cw1NZ3ejgQJewEBjjmLuuepHETy5Kh5NH+qJ15rkPEx1Tu1/2
-	xE/vVczNvP+OKQnO5K2qJfwsR4dGPLdV/a6pNs6k0WN5nGF0Ehp69lQlS6mfqr4lMDzUMlm8ED1KW
-	zE3yJeokfswi0AyQTr0+bfHTh7xiIYTNjiOalKMazWFmGNAEeOVsCN8+fRdBFwN3kFAuOnKkgoCRo
-	FRD67AYw==;
-Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:57138)
-	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.98.2)
-	(envelope-from <linux@armlinux.org.uk>)
-	id 1vlQ1s-000000008S8-0a6Z;
-	Thu, 29 Jan 2026 11:17:40 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.98.2)
-	(envelope-from <linux@shell.armlinux.org.uk>)
-	id 1vlQ1p-000000007v4-3EdQ;
-	Thu, 29 Jan 2026 11:17:37 +0000
-Date: Thu, 29 Jan 2026 11:17:37 +0000
-From: "Russell King (Oracle)" <linux@armlinux.org.uk>
+	id 1vlQgj-000000004Iz-3ZoT;
+	Thu, 29 Jan 2026 11:59:53 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id D1AA060054;
+	Thu, 29 Jan 2026 11:59:52 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 09D24C4CEF7;
+	Thu, 29 Jan 2026 11:59:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1769687992;
+	bh=WZ9/YfisJXoXJYN8Rl5hCOUb1qqqV6UazDcJEt0myBQ=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=c+5IdhFDBh4dGy30IROWqL06xxOcVDc8lgV0YqbAXg5ZwBaLp+AT6ofohEKxBZHGm
+	 3JQPyGsaR40cV9I/ltnY6YHvSyK1kKDZtyhJhVaG8Rkf5r9cCSEX4PNDYcGVI+/waT
+	 mIhe4Sin2AmquFmkMgIpIY4JVgfMfeVFolGe5Hl0UTQOYdh5dDtBCBSBtAleSqH9QW
+	 CaUhn8+cpwfCZeaDIskypGEGVhBBI7ZwWJtSmC/bpsGNbN+vTBayO7txPcr1exLsq+
+	 SCMLGrHMscgl2oQ7NxkNGGZJSiRLf+ZMlEnRUobKvTtMuMvbLaibR4ywxeB5hNcfNJ
+	 YEHYiSpoUgKhg==
+Date: Thu, 29 Jan 2026 11:59:46 +0000
+From: Simon Horman <horms@kernel.org>
 To: Vincent Guittot <vincent.guittot@linaro.org>
 Cc: vkoul@kernel.org, neil.armstrong@linaro.org, krzk+dt@kernel.org,
 	conor+dt@kernel.org, ciprianmarian.costea@oss.nxp.com, s32@nxp.com,
-	p.zabel@pengutronix.de, ghennadi.procopciuc@nxp.com,
-	bogdan-gabriel.roman@nxp.com, Ionut.Vicovan@nxp.com,
-	alexandru-catalin.ionita@nxp.com, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org, netdev@vger.kernel.org,
-	Frank.li@nxp.com
-Subject: Re: [PATCH 2/4] phy: s32g: Add serdes subsystem phy
-Message-ID: <aXtB0QcVOkE_hhny@shell.armlinux.org.uk>
+	p.zabel@pengutronix.de, linux@armlinux.org.uk,
+	ghennadi.procopciuc@nxp.com, bogdan-gabriel.roman@nxp.com,
+	Ionut.Vicovan@nxp.com, alexandru-catalin.ionita@nxp.com,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	netdev@vger.kernel.org, Frank.li@nxp.com
+Subject: Re: [PATCH 3/4] phy: s32g: Add serdes xpcs subsystem
+Message-ID: <aXtLsuOkMMryrUs4@horms.kernel.org>
 References: <20260126092159.815968-1-vincent.guittot@linaro.org>
- <20260126092159.815968-3-vincent.guittot@linaro.org>
+ <20260126092159.815968-4-vincent.guittot@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260126092159.815968-3-vincent.guittot@linaro.org>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260129_031754_642110_65E202B6 
-X-CRM114-Status: GOOD (  14.36  )
+In-Reply-To: <20260126092159.815968-4-vincent.guittot@linaro.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,58 +75,218 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Jan 26, 2026 at 10:21:57AM +0100, Vincent Guittot wrote:
-> +/*
-> + * Until now, there is no generic way to describe and set PCIe clock mode.
-> + * PCIe controller uses the default CRNS = 0 mode.
-> + */
-> +enum pcie_phy_mode {
-> +	CRNS = 0, /* Common Reference Clock, No Spread Spectrum */
-> +	CRSS = 1, /* Common Reference Clock, Spread Spectrum */
-> +	SRNS = 2, /* Separate Reference Clock, No Spread Spectrum */
-> +	SRIS = 3  /* Separate Reference Clock, Spread Spectrum */
+On Mon, Jan 26, 2026 at 10:21:58AM +0100, Vincent Guittot wrote:
+
+...
+
+> diff --git a/drivers/phy/freescale/phy-nxp-s32g-serdes.c b/drivers/phy/freescale/phy-nxp-s32g-serdes.c
+
+...
+
+> +static void s32g_serdes_prepare_pma_mode5(struct s32g_serdes *serdes)
+> +{
+> +	u32 val;
+> +	/* Configure TX_VBOOST_LVL and TX_TERM_CTRL */
+> +	val = readl(serdes->ctrl.ss_base + S32G_PCIE_PHY_EXT_MISC_CTRL_2);
+> +	val &= ~(EXT_TX_VBOOST_LVL_MASK | EXT_TX_TERM_CTRL_MASK);
+> +	val |= FIELD_PREP(EXT_TX_VBOOST_LVL_MASK, 0x3) |
+> +		FIELD_PREP(EXT_TX_TERM_CTRL_MASK, 0x4);
+> +	writel(val, serdes->ctrl.ss_base + S32G_PCIE_PHY_EXT_MISC_CTRL_2);
+
+This is part of an AI Generated review.
+I have looked over it and I think it warrants investigation.
+For information on how to reproduce locally, as I did, please see [1].
+
+	The entire s32g_serdes_prepare_pma_mode5() function is ~70 lines of
+	magic numbers with zero explanation. These appear to be
+	hardware-specific PLL/PHY tuning parameters for 2.5G mode.
+
+Please consider using #defines, to give values names.
+
+...
+
+> +static int s32g_serdes_init_clks(struct s32g_serdes *serdes)
+> +{
+> +	struct s32g_serdes_ctrl *ctrl = &serdes->ctrl;
+> +	struct s32g_xpcs_ctrl *xpcs = &serdes->xpcs;
+> +	int ret, order[2], xpcs_id;
+> +	size_t i;
+> +
+> +	switch (ctrl->ss_mode) {
+> +	case 0:
+> +		return 0;
+> +	case 1:
+> +		order[0] = 0;
+> +		order[1] = XPCS_DISABLED;
+> +		break;
+> +	case 2:
+> +	case 5:
+> +		order[0] = 1;
+> +		order[1] = XPCS_DISABLED;
+> +		break;
+> +	case 3:
+> +		order[0] = 1;
+> +		order[1] = 0;
+> +		break;
+> +	case 4:
+> +		order[0] = 0;
+> +		order[1] = 1;
+> +		break;
+> +	default:
+> +		return -EINVAL;
+
+AI review also flags that s32g_serdes_get_ctrl_resources() ensures that
+ss_mode is <= 5.  So this check is unnecessary.
+
+> +	}
+> +
+> +	for (i = 0; i < ARRAY_SIZE(order); i++) {
+> +		xpcs_id = order[i];
+> +
+> +		if (xpcs_id == XPCS_DISABLED)
+> +			continue;
+> +
+> +		ret = s32g_xpcs_init_plls(xpcs->phys[xpcs_id]);
+> +		if (ret)
+> +			return ret;
+> +	}
+> +
+> +	if (ctrl->ss_mode == 5) {
+> +		s32g_serdes_prepare_pma_mode5(serdes);
+> +
+> +		ret = s32g_xpcs_pre_pcie_2g5(xpcs->phys[1]);
+
+Also from the AI review:
+
+	In mode 5, code directly accesses xpcs->phys[1] without checking if
+	it was created. If XPCS1 wasn't created for some reason (DT
+	misconfiguration, probe failure), this NULL dereferences.
+
+...
+
+> @@ -460,6 +741,41 @@ static int s32g2_serdes_create_phy(struct s32g_serdes *serdes, struct device_nod
+
+...
+
+> +		xpcs = devm_kmalloc(dev, sizeof(*xpcs), GFP_KERNEL);
+> +		if (IS_ERR(xpcs)) {
+> +			dev_err(dev, "Failed to allocate xpcs\n");
+> +			return -ENOMEM;
+> +		}
+
+AI review also flags:
+
+	devm_kmalloc() returns NULL on failure, not an error pointer.
+	This check will never trigger.
+
+[1] https://netdev-ai.bots.linux.dev/ai-local.html
+
+> +
+> +		xpcs_ctrl->phys[port] = xpcs;
+> +
+> +		xpcs->an = of_property_read_bool(dev->of_node, "nxp,xpcs_an");
+
+AI review flags that nxp,xpcs_an is not part of the binding.
+
+...
+
+> +struct phylink_pcs *s32g_serdes_pcs_create(struct device *dev, struct device_node *np)
+> +{
+> +	struct platform_device *pdev;
+> +	struct device_node *pcs_np;
+> +	struct s32g_serdes *serdes;
+> +	u32 port;
+> +
+> +	if (of_property_read_u32(np, "reg", &port))
+> +		return ERR_PTR(-EINVAL);
+> +
+> +	if (port > S32G_SERDES_XPCS_MAX)
+> +		return ERR_PTR(-EINVAL);
+> +
+> +	/* The PCS pdev is attached to the parent node */
+> +	pcs_np = of_get_parent(np);
+> +	if (!pcs_np)
+> +		return ERR_PTR(-ENODEV);
+> +
+> +	if (!of_device_is_available(pcs_np)) {
+> +		of_node_put(pcs_np);
+> +		return ERR_PTR(-ENODEV);
+> +	}
+> +
+> +	pdev = of_find_device_by_node(pcs_np);
+> +	of_node_put(pcs_np);
+> +	if (!pdev || !platform_get_drvdata(pdev)) {
+> +		if (pdev)
+> +			put_device(&pdev->dev);
+> +		return ERR_PTR(-EPROBE_DEFER);
+> +	}
+> +
+> +	serdes = platform_get_drvdata(pdev);
+
+Also from the AI review:
+
+	On success, the function gets a reference to pdev but never
+	releases it. This leaks a device reference every time a MAC driver
+	calls s32g_serdes_pcs_create().
+
+> +
+> +	return &serdes->xpcs.phys[port]->pcs;
+
+Also from the AI review:
+
+	The check port > S32G_SERDES_XPCS_MAX allows port=2,
+	but array only has indices 0 and 1.
+
+Also I'm not seeing bounds checking on port in s32g2_serdes_create_phy
+which uses port as an index for the same array both directly and indirectly
+via s32g_serdes_xpcs_init().
+
+...
+
+> diff --git a/drivers/phy/freescale/phy-nxp-s32g-xpcs.c b/drivers/phy/freescale/phy-nxp-s32g-xpcs.c
+
+...
+
+> +static int s32g_xpcs_regmap_reg_read(void *context, unsigned int reg,
+> +				     unsigned int *result)
+> +{
+> +	struct s32g_xpcs *xpcs = context;
+> +	u16 ofsleft = (reg >> 8) & 0xffffU;
+> +	u16 ofsright = (reg & 0xffU);
+> +
+> +	writew(ofsleft, xpcs->base + ADDR1_OFS);
+> +	*result = readw(xpcs->base + (ofsright * 4));
+> +
+> +	return 0;
+> +}
+> +
+> +static int s32g_xpcs_regmap_reg_write(void *context, unsigned int reg,
+> +				      unsigned int val)
+> +{
+> +	struct s32g_xpcs *xpcs = context;
+> +	u16 ofsleft = (reg >> 8) & 0xffffU;
+> +	u16 ofsright = (reg & 0xffU);
+> +
+> +	writew(ofsleft, xpcs->base + ADDR1_OFS);
+> +	writew(val, xpcs->base + (ofsright * 4));
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct regmap_config s32g_xpcs_regmap_config = {
+> +	.reg_bits = 16,
+> +	.val_bits = 16,
+> +	.reg_read = s32g_xpcs_regmap_reg_read,
+> +	.reg_write = s32g_xpcs_regmap_reg_write,
+> +	.wr_table = &s32g_xpcs_wr_table,
+> +	.rd_table = &s32g_xpcs_rd_table,
+> +	.max_register = 0x1F80E1,
 > +};
 
-So this is a PCIe thing. If it's part of the driver's API, then it
-should be common and not driver-private.
+AI review also flags that s32g_xpcs_regmap_reg_read and
+s32g_xpcs_regmap_reg_write do not protect against concurrent access.
 
-> +static inline bool is_pcie_phy_mode_valid(int mode)
-> +{
-> +	switch (mode) {
-> +	case CRNS:
-> +	case CRSS:
-> +	case SRNS:
-> +	case SRIS:
-> +		return true;
-> +	default:
-> +		return false;
-> +	}
-> +}
-
-This checks that the submode is one of the PCIe private modes that this
-driver wants to see.
-
-> +
-> +static int s32g_serdes_phy_set_mode_ext(struct phy *p,
-> +					enum phy_mode mode, int submode)
-> +{
-> +	struct s32g_serdes *serdes = phy_get_drvdata(p);
-> +
-> +	if (mode == PHY_MODE_PCIE)
-> +		return -EINVAL;
-> +
-> +	if (!is_pcie_phy_mode_valid(submode))
-> +		return -EINVAL;
-
-This checks for the PCIe submode, but notice the test immediately
-above. PCIE mode is being rejected. So, this driver supports
-everything else but PCIe.
-
-That doesn't seem right.
-
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTP is here! 80Mbps down 10Mbps up. Decent connectivity at last!
+...
 
 -- 
 linux-phy mailing list
