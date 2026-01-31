@@ -4,78 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 56F43E6BF17
-	for <linux-phy@archiver.kernel.org>; Fri, 30 Jan 2026 14:50:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B9B3BD46C1D
+	for <linux-phy@archiver.kernel.org>; Sat, 31 Jan 2026 02:51:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5y2QHk57jeo0QbGQEtdn6tYLvp+1j+Lo3yfqGf7ESr4=; b=EFs87CRiM0Q99Q
-	8sVJCbTBthz5UIkR6xVWnwQezGqnZHzYcndxfZeAseXCoAxO+3NqHQhgOnLZS6ObsXLFWMwQVsdCR
-	F6PpfL5UYHYS/8NRnJhaSMPVrvk0I1oxZX82X+6EhNDcJPneneFFckAOzicIooVB2bOwBqYUR9Fxf
-	FtNMmMvGiNkojTdJYFNeeujeIHs7gR2o4+oLFIlWDUKAET0OMpPiIxpjsGH65/iIn7anhs75DnTjK
-	m2POc7fM1Rxi8ZZJvd6obh7g/z6asStbMMwSQsJqAXQYr7s++QbfpLz540kfil1djztHhQgCIuRD8
-	lPlLnJoAK0ujQ0rdQiqw==;
+	List-Owner; bh=bg5BFSOMMOOPAJKOXffbaIyPN3t/hqIe46m+wzxObF0=; b=bv3gOyPR2Hyul/
+	Wl00wORJdDNFVNHQshP9S2LSz+tHcIV2IsJTUehpjmVSImKG/OaXiVK19bWqebxfeJjJpxutbN6P9
+	5bBnkAms8RlI4In/1afXZriRgoWDhCdsn++EY3tTg/E4eQ0ZZn3nGKqcamAmxrh8oqYJ/1azzlGUY
+	T9IfYRlPdgXpZ3kK6xsDnhhzl5p3j0oDbFsV/YjYYsyJiZ93PSXTAhby6vis806leD8TeCjgyTIHd
+	0SAyLhc1XrXRelUYqr9e4r6tsZRlvi/08NVo5v1KssEoriwOk44rW0RTBXiSeJvRKwxXP26FVP4cw
+	VsPXg92/hjjBCcyzIyVQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vlppI-00000001bW7-3EZB;
-	Fri, 30 Jan 2026 14:50:24 +0000
-Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
+	id 1vm14u-00000002FMP-0d6P;
+	Sat, 31 Jan 2026 02:51:16 +0000
+Received: from abb.hmeau.com ([180.181.231.80])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vlppF-00000001bVj-46Sn;
-	Fri, 30 Jan 2026 14:50:23 +0000
+	id 1vm14o-00000002FLs-3ixj
+	for linux-phy@lists.infradead.org;
+	Sat, 31 Jan 2026 02:51:15 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
-	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
-	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=LZzYYZ47MhM5DbXuBFYv+5+5v+vkghMIaO5mgHVitCI=; b=WH5B80zX3ZnL/qn/O8PYSUOAQF
-	/EGSfRNsE7jPycCz+dQZZzZe8SalMBbiZQXiHm4FltNSMewf03zVxDP/jFqYOUFGteKF3Ngv9ZlkX
-	iFPNODNPoWnURYUS0Vhowsvpmae3wTfe19CCBUl2nXKX2jr7kMwHDiX5sVud9TSAtW5MiGjMh10pG
-	76sp88yzPMDzxq3EWeO0W4PYsh00qKNcAxFD4gkSKRE7vAdrMWHXnzx+56maqPQhpm5ZlcDkkBM4I
-	TqTTE7+ISJl9mtxhtXHZeSenO5EvjqZcSafwi0aQu66BUUbABkXv3Dkd8xHMQK889/gg8cyKUkp/c
-	RVy6FFaQ==;
-Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:35632)
-	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.98.2)
-	(envelope-from <linux@armlinux.org.uk>)
-	id 1vlpp4-000000001Cc-1afO;
-	Fri, 30 Jan 2026 14:50:10 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.98.2)
-	(envelope-from <linux@shell.armlinux.org.uk>)
-	id 1vlpp2-000000000b3-0oEH;
-	Fri, 30 Jan 2026 14:50:08 +0000
-Date: Fri, 30 Jan 2026 14:50:07 +0000
-From: "Russell King (Oracle)" <linux@armlinux.org.uk>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Vincent Guittot <vincent.guittot@linaro.org>, neil.armstrong@linaro.org,
-	Simon Horman <horms@kernel.org>, krzk+dt@kernel.org,
-	conor+dt@kernel.org, ciprianmarian.costea@oss.nxp.com, s32@nxp.com,
-	p.zabel@pengutronix.de, ghennadi.procopciuc@nxp.com,
-	Ionut.Vicovan@nxp.com, linux-phy@lists.infradead.org,
+	d=gondor.apana.org.au; s=h01; h=In-Reply-To:Content-Type:MIME-Version:
+	References:Message-ID:Subject:Cc:To:From:Date:cc:to:subject:message-id:date:
+	from:content-type:reply-to; bh=zHrmQwFLqA3OLiwbqOe/h4SuxVGBdkNc6DkN33Q2rhs=; 
+	b=bS7F/nbdMYLt3Bs8D0c9yg4djWYLv7cpXsdW3jahmAHVbcm9vR/EYuWY6+cjmYKKO7L7IevJO5c
+	uSwhPL7dPgEEXO3hyshrJuzl4H+RLnxZrM/nW8hNfdwlvbLHvZu6EtzBpDEcxOSn8ZfSYCzEBQ3Fc
+	IqWGqSgRkQjoj6wf3MxFIhAW2dJSrkhud0GHa4NLx0zB4+lSLaTHOXsG5MdyBnlsx9mijQomzW4d9
+	nTH9yyU0c4SzDra0tftXwTNEE8HCOs7a1yTC3vvYhyWz6k9pNu0IXyGeZJ+aY6NUbLV4z93YFcG28
+	nfoHo0XAM147lFuM6SLWYzDHEMx1/JE0sdRg==;
+Received: from loth.rohan.me.apana.org.au ([192.168.167.2])
+	by formenos.hmeau.com with smtp (Exim 4.96 #2 (Debian))
+	id 1vm14N-003Rv5-15;
+	Sat, 31 Jan 2026 10:50:44 +0800
+Received: by loth.rohan.me.apana.org.au (sSMTP sendmail emulation); Sat, 31 Jan 2026 10:50:43 +0800
+Date: Sat, 31 Jan 2026 10:50:43 +0800
+From: Herbert Xu <herbert@gondor.apana.org.au>
+To: Luca Weiss <luca.weiss@fairphone.com>
+Cc: "David S. Miller" <davem@davemloft.net>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Bjorn Andersson <andersson@kernel.org>,
+	Alim Akhtar <alim.akhtar@samsung.com>,
+	Avri Altman <avri.altman@wdc.com>,
+	Bart Van Assche <bvanassche@acm.org>, Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Konrad Dybcio <konradybcio@kernel.org>,
+	~postmarketos/upstreaming@lists.sr.ht, phone-devel@vger.kernel.org,
+	linux-arm-msm@vger.kernel.org, linux-crypto@vger.kernel.org,
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org, netdev@vger.kernel.org,
-	Frank.li@nxp.com
-Subject: Re: [PATCH 2/4] phy: s32g: Add serdes subsystem phy
-Message-ID: <aXzFH09AeIRawCwU@shell.armlinux.org.uk>
-References: <20260126092159.815968-1-vincent.guittot@linaro.org>
- <20260126092159.815968-3-vincent.guittot@linaro.org>
- <aXsuRTZUUnw0kdzV@horms.kernel.org>
- <CAKfTPtDfnpzq2CB-isVzvh1ZCWo7kit9KRJvVGoU1C3zZTgdXw@mail.gmail.com>
- <aXtfVUb0eLwP4R28@shell.armlinux.org.uk>
- <CAKfTPtCiJcNOdoddZN5N1dKHXfUJBe0=zeWfZ5uENoXDvbMnpQ@mail.gmail.com>
- <aXtl6eQ8zD_olTdc@shell.armlinux.org.uk>
- <aXtvDn_-pCuKPrnf@vaman>
- <aXtwfj1vqB1cXKFM@shell.armlinux.org.uk>
+	linux-scsi@vger.kernel.org, linux-phy@lists.infradead.org,
+	Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+Subject: Re: [PATCH v2 1/6] dt-bindings: crypto: qcom,inline-crypto-engine:
+ document the Milos ICE
+Message-ID: <aX1uAxZmO0ZR8c9e@gondor.apana.org.au>
+References: <20260112-milos-ufs-v2-0-d3ce4f61f030@fairphone.com>
+ <20260112-milos-ufs-v2-1-d3ce4f61f030@fairphone.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <aXtwfj1vqB1cXKFM@shell.armlinux.org.uk>
+In-Reply-To: <20260112-milos-ufs-v2-1-d3ce4f61f030@fairphone.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260130_065022_022928_8ED1898C 
-X-CRM114-Status: GOOD (  33.86  )
+X-CRM114-CacheID: sfid-20260130_185113_906248_9F9F7E46 
+X-CRM114-Status: UNSURE (   8.05  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,100 +86,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Jan 29, 2026 at 02:36:46PM +0000, Russell King (Oracle) wrote:
-> On Thu, Jan 29, 2026 at 08:00:38PM +0530, Vinod Koul wrote:
-> > On 29-01-26, 13:51, Russell King (Oracle) wrote:
-> > > On Thu, Jan 29, 2026 at 02:36:01PM +0100, Vincent Guittot wrote:
-> > > > On Thu, 29 Jan 2026 at 14:23, Russell King (Oracle)
-> > > > <linux@armlinux.org.uk> wrote:
-> > > > >
-> > > > > On Thu, Jan 29, 2026 at 02:01:13PM +0100, Vincent Guittot wrote:
-> > > > > > yes, the usual pattern is :
-> > > > > > - phy_set_mode_ext()
-> > > > > > - then phy_power_on()
-> > > > > > but I can add an additional check
-> > > > >
-> > > > > Please read Documentation/driver-api/phy/phy.rst section "Order of API
-> > > > > calls" which suggests phy_set_mode_ext() after phy_power_on().
-> > > > 
-> > > > Fair enough.
-> > > > That being said, all pcie drivers  that use phy_set_mode_ext(), call
-> > > > it before phy_power_on()
-> > > 
-> > > It looks like many ethernet drivers do the same, so I think maybe the
-> > > generic PHY documentation is incorrect or misleading, or is expressing
-> > > a preference that almost no one follows. Something for the generic PHY
-> > > maintainers to look at and/or comment on.
-> > 
-> > I would feel it makes sense to configure the mode first and then power
-> > the phy up. As commented above yes it looks like apart from one tegra
-> > driver rest seem to do it this way.
-> > 
-> > Lets update the documentation
+On Mon, Jan 12, 2026 at 02:53:14PM +0100, Luca Weiss wrote:
+> Document the Inline Crypto Engine (ICE) on the Milos SoC.
 > 
-> Please also indicate in the documentation whether changing the submode
-> of the serdes (particularly for ethernet) is permitted without doing a
-> phy_power_down()..phy_power_up() dance around the phy_set_mode_ext()
-> call.
+> Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+> Signed-off-by: Luca Weiss <luca.weiss@fairphone.com>
+> ---
+>  Documentation/devicetree/bindings/crypto/qcom,inline-crypto-engine.yaml | 1 +
+>  1 file changed, 1 insertion(+)
 
-Maybe something like this, which simply alters the documentation to
-indicate that phy_set_mode*() is permissible prior to phy_power_on(),
-and should be used at that point where drivers know the mode which
-will be used.
-
-Leaving the existing phy_set_mode*() in the sequence also indicates
-that it's permissible to call this while the PHY is still powered
-on.
-
-For drivers such as stmmac, it will be important that details such as
-whether phy_est_mode*() can be called with the PHY powered on are
-riveted down and not left up to the generic PHY driver author - without
-that, generic PHYs basically aren't usable from SoC/platform
-independent code, and stmmac has bazillions of platform specific glue
-already because of (a) bad code structuring and (b) lack of
-generalisation through standardised interfaces that abstract platform
-differences.
-
-I want to be able for core stmmac code, or even phylink code (which
-is even more platform generic) to be able to make use of generic PHY
-stuff, but if the calls that can be made into generic PHY are platform
-dependent, that is a blocking issue against that, and makes me question
-why we have the generic PHY subsystem... it's not very generic if it
-exposes the differences of each implementation to users of its
-interfaces.
-
-I think generic PHY has had the idea that its interfaces will only be
-used from platform specific code that knows about the behaviour of it's
-generic PHY driver, but as can be seen above, this will not remain the
-case given that we have hardware designs where the core of the driver
-is one vendor's IP that gets re-used across many different platforms,
-but the SerDes PHY is one of many other vendor's IP.
-
-diff --git a/Documentation/driver-api/phy/phy.rst b/Documentation/driver-api/phy/phy.rst
-index 719a2b3fd2ab..cf73e4fb0951 100644
---- a/Documentation/driver-api/phy/phy.rst
-+++ b/Documentation/driver-api/phy/phy.rst
-@@ -142,6 +142,7 @@ Order of API calls
- 
-     [devm_][of_]phy_get()
-     phy_init()
-+    [phy_set_mode[_ext]()]
-     phy_power_on()
-     [phy_set_mode[_ext]()]
-     ...
-@@ -154,7 +155,7 @@ but controllers should always call these functions to be compatible with other
- PHYs. Some PHYs may require :c:func:`phy_set_mode <phy_set_mode_ext>`, while
- others may use a default mode (typically configured via devicetree or other
- firmware). For compatibility, you should always call this function if you know
--what mode you will be using. Generally, this function should be called after
-+what mode you will be using. Generally, this function should be called before
- :c:func:`phy_power_on`, although some PHY drivers may allow it at any time.
- 
- Releasing a reference to the PHY
-
+Patch applied.  Thanks.
 -- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTP is here! 80Mbps down 10Mbps up. Decent connectivity at last!
+Email: Herbert Xu <herbert@gondor.apana.org.au>
+Home Page: http://gondor.apana.org.au/~herbert/
+PGP Key: http://gondor.apana.org.au/~herbert/pubkey.txt
 
 -- 
 linux-phy mailing list
