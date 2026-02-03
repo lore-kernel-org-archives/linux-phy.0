@@ -4,61 +4,168 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3AB26E8304E
-	for <linux-phy@archiver.kernel.org>; Tue,  3 Feb 2026 03:31:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 239D3E83054
+	for <linux-phy@archiver.kernel.org>; Tue,  3 Feb 2026 05:32:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References:Message-ID
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rtm2aUnz24DlDID8xsETPJxBBkm38PnkbxGzKpq/hjY=; b=Q67yUgUShveSFC
-	wb6jVZOzctX+CeoJVbau9zbEZeRfkhZdAt5PFCIcvtB8LoN/32//9ovxOye97CCuzbdZ7fGqG2KF4
-	Ov7KckYRAMDXjrfY8RfEsYRNFHugZ4Cv0kTa/z3VwA12lwVlE7gNn9Fy6Fku01kfNYRlTO+TAwzjJ
-	/EelTtLDQk9rCRJUVmkzmEBpDYqpZZ9oazvhO7RJKId/mBE7GMvOHINupUA4CBQnZl/09Bpz82AFi
-	oAMfEIVQQZS/EfkJwJJBbUmadNZKgm6UlP6snmhajmrZV6HoUowkGDF1W9Zp5xaOsiLdVr6KPgDx4
-	01URkPSVguGa0dcKwTjw==;
+	List-Owner; bh=SXrbiy/frOriH1EMlWygZk3ChbhDT3NZq/au7VHNQ/M=; b=j++8UUlVLD7P+u
+	keUTpwgkzawTHSzFwlvSEW04ebo0oDekN09tz2Iu5AgnneEAxq+aim8CUTt4BqagVM01a4Pwprm36
+	h8Z/YZUDzzW2XIvaSx76UKt+J3m1aq+PSicyti3t6isdQPcG+I38+z8Kl2iXVrNvgJgFrzyt8EOG7
+	EHVMFXbfAxv2zLV9kFSbKehDEPZjFN38SVN26gf04X8+ChJsX2RejF7NuDj5hhVh8RZG0tMGdO1qN
+	HqPODERaFFctVacQW0bC3mrELO8RQ4ulOJntNKrQ4B1GtVp29/r0DByAVy1EEcMGpElEp/lp3gZdw
+	Dy7HNMb2Ip8veh2x/htw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vn78Q-000000060de-3L9M;
-	Tue, 03 Feb 2026 03:31:26 +0000
-Received: from mail.aspeedtech.com ([211.20.114.72] helo=TWMBX01.aspeed.com)
+	id 1vn916-0000000673u-0rPq;
+	Tue, 03 Feb 2026 05:32:00 +0000
+Received: from mail-westus3azlp170120001.outbound.protection.outlook.com ([2a01:111:f403:c107::1] helo=PH8PR06CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vn78O-000000060ZJ-2hYp;
-	Tue, 03 Feb 2026 03:31:25 +0000
-Received: from TWMBX01.aspeed.com (192.168.0.62) by TWMBX01.aspeed.com
- (192.168.0.62) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.10; Tue, 3 Feb
- 2026 11:31:04 +0800
-Received: from [127.0.1.1] (192.168.10.13) by TWMBX01.aspeed.com
- (192.168.0.62) with Microsoft SMTP Server id 15.2.1748.10 via Frontend
- Transport; Tue, 3 Feb 2026 11:31:04 +0800
-From: Jacky Chou <jacky_chou@aspeedtech.com>
-Date: Tue, 3 Feb 2026 11:30:55 +0800
-Subject: [PATCH RESEND v9 3/3] MAINTAINERS: Add ASPEED PCIe PHY driver
+	id 1vn914-000000066zR-1OgO
+	for linux-phy@lists.infradead.org;
+	Tue, 03 Feb 2026 05:31:59 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=vlewA7fL1A2/g++nyvPwfXeGI0qcPmVfMVKfQbntQ8qE1IChfLyWfOVdk9GN+/M0MD4D1t4fs3U1n36EfpgH6IMTisuIOKlhiUoPAe1oWf0kTok/lYbGUlZ1pJ9ZQfKxSRWQBW+zzIFmyHJiQX1Y/o7EOkWTaSt/cbTwQZSlrXRuTvXmDovLtjE8q0j4K2yLneKCaeLf1hJZjzxbJJZyjqcjmquyr7IqfxCI5IJC9Nmpz84QcpkHWzfPzNWWzZLy8eHf0ocfA8PPAndGQ8Z3fq8GGcyxZnsb538CasicgCdv5A91sajuu1+2wBKTvfq1e8aSScMrVqQbb9vYUdUXsw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=fEgVtwIF3F4UvU9bLK/HGcpmYvtcynDfkcsxfTdGd4g=;
+ b=qsRBOMyJ6OpJ2Rp+lBmT1G6Si1Mgh1ScplOcWGRoYe3SScWDkUKB3NHUGWw/JstQOfAgmz+HNiyyNXHV/FvItbiDULXbI6UV+bzglecEer/DiKa1cgsio5uAVcyteMN8HurCvhnBh7RAczHWQdJjQRacX+KwuTQRT1trXb+HFWvxmlRbZrhilJwZTnStDqN+68uZNsH0qMmt9CpovQY2SiHBS0Ii0ZC8VbzQeDpPsHvDvnvAdk028xobLVQMUkHRd/xiG6J1JrwhMGlR4ZVAWmMcHnwsZ9POXOA0U9q1/L9mfqjjsYoZpOCtAZVVNcrwHOm9ZnU+gqDfKHz/g+2Djg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nvidia.com; dmarc=pass action=none header.from=nvidia.com;
+ dkim=pass header.d=nvidia.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=fEgVtwIF3F4UvU9bLK/HGcpmYvtcynDfkcsxfTdGd4g=;
+ b=HarxMPlK0QNsq8zdBEbqjEZcRoyT084Ds0s91hbmPfLJsWYZNqqz/cbAuASKvS8Vob+8ScFOzJCoxkRi9ZwZ36GZ2LYF64JdPtsOksmMwmVaxbhmd+hUKcXvDSYVsxQScHuutTmaRRmR9AXJlyY35blj8NZ7KdSO3EKY9HBx7YCvVRKNGOvDa9aQVL11Tmbu3hAS3b/9jjGOWzjIey+prptqOTT4gyKKvA8bfeslJXEaI90OvCieeRi0iePq66AVmfBREDBMzqY1NkddG3tvHmTWxmMOHyp+l93pTrA/7yNvNNtiaFdz7kEWxU9vHuSxFj3G224jEoR36V7DiGatKg==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nvidia.com;
+Received: from SJ2PR12MB9161.namprd12.prod.outlook.com (2603:10b6:a03:566::20)
+ by SA3PR12MB9180.namprd12.prod.outlook.com (2603:10b6:806:39b::18) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9564.16; Tue, 3 Feb
+ 2026 05:31:52 +0000
+Received: from SJ2PR12MB9161.namprd12.prod.outlook.com
+ ([fe80::d9d1:8c49:a703:b017]) by SJ2PR12MB9161.namprd12.prod.outlook.com
+ ([fe80::d9d1:8c49:a703:b017%4]) with mapi id 15.20.9587.010; Tue, 3 Feb 2026
+ 05:31:52 +0000
+From: Mikko Perttunen <mperttunen@nvidia.com>
+To: JC Kuo <jckuo@nvidia.com>, Vinod Koul <vkoul@kernel.org>,
+ Thierry Reding <thierry.reding@gmail.com>, Jon Hunter <jonathanh@nvidia.com>
+Cc: linux-phy@lists.infradead.org, linux-tegra@vger.kernel.org,
+ Jon Hunter <jonathanh@nvidia.com>
+Subject: Re: [PATCH] phy: tegra: xusb: Remove unused powered_on variable
+Date: Tue, 03 Feb 2026 14:31:46 +0900
+Message-ID: <5642332.Sb9uPGUboI@senjougahara>
+In-Reply-To: <20260202153314.1634145-1-jonathanh@nvidia.com>
+References: <20260202153314.1634145-1-jonathanh@nvidia.com>
+X-ClientProxiedBy: TY4PR01CA0108.jpnprd01.prod.outlook.com
+ (2603:1096:405:378::18) To LV3PR12MB9166.namprd12.prod.outlook.com
+ (2603:10b6:408:19c::13)
 MIME-Version: 1.0
-Message-ID: <20260203-upstream_pcie_rc-v9-3-899ee4efe94e@aspeedtech.com>
-References: <20260203-upstream_pcie_rc-v9-0-899ee4efe94e@aspeedtech.com>
-In-Reply-To: <20260203-upstream_pcie_rc-v9-0-899ee4efe94e@aspeedtech.com>
-To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Joel Stanley <joel@jms.id.au>, "Andrew
- Jeffery" <andrew@codeconstruct.com.au>
-CC: <linux-aspeed@lists.ozlabs.org>, <linux-phy@lists.infradead.org>,
-	<devicetree@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
-	<linux-kernel@vger.kernel.org>, Jacky Chou <jacky_chou@aspeedtech.com>
-X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1770089464; l=878;
- i=jacky_chou@aspeedtech.com; s=20251031; h=from:subject:message-id;
- bh=ukzk8V/+iAWF9vSX9HcoXRh6kD8Xte6R6G0Qmwo0orU=;
- b=G2CD879Xzlho3fMNFvzxuYw6vpDxxmu3kPHQoC7R0irjiN9C+xubhQ2NNQzDYi9eIaTbUhPsM
- p5ePUDdcGGVBFgY6mVCrSMZwJj6g2ntionuiImAp7GQIW0U1B6+BXtw
-X-Developer-Key: i=jacky_chou@aspeedtech.com; a=ed25519;
- pk=8XBx7KFM1drEsfCXTH9QC2lbMlGU4XwJTA6Jt9Mabdo=
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: SJ2PR12MB9161:EE_|SA3PR12MB9180:EE_
+X-MS-Office365-Filtering-Correlation-Id: 079df097-4b1c-4fde-6f92-08de62e58858
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|366016|10070799003|376014;
+X-Microsoft-Antispam-Message-Info: =?utf-8?B?OGd6aG9VSlo3RVRFQmYyWWNBZGxtK3B0OUtlTG5EaDZGNnphSEZOTnMrYmt1?=
+ =?utf-8?B?SXVLeHNmMFQvWlBDV054SFRqMVJidnBXMVhYSG9YdGVHWWtmMFRKYmtzQnha?=
+ =?utf-8?B?WWx0TEh3emtQZWVNVlNKVFV5bXJwczVYL3JyNXozQURmcXQwSDhpdloxc2NO?=
+ =?utf-8?B?Q3RCbzYxMWs4VW93UXh5SURGKzFDSkRQUzBqdURRT1JrSWJ6ZXJFcVNERll5?=
+ =?utf-8?B?VHFhWSsvSHRZdTNCQ2xHdHJtK205SFFtekFnUml0MndxenRxQXJPVW1QYXZL?=
+ =?utf-8?B?Ni9GMS9iTFZpQzdya1QwOGtrVUF3a0tRSlE5SHRrZTlhMDRCMFMxU1pqYWRM?=
+ =?utf-8?B?bUZuRXplRXZBdEhmeUZCUHhKeTlLWktpalBZU3ZRTURTVU9MRkgvQzVPTDB3?=
+ =?utf-8?B?SVNzN2t3V00rS0s4T0p3YmsvSXpwNHBub1kxekdXdmJIdEc3Z3dLUDh3YmZ1?=
+ =?utf-8?B?eDk3aVRDZDdlOEVvQnFWcCtidi8yYWF0TVQrL3hCTFh0cFJkN3FmS01DaVZx?=
+ =?utf-8?B?YUY1T1FIQzN5aUYyUjBVb1lNMG9md0lWQlBHZi9xU29pcnlEMjBtYWpKanhv?=
+ =?utf-8?B?NmIya01mUWxRcWZkWDJnNWx4aGlsaTEvRzViWWhlVHJHZFhJa3QwcnErU3di?=
+ =?utf-8?B?SkJtMUZRWGtpdEY3c1A1VVlGdU9KQXhYMUxhQnRDNXJ1THpjbGJodURUcXpz?=
+ =?utf-8?B?eFhkVUI3OGJqc0U2TkEwSmxaamU3dmd4REtSVkRZQTZrQWN6ZUFPTkdtU3c5?=
+ =?utf-8?B?NzMxQk9BVXBXbzNmMStUbGpLcnN3T3RMd3ZXcDk3Z0NXWG1qSExkYXpyRnMw?=
+ =?utf-8?B?c0pQQyt4eWphU05tQ0g1WXF5UTd2S2hVdFJPQVNZb3RSeHVLSE9pVW1XN3oy?=
+ =?utf-8?B?TDhhMzlxenEvYU83MHVuTFgwcmhuaTd5TGw0RnlybHJHQjZVbXJYYjd6bjRj?=
+ =?utf-8?B?NGdSZ3RkL2dtZE0zM21DWFpjZU9PNzBudG5HQ3l0VEFweEdXN0xRNmt2c1Ez?=
+ =?utf-8?B?OHJTeFIyQW91YjBPQjM4OUMvQUFLTTZYazBOSmdZQXdFU2JDdlZWd0k3UnZU?=
+ =?utf-8?B?UkFKRGl5NGx5N0JDNEJUM2xBT1RQK1M2Mll1bk1keEF6UlFyKzNpTFZQU2g4?=
+ =?utf-8?B?amYzZ2RwS1NxYTluNTFOa0hiZndkS1dndDFMU1BncmNoQXU3Y1gwRGZ3b3J3?=
+ =?utf-8?B?anRFcDhMNGRDQkltdDJNQmxFd1ZMR2NvVG81aFkrTFZjT3RNNzhEN0gwOFY5?=
+ =?utf-8?B?QU1OdGRJWkl3Z0dCOVFQSTh0RTJXZGZ5MCtUUUs0VFFSVjNPbUtEaFp3Zk85?=
+ =?utf-8?B?MUtFSDZIOVpDME5RT09yNEQ5dGpCbXl1NjVuSWZqNzRIUGlOWE5NaXd4bThV?=
+ =?utf-8?B?Szh3bnRFRkhBcTMzd3p0MTl0cnFnY1l0QlNoNE5Na3NpSy8xZVJJM2NtZUtD?=
+ =?utf-8?B?ODhMUEZZc3I5MndHdW1pOWxRTmlOckEzNzVzMlM3T1Z4NVQ0UXBUcHpRVFlH?=
+ =?utf-8?B?WEJnUUJiTWw2YXQ0NVZReThLWStqZUxkY052VERSMDFwdm1jQkthWHNyMjg0?=
+ =?utf-8?B?d0puWmxTNzNyK1NoSW96REF2OGJCbktPQWg5T1JjU3h0RjZpcVFUUEFhMXlE?=
+ =?utf-8?B?Ti80bm9KZTMyZHJ0NEJlNTh2Q1hBcGovYjZtVmtCejZWc3gzYzhEYnBSaHJk?=
+ =?utf-8?B?WFpqWncySnFOb3grZndCYXZDVURYN0ZrRmFTc29zcjNJSDNhWElFYWdmaWdE?=
+ =?utf-8?B?OU1TOURXRjlNbkNrUmtpWEh4QkpNazNRdFRNTzB6Yml6ZjJSa3ZqbWM0cnlu?=
+ =?utf-8?B?UFg0OUw5RnZWVXRNaTQrQlhMbzFFS0J4QWVtaEFoeWR1RXFkazFPRHZlTlhW?=
+ =?utf-8?B?Q1VXc2FJTmhrODNvTzhvbVR1K0w3WTdoZmthNFpXQmsxcUlSRmNYRWVwSmh3?=
+ =?utf-8?B?d3pPZjdTeDcybmpzK3JOWmtBL01mWkdLOEFqbDNJck40UEJMczdBbFFzSGE5?=
+ =?utf-8?B?bW9vaDVORTJGTTZlTW84YlRNS0tYOXQ5V3pnRWtBSWd4SVQybE1xVUUwUDRX?=
+ =?utf-8?B?bmh6SnFyZ1dHVmVhbXZUeUd1eGVKOHloUjNEczZUQWdjYUY0OGo2YWFHVG1p?=
+ =?utf-8?Q?2HNU=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SJ2PR12MB9161.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(10070799003)(376014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 2
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?VDRadmhKOUREbEdPSE1JQjNMbWZmalp0TW0zMElKUi9JdmxtNG45MStXREZX?=
+ =?utf-8?B?UTJoRU9zL0F0aUlXWmtkWTFqOEJGUGZLQmNDdHBxSzNLbzVURnhMQWlmNWNt?=
+ =?utf-8?B?WUtEWUlpQmFVYVRab1lMOU56TnFUaTB1aXYxcyt2TDJ4SkNqa2RXL3ZRVFkx?=
+ =?utf-8?B?cEhEMmJDOU5wWHd4U3MxUjF6RmJQT1ZPcXVNYlFlM1R3QVh2eVhnSVdNb0Jy?=
+ =?utf-8?B?OWtxMWdEOUcyRHRCaGNZUC8xT2sxVldzMERlZ3JROWlpaG9rOXplUmhzT1d5?=
+ =?utf-8?B?OGRicTFROGdoUmtnTDcweGx6OStzYkJ5UEFuUUo3OWVFN3F3eUplZFh4QWZ6?=
+ =?utf-8?B?WUkzMXNrR0IvR0pYbkg0elc5dWhFaGJ4amhYOFhzMHR0dGgwZFJGMjVpOGRD?=
+ =?utf-8?B?NEs1Y0tmdzFEK0JIZC9ta0ZpVE1sbEQzWVV6bjdmcHhsZWJQYndXSmdpSVE5?=
+ =?utf-8?B?N0UrbXkyeXZTYVk0UmJTOFNiUzZFVFNNVE5NUmwrQnQxcEN1QlB1ZjJBNE1G?=
+ =?utf-8?B?b3NOL0tIaEFWQXpGNXp0RlJCS05ROW5IQ01RN3pLbFc3amorWW80bUQ4czRk?=
+ =?utf-8?B?TUx2Y1FSYTNUTit4eUhxbFNJTDFZZCt1U0kxWThraCtGVFRKZy9XRVlDei9q?=
+ =?utf-8?B?VVJGUmpmN0ZXWno2c2s3dXN3bXE2TWIxVEx1WlFGeFZUcXZkUDY0d1pRMEM1?=
+ =?utf-8?B?b2c0RlZKb3NXSVNRUWRxME1OS2wwZnR5M0JJMnByRVhPUHh1Ti9zVERkWDV1?=
+ =?utf-8?B?aEdzKzdJcXZlTDBGSW52aTB0WnhQZmlWWmI0VHRibzJBNnNhMVV1Y21Bc2tS?=
+ =?utf-8?B?K2VWb3dXd1IxWE0wTENHbEtOWi8rMGN1ZjcxZEFxY2tlaEs3MmpwVHNJTFRl?=
+ =?utf-8?B?Vnl2Q1IwNHhKR1Q5bXlvaCtPWUthMHBicTNpZ1N4dnlwWUVjTktiQzdOVWZw?=
+ =?utf-8?B?SUQ5MXZJQmdpQlhTT0RnUXprNlZhSmNmUWJOWmhtdElJU3h1aUM2SXY0NUdy?=
+ =?utf-8?B?Ry9aaXp5T2lGcnU3TjNSUnpuS3RyVWg1ZHVRVjZCdXoycytQcEdMWjR6a1hh?=
+ =?utf-8?B?UUNrekp0Z2RId2hxT0JxU1hBZFExK2dEN1AwRVZySnQxbjgvbW1TbUNqWWg0?=
+ =?utf-8?B?enlkaEJudDVzR1pjTTZjbkFFQ1BWbUMrSnNFc1BLT0NqZC9BVHY2RDF5dEQ1?=
+ =?utf-8?B?OTNnZGw5VnpaU0gzQU1zYkJ4MTJNNFcxVFV1TjlMNnliV2w5MU50RUFqNHAz?=
+ =?utf-8?B?SVNaWkt2a0R2WTl1OXJ0TGErWHgzTHorSG42TzRnMU9IeVBSMG5BMG9PcXhE?=
+ =?utf-8?B?NmIwMXg2OEtrVDh3WkJScUdDUHhxVXU5akx5UGpENWlWcnMvNUhiSVVhYmFj?=
+ =?utf-8?B?elJVVHJudnRsdUFFL1hKVjNSUzRqa25sSGsvZDJMUXZKYkZ3MXk0VDdpallN?=
+ =?utf-8?B?KzFoTmlvQnJzU082Q0JEM2hydWpxY3l3eURrUnZZSURuaTc0dkNYMnd4UnA0?=
+ =?utf-8?B?aW96Z2RqcVIwd21kWmhzaEYzY2dBdkJyb0hGcEFvTFM2YndvYisrdTlyYW02?=
+ =?utf-8?B?cHY3YVpyMDNDZDRZYVZoaEVONHRpN29NUUdveDA5citCMThkZWtSVklNSHFB?=
+ =?utf-8?B?WDY5QmpvSE1DblRCK3hrUW5xcWs1L0pmL0hhb3JpQzZUNzFQR3BmTUtaWFpD?=
+ =?utf-8?B?QkVDd0pwQ0tabUpzZ1NZbEFVMitjQWVkclFEc3gvaGVMMjJYMFVRL25GVlcw?=
+ =?utf-8?B?Q2hsb0ZZR1RNVktWWm5sSVFKdmo4RkFud0VjQ1duTDhMWnh4TmRpcHByVmRE?=
+ =?utf-8?B?eFlrTTA2SEFmM0d2VU1qOXNJRlBiZitKMS8rL1lNZHF3OE0ySGw5U1JHWC8z?=
+ =?utf-8?B?WHhmSlE0UCtUcXlDQjZhWUZiL0JMNjlmTE5WbVAxL0ZrdVpKK1c1MW16ZXNj?=
+ =?utf-8?B?RExZZEdiaWNPK01xdENvclZGM0ZHUDE2bGRkM0VKOUFiMkN0WHVYUVkwYXFB?=
+ =?utf-8?B?L05XUUVEcnlqeDN0WmxVcXVlZnFhcXdEM092SEkvS2ZNOEJOSjVBWDVTTUhq?=
+ =?utf-8?B?cmwwY2NsckJla1NrM29tTWlrQlZ2TjBLWFZlay9RRllKcGVtc1BTSkUxTS9S?=
+ =?utf-8?B?Z2RNaENQTm9vVmZVY2svSmdHTHZnOVlCNCs3TWd0WllDc2g5UUFoSE42ME5R?=
+ =?utf-8?B?ekNHMWhFbDJ1V3pxMldicmU1c21EUURBUW5EUjV3Z0xGcUs4WDlHWmw1WEJn?=
+ =?utf-8?B?RVJQWVMyTUhiVXc1M3R6Mm50blB6bm5xSHZGSmhWem5GaE9DMDZ5NDZRQjFX?=
+ =?utf-8?B?a0xIbFZDZXJiSWVlNGNOdjQ1ZDQycDhIU1hrdi8zSnZHZE5vN1kwZGVUVXFE?=
+ =?utf-8?Q?qfQa/giJB3ngxd+1bjwyFcTWvvAvH4l0RmBWsMP2mTffJ?=
+X-MS-Exchange-AntiSpam-MessageData-1: WfHK+MksPsSs0w==
+X-OriginatorOrg: Nvidia.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 079df097-4b1c-4fde-6f92-08de62e58858
+X-MS-Exchange-CrossTenant-AuthSource: LV3PR12MB9166.namprd12.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Feb 2026 05:31:52.6669
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: jRju1ugK1JGNtl/9HypSL9LsntTO/bV6FJell5SMu2oqFrC6/qAccKejfkYiRJ/UQMNj5gEQ9xtcdrwL0wnWvg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SA3PR12MB9180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260202_193124_688132_91D5512C 
-X-CRM114-Status: UNSURE (   6.68  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260202_213158_394448_5768B251 
+X-CRM114-Status: GOOD (  12.03  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,43 +177,25 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add maintainer entry for ASPEED PCIe PHY driver.
-
-Signed-off-by: Jacky Chou <jacky_chou@aspeedtech.com>
----
- MAINTAINERS | 8 ++++++++
- 1 file changed, 8 insertions(+)
-
-diff --git a/MAINTAINERS b/MAINTAINERS
-index cf755238c429..a1979c574759 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -3844,6 +3844,14 @@ S:	Maintained
- F:	Documentation/devicetree/bindings/crypto/aspeed,*
- F:	drivers/crypto/aspeed/
- 
-+ASPEED PCIE PHY DRIVER
-+M:	Jacky Chou <jacky_chou@aspeedtech.com>
-+L:	linux-aspeed@lists.ozlabs.org (moderated for non-subscribers)
-+L:	linux-phy@lists.infradead.org
-+S:	Maintained
-+F:	Documentation/devicetree/bindings/phy/aspeed,ast2600-pcie-phy.yaml
-+F:	drivers/phy/aspeed/pcie-phy-aspeed.c
-+
- ASPEED PECI CONTROLLER
- M:	Iwona Winiarska <iwona.winiarska@intel.com>
- L:	linux-aspeed@lists.ozlabs.org (moderated for non-subscribers)
-
--- 
-2.34.1
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gVHVlc2RheSwgRmVicnVhcnkgMywgMjAyNiAxMjozM+KAr0FNIEpvbiBIdW50ZXIgd3JvdGU6
+Cj4gQ29tbWl0IGJiZjcxMTY4MmNkNSAoInBoeTogdGVncmE6IHh1c2I6IEFkZCBUZWdyYTE4NiBz
+dXBwb3J0IikgYWRkZWQgdGhlCj4gdmFyaWFibGUgJ3Bvd2VyZWRfb24nIHRvIHRoZSBzdHJ1Y3R1
+cmUgJ3RlZ3JhX3h1c2JfdXNiMl9sYW5lJyBidXQgaXQgaGFzCj4gbmV2ZXIgYmVlbiB1c2VkLiBU
+aGVyZWZvcmUsIHJlbW92ZSB0aGlzIHVudXNlZCB2YXJpYWJsZS4KPiAKPiBTaWduZWQtb2ZmLWJ5
+OiBKb24gSHVudGVyIDxqb25hdGhhbmhAbnZpZGlhLmNvbT4KPiAtLS0KPiAgZHJpdmVycy9waHkv
+dGVncmEveHVzYi5oIHwgMSAtCj4gIDEgZmlsZSBjaGFuZ2VkLCAxIGRlbGV0aW9uKC0pCj4gCj4g
+ZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGh5L3RlZ3JhL3h1c2IuaCBiL2RyaXZlcnMvcGh5L3RlZ3Jh
+L3h1c2IuaAo+IGluZGV4IGQyYjVmOTU2NTEzMi4uY2QyNzdkMGVkOWUxIDEwMDY0NAo+IC0tLSBh
+L2RyaXZlcnMvcGh5L3RlZ3JhL3h1c2IuaAo+ICsrKyBiL2RyaXZlcnMvcGh5L3RlZ3JhL3h1c2Iu
+aAo+IEBAIC02OSw3ICs2OSw2IEBAIHN0cnVjdCB0ZWdyYV94dXNiX3VzYjJfbGFuZSB7Cj4gIAlz
+dHJ1Y3QgdGVncmFfeHVzYl9sYW5lIGJhc2U7Cj4gIAo+ICAJdTMyIGhzX2N1cnJfbGV2ZWxfb2Zm
+c2V0Owo+IC0JYm9vbCBwb3dlcmVkX29uOwo+ICB9Owo+ICAKPiAgc3RhdGljIGlubGluZSBzdHJ1
+Y3QgdGVncmFfeHVzYl91c2IyX2xhbmUgKgo+IAoKUmV2aWV3ZWQtYnk6IE1pa2tvIFBlcnR0dW5l
+biA8bXBlcnR0dW5lbkBudmlkaWEuY29tPgoKCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QK
+bGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
+L21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
