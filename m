@@ -4,43 +4,43 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 94002E9D401
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Feb 2026 15:20:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C65A9E9D401
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Feb 2026 15:20:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K+R1fN4/qTCTaEF6UIKQevFe1/QPL/FN+oX2WD5Pku8=; b=Ghi1kh1wZDdj8t
-	EoKjrb6n4XxDzCoRq3MZ+y5T216e9rT9FPbVFV8WJsHdxHLEC85zDAxekWhiasqdFqgJoWZ1i7exk
-	6yq80jRr5wvlZtnQ9Ab11xH4QQcLhhT6Fm3ZsI4s7/MjA1UydWtrApI9hUUd2nvqYsHh1p3DutdSG
-	poMwbJy+RS12Q1rfvQM64Su5OTbMgP/S4X/5HgwMm63K89PL9MmvoGzfZdEbhEg3Hou1I30KhNTot
-	/W/QYM1GguOo30pHjrJsqTQ1Ix/AuT+KJd2qXyssmhIzJwht3fE+vvm79Iz3ClkCkHTZzCk6nlt9n
-	nOgEI6g7Tio78UOlc4Mg==;
+	List-Owner; bh=0lhGIlY4FrZIeKZeswJk31TRmtDha1MY8W7ePsT/+Cg=; b=J1XKdQ9PBw/xg6
+	4K6RJarwSfftIslJxxVfTVe99BJhjIbacpjs9nsIU/JMAwApp2iSbJmR83Y+CRHtbU1AbC299cvo6
+	aNTtNylGkigSDGWVSMobOpJJtroiw1fXv8aB7+SOcHMgulj2dAcJmuumb/hBxivDJ2Bu3dd2qEPrR
+	9zFKH8VruGmD+msD/l14/3cf0eY8yY6ElNUr0cvrjdkyXlIsT1gFqmHNaD2exUH8kjmWtYcjWKPxe
+	ij+6XsoVxAYWE2QuXGSwRhI7oDwbOj8pzEEHpRhfAAePuhQb48QuEe6wPAKKr5fKVn44A4Y+IQBX/
+	+HVnOeBxLLa75MNCl7Ow==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vnefk-00000008eKj-1A2Y;
-	Wed, 04 Feb 2026 15:20:04 +0000
+	id 1vnefq-00000008eMU-2FyR;
+	Wed, 04 Feb 2026 15:20:10 +0000
 Received: from zeus03.de ([194.117.254.33] helo=mail.zeus03.de)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vnefh-00000008eJP-1Mis
+	id 1vnefo-00000008eLe-2IVQ
 	for linux-phy@lists.infradead.org;
-	Wed, 04 Feb 2026 15:20:02 +0000
+	Wed, 04 Feb 2026 15:20:09 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
 	sang-engineering.com; h=date:from:to:cc:subject:message-id
-	:references:mime-version:content-type:in-reply-to; s=k1; bh=RTl3
-	4GdapOHrIFn2PsIr7Sa6lCunHmnETaAYG/rtoLw=; b=me/u1gQID+44jQjIesVI
-	qxsadN9LfXybobPB9QcuFB8skQaPT+uIozPEagA/w+78A09XQP/zu3W07vGxYxNu
-	R9DgZPmtDhZu/8vG/MA/U3QCizJ6h5rVTBV/XVv4Lgaq8n81m3swfOOhBs9+uwog
-	seJ76VcdLcG1LqPz0toy0VR8+bsNUW+AcvokqjjeergnSxqvAFLMvUP6tofpPv6X
-	QacoOUtIQ6/km4mduTorqF+DV44PFzt56fch+KJNRe72JaP05yGVSn9IBVae2Wu0
-	hetMvSlaz7Qv2rp70r8IchiOtk2wUpMFESyLtXYmqlGyNSbMfYVYFntOAyu878kC
-	ww==
-Received: (qmail 2408564 invoked from network); 4 Feb 2026 16:19:58 +0100
-Received: by mail.zeus03.de with UTF8SMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 4 Feb 2026 16:19:58 +0100
-X-UD-Smtp-Session: l3s3148p1@cTHPFgFKnLgqAAAQagvIAoH29ntsUY5F
-Date: Wed, 4 Feb 2026 16:19:58 +0100
+	:references:mime-version:content-type:in-reply-to; s=k1; bh=WcYB
+	VxLBzN05bdXXm58VZxYg22L2CN5+zoOZnZfZw14=; b=TITSY7QDqs41Sop+siRd
+	1tho1l/9ahyccHqLCXwIZHSw2EG+FWoC3cF17Xrh6/1JwiADM5p62YTCUvLHvvmz
+	Uv4tut+UaxTcxX1oYGZJmrOZuZMP41+OMfPOdATpFJDy/QFOyQxbLQPdDoUE2O+z
+	sSYsXVQ3qjIywdhSs/hZGp3DnDYmTCx3/QRnpcSaI48107S4vlW+Bj6ko0g+iGQI
+	z0tTofr3YylcIRA6RWZfyNxRtgKP1GZgSJaOKa9ZCT6fTLeR+FuX5inFdeY/KvsW
+	5ya/d+f9BpkFJYy11kEkq0QZqhlOlK4O2r7F+dl3syMxTMWwP0DBm9lvmuL9VRsZ
+	cQ==
+Received: (qmail 2408822 invoked from network); 4 Feb 2026 16:20:05 +0100
+Received: by mail.zeus03.de with UTF8SMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 4 Feb 2026 16:20:05 +0100
+X-UD-Smtp-Session: l3s3148p1@/YExFwFKwpUqAAAQagvIAoH29ntsUY5F
+Date: Wed, 4 Feb 2026 16:20:04 +0100
 From: Wolfram Sang <wsa+renesas@sang-engineering.com>
 To: Josua Mayer <josua@solid-run.com>
 Cc: Marc Kleine-Budde <mkl@pengutronix.de>,
@@ -64,17 +64,17 @@ Cc: Marc Kleine-Budde <mkl@pengutronix.de>,
 	linux-kernel@vger.kernel.org, linux-omap@vger.kernel.org,
 	linux-i2c@vger.kernel.org, linux-mmc@vger.kernel.org,
 	devicetree@vger.kernel.org, linux-renesas-soc@vger.kernel.org
-Subject: Re: [PATCH v8 4/7] phy: can-transceiver: drop temporary helper
- getting optional mux-state
-Message-ID: <aYNjniyEZ355QE28@shikoro>
+Subject: Re: [PATCH v8 5/7] i2c: omap: switch to new generic helper for
+ getting selected mux-state
+Message-ID: <aYNjpO3uJqO4N4r_@shikoro>
 References: <20260203-rz-sdio-mux-v8-0-024ea405863e@solid-run.com>
- <20260203-rz-sdio-mux-v8-4-024ea405863e@solid-run.com>
+ <20260203-rz-sdio-mux-v8-5-024ea405863e@solid-run.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260203-rz-sdio-mux-v8-4-024ea405863e@solid-run.com>
+In-Reply-To: <20260203-rz-sdio-mux-v8-5-024ea405863e@solid-run.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260204_072001_645229_BDD620C5 
-X-CRM114-Status: UNSURE (   8.37  )
+X-CRM114-CacheID: sfid-20260204_072008_864667_C6BB5347 
+X-CRM114-Status: UNSURE (   9.08  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -92,16 +92,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Feb 03, 2026 at 03:01:37PM +0200, Josua Mayer wrote:
-> Multiplexer subsystem has now added helpers for getting managed optional
-> mux-state.
+On Tue, Feb 03, 2026 at 03:01:38PM +0200, Josua Mayer wrote:
+> Multiplexer subsystem has added generic helper functions for getting an
+> already selected mux-state object.
 > 
-> Switch to the new devm_mux_state_get_optional helper.
+> Replace existing logic in probe with the equivalent helper function.
+> 
+> There is a functional difference in that the mux is now automatically
+> deselected on release, replacing the explicit mux_state_deselect call.
 > 
 > This change is only compile-tested.
 > 
-> Acked-by: Vinod Koul <vkoul@kernel.org>
 > Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
+> Reviewed-by: Andreas Kemnade <andreas@kemnade.info>
 > Signed-off-by: Josua Mayer <josua@solid-run.com>
 
 Reviewed-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
