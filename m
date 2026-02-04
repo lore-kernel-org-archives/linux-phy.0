@@ -4,43 +4,43 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C65A9E9D401
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Feb 2026 15:20:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 10A95E9D401
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Feb 2026 15:20:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0lhGIlY4FrZIeKZeswJk31TRmtDha1MY8W7ePsT/+Cg=; b=J1XKdQ9PBw/xg6
-	4K6RJarwSfftIslJxxVfTVe99BJhjIbacpjs9nsIU/JMAwApp2iSbJmR83Y+CRHtbU1AbC299cvo6
-	aNTtNylGkigSDGWVSMobOpJJtroiw1fXv8aB7+SOcHMgulj2dAcJmuumb/hBxivDJ2Bu3dd2qEPrR
-	9zFKH8VruGmD+msD/l14/3cf0eY8yY6ElNUr0cvrjdkyXlIsT1gFqmHNaD2exUH8kjmWtYcjWKPxe
-	ij+6XsoVxAYWE2QuXGSwRhI7oDwbOj8pzEEHpRhfAAePuhQb48QuEe6wPAKKr5fKVn44A4Y+IQBX/
-	+HVnOeBxLLa75MNCl7Ow==;
+	List-Owner; bh=jJkpv0b7BwWSZLfGizo1ZEdOj4cSLip/f4/ngOPejUY=; b=avssWLczNN0fkG
+	GaZlNqd32rqKeisH3EMIBhqa5N20VzZshZ8fsbxYC6+rqpGFscAMZgW6+Da300qy1L/c6bwNt+Uy2
+	+DyHpTNisNsNyUSgucS7ONLmIKNhXR8x2treAlMcXvFRxKZFyLB4z2bSdKKzR4yhY8GxbW5/5mYeY
+	35wwMThMjvC0ZJNIiLZj5dZoDGu6R4KhPG6c0bJjiHz7nfDtRV/E6hC2d/X3vzigD7ngV9lLfW31m
+	f1qNpRHZ/Dlb1dGOgme1NhQRaqefauI0jp9gZh6q/MGI86GvhHyYqsfVZTuZLKqy+PeRJd39SahNK
+	W2qMxkJiTgg/QJKJi8MA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vnefq-00000008eMU-2FyR;
-	Wed, 04 Feb 2026 15:20:10 +0000
+	id 1vnegF-00000008ePW-3L2c;
+	Wed, 04 Feb 2026 15:20:35 +0000
 Received: from zeus03.de ([194.117.254.33] helo=mail.zeus03.de)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vnefo-00000008eLe-2IVQ
+	id 1vnegC-00000008eOu-28ZJ
 	for linux-phy@lists.infradead.org;
-	Wed, 04 Feb 2026 15:20:09 +0000
+	Wed, 04 Feb 2026 15:20:34 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
 	sang-engineering.com; h=date:from:to:cc:subject:message-id
-	:references:mime-version:content-type:in-reply-to; s=k1; bh=WcYB
-	VxLBzN05bdXXm58VZxYg22L2CN5+zoOZnZfZw14=; b=TITSY7QDqs41Sop+siRd
-	1tho1l/9ahyccHqLCXwIZHSw2EG+FWoC3cF17Xrh6/1JwiADM5p62YTCUvLHvvmz
-	Uv4tut+UaxTcxX1oYGZJmrOZuZMP41+OMfPOdATpFJDy/QFOyQxbLQPdDoUE2O+z
-	sSYsXVQ3qjIywdhSs/hZGp3DnDYmTCx3/QRnpcSaI48107S4vlW+Bj6ko0g+iGQI
-	z0tTofr3YylcIRA6RWZfyNxRtgKP1GZgSJaOKa9ZCT6fTLeR+FuX5inFdeY/KvsW
-	5ya/d+f9BpkFJYy11kEkq0QZqhlOlK4O2r7F+dl3syMxTMWwP0DBm9lvmuL9VRsZ
-	cQ==
-Received: (qmail 2408822 invoked from network); 4 Feb 2026 16:20:05 +0100
-Received: by mail.zeus03.de with UTF8SMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 4 Feb 2026 16:20:05 +0100
-X-UD-Smtp-Session: l3s3148p1@/YExFwFKwpUqAAAQagvIAoH29ntsUY5F
-Date: Wed, 4 Feb 2026 16:20:04 +0100
+	:references:mime-version:content-type:in-reply-to; s=k1; bh=5kVD
+	7ZK9Rq23Qxm48/E+ZFq7Pb5/q5q9CtWAw8ENk6E=; b=iDpy+5WfmKVMGBdFV1J0
+	TTN9JXlJV5HJke6dbOTEr1Pm5y8G154f9cmqBmOXADSN2kRoD3SpaCHWXLPXP61Y
+	/fp+4soTFLjWl9pPqXaROxx3PsbYP0S0db4hULK5VH3birII1GsFakt1p1ox2W6s
+	sxjwWEgA4KDUOpUSkSNqYy617igJtb0LCGgG5Wal49PxWywiM759fVT+T2EtzsM3
+	YH2NGM38qRfytJh6kerYU4wAW0Pmwb+NytZSaLf41PqSM8iEZl1Op209hizKS6oP
+	C/L9xLKMoGbMEW3RVVQn6V3Z3+o+tr8zETZbaCfINoqAMrJSWBXYr0vJjflnD6r3
+	eQ==
+Received: (qmail 2409086 invoked from network); 4 Feb 2026 16:20:29 +0100
+Received: by mail.zeus03.de with UTF8SMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 4 Feb 2026 16:20:29 +0100
+X-UD-Smtp-Session: l3s3148p1@jBqoGAFK5LAqAAAQagvIAoH29ntsUY5F
+Date: Wed, 4 Feb 2026 16:20:28 +0100
 From: Wolfram Sang <wsa+renesas@sang-engineering.com>
 To: Josua Mayer <josua@solid-run.com>
 Cc: Marc Kleine-Budde <mkl@pengutronix.de>,
@@ -64,18 +64,17 @@ Cc: Marc Kleine-Budde <mkl@pengutronix.de>,
 	linux-kernel@vger.kernel.org, linux-omap@vger.kernel.org,
 	linux-i2c@vger.kernel.org, linux-mmc@vger.kernel.org,
 	devicetree@vger.kernel.org, linux-renesas-soc@vger.kernel.org
-Subject: Re: [PATCH v8 5/7] i2c: omap: switch to new generic helper for
- getting selected mux-state
-Message-ID: <aYNjpO3uJqO4N4r_@shikoro>
+Subject: Re: [PATCH v8 6/7] dt-bindings: mmc: renesas,sdhi: Add mux-states
+ property
+Message-ID: <aYNjvPS6FVQ3JDmc@shikoro>
 References: <20260203-rz-sdio-mux-v8-0-024ea405863e@solid-run.com>
- <20260203-rz-sdio-mux-v8-5-024ea405863e@solid-run.com>
+ <20260203-rz-sdio-mux-v8-6-024ea405863e@solid-run.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260203-rz-sdio-mux-v8-5-024ea405863e@solid-run.com>
+In-Reply-To: <20260203-rz-sdio-mux-v8-6-024ea405863e@solid-run.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260204_072008_864667_C6BB5347 
-X-CRM114-Status: UNSURE (   9.08  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260204_072032_824096_718F08C5 
+X-CRM114-Status: GOOD (  10.06  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,19 +91,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Feb 03, 2026 at 03:01:38PM +0200, Josua Mayer wrote:
-> Multiplexer subsystem has added generic helper functions for getting an
-> already selected mux-state object.
+On Tue, Feb 03, 2026 at 03:01:39PM +0200, Josua Mayer wrote:
+> Add mux controller support for data or control lines that are muxed
+> between a host and multiple cards.
 > 
-> Replace existing logic in probe with the equivalent helper function.
+> There are several devices supporting a choice of eMMC or SD on a single
+> board by both dip switch and gpio, e.g. Renesas RZ/G2L SMARC SoM and
+> SolidRun RZ/G2L SoM.
 > 
-> There is a functional difference in that the mux is now automatically
-> deselected on release, replacing the explicit mux_state_deselect call.
+> In-tree dts for the Renesas boards currently rely on preprocessor macros
+> and gpio hogs to describe the respective cards.
 > 
-> This change is only compile-tested.
+> By adding mux-states property to sdhi controller description, boards can
+> correctly describe the mux that already exists in hardware - and drivers
+> can coordinate between mux selection and probing for cards.
 > 
-> Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
-> Reviewed-by: Andreas Kemnade <andreas@kemnade.info>
+> Acked-by: Rob Herring (Arm) <robh@kernel.org>
 > Signed-off-by: Josua Mayer <josua@solid-run.com>
 
 Reviewed-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
