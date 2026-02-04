@@ -4,89 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 062C0E9D407
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Feb 2026 15:44:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 55189E9D403
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Feb 2026 15:47:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KNtRX6/709rdysHMquc4OgpIPGSDDZJGDVuNLz24osk=; b=LDWmWpfUQQvIMa
-	tNl6HkSNN9N086sDW0AK9zpREroVsJB9bRCBdfbxTlfKY6n0qCdK0yoKezfJOiq25wNJ/XRe2ZLl1
-	7xUJZZVer+xu998Lzj/vqfyhF1cxGLwN/RVB5jltFyHF2/NE3tWFd41/aTydfwOSCRDL6guyq3TVJ
-	KvTM4zKQEan0EfX79FKaXaQA+VqtBx1jWEEQfDEpDMgsiOrLzBIvkPMFjayPPJLbGBVMtAqLgLKo/
-	t/Yf2reeTSXblqoU0+7aCOvFNKyuOlyL0T3s4oxKK1XWL21yjtmR11ShwtYXxsrsn4Fp3TlXBYHN3
-	JtEY+WC++mpuQPNjOe+A==;
+	List-Owner; bh=MAf39GoMLU99jBQ3jlhWqC1Fnz8QQTDPybGKdAtLgK0=; b=3iGs/gYAaXdqMZ
+	PhVC8SCqEOmWkz+8M/gxteuimeu/7snVXl7SI8L9RRkoMHCb5f4vagF20k3lSaw2bp8AporBKETax
+	uDxMqMN68wdhW/zkjkn1SgTIKEVIoEhFyxyRr+UmtM37GxY4TS8frF5yHqqp0HTXrrD683f4Ttta3
+	AktcvbkbYOlS/tspAMhaeFL58oCAnNc68X5BfgDPtC/mwGM2kL3Y2FzlPbTpu6CDciXotQ3N3Wgsn
+	EGUf0ZroqG4sfs0mrsrDJ5nSEQdQCPnElH09wvebQ0/WxZW99r4C0thgLzFPqPTdgztkZgUAYEx2I
+	z1j0z6eai8u2LZLhIzzw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vnf3T-00000008h0B-3A1t;
-	Wed, 04 Feb 2026 15:44:35 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1vnf5w-00000008hD5-3wie;
+	Wed, 04 Feb 2026 15:47:09 +0000
+Received: from zeus03.de ([194.117.254.33] helo=mail.zeus03.de)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vnf3Q-00000008gza-3syC;
-	Wed, 04 Feb 2026 15:44:34 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 9209F443E9;
-	Wed,  4 Feb 2026 15:44:32 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 86463C4AF09;
-	Wed,  4 Feb 2026 15:44:20 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1770219872;
-	bh=+SiVY+/yNC7rLAU4MsNDlaFmt/l6M3hSIaCT9ls3sWA=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=ChyBoGK2yE6SGuM1Drf5M172SdoJACKZFUrrNsUyxs9tGn1I7qqhqJE3n0SdMuKH8
-	 WBsiwmPVq8rOQ6GO0hIm6TfZIkR7fNFOFSnqJ6Wdc5I/3L23nQxD+pLZgfso/lsmdU
-	 N1ft/ntOh+AHs/UCG+Km7aago4ldSONLc+3r2AOXwQZfUcNSU1niG9vFP8cVLMaEBv
-	 VG4YKOSwN1dDXgyUhW0x6meOz/fA8+ehA5Aie8KkSz3fTjfCixIQW19ESOaqSx9ox7
-	 M5PMr/5rexa0xvN6NnkgCdEKKhyKZgRD5vul5MiJBcLirTLb81zxgj6ptueMw8TKGG
-	 fD9D5P7F7CkxQ==
-From: Vinod Koul <vkoul@kernel.org>
-To: Michael Turquette <mturquette@baylibre.com>, 
- Stephen Boyd <sboyd@kernel.org>, Brian Masney <bmasney@redhat.com>
-Cc: linux-clk@vger.kernel.org, linux-kernel@vger.kernel.org, 
- Chen Wang <unicorn_wang@outlook.com>, Inochi Amaoto <inochiama@gmail.com>, 
- sophgo@lists.linux.dev, Chen-Yu Tsai <wens@kernel.org>, 
- Maxime Ripard <mripard@kernel.org>, 
- Jernej Skrabec <jernej.skrabec@gmail.com>, 
- Samuel Holland <samuel@sholland.org>, linux-arm-kernel@lists.infradead.org, 
- linux-sunxi@lists.linux.dev, 
- Alexandre Belloni <alexandre.belloni@bootlin.com>, 
- linux-rtc@vger.kernel.org, 
- =?utf-8?q?Andreas_F=C3=A4rber?= <afaerber@suse.de>, 
- Manivannan Sadhasivam <mani@kernel.org>, linux-actions@lists.infradead.org, 
- Keguang Zhang <keguang.zhang@gmail.com>, linux-mips@vger.kernel.org, 
- Taichi Sugaya <sugaya.taichi@socionext.com>, 
- Takao Orito <orito.takao@socionext.com>, Jacky Huang <ychuang3@nuvoton.com>, 
- Shan-Chun Hung <schung@nuvoton.com>, Vladimir Zapolskiy <vz@mleia.com>, 
- Piotr Wojtaszczyk <piotr.wojtaszczyk@timesys.com>, 
- Bjorn Andersson <andersson@kernel.org>, linux-arm-msm@vger.kernel.org, 
- Orson Zhai <orsonzhai@gmail.com>, 
- Baolin Wang <baolin.wang@linux.alibaba.com>, 
- Chunyan Zhang <zhang.lyra@gmail.com>, 
- Maxime Coquelin <mcoquelin.stm32@gmail.com>, 
- Alexandre Torgue <alexandre.torgue@foss.st.com>, 
- linux-stm32@st-md-mailman.stormreply.com, 
- Michal Simek <michal.simek@amd.com>, 
- Rob Clark <robin.clark@oss.qualcomm.com>, 
- Dmitry Baryshkov <lumag@kernel.org>, David Airlie <airlied@gmail.com>, 
- Simona Vetter <simona@ffwll.ch>, Abhinav Kumar <abhinav.kumar@linux.dev>, 
- Jessica Zhang <jesszhan0024@gmail.com>, Sean Paul <sean@poorly.run>, 
- Marijn Suijten <marijn.suijten@somainline.org>, 
- dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org, 
- Neil Armstrong <neil.armstrong@linaro.org>, linux-phy@lists.infradead.org
-In-Reply-To: <20260108-clk-divider-round-rate-v1-0-535a3ed73bf3@redhat.com>
-References: <20260108-clk-divider-round-rate-v1-0-535a3ed73bf3@redhat.com>
-Subject: Re: (subset) [PATCH 00/27] clk: remove deprecated API
- divider_round_rate() and friends
-Message-Id: <177021986017.133434.7084660742419779164.b4-ty@kernel.org>
-Date: Wed, 04 Feb 2026 21:14:20 +0530
+	id 1vnf5t-00000008hCi-3z9A
+	for linux-phy@lists.infradead.org;
+	Wed, 04 Feb 2026 15:47:07 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	sang-engineering.com; h=date:from:to:cc:subject:message-id
+	:references:mime-version:content-type:in-reply-to; s=k1; bh=9pjd
+	1Z0abUIs/vb7jSYDYMKbNGzdvIiPE6k3qOxN4n0=; b=mVzufcXf2pCcfgow2H4I
+	4WfypG+vvaw0CzCW++E6pTpghodG+FWoDs6BVs6KJ0S5ax+QoUq9WKejdXaFgdDC
+	zLja6YCEkfnadgfeB1VGSe2SCvda7B7N7i2L8+ThOPWO9qFK20FjQCcWYDFmzdBC
+	20U6oQTvaFskSjER5kpMuCM4lZEjNlShSfl00FqW0aiQcE2/I0pnskekj+3kXGSG
+	4vayQRhLxRv0jJveM/536o64o1xRf/RQb4L8pfKRfs7W9BdcEh6qNzsELNadNr4O
+	XcQcEjfYwfip0kGKCO/okuRxMzt2MGQVFxckDlBloIeyrt5bstYIvkkuhSTgNxB3
+	cg==
+Received: (qmail 2418933 invoked from network); 4 Feb 2026 16:47:02 +0100
+Received: by mail.zeus03.de with UTF8SMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 4 Feb 2026 16:47:02 +0100
+X-UD-Smtp-Session: l3s3148p1@UtCVdwFKnOkqAAAQagvIAoH29ntsUY5F
+Date: Wed, 4 Feb 2026 16:47:01 +0100
+From: Wolfram Sang <wsa+renesas@sang-engineering.com>
+To: Josua Mayer <josua@solid-run.com>
+Cc: Marc Kleine-Budde <mkl@pengutronix.de>,
+	Vincent Mailhol <mailhol@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Peter Rosin <peda@axentia.se>, Aaro Koskinen <aaro.koskinen@iki.fi>,
+	Andreas Kemnade <andreas@kemnade.info>,
+	Kevin Hilman <khilman@baylibre.com>,
+	Roger Quadros <rogerq@kernel.org>, Tony Lindgren <tony@atomide.com>,
+	Janusz Krzysztofik <jmkrzyszt@gmail.com>,
+	Vignesh R <vigneshr@ti.com>, Andi Shyti <andi.shyti@kernel.org>,
+	Ulf Hansson <ulf.hansson@linaro.org>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	Magnus Damm <magnus.damm@gmail.com>,
+	Yazan Shhady <yazan.shhady@solid-run.com>,
+	Jon Nettleton <jon@solid-run.com>,
+	Mikhail Anikin <mikhail.anikin@solid-run.com>,
+	linux-can@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org, linux-omap@vger.kernel.org,
+	linux-i2c@vger.kernel.org, linux-mmc@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-renesas-soc@vger.kernel.org
+Subject: Re: [PATCH v8 7/7] mmc: host: renesas_sdhi_core: support selecting
+ an optional mux
+Message-ID: <aYNp9Uqj-Sq67T7N@shikoro>
+References: <20260203-rz-sdio-mux-v8-0-024ea405863e@solid-run.com>
+ <20260203-rz-sdio-mux-v8-7-024ea405863e@solid-run.com>
 MIME-Version: 1.0
-X-Mailer: b4 0.13.0
+Content-Disposition: inline
+In-Reply-To: <20260203-rz-sdio-mux-v8-7-024ea405863e@solid-run.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260204_074433_006594_D7A96FF3 
-X-CRM114-Status: UNSURE (   9.36  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260204_074706_265937_FA9C3197 
+X-CRM114-Status: GOOD (  11.84  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,28 +91,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Thu, 08 Jan 2026 16:16:18 -0500, Brian Masney wrote:
-> Here's a series that gets rid of the deprecated APIs
-> divider_round_rate(), divider_round_rate_parent(), and
-> divider_ro_round_rate_parent() since these functions are just wrappers
-> for the determine_rate variant.
+On Tue, Feb 03, 2026 at 03:01:40PM +0200, Josua Mayer wrote:
+> Some hardware designs route data or control signals through a mux to
+> support multiple devices on a single sdhi controller.
 > 
-> Note that when I converted some of these drivers from round_rate to
-> determine_rate, this was mistakenly converted to the following in some
-> cases:
+> In particular SolidRun RZ/G2L/G2LC/V2L System on Module use a mux for
+> switching between soldered eMMC and an optional microSD on a carrier
+> board, e.g. for development or provisioning.
 > 
-> [...]
+> SD/SDIO/eMMC are not well suited for runtime switching between different
+> cards, however boot-time selection is possible and useful - in
+> particular considering dt overlays.
+> 
+> Add support for an optional SD/SDIO/eMMC mux defined in dt, and select
+> it during probe.
+> 
+> Similar functionality already exists in other places, e.g. i2c-omap.
+> 
+> Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
+> Signed-off-by: Josua Mayer <josua@solid-run.com>
 
-Applied, thanks!
+And to confirm the obvious, no regression found on a Renesas SparrowHawk
+(R-Car V4H) not using muxes:
 
-[25/27] phy: ti: phy-j721e-wiz: convert from divider_round_rate() to divider_determine_rate()
-        commit: dbeea86fecef7cf2b93aded4525d74f6277376ef
-
-Best regards,
--- 
-~Vinod
-
+Tested-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
 
 
 -- 
