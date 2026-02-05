@@ -4,74 +4,138 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6BE45E9128E
-	for <linux-phy@archiver.kernel.org>; Thu,  5 Feb 2026 08:22:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4C850E9129A
+	for <linux-phy@archiver.kernel.org>; Thu,  5 Feb 2026 09:21:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=chHalsewrKN467rDzqMzqXDz2CiaaAVQa5SOeA2Artw=; b=pD5Ke1BF2s22jw
-	top4pGSgogb1x5zGpaThDaLAE7ZfyVxFg5R82hjjdp0dBZTWRBcK5ld70xgfq6ttG3JvmjmtGwJhm
-	cIqeDEhXljuU+pJOB8FxaAqzjknUvA8qo+OxjFWK0QmD8d+f3w4quUjMX3Svb3EX4sZB8X+nCREvJ
-	rJvjTIEQKFm0hQuj+7pp9b5ZcqnKDv/1tsOAKI4RVzXpxc/5hxOrOVghVQIFiqgWSx7NCBj8US1DT
-	ApRArzxDHhznBJzgqagcFhbzrbWePjuT2+RF1QQAQtgSfWTsx5buuJGt8kI8c1YEPaJE0EnRXF8U5
-	Yb7lDPMBkwtCMYU3iS1g==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=taXqVVADGbl3h44kQv7n9NLC0N5q1T5o5bL23klHSXk=; b=h/nf+XPJ5FhtI1
+	dFjHFOdK0SaAcb2LhlXvwb2uMbu0GDEP9nTZYcISxHcEYPiJPdp1uEI0/rkotKlqhIJlwAMTS4ul5
+	i7FFZsN/zf3A3+GqUWVn/+Gf6KlV9+nUWhEitSrKbpngrwcxcml9s45bpDYJywC2SCoGDYpn3SFv4
+	8Ih4nnDBgRG9qhcOrjkLWHV/aEevLNqPOD9Kwju29lD2DhduvfGDhOAZP8yKmCXOzRwCfnKlL7gh9
+	QOjRvHzSMuAWII6Lc1PtnVJU3LrNmLpHH9X1T2YKa7Vv4wF0rRth4f0yLsDd85z+2rkYnxP5iiwK5
+	ZQuTw6ugzWyicXwM4WXg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vnudB-00000009bkk-0Khf;
-	Thu, 05 Feb 2026 08:22:29 +0000
-Received: from azure-sdnproxy.icoremail.net ([52.237.72.81])
-	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vnud7-00000009bjq-1xEv
+	id 1vnvXy-00000009gsi-3UEK;
+	Thu, 05 Feb 2026 09:21:10 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1vnvXw-00000009grn-29Fu
 	for linux-phy@lists.infradead.org;
-	Thu, 05 Feb 2026 08:22:27 +0000
-Received: from E0006800LT.eswin.cn (unknown [10.12.96.77])
-	by app1 (Coremail) with SMTP id TAJkCgCn9zc9U4RpIuoCAA--.13763S2;
-	Thu, 05 Feb 2026 16:22:23 +0800 (CST)
-From: Yulin Lu <luyulin@eswincomputing.com>
-To: vkoul@kernel.org,
-	neil.armstrong@linaro.org,
-	robh@kernel.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	p.zabel@pengutronix.de,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Cc: ningyu@eswincomputing.com,
-	linmin@eswincomputing.com,
-	fenglin@eswincomputing.com,
-	Yulin Lu <luyulin@eswincomputing.com>
-Subject: [PATCH v9 2/2] phy: eswin: Create eswin directory and add EIC7700 SATA PHY driver
-Date: Thu,  5 Feb 2026 16:22:19 +0800
-Message-Id: <20260205082219.1521-1-luyulin@eswincomputing.com>
-X-Mailer: git-send-email 2.31.1.windows.1
-In-Reply-To: <20260205082009.1780-1-luyulin@eswincomputing.com>
-References: <20260205082009.1780-1-luyulin@eswincomputing.com>
+	Thu, 05 Feb 2026 09:21:10 +0000
+Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6153djBj3237394
+	for <linux-phy@lists.infradead.org>; Thu, 5 Feb 2026 09:21:06 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=1tM1o1A2UK19+9JpxFn7xu
+	q4+YgsH22MM9B77HjwXX0=; b=mH7Cnn7crDAE1O6nnOLI57Gt/7sk5blYH8hmln
+	yKmfjbSHxfwtMshlYLYR0sSjsOs2scKMbXuonC/X+nnvkR2v45/ar2+PhctNgeLZ
+	egkB+g1MC1AypSLN8Hif1ZL1KyV4HYMAh7qGKoF6tQXhOtZDuRKiz+bm61eP7zZ/
+	q+4NJCSi1ZMS93rPfJ2QLO0Ui8xc0Ji5Tln9QxgMn5fSixcBX0g/23gSBwNiSXTH
+	yDspBOTCv92EyX3yTSzsjkJlcuUlB0kTPRsPKzcMSlGZER3P2DRkcleI59M9rJR6
+	d6pEJehbCxQ0rVvHoOsPlbJ8AY5O3rVZMDJGCm9cI6TLoQFA==
+Received: from mail-qk1-f199.google.com (mail-qk1-f199.google.com [209.85.222.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4c4cp5212e-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Thu, 05 Feb 2026 09:21:06 +0000 (GMT)
+Received: by mail-qk1-f199.google.com with SMTP id af79cd13be357-8c6cfd52556so250383185a.0
+        for <linux-phy@lists.infradead.org>; Thu, 05 Feb 2026 01:21:06 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1770283265; x=1770888065; darn=lists.infradead.org;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=1tM1o1A2UK19+9JpxFn7xuq4+YgsH22MM9B77HjwXX0=;
+        b=XqWMea+ZroN1i/LsfFVbKAM0zC++YI+GbxD1jx6vH08iKeyEJamaLpxzDtrN8aypt7
+         Ka5uDnd/PxsXUpUp6psPD9QvjONMOz4QKn2xIA+SXVKyTyFfhlJDkk5g0AGslzPSS9h9
+         kwMczMUsJLQafNT8rezk79bl3wHH4Vpndu8k9s0a9soclX27i3cgpw9wupCkhmR4p4OK
+         7nteBjnUpfGMUDQMaRJm4xYvVztgs6UsPWv9UazTiHYJ+gbmD84kxbEAxyzk4moyCaN8
+         V/xJ2zaW+rNZYUHlqrotRWzRJx2wJ1Y4ND/TChi2zf2PSsyPLBA9f0N6X8yRjGO5gj8n
+         eypw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1770283265; x=1770888065;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=1tM1o1A2UK19+9JpxFn7xuq4+YgsH22MM9B77HjwXX0=;
+        b=JJp4riLzoaztXTxVGHKwHcDGVAfor9JHfcIcs6e4ovTKk6FHJf6wQfmhXl4rqPkHD+
+         +5iF6ds+2H/6/jPB9mXfnA8p3wHnjCzINx8gNsVuIQtfhWgJjqvAGrJuabuFeMWHNi7D
+         qs/mx0xH9udOgvl5jXhIPDQOXsCbKYRFjEzDtiXMyQuCFA1/69YohuWQIwwPjSnZHjF5
+         yEHGvphQ7n3w6aPO5r48l0NQ8dHh6XPOf3x4FCXidSiYfxPax54AadEAi9kfrzM0BKg8
+         CVdYII8eQqCr0tSXlwkoAI+Bgkv/fjy+2vGN15z3K19FLMXxG5boivgPflKKzxApFNtF
+         Hpow==
+X-Forwarded-Encrypted: i=1; AJvYcCV5Rcy3AZYA3O8MSmoNS+DfGzOunwDOoNf8gn/gkFKfLM42qo0Uy7CqCaGz2w8/0myXjybuAl4XVjg=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy3beQnHfZRxwBpmSTnb9ouAPp7IXRJXHX2NDdD3xcs8B1i6+SV
+	/OtqzmulI7/HYF8Loj+A6rbwepaJMR/bELQv7FO2XdAVUam5gqtS1hT+t0nNLfkPRoOt/bGY3a+
+	23i5Hnrzq4Oy+sNWqwYkFt+xYuSdLHjWM3gpHs6L0xiFU+Vh6jmfMni3pVAQDIO4NcmZ8ReXfv+
+	GN
+X-Gm-Gg: AZuq6aK8w7e8pV/MUG6bBY+EIN/TCNTJlHU2b+rJ4aKqjD8O3j6cnxjTVMdKtDpu66I
+	SbrIiJAPXpHB4fHwSu4qLgb3MjXzPq+62o2U5fX0IDlsZASOuJvogLF6PAKZ9andA4s2MqfsJoO
+	4QqnzrR7uy+EQYTTyZAgWLUVzF0OpTJM/tiTtmt5JDo8e+1HQRUnGXGbMO0jckVDb2gi4lGd9v6
+	I+Vsrgr/JlOcVuZ79aWZMYBK3cGfjR88z5cChMwRG/i808SamLnfyZzYOtcWBeZ22z5QjhA94bJ
+	kEdyLTRH7fbzzB5NWoeiu7WSJR2A3bZtb5CXe8mPXL0d4ENlqGviS0EToFPVP9g/WfKtKxRIngn
+	hg2X1CUtAOZC5LmeSeFOYagoFK1GmTIgb0+2LQG1oaZEj+KP89naz2lEdzOrft4QalmD50EM=
+X-Received: by 2002:a05:620a:4448:b0:8c7:1181:779f with SMTP id af79cd13be357-8ca40c4b43bmr273265385a.35.1770283265146;
+        Thu, 05 Feb 2026 01:21:05 -0800 (PST)
+X-Received: by 2002:a05:620a:4448:b0:8c7:1181:779f with SMTP id af79cd13be357-8ca40c4b43bmr273263585a.35.1770283264731;
+        Thu, 05 Feb 2026 01:21:04 -0800 (PST)
+Received: from yongmou2.ap.qualcomm.com (Global_NAT1_IAD_FW.qualcomm.com. [129.46.232.65])
+        by smtp.gmail.com with ESMTPSA id af79cd13be357-8ca2fd2c3easm353674885a.32.2026.02.05.01.21.02
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 05 Feb 2026 01:21:04 -0800 (PST)
+From: Yongxing Mou <yongxing.mou@oss.qualcomm.com>
+Subject: [PATCH 0/3] phy: qcom: edp: Add DP/eDP switch for phys
+Date: Thu, 05 Feb 2026 17:20:52 +0800
+Message-Id: <20260205-edp_phy-v1-0-231882bbf3f1@oss.qualcomm.com>
 MIME-Version: 1.0
-X-CM-TRANSID: TAJkCgCn9zc9U4RpIuoCAA--.13763S2
-X-Coremail-Antispam: 1UD129KBjvJXoW3CrWUuF48trWktr1UWF4rXwb_yoWkXFykpF
-	s8CF1jgrW8tF47Ka95t3Z0kF1agFnFqFya9FykK3WrZFW3Jr48XasIqay5trn0vr1kX3y8
-	Kwn5XFy7Ca15Z3DanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
-	9KBjDU0xBIdaVrnRJUUU9G14x267AKxVW8JVW5JwAFc2x0x2IEx4CE42xK8VAvwI8IcIk0
-	rVWrJVCq3wAFIxvE14AKwVWUJVWUGwA2ocxC64kIII0Yj41l84x0c7CEw4AK67xGY2AK02
-	1l84ACjcxK6xIIjxv20xvE14v26w1j6s0DM28EF7xvwVC0I7IYx2IY6xkF7I0E14v26r4U
-	JVWxJr1l84ACjcxK6I8E87Iv67AKxVW0oVCq3wA2z4x0Y4vEx4A2jsIEc7CjxVAFwI0_Gc
-	CE3s1le2I262IYc4CY6c8Ij28IcVAaY2xG8wAqx4xG64xvF2IEw4CE5I8CrVC2j2WlYx0E
-	2Ix0cI8IcVAFwI0_Jrv_JF1lYx0Ex4A2jsIE14v26r1j6r4UMcvjeVCFs4IE7xkEbVWUJV
-	W8JwACjcxG0xvY0x0EwIxGrwACjI8F5VA0II8E6IAqYI8I648v4I1lFIxGxcIEc7CjxVA2
-	Y2ka0xkIwI1lc7CjxVAaw2AFwI0_Jw0_GFylc2xSY4AK6svPMxAIw28IcxkI7VAKI48JMx
-	C20s026xCaFVCjc4AY6r1j6r4UMI8I3I0E5I8CrVAFwI0_Jr0_Jr4lx2IqxVCjr7xvwVAF
-	wI0_JrI_JrWlx4CE17CEb7AF67AKxVWUtVW8ZwCIc40Y0x0EwIxGrwCI42IY6xIIjxv20x
-	vE14v26r1j6r1xMIIF0xvE2Ix0cI8IcVCY1x0267AKxVW8JVWxJwCI42IY6xAIw20EY4v2
-	0xvaj40_Jr0_JF4lIxAIcVC2z280aVAFwI0_Jr0_Gr1lIxAIcVC2z280aVCY1x0267AKxV
-	W8JVW8JrUvcSsGvfC2KfnxnUUI43ZEXa7VUb_Ma5UUUUU==
-X-CM-SenderInfo: pox13z1lq6v25zlqu0xpsx3x1qjou0bp/
+X-B4-Tracking: v=1; b=H4sIAPRghGkC/yXMywqDMBCF4VeRWTcwMYmir1KkxJmxZuGliZYW8
+ d0b6vI7HP4DksQgCdrigCjvkMIyZ+hbATT6+SkqcDaUWFZYolPC62Mdv0oLeSOMtSWE/F6jDOH
+ zL927y1Feew5u1wi9T6JomaawtcVAVhpNlWkI/dAYrgwZdj2hiHVOO+baofXQnecPciTKv6UAA
+ AA=
+X-Change-ID: 20260205-edp_phy-1eca3ed074c0
+To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-kernel@vger.kernel.org,
+        Yongxing Mou <yongxing.mou@oss.qualcomm.com>
+X-Mailer: b4 0.14.3
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1770283262; l=1226;
+ i=yongxing.mou@oss.qualcomm.com; s=20250910; h=from:subject:message-id;
+ bh=BAGNHV5HIzxi7nY+JZgjxfOW0BYdFJuFGDt/iD7FpYo=;
+ b=3kjemvmqUlE9LbxjoBd4T7O75tGCggnRDPRO6csNoYeMbeoqbYj6bhpUDQFnWxpGI25/UcdGy
+ 9KHvurf5/MaAxPZXUqIEb/MY0QX10U4CiuNsIdWmTqobpQo7+rA+a9S
+X-Developer-Key: i=yongxing.mou@oss.qualcomm.com; a=ed25519;
+ pk=rAy5J1eP+V7OXqH5FJ7ngMCtUrnHhut30ZTldOj52UM=
+X-Authority-Analysis: v=2.4 cv=Oc2VzxTY c=1 sm=1 tr=0 ts=69846102 cx=c_pps
+ a=HLyN3IcIa5EE8TELMZ618Q==:117 a=C3Dk8TwHQYyIj7nOf9RCJw==:17
+ a=IkcTkHD0fZMA:10 a=HzLeVaNsDn8A:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8
+ a=M-2OMZX0rM6BGFiE4MwA:9 a=QEXdDO2ut3YA:10 a=bTQJ7kPSJx9SKPbeHEYW:22
+X-Proofpoint-ORIG-GUID: 32b3Fv8h5_TtbxiIbklLv0cgH2OkDHIT
+X-Proofpoint-GUID: 32b3Fv8h5_TtbxiIbklLv0cgH2OkDHIT
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMjA1MDA2NyBTYWx0ZWRfX7y4n6FMDYr2v
+ rIVp6PLJJhd622Bqtxs5Le+qgHzYm9Qs4CnqAcpWfUR/shNTjL7iqvkU73SqPb8NlZvXDRto/n+
+ WrpzDlV9vEbOuohCoHopjJ5NHgmJxrYFhJBr6SLyCRpB3Lw8GUVjQ4oKs0QN4iMCcD21CvECk8T
+ i3tPt/WUKbjiByl9HbUQ7SZcfgS7qBZ/fPRckH1krNwBAPa8SdRE4jmtVbbb2RQ89ADJINu59ri
+ 5nZfy5clsLrKLpuvjglxBn78DFmfbeTOIxN8gZa4MW4zlM7qwjbAb7uP0cH257GgimJowAmrAkZ
+ c7Pb81LD03QH70m51fRsmAgWxWWceRsZb2wtsy1JIc5L2d6gceoqKCc0Tpxk6/ppbxwml+0QSw6
+ NKrjm4zorUznyG7guOsvS92ZpCYs1blHOQxgTTRaZfL53fhiqEEDESBkeASL4/2bOOpdcIMSvJL
+ 6Q2390FbtcpKvxPd3bg==
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.51,FMLib:17.12.100.49
+ definitions=2026-02-05_01,2026-02-05_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ malwarescore=0 adultscore=0 lowpriorityscore=0 clxscore=1015 suspectscore=0
+ bulkscore=0 priorityscore=1501 spamscore=0 impostorscore=0 phishscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2601150000 definitions=main-2602050067
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260205_002225_682583_2FCD2CFE 
-X-CRM114-Status: GOOD (  22.13  )
+X-CRM114-CacheID: sfid-20260205_012108_590480_88F0FB2B 
+X-CRM114-Status: UNSURE (   9.00  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,354 +152,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Create the eswin phy driver directory and add support for the
-SATA PHY driver on the EIC7700 SoC platform.
+Currently the PHY selects the DP/eDP configuration tables in a fixed way,
+choosing the table when enable. This driver has known issues:
+1. The selected table does not match the actual platform mode.
+2. It cannot support both modes at the same time.
 
-Signed-off-by: Yulin Lu <luyulin@eswincomputing.com>
+As discussed here[1], this series:
+1. Cleans up duplicated and incorrect tables based on the HPG.
+2. Fixes the LDO programming error in eDP mode.
+3. Adds DP/eDP mode switching support.
+
+Note: x1e80100/sa8775p/sc7280 have been tested, while glymur/sc8280xp
+have not been tested.
+
+[1] https://lore.kernel.org/all/20260119-klm_dpphy-v2-1-52252190940b@oss.qualcomm.com/
+
+Signed-off-by: Yongxing Mou <yongxing.mou@oss.qualcomm.com>
 ---
- drivers/phy/Kconfig                  |   1 +
- drivers/phy/Makefile                 |   1 +
- drivers/phy/eswin/Kconfig            |  14 ++
- drivers/phy/eswin/Makefile           |   2 +
- drivers/phy/eswin/phy-eic7700-sata.c | 273 +++++++++++++++++++++++++++
- 5 files changed, 291 insertions(+)
- create mode 100644 drivers/phy/eswin/Kconfig
- create mode 100644 drivers/phy/eswin/Makefile
- create mode 100644 drivers/phy/eswin/phy-eic7700-sata.c
+Yongxing Mou (3):
+      phy: qcom: edp: Correct and clean up eDP/DP combo PHY configuration values
+      phy: qcom: edp: Add per-version LDO configuration callback
+      phy: qcom: edp: Add eDP phy mode switch support
 
-diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
-index 678dd0452f0a..6d50704917f0 100644
---- a/drivers/phy/Kconfig
-+++ b/drivers/phy/Kconfig
-@@ -105,6 +105,7 @@ source "drivers/phy/allwinner/Kconfig"
- source "drivers/phy/amlogic/Kconfig"
- source "drivers/phy/broadcom/Kconfig"
- source "drivers/phy/cadence/Kconfig"
-+source "drivers/phy/eswin/Kconfig"
- source "drivers/phy/freescale/Kconfig"
- source "drivers/phy/hisilicon/Kconfig"
- source "drivers/phy/ingenic/Kconfig"
-diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
-index bfb27fb5a494..482a143d3417 100644
---- a/drivers/phy/Makefile
-+++ b/drivers/phy/Makefile
-@@ -17,6 +17,7 @@ obj-y					+= allwinner/	\
- 					   amlogic/	\
- 					   broadcom/	\
- 					   cadence/	\
-+					   eswin/	\
- 					   freescale/	\
- 					   hisilicon/	\
- 					   ingenic/	\
-diff --git a/drivers/phy/eswin/Kconfig b/drivers/phy/eswin/Kconfig
-new file mode 100644
-index 000000000000..cf2bf2efc32f
---- /dev/null
-+++ b/drivers/phy/eswin/Kconfig
-@@ -0,0 +1,14 @@
-+# SPDX-License-Identifier: GPL-2.0-only
-+#
-+# Phy drivers for ESWIN platforms
-+#
-+config PHY_EIC7700_SATA
-+	tristate "eic7700 Sata SerDes/PHY driver"
-+	depends on ARCH_ESWIN || COMPILE_TEST
-+	depends on HAS_IOMEM
-+	select GENERIC_PHY
-+	help
-+	  Enable this to support SerDes/Phy found on ESWIN's
-+	  EIC7700 SoC. This Phy supports SATA 1.5 Gb/s,
-+	  SATA 3.0 Gb/s, SATA 6.0 Gb/s speeds.
-+	  It supports one SATA host port to accept one SATA device.
-diff --git a/drivers/phy/eswin/Makefile b/drivers/phy/eswin/Makefile
-new file mode 100644
-index 000000000000..db08c66be812
---- /dev/null
-+++ b/drivers/phy/eswin/Makefile
-@@ -0,0 +1,2 @@
-+# SPDX-License-Identifier: GPL-2.0
-+obj-$(CONFIG_PHY_EIC7700_SATA)	+= phy-eic7700-sata.o
-diff --git a/drivers/phy/eswin/phy-eic7700-sata.c b/drivers/phy/eswin/phy-eic7700-sata.c
-new file mode 100644
-index 000000000000..c33653d48daa
---- /dev/null
-+++ b/drivers/phy/eswin/phy-eic7700-sata.c
-@@ -0,0 +1,273 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * ESWIN SATA PHY driver
-+ *
-+ * Copyright 2026, Beijing ESWIN Computing Technology Co., Ltd..
-+ * All rights reserved.
-+ *
-+ * Authors: Yulin Lu <luyulin@eswincomputing.com>
-+ */
-+
-+#include <linux/bitfield.h>
-+#include <linux/clk.h>
-+#include <linux/delay.h>
-+#include <linux/io.h>
-+#include <linux/kernel.h>
-+#include <linux/module.h>
-+#include <linux/phy/phy.h>
-+#include <linux/platform_device.h>
-+#include <linux/regmap.h>
-+#include <linux/reset.h>
-+
-+#define SATA_AXI_LP_CTRL			0x08
-+#define SATA_MPLL_CTRL				0x20
-+#define SATA_P0_PHY_STAT			0x24
-+#define SATA_PHY_CTRL0				0x28
-+#define SATA_PHY_CTRL1				0x2c
-+#define SATA_REF_CTRL				0x34
-+#define SATA_REF_CTRL1				0x38
-+#define SATA_LOS_IDEN				0x3c
-+
-+#define SATA_CLK_RST_SOURCE_PHY			BIT(0)
-+#define SATA_P0_PHY_TX_AMPLITUDE_GEN1_MASK	GENMASK(6, 0)
-+#define SATA_P0_PHY_TX_AMPLITUDE_GEN1_DEFAULT	0x42
-+#define SATA_P0_PHY_TX_AMPLITUDE_GEN2_MASK	GENMASK(14, 8)
-+#define SATA_P0_PHY_TX_AMPLITUDE_GEN2_DEFAULT	0x46
-+#define SATA_P0_PHY_TX_AMPLITUDE_GEN3_MASK	GENMASK(22, 16)
-+#define SATA_P0_PHY_TX_AMPLITUDE_GEN3_DEFAULT	0x73
-+#define SATA_P0_PHY_TX_PREEMPH_GEN1_MASK	GENMASK(5, 0)
-+#define SATA_P0_PHY_TX_PREEMPH_GEN1_DEFAULT	0x5
-+#define SATA_P0_PHY_TX_PREEMPH_GEN2_MASK	GENMASK(13, 8)
-+#define SATA_P0_PHY_TX_PREEMPH_GEN2_DEFAULT	0x5
-+#define SATA_P0_PHY_TX_PREEMPH_GEN3_MASK	GENMASK(21, 16)
-+#define SATA_P0_PHY_TX_PREEMPH_GEN3_DEFAULT	0x23
-+#define SATA_LOS_LEVEL_MASK			GENMASK(4, 0)
-+#define SATA_LOS_BIAS_MASK			GENMASK(18, 16)
-+#define SATA_M_CSYSREQ				BIT(0)
-+#define SATA_S_CSYSREQ				BIT(16)
-+#define SATA_REF_REPEATCLK_EN			BIT(0)
-+#define SATA_REF_USE_PAD			BIT(20)
-+#define SATA_MPLL_MULTIPLIER_MASK		GENMASK(22, 16)
-+#define SATA_P0_PHY_READY			BIT(0)
-+
-+#define PLL_LOCK_SLEEP_US			10
-+#define PLL_LOCK_TIMEOUT_US			1000
-+
-+struct eic7700_sata_phy {
-+	u32 tx_amplitude_tuning_val[3];
-+	u32 tx_preemph_tuning_val[3];
-+	struct reset_control *rst;
-+	struct regmap *regmap;
-+	struct clk *clk;
-+	struct phy *phy;
-+};
-+
-+static const struct regmap_config eic7700_sata_phy_regmap_config = {
-+	.reg_bits = 32,
-+	.val_bits = 32,
-+	.reg_stride = 4,
-+	.max_register = SATA_LOS_IDEN,
-+};
-+
-+static int wait_for_phy_ready(struct regmap *regmap, u32 reg, u32 checkbit,
-+			      u32 status)
-+{
-+	u32 val;
-+	int ret;
-+
-+	ret = regmap_read_poll_timeout(regmap, reg, val,
-+				       (val & checkbit) == status,
-+				       PLL_LOCK_SLEEP_US, PLL_LOCK_TIMEOUT_US);
-+
-+	return ret;
-+}
-+
-+static int eic7700_sata_phy_init(struct phy *phy)
-+{
-+	struct eic7700_sata_phy *sata_phy = phy_get_drvdata(phy);
-+	u32 val;
-+	int ret;
-+
-+	ret = clk_prepare_enable(sata_phy->clk);
-+	if (ret)
-+		return ret;
-+
-+	regmap_write(sata_phy->regmap, SATA_REF_CTRL1, SATA_CLK_RST_SOURCE_PHY);
-+
-+	val = FIELD_PREP(SATA_P0_PHY_TX_AMPLITUDE_GEN1_MASK,
-+			 sata_phy->tx_amplitude_tuning_val[0]) |
-+	      FIELD_PREP(SATA_P0_PHY_TX_AMPLITUDE_GEN2_MASK,
-+			 sata_phy->tx_amplitude_tuning_val[1]) |
-+	      FIELD_PREP(SATA_P0_PHY_TX_AMPLITUDE_GEN3_MASK,
-+			 sata_phy->tx_amplitude_tuning_val[2]);
-+	regmap_write(sata_phy->regmap, SATA_PHY_CTRL0, val);
-+
-+	val = FIELD_PREP(SATA_P0_PHY_TX_PREEMPH_GEN1_MASK,
-+			 sata_phy->tx_preemph_tuning_val[0]) |
-+	      FIELD_PREP(SATA_P0_PHY_TX_PREEMPH_GEN2_MASK,
-+			 sata_phy->tx_preemph_tuning_val[1]) |
-+	      FIELD_PREP(SATA_P0_PHY_TX_PREEMPH_GEN3_MASK,
-+			 sata_phy->tx_preemph_tuning_val[2]);
-+	regmap_write(sata_phy->regmap, SATA_PHY_CTRL1, val);
-+
-+	val = FIELD_PREP(SATA_LOS_LEVEL_MASK, 0x9) |
-+	      FIELD_PREP(SATA_LOS_BIAS_MASK, 0x2);
-+	regmap_write(sata_phy->regmap, SATA_LOS_IDEN, val);
-+
-+	val = SATA_M_CSYSREQ | SATA_S_CSYSREQ;
-+	regmap_write(sata_phy->regmap, SATA_AXI_LP_CTRL, val);
-+
-+	val = SATA_REF_REPEATCLK_EN | SATA_REF_USE_PAD;
-+	regmap_write(sata_phy->regmap, SATA_REF_CTRL, val);
-+
-+	val = FIELD_PREP(SATA_MPLL_MULTIPLIER_MASK, 0x3c);
-+	regmap_write(sata_phy->regmap, SATA_MPLL_CTRL, val);
-+
-+	usleep_range(15, 20);
-+
-+	ret = reset_control_deassert(sata_phy->rst);
-+	if (ret)
-+		goto disable_clk;
-+
-+	ret = wait_for_phy_ready(sata_phy->regmap, SATA_P0_PHY_STAT,
-+				 SATA_P0_PHY_READY, 1);
-+	if (ret < 0) {
-+		dev_err(&sata_phy->phy->dev, "PHY READY check failed\n");
-+		goto disable_clk;
-+	}
-+
-+	return 0;
-+
-+disable_clk:
-+	clk_disable_unprepare(sata_phy->clk);
-+	return ret;
-+}
-+
-+static int eic7700_sata_phy_exit(struct phy *phy)
-+{
-+	struct eic7700_sata_phy *sata_phy = phy_get_drvdata(phy);
-+	int ret;
-+
-+	ret = reset_control_assert(sata_phy->rst);
-+	if (ret)
-+		return ret;
-+
-+	clk_disable_unprepare(sata_phy->clk);
-+
-+	return 0;
-+}
-+
-+static const struct phy_ops eic7700_sata_phy_ops = {
-+	.init		= eic7700_sata_phy_init,
-+	.exit		= eic7700_sata_phy_exit,
-+	.owner		= THIS_MODULE,
-+};
-+
-+static void eic7700_get_tuning_param(struct device_node *np,
-+				     struct eic7700_sata_phy *sata_phy)
-+{
-+	if (of_property_read_u32_array
-+		(np, "eswin,tx-amplitude-tuning",
-+		sata_phy->tx_amplitude_tuning_val,
-+		ARRAY_SIZE(sata_phy->tx_amplitude_tuning_val))) {
-+		sata_phy->tx_amplitude_tuning_val[0] =
-+			SATA_P0_PHY_TX_AMPLITUDE_GEN1_DEFAULT;
-+		sata_phy->tx_amplitude_tuning_val[1] =
-+			SATA_P0_PHY_TX_AMPLITUDE_GEN2_DEFAULT;
-+		sata_phy->tx_amplitude_tuning_val[2] =
-+			SATA_P0_PHY_TX_AMPLITUDE_GEN3_DEFAULT;
-+	}
-+
-+	if (of_property_read_u32_array
-+		(np, "eswin,tx-preemph-tuning",
-+		sata_phy->tx_preemph_tuning_val,
-+		ARRAY_SIZE(sata_phy->tx_preemph_tuning_val))) {
-+		sata_phy->tx_preemph_tuning_val[0] =
-+			SATA_P0_PHY_TX_PREEMPH_GEN1_DEFAULT;
-+		sata_phy->tx_preemph_tuning_val[1] =
-+			SATA_P0_PHY_TX_PREEMPH_GEN2_DEFAULT;
-+		sata_phy->tx_preemph_tuning_val[2] =
-+			SATA_P0_PHY_TX_PREEMPH_GEN3_DEFAULT;
-+	}
-+}
-+
-+static int eic7700_sata_phy_probe(struct platform_device *pdev)
-+{
-+	struct eic7700_sata_phy *sata_phy;
-+	struct phy_provider *phy_provider;
-+	struct device *dev = &pdev->dev;
-+	struct device_node *np = dev->of_node;
-+	struct resource *res;
-+	void __iomem *regs;
-+
-+	sata_phy = devm_kzalloc(dev, sizeof(*sata_phy), GFP_KERNEL);
-+	if (!sata_phy)
-+		return -ENOMEM;
-+
-+	/*
-+	 * Map the I/O resource with platform_get_resource and devm_ioremap
-+	 * instead of the devm_platform_ioremap_resource API, because the
-+	 * address region of the SATA-PHY falls into the region of the HSP
-+	 * clock & reset that has already been obtained by the HSP
-+	 * clock-and-reset driver.
-+	 */
-+	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-+	if (!res)
-+		return -ENOENT;
-+
-+	regs = devm_ioremap(dev, res->start, resource_size(res));
-+	if (IS_ERR(regs))
-+		return PTR_ERR(regs);
-+
-+	sata_phy->regmap = devm_regmap_init_mmio
-+			   (dev, regs, &eic7700_sata_phy_regmap_config);
-+	if (IS_ERR(sata_phy->regmap))
-+		return dev_err_probe(dev, PTR_ERR(sata_phy->regmap),
-+				     "failed to init regmap\n");
-+
-+	dev_set_drvdata(dev, sata_phy);
-+
-+	eic7700_get_tuning_param(np, sata_phy);
-+
-+	sata_phy->clk = devm_clk_get(dev, "phy");
-+	if (IS_ERR(sata_phy->clk))
-+		return PTR_ERR(sata_phy->clk);
-+
-+	sata_phy->rst = devm_reset_control_array_get_exclusive(dev);
-+	if (IS_ERR(sata_phy->rst))
-+		return dev_err_probe(dev, PTR_ERR(sata_phy->rst),
-+				     "failed to get reset control\n");
-+
-+	sata_phy->phy = devm_phy_create(dev, NULL, &eic7700_sata_phy_ops);
-+	if (IS_ERR(sata_phy->phy))
-+		return dev_err_probe(dev, PTR_ERR(sata_phy->phy),
-+				     "failed to create PHY\n");
-+
-+	phy_set_drvdata(sata_phy->phy, sata_phy);
-+
-+	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-+	if (IS_ERR(phy_provider))
-+		return dev_err_probe(dev, PTR_ERR(phy_provider),
-+				     "failed to register PHY provider\n");
-+
-+	return 0;
-+}
-+
-+static const struct of_device_id eic7700_sata_phy_of_match[] = {
-+	{ .compatible = "eswin,eic7700-sata-phy" },
-+	{ },
-+};
-+MODULE_DEVICE_TABLE(of, eic7700_sata_phy_of_match);
-+
-+static struct platform_driver eic7700_sata_phy_driver = {
-+	.probe	= eic7700_sata_phy_probe,
-+	.driver = {
-+		.of_match_table	= eic7700_sata_phy_of_match,
-+		.name  = "eic7700-sata-phy",
-+	}
-+};
-+module_platform_driver(eic7700_sata_phy_driver);
-+
-+MODULE_DESCRIPTION("SATA PHY driver for the ESWIN EIC7700 SoC");
-+MODULE_AUTHOR("Yulin Lu <luyulin@eswincomputing.com>");
-+MODULE_LICENSE("GPL");
+ drivers/phy/qualcomm/phy-qcom-edp.c | 191 ++++++++++++++++++++++++++----------
+ 1 file changed, 138 insertions(+), 53 deletions(-)
+---
+base-commit: fc4e91c639c0af93d63c3d5bc0ee45515dd7504a
+change-id: 20260205-edp_phy-1eca3ed074c0
+
+Best regards,
 -- 
-2.25.1
+Yongxing Mou <yongxing.mou@oss.qualcomm.com>
 
 
 -- 
