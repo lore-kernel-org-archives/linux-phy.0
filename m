@@ -4,110 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F28BCEC1E86
-	for <linux-phy@archiver.kernel.org>; Thu,  5 Feb 2026 09:47:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C4745EC1EA6
+	for <linux-phy@archiver.kernel.org>; Thu,  5 Feb 2026 12:02:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JDggbZv4n7gaskJ2PF0gV6P8pJPOXXRLLOyZ5S18eQk=; b=eoOY6UQtSR8XqZ
-	4Eoyk5VOzhMTEq1DfCfFVYOE5y4PK0kpdV779Sxw89puvT5+UvxhNEQvseQnMRjCLJ1BQijWCC5co
-	6/yuRXj3tYY5PHPIrtMeXe9dqOhA7agM7mvNPvtsAmNsYuXLw4/iRdHOhr6ofytIoPrkOpefTSBY0
-	66C3hFfjFR97zOj3pMiI4tk0Wp2uPDE27PkJne7/oKxz1VhjOGzhyqfkmSaWE+L0oIBex+8uEliV2
-	naBa87+61J17e+jlq1lAWCRq1KL2CcBAZ6y+xTRdxAfZmEDyHNEibL/ck8cCVX7HVT4vX7wEBoF0e
-	ZNvTuED0vSzn8gv23fAA==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-ID:MIME-Version:Subject:
+	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Yxtq2HNB4qz08T+CC8K6F8s8zDeuGcy2wkzoeSIJ824=; b=fp4M+YbiXgONAY
+	rv/kcoHs/t36AYvr4yD4/SI/ifcXs/9tOem+6J35ShGvg5oYE5LW5T36YU2kZuhW3ud/93SnOwUnp
+	YIoaOWbdOcGIy+AsD642RQLxRSNv9WPQH6OwCH3tepAntEwCaR3SFVj9zQyZ7Ge9eHNAfSOp4AHyU
+	e4GwRIOASEfQeno4NmHIcvhKiUOIjZlSS4Adpb7SA+d+z/He1BsJQXurHE5UInyucP0skhjfrLeOd
+	nMffHjt13KDT9A5HmvW3+3Vdpqvhm8NgcfgXYqWJYyInB/b7jZUdWNo3XBeJhrmsCF4hHIfdMbRCs
+	lY6Ht2CzykR2ORtc1Sug==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vnvx7-00000009jHv-2Rnj;
-	Thu, 05 Feb 2026 09:47:09 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vny4I-00000009rFn-2AHY;
+	Thu, 05 Feb 2026 12:02:42 +0000
+Received: from mxout70.expurgate.net ([91.198.224.70])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vnvx6-00000009jHU-2Gih;
-	Thu, 05 Feb 2026 09:47:08 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 9E18E60010;
-	Thu,  5 Feb 2026 09:47:07 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5AEE1C4CEF7;
-	Thu,  5 Feb 2026 09:47:03 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1770284827;
-	bh=zfalYb5m4jmXJdvgdsS+kkeIDs7H5lnyloDkGHgpMaU=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=s5EQfpNIk22AtBe6vtAD0GjSFWGJK0obgQNkek5tXC69qTS7oSMcZC9i08SdOnxH4
-	 tXcuyJHcXw7oUBADxRpL8p4jG3T9HK4gqR0QYhdDMPYCABtmmNzIbmi3h9E9lb2JAW
-	 NVkeq/nNGIaadv239wleyCvTtCONLvYEdkCOwIipCkaExHmo5S8m2yBn7a1MyMAEt3
-	 8rlQ4rFrfiMbuj0ZRqjf4TUpoVYDdZC9o09Jhrmn//fPv2OzGxJFjNWBIPV5WfECT3
-	 nejO9V6h7lKid0CM1OEnmOgU9QdxUSH0Fysy+KGJINB67Fe5dUBDAxqVTl6RZgipZy
-	 h3pPzaJRWkJSg==
-Message-ID: <c3cfb8c8-649e-479c-a4b5-186913db1520@kernel.org>
-Date: Thu, 5 Feb 2026 10:47:01 +0100
+	id 1vny4F-00000009rFQ-1NQI
+	for linux-phy@lists.infradead.org;
+	Thu, 05 Feb 2026 12:02:40 +0000
+Received: from [194.37.255.9] (helo=mxout.expurgate.net)
+	by relay.expurgate.net with smtp (Exim 4.92)
+	(envelope-from <prvs=451014665c=fe@dev.tdt.de>)
+	id 1vny43-00H705-S1; Thu, 05 Feb 2026 13:02:27 +0100
+Received: from [195.243.126.94] (helo=securemail.tdt.de)
+	by relay.expurgate.net with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+	(Exim 4.92)
+	(envelope-from <fe@dev.tdt.de>)
+	id 1vny42-00H6yV-9N; Thu, 05 Feb 2026 13:02:26 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dev.tdt.de;
+	s=z1-selector1; t=1770292945;
+	bh=7tYuSUIFO3bNlvD56jcySwCVe0ZQSlHEZveCIdZShmc=;
+	h=From:Date:Subject:To:Cc:From;
+	b=KPQCjZ/kGxxzve4GOq0lDTPtuufT7AL6PjpiztTMxr9OOpf1PN7Kz7rl2JkSQYWA1
+	 eUuidcdPsHRuJG+Tnn2K7Nc1t85JnPrGWG1CULMUfT0tHB/+qoBHY+UYFIbi9tX8Bq
+	 twTQ+XbtY6AJA11ki+IJnOygF/BHxsjHRhIQOTKSbolPVaRnRklqKNlOy/FtDDLjpn
+	 X7baniZxOtbXxRMlZHfaLdkHdbrzZEVVfLDlUJvl+G4IEnESuO2uF8tzq6QIxgw+h/
+	 NOmzkAj3eq7PXX1F9xFz9WXsBQ2yjbKZQQ/jvaSUHi4S3/jYJ6c3+JCLmJb3kp6Hvw
+	 FFtcVuaiwfx8g==
+Received: from securemail.tdt.de (localhost [127.0.0.1])
+	by securemail.tdt.de (Postfix) with ESMTP id D1EB7240040;
+	Thu,  5 Feb 2026 13:02:25 +0100 (CET)
+Received: from mail.dev.tdt.de (unknown [10.2.4.42])
+	by securemail.tdt.de (Postfix) with ESMTP id CB7FE240036;
+	Thu,  5 Feb 2026 13:02:25 +0100 (CET)
+Received: from [10.2.3.40] (unknown [10.2.3.40])
+	by mail.dev.tdt.de (Postfix) with ESMTPSA id A6BA22282D;
+	Thu,  5 Feb 2026 13:02:25 +0100 (CET)
+From: Florian Eckert <fe@dev.tdt.de>
+Date: Thu, 05 Feb 2026 13:02:11 +0100
+Subject: [PATCH] phy: intel: phy-intel-lgm-combo: Add missing boot trigger
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 6/8] mmc: host: axiado: add AX3000 eMMC PHY support to
- sdhci-of-arasan
-To: Tzu-Hao Wei <twei@axiado.com>
-Cc: SriNavmani A <srinavmani@axiado.com>,
- Prasad Bolisetty <pbolisetty@axiado.com>, Vinod Koul <vkoul@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Harshit Shah <hshah@axiado.com>,
- Ulf Hansson <ulf.hansson@linaro.org>, Adrian Hunter
- <adrian.hunter@intel.com>, Michal Simek <michal.simek@amd.com>,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-mmc@vger.kernel.org
-References: <20251222-axiado-ax3000-add-emmc-host-driver-support-v1-0-5457d0ebcdb4@axiado.com>
- <20251222-axiado-ax3000-add-emmc-host-driver-support-v1-6-5457d0ebcdb4@axiado.com>
- <20251223-optimal-ochre-kestrel-a8cb1c@quoll>
- <c96d21ab-2a76-46ca-8392-6edde3b9ce2d@axiado.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 a/A=
-In-Reply-To: <c96d21ab-2a76-46ca-8392-6edde3b9ce2d@axiado.com>
+Message-ID: <20260205-phy-intel-lgm-combo-v1-1-dc6e58919585@dev.tdt.de>
+X-B4-Tracking: v=1; b=H4sIAMKGhGkC/x3MTQ5AMBBA4avIrE1SQwlXEQs/g0lopRUhjbtrL
+ L/FewE8O2EPTRLA8SVerInI0gTGtTcLo0zRQIpKRUrjsT4o5uQNt2XH0e6DxamqSZPOirzOIZa
+ H41nu/9p27/sB4qpCEmUAAAA=
+X-Change-ID: 20260205-phy-intel-lgm-combo-d79252514393
+To: Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Dilip Kota <eswara.kota@linux.intel.com>
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+	Florian Eckert <Eckert.Florian@gmail.com>,
+	Florian Eckert <fe@dev.tdt.de>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1770292945; l=1629;
+ i=fe@dev.tdt.de; s=20260205; h=from:subject:message-id;
+ bh=H2b9qe82F3NXpW5+PmGfSXkyJVfUW6/VsUT/F2lRB8A=;
+ b=jlcmrRnyqyHtHGxvEfkimYfaUomV9WJNsim11m/h2MIjd02Ljz2jcamqh+AazeFaID2fZKMkS
+ ibMmEm4Vsf6Axx6oxk0RNGjBVpnjx6ymDhB3tf5RRbAxOzqskgYV+gl
+X-Developer-Key: i=fe@dev.tdt.de; a=ed25519;
+ pk=q7Pvv3Au2sAVRhBz5UF7ZqUPNxUwXQ78Jdqu8E6Negk=
+X-purgate-ID: 151534::1770292946-B6E69F62-166307F9/0/0
+X-purgate-type: clean
+X-purgate: clean
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260205_040239_541471_1A66E6B1 
+X-CRM114-Status: GOOD (  12.17  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,30 +100,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 05/02/2026 04:36, Tzu-Hao Wei wrote:
-> On 12/23/2025 10:34 PM, Krzysztof Kozlowski wrote:
->>> @@ -2019,15 +2023,17 @@ static int sdhci_arasan_probe(struct platform_device *pdev)
->>>                       goto unreg_clk;
->>>               }
->>>
->>> -             host->mmc_host_ops.hs400_enhanced_strobe =
->>> +             if (!of_device_is_compatible(np, "axiado,ax3000-sdhci-5.1-emmc")) {
->>
->> No, don't sprinkle compatibles all around. You should use driver match
->> data for this.
->>
->> Best regards,
->> Krzysztof
->>
-> Thanks for suggestion. The new patch uses driver match data instead of sprinkling compatibles.
+In the current implementation, the PHY firmware is not started on the LGM.
+The PCIe RC cannot establish a connection to the PCIe EP via LTSSM, because
+the PCIe RC on the PHY is never started. Setting the bit 1 in the
+PCIE_PHY_SRAM_CSR app register boots the PHY firmware.
 
-You replied to a review from more than a month ago, even though I gave
-you review after one day. I don't have anything of this in my inbox, so
-in case you asked of something - I still expect all feedback to be
-implemented.
+This changes are based on patched kernel sources of the MaxLinear SDK,
+which can be found at https://github.com/maxlinear/linux
+
+Signed-off-by: Florian Eckert <fe@dev.tdt.de>
+---
+ drivers/phy/intel/phy-intel-lgm-combo.c | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+
+diff --git a/drivers/phy/intel/phy-intel-lgm-combo.c b/drivers/phy/intel/phy-intel-lgm-combo.c
+index 9ee3cf61cdd00439f6a9b76c715aec0fa95c8a15..61690d418a5632d4b0c685116a443edba1fe8363 100644
+--- a/drivers/phy/intel/phy-intel-lgm-combo.c
++++ b/drivers/phy/intel/phy-intel-lgm-combo.c
+@@ -24,6 +24,9 @@
+ 
+ #define PAD_DIS_CFG		0x174
+ 
++#define PCIE_PHY_SRAM_CSR	0x08
++#define PCIE_PHY_SRAM_LD_DONE	BIT(1)
++
+ #define PCS_XF_ATE_OVRD_IN_2	0x3008
+ #define ADAPT_REQ_MSK		GENMASK(5, 4)
+ 
+@@ -345,6 +348,16 @@ static int intel_cbphy_init(struct phy *phy)
+ 
+ 	cbphy->init_cnt++;
+ 
++	combo_phy_w32_off_mask(cbphy->app_base, PCIE_PHY_SRAM_CSR,
++				PCIE_PHY_SRAM_LD_DONE,
++				FIELD_PREP(PCIE_PHY_SRAM_LD_DONE, 1));
++
++	mutex_unlock(&cbphy->lock);
++
++	/* 15ms is required for the FW to take effect after load */
++	mdelay(15);
++	return 0;
++
+ err:
+ 	mutex_unlock(&cbphy->lock);
+ 
+
+---
+base-commit: 18f7fcd5e69a04df57b563360b88be72471d6b62
+change-id: 20260205-phy-intel-lgm-combo-d79252514393
 
 Best regards,
-Krzysztof
+-- 
+Florian Eckert <fe@dev.tdt.de>
+
 
 -- 
 linux-phy mailing list
