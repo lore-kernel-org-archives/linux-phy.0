@@ -4,31 +4,31 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 08A30EB28FE
-	for <linux-phy@archiver.kernel.org>; Fri,  6 Feb 2026 10:05:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 537EEECD98B
+	for <linux-phy@archiver.kernel.org>; Fri,  6 Feb 2026 10:05:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=RvDYYveELJVRP695jZpYoM2gmfoJdO1cvcb49vbspSc=; b=vsu9z64AQ7LtYZ
-	atr9GYHj2iAstQQyQvWlarWMKaim6QnLhB304aESLZcU0OTOkXnIpS8ZmW6GgCt8D8U3mXfA3HrP9
-	GDjGs8YBCS8A4+k/MgsENQz/yUe97yjlaERcmlhTZhwTjotMh0zDlZj/l8X/7he/ITXEpEEOkyOsM
-	MsE3yYwbSDpgV4GSWFmGFAHXpr5q44AsNlInnSVS6dyRRKprTNifw9i/SDwaMWZ0s2+F5s4XySuYW
-	JP28ZLcajmoTO5Axf8bh0m++nnoDF03Wq5zKB4yHI+PRcWW2A3ub4LDdrSmUyayUhhjd6dZJTwVvH
-	eREDZrU2l7dODR0lj1dg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=y9E+DaHrNO2wFFQMxea2PMp/Iu3lEjG1inlMMm8+elw=; b=HkfBYFE0LoIrum
+	7vgRghLPYZwbi9gmF+ZjCUfYXV+u46U8zRStOVT0Xlnh79rwZ53Oqq8T61xGWfJQBnwTPl+DD1jZk
+	MFgRglc8AfN4aARL9Fd+ShoxORJ+CXDr30xO9ZjTgov7Awr6YhzNzJtheiNOoF6r7Gosu2xuoW1Lv
+	oFK38J/VP4rVsiNiYi+gS+rIBpRt57+tMDznckLsN+TZ2lXWwdiIwLPXt6xXBhUc6ncpO77DBPm6+
+	RKGIDy25wCADLo7XLzCopQZTkXI1LlAQAcEeDtAPCEdy8KCEs3MmQeuhxqeq/dJykD5YKuMbNbEhj
+	X1KZ40YLWFlrqDRKToyA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1voIiH-0000000B8hZ-2HnT;
-	Fri, 06 Feb 2026 10:05:21 +0000
+	id 1voIiL-0000000B8iv-0O2W;
+	Fri, 06 Feb 2026 10:05:25 +0000
 Received: from mail-m49198.qiye.163.com ([45.254.49.198])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1voIiD-0000000B8gt-40Ni;
-	Fri, 06 Feb 2026 10:05:19 +0000
+	id 1voIiI-0000000B8hY-3Ed7;
+	Fri, 06 Feb 2026 10:05:23 +0000
 Received: from localhost.localdomain (unknown [58.61.141.99])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 335ee3599;
-	Fri, 6 Feb 2026 18:05:07 +0800 (GMT+08:00)
+	by smtp.qiye.163.com (Hmail) with ESMTP id 335ee35ab;
+	Fri, 6 Feb 2026 18:05:20 +0800 (GMT+08:00)
 From: Chukun Pan <amadeus@jmu.edu.cn>
 To: Yixun Lan <dlan@kernel.org>,
 	Vinod Koul <vkoul@kernel.org>,
@@ -45,21 +45,22 @@ Cc: Rob Herring <robh@kernel.org>,
 	linux-kernel@vger.kernel.org,
 	devicetree@vger.kernel.org,
 	spacemit@lists.linux.dev
-Subject: [PATCH 1/2] dt-bindings: phy: spacemit: add regulator support to K1 USB2 PHY
-Date: Fri,  6 Feb 2026 18:00:08 +0800
-Message-Id: <20260206100009.873182-1-amadeus@jmu.edu.cn>
+Subject: [PATCH 2/2] phy: spacemit: add regulator support to K1 USB2 PHY
+Date: Fri,  6 Feb 2026 18:00:09 +0800
+Message-Id: <20260206100009.873182-2-amadeus@jmu.edu.cn>
 X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20260206100009.873182-1-amadeus@jmu.edu.cn>
+References: <20260206100009.873182-1-amadeus@jmu.edu.cn>
 MIME-Version: 1.0
-X-HM-Tid: 0a9c326999a603a2kunmb90599ad38e347
+X-HM-Tid: 0a9c3269cc2d03a2kunmb90599ad38e393
 X-HM-MType: 10
 X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFITzdXWS1ZQUlXWQ8JGhUIEh9ZQVlCTEoaVk8ZSU1JTh8fQ05NT1YeHw5VEwETFhoSFy
+	tZV1koWUFITzdXWS1ZQUlXWQ8JGhUIEh9ZQVlCGhkaVkodGE0fTh1OGB1PSVYeHw5VEwETFhoSFy
 	QUDg9ZV1kYEgtZQVlOQ1VNSlVKT0pVQkJZV1kWGg8SFR0UWUFZT0tIVUpLSEpOTE5VSktLVUpCS0
 	tZBg++
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260206_020518_175719_F387F3A2 
-X-CRM114-Status: UNSURE (   5.97  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260206_020522_981964_EEF839A8 
+X-CRM114-Status: GOOD (  11.60  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,29 +77,66 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add an optional phy-supply property to describe the regulator
-supplying for USB VBUS.
+USB VBUS may have a regulator supply. Add optional phy-supply
+support to avoid the need for the regulator to be always-on.
 
 Signed-off-by: Chukun Pan <amadeus@jmu.edu.cn>
 ---
- Documentation/devicetree/bindings/phy/spacemit,usb2-phy.yaml | 4 ++++
- 1 file changed, 4 insertions(+)
+ drivers/phy/spacemit/phy-k1-usb2.c | 20 ++++++++++++++++++++
+ 1 file changed, 20 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/phy/spacemit,usb2-phy.yaml b/Documentation/devicetree/bindings/phy/spacemit,usb2-phy.yaml
-index 43eaca90d88c..74a1cd5bcdbe 100644
---- a/Documentation/devicetree/bindings/phy/spacemit,usb2-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/spacemit,usb2-phy.yaml
-@@ -19,6 +19,10 @@ properties:
-   clocks:
-     maxItems: 1
+diff --git a/drivers/phy/spacemit/phy-k1-usb2.c b/drivers/phy/spacemit/phy-k1-usb2.c
+index 342061380012..c163a29dabf9 100644
+--- a/drivers/phy/spacemit/phy-k1-usb2.c
++++ b/drivers/phy/spacemit/phy-k1-usb2.c
+@@ -75,6 +75,7 @@ struct spacemit_usb2phy {
+ 	struct phy *phy;
+ 	struct clk *clk;
+ 	struct regmap *regmap_base;
++	struct regulator *regulator;
+ };
  
-+  phy-supply:
-+    description:
-+      Phandle to a regulator that provides power to VBUS.
+ static const struct regmap_config phy_regmap_config = {
+@@ -98,6 +99,12 @@ static int spacemit_usb2phy_init(struct phy *phy)
+ 		return ret;
+ 	}
+ 
++	if (sphy->regulator) {
++		ret = regulator_enable(sphy->regulator);
++		if (ret)
++			return ret;
++	}
 +
-   "#phy-cells":
-     const: 0
+ 	/*
+ 	 * make sure the usb controller is not under reset process before
+ 	 * any configuration
+@@ -139,6 +146,9 @@ static int spacemit_usb2phy_exit(struct phy *phy)
  
+ 	clk_disable(sphy->clk);
+ 
++	if (sphy->regulator)
++		return regulator_disable(sphy->regulator);
++
+ 	return 0;
+ }
+ 
+@@ -171,6 +181,16 @@ static int spacemit_usb2phy_probe(struct platform_device *pdev)
+ 	if (IS_ERR(sphy->regmap_base))
+ 		return dev_err_probe(dev, PTR_ERR(sphy->regmap_base), "Failed to init regmap\n");
+ 
++	sphy->regulator = devm_regulator_get_optional(dev, "phy");
++	if (IS_ERR(sphy->regulator)) {
++		int ret = PTR_ERR(sphy->regulator);
++
++		if (ret != -ENODEV)
++			return dev_err_probe(dev, ret, "Failed to get regulator\n");
++
++		sphy->regulator = NULL;
++	}
++
+ 	sphy->phy = devm_phy_create(dev, NULL, &spacemit_usb2phy_ops);
+ 	if (IS_ERR(sphy->phy))
+ 		return dev_err_probe(dev, PTR_ERR(sphy->phy), "Failed to create phy\n");
 -- 
 2.34.1
 
