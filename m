@@ -4,109 +4,115 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DC02FEE0AE4
-	for <linux-phy@archiver.kernel.org>; Sat,  7 Feb 2026 13:45:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2AE58EE0AE9
+	for <linux-phy@archiver.kernel.org>; Sat,  7 Feb 2026 16:40:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vLG4Q7QH03RJh7y/8vJpK4nFuk/Yyym0LnHwq3Diy4A=; b=DMLaoalwYHV6il
-	+FLk92OGga8F13orNcEUpOD6z3ACyNxzFyV4Cf5c7ixEO/ZzsCt5HqJsljCGOuW/mwI0p2cdyntMz
-	KbFKHuyv7zYJeURGv0G+vIkkTAvkICUbIQQmErG0q9n32FwB0RufUwPN+gspfMiKia2ulEHuHFDQP
-	9Bb75KVZNoAtLn7RoASpjswnjK7L2tmB5a7d2sPx1Jf6ZKEv4Q8fvA5EAS/c9fgPUb7EEIKbf/EKN
-	7PzTRkCJlV/uIC+FhM8JC9KXMLYE7E9AjBgZtTNAHHDzEMlLIZ3AbZBg5LNUaQoinNjplO8vuDXbe
-	cqByOA8/aXSs2Sp22xVw==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
+	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=n6mNJ+LG4wDW+ikIolyLqEE8BwX4+fRp+Sp2QIzw9Is=; b=qPQsVAiZkAM+RB
+	BwwWfbfDd/83ewCb0YJPu38XkyJWWfzbfLuymuiOO6ncgudX0iBLImi4y/gq7AMox0RGr9dzNtI0Q
+	fU+qkWa9d64Bv4H35szI4x4WV+DqF3zikYodhR7xLf/Q62RZBo5wwwGJOHAM3cX698+w1rWNc0zZR
+	Vlpuuz4xdAZQHOaq2vYvr42ib6OU/jC8PpckUPn9Z5a6wD2eS5b7cxyTS85kUlRzuYWnnSOe3EvkK
+	7rBMYCbIruSRRttszaAn70wUiZEIJJf92TZhzKXDTfJxK9t+TGCfj/Z5S07J/x235AJZqp8yZsUba
+	Qfe9tWWK+WA/E+UsVHbQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1voicV-0000000CV9Z-1uNn;
-	Sat, 07 Feb 2026 13:45:07 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1volMg-0000000CcmH-0KLd;
+	Sat, 07 Feb 2026 16:40:58 +0000
+Received: from fout-a3-smtp.messagingengine.com ([103.168.172.146])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1voicT-0000000CV99-29sf;
-	Sat, 07 Feb 2026 13:45:06 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id A25AF4447B;
-	Sat,  7 Feb 2026 13:45:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5F835C116D0;
-	Sat,  7 Feb 2026 13:45:01 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1770471904;
-	bh=Fcg7QBGlOtQbed/3P4oI5lcao5EQQ/HrCDZfMumyuCI=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=Qbn1qHc6lUrKbMPzzgWKq9vZPEJ5bUGVPedLhLKD8PPzQnk0mdZH17CAxFkqIDSyr
-	 Q86aVZWIWFBugvb4g7P1TqzbBJKV/gd0c8h607JUgZeQry/qJdcUWVcGTyOvq0JQur
-	 KEjV1Hm3ercnG7hQFageEvR0B2ADXlDs52EcThKNZ556SZRyhCy48SfbQ1uO56ScL0
-	 Xww7xd1BYxMFIy6A47C/k8zgIMbjhsiQS5/kWiqu6ScnAGSdcH+PajhipN398yjiZp
-	 Q5mZHckqvj/BHfQl0i+THKnyD24AnFcuVEppEaZc/A8wgegLmwynzeDfd6F0gu1tYF
-	 Cnav442jy+/Fg==
-Message-ID: <8c3835c4-3602-4cee-9631-0551b0341918@kernel.org>
-Date: Sat, 7 Feb 2026 14:44:59 +0100
+	id 1volMc-0000000Cclo-0BJi
+	for linux-phy@lists.infradead.org;
+	Sat, 07 Feb 2026 16:40:56 +0000
+Received: from phl-compute-05.internal (phl-compute-05.internal [10.202.2.45])
+	by mailfout.phl.internal (Postfix) with ESMTP id 0E845EC011F;
+	Sat,  7 Feb 2026 11:40:50 -0500 (EST)
+Received: from phl-frontend-03 ([10.202.2.162])
+  by phl-compute-05.internal (MEProxy); Sat, 07 Feb 2026 11:40:50 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jannau.net; h=cc
+	:cc:content-transfer-encoding:content-type:content-type:date
+	:date:from:from:in-reply-to:message-id:mime-version:reply-to
+	:subject:subject:to:to; s=fm2; t=1770482450; x=1770568850; bh=jU
+	BEXhsSeC5uIqTFNxthrxtRMhomBleIOTGrKRAiolE=; b=VitwxPVCmY0i9Of2Ef
+	CpV2pOTDwIp1LDUmV2txqZEf1eO381LmSUAlpztbX13HGUPzu/lFHegSXDrKjZTJ
+	lgX6eadX4IhX1zlA60PnmPqV4MJwhzu8jeskT66+vIOxJokqrOrqI2fyoPpEh1LQ
+	fzrJqj+kcFfJPLlLTsOfnCBhIzfnb7sVkpfY9bom9YtiqtHlmiM94/z1pw2UkXaW
+	ILcndZrR02Y7WQLqhcAB3CLHDO/1HVoH/D67w03cpLEUB5NiIrO4AthO9eGgX9O+
+	tc0TAn7R1/LjZOLxwuICHwTCElf7jepHHdbGN7qTS43ekKtN2hw5quUTDcuaM8pD
+	WP+w==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:cc:content-transfer-encoding
+	:content-type:content-type:date:date:feedback-id:feedback-id
+	:from:from:in-reply-to:message-id:mime-version:reply-to:subject
+	:subject:to:to:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
+	fm3; t=1770482450; x=1770568850; bh=jUBEXhsSeC5uIqTFNxthrxtRMhom
+	BleIOTGrKRAiolE=; b=cECKFyNpBEe1XJiMBWc/sYPBAdHw9019gwFCA0t3+ppP
+	vs/I4Er40V85OH1mhMYn2T/pojWkFJkgPfKAZWLbMhzoZ4w5IgmH1yYDhfkVi01e
+	OxvXR6a0mb/zPOizDsMLhhcRV3L5R6lq9dAdl4sVq/HgMG37xfTVLb0treMsvCxH
+	a4PD0a76nsGV/ikyDc5aXBa8+cUzXdYLKXh3oeoTlk4GUGD92ip+kD8zzBjalwp9
+	XVf6Mb4CHq7cEH4NRa/H9qVYbo3yppxCmhnoh/NBimPgiuxTV8LmOY/W1q41wQV0
+	Rb6IL1yZ2Z+hq2Jj7UgR1yRVBA7so3Jb8Tl/YmORaQ==
+X-ME-Sender: <xms:EWuHaYztydNBunP9xLyyftuHlKn5FXap50BLloMDcaBt62XO79jktA>
+    <xme:EWuHaZpVNpFRgf3KdRIRRJKSXZ2pvLwDHWD1MIoxtSlDNV24lLS-5tps2UQ2CWQEK
+    Tf2-zfhtL5_nbav1yH0alwt0cQd7GC1Jrditf_Vftcf17v4i9K1RA>
+X-ME-Received: <xmr:EWuHaT3fdN20Bplt2lPJd_041oIuX0gwTIJAd2WIs4fCQuS4O6UKfXPDzy7uL1tZkQygaPN6ybAQLB6VG5p8knMyES0pQiifGRkgLw>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeefgedrtddtgdduleduheehucetufdoteggodetrf
+    dotffvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfurfetoffkrfgpnffqhgenuceu
+    rghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmnecujf
+    gurhephfffufggtgfgkffvvefosehtjeertdertdejnecuhfhrohhmpeflrghnnhgvucfi
+    rhhunhgruhcuoehjsehjrghnnhgruhdrnhgvtheqnecuggftrfgrthhtvghrnhepfeehle
+    dtheefteejfedvheetuedttdetleegudeuteejveetieefuedvfeffvdeinecuffhomhgr
+    ihhnpehkvghrnhgvlhdrohhrghenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmh
+    epmhgrihhlfhhrohhmpehjsehjrghnnhgruhdrnhgvthdpnhgspghrtghpthhtohepuddt
+    pdhmohguvgepshhmthhpohhuthdprhgtphhtthhopehsvhgvnheskhgvrhhnvghlrdhorh
+    hgpdhrtghpthhtoheplhhinhhugidqkhgvrhhnvghlsehvghgvrhdrkhgvrhhnvghlrdho
+    rhhgpdhrtghpthhtohepnhgvrghlsehgohhmphgrrdguvghvpdhrtghpthhtohepphdrii
+    grsggvlhesphgvnhhguhhtrhhonhhigidruggvpdhrtghpthhtohepuggrnhdrtggrrhhp
+    vghnthgvrheslhhinhgrrhhordhorhhgpdhrtghpthhtohepjhesjhgrnhhnrghurdhnvg
+    htpdhrtghpthhtoheplhhinhhugidqphhhhieslhhishhtshdrihhnfhhrrgguvggrugdr
+    ohhrghdprhgtphhtthhopehnvghilhdrrghrmhhsthhrohhngheslhhinhgrrhhordhorh
+    hgpdhrtghpthhtoheprghsrghhiheslhhishhtshdrlhhinhhugidruggvvh
+X-ME-Proxy: <xmx:EWuHaRydCofoszGR5cvKQS7I0v4W5AEG1rf_J4l5I_U2wmnaPNStRg>
+    <xmx:EWuHafiS9Ih-7-rWtMz4bNJqvAQWl6oFJeVx1N3WUKCriv9IUvx0JQ>
+    <xmx:EWuHaUqnG5CyMcBL6J8nBqIi85fMUw4QL9I7Rjxu8vACnAq9ds1qPA>
+    <xmx:EWuHaWiJL4-1YLA_J9l1SpJ6qk7vls-ZD3y6vbxUrYg_PKnMLOCjsA>
+    <xmx:EmuHaVGBf2cvpyJQ0aqQXA9ccBCuFyw8e9OoLcCCzaLYi62xRMjDMSAF>
+Feedback-ID: i47b949f6:Fastmail
+Received: by mail.messagingengine.com (Postfix) with ESMTPA; Sat,
+ 7 Feb 2026 11:40:48 -0500 (EST)
+From: Janne Grunau <j@jannau.net>
+Date: Sat, 07 Feb 2026 17:40:34 +0100
+Subject: [PATCH phy-next] phy: apple: apple: Check the actual ioremap
+ return value
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/2] dt-bindings: phy: spacemit: add regulator support to
- K1 USB2 PHY
-To: Ze Huang <huang.ze@linux.dev>, Chukun Pan <amadeus@jmu.edu.cn>
-Cc: Yixun Lan <dlan@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Rob Herring <robh@kernel.org>, Mark Brown <broonie@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>, linux-riscv@lists.infradead.org,
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
- devicetree@vger.kernel.org, spacemit@lists.linux.dev
-References: <20260206100009.873182-1-amadeus@jmu.edu.cn>
- <20260207-dancing-finch-of-chemistry-f98cf2@quoll>
- <DG8QBWSJ79MP.2MVIHFRBX3WXX@linux.dev>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 a/A=
-In-Reply-To: <DG8QBWSJ79MP.2MVIHFRBX3WXX@linux.dev>
+Message-Id: <20260207-phy-apple-resource-err-ptr-v1-1-78735b07ed2d@jannau.net>
+X-B4-Tracking: v=1; b=H4sIAAFrh2kC/x3MQQqDMBBG4avIrDuQxKq0VykuRH91QOIwsUUR7
+ 960y2/x3kkJJkj0LE4yfCTJGjP8raB+7uIEliGbggu1C65hnQ/uVBewIa1v68EwY92Mq0coB+9
+ Ld68rygM1jLL/5y/6dRH7Ru11fQGEpHp4dgAAAA==
+X-Change-ID: 20260207-phy-apple-resource-err-ptr-5923d1130465
+To: Sven Peter <sven@kernel.org>, Neal Gompa <neal@gompa.dev>, 
+ Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
+ Philipp Zabel <p.zabel@pengutronix.de>
+Cc: asahi@lists.linux.dev, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, Dan Carpenter <dan.carpenter@linaro.org>, 
+ Janne Grunau <j@jannau.net>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1394; i=j@jannau.net;
+ s=yk2025; h=from:subject:message-id;
+ bh=gXKmpNpYUfje69UnUeQRkjWXqxdVdCEP+0abPCWnBcU=;
+ b=owGbwMvMwCW2UNrmdq9+ahrjabUkhsz2bL5czctTKpsv+pl5HnaVknGNP77Gc+/u6fHS0so/2
+ TKK9Qo6SlkYxLgYZMUUWZK0X3YwrK5RjKl9EAYzh5UJZAgDF6cATOTLE0aGFVsr/C96WShHzqiX
+ /+8i9uHayfIZl1hTDhS+fyD12SNBlOGv8NloHTMmxpfZX1ccV1v6pukWj+xjrpYuzsib3RldiwV
+ ZAQ==
+X-Developer-Key: i=j@jannau.net; a=openpgp;
+ fpr=8B336A6BE4E5695E89B8532B81E806F586338419
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260207_054505_602010_EBAD95E9 
-X-CRM114-Status: GOOD (  26.26  )
+X-CRM114-CacheID: sfid-20260207_084054_412113_31AB229C 
+X-CRM114-Status: UNSURE (   8.52  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -123,161 +129,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 07/02/2026 13:30, Ze Huang wrote:
-> On Sat Feb 7, 2026 at 6:48 PM CST, Krzysztof Kozlowski wrote:
->> On Fri, Feb 06, 2026 at 06:00:08PM +0800, Chukun Pan wrote:
->>> Add an optional phy-supply property to describe the regulator
->>> supplying for USB VBUS.
->>
->> Why wasn't it there before? USB did not have VBUS?
-> 
-> Previously, the VBUS regulator was defined as regulator-always-on in
-> the device tree as a workaround.
+The address where the devm_ioremap_resource() return value is stored is
+always a valid pointer. Check the actual return value instead as that
+that might be an error value.
 
-Bindings are supposed to be complete regardless what driver does (or
-does not).
+Reported-by: Dan Carpenter <dan.carpenter@linaro.org>
+Closes: https://lore.kernel.org/asahi/aYXvX1bYOXtYCgfC@stanley.mountain/
+Fixes: 8e98ca1e74db ("phy: apple: Add Apple Type-C PHY")
+Signed-off-by: Janne Grunau <j@jannau.net>
+---
+ drivers/phy/apple/atc.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-You must list all supplies with proper names.
+diff --git a/drivers/phy/apple/atc.c b/drivers/phy/apple/atc.c
+index dc867f368b68748ea953e594ad998d7f965d8d1d..c144e273a555a741b49adfccbe046df83d193e03 100644
+--- a/drivers/phy/apple/atc.c
++++ b/drivers/phy/apple/atc.c
+@@ -2206,7 +2206,7 @@ static int atcphy_map_resources(struct platform_device *pdev, struct apple_atcph
+ 	for (int i = 0; i < ARRAY_SIZE(resources); i++) {
+ 		res = platform_get_resource_byname(pdev, IORESOURCE_MEM, resources[i].name);
+ 		*resources[i].addr = devm_ioremap_resource(&pdev->dev, res);
+-		if (IS_ERR(resources[i].addr))
++		if (IS_ERR(*resources[i].addr))
+ 			return dev_err_probe(atcphy->dev, PTR_ERR(resources[i].addr),
+ 					     "Unable to map %s regs", resources[i].name);
+ 
 
-If this regulator was missing, then what else?
-
-> 
->>
->> Explanation is so incomplete I suspect you are patching broken things,
->> so as well this could be completely different hardware (e.g. there is no
->> regulator for this block but e.g. connector).
->>
-> 
-> usb ports under usb hub node can describe the topology well, but
-> still regulator always-on is necessary as no driver toggles it.
-> 
->     usb3 {
->      dr_mode = "host";
->      #address-cells = <1>;
->      #size-cells = <0>;
->      status = "okay";
-> 
->      hub_2_0: hub@1 {
->       compatible = "usb2109,2817";
->       reg = <0x1>;
->       #address-cells = <1>;
->       #size-cells = <0>;
->       vdd-supply = <&usb3_vhub>;
->       peer-hub = <&hub_3_0>;
->       reset-gpios = <&gpio K1_GPIO(124) GPIO_ACTIVE_LOW>;
-> 
->       port@1 {
->        reg = <1>;
->        vbus-supply = <&usb3_vbus>;
->       };
-> 
->       port@2 {
->        reg = <2>;
->        vbus-supply = <&usb3_vbus>;
->       };
-> 
->       ...
-> 
->       hub_3_0: hub@2 {
->         ...
->       };
->     };
-> 
-> Here is the diagram for the USB2, USB3 controller on K1 Jupiter board [1] (page 21)
-> 
->     +-----------------------+
->     |        K1 SoC         |
->     |                       |
->     |  +-----------------+  |   (USB 3.0)
->     |  | USB3 Controller |--|---------------------------------->+--------------------------+
->     |  +-----------------+  |                                   |        VL817 Hub         |
->     |                       |                                   |                          |---> [USB3 Ports]
->     |      HUB_PWREN        |                                   | +----------------------+ |     ^
->     |       (GPIO)  --------|---------------------------------->| | Enable Chip Power    | |     |
->     |                       |                                   | +----------------------+ |     |
->     |                       |                                   +--------------------------+     |
->     |      USB3_PWREN       |                                                                    |
->     |       (GPIO)   -------|----------------------------------------------------------> [VBUS of USB3 Ports]
->     |                       |
->     |                       |
->     |~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
->     |                       |
->     |  +-----------------+  |   (USB 2.0)
->     |  | USB2 Controller |--|---------------------------------->+--------------------------+
->     |  +-----------------+  |                                   |      FE1_1S Hub          |---> [USB2 Ports]
->     |                       |                                   +--------------------------+     ^
->     |   USB_HOST_PWREN_H    |                                                                    |
->     |       (GPIO)      ----|-----------------------------------------------------------> [VBUS of USB2 Ports]
->     |                       |
->     |                       |
->     +-----------------------+
-
-
-I do not see here a "phy" regulator supply. Are you sure this is how
-your pin or supply is called?
-
-> 
-> [1] https://github.com/milkv-jupiter/jupiter-files/blob/main/hardware/v1_0/jupiter-sch-v1_0.pdf
-
-This page shows the connector, so not the phy.
-
-> 
->>
->>>
->>> Signed-off-by: Chukun Pan <amadeus@jmu.edu.cn>
->>> ---
->>>  Documentation/devicetree/bindings/phy/spacemit,usb2-phy.yaml | 4 ++++
->>>  1 file changed, 4 insertions(+)
->>>
->>> diff --git a/Documentation/devicetree/bindings/phy/spacemit,usb2-phy.yaml b/Documentation/devicetree/bindings/phy/spacemit,usb2-phy.yaml
->>> index 43eaca90d88c..74a1cd5bcdbe 100644
->>> --- a/Documentation/devicetree/bindings/phy/spacemit,usb2-phy.yaml
->>> +++ b/Documentation/devicetree/bindings/phy/spacemit,usb2-phy.yaml
->>> @@ -19,6 +19,10 @@ properties:
->>>    clocks:
->>>      maxItems: 1
->>>  
->>> +  phy-supply:
->>> +    description:
->>> +      Phandle to a regulator that provides power to VBUS.
->>
-> 
-> "vbus-supply" should be more accurate.
-> 
->> Drop redundant part. This cannot be anything else than phandle and
->> regulator.
->>
->> "VBUS power supply" for example.
->>
-> 
->> But anyway, I don't have certainty that
->> this is correct hardware representation. It's your task to provide that.
->>
->> Best regards,
->> Krzysztof
-> 
-> I initially considered handling VBUS via the onboard_usb_dev driver, as
-> we discussed previously for the BananaPi-F3 board (which uses a VL817
-> Hub) [2]. I was waiting for Marco Felsch's patch series "onboard-dev USB
-> hub host managed vbus" to land [3].
-> 
-> [2] https://lore.kernel.org/linux-riscv/aWJAT3n_KcND8bOz@monica.localdomain/
-> [3] https://lore.kernel.org/all/20250911-v6-16-topic-usb-onboard-dev-v4-0-1af288125d74@pengutronix.de/
-> 
-> I am not certain if managing VBUS in the PHY driver (e.g.,
-> phy-stm32-usbphyc.c and phy-rockchip-usb.c) is the standard method.
-> I would not insist on the "onboard_usb_dev managed vbus" if this patch
-> (PHY managed) is considered proper way.
-
-I am not talking about driver here at all.
-
-Please start describing in the bindings your complete hardware, not your
-drivers.
-
-That's a no for this patch, because phy does not have such supply.
+---
+base-commit: dbeea86fecef7cf2b93aded4525d74f6277376ef
+change-id: 20260207-phy-apple-resource-err-ptr-5923d1130465
 
 Best regards,
-Krzysztof
+-- 
+Janne Grunau <j@jannau.net>
+
 
 -- 
 linux-phy mailing list
