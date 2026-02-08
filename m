@@ -4,8 +4,8 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9A3FDEF06E3
-	for <linux-phy@archiver.kernel.org>; Sun,  8 Feb 2026 15:39:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1313CEF06EA
+	for <linux-phy@archiver.kernel.org>; Sun,  8 Feb 2026 15:39:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -13,28 +13,28 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	References:Message-Id:Subject:Date:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=DxyYwOzCX1t2Z1qP+cZ3k3E9groo9H3LJw6BmTvNV0g=; b=P6lS3v4pZH4pnw97/l9ZA924Hr
-	VmvCSEA2ETFou1zToC7ce66aPNNKBPT0oYeX4sPPZQgNVrqT0ROM86bQvxfju+q9jn5T2KG6CPytn
-	LR+fqvXqpGDobGy2mFnfsLFnXT5VuwKF4nkuGGV7btLHigdeGw5JLyEgGI6VbZ/9JOU4adAlORVbb
-	i/trpji3Xf5Ne6bahPBY02tipI92deWHs3zXrXdolzesX9CS4XzKfrc/Vdw2KUg0NM3Co5kIgIngj
-	1FviCuPRGA/hjBoNlJZbnNXLgC9vqZSpFEibi4ZrlZqDgm0dC40J78Na4gORnTaWK0ERsSUQAo7Bi
-	WjO6qsDA==;
+	bh=xivnKrD0OJ/UEI31EatqTL+BUvmxgDSnCX9gerh+Up8=; b=KsZIB6Sl4+LO5OriCCYVclw4OM
+	496JamR8i4QuGNi6W8wAkxGpgQJjzqrZ3VnL7noLXSXEJABGFpw4uXF0NPX3Ew7LmaqyIhgzVp0JU
+	bm787Hm9iOtjd/HALcn6tmOX4MV7pnEICaBQECxnowJbYBgjjPo7BPjGUagBrMgSf1QciKQ3wTyqg
+	etTpSZSwMqTpdhosuSayirvyaYjRV4cb2TR8YlSwjRvlz8xt+yzaAI+TtXh83diXm3qGkd976Q1pi
+	zpnvNnf+HiWIxw530WlmzuaTRnUXoFO+IZ8E19bIHqyje0Cx7P28zAxg13HLV5QHDZ55EKupwWAKm
+	xVMokoTw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vp6sm-0000000DQH8-03U5;
-	Sun, 08 Feb 2026 15:39:32 +0000
-Received: from mail-westeuropeazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c201::1] helo=AM0PR83CU005.outbound.protection.outlook.com)
+	id 1vp6sn-0000000DQIA-1nNv;
+	Sun, 08 Feb 2026 15:39:33 +0000
+Received: from mail-northeuropeazlp170120005.outbound.protection.outlook.com ([2a01:111:f403:c200::5] helo=DUZPR83CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vp6si-0000000DQEm-2jcm
+	id 1vp6sk-0000000DQFZ-1ZEO
 	for linux-phy@lists.infradead.org;
-	Sun, 08 Feb 2026 15:39:30 +0000
+	Sun, 08 Feb 2026 15:39:32 +0000
 ARC-Seal: i=3; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=pass;
- b=UjtYlUYLFdghfeyspM6pRaqCDy2QyVU8QmAuHYwhV5Y1CuzEo5iJb4jmy+vmJgxQayaFlQJJJtTqxsugSuQurztJ2nqP9Q2uD95tSS3Y2+KP4/FHyqgi0NLIJDzuK877hMCfSPs1mwjuKCFHYwojFQL5XixCEwX5ZYARf9zqjRWQYaTo5vqDUqOTo0oFbLMLAk5VCL2LxuiyPb/vZWl3nin4WI5SdeJDNJ8KuHxZ41MgjKeE6jp9HzligldFT/XolsTC1ZuYBuGjoVgj3H+blMzl4kkNKUQk6kQgBXxZAheCn3syF93E6b1bBvKsI/gP38HjnO2lyq+c4JpeX7Hh7Q==
+ b=caZvm/uz0mPeYZ0rz3sjEUzchwFTerO/0vZQ9jtyuKpQQCmwEOwuweDV+fOH9LdK9hrK+RddO2HdIOxNmqhX7Guvg85fmw+ltg357zOqCson/B/PGfz5pX5DTnyfS+xkM5dBj7XEg6mvHQhLeJA36GbnVHGksYOYPBg1ilNjaoPC6HmMdulkvDlDgaCQrpakksXPEdN24Ru/fYqgU83ILEnlFh+oOIGVPFkSlS/5mRlxZXHKwBkEgw8NBjz9IKMwkT4gpa3n0iVhXCy3YtqPPyIP0jtgTnToqa2ggObmoX39bxBqfmvpgF5ynVYZR6uaMeaxQHBB62X0WGTiAUHJlg==
 ARC-Message-Signature: i=3; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=rcrPdd5V7JVI+Z4iqSY9JnnlAHfAmAt7JLa4RTerNpw=;
- b=YDQdIVLyMuGZl/yGDniHY3aHUSNBRWMmXSPqMeAJ9wFSfBFoFv8mwLrCjdlPVjc6RP5jXPiBcm49+eN2N/ZcrjTtZwNZgwceOfyIX1jN8hi9PstPoqiATgKi0X3oQZEikFmyNnbJhZisy58eSAuCEXi3uerJvCBPPnkMmmcWQcuBXqlVzN+kNWkq/LF+/NHHb+XQToYaNJriAhSwKkfBNbJQUDX0KnvbwbpekX9iH+kRjIhJPFrqm0gL4xTqj/cjM5yL9oooGKpL8jl7+B3SStc6mq8JWuE3Nu/btVMvvQjfbIf4M0KJotjMo8nK8bMR3sY3RMFVGtWwQu92JLftIg==
+ bh=KzjHXwZElFC+HUQNbvYMVDLUt/jeNMj0vzfEleaL0/M=;
+ b=R4wXJAQNvAkYmb9eMxwgqWMIzm7od3uc8uiSM/N/l+JDMUgqKIyBZ+gbcIBuh8AC2Sb8dKwhK+sGSnykOuyVeD2oUmkzeuFwZ7YZ6kiLBrZGnyarLTB+/Au7V//d1vpbikSYsF315TemObmL1ZQZoqfuserw+9UYCmjuNbeqgVepfa+i0arVVOTkZPcWV+yB5NsE7pX++QpztwEIu+X0eBEl1dYRU52mNzdD7RYWEPOi/0ZOKQoN3RDiPRPpyxGnIV0JOw/ZkKiRdRAMRnFzQdnqxMaM9zfoo4qS/syXk09kAHJ0sUnhcsynTqke2I+H45WHcFxl8Jx/J6h7ilmNIQ==
 ARC-Authentication-Results: i=3; mx.microsoft.com 1; spf=softfail (sender ip
  is 52.17.62.50) smtp.rcpttodomain=atomide.com smtp.mailfrom=solid-run.com;
  dmarc=fail (p=none sp=none pct=100) action=none header.from=solid-run.com;
@@ -44,16 +44,16 @@ ARC-Authentication-Results: i=3; mx.microsoft.com 1; spf=softfail (sender ip
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=solidrn.onmicrosoft.com; s=selector1-solidrn-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=rcrPdd5V7JVI+Z4iqSY9JnnlAHfAmAt7JLa4RTerNpw=;
- b=pEXFfHDUx458Rz8RJQBFM4BVIx6tFwaqeP8Wl/7qtCpMTBArc3YKPi/zKIfPAHO/Z5CaEwx6SVMTo6kYc06Ha0ytyBqQlOG1GaXlAC+4C1r8KSG6dWgYI7f1UXsOXm9GLy4NW8aNYVzZrT4EZjacX4kCUF1c1PQdd3NI5FtHQTg=
-Received: from AS4PR09CA0004.eurprd09.prod.outlook.com (2603:10a6:20b:5e0::10)
- by VI1PR04MB7184.eurprd04.prod.outlook.com (2603:10a6:800:125::15) with
- Microsoft SMTP Server (version=TLS1_2,
+ bh=KzjHXwZElFC+HUQNbvYMVDLUt/jeNMj0vzfEleaL0/M=;
+ b=GOtPZDjjRL9mu83bGiiLyXAYFxgs/fJwAT9rYCOUWBO0Wfm3BHvz6P9gt0huwkwPxN2e3DZ+ekZzzkgg9lNA1ZoWKnfHgjCE++/HEXVthrjztwXb+l2nX4APYjniHzTZhVLad6D/M4n/mwfBRRCHeNe1WsYscA1K1WgLtxlcHEM=
+Received: from DU7PR01CA0027.eurprd01.prod.exchangelabs.com
+ (2603:10a6:10:50e::14) by DUZPR04MB9846.eurprd04.prod.outlook.com
+ (2603:10a6:10:4db::8) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9587.18; Sun, 8 Feb
- 2026 15:39:23 +0000
-Received: from AMS1EPF0000004A.eurprd04.prod.outlook.com
- (2603:10a6:20b:5e0:cafe::52) by AS4PR09CA0004.outlook.office365.com
- (2603:10a6:20b:5e0::10) with Microsoft SMTP Server (version=TLS1_3,
+ 2026 15:39:26 +0000
+Received: from DB3PEPF0000885D.eurprd02.prod.outlook.com
+ (2603:10a6:10:50e:cafe::9b) by DU7PR01CA0027.outlook.office365.com
+ (2603:10a6:10:50e::14) with Microsoft SMTP Server (version=TLS1_3,
  cipher=TLS_AES_256_GCM_SHA384) id 15.20.9587.18 via Frontend Transport; Sun,
  8 Feb 2026 15:39:17 +0000
 X-MS-Exchange-Authentication-Results: spf=softfail (sender IP is 52.17.62.50)
@@ -63,56 +63,56 @@ X-MS-Exchange-Authentication-Results: spf=softfail (sender IP is 52.17.62.50)
 Received-SPF: SoftFail (protection.outlook.com: domain of transitioning
  solid-run.com discourages use of 52.17.62.50 as permitted sender)
 Received: from eu-dlp.cloud-sec-av.com (52.17.62.50) by
- AMS1EPF0000004A.mail.protection.outlook.com (10.167.16.134) with Microsoft
+ DB3PEPF0000885D.mail.protection.outlook.com (10.167.242.8) with Microsoft
  SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.9587.10
- via Frontend Transport; Sun, 8 Feb 2026 15:39:23 +0000
-Received: from emails-2350297-12-mt-prod-cp-eu-2.checkpointcloudsec.com (ip-10-20-6-212.eu-west-1.compute.internal [10.20.6.212])
-	by mta-outgoing-dlp-431-mt-prod-cp-eu-2.checkpointcloudsec.com (Postfix) with ESMTPS id D1FD080010;
-	Sun,  8 Feb 2026 15:39:22 +0000 (UTC)
+ via Frontend Transport; Sun, 8 Feb 2026 15:39:25 +0000
+Received: from emails-3684086-12-mt-prod-cp-eu-2.checkpointcloudsec.com (ip-10-20-5-47.eu-west-1.compute.internal [10.20.5.47])
+	by mta-outgoing-dlp-670-mt-prod-cp-eu-2.checkpointcloudsec.com (Postfix) with ESMTPS id B92C280085;
+	Sun,  8 Feb 2026 15:39:25 +0000 (UTC)
 ARC-Authentication-Results: i=2; mx.checkpointcloudsec.com;
  arc=pass;
  dkim=none header.d=none
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed;
- d=checkpointcloudsec.com; s=arcselector01; t=1770565162; h=from : to :
+ d=checkpointcloudsec.com; s=arcselector01; t=1770565165; h=from : to :
  subject : date : message-id : content-type : mime-version;
- bh=rcrPdd5V7JVI+Z4iqSY9JnnlAHfAmAt7JLa4RTerNpw=;
- b=cHPNsNNJbNDTWElES9Grmx1PkneG61CkwPqm+HE95v1jsv8gZmKZSX6HT9CQaAhdCLkQM
- wNte5AtOJNYRsq0FrF9wwf41WpFepm1B9LRNv51LeBs4C6hSePNlsqTyrBx5ESZU30LOR0k
- hNhxAUdVeV2qUqNvL6W+YsgvUaXBMKA=
+ bh=KzjHXwZElFC+HUQNbvYMVDLUt/jeNMj0vzfEleaL0/M=;
+ b=B8FFLXVuFhdZ/OjCYcymmyBB5tW0CQSwitVAu41ySDD3ptHvxM0Rxiy+9BJyq3YZQ0Svp
+ A9/P+ASAjuy527iYfeo2lRh7NNlgszIy7A6plUa+wFtAVnqnNbiMjdA5ekXnTdK5SMksVRU
+ +ZjT95RXNNUjThZgf9jDdCz0IzdmZc8=
 ARC-Seal: i=2; cv=pass; a=rsa-sha256; d=checkpointcloudsec.com;
- s=arcselector01; t=1770565162;
- b=Lx9Z6rvkCWHa87H00/C4w+U1wdBj7O26NCUxbFALBRg9Y0O2Q9ogtvYc5jmTYo9Im8/n3
- d75ycJY7KA04sskm1qjpDCGZDG5iH1PEOrlTVQ6hW+dqKGDrcpUuioOU1DjcrgGqa4o1WRt
- 73PVk2JYXwF6rEPvW/xrGgZEfNeS7Bo=
+ s=arcselector01; t=1770565165;
+ b=SsBDesdhU2whbPKJqDOfQd/rAocmpfEXf6mlY2rIgEtUByWbsYTIW6uTDUwHgIbPmrhIg
+ wBCfkfr5VQ5TDHDpqw0XCf2SC1FIGzqjx+1kmgdZ9+6ahI8+XjqttRH2oekvdx8pCZipPT2
+ MVuRMqOpI3ZWE2O/gzFR5OtBr4LDKvo=
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=LMbvLd0BeFfTUUulA7cKm1IYI1rfFjVLjgQAZzSwu44iGD1gzSnl4ibp+Thzak6ddVvEBFsUXg2iYexMd/NzrKlRIMDs2yM2T1GRmEJDQ3iNWSLuGq23WS/CzGa3+8N3OK/WAKKrrSp6bAlV3xWkEXSLB/iocVLVILZHvfvjJAoIGl7EkRU39Qa1nFHnqopqSg6jBA+DFb1qar5Y21wh8M86lmdNwUqlGF882shEwvd2O6JWWh/qAdKiFH5JsFMZ+TIxF/++mZyN+6tPZxQSBpd8W70jvRrCYCPa6fHfoY9CZceQ95w5JyNxlLghVRG8B/GO6uPyWd2+PwBMcgzZCw==
+ b=ml1heOPwN9tCrPHwow3IhYMtGpHVb76Lid+yjZKn2ISDZv9sE5Uh/OP/Zf+D92IfG8LkGqiiN+zhPJm12wnGzKZt5LjrC3PqQ1LmRGME9WxHU7UBkfyDjb9TA++Mk/5WlitxXoGLf+tRZLcPx8ib/HrfqqiO2gUfopv1RlmMx8rraNkU37ILXvG5WayLCPPtaCmqdXSx6/LkuBi9o2IfCjEjNw6QeITC4fMN1BDO4jK27zoClohDs8w4BHNdstk6Eug/kHSiNNh4vW5Ay/NYjWoGF0gwyn3Hm0Qff2IJtJvAXopczHmLzu6Orzuc9PUWX6XXRyQcvo1wAE2HAQL7rQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=rcrPdd5V7JVI+Z4iqSY9JnnlAHfAmAt7JLa4RTerNpw=;
- b=PPakpEQ77QV9KJbfkdX8/QimwGFLeXMKlCLobCPPxz5mm+BZzYzeWz1UgMugoWipPNQHdPNwds7O9l4PMYJf8sfSZUCKXeg2hIcf7786VFViRl/s9B37me9LnM4NqYFlbAHX23Gsmz//+kxqCO6BU+PmqCo0is2zu7keUG3QH0Er1HrsyOl/5E080SI7D+kT2cZqwRsfe2/I6eoB4wPzp+rwr5BF+KUpNn38qiLS1sdcknLr46yKLkNrTBisScn7zSLgCbaoq/wnzt+rTWg2/bIKAnynCpSw3xQTM0/an5qL2uOSHkT6x7mZAGjc9+QXx7rav/g6Z8DQbpOMEe1z3A==
+ bh=KzjHXwZElFC+HUQNbvYMVDLUt/jeNMj0vzfEleaL0/M=;
+ b=vWFk5/p9UVcc1i+pMEis08NdfsYvG4ptBNSpk//zfCWR3hBXSCYqhoF5jjVVUwTJ1U/ZIQ4u9s4VNzr3SUQyDBLBCnhssTY28zwYkAnoNLhuJr5ZMHbtYX66N9gORGdkgpAhsOKjtpr9rEY97IHF55l/Pd13ude5C2AXqAW48VNNiuw0EWphI90fBgdFMNWm6fRSTfAexqvUh+mitMqzxJET83sgGttMGSiePMyHfpiC8S6hsysMWJH1HTd5BiXzgSIfN5HZs3Bx7uFIpPLAIrPJvnKnuay7NpE6vz3VjoXQupZ2clbq3X9VNcMvKnC+d1ZAbuX0D314VEgoXGy3wg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=solid-run.com; dmarc=pass action=none
  header.from=solid-run.com; dkim=pass header.d=solid-run.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=solidrn.onmicrosoft.com; s=selector1-solidrn-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=rcrPdd5V7JVI+Z4iqSY9JnnlAHfAmAt7JLa4RTerNpw=;
- b=pEXFfHDUx458Rz8RJQBFM4BVIx6tFwaqeP8Wl/7qtCpMTBArc3YKPi/zKIfPAHO/Z5CaEwx6SVMTo6kYc06Ha0ytyBqQlOG1GaXlAC+4C1r8KSG6dWgYI7f1UXsOXm9GLy4NW8aNYVzZrT4EZjacX4kCUF1c1PQdd3NI5FtHQTg=
+ bh=KzjHXwZElFC+HUQNbvYMVDLUt/jeNMj0vzfEleaL0/M=;
+ b=GOtPZDjjRL9mu83bGiiLyXAYFxgs/fJwAT9rYCOUWBO0Wfm3BHvz6P9gt0huwkwPxN2e3DZ+ekZzzkgg9lNA1ZoWKnfHgjCE++/HEXVthrjztwXb+l2nX4APYjniHzTZhVLad6D/M4n/mwfBRRCHeNe1WsYscA1K1WgLtxlcHEM=
 Received: from PAXPR04MB8749.eurprd04.prod.outlook.com (2603:10a6:102:21f::22)
  by PAXPR04MB9074.eurprd04.prod.outlook.com (2603:10a6:102:227::7) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9587.18; Sun, 8 Feb
- 2026 15:39:09 +0000
+ 2026 15:39:16 +0000
 Received: from PAXPR04MB8749.eurprd04.prod.outlook.com
  ([fe80::d782:fbb2:be9a:43f1]) by PAXPR04MB8749.eurprd04.prod.outlook.com
  ([fe80::d782:fbb2:be9a:43f1%3]) with mapi id 15.20.9587.016; Sun, 8 Feb 2026
- 15:39:09 +0000
+ 15:39:16 +0000
 From: Josua Mayer <josua@solid-run.com>
-Date: Sun, 08 Feb 2026 17:38:57 +0200
-Subject: [PATCH v9 2/7] mux: Add helper functions for getting optional and
+Date: Sun, 08 Feb 2026 17:39:00 +0200
+Subject: [PATCH v9 5/7] i2c: omap: switch to new generic helper for getting
  selected mux-state
-Message-Id: <20260208-rz-sdio-mux-v9-2-9a3be13c1280@solid-run.com>
+Message-Id: <20260208-rz-sdio-mux-v9-5-9a3be13c1280@solid-run.com>
 References: <20260208-rz-sdio-mux-v9-0-9a3be13c1280@solid-run.com>
 In-Reply-To: <20260208-rz-sdio-mux-v9-0-9a3be13c1280@solid-run.com>
 To: Marc Kleine-Budde <mkl@pengutronix.de>,
@@ -140,114 +140,114 @@ X-ClientProxiedBy: TL2P290CA0029.ISRP290.PROD.OUTLOOK.COM
  (2603:1096:950:3::19) To PAXPR04MB8749.eurprd04.prod.outlook.com
  (2603:10a6:102:21f::22)
 MIME-Version: 1.0
-X-MS-TrafficTypeDiagnostic: PAXPR04MB8749:EE_|PAXPR04MB9074:EE_|AMS1EPF0000004A:EE_|VI1PR04MB7184:EE_
-X-MS-Office365-Filtering-Correlation-Id: 562cd626-5577-4c34-bb27-08de67283bc7
+X-MS-TrafficTypeDiagnostic: PAXPR04MB8749:EE_|PAXPR04MB9074:EE_|DB3PEPF0000885D:EE_|DUZPR04MB9846:EE_
+X-MS-Office365-Filtering-Correlation-Id: bc386172-789a-45aa-0b71-08de67283d55
 X-CLOUD-SEC-AV-Info: solidrun,office365_emails,sent,inline
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam-Untrusted: BCL:0;ARA:13230040|366016|7416014|1800799024|52116014|376014|38350700014|921020;
-X-Microsoft-Antispam-Message-Info-Original: =?utf-8?B?UFZsS1FLNy9KQWZXRHRlemVuSitBdkdaN1NTRVplS1VoUittTVVQRlV6bVpS?=
- =?utf-8?B?Y3VQYWtjemg3WGY1c2xaMkRYSlFuYUFHSWRKdHFDV29tY2k1NGcrN1hqWDRp?=
- =?utf-8?B?OHZTdzNkZTFYanpXeXlmSkR4OWVYbzFPSjlQV1JSQmNGazRxb0E0bzNQWlcy?=
- =?utf-8?B?cHozUFVVTjJSdVJ5KzNQVUM5NUswL2tCcVBjdVV0Y1EzOVRhRDVhVjJsUzRv?=
- =?utf-8?B?aFp0Wk9JQUR0UFptd2U3RFZDTURmY1dMVUlNeG5Ha25CNnIrRStWK09aMGVL?=
- =?utf-8?B?ZHRKaXIva0xyaHgra1ZwSS9JRlc3UXVuMWpTdUwzYnkyeVdLL253N25Nbjh0?=
- =?utf-8?B?eTBkZmxHU3VHbmk3WGE3OUZVSkhSOVYzeWc0NU1ubnNqdDZ1UzB3eHhxbzNh?=
- =?utf-8?B?SmNrZzJSWGhxZFpsSmpOZVFIQUJRVkZyQ2J3dDk0Q3FDOGVpZlJ2R2k5dTVM?=
- =?utf-8?B?Z2t1akZRSitUMHYvbXprNFJ3RWw2NXVrdlcyWWlobDgvL1drVmJETHZBRDdr?=
- =?utf-8?B?MkY1SzdQYzZvdnUwUDRraTZKeGYyTFdIN2lkUFZJR2xvUmtENGVJSWJTZGh3?=
- =?utf-8?B?cUtQUS9UY3dwQnFhZWhTRGtFbVJjYVVWR2NGRlRVTkFONUR1elo1UlUyc2Jo?=
- =?utf-8?B?ai9zS3VZQUJQWG9XbVVtZ2dKbkd0cVdBUklBQnlFUHZmYVgwajRMeUoxMm1S?=
- =?utf-8?B?WU1lc2o3Yzd6NlZMazUwa2JVY0JrdGg5WFVXSUl1N1lkZ3Z3RW9pcEQwMkxG?=
- =?utf-8?B?QUptT1hnWGlkUFVxa2tmbkdvNzZjTEJIdGlYMWk1clpNYnVKQkMyYmxldmtX?=
- =?utf-8?B?UGhZaHArRS9jVERFcmJNejZLRGRsQW50REdqTlB4U0kxd3MzaEt3TlhnSmpr?=
- =?utf-8?B?QllCZkczNWtoU3N4Ylk1d1VvajZ2aHg5SkEwaEtzTC9sYktQUHFZcVJsUExs?=
- =?utf-8?B?UmlaTmR5NEVWckMzZEt2VXlqcFZmY0d5cnNkRkg0MndRakVIbU9wdDhCcTBW?=
- =?utf-8?B?eWJLTmZxT3c1R2xmaFlKVlBzSHN6d3N3ejlmWUlVMHR0QWN3bmYrYU9HL1hK?=
- =?utf-8?B?UmFqbHV1dnROYVZvRGNOYkEvcHgxSW0rc2JDT29uc0tnejhCT0Q4NEo2WSs5?=
- =?utf-8?B?YWxHd0kwaGgzajdtdmpVVllBTWVwZ2VoN0xuMUN4alh6c1FxVXhneU5LRVJE?=
- =?utf-8?B?YmlRR0RIYWo5MlJVU2p2U1RXZmw2d0E2WjlHVjFjVjZ0WDhpZ0dlSEZZbUJt?=
- =?utf-8?B?SkNyYjM1WDd0QkRUU3lzdFFJcXlQZFNmcHdxMmFYczlPQ01RTWFHL3A4SmVQ?=
- =?utf-8?B?dm8wUDI0NngrQUEvRld1YitRUHVMNUFyMmF2UmlMYUhodDIrMFc4WnlEVDlH?=
- =?utf-8?B?bWM4NzhiZm9nSm9tV2NYa0VkUW5wK0RMRFVmN1VwNXVUTUpCZWNZNDIvL2Ur?=
- =?utf-8?B?cFRxN3NjZE0rd2hEYm5IWTU3STFXTVA1aUpiQUFvRXFySWo5Q25qZzVqZ1Nt?=
- =?utf-8?B?cWdMUXFxU3YzTVh3RXlWLytlQWk5STVoMGlGTW5vZlB5WmJ4aTRXdzR4eGZk?=
- =?utf-8?B?ck1oRDhvTUhlQnd0bXlXTlRwUGdCL0xuNzBOemRBVTNtSFQwNmdCd1Ivc21K?=
- =?utf-8?B?YkhDbUs1eWRPSkg3bUtXYjdEOUVsQ05RdUhWdDBOUDk5Tk9reUFna0pOMUc2?=
- =?utf-8?B?ZENVdVY5YWxqV1hqWTlzZFAwUGxIY1pkWUdRZ2EyejRmUWJjL0VReHc1L3lI?=
- =?utf-8?B?YVhKcTQ3ZzMreXRwNjlCRnFDNHh1QW1YU1JSbGkzdzJVRVBnMEg2WWQxd3Iy?=
- =?utf-8?B?eGo4WW5jaWtHNGpqWnRzYXJnOWFrU0JDcWdVZEpYZXR3NGN4SCs0V0hnN2tS?=
- =?utf-8?B?MFd2eUMwU21QOEh0MTRjbHdKMHFoUmg5VGtVVUZGVmNPdFZpQmdCL0hmZ3pk?=
- =?utf-8?B?U3FuM3FSWFZ0OU1uK3lQMFFUcXJ2UStNQUozMVdJMWtOVW1hTklBOXNaRUdG?=
- =?utf-8?B?L2x0alRMbVgyTU9EcHRQbCtTeWlRTWpjMXFNTnJOMXdnWGR2Q201eUZwOWtH?=
- =?utf-8?B?NFVoY2M0dGpiWWFaVC9GdTdOa2FGaDhDOVhiU1hXY3M5Mm4yZ1UwUDdIdlh5?=
- =?utf-8?B?ZWZnN1FtUDNRZDBERk9yRDZ0dVp2RzVxNC9ONDFZbTAzT0wrdER4bWdYdDBR?=
- =?utf-8?Q?qL/lvhuR1r9lAudc05xTPlG5r0q2rrC+0XqqLkXABAkB?=
-X-Forefront-Antispam-Report-Untrusted: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB8749.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(7416014)(1800799024)(52116014)(376014)(38350700014)(921020);DIR:OUT;SFP:1102;
+X-Microsoft-Antispam-Untrusted: BCL:0;ARA:13230040|366016|7416014|1800799024|52116014|376014|7053199007|38350700014|921020;
+X-Microsoft-Antispam-Message-Info-Original: =?utf-8?B?ZUJRcWtidmNxNFdVcURja2kxVncrdFIxaUdZMDRwTGgxTW84RjRHNGlQT05r?=
+ =?utf-8?B?eTY0eFNubFpzRmVGd09yYmVMdjl0aFV6RHhUUHlVNDE4ZFBpYXhnTXBJUHUv?=
+ =?utf-8?B?Rm0xV2piRFlKWVIvQWczWGltOEwwK2xSbVJ3U09DMnRScENyUkg0cnZCbXFB?=
+ =?utf-8?B?K0FWTzJsaGxYc0haMjQvRVVLNm8zejh1c09SYjMzNEFkcW9QWEV3bFFkNG5P?=
+ =?utf-8?B?czViaTMwY3RyTHF4OHdnZ1RIWEdsRzVLMnlWeFJLRmFnRmJrVDZYWGlpZzZy?=
+ =?utf-8?B?VElGeFhPRFcyNzRJZmxGWTdveW0zN1Z6ekFQaDFvNm9GazBvbVdlVXVuc1Rl?=
+ =?utf-8?B?N1MwSk8xTEk2Smt3N0F4NnhvaXB0SVpuR2Y0S2FNVG5uQ09HV1FiRm00Qmk0?=
+ =?utf-8?B?SDltdzdtWFcrMFBvV1FVYTNPR0ltMjhIWTE4cWx0b0ZpZUQ1dTNSZVNQVGNs?=
+ =?utf-8?B?NUNBVDN0TThlbllvMGNYRFVjdkFaQUxqclZ2UnlwN2Q2ekJpcmt4ZXlvbThv?=
+ =?utf-8?B?SkhzODJrSjQ4cVRnaXp3SzZaL1kxMkkvQkRJakxLV08zM0FkN0dsMjNGSjBl?=
+ =?utf-8?B?Rnphd2VvRFRlQUM4Q1FRZUxZTkFXSFJJcnh2eUVKbGRyU01IdFZ6VEwxS0w3?=
+ =?utf-8?B?RGFnVlM4TlJHQk9WR1RpdzllTUpZNDREaXZScjgwcGNKeGkzY1N1TUJuck5I?=
+ =?utf-8?B?Q0dQeUZlc1dJRWRLN0E4cGRJQTcyTmlTWmZFS3A1ZlMyUUFNM2cyRWl0RW1h?=
+ =?utf-8?B?Q0NCT3d3S0Q4Y3lTdkJXdG5pTldiajVUSXhyc3kyLzFBNDA3VTBFYWM0VVRs?=
+ =?utf-8?B?elllcnA1OXUwUHlQcllveXJGT2E5UmZDbCt5SGdBMmllb0V5TytDNFRHY1BW?=
+ =?utf-8?B?SjQreUVGaVlGSEpEc2F5ZEYvalJyQkRXQkR6UVZSSW1yaFZBSlJSYlhlWkdW?=
+ =?utf-8?B?ckJ5aDBCYmdicldybjJnWTgzYWNMMkV0dno0RkZwMGxCczVHZHJyUGN1NS9C?=
+ =?utf-8?B?VEh6NG5Lc2owOU9yQ3puNlRpN3p5dys0cUlZVXVNNEtTTEpEcXdLTm5ENUdi?=
+ =?utf-8?B?TWtVUTdzT1h0amM0ai8zVkM5OWRwTnIxMDZtK1JVeHhhYUcxcWxkOUZBRGxH?=
+ =?utf-8?B?dHBpVk5lcFRxUHFsN3YvOHp5WDhFMmlNaG5XUmxPSU9RTlNadUNjRjFoK293?=
+ =?utf-8?B?UXB0K2RVbTZNcXZsR1BuK3lmVG9JRUtCcFo0NE9jdUlmNmV3ZExObitOanZZ?=
+ =?utf-8?B?VzNPMndiMWU5NkFPWFdPVGphUFBSaGNEaUVEcnFWWlVnUnJObFJuVGs0dHlC?=
+ =?utf-8?B?SFNHUm91WVljZzByVTNIdS90OVpuWW0zbjRqbTJZUmJPeUtDZTVDZlhTV0g3?=
+ =?utf-8?B?YXlQVTJmaHdhd3ZhVGU3bTFiMVVkUTRnVndrZzR3YklyZXhYYUxVYmIvcVht?=
+ =?utf-8?B?YlVZSjR5S2NDSU0zbm1oaGJiN3J5QlEyOUhUZkxscnFlNHhHWHZoSzQrWVdu?=
+ =?utf-8?B?UmowZFo0MmNPbUU1MHZscDdoaGRVWmc1bFZHa3daa0lzQjdqQ0Z5SC90b1Fq?=
+ =?utf-8?B?T1hFbDdSVnU4RnMxa2haYUJvV1ROaTBkL3JtRTZmNVU4YkZHQy9Mbk5tVTdT?=
+ =?utf-8?B?bEs2aTVDQlJXOUdham8yRVpDQ2c3UlRHWWhPOTVuL2pYa241WXRkUmhDZklR?=
+ =?utf-8?B?QXJIVTFsbDZ2b0VNV0pSUDdUYmw3MFh1RTF1Z05ENDFVZ3FiZmt2WHIvMTdp?=
+ =?utf-8?B?d1RWbUJLNENEOEZVUVV3OXRCbUQ4QzRQL2VMTFdHbUovb24vQ2NUTUVJblU1?=
+ =?utf-8?B?S0g0L2Fqa3ZubGJ2VTJkTW5UMUcrUTFnWU1Cc0tlWXBwOUtBNFBqWXhYOUhK?=
+ =?utf-8?B?d1NkdTJ2V0VNR3JTYjdJdERkY1pSSldWNmV5eVRpV2lCRUFJYzZoSGFCaWtt?=
+ =?utf-8?B?aTlGZ2hJVlRBazUvUTBGOGtCbVg0K0NwVFcvUTVuQ2p6Mk9DSzRsSlZ6RXd6?=
+ =?utf-8?B?b01ocTVsUkp5a0owTE1CbXc5eUx1KzJjRmVKcWZiNUs1YnJreTc1VG9JejRz?=
+ =?utf-8?B?MnFBdlNHdFFnWWxyVjFET08yUHk2aVBZVjA2K3RXRmdtWkVlcGRCQ3FZbFFz?=
+ =?utf-8?B?YytkY3NiVWlCWThFSHZTQVpVdzRBZkJOczdpMUZ1eDFxKzE1dWttK3hRckFH?=
+ =?utf-8?Q?vN1aii6U/O7MP0xmkbv0Lho0KnGuQwU6Zdnh2ieT69md?=
+X-Forefront-Antispam-Report-Untrusted: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB8749.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(7416014)(1800799024)(52116014)(376014)(7053199007)(38350700014)(921020);DIR:OUT;SFP:1102;
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAXPR04MB9074
 X-CLOUD-SEC-AV-INT-Relay: sent<mta-outgoing-dlp-mt-prod-cp-eu-2.checkpointcloudsec.com>
-X-CLOUD-SEC-AV-UUID: a89241e2f87e414295adc7746ecf8b41:solidrun,office365_emails,sent,inline:12b0fcb10f4278561484c091dce66039
+X-CLOUD-SEC-AV-UUID: 6667e42f6835491e85d11acf1bbecc53:solidrun,office365_emails,sent,inline:12b0fcb10f4278561484c091dce66039
 Authentication-Results-Original: mx.checkpointcloudsec.com; arc=pass;
  dkim=none header.d=none
 X-EOPAttributedMessage: 0
-X-MS-Exchange-Transport-CrossTenantHeadersStripped: AMS1EPF0000004A.eurprd04.prod.outlook.com
+X-MS-Exchange-Transport-CrossTenantHeadersStripped: DB3PEPF0000885D.eurprd02.prod.outlook.com
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id-Prvs: 11141a7a-cce5-454e-1631-08de67283386
-X-Microsoft-Antispam: BCL:0;ARA:13230040|36860700013|14060799003|82310400026|1800799024|376014|7416014|35042699022|921020;
-X-Microsoft-Antispam-Message-Info: =?utf-8?B?OVVlN2l6eG5CZkVDaUxXdzNSOFRGUUlySzRLMmt2c3BBTzN2OWZ2NFUwRFdn?=
- =?utf-8?B?R3crazA3d29RRDR3STAvdkRVM05HZXNFZkdTN2htN0tnZ1dsVFVBK1J3V05E?=
- =?utf-8?B?dTBESDg4QmwxdlZjMjlZL2FIM1VZanZLRWV4ZnZsQy9ZOHRyZS8veDBlMlNV?=
- =?utf-8?B?aytHYktScGlubnZid1NseXl2VU5pZ1dBY0tlWnYzb3I2SHJpVVM0TzFzODFX?=
- =?utf-8?B?TGQxa1pydTRBbWNDY3RCRUdOTVhBVy9DNzZGREx4UW0ycnUrNndJMmMyRFVn?=
- =?utf-8?B?YUdPZk05ZGZvUmowVlNOaUlWMjZFekpLTDl3ME0ycG5XekZodEorYjB0dWNT?=
- =?utf-8?B?TjFiejFXdFV3L3FaSGdZOE83MUt1M3NISjJ3dnRMVXRPLytRSFl2ZDZueEpi?=
- =?utf-8?B?QWRsMG5nSXdlK1FmYjJ5T3dtcGRVTnRiQkxiQ2V4L2hvTkVjamRQTVhlcFVo?=
- =?utf-8?B?TnA1ZzVRcEY0RGtPWEF1Q1dQdVpMNzRHMzNqbmFOemFKNzVZblI1Yk51NUVT?=
- =?utf-8?B?TXJnVHdicHM4dzFCeU9qMHo4VVNiUDFSVjFLWnBJK3hzVlhFNlJJZUhsVE02?=
- =?utf-8?B?MkhoS25BVVhKL2l3VVhRUXpoeDRHemlUN3hqTk04LytPWlNDeWZ5M3JnZHd4?=
- =?utf-8?B?dTljd3JsMDlPV0tKNVlnNGh4MXFUTTRwdkJtUGwvcUpCdnQ5RG1JN3pEamM3?=
- =?utf-8?B?VVB3ZVVVeGRrMnJZYTczY3N1aTNqeW8ycEJSbEs3VGprelJDc2VnSW5iNFZ0?=
- =?utf-8?B?WEZNSkp2Si9Yd2h3ZWdURDRtejRMMVFMNFQ2TEVmUG1vTlk5b3g5VFRuT20z?=
- =?utf-8?B?dkhHRGQ3UHFWWkc1VlFIajFoMW0weHU2VGRFSGIyb0R0YXZ4MmprdGcrZ3NY?=
- =?utf-8?B?dmp0cUlJN0Qza1JIMTBXcVI2cXdTbFo5UE80ZEZOYkh3L1p4di8yTk1mZ0ZS?=
- =?utf-8?B?M1lDZHc1MUNhOVJvS3RNMmQ1WmdUTDNwaEFEUFJuWjVOQS85SWpVQi9xZFBx?=
- =?utf-8?B?d2ZWL012NXQwcm50ZVBaeUdObWxrYnVMOWNGVGpzMjlnY1dLNVNRa1MwdzJY?=
- =?utf-8?B?My9IdVMwODY3VlF3bEo4WUJhWDBPeHZkWG55RENtSTRUUUxOa0gxS3UreE53?=
- =?utf-8?B?WHFVSGxVR0ZxTEJqTzJTanIzQkFyMmcrZ1lqNTRzVGZ1ZUNaQ3M5bHRHN1RB?=
- =?utf-8?B?WkpnTnlkYjFKeWpLbUluS3JhRFk3SnBPNEJrS01zZytWM28wQkhFQ3lUOVlT?=
- =?utf-8?B?Z0taYjZ6UlJiamZLcURwMmd0NHFVMEw1eVFDQlNLRmloL05jbVFnRkVOcEY5?=
- =?utf-8?B?aW1RTDFZbUN5RndLZklPcmRPUitqaGZJWW1PSDdFL0tKd1ZrRzJxSDFDc0tl?=
- =?utf-8?B?NGxyNG9yMW1aWVEzMy9IL3lVWEhBRzRkU21sTExNYTdUcHlITVdOZ2NHdlJv?=
- =?utf-8?B?OG1uSVYvZnBDRGpVMTY3WFo3UEpsNEluRGZYOEp2d0JJYTh0QWtVbmN2WVZh?=
- =?utf-8?B?ZEJOUUUxNnZQbkhpUDl5RzV6RnNPVTlMMXFIMmNXSERPeDYwbGxsbEE4K0Z4?=
- =?utf-8?B?STNLbHl3MnFFTmxuSktSekllSVQ1MHhMTHBxYWpWRlRCOEd4OHJPY1VraXdY?=
- =?utf-8?B?cEdQdE5ZZlRyZEc4RXB1NUpmQWZ6N0kxb3IzdGhmV1lkQWk3R0ZLM0JKSXNz?=
- =?utf-8?B?WDVPZGVrMjJTSHkyQXNadkt2VXJ2anQwK0YzMWhaTmx3V2Z3M05OSUlMMXRQ?=
- =?utf-8?B?WS9pWVl5djlFYzBnSk5iMVR0MS82dUw5WmhYcFhOVS9YMWVDbWp3N1V4bTZJ?=
- =?utf-8?B?QWVHdHE4aHBEWC9qMEpvSGxRVXBvRXV2QUJVTjhQQ2pLdW5HdXhaeW9oNkpH?=
- =?utf-8?B?MmgwVjZqMVZVUnBnSWtqczZ0NW1OOTQ4U1ZXeTlTUno2b1ZNK1ZvTjhOTEls?=
- =?utf-8?B?Vk1ZVWpDU0NHaXNzNjdCWDlWT3dLaFhidUpWWEIybUJkYTFRQ0EvaThZWWtr?=
- =?utf-8?B?N2FVUEJLam1OVVdrVitQNVhNRlJVMFF1eVVpaWRtUTIvLzZTeldCdGVBek5h?=
- =?utf-8?B?WjNOTjFnOG1COWFxYk1RNGhFRUJHR3FpeU5tY3dNS1Z6d2Vod2l5SDc0bEpC?=
- =?utf-8?B?VmJFMjA1WTh3M0diYUpYdDVackVTelI2dWphU3pMcFdlUDZ0NHVGTC81YjJx?=
- =?utf-8?B?OGVtTWVsdXBMTUJxa0VhcWQ2Vk5YdGVtRFNDSW00K3kxQTA4dHphcXE0OEdK?=
- =?utf-8?Q?zHJ/VQ6C7IEVJZv/L2w1Jp01Vaj9H1L3ZNJS/OaaEo=3D?=
-X-Forefront-Antispam-Report: CIP:52.17.62.50;CTRY:IE;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:eu-dlp.cloud-sec-av.com;PTR:eu-dlp.cloud-sec-av.com;CAT:NONE;SFS:(13230040)(36860700013)(14060799003)(82310400026)(1800799024)(376014)(7416014)(35042699022)(921020);DIR:OUT;SFP:1102;
+X-MS-Office365-Filtering-Correlation-Id-Prvs: 4bbc1fa6-3a34-445d-1d82-08de67283796
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|14060799003|7416014|35042699022|376014|36860700013|82310400026|921020;
+X-Microsoft-Antispam-Message-Info: =?utf-8?B?SG1aZ0Q3bTBOamtuYlBUK2NFQ2lpenlnZmxKMEUvSFc3VmZtZzZ2UHZRMDhz?=
+ =?utf-8?B?VlYzK0QrR253VXhvRDhvejBxM2FIRVlwSER2TG1IaVMxV0ovVHFxTGIyYSs5?=
+ =?utf-8?B?eE5RT2wxS2pxOVBiQzB6YW9JelRWR1ErQ1hHMzBkcW4ySmZPdEpPdEp5ZXNm?=
+ =?utf-8?B?YWNxU2l3ZnFtZGI3dHlnOFVPZHdNM3pzbDZMdHByVERxNXAwaFd3MjFydG1n?=
+ =?utf-8?B?Sk5UOEptNHUzQXBKNUhaeWtPemlaaGhOYnRWblpsbTlXYXlHRkFrNStWZ0hG?=
+ =?utf-8?B?MEprYjlsbGpmL2Fkd08wbGU1d0JXQUJLMXZ1SndlL1R0dHdwRFljMjljc2N2?=
+ =?utf-8?B?bFpjQzQwRi9RTXVkbU5LKzJDeTdEcldVS3liWTAraGcxUDVxODZUUnQrN2tV?=
+ =?utf-8?B?c05YVkRYOGZmSHMxTnArUlFzWnFobVhEdm5GSWVacHZ3dVNGZFp1bTZBNXFa?=
+ =?utf-8?B?b1B0UlBRUUEwSHh0RjlabjdvTW1keXhmL1FnMEJmNlgxUVduUHU0aEJGWFZV?=
+ =?utf-8?B?QkJXWFZCd2p0SUtZUjQ0Z3RzRTFvSHJScEw2N0pSeGU0eHZwK05maEZ6dEJy?=
+ =?utf-8?B?T2ozczhJNlIvdG9LMG1uajl5dTRLMFc2UG51OG1GdXBKTEVCOEtab2FyMmRC?=
+ =?utf-8?B?Ymt2RERldWtJTjA3cjFyRCtUSzBFa2JoR1FkTEs2SU9GaGtoVGNuSHowZFhM?=
+ =?utf-8?B?QVJGa0tpTFNxQlBYNnhPZ0JmZzV0K0RPYk93UDVlWDdySlFkZFMzTm9jV2k5?=
+ =?utf-8?B?WTB6Y2NHR1hWclVpTFRIYjFKMmxlUkZZcmxieFBXaXNoNjVRRWhXT2Y0dFg5?=
+ =?utf-8?B?VW94YjVVaHZKdy9KSlFzQkxseFcxaER3OEo5L0tmMzF4SysvWHc4Z0FGZWtx?=
+ =?utf-8?B?ajQxeElsUURnR0FyNi9FVEpCOTBXTHViUEw0YXUzbEE1TXJOSTFXYmdGOFJS?=
+ =?utf-8?B?QmJrc083RzM2M0xZWWNqZW5qVzR6elFKUlBEb21pZDMvdDU2TjA2alllbHVC?=
+ =?utf-8?B?T0xpUDg3MkR6ZWdiQk94MHc5anh4T0h3RTlXMkxCQ3AxbllMSEZpUTA3Q1BP?=
+ =?utf-8?B?Y29oVHdFMEpyZ0pzdkpURUVSeXBYeDJSZzVCdUt1eEx5dTJQQWVudGplOUVj?=
+ =?utf-8?B?ZTc5cEZVbzVVV2ZtMGpTVlk1SFlLV2hMZ0tsUTlhUkViYlNVZHdqQmlKNTJs?=
+ =?utf-8?B?WEd1SzhNd3paZmE4bERsR1JDeDZjRFFraEQwb2R0czYrNERadlE5WlQyQVRZ?=
+ =?utf-8?B?a21yaG13RHFmd3hrRkNuYks1WUVwRXBKRDBlNjJWdVVnZGx2azVKL2VRd1Rt?=
+ =?utf-8?B?SFBpOGxpdk9sa1QzZ1BJeG5ycnNNc3lJb2xjYUx3NUlPUmkzdlhRcWd6ZWxz?=
+ =?utf-8?B?S2dSaHVQcHNkakt4UExWS1hXaUNReGU3YTRFa2NFeklJd0RoZU9lTElRMVkz?=
+ =?utf-8?B?VEttREtuZmRhL3oyMG1TM1FOaFplVkgxQXNraGwwOFNrbUlJcFdBODMyWUkz?=
+ =?utf-8?B?UXlPa2pZbVllRjdPSzRrOTJoVDlkUVlqWlMyK1VlOGZyd21HRllxLzlKdmJS?=
+ =?utf-8?B?Mmtpa2x3STlmOENlMEg5N0ZGL2FYUkpobHY3bVpVcmNnVVhOaHRhejBOOGlN?=
+ =?utf-8?B?VHA1bklDek1tN2pWK1ZQVzF0R1B3bjc4d3drcy91dklHSE9Va3YrK0RlUzlN?=
+ =?utf-8?B?U1h1alVPZGNuYXh1ZlJGRnVZUnZJdEFpeFNrYzgrSjB5Z2NyUkpvTmRlVEx1?=
+ =?utf-8?B?clB0VjFGenJFMjlld3gzMUFRSyt2RnlXd3BmSlpGaTR1NS85bkhpbmViemFz?=
+ =?utf-8?B?RWZDVWxVTFRzdmlmK0x2ZnpOS24ralIvRWdnT01PM0tYMWIvNHZzRVVzdzlJ?=
+ =?utf-8?B?VXFVQ0JFcHRiK1FaT29JczNxeXgwMStuNVYzZVhlcnEzekFVU3Y0YkNzTndQ?=
+ =?utf-8?B?d1pOdHF0SmhjYVQyanRjQWk3cHdYeHlqY3JoemFXdDFoTXFsSlNoRDlyNGQy?=
+ =?utf-8?B?WHlBd20yQjlxYTBndHZUS1kzRGhGenJ1ZEVSQmhlTmpyYUw1dGs1MVl0TDBl?=
+ =?utf-8?B?dkZTT3Q2WFNxejhERXBPQnR4RzJYUFBpTWI3cDdJSmtMekdJa2RSVURUVU9v?=
+ =?utf-8?B?amozSEJ4T1RpVVdCbzIyQkw3VXY1MFFKaURZTU5TbTlyN1B0S3pST1crakl6?=
+ =?utf-8?B?VjRFUW1qZ2t3TkFuRmw0L3lkbFdQT2N1eFBXaG85M2NNVDlMZERzYUJIaGNH?=
+ =?utf-8?Q?nXJlnTfKaUOSySZlxXCO6+RyaMI1h+3iK88WSjWC/M=3D?=
+X-Forefront-Antispam-Report: CIP:52.17.62.50;CTRY:IE;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:eu-dlp.cloud-sec-av.com;PTR:eu-dlp.cloud-sec-av.com;CAT:NONE;SFS:(13230040)(1800799024)(14060799003)(7416014)(35042699022)(376014)(36860700013)(82310400026)(921020);DIR:OUT;SFP:1102;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: eZEOXs51+DGRZ4UqgxU2tbxaRCgNoCQRJIuJaFM4itcYWsm3TLxdHkCsVWEgsK0ugAdVwF1p3XCxR864xCMhueIoY7ZHs0Mk6BSygoYNXL6dTxY/UZfiPsSkrznI3/y2W/4g5oy++JckGhywL8EVHCgpZBQYVMX0x8ntz0SbQW42C7gfIZQTAELuMkxzkowfs21nA99FCRPOrZjFIHiJ2oxYn/RbJ2d9uXxyZ5NcaTnOKpWufIHkwyB72Wx8Fe5L5LNlf8F8tX1Gi3LCqO4GD9FpQacR01W3Xx8D7OIqchAUJ6tnzOMqPc02T6c6Qw8cpzWMBGfkDoC8/UJUxFfJ32Zj4At7w9jGMzoyAMwTM1Qor+jhB0BMhtEuHSfK7lFabbLtegI4akiX0vqYN5wSCiFpjW8khNSO3ecNVGpj8wiEKbNBbYchvvCIHsgEaX0e
+X-MS-Exchange-AntiSpam-MessageData-0: J44Y/CzWq309b+hesr+ajFzlhOM6TaYhCeLUxNaoguz0gt6DpfRUmat1qqzSV9RLk55xwjC0HzNT/39vVf3Ki4J4sXzeltILGeY37SRb9uR5saM1MU/i4lT1aZ6ATP11W27/mOrOiNbHW9DeFQtSG20+l0wNUOJ02xDnMymFcSn+a0FdbV6sgpIR6fvmEi9QeryyCiC+2/T24WJys4PD8Tv5z3MZCllK2akuAHGsqe+10euRYW97r0/SP/TmGwEEN5CDNCZiJhaf1Ur8wBdPh63QBmVtuUkmBOw1b3U1vZFvmbgjagkaJW9u3pSMLuyD4Uo2WCZkabhNDU7P+cMUspgLAxFcjfPo4s5mhNHnFSzaiZP4emo93lCrILeWubbm+06czleAqwKIF4J4OpCuybkIgRXoE6prZcTEqqutJeRZkRNq6JDD+y44gRdyd9Rn
 X-OriginatorOrg: solid-run.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 08 Feb 2026 15:39:23.1433
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 08 Feb 2026 15:39:25.8098
  (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 562cd626-5577-4c34-bb27-08de67283bc7
+X-MS-Exchange-CrossTenant-Network-Message-Id: bc386172-789a-45aa-0b71-08de67283d55
 X-MS-Exchange-CrossTenant-Id: a4a8aaf3-fd27-4e27-add2-604707ce5b82
 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=a4a8aaf3-fd27-4e27-add2-604707ce5b82;Ip=[52.17.62.50];Helo=[eu-dlp.cloud-sec-av.com]
-X-MS-Exchange-CrossTenant-AuthSource: AMS1EPF0000004A.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthSource: DB3PEPF0000885D.eurprd02.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Anonymous
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB7184
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DUZPR04MB9846
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260208_073928_902247_1B2F7109 
-X-CRM114-Status: UNSURE (   6.44  )
+X-CRM114-CacheID: sfid-20260208_073930_595710_45AA0CF8 
+X-CRM114-Status: UNSURE (   5.98  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -265,504 +265,71 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-In-tree phy-can-transceiver driver has already implemented a local
-version of devm_mux_state_get_optional.
+Multiplexer subsystem has added generic helper functions for getting an
+already selected mux-state object.
 
-The omap-i2c driver gets and selects an optional mux in its probe
-function without using any helper.
+Replace existing logic in probe with the equivalent helper function.
 
-Add new helper functions covering both aforementioned use-cases:
+There is a functional difference in that the mux is now automatically
+deselected on release, replacing the explicit mux_state_deselect call.
 
-- mux_control_get_optional:
-  Get a mux-control if specified in dt, return NULL otherwise.
-- devm_mux_state_get_optional:
-  Get a mux-state if specified in dt, return NULL otherwise.
-- devm_mux_state_get_selected:
-  Get and select a mux-state specified in dt, return error otherwise.
-- devm_mux_state_get_optional_selected:
-  Get and select a mux-state if specified in dt, return error or NULL.
+This change is only compile-tested.
 
-Existing mux_get helper function is changed to take an extra argument
-indicating whether the mux is optional.
-In this case no error is printed, and NULL returned in case of ENOENT.
-
-Calling code is adapted to handle NULL return case, and to pass optional
-argument as required.
-
-To support automatic deselect for _selected helper, a new structure is
-created storing an exit pointer similar to clock core which is called on
-release.
-
-To facilitate code sharing between optional/mandatory/selected helpers,
-a new internal helper function is added to handle quiet (optional) and
-verbose (mandatory) errors, as well as storing the correct callback for
-devm release: __devm_mux_state_get
-
-Due to this structure devm_mux_state_get_*_selected can no longer print
-a useful error message when select fails. Instead callers should print
-errors where needed.
-
-Commit e153fdea9db04 ("phy: can-transceiver: Re-instate "mux-states"
-property presence check") noted that "mux_get() always prints an error
-message in case of an error, including when the property is not present,
-confusing the user."
-
-The first error message covers the case that a mux name is not matched
-in dt. The second error message is based on of_parse_phandle_with_args
-return value.
-
-In optional case no error is printed and NULL is returned.
-This ensures that the new helper functions will not confuse the user
-either.
-
-With the addition of optional helper functions it became clear that
-drivers should compile and link even if CONFIG_MULTIPLEXER was not enabled.
-Add stubs for all symbols exported by mux core.
-
-Acked-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
+Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
+Reviewed-by: Andreas Kemnade <andreas@kemnade.info>
+Reviewed-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
 Signed-off-by: Josua Mayer <josua@solid-run.com>
 ---
- drivers/mux/core.c           | 206 ++++++++++++++++++++++++++++++++++++-------
- include/linux/mux/consumer.h | 108 ++++++++++++++++++++++-
- 2 files changed, 279 insertions(+), 35 deletions(-)
+ drivers/i2c/busses/i2c-omap.c | 24 +++++-------------------
+ 1 file changed, 5 insertions(+), 19 deletions(-)
 
-diff --git a/drivers/mux/core.c b/drivers/mux/core.c
-index a3840fe0995f..b3ed3a094a09 100644
---- a/drivers/mux/core.c
-+++ b/drivers/mux/core.c
-@@ -46,6 +46,16 @@ static const struct class mux_class = {
- 	.name = "mux",
- };
- 
-+/**
-+ * struct devm_mux_state_state -	Tracks managed resources for mux-state objects.
-+ * @mstate:				Pointer to a mux state.
-+ * @exit:				An optional callback to execute before free.
-+ */
-+struct devm_mux_state_state {
-+	struct mux_state *mstate;
-+	int (*exit)(struct mux_state *mstate);
-+};
-+
- static DEFINE_IDA(mux_ida);
- 
- static int __init mux_init(void)
-@@ -516,17 +526,19 @@ static struct mux_chip *of_find_mux_chip_by_node(struct device_node *np)
- 	return dev ? to_mux_chip(dev) : NULL;
- }
- 
--/*
-+/**
-  * mux_get() - Get the mux-control for a device.
-  * @dev: The device that needs a mux-control.
-  * @mux_name: The name identifying the mux-control.
-  * @state: Pointer to where the requested state is returned, or NULL when
-  *         the required multiplexer states are handled by other means.
-+ * @optional: Whether to return NULL and silence errors when mux doesn't exist.
-  *
-- * Return: A pointer to the mux-control, or an ERR_PTR with a negative errno.
-+ * Return: Pointer to the mux-control on success, an ERR_PTR with a negative errno on error,
-+ * or NULL if optional is true and mux doesn't exist.
-  */
- static struct mux_control *mux_get(struct device *dev, const char *mux_name,
--				   unsigned int *state)
-+				   unsigned int *state, bool optional)
- {
- 	struct device_node *np = dev->of_node;
- 	struct of_phandle_args args;
-@@ -542,7 +554,9 @@ static struct mux_control *mux_get(struct device *dev, const char *mux_name,
- 		else
- 			index = of_property_match_string(np, "mux-control-names",
- 							 mux_name);
--		if (index < 0) {
-+		if (index < 0 && optional) {
-+			return NULL;
-+		} else if (index < 0) {
- 			dev_err(dev, "mux controller '%s' not found\n",
- 				mux_name);
- 			return ERR_PTR(index);
-@@ -558,8 +572,12 @@ static struct mux_control *mux_get(struct device *dev, const char *mux_name,
- 						 "mux-controls", "#mux-control-cells",
- 						 index, &args);
- 	if (ret) {
-+		if (optional && ret == -ENOENT)
-+			return NULL;
-+
- 		dev_err(dev, "%pOF: failed to get mux-%s %s(%i)\n",
--			np, state ? "state" : "control", mux_name ?: "", index);
-+			np, state ? "state" : "control",
-+			mux_name ?: "", index);
- 		return ERR_PTR(ret);
+diff --git a/drivers/i2c/busses/i2c-omap.c b/drivers/i2c/busses/i2c-omap.c
+index d9f590f0c384..f02d294db42a 100644
+--- a/drivers/i2c/busses/i2c-omap.c
++++ b/drivers/i2c/busses/i2c-omap.c
+@@ -1453,27 +1453,16 @@ omap_i2c_probe(struct platform_device *pdev)
+ 				       (1000 * omap->speed / 8);
  	}
  
-@@ -617,10 +635,29 @@ static struct mux_control *mux_get(struct device *dev, const char *mux_name,
-  */
- struct mux_control *mux_control_get(struct device *dev, const char *mux_name)
- {
--	return mux_get(dev, mux_name, NULL);
-+	struct mux_control *mux = mux_get(dev, mux_name, NULL, false);
-+
-+	if (!mux)
-+		return ERR_PTR(-ENOENT);
-+
-+	return mux;
- }
- EXPORT_SYMBOL_GPL(mux_control_get);
- 
-+/**
-+ * mux_control_get_optional() - Get the optional mux-control for a device.
-+ * @dev: The device that needs a mux-control.
-+ * @mux_name: The name identifying the mux-control.
-+ *
-+ * Return: Pointer to the mux-state on success, an ERR_PTR with a negative errno on error,
-+ * or NULL if mux doesn't exist.
-+ */
-+struct mux_control *mux_control_get_optional(struct device *dev, const char *mux_name)
-+{
-+	return mux_get(dev, mux_name, NULL, true);
-+}
-+EXPORT_SYMBOL_GPL(mux_control_get_optional);
-+
- /**
-  * mux_control_put() - Put away the mux-control for good.
-  * @mux: The mux-control to put away.
-@@ -657,10 +694,13 @@ struct mux_control *devm_mux_control_get(struct device *dev,
- 	if (!ptr)
- 		return ERR_PTR(-ENOMEM);
- 
--	mux = mux_control_get(dev, mux_name);
-+	mux = mux_get(dev, mux_name, NULL, false);
- 	if (IS_ERR(mux)) {
- 		devres_free(ptr);
- 		return mux;
-+	} else if (!mux) {
-+		devres_free(ptr);
-+		return ERR_PTR(-ENOENT);
- 	}
- 
- 	*ptr = mux;
-@@ -670,14 +710,16 @@ struct mux_control *devm_mux_control_get(struct device *dev,
- }
- EXPORT_SYMBOL_GPL(devm_mux_control_get);
- 
--/*
-+/**
-  * mux_state_get() - Get the mux-state for a device.
-  * @dev: The device that needs a mux-state.
-  * @mux_name: The name identifying the mux-state.
-+ * @optional: Whether to return NULL and silence errors when mux doesn't exist.
-  *
-- * Return: A pointer to the mux-state, or an ERR_PTR with a negative errno.
-+ * Return: Pointer to the mux-state on success, an ERR_PTR with a negative errno on error,
-+ * or NULL if optional is true and mux doesn't exist.
-  */
--static struct mux_state *mux_state_get(struct device *dev, const char *mux_name)
-+static struct mux_state *mux_state_get(struct device *dev, const char *mux_name, bool optional)
- {
- 	struct mux_state *mstate;
- 
-@@ -685,12 +727,16 @@ static struct mux_state *mux_state_get(struct device *dev, const char *mux_name)
- 	if (!mstate)
- 		return ERR_PTR(-ENOMEM);
- 
--	mstate->mux = mux_get(dev, mux_name, &mstate->state);
-+	mstate->mux = mux_get(dev, mux_name, &mstate->state, optional);
- 	if (IS_ERR(mstate->mux)) {
--		int err = PTR_ERR(mstate->mux);
+-	if (of_property_present(node, "mux-states")) {
+-		struct mux_state *mux_state;
 -
- 		kfree(mstate);
--		return ERR_PTR(err);
-+		return ERR_CAST(mstate->mux);
-+	} else if (optional && !mstate->mux) {
-+		kfree(mstate);
-+		return NULL;
-+	} else if (!mstate->mux) {
-+		kfree(mstate);
-+		return ERR_PTR(-ENOENT);
+-		mux_state = devm_mux_state_get(&pdev->dev, NULL);
+-		if (IS_ERR(mux_state)) {
+-			r = PTR_ERR(mux_state);
+-			dev_dbg(&pdev->dev, "failed to get I2C mux: %d\n", r);
+-			goto err_put_pm;
+-		}
+-		omap->mux_state = mux_state;
+-		r = mux_state_select(omap->mux_state);
+-		if (r) {
+-			dev_err(&pdev->dev, "failed to select I2C mux: %d\n", r);
+-			goto err_put_pm;
+-		}
++	omap->mux_state = devm_mux_state_get_optional_selected(&pdev->dev, NULL);
++	if (IS_ERR(omap->mux_state)) {
++		r = PTR_ERR(omap->mux_state);
++		goto err_put_pm;
  	}
  
- 	return mstate;
-@@ -710,9 +756,66 @@ static void mux_state_put(struct mux_state *mstate)
+ 	/* reset ASAP, clearing any IRQs */
+ 	r = omap_i2c_init(omap);
+ 	if (r)
+-		goto err_mux_state_deselect;
++		goto err_put_pm;
  
- static void devm_mux_state_release(struct device *dev, void *res)
- {
--	struct mux_state *mstate = *(struct mux_state **)res;
-+	struct devm_mux_state_state *devm_state = res;
+ 	if (omap->rev < OMAP_I2C_OMAP1_REV_2)
+ 		r = devm_request_irq(&pdev->dev, omap->irq, omap_i2c_omap1_isr,
+@@ -1515,9 +1504,6 @@ omap_i2c_probe(struct platform_device *pdev)
  
-+	if (devm_state->exit)
-+		devm_state->exit(devm_state->mstate);
-+
-+	mux_state_put(devm_state->mstate);
-+}
-+
-+/**
-+ * __devm_mux_state_get() - Get the optional mux-state for a device,
-+ *			    with resource management.
-+ * @dev: The device that needs a mux-state.
-+ * @mux_name: The name identifying the mux-state.
-+ * @optional: Whether to return NULL and silence errors when mux doesn't exist.
-+ * @init: Optional function pointer for mux-state object initialisation.
-+ * @exit: Optional function pointer for mux-state object cleanup on release.
-+ *
-+ * Return: Pointer to the mux-state on success, an ERR_PTR with a negative errno on error,
-+ * or NULL if optional is true and mux doesn't exist.
-+ */
-+static struct mux_state *__devm_mux_state_get(struct device *dev, const char *mux_name,
-+					      bool optional,
-+					      int (*init)(struct mux_state *mstate),
-+					      int (*exit)(struct mux_state *mstate))
-+{
-+	struct devm_mux_state_state *devm_state;
-+	struct mux_state *mstate;
-+	int ret;
-+
-+	mstate = mux_state_get(dev, mux_name, optional);
-+	if (IS_ERR(mstate))
-+		return ERR_CAST(mstate);
-+	else if (optional && !mstate)
-+		return NULL;
-+	else if (!mstate)
-+		return ERR_PTR(-ENOENT);
-+
-+	devm_state = devres_alloc(devm_mux_state_release, sizeof(*devm_state), GFP_KERNEL);
-+	if (!devm_state) {
-+		ret = -ENOMEM;
-+		goto err_devres_alloc;
-+	}
-+
-+	if (init) {
-+		ret = init(mstate);
-+		if (ret)
-+			goto err_mux_state_init;
-+	}
-+
-+	devm_state->mstate = mstate;
-+	devm_state->exit = exit;
-+	devres_add(dev, devm_state);
-+
-+	return mstate;
-+
-+err_mux_state_init:
-+	devres_free(devm_state);
-+err_devres_alloc:
- 	mux_state_put(mstate);
-+	return ERR_PTR(ret);
- }
- 
- /**
-@@ -722,28 +825,69 @@ static void devm_mux_state_release(struct device *dev, void *res)
-  * @mux_name: The name identifying the mux-control.
-  *
-  * Return: Pointer to the mux-state, or an ERR_PTR with a negative errno.
-+ *
-+ * The mux-state will automatically be freed on release.
-  */
--struct mux_state *devm_mux_state_get(struct device *dev,
--				     const char *mux_name)
-+struct mux_state *devm_mux_state_get(struct device *dev, const char *mux_name)
- {
--	struct mux_state **ptr, *mstate;
--
--	ptr = devres_alloc(devm_mux_state_release, sizeof(*ptr), GFP_KERNEL);
--	if (!ptr)
--		return ERR_PTR(-ENOMEM);
-+	return __devm_mux_state_get(dev, mux_name, false, NULL, NULL);
-+}
-+EXPORT_SYMBOL_GPL(devm_mux_state_get);
- 
--	mstate = mux_state_get(dev, mux_name);
--	if (IS_ERR(mstate)) {
--		devres_free(ptr);
--		return mstate;
--	}
-+/**
-+ * devm_mux_state_get_optional() - Get the optional mux-state for a device,
-+ *				   with resource management.
-+ * @dev: The device that needs a mux-state.
-+ * @mux_name: The name identifying the mux-state.
-+ *
-+ * Return: Pointer to the mux-state on success, an ERR_PTR with a negative errno on error,
-+ * or NULL if mux doesn't exist.
-+ *
-+ * The mux-state will automatically be freed on release.
-+ */
-+struct mux_state *devm_mux_state_get_optional(struct device *dev, const char *mux_name)
-+{
-+	return __devm_mux_state_get(dev, mux_name, true, NULL, NULL);
-+}
-+EXPORT_SYMBOL_GPL(devm_mux_state_get_optional);
- 
--	*ptr = mstate;
--	devres_add(dev, ptr);
-+/**
-+ * devm_mux_state_get_selected() - Get the mux-state for a device, with
-+ *				   resource management.
-+ * @dev: The device that needs a mux-state.
-+ * @mux_name: The name identifying the mux-state.
-+ *
-+ * Return: Pointer to the mux-state, or an ERR_PTR with a negative errno.
-+ *
-+ * The returned mux-state (if valid) is already selected.
-+ *
-+ * The mux-state will automatically be deselected and freed on release.
-+ */
-+struct mux_state *devm_mux_state_get_selected(struct device *dev, const char *mux_name)
-+{
-+	return __devm_mux_state_get(dev, mux_name, false, mux_state_select, mux_state_deselect);
-+}
-+EXPORT_SYMBOL_GPL(devm_mux_state_get_selected);
- 
--	return mstate;
-+/**
-+ * devm_mux_state_get_optional_selected() - Get the optional mux-state for
-+ *					    a device, with resource management.
-+ * @dev: The device that needs a mux-state.
-+ * @mux_name: The name identifying the mux-state.
-+ *
-+ * Return: Pointer to the mux-state on success, an ERR_PTR with a negative errno on error,
-+ * or NULL if mux doesn't exist.
-+ *
-+ * The returned mux-state (if valid) is already selected.
-+ *
-+ * The mux-state will automatically be deselected and freed on release.
-+ */
-+struct mux_state *devm_mux_state_get_optional_selected(struct device *dev,
-+						       const char *mux_name)
-+{
-+	return __devm_mux_state_get(dev, mux_name, true, mux_state_select, mux_state_deselect);
- }
--EXPORT_SYMBOL_GPL(devm_mux_state_get);
-+EXPORT_SYMBOL_GPL(devm_mux_state_get_optional_selected);
- 
- /*
-  * Using subsys_initcall instead of module_init here to try to ensure - for
-diff --git a/include/linux/mux/consumer.h b/include/linux/mux/consumer.h
-index 2e25c838f831..a961861a503b 100644
---- a/include/linux/mux/consumer.h
-+++ b/include/linux/mux/consumer.h
-@@ -16,6 +16,8 @@ struct device;
- struct mux_control;
- struct mux_state;
- 
-+#if IS_ENABLED(CONFIG_MULTIPLEXER)
-+
- unsigned int mux_control_states(struct mux_control *mux);
- int __must_check mux_control_select_delay(struct mux_control *mux,
- 					  unsigned int state,
-@@ -54,11 +56,109 @@ int mux_control_deselect(struct mux_control *mux);
- int mux_state_deselect(struct mux_state *mstate);
- 
- struct mux_control *mux_control_get(struct device *dev, const char *mux_name);
-+struct mux_control *mux_control_get_optional(struct device *dev, const char *mux_name);
- void mux_control_put(struct mux_control *mux);
- 
--struct mux_control *devm_mux_control_get(struct device *dev,
--					 const char *mux_name);
--struct mux_state *devm_mux_state_get(struct device *dev,
--				     const char *mux_name);
-+struct mux_control *devm_mux_control_get(struct device *dev, const char *mux_name);
-+struct mux_state *devm_mux_state_get(struct device *dev, const char *mux_name);
-+struct mux_state *devm_mux_state_get_optional(struct device *dev, const char *mux_name);
-+struct mux_state *devm_mux_state_get_selected(struct device *dev, const char *mux_name);
-+struct mux_state *devm_mux_state_get_optional_selected(struct device *dev, const char *mux_name);
-+
-+#else
-+
-+static inline unsigned int mux_control_states(struct mux_control *mux)
-+{
-+	return 0;
-+}
-+static inline int __must_check mux_control_select_delay(struct mux_control *mux,
-+							unsigned int state, unsigned int delay_us)
-+{
-+	return -EOPNOTSUPP;
-+}
-+static inline int __must_check mux_state_select_delay(struct mux_state *mstate,
-+						      unsigned int delay_us)
-+{
-+	return -EOPNOTSUPP;
-+}
-+static inline int __must_check mux_control_try_select_delay(struct mux_control *mux,
-+							    unsigned int state,
-+							    unsigned int delay_us)
-+{
-+	return -EOPNOTSUPP;
-+}
-+static inline int __must_check mux_state_try_select_delay(struct mux_state *mstate,
-+							  unsigned int delay_us)
-+{
-+	return -EOPNOTSUPP;
-+}
-+
-+static inline int __must_check mux_control_select(struct mux_control *mux,
-+						  unsigned int state)
-+{
-+	return -EOPNOTSUPP;
-+}
-+
-+static inline int __must_check mux_state_select(struct mux_state *mstate)
-+{
-+	return -EOPNOTSUPP;
-+}
-+
-+static inline int __must_check mux_control_try_select(struct mux_control *mux,
-+						      unsigned int state)
-+{
-+	return -EOPNOTSUPP;
-+}
-+
-+static inline int __must_check mux_state_try_select(struct mux_state *mstate)
-+{
-+	return -EOPNOTSUPP;
-+}
-+
-+static inline int mux_control_deselect(struct mux_control *mux)
-+{
-+	return -EOPNOTSUPP;
-+}
-+static inline int mux_state_deselect(struct mux_state *mstate)
-+{
-+	return -EOPNOTSUPP;
-+}
-+
-+static inline struct mux_control *mux_control_get(struct device *dev, const char *mux_name)
-+{
-+	return ERR_PTR(-EOPNOTSUPP);
-+}
-+static inline struct mux_control *mux_control_get_optional(struct device *dev,
-+							   const char *mux_name)
-+{
-+	return NULL;
-+}
-+static inline void mux_control_put(struct mux_control *mux) {}
-+
-+static inline struct mux_control *devm_mux_control_get(struct device *dev, const char *mux_name)
-+{
-+	return ERR_PTR(-EOPNOTSUPP);
-+}
-+static inline struct mux_state *devm_mux_state_get(struct device *dev, const char *mux_name)
-+{
-+	return ERR_PTR(-EOPNOTSUPP);
-+}
-+static inline struct mux_state *devm_mux_state_get_optional(struct device *dev,
-+							    const char *mux_name)
-+{
-+	return NULL;
-+}
-+static inline struct mux_state *devm_mux_state_get_selected(struct device *dev,
-+							    const char *mux_name)
-+{
-+	return ERR_PTR(-EOPNOTSUPP);
-+}
-+static inline struct mux_state *devm_mux_state_get_optional_selected(struct device *dev,
-+								     const char *mux_name)
-+{
-+	return NULL;
-+}
-+
-+#endif /* CONFIG_MULTIPLEXER */
- 
- #endif /* _LINUX_MUX_CONSUMER_H */
+ err_unuse_clocks:
+ 	omap_i2c_write_reg(omap, OMAP_I2C_CON_REG, 0);
+-err_mux_state_deselect:
+-	if (omap->mux_state)
+-		mux_state_deselect(omap->mux_state);
+ err_put_pm:
+ 	pm_runtime_put_sync(omap->dev);
+ err_disable_pm:
 
 -- 
 2.43.0
