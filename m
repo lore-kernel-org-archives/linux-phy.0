@@ -4,65 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AC068EF070F
-	for <linux-phy@archiver.kernel.org>; Mon,  9 Feb 2026 06:40:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E6CA6E7C706
+	for <linux-phy@archiver.kernel.org>; Mon,  9 Feb 2026 08:06:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bw5zxaHNaYCs+0DKAUttgdov2rN6KxsJX5pFTSZOvuU=; b=KO7AaT4s/FuiSP
-	eM568Jb32ZOYIbSYVc5UcNc9xFuBO8dy8ryS8po7OuCufjDFkFUPGPsyEcvskR8w22/K0ZmztZfhU
-	rVnpTP/yokjjoKXqysYz418n03yNgHPE/T1li8t9vvvreSNrZpXF48sPYY+N3DTog3BH4+HuM8s8F
-	fKtG73xr01ivSgNqEizL/xLP93JSEoyEGJ/fdsF4dK+nDXuEzfF+pwwlfKdE2LP7h5ceiXeT2kF/o
-	n6RbfwZK4iBqTCK1I8Ns8zMpEKEG0GDTdFb/tW943NFk6QoTn4vPd7QBf9Jm6CmWSsmQXIRPCtzas
-	ZgfXWrBZjQgdBHNnzdmA==;
+	List-Owner; bh=L7Sh1NHZG8gtogW1T1EUCbsYtgL8DE42m7cBfgnp39I=; b=Q0Mu6SuDP6cGAC
+	MUcJMDWlFLwCmGtvkSSD1yBy4HT5iTnlvPnL4vwxpF7DaQEi/1KQHtbwOQZhtZATIWulZksrbFdjw
+	dURtQ7ytmOI3YL6RI11152Xs2MbUYqah+QVM7FCJK8igAqgkPf6He/Kle7KKRp+/bHUq9/gJHaBaB
+	O9qXjxLaubAIycgeJNS3U+ZzYuwu5vdjg93VlNarKEdgK0kxKCOtk293MK8VAcDs9LZLZj+8bpniT
+	aQyDpMf9KizBbGlkOKZ6pfrJWFdApHW7HCSKHymiCqr3pLJafRHAciDVJavf5K4d6RZ1cGM9pq8ns
+	HVZ1+pG6W0SM7mFbD5+Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vpKwt-0000000EumV-3JfW;
-	Mon, 09 Feb 2026 06:40:44 +0000
-Received: from mail-m8221363.xmail.ntesmail.com ([8.221.36.3])
+	id 1vpMHt-0000000Ez0V-1Xa4;
+	Mon, 09 Feb 2026 08:06:29 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vpKwp-0000000Eult-3i5B;
-	Mon, 09 Feb 2026 06:40:42 +0000
-Received: from localhost.localdomain (unknown [58.61.141.99])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 33912914e;
-	Mon, 9 Feb 2026 14:40:25 +0800 (GMT+08:00)
-From: Chukun Pan <amadeus@jmu.edu.cn>
-To: krzk@kernel.org
-Cc: amadeus@jmu.edu.cn,
-	broonie@kernel.org,
-	conor+dt@kernel.org,
-	devicetree@vger.kernel.org,
-	dlan@kernel.org,
-	huang.ze@linux.dev,
-	krzk+dt@kernel.org,
-	lgirdwood@gmail.com,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-riscv@lists.infradead.org,
-	neil.armstrong@linaro.org,
-	robh@kernel.org,
-	spacemit@lists.linux.dev,
-	vkoul@kernel.org
-Subject: Re: [PATCH 1/2] dt-bindings: phy: spacemit: add regulator support to K1 USB2 PHY
-Date: Mon,  9 Feb 2026 14:40:16 +0800
-Message-Id: <20260209064016.1176056-1-amadeus@jmu.edu.cn>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <8c3835c4-3602-4cee-9631-0551b0341918@kernel.org>
-References: <8c3835c4-3602-4cee-9631-0551b0341918@kernel.org>
+	id 1vpMHr-0000000Eyzk-0xzi
+	for linux-phy@lists.infradead.org;
+	Mon, 09 Feb 2026 08:06:28 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 77BDA44161;
+	Mon,  9 Feb 2026 08:06:26 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id ED53DC19422;
+	Mon,  9 Feb 2026 08:06:25 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1770624386;
+	bh=zEzOJjpOXU99Hg+Ob4CvIWFFPfptLCL1jvRZD9c9JfI=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=Wj6Uv8B/pnBKCk2iKXVD6C1McjKDob7VJ6nqQyBA9h4c+ibUvxyRrRm6hL8g/mjPR
+	 9H4rFvxdCFtH2hL74+PHYWCc/yDhB3zeZBtI6eEEtxyoV2R0XpJsqF8SEBj1i7W05M
+	 8L0gGdaeTu61wNccXP98d/ir5c6PX0gBtSG/xxiWTz8K+mQBdxNqw1zX3HGJz0mZUz
+	 jICctpJ55qe9FRhJqAzadufmR6LKhXpJD1nCJBc2AxFDf2kYp4xmURwACmN9EEeb5Q
+	 zXzuIek0jWOVq9ZJ5ezCbTl0aI6pX3uxCVxI4SutTZM5d2Yf8XlSdwHEJlcWJf7nMC
+	 hbBbC+yDZOO4g==
+Date: Mon, 9 Feb 2026 09:06:23 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Qiang Yu <qiang.yu@oss.qualcomm.com>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 1/2] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Add
+ vdda-refgen supply for Glymur
+Message-ID: <20260209-magic-conscious-seahorse-b81c8b@quoll>
+References: <20260208-refgen-v1-0-87ca84fd78b3@oss.qualcomm.com>
+ <20260208-refgen-v1-1-87ca84fd78b3@oss.qualcomm.com>
 MIME-Version: 1.0
-X-HM-Tid: 0a9c412143aa03a2kunmf6f2d9044b9dc8
-X-HM-MType: 10
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFITzdXWS1ZQUlXWQ8JGhUIEh9ZQVlDS0tDVhlKShhMGUMaH0wdTVYeHw5VEwETFhoSFy
-	QUDg9ZV1kYEgtZQVlOQ1VNSlVKT0pVQkJZV1kWGg8SFR0UWUFZT0tIVUpLSEpOTE5VSktLVUpCS0
-	tZBg++
+Content-Disposition: inline
+In-Reply-To: <20260208-refgen-v1-1-87ca84fd78b3@oss.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260208_224040_299834_DA29B5F8 
-X-CRM114-Status: UNSURE (   8.53  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260209_000627_301025_0A0DB61F 
+X-CRM114-Status: GOOD (  10.50  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,33 +77,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
+On Sun, Feb 08, 2026 at 08:49:39PM -0800, Qiang Yu wrote:
+> The PCIe QMP PHYs on Glymur require stable reference voltage provided by
+> refgen. The refgen itself requires two separate power supplies:
+> vdda-refgen0p9 and vdda-refgen1p2.
+> 
+> Since there is no dedicated driver for REFGEN, add vdda-refgen0p9-supply
 
-> Plus, if this was a vbus regulator it would not be called "phy"...
-> Even more confusing.
+How does the driver matter for the bindings? If I add dedicated driver
+for refgen, then I change the bindings?
 
-Sorry, I didn't consider that this naming is confusing. Other
-platforms, such as Rockchip's inno-usb2phy driver, use the
-"phy-supply" property. I continued with this bad naming.
+There is qcom,sc8280xp-refgen-regulator so why there cannot be
+qcom,x1e-refgen-regulator?
 
-> Bindings are supposed to be complete regardless what driver does
-> (or does not).
->
-> You must list all supplies with proper names.
->
-> If this regulator was missing, then what else?
 
-(...)
+> and vdda-refgen1p2-supply properties to the PCIe PHY dt-bindings. Use
+> conditional schema to restrict these properties to only Glymur PCIe QMP
+> PHYs.
 
-> Please start describing in the bindings your complete hardware, not
-> your drivers.
+Best regards,
+Krzysztof
 
-It appears Ze Huang described the vbus-supply property in
-spacemit.k1-dwc3.yaml. So I should enable the regulator in
-the dwc3-generic-plat driver. Sorry for the noise.
-
-Thanks,
-Chukun
 
 -- 
 linux-phy mailing list
