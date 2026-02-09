@@ -4,97 +4,140 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3C0EEF0702
-	for <linux-phy@archiver.kernel.org>; Mon,  9 Feb 2026 02:12:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8F4F5EF070A
+	for <linux-phy@archiver.kernel.org>; Mon,  9 Feb 2026 04:49:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FU//yXkgwY/hb1XZ53/Ky9myGOKSEjR4m+wBbfzGejg=; b=q/uFSZX2a6hW2a
-	BND15HzSXWFp9HOHr7yqnzF1gJkxeBv93XIPdoaEL+V2o57wOBU5vJU5NHahgQdA4IQ+3RMnvVGhl
-	dFfiht9w4oYD4ZsA2XvlN73Z+bM/27CLYvqXq9iWS27k1R7tnTj4AqGGPvasuXn39zu6CG7AQ3yPY
-	EWptlECPPbuZAqGvJNEJMue8judF4TM9SAb9WFYvjBmuCre0wZK66lTGeL3sHWGDDtVeABC7Bg76T
-	cR2WMADN38OisY3laL8SRWp2C06ZJaUqpVGW9ZFMduXT5BxbdmwLEqPp8XuN5LFN+zuqfIyetWdyH
-	JgNssVGQXR84WjwU2QLA==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=TdvYYdxlfRYnLgx3enB80CD4YoVkWi8bmB1c/4eMHLU=; b=4vew33P3OA4i/E
+	uD6MHTaZb124F85+ucwPSqwfUqi5UIUolq313v0K4dt+TYWCPiGS0Q+pvPyhQ2fgMzASqRhUuGLwJ
+	jzg5djFSts7vwJMt58l7x4lL+qQKIfMpluZ3/HKroR0mJUKj3UlEUIKJgZUm3ZJy5c6yuY7RNbF5P
+	BHixqwxQ/EeBz/0t6P+VKyFwvTAWEgByejuY6nDpysjC01txU+TFrBUIUT4RlhG2ICHOozsP5GNOK
+	hUBmAQP/KSP0Rg6rUnCVzwLTjs2hGJ8zyqY0VaU21i+7j5FFGbiSRunW5gD/d6A/cILhz2slcgl/v
+	6gRm2K8EQ7o48QNDQclg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vpGlb-0000000EgK3-0Q4Q;
-	Mon, 09 Feb 2026 02:12:47 +0000
-Received: from mgamail.intel.com ([198.175.65.12])
+	id 1vpJDW-0000000EpCZ-0EIY;
+	Mon, 09 Feb 2026 04:49:46 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vpGlX-0000000EgJh-1LYV
+	id 1vpJDT-0000000EpBQ-0hoj
 	for linux-phy@lists.infradead.org;
-	Mon, 09 Feb 2026 02:12:45 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1770603164; x=1802139164;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=li3Bz7MB9Db5p57EW1iDijoV/yjuamNyqKYmNRYo6WM=;
-  b=Zk6fLe1egTzRkVB1MxnTi+mx3klVHcpdok3B2+KkoJUIKX1jGBsCv4ol
-   egmO2mtj6NV6qgpZn+OvlXQijABBS9KmM6RLZyGzDx2wS6JY+4Zl81xDq
-   IsWVIPXWR6n3nMYLOwTSXwPhFsESB2smozFAZ+sv/5XYUNkzxj01B/uEo
-   aQy+x6XXQK1gnMlF3VhpI78KLQhIF/PpTJ9dh51lYXgyT07Tm2gAgcemb
-   iSIrVNjROyjsQGvBa8KevIxU22veM54lgJwTJdbCrEnwF5MKJeJ6BiUrY
-   2UgIhmGoPtsV80+JRGZ0fLKtXxpmShrQhUesQgu96cmHTv8Qy7hL5YyWY
-   w==;
-X-CSE-ConnectionGUID: sqDI7a3WSMmHyyNtp2Ussw==
-X-CSE-MsgGUID: aBotNhNXSnKNByrQcG/32Q==
-X-IronPort-AV: E=McAfee;i="6800,10657,11695"; a="83152672"
-X-IronPort-AV: E=Sophos;i="6.21,281,1763452800"; 
-   d="scan'208";a="83152672"
-Received: from orviesa009.jf.intel.com ([10.64.159.149])
-  by orvoesa104.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 08 Feb 2026 18:12:41 -0800
-X-CSE-ConnectionGUID: O3GWCk0XQz68cDcF85WjTA==
-X-CSE-MsgGUID: h2jjiJw6QHyTvzyFF1iPiw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.21,281,1763452800"; 
-   d="scan'208";a="211241339"
-Received: from lkp-server01.sh.intel.com (HELO 765f4a05e27f) ([10.239.97.150])
-  by orviesa009.jf.intel.com with ESMTP; 08 Feb 2026 18:12:34 -0800
-Received: from kbuild by 765f4a05e27f with local (Exim 4.98.2)
-	(envelope-from <lkp@intel.com>)
-	id 1vpGlL-00000000mVm-0bVo;
-	Mon, 09 Feb 2026 02:12:31 +0000
-Date: Mon, 9 Feb 2026 10:12:03 +0800
-From: kernel test robot <lkp@intel.com>
-To: Josua Mayer <josua@solid-run.com>,
-	Marc Kleine-Budde <mkl@pengutronix.de>,
-	Vincent Mailhol <mailhol@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Peter Rosin <peda@axentia.se>, Aaro Koskinen <aaro.koskinen@iki.fi>,
-	Andreas Kemnade <andreas@kemnade.info>,
-	Kevin Hilman <khilman@baylibre.com>,
-	Roger Quadros <rogerq@kernel.org>, Tony Lindgren <tony@atomide.com>,
-	Janusz Krzysztofik <jmkrzyszt@gmail.com>,
-	Vignesh R <vigneshr@ti.com>, Andi Shyti <andi.shyti@kernel.org>,
-	Ulf Hansson <ulf.hansson@linaro.org>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Geert Uytterhoeven <geert+renesas@glider.be>,
-	Magnus Damm <magnus.damm@gmail.com>,
-	Wolfram Sang <wsa-dev@sang-engineering.com>
-Cc: oe-kbuild-all@lists.linux.dev,
-	Yazan Shhady <yazan.shhady@solid-run.com>,
-	Jon Nettleton <jon@solid-run.com>,
-	Mikhail Anikin <mikhail.anikin@solid-run.com>,
-	linux-can@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org, linux-omap@vger.kernel.org,
-	linux-i2c@vger.kernel.org, linux-mmc@vger.kernel.org,
-	devicetree@vger.kernel.org
-Subject: Re: [PATCH v9 7/7] mmc: host: renesas_sdhi_core: support selecting
- an optional mux
-Message-ID: <202602091037.wNIGJdbh-lkp@intel.com>
-References: <20260208-rz-sdio-mux-v9-7-9a3be13c1280@solid-run.com>
+	Mon, 09 Feb 2026 04:49:44 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 618NhVLl1808230
+	for <linux-phy@lists.infradead.org>; Mon, 9 Feb 2026 04:49:42 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=B23Em0WW9IOUwSPkLdRB0r
+	J5Swd3p6Us5my6HB1zSXM=; b=RISND8+M4MJPqJP6Bvj1n2Acyt9Sfenk2RGbM7
+	vG7NcI/9vbxffENYK7Po+bXB4+cVbRxDGGfkEln3YbOfDw/2hs9x8usfzwYzkwx+
+	A2nRVE07o0DCqI6P2ABO8a/Ups5dzj4fQU3whG79T9L3cgjE5JR8dKcIcckAEgtb
+	VSq23Mnaj8xon70N2Uk3w1X+CLNRR+RRj6hBNHRL3/I/dKaR3riwKdeH0JCdLOWN
+	TCziUlO4VXMj7DIwB80SPyhKPEggrQ71q7RMLcYzX3FERgia6SdpmYE6aktoFw3T
+	Yjryz/4ZelacrF9v+ghoHL0WO/7WTzv6p/yLLd40P+jxwruQ==
+Received: from mail-dy1-f197.google.com (mail-dy1-f197.google.com [74.125.82.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4c5xhrbm9h-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Mon, 09 Feb 2026 04:49:42 +0000 (GMT)
+Received: by mail-dy1-f197.google.com with SMTP id 5a478bee46e88-2b86a963e9fso454779eec.1
+        for <linux-phy@lists.infradead.org>; Sun, 08 Feb 2026 20:49:42 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1770612581; x=1771217381; darn=lists.infradead.org;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=B23Em0WW9IOUwSPkLdRB0rJ5Swd3p6Us5my6HB1zSXM=;
+        b=TxnTJD/F+YzQTNVFv+XDpRLm17fnEA7gj8dUh/zDMDZDP55hPbNdcPY23fkBZ/4pCq
+         yX58qZnBMMsn5fsMmJ7GYKOsQ3psNJF/T+mRnQzOBbf9+1OCMIDUjwnzxXDqXxdsOEKS
+         1qepaUEvGlM7bI09+uGrj7s0zHb4R5uxlc02s8jXXQzNQxFv1gGvpA8noCol/sDdh3/d
+         Jl1MRLRvajfLzVYKwa6zK/30AGrrFID9S2G/8VgGG5CfKzaobFtanRvxI24pxYIz+tkl
+         iRrU02yiQ75IX3JB85W2RqqgNoYf4/pfgS1K/f4u1XDuB9v9PJmP3tOnAzJ/ylWYC94H
+         Tk1g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1770612581; x=1771217381;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=B23Em0WW9IOUwSPkLdRB0rJ5Swd3p6Us5my6HB1zSXM=;
+        b=hKhaXrhyINWBbjcGqQSPFfMm3pT9lWioefRAl8PKoIw0wToGRa64385o0eXXi16Tex
+         O/4V46t51akI+S3WVXcBSB2Hd1AdEb/SRSJprlfUDRkY6SxMdAobT+wWVNDD2nEVK11n
+         Bncd1RTmC0zOONpBjKfOf4iCLPKA8+4/Ap9zN3s9ZM+K2crqrpApaaII+0cpNp9u+MNf
+         KWWUiMX//n9YbyFho/v6LJ80ITGA6hZe6jl3TBPyYkIfTgm28G5aUXnMe4s4myJYUzqq
+         XQKocsS6aexEYwwY0q5SjCrB6twMJmCRLugKFa3LBXCc6677Pkdc59smvkFbGvS8DaRF
+         HkYw==
+X-Forwarded-Encrypted: i=1; AJvYcCW6GRuBiFvUu4pa97bor8k6BCSBPxj3Ctn3JgERb/Wy1E3JtjLCaTbvtC0J/wHvGj4ITEs2t0PbSN0=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy52DgPOAiHXud9ur8TVSPeVQniibmNzEQUqNOw6e2CRJ8r4ppE
+	MLVSAsZO1qdI29ihileywonDspvqo/sqhpeIvMy5fLIJzIzI2gZHHVA/k2O/zvaEefjGL6pMsgC
+	loTm2C2NDssADh3QDFaS41fBtpeV1wxqNwFXLm8E1ROqo7rpvtyfaxoXU2CwGO5Ruj/AX
+X-Gm-Gg: AZuq6aJMUwS/5Vdd40HMapsrxMzsQFjq96SSPnYUKyhg3W/0SDDnyHq/42ds4cPiEB+
+	KeOcW3GiqDiJH0UFi8u1j2s20+1nrBjrBhH9AGcZzw8LLGxAsUkDTNFLxSGTyf77W7ZATV+OqnQ
+	ZTNicZwiI+d/LomGrJPppq+/OkdwoUGiqPF8vWWJ29gwLoMUxhlgzFbQpFIG0gkNowDnzyLRCwN
+	j484XONv3zjLybYDOs1dNNXsOP/FGbNrA2zMtmd+cIO+8lPzWtayP/a3iJ2AM+Zo+ouMc7sBlF3
+	X8ZRPk94W7Wdys2qYPNNdCZz5Bm0asg9fuUEIk/WQLqTK54qy1t6rms5rT9zqeVzmJZCG0N0CP4
+	tmibjUww7UCEuYQM/qMqhA1BQCBLMKY1wqcqyzwPr/wqMJLU2jU1dayKQ
+X-Received: by 2002:a05:7300:641a:b0:2ba:6d87:cf68 with SMTP id 5a478bee46e88-2ba6d885c37mr942313eec.16.1770612581318;
+        Sun, 08 Feb 2026 20:49:41 -0800 (PST)
+X-Received: by 2002:a05:7300:641a:b0:2ba:6d87:cf68 with SMTP id 5a478bee46e88-2ba6d885c37mr942311eec.16.1770612580715;
+        Sun, 08 Feb 2026 20:49:40 -0800 (PST)
+Received: from hu-qianyu-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-2b8647bd6casm5609940eec.7.2026.02.08.20.49.39
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 08 Feb 2026 20:49:40 -0800 (PST)
+From: Qiang Yu <qiang.yu@oss.qualcomm.com>
+Subject: [PATCH 0/2] phy: qcom: qmp-pcie: Add vdda-refgen supply support
+ for Glymur
+Date: Sun, 08 Feb 2026 20:49:38 -0800
+Message-Id: <20260208-refgen-v1-0-87ca84fd78b3@oss.qualcomm.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260208-rz-sdio-mux-v9-7-9a3be13c1280@solid-run.com>
+X-B4-Tracking: v=1; b=H4sIAGJniWkC/2WMQQrCMBBFr1JmbUoSSSyuvId0EdO0HbCJzWhQS
+ u7u2K2bB+/zeRtQyBgIzs0GORQkTJFFHRrws4tTEDiwg5baSobIYZxCFKN0VqnB+KMxwOcH7/j
+ eQ9eefUZ6pvzZu0X91r9EUUKKzpxsZ522zt0uiahdX+7u07K0DOhrrV80h2ohowAAAA==
+X-Change-ID: 20260202-refgen-f0a611d5c355
+To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        Qiang Yu <qiang.yu@oss.qualcomm.com>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1770612579; l=1560;
+ i=qiang.yu@oss.qualcomm.com; s=20250513; h=from:subject:message-id;
+ bh=APF9k6j1Z9hdQxx1Oyhs4DgyrehHijEPvAVAhIG/xKA=;
+ b=GohXl16p8xydv+2G4JUayXabZI8SuH9LA2jMwhRlcZaUExTSuv0PgdTXnETHE/vx8vQB96Wq4
+ NSkN4ThX8OIDItm3aHG/Z/ferQdjzhXk5IUri9p/VQEAvS5GBxDw1xx
+X-Developer-Key: i=qiang.yu@oss.qualcomm.com; a=ed25519;
+ pk=Rr94t+fykoieF1ngg/bXxEfr5KoQxeXPtYxM8fBQTAI=
+X-Proofpoint-GUID: 07D8QrFMqUP9TNfjUtJS2ARXVrPU-KrN
+X-Authority-Analysis: v=2.4 cv=AJ+v8NAg c=1 sm=1 tr=0 ts=69896766 cx=c_pps
+ a=Uww141gWH0fZj/3QKPojxA==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=IkcTkHD0fZMA:10 a=HzLeVaNsDn8A:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=Mpw57Om8IfrbqaoTuvik:22 a=GgsMoib0sEa3-_RKJdDe:22
+ a=EUspDBNiAAAA:8 a=ht-hxK4C9M4zpVAjTLEA:9 a=QEXdDO2ut3YA:10
+ a=PxkB5W3o20Ba91AHUih5:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMjA5MDAzNyBTYWx0ZWRfX+XNNIyjkOAx2
+ zhzIEGCWDvvxOtKRknwJGuA1m7LX5vLwEiPNZDEU3B+2KLQrUfQV2EAMF9gFR2b61NeI/mTXyq1
+ MzuxSkPLHgB58q+Q2RdLTSSXfGdwitieR+soATtYKVXp+ebH/LdUDv3qWYWxpznWcChuhXZk6Wo
+ ppCA8A0o8V0mwZb8woLVNLKkX0Kpnl3RGlPaxUqqqeYdMsLts79CqVK5d8JOzlLyr2kdsg/fHWq
+ CAkmpcTp/A2L3OaQfZvyhxSzrj3MIZwqrMPTRSEm+FMDtNBNqlYBL509cVY4gurBTPbS84fevpC
+ xecUdkfwpMHz6rMsOGWDQXA6N+6XExIHno+4E2cNOovqifVrz6ouH92AUM/WJAe4AQZzSsnLbY8
+ mtfegVWD/fFZ2K9hSyPNgdbgELaSstVLSS+UPD+A4wTBNJHJ+mPxM8BkdM2LsEWy1kFq8QEscpN
+ ZQrbIlTx5kMWtHMOxyg==
+X-Proofpoint-ORIG-GUID: 07D8QrFMqUP9TNfjUtJS2ARXVrPU-KrN
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.51,FMLib:17.12.100.49
+ definitions=2026-02-08_05,2026-02-05_03,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ malwarescore=0 priorityscore=1501 spamscore=0 bulkscore=0 suspectscore=0
+ clxscore=1015 lowpriorityscore=0 phishscore=0 adultscore=0 impostorscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2601150000 definitions=main-2602090037
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260208_181243_486150_39043869 
-X-CRM114-Status: UNSURE (   9.17  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260208_204943_223671_109DE699 
+X-CRM114-Status: GOOD (  11.56  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,33 +154,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Josua,
+The PCIe QMP PHYs on Glymur require both refgen for stable reference
+voltage and qref for stable reference clock. The refgen requires two power
+supplies: vdda-refgen0p9 and vdda-refgen1p2.
 
-kernel test robot noticed the following build errors:
+Unlike qref, refgen doesn't require register configuration and has no
+dedicated driver. Therefore, the PHY driver must vote for the regulators
+that refgen requires.
 
-[auto build test ERROR on 8f0b4cce4481fb22653697cced8d0d04027cb1e8]
+While refgen may be a common component across different platforms, on
+older platforms it typically shares regulators with PHY core or qref
+supplies, making refgen supplies map not very clear. Glymur introduces
+dedicated refgen supplies that require explicit management.
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Josua-Mayer/phy-can-transceiver-rename-temporary-helper-function-to-avoid-conflict/20260208-234345
-base:   8f0b4cce4481fb22653697cced8d0d04027cb1e8
-patch link:    https://lore.kernel.org/r/20260208-rz-sdio-mux-v9-7-9a3be13c1280%40solid-run.com
-patch subject: [PATCH v9 7/7] mmc: host: renesas_sdhi_core: support selecting an optional mux
-config: s390-randconfig-r054-20260209 (https://download.01.org/0day-ci/archive/20260209/202602091037.wNIGJdbh-lkp@intel.com/config)
-compiler: s390-linux-gcc (GCC) 8.5.0
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20260209/202602091037.wNIGJdbh-lkp@intel.com/reproduce)
+Hence, this series adds support for refgen power supplies specifically to
+Glymur PCIe QMP PHY. If other platforms require these supplies, support
+can be extended in the future.
 
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202602091037.wNIGJdbh-lkp@intel.com/
+This series creates a Glymur-specific supply list including the refgen
+supplies and updates both Gen5x4 and Gen4x2 configurations to use it.
 
-All errors (new ones prefixed by >>):
+Signed-off-by: Qiang Yu <qiang.yu@oss.qualcomm.com>
+---
+Qiang Yu (2):
+      dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Add vdda-refgen supply for Glymur
+      phy: qcom: qmp-pcie: Add vdda-refgen supplies for Glymur
 
-   s390-linux-ld: drivers/mmc/host/renesas_sdhi_core.o: in function `renesas_sdhi_probe':
->> renesas_sdhi_core.c:(.text+0x1996): undefined reference to `devm_mux_state_get_optional_selected'
+ .../bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml     | 20 ++++++++++++++++++++
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c             | 12 ++++++++----
+ 2 files changed, 28 insertions(+), 4 deletions(-)
+---
+base-commit: 8bb92fd7a04077925c8330f46a6ab44c80ca59f4
+change-id: 20260202-refgen-f0a611d5c355
 
+Best regards,
 -- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+Qiang Yu <qiang.yu@oss.qualcomm.com>
+
 
 -- 
 linux-phy mailing list
