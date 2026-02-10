@@ -4,90 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6646EB270F
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Feb 2026 20:30:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CCC78EB2717
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Feb 2026 20:48:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=S8kYZKZjUpJjKJxkYSNzOSKbK6TiEp90r3cZ/2CkhcM=; b=rP6GQIw9eu2aNZ
-	2bg9qXVZ8iT5qE8xSznKfkY34ZOjWl9zVvGb9Gt9YbzOK2jrXCJw24M2iI3SPwSk564YrgtOuEEcv
-	oYukbks4F6YRYS5KAB7Z4Kopi2ObQyDlWFrRAEpehsBI+eJuWOkCDjrXDo6LS+8sNyD11ys/ob7eT
-	9fQwYDF84erNwyD3CM90cGDgjIgRpsjs6j44AkD4kMZsaWdyTBDEx+jP+NIaJjREEas1Ex3rFuEvX
-	/P6YCScuP1WJoh5iUnMkMg2vqjT8zZs2wNox9q56l8NHmUymCfTZcjPuUmrezZBe//zA3zBrSFFG5
-	92adbfgF2yFSFjQMD/IQ==;
+	List-Owner; bh=FUhENO8FKonFi4LhPbusbYGesKSOePOBJrq08TGDrxM=; b=K4+y9QEYcSP/Ld
+	nNXZV7GdiDYdrYvMvK8DD4hm67W9sh/0uCGRjO5oOf5Rw1L5lAHkX/vWeMKATutvlD6j91WPiwFeN
+	GOHu8n1WQohZDanwAUqyAPAkBipZAzpl6/YpdBsSLFa3iD0/3+UTdShsrWtg81eax6bnK/cxuG8OK
+	soaqcy+Ci9WzUHzORC2O0yBOkEO1FFA4TsFTe1EfUJcBL7J+T3iAd46HTFh3+QiTXYhnx6rz0cjjl
+	8jYj/d9xjb3I0/LUCpCMRC+pEshBA5sMHXBdFv+asXGCIHUTkoLnNiHi2+cjTWmY26KGITpOm7hRl
+	EO2TG5C5lS2vwGyjInHA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vpuNa-0000000HU2q-07BN;
-	Tue, 10 Feb 2026 20:30:38 +0000
-Received: from mail-wr1-x432.google.com ([2a00:1450:4864:20::432])
+	id 1vpuet-0000000HUUH-1XdZ;
+	Tue, 10 Feb 2026 20:48:31 +0000
+Received: from mail-wm1-x336.google.com ([2a00:1450:4864:20::336])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vpuNM-0000000HU2T-1Qbx
+	id 1vpuep-0000000HUT6-3L29
 	for linux-phy@lists.infradead.org;
-	Tue, 10 Feb 2026 20:30:36 +0000
-Received: by mail-wr1-x432.google.com with SMTP id ffacd0b85a97d-437696cc5a5so244278f8f.2
-        for <linux-phy@lists.infradead.org>; Tue, 10 Feb 2026 12:30:23 -0800 (PST)
+	Tue, 10 Feb 2026 20:48:29 +0000
+Received: by mail-wm1-x336.google.com with SMTP id 5b1f17b1804b1-4806853efb5so6926985e9.0
+        for <linux-phy@lists.infradead.org>; Tue, 10 Feb 2026 12:48:27 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1770755422; x=1771360222; darn=lists.infradead.org;
+        d=gmail.com; s=20230601; t=1770756506; x=1771361306; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=PmFqy4a/y7/G6LMLBYsR10AC71ubgLHhE6Tq452T3aA=;
-        b=iGy+qIkMQTrQ1G+7mKkeyRzdqCreP+WosDOCraGvaG8DMhWRSS/BQleT/3IFjvuyBs
-         cbvsP19dNHTnet5IcC8+YODtHVdkHMOSqIFjcDwBFxWLvPq6mcWZA4t5doyj9K21OVU7
-         AS1c5D+9CCh66MEKfD9AyMVWU7py5GtQlBGuQHyfUo4WxeTcdLksejpCycUY2XjuukWo
-         2QHHvO5/pb00DY91kdijQZm9E8IeVakaJlwFu6NqjNZ0WV90f4UVx1Fnd3U/bLBBoppA
-         8qi6eiaDZvlXrj1H6GtU4U+WPfsSv3ixxWE3zrMx+Gylar6PP5bThtac4ftBH9A4zBQh
-         ZODA==
+        bh=qyFgyNWHXU64SHJN29WjtJtR7uYHlrJZAim1yoRlcII=;
+        b=de/JXA867dMXLMdysJPM5MIpkbylcE/MN1a4m+m60SXKblkPidU0auwHUNHkHD8MD4
+         76hZXEwFTkRJEyLpA5vOVtPZKXePAz4R187+Iai6I56CIX4vyXCFjfzKdUbg2N99ApAW
+         zmrgFLl4XPlpLirfRATHPUQbhpybn7tnS8D+6o/4OJXtmxJeIOuPF9iAPw+U1/mt4Qc3
+         u2waSdzAusEF6pIAVXsxGfLJ03E9M/XLyrpuA3p9WklaoD44CYEg1gRwB5Hkb8gmviZV
+         i13kUXqwhvYMr4O+EgiBGdgyTvJWk6/HSQVNJnZ9NqPnMfH0Hf3uPS/UnVZ9qAInI/Bt
+         LS4w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1770755422; x=1771360222;
+        d=1e100.net; s=20230601; t=1770756506; x=1771361306;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=PmFqy4a/y7/G6LMLBYsR10AC71ubgLHhE6Tq452T3aA=;
-        b=SgsT9uEfx0XMmZHBeHtL3AGOXLR2YGjTxFZbpI4nBw7q5anFDpxhxIBfmD1l4G1gZt
-         wNwouCH3NWSI8IoPPG+PvaRLcGamZdV9eoSBGmzTQYaAVb75DtIOiHVRVnZPAh2Yl08I
-         yzZX3nnHUe/q9D6dxd6zk/PU0pPqkxi1mVB8U0vG8Pg21D8wveuSVGvthE7Tt8tK/bgd
-         W9xENNDBxN8GCf9W5oE0paX78U3Ey58yA5ta27hleNJzWaWfA1yHOjS2YQezAp/Jpyy3
-         nqHWTWpmSQvwse2UC7U7f2K0hnPCgbrdVEXBhunJi2TPXQiy4y8pUJI6SQPqqZI2jIB2
-         eisw==
-X-Forwarded-Encrypted: i=1; AJvYcCXPSO8KMBm1JIAeuuNPQYEj4Jkf484YWJJ+Id4XMS3ChAPjGkCuWL3QEyQmpp4d0Fsz7AcN0fVizz4=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwufWee3mXzyqGqNFw4r4jJ8VlSQuh8JQpJWCovcxy+HSyNLV3O
-	FKQvyzqKS6whEfGqw1dEqyN7GbSfQoCWtWVWrMnHpH+qWL3QuZ9xPyjVU/N9cA==
-X-Gm-Gg: AZuq6aLcChnFGyX6jYmWDRwL8tJEeJolQPbM2hqs4/i6iBO0F4vR8pskiqbEnygBNvK
-	5OMe3clVTV+1ZmyMTw4u4e1SaICRZLTI3AMrb9owsMjoSG1LhePCKAZwrFJ9A2XdqcguUI2f5D2
-	T8AFdiones9c7hEjmiW6+S6YVBQmQg7cHYL72wh+ouq1zwl6pw8nIHQHQG5X95tnELkCXZDAHF/
-	rOER7BeZvRmsHbHSOorvmwcxXzQ0Jf+4mgFE5m3c+LoBklPIVjcUERx8DNzbVzfioIEF5ANQvgE
-	jRYYkhNQ5inxAVKHVH7eDBfBLCJvohTgTs3TnTxjQRIZaM+LWwkDbbOnRPNQ6nAtnKv9eWoFhvH
-	5OHxEnyX+eB8vDjEQZ3PFNxlXJ/A7JMuDh/WhGwduRcHw/t7xFPjuuUpyg2IIZa8EhUKuQ+Z0zE
-	+OSFtSDubqRPSlkyo=
-X-Received: by 2002:a05:600c:1f82:b0:477:7a78:3000 with SMTP id 5b1f17b1804b1-48351228e20mr24402285e9.6.1770755422195;
-        Tue, 10 Feb 2026 12:30:22 -0800 (PST)
+        bh=qyFgyNWHXU64SHJN29WjtJtR7uYHlrJZAim1yoRlcII=;
+        b=Nf6S1P5r9DRn6Ll3ViBsl0ne+0ynHJr451mW0YSkD8FwbWEuJcRRcL2OI70qhAZ2KJ
+         Rm120R0ugVLE1u8CP+14ttlQzUpp3zDfe/XfBdX2tnTuqOQ0APsOS6F8EJ6PtzcMyAJN
+         alZnUUUPodRgnrRXJ6b9GjLdDdAgX9bzyZjb1JYgg3QEVEW8i3Cd4AePEyd1PMpXR1Qt
+         ULYTsiP6kGCs5nB9EEWOFh82Bxuqc9KIFpKSDOoddNhLm0zuQZdJH4EBzMoNPxwz5bB0
+         vR5Wzrzp1GhjcMxgnY15BBYgSEbHVWAK8IPbkBNHGiphZKPQYLGlgl9+0DRRFevPXWNr
+         sqUA==
+X-Forwarded-Encrypted: i=1; AJvYcCVJ7u8yKjS8f+d2J8nYprWH5WDae8amgXa/RwvU/IVvva2RwM/0K1yX7bMmSjLC+ANQqvPbUmaX+io=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yyy7fU4FBLEIQOoly7zSMuje1ddY/mhemv1/4nw/37iFpXqETNV
+	EwfuAyrpTJmMm20TcVtCPLC1GBc5lYianRylkrF7oYT7SrRBb/hQoojM
+X-Gm-Gg: AZuq6aKMGwPhfOC8LbyHzABSnD8G+vOnho/61C+BAfCSJRMSXGDAa6fKdyIbnUuVAe4
+	AEn0KkiGLkld07ZATN+mk6C4jxVpKUWK2EXtebiUvYZWZBtoLDk20BM7Mj3+aBgbWRBfG320CBj
+	AskwAN9FyWRvZq9vJjkBg/xF8aeZyuCG9O6GeXl183UeOVcl8B/JonDrTslyD/dhLXhKqd85t5D
+	QvOn8bIBo99LnTYQ32+7Ly19/DzjQ57mc0f8OcXWjDeEnTjuPIMGwtsoRSUKQvaxYGb7pj5Lugl
+	eLX65KCgsWbr5bCJT/d3MVJsIH2basJ41emQhAP7WRM2+Sxt+/2J1V0IRp51AdLfecyZ9A4Aegf
+	b78s27sahT/NkSTvTlaYl6447P7esw8zLYGfWNTHzNQBDNywHVUZtw1APya/VmvPkBWH/0aC23P
+	XqIu2MkFY9eMYpkG4=
+X-Received: by 2002:a05:600c:64cc:b0:477:5ca6:4d51 with SMTP id 5b1f17b1804b1-483511ccf92mr29460685e9.3.1770756505624;
+        Tue, 10 Feb 2026 12:48:25 -0800 (PST)
 Received: from skbuf ([2a02:2f04:d501:d900:d8ac:c964:9b43:1b13])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4835a5c0df8sm3313025e9.0.2026.02.10.12.30.19
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4834d5d8ebfsm133863775e9.2.2026.02.10.12.48.24
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 10 Feb 2026 12:30:20 -0800 (PST)
-Date: Tue, 10 Feb 2026 22:30:18 +0200
+        Tue, 10 Feb 2026 12:48:24 -0800 (PST)
+Date: Tue, 10 Feb 2026 22:48:22 +0200
 From: Vladimir Oltean <olteanv@gmail.com>
-To: Felix Gu <ustc.gu@gmail.com>
-Cc: Vinod Koul <vkoul@kernel.org>,
+To: Janne Grunau <j@jannau.net>
+Cc: Sven Peter <sven@kernel.org>, Neal Gompa <neal@gompa.dev>,
+	Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Jyri Sarha <jsarha@ti.com>, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] phy: ti: j721e-wiz: Fix device_node leak in
- wiz_get_lane_phy_types()
-Message-ID: <20260210203018.dr6dwj55aob3phsd@skbuf>
-References: <20260211-wiz-v1-1-fdd018d02f33@gmail.com>
- <20260211-wiz-v1-1-fdd018d02f33@gmail.com>
+	Philipp Zabel <p.zabel@pengutronix.de>, asahi@lists.linux.dev,
+	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+	Dan Carpenter <dan.carpenter@linaro.org>
+Subject: Re: [PATCH phy-next] phy: apple: apple: Check the actual ioremap
+ return value
+Message-ID: <20260210204822.jr22el4rlyosin2q@skbuf>
+References: <20260207-phy-apple-resource-err-ptr-v1-1-78735b07ed2d@jannau.net>
+ <20260207-phy-apple-resource-err-ptr-v1-1-78735b07ed2d@jannau.net>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260211-wiz-v1-1-fdd018d02f33@gmail.com>
- <20260211-wiz-v1-1-fdd018d02f33@gmail.com>
+In-Reply-To: <20260207-phy-apple-resource-err-ptr-v1-1-78735b07ed2d@jannau.net>
+ <20260207-phy-apple-resource-err-ptr-v1-1-78735b07ed2d@jannau.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260210_123026_870830_DE470125 
-X-CRM114-Status: GOOD (  21.18  )
+X-CRM114-CacheID: sfid-20260210_124827_856653_A0E8B26A 
+X-CRM114-Status: GOOD (  20.53  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,62 +105,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Felix,
+Hello Janne,
 
-On Wed, Feb 11, 2026 at 02:14:11AM +0800, Felix Gu wrote:
-> The 'serdes' device_node is obtained using of_get_child_by_name(),
-> which increments the reference count. However, it is never put,
-> leading to a memory leak.
+On Sat, Feb 07, 2026 at 05:40:34PM +0100, Janne Grunau wrote:
+> The address where the devm_ioremap_resource() return value is stored is
+> always a valid pointer. Check the actual return value instead as that
+> that might be an error value.
 > 
-> Use the __free(device_node) attribute to automatically decrement
-> the reference count when the 'serdes' variable goes out of scope.
-> 
-> Fixes: 7ae14cf581f2 ("phy: ti: j721e-wiz: Implement DisplayPort mode to the wiz driver")
-> Signed-off-by: Felix Gu <ustc.gu@gmail.com>
+> Reported-by: Dan Carpenter <dan.carpenter@linaro.org>
+> Closes: https://lore.kernel.org/asahi/aYXvX1bYOXtYCgfC@stanley.mountain/
+> Fixes: 8e98ca1e74db ("phy: apple: Add Apple Type-C PHY")
+> Signed-off-by: Janne Grunau <j@jannau.net>
 > ---
->  drivers/phy/ti/phy-j721e-wiz.c | 5 ++---
->  1 file changed, 2 insertions(+), 3 deletions(-)
+>  drivers/phy/apple/atc.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> diff --git a/drivers/phy/ti/phy-j721e-wiz.c b/drivers/phy/ti/phy-j721e-wiz.c
-> index 12a19bf2875c..904541e9138e 100644
-> --- a/drivers/phy/ti/phy-j721e-wiz.c
-> +++ b/drivers/phy/ti/phy-j721e-wiz.c
-> @@ -1407,9 +1407,8 @@ MODULE_DEVICE_TABLE(of, wiz_id_table);
+> diff --git a/drivers/phy/apple/atc.c b/drivers/phy/apple/atc.c
+> index dc867f368b68748ea953e594ad998d7f965d8d1d..c144e273a555a741b49adfccbe046df83d193e03 100644
+> --- a/drivers/phy/apple/atc.c
+> +++ b/drivers/phy/apple/atc.c
+> @@ -2206,7 +2206,7 @@ static int atcphy_map_resources(struct platform_device *pdev, struct apple_atcph
+>  	for (int i = 0; i < ARRAY_SIZE(resources); i++) {
+>  		res = platform_get_resource_byname(pdev, IORESOURCE_MEM, resources[i].name);
+>  		*resources[i].addr = devm_ioremap_resource(&pdev->dev, res);
+> -		if (IS_ERR(resources[i].addr))
+> +		if (IS_ERR(*resources[i].addr))
+>  			return dev_err_probe(atcphy->dev, PTR_ERR(resources[i].addr),
+>  					     "Unable to map %s regs", resources[i].name);
+
+This does not seem correct - every call site that tests a pointer for
+IS_ERR() also decodes the error using PTR_ERR(). Whereas you are here
+creating the pattern "if (IS_ERR(*a)) return PTR_ERR(a)".
+
+Proven practice seems to tell us that insisting to save the
+devm_ioremap_resource() return code directly in *resources[i].addr
+is too complex here.
+
+Would you consider creating a temporary "void __iomem *addr" local
+variable, and set "*resources[i].addr = addr" only once it's validated?
+This would make the code obviously correct upon review.
+
 >  
->  static int wiz_get_lane_phy_types(struct device *dev, struct wiz *wiz)
->  {
-> -	struct device_node *serdes;
-> -
-> -	serdes = of_get_child_by_name(dev->of_node, "serdes");
-> +	struct device_node *serdes __free(device_node) =
-> +		of_get_child_by_name(dev->of_node, "serdes");
->  	if (!serdes) {
->  		dev_err(dev, "%s: Getting \"serdes\"-node failed\n", __func__);
->  		return -EINVAL;
 > 
 > ---
-> base-commit: 193579fe01389bc21aff0051d13f24e8ea95b47d
-> change-id: 20260204-wiz-9a67604a034f
+> base-commit: dbeea86fecef7cf2b93aded4525d74f6277376ef
+> change-id: 20260207-phy-apple-resource-err-ptr-5923d1130465
 > 
 > Best regards,
 > -- 
-> Felix Gu <ustc.gu@gmail.com>
+> Janne Grunau <j@jannau.net>
 > 
 > 
-
-You are fixing a bug from 2020 (v5.8) with functionality introduced in 2023,
-creating avoidable headache for backporters (the oldest supported LTS is
-5.10, where the cleanup API does not exist). Could we reimplement this
-the "normal" of_node_put() way?
-
-I realize this is not netdev, but this piece of advice from
-Documentation/process/maintainer-netdev.rst regarding use in drivers
-seems common sense and relevant here:
-
-  Low level cleanup constructs (such as ``__free()``) can be used when building
-  APIs and helpers, especially scoped iterators. However, direct use of
-  ``__free()`` within networking core and drivers is discouraged.
-  Similar guidance applies to declaring variables mid-function.
 
 -- 
 linux-phy mailing list
