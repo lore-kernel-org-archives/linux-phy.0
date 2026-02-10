@@ -4,62 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 433DDE94625
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Feb 2026 01:30:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B23F1EA3F0C
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Feb 2026 05:51:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:To:From:Subject:
+	Cc:Message-Id:Date:Mime-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=paMEAsYeHbqs/+LlApms+Hf2h9iglK007i1TUsSUKNs=; b=PTBSG4SybOWiA/
-	+zxz5bz3ENpVdra/bTRBn1sJA5gcenDw8dLdcTryzywzjfoqRBuGGgIlX0ceZJ8orgsOWu8ofM0H4
-	uGIR14wkvMLKdtp3pvawfnLuStlL2y6L6X/VGXEaZQN94tKwqWiYMhDSS3+UaHgUOalDL9cXASruK
-	DDpUzkMjFTsg25AwzJOusp2TiJfgunKBto0Ef+5ChrTaEowSk0dprnNK/V+2/QBT3w4q0P0i+HifP
-	C6BonERELs0NU0f99wor29QzEJ1pNAGQuixvHCPvRj+jWlr6kFdDMHZ1auUJwObL3Je6tD3CahwKD
-	/TXf8XJKvi3q4OJKA/Dw==;
+	List-Owner; bh=5xQMzUoxDOVFS9vuwE6gAuKS8Rn4nwZRCZT/1Yy08p4=; b=vE1sPaB5d+Ieg8
+	Pzi40VyX0XyKmzZS0wbI0mf1R85H3LlI50LywtWvGfbvsWsZtDxXraqcfYmcK6J1i1hETKCMeihJd
+	4N5GMkvKyZrKU4LGTlQ2i2oUz7LPxR6dLy/EpydETVbvjNK747qJvqinsf1/inEYJIKbSMDjpzCu1
+	ppyuFP+rKD9MB6gQlq5Ytog4TO2fSNk6Eb5Vdo8c0cWRmh8lgFsxNZnYAdLklpqujl8EHxBl1l/pc
+	WKl0/KqRnxEWnu+jNcye3LecE8bvDN0NLLlRhdiCi94jVq3SJot46NbbBxKwdgza0HxXGoWZd2OTH
+	GMeMmYqPZw8rrzvuFj/g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vpcaG-0000000GHc4-3By6;
-	Tue, 10 Feb 2026 01:30:32 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vpgeR-0000000GUxb-0i2K;
+	Tue, 10 Feb 2026 05:51:07 +0000
+Received: from out-188.mta1.migadu.com ([95.215.58.188])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vpcaF-0000000GHbk-1lgD;
-	Tue, 10 Feb 2026 01:30:31 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 6119160137;
-	Tue, 10 Feb 2026 01:30:30 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id EB022C116C6;
-	Tue, 10 Feb 2026 01:30:29 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1770687030;
-	bh=Uo2Pfl6hyhMXQD3RE7rk1AAawAsayGOyRKqwMxrRElI=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=b17xXxT1qROJYRtlyi8CwFU78ehZFBEo28RsXAmTsu9gdxHALE9ZCjcX9ZE0RYhFW
-	 F2vCeOHxWJc6XJcNQeBH4PcKnMc9/Og8gyYkTWb9rBTmo9CXytP7fQJwXnJTaXcOAp
-	 vnwtVvqj5+R3U1YQ/4A9Ti9tHqIQI0wYkeAnCsGLNCTMEa449PT6MXaWdh1/HrXdeA
-	 43wR/K90+CWDebSF03rDGdsltgK6Xgr5h6ElWRKdbB+g72Sr4yyLzayUxsmI9Q+dIk
-	 DEGSMqafLv2cBjLTmNsIEn6VXcKm7ksdd7NKxBK1WQx99QaRerEZRiDsoPOhNKKA2x
-	 8iFXDu70A/7vw==
-Date: Mon, 9 Feb 2026 19:30:29 -0600
-From: "Rob Herring (Arm)" <robh@kernel.org>
-To: Tzu-Hao Wei <twei@axiado.com>
-Cc: openbmc@lists.ozlabs.org, Conor Dooley <conor+dt@kernel.org>,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	SriNavmani A <srinavmani@axiado.com>,
-	Prasad Bolisetty <pbolisetty@axiado.com>,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>
-Subject: Re: [PATCH v2 1/4] dt-bindings: phy: axiado,ax3000-emmc-phy: add
- Axiado eMMC PHY
-Message-ID: <177068702757.2279882.2179431241227360532.robh@kernel.org>
-References: <20260206-axiado-ax3000-add-emmc-phy-driver-support-v2-0-a2f59e97a92d@axiado.com>
- <20260206-axiado-ax3000-add-emmc-phy-driver-support-v2-1-a2f59e97a92d@axiado.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260206-axiado-ax3000-add-emmc-phy-driver-support-v2-1-a2f59e97a92d@axiado.com>
+	id 1vpgeL-0000000GUwI-1lHw
+	for linux-phy@lists.infradead.org;
+	Tue, 10 Feb 2026 05:51:05 +0000
+Mime-Version: 1.0
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.dev; s=key1;
+	t=1770702646;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=JFqUNAJPbfntakYgXlVmPUWBmjS6ZT274Op0DauQgpg=;
+	b=xKmyqxOKd8/xaTlxkb/W4z+DNBVpe10MC+GteYSStR81VuLNbYcB6DflytOpkoJuxjQ2Xs
+	hFJylvG0GlZX+PsWuqAFBimHqkTKy4nDG2A4ekGUXZwZM8x2CM6bK61Dq9rQOgHuUQvk6v
+	LaWj+8VwT1xRY8X7PeIl3xiSEy19iOs=
+Date: Tue, 10 Feb 2026 13:50:32 +0800
+Message-Id: <DGB1P3K6I14J.1QCMDY84ZR7ZH@linux.dev>
+Cc: <broonie@kernel.org>, <conor+dt@kernel.org>,
+ <devicetree@vger.kernel.org>, <dlan@kernel.org>, <huang.ze@linux.dev>,
+ <krzk+dt@kernel.org>, <lgirdwood@gmail.com>,
+ <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+ <linux-riscv@lists.infradead.org>, <neil.armstrong@linaro.org>,
+ <robh@kernel.org>, <spacemit@lists.linux.dev>, <vkoul@kernel.org>
+Subject: Re: [PATCH 1/2] dt-bindings: phy: spacemit: add regulator support
+ to K1 USB2 PHY
+X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
+From: "Ze Huang" <huang.ze@linux.dev>
+To: "Chukun Pan" <amadeus@jmu.edu.cn>, <krzk@kernel.org>
+References: <8c3835c4-3602-4cee-9631-0551b0341918@kernel.org>
+ <20260209064016.1176056-1-amadeus@jmu.edu.cn>
+In-Reply-To: <20260209064016.1176056-1-amadeus@jmu.edu.cn>
+X-Migadu-Flow: FLOW_OUT
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260209_215101_600827_BD0657CA 
+X-CRM114-Status: GOOD (  12.50  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,21 +74,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Mon Feb 9, 2026 at 2:40 PM CST, Chukun Pan wrote:
+> Hi,
+>
+>> Plus, if this was a vbus regulator it would not be called "phy"...
+>> Even more confusing.
+>
+> Sorry, I didn't consider that this naming is confusing. Other
+> platforms, such as Rockchip's inno-usb2phy driver, use the
+> "phy-supply" property. I continued with this bad naming.
+>
+>> Bindings are supposed to be complete regardless what driver does
+>> (or does not).
+>>
+>> You must list all supplies with proper names.
+>>
+>> If this regulator was missing, then what else?
+>
+> (...)
+>
+>> Please start describing in the bindings your complete hardware, not
+>> your drivers.
+>
+> It appears Ze Huang described the vbus-supply property in
+> spacemit.k1-dwc3.yaml.
+>
 
-On Fri, 06 Feb 2026 16:22:08 +0800, Tzu-Hao Wei wrote:
-> From: SriNavmani A <srinavmani@axiado.com>
-> 
-> Axiado AX3000 SoC contains Arasan PHY which provides the interface to the
-> HS200 eMMC host controller.
-> 
-> Signed-off-by: SriNavmani A <srinavmani@axiado.com>
-> Signed-off-by: Tzu-Hao Wei <twei@axiado.com>
-> ---
->  .../bindings/phy/axiado,ax3000-emmc-phy.yaml       | 37 ++++++++++++++++++++++
->  1 file changed, 37 insertions(+)
-> 
+> So I should enable the regulator in the dwc3-generic-plat driver.
 
-Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
+No, we will enable regulator at port level.
+
+>
+> Sorry for the noise.
+>
+> Thanks,
+> Chukun
 
 
 -- 
