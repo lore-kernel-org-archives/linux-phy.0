@@ -4,66 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 25A12E94622
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Feb 2026 00:24:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 59418E94626
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Feb 2026 00:40:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XlGSzgkMDBfHZNaMKPxrVhZzjLPSS30EVdTjey1d6e0=; b=zTQAks3HJh7KlM
-	zSbxkQuJGelx4evfRMRxg4Y0bryh5GNfoIu501uRASsStyIPo0cOviKoVNz6JO4M6z18hFSmJC/tR
-	tDFy9DrsWu54upAWW/XQWdtgi/VdE6rkhmkvibBDPQQP6K2jEjUN4UXn3rGCytYsdDG0Zli1ku3gu
-	9fjmDJi02mhXjPVgONlEM6DNgsoVLezdwnFzEY6jz15VVB1W1ODKgQPCNxBjyTQarqUMBW9NfujeP
-	IUckpn3k14B0bzEG8KNLklkJblIKHRqpmfueVFaH7GuXGMz7GIlPV3d0bnNj87ZJ8eS6UevZJ11AU
-	kJP7ZWMkxr8qAnaM7y/Q==;
+	List-Owner; bh=3wbm218+Zvch6RPi6J9bXx/5z2eDzXi2bXtVutiscc8=; b=Pj6cNsKuJejSMi
+	Xx3cH/Ri0Fsu9hSgBRoFEFX8diDWAn6+wwl8ZrdUmGOXK5GEzBJaUVWghL0E3vUAanxhn1ki2TnvK
+	S3uk8JeWC7QswLcnYzkhdJjqQR37EU9iPm0kw6mlAJhGxXG2RGVHzaQ73RN/n5yd0Nrl8onAqTqHm
+	LqsjFTYXsNeU2fHbuc8ckT80DergrsQLYtFXVuOG7Oaj1y4mfwOpf/YsjaM8uKHD8HI0hYvdqJFhY
+	FcbPxpz1uSKdV31iXTTYCVxYtJ0PqZRX8jJOo4SRCRnE/OmY26TSMbgQzq1cU/gKBs2OilZ65Mi5O
+	RlcDcszH2+TEqbq3Wtyw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vpbYX-0000000GDuZ-1qAz;
-	Tue, 10 Feb 2026 00:24:41 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vpbnc-0000000GEnK-3wY1;
+	Tue, 10 Feb 2026 00:40:16 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vpbYW-0000000GDu7-0fjT;
-	Tue, 10 Feb 2026 00:24:40 +0000
+	id 1vpbna-0000000GEm7-0E0q;
+	Tue, 10 Feb 2026 00:40:15 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 1C87560008;
-	Tue, 10 Feb 2026 00:24:38 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A6702C116C6;
-	Tue, 10 Feb 2026 00:24:37 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id AF4DA43B06;
+	Tue, 10 Feb 2026 00:40:12 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 65425C19422;
+	Tue, 10 Feb 2026 00:40:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1770683077;
-	bh=kYDsdy95DgJsymUtNlgSQCwbWq5XH6lAUToKBGJfySI=;
+	s=k20201202; t=1770684012;
+	bh=okG7UjQjG+NhkvALP4XREVKya0FPqfH1FHODxx8wyTo=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=YE6/vob6Z096raVqRG1E+7JJ+EEUXybPXLWgT04SvE97iSarnH5osCkfGopc7q1eG
-	 yoLG33SNgafdaD9sWZNT0S67/sD5DO0udIrqSrhbERLgEpkuQNkoc00vhOTxYq5Gri
-	 fWLKct7Bj0RSQFOEROwal/SvRSZ9oqkr0bhYsf4GguMIuOiZkP0+9zPnD078NCgEpW
-	 qbwYBdXd7uoDF3Qm74Pt7wexrxIc8OC1KSRlQmc9zRtFS/sAsqKOrEoorLHZBplb6h
-	 sbfNUKS19qARxUWB2b3K8nAiJ79531BnOLdMv2/dzKfPvQJ/dvyWFgaVMit1NKAlIN
-	 3yh7Ojf/pEiIA==
-Date: Mon, 9 Feb 2026 18:24:36 -0600
-From: "Rob Herring (Arm)" <robh@kernel.org>
-To: Sean Anderson <sean.anderson@linux.dev>
-Cc: Thippeswamy Havalige <thippeswamy.havalige@amd.com>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	Michal Simek <michal.simek@amd.com>,
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
-	Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
-	linux-phy@lists.infradead.org, Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>, devicetree@vger.kernel.org,
-	linux-pci@vger.kernel.org, Bjorn Helgaas <bhelgaas@google.com>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Radhey Shyam Pandey <radhey.shyam.pandey@amd.com>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 1/8] dt-bindings: pci: xilinx-nwl: Add resets
-Message-ID: <177068307621.2186902.1439727413310059254.robh@kernel.org>
-References: <20260203002128.935842-1-sean.anderson@linux.dev>
- <20260203002128.935842-2-sean.anderson@linux.dev>
+	b=RjLsI8v3e2pMavrZlMuLaQ6rPrgulHjdzXeEk3+UIUQj256jPEPqCsUsrNkxhJUIG
+	 KPmH6dxedINMg7ek2+SMmDBIBY8lsaGptkWi5i1n+OAsjJPM220O0+J+Tm2lUipNLV
+	 I6q20eXmWQPh1IFvijn7+23kQKiIF/Q0gTj6RlDb2gXIyUlFe0Djc+PykXjaoILObs
+	 3z7mVU1FRVYtyOUeCdiwx0a3Fzrgm4j5a8zF6pFdBU1CrVZkZsPjOKdchu0AxWF1iv
+	 14vF66+jTGxt9hryK+MNdGoLshhTRblMo7vFBLkMbM98OTF19VjY5vPGC+ieHYFyGk
+	 l3d3U8XwuoNuQ==
+Date: Mon, 9 Feb 2026 18:40:11 -0600
+From: Rob Herring <robh@kernel.org>
+To: Vincent Guittot <vincent.guittot@linaro.org>
+Cc: vkoul@kernel.org, neil.armstrong@linaro.org, krzk+dt@kernel.org,
+	conor+dt@kernel.org, ciprianmarian.costea@oss.nxp.com, s32@nxp.com,
+	p.zabel@pengutronix.de, linux@armlinux.org.uk,
+	ghennadi.procopciuc@nxp.com, Ionut.Vicovan@nxp.com,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	netdev@vger.kernel.org, horms@kernel.org, Frank.li@nxp.com
+Subject: Re: [PATCH 1/4 v2] dt-bindings: serdes: s32g: Add NXP serdes
+ subsystem
+Message-ID: <20260210004011.GA2188625-robh@kernel.org>
+References: <20260203161917.1666696-1-vincent.guittot@linaro.org>
+ <20260203161917.1666696-2-vincent.guittot@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260203002128.935842-2-sean.anderson@linux.dev>
+In-Reply-To: <20260203161917.1666696-2-vincent.guittot@linaro.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260209_164014_131627_30EFC382 
+X-CRM114-Status: GOOD (  18.90  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,20 +78,200 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Mon, 02 Feb 2026 19:21:21 -0500, Sean Anderson wrote:
-> Add resets so we can hold the bridge in reset while we perform phy
-> calibration.
+On Tue, Feb 03, 2026 at 05:19:14PM +0100, Vincent Guittot wrote:
+> Describe the serdes subsystem available on the S32G platforms.
 > 
-> Signed-off-by: Sean Anderson <sean.anderson@linux.dev>
+> Signed-off-by: Vincent Guittot <vincent.guittot@linaro.org>
 > ---
+>  .../bindings/phy/nxp,s32g-serdes.yaml         | 154 ++++++++++++++++++
+>  1 file changed, 154 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/nxp,s32g-serdes.yaml
 > 
->  .../devicetree/bindings/pci/xlnx,nwl-pcie.yaml  | 17 +++++++++++++++++
->  1 file changed, 17 insertions(+)
+> diff --git a/Documentation/devicetree/bindings/phy/nxp,s32g-serdes.yaml b/Documentation/devicetree/bindings/phy/nxp,s32g-serdes.yaml
+> new file mode 100644
+> index 000000000000..fad34bee2a4f
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/nxp,s32g-serdes.yaml
+> @@ -0,0 +1,154 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/nxp,s32g-serdes.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: NXP S32G2xxx/S32G3xxx SerDes PHY subsystem
+> +
+> +maintainers:
+> +  - Ghennadi Procopciuc <ghennadi.procopciuc@nxp.com>
+> +
+> +description: |
+> +  The SerDes subsystem on S32G SoC Family includes two types of PHYs:
+> +    - One PCIe PHY: Supports various PCIe operation modes
+> +    - Two Ethernet Physical Coding Sublayer (XPCS) controllers
+> +
+> +  SerDes operation mode selects the enabled PHYs and speeds. Clock frequency
+> +  must be adapted accordingly. Below table describes all possible operation
+> +  modes.
+> +
+> +  Mode  PCIe	XPCS0		XPCS1		PHY clock	Description
+> +                SGMII		SGMII		  (MHz)
+> +  -------------------------------------------------------------------------
+> +  0	Gen3	N/A		N/A		100		Single PCIe
+> +  1	Gen2	1.25Gbps	N/A		100		PCIe/SGMII
+> +  2	Gen2	N/A		1.25Gbps	100		PCIe/SGMII
+> +  3	N/A	1.25Gbps	1.25Gbps	100,125		SGMII
+> +  4	N/A	3.125/1.25Gbps	3.125/1.25Gbps 	125		SGMII
+> +  5	Gen2	N/A	        3.125Gbps     	100		PCIe/SGMII
+
+Mixed tabs and spaces. Drop the tabs.
+
+What's not clear to me is do you have 2 or 4 lanes?
+
+> +
+> +properties:
+> +  compatible:
+> +    oneOf:
+> +      - enum:
+> +          - nxp,s32g2-serdes
+> +      - items:
+> +          - const: nxp,s32g3-serdes
+> +          - const: nxp,s32g2-serdes
+> +
+> +  reg:
+> +    maxItems: 4
+> +
+> +  reg-names:
+> +    items:
+> +      - const: ss_pcie
+> +      - const: pcie_phy
+> +      - const: xpcs0
+> +      - const: xpcs1
+> +
+> +  clocks:
+> +    minItems: 4
+> +    maxItems: 5
+> +
+> +  clock-names:
+> +    items:
+> +      - const: axi
+> +      - const: aux
+> +      - const: apb
+> +      - const: ref
+> +      - const: ext
+> +    minItems: 4
+> +
+> +  resets:
+> +    maxItems: 2
+> +
+> +  reset-names:
+> +    items:
+> +      - const: serdes
+> +      - const: pcie
+> +
+> +  nxp,sys-mode:
+> +    $ref: /schemas/types.yaml#/definitions/uint32
+
+       maximum: 5
+
+Though isn't this redundant with the child nodes? You could use the 
+standard 'phy-mode' property in each child.
+
+> +    description: |
+> +      SerDes operational mode. See above table for possible values.
+> +
+> +  '#address-cells':
+> +    const: 1
+> +
+> +  '#size-cells':
+> +    const: 0
+> +
+> +patternProperties:
+> +  '^serdes[0,1]_lane@[0,1]$':
+
+Do you need to support serdes0_lane@0 and serdes1_lane@0 (or similar 
+with "@1")? That's illegal as you have 2 nodes with the same address.
+
+> +    description:
+> +      Describe a serdes lane.
+> +    type: object
+> +
+> +    properties:
+> +      compatible:
+> +        enum:
+> +          - nxp,s32g2-serdes-pcie-phy
+> +          - nxp,s32g2-serdes-xpcs
+
+Seems like phy-mode would be sufficient. Are these separate blocks from 
+the parent?
+
+> +
+> +      reg:
+> +        maxItems: 1
+
+Just 'maximum: 1' instead.
+
+> +
+> +      '#phy-cells':
+> +        const: 0
+> +
+> +    required:
+> +      - reg
+> +      - compatible
+> +
+> +    unevaluatedProperties: false
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - reg-names
+> +  - clocks
+> +  - clock-names
+> +  - resets
+> +  - reset-names
+> +  - nxp,sys-mode
+> +  - '#address-cells'
+> +  - '#size-cells'
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    bus {
+> +        #address-cells = <2>;
+> +        #size-cells = <2>;
+> +        serdes0: serdes@40480000 {
+> +          compatible = "nxp,s32g3-serdes", "nxp,s32g2-serdes";
+> +            reg = <0x0 0x40480000 0x0 0x108>,
+> +                  <0x0 0x40483008 0x0 0x10>,
+> +                  <0x0 0x40482000 0x0 0x800>,
+> +                  <0x0 0x40482800 0x0 0x800>;
+> +            reg-names = "ss_pcie", "pcie_phy", "xpcs0", "xpcs1";
+> +            clocks = <&clks 1>,
+> +                     <&clks 2>,
+> +                     <&clks 3>,
+> +                     <&clks 4>,
+> +                     <&serdes_100_ext>;
+> +            clock-names = "axi", "aux", "apb", "ref", "ext";
+> +            resets = <&reset 9>,
+> +                     <&reset 8>;
+> +            reset-names = "serdes", "pcie";
+> +            nxp,sys-mode = <1>;
+> +            #address-cells = <1>;
+> +            #size-cells = <0>;
+> +            phy_pcie0: serdes0_lane@0 {
+> +              compatible = "nxp,s32g2-serdes-pcie-phy";
+> +              #phy-cells = <0>;
+> +              reg = <0>;
+> +            };
+> +            phy_xpcs0_0: serdes0_lane@1 {
+> +              compatible = "nxp,s32g2-serdes-xpcs";
+> +              reg = <0>;
+> +            };
+> +        };
+> +    };
+> -- 
+> 2.43.0
 > 
-
-Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
-
 
 -- 
 linux-phy mailing list
