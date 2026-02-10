@@ -4,96 +4,102 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EC29CEB26F5
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Feb 2026 18:14:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D7F96EB2705
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Feb 2026 19:35:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
-	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=G/90e17kp5jvNa5JQWxkdVWx9Ap6KUgRjmYst5T9p5M=; b=YtX4TC8g9lhnc0
-	G1sI0pxkQAXN790rP6Y7FsBDQ5TTYtYufp0QfD3aYmHVrN7Vii872n/NICkkGJHMEeK5rde4RAnaY
-	GcLHw51IKL57pTkjip6l3IqcLCPXfS6uUBb0w7F3YcSx7jWhqyzcUVPLFGQQ3ks4WjX3+XSQsUgUd
-	PMNjGFM0cEAxpXb86fBFvzP2zOfnJNwnXY77SohAt8MffsCIJ1JeVnNYC3fxKq21s+w/BZ6ARhKAa
-	4ovdXnwCKsBFb/61RquGbMoU10uQ2kEYXdmx8j3vd2XTonCqaYEsKGV5ToqaujpOV8vXDB9xn8KJb
-	62PWDRDaGizYxzRsLu2A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KqviFr8WyhXbq/NhQ18fm7ieLPR2rxov6Nkb2JCYrE0=; b=138P7203JhUGRc
+	ZvVAZpYXvFmkaB8BP4Uqb8xRmAkRuKYI6kxyMlZf+k2p8r/RZw5nsPwhMBtaX2uJZf94XAv+j8mOe
+	a2TOE3Ua+/jkGw+pZGOGl6g5QzniIBV79u2TUhIU8mI127/Zqcx4rzx5Bs38DiLDTp6uPfWRoI2RN
+	5GfN+BNbo+TIfIPlgTTTm9rYLEbK/v/VEu3V7NT/lLxEwt5eJScGvtKtqmxrrPNVWo/QUyZLibaKJ
+	Ipt/q/3AvyBWa0nwyKOhWeAXE0kwGQzN6BTaTTvFNX3vvAYjKchKu4O/pB3KzhpZI1yffqsZUtdRm
+	65bwCFSMfiVyAUgIlx4g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vpsFf-0000000HOBc-3che;
-	Tue, 10 Feb 2026 18:14:20 +0000
-Received: from mail-pg1-x52f.google.com ([2607:f8b0:4864:20::52f])
+	id 1vptWA-0000000HRaI-1YjZ;
+	Tue, 10 Feb 2026 19:35:26 +0000
+Received: from mail-wr1-x42a.google.com ([2a00:1450:4864:20::42a])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vpsFd-0000000HOBH-25qX
+	id 1vptW6-0000000HRZw-3pmD
 	for linux-phy@lists.infradead.org;
-	Tue, 10 Feb 2026 18:14:18 +0000
-Received: by mail-pg1-x52f.google.com with SMTP id 41be03b00d2f7-c6de0527ce1so634811a12.2
-        for <linux-phy@lists.infradead.org>; Tue, 10 Feb 2026 10:14:16 -0800 (PST)
+	Tue, 10 Feb 2026 19:35:24 +0000
+Received: by mail-wr1-x42a.google.com with SMTP id ffacd0b85a97d-437816eae24so25878f8f.3
+        for <linux-phy@lists.infradead.org>; Tue, 10 Feb 2026 11:35:22 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1770747256; x=1771352056; darn=lists.infradead.org;
-        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
-         :date:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=9+ncAZEnZ4mXiLnJbrXQN6RzFcWEjU5z/GGAu5tYy5I=;
-        b=XUOlADO2mVGiD9nbxQTwLcuI/ORtW9Z3uPm42aTi4e72tbd5v6aqV2n6jPUBg0THL0
-         iaTTcB0HBe32txMHGvA4biJ5cn0atT5lFv1zQmUBVKl2NtkGm9X4K/48TULcqWKhvNz/
-         Xj/ST3fMAREh2/PiWQYX3cFF7D0TnGu+9x0h0hN9r0HAlADM1BKB+/huF/Y/7EyKYWf7
-         se091V+np5Q+ZptaWcAePmSBsM+pbmYpmRGocEveG7ppRAxybNxUVu3pX3qG9gRgri8V
-         gWS/cJvCYYbisODZCixjCbuk6USuhk4zn99ubDOcyRif4LLNwdYbb3Iy48qn23/mPIuu
-         NqDw==
+        d=gmail.com; s=20230601; t=1770752121; x=1771356921; darn=lists.infradead.org;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=1FTvcKjle8v/I3+gNDN7izL+kp2hM1kytmKhqKq02/4=;
+        b=E52tB5kSR3RBHFLlvMPrvBGC4dj4oVZiiiAkd6E6hCNCBzArSznABiqLLiKHMdnOvS
+         mVCFzEbNfUscj/q3xF+UC2WyoEP5CmN5G9RkW9QZuFLaQmeaADn0Ugbm2jBS5PDo9GDh
+         /GGB0Ayq38AyldMC0hdlMi2PC2vIqfDILp/Ce5MlonC7pFpB5diMQl3xYSXhnvWHvXnV
+         sHzvPCy9ZmAZE7UVXh1/s4MLlw4+m6FGK/OaCY/pkdmbPZAgCZTrtiL034wIWjbJUldw
+         Rh0fz7ATEGVmg6aY2JfKfaJqCD7E5CLx+qeoJ4fa/AALvBCURYmyKwUff4w8AtXdFLHv
+         wMPA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1770747256; x=1771352056;
-        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
-         :date:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=9+ncAZEnZ4mXiLnJbrXQN6RzFcWEjU5z/GGAu5tYy5I=;
-        b=VovR+MiHKN1JEcu9rffLA5SrnKOFIoZ3laDdCJXt5NYUXUdj+juOrLWRxkBb86zhKZ
-         0n5n9eKo5wm9GHEToiUVYTZFTAEaxVJ44FfF9AOx3C9g8LcZOobdYt4jmoTi2chKAe8E
-         1GpQxZ2RcHiyhhFEjuw/k4BtYWDG3TSrcGh6dtZ1wlW1HN2GeOW7x894RJO1o/I+89Ud
-         yp8NR3PlDj9DGs0jHiQxP720PS5rBihZlarUrR6pB6AV/yXhDIdLUlR1kZEs5sTLri5Q
-         Vh02LwX1oFloS21iBHkPInq7pjy7N1iLCX3MTzAR+cwOVztq6oAtpGgLfi0/olTO8vfL
-         +W3A==
-X-Gm-Message-State: AOJu0YzPdebLsYZbpSBTT/s5mtCP8SRH6yC21WiYbQzcNHX+e5Es9EfK
-	7k6ZgvSHLhBdr0lXaPhqQpYofGozS3/vdpWAwoPsSKGaI123lohbIz/m
-X-Gm-Gg: AZuq6aJk4kVRAoRRj7aQlJrLSEhNI/l5KkyYNy5aNhoAxHR+FEpe6ikrjKAEJKLUeW5
-	66fKJjIp8ZWcLcz16s1akZPh2vQGErTwMLAd3IbHLeLS7uuW0bb2e9Vqqe5YPnmIJr692PWBHRf
-	kdWePrY9s595Ut7+qh2gk0/YQi297/STsnWuRF0Bf1c2Mgz/oIhsxzPhGKxgq+T2ZnWKDUt11RI
-	9cZbQQGSDP34DYI6lM2vzRh6Zo+qMqAaCsEPvbDiCcH6OWrT46fi6ivNEeraae/6Px4MeX/NnXc
-	Z4a3RYJ/GfrBViDtcbIX3Lskk8047O4FcuIqKKkwR1ubBpS/2rIJz7pTmfo9XZWLxjlZE68J2bh
-	mBgbJFNU1qrz/QHLZDvGPQOrTq3MLgs2fiOioY9/HqF6ZWvYtouCrhnNNQ/9CqSvI2rUXQrjcPC
-	0CbyyLQFMuglJzPdVkGb6WjPzU6vYz9CaDR1Azsw==
-X-Received: by 2002:a05:6a21:e8c:b0:341:c4e5:f626 with SMTP id adf61e73a8af0-393acf9a9a9mr16114957637.7.1770747256058;
-        Tue, 10 Feb 2026 10:14:16 -0800 (PST)
-Received: from junjungu-PC.localdomain ([2408:820c:9008:ba52:c4d8:99f6:9031:4ec9])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-35662e6ad4esm3400265a91.6.2026.02.10.10.14.13
+        d=1e100.net; s=20230601; t=1770752121; x=1771356921;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=1FTvcKjle8v/I3+gNDN7izL+kp2hM1kytmKhqKq02/4=;
+        b=DxdQ4da8/7wwkUIlzoBXoSaAZlJiY5hqLQbsSIhlSmuayEZnoCaUsIt4SzH+GkqagJ
+         tshEN//ia+sa2+LYNG+VUU/qDqvKTZbkOQqa5OAfNxTVpPvMaLaqwMBJlA2LdTCRc2aF
+         GT7JEOaybye2NH3jbrXgFJ/ihWNKty74Wnj24sE/gEA7MtHJnIIbx9N/HV6w9AtvYfTQ
+         sopugh91WsoqxIo8DZGbEatbgZ6GxkwPIOWCXbea1+sukRtfGBLIMxp3S5ZSL60NkPOZ
+         LSP7zULzsJ0j50tEUI3Z2kml/NaEgjHxDoQ25aqEb/2sOk+QgqVxxFKQvLa7VoCXrbv6
+         1BIw==
+X-Forwarded-Encrypted: i=1; AJvYcCUvtF0lqszIussONddHzvF3S8uIIyjQL6AZoM+WLizgDv9TwLVDc125AaaHBqqOwEhkao4pJVl/2mo=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyR4J2G1pJp1KyFurnRfPThpcdiYJHD1xK6uk1hjtQ/UJuMrczo
+	+fJp951a186P6qEFo20oGzMdq6Z/WzNtH1s63kl5loZ5yDSFwsBqzx9Q
+X-Gm-Gg: AZuq6aKFMMjL+5JtvDRCurEoSzIxn+ZHT+zZPshJKQ0ySOlvk3o27xKxZxjG847ZdQC
+	1hxrcQjdQqqqVEK/jpB4Jn/4siggZ7lofkZU88nLuJ5KMDSK71xVP2k/bWzMZsSb2QBDlcAR2Bh
+	RmYPs9V3QlgKYkCTg2YuEYlp19kIkZgD1dAZG5rr7diSmO19XWYf6Uu7FFP9MEkTv0bAUjjTo30
+	WWYPt3PVmr3qNs6YMTivYcrTv+TxnwrfQsgylV4KP/ugvwKLtK7+Iurz2BwIp2e3t5JyPJLZrsB
+	BzuhsOeu4sKeZUXRqf/EhmyAXCYdCDW/3fX8/D4XUxoFz8iO7hJ1Pp6tA9zfpznQvStgtTZOpYc
+	cXBuFcfqQg2ENTCzuLskr9NtQD5cPjNuxW2HsahQGXyrT0OVRqTOIwHrlqLljE6fWq9mVPZUAyb
+	K9t8B2y7lOUZakqvk=
+X-Received: by 2002:a5d:588d:0:b0:437:6e9b:805a with SMTP id ffacd0b85a97d-4377ad1e2cfmr2935958f8f.4.1770752120295;
+        Tue, 10 Feb 2026 11:35:20 -0800 (PST)
+Received: from skbuf ([2a02:2f04:d501:d900:d8ac:c964:9b43:1b13])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-4362972fc26sm34036922f8f.22.2026.02.10.11.35.18
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 10 Feb 2026 10:14:15 -0800 (PST)
-From: Felix Gu <ustc.gu@gmail.com>
-Date: Wed, 11 Feb 2026 02:14:11 +0800
-Subject: [PATCH] phy: ti: j721e-wiz: Fix device_node leak in
- wiz_get_lane_phy_types()
+        Tue, 10 Feb 2026 11:35:19 -0800 (PST)
+Date: Tue, 10 Feb 2026 21:35:16 +0200
+From: Vladimir Oltean <olteanv@gmail.com>
+To: =?utf-8?B?VGjDqW8=?= Lebrun <theo.lebrun@bootlin.com>
+Cc: Vladimir Kondratiev <vladimir.kondratiev@mobileye.com>,
+	=?utf-8?Q?Gr=C3=A9gory?= Clement <gregory.clement@bootlin.com>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	linux-mips@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-clk@vger.kernel.org,
+	=?utf-8?Q?Beno=C3=AEt?= Monin <benoit.monin@bootlin.com>,
+	Tawfik Bayouk <tawfik.bayouk@mobileye.com>,
+	Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+	Luca Ceresoli <luca.ceresoli@bootlin.com>
+Subject: Re: [PATCH v6 3/8] phy: Add driver for EyeQ5 Ethernet PHY wrapper
+Message-ID: <20260210193516.temrg46yozxma7xb@skbuf>
+References: <20260127-macb-phy-v6-0-cdd840588188@bootlin.com>
+ <20260127-macb-phy-v6-3-cdd840588188@bootlin.com>
 MIME-Version: 1.0
-Message-Id: <20260211-wiz-v1-1-fdd018d02f33@gmail.com>
-X-B4-Tracking: v=1; b=H4sIAHJ1i2kC/6tWKk4tykwtVrJSqFYqSi3LLM7MzwNyDHUUlJIzE
- vPSU3UzU4B8JSMDIzMDIwMT3fLMKl3LRDNzMwOTRANjkzQloMqCotS0zAqwKdGxtbUAjc6REVU
- AAAA=
-X-Change-ID: 20260204-wiz-9a67604a034f
-To: Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Jyri Sarha <jsarha@ti.com>
-Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
- Felix Gu <ustc.gu@gmail.com>
-X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1770747253; l=1321;
- i=ustc.gu@gmail.com; h=from:subject:message-id;
- bh=D7LsG92Q4V6EDnOUhkN7SNCkXGuQ3EoxFFnH36KITpo=;
- b=Xh6eJkuNPhEC5Z/GHopWdIYM9Ju6iKGaR6m5YBn8yvea6ZODUZ+ZdDUpD8FsyToVSlfZckp1/
- YWzy79d9kPTCCsUck3OOd2HIQluLzXoeHh+PenibrPM18jIhFyNwWTi
-X-Developer-Key: i=ustc.gu@gmail.com; a=ed25519;
- pk=fjUXwmjchVN7Ja6KGP55IXOzFeCl9edaHoQIEUA+/hw=
+Content-Disposition: inline
+In-Reply-To: <20260127-macb-phy-v6-3-cdd840588188@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260210_101417_572485_CF0C58B3 
-X-CRM114-Status: UNSURE (   9.14  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260210_113522_982464_C29296FE 
+X-CRM114-Status: GOOD (  21.20  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,51 +111,118 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The 'serdes' device_node is obtained using of_get_child_by_name(),
-which increments the reference count. However, it is never put,
-leading to a memory leak.
+Hi Theo,
 
-Use the __free(device_node) attribute to automatically decrement
-the reference count when the 'serdes' variable goes out of scope.
+On Tue, Jan 27, 2026 at 06:09:31PM +0100, Th=E9o Lebrun wrote:
+> +static int eq5_phy_init(struct phy *phy)
+> +{
+> +	struct eq5_phy_inst *inst =3D phy_get_drvdata(phy);
+> +	struct eq5_phy_private *priv =3D inst->priv;
+> +	struct device *dev =3D priv->dev;
+> +	u32 reg;
+> +
+> +	dev_dbg(dev, "phy_init(inst=3D%td)\n", inst - priv->phys);
 
-Fixes: 7ae14cf581f2 ("phy: ti: j721e-wiz: Implement DisplayPort mode to the wiz driver")
-Signed-off-by: Felix Gu <ustc.gu@gmail.com>
----
- drivers/phy/ti/phy-j721e-wiz.c | 5 ++---
- 1 file changed, 2 insertions(+), 3 deletions(-)
+Nitpick: can you please remove the debugging prints and maybe add some
+trace points to the PHY core if you feel strongly about having some
+introspection?
 
-diff --git a/drivers/phy/ti/phy-j721e-wiz.c b/drivers/phy/ti/phy-j721e-wiz.c
-index 12a19bf2875c..904541e9138e 100644
---- a/drivers/phy/ti/phy-j721e-wiz.c
-+++ b/drivers/phy/ti/phy-j721e-wiz.c
-@@ -1407,9 +1407,8 @@ MODULE_DEVICE_TABLE(of, wiz_id_table);
- 
- static int wiz_get_lane_phy_types(struct device *dev, struct wiz *wiz)
- {
--	struct device_node *serdes;
--
--	serdes = of_get_child_by_name(dev->of_node, "serdes");
-+	struct device_node *serdes __free(device_node) =
-+		of_get_child_by_name(dev->of_node, "serdes");
- 	if (!serdes) {
- 		dev_err(dev, "%s: Getting \"serdes\"-node failed\n", __func__);
- 		return -EINVAL;
+> +
+> +	writel(0, inst->gp);
+> +	writel(0, inst->sgmii);
+> +
+> +	udelay(5);
 
----
-base-commit: 193579fe01389bc21aff0051d13f24e8ea95b47d
-change-id: 20260204-wiz-9a67604a034f
+Could you please add a macro or comment hinting at the origin of the
+magic number 5 here? You could also place these 3 lines in a common
+helper, also called from eq5_phy_exit(), to avoid minor code
+duplication.
 
-Best regards,
--- 
-Felix Gu <ustc.gu@gmail.com>
+> +
+> +	reg =3D readl(inst->gp) | EQ5_GP_TX_SWRST_DIS | EQ5_GP_TX_M_CLKE |
 
+When you write 0 to inst->gp and then read it back, do you expect to
+(a) get back 0 or
+(b) are some fields non-resetting?
 
--- 
+I see both as inconsistent, since if (a), you can remove the
+readl(inst->gp) and expect the same result. And if (b), it also
+shouldn't matter if you write zeroes a second time, if it was fine the
+first time?
+
+Shortly said, is readl(inst->gp) really needed?
+
+> +	      EQ5_GP_SYS_SWRST_DIS | EQ5_GP_SYS_M_CLKE |
+> +	      FIELD_PREP(EQ5_GP_RGMII_DRV, 0x9);
+
+Quick sanity check on your proposal to use #phy-cells =3D <1>. This is not
+a request to change anything.
+
+What if you need to customize the RGMII drive strength (or some other
+setting, maybe SGMII polarity if that is available) per lane, for a
+particular board? How would you do that if each PHY does not have its
+own OF node?
+
+> +	writel(reg, inst->gp);
+> +
+> +	return 0;
+> +}
+> +
+> +static int eq5_phy_exit(struct phy *phy)
+> +{
+> +	struct eq5_phy_inst *inst =3D phy_get_drvdata(phy);
+> +	struct eq5_phy_private *priv =3D inst->priv;
+> +	struct device *dev =3D priv->dev;
+> +
+> +	dev_dbg(dev, "phy_exit(inst=3D%td)\n", inst - priv->phys);
+> +
+> +	writel(0, inst->gp);
+> +	writel(0, inst->sgmii);
+> +	udelay(5);
+> +
+> +	return 0;
+> +}
+> +
+> +static int eq5_phy_set_mode(struct phy *phy, enum phy_mode mode, int sub=
+mode)
+> +{
+> +	struct eq5_phy_inst *inst =3D phy_get_drvdata(phy);
+> +	struct eq5_phy_private *priv =3D inst->priv;
+> +	struct device *dev =3D priv->dev;
+> +
+> +	dev_dbg(dev, "phy_set_mode(inst=3D%td, mode=3D%d, submode=3D%d)\n",
+> +		inst - priv->phys, mode, submode);
+> +
+> +	if (mode !=3D PHY_MODE_ETHERNET)
+> +		return -EOPNOTSUPP;
+> +
+> +	if (!phy_interface_mode_is_rgmii(submode) &&
+> +	    submode !=3D PHY_INTERFACE_MODE_SGMII)
+> +		return -EOPNOTSUPP;
+
+Both PHYs are equal in capabilities, and support both RGMII and SGMII,
+correct? I see the driver is implemented as if they were, but it doesn't
+hurt to ask.
+
+> +
+> +	inst->phy_interface =3D submode;
+
+Short story: don't rely on the phy_set_mode_ext() -> phy_power_on() order.
+Implement the driver so that it works the other way around too.
+
+Long story:
+https://lore.kernel.org/netdev/aXzFH09AeIRawCwU@shell.armlinux.org.uk/
+
+> +	return 0;
+> +}
+
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
