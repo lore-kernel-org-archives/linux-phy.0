@@ -4,102 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6C573EB2706
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Feb 2026 19:37:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6646EB270F
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Feb 2026 20:30:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+1/cdPD29w5LaiEOoVkxNB5PFw/pJ2sjRy/Jj11S8vY=; b=qkjNN1I+L3oFMC
-	xBL6xU8+RBkMiINTwQu/U7+Rnil538rCs8+B7uZYmseuciqntaVy9jq2MdVTH2LsBFlonUXDJe76q
-	PFF2kQ7wMOVmDSoIX3AogIHIpGYVvubTeRfL+GPSFyj1SxG7AdXQSrrtw9tDVG2K8KkBYvB8G7lLl
-	rqFFH31jhvI3ud71sT0eaS/LeJDCRa9TVtMeiQRtznwV0xUO6HTfx/Xf1sCTgXJfBuuhfDPN2HxaN
-	mkki71e+qOG7Vxgm/iNbeW6GuoNQrC+TFFFskC0kzsKzQIDp2SY9qCnoY0qDZGVg5x+YZ93LgpGu9
-	qwLeRkStShphSD0hwocg==;
+	List-Owner; bh=S8kYZKZjUpJjKJxkYSNzOSKbK6TiEp90r3cZ/2CkhcM=; b=rP6GQIw9eu2aNZ
+	2bg9qXVZ8iT5qE8xSznKfkY34ZOjWl9zVvGb9Gt9YbzOK2jrXCJw24M2iI3SPwSk564YrgtOuEEcv
+	oYukbks4F6YRYS5KAB7Z4Kopi2ObQyDlWFrRAEpehsBI+eJuWOkCDjrXDo6LS+8sNyD11ys/ob7eT
+	9fQwYDF84erNwyD3CM90cGDgjIgRpsjs6j44AkD4kMZsaWdyTBDEx+jP+NIaJjREEas1Ex3rFuEvX
+	/P6YCScuP1WJoh5iUnMkMg2vqjT8zZs2wNox9q56l8NHmUymCfTZcjPuUmrezZBe//zA3zBrSFFG5
+	92adbfgF2yFSFjQMD/IQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vptYE-0000000HRhg-0dyQ;
-	Tue, 10 Feb 2026 19:37:34 +0000
-Received: from mail-wr1-x42b.google.com ([2a00:1450:4864:20::42b])
+	id 1vpuNa-0000000HU2q-07BN;
+	Tue, 10 Feb 2026 20:30:38 +0000
+Received: from mail-wr1-x432.google.com ([2a00:1450:4864:20::432])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vptYC-0000000HRgD-1PLK
+	id 1vpuNM-0000000HU2T-1Qbx
 	for linux-phy@lists.infradead.org;
-	Tue, 10 Feb 2026 19:37:33 +0000
-Received: by mail-wr1-x42b.google.com with SMTP id ffacd0b85a97d-435a51abad1so768175f8f.1
-        for <linux-phy@lists.infradead.org>; Tue, 10 Feb 2026 11:37:31 -0800 (PST)
+	Tue, 10 Feb 2026 20:30:36 +0000
+Received: by mail-wr1-x432.google.com with SMTP id ffacd0b85a97d-437696cc5a5so244278f8f.2
+        for <linux-phy@lists.infradead.org>; Tue, 10 Feb 2026 12:30:23 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1770752250; x=1771357050; darn=lists.infradead.org;
-        h=in-reply-to:content-transfer-encoding:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=fqDz8Drx8XjDtZc8LsAC+uLDhKgLLYdxTPVtiF/ij7I=;
-        b=L0mmvWO5eD3zwMk/wsjcEmG9Gz0VuSuPwJQzRmdEWmoPRkKi5wDrORZ2YkxFEsze68
-         qT20Vs7JiLMrcfYvShNbAw1ZIIHmGvZlE/4VZo63tbey7dTX8IqAglmCwTVsQ/UcOMA/
-         B5hYkzFDjEoQQEIqJEQYS1D1tLnVZIV9NoBFvhJwfkI8LJqpyS5EWOuTWz+rgvCJEOt5
-         scWnJaSpEYc3Rw7qHogAnV2d5s7mI242Ammc3ZijZju+er+hTAslXpvYME+6xDQLxsp4
-         mJ0Zx6TeK3LJtAJuUD9uPJorH+RBO8BJGNm9Qkwm7qGaLf1/SYHI5AL5FIvlT8PFBquK
-         BaIg==
+        d=gmail.com; s=20230601; t=1770755422; x=1771360222; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=PmFqy4a/y7/G6LMLBYsR10AC71ubgLHhE6Tq452T3aA=;
+        b=iGy+qIkMQTrQ1G+7mKkeyRzdqCreP+WosDOCraGvaG8DMhWRSS/BQleT/3IFjvuyBs
+         cbvsP19dNHTnet5IcC8+YODtHVdkHMOSqIFjcDwBFxWLvPq6mcWZA4t5doyj9K21OVU7
+         AS1c5D+9CCh66MEKfD9AyMVWU7py5GtQlBGuQHyfUo4WxeTcdLksejpCycUY2XjuukWo
+         2QHHvO5/pb00DY91kdijQZm9E8IeVakaJlwFu6NqjNZ0WV90f4UVx1Fnd3U/bLBBoppA
+         8qi6eiaDZvlXrj1H6GtU4U+WPfsSv3ixxWE3zrMx+Gylar6PP5bThtac4ftBH9A4zBQh
+         ZODA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1770752250; x=1771357050;
-        h=in-reply-to:content-transfer-encoding:content-disposition
-         :mime-version:references:message-id:subject:cc:to:from:date:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=fqDz8Drx8XjDtZc8LsAC+uLDhKgLLYdxTPVtiF/ij7I=;
-        b=b1xB/7z4cIEhx+QhLAd+qbdijOxomz7h/EX/ju1bYsCLRg0eFagKqsCnDKBn4SZHyR
-         i7LRT7dplbATweWNdSVe0czDh1h3/2HiGOXgvD4q1iFgtxnVLyub4hvyNX2nZTtU/zDr
-         +ELnQpOpcr81wlcCv4moVLtj/r07S+B+l4o91t/jAMxcu8BYXNBYB1tgf8aRW0v3qejE
-         wgMjhLePRP3Chnhitowxjohud3T4ISyhrSBNJ4+5irBQpH7ecCCfdiw+iT0wt7YUqU/k
-         CIptDhSf5JVut8IyXoFNC0JpV96k30qTvxwnHqhlSPczM4x2IgxedRuR3QG4EXQWdAp7
-         0HEg==
-X-Forwarded-Encrypted: i=1; AJvYcCVStpwWiPqX7mwSgruiN6fNwyaDjtFHFioM9+vgnwfcioQUIfkul5SsGuE3leK7P77EjhnYSfl5Rtc=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yz5LRLwDDBTM/cD5KpG9/seWn8B/SxjxPZEToJkuag2cjwZICYg
-	xS/fhqEKi2f8GeNiy28KuqKk3lZUBqEnqatMleR4ULpIZnXhgxQPt2jp
-X-Gm-Gg: AZuq6aJKugpjRyNK5BlP6dM1GL9uiZuiU4xPmdxbLz0QugNlV57XGjIdHTUWu9cSXMg
-	a3nXA9XXd6q6hDX5YQ3ksUH93YLYsMkWv84kmlcwfM6N5yYvLSw6kj5l4E3EeiYFV+R38+C+p2q
-	BA/JAD+w8Ehx/xGO/h2/OJIUO6a+Wn/tyK4s+3ofyd5wyYGQDwYQWDxvdamCgf7qGdIOQFuxAR+
-	eJRYUNAzXvHCQardxYTyZGx2Lwwqm4HEodKm5j2AHwCd68GRSAJbSNKRq99XJnI+NT58d7f0sEm
-	PltiCHo5UZ9b5e8od+dhukQNM3tr4y8FgJlRdekmfoe/H1yvFuBdGd5vP3O35mfL8U5wpM77KWt
-	MyzYTy0kLoWRCfJgh7M/qr2BuvUf5W3e0knqFxeCpk1SgLz0IqQ3FI89NDzrHz31tOmFaXniEVg
-	+mzB37RGFVO4fXZt0=
-X-Received: by 2002:a05:6000:3104:b0:437:771e:9dbd with SMTP id ffacd0b85a97d-4377aba5bd2mr2497517f8f.0.1770752250206;
-        Tue, 10 Feb 2026 11:37:30 -0800 (PST)
+        d=1e100.net; s=20230601; t=1770755422; x=1771360222;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=PmFqy4a/y7/G6LMLBYsR10AC71ubgLHhE6Tq452T3aA=;
+        b=SgsT9uEfx0XMmZHBeHtL3AGOXLR2YGjTxFZbpI4nBw7q5anFDpxhxIBfmD1l4G1gZt
+         wNwouCH3NWSI8IoPPG+PvaRLcGamZdV9eoSBGmzTQYaAVb75DtIOiHVRVnZPAh2Yl08I
+         yzZX3nnHUe/q9D6dxd6zk/PU0pPqkxi1mVB8U0vG8Pg21D8wveuSVGvthE7Tt8tK/bgd
+         W9xENNDBxN8GCf9W5oE0paX78U3Ey58yA5ta27hleNJzWaWfA1yHOjS2YQezAp/Jpyy3
+         nqHWTWpmSQvwse2UC7U7f2K0hnPCgbrdVEXBhunJi2TPXQiy4y8pUJI6SQPqqZI2jIB2
+         eisw==
+X-Forwarded-Encrypted: i=1; AJvYcCXPSO8KMBm1JIAeuuNPQYEj4Jkf484YWJJ+Id4XMS3ChAPjGkCuWL3QEyQmpp4d0Fsz7AcN0fVizz4=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwufWee3mXzyqGqNFw4r4jJ8VlSQuh8JQpJWCovcxy+HSyNLV3O
+	FKQvyzqKS6whEfGqw1dEqyN7GbSfQoCWtWVWrMnHpH+qWL3QuZ9xPyjVU/N9cA==
+X-Gm-Gg: AZuq6aLcChnFGyX6jYmWDRwL8tJEeJolQPbM2hqs4/i6iBO0F4vR8pskiqbEnygBNvK
+	5OMe3clVTV+1ZmyMTw4u4e1SaICRZLTI3AMrb9owsMjoSG1LhePCKAZwrFJ9A2XdqcguUI2f5D2
+	T8AFdiones9c7hEjmiW6+S6YVBQmQg7cHYL72wh+ouq1zwl6pw8nIHQHQG5X95tnELkCXZDAHF/
+	rOER7BeZvRmsHbHSOorvmwcxXzQ0Jf+4mgFE5m3c+LoBklPIVjcUERx8DNzbVzfioIEF5ANQvgE
+	jRYYkhNQ5inxAVKHVH7eDBfBLCJvohTgTs3TnTxjQRIZaM+LWwkDbbOnRPNQ6nAtnKv9eWoFhvH
+	5OHxEnyX+eB8vDjEQZ3PFNxlXJ/A7JMuDh/WhGwduRcHw/t7xFPjuuUpyg2IIZa8EhUKuQ+Z0zE
+	+OSFtSDubqRPSlkyo=
+X-Received: by 2002:a05:600c:1f82:b0:477:7a78:3000 with SMTP id 5b1f17b1804b1-48351228e20mr24402285e9.6.1770755422195;
+        Tue, 10 Feb 2026 12:30:22 -0800 (PST)
 Received: from skbuf ([2a02:2f04:d501:d900:d8ac:c964:9b43:1b13])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-436296bd4a1sm36328520f8f.17.2026.02.10.11.37.28
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4835a5c0df8sm3313025e9.0.2026.02.10.12.30.19
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 10 Feb 2026 11:37:29 -0800 (PST)
-Date: Tue, 10 Feb 2026 21:37:26 +0200
+        Tue, 10 Feb 2026 12:30:20 -0800 (PST)
+Date: Tue, 10 Feb 2026 22:30:18 +0200
 From: Vladimir Oltean <olteanv@gmail.com>
-To: =?utf-8?B?VGjDqW8=?= Lebrun <theo.lebrun@bootlin.com>
-Cc: =?utf-8?Q?Gr=C3=A9gory?= Clement <gregory.clement@bootlin.com>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
+To: Felix Gu <ustc.gu@gmail.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
-	linux-mips@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-clk@vger.kernel.org,
-	=?utf-8?Q?Beno=C3=AEt?= Monin <benoit.monin@bootlin.com>,
-	Tawfik Bayouk <tawfik.bayouk@mobileye.com>,
-	Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
-	Luca Ceresoli <luca.ceresoli@bootlin.com>
-Subject: Re: [PATCH v6 2/8] phy: sort Kconfig and Makefile
-Message-ID: <20260210193726.h6fc65gekida65la@skbuf>
-References: <20260127-macb-phy-v6-0-cdd840588188@bootlin.com>
- <20260127-macb-phy-v6-2-cdd840588188@bootlin.com>
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Jyri Sarha <jsarha@ti.com>, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] phy: ti: j721e-wiz: Fix device_node leak in
+ wiz_get_lane_phy_types()
+Message-ID: <20260210203018.dr6dwj55aob3phsd@skbuf>
+References: <20260211-wiz-v1-1-fdd018d02f33@gmail.com>
+ <20260211-wiz-v1-1-fdd018d02f33@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260127-macb-phy-v6-2-cdd840588188@bootlin.com>
+In-Reply-To: <20260211-wiz-v1-1-fdd018d02f33@gmail.com>
+ <20260211-wiz-v1-1-fdd018d02f33@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260210_113732_386450_F64E0A2E 
-X-CRM114-Status: UNSURE (   8.80  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260210_123026_870830_DE470125 
+X-CRM114-Status: GOOD (  21.18  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,36 +99,69 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Theo,
+Hi Felix,
 
-On Tue, Jan 27, 2026 at 06:09:30PM +0100, Th=E9o Lebrun wrote:
-> Neither Kconfig nor Makefile are sorted; reorder them.
-> =
-
-> $ diff -U100 <(grep ^config drivers/phy/Kconfig) \
->              <(grep ^config drivers/phy/Kconfig | sort)
-> =
-
-> $ diff -U100 <(grep ^obj-\\$ drivers/phy/Makefile) \
->              <(grep ^obj-\\$ drivers/phy/Makefile | sort)
-> =
-
-> Signed-off-by: Th=E9o Lebrun <theo.lebrun@bootlin.com>
+On Wed, Feb 11, 2026 at 02:14:11AM +0800, Felix Gu wrote:
+> The 'serdes' device_node is obtained using of_get_child_by_name(),
+> which increments the reference count. However, it is never put,
+> leading to a memory leak.
+> 
+> Use the __free(device_node) attribute to automatically decrement
+> the reference count when the 'serdes' variable goes out of scope.
+> 
+> Fixes: 7ae14cf581f2 ("phy: ti: j721e-wiz: Implement DisplayPort mode to the wiz driver")
+> Signed-off-by: Felix Gu <ustc.gu@gmail.com>
 > ---
+>  drivers/phy/ti/phy-j721e-wiz.c | 5 ++---
+>  1 file changed, 2 insertions(+), 3 deletions(-)
+> 
+> diff --git a/drivers/phy/ti/phy-j721e-wiz.c b/drivers/phy/ti/phy-j721e-wiz.c
+> index 12a19bf2875c..904541e9138e 100644
+> --- a/drivers/phy/ti/phy-j721e-wiz.c
+> +++ b/drivers/phy/ti/phy-j721e-wiz.c
+> @@ -1407,9 +1407,8 @@ MODULE_DEVICE_TABLE(of, wiz_id_table);
+>  
+>  static int wiz_get_lane_phy_types(struct device *dev, struct wiz *wiz)
+>  {
+> -	struct device_node *serdes;
+> -
+> -	serdes = of_get_child_by_name(dev->of_node, "serdes");
+> +	struct device_node *serdes __free(device_node) =
+> +		of_get_child_by_name(dev->of_node, "serdes");
+>  	if (!serdes) {
+>  		dev_err(dev, "%s: Getting \"serdes\"-node failed\n", __func__);
+>  		return -EINVAL;
+> 
+> ---
+> base-commit: 193579fe01389bc21aff0051d13f24e8ea95b47d
+> change-id: 20260204-wiz-9a67604a034f
+> 
+> Best regards,
+> -- 
+> Felix Gu <ustc.gu@gmail.com>
+> 
+> 
 
-This patch is appreciated, however it no longer applies on top of
-current linux-phy/next.
+You are fixing a bug from 2020 (v5.8) with functionality introduced in 2023,
+creating avoidable headache for backporters (the oldest supported LTS is
+5.10, where the cleanup API does not exist). Could we reimplement this
+the "normal" of_node_put() way?
 
-Since we are in the merge window currently, would you mind reposting in
-2 weeks (or as RFC in the meantime)?
+I realize this is not netdev, but this piece of advice from
+Documentation/process/maintainer-netdev.rst regarding use in drivers
+seems common sense and relevant here:
 
--- =
+  Low level cleanup constructs (such as ``__free()``) can be used when building
+  APIs and helpers, especially scoped iterators. However, direct use of
+  ``__free()`` within networking core and drivers is discouraged.
+  Similar guidance applies to declaring variables mid-function.
 
+-- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
