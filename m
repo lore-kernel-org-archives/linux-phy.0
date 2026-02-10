@@ -4,64 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 59418E94626
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Feb 2026 00:40:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 66B0CE94627
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Feb 2026 01:29:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3wbm218+Zvch6RPi6J9bXx/5z2eDzXi2bXtVutiscc8=; b=Pj6cNsKuJejSMi
-	Xx3cH/Ri0Fsu9hSgBRoFEFX8diDWAn6+wwl8ZrdUmGOXK5GEzBJaUVWghL0E3vUAanxhn1ki2TnvK
-	S3uk8JeWC7QswLcnYzkhdJjqQR37EU9iPm0kw6mlAJhGxXG2RGVHzaQ73RN/n5yd0Nrl8onAqTqHm
-	LqsjFTYXsNeU2fHbuc8ckT80DergrsQLYtFXVuOG7Oaj1y4mfwOpf/YsjaM8uKHD8HI0hYvdqJFhY
-	FcbPxpz1uSKdV31iXTTYCVxYtJ0PqZRX8jJOo4SRCRnE/OmY26TSMbgQzq1cU/gKBs2OilZ65Mi5O
-	RlcDcszH2+TEqbq3Wtyw==;
+	List-Owner; bh=WKodS32al7F94KtI9zbwrWE9S9gh05B/AtRT5wam7LQ=; b=ly3x4f641m+GZI
+	R27IT4i+1q5IAimlrtWHjuS0pwMMjkVd2tgTX4aoZ4RjS8sIJ1PXB+eGxpDZZaW6S4QAmOKAjAcpV
+	A+0qWoGvg0a5+osoptfzn0xEG4Tr2/WzZW47BHMa0tNQgkNccO+0ymQingnL2rCaOgAaBIGgzDhtq
+	xWgj7TsQJw7rxHTM4GN2uh3OOy02wzHo+OqtKeGgShyRgMIPIoyhjbdCGnofpF1/trfBMGTHBRoAz
+	Pkx9o38t4TR/p9k3q620VuMox+pvLYpdbP2v1eZoSp8RbDZMbCyQgybR/Olm/hKo/tjc6baTwE3FJ
+	UyW8Y1qag0fnv91GKSsw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vpbnc-0000000GEnK-3wY1;
-	Tue, 10 Feb 2026 00:40:16 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1vpcZK-0000000GHUx-0UMo;
+	Tue, 10 Feb 2026 01:29:34 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vpbna-0000000GEm7-0E0q;
-	Tue, 10 Feb 2026 00:40:15 +0000
+	id 1vpcZG-0000000GHUG-2kfF;
+	Tue, 10 Feb 2026 01:29:31 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id AF4DA43B06;
-	Tue, 10 Feb 2026 00:40:12 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 65425C19422;
-	Tue, 10 Feb 2026 00:40:12 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 72E8142D57;
+	Tue, 10 Feb 2026 01:29:27 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D9B6DC116C6;
+	Tue, 10 Feb 2026 01:29:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1770684012;
-	bh=okG7UjQjG+NhkvALP4XREVKya0FPqfH1FHODxx8wyTo=;
+	s=k20201202; t=1770686967;
+	bh=vPtgEERLhI7QUhtgMm5j4VLfBY7NaUFPnI8j3SoVhu0=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=RjLsI8v3e2pMavrZlMuLaQ6rPrgulHjdzXeEk3+UIUQj256jPEPqCsUsrNkxhJUIG
-	 KPmH6dxedINMg7ek2+SMmDBIBY8lsaGptkWi5i1n+OAsjJPM220O0+J+Tm2lUipNLV
-	 I6q20eXmWQPh1IFvijn7+23kQKiIF/Q0gTj6RlDb2gXIyUlFe0Djc+PykXjaoILObs
-	 3z7mVU1FRVYtyOUeCdiwx0a3Fzrgm4j5a8zF6pFdBU1CrVZkZsPjOKdchu0AxWF1iv
-	 14vF66+jTGxt9hryK+MNdGoLshhTRblMo7vFBLkMbM98OTF19VjY5vPGC+ieHYFyGk
-	 l3d3U8XwuoNuQ==
-Date: Mon, 9 Feb 2026 18:40:11 -0600
-From: Rob Herring <robh@kernel.org>
-To: Vincent Guittot <vincent.guittot@linaro.org>
-Cc: vkoul@kernel.org, neil.armstrong@linaro.org, krzk+dt@kernel.org,
-	conor+dt@kernel.org, ciprianmarian.costea@oss.nxp.com, s32@nxp.com,
-	p.zabel@pengutronix.de, linux@armlinux.org.uk,
-	ghennadi.procopciuc@nxp.com, Ionut.Vicovan@nxp.com,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	netdev@vger.kernel.org, horms@kernel.org, Frank.li@nxp.com
-Subject: Re: [PATCH 1/4 v2] dt-bindings: serdes: s32g: Add NXP serdes
- subsystem
-Message-ID: <20260210004011.GA2188625-robh@kernel.org>
-References: <20260203161917.1666696-1-vincent.guittot@linaro.org>
- <20260203161917.1666696-2-vincent.guittot@linaro.org>
+	b=N/9YaCNww/VWJbyiYoqyRb2mg1WyMEGE331TuoF3q6kCtscpxoFiKym7AiVTaA3Ic
+	 kk0S4qsyjWPSS2mKxAomH7M3IofnkyDsiRxBHSVOlF+kkwpnmNRg0b0L2rFNzQfpPz
+	 s7o6Vj9NH6hf7e2QfCn/C/ziJ1M+NMWrQpMRCbXEsO/2JHYdgmocs92lp5wrUti6Gg
+	 sqtixfIpF7vjzADDCJOHXtgxyHquG+hcReZGEXAklmygby+9UiTgXSIG3Jmjmxmkst
+	 KWYNxWG/xNSABTeHxniwtMDSERXkFWnL5xDxaw3tbThZXBptRHhVkBQIXKLfSqXkQc
+	 gDs4jTdxv5Qmw==
+Date: Mon, 9 Feb 2026 19:29:26 -0600
+From: "Rob Herring (Arm)" <robh@kernel.org>
+To: Tzu-Hao Wei <twei@axiado.com>
+Cc: openbmc@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org,
+	Vinod Koul <vkoul@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>,
+	Michal Simek <michal.simek@amd.com>,
+	Prasad Bolisetty <pbolisetty@axiado.com>,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	SriNavmani A <srinavmani@axiado.com>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	linux-phy@lists.infradead.org, linux-mmc@vger.kernel.org,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Adrian Hunter <adrian.hunter@intel.com>
+Subject: Re: [PATCH v3 1/2] dt-bindings: mmc: arasan,sdhci: Add Axiado AX3000
+ SoC
+Message-ID: <177068696529.2278295.8145891834285711544.robh@kernel.org>
+References: <20260206-axiado-ax3000-add-emmc-host-driver-support-v3-0-ef83b09325be@axiado.com>
+ <20260206-axiado-ax3000-add-emmc-host-driver-support-v3-1-ef83b09325be@axiado.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260203161917.1666696-2-vincent.guittot@linaro.org>
+In-Reply-To: <20260206-axiado-ax3000-add-emmc-host-driver-support-v3-1-ef83b09325be@axiado.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260209_164014_131627_30EFC382 
-X-CRM114-Status: GOOD (  18.90  )
+X-CRM114-CacheID: sfid-20260209_172930_739038_3D88C7ED 
+X-CRM114-Status: UNSURE (   8.91  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,200 +83,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Feb 03, 2026 at 05:19:14PM +0100, Vincent Guittot wrote:
-> Describe the serdes subsystem available on the S32G platforms.
+
+On Fri, 06 Feb 2026 16:23:07 +0800, Tzu-Hao Wei wrote:
+> From: SriNavmani A <srinavmani@axiado.com>
 > 
-> Signed-off-by: Vincent Guittot <vincent.guittot@linaro.org>
+> Add compatible strings for Axiado AX3000 SoC eMMC controller which
+> is based on Arasan eMMC controller.
+> 
+> Signed-off-by: SriNavmani A <srinavmani@axiado.com>
+> Signed-off-by: Tzu-Hao Wei <twei@axiado.com>
 > ---
->  .../bindings/phy/nxp,s32g-serdes.yaml         | 154 ++++++++++++++++++
->  1 file changed, 154 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/nxp,s32g-serdes.yaml
+>  Documentation/devicetree/bindings/mmc/arasan,sdhci.yaml | 3 +++
+>  1 file changed, 3 insertions(+)
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/nxp,s32g-serdes.yaml b/Documentation/devicetree/bindings/phy/nxp,s32g-serdes.yaml
-> new file mode 100644
-> index 000000000000..fad34bee2a4f
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/nxp,s32g-serdes.yaml
-> @@ -0,0 +1,154 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/nxp,s32g-serdes.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: NXP S32G2xxx/S32G3xxx SerDes PHY subsystem
-> +
-> +maintainers:
-> +  - Ghennadi Procopciuc <ghennadi.procopciuc@nxp.com>
-> +
-> +description: |
-> +  The SerDes subsystem on S32G SoC Family includes two types of PHYs:
-> +    - One PCIe PHY: Supports various PCIe operation modes
-> +    - Two Ethernet Physical Coding Sublayer (XPCS) controllers
-> +
-> +  SerDes operation mode selects the enabled PHYs and speeds. Clock frequency
-> +  must be adapted accordingly. Below table describes all possible operation
-> +  modes.
-> +
-> +  Mode  PCIe	XPCS0		XPCS1		PHY clock	Description
-> +                SGMII		SGMII		  (MHz)
-> +  -------------------------------------------------------------------------
-> +  0	Gen3	N/A		N/A		100		Single PCIe
-> +  1	Gen2	1.25Gbps	N/A		100		PCIe/SGMII
-> +  2	Gen2	N/A		1.25Gbps	100		PCIe/SGMII
-> +  3	N/A	1.25Gbps	1.25Gbps	100,125		SGMII
-> +  4	N/A	3.125/1.25Gbps	3.125/1.25Gbps 	125		SGMII
-> +  5	Gen2	N/A	        3.125Gbps     	100		PCIe/SGMII
 
-Mixed tabs and spaces. Drop the tabs.
+Acked-by: Rob Herring (Arm) <robh@kernel.org>
 
-What's not clear to me is do you have 2 or 4 lanes?
-
-> +
-> +properties:
-> +  compatible:
-> +    oneOf:
-> +      - enum:
-> +          - nxp,s32g2-serdes
-> +      - items:
-> +          - const: nxp,s32g3-serdes
-> +          - const: nxp,s32g2-serdes
-> +
-> +  reg:
-> +    maxItems: 4
-> +
-> +  reg-names:
-> +    items:
-> +      - const: ss_pcie
-> +      - const: pcie_phy
-> +      - const: xpcs0
-> +      - const: xpcs1
-> +
-> +  clocks:
-> +    minItems: 4
-> +    maxItems: 5
-> +
-> +  clock-names:
-> +    items:
-> +      - const: axi
-> +      - const: aux
-> +      - const: apb
-> +      - const: ref
-> +      - const: ext
-> +    minItems: 4
-> +
-> +  resets:
-> +    maxItems: 2
-> +
-> +  reset-names:
-> +    items:
-> +      - const: serdes
-> +      - const: pcie
-> +
-> +  nxp,sys-mode:
-> +    $ref: /schemas/types.yaml#/definitions/uint32
-
-       maximum: 5
-
-Though isn't this redundant with the child nodes? You could use the 
-standard 'phy-mode' property in each child.
-
-> +    description: |
-> +      SerDes operational mode. See above table for possible values.
-> +
-> +  '#address-cells':
-> +    const: 1
-> +
-> +  '#size-cells':
-> +    const: 0
-> +
-> +patternProperties:
-> +  '^serdes[0,1]_lane@[0,1]$':
-
-Do you need to support serdes0_lane@0 and serdes1_lane@0 (or similar 
-with "@1")? That's illegal as you have 2 nodes with the same address.
-
-> +    description:
-> +      Describe a serdes lane.
-> +    type: object
-> +
-> +    properties:
-> +      compatible:
-> +        enum:
-> +          - nxp,s32g2-serdes-pcie-phy
-> +          - nxp,s32g2-serdes-xpcs
-
-Seems like phy-mode would be sufficient. Are these separate blocks from 
-the parent?
-
-> +
-> +      reg:
-> +        maxItems: 1
-
-Just 'maximum: 1' instead.
-
-> +
-> +      '#phy-cells':
-> +        const: 0
-> +
-> +    required:
-> +      - reg
-> +      - compatible
-> +
-> +    unevaluatedProperties: false
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - reg-names
-> +  - clocks
-> +  - clock-names
-> +  - resets
-> +  - reset-names
-> +  - nxp,sys-mode
-> +  - '#address-cells'
-> +  - '#size-cells'
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    bus {
-> +        #address-cells = <2>;
-> +        #size-cells = <2>;
-> +        serdes0: serdes@40480000 {
-> +          compatible = "nxp,s32g3-serdes", "nxp,s32g2-serdes";
-> +            reg = <0x0 0x40480000 0x0 0x108>,
-> +                  <0x0 0x40483008 0x0 0x10>,
-> +                  <0x0 0x40482000 0x0 0x800>,
-> +                  <0x0 0x40482800 0x0 0x800>;
-> +            reg-names = "ss_pcie", "pcie_phy", "xpcs0", "xpcs1";
-> +            clocks = <&clks 1>,
-> +                     <&clks 2>,
-> +                     <&clks 3>,
-> +                     <&clks 4>,
-> +                     <&serdes_100_ext>;
-> +            clock-names = "axi", "aux", "apb", "ref", "ext";
-> +            resets = <&reset 9>,
-> +                     <&reset 8>;
-> +            reset-names = "serdes", "pcie";
-> +            nxp,sys-mode = <1>;
-> +            #address-cells = <1>;
-> +            #size-cells = <0>;
-> +            phy_pcie0: serdes0_lane@0 {
-> +              compatible = "nxp,s32g2-serdes-pcie-phy";
-> +              #phy-cells = <0>;
-> +              reg = <0>;
-> +            };
-> +            phy_xpcs0_0: serdes0_lane@1 {
-> +              compatible = "nxp,s32g2-serdes-xpcs";
-> +              reg = <0>;
-> +            };
-> +        };
-> +    };
-> -- 
-> 2.43.0
-> 
 
 -- 
 linux-phy mailing list
