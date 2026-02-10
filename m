@@ -4,161 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D10C0EA8130
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Feb 2026 16:05:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 35D90EB26E0
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Feb 2026 16:45:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p61hbQHjGPoZxHFruzyL1FBMzUY5lpySNSJVwwTA7yo=; b=CaoHKHQuqYKlgF
-	iMz/pxRBgzePzSYAIGRjhfC7isVhJ15DI7R+P5Pxio2O/VW7XuEBIdaAWi9DHh+84hlGc7pWP32pW
-	BTYROydFvXUjWrTxNkOjqS6Qsv9NaINUB5EhWjs3azLOTISSraGpbTwkqsUZRKAAhXMKCtzO47aX7
-	k3m1bUbWEMNDRZG36lrVDjMthsHWD/vzqvdXJgGCCRAnd/Jl3yg1jGM/qfS2QVY3POIsoSqFWw3OC
-	9Fi7uqOFwEwblfT+Tdgf6adBjabiGYMZJXzLNxjCDFTklgagHtp3bkKFKLLwTvdv2HTexmnyalPZE
-	QRcmVSNPmlM52FlazO0A==;
+	List-Owner; bh=nvriA+/mo9vfrwOvP0GTGs6yKuJYowHFqiDfrzYKxz0=; b=Qv449xGlKBRJIa
+	Grb08T8VrkGEbSQnUjqSRwy8XyzEGHcziUEZ0SiYrGnse1xIbxBfVpN3BmiF99FlyEQFiug/fVER9
+	rsakCAuq1Nk3kwke6HlDPgwLkXVXcRsV90JojsfPcgFopihGSx/GqPjfr4WszM4e7kZKBxwohl7Y3
+	5GCzL2keqTHYsw7YYvYajPR25GCR4WEbDfOoXu2cU4OyAY4Yc5U7H1rIRjQ1tVpJfPGooXeyNgyQ5
+	f6DFp/hpskrvk0SSLEzM6WW9PmTQpForCJWpy59fFSn6nhANpe+KwNOLj/2Ryiz9pJEAV9lXtfShq
+	iw/r6mfhWEo9TkhrDWpQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vpqEc-0000000HBMc-1nzv;
-	Tue, 10 Feb 2026 16:05:06 +0000
-Received: from mail-westus2azon11012067.outbound.protection.outlook.com ([52.101.48.67] helo=MW6PR02CU001.outbound.protection.outlook.com)
+	id 1vpqrP-0000000HGRt-3H91;
+	Tue, 10 Feb 2026 16:45:11 +0000
+Received: from out-170.mta0.migadu.com ([2001:41d0:1004:224b::aa])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vpqEU-0000000HBLR-3gNC;
-	Tue, 10 Feb 2026 16:05:04 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=FbOvbGN0WJY6KVTVqq25rXWf6pf7/Y9P5zT40PVFlEaHY9dluUrc0KHKhXO3vP3JUFFcaRYm+tgVi+s2UAu5hZu4nF0qbsPezx05OaF+kojuIr5KwfWgWJLN5ee5JwVf1I5Avj5MsqqxH+6kxqgXYaSzX8WORZvtIaLfCC41Psm5jCbv9RZVOV8gqF8YZDUoHRLD7LvLsNjasUIEkjfgVc3upyP5GHMGHurvTVIHkucoo+OPpsumd9Z3aWcnUTEDj141IeoLspofZvxwuXMfXyUAuvJDXYB10hbJBqrLcsotczn0gw6kxgisEMNqOV1830MsrZuUK+SicNKyMv3G2g==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=jFi1fdN5P7Uh4HK6pH0rfVlJBZyd1MMAPAWXxfyHR6E=;
- b=LkSYmNMInBVyYtQ7AhKpo7k2Hcvp1ULsjwaO/ZlcQ0F3ripO3KnhDkx3oAkh+/DAs2V5zW4+0abdVAexxWJt0lspGPJq1P+9F0tI5zfhUCJtZku+lLojaqUxav0WJpH1sJCO6QLj/bMjD/djwxDEG3d7v9tFEQQoLl5/+N+biEnRJ8jS84BIx0mxN34rxC04e3waxO2x0hu1U4CHvZ97W2Fe6bcV0o+ecj8JDeq/Pju4WoMgHfAjUoVWjWS0JHUJn58xfo/9fhxjlETfOlMA7miGh5e8lGtP6THsl5f+7ZgqsQCrMsOaVU+gtHVpnh4GPhmTZj6A7Id79oJYrWcKiw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=amd.com; dmarc=pass action=none header.from=amd.com; dkim=pass
- header.d=amd.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=amd.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=jFi1fdN5P7Uh4HK6pH0rfVlJBZyd1MMAPAWXxfyHR6E=;
- b=07n53dU6NEh2P75ePVppr4Y68dRvQ9UaAtTF3xTjlJ4iFKJapOpYFiPWUM3xjAaW98mNKR06VYgF0W5JaUIRQufkB0YqmzkreU6yJclBiP+vSesh0XNxCTDC+RC9B69Ncve2xAWUuSm1vur2LBwxbHVTjfgAmTDj8AO7Jt8Rf14=
-Received: from CY1PR12MB9697.namprd12.prod.outlook.com (2603:10b6:930:107::6)
- by MN0PR12MB6079.namprd12.prod.outlook.com (2603:10b6:208:3c9::13) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9587.18; Tue, 10 Feb
- 2026 16:04:50 +0000
-Received: from CY1PR12MB9697.namprd12.prod.outlook.com
- ([fe80::3a41:55a0:8203:596d]) by CY1PR12MB9697.namprd12.prod.outlook.com
- ([fe80::3a41:55a0:8203:596d%4]) with mapi id 15.20.9611.006; Tue, 10 Feb 2026
- 16:04:50 +0000
-From: "Pandey, Radhey Shyam" <radhey.shyam.pandey@amd.com>
-To: Sean Anderson <sean.anderson@linux.dev>, Laurent Pinchart
-	<laurent.pinchart@ideasonboard.com>, Vinod Koul <vkoul@kernel.org>,
-	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>
-CC: =?iso-8859-2?Q?Krzysztof_Wilczy=F1ski?= <kwilczynski@kernel.org>, Lorenzo
- Pieralisi <lpieralisi@kernel.org>, "linux-kernel@vger.kernel.org"
-	<linux-kernel@vger.kernel.org>, "Simek, Michal" <michal.simek@amd.com>,
-	"linux-arm-kernel@lists.infradead.org"
-	<linux-arm-kernel@lists.infradead.org>, "linux-pci@vger.kernel.org"
-	<linux-pci@vger.kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, Rob
- Herring <robh@kernel.org>, "Havalige, Thippeswamy"
-	<thippeswamy.havalige@amd.com>, Manivannan Sadhasivam <mani@kernel.org>,
-	Bjorn Helgaas <bhelgaas@google.com>
-Subject: RE: [PATCH 4/8] phy: zynqmp: Calibrate ILL if necessary
-Thread-Topic: [PATCH 4/8] phy: zynqmp: Calibrate ILL if necessary
-Thread-Index: AQHclKMeLv3UjNcMAkSiPZrrY7iYUbV8H4tA
-Date: Tue, 10 Feb 2026 16:04:50 +0000
-Message-ID: <CY1PR12MB9697F67210064132883611A8B762A@CY1PR12MB9697.namprd12.prod.outlook.com>
+	id 1vpqrN-0000000HGB8-1GDN
+	for linux-phy@lists.infradead.org;
+	Tue, 10 Feb 2026 16:45:10 +0000
+Message-ID: <5262c5b1-84cc-4abe-9d8a-a8fd48b6c79f@linux.dev>
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.dev; s=key1;
+	t=1770741774;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=BqNtSPfXtXfusc1DAQX8JYXdbD+b429MioZG5bRqt3Y=;
+	b=Qfxqr4ow/3kY9MqO/6sXjJUSJbobDYRIEAnhj5QIwAV6uyun425IHX9smykzza55LWjBpK
+	mO7KforSp0k4INbVMEgOl9TD7vA0nWrvvKCg2W4hoUkkkDRVupt6ymC1JoaoRppFsvmJNb
+	MF1cJcbySy7uIntWYmarUADkWBzwLJ8=
+Date: Tue, 10 Feb 2026 11:42:50 -0500
+MIME-Version: 1.0
+Subject: Re: [PATCH 4/8] phy: zynqmp: Calibrate ILL if necessary
+To: "Pandey, Radhey Shyam" <radhey.shyam.pandey@amd.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Vinod Koul <vkoul@kernel.org>,
+ "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>
+Cc: =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
+ Lorenzo Pieralisi <lpieralisi@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "Simek, Michal" <michal.simek@amd.com>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>,
+ "Havalige, Thippeswamy" <thippeswamy.havalige@amd.com>,
+ Manivannan Sadhasivam <mani@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>
 References: <20260203002128.935842-1-sean.anderson@linux.dev>
  <20260203002128.935842-5-sean.anderson@linux.dev>
-In-Reply-To: <20260203002128.935842-5-sean.anderson@linux.dev>
-Accept-Language: en-US
+ <CY1PR12MB9697F67210064132883611A8B762A@CY1PR12MB9697.namprd12.prod.outlook.com>
 Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-msip_labels: MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_Enabled=True;MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_SiteId=3dd8961f-e488-4e60-8e11-a82d994e183d;MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_SetDate=2026-02-10T16:02:26.0000000Z;MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_Name=Open
- Source;MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_ContentBits=3;MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_Method=Privileged
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=amd.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: CY1PR12MB9697:EE_|MN0PR12MB6079:EE_
-x-ms-office365-filtering-correlation-id: 187a1831-3bc2-488d-ff84-08de68be1ec0
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230040|366016|1800799024|7416014|376014|38070700021;
-x-microsoft-antispam-message-info: =?iso-8859-2?Q?DwNuPcLdWDHJkDLfJQq/ZnRjyOOikhpJ5dpAR73bdscMJ3aYZwb2iq5JYi?=
- =?iso-8859-2?Q?71XFB0c5cmhY4pJRguDw+g1HjFxYPKgVAp+t8HNXhZlr1pYBMLfg8IiB7r?=
- =?iso-8859-2?Q?BUekB7ZxZMFkkTxhOMknn/llDjJ6cDFfD0QMrcpRP95X29Rn6Ihb9vu7yQ?=
- =?iso-8859-2?Q?RrZ/jSLoz1DJDn4w7pTsqz/0wukI0/k33ZyTM/hXSb7jGNJCihayEURuRK?=
- =?iso-8859-2?Q?aEvCmlhW009JtxYuQpNTFnj3nstD07m9mqMBMCzcjs9tqrJPcYPHqbuoze?=
- =?iso-8859-2?Q?vSlCrS3SylcVfAIcee8BDWF/b008egg/Dtpv59CZNK7Vg5SKLRQi8vyJfC?=
- =?iso-8859-2?Q?VK/TVqVjnxMcsCIqfZ6CVOdzZ8gcL50azgdlZyyQ0ScZG1KUqfwzDCai9h?=
- =?iso-8859-2?Q?Am+czd2cAjYKgFUlXpXhNHDGcxrlchNbUDKPP/3WBNcoedsx626EpHtfxb?=
- =?iso-8859-2?Q?Vic0AaDoJpVPZhcj/3l+Tr+A8HU8a0k89cw2wnSdOt9isD6roHZtr+UliC?=
- =?iso-8859-2?Q?fa/IIVHVqP4OvWiq5OOrG075g0DlkEU0qCpqpAdgUBSI0HNyNm019aT4oG?=
- =?iso-8859-2?Q?ayJR8Tw9XI16RzHztmCE8Nqn5/ifqfC98jTLRXrUgUH7z0fNmZ/RMwa7K+?=
- =?iso-8859-2?Q?SXDXnBAbx7XRP7KXqEY25cmGULHwwVm43/rydEcPAUCThXRP0AuN2pl+RC?=
- =?iso-8859-2?Q?h4mj5U/sfA4pWPy8JvZqtIUR++UymJeorDoZNUvl9WdQCXFYfpGsbGl7LR?=
- =?iso-8859-2?Q?OUstzc4iU/92GaOV/gR8NYozJM+2cPjg2J8AkkLCYzsVgwiG17PTkgTPX6?=
- =?iso-8859-2?Q?7we6XAWbo1T9irLc+VYVbMd6p0I2AbIU0RXKb02s7Z7uQJHyHiUryr/RQD?=
- =?iso-8859-2?Q?JeEU3AjDtHn5c8rMLsd9MBiedcz2HG4/fO5gerush7o5HU4rXQwJXUGUGI?=
- =?iso-8859-2?Q?Lj6QAtI6Fai8zc+FJkseLO8id4vN64IkPkgFjeRz6kBGrpjf6OEHTDerD9?=
- =?iso-8859-2?Q?HPUFU6WMlt/HMEjv6Ci8AqEDUJYYkApBV4r5msgl56/VP7jGI8KZgBYqcm?=
- =?iso-8859-2?Q?YHmy8xdvMBlWIdSrGzCYeMMKX1DxMfRAmUJC8f815wfVWSy2C1LMNEUr08?=
- =?iso-8859-2?Q?9CplE+fXW/EpGyjQZ61YCLbLVbxelUhD80wBH2ydqGzrNki6UBxpJjwbU6?=
- =?iso-8859-2?Q?2OaDVJfTX1wweVz32oXhWn8pkNAEXl9btIHPPLIvI7wqoPuRBNlSMFowh9?=
- =?iso-8859-2?Q?Z4kM60/IVH8/5LAX2/p40EMv5uDBFgHm3ZasG9x2dqGXC8sfrr9Wr/Q8e5?=
- =?iso-8859-2?Q?S212gv9F31f0BU8C7iCRrxyJeWV/D+o6KJjNGujQYeAFzAqODKCjAlVKQb?=
- =?iso-8859-2?Q?EWPXy3rTYjCvflt1dKDSgJPBoWBzvlB1ApwN2X69y1N/QoxlQCudcJeaso?=
- =?iso-8859-2?Q?zXOxA306jsw5aDXzbxaoA4osYflTbr0v85aOddkQ5vd6QsJfLNFgyFGRLA?=
- =?iso-8859-2?Q?JHyCRqggjeiYkFdHQPutN6Abbj2zUW8rrJnkqX5ZkIB/S3yMQSkM42sNMA?=
- =?iso-8859-2?Q?M4Z2orSlkk2uZvaYfeOelBXRYhw9EuwuabtrmivaL0+d8BaYe3J50KBQei?=
- =?iso-8859-2?Q?lDex8RO4jFdexZo1gFhMkXtiylPfE6I59J?=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:CY1PR12MB9697.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(7416014)(376014)(38070700021);DIR:OUT;SFP:1101;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?iso-8859-2?Q?BncW9PoZ4vfHQLH0vuPuRjqwXAx5oLDufuZnjjagQ5FBeZU04is7sKC58s?=
- =?iso-8859-2?Q?UpgaBR/uJ+jaJzvFYB7k1r1MqIpbJoA5IWwjq8GQ2UXC1nrpFIfIgQ3OZl?=
- =?iso-8859-2?Q?TON8xZDKZe5EB/T3ytro8NahxvWsWcMv0+Gnq9dvR9KQ3+jMn/Ixw6IKHi?=
- =?iso-8859-2?Q?5+HAYiFL6DJonw/atC2qVnwH0YG6sUlZOrph+6E/JHiVenw0/jDO0ErcoE?=
- =?iso-8859-2?Q?m1QKMtrLpZNXBSE5YqcBrWaUsbs/r4OosVA2tIlACmRGpKoPpNEtRQMevZ?=
- =?iso-8859-2?Q?0pFk4tVDnn3mHoa050+9xLPlm+xD6JT5lySs+59jEpVLGnTI3bVHp1XBnk?=
- =?iso-8859-2?Q?0aB2tsSfGoNw45xZmtaYbHAn158BjMk7q6IN2/p1SRC4qu7En+j3WjkYt4?=
- =?iso-8859-2?Q?Sov5Gj3wjFPF1tJxGlb1JqDhZNUf4CazFwIUcI3G2d8VjPhWjz3xsbX+ua?=
- =?iso-8859-2?Q?OJLPPj4Q6MwmJ1FgwK4RzMTcLCm9TuyuE3f1wF5IyeIQ989xr3ta4FRnhp?=
- =?iso-8859-2?Q?R6iSNb8y8icu0lonBOis2SPkpayhxyXx6pI6CZEA8v4k6/+yU5zOvyUNZW?=
- =?iso-8859-2?Q?iLCk4QItZLjHjOUo7gV24eddr+/TY+RgnKOuE8LbF78bSSkItGexTj/Mrp?=
- =?iso-8859-2?Q?+DAo4rLBWtYJB64ISPYEvK7P9rgABcpqfd8fWRJgyDmTLzYtNSooOEj295?=
- =?iso-8859-2?Q?ebmMhH69FJYaJbG6rGnEk83q1DzmiLL+Jlzq5dyLstWh6X17dD4SSM/rYr?=
- =?iso-8859-2?Q?UkkLPGqIOVGZUgYcEMkhoKAltfaewDAwiramEP8hwUGK1nwEaI6TeJK/ZP?=
- =?iso-8859-2?Q?ZxEngTNH7td9AOeTtjJP5l6L6Fe8TtpQNEKtCtKJEPN/yu7RQ3SZFoQDAc?=
- =?iso-8859-2?Q?QF3FNqHMEgeZDV3CELQiPqnMgz/28iOD9mNxYzcbYRB+L94L5wu0P1u64V?=
- =?iso-8859-2?Q?mNpQQQBgVdgVqBvjWXZ9NOJU3cobd5IVhj/1N9GU9OP/LYCbG8MNCyaP4s?=
- =?iso-8859-2?Q?FApIjawJFHAZYHvCXWI1sQW/mpSi/kJrwSFhfhBFAC/Fqufhvd8AIxL9cf?=
- =?iso-8859-2?Q?M1Yc2oOLcmB1uFhA1hVGzsdXOscnTFbIc3Gz75F2i55Rsbaq3Z5N3tdH6+?=
- =?iso-8859-2?Q?1Gky2nusLLHYaWHoKdkUJn15Rx5zgQOaaYycMo6xmqvrpKaacLJfDXayya?=
- =?iso-8859-2?Q?Sdphpfuqx379BPqP7hCF69SYX69zQqy3yjVsSwoS2EJER0LZ6aF6gD5oZl?=
- =?iso-8859-2?Q?0IBsJ2A3LVAK8VP34fSyU3/wWUaHNLmEdHl/XpKBDqxjJorFitKsUJ6rHW?=
- =?iso-8859-2?Q?rz9v4TJx+SNjfHEWo53vPINmlc6Uh8D/xXqLr4Vt2Q7ZV63h4HttuY2F++?=
- =?iso-8859-2?Q?8WmC5IrHeBy+yAwT3pxaeE3SosoqkYedUWPWVHzhSsJUD1khoxuHcxkbP1?=
- =?iso-8859-2?Q?Gi8JNxu8q8SBO7pTjJdKlFSJYl82wc0GA6SsizcTu3ucE/cyVU8NV4lR25?=
- =?iso-8859-2?Q?8cichaazaiJxXCTzxmBj17A56n4L3iS51+l95aV+ZTyObTToXCU006VvIL?=
- =?iso-8859-2?Q?ovwk5V3aKFBrMYWp2cDl50kSuggG1C+hbrCTB5JMXHMcN12rT6twkqdVV2?=
- =?iso-8859-2?Q?k2pRjNCLh74zqlBH8mvLKXv53dFkOCy0+27omh7e40lPh+4nn50+rCaAQ8?=
- =?iso-8859-2?Q?9BEs9lDY/C9RRLtZczBGiNTE64du79y/v5GCaYDuoZ+q0EAnrLM9LG92yG?=
- =?iso-8859-2?Q?KHBfiynxrUbBub7dW/babe9lGzJfhF8HwkJq72/5Nh5rAK?=
-MIME-Version: 1.0
-X-OriginatorOrg: amd.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: CY1PR12MB9697.namprd12.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 187a1831-3bc2-488d-ff84-08de68be1ec0
-X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Feb 2026 16:04:50.1651
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 3dd8961f-e488-4e60-8e11-a82d994e183d
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: QEMVN/4E1VVuLA+EB7XZ+dn3NsHLVrYTHLgR5eseSKs6/tqkdObEiUwV5AzZVuQ0
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN0PR12MB6079
+X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
+From: Sean Anderson <sean.anderson@linux.dev>
+In-Reply-To: <CY1PR12MB9697F67210064132883611A8B762A@CY1PR12MB9697.namprd12.prod.outlook.com>
+X-Migadu-Flow: FLOW_OUT
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260210_080459_291435_718FA1B1 
-X-CRM114-Status: GOOD (  22.81  )
+X-CRM114-CacheID: sfid-20260210_084509_625075_A39C064F 
+X-CRM114-Status: GOOD (  33.96  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -170,667 +77,511 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-2"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-[Public]
-
-> -----Original Message-----
-> From: Sean Anderson <sean.anderson@linux.dev>
-> Sent: Tuesday, February 3, 2026 5:51 AM
-> To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>; Vinod Koul
-> <vkoul@kernel.org>; linux-phy@lists.infradead.org
-> Cc: Krzysztof Wilczy=F1ski <kwilczynski@kernel.org>; Lorenzo Pieralisi
-> <lpieralisi@kernel.org>; Pandey, Radhey Shyam
-> <radhey.shyam.pandey@amd.com>; linux-kernel@vger.kernel.org; Simek, Michal
-> <michal.simek@amd.com>; linux-arm-kernel@lists.infradead.org; linux-
-> pci@vger.kernel.org; Neil Armstrong <neil.armstrong@linaro.org>; Rob Herr=
-ing
-> <robh@kernel.org>; Havalige, Thippeswamy <thippeswamy.havalige@amd.com>;
-> Manivannan Sadhasivam <mani@kernel.org>; Bjorn Helgaas
-> <bhelgaas@google.com>; Sean Anderson <sean.anderson@linux.dev>
-> Subject: [PATCH 4/8] phy: zynqmp: Calibrate ILL if necessary
->
-> init_serdes in psu_init_gpl is supposed to calibrate the ILL. However, th=
-is
-> may fail if the reference clock is not running, such as if the clock needs
-> to be configured on boot. To work around this, add support for ILL
-> calibration in U-Boot. If the ILL is already calibrated (any non-zero
-> value) we skip calibration.
->
-> The algorithm is substantially the same as serdes_illcalib [1], but it has
-> been updated for readability (and to remove all the "if (lane0_active)"
-> conditions). Due to the amount of register fields, many of which are
-> undocumented (especially the chicken bits), I have mostly used defines on=
-ly
-> for the register names. There are certainly areas where register writes a=
-re
-> superfluous, but I have left these in order to minimize deviation from the
-> procedure in serdes_illcalib.
-
-Please consider splitting the patch in introducing calibrate ILL functions
-and then subsequently using them.
-
-How did you validate the changes? functional testing is one part
-but I think better to match register configuration done in psu_init vs
-this series? Have we tried running on multiple designs having
-different GT lane and protocol combinations .
-
-There are multiple magic numbers. Consider renaming it to
-meaningful defines.
-
->
-> [1] Example implementation; xpsgtr_phy_illcalib coresponds to
->     serdes_illcalib_pcie_gen1:
-> https://source.denx.de/u-boot/u-boot/-/blob/v2026.01/board/xilinx/zynqmp/=
-zynqmp-
-> zcu208-revA/psu_init_gpl.c?ref_type=3Dtags#L710
->
-> Signed-off-by: Sean Anderson <sean.anderson@linux.dev>
-> ---
->
->  drivers/phy/xilinx/phy-zynqmp.c | 421 +++++++++++++++++++++++++++++++-
->  1 file changed, 420 insertions(+), 1 deletion(-)
->
-> diff --git a/drivers/phy/xilinx/phy-zynqmp.c b/drivers/phy/xilinx/phy-zyn=
-qmp.c
-> index 152af1702bbd..854b0ea04648 100644
-> --- a/drivers/phy/xilinx/phy-zynqmp.c
-> +++ b/drivers/phy/xilinx/phy-zynqmp.c
-> @@ -12,6 +12,7 @@
->   * PCIe should also work but that is experimental as of now.
->   */
->
-> +#include <linux/bitfield.h>
->  #include <linux/clk.h>
->  #include <linux/debugfs.h>
->  #include <linux/delay.h>
-> @@ -31,6 +32,7 @@
->   */
->
->  /* TX De-emphasis parameters */
-> +#define L0_TX_ANA_TM_3                       0x000c
->  #define L0_TX_ANA_TM_18                      0x0048
->  #define L0_TX_ANA_TM_118             0x01d8
->  #define L0_TX_ANA_TM_118_FORCE_17_0  BIT(0)
-> @@ -50,16 +52,49 @@
->  #define L0_TXPMD_TM_45_ENABLE_DP_POST2       BIT(5)
->
->  /* PCS control parameters */
-> +#define L0_TM_ANA_BYP_4                      0x1010
-> +#define L0_TM_ANA_BYP_7                      0x1018
->  #define L0_TM_DIG_6                  0x106c
-> +#define L0_TM_DIG_22                 0x10ac
->  #define L0_TM_DIS_DESCRAMBLE_DECODER 0x0f
->  #define L0_TX_DIG_61                 0x00f4
->  #define L0_TM_DISABLE_SCRAMBLE_ENCODER       0x0f
-> +#define L0_TM_AUX_0                  0x10cc
-> +#define L0_TM_MISC2                  0x189c
-> +#define L0_TM_MISC2_ILL_CAL_BYPASS   BIT(7)
-> +#define L0_TM_IQ_ILL1                        0x18f8
-> +#define L0_TM_IQ_ILL2                        0x18fc
-
-#define L0_TM_IQ_ILL3                   0x1900
-
-IQ_ILL(n) =3D 0x18f8 + (n - 1) * 4 ?
-
-Similarly for others  (when applicable)?
-
-> +#define L0_TM_ILL11                  0x198c
-> +#define L0_TM_ILL12                  0x1990
-> +#define L0_TM_E_ILL1                 0x1924
-> +#define L0_TM_E_ILL2                 0x1928
-> +#define L0_TM_IQ_ILL3                        0x1900
-> +#define L0_TM_E_ILL3                 0x192c
-> +#define L0_TM_IQ_ILL7                        0x1910
-> +#define L0_TM_E_ILL7                 0x193c
-> +#define L0_TM_ILL8                   0x1980
-> +#define L0_TM_IQ_ILL8                        0x1914
-> +#define L0_TM_IQ_ILL9                        0x1918
-> +#define L0_TM_EQ0                    0x194c
-> +#define L0_TM_EQ0_EQ_STG2_CTRL_BYP   BIT(5)
-> +#define L0_TM_EQ1                    0x1950
-> +#define L0_TM_EQ1_EQ_STG2_RL_PROG    GENMASK(1, 0)
-> +#define L0_TM_EQ1_EQ_STG2_PREAMP_MODE_VAL    BIT(2)
-> +#define L0_TM_E_ILL8                 0x1940
-> +#define L0_TM_E_ILL9                 0x1944
-> +#define L0_TM_ILL13                  0x1994
-> +#define L0_TM_CDR5                   0x1c14
-> +#define L0_TM_CDR5_FPHL_FSM_ACC_CYCLES       GENMASK(7, 5)
-> +#define L0_TM_CDR5_FFL_PH0_INT_GAIN  GENMASK(4, 0)
-> +#define L0_TM_CDR16                  0x1c40
->
->  /* PLL Test Mode register parameters */
-> +#define L0_TM_PLL_DIG_33             0x2084
->  #define L0_TM_PLL_DIG_37             0x2094
->  #define L0_TM_COARSE_CODE_LIMIT              0x10
->
->  /* PLL SSC step size offsets */
-> +#define L0_PLL_FBDIV_FRAC_3_MSB              0x2360
->  #define L0_PLL_SS_STEPS_0_LSB                0x2368
->  #define L0_PLL_SS_STEPS_1_MSB                0x236c
->  #define L0_PLL_SS_STEP_SIZE_0_LSB    0x2370
-> @@ -69,6 +104,7 @@
->  #define L0_PLL_STATUS_READ_1         0x23e4
->
->  /* SSC step size parameters */
-> +#define TM_FORCE_EN_FRAC             BIT(6)
->  #define STEP_SIZE_0_MASK             0xff
->  #define STEP_SIZE_1_MASK             0xff
->  #define STEP_SIZE_2_MASK             0xff
-> @@ -76,6 +112,7 @@
->  #define STEP_SIZE_SHIFT                      8
->  #define FORCE_STEP_SIZE                      0x10
->  #define FORCE_STEPS                  0x20
-> +#define TM_FORCE_EN                  BIT(7)
->  #define STEPS_0_MASK                 0xff
->  #define STEPS_1_MASK                 0x07
->
-> @@ -84,6 +121,32 @@
->  #define L0_REF_CLK_LCL_SEL           BIT(7)
->  #define L0_REF_CLK_SEL_MASK          0x9f
->
-> +/* Built-in self-test parameters */
-> +#define L0_BIST_CTRL_1                       0x3004
-> +#define L0_BIST_CTRL_2                       0x3008
-> +#define L0_BIST_RUN_LEN_L            0x300c
-> +#define L0_BIST_ERR_INJ_POINT_L              0x3010
-> +#define L0_BIST_RUNLEN_ERR_INJ_H     0x3014
-> +#define L0_BIST_IDLE_TIME            0x3018
-> +#define L0_BIST_MARKER_L             0x301c
-> +#define L0_BIST_IDLE_CHAR_L          0x3020
-> +#define L0_BIST_MARKER_IDLE_H                0x3024
-> +#define L0_BIST_LOW_PULSE_TIME               0x3028
-> +#define L0_BIST_TOTAL_PULSE_TIME     0x302c
-> +#define L0_BIST_TEST_PAT_1           0x3030
-> +#define L0_BIST_TEST_PAT_2           0x3034
-> +#define L0_BIST_TEST_PAT_3           0x3038
-> +#define L0_BIST_TEST_PAT_4           0x303c
-> +#define L0_BIST_TEST_PAT_MSBS                0x3040
-> +#define L0_BIST_PKT_NUM                      0x3044
-> +#define L0_BIST_FRM_IDLE_TIME                0x3048
-> +#define L0_BIST_PKT_CTR_L            0x304c
-> +#define L0_BIST_PKT_CTR_H            0x3050
-> +#define L0_BIST_ERR_CTR_L            0x3054
-> +#define L0_BIST_ERR_CTR_H            0x3058
-> +#define L0_BIST_FILLER_OUT           0x3068
-> +#define L0_BIST_FORCE_MK_RST         0x306c
-> +
->  /* Calibration digital logic parameters */
->  #define L3_TM_CALIB_DIG19            0xec4c
->  #define L3_CALIB_DONE_STATUS         0xef14
-> @@ -139,6 +202,9 @@ static const char *const xpsgtr_icm_str[] =3D {
->  #define TM_CMN_RST_SET                       0x2
->  #define TM_CMN_RST_MASK                      0x3
->
-> +#define LPBK_CTRL0                   0x10038
-> +#define LPBK_CTRL1                   0x1003c
-> +
->  /* Bus width parameters */
->  #define TX_PROT_BUS_WIDTH            0x10040
->  #define RX_PROT_BUS_WIDTH            0x10044
-> @@ -148,9 +214,13 @@ static const char *const xpsgtr_icm_str[] =3D {
->  #define PROT_BUS_WIDTH_SHIFT(n)              ((n) * 2)
->  #define PROT_BUS_WIDTH_MASK(n)               GENMASK((n) * 2 + 1, (n) * =
-2)
->
-> +#define UPHY_SPARE0                  0X10098
-> +
->  /* Number of GT lanes */
->  #define NUM_LANES                    4
->
-> +#define SIOU_ECO_0                   0x1c
-> +
->  /* SIOU SATA control register */
->  #define SATA_CONTROL_OFFSET          0x0100
->
-> @@ -338,6 +408,33 @@ static void xpsgtr_restore_lane_regs(struct xpsgtr_d=
-ev
-> *gtr_dev)
->                            gtr_dev->saved_regs[i]);
->  }
->
-> +static inline void xpsgtr_write_lanes(struct xpsgtr_dev *gtr_dev,
-> +                                  unsigned long *lanes, u32 reg, u32 val=
-ue)
-> +{
-> +     unsigned long lane;
-> +
-> +     for_each_set_bit(lane, lanes, NUM_LANES) {
-> +             void __iomem *addr =3D gtr_dev->serdes + lane * PHY_REG_OFF=
-SET
-> +                                  + reg;
-> +
-> +             writel(value, addr);
-> +     }
-> +}
-> +
-> +static inline void xpsgtr_clr_set_lanes(struct xpsgtr_dev *gtr_dev,
-> +                                    unsigned long *lanes, u32 reg, u32 c=
-lr,
-> +                                    u32 set)
-> +{
-> +     unsigned long lane;
-> +
-> +     for_each_set_bit(lane, lanes, NUM_LANES) {
-> +             void __iomem *addr =3D gtr_dev->serdes + lane * PHY_REG_OFF=
-SET
-> +                                  + reg;
-> +
-> +             writel((readl(addr) & ~clr) | set, addr);
-> +     }
-> +}
-> +
->  /*
->   * Hardware Configuration
->   */
-> @@ -351,7 +448,7 @@ static int xpsgtr_wait_pll_lock(struct phy *phy)
->       u8 protocol =3D gtr_phy->protocol;
->       int ret;
->
-> -     dev_dbg(gtr_dev->dev, "Waiting for PLL lock\n");
-> +     dev_vdbg(gtr_dev->dev, "Waiting for PLL lock\n");
-
-Unrelated change.
-
->
->       /*
->        * For DP and PCIe, only the instance 0 PLL is used. Switch to that=
- phy
-> @@ -520,6 +617,231 @@ static void xpsgtr_bypass_scrambler_8b10b(struct
-> xpsgtr_phy *gtr_phy)
->       xpsgtr_write_phy(gtr_phy, L0_TX_DIG_61,
-> L0_TM_DISABLE_SCRAMBLE_ENCODER);
->  }
->
-> +/* Enable or disable loopback */
-> +static void xpsgtr_phy_set_loopback(struct xpsgtr_phy *gtr_phy, bool ena=
-bled)
-> +{
-> +     struct xpsgtr_dev *gtr_dev =3D gtr_phy->dev;
-> +     u32 reg =3D gtr_phy->lane >=3D 2 ? LPBK_CTRL1 : LPBK_CTRL0;
-> +     u32 shift =3D gtr_phy->lane & 1 ? 4 : 0;
-> +
-> +     xpsgtr_clr_set(gtr_dev, reg, 7 << shift, (u32)enabled << shift);
-> +}
-> +
-> +static void xpsgtr_phy_set_ill(struct xpsgtr_phy *gtr_phy, u32 ill, bool=
- gen2)
-> +{
-> +     u32 val =3D 4 + ill * 8;
-> +
-> +     if (gen2) {
-> +             xpsgtr_write_phy(gtr_phy, L0_TM_E_ILL2, val & 0xff);
-> +             xpsgtr_clr_set_phy(gtr_phy, L0_TM_ILL12, 0x0f,
-> +                                1 << (val >> 8));
-> +     } else {
-> +             xpsgtr_write_phy(gtr_phy, L0_TM_E_ILL1, val & 0xff);
-> +             xpsgtr_clr_set_phy(gtr_phy, L0_TM_ILL12, 0xf0,
-> +                                (val >> 4) & 0x10);
-> +     }
-> +}
-> +
-> +static bool xpsgtr_ill_calibrated(struct xpsgtr_phy *gtr_phy)
-> +{
-> +     u32 ill1 =3D xpsgtr_read_phy(gtr_phy, L0_TM_E_ILL1);
-> +     u32 ill2 =3D xpsgtr_read_phy(gtr_phy, L0_TM_E_ILL2);
-> +     u32 ill12 =3D xpsgtr_read_phy(gtr_phy, L0_TM_ILL12);
-> +
-> +     dev_dbg(gtr_phy->dev->dev, "lane %u gen1 ILL was %u gen2 ILL was
-> %u\n",
-> +             gtr_phy->lane, ill1 / 8 + (ill12 & 0x10 ? 32 : 0),
-> +             ill2 / 8 + (ill12 & 0x02 ? 32 : 0));
-> +     return ill1 || ill2 || ill12;
-> +}
-> +
-> +static void xpsgtr_init_ill(struct xpsgtr_phy *gtr_phy)
-> +{
-> +     struct xpsgtr_dev *gtr_dev =3D gtr_phy->dev;
-> +     struct clk *clk =3D gtr_dev->clk[gtr_phy->refclk];
-> +     u32 ill123 =3D DIV_ROUND_CLOSEST(clk_get_rate(clk), 1000000);
-> +
-> +     xpsgtr_clr_set_phy(gtr_phy, L0_TM_MISC2, 0,
-> L0_TM_MISC2_ILL_CAL_BYPASS);
-> +     xpsgtr_write_phy(gtr_phy, L0_TM_IQ_ILL1, ill123);
-> +     xpsgtr_write_phy(gtr_phy, L0_TM_IQ_ILL2, ill123);
-> +     xpsgtr_write_phy(gtr_phy, L0_TM_IQ_ILL3, ill123);
-> +     xpsgtr_write_phy(gtr_phy, L0_TM_IQ_ILL7, 0xf3);
-> +     xpsgtr_write_phy(gtr_phy, L0_TM_E_ILL7, 0xf3);
-> +     xpsgtr_write_phy(gtr_phy, L0_TM_ILL8, 0xff);
-> +     xpsgtr_write_phy(gtr_phy, L0_TM_IQ_ILL8, 0xf3);
-> +     xpsgtr_write_phy(gtr_phy, L0_TM_E_ILL8, 0xf3);
-> +     xpsgtr_write_phy(gtr_phy, L0_TM_IQ_ILL9, 1);
-> +     xpsgtr_write_phy(gtr_phy, L0_TM_E_ILL9, 1);
-> +     xpsgtr_clr_set(gtr_dev, UPHY_SPARE0, BIT(5), 0);
-> +}
-> +
-> +static void xpsgtr_phy_illcalib(struct xpsgtr_dev *gtr_dev,
-> +                                  unsigned long *lanes, bool gen2)
-> +{
-> +     bool last_ok[NUM_LANES] =3D { 0 };
-> +     int pass[NUM_LANES] =3D { 0 }, altpass[NUM_LANES] =3D { 0 };
-> +     int best[NUM_LANES] =3D { 0 }, altbest[NUM_LANES] =3D { 0 };
-> +     unsigned long lane;
-> +     int i;
-> +
-> +     /* Initialize the BIST */
-> +     xpsgtr_clr_set_lanes(gtr_dev, lanes, L0_BIST_CTRL_1, 0xe0, 0);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_FILLER_OUT, 1);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_FORCE_MK_RST, 1);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_TM_DIG_22, 0x20);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_CTRL_2, 0);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_RUN_LEN_L, 0xf4);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_ERR_INJ_POINT_L, 0);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_RUNLEN_ERR_INJ_H, 0);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_IDLE_TIME, 0);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_MARKER_L, 0xfb);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_IDLE_CHAR_L, 0xff);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_MARKER_IDLE_H, 0);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_LOW_PULSE_TIME, 0);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_TOTAL_PULSE_TIME, 0);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_TEST_PAT_1, 0x4a);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_TEST_PAT_2, 0x4a);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_TEST_PAT_3, 0x4a);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_TEST_PAT_4, 0x4a);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_TEST_PAT_MSBS, 0);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_PKT_NUM, 0x14);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_FRM_IDLE_TIME, 2);
-> +     xpsgtr_clr_set_lanes(gtr_dev, lanes, L0_BIST_CTRL_1, 0xe0, 0);
-> +
-> +     for (i =3D 0; i < 64; i++) {
-> +             bool ok[NUM_LANES];
-> +
-> +             for_each_set_bit(lane, lanes, NUM_LANES)
-> +                     xpsgtr_phy_set_ill(&gtr_dev->phys[lane], i, gen2);
-> +
-> +             /* Reset lanes */
-> +             xpsgtr_clr_set_lanes(gtr_dev, lanes, L0_TM_ANA_BYP_7, 0x20,
-> +                                  0x10);
-> +             xpsgtr_write(gtr_dev, UPHY_SPARE0, 0x00);
-> +             xpsgtr_write_lanes(gtr_dev, lanes, L0_TM_ANA_BYP_4, 0x40);
-> +             xpsgtr_write_lanes(gtr_dev, lanes, L0_TM_PLL_DIG_33, 0x80);
-> +             xpsgtr_write(gtr_dev, UPHY_SPARE0, 0x04);
-> +             udelay(50);
-> +             if (gen2)
-> +                     xpsgtr_write(gtr_dev, UPHY_SPARE0, 0x0e);
-> +             xpsgtr_write(gtr_dev, UPHY_SPARE0, 0x06);
-> +             if (gen2) {
-> +                     xpsgtr_write_lanes(gtr_dev, lanes, L0_TX_ANA_TM_3, =
-0x04);
-> +                     xpsgtr_write(gtr_dev, UPHY_SPARE0, 0x07);
-> +                     udelay(400);
-> +                     xpsgtr_write_lanes(gtr_dev, lanes, L0_TX_ANA_TM_3, =
-0x0c);
-> +                     udelay(15);
-> +                     xpsgtr_write(gtr_dev, UPHY_SPARE0, 0x0f);
-> +                     udelay(100);
-> +             }
-> +
-> +             if (xpsgtr_wait_pll_lock(gtr_dev->phys[0].phy)) {
-> +                     memset(last_ok, 0, sizeof(last_ok));
-> +                     continue;
-> +             }
-> +
-> +             udelay(50);
-> +             xpsgtr_write_lanes(gtr_dev, lanes, L0_TM_ANA_BYP_4, 0xc0);
-> +             xpsgtr_write_lanes(gtr_dev, lanes, L0_TM_ANA_BYP_4, 0x80);
-> +             xpsgtr_write_lanes(gtr_dev, lanes, L0_TM_PLL_DIG_33, 0xc0);
-> +             udelay(50);
-> +             xpsgtr_write_lanes(gtr_dev, lanes, L0_TM_PLL_DIG_33, 0x80);
-> +             udelay(50);
-> +             xpsgtr_write_lanes(gtr_dev, lanes, L0_TM_ANA_BYP_4, 0);
-> +             xpsgtr_write_lanes(gtr_dev, lanes, L0_TM_PLL_DIG_33, 0);
-> +             udelay(500);
-> +
-> +             /* Do the BIST */
-> +             for_each_set_bit(lane, lanes, NUM_LANES) {
-> +                     struct xpsgtr_phy *gtr_phy =3D &gtr_dev->phys[lane];
-> +                     u32 packets, errors;
-> +
-> +                     xpsgtr_phy_init_bus_width(gtr_phy, PROT_BUS_WIDTH_1=
-0);
-> +                     xpsgtr_phy_set_loopback(gtr_phy, true);
-> +                     xpsgtr_write_phy(gtr_phy, L0_TM_DIG_22, 0x20);
-> +                     xpsgtr_clr_set_phy(gtr_phy, L0_BIST_CTRL_1, 0, 1);
-> +
-> +                     udelay(200);
-> +                     xpsgtr_write_phy(gtr_phy, L0_BIST_CTRL_1, 0);
-> +                     packets =3D xpsgtr_read_phy(gtr_phy, L0_BIST_PKT_CT=
-R_L);
-> +                     packets |=3D xpsgtr_read_phy(gtr_phy, L0_BIST_PKT_C=
-TR_H)
-> << 8;
-> +                     errors =3D xpsgtr_read_phy(gtr_phy, L0_BIST_ERR_CTR=
-_L);
-> +                     errors |=3D xpsgtr_read_phy(gtr_phy, L0_BIST_ERR_CT=
-R_H)
-> << 8;
-> +                     ok[lane] =3D packets && !errors;
-> +
-> +                     dev_dbg(gtr_dev->dev,
-> +                             "lane %lu ILL %d packets %10u errors %10u\n=
-",
-> +                             lane, i, packets, errors);
-> +             }
-> +
-> +             xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_CTRL_1, 0);
-> +             xpsgtr_write(gtr_dev, UPHY_SPARE0, 0x00);
-> +             xpsgtr_write(gtr_dev, UPHY_SPARE0, 0x02);
-> +
-> +             for_each_set_bit(lane, lanes, NUM_LANES) {
-> +                     pass[lane] +=3D ok[lane] && last_ok[lane];
-> +                     if (pass[lane] < 4) {
-> +                             if (!ok[lane] && i > 2) {
-> +                                     if (altpass[lane] < pass[lane]) {
-> +                                             altpass[lane] =3D pass[lane=
-];
-> +                                             altbest[lane] =3D
-> +                                                     (i - 1) - (pass[lan=
-e] + 1) / 2;
-> +                                     }
-> +                                     pass[lane] =3D 0;
-> +                             }
-> +                     } else if (!best[lane] && (!ok[lane] || i =3D=3D 63=
-) &&
-> +                                last_ok[lane]) {
-> +                             best[lane] =3D (i - 1) - (pass[lane] + 1) /=
- 2;
-> +                     }
-> +             }
-> +
-> +             memcpy(last_ok, ok, sizeof(ok));
-> +     }
-> +
-> +     for_each_set_bit(lane, lanes, NUM_LANES) {
-> +             dev_dbg(gtr_dev->dev, "lane %lu ILL best %d alt best %d\n",
-> +                     lane, best[lane], altbest[lane]);
-> +
-> +             xpsgtr_phy_set_ill(&gtr_dev->phys[lane],
-> +                                best[lane] ?: altbest[lane], gen2);
-> +     }
-> +
-> +     /* Clean up */
-> +     xpsgtr_clr_set_lanes(gtr_dev, lanes, L0_TM_ANA_BYP_7, 0x30, 0);
-> +     xpsgtr_write(gtr_dev, UPHY_SPARE0, 0);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_CTRL_1, 0);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_CTRL_2, 0);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_RUN_LEN_L, 0);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_ERR_INJ_POINT_L, 0);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_RUNLEN_ERR_INJ_H, 0);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_IDLE_TIME, 0);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_MARKER_L, 0);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_IDLE_CHAR_L, 0);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_MARKER_IDLE_H, 0);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_LOW_PULSE_TIME, 0);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_TOTAL_PULSE_TIME, 0);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_TEST_PAT_1, 0);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_TEST_PAT_2, 0);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_TEST_PAT_3, 0);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_TEST_PAT_4, 0);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_TEST_PAT_MSBS, 0);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_PKT_NUM, 0);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_FRM_IDLE_TIME, 0);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_PKT_CTR_L, 0);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_PKT_CTR_H, 0);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_ERR_CTR_L, 0);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_ERR_CTR_H, 0);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_FILLER_OUT, 1);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_BIST_FORCE_MK_RST, 0);
-> +     xpsgtr_write_lanes(gtr_dev, lanes, L0_TM_DIG_22, 0);
-> +
-> +     for_each_set_bit(lane, lanes, NUM_LANES) {
-> +             struct xpsgtr_phy *gtr_phy =3D &gtr_dev->phys[lane];
-> +
-> +             xpsgtr_phy_init_bus_width(gtr_phy, PROT_BUS_WIDTH_20);
-> +             xpsgtr_phy_set_loopback(gtr_phy, false);
-> +     }
-> +}
-> +
->  static int xpsgtr_common_init(struct xpsgtr_phy *gtr_phy)
->  {
->       int ret;
-> @@ -553,6 +875,37 @@ static void xpsgtr_phy_init_sata(struct xpsgtr_phy
-> *gtr_phy)
->  {
->       struct xpsgtr_dev *gtr_dev =3D gtr_phy->dev;
->
-> +     if (!xpsgtr_ill_calibrated(gtr_phy)) {
-> +             DECLARE_BITMAP(lanes, NUM_LANES) =3D { 0 };
-> +
-> +             xpsgtr_init_ill(gtr_phy);
-> +             xpsgtr_write_phy(gtr_phy, L0_TM_E_ILL3, 100);
-> +             xpsgtr_clr_set_phy(gtr_phy, L0_TM_ILL11, 0xf0, 0x20);
-> +
-> +             __set_bit(gtr_phy->lane, lanes);
-> +             xpsgtr_phy_illcalib(gtr_dev, lanes, false);
-> +             xpsgtr_phy_set_ill(gtr_phy, 7, true);
-> +     }
-> +
-> +     /* Disable SSC */
-> +     xpsgtr_write_phy(gtr_phy, L0_PLL_FBDIV_FRAC_3_MSB,
-> TM_FORCE_EN_FRAC);
-> +     xpsgtr_clr_set_phy(gtr_phy, L0_PLL_SS_STEP_SIZE_3_MSB, 0,
-> TM_FORCE_EN);
-> +
-> +     /* Disable Tx deemphasis */
-> +     xpsgtr_write_phy(gtr_phy, L0_TM_CDR5,
-> +                      FIELD_PREP(L0_TM_CDR5_FPHL_FSM_ACC_CYCLES,
-> 7) |
-> +                      FIELD_PREP(L0_TM_CDR5_FFL_PH0_INT_GAIN, 6));
-> +     xpsgtr_write_phy(gtr_phy, L0_TM_CDR16, 12);
-> +
-> +     /* Configure equalization */
-> +     xpsgtr_write_phy(gtr_phy, L0_TX_ANA_TM_118,
-> +                      L0_TX_ANA_TM_118_FORCE_17_0);
-> +     xpsgtr_clr_set_phy(gtr_phy, L0_TM_EQ0, 0,
-> L0_TM_EQ0_EQ_STG2_CTRL_BYP);
-> +     xpsgtr_clr_set_phy(gtr_phy, L0_TM_EQ1,
-> L0_TM_EQ1_EQ_STG2_RL_PROG,
-> +                        FIELD_PREP(L0_TM_EQ1_EQ_STG2_RL_PROG, 2) |
-> +                        L0_TM_EQ1_EQ_STG2_PREAMP_MODE_VAL);
-> +     xpsgtr_write_phy(gtr_phy, L0_TX_ANA_TM_18, 2); /* -3.5 dB deemphasi=
-s */
-> +
->       xpsgtr_bypass_scrambler_8b10b(gtr_phy);
->
->       writel(gtr_phy->lane, gtr_dev->siou + SATA_CONTROL_OFFSET);
-> @@ -565,6 +918,64 @@ static void xpsgtr_phy_init_sgmii(struct xpsgtr_phy
-> *gtr_phy)
->       xpsgtr_bypass_scrambler_8b10b(gtr_phy);
->  }
->
-> +/* PCIe-specific initialization. */
-> +static int xpsgtr_phy_init_pcie(struct xpsgtr_phy *gtr_phy)
-> +{
-> +     struct xpsgtr_dev *gtr_dev =3D gtr_phy->dev;
-> +     DECLARE_BITMAP(lanes, NUM_LANES) =3D { 0 };
-> +     unsigned long lane;
-> +     bool calibrated =3D false;
-> +
-> +     xpsgtr_clr_set_phy(gtr_phy, L0_TM_AUX_0, 0, 0x20);
-> +
-> +     for (lane =3D 0; lane < NUM_LANES; lane++) {
-> +             struct xpsgtr_phy *gtr_phy =3D &gtr_dev->phys[lane];
-> +
-> +             if (gtr_phy->protocol !=3D ICM_PROTOCOL_PCIE)
-> +                     continue;
-> +
-> +             __set_bit(lane, lanes);
-> +             calibrated =3D calibrated || xpsgtr_ill_calibrated(gtr_phy);
-> +     }
-> +
-> +     if (calibrated)
-> +             return 0;
-> +
-> +     /* Write default ILL config */
-> +     for_each_set_bit(lane, lanes, NUM_LANES) {
-> +             struct xpsgtr_phy *p =3D &gtr_dev->phys[lane];
-> +
-> +             if (lane !=3D gtr_phy->lane) {
-> +                     int ret =3D xpsgtr_common_init(p);
-> +
-> +                     if (ret)
-> +                             return ret;
-> +             }
-> +
-> +             xpsgtr_init_ill(p);
-> +             xpsgtr_write_phy(p, L0_TM_E_ILL3, 0);
-> +             xpsgtr_clr_set_phy(p, L0_TM_MISC2, 0,
-> +                                L0_TM_MISC2_ILL_CAL_BYPASS);
-> +     }
-> +
-> +     /* Perform the ILL calibration procedure */
-> +     xpsgtr_phy_illcalib(gtr_dev, lanes, false);
-> +     xpsgtr_phy_illcalib(gtr_dev, lanes, true);
-> +
-> +     /* Disable PCIe ECO */
-> +     writel(1, gtr_dev->siou + SIOU_ECO_0);
-> +     return 0;
-> +}
-> +
-> +/* USB-specific initialization. */
-> +static void xpsgtr_phy_init_usb(struct xpsgtr_phy *gtr_phy)
-> +{
-> +     xpsgtr_clr_set_phy(gtr_phy, L0_TM_AUX_0, 0, 0x20);
-> +     xpsgtr_write_phy(gtr_phy, L0_TM_IQ_ILL8, 0xf3);
-> +     xpsgtr_write_phy(gtr_phy, L0_TM_E_ILL8, 0xf3);
-> +     xpsgtr_phy_set_ill(gtr_phy, 7, false);
-> +}
-> +
->  /* Configure TX de-emphasis and margining for DP. */
->  static void xpsgtr_phy_configure_dp(struct xpsgtr_phy *gtr_phy, unsigned=
- int pre,
->                                   unsigned int voltage)
-> @@ -710,6 +1121,10 @@ static int xpsgtr_phy_init(struct phy *phy)
->               xpsgtr_phy_init_dp(gtr_phy);
->               break;
->
-> +     case ICM_PROTOCOL_PCIE:
-> +             ret =3D xpsgtr_phy_init_pcie(gtr_phy);
-> +             break;
-> +
->       case ICM_PROTOCOL_SATA:
->               xpsgtr_phy_init_sata(gtr_phy);
->               break;
-> @@ -717,6 +1132,10 @@ static int xpsgtr_phy_init(struct phy *phy)
->       case ICM_PROTOCOL_SGMII:
->               xpsgtr_phy_init_sgmii(gtr_phy);
->               break;
-> +
-> +     case ICM_PROTOCOL_USB:
-> +             xpsgtr_phy_init_usb(gtr_phy);
-> +             break;
->       }
->
->  out:
-> --
-> 2.35.1.1320.gc452695387.dirty
-
-
--- =
-
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gMi8xMC8yNiAxMTowNCwgUGFuZGV5LCBSYWRoZXkgU2h5YW0gd3JvdGU6Cj4gW1B1YmxpY10K
+PiAKPj4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0KPj4gRnJvbTogU2VhbiBBbmRlcnNvbiA8
+c2Vhbi5hbmRlcnNvbkBsaW51eC5kZXY+Cj4+IFNlbnQ6IFR1ZXNkYXksIEZlYnJ1YXJ5IDMsIDIw
+MjYgNTo1MSBBTQo+PiBUbzogTGF1cmVudCBQaW5jaGFydCA8bGF1cmVudC5waW5jaGFydEBpZGVh
+c29uYm9hcmQuY29tPjsgVmlub2QgS291bAo+PiA8dmtvdWxAa2VybmVsLm9yZz47IGxpbnV4LXBo
+eUBsaXN0cy5pbmZyYWRlYWQub3JnCj4+IENjOiBLcnp5c3p0b2YgV2lsY3p5xYRza2kgPGt3aWxj
+enluc2tpQGtlcm5lbC5vcmc+OyBMb3JlbnpvIFBpZXJhbGlzaQo+PiA8bHBpZXJhbGlzaUBrZXJu
+ZWwub3JnPjsgUGFuZGV5LCBSYWRoZXkgU2h5YW0KPj4gPHJhZGhleS5zaHlhbS5wYW5kZXlAYW1k
+LmNvbT47IGxpbnV4LWtlcm5lbEB2Z2VyLmtlcm5lbC5vcmc7IFNpbWVrLCBNaWNoYWwKPj4gPG1p
+Y2hhbC5zaW1la0BhbWQuY29tPjsgbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3Jn
+OyBsaW51eC0KPj4gcGNpQHZnZXIua2VybmVsLm9yZzsgTmVpbCBBcm1zdHJvbmcgPG5laWwuYXJt
+c3Ryb25nQGxpbmFyby5vcmc+OyBSb2IgSGVycmluZwo+PiA8cm9iaEBrZXJuZWwub3JnPjsgSGF2
+YWxpZ2UsIFRoaXBwZXN3YW15IDx0aGlwcGVzd2FteS5oYXZhbGlnZUBhbWQuY29tPjsKPj4gTWFu
+aXZhbm5hbiBTYWRoYXNpdmFtIDxtYW5pQGtlcm5lbC5vcmc+OyBCam9ybiBIZWxnYWFzCj4+IDxi
+aGVsZ2Fhc0Bnb29nbGUuY29tPjsgU2VhbiBBbmRlcnNvbiA8c2Vhbi5hbmRlcnNvbkBsaW51eC5k
+ZXY+Cj4+IFN1YmplY3Q6IFtQQVRDSCA0LzhdIHBoeTogenlucW1wOiBDYWxpYnJhdGUgSUxMIGlm
+IG5lY2Vzc2FyeQo+Pgo+PiBpbml0X3NlcmRlcyBpbiBwc3VfaW5pdF9ncGwgaXMgc3VwcG9zZWQg
+dG8gY2FsaWJyYXRlIHRoZSBJTEwuIEhvd2V2ZXIsIHRoaXMKPj4gbWF5IGZhaWwgaWYgdGhlIHJl
+ZmVyZW5jZSBjbG9jayBpcyBub3QgcnVubmluZywgc3VjaCBhcyBpZiB0aGUgY2xvY2sgbmVlZHMK
+Pj4gdG8gYmUgY29uZmlndXJlZCBvbiBib290LiBUbyB3b3JrIGFyb3VuZCB0aGlzLCBhZGQgc3Vw
+cG9ydCBmb3IgSUxMCj4+IGNhbGlicmF0aW9uIGluIFUtQm9vdC4gSWYgdGhlIElMTCBpcyBhbHJl
+YWR5IGNhbGlicmF0ZWQgKGFueSBub24temVybwo+PiB2YWx1ZSkgd2Ugc2tpcCBjYWxpYnJhdGlv
+bi4KPj4KPj4gVGhlIGFsZ29yaXRobSBpcyBzdWJzdGFudGlhbGx5IHRoZSBzYW1lIGFzIHNlcmRl
+c19pbGxjYWxpYiBbMV0sIGJ1dCBpdCBoYXMKPj4gYmVlbiB1cGRhdGVkIGZvciByZWFkYWJpbGl0
+eSAoYW5kIHRvIHJlbW92ZSBhbGwgdGhlICJpZiAobGFuZTBfYWN0aXZlKSIKPj4gY29uZGl0aW9u
+cykuIER1ZSB0byB0aGUgYW1vdW50IG9mIHJlZ2lzdGVyIGZpZWxkcywgbWFueSBvZiB3aGljaCBh
+cmUKPj4gdW5kb2N1bWVudGVkIChlc3BlY2lhbGx5IHRoZSBjaGlja2VuIGJpdHMpLCBJIGhhdmUg
+bW9zdGx5IHVzZWQgZGVmaW5lcyBvbmx5Cj4+IGZvciB0aGUgcmVnaXN0ZXIgbmFtZXMuIFRoZXJl
+IGFyZSBjZXJ0YWlubHkgYXJlYXMgd2hlcmUgcmVnaXN0ZXIgd3JpdGVzIGFyZQo+PiBzdXBlcmZs
+dW91cywgYnV0IEkgaGF2ZSBsZWZ0IHRoZXNlIGluIG9yZGVyIHRvIG1pbmltaXplIGRldmlhdGlv
+biBmcm9tIHRoZQo+PiBwcm9jZWR1cmUgaW4gc2VyZGVzX2lsbGNhbGliLgo+IAo+IFBsZWFzZSBj
+b25zaWRlciBzcGxpdHRpbmcgdGhlIHBhdGNoIGluIGludHJvZHVjaW5nIGNhbGlicmF0ZSBJTEwg
+ZnVuY3Rpb25zCj4gYW5kIHRoZW4gc3Vic2VxdWVudGx5IHVzaW5nIHRoZW0uCgpPSwoKPiBIb3cg
+ZGlkIHlvdSB2YWxpZGF0ZSB0aGUgY2hhbmdlcz8gZnVuY3Rpb25hbCB0ZXN0aW5nIGlzIG9uZSBw
+YXJ0Cj4gYnV0IEkgdGhpbmsgYmV0dGVyIHRvIG1hdGNoIHJlZ2lzdGVyIGNvbmZpZ3VyYXRpb24g
+ZG9uZSBpbiBwc3VfaW5pdCB2cwo+IHRoaXMgc2VyaWVzPwoKSSd2ZSBkb25lIHRoaXMgaW4gdGhl
+IHBhc3QsIGJ1dCBJIGRpZG4ndCBkbyBzbyB3aXRoIHRoaXMgdmVyc2lvbiBvZiB0aGUKZHJpdmVy
+LiBJJ2xsIG1ha2Ugc3VyZSB0byBkbyB0aGlzIGNvbXBhcmlzb24gZm9yIHYyLiBGV0lXIHRoZSBJ
+TEwKdmFsdWVzIGFjaGlldmVkIHRocm91Z2ggdGhpcyBwcm9jZWR1cmUgYXJlIGZhaXJseSBjbG9z
+ZSB0byB0aGUgdmFsdWVzIEkKZ290IGZyb20gdGhlIGZpcm13YXJlLgoKPiBIYXZlIHdlIHRyaWVk
+IHJ1bm5pbmcgb24gbXVsdGlwbGUgZGVzaWducyBoYXZpbmcKPiBkaWZmZXJlbnQgR1QgbGFuZSBh
+bmQgcHJvdG9jb2wgY29tYmluYXRpb25zIC4KCkN1cnJlbnRseSB0ZXN0ZWQgd2l0aCBTQVRBIG9u
+IEdUUjIgKG9uIFsxXSkgYW5kIFBDSWUgb24gR1RSMC8xIChjdXN0b20KZGVzaWduKS4gSSd2ZSBh
+bHNvIHRlc3RlZCBTR01JSSBhbmQgRFAgb24gdGhlIG90aGVyIGxhbmVzIChhbHRob3VnaCBub3QK
+VVNCIGFzIG1lbnRpb25lZCBpbiB0aGUgY292ZXIgbGV0dGVyKS4gSSdkIGRlZmluaXRlbHkgYXBw
+cmVjaWF0ZSBpZiB5b3UKKG9yIGFueW9uZSBlbHNlKSBjb3VsZCB0ZXN0IG9uIHNvbWUgb3RoZXIg
+Ym9hcmRzLgoKWzFdIGh0dHBzOi8vZGV2ZWxvcGVyLnNlY28uY29tL2hhcmR3YXJlL3Byb2R1Y3Qv
+Y29tcHV0ZXItb24tbW9kdWxlcy9zbWFyYy1tb2R1bGVzL3NvbS1zbWFyYy16dS1iNzEvCgo+IFRo
+ZXJlIGFyZSBtdWx0aXBsZSBtYWdpYyBudW1iZXJzLiBDb25zaWRlciByZW5hbWluZyBpdCB0bwo+
+IG1lYW5pbmdmdWwgZGVmaW5lcy4KClNvbWUgb2YgdGhlIGZpZWxkcyBoYXZlIHZlcnkgbG9uZyBu
+YW1lcy4gRS5nLiBMMF9UWF9BTkFfVE1fMyBoYXMgdHdvCmZpZWxkcyB0aGF0IHdlIHNldDogVFhf
+c2VyaWFsaXplcl9lbmFibGUgYW5kCmZvcmNlX1RYX3NlcmlhbGl6ZXJfZW5hYmxlZC4gU2V0dGlu
+ZyBpdCB3b3VsZCBsb29rIGxpa2UKCgkJCXhwc2d0cl93cml0ZV9sYW5lcyhndHJfZGV2LCBsYW5l
+cywgTDBfVFhfQU5BX1RNXzMsCgkJCQkJICAgTDBfVFhfQU5BX1RNXzNfVFhfU0VSSUFMSVpFUl9F
+TkFCTEUgfAoJCQkJCSAgIEwwX1RYX0FOQV9UTV8zX0ZPUkNFX1RYX1NFUklBTElaRVJfRU5BQkxF
+KTsKCmFuZCB0aGVyZSdzIHJlYWxseSBubyB3YXkgdG8gZ2V0IHRoYXQgdW5kZXIgODAgY2hhcmFj
+dGVycy4gVGhpcyBpcwpwcm9iYWJseSB0aGUgYXJlYSB3aGVyZSBJIGNvdWxkIG1vc3QgaW1wcm92
+ZSB0aGluZ3MuIEJ1dCBJJ20gbm90IGEgZmFuCm9mIHRyaXBsaW5nIHRoZSBsaW5lIGNvdW50IHNp
+bmNlIEkgdGhpbmsgaXQgbWFrZXMgaXQgaGFyZGVyIHRvIGZvbGxvdwp0aGUgZmxvdyBvZiB0aGUg
+aW5pdGlhbGl6YXRpb24uCgpPdGhlciBmaWVsZHMgaGF2ZSBwb29yIGRvY3VtZW50YXRpb24uIEUu
+Zy4gTDBfVE1fSVFfSUxMOCBoYXMgYSBzaW5nbGUKZmllbGQgaWxsX2J5cGFzc19pcV9wb2x5dHJp
+bV92YWwgZG9jdW1lbnRlZCBhcyAiSVEgSUxMIHBvbHl0cmltIGJ5cGFzcwp2YWx1ZS4iIEkgaGF2
+ZSBubyBpZGVhIHdoYXQgdGhpcyBmaWVsZCBkb2VzIG9yIHdoeSBpdCBuZWVkcyB0byBiZSBzZXQg
+dG8KMHhmMyBzbyBJIGNhbid0IHJlYWxseSBkZWZpbmUgYSBtZWFuaW5nZnVsIGNvbnN0YW50IGZv
+ciBpdC4KCkxhc3RseSwgc29tZSBmaWVsZHMgYXJlIG5vdCBkb2N1bWVudGVkIGF0IGFsbCwgbm90
+YWJseSBVUEhZX1NQQVJFMC4KCkluIHRoZXNlIGxhdHRlciB0d28gY2FzZXMsIEkgaGF2ZSBub3Qg
+Z3Vlc3NlZCBhdCB0aGUgc2VtYW50aWNzLCBidXQgSSdkCm1vcmUgdGhhbiB3ZWxjb21lIGFueSBh
+ZGRpdGlvbmFsIGluZm8uCgo+Pgo+PiBbMV0gRXhhbXBsZSBpbXBsZW1lbnRhdGlvbjsgeHBzZ3Ry
+X3BoeV9pbGxjYWxpYiBjb3Jlc3BvbmRzIHRvCj4+ICAgICBzZXJkZXNfaWxsY2FsaWJfcGNpZV9n
+ZW4xOgo+PiBodHRwczovL3NvdXJjZS5kZW54LmRlL3UtYm9vdC91LWJvb3QvLS9ibG9iL3YyMDI2
+LjAxL2JvYXJkL3hpbGlueC96eW5xbXAvenlucW1wLQo+PiB6Y3UyMDgtcmV2QS9wc3VfaW5pdF9n
+cGwuYz9yZWZfdHlwZT10YWdzI0w3MTAKPj4KPj4gU2lnbmVkLW9mZi1ieTogU2VhbiBBbmRlcnNv
+biA8c2Vhbi5hbmRlcnNvbkBsaW51eC5kZXY+Cj4+IC0tLQo+Pgo+PiAgZHJpdmVycy9waHkveGls
+aW54L3BoeS16eW5xbXAuYyB8IDQyMSArKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrLQo+
+PiAgMSBmaWxlIGNoYW5nZWQsIDQyMCBpbnNlcnRpb25zKCspLCAxIGRlbGV0aW9uKC0pCj4+Cj4+
+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS94aWxpbngvcGh5LXp5bnFtcC5jIGIvZHJpdmVycy9w
+aHkveGlsaW54L3BoeS16eW5xbXAuYwo+PiBpbmRleCAxNTJhZjE3MDJiYmQuLjg1NGIwZWEwNDY0
+OCAxMDA2NDQKPj4gLS0tIGEvZHJpdmVycy9waHkveGlsaW54L3BoeS16eW5xbXAuYwo+PiArKysg
+Yi9kcml2ZXJzL3BoeS94aWxpbngvcGh5LXp5bnFtcC5jCj4+IEBAIC0xMiw2ICsxMiw3IEBACj4+
+ICAgKiBQQ0llIHNob3VsZCBhbHNvIHdvcmsgYnV0IHRoYXQgaXMgZXhwZXJpbWVudGFsIGFzIG9m
+IG5vdy4KPj4gICAqLwo+Pgo+PiArI2luY2x1ZGUgPGxpbnV4L2JpdGZpZWxkLmg+Cj4+ICAjaW5j
+bHVkZSA8bGludXgvY2xrLmg+Cj4+ICAjaW5jbHVkZSA8bGludXgvZGVidWdmcy5oPgo+PiAgI2lu
+Y2x1ZGUgPGxpbnV4L2RlbGF5Lmg+Cj4+IEBAIC0zMSw2ICszMiw3IEBACj4+ICAgKi8KPj4KPj4g
+IC8qIFRYIERlLWVtcGhhc2lzIHBhcmFtZXRlcnMgKi8KPj4gKyNkZWZpbmUgTDBfVFhfQU5BX1RN
+XzMgICAgICAgICAgICAgICAgICAgICAgIDB4MDAwYwo+PiAgI2RlZmluZSBMMF9UWF9BTkFfVE1f
+MTggICAgICAgICAgICAgICAgICAgICAgMHgwMDQ4Cj4+ICAjZGVmaW5lIEwwX1RYX0FOQV9UTV8x
+MTggICAgICAgICAgICAgMHgwMWQ4Cj4+ICAjZGVmaW5lIEwwX1RYX0FOQV9UTV8xMThfRk9SQ0Vf
+MTdfMCAgQklUKDApCj4+IEBAIC01MCwxNiArNTIsNDkgQEAKPj4gICNkZWZpbmUgTDBfVFhQTURf
+VE1fNDVfRU5BQkxFX0RQX1BPU1QyICAgICAgIEJJVCg1KQo+Pgo+PiAgLyogUENTIGNvbnRyb2wg
+cGFyYW1ldGVycyAqLwo+PiArI2RlZmluZSBMMF9UTV9BTkFfQllQXzQgICAgICAgICAgICAgICAg
+ICAgICAgMHgxMDEwCj4+ICsjZGVmaW5lIEwwX1RNX0FOQV9CWVBfNyAgICAgICAgICAgICAgICAg
+ICAgICAweDEwMTgKPj4gICNkZWZpbmUgTDBfVE1fRElHXzYgICAgICAgICAgICAgICAgICAweDEw
+NmMKPj4gKyNkZWZpbmUgTDBfVE1fRElHXzIyICAgICAgICAgICAgICAgICAweDEwYWMKPj4gICNk
+ZWZpbmUgTDBfVE1fRElTX0RFU0NSQU1CTEVfREVDT0RFUiAweDBmCj4+ICAjZGVmaW5lIEwwX1RY
+X0RJR182MSAgICAgICAgICAgICAgICAgMHgwMGY0Cj4+ICAjZGVmaW5lIEwwX1RNX0RJU0FCTEVf
+U0NSQU1CTEVfRU5DT0RFUiAgICAgICAweDBmCj4+ICsjZGVmaW5lIEwwX1RNX0FVWF8wICAgICAg
+ICAgICAgICAgICAgMHgxMGNjCj4+ICsjZGVmaW5lIEwwX1RNX01JU0MyICAgICAgICAgICAgICAg
+ICAgMHgxODljCj4+ICsjZGVmaW5lIEwwX1RNX01JU0MyX0lMTF9DQUxfQllQQVNTICAgQklUKDcp
+Cj4+ICsjZGVmaW5lIEwwX1RNX0lRX0lMTDEgICAgICAgICAgICAgICAgICAgICAgICAweDE4ZjgK
+Pj4gKyNkZWZpbmUgTDBfVE1fSVFfSUxMMiAgICAgICAgICAgICAgICAgICAgICAgIDB4MThmYwo+
+IAo+ICNkZWZpbmUgTDBfVE1fSVFfSUxMMyAgICAgICAgICAgICAgICAgICAweDE5MDAKPiAKPiBJ
+UV9JTEwobikgPSAweDE4ZjggKyAobiAtIDEpICogNCA/Cj4gCj4gU2ltaWxhcmx5IGZvciBvdGhl
+cnMgICh3aGVuIGFwcGxpY2FibGUpPwoKT0sKCj4+ICsjZGVmaW5lIEwwX1RNX0lMTDExICAgICAg
+ICAgICAgICAgICAgMHgxOThjCj4+ICsjZGVmaW5lIEwwX1RNX0lMTDEyICAgICAgICAgICAgICAg
+ICAgMHgxOTkwCj4+ICsjZGVmaW5lIEwwX1RNX0VfSUxMMSAgICAgICAgICAgICAgICAgMHgxOTI0
+Cj4+ICsjZGVmaW5lIEwwX1RNX0VfSUxMMiAgICAgICAgICAgICAgICAgMHgxOTI4Cj4+ICsjZGVm
+aW5lIEwwX1RNX0lRX0lMTDMgICAgICAgICAgICAgICAgICAgICAgICAweDE5MDAKPj4gKyNkZWZp
+bmUgTDBfVE1fRV9JTEwzICAgICAgICAgICAgICAgICAweDE5MmMKPj4gKyNkZWZpbmUgTDBfVE1f
+SVFfSUxMNyAgICAgICAgICAgICAgICAgICAgICAgIDB4MTkxMAo+PiArI2RlZmluZSBMMF9UTV9F
+X0lMTDcgICAgICAgICAgICAgICAgIDB4MTkzYwo+PiArI2RlZmluZSBMMF9UTV9JTEw4ICAgICAg
+ICAgICAgICAgICAgIDB4MTk4MAo+PiArI2RlZmluZSBMMF9UTV9JUV9JTEw4ICAgICAgICAgICAg
+ICAgICAgICAgICAgMHgxOTE0Cj4+ICsjZGVmaW5lIEwwX1RNX0lRX0lMTDkgICAgICAgICAgICAg
+ICAgICAgICAgICAweDE5MTgKPj4gKyNkZWZpbmUgTDBfVE1fRVEwICAgICAgICAgICAgICAgICAg
+ICAweDE5NGMKPj4gKyNkZWZpbmUgTDBfVE1fRVEwX0VRX1NURzJfQ1RSTF9CWVAgICBCSVQoNSkK
+Pj4gKyNkZWZpbmUgTDBfVE1fRVExICAgICAgICAgICAgICAgICAgICAweDE5NTAKPj4gKyNkZWZp
+bmUgTDBfVE1fRVExX0VRX1NURzJfUkxfUFJPRyAgICBHRU5NQVNLKDEsIDApCj4+ICsjZGVmaW5l
+IEwwX1RNX0VRMV9FUV9TVEcyX1BSRUFNUF9NT0RFX1ZBTCAgICBCSVQoMikKPj4gKyNkZWZpbmUg
+TDBfVE1fRV9JTEw4ICAgICAgICAgICAgICAgICAweDE5NDAKPj4gKyNkZWZpbmUgTDBfVE1fRV9J
+TEw5ICAgICAgICAgICAgICAgICAweDE5NDQKPj4gKyNkZWZpbmUgTDBfVE1fSUxMMTMgICAgICAg
+ICAgICAgICAgICAweDE5OTQKPj4gKyNkZWZpbmUgTDBfVE1fQ0RSNSAgICAgICAgICAgICAgICAg
+ICAweDFjMTQKPj4gKyNkZWZpbmUgTDBfVE1fQ0RSNV9GUEhMX0ZTTV9BQ0NfQ1lDTEVTICAgICAg
+IEdFTk1BU0soNywgNSkKPj4gKyNkZWZpbmUgTDBfVE1fQ0RSNV9GRkxfUEgwX0lOVF9HQUlOICBH
+RU5NQVNLKDQsIDApCj4+ICsjZGVmaW5lIEwwX1RNX0NEUjE2ICAgICAgICAgICAgICAgICAgMHgx
+YzQwCj4+Cj4+ICAvKiBQTEwgVGVzdCBNb2RlIHJlZ2lzdGVyIHBhcmFtZXRlcnMgKi8KPj4gKyNk
+ZWZpbmUgTDBfVE1fUExMX0RJR18zMyAgICAgICAgICAgICAweDIwODQKPj4gICNkZWZpbmUgTDBf
+VE1fUExMX0RJR18zNyAgICAgICAgICAgICAweDIwOTQKPj4gICNkZWZpbmUgTDBfVE1fQ09BUlNF
+X0NPREVfTElNSVQgICAgICAgICAgICAgIDB4MTAKPj4KPj4gIC8qIFBMTCBTU0Mgc3RlcCBzaXpl
+IG9mZnNldHMgKi8KPj4gKyNkZWZpbmUgTDBfUExMX0ZCRElWX0ZSQUNfM19NU0IgICAgICAgICAg
+ICAgIDB4MjM2MAo+PiAgI2RlZmluZSBMMF9QTExfU1NfU1RFUFNfMF9MU0IgICAgICAgICAgICAg
+ICAgMHgyMzY4Cj4+ICAjZGVmaW5lIEwwX1BMTF9TU19TVEVQU18xX01TQiAgICAgICAgICAgICAg
+ICAweDIzNmMKPj4gICNkZWZpbmUgTDBfUExMX1NTX1NURVBfU0laRV8wX0xTQiAgICAweDIzNzAK
+Pj4gQEAgLTY5LDYgKzEwNCw3IEBACj4+ICAjZGVmaW5lIEwwX1BMTF9TVEFUVVNfUkVBRF8xICAg
+ICAgICAgMHgyM2U0Cj4+Cj4+ICAvKiBTU0Mgc3RlcCBzaXplIHBhcmFtZXRlcnMgKi8KPj4gKyNk
+ZWZpbmUgVE1fRk9SQ0VfRU5fRlJBQyAgICAgICAgICAgICBCSVQoNikKPj4gICNkZWZpbmUgU1RF
+UF9TSVpFXzBfTUFTSyAgICAgICAgICAgICAweGZmCj4+ICAjZGVmaW5lIFNURVBfU0laRV8xX01B
+U0sgICAgICAgICAgICAgMHhmZgo+PiAgI2RlZmluZSBTVEVQX1NJWkVfMl9NQVNLICAgICAgICAg
+ICAgIDB4ZmYKPj4gQEAgLTc2LDYgKzExMiw3IEBACj4+ICAjZGVmaW5lIFNURVBfU0laRV9TSElG
+VCAgICAgICAgICAgICAgICAgICAgICA4Cj4+ICAjZGVmaW5lIEZPUkNFX1NURVBfU0laRSAgICAg
+ICAgICAgICAgICAgICAgICAweDEwCj4+ICAjZGVmaW5lIEZPUkNFX1NURVBTICAgICAgICAgICAg
+ICAgICAgMHgyMAo+PiArI2RlZmluZSBUTV9GT1JDRV9FTiAgICAgICAgICAgICAgICAgIEJJVCg3
+KQo+PiAgI2RlZmluZSBTVEVQU18wX01BU0sgICAgICAgICAgICAgICAgIDB4ZmYKPj4gICNkZWZp
+bmUgU1RFUFNfMV9NQVNLICAgICAgICAgICAgICAgICAweDA3Cj4+Cj4+IEBAIC04NCw2ICsxMjEs
+MzIgQEAKPj4gICNkZWZpbmUgTDBfUkVGX0NMS19MQ0xfU0VMICAgICAgICAgICBCSVQoNykKPj4g
+ICNkZWZpbmUgTDBfUkVGX0NMS19TRUxfTUFTSyAgICAgICAgICAweDlmCj4+Cj4+ICsvKiBCdWls
+dC1pbiBzZWxmLXRlc3QgcGFyYW1ldGVycyAqLwo+PiArI2RlZmluZSBMMF9CSVNUX0NUUkxfMSAg
+ICAgICAgICAgICAgICAgICAgICAgMHgzMDA0Cj4+ICsjZGVmaW5lIEwwX0JJU1RfQ1RSTF8yICAg
+ICAgICAgICAgICAgICAgICAgICAweDMwMDgKPj4gKyNkZWZpbmUgTDBfQklTVF9SVU5fTEVOX0wg
+ICAgICAgICAgICAweDMwMGMKPj4gKyNkZWZpbmUgTDBfQklTVF9FUlJfSU5KX1BPSU5UX0wgICAg
+ICAgICAgICAgIDB4MzAxMAo+PiArI2RlZmluZSBMMF9CSVNUX1JVTkxFTl9FUlJfSU5KX0ggICAg
+IDB4MzAxNAo+PiArI2RlZmluZSBMMF9CSVNUX0lETEVfVElNRSAgICAgICAgICAgIDB4MzAxOAo+
+PiArI2RlZmluZSBMMF9CSVNUX01BUktFUl9MICAgICAgICAgICAgIDB4MzAxYwo+PiArI2RlZmlu
+ZSBMMF9CSVNUX0lETEVfQ0hBUl9MICAgICAgICAgIDB4MzAyMAo+PiArI2RlZmluZSBMMF9CSVNU
+X01BUktFUl9JRExFX0ggICAgICAgICAgICAgICAgMHgzMDI0Cj4+ICsjZGVmaW5lIEwwX0JJU1Rf
+TE9XX1BVTFNFX1RJTUUgICAgICAgICAgICAgICAweDMwMjgKPj4gKyNkZWZpbmUgTDBfQklTVF9U
+T1RBTF9QVUxTRV9USU1FICAgICAweDMwMmMKPj4gKyNkZWZpbmUgTDBfQklTVF9URVNUX1BBVF8x
+ICAgICAgICAgICAweDMwMzAKPj4gKyNkZWZpbmUgTDBfQklTVF9URVNUX1BBVF8yICAgICAgICAg
+ICAweDMwMzQKPj4gKyNkZWZpbmUgTDBfQklTVF9URVNUX1BBVF8zICAgICAgICAgICAweDMwMzgK
+Pj4gKyNkZWZpbmUgTDBfQklTVF9URVNUX1BBVF80ICAgICAgICAgICAweDMwM2MKPj4gKyNkZWZp
+bmUgTDBfQklTVF9URVNUX1BBVF9NU0JTICAgICAgICAgICAgICAgIDB4MzA0MAo+PiArI2RlZmlu
+ZSBMMF9CSVNUX1BLVF9OVU0gICAgICAgICAgICAgICAgICAgICAgMHgzMDQ0Cj4+ICsjZGVmaW5l
+IEwwX0JJU1RfRlJNX0lETEVfVElNRSAgICAgICAgICAgICAgICAweDMwNDgKPj4gKyNkZWZpbmUg
+TDBfQklTVF9QS1RfQ1RSX0wgICAgICAgICAgICAweDMwNGMKPj4gKyNkZWZpbmUgTDBfQklTVF9Q
+S1RfQ1RSX0ggICAgICAgICAgICAweDMwNTAKPj4gKyNkZWZpbmUgTDBfQklTVF9FUlJfQ1RSX0wg
+ICAgICAgICAgICAweDMwNTQKPj4gKyNkZWZpbmUgTDBfQklTVF9FUlJfQ1RSX0ggICAgICAgICAg
+ICAweDMwNTgKPj4gKyNkZWZpbmUgTDBfQklTVF9GSUxMRVJfT1VUICAgICAgICAgICAweDMwNjgK
+Pj4gKyNkZWZpbmUgTDBfQklTVF9GT1JDRV9NS19SU1QgICAgICAgICAweDMwNmMKPj4gKwo+PiAg
+LyogQ2FsaWJyYXRpb24gZGlnaXRhbCBsb2dpYyBwYXJhbWV0ZXJzICovCj4+ICAjZGVmaW5lIEwz
+X1RNX0NBTElCX0RJRzE5ICAgICAgICAgICAgMHhlYzRjCj4+ICAjZGVmaW5lIEwzX0NBTElCX0RP
+TkVfU1RBVFVTICAgICAgICAgMHhlZjE0Cj4+IEBAIC0xMzksNiArMjAyLDkgQEAgc3RhdGljIGNv
+bnN0IGNoYXIgKmNvbnN0IHhwc2d0cl9pY21fc3RyW10gPSB7Cj4+ICAjZGVmaW5lIFRNX0NNTl9S
+U1RfU0VUICAgICAgICAgICAgICAgICAgICAgICAweDIKPj4gICNkZWZpbmUgVE1fQ01OX1JTVF9N
+QVNLICAgICAgICAgICAgICAgICAgICAgIDB4Mwo+Pgo+PiArI2RlZmluZSBMUEJLX0NUUkwwICAg
+ICAgICAgICAgICAgICAgIDB4MTAwMzgKPj4gKyNkZWZpbmUgTFBCS19DVFJMMSAgICAgICAgICAg
+ICAgICAgICAweDEwMDNjCj4+ICsKPj4gIC8qIEJ1cyB3aWR0aCBwYXJhbWV0ZXJzICovCj4+ICAj
+ZGVmaW5lIFRYX1BST1RfQlVTX1dJRFRIICAgICAgICAgICAgMHgxMDA0MAo+PiAgI2RlZmluZSBS
+WF9QUk9UX0JVU19XSURUSCAgICAgICAgICAgIDB4MTAwNDQKPj4gQEAgLTE0OCw5ICsyMTQsMTMg
+QEAgc3RhdGljIGNvbnN0IGNoYXIgKmNvbnN0IHhwc2d0cl9pY21fc3RyW10gPSB7Cj4+ICAjZGVm
+aW5lIFBST1RfQlVTX1dJRFRIX1NISUZUKG4pICAgICAgICAgICAgICAoKG4pICogMikKPj4gICNk
+ZWZpbmUgUFJPVF9CVVNfV0lEVEhfTUFTSyhuKSAgICAgICAgICAgICAgIEdFTk1BU0soKG4pICog
+MiArIDEsIChuKSAqIDIpCj4+Cj4+ICsjZGVmaW5lIFVQSFlfU1BBUkUwICAgICAgICAgICAgICAg
+ICAgMFgxMDA5OAo+PiArCj4+ICAvKiBOdW1iZXIgb2YgR1QgbGFuZXMgKi8KPj4gICNkZWZpbmUg
+TlVNX0xBTkVTICAgICAgICAgICAgICAgICAgICA0Cj4+Cj4+ICsjZGVmaW5lIFNJT1VfRUNPXzAg
+ICAgICAgICAgICAgICAgICAgMHgxYwo+PiArCj4+ICAvKiBTSU9VIFNBVEEgY29udHJvbCByZWdp
+c3RlciAqLwo+PiAgI2RlZmluZSBTQVRBX0NPTlRST0xfT0ZGU0VUICAgICAgICAgIDB4MDEwMAo+
+Pgo+PiBAQCAtMzM4LDYgKzQwOCwzMyBAQCBzdGF0aWMgdm9pZCB4cHNndHJfcmVzdG9yZV9sYW5l
+X3JlZ3Moc3RydWN0IHhwc2d0cl9kZXYKPj4gKmd0cl9kZXYpCj4+ICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgIGd0cl9kZXYtPnNhdmVkX3JlZ3NbaV0pOwo+PiAgfQo+Pgo+PiArc3RhdGljIGlu
+bGluZSB2b2lkIHhwc2d0cl93cml0ZV9sYW5lcyhzdHJ1Y3QgeHBzZ3RyX2RldiAqZ3RyX2RldiwK
+Pj4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB1bnNpZ25lZCBsb25nICpsYW5l
+cywgdTMyIHJlZywgdTMyIHZhbHVlKQo+PiArewo+PiArICAgICB1bnNpZ25lZCBsb25nIGxhbmU7
+Cj4+ICsKPj4gKyAgICAgZm9yX2VhY2hfc2V0X2JpdChsYW5lLCBsYW5lcywgTlVNX0xBTkVTKSB7
+Cj4+ICsgICAgICAgICAgICAgdm9pZCBfX2lvbWVtICphZGRyID0gZ3RyX2Rldi0+c2VyZGVzICsg
+bGFuZSAqIFBIWV9SRUdfT0ZGU0VUCj4+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgKyByZWc7Cj4+ICsKPj4gKyAgICAgICAgICAgICB3cml0ZWwodmFsdWUsIGFkZHIpOwo+PiAr
+ICAgICB9Cj4+ICt9Cj4+ICsKPj4gK3N0YXRpYyBpbmxpbmUgdm9pZCB4cHNndHJfY2xyX3NldF9s
+YW5lcyhzdHJ1Y3QgeHBzZ3RyX2RldiAqZ3RyX2RldiwKPj4gKyAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgIHVuc2lnbmVkIGxvbmcgKmxhbmVzLCB1MzIgcmVnLCB1MzIgY2xyLAo+
+PiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdTMyIHNldCkKPj4gK3sKPj4g
+KyAgICAgdW5zaWduZWQgbG9uZyBsYW5lOwo+PiArCj4+ICsgICAgIGZvcl9lYWNoX3NldF9iaXQo
+bGFuZSwgbGFuZXMsIE5VTV9MQU5FUykgewo+PiArICAgICAgICAgICAgIHZvaWQgX19pb21lbSAq
+YWRkciA9IGd0cl9kZXYtPnNlcmRlcyArIGxhbmUgKiBQSFlfUkVHX09GRlNFVAo+PiArICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICsgcmVnOwo+PiArCj4+ICsgICAgICAgICAgICAg
+d3JpdGVsKChyZWFkbChhZGRyKSAmIH5jbHIpIHwgc2V0LCBhZGRyKTsKPj4gKyAgICAgfQo+PiAr
+fQo+PiArCj4+ICAvKgo+PiAgICogSGFyZHdhcmUgQ29uZmlndXJhdGlvbgo+PiAgICovCj4+IEBA
+IC0zNTEsNyArNDQ4LDcgQEAgc3RhdGljIGludCB4cHNndHJfd2FpdF9wbGxfbG9jayhzdHJ1Y3Qg
+cGh5ICpwaHkpCj4+ICAgICAgIHU4IHByb3RvY29sID0gZ3RyX3BoeS0+cHJvdG9jb2w7Cj4+ICAg
+ICAgIGludCByZXQ7Cj4+Cj4+IC0gICAgIGRldl9kYmcoZ3RyX2Rldi0+ZGV2LCAiV2FpdGluZyBm
+b3IgUExMIGxvY2tcbiIpOwo+PiArICAgICBkZXZfdmRiZyhndHJfZGV2LT5kZXYsICJXYWl0aW5n
+IGZvciBQTEwgbG9ja1xuIik7Cj4gCj4gVW5yZWxhdGVkIGNoYW5nZS4KCldlIHJlY29uZmlndXJl
+IHRoZSBQTEwgbWFueSB0aW1lcyBkdXJpbmcgSUxMIHRyYWluaW5nLCBhbmQgdGhpcyBkZWJ1Zwpv
+dXRwdXQgbWFrZXMgaXQgZGlmZmljdWx0IHRvIHJlYWQgdGhlIElMTCBjYWxpYnJhdGlvbiBkZWJ1
+Zy4KCj4+Cj4+ICAgICAgIC8qCj4+ICAgICAgICAqIEZvciBEUCBhbmQgUENJZSwgb25seSB0aGUg
+aW5zdGFuY2UgMCBQTEwgaXMgdXNlZC4gU3dpdGNoIHRvIHRoYXQgcGh5Cj4+IEBAIC01MjAsNiAr
+NjE3LDIzMSBAQCBzdGF0aWMgdm9pZCB4cHNndHJfYnlwYXNzX3NjcmFtYmxlcl84YjEwYihzdHJ1
+Y3QKPj4geHBzZ3RyX3BoeSAqZ3RyX3BoeSkKPj4gICAgICAgeHBzZ3RyX3dyaXRlX3BoeShndHJf
+cGh5LCBMMF9UWF9ESUdfNjEsCj4+IEwwX1RNX0RJU0FCTEVfU0NSQU1CTEVfRU5DT0RFUik7Cj4+
+ICB9Cj4+Cj4+ICsvKiBFbmFibGUgb3IgZGlzYWJsZSBsb29wYmFjayAqLwo+PiArc3RhdGljIHZv
+aWQgeHBzZ3RyX3BoeV9zZXRfbG9vcGJhY2soc3RydWN0IHhwc2d0cl9waHkgKmd0cl9waHksIGJv
+b2wgZW5hYmxlZCkKPj4gK3sKPj4gKyAgICAgc3RydWN0IHhwc2d0cl9kZXYgKmd0cl9kZXYgPSBn
+dHJfcGh5LT5kZXY7Cj4+ICsgICAgIHUzMiByZWcgPSBndHJfcGh5LT5sYW5lID49IDIgPyBMUEJL
+X0NUUkwxIDogTFBCS19DVFJMMDsKPj4gKyAgICAgdTMyIHNoaWZ0ID0gZ3RyX3BoeS0+bGFuZSAm
+IDEgPyA0IDogMDsKPj4gKwo+PiArICAgICB4cHNndHJfY2xyX3NldChndHJfZGV2LCByZWcsIDcg
+PDwgc2hpZnQsICh1MzIpZW5hYmxlZCA8PCBzaGlmdCk7Cj4+ICt9Cj4+ICsKPj4gK3N0YXRpYyB2
+b2lkIHhwc2d0cl9waHlfc2V0X2lsbChzdHJ1Y3QgeHBzZ3RyX3BoeSAqZ3RyX3BoeSwgdTMyIGls
+bCwgYm9vbCBnZW4yKQo+PiArewo+PiArICAgICB1MzIgdmFsID0gNCArIGlsbCAqIDg7Cj4+ICsK
+Pj4gKyAgICAgaWYgKGdlbjIpIHsKPj4gKyAgICAgICAgICAgICB4cHNndHJfd3JpdGVfcGh5KGd0
+cl9waHksIEwwX1RNX0VfSUxMMiwgdmFsICYgMHhmZik7Cj4+ICsgICAgICAgICAgICAgeHBzZ3Ry
+X2Nscl9zZXRfcGh5KGd0cl9waHksIEwwX1RNX0lMTDEyLCAweDBmLAo+PiArICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAxIDw8ICh2YWwgPj4gOCkpOwo+PiArICAgICB9IGVsc2Ugewo+
+PiArICAgICAgICAgICAgIHhwc2d0cl93cml0ZV9waHkoZ3RyX3BoeSwgTDBfVE1fRV9JTEwxLCB2
+YWwgJiAweGZmKTsKPj4gKyAgICAgICAgICAgICB4cHNndHJfY2xyX3NldF9waHkoZ3RyX3BoeSwg
+TDBfVE1fSUxMMTIsIDB4ZjAsCj4+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICh2
+YWwgPj4gNCkgJiAweDEwKTsKPj4gKyAgICAgfQo+PiArfQo+PiArCj4+ICtzdGF0aWMgYm9vbCB4
+cHNndHJfaWxsX2NhbGlicmF0ZWQoc3RydWN0IHhwc2d0cl9waHkgKmd0cl9waHkpCj4+ICt7Cj4+
+ICsgICAgIHUzMiBpbGwxID0geHBzZ3RyX3JlYWRfcGh5KGd0cl9waHksIEwwX1RNX0VfSUxMMSk7
+Cj4+ICsgICAgIHUzMiBpbGwyID0geHBzZ3RyX3JlYWRfcGh5KGd0cl9waHksIEwwX1RNX0VfSUxM
+Mik7Cj4+ICsgICAgIHUzMiBpbGwxMiA9IHhwc2d0cl9yZWFkX3BoeShndHJfcGh5LCBMMF9UTV9J
+TEwxMik7Cj4+ICsKPj4gKyAgICAgZGV2X2RiZyhndHJfcGh5LT5kZXYtPmRldiwgImxhbmUgJXUg
+Z2VuMSBJTEwgd2FzICV1IGdlbjIgSUxMIHdhcwo+PiAldVxuIiwKPj4gKyAgICAgICAgICAgICBn
+dHJfcGh5LT5sYW5lLCBpbGwxIC8gOCArIChpbGwxMiAmIDB4MTAgPyAzMiA6IDApLAo+PiArICAg
+ICAgICAgICAgIGlsbDIgLyA4ICsgKGlsbDEyICYgMHgwMiA/IDMyIDogMCkpOwo+PiArICAgICBy
+ZXR1cm4gaWxsMSB8fCBpbGwyIHx8IGlsbDEyOwo+PiArfQo+PiArCj4+ICtzdGF0aWMgdm9pZCB4
+cHNndHJfaW5pdF9pbGwoc3RydWN0IHhwc2d0cl9waHkgKmd0cl9waHkpCj4+ICt7Cj4+ICsgICAg
+IHN0cnVjdCB4cHNndHJfZGV2ICpndHJfZGV2ID0gZ3RyX3BoeS0+ZGV2Owo+PiArICAgICBzdHJ1
+Y3QgY2xrICpjbGsgPSBndHJfZGV2LT5jbGtbZ3RyX3BoeS0+cmVmY2xrXTsKPj4gKyAgICAgdTMy
+IGlsbDEyMyA9IERJVl9ST1VORF9DTE9TRVNUKGNsa19nZXRfcmF0ZShjbGspLCAxMDAwMDAwKTsK
+Pj4gKwo+PiArICAgICB4cHNndHJfY2xyX3NldF9waHkoZ3RyX3BoeSwgTDBfVE1fTUlTQzIsIDAs
+Cj4+IEwwX1RNX01JU0MyX0lMTF9DQUxfQllQQVNTKTsKPj4gKyAgICAgeHBzZ3RyX3dyaXRlX3Bo
+eShndHJfcGh5LCBMMF9UTV9JUV9JTEwxLCBpbGwxMjMpOwo+PiArICAgICB4cHNndHJfd3JpdGVf
+cGh5KGd0cl9waHksIEwwX1RNX0lRX0lMTDIsIGlsbDEyMyk7Cj4+ICsgICAgIHhwc2d0cl93cml0
+ZV9waHkoZ3RyX3BoeSwgTDBfVE1fSVFfSUxMMywgaWxsMTIzKTsKPj4gKyAgICAgeHBzZ3RyX3dy
+aXRlX3BoeShndHJfcGh5LCBMMF9UTV9JUV9JTEw3LCAweGYzKTsKPj4gKyAgICAgeHBzZ3RyX3dy
+aXRlX3BoeShndHJfcGh5LCBMMF9UTV9FX0lMTDcsIDB4ZjMpOwo+PiArICAgICB4cHNndHJfd3Jp
+dGVfcGh5KGd0cl9waHksIEwwX1RNX0lMTDgsIDB4ZmYpOwo+PiArICAgICB4cHNndHJfd3JpdGVf
+cGh5KGd0cl9waHksIEwwX1RNX0lRX0lMTDgsIDB4ZjMpOwo+PiArICAgICB4cHNndHJfd3JpdGVf
+cGh5KGd0cl9waHksIEwwX1RNX0VfSUxMOCwgMHhmMyk7Cj4+ICsgICAgIHhwc2d0cl93cml0ZV9w
+aHkoZ3RyX3BoeSwgTDBfVE1fSVFfSUxMOSwgMSk7Cj4+ICsgICAgIHhwc2d0cl93cml0ZV9waHko
+Z3RyX3BoeSwgTDBfVE1fRV9JTEw5LCAxKTsKPj4gKyAgICAgeHBzZ3RyX2Nscl9zZXQoZ3RyX2Rl
+diwgVVBIWV9TUEFSRTAsIEJJVCg1KSwgMCk7Cj4+ICt9Cj4+ICsKPj4gK3N0YXRpYyB2b2lkIHhw
+c2d0cl9waHlfaWxsY2FsaWIoc3RydWN0IHhwc2d0cl9kZXYgKmd0cl9kZXYsCj4+ICsgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgdW5zaWduZWQgbG9uZyAqbGFuZXMsIGJvb2wgZ2Vu
+MikKPj4gK3sKPj4gKyAgICAgYm9vbCBsYXN0X29rW05VTV9MQU5FU10gPSB7IDAgfTsKPj4gKyAg
+ICAgaW50IHBhc3NbTlVNX0xBTkVTXSA9IHsgMCB9LCBhbHRwYXNzW05VTV9MQU5FU10gPSB7IDAg
+fTsKPj4gKyAgICAgaW50IGJlc3RbTlVNX0xBTkVTXSA9IHsgMCB9LCBhbHRiZXN0W05VTV9MQU5F
+U10gPSB7IDAgfTsKPj4gKyAgICAgdW5zaWduZWQgbG9uZyBsYW5lOwo+PiArICAgICBpbnQgaTsK
+Pj4gKwo+PiArICAgICAvKiBJbml0aWFsaXplIHRoZSBCSVNUICovCj4+ICsgICAgIHhwc2d0cl9j
+bHJfc2V0X2xhbmVzKGd0cl9kZXYsIGxhbmVzLCBMMF9CSVNUX0NUUkxfMSwgMHhlMCwgMCk7Cj4+
+ICsgICAgIHhwc2d0cl93cml0ZV9sYW5lcyhndHJfZGV2LCBsYW5lcywgTDBfQklTVF9GSUxMRVJf
+T1VULCAxKTsKPj4gKyAgICAgeHBzZ3RyX3dyaXRlX2xhbmVzKGd0cl9kZXYsIGxhbmVzLCBMMF9C
+SVNUX0ZPUkNFX01LX1JTVCwgMSk7Cj4+ICsgICAgIHhwc2d0cl93cml0ZV9sYW5lcyhndHJfZGV2
+LCBsYW5lcywgTDBfVE1fRElHXzIyLCAweDIwKTsKPj4gKyAgICAgeHBzZ3RyX3dyaXRlX2xhbmVz
+KGd0cl9kZXYsIGxhbmVzLCBMMF9CSVNUX0NUUkxfMiwgMCk7Cj4+ICsgICAgIHhwc2d0cl93cml0
+ZV9sYW5lcyhndHJfZGV2LCBsYW5lcywgTDBfQklTVF9SVU5fTEVOX0wsIDB4ZjQpOwo+PiArICAg
+ICB4cHNndHJfd3JpdGVfbGFuZXMoZ3RyX2RldiwgbGFuZXMsIEwwX0JJU1RfRVJSX0lOSl9QT0lO
+VF9MLCAwKTsKPj4gKyAgICAgeHBzZ3RyX3dyaXRlX2xhbmVzKGd0cl9kZXYsIGxhbmVzLCBMMF9C
+SVNUX1JVTkxFTl9FUlJfSU5KX0gsIDApOwo+PiArICAgICB4cHNndHJfd3JpdGVfbGFuZXMoZ3Ry
+X2RldiwgbGFuZXMsIEwwX0JJU1RfSURMRV9USU1FLCAwKTsKPj4gKyAgICAgeHBzZ3RyX3dyaXRl
+X2xhbmVzKGd0cl9kZXYsIGxhbmVzLCBMMF9CSVNUX01BUktFUl9MLCAweGZiKTsKPj4gKyAgICAg
+eHBzZ3RyX3dyaXRlX2xhbmVzKGd0cl9kZXYsIGxhbmVzLCBMMF9CSVNUX0lETEVfQ0hBUl9MLCAw
+eGZmKTsKPj4gKyAgICAgeHBzZ3RyX3dyaXRlX2xhbmVzKGd0cl9kZXYsIGxhbmVzLCBMMF9CSVNU
+X01BUktFUl9JRExFX0gsIDApOwo+PiArICAgICB4cHNndHJfd3JpdGVfbGFuZXMoZ3RyX2Rldiwg
+bGFuZXMsIEwwX0JJU1RfTE9XX1BVTFNFX1RJTUUsIDApOwo+PiArICAgICB4cHNndHJfd3JpdGVf
+bGFuZXMoZ3RyX2RldiwgbGFuZXMsIEwwX0JJU1RfVE9UQUxfUFVMU0VfVElNRSwgMCk7Cj4+ICsg
+ICAgIHhwc2d0cl93cml0ZV9sYW5lcyhndHJfZGV2LCBsYW5lcywgTDBfQklTVF9URVNUX1BBVF8x
+LCAweDRhKTsKPj4gKyAgICAgeHBzZ3RyX3dyaXRlX2xhbmVzKGd0cl9kZXYsIGxhbmVzLCBMMF9C
+SVNUX1RFU1RfUEFUXzIsIDB4NGEpOwo+PiArICAgICB4cHNndHJfd3JpdGVfbGFuZXMoZ3RyX2Rl
+diwgbGFuZXMsIEwwX0JJU1RfVEVTVF9QQVRfMywgMHg0YSk7Cj4+ICsgICAgIHhwc2d0cl93cml0
+ZV9sYW5lcyhndHJfZGV2LCBsYW5lcywgTDBfQklTVF9URVNUX1BBVF80LCAweDRhKTsKPj4gKyAg
+ICAgeHBzZ3RyX3dyaXRlX2xhbmVzKGd0cl9kZXYsIGxhbmVzLCBMMF9CSVNUX1RFU1RfUEFUX01T
+QlMsIDApOwo+PiArICAgICB4cHNndHJfd3JpdGVfbGFuZXMoZ3RyX2RldiwgbGFuZXMsIEwwX0JJ
+U1RfUEtUX05VTSwgMHgxNCk7Cj4+ICsgICAgIHhwc2d0cl93cml0ZV9sYW5lcyhndHJfZGV2LCBs
+YW5lcywgTDBfQklTVF9GUk1fSURMRV9USU1FLCAyKTsKPj4gKyAgICAgeHBzZ3RyX2Nscl9zZXRf
+bGFuZXMoZ3RyX2RldiwgbGFuZXMsIEwwX0JJU1RfQ1RSTF8xLCAweGUwLCAwKTsKPj4gKwo+PiAr
+ICAgICBmb3IgKGkgPSAwOyBpIDwgNjQ7IGkrKykgewo+PiArICAgICAgICAgICAgIGJvb2wgb2tb
+TlVNX0xBTkVTXTsKPj4gKwo+PiArICAgICAgICAgICAgIGZvcl9lYWNoX3NldF9iaXQobGFuZSwg
+bGFuZXMsIE5VTV9MQU5FUykKPj4gKyAgICAgICAgICAgICAgICAgICAgIHhwc2d0cl9waHlfc2V0
+X2lsbCgmZ3RyX2Rldi0+cGh5c1tsYW5lXSwgaSwgZ2VuMik7Cj4+ICsKPj4gKyAgICAgICAgICAg
+ICAvKiBSZXNldCBsYW5lcyAqLwo+PiArICAgICAgICAgICAgIHhwc2d0cl9jbHJfc2V0X2xhbmVz
+KGd0cl9kZXYsIGxhbmVzLCBMMF9UTV9BTkFfQllQXzcsIDB4MjAsCj4+ICsgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgMHgxMCk7Cj4+ICsgICAgICAgICAgICAgeHBzZ3RyX3dyaXRl
+KGd0cl9kZXYsIFVQSFlfU1BBUkUwLCAweDAwKTsKPj4gKyAgICAgICAgICAgICB4cHNndHJfd3Jp
+dGVfbGFuZXMoZ3RyX2RldiwgbGFuZXMsIEwwX1RNX0FOQV9CWVBfNCwgMHg0MCk7Cj4+ICsgICAg
+ICAgICAgICAgeHBzZ3RyX3dyaXRlX2xhbmVzKGd0cl9kZXYsIGxhbmVzLCBMMF9UTV9QTExfRElH
+XzMzLCAweDgwKTsKPj4gKyAgICAgICAgICAgICB4cHNndHJfd3JpdGUoZ3RyX2RldiwgVVBIWV9T
+UEFSRTAsIDB4MDQpOwo+PiArICAgICAgICAgICAgIHVkZWxheSg1MCk7Cj4+ICsgICAgICAgICAg
+ICAgaWYgKGdlbjIpCj4+ICsgICAgICAgICAgICAgICAgICAgICB4cHNndHJfd3JpdGUoZ3RyX2Rl
+diwgVVBIWV9TUEFSRTAsIDB4MGUpOwo+PiArICAgICAgICAgICAgIHhwc2d0cl93cml0ZShndHJf
+ZGV2LCBVUEhZX1NQQVJFMCwgMHgwNik7Cj4+ICsgICAgICAgICAgICAgaWYgKGdlbjIpIHsKPj4g
+KyAgICAgICAgICAgICAgICAgICAgIHhwc2d0cl93cml0ZV9sYW5lcyhndHJfZGV2LCBsYW5lcywg
+TDBfVFhfQU5BX1RNXzMsIDB4MDQpOwo+PiArICAgICAgICAgICAgICAgICAgICAgeHBzZ3RyX3dy
+aXRlKGd0cl9kZXYsIFVQSFlfU1BBUkUwLCAweDA3KTsKPj4gKyAgICAgICAgICAgICAgICAgICAg
+IHVkZWxheSg0MDApOwo+PiArICAgICAgICAgICAgICAgICAgICAgeHBzZ3RyX3dyaXRlX2xhbmVz
+KGd0cl9kZXYsIGxhbmVzLCBMMF9UWF9BTkFfVE1fMywgMHgwYyk7Cj4+ICsgICAgICAgICAgICAg
+ICAgICAgICB1ZGVsYXkoMTUpOwo+PiArICAgICAgICAgICAgICAgICAgICAgeHBzZ3RyX3dyaXRl
+KGd0cl9kZXYsIFVQSFlfU1BBUkUwLCAweDBmKTsKPj4gKyAgICAgICAgICAgICAgICAgICAgIHVk
+ZWxheSgxMDApOwo+PiArICAgICAgICAgICAgIH0KPj4gKwo+PiArICAgICAgICAgICAgIGlmICh4
+cHNndHJfd2FpdF9wbGxfbG9jayhndHJfZGV2LT5waHlzWzBdLnBoeSkpIHsKPj4gKyAgICAgICAg
+ICAgICAgICAgICAgIG1lbXNldChsYXN0X29rLCAwLCBzaXplb2YobGFzdF9vaykpOwo+PiArICAg
+ICAgICAgICAgICAgICAgICAgY29udGludWU7Cj4+ICsgICAgICAgICAgICAgfQo+PiArCj4+ICsg
+ICAgICAgICAgICAgdWRlbGF5KDUwKTsKPj4gKyAgICAgICAgICAgICB4cHNndHJfd3JpdGVfbGFu
+ZXMoZ3RyX2RldiwgbGFuZXMsIEwwX1RNX0FOQV9CWVBfNCwgMHhjMCk7Cj4+ICsgICAgICAgICAg
+ICAgeHBzZ3RyX3dyaXRlX2xhbmVzKGd0cl9kZXYsIGxhbmVzLCBMMF9UTV9BTkFfQllQXzQsIDB4
+ODApOwo+PiArICAgICAgICAgICAgIHhwc2d0cl93cml0ZV9sYW5lcyhndHJfZGV2LCBsYW5lcywg
+TDBfVE1fUExMX0RJR18zMywgMHhjMCk7Cj4+ICsgICAgICAgICAgICAgdWRlbGF5KDUwKTsKPj4g
+KyAgICAgICAgICAgICB4cHNndHJfd3JpdGVfbGFuZXMoZ3RyX2RldiwgbGFuZXMsIEwwX1RNX1BM
+TF9ESUdfMzMsIDB4ODApOwo+PiArICAgICAgICAgICAgIHVkZWxheSg1MCk7Cj4+ICsgICAgICAg
+ICAgICAgeHBzZ3RyX3dyaXRlX2xhbmVzKGd0cl9kZXYsIGxhbmVzLCBMMF9UTV9BTkFfQllQXzQs
+IDApOwo+PiArICAgICAgICAgICAgIHhwc2d0cl93cml0ZV9sYW5lcyhndHJfZGV2LCBsYW5lcywg
+TDBfVE1fUExMX0RJR18zMywgMCk7Cj4+ICsgICAgICAgICAgICAgdWRlbGF5KDUwMCk7Cj4+ICsK
+Pj4gKyAgICAgICAgICAgICAvKiBEbyB0aGUgQklTVCAqLwo+PiArICAgICAgICAgICAgIGZvcl9l
+YWNoX3NldF9iaXQobGFuZSwgbGFuZXMsIE5VTV9MQU5FUykgewo+PiArICAgICAgICAgICAgICAg
+ICAgICAgc3RydWN0IHhwc2d0cl9waHkgKmd0cl9waHkgPSAmZ3RyX2Rldi0+cGh5c1tsYW5lXTsK
+Pj4gKyAgICAgICAgICAgICAgICAgICAgIHUzMiBwYWNrZXRzLCBlcnJvcnM7Cj4+ICsKPj4gKyAg
+ICAgICAgICAgICAgICAgICAgIHhwc2d0cl9waHlfaW5pdF9idXNfd2lkdGgoZ3RyX3BoeSwgUFJP
+VF9CVVNfV0lEVEhfMTApOwo+PiArICAgICAgICAgICAgICAgICAgICAgeHBzZ3RyX3BoeV9zZXRf
+bG9vcGJhY2soZ3RyX3BoeSwgdHJ1ZSk7Cj4+ICsgICAgICAgICAgICAgICAgICAgICB4cHNndHJf
+d3JpdGVfcGh5KGd0cl9waHksIEwwX1RNX0RJR18yMiwgMHgyMCk7Cj4+ICsgICAgICAgICAgICAg
+ICAgICAgICB4cHNndHJfY2xyX3NldF9waHkoZ3RyX3BoeSwgTDBfQklTVF9DVFJMXzEsIDAsIDEp
+Owo+PiArCj4+ICsgICAgICAgICAgICAgICAgICAgICB1ZGVsYXkoMjAwKTsKPj4gKyAgICAgICAg
+ICAgICAgICAgICAgIHhwc2d0cl93cml0ZV9waHkoZ3RyX3BoeSwgTDBfQklTVF9DVFJMXzEsIDAp
+Owo+PiArICAgICAgICAgICAgICAgICAgICAgcGFja2V0cyA9IHhwc2d0cl9yZWFkX3BoeShndHJf
+cGh5LCBMMF9CSVNUX1BLVF9DVFJfTCk7Cj4+ICsgICAgICAgICAgICAgICAgICAgICBwYWNrZXRz
+IHw9IHhwc2d0cl9yZWFkX3BoeShndHJfcGh5LCBMMF9CSVNUX1BLVF9DVFJfSCkKPj4gPDwgODsK
+Pj4gKyAgICAgICAgICAgICAgICAgICAgIGVycm9ycyA9IHhwc2d0cl9yZWFkX3BoeShndHJfcGh5
+LCBMMF9CSVNUX0VSUl9DVFJfTCk7Cj4+ICsgICAgICAgICAgICAgICAgICAgICBlcnJvcnMgfD0g
+eHBzZ3RyX3JlYWRfcGh5KGd0cl9waHksIEwwX0JJU1RfRVJSX0NUUl9IKQo+PiA8PCA4Owo+PiAr
+ICAgICAgICAgICAgICAgICAgICAgb2tbbGFuZV0gPSBwYWNrZXRzICYmICFlcnJvcnM7Cj4+ICsK
+Pj4gKyAgICAgICAgICAgICAgICAgICAgIGRldl9kYmcoZ3RyX2Rldi0+ZGV2LAo+PiArICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAibGFuZSAlbHUgSUxMICVkIHBhY2tldHMgJTEwdSBlcnJv
+cnMgJTEwdVxuIiwKPj4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbGFuZSwgaSwgcGFj
+a2V0cywgZXJyb3JzKTsKPj4gKyAgICAgICAgICAgICB9Cj4+ICsKPj4gKyAgICAgICAgICAgICB4
+cHNndHJfd3JpdGVfbGFuZXMoZ3RyX2RldiwgbGFuZXMsIEwwX0JJU1RfQ1RSTF8xLCAwKTsKPj4g
+KyAgICAgICAgICAgICB4cHNndHJfd3JpdGUoZ3RyX2RldiwgVVBIWV9TUEFSRTAsIDB4MDApOwo+
+PiArICAgICAgICAgICAgIHhwc2d0cl93cml0ZShndHJfZGV2LCBVUEhZX1NQQVJFMCwgMHgwMik7
+Cj4+ICsKPj4gKyAgICAgICAgICAgICBmb3JfZWFjaF9zZXRfYml0KGxhbmUsIGxhbmVzLCBOVU1f
+TEFORVMpIHsKPj4gKyAgICAgICAgICAgICAgICAgICAgIHBhc3NbbGFuZV0gKz0gb2tbbGFuZV0g
+JiYgbGFzdF9va1tsYW5lXTsKPj4gKyAgICAgICAgICAgICAgICAgICAgIGlmIChwYXNzW2xhbmVd
+IDwgNCkgewo+PiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICBpZiAoIW9rW2xhbmVdICYm
+IGkgPiAyKSB7Cj4+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgaWYgKGFs
+dHBhc3NbbGFuZV0gPCBwYXNzW2xhbmVdKSB7Cj4+ICsgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICBhbHRwYXNzW2xhbmVdID0gcGFzc1tsYW5lXTsKPj4gKyAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGFsdGJlc3RbbGFuZV0gPQo+
+PiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAo
+aSAtIDEpIC0gKHBhc3NbbGFuZV0gKyAxKSAvIDI7Cj4+ICsgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgfQo+PiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+IHBhc3NbbGFuZV0gPSAwOwo+PiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9Cj4+ICsg
+ICAgICAgICAgICAgICAgICAgICB9IGVsc2UgaWYgKCFiZXN0W2xhbmVdICYmICghb2tbbGFuZV0g
+fHwgaSA9PSA2MykgJiYKPj4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbGFzdF9v
+a1tsYW5lXSkgewo+PiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICBiZXN0W2xhbmVdID0g
+KGkgLSAxKSAtIChwYXNzW2xhbmVdICsgMSkgLyAyOwo+PiArICAgICAgICAgICAgICAgICAgICAg
+fQo+PiArICAgICAgICAgICAgIH0KPj4gKwo+PiArICAgICAgICAgICAgIG1lbWNweShsYXN0X29r
+LCBvaywgc2l6ZW9mKG9rKSk7Cj4+ICsgICAgIH0KPj4gKwo+PiArICAgICBmb3JfZWFjaF9zZXRf
+Yml0KGxhbmUsIGxhbmVzLCBOVU1fTEFORVMpIHsKPj4gKyAgICAgICAgICAgICBkZXZfZGJnKGd0
+cl9kZXYtPmRldiwgImxhbmUgJWx1IElMTCBiZXN0ICVkIGFsdCBiZXN0ICVkXG4iLAo+PiArICAg
+ICAgICAgICAgICAgICAgICAgbGFuZSwgYmVzdFtsYW5lXSwgYWx0YmVzdFtsYW5lXSk7Cj4+ICsK
+Pj4gKyAgICAgICAgICAgICB4cHNndHJfcGh5X3NldF9pbGwoJmd0cl9kZXYtPnBoeXNbbGFuZV0s
+Cj4+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGJlc3RbbGFuZV0gPzogYWx0YmVz
+dFtsYW5lXSwgZ2VuMik7Cj4+ICsgICAgIH0KPj4gKwo+PiArICAgICAvKiBDbGVhbiB1cCAqLwo+
+PiArICAgICB4cHNndHJfY2xyX3NldF9sYW5lcyhndHJfZGV2LCBsYW5lcywgTDBfVE1fQU5BX0JZ
+UF83LCAweDMwLCAwKTsKPj4gKyAgICAgeHBzZ3RyX3dyaXRlKGd0cl9kZXYsIFVQSFlfU1BBUkUw
+LCAwKTsKPj4gKyAgICAgeHBzZ3RyX3dyaXRlX2xhbmVzKGd0cl9kZXYsIGxhbmVzLCBMMF9CSVNU
+X0NUUkxfMSwgMCk7Cj4+ICsgICAgIHhwc2d0cl93cml0ZV9sYW5lcyhndHJfZGV2LCBsYW5lcywg
+TDBfQklTVF9DVFJMXzIsIDApOwo+PiArICAgICB4cHNndHJfd3JpdGVfbGFuZXMoZ3RyX2Rldiwg
+bGFuZXMsIEwwX0JJU1RfUlVOX0xFTl9MLCAwKTsKPj4gKyAgICAgeHBzZ3RyX3dyaXRlX2xhbmVz
+KGd0cl9kZXYsIGxhbmVzLCBMMF9CSVNUX0VSUl9JTkpfUE9JTlRfTCwgMCk7Cj4+ICsgICAgIHhw
+c2d0cl93cml0ZV9sYW5lcyhndHJfZGV2LCBsYW5lcywgTDBfQklTVF9SVU5MRU5fRVJSX0lOSl9I
+LCAwKTsKPj4gKyAgICAgeHBzZ3RyX3dyaXRlX2xhbmVzKGd0cl9kZXYsIGxhbmVzLCBMMF9CSVNU
+X0lETEVfVElNRSwgMCk7Cj4+ICsgICAgIHhwc2d0cl93cml0ZV9sYW5lcyhndHJfZGV2LCBsYW5l
+cywgTDBfQklTVF9NQVJLRVJfTCwgMCk7Cj4+ICsgICAgIHhwc2d0cl93cml0ZV9sYW5lcyhndHJf
+ZGV2LCBsYW5lcywgTDBfQklTVF9JRExFX0NIQVJfTCwgMCk7Cj4+ICsgICAgIHhwc2d0cl93cml0
+ZV9sYW5lcyhndHJfZGV2LCBsYW5lcywgTDBfQklTVF9NQVJLRVJfSURMRV9ILCAwKTsKPj4gKyAg
+ICAgeHBzZ3RyX3dyaXRlX2xhbmVzKGd0cl9kZXYsIGxhbmVzLCBMMF9CSVNUX0xPV19QVUxTRV9U
+SU1FLCAwKTsKPj4gKyAgICAgeHBzZ3RyX3dyaXRlX2xhbmVzKGd0cl9kZXYsIGxhbmVzLCBMMF9C
+SVNUX1RPVEFMX1BVTFNFX1RJTUUsIDApOwo+PiArICAgICB4cHNndHJfd3JpdGVfbGFuZXMoZ3Ry
+X2RldiwgbGFuZXMsIEwwX0JJU1RfVEVTVF9QQVRfMSwgMCk7Cj4+ICsgICAgIHhwc2d0cl93cml0
+ZV9sYW5lcyhndHJfZGV2LCBsYW5lcywgTDBfQklTVF9URVNUX1BBVF8yLCAwKTsKPj4gKyAgICAg
+eHBzZ3RyX3dyaXRlX2xhbmVzKGd0cl9kZXYsIGxhbmVzLCBMMF9CSVNUX1RFU1RfUEFUXzMsIDAp
+Owo+PiArICAgICB4cHNndHJfd3JpdGVfbGFuZXMoZ3RyX2RldiwgbGFuZXMsIEwwX0JJU1RfVEVT
+VF9QQVRfNCwgMCk7Cj4+ICsgICAgIHhwc2d0cl93cml0ZV9sYW5lcyhndHJfZGV2LCBsYW5lcywg
+TDBfQklTVF9URVNUX1BBVF9NU0JTLCAwKTsKPj4gKyAgICAgeHBzZ3RyX3dyaXRlX2xhbmVzKGd0
+cl9kZXYsIGxhbmVzLCBMMF9CSVNUX1BLVF9OVU0sIDApOwo+PiArICAgICB4cHNndHJfd3JpdGVf
+bGFuZXMoZ3RyX2RldiwgbGFuZXMsIEwwX0JJU1RfRlJNX0lETEVfVElNRSwgMCk7Cj4+ICsgICAg
+IHhwc2d0cl93cml0ZV9sYW5lcyhndHJfZGV2LCBsYW5lcywgTDBfQklTVF9QS1RfQ1RSX0wsIDAp
+Owo+PiArICAgICB4cHNndHJfd3JpdGVfbGFuZXMoZ3RyX2RldiwgbGFuZXMsIEwwX0JJU1RfUEtU
+X0NUUl9ILCAwKTsKPj4gKyAgICAgeHBzZ3RyX3dyaXRlX2xhbmVzKGd0cl9kZXYsIGxhbmVzLCBM
+MF9CSVNUX0VSUl9DVFJfTCwgMCk7Cj4+ICsgICAgIHhwc2d0cl93cml0ZV9sYW5lcyhndHJfZGV2
+LCBsYW5lcywgTDBfQklTVF9FUlJfQ1RSX0gsIDApOwo+PiArICAgICB4cHNndHJfd3JpdGVfbGFu
+ZXMoZ3RyX2RldiwgbGFuZXMsIEwwX0JJU1RfRklMTEVSX09VVCwgMSk7Cj4+ICsgICAgIHhwc2d0
+cl93cml0ZV9sYW5lcyhndHJfZGV2LCBsYW5lcywgTDBfQklTVF9GT1JDRV9NS19SU1QsIDApOwo+
+PiArICAgICB4cHNndHJfd3JpdGVfbGFuZXMoZ3RyX2RldiwgbGFuZXMsIEwwX1RNX0RJR18yMiwg
+MCk7Cj4+ICsKPj4gKyAgICAgZm9yX2VhY2hfc2V0X2JpdChsYW5lLCBsYW5lcywgTlVNX0xBTkVT
+KSB7Cj4+ICsgICAgICAgICAgICAgc3RydWN0IHhwc2d0cl9waHkgKmd0cl9waHkgPSAmZ3RyX2Rl
+di0+cGh5c1tsYW5lXTsKPj4gKwo+PiArICAgICAgICAgICAgIHhwc2d0cl9waHlfaW5pdF9idXNf
+d2lkdGgoZ3RyX3BoeSwgUFJPVF9CVVNfV0lEVEhfMjApOwo+PiArICAgICAgICAgICAgIHhwc2d0
+cl9waHlfc2V0X2xvb3BiYWNrKGd0cl9waHksIGZhbHNlKTsKPj4gKyAgICAgfQo+PiArfQo+PiAr
+Cj4+ICBzdGF0aWMgaW50IHhwc2d0cl9jb21tb25faW5pdChzdHJ1Y3QgeHBzZ3RyX3BoeSAqZ3Ry
+X3BoeSkKPj4gIHsKPj4gICAgICAgaW50IHJldDsKPj4gQEAgLTU1Myw2ICs4NzUsMzcgQEAgc3Rh
+dGljIHZvaWQgeHBzZ3RyX3BoeV9pbml0X3NhdGEoc3RydWN0IHhwc2d0cl9waHkKPj4gKmd0cl9w
+aHkpCj4+ICB7Cj4+ICAgICAgIHN0cnVjdCB4cHNndHJfZGV2ICpndHJfZGV2ID0gZ3RyX3BoeS0+
+ZGV2Owo+Pgo+PiArICAgICBpZiAoIXhwc2d0cl9pbGxfY2FsaWJyYXRlZChndHJfcGh5KSkgewo+
+PiArICAgICAgICAgICAgIERFQ0xBUkVfQklUTUFQKGxhbmVzLCBOVU1fTEFORVMpID0geyAwIH07
+Cj4+ICsKPj4gKyAgICAgICAgICAgICB4cHNndHJfaW5pdF9pbGwoZ3RyX3BoeSk7Cj4+ICsgICAg
+ICAgICAgICAgeHBzZ3RyX3dyaXRlX3BoeShndHJfcGh5LCBMMF9UTV9FX0lMTDMsIDEwMCk7Cj4+
+ICsgICAgICAgICAgICAgeHBzZ3RyX2Nscl9zZXRfcGh5KGd0cl9waHksIEwwX1RNX0lMTDExLCAw
+eGYwLCAweDIwKTsKPj4gKwo+PiArICAgICAgICAgICAgIF9fc2V0X2JpdChndHJfcGh5LT5sYW5l
+LCBsYW5lcyk7Cj4+ICsgICAgICAgICAgICAgeHBzZ3RyX3BoeV9pbGxjYWxpYihndHJfZGV2LCBs
+YW5lcywgZmFsc2UpOwo+PiArICAgICAgICAgICAgIHhwc2d0cl9waHlfc2V0X2lsbChndHJfcGh5
+LCA3LCB0cnVlKTsKPj4gKyAgICAgfQo+PiArCj4+ICsgICAgIC8qIERpc2FibGUgU1NDICovCj4+
+ICsgICAgIHhwc2d0cl93cml0ZV9waHkoZ3RyX3BoeSwgTDBfUExMX0ZCRElWX0ZSQUNfM19NU0Is
+Cj4+IFRNX0ZPUkNFX0VOX0ZSQUMpOwo+PiArICAgICB4cHNndHJfY2xyX3NldF9waHkoZ3RyX3Bo
+eSwgTDBfUExMX1NTX1NURVBfU0laRV8zX01TQiwgMCwKPj4gVE1fRk9SQ0VfRU4pOwo+PiArCj4+
+ICsgICAgIC8qIERpc2FibGUgVHggZGVlbXBoYXNpcyAqLwo+PiArICAgICB4cHNndHJfd3JpdGVf
+cGh5KGd0cl9waHksIEwwX1RNX0NEUjUsCj4+ICsgICAgICAgICAgICAgICAgICAgICAgRklFTERf
+UFJFUChMMF9UTV9DRFI1X0ZQSExfRlNNX0FDQ19DWUNMRVMsCj4+IDcpIHwKPj4gKyAgICAgICAg
+ICAgICAgICAgICAgICBGSUVMRF9QUkVQKEwwX1RNX0NEUjVfRkZMX1BIMF9JTlRfR0FJTiwgNikp
+Owo+PiArICAgICB4cHNndHJfd3JpdGVfcGh5KGd0cl9waHksIEwwX1RNX0NEUjE2LCAxMik7Cj4+
+ICsKPj4gKyAgICAgLyogQ29uZmlndXJlIGVxdWFsaXphdGlvbiAqLwo+PiArICAgICB4cHNndHJf
+d3JpdGVfcGh5KGd0cl9waHksIEwwX1RYX0FOQV9UTV8xMTgsCj4+ICsgICAgICAgICAgICAgICAg
+ICAgICAgTDBfVFhfQU5BX1RNXzExOF9GT1JDRV8xN18wKTsKPj4gKyAgICAgeHBzZ3RyX2Nscl9z
+ZXRfcGh5KGd0cl9waHksIEwwX1RNX0VRMCwgMCwKPj4gTDBfVE1fRVEwX0VRX1NURzJfQ1RSTF9C
+WVApOwo+PiArICAgICB4cHNndHJfY2xyX3NldF9waHkoZ3RyX3BoeSwgTDBfVE1fRVExLAo+PiBM
+MF9UTV9FUTFfRVFfU1RHMl9STF9QUk9HLAo+PiArICAgICAgICAgICAgICAgICAgICAgICAgRklF
+TERfUFJFUChMMF9UTV9FUTFfRVFfU1RHMl9STF9QUk9HLCAyKSB8Cj4+ICsgICAgICAgICAgICAg
+ICAgICAgICAgICBMMF9UTV9FUTFfRVFfU1RHMl9QUkVBTVBfTU9ERV9WQUwpOwo+PiArICAgICB4
+cHNndHJfd3JpdGVfcGh5KGd0cl9waHksIEwwX1RYX0FOQV9UTV8xOCwgMik7IC8qIC0zLjUgZEIg
+ZGVlbXBoYXNpcyAqLwo+PiArCj4+ICAgICAgIHhwc2d0cl9ieXBhc3Nfc2NyYW1ibGVyXzhiMTBi
+KGd0cl9waHkpOwo+Pgo+PiAgICAgICB3cml0ZWwoZ3RyX3BoeS0+bGFuZSwgZ3RyX2Rldi0+c2lv
+dSArIFNBVEFfQ09OVFJPTF9PRkZTRVQpOwo+PiBAQCAtNTY1LDYgKzkxOCw2NCBAQCBzdGF0aWMg
+dm9pZCB4cHNndHJfcGh5X2luaXRfc2dtaWkoc3RydWN0IHhwc2d0cl9waHkKPj4gKmd0cl9waHkp
+Cj4+ICAgICAgIHhwc2d0cl9ieXBhc3Nfc2NyYW1ibGVyXzhiMTBiKGd0cl9waHkpOwo+PiAgfQo+
+Pgo+PiArLyogUENJZS1zcGVjaWZpYyBpbml0aWFsaXphdGlvbi4gKi8KPj4gK3N0YXRpYyBpbnQg
+eHBzZ3RyX3BoeV9pbml0X3BjaWUoc3RydWN0IHhwc2d0cl9waHkgKmd0cl9waHkpCj4+ICt7Cj4+
+ICsgICAgIHN0cnVjdCB4cHNndHJfZGV2ICpndHJfZGV2ID0gZ3RyX3BoeS0+ZGV2Owo+PiArICAg
+ICBERUNMQVJFX0JJVE1BUChsYW5lcywgTlVNX0xBTkVTKSA9IHsgMCB9Owo+PiArICAgICB1bnNp
+Z25lZCBsb25nIGxhbmU7Cj4+ICsgICAgIGJvb2wgY2FsaWJyYXRlZCA9IGZhbHNlOwo+PiArCj4+
+ICsgICAgIHhwc2d0cl9jbHJfc2V0X3BoeShndHJfcGh5LCBMMF9UTV9BVVhfMCwgMCwgMHgyMCk7
+Cj4+ICsKPj4gKyAgICAgZm9yIChsYW5lID0gMDsgbGFuZSA8IE5VTV9MQU5FUzsgbGFuZSsrKSB7
+Cj4+ICsgICAgICAgICAgICAgc3RydWN0IHhwc2d0cl9waHkgKmd0cl9waHkgPSAmZ3RyX2Rldi0+
+cGh5c1tsYW5lXTsKPj4gKwo+PiArICAgICAgICAgICAgIGlmIChndHJfcGh5LT5wcm90b2NvbCAh
+PSBJQ01fUFJPVE9DT0xfUENJRSkKPj4gKyAgICAgICAgICAgICAgICAgICAgIGNvbnRpbnVlOwo+
+PiArCj4+ICsgICAgICAgICAgICAgX19zZXRfYml0KGxhbmUsIGxhbmVzKTsKPj4gKyAgICAgICAg
+ICAgICBjYWxpYnJhdGVkID0gY2FsaWJyYXRlZCB8fCB4cHNndHJfaWxsX2NhbGlicmF0ZWQoZ3Ry
+X3BoeSk7Cj4+ICsgICAgIH0KPj4gKwo+PiArICAgICBpZiAoY2FsaWJyYXRlZCkKPj4gKyAgICAg
+ICAgICAgICByZXR1cm4gMDsKPj4gKwo+PiArICAgICAvKiBXcml0ZSBkZWZhdWx0IElMTCBjb25m
+aWcgKi8KPj4gKyAgICAgZm9yX2VhY2hfc2V0X2JpdChsYW5lLCBsYW5lcywgTlVNX0xBTkVTKSB7
+Cj4+ICsgICAgICAgICAgICAgc3RydWN0IHhwc2d0cl9waHkgKnAgPSAmZ3RyX2Rldi0+cGh5c1ts
+YW5lXTsKPj4gKwo+PiArICAgICAgICAgICAgIGlmIChsYW5lICE9IGd0cl9waHktPmxhbmUpIHsK
+Pj4gKyAgICAgICAgICAgICAgICAgICAgIGludCByZXQgPSB4cHNndHJfY29tbW9uX2luaXQocCk7
+Cj4+ICsKPj4gKyAgICAgICAgICAgICAgICAgICAgIGlmIChyZXQpCj4+ICsgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgIHJldHVybiByZXQ7Cj4+ICsgICAgICAgICAgICAgfQo+PiArCj4+ICsg
+ICAgICAgICAgICAgeHBzZ3RyX2luaXRfaWxsKHApOwo+PiArICAgICAgICAgICAgIHhwc2d0cl93
+cml0ZV9waHkocCwgTDBfVE1fRV9JTEwzLCAwKTsKPj4gKyAgICAgICAgICAgICB4cHNndHJfY2xy
+X3NldF9waHkocCwgTDBfVE1fTUlTQzIsIDAsCj4+ICsgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgIEwwX1RNX01JU0MyX0lMTF9DQUxfQllQQVNTKTsKPj4gKyAgICAgfQo+PiArCj4+ICsg
+ICAgIC8qIFBlcmZvcm0gdGhlIElMTCBjYWxpYnJhdGlvbiBwcm9jZWR1cmUgKi8KPj4gKyAgICAg
+eHBzZ3RyX3BoeV9pbGxjYWxpYihndHJfZGV2LCBsYW5lcywgZmFsc2UpOwo+PiArICAgICB4cHNn
+dHJfcGh5X2lsbGNhbGliKGd0cl9kZXYsIGxhbmVzLCB0cnVlKTsKPj4gKwo+PiArICAgICAvKiBE
+aXNhYmxlIFBDSWUgRUNPICovCj4+ICsgICAgIHdyaXRlbCgxLCBndHJfZGV2LT5zaW91ICsgU0lP
+VV9FQ09fMCk7Cj4+ICsgICAgIHJldHVybiAwOwo+PiArfQo+PiArCj4+ICsvKiBVU0Itc3BlY2lm
+aWMgaW5pdGlhbGl6YXRpb24uICovCj4+ICtzdGF0aWMgdm9pZCB4cHNndHJfcGh5X2luaXRfdXNi
+KHN0cnVjdCB4cHNndHJfcGh5ICpndHJfcGh5KQo+PiArewo+PiArICAgICB4cHNndHJfY2xyX3Nl
+dF9waHkoZ3RyX3BoeSwgTDBfVE1fQVVYXzAsIDAsIDB4MjApOwo+PiArICAgICB4cHNndHJfd3Jp
+dGVfcGh5KGd0cl9waHksIEwwX1RNX0lRX0lMTDgsIDB4ZjMpOwo+PiArICAgICB4cHNndHJfd3Jp
+dGVfcGh5KGd0cl9waHksIEwwX1RNX0VfSUxMOCwgMHhmMyk7Cj4+ICsgICAgIHhwc2d0cl9waHlf
+c2V0X2lsbChndHJfcGh5LCA3LCBmYWxzZSk7Cj4+ICt9Cj4+ICsKPj4gIC8qIENvbmZpZ3VyZSBU
+WCBkZS1lbXBoYXNpcyBhbmQgbWFyZ2luaW5nIGZvciBEUC4gKi8KPj4gIHN0YXRpYyB2b2lkIHhw
+c2d0cl9waHlfY29uZmlndXJlX2RwKHN0cnVjdCB4cHNndHJfcGh5ICpndHJfcGh5LCB1bnNpZ25l
+ZCBpbnQgcHJlLAo+PiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdW5zaWduZWQg
+aW50IHZvbHRhZ2UpCj4+IEBAIC03MTAsNiArMTEyMSwxMCBAQCBzdGF0aWMgaW50IHhwc2d0cl9w
+aHlfaW5pdChzdHJ1Y3QgcGh5ICpwaHkpCj4+ICAgICAgICAgICAgICAgeHBzZ3RyX3BoeV9pbml0
+X2RwKGd0cl9waHkpOwo+PiAgICAgICAgICAgICAgIGJyZWFrOwo+Pgo+PiArICAgICBjYXNlIElD
+TV9QUk9UT0NPTF9QQ0lFOgo+PiArICAgICAgICAgICAgIHJldCA9IHhwc2d0cl9waHlfaW5pdF9w
+Y2llKGd0cl9waHkpOwo+PiArICAgICAgICAgICAgIGJyZWFrOwo+PiArCj4+ICAgICAgIGNhc2Ug
+SUNNX1BST1RPQ09MX1NBVEE6Cj4+ICAgICAgICAgICAgICAgeHBzZ3RyX3BoeV9pbml0X3NhdGEo
+Z3RyX3BoeSk7Cj4+ICAgICAgICAgICAgICAgYnJlYWs7Cj4+IEBAIC03MTcsNiArMTEzMiwxMCBA
+QCBzdGF0aWMgaW50IHhwc2d0cl9waHlfaW5pdChzdHJ1Y3QgcGh5ICpwaHkpCj4+ICAgICAgIGNh
+c2UgSUNNX1BST1RPQ09MX1NHTUlJOgo+PiAgICAgICAgICAgICAgIHhwc2d0cl9waHlfaW5pdF9z
+Z21paShndHJfcGh5KTsKPj4gICAgICAgICAgICAgICBicmVhazsKPj4gKwo+PiArICAgICBjYXNl
+IElDTV9QUk9UT0NPTF9VU0I6Cj4+ICsgICAgICAgICAgICAgeHBzZ3RyX3BoeV9pbml0X3VzYihn
+dHJfcGh5KTsKPj4gKyAgICAgICAgICAgICBicmVhazsKPj4gICAgICAgfQo+Pgo+PiAgb3V0Ogo+
+PiAtLQo+PiAyLjM1LjEuMTMyMC5nYzQ1MjY5NTM4Ny5kaXJ0eQo+IAoKLS0gCmxpbnV4LXBoeSBt
+YWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5p
+bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
