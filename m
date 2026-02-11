@@ -4,80 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E5760ECD6E0
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Feb 2026 19:45:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F3227ECD6E9
+	for <linux-phy@archiver.kernel.org>; Wed, 11 Feb 2026 20:31:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iYO9zRz7PIzG8c0e7+HCyxoz//itZExeg43o64rwcQE=; b=jwMarZyimXl204
-	pfkCIjTK+P05/VCOsNmamhTRS+ezkYG0dADXdGx5torAo7OBQ2DR6igU9GE69bZNg0IC8BbyP16/6
-	ncKMxnTE18Z1kxnyEOdF5LoUHd75WG/Fvcbc8cvp9V6BslA606xK3BV47jQMWb3MQVaAGiVQRB+ax
-	UuoTydbLVROhFbpVA/vlmRgL50VPt6qYeD+6YWHDitLvVVJ28m5MdFq0yRh+nWs2S85rSJEN3LvPC
-	tTVEXiPDwyW9DkHb/Fnxd6JU6lK0Dqyxi2Ul1KHbCamTXNY320OvcKX4ZBIAwAY9J9TxNbsRg+IEh
-	O3NoOYXxxv9ZilF0dNJw==;
+	List-Owner; bh=9j8mAHJGmpM0oN1bZr9Vb0Liv917LoIDN/Ivm+l4szc=; b=eIHwIJmgXVoo1T
+	cvRNcDJnBUR/hUWnV7NqZitmPAcDC/RPppnUD38y07QXVZd8Qjwiub1io3tqD2gkibn/YbRIvpVTf
+	lZ0mrm1/6iIKlBjW+LFhwWaiA+m5scvFEmO3oZofBeP7xNDDnuN5k3zAJDWOzfTZzuQP/zdCDmi9Z
+	46Os/RgxTQ4lvZe1Zr1ESggDIpLg7N2HANRIbIVcoJDIKWpaXkHVPljbfwOi6zHOVBheVV4JoHztl
+	1b0GvdImvyME9G0psUU1Aw8vH9DropeZzMpB5O3PiDYL+uuPY0zcesdsF1m1oqibmJFlcG1VVGrDJ
+	/0WbQna9C/h4mRKfhc2Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vqG9l-00000000zpY-26hX;
-	Wed, 11 Feb 2026 19:45:49 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1vqGrx-000000011Wt-1J1C;
+	Wed, 11 Feb 2026 20:31:29 +0000
+Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vqG9j-00000000zpC-31PC
+	id 1vqGrs-000000011WV-3bT8
 	for linux-phy@lists.infradead.org;
-	Wed, 11 Feb 2026 19:45:49 +0000
-Received: by mail-wm1-x341.google.com with SMTP id 5b1f17b1804b1-4806b8fca44so6171085e9.0
-        for <linux-phy@lists.infradead.org>; Wed, 11 Feb 2026 11:45:46 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1770839145; x=1771443945; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=sATJTWP6VGxlaE427y6MSJ+Bn4pIXNhYj+8pUC44xQ4=;
-        b=iTRGWHKwM03JUjBWHJGb5tvu/zdrIUEYVNyxi4lRUkByRuooQdY82z3B1MUX/aUKbm
-         VlumitRBMY7Er7cavdAr9tM3pzH3EVzO7WWfcQp+wkhR/xMmE0dzVu+X3nI0KU/ed+I6
-         yYgk8vtTq1YRCXNSfRiXdDuvdXluUxyJ1kbglzGMgUnpi6/yEJH/RlM3ugFOpSqZsLhd
-         tswA26Ffutmo8a+YyGk7lW5xUs7bVbj5o1YfomcqvwzcjYdNOItIXgn16LjiYwHFgeT/
-         Fd5qeT4ls2xJ8ytDy630vAZzjbaRuAQmVCvv8z0MctMHxpgYkzAMoi4gEqo3orCnhvat
-         cWCw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1770839145; x=1771443945;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=sATJTWP6VGxlaE427y6MSJ+Bn4pIXNhYj+8pUC44xQ4=;
-        b=Qf9dYUKIR4RNKnuzk+dhzuli9B0rAI4/T/ry7IgXqi1LgjaoRptEDdNSyoO7z+vn+E
-         NbNANCnSfG7saMnym4P4hN4a93iWrV5iMRU9fDwFtcqtytXqtJW7dEj9nEU53t+jCXkh
-         +KX7FheEdUO98hoeJhnR8UM4l0RfYaRm3IS0tzqV8cCGqoqF1eLgrtCne8gfcK2h9mk1
-         Iftihh0eck3nPsuEtGspEyFAr8QCtHamWhWkGJkDtzxLXRI+YCkWdXZkIJgyFtxWqb8d
-         OsRdWqcgE5oIQdWWK0wzWkbNY5bXLS2c8y3b2L01Fjk4do+dUO2ytFmU4u3AKO/ic4F6
-         bIjg==
-X-Forwarded-Encrypted: i=1; AJvYcCWKUnqub85tvhR6HoDH9XqUfN+ucQHBapE3S2gPDi0lSqbIHFhIlL/7tMAupLPA/umZbuDHemD9xdA=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyxbgXLJqTW5IHQWW+mvcD1gSO+JT3EXJdy0ydQT11/QzteCId+
-	MVTg/RK1TI1MVOk438mzh/wp+oAUsMGIJYuuPaMsEDHrrBwjfhn2dYVH
-X-Gm-Gg: AZuq6aJqGZ4EoxiIj2hPpD+vuTwLtZNPf1WroYx2JeMeZ5Gt34LS02tnRNVN2OIJ8q3
-	hRCx5f4Vk6CVgRq3nADgeVU0muy/KrpJiV+WkKlwhhLYy13tz0ZWL59zppp6iP5EP3ADrjunZmL
-	a7yqIkCcb8A/QfGJGbEUenCUzZ9YNUlCBZQSmhNU1xa3LpvhtvfzGDDnK29GnMJK/7aHMuTU23j
-	ZhysbZKwrU1IhXYxW7MkZlEtQ1JAQwZSLnpLQHkfqe13Y1uRasSb6bJUPVivXuw1axfBqIn8I/2
-	uETNR7ewsvgYp9p13m0htuFBAIIbClQVNv2IkyXpuyeueBgdtoqTIFXCktwZbP8K6DNLJADgT8V
-	qexdiq1PsU9knX0AHYoqcAj2Lb+i/Vf0OVaft+HCHD9GWl92aOWViyHJae7O+bsbB4tvi6ASJKW
-	tX0Dx0Q/oBePeUNRM=
-X-Received: by 2002:a05:600c:1d9a:b0:480:6612:253 with SMTP id 5b1f17b1804b1-4836570d35cmr2840895e9.3.1770839144977;
-        Wed, 11 Feb 2026 11:45:44 -0800 (PST)
-Received: from skbuf ([2a02:2f04:d501:d900:2f75:bf70:f0b9:4586])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4834d5d78cfsm208008415e9.1.2026.02.11.11.45.43
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 11 Feb 2026 11:45:44 -0800 (PST)
-Date: Wed, 11 Feb 2026 21:45:41 +0200
-From: Vladimir Oltean <olteanv@gmail.com>
-To: "Russell King (Oracle)" <linux@armlinux.org.uk>
+	Wed, 11 Feb 2026 20:31:27 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=eGETX2uhmgPP8zE0VFPmHJQ/VnWmhFsnZPqtek+9nEA=; b=KDLtX018NzxxGqYllXUikn6zpJ
+	fQ7z2rh3vp/xcBaI1XLp1ifj7AsD0/q6cRsKSYQE9EFEQ3qzoWNUW/XDb+OqyRLglL0xfvB1xmsKU
+	MvbmFS1nJQfvxoo0MvS+3BIYgqQYqv7Lid7TCcrFdUgm5+aZSqeqwFHRs+aoPVNYNiEsgmMxL3mS2
+	5i3MCPLL5kzuAmFuxE2TDKlG/C8RxKbKWpHP/xVZt3q5ASkG5aP/KaYBnDiS1biIZ2EY+y5tU5gvk
+	xeMdxhmSi2S39mejO7cZ6n54AmhYvc0dVkaIhZBwcpOWWfHUtTbgmsTTL8XtptvItEaSQ7WYr+MdI
+	XPcRDJSQ==;
+Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:53722)
+	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.98.2)
+	(envelope-from <linux@armlinux.org.uk>)
+	id 1vqGrm-000000003gP-28Fw;
+	Wed, 11 Feb 2026 20:31:18 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.98.2)
+	(envelope-from <linux@shell.armlinux.org.uk>)
+	id 1vqGrj-0000000043T-2t7j;
+	Wed, 11 Feb 2026 20:31:15 +0000
+Date: Wed, 11 Feb 2026 20:31:15 +0000
+From: "Russell King (Oracle)" <linux@armlinux.org.uk>
+To: Vladimir Oltean <olteanv@gmail.com>
 Cc: Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
 	Jonathan Corbet <corbet@lwn.net>, linux-doc@vger.kernel.org,
 	linux-phy@lists.infradead.org
 Subject: Re: [PATCH net-next] doc: generic phy: update generic PHY
  documentation
-Message-ID: <20260211194541.cdmibrpfn6ej6e74@skbuf>
+Message-ID: <aYznE1FIbs_0OcPR@shell.armlinux.org.uk>
 References: <E1vo0mF-00000007kbg-1OeA@rmk-PC.armlinux.org.uk>
  <20260211154839.lbh4uovxr5b5s4nv@skbuf>
  <E1vo0mF-00000007kbg-1OeA@rmk-PC.armlinux.org.uk>
@@ -89,8 +70,8 @@ MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <20260211193006.ad2piivyoqhvg22r@skbuf>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260211_114547_780675_BEE130B6 
-X-CRM114-Status: GOOD (  32.02  )
+X-CRM114-CacheID: sfid-20260211_123126_338574_1FCB16BF 
+X-CRM114-Status: GOOD (  37.51  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -137,7 +118,9 @@ On Wed, Feb 11, 2026 at 09:30:06PM +0200, Vladimir Oltean wrote:
 > > do not change the PHY mode.
 > 
 > Are we talking about PHY_MODE_ETHERNET generic PHYs here, or in general?
-> 
+
+PHY_MODE_ETHERNET PHYs.
+
 > > This makes it pretty much impossible for platform independent code to
 > > know the correct order to call the functions, and what to do if an
 > > error or success is returned from any particular API call.
@@ -148,28 +131,107 @@ On Wed, Feb 11, 2026 at 09:30:06PM +0200, Vladimir Oltean wrote:
 > Do you have a list of such PHYs relevant to phylink? We can still
 > document the expectation, and modify them.
 
-To (partially) answer my own question, here is what I found so far:
+These are the generic PHYs used for ethernet, so they are potential
+cases for phylink to drive. They were found via:
 
-commit 5cb630925b49dd13bf3aa43f299b11615c8fe9cd
-Author: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-Date:   Wed Feb 1 22:14:53 2023 +0900
+grep ETHERNET drivers/phy -rl | xargs grep -l power_on
 
-    net: renesas: rswitch: Add phy_power_{on,off}() calling
 
-    Some Ethernet PHYs (like marvell10g) will decide the host interface
-    mode by the media-side speed. So, the rswitch driver needs to
-    initialize one of the Ethernet SERDES (r8a779f0-eth-serdes) ports
-    after linked the Ethernet PHY up. The r8a779f0-eth-serdes driver has
-    .init() for initializing all ports and .power_on() for initializing
-    each port. So, add phy_power_{on,off} calling for it.
 
-    Signed-off-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
-    Signed-off-by: David S. Miller <davem@davemloft.net>
+r8a779f0-ether-serdes: r8a779f0_eth_serdes_set_mode() records the
+state, returning success, with no hardware programming. All hardware
+programming for the desired mode is done via phy_power_on() call.
 
-This needs to be changed, for sure.
+This driver requires the PHY to be powered down before phy_set_mode*()
+otherwise it will accept the new mode but not reconfigure the hardware.
 
-I'll take a closer look tomorrow at the rest and see how bad the
-situation is overall.
+
+phy-mvebu-cp110-comphy: mvebu_comphy_set_mode() records the state in
+struct members and does nothing more, returning success. This
+requires the PHY to be powered down before phy_set_mode().
+
+This driver requires the PHY to be powered down before phy_set_mode*()
+otherwise it will accept the new mode but not reconfigure the hardware.
+
+
+phy-mvebu-a3700-comphy: mvebu_a3700_comphy_set_mode() errors out if
+mode is changed with PHY powered up:
+
+        /* Mode cannot be changed while the PHY is powered on */
+        if (phy->power_count &&
+            (lane->mode != mode || lane->submode != submode))
+                return -EBUSY;
+
+This driver requires the PHY to be powered down before phy_set_mode*()
+otherwise it will error out.
+
+
+phy-fsl-lynx-28g: lynx_28g_set_mode() powers down the PHY if necessary,
+sets the mode, before powering it back up.
+
+This is the only driver that will tolerate phy_power_*() vs
+phy_set_mode*() in any order.
+
+
+phy-qcom-sgmii-eth: doesn't implement phy_set_mode*() but instead
+implements phy_set_speed() and phy_calibrate(). phy_set_speed()
+sets the mode and immediately calibrates, which presumably requires
+the clocks enabled by qcom_dwmac_sgmii_phy_power_on(). No check
+for PHY being powered, so my guess is that calling phy_set_speed()
+with the PHY powered down will cause the status polling in
+qcom_dwmac_sgmii_phy_calibrate() to time out.
+
+This driver requires phy_power_on() before phy_set_speed().
+
+
+sparx5_serdes: phy_power_*() controls power down mode, no check
+in sparx5_serdes_set_mode() whether powered up, but config function
+checks for e.g. PLL lock, which probably won't be locked if powered
+down. Failures aren't propagated to the API caller.
+
+This driver requires phy_power_on() before phy_set_mode*().
+
+
+phy-mtk-xfi-tphy: while phy_power_*() controls clocks, it isn't
+obvious whether these are required before mtk_xfi_tphy_setup() is
+invoked. There are calls to usleep() implying a need to wait for
+things to happen before the next register write, which presumably
+require the clock to be running.
+
+My guess is, this driver requires phy_power_on() before phy_set_mode*().
+
+
+Categorisation of drivers:
+drivers requiring powered down PHY before phy_set_mode*(), but are
+silent if not: 2
+
+drivers requiring powered down PHY before phy_set_mode*(), but error
+out if not: 1
+
+drivers that allow any power state before phy_set_mode*(): 1
+
+drivers that do not implement .power_*() methods, allowing any
+power state, but presumably require the phy_set_mode*() call to
+setup the hardware: 5
+
+drivers requiring powered up PHY before phy_set_mode*(): 3
+
+So, the summary is... only _one_ driver allows the calls in any order.
+The other 11 drivers are... stick a pin in the donkey and depending
+on where the pin ends up determines the appropriate order that the
+generic PHY APIs must be called for the driver to work correctly.
+
+I think you'll agree that this is a very sorry state of affairs.
+
+This is exactly why I think there needs to be better documentation.
+I'm not sure that some kind of test code to validate the API would
+work, because you'd need some way to test whether the PHY were in a
+functional state, and that's difficult without the help of the
+ethernet MAC.
+
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTP is here! 80Mbps down 10Mbps up. Decent connectivity at last!
 
 -- 
 linux-phy mailing list
