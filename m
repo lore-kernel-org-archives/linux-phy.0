@@ -4,134 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 941BAE9E308
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Feb 2026 13:30:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 34A8EE9E311
+	for <linux-phy@archiver.kernel.org>; Wed, 11 Feb 2026 14:50:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gY6NNcjInD7yfFubK12AhcBf+gEFpPouIUN0eus4mO0=; b=GIJMxzXgM9Pk79
-	BLdReuQkuvi6EeqArExj0te1fe88N3ms25AgcN8QqQw4l85FQUqXUB0BtLMZXPnWj5XfxJNCFbOqg
-	syFcO5nCZHQNzhjbK00TrVDgn4ENAT7GYtVZ33jXZGjE5BQUK4asZiiMdytd9N/LJAIrlf/5tlkXH
-	uMgRes4bl04PoVaeHepl9aOXim167PxfMulZdTklKP6gQjt8rEmNmzMIXJ385r0dGc2RbVYoFjxih
-	itDHOBZqlKIGZWdBzbe/ZSpJSjgI3Xyb8zI9cOHXWHt4pT1P+T0dLjjNDjSQSGzhJECUXBHpKN7tM
-	/amwYO8BQN2WDklirbcQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=oZp3nmrb/is1Udqcpy0T2dFBIWRQQEI3/kL5awC+jWU=; b=q6TMwYcf2kmYZd
+	yRgpd1RfPcj9LnDILTwKT+H8tZGwCOVQ5IZL28sMSC0OgpSX2/w/kyi87Vdtc7qUYTlO7utt8QwwT
+	LIBOgwc18+lDBB3ZyqwMreQADZdoA0sdkL/8QfxNw8NxBsCosXtxYU2BZDVKv6qJopUYS0qyJ5xtE
+	4JaCfUN3rFnxd5q4CimWu6eFi7wAaAGAqUONRyKzIkzM5wTuEOJ9WxvQaE+PtU/KZ5ouXzl8a4qgC
+	B65kTNsnb+j0RQ2EGiDbXvS/r2VsQfXXj5ENz+/MQ5VSoliKnp3DeRMnLYUiE2aITQU7gFLpFqGS8
+	i9QWI5Em5MUfB8qEwUPQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vqAIM-00000000gj6-1JJX;
-	Wed, 11 Feb 2026 13:30:18 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1vqBXw-00000000kGK-32ba;
+	Wed, 11 Feb 2026 14:50:28 +0000
+Received: from mx-relay50-hz3.antispameurope.com ([94.100.134.239])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vqAIJ-00000000giT-3sI0
+	id 1vqBXp-00000000kEt-2eor
 	for linux-phy@lists.infradead.org;
-	Wed, 11 Feb 2026 13:30:17 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 61BAHSbp2297566
-	for <linux-phy@lists.infradead.org>; Wed, 11 Feb 2026 13:30:14 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=yBxQPWSZi11
-	Gi7fw7yJ514mCuqG/sJlj9eUQZXPJahI=; b=hd84I2QFoG2o8wydmcKyOdgB8VC
-	zvLHHYCfmvquU0D6I1mPVBrcI/y4ZqTQis7+VGF1L0JV/K3y2M7T5n5s++hSpQ16
-	fHCNLBbYLBLwcf2EQOKRn+213CZ1aRSbdABqL5PIx2ODMNRGwK+B5JU5Le02N+s0
-	ZvKWA0Gn/B76KmJ6pNFN3NeJXhktYJNs8JCb2rfNQN3c9TEm2yaV42mf2Ov+x75h
-	wnMqm+S3fb2nYjWeiLYxHqhHbJmimXhdjaubz6g3+61eEwdSC/fHfWnl+BwO+wIA
-	rOoTUmC6NAP4snoXBokUMlGflYpS/RiG98gt5I8GrjABQbLKuhTLz9JWcQg==
-Received: from mail-pf1-f200.google.com (mail-pf1-f200.google.com [209.85.210.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4c8qvq8hhv-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Wed, 11 Feb 2026 13:30:14 +0000 (GMT)
-Received: by mail-pf1-f200.google.com with SMTP id d2e1a72fcca58-81f48cec0ccso6062621b3a.0
-        for <linux-phy@lists.infradead.org>; Wed, 11 Feb 2026 05:30:14 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1770816614; x=1771421414; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=yBxQPWSZi11Gi7fw7yJ514mCuqG/sJlj9eUQZXPJahI=;
-        b=AjC8QqPSNqqFS0i8lxvPbhIqE1vYXHiFoVvfBALUzNHXli7xE9KbflKocQOIsxVHIx
-         ueaYx0UzNNRd1pFOgnC+rHo+kk4rBV4Pp4iHN4IbCsTajJsJpAO+b5p9nsFfHxlzq0qK
-         IuaPA8hV5qRL/jWBWFV4gSjOIXqM4MDRPgsAx4EIURq/Ts/s4QFlqDAVQGkF0hheS53Q
-         9sF2CNstcp5COMTJgVWU6BtPQnsMb/UeRC/KpJ2tqgz3WsKa5v0SXIWi5T2wuntU76PS
-         FL8nEPWcPl6lYUMN13ZYMvEI75ly8Nun2e4STUw7EKfVabOdIdeNht+6zUN9UCmQJMtB
-         i+WQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1770816614; x=1771421414;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=yBxQPWSZi11Gi7fw7yJ514mCuqG/sJlj9eUQZXPJahI=;
-        b=SVpG4WsZhg90/mHgkmKbRmHTYCHcM6bMikAMoWYYacsjHLyvGeDB9CPYtRcjGDZUVE
-         qftIIYtK61OKEW7vkPbWjbdhr56lRKQPKcGF7cTqaDaWrhbCHyVDE0nSDRC/NTh5nup8
-         u0ki4ljsfA0c61lgkfKa70hvDsok/i6jhwvqopQ7pWF9ul7pBm2H6xMKo+JCLkJDl0xb
-         SqJ3nl6cRjTVRRADos7Drl/5+GSUuQMBqp8i+w7JiWfmERGGcZ/A+3G6BKKvfFpOWs3n
-         ThG3hD1jvt8mGykEQntOPtWFS6SgwmH22139NRUHM0uDk/Ejy8MF7/J+jMfU2PAZWfVb
-         qiHg==
-X-Forwarded-Encrypted: i=1; AJvYcCUNxWIDczYB2q/T3u5YcUQyIEP6sdLMogoSHf/2KyL1MYACW04LR7a5MBKofAPYdaG1HFVsd8Slztw=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzSF0/fTkcz5F9V3lsaDUEPgpeWybTaWB0g2OM77FjiXPigH2sS
-	2t+Fjnq3YaEIwRlETfeXRyYNeXIlEVXFAIXSiwBWYJlD5dW1FzRt2rjS2i88Zc/7siJh44kse/L
-	OoJvqivo49/xsRU9XtIrAuatG+E0CsQU7/C5zNxqD5m1mfxXISA4qQDc/muVMvS33uExA
-X-Gm-Gg: AZuq6aKMMxTWvLSbUKp1syLx/Ft4XfIQ3myTABCEvWddfoG0lstbkNlxRwNAWbCDK+8
-	B/YZnNehzEu0RoXDPWacKMzoHpXsfcviO9W+Q3fOvpehQdtX0+SElbCN/tM+VTXQLjt6Mdvg2t2
-	ipG7HeXqion9uq7Od2yUahiymmtQyIs6Ff9V3dFWmO2Yh3fP9Jz28LHPZ7krMStcFDwY+XFTE76
-	gAuOd3mjEpV7xaCmDI1A5XUx9mEG+Udauhl4QNoDmhlZoi6Pmd6eEJZ/Alq48Q8Iw8xqnCuVBX2
-	hhirah4IG2QILFvwO32ibXbYCMgq9YaUCvxQiTFA2IcUJaIqaRy83XNPaBO1FfAA6p4OH6wFvOk
-	TnStiwq8yW/cF4v6M0wPEpWWgO4C5YUUo7+m+15ds+wR0j2t5zxX+/FJEG2hh5F/H
-X-Received: by 2002:a05:6a00:6ca1:b0:824:374a:1402 with SMTP id d2e1a72fcca58-8249fc25cbfmr1597578b3a.11.1770816613598;
-        Wed, 11 Feb 2026 05:30:13 -0800 (PST)
-X-Received: by 2002:a05:6a00:6ca1:b0:824:374a:1402 with SMTP id d2e1a72fcca58-8249fc25cbfmr1597539b3a.11.1770816613061;
-        Wed, 11 Feb 2026 05:30:13 -0800 (PST)
-Received: from hu-pragalla-hyd.qualcomm.com ([202.46.23.25])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-8249e84bc1asm2143655b3a.58.2026.02.11.05.30.06
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 11 Feb 2026 05:30:11 -0800 (PST)
-From: Pradeep P V K <pradeep.pragallapati@oss.qualcomm.com>
-To: vkoul@kernel.org, neil.armstrong@linaro.org, robh@kernel.org,
-        krzk+dt@kernel.org, conor+dt@kernel.org, martin.petersen@oracle.com,
-        andersson@kernel.org, konradybcio@kernel.org,
-        taniya.das@oss.qualcomm.com, dmitry.baryshkov@oss.qualcomm.com,
-        manivannan.sadhasivam@oss.qualcomm.com
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        linux-scsi@vger.kernel.org, nitin.rawat@oss.qualcomm.com,
-        Pradeep P V K <pradeep.pragallapati@oss.qualcomm.com>,
-        Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
-        Manivannan Sadhasivam <mani@kernel.org>
-Subject: [PATCH V5 3/3] arm64: dts: qcom: hamoa-iot-evk: Enable UFS
-Date: Wed, 11 Feb 2026 18:59:26 +0530
-Message-Id: <20260211132926.3716716-4-pradeep.pragallapati@oss.qualcomm.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20260211132926.3716716-1-pradeep.pragallapati@oss.qualcomm.com>
-References: <20260211132926.3716716-1-pradeep.pragallapati@oss.qualcomm.com>
+	Wed, 11 Feb 2026 14:50:26 +0000
+ARC-Authentication-Results: i=1; mx-gate50-hz3.hornetsecurity.com 1; spf=pass
+ reason=mailfrom (ip=94.100.132.6, headerfrom=ew.tq-group.com)
+ smtp.mailfrom=ew.tq-group.com smtp.helo=smtp-out02-hz1.hornetsecurity.com;
+ dmarc=pass header.from=ew.tq-group.com orig.disposition=pass
+ARC-Message-Signature: a=rsa-sha256;
+ bh=L4vyNH4YErLs5bwpzmTX4TQ2ymTibM6HD0Mohhb6Gt4=; c=relaxed/relaxed;
+ d=hornetsecurity.com; h=from:to:date:subject:mime-version:; i=1; s=hse1;
+ t=1770821408;
+ b=SlF07QGpWgsTXwg5hzfGaRT823TFO6x8CqAUQkPz/YSAp04lxr664OAG0R/C+hf4OPda0mEa
+ Q2JU0RMCdiZCDkjcEy0Ypq1F6TuwAITb9vfS3PL0sba9Y4qoydVt5YZRCRmgImWc8b1vmgelR9P
+ U2a0W1AQaWyMA8UTxyoI18MRWtuOg52vedun0ZQ5OWRVzbxq2pw6Opry2NMVuaI3J5wlB+N0rlw
+ DxN2LR6MvynyyKM9plokQLxXkLqErJRAXV85+GePcIOZyFe/4n9Y0DeFr/2izlrZfcDWLb0TBTf
+ BEeU+28zjt37NsNe70bYPsyelhEIeg/U26IzsPBYSeuGw==
+ARC-Seal: a=rsa-sha256; cv=none; d=hornetsecurity.com; i=1; s=hse1;
+ t=1770821408;
+ b=pCSNFdXx6XFaJE61Tlw+SjNtFzIlQvCLHroNv8+4dRvnajZSq6Y5Ob6bvPvZu5+xgQdn0snb
+ oji5wrzDT4M8uYPxoWM8IZMQWAcCH6rx+K+swSu8fwOC9V7q6WO1TNaHSZaMzlpjaqCR2USxjgj
+ IhTbpweBX266cdkdZQdFgQ18G/aK7PSVz+ZZRqduQERjfrD0rK1z9mgAiOqJITS0s3+q1HG9ft5
+ ptSQEcMESrzhIju8n6c22OpXyjUDDMq/Ti4W+JtzJWLiazUea6tbEgn3z/kUE68hIOcAYJncDJi
+ xiA8PXJx2oIuwNF2AgBBhvhBLrAtDyUsRI6lgkL5TNEwQ==
+Received: from he-nlb01-hz1.hornetsecurity.com ([94.100.132.6]) by mx-relay50-hz3.antispameurope.com;
+ Wed, 11 Feb 2026 15:50:08 +0100
+Received: from steina-w.tq-net.de (host-82-135-125-110.customer.m-online.net [82.135.125.110])
+	(Authenticated sender: alexander.stein@ew.tq-group.com)
+	by smtp-out02-hz1.hornetsecurity.com (Postfix) with ESMTPSA id 0CCCC5A12E8;
+	Wed, 11 Feb 2026 15:49:51 +0100 (CET)
+From: Alexander Stein <alexander.stein@ew.tq-group.com>
+To: Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Frank Li <Frank.Li@nxp.com>,
+	Sascha Hauer <s.hauer@pengutronix.de>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>
+Cc: Alexander Stein <alexander.stein@ew.tq-group.com>,
+	linux-phy@lists.infradead.org,
+	imx@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [RESEND 1/1] phy: freescale: imx8qm-hsio: provide regmap names
+Date: Wed, 11 Feb 2026 15:49:48 +0100
+Message-ID: <20260211144949.1128122-1-alexander.stein@ew.tq-group.com>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-X-Proofpoint-ORIG-GUID: 5_QFjSLVfRQp1f5h7-lTyKj3uh0KpEgj
-X-Authority-Analysis: v=2.4 cv=Q77fIo2a c=1 sm=1 tr=0 ts=698c8466 cx=c_pps
- a=mDZGXZTwRPZaeRUbqKGCBw==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
- a=HzLeVaNsDn8A:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=Mpw57Om8IfrbqaoTuvik:22 a=GgsMoib0sEa3-_RKJdDe:22 a=EUspDBNiAAAA:8
- a=VwQbUJbxAAAA:8 a=M7MUb3q_Ox69Zn6kGXoA:9 a=zc0IvFSfCIW2DFIPzwfm:22
-X-Proofpoint-GUID: 5_QFjSLVfRQp1f5h7-lTyKj3uh0KpEgj
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMjExMDEwNCBTYWx0ZWRfX1VnF8Yn8Ucux
- wUaODXmoq6/OehGHV2OGqzTYTdp7uDfscIIqNgz11XPSYzEivBF9ycg5eHzNLj3ibVfcW1b6dmB
- yZwJvjGw/ihGTU5jAUok+7I1K7BThCcpmsh3YXkfdeD/owuitou40u1jAVSWHy24MUFB4+riXNM
- d7se8xdQpWtfHzGXc2s1VMOYwYvMfpKI3LfQDe6SsyuyZQfD2EW08RcbEXpKAMvujKEZfPjObiE
- ey+GEzx5iCnds4vrv5Kh4Jo8qG0/i2NuZq1XdbCkCx8+e1PbgO/uaGIHmueXHfRoIV67TlPzHJh
- yajTcvVxG0G4jTvvhJ5eV0manKO+iHUgVhv/r+4N0pvR8bmxyPy9khg5A9Eoe2a/ZGbptjptqB+
- 8nsnQcQ8I8Trxf2307B2o0xu9gNaGPC0HoRTnSMhBefvvU8lco1gLX0KlLU0saNhea1r11K0DV8
- 6dG9DLb1txlpBFp5gsA==
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.51,FMLib:17.12.100.49
- definitions=2026-02-11_01,2026-02-11_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 suspectscore=0 bulkscore=0 impostorscore=0 malwarescore=0
- lowpriorityscore=0 spamscore=0 priorityscore=1501 adultscore=0 phishscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2601150000 definitions=main-2602110104
+X-cloud-security-sender: alexander.stein@ew.tq-group.com
+X-cloud-security-recipient: linux-phy@lists.infradead.org
+X-cloud-security-crypt: load encryption module
+X-cloud-security-Mailarchiv: E-Mail archived for: alexander.stein@ew.tq-group.com
+X-cloud-security-Mailarchivtype: outbound
+X-cloud-security-Virusscan: CLEAN
+X-cloud-security-disclaimer: This E-Mail was scanned by E-Mailservice on mx-relay50-hz3.antispameurope.com with 4fB1YW4rTYz2nJGn
+X-cloud-security-connect: he-nlb01-hz1.hornetsecurity.com[94.100.132.6], TLS=1, IP=94.100.132.6
+X-cloud-security-Digest: ba1eb0984800e64e2245420c91fb4aab
+X-cloud-security: scantime:2.114
+DKIM-Signature: a=rsa-sha256;
+ bh=L4vyNH4YErLs5bwpzmTX4TQ2ymTibM6HD0Mohhb6Gt4=; c=relaxed/relaxed;
+ d=ew.tq-group.com;
+ h=content-type:mime-version:subject:from:to:message-id:date; s=hse1;
+ t=1770821407; v=1;
+ b=OH0GyFriZuvqaLnncsFQyDJRGbD3uJHoXG/i3QubJtqappwn2oVUG4QMkBgfkdIYgRHlKsJh
+ t8bRSHdQmxpGoCbKNmmiI0eGfYcyzRWd5deFED5PuBWN/lmgRVnsQH2nadWEw9cx5mQhK/yJ49I
+ Tsoikb+nWrDw8KZkQxMZxC5jGmXUsoM3kE43eaFRhmwn6NTSyD1kb4NwdMr1pCkaA1asCwd25CB
+ 77RxdqYcLQyzWZ8BNnHX+8YfP3PxvLcxkAqoRJMTK4M8IDQlW4oe/ePe0vZ/yDYuBb0OGw4MAzh
+ ZDs6BCWnCvm6c5RG386GbswTt0s1bi2eTeok6Bn+c4iFw==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260211_053016_076608_8849E217 
-X-CRM114-Status: UNSURE (   9.80  )
+X-CRM114-CacheID: sfid-20260211_065021_812463_51F7642D 
+X-CRM114-Status: UNSURE (   9.89  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -149,46 +110,72 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Enable UFS for HAMOA-IOT-EVK board.
+This driver uses multiple regmaps, which will causes name conflicts
+in debugfs like:
+  debugfs: '5f1a0000.phy' already exists in 'regmap'
+Fix this by using a dedicated regmap config for each resource, each
+having a dedicated regmap name.
 
-Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Reviewed-by: Manivannan Sadhasivam <mani@kernel.org>
-Signed-off-by: Pradeep P V K <pradeep.pragallapati@oss.qualcomm.com>
+Signed-off-by: Alexander Stein <alexander.stein@ew.tq-group.com>
 ---
- arch/arm64/boot/dts/qcom/hamoa-iot-evk.dts | 18 ++++++++++++++++++
- 1 file changed, 18 insertions(+)
+Same as the one sent in December but with an updated CC list.
 
-diff --git a/arch/arm64/boot/dts/qcom/hamoa-iot-evk.dts b/arch/arm64/boot/dts/qcom/hamoa-iot-evk.dts
-index 2390648a248f..fccf1d1bdc60 100644
---- a/arch/arm64/boot/dts/qcom/hamoa-iot-evk.dts
-+++ b/arch/arm64/boot/dts/qcom/hamoa-iot-evk.dts
-@@ -1461,6 +1461,24 @@ &uart21 {
- 	status = "okay";
- };
+ drivers/phy/freescale/phy-fsl-imx8qm-hsio.c | 23 +++++++++++++++++----
+ 1 file changed, 19 insertions(+), 4 deletions(-)
+
+diff --git a/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c b/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c
+index 279b8ac7822df..4ab45c9f53dff 100644
+--- a/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c
++++ b/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c
+@@ -107,7 +107,22 @@ static const char * const lan2_pcieb_clks[] = {"apb_pclk2", "pclk2", "ctl1_crr",
+ static const char * const lan2_sata_clks[] = {"pclk2", "epcs_tx", "epcs_rx",
+ 					      "phy1_crr", "misc_crr"};
  
-+&ufs_mem_phy {
-+	vdda-phy-supply = <&vreg_l3i_0p8>;
-+	vdda-pll-supply = <&vreg_l3e_1p2>;
-+
-+	status = "okay";
+-static const struct regmap_config regmap_config = {
++static const struct regmap_config regmap_phy_config = {
++	.name = "phy",
++	.reg_bits = 32,
++	.val_bits = 32,
++	.reg_stride = 4,
 +};
 +
-+&ufs_mem_hc {
-+	reset-gpios = <&tlmm 238 GPIO_ACTIVE_LOW>;
-+
-+	vcc-supply = <&vreg_l17b_2p5>;
-+	vcc-max-microamp = <1300000>;
-+	vccq-supply = <&vreg_l2i_1p2>;
-+	vccq-max-microamp = <1200000>;
-+
-+	status = "okay";
++static const struct regmap_config regmap_ctrl_config = {
++	.name = "ctrl",
++	.reg_bits = 32,
++	.val_bits = 32,
++	.reg_stride = 4,
 +};
 +
- &usb_1_ss0_dwc3_hs {
- 	remote-endpoint = <&pmic_glink_ss0_hs_in>;
- };
++static const struct regmap_config regmap_misc_config = {
++	.name = "misc",
+ 	.reg_bits = 32,
+ 	.val_bits = 32,
+ 	.reg_stride = 4,
+@@ -562,19 +577,19 @@ static int imx_hsio_probe(struct platform_device *pdev)
+ 		return PTR_ERR(priv->base);
+ 
+ 	off = devm_platform_ioremap_resource_byname(pdev, "phy");
+-	priv->phy = devm_regmap_init_mmio(dev, off, &regmap_config);
++	priv->phy = devm_regmap_init_mmio(dev, off, &regmap_phy_config);
+ 	if (IS_ERR(priv->phy))
+ 		return dev_err_probe(dev, PTR_ERR(priv->phy),
+ 				     "unable to find phy csr registers\n");
+ 
+ 	off = devm_platform_ioremap_resource_byname(pdev, "ctrl");
+-	priv->ctrl = devm_regmap_init_mmio(dev, off, &regmap_config);
++	priv->ctrl = devm_regmap_init_mmio(dev, off, &regmap_ctrl_config);
+ 	if (IS_ERR(priv->ctrl))
+ 		return dev_err_probe(dev, PTR_ERR(priv->ctrl),
+ 				     "unable to find ctrl csr registers\n");
+ 
+ 	off = devm_platform_ioremap_resource_byname(pdev, "misc");
+-	priv->misc = devm_regmap_init_mmio(dev, off, &regmap_config);
++	priv->misc = devm_regmap_init_mmio(dev, off, &regmap_misc_config);
+ 	if (IS_ERR(priv->misc))
+ 		return dev_err_probe(dev, PTR_ERR(priv->misc),
+ 				     "unable to find misc csr registers\n");
 -- 
-2.34.1
+2.43.0
 
 
 -- 
