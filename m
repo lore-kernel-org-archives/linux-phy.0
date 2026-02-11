@@ -4,103 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B9A0BECD6D7
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Feb 2026 18:47:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B97E3ECD6D6
+	for <linux-phy@archiver.kernel.org>; Wed, 11 Feb 2026 19:30:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yBehznuGTA+7LW8CuQZu+jK18zwL/ZmOZZXX62XoUkQ=; b=yis170JuVPOvpP
-	Y6xfzSuSFyEynz6fdsBuprCNawb0iHZ/DrpeRmT2AMRUGLijymeQ5/ygQMce0GLSWGJh6sBeTpGYI
-	/PUsgi3TtlWyIM98hxWwvc8IldSjdZhOh0w/uzUoxahsngAIsogFcnTyLRZoVrfkvj7ztK7NnuR8b
-	utrdjwasFtmKucc95qN3G7Thz3tgvfjp4ZZUBg7NzqtUprQjIoihOClES/Ce3ov+AQgLNDkH5ucBo
-	PAeO7Bgz5sRwy5bdY8pjB5hqrhkIBuMozf7lDCcxJ3XJ4WgdCldSX9ftoxp035OffjJt4aHUkEG++
-	pcW9nG03lSBFtr9ExViA==;
+	List-Owner; bh=GLeWsyN/9BMDfeti9nNxMxmZkgZ3pJL6kgc34Ln3Fa8=; b=x7vcn1P8vjuhmm
+	x4YzK34UYCNs35NhKZ6b7QyW1QdmjEf/ZncN34Az59EG/mZYZ4mVBQwIVqIXnjcBXbM6eccQX8hdP
+	bU1PjRU1Mqc8PjJ0Ie/VCGe1HP3Ezjo5udzjvj56RN0paHARqwXypF/GKAMh5l+CCrtW7RSMgTNP1
+	YINYnwuHVC99I5/+/84G9RSVttb15d0ySvKhVgpocg13LaEHw5eJTgxcxFTF0JBPSA8doN4Ai6mMI
+	QQWVO3I1IDboW5nhdowJ5k7J9djdFPYeurtWavrj/d37pmJk0gqJc5XZS7v/3omnmePnfioeRnmd7
+	qWDg8F1jw9FAX30GaI3g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vqFFe-00000000wuX-3PS8;
-	Wed, 11 Feb 2026 18:47:50 +0000
-Received: from mail-pj1-x102b.google.com ([2607:f8b0:4864:20::102b])
+	id 1vqFuh-00000000z42-0Wvf;
+	Wed, 11 Feb 2026 19:30:15 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vqFFc-00000000wu9-1v99
+	id 1vqFud-00000000z3c-1URf
 	for linux-phy@lists.infradead.org;
-	Wed, 11 Feb 2026 18:47:49 +0000
-Received: by mail-pj1-x102b.google.com with SMTP id 98e67ed59e1d1-354a2a7d90fso1334005a91.2
-        for <linux-phy@lists.infradead.org>; Wed, 11 Feb 2026 10:47:47 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1770835667; cv=none;
-        d=google.com; s=arc-20240605;
-        b=ltTBLooh8gLjQ9aUaZm7UAn/oDoB6sxTOlcU73nj2k05pntsoOiAt+ko31Ry99hEL/
-         AJahwIolRO4ug6D3E0OMbxZNevBnTPuYYtw9mWuMtCIB2cxGu9G3NQslMTM4m0MjH17V
-         oawMOD4PxPlU1jSBfGTb5RAjLN/pXelMl/gKYwcpEsA18KOk9a145qBIS94B1Hl/3NeM
-         YfvqI+UuXMe7fvqQQWs6W7AyQ5q6hi7cIMuAEYg/ooWmVwD0/nqbbRKtcp+HSp+iHEDi
-         vYK8vWBu2NRHdKx3+3ERUhGvok4w3MRLZS50d0AyCaedQXYmOPr2zDXDDKuoEQA/9mRG
-         sDlA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:dkim-signature;
-        bh=Ym67wAQqOP2jKVXi5deYP2qZjSL7glyL/hFPi/TDOfY=;
-        fh=jLsWBjEJwHPW+h/zu6UxgNVsSsjVDwKzNLHkiQgek2Q=;
-        b=CpWx9e7LYkvrXOpcxyn2DHrjNyeuTAsX7UngaGziFMj4UaTSm9AW5P+f2C/O0TQ7YN
-         aCmgwCf8qz/WS4VagHtfIXRT/SXw8IdKwDLz3VqLhmUfV/JajAxwK+NF+ddN2wl6MgoT
-         C3oU068hZw7RHl1feezdbkNAiG8xqTYFDtMCfml6+05XFdZR9rKEcLQ5tcW7OdoOK+0Z
-         aJb20RwwNYc07ZpGNqQRD7cC4dBkY/mQPmH473xXS6HxDqMiXNtgK6TPYAetpl0VeTei
-         7zVIx9rpyFGVBp/znAa+T/cPEs1kJMbWNt34eGhw8wwEWOq5P5tD/iGcoQ40haDcchlK
-         bOtg==;
-        darn=lists.infradead.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
+	Wed, 11 Feb 2026 19:30:13 +0000
+Received: by mail-wm1-x342.google.com with SMTP id 5b1f17b1804b1-4806853efb5so7941855e9.0
+        for <linux-phy@lists.infradead.org>; Wed, 11 Feb 2026 11:30:10 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1770835667; x=1771440467; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=Ym67wAQqOP2jKVXi5deYP2qZjSL7glyL/hFPi/TDOfY=;
-        b=FmXwOFVK05h2c7ga/gA4W6hr4943T+SlTY+j+s2CNXQDQdgBZN79Rk2XMA1VxK2DW9
-         xPW87q8O8TlMkqMW0FnuR3QDtvaBF0WUnHjb4/zXrDWenCPoqhZiprCT8beNdjTszTUk
-         W4iGH6DmCGX1Q/BsxfkwKchOwIBY1knHUgr+VSghFXpY620O9b6JpjFGpU0EsNM57dRZ
-         V9r/wYt8/5JpgCIu6OghEc/7+uOYmrZekKkASdONPkcyoYmHMl8Z1Lcr7CQkcKTYiyu/
-         mPudmbIiBkSXUozzqSXzaez6rDEOYh5Mm++S9ZaVnzK/KlmaVtuG283hW2teG/aALv3L
-         PFHQ==
+        d=gmail.com; s=20230601; t=1770838209; x=1771443009; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=jhwCRNFlRYh87Mc83Zq8JMicvS9mTTgPjf8zviSQBYM=;
+        b=Un2mqK6N38fRI7r39+K6j99nVaO4kNjY60zHZx6K08iGh70qG85hRsjzryEDLVk9wH
+         c1TU8s1mjO6KuQhQl5xmwRk3EtO5qASfDNgtR2GkPOqFZpdNAmYr/DwDhO7IA/BKSgu6
+         cXOOrsz/AZ1M6QnDuLYidgWVa7VeCGw16qmUOOO7EQgvT0b/KHsga7paq+FSbeaScrdl
+         eJqo2kbyVMZOEhCaopIkgvWbzo7lh70FoGe8dOpZrPXwccK6qshv2XxA87ZSysItdi/4
+         M32vBe3f/8Yxlft9rq2ZDtJ2R3ND0MKaYLXiMwR8feb1FFpVn7xxfMyEGi8yDFP2mWja
+         aJXw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1770835667; x=1771440467;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=Ym67wAQqOP2jKVXi5deYP2qZjSL7glyL/hFPi/TDOfY=;
-        b=OYKsL/egbnFBcqcy/UuxJdeb1cvEqWYfbCsDV/nbYp07ofCo5fZ3c9FLN+LHx4XCUR
-         KdVq9xfASkR7nRXgoQvb6zbYx13l1b/s1fJbMmv3H6uv3mkIZmCYwgzXBI2TIvpTDLoo
-         ESD4Id5yNl9/tdjCtYRtkOnnnUdgRGYZzsLfPiKPuKK4uzA/+7oacZW5gYrvML9DHS6f
-         TVJYJs9jrBoWzuM7KRlE+lIgFtdX5e+cHt+gb3amUoqAmXdeGEBWTDYTF0wM3JMtOCBC
-         +FsQGnAFEv41HhzqlXcWh81QR7I7M7B/auGXRQFue8r7rF8vzgGUEqkdkpfFZJMYlsIQ
-         8Xgg==
-X-Forwarded-Encrypted: i=1; AJvYcCXXodUngp42/I5m7SRi0ube7S8IzkdXNd9rVTbSfgT4skZ6iAu2MKFnKYGouYk/0vmYYax/gzrWjGs=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yzv2hflCoq+W+fBAD7rYRWh8cf2MkGJbrUrXmg+ASY/eLS0RfqW
-	ASgskjVz/ehXT9STVoa3pqI9NTGBo1l++AYJeiUmqIWDsY+o3AbQh3Kbr3L7Sdu9HzYBJsRh4UC
-	g8THAbIqlcRf/FH3e2WQCCEzMRR1NzW0=
-X-Gm-Gg: AZuq6aI3vFw4qrDwh78F2E/LRZmUqxPNZ8VP02DSVHgz5QRrfGAh/Di/Et5Qy9XB9AF
-	+L1ruP6L6wTYlTzuUkah9KrZcQi5fxDnfn1tfLrVtq5uJH40KH7Deizw6UzJV+Ph56btO9ah4NX
-	aAx+zafwlFTM0jxLB3KNZMY/SdSG51cuwqen10pE/E2DFDdFXKemnn+0HcGKdgn4NY3mMjDWzZr
-	90t0kZhxaRjhRbVY2m8I4ABE5qoamr8vfgQ0LFf6CTISzzV9Yrmr2vXTJa3yr6xWL2Y4CZbMYEJ
-	NtvX
-X-Received: by 2002:a17:90b:2d84:b0:34c:9cf7:60a0 with SMTP id
- 98e67ed59e1d1-3568f2cc5c4mr360860a91.5.1770835666860; Wed, 11 Feb 2026
- 10:47:46 -0800 (PST)
+        d=1e100.net; s=20230601; t=1770838209; x=1771443009;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=jhwCRNFlRYh87Mc83Zq8JMicvS9mTTgPjf8zviSQBYM=;
+        b=Fppuj01nzz3Hf2EejmYEYNo13Zy1cu8516XRf452sO4pg0tkHbNLNWMqBXJ9T1h950
+         ibii1jChqS5+fJKIxtnK/4uJAZvnfylPam+SpC6q6R31VLsaTpCRAU936xkRIHx/abM6
+         58Z+H/vZ4/eMumIft4oSEljGbcJlayBP0dcwVlYLcr1otFHTydSoIboKoMIa1SzrQLK4
+         55kzJa/8eTHtjXCk+g/rpxiJPbsBNMPIwJ8+vvjM+ZK6cBDL869A8mf6+elFRFVGBzvJ
+         0xHwdb2rWCEgC1TidJMsZb5B5B0CUKLtep3QSW6kzLBn46NbJrM8agpzR3QdvUd+fK/Z
+         ldwg==
+X-Forwarded-Encrypted: i=1; AJvYcCUOcrytTgq9mNM8jjXkNz2wsfewsFbJvwv9MC4H+GqOLHUSUCE/s99qY979MDv8M0ZUh7djcZEny4U=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz2U1MYW8+bMtcHuxjAIDGruw4Dr9Uv6RWHRwWZJEel4TJN7CMa
+	jZV4L4gtPZgQeKSCPq909PGnl0IXRG1KhCnCW1y6ilHIJ5igoLjGo6C7
+X-Gm-Gg: AZuq6aJ+jnD1U5ZEIlVlQmAIyWLczFwq7qY6l3vtBiGHGFChQRl5dOIVFpywcHslHqV
+	53Y1L06ajU+9JE2KK9km6GIQFDgMhcLYhKINQdeDXBgaxfrznQyUy85Wn/jHpSvRcM71IIFSae/
+	NlY5GROkteLBWOzqO727GnquJVd6CSwIVR6dfNHlv5XEiVKDVO0gyPJhwUx945I3ElIOzJvAolY
+	RhdtfBsMNuKGL5QRM1XyzPQyzwwNUykkYT5VvuGwKhsZ8jSst4/GdYpQpcN5azsUt4TpCxDX+cs
+	aAMgYiYcobWjjTpnQBYKTq8tQN2YHXK/wu88obcAoSCpPINMRfVX45cYf1mIKynkzEAfwtQgVM3
+	aWJwLZZ5HuRvj2BpYJvTcFuCweZsb7OvtQec14EIYfBqbsSZi2RozSORGHhIynC3i2lZ0/1uKxx
+	xy0/wgPX1ZEdCTE8M=
+X-Received: by 2002:a05:600c:a09:b0:477:9fa8:bc99 with SMTP id 5b1f17b1804b1-4836570e260mr2336315e9.4.1770838208998;
+        Wed, 11 Feb 2026 11:30:08 -0800 (PST)
+Received: from skbuf ([2a02:2f04:d501:d900:2f75:bf70:f0b9:4586])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-43783d46f9csm6295445f8f.10.2026.02.11.11.30.07
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 11 Feb 2026 11:30:08 -0800 (PST)
+Date: Wed, 11 Feb 2026 21:30:06 +0200
+From: Vladimir Oltean <olteanv@gmail.com>
+To: "Russell King (Oracle)" <linux@armlinux.org.uk>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Jonathan Corbet <corbet@lwn.net>, linux-doc@vger.kernel.org,
+	linux-phy@lists.infradead.org
+Subject: Re: [PATCH net-next] doc: generic phy: update generic PHY
+ documentation
+Message-ID: <20260211193006.ad2piivyoqhvg22r@skbuf>
+References: <E1vo0mF-00000007kbg-1OeA@rmk-PC.armlinux.org.uk>
+ <20260211154839.lbh4uovxr5b5s4nv@skbuf>
+ <E1vo0mF-00000007kbg-1OeA@rmk-PC.armlinux.org.uk>
+ <20260211154839.lbh4uovxr5b5s4nv@skbuf>
+ <aYzHL1qwew5p-xoq@shell.armlinux.org.uk>
+ <aYzHL1qwew5p-xoq@shell.armlinux.org.uk>
 MIME-Version: 1.0
-References: <20260211-wiz-v1-1-fdd018d02f33@gmail.com> <20260210203018.dr6dwj55aob3phsd@skbuf>
-In-Reply-To: <20260210203018.dr6dwj55aob3phsd@skbuf>
-From: Felix Gu <ustc.gu@gmail.com>
-Date: Thu, 12 Feb 2026 02:47:35 +0800
-X-Gm-Features: AZwV_Qgk4SBIkoZp5nSodOftfD1iova6hzoh3N2Icz1tn3iMkHffyOJziKtPZ94
-Message-ID: <CAN4SLj2isLi3Hd4Zp7QV+PtYQPLzafo9DiD1Vza6+zLqq90u6Q@mail.gmail.com>
-Subject: Re: [PATCH] phy: ti: j721e-wiz: Fix device_node leak in wiz_get_lane_phy_types()
-To: Vladimir Oltean <olteanv@gmail.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Jyri Sarha <jsarha@ti.com>, linux-phy@lists.infradead.org, 
-	linux-kernel@vger.kernel.org
+Content-Disposition: inline
+In-Reply-To: <aYzHL1qwew5p-xoq@shell.armlinux.org.uk>
+ <aYzHL1qwew5p-xoq@shell.armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260211_104748_523835_2B0211AD 
-X-CRM114-Status: GOOD (  25.23  )
+X-CRM114-CacheID: sfid-20260211_113011_430024_0ED6276D 
+X-CRM114-Status: GOOD (  24.59  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -112,53 +102,52 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gV2VkLCBGZWIgMTEsIDIwMjYgYXQgNDozMOKAr0FNIFZsYWRpbWlyIE9sdGVhbiA8b2x0ZWFu
-dkBnbWFpbC5jb20+IHdyb3RlOgo+Cj4gSGkgRmVsaXgsCj4KPiBPbiBXZWQsIEZlYiAxMSwgMjAy
-NiBhdCAwMjoxNDoxMUFNICswODAwLCBGZWxpeCBHdSB3cm90ZToKPiA+IFRoZSAnc2VyZGVzJyBk
-ZXZpY2Vfbm9kZSBpcyBvYnRhaW5lZCB1c2luZyBvZl9nZXRfY2hpbGRfYnlfbmFtZSgpLAo+ID4g
-d2hpY2ggaW5jcmVtZW50cyB0aGUgcmVmZXJlbmNlIGNvdW50LiBIb3dldmVyLCBpdCBpcyBuZXZl
-ciBwdXQsCj4gPiBsZWFkaW5nIHRvIGEgbWVtb3J5IGxlYWsuCj4gPgo+ID4gVXNlIHRoZSBfX2Zy
-ZWUoZGV2aWNlX25vZGUpIGF0dHJpYnV0ZSB0byBhdXRvbWF0aWNhbGx5IGRlY3JlbWVudAo+ID4g
-dGhlIHJlZmVyZW5jZSBjb3VudCB3aGVuIHRoZSAnc2VyZGVzJyB2YXJpYWJsZSBnb2VzIG91dCBv
-ZiBzY29wZS4KPiA+Cj4gPiBGaXhlczogN2FlMTRjZjU4MWYyICgicGh5OiB0aTogajcyMWUtd2l6
-OiBJbXBsZW1lbnQgRGlzcGxheVBvcnQgbW9kZSB0byB0aGUgd2l6IGRyaXZlciIpCj4gPiBTaWdu
-ZWQtb2ZmLWJ5OiBGZWxpeCBHdSA8dXN0Yy5ndUBnbWFpbC5jb20+Cj4gPiAtLS0KPiA+ICBkcml2
-ZXJzL3BoeS90aS9waHktajcyMWUtd2l6LmMgfCA1ICsrLS0tCj4gPiAgMSBmaWxlIGNoYW5nZWQs
-IDIgaW5zZXJ0aW9ucygrKSwgMyBkZWxldGlvbnMoLSkKPiA+Cj4gPiBkaWZmIC0tZ2l0IGEvZHJp
-dmVycy9waHkvdGkvcGh5LWo3MjFlLXdpei5jIGIvZHJpdmVycy9waHkvdGkvcGh5LWo3MjFlLXdp
-ei5jCj4gPiBpbmRleCAxMmExOWJmMjg3NWMuLjkwNDU0MWU5MTM4ZSAxMDA2NDQKPiA+IC0tLSBh
-L2RyaXZlcnMvcGh5L3RpL3BoeS1qNzIxZS13aXouYwo+ID4gKysrIGIvZHJpdmVycy9waHkvdGkv
-cGh5LWo3MjFlLXdpei5jCj4gPiBAQCAtMTQwNyw5ICsxNDA3LDggQEAgTU9EVUxFX0RFVklDRV9U
-QUJMRShvZiwgd2l6X2lkX3RhYmxlKTsKPiA+Cj4gPiAgc3RhdGljIGludCB3aXpfZ2V0X2xhbmVf
-cGh5X3R5cGVzKHN0cnVjdCBkZXZpY2UgKmRldiwgc3RydWN0IHdpeiAqd2l6KQo+ID4gIHsKPiA+
-IC0gICAgIHN0cnVjdCBkZXZpY2Vfbm9kZSAqc2VyZGVzOwo+ID4gLQo+ID4gLSAgICAgc2VyZGVz
-ID0gb2ZfZ2V0X2NoaWxkX2J5X25hbWUoZGV2LT5vZl9ub2RlLCAic2VyZGVzIik7Cj4gPiArICAg
-ICBzdHJ1Y3QgZGV2aWNlX25vZGUgKnNlcmRlcyBfX2ZyZWUoZGV2aWNlX25vZGUpID0KPiA+ICsg
-ICAgICAgICAgICAgb2ZfZ2V0X2NoaWxkX2J5X25hbWUoZGV2LT5vZl9ub2RlLCAic2VyZGVzIik7
-Cj4gPiAgICAgICBpZiAoIXNlcmRlcykgewo+ID4gICAgICAgICAgICAgICBkZXZfZXJyKGRldiwg
-IiVzOiBHZXR0aW5nIFwic2VyZGVzXCItbm9kZSBmYWlsZWRcbiIsIF9fZnVuY19fKTsKPiA+ICAg
-ICAgICAgICAgICAgcmV0dXJuIC1FSU5WQUw7Cj4gPgo+ID4gLS0tCj4gPiBiYXNlLWNvbW1pdDog
-MTkzNTc5ZmUwMTM4OWJjMjFhZmYwMDUxZDEzZjI0ZThlYTk1YjQ3ZAo+ID4gY2hhbmdlLWlkOiAy
-MDI2MDIwNC13aXotOWE2NzYwNGEwMzRmCj4gPgo+ID4gQmVzdCByZWdhcmRzLAo+ID4gLS0KPiA+
-IEZlbGl4IEd1IDx1c3RjLmd1QGdtYWlsLmNvbT4KPiA+Cj4gPgo+Cj4gWW91IGFyZSBmaXhpbmcg
-YSBidWcgZnJvbSAyMDIwICh2NS44KSB3aXRoIGZ1bmN0aW9uYWxpdHkgaW50cm9kdWNlZCBpbiAy
-MDIzLAo+IGNyZWF0aW5nIGF2b2lkYWJsZSBoZWFkYWNoZSBmb3IgYmFja3BvcnRlcnMgKHRoZSBv
-bGRlc3Qgc3VwcG9ydGVkIExUUyBpcwo+IDUuMTAsIHdoZXJlIHRoZSBjbGVhbnVwIEFQSSBkb2Vz
-IG5vdCBleGlzdCkuIENvdWxkIHdlIHJlaW1wbGVtZW50IHRoaXMKPiB0aGUgIm5vcm1hbCIgb2Zf
-bm9kZV9wdXQoKSB3YXk/Cj4KPiBJIHJlYWxpemUgdGhpcyBpcyBub3QgbmV0ZGV2LCBidXQgdGhp
-cyBwaWVjZSBvZiBhZHZpY2UgZnJvbQo+IERvY3VtZW50YXRpb24vcHJvY2Vzcy9tYWludGFpbmVy
-LW5ldGRldi5yc3QgcmVnYXJkaW5nIHVzZSBpbiBkcml2ZXJzCj4gc2VlbXMgY29tbW9uIHNlbnNl
-IGFuZCByZWxldmFudCBoZXJlOgo+Cj4gICBMb3cgbGV2ZWwgY2xlYW51cCBjb25zdHJ1Y3RzIChz
-dWNoIGFzIGBgX19mcmVlKClgYCkgY2FuIGJlIHVzZWQgd2hlbiBidWlsZGluZwo+ICAgQVBJcyBh
-bmQgaGVscGVycywgZXNwZWNpYWxseSBzY29wZWQgaXRlcmF0b3JzLiBIb3dldmVyLCBkaXJlY3Qg
-dXNlIG9mCj4gICBgYF9fZnJlZSgpYGAgd2l0aGluIG5ldHdvcmtpbmcgY29yZSBhbmQgZHJpdmVy
-cyBpcyBkaXNjb3VyYWdlZC4KPiAgIFNpbWlsYXIgZ3VpZGFuY2UgYXBwbGllcyB0byBkZWNsYXJp
-bmcgdmFyaWFibGVzIG1pZC1mdW5jdGlvbi4KSGkgVmxhZGltaXIsCkkgd2lsbCBmaXggaXQgaW4g
-VjIuClRoYW5rcywKRmVsaXgKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBs
-aXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LXBoeQo=
+On Wed, Feb 11, 2026 at 06:15:11PM +0000, Russell King (Oracle) wrote:
+> On Wed, Feb 11, 2026 at 05:48:39PM +0200, Vladimir Oltean wrote:
+> > My 2 cents: I would actually remove any reference to any sort of preferred
+> > call order. There's nothing in the framework to back up such a concept.
+> > Just say that it is recommended for PHY provider drivers to not rely on
+> > a particular calling order, such that PHY consumers have the freedom to
+> > choose depending on what suits them best.
+> 
+> Sending out this patch was a last ditch attempt to get a response to
+> improve the "generic" PHY subsystem, However, as the issue is now
+> almost two weeks old, and the current patch series causes a regression
+> according to Mohd's testing, I've rewritten the series to be a finer
+> set of smaller incremental changes.
+> 
+> This has meant dropping the idea of using the "generic" PHY subsystem
+> in generic code, because as "generic" PHY drivers are currently
+> written, that's just impossible given the current state of "generic"
+> PHY.
+> 
+> There are "generic" PHY drivers that require to be powered up for
+> any of the phy_set_*() functions to not error out. There are also
+> "generic" PHY drivers that require the PHY to be powered down
+> before calling phy_set_*() before the new setting taking effect
+> at PHY power up time. In this group there are drivers that error
+> out if phy_set_*() is called while the PHY is powered, and there
+> are drivers that silently accept the call, returning success, but
+> do not change the PHY mode.
+
+Are we talking about PHY_MODE_ETHERNET generic PHYs here, or in general?
+
+> This makes it pretty much impossible for platform independent code to
+> know the correct order to call the functions, and what to do if an
+> error or success is returned from any particular API call.
+> 
+> In other words, it's a trainwreck as currently implemented, and this
+> was my attempt to try and get some consistency.
+
+Do you have a list of such PHYs relevant to phylink? We can still
+document the expectation, and modify them.
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
