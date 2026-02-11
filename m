@@ -4,152 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 433EDE9E311
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Feb 2026 15:31:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 23ADBE9E311
+	for <linux-phy@archiver.kernel.org>; Wed, 11 Feb 2026 15:48:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EqgO9U4LzL0vGVIfrFiPTbctacWVB8CWOLEjcY40V7Y=; b=g69s5OlmzFnvBK
-	y/JLWltWwjCiIQMSdSld7OQYehDmWYPREn76uoJoQeMH8QgF9RsjkFAfjPMtcKjEkJLgwlltsoxEw
-	/LqsnYovdgTlpqDmy/AlJvYCfRc6pWNP4aA3PBwxWqhNl3g+3lZZQ6lpWbvedQZOWg2GbE5Q6Rgd+
-	pGE6rWtr/61DIVvxnqGsLGwSOArbKU+v10M0Ewfr9Cyl3YJjkGgeGykSHLIjNkTEZF6JyHkxskFJx
-	UXB0xJBk08TOBO0l4J1WWPDVX6DiV3atebRBfEmzTagwVOKJzS7kkjQf3Wl1mg8+V4WaSet88i1zf
-	pead6iiReUq4c+MZAdlw==;
+	List-Owner; bh=oPYpbzGY5ZP8HjFDEV+SlCYFh+diQqjF5F7fnd3iMkE=; b=Fl3UwKbtcFBVK4
+	P88YsN57j0wZVHi0c4tdgwOY5AqBQAx67OaPorvyOoUDWhMBYY2T39d0W1Jtdv1h7PnoJvtpoL8cw
+	9S2nKR5rbinppmBwJrZTGog53lkse/Mr9KKfJxfPBF5hxjBXWLTKjjN6jeTaoN+FHjTdw5dqHdwRf
+	LcKlm3vxYa4vBY+rLWQebm8Pa8b1AliUVWMs++hC/ipppVSIv1NwI2mgSr9ZlR2ZxAO1k5bMcr1B6
+	HqTKXEZIp6uKt04nZs87elQQEPM0eHY5yM7zEBu1cPA8+xxi521jvfuOyRGwOPL6esg4522R6dZYO
+	HtmY3a0vBmLl9PNPTcCw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vqCBp-00000000n36-36kU;
-	Wed, 11 Feb 2026 15:31:41 +0000
-Received: from mail-northeuropeazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c200::3] helo=DU2PR03CU002.outbound.protection.outlook.com)
+	id 1vqCSN-00000000o6F-2zKD;
+	Wed, 11 Feb 2026 15:48:47 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vqCBm-00000000n2X-1akS;
-	Wed, 11 Feb 2026 15:31:39 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=CRZo/X/d1V6BGj/d1OLi8x0mt4Uzqp9JEUgB5g451tEB8Gza742HCMl+maYpFCETgC7AuUi/1L12FI6Q4ZIm7ODP/riuTzZVqBkRxtpOOzwBL1r9g8qqG4NuNGS8/H3hrq2LjZoxYbYSp6yLzNnGJV8IC5med5rnf3TWa6qMbGSy3wqgJT3lKHdv5HCptPJy/8eV0Gm5VFg6+Em9FB0EhnG/WNkC2XyScMcMTR0brDtb2xs/ihgOI5/X8Vpc63ane9gcvXpUOtwQen3GTxBk3rVoiMD1XOrIYsSQOy8DOakbRuAP2lqUXCYevWzCHxzew3g+6tPqeB4fFfPmQDyedA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=qaD72ecDuLWru1LO1sroQormtB54F4W0DDaAyJ2n61s=;
- b=TYsZ/nFIh+hFHEuNH1/6BuqxIvwp5PCYgGg1cU04eFdQb+T7Synscbm64umb7ZzCVg2/EYGmS7K+d/I0uBu1Dr45XYIkQetQh1W6K+3RPBKmi2R+SilQeE0n+IQ3N0l5qCUc+iugahnefEJ4o9GbTU6JKm1geRfwxDazV5dZVercS7Q5PR+WU/4vaHqM/ohSR00SmroG4UWnaH3MooPGdo/yUsNTpxAcNfXbjU5M4CglJSIS97BNSFYVA4keEOZkcZyM1pobJmnpLPYGKx1oEkwK0zfnM1MIdaTsLI/09bpY4jS7GM9V2n4DHdof9lFWGCsvtmHI1ffpTL+LCP/cOw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=qaD72ecDuLWru1LO1sroQormtB54F4W0DDaAyJ2n61s=;
- b=JONnBkaTTMkilny8OkZ1bo682m0skIsnybGAbZQVs+pLjzIKQ86bXEGuaDzeFi6395G4Nmk6FVL2tMzIrdzzFSAKWLNYwiB9FtFGxwOz1eG0ibInAGNN16/72XNq36gZaaVGo4phNcfBoOAIOZvek5quRyFjG7CUt5fi/Cg96i32+/zDznuvwo/0X1bHZf3F9tPY0hNIoHv6CkQJegXTzw3hFo42X3moTmOBnpeTDjTvLIJceXjOvG/MvwGYYnyR4w37x7cEmlKgStzqnLlAVZNQCUDe1S5a7xcSZrlhYbnPa8f3qYpKWOKxNxqkK6VcZo/3EAZflJ/VYL0nWI2Brw==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from PA4PR04MB9366.eurprd04.prod.outlook.com (2603:10a6:102:2a9::8)
- by VI1PR04MB9860.eurprd04.prod.outlook.com (2603:10a6:800:1d0::15) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9587.16; Wed, 11 Feb
- 2026 15:31:33 +0000
-Received: from PA4PR04MB9366.eurprd04.prod.outlook.com
- ([fe80::75e4:8143:ddbc:6588]) by PA4PR04MB9366.eurprd04.prod.outlook.com
- ([fe80::75e4:8143:ddbc:6588%6]) with mapi id 15.20.9587.010; Wed, 11 Feb 2026
- 15:31:33 +0000
-Date: Wed, 11 Feb 2026 10:31:26 -0500
-From: Frank Li <Frank.li@nxp.com>
-To: Alexander Stein <alexander.stein@ew.tq-group.com>
+	id 1vqCSK-00000000o5o-3xwL
+	for linux-phy@lists.infradead.org;
+	Wed, 11 Feb 2026 15:48:46 +0000
+Received: by mail-wm1-x343.google.com with SMTP id 5b1f17b1804b1-4806853efb5so7802645e9.0
+        for <linux-phy@lists.infradead.org>; Wed, 11 Feb 2026 07:48:44 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1770824923; x=1771429723; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:date:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=kUog19f3UA9QhTl6kEgUYlRzsmDFYZZB3pA0WGtflsQ=;
+        b=XiayFGOu8W8dXzq4oB2tWTvuy5aGOPqT/cIbXH3ZriiXBzMerJ5C4mljQEjhD9ebR4
+         2bfi+VdvjS0ChBIBAO22KmtnvLuYJ55QZNg/4DtnbzQvmWNN3yUBFQoboz607k7rKiVz
+         bPS7mb7J53OKl15fQ0uk4opIMdwJKrbqjzqtn3zv3YcycIpKiZnNkxdf4o+31an95ZJX
+         5RPXpcXCxNIPuL9mhtq1/zFnFK5gAmCl+W0k9I++TyTXoywGQOOs+qdYT71p4m9NCvwy
+         4MHiBHdawSf9ysGpmhYroRHu9GuuYOozS/+pCUFprJbDqiZSkhcs7uFW5nLdeNvJYHPi
+         vE9w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1770824923; x=1771429723;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:date:from:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=kUog19f3UA9QhTl6kEgUYlRzsmDFYZZB3pA0WGtflsQ=;
+        b=q+UAjIe8eGT0DO3+J+61/a+Yevk2MMrE25j1eMt4ty+Upc9gSdl2S7GW7qy1/LcOP9
+         DBuQ58BEdyfUCdvNoPNqmJZUpy4MGj+aQBX5nNIukQzwpiCC+g/wNZQz2n1q+FcHX+Yg
+         SK95B65FKhdYyPU4kZzXHt8GL1WSy5QZ3F1BzqI45e6HYlE/CnkBSfuJDkZFJ7VQ0DmL
+         KpmN0vxV5M7HFz9nr0m+iElZWJeYXCYwEUpfE+gZLNi6Kj4VRQ37yTamFGW0R2GPdBWu
+         t6Gpy05lS3YpTbiy62vF/tvAi8KOjl61ykyDoxZ+ck+WLNo+cWPwlCc5bbJs1A6T2C73
+         s+NA==
+X-Forwarded-Encrypted: i=1; AJvYcCWclL1H9j+17aOLhuygMTrzbZRUptzlZcepLUuOYxzGbqh8ldY68RydOLJJu7uWZa8Nta3lqOHCFa4=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwW7RT32z2YsRzjrFyIuVZ7RNRrH9oZ5cI7mfBHTmdQgHPJiUR5
+	5fINlDfGWheqvOQgmKQrArHcTiY/HgKE2qqGB5dVAHlsSs5cLj+PIi0O
+X-Gm-Gg: AZuq6aJivY1lGsaN5FjzoEGf4kqL4YRNLrzLtXTMKjFJ/K80WHCYnvBms52cGv3u7Pv
+	M1bMS5FrxXKE2q/z6wxNcZDyLOw8TzorrbUBZM5d6H3rT6l2oz5vC6W8A+wPqqXEXVMPZx+KyjH
+	Qe6heC9jS+ApudcGeAYH6qmS4Pi4QWYLIHbH3IyA7CywzRqGV9FDD3fxkV+M/b99iFce/EbG2yp
+	4NRblAh4fNtDRn6mfuyMkHPH5TZh+48NLRIa9gKmc3gkZsPCUoRs/UWF5fs+tbWp0rSqlNzz08Z
+	IdivCsEgxmFU9EsEa+04nUIVW77s14bpkJeBAcNkrW47wMO3f044mrPpih7yu+hihyg2n9Oootv
+	DmPEXuPKGJxniO8u7+vYfzZiF1GCl8+p7PWlwaiWm+X1KqOOiJCfmF3BNdMBsRfIpdeHOZ1ZAgf
+	0b1wnp4/+OW/JIua8KYjE6RWM=
+X-Received: by 2002:a05:600c:8214:b0:475:d7b8:8505 with SMTP id 5b1f17b1804b1-4835e2dca60mr23446085e9.7.1770824922660;
+        Wed, 11 Feb 2026 07:48:42 -0800 (PST)
+Received: from skbuf ([2a02:2f04:d501:d900:d8ac:c964:9b43:1b13])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4834d82a4c4sm246760765e9.10.2026.02.11.07.48.41
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 11 Feb 2026 07:48:42 -0800 (PST)
+From: Vladimir Oltean <olteanv@gmail.com>
+X-Google-Original-From: Vladimir Oltean <vladimir.oltean@nxp.com>
+Date: Wed, 11 Feb 2026 17:48:39 +0200
+To: "Russell King (Oracle)" <rmk+kernel@armlinux.org.uk>
 Cc: Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
-	Sascha Hauer <s.hauer@pengutronix.de>,
-	Pengutronix Kernel Team <kernel@pengutronix.de>,
-	Fabio Estevam <festevam@gmail.com>, linux-phy@lists.infradead.org,
-	imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [RESEND 1/1] phy: freescale: imx8qm-hsio: provide regmap names
-Message-ID: <aYygzojdO0QACdqX@lizhi-Precision-Tower-5810>
-References: <20260211144949.1128122-1-alexander.stein@ew.tq-group.com>
-Content-Disposition: inline
-In-Reply-To: <20260211144949.1128122-1-alexander.stein@ew.tq-group.com>
-X-ClientProxiedBy: PH0PR07CA0033.namprd07.prod.outlook.com
- (2603:10b6:510:e::8) To PA4PR04MB9366.eurprd04.prod.outlook.com
- (2603:10a6:102:2a9::8)
+	Jonathan Corbet <corbet@lwn.net>, linux-doc@vger.kernel.org,
+	linux-phy@lists.infradead.org
+Subject: Re: [PATCH net-next] doc: generic phy: update generic PHY
+ documentation
+Message-ID: <20260211154839.lbh4uovxr5b5s4nv@skbuf>
+References: <E1vo0mF-00000007kbg-1OeA@rmk-PC.armlinux.org.uk>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PA4PR04MB9366:EE_|VI1PR04MB9860:EE_
-X-MS-Office365-Filtering-Correlation-Id: ee0c5c9a-9c9d-4d4b-d682-08de6982a2bc
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|366016|376014|1800799024|52116014|7416014|38350700014|7053199007;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?XVm6R8AIuJIOBHvNUrv6IaCNpqafvPhqJGFiCzpnsXtr1W//jbrFuCNnYC8i?=
- =?us-ascii?Q?r4YAjuPGeRZgVoeUI5Otdna5mNK5tzwm/m+h5gWSgcolLACwkROp3ZAIvZ1E?=
- =?us-ascii?Q?gtNncz7LUPp3VeF3Zb3eA8pIEP6VJ5GVk6by/WTxFek6fEiwzA9CHh8MrLIf?=
- =?us-ascii?Q?j3dIDv65PKOcmZh5PrO5tdi+iX60QplDnyUMk4gBqbd2yKnkcTpTkugPCDBT?=
- =?us-ascii?Q?8wft4V+M106yuDs8Vnztl7BdtNheaMcLlf6UN6JoDFiCbjluXR6yWRdLN2O0?=
- =?us-ascii?Q?DQHcUuQ3ThkNHr/w0zNZf9UQ7uvHL2++2tNvKlKeUhshNErM9ogU86ywnyP6?=
- =?us-ascii?Q?TnNOs2JbrcYjVf4sMcvcrzIxqkBTGApjhik9oESPguG9cFh6dA0dOrIgc4sF?=
- =?us-ascii?Q?eOwN5EbO4uD7kws6lqeClrCtu91hVvUhb4L5KTVC0RK9r5jhxokjvQm2FdmK?=
- =?us-ascii?Q?Mj6UAEdiBV8j+5D17A2yrx4Qmyq+OmbY5VW7+eeFR00TS1kvab0yT3quC8Ql?=
- =?us-ascii?Q?lttkRs5XhFFTs2TNKtOwqi9dcEXPeOlueXn/fnI86GCnbu6gQKWU80c7DUGO?=
- =?us-ascii?Q?u5zBnYjLzb0zww8iiZDwg7QlV2jhlRyZ2SXSSWbsEL2UvU5WiGtWvjozgKgm?=
- =?us-ascii?Q?Pa7Clef6mEeVs7KZCpz6dVZGVeIWczXunf80pzxrA+wEjvi2t/n6PEv3LSUp?=
- =?us-ascii?Q?7btYpzrLKkilfTKnQvySDrIcvUETxIp1aW3wYGY+5W8aljnFmJRVB6gOBwew?=
- =?us-ascii?Q?nU3NpnCu9sNmuXwZwo+1SfPK4chlmaAjlyRSU0VMKP48rZJHWOVIHde7guVZ?=
- =?us-ascii?Q?AMeLU3eZ6QZIHIdk5+6lBfUt8koHvgJqKt35456tqEclZ1rsH5n8XyqXrqUk?=
- =?us-ascii?Q?/ggZdHhj1jxYXveukm9mn73t85OdKqZ1VWYkfvzhz/imgYHcbyB0VIK2ZWDK?=
- =?us-ascii?Q?qatk6dvhV9ys6XBw2ne7Da8hCgLvkeX8R46bTyO/kKTUf8gAVrL21ePDj2nE?=
- =?us-ascii?Q?Pr5cRJNApFWAy5h9YyRsc0GBu/LE24CLMWOzWI0nNbLn8u5xVE9PtFWVoj2B?=
- =?us-ascii?Q?hourq/gIxrNiIc7CPFCEumIMCVGuQh3PnDuUEkHvVUHrT0m2cvZFIyFid5gP?=
- =?us-ascii?Q?XtVOhBvJqzomg0XhbkoKUSS7iaM9UFJz1TTNTu8R8VIyn3Aw4RU8WyC+OsAQ?=
- =?us-ascii?Q?6UpdOEX65hqiWsDNx6Jw8q96pOMdMHabtfDXJtlQd8IbJykaq4BwoNW4mA/e?=
- =?us-ascii?Q?W63bUKdQH7GvlC6O888XpKGlO3Jcj2HQbwaUkonIU79X/mrvM86fBUgZFHcn?=
- =?us-ascii?Q?GuQ0jDkKkrs91BrytVQtzDW4dy3Vf+1NNRMyVXcWvQtXnX2/z0xpfb6UzY3P?=
- =?us-ascii?Q?hROLroLvO6D8CaxROs4lJyQeiwd37+EC9Zuj4axuMQTKSD/Fm0aVEU/K9UGj?=
- =?us-ascii?Q?gbKj1tNFu4TkH/7FixzzQrn4bXZyH+YCimahIYJtJhftZTTV6J4QkogilnqZ?=
- =?us-ascii?Q?4la1y3L2dzSpT06aj6JX0uIh1JNPmysOxY5nqSCSdxAZxAwO8LeN+cKmQwoq?=
- =?us-ascii?Q?qPHCILZ/n5tjNizQoCU+CnB59gdYCEnvbWxtUHAVG2qIeFG0ZiGGfxvp6wGC?=
- =?us-ascii?Q?pTQ1KQBLK1g+BfzsylUv+QE=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PA4PR04MB9366.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(366016)(376014)(1800799024)(52116014)(7416014)(38350700014)(7053199007);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?x5XG1+y/R34Gfu0h3iUlsh8ejfXQ7hzu8jPF7pUikb77spK1yI9+DXX73CdL?=
- =?us-ascii?Q?3G1NgHeJfsr1eylRaZWD2Zlf6JKEq3rr5dOuOvu4U4iqy2I/iWHlG10yNZ+T?=
- =?us-ascii?Q?uwXO/S/LdXNC6sH32MrEjgrNtUuBxftBqYZerNCgvoUFthbm+9PEmx/XsFVf?=
- =?us-ascii?Q?GCtQw8yxdfJp3JHjNKs5yLz3w0tLjf/VeAVYpD4+txd4ZKomDNUhZPdLldgs?=
- =?us-ascii?Q?nrDfX7sqBObz6pphnMODQCRhDq+MNfcj0lrEfI+6BcCnXhJJQkN6INA6gnBS?=
- =?us-ascii?Q?QyifjvGfrFQSCCS8xEJVkCU5UtnWJQwBSpDC8KX/MT/n7a2qurJDKL6BAFPG?=
- =?us-ascii?Q?3s/9DJhThlrHLO6cs4CaaIUTGatyAB4eVAJm0qXk4GMUv1bxdzZDQFP6/4a8?=
- =?us-ascii?Q?ATniZYAmuUkCpgBZDg9jg9eOlGVYnESYT0r//x/+djsgSceQK7Kws4NmbKRH?=
- =?us-ascii?Q?8xdk8L0ES6eNN1ut8ctS9PISxiOhwLdhHMdwnqOTpE9OvTV7EgD1dZtx9TNr?=
- =?us-ascii?Q?vzQpww1l9Yma6DQxHIwlveuPsQ+PmGSeqdjZuVjAO2prSrac96TGLPzACypn?=
- =?us-ascii?Q?LHmVJfjhtdUg3KGq2rJQKo6B8IAoIxSrSqBgM8Nd/0XwgSZBFsTlHrTi/IcM?=
- =?us-ascii?Q?kip2Thwp9kJaisqXsYJjnCC4ZMRwoFESRjjcqCXlVhMMYHqVAjBaUc0bjsCE?=
- =?us-ascii?Q?vHKIYiQ5wiPshss0NeDEhk3y50uKF6WWFzSztbLbXs4w8NBOCM4c+B/1zzZT?=
- =?us-ascii?Q?TXhDWIjAeneAWV9cGTlwRwUasuIxymapugVKAj2RE/1qbqCb6INfTi+CwPHF?=
- =?us-ascii?Q?3xNW9gxOCzqG0wEBtopBj0OynU7myx3b2bzTMLj35rVEGPiy1+223IStZHid?=
- =?us-ascii?Q?Y8fc+P7/1Q+lxv7to/WwdeozOGZGQOoJoir+z2KfWFm8sOE4PbcRjwpnCKkg?=
- =?us-ascii?Q?DXFDBANi4/dEfOXku5uVEFYWBqyvE+9K4fs3cu40sKg1P2P4rHR98u/eA2a2?=
- =?us-ascii?Q?pxWtV8XY+Y19JcW+pk/3m2lBBTnLhA/GxeLxwiyveglF5Ts99zM5opHhJ2f4?=
- =?us-ascii?Q?AuUqtFjJTGkDA8MH+aVk+zORpVXo2NbZYiDbTPUbY9HgGLXcVi6Sry7bupJT?=
- =?us-ascii?Q?ZYT9Pn2fZyGS9zoTWP4SyphPLUHpYSzOaT1r61wMj20+Ii3ckv7mfCC5fnqI?=
- =?us-ascii?Q?ibj1egbDNYx5OfpihYOQBeJNh3dyYvS5ZIeXMRwZvxf0KBSKDcmigvujGScT?=
- =?us-ascii?Q?LIGjNkJ0rQTP+3llXJh0u6mT7zGOUKsCLClatvgWmmlyZmt8rsaAmP1KtOmA?=
- =?us-ascii?Q?93SxwUGfnaoI5fyZ1l/9H62F3U/QuyBljfcp4ydTZRrKRkZLA8tVmBfqjDXt?=
- =?us-ascii?Q?8+1d+bJiOnJnEelN7WINjjh+dK5gLZ1Wun6K2M6Q0urslN/FMNzZQn/TlJTC?=
- =?us-ascii?Q?rWb/mHloioKROXvFEZCtNEjWPRbSDxFq6DUI743n3fGJSiJ5VLOKqVQ36FPf?=
- =?us-ascii?Q?dCNrFQYeV+V2+NcOT40NHP1IobykpGoba/hw6zLo2MJnXp7mePYalV1v4cgG?=
- =?us-ascii?Q?7Mq6avmqgVA0YDKkXlWKPZA2Ptf1MwgMpybtUoTipaOwe8y7zdWsgLzV22uL?=
- =?us-ascii?Q?JNZBHMh1j8mcUuAQc6V7vXqRNmHA94E0ZeSO6UPK3JPjhCvBhSJeRMnTZTEl?=
- =?us-ascii?Q?20QQEOCv3clxraLk1Jlou8bBEPfXe/vkPsHkHxDy5P5oeu5HBG3MLLhkWGS3?=
- =?us-ascii?Q?h68naGWx1g=3D=3D?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ee0c5c9a-9c9d-4d4b-d682-08de6982a2bc
-X-MS-Exchange-CrossTenant-AuthSource: PA4PR04MB9366.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Feb 2026 15:31:33.1423
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 88Pl1vtPx2pTQslDIlgsSuYnMd7BtArz7y7Ps8LIutJ0svHDWNSqtcMWIVQLb8HscYLEbwvrVG7P/3jr2snV4w==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB9860
+Content-Disposition: inline
+In-Reply-To: <E1vo0mF-00000007kbg-1OeA@rmk-PC.armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260211_073138_442846_6D428B15 
-X-CRM114-Status: GOOD (  16.77  )
+X-CRM114-CacheID: sfid-20260211_074845_009122_62945A40 
+X-CRM114-Status: GOOD (  32.90  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -166,75 +102,94 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Feb 11, 2026 at 03:49:48PM +0100, Alexander Stein wrote:
-> This driver uses multiple regmaps, which will causes name conflicts
-> in debugfs like:
->   debugfs: '5f1a0000.phy' already exists in 'regmap'
-> Fix this by using a dedicated regmap config for each resource, each
-> having a dedicated regmap name.
->
-> Signed-off-by: Alexander Stein <alexander.stein@ew.tq-group.com>
+On Thu, Feb 05, 2026 at 02:56:15PM +0000, Russell King (Oracle) wrote:
+> Update the generic PHY documentation as a result of the discussion for
+> the s32g submission.
+> 
+> Link: https://lore.kernel.org/r/aXtvDn_-pCuKPrnf@vaman
+> Signed-off-by: Russell King (Oracle) <rmk+kernel@armlinux.org.uk>
 > ---
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
-> Same as the one sent in December but with an updated CC list.
->
->  drivers/phy/freescale/phy-fsl-imx8qm-hsio.c | 23 +++++++++++++++++----
->  1 file changed, 19 insertions(+), 4 deletions(-)
->
-> diff --git a/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c b/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c
-> index 279b8ac7822df..4ab45c9f53dff 100644
-> --- a/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c
-> +++ b/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c
-> @@ -107,7 +107,22 @@ static const char * const lan2_pcieb_clks[] = {"apb_pclk2", "pclk2", "ctl1_crr",
->  static const char * const lan2_sata_clks[] = {"pclk2", "epcs_tx", "epcs_rx",
->  					      "phy1_crr", "misc_crr"};
->
-> -static const struct regmap_config regmap_config = {
-> +static const struct regmap_config regmap_phy_config = {
-> +	.name = "phy",
-> +	.reg_bits = 32,
-> +	.val_bits = 32,
-> +	.reg_stride = 4,
-> +};
-> +
-> +static const struct regmap_config regmap_ctrl_config = {
-> +	.name = "ctrl",
-> +	.reg_bits = 32,
-> +	.val_bits = 32,
-> +	.reg_stride = 4,
-> +};
-> +
-> +static const struct regmap_config regmap_misc_config = {
-> +	.name = "misc",
->  	.reg_bits = 32,
->  	.val_bits = 32,
->  	.reg_stride = 4,
-> @@ -562,19 +577,19 @@ static int imx_hsio_probe(struct platform_device *pdev)
->  		return PTR_ERR(priv->base);
->
->  	off = devm_platform_ioremap_resource_byname(pdev, "phy");
-> -	priv->phy = devm_regmap_init_mmio(dev, off, &regmap_config);
-> +	priv->phy = devm_regmap_init_mmio(dev, off, &regmap_phy_config);
->  	if (IS_ERR(priv->phy))
->  		return dev_err_probe(dev, PTR_ERR(priv->phy),
->  				     "unable to find phy csr registers\n");
->
->  	off = devm_platform_ioremap_resource_byname(pdev, "ctrl");
-> -	priv->ctrl = devm_regmap_init_mmio(dev, off, &regmap_config);
-> +	priv->ctrl = devm_regmap_init_mmio(dev, off, &regmap_ctrl_config);
->  	if (IS_ERR(priv->ctrl))
->  		return dev_err_probe(dev, PTR_ERR(priv->ctrl),
->  				     "unable to find ctrl csr registers\n");
->
->  	off = devm_platform_ioremap_resource_byname(pdev, "misc");
-> -	priv->misc = devm_regmap_init_mmio(dev, off, &regmap_config);
-> +	priv->misc = devm_regmap_init_mmio(dev, off, &regmap_misc_config);
->  	if (IS_ERR(priv->misc))
->  		return dev_err_probe(dev, PTR_ERR(priv->misc),
->  				     "unable to find misc csr registers\n");
-> --
-> 2.43.0
->
+> I didn't get any replies to my follow-up question to Vinod:
+> 
+>   Please also indicate in the documentation whether changing the submode
+>   of the serdes (particularly for ethernet) is permitted without doing a
+>   phy_power_down()..phy_power_up() dance around the phy_set_mode_ext()
+>   call.
+
+There's certainly nothing *not* permitting that call sequence.
+
+> I also didn't get any response to:
+> 
+>   For drivers such as stmmac, it will be important that details such as
+>   whether phy_est_mode*() can be called with the PHY powered on are
+>   riveted down and not left up to the generic PHY driver author - without
+>   that, generic PHYs basically aren't usable from SoC/platform
+>   independent code, and stmmac has bazillions of platform specific glue
+>   already because of (a) bad code structuring and (b) lack of
+>   generalisation through standardised interfaces that abstract platform
+>   differences.
+> 
+>   I want to be able for core stmmac code, or even phylink code (which
+>   is even more platform generic) to be able to make use of generic PHY
+>   stuff, but if the calls that can be made into generic PHY are platform
+>   dependent, that is a blocking issue against that, and makes me question
+>   why we have the generic PHY subsystem... it's not very generic if it
+>   exposes the differences of each implementation to users of its
+>   interfaces.
+
+It may well be that the "one consumer, multiple PHY providers, requiring
+unified behaviour" situation you bring up is sufficiently unique here,
+with stmmac/phylink, that local conventions are not sufficient.
+
+I'm not sure that precise answers exist for your questions. Rather,
+it's best if you could lay out common sense requirements, and generic
+PHY reviewers will make sure they are followed.
+
+As far as the framework is concerned, power and mode are fundamentally
+decoupled, so I think the documentation is actually muddying the waters,
+more than anything, by talking about a preferred calling order.
+If there's any connection between power and mode, it should be handled
+internally by the PHY provider driver.
+
+>  Documentation/driver-api/phy/phy.rst | 3 ++-
+>  1 file changed, 2 insertions(+), 1 deletion(-)
+> 
+> diff --git a/Documentation/driver-api/phy/phy.rst b/Documentation/driver-api/phy/phy.rst
+> index 719a2b3fd2ab..cf73e4fb0951 100644
+> --- a/Documentation/driver-api/phy/phy.rst
+> +++ b/Documentation/driver-api/phy/phy.rst
+> @@ -142,6 +142,7 @@ Order of API calls
+>  
+>      [devm_][of_]phy_get()
+>      phy_init()
+> +    [phy_set_mode[_ext]()]
+>      phy_power_on()
+>      [phy_set_mode[_ext]()]
+>      ...
+> @@ -154,7 +155,7 @@ but controllers should always call these functions to be compatible with other
+>  PHYs. Some PHYs may require :c:func:`phy_set_mode <phy_set_mode_ext>`, while
+>  others may use a default mode (typically configured via devicetree or other
+>  firmware). For compatibility, you should always call this function if you know
+> -what mode you will be using. Generally, this function should be called after
+> +what mode you will be using. Generally, this function should be called before
+>  :c:func:`phy_power_on`, although some PHY drivers may allow it at any time.
+
+My 2 cents: I would actually remove any reference to any sort of preferred
+call order. There's nothing in the framework to back up such a concept.
+Just say that it is recommended for PHY provider drivers to not rely on
+a particular calling order, such that PHY consumers have the freedom to
+choose depending on what suits them best.
+
+>  
+>  Releasing a reference to the PHY
+> -- 
+> 2.47.3
+> 
+> 
+> -- 
+> linux-phy mailing list
+> linux-phy@lists.infradead.org
+> https://lists.infradead.org/mailman/listinfo/linux-phy
 
 -- 
 linux-phy mailing list
