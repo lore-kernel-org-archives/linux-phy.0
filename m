@@ -4,96 +4,152 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 34A8EE9E311
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Feb 2026 14:50:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 433EDE9E311
+	for <linux-phy@archiver.kernel.org>; Wed, 11 Feb 2026 15:31:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=oZp3nmrb/is1Udqcpy0T2dFBIWRQQEI3/kL5awC+jWU=; b=q6TMwYcf2kmYZd
-	yRgpd1RfPcj9LnDILTwKT+H8tZGwCOVQ5IZL28sMSC0OgpSX2/w/kyi87Vdtc7qUYTlO7utt8QwwT
-	LIBOgwc18+lDBB3ZyqwMreQADZdoA0sdkL/8QfxNw8NxBsCosXtxYU2BZDVKv6qJopUYS0qyJ5xtE
-	4JaCfUN3rFnxd5q4CimWu6eFi7wAaAGAqUONRyKzIkzM5wTuEOJ9WxvQaE+PtU/KZ5ouXzl8a4qgC
-	B65kTNsnb+j0RQ2EGiDbXvS/r2VsQfXXj5ENz+/MQ5VSoliKnp3DeRMnLYUiE2aITQU7gFLpFqGS8
-	i9QWI5Em5MUfB8qEwUPQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=EqgO9U4LzL0vGVIfrFiPTbctacWVB8CWOLEjcY40V7Y=; b=g69s5OlmzFnvBK
+	y/JLWltWwjCiIQMSdSld7OQYehDmWYPREn76uoJoQeMH8QgF9RsjkFAfjPMtcKjEkJLgwlltsoxEw
+	/LqsnYovdgTlpqDmy/AlJvYCfRc6pWNP4aA3PBwxWqhNl3g+3lZZQ6lpWbvedQZOWg2GbE5Q6Rgd+
+	pGE6rWtr/61DIVvxnqGsLGwSOArbKU+v10M0Ewfr9Cyl3YJjkGgeGykSHLIjNkTEZF6JyHkxskFJx
+	UXB0xJBk08TOBO0l4J1WWPDVX6DiV3atebRBfEmzTagwVOKJzS7kkjQf3Wl1mg8+V4WaSet88i1zf
+	pead6iiReUq4c+MZAdlw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vqBXw-00000000kGK-32ba;
-	Wed, 11 Feb 2026 14:50:28 +0000
-Received: from mx-relay50-hz3.antispameurope.com ([94.100.134.239])
+	id 1vqCBp-00000000n36-36kU;
+	Wed, 11 Feb 2026 15:31:41 +0000
+Received: from mail-northeuropeazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c200::3] helo=DU2PR03CU002.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vqBXp-00000000kEt-2eor
-	for linux-phy@lists.infradead.org;
-	Wed, 11 Feb 2026 14:50:26 +0000
-ARC-Authentication-Results: i=1; mx-gate50-hz3.hornetsecurity.com 1; spf=pass
- reason=mailfrom (ip=94.100.132.6, headerfrom=ew.tq-group.com)
- smtp.mailfrom=ew.tq-group.com smtp.helo=smtp-out02-hz1.hornetsecurity.com;
- dmarc=pass header.from=ew.tq-group.com orig.disposition=pass
-ARC-Message-Signature: a=rsa-sha256;
- bh=L4vyNH4YErLs5bwpzmTX4TQ2ymTibM6HD0Mohhb6Gt4=; c=relaxed/relaxed;
- d=hornetsecurity.com; h=from:to:date:subject:mime-version:; i=1; s=hse1;
- t=1770821408;
- b=SlF07QGpWgsTXwg5hzfGaRT823TFO6x8CqAUQkPz/YSAp04lxr664OAG0R/C+hf4OPda0mEa
- Q2JU0RMCdiZCDkjcEy0Ypq1F6TuwAITb9vfS3PL0sba9Y4qoydVt5YZRCRmgImWc8b1vmgelR9P
- U2a0W1AQaWyMA8UTxyoI18MRWtuOg52vedun0ZQ5OWRVzbxq2pw6Opry2NMVuaI3J5wlB+N0rlw
- DxN2LR6MvynyyKM9plokQLxXkLqErJRAXV85+GePcIOZyFe/4n9Y0DeFr/2izlrZfcDWLb0TBTf
- BEeU+28zjt37NsNe70bYPsyelhEIeg/U26IzsPBYSeuGw==
-ARC-Seal: a=rsa-sha256; cv=none; d=hornetsecurity.com; i=1; s=hse1;
- t=1770821408;
- b=pCSNFdXx6XFaJE61Tlw+SjNtFzIlQvCLHroNv8+4dRvnajZSq6Y5Ob6bvPvZu5+xgQdn0snb
- oji5wrzDT4M8uYPxoWM8IZMQWAcCH6rx+K+swSu8fwOC9V7q6WO1TNaHSZaMzlpjaqCR2USxjgj
- IhTbpweBX266cdkdZQdFgQ18G/aK7PSVz+ZZRqduQERjfrD0rK1z9mgAiOqJITS0s3+q1HG9ft5
- ptSQEcMESrzhIju8n6c22OpXyjUDDMq/Ti4W+JtzJWLiazUea6tbEgn3z/kUE68hIOcAYJncDJi
- xiA8PXJx2oIuwNF2AgBBhvhBLrAtDyUsRI6lgkL5TNEwQ==
-Received: from he-nlb01-hz1.hornetsecurity.com ([94.100.132.6]) by mx-relay50-hz3.antispameurope.com;
- Wed, 11 Feb 2026 15:50:08 +0100
-Received: from steina-w.tq-net.de (host-82-135-125-110.customer.m-online.net [82.135.125.110])
-	(Authenticated sender: alexander.stein@ew.tq-group.com)
-	by smtp-out02-hz1.hornetsecurity.com (Postfix) with ESMTPSA id 0CCCC5A12E8;
-	Wed, 11 Feb 2026 15:49:51 +0100 (CET)
-From: Alexander Stein <alexander.stein@ew.tq-group.com>
-To: Vinod Koul <vkoul@kernel.org>,
+	id 1vqCBm-00000000n2X-1akS;
+	Wed, 11 Feb 2026 15:31:39 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=CRZo/X/d1V6BGj/d1OLi8x0mt4Uzqp9JEUgB5g451tEB8Gza742HCMl+maYpFCETgC7AuUi/1L12FI6Q4ZIm7ODP/riuTzZVqBkRxtpOOzwBL1r9g8qqG4NuNGS8/H3hrq2LjZoxYbYSp6yLzNnGJV8IC5med5rnf3TWa6qMbGSy3wqgJT3lKHdv5HCptPJy/8eV0Gm5VFg6+Em9FB0EhnG/WNkC2XyScMcMTR0brDtb2xs/ihgOI5/X8Vpc63ane9gcvXpUOtwQen3GTxBk3rVoiMD1XOrIYsSQOy8DOakbRuAP2lqUXCYevWzCHxzew3g+6tPqeB4fFfPmQDyedA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=qaD72ecDuLWru1LO1sroQormtB54F4W0DDaAyJ2n61s=;
+ b=TYsZ/nFIh+hFHEuNH1/6BuqxIvwp5PCYgGg1cU04eFdQb+T7Synscbm64umb7ZzCVg2/EYGmS7K+d/I0uBu1Dr45XYIkQetQh1W6K+3RPBKmi2R+SilQeE0n+IQ3N0l5qCUc+iugahnefEJ4o9GbTU6JKm1geRfwxDazV5dZVercS7Q5PR+WU/4vaHqM/ohSR00SmroG4UWnaH3MooPGdo/yUsNTpxAcNfXbjU5M4CglJSIS97BNSFYVA4keEOZkcZyM1pobJmnpLPYGKx1oEkwK0zfnM1MIdaTsLI/09bpY4jS7GM9V2n4DHdof9lFWGCsvtmHI1ffpTL+LCP/cOw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=qaD72ecDuLWru1LO1sroQormtB54F4W0DDaAyJ2n61s=;
+ b=JONnBkaTTMkilny8OkZ1bo682m0skIsnybGAbZQVs+pLjzIKQ86bXEGuaDzeFi6395G4Nmk6FVL2tMzIrdzzFSAKWLNYwiB9FtFGxwOz1eG0ibInAGNN16/72XNq36gZaaVGo4phNcfBoOAIOZvek5quRyFjG7CUt5fi/Cg96i32+/zDznuvwo/0X1bHZf3F9tPY0hNIoHv6CkQJegXTzw3hFo42X3moTmOBnpeTDjTvLIJceXjOvG/MvwGYYnyR4w37x7cEmlKgStzqnLlAVZNQCUDe1S5a7xcSZrlhYbnPa8f3qYpKWOKxNxqkK6VcZo/3EAZflJ/VYL0nWI2Brw==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from PA4PR04MB9366.eurprd04.prod.outlook.com (2603:10a6:102:2a9::8)
+ by VI1PR04MB9860.eurprd04.prod.outlook.com (2603:10a6:800:1d0::15) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9587.16; Wed, 11 Feb
+ 2026 15:31:33 +0000
+Received: from PA4PR04MB9366.eurprd04.prod.outlook.com
+ ([fe80::75e4:8143:ddbc:6588]) by PA4PR04MB9366.eurprd04.prod.outlook.com
+ ([fe80::75e4:8143:ddbc:6588%6]) with mapi id 15.20.9587.010; Wed, 11 Feb 2026
+ 15:31:33 +0000
+Date: Wed, 11 Feb 2026 10:31:26 -0500
+From: Frank Li <Frank.li@nxp.com>
+To: Alexander Stein <alexander.stein@ew.tq-group.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
-	Frank Li <Frank.Li@nxp.com>,
 	Sascha Hauer <s.hauer@pengutronix.de>,
 	Pengutronix Kernel Team <kernel@pengutronix.de>,
-	Fabio Estevam <festevam@gmail.com>
-Cc: Alexander Stein <alexander.stein@ew.tq-group.com>,
-	linux-phy@lists.infradead.org,
-	imx@lists.linux.dev,
-	linux-arm-kernel@lists.infradead.org,
+	Fabio Estevam <festevam@gmail.com>, linux-phy@lists.infradead.org,
+	imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [RESEND 1/1] phy: freescale: imx8qm-hsio: provide regmap names
-Date: Wed, 11 Feb 2026 15:49:48 +0100
-Message-ID: <20260211144949.1128122-1-alexander.stein@ew.tq-group.com>
-X-Mailer: git-send-email 2.43.0
+Subject: Re: [RESEND 1/1] phy: freescale: imx8qm-hsio: provide regmap names
+Message-ID: <aYygzojdO0QACdqX@lizhi-Precision-Tower-5810>
+References: <20260211144949.1128122-1-alexander.stein@ew.tq-group.com>
+Content-Disposition: inline
+In-Reply-To: <20260211144949.1128122-1-alexander.stein@ew.tq-group.com>
+X-ClientProxiedBy: PH0PR07CA0033.namprd07.prod.outlook.com
+ (2603:10b6:510:e::8) To PA4PR04MB9366.eurprd04.prod.outlook.com
+ (2603:10a6:102:2a9::8)
 MIME-Version: 1.0
-X-cloud-security-sender: alexander.stein@ew.tq-group.com
-X-cloud-security-recipient: linux-phy@lists.infradead.org
-X-cloud-security-crypt: load encryption module
-X-cloud-security-Mailarchiv: E-Mail archived for: alexander.stein@ew.tq-group.com
-X-cloud-security-Mailarchivtype: outbound
-X-cloud-security-Virusscan: CLEAN
-X-cloud-security-disclaimer: This E-Mail was scanned by E-Mailservice on mx-relay50-hz3.antispameurope.com with 4fB1YW4rTYz2nJGn
-X-cloud-security-connect: he-nlb01-hz1.hornetsecurity.com[94.100.132.6], TLS=1, IP=94.100.132.6
-X-cloud-security-Digest: ba1eb0984800e64e2245420c91fb4aab
-X-cloud-security: scantime:2.114
-DKIM-Signature: a=rsa-sha256;
- bh=L4vyNH4YErLs5bwpzmTX4TQ2ymTibM6HD0Mohhb6Gt4=; c=relaxed/relaxed;
- d=ew.tq-group.com;
- h=content-type:mime-version:subject:from:to:message-id:date; s=hse1;
- t=1770821407; v=1;
- b=OH0GyFriZuvqaLnncsFQyDJRGbD3uJHoXG/i3QubJtqappwn2oVUG4QMkBgfkdIYgRHlKsJh
- t8bRSHdQmxpGoCbKNmmiI0eGfYcyzRWd5deFED5PuBWN/lmgRVnsQH2nadWEw9cx5mQhK/yJ49I
- Tsoikb+nWrDw8KZkQxMZxC5jGmXUsoM3kE43eaFRhmwn6NTSyD1kb4NwdMr1pCkaA1asCwd25CB
- 77RxdqYcLQyzWZ8BNnHX+8YfP3PxvLcxkAqoRJMTK4M8IDQlW4oe/ePe0vZ/yDYuBb0OGw4MAzh
- ZDs6BCWnCvm6c5RG386GbswTt0s1bi2eTeok6Bn+c4iFw==
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PA4PR04MB9366:EE_|VI1PR04MB9860:EE_
+X-MS-Office365-Filtering-Correlation-Id: ee0c5c9a-9c9d-4d4b-d682-08de6982a2bc
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|366016|376014|1800799024|52116014|7416014|38350700014|7053199007;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?XVm6R8AIuJIOBHvNUrv6IaCNpqafvPhqJGFiCzpnsXtr1W//jbrFuCNnYC8i?=
+ =?us-ascii?Q?r4YAjuPGeRZgVoeUI5Otdna5mNK5tzwm/m+h5gWSgcolLACwkROp3ZAIvZ1E?=
+ =?us-ascii?Q?gtNncz7LUPp3VeF3Zb3eA8pIEP6VJ5GVk6by/WTxFek6fEiwzA9CHh8MrLIf?=
+ =?us-ascii?Q?j3dIDv65PKOcmZh5PrO5tdi+iX60QplDnyUMk4gBqbd2yKnkcTpTkugPCDBT?=
+ =?us-ascii?Q?8wft4V+M106yuDs8Vnztl7BdtNheaMcLlf6UN6JoDFiCbjluXR6yWRdLN2O0?=
+ =?us-ascii?Q?DQHcUuQ3ThkNHr/w0zNZf9UQ7uvHL2++2tNvKlKeUhshNErM9ogU86ywnyP6?=
+ =?us-ascii?Q?TnNOs2JbrcYjVf4sMcvcrzIxqkBTGApjhik9oESPguG9cFh6dA0dOrIgc4sF?=
+ =?us-ascii?Q?eOwN5EbO4uD7kws6lqeClrCtu91hVvUhb4L5KTVC0RK9r5jhxokjvQm2FdmK?=
+ =?us-ascii?Q?Mj6UAEdiBV8j+5D17A2yrx4Qmyq+OmbY5VW7+eeFR00TS1kvab0yT3quC8Ql?=
+ =?us-ascii?Q?lttkRs5XhFFTs2TNKtOwqi9dcEXPeOlueXn/fnI86GCnbu6gQKWU80c7DUGO?=
+ =?us-ascii?Q?u5zBnYjLzb0zww8iiZDwg7QlV2jhlRyZ2SXSSWbsEL2UvU5WiGtWvjozgKgm?=
+ =?us-ascii?Q?Pa7Clef6mEeVs7KZCpz6dVZGVeIWczXunf80pzxrA+wEjvi2t/n6PEv3LSUp?=
+ =?us-ascii?Q?7btYpzrLKkilfTKnQvySDrIcvUETxIp1aW3wYGY+5W8aljnFmJRVB6gOBwew?=
+ =?us-ascii?Q?nU3NpnCu9sNmuXwZwo+1SfPK4chlmaAjlyRSU0VMKP48rZJHWOVIHde7guVZ?=
+ =?us-ascii?Q?AMeLU3eZ6QZIHIdk5+6lBfUt8koHvgJqKt35456tqEclZ1rsH5n8XyqXrqUk?=
+ =?us-ascii?Q?/ggZdHhj1jxYXveukm9mn73t85OdKqZ1VWYkfvzhz/imgYHcbyB0VIK2ZWDK?=
+ =?us-ascii?Q?qatk6dvhV9ys6XBw2ne7Da8hCgLvkeX8R46bTyO/kKTUf8gAVrL21ePDj2nE?=
+ =?us-ascii?Q?Pr5cRJNApFWAy5h9YyRsc0GBu/LE24CLMWOzWI0nNbLn8u5xVE9PtFWVoj2B?=
+ =?us-ascii?Q?hourq/gIxrNiIc7CPFCEumIMCVGuQh3PnDuUEkHvVUHrT0m2cvZFIyFid5gP?=
+ =?us-ascii?Q?XtVOhBvJqzomg0XhbkoKUSS7iaM9UFJz1TTNTu8R8VIyn3Aw4RU8WyC+OsAQ?=
+ =?us-ascii?Q?6UpdOEX65hqiWsDNx6Jw8q96pOMdMHabtfDXJtlQd8IbJykaq4BwoNW4mA/e?=
+ =?us-ascii?Q?W63bUKdQH7GvlC6O888XpKGlO3Jcj2HQbwaUkonIU79X/mrvM86fBUgZFHcn?=
+ =?us-ascii?Q?GuQ0jDkKkrs91BrytVQtzDW4dy3Vf+1NNRMyVXcWvQtXnX2/z0xpfb6UzY3P?=
+ =?us-ascii?Q?hROLroLvO6D8CaxROs4lJyQeiwd37+EC9Zuj4axuMQTKSD/Fm0aVEU/K9UGj?=
+ =?us-ascii?Q?gbKj1tNFu4TkH/7FixzzQrn4bXZyH+YCimahIYJtJhftZTTV6J4QkogilnqZ?=
+ =?us-ascii?Q?4la1y3L2dzSpT06aj6JX0uIh1JNPmysOxY5nqSCSdxAZxAwO8LeN+cKmQwoq?=
+ =?us-ascii?Q?qPHCILZ/n5tjNizQoCU+CnB59gdYCEnvbWxtUHAVG2qIeFG0ZiGGfxvp6wGC?=
+ =?us-ascii?Q?pTQ1KQBLK1g+BfzsylUv+QE=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PA4PR04MB9366.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(366016)(376014)(1800799024)(52116014)(7416014)(38350700014)(7053199007);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?x5XG1+y/R34Gfu0h3iUlsh8ejfXQ7hzu8jPF7pUikb77spK1yI9+DXX73CdL?=
+ =?us-ascii?Q?3G1NgHeJfsr1eylRaZWD2Zlf6JKEq3rr5dOuOvu4U4iqy2I/iWHlG10yNZ+T?=
+ =?us-ascii?Q?uwXO/S/LdXNC6sH32MrEjgrNtUuBxftBqYZerNCgvoUFthbm+9PEmx/XsFVf?=
+ =?us-ascii?Q?GCtQw8yxdfJp3JHjNKs5yLz3w0tLjf/VeAVYpD4+txd4ZKomDNUhZPdLldgs?=
+ =?us-ascii?Q?nrDfX7sqBObz6pphnMODQCRhDq+MNfcj0lrEfI+6BcCnXhJJQkN6INA6gnBS?=
+ =?us-ascii?Q?QyifjvGfrFQSCCS8xEJVkCU5UtnWJQwBSpDC8KX/MT/n7a2qurJDKL6BAFPG?=
+ =?us-ascii?Q?3s/9DJhThlrHLO6cs4CaaIUTGatyAB4eVAJm0qXk4GMUv1bxdzZDQFP6/4a8?=
+ =?us-ascii?Q?ATniZYAmuUkCpgBZDg9jg9eOlGVYnESYT0r//x/+djsgSceQK7Kws4NmbKRH?=
+ =?us-ascii?Q?8xdk8L0ES6eNN1ut8ctS9PISxiOhwLdhHMdwnqOTpE9OvTV7EgD1dZtx9TNr?=
+ =?us-ascii?Q?vzQpww1l9Yma6DQxHIwlveuPsQ+PmGSeqdjZuVjAO2prSrac96TGLPzACypn?=
+ =?us-ascii?Q?LHmVJfjhtdUg3KGq2rJQKo6B8IAoIxSrSqBgM8Nd/0XwgSZBFsTlHrTi/IcM?=
+ =?us-ascii?Q?kip2Thwp9kJaisqXsYJjnCC4ZMRwoFESRjjcqCXlVhMMYHqVAjBaUc0bjsCE?=
+ =?us-ascii?Q?vHKIYiQ5wiPshss0NeDEhk3y50uKF6WWFzSztbLbXs4w8NBOCM4c+B/1zzZT?=
+ =?us-ascii?Q?TXhDWIjAeneAWV9cGTlwRwUasuIxymapugVKAj2RE/1qbqCb6INfTi+CwPHF?=
+ =?us-ascii?Q?3xNW9gxOCzqG0wEBtopBj0OynU7myx3b2bzTMLj35rVEGPiy1+223IStZHid?=
+ =?us-ascii?Q?Y8fc+P7/1Q+lxv7to/WwdeozOGZGQOoJoir+z2KfWFm8sOE4PbcRjwpnCKkg?=
+ =?us-ascii?Q?DXFDBANi4/dEfOXku5uVEFYWBqyvE+9K4fs3cu40sKg1P2P4rHR98u/eA2a2?=
+ =?us-ascii?Q?pxWtV8XY+Y19JcW+pk/3m2lBBTnLhA/GxeLxwiyveglF5Ts99zM5opHhJ2f4?=
+ =?us-ascii?Q?AuUqtFjJTGkDA8MH+aVk+zORpVXo2NbZYiDbTPUbY9HgGLXcVi6Sry7bupJT?=
+ =?us-ascii?Q?ZYT9Pn2fZyGS9zoTWP4SyphPLUHpYSzOaT1r61wMj20+Ii3ckv7mfCC5fnqI?=
+ =?us-ascii?Q?ibj1egbDNYx5OfpihYOQBeJNh3dyYvS5ZIeXMRwZvxf0KBSKDcmigvujGScT?=
+ =?us-ascii?Q?LIGjNkJ0rQTP+3llXJh0u6mT7zGOUKsCLClatvgWmmlyZmt8rsaAmP1KtOmA?=
+ =?us-ascii?Q?93SxwUGfnaoI5fyZ1l/9H62F3U/QuyBljfcp4ydTZRrKRkZLA8tVmBfqjDXt?=
+ =?us-ascii?Q?8+1d+bJiOnJnEelN7WINjjh+dK5gLZ1Wun6K2M6Q0urslN/FMNzZQn/TlJTC?=
+ =?us-ascii?Q?rWb/mHloioKROXvFEZCtNEjWPRbSDxFq6DUI743n3fGJSiJ5VLOKqVQ36FPf?=
+ =?us-ascii?Q?dCNrFQYeV+V2+NcOT40NHP1IobykpGoba/hw6zLo2MJnXp7mePYalV1v4cgG?=
+ =?us-ascii?Q?7Mq6avmqgVA0YDKkXlWKPZA2Ptf1MwgMpybtUoTipaOwe8y7zdWsgLzV22uL?=
+ =?us-ascii?Q?JNZBHMh1j8mcUuAQc6V7vXqRNmHA94E0ZeSO6UPK3JPjhCvBhSJeRMnTZTEl?=
+ =?us-ascii?Q?20QQEOCv3clxraLk1Jlou8bBEPfXe/vkPsHkHxDy5P5oeu5HBG3MLLhkWGS3?=
+ =?us-ascii?Q?h68naGWx1g=3D=3D?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: ee0c5c9a-9c9d-4d4b-d682-08de6982a2bc
+X-MS-Exchange-CrossTenant-AuthSource: PA4PR04MB9366.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Feb 2026 15:31:33.1423
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 88Pl1vtPx2pTQslDIlgsSuYnMd7BtArz7y7Ps8LIutJ0svHDWNSqtcMWIVQLb8HscYLEbwvrVG7P/3jr2snV4w==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB9860
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260211_065021_812463_51F7642D 
-X-CRM114-Status: UNSURE (   9.89  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260211_073138_442846_6D428B15 
+X-CRM114-Status: GOOD (  16.77  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,73 +166,75 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This driver uses multiple regmaps, which will causes name conflicts
-in debugfs like:
-  debugfs: '5f1a0000.phy' already exists in 'regmap'
-Fix this by using a dedicated regmap config for each resource, each
-having a dedicated regmap name.
-
-Signed-off-by: Alexander Stein <alexander.stein@ew.tq-group.com>
----
-Same as the one sent in December but with an updated CC list.
-
- drivers/phy/freescale/phy-fsl-imx8qm-hsio.c | 23 +++++++++++++++++----
- 1 file changed, 19 insertions(+), 4 deletions(-)
-
-diff --git a/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c b/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c
-index 279b8ac7822df..4ab45c9f53dff 100644
---- a/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c
-+++ b/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c
-@@ -107,7 +107,22 @@ static const char * const lan2_pcieb_clks[] = {"apb_pclk2", "pclk2", "ctl1_crr",
- static const char * const lan2_sata_clks[] = {"pclk2", "epcs_tx", "epcs_rx",
- 					      "phy1_crr", "misc_crr"};
- 
--static const struct regmap_config regmap_config = {
-+static const struct regmap_config regmap_phy_config = {
-+	.name = "phy",
-+	.reg_bits = 32,
-+	.val_bits = 32,
-+	.reg_stride = 4,
-+};
-+
-+static const struct regmap_config regmap_ctrl_config = {
-+	.name = "ctrl",
-+	.reg_bits = 32,
-+	.val_bits = 32,
-+	.reg_stride = 4,
-+};
-+
-+static const struct regmap_config regmap_misc_config = {
-+	.name = "misc",
- 	.reg_bits = 32,
- 	.val_bits = 32,
- 	.reg_stride = 4,
-@@ -562,19 +577,19 @@ static int imx_hsio_probe(struct platform_device *pdev)
- 		return PTR_ERR(priv->base);
- 
- 	off = devm_platform_ioremap_resource_byname(pdev, "phy");
--	priv->phy = devm_regmap_init_mmio(dev, off, &regmap_config);
-+	priv->phy = devm_regmap_init_mmio(dev, off, &regmap_phy_config);
- 	if (IS_ERR(priv->phy))
- 		return dev_err_probe(dev, PTR_ERR(priv->phy),
- 				     "unable to find phy csr registers\n");
- 
- 	off = devm_platform_ioremap_resource_byname(pdev, "ctrl");
--	priv->ctrl = devm_regmap_init_mmio(dev, off, &regmap_config);
-+	priv->ctrl = devm_regmap_init_mmio(dev, off, &regmap_ctrl_config);
- 	if (IS_ERR(priv->ctrl))
- 		return dev_err_probe(dev, PTR_ERR(priv->ctrl),
- 				     "unable to find ctrl csr registers\n");
- 
- 	off = devm_platform_ioremap_resource_byname(pdev, "misc");
--	priv->misc = devm_regmap_init_mmio(dev, off, &regmap_config);
-+	priv->misc = devm_regmap_init_mmio(dev, off, &regmap_misc_config);
- 	if (IS_ERR(priv->misc))
- 		return dev_err_probe(dev, PTR_ERR(priv->misc),
- 				     "unable to find misc csr registers\n");
--- 
-2.43.0
-
+On Wed, Feb 11, 2026 at 03:49:48PM +0100, Alexander Stein wrote:
+> This driver uses multiple regmaps, which will causes name conflicts
+> in debugfs like:
+>   debugfs: '5f1a0000.phy' already exists in 'regmap'
+> Fix this by using a dedicated regmap config for each resource, each
+> having a dedicated regmap name.
+>
+> Signed-off-by: Alexander Stein <alexander.stein@ew.tq-group.com>
+> ---
+Reviewed-by: Frank Li <Frank.Li@nxp.com>
+> Same as the one sent in December but with an updated CC list.
+>
+>  drivers/phy/freescale/phy-fsl-imx8qm-hsio.c | 23 +++++++++++++++++----
+>  1 file changed, 19 insertions(+), 4 deletions(-)
+>
+> diff --git a/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c b/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c
+> index 279b8ac7822df..4ab45c9f53dff 100644
+> --- a/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c
+> +++ b/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c
+> @@ -107,7 +107,22 @@ static const char * const lan2_pcieb_clks[] = {"apb_pclk2", "pclk2", "ctl1_crr",
+>  static const char * const lan2_sata_clks[] = {"pclk2", "epcs_tx", "epcs_rx",
+>  					      "phy1_crr", "misc_crr"};
+>
+> -static const struct regmap_config regmap_config = {
+> +static const struct regmap_config regmap_phy_config = {
+> +	.name = "phy",
+> +	.reg_bits = 32,
+> +	.val_bits = 32,
+> +	.reg_stride = 4,
+> +};
+> +
+> +static const struct regmap_config regmap_ctrl_config = {
+> +	.name = "ctrl",
+> +	.reg_bits = 32,
+> +	.val_bits = 32,
+> +	.reg_stride = 4,
+> +};
+> +
+> +static const struct regmap_config regmap_misc_config = {
+> +	.name = "misc",
+>  	.reg_bits = 32,
+>  	.val_bits = 32,
+>  	.reg_stride = 4,
+> @@ -562,19 +577,19 @@ static int imx_hsio_probe(struct platform_device *pdev)
+>  		return PTR_ERR(priv->base);
+>
+>  	off = devm_platform_ioremap_resource_byname(pdev, "phy");
+> -	priv->phy = devm_regmap_init_mmio(dev, off, &regmap_config);
+> +	priv->phy = devm_regmap_init_mmio(dev, off, &regmap_phy_config);
+>  	if (IS_ERR(priv->phy))
+>  		return dev_err_probe(dev, PTR_ERR(priv->phy),
+>  				     "unable to find phy csr registers\n");
+>
+>  	off = devm_platform_ioremap_resource_byname(pdev, "ctrl");
+> -	priv->ctrl = devm_regmap_init_mmio(dev, off, &regmap_config);
+> +	priv->ctrl = devm_regmap_init_mmio(dev, off, &regmap_ctrl_config);
+>  	if (IS_ERR(priv->ctrl))
+>  		return dev_err_probe(dev, PTR_ERR(priv->ctrl),
+>  				     "unable to find ctrl csr registers\n");
+>
+>  	off = devm_platform_ioremap_resource_byname(pdev, "misc");
+> -	priv->misc = devm_regmap_init_mmio(dev, off, &regmap_config);
+> +	priv->misc = devm_regmap_init_mmio(dev, off, &regmap_misc_config);
+>  	if (IS_ERR(priv->misc))
+>  		return dev_err_probe(dev, PTR_ERR(priv->misc),
+>  				     "unable to find misc csr registers\n");
+> --
+> 2.43.0
+>
 
 -- 
 linux-phy mailing list
