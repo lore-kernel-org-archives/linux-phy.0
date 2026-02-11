@@ -4,85 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D804FECD6C1
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Feb 2026 16:21:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3F605ECD6C1
+	for <linux-phy@archiver.kernel.org>; Wed, 11 Feb 2026 16:30:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KaJsc6caHkWD+dVXUi92UF2oeZRdIkEbeFNR0GurEvE=; b=dVQM6P8GJS0Rx2
-	4/J1gcArE710CGDpxEcXaZyx/xiqXgJEwA4NZZw0iBdrOLjN9ehj/R1qPEYPrPNysB4kezUZ+4+kv
-	L5jrHWAIIwZYu4UGkPxNubipXFuG/RAOBa1yJBo0LfXYzJKDvGHXAm0gBdntmZB8oWAwqyVmKF1Yc
-	FKVTHmqkaFp7NjffH61CdJKnzc6GNn6mBIp5ASun353RDsjgXMd/6DVAWZhcmQqsKT0ngunShquoC
-	K27DsPHSZLuXbPiE86R/eYZ1CGqXIBod9d8jkkKREYM+GbpkiRmAVwTpPyBmldHjnY0ToMf2Up0FK
-	GJD4F6MwOADg+Yb56JXA==;
+	List-Owner; bh=3FaosrjGSpYHPW1zdSzhC0cQ5CJ6hoMyQBSOj+UsRjQ=; b=KkMTtG0Fv+XKfc
+	u4+5jRXVfITU2kqrEHeBtR9XNS4G0XnAzy+mxnQkUrqLW6en8r3sqPLqm8HH1slYmMayUzd8aKOSY
+	s/gkwK2kSJkiGzoLbHZbd4Lj6codlDZYPThco4rBVhJbkaq98CU22xBtMx+gC+BviMy78X1APX514
+	EYMT2RJjhEvrYIIXGLrM8iJsnKXNYFTUEEqNyGrt4k98lHR2NeARFnYKo/6mH52DCeLchu13xNrjq
+	luf5FmnFltiprnMTeU8/yKZO7F6ekGhhwAwWQ6LsiLA6OnLGx/tv9d7nQ0fFj2mGTMtkekf3pM37s
+	AlTau6dDp7hWlcNosQ9Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vqCyI-00000000q9u-2EQR;
-	Wed, 11 Feb 2026 16:21:46 +0000
-Received: from mgamail.intel.com ([192.198.163.8])
+	id 1vqD6q-00000000qPq-1BUO;
+	Wed, 11 Feb 2026 16:30:36 +0000
+Received: from mail-vs1-f42.google.com ([209.85.217.42])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vqCyG-00000000q9X-0mvn
+	id 1vqD6c-00000000qOv-2pXM
 	for linux-phy@lists.infradead.org;
-	Wed, 11 Feb 2026 16:21:45 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1770826904; x=1802362904;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=ATTMdok/DC8v1qhRVrgtg+NXjIWQ0jEcWS/iIwNgAJs=;
-  b=M0BMW53LqIZmhtc7my5Ebk+cVxXrFD0DCiM6gRoOLOyU14Hz51qm6dGI
-   I5/iO4ieOc5/2B4fF8bjwXwwXay/1kxLff5bjOpHA0tFQ7lTOQSVNHjf2
-   RjKyX+j4PuS83P1GfMCrkYB8FXzJfkyyQfeogr0lsI9FMBZwx+ImxghW7
-   6NAm/3GrFLX1P5H6ubfpsrrlZX5bbBT2US5g5Ie6Y7mNL3AKjtl/RTODZ
-   3WRvooKslKtL8BZ1lI0zKMjsBlGhsP7/uiCejQrImhD/B2EEe5O65Wdqe
-   q/lYsuFwt04wRk4XmI6yfJg/8plpM5EOkeXwkl9gqLxjeqzqq9OuXVdrS
-   Q==;
-X-CSE-ConnectionGUID: Ctz/s+6WQdixuSUH2gpwXg==
-X-CSE-MsgGUID: OA+ZKrrUReK8MJDZ84k8+Q==
-X-IronPort-AV: E=McAfee;i="6800,10657,11698"; a="89569318"
-X-IronPort-AV: E=Sophos;i="6.21,285,1763452800"; 
-   d="scan'208";a="89569318"
-Received: from fmviesa001.fm.intel.com ([10.60.135.141])
-  by fmvoesa102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 11 Feb 2026 08:21:41 -0800
-X-CSE-ConnectionGUID: WPA9+8uFRFSTnTfiYzzQFQ==
-X-CSE-MsgGUID: CBvtB3wZSTycTebpVaxlGg==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.21,285,1763452800"; 
-   d="scan'208";a="242048476"
-Received: from lkp-server01.sh.intel.com (HELO 765f4a05e27f) ([10.239.97.150])
-  by fmviesa001.fm.intel.com with ESMTP; 11 Feb 2026 08:21:38 -0800
-Received: from kbuild by 765f4a05e27f with local (Exim 4.98.2)
-	(envelope-from <lkp@intel.com>)
-	id 1vqCy8-00000000q92-09cP;
-	Wed, 11 Feb 2026 16:21:36 +0000
-Date: Thu, 12 Feb 2026 00:21:02 +0800
-From: kernel test robot <lkp@intel.com>
-To: Geert Uytterhoeven <geert+renesas@glider.be>,
-	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Josua Mayer <josua@solid-run.com>,
-	Ulf Hansson <ulf.hansson@linaro.org>,
-	Wolfram Sang <wsa-dev@sang-engineering.com>,
-	Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
-Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
-	linux-phy@lists.infradead.org, linux-mmc@vger.kernel.org,
-	linux-renesas-soc@vger.kernel.org, linux-next@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	Geert Uytterhoeven <geert+renesas@glider.be>
-Subject: Re: [PATCH next] phy: renesas: rcar-gen3-usb2: Drop local
- devm_mux_state_get_optional()
-Message-ID: <202602120031.iupmQxdk-lkp@intel.com>
-References: <67c8c4f9bf9f09fd0c13daedef27b82ff389ddfb.1770720452.git.geert+renesas@glider.be>
+	Wed, 11 Feb 2026 16:30:35 +0000
+Received: by mail-vs1-f42.google.com with SMTP id ada2fe7eead31-5faa8a9d7b7so2013548137.0
+        for <linux-phy@lists.infradead.org>; Wed, 11 Feb 2026 08:30:21 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1770827420; x=1771432220;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to;
+        bh=B4ogstsr1LPrx78n1KJ8ejaHIz64tROV+G0WDoBzT9Y=;
+        b=pF48GTr/mIxBWqjwIJAZtsVQOHtA5gfDQ+vLmwTb+JXa5eW2i+pLmHk5BfDmQ63whQ
+         yNuv/ds2d/C9rEPHkAFecdwJDQxHGifThxcq8qoj1G4X+Jf1hd+RVcCXRz+eF4/Pxoa5
+         NuOuOo65tIcQy/vjh+wecwawnPeCZJyaMbJfGDhiR+1dm6oQlYH3VK/RbIgRsZf8WPJy
+         qy323kxIbQP5LENjpFEwdu3kVjSDMhV88V/Tewa+8iwfbgJ4YupnbOkIWrrA1eaYcaUJ
+         T5Osu4XWldKj/ECcfgQm32iPV7BgMKAe5GakdWphcyj77ro7BMBp/wA/fM2EHdq83Nr+
+         77uQ==
+X-Forwarded-Encrypted: i=1; AJvYcCVl3ISB/l5zC+5mPaJeawZZg516iSeSeYUctAu+sn8eURr6mcaDGN0dnlfNWVJmKnSnP4jji/O4Gr4=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxWgSYPGp4aPiTmF6bFevajSvrLOAlVNXgzBnhYAJ71k3AD7q+K
+	BMnz9iGE2Xq6w5f8i68S5H0oXhLL/KmcGWFh8CBEhhI7l0HXZ49JrdYNr/HLXfFt
+X-Gm-Gg: AZuq6aJuuwml7yNPxUII1hrjtq04KWHInpMxwyROnayePpCzsaJbY3FsFJRinBLoJnm
+	1uVhIQ93PlyYOUZo+owjM288ru7PACOMj3Uy+HMUaRg9KweUPpg9fw0B2glZexo68v/dnlwlvMi
+	7ZKuFvIwx9rdpqWdDSgBJ/G3WLzs6VhkkYtN/KWNAntCC50VcLYnfGf9WEdyyy7/RLypajwbhau
+	IokyrqnsXnhpiNsW0Oft1wA27a66vcC8RNTjniIaHaXKLqBXF/uJCmdrjsqiqLV5b2eXQPJD5cn
+	kK4BbjWDJ9NHS7j8g4jy3ZbC5s05Jvx67BnTO7KRcQzhiUcMOIatiIY+/6hQZ1WOyxbeEE/jNTL
+	VCm8thsFQ9+k9OS/bOwFg7L4CH0OZAtHkE3uyskO0QApCwa559L0REYLg5oRyBx4iDHvmXAbGqe
+	qbIuzeaqQ9kA8rBzbsb/LMOSiK05Tv2uULmpFO4diGniUaygQKC17BUpKiqvcJHsOvSx3wYFI=
+X-Received: by 2002:a05:6102:54a5:b0:5f5:867f:3507 with SMTP id ada2fe7eead31-5fde976bf11mr679694137.31.1770827419882;
+        Wed, 11 Feb 2026 08:30:19 -0800 (PST)
+Received: from mail-vs1-f54.google.com (mail-vs1-f54.google.com. [209.85.217.54])
+        by smtp.gmail.com with ESMTPSA id ada2fe7eead31-5fde8ae2c86sm784501137.11.2026.02.11.08.30.19
+        for <linux-phy@lists.infradead.org>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 11 Feb 2026 08:30:19 -0800 (PST)
+Received: by mail-vs1-f54.google.com with SMTP id ada2fe7eead31-5faa8a9d7b7so2013530137.0
+        for <linux-phy@lists.infradead.org>; Wed, 11 Feb 2026 08:30:19 -0800 (PST)
+X-Forwarded-Encrypted: i=1; AJvYcCWZcpgSqyslm5BvKj2xGtrjihhCgarKiFIXnuQy/eMo9UhQL+279jX8sNq0l9Hyz0b7B1qavzET40Q=@lists.infradead.org
+X-Received: by 2002:a05:6102:4421:b0:5ee:a8c4:18f2 with SMTP id
+ ada2fe7eead31-5fde93f801emr629474137.26.1770827418853; Wed, 11 Feb 2026
+ 08:30:18 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <67c8c4f9bf9f09fd0c13daedef27b82ff389ddfb.1770720452.git.geert+renesas@glider.be>
+References: <67c8c4f9bf9f09fd0c13daedef27b82ff389ddfb.1770720452.git.geert+renesas@glider.be>
+ <CAPDyKFpY2X8hephSfHq7rj_DaKX76ZSkWSCYXrGTEBUFHkvOzg@mail.gmail.com> <aYyrsPTH1923jV7y@vaman>
+In-Reply-To: <aYyrsPTH1923jV7y@vaman>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Wed, 11 Feb 2026 17:30:07 +0100
+X-Gmail-Original-Message-ID: <CAMuHMdUHNRuMmHU2ACX84nsZdXn_-fSamnF+LMFvZS3vkHnEWA@mail.gmail.com>
+X-Gm-Features: AZwV_QiOx-vNn3RXDRusgjf7_W4m-z1gNAHOmJNuwbjVfchz_J9gD3jZ3pe8F9o
+Message-ID: <CAMuHMdUHNRuMmHU2ACX84nsZdXn_-fSamnF+LMFvZS3vkHnEWA@mail.gmail.com>
+Subject: Re: [PATCH next] phy: renesas: rcar-gen3-usb2: Drop local devm_mux_state_get_optional()
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Ulf Hansson <ulf.hansson@linaro.org>, Vladimir Oltean <olteanv@gmail.com>, 
+	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Josua Mayer <josua@solid-run.com>, 
+	Wolfram Sang <wsa+renesas@sang-engineering.com>, 
+	Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>, linux-phy@lists.infradead.org, 
+	linux-mmc@vger.kernel.org, linux-renesas-soc@vger.kernel.org, 
+	linux-next@vger.kernel.org, linux-kernel@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260211_082144_298869_1A90187C 
-X-CRM114-Status: GOOD (  12.10  )
+X-CRM114-CacheID: sfid-20260211_083026_616184_E331498A 
+X-CRM114-Status: GOOD (  26.42  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,191 +96,52 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Geert,
-
-kernel test robot noticed the following build errors:
-
-[auto build test ERROR on next-20260209]
-
-url:    https://github.com/intel-lab-lkp/linux/commits/Geert-Uytterhoeven/phy-renesas-rcar-gen3-usb2-Drop-local-devm_mux_state_get_optional/20260210-185437
-base:   next-20260209
-patch link:    https://lore.kernel.org/r/67c8c4f9bf9f09fd0c13daedef27b82ff389ddfb.1770720452.git.geert%2Brenesas%40glider.be
-patch subject: [PATCH next] phy: renesas: rcar-gen3-usb2: Drop local devm_mux_state_get_optional()
-config: riscv-allyesconfig (https://download.01.org/0day-ci/archive/20260212/202602120031.iupmQxdk-lkp@intel.com/config)
-compiler: clang version 16.0.6 (https://github.com/llvm/llvm-project 7cbf1a2591520c2491aa35339f227775f4d3adf6)
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20260212/202602120031.iupmQxdk-lkp@intel.com/reproduce)
-
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202602120031.iupmQxdk-lkp@intel.com/
-
-All errors (new ones prefixed by >>):
-
->> drivers/phy/renesas/phy-rcar-gen3-usb2.c:1029:14: error: call to undeclared function 'devm_mux_state_get_optional'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
-           mux_state = devm_mux_state_get_optional(dev, NULL);
-                       ^
-   drivers/phy/renesas/phy-rcar-gen3-usb2.c:1029:14: note: did you mean 'devm_regulator_get_optional'?
-   include/linux/regulator/consumer.h:163:32: note: 'devm_regulator_get_optional' declared here
-   struct regulator *__must_check devm_regulator_get_optional(struct device *dev,
-                                  ^
->> drivers/phy/renesas/phy-rcar-gen3-usb2.c:1029:12: error: incompatible integer to pointer conversion assigning to 'struct mux_state *' from 'int' [-Wint-conversion]
-           mux_state = devm_mux_state_get_optional(dev, NULL);
-                     ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   2 errors generated.
-
-
-vim +/devm_mux_state_get_optional +1029 drivers/phy/renesas/phy-rcar-gen3-usb2.c
-
-8bb92fd7a04077 drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22   946  
-f3b5a8d9b50d71 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2015-11-30   947  static int rcar_gen3_phy_usb2_probe(struct platform_device *pdev)
-f3b5a8d9b50d71 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2015-11-30   948  {
-f3b5a8d9b50d71 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2015-11-30   949  	struct device *dev = &pdev->dev;
-f3b5a8d9b50d71 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2015-11-30   950  	struct rcar_gen3_chan *channel;
-f3b5a8d9b50d71 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2015-11-30   951  	struct phy_provider *provider;
-8bb92fd7a04077 drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22   952  	struct mux_state *mux_state;
-de76809f60cc93 drivers/phy/renesas/phy-rcar-gen3-usb2.c Claudiu Beznea    2025-05-07   953  	int ret = 0, i, irq;
-f3b5a8d9b50d71 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2015-11-30   954  
-f3b5a8d9b50d71 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2015-11-30   955  	if (!dev->of_node) {
-f3b5a8d9b50d71 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2015-11-30   956  		dev_err(dev, "This driver needs device tree\n");
-f3b5a8d9b50d71 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2015-11-30   957  		return -EINVAL;
-f3b5a8d9b50d71 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2015-11-30   958  	}
-f3b5a8d9b50d71 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2015-11-30   959  
-f3b5a8d9b50d71 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2015-11-30   960  	channel = devm_kzalloc(dev, sizeof(*channel), GFP_KERNEL);
-f3b5a8d9b50d71 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2015-11-30   961  	if (!channel)
-f3b5a8d9b50d71 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2015-11-30   962  		return -ENOMEM;
-f3b5a8d9b50d71 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2015-11-30   963  
-0b5604affbec02 drivers/phy/renesas/phy-rcar-gen3-usb2.c Chunfeng Yun      2020-11-06   964  	channel->base = devm_platform_ioremap_resource(pdev, 0);
-801a69c787812f drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2016-03-03   965  	if (IS_ERR(channel->base))
-801a69c787812f drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2016-03-03   966  		return PTR_ERR(channel->base);
-f3b5a8d9b50d71 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2015-11-30   967  
-549b6b55b00558 drivers/phy/renesas/phy-rcar-gen3-usb2.c Yoshihiro Shimoda 2019-04-11   968  	channel->dr_mode = rcar_gen3_get_dr_mode(dev->of_node);
-73801b90a38ff1 drivers/phy/renesas/phy-rcar-gen3-usb2.c Yoshihiro Shimoda 2018-09-21   969  	if (channel->dr_mode != USB_DR_MODE_UNKNOWN) {
-979b519c7a1bff drivers/phy/renesas/phy-rcar-gen3-usb2.c Yoshihiro Shimoda 2018-09-21   970  		channel->is_otg_channel = true;
-8dde0008ffc9e2 drivers/phy/renesas/phy-rcar-gen3-usb2.c Yoshihiro Shimoda 2018-09-21   971  		channel->uses_otg_pins = !of_property_read_bool(dev->of_node,
-8dde0008ffc9e2 drivers/phy/renesas/phy-rcar-gen3-usb2.c Yoshihiro Shimoda 2018-09-21   972  							"renesas,no-otg-pins");
-2b38543c8db1c7 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2016-04-29   973  		channel->extcon = devm_extcon_dev_allocate(dev,
-2b38543c8db1c7 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2016-04-29   974  							rcar_gen3_phy_cable);
-2b38543c8db1c7 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2016-04-29   975  		if (IS_ERR(channel->extcon))
-2b38543c8db1c7 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2016-04-29   976  			return PTR_ERR(channel->extcon);
-2b38543c8db1c7 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2016-04-29   977  
-2b38543c8db1c7 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2016-04-29   978  		ret = devm_extcon_dev_register(dev, channel->extcon);
-2b38543c8db1c7 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2016-04-29   979  		if (ret < 0) {
-2b38543c8db1c7 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2016-04-29   980  			dev_err(dev, "Failed to register extcon\n");
-2b38543c8db1c7 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2016-04-29   981  			return ret;
-2b38543c8db1c7 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2016-04-29   982  		}
-f3b5a8d9b50d71 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2015-11-30   983  	}
-f3b5a8d9b50d71 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2015-11-30   984  
-942a7a6bf4c6a8 drivers/phy/renesas/phy-rcar-gen3-usb2.c Claudiu Beznea    2025-11-19   985  	channel->rstc = devm_reset_control_array_get_optional_shared(dev);
-942a7a6bf4c6a8 drivers/phy/renesas/phy-rcar-gen3-usb2.c Claudiu Beznea    2025-11-19   986  	if (IS_ERR(channel->rstc))
-942a7a6bf4c6a8 drivers/phy/renesas/phy-rcar-gen3-usb2.c Claudiu Beznea    2025-11-19   987  		return PTR_ERR(channel->rstc);
-942a7a6bf4c6a8 drivers/phy/renesas/phy-rcar-gen3-usb2.c Claudiu Beznea    2025-11-19   988  
-942a7a6bf4c6a8 drivers/phy/renesas/phy-rcar-gen3-usb2.c Claudiu Beznea    2025-11-19   989  	ret = reset_control_deassert(channel->rstc);
-942a7a6bf4c6a8 drivers/phy/renesas/phy-rcar-gen3-usb2.c Claudiu Beznea    2025-11-19   990  	if (ret)
-942a7a6bf4c6a8 drivers/phy/renesas/phy-rcar-gen3-usb2.c Claudiu Beznea    2025-11-19   991  		return ret;
-942a7a6bf4c6a8 drivers/phy/renesas/phy-rcar-gen3-usb2.c Claudiu Beznea    2025-11-19   992  
-942a7a6bf4c6a8 drivers/phy/renesas/phy-rcar-gen3-usb2.c Claudiu Beznea    2025-11-19   993  	ret = devm_add_action_or_reset(dev, rcar_gen3_reset_assert, channel->rstc);
-942a7a6bf4c6a8 drivers/phy/renesas/phy-rcar-gen3-usb2.c Claudiu Beznea    2025-11-19   994  	if (ret)
-942a7a6bf4c6a8 drivers/phy/renesas/phy-rcar-gen3-usb2.c Claudiu Beznea    2025-11-19   995  		return ret;
-942a7a6bf4c6a8 drivers/phy/renesas/phy-rcar-gen3-usb2.c Claudiu Beznea    2025-11-19   996  
-441a681b884347 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2017-03-14   997  	/*
-441a681b884347 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2017-03-14   998  	 * devm_phy_create() will call pm_runtime_enable(&phy->dev);
-441a681b884347 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2017-03-14   999  	 * And then, phy-core will manage runtime pm for this device.
-441a681b884347 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2017-03-14  1000  	 */
-230c817a1601af drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1001  	ret = devm_pm_runtime_enable(dev);
-230c817a1601af drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1002  	if (ret)
-230c817a1601af drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1003  		return dev_err_probe(dev, ret, "Failed to enable pm_runtime\n");
-b0512a6ec0cd6d drivers/phy/renesas/phy-rcar-gen3-usb2.c Biju Das          2021-07-27  1004  
-f75806d26318c0 drivers/phy/renesas/phy-rcar-gen3-usb2.c Lad Prabhakar     2025-08-08  1005  	channel->phy_data = of_device_get_match_data(dev);
-230c817a1601af drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1006  	if (!channel->phy_data)
-230c817a1601af drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1007  		return -EINVAL;
-5d8042e95fd471 drivers/phy/renesas/phy-rcar-gen3-usb2.c Biju Das          2019-04-10  1008  
-4eae16375357a2 drivers/phy/renesas/phy-rcar-gen3-usb2.c Claudiu Beznea    2024-08-22  1009  	platform_set_drvdata(pdev, channel);
-4eae16375357a2 drivers/phy/renesas/phy-rcar-gen3-usb2.c Claudiu Beznea    2024-08-22  1010  	channel->dev = dev;
-4eae16375357a2 drivers/phy/renesas/phy-rcar-gen3-usb2.c Claudiu Beznea    2024-08-22  1011  
-4eae16375357a2 drivers/phy/renesas/phy-rcar-gen3-usb2.c Claudiu Beznea    2024-08-22  1012  	ret = rcar_gen3_phy_usb2_init_bus(channel);
-4eae16375357a2 drivers/phy/renesas/phy-rcar-gen3-usb2.c Claudiu Beznea    2024-08-22  1013  	if (ret)
-230c817a1601af drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1014  		return ret;
-4eae16375357a2 drivers/phy/renesas/phy-rcar-gen3-usb2.c Claudiu Beznea    2024-08-22  1015  
-55a387ebb9219c drivers/phy/renesas/phy-rcar-gen3-usb2.c Claudiu Beznea    2025-05-07  1016  	spin_lock_init(&channel->lock);
-549b6b55b00558 drivers/phy/renesas/phy-rcar-gen3-usb2.c Yoshihiro Shimoda 2019-04-11  1017  	for (i = 0; i < NUM_OF_PHYS; i++) {
-549b6b55b00558 drivers/phy/renesas/phy-rcar-gen3-usb2.c Yoshihiro Shimoda 2019-04-11  1018  		channel->rphys[i].phy = devm_phy_create(dev, NULL,
-f75806d26318c0 drivers/phy/renesas/phy-rcar-gen3-usb2.c Lad Prabhakar     2025-08-08  1019  							channel->phy_data->phy_usb2_ops);
-230c817a1601af drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1020  		if (IS_ERR(channel->rphys[i].phy))
-230c817a1601af drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1021  			return dev_err_probe(dev, PTR_ERR(channel->rphys[i].phy),
-230c817a1601af drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1022  					     "Failed to create USB2 PHY\n");
-230c817a1601af drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1023  
-549b6b55b00558 drivers/phy/renesas/phy-rcar-gen3-usb2.c Yoshihiro Shimoda 2019-04-11  1024  		channel->rphys[i].ch = channel;
-549b6b55b00558 drivers/phy/renesas/phy-rcar-gen3-usb2.c Yoshihiro Shimoda 2019-04-11  1025  		channel->rphys[i].int_enable_bits = rcar_gen3_int_enable[i];
-549b6b55b00558 drivers/phy/renesas/phy-rcar-gen3-usb2.c Yoshihiro Shimoda 2019-04-11  1026  		phy_set_drvdata(channel->rphys[i].phy, &channel->rphys[i]);
-549b6b55b00558 drivers/phy/renesas/phy-rcar-gen3-usb2.c Yoshihiro Shimoda 2019-04-11  1027  	}
-f3b5a8d9b50d71 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2015-11-30  1028  
-8bb92fd7a04077 drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22 @1029  	mux_state = devm_mux_state_get_optional(dev, NULL);
-8bb92fd7a04077 drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1030  	if (IS_ERR(mux_state))
-8bb92fd7a04077 drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1031  		return PTR_ERR(mux_state);
-8bb92fd7a04077 drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1032  	if (mux_state) {
-8bb92fd7a04077 drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1033  		ret = mux_state_select(mux_state);
-8bb92fd7a04077 drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1034  		if (ret)
-8bb92fd7a04077 drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1035  			return dev_err_probe(dev, ret, "Failed to select USB mux\n");
-8bb92fd7a04077 drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1036  
-8bb92fd7a04077 drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1037  		ret = devm_add_action_or_reset(dev, rcar_gen3_phy_mux_state_deselect,
-8bb92fd7a04077 drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1038  					       mux_state);
-8bb92fd7a04077 drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1039  		if (ret)
-8bb92fd7a04077 drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1040  			return dev_err_probe(dev, ret,
-8bb92fd7a04077 drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1041  					     "Failed to register USB mux state deselect\n");
-8bb92fd7a04077 drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1042  	}
-8bb92fd7a04077 drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1043  
-b6d7dd157763e0 drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1044  	if (channel->phy_data->no_adp_ctrl && channel->is_otg_channel) {
-b6d7dd157763e0 drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1045  		ret = rcar_gen3_phy_usb2_vbus_regulator_register(channel);
-b6d7dd157763e0 drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1046  		if (ret)
-b6d7dd157763e0 drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1047  			return ret;
-b6d7dd157763e0 drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1048  	} else {
-6dcfd7c300bf35 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2016-03-03  1049  		channel->vbus = devm_regulator_get_optional(dev, "vbus");
-b6d7dd157763e0 drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1050  	}
-6dcfd7c300bf35 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2016-03-03  1051  	if (IS_ERR(channel->vbus)) {
-230c817a1601af drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1052  		if (PTR_ERR(channel->vbus) == -EPROBE_DEFER)
-230c817a1601af drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1053  			return PTR_ERR(channel->vbus);
-230c817a1601af drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1054  
-6dcfd7c300bf35 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2016-03-03  1055  		channel->vbus = NULL;
-6dcfd7c300bf35 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2016-03-03  1056  	}
-6dcfd7c300bf35 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2016-03-03  1057  
-de76809f60cc93 drivers/phy/renesas/phy-rcar-gen3-usb2.c Claudiu Beznea    2025-05-07  1058  	irq = platform_get_irq_optional(pdev, 0);
-de76809f60cc93 drivers/phy/renesas/phy-rcar-gen3-usb2.c Claudiu Beznea    2025-05-07  1059  	if (irq < 0 && irq != -ENXIO) {
-230c817a1601af drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1060  		return irq;
-de76809f60cc93 drivers/phy/renesas/phy-rcar-gen3-usb2.c Claudiu Beznea    2025-05-07  1061  	} else if (irq > 0) {
-de76809f60cc93 drivers/phy/renesas/phy-rcar-gen3-usb2.c Claudiu Beznea    2025-05-07  1062  		INIT_WORK(&channel->work, rcar_gen3_phy_usb2_work);
-de76809f60cc93 drivers/phy/renesas/phy-rcar-gen3-usb2.c Claudiu Beznea    2025-05-07  1063  		ret = devm_request_irq(dev, irq, rcar_gen3_phy_usb2_irq,
-de76809f60cc93 drivers/phy/renesas/phy-rcar-gen3-usb2.c Claudiu Beznea    2025-05-07  1064  				       IRQF_SHARED, dev_name(dev), channel);
-230c817a1601af drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1065  		if (ret < 0)
-230c817a1601af drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1066  			return dev_err_probe(dev, ret,
-230c817a1601af drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1067  					     "Failed to request irq (%d)\n",
-230c817a1601af drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1068  					     irq);
-de76809f60cc93 drivers/phy/renesas/phy-rcar-gen3-usb2.c Claudiu Beznea    2025-05-07  1069  	}
-de76809f60cc93 drivers/phy/renesas/phy-rcar-gen3-usb2.c Claudiu Beznea    2025-05-07  1070  
-549b6b55b00558 drivers/phy/renesas/phy-rcar-gen3-usb2.c Yoshihiro Shimoda 2019-04-11  1071  	provider = devm_of_phy_provider_register(dev, rcar_gen3_phy_usb2_xlate);
-9bb86777fb71ee drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2016-11-09  1072  	if (IS_ERR(provider)) {
-230c817a1601af drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1073  		return dev_err_probe(dev, PTR_ERR(provider),
-230c817a1601af drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1074  				     "Failed to register PHY provider\n");
-979b519c7a1bff drivers/phy/renesas/phy-rcar-gen3-usb2.c Yoshihiro Shimoda 2018-09-21  1075  	} else if (channel->is_otg_channel) {
-9bb86777fb71ee drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2016-11-09  1076  		ret = device_create_file(dev, &dev_attr_role);
-9bb86777fb71ee drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2016-11-09  1077  		if (ret < 0)
-230c817a1601af drivers/phy/renesas/phy-rcar-gen3-usb2.c Tommaso Merciai   2025-12-22  1078  			return ret;
-9bb86777fb71ee drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2016-11-09  1079  	}
-f3b5a8d9b50d71 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2015-11-30  1080  
-441a681b884347 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2017-03-14  1081  	return 0;
-f3b5a8d9b50d71 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2015-11-30  1082  }
-f3b5a8d9b50d71 drivers/phy/phy-rcar-gen3-usb2.c         Yoshihiro Shimoda 2015-11-30  1083  
-
--- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+SGkgVmlub2QsCgpPbiBXZWQsIDExIEZlYiAyMDI2IGF0IDE3OjE3LCBWaW5vZCBLb3VsIDx2a291
+bEBrZXJuZWwub3JnPiB3cm90ZToKPiBPbiAxMC0wMi0yNiwgMTQ6MzQsIFVsZiBIYW5zc29uIHdy
+b3RlOgo+ID4gT24gVHVlLCAxMCBGZWIgMjAyNiBhdCAxMTo1MywgR2VlcnQgVXl0dGVyaG9ldmVu
+Cj4gPiA8Z2VlcnQrcmVuZXNhc0BnbGlkZXIuYmU+IHdyb3RlOgo+ID4gPiBOb3cgdGhlIG11eCBj
+b3JlIHByb3ZpZGVzIGRldm1fbXV4X3N0YXRlX2dldF9vcHRpb25hbCgpOgo+ID4gPgo+ID4gPiAg
+ICAgZHJpdmVycy9waHkvcmVuZXNhcy9waHktcmNhci1nZW4zLXVzYjIuYzo5NDQ6MTogZXJyb3I6
+IHN0YXRpYyBkZWNsYXJhdGlvbiBvZiDigJhkZXZtX211eF9zdGF0ZV9nZXRfb3B0aW9uYWzigJkg
+Zm9sbG93cyBub24tc3RhdGljCj4gPiA+ICAgICAgZGVjbGFyYXRpb24KPiA+ID4gICAgICAgOTQ0
+IHwgZGV2bV9tdXhfc3RhdGVfZ2V0X29wdGlvbmFsKHN0cnVjdCBkZXZpY2UgKmRldiwgY29uc3Qg
+Y2hhciAqbXV4X25hbWUpCj4gPiA+ICAgICAgICAgICB8IF5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+
+fn5+fgo+ID4gPiAgICAgSW4gZmlsZSBpbmNsdWRlZCBmcm9tIGRyaXZlcnMvcGh5L3JlbmVzYXMv
+cGh5LXJjYXItZ2VuMy11c2IyLmM6MjA6Cj4gPiA+ICAgICBpbmNsdWRlL2xpbnV4L211eC9jb25z
+dW1lci5oOjY0OjE5OiBub3RlOiBwcmV2aW91cyBkZWNsYXJhdGlvbiBvZiDigJhkZXZtX211eF9z
+dGF0ZV9nZXRfb3B0aW9uYWzigJkgd2l0aCB0eXBlIOKAmHN0cnVjdCBtdXhfc3RhdGUgKihzdHJ1
+Y3QgZGV2aWNlICosIGNvbnN0IGNoYXIgKinigJkKPiA+ID4gICAgICAgIDY0IHwgc3RydWN0IG11
+eF9zdGF0ZSAqZGV2bV9tdXhfc3RhdGVfZ2V0X29wdGlvbmFsKHN0cnVjdCBkZXZpY2UgKmRldiwg
+Y29uc3QgY2hhciAqbXV4X25hbWUpOwo+ID4gPiAgICAgICAgICAgfCAgICAgICAgICAgICAgICAg
+ICBefn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn4KPiA+ID4KPiA+ID4gRml4IHRoaXMgYnkgZHJv
+cHBpbmcgdGhlIHRlbXBvcmFyeSBsb2NhbCB3cmFwcGVyLgo+ID4gPgo+ID4gPiBGaXhlczogYWQz
+MTQzNDhjZWI0ZmUxZiAoIm11eDogQWRkIGhlbHBlciBmdW5jdGlvbnMgZm9yIGdldHRpbmcgb3B0
+aW9uYWwgYW5kIHNlbGVjdGVkIG11eC1zdGF0ZSIpCj4gPiA+IEZpeGVzOiA4YmI5MmZkN2EwNDA3
+NzkyICgicGh5OiByZW5lc2FzOiByY2FyLWdlbjMtdXNiMjogVXNlIG11eC1zdGF0ZSBmb3IgcGh5
+cnN0IG1hbmFnZW1lbnQiKQo+ID4gPiBTaWduZWQtb2ZmLWJ5OiBHZWVydCBVeXR0ZXJob2V2ZW4g
+PGdlZXJ0K3JlbmVzYXNAZ2xpZGVyLmJlPgo+ID4KPiA+IFRoYW5rcyBHZWVydCBmb3IgaGVscGlu
+ZyBvdXQhCj4gPgo+ID4gPiAtLS0KPiA+ID4gICAtIGFkMzE0MzQ4Y2ViNGZlMWYgaXMgaW4gbW1j
+L25leHQsIGFuZCBhIFBSIGhhcyBhbHJlYWR5IGJlZW4gc2VudAo+ID4gPiAgICAgaHR0cHM6Ly9s
+b3JlLmtlcm5lbC5vcmcvMjAyNjAyMDkxMzM0NDEuNTU2NDY0LTEtdWxmLmhhbnNzb25AbGluYXJv
+Lm9yZwo+ID4gPiAgIC0gOGJiOTJmZDdhMDQwNzc5MiBpcyBpbiBwaHkvbmV4dAo+ID4KPiA+IFZp
+bm9kLCBkbyB5b3Ugd2FudCB0byBwaWNrIHVwIHRoZSAkc3ViamVjdCBwYXRjaCBhcyBhIGZpeCBm
+b3IgNy4wLXJjMQo+ID4gb3IgZG8geW91IHByZWZlciBtZSB0byBoYW5kbGUgaXQ/Cj4KPiBTaG91
+bGQgSSBkcm9wIHRoZSA4YmI5MmZkN2EwNDA3NzkyIGFuZCBpdCBtYWtlcyB0aGluZ3MgZWFzaWVy
+IGZvcgo+IGV2ZXJ5b25lIGFuZCB0aGVuIHdlIGNhbiBwaWNrIGZpeGVkIGNvbW1pdCBmb3IgNy4x
+IGN5Y2xlLi4KPgo+IERvZXMgdGhhdCB3b3JrIGZvciBldmVyeW9uZS4gSSB3YXMgYWJvdXQgdG8g
+c2VuZCBQUiwgd2lsbCBob2xkIG9mZiBmb3IgYQo+IGJpdC4KCkFsdGVybmF0aXZlbHksIHlvdSBj
+YW4gbWVudGlvbiB0aGUgc2VtYW50aWMgY29uZmxpY3QgaW4geW91ciBQUiB0byBMaW51cywKYW5k
+IGFzayBoaW0gdG8gZm9sZCBteSBwYXRjaCBpbnRvIHRoZSBtZXJnZSBjb21taXQuCgpHcntvZXRq
+ZSxlZXRpbmd9cywKCiAgICAgICAgICAgICAgICAgICAgICAgIEdlZXJ0CgotLSAKR2VlcnQgVXl0
+dGVyaG9ldmVuIC0tIFRoZXJlJ3MgbG90cyBvZiBMaW51eCBiZXlvbmQgaWEzMiAtLSBnZWVydEBs
+aW51eC1tNjhrLm9yZwoKSW4gcGVyc29uYWwgY29udmVyc2F0aW9ucyB3aXRoIHRlY2huaWNhbCBw
+ZW9wbGUsIEkgY2FsbCBteXNlbGYgYSBoYWNrZXIuIEJ1dAp3aGVuIEknbSB0YWxraW5nIHRvIGpv
+dXJuYWxpc3RzIEkganVzdCBzYXkgInByb2dyYW1tZXIiIG9yIHNvbWV0aGluZyBsaWtlIHRoYXQu
+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgLS0gTGludXMgVG9ydmFsZHMKCi0tIAps
+aW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBz
+Oi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
