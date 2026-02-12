@@ -4,73 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EE8A2EB48F0
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Feb 2026 10:28:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EDF0AEB48F8
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Feb 2026 10:38:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7HVIAGySQl8rWRgKa7aRklri7Q10GLhNKqn2my0PCd8=; b=tay3O6tH7Z2G2O
-	XYf8vrzDGoGasBQkrPCqMHTb6LaT7UAAr+isoKVN8JObnwywzJHCRHXG9crCndTj5woulwCZLHalp
-	woA5xSA18PbcdB9r1Olh3QEn5mRxOVJgq0WmemNFtuv81XJ6vb/ZYW4qn3/xUBgoWav+/0PW1q1HT
-	MOErLji0EliNGyiltp2wxgsgT59Lhr6rts1EBLuVht4EgirUHpJOFbrNBSV4LwP4ORY1levGE2r0l
-	ywB7t2bKRYhxIJegeqvbB6AWpfKFelTHF0ip3gg+fWlTo8aZLYWHfvF55jUd1nKj6FoLs2qwyQRb+
-	6vptjpiBURv84o0nfoNA==;
+	List-Owner; bh=kYRTAA01DCsiOPNMqXJHVCKB2CiJdstc/3IJ0eaX5m8=; b=bPwjW5sMixFNzD
+	/N9MLLew8g30QI/lYlbb84nlokGKbXRYs8Eqj9qcLuM6D6z4LOi+pjoHrcMaMSk2Kg6U/hcnltvQa
+	3rInu2oguPOHJZCpJ9GHc+/w3+yDPb5aCSCT4Al45pXH8Z6VfieGHkmToptdZ4tHQ+GHTxqWXJIi6
+	4OrwWUAgfpTIbtgK2sMIf64tAYNlMzFyGJELg9XQ8q1LVWRZz1DBvhi3j4A3KyeABZO1dRzUPFA3e
+	1OmJRvToujILmwSd8SyepC2gAdC9lKIuStgLgBR397JHpG1zxdnJqjGOHyiSpgjtkcMRWzyVWRgU1
+	3s+nJtXVLRoV3FERPpMw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vqTw6-00000001wPu-1kbI;
-	Thu, 12 Feb 2026 10:28:38 +0000
-Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
+	id 1vqU5L-00000001wt7-2sC7;
+	Thu, 12 Feb 2026 10:38:11 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vqTw3-00000001wP5-31nC;
-	Thu, 12 Feb 2026 10:28:36 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
-	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
-	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=xSFJcBfVZKp82+Db3xO54CWUoHlWgz8IeqJYSETUKnY=; b=1riGLJb1LrUTq2AMxJAEE3fPYe
-	GGAhsHEa5SOZDT9rTt0biTAUn50DlKRNx0SI58Ki1gpElxnFzDbIcTz3KYeBe3ZjGL1UmNW86V+Q/
-	p5pUTRyhoyCSwsNJzEtmcqQvkPzP2RMr4aD7qeYVKI4ioPG0sQphqLV7Ej7U+LHbbLUqBKFhC87Ut
-	RqYEns3IrdUHTgcItxWWeYTF4epkkC7RfnQcV0lVedVjPW8+NMnuNDdA1k5iOUTvK36Pr6+AxNjGG
-	F2gQfai0V50HAyrXYgNq+ncht/5qgAPL3JGxKL7QFMnEQgOtSgbocJKaUuV9C+xvP+918nnj5CYB4
-	+5wbXcxw==;
-Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:49322)
-	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.98.2)
-	(envelope-from <linux@armlinux.org.uk>)
-	id 1vqTvt-000000004QW-3erv;
-	Thu, 12 Feb 2026 10:28:25 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.98.2)
-	(envelope-from <linux@shell.armlinux.org.uk>)
-	id 1vqTvr-000000004hn-3a12;
-	Thu, 12 Feb 2026 10:28:23 +0000
-Date: Thu, 12 Feb 2026 10:28:23 +0000
-From: "Russell King (Oracle)" <linux@armlinux.org.uk>
-To: Vincent Guittot <vincent.guittot@linaro.org>,
-	Rob Herring <robh@kernel.org>
-Cc: vkoul@kernel.org, neil.armstrong@linaro.org, krzk+dt@kernel.org,
-	conor+dt@kernel.org, ciprianmarian.costea@oss.nxp.com, s32@nxp.com,
-	p.zabel@pengutronix.de, ghennadi.procopciuc@nxp.com,
-	Ionut.Vicovan@nxp.com, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org, netdev@vger.kernel.org,
-	horms@kernel.org, Frank.li@nxp.com
-Subject: Re: [PATCH 1/4 v2] dt-bindings: serdes: s32g: Add NXP serdes
- subsystem
-Message-ID: <aY2rR3Hlm525kGUN@shell.armlinux.org.uk>
-References: <20260203161917.1666696-1-vincent.guittot@linaro.org>
- <20260203161917.1666696-2-vincent.guittot@linaro.org>
- <20260210004011.GA2188625-robh@kernel.org>
+	id 1vqU5I-00000001wsh-2LAA
+	for linux-phy@lists.infradead.org;
+	Thu, 12 Feb 2026 10:38:10 +0000
+Received: by mail-wr1-x444.google.com with SMTP id ffacd0b85a97d-4376bd50b01so532587f8f.3
+        for <linux-phy@lists.infradead.org>; Thu, 12 Feb 2026 02:38:08 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1770892687; x=1771497487; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=EHvH2NxXNZ50ASeOsz2aD1KixOOY7ZptsiQm52Vzawc=;
+        b=EXijWhGHmbRY8gBwbkEu/mKLVTsQn0WmHGXbFLaBZKH1s7NUaNsI16ZEjCU+sQVvlu
+         PT7ZY4mLFVIb7uWyTTcPfO8mPPgcQfK1Yw7xjNxCrcmuQ0i9f9WyuDFQRtyKJUbTjfhk
+         elbeb8sSWRkhGgDgYWv8qFhlp00PniydUHZcyf6frWM2cJOJdPvG0G7HZkkZzD5F+YcO
+         ubdSjF9nhwSu6RMJ9HYFOMgtX0vsQXYzrbvF8PhLcseepNcADmx7UFLdZG/db4F5CpTI
+         ePB+9uDC72vpD22ByUVyH3cbfjF/jwMuvwIunTgKIUGIx10u6VChDcfPxD0xJQK3Nlq+
+         H5XQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1770892687; x=1771497487;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=EHvH2NxXNZ50ASeOsz2aD1KixOOY7ZptsiQm52Vzawc=;
+        b=abrNlpCcUivMb4Z2L2ctDhrd7OmzK7i8jlelh4r86yarukq3NU/4VI2eIM7mgkr9JH
+         Z/iK5BsUE4+t/NzYin49JU1FpiA1uGdZ5HDX6GNq8n2y7O03wxK/FCKzUC/ekkYyEuN+
+         tVP2qB94X0e9TGqKzK56/TYCovypoUp/GVubAqA+6G3X2AF+5XzE7OgmnWYAsZUw8aJN
+         1os2W4UcfUE/Ngg9FnAmnMpNBtRim2uj8Saa/hcASO3d6PJu2kCcQ7C0pt80WZqNEnmN
+         eKLt8ueHe0rgNp1Vn/TN8R8LvrFh7lxWfjxKE0vPxAgElZ/3l8+629u0PDF4aRBMnBxH
+         4S5g==
+X-Forwarded-Encrypted: i=1; AJvYcCX0vp6C7ikTRVQRCgQybL4apbCK1ThOgG/2RjSukA6C0OD8LZ2fiYBk58SeWa0ZE9nxdWQuZbbOK1Q=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yx/uo9nnw9Y9kv8jRfLWdmaXlOeJ7A8cbX/hs7wbMRTQlEgt2L0
+	BuQWPoLmCtoL2UfskpXSrJ/B8VctAj95pvorcL3Zw7UGobQ+SSdVLryDqw0jDsl1
+X-Gm-Gg: AZuq6aLOgeygAke39B+miOdOflVLdR8SLZMuL0yXW5yTA8KrRTzJZldSA8srWT+zn+N
+	EVDkqdInnoSWXW2bStLYyGgrtLHs/bNi1Ohsmrmf8mgQYDZg2cx6K08iw3eFNftvSs1KDk9ukWN
+	1N5jvRaGkBlc5AWJOqOOAN3SsQsxpLmrFk/OH3A1gqMCfOQOUZLFrSXsEbknzzd4Kyc7y3A/HcQ
+	Ys+AsrReEHIBYbxfKBx2Q381PM5YZ/bdnwHS5fdOf885xjIbxA0bA9mM2N8Z5VpWucsbsFEXo4K
+	ASthAW5pfB5vYUH4JGrfXP+Q/KcQd5QOO8sfVyVhpJnopHk5QPBmIl76S5Gh/hZZQcovW3/pUy/
+	/2VEZjxyN2xNb+7o4r6ztI7RHAXBMy/XGmiM2x2HxjEpzqyBKhN93xXxSNIcbytTrHX0i29qHAX
+	glYxqryXf8qks4LYQ=
+X-Received: by 2002:a05:600c:c16f:b0:477:9dd9:ac57 with SMTP id 5b1f17b1804b1-4836561a23bmr17586025e9.0.1770892686309;
+        Thu, 12 Feb 2026 02:38:06 -0800 (PST)
+Received: from skbuf ([2a02:2f04:d501:d900:2f75:bf70:f0b9:4586])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4834d835f6bsm167527835e9.14.2026.02.12.02.38.05
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 12 Feb 2026 02:38:05 -0800 (PST)
+Date: Thu, 12 Feb 2026 12:38:03 +0200
+From: Vladimir Oltean <olteanv@gmail.com>
+To: "Russell King (Oracle)" <linux@armlinux.org.uk>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Jonathan Corbet <corbet@lwn.net>, linux-doc@vger.kernel.org,
+	linux-phy@lists.infradead.org
+Subject: Re: [PATCH net-next] doc: generic phy: update generic PHY
+ documentation
+Message-ID: <20260212103803.xut4sjbypgb26mo4@skbuf>
+References: <20260211154839.lbh4uovxr5b5s4nv@skbuf>
+ <E1vo0mF-00000007kbg-1OeA@rmk-PC.armlinux.org.uk>
+ <20260211154839.lbh4uovxr5b5s4nv@skbuf>
+ <aYzHL1qwew5p-xoq@shell.armlinux.org.uk>
+ <aYzHL1qwew5p-xoq@shell.armlinux.org.uk>
+ <20260211193006.ad2piivyoqhvg22r@skbuf>
+ <aYznE1FIbs_0OcPR@shell.armlinux.org.uk>
+ <aY1hs4XKZSpvKd3B@vaman>
+ <20260212091332.qcpi3qyynmdp4acv@skbuf>
+ <aY2lFTIALH7qEJmM@shell.armlinux.org.uk>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260210004011.GA2188625-robh@kernel.org>
+In-Reply-To: <aY2lFTIALH7qEJmM@shell.armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260212_022835_784017_F39AACF8 
-X-CRM114-Status: GOOD (  15.51  )
+X-CRM114-CacheID: sfid-20260212_023808_614315_08EA8B95 
+X-CRM114-Status: GOOD (  17.01  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,73 +110,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Feb 09, 2026 at 06:40:11PM -0600, Rob Herring wrote:
-> On Tue, Feb 03, 2026 at 05:19:14PM +0100, Vincent Guittot wrote:
-> > +description: |
-> > +  The SerDes subsystem on S32G SoC Family includes two types of PHYs:
-> > +    - One PCIe PHY: Supports various PCIe operation modes
-> > +    - Two Ethernet Physical Coding Sublayer (XPCS) controllers
-> > +
-> > +  SerDes operation mode selects the enabled PHYs and speeds. Clock frequency
-> > +  must be adapted accordingly. Below table describes all possible operation
-> > +  modes.
-> > +
-> > +  Mode  PCIe	XPCS0		XPCS1		PHY clock	Description
-> > +                SGMII		SGMII		  (MHz)
-> > +  -------------------------------------------------------------------------
-> > +  0	Gen3	N/A		N/A		100		Single PCIe
-> > +  1	Gen2	1.25Gbps	N/A		100		PCIe/SGMII
-> > +  2	Gen2	N/A		1.25Gbps	100		PCIe/SGMII
-> > +  3	N/A	1.25Gbps	1.25Gbps	100,125		SGMII
-> > +  4	N/A	3.125/1.25Gbps	3.125/1.25Gbps 	125		SGMII
-> > +  5	Gen2	N/A	        3.125Gbps     	100		PCIe/SGMII
+On Thu, Feb 12, 2026 at 10:01:57AM +0000, Russell King (Oracle) wrote:
+> I'm also going to point out that phy-core allows ->set_mode() to be
+> unimplemented, yet the phy_mode is stored. It looks to me like this is
+> intentional part of the API, which means that phy_set_mode*() is not
+> expected to always result in the hardware being programmed. That
+> brings up the obvious question: if phy_set_mode() is not expected to
+> always reprogram the hardware, then what phy API call should follow
+> this to ensure the hardware is reprogrammed.
 > 
-> Mixed tabs and spaces. Drop the tabs.
-> 
-> What's not clear to me is do you have 2 or 4 lanes?
-> 
-...
-> > +  nxp,sys-mode:
-> > +    $ref: /schemas/types.yaml#/definitions/uint32
-> 
->        maximum: 5
-> 
-> Though isn't this redundant with the child nodes? You could use the 
-> standard 'phy-mode' property in each child.
+> On the other hand, if the API intention was that ->set_mode() must be
+> implemented if phy_set_mode*() is to be accepted, then surely
+> phy_set_mode_ext() should be checking that phy->ops->set_mode exists,
+> and returning -EOPNOTSUPP if it doesn't.
 
-phy-mode is ethernet, but the above is more than just ethernet.
+This is a relatively new development.
 
-I've been wondering why a generic PHY driver needs to know this via DT
-when the generic PHY API has:
+commit d58c04e305afbaa9dda7969151f06c4efe2c98b0
+Author: Dmitry Baryshkov <lumag@kernel.org>
+Date:   Sun Feb 9 14:31:45 2025 +0200
 
-phy_set_mode() / phy_set_mode_ext()
- - sets the type of the PHY and its submode (e.g. ethernet interface
-    mode)
-phy_set_speed()
-phy_set_bus_width()
+    phy: core: don't require set_mode() callback for phy_get_mode() to work
 
-Surely these are sufficient to describe what mode is required from the
-generic PHY, and the generic PHY driver can figure out whether the
-mode is permitted from the above table, programming the PHY as
-desired.
+    As reported by Damon Ding, the phy_get_mode() call doesn't work as
+    expected unless the PHY driver has a .set_mode() call. This prompts PHY
+    drivers to have empty stubs for .set_mode() for the sake of being able
+    to get the mode.
 
-For Ethernet, we don't call the 3.125Gbps "SGMII" using that term. We
-use SGMII strictly for Cisco SGMII, which runs at 1.25Gbps. 3.125Gbps
-single-lane serdes ethernet is not able to use Cisco SGMII inband
-signalling because running the underlying data rate with 10 or 100
-symbol replications makes no sense. So we have decided to all this
-2500BASE-X. If such a SerDes is connected to a SFP cage, then we
-support switching between 1.25Gbps and 3.125Gbps mode depending on
-the module inserted, which requires dynamic reconfiguration of the
-SerDes.
+    Make .set_mode() callback truly optional and update PHY's mode even if
+    it there is none.
 
-What I'm saying is that describing a single mode covering several ports
-could make things difficult in the future, so make sure you think
-carefully.
+    Cc: Damon Ding <damon.ding@rock-chips.com>
+    Link: https://lore.kernel.org/r/96f8310f-93f1-4bcb-8637-137e1159ff83@rock-chips.com
+    Tested-by: Damon Ding <damon.ding@rock-chips.com>
+    Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+    Link: https://lore.kernel.org/r/20250209-phy-fix-set-moe-v2-1-76e248503856@linaro.org
+    Signed-off-by: Vinod Koul <vkoul@kernel.org>
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTP is here! 80Mbps down 10Mbps up. Decent connectivity at last!
+If only lore.kernel.org wasn't down, so I could see the back story in
+the link...
 
 -- 
 linux-phy mailing list
