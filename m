@@ -4,59 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B9034EB4914
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Feb 2026 12:03:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 66C8DEE368E
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Feb 2026 14:35:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Px7Gj7cYlNBzJdhyU09120G8+PtZlTghhRn2PGIOYRs=; b=kD9sHmNOwtX6KI
-	0mPE5zXd6MqH5U0NJiJMSwWwMwZPxwZgrd+9lGZledFF0Qg0jTpa5wJqr7mRD/gxJ67yyl2gWabp9
-	BP4ITYkGBBZYOjfaWYJqu4Nvo6OWK+K5YKe+2I0XATvucb6Ho0M/aN+WSO9Tyq0xfzdXzdCVpHoS6
-	EhSj2JWSileVplMslLV4+LFtiBWnjpbM6B2cLIdmANvzPefMS+8+IEzf6tqhIszmUqmMD/KHCazEx
-	NwMT7O37asCsx1EJrObf2igz+so9KRDxixPR7RlvzfoNCs5X+zUGIqFfzo4EG2yt6lJ9d2y3CNwMj
-	+zt3+6cAPnajzvWour1Q==;
+	List-Owner; bh=EaS51u2S3Brjg5uElgpIch8yoiZEfk4MnLWJQ/AYMFE=; b=hmKZ5RF5hmXBqc
+	22MdIwBO4dK9IdDNEqlMB/ilnfZJ+dfFbLsl1Rs4mFNAJiyUjJDbCA2ik6rHJVGvPTgc5Xp4Cq8Uk
+	6KK7kA5YjUeDvzP4aoRYL60olz63MWvyUETCs8MRYce5nTZ50iYD3m+RuzWj05AtGdWd+QDMMj2O8
+	aqhN40bbtycAwxJjGc62xxWr/MvlhmA6wRxAp6gVhQi1AMVGKrXaxXwkksquxe+c6yPkH/XNIY93w
+	1R1ukSm6pJ9l/HjVVjxb/L1zME5zMPTCLy0CnYTs7+iwEFfnR0nZZazH37J+T9qDGWDbV5wtWAia8
+	s3jQ9Y5+qGpzon6pjKsA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vqVPj-000000022tL-1Tza;
-	Thu, 12 Feb 2026 12:03:19 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vqXnF-00000002Clh-2xLk;
+	Thu, 12 Feb 2026 14:35:45 +0000
+Received: from smtp.gentoo.org ([2001:470:ea4a:1:5054:ff:fec7:86e4])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vqVPi-000000022si-0aFI;
-	Thu, 12 Feb 2026 12:03:18 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 3D35760018;
-	Thu, 12 Feb 2026 12:03:17 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 67095C4CEF7;
-	Thu, 12 Feb 2026 12:03:16 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1770897796;
-	bh=SZTz8HS9PWKBbdj5b1EMRwXlgepLmkuv69oIrOnPdcY=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=U+SA3LYAhVdyGRMYNYGEU4GprVv77KQ5bP8VRHPjcMk95kB+NihCUNPMMQYxkudZB
-	 1ZKFDz30j0zy67aIfC3as2goYgNs2WvAUbNBX3v4aP+rzwT7Z+sY0UOcXz0m8DapJb
-	 2VHMQ4vzdKRTIzs6CqkUhhRS9GIrxKAFMY4C+YtbGWj5gKCV1Y1xyVULpPhwbD0OMe
-	 O/+BBougAMDGhGofIQ9bSejxi+pTZWXDE0hrQdjckrQfK8ZxJz/FXNY7R5LdnPs0o3
-	 8fHuropl7OXGzqLs8eH5HXkNeagi9IrV1Pc7swD62TPWDCyfNwM4t/Zwo1Wvvfe0zl
-	 d4bgQbQzbcQDA==
-Date: Thu, 12 Feb 2026 13:03:14 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Yixun Lan <dlan@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Ze Huang <huang.ze@linux.dev>, Junzhong Pan <panjunzhong@linux.spacemit.com>, 
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-riscv@lists.infradead.org, 
-	spacemit@lists.linux.dev, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 1/3] dt-bindings: phy: spacemit: k3: add USB2 PHY support
-Message-ID: <20260212-rampant-grinning-deer-1eb7ca@quoll>
+	id 1vqXnC-00000002ClG-3v4L;
+	Thu, 12 Feb 2026 14:35:44 +0000
+Received: from localhost (unknown [116.232.48.232])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: dlan)
+	by smtp.gentoo.org (Postfix) with ESMTPSA id D36B634243E;
+	Thu, 12 Feb 2026 14:35:36 +0000 (UTC)
+Date: Thu, 12 Feb 2026 22:35:30 +0800
+From: Yixun Lan <dlan@gentoo.org>
+To: Yao Zi <me@ziyao.cc>
+Cc: Yixun Lan <dlan@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Ze Huang <huang.ze@linux.dev>,
+	Junzhong Pan <panjunzhong@linux.spacemit.com>,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-riscv@lists.infradead.org, spacemit@lists.linux.dev,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 3/3] phy: k1-usb: k3: add USB2 PHY support
+Message-ID: <20260212143530-GYB114046@gentoo.org>
 References: <20260212-11-k3-usb2-phy-v1-0-43578592405d@kernel.org>
- <20260212-11-k3-usb2-phy-v1-1-43578592405d@kernel.org>
+ <20260212-11-k3-usb2-phy-v1-3-43578592405d@kernel.org>
+ <aY253_fOkoQKbi8g@pie>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260212-11-k3-usb2-phy-v1-1-43578592405d@kernel.org>
+In-Reply-To: <aY253_fOkoQKbi8g@pie>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260212_063543_031731_D74B3E7E 
+X-CRM114-Status: GOOD (  11.33  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,21 +72,24 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Feb 12, 2026 at 09:38:54AM +0800, Yixun Lan wrote:
-> Introduce a compatible string for the USB2 PHY in SpacemiT K3 SoC. The IP
-> of USB2 PHY mostly shares the same functionalities with K1 SoC, while has
-> some register layout changes.
+Hi Yao,
+
+On 11:30 Thu 12 Feb     , Yao Zi wrote:
+> On Thu, Feb 12, 2026 at 09:38:56AM +0800, Yixun Lan wrote:
+> > Add USB2 PHY support for SpacemiT K3 SoC.
+> > 
+> > Register layout of handling USB disconnect operation has been changed,
+> > So introducing a platform data to distinguish the different SoCs.
 > 
-> Signed-off-by: Yixun Lan <dlan@kernel.org>
-> ---
->  Documentation/devicetree/bindings/phy/spacemit,usb2-phy.yaml | 6 ++++--
->  1 file changed, 4 insertions(+), 2 deletions(-)
+> Would it be clearer and simpler if you define separate phy_ops for
+> k1 and k3, and point of_device_id.data directly to the corresponding
+> phy_ops? Then there's no need to introduce either spacemit_usb2phy_data
+> structure, or spacemit_usb2phy_disconnect wrapper.
+> 
+Yes, I agree, thanks for the suggestion
 
-Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
-
-Best regards,
-Krzysztof
-
+-- 
+Yixun Lan (dlan)
 
 -- 
 linux-phy mailing list
