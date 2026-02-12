@@ -4,97 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0A014EE3698
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Feb 2026 16:53:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C0A90EE36A9
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Feb 2026 16:55:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dRsSpLvQZ9x/9nTwcH4nAF7K7n34qMVLpF2FeKcfoTU=; b=ytgCQ3ngBVV4uX
-	gsWVVMP2oQWZcteb+TyzuzAiOK3C6aYG/qlw3YTdcjVIuAEtFpbe5TNPR8kj1IHuD828XQ8TrdHH6
-	brwzdcI41c6Sv1LCPf0UOOUKplrA14GL+URkXc9zZxZr1KyFdWmqCc65zAUvTHzK79iEndwv4ooGH
-	Ky2oJ+Yj0p38Q1OFbWqJKXj47e0E41mvYVrBTMKnPnO1D4eOpd96v3B3BT6WWPA+epPFCni71KQEp
-	wEXy3gFlOIdQE1cNHkswiCclVVwerfaRppfAoq5S71jIdv6C6JjremmRy+Fo4ReNwbyKqZTN2GNWt
-	BHlxKJzt2TgCq/qAFwWQ==;
+	List-Owner; bh=zQl97qi/+fVRY+2ezC2SgU97MZeGIsxYB+LcoghKtfE=; b=1lEr3SZJVH6o6V
+	sJK3mYdV5A9AL2hjIuIXZi3Liwz58PvQT8QHNsPqXNVMZF9AfTvQeZ5KIiezlDXABIQxGlzygFi0S
+	ug7/ObfBwoT4nG8EO1s701sDJm52aNk011qcYkw3fePWR5Nk8tjolrKz2pPacwtIlT3Y96hhH5F84
+	xcwQ5d3tEZUfT4Nyu29vgbGWtaeTSm1ZTWZlIXIKpaF2o5nvsoOJ+aSINwUyzc2fcLZc/0EgrNyha
+	x8UfJLWdRNZtDDy09y1H2FP6ynh+qsap8+de9uqIqmSZ7i/voVwNwDZveno9a62YW1v0YftKWe0nD
+	CYP4q1CS5W+L69Cm5nig==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vqZwW-00000002P83-35tU;
-	Thu, 12 Feb 2026 16:53:28 +0000
-Received: from mail-ua1-f43.google.com ([209.85.222.43])
+	id 1vqZyw-00000002PGJ-28dm;
+	Thu, 12 Feb 2026 16:55:58 +0000
+Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vqZwT-00000002P7a-3wMw
+	id 1vqZyt-00000002PEo-45fp
 	for linux-phy@lists.infradead.org;
-	Thu, 12 Feb 2026 16:53:27 +0000
-Received: by mail-ua1-f43.google.com with SMTP id a1e0cc1a2514c-94ac8cbf3feso34593241.0
-        for <linux-phy@lists.infradead.org>; Thu, 12 Feb 2026 08:53:24 -0800 (PST)
+	Thu, 12 Feb 2026 16:55:57 +0000
+Received: by mail-wm1-x331.google.com with SMTP id 5b1f17b1804b1-483245a8547so41025e9.1
+        for <linux-phy@lists.infradead.org>; Thu, 12 Feb 2026 08:55:55 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1770915354; x=1771520154; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=EWH52hHDoZsOt/pe7QFROJLUmHx4Nch/byKXwRcnIQ8=;
+        b=bqt9e6d8l0/6erekakBfnTsF1YwxJCcgo1vADajOPT5fpO9AAkdD6AkFveH4LTV79l
+         x4O8+BrPP6RQ0072KU/lIGvYAgrjySDBtR4yNjgr7f2fD9vdQdoMpx0O1xDEf6mdcQC9
+         dA4A1ATCqj2og64UpuV045UDHoXxou8lDPRGpeLyTmQFl8hY70YzIZWl+6mwXSmvSdVp
+         km78M/kreNupTffUn7K2NVvEtB6tZHAo8vdsG5ikxTwthjyY2D4tP3/q171E5nEhYjoJ
+         ksKW57M1sdb5hLE+H4w88ueMut0JtgV9HTdTF4YpKjJZWh46joHmvOyUSmaewg74jSa3
+         tOmg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1770915204; x=1771520004;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=om3cuNbQzAgOvOQckRciuNr9O8eg7IAaHrWKXJVxB8U=;
-        b=OGKfxrAnCSswbtA0VYCL01/JMy97raThXd4noQ0LvG+6tG9hQemiPzzL0SMIcFyHNQ
-         Al/JuZIz76sQ2cOB9yUNVnSorUd0h+oBNw8H0s7F6x3pIHoJi1/MoYpXYvXPKha7K+Nt
-         uPUgAXxDabjMpKJ3GPU8gB3glQ7SItbyfuoBfgIMifm6DOCUwPTbseQTdQyBNxh6eiqH
-         xWbLSXhdp9N5ZtwV089qEjOjeu2ubrv83fbUIh4I830uRuvOsYWFJ85q8ZVHTob5qCm1
-         KgW0iSED23cOjFZUjioK0BrHagM3wo+CjBGUG0obTxXRrXcKhqLGXRqxUiUkHPsxzFUd
-         HngA==
-X-Forwarded-Encrypted: i=1; AJvYcCUZykqMG4GtjUVXZT0quw7yclT1Gzl7PNrSbVSkRbPDVq2ahgkRwXozjXTI7UqvS1AqF8wQFUD5Du8=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yw7JXMHkdGjawu3icNRjt24hjBm9f7tQmy2BHjRNTOktGxdxOlV
-	T1QyczjSQsvpG5ifJU+MubGeOZkSSJ5zSBDGjYzqI+P3uWpYLwwmAW5dmz8QsJF8
-X-Gm-Gg: AZuq6aL9KTHKqtyV0l+anGBA7CgC7P9nraG7QoB7JB2Vv35H4yMHJCefWf5p9fBIWlD
-	beRklqtsx9XBfyiM985Y9A1v02fnrrlWA2nq8bUAt+9pzsVuMee2ukDy2G0ZtmjGW7JAXg5S5u2
-	n5f2qL4xfwWUy4CQxwkSLUG5hqnGxfni3ouYIo6bge1agAmjeOAqqpq7wWWerOX2o9eACMsZ77J
-	7Ernlg8GMSgdtiH/CD+X6mRuLFFTMOBwW/a4BIMuneo2bvBzd0h0x27v3UDALME68VmdL/pxb4i
-	36ewHLVGTtFDFjr7R9IWNYj+Cu8emBSUq35tMkcqB/RNEszg4QxShScPrQU3xfjgq0R71yMZrRu
-	pdDF/4jHtdJ6oiGdBZZsruqPrRqfbIj1ZC7NftxsUd9xB2iVUO8eTjyei+tK8RjcD3exWff7pmi
-	DWaNweSjju6hUaDu30FYmTNTJtwLkffeBFX8085pTGl152cM1vef2UopzlSXlJ
-X-Received: by 2002:a05:6102:b0f:b0:5fd:e9f8:b8d1 with SMTP id ada2fe7eead31-5fe007da33amr918436137.43.1770915203156;
-        Thu, 12 Feb 2026 08:53:23 -0800 (PST)
-Received: from mail-ua1-f47.google.com (mail-ua1-f47.google.com. [209.85.222.47])
-        by smtp.gmail.com with ESMTPSA id ada2fe7eead31-5fde8adf700sm2162383137.12.2026.02.12.08.53.19
-        for <linux-phy@lists.infradead.org>
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 12 Feb 2026 08:53:20 -0800 (PST)
-Received: by mail-ua1-f47.google.com with SMTP id a1e0cc1a2514c-94ac8cbf3feso34558241.0
-        for <linux-phy@lists.infradead.org>; Thu, 12 Feb 2026 08:53:19 -0800 (PST)
-X-Forwarded-Encrypted: i=1; AJvYcCUx7WE0Vg+qfOBuf4jHGRDA6+JLle8i55J9I5634BNfip5hX0cRyvrx0Xt5ly5mSj9U92SDQzsvBvk=@lists.infradead.org
-X-Received: by 2002:a05:6102:3051:b0:5fd:f8d6:e5d7 with SMTP id
- ada2fe7eead31-5fe003fb1fcmr1021759137.11.1770915199593; Thu, 12 Feb 2026
- 08:53:19 -0800 (PST)
+        d=1e100.net; s=20230601; t=1770915354; x=1771520154;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=EWH52hHDoZsOt/pe7QFROJLUmHx4Nch/byKXwRcnIQ8=;
+        b=XP1coZCU5Qnl129/lRp56methQRelONeSyD3+etKN7nqS4dZc/qoBa0q8Cj3Ffl1YX
+         SM9ma5rvwR90KHcPWPRGjxXFKZG0EnZQWjCNZ66MNFrmfTgmt2gWnzU71NH7BygFYL9O
+         DbBu9oVEikdQM2CPZF5gPRopTZSf1T8YlRsOPBROT65klQbT43igDEnk9/2HK3GZMWeb
+         MWL0h6PoLGJ3+6QpJgDhHcT7X1LY9d7o0L8/MMx74sN0IRGDhm/QCF8VrZdSklIngek6
+         YWCofDkupqfuWVEGXtlivMJdwA6eQec/Z/05GKDNTdhXOGX8pg/d72o4t/mtqfiLyeT3
+         divA==
+X-Forwarded-Encrypted: i=1; AJvYcCX4/oK3OVKhUVE2UsuXaIyx2B/ERdj4GvUxbDmX/KVZN7+SSJLtiHB+I9tI9FvlvmRgTKEDqAWdgUE=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyDziyV7kbYdWVEXpP7b8LmRW0G2jmRm/2n1BtimNboHH33kvGY
+	9RT9csGLvs48L2v63lRUIDOR06ThOny3HTksUyutnc+FLvU+2jLJIu6I
+X-Gm-Gg: AZuq6aI6v/zEnH39JLu1e9TcKqeBtLd2yRnPtMDrEGVCb+l9fEHpPcsZLSyYuKJmbl1
+	kwnvaMCnrKnGvtSdqZraO30qjTAoHZhsAKQVHITesdN/1RdmUyyVLZ7grML981lYhF4UmRpnO+t
+	RgWowDSWHSoCHyijGlTiC44GyX4D9RFrtdGFo20r10QR7JGRhyMXxzC79v1sMaV3lXocdDGGuw5
+	waahUddeMhGv3b2x9vOwFTTZuyIecSYkwDViMFe5ZrNhW8E3j8cb7u1QACfe2MkJ5XV4Rfel97g
+	jlv6fhtzQOLJYJEE2OE1sKoW4sApqt/Dh/wrkAHyIM0vsaYMhDC3i5NO39FTADr+8+5vo56XK9z
+	2vrrv4It1lHAHyAcnp4QPul/F8nkmL9Pe7JQSGu/vIXPBxm6FrkkfYEDCxuHwVh1yejpADfrH28
+	knhtdkRDLJHfyBd/k=
+X-Received: by 2002:a05:600c:a09:b0:477:9fa8:bc99 with SMTP id 5b1f17b1804b1-4836570e260mr29901335e9.4.1770915353815;
+        Thu, 12 Feb 2026 08:55:53 -0800 (PST)
+Received: from skbuf ([2a02:2f04:d501:d900:2f75:bf70:f0b9:4586])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4835dd20519sm222156105e9.15.2026.02.12.08.55.52
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 12 Feb 2026 08:55:53 -0800 (PST)
+Date: Thu, 12 Feb 2026 18:55:50 +0200
+From: Vladimir Oltean <olteanv@gmail.com>
+To: WeiHao Li <cn.liweihao@gmail.com>
+Cc: heiko@sntech.de, robh@kernel.org, krzk+dt@kernel.org,
+	conor+dt@kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v2 2/4] arm64: dts: rockchip: Add USB2.0 PHY for RK3368
+Message-ID: <20260212165550.mju3377fvphdsqoe@skbuf>
+References: <20250909132958.26423-1-cn.liweihao@gmail.com>
+ <20250909132958.26423-3-cn.liweihao@gmail.com>
 MIME-Version: 1.0
-References: <20260208-rz-sdio-mux-v9-0-9a3be13c1280@solid-run.com>
- <20260208-rz-sdio-mux-v9-1-9a3be13c1280@solid-run.com> <20260212164823.mbeycqwzsy2dfq6e@skbuf>
-In-Reply-To: <20260212164823.mbeycqwzsy2dfq6e@skbuf>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Thu, 12 Feb 2026 17:53:08 +0100
-X-Gmail-Original-Message-ID: <CAMuHMdVOqovkugmCnR4FOfk8VkQyN_dmyKFzbsOSN0mPKQedeQ@mail.gmail.com>
-X-Gm-Features: AZwV_Qjd18dp3H6_yOLJUoqzfa3vu8ojTLTUkfH0N1bdOdZMnHdC-jkEvP2Togs
-Message-ID: <CAMuHMdVOqovkugmCnR4FOfk8VkQyN_dmyKFzbsOSN0mPKQedeQ@mail.gmail.com>
-Subject: Re: [PATCH v9 1/7] phy: can-transceiver: rename temporary helper
- function to avoid conflict
-To: Vladimir Oltean <olteanv@gmail.com>
-Cc: Josua Mayer <josua@solid-run.com>, Marc Kleine-Budde <mkl@pengutronix.de>, 
-	Vincent Mailhol <mailhol@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Peter Rosin <peda@axentia.se>, 
-	Aaro Koskinen <aaro.koskinen@iki.fi>, Andreas Kemnade <andreas@kemnade.info>, 
-	Kevin Hilman <khilman@baylibre.com>, Roger Quadros <rogerq@kernel.org>, 
-	Tony Lindgren <tony@atomide.com>, Janusz Krzysztofik <jmkrzyszt@gmail.com>, Vignesh R <vigneshr@ti.com>, 
-	Andi Shyti <andi.shyti@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>, 
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Geert Uytterhoeven <geert+renesas@glider.be>, Magnus Damm <magnus.damm@gmail.com>, 
-	Wolfram Sang <wsa+renesas@sang-engineering.com>, 
-	Yazan Shhady <yazan.shhady@solid-run.com>, Jon Nettleton <jon@solid-run.com>, 
-	Mikhail Anikin <mikhail.anikin@solid-run.com>, linux-can@vger.kernel.org, 
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	linux-omap@vger.kernel.org, linux-i2c@vger.kernel.org, 
-	linux-mmc@vger.kernel.org, devicetree@vger.kernel.org, 
-	linux-renesas-soc@vger.kernel.org
+Content-Disposition: inline
+In-Reply-To: <20250909132958.26423-3-cn.liweihao@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260212_085325_986646_AC8DF495 
-X-CRM114-Status: GOOD (  24.97  )
+X-CRM114-CacheID: sfid-20260212_085556_062262_538AB944 
+X-CRM114-Status: GOOD (  16.64  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,47 +101,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Vladimir,
+On Tue, Sep 09, 2025 at 09:29:56PM +0800, WeiHao Li wrote:
+> RK3368 has one USB2.0 PHY with two ports, This adds device tree node for
+> it.
+> 
+> Signed-off-by: WeiHao Li <cn.liweihao@gmail.com>
+> ---
+>  arch/arm64/boot/dts/rockchip/rk3368.dtsi | 29 ++++++++++++++++++++++++
+>  1 file changed, 29 insertions(+)
+> 
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3368.dtsi b/arch/arm64/boot/dts/rockchip/rk3368.dtsi
+> index 1b21787269..b09e431a64 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3368.dtsi
+> +++ b/arch/arm64/boot/dts/rockchip/rk3368.dtsi
+> @@ -766,11 +766,40 @@ cru: clock-controller@ff760000 {
+>  	grf: syscon@ff770000 {
+>  		compatible = "rockchip,rk3368-grf", "syscon", "simple-mfd";
+>  		reg = <0x0 0xff770000 0x0 0x1000>;
+> +		#address-cells = <1>;
+> +		#size-cells = <1>;
 
-On Thu, 12 Feb 2026 at 17:48, Vladimir Oltean <olteanv@gmail.com> wrote:
-> On Sun, Feb 08, 2026 at 05:38:56PM +0200, Josua Mayer wrote:
-> > Rename the temporary devm_mux_state_get_optional function to avoid
-> > conflict with upcoming implementation in multiplexer subsystem.
-> >
-> > Acked-by: Vinod Koul <vkoul@kernel.org>
-> > Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
-> > Reviewed-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
-> > Signed-off-by: Josua Mayer <josua@solid-run.com>
->
-> In the future, when you have a series with cross-tree dependencies,
-> please try to think of it as individual mini-series for each tree's
-> 'next' branch, and specify clearly that you need stable tags (to be
-> pulled into other trees). Telling maintainers what is your expected
-> merge strategy helps avoid making mistakes.
->
-> For example, if you did that in this set, you wouldn't have missed the
-> fact that in linux-phy/next, phy-can-transceiver is _not_ the only
-> occurrence of devm_mux_state_get_optional(). There's another one in
-> drivers/phy/renesas/phy-rcar-gen3-usb2.c, and that should be also
-> handled in order for trees to not enter inconsistent states.
+This introduces a device tree warning. You cannot mix nodes with no unit
+address (io-domains) with nodes with a unit address (usb2-phy@700) on
+the same hierarchical level. You have to pick a format and stick to it.
 
-To his defense, the one in drivers/phy/renesas/phy-rcar-gen3-usb2.c
-is a recent addition.
-
-So this is yet another case of "convert all current users" (i.e. those
-present in the typical subsystem base, typically *-rc1), with new
-users popping up in -next in parallel, which happens all the time...
-
-Gr{oetje,eeting}s,
-
-                        Geert
-
--- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+>  
+>  		io_domains: io-domains {
+>  			compatible = "rockchip,rk3368-io-voltage-domain";
+>  			status = "disabled";
+>  		};
+> +
+> +		u2phy: usb2-phy@700 {
+> +			compatible = "rockchip,rk3368-usb2phy";
+> +			reg = <0x700 0x2c>;
+> +			clocks = <&cru SCLK_OTGPHY0>;
+> +			clock-names = "phyclk";
+> +			clock-output-names = "usb480m_phy";
+> +			#clock-cells = <0>;
+> +			status = "disabled";
+> +
+> +			u2phy_otg: otg-port {
+> +				interrupts = <GIC_SPI 94 IRQ_TYPE_LEVEL_HIGH>,
+> +					     <GIC_SPI 93 IRQ_TYPE_LEVEL_HIGH>,
+> +					     <GIC_SPI 95 IRQ_TYPE_LEVEL_HIGH>;
+> +				interrupt-names = "otg-bvalid", "otg-id",
+> +						  "linestate";
+> +				#phy-cells = <0>;
+> +				status = "disabled";
+> +			};
+> +
+> +			u2phy_host: host-port {
+> +				interrupts = <GIC_SPI 96 IRQ_TYPE_LEVEL_HIGH>;
+> +				interrupt-names = "linestate";
+> +				#phy-cells = <0>;
+> +				status = "disabled";
+> +			};
+> +		};
+>  	};
+>  
+>  	wdt: watchdog@ff800000 {
+> -- 
+> 2.47.2
+> 
+> 
 
 -- 
 linux-phy mailing list
