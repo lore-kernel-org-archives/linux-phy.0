@@ -4,70 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 84E74EB4907
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Feb 2026 11:30:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 17999EB4912
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Feb 2026 11:55:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=icEPePfsOWtIVpeYilEcDwQRM+4voherJHU2MQ77GSg=; b=EKr2Y0G6CJorXs
-	28OzM5rUm8Dh/zsSHpVc3u+uGiYlgXhLOA79ekyhAfKDxpRboJUxZ7m+IJHVsIUzgN9xjef53K3aM
-	D4xopo0HDY0d9Xyk+UCiSr0+GEKSsHia+R7VPiMz2s9W20BxGI2VyfmQ0tW5dMVC5TL6k2Jru6h3l
-	1vSVL8sIY3hg5mWlHb7fI7OGrzQmi/uUUhV9FlUt6K1iF5gx+V+eln2TLjO+oz/6raUMPd9g07Y8p
-	odSrQIO/jMT+m6N/DI7gen1WxVVr7IFblQHirfDNZfnk+uCHTwkH7F5vh1Q9B7de42uUwxTvLKEiC
-	PHXdsATIWR1xcPRS94dw==;
+	List-Owner; bh=I2xtRO5g+6q1/Md/CRBHIKK9NHiKFOPswTsd5OE3wRU=; b=NMzf/TRtcftueY
+	Yyp0kLcRGGvLqdLkW5yE8l195jH4wzgigtE5NmDaI8INR4zmm4PaIQ7/6UfPCRD5i3NdSmV73DnV0
+	FP1SBYAV5EJFJLkOp7kjaE1lRjRPJtrJlLiVUScdIRc5PqYuMeUP7z+tqzYMAFlPfTMuNevQL5NCL
+	HbQ7RyziY1AUdpkeRqYcQ+Kk0UdWaY8ud8Ilw+rOEUVOiS26MmZrFWRWEZm75Tg0nXkbFWD9zngwz
+	i6bOBii5tbnbYbIMBAe8VNs2vsrDYWPR8nz/ZcjwERqoI3kdl95uz7RAnTnPHIBejSbSlSiSzQSas
+	qFdcbThQ0Gf7xhZcqCCQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vqUuQ-0000000205b-3NqN;
-	Thu, 12 Feb 2026 11:30:58 +0000
-Received: from sender4-op-o15.zoho.com ([136.143.188.15])
+	id 1vqVIV-000000022WV-2ivL;
+	Thu, 12 Feb 2026 11:55:52 +0000
+Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vqUuN-00000002052-3QCw;
-	Thu, 12 Feb 2026 11:30:56 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1770895849; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=HVKbNxgsmBVFEAlsnx8KyqWs619i3Xdcq0ugbutcRJ/rreEGuQ0r2AaPUgIuyUwgPJoMqAVkBpzHTZlUw3pstFFZvzSiN1RsNIeJ2LYzF3/YhysoUBJcMZWc4ejLweR6TPqcx0U2+s6pSJvjLPFNqpTplyR+BCtPdQR7I/maH2M=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1770895849; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=G8IqrDcbAUJ2cX6HzRhCxQ7mt8YTvz969YgV8457uCI=; 
-	b=Qa8iUZMdmMHy46JsRB7124zN9TKnyctzdMBy7mUZlAJaO9P2xs2f6maFmYvxGsg1j33LgdsGTdMk3aXNGlrFPbkrBiZyFjpoz3d2Xgl34vxa/E538obsZ8p6fVF/abvUEFYYa3l+CyNjTGrKoouqN2lXbG4PrElhsk5zJ1H8+xo=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=ziyao.cc;
-	spf=pass  smtp.mailfrom=me@ziyao.cc;
-	dmarc=pass header.from=<me@ziyao.cc>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1770895849;
-	s=zmail; d=ziyao.cc; i=me@ziyao.cc;
-	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:References:MIME-Version:Content-Type:In-Reply-To:Message-Id:Reply-To;
-	bh=G8IqrDcbAUJ2cX6HzRhCxQ7mt8YTvz969YgV8457uCI=;
-	b=a+67Y4XZFbkUF+RtSrlNZsmMfBVoxBthDopV9txjtnmrV/K+c7SkrdMZ/gfKaQAZ
-	BGuCxAtVEsopD4cAuzC/q1GiY9gM7bJclaG6/u+whWubwDZT3OgqDUuFiAPCXJGowd3
-	xq+XJnSY5e60aOuAa+ZkORVX6YR+aPWIycgNmKaU=
-Received: by mx.zohomail.com with SMTPS id 1770895846550396.2075278392381;
-	Thu, 12 Feb 2026 03:30:46 -0800 (PST)
-Date: Thu, 12 Feb 2026 11:30:39 +0000
-From: Yao Zi <me@ziyao.cc>
-To: Yixun Lan <dlan@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	id 1vqVIT-000000022W7-0hoh
+	for linux-phy@lists.infradead.org;
+	Thu, 12 Feb 2026 11:55:50 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=YgCvFhAjgZlIa7Ydg2e5QKVEHkgjXd+Lbu3Jbbdeon4=; b=US0Gw57wqXgKXR0fPPJO/o/GNI
+	aMLLlq2bvhFkq6aCBH9DYOrQ87ff27ppPGEZsLIApw9W74JsOQxerfABY4JGyqfonPdoRTMAezPlh
+	ET3mT6KZVusPrnS4+DPJ8pxhfG/fqqXNBN9/DzejH0YVOAIrs8SVD9ENMikirM06HgKhqMbwQDmSv
+	woRPprd4W2CIPCuUD5/30p9dPhl/AuOY2dsQqCte5f0QKAo+CbKXQuc3BalqF9PcUtyU76MGdIe7I
+	mE7pDszhwUSDgsQIxpHSeaJmUy7/yc3XcK4+ejq96heoxjB8o+u8x3bh12cpZmUpIF8e/mOzVK2qz
+	B3rWSuQQ==;
+Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:45954)
+	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.98.2)
+	(envelope-from <linux@armlinux.org.uk>)
+	id 1vqVIL-000000004VV-0krt;
+	Thu, 12 Feb 2026 11:55:41 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.98.2)
+	(envelope-from <linux@shell.armlinux.org.uk>)
+	id 1vqVIJ-000000004lJ-26cu;
+	Thu, 12 Feb 2026 11:55:39 +0000
+Date: Thu, 12 Feb 2026 11:55:39 +0000
+From: "Russell King (Oracle)" <linux@armlinux.org.uk>
+To: Vladimir Oltean <olteanv@gmail.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Ze Huang <huang.ze@linux.dev>
-Cc: Junzhong Pan <panjunzhong@linux.spacemit.com>,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-riscv@lists.infradead.org, spacemit@lists.linux.dev,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 3/3] phy: k1-usb: k3: add USB2 PHY support
-Message-ID: <aY253_fOkoQKbi8g@pie>
-References: <20260212-11-k3-usb2-phy-v1-0-43578592405d@kernel.org>
- <20260212-11-k3-usb2-phy-v1-3-43578592405d@kernel.org>
+	Jonathan Corbet <corbet@lwn.net>, linux-doc@vger.kernel.org,
+	linux-phy@lists.infradead.org
+Subject: Re: [PATCH net-next] doc: generic phy: update generic PHY
+ documentation
+Message-ID: <aY2_u88tkEb5geAg@shell.armlinux.org.uk>
+References: <E1vo0mF-00000007kbg-1OeA@rmk-PC.armlinux.org.uk>
+ <20260211154839.lbh4uovxr5b5s4nv@skbuf>
+ <aYzHL1qwew5p-xoq@shell.armlinux.org.uk>
+ <aYzHL1qwew5p-xoq@shell.armlinux.org.uk>
+ <20260211193006.ad2piivyoqhvg22r@skbuf>
+ <aYznE1FIbs_0OcPR@shell.armlinux.org.uk>
+ <aY1hs4XKZSpvKd3B@vaman>
+ <20260212091332.qcpi3qyynmdp4acv@skbuf>
+ <aY2lFTIALH7qEJmM@shell.armlinux.org.uk>
+ <20260212103803.xut4sjbypgb26mo4@skbuf>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260212-11-k3-usb2-phy-v1-3-43578592405d@kernel.org>
-X-ZohoMailClient: External
+In-Reply-To: <20260212103803.xut4sjbypgb26mo4@skbuf>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260212_033055_893110_4233D279 
-X-CRM114-Status: GOOD (  22.31  )
+X-CRM114-CacheID: sfid-20260212_035549_228289_C6AECB97 
+X-CRM114-Status: GOOD (  31.36  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,121 +91,83 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Feb 12, 2026 at 09:38:56AM +0800, Yixun Lan wrote:
-> Add USB2 PHY support for SpacemiT K3 SoC.
+On Thu, Feb 12, 2026 at 12:38:03PM +0200, Vladimir Oltean wrote:
+> On Thu, Feb 12, 2026 at 10:01:57AM +0000, Russell King (Oracle) wrote:
+> > I'm also going to point out that phy-core allows ->set_mode() to be
+> > unimplemented, yet the phy_mode is stored. It looks to me like this is
+> > intentional part of the API, which means that phy_set_mode*() is not
+> > expected to always result in the hardware being programmed. That
+> > brings up the obvious question: if phy_set_mode() is not expected to
+> > always reprogram the hardware, then what phy API call should follow
+> > this to ensure the hardware is reprogrammed.
+> > 
+> > On the other hand, if the API intention was that ->set_mode() must be
+> > implemented if phy_set_mode*() is to be accepted, then surely
+> > phy_set_mode_ext() should be checking that phy->ops->set_mode exists,
+> > and returning -EOPNOTSUPP if it doesn't.
 > 
-> Register layout of handling USB disconnect operation has been changed,
-> So introducing a platform data to distinguish the different SoCs.
+> This is a relatively new development.
+> 
+> commit d58c04e305afbaa9dda7969151f06c4efe2c98b0
+> Author: Dmitry Baryshkov <lumag@kernel.org>
+> Date:   Sun Feb 9 14:31:45 2025 +0200
+> 
+>     phy: core: don't require set_mode() callback for phy_get_mode() to work
+> 
+>     As reported by Damon Ding, the phy_get_mode() call doesn't work as
+>     expected unless the PHY driver has a .set_mode() call. This prompts PHY
+>     drivers to have empty stubs for .set_mode() for the sake of being able
+>     to get the mode.
+> 
+>     Make .set_mode() callback truly optional and update PHY's mode even if
+>     it there is none.
+> 
+>     Cc: Damon Ding <damon.ding@rock-chips.com>
+>     Link: https://lore.kernel.org/r/96f8310f-93f1-4bcb-8637-137e1159ff83@rock-chips.com
+>     Tested-by: Damon Ding <damon.ding@rock-chips.com>
+>     Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+>     Link: https://lore.kernel.org/r/20250209-phy-fix-set-moe-v2-1-76e248503856@linaro.org
+>     Signed-off-by: Vinod Koul <vkoul@kernel.org>
+> 
+> If only lore.kernel.org wasn't down, so I could see the back story in
+> the link...
 
-Would it be clearer and simpler if you define separate phy_ops for
-k1 and k3, and point of_device_id.data directly to the corresponding
-phy_ops? Then there's no need to introduce either spacemit_usb2phy_data
-structure, or spacemit_usb2phy_disconnect wrapper.
+Looking at the first link:
 
-Best regards,
-Yao Zi
+> On 2024/12/30 20:45, Dmitry Baryshkov wrote:
+> > On Thu, Dec 26, 2024 at 02:33:03PM +0800, Damon Ding wrote:
+> > No need for the stub, please drop it. The host controller driver can
+> > still call phy_set_mode() / _ext(), the call will return 0.
+> 
+> Without the &phy_ops.set_mode(), the phy driver can not get phy_mode to 
+> distinguish between HDMI and DP mode via the phy_get_mode(), even if the 
+> host driver calls phy_set_mode() / _ext(). Additionally, the previous 
+> discussion [0] also mentioned future considerations for dynamic 
+> switching. Indeed, I should add a related comment before the 'return 0;' 
+> to enhance understandability.
 
-> Signed-off-by: Yixun Lan <dlan@kernel.org>
-> ---
->  drivers/phy/spacemit/phy-k1-usb2.c | 40 ++++++++++++++++++++++++++++++++++++--
->  1 file changed, 38 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/phy/spacemit/phy-k1-usb2.c b/drivers/phy/spacemit/phy-k1-usb2.c
-> index 959bf79c7a72..b0ce0a92861e 100644
-> --- a/drivers/phy/spacemit/phy-k1-usb2.c
-> +++ b/drivers/phy/spacemit/phy-k1-usb2.c
-> @@ -51,6 +51,9 @@
->  #define PHY_K1_HS_HOST_DISC		0x40
->  #define  PHY_K1_HS_HOST_DISC_CLR		BIT(0)
->  
-> +#define PHY_K3_HS_HOST_DISC		0x20
-> +#define  PHY_K3_HS_HOST_DISC_CLR		BIT(8)
-> +
->  #define PHY_PLL_DIV_CFG			0x98
->  #define  PHY_FDIV_FRACT_8_15		GENMASK(7, 0)
->  #define  PHY_FDIV_FRACT_16_19		GENMASK(11, 8)
-> @@ -74,10 +77,15 @@
->  
->  #define K1_USB2PHY_RESET_TIME_MS	50
->  
-> +struct spacemit_usb2phy_data {
-> +	int (*disconnect)(struct phy *phy, int port);
-> +};
-> +
->  struct spacemit_usb2phy {
->  	struct phy *phy;
->  	struct clk *clk;
->  	struct regmap *regmap_base;
-> +	const struct spacemit_usb2phy_data *data;
->  };
->  
->  static const struct regmap_config phy_regmap_config = {
-> @@ -145,7 +153,7 @@ static int spacemit_usb2phy_exit(struct phy *phy)
->  	return 0;
->  }
->  
-> -static int spacemit_usb2phy_disconnect(struct phy *phy, int port)
-> +static int spacemit_k1_usb2phy_disconnect(struct phy *phy, int port)
->  {
->  	struct spacemit_usb2phy *sphy = phy_get_drvdata(phy);
->  
-> @@ -155,6 +163,23 @@ static int spacemit_usb2phy_disconnect(struct phy *phy, int port)
->  	return 0;
->  }
->  
-> +static int spacemit_k3_usb2phy_disconnect(struct phy *phy, int port)
-> +{
-> +	struct spacemit_usb2phy *sphy = phy_get_drvdata(phy);
-> +
-> +	regmap_update_bits(sphy->regmap_base, PHY_K3_HS_HOST_DISC,
-> +					   PHY_K3_HS_HOST_DISC_CLR, PHY_K3_HS_HOST_DISC_CLR);
-> +
-> +	return 0;
-> +}
-> +
-> +static int spacemit_usb2phy_disconnect(struct phy *phy, int port)
-> +{
-> +	struct spacemit_usb2phy *sphy = phy_get_drvdata(phy);
-> +
-> +	return sphy->data->disconnect(phy, port);
-> +}
-> +
->  static const struct phy_ops spacemit_usb2phy_ops = {
->  	.init = spacemit_usb2phy_init,
->  	.exit = spacemit_usb2phy_exit,
-> @@ -173,6 +198,8 @@ static int spacemit_usb2phy_probe(struct platform_device *pdev)
->  	if (!sphy)
->  		return -ENOMEM;
->  
-> +	sphy->data = device_get_match_data(dev);
-> +
->  	sphy->clk = devm_clk_get_prepared(&pdev->dev, NULL);
->  	if (IS_ERR(sphy->clk))
->  		return dev_err_probe(dev, PTR_ERR(sphy->clk), "Failed to get clock\n");
-> @@ -195,8 +222,17 @@ static int spacemit_usb2phy_probe(struct platform_device *pdev)
->  	return PTR_ERR_OR_ZERO(phy_provider);
->  }
->  
-> +static const struct spacemit_usb2phy_data k1_usb2phy_data = {
-> +	.disconnect = spacemit_k1_usb2phy_disconnect,
-> +};
-> +
-> +static const struct spacemit_usb2phy_data k3_usb2phy_data = {
-> +	.disconnect = spacemit_k3_usb2phy_disconnect,
-> +};
-> +
->  static const struct of_device_id spacemit_usb2phy_dt_match[] = {
-> -	{ .compatible = "spacemit,k1-usb2-phy", },
-> +	{ .compatible = "spacemit,k1-usb2-phy", .data = &k1_usb2phy_data },
-> +	{ .compatible = "spacemit,k3-usb2-phy", .data = &k3_usb2phy_data },
->  	{ /* sentinel */ }
->  };
->  MODULE_DEVICE_TABLE(of, spacemit_usb2phy_dt_match);
-> 
-> -- 
-> 2.52.0
-> 
-> 
+The first sentence makes me question the reasoning here - why would
+a phy _driver_ call phy _consumer_ functions such as phy_get_mode().
+We have drivers that directly access phy->attrs.mode.
+
+It also adds to the question about the intended correct ordering of
+PHY consumer calls, because it seems that the intention behind this
+is to _not_ implement the ->set_mode() method, but to reconfigure the
+PHY in some other generic PHY API call.
+
+By "fixing" phy_set_mode*() in the above commit to allow this, that
+action goes against the idea that generic PHY API calls can be made in
+any order.
+
+So my conclusion is that there is disagreement between generic PHY
+reviewers about how the generic PHY API should be used and implemented,
+leading to the mess I've highlighted where consumers need to know the
+implementation details of the generic PHY driver to make the calls in
+the correct order for that specific driver.
+
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTP is here! 80Mbps down 10Mbps up. Decent connectivity at last!
 
 -- 
 linux-phy mailing list
