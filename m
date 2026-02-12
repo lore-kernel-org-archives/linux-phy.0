@@ -4,67 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 44254EB48F8
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Feb 2026 11:17:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8A765EB48F8
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Feb 2026 11:24:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RtQUDpE/1zWdXVyJde5GceyvgLKc1Z3+JQzXC31QLBs=; b=Sw6PLzcjPiac31
-	wQFcpKrwRmycJINZ1LjCaCN+0rtR8/IDLw5mr7mqSbEgl6HZYr3IGPWO7MXY7ZTec8TheFJHULrmv
-	U+vowHDvB1GrUKdmHajGPdKM1M2uLyky6b4dVxoNqbfR+l5IGlD6q+bYQ/MwNcIk/blEC1vNbEz4V
-	Vp5wyvuKxh14x+TTvKJZg6NuoZGC4pTjug/q7xUUDqGf4++dcINnN0C4mwFG55Yf3KkOUowDNdIVt
-	6DzOTV9nlZj4O803KTvulooPXI24ww9vl0RSbDAOuBlhNNQeCBiVmBp5/1ajz6/8bCGV2UGqzPaZn
-	zODK9jesDn9xnjzqGmUQ==;
+	List-Owner; bh=nFu/C7cAwW9S7RoLbtb14gsSw1AI2d2GvkxXproxBdQ=; b=qwY2Xuutkib1ik
+	Q8FWI+DPugnZUR4NuaeFHcsbt0A26qzQMDTJl33GWRgN0ZUYQHN4pI/Gh3URHwZDQoGPOrkqKmFgo
+	sZAE+r43jFAp0Gkz2NBQwJlLWJ7wAsunj+p9AXHKZGvKQPyvkZ9eYAuTn9cIeRxb/iJfSvUOF9/Cn
+	kKhg7R/KfeBMXB9X3cKpj6R0spffPmcVUOOa8vXsJuTLvtk1l+GNv3dt3JBNih3k/ctlTV6HM5zi1
+	m++A8Y9FdVkXNrBX6xTsX1fi4z++fgbIlgQD0pNCclWskBDGh53vThWOZkoNvWCvjk03EPITWeu/9
+	EHE7fcmKCGw0pPTSlkjw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vqUhE-00000001ywN-465y;
-	Thu, 12 Feb 2026 11:17:20 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vqUo5-00000001zcC-3qnl;
+	Thu, 12 Feb 2026 11:24:26 +0000
+Received: from sender4-op-o15.zoho.com ([136.143.188.15])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vqUhE-00000001ywC-04Jt
-	for linux-phy@lists.infradead.org;
-	Thu, 12 Feb 2026 11:17:20 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 28C4A60010;
-	Thu, 12 Feb 2026 11:17:19 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 606E2C4CEF7;
-	Thu, 12 Feb 2026 11:17:18 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1770895038;
-	bh=OE95iEv5hbPxhjUCx2mMjsub+XUE22v7OakoLEelgVE=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=fJNwmr+xLGPlQ/JDiqh03dsABOaOdsbwQpJBXvNEuRa/nSHhhN+ug367o00A9EJ3B
-	 LmIIL6t7HuqEqAor0q9+qFqkReSzi/qoeajF2nR0+cGr466r8L3vVXiSkjluj0N5QE
-	 h2fO6k+trYuckwiZVqQqee7aBSNFfjO85OYNHmWpCHRd2VIXge2KnPUsoGjvnGFUbx
-	 rqh78fKf75yWz0yxQXi/FiID9nA/mmGa3CNyBI7hBFe0dhCeL0NwqqA6Fhqd6ZKaCO
-	 J261hyDvN++QBfnTjjGK/VreMU1p6hDAgqJz0oSq8OS+Cp7rPTxlYFNafMbGodczpP
-	 UP3ZTow/9zkcw==
-Date: Thu, 12 Feb 2026 16:47:15 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Ulf Hansson <ulf.hansson@linaro.org>
-Cc: Geert Uytterhoeven <geert+renesas@glider.be>,
-	Vladimir Oltean <olteanv@gmail.com>,
-	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+	id 1vqUo3-00000001zbp-0MGc;
+	Thu, 12 Feb 2026 11:24:24 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1770895450; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=ciM/MCKewRmR3bpICPa2OinU9RB2ElstD1FLBBLLLfT3Zn1YWeN3dnJ2WJNgbLjboHgBrO8Snftjgj5nas9lAhH8hs2Mw8gWqxsGvW6mrhTcQNpXNlLXGmOHMv/4/cg4Jzv9arFaHRKJPsWxdD2ZvLpEUWlD3OUMmNS8aky+9+M=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1770895450; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=aF3qO+3sk8KCbgBGOu+WadDm4gK00VEQqM6dxzce1CQ=; 
+	b=Bpznyr1Ce/65abpW4ea9rNZ+n5wf8SPKFQcKbaItC44rTuLXkticjBfXdSnqDhW0arIS4vi0+PdsvxCclLD7hmj7w4J+PfOA8Mt6gGCZ0BPLUdXfY6hAjOVdbYE0vZory1abzWOid2FeZqwzmcvpq2cZuRM7JCgnAOn7LNVIU6M=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=ziyao.cc;
+	spf=pass  smtp.mailfrom=me@ziyao.cc;
+	dmarc=pass header.from=<me@ziyao.cc>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1770895450;
+	s=zmail; d=ziyao.cc; i=me@ziyao.cc;
+	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:References:MIME-Version:Content-Type:In-Reply-To:Message-Id:Reply-To;
+	bh=aF3qO+3sk8KCbgBGOu+WadDm4gK00VEQqM6dxzce1CQ=;
+	b=Dnzo+cx4JVdOzyJ/jbd+Q2XJX4i+Ojct3KAPLJSuX3Yd9ZSmj4quJVrY0hXpBSA/
+	jDA6LbuAA2RbV0JfoNxI1JIb4zTBxzHGztYDAeIHKvyUzA6x8V85qY3g8PRhSa89Tpu
+	/P1Lyf3ZlzKzK7b/iL++/uhyBSCxdEgErpo6z4Ak=
+Received: by mx.zohomail.com with SMTPS id 1770895448118306.0552867056007;
+	Thu, 12 Feb 2026 03:24:08 -0800 (PST)
+Date: Thu, 12 Feb 2026 11:24:00 +0000
+From: Yao Zi <me@ziyao.cc>
+To: Yixun Lan <dlan@kernel.org>, Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
-	Josua Mayer <josua@solid-run.com>,
-	Wolfram Sang <wsa+renesas@sang-engineering.com>,
-	Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>,
-	linux-phy@lists.infradead.org, linux-mmc@vger.kernel.org,
-	linux-renesas-soc@vger.kernel.org, linux-next@vger.kernel.org,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Ze Huang <huang.ze@linux.dev>
+Cc: Junzhong Pan <panjunzhong@linux.spacemit.com>,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-riscv@lists.infradead.org, spacemit@lists.linux.dev,
 	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH next] phy: renesas: rcar-gen3-usb2: Drop local
- devm_mux_state_get_optional()
-Message-ID: <aY22u1rDDWuU53zP@vaman>
-References: <67c8c4f9bf9f09fd0c13daedef27b82ff389ddfb.1770720452.git.geert+renesas@glider.be>
- <CAPDyKFpY2X8hephSfHq7rj_DaKX76ZSkWSCYXrGTEBUFHkvOzg@mail.gmail.com>
- <aYyrsPTH1923jV7y@vaman>
- <CAPDyKFo92pOimvtGdN4yvFtFkc3vB+ex2OH10WmoKXcVSS+iAA@mail.gmail.com>
+Subject: Re: [PATCH 2/3] phy: k1-usb: add disconnect function support
+Message-ID: <aY24UOvYsnh_7ZCO@pie>
+References: <20260212-11-k3-usb2-phy-v1-0-43578592405d@kernel.org>
+ <20260212-11-k3-usb2-phy-v1-2-43578592405d@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAPDyKFo92pOimvtGdN4yvFtFkc3vB+ex2OH10WmoKXcVSS+iAA@mail.gmail.com>
+In-Reply-To: <20260212-11-k3-usb2-phy-v1-2-43578592405d@kernel.org>
+X-ZohoMailClient: External
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260212_032423_289799_75A1C18F 
+X-CRM114-Status: UNSURE (   7.36  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,32 +85,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 12-02-26, 11:39, Ulf Hansson wrote:
-> On Wed, 11 Feb 2026 at 17:17, Vinod Koul <vkoul@kernel.org> wrote:
+On Thu, Feb 12, 2026 at 09:38:55AM +0800, Yixun Lan wrote:
+> A disconnect status BIT of USB2 PHY need to be cleared, otherwise
+> it will fail to work properly during next connection when devices
+> connect to roothub directly.
 
-> > Should I drop the 8bb92fd7a0407792 and it makes things easier for
-> > everyone and then we can pick fixed commit for 7.1 cycle..
-> 
-> Well, my pull request for MMC was broken (the mux patches didn't get
-> properly tested in linux-next, until it was too late), so Linus will
-> not take it.
+This sounds like a bug. Does it affect K1 SoC as well? If so, I think
+it deserves a Fixes tag and backporting.
 
-Yeah I saw that one, sorry for that
+> Signed-off-by: Yixun Lan <dlan@kernel.org>
 
-> At this point I would say that 8bb92fd7a0407792 is still a bit
-> problematic as it uses the same name of the helper that the mux core
-> intends to use. It would be better with a phy specific name for it, so
-> it becomes easier to convert to the common mux helper, later on.
-> Although, at this point it's still okay as is, as we will need to
-> defer the mux core changes to v7.1 anyway.
-> 
-> So up to you!
-
-In that case, I can keep as is for now. We can rename the api as a fix
-and proper changes can go in for 7.1
-
--- 
-~Vinod
+Best regards,
+Yao Zi
 
 -- 
 linux-phy mailing list
