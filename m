@@ -4,106 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 409B3EE3698
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Feb 2026 16:48:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0A014EE3698
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Feb 2026 16:53:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MJL9cp5tfdQSjOSOdMJ0o3TFapLP/16GILE9MbI/rqI=; b=evelXQGAuoU5gb
-	Hkv+KVS7VTUFCfSy4oMz71D3qoVcZXzQEWsd7ucXyNugT6NaPTIzThJn8zJ6KkWvhJAduw8J8df9V
-	lqROGSjKB4TKifnYiRwvAv4S1XVyWYCUpMFJskY4rYBghkGuTjoEEldOjdcVuG/EwNlaMoYtgeSDX
-	OYWWky4pMpESu/WbYt5rt9OtIQcCKAHwBpmpLv6A4yxpBPF6XQPxC31iAkMrjzd4hUdU0sWucNZru
-	7pMAcINkwgLrNxKei8QtDYWlm1KZnF2uzqAgbIsZmLBQyJji5VHPeAbcShMBbJOT01ybG/2VksOJI
-	7eK1N4eLgOaCe5qVXP/A==;
+	List-Owner; bh=dRsSpLvQZ9x/9nTwcH4nAF7K7n34qMVLpF2FeKcfoTU=; b=ytgCQ3ngBVV4uX
+	gsWVVMP2oQWZcteb+TyzuzAiOK3C6aYG/qlw3YTdcjVIuAEtFpbe5TNPR8kj1IHuD828XQ8TrdHH6
+	brwzdcI41c6Sv1LCPf0UOOUKplrA14GL+URkXc9zZxZr1KyFdWmqCc65zAUvTHzK79iEndwv4ooGH
+	Ky2oJ+Yj0p38Q1OFbWqJKXj47e0E41mvYVrBTMKnPnO1D4eOpd96v3B3BT6WWPA+epPFCni71KQEp
+	wEXy3gFlOIdQE1cNHkswiCclVVwerfaRppfAoq5S71jIdv6C6JjremmRy+Fo4ReNwbyKqZTN2GNWt
+	BHlxKJzt2TgCq/qAFwWQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vqZrk-00000002OI0-3DZK;
-	Thu, 12 Feb 2026 16:48:32 +0000
-Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
+	id 1vqZwW-00000002P83-35tU;
+	Thu, 12 Feb 2026 16:53:28 +0000
+Received: from mail-ua1-f43.google.com ([209.85.222.43])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vqZrh-00000002OFX-3WHS
+	id 1vqZwT-00000002P7a-3wMw
 	for linux-phy@lists.infradead.org;
-	Thu, 12 Feb 2026 16:48:31 +0000
-Received: by mail-wm1-x331.google.com with SMTP id 5b1f17b1804b1-4806fd9033bso40215e9.3
-        for <linux-phy@lists.infradead.org>; Thu, 12 Feb 2026 08:48:29 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1770914908; x=1771519708; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=s35shHfPlRPLdZc28zpITEbCE57T/ice0Q0E5ta0TZU=;
-        b=FZa2pwE6tpbTBNaloKkbrJKwExUG0MHIlqj1XVJMlPK6AKCNQKFi5Kvj5BxltEBFty
-         n8TIOJSQos4/9kRL2LBShTRLVTMz+IANT732GXwuZuqoiszmyyANBT7lFyhcs/MLj2ZB
-         yIypUGN6jpBkgGgSdw8K/iBO41AizPd/AJjc1pzYmNlt2Z0/yeOVcuCuEQwkCs09F9mo
-         Wwu1VXrXiXdJKN5ckDCBVndGEJyGAYr4GKMyUVyzq0LSyBK3q4X3CDxPUMw/F63lEuWC
-         GPPfdOn8so/jlJDi+7tF1fAQDwdjkx/2WKuJ9ZW5HiqGNBis8uy/80fSv4efv4DOaLWs
-         wTMQ==
+	Thu, 12 Feb 2026 16:53:27 +0000
+Received: by mail-ua1-f43.google.com with SMTP id a1e0cc1a2514c-94ac8cbf3feso34593241.0
+        for <linux-phy@lists.infradead.org>; Thu, 12 Feb 2026 08:53:24 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1770914908; x=1771519708;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=s35shHfPlRPLdZc28zpITEbCE57T/ice0Q0E5ta0TZU=;
-        b=ZdEqTYQyrJ68WsoNj3mqqpSJtACxtlyjXSLvdMVRy9veDZHU9rVZJh3HXqif/g7EPT
-         CbAPJAC4tF6EgJ1d0BH6YWlrpHCiMjnUl50veoOPl1cSNmuHr07n7ayUXYvoNDxk6GA1
-         ege5XwesTgFtnT2g+WzVPhdGJXxG+qA/3fHYHJ3CUi3iU248A/2xh4eRiGZPnFnvTcBV
-         PLJn81NfG8dV7i0mM65ll0u1Rrx94EXmYNmshQlkj8qY0gVZlDp0OrZj8hYY4gm+steh
-         8jK1mcf3bCzH9q073PVwKTjB6f/AM60+LFbr9l9WsCzxIjFDM/7dNKYVKmkr5O8sUo7D
-         ySSg==
-X-Forwarded-Encrypted: i=1; AJvYcCUkxn9W3kBhT0LLnaOGq2qBey1nLsYm6hP7I4g44GHyfewnuEz3i2Y6vdAxLwHB+GlO7qIaU4VCwQg=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzfnQiGj4u6chYP0sTVTb2TPlC547G+o5Tuq/mr46fX67GgUTvQ
-	/CY+FUUetNSlIEE41qJeBKGhSc76S0miFryD91xl43Z/bJRnZCKD4Yyd
-X-Gm-Gg: AZuq6aJgu8SaN2DUypxbnWx2Y82HiYPlqNApLSrPMjoSdW3Xx9+qEHv7a6Mramve9EM
-	kErMcM1mIBBRKMQu8kcYPaG4YwDPDOKUBEVKeI63+VnVLPgy9U45aaBJaQGHlE0RoWJykORBNEM
-	Xn7CAbi03UP5nz3qVzOPrqjKxke2F8rGpKjyCAx1XwN6KgCgVjNmvEnLTsNEv10IjwViyttPKqA
-	u+Z/G4BUXFE4esfVqAyvonCcfvCFjwdwjM6FXQVBx234nKJOvtf4jQCtDvfZmLJosek90HPll1U
-	Lf1XF3RQYyipTU6neRkkiGcw3Vi/9IzeNdgxUK6LnZeIbq7U5hd8SvnoE0NcOrlyBln1PCeRmzn
-	RB8EsidKI2aTwXr4zHHFKrsAmSjLy5yxOLJgmSwXYrjToMtD/J0VC5WLIBSmLKza80anYoA7Fuz
-	DxXctx0C+lwt1fBNA=
-X-Received: by 2002:a05:600c:1d9a:b0:477:5ca6:4d51 with SMTP id 5b1f17b1804b1-4836570e3c5mr29720595e9.3.1770914907561;
-        Thu, 12 Feb 2026 08:48:27 -0800 (PST)
-Received: from skbuf ([2a02:2f04:d501:d900:2f75:bf70:f0b9:4586])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4834d5e0ed5sm192002555e9.5.2026.02.12.08.48.25
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 12 Feb 2026 08:48:26 -0800 (PST)
-Date: Thu, 12 Feb 2026 18:48:23 +0200
-From: Vladimir Oltean <olteanv@gmail.com>
-To: Josua Mayer <josua@solid-run.com>
-Cc: Marc Kleine-Budde <mkl@pengutronix.de>,
-	Vincent Mailhol <mailhol@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Peter Rosin <peda@axentia.se>, Aaro Koskinen <aaro.koskinen@iki.fi>,
-	Andreas Kemnade <andreas@kemnade.info>,
-	Kevin Hilman <khilman@baylibre.com>,
-	Roger Quadros <rogerq@kernel.org>, Tony Lindgren <tony@atomide.com>,
-	Janusz Krzysztofik <jmkrzyszt@gmail.com>,
-	Vignesh R <vigneshr@ti.com>, Andi Shyti <andi.shyti@kernel.org>,
-	Ulf Hansson <ulf.hansson@linaro.org>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Geert Uytterhoeven <geert+renesas@glider.be>,
-	Magnus Damm <magnus.damm@gmail.com>,
-	Wolfram Sang <wsa+renesas@sang-engineering.com>,
-	Yazan Shhady <yazan.shhady@solid-run.com>,
-	Jon Nettleton <jon@solid-run.com>,
-	Mikhail Anikin <mikhail.anikin@solid-run.com>,
-	linux-can@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org, linux-omap@vger.kernel.org,
-	linux-i2c@vger.kernel.org, linux-mmc@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-renesas-soc@vger.kernel.org
+        d=1e100.net; s=20230601; t=1770915204; x=1771520004;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=om3cuNbQzAgOvOQckRciuNr9O8eg7IAaHrWKXJVxB8U=;
+        b=OGKfxrAnCSswbtA0VYCL01/JMy97raThXd4noQ0LvG+6tG9hQemiPzzL0SMIcFyHNQ
+         Al/JuZIz76sQ2cOB9yUNVnSorUd0h+oBNw8H0s7F6x3pIHoJi1/MoYpXYvXPKha7K+Nt
+         uPUgAXxDabjMpKJ3GPU8gB3glQ7SItbyfuoBfgIMifm6DOCUwPTbseQTdQyBNxh6eiqH
+         xWbLSXhdp9N5ZtwV089qEjOjeu2ubrv83fbUIh4I830uRuvOsYWFJ85q8ZVHTob5qCm1
+         KgW0iSED23cOjFZUjioK0BrHagM3wo+CjBGUG0obTxXRrXcKhqLGXRqxUiUkHPsxzFUd
+         HngA==
+X-Forwarded-Encrypted: i=1; AJvYcCUZykqMG4GtjUVXZT0quw7yclT1Gzl7PNrSbVSkRbPDVq2ahgkRwXozjXTI7UqvS1AqF8wQFUD5Du8=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yw7JXMHkdGjawu3icNRjt24hjBm9f7tQmy2BHjRNTOktGxdxOlV
+	T1QyczjSQsvpG5ifJU+MubGeOZkSSJ5zSBDGjYzqI+P3uWpYLwwmAW5dmz8QsJF8
+X-Gm-Gg: AZuq6aL9KTHKqtyV0l+anGBA7CgC7P9nraG7QoB7JB2Vv35H4yMHJCefWf5p9fBIWlD
+	beRklqtsx9XBfyiM985Y9A1v02fnrrlWA2nq8bUAt+9pzsVuMee2ukDy2G0ZtmjGW7JAXg5S5u2
+	n5f2qL4xfwWUy4CQxwkSLUG5hqnGxfni3ouYIo6bge1agAmjeOAqqpq7wWWerOX2o9eACMsZ77J
+	7Ernlg8GMSgdtiH/CD+X6mRuLFFTMOBwW/a4BIMuneo2bvBzd0h0x27v3UDALME68VmdL/pxb4i
+	36ewHLVGTtFDFjr7R9IWNYj+Cu8emBSUq35tMkcqB/RNEszg4QxShScPrQU3xfjgq0R71yMZrRu
+	pdDF/4jHtdJ6oiGdBZZsruqPrRqfbIj1ZC7NftxsUd9xB2iVUO8eTjyei+tK8RjcD3exWff7pmi
+	DWaNweSjju6hUaDu30FYmTNTJtwLkffeBFX8085pTGl152cM1vef2UopzlSXlJ
+X-Received: by 2002:a05:6102:b0f:b0:5fd:e9f8:b8d1 with SMTP id ada2fe7eead31-5fe007da33amr918436137.43.1770915203156;
+        Thu, 12 Feb 2026 08:53:23 -0800 (PST)
+Received: from mail-ua1-f47.google.com (mail-ua1-f47.google.com. [209.85.222.47])
+        by smtp.gmail.com with ESMTPSA id ada2fe7eead31-5fde8adf700sm2162383137.12.2026.02.12.08.53.19
+        for <linux-phy@lists.infradead.org>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 12 Feb 2026 08:53:20 -0800 (PST)
+Received: by mail-ua1-f47.google.com with SMTP id a1e0cc1a2514c-94ac8cbf3feso34558241.0
+        for <linux-phy@lists.infradead.org>; Thu, 12 Feb 2026 08:53:19 -0800 (PST)
+X-Forwarded-Encrypted: i=1; AJvYcCUx7WE0Vg+qfOBuf4jHGRDA6+JLle8i55J9I5634BNfip5hX0cRyvrx0Xt5ly5mSj9U92SDQzsvBvk=@lists.infradead.org
+X-Received: by 2002:a05:6102:3051:b0:5fd:f8d6:e5d7 with SMTP id
+ ada2fe7eead31-5fe003fb1fcmr1021759137.11.1770915199593; Thu, 12 Feb 2026
+ 08:53:19 -0800 (PST)
+MIME-Version: 1.0
+References: <20260208-rz-sdio-mux-v9-0-9a3be13c1280@solid-run.com>
+ <20260208-rz-sdio-mux-v9-1-9a3be13c1280@solid-run.com> <20260212164823.mbeycqwzsy2dfq6e@skbuf>
+In-Reply-To: <20260212164823.mbeycqwzsy2dfq6e@skbuf>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Thu, 12 Feb 2026 17:53:08 +0100
+X-Gmail-Original-Message-ID: <CAMuHMdVOqovkugmCnR4FOfk8VkQyN_dmyKFzbsOSN0mPKQedeQ@mail.gmail.com>
+X-Gm-Features: AZwV_Qjd18dp3H6_yOLJUoqzfa3vu8ojTLTUkfH0N1bdOdZMnHdC-jkEvP2Togs
+Message-ID: <CAMuHMdVOqovkugmCnR4FOfk8VkQyN_dmyKFzbsOSN0mPKQedeQ@mail.gmail.com>
 Subject: Re: [PATCH v9 1/7] phy: can-transceiver: rename temporary helper
  function to avoid conflict
-Message-ID: <20260212164823.mbeycqwzsy2dfq6e@skbuf>
-References: <20260208-rz-sdio-mux-v9-0-9a3be13c1280@solid-run.com>
- <20260208-rz-sdio-mux-v9-1-9a3be13c1280@solid-run.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260208-rz-sdio-mux-v9-1-9a3be13c1280@solid-run.com>
+To: Vladimir Oltean <olteanv@gmail.com>
+Cc: Josua Mayer <josua@solid-run.com>, Marc Kleine-Budde <mkl@pengutronix.de>, 
+	Vincent Mailhol <mailhol@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Peter Rosin <peda@axentia.se>, 
+	Aaro Koskinen <aaro.koskinen@iki.fi>, Andreas Kemnade <andreas@kemnade.info>, 
+	Kevin Hilman <khilman@baylibre.com>, Roger Quadros <rogerq@kernel.org>, 
+	Tony Lindgren <tony@atomide.com>, Janusz Krzysztofik <jmkrzyszt@gmail.com>, Vignesh R <vigneshr@ti.com>, 
+	Andi Shyti <andi.shyti@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>, 
+	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Geert Uytterhoeven <geert+renesas@glider.be>, Magnus Damm <magnus.damm@gmail.com>, 
+	Wolfram Sang <wsa+renesas@sang-engineering.com>, 
+	Yazan Shhady <yazan.shhady@solid-run.com>, Jon Nettleton <jon@solid-run.com>, 
+	Mikhail Anikin <mikhail.anikin@solid-run.com>, linux-can@vger.kernel.org, 
+	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+	linux-omap@vger.kernel.org, linux-i2c@vger.kernel.org, 
+	linux-mmc@vger.kernel.org, devicetree@vger.kernel.org, 
+	linux-renesas-soc@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260212_084829_893487_66159867 
-X-CRM114-Status: GOOD (  11.14  )
+X-CRM114-CacheID: sfid-20260212_085325_986646_AC8DF495 
+X-CRM114-Status: GOOD (  24.97  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,29 +111,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Josua,
+Hi Vladimir,
 
-On Sun, Feb 08, 2026 at 05:38:56PM +0200, Josua Mayer wrote:
-> Rename the temporary devm_mux_state_get_optional function to avoid
-> conflict with upcoming implementation in multiplexer subsystem.
-> 
-> Acked-by: Vinod Koul <vkoul@kernel.org>
-> Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
-> Reviewed-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
-> Signed-off-by: Josua Mayer <josua@solid-run.com>
-> ---
+On Thu, 12 Feb 2026 at 17:48, Vladimir Oltean <olteanv@gmail.com> wrote:
+> On Sun, Feb 08, 2026 at 05:38:56PM +0200, Josua Mayer wrote:
+> > Rename the temporary devm_mux_state_get_optional function to avoid
+> > conflict with upcoming implementation in multiplexer subsystem.
+> >
+> > Acked-by: Vinod Koul <vkoul@kernel.org>
+> > Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
+> > Reviewed-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
+> > Signed-off-by: Josua Mayer <josua@solid-run.com>
+>
+> In the future, when you have a series with cross-tree dependencies,
+> please try to think of it as individual mini-series for each tree's
+> 'next' branch, and specify clearly that you need stable tags (to be
+> pulled into other trees). Telling maintainers what is your expected
+> merge strategy helps avoid making mistakes.
+>
+> For example, if you did that in this set, you wouldn't have missed the
+> fact that in linux-phy/next, phy-can-transceiver is _not_ the only
+> occurrence of devm_mux_state_get_optional(). There's another one in
+> drivers/phy/renesas/phy-rcar-gen3-usb2.c, and that should be also
+> handled in order for trees to not enter inconsistent states.
 
-In the future, when you have a series with cross-tree dependencies,
-please try to think of it as individual mini-series for each tree's
-'next' branch, and specify clearly that you need stable tags (to be
-pulled into other trees). Telling maintainers what is your expected
-merge strategy helps avoid making mistakes.
+To his defense, the one in drivers/phy/renesas/phy-rcar-gen3-usb2.c
+is a recent addition.
 
-For example, if you did that in this set, you wouldn't have missed the
-fact that in linux-phy/next, phy-can-transceiver is _not_ the only
-occurrence of devm_mux_state_get_optional(). There's another one in
-drivers/phy/renesas/phy-rcar-gen3-usb2.c, and that should be also
-handled in order for trees to not enter inconsistent states.
+So this is yet another case of "convert all current users" (i.e. those
+present in the typical subsystem base, typically *-rc1), with new
+users popping up in -next in parallel, which happens all the time...
+
+Gr{oetje,eeting}s,
+
+                        Geert
+
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 -- 
 linux-phy mailing list
