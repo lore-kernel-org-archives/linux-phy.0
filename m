@@ -4,63 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B730BEEA864
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Feb 2026 22:04:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3D720EF48D3
+	for <linux-phy@archiver.kernel.org>; Fri, 13 Feb 2026 06:20:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:MIME-Version:References:
+	In-Reply-To:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mGTyirzWSzdmMQn2z4qU8yLYfVXqB0/VzybOPObGmyg=; b=lK5Gvq77LD8tEV
-	T+qgeFR/sUKwZoUccIUeUSBDDdjPyN1BaekX03hYb12FRFVkR2bvQGvOrOPPsKv9ycEqj2D8eKuXy
-	1w6O4Egri8tsWxMeX2Y4l5w1Mb8KAMI43zL+LFda1jZvUojul4v4JeKY19KDuWyg6iVOaMSPOQ8mE
-	8OwZTUU+zA0FIhLEAxS/AUlG4buu+Xxa5iZ/qokcDtttTj9pXWlP1d8/0o9R2oqhOtvz6v+u13fr2
-	8A6YNfMtLFAp9avwdzmqqV0HTLZ9pEdogY2p5/huG3iKspZnAAzkYLzJLC/aT4SvZO5S0Kp28uE/L
-	y1hbMSuwWVwK5WOM6ESg==;
+	List-Owner; bh=q97xm++TdeHJ0n3tmDXIDr9JsvTHbC1CgrTzBdBlc6k=; b=KsGWeNXyr2UgId
+	u2ZfvHMUmTpmjb0OqHssj5pe6W2Gj0+gjIzlMRw08J9cExmH0DWrHXXB3G9gEfyYYiRsOmSl/6K4f
+	oJ3V5/DNVBRuZo+jnHb3gba4ngEh8bj9iVl0vqzEJACgpnCDJhqpsVrWKot+08Je3F/7QlKOful2S
+	DAs8RCFEEW1UPxhKcEEcc/KaGGlXOdAnxg8vkbp8/sRaujcdyn541dlYIA+kN6cKOx2fLPC/Jp6hB
+	AJUyhyAwGP8Q9qWuY37FATEomKItST1wt4/t9aAi+ThOpHErvJmuRphIl119jA5uX6XuBTi3Nq6F5
+	0g7O0g7uoub7iXOcLlgQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vqenb-00000002gQO-3eqY;
-	Thu, 12 Feb 2026 22:04:35 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
-	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vqenZ-00000002gPo-2iKM;
-	Thu, 12 Feb 2026 22:04:35 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1770933870;
-	bh=pgou1iAOo03EeIFUgC5tazbjBU6EIspSIgadED/BlSQ=;
-	h=Date:Subject:To:References:From:In-Reply-To:From;
-	b=AsmeFdtk4nzmEGGCH0TaWKY4Mc+L909ckX7EIlyLRduCbSzoTfKa+GLp/YGC1DEP5
-	 kYrOsZiGNdH2e0qGu8qh2tQjADPh3PxWHw4y37b9VWwjjOjUvRVxmkA2dAIstkaINZ
-	 w6E+Ya336ifoxNxZlVVJYBeoUjRWE4BTHxICRGViXmIGSt2HG2J7+OaPa8ALKKCB/Z
-	 Ahv0te1cv0fEDfPRRq2zG/JIXEtPQLXFsR4Onu1F9nUh620EzKUbab9GXw4ociPylp
-	 9CEAV3Hw6KLKhzsbsDOABmbaQ0siY+mhBpEcxAF8SCoD8d2MKDCOu0ir5fI9bVPsYl
-	 iwMyKXN2kNcXw==
-Received: from [192.168.1.90] (unknown [82.79.138.145])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: cristicc)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 098E617E127F;
-	Thu, 12 Feb 2026 23:04:29 +0100 (CET)
-Message-ID: <8e410a11-bd7b-4a12-a711-0514a59409c0@collabora.com>
-Date: Fri, 13 Feb 2026 00:04:29 +0200
+	id 1vqmXh-000000033rB-2NVI;
+	Fri, 13 Feb 2026 06:20:41 +0000
+Received: from azure-sdnproxy.icoremail.net ([4.193.249.245])
+	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1vqmXd-000000033qj-2Qml
+	for linux-phy@lists.infradead.org;
+	Fri, 13 Feb 2026 06:20:40 +0000
+Received: from luyulin$eswincomputing.com ( [10.12.96.77] ) by
+ ajax-webmail-app2 (Coremail) ; Fri, 13 Feb 2026 14:20:26 +0800 (GMT+08:00)
+X-Originating-IP: [10.12.96.77]
+Date: Fri, 13 Feb 2026 14:20:26 +0800 (GMT+08:00)
+X-CM-HeaderCharset: UTF-8
+From: "Yulin Lu" <luyulin@eswincomputing.com>
+To: vkoul@kernel.org, neil.armstrong@linaro.org, robh@kernel.org,
+	krzk+dt@kernel.org, conor+dt@kernel.org, p.zabel@pengutronix.de,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Cc: ningyu@eswincomputing.com, linmin@eswincomputing.com,
+	fenglin@eswincomputing.com
+Subject: Re: [PATCH v9 0/2] Add driver support for Eswin EIC7700 SoC SATA
+ PHY
+X-Priority: 3
+X-Mailer: Coremail Webmail Server Version 2024.2-cmXT6 build
+ 20241203(6b039d88) Copyright (c) 2002-2026 www.mailtech.cn
+ mispb-72143050-eaf5-4703-89e0-86624513b4ce-eswincomputing.com
+In-Reply-To: <20260205082009.1780-1-luyulin@eswincomputing.com>
+References: <20260205082009.1780-1-luyulin@eswincomputing.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [REGRESSION] HDMI monitor not working on Radxa Rock 5B after phy
- rockchip samsung hdptx HDMI 2.1 FRL patchset
-To: dubito@online.de, Vinod Koul <vkoul@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>, Heiko Stuebner
- <heiko@sntech.de>, linux-phy@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org, regressions@lists.linux.dev
-References: <b32164001947ba922aefb6ca86a8dc59e9323d2b.camel@online.de>
-Content-Language: en-US
-From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-In-Reply-To: <b32164001947ba922aefb6ca86a8dc59e9323d2b.camel@online.de>
+Message-ID: <22fea2d6.370e.19c55a86a72.Coremail.luyulin@eswincomputing.com>
+X-Coremail-Locale: zh_CN
+X-CM-TRANSID: TQJkCgAnPqGqwo5pRkcAAA--.180W
+X-CM-SenderInfo: pox13z1lq6v25zlqu0xpsx3x1qjou0bp/1tbiAgERA2mOAQQQ8QAB
+	sT
+X-Coremail-Antispam: 1Ur529EdanIXcx71UUUUU7IcSsGvfJ3iIAIbVAYjsxI4VWxJw
+	CS07vEb4IE77IF4wCS07vE1I0E4x80FVAKz4kxMIAIbVAFxVCaYxvI4VCIwcAKzIAtYxBI
+	daVFxhVjvjDU=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260212_140433_918602_42B68B35 
-X-CRM114-Status: GOOD (  19.21  )
+X-CRM114-CacheID: sfid-20260212_222038_009307_7C41A4E3 
+X-CRM114-Status: UNSURE (   8.14  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,49 +71,49 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGkgVGhvbWFzLAoKT24gMi8xMS8yNiAxMToyMCBQTSwgVGhvbWFzIE5pZWRlcnByw7xtIHdyb3Rl
-Ogo+IEhpLAo+IAo+IEknbSBydW5uaW5nIGEgUmFkeGEgUm9jayA1QiAocmszNTg4KSBvbiBhIDEw
-KyB5ZWFyIG9sZCBTYW1zdW5nIFRWIHNjcmVlbgo+IGNvbm5lY3RlZCB2aWEgSERNSS4gVGhpcyB3
-b3JrZWQgZmxhd2xlc3NseSBpbiA2LjE4LjcgYnV0IGRvZXMgbm90IHdvcmsgb24gbGludXgtCj4g
-bmV4dC4gSSBiaXNlY3RlZCB0aGUgcHJvYmxlbSBhbmQgaWRlbnRpZmllZCBjb21taXQgMzQ4MWZj
-MDQgdG8gYmUgdGhlIGZpcnN0IGJhZAo+IGNvbW1pdC4gVGhpcyBwb2ludHMgdG8gdGhlIHBoeSBQ
-TEwgY2xvY2sgcmF0ZSBjYWxjdWxhdGlvbiB0byBiZSB0aGUgcHJvYmxlbSBpbgo+IGNvbm5lY3Rp
-b24gd2l0aCBteSBtb25pdG9yLiBBcyBpdCBzZWVtcyByZWxldmFudCwgSSBhdHRhY2hlZCB0aGUg
-RURJRCBvZiBteQo+IG1vbml0b3IuCj4gCj4gSSdtIGJvb3RpbmcgdGhlIGtlcm5lbCBvdXQgb2Yg
-RURLMiBhZnRlciB3aGljaCBlZmlmYiBpcyBjb3JyZWN0bHkgdGFraW5nIG92ZXIKPiB0aGUgaW5p
-dGlhbGl6ZWQgZGlzcGxheSBhbmQgSSBjYW4gc2VlIHRoZSBpbml0aWFsIGtlcm5lbCBib290IG1l
-c3NhZ2VzIG9uIHRoZQo+IEhETUkgb3V0cHV0LiBBZnRlciB0aGUgZHJtL2ttcyBpbiB0aGUga2Vy
-bmVsIHRha2VzIG92ZXIgdGhlIHNjcmVlbiBzaG9ydGx5IHR1cm5zCj4gYmxhY2ssIGNoYW5nZXMg
-cmVzb2x1dGlvbiwgYW5kIHRoZW4gY29ycmVjdGx5IGRpc3BsYXlzIG9uIDYuMTguNy4gSG93ZXZl
-ciwgaW4KPiBsaW51eC1uZXh0IHRoZSBzY3JlZW4gcmVtYWlucyBibGFjayBhZnRlciBrbXMgdG9v
-ayBvdmVyLiBJIGNhbm5vdCBzZWUgYW55Cj4gb2J2aW91cyBkaWZmZXJlbmNlcyBpbiB0aGUgYm9v
-dCBsb2dzIGJ1dCBJIGF0dGFjaGVkIHR3byBib290IGxvZ3MsIG9uZSBmb3IgdGhlCj4gd29ya2lu
-ZyA2LjE4Ljcga2VybmVsIGFuZCBvbmUgZm9yIHRoZSBub24td29ya2luZyBsaW51eC1uZXh0IGtl
-cm5lbC4KPiAKPiBXaGVuIHJldmVydGluZyAzNDgxZmMwNC4uZGU1ZGJhODMgKGkuZS4gdGhlIGZh
-dWx0eSBjb21taXQgYW5kIHRoZSBvbmVzIHRoYXQKPiBmb2xsb3dlZCBpbiB0aGUgSERNSSAyLjEg
-RlJMIHNlcmllcykgSSBjYW4gYnVpbGQgYSB3b3JraW5nIGtlcm5lbCBmcm9tIGxpbnV4LQo+IG5l
-eHQuCj4gCj4gSSBkb24ndCBrbm93IHdoZXJlIHRvIGRpZyBmcm9tIGhlcmUgYnV0IEknbSBoYXBw
-eSB0byBydW4gYW55IHRlc3QgbmVjZXNzYXJ5IHRvCj4gdHJhY2sgZG93biB0aGUgcHJvYmxlbS4K
-Ckl0J2QgYmUgaGVscGZ1bCBpZiB5b3UgY291bGQgcmVzZW5kIHRoZSBsb2dzIGFmdGVyIGJvb3Rp
-bmcgYm90aCBrZXJuZWxzIHdpdGggdGhlCmZvbGxvd2luZyBwYXJhbXMgKHJlcXVpcmVzIENPTkZJ
-R19EWU5BTUlDX0RFQlVHPXkpOgoKICByb2NrY2hpcGRybS5keW5kYmc9K3AgZHdfaGRtaV9xcC5k
-eW5kYmc9K3AgcGh5X3JvY2tjaGlwX3NhbXN1bmdfaGRwdHguZHluZGJnPStwCgpBcyB3ZWxsIGFz
-IHJ1bm5pbmcgdGhlIGNvbW1hbmQgYmVsb3cgYmVmb3JlIGNvbm5lY3RpbmcgeW91ciBkaXNwbGF5
-L1RWOgoKICAkIGVjaG8gMHg0ID4gL3N5cy9tb2R1bGUvZHJtL3BhcmFtZXRlcnMvZGVidWcKCkkn
-dmUgbm90aWNlZCB5b3UncmUgZm9yY2luZyAidmlkZW89SERNSS1BLTE6MTkyMHgxMDgwTUA2MCIs
-IHdoaWNoIHNob3VsZCBiZQphbnl3YXkgdGhlIHByZWZlcnJlZCBtb2RlIChhY2NvcmRpbmcgdG8g
-dGhlIEVESUQpLgoKRGlkIHlvdSB0cnkgY2hvb3NpbmcgYSBkaWZmZXJlbnQgb25lLCBlLmcuIDE5
-MjB4MTA4MEA1MCBvciAxOTIweDEwODBAMzAgKHRoZXkKYXJlIHN1cHBvcnRlZCBhY2NvcmRpbmcg
-dG8gdGhlIGxpc3RpbmcgaW4gQ1RBLTg2MSBFeHRlbnNpb24gQmxvY2spLiBUaGF0J3MgbW9yZQph
-IHRlc3QgdG8gY29uZmlybSB0aGUgaXNzdWUgYWZmZWN0cyBhIHBhcnRpY3VsYXIgbW9kZWxpbmUs
-IG9yIGlzIG1vcmUgZ2VuZXJhbC4KCkZXSVcgSSd2ZSB0ZXN0ZWQgb3ZlciA0MCBtb2RlcyB3aXRo
-IGRpZmZlcmVudCBkaXNwbGF5cy9UVnMgYW5kIGRpZG4ndCBub3RpY2UgYW55CnJlZ3Jlc3Npb24s
-IGhlbmNlIEknbSBwcm9iYWJseSBtaXNzaW5nIHNvbWV0aGluZyBoZXJlLgoKVGhhbmtzIGZvciB0
-aGUgcmVwb3J0IQoKQ3Jpc3RpYW4KCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBo
-eUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
-L2xpc3RpbmZvL2xpbnV4LXBoeQo=
+> Updates:
+>   v9 -> v8:
+>     - eswin,eic7700-sata-phy.yaml
+>       - Modify the format of the "default" field in the
+>         "eswin,tx-amplitude-tuning" and "eswin,tx-preemph-tuning"
+>         properties.
+>     - phy-eic7700-sata.c
+>       - Correct the incorrectly formatted symbol "-" in the comments.
+>     - Link to v8: https://lore.kernel.org/lkml/20260123024823.1612-1-luyulin@eswincomputing.com/
+> 
+>   v8 -> v7:
+>     - eswin,eic7700-sata-phy.yaml
+>       - Add "eswin,tx-amplitude-tuning" and "eswin,tx-preemph-tuning"
+>         properties, because these parameters may vary across different
+>         circuit boards.
+>       - Delete reviewed-by tag of Krzysztof Kozlowski, because the tuning
+>         properties are introduced.
+>     - phy-eic7700-sata.c
+>       - Try to get SATA PHY transmitter amplitude and pre-emphasis signal
+>         eye diagram tuning parameters from dts instead of hardcoded values
+>         in the code. Because, these parameters may vary across different
+>         circuit boards. Define default tuning parameters and use it when
+>         these properties are not declared in dts.
+>       - Add a comment to explain the reason for mapping I/O resources with
+>         platform_get_resource and devm_ioremap instead of using the
+>         devm_platform_ioremap_resource API.
+>     - Link to v7: https://lore.kernel.org/lkml/20260106062944.1529-1-luyulin@eswincomputing.com/
+
+Hi Vinod, all,
+
+In v7, I got driver review comments from Vinod. After fixing and submitting v8,
+I received yaml comments from Krzysztof. v9 now has Reviewed-by from Krzysztof.
+So I want to confirm whether there are any further comments on the driver code
+in v9 and if it meets the requirements for merging.
+
+Best regards,
+Yulin Lu
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
