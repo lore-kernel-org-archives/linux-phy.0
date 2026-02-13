@@ -4,128 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4B66DEDF176
-	for <linux-phy@archiver.kernel.org>; Fri, 13 Feb 2026 16:13:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8C8F8EDF17D
+	for <linux-phy@archiver.kernel.org>; Fri, 13 Feb 2026 16:36:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WTJkLuUhMD42lqaIFrF7J5tBwHjI2LsXw8n8SHoOlIY=; b=zUA6ZIXKv6uKX0
-	uiKS36wN3TQ+RkgrCd1Mypr7pCufF8Azr9+teXSXvZYa6KcTpYkMkeuGPOHOxDq41ad/obk5FkLpy
-	25ma6nJ6R3/Ww7bWVF6ZcUznCOXP5R/iJO5LCUWtbVn/DwGGR4RIhD9+lX16V6k+I6OqRZeSpEN3v
-	yrh3rg8LdIgua9imwvRxIuK3jSouOUPeqRVlFhJaeuWtTOmn9e7G7Rd16Tcfhffdv5fErGdYZheuN
-	DIatHVt4l9puP6VAKx8ovEsJuTZW35s6G6Lk5HkQC8lHI+Mb+a2x8OyTdbAZl5NXrnquUqko/yqQ2
-	NItI8BM+KrGa75aywtJw==;
+	List-Owner; bh=HmFZw0RaUVhLrmKWBQB1sfV2vez7t+Yr16UeOuQcMYA=; b=1+xyHdSkNpg8mU
+	fyVelRHkdRl/uy5bRgjVh/hgkanFPRhvmPfdZ5e5zPvf2xI0ahWbGGuT0DpImAPQfm6JeeFoBacZa
+	YtyCaaB98DfPHCZ9VuTLv1iuYsq9KJBGqvTq96EApRHaN7P+59bdvuZ0km8uF/d7vSu5jSuJz1g2k
+	MaIZkBivQd/bsm/4fOPIvjxtL43pxXjzgLBluoJGW2hKxUolsi06QCLSWLRrdcLsSAU1DwYI4fi8q
+	9GWQJAGyDbZs0g6DyKHRtTqnzBFEDKmDUUlLZVS/xwRx11TN7ehh2KMNaPJXbdhwbdeBU0MZxdhmw
+	b/UQRz93a4DstDaqFEAg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vqvmu-00000003f1s-4AEI;
-	Fri, 13 Feb 2026 16:13:01 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1vqw9b-00000003grs-3qDP;
+	Fri, 13 Feb 2026 16:36:27 +0000
+Received: from mail-pl1-x62c.google.com ([2607:f8b0:4864:20::62c])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vqvmr-00000003f14-3hV8
+	id 1vqw9Z-00000003grI-3Zvk
 	for linux-phy@lists.infradead.org;
-	Fri, 13 Feb 2026 16:12:59 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 61DF82PG2628434
-	for <linux-phy@lists.infradead.org>; Fri, 13 Feb 2026 16:12:56 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=RBbL1ZaH2jaZTM7DN7aadixw
-	p6/N4RRiyy58A0ZG8bs=; b=GhjJRlmKtWlG1z6qVQHWATkEGZzC3HOdy8MZEVVX
-	3Rz5JZrcIwz9ZKjrLJ8qShFIJn1qtKGzAhYjGSZnjUr2nr5Zg0HK2juE5zr6Jl7a
-	4882uhb916YbPgM1rk77P+kKlYGf8Woc5bIKi7dduyGY2nhWHf5V7g4A+ZFtaTEo
-	NIYAHa6WmGhMrcljfACI9jbtazRj2UVUfRClaGXJn98H823YRpMddohw7KS0X9YA
-	5ZZj+obHM5S20hcs2EqtpezPoGf1iWcO3mSRF9Ehx7YXkgDt4DfowybsYp5ype9I
-	PCTfgXlJZBBetM3A/DkublMsAuM/9wWzkdlQ9M7eoknwrQ==
-Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com [209.85.222.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4c9ygusx06-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Fri, 13 Feb 2026 16:12:56 +0000 (GMT)
-Received: by mail-qk1-f197.google.com with SMTP id af79cd13be357-8c6a5bc8c43so535926385a.2
-        for <linux-phy@lists.infradead.org>; Fri, 13 Feb 2026 08:12:56 -0800 (PST)
+	Fri, 13 Feb 2026 16:36:26 +0000
+Received: by mail-pl1-x62c.google.com with SMTP id d9443c01a7336-2a7bced39cfso12771635ad.1
+        for <linux-phy@lists.infradead.org>; Fri, 13 Feb 2026 08:36:25 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1770999176; x=1771603976; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=RBbL1ZaH2jaZTM7DN7aadixwp6/N4RRiyy58A0ZG8bs=;
-        b=YMHSSQokbv2JG3T+WcaKA0S1cnTZBwZQ8uG09Yi4yKHBqLTQcVFlKx5UmmcBOvs2cT
-         XvP2ySzutJNzZv0tqol6ClnJzwJsmPMGqKyVc6PXMCZd0J5KmFATnpW4EAhjErfltqSD
-         0gteKwKS4Md2Ealr+t+3LWiJd5Uz0Csa3lImoYdsNMp9F0zKLw5cmXklYDA1aPWi/oAy
-         N1tGFkpEuwtG8m9a24ZThBO33u1uroBqOVCXfCuTcN1TswvkCZ6j8MC5gynsEDE0Azdx
-         Ke9J8NiU4565VK5uARChdK/+zsS0K31JRKFdT6iyZKcI4Ztj9M0T+s7IeQvi6op7Ccjn
-         z2xQ==
+        d=gmail.com; s=20230601; t=1771000585; x=1771605385; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=0F5tQcgxERAB02uB01kJMGI3FPIwYeXfyKo+LVQoV10=;
+        b=Y493rTDPYYPlCFWF063EWzJyTGcZTTkF0+VggHDAqnjKRSWdfoIHxYSPdb7PpEtBw+
+         CwH0VvcB5NH3+TTBGcCTGO79dz/EEGAOeDB+a4sWWZprBDvmizI2pOdRA62JYY5cT4pL
+         JFaFbKobickbQ05Km1bSSmcU5/gKZ/YTRE6g5VOWE4RMsFBDg496mwmuuEJr81AFJpaT
+         1x6lZmd0X+tEEOMYT7OQd8isDyZQbSjxcMnDrcorNtgHbtznwhUL2cCzWZtC/TG98r/y
+         B9Y3xg6lvS/Ce9Dw1vG1o78Rqc0AQIRF92MOFZSybt9VdDbhW7DhTA2uIhgwXnqML+UN
+         swOQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1770999176; x=1771603976;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=RBbL1ZaH2jaZTM7DN7aadixwp6/N4RRiyy58A0ZG8bs=;
-        b=jURT0uYrYmtU0AuB60YJvJ3LVBgke9HBynSkxG0N7jTZRKh3anDzqo1/utHeQMhAwL
-         SX4/aInnpLI6iM3Miu/BsnN2Xk0gWqY0Nn/eJF1V+1+ZAOLAMeZG0p2yPUN7VhjtdB7a
-         P5E5+zNyml+/nL3bpNNYqgMV4/oBN3e3vAEVFnCwD/9NKf1RLD2F5J7bBglffkx6CGWc
-         cGlUWTWk6QCXg1tX5ZPp1HNDndOB5IgdyOePG8Qkjei/YCWfWwYJ8bKgyESqZc3BwvPc
-         VJip0oaU47rsbEOHtywxtdIzjQhpOXi5CLJ78d7za+S6MV0LhKuv08xS3PW4w+uygOS3
-         TK4g==
-X-Forwarded-Encrypted: i=1; AJvYcCVj34aNa9BN42Q7QCI7j7gtNnXzm4tTSow7XIz+GuZUnpNo2/Cpnv8f/UDptymV4/yhWPH70ZvvbL4=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yxvd3fN9kiDk85Uj5oLM8OT6YRkwlRQxCM/qD8j4RYd491b1lB6
-	h1RTLOnDORkWQFL6pWXBuoMUqAopPpxpTqnBqxyS0i5aXR46jhHxIYQbgJnLjP9vdNIxbXQbixT
-	sJeL+X9cPDrjkHUnlhNZBuPkrsAqc7cbNj334lkH8LppLyPraPNXHlWgSmgpAEjz6l+BE
-X-Gm-Gg: AZuq6aJGHCf8jxZZy4b5FirboPBkwZ1UvQuFQODHu33Kq2QmW1+pydt2fHZew2LlJ+P
-	pyqC/9rWUQ9xzq24X1vf+Wb26K/VCdrRPc6ZTuwyslxvUX2PLzJcelg4lPfo0Fc2TDGlfc9PRSQ
-	bj97uPODK0U1XdIXEMOw5V5JDkde9EfyKixoZy4Guy4LCbykIUlFvfzkt6/HIOXnPzfnziG9Gnb
-	sCk0bxpEWQ5ncePuVh3m7l3mrwVE00Ecboy1q2AMWY2RJB/1vnBkd9f+eEzlRHB/K0xVlG8MtdF
-	rdhTw+GgBHNvkGb0jLcV1INLoetJdgT7Xof3D3lcxCWH+PcjmgJWYuQYQvizBjV3U0lUlQ4Fe4J
-	ea37DiZeOFAoaCZN7dx7tJDRzjGMwUA56gXs5EYq0XyVnY6XHi47dXNBGwnxvQgtfYRg68gFX82
-	e+Rwh9OLy3miBPtSv+x5vWUAjmV13Vz5OQikg=
-X-Received: by 2002:a05:620a:1725:b0:8c5:1f9a:6b52 with SMTP id af79cd13be357-8cb422a39camr285069885a.28.1770999175856;
-        Fri, 13 Feb 2026 08:12:55 -0800 (PST)
-X-Received: by 2002:a05:620a:1725:b0:8c5:1f9a:6b52 with SMTP id af79cd13be357-8cb422a39camr285063185a.28.1770999175156;
-        Fri, 13 Feb 2026 08:12:55 -0800 (PST)
-Received: from umbar.lan (2001-14ba-a073-af00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a073:af00:264b:feff:fe8b:be8a])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-59e5f5a4f8dsm1658696e87.49.2026.02.13.08.12.54
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 13 Feb 2026 08:12:54 -0800 (PST)
-Date: Fri, 13 Feb 2026 18:12:52 +0200
-From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-To: Yongxing Mou <yongxing.mou@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
-        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        linux-kernel@vger.kernel.org, stable@vger.kernel.org
-Subject: Re: [PATCH v2 0/2] phy: qcom: edp: Add DP/eDP switch for phys
-Message-ID: <lvau2mmymqiczih5dkhgd4vrx6x5tn4tdp5wfaddkkrakdjajq@soihplbnfgzy>
-References: <20260213-edp_phy-v2-0-43c40976435e@oss.qualcomm.com>
+        d=1e100.net; s=20230601; t=1771000585; x=1771605385;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=0F5tQcgxERAB02uB01kJMGI3FPIwYeXfyKo+LVQoV10=;
+        b=jXUmG9973gJsUfrPwQj/K9qRgc3SEVPeOI+8hyXeR5JSqzEQSXlGCc3T4Mpff2sUsb
+         bryUEpuEyr38kKtFS2WeXxioO8278zzSb+XvabqjPWv5gKdy/76mGDq1wdKi4xZ4tc/H
+         6X/7d8Y0uoFa6fYKpdKGxfNCFQXGQRae+0tzKVWBkrrYJ2zEguGyZmHWEiLbib52JzOv
+         xI0/Z+ot9YC7pqsUnRJKM4xFIel8Gl7xRlYGdVr18E3JHZbgV7paNL9BQ90WmMgIHD1I
+         HOYDJvevLUoT9MDZ1BGgS4TBoWldQ3Iq81099lp2Abxwn5dZx8G9XS/z0oY6AKLgAMXU
+         uC6Q==
+X-Gm-Message-State: AOJu0YxY3WlcI4LvsOIq+gOkRBd8k5Vx0eigCZ3GfkBbRPhurqfLCO29
+	ZliZV1/QsULzjLHC9N1UcCGNJQMbnI0nuw52Vl8XbQ/LcCpyIYRkOA/V
+X-Gm-Gg: AZuq6aJUx9VSMLLnYVQIFHWyU6uCYd147Go9uZ7fyDtQYavRsT2vsW+7TNgCBQw3wq8
+	DJ9OXWGejfXJlsz/p4W9g9CVElpsDHbJZVElyV1sD1QmZ6BQDqDrUryXvzUyZcRC29WtVMRsGdd
+	iGAi6lQxNComvIdz85MaW7bqQNoj6MhAcITA+YCBScSQ+PhLpgyL3fzKWGncducUHocPDkl7oeQ
+	ALgTOs5LM2bt27NUsmyGZjELLPFh6GDKwqRqQxVi3UwELgyNIUi0SWPkACDXli0yHUX6SssCG/j
+	VKXm59+sH8WV9hLs5+MqIhyDrWTt0BZSIWdUvSw7YSNU0J4GsbXNRWYNZqMhWj/0zikFHZkEvjj
+	I5PHZ5PWo8haRjkD4xV0FFMFFPx1aFgunUuEV+fjYDI/Ik3VHYTcSKvMIlkiv2rvGffYUd7LJa5
+	4ktGiwLmue4+wUZbu0d3PgasCr2+4S0XEvrj5m4XeYt/c=
+X-Received: by 2002:a17:902:e787:b0:2aa:d11d:5c36 with SMTP id d9443c01a7336-2ab50598a38mr26413315ad.30.1771000584651;
+        Fri, 13 Feb 2026 08:36:24 -0800 (PST)
+Received: from [192.168.1.8] ([27.7.171.51])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2ab2988bd4dsm85424595ad.38.2026.02.13.08.36.19
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 13 Feb 2026 08:36:24 -0800 (PST)
+Message-ID: <f60156a6-58af-4548-9dc3-71c71b822343@gmail.com>
+Date: Fri, 13 Feb 2026 22:06:16 +0530
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260213-edp_phy-v2-0-43c40976435e@oss.qualcomm.com>
-X-Proofpoint-GUID: iIv8d79j0S0Exxceok-OKDp5hkAjafCH
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMjEzMDEyNCBTYWx0ZWRfXzEHQUnnCsrEV
- Im2D1hT0Rj8eBdCoDO44qJakveZyhjRj23fQbppL+nSpWLehD0w17s7+qkFAX4Po5BCqBRFwFzk
- s05rk8zP+X6Irbyib7HVxVMtO0xs3l3u5FmEn24qtrsaNmLcWvh3zwNVpN0KMOJGutrB+IFe9tc
- PZk/UdsI/7STfRhrA4OENSsy5V5LZ39UyxF3XLA84g2gFBMcsy6mKEYCsFM2GSiymvpUjIdwANJ
- ik04YBUbU+JEXDi1bCs8oiVQT0pBBtW3b7kmg+Mb2mctypt1HxeWCx5RSOqty3g4UorIdnNC6w1
- cs1WxY7VagaWlg/8wy9/veSE+cbGO2gKdUjqXUfRjj7fDTbR35G2gs63TpjoapE0pFpqMQCBi30
- yNTLXiVsXYh3SuF8xN+hKIq7DQJNnlC11qS0SV1+MYuAHWXE/JesUYIEBmZ4lryN8j5RTxGxiOI
- i0OTBu5AaVWDzrcf4BQ==
-X-Authority-Analysis: v=2.4 cv=If+KmGqa c=1 sm=1 tr=0 ts=698f4d88 cx=c_pps
- a=50t2pK5VMbmlHzFWWp8p/g==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
- a=HzLeVaNsDn8A:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=Mpw57Om8IfrbqaoTuvik:22 a=GgsMoib0sEa3-_RKJdDe:22 a=VwQbUJbxAAAA:8
- a=EUspDBNiAAAA:8 a=AGCe1-UCTpjO--lCauQA:9 a=CjuIK1q_8ugA:10
- a=IoWCM6iH3mJn3m4BftBB:22
-X-Proofpoint-ORIG-GUID: iIv8d79j0S0Exxceok-OKDp5hkAjafCH
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.51,FMLib:17.12.100.49
- definitions=2026-02-13_03,2026-02-12_03,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 adultscore=0 bulkscore=0 clxscore=1015 suspectscore=0
- impostorscore=0 phishscore=0 malwarescore=0 spamscore=0 lowpriorityscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2601150000 definitions=main-2602130124
+User-Agent: Mozilla Thunderbird
+Subject: Re: (subset) [PATCH v4 0/3] dt-bindings: phy: Convert TI OMAP control
+ and PIPE3 PHY to DT schema
+To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
+ <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Aaro Koskinen <aaro.koskinen@iki.fi>, Andreas Kemnade
+ <andreas@kemnade.info>, Kevin Hilman <khilman@baylibre.com>,
+ Roger Quadros <rogerq@kernel.org>, Tony Lindgren <tony@atomide.com>,
+ Roger Quadros <rogerq@ti.com>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-omap@vger.kernel.org
+References: <20260123-ti-phy-v4-0-b557e2c46e6f@gmail.com>
+ <177021985530.133434.13436195442562231016.b4-ty@kernel.org>
+Content-Language: en-US
+From: Charan Pedumuru <charan.pedumuru@gmail.com>
+In-Reply-To: <177021985530.133434.13436195442562231016.b4-ty@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260213_081258_048613_9AB6E664 
-X-CRM114-Status: GOOD (  21.39  )
+X-CRM114-CacheID: sfid-20260213_083625_898762_48D9E73D 
+X-CRM114-Status: UNSURE (   8.15  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -142,53 +110,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Feb 13, 2026 at 03:31:41PM +0800, Yongxing Mou wrote:
-> Currently the PHY selects the DP/eDP configuration tables in a fixed way,
-> choosing the table when enable. This driver has known issues:
-> 1. The selected table does not match the actual platform mode.
-> 2. It cannot support both modes at the same time.
-> 
-> As discussed here[1], this series:
-> 1. Cleans up duplicated and incorrect tables based on the HPG.
-> 2. Fixes the LDO programming error in eDP mode.
-> 3. Adds DP/eDP mode switching support.
-> 
-> Note: x1e80100/sa8775p/sc7280 have been tested, while glymur/sc8280xp
-> have not been tested.
-> 
-> [1] https://lore.kernel.org/all/20260119-klm_dpphy-v2-1-52252190940b@oss.qualcomm.com/
-> 
-> Signed-off-by: Yongxing Mou <yongxing.mou@oss.qualcomm.com>
-> ---
-> Changes in v2:
-> - Combine the third patch with the first one.[Dmitry]
-> - Fix code formatting issues.[Konrad][Dmitry]
-> - Update the commit message description.[Dmitry][Konrad]
-> - Fix kodiak swing/pre_emp table values.[Konrad]
-> - Link to v1: https://lore.kernel.org/r/20260205-edp_phy-v1-0-231882bbf3f1@oss.qualcomm.com
-> 
-> ---
-> Yongxing Mou (2):
->       phy: qcom: edp: Add eDP/DP mode switch support
->       phy: qcom: edp: Add per-version LDO configuration callback
-> 
->  drivers/phy/qualcomm/phy-qcom-edp.c | 176 ++++++++++++++++++++++++++----------
->  1 file changed, 129 insertions(+), 47 deletions(-)
-> ---
-> base-commit: fc4e91c639c0af93d63c3d5bc0ee45515dd7504a
 
-20260108 is very old. Your second patch doesn't apply anymore.
 
-> change-id: 20260205-edp_phy-1eca3ed074c0
+On 04-02-2026 21:14, Vinod Koul wrote:
+> 
+> On Fri, 23 Jan 2026 15:39:01 +0000, Charan Pedumuru wrote:
+>> This series converts the old text-based DeviceTree bindings for TI OMAP
+>> Control PHY and TI PIPE3 PHY to modern JSON-schema (YAML) format.
+>>
+>>
+> 
+> Applied, thanks!
+> 
+> [2/3] dt-bindings: phy: ti,phy-usb3: convert to DT schema
+>       commit: 62c9ff8fc20d23c0dc36be1330734fdafb3e8585
+> [3/3] dt-bindings: phy: ti,control-phy-otghs: convert to DT schema
+>       commit: 7878306d182a1750583a325a29e5ccab9ce0235b
+
+Hi Vinod,
+
+You missed to apply the first patch which has DT node pattern changes and now this dtb check fails in linux-next as these YAML patches use the updated node pattern. I got a report of errors from kernel test robot.
+
 > 
 > Best regards,
-> -- 
-> Yongxing Mou <yongxing.mou@oss.qualcomm.com>
-> 
 
 -- 
-With best wishes
-Dmitry
+Best Regards,
+Charan.
+
 
 -- 
 linux-phy mailing list
