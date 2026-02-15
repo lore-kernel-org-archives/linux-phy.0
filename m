@@ -4,105 +4,116 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3CB81EF585E
-	for <linux-phy@archiver.kernel.org>; Sun, 15 Feb 2026 07:58:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A33D4EF585E
+	for <linux-phy@archiver.kernel.org>; Sun, 15 Feb 2026 08:03:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nC4WmDj3tFbGglyspkl7kpa0bD7EoWWlGXUI40U1W1s=; b=Q50qapiuQDMB/O
-	7ScrH5RYfyr5LhZB6FS4bvKLGGXp9UmHfCl0FztDZC+xfM1NDFj0sCX4+nzCoa0e8plTPK08HXPyr
-	qXMqwcItFdfb6WimVDVWuL5R0i/XFPnKlMQKK5zpkrB1y+o2lVwexEBvsWCvkDl7yY3EU0Po8eN94
-	LbJMspEJRH7IgCW5ytsK1TVz9FyogbJPtbOywYELgPl53bVTmcbg3Vaoz1kkXBMtPYtJLx9cjj5Nj
-	MML17pEOJyDIBscNuMnSUvx+nQYEqdixrkWUIjB9dnLmabsEDxL/2gXEH4LeKUcky4AbBvHjlTztC
-	tplXsglP5eComXqs/j8g==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
+	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=BzXUA3R2KPTMmNQvHgLGkMa5AQvmeoo48c6dU1IasvM=; b=i6uQvt4DTEz2v5
+	C9EbrYrsRk9f6444pX46Coaf8owwrVeYSv4nylbuhNGGmjMqcih8FbyYGTTbA/Ba9GUYypmmraOs+
+	LbM+KY0PMk4O4PXQ5XYeA8Ge/6Q3Hv3IlPbdPzaEtg35Q0y84leQd7Z2gopgoLJWwZLKg3FA/cG6X
+	24LTYnoO5uFjYFcfnN9HIMxDeXxbbUifFEymasYRJ4/QJCDS203gwH3Tvu/v/WT0znTpNWIEsiqGM
+	fYyBt9GFXJ6BX5+C4Q7G7W7jK8eVQBii2QeAaFLWxNdQ4xyPdwBIWA7H3+wBFDVNykq6Eh0X6fgxr
+	fEeoa6s5zOBhgu7zGgjw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vrX1m-00000005FOK-1AXi;
-	Sun, 15 Feb 2026 07:58:50 +0000
-Received: from fhigh-b5-smtp.messagingengine.com ([202.12.124.156])
+	id 1vrX5p-00000005FVS-1UsK;
+	Sun, 15 Feb 2026 08:03:01 +0000
+Received: from fout-b2-smtp.messagingengine.com ([202.12.124.145])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vrX1i-00000005FNv-3jgc
-	for linux-phy@lists.infradead.org;
-	Sun, 15 Feb 2026 07:58:49 +0000
-Received: from phl-compute-02.internal (phl-compute-02.internal [10.202.2.42])
-	by mailfhigh.stl.internal (Postfix) with ESMTP id BEF027A0316;
-	Sun, 15 Feb 2026 02:58:42 -0500 (EST)
-Received: from phl-frontend-03 ([10.202.2.162])
-  by phl-compute-02.internal (MEProxy); Sun, 15 Feb 2026 02:58:43 -0500
+	id 1vrX5m-00000005FV0-0is3;
+	Sun, 15 Feb 2026 08:02:59 +0000
+Received: from phl-compute-06.internal (phl-compute-06.internal [10.202.2.46])
+	by mailfout.stl.internal (Postfix) with ESMTP id 165901D00129;
+	Sun, 15 Feb 2026 03:02:56 -0500 (EST)
+Received: from phl-frontend-04 ([10.202.2.163])
+  by phl-compute-06.internal (MEProxy); Sun, 15 Feb 2026 03:02:56 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jannau.net; h=cc
-	:cc:content-type:content-type:date:date:from:from:in-reply-to
-	:in-reply-to:message-id:mime-version:references:reply-to:subject
-	:subject:to:to; s=fm2; t=1771142322; x=1771228722; bh=OioEWjo2aq
-	kQeqhQlThNrl/fRVnuDG2LNFbb2f1Uc1U=; b=EMqEilalv4wZ5Ik3pUeJS6cd2z
-	QqW47Vmxxj6afOTfHpFDHt8tnTHR+13r/EqEoUYY0sosRIYkO3HCXAmwKZGI6yH1
-	APGDY+0HztiLzitTBVdVH/NyRuCK1qNtiHJws8sZWbTCbjHQkeHbf8rHWVNQfoHs
-	jjtd+ba0SrdMR5acvjRWUyM3jVdL8uoC9bQI1MB4FpsZJLy378Qiq5rNL3qhof6K
-	OHy6NS8JQ7sg8Xq0izR+IwMGX9pU0fNtaEwDNhBqeyLUIf+UQ+sc8EFXIRbPsmBZ
-	udXLulTpEXZSPD/M1bqTA8KrorSmrdiMlN4JV5fDTkTtJ9Zg8hLQfaVQcNDQ==
+	:cc:content-transfer-encoding:content-type:content-type:date
+	:date:from:from:in-reply-to:message-id:mime-version:reply-to
+	:subject:subject:to:to; s=fm2; t=1771142575; x=1771228975; bh=Vj
+	HuDUCBdPuzPfZZ59hYejkXpV6FXrKXKbP88JxRbR0=; b=S90IxM2N5qUv15/Czj
+	XLOpP6/qAxOfHwagyIXkhS0W066iTYi1+9NOq2gqaXLc3aw6KAe1KEKKnN6MCL7/
+	zZFVpTCs0OfmRuaifL/9jLrJoJeQbuplnbowUDbakXIk9HUqXo/zR7PXfDdW1NKI
+	gCnt8K3HJ/T2pSk6MYs9wRRgsQVBHZR4cJBcO3oeHyohRcOVEfCXtJ9jF+iWRGTk
+	Mf0BDmxnDFDHRuLu0/gZbYqw5oKKiZge823v0uP9LryqWRyff6AEmjPBOaZJUsZw
+	+KMuki0VJIq5bsNKz85Qht9AA7zMeLUm13R9bGO93jFCkNADGOj8NJeuokEm6GJW
+	TgZQ==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=cc:cc:content-type:content-type:date:date
-	:feedback-id:feedback-id:from:from:in-reply-to:in-reply-to
-	:message-id:mime-version:references:reply-to:subject:subject:to
-	:to:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; t=
-	1771142322; x=1771228722; bh=OioEWjo2aqkQeqhQlThNrl/fRVnuDG2LNFb
-	b2f1Uc1U=; b=rvZ9yE8KNNR73WV9xK0AT/as8yIs6/qjoDJ/6/mk5yPDeCL2d0g
-	H/70YE5Tt6tHQ8bClsn6CQKj9TeN8PbctHa4/y/M+KEnd2OjaZ4wFOBQO4Vtz/Ia
-	RdK6xLFkNU2HTxYKRpeirpIvieWLrYPQzfVnKPvfJke1pPLvObiXmW66ZHxaPW1N
-	FrcgyKaHGVBeFSLSoEwXvqHtZk2zBpNy5tfwYntogtuSQ3cZdz4KTLZHye8pHzMI
-	52g7XSEWgYDv3y7L1zE5cwnNFw5xuByQ0fBB+s8AD+Zyil/ddPzJ7Y5XG4gVew0p
-	hxQbKuLAzsc4RUu/bbskLkGR2H4KH3A13pA==
-X-ME-Sender: <xms:sXyRacn3LCYcmnmwxgNWIbCMti7OV1qrDsX8S4YLvKFpNtAYu5kQUQ>
-    <xme:sXyRaR2OEjzempsKbnSpzIZ7c0iOxvpMV0lXNc0VSpwbguFLfSyHTnpX9cv-zDXvn
-    -5zMYEhOB-JkXhDCcIe3Qby4UpFjZpQLVHiqmkbcX-Z83QEdbDo6mI>
-X-ME-Received: <xmr:sXyRaVf5EPyc-MZKCZs16uQQK2bWJVeB3hWL6_hPi1lMcPKAj-NyFhl2Z_6jV3aOg2eCEbsqvNbuj7-L2orf9Khu3_5zXI4WBkw>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeefgedrtddtgddvudefgeehucetufdoteggodetrf
+	messagingengine.com; h=cc:cc:content-transfer-encoding
+	:content-type:content-type:date:date:feedback-id:feedback-id
+	:from:from:in-reply-to:message-id:mime-version:reply-to:subject
+	:subject:to:to:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
+	fm3; t=1771142575; x=1771228975; bh=VjHuDUCBdPuzPfZZ59hYejkXpV6F
+	XrKXKbP88JxRbR0=; b=Q9nKH51Fk7FSD2Sz3PRLlOBg6dmwCOjfD8HSE/ernlsA
+	GAiwJ3L6MgFzw/rhZRl2kycqVnLIHCSAyA6tQxW9GX1WbhovNhlE3sb4I1DsS2UH
+	lN/evFwpvUAgOYXkUKv8HyeVIJcplsul/5lC7COH8LoKlxjgLTCRuCBvg7j2UWh5
+	pUnfS3neme1IaYxIWcVl1rlxJkhuchQMrj2IZsRo9p+6ZiPnjC10ukJKhoKcZP/g
+	ypRisZCczPWAmOTfxB4XnHTHvDrPqI2BUGz4y+hGAALrzNUmI+VupcqbKifILeOv
+	poKxfSklof4ad8N9AUQ8UlZlsdge7Dw0UfP6ycg+sg==
+X-ME-Sender: <xms:r32RaaASTCO0YH3nEKpObdSL2DBVsZBjeQAmtoHj-keQcqznH5sm0g>
+    <xme:r32Raa4sCp4G-wIOWuJoa3LyDndJbO6khD5RVgyHQAOHN5R9dHd3DADsducaPkBId
+    XAvYOainRAlEClxagfoopXErueoSwXeJTJWVmqoWUx05BbvjAMWFfE>
+X-ME-Received: <xmr:r32RaZ170f8DbzioOdn9Re-eFQ3iuvGLRvVDhh_lni5q5Vroleg60FQAObWAQyZw-i0l_wKXoyVAdIjq5TpfbahUADkn2lpAFaxLWg>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeefgedrtddtgddvudefgeeiucetufdoteggodetrf
     dotffvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfurfetoffkrfgpnffqhgenuceu
     rghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmnecujf
-    gurhepfffhvfevuffkfhggtggujgesthdtredttddtjeenucfhrhhomheplfgrnhhnvgcu
-    ifhruhhnrghuuceojhesjhgrnhhnrghurdhnvghtqeenucggtffrrghtthgvrhhnpefgud
-    euffelfeekgeeukedtheekjeettdfftddujefhvdehtefgiefgledtueefjeenucffohhm
-    rghinhepkhgvrhhnvghlrdhorhhgnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrg
-    hmpehmrghilhhfrhhomhepjhesjhgrnhhnrghurdhnvghtpdhnsggprhgtphhtthhopedu
-    tddpmhhouggvpehsmhhtphhouhhtpdhrtghpthhtohepohhlthgvrghnvhesghhmrghilh
-    drtghomhdprhgtphhtthhopehsvhgvnheskhgvrhhnvghlrdhorhhgpdhrtghpthhtohep
-    nhgvrghlsehgohhmphgrrdguvghvpdhrtghpthhtohepvhhkohhulheskhgvrhhnvghlrd
-    horhhgpdhrtghpthhtohepnhgvihhlrdgrrhhmshhtrhhonhhgsehlihhnrghrohdrohhr
-    ghdprhgtphhtthhopehprdiirggsvghlsehpvghnghhuthhrohhnihigrdguvgdprhgtph
-    htthhopegrshgrhhhisehlihhsthhsrdhlihhnuhigrdguvghvpdhrtghpthhtoheplhhi
-    nhhugidqphhhhieslhhishhtshdrihhnfhhrrgguvggrugdrohhrghdprhgtphhtthhope
-    hlihhnuhigqdhkvghrnhgvlhesvhhgvghrrdhkvghrnhgvlhdrohhrgh
-X-ME-Proxy: <xmx:sXyRabZk5KO2QRA0csLl0xckYfThK33BbMSQYvvabvfK8S0uaYaiLg>
-    <xmx:sXyRaaEn_S8Y4OFGDD59RLKwdYSOFutDgONmqCZ0YBp_Ei9n0KN4nw>
-    <xmx:sXyRaZkLSWkbBy1UVNssHbfIvKmUJSvWNN2zBT8rpTaZCCM5cDKqLA>
-    <xmx:sXyRadep38oAf9ngxwGcpamu40qccfYUlEu5QGw9IKVVCpMK8Ki3qw>
-    <xmx:snyRaYrBeEW-UOX5HvRU58xHzhFw8sTxp4uX6Ht7ERF7C73iknDkwWyh>
+    gurhephfffufggtgfgkffvvefosehtjeertdertdejnecuhfhrohhmpeflrghnnhgvucfi
+    rhhunhgruhcuoehjsehjrghnnhgruhdrnhgvtheqnecuggftrfgrthhtvghrnhepfeehle
+    dtheefteejfedvheetuedttdetleegudeuteejveetieefuedvfeffvdeinecuffhomhgr
+    ihhnpehkvghrnhgvlhdrohhrghenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmh
+    epmhgrihhlfhhrohhmpehjsehjrghnnhgruhdrnhgvthdpnhgspghrtghpthhtohepuddv
+    pdhmohguvgepshhmthhpohhuthdprhgtphhtthhopegrshgrhhhisehlihhsthhsrdhlih
+    hnuhigrdguvghvpdhrtghpthhtoheplhhinhhugidqphhhhieslhhishhtshdrihhnfhhr
+    rgguvggrugdrohhrghdprhgtphhtthhopehjsehjrghnnhgruhdrnhgvthdprhgtphhtth
+    hopehlihhnuhigqdhkvghrnhgvlhesvhhgvghrrdhkvghrnhgvlhdrohhrghdprhgtphht
+    thhopehvkhhouhhlsehkvghrnhgvlhdrohhrghdprhgtphhtthhopehnvghilhdrrghrmh
+    hsthhrohhngheslhhinhgrrhhordhorhhgpdhrtghpthhtohepnhgvrghlsehgohhmphgr
+    rdguvghvpdhrtghpthhtohepuggrnhdrtggrrhhpvghnthgvrheslhhinhgrrhhordhorh
+    hgpdhrtghpthhtoheplhhinhhugidqrghrmhdqkhgvrhhnvghlsehlihhsthhsrdhinhhf
+    rhgruggvrggurdhorhhg
+X-ME-Proxy: <xmx:r32RaWlPaqHeBRU5NR7jUKqtU9gVr9-eJefxE-FufBFvyY4kAZPH4g>
+    <xmx:r32RaX4wUhkGOIEHk0hSndqMKSxyMAu_eGRqPSr6nMg-7ufU3545Zg>
+    <xmx:r32RaZklYqX-q1q9OdMtyK3QD4je9w9ijLzxBBZpwAvLn1WTt6J2yg>
+    <xmx:r32RaSVbi2kDPBAFqsaovAe3h-7k8hv910rePKv_hYHhKe-4JMQU9w>
+    <xmx:r32RaXWQTHJNCT-7b5CyPljOwtOX4UeM99oXw2uhYjqeuHadWEo1OKNN>
 Feedback-ID: i47b949f6:Fastmail
 Received: by mail.messagingengine.com (Postfix) with ESMTPA; Sun,
- 15 Feb 2026 02:58:40 -0500 (EST)
-Date: Sun, 15 Feb 2026 08:58:39 +0100
+ 15 Feb 2026 03:02:55 -0500 (EST)
 From: Janne Grunau <j@jannau.net>
-To: Vladimir Oltean <olteanv@gmail.com>
-Cc: Sven Peter <sven@kernel.org>, Neal Gompa <neal@gompa.dev>,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>, asahi@lists.linux.dev,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-	Dan Carpenter <dan.carpenter@linaro.org>
-Subject: Re: [PATCH phy-next] phy: apple: apple: Check the actual ioremap
- return value
-Message-ID: <20260215075839.GA1924982@robin.jannau.net>
-References: <20260207-phy-apple-resource-err-ptr-v1-1-78735b07ed2d@jannau.net>
- <20260207-phy-apple-resource-err-ptr-v1-1-78735b07ed2d@jannau.net>
- <20260210204822.jr22el4rlyosin2q@skbuf>
+Date: Sun, 15 Feb 2026 09:02:51 +0100
+Subject: [PATCH phy-next v2] phy: apple: apple: Use local variable for
+ ioremap return value
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260210204822.jr22el4rlyosin2q@skbuf>
+Message-Id: <20260215-phy-apple-resource-err-ptr-v2-1-e43c22453682@jannau.net>
+X-B4-Tracking: v=1; b=H4sIAKp9kWkC/42NQQ6CMBBFr0Jm7Zi2CFVW3sO4qHS0NaY0UyAQw
+ t2tPYHLl5f//gaJ2FOCrtqAafbJDyGDOlTQOxNehN5mBiVUK5TQGN2KJsYPIVMaJu4JiRnjyNh
+ cVG2lrMWpbSAHItPTLyV+g98u0DLCPRvn0zjwWl5nWfw/B7NEifqs6+YhNFllr28TgpmOgXJ33
+ /cvR8pQ5M8AAAA=
+X-Change-ID: 20260207-phy-apple-resource-err-ptr-5923d1130465
+To: Sven Peter <sven@kernel.org>, Neal Gompa <neal@gompa.dev>, 
+ Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
+ Philipp Zabel <p.zabel@pengutronix.de>
+Cc: asahi@lists.linux.dev, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ Dan Carpenter <dan.carpenter@linaro.org>, 
+ Vladimir Oltean <olteanv@gmail.com>, Janne Grunau <j@jannau.net>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2061; i=j@jannau.net;
+ s=yk2025; h=from:subject:message-id;
+ bh=k6Pu3hp4o8H6H3NimaF8MDzlCw3MXZsNEGNQ1rIeNOs=;
+ b=owGbwMvMwCW2UNrmdq9+ahrjabUkhsyJtetetQpGnf/pL9vm/svKLZDzzlW3u15q09a3iqr/a
+ 1ErXF7WUcrCIMbFICumyJKk/bKDYXWNYkztgzCYOaxMIEMYuDgFYCIPbjMy/K5w5Tqdp3r5UPRG
+ +ww/x9Y25okMHlzBxe8rRJZ0W56XYPif37m2eE6xyDd1FgOrJ5WuVh7la+/yNwrdvCAbLs66Tp0
+ bAA==
+X-Developer-Key: i=j@jannau.net; a=openpgp;
+ fpr=8B336A6BE4E5695E89B8532B81E806F586338419
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260214_235847_577623_B558902A 
-X-CRM114-Status: GOOD (  23.44  )
+X-CRM114-CacheID: sfid-20260215_000258_301111_C8B13905 
+X-CRM114-Status: GOOD (  11.05  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,55 +130,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hej Vladimir,
+The indirection through the resources array is unnecessarily complicated
+and resuling in using IS_ERR() and PTR_ERR() on a valid address. A local
+variable for the devm_ioremap_resource() return value is both easier to
+read and matches expectations when reading code.
 
-On Tue, Feb 10, 2026 at 10:48:22PM +0200, Vladimir Oltean wrote:
-> Hello Janne,
-> 
-> On Sat, Feb 07, 2026 at 05:40:34PM +0100, Janne Grunau wrote:
-> > The address where the devm_ioremap_resource() return value is stored is
-> > always a valid pointer. Check the actual return value instead as that
-> > that might be an error value.
-> > 
-> > Reported-by: Dan Carpenter <dan.carpenter@linaro.org>
-> > Closes: https://lore.kernel.org/asahi/aYXvX1bYOXtYCgfC@stanley.mountain/
-> > Fixes: 8e98ca1e74db ("phy: apple: Add Apple Type-C PHY")
-> > Signed-off-by: Janne Grunau <j@jannau.net>
-> > ---
-> >  drivers/phy/apple/atc.c | 2 +-
-> >  1 file changed, 1 insertion(+), 1 deletion(-)
-> > 
-> > diff --git a/drivers/phy/apple/atc.c b/drivers/phy/apple/atc.c
-> > index dc867f368b68748ea953e594ad998d7f965d8d1d..c144e273a555a741b49adfccbe046df83d193e03 100644
-> > --- a/drivers/phy/apple/atc.c
-> > +++ b/drivers/phy/apple/atc.c
-> > @@ -2206,7 +2206,7 @@ static int atcphy_map_resources(struct platform_device *pdev, struct apple_atcph
-> >  	for (int i = 0; i < ARRAY_SIZE(resources); i++) {
-> >  		res = platform_get_resource_byname(pdev, IORESOURCE_MEM, resources[i].name);
-> >  		*resources[i].addr = devm_ioremap_resource(&pdev->dev, res);
-> > -		if (IS_ERR(resources[i].addr))
-> > +		if (IS_ERR(*resources[i].addr))
-> >  			return dev_err_probe(atcphy->dev, PTR_ERR(resources[i].addr),
-> >  					     "Unable to map %s regs", resources[i].name);
-> 
-> This does not seem correct - every call site that tests a pointer for
-> IS_ERR() also decodes the error using PTR_ERR(). Whereas you are here
-> creating the pattern "if (IS_ERR(*a)) return PTR_ERR(a)".
+Reported-by: Dan Carpenter <dan.carpenter@linaro.org>
+Closes: https://lore.kernel.org/asahi/aYXvX1bYOXtYCgfC@stanley.mountain/
+Suggested-by: Vladimir Oltean <olteanv@gmail.com>
+Fixes: 8e98ca1e74db ("phy: apple: Add Apple Type-C PHY")
+Signed-off-by: Janne Grunau <j@jannau.net>
+---
+Changes in v2:
+- Use a local variable instead of the complex indirection with the
+  resources array
+- Link to v1: https://lore.kernel.org/r/20260207-phy-apple-resource-err-ptr-v1-1-78735b07ed2d@jannau.net
+---
+ drivers/phy/apple/atc.c | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
 
-missed this.
+diff --git a/drivers/phy/apple/atc.c b/drivers/phy/apple/atc.c
+index dc867f368b68748ea953e594ad998d7f965d8d1d..64d0c3dba1cbb95f867d338da706225ee0bf79f7 100644
+--- a/drivers/phy/apple/atc.c
++++ b/drivers/phy/apple/atc.c
+@@ -2202,14 +2202,16 @@ static int atcphy_map_resources(struct platform_device *pdev, struct apple_atcph
+ 		{ "pipehandler", &atcphy->regs.pipehandler, NULL },
+ 	};
+ 	struct resource *res;
++	void __iomem *addr;
+ 
+ 	for (int i = 0; i < ARRAY_SIZE(resources); i++) {
+ 		res = platform_get_resource_byname(pdev, IORESOURCE_MEM, resources[i].name);
+-		*resources[i].addr = devm_ioremap_resource(&pdev->dev, res);
+-		if (IS_ERR(resources[i].addr))
+-			return dev_err_probe(atcphy->dev, PTR_ERR(resources[i].addr),
++		addr = devm_ioremap_resource(&pdev->dev, res);
++		if (IS_ERR(addr))
++			return dev_err_probe(atcphy->dev, PTR_ERR(addr),
+ 					     "Unable to map %s regs", resources[i].name);
+ 
++		*resources[i].addr = addr;
+ 		if (resources[i].res)
+ 			*resources[i].res = res;
+ 	}
 
-> Proven practice seems to tell us that insisting to save the
-> devm_ioremap_resource() return code directly in *resources[i].addr
-> is too complex here.
-> 
-> Would you consider creating a temporary "void __iomem *addr" local
-> variable, and set "*resources[i].addr = addr" only once it's validated?
-> This would make the code obviously correct upon review.
+---
+base-commit: dbeea86fecef7cf2b93aded4525d74f6277376ef
+change-id: 20260207-phy-apple-resource-err-ptr-5923d1130465
 
-I agree. A local variable makes this easier to read. Thanks for spotting
-this and the suggestion. I'll change that for v2.
+Best regards,
+-- 
+Janne Grunau <j@jannau.net>
 
-Janne
 
 -- 
 linux-phy mailing list
