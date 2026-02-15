@@ -4,99 +4,105 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 562B4EF5859
-	for <linux-phy@archiver.kernel.org>; Sun, 15 Feb 2026 05:48:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3CB81EF585E
+	for <linux-phy@archiver.kernel.org>; Sun, 15 Feb 2026 07:58:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GWbZmUwHKa18iaRpPMqIUXgtj5w+9hqZK3oVqJg3T4U=; b=YZFMJ+ImruYSvG
-	MRDTTtluTrIyi8Lia5w23FX1uyVfHzPc8qA5yi0bgimcezFIFze6ZNWyg74echSw9IlOf186m/8g4
-	EedKV60yJMBlHWJawgvcFZq3oYcxusSwBvH7YE1+l8IFWxeDHavWTc41Sa3mOftXon6OaIDtFvpjm
-	vcqeYN9Qyj6T7n7nx4xbEjhbJjcPiSqP6fu71Ec6npNDFkLHzgB/mIA63m91IBNBT+hYXsLDA7n18
-	mjcURBxcDYGEPHxMjvSW2pto7BYOJvpIeJyHWVqp++hTn4ueaPu4C6mPd9zuNZodsCiq7KzdeOgKo
-	mygFKR/NmK3dpk5j4MFA==;
+	List-Owner; bh=nC4WmDj3tFbGglyspkl7kpa0bD7EoWWlGXUI40U1W1s=; b=Q50qapiuQDMB/O
+	7ScrH5RYfyr5LhZB6FS4bvKLGGXp9UmHfCl0FztDZC+xfM1NDFj0sCX4+nzCoa0e8plTPK08HXPyr
+	qXMqwcItFdfb6WimVDVWuL5R0i/XFPnKlMQKK5zpkrB1y+o2lVwexEBvsWCvkDl7yY3EU0Po8eN94
+	LbJMspEJRH7IgCW5ytsK1TVz9FyogbJPtbOywYELgPl53bVTmcbg3Vaoz1kkXBMtPYtJLx9cjj5Nj
+	MML17pEOJyDIBscNuMnSUvx+nQYEqdixrkWUIjB9dnLmabsEDxL/2gXEH4LeKUcky4AbBvHjlTztC
+	tplXsglP5eComXqs/j8g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vrUzV-00000005C4R-1kpN;
-	Sun, 15 Feb 2026 05:48:21 +0000
-Received: from mail-pf1-x429.google.com ([2607:f8b0:4864:20::429])
+	id 1vrX1m-00000005FOK-1AXi;
+	Sun, 15 Feb 2026 07:58:50 +0000
+Received: from fhigh-b5-smtp.messagingengine.com ([202.12.124.156])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vrUzT-00000005C3z-0KVw
+	id 1vrX1i-00000005FNv-3jgc
 	for linux-phy@lists.infradead.org;
-	Sun, 15 Feb 2026 05:48:20 +0000
-Received: by mail-pf1-x429.google.com with SMTP id d2e1a72fcca58-824b5f015bcso2533604b3a.1
-        for <linux-phy@lists.infradead.org>; Sat, 14 Feb 2026 21:48:18 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1771134497; x=1771739297; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=B48NNf1YJcuHdmdFyYwGz74LGN+blqEWKGYew4mmQ3Y=;
-        b=famP+gfZCA58TkbBj7159IAfqVG6t3jXRuUImdwUVB1mZBqtIgNrVBf4hwGUaGiIsR
-         oGaNmBcff9aicfm2u8Bx9S5oDYAyyZ50SeerLgCP5Vblp0ftoumGqa/jMkkKwkE136uP
-         fxRryyd2sbD4Mt/fTM6e57outpYovgGUiQbF4oiPBSSBNVckiEtYe94gLJ42FPwkB6Dh
-         rNOEW5GN1IRW4+qV5E0l5/DPo3ItGMrQJmrVWiGV+YP8QkefLh+TSZy5vAGAX43/ITGc
-         CIrkAV0aeEAzYb28MnsCz4Yq+QDrQ+VX7yUkk8FODNIaKxeiYaIIDawIx+Nj2Zyh9bZB
-         Byzw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1771134497; x=1771739297;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=B48NNf1YJcuHdmdFyYwGz74LGN+blqEWKGYew4mmQ3Y=;
-        b=uQ0/EPE5MDfRt8kaLqpWw3gFPxXYouoF0iGOSoFePCbmduIhmhohaveunruM1kRKJu
-         lXzEsrg7tpzq4n2oOICyAFtCbkiu4nkArrHQM1dAOdT0fgnMEWv79831OyO9wilTWMLP
-         SN0uTIP7LC1u+O9MxoFjVQG4N55FXo9L4gYK/EOKNHrco6h9wGcK4mzwXMxuC8HkClBe
-         Ci8yo7+ao55812COX8f/k2zeGmWhnDRAMi0CfrxjWAqvAUrNwHSRb8pucqeBOm5uM7zC
-         u85xpErhYI/AWXR/v4nxGJmcKPsIUYnUdvyGdE3tZbnGfJa2O2o0D40+207hmC8fNL7D
-         gbXQ==
-X-Forwarded-Encrypted: i=1; AJvYcCUfBmDyVQxvt0x/Q4+Xwu3NryCK1KjfpDh9JJml3eGWvdbwtgSDthtKapWnL3SIeW0JRUnY1fNR3ZM=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx2N8yQnn+KxfJaqduDz/wv5ju9HOboAMV1OBUk+ZgMynGAYsa3
-	wUTUPghKbDsPpoflZ6keazDDsuAttEvn33SSTJEXKFPNuTu7pk7W/8UM
-X-Gm-Gg: AZuq6aKN1i9ON/409iq2ZN94f4oAiF99dYA9KQQDd1FRAY5yM6ttiV8+xbcxkwKQH+q
-	G/DLf0oLnKn1bbOO5EX49B1X7HyOicVOHJwDh7Sudl5SC9RpalzHApBi4YiS8UheS6BjXqqrun6
-	wfCbHPc1yXJ+V//LeCHKcr6oX2jQa9QAWm+TqHtXe/4pCzSnZh91wd6RocXd+XlrBxWlGz/VBmb
-	dHDqz7u/pSjo2oRdgrMLaKctJo057fg8NGlvgGIKqQZBez+ErTyK2p5O/2ScLcu7/peKPYic7t/
-	u8ik7MzL9wc0HDOamJ4gcb0XRRA5ojZManiYAZQLrhcThoSWPvSie0G9QgCZk5N5h1NsAOdIJhJ
-	VLOYPtezz/kxSgm+ImAgtU9WC/D2z8CoHk3zUFZKoZOHFtFaU2mPSAH1tbb6QOj9Bd63Rkqt5vm
-	zceO8xUUtNGeBrV+PrdcueFjtfWuApBt6nCFu+59HJ3mo=
-X-Received: by 2002:a05:6a00:a883:b0:81f:22ca:257 with SMTP id d2e1a72fcca58-824c5ef0916mr7245870b3a.20.1771134497374;
-        Sat, 14 Feb 2026 21:48:17 -0800 (PST)
-Received: from [192.168.1.4] ([27.7.171.51])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-824c6b6a17fsm8677833b3a.34.2026.02.14.21.48.11
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Sat, 14 Feb 2026 21:48:16 -0800 (PST)
-Message-ID: <26b05fa5-b985-4e21-b848-7427044b04c0@gmail.com>
-Date: Sun, 15 Feb 2026 11:18:09 +0530
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: (subset) [PATCH v4 0/3] dt-bindings: phy: Convert TI OMAP control
- and PIPE3 PHY to DT schema
+	Sun, 15 Feb 2026 07:58:49 +0000
+Received: from phl-compute-02.internal (phl-compute-02.internal [10.202.2.42])
+	by mailfhigh.stl.internal (Postfix) with ESMTP id BEF027A0316;
+	Sun, 15 Feb 2026 02:58:42 -0500 (EST)
+Received: from phl-frontend-03 ([10.202.2.162])
+  by phl-compute-02.internal (MEProxy); Sun, 15 Feb 2026 02:58:43 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jannau.net; h=cc
+	:cc:content-type:content-type:date:date:from:from:in-reply-to
+	:in-reply-to:message-id:mime-version:references:reply-to:subject
+	:subject:to:to; s=fm2; t=1771142322; x=1771228722; bh=OioEWjo2aq
+	kQeqhQlThNrl/fRVnuDG2LNFbb2f1Uc1U=; b=EMqEilalv4wZ5Ik3pUeJS6cd2z
+	QqW47Vmxxj6afOTfHpFDHt8tnTHR+13r/EqEoUYY0sosRIYkO3HCXAmwKZGI6yH1
+	APGDY+0HztiLzitTBVdVH/NyRuCK1qNtiHJws8sZWbTCbjHQkeHbf8rHWVNQfoHs
+	jjtd+ba0SrdMR5acvjRWUyM3jVdL8uoC9bQI1MB4FpsZJLy378Qiq5rNL3qhof6K
+	OHy6NS8JQ7sg8Xq0izR+IwMGX9pU0fNtaEwDNhBqeyLUIf+UQ+sc8EFXIRbPsmBZ
+	udXLulTpEXZSPD/M1bqTA8KrorSmrdiMlN4JV5fDTkTtJ9Zg8hLQfaVQcNDQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:cc:content-type:content-type:date:date
+	:feedback-id:feedback-id:from:from:in-reply-to:in-reply-to
+	:message-id:mime-version:references:reply-to:subject:subject:to
+	:to:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; t=
+	1771142322; x=1771228722; bh=OioEWjo2aqkQeqhQlThNrl/fRVnuDG2LNFb
+	b2f1Uc1U=; b=rvZ9yE8KNNR73WV9xK0AT/as8yIs6/qjoDJ/6/mk5yPDeCL2d0g
+	H/70YE5Tt6tHQ8bClsn6CQKj9TeN8PbctHa4/y/M+KEnd2OjaZ4wFOBQO4Vtz/Ia
+	RdK6xLFkNU2HTxYKRpeirpIvieWLrYPQzfVnKPvfJke1pPLvObiXmW66ZHxaPW1N
+	FrcgyKaHGVBeFSLSoEwXvqHtZk2zBpNy5tfwYntogtuSQ3cZdz4KTLZHye8pHzMI
+	52g7XSEWgYDv3y7L1zE5cwnNFw5xuByQ0fBB+s8AD+Zyil/ddPzJ7Y5XG4gVew0p
+	hxQbKuLAzsc4RUu/bbskLkGR2H4KH3A13pA==
+X-ME-Sender: <xms:sXyRacn3LCYcmnmwxgNWIbCMti7OV1qrDsX8S4YLvKFpNtAYu5kQUQ>
+    <xme:sXyRaR2OEjzempsKbnSpzIZ7c0iOxvpMV0lXNc0VSpwbguFLfSyHTnpX9cv-zDXvn
+    -5zMYEhOB-JkXhDCcIe3Qby4UpFjZpQLVHiqmkbcX-Z83QEdbDo6mI>
+X-ME-Received: <xmr:sXyRaVf5EPyc-MZKCZs16uQQK2bWJVeB3hWL6_hPi1lMcPKAj-NyFhl2Z_6jV3aOg2eCEbsqvNbuj7-L2orf9Khu3_5zXI4WBkw>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeefgedrtddtgddvudefgeehucetufdoteggodetrf
+    dotffvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfurfetoffkrfgpnffqhgenuceu
+    rghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmnecujf
+    gurhepfffhvfevuffkfhggtggujgesthdtredttddtjeenucfhrhhomheplfgrnhhnvgcu
+    ifhruhhnrghuuceojhesjhgrnhhnrghurdhnvghtqeenucggtffrrghtthgvrhhnpefgud
+    euffelfeekgeeukedtheekjeettdfftddujefhvdehtefgiefgledtueefjeenucffohhm
+    rghinhepkhgvrhhnvghlrdhorhhgnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrg
+    hmpehmrghilhhfrhhomhepjhesjhgrnhhnrghurdhnvghtpdhnsggprhgtphhtthhopedu
+    tddpmhhouggvpehsmhhtphhouhhtpdhrtghpthhtohepohhlthgvrghnvhesghhmrghilh
+    drtghomhdprhgtphhtthhopehsvhgvnheskhgvrhhnvghlrdhorhhgpdhrtghpthhtohep
+    nhgvrghlsehgohhmphgrrdguvghvpdhrtghpthhtohepvhhkohhulheskhgvrhhnvghlrd
+    horhhgpdhrtghpthhtohepnhgvihhlrdgrrhhmshhtrhhonhhgsehlihhnrghrohdrohhr
+    ghdprhgtphhtthhopehprdiirggsvghlsehpvghnghhuthhrohhnihigrdguvgdprhgtph
+    htthhopegrshgrhhhisehlihhsthhsrdhlihhnuhigrdguvghvpdhrtghpthhtoheplhhi
+    nhhugidqphhhhieslhhishhtshdrihhnfhhrrgguvggrugdrohhrghdprhgtphhtthhope
+    hlihhnuhigqdhkvghrnhgvlhesvhhgvghrrdhkvghrnhgvlhdrohhrgh
+X-ME-Proxy: <xmx:sXyRabZk5KO2QRA0csLl0xckYfThK33BbMSQYvvabvfK8S0uaYaiLg>
+    <xmx:sXyRaaEn_S8Y4OFGDD59RLKwdYSOFutDgONmqCZ0YBp_Ei9n0KN4nw>
+    <xmx:sXyRaZkLSWkbBy1UVNssHbfIvKmUJSvWNN2zBT8rpTaZCCM5cDKqLA>
+    <xmx:sXyRadep38oAf9ngxwGcpamu40qccfYUlEu5QGw9IKVVCpMK8Ki3qw>
+    <xmx:snyRaYrBeEW-UOX5HvRU58xHzhFw8sTxp4uX6Ht7ERF7C73iknDkwWyh>
+Feedback-ID: i47b949f6:Fastmail
+Received: by mail.messagingengine.com (Postfix) with ESMTPA; Sun,
+ 15 Feb 2026 02:58:40 -0500 (EST)
+Date: Sun, 15 Feb 2026 08:58:39 +0100
+From: Janne Grunau <j@jannau.net>
 To: Vladimir Oltean <olteanv@gmail.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
- <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Aaro Koskinen <aaro.koskinen@iki.fi>, Andreas Kemnade
- <andreas@kemnade.info>, Kevin Hilman <khilman@baylibre.com>,
- Roger Quadros <rogerq@kernel.org>, Tony Lindgren <tony@atomide.com>,
- Roger Quadros <rogerq@ti.com>, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-omap@vger.kernel.org
-References: <20260123-ti-phy-v4-0-b557e2c46e6f@gmail.com>
- <177021985530.133434.13436195442562231016.b4-ty@kernel.org>
- <f60156a6-58af-4548-9dc3-71c71b822343@gmail.com>
- <20260213190054.ezblztj3blmhtywr@skbuf>
-Content-Language: en-US
-From: Charan Pedumuru <charan.pedumuru@gmail.com>
-In-Reply-To: <20260213190054.ezblztj3blmhtywr@skbuf>
+Cc: Sven Peter <sven@kernel.org>, Neal Gompa <neal@gompa.dev>,
+	Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>, asahi@lists.linux.dev,
+	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+	Dan Carpenter <dan.carpenter@linaro.org>
+Subject: Re: [PATCH phy-next] phy: apple: apple: Check the actual ioremap
+ return value
+Message-ID: <20260215075839.GA1924982@robin.jannau.net>
+References: <20260207-phy-apple-resource-err-ptr-v1-1-78735b07ed2d@jannau.net>
+ <20260207-phy-apple-resource-err-ptr-v1-1-78735b07ed2d@jannau.net>
+ <20260210204822.jr22el4rlyosin2q@skbuf>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20260210204822.jr22el4rlyosin2q@skbuf>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260214_214819_130438_E8742011 
-X-CRM114-Status: GOOD (  20.45  )
+X-CRM114-CacheID: sfid-20260214_235847_577623_B558902A 
+X-CRM114-Status: GOOD (  23.44  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,64 +119,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Hej Vladimir,
 
-
-On 14-02-2026 00:30, Vladimir Oltean wrote:
-> Hi Charan,
+On Tue, Feb 10, 2026 at 10:48:22PM +0200, Vladimir Oltean wrote:
+> Hello Janne,
 > 
-> On Fri, Feb 13, 2026 at 10:06:16PM +0530, Charan Pedumuru wrote:
->> On 04-02-2026 21:14, Vinod Koul wrote:
->>>
->>> On Fri, 23 Jan 2026 15:39:01 +0000, Charan Pedumuru wrote:
->>>> This series converts the old text-based DeviceTree bindings for TI OMAP
->>>> Control PHY and TI PIPE3 PHY to modern JSON-schema (YAML) format.
->>>>
->>>>
->>>
->>> Applied, thanks!
->>>
->>> [2/3] dt-bindings: phy: ti,phy-usb3: convert to DT schema
->>>       commit: 62c9ff8fc20d23c0dc36be1330734fdafb3e8585
->>> [3/3] dt-bindings: phy: ti,control-phy-otghs: convert to DT schema
->>>       commit: 7878306d182a1750583a325a29e5ccab9ce0235b
->>
->> Hi Vinod,
->>
->> You missed to apply the first patch which has DT node pattern changes
->> and now this dtb check fails in linux-next as these YAML patches use
->> the updated node pattern. I got a report of errors from kernel test
->> robot.
+> On Sat, Feb 07, 2026 at 05:40:34PM +0100, Janne Grunau wrote:
+> > The address where the devm_ioremap_resource() return value is stored is
+> > always a valid pointer. Check the actual return value instead as that
+> > that might be an error value.
+> > 
+> > Reported-by: Dan Carpenter <dan.carpenter@linaro.org>
+> > Closes: https://lore.kernel.org/asahi/aYXvX1bYOXtYCgfC@stanley.mountain/
+> > Fixes: 8e98ca1e74db ("phy: apple: Add Apple Type-C PHY")
+> > Signed-off-by: Janne Grunau <j@jannau.net>
+> > ---
+> >  drivers/phy/apple/atc.c | 2 +-
+> >  1 file changed, 1 insertion(+), 1 deletion(-)
+> > 
+> > diff --git a/drivers/phy/apple/atc.c b/drivers/phy/apple/atc.c
+> > index dc867f368b68748ea953e594ad998d7f965d8d1d..c144e273a555a741b49adfccbe046df83d193e03 100644
+> > --- a/drivers/phy/apple/atc.c
+> > +++ b/drivers/phy/apple/atc.c
+> > @@ -2206,7 +2206,7 @@ static int atcphy_map_resources(struct platform_device *pdev, struct apple_atcph
+> >  	for (int i = 0; i < ARRAY_SIZE(resources); i++) {
+> >  		res = platform_get_resource_byname(pdev, IORESOURCE_MEM, resources[i].name);
+> >  		*resources[i].addr = devm_ioremap_resource(&pdev->dev, res);
+> > -		if (IS_ERR(resources[i].addr))
+> > +		if (IS_ERR(*resources[i].addr))
+> >  			return dev_err_probe(atcphy->dev, PTR_ERR(resources[i].addr),
+> >  					     "Unable to map %s regs", resources[i].name);
 > 
-> If there was any request formulated to Vinod to pick up patch 1, then I
-> also missed it while reading this series.
+> This does not seem correct - every call site that tests a pointer for
+> IS_ERR() also decodes the error using PTR_ERR(). Whereas you are here
+> creating the pattern "if (IS_ERR(*a)) return PTR_ERR(a)".
+
+missed this.
+
+> Proven practice seems to tell us that insisting to save the
+> devm_ioremap_resource() return code directly in *resources[i].addr
+> is too complex here.
 > 
-> Usually, dt-bindings patches are picked up by the subsystem maintainer
-> while DTS patches are picked up by the platform maintainer. If you know
-> that there is any dependency then it would greatly help if you could
-> mention that upfront, or even specify how you expect the patches to be
-> merged.
-> 
-> In this case, I expect the warnings will get eventually resolved when
-> Kevin picks up patch 1.
+> Would you consider creating a temporary "void __iomem *addr" local
+> variable, and set "*resources[i].addr = addr" only once it's validated?
+> This would make the code obviously correct upon review.
 
-Yes.
+I agree. A local variable makes this easier to read. Thanks for spotting
+this and the suggestion. I'll change that for v2.
 
-> 
-> To avoid warnings from being introduced in the first place, you could
-> have
-> - requested all patches to be taken through a single tree (requires
->   maintainer coordination with ACK from the other one, more complicated
->   if the files touched are under heavy development)
-> - requested a stable tag from the first maintainer, to be pulled in the
->   second tree
-> - send patch 1, wait for a merge window to pass, send patches 2-3
-
-Sure, next time I will follow this procedure. Thanks.
-
--- 
-Best Regards,
-Charan.
-
+Janne
 
 -- 
 linux-phy mailing list
