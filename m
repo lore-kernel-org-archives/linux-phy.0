@@ -4,116 +4,103 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A33D4EF585E
-	for <linux-phy@archiver.kernel.org>; Sun, 15 Feb 2026 08:03:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 61558EF5868
+	for <linux-phy@archiver.kernel.org>; Sun, 15 Feb 2026 08:55:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
-	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=BzXUA3R2KPTMmNQvHgLGkMa5AQvmeoo48c6dU1IasvM=; b=i6uQvt4DTEz2v5
-	C9EbrYrsRk9f6444pX46Coaf8owwrVeYSv4nylbuhNGGmjMqcih8FbyYGTTbA/Ba9GUYypmmraOs+
-	LbM+KY0PMk4O4PXQ5XYeA8Ge/6Q3Hv3IlPbdPzaEtg35Q0y84leQd7Z2gopgoLJWwZLKg3FA/cG6X
-	24LTYnoO5uFjYFcfnN9HIMxDeXxbbUifFEymasYRJ4/QJCDS203gwH3Tvu/v/WT0znTpNWIEsiqGM
-	fYyBt9GFXJ6BX5+C4Q7G7W7jK8eVQBii2QeAaFLWxNdQ4xyPdwBIWA7H3+wBFDVNykq6Eh0X6fgxr
-	fEeoa6s5zOBhgu7zGgjw==;
+	List-Owner; bh=G1Hqz6V2FOYNrtolFAGf3MAaRMJT8+Sbhb04fz9emj4=; b=2Kk7URJ9F5B9us
+	JbRdVl0wWX/6uN9gIIa8cDqLJPG63R3lJ9BP0HQ3QkvbOltoW4ZWmKOt8hb4BtGlriuqqTrSYjiVO
+	OYZiR8SpgqNHNnhC+Hg0jaSPZIzaHSIDwaGfVyhiTB9uZD2PVGruMEghDazG/E8dGDzPe6id8KtgJ
+	F3C2gm7cR2r4Ai2jDrYWt5IdVMMkOaxkJ9+etdYar5AbYr7DbVKf7Ao1wV4Ox7LljnjFimhdLjzG1
+	zCM1Hx+bucVjJ0nJz16thbB/H+/U0fI3R392Lbd5slJuwiJJ/4fbCvx3q4isYQ0OHznniQxozYV4f
+	FS+9t2lTmSFYcgWW98QA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vrX5p-00000005FVS-1UsK;
-	Sun, 15 Feb 2026 08:03:01 +0000
-Received: from fout-b2-smtp.messagingengine.com ([202.12.124.145])
+	id 1vrXuq-00000005H8U-2URc;
+	Sun, 15 Feb 2026 08:55:44 +0000
+Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vrX5m-00000005FV0-0is3;
-	Sun, 15 Feb 2026 08:02:59 +0000
-Received: from phl-compute-06.internal (phl-compute-06.internal [10.202.2.46])
-	by mailfout.stl.internal (Postfix) with ESMTP id 165901D00129;
-	Sun, 15 Feb 2026 03:02:56 -0500 (EST)
-Received: from phl-frontend-04 ([10.202.2.163])
-  by phl-compute-06.internal (MEProxy); Sun, 15 Feb 2026 03:02:56 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jannau.net; h=cc
-	:cc:content-transfer-encoding:content-type:content-type:date
-	:date:from:from:in-reply-to:message-id:mime-version:reply-to
-	:subject:subject:to:to; s=fm2; t=1771142575; x=1771228975; bh=Vj
-	HuDUCBdPuzPfZZ59hYejkXpV6FXrKXKbP88JxRbR0=; b=S90IxM2N5qUv15/Czj
-	XLOpP6/qAxOfHwagyIXkhS0W066iTYi1+9NOq2gqaXLc3aw6KAe1KEKKnN6MCL7/
-	zZFVpTCs0OfmRuaifL/9jLrJoJeQbuplnbowUDbakXIk9HUqXo/zR7PXfDdW1NKI
-	gCnt8K3HJ/T2pSk6MYs9wRRgsQVBHZR4cJBcO3oeHyohRcOVEfCXtJ9jF+iWRGTk
-	Mf0BDmxnDFDHRuLu0/gZbYqw5oKKiZge823v0uP9LryqWRyff6AEmjPBOaZJUsZw
-	+KMuki0VJIq5bsNKz85Qht9AA7zMeLUm13R9bGO93jFCkNADGOj8NJeuokEm6GJW
-	TgZQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=cc:cc:content-transfer-encoding
-	:content-type:content-type:date:date:feedback-id:feedback-id
-	:from:from:in-reply-to:message-id:mime-version:reply-to:subject
-	:subject:to:to:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
-	fm3; t=1771142575; x=1771228975; bh=VjHuDUCBdPuzPfZZ59hYejkXpV6F
-	XrKXKbP88JxRbR0=; b=Q9nKH51Fk7FSD2Sz3PRLlOBg6dmwCOjfD8HSE/ernlsA
-	GAiwJ3L6MgFzw/rhZRl2kycqVnLIHCSAyA6tQxW9GX1WbhovNhlE3sb4I1DsS2UH
-	lN/evFwpvUAgOYXkUKv8HyeVIJcplsul/5lC7COH8LoKlxjgLTCRuCBvg7j2UWh5
-	pUnfS3neme1IaYxIWcVl1rlxJkhuchQMrj2IZsRo9p+6ZiPnjC10ukJKhoKcZP/g
-	ypRisZCczPWAmOTfxB4XnHTHvDrPqI2BUGz4y+hGAALrzNUmI+VupcqbKifILeOv
-	poKxfSklof4ad8N9AUQ8UlZlsdge7Dw0UfP6ycg+sg==
-X-ME-Sender: <xms:r32RaaASTCO0YH3nEKpObdSL2DBVsZBjeQAmtoHj-keQcqznH5sm0g>
-    <xme:r32Raa4sCp4G-wIOWuJoa3LyDndJbO6khD5RVgyHQAOHN5R9dHd3DADsducaPkBId
-    XAvYOainRAlEClxagfoopXErueoSwXeJTJWVmqoWUx05BbvjAMWFfE>
-X-ME-Received: <xmr:r32RaZ170f8DbzioOdn9Re-eFQ3iuvGLRvVDhh_lni5q5Vroleg60FQAObWAQyZw-i0l_wKXoyVAdIjq5TpfbahUADkn2lpAFaxLWg>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeefgedrtddtgddvudefgeeiucetufdoteggodetrf
-    dotffvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfurfetoffkrfgpnffqhgenuceu
-    rghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmnecujf
-    gurhephfffufggtgfgkffvvefosehtjeertdertdejnecuhfhrohhmpeflrghnnhgvucfi
-    rhhunhgruhcuoehjsehjrghnnhgruhdrnhgvtheqnecuggftrfgrthhtvghrnhepfeehle
-    dtheefteejfedvheetuedttdetleegudeuteejveetieefuedvfeffvdeinecuffhomhgr
-    ihhnpehkvghrnhgvlhdrohhrghenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmh
-    epmhgrihhlfhhrohhmpehjsehjrghnnhgruhdrnhgvthdpnhgspghrtghpthhtohepuddv
-    pdhmohguvgepshhmthhpohhuthdprhgtphhtthhopegrshgrhhhisehlihhsthhsrdhlih
-    hnuhigrdguvghvpdhrtghpthhtoheplhhinhhugidqphhhhieslhhishhtshdrihhnfhhr
-    rgguvggrugdrohhrghdprhgtphhtthhopehjsehjrghnnhgruhdrnhgvthdprhgtphhtth
-    hopehlihhnuhigqdhkvghrnhgvlhesvhhgvghrrdhkvghrnhgvlhdrohhrghdprhgtphht
-    thhopehvkhhouhhlsehkvghrnhgvlhdrohhrghdprhgtphhtthhopehnvghilhdrrghrmh
-    hsthhrohhngheslhhinhgrrhhordhorhhgpdhrtghpthhtohepnhgvrghlsehgohhmphgr
-    rdguvghvpdhrtghpthhtohepuggrnhdrtggrrhhpvghnthgvrheslhhinhgrrhhordhorh
-    hgpdhrtghpthhtoheplhhinhhugidqrghrmhdqkhgvrhhnvghlsehlihhsthhsrdhinhhf
-    rhgruggvrggurdhorhhg
-X-ME-Proxy: <xmx:r32RaWlPaqHeBRU5NR7jUKqtU9gVr9-eJefxE-FufBFvyY4kAZPH4g>
-    <xmx:r32RaX4wUhkGOIEHk0hSndqMKSxyMAu_eGRqPSr6nMg-7ufU3545Zg>
-    <xmx:r32RaZklYqX-q1q9OdMtyK3QD4je9w9ijLzxBBZpwAvLn1WTt6J2yg>
-    <xmx:r32RaSVbi2kDPBAFqsaovAe3h-7k8hv910rePKv_hYHhKe-4JMQU9w>
-    <xmx:r32RaXWQTHJNCT-7b5CyPljOwtOX4UeM99oXw2uhYjqeuHadWEo1OKNN>
-Feedback-ID: i47b949f6:Fastmail
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Sun,
- 15 Feb 2026 03:02:55 -0500 (EST)
-From: Janne Grunau <j@jannau.net>
-Date: Sun, 15 Feb 2026 09:02:51 +0100
-Subject: [PATCH phy-next v2] phy: apple: apple: Use local variable for
- ioremap return value
+	id 1vrXum-00000005H5h-0hv6
+	for linux-phy@lists.infradead.org;
+	Sun, 15 Feb 2026 08:55:41 +0000
+Received: by mail-wm1-x331.google.com with SMTP id 5b1f17b1804b1-4806ce0f97bso16614575e9.0
+        for <linux-phy@lists.infradead.org>; Sun, 15 Feb 2026 00:55:39 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1771145738; x=1771750538; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=sAQNxQv4JzsX9m+4gmiEwv4VehekE5HhN8PtLOEQY1Y=;
+        b=U2heVTBrA2/Ui/qJncYndQuoAnc5mxg0uvsRkm0IRnby6WXD5AQKpzuwvkFSDN42KN
+         dInghujX7WhpiyGbXsf8h/AYpFVoYbFx8qvyVzndd09dw48sT55LFk4ovsrTLUyxtSDH
+         m2SiSHFjAgzfrQko84NL15OTrE/8HNPcv0fSN885re9cx9OXo0vqRuOAuLZ7lKbr7fze
+         3RkCHaFH8tpvE5YtxraS13YEU+tlxmKMBF/6fDcag/dexnXNghPSvINeOjv5Gczv8q2O
+         7CAZfBe4WuAHLzA1Hx3x+ZGyuRbsZH6rMLP+9dBhVeGVNcwsDokkO2XMSrdEFY1m6vyZ
+         o+BQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1771145738; x=1771750538;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=sAQNxQv4JzsX9m+4gmiEwv4VehekE5HhN8PtLOEQY1Y=;
+        b=LFuOHHnWLwJ/L2HkSoOedraRiFZhKjD4cJIIceBgvHCsRQl6QjW/l0oz2CwUh7kCoa
+         vMUlJe/WNjx7UGA9haMW3oK1sy54QFs7QIBm/Qg+Pf5V0Fa6/R5hp2v37gG3Nx4W5uyg
+         SiuL1t9HU794585GI6tW1oWibM0fLxrTE7Kz1WIyYKMaH6y7ihei2VnB6XojshMFao5h
+         1xk+GQBumrPRjsr64YcsDQ1/Bby4yw+qwTbrFUZCTi9okAleMwIONgJPEWZWZIB335VU
+         CijOR/hJ8OEFkQVeNfwMamM7tgjh+6M4kV0tfW22QxuZme+OSN93PRexC3tnSxXxjSFu
+         GK6A==
+X-Forwarded-Encrypted: i=1; AJvYcCUkn8m/2pH0vOulDt4k8cEeLE0nhwjLbAZUeahVNvYP1GmWM5C8TidSin0lhrwHhXcD1Ep8IzidbEE=@lists.infradead.org
+X-Gm-Message-State: AOJu0YydSN9Jj7iFl8jH9b1sPxFQLkPZT8mjSRUNpIsYnp1CM3o430z1
+	Ab8e9jlBwrGCElFfXmYBDWq5Y0lgo9jRRWLiG722YmHQuIIgwzBthdKZ
+X-Gm-Gg: AZuq6aK6DG2CBbWxesMHJ8/3taSfmKY20/PakAQ5kO7iyXp+tpdPgwpvlpsoZiB4fIt
+	KI9Pl4F6KXgG261jn24wTfCOTb8YqIT9uV1zgvPfXnWjnaceMGVI43O8PTZzgHtqsU0M34S3IG9
+	p59f2vFH4PBKWQeVyFhQ/sNop+o82E/cNSyTE3zieL+bx21aLdyiMI034gk/Fr6691mqO489FQv
+	9XyCDnfUCUNzFDjsO1fPY3Xylbv5UdgqwKW7WlYXoP/1F6v1azQXq2XIvDWG/Lu/iMS5TBIfpXO
+	x/1hoX65mu5ifM3EuGwPnne3cDDDqQHvqkhJSFRPjLRmTHZlC0s+hZ8XejuXbJINY2Ha4PsWc9H
+	HNrs7NsuBLambTbbTzVbImx+M61DNgyLtICGMJDC3cNdQIBJh2ywIyxTDSa1sD5io3+0JEBELZZ
+	Q7gpCpWWGjhXC0Q4VFlYk=
+X-Received: by 2002:a05:600c:314f:b0:483:6d4e:9811 with SMTP id 5b1f17b1804b1-48373a73ec5mr119238475e9.31.1771145737543;
+        Sun, 15 Feb 2026 00:55:37 -0800 (PST)
+Received: from luca-vm.lan ([154.61.61.58])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4834d5d78cfsm547211675e9.1.2026.02.15.00.55.36
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 15 Feb 2026 00:55:37 -0800 (PST)
+From: Luca Leonardo Scorcia <l.scorcia@gmail.com>
+To: linux-mediatek@lists.infradead.org
+Cc: Luca Leonardo Scorcia <l.scorcia@gmail.com>,
+	Chun-Kuang Hu <chunkuang.hu@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	David Airlie <airlied@gmail.com>,
+	Simona Vetter <simona@ffwll.ch>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Chunfeng Yun <chunfeng.yun@mediatek.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	Jitao Shi <jitao.shi@mediatek.com>,
+	dri-devel@lists.freedesktop.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-phy@lists.infradead.org
+Subject: [PATCH 0/4] Add support for mt8167 display blocks
+Date: Sun, 15 Feb 2026 08:53:52 +0000
+Message-ID: <cover.1771144723.git.l.scorcia@gmail.com>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-Message-Id: <20260215-phy-apple-resource-err-ptr-v2-1-e43c22453682@jannau.net>
-X-B4-Tracking: v=1; b=H4sIAKp9kWkC/42NQQ6CMBBFr0Jm7Zi2CFVW3sO4qHS0NaY0UyAQw
- t2tPYHLl5f//gaJ2FOCrtqAafbJDyGDOlTQOxNehN5mBiVUK5TQGN2KJsYPIVMaJu4JiRnjyNh
- cVG2lrMWpbSAHItPTLyV+g98u0DLCPRvn0zjwWl5nWfw/B7NEifqs6+YhNFllr28TgpmOgXJ33
- /cvR8pQ5M8AAAA=
-X-Change-ID: 20260207-phy-apple-resource-err-ptr-5923d1130465
-To: Sven Peter <sven@kernel.org>, Neal Gompa <neal@gompa.dev>, 
- Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
- Philipp Zabel <p.zabel@pengutronix.de>
-Cc: asahi@lists.linux.dev, linux-phy@lists.infradead.org, 
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- Dan Carpenter <dan.carpenter@linaro.org>, 
- Vladimir Oltean <olteanv@gmail.com>, Janne Grunau <j@jannau.net>
-X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=2061; i=j@jannau.net;
- s=yk2025; h=from:subject:message-id;
- bh=k6Pu3hp4o8H6H3NimaF8MDzlCw3MXZsNEGNQ1rIeNOs=;
- b=owGbwMvMwCW2UNrmdq9+ahrjabUkhsyJtetetQpGnf/pL9vm/svKLZDzzlW3u15q09a3iqr/a
- 1ErXF7WUcrCIMbFICumyJKk/bKDYXWNYkztgzCYOaxMIEMYuDgFYCIPbjMy/K5w5Tqdp3r5UPRG
- +ww/x9Y25okMHlzBxe8rRJZ0W56XYPif37m2eE6xyDd1FgOrJ5WuVh7la+/yNwrdvCAbLs66Tp0
- bAA==
-X-Developer-Key: i=j@jannau.net; a=openpgp;
- fpr=8B336A6BE4E5695E89B8532B81E806F586338419
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260215_000258_301111_C8B13905 
-X-CRM114-Status: GOOD (  11.05  )
+X-CRM114-CacheID: sfid-20260215_005540_246851_568537D1 
+X-CRM114-Status: UNSURE (   9.18  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -130,57 +117,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The indirection through the resources array is unnecessarily complicated
-and resuling in using IS_ERR() and PTR_ERR() on a valid address. A local
-variable for the devm_ioremap_resource() return value is both easier to
-read and matches expectations when reading code.
+This series adds support for the display blocks on MediaTek mt8167.
+Tested on Xiaomi Mi Smart Clock x04g.
 
-Reported-by: Dan Carpenter <dan.carpenter@linaro.org>
-Closes: https://lore.kernel.org/asahi/aYXvX1bYOXtYCgfC@stanley.mountain/
-Suggested-by: Vladimir Oltean <olteanv@gmail.com>
-Fixes: 8e98ca1e74db ("phy: apple: Add Apple Type-C PHY")
-Signed-off-by: Janne Grunau <j@jannau.net>
----
-Changes in v2:
-- Use a local variable instead of the complex indirection with the
-  resources array
-- Link to v1: https://lore.kernel.org/r/20260207-phy-apple-resource-err-ptr-v1-1-78735b07ed2d@jannau.net
----
- drivers/phy/apple/atc.c | 8 +++++---
- 1 file changed, 5 insertions(+), 3 deletions(-)
+The first patch just does some reordering of dts nodes with no other changes
+as this makes later patches cleaner and easier to follow.
 
-diff --git a/drivers/phy/apple/atc.c b/drivers/phy/apple/atc.c
-index dc867f368b68748ea953e594ad998d7f965d8d1d..64d0c3dba1cbb95f867d338da706225ee0bf79f7 100644
---- a/drivers/phy/apple/atc.c
-+++ b/drivers/phy/apple/atc.c
-@@ -2202,14 +2202,16 @@ static int atcphy_map_resources(struct platform_device *pdev, struct apple_atcph
- 		{ "pipehandler", &atcphy->regs.pipehandler, NULL },
- 	};
- 	struct resource *res;
-+	void __iomem *addr;
- 
- 	for (int i = 0; i < ARRAY_SIZE(resources); i++) {
- 		res = platform_get_resource_byname(pdev, IORESOURCE_MEM, resources[i].name);
--		*resources[i].addr = devm_ioremap_resource(&pdev->dev, res);
--		if (IS_ERR(resources[i].addr))
--			return dev_err_probe(atcphy->dev, PTR_ERR(resources[i].addr),
-+		addr = devm_ioremap_resource(&pdev->dev, res);
-+		if (IS_ERR(addr))
-+			return dev_err_probe(atcphy->dev, PTR_ERR(addr),
- 					     "Unable to map %s regs", resources[i].name);
- 
-+		*resources[i].addr = addr;
- 		if (resources[i].res)
- 			*resources[i].res = res;
- 	}
+Luca Leonardo Scorcia (3):
+  arm64: dts: mt8167: Reorder nodes according to mmio address
+  dt-bindings: display: mediatek: Add compatibles for MediaTek mt8167
+  arm64: dts: mediatek: mt8167: Add DRM nodes
 
----
-base-commit: dbeea86fecef7cf2b93aded4525d74f6277376ef
-change-id: 20260207-phy-apple-resource-err-ptr-5923d1130465
+Val Packett (1):
+  gpu: drm: mediatek: ovl: add specific entry for mt8167
 
-Best regards,
+ .../display/mediatek/mediatek,aal.yaml        |   1 +
+ .../display/mediatek/mediatek,ccorr.yaml      |   4 +-
+ .../display/mediatek/mediatek,dither.yaml     |   1 +
+ .../display/mediatek/mediatek,dsi.yaml        |   5 +-
+ .../display/mediatek/mediatek,gamma.yaml      |   1 +
+ .../display/mediatek/mediatek,ovl.yaml        |   1 +
+ .../display/mediatek/mediatek,rdma.yaml       |   1 +
+ .../display/mediatek/mediatek,wdma.yaml       |   4 +-
+ .../bindings/phy/mediatek,dsi-phy.yaml        |   1 +
+ arch/arm64/boot/dts/mediatek/mt8167.dtsi      | 450 ++++++++++++++++--
+ drivers/gpu/drm/mediatek/mtk_disp_ovl.c       |  12 +
+ 11 files changed, 446 insertions(+), 35 deletions(-)
+
 -- 
-Janne Grunau <j@jannau.net>
+2.43.0
 
 
 -- 
