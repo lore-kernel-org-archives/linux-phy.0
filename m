@@ -4,81 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7C4EAE81A44
-	for <linux-phy@archiver.kernel.org>; Mon, 16 Feb 2026 16:25:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EFC15E81A47
+	for <linux-phy@archiver.kernel.org>; Mon, 16 Feb 2026 16:25:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zKoay/pSSrJrVlKbmhKVugNQGgLBwBgZb+yUm0NIgmI=; b=2L/7a1EnpyvB6W
-	dxRfw/mSS8a2vNOiJ2ruWkcceE/4k7aqKV35gf+jdK3T0T2sF5cSDewLQ9ljrV/1HD+lIlK4wqwK7
-	jRY76/Aaz81ThMJxw3AVXy9himFACCrXKrITYzEc5LxWBk8VhvSM2m23G0fd8cfRBC6VenTnKZMk+
-	qUGzk9GPA33ensOawmX2wEfMPJwVnN5hgdsGODYzQ+pL06bHgbl85970ENjWM1bAz3zbTScspef/z
-	as/7euPY+gYHAtIG3J+tKwOccFgMalrppjqcE2FzmhrUM60M4wVAVErHDVj46BKrhxTVjYrgaq3Di
-	9oTw1Pa56qDTzSVQb4CA==;
+	List-Owner; bh=Gh38Ti/Mfr/fhevv12HXa8ev3z6HzcBWu7XtyEwEQ1w=; b=I2QFKrcFAwCjIl
+	DM50Nu9C3pqpKCz/FD9npxHZtHVhdr3xR2uyhHF44NIGkgTJs0WyEDeR00WIy9pIPlRf9jXDekyGs
+	FVs6FPEfA5tB2eCiXZE3p6t0qHhzqtyMcc9g+y4pYWH4PRgVj29nCiJNuUEVav2h22cPyNXotq0QK
+	Cmjs1sT46yE4wO/izn1rg/UIAHy8fGHKaaatipa6XJ3K/YZgNF9rSQZvLgooVstArXBrAbfPrg/PL
+	TmyYcUZabODYc65k/Hf8cOp+gwS8ks5mubmPZYgN2r4U7UWTnj05olPPzaLyxhk74QJbfRZ3zogRt
+	NldUymeGeQTT65N10k2A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vs1PF-000000070z3-0dyh;
-	Mon, 16 Feb 2026 16:25:05 +0000
-Received: from mail-wr1-x42e.google.com ([2a00:1450:4864:20::42e])
+	id 1vs1PG-00000007118-0ncO;
+	Mon, 16 Feb 2026 16:25:06 +0000
+Received: from mail-wr1-x435.google.com ([2a00:1450:4864:20::435])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vs1P8-000000070pi-3L7v
+	id 1vs1PB-000000070sX-0KPe
 	for linux-phy@lists.infradead.org;
-	Mon, 16 Feb 2026 16:25:00 +0000
-Received: by mail-wr1-x42e.google.com with SMTP id ffacd0b85a97d-4359a316d89so2973408f8f.0
-        for <linux-phy@lists.infradead.org>; Mon, 16 Feb 2026 08:24:58 -0800 (PST)
+	Mon, 16 Feb 2026 16:25:02 +0000
+Received: by mail-wr1-x435.google.com with SMTP id ffacd0b85a97d-43767807cf3so2506564f8f.1
+        for <linux-phy@lists.infradead.org>; Mon, 16 Feb 2026 08:25:00 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1771259097; x=1771863897; darn=lists.infradead.org;
+        d=gmail.com; s=20230601; t=1771259099; x=1771863899; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=srYlY+UBKbck4YZkSnxZ2WyELTpV/5G0eCzsk4tYfvE=;
-        b=PFhOl1bC27zrQijEmHGwqd7iUP+nQv9LWYkKCDJXoF/e+QQLZqDKyojPlz2WItZ2ph
-         S3rN7TjpDGL5hPVN3Mx60aRdq8CwVIraSR4adAWjcg4I+ud68HsgUnuTFBh0bji7Get7
-         8NrKfcnB/itCA+tv+9tyrrJKASkEhwSSw3XE60i/tA8O68z5v2Dbd/noGEp4wtRoS32K
-         OtT6hmtCMKs3dH6bvACTHBh3ZBUoIUaGSjFzXRMEbGG5Tw4fm5jjv/FQaOSqMcpL5Jul
-         JszF2Tvq1fSLtzhpEV/BOANFC8z0QZEkeLYfuvlbOmRXqR5Ogct61vMgO+DrWrkl+jhZ
-         q1XA==
+        bh=EP/NkuwHIXZWXD+wl8EaORZCaWZmz1qMdyG8O5pYtJ0=;
+        b=OhIJGbCwnwz9AvhqZ01DESKOHI7Htwznf+TlHs1UNrlK+sK3/Af72t78olcpQ9jiT6
+         P6byLHms66PxHCxwLHNAZzGfSOuskSBTY+sn4aj7ACDc6089AOpiBRjryYKwXkAOfvSH
+         AhPD5qnEWIJKIkAd88EuYwzF+d+Dh0LdG7O6g51horushPDVo3rWeAcgVsRu/LGKexw9
+         gwuguR4sg19GsSamg8CQG/cQz9A71U85IulXrOmLM0Znu9bbiZnDnpEIWhpvr8j5EMWv
+         pXMC6GG6+2Yv4BUO0KRXDXlvozTX75VGAN1Jupo5u6eX/oxKSEy0bU3SXv9njh6/E1Hr
+         WEOA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1771259097; x=1771863897;
+        d=1e100.net; s=20230601; t=1771259099; x=1771863899;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to;
-        bh=srYlY+UBKbck4YZkSnxZ2WyELTpV/5G0eCzsk4tYfvE=;
-        b=KCqGplHdNUNGdCn4li54xBCpx0B3/jH6QnRuS6m5oPyt0MQvcBpOskTO7+Z9hZRX5M
-         Z1TCITcM5BgdMCfkOkm9pzPjxDOw+qFSanzcJynts3tNSYZsr5viGlrOT+/5E1SNTRRe
-         7pCb6EePv1zC34G++8Gn4Feaj7cg2fQjPS/6kgB32UH1tnzU2vy9XI2AbCbqZmSOqTjJ
-         6BfehY7lgyoCwCU4o6huq5hFOKVXY4W+u5Z4EIWU3b8hdirghn4WA/ZtMj8j/gwsFEdx
-         jd7+XeCpiwlpnt/UHIh2B/b97r4YLG7HOBZ8pNxhSHZZlKQKSFari6bZ7YctoPH4/KAD
-         yHZg==
-X-Forwarded-Encrypted: i=1; AJvYcCWAdEhtioQ9orm2YKGUBXNLmZ3QVo1D57+OfCRdoZLZVjBR1w3lNjr66FlFRi9+rMofS7lTazLPFrA=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwYqV8VZAnylZq5RpqfiCe4CrFH5pcSRXk+peWSN6OhH4JlnOHZ
-	dvDAniykOQWC6eWlY6cYHI7a6Vp5oUvbA+PlSpa4iYUJ1aUOUerLI2hd
-X-Gm-Gg: AZuq6aKuMnf2A8yCsVnwjBSY4DOPoIGt9oEh4z93slvUAFPUIESC+y7a8hufqZoqpbM
-	S5YenoxVyE249ltJRcGejK044b9s6YpxTovAWw6hFw9UK6SMFHfCfLQVh6GtCG5t1lDhDn3EfI7
-	5OlYBO+H0SSnlHptMrLVO+DaXCaj/pckuC7pxagYw97q0zWafPGVLc8JsXHjG08qPhtPnRY6hIJ
-	mTW6KK9YA+Spe11mOYbV4nCms8dTQQy6bV+m0wfuWN0/YdnfUtpcarLRI1MYu9gym2EQbrPPrsw
-	951/yLoilsvo1AObg+eIPHOjuPTuxAtUT3Mbk5eNHpkgOPp3/zHH9sKqe+zlRkEpgMGjZBHCp9u
-	FeS4jKiG9QTpFvOR28kmb/69hX6+9bAVdP0rcbQVw208Mn60CBstGsLQlIPLbH0gy9epu0GnYOz
-	zD9sidnXoXXheaUtabVGNAQBO2nCiPZQ==
-X-Received: by 2002:a05:6000:4014:b0:436:3563:499c with SMTP id ffacd0b85a97d-437978c75d4mr14802043f8f.8.1771259096696;
-        Mon, 16 Feb 2026 08:24:56 -0800 (PST)
+        bh=EP/NkuwHIXZWXD+wl8EaORZCaWZmz1qMdyG8O5pYtJ0=;
+        b=km7Ps/9jJvL9rAkTvgW9khcfm396+SNXQ6u6qMP9v70JBbAn1X/V0hgFB4qBlhOV42
+         35eTCn4iREG7ud7bvuzcq2KDXS/olzy4DZLVbfymCPzC1OZpwV0FNwEmvlhDq5s45S6M
+         UDtKQyyrJqGqt8BxKXVWLq9tJvDNHW6kytCUuQ2wzFHgQYTIaApvTba1psefFZhuWnK5
+         9zcJNkDfYdbXKV/kJjFZKH1laBSgpUgGc+Erp0UKYbJKYbNTa6LR3DNlNoEZB5G/lWr3
+         X+IyWPU5Eh15jYHUHK8ffjzfOJkmTza7Ky0iz2pEd4ER+/3yU8aV0aQS3Etzdx3XU02G
+         QzVw==
+X-Forwarded-Encrypted: i=1; AJvYcCWhISCGcWQjcY1j9dCVxP9fD4t4IOcYN8U2Ezk1adEraPsFYMcppqfeXOGYLAtynOkA1wsCe825dmk=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwGlaos1hR2p8qMMdh+AHa/nSFtaMs7CZi9RU27UamKjxcq9y7N
+	S2c4ibJbO9WvODcSajNF7NUZC6qAdHvml6dtrW0IKTFXYoGTzID4qYMi
+X-Gm-Gg: AZuq6aJG68Rdj7qq3PvH2yrA7hmd7k1mc/6jxRcafi8xlwElCLqbk9/5S+rl1OsaI6E
+	QDw3daiK0drJvFMvgEFxz5oixzascIoeyy1sxMwEx+CpUa0HQgxdzmWWFxaMqSjLNeFGjWMkFG6
+	zpuSX2eg5yPBUxQzABBfwjVEU5UP2kK5//DQ+rn1CNHTFSZu1zLYvnvgbTmSdy7HwsCq/1pzKyN
+	cvEbjsSZ/x6tvHvmehoGIOu2DBgiNom0z9Vh3OereZj+q7wXiPleVFeXcY4VhKdZ0Wn1hhUMchh
+	0+MXtPVkGl+WgdGT4IcI0kYKLLxUuvKbWD31eFb2GUfqyK6EqS+qVdi+hjjsmRBKhY3NRhk03a2
+	JGLy0ik05AqHnXsdzvcmIJbR7KDaaNm0ZSQzdp5oPc9HvL0AlFbiLYnBZShZrBUGqTAlmKJy5Jh
+	+o8rkThprXUq1iih1VknLxlM4Wi2PRmQ==
+X-Received: by 2002:a05:6000:4010:b0:436:1b1:6cbd with SMTP id ffacd0b85a97d-4379db25b60mr13014530f8f.6.1771259099036;
+        Mon, 16 Feb 2026 08:24:59 -0800 (PST)
 Received: from luca-vm.lan ([154.61.61.58])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-43796a6a6desm28775962f8f.10.2026.02.16.08.24.55
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-43796a6a6desm28775962f8f.10.2026.02.16.08.24.57
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 16 Feb 2026 08:24:56 -0800 (PST)
+        Mon, 16 Feb 2026 08:24:58 -0800 (PST)
 From: Luca Leonardo Scorcia <l.scorcia@gmail.com>
 To: linux-mediatek@lists.infradead.org
 Cc: Luca Leonardo Scorcia <l.scorcia@gmail.com>,
 	Chun-Kuang Hu <chunkuang.hu@kernel.org>,
 	Philipp Zabel <p.zabel@pengutronix.de>,
-	David Airlie <airlied@gmail.com>,
-	Simona Vetter <simona@ffwll.ch>,
 	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
 	Maxime Ripard <mripard@kernel.org>,
 	Thomas Zimmermann <tzimmermann@suse.de>,
+	David Airlie <airlied@gmail.com>,
+	Simona Vetter <simona@ffwll.ch>,
 	Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
 	Conor Dooley <conor+dt@kernel.org>,
@@ -94,16 +94,17 @@ Cc: Luca Leonardo Scorcia <l.scorcia@gmail.com>,
 	linux-kernel@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org,
 	linux-phy@lists.infradead.org
-Subject: [PATCH v2 3/6] dt-bindings: display: mediatek: Correct compatibility for mt8167-dsi
-Date: Mon, 16 Feb 2026 16:22:14 +0000
-Message-ID: <ff920a7cc94f2b0c03d4bb55142030fded30d07c.1771258407.git.l.scorcia@gmail.com>
+Subject: [PATCH v2 4/6] dt-bindings: phy: mediatek,dsi-phy: Add support for mt8167
+Date: Mon, 16 Feb 2026 16:22:15 +0000
+Message-ID: <66fbd5dd3604ffc4fda45022c1db68e4e0be6714.1771258407.git.l.scorcia@gmail.com>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <cover.1771258407.git.l.scorcia@gmail.com>
 References: <cover.1771258407.git.l.scorcia@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260216_082458_887043_B10ED268 
-X-CRM114-Status: GOOD (  12.20  )
+X-CRM114-CacheID: sfid-20260216_082501_155490_DA04FC9C 
+X-CRM114-Status: UNSURE (   9.38  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,40 +121,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Remove the dedicated "mediatek,mt8167-dsi" compatible from the device list and
-describe it as compatible with mt2701 instead. It is safe to do so because:
-
-- Bootloader doesn't rely on this single compatible; and
-- There was never any upstreamed devicetree using this single compatible; and
-- The MT8167 DSI Controller is fully compatible with the one found in MT2701.
-
-Fixes: 8867c4b39361 ("dt-bindings: display: mediatek: dsi: add documentation for MT8167 SoC")
+Add support for the MediaTek mt8167 SoC: the DSI PHY found
+in this chip is fully compatible with the one found in the mt2701 SoC.
 
 Signed-off-by: Luca Leonardo Scorcia <l.scorcia@gmail.com>
 ---
- .../devicetree/bindings/display/mediatek/mediatek,dsi.yaml   | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
+ Documentation/devicetree/bindings/phy/mediatek,dsi-phy.yaml | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,dsi.yaml b/Documentation/devicetree/bindings/display/mediatek/mediatek,dsi.yaml
-index 27ffbccc2a08..bcbde16648c0 100644
---- a/Documentation/devicetree/bindings/display/mediatek/mediatek,dsi.yaml
-+++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,dsi.yaml
-@@ -25,11 +25,14 @@ properties:
-       - enum:
-           - mediatek,mt2701-dsi
-           - mediatek,mt7623-dsi
--          - mediatek,mt8167-dsi
-           - mediatek,mt8173-dsi
-           - mediatek,mt8183-dsi
-           - mediatek,mt8186-dsi
-           - mediatek,mt8188-dsi
-+      - items:
-+          - enum:
-+              - mediatek,mt8167-dsi
-+          - const: mediatek,mt2701-dsi
+diff --git a/Documentation/devicetree/bindings/phy/mediatek,dsi-phy.yaml b/Documentation/devicetree/bindings/phy/mediatek,dsi-phy.yaml
+index acdbce937b0a..c6d0bbdbe0e2 100644
+--- a/Documentation/devicetree/bindings/phy/mediatek,dsi-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/mediatek,dsi-phy.yaml
+@@ -23,6 +23,7 @@ properties:
        - items:
            - enum:
-               - mediatek,mt6795-dsi
+               - mediatek,mt7623-mipi-tx
++              - mediatek,mt8167-mipi-tx
+           - const: mediatek,mt2701-mipi-tx
+       - items:
+           - enum:
 -- 
 2.43.0
 
