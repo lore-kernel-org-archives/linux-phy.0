@@ -4,67 +4,146 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 86D23E81A2B
-	for <linux-phy@archiver.kernel.org>; Mon, 16 Feb 2026 14:53:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BDEAAE81A2F
+	for <linux-phy@archiver.kernel.org>; Mon, 16 Feb 2026 14:56:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=csHUfkpyMv/a7cExzzzcGKu8xETIWegtLW4Xtav/fs8=; b=p/c3JG3g93rv6U
-	GO3+NIUFmjOPcxGs1I+7e8Tr4I2FMnh48gXCHnYnf3mTq01uKnKVMI4gdt5fOLeo77XZ7AKsj7nav
-	vh9oAdNYNhXMROpZweITdkxuu1YCi13eOm/0N5st3SBwzfaqFhfrExpGQ3yTMAhT4q5yqZ+S99+fM
-	+n+C9+uDaEHcELvKeVtxxI5CLNnP7BktFFfYSD1wt42SeLQhbbYact1GnIYnH+XAEju69ZxPQz4wr
-	WUgK+AGFHBaIkwO5zWpzR1VawlGLGxwcnVncGbmS/dzeE3WCgDW4Qlu4c1HEj5s3ObDKbS4E7S7ww
-	h5HCfNVQ9RarZVc+Q6Mw==;
+	List-Owner; bh=67guE3yFuR8TIjVG9xDw2RGE2u9GcFQjhah50D8sYKU=; b=0UDg0O76W68cy/
+	qie99MFlwpNBaNyKot3sG2Z+p3milzlYESwqUzBdmomwNoWzZcKH8hSBCb5q9bkdgBlIC1mePin3b
+	Lh9WwHooRVYaa0pgL+F0ide8VOZmf7SjcCIHuktlFdcnbW7OFdB3pxBbZxQf2ufGBO+h8DvDj5Le3
+	exuGOpJOP1eH67q0+pMBRl62K0klhe6eJdYqL5GKKi3P+CFSu/PaZylEbjTMgJmefkK//rMNyvWNb
+	vWlY7Qmnvkqc9YfiqK4fF+m7IORYg+HNsLj7iUimqKYBP/CQ+3YaEURcLtkRTGx6nPPfE6AvdlxEx
+	k70B372o7h0USjqLKJ/Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vrzyr-00000006pKf-3pXr;
-	Mon, 16 Feb 2026 14:53:45 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1vs01N-00000006pSK-24SQ;
+	Mon, 16 Feb 2026 14:56:21 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vrzyp-00000006pKK-1lPn
+	id 1vs01K-00000006pRz-3gqh
 	for linux-phy@lists.infradead.org;
-	Mon, 16 Feb 2026 14:53:44 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 68DDD4440B;
-	Mon, 16 Feb 2026 14:53:41 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6D392C116C6;
-	Mon, 16 Feb 2026 14:53:36 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1771253621;
-	bh=HZ6sQIcfz4i7aAUkGnkzO+bfJ830rmqltw2OdxrOaG8=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=XOky1iQ5CT292DEDIzdPeCetrTeuFgFisd2/R2giUzdZnXNG0rRStpFnbd6nC/C0g
-	 4sLDBVOGJo6nFuFEP3FX3OxE4uESDsCO9m/nUvT8VPY430+VXqhXTpcm/Ru0pRseyP
-	 kaQQ7lkykuEzQdcf7/fEWhmu4DZ86ggkGHUgNBni22Pg90zWO9RVcDCm4LGcyYb2uj
-	 Ivmr5JdahKXPsz6pGEaTtK5p7DxuZHDT1AEx1tCYjmTJB/qttMnToPVCvbEkCwHlRS
-	 d4UMVYraGKcVnp2+JpxTdYb5ttaZnjsoekeH9th7KRIhRHXT5XJ3rXyE3rod/nzrPx
-	 1jRO7IHAaVRaA==
-Date: Mon, 16 Feb 2026 20:23:25 +0530
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>, 
-	Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>, Vinod Koul <vkoul@kernel.org>, 
-	Philipp Zabel <p.zabel@pengutronix.de>, Jingoo Han <jingoohan1@gmail.com>, 
-	Lorenzo Pieralisi <lpieralisi@kernel.org>, Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
-	Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>, 
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	linux-pci@vger.kernel.org
+	Mon, 16 Feb 2026 14:56:20 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 61GBadBo3742541
+	for <linux-phy@lists.infradead.org>; Mon, 16 Feb 2026 14:56:18 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	dQWX3UQlIYFi0a7jRaznYPVGKQGU63wx8fL8q+mXUUo=; b=aOv0twFCc5RXC3DR
+	x7C4GzqgPXwfHb3wPEvhSjU6l+NsxJlNRA4kXaPRCcS57nvTj3F6HiDKlJCl+C31
+	qdSvNCKXmpUeJtTjvs5d/K4WkbGSaKJqMyouhZaGruZfXbwGVyAotidcpwufao86
+	Qg6NSw2QM0Fo4RT8fJ8PcmRtNLsFLfNJpIKUdMGTB5ZpwpZHCBxCwPPoPcfBlp+T
+	ZyhPIKC7RvSkF+Dk7Xq0Tcuq2gWZCMt5anhmWjN0aVVg8OT6deGbkwWg2TE3LmRU
+	UBW+x7Uy/ZcfGuXxHJErKZMXk1t4O3UnabJI3VZ96zDLGjz4CW8CPQ8vEl3Kta5M
+	Ek8yHA==
+Received: from mail-qt1-f199.google.com (mail-qt1-f199.google.com [209.85.160.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4caj7jcr2p-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Mon, 16 Feb 2026 14:56:18 +0000 (GMT)
+Received: by mail-qt1-f199.google.com with SMTP id d75a77b69052e-50698374e33so29272781cf.0
+        for <linux-phy@lists.infradead.org>; Mon, 16 Feb 2026 06:56:18 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1771253777; x=1771858577; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=dQWX3UQlIYFi0a7jRaznYPVGKQGU63wx8fL8q+mXUUo=;
+        b=MhRDvr9uiAIlwhhsUK2y+cDy56JaDs1Gs3VJbXpZ7B0MOy00QKN5v9SGV8GhvtDpuk
+         CG8o925cJG6PEQcXSwY7fU73ie+xdjmDPrUTzDV0l/2cu+77Jn9OJ3ClLBAAfefrFmsC
+         MSUZMF3zmLTDXEX3rFWaOAM9MaMy80kSUUigj09G4Yv3E2KeJX7Ikqopf42kBPQO+SRO
+         aiP73u5Y6KERBXU7GZzFSOmbYhmmPp5Vjq32or8zzhxKAKXE8nG7XjdVcRAj40euHeSE
+         YK0NQICp9oWIVmNIV7LC3LS8TAuOzpoDtIXwy08JG8E7+VLAe1ov5zGsQeq4j82Nh2RT
+         bMxA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1771253777; x=1771858577;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=dQWX3UQlIYFi0a7jRaznYPVGKQGU63wx8fL8q+mXUUo=;
+        b=NUonkkyhBEW5fdh6jrsQ4Z5EIBuLXQmu4qXKkM7pjLWQHNel3G9aWi+CHvrMwSZrkq
+         /2ncv7yQbwdwUUkpI1cKK1d/glm4TZGZh03jSww9bR/V4Pm4/dFe1+TO2KH3k8SVVKbs
+         nw2GdA/j3UNruvadAWKcDGkqtw7A9YaaEqTT0nLaVmQAuuCbiIrMWrYj/UO571KscHUW
+         fjG5KGLRpPp7O6gPEbiE/WTZ6q1XSGRw59fFgUpcGQ0L9xj2NzTBc8NzrVML6IoMgPqh
+         tzt9yblH4kfij0QxaZXty5k/jwTbHE3k4dtk2uwpjKD8msMzvZfWLpQCg8nuRI0BML39
+         R/Gg==
+X-Forwarded-Encrypted: i=1; AJvYcCUfpb19Ft/JswwD++I4SzxO6UsEj3KDFGplJHSXof5MVzGeZbzw6fj2QjHRVLFRovQnod12ubYPoS4=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yywy3NkPcTvWko1+ZHYf1z8vRTrBT/2St2Btto85m6Swf5LkQW5
+	AyNdbLMDTxVE0/MiQAiTKGkMHju6qwHv4PkX/U0RK825DvUPZO5ZHhY0/6GH+4ccVd0qYEde1ov
+	CDmxQLmX5g5hzDsi1togPnsC+KlzBbOTgSIcp94noXeHb8eaTPpPUDaTmOFcn0CWMF4fj
+X-Gm-Gg: AZuq6aIYCgPrSqZOBKtkBAKRQypotofByWXQjSs3rOrL9dd3/CzTD1wWn93LKPGC6IY
+	f/3MRNQH+rEb8ov9ct2WwsIYLuLL25Pw8gYmAa6x+ILarP+IwUidVxHDGo4wFNU6og25GyLxwAU
+	6djj4fxtmT+aqt0e2BpaiFoF+y9rz1nBcVuBeuPyGcBwsCyKq8vWzUDXKVkq7vH4SGwhYmkuwKh
+	n02ChWvP4utEJR7PKGTzykgWrhCL2gF1qoN0387OSAkD2gCCWdxzrJ05sFOqOa2znX3xmVws4Kv
+	rOChiaeIOgVpfdXcCIVwTq2Yy9Io21QZzdnM3LptME5iUNTollagkgkHM1mqKwa/fVrA/XDEQ1v
+	TqNI65Ubk+pHXMDQGA6RpMyju+BL5thqAUS8ZsQnXzpAOPeVWiMYtbEwTHHMTKJdZ6YAX8w8oAM
+	llgcw=
+X-Received: by 2002:a05:622a:1109:b0:502:a1bb:632a with SMTP id d75a77b69052e-506a666cea5mr115892631cf.0.1771253777221;
+        Mon, 16 Feb 2026 06:56:17 -0800 (PST)
+X-Received: by 2002:a05:622a:1109:b0:502:a1bb:632a with SMTP id d75a77b69052e-506a666cea5mr115892171cf.0.1771253776687;
+        Mon, 16 Feb 2026 06:56:16 -0800 (PST)
+Received: from [192.168.119.254] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-59e5f56a476sm3269353e87.32.2026.02.16.06.56.14
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 16 Feb 2026 06:56:16 -0800 (PST)
+Message-ID: <49540c43-894b-4d4c-8c46-4fe09d649729@oss.qualcomm.com>
+Date: Mon, 16 Feb 2026 15:56:13 +0100
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH 1/5] phy: qcom: qmp-pcie: Skip PHY reset if already up
-Message-ID: <aaqqdz2ssnetfgtybuerjfnkgr7r22xj2whaawaqhgm4y2ygom@jtkn5z2nw7aq>
+To: Manivannan Sadhasivam <mani@kernel.org>,
+        Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>,
+        Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>,
+        Vinod Koul <vkoul@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
+        Jingoo Han <jingoohan1@gmail.com>,
+        Lorenzo Pieralisi
+ <lpieralisi@kernel.org>,
+        =?UTF-8?Q?Krzysztof_Wilczy=C5=84ski?=
+ <kwilczynski@kernel.org>,
+        Rob Herring <robh@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org
 References: <20260109-link_retain-v1-0-7e6782230f4b@oss.qualcomm.com>
  <20260109-link_retain-v1-1-7e6782230f4b@oss.qualcomm.com>
  <nmle3y6nb4kjcwstzqxkqzaokeyjoegg6lxtmji57kxwh5snxa@p76v6dr7rgsg>
  <53f0c45f-7f5c-4abd-af84-cbb82d509872@linaro.org>
  <cvxvq7f2ku6aq5gbbqav42ckqk2raesbxq2bx46mxvapcza5v4@5zuyjdtn5us2>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <cvxvq7f2ku6aq5gbbqav42ckqk2raesbxq2bx46mxvapcza5v4@5zuyjdtn5us2>
+ <aaqqdz2ssnetfgtybuerjfnkgr7r22xj2whaawaqhgm4y2ygom@jtkn5z2nw7aq>
+Content-Language: en-US
+From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+In-Reply-To: <aaqqdz2ssnetfgtybuerjfnkgr7r22xj2whaawaqhgm4y2ygom@jtkn5z2nw7aq>
+X-Authority-Analysis: v=2.4 cv=dIurWeZb c=1 sm=1 tr=0 ts=69933012 cx=c_pps
+ a=WeENfcodrlLV9YRTxbY/uA==:117 a=FpWmc02/iXfjRdCD7H54yg==:17
+ a=IkcTkHD0fZMA:10 a=HzLeVaNsDn8A:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=Mpw57Om8IfrbqaoTuvik:22 a=GgsMoib0sEa3-_RKJdDe:22
+ a=gjtn7LuX9S0b4PncKSUA:9 a=QEXdDO2ut3YA:10 a=kacYvNCVWA4VmyqE58fU:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMjE2MDEyNyBTYWx0ZWRfX/W8RqoYyoXCf
+ R93DsaKGnkeOAxEjimHXaOW7r9txLiHEwpHs9Gs9yi/T9xlTw5dCDPmNGbwElMaH9krKL8w/hSw
+ 19t/3xXQGGbhuvZ59BCJ3j+YSuXkXhT0XGHub3CurWDqk7XAQBnaJdJXs41VADZMiLkQzrErV5P
+ 7p94L2ZFyZEhX0tzW/Zd0kEAoWwaoZaMfgmQVDxHeBvNx7grMl4bTVrZ1INUBPdtW1wOnlRX3Fs
+ l0WUzqbsft7skMmnRCDPX5NbFWBk/8jjlQDZ2YI7e4vWtcCX7k4nQM0ALdwo4xdtbd96OZTpzlN
+ wg4H8xZ/2VwYI4FqjT7uJ7tSZlBg2VSwVTAQZUUCP1zBMCUae1r3cCNadaPEmHFgQoygWPj9y4Q
+ rb5hwHgRQTlLogwOlaO3PGdB4JH8zo9QO1I7IgkGrvFokoq7SwC0EoY5XzKbC/Lf4ZE8xupi842
+ Q+j6H6LOYvhvP/SMvMA==
+X-Proofpoint-GUID: _aPlP4KLCkfNrOLUpQXFFQWdsppupx1l
+X-Proofpoint-ORIG-GUID: _aPlP4KLCkfNrOLUpQXFFQWdsppupx1l
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.51,FMLib:17.12.100.49
+ definitions=2026-02-16_04,2026-02-16_03,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ lowpriorityscore=0 adultscore=0 priorityscore=1501 malwarescore=0
+ phishscore=0 suspectscore=0 impostorscore=0 spamscore=0 clxscore=1015
+ bulkscore=0 classifier=typeunknown authscore=0 authtc= authcc= route=outbound
+ adjust=0 reason=mlx scancount=1 engine=8.22.0-2601150000
+ definitions=main-2602160127
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260216_065343_528601_93107EFB 
-X-CRM114-Status: GOOD (  32.38  )
+X-CRM114-CacheID: sfid-20260216_065618_928523_6DC01C5A 
+X-CRM114-Status: GOOD (  17.73  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,89 +155,49 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gRnJpLCBKYW4gMDksIDIwMjYgYXQgMDQ6MDM6MzdQTSArMDIwMCwgRG1pdHJ5IEJhcnlzaGtv
-diB3cm90ZToKPiBPbiBGcmksIEphbiAwOSwgMjAyNiBhdCAwMjoxMDo0OVBNICswMTAwLCBOZWls
-IEFybXN0cm9uZyB3cm90ZToKPiA+IE9uIDEvOS8yNiAxNDowOCwgRG1pdHJ5IEJhcnlzaGtvdiB3
-cm90ZToKPiA+ID4gT24gRnJpLCBKYW4gMDksIDIwMjYgYXQgMTI6NTE6MDZQTSArMDUzMCwgS3Jp
-c2huYSBDaGFpdGFueWEgQ2h1bmRydSB3cm90ZToKPiA+ID4gPiBJZiB0aGUgYm9vdGxvYWRlciBo
-YXMgYWxyZWFkeSBwb3dlcmVkIHVwIHRoZSBQQ0llIFBIWSwgZG9pbmcgYSBmdWxsCj4gPiA+ID4g
-cmVzZXQgYW5kIHdhaXRpbmcgZm9yIGl0IHRvIGNvbWUgdXAgYWdhaW4gc2xvd3MgZG93biBib290
-IHRpbWUuCj4gPiA+IAo+ID4gPiBIb3cgYmlnIGlzIHRoZSBkZWxheSBjYXVzZWQgYnkgaXQ/Cj4g
-PiA+IAo+ID4gPiA+IAo+ID4gPiA+IEFkZCBhIGNoZWNrIGZvciBQSFkgc3RhdHVzIGFuZCBza2lw
-IHRoZSByZXNldCBzdGVwcyB3aGVuIHRoZSBQSFkgaXMKPiA+ID4gPiBhbHJlYWR5IGFjdGl2ZS4g
-SW4gdGhpcyBjYXNlLCBvbmx5IGVuYWJsZSB0aGUgcmVxdWlyZWQgcmVzb3VyY2VzIGR1cmluZwo+
-ID4gPiA+IHBvd2VyLW9uLiBUaGlzIHdvcmtzIGFsb25nc2lkZSB0aGUgZXhpc3RpbmcgbG9naWMg
-dGhhdCBza2lwcyB0aGUgaW5pdAo+ID4gPiA+IHNlcXVlbmNlLgo+ID4gPiAKPiA+ID4gQ2FuIHdl
-IGVuZCB1cCBpbiBhIHN0YXRlIHdoZXJlIHRoZSBib290bG9hZGVyIGhhcyBtaXMtc2V0dXAgdGhl
-IGxpbms/IE9yCj4gPiA+IHRoZSBsaW5rIGdvaW5nIGJhZCBiZWNhdXNlIG9mIGFueSBnbGl0Y2gg
-ZHVyaW5nIHRoZSBib290dXA/Cj4gPiAKPiA+IEdvb2QgcXVlc3Rpb24sIGNhbiB3ZSBhZGQgYSBt
-b2R1bGUgcGFyYW1ldGVyIHRvIGZvcmNlIGEgZnVsbCByZXNldCBvZiB0aGUgUEhZIGluIGNhc2UK
-PiA+IHRoZSBib290bG9hZGVyIGlzIGJ1Z2d5ID8KPiAKPiBJJ2Qgc3VnZ2VzdCBhIHNpbXBsZXIg
-dGhpbmc6IGlmIHRoZSByZXNldCB3YXMgc2tpcHBlZCwgcmVzZXQgdGhlIFBIWSBpbgo+IGNhc2Ug
-b2YgYW4gZXJyb3IgYW5kIHJldHJ5LiBUaGF0J3MgYWxzbyBvbmUgb2YgdGhlIHJlYXNvbnMgd2h5
-IEkgYXNrZWQKPiBmb3Igc2tpcF9yZXNldCBub3QgdG8gYmUgdGhlIHBlcnNpc3RlbnQgdmFsdWUu
-Cj4gCgpJJ20gbm90IHN1cmUgd2hhdCB2YWx1ZSB3b3VsZCByZXNldHRpbmcgdGhlIFBIWSBwcm92
-aWRlIGluIHRoZSBjYXNlIG9mIGZhaWx1cmUuCkFzIHBlciB0aGlzIHBhdGNoLCBza2lwX3Jlc2V0
-IGlzIG9ubHkgZ29pbmcgdG8gYmUgc2V0IGZvciBwbGF0Zm9ybXMgd2hlcmUKYm9vdGxvYWRlciBo
-YXMgYWxyZWFkeSBjb25maWd1cmVkIHRoZSBQSFkuIFNvIGluIHRoZSBjYXNlIG9mIFBIWSBsaW5r
-IGZhaWx1cmUsCnNpbXBseSByZXNldHRpbmcgdGhlIFBIWSB3b24ndCBoZWxwIElNTyBhcyB0aGUg
-UEhZIHJlZ2lzdGVyIGNvbnRlbnRzIGFyZSBnb2luZwp0byBiZSBwcmVzaXN0ZW50IGR1ZSB0byBu
-b2Nzcl9yZXNldC4KCi0gTWFuaQoKPiA+IAo+ID4gPiAKPiA+ID4gPiAKPiA+ID4gPiBTaWduZWQt
-b2ZmLWJ5OiBLcmlzaG5hIENoYWl0YW55YSBDaHVuZHJ1IDxrcmlzaG5hLmNodW5kcnVAb3NzLnF1
-YWxjb21tLmNvbT4KPiA+ID4gPiAtLS0KPiA+ID4gPiAgIGRyaXZlcnMvcGh5L3F1YWxjb21tL3Bo
-eS1xY29tLXFtcC1wY2llLmMgfCAyOCArKysrKysrKysrKysrKysrKystLS0tLS0tLS0tCj4gPiA+
-ID4gICAxIGZpbGUgY2hhbmdlZCwgMTggaW5zZXJ0aW9ucygrKSwgMTAgZGVsZXRpb25zKC0pCj4g
-PiA+ID4gCj4gPiA+ID4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGh5L3F1YWxjb21tL3BoeS1xY29t
-LXFtcC1wY2llLmMgYi9kcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1xbXAtcGNpZS5jCj4g
-PiA+ID4gaW5kZXggODZiMWI3ZTJkYTg2YTg2NzVlM2U0OGU5MGI3ODJhZmIyMWNhZmQ3Ny4uYzkz
-ZTYxM2NmODBiMjYxMmYwZjIyNWZhMjEyNWY3OGRiZWMxYTMzZiAxMDA2NDQKPiA+ID4gPiAtLS0g
-YS9kcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1xbXAtcGNpZS5jCj4gPiA+ID4gKysrIGIv
-ZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20tcW1wLXBjaWUuYwo+ID4gPiA+IEBAIC0zMTUz
-LDYgKzMxNTMsNyBAQCBzdHJ1Y3QgcW1wX3BjaWUgewo+ID4gPiA+ICAgCWNvbnN0IHN0cnVjdCBx
-bXBfcGh5X2NmZyAqY2ZnOwo+ID4gPiA+ICAgCWJvb2wgdGNzcl80bG5fY29uZmlnOwo+ID4gPiA+
-ICAgCWJvb2wgc2tpcF9pbml0Owo+ID4gPiA+ICsJYm9vbCBza2lwX3Jlc2V0Owo+ID4gPiA+ICAg
-CXZvaWQgX19pb21lbSAqc2VyZGVzOwo+ID4gPiA+ICAgCXZvaWQgX19pb21lbSAqcGNzOwo+ID4g
-PiA+IEBAIC00NTM3LDYgKzQ1MzgsOSBAQCBzdGF0aWMgaW50IHFtcF9wY2llX2luaXQoc3RydWN0
-IHBoeSAqcGh5KQo+ID4gPiA+ICAgCQlxcGh5X2NoZWNrYml0cyhwY3MsIGNmZy0+cmVnc1tRUEhZ
-X1NUQVJUX0NUUkxdLCBTRVJERVNfU1RBUlQgfCBQQ1NfU1RBUlQpICYmCj4gPiA+ID4gICAJCXFw
-aHlfY2hlY2tiaXRzKHBjcywgY2ZnLT5yZWdzW1FQSFlfUENTX1BPV0VSX0RPV05fQ09OVFJPTF0s
-IGNmZy0+cHdyZG5fY3RybCk7Cj4gPiA+ID4gKwlxbXAtPnNraXBfcmVzZXQgPSBxbXAtPnNraXBf
-aW5pdCAmJiAhcXBoeV9jaGVja2JpdHMocGNzLCBjZmctPnJlZ3NbUVBIWV9QQ1NfU1RBVFVTXSwK
-PiA+ID4gCj4gPiA+IEl0IGlzIGRlZmluaXRlbHkgbm90IGEgbG9uZy10ZXJtIHN0YXRlLCB0aGVy
-ZSBpcyBubyBuZWVkIHRvIHN0b3JlIGl0IGluCj4gPiA+IHFtcF9wY2llIHN0cnVjdC4KPiA+ID4g
-Cj4gPiA+ID4gKwkJCQkJCQkgICAgY2ZnLT5waHlfc3RhdHVzKTsKPiA+ID4gPiArCj4gPiA+ID4g
-ICAJaWYgKCFxbXAtPnNraXBfaW5pdCAmJiAhY2ZnLT50YmxzLnNlcmRlc19udW0pIHsKPiA+ID4g
-PiAgIAkJZGV2X2VycihxbXAtPmRldiwgIkluaXQgc2VxdWVuY2Ugbm90IGF2YWlsYWJsZVxuIik7
-Cj4gPiA+ID4gICAJCXJldHVybiAtRU5PREFUQTsKPiA+ID4gPiBAQCAtNDU2MCwxMyArNDU2NCwx
-NSBAQCBzdGF0aWMgaW50IHFtcF9wY2llX2luaXQoc3RydWN0IHBoeSAqcGh5KQo+ID4gPiA+ICAg
-CQl9Cj4gPiA+ID4gICAJfQo+ID4gPiA+IC0JcmV0ID0gcmVzZXRfY29udHJvbF9hc3NlcnQocW1w
-LT5ub2Nzcl9yZXNldCk7Cj4gPiA+ID4gLQlpZiAocmV0KSB7Cj4gPiA+ID4gLQkJZGV2X2Vycihx
-bXAtPmRldiwgIm5vLWNzciByZXNldCBhc3NlcnQgZmFpbGVkXG4iKTsKPiA+ID4gPiAtCQlnb3Rv
-IGVycl9hc3NlcnRfcmVzZXQ7Cj4gPiA+ID4gLQl9Cj4gPiA+ID4gKwlpZiAoIXFtcC0+c2tpcF9y
-ZXNldCkgewo+ID4gPiA+ICsJCXJldCA9IHJlc2V0X2NvbnRyb2xfYXNzZXJ0KHFtcC0+bm9jc3Jf
-cmVzZXQpOwo+ID4gPiA+ICsJCWlmIChyZXQpIHsKPiA+ID4gPiArCQkJZGV2X2VycihxbXAtPmRl
-diwgIm5vLWNzciByZXNldCBhc3NlcnQgZmFpbGVkXG4iKTsKPiA+ID4gPiArCQkJZ290byBlcnJf
-YXNzZXJ0X3Jlc2V0Owo+ID4gPiA+ICsJCX0KPiA+ID4gPiAtCXVzbGVlcF9yYW5nZSgyMDAsIDMw
-MCk7Cj4gPiA+ID4gKwkJdXNsZWVwX3JhbmdlKDIwMCwgMzAwKTsKPiA+ID4gPiArCX0KPiA+ID4g
-PiAgIAlpZiAoIXFtcC0+c2tpcF9pbml0KSB7Cj4gPiA+ID4gICAJCXJldCA9IHJlc2V0X2NvbnRy
-b2xfYnVsa19kZWFzc2VydChjZmctPm51bV9yZXNldHMsIHFtcC0+cmVzZXRzKTsKPiA+ID4gPiBA
-QCAtNDY0MSwxMCArNDY0NywxMiBAQCBzdGF0aWMgaW50IHFtcF9wY2llX3Bvd2VyX29uKHN0cnVj
-dCBwaHkgKnBoeSkKPiA+ID4gPiAgIAlpZiAocmV0KQo+ID4gPiA+ICAgCQlyZXR1cm4gcmV0Owo+
-ID4gPiA+IC0JcmV0ID0gcmVzZXRfY29udHJvbF9kZWFzc2VydChxbXAtPm5vY3NyX3Jlc2V0KTsK
-PiA+ID4gPiAtCWlmIChyZXQpIHsKPiA+ID4gPiAtCQlkZXZfZXJyKHFtcC0+ZGV2LCAibm8tY3Ny
-IHJlc2V0IGRlYXNzZXJ0IGZhaWxlZFxuIik7Cj4gPiA+ID4gLQkJZ290byBlcnJfZGlzYWJsZV9w
-aXBlX2NsazsKPiA+ID4gPiArCWlmICghcW1wLT5za2lwX3Jlc2V0KSB7Cj4gPiA+ID4gKwkJcmV0
-ID0gcmVzZXRfY29udHJvbF9kZWFzc2VydChxbXAtPm5vY3NyX3Jlc2V0KTsKPiA+ID4gPiArCQlp
-ZiAocmV0KSB7Cj4gPiA+ID4gKwkJCWRldl9lcnIocW1wLT5kZXYsICJuby1jc3IgcmVzZXQgZGVh
-c3NlcnQgZmFpbGVkXG4iKTsKPiA+ID4gPiArCQkJZ290byBlcnJfZGlzYWJsZV9waXBlX2NsazsK
-PiA+ID4gPiArCQl9Cj4gPiA+ID4gICAJfQo+ID4gPiA+ICAgCWlmIChxbXAtPnNraXBfaW5pdCkK
-PiA+ID4gPiAKPiA+ID4gPiAtLSAKPiA+ID4gPiAyLjM0LjEKPiA+ID4gPiAKPiA+ID4gCj4gPiAK
-PiAKPiAtLSAKPiBXaXRoIGJlc3Qgd2lzaGVzCj4gRG1pdHJ5CgotLSAK4K6u4K6j4K6/4K614K6j
-4K+N4K6j4K6p4K+NIOCumuCupOCuvuCumuCuv+CuteCuruCvjQoKLS0gCmxpbnV4LXBoeSBtYWls
-aW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZy
-YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On 2/16/26 3:53 PM, Manivannan Sadhasivam wrote:
+> On Fri, Jan 09, 2026 at 04:03:37PM +0200, Dmitry Baryshkov wrote:
+>> On Fri, Jan 09, 2026 at 02:10:49PM +0100, Neil Armstrong wrote:
+>>> On 1/9/26 14:08, Dmitry Baryshkov wrote:
+>>>> On Fri, Jan 09, 2026 at 12:51:06PM +0530, Krishna Chaitanya Chundru wrote:
+>>>>> If the bootloader has already powered up the PCIe PHY, doing a full
+>>>>> reset and waiting for it to come up again slows down boot time.
+>>>>
+>>>> How big is the delay caused by it?
+>>>>
+>>>>>
+>>>>> Add a check for PHY status and skip the reset steps when the PHY is
+>>>>> already active. In this case, only enable the required resources during
+>>>>> power-on. This works alongside the existing logic that skips the init
+>>>>> sequence.
+>>>>
+>>>> Can we end up in a state where the bootloader has mis-setup the link? Or
+>>>> the link going bad because of any glitch during the bootup?
+>>>
+>>> Good question, can we add a module parameter to force a full reset of the PHY in case
+>>> the bootloader is buggy ?
+>>
+>> I'd suggest a simpler thing: if the reset was skipped, reset the PHY in
+>> case of an error and retry. That's also one of the reasons why I asked
+>> for skip_reset not to be the persistent value.
+>>
+> 
+> I'm not sure what value would resetting the PHY provide in the case of failure.
+> As per this patch, skip_reset is only going to be set for platforms where
+> bootloader has already configured the PHY. So in the case of PHY link failure,
+> simply resetting the PHY won't help IMO as the PHY register contents are going
+> to be presistent due to nocsr_reset.
+
+We can pull the not-nocsr_reset though?
+
+Konrad
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
