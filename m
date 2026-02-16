@@ -4,54 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A14EEE63F15
-	for <linux-phy@archiver.kernel.org>; Mon, 16 Feb 2026 13:39:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 77EE0E63F3F
+	for <linux-phy@archiver.kernel.org>; Mon, 16 Feb 2026 13:39:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8wJw3xqHPgWnROfDH6RGMx1IFTr/lJI95kyJevXufZE=; b=m3qFEjXvmG+NyK
-	3xQtg0f2cQ/nuRHc+uKyn0luO4Bn+eKsV1BHi9wXW/Y+7AiA3u9ghWajeYviHDERQDYx730B/LZcC
-	9jPEoGsUS9IbQciAw8nCCX4tENLGQqkr0j01MOupSuV5U1U4P+Ibolj2R2aTo1hY6buKH0Gm9UojX
-	Z/IyYdrdsH26pkv/q24URJEin9tK1ZyH4+1k7H5W4aee8CzoOlY7mwXd26bUWJ2GgnWDkB1AGE93P
-	xywtGX+CYTdQ1AaCc4Xi7Ss1zI7qmkHeC0H4ELEZne4VylFUdnlIEQXUsWXkTMn9gcCKN2u6rQdPi
-	V2en/6FTYeLbIrfnhkUw==;
+	List-Owner; bh=K/OKESLTy8agwd/vt4PgruHhRbcvK5c68l08rWCKeuo=; b=EYPUbbWhdQkZBj
+	Q7OTJdsyF9wELjKcCc8XSTmlB8YDdu9ZM84DqD7cE2WDsCyGUhNauy5cQTrhTs6gavxjG4eCIUBOl
+	6ee7DbMpnSazPnFQF90QO08MWi5wgfyGp+VSsmXsScyCHRH3LKT/n/NtIPHzo445qL/CgSmSudAI6
+	Kbsi68/sdvuMlQHdmzAlPzpuHOGvEJCjf/vPl0VtWVyZqAL0yEUtnxZVnKFBdNWuH7YwHTg4mcsF6
+	YHv0QUwGov2b725LZTZ/jdEv8sUYmbKoXAgwGMQSom1abbn1BlcyMwemYTKVRt6rVrFwemWgxNBRt
+	0RDRXRrsA5EvzMtB9xUQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vrypK-00000006guR-3iae;
-	Mon, 16 Feb 2026 13:39:50 +0000
-Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
+	id 1vrypS-00000006h4C-3kUx;
+	Mon, 16 Feb 2026 13:39:58 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vryp6-00000006gdI-00Fa;
-	Mon, 16 Feb 2026 13:39:48 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1771249165; cv=none; 
+	id 1vrypK-00000006gtS-3Tms;
+	Mon, 16 Feb 2026 13:39:50 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Cc:To:In-Reply-To:References:
+	Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
+	From:Sender:Reply-To:Content-ID:Content-Description;
+	bh=YlWgPv0xgDKm0O0ex9U3rjkYaHkUTs08P1u5xwpcKN8=; b=UDHVrZazpEaYAeJ+FUuKI5dWou
+	2qcf1bxcIXszVi25Yy6AU0XwmrHJQfYNRKml5+cG/BOAyldYXbaqNpYISEpL9JM0tT6C99EXFGFI3
+	VyN8vGNSGLFmu/g9UrlnxGt+wDjia2qfewZ+CQSqSr5g1/HrSUOuD7a/7YhNAPqmZFQMBmTHvyKn8
+	CTemqyMMLI/5hZQtXr/nSaq9yLfGw6zFebtHpvmMSoMA4lGlAiNVAUtkRnF+dASBNyG9UwyACF9FQ
+	V0zM2JpQukoGvY2ncmPR0G5i3GiU4XRm1ShnDCK9H0aaHlrc00A/4ON+W2Z2zfRzfb3gZvnuKPPEj
+	VBaxcvbQ==;
+Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
+	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1vrypH-0000000Eahv-3fzL;
+	Mon, 16 Feb 2026 13:39:49 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1771249175; cv=none; 
 	d=zohomail.com; s=zohoarc; 
-	b=eQzV0aPuOYJAE0qpEQMpyc4Fr9e06YQOhiKBIdd+vNBxCTu7SixxgBO93X1As1OdVNVYbtx983tJPcl4dcMG0Q08/4JbkU1rKnJ0oS+r5F/bsSVH4XK4P3srdpx1D1Z1TJ803HSTRfMp7/2ajWD+sMc6G4yffgOpthjaWt30/rY=
+	b=VVLenE+fEqvHGpmunAoBblKWCrSRNF/y6yZiav0p3UCjnFUWJFG+fQYxjZldV3Qa57uiZxEcy5Ha9bIZIKmZ2nq0JLDwZS6cANkI6cMJmgitRoBx0pQs4IzqWP1t+AkRS3qbpEMQenk6vFZnb7jryhZjQ+UI3q09Sus6H1q8lVM=
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1771249165; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=6FwKjiPKBXZBYyQbYzVbwkdoXySYiIbPYzGjqC4h6fo=; 
-	b=mk0rob81zc2cI0ccJSuoPKplvdrEOI9e2emqWoKe/KAb1pNV5X4RTY7keYUecuImYNujCzZ/B02O8255iH3BCYFArSNXBnEIYpyT5nXF6Zu7U/xHP+Hlmc20zjxrntYQquiQLhrle5I7drXvAzUyCXWVSpm3uenCZH1YxE3pCQM=
+	t=1771249175; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=YlWgPv0xgDKm0O0ex9U3rjkYaHkUTs08P1u5xwpcKN8=; 
+	b=nkiH/BZ8rZu8qRgLCtTc3cNcOF18y1fOP0wnMxlPRXv20GQW1P2u06ONgbypIyNwNisEdEKgrgaOVSYjl0nZBfn0qJer/jxDk0wI/qkMyM8xyr9rSyw9zrrtb/41vAhdb85CuyqHH980m610j/3P2ekBmxdQkX4cOmVj1+uQ9TA=
 ARC-Authentication-Results: i=1; mx.zohomail.com;
 	dkim=pass  header.i=collabora.com;
 	spf=pass  smtp.mailfrom=nicolas.frattaroli@collabora.com;
 	dmarc=pass header.from=<nicolas.frattaroli@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1771249165;
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1771249175;
 	s=zohomail; d=collabora.com; i=nicolas.frattaroli@collabora.com;
 	h=From:From:Date:Date:Subject:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-Id:Message-Id:References:In-Reply-To:To:To:Cc:Cc:Reply-To;
-	bh=6FwKjiPKBXZBYyQbYzVbwkdoXySYiIbPYzGjqC4h6fo=;
-	b=kPLoDJoBe+Cwk1FWFXgxN+AQPZM4nMRgmYgDShKiMm8k7bTGwWzZzzMk1S33H7LA
-	yc/4CXK5SzpUNJN12XaVAG+SHqIqEL4RQdD7o1TQyOhicRUoyFSeoKS3Hpu9mqcTMSD
-	ERjxf8SG0oFjdfTLspdzsAdtq8765gmzNaCky1zI=
-Received: by mx.zohomail.com with SMTPS id 1771249163431748.1996618264048;
-	Mon, 16 Feb 2026 05:39:23 -0800 (PST)
+	bh=YlWgPv0xgDKm0O0ex9U3rjkYaHkUTs08P1u5xwpcKN8=;
+	b=SXvuteBcgZuZGzGNVSRg4c7byjdZd847bf2B9Al1d/ZGFSkGZX5DEbBYraIykrZd
+	0ZlDm5djnIl4K8SCHBnUZiqt8AQAo1DFKI2zyxo4+CLRL6c/Gg4u3/YiEn8rhxIKsfV
+	DziLDMPFC0KKQQsg0SQJPE1Xoi/r7chO8DMjOdPI=
+Received: by mx.zohomail.com with SMTPS id 1771249174555611.9633342830647;
+	Mon, 16 Feb 2026 05:39:34 -0800 (PST)
 From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-Date: Mon, 16 Feb 2026 14:37:48 +0100
-Subject: [PATCH v7 15/23] scsi: ufs: mediatek: Rework _ufs_mtk_clk_scale
- error paths
+Date: Mon, 16 Feb 2026 14:37:50 +0100
+Subject: [PATCH v7 17/23] scsi: ufs: mediatek: Rework
+ ufs_mtk_wait_idle_state
 MIME-Version: 1.0
-Message-Id: <20260216-mt8196-ufs-v7-15-b5f2907c6da7@collabora.com>
+Message-Id: <20260216-mt8196-ufs-v7-17-b5f2907c6da7@collabora.com>
 References: <20260216-mt8196-ufs-v7-0-b5f2907c6da7@collabora.com>
 In-Reply-To: <20260216-mt8196-ufs-v7-0-b5f2907c6da7@collabora.com>
 To: Alim Akhtar <alim.akhtar@samsung.com>, 
@@ -76,8 +90,8 @@ Cc: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>,
  Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 X-Mailer: b4 0.14.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260216_053936_115238_EE65CADB 
-X-CRM114-Status: GOOD (  13.23  )
+X-CRM114-CacheID: sfid-20260216_133948_169792_B13DB594 
+X-CRM114-Status: GOOD (  18.90  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,112 +108,134 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Errors should be printed at the correct log level. Additionally, it
-looks like some "goto out"'s were omitted in the scale up case, which
-looks like a mistake, as the scale down branch of the code does use
-them.
+While ufs_mtk_wait_idle state has some code smells for me (the
+VS_HCE_BASE early exit seems racey at best), it can still benefit from
+some general cleanup to make the code flow less convoluted.
 
-Rework the error messages to make them nicer and at the correct
-verbosity, and add the missing gotos.
+Use the iopoll helpers, for one, and specifically the one that sleeps
+and does not busy delay, as it's being done for up to 5ms.
+
+The register read is split out to a helper function that branches
+between new and old style flow.
+
+Every called uses the same 5ms timeout value, so there is no point in
+making this a parameter. Just assume a 5ms timeout in the function.
 
 Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 ---
- drivers/ufs/host/ufs-mediatek.c | 41 +++++++++++++++++++----------------------
- 1 file changed, 19 insertions(+), 22 deletions(-)
+ drivers/ufs/host/ufs-mediatek.c | 71 +++++++++++++++++------------------------
+ 1 file changed, 30 insertions(+), 41 deletions(-)
 
 diff --git a/drivers/ufs/host/ufs-mediatek.c b/drivers/ufs/host/ufs-mediatek.c
-index 424533538b90..ecf16e82a326 100644
+index 2b1f26b55782..b5c75d228c85 100644
 --- a/drivers/ufs/host/ufs-mediatek.c
 +++ b/drivers/ufs/host/ufs-mediatek.c
-@@ -1961,16 +1961,16 @@ static void _ufs_mtk_clk_scale(struct ufs_hba *hba, bool scale_up)
+@@ -10,6 +10,7 @@
+ #include <linux/bitfield.h>
+ #include <linux/clk.h>
+ #include <linux/delay.h>
++#include <linux/iopoll.h>
+ #include <linux/module.h>
+ #include <linux/of.h>
+ #include <linux/of_address.h>
+@@ -380,51 +381,39 @@ static void ufs_mtk_dbg_sel(struct ufs_hba *hba)
+ 	}
+ }
  
- 	ret = clk_prepare_enable(clki->clk);
- 	if (ret) {
--		dev_info(hba->dev,
--			 "clk_prepare_enable() fail, ret: %d\n", ret);
-+		dev_err(hba->dev, "%s: Failed to enable clock: %pe\n", __func__, ERR_PTR(ret));
- 		return;
+-static int ufs_mtk_wait_idle_state(struct ufs_hba *hba,
+-			    unsigned long retry_ms)
++static u32 ufs_mtk_read_state(struct ufs_hba *hba, bool old_style)
+ {
+-	u64 timeout, time_checked;
+-	u32 val, sm;
+-	bool wait_idle;
+-	struct ufs_mtk_host *host = ufshcd_get_variant(hba);
+-
+-	/* cannot use plain ktime_get() in suspend */
+-	timeout = ktime_get_mono_fast_ns() + retry_ms * 1000000UL;
+-
+-	/* wait a specific time after check base */
+-	udelay(10);
+-	wait_idle = false;
++	u32 val;
+ 
+-	do {
+-		time_checked = ktime_get_mono_fast_ns();
+-		if (host->legacy_ip_ver || host->ip_ver < IP_VER_MT6899) {
+-			ufs_mtk_dbg_sel(hba);
+-			val = ufshcd_readl(hba, REG_UFS_PROBE);
+-		} else {
+-			val = ufshcd_readl(hba, REG_UFS_UFS_MMIO_OTSD_CTRL);
+-			val = val >> 16;
+-		}
++	if (old_style) {
++		ufs_mtk_dbg_sel(hba);
++		val = ufshcd_readl(hba, REG_UFS_PROBE);
++	} else {
++		val = ufshcd_readl(hba, REG_UFS_UFS_MMIO_OTSD_CTRL) >> 16;
++	}
+ 
+-		sm = val & 0x1f;
++	return FIELD_GET(0x1f, val);
++}
+ 
+-		/*
+-		 * if state is in H8 enter and H8 enter confirm
+-		 * wait until return to idle state.
+-		 */
+-		if ((sm >= VS_HIB_ENTER) && (sm <= VS_HIB_EXIT)) {
+-			wait_idle = true;
+-			udelay(50);
+-			continue;
+-		} else if (!wait_idle)
+-			break;
++static int ufs_mtk_wait_idle_state(struct ufs_hba *hba)
++{
++	struct ufs_mtk_host *host = ufshcd_get_variant(hba);
++	bool old_style = (host->legacy_ip_ver || host->ip_ver < IP_VER_MT6899);
++	u32 val;
++	int ret;
+ 
+-		if (wait_idle && (sm == VS_HCE_BASE))
+-			break;
+-	} while (time_checked < timeout);
++	/* If the device is already in the base state after 10us, don't wait. */
++	udelay(10);
++	if (ufs_mtk_read_state(hba, old_style) == VS_HCE_BASE)
++		return 0;
+ 
+-	if (wait_idle && sm != VS_HCE_BASE) {
+-		dev_info(hba->dev, "wait idle tmo: 0x%x\n", val);
+-		return -ETIMEDOUT;
++	/* Poll to wait for idle */
++	ret = read_poll_timeout(ufs_mtk_read_state, val,
++				(val < VS_HIB_ENTER || val > VS_HIB_EXIT), 50,
++				5 * USEC_PER_MSEC, false, hba, old_style);
++	if (ret) {
++		dev_err(hba->dev, "Timed out waiting for idle state, val = 0x%x\n", val);
++		return ret;
  	}
  
- 	if (clk_fde_scale) {
- 		ret = clk_prepare_enable(fde_clki->clk);
- 		if (ret) {
--			dev_info(hba->dev,
--				 "fde clk_prepare_enable() fail, ret: %d\n", ret);
-+			dev_err(hba->dev, "%s: Failed to enable FDE clock: %pe\n",
-+				__func__, ERR_PTR(ret));
-+			clk_disable_unprepare(clki->clk);
- 			return;
- 		}
- 	}
-@@ -1979,51 +1979,48 @@ static void _ufs_mtk_clk_scale(struct ufs_hba *hba, bool scale_up)
- 		if (clk_bind_vcore) {
- 			ret = regulator_set_voltage(reg, volt, INT_MAX);
- 			if (ret) {
--				dev_info(hba->dev,
--					"Failed to set vcore to %d\n", volt);
-+				dev_err(hba->dev, "Failed to set vcore to %d\n", volt);
- 				goto out;
- 			}
- 		}
+ 	return 0;
+@@ -1389,7 +1378,7 @@ static int ufs_mtk_auto_hibern8_disable(struct ufs_hba *hba)
+ 	ufshcd_writel(hba, 0, REG_AUTO_HIBERNATE_IDLE_TIMER);
  
- 		ret = clk_set_parent(clki->clk, mclk->ufs_sel_max_clki->clk);
- 		if (ret) {
--			dev_info(hba->dev, "Failed to set clk mux, ret = %d\n",
--				ret);
-+			dev_err(hba->dev, "%s: Failed to set clock mux: %pe\n",
-+				__func__, ERR_PTR(ret));
-+			goto out;
- 		}
+ 	/* wait host return to idle state when auto-hibern8 off */
+-	ret = ufs_mtk_wait_idle_state(hba, 5);
++	ret = ufs_mtk_wait_idle_state(hba);
+ 	if (ret)
+ 		goto out;
  
- 		if (clk_fde_scale) {
--			ret = clk_set_parent(fde_clki->clk,
--				mclk->ufs_fde_max_clki->clk);
-+			ret = clk_set_parent(fde_clki->clk, mclk->ufs_fde_max_clki->clk);
- 			if (ret) {
--				dev_info(hba->dev,
--					"Failed to set fde clk mux, ret = %d\n",
--					ret);
-+				dev_err(hba->dev, "%s: Failed to set fde clock mux: %pe\n",
-+					__func__, ERR_PTR(ret));
-+				goto out;
- 			}
- 		}
- 	} else {
- 		if (clk_fde_scale) {
--			ret = clk_set_parent(fde_clki->clk,
--				mclk->ufs_fde_min_clki->clk);
-+			ret = clk_set_parent(fde_clki->clk, mclk->ufs_fde_min_clki->clk);
- 			if (ret) {
--				dev_info(hba->dev,
--					"Failed to set fde clk mux, ret = %d\n",
--					ret);
-+				dev_err(hba->dev, "%s: Failed to set fde clock mux: %pe\n",
-+					__func__, ERR_PTR(ret));
- 				goto out;
- 			}
- 		}
+@@ -1593,7 +1582,7 @@ static int ufs_mtk_link_set_hpm(struct ufs_hba *hba)
+ 		return err;
  
- 		ret = clk_set_parent(clki->clk, mclk->ufs_sel_min_clki->clk);
- 		if (ret) {
--			dev_info(hba->dev, "Failed to set clk mux, ret = %d\n",
--				ret);
-+			dev_err(hba->dev, "%s: Failed to set clock mux: %pe\n",
-+				__func__, ERR_PTR(ret));
- 			goto out;
- 		}
- 
- 		if (clk_bind_vcore) {
- 			ret = regulator_set_voltage(reg, 0, INT_MAX);
- 			if (ret) {
--				dev_info(hba->dev,
--					"failed to set vcore to MIN\n");
-+				dev_err(hba->dev, "%s: Failed to set vcore to minimum: %pe\n",
-+					__func__, ERR_PTR(ret));
- 			}
- 		}
- 	}
+ 	/* Check link state to make sure exit h8 success */
+-	err = ufs_mtk_wait_idle_state(hba, 5);
++	err = ufs_mtk_wait_idle_state(hba);
+ 	if (err) {
+ 		dev_err(hba->dev, "Failed to wait for idle: %pe\n", ERR_PTR(err));
+ 		return err;
 
 -- 
 2.53.0
