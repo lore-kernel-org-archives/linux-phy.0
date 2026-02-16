@@ -4,73 +4,138 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 956C4E7BD94
-	for <linux-phy@archiver.kernel.org>; Mon, 16 Feb 2026 11:10:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 11999E7BDA1
+	for <linux-phy@archiver.kernel.org>; Mon, 16 Feb 2026 11:33:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D4jrmIBJLH38EWBvQA9MlaF/AgsDlAlv/66uU50U6L0=; b=DzAQl5cNEXkIqE
-	TA4XTff3rybbUOYedXQKpI+ewmSNc6Xp7S2MHkIiJFgISEP6L7yoXZdOspc0pAw1lr6OnM+ucnoGt
-	DCVTPz9uejTu+RtqSrjzq8vaPz2vWqnCUyGd4ShwZqpEm2S5NP3s4S3MavymhPz/PGrU8mXCLXSDB
-	61UtJgLyBXoZeJSTbMoeROigLwMAfcSCcf5/2Crp3zcVzHyPIDL1EKHPJGq8XJGuZb9RbNrUVNyjC
-	7wGA4nhGlU5x3mEdda/yERhz5gTErCBISzMA5418cLomNtoGjixqfYyxqc2fkLd7k/HvTngykZovX
-	JJVVuo4C2dBShxah23gw==;
+	List-Owner; bh=u82yl9ja+j/FTFGp1Tas6QNiXCKdfPegcCxK2rUmusA=; b=i3kDVTudxzfRK2
+	SuyGcslifieQ5SDFpzuP20B7zMedxUsKEuthnGwRVYJXJ7/elVD2P39oYRLjNCIDWcWK2UNG/4LyQ
+	fe/0DLPHjDuN+3J/DovKLM99xFOQ7NXD0JPD3x6c23a3MDFtVC1TWJQOLKIph3vTxFUXqMq8rvAcp
+	xi97DLcRxNPxhlipO0fxXs+2HLF4X1GebyqXtZucKhEtMHJGJbmKpDLzKF/z/qc/T3fQdy5iSvgYn
+	6sfuClzHIM6KkG2ay1XLxOCJeEB2JBS02JDWUVkmjJf8XyqN+ozGQWA9xa+E03Ze+KNLKygsVXvRZ
+	9XnqJogqrnGx9EUB3SQA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vrwUW-00000006QGf-3Phf;
-	Mon, 16 Feb 2026 11:10:12 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	id 1vrwqp-00000006SJU-1xa8;
+	Mon, 16 Feb 2026 11:33:15 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vrwUP-00000006Q8Y-0BGY;
-	Mon, 16 Feb 2026 11:10:06 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1771240202;
-	bh=IntVyqmcKxwafdHrksd0syn7OEBN/YV17IIzQF/SDJU=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=cScbLoDsYQ16Gwar4SVipw6ik0PXKTC4YzaM2tjFrkkO9ugwNyYHt0Z/yNcPdyqRP
-	 BIc8iw3yvxQDe5be6Z1Y8ITFWYqSnPtOoxQxAE6jMtoe2VgxNbUiWObWa87ekYSTdB
-	 25Cd0d+q2IdQF2GcBX+et365e3PcENQUpBB0K0fhvEe4fR1DKMGr60mn/7Tp8FH1XJ
-	 clUUkQeEFV7yu4vd/cyD+vajyz5paKptYFc+AKbBrij1lesbMKZR2jKCCgsw+EOS29
-	 FoiEW+4gs/tKdNJHVI/xjO2KDNr741Q+oG6gtql5TQSjHirxU+yoYt5fnYmwBtIjmw
-	 oEBWT5ZKruE7Q==
-Received: from [192.168.1.100] (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
-	(No client certificate requested)
-	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id C89F017E1517;
-	Mon, 16 Feb 2026 12:10:01 +0100 (CET)
-Message-ID: <5718e8aa-a9a0-41d4-af15-37441909efc2@collabora.com>
-Date: Mon, 16 Feb 2026 12:10:01 +0100
+	id 1vrwqm-00000006SIT-27xP
+	for linux-phy@lists.infradead.org;
+	Mon, 16 Feb 2026 11:33:13 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 61G8gfcP2803491
+	for <linux-phy@lists.infradead.org>; Mon, 16 Feb 2026 11:33:09 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	pIclpm9YAFgNaTOb1aVxFMRktPn4/nx7W1GhU742dSg=; b=gF0EyuMcIE47Mw+D
+	5SsIFmu/a6w1MJc6tKppvNuMefoloiTrD0GQC5JAfPmjO7dEZrSm1ejwqZbEB+p+
+	2ncCfF8pluKv8rN9KIXS7bPkyP5VXQmrVnCVAtIDj6l0LCK8qAgFWmGOIqD2sm20
+	uRnj2Ox83ZuuuAGpo9WIiUkVGBWorX8CBZB3I5q0TfaGZSA4HWrR1ug2cpLpB1pT
+	ZfZexHwe+APs4id/nkySL5qb5uqitU3/ytlU+WIbzNVslL6b6MTKzOnBHwLbzART
+	owjHnCdxj3NGAzlwM0mfxl7Gglqv7jjKhIUme+YvqMNUBfXPMx22DuXCVdUz1K9m
+	El1TVg==
+Received: from mail-qk1-f200.google.com (mail-qk1-f200.google.com [209.85.222.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4cbyxugdru-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Mon, 16 Feb 2026 11:33:09 +0000 (GMT)
+Received: by mail-qk1-f200.google.com with SMTP id af79cd13be357-8cb50fb0abdso174167885a.1
+        for <linux-phy@lists.infradead.org>; Mon, 16 Feb 2026 03:33:09 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1771241589; x=1771846389; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:to:subject:user-agent:mime-version:date:message-id:from
+         :to:cc:subject:date:message-id:reply-to;
+        bh=pIclpm9YAFgNaTOb1aVxFMRktPn4/nx7W1GhU742dSg=;
+        b=WcGIkoqra7l3Yk/OsigLiv3E+sabhXjEI7pkqTD3EOeHDDAR8bJb7+GEMZQf7fjSc2
+         JL1CL20+kvzGhS0MNw6C2nTBCxXcmSoofmm/K0g5bHnp1FPZwGP3WkUwVA6x8URT7fR9
+         UXCBD+6A9mN6/9MjanbSQKC74SYYsHw+LYfNxKEVF8l46+YsE844XKWDlW0HDKwug8Cq
+         tYVpaS8x3vjpIXIVi3aLt2o0hjWTsQpzja8mDYrGRqDTZkRrIHHOmMkk0ulHPwTJXA05
+         tKPUhE1mqsyvDng2AVnOYpKtYH+hnvk85Ww3VMlqJNPJ4FrHrRvuFiI6IEYfzwhd9yTV
+         qXqw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1771241589; x=1771846389;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=pIclpm9YAFgNaTOb1aVxFMRktPn4/nx7W1GhU742dSg=;
+        b=Hg6vxN8UOCaIMbTJ5hmXTuls/jg2cZg2EIFvJ9jhU6tMG4/FezmLal2Mkzn4/AO0/Z
+         U6x/610STQClKopyLlUxhAnITyWH2dKaliktyqvXmi4EKxJ19eX93SNlkr5TyKxTGzP0
+         ubcuHShmha0YPKzBQ88ecBxp1co8++5a7zGGHHfTr8ay8d0XnNDufe/4KunEVmORFpBh
+         JHsAVjsj/YR4qJO35rz/vrSIKGXuqEw12MF9csoDYBQk/88toEjjU4KOvzC72ugm5l/5
+         W5ogBp0awj4i2BZDyQvmHgxZmpxEoTOTrLg98H/ZazJtXHhmhA2JxnTwyvG2jgwSvfSx
+         VcNQ==
+X-Forwarded-Encrypted: i=1; AJvYcCWivlOzj3GvvPpgiRX5oYJKL62/cMxqP3eC5+lJcbRrVbGjB5GOcAi0paoKX1y/Xuku78S38k+5718=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyshjYsS6NWg1YmX3+anoEMZvsGLr35HOOfDoFXf9j3eUACUNkb
+	jaFUY4BkXDKuQgi+30nnGuKTjb9l2mjD/+IvhzkiME0LTWfZUbKfXGiLRk+hliupcPfj+uF7YtN
+	bu26DSXf1i1CYgHsG6ncZKHKroFl03dKfFCpi2J4oFuHKIeWF78A+mddpZ62jNOWOPAfz
+X-Gm-Gg: AZuq6aLZxfnJ6eEtyUx+5iUXU/Ocv9zA1fbUpRRxX17cEmmDMPJnl1U/8tTPNUXGC0/
+	ucrEhCXA6+n4XJiBysgBKbqZIBYJmohKdNpW4f0+tlUnULvzjx/1Xt+PDbky8pY7M4PNpcjsWfu
+	U1eHW94AmO+43zPFc9Rgiq97dyqf7+iARoDfwT9XdBULZD9ourv0nLKkCic7I2rOpNvpNn3xLDH
+	5ujeAe08Wmz4Dm8AGLORg3QoHIKuGqLutpoDCpQo1BQE9WpiLMzo3UTPpC/oZpvaixCmQi+DSPQ
+	s7AGykHl2wW8NwBuQwSo5Uo5koro+YklJiaAbr31T0ikZ8asVkAUNgKD7OUoFmYED/ufh8Y2TVt
+	q4KJA/If9PONQ3g/ApjF6zzsz9Zkl0+mIrR5iE8m4VCe/ZLDsyo+SUUqTsqZFtpI8hyu3MYnY6x
+	Wv6xY=
+X-Received: by 2002:a05:620a:258f:b0:8c5:3892:a554 with SMTP id af79cd13be357-8cb408477a0mr993926585a.3.1771241588871;
+        Mon, 16 Feb 2026 03:33:08 -0800 (PST)
+X-Received: by 2002:a05:620a:258f:b0:8c5:3892:a554 with SMTP id af79cd13be357-8cb408477a0mr993924785a.3.1771241588450;
+        Mon, 16 Feb 2026 03:33:08 -0800 (PST)
+Received: from [192.168.119.254] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-b8fc7626bfesm241879266b.44.2026.02.16.03.33.06
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 16 Feb 2026 03:33:08 -0800 (PST)
+Message-ID: <5647539c-de68-40c8-8dd0-bf078a086696@oss.qualcomm.com>
+Date: Mon, 16 Feb 2026 12:33:05 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 3/4] arm64: dts: mediatek: mt8167: Add DRM nodes
-To: Luca Leonardo Scorcia <l.scorcia@gmail.com>,
- linux-mediatek@lists.infradead.org
-Cc: Chun-Kuang Hu <chunkuang.hu@kernel.org>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Chunfeng Yun
- <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>,
- Matthias Brugger <matthias.bgg@gmail.com>, Jitao Shi
- <jitao.shi@mediatek.com>, dri-devel@lists.freedesktop.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org
-References: <cover.1771144723.git.l.scorcia@gmail.com>
- <efed7184f27f7f85e9b811070a072b81e134e57e.1771144723.git.l.scorcia@gmail.com>
-From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Subject: Re: [PATCH 3/3] phy: qcom: qmp-usbc: Simplify check for non-NULL
+ pointer
+To: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>,
+        Sven Peter <sven@kernel.org>, Janne Grunau <j@jannau.net>,
+        Neal Gompa <neal@gompa.dev>, Vinod Koul <vkoul@kernel.org>,
+        Neil Armstrong <neil.armstrong@linaro.org>,
+        Philipp Zabel <p.zabel@pengutronix.de>, asahi@lists.linux.dev,
+        linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+        linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org
+References: <20260216110413.159994-4-krzysztof.kozlowski@oss.qualcomm.com>
+ <20260216110413.159994-6-krzysztof.kozlowski@oss.qualcomm.com>
 Content-Language: en-US
-In-Reply-To: <efed7184f27f7f85e9b811070a072b81e134e57e.1771144723.git.l.scorcia@gmail.com>
+From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+In-Reply-To: <20260216110413.159994-6-krzysztof.kozlowski@oss.qualcomm.com>
+X-Proofpoint-GUID: Q45kOY7jn3Nz4GF4Ecbr1Bpq-BTk5BJe
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMjE2MDA5NyBTYWx0ZWRfX3xegKe2YC7kn
+ WrVR4ZkREjf5aMcYDAbHPmJ4/VCtLLvOpJcv8hUF/UkF+DqGZzw5FXPLazMsiQFa5EsUAP/Yn/K
+ xIH5lGWGQiXLvU9VfLvMZzxBTVUaeNL7ht7mlS/neXlO6a5HQmCXyDjeJpsZFfGNmTtnMupWsYD
+ Z8xg1vgjjkHwQ1DEwR1c5flIksnMQTgTpr9H5zOxvGRMsad0Amh2Qlnp7mtWr7Ea/BzEBLv0/dh
+ JGyv7SB/QFFTG2e+lv/Wg8zsad/kJ0+MPMnHiGWUNroqkmL93WcLiL4+j/vihFkG+bogHAgCjNR
+ YjpceDw2m/WHAuF2T3G2fyqIRULoH6CyxPFcKM372M/KHdE4PLoozqB0aM4JVppha3bhkoWfQJ4
+ prX3u6XDkcHdaePUKpsYW6iYElrSOrpT59HsvL5Xg+/pWC1viyvYYKftrjs2F4ilytlDyV90d+a
+ gOHbV6ttgallURCOUcQ==
+X-Authority-Analysis: v=2.4 cv=BpuQAIX5 c=1 sm=1 tr=0 ts=69930075 cx=c_pps
+ a=hnmNkyzTK/kJ09Xio7VxxA==:117 a=FpWmc02/iXfjRdCD7H54yg==:17
+ a=IkcTkHD0fZMA:10 a=HzLeVaNsDn8A:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=Mpw57Om8IfrbqaoTuvik:22 a=GgsMoib0sEa3-_RKJdDe:22
+ a=EUspDBNiAAAA:8 a=rQXAbXeZuVbgsyajZegA:9 a=QEXdDO2ut3YA:10
+ a=PEH46H7Ffwr30OY-TuGO:22
+X-Proofpoint-ORIG-GUID: Q45kOY7jn3Nz4GF4Ecbr1Bpq-BTk5BJe
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.51,FMLib:17.12.100.49
+ definitions=2026-02-16_04,2026-02-16_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ impostorscore=0 priorityscore=1501 adultscore=0 clxscore=1015 phishscore=0
+ lowpriorityscore=0 suspectscore=0 spamscore=0 malwarescore=0 bulkscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2601150000 definitions=main-2602160097
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260216_031005_304710_AC0588B5 
-X-CRM114-Status: GOOD (  17.43  )
+X-CRM114-CacheID: sfid-20260216_033312_690515_A60E5B7A 
+X-CRM114-Status: UNSURE (   7.67  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,237 +147,23 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Il 15/02/26 09:53, Luca Leonardo Scorcia ha scritto:
-> Add all the DRM nodes required to get DSI to work on MT8167 SoC.
+On 2/16/26 12:04 PM, Krzysztof Kozlowski wrote:
+> Pointers should not use explicit '0' comparison, so just use standard
+> evaluation as non-NULL:
 > 
-> Signed-off-by: Luca Leonardo Scorcia <l.scorcia@gmail.com>
+>   phy-qcom-qmp-usbc.c:1682:31: warning: Using plain integer as NULL pointer
+> 
+> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
 > ---
->   arch/arm64/boot/dts/mediatek/mt8167.dtsi | 386 +++++++++++++++++++++++
->   1 file changed, 386 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/mediatek/mt8167.dtsi b/arch/arm64/boot/dts/mediatek/mt8167.dtsi
-> index 27cf32d7ae35..c6306234e592 100644
-> --- a/arch/arm64/boot/dts/mediatek/mt8167.dtsi
-> +++ b/arch/arm64/boot/dts/mediatek/mt8167.dtsi
-> @@ -16,6 +16,20 @@
->   / {
->   	compatible = "mediatek,mt8167";
->   
-> +	aliases {
-> +		aal0 = &aal;
-> +		ccorr0 = &ccorr;
-> +		color0 = &color;
-> +		dither0 = &dither;
-> +		dsi0 = &dsi;
-> +		gamma0 = &gamma;
-> +		ovl0 = &ovl0;
-> +		pwm0 = &disp_pwm;
-> +		rdma0 = &rdma0;
-> +		rdma1 = &rdma1;
-> +		wdma0 = &wdma;
-> +	};
-> +
->   	soc {
->   		topckgen: topckgen@10000000 {
->   			compatible = "mediatek,mt8167-topckgen", "syscon";
-> @@ -120,10 +134,371 @@ iommu: m4u@10203000 {
->   			#iommu-cells = <1>;
->   		};
->   
-> +		disp_pwm: pwm@1100f000 {
-> +			compatible = "mediatek,mt8167-disp-pwm",
-> +				     "mediatek,mt8173-disp-pwm";
 
-The compatible strings fit in a single line. Up to 100 columns it's fine: for every
-node additions that you're doing, please use a single line wherever you can.
+Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 
-> +			reg = <0 0x1100f000 0 0x1000>;
-> +			clocks = <&mmsys CLK_MM_DISP_PWM_26M>,
-> +				 <&mmsys CLK_MM_DISP_PWM_MM>;
-> +			clock-names = "main",
-> +				      "mm";
-
-That also includes clock-names and, where possible, also clocks and anything
-else really.
-
-> +			power-domains = <&spm MT8167_POWER_DOMAIN_MM>;
-> +			#pwm-cells = <2>;
-> +			status = "disabled";
-> +		};
-> +
->   		mmsys: syscon@14000000 {
->   			compatible = "mediatek,mt8167-mmsys", "syscon";
->   			reg = <0 0x14000000 0 0x1000>;
-> +			power-domains = <&spm MT8167_POWER_DOMAIN_MM>;
->   			#clock-cells = <1>;
-> +
-> +			port {
-> +				#address-cells = <1>;
-> +				#size-cells = <0>;
-> +
-> +				mmsys_main: endpoint@0 {
-> +					reg = <0>;
-> +					remote-endpoint = <&ovl0_in>;
-> +				};
-> +
-> +				mmsys_ext: endpoint@1 {
-> +					reg = <1>;
-> +					remote-endpoint = <&rdma1_in>;
-> +				};
-
-Nice! Thanks for expressing those connections with an OF Graph. That makes things
-simpler for other devices based on the same SoC.
-
-> +			};
-> +		};
-> +
-> +		ovl0: ovl0@14007000 {
-> +			compatible = "mediatek,mt8167-disp-ovl";
-> +			reg = <0 0x14007000 0 0x1000>;
-> +			clocks = <&mmsys CLK_MM_DISP_OVL0>;
-> +			interrupts = <GIC_SPI 160 IRQ_TYPE_LEVEL_LOW>;
-> +			iommus = <&iommu M4U_PORT_DISP_OVL0>;
-> +			power-domains = <&spm MT8167_POWER_DOMAIN_MM>;
-> +
-> +			ports {
-> +				#address-cells = <1>;
-> +				#size-cells = <0>;
-> +
-> +				port@0 {
-> +					#address-cells = <1>;
-> +					#size-cells = <0>;
-> +					reg = <0>;
-
-For OVL, RDMA, COLOR, CCORR, and others, you have only one endpoint.
-
-Since there is only one, you can compress the nodes and avoid the text bloat
-(and please do), by declaring the nodes like:
-
-			ports {
-				#address-cells = <1>;
-				#size-cells = <0>;
-
-				port@0 {
-					reg = <0>;
-					ovl0_in: endpoint {
-						remote-endpoint = <&mmsys_main>;
-					};
-				};
-
-				port@1 {
-					reg = <1>;
-					ovl0_out: endpoint {
-						remote-endpoint = <&color_in>;
-					};
-				};
-			};
-
-Please do this for all nodes where you have only a single endpoint (so, for
-everything but mmsys).
-
-
-> +					ovl0_in: endpoint@0 {
-> +						reg = <0>;
-> +						remote-endpoint = <&mmsys_main>;
-> +					};
-> +				};
-> +
-> +				port@1 {
-> +					#address-cells = <1>;
-> +					#size-cells = <0>;
-> +					reg = <1>;
-> +					ovl0_out: endpoint@0 {
-> +						reg = <0>;
-> +						remote-endpoint = <&color_in>;
-> +					};
-> +				};
-> +			};
-> +		};
-
-...snip...
-
-> +
-> +		dsi: dsi@14012000 {
-> +			compatible = "mediatek,mt8167-dsi",
-> +				     "mediatek,mt2701-dsi";
-> +			reg = <0 0x14012000 0 0x1000>;
-> +			clocks = <&mmsys CLK_MM_DSI_ENGINE>,
-> +				 <&mmsys CLK_MM_DSI_DIGITAL>,
-> +				 <&mipi_tx>;
-> +			clock-names = "engine", "digital", "hs";
-> +			interrupts = <GIC_SPI 171 IRQ_TYPE_LEVEL_LOW>;
-> +			phys = <&mipi_tx>;
-> +			phy-names = "dphy";
-> +			power-domains = <&spm MT8167_POWER_DOMAIN_MM>;
-> +			status = "disabled";
-> +
-> +			#address-cells = <1>;
-> +			#size-cells = <0>;
-> +
-> +			ports {
-> +				#address-cells = <1>;
-> +				#size-cells = <0>;
-
-..snip..
-
-> +
-> +				port@1 {
-> +					#address-cells = <1>;
-> +					#size-cells = <0>;
-> +					reg = <1>;
-> +					dsi_out: endpoint@0 {
-> +						reg = <0>;
-> +					};
-> +				};
-
-That's shorter, and simpler:
-				port@1 {
-					reg = <1>;
-					dsi_out: endpoint { };
-				};
-
-> +			};
-> +		};
-> +
-> +		mutex: mutex@14015000 {
-> +			compatible = "mediatek,mt8167-disp-mutex";
-> +			reg = <0 0x14015000 0 0x1000>;
-> +			interrupts = <GIC_SPI 153 IRQ_TYPE_LEVEL_LOW>;
-> +			power-domains = <&spm MT8167_POWER_DOMAIN_MM>;
->   		};
->   
->   		larb0: larb@14016000 {
-> @@ -145,6 +520,17 @@ smi_common: smi@14017000 {
->   			power-domains = <&spm MT8167_POWER_DOMAIN_MM>;
->   		};
->   
-> +		mipi_tx: dsi-phy@14018000 {
-> +			compatible = "mediatek,mt8167-mipi-tx",
-> +				     "mediatek,mt2701-mipi-tx";
-
-Fits in a single line :-)
-
-> +			reg = <0 0x14018000 0 0x90>;
-> +			clocks = <&topckgen CLK_TOP_MIPI_26M_DBG>;
-> +			clock-output-names = "mipi_tx0_pll";
-> +			#clock-cells = <0>;
-> +			#phy-cells = <0>;
-> +			status = "disabled";
-> +		};
-> +
->   		imgsys: syscon@15000000 {
->   			compatible = "mediatek,mt8167-imgsys", "syscon";
->   			reg = <0 0x15000000 0 0x1000>;
-Nice job, btw.
-
-Cheers,
-Angelo
-
+Konrad
 
 -- 
 linux-phy mailing list
