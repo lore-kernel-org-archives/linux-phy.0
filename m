@@ -4,113 +4,138 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5470EE909DE
-	for <linux-phy@archiver.kernel.org>; Tue, 17 Feb 2026 17:06:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C6EA2E9A031
+	for <linux-phy@archiver.kernel.org>; Tue, 17 Feb 2026 18:51:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y9OeJfr1BUe5eXXnQlNIPfqNxeR7HyD8F3vKtL99jW4=; b=39uaO1zRFYC1QM
-	S4hj//JdApg31H9vTOnPdhzG+i1Y7P9ow2iVtBOF0BQSA87wSi4hAIpganGtbN1vrhNoio1ehiD6a
-	bssClzi+h6N+vvD5NVZ/xys2sTPiSA3Xih+Foaq8qmCG+Cs3KH+DIOHkasMrBw2P1ddlnrpDfnsB3
-	Y9ctKrPeH36UoAa+YaQl0fY74whJ5tsTxUev0CxtPpgS6yly9nO/e0S8CrjbRdLlmOsBAyFDSBMAO
-	gCHyuZpnzIG86d+1zSu5mQuZieP2HDIfdVrRkUoYYIUCCeEhkKAsCk5pRy16pm+DLcCcYO2lSS0GO
-	HJcYCBL7HLZp6ApLP/mw==;
+	List-Owner; bh=0iUJdE7XvgDcw/CCkmvHH1QbklbuFgdMLV61iYho/I8=; b=YzqbOENtT9wLk5
+	bXpGcuNPKeGFnir3oU/Qr7w5cpIn/tWJ2uHO+NNAaUImNHBU6ZQJCfzMI6txL8GeHu+oCUa4UqyiA
+	qcuRyKf4T/E2gbpQ78kaiv2gwi6vWd51liVZhxe/yho77Fj8tmPkZxSnJsOxxd0ebjIizLPgwXzae
+	1zRHUpK9o484lPhbWBojieY9LhblJlPTUc90oslre9WUyd3tnxrUCW/wW+kkwGw9yvWhK1nhAEPkv
+	mayFGSUGPJdfF5rg9ujteVWDQoSEO8rW9I/kXaUnM7AMmIsOBQpXSm9ud06nEDLom+CWTumOJOp/w
+	Y9hzytvAL7aNGCf0zspw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vsOWQ-00000008d9G-3t2g;
-	Tue, 17 Feb 2026 17:06:02 +0000
-Received: from mail-ed1-x530.google.com ([2a00:1450:4864:20::530])
+	id 1vsQAp-00000008ld9-1Jcy;
+	Tue, 17 Feb 2026 18:51:51 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vsOW6-00000008d7Z-1Y7d
+	id 1vsQAk-00000008lby-0eG1
 	for linux-phy@lists.infradead.org;
-	Tue, 17 Feb 2026 17:05:49 +0000
-Received: by mail-ed1-x530.google.com with SMTP id 4fb4d7f45d1cf-65815ec51d3so7306012a12.2
-        for <linux-phy@lists.infradead.org>; Tue, 17 Feb 2026 09:05:41 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1771347940; cv=none;
-        d=google.com; s=arc-20240605;
-        b=IGrhPeSVP/k0iDgjpvMwWrFblBloWi6OUDZ+aH7/BdIDnkGA2C7dSCtCfzMOI04dtY
-         Exhh555/DEHFvW+dhGfNk546ZcTCEIOl96InEtV7qD6n/d5xh1niJdYNUXp620b4b9nj
-         XkFDCCz4kYSks/LGnUI6n9/LF3kKdB2+Y+PAws7zfbEUa25G01kT2sI27HV3ef1P16sO
-         KyICAhON6QVnC44aaibpJhMsk/cj9U8mnJbcDyUSC0qdr6BW4RF+ZlNTG7msomhh7L4o
-         2avAVVj2fyz/oaLCx6I3mNgwUhx5x8dC1BrVxcgVkp+VEl8aK57h+YY8Je0/1jzLpy+x
-         QChA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:dkim-signature;
-        bh=zXuAzouuRg3toFw3pm0e1jWSf/XIYid2mK4BdyigN9M=;
-        fh=fP6WaGOG3pnGNvAeq+PKnQDUNJ7B1VeQL3TzHjW+BPM=;
-        b=IHvOvaPaUC76ghRwX4cbNnNvHTWZsBCcR7Dzd7sYnCfv/uRUEEdjCLxEJ/GzQE2Oz9
-         5xIqBQ/IlS7Dcqm8iAjatFlDeDpBKzDeUBYnWDjDxMlIjVQYLO2u91ZRofR54XP9H7Kp
-         xjpxl+b0+bov9hxzca4eipZjrxCC+Gm8DxswuswjRFQCiSucn7z1JzrgOro5RakJDtUF
-         Kcw9lruhx+MaV8vR4h8VrMMA9xmZZnNA/6Ku7g3wVaajmS4e7R/NV7UZvYP3mzQBkgCa
-         FwDMLSF5q2IFmBi40Ou8n1RR/sPhcdT3d5JrleJLJ9jUfjjxIoRqndIIHrlCEbtYGsNC
-         MWZw==;
-        darn=lists.infradead.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
+	Tue, 17 Feb 2026 18:51:49 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 61HGelBD1601378
+	for <linux-phy@lists.infradead.org>; Tue, 17 Feb 2026 18:51:45 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=gpHs+q5sc2ESyRXoe6yeXOmM
+	BULgitSi7HAS3517law=; b=IpcZoKPlwXP+qSoGmhgA7aZ52B1WDxH60u2yqNm+
+	a5XxCGsJPgPhfqBPTXWf7qOlgQuVwrPxC4KfNYzmebtTVsM0jTq0mvnvTl3y/f/l
+	6v2h3wLnFDfuhLBvv9e9l1v5GYpyBLRSussMg7oMIV6Du0nO1tQ472vJygiK67R5
+	P0kLbqvSLaQcGAaOkSexpBhyRexouLT8bBsqxmA+q/aCA30GQZ+4pBiBIuTqjQk1
+	EznJTER67p2oqpav6zrzwHrh3M0d0iT78Ytmoy/JhqgeRF3QtswLNt1i4k63rG2N
+	Lhi3X6WzeE+BEFGXcEhHliUAmSdscI4qSswmFpqCrBBvlQ==
+Received: from mail-pj1-f69.google.com (mail-pj1-f69.google.com [209.85.216.69])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4cc6tmbf3r-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Tue, 17 Feb 2026 18:51:44 +0000 (GMT)
+Received: by mail-pj1-f69.google.com with SMTP id 98e67ed59e1d1-3545dbb7ee6so3481578a91.3
+        for <linux-phy@lists.infradead.org>; Tue, 17 Feb 2026 10:51:44 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1771347940; x=1771952740; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=zXuAzouuRg3toFw3pm0e1jWSf/XIYid2mK4BdyigN9M=;
-        b=abGbMoK5Q8svfnm42sM+D/yHw6Ta1IFEd2LcOGdPjUugiweo+BDgHuq6RzlJXxsuaq
-         HlqAqrLcpfHtgTW0L75cXDh6MhU4CRVFimy6lbK8RbN6gZbfcU+qDOksDzUl3LvdcpHc
-         g/C60jSMfM5Oq+GBV3GJmneAh6hikQ2tdWEUlUSUix5/waloKiJ/1S9r0erhEzUtC5P7
-         0KceBHK14z08Qx4fHaNYafaIFBwWkoLf7ANzJL50AMhLXCB/7AvKckiQLzo3tqV0/3CL
-         7GoNtguYnypQGgo+cPjhHyVCsJs7Ar3YaGGzQsRQH/fyliNo/WaAM1i2+p8pC2ihETgs
-         9aEA==
+        d=oss.qualcomm.com; s=google; t=1771354304; x=1771959104; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=gpHs+q5sc2ESyRXoe6yeXOmMBULgitSi7HAS3517law=;
+        b=Pfz+wABKO8Rhy6EjU15lzx5zQUPXWFjIhh+JEfyF3dQ09IQc+yFetlpr6oVjtmeNip
+         mu+qm8zvLVZ3WGtVyxALHhQ3mxkSDmY5TWeccnp342OEpP2El734cv1NKhvq8HGMlpgo
+         nwwoHnOIvJAptMcoTBwokjFclFn2hylWp1IcoMZsx7X7eej5xcrVwnL2xgZtlXExcbhN
+         CDl8SzK/k4/td2TpjtnD63E6EMu6AR1h37kHw2zHTZ1UksoZogpVghe63AKHulOwfXez
+         Zfn8N041pobwt/L6uL0A03saTcDrDHGSveDGkz2sNl6+/TrBScZOaq2j3I/TstTeNEsD
+         z87A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1771347940; x=1771952740;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=zXuAzouuRg3toFw3pm0e1jWSf/XIYid2mK4BdyigN9M=;
-        b=QPSAW+hVeDi4Q9/LUpykUWWtRDjbZ/WNnB8XFdpFvgWtHLnnEE2QJkr/Zr6rKRXmT6
-         V4LXStl6I9DUb/WiYOkxVaER3CRBtjN+4MLAlyHgsUYOCKgitQyzM0lqhdN61i2LAxX5
-         qi6CgyJvkdOVD3z/WHdAe6jSirjRj5GavNYwCFC4EJHv0n5Nz8Tc1+JwCtgJwOzy9ta+
-         96Ab0uRu6JrfC5FOdSYcsItRMN26LvDuZx6JVoBLci662zqv/9mEB5/Swd8tbyf2b5LF
-         rmn2+/zOKpgie69TksMO/cK3deDfvZgJrAUHq60gV6s9J/aULyOrHmbnjVjp+tSbGo9P
-         kbPg==
-X-Forwarded-Encrypted: i=1; AJvYcCUgIsegQG9OxgvOpiY4lsL5B6AzYClxDGbSFqQWxIXeaGawSR0gLEpNV8IQdmdFciMhVZMywcPBtAw=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yy9+U0TxAhuSp5kKLXyIwWBjxniwj2rkzwwLEjEeu3tM2GbkIUz
-	yqWTuSuV+z5jEpI+ffAOBJed9Sxi4Jbesii7RgYtfh7Pye7EiSxvbnji/Zgl0yGsz/rK1lYdPDa
-	S6ZfKd0yYrr7lKCbhPqt7D/2X5QbkrrY=
-X-Gm-Gg: AZuq6aKWEDjwhpaRhPKK8+Nk4AR8CsFuY1FJ8lr1+vTA+Z85S7Wig/cU9oRK/IBxFTy
-	HokmUT2pPVJVwY5TGcrK1zF6D1vQkGz3SvtWx3jR6Px5j5wtZ3Xd00FALnfiVmOgXDE1o2Q4/Vh
-	CabGX6pilRvWN3ov3TdfAUk23x92ZkXRKU7xiZjVqNCzAlSNh/c/tAmS09QxBQh61aA6rmy1Hu1
-	hLClBc1VwI5yWxFdJj5chp67WwQHWPxl/ToQwCLhPxBulukZgshG+kPH1ktN5n/fgyucRwPbFn7
-	qOwaxQ==
-X-Received: by 2002:a05:6402:3588:b0:659:3fca:24d0 with SMTP id
- 4fb4d7f45d1cf-65bc7a8ae2dmr5047427a12.29.1771347939988; Tue, 17 Feb 2026
- 09:05:39 -0800 (PST)
+        d=1e100.net; s=20230601; t=1771354304; x=1771959104;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=gpHs+q5sc2ESyRXoe6yeXOmMBULgitSi7HAS3517law=;
+        b=LqXBDyL8tUFT+GsLkadO4XfylI/of2KzsvMtWJhTOdYlickc64wwYZ5wzgkNSpSPCb
+         lZXLBt7UhGQp4kHJJ0mDiIGtb7d1naL40F6YFUJ30XttxDBt4Gr5rVrEeoF1ou1cxYgq
+         J1RXoDE7EA+p2/nMuOdv3dnhNgXCz8TYT1tjf72oRclgtKHfqzzt/STnMeA1bFnH9dOE
+         B734QhMC+0TfvmcANlLQfb+kaz+gGWYI4Zbux1SIN0gX6q2rlMQqocKxI9GVs/tR0fMC
+         StUbS2zM4mg2Ij7qaT6I9Ly1Dx85vkV+d4DgPaHIfdIYgU5mZuukLOwnxNTWEFKf3wWl
+         +WTg==
+X-Forwarded-Encrypted: i=1; AJvYcCVQFqxEsuuMoiIIA7Api+/Sc297L87oMnYty8Y4o2ddDNmQWQwVae2l1VA+FDpItz7VWmPmvholnGY=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxIJqEvHufHrdwVGAOZP6toWgMSDTfB6SLWXPskoRMB5k3Gx7r0
+	Pgfncu0bi50cjxypF0RSd6n1hB7sYguF/ae0DwB3Y0JAu57MaMIVoLHcPE74B733x3xSxKguz2v
+	lSKfszKZtRfsBq+MMdqeGDefTya6ab+rvqJO9+TQAumwj5Dy7oHusSIj/s2nblURzvTqV
+X-Gm-Gg: AZuq6aLhetZfjQwiTH7kWSnnBQpufbWkoXayo1+MZ8UVvm4hHCZj2XvZtk0zf9z7zGm
+	1yUviVxlwW2WHls9a+jjFAXO7w78DB02AJArB1uEAzf24GvyxzCw95ewhbSWbwJVBzGWUB3K+fy
+	Gm6Zj+qmW1qtvoCSbqfO2wbHmzclfRXkTQQX4mpKH5Dgplrx4jQ4EE+kgjI4ZX3iogIXH648A9e
+	UOpNrLWmjhg2sfrVBm4d4L2NDK3yjgelWq2zUtSyVfAW7QGKi0RNz/lXmFiELIgr4HOuAZMptvp
+	4etidm5FbYowt7qDIKUORZFRGWjC/30g9rpAl/1tHnO+3j0JYaQoyzar/k0k5KoLVaqMZTmxM8I
+	wr+oiNL6jeNBcVawuqtF7k5kL7Y99TQDlEB8=
+X-Received: by 2002:a17:90a:e70d:b0:330:7ff5:2c58 with SMTP id 98e67ed59e1d1-356aaa98b25mr12221101a91.7.1771354303843;
+        Tue, 17 Feb 2026 10:51:43 -0800 (PST)
+X-Received: by 2002:a17:90a:e70d:b0:330:7ff5:2c58 with SMTP id 98e67ed59e1d1-356aaa98b25mr12221081a91.7.1771354303326;
+        Tue, 17 Feb 2026 10:51:43 -0800 (PST)
+Received: from oss.qualcomm.com ([202.46.23.25])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3567ebc4331sm19801025a91.16.2026.02.17.10.51.38
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 17 Feb 2026 10:51:42 -0800 (PST)
+Date: Wed, 18 Feb 2026 00:21:35 +0530
+From: Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>
+To: "Russell King (Oracle)" <rmk+kernel@armlinux.org.uk>
+Cc: Andrew Lunn <andrew@lunn.ch>, Heiner Kallweit <hkallweit1@gmail.com>,
+        Alexandre Torgue <alexandre.torgue@foss.st.com>,
+        Andrew Lunn <andrew+netdev@lunn.ch>,
+        "David S. Miller" <davem@davemloft.net>,
+        Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>,
+        linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
+        linux-phy@lists.infradead.org,
+        linux-stm32@st-md-mailman.stormreply.com,
+        Maxime Chevallier <maxime.chevallier@bootlin.com>,
+        Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+        Neil Armstrong <neil.armstrong@linaro.org>, netdev@vger.kernel.org,
+        Paolo Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>
+Subject: Re: [PATCH net-next v2 02/14] net: stmmac: qcom-ethqos: convert to
+ set_clk_tx_rate() method
+Message-ID: <aZS4t5Uf21PTOQA7@oss.qualcomm.com>
+References: <aXNEwBW3OA1xLEUj@shell.armlinux.org.uk>
+ <E1vjDr6-00000005fQ9-3RUD@rmk-PC.armlinux.org.uk>
 MIME-Version: 1.0
-References: <cover.1771258407.git.l.scorcia@gmail.com> <ff920a7cc94f2b0c03d4bb55142030fded30d07c.1771258407.git.l.scorcia@gmail.com>
- <20260217-stereotyped-dazzling-loon-f06e18@quoll> <04a3d18b-80cc-4d1d-8657-cb35c4b5b797@collabora.com>
-In-Reply-To: <04a3d18b-80cc-4d1d-8657-cb35c4b5b797@collabora.com>
-From: Luca Leonardo Scorcia <l.scorcia@gmail.com>
-Date: Tue, 17 Feb 2026 18:05:28 +0100
-X-Gm-Features: AaiRm53iuI7SH76CEM094B1BEHtAFaoag8i5brp7UnlMPcM5xtOtDulZoBRUZlM
-Message-ID: <CAORyz2+MgywrE0v+_UYt8gewq_eZ=ZgTUR66tL8aBbBQU53sDA@mail.gmail.com>
-Subject: Re: [PATCH v2 3/6] dt-bindings: display: mediatek: Correct
- compatibility for mt8167-dsi
-To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Cc: Krzysztof Kozlowski <krzk@kernel.org>, linux-mediatek@lists.infradead.org, 
-	Chun-Kuang Hu <chunkuang.hu@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>, 
-	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, 
-	Thomas Zimmermann <tzimmermann@suse.de>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Matthias Brugger <matthias.bgg@gmail.com>, 
-	Jitao Shi <jitao.shi@mediatek.com>, Fabien Parent <fparent@baylibre.com>, 
-	dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
-	linux-phy@lists.infradead.org
+Content-Disposition: inline
+In-Reply-To: <E1vjDr6-00000005fQ9-3RUD@rmk-PC.armlinux.org.uk>
+X-Proofpoint-GUID: Ye9b2Ix-lUdHUgFty7O-UvcKxfGjmbC6
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMjE3MDE1NCBTYWx0ZWRfX/CtD4xsYZBIW
+ peMt0yVdpU8L5hVH4Fm4mnFtn6sLYbZD2E+nHj81cho7cEQ/EzqYQjBpFfOcOzSeB+WlQT2FpWS
+ u5neKtCEr2ymhj9oJ/0Uk5uB17v7J6e9IVofuhD8kGBjjJdfmM3bSQXSdbkFxUX+qiMa3VfxaHe
+ NfgXGFcavESq2bFrJBjvFMLpWvdCE3sSXwMVMhymQIFxFtZpN723KpN2/xbBis6tEQ6euMvEB5d
+ onz81Jl3OPq22lPVO8mhMD8jbRV06r6vBr8JkQlKAGLk0J3aXnPx1mXp//ETEuVYJFZrsB8WnJ7
+ U68J0t6rDSd+piZCOKBLsnBGlrS2U/v7hdJpJ1q2hkWhf9KGXMglIjTOpQg5tRQDu/ZmrW3JuzB
+ Kba91ibrlEeqQCcV6fjzd794KIo7u7gt/14RnjH4dux39H31if3XXkl51G/FDd7xXgr8jVXUA6P
+ FKzTdiEVbXcNbO34FWw==
+X-Proofpoint-ORIG-GUID: Ye9b2Ix-lUdHUgFty7O-UvcKxfGjmbC6
+X-Authority-Analysis: v=2.4 cv=IOoPywvG c=1 sm=1 tr=0 ts=6994b8c0 cx=c_pps
+ a=vVfyC5vLCtgYJKYeQD43oA==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
+ a=kj9zAlcOel0A:10 a=HzLeVaNsDn8A:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=Mpw57Om8IfrbqaoTuvik:22 a=GgsMoib0sEa3-_RKJdDe:22
+ a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=PHq6YzTAAAAA:8 a=UutzXAvyMBxkWM3TwEQA:9
+ a=CjuIK1q_8ugA:10 a=rl5im9kqc5Lf4LNbBjHf:22 a=ZKzU8r6zoKMcqsNulkmm:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.51,FMLib:17.12.100.49
+ definitions=2026-02-17_03,2026-02-16_04,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501 spamscore=0 lowpriorityscore=0 adultscore=0 clxscore=1015
+ suspectscore=0 malwarescore=0 bulkscore=0 phishscore=0 impostorscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2601150000 definitions=main-2602170154
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260217_090542_458321_33DBC06D 
-X-CRM114-Status: GOOD (  43.13  )
+X-CRM114-CacheID: sfid-20260217_105146_369815_24A991A3 
+X-CRM114-Status: GOOD (  13.94  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -127,107 +152,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Thank you all for your feedback! As I just learnt about the
-merge-window patch-freeze
-period I'll wait until next Monday before submitting v3 including the
-suggested changes.
+Hello Russell,
 
-Mmmh. Now I'm wondering if I should have added a Fixes tag to [1],
-that's actually an
-user-visible issue...
+On Fri, Jan 23, 2026 at 09:53:28AM +0000, Russell King (Oracle) wrote:
+> Set the RGMII link clock using the set_clk_tx_rate() method rather than
+> coding it into the .fix_mac_speed() method. This simplifies ethqos's
+> ethqos_fix_mac_speed().
+> 
+> Signed-off-by: Russell King (Oracle) <rmk+kernel@armlinux.org.uk>
 
-[1] https://patchwork.kernel.org/project/linux-mediatek/patch/20260209090516.14369-1-l.scorcia@gmail.com/
+No issues found when I tested this patch along with "net: stmmac:
+qcom-ethqos: cleanups and re-organise SerDes handling" on the QCS615
+Ride board with the KSZ9031 RGMII PHY (see [0][1]).
 
-Il giorno mar 17 feb 2026 alle ore 10:03 AngeloGioacchino Del Regno
-<angelogioacchino.delregno@collabora.com> ha scritto:
->
-> Il 17/02/26 08:58, Krzysztof Kozlowski ha scritto:
-> > On Mon, Feb 16, 2026 at 04:22:14PM +0000, Luca Leonardo Scorcia wrote:
-> >> Remove the dedicated "mediatek,mt8167-dsi" compatible from the device list and
-> >> describe it as compatible with mt2701 instead. It is safe to do so because:
-> >
-> > You are not doing what you wrote. The dedicated mediatek,mt8167-dsi is
-> > still there.
->  >
-> > And if you want to describe mediatek,mt8167-dsi with OTHER
-> > compatible (mt2701), it is a NAK. It is wrong and not allowed by writing
-> > bindings doc.
->
-> Sorry, that was my apparently very-bad advice - and I recognize that, as a
-> maintainer, I should have given different advices.
->
-> Still, check below the (bad, and not enough) reasons why I said that....
->
-> >
-> > You just added fallback, didn't you?
-> >
-> > Please wrap commit message according to Linux coding style / submission
-> > process (neither too early nor over the limit):
-> > https://elixir.bootlin.com/linux/v6.4-rc1/source/Documentation/process/submitting-patches.rst#L597
-> >
-> > Please run scripts/checkpatch.pl on the patches and fix reported
-> > warnings. After that, run also 'scripts/checkpatch.pl --strict' on the
-> > patches and (probably) fix more warnings. Some warnings can be ignored,
-> > especially from --strict run, but the code here looks like it needs a
-> > fix. Feel free to get in touch if the warning is not clear.
-> >
-> >>
-> >> - Bootloader doesn't rely on this single compatible; and
-> >
-> > Does not matter. You still CANNOT remove a compatible. If bootloader
-> > starts to rely on this single compatible, you add it back? No.
-> >
->
-> The issue here is that "mediatek,mt8167-dsi" was never used anywhere, and that
-> alone makes zero sense as it is - by hardware - identical to mt2701.
->
-> That, leaving alone the fact that nothing anywhere can make use of a node with
-> just `compatible = "mediatek,mt8167-dsi"`.
->
-> If it is not acceptable to remove something that was never used and should've never
-> been there "alone" without fallbacks, it's ok. I'm sure that avoiding to delete the
-> one line is not a big deal there.
-> Also remember that we are talking about an old SoC that will never see a bootchain
-> overhaul, nor will it see new bootloaders.
->
-> Though, just a small note - please please please: when we see new contributors,
-> especially when they're community ones, can we try and encourage them to do the
-> right things, and follow the right processes, without being harsh in any way?
->
-> And P.S.: Yeah I know you haven't been as harsh as you can (rightfully) be, so
-> thanks for that.
->
-> Luca, I'm sorry again, at this point - it would be great if you could please send
-> a v3 without the removal of that line. Just add the fallback and that's it :-)
->
-> >> - There was never any upstreamed devicetree using this single compatible; and
-> >> - The MT8167 DSI Controller is fully compatible with the one found in MT2701.
-> >>
-> >> Fixes: 8867c4b39361 ("dt-bindings: display: mediatek: dsi: add documentation for MT8167 SoC")
-> >>
-> >
-> > There is never a blank line between tags.
->
-> Yeah, agreed.
->
-> Cheers,
-> Angelo
->
-> >
-> >> Signed-off-by: Luca Leonardo Scorcia <l.scorcia@gmail.com>
-> >> ---
-> >>   .../devicetree/bindings/display/mediatek/mediatek,dsi.yaml   | 5 ++++-
-> >>   1 file changed, 4 insertions(+), 1 deletion(-)
-> >
-> > Best regards,
-> > Krzysztof
-> >
->
+Tested-by: Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>
 
+	Ayaan
+---
+[0] https://lore.kernel.org/netdev/20250819-qcs615_eth-v4-6-5050ed3402cb@oss.qualcomm.com/t/#ma85cac924488d580b971e6477e7df30dc7e48045
+[1] Ethernet is not yet enabled for this board in the upstream kernel.
+    The changes from [0] were applied locally to test this series. I am
+    trying to figure out how the board deals with RGMII delays so that I
+    can revive the series.
 
--- 
-Luca Leonardo Scorcia
-l.scorcia@gmail.com
 
 -- 
 linux-phy mailing list
