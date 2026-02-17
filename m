@@ -4,138 +4,129 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C6EA2E9A031
-	for <linux-phy@archiver.kernel.org>; Tue, 17 Feb 2026 18:51:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 83E08E9A03E
+	for <linux-phy@archiver.kernel.org>; Tue, 17 Feb 2026 20:11:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0iUJdE7XvgDcw/CCkmvHH1QbklbuFgdMLV61iYho/I8=; b=YzqbOENtT9wLk5
-	bXpGcuNPKeGFnir3oU/Qr7w5cpIn/tWJ2uHO+NNAaUImNHBU6ZQJCfzMI6txL8GeHu+oCUa4UqyiA
-	qcuRyKf4T/E2gbpQ78kaiv2gwi6vWd51liVZhxe/yho77Fj8tmPkZxSnJsOxxd0ebjIizLPgwXzae
-	1zRHUpK9o484lPhbWBojieY9LhblJlPTUc90oslre9WUyd3tnxrUCW/wW+kkwGw9yvWhK1nhAEPkv
-	mayFGSUGPJdfF5rg9ujteVWDQoSEO8rW9I/kXaUnM7AMmIsOBQpXSm9ud06nEDLom+CWTumOJOp/w
-	Y9hzytvAL7aNGCf0zspw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=9sgrFaajnSpYb9eMy/+iv9mwdeRqpEFl0YoSDe6JJvw=; b=RaqVOgWFFcF+lS
+	x1IESNVng0FrVQmBFXkHUx/S4t/o/t04Cr8t8l5Je1Sd49z8GPG1TE+VVexxoE2X3kfNeYzyCuuff
+	Grdp129X+3HwSV8YvtzTkpy7qREsDIiwqEPoKJG9P/bbZopEHW8D3rfmoejpfR5u2BI4C4ua1ySxB
+	FrVwCQ1taf/7tkCacVYvbu8jww2KRPxi4U39hkDvgQ2yGSNmgVafGNRKpxbuXSF9ncji87PBJugBt
+	8xs+749jWdMIaJ8eXvx8GC0KZawuqSveqBptey7oJNpcSruo6qRzJ0QMISln/ijF4HiM5rwFAuWfi
+	tEII5EcHbmWl5ZslAYhg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vsQAp-00000008ld9-1Jcy;
-	Tue, 17 Feb 2026 18:51:51 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1vsRQ0-00000008q6H-2781;
+	Tue, 17 Feb 2026 20:11:36 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vsQAk-00000008lby-0eG1
+	id 1vsRPy-00000008q5q-1jVn
 	for linux-phy@lists.infradead.org;
-	Tue, 17 Feb 2026 18:51:49 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 61HGelBD1601378
-	for <linux-phy@lists.infradead.org>; Tue, 17 Feb 2026 18:51:45 GMT
+	Tue, 17 Feb 2026 20:11:35 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 61HHMY5a1544900
+	for <linux-phy@lists.infradead.org>; Tue, 17 Feb 2026 20:11:33 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=gpHs+q5sc2ESyRXoe6yeXOmM
-	BULgitSi7HAS3517law=; b=IpcZoKPlwXP+qSoGmhgA7aZ52B1WDxH60u2yqNm+
-	a5XxCGsJPgPhfqBPTXWf7qOlgQuVwrPxC4KfNYzmebtTVsM0jTq0mvnvTl3y/f/l
-	6v2h3wLnFDfuhLBvv9e9l1v5GYpyBLRSussMg7oMIV6Du0nO1tQ472vJygiK67R5
-	P0kLbqvSLaQcGAaOkSexpBhyRexouLT8bBsqxmA+q/aCA30GQZ+4pBiBIuTqjQk1
-	EznJTER67p2oqpav6zrzwHrh3M0d0iT78Ytmoy/JhqgeRF3QtswLNt1i4k63rG2N
-	Lhi3X6WzeE+BEFGXcEhHliUAmSdscI4qSswmFpqCrBBvlQ==
-Received: from mail-pj1-f69.google.com (mail-pj1-f69.google.com [209.85.216.69])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4cc6tmbf3r-1
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=U4LWRwUn9sJIHa3iVPT1Ps
+	amgzgdpUokfwkXUCeFWss=; b=Ke6sBSXqqtggbM8ASzIxNDJuDgvuGkB2x9O9s8
+	9wqw7oz8ttfPUBIc6b/WU4J0TixYtte9jK9dLwPuYuFAlF0Cd1NDmYvrGlZrUjea
+	jLroC4Elb7zXE+Vd0Q1fYY7Ax6ueqKC0ZgAsglpETV9H8ifVgbynP4jxRLkITsjl
+	72HhA2y8lbUIzrRv1AZCxpLCW2cRi9rYo597b72z+TWKs8fBRWj9iyIKbQlXTWVN
+	VGBOLp3Bum5+q5S7OwglHO3FRT28A5AHtrREk+s0UlypPuaksPy0SxLDjvNad1tO
+	xosOx1dLYKw9aeR7d6XD8cpECDIPg6VfFJigvSeS916a1XsA==
+Received: from mail-dy1-f199.google.com (mail-dy1-f199.google.com [74.125.82.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4cc7ajunne-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Tue, 17 Feb 2026 18:51:44 +0000 (GMT)
-Received: by mail-pj1-f69.google.com with SMTP id 98e67ed59e1d1-3545dbb7ee6so3481578a91.3
-        for <linux-phy@lists.infradead.org>; Tue, 17 Feb 2026 10:51:44 -0800 (PST)
+	for <linux-phy@lists.infradead.org>; Tue, 17 Feb 2026 20:11:32 +0000 (GMT)
+Received: by mail-dy1-f199.google.com with SMTP id 5a478bee46e88-2ba728aa1f9so17066838eec.0
+        for <linux-phy@lists.infradead.org>; Tue, 17 Feb 2026 12:11:32 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1771354304; x=1771959104; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=gpHs+q5sc2ESyRXoe6yeXOmMBULgitSi7HAS3517law=;
-        b=Pfz+wABKO8Rhy6EjU15lzx5zQUPXWFjIhh+JEfyF3dQ09IQc+yFetlpr6oVjtmeNip
-         mu+qm8zvLVZ3WGtVyxALHhQ3mxkSDmY5TWeccnp342OEpP2El734cv1NKhvq8HGMlpgo
-         nwwoHnOIvJAptMcoTBwokjFclFn2hylWp1IcoMZsx7X7eej5xcrVwnL2xgZtlXExcbhN
-         CDl8SzK/k4/td2TpjtnD63E6EMu6AR1h37kHw2zHTZ1UksoZogpVghe63AKHulOwfXez
-         Zfn8N041pobwt/L6uL0A03saTcDrDHGSveDGkz2sNl6+/TrBScZOaq2j3I/TstTeNEsD
-         z87A==
+        d=oss.qualcomm.com; s=google; t=1771359092; x=1771963892; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=U4LWRwUn9sJIHa3iVPT1PsamgzgdpUokfwkXUCeFWss=;
+        b=a7/wF/TNk/thYdZMgtTn347o8UN8aC/QsYclhL7gOwGhvLAtD9424dpZ4X4Za6o2v2
+         70GVns5F0SenFWtM2/ZyFAEwqlcYHxScSNl0YY0DAh+GTXyvHwfmwNl4U6m3XLxt3G7Y
+         wgDwDUld/fpO+rfIKKC3dISTef+BhOXiZLs7NnD06IWqpgoDqUUzswgGKVTLG6VNSvzS
+         DHFActd096vHPq51vxZJyTVkqvBJ98TyYcmwnPRCEVZtImbxixUr14IUPClpsoxehrKi
+         15g3ekZW6+DYcOwiwS4m6XxPptEuvBpL10Dsksp3T9tcnG9OCDHfijTYo2ncxvotNiyR
+         2hHw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1771354304; x=1771959104;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=gpHs+q5sc2ESyRXoe6yeXOmMBULgitSi7HAS3517law=;
-        b=LqXBDyL8tUFT+GsLkadO4XfylI/of2KzsvMtWJhTOdYlickc64wwYZ5wzgkNSpSPCb
-         lZXLBt7UhGQp4kHJJ0mDiIGtb7d1naL40F6YFUJ30XttxDBt4Gr5rVrEeoF1ou1cxYgq
-         J1RXoDE7EA+p2/nMuOdv3dnhNgXCz8TYT1tjf72oRclgtKHfqzzt/STnMeA1bFnH9dOE
-         B734QhMC+0TfvmcANlLQfb+kaz+gGWYI4Zbux1SIN0gX6q2rlMQqocKxI9GVs/tR0fMC
-         StUbS2zM4mg2Ij7qaT6I9Ly1Dx85vkV+d4DgPaHIfdIYgU5mZuukLOwnxNTWEFKf3wWl
-         +WTg==
-X-Forwarded-Encrypted: i=1; AJvYcCVQFqxEsuuMoiIIA7Api+/Sc297L87oMnYty8Y4o2ddDNmQWQwVae2l1VA+FDpItz7VWmPmvholnGY=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxIJqEvHufHrdwVGAOZP6toWgMSDTfB6SLWXPskoRMB5k3Gx7r0
-	Pgfncu0bi50cjxypF0RSd6n1hB7sYguF/ae0DwB3Y0JAu57MaMIVoLHcPE74B733x3xSxKguz2v
-	lSKfszKZtRfsBq+MMdqeGDefTya6ab+rvqJO9+TQAumwj5Dy7oHusSIj/s2nblURzvTqV
-X-Gm-Gg: AZuq6aLhetZfjQwiTH7kWSnnBQpufbWkoXayo1+MZ8UVvm4hHCZj2XvZtk0zf9z7zGm
-	1yUviVxlwW2WHls9a+jjFAXO7w78DB02AJArB1uEAzf24GvyxzCw95ewhbSWbwJVBzGWUB3K+fy
-	Gm6Zj+qmW1qtvoCSbqfO2wbHmzclfRXkTQQX4mpKH5Dgplrx4jQ4EE+kgjI4ZX3iogIXH648A9e
-	UOpNrLWmjhg2sfrVBm4d4L2NDK3yjgelWq2zUtSyVfAW7QGKi0RNz/lXmFiELIgr4HOuAZMptvp
-	4etidm5FbYowt7qDIKUORZFRGWjC/30g9rpAl/1tHnO+3j0JYaQoyzar/k0k5KoLVaqMZTmxM8I
-	wr+oiNL6jeNBcVawuqtF7k5kL7Y99TQDlEB8=
-X-Received: by 2002:a17:90a:e70d:b0:330:7ff5:2c58 with SMTP id 98e67ed59e1d1-356aaa98b25mr12221101a91.7.1771354303843;
-        Tue, 17 Feb 2026 10:51:43 -0800 (PST)
-X-Received: by 2002:a17:90a:e70d:b0:330:7ff5:2c58 with SMTP id 98e67ed59e1d1-356aaa98b25mr12221081a91.7.1771354303326;
-        Tue, 17 Feb 2026 10:51:43 -0800 (PST)
-Received: from oss.qualcomm.com ([202.46.23.25])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3567ebc4331sm19801025a91.16.2026.02.17.10.51.38
+        d=1e100.net; s=20230601; t=1771359092; x=1771963892;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=U4LWRwUn9sJIHa3iVPT1PsamgzgdpUokfwkXUCeFWss=;
+        b=PVQ2uRsNucHQ8kMDxWV42YKebhWDTELc5tZQr5tcdDM6GGC0e3f4t7PBjxbaAy05dU
+         +20NQEl3SyEzdsPda66r5iIre8F/FNy+FCi9fJS/3Gt0Mby/4yzvIiPnO3F/kCHHe9H0
+         GkW+X9cEspw4p054Z8CGD6RWenUxftF2RBrIohAH5SJNN4ru9yFKIYKsPCACYBhzMFly
+         jk5vtp2/BDiheLznyZyHnPlWQvYmc+Ou9SOqYyjOG8Ac24prNjAEae3qrm9tQ4N3v9Z1
+         P1uEzXRm6h07DP3hZ0wyQMxQ6dcJPentRiG3dwZao6+/7s0XYpP6MzKIYintfEs8eQLG
+         PDjQ==
+X-Forwarded-Encrypted: i=1; AJvYcCXfaUCAcCsp9wr+sVT9Kq/uOMYs0eztFGnR7vy67RWii34qITKaUbr1QyeqB7ef/OOWxzLcVURGSCk=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxROdMtF83KTLwB57HMHiKI8fWEoNEeZ+2MNlicVE9gkQeIVCam
+	chlTW+f69GreDyw2OE6BHojT7TjYf+2Y1YOxKAawgdMuIz4dhEf65s6MbGSL75DxMmFhh+hHgCg
+	HgTeKaQ249AsAKJ4dNdP0TPEKlT29GvblKYHGLuKMF8/FYKmu3bhs6LAmOc7+1k249lAa
+X-Gm-Gg: AZuq6aKXKGiTdx44BsQ0zo8RH+FMReSWlrzyPxwei057f/Jfn/TWWpCOOpkUQfdo5W2
+	Qjk6QA5mQdENZ3f62pj/J+Iv0Gv0CBFhmEpBDQBO4xmI62DnApeQD7/gm4DW3UZojjXtnZhtDYh
+	6eXcw6QAixPlH4Etk8vwNFVgDeReDuyAoHIOFlp8YgViYLNCic3mGv4j8CR9M7pSHGsRUR5F+Xw
+	ejJ/2wNkisBQpbeh003iO5HjFUvcYfRhFa7qIUDZxPf65XPNhG3bFDAL0OD1VdIVpTbl1wmCrZC
+	IKl090ATL+lrvB5K8+oAfJGXekc0Olo4FHzZfNsjZ5XrPRpH6ChqDLwuWcylM6MkGfACAKiYyhU
+	jAhd2I2qi139ZorOTY3IaPl2bssDBb4AOaEZjlHB7BrRopHjpDVLBBWJ5TctHKgCqsCrGh7rlXo
+	M=
+X-Received: by 2002:a05:7301:1e4a:b0:2b7:f44a:a688 with SMTP id 5a478bee46e88-2bac97d96b7mr5221002eec.38.1771359092068;
+        Tue, 17 Feb 2026 12:11:32 -0800 (PST)
+X-Received: by 2002:a05:7301:1e4a:b0:2b7:f44a:a688 with SMTP id 5a478bee46e88-2bac97d96b7mr5220983eec.38.1771359091526;
+        Tue, 17 Feb 2026 12:11:31 -0800 (PST)
+Received: from hu-eserrao-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-2bacb658531sm17319194eec.18.2026.02.17.12.11.30
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 17 Feb 2026 10:51:42 -0800 (PST)
-Date: Wed, 18 Feb 2026 00:21:35 +0530
-From: Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>
-To: "Russell King (Oracle)" <rmk+kernel@armlinux.org.uk>
-Cc: Andrew Lunn <andrew@lunn.ch>, Heiner Kallweit <hkallweit1@gmail.com>,
-        Alexandre Torgue <alexandre.torgue@foss.st.com>,
-        Andrew Lunn <andrew+netdev@lunn.ch>,
-        "David S. Miller" <davem@davemloft.net>,
-        Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>,
-        linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
-        linux-phy@lists.infradead.org,
-        linux-stm32@st-md-mailman.stormreply.com,
-        Maxime Chevallier <maxime.chevallier@bootlin.com>,
-        Maxime Coquelin <mcoquelin.stm32@gmail.com>,
-        Neil Armstrong <neil.armstrong@linaro.org>, netdev@vger.kernel.org,
-        Paolo Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>
-Subject: Re: [PATCH net-next v2 02/14] net: stmmac: qcom-ethqos: convert to
- set_clk_tx_rate() method
-Message-ID: <aZS4t5Uf21PTOQA7@oss.qualcomm.com>
-References: <aXNEwBW3OA1xLEUj@shell.armlinux.org.uk>
- <E1vjDr6-00000005fQ9-3RUD@rmk-PC.armlinux.org.uk>
+        Tue, 17 Feb 2026 12:11:31 -0800 (PST)
+From: Elson Serrao <elson.serrao@oss.qualcomm.com>
+To: Vinod Koul <vkoul@kernel.org>, Konrad Dybcio <konradybcio@kernel.org>,
+        Neil Armstrong <neil.armstrong@linaro.org>,
+        Wesley Cheng <quic_wcheng@quicinc.com>,
+        Johan Hovold <johan+linaro@kernel.org>,
+        Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-kernel@vger.kernel.org, stable@vger.kernel.org
+Subject: [PATCH] phy: qcom: m31-eusb2: clear PLL_EN during init
+Date: Tue, 17 Feb 2026 12:11:30 -0800
+Message-Id: <20260217201130.2804550-1-elson.serrao@oss.qualcomm.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <E1vjDr6-00000005fQ9-3RUD@rmk-PC.armlinux.org.uk>
-X-Proofpoint-GUID: Ye9b2Ix-lUdHUgFty7O-UvcKxfGjmbC6
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMjE3MDE1NCBTYWx0ZWRfX/CtD4xsYZBIW
- peMt0yVdpU8L5hVH4Fm4mnFtn6sLYbZD2E+nHj81cho7cEQ/EzqYQjBpFfOcOzSeB+WlQT2FpWS
- u5neKtCEr2ymhj9oJ/0Uk5uB17v7J6e9IVofuhD8kGBjjJdfmM3bSQXSdbkFxUX+qiMa3VfxaHe
- NfgXGFcavESq2bFrJBjvFMLpWvdCE3sSXwMVMhymQIFxFtZpN723KpN2/xbBis6tEQ6euMvEB5d
- onz81Jl3OPq22lPVO8mhMD8jbRV06r6vBr8JkQlKAGLk0J3aXnPx1mXp//ETEuVYJFZrsB8WnJ7
- U68J0t6rDSd+piZCOKBLsnBGlrS2U/v7hdJpJ1q2hkWhf9KGXMglIjTOpQg5tRQDu/ZmrW3JuzB
- Kba91ibrlEeqQCcV6fjzd794KIo7u7gt/14RnjH4dux39H31if3XXkl51G/FDd7xXgr8jVXUA6P
- FKzTdiEVbXcNbO34FWw==
-X-Proofpoint-ORIG-GUID: Ye9b2Ix-lUdHUgFty7O-UvcKxfGjmbC6
-X-Authority-Analysis: v=2.4 cv=IOoPywvG c=1 sm=1 tr=0 ts=6994b8c0 cx=c_pps
- a=vVfyC5vLCtgYJKYeQD43oA==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
- a=kj9zAlcOel0A:10 a=HzLeVaNsDn8A:10 a=s4-Qcg_JpJYA:10
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMjE3MDE2NSBTYWx0ZWRfX4zqdUs4fV9Y0
+ hXRVj1u3ACoAhRsbSlbAnudUgmhMshJ8DhpQPvzcB0YhOBaA6VBg1s1dp8UZ2femQtqFiHilSf9
+ /UGYWv3TTdq8qQiynXoT9MY2mmRYggpbS2BSFJB7c7O5xJ24vjyeB5vj1X258xE//XVFGBB4eaS
+ m9+8dwpqjRiYB2msr+MBcdfLW8pxQNU+kSLbAWwYT25dQzoO1UVl8FT6+Qcd/IIw4i/zvSkp7uz
+ ntBmy+5FRnCZxOJgMzIKh9F6t5xQ+bjsLB1S+MwlaF9eRBJNJY4lRy3TSpSHEglAtQtMreWORiu
+ vkLXul+/qdJ7g5p74tWvrR8SzlYGYmjlueYiGkLc3Rc5OlMQxb1bfDSHkXpvQ05sBd+EExxpD5o
+ IrZ5PcYLZ1VQsA3jKdtKDLVp3nTiHTRWyqPL7GD8Bu9JvJeOGzqKOWiND2mmUy7L13H0vm0TXLC
+ UYuMbW3ms1m8MX5AWLA==
+X-Proofpoint-ORIG-GUID: 4wKcAx9ReQ92D-AM_Hg0rDr39q-R-pZ_
+X-Authority-Analysis: v=2.4 cv=BryQAIX5 c=1 sm=1 tr=0 ts=6994cb74 cx=c_pps
+ a=cFYjgdjTJScbgFmBucgdfQ==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=IkcTkHD0fZMA:10 a=HzLeVaNsDn8A:10 a=s4-Qcg_JpJYA:10
  a=VkNPw1HP01LnGYTKEx00:22 a=Mpw57Om8IfrbqaoTuvik:22 a=GgsMoib0sEa3-_RKJdDe:22
- a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=PHq6YzTAAAAA:8 a=UutzXAvyMBxkWM3TwEQA:9
- a=CjuIK1q_8ugA:10 a=rl5im9kqc5Lf4LNbBjHf:22 a=ZKzU8r6zoKMcqsNulkmm:22
+ a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=49oE3CkF4HoBucdVWpUA:9 a=QEXdDO2ut3YA:10
+ a=scEy_gLbYbu1JhEsrz4S:22
+X-Proofpoint-GUID: 4wKcAx9ReQ92D-AM_Hg0rDr39q-R-pZ_
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.51,FMLib:17.12.100.49
  definitions=2026-02-17_03,2026-02-16_04,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 spamscore=0 lowpriorityscore=0 adultscore=0 clxscore=1015
- suspectscore=0 malwarescore=0 bulkscore=0 phishscore=0 impostorscore=0
+ impostorscore=0 spamscore=0 lowpriorityscore=0 suspectscore=0 phishscore=0
+ clxscore=1011 adultscore=0 bulkscore=0 priorityscore=1501 malwarescore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2601150000 definitions=main-2602170154
+ reason=mlx scancount=1 engine=8.22.0-2601150000 definitions=main-2602170165
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260217_105146_369815_24A991A3 
-X-CRM114-Status: GOOD (  13.94  )
+X-CRM114-CacheID: sfid-20260217_121134_468308_893148B9 
+X-CRM114-Status: GOOD (  12.88  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -152,28 +143,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello Russell,
+The driver currently sets bit 0 of USB_PHY_CFG1 (PLL_EN) during PHY
+initialization. According to the M31 EUSB2 PHY hardware documentation,
+this bit is intended only for test/debug scenarios and does not control
+mission mode operation. Keeping PLL_EN asserted causes the PHY to draw
+additional current during USB bus suspend. Clearing this bit results in
+lower suspend power consumption without affecting normal operation.
 
-On Fri, Jan 23, 2026 at 09:53:28AM +0000, Russell King (Oracle) wrote:
-> Set the RGMII link clock using the set_clk_tx_rate() method rather than
-> coding it into the .fix_mac_speed() method. This simplifies ethqos's
-> ethqos_fix_mac_speed().
-> 
-> Signed-off-by: Russell King (Oracle) <rmk+kernel@armlinux.org.uk>
+Update the driver to leave PLL_EN cleared as recommended by the hardware
+documentation.
 
-No issues found when I tested this patch along with "net: stmmac:
-qcom-ethqos: cleanups and re-organise SerDes handling" on the QCS615
-Ride board with the KSZ9031 RGMII PHY (see [0][1]).
-
-Tested-by: Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>
-
-	Ayaan
+Fixes: 9c8504861cc4 ("phy: qcom: Add M31 based eUSB2 PHY driver")
+Cc: stable@vger.kernel.org
+Signed-off-by: Elson Serrao <elson.serrao@oss.qualcomm.com>
 ---
-[0] https://lore.kernel.org/netdev/20250819-qcs615_eth-v4-6-5050ed3402cb@oss.qualcomm.com/t/#ma85cac924488d580b971e6477e7df30dc7e48045
-[1] Ethernet is not yet enabled for this board in the upstream kernel.
-    The changes from [0] were applied locally to test this series. I am
-    trying to figure out how the board deals with RGMII delays so that I
-    can revive the series.
+ drivers/phy/qualcomm/phy-qcom-m31-eusb2.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c b/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c
+index 95cd3175926d..68f1ba8fec4a 100644
+--- a/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c
++++ b/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c
+@@ -83,7 +83,7 @@ static const struct m31_phy_tbl_entry m31_eusb2_setup_tbl[] = {
+ 	M31_EUSB_PHY_INIT_CFG(USB_PHY_CFG0, UTMI_PHY_CMN_CTRL_OVERRIDE_EN, 1),
+ 	M31_EUSB_PHY_INIT_CFG(USB_PHY_UTMI_CTRL5, POR, 1),
+ 	M31_EUSB_PHY_INIT_CFG(USB_PHY_HS_PHY_CTRL_COMMON0, PHY_ENABLE, 1),
+-	M31_EUSB_PHY_INIT_CFG(USB_PHY_CFG1, PLL_EN, 1),
++	M31_EUSB_PHY_INIT_CFG(USB_PHY_CFG1, PLL_EN, 0),
+ 	M31_EUSB_PHY_INIT_CFG(USB_PHY_FSEL_SEL, FSEL_SEL, 1),
+ };
+ 
+-- 
+2.34.1
 
 
 -- 
