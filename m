@@ -4,99 +4,99 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4D0CAE909D3
-	for <linux-phy@archiver.kernel.org>; Tue, 17 Feb 2026 16:37:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5470EE909DE
+	for <linux-phy@archiver.kernel.org>; Tue, 17 Feb 2026 17:06:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gV/nGaJuHjSprssyYnm7tvGsy394Eam6vxrQx3ma8I0=; b=zCovKVN3sbcbs2
-	aOyWMWf8LocTIL+xSFVuh5uKfIpnAs2X8Eq+dpZgPpuJGB4q2Yu31trQjPtUXxaT2GqbseizeMakX
-	ZATvTw+AV/t6R4ilT6CtVujmCzWLSC7W+/MoH7W98Pvjj9qvF4BEqXt0XtsCihEY0IeoygdZMbUuX
-	SxoEvQqpUs4k7SyHFrhaohGwq3nsuBiXesf4p4VkJiD5+ESlUca+yzo4J8G40ibpZMJafisKqvMDA
-	tB59+6ZZ9o+XAudiTxFH2AgrPlrQFzli/3knPaQazSGbUnE48n0SGEW1WyPOhJygHmApZL+4dYm2f
-	bV9IlRMXuK9KXqAaG0Gg==;
+	List-Owner; bh=Y9OeJfr1BUe5eXXnQlNIPfqNxeR7HyD8F3vKtL99jW4=; b=39uaO1zRFYC1QM
+	S4hj//JdApg31H9vTOnPdhzG+i1Y7P9ow2iVtBOF0BQSA87wSi4hAIpganGtbN1vrhNoio1ehiD6a
+	bssClzi+h6N+vvD5NVZ/xys2sTPiSA3Xih+Foaq8qmCG+Cs3KH+DIOHkasMrBw2P1ddlnrpDfnsB3
+	Y9ctKrPeH36UoAa+YaQl0fY74whJ5tsTxUev0CxtPpgS6yly9nO/e0S8CrjbRdLlmOsBAyFDSBMAO
+	gCHyuZpnzIG86d+1zSu5mQuZieP2HDIfdVrRkUoYYIUCCeEhkKAsCk5pRy16pm+DLcCcYO2lSS0GO
+	HJcYCBL7HLZp6ApLP/mw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vsO5C-00000008a5W-3UBa;
-	Tue, 17 Feb 2026 16:37:54 +0000
-Received: from mail-ed1-x534.google.com ([2a00:1450:4864:20::534])
+	id 1vsOWQ-00000008d9G-3t2g;
+	Tue, 17 Feb 2026 17:06:02 +0000
+Received: from mail-ed1-x530.google.com ([2a00:1450:4864:20::530])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vsO58-00000008a3v-07IT
+	id 1vsOW6-00000008d7Z-1Y7d
 	for linux-phy@lists.infradead.org;
-	Tue, 17 Feb 2026 16:37:52 +0000
-Received: by mail-ed1-x534.google.com with SMTP id 4fb4d7f45d1cf-65c20dc9577so1710887a12.2
-        for <linux-phy@lists.infradead.org>; Tue, 17 Feb 2026 08:37:48 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1771346267; cv=none;
+	Tue, 17 Feb 2026 17:05:49 +0000
+Received: by mail-ed1-x530.google.com with SMTP id 4fb4d7f45d1cf-65815ec51d3so7306012a12.2
+        for <linux-phy@lists.infradead.org>; Tue, 17 Feb 2026 09:05:41 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1771347940; cv=none;
         d=google.com; s=arc-20240605;
-        b=Vw61pBol8WCFqt+w73vhZaAgVnKgLRm16R1QaeW+KabSYMbReCVNR52kjsinRGjUHt
-         PO+26P3UcaAmaomVl3UMxwDxi3VaS2Gy7t+DAk+AFmiK3RMupg5YcA/KQdVW1QjhpowK
-         nnbixQP/zY8wD3VE+SPgryNvkA1TT35vHrk4CoxKD/AfmvAyCDk2BiI+zXH5+hG7uAuA
-         af+StAm6m18Lda0ztufdajb70QLeQdEmxFqJmDseIOaRfviLXJYB5Zb3QuvrO2iYpuht
-         znHWW+oAFpnZ3IXY90onbZIxmWxnx/2GEUtnoV3ww3+6aftesKpmDrk/AzuX9A+FF5JF
-         bQzQ==
+        b=IGrhPeSVP/k0iDgjpvMwWrFblBloWi6OUDZ+aH7/BdIDnkGA2C7dSCtCfzMOI04dtY
+         Exhh555/DEHFvW+dhGfNk546ZcTCEIOl96InEtV7qD6n/d5xh1niJdYNUXp620b4b9nj
+         XkFDCCz4kYSks/LGnUI6n9/LF3kKdB2+Y+PAws7zfbEUa25G01kT2sI27HV3ef1P16sO
+         KyICAhON6QVnC44aaibpJhMsk/cj9U8mnJbcDyUSC0qdr6BW4RF+ZlNTG7msomhh7L4o
+         2avAVVj2fyz/oaLCx6I3mNgwUhx5x8dC1BrVxcgVkp+VEl8aK57h+YY8Je0/1jzLpy+x
+         QChA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:dkim-signature;
-        bh=eIGbAV+8Vnm23slA1If+Si9qq/awHjco1XJ0AGN0iyQ=;
-        fh=dLOhTpbPfCt0/l2CcVUyfvSTi5b7d/8y/vZhrc+9kR8=;
-        b=HFWmjT5NBrt6ek9bleQD0HaMq5c5BzgRJKLEhvVIk15efV09LxuO2ZlExpJ57geBCo
-         wj+5IOpRSyJPSyilbUrqYMBEgATsHxdJ5LcgM5cXBNHkLhAImjyx291y+SKP2otjD6tw
-         SjJ3s8UP38RRsQl8rLbj9zwj6RWXc4aIkpgawkFW4b4uTJqDC0W1d8iBZWJX/bM8xVvD
-         a9+pCgu3QHv4NfnWSFfa9sQ9CF1j+tuwFlDw9590bQxIlsdhlPRg7eDxvwktOltthMyP
-         InNOiBKOzxfO7EbjHLzoSNoeaLQPLIDyx/NTP/grSD6GGeTqVmtb9A5Qj748Uv1wZvAE
-         /lfQ==;
+        bh=zXuAzouuRg3toFw3pm0e1jWSf/XIYid2mK4BdyigN9M=;
+        fh=fP6WaGOG3pnGNvAeq+PKnQDUNJ7B1VeQL3TzHjW+BPM=;
+        b=IHvOvaPaUC76ghRwX4cbNnNvHTWZsBCcR7Dzd7sYnCfv/uRUEEdjCLxEJ/GzQE2Oz9
+         5xIqBQ/IlS7Dcqm8iAjatFlDeDpBKzDeUBYnWDjDxMlIjVQYLO2u91ZRofR54XP9H7Kp
+         xjpxl+b0+bov9hxzca4eipZjrxCC+Gm8DxswuswjRFQCiSucn7z1JzrgOro5RakJDtUF
+         Kcw9lruhx+MaV8vR4h8VrMMA9xmZZnNA/6Ku7g3wVaajmS4e7R/NV7UZvYP3mzQBkgCa
+         FwDMLSF5q2IFmBi40Ou8n1RR/sPhcdT3d5JrleJLJ9jUfjjxIoRqndIIHrlCEbtYGsNC
+         MWZw==;
         darn=lists.infradead.org
 ARC-Authentication-Results: i=1; mx.google.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1771346267; x=1771951067; darn=lists.infradead.org;
+        d=gmail.com; s=20230601; t=1771347940; x=1771952740; darn=lists.infradead.org;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=eIGbAV+8Vnm23slA1If+Si9qq/awHjco1XJ0AGN0iyQ=;
-        b=HQI31/0pakNEaH7kgDRrAcBjXj3DnE41+mkIzXVr6z76QOMZeDs1h9HIpEyBuluNVN
-         s/vsLNUFY1eV4tg4YyCherla9PPjGWJ/yanr51A9X0dOMkPckaC2kK5ZkqJ+dzSI9Iiq
-         59eIsKctKvOSrMbssJU1NEAqQXuYdtdE0OBGKslQvInoutXuV3jccp3B9vdHPOSPsOji
-         5Q4/fbY4biPHvvaHR960vwpkIHIy7wxd5tOwY7uFBqt82pbMogbgT6KBh/Oc9RPUK1Rl
-         3jcHkYEUvoB2votg1ZnaJGXNkZU6aul1HtNegZKXIfoH4bYpPyQkeV8pqvZlqvLu9ZYd
-         kJgQ==
+        bh=zXuAzouuRg3toFw3pm0e1jWSf/XIYid2mK4BdyigN9M=;
+        b=abGbMoK5Q8svfnm42sM+D/yHw6Ta1IFEd2LcOGdPjUugiweo+BDgHuq6RzlJXxsuaq
+         HlqAqrLcpfHtgTW0L75cXDh6MhU4CRVFimy6lbK8RbN6gZbfcU+qDOksDzUl3LvdcpHc
+         g/C60jSMfM5Oq+GBV3GJmneAh6hikQ2tdWEUlUSUix5/waloKiJ/1S9r0erhEzUtC5P7
+         0KceBHK14z08Qx4fHaNYafaIFBwWkoLf7ANzJL50AMhLXCB/7AvKckiQLzo3tqV0/3CL
+         7GoNtguYnypQGgo+cPjhHyVCsJs7Ar3YaGGzQsRQH/fyliNo/WaAM1i2+p8pC2ihETgs
+         9aEA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1771346267; x=1771951067;
+        d=1e100.net; s=20230601; t=1771347940; x=1771952740;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=eIGbAV+8Vnm23slA1If+Si9qq/awHjco1XJ0AGN0iyQ=;
-        b=pmX+CcbHfxihyyPUmTR8XpxvsK2BOl67oq9cXRYJ6pEoz/4kAcJ5iOS9zvX/foWQt7
-         hQ7kKP/Vt2BRq5jHtyxoKHmI09S7tLvQgvlUMGA0VzpSL2WodGDfDUSXGfL0bGQE3SNY
-         2U/LGqrmgFtJWudEQTQWcufqbpt1Yf12u77LN23v3omdp2M1lKzCmGDmR4rBvPywlgs/
-         obvloin/ItP+KOvqa+jomThrK4D1WXKLHuOWc+M1+Adb3uoUhnADjTyiOwNs+bNw/zEA
-         pXnu210qAWHE+OEDegyKdK52p7mEP0YwO/XFwpJq+wQAm3ai6r5q2BR4XUzoBt8DTnf5
-         7HNQ==
-X-Forwarded-Encrypted: i=1; AJvYcCWkpRzrmwQDH1ymsJAkt+oORXrGUBRik2nANVqFZadwn6exYauZl2NmN7+YFw2LEdqscBkFSotzB9c=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyRSx0pFfqvrl2cPyTdg8iWlrRUzYy4276MwO6uIUy2xmkLbvrj
-	FRjylMrnPM74x4cuKvm/uxKGd3Cix53cpH7nlt4m2F0XEamUj7jQTDIwmlX7pcWXAy4fRH8y2GB
-	lsOrzPGy7yIIzoLa1forQ1QfIb3hPfho=
-X-Gm-Gg: AZuq6aJBulvLFAj8x1cDcJl+/13LbYo7Rha0OcKXHShW3dYhQJG/yttMXIGzoaVA3ab
-	jphIlTA8qF1zBw9SGUaBpm4eQzq4XRJAKU2tZnCufZ9AJNPhS5MquRJ+zKd4QoQWZ/+ZbuGmJQL
-	hnQTlzeKjl96ONn9FfSTCHdllytc9ozIoKed8SZh9LzsRKKKyAgZqf9Hj5rM0po1lHMD/I1Sws8
-	Uw/8/yIAaqnD19JsuNX40I2nt2vbt1Zv3J4d9AjnXvVgu3NiuUwLRCmhXEW5+z+/aIiQPKtUx4i
-	AVZbX48wgmalcIuH
-X-Received: by 2002:a05:6402:3648:b0:65c:1f0f:e6f6 with SMTP id
- 4fb4d7f45d1cf-65c1f0fee06mr2535558a12.22.1771346267257; Tue, 17 Feb 2026
- 08:37:47 -0800 (PST)
+        bh=zXuAzouuRg3toFw3pm0e1jWSf/XIYid2mK4BdyigN9M=;
+        b=QPSAW+hVeDi4Q9/LUpykUWWtRDjbZ/WNnB8XFdpFvgWtHLnnEE2QJkr/Zr6rKRXmT6
+         V4LXStl6I9DUb/WiYOkxVaER3CRBtjN+4MLAlyHgsUYOCKgitQyzM0lqhdN61i2LAxX5
+         qi6CgyJvkdOVD3z/WHdAe6jSirjRj5GavNYwCFC4EJHv0n5Nz8Tc1+JwCtgJwOzy9ta+
+         96Ab0uRu6JrfC5FOdSYcsItRMN26LvDuZx6JVoBLci662zqv/9mEB5/Swd8tbyf2b5LF
+         rmn2+/zOKpgie69TksMO/cK3deDfvZgJrAUHq60gV6s9J/aULyOrHmbnjVjp+tSbGo9P
+         kbPg==
+X-Forwarded-Encrypted: i=1; AJvYcCUgIsegQG9OxgvOpiY4lsL5B6AzYClxDGbSFqQWxIXeaGawSR0gLEpNV8IQdmdFciMhVZMywcPBtAw=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy9+U0TxAhuSp5kKLXyIwWBjxniwj2rkzwwLEjEeu3tM2GbkIUz
+	yqWTuSuV+z5jEpI+ffAOBJed9Sxi4Jbesii7RgYtfh7Pye7EiSxvbnji/Zgl0yGsz/rK1lYdPDa
+	S6ZfKd0yYrr7lKCbhPqt7D/2X5QbkrrY=
+X-Gm-Gg: AZuq6aKWEDjwhpaRhPKK8+Nk4AR8CsFuY1FJ8lr1+vTA+Z85S7Wig/cU9oRK/IBxFTy
+	HokmUT2pPVJVwY5TGcrK1zF6D1vQkGz3SvtWx3jR6Px5j5wtZ3Xd00FALnfiVmOgXDE1o2Q4/Vh
+	CabGX6pilRvWN3ov3TdfAUk23x92ZkXRKU7xiZjVqNCzAlSNh/c/tAmS09QxBQh61aA6rmy1Hu1
+	hLClBc1VwI5yWxFdJj5chp67WwQHWPxl/ToQwCLhPxBulukZgshG+kPH1ktN5n/fgyucRwPbFn7
+	qOwaxQ==
+X-Received: by 2002:a05:6402:3588:b0:659:3fca:24d0 with SMTP id
+ 4fb4d7f45d1cf-65bc7a8ae2dmr5047427a12.29.1771347939988; Tue, 17 Feb 2026
+ 09:05:39 -0800 (PST)
 MIME-Version: 1.0
 References: <cover.1771258407.git.l.scorcia@gmail.com> <ff920a7cc94f2b0c03d4bb55142030fded30d07c.1771258407.git.l.scorcia@gmail.com>
- <20260217135828.4hgbyhnz5nuzm6p7@skbuf>
-In-Reply-To: <20260217135828.4hgbyhnz5nuzm6p7@skbuf>
+ <20260217-stereotyped-dazzling-loon-f06e18@quoll> <04a3d18b-80cc-4d1d-8657-cb35c4b5b797@collabora.com>
+In-Reply-To: <04a3d18b-80cc-4d1d-8657-cb35c4b5b797@collabora.com>
 From: Luca Leonardo Scorcia <l.scorcia@gmail.com>
-Date: Tue, 17 Feb 2026 17:37:36 +0100
-X-Gm-Features: AaiRm51UVemOzhQMk6xoVI4EJaD4w62lgA3q3kyqzB9n5tt-MdAm1A1cRwc2sAA
-Message-ID: <CAORyz2L6_4yLb7t6-H3MjCu7QJtPF0QTvdsvdBw8f9zTey_tBw@mail.gmail.com>
+Date: Tue, 17 Feb 2026 18:05:28 +0100
+X-Gm-Features: AaiRm53iuI7SH76CEM094B1BEHtAFaoag8i5brp7UnlMPcM5xtOtDulZoBRUZlM
+Message-ID: <CAORyz2+MgywrE0v+_UYt8gewq_eZ=ZgTUR66tL8aBbBQU53sDA@mail.gmail.com>
 Subject: Re: [PATCH v2 3/6] dt-bindings: display: mediatek: Correct
  compatibility for mt8167-dsi
-To: Vladimir Oltean <olteanv@gmail.com>
-Cc: linux-mediatek@lists.infradead.org, 
+To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Cc: Krzysztof Kozlowski <krzk@kernel.org>, linux-mediatek@lists.infradead.org, 
 	Chun-Kuang Hu <chunkuang.hu@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>, 
 	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
 	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, 
@@ -104,14 +104,13 @@ Cc: linux-mediatek@lists.infradead.org,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
 	Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>, 
 	Neil Armstrong <neil.armstrong@linaro.org>, Matthias Brugger <matthias.bgg@gmail.com>, 
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
 	Jitao Shi <jitao.shi@mediatek.com>, Fabien Parent <fparent@baylibre.com>, 
 	dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, 
 	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
 	linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260217_083750_923543_234141BF 
-X-CRM114-Status: GOOD (  29.75  )
+X-CRM114-CacheID: sfid-20260217_090542_458321_33DBC06D 
+X-CRM114-Status: GOOD (  43.13  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -128,65 +127,102 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello Vladimir,
-thank you for the reply and explanation. As a new contributor it is
-greatly appreciated.
-Those patches are definitely intended for next since as far as
-I know there is no mt8167 device using upstream kernels out there.
+Thank you all for your feedback! As I just learnt about the
+merge-window patch-freeze
+period I'll wait until next Monday before submitting v3 including the
+suggested changes.
 
-As for the Fixes tag, the rationale for it was that it's ultimately
-not coherent with both its original author's intended usage [1] nor
-with the current code as it's not present in [2], possibly due to the
-fact that at the time of the original contribution bindings were text
-only and less accurate, so I described is as a "Fix". I understand now
-that the Fixes tag has a special meaning in the merge process so I
-will just remove it in v3, it does not add much information anyway.
-Also thanks about the git commit prefix suggestion, I didn't know about it!
+Mmmh. Now I'm wondering if I should have added a Fixes tag to [1],
+that's actually an
+user-visible issue...
 
-I apologize for the confusion and I appreciate all guidance from maintainers.
-I really want to do stuff The Right Way, it's just a matter of moving
-along the learning curve.
+[1] https://patchwork.kernel.org/project/linux-mediatek/patch/20260209090516.14369-1-l.scorcia@gmail.com/
 
-[1] https://lore.kernel.org/linux-mediatek/20210406113631.2675029-3-fparent@baylibre.com/
-[2] https://github.com/torvalds/linux/blob/9702969978695d9a699a1f34771580cdbb153b33/drivers/gpu/drm/mediatek/mtk_dsi.c#L13061
-
-Il giorno mar 17 feb 2026 alle ore 16:35 Vladimir Oltean
-<olteanv@gmail.com> ha scritto:
+Il giorno mar 17 feb 2026 alle ore 10:03 AngeloGioacchino Del Regno
+<angelogioacchino.delregno@collabora.com> ha scritto:
 >
-> Hi Luca,
->
-> On Mon, Feb 16, 2026 at 04:22:14PM +0000, Luca Leonardo Scorcia wrote:
-> > Remove the dedicated "mediatek,mt8167-dsi" compatible from the device list and
-> > describe it as compatible with mt2701 instead. It is safe to do so because:
+> Il 17/02/26 08:58, Krzysztof Kozlowski ha scritto:
+> > On Mon, Feb 16, 2026 at 04:22:14PM +0000, Luca Leonardo Scorcia wrote:
+> >> Remove the dedicated "mediatek,mt8167-dsi" compatible from the device list and
+> >> describe it as compatible with mt2701 instead. It is safe to do so because:
 > >
-> > - Bootloader doesn't rely on this single compatible; and
-> > - There was never any upstreamed devicetree using this single compatible; and
-> > - The MT8167 DSI Controller is fully compatible with the one found in MT2701.
+> > You are not doing what you wrote. The dedicated mediatek,mt8167-dsi is
+> > still there.
+>  >
+> > And if you want to describe mediatek,mt8167-dsi with OTHER
+> > compatible (mt2701), it is a NAK. It is wrong and not allowed by writing
+> > bindings doc.
+>
+> Sorry, that was my apparently very-bad advice - and I recognize that, as a
+> maintainer, I should have given different advices.
+>
+> Still, check below the (bad, and not enough) reasons why I said that....
+>
 > >
-> > Fixes: 8867c4b39361 ("dt-bindings: display: mediatek: dsi: add documentation for MT8167 SoC")
+> > You just added fallback, didn't you?
+> >
+> > Please wrap commit message according to Linux coding style / submission
+> > process (neither too early nor over the limit):
+> > https://elixir.bootlin.com/linux/v6.4-rc1/source/Documentation/process/submitting-patches.rst#L597
+> >
+> > Please run scripts/checkpatch.pl on the patches and fix reported
+> > warnings. After that, run also 'scripts/checkpatch.pl --strict' on the
+> > patches and (probably) fix more warnings. Some warnings can be ignored,
+> > especially from --strict run, but the code here looks like it needs a
+> > fix. Feel free to get in touch if the warning is not clear.
+> >
+> >>
+> >> - Bootloader doesn't rely on this single compatible; and
+> >
+> > Does not matter. You still CANNOT remove a compatible. If bootloader
+> > starts to rely on this single compatible, you add it back? No.
+> >
 >
-> Not sure which direction this patch will go in the next revision, but
-> (if this patch remains in this form, and intended as a bug fix) please
-> do not mix fixes for the current (and stable) kernel with new development
-> for the next kernel in the same series. They are supposed to be applied
-> to
-> https://git.kernel.org/pub/scm/linux/kernel/git/phy/linux-phy.git/log/?h=next
-> and
-> https://git.kernel.org/pub/scm/linux/kernel/git/phy/linux-phy.git/log/?h=fixes
-> respectively.
+> The issue here is that "mediatek,mt8167-dsi" was never used anywhere, and that
+> alone makes zero sense as it is - by hardware - identical to mt2701.
 >
-> (also see Documentation/process/stable-kernel-rules.rst for what is
-> generally considered to be a bug fix. We don't use the word "fix" very
-> lightly, there needs to be a user-visible impact.)
+> That, leaving alone the fact that nothing anywhere can make use of a node with
+> just `compatible = "mediatek,mt8167-dsi"`.
 >
-> To help the build test automation select the proper base branch, you can
-> use the "phy-next" or "phy-fixes" git subject prefixes when generating
-> your patches.
+> If it is not acceptable to remove something that was never used and should've never
+> been there "alone" without fallbacks, it's ok. I'm sure that avoiding to delete the
+> one line is not a big deal there.
+> Also remember that we are talking about an old SoC that will never see a bootchain
+> overhaul, nor will it see new bootloaders.
 >
-> You can send fixes at any time, but please send new development for the
-> next kernel only when the merge window isn't open (unless it is marked
-> as RFC, then it can also be sent any time).
-
+> Though, just a small note - please please please: when we see new contributors,
+> especially when they're community ones, can we try and encourage them to do the
+> right things, and follow the right processes, without being harsh in any way?
+>
+> And P.S.: Yeah I know you haven't been as harsh as you can (rightfully) be, so
+> thanks for that.
+>
+> Luca, I'm sorry again, at this point - it would be great if you could please send
+> a v3 without the removal of that line. Just add the fallback and that's it :-)
+>
+> >> - There was never any upstreamed devicetree using this single compatible; and
+> >> - The MT8167 DSI Controller is fully compatible with the one found in MT2701.
+> >>
+> >> Fixes: 8867c4b39361 ("dt-bindings: display: mediatek: dsi: add documentation for MT8167 SoC")
+> >>
+> >
+> > There is never a blank line between tags.
+>
+> Yeah, agreed.
+>
+> Cheers,
+> Angelo
+>
+> >
+> >> Signed-off-by: Luca Leonardo Scorcia <l.scorcia@gmail.com>
+> >> ---
+> >>   .../devicetree/bindings/display/mediatek/mediatek,dsi.yaml   | 5 ++++-
+> >>   1 file changed, 4 insertions(+), 1 deletion(-)
+> >
+> > Best regards,
+> > Krzysztof
+> >
+>
 
 
 -- 
