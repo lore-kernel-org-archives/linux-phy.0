@@ -4,89 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BD375E8383F
-	for <linux-phy@archiver.kernel.org>; Mon, 16 Feb 2026 22:13:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 60A50E8385B
+	for <linux-phy@archiver.kernel.org>; Tue, 17 Feb 2026 07:55:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/IRu0A5uWPwUdkk9DvHwo5/C5lsXMBkX9WpfkHP9/n0=; b=T30OrZKTD2uzrM
-	KdZQJZx+V+5Q1Jm4vdUHdMwZlLDq4opSfksa4lwAy7m8wTu0KdckdQUfubZquF3+mS8LnCO/gGqIR
-	AE8BdA/P9VGNuv2+SkiVioAkRMGHYxJhPPblJLtCpwi1/TtX9/1A9cFy5AFKLzCyf1KxVNjRruHUz
-	IPFspINEJqGSGnoDP1ai2iJZGyL2SORc+do2nfJx+HfQ8HJ6Ey2Wi8ZlWzibDKkWq/rU8SVrA4FY9
-	mghVFua1cS2kWTVvqOd54EQW4hX+KVYUVE23RbYOWnU6zJP8l2hUzbdP80NOpLdQKQNa9MN0Pqo3R
-	ckkrLimtWRu4pLuwgcgw==;
+	List-Owner; bh=+N8sh8WTmhCboU0zDvdPz6inrvUOn/IE5R31HK7NV1A=; b=fzaK0ccIzoYP/j
+	HyHbLN7KJ3s6vE+MQEaulSLhg16+H/IsZ8Zvk+dJZV8V0VbdfuEo8A32skBfKVKeTL/UdKPeSbXul
+	9ZE799U9tRbBZLK43Qo/yXySF+aDi3iIZJ7QO+PO9eERMiZulkx1MrvA9XqaYJRgATU57DC/P41Py
+	aJscs6xaKuf3QWBuHdOViV+Czed9cPbAo7YB55G8R2mH28LMQIsJFzl3Gm/A891lj9wj13DyN72CY
+	aSeGoO8QF6wb+DNZnaiPR0h37JPo1gTLTNi/dTseX6rVFNriQ6LLjWCpl4pAnAE/rYkqdDs2db73p
+	CdYMum9v0plLoJ+bul1w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vs6py-00000007KRQ-0R7R;
-	Mon, 16 Feb 2026 22:13:02 +0000
-Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
+	id 1vsFvs-00000007niA-0Yso;
+	Tue, 17 Feb 2026 07:55:44 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vs6pu-00000007KQO-3YzO
-	for linux-phy@lists.infradead.org;
-	Mon, 16 Feb 2026 22:13:00 +0000
-Received: by mail-wm1-x32c.google.com with SMTP id 5b1f17b1804b1-4806b8fca44so5149165e9.0
-        for <linux-phy@lists.infradead.org>; Mon, 16 Feb 2026 14:12:58 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1771279977; x=1771884777; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=15IPpReMOhWnQxE4O6qiiwyShkxCXyUxYB3ay6FehAg=;
-        b=M+iE1hZ9T9EQApGTxQg1orZxYaauY6vpf0cEYGv7oa1H2JdBWMdoAftwMHqJ3BqRUf
-         dHWQeoqh+0MGLYT0mHNdnO3Q7PJwU44Po3sr9XbiRTHU25RGzmCy/55v60CBIO7gRl7O
-         N+yvcV3PaPLsjBz5qmMROK/m/Ng7vY3Gtc6MZtVXPadZBCOKyGHeZep9Lonjw+c/5o2+
-         MQ+zMN4xa3BmKr1Dj8YtgAmyc0pVWyF8O6bP84nLhlgSWRZGsPo5o3ZCI9Ry3WZT/OO7
-         MhZ+hwc039YPaPOTePn/JpD2VUNjQn/RAkz9B3HDfLzwRiQkS1FJPtfYFlh/7MMOZphh
-         Iw9g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1771279977; x=1771884777;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=15IPpReMOhWnQxE4O6qiiwyShkxCXyUxYB3ay6FehAg=;
-        b=JFi/AIL90IS7pGvSuKNHALKby1ceLKFrpkmeeeZKW7GDm9AQKFiHD8Xq1j8cE/7ZgN
-         hadbocwOoRe0kRFd1zzjHGIVtne1uRb3mTGlBTXrGffy1PSQpqj/XYfiyp7mdL4/CfaN
-         aGftv3TIuIhuvjlGC2QxB9+54MJvtNAkK85vf96CDoB5QYJGxwnsJQVnblsxfRW56zNR
-         Oho5n4FnVUBnUkmttJ9mPAAZUN7cAS1QEpv1owy43ul49uNpmVVYWAWQmJ7e+1lMzX1a
-         u2tGfy1A83359ZgZTOiujjnVjDzyC7Cw0/g0aevobVEe8dLHgEIbndMgSjB2n1ferelC
-         sD4A==
-X-Forwarded-Encrypted: i=1; AJvYcCUGBg+WUfLlh5+8Dk6cqTonkjgqMzEzHwe/GipdYS+EY5WTBVNUIfk9k7gvaxQgwsP01WEsfAqwM/o=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxPQrLMHUE801wd/DNw7ZdYMZmf4E2ECF1W0dtrE2W0R0JYWTKl
-	gxEg4fFKtAFEJY2Gc1L9ZsQ4FaRd7ft9ODjWzqrAsyED4rPlOqTitK9+
-X-Gm-Gg: AZuq6aJaiY2NiwsTl2xWA5h3V1932dW3vmUqR1F56LyZU6humtButwyqX1d5U5GnUwU
-	ABmwQ5G6xwGEcGUb6WURDrcLkkmbpnCkVo0gOCTbUdOuc8wVbeVNDYNnO8gFSBybA4hbeSfUfaF
-	aoXFJ7SHyaB1oHYYnAKJToqPgwLWgtMYzXHgQY5UPVRxIfUppoFabyq2hCqenOBBp64f0F74NUe
-	t6oqG7oeKKgAp4qua0zMrQDPRm73XzvPbqs9z1lUPsN9Pk4fYDigMzxGMkj0DbZdTbXCmaf1qU2
-	kVBx5c1aBdL9wNUoQCfC7tRkUHe20YaaNekOC5Lp4iPid3oXwJMGVA4/clxgXlB98HqINGTyqCD
-	XgY9R9gTlECgLxh/3VL7R7zojL68n59Ww/NzRBblHhEjMjvTzJp6wt7teW7lGwgW2eOjsJoWZOn
-	FZvsBaLAbtfgqLxhY=
-X-Received: by 2002:a05:600d:3:b0:483:8f10:4bc5 with SMTP id 5b1f17b1804b1-4838f104bfbmr11005335e9.4.1771279976748;
-        Mon, 16 Feb 2026 14:12:56 -0800 (PST)
-Received: from skbuf ([2a02:2f04:d501:d900:ac3e:d4d0:5059:7047])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4835dd0e327sm460068605e9.14.2026.02.16.14.12.55
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 16 Feb 2026 14:12:56 -0800 (PST)
-Date: Tue, 17 Feb 2026 00:12:54 +0200
-From: Vladimir Oltean <olteanv@gmail.com>
-To: Yixun Lan <dlan@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Ze Huang <huang.ze@linux.dev>,
-	Junzhong Pan <panjunzhong@linux.spacemit.com>,
-	spacemit@lists.linux.dev, linux-phy@lists.infradead.org,
-	linux-riscv@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v3] phy: k1-usb: add disconnect function support
-Message-ID: <20260216221254.vmd6jtpl7r4rtob5@skbuf>
-References: <20260216152653.25244-1-dlan@kernel.org>
+	id 1vsFvo-00000007nhU-1QKb;
+	Tue, 17 Feb 2026 07:55:41 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 659B760133;
+	Tue, 17 Feb 2026 07:55:39 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 88372C4CEF7;
+	Tue, 17 Feb 2026 07:55:38 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1771314939;
+	bh=RIT9q7ZjgzCwi6a+GrgVFx/hK7w839qVlIXKzRBoBTI=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=poNW0uGENYq2wzDEQmx/QG2h3DW3WMtP/85H00VmpkKRZYXeCqxKcDvdv7zelcSIu
+	 9OzMybvVH5HZdXRi+IPnvxTAte4yRnClsBb2uUWlyWSJonI+RJlvYRQuYgY5F1IsVM
+	 jHr22nyGKprUUznuHfXtRk1+LR9WZL6NGbAObmVXnOBm9EoWaOONVmuMluUJBSagU2
+	 AVUMePee6iRG8nrOy8BPTrO4bpz79Volj5zoYsvalQQExcA+CMGkOuvGRcH8NqBXaB
+	 lfhxsk5EUgStGEp0I7Xf0iqt9VsrMMtLu8T/34DvHcKfbIJ1ow0vK4ps3r6+iObkNx
+	 L8TbvrTbqu0rw==
+Date: Tue, 17 Feb 2026 08:55:36 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Luca Leonardo Scorcia <l.scorcia@gmail.com>
+Cc: linux-mediatek@lists.infradead.org, 
+	Chun-Kuang Hu <chunkuang.hu@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>, 
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, 
+	Thomas Zimmermann <tzimmermann@suse.de>, David Airlie <airlied@gmail.com>, 
+	Simona Vetter <simona@ffwll.ch>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Matthias Brugger <matthias.bgg@gmail.com>, 
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, Jitao Shi <jitao.shi@mediatek.com>, 
+	Fabien Parent <fparent@baylibre.com>, dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+	linux-phy@lists.infradead.org
+Subject: Re: [PATCH v2 4/6] dt-bindings: phy: mediatek,dsi-phy: Add support
+ for mt8167
+Message-ID: <20260217-loyal-rapid-firefly-edcdf1@quoll>
+References: <cover.1771258407.git.l.scorcia@gmail.com>
+ <66fbd5dd3604ffc4fda45022c1db68e4e0be6714.1771258407.git.l.scorcia@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260216152653.25244-1-dlan@kernel.org>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260216_141258_917524_B2A4B244 
-X-CRM114-Status: UNSURE (   9.38  )
-X-CRM114-Notice: Please train this message.
+In-Reply-To: <66fbd5dd3604ffc4fda45022c1db68e4e0be6714.1771258407.git.l.scorcia@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,32 +80,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Feb 16, 2026 at 11:26:53PM +0800, Yixun Lan wrote:
-> A disconnect status BIT of USB2 PHY need to be cleared, otherwise
-> it will fail to work properly during next connection when devices
-> connect to roothub directly.
+On Mon, Feb 16, 2026 at 04:22:15PM +0000, Luca Leonardo Scorcia wrote:
+> Add support for the MediaTek mt8167 SoC: the DSI PHY found
+> in this chip is fully compatible with the one found in the mt2701 SoC.
 > 
-> Fixes: fe4bc1a08638 ("phy: spacemit: support K1 USB2.0 PHY controller")
-> Signed-off-by: Yixun Lan <dlan@kernel.org>
+> Signed-off-by: Luca Leonardo Scorcia <l.scorcia@gmail.com>
 > ---
-> To: Vinod Koul <vkoul@kernel.org>
-> To: Neil Armstrong <neil.armstrong@linaro.org>
-> To: Ze Huang <huang.ze@linux.dev>
-> Cc: Vladimir Oltean <olteanv@gmail.com>
-> Cc: Junzhong Pan <panjunzhong@linux.spacemit.com>
-> Cc: spacemit@lists.linux.dev
-> Cc: linux-phy@lists.infradead.org
-> Cc: linux-riscv@lists.infradead.org
-> Cc: linux-kernel@vger.kernel.org
-> 
-> Change in v3:
->  - split from v2 as bug fix
->  - fix alignment to open parenthesis
->  - http://lore.kernel.org/r/20260216090112.n5jjpui3luqsybb5@skbuf
->  - Link to v2: https://lore.kernel.org/r/20260214-11-k3-usb2-phy-v2-0-6ed31e031ab4@kernel.org
-> ---
+>  Documentation/devicetree/bindings/phy/mediatek,dsi-phy.yaml | 1 +
+>  1 file changed, 1 insertion(+)
 
-Reviewed-by: Vladimir Oltean <olteanv@gmail.com>
+Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+
+Best regards,
+Krzysztof
+
 
 -- 
 linux-phy mailing list
