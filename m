@@ -4,69 +4,100 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1ABD6E9A04C
-	for <linux-phy@archiver.kernel.org>; Wed, 18 Feb 2026 20:16:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 673E4E9A02C
+	for <linux-phy@archiver.kernel.org>; Wed, 18 Feb 2026 20:43:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:To:From:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Sr34p2CTrD0X0bgrlrqriJL1PuHEKNchB2pf4+z6U2E=; b=rx4vLuN0M6/1p+
-	9DTdQerL0IJeHyt3u4trTUFXNnjHj+e/dizEZp9VLyeUzWtLXWKn+8BpNWnJ9pKx0Kh4RQdTY3XQz
-	yNWEwUufweRDLp9mAqDJDPCnU4FIQjJIZvQ+QXbTjJKQeppEoCJgl0pzc9NjH/ZnoEAoBOJYGUOhx
-	yT52QFpiriudF+LMDiYitPhBpKpOOgUUxXWFw9X66D+5L4ZC5AjEcNbPMF+wIklW8N6PZdV0+54R0
-	dL8wz0/CzcqwFgk8VdgUYpPTuc+iVelIP/cA0668/ZtIZdppdyZLSKnjlWcqCX7vCa6+goV1DBFRN
-	5kljM8VdhFGJohqW7dxg==;
+	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:
+	In-Reply-To:Date:To:From:Subject:Message-ID:Cc:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5bu18CVLPeGuwt93GK6gC+0q/QcoNShN/fPnmYzhH7Y=; b=kMyCE2Lnt7kzq0
+	9OjQTu+GfEnduRXnItFZEwKd7ZNFLEnoXzMkgmSwi+tzUSx7vfTdCHVDwK4b6Az1VI+9yTruKnTHg
+	OXibB0/OWMZlOpyAFZ88H89DHptvnGup9EKmQ4cBF4WD44uNi7yTGxg4GF56hBJmopn8nyI4nUl8t
+	XhisbBaIpcUnPA8a2DGdynkdVsx/kMGJkkP05dmp06IwPmpUUijiiS1xf+oRELEgUJElI4QcDWJ7H
+	PsTjdpTo1zcNEcKvLp9PhjQpBs+yjDFDLqWCzLSz7wBdngSdKrIGGRxt8qCJTXB6Yt2qKoFFV6IO8
+	cVBLv4sqqZVbLhISj5bQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vsnxt-0000000AMRr-2uLy;
-	Wed, 18 Feb 2026 20:16:05 +0000
-Received: from bali.collaboradmins.com ([148.251.105.195])
+	id 1vsoOq-0000000AOMX-4BNa;
+	Wed, 18 Feb 2026 20:43:56 +0000
+Received: from mout.kundenserver.de ([217.72.192.74])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vsnxp-0000000AMQt-0XfY;
-	Wed, 18 Feb 2026 20:16:04 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1771445757;
-	bh=5uNMd0NubRf1wUh2v9cLUu0XWN/mz95QGc431XZp3Gk=;
-	h=Date:Subject:From:To:References:In-Reply-To:From;
-	b=CkYqnYgc8ySpj5oQ5PH0hg10U5skfgxYxMK5mJpHILdBW7/xn3WMK1TFqyX7NjLdB
-	 nWcIZbvS4BsG3MCQM+86f+4Nv+AsB6Wl0FwVeEXV8XtqbqZSRddQaoQTYuZ/Vr6haT
-	 sclZWsM4hfItyQimOs1PD0JXw2K87VpV3wIdZIrOU8BQxFoJ3h56+h79yi/S7sS4Ob
-	 eALBCq9epoprzE6haReG7B0ALlafDoa5poEIMk9uBwYLYgzCMgU8qFRyzHeVVOBPvD
-	 TKdfj8KT5PROCzrY4uz377fKxVsl4lqMnmgiNRFKoaVZvEPOvOz5fK5Vu/y54Orvlq
-	 +LaO9H51k1dzQ==
-Received: from [192.168.1.90] (unknown [82.79.138.145])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: cristicc)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 4CD8317E1396;
-	Wed, 18 Feb 2026 21:15:57 +0100 (CET)
-Message-ID: <03b5f3d1-6db4-4835-b2a5-c22c1aa63825@collabora.com>
-Date: Wed, 18 Feb 2026 22:15:56 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [REGRESSION] HDMI monitor not working on Radxa Rock 5B after phy
- rockchip samsung hdptx HDMI 2.1 FRL patchset
-From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-To: dubito@online.de, Vinod Koul <vkoul@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>, Heiko Stuebner
- <heiko@sntech.de>, linux-phy@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org, regressions@lists.linux.dev
+	id 1vsoOn-0000000AOLl-32kQ;
+	Wed, 18 Feb 2026 20:43:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=online.de;
+	s=s42582890; t=1771447403; x=1772052203; i=dubito@online.de;
+	bh=1afskavYau0tl+Bj5qe1Nzh8LAXyKnFoV2P5EHw4w5c=;
+	h=X-UI-Sender-Class:Message-ID:Subject:From:Reply-To:To:Date:
+	 In-Reply-To:References:Content-Type:Content-Transfer-Encoding:
+	 MIME-Version:cc:content-transfer-encoding:content-type:date:from:
+	 message-id:mime-version:reply-to:subject:to;
+	b=dsFiMleFXeEXQFg0w6XZfHpl38d8y3hl/NW0U/MH4rM0E4H9NVzSbG1rKo+FP9Ed
+	 XcdqB1rhwvg6umAFKaNEgLaUNtiV/T5v7mgsAVVVkYzaN1pnGwHB3u+9hMO48PdoG
+	 br+2asBQwkEq+etty3lu0XL4juNq+zSdYiJmeJq1Dpl/krqxqEmE4fuVZedvyH5J6
+	 xND01F1EQo6KowY+4uPR8f8HiznXKv2iq9Jpi+usA5zCMglshr5CvUfc4ArTlvYdJ
+	 8vpamKSryLhAm3nmABGM08OC7XXtyysXh9w8QtKV58vdbVjmXUlUsBFAMDuRoQbVW
+	 WOvuAj8CpVY09M3MPg==
+X-UI-Sender-Class: 6003b46c-3fee-4677-9b8b-2b628d989298
+Received: from [192.168.0.208] ([91.66.193.45]) by mrelayeu.kundenserver.de
+ (mreue108 [212.227.15.183]) with ESMTPSA (Nemesis) id
+ 1MKbXu-1wBaEB0VS8-00KRXO; Wed, 18 Feb 2026 21:43:23 +0100
+Message-ID: <a3c3964e9e13c82d944fa1ee0acbb1a7806dd382.camel@online.de>
+Subject: Re: [REGRESSION] HDMI monitor not working on Radxa Rock 5B after
+ phy rockchip samsung hdptx HDMI 2.1 FRL patchset
+From: 1und1 <dubito@online.de>
+To: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>, Vinod Koul	
+ <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, Heiko
+ Stuebner	 <heiko@sntech.de>, linux-phy@lists.infradead.org, 
+	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+	linux-kernel@vger.kernel.org, regressions@lists.linux.dev
+Date: Wed, 18 Feb 2026 21:43:18 +0100
+In-Reply-To: <03b5f3d1-6db4-4835-b2a5-c22c1aa63825@collabora.com>
 References: <b32164001947ba922aefb6ca86a8dc59e9323d2b.camel@online.de>
- <8e410a11-bd7b-4a12-a711-0514a59409c0@collabora.com>
- <1859c940219a4dbfdf0497afbf333e627ab0ba25.camel@online.de>
- <98e46dbb-c8e2-451f-accb-ea48f63f9408@collabora.com>
- <4544ec4ccfa49cbdffee098878df7806223935a0.camel@online.de>
- <08369c90-fbab-477d-9ac6-388deddfd3b1@collabora.com>
- <26e31b3b-484f-433b-833f-c639ee437f63@collabora.com>
-Content-Language: en-US
-In-Reply-To: <26e31b3b-484f-433b-833f-c639ee437f63@collabora.com>
+	 <8e410a11-bd7b-4a12-a711-0514a59409c0@collabora.com>
+	 <1859c940219a4dbfdf0497afbf333e627ab0ba25.camel@online.de>
+	 <98e46dbb-c8e2-451f-accb-ea48f63f9408@collabora.com>
+	 <4544ec4ccfa49cbdffee098878df7806223935a0.camel@online.de>
+	 <08369c90-fbab-477d-9ac6-388deddfd3b1@collabora.com>
+	 <26e31b3b-484f-433b-833f-c639ee437f63@collabora.com>
+	 <03b5f3d1-6db4-4835-b2a5-c22c1aa63825@collabora.com>
+User-Agent: Evolution 3.58.2 
+MIME-Version: 1.0
+X-Provags-ID: V03:K1:JMj2ed6H9IIYLIPXvd8SrffsvicDqBIhjEAHIteAk7Dz2GW8xam
+ MHD2A8GOYDQtPVrUmFk7balTR4AdJsrIprV0SdPAfAqb86kqagLOcE4YEyGf63xJzfjENSN
+ WM7iG2kgah0GtfhLMOffxdkA0/6hIzVWt0HjUYCKLc9iuX5AItt58A/yk/j/i6b1ekL/VHZ
+ knELWnr9Bs36cWMQEgDkQ==
+UI-OutboundReport: notjunk:1;M01:P0:ZIft8d4dnN8=;LoNduLw4rESE8Sqte/WndwUtxC1
+ e+x6oQDHiwn85JeF9Qi/pDvviEg4nZWVouiVZ0oDYIXX9Ze2E9RHDulJf4+xWApogA13z0BL3
+ FGjRuB05rZpZThu4bzFYlWl1eznAVX/FdiA2AHYosRZzkJZCSKJ+xgDAlpJ6HAx1jF0iVzN+t
+ oXhii1jolnqROUJcvvrNWeZX6KQgGYsp/Lf4+o2Wwh2eXa+T4CzY+vwDTIG9U4Rx0jAUbPWlQ
+ A8aSt8FG46yZIOjQg8wIJYtpYdF/uAPO/9u4gA2kSAZ/n7s37xxjQ8BSI8U6tKQzhQB3aGdLw
+ 9V5i3lT9PO2F4BgRKbAha9O0H8e+31BXIz/oDAzSPTNofC77SaIb0CkrQFa43FWTtcp9Fo03G
+ mxLpjI4eA+PgmNHRhZhCXimZQEVRhFlEUxkWanUAbtE2d7+HrHntDMCz4kmGxRBT5vA4hs6lO
+ jvliKangOLTSQl2/igvvpPG1cdCWty80P+Y7x0mt9767oYWKGvtzJ6VttkXaik8Tr5uncyF73
+ T7wEv6mU5AHIRBRDn/hR0/J8E/uUrN6a1UltyN6rd+CcMYPsZMI7vSt0tAj8+HU0d5pUq3+El
+ lyRdMDZiFR9k+aTJ/2BDGTXrhX4ZgEBEaMYrY1W+3Z0LLJGCPXfewN2mM4V6jvXA0UsvcG6SD
+ tSY/NI/rvxAC4IEVpVcgReJjHoWkK96oxQw769tQGdEW0JFPoeNtgHwtG5W5QMSV04hNdK/Y6
+ 99KLnEa4TZBaIGFUkLfP60iWHrMTWkkfkk7FIuq9lDlWdlaWgHOojkS+KU3MtTCGpVuaCpmJ4
+ pHGjediehHO0bhcbGKPUCB9iVJaq4wgzeK6lvg1TzSRLSCH8GgpoSQOZZkka+JjX6d+n5W/11
+ YagakHkWnypgSGOqXjD4MSJlrGrXWeZq8CyRQ/ckqsp8ozuOhcFT+D0eZ4t6PTaijIg2vzsUt
+ HzqJMIQvCxbilzsK5Zft8+5QiiXtsdriu8+/tAOScZUQPpkF/WFeYJUVSnGEQ7KxPlgSM8d7B
+ 1rTJvqVZYhFe2e29MpfC1u9nNXZ3etA/3HOoUskfnoWlxey3El1ANyinv31egxvUA8CrKHAeu
+ U1kpMtzmrXLFBA+kA65TBzot6pfkg6cy/eallzbEJzATh7ko2hTLJbHjLMpQtGSMeTehRhiUz
+ NOibW97dWZq/b4XdrrO1mcksmQuIByrA3rYJKXtMlDmzE2IZ0EzU+oa6cgQVDDCvENbRrxZ6q
+ uIWUxn5a2VmRKJcljZ3uYOg6msGtkpLgXkOiRq6dniPX0Ntqx+yb+HCsln2+qH4bR+onjmwQy
+ WnIcjVEn6Or0lUogHgsLTEFMGSvGqLcJBTRteJq58NkRQSqf4P+MrzPBmmCTNPQB+zCzbp+FF
+ 5fIknEkuAM7/k/KjM1gKegVzaVHEyqecxwyok5acNKQdVrOnC+i7h5jWKX7iN7NGLbwYpEMQn
+ 3qDG+qKBWgkf/rcPdg+C04imV0KkpijphU+fvobNZRffI/XK0QYn+R0ddqCAIM6gqqr5TEBVw
+ IpmONM25REfkWX5jSNDFKOYC/9peCvKosmQ+md44Ex6npxUsFVLhwAt6oeqBWnHmfS0S/tOjk
+ oH7ak3tlQnjZZRaqCKoGkrP75r6RKdFFV/4Ds6BnizGjvjQuw5Yxc+EV+d53NsXn7Fnts7Utv
+ qXU1/BXeEt5qra2Lsef8WLfZKpb7OcRfYkAHqM7ajQpjVagin9xMJZO69IkRWCvLmjFTSb1oD
+ BHFasaRvAf+cbQsJlySOovyYjEyNsyjdwTdffFsjnAQHK5bbnUpfDJIo21lN3KL+MAMSBWRwm
+ BUBF
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260218_121601_338094_6495E517 
-X-CRM114-Status: GOOD (  13.25  )
+X-CRM114-CacheID: sfid-20260218_124354_145164_8779312E 
+X-CRM114-Status: GOOD (  21.86  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,53 +109,47 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: dubito@online.de
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 2/18/26 3:22 AM, Cristian Ciocaltea wrote:
-> On 2/18/26 2:52 AM, Cristian Ciocaltea wrote:
->> Hi Thomas,
-> [...]
-> 
->>
->> Sorry, I somehow missed the following warning message, though it has been
->> already present in all the logs you've sent to me so far:
->>
->>   rockchip-hdptx-phy fed60000.phy: PLL locked by unknown consumer!
->>
->> That indicates the PHY has been preconfigured by an external component (e.g. the
->> bootloader), which is actually a scenario that I didn't verify.
->>
->> However, this just another way to expose a limitation of the current approach
->> for managing the TMDS character rate: done via the Common Clock Framework API
->> instead of the HDMI PHY configuration API.
->>
->> As a matter of fact, it was actually an item on my TODOs list for quite a while,
->> but blocked until recently due to several dependencies waiting to be merged
->> upstream.
->>
->> Hence I took the opportunity to finalize this task - please give the following
->> commits in my rk3588-hdmi-debug branch [2] a try:
-> 
-> I've just realized I introduced a regression while doing some cleanup work, hence
-> please ignore this until further notice.
-
-I think I got this working properly now, at least it passes all the tests I
-could run.  The updated commits in [2] are:
-
-  fa7cd1e75aaa ("phy: rockchip: samsung-hdptx: Fix rate recalculation for high bpc")
-  8048db5544da ("phy: rockchip: samsung-hdptx: Exclusively use PHY config API for PLL changes")
-  0085a382dfd0 ("[DEBUG] drm/rockchip: Add HDMI verbose logging")
-
-Regards,
-Cristian
-
-[2] https://gitlab.collabora.com/cristicc/linux-next/-/commits/rk3588-hdmi-debug
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+SGkgQ3Jpc3RpYW4sCgoKQW0gTWl0dHdvY2gsIGRlbSAxOC4wMi4yMDI2IHVtIDIyOjE1ICswMjAw
+IHNjaHJpZWIgQ3Jpc3RpYW4gQ2lvY2FsdGVhOgo+IE9uIDIvMTgvMjYgMzoyMiBBTSwgQ3Jpc3Rp
+YW4gQ2lvY2FsdGVhIHdyb3RlOgo+ID4gT24gMi8xOC8yNiAyOjUyIEFNLCBDcmlzdGlhbiBDaW9j
+YWx0ZWEgd3JvdGU6Cj4gPiA+IEhpIFRob21hcywKPiA+IFsuLi5dCj4gPiAKPiA+ID4gCj4gPiA+
+IFNvcnJ5LCBJIHNvbWVob3cgbWlzc2VkIHRoZSBmb2xsb3dpbmcgd2FybmluZyBtZXNzYWdlLCB0
+aG91Z2ggaXQgaGFzIGJlZW4KPiA+ID4gYWxyZWFkeSBwcmVzZW50IGluIGFsbCB0aGUgbG9ncyB5
+b3UndmUgc2VudCB0byBtZSBzbyBmYXI6Cj4gPiA+IAo+ID4gPiDCoCByb2NrY2hpcC1oZHB0eC1w
+aHkgZmVkNjAwMDAucGh5OiBQTEwgbG9ja2VkIGJ5IHVua25vd24gY29uc3VtZXIhCj4gPiA+IAo+
+ID4gPiBUaGF0IGluZGljYXRlcyB0aGUgUEhZIGhhcyBiZWVuIHByZWNvbmZpZ3VyZWQgYnkgYW4g
+ZXh0ZXJuYWwgY29tcG9uZW50Cj4gPiA+IChlLmcuIHRoZQo+ID4gPiBib290bG9hZGVyKSwgd2hp
+Y2ggaXMgYWN0dWFsbHkgYSBzY2VuYXJpbyB0aGF0IEkgZGlkbid0IHZlcmlmeS4KPiA+ID4gCj4g
+PiA+IEhvd2V2ZXIsIHRoaXMganVzdCBhbm90aGVyIHdheSB0byBleHBvc2UgYSBsaW1pdGF0aW9u
+IG9mIHRoZSBjdXJyZW50Cj4gPiA+IGFwcHJvYWNoCj4gPiA+IGZvciBtYW5hZ2luZyB0aGUgVE1E
+UyBjaGFyYWN0ZXIgcmF0ZTogZG9uZSB2aWEgdGhlIENvbW1vbiBDbG9jayBGcmFtZXdvcmsKPiA+
+ID4gQVBJCj4gPiA+IGluc3RlYWQgb2YgdGhlIEhETUkgUEhZIGNvbmZpZ3VyYXRpb24gQVBJLgo+
+ID4gPiAKPiA+ID4gQXMgYSBtYXR0ZXIgb2YgZmFjdCwgaXQgd2FzIGFjdHVhbGx5IGFuIGl0ZW0g
+b24gbXkgVE9ET3MgbGlzdCBmb3IgcXVpdGUgYQo+ID4gPiB3aGlsZSwKPiA+ID4gYnV0IGJsb2Nr
+ZWQgdW50aWwgcmVjZW50bHkgZHVlIHRvIHNldmVyYWwgZGVwZW5kZW5jaWVzIHdhaXRpbmcgdG8g
+YmUKPiA+ID4gbWVyZ2VkCj4gPiA+IHVwc3RyZWFtLgo+ID4gPiAKPiA+ID4gSGVuY2UgSSB0b29r
+IHRoZSBvcHBvcnR1bml0eSB0byBmaW5hbGl6ZSB0aGlzIHRhc2sgLSBwbGVhc2UgZ2l2ZSB0aGUK
+PiA+ID4gZm9sbG93aW5nCj4gPiA+IGNvbW1pdHMgaW4gbXkgcmszNTg4LWhkbWktZGVidWcgYnJh
+bmNoIFsyXSBhIHRyeToKPiA+IAo+ID4gSSd2ZSBqdXN0IHJlYWxpemVkIEkgaW50cm9kdWNlZCBh
+IHJlZ3Jlc3Npb24gd2hpbGUgZG9pbmcgc29tZSBjbGVhbnVwIHdvcmssCj4gPiBoZW5jZQo+ID4g
+cGxlYXNlIGlnbm9yZSB0aGlzIHVudGlsIGZ1cnRoZXIgbm90aWNlLgo+IAo+IEkgdGhpbmsgSSBn
+b3QgdGhpcyB3b3JraW5nIHByb3Blcmx5IG5vdywgYXQgbGVhc3QgaXQgcGFzc2VzIGFsbCB0aGUg
+dGVzdHMgSQo+IGNvdWxkIHJ1bi7CoCBUaGUgdXBkYXRlZCBjb21taXRzIGluIFsyXSBhcmU6Cj4g
+Cj4gwqAgZmE3Y2QxZTc1YWFhICgicGh5OiByb2NrY2hpcDogc2Ftc3VuZy1oZHB0eDogRml4IHJh
+dGUgcmVjYWxjdWxhdGlvbiBmb3IgaGlnaAo+IGJwYyIpCj4gwqAgODA0OGRiNTU0NGRhICgicGh5
+OiByb2NrY2hpcDogc2Ftc3VuZy1oZHB0eDogRXhjbHVzaXZlbHkgdXNlIFBIWSBjb25maWcgQVBJ
+Cj4gZm9yIFBMTCBjaGFuZ2VzIikKPiDCoCAwMDg1YTM4MmRmZDAgKCJbREVCVUddIGRybS9yb2Nr
+Y2hpcDogQWRkIEhETUkgdmVyYm9zZSBsb2dnaW5nIikKPiAKCmFwcGx5aW5nIHRoZXNlIGNvbW1p
+dHMgc29sdmVzIG15IHByb2JsZW1zLiBJIHRlc3RlZCAxOTIweDEwODBANjAsIDE5MjB4MTA4MEA1
+MAphbmQgMTkyMHgxMDgwQDMwLiBBbGwgd29yayBub3cuIFRoYW5rcyBmb3IgdGhlIHF1aWNrIGZp
+eCEgQW5kIHRoZSBwb3NpdGl2ZSBzaWRlCmVmZmVjdCBzZWVtcyB0byBiZSB0aGF0IHlvdSBjYW4g
+bm93IHRha2Ugb25lIG9mIHlvdXIgb2xkIHRvZG9zIGZyb20geW91ciBsaXN0LgoKQmVzdCByZWdh
+cmRzLAoKVGhvbWFzCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMu
+aW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
+by9saW51eC1waHkK
