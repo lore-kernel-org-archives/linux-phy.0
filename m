@@ -4,71 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EBD1FE9A04B
-	for <linux-phy@archiver.kernel.org>; Wed, 18 Feb 2026 20:57:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F7DBE9A02C
+	for <linux-phy@archiver.kernel.org>; Wed, 18 Feb 2026 22:52:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oJ5cWH/eQO1IHK1p94N++9+4SF6Dvg6bxS+7ivf4qxs=; b=OZv8/H/t4jO9eR
-	oJDmo9vwmNdze/6u/HHpxP8xfcFPjCphNL5+Wm4dTuack9OXeMIo3G0AacTMMPB2cI7JdCSIN//4r
-	dlG7tsAfYchOeSzkeASYNDRfnZallC/ICEgrM8IONxp+kr7F/SkmG6vZvIeeUyUPLg7TFfsaBRQhL
-	uEBXiTPL/hyUjDsZJrqz4iakfNIZXD4UGyvDcoyoU7AxSAg9ax9haJvrcJEPudCc5ObOKFsNloF99
-	qKZC40wcawnLxhk+sQsZE+6hPb4SRyfNZF8R4ozyL1MNO1jHHsndIux/6Rfs9GkVR8muhqDF/st/q
-	gYEEmQ+/TWrN0FSj2V8A==;
+	List-Owner; bh=VGd55u2ycc4gs7yvvAhWSsZfPCXtrEdF7EwLKG3nmtk=; b=kpICdgdxSw5W/2
+	2cV0CjZqAP3mzg+mShb7n/aQRF4AzUyir+4SgJXexBeVzr/q7L8wlmWxrDOLczMjX9QIUGGgqFaPX
+	tUZC67q5Ccl6+mUUVEjabu6TvNHDEMd5iv16FWn9Pt850QijqOvkf15pSAVsxVI5c4J2SKKq6od8a
+	NGk/XGxAlFm1XfxTiBkUdNrL1bEAGPr49rPSmmL+aiE3lhMyxqbZjT3v61maLNWHxRPkKWT0eECpO
+	WTdWNxETKjIWfsaDJI8ro7W7AMVheTduF5Kvz+BwUh6Im9GLmg5hAScb7i57Lm1KzNyOOtC2ePnB6
+	Zdh/f78r3HW5x4AmF+KA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vsobU-0000000APjJ-2B99;
-	Wed, 18 Feb 2026 20:57:00 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	id 1vsqP4-0000000AYHh-0IQS;
+	Wed, 18 Feb 2026 22:52:18 +0000
+Received: from forward502a.mail.yandex.net ([178.154.239.82])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vsobR-0000000APia-2sqQ;
-	Wed, 18 Feb 2026 20:56:59 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1771448212;
-	bh=OwmdDIcpJBYXHzGN/OiX+qYUOpoVkCDEW7IiyCqnSpc=;
-	h=Date:Subject:To:References:From:In-Reply-To:From;
-	b=S5J56E93P9UTrZ/REL9COO9XVO1m6FzavDwdBnI7cuJx9qGxJ40XAwCrYBoAjPcfd
-	 ADWCaNMxXYkfZC54N1hUHXEzkRqADui5iLVUZV6wD/b2E8f8+fC5POkv+NkniUp9rk
-	 Vxgaph+ucn/vgPJK/XHE0XezfmulXRqL/JB0NqVaY4pZBxiJfrdc9hLR194YhqQUOJ
-	 Jdjz+iTnEe0YYEaqf10jNa7PCI3dWJLOPeCmCFddQG4ws79JF+q0PRhB+12PfWo/G1
-	 pcN4bryzGotxtNiu8pwHNGBXqOBsq7yEO4vVrech0z5WeD4wIXcGJRkO98OortxdQN
-	 y7nGzuBOHT03Q==
-Received: from [192.168.1.90] (unknown [82.79.138.145])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
-	(No client certificate requested)
-	(Authenticated sender: cristicc)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 8622417E131B;
-	Wed, 18 Feb 2026 21:56:52 +0100 (CET)
-Message-ID: <a662745a-1b2a-47b3-a66d-7c1c5c8af525@collabora.com>
-Date: Wed, 18 Feb 2026 22:56:52 +0200
+	id 1vsqP0-0000000AYGU-0cDF;
+	Wed, 18 Feb 2026 22:52:17 +0000
+Received: from mail-nwsmtp-smtp-production-main-94.vla.yp-c.yandex.net (mail-nwsmtp-smtp-production-main-94.vla.yp-c.yandex.net [IPv6:2a02:6b8:c15:290e:0:640:f317:0])
+	by forward502a.mail.yandex.net (Yandex) with ESMTPS id 8729889CF4;
+	Thu, 19 Feb 2026 01:52:05 +0300 (MSK)
+Received: by mail-nwsmtp-smtp-production-main-94.vla.yp-c.yandex.net (smtp/Yandex) with ESMTPSA id 1qjcVXSGC4Y0-8pHEunKh;
+	Thu, 19 Feb 2026 01:52:04 +0300
+X-Yandex-Fwd: 1
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yandex.com; s=mail;
+	t=1771455124; bh=CKsYIBP1nS9baNuNPf0y7xcvIP54RWOTm98i27xusoI=;
+	h=From:In-Reply-To:Cc:Date:References:To:Subject:Message-ID;
+	b=O66KIAXFmfXw8rz4pI+7zzue0DPxJrPIy0aeyjkO+U5tkkEkgxOltbJc9noMwz41e
+	 3f9Up+VtsxkvBYrT3f+TEddoOWmDlbun1b1OcoveKDg3YfFMn5/gAYkLLgE9rUkEba
+	 fu98ukhOnyvr9PBN86WEp1TJGPNRinIP2W3AmBaw=
+Authentication-Results: mail-nwsmtp-smtp-production-main-94.vla.yp-c.yandex.net; dkim=pass header.i=@yandex.com
+Message-ID: <bd10ba64-2e56-4f1b-ba82-73ef59c87e2a@yandex.com>
+Date: Wed, 18 Feb 2026 23:52:01 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [REGRESSION] HDMI monitor not working on Radxa Rock 5B after phy
- rockchip samsung hdptx HDMI 2.1 FRL patchset
-To: dubito@online.de, Vinod Koul <vkoul@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>, Heiko Stuebner
- <heiko@sntech.de>, linux-phy@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org, regressions@lists.linux.dev
-References: <b32164001947ba922aefb6ca86a8dc59e9323d2b.camel@online.de>
- <8e410a11-bd7b-4a12-a711-0514a59409c0@collabora.com>
- <1859c940219a4dbfdf0497afbf333e627ab0ba25.camel@online.de>
- <98e46dbb-c8e2-451f-accb-ea48f63f9408@collabora.com>
- <4544ec4ccfa49cbdffee098878df7806223935a0.camel@online.de>
- <08369c90-fbab-477d-9ac6-388deddfd3b1@collabora.com>
- <26e31b3b-484f-433b-833f-c639ee437f63@collabora.com>
- <03b5f3d1-6db4-4835-b2a5-c22c1aa63825@collabora.com>
- <a3c3964e9e13c82d944fa1ee0acbb1a7806dd382.camel@online.de>
-Content-Language: en-US
-From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-In-Reply-To: <a3c3964e9e13c82d944fa1ee0acbb1a7806dd382.camel@online.de>
+Subject: Re: [PATCH v2 2/4] arm64: dts: rockchip: Add USB2.0 PHY for RK3368
+To: Vladimir Oltean <olteanv@gmail.com>, WeiHao Li <cn.liweihao@gmail.com>
+Cc: heiko@sntech.de, robh@kernel.org, krzk+dt@kernel.org,
+ conor+dt@kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20250909132958.26423-1-cn.liweihao@gmail.com>
+ <20250909132958.26423-3-cn.liweihao@gmail.com>
+ <20260212165550.mju3377fvphdsqoe@skbuf>
+Content-Language: en-US, ar-EG
+From: Johan Jonker <jbx6244@yandex.com>
+In-Reply-To: <20260212165550.mju3377fvphdsqoe@skbuf>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260218_125657_922320_65E651D2 
-X-CRM114-Status: GOOD (  15.13  )
+X-CRM114-CacheID: sfid-20260218_145214_738081_93112A09 
+X-CRM114-Status: GOOD (  17.40  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,73 +74,91 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Thomas,
 
-On 2/18/26 10:43 PM, 1und1 wrote:
-> Hi Cristian,
-> 
-> 
-> Am Mittwoch, dem 18.02.2026 um 22:15 +0200 schrieb Cristian Ciocaltea:
->> On 2/18/26 3:22 AM, Cristian Ciocaltea wrote:
->>> On 2/18/26 2:52 AM, Cristian Ciocaltea wrote:
->>>> Hi Thomas,
->>> [...]
->>>
->>>>
->>>> Sorry, I somehow missed the following warning message, though it has been
->>>> already present in all the logs you've sent to me so far:
->>>>
->>>>   rockchip-hdptx-phy fed60000.phy: PLL locked by unknown consumer!
->>>>
->>>> That indicates the PHY has been preconfigured by an external component
->>>> (e.g. the
->>>> bootloader), which is actually a scenario that I didn't verify.
->>>>
->>>> However, this just another way to expose a limitation of the current
->>>> approach
->>>> for managing the TMDS character rate: done via the Common Clock Framework
->>>> API
->>>> instead of the HDMI PHY configuration API.
->>>>
->>>> As a matter of fact, it was actually an item on my TODOs list for quite a
->>>> while,
->>>> but blocked until recently due to several dependencies waiting to be
->>>> merged
->>>> upstream.
->>>>
->>>> Hence I took the opportunity to finalize this task - please give the
->>>> following
->>>> commits in my rk3588-hdmi-debug branch [2] a try:
->>>
->>> I've just realized I introduced a regression while doing some cleanup work,
->>> hence
->>> please ignore this until further notice.
+
+On 2/12/26 17:55, Vladimir Oltean wrote:
+> On Tue, Sep 09, 2025 at 09:29:56PM +0800, WeiHao Li wrote:
+>> RK3368 has one USB2.0 PHY with two ports, This adds device tree node for
+>> it.
 >>
->> I think I got this working properly now, at least it passes all the tests I
->> could run.  The updated commits in [2] are:
+>> Signed-off-by: WeiHao Li <cn.liweihao@gmail.com>
+>> ---
+>>  arch/arm64/boot/dts/rockchip/rk3368.dtsi | 29 ++++++++++++++++++++++++
+>>  1 file changed, 29 insertions(+)
 >>
->>   fa7cd1e75aaa ("phy: rockchip: samsung-hdptx: Fix rate recalculation for high
->> bpc")
->>   8048db5544da ("phy: rockchip: samsung-hdptx: Exclusively use PHY config API
->> for PLL changes")
->>   0085a382dfd0 ("[DEBUG] drm/rockchip: Add HDMI verbose logging")
+>> diff --git a/arch/arm64/boot/dts/rockchip/rk3368.dtsi b/arch/arm64/boot/dts/rockchip/rk3368.dtsi
+>> index 1b21787269..b09e431a64 100644
+>> --- a/arch/arm64/boot/dts/rockchip/rk3368.dtsi
+>> +++ b/arch/arm64/boot/dts/rockchip/rk3368.dtsi
+>> @@ -766,11 +766,40 @@ cru: clock-controller@ff760000 {
+>>  	grf: syscon@ff770000 {
+>>  		compatible = "rockchip,rk3368-grf", "syscon", "simple-mfd";
+>>  		reg = <0x0 0xff770000 0x0 0x1000>;
+>> +		#address-cells = <1>;
+>> +		#size-cells = <1>;
+> 
+
+> This introduces a device tree warning. You cannot mix nodes with no unit
+> address (io-domains) with nodes with a unit address (usb2-phy@700) on
+> the same hierarchical level. You have to pick a format and stick to it.
+
+nope
+
+Please add rockchip,rk3368-usb2phy to the list in grf.yaml in the same patch that you change rockchip,inno-usb2phy.yaml
+Requires a bit of SOC and PHY maintainers coordination.
+
+Place dt-binding compatible change patches before the patch that uses it. (patch 3 before patch 1)
+due to: ./scripts/checkpatch.pl --strict 
+
+https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/tree/Documentation/devicetree/bindings/soc/rockchip/grf.yaml#n244
+
+> 
+>>  
+>>  		io_domains: io-domains {
+>>  			compatible = "rockchip,rk3368-io-voltage-domain";
+>>  			status = "disabled";
+>>  		};
+>> +
+>> +		u2phy: usb2-phy@700 {
+>> +			compatible = "rockchip,rk3368-usb2phy";
+>> +			reg = <0x700 0x2c>;
+>> +			clocks = <&cru SCLK_OTGPHY0>;
+>> +			clock-names = "phyclk";
+>> +			clock-output-names = "usb480m_phy";
+>> +			#clock-cells = <0>;
+>> +			status = "disabled";
+>> +
+>> +			u2phy_otg: otg-port {
+>> +				interrupts = <GIC_SPI 94 IRQ_TYPE_LEVEL_HIGH>,
+>> +					     <GIC_SPI 93 IRQ_TYPE_LEVEL_HIGH>,
+>> +					     <GIC_SPI 95 IRQ_TYPE_LEVEL_HIGH>;
+>> +				interrupt-names = "otg-bvalid", "otg-id",
+>> +						  "linestate";
+>> +				#phy-cells = <0>;
+>> +				status = "disabled";
+>> +			};
+>> +
+>> +			u2phy_host: host-port {
+>> +				interrupts = <GIC_SPI 96 IRQ_TYPE_LEVEL_HIGH>;
+>> +				interrupt-names = "linestate";
+>> +				#phy-cells = <0>;
+>> +				status = "disabled";
+>> +			};
+>> +		};
+>>  	};
+>>  
+>>  	wdt: watchdog@ff800000 {
+>> -- 
+>> 2.47.2
+>>
 >>
 > 
-> applying these commits solves my problems. I tested 1920x1080@60, 1920x1080@50
-> and 1920x1080@30. All work now. Thanks for the quick fix! 
+> _______________________________________________
+> Linux-rockchip mailing list
+> Linux-rockchip@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-rockchip
+> 
 
-Thanks for the quick test!
-
-I can add you to cc: when I submit the series, so that you may provide your
-Tested-by tag if you'd like to.
-
-> And the positive side> effect seems to be that you can now take one of your
-> old todos from your list.
-
-Indeed. :-)
-
-Regards,
-Cristian
 
 -- 
 linux-phy mailing list
