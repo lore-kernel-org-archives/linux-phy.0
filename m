@@ -4,60 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F7DBE9A02C
-	for <linux-phy@archiver.kernel.org>; Wed, 18 Feb 2026 22:52:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19A25E9A02C
+	for <linux-phy@archiver.kernel.org>; Thu, 19 Feb 2026 02:04:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VGd55u2ycc4gs7yvvAhWSsZfPCXtrEdF7EwLKG3nmtk=; b=kpICdgdxSw5W/2
-	2cV0CjZqAP3mzg+mShb7n/aQRF4AzUyir+4SgJXexBeVzr/q7L8wlmWxrDOLczMjX9QIUGGgqFaPX
-	tUZC67q5Ccl6+mUUVEjabu6TvNHDEMd5iv16FWn9Pt850QijqOvkf15pSAVsxVI5c4J2SKKq6od8a
-	NGk/XGxAlFm1XfxTiBkUdNrL1bEAGPr49rPSmmL+aiE3lhMyxqbZjT3v61maLNWHxRPkKWT0eECpO
-	WTdWNxETKjIWfsaDJI8ro7W7AMVheTduF5Kvz+BwUh6Im9GLmg5hAScb7i57Lm1KzNyOOtC2ePnB6
-	Zdh/f78r3HW5x4AmF+KA==;
+	List-Owner; bh=NUYIu2AA6cEo7iJPSSTJatKieZu4PzCvBqIIXZH6yZ4=; b=DC0ScPYwub/jY0
+	eds4cDkUU+U+WN8iwrtZYt4+FFnwofIe4izBZbRdSrclDZeIk92+rJ2k7h2sCMxK7C6NNFZ9sSRoP
+	WWeqmu8MQzgUft8vRazFkbZZxZqY9m/3pg1sWPzP9b1wPpTqs1T06NfMBks3d4JR0TM+ohBjXZoND
+	t/wVAUmimDufpzadZuH7dHIzNX9A5fR2RP3/d4nwXiLYze8xNJPUY1EBtLDB0XjKtW2mkh9uwuTiX
+	5hdf+hU0WNC90RKrMnsc0LpvlYgP8f4xUAxkQz1X5B6pRH5YTYkrY/uRQt/n2qalX26puFNQEJ3xK
+	O1Fi+3wv1+4LrHSw+tEQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vsqP4-0000000AYHh-0IQS;
-	Wed, 18 Feb 2026 22:52:18 +0000
-Received: from forward502a.mail.yandex.net ([178.154.239.82])
+	id 1vstPT-0000000Aj8F-26SR;
+	Thu, 19 Feb 2026 02:04:55 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vsqP0-0000000AYGU-0cDF;
-	Wed, 18 Feb 2026 22:52:17 +0000
-Received: from mail-nwsmtp-smtp-production-main-94.vla.yp-c.yandex.net (mail-nwsmtp-smtp-production-main-94.vla.yp-c.yandex.net [IPv6:2a02:6b8:c15:290e:0:640:f317:0])
-	by forward502a.mail.yandex.net (Yandex) with ESMTPS id 8729889CF4;
-	Thu, 19 Feb 2026 01:52:05 +0300 (MSK)
-Received: by mail-nwsmtp-smtp-production-main-94.vla.yp-c.yandex.net (smtp/Yandex) with ESMTPSA id 1qjcVXSGC4Y0-8pHEunKh;
-	Thu, 19 Feb 2026 01:52:04 +0300
-X-Yandex-Fwd: 1
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yandex.com; s=mail;
-	t=1771455124; bh=CKsYIBP1nS9baNuNPf0y7xcvIP54RWOTm98i27xusoI=;
-	h=From:In-Reply-To:Cc:Date:References:To:Subject:Message-ID;
-	b=O66KIAXFmfXw8rz4pI+7zzue0DPxJrPIy0aeyjkO+U5tkkEkgxOltbJc9noMwz41e
-	 3f9Up+VtsxkvBYrT3f+TEddoOWmDlbun1b1OcoveKDg3YfFMn5/gAYkLLgE9rUkEba
-	 fu98ukhOnyvr9PBN86WEp1TJGPNRinIP2W3AmBaw=
-Authentication-Results: mail-nwsmtp-smtp-production-main-94.vla.yp-c.yandex.net; dkim=pass header.i=@yandex.com
-Message-ID: <bd10ba64-2e56-4f1b-ba82-73ef59c87e2a@yandex.com>
-Date: Wed, 18 Feb 2026 23:52:01 +0100
+	id 1vstPR-0000000Aj7B-3FXJ
+	for linux-phy@lists.infradead.org;
+	Thu, 19 Feb 2026 02:04:53 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 217246132F;
+	Thu, 19 Feb 2026 02:04:53 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1E4E9C2BCB0;
+	Thu, 19 Feb 2026 02:04:52 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1771466692;
+	bh=e6NMrq76++ecy0geh6Jz+iENGud9CnyXfiTKqmuZpl4=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=PuZjLIzrIsJU//QrkMDNcNPG/TadX40ubZ20TKRAMWR1syMhZbfUf3nF/xaJ7LCw1
+	 pwMLeeDS7fhBTqhFXdoRpu3mWg/mbNbn8KkBbdkyUWWR281PgO0ECg/zt2Ch1CUhbV
+	 q7h1pHC1KySuwC9HFWqTHl/wnyooTxhDK8GyC9Wv1GCPd+5wqh/uFKkVcLNvh0Fr5e
+	 xtlNJu1zO3/RkZMAhFs10/4l/IeT8b/Hj+OR2rDBBUK67YUPcxi+H/zUur8EMjPUO4
+	 b/AV3FXUIUuLZ/AB3XRZw3zSPt4owpVzHiZUXZXtKk7pbnUYBnR1V2HRnlQdvnc49Z
+	 3s+T1A/KI4teA==
+From: Sasha Levin <sashal@kernel.org>
+To: patches@lists.linux.dev,
+	stable@vger.kernel.org
+Cc: "Thomas Richard (TI.com)" <thomas.richard@bootlin.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Sasha Levin <sashal@kernel.org>,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH AUTOSEL 6.19-6.12] phy: cadence-torrent: restore parent clock for refclk during resume
+Date: Wed, 18 Feb 2026 21:03:59 -0500
+Message-ID: <20260219020422.1539798-23-sashal@kernel.org>
+X-Mailer: git-send-email 2.51.0
+In-Reply-To: <20260219020422.1539798-1-sashal@kernel.org>
+References: <20260219020422.1539798-1-sashal@kernel.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 2/4] arm64: dts: rockchip: Add USB2.0 PHY for RK3368
-To: Vladimir Oltean <olteanv@gmail.com>, WeiHao Li <cn.liweihao@gmail.com>
-Cc: heiko@sntech.de, robh@kernel.org, krzk+dt@kernel.org,
- conor+dt@kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
-References: <20250909132958.26423-1-cn.liweihao@gmail.com>
- <20250909132958.26423-3-cn.liweihao@gmail.com>
- <20260212165550.mju3377fvphdsqoe@skbuf>
-Content-Language: en-US, ar-EG
-From: Johan Jonker <jbx6244@yandex.com>
-In-Reply-To: <20260212165550.mju3377fvphdsqoe@skbuf>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260218_145214_738081_93112A09 
-X-CRM114-Status: GOOD (  17.40  )
+X-stable: review
+X-Patchwork-Hint: Ignore
+X-stable-base: Linux 6.19.2
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,90 +77,145 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+From: "Thomas Richard (TI.com)" <thomas.richard@bootlin.com>
 
+[ Upstream commit 434e1a0ee145d0389b192252be4c993f86cf1134 ]
 
-On 2/12/26 17:55, Vladimir Oltean wrote:
-> On Tue, Sep 09, 2025 at 09:29:56PM +0800, WeiHao Li wrote:
->> RK3368 has one USB2.0 PHY with two ports, This adds device tree node for
->> it.
->>
->> Signed-off-by: WeiHao Li <cn.liweihao@gmail.com>
->> ---
->>  arch/arm64/boot/dts/rockchip/rk3368.dtsi | 29 ++++++++++++++++++++++++
->>  1 file changed, 29 insertions(+)
->>
->> diff --git a/arch/arm64/boot/dts/rockchip/rk3368.dtsi b/arch/arm64/boot/dts/rockchip/rk3368.dtsi
->> index 1b21787269..b09e431a64 100644
->> --- a/arch/arm64/boot/dts/rockchip/rk3368.dtsi
->> +++ b/arch/arm64/boot/dts/rockchip/rk3368.dtsi
->> @@ -766,11 +766,40 @@ cru: clock-controller@ff760000 {
->>  	grf: syscon@ff770000 {
->>  		compatible = "rockchip,rk3368-grf", "syscon", "simple-mfd";
->>  		reg = <0x0 0xff770000 0x0 0x1000>;
->> +		#address-cells = <1>;
->> +		#size-cells = <1>;
-> 
+While suspend and resume, parent clock config for refclk was getting lost.
+So save and restore it in suspend and resume operations.
 
-> This introduces a device tree warning. You cannot mix nodes with no unit
-> address (io-domains) with nodes with a unit address (usb2-phy@700) on
-> the same hierarchical level. You have to pick a format and stick to it.
+Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
+Signed-off-by: Thomas Richard (TI.com) <thomas.richard@bootlin.com>
+Link: https://patch.msgid.link/20251216-phy-cadence-torrent-resume-restore-refclk-parent-v3-1-8a7ed84b47e3@bootlin.com
+Signed-off-by: Vinod Koul <vkoul@kernel.org>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
 
-nope
+LLM Generated explanations, may be completely bogus:
 
-Please add rockchip,rk3368-usb2phy to the list in grf.yaml in the same patch that you change rockchip,inno-usb2phy.yaml
-Requires a bit of SOC and PHY maintainers coordination.
+The verification confirms all the key elements:
 
-Place dt-binding compatible change patches before the patch that uses it. (patch 3 before patch 1)
-due to: ./scripts/checkpatch.pl --strict 
+1. **`cdns_torrent_refclk_driver_get_parent` and
+   `cdns_torrent_refclk_driver_set_parent`** exist and are well-defined
+   clock operations that read/write register fields for the clock mux
+   configuration.
 
-https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/tree/Documentation/devicetree/bindings/soc/rockchip/grf.yaml#n244
+2. **`CDNS_TORRENT_REFCLK_DRIVER`** is defined as index `0` in
+   `include/dt-bindings/phy/phy-cadence.h` and is used to index into
+   `clk_hw_data->hws[]`.
 
-> 
->>  
->>  		io_domains: io-domains {
->>  			compatible = "rockchip,rk3368-io-voltage-domain";
->>  			status = "disabled";
->>  		};
->> +
->> +		u2phy: usb2-phy@700 {
->> +			compatible = "rockchip,rk3368-usb2phy";
->> +			reg = <0x700 0x2c>;
->> +			clocks = <&cru SCLK_OTGPHY0>;
->> +			clock-names = "phyclk";
->> +			clock-output-names = "usb480m_phy";
->> +			#clock-cells = <0>;
->> +			status = "disabled";
->> +
->> +			u2phy_otg: otg-port {
->> +				interrupts = <GIC_SPI 94 IRQ_TYPE_LEVEL_HIGH>,
->> +					     <GIC_SPI 93 IRQ_TYPE_LEVEL_HIGH>,
->> +					     <GIC_SPI 95 IRQ_TYPE_LEVEL_HIGH>;
->> +				interrupt-names = "otg-bvalid", "otg-id",
->> +						  "linestate";
->> +				#phy-cells = <0>;
->> +				status = "disabled";
->> +			};
->> +
->> +			u2phy_host: host-port {
->> +				interrupts = <GIC_SPI 96 IRQ_TYPE_LEVEL_HIGH>;
->> +				interrupt-names = "linestate";
->> +				#phy-cells = <0>;
->> +				status = "disabled";
->> +			};
->> +		};
->>  	};
->>  
->>  	wdt: watchdog@ff800000 {
->> -- 
->> 2.47.2
->>
->>
-> 
-> _______________________________________________
-> Linux-rockchip mailing list
-> Linux-rockchip@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-rockchip
-> 
+3. **Suspend/resume was introduced in commit `0da27ed080b2c`** (April
+   2024) by the same author (Thomas Richard). This means the
+   suspend/resume feature already exists in recent kernels, and this is
+   a bug fix to that existing feature.
+
+4. All structures and fields referenced by the new code are actively
+   used in the driver.
+
+## Verification Summary
+
+- **Verified**: `cdns_torrent_refclk_driver_get_parent()` and
+  `cdns_torrent_refclk_driver_set_parent()` exist and operate on
+  register fields via regmap - these are the standard clock parent
+  operations.
+- **Verified**: `CDNS_TORRENT_REFCLK_DRIVER` = 0, used as clock index in
+  `clk_hw_data->hws[]`.
+- **Verified**: Suspend/resume functions were added in commit
+  `0da27ed080b2c` (April 2024) by the same author - this is a follow-up
+  fix to that code.
+- **Verified**: The `parent_index` field and new suspend/resume helpers
+  only use existing, proven APIs.
+- **Verified**: The patch is reviewed by Neil Armstrong and signed off
+  by the PHY subsystem maintainer Vinod Koul.
+- **Note**: The suspend/resume support was introduced in v6.11 merge
+  window timeframe (April 2024), so this fix is relevant for stable
+  trees that include that commit.
+
+## Classification
+
+This is a **clear bug fix** for suspend/resume functionality:
+- **Bug type**: State loss during power transitions (clock parent
+  configuration lost)
+- **Impact**: PHY may not function correctly after resume, potentially
+  breaking PCIe, USB, or DisplayPort links
+- **Scope**: Small, contained, single-driver fix (~22 lines)
+- **Risk**: Very low - uses existing APIs, standard save/restore pattern
+- **Dependencies**: Requires the suspend/resume support commit
+  (`0da27ed080b2c`) to be present in the stable tree
+
+## Conclusion
+
+This commit fixes a real suspend/resume bug where clock parent
+configuration is lost, causing the PHY to malfunction after resume. The
+fix is small, obviously correct, well-reviewed, and follows standard
+kernel suspend/resume patterns. It meets all stable kernel criteria:
+fixes a real bug, is small and contained, introduces no new features,
+and has minimal regression risk.
+
+The only consideration is that the stable tree must already contain the
+initial suspend/resume support (commit `0da27ed080b2c` from ~April
+2024), which limits this to newer stable branches (6.11+).
+
+**YES**
+
+ drivers/phy/cadence/phy-cadence-torrent.c | 23 +++++++++++++++++++++++
+ 1 file changed, 23 insertions(+)
+
+diff --git a/drivers/phy/cadence/phy-cadence-torrent.c b/drivers/phy/cadence/phy-cadence-torrent.c
+index 37fa4bad6bd72..877f22177c699 100644
+--- a/drivers/phy/cadence/phy-cadence-torrent.c
++++ b/drivers/phy/cadence/phy-cadence-torrent.c
+@@ -397,6 +397,7 @@ struct cdns_torrent_refclk_driver {
+ 	struct clk_hw		hw;
+ 	struct regmap_field	*cmn_fields[REFCLK_OUT_NUM_CMN_CONFIG];
+ 	struct clk_init_data	clk_data;
++	u8 parent_index;
+ };
+ 
+ #define to_cdns_torrent_refclk_driver(_hw)	\
+@@ -3326,11 +3327,29 @@ static const struct cdns_torrent_vals sgmii_qsgmii_xcvr_diag_ln_vals = {
+ 	.num_regs = ARRAY_SIZE(sgmii_qsgmii_xcvr_diag_ln_regs),
+ };
+ 
++static void cdns_torrent_refclk_driver_suspend(struct cdns_torrent_phy *cdns_phy)
++{
++	struct clk_hw *hw = cdns_phy->clk_hw_data->hws[CDNS_TORRENT_REFCLK_DRIVER];
++	struct cdns_torrent_refclk_driver *refclk_driver = to_cdns_torrent_refclk_driver(hw);
++
++	refclk_driver->parent_index = cdns_torrent_refclk_driver_get_parent(hw);
++}
++
++static int cdns_torrent_refclk_driver_resume(struct cdns_torrent_phy *cdns_phy)
++{
++	struct clk_hw *hw = cdns_phy->clk_hw_data->hws[CDNS_TORRENT_REFCLK_DRIVER];
++	struct cdns_torrent_refclk_driver *refclk_driver = to_cdns_torrent_refclk_driver(hw);
++
++	return cdns_torrent_refclk_driver_set_parent(hw, refclk_driver->parent_index);
++}
++
+ static int cdns_torrent_phy_suspend_noirq(struct device *dev)
+ {
+ 	struct cdns_torrent_phy *cdns_phy = dev_get_drvdata(dev);
+ 	int i;
+ 
++	cdns_torrent_refclk_driver_suspend(cdns_phy);
++
+ 	reset_control_assert(cdns_phy->phy_rst);
+ 	reset_control_assert(cdns_phy->apb_rst);
+ 	for (i = 0; i < cdns_phy->nsubnodes; i++)
+@@ -3352,6 +3371,10 @@ static int cdns_torrent_phy_resume_noirq(struct device *dev)
+ 	int node = cdns_phy->nsubnodes;
+ 	int ret, i;
+ 
++	ret = cdns_torrent_refclk_driver_resume(cdns_phy);
++	if (ret)
++		return ret;
++
+ 	ret = cdns_torrent_clk(cdns_phy);
+ 	if (ret)
+ 		return ret;
+-- 
+2.51.0
 
 
 -- 
