@@ -4,57 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9FE1CE9A03B
-	for <linux-phy@archiver.kernel.org>; Thu, 19 Feb 2026 02:05:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 44D7FE9A03B
+	for <linux-phy@archiver.kernel.org>; Thu, 19 Feb 2026 02:05:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rdxkLRKFo0xKdai9tfBoC/OD2n4XXDRhrcPspHHuGcU=; b=a8k1HVKKuvnKD2
-	DrYxC3Kv5Q7+QCqRz4ddyW3hXsmQe/phwXL/9KLfY159CqkhuCZT2KjpqkNBQkF1ZaI8mJY0xZrd4
-	Z4Z9LxOjlvBAUY1ge5WkDoE1cWdSukktT2tKvBPLDwRAIqWCizVQOqT+h8xG3hMKxTbExFah1lcAS
-	r7yAvC0b+Iis/jbrFJb7Xd8qBhTeb93lPepNfAKmKBpHem0WWfmHcqA8VIxg4WfoJC9mSTtWOgdZi
-	gWAKQAc8GFBaczSyz73+SbyhUE2Dg/VP83ZH1EWe5V/HB8IcYgsABfGyKtoy5ouIkRypYuFT9vLWA
-	iRt2xp3a0mNRLdEeBF2Q==;
+	List-Owner; bh=nCfJbcRKdpSh46cHrhMmjV15PXC7zFqLsurcEL9UE7I=; b=Bq/7NJXtvh+cnx
+	DQr3wnqfAXegaVdUsDntCfbLJe6hw7yhDbWQG16Z0izYcHXTQL6cPoMxivqYEF8HYqCcCl+K70p6l
+	uru0OJYwZDymvXnd2AzfwV7B2MXU0ffmm4cn53IlOej0Jkx6R+WMJ6s4+Jmnq6uRLHEn61XtiMptY
+	mcnrybSPDd09XBbWYvEXSMi93dfkxUJfhJVuD/HLWWZprUHFndJRPG50i3o8dhVDjVPFsyNVu8wp1
+	PJr0s9pmioOD9GlKc/j4LPDTDxmhiGWxTE7+cetCIRlbXaVIwXSFM28MlwAUj89gMk0pRuoPNL9v5
+	WnDNtoxx8ljB72RvyMiw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vstPx-0000000AjKE-1bCF;
-	Thu, 19 Feb 2026 02:05:25 +0000
+	id 1vstQ0-0000000AjMy-3wdI;
+	Thu, 19 Feb 2026 02:05:28 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vstPc-0000000AjBL-0Irn;
-	Thu, 19 Feb 2026 02:05:22 +0000
+	id 1vstPj-0000000AjGu-2YGp
+	for linux-phy@lists.infradead.org;
+	Thu, 19 Feb 2026 02:05:25 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id A67944328A;
-	Thu, 19 Feb 2026 02:05:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8320DC19422;
-	Thu, 19 Feb 2026 02:05:02 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 52DC844541;
+	Thu, 19 Feb 2026 02:05:11 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 74221C116D0;
+	Thu, 19 Feb 2026 02:05:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1771466703;
-	bh=lOZidEmx5vk20ZO0QrhgAGaGcoFEhk4bJAlW3AJLUOQ=;
+	s=k20201202; t=1771466711;
+	bh=Z3fUAAbQXGFdlQbONURw12JtANNmbkXVjuTdQg/02uw=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=bDrkdjbvtDnkfPHNkqW2l+/iLzj7A9E2KZ5LDUUqsThA71UtRLrKT8/GtBrU0hKtX
-	 0QnBkfBkl2+pfGFAMeyaCytwZPKIy1l4WRJ+egUX/UK6y9D5/kk40EwITuUJ1d/RfH
-	 oTBBs+eo0JJm+X8QnjVGeFCgbY1ZyVxKCeDDc+076WdGwRDJ/7NjaXUNq3j0fsedaQ
-	 k9JqfvSP3k4QMvEidLcgJlvVkF2bKn/IwM8JKuJzjMJSy4pL4OhCBgZ3H3uACFXgiN
-	 U8uqCKfAnKj72b8ab2N2uBMg2aT4Z4/p/WnPtA4iNZqPlRbjL5LUl7EgfUznrLL6YM
-	 hO2vOUtxbCp5g==
+	b=OudGccxzoq3dLyhQEh3ItVzmP3YhMYEOoLmeFHFmYR7095oN8hnhUn3wGwsmIM6UN
+	 7EEeoe0LW3hG2N0GkW4nqO50+FRvlyH/xUyko+eJei4SOs5qU/WPxVhR++XCxkJ0Fl
+	 o+IBPWqMbZIYXFRAoIK4KdZ9LKBII2+J0NcgQOCD+Py3ovENQO2dEdLF26TBUXTQVe
+	 mTU9ppciJrOOwVjF6wCSjuWF4FcdqKusZrkf8rOCB931H4Z2Nc81RvmJLv4frjQOTf
+	 Vx+auLD/LmTGRfJH3I6ZW+7fCPgqgwyV143lU08Nw1Hw33OJdNHCgk5HCqowXIOIuV
+	 yAeTo/tW+PXPQ==
 From: Sasha Levin <sashal@kernel.org>
 To: patches@lists.linux.dev,
 	stable@vger.kernel.org
-Cc: Xu Yang <xu.yang_2@nxp.com>,
-	Frank Li <Frank.Li@nxp.com>,
+Cc: Aleksandar Gerasimovski <aleksandar.gerasimovski@belden.com>,
 	Vinod Koul <vkoul@kernel.org>,
 	Sasha Levin <sashal@kernel.org>,
 	linux-phy@lists.infradead.org,
-	imx@lists.linux.dev,
-	linux-arm-kernel@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH AUTOSEL 6.19-5.10] phy: fsl-imx8mq-usb: disable bind/unbind platform driver feature
-Date: Wed, 18 Feb 2026 21:04:07 -0500
-Message-ID: <20260219020422.1539798-31-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 6.19-5.15] phy: mvebu-cp110-utmi: fix dr_mode property read from dts
+Date: Wed, 18 Feb 2026 21:04:13 -0500
+Message-ID: <20260219020422.1539798-37-sashal@kernel.org>
 X-Mailer: git-send-email 2.51.0
 In-Reply-To: <20260219020422.1539798-1-sashal@kernel.org>
 References: <20260219020422.1539798-1-sashal@kernel.org>
@@ -63,8 +61,8 @@ X-stable: review
 X-Patchwork-Hint: Ignore
 X-stable-base: Linux 6.19.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260218_180520_350209_A2A601DD 
-X-CRM114-Status: GOOD (  21.33  )
+X-CRM114-CacheID: sfid-20260218_180522_148772_EEF55D03 
+X-CRM114-Status: GOOD (  21.89  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,128 +74,129 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Xu Yang <xu.yang_2@nxp.com>
-
-[ Upstream commit 27ee0869d77b2cb404770ac49bdceae3aedf658b ]
-
-Disabling PHYs in runtime usually causes the client with external abort
-exception or similar issue due to lack of API to notify clients about PHY
-removal. This patch removes the possibility to unbind i.MX PHY drivers in
-runtime.
-
-Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
-Link: https://patch.msgid.link/20260120111712.3159782-1-xu.yang_2@nxp.com
-Signed-off-by: Vinod Koul <vkoul@kernel.org>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
-
-LLM Generated explanations, may be completely bogus:
-
-## Analysis Summary
-
-### What the commit does
-This commit adds `.suppress_bind_attrs = true` to the i.MX8MQ USB PHY
-platform driver. This single line prevents the kernel from creating
-`/sys/bus/platform/drivers/imx8mq-usb-phy/bind` and
-`/sys/bus/platform/drivers/imx8mq-usb-phy/unbind` sysfs files, thereby
-preventing runtime unbinding of the PHY driver.
-
-### Problem being fixed
-The commit message states that unbinding PHYs at runtime causes
-"external abort exception or similar issue" because there is no API to
-notify PHY clients about PHY removal. An external abort is a serious ARM
-exception that typically results in a kernel crash/oops. If a user or
-management tool writes to the `unbind` sysfs file for this PHY driver,
-the USB controller client would try to access the now-missing PHY
-resources, resulting in a crash.
-
-### Stable kernel rules assessment
-1. **Obviously correct and tested**: Yes - this is a well-established
-   one-line pattern used in 385+ files in the kernel. It's reviewed by
-   the PHY maintainer (Vinod Koul) and reviewed by Frank Li.
-2. **Fixes a real bug**: Yes - runtime unbinding causes a crash
-   (external abort exception). This is a real, triggerable issue.
-3. **Important issue**: Moderate - it prevents a crash, but only
-   triggered by explicit sysfs manipulation (not normal operation).
-   However, system management tools or user error could trigger this.
-4. **Small and contained**: Yes - single one-line addition to a driver
-   struct.
-5. **No new features**: Correct - this removes functionality (ability to
-   unbind), it doesn't add any.
-
-### Risk assessment
-- **Risk**: Extremely low. This is literally a single boolean field
-  being set in the driver struct. It only affects sysfs attributes. The
-  same pattern exists in 385+ other drivers.
-- **Benefit**: Prevents a crash scenario when the PHY is unbound at
-  runtime.
-- **Dependencies**: None - this is entirely self-contained.
-
-### Concerns
-- The bug is only triggerable by explicit sysfs manipulation (writing to
-  `/sys/bus/platform/drivers/imx8mq-usb-phy/unbind`), not by normal
-  system operation.
-- The fix is a defensive measure rather than fixing a root cause in the
-  PHY framework. However, this is the standard kernel approach - the PHY
-  framework doesn't have removal notification, so drivers that can't
-  handle unbinding should suppress it.
-- The change is straightforward and would apply cleanly to any stable
-  tree that has this driver.
-
-### Classification
-This falls into the **hardware quirk/workaround** category. It's a
-defensive fix that prevents a crash scenario. While the trigger requires
-explicit user action (sysfs unbind), this is a well-established pattern
-in the kernel for exactly this purpose.
-
-## Verification
-- Verified `suppress_bind_attrs = true` is used in 385+ files across the
-  drivers/ directory via Grep search
-- Verified 7 other PHY drivers (Samsung, HiSilicon) already use this
-  pattern
-- Verified no other Freescale PHY drivers currently have this attribute
-  (this is the first)
-- Verified via git log that similar commits exist for other subsystems
-  (gpio, perf)
-- Verified via lore.kernel.org that the patch was reviewed by Frank Li
-  and accepted by PHY maintainer Vinod Koul
-- Verified the commit message describes a real crash scenario (external
-  abort exception)
-- Could NOT verify the specific crash reproduction steps (unverified,
-  but the mechanism is well-understood in the kernel community)
-
-The fix is minimal (one line), extremely low risk, prevents a crash
-scenario, uses a well-established kernel pattern, and was properly
-reviewed. It meets all stable kernel criteria.
-
-**YES**
-
- drivers/phy/freescale/phy-fsl-imx8mq-usb.c | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-index 91b3e62743d3a..b30d01f345d20 100644
---- a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-+++ b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-@@ -730,6 +730,7 @@ static struct platform_driver imx8mq_usb_phy_driver = {
- 	.driver = {
- 		.name	= "imx8mq-usb-phy",
- 		.of_match_table	= imx8mq_usb_phy_of_match,
-+		.suppress_bind_attrs = true,
- 	}
- };
- module_platform_driver(imx8mq_usb_phy_driver);
--- 
-2.51.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+RnJvbTogQWxla3NhbmRhciBHZXJhc2ltb3Zza2kgPGFsZWtzYW5kYXIuZ2VyYXNpbW92c2tpQGJl
+bGRlbi5jb20+CgpbIFVwc3RyZWFtIGNvbW1pdCBlMmNlOTEzNDUyYWI1NmIzMzMwNTM5Y2M0NDNi
+OTdiN2VhOGMzYTFhIF0KClRoZSBwcm9ibGVtIHdpdGggdGhlIGN1cnJlbnQgaW1wbGVtZW50YXRp
+b24gaXMgdGhhdCBpdCBkb2VzIG5vdCBjb25zaWRlcgp0aGF0IHRoZSBVU0IgY29udHJvbGxlciBj
+YW4gaGF2ZSBtdWx0aXBsZSBQSFkgaGFuZGxlcyB3aXRoIGRpZmZlcmVudAphcmd1bWVudHMgY291
+bnQsIGFzIGZvciBleGFtcGxlIHdlIGhhdmUgaW4gb3VyIGNuOTEzMSBiYXNlZCBwbGF0Zm9ybToK
+InBoeXMgPSA8JmNwMF9jb21waHkxIDA+LCA8JmNwMF91dG1pMD47Ii4KCkluIHN1Y2ggY2FzZSBj
+YWxsaW5nICJvZl91c2JfZ2V0X2RyX21vZGVfYnlfcGh5IiB3aXRoIC0xIChubyBwaHktY2VsbHMp
+CmxlYWRzIHRvIG5vdCBwcm9wZXIgcGh5IGRldGVjdGlvbiwgdGFraW5nIHRoZSAibWFydmVsbCxj
+cDExMC11dG1pLXBoeSIKZHRzIGRlZmluaXRpb24gd2UgY2FuIGNhbGwgdGhlICJvZl91c2JfZ2V0
+X2RyX21vZGVfYnlfcGh5IiB3aXRoIDAKKCNwaHktY2VsbHMgPSA8MD4pIGFuZCBzYWZlbHkgbG9v
+ayBmb3IgdGhhdCBwaHkuCgpTaWduZWQtb2ZmLWJ5OiBBbGVrc2FuZGFyIEdlcmFzaW1vdnNraSA8
+YWxla3NhbmRhci5nZXJhc2ltb3Zza2lAYmVsZGVuLmNvbT4KTGluazogaHR0cHM6Ly9wYXRjaC5t
+c2dpZC5saW5rLzIwMjYwMTA2MTUwNjQzLjkyMjExMC0xLWFsZWtzYW5kYXIuZ2VyYXNpbW92c2tp
+QGJlbGRlbi5jb20KU2lnbmVkLW9mZi1ieTogVmlub2QgS291bCA8dmtvdWxAa2VybmVsLm9yZz4K
+U2lnbmVkLW9mZi1ieTogU2FzaGEgTGV2aW4gPHNhc2hhbEBrZXJuZWwub3JnPgotLS0KCkxMTSBH
+ZW5lcmF0ZWQgZXhwbGFuYXRpb25zLCBtYXkgYmUgY29tcGxldGVseSBib2d1czoKCk5vdyBJIGhh
+dmUgYSBjbGVhciB1bmRlcnN0YW5kaW5nIG9mIHRoZSBidWcuIExldCBtZSB2ZXJpZnkgdGhlIGJl
+aGF2aW9yCmRpZmZlcmVuY2UgbW9yZSBjYXJlZnVsbHk6CgojIyBVbmRlcnN0YW5kaW5nIHRoZSBC
+dWcKCldoZW4gYGFyZzAgPSAtMWA6Ci0gVGhlIGZ1bmN0aW9uIHVzZXMgYG9mX3BhcnNlX3BoYW5k
+bGUoKWAgKGxpbmUgMzAzLTMwNiksIHdoaWNoIHNpbXBseQogIHJldHVybnMgdGhlIG50aCBwaGFu
+ZGxlIG5vZGUgKip3aXRob3V0KiogcGFyc2luZyBgI3BoeS1jZWxsc2AuIEl0IHNldHMKICBgYXJn
+cy5hcmdzX2NvdW50ID0gMGAuCi0gVGhlIG1hdGNoaW5nIGF0IGxpbmUgMzE2LTMxNzogYGFyZ3Mu
+bnAgPT0gbnAgJiYgKGFyZ3MuYXJnc19jb3VudCA9PSAwCiAgfHwgYXJncy5hcmdzWzBdID09IGFy
+ZzApYCDigJQgc2luY2UgYGFyZ3NfY291bnQgPSAwYCwgaXQgbWF0Y2hlcyBvbiB0aGUKICBgbnBg
+IGNvbXBhcmlzb24gYWxvbmUuCgpUaGUgcHJvYmxlbTogV2hlbiB0aGUgY29udHJvbGxlciBoYXMg
+YHBoeXMgPSA8JmNwMF9jb21waHkxIDA+LAo8JmNwMF91dG1pMD47YCwgdGhlcmUgYXJlIHR3byBw
+aGFuZGxlIGVudHJpZXMuIFRoZSBmaXJzdCAoYGNwMF9jb21waHkxYCkKaGFzIGAjcGh5LWNlbGxz
+ID0gPDE+YCAoaXQgdGFrZXMgYXJndW1lbnQgYDBgKSwgYW5kIHRoZSBzZWNvbmQKKGBjcDBfdXRt
+aTBgKSBoYXMgYCNwaHktY2VsbHMgPSA8MD5gLgoKV2l0aCBgYXJnMCA9IC0xYCwgYG9mX3BhcnNl
+X3BoYW5kbGUoKWAgaXMgdXNlZCwgd2hpY2ggZG9lc24ndCB1bmRlcnN0YW5kCmAjcGh5LWNlbGxz
+YC4gSXQgc2ltcGx5IGl0ZXJhdGVzIHRocm91Z2ggcmF3IHBoYW5kbGUgZW50cmllcy4gU2luY2UK
+YGNwMF9jb21waHkxYCBoYXMgYW4gZXh0cmEgY2VsbCAoYDBgKSwgYG9mX3BhcnNlX3BoYW5kbGUo
+KWAgYXQgaW5kZXggMApyZXR1cm5zIGBjcDBfY29tcGh5MWAsIGF0IGluZGV4IDEgaXQgbWlnaHQg
+cmV0dXJuIHRoZSBgMGAgYXJndW1lbnQgY2VsbAoobm90IGEgdmFsaWQgcGhhbmRsZSkgcmF0aGVy
+IHRoYW4gYGNwMF91dG1pMGAuIFRoaXMgbGVhZHMgdG8gaW5jb3JyZWN0ClBIWSBtYXRjaGluZyDi
+gJQgdGhlIGZ1bmN0aW9uIGNhbid0IHByb3Blcmx5IGZpbmQgdGhlIFVUTUkgUEhZIHdoZW4gbWl4
+ZWQKYCNwaHktY2VsbHNgIGNvdW50cyBhcmUgcHJlc2VudC4KCldpdGggYGFyZzAgPSAwYDoKLSBU
+aGUgZnVuY3Rpb24gdXNlcyBgb2ZfcGFyc2VfcGhhbmRsZV93aXRoX2FyZ3MoKWAgKGxpbmUgMzA3
+LTMxMiksIHdoaWNoCiAgY29ycmVjdGx5IHBhcnNlcyBgI3BoeS1jZWxsc2AgZm9yIGVhY2ggcGhh
+bmRsZSBhbmQgcHJvcGVybHkgc2tpcHMgb3ZlcgogIGFyZ3VtZW50IGNlbGxzLiBUaGlzIG1lYW5z
+IGluZGV4IDAgY29ycmVjdGx5IHJlZmVycyB0byBgY3AwX2NvbXBoeTFgCiAgKHdpdGggaXRzIGFy
+Z3VtZW50IGAwYCkgYW5kIGluZGV4IDEgY29ycmVjdGx5IHJlZmVycyB0byBgY3AwX3V0bWkwYC4K
+LSBBdCBsaW5lIDMxNi0zMTc6IGZvciBgY3AwX3V0bWkwYCwgYGFyZ3MuYXJnc19jb3VudCA9IDBg
+IChzaW5jZSBgI3BoeS0KICBjZWxscyA9IDwwPmApLCBzbyB0aGUgbWF0Y2ggc3VjY2VlZHMgY29y
+cmVjdGx5LgoKVGhpcyBpcyBhIHJlYWwgZnVuY3Rpb25hbCBidWcgZml4IOKAlCBvbiBwbGF0Zm9y
+bXMgd2l0aCBtaXhlZCBQSFkgdHlwZXMsCnRoZSBVVE1JIFBIWSB3b24ndCBiZSBjb3JyZWN0bHkg
+aWRlbnRpZmllZCBmb3IgaXRzIGR1YWwtcm9sZSBtb2RlLApwb3RlbnRpYWxseSBjYXVzaW5nIHRo
+ZSBVU0IgcG9ydCB0byBiZSBjb25maWd1cmVkIGluY29ycmVjdGx5CihkZWZhdWx0aW5nIHRvIEhP
+U1QgbW9kZSB3aXRoIGEgd2FybmluZyBpbnN0ZWFkIG9mIGRldGVjdGluZyB0aGUgY29ycmVjdApt
+b2RlKS4KCiMjIFN0YWJsZSBLZXJuZWwgQ3JpdGVyaWEgQXNzZXNzbWVudAoKMS4gKipGaXhlcyBh
+IHJlYWwgYnVnKio6IFllcyDigJQgb24gY245MTMxLWJhc2VkIHBsYXRmb3JtcyAoYW5kIGxpa2Vs
+eQogICBvdGhlcnMpIHdpdGggbWl4ZWQgUEhZIHR5cGVzLCB0aGUgVVRNSSBQSFkgZHJfbW9kZSBk
+ZXRlY3Rpb24gZmFpbHMsCiAgIGxlYWRpbmcgdG8gaW5jb3JyZWN0IFVTQiBjb25maWd1cmF0aW9u
+LgoKMi4gKipPYnZpb3VzbHkgY29ycmVjdCBhbmQgdGVzdGVkKio6IFRoZSBmaXggaXMgYSBvbmUt
+bGluZSBjaGFuZ2UgZnJvbQogICBgLTFgIHRvIGAwYC4gVGhlIGNvbW1pdCBhdXRob3IgaXMgZnJv
+bSBCZWxkZW4gKGxpa2VseSBoYXMgdGhlCiAgIGhhcmR3YXJlKS4gVGhlIGNoYW5nZSBtYXRjaGVz
+IHRoZSBkb2N1bWVudGVkIGAjcGh5LWNlbGxzID0gPDA+YCBmb3IKICAgdGhpcyBQSFkgdHlwZS4g
+VXNpbmcgYG9mX3BhcnNlX3BoYW5kbGVfd2l0aF9hcmdzKClgICh0cmlnZ2VyZWQgYnkKICAgYXJn
+MCA+PSAwKSBpcyB0aGUgY29ycmVjdCBhcHByb2FjaCB3aGVuIGRpZmZlcmVudCBQSFlzIGhhdmUg
+ZGlmZmVyZW50CiAgIGAjcGh5LWNlbGxzYCBjb3VudHMuCgozLiAqKlNtYWxsIGFuZCBjb250YWlu
+ZWQqKjogU2luZ2xlIGNoYXJhY3RlciBjaGFuZ2UgaW4gb25lIGZpbGUuIE1pbmltYWwKICAgcmlz
+ay4KCjQuICoqTm8gbmV3IGZlYXR1cmVzKio6IFRoaXMgaXMgcHVyZWx5IGEgYnVnIGZpeC4KCjUu
+ICoqVXNlciBpbXBhY3QqKjogV2l0aG91dCB0aGlzIGZpeCwgVVNCIGR1YWwtcm9sZSBtb2RlIGRl
+dGVjdGlvbiBmYWlscwogICBvbiBhZmZlY3RlZCBwbGF0Zm9ybXMuIFRoZSBQSFkgZGVmYXVsdHMg
+dG8gSE9TVCBtb2RlIHdoZW4gaXQgbWlnaHQKICAgbmVlZCB0byBiZSBQRVJJUEhFUkFMIG1vZGUg
+KG9yIHZpY2UgdmVyc2EpLCB3aGljaCBtZWFucyBVU0IKICAgZnVuY3Rpb25hbGl0eSBpcyBicm9r
+ZW4gZm9yIHRob3NlIGNvbmZpZ3VyYXRpb25zLgoKIyMgUmlzayBBc3Nlc3NtZW50CgotICoqUmlz
+ayoqOiBFeHRyZW1lbHkgbG93LiBUaGUgY2hhbmdlIGZyb20gYC0xYCB0byBgMGAgZm9yIGEgUEhZ
+IHdpdGgKICBgI3BoeS1jZWxscyA9IDwwPmAgaXMgc2VtYW50aWNhbGx5IGVxdWl2YWxlbnQgZm9y
+IHNpbmdsZS1QSFkKICBjb25maWd1cmF0aW9ucy4gRm9yIG11bHRpLVBIWSBjb25maWd1cmF0aW9u
+cyB3aXRoIG1peGVkIGAjcGh5LWNlbGxzYCwKICBpdCdzIGEgY29ycmVjdG5lc3MgZml4LgotICoq
+UmVncmVzc2lvbiBwb3RlbnRpYWwqKjogVmVyeSBsb3cuIFRoZSBgb2ZfcGFyc2VfcGhhbmRsZV93
+aXRoX2FyZ3MoKWAKICBwYXRoIGlzIHdlbGwtdGVzdGVkIGFjcm9zcyB0aGUga2VybmVsLiBUaGUg
+b25seSBiZWhhdmlvciBjaGFuZ2UgaXMKICB0aGF0IG1peGVkLVBIWSBjb25maWd1cmF0aW9ucyBu
+b3cgd29yayBjb3JyZWN0bHkuCi0gKipTY29wZSoqOiBTaW5nbGUgZHJpdmVyLCBzaW5nbGUgbGlu
+ZSwgTWFydmVsbCBBUk0gcGxhdGZvcm0gc3BlY2lmaWMuCgojIyBWZXJpZmljYXRpb24KCi0gKipG
+dW5jdGlvbiBgb2ZfdXNiX2dldF9kcl9tb2RlX2J5X3BoeWAgYW5hbHl6ZWQqKjogUmVhZCB0aGUK
+ICBpbXBsZW1lbnRhdGlvbiBhdCBgZHJpdmVycy91c2IvY29tbW9uL2NvbW1vbi5jOjI5MC0zMzFg
+LiBWZXJpZmllZCB0aGF0CiAgYGFyZzAgPSAtMWAgdXNlcyBgb2ZfcGFyc2VfcGhhbmRsZSgpYCAo
+bm8gYCNwaHktY2VsbHNgIGF3YXJlbmVzcykKICB3aGlsZSBgYXJnMCA+PSAwYCB1c2VzIGBvZl9w
+YXJzZV9waGFuZGxlX3dpdGhfYXJncygpYCAocHJvcGVyIGAjcGh5LQogIGNlbGxzYCBwYXJzaW5n
+KS4KLSAqKkRldmljZSB0cmVlIGJpbmRpbmcgY29uZmlybWVkKio6IFRoZSBFeHBsb3JlIGFnZW50
+IHZlcmlmaWVkIHRoYXQKICBgRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS9t
+YXJ2ZWxsLGFybWFkYS1jcDExMC11dG1pLQogIHBoeS55YW1sYCBzcGVjaWZpZXMgYCNwaHktY2Vs
+bHM6IGNvbnN0OiAwYCwgbWVhbmluZyBhcmcwID0gMCBpcyB0aGUKICBjb3JyZWN0IHNlbWFudGlj
+IG1hdGNoLgotICoqRHJpdmVyIGhpc3RvcnkgdmVyaWZpZWQqKjogYGdpdCBsb2dgIHNob3dzIHRo
+ZSBkcml2ZXIgd2FzIGludHJvZHVjZWQKICBpbiBjb21taXQgYDJmYzk4OWY3NGI4ZGFgICgiZHJp
+dmVyczogcGh5OiBhZGQgc3VwcG9ydCBmb3IgQXJtYWRhIENQMTEwCiAgVVRNSSBQSFkiKSwgYW5k
+IHRoZSBgLTFgIGFyZ3VtZW50IGhhcyBiZWVuIHRoZXJlIHNpbmNlIGluY2VwdGlvbi4gVGhlCiAg
+ZmlsZSBoYXMgaGFkIG9ubHkgMyBzdWJzZXF1ZW50IGNvbW1pdHMgYmVmb3JlIHRoaXMgZml4LCBu
+b25lIHJlbGF0ZWQKICB0byBkcl9tb2RlLgotICoqTWF0Y2hpbmcgbG9naWMgdmVyaWZpZWQqKjog
+QXQgbGluZSAzMTYtMzE3LCB3aGVuIGBhcmdzLmFyZ3NfY291bnQgPT0KICAwYCAod2hpY2ggaXMg
+dGhlIGNhc2UgZm9yIGAjcGh5LWNlbGxzID0gPDA+YCksIHRoZSBtYXRjaCBzdWNjZWVkcyBvbgog
+IGBhcmdzLm5wID09IG5wYCBhbG9uZSwgc28gdGhlIHZhbHVlIGAwYCBkb2Vzbid0IGNhdXNlIGEg
+c3B1cmlvdXMKICBtaXNtYXRjaC4KLSAqKkJ1ZyBtZWNoYW5pc20gdmVyaWZpZWQqKjogV2l0aCBt
+aXhlZCBgI3BoeS1jZWxsc2AgKGUuZy4sIGBwaHlzID0KICA8JmNwMF9jb21waHkxIDA+LCA8JmNw
+MF91dG1pMD5gKSwgYG9mX3BhcnNlX3BoYW5kbGUoKWAgKHVzZWQgd2l0aAogIGFyZzA9LTEpIGRv
+ZXNuJ3QgYWNjb3VudCBmb3IgdGhlIGFyZ3VtZW50IGNlbGwgYDBgIGFmdGVyCiAgYGNwMF9jb21w
+aHkxYCwgbGVhZGluZyB0byBpbmNvcnJlY3QgcGhhbmRsZSBpbmRleGluZy4KCiMjIENvbmNsdXNp
+b24KClRoaXMgaXMgYSBjbGVhciwgbWluaW1hbCwgb25lLWxpbmUgYnVnIGZpeCBmb3IgaW5jb3Jy
+ZWN0IGRldmljZSB0cmVlIFBIWQptYXRjaGluZyBvbiBNYXJ2ZWxsIENQMTEwIFVUTUkgcGxhdGZv
+cm1zLiBJdCBmaXhlcyBhIHJlYWwgZnVuY3Rpb25hbAppc3N1ZSAoaW5jb3JyZWN0IFVTQiBkdWFs
+LXJvbGUgbW9kZSBkZXRlY3Rpb24pIHRoYXQgYWZmZWN0cyB1c2VycyB3aXRoCm1peGVkLVBIWSBj
+b25maWd1cmF0aW9ucy4gVGhlIGZpeCBpcyBvYnZpb3VzbHkgY29ycmVjdCwgaGFzIG5lYXItemVy
+bwpyZWdyZXNzaW9uIHJpc2ssIGFuZCBmb2xsb3dzIHRoZSBlc3RhYmxpc2hlZCBwYXR0ZXJuIHVz
+ZWQgYnkgb3RoZXIgUEhZCmRyaXZlcnMuCgoqKllFUyoqCgogZHJpdmVycy9waHkvbWFydmVsbC9w
+aHktbXZlYnUtY3AxMTAtdXRtaS5jIHwgMiArLQogMSBmaWxlIGNoYW5nZWQsIDEgaW5zZXJ0aW9u
+KCspLCAxIGRlbGV0aW9uKC0pCgpkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvbWFydmVsbC9waHkt
+bXZlYnUtY3AxMTAtdXRtaS5jIGIvZHJpdmVycy9waHkvbWFydmVsbC9waHktbXZlYnUtY3AxMTAt
+dXRtaS5jCmluZGV4IDU5OTAzZjg2YjEzZjUuLmRkM2U1MTVhOGU4NjUgMTAwNjQ0Ci0tLSBhL2Ry
+aXZlcnMvcGh5L21hcnZlbGwvcGh5LW12ZWJ1LWNwMTEwLXV0bWkuYworKysgYi9kcml2ZXJzL3Bo
+eS9tYXJ2ZWxsL3BoeS1tdmVidS1jcDExMC11dG1pLmMKQEAgLTMzOCw3ICszMzgsNyBAQCBzdGF0
+aWMgaW50IG12ZWJ1X2NwMTEwX3V0bWlfcGh5X3Byb2JlKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2Ug
+KnBkZXYpCiAJCQlyZXR1cm4gLUVOT01FTTsKIAkJfQogCi0JCXBvcnQtPmRyX21vZGUgPSBvZl91
+c2JfZ2V0X2RyX21vZGVfYnlfcGh5KGNoaWxkLCAtMSk7CisJCXBvcnQtPmRyX21vZGUgPSBvZl91
+c2JfZ2V0X2RyX21vZGVfYnlfcGh5KGNoaWxkLCAwKTsKIAkJaWYgKChwb3J0LT5kcl9tb2RlICE9
+IFVTQl9EUl9NT0RFX0hPU1QpICYmCiAJCSAgICAocG9ydC0+ZHJfbW9kZSAhPSBVU0JfRFJfTU9E
+RV9QRVJJUEhFUkFMKSkgewogCQkJZGV2X2VycigmcGRldi0+ZGV2LAotLSAKMi41MS4wCgoKLS0g
+CmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
+cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
