@@ -4,92 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0DF36C531CC
-	for <linux-phy@archiver.kernel.org>; Thu, 19 Feb 2026 20:30:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 38FA8C531F4
+	for <linux-phy@archiver.kernel.org>; Thu, 19 Feb 2026 23:57:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TDGuTRbqY+HX2jKtZSJy29wCZmFEbIbrrXTxRHeJ2EE=; b=Ngf5wu56EZtnQb
-	JPaqdUA5NJ5Db/3OqiM7or6dKBg3zksqMl9+VsSLoTXtenBp5XErpwe2sUYpsdfstTwUfEyP9t2wF
-	O7ux1/z+dNqqpfghH3LX5F+d3e4K9Cj85+f7Ra910BIXLLKRcb+8wkrKeCF/R2rOI+5vGlpN4fxV/
-	7Z9rVByBc1RnzHHpNZm+mdc7wmoh8Vj96IkRlyAHSBhNyRdu74ruW1tqPtTgxuekzZc+PCG771KAM
-	h9xj424cis25chTP9NtZU65b1zk4R7t2zugfDQxVsZdQV8HWs5PHHeKLGupHQH870scMrJtNPec1u
-	egA4qWYnvO5FpdY9aNMw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Vzjkl6+3Yw/2iowjOvAgzQ8ljaI/8vdHN6KML9QCt3o=; b=3ugncf9bkwayU9
+	8c+yWZonmGJuarLSq7zP9Da8Rlh9GCZDRr0xTjqjrShfTnFw1zoH3hPgueCflGceZmOVuIXgiSYtQ
+	XuUBE+iiJfHYKMr95ajTJurUUo1oI1XDQY+TknDxKjLp97GHZyZ80A3KJOIsvywG9VkrTJg73Jy/7
+	T6O9YcViF85wQieL2NfOnkYg4FKNg1mdpYDd4LRH7EnO3aQnyH5aFsvFLA3o7WacghV9geiLdunYF
+	igSbzMUj8yVp/gczn34Einwl+yBZpkWKDSRx1ibPRZ2OgamJb24s3bsd3CFZEBeAZck6TyRkwaPv4
+	weDbMFMZOFhlrwLkrMGQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vtAfR-0000000C2B2-4A3x;
-	Thu, 19 Feb 2026 20:30:34 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1vtDtW-0000000CgDA-3zj1;
+	Thu, 19 Feb 2026 23:57:18 +0000
+Received: from mail-dy1-x1331.google.com ([2607:f8b0:4864:20::1331])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vtAey-0000000C1TL-05Uh
-	for linux-phy@bombadil.infradead.org;
-	Thu, 19 Feb 2026 20:30:04 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
-	:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-Type:Content-ID:Content-Description;
-	bh=OD9CWP9AeSoV/HvYGMHIRJTseA0lLQef38L1GCQmoNQ=; b=a5nhs2AK3WxSbCq5yDWK18yo5j
-	95Gju34ho3cpP+PpIExcAHFDLXeX/8UvE0TwfeCFBuGioxf7ALOK0tFYqdNGK5/CFmgNoPtfDwXh+
-	BgBStnSY70FN9bKxA49f+SJuiD447Iea7IGb9y7O0wEbIAEVDl1V3Zfpy8y82oZJMf1H8D+NlTBiQ
-	GlnxfTQJtNWwYTaV2MVWFcAbJfmSiIhtowYJ/jHzs3EE/KbP1ZZ+ys7PJ4Jc0n7Z5J4BqvYcY1G3S
-	uzC8a35SQj/jgukY18l8SCywLqKpNM5sxWFiVNojOV+8NcUggaq10/yNIVdbesIeiAOhFHAsYCWvm
-	zHOaxG7g==;
-Received: from mgamail.intel.com ([198.175.65.19])
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vtAeZ-00000001qke-2CLt
+	id 1vtDtU-0000000CgCl-2jk9
 	for linux-phy@lists.infradead.org;
-	Thu, 19 Feb 2026 20:29:44 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1771532979; x=1803068979;
-  h=from:to:cc:subject:date:message-id:in-reply-to:
-   references:mime-version:content-transfer-encoding;
-  bh=O395g583JciclhAYkpkhPwswiSCKjgtzscqic/6jAKw=;
-  b=SNoVbEbuH/B9WzQLLXYi9HUBIG/SWsqa4sXDJzcaI0cDVZVu6u9R9i0v
-   3fsaOZ5cRt69sq4XZuwSxdijeRfcNNue5ysSBoq+BL/tl0NDDwfd7f17J
-   fXerUEP0cGEOSjc4imBJmsrsAl/wQZb+Le4hm0FHe4FP1NooQ7qaT+SGo
-   ehahBbngNQsGrKGou022LmzUOagOXk2hPFlTpFPW/KGp3M9V6ZVKVV+pd
-   a82D5rnVqMx8sXmqmeGq6fZYwUi4jKOMrZQrs5MeIndTTnOoA/7MKhvGm
-   NRA6+SrY7AdjC9UdrWs9jhDDMTCzdzq2kqY1hLIG6FV5wGdRuhToRkKmS
-   A==;
-X-CSE-ConnectionGUID: TQSH52xPRy+5q68+TXC98g==
-X-CSE-MsgGUID: UWz6ZQHbT1SPJJE+1/elMA==
-X-IronPort-AV: E=McAfee;i="6800,10657,11706"; a="72532343"
-X-IronPort-AV: E=Sophos;i="6.21,300,1763452800"; 
-   d="scan'208";a="72532343"
-Received: from fmviesa005.fm.intel.com ([10.60.135.145])
-  by orvoesa111.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 19 Feb 2026 12:29:15 -0800
-X-CSE-ConnectionGUID: HwgZ1UnqRwORsfJSozvKEQ==
-X-CSE-MsgGUID: OKz+UufCT4O4dB1lvn7Oxw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.21,300,1763452800"; 
-   d="scan'208";a="219183209"
-Received: from black.igk.intel.com ([10.91.253.5])
-  by fmviesa005.fm.intel.com with ESMTP; 19 Feb 2026 12:29:13 -0800
-Received: by black.igk.intel.com (Postfix, from userid 1003)
-	id 035B999; Thu, 19 Feb 2026 21:29:12 +0100 (CET)
-From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-To: linux-can@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Cc: Marc Kleine-Budde <mkl@pengutronix.de>,
-	Vincent Mailhol <mailhol@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-Subject: [PATCH v1 2/4] phy: phy-can-transceiver: Move OF ID table closer to their user
-Date: Thu, 19 Feb 2026 21:26:20 +0100
-Message-ID: <20260219202910.2304440-3-andriy.shevchenko@linux.intel.com>
-X-Mailer: git-send-email 2.50.1
-In-Reply-To: <20260219202910.2304440-1-andriy.shevchenko@linux.intel.com>
-References: <20260219202910.2304440-1-andriy.shevchenko@linux.intel.com>
+	Thu, 19 Feb 2026 23:57:17 +0000
+Received: by mail-dy1-x1331.google.com with SMTP id 5a478bee46e88-2baab3137bcso1380103eec.0
+        for <linux-phy@lists.infradead.org>; Thu, 19 Feb 2026 15:57:15 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1771545435; x=1772150235; darn=lists.infradead.org;
+        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=L/tn3rlV+s5Ib8pBAw6WX/SwGwQbUEk8OO3BWVinzBQ=;
+        b=OBwREBi/YQXvNWHA0pd4V++JdMZZ8qdfALd1Z0oQWnnow5mMUrYXiLs/U33XMH2u7N
+         AHec//W+sUj/MwNUNPlNtUvMap/c1xmC8sn8N85UuB7T++uiygHCIORR+/vP0SuRptv0
+         QxYqKc++UNTAw/QHs/pTp282+kE9S8QW4DeXV2WzqDG5fRDs+uouXyzmk4dPUA6n3vbE
+         jaF3fZdO4S+ZzpsCqdXX9MWjUIAMo+u1FteYEBeg/QlF0NXYgxy5VxfB3PYQPwfKLDfw
+         5wSKucMIZB0s2Zdm2CpiKt5CzkU1ObPz78uOPIGZnZBLWX2CTeaviJAo9LxBHYZblafL
+         lz5A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1771545435; x=1772150235;
+        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=L/tn3rlV+s5Ib8pBAw6WX/SwGwQbUEk8OO3BWVinzBQ=;
+        b=aMR68oOIwANq3T2X3Ks/R+NCDCNlS9FWXVr2pWF6XlMK8Mf9vdwAJCMui9kydKdQED
+         h4TDGmMD/dRH7r1J7YZnPXNHlk5Lg9idAQN9WD9VBxBnzRQkRffj1AZSsNCb4wN5fZ0s
+         ziFesZEu6HY2jSNToNRrN7igUbpqKWTgMR6Udatisz7vjDq9fK4kSwGpO5cqfaRrPH4w
+         hlC6ImDUA3I3WyRrxeIK0kzv6h8WGgPokG7/1L4KzaAaBi1TFyAG+B9ZRkhogilGmDrJ
+         aucTsLzQIPfl2j20nDl5LIJge6jQGKqis82GPf2xuGhVWZ72y2jmZqjR9kSnZW4HsqCY
+         pF4g==
+X-Forwarded-Encrypted: i=1; AJvYcCWTP6CfzDRYSeHAqmjmRSI8ATQ6CWxfXOLMyQ8/yuxHeGuRzhYv1cHza1wsPXpGNeny7VM/GfFlPFo=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwFyZ/h/PCLHNtS8WBc5XgLTuZGEil/5Z/OkqpVkL8kbODFVW96
+	35jwa0gtrvq2bDoE5tXAdJlU896aVw8qafAXN/0Hcf3HbQN1JDkT/UC+
+X-Gm-Gg: AZuq6aJoh6WVNsYXpRjRFwAXck8MAmlkAQbACIlJ3+LK7HrAJkEmNrcrxmdEIYSDMgj
+	jW9I8MtX7tAvd4GEABnDTcpvSyyWJYkx6HFG6UUh6bKjiksamn7J3TU5TrIEnZvK3GZ3+as3V7Q
+	FiZzEHlXnLg+UK6fGlttJFbqf/vOITHglkGZuztrGd+spyeoGJ/ccHrYLrZ9TkpmlKFboPoLwEd
+	UHxo7hhcXwoJnD9/MTSmKzcOkWMDQEjU5uVF/I3Cx36L8R+b6dk62SjToQLL8MCg0BqL2owbbOz
+	0xHkTHTWwuynnH5Yb02fkB6tPybkJoQKB6RElpUhmf4EiiIHUb4ESdvAgmbR7+34Bhe3iQFUE16
+	5b1pAPLSl+asioHdzaChn9fA9+peSfpeb2pD9YiyFHWOKXgq5DE59nf0bpizzAiN2phOQkhhuQc
+	UNDsu6ZfG0k4VNozRMRX9n9yilwSLg5XY8l3wHKuc1lRd2BxUxTjWI7efCLJXTDTR6
+X-Received: by 2002:a05:7301:3f07:b0:2b7:19f2:6b70 with SMTP id 5a478bee46e88-2bac97ab3b9mr7434358eec.26.1771545435151;
+        Thu, 19 Feb 2026 15:57:15 -0800 (PST)
+Received: from google.com ([2a00:79e0:2ebe:8:9c24:8181:603e:7ad7])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-2bacb543e1dsm22099845eec.4.2026.02.19.15.57.14
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 19 Feb 2026 15:57:14 -0800 (PST)
+Date: Thu, 19 Feb 2026 15:57:11 -0800
+From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>, 
+	"Rafael J. Wysocki" <rafael.j.wysocki@intel.com>, Geert Uytterhoeven <geert+renesas@glider.be>, 
+	Johan Hovold <johan+linaro@kernel.org>, Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>, 
+	"Dr. David Alan Gilbert" <linux@treblig.org>, Peter Griffin <peter.griffin@linaro.org>, 
+	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>, Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>, 
+	Zijun Hu <zijun.hu@oss.qualcomm.com>, linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH] phy: core: fix potential UAF in of_phy_simple_xlate()
+Message-ID: <aZejMSJ9qqRWb2pX@google.com>
 MIME-Version: 1.0
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260219_202940_695520_0DBA7F26 
-X-CRM114-Status: GOOD (  12.54  )
+X-CRM114-CacheID: sfid-20260219_155716_701051_66111156 
+X-CRM114-Status: GOOD (  11.25  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,103 +100,52 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-There is no code that uses ID table directly, except the
-struct device_driver at the end of the file. Hence, move
-table closer to its user. It's always possible to access
-them via a pointer.
+The implementation put_device()s located device and then uses
+container_of() on the pointer. The device may disappear by that time,
+resulting in UAF.
 
-Signed-off-by: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+Fix the problem by keeping the reference to the framer device,
+avoiding getting an extra reference to it in framer_get(), and making
+sure to drop the reference in error path when we fail to get the module.
+
+Fixes: e6625db66212 ("phy: core: Simplify API of_phy_simple_xlate() implementation")
+Signed-off-by: Dmitry Torokhov <dmitry.torokhov@gmail.com>
 ---
- drivers/phy/phy-can-transceiver.c | 59 +++++++++++++++----------------
- 1 file changed, 29 insertions(+), 30 deletions(-)
+ drivers/phy/phy-core.c | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/phy/phy-can-transceiver.c b/drivers/phy/phy-can-transceiver.c
-index f2259af4af8a..dd08faf46837 100644
---- a/drivers/phy/phy-can-transceiver.c
-+++ b/drivers/phy/phy-can-transceiver.c
-@@ -97,35 +97,6 @@ static const struct can_transceiver_data tja1057_drvdata = {
- 	.flags = CAN_TRANSCEIVER_SILENT_PRESENT,
- };
+diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
+index 4ad396214d0c..cf62eb9ddca9 100644
+--- a/drivers/phy/phy-core.c
++++ b/drivers/phy/phy-core.c
+@@ -682,10 +682,10 @@ struct phy *of_phy_get(struct device_node *np, const char *con_id)
+ 	if (IS_ERR(phy))
+ 		return phy;
  
--static const struct of_device_id can_transceiver_phy_ids[] = {
--	{
--		.compatible = "ti,tcan1042",
--		.data = &tcan1042_drvdata
--	},
--	{
--		.compatible = "ti,tcan1043",
--		.data = &tcan1043_drvdata
--	},
--	{
--		.compatible = "nxp,tja1048",
--		.data = &tja1048_drvdata
--	},
--	{
--		.compatible = "nxp,tja1051",
--		.data = &tja1051_drvdata
--	},
--	{
--		.compatible = "nxp,tja1057",
--		.data = &tja1057_drvdata
--	},
--	{
--		.compatible = "nxp,tjr1443",
--		.data = &tcan1043_drvdata
--	},
--	{ }
--};
--MODULE_DEVICE_TABLE(of, can_transceiver_phy_ids);
+-	if (!try_module_get(phy->ops->owner))
++	if (!try_module_get(phy->ops->owner)) {
++		put_device(&phy->dev);
+ 		return ERR_PTR(-EPROBE_DEFER);
 -
- /* Temporary wrapper until the multiplexer subsystem supports optional muxes */
- static inline struct mux_state *
- devm_mux_state_get_optional(struct device *dev, const char *mux_name)
-@@ -239,6 +210,35 @@ static int can_transceiver_phy_probe(struct platform_device *pdev)
- 	return PTR_ERR_OR_ZERO(phy_provider);
+-	get_device(&phy->dev);
++	}
+ 
+ 	return phy;
  }
+@@ -765,7 +765,6 @@ struct phy *of_phy_simple_xlate(struct device *dev,
+ 	if (!target_dev)
+ 		return ERR_PTR(-ENODEV);
  
-+static const struct of_device_id can_transceiver_phy_ids[] = {
-+	{
-+		.compatible = "ti,tcan1042",
-+		.data = &tcan1042_drvdata
-+	},
-+	{
-+		.compatible = "ti,tcan1043",
-+		.data = &tcan1043_drvdata
-+	},
-+	{
-+		.compatible = "nxp,tja1048",
-+		.data = &tja1048_drvdata
-+	},
-+	{
-+		.compatible = "nxp,tja1051",
-+		.data = &tja1051_drvdata
-+	},
-+	{
-+		.compatible = "nxp,tja1057",
-+		.data = &tja1057_drvdata
-+	},
-+	{
-+		.compatible = "nxp,tjr1443",
-+		.data = &tcan1043_drvdata
-+	},
-+	{ }
-+};
-+MODULE_DEVICE_TABLE(of, can_transceiver_phy_ids);
-+
- static struct platform_driver can_transceiver_phy_driver = {
- 	.probe = can_transceiver_phy_probe,
- 	.driver = {
-@@ -246,7 +246,6 @@ static struct platform_driver can_transceiver_phy_driver = {
- 		.of_match_table = can_transceiver_phy_ids,
- 	},
- };
--
- module_platform_driver(can_transceiver_phy_driver);
- 
- MODULE_AUTHOR("Faiz Abbas <faiz_abbas@ti.com>");
+-	put_device(target_dev);
+ 	return to_phy(target_dev);
+ }
+ EXPORT_SYMBOL_GPL(of_phy_simple_xlate);
 -- 
-2.50.1
+2.53.0.345.g96ddfc5eaa-goog
 
+
+-- 
+Dmitry
 
 -- 
 linux-phy mailing list
