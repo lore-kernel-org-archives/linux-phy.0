@@ -4,50 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C014EE9A048
-	for <linux-phy@archiver.kernel.org>; Thu, 19 Feb 2026 12:50:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5F629E9A049
+	for <linux-phy@archiver.kernel.org>; Thu, 19 Feb 2026 12:50:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:MIME-Version:Subject:Cc
 	:To:From:References:In-Reply-To:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=B7zWkNwx0tZ+C0/LM+5U3sT7e1sOHyxjtrzAEZxX0oI=; b=XJ7Suhq4gs1OQn
-	1DOCbTM2r4S1+mV0BDv1zzqrCRBstHv8H0YaS32Qh7VIjua/B9r/qk+It2PLgwFYGwoOMRULpZlRA
-	QfqOxnkSpgjvk3+rer1xD59+vYA2dWWfyEROlc3ozv74aX0VrGvZMTofEZRk2+JzOTSjr1QYLPxlW
-	O6HiYqBvilURXeuIsFfB883WkjdwtWfczer7G7LpSbhsZccmI6xk1h1zaBy17yWxSWlE78OUiYLMq
-	ZL6HsfskIpBp46UEWhyFeHU/YMj1HGS2HZ8EMEREN9/mWKiWXhBF103IGgCSubhhFFjk3AUxwqSQn
-	fclOuIFby4CHHrxDoGMQ==;
+	List-Owner; bh=Z7jWWinVlVtVEAzQq98lKUNtC5o+BsaeAm2SZm/Jg4E=; b=VD0ZNjoJlwC1VT
+	SCXp/aVeXCVwI/ItCwMh2cuEzP8oFWh5Agxa+y3LQznuhU//S3ssOT/NPEYgopDYP8qPJPzVIU5xD
+	Jm7PJ1lvjwslqvRa7HsDpuUOLC+BJcflqlUabaJZlMSLRZ/1Xj/vr3oQbKq8GOZO/UFiIi29ZqsAO
+	+CapsMrV08C8hfxCSTVQdO9NOxxlTJnJ12oZrX7LChyGgSzzv6BSrr76/XgNy9kVYiDak6uf4+oWV
+	c67+3H6p2/ywzqqDLA9u5SFWimkiBwRbkM5KF9rFfHgS/zp6VarF02IXIC/DL2S0XY8fuDJd84HN3
+	+kN6GJufIxpcIqe24p7w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vt3UN-0000000BLzi-281X;
-	Thu, 19 Feb 2026 12:50:39 +0000
+	id 1vt3UR-0000000BM1V-0LQ3;
+	Thu, 19 Feb 2026 12:50:43 +0000
 Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vt3UL-0000000BLyx-3GXe;
-	Thu, 19 Feb 2026 12:50:38 +0000
+	id 1vt3UN-0000000BLzI-3KJX;
+	Thu, 19 Feb 2026 12:50:40 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=armlinux.org.uk; s=pandora-2019; h=Date:Sender:Message-Id:Content-Type:
 	Content-Transfer-Encoding:MIME-Version:Subject:Cc:To:From:References:
 	In-Reply-To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
 	List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=h1qemJ9T19BWX8RspLLamHrXeBfB/46GJPlusAb73Gw=; b=Wt7ER066IQxQ/FOMKZKm0JtKDc
-	AD1OYKN/OeX9LZDaT1YLcVgekVdgHoCwN4yiVvWubAueCXXoZqIIWio32bwx07vSitZvN5Qj39tjH
-	l9509asOigpArKvJk6be/BAR0JKV0p1/FK6id+MAGggrpC3ixxayUUJ2EHjelcwUpmet/yBnQXNlZ
-	Z/+JPKh6LfVWYteyiV3MEcz47j+COrarE1gw9kTizLk2XtazSV7CmmUNfPazm0kzT9vByQKnwA7Ae
-	j9XfAV9U2+Cyk0mglqhN7ifuNVap5BBu5exXL3DBn/T7LppNwD75SnVQjmlcKS7l/B7MFPcI/Q42Y
-	V9VT8Psw==;
-Received: from e0022681537dd.dyn.armlinux.org.uk ([fd8f:7570:feb6:1:222:68ff:fe15:37dd]:48498 helo=rmk-PC.armlinux.org.uk)
+	bh=hXy+qZEOQnVZ1TQ7eVHl4KeCMH2Hq+n4vm2MJCw5RdM=; b=tZEqxZucuX/1jcU8pRmHuLZ+6d
+	/9ccakLp0L3pRQL1fWOMLx1SA3A9iSe9vYiNi3fK7X6xHyHRCThgq/DKNBAkb+PKA8CefMmPnRhBK
+	F8ocpLJY+bjuehH2eAqgrum8wd1jdABw8d3tSuNBqU3kAcIP1cOz9mHrIIKd8uRT5eRo8VXS8UW7c
+	IAfAOFX9s1H4P8zLc3G6tCNRixWd+aLbPARNrH8JuTveBpKHO634g3dm6bnw0HopjgKldP6Lmn1bW
+	hgylN8D4OmaZIYJcpW3Qc6Q/pU89P3s4fz3DX/BCZ8sxWZreQU8VvmW2fwVYd6JladAx/EdXH1Ba/
+	JhZgLgkg==;
+Received: from e0022681537dd.dyn.armlinux.org.uk ([fd8f:7570:feb6:1:222:68ff:fe15:37dd]:48508 helo=rmk-PC.armlinux.org.uk)
 	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
 	(Exim 4.98.2)
 	(envelope-from <rmk@armlinux.org.uk>)
-	id 1vt3UD-000000000rC-2o5L;
-	Thu, 19 Feb 2026 12:50:29 +0000
+	id 1vt3UI-000000000rO-45uj;
+	Thu, 19 Feb 2026 12:50:35 +0000
 Received: from rmk by rmk-PC.armlinux.org.uk with local (Exim 4.98.2)
 	(envelope-from <rmk@rmk-PC.armlinux.org.uk>)
-	id 1vt3UC-0000000A5dw-3lKw;
-	Thu, 19 Feb 2026 12:50:28 +0000
+	id 1vt3UI-0000000A5e2-0Im5;
+	Thu, 19 Feb 2026 12:50:34 +0000
 In-Reply-To: <aZcGxDBwfMXHbo_O@shell.armlinux.org.uk>
 References: <aZcGxDBwfMXHbo_O@shell.armlinux.org.uk>
 From: "Russell King (Oracle)" <rmk+kernel@armlinux.org.uk>
@@ -66,15 +66,15 @@ Cc: Alexandre Torgue <alexandre.torgue@foss.st.com>,
 	netdev@vger.kernel.org,
 	Paolo Abeni <pabeni@redhat.com>,
 	Vinod Koul <vkoul@kernel.org>
-Subject: [PATCH RFC net-next+ 1/9] net: stmmac: qcom-ethqos: convert to
- set_clk_tx_rate() method
+Subject: [PATCH RFC net-next+ 2/9] net: stmmac: qcom-ethqos: move
+ ethqos_set_serdes_speed()
 MIME-Version: 1.0
 Content-Disposition: inline
-Message-Id: <E1vt3UC-0000000A5dw-3lKw@rmk-PC.armlinux.org.uk>
-Date: Thu, 19 Feb 2026 12:50:28 +0000
+Message-Id: <E1vt3UI-0000000A5e2-0Im5@rmk-PC.armlinux.org.uk>
+Date: Thu, 19 Feb 2026 12:50:34 +0000
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260219_045037_817607_E552E9ED 
-X-CRM114-Status: GOOD (  12.80  )
+X-CRM114-CacheID: sfid-20260219_045039_831322_BC9F2982 
+X-CRM114-Status: GOOD (  12.07  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,80 +91,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Set the RGMII link clock using the set_clk_tx_rate() method rather than
-coding it into the .fix_mac_speed() method. This simplifies ethqos's
-ethqos_fix_mac_speed().
+Combine ethqos_set_serdes_speed() with ethqos_mac_finish_serdes() to
+simplify the code.
 
-Tested-by: Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>
 Signed-off-by: Russell King (Oracle) <rmk+kernel@armlinux.org.uk>
 ---
- .../stmicro/stmmac/dwmac-qcom-ethqos.c        | 21 ++++++++++---------
- 1 file changed, 11 insertions(+), 10 deletions(-)
+ .../stmicro/stmmac/dwmac-qcom-ethqos.c        | 22 +++++++++----------
+ 1 file changed, 11 insertions(+), 11 deletions(-)
 
 diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
-index 153f6abc77cd..ad5b5d950fff 100644
+index ad5b5d950fff..57cbe800f652 100644
 --- a/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
 +++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
-@@ -103,7 +103,6 @@ struct qcom_ethqos {
- 	void (*configure_func)(struct qcom_ethqos *ethqos,
- 			       phy_interface_t interface, int speed);
- 
--	unsigned int link_clk_rate;
- 	struct clk *link_clk;
- 	struct phy *serdes_phy;
- 	int serdes_speed;
-@@ -175,19 +174,20 @@ static void rgmii_dump(void *priv)
- 		rgmii_readl(ethqos, EMAC_SYSTEM_LOW_POWER_DEBUG));
+@@ -591,14 +591,6 @@ static void ethqos_configure_rgmii(struct qcom_ethqos *ethqos,
+ 	ethqos_rgmii_macro_init(ethqos, speed);
  }
  
--static void
--ethqos_update_link_clk(struct qcom_ethqos *ethqos, int speed)
-+static int ethqos_set_clk_tx_rate(void *bsp_priv, struct clk *clk_tx_i,
-+				  phy_interface_t interface, int speed)
+-static void ethqos_set_serdes_speed(struct qcom_ethqos *ethqos, int speed)
+-{
+-	if (ethqos->serdes_speed != speed) {
+-		phy_set_speed(ethqos->serdes_phy, speed);
+-		ethqos->serdes_speed = speed;
+-	}
+-}
+-
+ static void ethqos_pcs_set_inband(struct stmmac_priv *priv, bool enable)
  {
-+	struct qcom_ethqos *ethqos = bsp_priv;
- 	long rate;
- 
--	if (!phy_interface_mode_is_rgmii(ethqos->phy_mode))
--		return;
-+	if (!phy_interface_mode_is_rgmii(interface))
-+		return 0;
- 
- 	rate = rgmii_clock(speed);
--	if (rate > 0)
--		ethqos->link_clk_rate = rate * 2;
-+	if (rate < 0)
-+		return rate;
- 
--	clk_set_rate(ethqos->link_clk, ethqos->link_clk_rate);
-+	return clk_set_rate(ethqos->link_clk, rate * 2);
- }
- 
- static void
-@@ -643,7 +643,6 @@ static void ethqos_fix_mac_speed(void *priv, phy_interface_t interface,
+ 	stmmac_pcs_ctrl_ane(priv, enable, 0);
+@@ -683,15 +675,23 @@ static int ethqos_mac_finish_serdes(struct net_device *ndev, void *priv,
+ 				    phy_interface_t interface)
  {
  	struct qcom_ethqos *ethqos = priv;
++	int speed, ret = 0;
  
--	ethqos_update_link_clk(ethqos, speed);
- 	ethqos_configure(ethqos, interface, speed);
+ 	qcom_ethqos_set_sgmii_loopback(ethqos, false);
+ 
++	speed = SPEED_UNKNOWN;
+ 	if (interface == PHY_INTERFACE_MODE_SGMII)
+-		ethqos_set_serdes_speed(ethqos, SPEED_1000);
++		speed = SPEED_1000;
+ 	else if (interface == PHY_INTERFACE_MODE_2500BASEX)
+-		ethqos_set_serdes_speed(ethqos, SPEED_2500);
++		speed = SPEED_2500;
+ 
+-	return 0;
++	if (speed != SPEED_UNKNOWN && speed != ethqos->serdes_speed) {
++		ret = phy_set_speed(ethqos->serdes_phy, speed);
++		if (ret == 0)
++			ethqos->serdes_speed = speed;
++	}
++
++	return ret;
  }
  
-@@ -821,12 +820,14 @@ static int qcom_ethqos_probe(struct platform_device *pdev)
- 				     "Failed to get serdes phy\n");
- 
- 	ethqos->serdes_speed = SPEED_1000;
--	ethqos_update_link_clk(ethqos, SPEED_1000);
-+	ethqos_set_clk_tx_rate(ethqos, NULL, plat_dat->phy_interface,
-+			       SPEED_1000);
- 
- 	qcom_ethqos_set_sgmii_loopback(ethqos, true);
- 	ethqos_set_func_clk_en(ethqos);
- 
- 	plat_dat->bsp_priv = ethqos;
-+	plat_dat->set_clk_tx_rate = ethqos_set_clk_tx_rate;
- 	plat_dat->fix_mac_speed = ethqos_fix_mac_speed;
- 	plat_dat->dump_debug_regs = rgmii_dump;
- 	plat_dat->ptp_clk_freq_config = ethqos_ptp_clk_freq_config;
+ static int ethqos_clks_config(void *priv, bool enabled)
 -- 
 2.47.3
 
