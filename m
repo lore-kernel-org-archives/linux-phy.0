@@ -4,60 +4,99 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A1F8AC61DE1
-	for <linux-phy@archiver.kernel.org>; Sat, 21 Feb 2026 10:24:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9F5DFC61DE7
+	for <linux-phy@archiver.kernel.org>; Sat, 21 Feb 2026 13:29:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=S6lyYeZ2kjhXNfGUvuqrH93puYInKHQYqsqdMVZfrE4=; b=n5DArV9Z0LEUJx
-	U73/c2eCl58+Mv/TLGz0fwBiIrExrMGJMJfnNOGp8H6XiVCnOuM7X85CSqgTsWbYOUN3iitXt5EZ7
-	zYDghgWNh9TMuJF+xUYpvdAuClZEEJzAjN8iqT3xiNvRnntczR9dB5/0X5xDVyqbaUNVS6d6UnNUQ
-	3Y9GtSJR4zgU7pL/42dyAwv43+v04PnxxI5g1EWlENr0jXIv+zZ9fzAwUp+TyQEqKt6zaTR85pwFX
-	e4daet5FIWN5iewa0YrXCl4etaQDcTz+M1AbECtYzlXD8IEE/I383Q0RZmoYlqvMa/8Zk5h8bvJMD
-	rqsn6lWsMfEoBroXoPOQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Cc:Message-Id:Date:
+	Mime-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=CnUsekEb/1kOaRKBaHQsOWsHjjPqBIiow7AAw87OP4I=; b=lO8MgXQAYqOfqV
+	5xSWKqpDUclVtDaTgsJULFUAly0Z0c4LV3BkZx8fO6b9CSVEM8CsfcRLK5Olh4pmOD7+7pvsbBXi4
+	gY6Fu4XIwjDzHF6XWvsu0kCD0XcgIIpy4KLOKHG+W8tyiSp5TE0NyaLOxgbmy2oWE29+MEuS/omVu
+	jul4S7I2yEZGYMmRmH51dbshFBtTwa+EkfJKs7oMxrpfamzWYhwj3G3B15v81Fec7UDpvrAw5GkGf
+	Skt7vUCfmOsbTWMNVsRBWL3I5Z5xYKgNFxOuI4VQnvfWm1cZ2yI7Imj1jhM3Ec/MFol17pVfNOEBp
+	V2O3SU7GuPXbhxFV8ygA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vtkAF-0000000FyIu-3ca2;
-	Sat, 21 Feb 2026 10:24:43 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vtn2d-0000000G49l-03YO;
+	Sat, 21 Feb 2026 13:29:03 +0000
+Received: from fout-b6-smtp.messagingengine.com ([202.12.124.149])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vtkAF-0000000FyIn-06hG
-	for linux-phy@lists.infradead.org;
-	Sat, 21 Feb 2026 10:24:43 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 0DA336001D;
-	Sat, 21 Feb 2026 10:24:42 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0A2E7C4CEF7;
-	Sat, 21 Feb 2026 10:24:40 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1771669481;
-	bh=fWU7XCC0TcYC+exWhpNowAjWcwL2oXj5CyfqaBnBW4o=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=FpuwBMq1h9YNXi8+eQgEAsXjmUTBtHjYNgCThIynL7uizJW62KIJpz4A5T/Td/buc
-	 YEODvgB8zwD1kNua8ae2+smNOfJ/+LvvyFlmH6hBGgR35SOPfVadVG8XFnt2OMJSiF
-	 hSJIgKBzt3lPwJe7sSkUpiLm4FiKmMhSrTtI5AttVVwogUputY+UAkZJNE4wo8Yb1a
-	 oRqJ0p0yp4GDKGiYROwk99X7V0NErytkktLfvjybhCZqvqX9F76DeZodx8uuHOd8ux
-	 ZulVGNEasS2EfcvWYxf6d5R2TJSicLmmN173Grf/OPluMmW+ce7uyYShXMjocKH20V
-	 kXsuROVXpQvpg==
-Date: Sat, 21 Feb 2026 11:24:39 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Abel Vesa <abel.vesa@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Nitin Rawat <nitin.rawat@oss.qualcomm.com>, Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, 
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2] dt-bindings: phy: qcom,sc8280xp-qmp-ufs-phy: document
- the Eliza QMP UFS PHY
-Message-ID: <20260221-fascinating-alluring-dinosaur-7402fb@quoll>
-References: <20260220-eliza-bindings-phy-ufs-v2-1-4910bdcc585a@oss.qualcomm.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260220-eliza-bindings-phy-ufs-v2-1-4910bdcc585a@oss.qualcomm.com>
+	id 1vtn2Z-0000000G49C-1kKW;
+	Sat, 21 Feb 2026 13:29:01 +0000
+Received: from phl-compute-03.internal (phl-compute-03.internal [10.202.2.43])
+	by mailfout.stl.internal (Postfix) with ESMTP id 52CE31D00162;
+	Sat, 21 Feb 2026 08:28:55 -0500 (EST)
+Received: from phl-imap-11 ([10.202.2.101])
+  by phl-compute-03.internal (MEProxy); Sat, 21 Feb 2026 08:28:55 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=arthurfabre.com;
+	 h=cc:cc:content-transfer-encoding:content-type:content-type
+	:date:date:from:from:in-reply-to:message-id:mime-version
+	:reply-to:subject:subject:to:to; s=fm2; t=1771680535; x=
+	1771766935; bh=BBj1XSAnS+Z287mBk9hbl2WDrmiTfMoFaCX9+RKfTME=; b=c
+	bX17CU2Fq4MMMz6yVtFS4sMExbYG6qsU4Mb63Tqk8r3OtQW+DSGSL0gdMcATWU58
+	TjD2vz8+a+xDsomIajF/XPLGHygmwDS5O3A7djjmzeyPwqxTQvW/ttpIjM2IrMhi
+	6Ux/ZeVtmBwIzgK4fNoDPEmTaTM5vSo0SwVw/4Vw+PsX6N+hdeZ9vXgTCHH2nfsE
+	+epkpxXbfIX9OxREqyjM+J7vEw5/sGVFCJOYBLPRKRuOY/FNTM/iyI2xHNC6yFVo
+	ZYA8NXxD+OYB4qUuEl2XtpZyZD4z79vhzpasigmyf+Jnfu6BHE6ZE6vkFtGrQ5jW
+	/0U0Cwdm3cfztQNMn8H1A==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:cc:content-transfer-encoding
+	:content-type:content-type:date:date:feedback-id:feedback-id
+	:from:from:in-reply-to:message-id:mime-version:reply-to:subject
+	:subject:to:to:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
+	fm3; t=1771680535; x=1771766935; bh=BBj1XSAnS+Z287mBk9hbl2WDrmiT
+	fMoFaCX9+RKfTME=; b=blicYLlY20c9/9UW+KoKBA3KdTmPV0h3QIM1PM0n0bDB
+	QqgSQzOxNaaDEn1Uk6j2gV3yO3a5FwkdxoubzlRaf5aGshjkeRc3rjR8la6KQ2+Q
+	/wApRtpW2g6Nv+kpTWYbdj5Ale7FOtj3Fcu2cgHSFPoKzyBf5kmnZSTg3cUWROf/
+	dISAxyOhb4Ve3NQqPBDB8V1MXI7OtJw7TfhyKRgO3nKCeLdjNusl0LnalU+TGxyE
+	RaLAnJuWqF4yvm9g/G5kVP4eIYA66Idtiaqm+htndTjobPosOypT7a/ppdXpXm40
+	Xh9Vt6hEmYDUnyZy4OmYJRImnlKrkx8/B0RPOiZdWA==
+X-ME-Sender: <xms:FbOZaWmc2ZBZNZWHbFdApIsvGbX9Kdr1hXUuvaPinmmBk_aJWz7qMA>
+    <xme:FbOZaYrCiEmHc3FR5LqvqICgIqPlx-5IpIxxV3KjSqACj8AFNbBHqi4AfbfWluwZH
+    83-GZVMX_bJ8jpIzRTaz5ama8wUMd7Wa8VSNQmVm8vWGo4UqJuxjng>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeefgedrtddtgddvfedugeekucetufdoteggodetrf
+    dotffvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfurfetoffkrfgpnffqhgenuceu
+    rghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmnecujf
+    gurhepofgggfgtfffkvefuhffvofesthhqredtredtjeenucfhrhhomhepfdetrhhthhhu
+    rhcuhfgrsghrvgdfuceorghrthhhuhhrsegrrhhthhhurhhfrggsrhgvrdgtohhmqeenuc
+    ggtffrrghtthgvrhhnpeekhfegieegkeetuedvveefledvieeiheffkeethffffffgiedv
+    gefhveehieeileenucffohhmrghinhepghhithhhuhgsrdgtohhmnecuvehluhhsthgvrh
+    fuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomheprghrthhhuhhrsegrrhhthhhu
+    rhhfrggsrhgvrdgtohhmpdhnsggprhgtphhtthhopeejpdhmohguvgepshhmthhpohhuth
+    dprhgtphhtthhopegrmhgruggvuhhssehjmhhurdgvughurdgtnhdprhgtphhtthhopehl
+    ihhnuhigqdgrrhhmqdhkvghrnhgvlheslhhishhtshdrihhnfhhrrgguvggrugdrohhrgh
+    dprhgtphhtthhopehlihhnuhigqdhphhihsehlihhsthhsrdhinhhfrhgruggvrggurdho
+    rhhgpdhrtghpthhtoheplhhinhhugidqrhhotghktghhihhpsehlihhsthhsrdhinhhfrh
+    gruggvrggurdhorhhgpdhrtghpthhtohepnhgrohhkihesrhgrugigrgdrtghomhdprhgt
+    phhtthhopehhvghikhhosehsnhhtvggthhdruggvpdhrtghpthhtoheplhhinhhugidqkh
+    gvrhhnvghlsehvghgvrhdrkhgvrhhnvghlrdhorhhg
+X-ME-Proxy: <xmx:FrOZabEf3Y8Chhc961V8imLlFRymBtEZI6K2qSsYBAlHZ3WLnwsdmA>
+    <xmx:FrOZaUWCg4FHHhOjqpL5oFRCEtvwU5vprqXxh3sSyeZQLzasOiJ3zw>
+    <xmx:FrOZafXFZ7x8QPGqRYALU0DxbLCGfCWHmB06us3nQAQ97FKZmjeRcQ>
+    <xmx:FrOZaaJHmZrJeMaK_T8IRnnBnxtnI0Ub2hBpbSbbU1JlRDo1xPMCoQ>
+    <xmx:F7OZaYGREhgpY864gTO7ucFrD0AvrSIxc47ITD6fWdWyxJUlOXtW8Eq8>
+Feedback-ID: i25f1493c:Fastmail
+Received: by mailuser.phl.internal (Postfix, from userid 501)
+	id DB51A1B4006F; Sat, 21 Feb 2026 08:28:53 -0500 (EST)
+X-Mailer: MessagingEngine.com Webmail Interface
+Mime-Version: 1.0
+Date: Sat, 21 Feb 2026 14:28:53 +0100
+Message-Id: <DGKOC0Y8UWRH.3TVFOP2ND9W9J@arthurfabre.com>
+Cc: <linux-phy@lists.infradead.org>, <linux-arm-kernel@lists.infradead.org>,
+ <linux-rockchip@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+ "FUKAUMI Naoki" <naoki@radxa.com>
+Subject: PROBLEM: Raxda Rock 5 ITX shared SATA broken by "phy: rockchip:
+ naneng-combphy: fix phy reset"
+From: "Arthur Fabre" <arthur@arthurfabre.com>
+To: "Heiko Stuebner" <heiko@sntech.de>, "Chukun Pan" <amadeus@jmu.edu.cn>
+X-Mailer: aerc 0.21.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260221_052859_991973_9B34CA42 
+X-CRM114-Status: UNSURE (   4.76  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,23 +113,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Feb 20, 2026 at 10:25:50AM +0200, Abel Vesa wrote:
-> Document the QMP UFS PHY compatible for the Eliza Platform. It is fully
-> compatible with the PHY implemented in SM8650, so use the SM8650
-> compatible as fallback.
-> 
-> While at it, move the QCS8300 one so that the it is sorted correctly by
-> fallback compatible.
-> 
-> Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-> Signed-off-by: Abel Vesa <abel.vesa@oss.qualcomm.com>
-> ---
+Hello,
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+I have a Raxda Rock 5 ITX, with a device-tree overlay to enable
+the shared SATA port:
 
-Best regards,
-Krzysztof
+// ROCK 5 ITX M.2 E-Key Sata
+/dts-v1/;
+/plugin/;
 
+/ {
+	fragment@0 {
+		target = <&pcie2x1l0>;
+
+		__overlay__ {
+			status = "disabled";
+		};
+	};
+
+	fragment@1 {
+		target = <&sata1>;
+
+		__overlay__ {
+			status = "okay";
+		};
+	};
+};
+
+This worked fine, with the kernel normally logging:
+
+[    0.754425] ata1: SATA max UDMA/133 abar m8192@0xf1282000 port 0xf1282100 irq 70 lpm-pol 0
+[    1.692424] ata1: SATA link up 6.0 Gbps (SStatus 133 SControl 300)
+
+However this stopped working after a kernel update:
+
+[    2.687755] ata1: SATA max UDMA/133 mmio [mem 0xfe220000-0xfe220fff] port 0x100 irq 79 lpm-pol 0
+[    4.893204] ata1: SATA link down (SStatus 1 SControl 300)
+[    7.111503] ata1: SATA link down (SStatus 1 SControl 300)
+[    7.111993] ata1: limiting SATA link speed to 1.5 Gbps
+
+I've reliably bisected it to commit:
+fbcbffbac994 "phy: rockchip: naneng-combphy: fix phy reset".
+
+Unfortunately coming up with a patch is out of my depth.
+Happy to test any suggestions.
+
+If it matters I'm using the EDK2 UEFI firmware v1.1:
+https://github.com/edk2-porting/edk2-rk3588
+
+Thank you,
+
+Arthur
 
 -- 
 linux-phy mailing list
