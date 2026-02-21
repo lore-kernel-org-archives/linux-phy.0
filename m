@@ -4,98 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9F5DFC61DE7
-	for <linux-phy@archiver.kernel.org>; Sat, 21 Feb 2026 13:29:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1338CC5AD7B
+	for <linux-phy@archiver.kernel.org>; Sat, 21 Feb 2026 14:59:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Cc:Message-Id:Date:
-	Mime-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=CnUsekEb/1kOaRKBaHQsOWsHjjPqBIiow7AAw87OP4I=; b=lO8MgXQAYqOfqV
-	5xSWKqpDUclVtDaTgsJULFUAly0Z0c4LV3BkZx8fO6b9CSVEM8CsfcRLK5Olh4pmOD7+7pvsbBXi4
-	gY6Fu4XIwjDzHF6XWvsu0kCD0XcgIIpy4KLOKHG+W8tyiSp5TE0NyaLOxgbmy2oWE29+MEuS/omVu
-	jul4S7I2yEZGYMmRmH51dbshFBtTwa+EkfJKs7oMxrpfamzWYhwj3G3B15v81Fec7UDpvrAw5GkGf
-	Skt7vUCfmOsbTWMNVsRBWL3I5Z5xYKgNFxOuI4VQnvfWm1cZ2yI7Imj1jhM3Ec/MFol17pVfNOEBp
-	V2O3SU7GuPXbhxFV8ygA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3egmdtg2eiUaiazmWL7Vf1g9YruOpyfbWhAB/4bNDAo=; b=YEo+KMB92vueU9
+	nDH9edea+DIJCHbdYzln5Oa4j4QQM6XFwhE2SjQMwpXH5L6y5PzIlU2F1vGhIBYyJhxpzNvbtgEwf
+	vWKacebdoA/FdNAQ3HYONsmb+21r4hrhMpdsPUOI9dKHEomhLsENRUpePGw+LJRs4E3QjR7JorbGC
+	3OiDIgN+fW/8BOnw6L1ClH5EXk19nOufACOp/lizARoO7k7kDo3jMd0MVLDvx2Q/C2CZ4HtZ6/wyx
+	20ol6cXS+vTet09YhcR/jwEinUBWmj8tZjJ5H3gDuW6+dlgdOq1J4Q7RvweMV0RXxEtodEBUhqsPM
+	SM8qXSM5igoWzw7lMbbw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vtn2d-0000000G49l-03YO;
-	Sat, 21 Feb 2026 13:29:03 +0000
-Received: from fout-b6-smtp.messagingengine.com ([202.12.124.149])
+	id 1vtoS4-0000000G7MY-2fYu;
+	Sat, 21 Feb 2026 14:59:24 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vtn2Z-0000000G49C-1kKW;
-	Sat, 21 Feb 2026 13:29:01 +0000
-Received: from phl-compute-03.internal (phl-compute-03.internal [10.202.2.43])
-	by mailfout.stl.internal (Postfix) with ESMTP id 52CE31D00162;
-	Sat, 21 Feb 2026 08:28:55 -0500 (EST)
-Received: from phl-imap-11 ([10.202.2.101])
-  by phl-compute-03.internal (MEProxy); Sat, 21 Feb 2026 08:28:55 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=arthurfabre.com;
-	 h=cc:cc:content-transfer-encoding:content-type:content-type
-	:date:date:from:from:in-reply-to:message-id:mime-version
-	:reply-to:subject:subject:to:to; s=fm2; t=1771680535; x=
-	1771766935; bh=BBj1XSAnS+Z287mBk9hbl2WDrmiTfMoFaCX9+RKfTME=; b=c
-	bX17CU2Fq4MMMz6yVtFS4sMExbYG6qsU4Mb63Tqk8r3OtQW+DSGSL0gdMcATWU58
-	TjD2vz8+a+xDsomIajF/XPLGHygmwDS5O3A7djjmzeyPwqxTQvW/ttpIjM2IrMhi
-	6Ux/ZeVtmBwIzgK4fNoDPEmTaTM5vSo0SwVw/4Vw+PsX6N+hdeZ9vXgTCHH2nfsE
-	+epkpxXbfIX9OxREqyjM+J7vEw5/sGVFCJOYBLPRKRuOY/FNTM/iyI2xHNC6yFVo
-	ZYA8NXxD+OYB4qUuEl2XtpZyZD4z79vhzpasigmyf+Jnfu6BHE6ZE6vkFtGrQ5jW
-	/0U0Cwdm3cfztQNMn8H1A==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=cc:cc:content-transfer-encoding
-	:content-type:content-type:date:date:feedback-id:feedback-id
-	:from:from:in-reply-to:message-id:mime-version:reply-to:subject
-	:subject:to:to:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
-	fm3; t=1771680535; x=1771766935; bh=BBj1XSAnS+Z287mBk9hbl2WDrmiT
-	fMoFaCX9+RKfTME=; b=blicYLlY20c9/9UW+KoKBA3KdTmPV0h3QIM1PM0n0bDB
-	QqgSQzOxNaaDEn1Uk6j2gV3yO3a5FwkdxoubzlRaf5aGshjkeRc3rjR8la6KQ2+Q
-	/wApRtpW2g6Nv+kpTWYbdj5Ale7FOtj3Fcu2cgHSFPoKzyBf5kmnZSTg3cUWROf/
-	dISAxyOhb4Ve3NQqPBDB8V1MXI7OtJw7TfhyKRgO3nKCeLdjNusl0LnalU+TGxyE
-	RaLAnJuWqF4yvm9g/G5kVP4eIYA66Idtiaqm+htndTjobPosOypT7a/ppdXpXm40
-	Xh9Vt6hEmYDUnyZy4OmYJRImnlKrkx8/B0RPOiZdWA==
-X-ME-Sender: <xms:FbOZaWmc2ZBZNZWHbFdApIsvGbX9Kdr1hXUuvaPinmmBk_aJWz7qMA>
-    <xme:FbOZaYrCiEmHc3FR5LqvqICgIqPlx-5IpIxxV3KjSqACj8AFNbBHqi4AfbfWluwZH
-    83-GZVMX_bJ8jpIzRTaz5ama8wUMd7Wa8VSNQmVm8vWGo4UqJuxjng>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeefgedrtddtgddvfedugeekucetufdoteggodetrf
-    dotffvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfurfetoffkrfgpnffqhgenuceu
-    rghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmnecujf
-    gurhepofgggfgtfffkvefuhffvofesthhqredtredtjeenucfhrhhomhepfdetrhhthhhu
-    rhcuhfgrsghrvgdfuceorghrthhhuhhrsegrrhhthhhurhhfrggsrhgvrdgtohhmqeenuc
-    ggtffrrghtthgvrhhnpeekhfegieegkeetuedvveefledvieeiheffkeethffffffgiedv
-    gefhveehieeileenucffohhmrghinhepghhithhhuhgsrdgtohhmnecuvehluhhsthgvrh
-    fuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomheprghrthhhuhhrsegrrhhthhhu
-    rhhfrggsrhgvrdgtohhmpdhnsggprhgtphhtthhopeejpdhmohguvgepshhmthhpohhuth
-    dprhgtphhtthhopegrmhgruggvuhhssehjmhhurdgvughurdgtnhdprhgtphhtthhopehl
-    ihhnuhigqdgrrhhmqdhkvghrnhgvlheslhhishhtshdrihhnfhhrrgguvggrugdrohhrgh
-    dprhgtphhtthhopehlihhnuhigqdhphhihsehlihhsthhsrdhinhhfrhgruggvrggurdho
-    rhhgpdhrtghpthhtoheplhhinhhugidqrhhotghktghhihhpsehlihhsthhsrdhinhhfrh
-    gruggvrggurdhorhhgpdhrtghpthhtohepnhgrohhkihesrhgrugigrgdrtghomhdprhgt
-    phhtthhopehhvghikhhosehsnhhtvggthhdruggvpdhrtghpthhtoheplhhinhhugidqkh
-    gvrhhnvghlsehvghgvrhdrkhgvrhhnvghlrdhorhhg
-X-ME-Proxy: <xmx:FrOZabEf3Y8Chhc961V8imLlFRymBtEZI6K2qSsYBAlHZ3WLnwsdmA>
-    <xmx:FrOZaUWCg4FHHhOjqpL5oFRCEtvwU5vprqXxh3sSyeZQLzasOiJ3zw>
-    <xmx:FrOZafXFZ7x8QPGqRYALU0DxbLCGfCWHmB06us3nQAQ97FKZmjeRcQ>
-    <xmx:FrOZaaJHmZrJeMaK_T8IRnnBnxtnI0Ub2hBpbSbbU1JlRDo1xPMCoQ>
-    <xmx:F7OZaYGREhgpY864gTO7ucFrD0AvrSIxc47ITD6fWdWyxJUlOXtW8Eq8>
-Feedback-ID: i25f1493c:Fastmail
-Received: by mailuser.phl.internal (Postfix, from userid 501)
-	id DB51A1B4006F; Sat, 21 Feb 2026 08:28:53 -0500 (EST)
-X-Mailer: MessagingEngine.com Webmail Interface
-Mime-Version: 1.0
-Date: Sat, 21 Feb 2026 14:28:53 +0100
-Message-Id: <DGKOC0Y8UWRH.3TVFOP2ND9W9J@arthurfabre.com>
-Cc: <linux-phy@lists.infradead.org>, <linux-arm-kernel@lists.infradead.org>,
- <linux-rockchip@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
- "FUKAUMI Naoki" <naoki@radxa.com>
-Subject: PROBLEM: Raxda Rock 5 ITX shared SATA broken by "phy: rockchip:
- naneng-combphy: fix phy reset"
-From: "Arthur Fabre" <arthur@arthurfabre.com>
-To: "Heiko Stuebner" <heiko@sntech.de>, "Chukun Pan" <amadeus@jmu.edu.cn>
-X-Mailer: aerc 0.21.0
+	id 1vtoS2-0000000G7M0-1JmA;
+	Sat, 21 Feb 2026 14:59:23 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
+	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
+	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Reply-To;
+	bh=xA22utvgRUdA5DBTKJr5qtockNVUiH7ZtWJLs1w/PPQ=; b=Wx3BCHB/7X48J37ZF46L83Wl/k
+	ueplWD6JS0yylKYIteTeSvP2nHfEOmBcGASYFdlda8y9op5ARPjGtTxtiV9MkM0IO4dVuQz82aIqp
+	5hoHZLupoQ4jd2xFv8NdcdItb0JUidFbUxVq6/OKaBFTLjw3yvb91WSika0/bYal1pM3I+0g0U0+p
+	ZzniUxNbLvFje/SCmuMnsuTEqaW7TgM+r6AvPukQ9w5GPttUynX+eKMcJy0q21Rc3/R4yd7C2X9B4
+	Ao7KyYRNCPibJ899dmpbjq0YvEl7FHWrVowUqqDgUTNNIK0+oVWWPdZPgCBY97ekIsVSt9xbL2Di1
+	zTYcINOA==;
+From: Heiko =?UTF-8?B?U3TDvGJuZXI=?= <heiko@sntech.de>
+To: robh@kernel.org, WeiHao Li <cn.liweihao@gmail.com>
+Cc: krzk+dt@kernel.org, conor+dt@kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+ WeiHao Li <cn.liweihao@gmail.com>
+Subject: Re: [PATCH v2 1/4] phy: rockchip: inno-usb2: Add usb2 phy support for RK3368
+Date: Sat, 21 Feb 2026 15:59:18 +0100
+Message-ID: <4689639.clyjiGRsXx@diego>
+In-Reply-To: <20250909132958.26423-2-cn.liweihao@gmail.com>
+References: <20250909132958.26423-1-cn.liweihao@gmail.com>
+ <20250909132958.26423-2-cn.liweihao@gmail.com>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260221_052859_991973_9B34CA42 
-X-CRM114-Status: UNSURE (   4.76  )
+X-CRM114-CacheID: sfid-20260221_065922_356393_BEAD07BF 
+X-CRM114-Status: UNSURE (   7.66  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -108,64 +63,23 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello,
-
-I have a Raxda Rock 5 ITX, with a device-tree overlay to enable
-the shared SATA port:
-
-// ROCK 5 ITX M.2 E-Key Sata
-/dts-v1/;
-/plugin/;
-
-/ {
-	fragment@0 {
-		target = <&pcie2x1l0>;
-
-		__overlay__ {
-			status = "disabled";
-		};
-	};
-
-	fragment@1 {
-		target = <&sata1>;
-
-		__overlay__ {
-			status = "okay";
-		};
-	};
-};
-
-This worked fine, with the kernel normally logging:
-
-[    0.754425] ata1: SATA max UDMA/133 abar m8192@0xf1282000 port 0xf1282100 irq 70 lpm-pol 0
-[    1.692424] ata1: SATA link up 6.0 Gbps (SStatus 133 SControl 300)
-
-However this stopped working after a kernel update:
-
-[    2.687755] ata1: SATA max UDMA/133 mmio [mem 0xfe220000-0xfe220fff] port 0x100 irq 79 lpm-pol 0
-[    4.893204] ata1: SATA link down (SStatus 1 SControl 300)
-[    7.111503] ata1: SATA link down (SStatus 1 SControl 300)
-[    7.111993] ata1: limiting SATA link speed to 1.5 Gbps
-
-I've reliably bisected it to commit:
-fbcbffbac994 "phy: rockchip: naneng-combphy: fix phy reset".
-
-Unfortunately coming up with a patch is out of my depth.
-Happy to test any suggestions.
-
-If it matters I'm using the EDK2 UEFI firmware v1.1:
-https://github.com/edk2-porting/edk2-rk3588
-
-Thank you,
-
-Arthur
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+SGksCgpBbSBEaWVuc3RhZywgOS4gU2VwdGVtYmVyIDIwMjUsIDE1OjI5OjU1IE1pdHRlbGV1cm9w
+w6Rpc2NoZSBOb3JtYWx6ZWl0IHNjaHJpZWIgV2VpSGFvIExpOgo+IFJLMzM2OCBoYXMgb25lIFVT
+QjIuMCBQSFkgd2l0aCB0d28gcG9ydHMuIFRoaXMgYWRkcyBkZXZpY2Ugc3BlY2lmaWMgZGF0YQo+
+IGZvciBpdC4gRGV2aWNlIHNwZWNpZmljIGRhdGEgZ2V0IGZvcm0gcm9ja2NoaXAgZG93bnN0cmVh
+bSBzb3VyY2UgWzFdLgo+IAo+IFsxXSBodHRwczovL2dpdGh1Yi5jb20vcm9ja2NoaXAtbGludXgv
+a2VybmVsL2Jsb2IvZGV2ZWxvcC00LjQvZHJpdmVycy9waHkvcm9ja2NoaXAvcGh5LXJvY2tjaGlw
+LWlubm8tdXNiMi5jI0wyODA1Cj4gCj4gU2lnbmVkLW9mZi1ieTogV2VpSGFvIExpIDxjbi5saXdl
+aWhhb0BnbWFpbC5jb20+CgpqdXN0IHJlYWxpemVkLCB0aGlzIHBhdGNoIGlzIG1pc3NpbmcgdGhl
+IHBoeSBtYWludGFpbmVyL3Jldmlld2VyIGFzCnJlY2lwaWVudCwgdGhlIHBoeS1saXN0IGlzIGxp
+a2VseSBub3QgZW5vdWdoLgoKUGxlYXNlIHVzZSBzY3JpcHRzL2dldF9tYWludGFpbmVyLnBsIGZv
+ciB0aGUgd2hvbGUgc2VyaWVzLCB0byBnZXQgbmVjZXNzYXJ5CnBlb3BsZS4gQmVjYXVzZSB0aGlz
+IHBoeS1wYXRjaCBuZWVkcyB0byBnbyB0aHJvdWdoIHRoZSBwaHkgdHJlZS4KClRoYW5rcwpIZWlr
+bwoKCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFk
+Lm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1w
+aHkK
