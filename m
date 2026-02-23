@@ -4,57 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EC6BEE98DEE
-	for <linux-phy@archiver.kernel.org>; Mon, 23 Feb 2026 06:43:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A1195E98DF0
+	for <linux-phy@archiver.kernel.org>; Mon, 23 Feb 2026 06:57:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=8Gb7L4G4SKtt2H++SqmrNaF/Wl2kQ28cBqjSoQ43dXo=; b=K7gNQu1QfIKmAO
-	gu3+z13mStImM16ZIizdTfXB4O3R+7dqy8zJZiIfvZF10/ZVW4H0H7kw7HpR8Gw5rNl1bB1fhy2DN
-	9ITlYLXVbVUCxteS6HYD4qA5v2LTmG5vds710Yl0nLU7JRXzAg4KEwdCOg86xhaINzdnGCvE8fR/j
-	l/umtHj0EATxr8OJlZXjzlioIH8LcFvefwTxi+ezw/P4jpwiRrg5dabcaYAQ5bLifVL58mvltdarO
-	L8XB5yX08JXaFbQ6EEUOVoLCaYysbAd4j7Q3p/fcBcsL7wzmVw5jKxSoKX/FYuq2DFF+VLOjFW3ZY
-	xyKJhDOFs+DqGkYZA9iw==;
+	List-Owner; bh=cMeQMjwTKTVIoLrmTDiCWIsFGxkW1MjtzLszPJ/nbww=; b=lOythjI3DjpuZu
+	wnqoiySrKQr7UnWNj4JJZquH/VS411c8jdCZCEsPKqHIFaVqxiYGBQyNU3guE213DhZ6Vbq7FxOqo
+	lMnWC55YwLxcENkPfbHOqwwQDGu98/yPIDst4kAUCV1dQYksR8iZhu7PrH+HKkT/Nr7uUJDUOw1d/
+	h7OZWrg1AlGDTY/n1Yn456A4gOtyTXkCWMcT1Qxn3SicSGbgpPgUdoaDpLM90aMaS5u/B7XOAg3cU
+	WmgMfCC1dHjeADJINe7lnXRPxarkMzflN9y+47k+tTlKoQva3i3eybmEZHI+wnb8W5z0IqXxl5oSK
+	2cEJScyH2xCpd13WhJbQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vuPfF-0000000HJ2P-3OP8;
-	Mon, 23 Feb 2026 06:43:29 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1vuPtE-0000000HLGx-11n7;
+	Mon, 23 Feb 2026 06:57:56 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vuPfD-0000000HJ2F-3T2I
+	id 1vuPtB-0000000HLGV-3kM8
 	for linux-phy@lists.infradead.org;
-	Mon, 23 Feb 2026 06:43:27 +0000
+	Mon, 23 Feb 2026 06:57:54 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 974D160054;
-	Mon, 23 Feb 2026 06:42:56 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0029DC116C6;
-	Mon, 23 Feb 2026 06:42:53 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id D2C5E41B65;
+	Mon, 23 Feb 2026 06:57:52 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 42124C116C6;
+	Mon, 23 Feb 2026 06:57:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1771828976;
-	bh=8gdOvcIbpSurhYkSmKuW57zxvLN42VVLT9xF2NcaQJ4=;
+	s=k20201202; t=1771829872;
+	bh=Unxx0K1I6zj5nqc0hsqY0AsXBmvBa4EOdXFr7ipsW9w=;
 	h=From:To:Cc:Subject:Date:From;
-	b=TI1xS5T9t7n0bBF6Vpe+xMIkf87Uk6AxnG5fhBG5UVrujlzbzZlTSY9ffz5tThJ26
-	 9mXPXyuKE3Tj+a0DFrdt168bPT0W6t05a0rnpIGCjv+QTdYqYbQ6uvYpAaUcQ+ya/F
-	 ZsZ1aE2lQiufC4crgccll5Jk1XoUupNItjS9yN1YxW9p39CNDSph+lquS3rCBcFtnv
-	 scsL89DF797Jlbz57jB/jkGEZjljj9qfGHlRlJ46Mqxvkhkv6R6dHzJ1eZGmsTTR/Y
-	 nXfEWxQA31bsrsjRdTKHu4gNoCoZjeTfeoaOjnYWU9VBcHOHGiUykFuOKG2QaMWe1d
-	 7u+BnQr5rF51w==
+	b=gfHxXiZWN8uG5Wm43LNphCyBq70NmGhsyAgptZniR8CZlTm5Tpq6LC0hONB7Jrj28
+	 VznoohTxXvmLtaCfHI6t45EKBPb063zNZhUfHGsLXfhVUYwXAC5mQIuui290qpR5Yj
+	 UtDMFnmL/7plNi2NXU8jwDp2XenEwGLvC8kecc/WMVAs2ELdmNWRgDPmeLJ4mIhSCz
+	 26pHHtO0qppqKFA4S1gtEwcnz91VOd0Rc1Gyx9x1wG2dbtNAHeUHWt/C4cpJyYT+iY
+	 q9njb5mQtjHtKSXoeU2PyWBVpgAtmyvBv7a6ZBVri2AENumPIJClKk99QGoPCAodmH
+	 3yGJaesT+B38g==
 From: Vinod Koul <vkoul@kernel.org>
 To: linux-phy@lists.infradead.org
 Cc: Neil Armstrong <neil.armstrong@linaro.org>,
 	Vladimir Oltean <olteanv@gmail.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Alex Elder <elder@riscstar.com>,
-	Ze Huang <huang.ze@linux.dev>,
-	spacemit@lists.linux.dev
-Subject: [PATCH] phy: move spacemit pcie driver to its subfolder
-Date: Mon, 23 Feb 2026 12:12:39 +0530
-Message-ID: <20260223064240.386617-1-vkoul@kernel.org>
+	Vinod Koul <vkoul@kernel.org>
+Subject: [PATCH] phy: Sort the subsystem Makefile
+Date: Mon, 23 Feb 2026 12:27:43 +0530
+Message-ID: <20260223065743.395539-1-vkoul@kernel.org>
 X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260222_225753_954596_849B11E6 
+X-CRM114-Status: UNSURE (   6.35  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,92 +72,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Commit fe4bc1a08638 ("phy: spacemit: support K1 USB2.0 PHY controller")
-created spacemit subfolder with usb driver while commit 57e920b92724
-("phy: spacemit: Introduce PCIe/combo PHY") added pcie driver in phy
-folder. Move latter into spacemit subfolder and rename file to
-phy-k1-pcie.c
+Makefile is supposed to be sorted alphabetically, sadly it has bitrotted
+so fix that
 
 Signed-off-by: Vinod Koul <vkoul@kernel.org>
 ---
- drivers/phy/Kconfig                                  | 12 ------------
- drivers/phy/Makefile                                 |  1 -
- drivers/phy/spacemit/Kconfig                         | 12 ++++++++++++
- drivers/phy/spacemit/Makefile                        |  1 +
- .../phy-k1-pcie.c}                                   |  0
- 5 files changed, 13 insertions(+), 13 deletions(-)
- rename drivers/phy/{phy-spacemit-k1-pcie.c => spacemit/phy-k1-pcie.c} (100%)
+ drivers/phy/Makefile | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
-index 02467dfd4fb0..c0574e44f0a3 100644
---- a/drivers/phy/Kconfig
-+++ b/drivers/phy/Kconfig
-@@ -134,18 +134,6 @@ config PHY_NXP_PTN3222
- 	  schemes. It supports all three USB 2.0 data rates: Low Speed, Full
- 	  Speed and High Speed.
- 
--config PHY_SPACEMIT_K1_PCIE
--	tristate "PCIe and combo PHY driver for the SpacemiT K1 SoC"
--	depends on ARCH_SPACEMIT || COMPILE_TEST
--	depends on COMMON_CLK
--	depends on HAS_IOMEM
--	depends on OF
--	select GENERIC_PHY
--	default ARCH_SPACEMIT
--	help
--	  Enable support for the PCIe and USB 3 combo PHY and two
--	  PCIe-only PHYs used in the SpacemiT K1 SoC.
--
- source "drivers/phy/allwinner/Kconfig"
- source "drivers/phy/amlogic/Kconfig"
- source "drivers/phy/apple/Kconfig"
 diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
-index a648c2e02a83..2773d596e543 100644
+index 2773d596e543..90cad2b72cfa 100644
 --- a/drivers/phy/Makefile
 +++ b/drivers/phy/Makefile
-@@ -16,7 +16,6 @@ obj-$(CONFIG_PHY_SNPS_EUSB2)		+= phy-snps-eusb2.o
- obj-$(CONFIG_USB_LGM_PHY)		+= phy-lgm-usb.o
- obj-$(CONFIG_PHY_AIROHA_PCIE)		+= phy-airoha-pcie.o
- obj-$(CONFIG_PHY_NXP_PTN3222)		+= phy-nxp-ptn3222.o
--obj-$(CONFIG_PHY_SPACEMIT_K1_PCIE)	+= phy-spacemit-k1-pcie.o
+@@ -7,15 +7,16 @@ obj-$(CONFIG_PHY_COMMON_PROPS)		+= phy-common-props.o
+ obj-$(CONFIG_PHY_COMMON_PROPS_TEST)	+= phy-common-props-test.o
+ obj-$(CONFIG_GENERIC_PHY)		+= phy-core.o
+ obj-$(CONFIG_GENERIC_PHY_MIPI_DPHY)	+= phy-core-mipi-dphy.o
++obj-$(CONFIG_PHY_AIROHA_PCIE)		+= phy-airoha-pcie.o
+ obj-$(CONFIG_PHY_CAN_TRANSCEIVER)	+= phy-can-transceiver.o
+ obj-$(CONFIG_PHY_GOOGLE_USB)		+= phy-google-usb.o
++obj-$(CONFIG_USB_LGM_PHY)		+= phy-lgm-usb.o
+ obj-$(CONFIG_PHY_LPC18XX_USB_OTG)	+= phy-lpc18xx-usb-otg.o
+-obj-$(CONFIG_PHY_XGENE)			+= phy-xgene.o
++obj-$(CONFIG_PHY_NXP_PTN3222)		+= phy-nxp-ptn3222.o
+ obj-$(CONFIG_PHY_PISTACHIO_USB)		+= phy-pistachio-usb.o
+ obj-$(CONFIG_PHY_SNPS_EUSB2)		+= phy-snps-eusb2.o
+-obj-$(CONFIG_USB_LGM_PHY)		+= phy-lgm-usb.o
+-obj-$(CONFIG_PHY_AIROHA_PCIE)		+= phy-airoha-pcie.o
+-obj-$(CONFIG_PHY_NXP_PTN3222)		+= phy-nxp-ptn3222.o
++obj-$(CONFIG_PHY_XGENE)			+= phy-xgene.o
++
  obj-$(CONFIG_GENERIC_PHY)		+= allwinner/	\
  					   amlogic/	\
  					   apple/	\
-diff --git a/drivers/phy/spacemit/Kconfig b/drivers/phy/spacemit/Kconfig
-index 0136aee2e8a2..50b0005acf66 100644
---- a/drivers/phy/spacemit/Kconfig
-+++ b/drivers/phy/spacemit/Kconfig
-@@ -2,6 +2,18 @@
- #
- # Phy drivers for SpacemiT platforms
- #
-+config PHY_SPACEMIT_K1_PCIE
-+	tristate "PCIe and combo PHY driver for the SpacemiT K1 SoC"
-+	depends on ARCH_SPACEMIT || COMPILE_TEST
-+	depends on COMMON_CLK
-+	depends on HAS_IOMEM
-+	depends on OF
-+	select GENERIC_PHY
-+	default ARCH_SPACEMIT
-+	help
-+	  Enable support for the PCIe and USB 3 combo PHY and two
-+	  PCIe-only PHYs used in the SpacemiT K1 SoC.
-+
- config PHY_SPACEMIT_K1_USB2
- 	tristate "SpacemiT K1 USB 2.0 PHY support"
- 	depends on (ARCH_SPACEMIT || COMPILE_TEST) && OF
-diff --git a/drivers/phy/spacemit/Makefile b/drivers/phy/spacemit/Makefile
-index fec0b425a948..a821a21d6142 100644
---- a/drivers/phy/spacemit/Makefile
-+++ b/drivers/phy/spacemit/Makefile
-@@ -1,2 +1,3 @@
- # SPDX-License-Identifier: GPL-2.0-only
-+obj-$(CONFIG_PHY_SPACEMIT_K1_PCIE)		+= phy-k1-pcie.o
- obj-$(CONFIG_PHY_SPACEMIT_K1_USB2)		+= phy-k1-usb2.o
-diff --git a/drivers/phy/phy-spacemit-k1-pcie.c b/drivers/phy/spacemit/phy-k1-pcie.c
-similarity index 100%
-rename from drivers/phy/phy-spacemit-k1-pcie.c
-rename to drivers/phy/spacemit/phy-k1-pcie.c
 -- 
 2.43.0
 
