@@ -4,106 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 74350EA4FBA
-	for <linux-phy@archiver.kernel.org>; Mon, 23 Feb 2026 14:13:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D2633EA4FC3
+	for <linux-phy@archiver.kernel.org>; Mon, 23 Feb 2026 14:38:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VFuEBRmda3jYcCiqAYc0Ykmxuny0totAmRQOdsgyRrc=; b=pWbFMNy/kI2M3p
-	xPn0w34zHJO4LSI5uzoGVquU3DY+40mSeoVjw+xz/dTXyJb7VZWn+zWTHVlFHwuH4SjQY9TvAgjTB
-	SVa5js/GeJbuvt9+eO/VMk90bOJnyvpA0pNTFe9wGVKBGs6xPA+b59BmUtyGA3lhF4j3ZESRI1BFa
-	fPD5Xg2qpp8lclnW3CbqW7a1reiRd7jZsoKKEKlF1rM3qp1Cor0XbkvhBV/WR+IsQGS+DH0CbohFj
-	tVnWuov28wNCzuF+f7jsVtjJHWmmXRChZduzYhEV+QZzqW+2ty6VQrVpAJYcVhQ2GouSXWhX1cvZQ
-	bPJMd2ZcDatDFVj7mBnA==;
+	List-Owner; bh=IHPCAqz04ZhicfySZ1qXfUQEQNz25vsAAaVYGCCzOfU=; b=o/P+tQcaU2LUCD
+	TNI8xRhroH6A++gnftjzeN6VRGMN2/nqtw3L+wT39k23Ua00kkgiewo68+NfnIvTU8RxhtzQksnQt
+	6Od5hIWo/SRMZ+vcxOEhtSetAGSO5OYVGd9vwpLiV+2w768xK+s9Cqz9fT5OCqBbCygIa0mT/as5r
+	7oX8GD+YFqpe6qhzlOfhobZhPPuAROUK+p1+N6yZoUn1w5eYMb0e7iyIC5GSzbVocyd/wVaZjXGv8
+	x212kJZJ20wl9Kpayg9Ch3p9FFotfxQeoutUVnrlPwj/fAAnTXAyqxf77siHmxGYMKwvoQZGPon8J
+	hmg+E5sMrVqBGgyTua3Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vuWgm-00000000Ruh-0Jbn;
-	Mon, 23 Feb 2026 14:13:32 +0000
-Received: from mail-lf1-x133.google.com ([2a00:1450:4864:20::133])
+	id 1vuX5B-00000000U96-1W7F;
+	Mon, 23 Feb 2026 14:38:45 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vuWgj-00000000Rtc-0F7q
+	id 1vuX58-00000000U8h-1nru
 	for linux-phy@lists.infradead.org;
-	Mon, 23 Feb 2026 14:13:30 +0000
-Received: by mail-lf1-x133.google.com with SMTP id 2adb3069b0e04-59e6491f1a2so4943286e87.0
-        for <linux-phy@lists.infradead.org>; Mon, 23 Feb 2026 06:13:28 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1771856007; cv=none;
-        d=google.com; s=arc-20240605;
-        b=Osb/b8CHA9w0woDUG+IPybhwkpcbsNKoUN1V0+iVVxhTd2sTmyIml7EDSno2JkrN6s
-         ne+KjGmepbBqPNBF0nkaPbwx15gfc/24y9vknkQd/POOvZRUb4j88piWU5cl0dbqA1Yb
-         X9ut0JIeE4jlPbZPMLn7Ae8KdW3VfOeNmd/ZuBKnzAwGyp+tXJooxMyHv3bZOOB0cHzx
-         7r7WPfXIv0pqr5/DJwjkWIzDBaOZ4PuJDWJMF7L4d6eYAL7en4ljVaYPcWAMgm+fhD0m
-         yc+wdRnsEh8bsrzWigd8gm6i5DfQAoYjYg+MatT4r0mYI8c+2ZX5X53x2R2fpm8KYsER
-         TiOA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:dkim-signature;
-        bh=7UcNIiszEKvIE+Kf7TAf++7dJZgkiPPqma20oF8iNSw=;
-        fh=JA5tffJ9V28TKScH2oW1aY1ZTt/RbeFlWinZSize5YM=;
-        b=DcPfdbsmBRVUTop4yz+Y7WHH5H/IGoTU3A5jOurtnULQs/G6uJVVtIz0TVC5BDoe+v
-         nH6kg7zXRdBR3+PSW7+6V0eENkcVlv4xflM7yk10FCHPKusEfSQSM9+9M8j7pPm9b1AQ
-         hmny+LVaq6c37G/i7FFftoPVxHQoziRpniA81Vx+85c0sfgwRdd227TrQl+p5pawBrwk
-         RkgNuz1OFyN6CQJH/jbeenikWfDv6xXkdPlDBg/Lr2OFvQH3/4myVRzw9MnhlMVB0JS/
-         4di0UeNSHgoBogb21UZLS1CGInGhABaxJ7dDgKRMDSLpsuc4pORvAwDZ/uED3TiKwHpW
-         NCRw==;
-        darn=lists.infradead.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1771856007; x=1772460807; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=7UcNIiszEKvIE+Kf7TAf++7dJZgkiPPqma20oF8iNSw=;
-        b=ac2RQW0pI1bgqmCYzOoI1fCPAR3XbSvuQ2mbMQWdj856VvpVybzHA/jFezV/DvD4vf
-         GBhaaGRATzYPh4jSLhxBkYVkA/007z2Mnbii5Aw3+Cil4sD6GiKW89GMohUSPROHlsWf
-         pfblbgaF+IHc62owBFKmKWo0xNKZzsnD8T6om+Ouul6GkuYx28X0ViEqoZgmejHZhBPr
-         yuSpja2Iw6KrpO4pVjkSFjVwLPb2XBi0ODSDnvaS6PbMhzJJKvQr8jqXhCIO/3UgfzwE
-         rohcrPToGVZS9nWs5J6CpGDALrpUL23BJ1zt+4CDkI5F3eURQedkCONeYWUUtTzMl6D+
-         U7PA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1771856007; x=1772460807;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=7UcNIiszEKvIE+Kf7TAf++7dJZgkiPPqma20oF8iNSw=;
-        b=eEmXrtAr5dWyORT3+EHHjsgYwFS8WZiut0OHSt+N7KWM8lYC88bPUfAwwhtXD/hR/v
-         cLBSZBCPrRyJpSfAKKirvC9eXlNZ+jBUJutultXPIbwbWUSX9tWlAD1IanCSDwiiHW18
-         np2t4JNMvZaInk06hoPlnjMhXUBUEFj4YK1jCWTrJjv/x2CpMOCXVGmFViizYNtAedMk
-         uusVFecX4Vz9OpROxGWXFKIAI1bvCdQOiOBVrrHwAc0c5Ok8546kzzq3WcNX3nd7I6Xo
-         /abi0KOQm6fAmH1OoVHuBf7SfYr/pZ78RNQ3C5fP1rKs/2RlJHj75sy937wgk0Vbn0mY
-         ooAA==
-X-Forwarded-Encrypted: i=1; AJvYcCUTRhQLor0l1Ik5knkdEzVd4vVnqTNqEvDxY6OxHCJKrYLk7FXZgUYTGEEg+PAvquXXwnO9CFA+9og=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwrWvkBTyNh/heKnasTxoJ07Xptt/OhXD5UflDqYq3j88JS1qBx
-	+hraGifDoQl2xxOMzEAT/1A8PLB1GHN+D3rMUlt+XNYYgm0NtfDoHirz1SuyxvAg9hk4eSwaGXt
-	8XDjskKnBWJXGzZdetRgjg6FT0VFUZcgx4XOOonh/Eg==
-X-Gm-Gg: AZuq6aJ/F731OtCPcy4HxO/XddAISlXSD3n0F6DIIuuT6nsEofdYDRBI5krFJbnlSgG
-	531o8+prH0D1g8WjHB2gEppoXa8UkTsgF5EpKWKC2+KfiVBDfc95T2K2Ude83J/9wVDlP7mvxTc
-	KgjmiL39dj6+NaqzF2uBdu4rORJ3ZH3LkO8P6qbwu8Sy3O2cQ2wxet8q5+4eZCWCXtExiq1CuTh
-	jCepJ47Oj+Oe3MhtLtQGoD8CpCi3bmRYGXxfOPPnfOXe03VAuC0R9ZeLyaZ15fMExuW+rg3Yz3u
-	wQYXbfkC
-X-Received: by 2002:a05:6512:108c:b0:59f:822b:b739 with SMTP id
- 2adb3069b0e04-59f8abde44cmr5314261e87.4.1771856006894; Mon, 23 Feb 2026
- 06:13:26 -0800 (PST)
+	Mon, 23 Feb 2026 14:38:43 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 427D843D95;
+	Mon, 23 Feb 2026 14:38:41 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CE43EC116C6;
+	Mon, 23 Feb 2026 14:38:40 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1771857521;
+	bh=kdP5EttDcynG8swMrF1Ca5QeEDVK8y3yg/juEgym6hc=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=UbFxIzkFzN9D02sfhiEIunEhNGdXiavpqUHuKBIlZ+vNrLxE8yqI386DKuaMAvHjS
+	 r8A3efG+gXeysmaOZM3aVOJ/I96kgNYt200QKfrWFpk/mpCj2jSEtYw77lNzsTCaiU
+	 lijVgwJfZ1LkVkyHJ/afdumn4IARYNL7dlKaLABG3UICbLEsvtC4jj4/NTpiXTU2XN
+	 2XMyxVxFZEQL4NRXdtg/pRrSxKGUUZip0KBwWmFpQmuJxC+etA364ntlD07lQosraO
+	 AejuVn+3kmAYy12+wzAhJHkLkFVJHFaMoqj9t8elzcgStZL76iYYL1llTgOVgBVeWW
+	 I3kusZ/wicdeQ==
+Date: Mon, 23 Feb 2026 22:38:38 +0800
+From: Yixun Lan <dlan@kernel.org>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: linux-phy@lists.infradead.org,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Vladimir Oltean <olteanv@gmail.com>,
+	Alex Elder <elder@riscstar.com>, Ze Huang <huang.ze@linux.dev>,
+	spacemit@lists.linux.dev
+Subject: Re: [PATCH] phy: move spacemit pcie driver to its subfolder
+Message-ID: <20260223143838-GKA220920@kernel.org>
+References: <20260223064240.386617-1-vkoul@kernel.org>
 MIME-Version: 1.0
-References: <20260206-axiado-ax3000-add-emmc-host-driver-support-v3-0-ef83b09325be@axiado.com>
-In-Reply-To: <20260206-axiado-ax3000-add-emmc-host-driver-support-v3-0-ef83b09325be@axiado.com>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Mon, 23 Feb 2026 15:12:50 +0100
-X-Gm-Features: AaiRm52Jn7GtelEGkOZ9XPfUniIrpYcIWOFdBS3zcfWiZwJDEnJ15M24z8fGJdw
-Message-ID: <CAPDyKFr-N=P1vKSHGtOr1surWApBUz630v2xsBD+5KkPWaPZbg@mail.gmail.com>
-Subject: Re: [PATCH v3 0/2] Add Axiado AX3000 eMMC Host Controller Support
-To: Tzu-Hao Wei <twei@axiado.com>
-Cc: SriNavmani A <srinavmani@axiado.com>, Prasad Bolisetty <pbolisetty@axiado.com>, 
-	Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Adrian Hunter <adrian.hunter@intel.com>, Michal Simek <michal.simek@amd.com>, 
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	linux-mmc@vger.kernel.org, openbmc@lists.ozlabs.org
+Content-Disposition: inline
+In-Reply-To: <20260223064240.386617-1-vkoul@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260223_061329_132249_21473EB1 
-X-CRM114-Status: GOOD (  16.54  )
+X-CRM114-CacheID: sfid-20260223_063842_566897_A567CA2F 
+X-CRM114-Status: GOOD (  16.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,54 +75,106 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, 6 Feb 2026 at 09:23, Tzu-Hao Wei <twei@axiado.com> wrote:
->
-> Axiado AX3000 SoC eMMC controller is based on Arasan eMMC controller.
->
-> This series includes:
-> 1. Add bindings for AX3000 SoC eMMC controller
-> 2. Add arasan sdhci support for eMMC in Axiado AX3000
->
-> For platform device tree change, we will send a different series of
-> patches.
->
-> It has been verified on AX3000 platform.
->
-> ---
-> Changes in v3:
-> - Enable SDHCI_QUIRK_CAP_CLOCK_BASE_BROKEN quirk
-> - Remove dependencies in b4
-> - Link to v2: https://lore.kernel.org/r/20260109-axiado-ax3000-add-emmc-host-driver-support-v2-0-934f1a61f7c0@axiado.com
->
-> Changes in v2:
-> - Keep host controller changes in this patchset
-> - Use pdata instead of mix compatible string
-> - Fix coding style
-> - Link to v1: https://lore.kernel.org/r/20251222-axiado-ax3000-add-emmc-host-driver-support-v1-0-5457d0ebcdb4@axiado.com
->
-> Signed-off-by: Tzu-Hao Wei <twei@axiado.com>
->
-> ---
-> SriNavmani A (2):
->       dt-bindings: mmc: arasan,sdhci: Add Axiado AX3000 SoC
->       mmc: sdhci-of-arasan: add support on Axiado AX3000 SoC
->
->  Documentation/devicetree/bindings/mmc/arasan,sdhci.yaml |  3 +++
->  drivers/mmc/host/sdhci-of-arasan.c                      | 15 +++++++++++++++
->  2 files changed, 18 insertions(+)
-> ---
-> base-commit: 63804fed149a6750ffd28610c5c1c98cce6bd377
-> change-id: 20251222-axiado-ax3000-add-emmc-host-driver-support-2cc84a8f889a
->
-> Best regards,
-> --
-> Tzu-Hao Wei <twei@axiado.com>
->
+Hi Vinod,
 
-Applied for next, thanks!
+On 12:12 Mon 23 Feb     , Vinod Koul wrote:
+> Commit fe4bc1a08638 ("phy: spacemit: support K1 USB2.0 PHY controller")
+> created spacemit subfolder with usb driver while commit 57e920b92724
+> ("phy: spacemit: Introduce PCIe/combo PHY") added pcie driver in phy
+> folder. Move latter into spacemit subfolder and rename file to
+> phy-k1-pcie.c
+> 
+Make sense, this looks better, thanks
 
-Kind regards
-Uffe
+Reviewed-by: Yixun Lan <dlan@kernel.org>
+
+> Signed-off-by: Vinod Koul <vkoul@kernel.org>
+> ---
+>  drivers/phy/Kconfig                                  | 12 ------------
+>  drivers/phy/Makefile                                 |  1 -
+>  drivers/phy/spacemit/Kconfig                         | 12 ++++++++++++
+>  drivers/phy/spacemit/Makefile                        |  1 +
+>  .../phy-k1-pcie.c}                                   |  0
+>  5 files changed, 13 insertions(+), 13 deletions(-)
+>  rename drivers/phy/{phy-spacemit-k1-pcie.c => spacemit/phy-k1-pcie.c} (100%)
+> 
+> diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
+> index 02467dfd4fb0..c0574e44f0a3 100644
+> --- a/drivers/phy/Kconfig
+> +++ b/drivers/phy/Kconfig
+> @@ -134,18 +134,6 @@ config PHY_NXP_PTN3222
+>  	  schemes. It supports all three USB 2.0 data rates: Low Speed, Full
+>  	  Speed and High Speed.
+>  
+> -config PHY_SPACEMIT_K1_PCIE
+> -	tristate "PCIe and combo PHY driver for the SpacemiT K1 SoC"
+> -	depends on ARCH_SPACEMIT || COMPILE_TEST
+> -	depends on COMMON_CLK
+> -	depends on HAS_IOMEM
+> -	depends on OF
+> -	select GENERIC_PHY
+> -	default ARCH_SPACEMIT
+> -	help
+> -	  Enable support for the PCIe and USB 3 combo PHY and two
+> -	  PCIe-only PHYs used in the SpacemiT K1 SoC.
+> -
+>  source "drivers/phy/allwinner/Kconfig"
+>  source "drivers/phy/amlogic/Kconfig"
+>  source "drivers/phy/apple/Kconfig"
+> diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
+> index a648c2e02a83..2773d596e543 100644
+> --- a/drivers/phy/Makefile
+> +++ b/drivers/phy/Makefile
+> @@ -16,7 +16,6 @@ obj-$(CONFIG_PHY_SNPS_EUSB2)		+= phy-snps-eusb2.o
+>  obj-$(CONFIG_USB_LGM_PHY)		+= phy-lgm-usb.o
+>  obj-$(CONFIG_PHY_AIROHA_PCIE)		+= phy-airoha-pcie.o
+>  obj-$(CONFIG_PHY_NXP_PTN3222)		+= phy-nxp-ptn3222.o
+> -obj-$(CONFIG_PHY_SPACEMIT_K1_PCIE)	+= phy-spacemit-k1-pcie.o
+>  obj-$(CONFIG_GENERIC_PHY)		+= allwinner/	\
+>  					   amlogic/	\
+>  					   apple/	\
+> diff --git a/drivers/phy/spacemit/Kconfig b/drivers/phy/spacemit/Kconfig
+> index 0136aee2e8a2..50b0005acf66 100644
+> --- a/drivers/phy/spacemit/Kconfig
+> +++ b/drivers/phy/spacemit/Kconfig
+> @@ -2,6 +2,18 @@
+>  #
+>  # Phy drivers for SpacemiT platforms
+>  #
+> +config PHY_SPACEMIT_K1_PCIE
+> +	tristate "PCIe and combo PHY driver for the SpacemiT K1 SoC"
+> +	depends on ARCH_SPACEMIT || COMPILE_TEST
+> +	depends on COMMON_CLK
+> +	depends on HAS_IOMEM
+> +	depends on OF
+> +	select GENERIC_PHY
+> +	default ARCH_SPACEMIT
+> +	help
+> +	  Enable support for the PCIe and USB 3 combo PHY and two
+> +	  PCIe-only PHYs used in the SpacemiT K1 SoC.
+> +
+>  config PHY_SPACEMIT_K1_USB2
+>  	tristate "SpacemiT K1 USB 2.0 PHY support"
+>  	depends on (ARCH_SPACEMIT || COMPILE_TEST) && OF
+> diff --git a/drivers/phy/spacemit/Makefile b/drivers/phy/spacemit/Makefile
+> index fec0b425a948..a821a21d6142 100644
+> --- a/drivers/phy/spacemit/Makefile
+> +++ b/drivers/phy/spacemit/Makefile
+> @@ -1,2 +1,3 @@
+>  # SPDX-License-Identifier: GPL-2.0-only
+> +obj-$(CONFIG_PHY_SPACEMIT_K1_PCIE)		+= phy-k1-pcie.o
+>  obj-$(CONFIG_PHY_SPACEMIT_K1_USB2)		+= phy-k1-usb2.o
+> diff --git a/drivers/phy/phy-spacemit-k1-pcie.c b/drivers/phy/spacemit/phy-k1-pcie.c
+> similarity index 100%
+> rename from drivers/phy/phy-spacemit-k1-pcie.c
+> rename to drivers/phy/spacemit/phy-k1-pcie.c
+> -- 
+> 2.43.0
+> 
+> 
+
+-- 
+Yixun Lan (dlan)
 
 -- 
 linux-phy mailing list
