@@ -4,92 +4,135 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 54334EEC2B3
-	for <linux-phy@archiver.kernel.org>; Tue, 24 Feb 2026 00:37:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 738A5EFB806
+	for <linux-phy@archiver.kernel.org>; Tue, 24 Feb 2026 06:42:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zXgx+t7nMM9a/G266ub2nahXOhMO4mn4nSsTGhG2foY=; b=pFn0QUCut490tW
-	urnB5JdXT9YogfvIpGtDiyWIpYaD6pllluUvt2FRx9jQVWLCvVpRuTsfERYTkZT+ckDI4I7xxYhQq
-	wa2eVxnRNSC3vfoSSfubVSp1+0+EOn1fSvvGyuzcLSVeKcaGl93eOHEDhdAnR+jzJ/Vv1FrUmQAZj
-	iiiSlHyR1ukMHdrpBexEdFBYI/oAF+h+556XQg7M0iJtAyXbOFVnK96L7NpDVmUpsu0ncGBmnmOA4
-	mFt6Lli7Sz3zeGKruJdkw7H49M7xTgkEvaLp2DVl9fDqDvNGpyrdpbL/aE+cWLzzRH4WhNuMkUNsl
-	gb9flGgFu8yGcxgZOJnA==;
+	List-Owner; bh=WlvqBlldn/U6nb2mb4lQ0Mf92ztHcJ1AVZShhv5QaXs=; b=RGG9ZLsdyvUq6n
+	vIthWrh/6G+b/NRfSbrewRqlkS/vGRFNLj9KAsSeSE3ZCpnO7qZo4tHEa3COSViyyEUQWYxkqiF3o
+	LngKBuYd4uPd8QQrrBR/z9GBlhVIRwSY7Vaez7LW3WwV6sP+7179rfVOTC+Jai8mCxXAdUXKWeK/L
+	M3EpNF1klPZeh+ptIgKYDMkl2IpM7whPwUliXN+kxN5Xz/B8uTXfOImItZorEfpcdq1TmnY8ukF7j
+	7WzyG3H17Ere7NR3oOr1TrJg3EZXMWpnvt7FiG+5g641WMNQQAPqxsXUjqH0xlFQuDTYqJSiUqacn
+	AnVu+1kETT1EY1ExploQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vugQt-00000001FHN-2sWw;
-	Tue, 24 Feb 2026 00:37:47 +0000
-Received: from mail-dy1-x132a.google.com ([2607:f8b0:4864:20::132a])
+	id 1vum7M-00000001Xd0-3g2O;
+	Tue, 24 Feb 2026 06:42:00 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vugQq-00000001FH0-29eZ
+	id 1vum7K-00000001Xce-0Za1
 	for linux-phy@lists.infradead.org;
-	Tue, 24 Feb 2026 00:37:46 +0000
-Received: by mail-dy1-x132a.google.com with SMTP id 5a478bee46e88-2b82c605dbdso4965949eec.0
-        for <linux-phy@lists.infradead.org>; Mon, 23 Feb 2026 16:37:44 -0800 (PST)
+	Tue, 24 Feb 2026 06:41:59 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 61O4LudJ1251768
+	for <linux-phy@lists.infradead.org>; Tue, 24 Feb 2026 06:41:54 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=lG/xeXk2I/MOcbaT0nf4rKBx
+	XhOqmOGfGClBVPWMObA=; b=LxXtQ0rRpY2L2rxvR5nZeQmXd4kcCzKXgsZfTStB
+	EFWeY7EGARo3NtmSwZRxHG3PRjcSSjrzc12yD9JCbGAmd3yHNHdMJD2k951++t9E
+	la5+Mcsy71DWaCJj7VbjhYc3TjRjKRjLATk6a61i8z2+mzntnMwro2AjKthTE/kS
+	K/s/gh4oO7oL3hVzdb4EnJ4zNVOmmEKUaW2q3D0C3Ewo07MJBVQjSGBjQ2cCgmcs
+	+I0KJAJvWwdP+L5yxmEe92xbQyO4hUG5Cu//twy3LvH8Mcia+fuqoEBgxEaVNMNG
+	yNxhIdleJY273zKHbaUbtqZVgFI08vqDtTBSMlpFpi7gWQ==
+Received: from mail-oo1-f71.google.com (mail-oo1-f71.google.com [209.85.161.71])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4ch4568fq6-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Tue, 24 Feb 2026 06:41:54 +0000 (GMT)
+Received: by mail-oo1-f71.google.com with SMTP id 006d021491bc7-679dcf1f680so7872905eaf.0
+        for <linux-phy@lists.infradead.org>; Mon, 23 Feb 2026 22:41:54 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1771893463; x=1772498263; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1771915313; x=1772520113; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=HG1TExzINsV+xuMh5Kuyzh1hEQWYIpn7r5uQFpXRoDg=;
-        b=TiyOHf0FnfJOJGie+ob7IsTV/sOa0jn6SiGTCWs31cnN3DNFl2uIJwge+REOQDhb0x
-         Q3JImH9MpUu0mU6vNlT+Nx7zwcLYFgB4YkUqCc0TBD1YnoJjGq5oi+k8kbCA6VtNrjC7
-         Jdy9NpGCswKbvK+odg9z0rOj1bvVkao870W7GmDIPVEDxiFy+P3BCa7TFT1oMwH9sur9
-         5rPGpR0DRT97B3hNzwBmvkESb4AkksakiE1+OVGPOJXj/3K2fmyOEnkdNw9pXKECvlLC
-         r0x3RoEhSHL5eEJiEsBkE4czNy6KX7SeieE2wof5hOB6z51bhD4gynxgSdTGu2JQxSX4
-         P4Ug==
+        bh=lG/xeXk2I/MOcbaT0nf4rKBxXhOqmOGfGClBVPWMObA=;
+        b=kstl+g8LioulN2fJZ2Me5SGVAXq+b/H6R4DEol530hv9hPVEEdyoUnh6F8eJsr0MzC
+         KhTwAsb+2keKi7JMnB9rkk+BavKG6VdGWLE5nlumbAT6SqhdjLkxLUbXEUZB6bXVSKJZ
+         eT70T6LgEGkpwDlrvT9ykcSofDrdGXb6TcYa5IjyVlK2hBtZWydOSxuSpCg9VY82d26H
+         bAk6umYoD/+B3yJgPpXamcSF0W8vSieM9m52sbxCE3PA2enRiDpD/Yn+xYjBmxR3nPoK
+         /I0aElwlBiDohH4+eySSHtsb70VZNPd0QqF1KDBeRXjCy/Edfu+GA69tlC3ZGmHAXjkd
+         OCyQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1771893463; x=1772498263;
+        d=1e100.net; s=20230601; t=1771915313; x=1772520113;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=HG1TExzINsV+xuMh5Kuyzh1hEQWYIpn7r5uQFpXRoDg=;
-        b=S+RwZtfwJrRhVUHod6gh/Bj0O0+TSFFsTraxxZJYAsuNVyebtoLPu4NnAC6I1BSZGL
-         vt5H9hXAsmO0jAjyv+dhrSMZPCWFlLpa4p9f42/TwOJWt/KAUI+ff7DC6t5w8hu2WGxY
-         wMDXiUMVLwd86L0e5U+cL4VUMlfqxk7UkRMLyG3gnvhOMOjZTQB5XGPJH5qIEWKpQBPm
-         epPICa5p3xBYJMYhf539Ch17l/y7gZ2qRgF1hXja90LCM/QuQvQUoLDCya1AwJeKyFWQ
-         VaJ6GvCUMtoD7EeG6DC97WRyELew8U4m64/2P6DFS8J7AJvAJORbZwGMK3YCeFNEDesr
-         POUQ==
-X-Forwarded-Encrypted: i=1; AJvYcCVf8TvTiO1xO3sFot9eqsVMzpTUadNsQ+0HWOeYi4l8jsYTe1F5ihk6QOtC8L2Gugv6GTJxHyuZtLg=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyKBGhxsF/ZPjBTnEsYbyi46ZrAYx0galCETBvmNWq8yY5WNLnQ
-	Ldb+anSUuZrykbtu7CSwvTtqqHDOe0sUTbPR9isryCCpgEP7K/HYbm/8
-X-Gm-Gg: AZuq6aL6OZ8rbHMB0sIFHPI5Spam00VkMDGsvVLxrVa30kmpYN2/0QdKY2L/Can6hP9
-	r3cv+WQkpBuecmT2xMYamub/NJu/Zr/O+I0Vtxnhfirpyv+KhUWKzez4bHuc2PwDnNKq4+y88Sb
-	sq9f8/g0njVdXzAJGIklXJwuifNOQLHy5sh143wvx2NxTh3cYRRTZpalG0bwzb7+Fl3aBESnvSF
-	Nf85aulwsAefqQdgHaw5p+n8FdRAlJ3TS47Bh56jnTwaa55v96gKPePq37+U1OscMBN7czdXKOc
-	d1NVuQLvP3odpCSG5PumOkHKS8Bzt+aJLEl35y3IlqDT7cNb+orMAR9UxzG0A2sxlHPjcGwILJG
-	IOW61n0rxPRqk7HKQ/Vo5oI+HG57cZUycCYKNv9mpCU8xh3q2agkpD6qu8cpYZFVkvrjkSM0hnr
-	AvfEwhBl0CAlvMrz7Lx1xkZ5vclpJAMt5hwD3tQNlK7lJxS5kGIgoYyuhWbo2BHSQ1
-X-Received: by 2002:a05:7022:2383:b0:11b:9386:7ecd with SMTP id a92af1059eb24-1276ad67e87mr5146475c88.42.1771893463136;
-        Mon, 23 Feb 2026 16:37:43 -0800 (PST)
-Received: from google.com ([2a00:79e0:2ebe:8:1b48:5d6e:ab6e:5287])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1276af8ac3fsm9170196c88.13.2026.02.23.16.37.42
+        bh=lG/xeXk2I/MOcbaT0nf4rKBxXhOqmOGfGClBVPWMObA=;
+        b=pIadyygbIBUkbf2bEe4Itt1yPsENDgvZv5VyGDaDYmzuTa6PWOL03S2A1rd+sRr626
+         Nw30aY/5toTA5uZm5fzhhSJ+8GhR5AqM6G6C/kk9Xn7A+XrCQH6v4xXxqWhOZ6xVb7bl
+         Xf1o0FReLSCJbtXCgqXx+ClAxX1uuPSiSu0K26GsJl+7vPGjwfBtNfDNVPVcNGL/jCIr
+         1pc7A3GJKVe6XOsereepJiN0/htbg+Vn+nYZ9ThT3HLTMHDFY/QP4OuTBuzM+siWDKNE
+         ROSJayYo8xghifBIOiq0RyupgVjEgXxMygHkD8WKFx7/JEoIBZPHuTjrBXHP8h48XwKU
+         rMrg==
+X-Forwarded-Encrypted: i=1; AJvYcCW5wbLH62xUsV1yvTm6t/19LNeGZY8TtMf27akA3geMmJmyMCRVlyLWl/w57+dRowuGqwrhO3getI0=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy3P/JO4RiadiOCKVoEMbHENE17XxqOCyp51LEuDiX9snZyvyo2
+	NkLhpiN0IBAezNVk2SzP+fEbq/Q5sAzMQ8A7En15DsaMEWVSxxyamPZ0YwmemUvHrBD9VyreVyl
+	agOaH2/YLvDeQvA6t3lnxVSAXOmGl6iQctrT/EsLBCAf9saowxRHD+m8PerlY4i1ARtlM
+X-Gm-Gg: AZuq6aIHVY5YW5nJztqeKkcxHl7Hg+VQYLrblcIsBzHW1PtFw3mFJ03MPsHsuURFnKC
+	5zuUoBGAzB+nNVkFOfatvpy7MCVvahi4+lUo/B64MmMj2fK1pXCaD048lBJTaR8Pr7fWaOIV10U
+	D9SgXjIPOv0LbEFdaje9aIIdHlScXqeKLx7CvZIppRLThs4RsqsTvnAajNB+zKW61X64IjbmvP+
+	ER4fOUez9qGsLPGYdWV5xYESTeAoxoLe1eJXoNEwmb6B+Kp9ho6Vfffe2LghhkLah5n78AE/LqI
+	1KBeKuwsbs9xHzshN6ivvgwd5vmCi9mtWkcMBwGn+eDhlNQh13wyUwB1lraAxCIULpADrgKlwgh
+	YgpsnCX+YlGHQ+Lrqb5x3ESYy/SObk4F6sRAyoj3HGCw+IKRbNdzuCDoP7dCJWUcynEtc
+X-Received: by 2002:a05:6820:160a:b0:662:b70c:a414 with SMTP id 006d021491bc7-679c425bc9dmr6064079eaf.14.1771915313568;
+        Mon, 23 Feb 2026 22:41:53 -0800 (PST)
+X-Received: by 2002:a05:6820:160a:b0:662:b70c:a414 with SMTP id 006d021491bc7-679c425bc9dmr6064067eaf.14.1771915313161;
+        Mon, 23 Feb 2026 22:41:53 -0800 (PST)
+Received: from hu-qianyu-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
+        by smtp.gmail.com with ESMTPSA id 006d021491bc7-679c5630827sm7711238eaf.3.2026.02.23.22.41.52
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 23 Feb 2026 16:37:42 -0800 (PST)
-Date: Mon, 23 Feb 2026 16:37:39 -0800
-From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-To: Vladimir Oltean <olteanv@gmail.com>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
-	"Rafael J. Wysocki" <rafael.j.wysocki@intel.com>, Geert Uytterhoeven <geert+renesas@glider.be>, 
-	Johan Hovold <johan+linaro@kernel.org>, Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>, 
-	"Dr. David Alan Gilbert" <linux@treblig.org>, Peter Griffin <peter.griffin@linaro.org>, 
-	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>, Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>, 
-	Zijun Hu <zijun.hu@oss.qualcomm.com>, linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] phy: core: fix potential UAF in of_phy_simple_xlate()
-Message-ID: <aZzmU_oA6mVMsdQT@google.com>
-References: <aZejMSJ9qqRWb2pX@google.com>
- <aZemjhBNFyOfKeNL@google.com>
- <aZkCyQ1oizPXplyU@google.com>
- <20260223231500.zeffezslctqamhp7@skbuf>
+        Mon, 23 Feb 2026 22:41:52 -0800 (PST)
+Date: Mon, 23 Feb 2026 22:41:50 -0800
+From: Qiang Yu <qiang.yu@oss.qualcomm.com>
+To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+Cc: Krzysztof Kozlowski <krzk@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+        Neil Armstrong <neil.armstrong@linaro.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>, linux-arm-msm@vger.kernel.org,
+        linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 1/2] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Add
+ vdda-refgen supply for Glymur
+Message-ID: <aZ1ILpdtBCMDxl2R@hu-qianyu-lv.qualcomm.com>
+References: <20260208-refgen-v1-0-87ca84fd78b3@oss.qualcomm.com>
+ <20260208-refgen-v1-1-87ca84fd78b3@oss.qualcomm.com>
+ <20260209-magic-conscious-seahorse-b81c8b@quoll>
+ <aY1Jx5J8x/OALk5M@hu-qianyu-lv.qualcomm.com>
+ <hcslao22elcihjw56ltu4yo54lotheqpikzsrq6tia33di4fs4@2ygrbwhcfx2a>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260223231500.zeffezslctqamhp7@skbuf>
+In-Reply-To: <hcslao22elcihjw56ltu4yo54lotheqpikzsrq6tia33di4fs4@2ygrbwhcfx2a>
+X-Proofpoint-GUID: fCOWii1E8sgjwRgbDew7OuCHSBJQ4fhF
+X-Proofpoint-ORIG-GUID: fCOWii1E8sgjwRgbDew7OuCHSBJQ4fhF
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMjI0MDA1NiBTYWx0ZWRfX8N06OFuPYQoD
+ CLo7FF3eWoA8xUAKQAkY3y+uaubQUEza1EiNoHNKScj4Iu8V38NsAYuQbf80rgYh71CGaVLc4D0
+ 9ZRFZE/rybZfNqnBYLFyVovy0mZ4HhLwqoKAR5PYB6wLJ9jOmeT3PynnYQrJqqLi34sLlCrlN/c
+ vwdoXLwkLf6nTM1u0ORBKFWk+c4HSQp9RHvCvB5RUzZ4A/fIb1JQlNCxrwVpMcoFQ1/uosjtP9M
+ sVVRTwhny+kqg+v2zs2+wQUXBPAruZ1NuDHd/t+yF09CLaAoQxqep0OvKvzUTxTGj68SnpQY9Hk
+ ZHz9wS7w+LRqsph0uK9K7f7lFoZD9VOnAgQ9VTMzo/RXddx7QtFZKvSKiJ+gHpHE57Wu8/C1G6n
+ BpLgBCDIv/eOUH84PKyj4th+utZwfQPt+B5DOIH2b9SY6iMfoN5ZBCQfd2Ez237TJ14csmGXVYE
+ 7+9SXQ+aB64+oj7sNqQ==
+X-Authority-Analysis: v=2.4 cv=J8enLQnS c=1 sm=1 tr=0 ts=699d4832 cx=c_pps
+ a=V4L7fE8DliODT/OoDI2WOg==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=kj9zAlcOel0A:10 a=HzLeVaNsDn8A:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=3WHJM1ZQz_JShphwDgj5:22
+ a=Mqtz4aph0Rek3LVAYukA:9 a=CjuIK1q_8ugA:10 a=WZGXeFmKUf7gPmL3hEjn:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.51,FMLib:17.12.100.49
+ definitions=2026-02-23_06,2026-02-23_03,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ clxscore=1015 priorityscore=1501 suspectscore=0 phishscore=0 spamscore=0
+ adultscore=0 malwarescore=0 impostorscore=0 bulkscore=0 lowpriorityscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2602130000 definitions=main-2602240056
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260223_163744_588648_412735D2 
-X-CRM114-Status: GOOD (  71.54  )
+X-CRM114-CacheID: sfid-20260223_224158_322879_2EF86F27 
+X-CRM114-Status: GOOD (  38.17  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,227 +149,78 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Vladimir,
-
-On Tue, Feb 24, 2026 at 01:15:00AM +0200, Vladimir Oltean wrote:
-> Hi Dmitry,
-> 
-> On Fri, Feb 20, 2026 at 05:01:50PM -0800, Dmitry Torokhov wrote:
-> > On Thu, Feb 19, 2026 at 04:11:37PM -0800, Dmitry Torokhov wrote:
-> > > On Thu, Feb 19, 2026 at 03:57:11PM -0800, Dmitry Torokhov wrote:
-> > > > The implementation put_device()s located device and then uses
-> > > > container_of() on the pointer. The device may disappear by that time,
-> > > > resulting in UAF.
+On Fri, Feb 13, 2026 at 07:47:36PM +0200, Dmitry Baryshkov wrote:
+> On Wed, Feb 11, 2026 at 07:32:23PM -0800, Qiang Yu wrote:
+> > On Mon, Feb 09, 2026 at 09:06:23AM +0100, Krzysztof Kozlowski wrote:
+> > > On Sun, Feb 08, 2026 at 08:49:39PM -0800, Qiang Yu wrote:
+> > > > The PCIe QMP PHYs on Glymur require stable reference voltage provided by
+> > > > refgen. The refgen itself requires two separate power supplies:
+> > > > vdda-refgen0p9 and vdda-refgen1p2.
 > > > > 
-> > > > Fix the problem by keeping the reference to the framer device,
-> > > > avoiding getting an extra reference to it in framer_get(), and making
-> > > > sure to drop the reference in error path when we fail to get the module.
+> > > > Since there is no dedicated driver for REFGEN, add vdda-refgen0p9-supply
 > > > 
-> > > Hmm, I was too rash. There are bunch of other xlate functions that need
-> > > to be updated to take the reference.
+> > > How does the driver matter for the bindings? If I add dedicated driver
+> > > for refgen, then I change the bindings?
 > > 
-> > So I am convinced that xlate functions need to bump up the reference to
-> > phy devices they return. The question is how to deal with the ones that
-> > do not. I can either convert them in the same patch (the changes are
-> > quite mechanical) or we can do the whole song and dance, introduce a
-> > flag, set it up in converted xlate functions, have the core respect it,
-> > and then remove it from xlates and from the core when it is all done.
+> > Yeah, I know that dt-bindings should describe hardware, not software. But
+> > what I meant to say is that the refgen is different from qref which is
+> > controlled via TCSR registers and its LDOs are requested to vote in
+> > tcsrcc driver. The refgen doesn't required register setting and it doesn't
+> > have dedicated driver, so we vote its LDOs in phy driver. I will avoid
+> > this statement in next version.
+> 
+> I must admit, I could not find references to the refgen in any of Glymur
+> PCIe-related HPGs.
+
+We can find it on ipcatalog. On Glymur, there are 6 refgen instances:
+u_cm_phy_refgen_0_west supplies to pcie3/4/6.
+u_cm_phy_refgen_3_east supplies to pcie5.
+This two refgen also supply to other modules like usb and qref which
+is required by PCIe phy for stable reference clk.
+
+In previous targets, refgen was often ignored because it shares LDOs with
+phy or qref. We typically only vote for vdda-phy, vdda-pll, and vdda-qref
+supplies. However, on Glymur, there are more instances and less LDO
+sharing between phy/qref/refgen.
+
+> 
 > > 
-> > Please let me know.
+> > > 
+> > > There is qcom,sc8280xp-refgen-regulator so why there cannot be
+> > > qcom,x1e-refgen-regulator?
+> > 
+> > I think we can and it seems better because the refgen for pcie phy also
+> > supplies reference voltage to other modules like usb. But I checked the
+> > qcom-refgen-regulator.c, it contains some register settings and there is
+> > no LDOs voting. I'm not sure what does those register do, maybe Konrad
+> > can provide some backgroud.
 > 
-> You have hit on a weak spot of the Generic PHY framework and I would
-> like to encourage you to follow through with patches for this finding
-> (although it won't be exactly trivial, I think it's doable with some
-> determination).
+> Those regs provide voting for refgen, because on those platforms DSI
+> block doesn't have a hardware vote for refgen.
+> 
 
-Thank you for the detailed response. I am not sure how much time I can
-spend on phy rework as this change was an essentially a drive-by. I only
-happen to look there because I want to remove
-class_find_device_by_of_node() in favor of class_find_device_by_fwnode().
+Okay, for PCIe PHY, we don't need register settings for refgen.
 
+- Qiang Yu
+> > But on Glymur, we only need to vote LDOs. So
+> > what if we use a fixed regulator in the device tree to represent refgen?
+> > We could set refgen0p9 and refgen1p2 as its input supplies, then the PCIe
+> > PHY would just need one refgen supply reference.
+> > 
+> > - Qiang Yu
+> > > 
+> > > 
+> > > > and vdda-refgen1p2-supply properties to the PCIe PHY dt-bindings. Use
+> > > > conditional schema to restrict these properties to only Glymur PCIe QMP
+> > > > PHYs.
+> > > 
+> > > Best regards,
+> > > Krzysztof
+> > > 
 > 
-> On your direct question:
-> It will impact downstream in subtle and unpleasant ways if you change
-> the of_xlate() semantics w.r.t. reference counting, but the code will
-> still compile just as before, i.e. when looking just at your downstream
-> driver (what 99% of developers do) there will be no obvious way of
-> knowing that something in the API has changed. I would avoid doing that.
-
-Hmm, I was not aware that we needed to take particular measures for
-benefit of downstream trees... 
-
-> 
-> But first the problem. Too little has been said about the problem, and
-> too much about the solution. We can't find a good solution if we don't
-> call out the problem properly first.
-> 
-> The phy_get() function follows a "lookup-then-get" approach for PHY
-> providers, rather than "atomic-lookup-and-get".
-> 
-> Namely, the phy_provider->of_xlate() caller, which is _of_phy_get(),
-> returns a struct phy * with its underlying device reference count
-> nominally at 1. All callers of _of_phy_get() do later call get_device()
-> to bump this refcount for each PHY consumer, but it is "too late" in the
-> sense that a window has been opened where the PHY provider driver can
-> unbind, and the reference count of &phy->dev can drop to 0 and it can be
-> freed.
-
-Yes.
-
-> 
-> Immediately after being created by phy_create(), the &phy->dev has a
-> refcount of 1, and only the action of its provider driver (calling
-> phy_destroy() directly or through devres, on driver unbind) can drop
-> that refcount to 0. As long as the driver doesn't do that, the &phy->dev
-> refcount is not in danger.
-
-Right.
-
-> 
-> Then the PHY is exposed to the outside world using of_phy_provider_register(),
-> where the fact that the provider driver can concurrently unregister
-> starts being a problem.
-> 
-> Therefore, I would say that the problem is that consumers, aka phy_get()
-> callers, can get a phy with a &phy->dev refcount that is not already bumped
-> by the time they are handed over that PHY.
-> 
-> Mechanically, PHY lookup happens under &phy_provider_mutex, and I
-> believe it would be sufficient to call get_device() under this lock, in
-> order for consumers to get PHYs with their reference bumped.
-
-<skip the explanation and a patch>
-
-Yes, given that there is 1:1 mapping between device and provider (not
-phy instance but its parent) it looks like we can drop the reference and
-then bump it up again as long as we hold that mutex.
-
-> 
-> The patch above leaves a few loose ends.
-> 
-> The most obvious is of_phy_simple_xlate(), which has that put_device()
-> to balance out class_find_device_by_of_node() - which bumps the device
-> refcount to 2. It "looks" wrong but it is consistent with vendor
-> implementations of of_xlate(), which also provide a phy->dev refcount of 1.
-> And as explained, the refcount never _actually_ drops to 0 with the
-> above patch.
-> 
-> I would actually address _only_ of_phy_simple_xlate(), for cosmetics sake.
-> Instead of devm_of_phy_provider_register(..., of_phy_simple_xlate), I
-> would offer a new helper, devm_of_phy_simple_provider_register(), which
-> would internally use a callback that doesn't drop the refcount (say
-> __of_phy_simple_xlate() for lack of imagination). I would convert vendor
-> PHY drivers one by one to use this (it would be valid at any time to use
-> either the old or the new method).
-> 
-> You'd notice that most of the of_phy_simple_xlate() occurrences go away,
-> except for freescale/phy-fsl-lynx-28g.c which calls this function
-> directly from its own lynx_28g_xlate(). It will still have to keep
-> calling it, and for refcount equalization purposes that weird
-> put_device() will have to continue to exist. Just leave a comment as to
-> why that is.
-
-I this case I would simply add a comment telling why the reference
-should (and can) be dropped where it is being dropped in 
-of_phy_simple_xlate() and call it a day. There is not much benefit in
-adding another helper.
-
-> 
-> 
-> But there are more important loose ends still.
-> 
-> I mentioned that "zombie" device. We've solved the memory safety issue,
-> but it's possible for consumers to hold onto a phy whose provider has
-> disappeared. The refcount of &phy->dev hasn't dropped to 0, so
-> technically it's a valid object, but from PHY API perspective, it's
-> still possible to call phy_init(), phy_power_on() and friends on this
-> PHY, and the Generic PHY core will be happy to further call into the
-> phy->ops->init(), phy->ops->power_on() etc. But the driver has unbound,
-> so it should really be left alone.
-> 
-> If we fix the UAF but leave the zombie PHY problem, we've effectively
-> done nothing but silence static analysis checkers, while the code path
-> where the PHY provider unbinds effectively remains treated as poorly as
-> before, just moving the crashes to a different place.
-> 
-> I suspect what needs to be done here is to introduce a "bool dead" or
-> similar, which is to be set from phy_destroy() and checked from every
-> API call. The idea is that API functions on zombie PHYs should fail
-> without calling into their driver. I **suppose** that
-> try_module_get(phy->ops->owner) "tried" to avoid this situation, but
-> it just protects against module removal, not against "echo device >
-> /sys/bus/.../unbind". So it's absolutely incomplete and easily bypassable.
-
-I think this is a problem common to many kernel subsystems, where there
-are devices that are vital for other devices to function, but are not
-parents of said devices. Think about regulators or clocks and such.
-In many such cases even validating at API level is not sufficient,
-because if you enable a clock you typically keep it running at least for
-a while, if not for entire duration of device being bound to a driver.
-If that clock goes away the device will break even though you are not
-calling any clock APIs at that particular time.
-
-We need some kind of revocation mechanism to signal consumers that
-providers they rely upon are going away.
-
-> 
-> 
-> Finally, I have identified one more loose end still.
-> 
-> /**
->  * of_phy_put() - release the PHY
->  * @phy: the phy returned by of_phy_get()
->  *
->  * Releases a refcount the caller received from of_phy_get().
->  */
-> void of_phy_put(struct phy *phy)
-> {
-> 	if (!phy || IS_ERR(phy))
-> 		return;
-> 
-> 	mutex_lock(&phy->mutex);
-> 	if (phy->ops->release)
-> 		phy->ops->release(phy);
-> 	mutex_unlock(&phy->mutex);
-> 
-> 	module_put(phy->ops->owner);
-> 	put_device(&phy->dev);
-> }
-> EXPORT_SYMBOL_GPL(of_phy_put);
-> 
-> This function is called by PHY consumers. A PHY provider can have
-> multiple consumers (example in the case of Ethernet: a QSGMII SerDes
-> lane has 4 MAC ports multiplexed onto it).
-> 
-> If a single consumer calls of_phy_put() to release its reference to the
-> SerDes lane, the phy->ops->release() method makes absolutely no sense.
-> There are 3 remaining consumers with handles to the lane! But we aren't
-> even telling the PHY which consumer has disappeared! It has nothing
-> useful to do with this information.
-> 
-> Looking at actual phy_ops implementations, what they want to know is
-> when _all_ consumers went away, not when individual consumers did.
-> So the phy->ops->release() call needs to be put somewhere which is
-> executed when all consumers disappear. If I were to guess, that would be
-> the phy_release() class callback, but this is completely untested.
-
-Shouldn't phy->ops->release() keep track of users and decide when to
-destroy the resources? The rest seem fine as they simply drop references
-(I assume each user of shared phy will bump up references as needed?)
-
-> 
-> Sorry that this email is a bit long, it got a bit late writing it and I
-> don't have a lot of energy left to trim it down.
-> In summary I found 4 highly related problems:
-> - use after free
-> - misleading of_phy_simple_xlate() API pattern (not a functional issue)
-> - zombie PHYs
-> - premature release call
-
-Thanks.
-
--- 
-Dmitry
+> -- 
+> With best wishes
+> Dmitry
 
 -- 
 linux-phy mailing list
