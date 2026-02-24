@@ -4,103 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 63B64EFB811
-	for <linux-phy@archiver.kernel.org>; Tue, 24 Feb 2026 07:57:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A901AEEC286
+	for <linux-phy@archiver.kernel.org>; Tue, 24 Feb 2026 09:34:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kcA61GA/6/bt/kL47Oa4bdgNzlRm0OnDhzFRsNqx6ow=; b=wxFprPr/81emO4
-	wv6wfCYwfRz0/HDi7Uo1jQPaQLfuLsOd6Za6s1GnzRLUOWEKzPNzl7/ty2mo/IJ62ZmqVlc/ePE4U
-	CuwK6gAQxLoreZORQBrJ+/qdCcBme43eW03l7piuE91HKAHQsYdrKJ3C083k08sILlwcTs5FMMhuo
-	WgZhPCdhvdxF5pciQKUdqrmKJ/OU1yIJkB/aaj1qVjgjWFY1TPFqkj/AOaGHZ+VRAft6qvkdX6Z1I
-	ZOZn/IAz8X0ZZjtBclyAJN1Io7Iv5VVi6lk53LwoIwhEEDLsyqG+vhF7Oni1jC/u8MIVj0QPFUfvf
-	gG4Jd7ve7HOFJLT5CigQ==;
+	List-Owner; bh=WqX0NlUzTIaEd9i+ZMpu5jvAPwYrOZHsLD00bol5jnM=; b=jud98eN4v4LJMh
+	4vVoDFcak7WiirQfyNP7GT5mA+l2GFJbbKqYPhOmyLKesH4sIivq2S0OSN8sqGoWKY3juf3H0xizv
+	dja5RSMWo32/LqayGgJ/T06kszgsoqv0lQuQfmxTOfOX5Ny0K5KFuIBXdCNEFPRyuGt1ZbqBUHwje
+	xViAb3zFMDb6rrlzEHxCLwmzxAfU3/iwptqzO8/1P7/ZGSf8eI7Cxyv8gM/mB3riCt+jTceaxa44o
+	A7LTSWvIEBL7SuVPRMphrZx1ImqmL4KyxadnVWjmejvQf5RDQP7zSI4dsYpvSPKmZUMR02+291VJe
+	5bGFYGgdFgF6Zv35TCFw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vunI9-00000001bsx-44sV;
-	Tue, 24 Feb 2026 07:57:13 +0000
-Received: from fout-a4-smtp.messagingengine.com ([103.168.172.147])
+	id 1vuoo3-00000001lYS-1QZb;
+	Tue, 24 Feb 2026 09:34:15 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vunI6-00000001bsQ-13zc;
-	Tue, 24 Feb 2026 07:57:11 +0000
-Received: from phl-compute-03.internal (phl-compute-03.internal [10.202.2.43])
-	by mailfout.phl.internal (Postfix) with ESMTP id 43A19EC0330;
-	Tue, 24 Feb 2026 02:57:08 -0500 (EST)
-Received: from phl-frontend-03 ([10.202.2.162])
-  by phl-compute-03.internal (MEProxy); Tue, 24 Feb 2026 02:57:08 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jannau.net; h=cc
-	:cc:content-type:content-type:date:date:from:from:in-reply-to
-	:in-reply-to:message-id:mime-version:references:reply-to:subject
-	:subject:to:to; s=fm2; t=1771919828; x=1772006228; bh=ldww1WlQMk
-	oL/zBNyH/ndnXhb+ElXOiHG/mK0hPi1Qc=; b=nN/T9M+vmH5YqvY1M4+dtPwULO
-	CPqnNKjgIsJ2ihdGyRkXskoJXQDDmxTU1S967RwRLPJf55RPZgGRYw48Z7TAK9Rp
-	Rmz5xaZhz7yAIDMCXS5XdbuTQLwVrHdNNgA05yiRl4zmM0uA8V+IVZM2RcVbz1+j
-	KgKwZJdBHEsyzgoWyZF2B5koy1pNgtPhhAfnHUy81nXnwyC3n77smPEbZktI7sBt
-	dG/g6vMhwz4QMBysMcbFuJTt2sPcSdw0+WBUiqSUwyreI01eVfbcHR3bcWNfeqIw
-	4308RgbuurCQgufA6hqQXOl7qOITn/4dGwk9Pr89eOxZUjdOUQ0+Mb0/HAeg==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=cc:cc:content-type:content-type:date:date
-	:feedback-id:feedback-id:from:from:in-reply-to:in-reply-to
-	:message-id:mime-version:references:reply-to:subject:subject:to
-	:to:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; t=
-	1771919828; x=1772006228; bh=ldww1WlQMkoL/zBNyH/ndnXhb+ElXOiHG/m
-	K0hPi1Qc=; b=bdmc02QWewmtGwV3ILdMIAeoaK4OpigMC1Rc9l74iN0cios4jBv
-	VGiZC4gUMUJkEmy5EWeqvVjwSXTsYS0ntRXCHv0XPTJoymwKAQTYRxj9bxfS8MHW
-	SI9CmQgYGTjiBvJNgawmkB1DUD6nzgSOmsqAOWOyQWP5mGaV4c7ilnxFS7BIhKwT
-	CA2fhdMtM7AXx6K3p5AHIIonzi6gSUhr963d7wHpF9CA0aV2JwGFU3IcLEF38WBI
-	AkvvRAR8aWTdBejQPLxS+GvmaekdpkxCPnXFgwnMM1aWwxIb5TSMHya+0elUsoo3
-	iFyDGwT6aO9ERBXsohQ66akUMf5my5HbUNA==
-X-ME-Sender: <xms:01mdaUjUsyTtDSNTcu2odblcfhI0IeSvrnYO7oBCOZ2bO1QDJkrJjA>
-    <xme:01mdaVLkqH5ynk9ohtpxRuVYvrUb672JHQ3z-fXXYQA3Cobu-lTKT3Qb5P_NbQEtp
-    1RmxQP-PsXpApyTSXn3ugJBToG0kAD1ljjxSukRz2ljcYXw2_6GEozf>
-X-ME-Received: <xmr:01mdabnwOwxd2iOX4HaIZzuWaPF_lZXBfhWni4owJblHsZxPfuN35BTC61xAGN4_dTY2r0ol05HSQlhcoBVyHKBXT48yC_pmXL8>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeefgedrtddtgddvfeeliedvucetufdoteggodetrf
-    dotffvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfurfetoffkrfgpnffqhgenuceu
-    rghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmnecujf
-    gurhepfffhvfevuffkfhggtggujgesthdtredttddtjeenucfhrhhomheplfgrnhhnvgcu
-    ifhruhhnrghuuceojhesjhgrnhhnrghurdhnvghtqeenucggtffrrghtthgvrhhnpefgvd
-    ffveelgedujeeffeehheekheelheefgfejffeftedugeethfeuudefheefteenucevlhhu
-    shhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpehjsehjrghnnhgruh
-    drnhgvthdpnhgspghrtghpthhtohepuddupdhmohguvgepshhmthhpohhuthdprhgtphht
-    thhopehkrhiihihsiihtohhfrdhkohiilhhofihskhhisehoshhsrdhquhgrlhgtohhmmh
-    drtghomhdprhgtphhtthhopehsvhgvnheskhgvrhhnvghlrdhorhhgpdhrtghpthhtohep
-    nhgvrghlsehgohhmphgrrdguvghvpdhrtghpthhtohepvhhkohhulheskhgvrhhnvghlrd
-    horhhgpdhrtghpthhtohepnhgvihhlrdgrrhhmshhtrhhonhhgsehlihhnrghrohdrohhr
-    ghdprhgtphhtthhopehprdiirggsvghlsehpvghnghhuthhrohhnihigrdguvgdprhgtph
-    htthhopegrshgrhhhisehlihhsthhsrdhlihhnuhigrdguvghvpdhrtghpthhtoheplhhi
-    nhhugidqrghrmhdqkhgvrhhnvghlsehlihhsthhsrdhinhhfrhgruggvrggurdhorhhgpd
-    hrtghpthhtoheplhhinhhugidqphhhhieslhhishhtshdrihhnfhhrrgguvggrugdrohhr
-    gh
-X-ME-Proxy: <xmx:01mdaVMzwroFnj39sRBE1ZP6UfRkYYKP8xh4Eri-FxBTqYAeWrQDsQ>
-    <xmx:01mdad6NQMaFSVf9mb2Rd8rz76GSjMJ4tlkXuoBGozwzlwpcb8fqig>
-    <xmx:01mdaRZ7BxuC8sAAqhK2bN_4ZkTxYTKyAMI0O68eWe3Pq1rPTI3mQw>
-    <xmx:01mdaSc3918Gp60VyRKHANVNtwJYzDJlpyU_g8qNCM58BSf5NiYZVg>
-    <xmx:1FmdafEQ5HQiUWC3y0T9sK-O5XRFLbybtqoG4Er5bS92OzYedtH7yOcO>
-Feedback-ID: i47b949f6:Fastmail
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Tue,
- 24 Feb 2026 02:57:07 -0500 (EST)
-Date: Tue, 24 Feb 2026 08:57:05 +0100
-From: Janne Grunau <j@jannau.net>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
-Cc: Sven Peter <sven@kernel.org>, Neal Gompa <neal@gompa.dev>,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>, asahi@lists.linux.dev,
-	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org
-Subject: Re: [PATCH 1/3] phy: apple: atc: Make atcphy_dwc3_reset_ops variable
- static
-Message-ID: <20260224075705.GA1310076@robin.jannau.net>
-References: <20260216110413.159994-4-krzysztof.kozlowski@oss.qualcomm.com>
+	id 1vuons-00000001lOo-2Aye;
+	Tue, 24 Feb 2026 09:34:05 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1771925642;
+	bh=bju+bv/VR4hPKTpxBKpuapRP9tylBhD2c/qGUd2VY4o=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=hGerxt/XSoTQd+FMhU1QxHgBLYmHXoEpWq/cCAktT6qA3IEz/tHuG6bnRVMK/SKsz
+	 4e2LJKQSHFoPPw7sAN4zPU+FCoPOCpch0IZelFDtlBIUbiryAZ+aeW64CaqmWRV+uj
+	 LuZLrPSMkLKL6cZAKZ3ptIja/Eeomm0DQjG4unSEmGyukNaS0tU1iamqKHWn1P+Nc/
+	 rZvtsa4ComEmuk8qXH56ysU1MfEJpL0+JsIw9+Z4XlMaFyiMW+Jlmy2aY0lWxJzPi1
+	 QWXU/vy/YM0fvgzGyfJ3FvC+BvrLMToU0aQHIs3oztyLm98gUCsbDZ0W5tUoktbKKK
+	 OanmGgRsUzdUg==
+Received: from IcarusMOD.eternityproject.eu (2-237-20-237.ip236.fastwebnet.it [2.237.20.237])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: kholk11)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 9577B17E0D33;
+	Tue, 24 Feb 2026 10:34:01 +0100 (CET)
+From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+To: linux-mediatek@lists.infradead.org, 
+ Luca Leonardo Scorcia <l.scorcia@gmail.com>
+Cc: Chun-Kuang Hu <chunkuang.hu@kernel.org>, 
+ Philipp Zabel <p.zabel@pengutronix.de>, 
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, 
+ David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Matthias Brugger <matthias.bgg@gmail.com>, dri-devel@lists.freedesktop.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org
+In-Reply-To: <cover.1771863641.git.l.scorcia@gmail.com>
+References: <cover.1771863641.git.l.scorcia@gmail.com>
+Subject: Re: (subset) [PATCH v3 0/6] Add support for mt8167 display blocks
+Message-Id: <177192564156.11826.14547610643774213696.b4-ty@collabora.com>
+Date: Tue, 24 Feb 2026 10:34:01 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260216110413.159994-4-krzysztof.kozlowski@oss.qualcomm.com>
+X-Mailer: b4 0.14.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260223_235710_730674_B9AB201A 
-X-CRM114-Status: GOOD (  14.56  )
+X-CRM114-CacheID: sfid-20260224_013404_701084_6D306308 
+X-CRM114-Status: UNSURE (   9.14  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,36 +85,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Feb 16, 2026 at 12:04:14PM +0100, Krzysztof Kozlowski wrote:
-> File-scope 'atcphy_dwc3_reset_ops' is not used outside of this unit, so
-> make it static to silence sparse warning:
+On Mon, 23 Feb 2026 16:22:44 +0000, Luca Leonardo Scorcia wrote:
+> This series adds support for the display blocks on MediaTek mt8167.
+> Tested on Xiaomi Mi Smart Clock x04g.
 > 
->   atc.c:2026:32: warning: symbol 'atcphy_dwc3_reset_ops' was not declared. Should it be static?
+> The first patch just does some reordering of dts nodes with no other
+> changes as this makes later patches cleaner and easier to follow.
 > 
-> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
-> ---
->  drivers/phy/apple/atc.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+> v3:
+>  - Added mt8167-dsi compatible to driver instead of changing the binding;
+>  - Resolved patch formatting issues.
 > 
-> diff --git a/drivers/phy/apple/atc.c b/drivers/phy/apple/atc.c
-> index dc867f368b68..32d97226e926 100644
-> --- a/drivers/phy/apple/atc.c
-> +++ b/drivers/phy/apple/atc.c
-> @@ -2023,7 +2023,7 @@ static int atcphy_dwc3_reset_deassert(struct reset_controller_dev *rcdev, unsign
->  	return 0;
->  }
->  
-> -const struct reset_control_ops atcphy_dwc3_reset_ops = {
-> +static const struct reset_control_ops atcphy_dwc3_reset_ops = {
->  	.assert = atcphy_dwc3_reset_assert,
->  	.deassert = atcphy_dwc3_reset_deassert,
->  };
+> [...]
 
-Reviewed-by: Janne Grunau <j@jannau.net>
+Applied to v7.0-next/dts64, thanks!
 
-thanks
+[1/6] arm64: dts: mt8167: Reorder nodes according to mmio address
+      commit: d51b7191f2072e11259edd2bff88385891d0ae56
 
-Janne
+Cheers,
+Angelo
+
+
 
 -- 
 linux-phy mailing list
