@@ -4,8 +4,8 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A00DDFCEE8A
-	for <linux-phy@archiver.kernel.org>; Wed, 25 Feb 2026 11:35:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9BD30FCEE8A
+	for <linux-phy@archiver.kernel.org>; Wed, 25 Feb 2026 11:35:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -13,28 +13,28 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	References:Message-Id:Subject:Date:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=r7Wx2ImuVW+7PbCXbJ0aFmTDRO9SDf/hWhuH9eLRdA8=; b=YB2X8iPzdv2hneO9H4J1s51WFT
-	UHHaRXPqFVLqbE3BhD5LlE+0LY+dhpBIdWyMVttDmrt9WTIspuvW9EVeoyse6Zv6mF0NosTc/gF3M
-	Ckp8iYQ0UyLYQfXdkofEnuIZEf43PL06kjaQx8XOjH+8H4coSQbfX8zAtt+Nq5hrNCEB97Wx/ebEz
-	xY+tYTUS6vZaZ0Oq4KIGdInYdkTXZ271YDzer5Zmj9bnqht3UiDc8mKO2AT6Nh5SB6pvsmxxsahG+
-	FIkSO27bTeDsdvgXDf4IZiuti09Vv9vCGxJx84vEHxaNqe110Z1bHzaMmDkfD6RRzljX5gwEq+pJJ
-	EiQCKW3g==;
+	bh=CJapEkSAwW3Xkq9/1xmJpVHMAYRk3/3X/4SvGlg226A=; b=noJoH8Kz2Bi/gcO/DvuCMod8Q4
+	WIE76N4gzw8d3jtSeWyDsB8Ttx0Nqu4pZyra4tKmH/SSSXDQoprEKd4JWsjx7m2oH7upeKFANqWUA
+	DhGbxhvB05Kwuu3xEGEVqZFLk/2/zWwpism3rQt0aTQ/EaIdW8FaO2TCxoRlqByzfTmWuIAt9NL01
+	aBw1jfUVCig4OUNiACCnG4qcPi5Sm+4FMpPSGHZpjSlz3HIxR3wz7VZRGYNLAy6/LjA3qtKAngKHE
+	aHhZY16i60SqHAAhWsCy6I4jmmWQyiQLazt2fJsq1W6Aw/L+9HTy6e+HqGZlNualIybCcEIQsbL6s
+	eK81soJg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vvDAS-00000003vML-1cFG;
-	Wed, 25 Feb 2026 11:35:00 +0000
-Received: from mail-swedencentralazon11023099.outbound.protection.outlook.com ([52.101.83.99] helo=GVXPR05CU001.outbound.protection.outlook.com)
+	id 1vvDAV-00000003vNu-1QYW;
+	Wed, 25 Feb 2026 11:35:03 +0000
+Received: from mail-swedencentralazon11023075.outbound.protection.outlook.com ([52.101.83.75] helo=GVXPR05CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vvDAN-00000003vIO-44wH
+	id 1vvDAS-00000003vM3-1hoR
 	for linux-phy@lists.infradead.org;
-	Wed, 25 Feb 2026 11:34:57 +0000
+	Wed, 25 Feb 2026 11:35:01 +0000
 ARC-Seal: i=2; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=pass;
- b=c5PSEDXNq33CpL+Sb1bmw7JWNJLw0ru/vbF4pbaZ2S6dxeMm9xMAyRZX2760EZvjmNyNJPAYvpcJ5VgT8ljCva5D00OijvJTHodXd2i7vrVDHy81bOi3c5CrD7vEeBtPatySEiMhR7gdDTdKKrxWlT3ZwHI8x+QukIaaqd1rYJN6m5FcdoM6d9uM2tW4Dmegu1cYdXY5nPXZwEyP9RiBZ/9J+hFK2Woi2CtjzIK9q6KzGzznJJHpSmXtrZ6iIzKW1Kq7ezdbo9CliEKtiMwM0SGemNdtU67Bch6V42E7dLmmnVH7+QCrBUVkFDqmFF8n3MArC38mYG9UZcMHl63pYw==
+ b=ADHJQS6ySRzh1GORYrwtL4WZ8EzRgH6NwyHl35sQfvcKIx/xDddNYt8da5gmvDHUOmBM0hX3WnHqO5QMqStn6dIoepoh+83Z5kFqjCGJlOkEglbBB5F3qTORUewhdAD0Bx3hYKeo2/qSHCYskM+b2JZojlEmCnE91KzVY4eJynBfnf719/83h0EwGu6NOQIIQXc0gwwyH2Taup713VO+HUHkp3XIL1s97dwse2B1AEM5DwQ1gUlNQLCmg7Si5Zv5iv9yjuOJNG6ieedLsfFAMLuL8uBAOdjQY5aCE17ldtYb/nlD8DWA4QgtyeWRpDgCoHgmm3IF6g0Ims6t+MrvUw==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=dO4qj+wMV/XwBYmp/8IXtJ6Epr8snhs/g77Ygn3GsgA=;
- b=acgR0SIGuUCnBrK5Soa/XYwXxbAc7Np4gZtAs8W9O6iRLXI42gYyPU8vpuCsN8JTbBjo8AlySf3qpJPXTubPzE7Qd2girfjfau9jXuBbEdq/MK82/r83G/VJ8bCs6sCdKZqN6leGGEQZ7Wk9EeIGlk58jrEmO/y6fp7mnQEF/Ll6g9HYEj/cS/RA2OriuYwx0St1B/AOGrQkGPJa1Kx4AjVwYGTmvdThNsljZoMC8Fd52CVkCcZ5hmVAkXYHDxNnTq2YzcDNuyoaDFaMSllj+gH7BO3Khrm2vv5RCpfsAE7wPVivsujL6hqZBLYGT6OkoBaNwo2qIiLZMf58ks+8EQ==
+ bh=8Pz5DJOiL7LFwXjit3f1me5jLlWQVO3kRPLX8AiZ7lo=;
+ b=BjpgdAj/Y6ZzKbf5BBpmENe5LFDgLXcRVbu4H/HHpcnNx90It4S4AXfjku1whDkUXFZ+6LHiMrHm+8R/JmIvav9EY9mm+8BYIJ06mO/zsKMCrD4ZG7UqlAdu2Wbaek4Orwj8QccEsZighH679wzRBhoYCSyMt39rPbakXdL2+J1vyyVx2LK3+H7vXifia1Nf3ij1ocDhRO3msNh8B9dptLg2xrWMV28xubBTRTotFSB8CJi4IWTbauPKp+gC0v7UEuDbMg9eMUQpTx24GMgtrTbQdPGI7j+OFNtnVKC6H9OG3KTSc+YRejlGN2o13vknTQavRsnPGVC6mDxHFsTBOQ==
 ARC-Authentication-Results: i=2; mx.microsoft.com 1; spf=softfail (sender ip
  is 52.17.62.50) smtp.rcpttodomain=atomide.com smtp.mailfrom=solid-run.com;
  dmarc=fail (p=none sp=none pct=100) action=none header.from=solid-run.com;
@@ -44,18 +44,18 @@ ARC-Authentication-Results: i=2; mx.microsoft.com 1; spf=softfail (sender ip
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=solidrn.onmicrosoft.com; s=selector1-solidrn-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=dO4qj+wMV/XwBYmp/8IXtJ6Epr8snhs/g77Ygn3GsgA=;
- b=Q9TrOdnnpIzlSIptFLLoRHiR/Whz7uW7kB2SBfAdBtdDInfLSOenD4shaqnxeXI8J8RjWgrAlMm7r75ntfqXBCL4YIBMo0t7tNmEz0Nzsdfh+hDUb4Vdea6hJx/punyq9F1O+Lyx7SZM4dywtuJ//08CaNQTu9Hd5Mhll+1ZWxU=
-Received: from DUZPR01CA0242.eurprd01.prod.exchangelabs.com
- (2603:10a6:10:4b5::14) by AS8PR04MB8310.eurprd04.prod.outlook.com
- (2603:10a6:20b:3b2::6) with Microsoft SMTP Server (version=TLS1_2,
+ bh=8Pz5DJOiL7LFwXjit3f1me5jLlWQVO3kRPLX8AiZ7lo=;
+ b=NdbzicijW3watOO3W4kAko2POdC2E7Oi5YqJwOFfqU/PTGlY2zYKtRkUI0ZXE06tiU1dultsO7hNhJgXwV+Ohb9o5n+6/amvx/5wrVzswFF5Y+rX9UJLn/ZiptIT2J1yvad5q0BGdgGSh9c7gyti/Oytbkgywc4AVRniu7DRNdQ=
+Received: from AS4P189CA0029.EURP189.PROD.OUTLOOK.COM (2603:10a6:20b:5db::20)
+ by AM0PR04MB6866.eurprd04.prod.outlook.com (2603:10a6:208:183::16) with
+ Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9632.22; Wed, 25 Feb
- 2026 11:34:49 +0000
-Received: from DU2PEPF0001E9C3.eurprd03.prod.outlook.com
- (2603:10a6:10:4b5:cafe::25) by DUZPR01CA0242.outlook.office365.com
- (2603:10a6:10:4b5::14) with Microsoft SMTP Server (version=TLS1_3,
+ 2026 11:34:57 +0000
+Received: from AMS1EPF0000004E.eurprd04.prod.outlook.com
+ (2603:10a6:20b:5db:cafe::be) by AS4P189CA0029.outlook.office365.com
+ (2603:10a6:20b:5db::20) with Microsoft SMTP Server (version=TLS1_3,
  cipher=TLS_AES_256_GCM_SHA384) id 15.20.9632.23 via Frontend Transport; Wed,
- 25 Feb 2026 11:34:44 +0000
+ 25 Feb 2026 11:34:55 +0000
 X-MS-Exchange-Authentication-Results: spf=softfail (sender IP is 52.17.62.50)
  smtp.mailfrom=solid-run.com; dkim=pass (signature was verified)
  header.d=solidrn.onmicrosoft.com;dmarc=fail action=none
@@ -63,44 +63,44 @@ X-MS-Exchange-Authentication-Results: spf=softfail (sender IP is 52.17.62.50)
 Received-SPF: SoftFail (protection.outlook.com: domain of transitioning
  solid-run.com discourages use of 52.17.62.50 as permitted sender)
 Received: from eu-dlp.cloud-sec-av.com (52.17.62.50) by
- DU2PEPF0001E9C3.mail.protection.outlook.com (10.167.8.72) with Microsoft SMTP
- Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.9632.12 via
- Frontend Transport; Wed, 25 Feb 2026 11:34:49 +0000
-Received: from emails-4851394-12-mt-prod-cp-eu-2.checkpointcloudsec.com (ip-10-20-6-236.eu-west-1.compute.internal [10.20.6.236])
-	by mta-outgoing-dlp-862-mt-prod-cp-eu-2.checkpointcloudsec.com (Postfix) with ESMTPS id 6D887805B7;
-	Wed, 25 Feb 2026 11:34:49 +0000 (UTC)
-X-Mailbox-Line: From b'josua@solid-run.com' Wed Feb 25 11:34:41 2026
+ AMS1EPF0000004E.mail.protection.outlook.com (10.167.16.139) with Microsoft
+ SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.9632.12
+ via Frontend Transport; Wed, 25 Feb 2026 11:34:57 +0000
+Received: from emails-8955119-12-mt-prod-cp-eu-2.checkpointcloudsec.com (ip-10-20-6-236.eu-west-1.compute.internal [10.20.6.236])
+	by mta-outgoing-dlp-467-mt-prod-cp-eu-2.checkpointcloudsec.com (Postfix) with ESMTPS id D2BF1800AF;
+	Wed, 25 Feb 2026 11:34:56 +0000 (UTC)
+X-Mailbox-Line: From b'josua@solid-run.com' Wed Feb 25 11:34:48 2026
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=dPPrissdTn+3vsmm2EZPPcEoW0Xrg1ze9sHa9RR+fwfzJzwa9dozk6hL5ZKD/yqEdF38xNlM8OFozf2MDCNsfm1XHUNr5CSGPZhORjnMXG9vCEh3ypOkYcsVv//J436OpKKIxt6ifSe0EJl/Mi51CdFnTY07jV97mMsjluGaxJPD/tkjRRjrOb5TX/bNNbcUJue2cEIz8Hunj7FNFPOb3EhS+4LTGtA5sLOEUuGP8nS+xG1TUKI24WEGvOkvfTM70rzPS3hyij6IKheza2VdownGFpGkBTS7AMkBUVMH0y6KSfMrYg3CeWOpVSkcnkl3ECu7hxpZzGW7i5EuL7TuaQ==
+ b=o6bW5HXvjXDWcZ0Q1SlP9A5RBJouyHa2YnOd2KFryoksq4NTfEuvoxxlJ+BEKi3Faubp8taOt1LutnmtE4qZAyDGlqhFMqApo0ecmF5HRT3cXBadY6FVHU/a4BgP4czSPJiYaiuUucQFCY3LOX4UWKEAFDAvpOVyunmNfU69Zoid5+svIJdjc+rTQpi3CO4IKXadFsq/6RpMUvcs5210DDhT9G6cUEE8Y5LwvxddyBPbWsROBATC6RJP8/6yhrNb2h/+tGpEfDGfpTiuFWgiisMqLvczSn9gDsYptf/+lGVPVDuXzmegnvCZNUcDjzDG1RAcakaUpeT/4MHTEDk68g==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=dO4qj+wMV/XwBYmp/8IXtJ6Epr8snhs/g77Ygn3GsgA=;
- b=YO2GGOm4bk0O5VTt2XNCHii45Tf7GEDP9rQwMI8HvfCWFUQYmX9pWxoAAPvXjKHAHj8yHkTriixvAsTNY+JBCMFVBCTdohCCxtkmY5kQpa5quQjmsgFMAEwVfIAybXf1oEjHAUh0Ap07RryaUg/DRXoxw87OOWAyI65fGWMA+gaEzC3IfLsHq7KvLQ7LerRQ5jckDnXB4txKUFLQAUT1aOYHdi1zrAZWM76w1eA98egp32nzIAKMBlkXzVgdqIfna8eonW1RXm7n5Nk0pDQbJHqV5OMR2zL7ogdsivcyrULl0UfjBeSy3rnIfii2Stm2FrQYMOVr327YmKqd2/InCw==
+ bh=8Pz5DJOiL7LFwXjit3f1me5jLlWQVO3kRPLX8AiZ7lo=;
+ b=qbBBtvpAnAieje18IubTBXR3dCtaJk3GsPERDFGWsQfJxqaXvj8mTGuNomIY7mjSa4AjQsl6niVd4z07kE+RYjC0Nbotkdrq8dzLUTE5Z4/H3ORuDq/pt9KpS4hhY/qpVL27FnwE2gF+h61ldgw62S84k4RKbwvUfeXkV4ZN0/iSIitV7KkkV0MKbc+ppg552f4l1AVcpy46ckYgik6yZW6gqtIL85+8MQztWwGe1J7i9mYd3cpsvmQ3iB/Ph0Pq8CoyAFAZ+O9XeOY7v2S2ms/TWQJlZSf58Gd1R/divBh/kMY+Xr6pmolIhhH2mz0Xm5TRgeNloU5zFNPsoavbWg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=solid-run.com; dmarc=pass action=none
  header.from=solid-run.com; dkim=pass header.d=solid-run.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=solidrn.onmicrosoft.com; s=selector1-solidrn-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=dO4qj+wMV/XwBYmp/8IXtJ6Epr8snhs/g77Ygn3GsgA=;
- b=Q9TrOdnnpIzlSIptFLLoRHiR/Whz7uW7kB2SBfAdBtdDInfLSOenD4shaqnxeXI8J8RjWgrAlMm7r75ntfqXBCL4YIBMo0t7tNmEz0Nzsdfh+hDUb4Vdea6hJx/punyq9F1O+Lyx7SZM4dywtuJ//08CaNQTu9Hd5Mhll+1ZWxU=
+ bh=8Pz5DJOiL7LFwXjit3f1me5jLlWQVO3kRPLX8AiZ7lo=;
+ b=NdbzicijW3watOO3W4kAko2POdC2E7Oi5YqJwOFfqU/PTGlY2zYKtRkUI0ZXE06tiU1dultsO7hNhJgXwV+Ohb9o5n+6/amvx/5wrVzswFF5Y+rX9UJLn/ZiptIT2J1yvad5q0BGdgGSh9c7gyti/Oytbkgywc4AVRniu7DRNdQ=
 Authentication-Results-Original: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=solid-run.com;
 Received: from PAXPR04MB8749.eurprd04.prod.outlook.com (2603:10a6:102:21f::22)
- by AM8PR04MB7267.eurprd04.prod.outlook.com (2603:10a6:20b:1df::8) with
+ by AM8PR04MB7827.eurprd04.prod.outlook.com (2603:10a6:20b:247::14) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9632.22; Wed, 25 Feb
- 2026 11:34:36 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9654.11; Wed, 25 Feb
+ 2026 11:34:45 +0000
 Received: from PAXPR04MB8749.eurprd04.prod.outlook.com
  ([fe80::d782:fbb2:be9a:43f1]) by PAXPR04MB8749.eurprd04.prod.outlook.com
  ([fe80::d782:fbb2:be9a:43f1%3]) with mapi id 15.20.9632.017; Wed, 25 Feb 2026
- 11:34:36 +0000
+ 11:34:45 +0000
 From: Josua Mayer <josua@solid-run.com>
-Date: Wed, 25 Feb 2026 13:34:17 +0200
-Subject: [PATCH v10 3/9] mux: Add helper functions for getting optional and
- selected mux-state
-Message-Id: <20260225-rz-sdio-mux-v10-3-1ee44f2ea112@solid-run.com>
+Date: Wed, 25 Feb 2026 13:34:21 +0200
+Subject: [PATCH v10 7/9] dt-bindings: mmc: renesas,sdhi: Add mux-states
+ property
+Message-Id: <20260225-rz-sdio-mux-v10-7-1ee44f2ea112@solid-run.com>
 References: <20260225-rz-sdio-mux-v10-0-1ee44f2ea112@solid-run.com>
 In-Reply-To: <20260225-rz-sdio-mux-v10-0-1ee44f2ea112@solid-run.com>
 To: Marc Kleine-Budde <mkl@pengutronix.de>, 
@@ -129,39 +129,40 @@ X-ClientProxiedBy: TL0P290CA0012.ISRP290.PROD.OUTLOOK.COM
  (2603:1096:950:5::12) To PAXPR04MB8749.eurprd04.prod.outlook.com
  (2603:10a6:102:21f::22)
 MIME-Version: 1.0
-X-MS-TrafficTypeDiagnostic: PAXPR04MB8749:EE_|AM8PR04MB7267:EE_|DU2PEPF0001E9C3:EE_|AS8PR04MB8310:EE_
-X-MS-Office365-Filtering-Correlation-Id: 4d8edc3b-8dd1-4ade-315f-08de7461e2a1
+X-MS-TrafficTypeDiagnostic: PAXPR04MB8749:EE_|AM8PR04MB7827:EE_|AMS1EPF0000004E:EE_|AM0PR04MB6866:EE_
+X-MS-Office365-Filtering-Correlation-Id: f8e78255-af6e-4e93-1626-08de7461e727
 X-CLOUD-SEC-AV-Info: solidrun,office365_emails,sent,inline
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam-Untrusted: BCL:0;ARA:13230040|52116014|376014|7416014|366016|1800799024|38350700014|921020;
-X-Microsoft-Antispam-Message-Info-Original: Pbbk3V5GGgTc6kkHJB4KJ12H0cObVN3zKcDa3+LZDIL/mERfMjK0sO36/zNvbFZ1tjKk/FdUqVegPNXvi8U6Ln7US91/MKbRoF2S1IHrpM49EoCd8v2X1JaJfgFwX59yPsgdvYUU5+rMWVuIx9U1FKtM0fNQf6AfUH5DdOW1xHqaOD4zwUT1ayu3xQdY8aHzdJWYEKpCBDayZyWtOhABGHGrwNEuEuDLDxxziOY/CIaGNGSowbMYoA4slQqvQe8lXR5aXyXnzvdIWbCc7wP1gGRkC689BFh75jPm/x6nrcijB+3WsvsPA2xge5OjmUnkn+jwgM1G7DgtA8/MPWE4JRH6ocaFWbxTdSkjuxKW5RANoQ6sDCKkobWIjYeQ+4ELLpnrfhll2nwyeA/Whx5Vcsn5pc5zP9Np57I6mGKhDb0wY11nQYE2MXbQX4XboReKyQsQ140uVWV9Al3pjb4DSV6ys4katNUSKBwcdAeqwbT3moRtYQz8KApIUZfHe7VENtLtwo91vRyoiALho7RnCydKt1hmB0iGtuFwAUMs4zK2tZsSyfnPMO60UNGiEpW+kX8BwqSMdcbZdDm5x/WAERUEsbiqNFWVa2zgoTinxVljqk7N1ZYeKE71BwPxfKpXa1NKeYBRHrSd2Fh2ChNdovhqPXOgVAKkvsxxE5bflCP70aLtI8s6jGd7fspJgdpJEw1OavaUAn7NtyLFb3Yge+bZus1tfroEvqf3qYgfgW9qV6NNpS4zIQdKcRDJy84wlvt8SgT64tRd/focIxYq9wg8v+6uOphgQU5qwnYqPp1JxlP+Vq55vZ7FeDCftlUj
-X-Forefront-Antispam-Report-Untrusted: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB8749.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(52116014)(376014)(7416014)(366016)(1800799024)(38350700014)(921020);DIR:OUT;SFP:1102;
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM8PR04MB7267
+X-Microsoft-Antispam-Untrusted: BCL:0;ARA:13230040|376014|7416014|52116014|366016|1800799024|921020|38350700014;
+X-Microsoft-Antispam-Message-Info-Original: 8onVQkSghXWJXhtbVRiZshzGy2czI6Qq2eu3NxflZ0CO+XyBBSaC/B11+C0EdBqRHGB9N/A1+yp0FsUG6xiuHvJ5xgWTadU/BZrCYvNM1KuCtBPxcCCWm3hjOFEqe5o2J94/+7wdhuy6M1G5U6ZW5Fpp8C0G+Sv4AgaNFyQkNaC4Mb+4FLs9poelZ/KQns6zo53fxB1kH0qIbabK6B32hQaqvvaqp5i8QBFgTnTu3MRO4G2Bw40J+f1Cttil6IBnQx+I5jFN3P/A1k5xcc3yB1JAiYHFK9qX1NQF1IzbFQw61k9ti3v3cfJc6pJ4+dFNaj9UsqqjwycxLRY1A3gh+mNxxs+iQHr1rV0g9bfih+GVirvQGFhCWjEXFRZor8quU4D98EIkH9V/8n0wdMQ/tPDl9XFQWoCY6CkkGsFWUTR8/XRNK7DZQFeILP6nEWN7HZT3Ywmd46aVnn0zmR50TOdmZtCI+3gErerMb311tObRsA1f/ltqy5MBVLWkAgqHTgtEgUuwRwuOn2K+AC30340Byvf3r3vhd1xL5852dG5ee10+ksarohI914b2PTgeN25bT28NIBY+UUeZBxnRACoAO9biPORyWg2TxfGE1XYuwpqP21qKbThEvPgZL18B1fxzxVu5tF8MBbLyA7+uDz5gNWYtgpibLWW42/VYVLVDLoIaNf57jrWU0K7W7fggwzyKRQn6FRT0IJvYK9UgwZ8iuGe5E+KvppQD1X8oxz/AafxRoshl/O6l84mJo4pzXyfL1nwbLd7GPBhWAuu9H66s7IH1NfM0o8MZM9tJg5J3KfBjuIz5fb6qfyzuaatR
+X-Forefront-Antispam-Report-Untrusted: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB8749.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(7416014)(52116014)(366016)(1800799024)(921020)(38350700014);DIR:OUT;SFP:1102;
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM8PR04MB7827
 X-CLOUD-SEC-AV-INT-Relay: sent<mta-outgoing-dlp-mt-prod-cp-eu-2.checkpointcloudsec.com>
-X-CLOUD-SEC-AV-UUID: e6fc071f25884d7aaae8cad0ecfd18ea:solidrun,office365_emails,sent,inline:c1cd8ff72a3c708341fd9de96626bab6
+X-CLOUD-SEC-AV-UUID: a6e161f487e3441a92562db6092b2473:solidrun,office365_emails,sent,inline:c1cd8ff72a3c708341fd9de96626bab6
 X-EOPAttributedMessage: 0
-X-MS-Exchange-Transport-CrossTenantHeadersStripped: DU2PEPF0001E9C3.eurprd03.prod.outlook.com
+X-MS-Exchange-Transport-CrossTenantHeadersStripped: AMS1EPF0000004E.eurprd04.prod.outlook.com
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id-Prvs: ecd8e9d7-78e8-466a-d825-08de7461da6c
-X-Microsoft-Antispam: BCL:0;ARA:13230040|14060799003|1800799024|36860700013|82310400026|35042699022|7416014|376014|921020;
-X-Microsoft-Antispam-Message-Info: HSwzgjtQjFxBKVw4uQPp30ewSaG611duZhhZDSKcnIIuvcNGSNXcvR8Zq250kowNd2+or/Iz1uR/Jm0HIk0Q6obGyVv4EwqsDHNL+B5kAEwPT7HKzNYPWi0mTJXSC2AT9nTMrEJIPFA1wQCyf+IF8A9rx05cyJSZE8kQLDZDA0V+eB5F2sIKIyyTXyu8+4RYsGV4MHTihwZUHmWcEfzmhB6KltNoHFnyQWODTW1Z0AU3WeW6I56jDUmtaLsxgaiRyHIlSSOL/8B1DLA+DiOg63d3zI5MewN+8iYQnh5u8ObUZfLocoCiFKdImUb3ftuDFyVFHgM8yMSdUDSNgdb7PrHCMSlcDzuf1rP4/c2n/P9DXWYjKLsUXpziq2JegvaBfes3l+0gcAoz/n5Hh9ux9BenpdbfR6b/0xhQy1kR2PvUQhvddTOT7SsyAnUd8HNrPbdZoHGzUXd22Id7PzZfHmRUfSHH/wa6Z3+c3kxhR4LEAKUqoUrpCEzFz+hEeM/OZFQ1ZHt/tEz1po2h7XXB7YL6gTyR0Mx+NE/wHBwLscI1Prnh3LeL4aH0pKWVCkiBkODF0oEpZKcSS7/SIYn12gRfw4HMyINkySHCgBq3Eoh5sQhZoSkXQl5HMa+GgzSWwlqMg+YpgrtKiosmoXecExD0+qw/GjnJJUQRptwdnpCOpStWUbSaS/AVS3WTyv1yMVKqpN8dl00ZTOb0A9NnKUh1YECUs7Szpb1zJL7AqSZsY1DdD+/TbAUUro+O4rYcUpTo6JMOWilw9SsBTp+sgifgF7OgwObPBanerD2+n5YiLKS43qhVjXWbNkKBC0vT7b0DJS8l/HCpcEolTWNPp5WhtuUzWjqALq29OBBE3t8=
-X-Forefront-Antispam-Report: CIP:52.17.62.50;CTRY:IE;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:eu-dlp.cloud-sec-av.com;PTR:eu-dlp.cloud-sec-av.com;CAT:NONE;SFS:(13230040)(14060799003)(1800799024)(36860700013)(82310400026)(35042699022)(7416014)(376014)(921020);DIR:OUT;SFP:1102;
+X-MS-Office365-Filtering-Correlation-Id-Prvs: 42f2231a-3150-40d9-27f4-08de7461dfd5
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|36860700013|376014|7416014|14060799003|82310400026|35042699022|921020;
+X-Microsoft-Antispam-Message-Info: 21+vQUqGPf352F8UHkkDqleGTkQQ9umttrbKOCX5KiLdEiMAIWWULOtMJat5AqrPSVjqsDXI704lq28jIwFJreIZB122Jh16hdBDTrcsTtqKhJ0WDrCa7t0cogxI4iKsxx7ue7i4lb5yfuAhw2VsucRRUxeRrOvJ9wNeTU3Ce1WTLmjY8lbVoQLof39Q5WI3TAMhvckv8aSqqGM7vTRVpyXYoUaEE5vYhRTIrvyvQ1pg9chFzBekqzslGC5+lPCQB2W1YV4HBj9MVD/HBeR+GTm0cilHB28ybfSGwSnRRQRB3SvDqgF6wdbKcZ1atNAnKxq2RC+hMS6fDpVLRSJmdedtwxbbpU/Syy3eZ2XTP8NXQMkjmMvKxfYhNRegTAggzeSVyGVS78i2kCzw/W62opEWl91WBp8SAZGlT9c6+8+1VThTu2EYbOwqJu30JFfoxZz4tMdNEGFQIi5cSE5d22MGu5pPin3I5cNmiByjiFuZBWVN3OXUdkJk9BIx37Pa8jWc0JdQ9gqvYKKGf4T+d24vBRyP4EOyKaDpa3fKMcp8amNc4MkL3b1JhgElgX+2sZFZl7qRni8GF3AMaLqMNL6l5DQuekA1qTa2Mx2tisVVUeS44/JRbRik9DgMfam1yNGodFykuaWTYFYNIq28x3zvkbIUNdeTGdurzlB3PkVuC2+5jgGNCMAWs2Y2koEXPsL2F0/Mv2Xqu8Gx+byjLmEJ3HzXWtuzYycfOZurEiI6CD8T5ScsFvEEC3cwMS5sq+H3TB0cu+JuFA8hlewgjGwmGbUOKTd4QIt6xi1YkKeKl42L6ur3jYDtli+pOR3o9fiyXL6OO2I1oVQuTno5AA==
+X-Forefront-Antispam-Report: CIP:52.17.62.50;CTRY:IE;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:eu-dlp.cloud-sec-av.com;PTR:eu-dlp.cloud-sec-av.com;CAT:NONE;SFS:(13230040)(1800799024)(36860700013)(376014)(7416014)(14060799003)(82310400026)(35042699022)(921020);DIR:OUT;SFP:1102;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: 9/rFVoE7SB+SLeL3jjuju7ilnzinQEus1oznv80+y1DX/th6Ve8i1ywK1k5QbGdGSvfTgrtRCDNSpsQBPKxEXILWHOXgpIsTyKP7ek7RpeWqkogrGzJkdtXMs9oDsCdFgbzgZ5N20Ypv2BxAk2QLzwTTLImCoyys71NGxq18JCHAV/LBcyLKZhAwXPP4DorVrqw0B4z6+RgkgsBJwlKSaDcbzU8e8ckHp8eysinD3OCgEkV2otlLNZxIp1ONa6Feok0olpAO/2VvQ/4r2ko6iSoK1WQvRWZZSZb6jB2T1AyhPPJLEpKEu/n7IVTR8QGbm+szvtbsPEPNKY9T+c/rw53Po7j6WeSUgVclTkGtBxaysBWwXFtt3P+DColgHal1LJemXXWXmFmQSxYOAwiTpREXqXB7rTK1wtEt2bWIoaQrfW9sS17Ak0l3kXlq3JPM
+X-MS-Exchange-AntiSpam-MessageData-0: nyDK3Qcz4eouKh8mHYV4qbc4a0MhuhPOxyURCIVf9FlFeoy43qeqJ9b19lF2rs3IDQYvpYkSwMMs2XoeYpwuebPnD5LtJqme3ZQNQ5hQX2UPnaPMVMybd2TqdmHX+zPCd5fNI2mDbIIPD1MnPB2BrhoZTfN78cQx9JOMG6TTQy2GBLSXdlcs7/dfL7cSONO1IEOT2Ox5ccd1EP1LnhHHgq8yM2Kuw/LjzcliK6Ao00wibSPV3sxcquY/0+NsszreWu2MJT6F0uVwUvawbRXTEavP3VvrOxCHPBkOq5nQmv03fDddud9Op4i14qK5SWB1RFQ3XNhcmrUzInZLfUxpZqD3RYWT6b2g4AcmIeGQhwwy+/e2Yym0uUHF4J9k2cV4bvbApCbzSqjKBNOd3a6tTWktFyX8ulDxLOxTj1+4vgC9Hyb91EniW/PmWPP3ARzD
 X-OriginatorOrg: solid-run.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 Feb 2026 11:34:49.5630
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 Feb 2026 11:34:57.0940
  (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 4d8edc3b-8dd1-4ade-315f-08de7461e2a1
+X-MS-Exchange-CrossTenant-Network-Message-Id: f8e78255-af6e-4e93-1626-08de7461e727
 X-MS-Exchange-CrossTenant-Id: a4a8aaf3-fd27-4e27-add2-604707ce5b82
 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=a4a8aaf3-fd27-4e27-add2-604707ce5b82;Ip=[52.17.62.50];Helo=[eu-dlp.cloud-sec-av.com]
-X-MS-Exchange-CrossTenant-AuthSource: DU2PEPF0001E9C3.eurprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthSource: AMS1EPF0000004E.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Anonymous
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB8310
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6866
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260225_033456_221680_03C607A9 
-X-CRM114-Status: GOOD (  15.28  )
+X-CRM114-CacheID: sfid-20260225_033500_456151_9C79F0AD 
+X-CRM114-Status: UNSURE (   9.23  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -178,504 +179,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-In-tree phy-can-transceiver and phy_rcar_gen3_usb2 have already
-implemented local versions of devm_mux_state_get_optional.
+Add mux controller support for data or control lines that are muxed
+between a host and multiple cards.
 
-The omap-i2c driver gets and selects an optional mux in its probe
-function without using any helper.
+There are several devices supporting a choice of eMMC or SD on a single
+board by both dip switch and gpio, e.g. Renesas RZ/G2L SMARC SoM and
+SolidRun RZ/G2L SoM.
 
-Add new helper functions covering both aforementioned use-cases:
+In-tree dts for the Renesas boards currently rely on preprocessor macros
+and gpio hogs to describe the respective cards.
 
-- mux_control_get_optional:
-  Get a mux-control if specified in dt, return NULL otherwise.
-- devm_mux_state_get_optional:
-  Get a mux-state if specified in dt, return NULL otherwise.
-- devm_mux_state_get_selected:
-  Get and select a mux-state specified in dt, return error otherwise.
-- devm_mux_state_get_optional_selected:
-  Get and select a mux-state if specified in dt, return error or NULL.
+By adding mux-states property to sdhi controller description, boards can
+correctly describe the mux that already exists in hardware - and drivers
+can coordinate between mux selection and probing for cards.
 
-Existing mux_get helper function is changed to take an extra argument
-indicating whether the mux is optional.
-In this case no error is printed, and NULL returned in case of ENOENT.
-
-Calling code is adapted to handle NULL return case, and to pass optional
-argument as required.
-
-To support automatic deselect for _selected helper, a new structure is
-created storing an exit pointer similar to clock core which is called on
-release.
-
-To facilitate code sharing between optional/mandatory/selected helpers,
-a new internal helper function is added to handle quiet (optional) and
-verbose (mandatory) errors, as well as storing the correct callback for
-devm release: __devm_mux_state_get
-
-Due to this structure devm_mux_state_get_*_selected can no longer print
-a useful error message when select fails. Instead callers should print
-errors where needed.
-
-Commit e153fdea9db04 ("phy: can-transceiver: Re-instate "mux-states"
-property presence check") noted that "mux_get() always prints an error
-message in case of an error, including when the property is not present,
-confusing the user."
-
-The first error message covers the case that a mux name is not matched
-in dt. The second error message is based on of_parse_phandle_with_args
-return value.
-
-In optional case no error is printed and NULL is returned.
-This ensures that the new helper functions will not confuse the user
-either.
-
-With the addition of optional helper functions it became clear that
-drivers should compile and link even if CONFIG_MULTIPLEXER was not enabled.
-Add stubs for all symbols exported by mux core.
-
-Acked-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
+Acked-by: Rob Herring (Arm) <robh@kernel.org>
+Reviewed-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
 Signed-off-by: Josua Mayer <josua@solid-run.com>
 ---
- drivers/mux/core.c           | 206 ++++++++++++++++++++++++++++++++++++-------
- include/linux/mux/consumer.h | 108 ++++++++++++++++++++++-
- 2 files changed, 279 insertions(+), 35 deletions(-)
+ Documentation/devicetree/bindings/mmc/renesas,sdhi.yaml | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-diff --git a/drivers/mux/core.c b/drivers/mux/core.c
-index f09ee8782e3d..6033da0a9e17 100644
---- a/drivers/mux/core.c
-+++ b/drivers/mux/core.c
-@@ -46,6 +46,16 @@ static const struct class mux_class = {
- 	.name = "mux",
- };
+diff --git a/Documentation/devicetree/bindings/mmc/renesas,sdhi.yaml b/Documentation/devicetree/bindings/mmc/renesas,sdhi.yaml
+index c754ea71f51f..64fac0d11329 100644
+--- a/Documentation/devicetree/bindings/mmc/renesas,sdhi.yaml
++++ b/Documentation/devicetree/bindings/mmc/renesas,sdhi.yaml
+@@ -106,6 +106,11 @@ properties:
+   iommus:
+     maxItems: 1
  
-+/**
-+ * struct devm_mux_state_state -	Tracks managed resources for mux-state objects.
-+ * @mstate:				Pointer to a mux state.
-+ * @exit:				An optional callback to execute before free.
-+ */
-+struct devm_mux_state_state {
-+	struct mux_state *mstate;
-+	int (*exit)(struct mux_state *mstate);
-+};
++  mux-states:
++    description:
++      mux controller node to route the SD/SDIO/eMMC signals from SoC to cards.
++    maxItems: 1
 +
- static DEFINE_IDA(mux_ida);
+   power-domains:
+     maxItems: 1
  
- static int __init mux_init(void)
-@@ -516,17 +526,19 @@ static struct mux_chip *of_find_mux_chip_by_node(struct device_node *np)
- 	return dev ? to_mux_chip(dev) : NULL;
- }
+@@ -275,6 +280,7 @@ examples:
+         max-frequency = <195000000>;
+         power-domains = <&sysc R8A7790_PD_ALWAYS_ON>;
+         resets = <&cpg 314>;
++        mux-states = <&mux 0>;
+     };
  
--/*
-+/**
-  * mux_get() - Get the mux-control for a device.
-  * @dev: The device that needs a mux-control.
-  * @mux_name: The name identifying the mux-control.
-  * @state: Pointer to where the requested state is returned, or NULL when
-  *         the required multiplexer states are handled by other means.
-+ * @optional: Whether to return NULL and silence errors when mux doesn't exist.
-  *
-- * Return: A pointer to the mux-control, or an ERR_PTR with a negative errno.
-+ * Return: Pointer to the mux-control on success, an ERR_PTR with a negative errno on error,
-+ * or NULL if optional is true and mux doesn't exist.
-  */
- static struct mux_control *mux_get(struct device *dev, const char *mux_name,
--				   unsigned int *state)
-+				   unsigned int *state, bool optional)
- {
- 	struct device_node *np = dev->of_node;
- 	struct of_phandle_args args;
-@@ -542,7 +554,9 @@ static struct mux_control *mux_get(struct device *dev, const char *mux_name,
- 		else
- 			index = of_property_match_string(np, "mux-control-names",
- 							 mux_name);
--		if (index < 0) {
-+		if (index < 0 && optional) {
-+			return NULL;
-+		} else if (index < 0) {
- 			dev_err(dev, "mux controller '%s' not found\n",
- 				mux_name);
- 			return ERR_PTR(index);
-@@ -558,8 +572,12 @@ static struct mux_control *mux_get(struct device *dev, const char *mux_name,
- 						 "mux-controls", "#mux-control-cells",
- 						 index, &args);
- 	if (ret) {
-+		if (optional && ret == -ENOENT)
-+			return NULL;
-+
- 		dev_err(dev, "%pOF: failed to get mux-%s %s(%i)\n",
--			np, state ? "state" : "control", mux_name ?: "", index);
-+			np, state ? "state" : "control",
-+			mux_name ?: "", index);
- 		return ERR_PTR(ret);
- 	}
- 
-@@ -617,10 +635,29 @@ static struct mux_control *mux_get(struct device *dev, const char *mux_name,
-  */
- struct mux_control *mux_control_get(struct device *dev, const char *mux_name)
- {
--	return mux_get(dev, mux_name, NULL);
-+	struct mux_control *mux = mux_get(dev, mux_name, NULL, false);
-+
-+	if (!mux)
-+		return ERR_PTR(-ENOENT);
-+
-+	return mux;
- }
- EXPORT_SYMBOL_GPL(mux_control_get);
- 
-+/**
-+ * mux_control_get_optional() - Get the optional mux-control for a device.
-+ * @dev: The device that needs a mux-control.
-+ * @mux_name: The name identifying the mux-control.
-+ *
-+ * Return: Pointer to the mux-state on success, an ERR_PTR with a negative errno on error,
-+ * or NULL if mux doesn't exist.
-+ */
-+struct mux_control *mux_control_get_optional(struct device *dev, const char *mux_name)
-+{
-+	return mux_get(dev, mux_name, NULL, true);
-+}
-+EXPORT_SYMBOL_GPL(mux_control_get_optional);
-+
- /**
-  * mux_control_put() - Put away the mux-control for good.
-  * @mux: The mux-control to put away.
-@@ -657,10 +694,13 @@ struct mux_control *devm_mux_control_get(struct device *dev,
- 	if (!ptr)
- 		return ERR_PTR(-ENOMEM);
- 
--	mux = mux_control_get(dev, mux_name);
-+	mux = mux_get(dev, mux_name, NULL, false);
- 	if (IS_ERR(mux)) {
- 		devres_free(ptr);
- 		return mux;
-+	} else if (!mux) {
-+		devres_free(ptr);
-+		return ERR_PTR(-ENOENT);
- 	}
- 
- 	*ptr = mux;
-@@ -670,14 +710,16 @@ struct mux_control *devm_mux_control_get(struct device *dev,
- }
- EXPORT_SYMBOL_GPL(devm_mux_control_get);
- 
--/*
-+/**
-  * mux_state_get() - Get the mux-state for a device.
-  * @dev: The device that needs a mux-state.
-  * @mux_name: The name identifying the mux-state.
-+ * @optional: Whether to return NULL and silence errors when mux doesn't exist.
-  *
-- * Return: A pointer to the mux-state, or an ERR_PTR with a negative errno.
-+ * Return: Pointer to the mux-state on success, an ERR_PTR with a negative errno on error,
-+ * or NULL if optional is true and mux doesn't exist.
-  */
--static struct mux_state *mux_state_get(struct device *dev, const char *mux_name)
-+static struct mux_state *mux_state_get(struct device *dev, const char *mux_name, bool optional)
- {
- 	struct mux_state *mstate;
- 
-@@ -685,12 +727,16 @@ static struct mux_state *mux_state_get(struct device *dev, const char *mux_name)
- 	if (!mstate)
- 		return ERR_PTR(-ENOMEM);
- 
--	mstate->mux = mux_get(dev, mux_name, &mstate->state);
-+	mstate->mux = mux_get(dev, mux_name, &mstate->state, optional);
- 	if (IS_ERR(mstate->mux)) {
--		int err = PTR_ERR(mstate->mux);
--
- 		kfree(mstate);
--		return ERR_PTR(err);
-+		return ERR_CAST(mstate->mux);
-+	} else if (optional && !mstate->mux) {
-+		kfree(mstate);
-+		return NULL;
-+	} else if (!mstate->mux) {
-+		kfree(mstate);
-+		return ERR_PTR(-ENOENT);
- 	}
- 
- 	return mstate;
-@@ -710,9 +756,66 @@ static void mux_state_put(struct mux_state *mstate)
- 
- static void devm_mux_state_release(struct device *dev, void *res)
- {
--	struct mux_state *mstate = *(struct mux_state **)res;
-+	struct devm_mux_state_state *devm_state = res;
- 
-+	if (devm_state->exit)
-+		devm_state->exit(devm_state->mstate);
-+
-+	mux_state_put(devm_state->mstate);
-+}
-+
-+/**
-+ * __devm_mux_state_get() - Get the optional mux-state for a device,
-+ *			    with resource management.
-+ * @dev: The device that needs a mux-state.
-+ * @mux_name: The name identifying the mux-state.
-+ * @optional: Whether to return NULL and silence errors when mux doesn't exist.
-+ * @init: Optional function pointer for mux-state object initialisation.
-+ * @exit: Optional function pointer for mux-state object cleanup on release.
-+ *
-+ * Return: Pointer to the mux-state on success, an ERR_PTR with a negative errno on error,
-+ * or NULL if optional is true and mux doesn't exist.
-+ */
-+static struct mux_state *__devm_mux_state_get(struct device *dev, const char *mux_name,
-+					      bool optional,
-+					      int (*init)(struct mux_state *mstate),
-+					      int (*exit)(struct mux_state *mstate))
-+{
-+	struct devm_mux_state_state *devm_state;
-+	struct mux_state *mstate;
-+	int ret;
-+
-+	mstate = mux_state_get(dev, mux_name, optional);
-+	if (IS_ERR(mstate))
-+		return ERR_CAST(mstate);
-+	else if (optional && !mstate)
-+		return NULL;
-+	else if (!mstate)
-+		return ERR_PTR(-ENOENT);
-+
-+	devm_state = devres_alloc(devm_mux_state_release, sizeof(*devm_state), GFP_KERNEL);
-+	if (!devm_state) {
-+		ret = -ENOMEM;
-+		goto err_devres_alloc;
-+	}
-+
-+	if (init) {
-+		ret = init(mstate);
-+		if (ret)
-+			goto err_mux_state_init;
-+	}
-+
-+	devm_state->mstate = mstate;
-+	devm_state->exit = exit;
-+	devres_add(dev, devm_state);
-+
-+	return mstate;
-+
-+err_mux_state_init:
-+	devres_free(devm_state);
-+err_devres_alloc:
- 	mux_state_put(mstate);
-+	return ERR_PTR(ret);
- }
- 
- /**
-@@ -722,28 +825,69 @@ static void devm_mux_state_release(struct device *dev, void *res)
-  * @mux_name: The name identifying the mux-control.
-  *
-  * Return: Pointer to the mux-state, or an ERR_PTR with a negative errno.
-+ *
-+ * The mux-state will automatically be freed on release.
-  */
--struct mux_state *devm_mux_state_get(struct device *dev,
--				     const char *mux_name)
-+struct mux_state *devm_mux_state_get(struct device *dev, const char *mux_name)
- {
--	struct mux_state **ptr, *mstate;
--
--	ptr = devres_alloc(devm_mux_state_release, sizeof(*ptr), GFP_KERNEL);
--	if (!ptr)
--		return ERR_PTR(-ENOMEM);
-+	return __devm_mux_state_get(dev, mux_name, false, NULL, NULL);
-+}
-+EXPORT_SYMBOL_GPL(devm_mux_state_get);
- 
--	mstate = mux_state_get(dev, mux_name);
--	if (IS_ERR(mstate)) {
--		devres_free(ptr);
--		return mstate;
--	}
-+/**
-+ * devm_mux_state_get_optional() - Get the optional mux-state for a device,
-+ *				   with resource management.
-+ * @dev: The device that needs a mux-state.
-+ * @mux_name: The name identifying the mux-state.
-+ *
-+ * Return: Pointer to the mux-state on success, an ERR_PTR with a negative errno on error,
-+ * or NULL if mux doesn't exist.
-+ *
-+ * The mux-state will automatically be freed on release.
-+ */
-+struct mux_state *devm_mux_state_get_optional(struct device *dev, const char *mux_name)
-+{
-+	return __devm_mux_state_get(dev, mux_name, true, NULL, NULL);
-+}
-+EXPORT_SYMBOL_GPL(devm_mux_state_get_optional);
- 
--	*ptr = mstate;
--	devres_add(dev, ptr);
-+/**
-+ * devm_mux_state_get_selected() - Get the mux-state for a device, with
-+ *				   resource management.
-+ * @dev: The device that needs a mux-state.
-+ * @mux_name: The name identifying the mux-state.
-+ *
-+ * Return: Pointer to the mux-state, or an ERR_PTR with a negative errno.
-+ *
-+ * The returned mux-state (if valid) is already selected.
-+ *
-+ * The mux-state will automatically be deselected and freed on release.
-+ */
-+struct mux_state *devm_mux_state_get_selected(struct device *dev, const char *mux_name)
-+{
-+	return __devm_mux_state_get(dev, mux_name, false, mux_state_select, mux_state_deselect);
-+}
-+EXPORT_SYMBOL_GPL(devm_mux_state_get_selected);
- 
--	return mstate;
-+/**
-+ * devm_mux_state_get_optional_selected() - Get the optional mux-state for
-+ *					    a device, with resource management.
-+ * @dev: The device that needs a mux-state.
-+ * @mux_name: The name identifying the mux-state.
-+ *
-+ * Return: Pointer to the mux-state on success, an ERR_PTR with a negative errno on error,
-+ * or NULL if mux doesn't exist.
-+ *
-+ * The returned mux-state (if valid) is already selected.
-+ *
-+ * The mux-state will automatically be deselected and freed on release.
-+ */
-+struct mux_state *devm_mux_state_get_optional_selected(struct device *dev,
-+						       const char *mux_name)
-+{
-+	return __devm_mux_state_get(dev, mux_name, true, mux_state_select, mux_state_deselect);
- }
--EXPORT_SYMBOL_GPL(devm_mux_state_get);
-+EXPORT_SYMBOL_GPL(devm_mux_state_get_optional_selected);
- 
- /*
-  * Using subsys_initcall instead of module_init here to try to ensure - for
-diff --git a/include/linux/mux/consumer.h b/include/linux/mux/consumer.h
-index 2e25c838f831..a961861a503b 100644
---- a/include/linux/mux/consumer.h
-+++ b/include/linux/mux/consumer.h
-@@ -16,6 +16,8 @@ struct device;
- struct mux_control;
- struct mux_state;
- 
-+#if IS_ENABLED(CONFIG_MULTIPLEXER)
-+
- unsigned int mux_control_states(struct mux_control *mux);
- int __must_check mux_control_select_delay(struct mux_control *mux,
- 					  unsigned int state,
-@@ -54,11 +56,109 @@ int mux_control_deselect(struct mux_control *mux);
- int mux_state_deselect(struct mux_state *mstate);
- 
- struct mux_control *mux_control_get(struct device *dev, const char *mux_name);
-+struct mux_control *mux_control_get_optional(struct device *dev, const char *mux_name);
- void mux_control_put(struct mux_control *mux);
- 
--struct mux_control *devm_mux_control_get(struct device *dev,
--					 const char *mux_name);
--struct mux_state *devm_mux_state_get(struct device *dev,
--				     const char *mux_name);
-+struct mux_control *devm_mux_control_get(struct device *dev, const char *mux_name);
-+struct mux_state *devm_mux_state_get(struct device *dev, const char *mux_name);
-+struct mux_state *devm_mux_state_get_optional(struct device *dev, const char *mux_name);
-+struct mux_state *devm_mux_state_get_selected(struct device *dev, const char *mux_name);
-+struct mux_state *devm_mux_state_get_optional_selected(struct device *dev, const char *mux_name);
-+
-+#else
-+
-+static inline unsigned int mux_control_states(struct mux_control *mux)
-+{
-+	return 0;
-+}
-+static inline int __must_check mux_control_select_delay(struct mux_control *mux,
-+							unsigned int state, unsigned int delay_us)
-+{
-+	return -EOPNOTSUPP;
-+}
-+static inline int __must_check mux_state_select_delay(struct mux_state *mstate,
-+						      unsigned int delay_us)
-+{
-+	return -EOPNOTSUPP;
-+}
-+static inline int __must_check mux_control_try_select_delay(struct mux_control *mux,
-+							    unsigned int state,
-+							    unsigned int delay_us)
-+{
-+	return -EOPNOTSUPP;
-+}
-+static inline int __must_check mux_state_try_select_delay(struct mux_state *mstate,
-+							  unsigned int delay_us)
-+{
-+	return -EOPNOTSUPP;
-+}
-+
-+static inline int __must_check mux_control_select(struct mux_control *mux,
-+						  unsigned int state)
-+{
-+	return -EOPNOTSUPP;
-+}
-+
-+static inline int __must_check mux_state_select(struct mux_state *mstate)
-+{
-+	return -EOPNOTSUPP;
-+}
-+
-+static inline int __must_check mux_control_try_select(struct mux_control *mux,
-+						      unsigned int state)
-+{
-+	return -EOPNOTSUPP;
-+}
-+
-+static inline int __must_check mux_state_try_select(struct mux_state *mstate)
-+{
-+	return -EOPNOTSUPP;
-+}
-+
-+static inline int mux_control_deselect(struct mux_control *mux)
-+{
-+	return -EOPNOTSUPP;
-+}
-+static inline int mux_state_deselect(struct mux_state *mstate)
-+{
-+	return -EOPNOTSUPP;
-+}
-+
-+static inline struct mux_control *mux_control_get(struct device *dev, const char *mux_name)
-+{
-+	return ERR_PTR(-EOPNOTSUPP);
-+}
-+static inline struct mux_control *mux_control_get_optional(struct device *dev,
-+							   const char *mux_name)
-+{
-+	return NULL;
-+}
-+static inline void mux_control_put(struct mux_control *mux) {}
-+
-+static inline struct mux_control *devm_mux_control_get(struct device *dev, const char *mux_name)
-+{
-+	return ERR_PTR(-EOPNOTSUPP);
-+}
-+static inline struct mux_state *devm_mux_state_get(struct device *dev, const char *mux_name)
-+{
-+	return ERR_PTR(-EOPNOTSUPP);
-+}
-+static inline struct mux_state *devm_mux_state_get_optional(struct device *dev,
-+							    const char *mux_name)
-+{
-+	return NULL;
-+}
-+static inline struct mux_state *devm_mux_state_get_selected(struct device *dev,
-+							    const char *mux_name)
-+{
-+	return ERR_PTR(-EOPNOTSUPP);
-+}
-+static inline struct mux_state *devm_mux_state_get_optional_selected(struct device *dev,
-+								     const char *mux_name)
-+{
-+	return NULL;
-+}
-+
-+#endif /* CONFIG_MULTIPLEXER */
- 
- #endif /* _LINUX_MUX_CONSUMER_H */
+     sdhi1: mmc@ee120000 {
 
 -- 
 2.43.0
