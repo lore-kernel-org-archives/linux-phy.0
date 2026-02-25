@@ -4,69 +4,101 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ADB6FFD3776
-	for <linux-phy@archiver.kernel.org>; Wed, 25 Feb 2026 16:54:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E8215FD45F9
+	for <linux-phy@archiver.kernel.org>; Wed, 25 Feb 2026 23:50:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sfrEJQvo6KYXvo6CuePs/NURKlOam6msHnYijK5aHPM=; b=T5usaytoqJANE2
-	UokNnqy5roy5DFj8z4ZQl5kOGm+6GaBrzP5mnDZS4ocudJPPsBb3nfcrF+CFJbvuxkLomPlK8JZrK
-	A/F/0bsdrzOvRTvoPovQhL9g29/Rl/44HSFW0dcWFuMYpvyvm4cYw1lqFvgBRtCC63CL09CF+4hXL
-	Ka0IuAPKeNrngPBSw1yVHWdRs6GdStbDkOTArRHnh9qHb61BO4GROOEG9d3vUs8YAgsYvAPFbC2KL
-	KLZunrcKKzBuqMI4yoMRd0OL5qqgbgbwzxeutYCZwiXhoUMte1y/ZLFDRGYmefbYNlc3wz3Dd6aIU
-	4i31UNqS80T9o9/mzpUQ==;
+	List-Owner; bh=w8EPP+o0AZSSea40jWJ23Fz830pEvu6nKNC4HkpmVpQ=; b=S253/Vawu30+h8
+	CqdT9GCnGthwpJOvkNyru6VQeEKcTdTmDIdzEO3aRIG1Pgek53osRcVvM3j6YNp+l1U2hr0FqWE7D
+	erc6OIXy1wYbP4T5V8iuj2ZOyCTqw27VHm7w+l4+sGM8rtvGK3L81gYU+et1His2HfGUWd6L5nUSP
+	QhVJZ32MMIqtNjFehj5Hab7lNqnmXSonCqvMh/sCgj/BS/4rERCuRjWJguRiXF28sglfIxIRGThfB
+	qc4bYZp/YhoaqeS+zUGTYtjbFNSQ5N13KUodka1QMuEPvF6ek9hpv7n6N/bimYaMMGYUCElAB2cBR
+	oQgTncu78PgJ6QRiWoqw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vvIA0-00000004ZvP-1F8j;
-	Wed, 25 Feb 2026 16:54:52 +0000
-Received: from smtpout-04.galae.net ([185.171.202.116])
+	id 1vvOeZ-000000055nI-1x7j;
+	Wed, 25 Feb 2026 23:50:51 +0000
+Received: from mail-wr1-x432.google.com ([2a00:1450:4864:20::432])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vvI9x-00000004ZuM-2l17
+	id 1vvOeW-000000055mw-3nM3
 	for linux-phy@lists.infradead.org;
-	Wed, 25 Feb 2026 16:54:50 +0000
-Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-04.galae.net (Postfix) with ESMTPS id 2A4E4C40680;
-	Wed, 25 Feb 2026 16:55:03 +0000 (UTC)
-Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id 14A705FDE6;
-	Wed, 25 Feb 2026 16:54:48 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 305E8103692EC;
-	Wed, 25 Feb 2026 17:54:46 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1772038487; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 content-transfer-encoding:in-reply-to:references;
-	bh=Q6Yg5BPdjJMGsJ4MZxD4NMJ59IOnKhCzaTE5HJyzuP0=;
-	b=BJw73SsU1dzEOnIbaac9e+HHSoTzWEpnAqmGNC9IjxaqhvgZW6YYwADN/mMXfqozCf/cgS
-	qBeufGI+rd1aq85zw4PxODXY5wID2NZgiu/FXWe/iZJPQw6y6TqxggCCgIoCvjtMMD8Qfc
-	0Gds7y3u/uyXNCfHc4BDmR+zh6OyZay6Cc3y3P+Df4lxHtB9eSJb2idk2mYgQmJEhqA0pA
-	2WFkC4IciZ+ey5M4fZNE2zMALNkEy+WdrcAkgojfHRLu+vQ93Y6KkFsCCKnbjTsafD9adV
-	EcMBOCrYdm227eQG8PHvbIJrA2+PTBSkAqB2VEYswFUzLATGQ3T5Li81v1MR7A==
-From: =?utf-8?q?Th=C3=A9o_Lebrun?= <theo.lebrun@bootlin.com>
-Date: Wed, 25 Feb 2026 17:54:41 +0100
-Subject: [PATCH v7 2/2] phy: Add driver for EyeQ5 Ethernet PHY wrapper
+	Wed, 25 Feb 2026 23:50:50 +0000
+Received: by mail-wr1-x432.google.com with SMTP id ffacd0b85a97d-4376bd50b01so6764f8f.3
+        for <linux-phy@lists.infradead.org>; Wed, 25 Feb 2026 15:50:48 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1772063447; x=1772668247; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=JQVWTH3HPm2HzGiE+EBHhvF4y29uhoc9WxfC2q8gjvI=;
+        b=RKRHb0mT+fOsMhYZ8gGM4KBoF4gGgK9xPpdyZLzpUuNBvLPOaRi6f/j04BSdokGzp/
+         4JVvBeK/2VtbwuQIUpYtHFlZnAOcFEUdj2pvR5eoB7Q6kFxSFQzvAWDONEMyi1luwPMr
+         SBIJR/h8/6CBH/EOvTzRdp3P0zXSXVkU/+fJLklB92RvY7Y1/KqUhGUh+akFr1MCn++C
+         WgUaXarG+qqEC2iFFdKgpApESsudcWRg4hMjnHiSjkoAfVoU3TNKnUr4z9qMQBk2rMYI
+         CKKYmfVAersfcAi02OGM62qtyzQAcKHk9CsYzfHhNDixFcaZA6PsZ/merjGBgAmeuGTl
+         YyjQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1772063447; x=1772668247;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=JQVWTH3HPm2HzGiE+EBHhvF4y29uhoc9WxfC2q8gjvI=;
+        b=nEHX2HG+BoHLFvs9YXu8nwFKEhT9rTmE9SBF9HDIOSbM/OpDP1+5thxf9FByWbn2uT
+         jqYCHl88Z21AYVWsNx68yNXFo3ofK1yxpp4uXDSUwKgv4rCFuvN1+c2uHLvxUWxvcnQK
+         efkPEiAlIoSYbMqdO2MKqMUhBskfsMEQtPYoMkstvYmhgkZT1sZpZWnnVXGGyvuNo8of
+         DT3KDwGAKPJizcRrrnVHvSEhCOk6Bwk42OsEU294FX8HeIYKuR5hdVQxwXB4d6xzBWXA
+         L5/xsNdzyY6c6Z/E/QkjrrCyUupxOidvLPKp7FmBWTXGl/Wb6ID+9FjzlqEQwsNriTDx
+         jsYw==
+X-Forwarded-Encrypted: i=1; AJvYcCVXRBpzAn7b7XBO5+kgZBryFlDOoyj8QOP710a8wsqcQ5Sl66rXotsyrzkqInN9Jqy0l7YFbQ+3tWs=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwRqA7IyiPHHj9IHAITCFSLCaRL/RsfxV3Z/4eugb89k9MWZsnQ
+	JzA4cIaY5oJ6w8TapCVEJuw2iQwemfE83MKq6ya8d3FklFk7YGUQjYul
+X-Gm-Gg: ATEYQzwE4f/OA2Uzs80taYv1RjJ9B+Um6mXmrSbv5kBjEj0VxQXvzoCNjK+VkM4MTla
+	7zG602jMUAOX5UlbV0tfcjlWxXem169oK1K7wUQQYmkU4qLMbNcVFWeRV7KNsvsXHbxnKJ7O/0B
+	K8wL7lqona7Tcdr1rSqPEMHqrMEPOq4IMN52pH1XO02rw2YkbSFjf95UoxiZ6rywY2PDCOpJEHp
+	b5XXH7zVFSEe0RZuw8Q0qMHDsYm5lXfjncVmSsah0rn0ZA06mUfZA1pZ+an/dHLqfojr3mN3NWS
+	ZLn7zBaRXJ1Qmug2eY6qado4Sqho7VEfxw7GbBOF9xAkVRm7F8ZbFA/f43XlvzQrq5oIXl2y0Ou
+	M5kedyrFt77EBQhG0mTSeojRa8IF8ZeRDbGKzCDYpu69Q1TuFf7I9j2s15UarUhgki+K2sr2pCL
+	N8xXIx354uV2NwIA==
+X-Received: by 2002:a5d:5f87:0:b0:439:8e3b:d06f with SMTP id ffacd0b85a97d-4398e3bd4e5mr5123698f8f.6.1772063446395;
+        Wed, 25 Feb 2026 15:50:46 -0800 (PST)
+Received: from skbuf ([2a02:2f04:d608:3a00:6e08:ea2c:b2bc:dea])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-43970d4c60bsm36400340f8f.27.2026.02.25.15.50.44
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 25 Feb 2026 15:50:45 -0800 (PST)
+Date: Thu, 26 Feb 2026 01:50:42 +0200
+From: Vladimir Oltean <olteanv@gmail.com>
+To: Dmitry Torokhov <dmitry.torokhov@gmail.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	"Rafael J. Wysocki" <rafael.j.wysocki@intel.com>,
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	Johan Hovold <johan+linaro@kernel.org>,
+	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>,
+	"Dr. David Alan Gilbert" <linux@treblig.org>,
+	Peter Griffin <peter.griffin@linaro.org>,
+	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+	Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>,
+	Zijun Hu <zijun.hu@oss.qualcomm.com>, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] phy: core: fix potential UAF in of_phy_simple_xlate()
+Message-ID: <20260225235042.al27evzgslvk33y5@skbuf>
+References: <aZejMSJ9qqRWb2pX@google.com>
+ <aZemjhBNFyOfKeNL@google.com>
+ <aZkCyQ1oizPXplyU@google.com>
+ <20260223231500.zeffezslctqamhp7@skbuf>
+ <aZzmU_oA6mVMsdQT@google.com>
+ <20260224154730.qqnomchkdpxnyf4x@skbuf>
+ <aZ4Iel5AsL3hSgrE@google.com>
 MIME-Version: 1.0
-Message-Id: <20260225-macb-phy-v7-2-e5211a61db56@bootlin.com>
-References: <20260225-macb-phy-v7-0-e5211a61db56@bootlin.com>
-In-Reply-To: <20260225-macb-phy-v7-0-e5211a61db56@bootlin.com>
-To: Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>
-Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
- linux-mips@vger.kernel.org, 
- Vladimir Kondratiev <vladimir.kondratiev@mobileye.com>, 
- Gregory CLEMENT <gregory.clement@bootlin.com>, 
- =?utf-8?q?Beno=C3=AEt_Monin?= <benoit.monin@bootlin.com>, 
- Tawfik Bayouk <tawfik.bayouk@mobileye.com>, 
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>, 
- Luca Ceresoli <luca.ceresoli@bootlin.com>, 
- =?utf-8?q?Th=C3=A9o_Lebrun?= <theo.lebrun@bootlin.com>
-X-Mailer: b4 0.14.3
-X-Last-TLS-Session-Version: TLSv1.3
+Content-Disposition: inline
+In-Reply-To: <aZ4Iel5AsL3hSgrE@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260225_085450_004982_AF5AE9AB 
-X-CRM114-Status: GOOD (  19.85  )
+X-CRM114-CacheID: sfid-20260225_155049_023955_630320DB 
+X-CRM114-Status: GOOD (  65.09  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,174 +110,198 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-RXllUTUgZW1iZWRzIGEgc3lzdGVtLWNvbnRyb2xsZXIgY2FsbGVkIE9MQi4gSXQgZmVhdHVyZXMg
-bWFueSB1bnJlbGF0ZWQKcmVnaXN0ZXJzLCBhbmQgc29tZSBvZiB0aG9zZSBhcmUgcmVnaXN0ZXJz
-IHVzZWQgdG8gY29uZmlndXJlIHRoZQppbnRlZ3JhdGlvbiBvZiB0aGUgUkdNSUkvU0dNSUkgQ2Fk
-ZW5jZSBQSFkgdXNlZCBieSBNQUNCL0dFTSBpbnN0YW5jZXMuCgpXcmFwIGluIGEgbmVhdCBnZW5l
-cmljIFBIWSBwcm92aWRlciwgZXhwb3NpbmcgdHdvIFBIWXMgd2l0aCBzdGFuZGFyZApwaHlfaW5p
-dCgpIC8gcGh5X3NldF9tb2RlKCkgLyBwaHlfcG93ZXJfb24oKSBvcGVyYXRpb25zLgoKUmV2aWV3
-ZWQtYnk6IEx1Y2EgQ2VyZXNvbGkgPGx1Y2EuY2VyZXNvbGlAYm9vdGxpbi5jb20+ClNpZ25lZC1v
-ZmYtYnk6IFRow6lvIExlYnJ1biA8dGhlby5sZWJydW5AYm9vdGxpbi5jb20+Ci0tLQogTUFJTlRB
-SU5FUlMgICAgICAgICAgICAgICAgIHwgICAxICsKIGRyaXZlcnMvcGh5L0tjb25maWcgICAgICAg
-ICB8ICAxMyArKysKIGRyaXZlcnMvcGh5L01ha2VmaWxlICAgICAgICB8ICAgMSArCiBkcml2ZXJz
-L3BoeS9waHktZXllcTUtZXRoLmMgfCAyNjEgKysrKysrKysrKysrKysrKysrKysrKysrKysrKysr
-KysrKysrKysrKysrKysKIDQgZmlsZXMgY2hhbmdlZCwgMjc2IGluc2VydGlvbnMoKykKCmRpZmYg
-LS1naXQgYS9NQUlOVEFJTkVSUyBiL01BSU5UQUlORVJTCmluZGV4IDU1YWYwMTUxNzRhNS4uNmJj
-MmFlM2JiZDRiIDEwMDY0NAotLS0gYS9NQUlOVEFJTkVSUworKysgYi9NQUlOVEFJTkVSUwpAQCAt
-MTc4MTIsNiArMTc4MTIsNyBAQCBGOglhcmNoL21pcHMvYm9vdC9kdHMvbW9iaWxleWUvCiBGOglh
-cmNoL21pcHMvY29uZmlncy9leWVxNV9kZWZjb25maWcKIEY6CWFyY2gvbWlwcy9tb2JpbGV5ZS9i
-b2FyZC1lcG01Lml0cy5TCiBGOglkcml2ZXJzL2Nsay9jbGstZXllcS5jCitGOglkcml2ZXJzL3Bo
-eS9waHktZXllcTUtZXRoLmMKIEY6CWRyaXZlcnMvcGluY3RybC9waW5jdHJsLWV5ZXE1LmMKIEY6
-CWRyaXZlcnMvcmVzZXQvcmVzZXQtZXllcS5jCiBGOglpbmNsdWRlL2R0LWJpbmRpbmdzL2Nsb2Nr
-L21vYmlsZXllLGV5ZXE1LWNsay5oCmRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9LY29uZmlnIGIv
-ZHJpdmVycy9waHkvS2NvbmZpZwppbmRleCBjODZlOTAwMjc0NDMuLjJjOWYzMjcyYjMyMCAxMDA2
-NDQKLS0tIGEvZHJpdmVycy9waHkvS2NvbmZpZworKysgYi9kcml2ZXJzL3BoeS9LY29uZmlnCkBA
-IC02Nyw2ICs2NywxOSBAQCBjb25maWcgUEhZX0NBTl9UUkFOU0NFSVZFUgogCSAgZnVuY3Rpb25h
-bCBtb2RlcyB1c2luZyBncGlvcyBhbmQgc2V0cyB0aGUgYXR0cmlidXRlIG1heCBsaW5rCiAJICBy
-YXRlLCBmb3IgQ0FOIGRyaXZlcnMuCiAKK2NvbmZpZyBQSFlfRVlFUTVfRVRICisJdHJpc3RhdGUg
-IkV0aGVybmV0IFBIWSBEcml2ZXIgb24gRXllUTUiCisJZGVwZW5kcyBvbiBPRgorCWRlcGVuZHMg
-b24gTUFDSF9FWUVRNSB8fCBDT01QSUxFX1RFU1QKKwlzZWxlY3QgQVVYSUxJQVJZX0JVUworCXNl
-bGVjdCBHRU5FUklDX1BIWQorCWRlZmF1bHQgTUFDSF9FWUVRNQorCWhlbHAKKwkgIEVuYWJsZSB0
-aGlzIHRvIHN1cHBvcnQgdGhlIEV0aGVybmV0IFBIWSBpbnRlZ3JhdGVkIG9uIEV5ZVE1LgorCSAg
-SXQgc3VwcG9ydHMgYm90aCBSR01JSSBhbmQgU0dNSUkuIFJlZ2lzdGVycyBhcmUgbG9jYXRlZCBp
-biBhCisJICBzaGFyZWQgcmVnaXN0ZXIgcmVnaW9uIGNhbGxlZCBPTEIuIElmIE0gaXMgc2VsZWN0
-ZWQsIHRoZQorCSAgbW9kdWxlIHdpbGwgYmUgY2FsbGVkIHBoeS1leWVxNS1ldGguCisKIGNvbmZp
-ZyBQSFlfR09PR0xFX1VTQgogCXRyaXN0YXRlICJHb29nbGUgVGVuc29yIFNvQyBVU0IgUEhZIGRy
-aXZlciIKIAlzZWxlY3QgR0VORVJJQ19QSFkKZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGh5L01ha2Vm
-aWxlIGIvZHJpdmVycy9waHkvTWFrZWZpbGUKaW5kZXggNGMwNzkyNmJjNDdiLi41NzE3OGMxNzc1
-MmMgMTAwNjQ0Ci0tLSBhL2RyaXZlcnMvcGh5L01ha2VmaWxlCisrKyBiL2RyaXZlcnMvcGh5L01h
-a2VmaWxlCkBAIC05LDYgKzksNyBAQCBvYmotJChDT05GSUdfR0VORVJJQ19QSFkpCQkrPSBwaHkt
-Y29yZS5vCiBvYmotJChDT05GSUdfR0VORVJJQ19QSFlfTUlQSV9EUEhZKQkrPSBwaHktY29yZS1t
-aXBpLWRwaHkubwogb2JqLSQoQ09ORklHX1BIWV9BSVJPSEFfUENJRSkJCSs9IHBoeS1haXJvaGEt
-cGNpZS5vCiBvYmotJChDT05GSUdfUEhZX0NBTl9UUkFOU0NFSVZFUikJKz0gcGh5LWNhbi10cmFu
-c2NlaXZlci5vCitvYmotJChDT05GSUdfUEhZX0VZRVE1X0VUSCkJCSs9IHBoeS1leWVxNS1ldGgu
-bwogb2JqLSQoQ09ORklHX1BIWV9HT09HTEVfVVNCKQkJKz0gcGh5LWdvb2dsZS11c2Iubwogb2Jq
-LSQoQ09ORklHX1BIWV9MUEMxOFhYX1VTQl9PVEcpCSs9IHBoeS1scGMxOHh4LXVzYi1vdGcubwog
-b2JqLSQoQ09ORklHX1BIWV9OWFBfUFROMzIyMikJCSs9IHBoeS1ueHAtcHRuMzIyMi5vCmRpZmYg
-LS1naXQgYS9kcml2ZXJzL3BoeS9waHktZXllcTUtZXRoLmMgYi9kcml2ZXJzL3BoeS9waHktZXll
-cTUtZXRoLmMKbmV3IGZpbGUgbW9kZSAxMDA2NDQKaW5kZXggMDAwMDAwMDAwMDAwLi44ODNhZTgy
-ZDk0MzQKLS0tIC9kZXYvbnVsbAorKysgYi9kcml2ZXJzL3BoeS9waHktZXllcTUtZXRoLmMKQEAg
-LTAsMCArMSwyNjEgQEAKKy8vIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiBHUEwtMi4wLW9ubHkK
-KworI2luY2x1ZGUgPGxpbnV4L2F1eGlsaWFyeV9idXMuaD4KKyNpbmNsdWRlIDxsaW51eC9iaXRm
-aWVsZC5oPgorI2luY2x1ZGUgPGxpbnV4L2JpdHMuaD4KKyNpbmNsdWRlIDxsaW51eC9kZWxheS5o
-PgorI2luY2x1ZGUgPGxpbnV4L2RldmljZS5oPgorI2luY2x1ZGUgPGxpbnV4L2Vyci5oPgorI2lu
-Y2x1ZGUgPGxpbnV4L2Vycm5vLmg+CisjaW5jbHVkZSA8bGludXgvZ2ZwX3R5cGVzLmg+CisjaW5j
-bHVkZSA8bGludXgvaW5pdC5oPgorI2luY2x1ZGUgPGxpbnV4L2lvLmg+CisjaW5jbHVkZSA8bGlu
-dXgvaW9wb2xsLmg+CisjaW5jbHVkZSA8bGludXgvbW9kX2RldmljZXRhYmxlLmg+CisjaW5jbHVk
-ZSA8bGludXgvbW9kdWxlLmg+CisjaW5jbHVkZSA8bGludXgvb2YuaD4KKyNpbmNsdWRlIDxsaW51
-eC9waHkuaD4KKyNpbmNsdWRlIDxsaW51eC9waHkvcGh5Lmg+CisjaW5jbHVkZSA8bGludXgvc2xh
-Yi5oPgorI2luY2x1ZGUgPGxpbnV4L3R5cGVzLmg+CisKKyNkZWZpbmUgRVE1X1BIWV9DT1VOVAky
-CisKKyNkZWZpbmUgRVE1X1BIWTBfR1AJMHgxMjgKKyNkZWZpbmUgRVE1X1BIWTFfR1AJMHgxMmMK
-KyNkZWZpbmUgRVE1X1BIWTBfU0dNSUkJMHgxMzQKKyNkZWZpbmUgRVE1X1BIWTFfU0dNSUkJMHgx
-MzgKKworI2RlZmluZSBFUTVfR1BfVFhfU1dSU1RfRElTCUJJVCgwKQkJLy8gVHggU1cgcmVzZXQK
-KyNkZWZpbmUgRVE1X0dQX1RYX01fQ0xLRQlCSVQoMSkJCS8vIFR4IE0gY2xvY2sgZW5hYmxlCisj
-ZGVmaW5lIEVRNV9HUF9TWVNfU1dSU1RfRElTCUJJVCgyKQkJLy8gU3lzIFNXIHJlc2V0CisjZGVm
-aW5lIEVRNV9HUF9TWVNfTV9DTEtFCUJJVCgzKQkJLy8gU3lzIGNsb2NrIGVuYWJsZQorI2RlZmlu
-ZSBFUTVfR1BfU0dNSUlfTU9ERQlCSVQoNCkJCS8vIFNHTUlJIG1vZGUKKyNkZWZpbmUgRVE1X0dQ
-X1JHTUlJX0RSVglHRU5NQVNLKDgsIDUpCS8vIFJHTUlJIGRyaXZlIHN0cmVuZ3RoCisKKyNkZWZp
-bmUgRVE1X1NHTUlJX1BXUl9FTglCSVQoMCkKKyNkZWZpbmUgRVE1X1NHTUlJX1JTVF9ESVMJQklU
-KDEpCisjZGVmaW5lIEVRNV9TR01JSV9QTExfRU4JQklUKDIpCisjZGVmaW5lIEVRNV9TR01JSV9T
-SUdfREVUX1NXCUJJVCgzKQorI2RlZmluZSBFUTVfU0dNSUlfUFdSX1NUQVRFCUJJVCg0KQorI2Rl
-ZmluZSBFUTVfU0dNSUlfUExMX0FDSwlCSVQoMTgpCisjZGVmaW5lIEVRNV9TR01JSV9QV1JfU1RB
-VEVfQUNLCUdFTk1BU0soMjQsIDIwKQorCitzdHJ1Y3QgZXE1X3BoeV9pbnN0IHsKKwlzdHJ1Y3Qg
-ZGV2aWNlCQkqZGV2OworCXN0cnVjdCBwaHkJCSpwaHk7CisJdm9pZCBfX2lvbWVtCQkqZ3AsICpz
-Z21paTsKKwlwaHlfaW50ZXJmYWNlX3QJCXBoeV9pbnRlcmZhY2U7CisJYm9vbAkJCXNnbWlpX3N1
-cHBvcnQ7Cit9OworCitzdHJ1Y3QgZXE1X3BoeV9wcml2YXRlIHsKKwlzdHJ1Y3QgZXE1X3BoeV9p
-bnN0CXBoeXNbRVE1X1BIWV9DT1VOVF07Cit9OworCitzdGF0aWMgaW50IGVxNV9waHlfZXhpdChz
-dHJ1Y3QgcGh5ICpwaHkpCit7CisJc3RydWN0IGVxNV9waHlfaW5zdCAqaW5zdCA9IHBoeV9nZXRf
-ZHJ2ZGF0YShwaHkpOworCisJd3JpdGVsKDAsIGluc3QtPmdwKTsKKwl3cml0ZWwoMCwgaW5zdC0+
-c2dtaWkpOworCXVkZWxheSg1KTsgLyogc2V0dGxpbmcgdGltZSAqLworCXJldHVybiAwOworfQor
-CitzdGF0aWMgaW50IGVxNV9waHlfaW5pdChzdHJ1Y3QgcGh5ICpwaHkpCit7CisJc3RydWN0IGVx
-NV9waHlfaW5zdCAqaW5zdCA9IHBoeV9nZXRfZHJ2ZGF0YShwaHkpOworCXUzMiByZWc7CisKKwkv
-KgorCSAqIEhhcmR3YXJlIHN0b3BzIGxpc3RlbmluZyB0byBvdXIgaW5zdHJ1Y3Rpb25zIG9uY2Ug
-aXQgaXMgc3RhcnRlZC4KKwkgKiBJdCBtdXN0IGJlIHJlc2V0IHRvIHJlY29uZmlndXJlIGl0Lgor
-CSAqLworCWVxNV9waHlfZXhpdChwaHkpOworCisJcmVnID0gRVE1X0dQX1RYX1NXUlNUX0RJUyB8
-IEVRNV9HUF9UWF9NX0NMS0UgfAorCSAgICAgIEVRNV9HUF9TWVNfU1dSU1RfRElTIHwgRVE1X0dQ
-X1NZU19NX0NMS0UgfAorCSAgICAgIEZJRUxEX1BSRVAoRVE1X0dQX1JHTUlJX0RSViwgMHg5KTsK
-Kwl3cml0ZWwocmVnLCBpbnN0LT5ncCk7CisKKwlyZXR1cm4gMDsKK30KKworc3RhdGljIGludCBl
-cTVfcGh5X3Bvd2VyX29uKHN0cnVjdCBwaHkgKnBoeSkKK3sKKwlzdHJ1Y3QgZXE1X3BoeV9pbnN0
-ICppbnN0ID0gcGh5X2dldF9kcnZkYXRhKHBoeSk7CisJdTMyIHJlZzsKKworCWlmIChpbnN0LT5w
-aHlfaW50ZXJmYWNlID09IFBIWV9JTlRFUkZBQ0VfTU9ERV9TR01JSSkgeworCQl3cml0ZWwocmVh
-ZGwoaW5zdC0+Z3ApIHwgRVE1X0dQX1NHTUlJX01PREUsIGluc3QtPmdwKTsKKworCQlyZWcgPSBF
-UTVfU0dNSUlfUFdSX0VOIHwgRVE1X1NHTUlJX1JTVF9ESVMgfCBFUTVfU0dNSUlfUExMX0VOOwor
-CQl3cml0ZWwocmVnLCBpbnN0LT5zZ21paSk7CisKKwkJaWYgKHJlYWRsX3BvbGxfdGltZW91dChp
-bnN0LT5zZ21paSwgcmVnLAorCQkJCSAgICAgICByZWcgJiBFUTVfU0dNSUlfUExMX0FDSywgMSwg
-MTAwKSkgeworCQkJZGV2X2VycihpbnN0LT5kZXYsICJQTEwgdGltZW91dFxuIik7CisJCQlyZXR1
-cm4gLUVUSU1FRE9VVDsKKwkJfQorCisJCXJlZyA9IHJlYWRsKGluc3QtPnNnbWlpKTsKKwkJcmVn
-IHw9IEVRNV9TR01JSV9QV1JfU1RBVEUgfCBFUTVfU0dNSUlfU0lHX0RFVF9TVzsKKwkJd3JpdGVs
-KHJlZywgaW5zdC0+c2dtaWkpOworCX0gZWxzZSB7CisJCXdyaXRlbChyZWFkbChpbnN0LT5ncCkg
-JiB+RVE1X0dQX1NHTUlJX01PREUsIGluc3QtPmdwKTsKKwkJd3JpdGVsKDAsIGluc3QtPnNnbWlp
-KTsKKwl9CisKKwlyZXR1cm4gMDsKK30KKworc3RhdGljIGludCBlcTVfcGh5X3Bvd2VyX29mZihz
-dHJ1Y3QgcGh5ICpwaHkpCit7CisJc3RydWN0IGVxNV9waHlfaW5zdCAqaW5zdCA9IHBoeV9nZXRf
-ZHJ2ZGF0YShwaHkpOworCisJd3JpdGVsKHJlYWRsKGluc3QtPmdwKSAmIH5FUTVfR1BfU0dNSUlf
-TU9ERSwgaW5zdC0+Z3ApOworCXdyaXRlbCgwLCBpbnN0LT5zZ21paSk7CisKKwlyZXR1cm4gMDsK
-K30KKworc3RhdGljIGludCBlcTVfcGh5X3ZhbGlkYXRlKHN0cnVjdCBwaHkgKnBoeSwgZW51bSBw
-aHlfbW9kZSBtb2RlLCBpbnQgc3VibW9kZSwKKwkJCSAgICB1bmlvbiBwaHlfY29uZmlndXJlX29w
-dHMgKm9wdHMpCit7CisJc3RydWN0IGVxNV9waHlfaW5zdCAqaW5zdCA9IHBoeV9nZXRfZHJ2ZGF0
-YShwaHkpOworCisJaWYgKG1vZGUgIT0gUEhZX01PREVfRVRIRVJORVQpCisJCXJldHVybiAtRUlO
-VkFMOworCisJaWYgKHBoeV9pbnRlcmZhY2VfbW9kZV9pc19yZ21paShzdWJtb2RlKSkKKwkJcmV0
-dXJuIDA7CisKKwlpZiAoaW5zdC0+c2dtaWlfc3VwcG9ydCAmJiBzdWJtb2RlID09IFBIWV9JTlRF
-UkZBQ0VfTU9ERV9TR01JSSkKKwkJcmV0dXJuIDA7CisKKwlyZXR1cm4gLUVJTlZBTDsKK30KKwor
-c3RhdGljIGludCBlcTVfcGh5X3NldF9tb2RlKHN0cnVjdCBwaHkgKnBoeSwgZW51bSBwaHlfbW9k
-ZSBtb2RlLCBpbnQgc3VibW9kZSkKK3sKKwlzdHJ1Y3QgZXE1X3BoeV9pbnN0ICppbnN0ID0gcGh5
-X2dldF9kcnZkYXRhKHBoeSk7CisKKwlpZiAoZXE1X3BoeV92YWxpZGF0ZShwaHksIG1vZGUsIHN1
-Ym1vZGUsIE5VTEwpKQorCQlyZXR1cm4gLUVPUE5PVFNVUFA7CisKKwlpZiAoc3VibW9kZSA9PSBp
-bnN0LT5waHlfaW50ZXJmYWNlKQorCQlyZXR1cm4gMDsKKworCWluc3QtPnBoeV9pbnRlcmZhY2Ug
-PSBzdWJtb2RlOworCisJaWYgKHBoeS0+cG93ZXJfY291bnQpIHsKKwkJZXE1X3BoeV9pbml0KHBo
-eSk7CisJCXJldHVybiBlcTVfcGh5X3Bvd2VyX29uKHBoeSk7CisJfQorCisJcmV0dXJuIDA7Cit9
-CisKK3N0YXRpYyBjb25zdCBzdHJ1Y3QgcGh5X29wcyBlcTVfcGh5X29wcyA9IHsKKwkuaW5pdAkJ
-PSBlcTVfcGh5X2luaXQsCisJLmV4aXQJCT0gZXE1X3BoeV9leGl0LAorCS5wb3dlcl9vbgk9IGVx
-NV9waHlfcG93ZXJfb24sCisJLnBvd2VyX29mZgk9IGVxNV9waHlfcG93ZXJfb2ZmLAorCS5zZXRf
-bW9kZQk9IGVxNV9waHlfc2V0X21vZGUsCisJLnZhbGlkYXRlCT0gZXE1X3BoeV92YWxpZGF0ZSwK
-K307CisKK3N0YXRpYyBzdHJ1Y3QgcGh5ICplcTVfcGh5X3hsYXRlKHN0cnVjdCBkZXZpY2UgKmRl
-diwKKwkJCQkgY29uc3Qgc3RydWN0IG9mX3BoYW5kbGVfYXJncyAqYXJncykKK3sKKwlzdHJ1Y3Qg
-ZXE1X3BoeV9wcml2YXRlICpwcml2ID0gZGV2X2dldF9kcnZkYXRhKGRldik7CisKKwlpZiAoYXJn
-cy0+YXJnc19jb3VudCAhPSAxIHx8IGFyZ3MtPmFyZ3NbMF0gPj0gRVE1X1BIWV9DT1VOVCkKKwkJ
-cmV0dXJuIEVSUl9QVFIoLUVJTlZBTCk7CisKKwlyZXR1cm4gcHJpdi0+cGh5c1thcmdzLT5hcmdz
-WzBdXS5waHk7Cit9CisKK3N0YXRpYyBpbnQgZXE1X3BoeV9wcm9iZV9waHkoc3RydWN0IGRldmlj
-ZSAqZGV2LCBzdHJ1Y3QgZXE1X3BoeV9wcml2YXRlICpwcml2LAorCQkJICAgICB1bnNpZ25lZCBp
-bnQgaW5kZXgsIHZvaWQgX19pb21lbSAqYmFzZSwKKwkJCSAgICAgdW5zaWduZWQgaW50IGdwLCB1
-bnNpZ25lZCBpbnQgc2dtaWksCisJCQkgICAgIGJvb2wgc2dtaWlfc3VwcG9ydCkKK3sKKwlzdHJ1
-Y3QgZXE1X3BoeV9pbnN0ICppbnN0ID0gJnByaXYtPnBoeXNbaW5kZXhdOworCXN0cnVjdCBwaHkg
-KnBoeTsKKworCXBoeSA9IGRldm1fcGh5X2NyZWF0ZShkZXYsIGRldi0+b2Zfbm9kZSwgJmVxNV9w
-aHlfb3BzKTsKKwlpZiAoSVNfRVJSKHBoeSkpCisJCXJldHVybiBkZXZfZXJyX3Byb2JlKGRldiwg
-UFRSX0VSUihwaHkpLAorCQkJCSAgICAgImZhaWxlZCB0byBjcmVhdGUgUEhZICV1XG4iLCBpbmRl
-eCk7CisKKwlpbnN0LT5kZXYgPSBkZXY7CisJaW5zdC0+cGh5ID0gcGh5OworCWluc3QtPmdwID0g
-YmFzZSArIGdwOworCWluc3QtPnNnbWlpID0gYmFzZSArIHNnbWlpOworCWluc3QtPnNnbWlpX3N1
-cHBvcnQgPSBzZ21paV9zdXBwb3J0OworCXBoeV9zZXRfZHJ2ZGF0YShwaHksIGluc3QpOworCisJ
-LyoKKwkgKiBJbml0IGluc3QtPnBoeV9pbnRlcmZhY2UgYmFzZWQgb24gcHJvYmUgaGFyZHdhcmUg
-c3RhdGUsIGFsbG93aW5nCisJICogY29uc3VtZXJzIHRvIHBvd2VyIHVzIG9uIHdpdGhvdXQgZmly
-c3Qgc2V0dGluZyB0aGUgbW9kZS4KKwkgKi8KKwlpZiAoc2dtaWlfc3VwcG9ydCAmJiAocmVhZGwo
-aW5zdC0+Z3ApICYgRVE1X0dQX1NHTUlJX01PREUpKQorCQlpbnN0LT5waHlfaW50ZXJmYWNlID0g
-UEhZX0lOVEVSRkFDRV9NT0RFX1NHTUlJOworCWVsc2UKKwkJaW5zdC0+cGh5X2ludGVyZmFjZSA9
-IFBIWV9JTlRFUkZBQ0VfTU9ERV9SR01JSTsKKworCXJldHVybiAwOworfQorCitzdGF0aWMgaW50
-IGVxNV9waHlfcHJvYmUoc3RydWN0IGF1eGlsaWFyeV9kZXZpY2UgKmFkZXYsCisJCQkgY29uc3Qg
-c3RydWN0IGF1eGlsaWFyeV9kZXZpY2VfaWQgKmlkKQoreworCXN0cnVjdCBkZXZpY2UgKmRldiA9
-ICZhZGV2LT5kZXY7CisJc3RydWN0IHBoeV9wcm92aWRlciAqcHJvdmlkZXI7CisJc3RydWN0IGVx
-NV9waHlfcHJpdmF0ZSAqcHJpdjsKKwl2b2lkIF9faW9tZW0gKmJhc2U7CisJaW50IHJldDsKKwor
-CXByaXYgPSBkZXZtX2t6YWxsb2MoZGV2LCBzaXplb2YoKnByaXYpLCBHRlBfS0VSTkVMKTsKKwlp
-ZiAoIXByaXYpCisJCXJldHVybiAtRU5PTUVNOworCisJZGV2X3NldF9kcnZkYXRhKGRldiwgcHJp
-dik7CisKKwliYXNlID0gZGV2X2dldF9wbGF0ZGF0YShkZXYpOworCisJcmV0ID0gZXE1X3BoeV9w
-cm9iZV9waHkoZGV2LCBwcml2LCAwLCBiYXNlLCBFUTVfUEhZMF9HUCwKKwkJCQlFUTVfUEhZMF9T
-R01JSSwgdHJ1ZSk7CisJaWYgKHJldCkKKwkJcmV0dXJuIHJldDsKKworCXJldCA9IGVxNV9waHlf
-cHJvYmVfcGh5KGRldiwgcHJpdiwgMSwgYmFzZSwgRVE1X1BIWTFfR1AsCisJCQkJRVE1X1BIWTFf
-U0dNSUksIGZhbHNlKTsKKwlpZiAocmV0KQorCQlyZXR1cm4gcmV0OworCisJcHJvdmlkZXIgPSBk
-ZXZtX29mX3BoeV9wcm92aWRlcl9yZWdpc3RlcihkZXYsIGVxNV9waHlfeGxhdGUpOworCWlmIChJ
-U19FUlIocHJvdmlkZXIpKQorCQlyZXR1cm4gZGV2X2Vycl9wcm9iZShkZXYsIFBUUl9FUlIocHJv
-dmlkZXIpLAorCQkJCSAgICAgInJlZ2lzdGVyaW5nIHByb3ZpZGVyIGZhaWxlZFxuIik7CisKKwly
-ZXR1cm4gMDsKK30KKworc3RhdGljIGNvbnN0IHN0cnVjdCBhdXhpbGlhcnlfZGV2aWNlX2lkIGVx
-NV9waHlfaWRfdGFibGVbXSA9IHsKKwl7IC5uYW1lID0gImNsa19leWVxLnBoeSIgfSwKKwl7fQor
-fTsKK01PRFVMRV9ERVZJQ0VfVEFCTEUoYXV4aWxpYXJ5LCBlcTVfcGh5X2lkX3RhYmxlKTsKKwor
-c3RhdGljIHN0cnVjdCBhdXhpbGlhcnlfZHJpdmVyIGVxNV9waHlfZHJpdmVyID0geworCS5wcm9i
-ZSA9IGVxNV9waHlfcHJvYmUsCisJLmlkX3RhYmxlID0gZXE1X3BoeV9pZF90YWJsZSwKK307Citt
-b2R1bGVfYXV4aWxpYXJ5X2RyaXZlcihlcTVfcGh5X2RyaXZlcik7CisKK01PRFVMRV9ERVNDUklQ
-VElPTigiRXllUTUgRXRoZXJuZXQgUEhZIGRyaXZlciIpOworTU9EVUxFX0FVVEhPUigiVGjDqW8g
-TGVicnVuIDx0aGVvLmxlYnJ1bkBib290bGluLmNvbT4iKTsKK01PRFVMRV9MSUNFTlNFKCJHUEwi
-KTsKCi0tIAoyLjUzLjAKCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlz
-dHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
-aW5mby9saW51eC1waHkK
+On Tue, Feb 24, 2026 at 12:38:48PM -0800, Dmitry Torokhov wrote:
+> > Obviously it benefits the maintainer/reviewer first and foremost. If you
+> > don't make the API change unmissable, drivers expecting the old convention
+> > will eventually creep their way into the mainline kernel. Why put avoidable
+> > pressure on reviewers watching out for things like this for years to come,
+> > when you can force downstream to notice and adapt (OR not make the
+> > change in the first place). Note that downstream means "API consumers
+> > invisible to you, the API changer", not only "hopelessly un-upstreamable
+> > drivers".
+> 
+> Well, this is whole "stable kernel API" argument. Rules of lifetime
+> around objects may change and the kernel needs to adapt.
+
+Actually it's not the "stable kernel API" argument.
+
+I just said that if the of_xlate() callbacks currently need to do:
+
+	return phy;
+
+and you propose a new scheme where they have to do:
+
+	get_device(&phy->dev);
+	return phy;
+
+, then you are creating the possibility for:
+
+- the API change to be missed by anyone who hasn't been _actively_
+  monitoring you, because the old code will still compile just as well,
+  and won't show any superficial runtime problem either
+- the reviewers and maintainers to not notice that patches were
+  developed according to the old convention
+
+and such patches may even get accepted, but be buggy.
+
+I actually don't care whether the kernel API is stable or not. But
+if you change it, make it obvious it has changed.
+
+> Anyway, this is your subsystem so you get to decide.
+
+Not my subsystem. Sorry if I gave you the wrong impression.
+
+> > > > But there are more important loose ends still.
+> > > > 
+> > > > I mentioned that "zombie" device. We've solved the memory safety issue,
+> > > > but it's possible for consumers to hold onto a phy whose provider has
+> > > > disappeared. The refcount of &phy->dev hasn't dropped to 0, so
+> > > > technically it's a valid object, but from PHY API perspective, it's
+> > > > still possible to call phy_init(), phy_power_on() and friends on this
+> > > > PHY, and the Generic PHY core will be happy to further call into the
+> > > > phy->ops->init(), phy->ops->power_on() etc. But the driver has unbound,
+> > > > so it should really be left alone.
+> > > > 
+> > > > If we fix the UAF but leave the zombie PHY problem, we've effectively
+> > > > done nothing but silence static analysis checkers, while the code path
+> > > > where the PHY provider unbinds effectively remains treated as poorly as
+> > > > before, just moving the crashes to a different place.
+> > > > 
+> > > > I suspect what needs to be done here is to introduce a "bool dead" or
+> > > > similar, which is to be set from phy_destroy() and checked from every
+> > > > API call. The idea is that API functions on zombie PHYs should fail
+> > > > without calling into their driver. I **suppose** that
+> > > > try_module_get(phy->ops->owner) "tried" to avoid this situation, but
+> > > > it just protects against module removal, not against "echo device >
+> > > > /sys/bus/.../unbind". So it's absolutely incomplete and easily bypassable.
+> > > 
+> > > I think this is a problem common to many kernel subsystems, where there
+> > > are devices that are vital for other devices to function, but are not
+> > > parents of said devices. Think about regulators or clocks and such.
+> > > In many such cases even validating at API level is not sufficient,
+> > > because if you enable a clock you typically keep it running at least for
+> > > a while, if not for entire duration of device being bound to a driver.
+> > > If that clock goes away the device will break even though you are not
+> > > calling any clock APIs at that particular time.
+> > > 
+> > > We need some kind of revocation mechanism to signal consumers that
+> > > providers they rely upon are going away.
+> > 
+> > Yeah, this gave me pause.
+> > 
+> > When you unbind a Generic PHY you can kind of expect that the data path
+> > it affects to not work. But you'd sort of expect it to start working
+> > again when you rebind the PHY driver.
+> > 
+> > That will not be the case, though.
+> > 
+> > The problem, simply put, is that the struct phy that the consumer has
+> > will be different from the second struct phy that the provider registers
+> > when it rebinds. Using the stale struct phy, we cannot reach the phy_ops
+> > of the new provider.
+> > 
+> > If we implement something similar to what Bartosz Golaszewski suggested
+> > here:
+> > https://lpc.events/event/17/contributions/1627/
+> 
+> There is also "revocable" from Tzung-Bi Shih.
+
+OK. Thanks for the heads up.
+
+> > aka decouple the struct phy given to the consumer from the struct phy
+> > provided by the provider, and perform a PHY lookup during each
+> > phy_init() / phy_power_up() / etc etc operation;
+> > 
+> > we are kinda able to:
+> > - match the consumer phy to the provider phy and forward the call to
+> >   phy_ops, if the provider is present (or rebound)
+> > - return -ENODEV instead of calling into phy_ops, if the provider is not
+> >   present
+> > 
+> > But there's still one big gap.
+> > 
+> > PHY consumers are driving the PHY through a state machine when they do
+> > phy_init -> phy_power_up() -> phy_set_mode() -> [ phy_configure()...].
+> > When the provider unbinds and then rebinds, that state is lost. But the
+> > consumer has no idea. It knows it is in a state where it called
+> > phy_power_up(), and next thing it knows, the power_count is 1 and it
+> > must call phy_power_down().
+> > 
+> > The Generic PHY core cannot actually replay the entire state in a
+> > meaningful way so as to make the provider reprobing completely
+> > transparent (think of phy_calibrate() calls).
+> > 
+> > So I guess we're looking at what Bartosz refers to as a notification
+> > side-channel that the PHY provider is going away.
+> > 
+> > At least, for drivers that care in a meaningful way. For drivers that
+> > don't care about such complexity, there seems to be a simpler answer:
+> > device_link_add(DL_FLAG_AUTOREMOVE_CONSUMER).
+> 
+> Does DL_FLAG_AUTOREMOVE_CONSUMER result in forceful unbinding of the
+> consumer when provider goes away? And if it happens does it happen in
+> the right order?
+
+If "the right order" means "consumer before provider", yes.
+
+> > I can also answer why device links with "autoremove consumer" are not a
+> > universal answer. This is because the consumer itself may be a
+> > multi-port network switch (single device). If you unbind the Generic PHY
+> > driver (retimer, SerDes PHY) from port 3, you don't want ports 0, 1 and
+> > 2 to also disappear from the kernel. You need the more complex PHY
+> > provider disappearance notification which does something more localized
+> > (calls phylink_stop(), I don't know).
+> 
+> Aren't the ports represented as individual devices with their own state
+> and lifetime?
+
+Nope. A single platform_device/pci_device/spi_device/i2c_client/mdio_device/etc
+represents an entire switch, and its driver will call register_netdevice()
+multiple times, once per port. This is the switchdev model as per
+Documentation/networking/switchdev.rst. Technically each netdev has its
+own "class" device (for /sys/class/net/) but it's not a "bus" device,
+doesn't have a bound driver, and their parent is the aforementioned
+platform_device/etc.
+
+> > I can say right off the bat that this is too complicated for me to even
+> > think about in more detail than that, at the moment. I would be quite
+> > happy if it's possible to unbind the PHY driver without the possibility
+> > to rebind it, as a first step.
+> 
+> Yes, this is something that is not phy specific and I think should be
+> solved at driver core (or at least driver core should provide subsystems
+> tools to solve this).
+
+Some subsystems I'm slightly more familiar with do have mechanisms to
+handle this.
+
+Networking has (a pretty complicated) netdev_wait_allrefs_any(), which
+waits for all references to a net_device to be dropped before fully
+unregistering it (these are net_device :: dev_refcnt, different from
+struct device references). Drivers are supposed to monitor the netdev
+notifier call chain for the NETDEV_UNREGISTER event, and let go of the
+reference.
+
+Sadly I don't know enough about the Generic PHY subsystem to be making
+generalizations with any claim of correctness, but I suspect the
+majority of consumers are in a 1:1 relationship with the PHY provider,
+and would be happy with the cost/benefit ratio given by the
+device_link(DL_FLAG_AUTOREMOVE_CONSUMER) behaviour. Only a select few
+would care to continue their lifetime in a PHY-less environment
+(normal operation on other ports / degraded on the PHY-less port,
+reestablish connection to provider when it comes back, etc).
+
+I'm not sure that there exists a space for "revocable" in Generic PHY
+between the above two options. Only if the device link idea doesn't work
+out, for some reason I'm not seeing. I'll have to put this thought in
+the background and let it simmer for a while.
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
