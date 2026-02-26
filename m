@@ -4,60 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 81038FC5906
-	for <linux-phy@archiver.kernel.org>; Thu, 26 Feb 2026 07:37:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 61B90FC5910
+	for <linux-phy@archiver.kernel.org>; Thu, 26 Feb 2026 08:41:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cyEYS7GsUOlZHQOVcfWXmpDTU68CPO/yXa++PmdzAuc=; b=u3kaT5Jo+hZc7r
-	guzOGLTqiZOSnlBqQqF9Bpe3uvn9H4TeSWO2a9KIhSwO0hYzCAtqVRkGIh2d75GkcpQkKVMLesSeH
-	2Hir7I/MXAm4Lk1YW7WLrN7yaA25HB8TvR5amyZg8PBxQciXg0iQI+iqfLFdcu6UW6UYF+fr7v+Dv
-	wZ9Xg3JpynhQUIyhRazqfitx5Qw7QkdIFhAsOXwXcHYNVB+6vtCmp2PdST3TnddK9dLhcKNYmtLCo
-	1UiVvmeYxZFsf1Z6FodZ7iZPyQglKs0BVlN4TgLDyBYl1rRDICRJKnJ2eV760CtabrMD29epTWih0
-	gMEa+f+XL4TYRKW/O5mg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=yRYRM20S40GZxCUwvP6K3RPuMGBr+DROCTZ+S0APm80=; b=d3+Xb1tNQqUTjq
+	X7/S940u+GLMHNCq14XhFQDrh1boVzCPxtelkB9Q6czlxQ8NQUoNbNXnzxQe+HFxT5KiXppyBnbPk
+	yrJI3JZcF6YvpvPPjXMtYW6FM60vWNKFTasmgBF8l5IUNPY/e3vvD3rJtvJYYeq9gWkyvaLlD6VeT
+	Y+u44++mBn5qy3YRHFRlYkiyeFrSGz+o5/AYB78lepVa6AUi5suzTlIBHrxC/TpJo7CV2Oi3OXrJY
+	nT4QTIxvT8K3DhFG/IEpmoIiFqlgIDhN6Xr2Fhb77icxY1TxnhntZzsDXLJbq7YtOkJH279GSEcUZ
+	fgAHAWm5lFfftEbMT96g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vvVw7-00000005aN0-0SE3;
-	Thu, 26 Feb 2026 07:37:27 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vvWvd-00000005fcg-3man;
+	Thu, 26 Feb 2026 08:41:01 +0000
+Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vvVw4-00000005aMu-3x8b
-	for linux-phy@lists.infradead.org;
-	Thu, 26 Feb 2026 07:37:25 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 0527D60054;
-	Thu, 26 Feb 2026 07:37:24 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 257A7C19422;
-	Thu, 26 Feb 2026 07:37:22 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1772091443;
-	bh=H/aL3sXj9Y0p9O6xgoUv9PCYkdU+dBRZTIFX6KiQBtA=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=vMXm4rFS2SmBCVooAjw2ilkamKIEtSNNI3taOlPyPecAUjNIr5uf7EVqQaxg8emI6
-	 rALMvOBJTqL18fsmX6ZXu+XKIfXyBpHRSUIdAXtKu1xYEmISn5D1sI1aKl9ll97f2C
-	 QIrj9+dSExNONoOtByXkDtcggQn/3LNvICunPVOyR1X5IGUCUGKEVLVGv+It5b2Bps
-	 hCqGvBDCngyIexX/GYUIv1T37betyBmNvWc7ytaUkyeiPbYctit4ixa/gZnVcvCmB+
-	 ljf1KyNOuN8tv0eI0VsjLd0shIo/SmjBKfb5g0Bs41sAhmx+JgjBiCMPTmBYAotg5r
-	 /f5Sx/NEktp+Q==
-Date: Thu, 26 Feb 2026 08:37:21 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Bryan O'Donoghue <bod@kernel.org>, 
-	Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	linux-media@vger.kernel.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2 1/2] dt-bindings: phy: qcom: Add CSI2 C-PHY/DPHY schema
-Message-ID: <20260226-carmine-cockle-of-prosperity-b6baf2@quoll>
-References: <20260225-x1e-csi2-phy-v2-0-7756edb67ea9@linaro.org>
- <20260225-x1e-csi2-phy-v2-1-7756edb67ea9@linaro.org>
+	id 1vvWvb-00000005fbh-1D2Z;
+	Thu, 26 Feb 2026 08:41:00 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=armlinux.org.uk; s=pandora-2019; h=Sender:Content-Type:MIME-Version:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
+	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=D0UK8pO0Y/9nQsoDE0tyGVTLdOq02b88CjLRoni4BOQ=; b=1Bp6Y3IGbSwNvyppebpkuvPEaX
+	VWLv5IInxluMG72A+6QWPwH2XWacIu8hpm4Xxm9zuoxPp/7hZ1nTsKGfUnyaMRr+ChkhsXXr8Fbto
+	oEPw/61oIKFQY4hj8bsfUimHYMWUKn+rF/teUCxA+5t7MVRSFjpStIy1JOMkXOrPps0qB2GIvfTQx
+	S6O1NyFcGVHpieWfCcsQ72kg/towpYrf/+m6HylAnJ8JKGhaaubRHVQR3qMOMKKkmv2UGN9GzIXjh
+	V/6cCJjfivellcTQNzg5JR7mSism+CYasNv9WQmsXaTVTXUGE8WC54vmOxjcNZtRIIDPGBPyqq3yO
+	6aCsHUWw==;
+Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:38344)
+	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.98.2)
+	(envelope-from <linux@armlinux.org.uk>)
+	id 1vvWvT-000000007bk-2HjU;
+	Thu, 26 Feb 2026 08:40:51 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.98.2)
+	(envelope-from <linux@shell.armlinux.org.uk>)
+	id 1vvWvP-000000001pd-25Ws;
+	Thu, 26 Feb 2026 08:40:47 +0000
+Date: Thu, 26 Feb 2026 08:40:47 +0000
+From: "Russell King (Oracle)" <linux@armlinux.org.uk>
+To: Andrew Lunn <andrew@lunn.ch>
+Cc: Alexandre Torgue <alexandre.torgue@foss.st.com>,
+	Andrew Lunn <andrew+netdev@lunn.ch>,
+	"David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>,
+	linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-stm32@st-md-mailman.stormreply.com,
+	Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>, netdev@vger.kernel.org,
+	Paolo Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>
+Subject: [PATCH RESEND net-next 0/9] net: stmmac: qcom-ethqos: further serdes
+ reorganisation
+Message-ID: <aaAHD_wWv2xCKntW@shell.armlinux.org.uk>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260225-x1e-csi2-phy-v2-1-7756edb67ea9@linaro.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260226_004059_320688_7DE48F50 
+X-CRM114-Status: GOOD (  10.66  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,41 +86,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Feb 25, 2026 at 02:59:12PM +0000, Bryan O'Donoghue wrote:
-> Add a base schema initially compatible with x1e80100 to describe MIPI CSI2
-> PHY devices.
-> 
-> The hardware can support both C-PHY and D-PHY modes. The CSIPHY devices
-> have their own pinouts on the SoC as well as their own individual voltage
-> rails.
-> 
-> The need to model voltage rails on a per-PHY basis leads us to define
-> CSIPHY devices as individual nodes.
-> 
-> Two nice outcomes in terms of schema and DT arise from this change.
-> 
-> 1. The ability to define on a per-PHY basis voltage rails.
-> 2. The ability to require those voltage.
-> 
-> We have had a complete bodge upstream for this where a single set of
-> voltage rail for all CSIPHYs has been buried inside of CAMSS.
-> 
-> Much like the I2C bus which is dedicated to Camera sensors - the CCI bus in
-> CAMSS parlance, the CSIPHY devices should be individually modelled.
-> 
-> Signed-off-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+This is part 2 of the qcom-ethqos series, part 1 has now been merged.
 
-The entire point of separate CSI PHY was to change new devices. That's
-why I was postponing TWO new bindings. There is little point in change
-existing bindings, it's just a lot of work with little benefit.
+This part of the series focuses on the generic PHY driver, but these
+changes have dependencies on the ethernet driver, hence why
+it will need to go via net-next. Furthermore, subsequent changes
+depend on these patches.
 
-And the beauty is that you did not even had to do the work yourself,
-because the contributors of new device would need to come with CSI PHY
-split.
+The underlying ideas here are:
 
-Best regards,
-Krzysztof
+- get rid of the driver using phy_set_speed() with SPEED_1000 and
+  SPEED_2500 which makes no sense for an ethernet SerDes due to the
+  PCS 8B10B data encoding, which inflates the data rate at the SerDes
+  compared to the MAC. This is replaced with phy_set_mode_ext().
+- allow phy_power_on() / phy_set_mode*() to be called in any order.
 
+Mohd has tested this series, but it would be great to get acks/reviews
+from the generic PHY maintainers.
+
+ .../ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c    | 31 +++--------
+ drivers/phy/qualcomm/phy-qcom-sgmii-eth.c          | 62 +++++++++++++++++-----
+ 2 files changed, 57 insertions(+), 36 deletions(-)
+
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTP is here! 80Mbps down 10Mbps up. Decent connectivity at last!
 
 -- 
 linux-phy mailing list
