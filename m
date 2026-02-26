@@ -4,101 +4,193 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E8215FD45F9
-	for <linux-phy@archiver.kernel.org>; Wed, 25 Feb 2026 23:50:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DC16CFD4609
+	for <linux-phy@archiver.kernel.org>; Thu, 26 Feb 2026 03:46:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:CC:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w8EPP+o0AZSSea40jWJ23Fz830pEvu6nKNC4HkpmVpQ=; b=S253/Vawu30+h8
-	CqdT9GCnGthwpJOvkNyru6VQeEKcTdTmDIdzEO3aRIG1Pgek53osRcVvM3j6YNp+l1U2hr0FqWE7D
-	erc6OIXy1wYbP4T5V8iuj2ZOyCTqw27VHm7w+l4+sGM8rtvGK3L81gYU+et1His2HfGUWd6L5nUSP
-	QhVJZ32MMIqtNjFehj5Hab7lNqnmXSonCqvMh/sCgj/BS/4rERCuRjWJguRiXF28sglfIxIRGThfB
-	qc4bYZp/YhoaqeS+zUGTYtjbFNSQ5N13KUodka1QMuEPvF6ek9hpv7n6N/bimYaMMGYUCElAB2cBR
-	oQgTncu78PgJ6QRiWoqw==;
+	List-Owner; bh=pXKP1+iJgfdoLUAm4TK/q4LeW4y0dA/GvXWpHf/4ibQ=; b=dWvu0Fosobt9il
+	Gh6Y6oc1ivOskg+5yLsqo83bI0ZNRh89GLM61OakFp35W1YDy0m2fmogkPOskyrUcZD7lEciu7yeD
+	G7BuZnQY0ZZEl3oUT+0bMhxCBVCSNdhv76aULw4mqq1EI0zSP8+H+o8bECbp6G7Me1UMpFzy3W+9d
+	fdG//DItO+u6cGP40p1uk9iJsSzxWYTodY86oGXpGqrkxMlw+sQJuEUJjJtgvZwSr586ChlQz2lLS
+	4Dm+x8+UNrgQTS1+1SI09vhD3SmZGHRffB2kEY0Dx1ZzJFqCFmhO6v6Rz49Z2uoFOGThxo1EBghzW
+	m7hbZa64NdL0SCA3XFQg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vvOeZ-000000055nI-1x7j;
-	Wed, 25 Feb 2026 23:50:51 +0000
-Received: from mail-wr1-x432.google.com ([2a00:1450:4864:20::432])
+	id 1vvSKq-00000005L7D-2Ra8;
+	Thu, 26 Feb 2026 03:46:44 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vvOeW-000000055mw-3nM3
-	for linux-phy@lists.infradead.org;
-	Wed, 25 Feb 2026 23:50:50 +0000
-Received: by mail-wr1-x432.google.com with SMTP id ffacd0b85a97d-4376bd50b01so6764f8f.3
-        for <linux-phy@lists.infradead.org>; Wed, 25 Feb 2026 15:50:48 -0800 (PST)
+	id 1vvSKm-00000005L5q-45iP;
+	Thu, 26 Feb 2026 03:46:42 +0000
+X-UUID: bf686c0012c511f1a16f0188aa809bee-20260225
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
+	h=MIME-Version:Content-Transfer-Encoding:Content-ID:Content-Type:In-Reply-To:References:Message-ID:Date:Subject:CC:To:From; bh=Aa+EV+C/EOAaw5inlLZbtYT34zh+Dbg13RgSHRIIarY=;
+	b=qHpi23xfJShQm2S24dMDvRIcQC1+VRV2KYmocF77uF50YO2qUCW9KAgYHR1SK+mDxbNaYJC8GUNDfZRuUTYjhRtkxUxX2Qoa4YyV0ISp7L3yavXr4mTmGJmd7jFFkXIVFZ6W+ULiA5SSai8mwtjWYi7bIoljfbAxAMYxrYYky24=;
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.3.11,REQID:f001ac2e-4fbb-4b5c-bc8d-2b2787b3625d,IP:0,U
+	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
+	release,TS:0
+X-CID-META: VersionHash:89c9d04,CLOUDID:2555487b-8c8a-4fc4-88c0-3556e7711556,B
+	ulkID:nil,BulkQuantity:0,Recheck:0,SF:80|81|82|83|102|110|111|836|888|898,
+	TC:-5,Content:0|15|50,EDM:-3,IP:nil,URL:99|1,File:130,RT:0,Bulk:nil,QS:nil
+	,BEC:-1,COL:0,OSI:0,OSA:0,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
+X-CID-BVR: 2,SSN|SDN
+X-CID-BAS: 2,SSN|SDN,0,_
+X-CID-FACTOR: TF_CID_SPAM_SNR,TF_CID_SPAM_ULS
+X-CID-RHF: D41D8CD98F00B204E9800998ECF8427E
+X-UUID: bf686c0012c511f1a16f0188aa809bee-20260225
+Received: from mtkmbs11n2.mediatek.inc [(172.21.101.187)] by mailgw01.mediatek.com
+	(envelope-from <peter.wang@mediatek.com>)
+	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
+	with ESMTP id 1693500325; Wed, 25 Feb 2026 20:46:35 -0700
+Received: from mtkmbs10n1.mediatek.inc (172.21.101.34) by
+ MTKMBS09N1.mediatek.inc (172.21.101.35) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.29; Thu, 26 Feb 2026 11:46:32 +0800
+Received: from SI4PR04CU002.outbound.protection.outlook.com (172.21.101.237)
+ by mtkmbs10n1.mediatek.inc (172.21.101.34) with Microsoft SMTP Server id
+ 15.2.2562.29 via Frontend Transport; Thu, 26 Feb 2026 11:46:32 +0800
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=oNIv73Kk/MgVhol83tXTLouef3JfstEnHOPL1Sv0LM+SJJvP520z0Kee/Ks1JXDp+PrgIZ/f4VVg07Wc86cqPx9IID9W72fF5DgNLl6avcLuJ50X1ALagNjmST1uZGHy3Kx4NpAhgZIf78vHUDd5vmZzrjczQ7zHvGf9uuOquuPF7enq7+ShEDxtwBiuthzuZYLk7gqHYiAoUBkyBIozrDnQbsMCaz3xv26exi3fI0S9ZxXrFUivAqj/d3cIpq2NgMJMmgdRi3ADFfhNy+6Sqd4p2bGdqotHSvhayp26i3tCIk5SJWJUtddf9R2P7LrM30xjLptQ3Khj4hc9AU9suw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=Aa+EV+C/EOAaw5inlLZbtYT34zh+Dbg13RgSHRIIarY=;
+ b=gujjdNnfCbs8oVa4IR9RnxYEiM+BIP9sZ4VAo9Q9T7JwTcZy+ty03hx1QVMuVCfU69d0bDNEq1KP/HWIXIiMAvKUMEFkmivxeYQszvrYdzv/shgjiBySlT2g1jda6UHlJoAMPufLPMnzF5DhHcZPr7Am+mulZUGBOiGfQk3sWh74HnJOADsDUOhQ4nFX5xM6ECZzblaBJFXjd91u1mptPm4C3Cn7du7/1p7ZYiewoVvqcB+F7EbBc5MhOV+RA+1fkwS9X+uBNnIhW+oM12mv/WqtZocsuRxmTPgXaxhCbU7QqZa01DYE0XjuXBNsGYj8+xL29AhNmvRCH8hZd1mtaQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=mediatek.com; dmarc=pass action=none header.from=mediatek.com;
+ dkim=pass header.d=mediatek.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1772063447; x=1772668247; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=JQVWTH3HPm2HzGiE+EBHhvF4y29uhoc9WxfC2q8gjvI=;
-        b=RKRHb0mT+fOsMhYZ8gGM4KBoF4gGgK9xPpdyZLzpUuNBvLPOaRi6f/j04BSdokGzp/
-         4JVvBeK/2VtbwuQIUpYtHFlZnAOcFEUdj2pvR5eoB7Q6kFxSFQzvAWDONEMyi1luwPMr
-         SBIJR/h8/6CBH/EOvTzRdp3P0zXSXVkU/+fJLklB92RvY7Y1/KqUhGUh+akFr1MCn++C
-         WgUaXarG+qqEC2iFFdKgpApESsudcWRg4hMjnHiSjkoAfVoU3TNKnUr4z9qMQBk2rMYI
-         CKKYmfVAersfcAi02OGM62qtyzQAcKHk9CsYzfHhNDixFcaZA6PsZ/merjGBgAmeuGTl
-         YyjQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1772063447; x=1772668247;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=JQVWTH3HPm2HzGiE+EBHhvF4y29uhoc9WxfC2q8gjvI=;
-        b=nEHX2HG+BoHLFvs9YXu8nwFKEhT9rTmE9SBF9HDIOSbM/OpDP1+5thxf9FByWbn2uT
-         jqYCHl88Z21AYVWsNx68yNXFo3ofK1yxpp4uXDSUwKgv4rCFuvN1+c2uHLvxUWxvcnQK
-         efkPEiAlIoSYbMqdO2MKqMUhBskfsMEQtPYoMkstvYmhgkZT1sZpZWnnVXGGyvuNo8of
-         DT3KDwGAKPJizcRrrnVHvSEhCOk6Bwk42OsEU294FX8HeIYKuR5hdVQxwXB4d6xzBWXA
-         L5/xsNdzyY6c6Z/E/QkjrrCyUupxOidvLPKp7FmBWTXGl/Wb6ID+9FjzlqEQwsNriTDx
-         jsYw==
-X-Forwarded-Encrypted: i=1; AJvYcCVXRBpzAn7b7XBO5+kgZBryFlDOoyj8QOP710a8wsqcQ5Sl66rXotsyrzkqInN9Jqy0l7YFbQ+3tWs=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwRqA7IyiPHHj9IHAITCFSLCaRL/RsfxV3Z/4eugb89k9MWZsnQ
-	JzA4cIaY5oJ6w8TapCVEJuw2iQwemfE83MKq6ya8d3FklFk7YGUQjYul
-X-Gm-Gg: ATEYQzwE4f/OA2Uzs80taYv1RjJ9B+Um6mXmrSbv5kBjEj0VxQXvzoCNjK+VkM4MTla
-	7zG602jMUAOX5UlbV0tfcjlWxXem169oK1K7wUQQYmkU4qLMbNcVFWeRV7KNsvsXHbxnKJ7O/0B
-	K8wL7lqona7Tcdr1rSqPEMHqrMEPOq4IMN52pH1XO02rw2YkbSFjf95UoxiZ6rywY2PDCOpJEHp
-	b5XXH7zVFSEe0RZuw8Q0qMHDsYm5lXfjncVmSsah0rn0ZA06mUfZA1pZ+an/dHLqfojr3mN3NWS
-	ZLn7zBaRXJ1Qmug2eY6qado4Sqho7VEfxw7GbBOF9xAkVRm7F8ZbFA/f43XlvzQrq5oIXl2y0Ou
-	M5kedyrFt77EBQhG0mTSeojRa8IF8ZeRDbGKzCDYpu69Q1TuFf7I9j2s15UarUhgki+K2sr2pCL
-	N8xXIx354uV2NwIA==
-X-Received: by 2002:a5d:5f87:0:b0:439:8e3b:d06f with SMTP id ffacd0b85a97d-4398e3bd4e5mr5123698f8f.6.1772063446395;
-        Wed, 25 Feb 2026 15:50:46 -0800 (PST)
-Received: from skbuf ([2a02:2f04:d608:3a00:6e08:ea2c:b2bc:dea])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-43970d4c60bsm36400340f8f.27.2026.02.25.15.50.44
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 25 Feb 2026 15:50:45 -0800 (PST)
-Date: Thu, 26 Feb 2026 01:50:42 +0200
-From: Vladimir Oltean <olteanv@gmail.com>
-To: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	"Rafael J. Wysocki" <rafael.j.wysocki@intel.com>,
-	Geert Uytterhoeven <geert+renesas@glider.be>,
-	Johan Hovold <johan+linaro@kernel.org>,
-	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>,
-	"Dr. David Alan Gilbert" <linux@treblig.org>,
-	Peter Griffin <peter.griffin@linaro.org>,
-	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
-	Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>,
-	Zijun Hu <zijun.hu@oss.qualcomm.com>, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] phy: core: fix potential UAF in of_phy_simple_xlate()
-Message-ID: <20260225235042.al27evzgslvk33y5@skbuf>
-References: <aZejMSJ9qqRWb2pX@google.com>
- <aZemjhBNFyOfKeNL@google.com>
- <aZkCyQ1oizPXplyU@google.com>
- <20260223231500.zeffezslctqamhp7@skbuf>
- <aZzmU_oA6mVMsdQT@google.com>
- <20260224154730.qqnomchkdpxnyf4x@skbuf>
- <aZ4Iel5AsL3hSgrE@google.com>
+ d=mediateko365.onmicrosoft.com; s=selector2-mediateko365-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Aa+EV+C/EOAaw5inlLZbtYT34zh+Dbg13RgSHRIIarY=;
+ b=c/XCBcSDrV/pRYTWk0gHdO0UnCAM555CR9SYs6V8m7D9DVIB3tIxoKmNGl8/amLzlSxR5wMFVW08TeKCySsbBZ61G44YlXsbmekTiiorgYBocePArY61ybf/JO0BNSe7I8cKwySNXzQx7N410gcCiSiU+FttAvTV76j4VXEVSsw=
+Received: from PSAPR03MB5605.apcprd03.prod.outlook.com (2603:1096:301:66::6)
+ by TYZPR03MB7060.apcprd03.prod.outlook.com (2603:1096:400:337::16) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9654.13; Thu, 26 Feb
+ 2026 03:46:29 +0000
+Received: from PSAPR03MB5605.apcprd03.prod.outlook.com
+ ([fe80::165:d36a:3f76:2925]) by PSAPR03MB5605.apcprd03.prod.outlook.com
+ ([fe80::165:d36a:3f76:2925%4]) with mapi id 15.20.9654.013; Thu, 26 Feb 2026
+ 03:46:29 +0000
+From: =?utf-8?B?UGV0ZXIgV2FuZyAo546L5L+h5Y+LKQ==?= <peter.wang@mediatek.com>
+To: "chu.stanley@gmail.com" <chu.stanley@gmail.com>, "robh@kernel.org"
+	<robh@kernel.org>, =?utf-8?B?Q2h1bmZlbmcgWXVuICjkupHmmKXls7Ap?=
+	<Chunfeng.Yun@mediatek.com>, "kishon@kernel.org" <kishon@kernel.org>,
+	"James.Bottomley@HansenPartnership.com"
+	<James.Bottomley@HansenPartnership.com>, "bvanassche@acm.org"
+	<bvanassche@acm.org>, AngeloGioacchino Del Regno
+	<angelogioacchino.delregno@collabora.com>,
+	=?utf-8?B?Q2hhb3RpYW4gSmluZyAo5LqV5pyd5aSpKQ==?=
+	<Chaotian.Jing@mediatek.com>, "conor+dt@kernel.org" <conor+dt@kernel.org>,
+	"lgirdwood@gmail.com" <lgirdwood@gmail.com>,
+	"nicolas.frattaroli@collabora.com" <nicolas.frattaroli@collabora.com>,
+	"vkoul@kernel.org" <vkoul@kernel.org>, "krzk+dt@kernel.org"
+	<krzk+dt@kernel.org>, "p.zabel@pengutronix.de" <p.zabel@pengutronix.de>,
+	"alim.akhtar@samsung.com" <alim.akhtar@samsung.com>,
+	"neil.armstrong@linaro.org" <neil.armstrong@linaro.org>,
+	"matthias.bgg@gmail.com" <matthias.bgg@gmail.com>, "avri.altman@wdc.com"
+	<avri.altman@wdc.com>, "broonie@kernel.org" <broonie@kernel.org>,
+	"martin.petersen@oracle.com" <martin.petersen@oracle.com>
+CC: "linux-scsi@vger.kernel.org" <linux-scsi@vger.kernel.org>,
+	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+	"linux-arm-kernel@lists.infradead.org"
+	<linux-arm-kernel@lists.infradead.org>, "linux-phy@lists.infradead.org"
+	<linux-phy@lists.infradead.org>, "linux-mediatek@lists.infradead.org"
+	<linux-mediatek@lists.infradead.org>, Louis-Alexis Eyraud
+	<louisalexis.eyraud@collabora.com>, "kernel@collabora.com"
+	<kernel@collabora.com>
+Subject: Re: [PATCH v7 20/23] scsi: ufs: mediatek: Back up idle timer in
+ per-instance struct
+Thread-Topic: [PATCH v7 20/23] scsi: ufs: mediatek: Back up idle timer in
+ per-instance struct
+Thread-Index: AQHcn0oP6tEnScLyfUKovG8pABVQS7WTRnGAgAAi7YCAAP0HAA==
+Date: Thu, 26 Feb 2026 03:46:29 +0000
+Message-ID: <6297edc9c2d6d1a323f188ef411205701a629d88.camel@mediatek.com>
+References: <20260216-mt8196-ufs-v7-0-b5f2907c6da7@collabora.com>
+	 <20260216-mt8196-ufs-v7-20-b5f2907c6da7@collabora.com>
+	 <5d9723fd6b4ff8430889efb33e0fc93a10c4a880.camel@mediatek.com>
+	 <cad2e275-8b5d-4023-b3da-a191bfd065c5@collabora.com>
+In-Reply-To: <cad2e275-8b5d-4023-b3da-a191bfd065c5@collabora.com>
+Accept-Language: zh-TW, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=mediatek.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: PSAPR03MB5605:EE_|TYZPR03MB7060:EE_
+x-ms-office365-filtering-correlation-id: 0dd91320-ea19-48b5-bad1-08de74e99fd6
+x-ld-processed: a7687ede-7a6b-4ef6-bace-642f677fbe31,ExtAddr
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;ARA:13230040|376014|7416014|366016|1800799024|38070700021|921020;
+x-microsoft-antispam-message-info: a7ntfwjzwIG5Hm8yI7URCIw32kmr5D7zpAXQEjTGG/TgSYUr7HgZXYEOrgqI5NGQrv10pIWkh5op+lK2yVE1TasBpiYV+wt6AHed6jGsa1N+R5GE0iOQTQ5Rteyvff2zvtSKFzqRYlHGskWOfObsEAl6/aVqUdHLZFrLstUfNWO8EH07ZfxpB63q9L5t+LdDpjvpiN+CNMBsq+vtUvHp06+TZYuBXFCKVhdGFC8E7lTz0VIpOgrS8x8XfwFl6RwF6aMeJGlLoNnqoqameg447NVHODh8uoN1v9QHR0I+wKLQkdGF4iMJZRsO+NKEgILwQhxLd4G+cxDt7ndytxFPX6NPb7tXN3gsz7ecA1gvhrq+EDJPUsz3vh6u1KXZqnY0KXqZSr9SZRWFcLi5qoC5XKv6b3qe/iEFD9MFOwn3ro801B0y/No+A6MtHN5SAI+XG75EMXqO6P2FPrLG53ztQ8t01OdUiZkGqcgWtvv+IgAkEbb5PoU8b2H0w+5rSomp0m/n0zhYHqsp5wtlbYVvmq/wHLipgh72r8sfpzWtNBYsAlOiuCKO6+WDsr/DpnGFbZtiUekxQl6GZtNUQIazqD0+z0W7CRRB9quxZwmYsFqLlh4/Q8auFatUwtHneS/9Zp1+z3ZoQR0NTh2bw5M11zRGHyswak+8ufWMLAtFRwXut+f2BQgLtvlO4iuX4miGBl0H16XVdYgCg8+EDct8a5U/f8xdBt0RUAdwQaf9PkMY7aMmG8sVo5mQ7+fricMULi4gPab+0iRledVT9IFd2A==
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PSAPR03MB5605.apcprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(7416014)(366016)(1800799024)(38070700021)(921020);DIR:OUT;SFP:1101;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?utf-8?B?OWo0cUJJajdpOE5UQUxoLzNvS3Mzd0NrUTdpTmpmbE5jU2R4aTF2ek1mMUVN?=
+ =?utf-8?B?bmtaYm1uV09pQVQrWFoxeXVqNUdaczZsbUUxSUhaM3BTOUc3Qmo0SDk2Nito?=
+ =?utf-8?B?SE8zLzQ1dmFYL0lhdGZaaTI5RDZjRFIzcTZKcUVXbFlTdmdOYkhBcnlBVzUx?=
+ =?utf-8?B?M2xFc2wzbE9sNUZ0N3I3dDd1Vlk1Q2Y3d1NMWTZZcFZRdDdGK1BseWg3T2hr?=
+ =?utf-8?B?OUhUSndHWWZ4Z3V4OGx4cU5FTWNiZXlTNWFPaTIwWkZYSHlKZmVlTllXMlF4?=
+ =?utf-8?B?VHh4WTlseDFuWFp6VURyTGgwUU5PZ2xzdkpsWnNIZktLRytaK21sbWlGZTBj?=
+ =?utf-8?B?RDlpT0ErOUNRTWlCWlV0RktFdkduRFIvRDN6MUJHTlAxSmMzYUZCZ2tNMHdQ?=
+ =?utf-8?B?aEZPd2lJY0RKcVAvd2ZjL2FZRHdlOUNHaUQyeFdxVm9LUUdSZDlwYk8zRUk3?=
+ =?utf-8?B?VExtRE9sQm56YUhGL2pCbjJOKzRvYkcvNGpWMEI3c3o4YmtXK25mekg3eGhD?=
+ =?utf-8?B?NFRSTTFjbGJPQXNvZWNMckRZZ2VTL1Y3dUI2OWgvTEpFOHFSSkpQVm5lRlJx?=
+ =?utf-8?B?MkpscUh3YTZOcHJLbWZJNTNvLzQ4NkJ1eGk4SlorRnhiZGlNNGFXb0xzbGcz?=
+ =?utf-8?B?VnpHaEh0NDNRd0s5bE1iWGhxdDRPRGJURVhQYnk3a3AzSVFYR24yalQvMlJv?=
+ =?utf-8?B?bzQwalF6Y0dQaEhyakNiSDNyVCtzdlNWZC83T09mbVNMRGRHbXlPMFpxNUkw?=
+ =?utf-8?B?UThQKzlzaXdFVk5vbjlteDNzRnBRTmNTa3BPTHVkWGcwRzkvTkJXbmRUanFz?=
+ =?utf-8?B?VzV3YWVUKzY5VVhBUnBpK0pxdHZtS25oVnc1SmpsZW1teTFLVzRMbmlNdVR4?=
+ =?utf-8?B?OEJsN3kzVklKa3ZXcFYxWm1NY1ZtYVhHMG9rQVZEaGZRNUFHblVnSS91dkNo?=
+ =?utf-8?B?ZUZoVE1ZUUVNdEpubER4OXRDbVN1Q2Z6ZnZscmNvenNneE0yOHJPRkxIcVY1?=
+ =?utf-8?B?T2lXU3R5bmd1TEh6N0NRSWxqMVoxVUFIMVlwaEM2Znd4bzVxZXlVL2hscmpV?=
+ =?utf-8?B?VWhEclE5c1k4WTAwRW9OYkw3MnRnS1o5R09WYTZ3QVQ0bW9raVJHbHFrYlBm?=
+ =?utf-8?B?MnJDTUN0L1ZKNzVnSFFOcUw3bUVIUmUrTEhFMUIwVG1jNytXWWVuWlNCNk1U?=
+ =?utf-8?B?bFBaSmdCZWZYV002aXUvNlVFVjhHMmpxRFE3bFpyZWFCNFJsZnJGemVnR3kr?=
+ =?utf-8?B?MmluMEk5V09wdG5Pd2s1MEJ4MENNOTkxNG1UVGlpd0tYc0pLemwySzVTWWlp?=
+ =?utf-8?B?Z2NvNkpmeXM4WE1nYUZiM2JsVDIxejJ2K3ZQUHQwcUV0VTQvaGdzbGlRZTJC?=
+ =?utf-8?B?OHBZMmRjdlQ1aytCVWJBekZwYWI3aUZwR2FxaU02dGh6clBGRFJGdlYxWlNP?=
+ =?utf-8?B?QXVCUCtRc0pmUXZ0aTVsVDhHelFjaTRnRGVwZ0IvVTNHb0p2azRLZjlLV0RG?=
+ =?utf-8?B?RC9HTVVLaW9GZnczSXlQd2FlNi9VVUNQMVQvYU9oNVJNVXc0V0FyZWJTelpq?=
+ =?utf-8?B?VG9SL1VNWnZPYnlXS1JISi9qL081V1Y3L2ZwVDhPT3lveTZBWGdiVlExMXBt?=
+ =?utf-8?B?SElva0NWKzNreW5oWDV6M3lUSHRuV3ZXZDliRU1HQkl0YTFESHVXSkVwYnUw?=
+ =?utf-8?B?a0xpaVgxWDN6RnFnZWhUeEZyQVMrN2RmT2kzS09iUjJWRktBV21NcjdlSGhi?=
+ =?utf-8?B?cDFOZElwcG1pa2sybUM1aFFOVGlVaXljYStVekxlbDdrYXBSRzU0YnNEZlEx?=
+ =?utf-8?B?Qm1HNGNEMEJPaFZuemxYY09aM1krc3BHVWVRcHZwT2c1YVVvejVpVytkcTVu?=
+ =?utf-8?B?UEpVd1hXallKVlJ2a3hENEZJK2FyMVFkNGZqYUtkd0NMK21udHdvOW9qU3Yy?=
+ =?utf-8?B?YUpIeUhwUHhmZlpJRnpzOHJpSUIxcWRKS2k5QlJBeEJ2T3JUMmFHemY4a2Zp?=
+ =?utf-8?B?YVU3Wnpsd29TbE9LWU9sVDMwNklxdExyMFZqVE05ejJ6MklSODM2UUdDMm8x?=
+ =?utf-8?B?MmF6dXRwUjcrb3JkRmRlcEp1THBselJQd0Uvd0JML29WQWE3cXdRQmMyWVBr?=
+ =?utf-8?B?VzhZVUp3NGVxRVZaTGFSWERFZmJQM3hyZVdCYnN1Mm1BWDE2R0taQXlyWDdq?=
+ =?utf-8?B?TExWUjJRemJDaHRKSmwxVkFQYXg3d1hmQ2RVVi9MRzdsVkNSY1pMYWIyVXBo?=
+ =?utf-8?B?aFJMSzlpZER5WlltZllVNTY5UFIwOFF2UUZHeXpwM0RnZXVMazUzSjFBbmhy?=
+ =?utf-8?B?bFFweWg2N1U2WUFMMnNLK1h0K2FyVzM1Q1JVYTh5TGlZRTNDcHczUm4wdXdP?=
+ =?utf-8?Q?exd6ztXMQGVy76TI=3D?=
+Content-ID: <B8AB9A7869F21447A71F6D5D895D0B17@apcprd03.prod.outlook.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <aZ4Iel5AsL3hSgrE@google.com>
+X-Exchange-RoutingPolicyChecked: Ejw9t4LSzc7n1pDENO/3USUnPwew5H1h008U7uJXEI/P05ChW7RK+XW5aHMWQrh/eSlIHOKsMKNv9JXyaMYylAMOVeKUyi7A7IOpur7HoXdtsttgbMaAoBx5cch+Y/fkPJBYbFH+a/ZzqG74eYdfbnAALvSsYFLgb2Q/eK5GjapeHWQHZcG8ZjO8kSK+4/0pAB/IUy1JKJdG1Ni93+YpC98KfwjrRtX4XZ4MAX79zuazhY7RfL9huD3YrGWCu5LU1i5HDlX4o6+fW7pDHXXH/Iatb45gPaQMY/ZMs8jMvi7OFyjJjjaaChh9Z4t6ZTl8olADqTFugXV9t49EPKqu/w==
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: PSAPR03MB5605.apcprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 0dd91320-ea19-48b5-bad1-08de74e99fd6
+X-MS-Exchange-CrossTenant-originalarrivaltime: 26 Feb 2026 03:46:29.0721
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: a7687ede-7a6b-4ef6-bace-642f677fbe31
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: VS9s7msD670e34nsNQLHM59t7h5fqW5pG7RxRZ/f2QrkzBXZQJE3gXMugoTJz27V4K60HCxIOOACfqy2fvZnHA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYZPR03MB7060
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260225_155049_023955_630320DB 
-X-CRM114-Status: GOOD (  65.09  )
+X-CRM114-CacheID: sfid-20260225_194641_018792_CDB873E2 
+X-CRM114-Status: GOOD (  13.43  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,192 +207,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Feb 24, 2026 at 12:38:48PM -0800, Dmitry Torokhov wrote:
-> > Obviously it benefits the maintainer/reviewer first and foremost. If you
-> > don't make the API change unmissable, drivers expecting the old convention
-> > will eventually creep their way into the mainline kernel. Why put avoidable
-> > pressure on reviewers watching out for things like this for years to come,
-> > when you can force downstream to notice and adapt (OR not make the
-> > change in the first place). Note that downstream means "API consumers
-> > invisible to you, the API changer", not only "hopelessly un-upstreamable
-> > drivers".
+On Wed, 2026-02-25 at 13:40 +0100, AngeloGioacchino Del Regno wrote:
+> In my opinion "ahit" is way less readable than
+> "hibernate_idle_timer".
 > 
-> Well, this is whole "stable kernel API" argument. Rules of lifetime
-> around objects may change and the kernel needs to adapt.
-
-Actually it's not the "stable kernel API" argument.
-
-I just said that if the of_xlate() callbacks currently need to do:
-
-	return phy;
-
-and you propose a new scheme where they have to do:
-
-	get_device(&phy->dev);
-	return phy;
-
-, then you are creating the possibility for:
-
-- the API change to be missed by anyone who hasn't been _actively_
-  monitoring you, because the old code will still compile just as well,
-  and won't show any superficial runtime problem either
-- the reviewers and maintainers to not notice that patches were
-  developed according to the old convention
-
-and such patches may even get accepted, but be buggy.
-
-I actually don't care whether the kernel API is stable or not. But
-if you change it, make it obvious it has changed.
-
-> Anyway, this is your subsystem so you get to decide.
-
-Not my subsystem. Sorry if I gave you the wrong impression.
-
-> > > > But there are more important loose ends still.
-> > > > 
-> > > > I mentioned that "zombie" device. We've solved the memory safety issue,
-> > > > but it's possible for consumers to hold onto a phy whose provider has
-> > > > disappeared. The refcount of &phy->dev hasn't dropped to 0, so
-> > > > technically it's a valid object, but from PHY API perspective, it's
-> > > > still possible to call phy_init(), phy_power_on() and friends on this
-> > > > PHY, and the Generic PHY core will be happy to further call into the
-> > > > phy->ops->init(), phy->ops->power_on() etc. But the driver has unbound,
-> > > > so it should really be left alone.
-> > > > 
-> > > > If we fix the UAF but leave the zombie PHY problem, we've effectively
-> > > > done nothing but silence static analysis checkers, while the code path
-> > > > where the PHY provider unbinds effectively remains treated as poorly as
-> > > > before, just moving the crashes to a different place.
-> > > > 
-> > > > I suspect what needs to be done here is to introduce a "bool dead" or
-> > > > similar, which is to be set from phy_destroy() and checked from every
-> > > > API call. The idea is that API functions on zombie PHYs should fail
-> > > > without calling into their driver. I **suppose** that
-> > > > try_module_get(phy->ops->owner) "tried" to avoid this situation, but
-> > > > it just protects against module removal, not against "echo device >
-> > > > /sys/bus/.../unbind". So it's absolutely incomplete and easily bypassable.
-> > > 
-> > > I think this is a problem common to many kernel subsystems, where there
-> > > are devices that are vital for other devices to function, but are not
-> > > parents of said devices. Think about regulators or clocks and such.
-> > > In many such cases even validating at API level is not sufficient,
-> > > because if you enable a clock you typically keep it running at least for
-> > > a while, if not for entire duration of device being bound to a driver.
-> > > If that clock goes away the device will break even though you are not
-> > > calling any clock APIs at that particular time.
-> > > 
-> > > We need some kind of revocation mechanism to signal consumers that
-> > > providers they rely upon are going away.
-> > 
-> > Yeah, this gave me pause.
-> > 
-> > When you unbind a Generic PHY you can kind of expect that the data path
-> > it affects to not work. But you'd sort of expect it to start working
-> > again when you rebind the PHY driver.
-> > 
-> > That will not be the case, though.
-> > 
-> > The problem, simply put, is that the struct phy that the consumer has
-> > will be different from the second struct phy that the provider registers
-> > when it rebinds. Using the stale struct phy, we cannot reach the phy_ops
-> > of the new provider.
-> > 
-> > If we implement something similar to what Bartosz Golaszewski suggested
-> > here:
-> > https://lpc.events/event/17/contributions/1627/
+> The hibernate_idle_timer member here stores the AUTO HIBERNATE IDLE
+> TIMER, and
+> there is no other possible hibernation state in this driver.
 > 
-> There is also "revocable" from Tzung-Bi Shih.
-
-OK. Thanks for the heads up.
-
-> > aka decouple the struct phy given to the consumer from the struct phy
-> > provided by the provider, and perform a PHY lookup during each
-> > phy_init() / phy_power_up() / etc etc operation;
-> > 
-> > we are kinda able to:
-> > - match the consumer phy to the provider phy and forward the call to
-> >   phy_ops, if the provider is present (or rebound)
-> > - return -ENODEV instead of calling into phy_ops, if the provider is not
-> >   present
-> > 
-> > But there's still one big gap.
-> > 
-> > PHY consumers are driving the PHY through a state machine when they do
-> > phy_init -> phy_power_up() -> phy_set_mode() -> [ phy_configure()...].
-> > When the provider unbinds and then rebinds, that state is lost. But the
-> > consumer has no idea. It knows it is in a state where it called
-> > phy_power_up(), and next thing it knows, the power_count is 1 and it
-> > must call phy_power_down().
-> > 
-> > The Generic PHY core cannot actually replay the entire state in a
-> > meaningful way so as to make the provider reprobing completely
-> > transparent (think of phy_calibrate() calls).
-> > 
-> > So I guess we're looking at what Bartosz refers to as a notification
-> > side-channel that the PHY provider is going away.
-> > 
-> > At least, for drivers that care in a meaningful way. For drivers that
-> > don't care about such complexity, there seems to be a simpler answer:
-> > device_link_add(DL_FLAG_AUTOREMOVE_CONSUMER).
+> Not sure why this could ever be confusing in terms of its intended
+> use: its
+> intended use is to store the (auto) hibern8 idle timer, and the
+> member is called
+> hibernate_idle_timer.
 > 
-> Does DL_FLAG_AUTOREMOVE_CONSUMER result in forceful unbinding of the
-> consumer when provider goes away? And if it happens does it happen in
-> the right order?
-
-If "the right order" means "consumer before provider", yes.
-
-> > I can also answer why device links with "autoremove consumer" are not a
-> > universal answer. This is because the consumer itself may be a
-> > multi-port network switch (single device). If you unbind the Generic PHY
-> > driver (retimer, SerDes PHY) from port 3, you don't want ports 0, 1 and
-> > 2 to also disappear from the kernel. You need the more complex PHY
-> > provider disappearance notification which does something more localized
-> > (calls phylink_stop(), I don't know).
+> In my eyes, that matches 1:1 with its usage. Loud and clear.
 > 
-> Aren't the ports represented as individual devices with their own state
-> and lifetime?
-
-Nope. A single platform_device/pci_device/spi_device/i2c_client/mdio_device/etc
-represents an entire switch, and its driver will call register_netdevice()
-multiple times, once per port. This is the switchdev model as per
-Documentation/networking/switchdev.rst. Technically each netdev has its
-own "class" device (for /sys/class/net/) but it's not a "bus" device,
-doesn't have a bound driver, and their parent is the aforementioned
-platform_device/etc.
-
-> > I can say right off the bat that this is too complicated for me to even
-> > think about in more detail than that, at the moment. I would be quite
-> > happy if it's possible to unbind the PHY driver without the possibility
-> > to rebind it, as a first step.
+> Regards,
+> Angelo
 > 
-> Yes, this is something that is not phy specific and I think should be
-> solved at driver core (or at least driver core should provide subsystems
-> tools to solve this).
+> 
 
-Some subsystems I'm slightly more familiar with do have mechanisms to
-handle this.
+Hi AngeloGioacchino,
 
-Networking has (a pretty complicated) netdev_wait_allrefs_any(), which
-waits for all references to a net_device to be dropped before fully
-unregistering it (these are net_device :: dev_refcnt, different from
-struct device references). Drivers are supposed to monitor the netdev
-notifier call chain for the NETDEV_UNREGISTER event, and let go of the
-reference.
+If you want to refer to the AUTO HIBERNATE IDLE TIMER,
+then you cannot omit "auto" because the UFS driver also
+has a manual hibernate method.
+However, "AUTO HIBERNATE IDLE TIMER" is too long, 
+and we often use "ahit" instead (which is also used in 
+the UFSHCI spec). For example:
+https://elixir.bootlin.com/linux/v6.19.3/source/include/ufs/ufshcd.h#L978
 
-Sadly I don't know enough about the Generic PHY subsystem to be making
-generalizations with any claim of correctness, but I suspect the
-majority of consumers are in a 1:1 relationship with the PHY provider,
-and would be happy with the cost/benefit ratio given by the
-device_link(DL_FLAG_AUTOREMOVE_CONSUMER) behaviour. Only a select few
-would care to continue their lifetime in a PHY-less environment
-(normal operation on other ports / degraded on the PHY-less port,
-reestablish connection to provider when it comes back, etc).
+So, if you want to distinguish it from hba->ahit, I suggest
+using backup_ahit or saved_ahit instead.
 
-I'm not sure that there exists a space for "revocable" in Generic PHY
-between the above two options. Only if the device link idea doesn't work
-out, for some reason I'm not seeing. I'll have to put this thought in
-the background and let it simmer for a while.
-
+Thanks
+Peter
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
