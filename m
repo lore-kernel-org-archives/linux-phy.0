@@ -4,149 +4,124 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9A4C5FD8FC9
-	for <linux-phy@archiver.kernel.org>; Thu, 26 Feb 2026 15:21:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BEE5CFD8FCB
+	for <linux-phy@archiver.kernel.org>; Thu, 26 Feb 2026 15:33:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=329K04fqXJXRdFogSJTMHZPH1IcXEjy8GZO8Rx2aFpA=; b=4ZFF988kT/Lb9w
-	DI2ISoUeWxo4PmlQNT7QPUG8qk19Tsecn9HxCIs4sC9++v4AzZ3GrwFjYLim/4yMmcR1ZtdkM6H0g
-	xwHzeL7AbCDL5NXJ7/8MTxwHp8GzdD3x++c+2ZTMYKAECFSKqKLkl1xFQSEgP9W0L1Kf8hEWQsYgB
-	D6+VC3eN3nCdmhnQiFXCk7XO94A3zXeBZSwy2lH7UqyO0zvV3QO0yGZUKp+1jGlOyBisaRYQph2Bz
-	7MXBf2G1pQZMX7II4rG57mLY1ogmUyUb2RIogXe9S8PuV+Vt4gYx8aOnJLEnkYFeJ3p9tHYUXcPF+
-	x3P3JtUhQyQLGsmJleFA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=vVmS05ERU6L3Mh22I0attK/DcUh8ouizFhpVMKCTa3Q=; b=yMv5brSabkUEwS
+	qw1Ejjoq8KFjs2fflnHHlG6KlbNJiYjufs+jC87Qucwjk4F5L+D521su1ajJESuTxWK33GWWtu4/g
+	j4Y3X5Gln91++GUgrMcpEotVoMHIDR7PKWcMkVuZeQSYIZQjbOHbb62s8Q1npG5GAA86vl+Wt/kp5
+	WKVpAOyWgQdJMx1vhf3upnH96fNS+FU7iFNd8eX5sj+xHD3lS8Kt4q6lp3I+O2PAkPNNZANdEGcnX
+	9Q7b77tKVV6/C9OeLNPUUIskJ9XOJTTUwaz+bg/+kKTACcpEoqu1NPhlIJzkv2gZHUAsCIerAAsZw
+	zrj1m5f28VPUXEaYtNUQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vvdBA-00000006ULs-04zE;
-	Thu, 26 Feb 2026 15:21:28 +0000
-Received: from mail-norwayeastazon11013006.outbound.protection.outlook.com ([40.107.159.6] helo=OSPPR02CU001.outbound.protection.outlook.com)
+	id 1vvdMx-00000006WEv-0xnn;
+	Thu, 26 Feb 2026 15:33:39 +0000
+Received: from mail-northeuropeazon11012032.outbound.protection.outlook.com ([52.101.66.32] helo=DUZPR83CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vvdB7-00000006ULA-2jOE;
-	Thu, 26 Feb 2026 15:21:26 +0000
+	id 1vvdMv-00000006WEL-04OJ
+	for linux-phy@lists.infradead.org;
+	Thu, 26 Feb 2026 15:33:38 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=rkh2UB5ry4tesRCkvlkZu8gcdWi6lEJ3BgFBYYrjRUuLaVDYEv5EHoetkzD2jFaMBFPHs3CQ72gDL0YNBhi2nIuk95YgNYMJFTYfFWwo9xBEiFz1M3poXl8f0yFxf+Xl6uRA0Gug+p3UpE5BrshxJSdLd1mfz7TPU4dVleBUrBot+iJUB91gFn4F1j1Y9sES9Ok8F8/Ajh6mtQQwvSv46L7phlcMsuHYl9h7nllHbdogcIHQzpwLEQUKmPNZyNW3Ii8WcZHnWIlnYR6IlVdGXIWJ1S0EgvY27HN38Yz29FCG1vEqhaz2bICarVP3+CK2rCIIT6qvBaZrCWpRAT+7+g==
+ b=KKXFbdtdEdI0OAAwS8mwkwbN/81rWpSpHzpIzh2UnzjEPl/QOcmmgSjvlNWp35rrlNqGxPAtQwIKEy/471CwAZozUYJPHaTPzj/K3qxEoWGDtk3kK65o+RV8uuKT9Uza3GKBxoic0M0SbKb/FC153rCIQFKfsm14/zuTji5NXdmrh670Hw6XI7LT+rlUjpj4XtsDpS4a9jzFvCg9l0p/PM0XIjlKTPg/hPSeHpqmA374kmlpoS7BjhI9hIDprBmh6V42WGQx2qZMHcZ/f3s1zcBuVV3fgmnTIcjiDLqBThb6RxDkDRkJDX4lmQjNS9CAFhtK7wrfiOOrkyKsXHBNVQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=v4wCEKw0Nt9I7N3arAqX3iSp8OwAWsyE+JK61yKbXB4=;
- b=oj3sglAqfi1xps/5TDNujClGRxhsTmznfi17r/zRHlzvVGvB5lKFobg75H07SLK5DemuS9RHfkm1C1BmbyanEJXF9t8PVkhukh6PTkFqaEkvL2HYDwabM/jxsvy2/Ci2OhjKpHB7ZIgNN5ZlXvRoPs5cd3wSg/be8dJkOHW2oRQy0CBFabZP7HPZm9rBCBpxmYCcn5v6kTOTn5iMhmLKiEqma3S2h5euMpcttktz2dDdKsT6+Vu/nhqmVLFk4/zfHdQRN2/5pFLy1gyznkvSaWvgtJf06bJXvDoHvw7fpOJ9jGOxg+DTsg+hinUfkRu5AhFvXqi7jTGGGXJl/LePlA==
+ bh=g8k/kM4TMdu33X7sPFRbiFMjPv283eSpxh3H7EP+1hA=;
+ b=QrgYwfu/Ibu4iZmUQGFvJ/VyIccOUdVmY9WytxsidO7xukyGtuGiHQkqxcypL4v/OlZXg/jq6VTKCd9IgCb6mD8K/KwA2ppDrBfvfH5fQQ/eM/LI02h1AS9CBq5zFIhOoD6Z3egYUFE4HyU/JS+W87yP30aK2e5e25dZwKUQmjzBftonfDSq8rGDnpPD4mxOxChWsOKE/MfQD4fUy/3/LCM6twjz88EAWlUM6NG7mhLNCvoGRfxWJl7sS//XB+fmW1FjljIUao2z96gYncfMsGt2/RcmgZ2Fmvfu3um7vVF7nH094lIJEB88W3wbgvD9v/WBzbsbfdrxfUgaH1G5yw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=v4wCEKw0Nt9I7N3arAqX3iSp8OwAWsyE+JK61yKbXB4=;
- b=h9zmMPOH7ro/CT7af2u9Xoay1fcQKmDd3trEPBmnj8y8wHBeVq2iAuqnBJiWR2q8VImnIKiWhMks60WUl3W7O2Ryf37X9TLHCNZ3K2DxPmvmXjbcy8Hx4WafjU7+j9a+gfZQ/ZXbyQcmevdYwkjau1NrGpeHNNock1huxblbyCCH7KyivLnUMKHb/5Wkh9pFwFoDLzbo5hEYW+zTMVx7T4f4DEzgqmA4M7EJ0YRQffIVvXfUxGwArqMea7WXQ9bgehloz1wgLUMyHZA+uB7mkvhsSQRPRKOpr6FN7cEeXTjsbVdNDGnKN7Y9TWg7Q/Nj2WhbuzSQC37CC1aLJzs99A==
+ bh=g8k/kM4TMdu33X7sPFRbiFMjPv283eSpxh3H7EP+1hA=;
+ b=QWj7uqQ89sMKvGpk+dkw4cGb9NK2DhEhy5sgTLvqWTK2oPutoqlmRkQyvTsALRT1vCHWjJ+WhsvHfxKErRpuGMuubMYWPYIcw/8TeZuIlXNGxJ1xH+aXpZGtCwXJOMDVTvAJhHEEGhxZ7UKyA8zSKyScIUvT30H9hbrYCXSSRuBwSa/dzcv7TWwNg6flUDY2JwT9lT0VwqfW7OpTwOWtOVr3lxVa0TFWOdhJu6jnvoIQ34b/eDcq/s+l1rCpopzHXt+jNM0tl75fHMS/Il8AaAEijKze8XXF7nog6XKOzf7pgdnI0g69mNK2vCH1BUa7CvVlHq7OHFrdHYPTl0ro1A==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from AM9PR04MB8585.eurprd04.prod.outlook.com (2603:10a6:20b:438::13)
- by AS8PR04MB8834.eurprd04.prod.outlook.com (2603:10a6:20b:42d::12) with
+ by PAXPR04MB8157.eurprd04.prod.outlook.com (2603:10a6:102:1cf::24) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9654.13; Thu, 26 Feb
- 2026 15:21:19 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9632.16; Thu, 26 Feb
+ 2026 15:33:32 +0000
 Received: from AM9PR04MB8585.eurprd04.prod.outlook.com
  ([fe80::f010:fca8:7ef:62f4]) by AM9PR04MB8585.eurprd04.prod.outlook.com
  ([fe80::f010:fca8:7ef:62f4%4]) with mapi id 15.20.9632.017; Thu, 26 Feb 2026
- 15:21:19 +0000
-Date: Thu, 26 Feb 2026 17:21:15 +0200
+ 15:33:32 +0000
 From: Vladimir Oltean <vladimir.oltean@nxp.com>
-To: Geert Uytterhoeven <geert@linux-m68k.org>
-Cc: netdev@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org,
-	Daniel Golle <daniel@makrotopia.org>,
-	Horatiu Vultur <horatiu.vultur@microchip.com>,
-	=?utf-8?B?QmrDuHJu?= Mork <bjorn@mork.no>,
-	Andrew Lunn <andrew@lunn.ch>,
-	Heiner Kallweit <hkallweit1@gmail.com>,
-	Russell King <linux@armlinux.org.uk>,
-	"David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+To: linux-phy@lists.infradead.org
+Cc: Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Eric Woudstra <ericwouds@gmail.com>,
-	Marek =?utf-8?B?QmVow7pu?= <kabel@kernel.org>,
-	Lee Jones <lee@kernel.org>,
-	Patrice Chotard <patrice.chotard@foss.st.com>,
-	"open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
-	KUnit Development <kunit-dev@googlegroups.com>
-Subject: Re: [PATCH v3 net-next 05/10] phy: add phy_get_rx_polarity() and
- phy_get_tx_polarity()
-Message-ID: <20260226152115.pwizozoapudgvmgl@skbuf>
-References: <20260111093940.975359-1-vladimir.oltean@nxp.com>
- <20260111093940.975359-6-vladimir.oltean@nxp.com>
- <CAMuHMdUBaoYKNj52gn8DQeZFZ42Cvm6xT6fvo0-_twNv1k3Jhg@mail.gmail.com>
- <20260226151036.x4z4bdlxwgsqlkhs@skbuf>
- <CAMuHMdXKbiKUkP=+FDA_-Kd_qx1X6vzSuyPU+Tdd9MgR=Q5WMw@mail.gmail.com>
-Content-Disposition: inline
-In-Reply-To: <CAMuHMdXKbiKUkP=+FDA_-Kd_qx1X6vzSuyPU+Tdd9MgR=Q5WMw@mail.gmail.com>
-X-ClientProxiedBy: VI1PR0102CA0001.eurprd01.prod.exchangelabs.com
- (2603:10a6:802::14) To AM9PR04MB8585.eurprd04.prod.outlook.com
+	Vladimir Oltean <vladimir.oltean@nxp.com>,
+	=?UTF-8?q?Bj=C3=B8rn=20Mork?= <bjorn@mork.no>,
+	linux-kernel@vger.kernel.org,
+	Geert Uytterhoeven <geert@linux-m68k.org>
+Subject: [PATCH phy-fixes] phy: make PHY_COMMON_PROPS Kconfig symbol conditionally user-selectable
+Date: Thu, 26 Feb 2026 17:33:15 +0200
+Message-ID: <20260226153315.3530378-1-vladimir.oltean@nxp.com>
+X-Mailer: git-send-email 2.43.0
+X-ClientProxiedBy: VI1PR0102CA0012.eurprd01.prod.exchangelabs.com
+ (2603:10a6:802::25) To AM9PR04MB8585.eurprd04.prod.outlook.com
  (2603:10a6:20b:438::13)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AM9PR04MB8585:EE_|AS8PR04MB8834:EE_
-X-MS-Office365-Filtering-Correlation-Id: b055fcec-1338-462f-bb97-08de754ab126
+X-MS-TrafficTypeDiagnostic: AM9PR04MB8585:EE_|PAXPR04MB8157:EE_
+X-MS-Office365-Filtering-Correlation-Id: 08a35e22-2db2-4934-f9a4-08de754c65d3
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|10070799003|7416014|376014|19092799006|366016|1800799024;
-X-Microsoft-Antispam-Message-Info: yCTu7NqRjOcSyfuz8akNiR7s9YrEgBQSVhdnlSBxACX2Dv/X+kLsOYkZCf7L1HZsAd+YfFL4r+H5WfXwYjFJPgm1fw3lG9MLU5Ze+fdg5QZ7bEP2HAKAs7cwTFflEyJ/RqcS/hJOiEgvqWZ01z3zLfOeKggQCFgm5iYoRI2fUlNMyN4mPS43Bz3lIwcqGzq86y4mN4R9PlyMsNAHRjzoV6KgwPqWwmSic9PsHGiqH17NTaZsq6QTAZwn6vFJAiQU07cMMfRdkRxOHEBuzYWSsGOUBebL0GTigiLgd2Tj0llHIgrP/YQZiMao0BxtLH2FpUH6MqLZLp3ZhjDyzFFJdovHkb+AlNz6qswOW/TLk6cYcUGjxAFf7E0DOnmvR7URGBg7205lIreFDg+vAZgK+ITlTsdRr0IHg8dSxdGkpwZLiUuKIStnztl0EilTdDHwfEwtF36czBdhVSO35LH9iAIclIb9InQflxYK7T4D+bZZbdohBn5pqj1phZVmE1+kxyooySgwRAY9aGl0MZo8x3seIzH5eInWM3jTBq6dG0eUkTDvtv2gllv2oOpK2wF/gg26vcND/JfRNCp3BzGPuMYRA00ClRLU8iYx4MML0rCeXTjSq0A2ZZJCPGIxThAgIwY+a5j5sRDQc0yStIgt2zGck+X2yN26/8yHGLyCxPflJgnrP4NyfyU2hTKe8kvlkY5YxZrsgqHhf4Pk0LNhVpup6+n7AlEQ3mETt709EF8=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM9PR04MB8585.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(10070799003)(7416014)(376014)(19092799006)(366016)(1800799024);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|10070799003|19092799006|52116014|376014|1800799024;
+X-Microsoft-Antispam-Message-Info: vz0kNrurqv1WKqtJpmUV51ZZ98/CdXAOSUm3lgQj8j+sSVRzu3j3HuED7+caX3u3L9REy8L97gr0/kXxKVOqd16w64WniU74t1iZfPlvhnf2E7pZWPb+pOsg7BTtRN89iSj/7GMaGwA/vUS2JRVuIxtkMnO4UXOCeDbezgpfuDN1U280zThY5rzU/6gVBqWgwCIdeVQ4dfH0FuAwddGEbiG3rbekfTVTWbi4OpmxkPDOvqQUn+yxAOPGjR2TsYaplC0gtNjpY14kYOHrL5awRkViFnjaBhlL2MkJ+sci3KUqE7bJPDa6UJU4wIqTpssqPPCVpXMwF8uoMbjgC3VOQyje+6AuB/peqNKrMHEPVnCN7j6t5K+07wTFuKatu5A0GqjTKFN3BxU7nPMaq/hReQ8dXoRx16diDDbRxqzURkE4Y9M0bo0Gv4BVf0+trv9Lba8D9vNK51IT3kJrXP+8AB294pps+e0S3Y80hQ8FcugiysbIq6a3Vu7DqJ+1muQCZrMjC80CNHJwZn8MX5atbygcC8U8dWv/XgGVf0+pcdg2JxT9co0xchOH/zXyG0a21u/Tl6owkRdjcAIuoZyHhZP6+MsxxwPVlT/DUXUN9HwhKmO7FtZbtlgXK+qo5XhIku6KqfJS7T2i8z0MbiPXoH59ti7XGSfzZ0rIbPBx4f8okMejUa4GZ0kF+KRrhzvn
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM9PR04MB8585.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(10070799003)(19092799006)(52116014)(376014)(1800799024);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 2
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?698eYqcizXUElIsFaOD3UJEhPiwyrjuVQPcIaZtH7v1EIXwgsG5UtweF+xOH?=
- =?us-ascii?Q?qAmn1b7VBj6FBoJi75woP2kmGNfZ0OJU4SmySTf9MGB/lDlYwP44ROAo1NeL?=
- =?us-ascii?Q?gWOVeXdYyqt95mXtEAW20bVD/2mzeCWy9FPRdnWJ5HzRh1lNWc9MmWmT6NU5?=
- =?us-ascii?Q?4uhLtGumsHQtBB7qWw2/j9ZtCCtf54fKglGVLGFtrSjcQtoQSuQ9FJAH2IQj?=
- =?us-ascii?Q?5azbpAFMP5/Qmo+kpSJZToc/t4qonYZiExmwfXvCqXU1f9BdX0QkU0dkJICG?=
- =?us-ascii?Q?l9wybXXi+8GgfjPgJ09WvPNkk2e+Krgjo0qtSJpaJV1tUZ8psZ7I7Qb51gh5?=
- =?us-ascii?Q?6zbHHgJUp0HbjzGrO8Rk2yLjuaRq6yrnqJT9ySRoY1z/YTWw2WjBWByc99rY?=
- =?us-ascii?Q?EtlbRTGluv6uWKzqQVWsj5dFraeCnQNUINXOSiJ6TpsaUXh25uty7wlncafP?=
- =?us-ascii?Q?rbcpAt5CpGpsn7fW9SxhH35p8fevlPJhPSEaCvO6h+xHlCEWJHrXWnPJgSnu?=
- =?us-ascii?Q?UYET5pETZjeFfRqK1uZMCwxlYOKbSzzk1dl3Wvv+tKoQe2zrAvG2cWSqP8kl?=
- =?us-ascii?Q?1AAkg68DnVA5ILN2ndw16Erjp50z4RbuTVV75Cw5fv+LrawuMXfHBGb/Lg0m?=
- =?us-ascii?Q?/vxT6cFuSta/xxQ8WrpI6HIsgxjY3dUGrjmngwXyRFCl1xwT45x7sytfhhuA?=
- =?us-ascii?Q?xMa/Qt3z6X+MYuhItJe64DOLRmmQPxYZMHG0avAQ4OdmIsHeyEO/oJ5duo1T?=
- =?us-ascii?Q?oseZRLWKVBptwPltHz3i62T3ph3ju8iUAGuSRmROq7VC2vXQj843K5Aafccu?=
- =?us-ascii?Q?cKzg/Nqlgf++/4s1SyR62WpOtSLqbXnwO2iTpAy1FKPqI4N1Gzrt6df1xwOW?=
- =?us-ascii?Q?r4JiRfxmE7lp9op0yVxU1fuJMg0AqLiG/wHawe679TGj3TxjYlPjKhmexa3u?=
- =?us-ascii?Q?k76mOsEcKSviF7eu+xoxYERhAUHP9adndC/5BTFRsmnjX8f2aTO1nvzXHK6A?=
- =?us-ascii?Q?9AlT05xiok5eZWJqg6leS+7jdmP6f4wj8E7upUxXNJKH2UzATBgTtR9RbR6S?=
- =?us-ascii?Q?8A1MU+S3992l94HDV5IL+HHOhETbI3cAFyIJq55OHH8a6wKk4+r3EUROcb5a?=
- =?us-ascii?Q?GHzdE/cSZd1vnjooEUY1+V0GEBINrw4+CFjzaVw2YOehOnm6spWQd7pTK3YB?=
- =?us-ascii?Q?s5sxKZrN11kC4/bhlRtv/aSrRnwC2wwtCAcf0286P+KnwmQVCY6H500gfs1h?=
- =?us-ascii?Q?joOqDNeqJn7lgc/IZXeCllQuqmn7HTpmyRJMOo6Sy+0DjeVYXGjLzynZ9wLa?=
- =?us-ascii?Q?6XAZBmId4egeb8oeoBI35Y2DTQze4YHoNMXcmdu/3Llhgemr0kpQ2bXyL0dt?=
- =?us-ascii?Q?XbPv/fx+fk7FSM6SN7jRttD7QffvrFfZczUIXuBRmltTXTioRItndClBD/xZ?=
- =?us-ascii?Q?8eCksSpU3ObV8n5az4oQPryUCArYDbTxl6SP8rUpuS01SYP2rYuD4jeUwQM5?=
- =?us-ascii?Q?fiKTbH+FLygKjg2tlGnuJUXibfntFwcy8Lvyds6fImn73a/9t4SEUeyKE2yy?=
- =?us-ascii?Q?6iNP/WKSAGZM+QXvmdIYOdoMa9JtPxF+X4gSmzB9lnnqGKyWNHIe/gEBlPoZ?=
- =?us-ascii?Q?xA990DtNv1c1cmMeEHjEZK8DOE8l1bGuO0RCz31wNA9pSKt6co6kmzCjQNpD?=
- =?us-ascii?Q?T4YnsiT0YFpX0vhIKINolbGcF1++BYgDASjFqffFTYPRc10JPFOg12KWGsuq?=
- =?us-ascii?Q?h5UDR35nHpTs6Es1Rv6PuS0+x7GjwF+ZxHVQkPTLDsKZz5tKscZ+Bk2Z0k1b?=
-X-MS-Exchange-AntiSpam-MessageData-1: jiCcLuiNKnAZkMrKFxoRRzF9Xj0pKy207bQ=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?WaQReezzEUPdEUHtx+EmzAPw5wbQH3L96RGe7K/07tpTqWjX6GV9KEe/TAhF?=
+ =?us-ascii?Q?bioUbMvgKuXmvf4ZFwZHnvbaNGqFPmKfKL5wOia8dW7R2K2W0n35BdZmLI3r?=
+ =?us-ascii?Q?ca4v9krzBJaDA23EYtsjjpKZFewkTKTqstfeTIt78kVCnioXLh/9QMWcbwsD?=
+ =?us-ascii?Q?Ljf8GiAs6vVg+cEzCBgXDhnHOERMPuqfF3XqZQC3gszjDwdUZv+n6xbloZbB?=
+ =?us-ascii?Q?fNlFZDhoemFiXkwryy3vdBaUaM5TOEcAqyZM3E/Kgs6vi6kPMMZq/SSS2LAl?=
+ =?us-ascii?Q?iUKuBqpfz5Sfx6fclbYMT6efd0iAyqVSkcTfDzi8OXlt58IiNZTYNFBRv8dH?=
+ =?us-ascii?Q?3DFLtriQNSaPZqF/6JTiO982Q2aQaR4UFLsjhuYQnCSx8W1QJ9/Dvm0vjqsP?=
+ =?us-ascii?Q?8I8Hf4u171GKQFO6Wxm2KzpMeT/GNbzku+Cpd2yilr/FwKpY+ljaZ4YOcLZc?=
+ =?us-ascii?Q?0c0sZh5503heRVHnJlTXvt7qo7X4btdVO8eEKjBfs6YslQbpOz/k7uqjPwDD?=
+ =?us-ascii?Q?VJN1XRDHbfnYof5yAt7q5RxjT/sTUwOM/cvFSsNIP1hMqDqVilMDhUsAqHgf?=
+ =?us-ascii?Q?TWEeP7kN83SRqnbFvURDuK6ewkDUig7mQp8gI7QO6/NCWKON4KxNt7BBdMEO?=
+ =?us-ascii?Q?/RNNED34PWiBUVO15X8/46fnmbnroWZSXyGQKj19ybSL39P4VhUaXqz/yiru?=
+ =?us-ascii?Q?jMyFGRvVgCoWvng20MwkTqzVqkjVQ4IKh/xcxp9QFPSUO2mQWm60u/b2y7Ju?=
+ =?us-ascii?Q?C6Rwv7B1FV7f2UxIR86+E0PUjE9RGEgRrWn1TGNRhzWK+rI8D3hEGOvbehzX?=
+ =?us-ascii?Q?GscYJKqzhOCW++MyiEmBmLMw66CO39g8ERJHbPS/RF9LTfHSxNX38xGG4qZu?=
+ =?us-ascii?Q?SaXwSVK/kdOMjI/G+KcfrFPzn7LtCuUQe9mRoxXNj1RebfF6hqw2k2TGP741?=
+ =?us-ascii?Q?o9hsstvGgGhaVvxVfIu6AwTvUb/mj15g39Av7cmi3m60tZ+L0y0SBxZ1WZOh?=
+ =?us-ascii?Q?r0T7Rg7J0LwJZzzNxy0UUahJcbYVfR2wXCxhnRdhjGdrEsyPeEzRXvlLMSPH?=
+ =?us-ascii?Q?ZWvBCk7SQ3MGYCbpo/7EtvWTCgEh4Z2Vs4PFI+FU+aY/vxRwiV4gAA5HNw8r?=
+ =?us-ascii?Q?U4UqgQk/V0fFcsi/RPMyABAGLHrlP8FVx1sj1KGPB70JUSgu5zMlcqD+dfHG?=
+ =?us-ascii?Q?unKmpfUl91NDfgoiBaqTWa6C5bJf2r8zz/+FxoRKKw8CIMnYO9R7yypnazEb?=
+ =?us-ascii?Q?Zf8FJnPW3E/VzQw7PDKj18sJ7s7J+lUDKKYMSYxfP220FKYGiTmmna1m5/1a?=
+ =?us-ascii?Q?wGs5Zb21DcUDeC1qY/4HLCAkNsr9xsv8wLETA+K5Kr8kxaJGetbK/et1xk8g?=
+ =?us-ascii?Q?s1s6G5wgzQSUPcqFYuar00TcT39vZmrk1fhrOaHMxMJ4FPCPCLSoG3OsrvX+?=
+ =?us-ascii?Q?vEOsSuU9JnYbqU/Fb1ciH27n5fboBKSzIWBAyqMgjCaoCWJjo3TAeAqELoVK?=
+ =?us-ascii?Q?eSkFg5hn5ZOiwl4Drrd2W/CZ1raNZUnGXIx2HtA9Ku4eObuL8XWH9Cr9kC9W?=
+ =?us-ascii?Q?1XKqBmLZ4O7hAobt11nvumqSZB46LSL86GuhVjpK+Fqtz783sa6M3teVvbLA?=
+ =?us-ascii?Q?MKhDpjh3at1I5S4dAfk7w/cm/lERWsZObwc51lljLeRA4ny3ZxNZx1i0Bkw3?=
+ =?us-ascii?Q?EVORRma2VQyxNMY4/do7/v4YUUHBg5qyGrGbutojtQpXn55R3Bu0+rIs4NNL?=
+ =?us-ascii?Q?OualleFiXViba4xRz6zgxw/8Avtb+550AEt6MVJd7AVmcSxppreHaKMXkf82?=
+X-MS-Exchange-AntiSpam-MessageData-1: FspeGrJPh8Fjfa4IelaJeTCbzxKJR7UuetY=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: b055fcec-1338-462f-bb97-08de754ab126
+X-MS-Exchange-CrossTenant-Network-Message-Id: 08a35e22-2db2-4934-f9a4-08de754c65d3
 X-MS-Exchange-CrossTenant-AuthSource: AM9PR04MB8585.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 Feb 2026 15:21:19.7289
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 Feb 2026 15:33:32.4331
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: xQ1fSJqX/vs0rJlre7s93hjhSGKe7CefqdZ2ZUYwz67DBPjglzgpB4/ZSLpk250A7bP8qmRpIMmaPoFJUh4Nnw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB8834
+X-MS-Exchange-CrossTenant-UserPrincipalName: yMDWeOmjvi+Xcq0E1u8EN40ZQ3QwM36C8Gl24h4NHeDwEAOl6fZSnyRjiTCA1t212gaTqOqru0KxKfF4kaxSCw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAXPR04MB8157
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260226_072125_713821_A87D7587 
-X-CRM114-Status: GOOD (  26.34  )
+X-CRM114-CacheID: sfid-20260226_073337_055293_FBF6AE4D 
+X-CRM114-Status: GOOD (  10.36  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -163,67 +138,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Feb 26, 2026 at 04:13:59PM +0100, Geert Uytterhoeven wrote:
-> Hi Vladimir,
-> 
-> On Thu, 26 Feb 2026 at 16:10, Vladimir Oltean <vladimir.oltean@nxp.com> wrote:
-> > On Thu, Feb 26, 2026 at 02:22:29PM +0100, Geert Uytterhoeven wrote:
-> > > > +config PHY_COMMON_PROPS
-> > > > +       bool
-> > > > +       help
-> > > > +         This parses properties common between generic PHYs and Ethernet PHYs.
-> > > > +
-> > > > +         Select this from consumer drivers to gain access to helpers for
-> > > > +         parsing properties from the
-> > > > +         Documentation/devicetree/bindings/phy/phy-common-props.yaml schema.
-> > > > +
-> > > > +config PHY_COMMON_PROPS_TEST
-> > > > +       tristate "KUnit tests for PHY common props" if !KUNIT_ALL_TESTS
-> > > > +       select PHY_COMMON_PROPS
-> > >
-> > > This select means that enabling KUNIT_ALL_TESTS also enables extra
-> > > functionality, which may not be desirable in a production system.
-> > > As PHY_COMMON_PROPS is bool, this extra functionality is even part of
-> > > the base kernel if KUNIT_ALL_TESTS=m.  Unfortunately PHY_COMMON_PROPS is
-> > > invisible, so this cannot just be changed from "select" to "depends on".
-> > > But perhaps PHY_COMMON_PROPS can be made visible if KUNIT_ALL_TESTS,
-> > > so the select can be turned into a dependency?
-> >
-> > Is this what you're asking for?
-> >
-> > -- >8 --
-> > diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
-> > index 02467dfd4fb0..1875d5b784f6 100644
-> > --- a/drivers/phy/Kconfig
-> > +++ b/drivers/phy/Kconfig
-> > @@ -6,7 +6,7 @@
-> >  menu "PHY Subsystem"
-> >
-> >  config PHY_COMMON_PROPS
-> > -       bool
-> > +       bool "PHY common properties" if KUNIT_ALL_TESTS
-> >         help
-> >           This parses properties common between generic PHYs and Ethernet PHYs.
-> >
-> > @@ -16,8 +16,7 @@ config PHY_COMMON_PROPS
-> >
-> >  config PHY_COMMON_PROPS_TEST
-> >         tristate "KUnit tests for PHY common props" if !KUNIT_ALL_TESTS
-> > -       select PHY_COMMON_PROPS
-> > -       depends on KUNIT
-> > +       depends on KUNIT && PHY_COMMON_PROPS
-> >         default KUNIT_ALL_TESTS
-> >         help
-> >           This builds KUnit tests for the PHY common property API.
-> > -- >8 --
-> 
-> Yes, that would work.  Do you think it is acceptable?
-> Thanks!
+Geert reports that enabling CONFIG_KUNIT_ALL_TESTS shouldn't enable
+features that aren't enabled without it. That isn't what "*all* tests"
+means, but as the prompt puts it, "All KUnit tests with satisfied
+dependencies".
 
-Yes, I think it's fine. I misinterpreted what kunit_"all"_tests means,
-then read its prompt which says "All KUnit tests with satisfied dependencies".
+The impact is that enabling CONFIG_KUNIT_ALL_TESTS brings features which
+cannot be disabled as built-in into the kernel.
 
-I'll send a patch.
+Keep the pattern where consumer drivers have to "select PHY_COMMON_PROPS",
+but if KUNIT_ALL_TESTS is enabled, also make PHY_COMMON_PROPS user
+selectable, so it can be turned off.
+
+Modify PHY_COMMON_PROPS_TEST to depend on PHY_COMMON_PROPS rather than
+select it.
+
+Fixes: e7556b59ba65 ("phy: add phy_get_rx_polarity() and phy_get_tx_polarity()")
+Reported-by: Geert Uytterhoeven <geert@linux-m68k.org>
+Closes: https://lore.kernel.org/linux-phy/CAMuHMdUBaoYKNj52gn8DQeZFZ42Cvm6xT6fvo0-_twNv1k3Jhg@mail.gmail.com/
+Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
+---
+ drivers/phy/Kconfig | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
+index 02467dfd4fb0..1875d5b784f6 100644
+--- a/drivers/phy/Kconfig
++++ b/drivers/phy/Kconfig
+@@ -6,7 +6,7 @@
+ menu "PHY Subsystem"
+ 
+ config PHY_COMMON_PROPS
+-	bool
++	bool "PHY common properties" if KUNIT_ALL_TESTS
+ 	help
+ 	  This parses properties common between generic PHYs and Ethernet PHYs.
+ 
+@@ -16,8 +16,7 @@ config PHY_COMMON_PROPS
+ 
+ config PHY_COMMON_PROPS_TEST
+ 	tristate "KUnit tests for PHY common props" if !KUNIT_ALL_TESTS
+-	select PHY_COMMON_PROPS
+-	depends on KUNIT
++	depends on KUNIT && PHY_COMMON_PROPS
+ 	default KUNIT_ALL_TESTS
+ 	help
+ 	  This builds KUnit tests for the PHY common property API.
+-- 
+2.43.0
+
 
 -- 
 linux-phy mailing list
