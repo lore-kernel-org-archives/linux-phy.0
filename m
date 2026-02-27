@@ -4,55 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8ED1BFEFB56
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Feb 2026 15:29:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C98EFFEFB5D
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Feb 2026 15:29:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZdvFYr0Q8ly8Gk3q1nJfEDoziBE0fJabe0osbYWhlbc=; b=EImQc1dyU2hWt2
-	WHUrcHe43PY+BJHIs0jTUiVhtHRVCcnY2JreCuxmcyPA2U5Ick9vPRXes0F3PmaoJzEyS1oHZ3RJF
-	AtsZRT8WUnlZmc8bRzWuZfN2Fpi/6RZC5acn3O2lsUtS2nHJs+G5Dv57ULqsbNl8MLnwEejKDSQzv
-	J7bql1jk0KuGutAbzzl0W80yIdosKHgT8kQZPSJxp6G36TvOhb+wjDyzRAyK7YU6SXAlKdTNHp7T+
-	Ql255L+ALF8zg+0HrUyB2LXuKVzHBFCxAo+pWtw8GcKq0ulySi3sNJlM4IUJBKZ+vbwrsLao0ffBc
-	jhbsRU6IJfYzhcCkUmtQ==;
+	List-Owner; bh=RmojCJQUkn4dxvTLBkv7qkhaJ6i81dN2/22YRO3CJqs=; b=jaKbVyu6wiA1ab
+	+Z8KXhNfZ7WclCEwNFpaWMAIp0FBE9Z49n86xgpLwTspGMhxPnwI0RoEclSS1ww8e4dwz5O/tXO7v
+	9DCkCFuJeF+/gyUjj8YTmskWArzvfofr05d2Ac/Xjv5rDLlDou5RlGlE3RPw1YZaF4XC+uO5aNy7T
+	OzhyyYGGiI8d++F2nmX3uX5FI/Lu0RPL86LnOYx+BwuFIyduyAW3HlaUjCB7Lh/yIVXAycv54MdRp
+	/xQOneMW6WFS2iVuMMgQk/RfbtyiTeN53AU9WU+jkT2TXNzBXyYzaFSlKaXILNVpfrGNmNQ0Jdfui
+	a1Fes/Vge0Slbt/kdvWQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vvzmB-00000008cup-1JLq;
-	Fri, 27 Feb 2026 15:29:11 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vvzmC-00000008cvE-2LYt;
+	Fri, 27 Feb 2026 15:29:12 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vvzm9-00000008cuB-1qw4
+	id 1vvzmA-00000008cuZ-33wB
 	for linux-phy@lists.infradead.org;
-	Fri, 27 Feb 2026 15:29:09 +0000
+	Fri, 27 Feb 2026 15:29:11 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id D727B600AD;
+	by sea.source.kernel.org (Postfix) with ESMTP id 7416743FDD;
+	Fri, 27 Feb 2026 15:29:10 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 23066C19422;
 	Fri, 27 Feb 2026 15:29:08 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 58248C19423;
-	Fri, 27 Feb 2026 15:29:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1772206148;
-	bh=0p+4yRaqh7tFWKzbEW+zqzakXSo60O20OI52o9TUa5I=;
+	s=k20201202; t=1772206150;
+	bh=lrM54DRK1kUlCe3fHemXnSGT8v0pZHSEPfMU+7uTfcQ=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=mnOOf6u5CCygPKyTW2hOxsRuHQw5eKfSNnAEdc25qk16c+3X6R6o0qioGzhu0ATa5
-	 e8mUQiBxdq4BAMYB3+ty62Oq9iTMXH+BpKx+jazrHle2Ct4Roimjf5AybZKtyTERfb
-	 29FfxqwGUOJWca3s1ONvscZ1GzMOuwoX2OJ8phCQAijI0tRDGUqYrqaO87Ng/+tYVB
-	 bLMJgK8aSLMIzAmBL4RZDs2Uf9JfPUKdjDxxQ5lvpodxsWIBF+sPbYgrkkgac7i6go
-	 Ne8AoDBybKbut5UPJiUlFBx9/wTDXC92re8eXVfkI+4M9TRNdaYyBn0OWcMg9UIE++
-	 ts1CyECR3nrcQ==
+	b=OWnJlNCZh/aCsUn6npxHmpBTDl8yhvEYZO6LqFyvE4vZ05A/X9aWj5v2GOqR6HHgR
+	 Og6Vly0o1SQsQg1D9fpMxIJzUoozX2dQq28E/e5dT5s5XX3s+d4Ml95pkqeKm9JSWC
+	 3T7LXy8NZhb4KluWAyKCuAA/4krSA2xIz2u0hjTKM8x64p4VaeGlWi6NhIDkFH5YkC
+	 UQw/+VpUJLm3g0VGeuKg+bQ8zRSMI58L5p0+uSwni2Q4ik2gYHGrazqNbQZCUDUAdG
+	 L+8py2L3pQ8qI5uDsnlouRR1yGBCKgo2dqevP1XDZ9EtDyPfAKIRH817YEDtCHymTi
+	 TgFeL7luIrjAQ==
 From: Vinod Koul <vkoul@kernel.org>
 To: linux-phy@lists.infradead.org, Vinod Koul <vkoul@kernel.org>
 Cc: Neil Armstrong <neil.armstrong@linaro.org>, 
  Vladimir Oltean <olteanv@gmail.com>
-In-Reply-To: <20260223065743.395539-1-vkoul@kernel.org>
-References: <20260223065743.395539-1-vkoul@kernel.org>
-Subject: Re: [PATCH] phy: Sort the subsystem Makefile
-Message-Id: <177220614698.330302.11179743387963427690.b4-ty@kernel.org>
-Date: Fri, 27 Feb 2026 20:59:06 +0530
+In-Reply-To: <20260223065819.395612-1-vkoul@kernel.org>
+References: <20260223065819.395612-1-vkoul@kernel.org>
+Subject: Re: [PATCH] phy: Sort the subsystem Kconfig
+Message-Id: <177220614876.330302.15946098858761057326.b4-ty@kernel.org>
+Date: Fri, 27 Feb 2026 20:59:08 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260227_072910_799876_9B38AD81 
+X-CRM114-Status: UNSURE (   4.45  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,16 +74,16 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Mon, 23 Feb 2026 12:27:43 +0530, Vinod Koul wrote:
-> Makefile is supposed to be sorted alphabetically, sadly it has bitrotted
+On Mon, 23 Feb 2026 12:28:19 +0530, Vinod Koul wrote:
+> Kconfig is supposed to be sorted alphabetically, sadly it has bitrotted
 > so fix that
 > 
 > 
 
 Applied, thanks!
 
-[1/1] phy: Sort the subsystem Makefile
-      commit: d8f0ef2aebaa90c0155e266c1fdd6fa2aef44bb1
+[1/1] phy: Sort the subsystem Kconfig
+      commit: dee40773abe543723adab47319bc25dc70de10a2
 
 Best regards,
 -- 
