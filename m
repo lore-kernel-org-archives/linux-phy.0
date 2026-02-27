@@ -4,61 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C8FC3FEFB5F
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Feb 2026 15:25:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0ED7FFEFB56
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Feb 2026 15:25:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zzgfIGwTLZ6Ch2lYaGKaW63geoSGop0Pyju1xVJ9CFU=; b=jxuwukI4KTHydj
-	2zNJb+7JAy04C8DfmucUAHfH1hVH/OvwiF2TW814/P+7VWFhFy0VwyB0/Bah+n4OOcUAGtz15hdbr
-	F1p4yrE3LLSFJB7KmvYbU8KPGP86xFRzi3ZkTZPzTCYtxY6D3eT6B5+8YaLKvfCS6VCKaOgMoKZzc
-	xCkWou9i3hgEVCq6j0nywCZruHSauBNgD/noUddM/u02HKGsMV2bkdNWBU5rdnVx44pWa0rYeFIHj
-	TJQfaDOqDRuEHse++Vgppw86kjPmC5pwO3NUiCBv96afwugSQpYdE2JyXuvCVnPO6t4IV0lgOnjmE
-	npFLhHM3BdC4PrBHXmJg==;
+	List-Owner; bh=BwXxtlAbGAUzprp3b2xrjTMomUE4+tpApCo72qgHhm8=; b=dmgwW8r5llrlKI
+	6snZjq0tcCoI8C0BPtPnoLAEGcIP5mFjPXG2BAoPCdE7eJrLsWRfP/cJMlWkC48aby+kbhUyWQ4eZ
+	GRj2glz/dygJPEqUSOMVGSoWZ36MpIsRiq2qWRuxORb3U/YnNAJi9cV/ippCbuLFYIRl/PRbF+6Np
+	l4uJUH4nBKwHoe+YzvHJuf9M2kDXYcRwWjb5BFYZIKvMWLf98NoMCIhEab+mqGN/OumM8ZK11MCDa
+	1V7AH9fpkvravTa1zlS1SFJBFKHkHbBIA4vrdFJVmPR2bAIHUAzrSu8ULkGFMYkk0brAwqIDAl0Pq
+	w+wZ8m8aiPTkTA5QNFWA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vvziP-00000008bnz-2EAn;
+	id 1vvziP-00000008boF-3Kvp;
 	Fri, 27 Feb 2026 15:25:17 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vvziK-00000008bmr-0jVq
-	for linux-phy@lists.infradead.org;
-	Fri, 27 Feb 2026 15:25:13 +0000
+	id 1vvziO-00000008bnP-0l6t;
+	Fri, 27 Feb 2026 15:25:16 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id DFA9A443DC;
-	Fri, 27 Feb 2026 15:25:11 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5CF6CC116C6;
-	Fri, 27 Feb 2026 15:25:10 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 252CB60008;
+	Fri, 27 Feb 2026 15:25:15 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 644C6C116C6;
+	Fri, 27 Feb 2026 15:25:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1772205911;
-	bh=ZL8EJPW0zLlMdvTaNP5yKmV/KVX4aXFG/etNpJF8r6M=;
+	s=k20201202; t=1772205914;
+	bh=TD6wUUXGrC/h9lopsUDiqeD+IbL4J/yZpjSRmDaPsc8=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=Um3zw8y6X7t3uRdtrfB6FoGYZFqMGJ2AFf8amanFdGs9bcV16BdfpOoCEzQ4e0zt8
-	 yFeLsoLNk+t24zVJScB9AGGr2tJVA6Oh28cprl7/56uMS/1gGE5j/LQjIRXJeCIil/
-	 C5km3Jnsx58g8MVEiml6CK6axUnhsfLKS9SU74bNR30q3VabGRqAa9E3Mi4E/wD0xo
-	 1/5Avs+I69pdOoNajz8LOGVa3XCJxQEv+rrIfbYahKtdDo4jN7GvJvkG1wI8YM57jJ
-	 TXnMURihF2vnXwbBws4YqVCdYVSK10mjbjmYG44ppcq7K8aAjcWEY3OHw84hz9C9Vs
-	 x1jjNnofh3A1w==
+	b=XS7D46qKvbKowwm7Z4MQBZ1CFwH8lRjqyxUzbkG+PQt5p6a1LSj2qWyID6HFjmAu/
+	 /Q1pfZQM5+lX+gOEPGDfX0u8nSAOH/DACGelVfgzT2YUzgbPlm13CN9NghCKJibsmn
+	 Fet1LNLj+YKRsy2Z+OMGF9AXlRWH1AYQmFL9njP4sNyPLdgoiXRS9Bp87UXy26Uqwh
+	 hgCrVRauU4kg6+FMyxyQ9nUzZxab8ou0VAF38A8eKMcertDfMXxZi4mFLhNHsE4Dwi
+	 sSH0kN1jW0NUfb+U5IgFqfkwIBG3ZzGLcDGzNwKk8S9AYGHuNEg2sY/sBTSjsPWcXr
+	 7Q18eN0E8IbnQ==
 From: Vinod Koul <vkoul@kernel.org>
-To: linux-phy@lists.infradead.org, 
- Vladimir Oltean <vladimir.oltean@nxp.com>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>, 
- Ioana Ciornei <ioana.ciornei@nxp.com>, linux-kernel@vger.kernel.org
-In-Reply-To: <20260226182853.1103616-1-vladimir.oltean@nxp.com>
-References: <20260226182853.1103616-1-vladimir.oltean@nxp.com>
-Subject: Re: [PATCH phy-fixes] phy: lynx-28g: skip CDR lock workaround for
- lanes disabled in the device tree
-Message-Id: <177220591001.320398.14824622688771745554.b4-ty@kernel.org>
-Date: Fri, 27 Feb 2026 20:55:10 +0530
+To: Neil Armstrong <neil.armstrong@linaro.org>, 
+ Ze Huang <huang.ze@linux.dev>, Yixun Lan <dlan@kernel.org>
+Cc: Vladimir Oltean <olteanv@gmail.com>, 
+ Junzhong Pan <panjunzhong@linux.spacemit.com>, spacemit@lists.linux.dev, 
+ linux-phy@lists.infradead.org, linux-riscv@lists.infradead.org, 
+ linux-kernel@vger.kernel.org
+In-Reply-To: <20260216152653.25244-1-dlan@kernel.org>
+References: <20260216152653.25244-1-dlan@kernel.org>
+Subject: Re: [PATCH v3] phy: k1-usb: add disconnect function support
+Message-Id: <177220591203.320398.3042297469534840289.b4-ty@kernel.org>
+Date: Fri, 27 Feb 2026 20:55:12 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260227_072512_234042_74524F0D 
-X-CRM114-Status: UNSURE (   5.86  )
-X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,21 +72,17 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Thu, 26 Feb 2026 20:28:53 +0200, Vladimir Oltean wrote:
-> The blamed commit introduced support for specifying individual lanes as
-> OF nodes in the device, and these can have status = "disabled".
+On Mon, 16 Feb 2026 23:26:53 +0800, Yixun Lan wrote:
+> A disconnect status BIT of USB2 PHY need to be cleared, otherwise
+> it will fail to work properly during next connection when devices
+> connect to roothub directly.
 > 
-> When that happens, for_each_available_child_of_node() skips them and
-> lynx_28g_probe_lane() -> devm_phy_create() is not called, so lane->phy
-> will be NULL. Yet it will be dereferenced in lynx_28g_cdr_lock_check(),
-> resulting in a crash.
 > 
-> [...]
 
 Applied, thanks!
 
-[1/1] phy: lynx-28g: skip CDR lock workaround for lanes disabled in the device tree
-      commit: a258d843a3e4cb687da19437f8f81fee55ad7d35
+[1/1] phy: k1-usb: add disconnect function support
+      commit: f0cf0a882a02dcf28547f32264f6fd37e9a7b147
 
 Best regards,
 -- 
