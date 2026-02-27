@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 269FAFEFB4F
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Feb 2026 13:45:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CB4F3FEFB4D
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Feb 2026 13:45:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TgQqqEFtE/W9CIdDHN3OB5hM/AE7xMjkisPfc9wBrAA=; b=VzlmGvodCFJNd1
-	BKew0gaCbNFTQM7242Hu/Xw7IDwOO5WBMRgyA9g09yun1YTb+juYKhvSPxdPdyxHzJ9hHigOWbu6n
-	FlRh1q734ts5riw+d6swFe5xlaAApsCQpxGNs0FdnriQwtHqaxqTm7sTqBSxKHO/6gHiL7J3R9rxn
-	CxoP8MPnupYpTVy5JfoNLXtor1O42ct3agQ/KS81RHJIMvSTNeI0LPKg2qquhym83NS1/I0DWFJ1N
-	/MT4AFaAGwizYE5cJYqRFDzn8Znq017Ox3EU00/8WUhXCi77NB2L4wIo4Nv0jHkPW3JflqmuxrMIB
-	Vdw7TaGUwOJAq9gYyjtw==;
+	List-Owner; bh=4jWFqOfiOwfOpLtwnbOt3bifSDkFCKsnx/uaVGvL1og=; b=HuArJXJ2eneWxY
+	C3SI4rykiFQE4rayVPbXpKSB0qobWzuOFJ+YdrudNnbhkkd65Hp+/+yTfICfo7FRzcFrvUsFU46Hf
+	XKNdrLppzn1iz+D116KPfOS1l51Jgvrzm3qaDSV+L0aTH2HjYGuN//csyzOkqT+m3kBjAKRtfP1pf
+	uTe9LNLn7/g2h9bt7LEHP6+SATvfLupZ8TShLOhldU7Q0vlO3TT4x7gaYx3gshs0WKoviO1trGiMn
+	kB1TJWUGf72b9mnusgh7bJsh9tARxSkbC27eMg8clPiIRsIdf45UJYjnVPtdXajrol5A9b3EV6qtk
+	KyBjMyIQyERgvhG/Qfag==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vvy9v-00000008Oa4-3gSm;
-	Fri, 27 Feb 2026 13:45:35 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1vvyAH-00000008Odd-1xBe;
+	Fri, 27 Feb 2026 13:45:57 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vvy9t-00000008OZP-1mjI;
-	Fri, 27 Feb 2026 13:45:34 +0000
+	id 1vvyAD-00000008Ocd-3FBo;
+	Fri, 27 Feb 2026 13:45:55 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 117FF417C2;
-	Fri, 27 Feb 2026 13:45:33 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6DCC6C19423;
-	Fri, 27 Feb 2026 13:45:32 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id D47CD40183;
+	Fri, 27 Feb 2026 13:45:52 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 02162C116C6;
+	Fri, 27 Feb 2026 13:45:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1772199932;
-	bh=SKsV8ym5l/huOSjTYD/pCQkRyet275DwzWDj6sr4VYo=;
+	s=k20201202; t=1772199952;
+	bh=b242g2qNf10eAecZBeoervTpA+wsH+kaSLHINlPH/aU=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=Fjt4tYvDR3Yx46omuqjFG/bP3S/ZkDcwA2EJwv61oGtfT0Bfc7PBUxj8yF++zs6aw
-	 GiCbJvrwSh4SEWXhkxmJenmX0SkCBEjBznUN/4+Rq/Yu7NhDPM9kjNbwldG5P4dvNO
-	 WP3mzZ58bIN5Qjq9cV69tV7BvWokRIMD9p0QAKdqpidIjPyt+KsE+lFTYsTgxZDAoK
-	 WkXOidUZrr6/uaaSU201eEUspAtbGCcT27rlVfOcK7vNSjMJrOOFK4xd8gyeLLCP3B
-	 M0/g9WSR6Wf03IKI9ohI0JZc0W26dFpA5qtldoljrQZVH2cJI5xKLaHFEWFsMTQQtb
-	 4viCazY7YBPnQ==
-Date: Fri, 27 Feb 2026 19:15:29 +0530
+	b=NxnQmO6FxSK9R8f9ct2N8OQyn1ufXUd6i18deXkxbsu0sXgYwCE5rarxBeew/HF2f
+	 UUt420Jcfpt4ij4pGxa91h7L7C4HBJXjfcsMzbXStKwi6GDoLdovUmw0xlpoEGhCz4
+	 UvdnnGUTzUhgCDs6y38V0FQnaV61NVcL2tHlcSBlCasBjCqfmWJbvCw+wBtMcvLn+D
+	 Ubtb4tLUVTA0oItWJrqTynbPtdSFuCA+7YTajUxfbIxz5OJ/DTUTw4OOCW8W/lgKrf
+	 769x3gGF2uw+uMN26XoR+DeGGiBa8oE3aDw5u5uyrAePiT8EVxegJPPFh2xMQUK2RB
+	 6Exubf6OBYUqA==
+Date: Fri, 27 Feb 2026 19:15:49 +0530
 From: Vinod Koul <vkoul@kernel.org>
 To: "Russell King (Oracle)" <rmk+kernel@armlinux.org.uk>
 Cc: Andrew Lunn <andrew@lunn.ch>,
@@ -56,17 +56,17 @@ Cc: Andrew Lunn <andrew@lunn.ch>,
 	Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>,
 	Neil Armstrong <neil.armstrong@linaro.org>, netdev@vger.kernel.org,
 	Paolo Abeni <pabeni@redhat.com>
-Subject: Re: [PATCH net-next 6/8] phy: qcom-sgmii-eth: remove
- qcom_dwmac_sgmii_phy_interface()
-Message-ID: <aaGf-RN9Hho8qEdx@vaman>
+Subject: Re: [PATCH net-next 7/8] phy: qcom-sgmii-eth: relax order of
+ .power_on() vs .set_mode*()
+Message-ID: <aaGgDfaOBHNY6xL2@vaman>
 References: <aZ66OT9scKipRRu2@shell.armlinux.org.uk>
- <E1vvCc9-0000000ArLG-0if1@rmk-PC.armlinux.org.uk>
+ <E1vvCcE-0000000ArLT-1COQ@rmk-PC.armlinux.org.uk>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <E1vvCc9-0000000ArLG-0if1@rmk-PC.armlinux.org.uk>
+In-Reply-To: <E1vvCcE-0000000ArLT-1COQ@rmk-PC.armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260227_054533_482848_11067071 
-X-CRM114-Status: UNSURE (   5.99  )
+X-CRM114-CacheID: sfid-20260227_054554_119546_FFF9926D 
+X-CRM114-Status: UNSURE (   5.53  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -85,10 +85,10 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 25-02-26, 10:59, Russell King (Oracle) wrote:
-> Now that qcom_dwmac_sgmii_phy_interface() only serves to validate the
-> passed interface mode, combine it with qcom_dwmac_sgmii_phy_validate(),
-> and use qcom_dwmac_sgmii_phy_validate() to validate the mode in
-> qcom_dwmac_sgmii_phy_set_mode().
+> Allow any order of the .power_on() and .set_mode*() methods as per the
+> recent discussion. This means phy_power_on() with this SerDes will now
+> restore the previous setup without requiring a subsequent
+> phy_set_mode*() call.
 > 
 > Tested-by: Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>
 > Signed-off-by: Russell King (Oracle) <rmk+kernel@armlinux.org.uk>
