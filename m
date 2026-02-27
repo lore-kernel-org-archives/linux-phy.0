@@ -4,62 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 70722FEFB5D
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Feb 2026 15:29:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E2A43FEFB56
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Feb 2026 15:29:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AMSzmUoVDXTDXoY4HRiUiz0SkhsLb3kiS0ykUm8rQ9I=; b=BPrqycq9UP4H2C
-	M6bGyfdxlLzthu5A9JsZQDXS1l4PtKhjMqq4bfwY0jq9NFvHARmv6/4xLIVhOYVQgvC89IPbjvYos
-	e/kzVOkMoFI75amOa0O+AwRnDjhj4C3mgOSza9HXNGMvOATL8ckvUY2U5F6aZZvdmDhs8uemigsH4
-	PpPRmsb5xzorHJl1hm7esH6T/Zu2zs5MBj+qcp1/MhhQev6HVKkWRs5wCYjY6B9wt158pbGSy+qkL
-	8mkT9g/1/IZWiw/V43nX0FcPW2kG0uJOufve5YqcV4Gg9sFdBfQO03VkkVPlO7884rwLUsrDInqFo
-	PoZhddBaSu/6B7/2I0oA==;
+	List-Owner; bh=QEnoF9G6nH+0CG2Dj7Q4wHNNyrv8OP3eIjP+WY9B+5M=; b=GSR3PEv21Vbfgk
+	3OBZydnccWzeZi5quzwy+ya4pOWVw9AoJlAPwn7KzqF5zGoTm/EAHSz3gV7bcFvsqDQTusPAgigXA
+	D1uMo2Hc9Z7hkJCGMnYRIe4gwDdyNanCOpwBuYkibmF2Opw9R/fT+TLZAkORZ0Un/6kq179TpJtMr
+	UP5IWa28yiO76qj85W/Ks7Fsjb+BEwHz4yIh+OMbHr/qwSFZxAq6m6dMxNDON92r/mIzElxb+bjRo
+	d86qBoWCYmIaSufDk8kzgHgLNEOx4QpZIy+aZ4LCX/x6nw0/RYWalfykWATRpF2KZCtHo3hFEV/v6
+	Nb+O5t5jTt1tF1jogiIw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vvzmX-00000008d3B-0pUb;
-	Fri, 27 Feb 2026 15:29:33 +0000
+	id 1vvzma-00000008d5i-2nrb;
+	Fri, 27 Feb 2026 15:29:36 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vvzmU-00000008d1U-2PwM;
-	Fri, 27 Feb 2026 15:29:31 +0000
+	id 1vvzmY-00000008d3t-1siW
+	for linux-phy@lists.infradead.org;
+	Fri, 27 Feb 2026 15:29:35 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 4A36A401FD;
+	by sea.source.kernel.org (Postfix) with ESMTP id 2D9C143781;
+	Fri, 27 Feb 2026 15:29:34 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C4D25C2BC86;
 	Fri, 27 Feb 2026 15:29:30 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3D5F0C116C6;
-	Fri, 27 Feb 2026 15:29:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1772206170;
-	bh=O/q+TFseq2hzCJfcTUGyfDbN1lRfrdm/shZP4tSCQKY=;
+	s=k20201202; t=1772206174;
+	bh=QqxPEidjtijcKI0x5VDokrr7iw50sdCcnR6RQN9UqMs=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=NufdE3Hq78VHJsKfkOBnnvEn6PQyOYzTyvw/Sn3LImY1RlF0VKi0oE6gn/KR4lzw1
-	 5c2ZfT7Ajfb4ENbYw7vqZ0tFgNtG7O/uhOU3V4rFrkLig2HQHl5jnZBRKZJN7KBKqq
-	 bV7LxFr/7Hoqi4JNB5BNpshmLV5aIAk0kf54bsJpCFVilWL7RMSIhEeHbaxLndjsbk
-	 K/KQY02ZeEX3r5aJnexEWmsytBwQBo6L3OzcqyV8M2k9O4Z28JiShmz8VfrbWD4xa3
-	 /Mlo76GBgzk915ueSIQpFeZCHHRuj16Ba9CJMBq39yejEkw3IY7OMdzxLsxhQ27c2o
-	 WDkhOowyhlCIQ==
+	b=bhNwackp8ttEQdj7NXtXuArb2kHOwIxMDpjs5AR/3NUUmxs0OFOsBnBkFUImxaQmt
+	 cEsQjQR7KX8kz5gLUqPzrfdNiLbBPmZB6YK9OUbIPeBrjUSvwMUPeggvzuAVDIN1IW
+	 6WafSa3M4ArowphLrl513RHxCK7oALXznG6PFAkjeS6MievPvrzCJN27pT3RGEnJkU
+	 XnvrVjB+y+It50KWX/iIdeiGu705pGjlDBxXohxdInRMBQuTkjVCmkeQCMdDKHn8nu
+	 WCQuXssgA+x/pPYvO2D/S35yaMxz4iAO+lveKtuaQy8zolo6trmRSg/wTTwz8AePGN
+	 zhQSWJUuachng==
 From: Vinod Koul <vkoul@kernel.org>
-To: Sven Peter <sven@kernel.org>, Neal Gompa <neal@gompa.dev>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Philipp Zabel <p.zabel@pengutronix.de>, Janne Grunau <j@jannau.net>
-Cc: asahi@lists.linux.dev, linux-phy@lists.infradead.org, 
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- Dan Carpenter <dan.carpenter@linaro.org>, 
- Vladimir Oltean <olteanv@gmail.com>
-In-Reply-To: <20260215-phy-apple-resource-err-ptr-v2-1-e43c22453682@jannau.net>
-References: <20260215-phy-apple-resource-err-ptr-v2-1-e43c22453682@jannau.net>
-Subject: Re: [PATCH phy-next v2] phy: apple: apple: Use local variable for
- ioremap return value
-Message-Id: <177220616687.330302.14977409521915392205.b4-ty@kernel.org>
-Date: Fri, 27 Feb 2026 20:59:26 +0530
+To: neil.armstrong@linaro.org, robh@kernel.org, krzk+dt@kernel.org, 
+ conor+dt@kernel.org, p.zabel@pengutronix.de, linux-phy@lists.infradead.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ Yulin Lu <luyulin@eswincomputing.com>
+Cc: ningyu@eswincomputing.com, linmin@eswincomputing.com, 
+ fenglin@eswincomputing.com
+In-Reply-To: <20260205082009.1780-1-luyulin@eswincomputing.com>
+References: <20260205082009.1780-1-luyulin@eswincomputing.com>
+Subject: Re: [PATCH v9 0/2] Add driver support for Eswin EIC7700 SoC SATA
+ PHY
+Message-Id: <177220617042.330302.2707782153123727768.b4-ty@kernel.org>
+Date: Fri, 27 Feb 2026 20:59:30 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260227_072930_640206_B2EF6801 
-X-CRM114-Status: UNSURE (   6.17  )
+X-CRM114-CacheID: sfid-20260227_072934_530123_D0C21B4F 
+X-CRM114-Status: UNSURE (   5.87  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -78,18 +78,25 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Sun, 15 Feb 2026 09:02:51 +0100, Janne Grunau wrote:
-> The indirection through the resources array is unnecessarily complicated
-> and resuling in using IS_ERR() and PTR_ERR() on a valid address. A local
-> variable for the devm_ioremap_resource() return value is both easier to
-> read and matches expectations when reading code.
+On Thu, 05 Feb 2026 16:20:09 +0800, Yulin Lu wrote:
+> Updates:
+>   v9 -> v8:
+>     - eswin,eic7700-sata-phy.yaml
+>       - Modify the format of the "default" field in the
+>         "eswin,tx-amplitude-tuning" and "eswin,tx-preemph-tuning"
+>         properties.
+>     - phy-eic7700-sata.c
+>       - Correct the incorrectly formatted symbol "-" in the comments.
+>     - Link to v8: https://lore.kernel.org/lkml/20260123024823.1612-1-luyulin@eswincomputing.com/
 > 
-> 
+> [...]
 
 Applied, thanks!
 
-[1/1] phy: apple: apple: Use local variable for ioremap return value
-      commit: 290a35756aaef85bbe0527eaf451f533a61b5f6c
+[1/2] dt-bindings: phy: eswin: Document the EIC7700 SoC SATA PHY
+      commit: 820265f7b666d588bcb7df06f3332265c59e8cea
+[2/2] phy: eswin: Create eswin directory and add EIC7700 SATA PHY driver
+      commit: 67ee9ccaa34a11c317411bb8e7d305d93d0b4111
 
 Best regards,
 -- 
