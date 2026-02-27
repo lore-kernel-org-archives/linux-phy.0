@@ -4,77 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96B0FFD9E21
-	for <linux-phy@archiver.kernel.org>; Thu, 26 Feb 2026 23:10:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96273FD9E26
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Feb 2026 01:26:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:MIME-Version:Subject:Cc
-	:To:From:References:In-Reply-To:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0blMPjoqHUsvCxNRyYVmqxl/QHVBQNZPI/vG/lew9qc=; b=T/RkORIQghH/60
-	7PNgUaTPlpe8S/Bi8R1S1kITBZa6E799cIs61RsQC/p5mgqqAPdOp22EuMbcdGFm7eIpogEilEso6
-	CEXPG1XcK8VAudoS6Cj333xFSzJ3LjRhIA5xnVewZbopBANKrNci3yoxAca7HWiHAplIF8egH6IM9
-	3RsjslxlmPUQdrSK7rj0lZwAuUNZTvv6Qv9V54wjF0FURlHmdQc8hpMUH7HXjzFfc2ZklOQNrzVka
-	YAp5bLovqbjgaU/VJtzz1FYCTuBYoY+eliK7vHm+6Fmmd54iP51A3dHR12eCP/LGLPQkkPTtd6Re1
-	X9GRrCzmdknsCJr2+eZw==;
+	List-Owner; bh=hEDmpRpqiAUXr2PVot4LTV4mD5eRHug6vKWs5+Pycd0=; b=yFn1xdN3Cp+8xJ
+	+LPcelus0tdoElhKZWGCjBeKXUxrAUpmZJ5ivb/zBJiT4ANZEwu97LXxwJURvKIn1Q29a8bYUp9Yn
+	GoNq4ToYGgTpb0hy8obqckiIEhopF8IHuWU/hD5b3Acovv/I39VjqI+SjW8SeDNqd6PM27iATbE0e
+	73PzlJ9tomO89W/A80v+szcJbRHEIbaAAORA1YoYDNstZ3VIrV9NhFpYfQ+aBx6Lh+Kmdtk93As8G
+	PbaK0EOYV4d3eTaUVFoimoJnVXrir0SoNz2jKVLWsvVE993BUYnBBlbx+4nNOOxrI1L1wQ0Oqge0E
+	9lJ1X02ev0mP9qrxS3mQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vvkUn-00000007LjJ-1Cok;
-	Thu, 26 Feb 2026 23:10:13 +0000
-Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
+	id 1vvmcy-00000007UDd-09pt;
+	Fri, 27 Feb 2026 01:26:48 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vvkUk-00000007Lfc-1J4A;
-	Thu, 26 Feb 2026 23:10:11 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=armlinux.org.uk; s=pandora-2019; h=Date:Sender:Message-Id:Content-Type:
-	Content-Transfer-Encoding:MIME-Version:Subject:Cc:To:From:References:
-	In-Reply-To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
-	List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=PkRfojPSv3CP3LZanTyC5uu1PLQ8pOplU1rIVTgxy/U=; b=wESK0CpDUNq8UiEZ7oh1WCl0bY
-	o69axdMyXf87MeMvhJXBXTDZV5j7Rzx6/2uuezIRoNPL3nMk7nNhdkSTSkvVxdcFX/RwdWwX/dVC0
-	YPSAxT+3Ri0ywW/juB8zZ67g4hvSpbFVCTjeTKw16ZQmu9dbcRPz/K7FG3/4gWHrlB5M486A/LdzO
-	4zc6ULVrVin8DKHijumKHR9BXRiVSdXhWW8TRNOFcNU0l9FacDbxXyzbkA0KQ5YijCct0QpwIJvDK
-	DP+278tRDlmGCCcUZPWZPyOskRdy9B5QOrD1tijdAWnCvC245ZAmz1GxgUikTBhrd+4J4B1x93kn3
-	/wi2pteA==;
-Received: from e0022681537dd.dyn.armlinux.org.uk ([fd8f:7570:feb6:1:222:68ff:fe15:37dd]:40152 helo=rmk-PC.armlinux.org.uk)
-	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.98.2)
-	(envelope-from <rmk@armlinux.org.uk>)
-	id 1vvkUa-0000000005l-2ZN5;
-	Thu, 26 Feb 2026 23:10:00 +0000
-Received: from rmk by rmk-PC.armlinux.org.uk with local (Exim 4.98.2)
-	(envelope-from <rmk@rmk-PC.armlinux.org.uk>)
-	id 1vvkUX-0000000AuPo-3mEw;
-	Thu, 26 Feb 2026 23:09:58 +0000
+	id 1vvmcw-00000007UDB-0czI;
+	Fri, 27 Feb 2026 01:26:47 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 2A2DF43599;
+	Fri, 27 Feb 2026 01:26:44 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 65302C116C6;
+	Fri, 27 Feb 2026 01:26:43 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1772155604;
+	bh=hSJg4qauvG+7+fWEs47LIA3wWemCOEi5vHzM2SoFyQU=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+	b=HVsPwexo8yQC1McqS9JeWC0dIgxu1ad7PFQ22F991iYeUBVcYSuPOP84+EK5Y9pJB
+	 s5PJk8FxLshZme53gbaRIOggFE+wq9oL5Os0uK8s1L3/QJYzquBLDZ0wHuN62GGBP8
+	 44IszaOZK0R6ejURWjnzivmC0W1LEGgDI1QNBzyYM0f5wh/ZXMRcK69pYhStJ0RECS
+	 8sFIquFryVggccd5pUkOnJ7HsoAy70K8n4IbQzTLC2aQv7vCMR9/+zQVd9KfpHbvFA
+	 mg5035FzbtoblNIfsRDZSJgRrIRS26FBO23ak1AqrCpMD1AB9c7iA5URfN5LqlAUqZ
+	 +KcPyCNgIMV6Q==
+Date: Thu, 26 Feb 2026 17:26:42 -0800
+From: Jakub Kicinski <kuba@kernel.org>
+To: "Russell King (Oracle)" <linux@armlinux.org.uk>
+Cc: Andrew Lunn <andrew@lunn.ch>, Alexandre Torgue
+ <alexandre.torgue@foss.st.com>, Andrew Lunn <andrew+netdev@lunn.ch>, "David
+ S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>,
+ linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-stm32@st-md-mailman.stormreply.com,
+ Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>, Neil Armstrong
+ <neil.armstrong@linaro.org>, netdev@vger.kernel.org, Paolo Abeni
+ <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>
+Subject: Re: [PATCH RESEND2 net-next 0/8] net: stmmac: qcom-ethqos: further
+ serdes reorganisation
+Message-ID: <20260226172642.18a0b20b@kernel.org>
 In-Reply-To: <aaDSJAc-x2-klvHJ@shell.armlinux.org.uk>
 References: <aaDSJAc-x2-klvHJ@shell.armlinux.org.uk>
-From: "Russell King (Oracle)" <rmk+kernel@armlinux.org.uk>
-To: Andrew Lunn <andrew@lunn.ch>
-Cc: Alexandre Torgue <alexandre.torgue@foss.st.com>,
-	Andrew Lunn <andrew+netdev@lunn.ch>,
-	"David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>,
-	linux-arm-kernel@lists.infradead.org,
-	linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-stm32@st-md-mailman.stormreply.com,
-	Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	netdev@vger.kernel.org,
-	Paolo Abeni <pabeni@redhat.com>,
-	Vinod Koul <vkoul@kernel.org>
-Subject: [PATCH RESEND2 net-next 8/8] net: stmmac: qcom-ethqos: remove
- phy_set_mode_ext() after phy_power_on()
 MIME-Version: 1.0
-Content-Disposition: inline
-Message-Id: <E1vvkUX-0000000AuPo-3mEw@rmk-PC.armlinux.org.uk>
-Date: Thu, 26 Feb 2026 23:09:57 +0000
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260226_151010_345480_3ACA6CC5 
-X-CRM114-Status: GOOD (  15.23  )
+X-CRM114-CacheID: sfid-20260226_172646_218851_DCFABFF0 
+X-CRM114-Status: UNSURE (   4.90  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,83 +78,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The call to phy_set_mode_ext() after phy_power_on() was a work-around
-for the qcom-sgmii-eth SerDes driver that only re-enabled its clocks on
-phy_power_on() but did not configure the PHY. Now that the SerDes driver
-fully configures the SerDes at phy_power_on(), there is no need to call
-phy_set_mode_ext() immediately afterwards.
+On Thu, 26 Feb 2026 23:07:16 +0000 Russell King (Oracle) wrote:
+> Subject: [PATCH RESEND2 net-next 0/8] net: stmmac: qcom-ethqos: further serdes reorganisation
 
-This also means we no longer need to record the previous operating mode
-of the driver - this is up to the SerDes driver. In any case, the only
-thing that we care about is the SerDes provides the necessary clocks to
-the stmmac core to allow it to reset at this point. The actual mode is
-irrelevant at this point as the correct mode will be configured in
-ethqos_mac_finish_serdes() just before the network device is brought
-online.
-
-Reviewed-by: Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>
-Tested-by: Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>
-Signed-off-by: Russell King (Oracle) <rmk+kernel@armlinux.org.uk>
----
- .../stmicro/stmmac/dwmac-qcom-ethqos.c         | 18 ++----------------
- 1 file changed, 2 insertions(+), 16 deletions(-)
-
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
-index 8913f6f02b9e..cb1c074c2053 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
-@@ -105,7 +105,6 @@ struct qcom_ethqos {
- 
- 	struct clk *link_clk;
- 	struct phy *serdes_phy;
--	phy_interface_t serdes_mode;
- 	phy_interface_t phy_mode;
- 
- 	const struct ethqos_emac_por *rgmii_por;
-@@ -648,17 +647,8 @@ static int qcom_ethqos_serdes_powerup(struct net_device *ndev, void *priv)
- 		return ret;
- 
- 	ret = phy_power_on(ethqos->serdes_phy);
--	if (ret) {
--		phy_exit(ethqos->serdes_phy);
--		return ret;
--	}
--
--	ret = phy_set_mode_ext(ethqos->serdes_phy, PHY_MODE_ETHERNET,
--			       ethqos->serdes_mode);
--	if (ret) {
--		phy_power_off(ethqos->serdes_phy);
-+	if (ret)
- 		phy_exit(ethqos->serdes_phy);
--	}
- 
- 	return ret;
- }
-@@ -681,12 +671,9 @@ static int ethqos_mac_finish_serdes(struct net_device *ndev, void *priv,
- 	qcom_ethqos_set_sgmii_loopback(ethqos, false);
- 
- 	if (interface == PHY_INTERFACE_MODE_SGMII ||
--	    interface == PHY_INTERFACE_MODE_2500BASEX) {
-+	    interface == PHY_INTERFACE_MODE_2500BASEX)
- 		ret = phy_set_mode_ext(ethqos->serdes_phy, PHY_MODE_ETHERNET,
- 				       interface);
--		if (ret == 0)
--			ethqos->serdes_mode = interface;
--	}
- 
- 	return ret;
- }
-@@ -839,7 +826,6 @@ static int qcom_ethqos_probe(struct platform_device *pdev)
- 		plat_dat->host_dma_width = data->dma_addr_width;
- 
- 	if (ethqos->serdes_phy) {
--		ethqos->serdes_mode = PHY_INTERFACE_MODE_SGMII;
- 		plat_dat->serdes_powerup = qcom_ethqos_serdes_powerup;
- 		plat_dat->serdes_powerdown  = qcom_ethqos_serdes_powerdown;
- 	}
--- 
-2.47.3
-
+The only exception to the 24h rule is if a reviewer _asks_ you 
+to repost ASAP. Maintainers also wait, there are no exceptions.
+Please don't do this again. Having to deal with multi-tier system
+of privileges and rules will make our (maintainers) job even more
+miserable than it already is.
 
 -- 
 linux-phy mailing list
