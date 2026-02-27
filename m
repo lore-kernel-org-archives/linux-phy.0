@@ -4,66 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F04E7FEFB4F
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Feb 2026 13:56:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C1321FEFB56
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Feb 2026 14:08:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aHoWQCHMTQ5hdYO3HtkTroXuZebJdVflSLIgFlYHzCU=; b=un3m/ur5TL78PO
-	05Zzt3xhCy8+YR2COPA+T2YBQyGKpeImOht3L9kHFez03Wn2r+HaSwDAZSKISY6ok78CdcKFQpEDI
-	j7EV+1Bs62VblSAcxMslgpc+sdDRVlFlb8DhSujMMzzKJSk9fr9eRHXf8Wpl+5EwaQLxcBr8OYrDu
-	M0eE0Ehhkwp88tURSjBPaNImiuS3XQDK+vOZnn/aLlOik8xPPTlj2fdquDncigs9kGUQ1EO1QGTXi
-	ocmaMzkj3ansOVmoZEocVDsho+FAZyiLxNCbdwROyPUOX2GSI4eAySW0V9TLIFD5KJJo4nw18iHTa
-	I2xL1RnVbdfiFZbBqEdw==;
+	List-Owner; bh=/SH/OBnsZJ20BlJDQxAgSLDktEVtb2RW/sxJEWEESr8=; b=XJ/73oO8ZXfaQU
+	5u3Zu6Z0d4oUkHZFH6l7/xmv4A7VtiKhj8FmTMSCgxHvTvzE5s+CJnYldKB9cUchYIuaPRAlVBFTX
+	wfyNFIquFXkYM3InzsuLACktnkyHB5gzZ89bgjTJqUB99+73ekfJM510E7/yBEuU+6iGiDFltDifC
+	B2bTfd0gssA2++JezyDJi57/L2Q0mjhWcV6jbx/mxj3j7sDdjPa9D39rMM8MovwpXFfMqZBkxTYvd
+	h4AXOgNu2g3oA6oSRH5JHSC5F8fg90gqqIsI+yHiRb9iT9ehPlXp6kKWTaSfHOldJ74b4T0IGeNz6
+	jVrG7/7pax0k38Fg6qaA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vvyK1-00000008Pzl-351L;
-	Fri, 27 Feb 2026 13:56:01 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1vvyVx-00000008T8r-1amC;
+	Fri, 27 Feb 2026 14:08:21 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vvyJz-00000008PzH-2TXe
+	id 1vvyVu-00000008T8V-2rFR
 	for linux-phy@lists.infradead.org;
-	Fri, 27 Feb 2026 13:56:00 +0000
+	Fri, 27 Feb 2026 14:08:19 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 4213440257;
-	Fri, 27 Feb 2026 13:55:59 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A027AC116C6;
-	Fri, 27 Feb 2026 13:55:58 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 5070A444FE;
+	Fri, 27 Feb 2026 14:08:18 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6710EC116C6;
+	Fri, 27 Feb 2026 14:08:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1772200559;
-	bh=Z5NdvmHFpqWASNhjEw3AnhNyfE+IsWtjKqCNA37tD2g=;
+	s=k20201202; t=1772201298;
+	bh=TiA19B2029SlmlVMXMVhf5Vhssf3HDX9ajqPqZqlpZ4=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=guoTrA3tySUNzy2jisrkqGd2k4FHDS4iIngYwHJYw9pTwrkQ/ryB4iixO2moZuzpX
-	 TacRL9UlkHBSre+N18XIpNM6QnlDnKF2lhK50sxk22DUsItoTexaeq4KwJiTd1enNz
-	 UK/63+NILl7z3Pk6yiKXypP7Mm6A0Ge5qIuBYB5jMnqeYawdBTypdlxKlRmt10vm1x
-	 dmKx4ofeYN446GJt1mkmS8xKuaW540FXZKBffx7CpoqoUEXyHVu41QyJCDKqw5UgGu
-	 tRELXuDIvdOcc9zS566aKbuwkOb49Td3MgxD2kPz4FgrmldyNAMQdfMc2AgoVqLY0P
-	 yzUjBQzrC2PfA==
-Date: Fri, 27 Feb 2026 19:25:55 +0530
+	b=gDgpHXguuDtFsPLvt5L9lwMfiCQOf/4HSL46ZN/ED0LkW0DDIeeNy0IcBYLH3G+zt
+	 Xy+JzTjYjLuzYkpyESSr6Pe0x7jw/epDMI3WmgXLUUDhX/Zy98NE1+6Keli7o9uujt
+	 8Lj4oI5UgrgmKV4goxcXJGzjiHm+9ATKk8ZOgE1aj5eukLpIgbe/lBikFD0Cf+7jGZ
+	 ogHin5ey692vHtyNAV982Sxha7gL+0r07DiHjFxe7qzSIGsYQjjx/xaiDutXe+ZZwU
+	 XYgZ9U8HIc83spzcoBHQ9dDqr790NXaAOan3kyYMd2xTsR06HUYN9kJ8/TCPvIVNFk
+	 AQkVA5GPcKwYw==
+Date: Fri, 27 Feb 2026 19:38:14 +0530
 From: Vinod Koul <vkoul@kernel.org>
 To: =?iso-8859-1?Q?Th=E9o?= Lebrun <theo.lebrun@bootlin.com>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-	linux-mips@vger.kernel.org,
-	Vladimir Kondratiev <vladimir.kondratiev@mobileye.com>,
-	Gregory CLEMENT <gregory.clement@bootlin.com>,
+Cc: Vladimir Kondratiev <vladimir.kondratiev@mobileye.com>,
+	=?iso-8859-1?Q?Gr=E9gory?= Clement <gregory.clement@bootlin.com>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	linux-mips@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-clk@vger.kernel.org,
 	=?iso-8859-1?Q?Beno=EEt?= Monin <benoit.monin@bootlin.com>,
 	Tawfik Bayouk <tawfik.bayouk@mobileye.com>,
 	Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
 	Luca Ceresoli <luca.ceresoli@bootlin.com>
-Subject: Re: [PATCH v7 1/2] phy: sort Kconfig and Makefile
-Message-ID: <aaGia-MYCsRYCPT6@vaman>
-References: <20260225-macb-phy-v7-0-e5211a61db56@bootlin.com>
- <20260225-macb-phy-v7-1-e5211a61db56@bootlin.com>
+Subject: Re: [PATCH v6 3/8] phy: Add driver for EyeQ5 Ethernet PHY wrapper
+Message-ID: <aaGlTqjgRgIvB_O5@vaman>
+References: <20260127-macb-phy-v6-0-cdd840588188@bootlin.com>
+ <20260127-macb-phy-v6-3-cdd840588188@bootlin.com>
+ <aZ8OkJ4BH0-sVSHS@vaman>
+ <DGO5XYKELMA3.14FPOZ2FCD8NN@bootlin.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260225-macb-phy-v7-1-e5211a61db56@bootlin.com>
+In-Reply-To: <DGO5XYKELMA3.14FPOZ2FCD8NN@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260227_055559_667916_84E6C68A 
-X-CRM114-Status: GOOD (  18.22  )
+X-CRM114-CacheID: sfid-20260227_060818_739991_584F81F5 
+X-CRM114-Status: GOOD (  16.30  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,102 +91,37 @@ Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 25-02-26, 17:54, Th=E9o Lebrun wrote:
-> Neither Kconfig nor Makefile are sorted; reorder them.
+On 25-02-26, 16:54, Th=E9o Lebrun wrote:
+> On Wed Feb 25, 2026 at 4:00 PM CET, Vinod Koul wrote:
+> > On 27-01-26, 18:09, Th=E9o Lebrun wrote:
+> >> EyeQ5 embeds a system-controller called OLB. It features many unrelated
+> >> registers, and some of those are registers used to configure the
+> >> integration of the RGMII/SGMII Cadence PHY used by MACB/GEM instances.
+> >> =
+
+> >> Wrap in a neat generic PHY provider, exposing two PHYs with standard
+> >> phy_init() / phy_set_mode() / phy_power_on() operations.
+> >
+> > Is there a dependency of this patch with rest of the series. If not
+> > please post different series for subsystems.
 > =
 
-> $ diff -U100 <(grep ^config drivers/phy/Kconfig) \
->              <(grep ^config drivers/phy/Kconfig | sort)
+> ACK. It felt sensible to keep patches close together to understand their
+> reasoning.
+>  - clk patches are there because they imply we get a dev->of_node.
+>    Without them we don't and therefore the driver is useless.
+>  - DTS/MIPS patches are there because they exploit this new driver.
+>    They show the first users of this driver.
+
+You can add that in cover letter for people interested to read. It is
+easy for me to pick a series rather than find which patches to review
+and apply
+
 > =
 
-> $ diff -U100 <(grep ^obj-\\$ drivers/phy/Makefile) \
->              <(grep ^obj-\\$ drivers/phy/Makefile | sort)
-> =
+> Will split for next revision.
 
-> PHY_COMMON_PROPS{,_TEST} are kept at the top which does not respect
-> sorting order.
-> =
-
-> Reviewed-by: Luca Ceresoli <luca.ceresoli@bootlin.com>
-> Signed-off-by: Th=E9o Lebrun <theo.lebrun@bootlin.com>
-> ---
->  drivers/phy/Kconfig  | 86 ++++++++++++++++++++++++++--------------------=
-------
->  drivers/phy/Makefile |  8 ++---
->  2 files changed, 47 insertions(+), 47 deletions(-)
-> =
-
-> diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
-> index 02467dfd4fb0..c86e90027443 100644
-> --- a/drivers/phy/Kconfig
-> +++ b/drivers/phy/Kconfig
-> @@ -47,6 +47,26 @@ config GENERIC_PHY_MIPI_DPHY
->  	  Provides a number of helpers a core functions for MIPI D-PHY
->  	  drivers to us.
->  =
-
-> +config PHY_AIROHA_PCIE
-> +	tristate "Airoha PCIe-PHY Driver"
-> +	depends on ARCH_AIROHA || COMPILE_TEST
-> +	depends on OF
-> +	select GENERIC_PHY
-> +	help
-> +	  Say Y here to add support for Airoha PCIe PHY driver.
-> +	  This driver create the basic PHY instance and provides initialize
-> +	  callback for PCIe GEN3 port.
-> +
-> +config PHY_CAN_TRANSCEIVER
-> +	tristate "CAN transceiver PHY"
-> +	select GENERIC_PHY
-> +	select MULTIPLEXER
-> +	help
-> +	  This option enables support for CAN transceivers as a PHY. This
-> +	  driver provides function for putting the transceivers in various
-> +	  functional modes using gpios and sets the attribute max link
-> +	  rate, for CAN drivers.
-> +
->  config PHY_GOOGLE_USB
->  	tristate "Google Tensor SoC USB PHY driver"
->  	select GENERIC_PHY
-> @@ -69,6 +89,17 @@ config PHY_LPC18XX_USB_OTG
->  	  This driver is need for USB0 support on LPC18xx/43xx and takes
->  	  care of enabling and clock setup.
->  =
-
-> +config PHY_NXP_PTN3222
-> +	tristate "NXP PTN3222 1-port eUSB2 to USB2 redriver"
-> +	depends on I2C
-> +	depends on OF
-> +	select GENERIC_PHY
-> +	help
-> +	  Enable this to support NXP PTN3222 1-port eUSB2 to USB2 Redriver.
-> +	  This redriver performs translation between eUSB2 and USB2 signalling
-> +	  schemes. It supports all three USB 2.0 data rates: Low Speed, Full
-> +	  Speed and High Speed.
-> +
->  config PHY_PISTACHIO_USB
->  	tristate "IMG Pistachio USB2.0 PHY driver"
->  	depends on MIPS || COMPILE_TEST
-> @@ -84,6 +115,18 @@ config PHY_SNPS_EUSB2
->  	  Enable support for the USB high-speed SNPS eUSB2 phy on select
->  	  SoCs. The PHY is usually paired with a Synopsys DWC3 USB controller.
->  =
-
-> +config PHY_SPACEMIT_K1_PCIE
-> +	tristate "PCIe and combo PHY driver for the SpacemiT K1 SoC"
-> +	depends on ARCH_SPACEMIT || COMPILE_TEST
-> +	depends on COMMON_CLK
-> +	depends on HAS_IOMEM
-> +	depends on OF
-> +	select GENERIC_PHY
-> +	default ARCH_SPACEMIT
-> +	help
-> +	  Enable support for the PCIe and USB 3 combo PHY and two
-> +	  PCIe-only PHYs used in the SpacemiT K1 SoC.
-
-I moved this into spacemit directory and while at it notice the file is
-not sorted and patched that up.20260223065743.395539-1-vkoul@kernel.org
-Sorry I missed this and earlier one
+Thanks
 
 -- =
 
