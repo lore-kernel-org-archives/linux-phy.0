@@ -4,69 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 54477FEFB4F
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Feb 2026 13:47:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C2D93FEFB4D
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Feb 2026 13:52:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0QFndqrfWwAWwOEaSBrK/1IetuQrSaXt6kwSRyuQdXk=; b=xyRT9nEo2gS+17
-	cJ/HuuXSLcsJ2E0nA0wlbt2LvfT3uw86KseProY8HqpIij029cESYwFP+ERQHwZ3XlG1KS2y2fKh4
-	WEByvXdJo/uyXdZO9VNd7K0lIA1GSbarMGsWBZloD4NVZBUSqAtwGq/TlaYUMHPVmgo/sgtS84ZM2
-	xY140upKM6+UpafrXutfvdicUf1Cp3zJr2D5K+SQOxo3MLBCMJGkt12vC7uqEGXakdjWPjnNXk+sg
-	VMbqMspkMdYR5ZYj3z/d+US4HiD98Y5bk3tVenzOpNiUagc4I/35GQP8dIMs2iVeURzmc9tSncbSa
-	5jN2hfgcczRDoWBKIQBw==;
+	List-Owner; bh=rGijGthmVyAjMP6L9M8YeB0EWbgrSgafWk3ZEaQSoQ0=; b=BfQGE2piLZfcWT
+	hUMJsk8kdhH4UjBOohXZFncvHd7+PmsZR9KgaLDWBdDYYLPfeTNe/Obmnp8nG9OtCM6bRITnjMBu/
+	/uEMLh6/1np4o5bzGyy1DLjdHYFc/nQBvFX4FupHIaLgSJHNFYii1HfcnWZUh0O4CEXtmeT5QScZU
+	erTR9BM4u1LKvOx3yDuc5u2gTnS0KI6iIdhup44sgHrJ/aiiiolJB/nCPSmPZ1drIGpMqMoNayKgs
+	ok6JV0gLxWmqxAzvsXffOtKeAn4T/4pnQhOqMzfRaHACgGmnp0suVOjIN/bRSkqVga/hYfGgQTu8b
+	IAjnr8XMakU2pVcXsgJQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vvyBU-00000008OoB-0FXY;
-	Fri, 27 Feb 2026 13:47:12 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1vvyGi-00000008PRR-1t57;
+	Fri, 27 Feb 2026 13:52:36 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vvyBR-00000008OnX-3Tg0;
-	Fri, 27 Feb 2026 13:47:10 +0000
+	id 1vvyGh-00000008PR6-02r1
+	for linux-phy@lists.infradead.org;
+	Fri, 27 Feb 2026 13:52:36 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 7BFDA403B0;
-	Fri, 27 Feb 2026 13:47:09 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D9428C116C6;
-	Fri, 27 Feb 2026 13:47:08 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id A012F40852;
+	Fri, 27 Feb 2026 13:52:34 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C076BC19423;
+	Fri, 27 Feb 2026 13:52:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1772200029;
-	bh=qvJg2b+muPo/7mul4VkBUyfNKIzDq1yjTRVGO539OrM=;
+	s=k20201202; t=1772200354;
+	bh=1aioRZsT/x015BhRflc0NizKTzba3nmZZdRjXLysTLY=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=QXX7N77xOZthaKb8Gix4TD16r8C4jY4cHgaD9obUSckKNbhx0GgUtfYfrcO0m/JLn
-	 MVyCCwL41/4WvXKefmz/KXLNEMZyBPIk5QBqo/Qg2hvhUWcIAb9WmVHqgFU0+i0Gav
-	 /5uF9OQi06SEHlNBQIdjow7ZyfWnZiVCw3m41Qssd5AxgF3bu/cQ0IaIXSW5+M6583
-	 cSHuZ7l6M2EZJBHQlV3ePocvMcSWVl+w27he89xAKKPTroHtX+CLCAEZRDTIoK2yq2
-	 0J4iCQJeuHmxgSnz7BGmhHA6yva7BL2i+Ft7TYN+5m7klx2A3UTLFereCE8l+2UcJB
-	 GauonCbjkudkw==
-Date: Fri, 27 Feb 2026 19:17:05 +0530
+	b=ZKTp/tLu+wqzSPRuDSsgiiAj+iG35J5v43Y0sjKtzn3ByCpGg6WGzAZh10dKcs94N
+	 SScd4MzCSMOaib46Rj80zqtgiPVuKuIA0ZXF92yxf/r8I8/udV/xItmlrxR1FsHR0q
+	 //5CEUy5kcR5lE9mod7Z2ov6Ey/1mcganvINJK6o7UvSCs8QCwHXylRP1zxrwaJ4Im
+	 9YRKhj429gJ11KkgSp6oV7+GGJLcmuPTqgZMGYRBShWSIKG0EUrrgnx5z/O+DOgBAh
+	 m5CBn36upkSlQh52p+FTi/q/CnGLw89qSiKJL7YVAmHovGT8wA7X1LGCA9yiOtFLRP
+	 20cNtPCl9A9tA==
+Date: Fri, 27 Feb 2026 19:22:31 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: "Russell King (Oracle)" <linux@armlinux.org.uk>
-Cc: Andrew Lunn <andrew@lunn.ch>,
-	Alexandre Torgue <alexandre.torgue@foss.st.com>,
-	Andrew Lunn <andrew+netdev@lunn.ch>,
-	"David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>,
-	linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-stm32@st-md-mailman.stormreply.com,
-	Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>, netdev@vger.kernel.org,
-	Paolo Abeni <pabeni@redhat.com>
-Subject: Re: [PATCH net-next 0/9] net: stmmac: qcom-ethqos: further serdes
- reorganisation
-Message-ID: <aaGgWUpM2A5y11Wh@vaman>
-References: <aZ66OT9scKipRRu2@shell.armlinux.org.uk>
- <aZ66uXCwGgH7B_A-@shell.armlinux.org.uk>
+To: Josua Mayer <josua@solid-run.com>
+Cc: Marc Kleine-Budde <mkl@pengutronix.de>,
+	Vincent Mailhol <mailhol@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Peter Rosin <peda@axentia.se>, Aaro Koskinen <aaro.koskinen@iki.fi>,
+	Andreas Kemnade <andreas@kemnade.info>,
+	Kevin Hilman <khilman@baylibre.com>,
+	Roger Quadros <rogerq@kernel.org>, Tony Lindgren <tony@atomide.com>,
+	Janusz Krzysztofik <jmkrzyszt@gmail.com>,
+	Vignesh R <vigneshr@ti.com>, Andi Shyti <andi.shyti@kernel.org>,
+	Ulf Hansson <ulf.hansson@linaro.org>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	Magnus Damm <magnus.damm@gmail.com>,
+	Wolfram Sang <wsa+renesas@sang-engineering.com>,
+	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+	Yazan Shhady <yazan.shhady@solid-run.com>,
+	Jon Nettleton <jon@solid-run.com>,
+	Vladimir Oltean <olteanv@gmail.com>,
+	Mikhail Anikin <mikhail.anikin@solid-run.com>,
+	linux-can@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org, linux-omap@vger.kernel.org,
+	linux-i2c@vger.kernel.org, linux-mmc@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-renesas-soc@vger.kernel.org
+Subject: Re: [PATCH v11 1/9] phy: can-transceiver: rename temporary helper
+ function to avoid conflict
+Message-ID: <aaGhn_vBoruYDqji@vaman>
+References: <20260226-rz-sdio-mux-v11-0-c2a350f9bbd3@solid-run.com>
+ <20260226-rz-sdio-mux-v11-1-c2a350f9bbd3@solid-run.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <aZ66uXCwGgH7B_A-@shell.armlinux.org.uk>
+In-Reply-To: <20260226-rz-sdio-mux-v11-1-c2a350f9bbd3@solid-run.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260227_054709_887192_FC20F3DC 
-X-CRM114-Status: GOOD (  12.79  )
+X-CRM114-CacheID: sfid-20260227_055235_093329_F69F91BD 
+X-CRM114-Status: UNSURE (   4.87  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,22 +97,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 25-02-26, 09:02, Russell King (Oracle) wrote:
-> Note: only 8 patches in this series, not 9 as the subject line says,
-> as the set_clk_tx_rate() patch became part of the first series.
-> 
-> On Wed, Feb 25, 2026 at 09:00:41AM +0000, Russell King (Oracle) wrote:
-> > This is part 2 of the qcom-ethqos series, part 1 has now been merged.
-> > 
-> > This part of the series focuses on the generic PHY driver, but these
-> > changes have dependencies on the ethernet driver, hence why
-> > it will need to go via net-next. Furthermore, subsequent changes
-> > depend on these patches.
+On 26-02-26, 15:21, Josua Mayer wrote:
+> Rename the temporary devm_mux_state_get_optional function to avoid
+> conflict with upcoming implementation in multiplexer subsystem.
 
-This lgtm, can we get signed tag so that we can pull this into phy tree
-as well
-
-Thanks
+Acked-by: Vinod Koul <vkoul@kernel.org>
 
 -- 
 ~Vinod
