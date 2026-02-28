@@ -4,73 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0BC921048925
-	for <linux-phy@archiver.kernel.org>; Sat, 28 Feb 2026 00:11:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A90F11048924
+	for <linux-phy@archiver.kernel.org>; Sat, 28 Feb 2026 00:20:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qSU6pwmctd5LG2BEWE+ytj/HV6yP8R3+h+u1wpY7p9o=; b=IBLxx8Kznko7tw
-	gBxp9drlWEBV4z9VNzu+rx3eLoEtYuJrop3ZjD1H3TGXRVVNYzq/lI382123ydwOUFp/nKP6uUl7J
-	HUrdp3VR4CiJ+2qLG2MTOQe1LEA9YvDkOZjpJH5ERzOjrz3q7Ck63xPlubvZcb54kdMYr4CdofKwE
-	wd7mQf65GBvj+IX04BRsYGoQJgELDtapWbz5L9o2O0B4p1Vr8s3IlWYNbxYex4CPdhhj8RSnMjokJ
-	F/iK4jqmcvTQqRSddLQdOFkW2SdhG5uUdK4gVs0KNuC6flDOfbR5IhZlyPGF1jegMIZWCiq8vdaLM
-	IcfC+vhaYbAQZ8/2M+4A==;
+	List-Owner; bh=GevHErkq1DFz+pHOgUthtKpG7EQDQP9xeenEqGGbR50=; b=4hLziNSPZt52MH
+	zrxcPmShFvysWiRNNJ/ISTdXDbs8NC1mRj567WKNKUMQKJw/N8RKu+Pwqev6hz8hVK0Zevm5FM0QA
+	m5C/6dlRYzybAXJ1+wrJT+8ovaXUirhcHCI2P7a1k/FW+E2YRsxzu20NYtgHYOV27jq6EjVfnTm2b
+	7t2Lp69d0MKAk6gJ9Pjd+EmL3p8pdc1ObbrvvwIHPoV6LJU+mvFGr0yzJ/op5WusSX8P0xA6qsHgy
+	3Lhx3q6czRYdZTInChanes7rEW2X5m+YfDTmmsynNyeBGNTxlY2ABerkVKYk113+raZ2AYOHoojh7
+	WJ8R+8ZHLvXxdurm7sFQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vw7vz-00000009JDA-2bJ7;
-	Sat, 28 Feb 2026 00:11:51 +0000
-Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
+	id 1vw83s-00000009Jpw-1W0a;
+	Sat, 28 Feb 2026 00:20:00 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vw7vw-00000009JCh-2r5v;
-	Sat, 28 Feb 2026 00:11:50 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
-	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
-	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=GZdE3v1uM6dshlMijAz4RF1iw09aYz2wg0tBwp/dyGA=; b=XlYnerF5xK1Ql3eFDyGif3TCY2
-	lfIAnzkBeHR3C7xAuoMd0iZlod2dCvxiH0kDHYgoxRbb2hPiQ3d8W5ER859VOyBAYAdOKf8cs7NTJ
-	Me1GZrqatduWjJVAio3hJRolyvfJkQ1VfGuyFKnzC+O8Oc6LT/vjJKxMaB4RRiqSvur17Yb4LN0zC
-	cHIzkBRkf5Qx+kZfdWnscVzDOZ0bu03U2P11u82Yp8thQpexjjSWxx5Z9xzRop9apWv+tyit5ihu3
-	/xNEh60H0vH8sU1tfSghfrBv+Ucx5M9JQu8IYeO30o5BJ+YGyycDBvbLTvApaoifmtps/5GKE8BKb
-	dQDPhLoQ==;
-Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:46012)
-	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.98.2)
-	(envelope-from <linux@armlinux.org.uk>)
-	id 1vw7vj-000000001Rv-3OlC;
-	Sat, 28 Feb 2026 00:11:35 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.98.2)
-	(envelope-from <linux@shell.armlinux.org.uk>)
-	id 1vw7ve-000000003WJ-2CMn;
-	Sat, 28 Feb 2026 00:11:30 +0000
-Date: Sat, 28 Feb 2026 00:11:29 +0000
-From: "Russell King (Oracle)" <linux@armlinux.org.uk>
-To: Andrew Lunn <andrew@lunn.ch>, Jakub Kicinski <kuba@kernel.org>
-Cc: Alexandre Torgue <alexandre.torgue@foss.st.com>,
-	Andrew Lunn <andrew+netdev@lunn.ch>,
-	"David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-stm32@st-md-mailman.stormreply.com,
-	Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>, netdev@vger.kernel.org,
-	Paolo Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>
-Subject: Re: [PATCH RESEND2 net-next 0/8] net: stmmac: qcom-ethqos: further
- serdes reorganisation
-Message-ID: <aaIysVxy-WxbiJz9@shell.armlinux.org.uk>
-References: <aaDSJAc-x2-klvHJ@shell.armlinux.org.uk>
+	id 1vw83p-00000009Jp8-3qGS;
+	Sat, 28 Feb 2026 00:19:59 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1772237993;
+	bh=eEWOJLC5iXka6AARlFgyl+EPvoGlADG4k4kYulrx3Wc=;
+	h=Date:Subject:To:References:From:In-Reply-To:From;
+	b=YG1S4cQCItG4wh33BA/xp5pv5bzJWN7qr+2SrhcDxWdw1eOTsEa0xeOMT981QtdVj
+	 LDEbrpqeDNXAa3A1OAI05M1LKnMzVP74y/de7yGLlGybv8g6gTbGLMJE/eWpXUwaFl
+	 Xp+GYqK9CWyxjl3FZQ+kGEVpyDf8r0Wa0CM0Xhy64iADAgGEevXUxO/2GWtwfhejJa
+	 N7IQmVGUvlsh3fbT2UN3oEg3tWCsqSQBxc5d+RXTYTU36p/aVJV1l+eLJJt1KjUM73
+	 BhUhf7F3p5s/8ZRDu4ba6RSlCNs4E2wShG1B9ig1HZSntqeCTa/jxlgnPHLqCxSyQj
+	 Sy2rRpetH1djw==
+Received: from [192.168.1.90] (unknown [86.123.23.225])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: cristicc)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 5457D17E0454;
+	Sat, 28 Feb 2026 01:19:53 +0100 (CET)
+Message-ID: <67adf0fb-707f-4cc9-b394-8627149d8587@collabora.com>
+Date: Sat, 28 Feb 2026 02:19:52 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <aaDSJAc-x2-klvHJ@shell.armlinux.org.uk>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [REGRESSION] HDMI monitor not working on Radxa Rock 5B after phy
+ rockchip samsung hdptx HDMI 2.1 FRL patchset
+To: dubito@online.de, Vinod Koul <vkoul@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>, Heiko Stuebner
+ <heiko@sntech.de>, linux-phy@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-kernel@vger.kernel.org, regressions@lists.linux.dev
+References: <b32164001947ba922aefb6ca86a8dc59e9323d2b.camel@online.de>
+ <8e410a11-bd7b-4a12-a711-0514a59409c0@collabora.com>
+ <1859c940219a4dbfdf0497afbf333e627ab0ba25.camel@online.de>
+ <98e46dbb-c8e2-451f-accb-ea48f63f9408@collabora.com>
+ <4544ec4ccfa49cbdffee098878df7806223935a0.camel@online.de>
+ <08369c90-fbab-477d-9ac6-388deddfd3b1@collabora.com>
+ <26e31b3b-484f-433b-833f-c639ee437f63@collabora.com>
+ <03b5f3d1-6db4-4835-b2a5-c22c1aa63825@collabora.com>
+ <a3c3964e9e13c82d944fa1ee0acbb1a7806dd382.camel@online.de>
+ <a662745a-1b2a-47b3-a66d-7c1c5c8af525@collabora.com>
+ <e18fce6a3216427d26bd10ebd837e9152c0c8b60.camel@online.de>
+Content-Language: en-US
+From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+In-Reply-To: <e18fce6a3216427d26bd10ebd837e9152c0c8b60.camel@online.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260227_161148_718948_FD3EAEF3 
-X-CRM114-Status: GOOD (  18.12  )
+X-CRM114-CacheID: sfid-20260227_161958_114016_CDFC2F42 
+X-CRM114-Status: UNSURE (   9.38  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,60 +83,35 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, Feb 26, 2026 at 11:07:16PM +0000, Russell King (Oracle) wrote:
-> This is part 2 of the qcom-ethqos series, part 1 has now been merged.
-> 
-> This part of the series focuses on the generic PHY driver, but these
-> changes have dependencies on the ethernet driver, hence why
-> it will need to go via net-next. Furthermore, subsequent changes
-> depend on these patches.
-> 
-> The underlying ideas here are:
-> 
-> - get rid of the driver using phy_set_speed() with SPEED_1000 and
->   SPEED_2500 which makes no sense for an ethernet SerDes due to the
->   PCS 8B10B data encoding, which inflates the data rate at the SerDes
->   compared to the MAC. This is replaced with phy_set_mode_ext().
-> - allow phy_power_on() / phy_set_mode*() to be called in any order.
-> 
-> Mohd has tested this series, but it would be great to get acks/reviews
-> from the generic PHY maintainers.
-
-So, PW says "changes requested" - please let me know what changes have
-been requested.
-
-The AI review for patch 7 says:
-
-  This commit fixes a bug but lacks a Fixes: tag. The commit modifies
-  behavior introduced in 360000820ae2 ("phy: qcom-sgmii-eth: add
-  .set_mode() and .validate() methods") by making phy_power_on() call
-  qcom_dwmac_sgmii_phy_calibrate() to restore the previous setup, and by
-  making qcom_dwmac_sgmii_phy_set_mode() check if the PHY is powered on
-  before attempting calibration.
-
-  Should this commit include:
-
-  Fixes: 360000820ae2 ("phy: qcom-sgmii-eth: add .set_mode() and .validate() methods")
-
-which is _wrong_, this isn't a bug fix.
-
-So, in light of AI review being incorrect, my comment about re-sending
-due to the AI review is no longer relevant, and no changes are required.
-The only thing that's necessary is to have Vinod's ack added to patches
-4, 5, 6 and 7, as he gave them against the very first posting of these
-on Wednesday. This is despite waiting the required 24h before sending
-the first resend.
-
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTP is here! 80Mbps down 10Mbps up. Decent connectivity at last!
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+SGkgVGhvbWFzLAoKT24gMi8yMS8yNiA1OjA1IFBNLCBUaG9tYXMgTmllZGVycHLDvG0gd3JvdGU6
+Cj4gSGkgQ3Jpc3RpYW4sCj4gCj4gQW0gTWl0dHdvY2gsIGRlbSAxOC4wMi4yMDI2IHVtIDIyOjU2
+ICswMjAwIHNjaHJpZWIgQ3Jpc3RpYW4gQ2lvY2FsdGVhOgo+PiBIaSBUaG9tYXMsCj4+Cj4+IE9u
+IDIvMTgvMjYgMTA6NDMgUE0sIDF1bmQxIHdyb3RlOgo+Pj4gSGkgQ3Jpc3RpYW4sCj4+Pgo+Pj4K
+Pj4+IEFtIE1pdHR3b2NoLCBkZW0gMTguMDIuMjAyNiB1bSAyMjoxNSArMDIwMCBzY2hyaWViIENy
+aXN0aWFuIENpb2NhbHRlYToKPj4+PiBPbiAyLzE4LzI2IDM6MjIgQU0sIENyaXN0aWFuIENpb2Nh
+bHRlYSB3cm90ZToKPj4+Pj4gT24gMi8xOC8yNiAyOjUyIEFNLCBDcmlzdGlhbiBDaW9jYWx0ZWEg
+d3JvdGU6Cj4+Pj4+PiBIaSBUaG9tYXMsCgpbLi4uXQoKPj4+IGFwcGx5aW5nIHRoZXNlIGNvbW1p
+dHMgc29sdmVzIG15IHByb2JsZW1zLiBJIHRlc3RlZCAxOTIweDEwODBANjAsCj4+PiAxOTIweDEw
+ODBANTAKPj4+IGFuZCAxOTIweDEwODBAMzAuIEFsbCB3b3JrIG5vdy4gVGhhbmtzIGZvciB0aGUg
+cXVpY2sgZml4ISAKPj4KPj4gVGhhbmtzIGZvciB0aGUgcXVpY2sgdGVzdCEKPj4KPj4gSSBjYW4g
+YWRkIHlvdSB0byBjYzogd2hlbiBJIHN1Ym1pdCB0aGUgc2VyaWVzLCBzbyB0aGF0IHlvdSBtYXkg
+cHJvdmlkZSB5b3VyCj4+IFRlc3RlZC1ieSB0YWcgaWYgeW91J2QgbGlrZSB0by4KPiAKPiBzdXJl
+LCBJIHdvdWxkIGJlIGhhcHB5IHRvLgoKSSd2ZSBqdXN0IHJlYWxpemVkIEkgbWlzc2VkIHRvIGFk
+ZCB5b3VyIHJlY2lwaWVudCBlbWFpbCB0byB0aGUgc2VyaWVzIFsxXSBzZW50Cm91dCBqdXN0IGEg
+ZmV3IGhvdXJzIGFnbyAtIHNvcnJ5IGZvciB0aGF0LiAgSG93ZXZlciwgeW91IGNhbiBmaW5kIHNv
+bWUgcmVwbHkKaW5zdHJ1Y3Rpb25zIGF0IHRoZSBib3R0b20gb2YgdGhhdCBwYWdlLCBlLmcuIGlt
+cG9ydCB0aGUgbWJveCBpbnRvIHlvdXIgbWFpbApjbGllbnQuCgpQbGVhc2Ugbm90ZSB0aGlzIGlz
+IGEgcmV3b3JrZWQgdmVyc2lvbiBvZiB0aGUgaW5pdGlhbCBwYXRjaGVzLCBmaXhpbmcgc29tZQph
+ZGRpdGlvbmFsIGlzc3VlcywgaGVuY2UgcmV0ZXN0aW5nIHdvdWxkIGJlIG5lY2Vzc2FyeS4gIEZv
+ciBjb252ZW5pZW5jZSwgeW91IG1heQphbHNvIHBpY2sgdGhlc2UgcGF0Y2hlcyBmcm9tIFsyXS4K
+ClJlZ2FyZHMsCkNyaXN0aWFuCgpbMV0gaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvYWxsLzIwMjYw
+MjI3LWhkcHR4LWNsay1maXhlcy12MS0wLWY5OThmMjc2MmQwZkBjb2xsYWJvcmEuY29tLwpbMl0g
+aHR0cHM6Ly9naXRsYWIuY29sbGFib3JhLmNvbS9jcmlzdGljYy9saW51eC1uZXh0Ly0vY29tbWl0
+cy9iNC9oZHB0eC1jbGstZml4ZXMKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBo
+eUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
+L2xpc3RpbmZvL2xpbnV4LXBoeQo=
