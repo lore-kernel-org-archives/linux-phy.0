@@ -4,62 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 88D5BFD0046
-	for <linux-phy@archiver.kernel.org>; Sat, 28 Feb 2026 22:07:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 98489FD0040
+	for <linux-phy@archiver.kernel.org>; Sun,  1 Mar 2026 00:15:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=wslE/alA7LKUlxGT/CuyuiNMike2f8nsZjcm1+uPs+U=; b=MREGo2Mi91hjXA
-	Xu+wj67gdoBX7sDejm1OuKI7KMXisZbfuHcNbqgoMUkeQ8mU6jE/W7SJOMhMF2Pw2CwIHYYT+bce1
-	72DHR66TuSf9arFUu7YsEJZ57CmNqNLp0EVmfL8eP/mrcjvGHe2nT/vIhAIU+zyKXq8SmXMxG869k
-	QeHjh0xYsGUWPkMZMZgJ+9DnKTmYTE4dOeYlw9c3wy5M7jLqlnEFMshV0Q0s5jY39GHxSDLPo5qCb
-	PAHmL/TMxah+mD7ot3bfkn+9sIP4xIGHTmrjz6hnm+PNeUctO3Dkxu9tiUGxtlUaaIZ+FcDxK2Hb7
-	fSWceToY2CEYK2joORhw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jhQkSPPmi2aku0fum+eSps/4t9xUrT78PKURg8YBIbU=; b=uN280//YYXuBvw
+	XK0ihMoB418UXJERU3qXE/jXLKqLr57kzgGCffD2DT95xdkeFA8hlO/S1VquzMe4vT5YB2E3iufKL
+	LvcxTkx3fDJAOGyfwVD8grxB0cT6CbLzx/sk8KMFGew0LdiCYkYmGfWNmyv2cyJILq2QNVNgfVygD
+	92fMJzgk+xrpD8Z6ExeEQEkgPJy4jpT6YWZGPjC0Q6dbm8NduJ7cv9y/GTSpo+21y/ZJQKgt6n+9y
+	nb/cAkGFCsXgbJFckuvv7mg7XVdt7yxh1b9IROk7OfquGz1oJYO5lsF5PfGYtR0om0omhbOZ7sBiD
+	GqqgwpAP+G5ucRoBKsDg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vwSTX-0000000AJY9-1tvZ;
-	Sat, 28 Feb 2026 22:07:52 +0000
-Received: from out-173.mta0.migadu.com ([2001:41d0:1004:224b::ad])
+	id 1vwUSd-0000000AOfW-0Ift;
+	Sun, 01 Mar 2026 00:15:03 +0000
+Received: from mail-wr1-x433.google.com ([2a00:1450:4864:20::433])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vwSTU-0000000AJXm-2wgG
+	id 1vwUSa-0000000AOeO-0Pa4
 	for linux-phy@lists.infradead.org;
-	Sat, 28 Feb 2026 22:07:50 +0000
-X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=packett.cool;
-	s=key1; t=1772316463;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:
-	 content-transfer-encoding:content-transfer-encoding;
-	bh=V5AVxV03NAnElMqKItv7U4khI5BMEJHhDRtUcMyS+eo=;
-	b=YjkFqDs0Pxqc6Amt9jN4cWcFSP9VFUm6lk1ITcE6ViWCH0FuiwyK304YH4BNvDZSx/LQmn
-	vgAbnG7qp50XXKbxySTAEHWdQVq4L0p7bl2+NaMr5bFcwLk7ZmtGe8On7nz75K1PRphGlI
-	o7eBfrzHkgkkf337+73WPGL18U6y4SgQpiwxzFMGmXs3Cfufc0zjvitVdE+sFwOmYTjGe7
-	/f1nndsJNs9sisqlYghSgdfq+/IdXUMT42svEJPQ5jSgQdJv7HtHNrleQI2VX3MXlRRBpZ
-	yraEcRL6l6V/b7/915pvJHKVAv6v2IOSYHkLtIJL1TrpvieLSi2mmfEuowWPjg==
-From: Val Packett <val@packett.cool>
-To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>,
-	Wesley Cheng <wesley.cheng@oss.qualcomm.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>
-Cc: Val Packett <val@packett.cool>,
-	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
-	linux-arm-msm@vger.kernel.org,
+	Sun, 01 Mar 2026 00:15:01 +0000
+Received: by mail-wr1-x433.google.com with SMTP id ffacd0b85a97d-439acc60f9dso104550f8f.1
+        for <linux-phy@lists.infradead.org>; Sat, 28 Feb 2026 16:14:59 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1772324098; x=1772928898; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=zYnsoG7qDnrk7Z/gOuxzAyQoovXIM2RIYjUlYbsloBk=;
+        b=l6z/yyyIARuuvuZusJA39yVbXiBSWxo7+IMi1sibMpeWKnIEatwlW0d4GyI0p5etXH
+         GvgaW+XY6o41YlHU7UxmSfyjvCr2DQbWWY4SkcD7V9/xOrHcp5FZ7qk4xWimjvTbYtqa
+         8N5hY1T+xzaTwabaKFEcIYpFTyZyIuRlKPpfKHgIG/bUdZZ0L/o+A9jrOpQSLLOk9Gfy
+         /EcwsdnS6IWu6wQA4MxxELg8eKXdz3721YnIDV9zAIoOPkRtnQM9g73rZhEkTm3t5Z/q
+         tvFT8p6+UudmWHVCgRgOoMOf6ji9iHo1N1fgFIG5y+KaskX09DVAIp/EfLniTS/U/A8F
+         /BEw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1772324098; x=1772928898;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=zYnsoG7qDnrk7Z/gOuxzAyQoovXIM2RIYjUlYbsloBk=;
+        b=W3OT0/X7+O16pqiSMUbRORDsj5jCgMUeE4B1YnzY+oZAVFw/t7vvmJSqg8mSAJwd8p
+         7ab6GQZ8LtpYSRLq4FV6pmSKduAwkPfoiBfh5MID+7OjxjzpfWdEGx9ekIXZDO+NBVa3
+         eYHMiZGpuw5DE39EAAcGtpwin822Jj+RawncjOnwZUDkuYB1q42dimwBhRZx+uFJ0/gG
+         sfGzCOP5W0tJKJYZ6xA7YnFIQedHDBwdS26PWlgKjpjKbUpDhvvtakP2ycBj4uiE+vWu
+         n97Cndn1ORNFuXvcWuzRqFFDZt/rrQlH2T71zwP9HwCXf5YXQvFf392L6C6ozFMHVsEP
+         LHgA==
+X-Forwarded-Encrypted: i=1; AJvYcCWnFzn3FQtG6DchxD37bZnlC4xXtG4VfcDFbd//7B+3N7312Nrx5oXjw5cSe63Ty3HhcP17r+08nks=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwcWB+Dvtv2eW6jwfVQ13JJfxlkafuJ8einccUorNm/RxQnYdTp
+	LS8v0IIlJOg2HBlIqK4O3zrtKQaPCBZ0C6teJq8Q/V4Bcy4BmGsQ8i4OXWfitg==
+X-Gm-Gg: ATEYQzzhhAgj6fiEYIrl4KkRgbpVtSwEduRIhAsvzC2Yu82MWVuEZXelk5ZIEucLKjo
+	F12BhpqPIsPrbB1nWYkiI5NyPnshMYqgnMf9bI/urMlfHdCC7w1RvWyU3wjgX7JEM/UXBQFHJff
+	MdyJeMvxi4/zliu/fCmH0ZEPRnM4iqJdMLuYS2amWmTjKka2aXEJ2sDCCPwuUfcxikKadlYYdPi
+	WlN1EboYGgKgEGRrkvu3HDMSfjjDK+6WnoJkxAzrJMRNJ3VQz/r5v8Gp6Argum9qE13tdLHMFoO
+	y8wsfPS2fLs/gP0CT7ZP0BXDA4dece5mcTp3kMiNOOn0+2GniOPONXVbUZX05c86tijQ5h8Oxrq
+	Dw6+Vkr8IlPiLq2ScEgTRYdYSF7Lf1eV/kY6QLk64WhS7paQVmQiXs+pARCVoUmQmzZ78aDCv0K
+	rjX3m8s5Jo95qV3CqWf5c=
+X-Received: by 2002:a05:600c:474e:b0:483:7d93:9fb7 with SMTP id 5b1f17b1804b1-483c9b99876mr77353565e9.2.1772324097547;
+        Sat, 28 Feb 2026 16:14:57 -0800 (PST)
+Received: from skbuf ([2a02:2f04:d608:3a00:53bb:2a43:1888:95a0])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-483bd75dfaasm278799855e9.12.2026.02.28.16.14.54
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 28 Feb 2026 16:14:56 -0800 (PST)
+Date: Sun, 1 Mar 2026 02:14:53 +0200
+From: Vladimir Oltean <olteanv@gmail.com>
+To: Jakub Kicinski <kuba@kernel.org>
+Cc: "Russell King (Oracle)" <linux@armlinux.org.uk>,
+	Andrew Lunn <andrew@lunn.ch>,
+	Alexandre Torgue <alexandre.torgue@foss.st.com>,
+	Andrew Lunn <andrew+netdev@lunn.ch>,
+	"David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
 	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH v2] phy: qcom: qmp-combo: Move pipe_clk on/off to common
-Date: Sat, 28 Feb 2026 19:05:38 -0300
-Message-ID: <20260228220634.22778-2-val@packett.cool>
+	linux-stm32@st-md-mailman.stormreply.com,
+	Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>, netdev@vger.kernel.org,
+	Paolo Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>
+Subject: Re: [PATCH RESEND2 net-next 0/8] net: stmmac: qcom-ethqos: further
+ serdes reorganisation
+Message-ID: <20260301001453.lpd2rawy7bqxyivp@skbuf>
+References: <aaDSJAc-x2-klvHJ@shell.armlinux.org.uk>
+ <aaIysVxy-WxbiJz9@shell.armlinux.org.uk>
+ <20260227165556.5cf9e844@kernel.org>
+ <20260228083111.5df8550c@kernel.org>
 MIME-Version: 1.0
-X-Migadu-Flow: FLOW_OUT
+Content-Disposition: inline
+In-Reply-To: <20260228083111.5df8550c@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260228_140748_974604_CED8F497 
-X-CRM114-Status: UNSURE (   9.52  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260228_161500_149086_915C18F3 
+X-CRM114-Status: GOOD (  21.64  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,78 +112,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Keep the USB pipe clock working when the phy is in DP-only mode, because
-the dwc controller still needs it for USB 2.0 over the same Type-C port.
+On Sat, Feb 28, 2026 at 08:31:11AM -0800, Jakub Kicinski wrote:
+> On Fri, 27 Feb 2026 16:55:56 -0800 Jakub Kicinski wrote:
+> > On Sat, 28 Feb 2026 00:11:29 +0000 Russell King (Oracle) wrote:
+> > > The AI review for patch 7 says:
+> > > 
+> > >   This commit fixes a bug but lacks a Fixes: tag. The commit modifies
+> > >   behavior introduced in 360000820ae2 ("phy: qcom-sgmii-eth: add
+> > >   .set_mode() and .validate() methods") by making phy_power_on() call
+> > >   qcom_dwmac_sgmii_phy_calibrate() to restore the previous setup, and by
+> > >   making qcom_dwmac_sgmii_phy_set_mode() check if the PHY is powered on
+> > >   before attempting calibration.
+> > > 
+> > >   Should this commit include:
+> > > 
+> > >   Fixes: 360000820ae2 ("phy: qcom-sgmii-eth: add .set_mode() and .validate() methods")
+> > > 
+> > > which is _wrong_, this isn't a bug fix.  
+> > 
+> > Yes, that's what I thought but then I saw the other thread..
+> 
+> Trying to apply this now but stmmac parts don't apply on Linus's tree,
+> and Vinod wants a tag :( What do we do? 
+> 
+> Could you, perhaps, send us a PR with this on top of Linus's tree 
+> (a resolution of the inevitable conflict with net-next would be helpful
+> too).
+> 
+> Or do we give up on the tag?
 
-Tested with the BenQ RD280UA monitor which has a downstream-facing port
-for data passthrough that's manually switchable between USB 2 and 3,
-corresponding to 4-lane and 2-lane DP respectively.
+Actually, I think it's mainly me who wants a stable tag. I'm working on
+a series for phy-next which will conflict with this hunk from Russell's
+patch 1:
 
-Note: the suspend/resume callbacks were already gating the enable/disable
-of this clock only on init_count and not usb_init_count!
+diff --git a/drivers/phy/qualcomm/phy-qcom-sgmii-eth.c b/drivers/phy/qualcomm/phy-qcom-sgmii-eth.c
+index 5b1c82459c12..4ea3dce7719f 100644
+--- a/drivers/phy/qualcomm/phy-qcom-sgmii-eth.c
++++ b/drivers/phy/qualcomm/phy-qcom-sgmii-eth.c
+@@ -7,6 +7,7 @@
+ #include <linux/ethtool.h>
+ #include <linux/module.h>
+ #include <linux/of.h>
++#include <linux/phy.h>
+ #include <linux/phy/phy.h> // this gets renamed to <linux/phy/phy-provider.h>
+ #include <linux/platform_device.h>
+ #include <linux/regmap.h>
 
-Signed-off-by: Val Packett <val@packett.cool>
----
-See https://lore.kernel.org/all/389ca5d3-a698-4dac-911c-39ba057e3d17@oss.qualcomm.com/ for more info.
-BTW https://lore.kernel.org/all/20260205160240.748371-2-loic.poulain@oss.qualcomm.com/ helped with coldplug.
-
-v2: Reorder disables as suggested
-v1: https://lore.kernel.org/all/20250927093915.45124-2-val@packett.cool/
----
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 16 ++++++++--------
- 1 file changed, 8 insertions(+), 8 deletions(-)
-
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-index 93f1aa10d400..28428a8d1192 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-@@ -3691,6 +3691,13 @@ static int qmp_combo_com_init(struct qmp_combo *qmp, bool force)
- 	if (ret)
- 		goto err_assert_reset;
- 
-+	/* In DP-only mode, the pipe clk is still required for USB2 */
-+	ret = clk_prepare_enable(qmp->pipe_clk);
-+	if (ret) {
-+		dev_err(qmp->dev, "pipe_clk enable failed err=%d\n", ret);
-+		return ret;
-+	}
-+
- 	qphy_setbits(com, QPHY_V3_DP_COM_POWER_DOWN_CTRL, SW_PWRDN);
- 
- 	/* override hardware control for reset of qmp phy */
-@@ -3768,6 +3775,7 @@ static int qmp_combo_com_exit(struct qmp_combo *qmp, bool force)
- 
- 	reset_control_bulk_assert(cfg->num_resets, qmp->resets);
- 
-+	clk_disable_unprepare(qmp->pipe_clk);
- 	clk_bulk_disable_unprepare(qmp->num_clks, qmp->clks);
- 
- 	regulator_bulk_disable(cfg->num_vregs, qmp->vregs);
-@@ -3871,12 +3879,6 @@ static int qmp_combo_usb_power_on(struct phy *phy)
- 
- 	qmp_configure(qmp->dev, serdes, cfg->serdes_tbl, cfg->serdes_tbl_num);
- 
--	ret = clk_prepare_enable(qmp->pipe_clk);
--	if (ret) {
--		dev_err(qmp->dev, "pipe_clk enable failed err=%d\n", ret);
--		return ret;
--	}
--
- 	/* Tx, Rx, and PCS configurations */
- 	qmp_configure_lane(qmp->dev, tx, cfg->tx_tbl, cfg->tx_tbl_num, 1);
- 	qmp_configure_lane(qmp->dev, tx2, cfg->tx_tbl, cfg->tx_tbl_num, 2);
-@@ -3922,8 +3924,6 @@ static int qmp_combo_usb_power_off(struct phy *phy)
- 	struct qmp_combo *qmp = phy_get_drvdata(phy);
- 	const struct qmp_phy_cfg *cfg = qmp->cfg;
- 
--	clk_disable_unprepare(qmp->pipe_clk);
--
- 	/* PHY reset */
- 	qphy_setbits(qmp->pcs, cfg->regs[QPHY_SW_RESET], SW_RESET);
- 
--- 
-2.52.0
-
+If there's no other way to provide a stable tag other than on v7.0-rc1
+(like for example a snapshot of current net-next/main), which I didn't
+know wouldn't be possible, then I think going with the route of fewer/
+more trivial merge conflicts makes sense.
 
 -- 
 linux-phy mailing list
