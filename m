@@ -4,75 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 92484FD0060
-	for <linux-phy@archiver.kernel.org>; Sun,  1 Mar 2026 12:08:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D1E77FD0066
+	for <linux-phy@archiver.kernel.org>; Sun,  1 Mar 2026 13:39:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3Gvdu77TQdCAJnvLQ0TNzqVF3JUSIPTkUlVeY2mlQks=; b=J1JLHSwiWrtJzU
-	uAPwTA6K6D55ETBl7mzm26JsBG/5hogedhmvZEwvPJOZ24Sw/x8QQh5UtFdXgoMUqt6Uh+/qe78+e
-	YeCZ0e2FVwACKRZpv+mqXuzeOgfMEteBMD1Q+nIHmyHxe2ulOz1Pn6fHgG1Ae+ZaAHeXB9KQRIlUk
-	JfxROj3wkusuVOdYql4K2Gt4eXzIr5WHLM/6UoPCncihmfWFJsfUjkJcrxgKl5/OmJ/2k53wXfI0u
-	ZidAPelR9OI1QBuEEWEEdzZINzEEZeNrN/LDT2jj3OGKH5S0YM8tolQasQFaS4heqI8Ek30ESqqjV
-	ZIv0SYRjP7/7Y7E7otMA==;
+	List-Owner; bh=7ZaLmkowzxmk8rKDSwSoseNZHOJYRlCNOGf8LC16maI=; b=3PT0VFIU54bk2o
+	1O5ma1hXq78X7XZBktrEtR9kNs48UKkzX38H1SptFfcwAnQrtNA6xTmFqLCxXxZG2l1WLMJmVsR8W
+	YE3dHC9IR3OUzYGQHKNjVwIp1coRUUl3vy2NemAVxW2YtBdLhA3YMMvrBAUOZud+8LmUBQ88eT9DY
+	D+QYhPmFJg6x0mR6g1+3FLHAbtUixXiS+323y4fTmZZcb1eOFfJIo/v0Lf6QZBG7Yhr8bVU5BX9MY
+	r0Jy4kf1TyMoS7Byr5/yIqukyvk6AAJq8U9neRWzlg4/SUDduflx5L8fNZjVDqsfThHwP5dk8zGF6
+	vaUMINSVSofGNlgRh5rg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vwfb7-0000000B5hJ-0lWp;
-	Sun, 01 Mar 2026 12:08:33 +0000
-Received: from mail-wm1-x335.google.com ([2a00:1450:4864:20::335])
+	id 1vwh1M-0000000BXSx-2Vze;
+	Sun, 01 Mar 2026 13:39:44 +0000
+Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vwfb4-0000000B5gD-0EF0
-	for linux-phy@lists.infradead.org;
-	Sun, 01 Mar 2026 12:08:31 +0000
-Received: by mail-wm1-x335.google.com with SMTP id 5b1f17b1804b1-4836d9d54f6so3401815e9.1
-        for <linux-phy@lists.infradead.org>; Sun, 01 Mar 2026 04:08:29 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1772366908; x=1772971708; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=UwOed2BoBm+IaxGS8G+Dca7DMJY6cOw/pE55KOFYvnI=;
-        b=fqzByw+elwzJEQ1clgBUeCQ6C3WanXYYDAAqJ7uUyoer81/U70uZ9mcGyiaCUa36ts
-         IWj9Rk1bh8qEgOxTuw2j+gsYWwbVpsNSKVXWZdF10kl67/qD8WgRGjryCHeKA6D3OudT
-         CzQO5LNf7EDCCbeC4ZMl72lJK1qpaeI0c5/DJ0P6g2RWhtefwJfOurPzsjhjIb57VIJH
-         Em+mAfvzxR55tH/gMTEFgIUzhsWYJ2n2Jj5eb2Jy7+hK9c2ulfsT7+emhPDcIIWx48kd
-         K8y6KbbibD/fkXBjZuk2jwlUwr8gEQ4guzIr796LvlS9RbCQyuGCsS2nZjDuS0fjVc2l
-         3Kzg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1772366908; x=1772971708;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=UwOed2BoBm+IaxGS8G+Dca7DMJY6cOw/pE55KOFYvnI=;
-        b=kniaHKCHBB21cZMzkTJjb93akDXtHmw+hDfttv3n7LPj+F0TS/tCfzceQvXXdh3/nW
-         vQyAKPq0Imjzsu0LlaVHHYeVhpDhu1w06fyzPRQr2qpeOTlN4Xo3Gzly2mBjWRm8YAPz
-         Ec6TLdKMfM41Ofmv/KNoPeiz7iPjFZx+JgUnhQHCYznmzHkc+VITnburWxnDUkYCHAUH
-         E/xCnKtgmwozOcB3M05TsPwc6p73y/LM/z0TLNIDHqqxsxIwgabX6HAiCvDYuJ0QZ0oD
-         Wu8qNyr+2dj6CPjscDiEOY5o9VuUAr+lTx4IVtMc3xY88NIyUL8b/YcWn3iMO4DbeTSu
-         zPfQ==
-X-Forwarded-Encrypted: i=1; AJvYcCWB/uZoz0DUk9T6MlydV722k737ynxTBkZsSi8Q8f4+X9TQO8hhLjv95I7zOB3yEPcl7pEyVNeykrQ=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzcAWYSeugGZndx9srrEV9AyAmd/LkkqDSSjw3pDoyCp6xTSLRa
-	F0z2AMfq21WxjRGSzmoeAK0/OCgnGCBkXz7qsr1ZfSQTJ5pkd7JiJgZm
-X-Gm-Gg: ATEYQzxi8LGmGefoj9Yb/kNZwDFEhtbP9bqYC0djtXr9XnpktzVa8goRXKHJrCgJ0SB
-	trF90mk097rO4CbXr0pfvlUElUpi4Tsp1LAmkQitMDGHVgn5EBjYJ6HCFU0On4ttdIS7bluuKHG
-	hElEoG90wt+HDatOle8/Zd/O99bVWWfoPYwzeLri4kZWOjOdraJMVcxkKWd4i2Zso5VFVYWVOPE
-	jumfOnEnpzmKtS18Z0QYK/8k7nSukfyFjy9Cw/NZj9TNUXQ1nb5tLXMoJI6C4S2iN95G5NeJ0ft
-	/WqiYZiqZan9ljvDZP8c6gdXhuic5PHBlO7Huz8ZswlwHfRU3EuEH4T5mRpw/vJGZpbTWhkYxcZ
-	tuTtpld2rcDW3LXFG50TlcixT/tiQLWJPB/MzLIxwemJiwW1yIX89VrXVJLZNnkAvZImBBoI9qa
-	lf/GxX9W3IdOrFzQdYv2g=
-X-Received: by 2002:a05:600c:828c:b0:47e:e20e:bbbc with SMTP id 5b1f17b1804b1-483c9ba6db4mr86494875e9.1.1772366907868;
-        Sun, 01 Mar 2026 04:08:27 -0800 (PST)
-Received: from skbuf ([2a02:2f04:d608:3a00:8f4c:42a4:aebb:ef65])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-483bd7507adsm363973255e9.9.2026.03.01.04.08.26
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 01 Mar 2026 04:08:27 -0800 (PST)
-Date: Sun, 1 Mar 2026 14:08:24 +0200
-From: Vladimir Oltean <olteanv@gmail.com>
+	id 1vwh1I-0000000BXSW-4AoX;
+	Sun, 01 Mar 2026 13:39:42 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=1Q7wucS6pURwPgHIHcP2h2EzaAhhqWaFY4RLsBpkyUQ=; b=dF0Wv6tLgza0gUbPq4l/7IJhcO
+	nGOxj81ENoCMwLZD3V0kkqlB8vinRdDF+U4zojPxN2FQhri+VE76vSqHJiHO7y0bjUppSqVKN+ols
+	4QviiLN7JWTWU8cedj7/MIVjFkEoQfLXZpWM3F7iGMuxk33IvtONkj6PpN0HVMV1++QFetrnvjBgd
+	9vRETjyYjTuizmQw7Sh90+wUP1B8Ro2eHRiHjnxPykLP/RUBoto2GmlpKbOZzOKpzy4FjhcFyYD9/
+	pKBimEoFdRNBCBEg4Sa+Y73UsRyFdqotusGT+dnK4eNRGLcLEdtcG94bWYCVk6tA2m4Aed9S1bwXk
+	qOIM41iw==;
+Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:35798)
+	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.98.2)
+	(envelope-from <linux@armlinux.org.uk>)
+	id 1vwh18-000000002zk-02mS;
+	Sun, 01 Mar 2026 13:39:30 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.98.2)
+	(envelope-from <linux@shell.armlinux.org.uk>)
+	id 1vwh13-0000000052b-2zUf;
+	Sun, 01 Mar 2026 13:39:25 +0000
+Date: Sun, 1 Mar 2026 13:39:25 +0000
+From: "Russell King (Oracle)" <linux@armlinux.org.uk>
 To: Jakub Kicinski <kuba@kernel.org>
-Cc: "Russell King (Oracle)" <linux@armlinux.org.uk>,
-	Andrew Lunn <andrew@lunn.ch>,
+Cc: Andrew Lunn <andrew@lunn.ch>,
 	Alexandre Torgue <alexandre.torgue@foss.st.com>,
 	Andrew Lunn <andrew+netdev@lunn.ch>,
 	"David S. Miller" <davem@davemloft.net>,
@@ -85,19 +64,17 @@ Cc: "Russell King (Oracle)" <linux@armlinux.org.uk>,
 	Paolo Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>
 Subject: Re: [PATCH RESEND2 net-next 0/8] net: stmmac: qcom-ethqos: further
  serdes reorganisation
-Message-ID: <20260301120824.ot53bhv7z7kn5lfd@skbuf>
+Message-ID: <aaRBjWhP4-7Kru9D@shell.armlinux.org.uk>
 References: <aaDSJAc-x2-klvHJ@shell.armlinux.org.uk>
  <aaIysVxy-WxbiJz9@shell.armlinux.org.uk>
  <20260227165556.5cf9e844@kernel.org>
  <20260228083111.5df8550c@kernel.org>
- <20260301001453.lpd2rawy7bqxyivp@skbuf>
- <20260228163229.1024f263@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260228163229.1024f263@kernel.org>
+In-Reply-To: <20260228083111.5df8550c@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260301_040830_107073_1760FC74 
-X-CRM114-Status: GOOD (  24.90  )
+X-CRM114-CacheID: sfid-20260301_053941_327782_E64367A8 
+X-CRM114-Status: GOOD (  18.14  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,64 +91,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, Feb 28, 2026 at 04:32:29PM -0800, Jakub Kicinski wrote:
-> > I'm working on a series for phy-next which will conflict with this 
-> > hunk from Russell's patch 1:
+On Sat, Feb 28, 2026 at 08:31:11AM -0800, Jakub Kicinski wrote:
+> On Fri, 27 Feb 2026 16:55:56 -0800 Jakub Kicinski wrote:
+> > On Sat, 28 Feb 2026 00:11:29 +0000 Russell King (Oracle) wrote:
+> > > The AI review for patch 7 says:
+> > > 
+> > >   This commit fixes a bug but lacks a Fixes: tag. The commit modifies
+> > >   behavior introduced in 360000820ae2 ("phy: qcom-sgmii-eth: add
+> > >   .set_mode() and .validate() methods") by making phy_power_on() call
+> > >   qcom_dwmac_sgmii_phy_calibrate() to restore the previous setup, and by
+> > >   making qcom_dwmac_sgmii_phy_set_mode() check if the PHY is powered on
+> > >   before attempting calibration.
+> > > 
+> > >   Should this commit include:
+> > > 
+> > >   Fixes: 360000820ae2 ("phy: qcom-sgmii-eth: add .set_mode() and .validate() methods")
+> > > 
+> > > which is _wrong_, this isn't a bug fix.  
 > > 
-> > diff --git a/drivers/phy/qualcomm/phy-qcom-sgmii-eth.c b/drivers/phy/qualcomm/phy-qcom-sgmii-eth.c
-> > index 5b1c82459c12..4ea3dce7719f 100644
-> > --- a/drivers/phy/qualcomm/phy-qcom-sgmii-eth.c
-> > +++ b/drivers/phy/qualcomm/phy-qcom-sgmii-eth.c
-> > @@ -7,6 +7,7 @@
-> >  #include <linux/ethtool.h>
-> >  #include <linux/module.h>
-> >  #include <linux/of.h>
-> > +#include <linux/phy.h>
-> >  #include <linux/phy/phy.h> // this gets renamed to <linux/phy/phy-provider.h>
-> >  #include <linux/platform_device.h>
-> >  #include <linux/regmap.h>
+> > Yes, that's what I thought but then I saw the other thread..
 > 
-> That's not too bad.. if that's the extent of the conflict (which is
-> probably hard to predict at rc2?) we could let linux-next handle it. 
+> Trying to apply this now but stmmac parts don't apply on Linus's tree,
+> and Vinod wants a tag :( What do we do? 
 
-Yeah, I can't predict the future beyond that.
+The problem will be that this series has dependencies on the first
+batch of qcom-ethqos patches, particularly:
+cd0aa6515350 ("net: stmmac: pass interface mode into fix_mac_speed()
+method")
+b560938163db ("net: stmmac: qcom-ethqos: pass phy interface mode to
+configs")
+fb42f19e671f ("net: stmmac: qcom-ethqos: move SerDes speed
+configuration")
 
-> Of course assuming Vinod is okay with us merging Russell's entire
-> series.
-> 
-> > If there's no other way to provide a stable tag other than on v7.0-rc1
-> > (like for example a snapshot of current net-next/main), which I didn't
-> > know wouldn't be possible, then I think going with the route of fewer/
-> > more trivial merge conflicts makes sense.
-> 
-> To be clear, it's only about having a common ancestor, I wasn't actually
-> planning on making y'all a tag. I'd just apply the series on top of
-> v7.0-rc1 and merge them in. Then anyone can tag the relevant commit 
-> in net-next or use as a base for their own work.
-> 
-> I haven't looked how bad the conflict would be if Russell's work was
-> rebased on Linus's tree. If the delta is not too bad, and we can just
-> resolve the merge conflict when pulling it into net-next. That's
-> probably the cleanest.
+which enables the change in the third patch of this series - and
+without the third patch, none of the following patches in this series
+can be applied.
 
-I don't think applying the current series on top of v7.0-rc1 would be a
-good idea. It depends upon this series in a very non-trivial way,
-basically building upon it:
-https://patchwork.kernel.org/project/netdevbpf/list/?series=1056390&state=*
+I'm not sure what to suggest either.
 
-For example, that previous series introduces ethqos_mac_finish_serdes()
-- absent in v7.0-rc1 - and this series modifies it (in current net-next/main,
-it is calling phy_set_speed(), and after this series, it is calling
-phy_set_mode_ext()).
-
-By comparison, the merge conflict with me renaming <linux/phy/phy.h>
-would be smaller.
-
-> I don't recall us ever making a "dirty tag" on net-next which would
-> propagate few 100s of netdev patches into someone else's tree :S
-> IDK how Linus would react. It's the least good option IMO.
-
-Just for my curiosity, what difference would it make to him?
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTP is here! 80Mbps down 10Mbps up. Decent connectivity at last!
 
 -- 
 linux-phy mailing list
