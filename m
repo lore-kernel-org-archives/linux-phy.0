@@ -4,137 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7A88DE9B37F
-	for <linux-phy@archiver.kernel.org>; Mon,  2 Mar 2026 13:35:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A2E3FEB3629
+	for <linux-phy@archiver.kernel.org>; Mon,  2 Mar 2026 17:50:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:From:To:Cc:
+	Subject:Message-Id:Date:Mime-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RxV+AgeZFSenGrAtPDw5NFmt0i0ZJHozUdZMGdtM3vo=; b=fYY4tHKVoH9Vaf
-	96jnY5iEEjwNsUvLNMJWSktExzrZCSrflRoYY56b0p7ShB1sgM/416f8vD9FHeByPzq/OYcLCn7bL
-	/ZmD7Q/nNT3jc1RrPbUexvHVyWKnqLxPMpcP3n4hFBKBRHauEM9FWWFzLQUwGEMDsD8Q8ybZsKvaw
-	IM7eHvMMGVsr1hs+c62XJxbtY/sQHGHMEluqSlyV13S34fCgCf6KzqYeQJiWeIQX+d58JEeXXE7l7
-	HK9uj8KvJ+Ql4mlXcooxG+d/NI1kxm6Dm2baS2Ai5W1Ofi92iZKhBlrta2ze772xFMBs8iZBzgqFw
-	x5plSCnvU/zWQu2lLsRg==;
+	List-Owner; bh=PzJvgFABjAlaqMYfzRuJazf8YVFSpjnPhe03JfuyFSs=; b=DDVmpHyb5kSmEW
+	N8rxs/HED0I4THILuD7b+OMHJTL9SjaNWAASxqpXcw54DLKOKu2pOf0JNH8vv47p1qTOeiQHYXdCE
+	Kkc0Ygh7dqCgFc9VA/qG4umCY8YL27aOGIpqQTaf/gNCR1u3pUTOx0CaafBSnCNU20YECl34sJoIu
+	OtulIt8k5Kytmef/R1p+HNvpMLh6sLzznTLcMUwweFQwLHIHUfvB2jCOmo7iJftBr68dxTbavGFv3
+	KR5+y9pIthzRelr44tkM/68Rs+qzQ1NPaZMoyahKUaeOpMCc9N8tQEyDLjPKN0nh9D+fValmin+Ui
+	MJx1raGw6BKpczJAEeSg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vx3Qt-0000000D7yb-46Ra;
-	Mon, 02 Mar 2026 13:35:36 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1vx7PM-0000000DciR-0kKA;
+	Mon, 02 Mar 2026 17:50:16 +0000
+Received: from smtpout-04.galae.net ([185.171.202.116])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vx3Qr-0000000D7xj-0RUw
-	for linux-phy@lists.infradead.org;
-	Mon, 02 Mar 2026 13:35:34 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 622B3ebd3862850
-	for <linux-phy@lists.infradead.org>; Mon, 2 Mar 2026 13:35:31 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=P254J3MDCNQW2brjbXOB4OcJ
-	K4ugiVnJqpO/rx59Igg=; b=Fj5IHgDdkP+FCNvtufLBSWDhMSz9HSeoxIHnagz6
-	CPBxi9yOSl4F5mrLO44wnau559mHGHVOz6I99LOcfVMYiRiFLi0M9p7xGX97etvc
-	oawoAP0ZbqTKZ7W9KczTWGikoZQ1FrwWz8CUPWUyUatfwmFE4Q29U5DzybfFagS3
-	QH8JnZeGQawBFr4Wtrg9dSDZrcNN9wK6K4e7SfAH6Djx0o3YXqT4OrypIdV3Oji+
-	eDGqcjWvL9GSywnX13d56DomFfu6RJAxCwuN21ipPCJ32+z6FOPgSbrQ+Cng+lBU
-	KNPRE6sFxrX798oJi47/j1foOxWDN+a9rjDP8zihmZ0Ykw==
-Received: from mail-qk1-f200.google.com (mail-qk1-f200.google.com [209.85.222.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4cn9bjge96-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Mon, 02 Mar 2026 13:35:31 +0000 (GMT)
-Received: by mail-qk1-f200.google.com with SMTP id af79cd13be357-8c70e610242so3633064885a.2
-        for <linux-phy@lists.infradead.org>; Mon, 02 Mar 2026 05:35:31 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1772458531; x=1773063331; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=P254J3MDCNQW2brjbXOB4OcJK4ugiVnJqpO/rx59Igg=;
-        b=G9aWIpsnx1NetFvRQpVtBrR72z+SWgVvJWZ7KLC+VvgC0+3aLAtkNyxe1QLtXaQFnY
-         acaeZCIJN7zKDBzvFo9j9P33U3x5PBKL7C9t3MpP6ePVVMlSMB8k5cTYl0PSvDT+bPhp
-         PVLHM2VSxZKF2YKhb5q7kAbHpzk5vQa67mKYpITAQRSqvqlvQzinA6K6/Z5pGqcfR1Ea
-         tFyc3gO21SXCkvVK+At4MNfIaKngRr14BOY1fHgs6D/4k8KWSzO+YwxK4oy4zPnTLdaD
-         h5uFlgP8rhBC9uhAO+/yyihrMB9bKEP7ehYayn18f/Xo0y6bbaoNQ7AIVwaQYt2QdIVr
-         chug==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1772458531; x=1773063331;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=P254J3MDCNQW2brjbXOB4OcJK4ugiVnJqpO/rx59Igg=;
-        b=r3SiLIoB3ILXHO01J4d9MNkE+sW4DDL+o1lUUkseZyFFlfV+tsvnnaJfO/8gCi64NM
-         0m0svhJrrbWytuZRepEWdA8ReC4neDfgDBvz3V7MpB0WaLVvwR6PcNAXi8O9kJvj9tVo
-         QUSXE0uVFQzaCfvbieXBfce6kjmpsSTcd4gQLeBDQ/k/5s4lxYRUw7P2jGVhgx+yGPwn
-         /aPPvrbQNZ08baLgoNtEopaog+j1FfjyloPwUuw3kDdrnWtG6kK/AlvaLv3PV+YzqjW5
-         j9tgJ30+7t/y6lfeb96xJHgXaiJQVAnQhDJkzHXXVlVPdsPpyWjGyAq0Z/zHswUGSbUX
-         JfTw==
-X-Forwarded-Encrypted: i=1; AJvYcCUR/bZKqInkcp6G9YdMMYaplGuRdo4I0rT3WNb/SAmGq6GUotXXILnkvK2sTa7emjZ80DfsbCZo5CA=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzqzeOQOoDMf1pUJocgc4oNKQREgJ5hX3J3dYWyIh9sJuXEgqix
-	DAj91L8T46/Kk3rWYJo4Ip5apw+m4X9NefK03Zo2uWlrSYQYSkfgo9ick0rQiUFjvzt5qFlrgKh
-	F/p1i0PWH8aCjFOgwAR3fySKi1nbSXSAwa/I9/zEg+jmJYedgnKp613caQPxtCaOEeISy
-X-Gm-Gg: ATEYQzzzXdRThMdagwCyMwXj2Qz/Krh0Y5xFEZmuUubTZkOWS8f+0NVnKLclhw/wzlN
-	wOosviIU9UvMObB2bJVZN6QEx8+QFcC/jXT0Y4pvjr/U+bpOhWBr5v7uDXyGg7nLrzuCIFc7obr
-	C5gplSY2Fb5/VaC2EBryItR1xyZo4EF35VSrELTAuMbMH9m3ZxZ/VFB1tn2YW8/7JXrCc9kDDW9
-	LNlN78AYgNNi9h8YCksc6uxw1iR2D0nhETkXJSmsjq0QLS1jk+T04Zco2X2U9tBZ1W74kM9SyUJ
-	Y6gtVHoJkk45gAm+7Na+OpNhwcgonkgabiJu3lWL1gK9hMnhf7A089vpbL1B5AYwb0c/Iq81gQr
-	EztIO98iz4d3xGzdkFKYG1AqEUAAosCSATrzMXITs052WuCKdnZn5LDA/2x5jJXJJKe+YGyAKWJ
-	0OzPsjrrhzm1MFjgXr1zer/aV0jA0kCcFIES0=
-X-Received: by 2002:a05:620a:7109:b0:8ca:3c67:891e with SMTP id af79cd13be357-8cbc8e05146mr1393406085a.42.1772458530897;
-        Mon, 02 Mar 2026 05:35:30 -0800 (PST)
-X-Received: by 2002:a05:620a:7109:b0:8ca:3c67:891e with SMTP id af79cd13be357-8cbc8e05146mr1393402585a.42.1772458530231;
-        Mon, 02 Mar 2026 05:35:30 -0800 (PST)
-Received: from umbar.lan (2001-14ba-a073-af00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a073:af00:264b:feff:fe8b:be8a])
-        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-389f2f62a31sm30220471fa.14.2026.03.02.05.35.28
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 02 Mar 2026 05:35:29 -0800 (PST)
-Date: Mon, 2 Mar 2026 15:35:26 +0200
-From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-To: Qiang Yu <qiang.yu@oss.qualcomm.com>
-Cc: Krzysztof Kozlowski <krzk@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-        Neil Armstrong <neil.armstrong@linaro.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>, linux-arm-msm@vger.kernel.org,
-        linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 1/2] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Add
- vdda-refgen supply for Glymur
-Message-ID: <z5xwgs3qzzkyzfcyl2yipja67fzbb3h33pd4fimxlrpvzkpkck@5mcrx2uqo2bd>
-References: <20260208-refgen-v1-0-87ca84fd78b3@oss.qualcomm.com>
- <20260208-refgen-v1-1-87ca84fd78b3@oss.qualcomm.com>
- <20260209-magic-conscious-seahorse-b81c8b@quoll>
- <aY1Jx5J8x/OALk5M@hu-qianyu-lv.qualcomm.com>
- <hcslao22elcihjw56ltu4yo54lotheqpikzsrq6tia33di4fs4@2ygrbwhcfx2a>
- <aaVkpKZcrNM7k4Xm@hu-qianyu-lv.qualcomm.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <aaVkpKZcrNM7k4Xm@hu-qianyu-lv.qualcomm.com>
-X-Authority-Analysis: v=2.4 cv=Pe7yRyhd c=1 sm=1 tr=0 ts=69a59223 cx=c_pps
- a=hnmNkyzTK/kJ09Xio7VxxA==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
- a=Yq5XynenixoA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=3WHJM1ZQz_JShphwDgj5:22 a=wiyiQmdw19YBYzJq5jwA:9
- a=CjuIK1q_8ugA:10 a=PEH46H7Ffwr30OY-TuGO:22
-X-Proofpoint-ORIG-GUID: QwNlnrrAAGxaRkDndKB3-8S0QLUiNcDj
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzAyMDExMyBTYWx0ZWRfXy00R93B4oHd9
- 5hGGV5l58FddwrFdiBicSm8f0vh3q2hFsrn+TjSMfmuYmr87fp1jITF3odsmyBwWHGKVP6ZWqk5
- tu7WhWzQQIzfZn+wCIhLY5jAqZXRpRzjcrRWJlo6+qEd8HkUKn9q1RPt4FGltrwHolUo9xmreRO
- cjNU6vqzeH2qu+/EzPHiUsdvNbwjM6UaJaObiq4qLVYoWv//2DHR6+yMTM1CTB1YKpSq1GRNFVg
- /ZnAtDWH94qgagDwbQpRgedW6Ms05FWkWTU9DCXTLZL17iod9tkQLCGx61Wmu6kuJjfjuFb2IXM
- ArZLZf4Mu04jg8tTmT9McrWLdE3x5LCqz1PTD7dFZtcVq4pPz3YqgqvaXK8al08a9akPv0MXluD
- J4EwwGoEq2iaO9rvNQwLz74PgSrX2NfNrmcsAUV9dkStSk8S9RlO5Nkp+wuUwdEmshamG8Rqagp
- YZ8N8Ke6rQhhcJKYtPQ==
-X-Proofpoint-GUID: QwNlnrrAAGxaRkDndKB3-8S0QLUiNcDj
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.51,FMLib:17.12.100.49
- definitions=2026-03-02_03,2026-02-27_03,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- malwarescore=0 suspectscore=0 impostorscore=0 priorityscore=1501 spamscore=0
- adultscore=0 bulkscore=0 lowpriorityscore=0 phishscore=0 clxscore=1015
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2602130000 definitions=main-2603020113
+	id 1vx7PI-0000000DcgG-3Cqf;
+	Mon, 02 Mar 2026 17:50:15 +0000
+Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
+	by smtpout-04.galae.net (Postfix) with ESMTPS id 545E4C40F92;
+	Mon,  2 Mar 2026 17:50:25 +0000 (UTC)
+Received: from mail.galae.net (mail.galae.net [212.83.136.155])
+	by smtpout-01.galae.net (Postfix) with ESMTPS id CDA2C5FE89;
+	Mon,  2 Mar 2026 17:50:07 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 5531310368CAA;
+	Mon,  2 Mar 2026 18:49:52 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
+	t=1772473805; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 content-transfer-encoding:in-reply-to:references;
+	bh=E2yV377sQW0c5N6RevrqfWbOyFtalU/YHrkLt3cGBxw=;
+	b=WtyOZQTbfFKj5/QbEli0TEvhsV3N0ByWqHfL50YME4xvob9drpxOaglxWkH8A7Ep9nM9WH
+	x7rzQFw3ZkITL7KN1xsfBmyQFr1wNNoKK6amYqo/jZJDpOaZARS5Op6HZmvwcFtk2/u7Xj
+	HBgzwzTKPezImCYZhWWdUyX2wRZljwrT51fPvgaozlDXeW9A5cVPv+7+pHBLeVsSFZkD+8
+	yEwejZUmhAVHvqSCt4oFDi5QgEvV6pLjRBwXYNygBhyEXihVT1OcsqZUJ6kEMnRNcO4Qwg
+	xfnDZzbjCzOc+0NtYva1pV5JjqL2URwmBA0X0r02y18BlDBCyFzcmqpCmvWZmA==
+Mime-Version: 1.0
+Date: Mon, 02 Mar 2026 18:49:51 +0100
+Message-Id: <DGSHIQOB2YTB.1559SD1YLGT7P@bootlin.com>
+Subject: Re: [PATCH v14 7/9] drm/rockchip: cdn-dp: Add multiple bridges to
+ support PHY port selection
+Cc: <linux-usb@vger.kernel.org>, <devicetree@vger.kernel.org>,
+ <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+ <linux-arm-kernel@lists.infradead.org>,
+ <linux-rockchip@lists.infradead.org>, <dri-devel@lists.freedesktop.org>
+To: "Chaoyi Chen" <kernel@airkyi.com>, "Heikki Krogerus"
+ <heikki.krogerus@linux.intel.com>, "Greg Kroah-Hartman"
+ <gregkh@linuxfoundation.org>, "Dmitry Baryshkov"
+ <dmitry.baryshkov@oss.qualcomm.com>, "Peter Chen" <hzpeterchen@gmail.com>,
+ "Rob Herring" <robh@kernel.org>, "Krzysztof Kozlowski"
+ <krzk+dt@kernel.org>, "Conor Dooley" <conor+dt@kernel.org>, "Vinod Koul"
+ <vkoul@kernel.org>, "Kishon Vijay Abraham I" <kishon@kernel.org>, "Heiko
+ Stuebner" <heiko@sntech.de>, "Sandy Huang" <hjc@rock-chips.com>, "Andy Yan"
+ <andy.yan@rock-chips.com>, "Yubing Zhang" <yubing.zhang@rock-chips.com>,
+ "Frank Wang" <frank.wang@rock-chips.com>, "Andrzej Hajda"
+ <andrzej.hajda@intel.com>, "Neil Armstrong" <neil.armstrong@linaro.org>,
+ "Robert Foss" <rfoss@kernel.org>, "Laurent Pinchart"
+ <Laurent.pinchart@ideasonboard.com>, "Jonas Karlman" <jonas@kwiboo.se>,
+ "Jernej Skrabec" <jernej.skrabec@gmail.com>, "Maarten Lankhorst"
+ <maarten.lankhorst@linux.intel.com>, "Maxime Ripard" <mripard@kernel.org>,
+ "Thomas Zimmermann" <tzimmermann@suse.de>, "David Airlie"
+ <airlied@gmail.com>, "Simona Vetter" <simona@ffwll.ch>, "Amit Sunil Dhamne"
+ <amitsd@google.com>, "Chaoyi Chen" <chaoyi.chen@rock-chips.com>, "Dragan
+ Simic" <dsimic@manjaro.org>, "Johan Jonker" <jbx6244@gmail.com>, "Diederik
+ de Haas" <didi.debian@cknow.org>, "Peter Robinson" <pbrobinson@gmail.com>
+From: "Luca Ceresoli" <luca.ceresoli@bootlin.com>
+X-Mailer: aerc 0.20.1
+References: <20260119073100.143-1-kernel@airkyi.com>
+ <20260119073100.143-8-kernel@airkyi.com>
+In-Reply-To: <20260119073100.143-8-kernel@airkyi.com>
+X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260302_053533_279133_BC7D11E7 
-X-CRM114-Status: GOOD (  44.77  )
+X-CRM114-CacheID: sfid-20260302_095013_269450_AFC89996 
+X-CRM114-Status: GOOD (  47.21  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -151,86 +97,512 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Mar 02, 2026 at 02:21:24AM -0800, Qiang Yu wrote:
-> On Fri, Feb 13, 2026 at 07:47:36PM +0200, Dmitry Baryshkov wrote:
-> > On Wed, Feb 11, 2026 at 07:32:23PM -0800, Qiang Yu wrote:
-> > > On Mon, Feb 09, 2026 at 09:06:23AM +0100, Krzysztof Kozlowski wrote:
-> > > > On Sun, Feb 08, 2026 at 08:49:39PM -0800, Qiang Yu wrote:
-> > > > > The PCIe QMP PHYs on Glymur require stable reference voltage provided by
-> > > > > refgen. The refgen itself requires two separate power supplies:
-> > > > > vdda-refgen0p9 and vdda-refgen1p2.
-> > > > > 
-> > > > > Since there is no dedicated driver for REFGEN, add vdda-refgen0p9-supply
-> > > > 
-> > > > How does the driver matter for the bindings? If I add dedicated driver
-> > > > for refgen, then I change the bindings?
-> > > 
-> > > Yeah, I know that dt-bindings should describe hardware, not software. But
-> > > what I meant to say is that the refgen is different from qref which is
-> > > controlled via TCSR registers and its LDOs are requested to vote in
-> > > tcsrcc driver. The refgen doesn't required register setting and it doesn't
-> > > have dedicated driver, so we vote its LDOs in phy driver. I will avoid
-> > > this statement in next version.
-> > 
-> > I must admit, I could not find references to the refgen in any of Glymur
-> > PCIe-related HPGs.
-> > 
-> > > 
-> > > > 
-> > > > There is qcom,sc8280xp-refgen-regulator so why there cannot be
-> > > > qcom,x1e-refgen-regulator?
-> > > 
-> > > I think we can and it seems better because the refgen for pcie phy also
-> > > supplies reference voltage to other modules like usb. But I checked the
-> > > qcom-refgen-regulator.c, it contains some register settings and there is
-> > > no LDOs voting. I'm not sure what does those register do, maybe Konrad
-> > > can provide some backgroud.
-> > 
-> > Those regs provide voting for refgen, because on those platforms DSI
-> > block doesn't have a hardware vote for refgen.
-> 
-> Hi Konrad, Dmitry
-> 
-> I tried to model the reference voltage as a fixed regulator but the fixed
-> regulator driver only supports a single vin-supply. However, the refgen
-> block requires two separate power supplies (1.2V and 0.9V LDOs).
+On Mon Jan 19, 2026 at 8:30 AM CET, Chaoyi Chen wrote:
+> From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+>
+> The RK3399 has two USB/DP combo PHY and one CDN-DP controller. And
+> the CDN-DP can be switched to output to one of the PHYs. If both ports
+> are plugged into DP, DP will select the first port for output.
+>
+> This patch adds support for multiple bridges, enabling users to flexibly
+> select the output port. For each PHY port, a separate encoder and bridge
+> are registered.
+>
+> The change is based on the DRM AUX HPD bridge, rather than the
+> extcon approach. This requires the DT to correctly describe the
+> connections between the first bridge in bridge chain and DP
+> controller. For example, the bridge chain may be like this:
+>
+> PHY aux birdge -> fsa4480 analog audio switch bridge ->
+> onnn,nb7vpq904m USB reminder bridge -> USB-C controller AUX HPD bridge
+>
+> In this case, the connection relationships among the PHY aux bridge
+> and the DP contorller need to be described in DT.
+>
+> In addition, the cdn_dp_parse_next_bridge_dt() will parses it and
+> determines whether to register one or two bridges.
+>
+> Since there is only one DP controller, only one of the PHY ports can
+> output at a time. The key is how to switch between different PHYs,
+> which is handled by cdn_dp_switch_port() and cdn_dp_enable().
+>
+> There are two cases:
+>
+> 1. Neither bridge is enabled. In this case, both bridges can
+> independently read the EDID, and the PHY port may switch before
+> reading the EDID.
+>
+> 2. One bridge is already enabled. In this case, other bridges are not
+> allowed to read the EDID. So we will try to return the cached EDID.
+>
+> Since the scenario of two ports plug in at the same time is rare,
+> I don't have a board which support two TypeC connector to test this.
+> Therefore, I tested forced switching on a single PHY port, as well as
+> output using a fake PHY port alongside a real PHY port.
+>
+> Signed-off-by: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+> ---
+>
+> (no changes since v11)
+>
+> Changes in v10:
+> - Fix refcount usage of drm_bridge.
+> - Remove unused cdn_dp_next_bridge type.
+>
+> Changes in v9:
+> - Select DRM_AUX_HPD_BRIDGE when using DP driver.
+>
+> (no changes since v7)
+>
+> Changes in v6:
+> - Rename some variable names.
+> - Attach the DP bridge to the next bridge.
+>
+> Changes in v5:
+> - By parsing the HPD bridge chain, set the connector's of_node to the
+> of_node corresponding to the USB-C connector.
+> - Return EDID cache when other port is already enabled.
+> ---
+>
+>  drivers/gpu/drm/rockchip/Kconfig       |   1 +
+>  drivers/gpu/drm/rockchip/cdn-dp-core.c | 325 ++++++++++++++++++++-----
+>  drivers/gpu/drm/rockchip/cdn-dp-core.h |  18 +-
+>  3 files changed, 287 insertions(+), 57 deletions(-)
+>
+> diff --git a/drivers/gpu/drm/rockchip/Kconfig b/drivers/gpu/drm/rockchip/Kconfig
+> index b7b025814e72..10d9f29a3d44 100644
+> --- a/drivers/gpu/drm/rockchip/Kconfig
+> +++ b/drivers/gpu/drm/rockchip/Kconfig
+> @@ -56,6 +56,7 @@ config ROCKCHIP_CDN_DP
+>  	select DRM_DISPLAY_HELPER
+>  	select DRM_BRIDGE_CONNECTOR
+>  	select DRM_DISPLAY_DP_HELPER
+> +	select DRM_AUX_HPD_BRIDGE
+>  	help
+>  	  This selects support for Rockchip SoC specific extensions
+>  	  for the cdn DP driver. If you want to enable Dp on
+> diff --git a/drivers/gpu/drm/rockchip/cdn-dp-core.c b/drivers/gpu/drm/rockchip/cdn-dp-core.c
+> index 1e27301584a4..0bc3d248c266 100644
+> --- a/drivers/gpu/drm/rockchip/cdn-dp-core.c
+> +++ b/drivers/gpu/drm/rockchip/cdn-dp-core.c
+> @@ -27,16 +27,17 @@
+>  #include "cdn-dp-core.h"
+>  #include "cdn-dp-reg.h"
+>
+> -static inline struct cdn_dp_device *bridge_to_dp(struct drm_bridge *bridge)
+> +static int cdn_dp_switch_port(struct cdn_dp_device *dp, struct cdn_dp_port *prev_port,
+> +			      struct cdn_dp_port *port);
+> +
+> +static inline struct cdn_dp_bridge *bridge_to_dp_bridge(struct drm_bridge *bridge)
+>  {
+> -	return container_of(bridge, struct cdn_dp_device, bridge);
+> +	return container_of(bridge, struct cdn_dp_bridge, bridge);
+>  }
+>
+> -static inline struct cdn_dp_device *encoder_to_dp(struct drm_encoder *encoder)
+> +static inline struct cdn_dp_device *bridge_to_dp(struct drm_bridge *bridge)
+>  {
+> -	struct rockchip_encoder *rkencoder = to_rockchip_encoder(encoder);
+> -
+> -	return container_of(rkencoder, struct cdn_dp_device, encoder);
+> +	return bridge_to_dp_bridge(bridge)->parent;
+>  }
+>
+>  #define GRF_SOC_CON9		0x6224
+> @@ -191,14 +192,27 @@ static int cdn_dp_get_sink_count(struct cdn_dp_device *dp, u8 *sink_count)
+>  static struct cdn_dp_port *cdn_dp_connected_port(struct cdn_dp_device *dp)
+>  {
+>  	struct cdn_dp_port *port;
+> -	int i, lanes;
+> +	int i, lanes[MAX_PHY];
+>
+>  	for (i = 0; i < dp->ports; i++) {
+>  		port = dp->port[i];
+> -		lanes = cdn_dp_get_port_lanes(port);
+> -		if (lanes)
+> +		lanes[i] = cdn_dp_get_port_lanes(port);
+> +		if (!dp->next_bridge_valid)
+>  			return port;
+>  	}
+> +
+> +	if (dp->next_bridge_valid) {
+> +		/* If more than one port is available, pick the last active port */
+> +		if (dp->active_port > 0 && lanes[dp->active_port])
+> +			return dp->port[dp->active_port];
+> +
+> +		/* If the last active port is not available, pick an available port in order */
+> +		for (i = 0; i < dp->bridge_count; i++) {
+> +			if (lanes[i])
+> +				return dp->port[i];
+> +		}
+> +	}
+> +
+>  	return NULL;
+>  }
+>
+> @@ -253,12 +267,45 @@ static const struct drm_edid *
+>  cdn_dp_bridge_edid_read(struct drm_bridge *bridge, struct drm_connector *connector)
+>  {
+>  	struct cdn_dp_device *dp = bridge_to_dp(bridge);
+> -	const struct drm_edid *drm_edid;
+> +	struct cdn_dp_bridge *dp_bridge = bridge_to_dp_bridge(bridge);
+> +	struct cdn_dp_port *port = dp->port[dp_bridge->id];
+> +	struct cdn_dp_port *prev_port;
+> +	const struct drm_edid *drm_edid = NULL;
+> +	int i, ret;
+>
+>  	mutex_lock(&dp->lock);
+> +
+> +	/* More than one port is available */
+> +	if (dp->bridge_count > 1 && !port->phy_enabled) {
+> +		for (i = 0; i < dp->bridge_count; i++) {
+> +			/* Another port already enable */
+> +			if (dp->bridge_list[i] != dp_bridge && dp->bridge_list[i]->enabled)
+> +				goto get_cache;
+> +			/* Find already enabled port */
+> +			if (dp->port[i]->phy_enabled)
+> +				prev_port = dp->port[i];
+> +		}
+> +
+> +		/* Switch to current port */
+> +		if (prev_port) {
+> +			ret = cdn_dp_switch_port(dp, prev_port, port);
+> +			if (ret)
+> +				goto get_cache;
+> +		}
+> +	}
+> +
+>  	drm_edid = drm_edid_read_custom(connector, cdn_dp_get_edid_block, dp);
+> +	/* replace edid cache */
+> +	if (dp->edid_cache[dp_bridge->id])
+> +		drm_edid_free(dp->edid_cache[dp_bridge->id]);
+> +	dp->edid_cache[dp_bridge->id] = drm_edid_dup(drm_edid);
+> +
+>  	mutex_unlock(&dp->lock);
+> +	return drm_edid;
+>
+> +get_cache:
+> +	drm_edid = drm_edid_dup(dp->edid_cache[dp_bridge->id]);
+> +	mutex_unlock(&dp->lock);
+>  	return drm_edid;
+>  }
+>
+> @@ -267,12 +314,13 @@ cdn_dp_bridge_mode_valid(struct drm_bridge *bridge,
+>  			 const struct drm_display_info *display_info,
+>  			 const struct drm_display_mode *mode)
+>  {
+> +	struct cdn_dp_bridge *dp_bridge = bridge_to_dp_bridge(bridge);
+>  	struct cdn_dp_device *dp = bridge_to_dp(bridge);
+>  	u32 requested, actual, rate, sink_max, source_max = 0;
+>  	u8 lanes, bpc;
+>
+>  	/* If DP is disconnected, every mode is invalid */
+> -	if (!dp->connected)
+> +	if (!dp_bridge->connected || !dp->connected)
+>  		return MODE_BAD;
+>
+>  	switch (display_info->bpc) {
+> @@ -550,6 +598,54 @@ static bool cdn_dp_check_link_status(struct cdn_dp_device *dp)
+>  	return drm_dp_channel_eq_ok(link_status, min(port->lanes, sink_lanes));
+>  }
+>
+> +static int cdn_dp_switch_port(struct cdn_dp_device *dp, struct cdn_dp_port *prev_port,
+> +			      struct cdn_dp_port *port)
+> +{
+> +	int ret;
+> +
+> +	if (dp->active)
+> +		return 0;
+> +
+> +	ret = cdn_dp_disable_phy(dp, prev_port);
+> +	if (ret)
+> +		goto out;
+> +	ret = cdn_dp_enable_phy(dp, port);
+> +	if (ret)
+> +		goto out;
+> +
+> +	ret = cdn_dp_get_sink_capability(dp);
+> +	if (ret) {
+> +		cdn_dp_disable_phy(dp, port);
+> +		goto out;
+> +	}
+> +
+> +	dp->active = true;
+> +	dp->lanes = port->lanes;
+> +
+> +	if (!cdn_dp_check_link_status(dp)) {
+> +		dev_info(dp->dev, "Connected with sink; re-train link\n");
+> +
+> +		ret = cdn_dp_train_link(dp);
+> +		if (ret) {
+> +			dev_err(dp->dev, "Training link failed: %d\n", ret);
+> +			goto out;
+> +		}
+> +
+> +		ret = cdn_dp_set_video_status(dp, CONTROL_VIDEO_IDLE);
+> +		if (ret) {
+> +			dev_err(dp->dev, "Failed to idle video %d\n", ret);
+> +			goto out;
+> +		}
+> +
+> +		ret = cdn_dp_config_video(dp);
+> +		if (ret)
+> +			dev_err(dp->dev, "Failed to configure video: %d\n", ret);
+> +	}
+> +
+> +out:
+> +	return ret;
+> +}
+> +
+>  static void cdn_dp_display_info_update(struct cdn_dp_device *dp,
+>  				       struct drm_display_info *display_info)
+>  {
+> @@ -571,6 +667,7 @@ static void cdn_dp_display_info_update(struct cdn_dp_device *dp,
+>  static void cdn_dp_bridge_atomic_enable(struct drm_bridge *bridge, struct drm_atomic_state *state)
+>  {
+>  	struct cdn_dp_device *dp = bridge_to_dp(bridge);
+> +	struct cdn_dp_bridge *dp_bridge = bridge_to_dp_bridge(bridge);
+>  	struct drm_connector *connector;
+>  	int ret, val;
+>
+> @@ -580,7 +677,7 @@ static void cdn_dp_bridge_atomic_enable(struct drm_bridge *bridge, struct drm_at
+>
+>  	cdn_dp_display_info_update(dp, &connector->display_info);
+>
+> -	ret = drm_of_encoder_active_endpoint_id(dp->dev->of_node, &dp->encoder.encoder);
+> +	ret = drm_of_encoder_active_endpoint_id(dp->dev->of_node, &dp_bridge->encoder.encoder);
+>  	if (ret < 0) {
+>  		DRM_DEV_ERROR(dp->dev, "Could not get vop id, %d", ret);
+>  		return;
+> @@ -599,6 +696,9 @@ static void cdn_dp_bridge_atomic_enable(struct drm_bridge *bridge, struct drm_at
+>
+>  	mutex_lock(&dp->lock);
+>
+> +	if (dp->next_bridge_valid)
+> +		dp->active_port = dp_bridge->id;
+> +
+>  	ret = cdn_dp_enable(dp);
+>  	if (ret) {
+>  		DRM_DEV_ERROR(dp->dev, "Failed to enable bridge %d\n",
+> @@ -631,6 +731,7 @@ static void cdn_dp_bridge_atomic_enable(struct drm_bridge *bridge, struct drm_at
+>  		goto out;
+>  	}
+>
+> +	dp_bridge->enabled = true;
+>  out:
+>  	mutex_unlock(&dp->lock);
+>  }
+> @@ -638,9 +739,11 @@ static void cdn_dp_bridge_atomic_enable(struct drm_bridge *bridge, struct drm_at
+>  static void cdn_dp_bridge_atomic_disable(struct drm_bridge *bridge, struct drm_atomic_state *state)
+>  {
+>  	struct cdn_dp_device *dp = bridge_to_dp(bridge);
+> +	struct cdn_dp_bridge *dp_bridge = bridge_to_dp_bridge(bridge);
+>  	int ret;
+>
+>  	mutex_lock(&dp->lock);
+> +	dp_bridge->enabled = false;
+>
+>  	if (dp->active) {
+>  		ret = cdn_dp_disable(dp);
+> @@ -827,6 +930,16 @@ static int cdn_dp_audio_mute_stream(struct drm_bridge *bridge,
+>  	return ret;
+>  }
+>
+> +static void cdn_dp_bridge_hpd_notify(struct drm_bridge *bridge,
+> +			   enum drm_connector_status status)
+> +{
+> +	struct cdn_dp_bridge *dp_bridge = bridge_to_dp_bridge(bridge);
+> +	struct cdn_dp_device *dp = bridge_to_dp(bridge);
+> +
+> +	dp->bridge_list[dp_bridge->id]->connected = status == connector_status_connected;
+> +	schedule_work(&dp->event_work);
+> +}
+> +
+>  static const struct drm_bridge_funcs cdn_dp_bridge_funcs = {
+>  	.atomic_duplicate_state = drm_atomic_helper_bridge_duplicate_state,
+>  	.atomic_destroy_state = drm_atomic_helper_bridge_destroy_state,
+> @@ -837,6 +950,7 @@ static const struct drm_bridge_funcs cdn_dp_bridge_funcs = {
+>  	.atomic_disable = cdn_dp_bridge_atomic_disable,
+>  	.mode_valid = cdn_dp_bridge_mode_valid,
+>  	.mode_set = cdn_dp_bridge_mode_set,
+> +	.hpd_notify = cdn_dp_bridge_hpd_notify,
+>
+>  	.dp_audio_prepare = cdn_dp_audio_prepare,
+>  	.dp_audio_mute_stream = cdn_dp_audio_mute_stream,
+> @@ -885,7 +999,8 @@ static void cdn_dp_pd_event_work(struct work_struct *work)
+>  {
+>  	struct cdn_dp_device *dp = container_of(work, struct cdn_dp_device,
+>  						event_work);
+> -	int ret;
+> +	bool connected;
+> +	int i, ret;
+>
+>  	mutex_lock(&dp->lock);
+>
+> @@ -944,9 +1059,12 @@ static void cdn_dp_pd_event_work(struct work_struct *work)
+>
+>  out:
+>  	mutex_unlock(&dp->lock);
+> -	drm_bridge_hpd_notify(&dp->bridge,
+> -			      dp->connected ? connector_status_connected
+> -					    : connector_status_disconnected);
+> +	for (i = 0; i < dp->bridge_count; i++) {
+> +		connected = dp->connected && dp->bridge_list[i]->connected;
+> +		drm_bridge_hpd_notify(&dp->bridge_list[i]->bridge,
+> +				      connected ? connector_status_connected
+> +						: connector_status_disconnected);
+> +	}
+>  }
+>
+>  static int cdn_dp_pd_event(struct notifier_block *nb,
+> @@ -966,28 +1084,16 @@ static int cdn_dp_pd_event(struct notifier_block *nb,
+>  	return NOTIFY_DONE;
+>  }
+>
+> -static int cdn_dp_bind(struct device *dev, struct device *master, void *data)
+> +static int cdn_bridge_add(struct device *dev,
+> +			  struct drm_bridge *bridge,
+> +			  struct drm_bridge *next_bridge,
+> +			  struct drm_encoder *encoder)
+>  {
+>  	struct cdn_dp_device *dp = dev_get_drvdata(dev);
+> -	struct drm_encoder *encoder;
+> +	struct drm_device *drm_dev = dp->drm_dev;
+> +	struct drm_bridge *last_bridge __free(drm_bridge_put) = NULL;
+>  	struct drm_connector *connector;
+> -	struct cdn_dp_port *port;
+> -	struct drm_device *drm_dev = data;
+> -	int ret, i;
+> -
+> -	ret = cdn_dp_parse_dt(dp);
+> -	if (ret < 0)
+> -		return ret;
+> -
+> -	dp->drm_dev = drm_dev;
+> -	dp->connected = false;
+> -	dp->active = false;
+> -	dp->active_port = -1;
+> -	dp->fw_loaded = false;
+> -
+> -	INIT_WORK(&dp->event_work, cdn_dp_pd_event_work);
+> -
+> -	encoder = &dp->encoder.encoder;
+> +	int ret;
+>
+>  	encoder->possible_crtcs = drm_of_find_possible_crtcs(drm_dev,
+>  							     dev->of_node);
+> @@ -1002,26 +1108,35 @@ static int cdn_dp_bind(struct device *dev, struct device *master, void *data)
+>
+>  	drm_encoder_helper_add(encoder, &cdn_dp_encoder_helper_funcs);
+>
+> -	dp->bridge.ops =
+> -			DRM_BRIDGE_OP_DETECT |
+> -			DRM_BRIDGE_OP_EDID |
+> -			DRM_BRIDGE_OP_HPD |
+> -			DRM_BRIDGE_OP_DP_AUDIO;
+> -	dp->bridge.of_node = dp->dev->of_node;
+> -	dp->bridge.type = DRM_MODE_CONNECTOR_DisplayPort;
+> -	dp->bridge.hdmi_audio_dev = dp->dev;
+> -	dp->bridge.hdmi_audio_max_i2s_playback_channels = 8;
+> -	dp->bridge.hdmi_audio_spdif_playback = 1;
+> -	dp->bridge.hdmi_audio_dai_port = -1;
+> -
+> -	ret = devm_drm_bridge_add(dev, &dp->bridge);
+> +	bridge->ops =
+> +		DRM_BRIDGE_OP_DETECT |
+> +		DRM_BRIDGE_OP_EDID |
+> +		DRM_BRIDGE_OP_HPD |
+> +		DRM_BRIDGE_OP_DP_AUDIO;
+> +	bridge->of_node = dp->dev->of_node;
+> +	bridge->type = DRM_MODE_CONNECTOR_DisplayPort;
+> +	bridge->hdmi_audio_dev = dp->dev;
+> +	bridge->hdmi_audio_max_i2s_playback_channels = 8;
+> +	bridge->hdmi_audio_spdif_playback = 1;
+> +	bridge->hdmi_audio_dai_port = -1;
+> +
+> +	ret = devm_drm_bridge_add(dev, bridge);
+>  	if (ret)
+>  		return ret;
+>
+> -	ret = drm_bridge_attach(encoder, &dp->bridge, NULL, DRM_BRIDGE_ATTACH_NO_CONNECTOR);
+> +	ret = drm_bridge_attach(encoder, bridge, NULL, DRM_BRIDGE_ATTACH_NO_CONNECTOR);
+>  	if (ret)
+>  		return ret;
+>
+> +	if (next_bridge) {
+> +		ret = drm_bridge_attach(encoder, next_bridge, bridge,
+> +					DRM_BRIDGE_ATTACH_NO_CONNECTOR);
+> +		if (ret)
+> +			return ret;
+> +
+> +		last_bridge = drm_bridge_chain_get_last_bridge(bridge->encoder);
+> +	}
+> +
+>  	connector = drm_bridge_connector_init(drm_dev, encoder);
+>  	if (IS_ERR(connector)) {
+>  		ret = PTR_ERR(connector);
+> @@ -1029,8 +1144,100 @@ static int cdn_dp_bind(struct device *dev, struct device *master, void *data)
+>  		return ret;
+>  	}
+>
+> +	if (last_bridge)
+> +		connector->fwnode = fwnode_handle_get(of_fwnode_handle(last_bridge->of_node));
+> +
+>  	drm_connector_attach_encoder(connector, encoder);
+>
+> +	return 0;
+> +}
+> +
+> +static int cdn_dp_parse_next_bridge_dt(struct cdn_dp_device *dp)
+> +{
+> +	struct device_node *np = dp->dev->of_node;
+> +	struct device_node *port __free(device_node) = of_graph_get_port_by_id(np, 1);
+> +	struct drm_bridge *bridge;
+> +	int count = 0;
+> +	int ret = 0;
+> +	int i;
+> +
+> +	/* If device use extcon, do not use hpd bridge */
+> +	for (i = 0; i < dp->ports; i++) {
+> +		if (dp->port[i]->extcon) {
+> +			dp->bridge_count = 1;
+> +			return 0;
+> +		}
+> +	}
+> +
+> +	/* One endpoint may correspond to one next bridge. */
+> +	for_each_of_graph_port_endpoint(port, dp_ep) {
+> +		struct device_node *next_bridge_node __free(device_node) =
+> +			of_graph_get_remote_port_parent(dp_ep);
+> +
+> +		bridge = of_drm_find_bridge(next_bridge_node);
+> +		if (!bridge) {
+> +			ret = -EPROBE_DEFER;
+> +			goto out;
+> +		}
+> +
+> +		drm_bridge_get(bridge);
+> +		dp->next_bridge_valid = true;
+> +		dp->next_bridge_list[count] = bridge;
 
-On which platform? Does it require those power supplies only on GLymur
-or on all relevant platforms?
+Correct, but the drm_bridge_get() slightly far away from the assignement is
+a bit misleading. I hadn't seen it initially so I suspected a missing get.
 
-> Would it be appropriate to modify the qcom-refgen-regulator.c driver to
-> handle LDO voting for both the 1.2V and 0.9V supplies? In the regulator's
-> enable/disable callbacks, we could vote for and unvote these two LDOs
-> instead of performing register operations.
+I suggest to do it in a single statement, for clarity:
 
-Depending on the answer on the previous question either we should fix
-all refgens to use proper power supplies, or you should add separate,
-Glymur-specific one (especially if you don't need to program it. Do
-you?).
+		dp->next_bridge_list[count] = bridgedrm_bridge_get(bridge);
 
-But, let's first sort out regulators for older platforms. Please inquiry
-internally.
+With that changed, at least for the bridge lifetime aspects, you can add to
+the next version my:
 
-> > > But on Glymur, we only need to vote LDOs. So
-> > > what if we use a fixed regulator in the device tree to represent refgen?
-> > > We could set refgen0p9 and refgen1p2 as its input supplies, then the PCIe
-> > > PHY would just need one refgen supply reference.
-> > > 
-> > > > > and vdda-refgen1p2-supply properties to the PCIe PHY dt-bindings. Use
-> > > > > conditional schema to restrict these properties to only Glymur PCIe QMP
-> > > > > PHYs.
-> > > > 
-> > > > Best regards,
-> > > > Krzysztof
-> > > > 
-> > 
-> > -- 
-> > With best wishes
-> > Dmitry
+ Reviewed-by: Luca Ceresoli <luca.ceresoli@bootlin.com>
 
--- 
-With best wishes
-Dmitry
+Luca
+
+--
+Luca Ceresoli, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 -- 
 linux-phy mailing list
