@@ -4,67 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E58EFEB3632
-	for <linux-phy@archiver.kernel.org>; Mon,  2 Mar 2026 20:25:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 88DEDEB3640
+	for <linux-phy@archiver.kernel.org>; Mon,  2 Mar 2026 23:29:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OKrtIUpRupjojxEsYuTx3GTJGXUGXfAdYQELe4N7dG0=; b=ismTLreGd+3ccq
-	3PzhmW/VP57zgmxuDdpMpuhspogoqEZKCiBQ3YSfFM55Pkh88iace6yWI+MVg8GZyTzokbdQ332pO
-	dtyoBcYrf1UCT7cWxxJxPJC0gCg5w8/Gh2YH8pIH2/Fb4R+OqeZtG8MbqOfXbWqT17QveUkZdR/9d
-	tIyFHe+hdHvviuzHVQ8/VfIEhbgAjXpCiKlIF90l4bH96hrJfdNko8uwj7ie13K29rFB4CP1WwU8T
-	HiWi0ebGZnZe3GADtHhpTjM2QPlK/Iw+Qvoog4vBkOoy2+8W9DZbO8vp23ZJyGwLUtdPEcMcIg8Vg
-	ePU/nfIm0PZ00EwyzZLQ==;
+	List-Owner; bh=8XSmBAa13nT753u4o6xqsYCt43zQz6TN4JgIanVrFmM=; b=PfD3CQSKGHHRIP
+	GubGw5occEii3sdkJPaSNyR1cKuXSC1qLkblKNMHCAmt01DhvXzOK5nyu+PZFgMrftvfAOMyQCBPq
+	KxEkpq/SXA5EopcrR9ijbnGIimeaHUfDOjjOGz0lI+xxPPyazRlWVpdk83Vr3JomAkrBr5cIjY4ge
+	nTS5QVNYZ3FqvqxuhS5AOQFMwIsSE3tC1avD3MV5W/tj1P8kkyvTGNfQW2Nc4LUsypUcnAzvGag2W
+	Dowt7s6R7icKC1wlxJNGFtFXbR8vLjS5b6A4NTkW9zOfJpuB4Hwm1nLS7Qw1g9SL0lWm8fUzzspqS
+	P8hgdU/XQE7NPGKcjh9Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vx9pI-0000000DnPO-20Wg;
-	Mon, 02 Mar 2026 20:25:12 +0000
-Received: from bali.collaboradmins.com ([148.251.105.195])
+	id 1vxChz-0000000ECqd-2Vyb;
+	Mon, 02 Mar 2026 23:29:51 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vx9pF-0000000DnOJ-3Fu5;
-	Mon, 02 Mar 2026 20:25:10 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1772483106;
-	bh=j8C1DSiSsbLi3cNhCq6PK862abqoa5luMjGyDLs7LpU=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=NsHI334R2Nhzn/eAQvAmbuv2NUvAeI4ppyOkretq4D8UJ7VHwfVDFNBNdYgol9D4c
-	 thQ8HkveUWAR20DmANTnqLJZWy6qnawfA6YEFzn1z/olHCvjDhu46Y2YsoRg4axmWw
-	 Adp8KXvO8fDVcqJWhXLJSHQFIzlM1OYJJ+jVLkKlmnl2JG3M6h6NehpgBy+ZyNHLgg
-	 evOv+1r8KH1DBU5oZ10Yh2Hwlti626spVndBbklYJi5/G3LneJFHDhqdFBFxN0bKrX
-	 Q2Teqf9GfusR3Vszaqr5HY0YbjBwwDMrqk32CDb3hdNCL9nvUP8f9DtMkFVbD0+xua
-	 ntJ7fuU/rdvHg==
-Received: from [192.168.1.90] (unknown [86.123.23.225])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: cristicc)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id B7CDD17E0D90;
-	Mon,  2 Mar 2026 21:25:05 +0100 (CET)
-Message-ID: <e1a0d7e0-2432-401c-80af-8195a21a9d1f@collabora.com>
-Date: Mon, 2 Mar 2026 22:25:05 +0200
+	id 1vxChy-0000000ECqO-0MUA;
+	Mon, 02 Mar 2026 23:29:50 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 29758600AE;
+	Mon,  2 Mar 2026 23:29:49 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 38149C19423;
+	Mon,  2 Mar 2026 23:29:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1772494188;
+	bh=JjhsBZbYD+PYZg+8Sa8bG20c+cqtp6NekCY1b69oRyQ=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+	b=EKt/ujlmky2u6ZnrW0ZzIzvKVdvfswEr0r5SgScQgGqScbTcrnJfKRuu0fvXxqRid
+	 /hGQfglqXwH5c1P743ShC+bWlVez3LWQSj3+LVw6GzJYp5JUIGfOBH+QT8LapMMqha
+	 0GWr8KXbhvMqimB8TJZJZkPt3p1jWNLC8zVfE7u7MN2ViPCaT6+pQzoYAwSR1kLfzz
+	 W0mPDaNfumIKp5D/kuzKmmViL8TO4MkLJswpI6fEVP0JKiMRBKw2h1SVzKczhk9TTM
+	 RDrhQXwMIEuxDcKkRdlRVD6Yokio18R8Hd3P+6sOVU9mKyAlHRowZPoKEFw7rnbseo
+	 ifkm0+P7hNdCA==
+Date: Mon, 2 Mar 2026 15:29:47 -0800
+From: Jakub Kicinski <kuba@kernel.org>
+To: Vladimir Oltean <olteanv@gmail.com>
+Cc: "Russell King (Oracle)" <linux@armlinux.org.uk>, Andrew Lunn
+ <andrew@lunn.ch>, Alexandre Torgue <alexandre.torgue@foss.st.com>, Andrew
+ Lunn <andrew+netdev@lunn.ch>, "David S. Miller" <davem@davemloft.net>, Eric
+ Dumazet <edumazet@google.com>, linux-arm-kernel@lists.infradead.org,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-stm32@st-md-mailman.stormreply.com, Mohd Ayaan Anwar
+ <mohd.anwar@oss.qualcomm.com>, Neil Armstrong <neil.armstrong@linaro.org>,
+ netdev@vger.kernel.org, Paolo Abeni <pabeni@redhat.com>, Vinod Koul
+ <vkoul@kernel.org>
+Subject: Re: [PATCH RESEND2 net-next 0/8] net: stmmac: qcom-ethqos: further
+ serdes reorganisation
+Message-ID: <20260302152947.3f2a0c2d@kernel.org>
+In-Reply-To: <20260301120824.ot53bhv7z7kn5lfd@skbuf>
+References: <aaDSJAc-x2-klvHJ@shell.armlinux.org.uk>
+	<aaIysVxy-WxbiJz9@shell.armlinux.org.uk>
+	<20260227165556.5cf9e844@kernel.org>
+	<20260228083111.5df8550c@kernel.org>
+	<20260301001453.lpd2rawy7bqxyivp@skbuf>
+	<20260228163229.1024f263@kernel.org>
+	<20260301120824.ot53bhv7z7kn5lfd@skbuf>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 0/6] phy: rockchip: samsung-hdptx: Clock fixes and API
- transition cleanups
-To: dubito@online.de, Vinod Koul <vkoul@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>, Heiko Stuebner
- <heiko@sntech.de>, Algea Cao <algea.cao@rock-chips.com>,
- Dmitry Baryshkov <lumag@kernel.org>
-Cc: kernel@collabora.com, linux-phy@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org
-References: <20260227-hdptx-clk-fixes-v1-0-f998f2762d0f@collabora.com>
- <88436a35a3197393b5eb4fc49962a3b5906bf147.camel@online.de>
-Content-Language: en-US
-From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-In-Reply-To: <88436a35a3197393b5eb4fc49962a3b5906bf147.camel@online.de>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260302_122509_967221_DF18FF9E 
-X-CRM114-Status: UNSURE (   9.85  )
-X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,26 +76,21 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGkgVGhvbWFzLAoKT24gMy8yLzI2IDk6NDYgUE0sIDF1bmQxIHdyb3RlOgo+IEhpIENyaXN0aWFu
-LAo+IAo+IEFtIEZyZWl0YWcsIGRlbSAyNy4wMi4yMDI2IHVtIDIyOjQ4ICswMjAwIHNjaHJpZWIg
-Q3Jpc3RpYW4gQ2lvY2FsdGVhOgo+PiBUaGlzIHNlcmllcyBwcm92aWRlcyBhIHNldCBvZiBidWcg
-Zml4ZXMgYW5kIGNsZWFudXBzIGZvciB0aGUgUm9ja2NoaXAKPj4gU2Ftc3VuZyBIRFBUWCBQSFkg
-ZHJpdmVyLgo+Pgo+PiBUaGUgZmlyc3QgcGFydCBvZiB0aGUgc2VyaWVzIChpLmUuIFBBVENIIDEg
-JiAyKSBhZGRyZXNzZXMgY2xvY2sgcmF0ZQo+PiBjYWxjdWxhdGlvbiBhbmQgc3luY2hyb25pemF0
-aW9uIGlzc3Vlcy7CoCBTcGVjaWZpY2FsbHksIGl0IGZpeGVzIGVkZ2UKPj4gY2FzZXMgd2hlcmUg
-dGhlIFBIWSBQTEwgaXMgcHJlLXByb2dyYW1tZWQgYnkgYW4gZXh0ZXJuYWwgY29tcG9uZW50IChs
-aWtlCj4+IGEgYm9vdGxvYWRlcikgb3Igd2hlbiBjaGFuZ2luZyB0aGUgY29sb3IgZGVwdGggKGJw
-Yykgd2hpbGUga2VlcGluZyB0aGUKPj4gbW9kZWxpbmUgY29uc3RhbnQuwqAKPiAKPiBhcyBJIGJy
-b3VnaHQgdXAgb25lIG9mIHRoZSBtZW50aW9uZWQgZWRnZSBjYXNlc8Kgd2l0aCBteSBSYWR4YSBS
-b2NrIDViIGJvb3RpbmcKPiBsaW51eCBmcm9tIEVESzIgWzFdLCBJIHdhbnRlZCB0byByZXBvcnQg
-dGhhdCB3aXRoIHRoaXMgc2VyaWVzIGFwcGxpZWQsCj4gZXZlcnl0aGluZyB3b3JrcyBhcyBleHBl
-Y3RlZCBhbmQgbXkgaXNzdWVzIGFyZSBmaXhlZC4KPiAKPiBUaHVzLCBmZWVsIGZyZWUgdG8gYWRk
-IG15Cj4gCj4gVGVzdGVkLWJ5OiBUaG9tYXMgTmllZGVycHLDvG0gPGR1Yml0b0BvbmxpbmUuZGU+
-CgpUaGFua3MgZm9yIChyZSl0ZXN0aW5nIQoKUmVnYXJkcywKQ3Jpc3RpYW4KCi0tIApsaW51eC1w
-aHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlz
-dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+On Sun, 1 Mar 2026 14:08:24 +0200 Vladimir Oltean wrote:
+> > I don't recall us ever making a "dirty tag" on net-next which would
+> > propagate few 100s of netdev patches into someone else's tree :S
+> > IDK how Linus would react. It's the least good option IMO.  
+> 
+> Just for my curiosity, what difference would it make to him?
+
+The PHY PR will contain a bunch of networking code.
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
