@@ -4,87 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 708B3E9B342
-	for <linux-phy@archiver.kernel.org>; Mon,  2 Mar 2026 09:42:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1514BE9B340
+	for <linux-phy@archiver.kernel.org>; Mon,  2 Mar 2026 09:45:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
 	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=+IKMuaJVe/gOMteoDt1r2hCINLph2a8VdwEtklyaKYY=; b=yUJ/xbGpWlFQ+h4qNhxgtGX7+i
-	68962AVPWSGo6QCbPoSd/6jga5frsfX2iIlH8E+RbJe39CcOmplQlvnMBD+7CcH15QhxBq4rwH4MG
-	D4MGicRddzUyKJzEnBJTY+lDVLOHbcyMtBVO4b9BumrXBdj8uEFN++Tuj+KZrwW/sQEEu7kBwFafr
-	zwleDPu1/af5GrRekY79ufXHbclSTAZ13RqXraQI6lfdvlA6TbHrAf/PDwi2hLo+oXnT33hkStKg6
-	ffxT9QWeFllJx/5/A/MReB2pbSjWkd2Q1JwefT7KSkeVGt3wS4Fg5JBZZtRczLoOuq6OuJTB9xx55
-	XHQ7amOg==;
+	bh=L18QpHGLXRLbSyhiuynRXnlSeAKszsAk2Kj9Aifl75k=; b=CE9+OEuOObeqPCJ5CBmshBit/u
+	7Q9Sv7AebWOPwxfVNs39Y6ltiRJNWZDq9Zokx2GffppjPT4OXBDD6Mmmzl8EqhRLJ8aj35j1TJSwS
+	WFgQR5pUBDsEjzDBIt0eP2G8BSbmxFkSvAKTuj+m7SQHX4/69F/D32Ym8sq2OTRP6uylmg78uKr0b
+	OzPgZwuzhFELt2Ah8+N7o0pAM1BGd+l7hLBM3iEnyu8BCQZXbR5OrHI3joulGXC4cxb2eiaJdXuvN
+	ytVBZNsWmvKwH8s2imP12EIBenHvdinz8LKfJNQjfzqmG9LyC2mmsmUQ1Gs09ES080Mt4+HW8TPoB
+	Kr4upPtg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vwznY-0000000Cc0b-3X00;
-	Mon, 02 Mar 2026 09:42:44 +0000
-Received: from mail-wr1-x429.google.com ([2a00:1450:4864:20::429])
+	id 1vwzq7-0000000CcIP-3KI8;
+	Mon, 02 Mar 2026 09:45:23 +0000
+Received: from mail-wm1-x333.google.com ([2a00:1450:4864:20::333])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vwznW-0000000Cbzg-1MUi
+	id 1vwzq3-0000000CcH8-1zGi
 	for linux-phy@lists.infradead.org;
-	Mon, 02 Mar 2026 09:42:43 +0000
-Received: by mail-wr1-x429.google.com with SMTP id ffacd0b85a97d-439b5d78592so773769f8f.0
-        for <linux-phy@lists.infradead.org>; Mon, 02 Mar 2026 01:42:41 -0800 (PST)
+	Mon, 02 Mar 2026 09:45:22 +0000
+Received: by mail-wm1-x333.google.com with SMTP id 5b1f17b1804b1-4806cc07ce7so47557065e9.1
+        for <linux-phy@lists.infradead.org>; Mon, 02 Mar 2026 01:45:18 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1772444560; x=1773049360; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1772444717; x=1773049517; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=FUMi2IrbtLUuCYJGmkwxz9kL36i5bFYXjmXqzSFVtBU=;
-        b=dq76kDGpsp6pVyrHuNC6wwn8RirdVIr1CU5Yb5mGrszuiVQPzx01kqM4/4TrpLCAxM
-         dYedcCYz6Pm+5erHpO9coJH9ARLotae2hahsuMfpCO9V4Ba8qSFvd7CsbOvYqds5n4t1
-         yg9Q8KsE4MZxK/P7hw1+aIpnO5xqWqYNp+0g6y7fIpXDuYpx3gpXZKYoiwH2nyGm+UtH
-         XpI1pVXA30cXlA5v9+DHGvq0yWKfb2iwn1U4LaMyk2CAi3PQVZPgJEJjtV9PP6BmOTZr
-         PYJV82Jq1JkSJSJk/eTw0YxH+FJeSxJxudEP9TrTjTTJYaezMq+3bVkUWqrrmFJcLMvp
-         qIIA==
+        bh=c8XV6vWrdSfBIVmKpoz6leHiVZcyEwRuzmhHYYW85Zk=;
+        b=ZhziZgEJfaT6hyKfS01oQ/ZaCEgCIA/TZW4fEPXMqvuXG/RvSEGMsQ9qJrr7LVrNjl
+         UfNYxjvkgmp+lK8HquB2keC6gY+rGRJXWuYiFfnug+abIUIR2AN9GcolcIko8XL2EGnG
+         KaXxwHxCNn5XgHRRAJfoZEFkXQveK3P1WjdJF21oM4KW4BQGKWPSdn4voSxodE/qwxu5
+         MbjETrhZlVVp7R1Kzice1VCmRzR79QI+PSI+NTqu2SiiBaSEW8rKhYpC9zWqN+lkN1Ju
+         PjzWGb7nYsONGGgH2Jjrdt72fDb5cnEoxQjZKQcRepCDAiAHsZYkI/pQvslFIrT6JpTm
+         ++3w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1772444560; x=1773049360;
+        d=1e100.net; s=20230601; t=1772444717; x=1773049517;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:x-gm-gg:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=FUMi2IrbtLUuCYJGmkwxz9kL36i5bFYXjmXqzSFVtBU=;
-        b=qzand+PL8vl4Q2930coJdhv8aTLxoCbhCIJkKBZCv0E5ccpYgFSzkl91PKwr7UBMF/
-         qj55C/Zp+I90ZsQ5XYs9qLxU1B3wRxxcSFk2phEXpgur43ToC927C07IUn+J4uWi/jew
-         WuE4tpbjzRFJZ22mDUS9YqIJ5fHGKiFGO7IK70fAsrw60KHHmO70eIVuwiXq0397Uwb7
-         yTvuMGdeVguoUQ3TghULKKjer/cOzWEVu8LKtSPx/VWk3E9E/oSjdttDnnvhD2QOd5tq
-         e42QVbpBgDfHCgbfBXoJfP0IHxT4eVGrl/ttN6eJnH8cxShx2EZImfNXWQoAQ0DFlyYG
-         zyVw==
-X-Forwarded-Encrypted: i=1; AJvYcCWUgdumbsFKBLEbq95np1GC7cqhcsMhCp9MvYUDczpp8Wqto76B4CkA6wZhEe98gPxvKNNNk3r5lws=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxDEwiZO9EhjP9kSxmJ7G/NBZFTO40cnN8CBRYU3hUy41uU7iJW
-	Wi4thuKwE4h7qvKJya+eM2lGcv9o/Pnz2AMUOt/NbIFWVMuH8uAspzGxDMUOu0MLAqZnhSI2GP9
-	GRdJgj7zRQg==
-X-Gm-Gg: ATEYQzwsf8ivrHlId4af/tXrAVCBdP8wH6JNg8upCLkGX9j0tMNCyTxLS054mYMbRdE
-	fU4KN8E+gkw/0hDZg8lr6i6XxwzdnbMbazqgzaiBL71VlNSU8S6oALLfj7lIy5FZzVbpN4+2BTT
-	CEc5Z4fZgcWKrWA/pr8qc5OFJPaiEYKKEP7ENWtFCofP1XxeNkk+8mzI5L3Ts+2Sk98tDMaVUVT
-	Q/5GhM3PaT7jZSUePw6EohSNxcMSTxXHDgOIFkiyPfT1HusUfyX1Z3paJ3wlOyaVTstKx6UOBth
-	MVe63BuTx+IIysNam3sYgW57czzVypYXmuUP37gJ7E6X+LdYN/K0YplYlmkw/H+s4L16FiltcZW
-	tPiskkmSrwXtprbt72//p89D+9TLNk2F+8YOeVEIsr5s+UrDQAujasCY2Puu2WRYlFsLAlodP8H
-	lBhI48+MSrBqCcvZ4IrBBQx22mXARkBhszyYYmsop7VauMNfdYZqTwOBxDkltduo6uzX0Oi+RD5
-	MGJ
-X-Received: by 2002:a05:600c:458b:b0:483:6d4a:7e6d with SMTP id 5b1f17b1804b1-483c9bdb6a8mr181505995e9.30.1772444559823;
-        Mon, 02 Mar 2026 01:42:39 -0800 (PST)
+        bh=c8XV6vWrdSfBIVmKpoz6leHiVZcyEwRuzmhHYYW85Zk=;
+        b=oSxfKaPgc460g0E7UUF+DR+Vdp+OsxpoI8W7zh/SxX8/BAecv6QQ0gnGc51YCNPOHF
+         QbHWQTB8oiGFIe8i31gbznrymscUJY+yFpnJfw1V6zkY1NRg3BVGb6C6HuMQQSC60sKd
+         7shFO3BHormwtvC6eIXl/IxOIZWwXO0xGnsmnTpJfYQ68Z7OM/JjXIdXG9bZaz8smQ75
+         inmzmqoe5rLTF+kZ69HXfMlRl8RhAZLmPEm6vVWgsjSi+/mOybReA5FoZ32sDv16/s5e
+         V2W6rl7iHmtqrL3BIBnMRqphYrHLKjXYiFfifZM5PbYmyKPHeZlr7qp6ONn9cx3+YnsP
+         B9XQ==
+X-Forwarded-Encrypted: i=1; AJvYcCX+jXYA7F2s7pqLeX/pm8IKWREWm3/UyA4KfrOk06iCgf67RIoo6JRzdbHWRx2q65DPGvB+qNY7EoI=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yx6SPxXhsEPXndGnc//5XlVV7PLxIYmmQzfI8R1l8R1XDj1Ctn9
+	ULg8Q7hKKHmyy5tVWmOw7XCMJqXKhQO68TZswbU6cEhB8PLzONu7zHbEm4VKW4N2UrA=
+X-Gm-Gg: ATEYQzxLDq3iPTPLJwVoEjT53oixHqQHiezqtjEs9nURQy4xyis1Lk/gxHlDkbfqlsY
+	AqZ0KQ9OOf5WdYO2YRdzBhG9wztd/68rsveUQmNsh0it6nzp81Uiibc7v2pdEF/4SlRkOolrlP2
+	SUktQE4elYiuuKmmcWRrFtzM7BwO97QNoiZUkzeLEB4gj+68pd+UhYB+R0wfgrM2+7p4LTIqMJ5
+	TVpFm4Ud1I2bC7+pyIEiTHJ/RAAIKpIV7mVKSGTeJHbJyfm4YTccmu+AjkDc6xctBN7zmlknVeN
+	wIJaEsjF18fIu28Syu+MQW4arbvkQa4Uqm1uQrWNTuUttFyRWbt/RD7WG8hvm8JJvpl1+oRq0U7
+	WX4sioZbNpUg5PCcRALhog0b2yHOq7Xn08tgVKwBHJnXHWIkqmnA3n5hfRI+X4THF0YsJ5LrsKK
+	AAHsjpLkvDKWe278QNWdYM/lcsqH3J/DE0x0e0gVXz5GiWOAJA0fndGRl6kEuUDmkNlhwEBtI2G
+	vqyYqrN7rgR6oQ=
+X-Received: by 2002:a05:600c:138d:b0:483:361b:deff with SMTP id 5b1f17b1804b1-483c9bb2c10mr203431275e9.14.1772444717283;
+        Mon, 02 Mar 2026 01:45:17 -0800 (PST)
 Received: from ?IPV6:2a01:e0a:106d:1080:c342:61e:309c:3478? ([2a01:e0a:106d:1080:c342:61e:309c:3478])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-483bd70e692sm417033065e9.7.2026.03.02.01.42.39
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-483bd75df90sm408400105e9.14.2026.03.02.01.45.16
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 02 Mar 2026 01:42:39 -0800 (PST)
-Message-ID: <17f652e8-1c7a-4578-bd81-5305234cbe52@linaro.org>
-Date: Mon, 2 Mar 2026 10:42:38 +0100
+        Mon, 02 Mar 2026 01:45:16 -0800 (PST)
+Message-ID: <7da9c4d5-019d-407e-9bf4-22994c801706@linaro.org>
+Date: Mon, 2 Mar 2026 10:45:16 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 From: Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH v2] phy: qcom: m31-eusb2: Make USB repeater optional
-To: Abel Vesa <abel.vesa@oss.qualcomm.com>, Vinod Koul <vkoul@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org, Wesley Cheng <wesley.cheng@oss.qualcomm.com>,
- Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
- Bjorn Andersson <andersson@kernel.org>
-References: <20260302-phy-qcom-m31-eusb2-make-repeater-optional-v2-1-dbf714c72056@oss.qualcomm.com>
+Subject: Re: [PATCH v2] phy: qcom: qmp-combo: Move pipe_clk on/off to common
+To: Val Packett <val@packett.cool>,
+ Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, Vinod Koul
+ <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>,
+ Wesley Cheng <wesley.cheng@oss.qualcomm.com>
+Cc: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+References: <20260228220634.22778-2-val@packett.cool>
 Content-Language: en-US, fr
 Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
@@ -111,10 +113,10 @@ Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
  QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
 Organization: Linaro
-In-Reply-To: <20260302-phy-qcom-m31-eusb2-make-repeater-optional-v2-1-dbf714c72056@oss.qualcomm.com>
+In-Reply-To: <20260228220634.22778-2-val@packett.cool>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260302_014242_396564_41DBEE90 
-X-CRM114-Status: GOOD (  19.69  )
+X-CRM114-CacheID: sfid-20260302_014520_896444_3946F5AE 
+X-CRM114-Status: GOOD (  18.42  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -132,58 +134,76 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 3/2/26 09:34, Abel Vesa wrote:
-> From: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
+On 2/28/26 23:05, Val Packett wrote:
+> Keep the USB pipe clock working when the phy is in DP-only mode, because
+> the dwc controller still needs it for USB 2.0 over the same Type-C port.
 > 
-> A repeater is not required for the PHY to function. On systems with
-> multiple PHY instances connected to a multi-port controller, some PHYs
-> may be unconnected. All PHYs must still probe successfully even without
-> attached repeaters, otherwise the controller probe fails.
+> Tested with the BenQ RD280UA monitor which has a downstream-facing port
+> for data passthrough that's manually switchable between USB 2 and 3,
+> corresponding to 4-lane and 2-lane DP respectively.
 > 
-> So make it optional.
+> Note: the suspend/resume callbacks were already gating the enable/disable
+> of this clock only on init_count and not usb_init_count!
 > 
-> Signed-off-by: Wesley Cheng <wesley.cheng@oss.qualcomm.com>
-> [abel.vesa@oss.qualcomm.com: commit re-worded to reflect actual reason]
-> Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-> Reviewed-by: Bjorn Andersson <andersson@kernel.org>
-> Signed-off-by: Abel Vesa <abel.vesa@oss.qualcomm.com>
+> Signed-off-by: Val Packett <val@packett.cool>
 > ---
-> This has been sent initially by Wesley here:
-> https://lore.kernel.org/all/20250920032108.242643-10-wesley.cheng@oss.qualcomm.com/
+> See https://lore.kernel.org/all/389ca5d3-a698-4dac-911c-39ba057e3d17@oss.qualcomm.com/ for more info.
+> BTW https://lore.kernel.org/all/20260205160240.748371-2-loic.poulain@oss.qualcomm.com/ helped with coldplug.
 > 
-> This is still needed, but for a different reason, so re-worded the
-> commit message to reflect why.
+> v2: Reorder disables as suggested
+> v1: https://lore.kernel.org/all/20250927093915.45124-2-val@packett.cool/
 > ---
-> Changes in v2:
-> - Picked up Bjorn's and Dmitry's R-b tags.
-> - Fixed the subject line, as Bjorn suggested.
-> - Link to v1: https://patch.msgid.link/20260227-phy-qcom-m31-eusb2-make-repeater-optional-v1-1-07a086bbaba4@oss.qualcomm.com
-> ---
->   drivers/phy/qualcomm/phy-qcom-m31-eusb2.c | 2 +-
->   1 file changed, 1 insertion(+), 1 deletion(-)
+>   drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 16 ++++++++--------
+>   1 file changed, 8 insertions(+), 8 deletions(-)
 > 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c b/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c
-> index 95cd3175926d..70a81ab2482f 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-m31-eusb2.c
-> @@ -285,7 +285,7 @@ static int m31eusb2_phy_probe(struct platform_device *pdev)
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> index 93f1aa10d400..28428a8d1192 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> @@ -3691,6 +3691,13 @@ static int qmp_combo_com_init(struct qmp_combo *qmp, bool force)
+>   	if (ret)
+>   		goto err_assert_reset;
 >   
->   	phy_set_drvdata(phy->phy, phy);
+> +	/* In DP-only mode, the pipe clk is still required for USB2 */
+> +	ret = clk_prepare_enable(qmp->pipe_clk);
+> +	if (ret) {
+> +		dev_err(qmp->dev, "pipe_clk enable failed err=%d\n", ret);
+> +		return ret;
+> +	}
+> +
+>   	qphy_setbits(com, QPHY_V3_DP_COM_POWER_DOWN_CTRL, SW_PWRDN);
 >   
-> -	phy->repeater = devm_of_phy_get_by_index(dev, dev->of_node, 0);
-> +	phy->repeater = devm_phy_optional_get(dev, NULL);
->   	if (IS_ERR(phy->repeater))
->   		return dev_err_probe(dev, PTR_ERR(phy->repeater),
->   				     "failed to get repeater\n");
-> 
-> ---
-> base-commit: 3fa5e5702a82d259897bd7e209469bc06368bf31
-> change-id: 20260227-phy-qcom-m31-eusb2-make-repeater-optional-621c8c1c0354
-> 
-> Best regards,
-> --
-> Abel Vesa <abel.vesa@oss.qualcomm.com>
-> 
+>   	/* override hardware control for reset of qmp phy */
+> @@ -3768,6 +3775,7 @@ static int qmp_combo_com_exit(struct qmp_combo *qmp, bool force)
+>   
+>   	reset_control_bulk_assert(cfg->num_resets, qmp->resets);
+>   
+> +	clk_disable_unprepare(qmp->pipe_clk);
+>   	clk_bulk_disable_unprepare(qmp->num_clks, qmp->clks);
+>   
+>   	regulator_bulk_disable(cfg->num_vregs, qmp->vregs);
+> @@ -3871,12 +3879,6 @@ static int qmp_combo_usb_power_on(struct phy *phy)
+>   
+>   	qmp_configure(qmp->dev, serdes, cfg->serdes_tbl, cfg->serdes_tbl_num);
+>   
+> -	ret = clk_prepare_enable(qmp->pipe_clk);
+> -	if (ret) {
+> -		dev_err(qmp->dev, "pipe_clk enable failed err=%d\n", ret);
+> -		return ret;
+> -	}
+> -
+>   	/* Tx, Rx, and PCS configurations */
+>   	qmp_configure_lane(qmp->dev, tx, cfg->tx_tbl, cfg->tx_tbl_num, 1);
+>   	qmp_configure_lane(qmp->dev, tx2, cfg->tx_tbl, cfg->tx_tbl_num, 2);
+> @@ -3922,8 +3924,6 @@ static int qmp_combo_usb_power_off(struct phy *phy)
+>   	struct qmp_combo *qmp = phy_get_drvdata(phy);
+>   	const struct qmp_phy_cfg *cfg = qmp->cfg;
+>   
+> -	clk_disable_unprepare(qmp->pipe_clk);
+> -
+>   	/* PHY reset */
+>   	qphy_setbits(qmp->pcs, cfg->regs[QPHY_SW_RESET], SW_RESET);
+>   
 
 Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 
