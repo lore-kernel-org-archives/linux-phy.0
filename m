@@ -4,142 +4,184 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EDB57EB3649
-	for <linux-phy@archiver.kernel.org>; Tue,  3 Mar 2026 01:51:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46C4CE67A91
+	for <linux-phy@archiver.kernel.org>; Tue,  3 Mar 2026 07:57:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:CC:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YAjpvgmMaXZHy2KMuDSxXjf8AymsOcCW+duvpCDUkX0=; b=WGvgvn97W2JfFm
-	0loopSVX0tkkNXV+bbTm98tNzskxuZoOYKa9MaAVF1o4IWH4fwrZ4L3mp8Nlo1IrxuHt9OAU0uRWa
-	wmEnd6pOiSeIdyYckbbwtUhuj/73bsG6i+lG56tjfLkbH7TeiiwN+WXCWOdaG1pCDjx7QvgfeQGKN
-	iIbEM8ZsXn2oeWJpxZq08Zqr5ur9KWGyzFtk7vtzluHAhxOiJm7hLnO33YqxJjc/2tqNoke9L6RUZ
-	houClPjx0TH2jhE84YW0HNhzkOXOxB3OYA47cjxhsfTyMJOcZetIY1wxGXNO3ozcQphXq2IeklXFL
-	rKv60yjQ9/y6ObUkl6lA==;
+	List-Owner; bh=IWmG6QAWeVtbR+iJ61siDUwOYBIc/yzvi0O6P9MMJDI=; b=fINtkLj+kmjEjp
+	TwD1nvtLDK2H91B/2Eu3VAqzB9snLXRBHAp5aSWsVVxgM9lLGlO/eOQUYnr5fdu9euPG4q3TCCcJv
+	a7SOqiIUnSZGIqDCc8cxCpZP9Y8IlxVAcCDlhE/rKFeAvYVP1vkWF1UpOgqVf0ahiPFueGK5U5Hn2
+	kHRyAgZ/3hCtp3vce9CY0qaaVgwCB+s6jlTqVCPA2OYbD3Ro6pD/g7SgKcRp8lboq+fcmOHal4yAw
+	FLRgaczRVNZV8lojvPf9AQT9vJgxTAY6u9olzaUJ9r7fzE5jKCLD6fTXTBLZPtXJQa4m/C4mtw/uK
+	2q6l3jVRBfEDXm+nhEWw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vxEvC-0000000EN7c-3ir9;
-	Tue, 03 Mar 2026 01:51:38 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1vxKcw-0000000EjqO-3bFo;
+	Tue, 03 Mar 2026 07:57:10 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vxEv8-0000000EN7B-38yP
-	for linux-phy@lists.infradead.org;
-	Tue, 03 Mar 2026 01:51:36 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 622LVskd662249
-	for <linux-phy@lists.infradead.org>; Tue, 3 Mar 2026 01:51:33 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	Pw3TuhYPeUpbqxCk25aiSvVfe7dHHnXwYTLUytizRcI=; b=IcH7eM4X5rHy90TW
-	yE4dWPRzQCb+I1V4pP0eMQy1iZSdagLEHDzznU96ZPe5CHGVpsTRScYiI2cmRRJM
-	DGxnMb3QmpAuEl9Bm1x0awCvAyWJTzh9MnLgNObyfQaatIoXvltbB+N1iu9dc+1I
-	CUpd0NlGmBRbJaoZqP9NUH77N1N+IbVHlO2DgoET/CYIpzZQeIGTWpfX/nhKUoHi
-	KNarwrrvQdfcc1cF79pYqKBGEfupHDJzp/HUn3OPwMPnf1B87EYX/InptpqP43xA
-	L5C85UO7JaggWAjmDmTS0B20/2ZI1LW4Pouwx8GVf59bltWiPn42Oj2HO7uDwCic
-	fWSLIA==
-Received: from mail-dl1-f71.google.com (mail-dl1-f71.google.com [74.125.82.71])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4cn6r2ucgr-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Tue, 03 Mar 2026 01:51:32 +0000 (GMT)
-Received: by mail-dl1-f71.google.com with SMTP id a92af1059eb24-1275c2ae713so12297609c88.0
-        for <linux-phy@lists.infradead.org>; Mon, 02 Mar 2026 17:51:32 -0800 (PST)
+	id 1vxKcu-0000000Ejpn-01rC;
+	Tue, 03 Mar 2026 07:57:09 +0000
+X-UUID: 91370bba16d611f1ad39f32c34db0b1c-20260303
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
+	h=MIME-Version:Content-Transfer-Encoding:Content-ID:Content-Type:In-Reply-To:References:Message-ID:Date:Subject:CC:To:From; bh=IKyX7DtUGS+wIaz9ljqg8ayucMvWeZmuZcacLbiMavg=;
+	b=relAx/oOjhNjkc6KbxEbi2TxydPqTU9YX/XqUznpUklubInW3jNVp3lDHtTxCRxnDFDtcWt2bOmfpkY1lYJZvSZ0xUXzBO5r5EfzX1kEk5BhylFfngS0QF7g9Y34y/IrXWh9y8c7pu9YAoGCk/jFTvIXPgLFAr1zDzxrYOCN1Q8=;
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.3.11,REQID:79132eec-51c2-4ffc-af41-2772c53c8307,IP:0,U
+	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
+	release,TS:0
+X-CID-META: VersionHash:89c9d04,CLOUDID:cd1f2fea-ef90-4382-9c6f-55f2a0689a6b,B
+	ulkID:nil,BulkQuantity:0,Recheck:0,SF:80|81|82|83|102|110|111|836|888|898,
+	TC:-5,Content:0|15|50,EDM:-3,IP:nil,URL:80|1,File:130,RT:0,Bulk:nil,QS:nil
+	,BEC:-1,COL:0,OSI:0,OSA:0,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
+X-CID-BVR: 2,SSN|SDN
+X-CID-BAS: 2,SSN|SDN,0,_
+X-CID-FACTOR: TF_CID_SPAM_ULS,TF_CID_SPAM_SNR
+X-CID-RHF: D41D8CD98F00B204E9800998ECF8427E
+X-UUID: 91370bba16d611f1ad39f32c34db0b1c-20260303
+Received: from mtkmbs14n1.mediatek.inc [(172.21.101.75)] by mailgw02.mediatek.com
+	(envelope-from <ck.hu@mediatek.com>)
+	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
+	with ESMTP id 1683164957; Tue, 03 Mar 2026 00:57:04 -0700
+Received: from mtkmbs10n1.mediatek.inc (172.21.101.34) by
+ MTKMBS09N1.mediatek.inc (172.21.101.35) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.29; Tue, 3 Mar 2026 15:57:01 +0800
+Received: from SI4PR04CU001.outbound.protection.outlook.com (172.21.101.237)
+ by mtkmbs10n1.mediatek.inc (172.21.101.34) with Microsoft SMTP Server id
+ 15.2.2562.29 via Frontend Transport; Tue, 3 Mar 2026 15:57:01 +0800
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=JxUqH+E0fvfdVgmiZqlBtAPx+kNwBthOv+zXIXsh1N65JXWfOfqqEeKxY1UxbmQhHDFA1cYAy+CQ6pc83nDOC2GnfJ2klo4gmvwOTjkKm84w/VxZvELhyT4mdBKAdoHnSxugoVCGVBCtMiIx1L2MbWyYglmJNJBu8+8ICrzIMDxAelME2eojHrV7xgJUSR/g5+xRfCWzSyh1EU3/RdXimEWRW/85QPHdgiaAn/h9beK/nndAohYz0Qj6yigSB8K43iWNjylOAJyqi877PfcJu7kIcaK5IBs4uwxKJLEOBc3QP5WYg4jQJzd/aEw1LqqLFVMimVe/TzRiC0+tMboo/g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=IKyX7DtUGS+wIaz9ljqg8ayucMvWeZmuZcacLbiMavg=;
+ b=XG0cObvxd6w7vvxxNcIZuelYCW9aPVtf+dOg1bhS9t7CeJ6VW9OfGzWb1XnwjiboM7GOKMVcQCgTm3vcyi8Uu9dqceeaRIDXKI7P0QWyKSA5WcfgErbu/N/F8ID2O736pkLW9hQlfOeFRjNypq+nGHej4gHiu6+90CZBe40QPlXgHad+xXJSHdm/52nqRPFWXr7Hde2wzHhQ8hzPi5Js7LnfWV37pbzu5RUCI5wjxYGPqNTcmX2cMyibpfOGr8j1e8dF3megGcwqMpJ57uTyaCmk8C2OXfG9+ZymHvY57EeTRgtJhJSTjCcmPNRMnwCu2CKVHYFlgQd8JFW7PGeN0Q==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=mediatek.com; dmarc=pass action=none header.from=mediatek.com;
+ dkim=pass header.d=mediatek.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1772502692; x=1773107492; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=Pw3TuhYPeUpbqxCk25aiSvVfe7dHHnXwYTLUytizRcI=;
-        b=gFLDXVwIlsmNqgbrsQFbBCm9QDrzRY6SAwmQQNKdEru4WGfhl6C7fKkCo7ovLWsWCa
-         6RXpLSXC4VQ3InAYtp9MhsjX8fWsy/4OHZa6toJsmejnriUUwEQEOlwpYHnhCMsCeZeY
-         VOddBBr7gFHssPdA7wPO6c6BQjqUM9zTwu0A6E5PaahbatRiViDNdYW/Z7ZRy8wsIFDS
-         GCwb5rhtb3hUl5q7+ogCEujoV7AaH3pmj2/xugLU3QIQQVWEEsnpKfJhr0N8mdg/bjJx
-         eWhpoVbWmLszNsdF+vHJ6knaZJjtCNIFVAnOeZbV//mMEYfOcYkNOwQhMHfAfmauUCtt
-         M38Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1772502692; x=1773107492;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=Pw3TuhYPeUpbqxCk25aiSvVfe7dHHnXwYTLUytizRcI=;
-        b=Nc7MLUXaHUxa/Ujmv57ofO3Oa5PLL6yaTkkzI4kOvF8ERLahAMo/NuU/nNQmDXzwoz
-         WhBuc+8jJEeZ/aeDrLqV/TzoEtMvgPK9Zvr+vDVMsj1yPCdVsZ9JINwiEhLyS3Pnd5Zt
-         kpk44O+YUm8/4cxFoHV3CJpvvPPKATkTxMF9xsO0qAX16IEQvmKSDaVcZbKaHVkVzP6I
-         Rj7DY2cvr+ZObo+f+gYJRNYoU1WPC6xbtvUGeYbXr3N2lop5TfDaybJ3ANe+d5y7nTUu
-         T87jhZkKO+mHBhQi1STwx9rDkXexnVGWvtzAEBr2DAYn7HKXsSbNIzk/rL/8BZdFXHvf
-         jjcA==
-X-Forwarded-Encrypted: i=1; AJvYcCUPU9bkj5Qfqz8Evvp0Tqn95EzwYdOeBH1mcoL/zh1Kq6ibsKe0OBgNvwXZv+7rebdMeN5cdwgQ5PQ=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yz884BdMappH2nPpZNG4Wrc9ogOzctoDvQeYRbWT0X8LbTFmpuH
-	2N0nqRtVxJMMTnAXkGA82Xt2Z18xTqNs0YfUSvi+g8N4Yr6KrMu8uZ6ArQr0WOK437OFZn4qu+p
-	VIQQc4IwHbdtcyOlvB5n8TQ7ixCNHNpUjQ8DHG8bNC4Kcec+XDuLmty89i9qIG7H7ywlm
-X-Gm-Gg: ATEYQzyfAz61gHnTVe4hLuMJsTGEOyXlzSoy99YbYYJG4jcF23Fj+gXQnBQT+S+JqAH
-	48awVTD8kA8TjW1KvO7hFgQNNSorNjS4n73acGaJgqmUq6hw4R1Z+HcMDH8Q1wUSlaD77XyUDjt
-	vc8B/3dZgnudhsZYuv0GLE9fLcrUSUpFIRORbpDC9fVu5n9hScZhvciD4c9O2S8ET+lObVItY7x
-	kijx1iiU06/3mJxSHkhU4aSBSBsCp6sgZ0Ei4FTcLXj0+gqdPca8myXIpkkaQVdX6KUVKrmPf75
-	HdyZbvvmOhqgVRupGhECnPfb6QUM2KAuThKhL1/5K0oGW/twZhOURqACvGSda5YZusBJd+lL3Qk
-	8bWZCXN+Kb6VNC/TL0B+0iQjcKc9zRLdorwMOy5UC+F3DZbD6X4lZ
-X-Received: by 2002:a05:7022:4584:b0:119:e56b:9590 with SMTP id a92af1059eb24-1278fcf8749mr7790462c88.21.1772502692024;
-        Mon, 02 Mar 2026 17:51:32 -0800 (PST)
-X-Received: by 2002:a05:7022:4584:b0:119:e56b:9590 with SMTP id a92af1059eb24-1278fcf8749mr7790446c88.21.1772502691373;
-        Mon, 02 Mar 2026 17:51:31 -0800 (PST)
-Received: from [192.168.1.57] ([98.148.145.183])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-1279cbd1993sm6629621c88.2.2026.03.02.17.51.26
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 02 Mar 2026 17:51:30 -0800 (PST)
-Message-ID: <c85fe457-c140-441c-93ed-342dce32e604@oss.qualcomm.com>
-Date: Mon, 2 Mar 2026 17:51:24 -0800
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 1/2] dt-bindings: phy: qcom: Add CSI2 C-PHY/DPHY schema
-To: Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
-        Vinod Koul <vkoul@kernel.org>,
-        Kishon Vijay Abraham I <kishon@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Neil Armstrong <neil.armstrong@linaro.org>
-Cc: Bryan O'Donoghue <bod@kernel.org>,
-        Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
-        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        linux-media@vger.kernel.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org
-References: <20260226-x1e-csi2-phy-v3-0-11e608759410@linaro.org>
- <20260226-x1e-csi2-phy-v3-1-11e608759410@linaro.org>
+ d=mediateko365.onmicrosoft.com; s=selector2-mediateko365-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=IKyX7DtUGS+wIaz9ljqg8ayucMvWeZmuZcacLbiMavg=;
+ b=ikACuDcTx66SMBRnOLEiL55dBjzocXepDtJbFqALWTOiwvlxU31Qhu3c9fXqJUukN8yvMoBsWkyRMx3h2FF8DeNBxtfsZXxdayyqzHxInT5dKk8fsiBsnmreJ/ckTJX95zLMll01LWplF4iM00s8DyJlkkkIufay/HtW0E/vCXE=
+Received: from TYZPR03MB6624.apcprd03.prod.outlook.com (2603:1096:400:1f4::13)
+ by TY0PR03MB6881.apcprd03.prod.outlook.com (2603:1096:400:264::6) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9654.22; Tue, 3 Mar
+ 2026 07:56:54 +0000
+Received: from TYZPR03MB6624.apcprd03.prod.outlook.com
+ ([fe80::a3c2:b94a:70f:e640]) by TYZPR03MB6624.apcprd03.prod.outlook.com
+ ([fe80::a3c2:b94a:70f:e640%5]) with mapi id 15.20.9654.020; Tue, 3 Mar 2026
+ 07:56:54 +0000
+From: =?utf-8?B?Q0sgSHUgKOiDoeS/iuWFiSk=?= <ck.hu@mediatek.com>
+To: "l.scorcia@gmail.com" <l.scorcia@gmail.com>
+CC: "robh@kernel.org" <robh@kernel.org>,
+	=?utf-8?B?Q2h1bmZlbmcgWXVuICjkupHmmKXls7Ap?= <Chunfeng.Yun@mediatek.com>,
+	"simona@ffwll.ch" <simona@ffwll.ch>, "tzimmermann@suse.de"
+	<tzimmermann@suse.de>, "mripard@kernel.org" <mripard@kernel.org>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+	"linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+	"dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+	"chunkuang.hu@kernel.org" <chunkuang.hu@kernel.org>, "vkoul@kernel.org"
+	<vkoul@kernel.org>, "devicetree@vger.kernel.org"
+	<devicetree@vger.kernel.org>, "linux-phy@lists.infradead.org"
+	<linux-phy@lists.infradead.org>, "krzk+dt@kernel.org" <krzk+dt@kernel.org>,
+	"p.zabel@pengutronix.de" <p.zabel@pengutronix.de>, "conor+dt@kernel.org"
+	<conor+dt@kernel.org>, "airlied@gmail.com" <airlied@gmail.com>,
+	"linux-arm-kernel@lists.infradead.org"
+	<linux-arm-kernel@lists.infradead.org>, "maarten.lankhorst@linux.intel.com"
+	<maarten.lankhorst@linux.intel.com>, "matthias.bgg@gmail.com"
+	<matthias.bgg@gmail.com>, "neil.armstrong@linaro.org"
+	<neil.armstrong@linaro.org>
+Subject: Re: [PATCH v3 5/6] drm/mediatek: dsi: Add compatible for mt8167-dsi
+Thread-Topic: [PATCH v3 5/6] drm/mediatek: dsi: Add compatible for mt8167-dsi
+Thread-Index: AQHcpOFKeerDVVvn8keTXR6yIV+Y0LWStpuAgABdjgCACWiqgA==
+Date: Tue, 3 Mar 2026 07:56:53 +0000
+Message-ID: <dcb797934bdb4467037559ee5e91bee0a568c03a.camel@mediatek.com>
+References: <cover.1771863641.git.l.scorcia@gmail.com>
+	 <2fbf179c03c61f527e2583f9df4f97f6aaf3297a.1771863641.git.l.scorcia@gmail.com>
+	 <bc064717108de5ea1a8c98937bb03fd00794682c.camel@mediatek.com>
+	 <CAORyz2Ki5aPNbcY5-_mRwFgwT46VN_pRV2iP7z7x3snzrbKz=g@mail.gmail.com>
+In-Reply-To: <CAORyz2Ki5aPNbcY5-_mRwFgwT46VN_pRV2iP7z7x3snzrbKz=g@mail.gmail.com>
+Accept-Language: zh-TW, en-US
 Content-Language: en-US
-From: Vijay Kumar Tumati <vijay.tumati@oss.qualcomm.com>
-In-Reply-To: <20260226-x1e-csi2-phy-v3-1-11e608759410@linaro.org>
-X-Proofpoint-GUID: 5IcavuL4E5LFU2zqHm2CdG3ZPAXqvm3O
-X-Proofpoint-ORIG-GUID: 5IcavuL4E5LFU2zqHm2CdG3ZPAXqvm3O
-X-Authority-Analysis: v=2.4 cv=Hpp72kTS c=1 sm=1 tr=0 ts=69a63ea4 cx=c_pps
- a=JYo30EpNSr/tUYqK9jHPoA==:117 a=BiHMn5M11h/vNwziJwzFrg==:17
- a=IkcTkHD0fZMA:10 a=Yq5XynenixoA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=DJpcGTmdVt4CTyJn9g5Z:22
- a=gEfo2CItAAAA:8 a=KKAkSRfTAAAA:8 a=VwQbUJbxAAAA:8 a=ZuF4YGRwA1bEcIVO1K4A:9
- a=QEXdDO2ut3YA:10 a=Fk4IpSoW4aLDllm1B1p-:22 a=sptkURWiP4Gy88Gu7hUp:22
- a=cvBusfyB2V15izCimMoJ:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzAzMDAwNiBTYWx0ZWRfXyENf/v/bVoKT
- Qlv7V4AQ9iFu4FOv8pQ0H/xqS6Zb1os8FPg7R245rYQt63J/soTBy1TbQQxBBY/9RO/YGfI6f9o
- YxN+kBHWQlYlDn1mj1pW7iX+Qs3nzNHgNTCFS/gbgIkFAYhbM9hu7NEVmBOVpUVXF4kx2m03yDW
- agu80i1bW1HNCaPCHYQE29dABZKbv7k7SLUq4XJVgCXVSJ/gq0KYXp4dJlcli+gNgvVYagbyyZi
- 6SLGb+4fa7Y1if8uNJ7I+dcUxM14e3AvihsN0w+A5jJQ2V3Jz4DjdX5KVld1/rhsGprJzBL3GRv
- DsdnzEmi3io8991fIYcX0bHtCZtwe5HVtCslr/xZfX+IWc42vteAINV9ucyMCXrUSZXX3js6uO1
- yX2aZBVua+YJtheGe0eX4+20OUaOhANp2iMNi4NEiZ53+SauiAX/8VKk4iRFfbbbGTaC3M/XI17
- vPp0y67RLaZ6fK6QOOQ==
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.51,FMLib:17.12.100.49
- definitions=2026-03-02_05,2026-03-02_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- lowpriorityscore=0 suspectscore=0 impostorscore=0 phishscore=0
- priorityscore=1501 adultscore=0 bulkscore=0 malwarescore=0 clxscore=1011
- spamscore=0 classifier=typeunknown authscore=0 authtc= authcc= route=outbound
- adjust=0 reason=mlx scancount=1 engine=8.22.0-2602130000
- definitions=main-2603030006
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Evolution 3.52.3-0ubuntu1 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=mediatek.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: TYZPR03MB6624:EE_|TY0PR03MB6881:EE_
+x-ms-office365-filtering-correlation-id: 97a2892a-f880-4f56-e373-08de78fa6f83
+x-ld-processed: a7687ede-7a6b-4ef6-bace-642f677fbe31,ExtAddr
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;ARA:13230040|42112799006|366016|376014|7416014|1800799024|38070700021|7053199007;
+x-microsoft-antispam-message-info: puoG4vEhTADN1WsOc+sGx2ZXwsd6tXYrzhvhRCLvrNViw7YKxGK4SPvFew9tw9sEa1ofbX3/hshRCaI3FRds+A6G7m9BaAcxESb7iDPWRGSIL/hutFA0wOTMgpUeij8bf+wWDM5hyxgCuqF8fUwqyYbK6noj/G242GRkNu35lWM0ShinCP3J6RMPlsnM99XUdy9q29Sk4f7zheCaRZbS2BRE9QEKSKMcxHGL+J4Dx68SPw1vDAYhqwwd65B1yf1xd/CFJa4YU2hL9VdLgd/UEIeiVhMqu+awT8UkiH44vjmvDv38HWxevluvPmIDXdqLq6WcmOH+t0XojLo3egSxQU8Gwtyqt1lICabX9d0peDW9Cr6ppH6cqObwtJ4IrXg7HLTat8uHptF2+kxyFVeZCDbqS4J26jSnWG5tmuut+31r3YnMsGzy7He774E5DAr6YL8In4PxWh+d7dbaacFPvQzVLMDVndUSn+OZYuvQRXeuJ0MODq/jXxnbSzqgpAyFT87i9sOwHmc48O3UxMeClLYTYnnjIWq6bZ6ELmy/yV6DYHjl5ecL71D1fq3ylv54pN7+zLqez8tMKolN3jW+hg7MjLmnQ11zG5kWmkyH8giIg+hlGRG1vt4jOg5XjINHhezOaH/mLHraOA37zK8tCJFAuJdj+5p6Q7skyVNGKP6uFz7LTZlSZlKGSa2QneASEunJHgZVoSZRy3x0hi5tPKEHCXiVfpyJG5qPC34c08cAqkpPlq1mWnnLBu14kqwTQawPaXldtAfl5UQDhem6FHOotmEr9IyugXCnhp8aGDw=
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TYZPR03MB6624.apcprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(42112799006)(366016)(376014)(7416014)(1800799024)(38070700021)(7053199007);DIR:OUT;SFP:1101;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?utf-8?B?aU9ieVJteSs2QXA0WUZiMmNZTVFFRldKSjJ2Rm81cU1YWDFuMTFlamFuVTNS?=
+ =?utf-8?B?MDVVMDlzSitWV2xUNXhiRC9kWGxjZnl2WGM5QXVnWkRlVURtZzNTaWVWQ2FC?=
+ =?utf-8?B?UTAzcGJFM2RFMFJYbFFMTXVxcHJ0VWpZZGMvNk52NGFReDNZQW41ekJPTEZ5?=
+ =?utf-8?B?VDNqTExoWXA3SDN1dWJQbi9wcDFVWWZlRVZ1TTF6emg0WUJxeW0xMlRPMEJQ?=
+ =?utf-8?B?eFZGTTdjczhpY1FxTHRSd2JnbVZWRXROSEZmbFRoK2xQWkZ2eU1QNGtIczdq?=
+ =?utf-8?B?aHVaaUF6bDUrWVZMOXd1NUZUUWt6TnBFTngrOTlvYWJmTlRrTW96VDd1WXNP?=
+ =?utf-8?B?ZU5QRkFWaW1PMWZUa1hHZ3RnVzlCMUdHd1ZnN3FnQmJjVE1BcERFaEpRbGlJ?=
+ =?utf-8?B?WUFLQ2ZpdUNZWDVnSEh4V2k0U1ZqMUFaQVVYTHBCL3E4TVpzTkZibklCb2ZD?=
+ =?utf-8?B?clJOaGF6dFdyVVhzREEwcVJFZEZwZWJzTHZaeEV4bjBXbjluaUlGSDZ4WXQv?=
+ =?utf-8?B?dWpvZmE2QTNRMjRNdThrbkxlMVh5T1RzTFJXUmc5c3NTaWE2Sm5mMXk1WSsr?=
+ =?utf-8?B?THp0dW5kb2Z4c2E0RUUzSDJsVHpmVHpveHVTb21NNmtPNmo1bTZzV0tvazBK?=
+ =?utf-8?B?YWFCQ3pGQlhndHZVd1R0TjJpOFdobm5oNllWa2ZJNllON0NxNHMyQ2VER0Ev?=
+ =?utf-8?B?UVoxSTlVbml6S2pEZFRyVERaNGxReWlJZVk1cGlUK3FqWkhUVTNXZmU4cUJB?=
+ =?utf-8?B?SzBuRVN5amFUZmVUckNzWWpENlBpRHZvT2k5d0thMEhaTzB1UXdBUU1tMG9h?=
+ =?utf-8?B?c2YzRUxua2FpSXVoVnJSUFk5NkYzRXJaRmQ3WVZsQmJPTStEUkIxMXRMNkEv?=
+ =?utf-8?B?K05sNHRROERlSHpweXJXYTVpeWlaQ3BGRWpsL2RlTkg2b3pVMmVlRXlSRHlp?=
+ =?utf-8?B?NTEvc01OU2tGT2t5MHo5NWhyZWdqTDIvWmxRUFRkVENwT3ptZFArMy85YUg5?=
+ =?utf-8?B?VGVvWFZ2anROWWVFcUVBd3pDUW82U1F0blJFZGZyTWM4UjVMcWdQNis5SWRs?=
+ =?utf-8?B?eUZnbWVtZStDR0ExcVBGRzBybHdIYURicStOYmZOREx1NkNyN0cyKzk3VkdZ?=
+ =?utf-8?B?UExjZ2EwU1hJVkZKeWFMdHNwcUsyWGpzSWFJNHhld291cFlJTk5kUSthUER2?=
+ =?utf-8?B?SkwzWjNyMVBPTXRBOFU0MXJGQlFFWXU4ZFBjbVZwb2tOc1hzclhwMnVnTXBp?=
+ =?utf-8?B?N1lpbFNEYm44RWdxRU44bkg0RzB5WVVmMjQyZVhOVGFPbmxqaUhXMEdnRVpj?=
+ =?utf-8?B?RmlNYkR5T0dSbkpNY2hSMG5MKzJuOWlsVnBUc0cyM0RZZTkrOTlyN3dKQk5E?=
+ =?utf-8?B?MWV6T1pGQW1qeVJoUHBvby9FOGQyUCswcm0vSFVIVytDbmU5MjdBSXFGWmxB?=
+ =?utf-8?B?bG1TMDl4K24vLzBPRmVEaGE0Qnk4SXVkbkczVHAyOUdKandFL0JOQVFHTWpR?=
+ =?utf-8?B?dkYwclVsR2E3ZFRsVFR6OEtOakl4d2kxcndQOWtLdmRISDk2azJmbmwyc0Fj?=
+ =?utf-8?B?dnNuaUVRcDhiM3R0ZEdVc2NEKzlNai8rSTdsZUl4VHdIc20ySXBHTHdaQXhW?=
+ =?utf-8?B?aWtzQ1QyZ05Ib2NPb1hCa0lEaHFhdmdLOCtmT1RyRHY5a1drVUhlMWdVN1ZW?=
+ =?utf-8?B?N2VhVkVlNzFQWEZYd05LdVBqOUFYR0x6ZFhCVHB0ZGkrRzVoM2s4S0k4Mmxv?=
+ =?utf-8?B?T3lnQk1XZ1VMSHp0M2xmZWllUkYzNFk2MW1NWUlwdU5zZlZiakFkZ28yMGFV?=
+ =?utf-8?B?S0Z2VHZGVTViSEt2Rno3UVYyUTRDaGU2MFIwMVR0cFVYT21iRHVBenRjc3Y2?=
+ =?utf-8?B?WWJjS25wS2lRaXZjZXRNOWtHaVM4S3RTOEZlRlRyV1NrM2c0OGhRVHNtckt0?=
+ =?utf-8?B?Z0pUZ3RZUi9xbWtCc0tveStEVUFJNHc2a0hVSmswQjUwR01ieWxqTmJtR0p0?=
+ =?utf-8?B?cXpjUmUyQWhnQk1lbWdyN2ljbC82QVcvTEdBdTltTVdCV2lRZVFMMmtTT0hr?=
+ =?utf-8?B?NEoyU2FxblMzd25Yb3dUbStCTEVJaWxWeXZoV29RK2xPRUt5WXVPdUczOTdD?=
+ =?utf-8?B?c2N2a0J3V2llbmQza0wwbzIvNmViZHh3SDFScEwyK1oxVkVUZVNJNkkxR3Nn?=
+ =?utf-8?B?cHhGbmV0SHlBMXpPK21yUlZiQThOQjJ3NHUzb2xjbTZhR3dmZzhCdUl6a0Vi?=
+ =?utf-8?B?Q3pVNnJJc1U3MW9IUzFucnY0RU9mcVZUckxBVG1BeEZoQjR5bXk1a2EzUUtO?=
+ =?utf-8?B?a1ZULzhMYThvbFR5ckpoM01mZjgzOEZiNGJBTXRobXR2bDZoOE42UT09?=
+Content-ID: <A3B281BD36568443BD6F0D47F5E07322@apcprd03.prod.outlook.com>
+MIME-Version: 1.0
+X-Exchange-RoutingPolicyChecked: Hks+EAeuhq4Yz641JTBgp9YjxkhAgWOfOGFUF9TPXh4QT6uR52KTycsyMWePpv6bpoHLRt8IMIOzXO71VhoY1cp+AY8bdaFExSeXWMdWx+QdKatW7lZqK/g+gS7sZ1OgQMbtfMVr2NH7nl4dOeTNA9MDneVMyjuROJMigKs9czbDW4zrDDF/flHM0yjKwGoET4HnJeM6bAgDMgBtxB+8DDk2IipXYlCQkgo9b4FRqGUItFGMNU8lBGXWHBdecuFBFWz9Bbf85Jaw4mmvO8+8us2n+/n9oXYBYXn7+IqjkBimjM/xtu5ZoN4a6JeS0gxcNzVVWqasK7v7cej9J3nzYw==
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: TYZPR03MB6624.apcprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 97a2892a-f880-4f56-e373-08de78fa6f83
+X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Mar 2026 07:56:54.0063
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: a7687ede-7a6b-4ef6-bace-642f677fbe31
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: CXmPwCG1XFWGOJ2k7j1L5dnFQ23tEXif7+KgxlOouTiRAluCInZI0jHXYI7dz/1nOSNKHUePjyeOCbS/7SNqvA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TY0PR03MB6881
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260302_175134_812869_CC5241A3 
-X-CRM114-Status: GOOD (  25.73  )
+X-CRM114-CacheID: sfid-20260302_235708_071381_E48CD1C7 
+X-CRM114-Status: GOOD (  25.83  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -151,171 +193,78 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Bryan,
+On Wed, 2026-02-25 at 09:15 +0100, Luca Leonardo Scorcia wrote:
+> External email : Please do not click links or open attachments until you have verified the sender or the content.
+> 
+> 
+> > > The mt8167 DSI controller is fully compatible with the one found in
+> > > mt2701. Device tree documentation is already present upstream.
+> > 
+> > If mt8167 DSI is fully compatible with mt2701 DSI, I think the binding document and device tree should be modified.
+> > In device tree,
+> > 
+> >     compatible = "mediatek,mt8167-dsi", "mediatek,mt2701-dsi";
+> > 
+> > And this patch is not necessary.
+> 
+> Hi, if I understand your review correctly that's what v2 [1] of this
+> patch did, but the change was rejected during review.
+> 
+> As far as I can see there is no win-win solution here. This tricky
+> situation derives from the fact that in last year's submissions the
+> change was only partially merged - the bindings went upstream while
+> the driver did not, and now we have to work around this. In v3 I tried
+> to address the issue by actually implementing what the binding
+> document says.
+> I'll be happy to resubmit v4 but I need to know what's the consensus here.
 
-On 2/26/2026 4:34 AM, Bryan O'Donoghue wrote:
-> Add a base schema initially compatible with x1e80100 to describe MIPI CSI2
-> PHY devices.
+You mean Krzysztof's comment?
+He has two comment.
+The first is 'remove'. You actually not remove "mediatek,mt8167-dsi". You change it.
+The second is about fallback. I'm also not sure why he says it's NAK. Also a bad wording?
+After Angelo's comment, Krzysztof does not response.
+I also do not know what Krzysztof think.
+I agree with Angelo. Single "mediatek,mt8167-dsi" does not reflect the hardware compatible but fallback does.
+Maybe describe more information (hardware) to Krzysztof, and ask what's the better way to do.
+
+Regards,
+CK
+
 > 
-> The hardware can support both C-PHY and D-PHY modes. The CSIPHY devices
-> have their own pinouts on the SoC as well as their own individual voltage
-> rails.
+> Thanks!
 > 
-> The need to model voltage rails on a per-PHY basis leads us to define
-> CSIPHY devices as individual nodes.
+> [1] https://urldefense.com/v3/__https://patchwork.kernel.org/project/linux-mediatek/patch/ff920a7cc94f2b0c03d4bb55142030fded30d07c.1771258407.git.l.scorcia@gmail.com/__;!!CTRNKA9wMg0ARbw!lIBnCRkybM1oxoARb70JlLMPlXHKqW9dwSmVqXGsvj3LE9hsWuINkPgtrlr8Jl8-atOvzYoMjtavHOr3$
 > 
-> Two nice outcomes in terms of schema and DT arise from this change.
-> 
-> 1. The ability to define on a per-PHY basis voltage rails.
-> 2. The ability to require those voltage.
-> 
-> We have had a complete bodge upstream for this where a single set of
-> voltage rail for all CSIPHYs has been buried inside of CAMSS.
-> 
-> Much like the I2C bus which is dedicated to Camera sensors - the CCI bus in
-> CAMSS parlance, the CSIPHY devices should be individually modelled.
-> 
-> Signed-off-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
-> ---
->   .../bindings/phy/qcom,x1e80100-csi2-phy.yaml       | 114 +++++++++++++++++++++
->   1 file changed, 114 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml
-> new file mode 100644
-> index 0000000000000..c937d26ccbda9
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml
-> @@ -0,0 +1,114 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/qcom,x1e80100-csi2-phy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Qualcomm CSI2 PHY
-> +
-> +maintainers:
-> +  - Bryan O'Donoghue <bod@kernel.org>
-> +
-> +description:
-> +  Qualcomm MIPI CSI2 C-PHY/D-PHY combination PHY. Connects MIPI CSI2 sensors
-> +  to Qualcomm's Camera CSI Decoder. The PHY supports both C-PHY and D-PHY
-> +  modes.
-> +
-> +properties:
-> +  compatible:
-> +    const: qcom,x1e80100-csi2-phy
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  "#phy-cells":
-> +    const: 1
-> +
-> +  clocks:
-> +    maxItems: 4
-> +
-> +  clock-names:
-> +    items:
-> +      - const: csiphy
-> +      - const: csiphy_timer
-> +      - const: camnoc_axi
-> +      - const: cpas_ahb
-> +
-> +  interrupts:
-> +    maxItems: 1
-> +
-> +  operating-points-v2:
-> +    maxItems: 1
-> +
-> +  power-domains:
-> +    maxItems: 1
-> +
-> +  vdda-0p8-supply:
-> +    description: Phandle to a 0.8V regulator supply to a PHY.
-> +
-> +  vdda-1p2-supply:
-> +    description: Phandle to 1.2V regulator supply to a PHY.
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - "#phy-cells"
-> +  - clocks
-> +  - clock-names
-> +  - interrupts
-> +  - operating-points-v2
-> +  - power-domains
-> +  - vdda-0p8-supply
-> +  - vdda-1p2-supply
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +    #include <dt-bindings/clock/qcom,x1e80100-camcc.h>
-> +    #include <dt-bindings/clock/qcom,x1e80100-gcc.h>
-> +    #include <dt-bindings/phy/phy.h>
-> +
-> +    csiphy@ace4000 {
-> +        compatible = "qcom,x1e80100-csi2-phy";
-> +        reg = <0x0ace4000 0x2000>;
-> +        #phy-cells = <1>;
-> +
-> +        clocks = <&camcc CAM_CC_CSIPHY0_CLK>,
-> +                 <&camcc CAM_CC_CSI0PHYTIMER_CLK>,
-> +                 <&camcc CAM_CC_CAMNOC_AXI_RT_CLK>,
-> +                 <&camcc CAM_CC_CPAS_AHB_CLK>;
-> +        clock-names = "csiphy",
-> +                      "csiphy_timer",
-> +                      "camnoc_axi",
-> +                      "cpas_ahb";
-> +
-> +        operating-points-v2 = <&csiphy_opp_table>;
-> +
-> +        interrupts = <GIC_SPI 477 IRQ_TYPE_EDGE_RISING>;
-> +
-> +        power-domains = <&camcc CAM_CC_TITAN_TOP_GDSC>;
-As we are cleaning up the PHY device nodes, we should consider fixing 
-the power domains as well. Although TOP GDSC is defined as a power 
-domain, it is not the power source for the PHY devices. Rather, it is 
-the MMCX, MXC and optionally MXA based on the architecture (Refer to 
-'Voltage rail' column for PHY clocks in IPCAT). There is no
-parent-child relationship between the TOP GDSC and these in the clock 
-driver and it was just working as the required power rails are getting 
-enabled by/for other MM devices.
-> +
-> +        vdda-0p8-supply = <&vreg_l2c_0p8>;
-> +        vdda-1p2-supply = <&vreg_l1c_1p2>;
-> +    };
-> +
-> +    csiphy_opp_table: opp-table-csiphy {
-> +        compatible = "operating-points-v2";
-> +
-> +        opp-300000000 {
-> +            opp-hz = /bits/ 64 <300000000>;
-> +            required-opps = <&rpmhpd_opp_low_svs_d1>;
-> +        };
-> +
-> +        opp-400000000 {
-> +            opp-hz = /bits/ 64 <400000000>;
-> +            required-opps = <&rpmhpd_opp_low_svs>;
-> +        };
-> +
-> +        opp-480000000 {
-> +            opp-hz = /bits/ 64 <480000000>;
-> +            required-opps = <&rpmhpd_opp_low_svs>;
-> +        };
-> +    };
-> 
-Thanks,
-Vijay.
+> > > 
+> > > Signed-off-by: Luca Leonardo Scorcia <l.scorcia@gmail.com>
+> > > ---
+> > >  drivers/gpu/drm/mediatek/mtk_dsi.c | 1 +
+> > >  1 file changed, 1 insertion(+)
+> > > 
+> > > diff --git a/drivers/gpu/drm/mediatek/mtk_dsi.c b/drivers/gpu/drm/mediatek/mtk_dsi.c
+> > > index af4871de9e4c..ad10e86b161d 100644
+> > > --- a/drivers/gpu/drm/mediatek/mtk_dsi.c
+> > > +++ b/drivers/gpu/drm/mediatek/mtk_dsi.c
+> > > @@ -1301,6 +1301,7 @@ static const struct mtk_dsi_driver_data mt8188_dsi_driver_data = {
+> > > 
+> > >  static const struct of_device_id mtk_dsi_of_match[] = {
+> > >         { .compatible = "mediatek,mt2701-dsi", .data = &mt2701_dsi_driver_data },
+> > > +       { .compatible = "mediatek,mt8167-dsi", .data = &mt2701_dsi_driver_data },
+> > >         { .compatible = "mediatek,mt8173-dsi", .data = &mt8173_dsi_driver_data },
+> > >         { .compatible = "mediatek,mt8183-dsi", .data = &mt8183_dsi_driver_data },
+> > >         { .compatible = "mediatek,mt8186-dsi", .data = &mt8186_dsi_driver_data },
+> > > --
+> > > 2.43.0
+> > > 
+> > > 
+> --
+> Luca Leonardo Scorcia
+> l.scorcia@gmail.com
 
 -- 
 linux-phy mailing list
