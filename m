@@ -4,84 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5509CE67A98
-	for <linux-phy@archiver.kernel.org>; Tue,  3 Mar 2026 08:53:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B91ADEC047F
+	for <linux-phy@archiver.kernel.org>; Tue,  3 Mar 2026 09:27:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Subject:From:To:
-	Cc:Message-Id:Date:Mime-Version:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9ljaSADdVlFZcUoFkIvHGVkklIzAtgJDMyCDy0DdXIw=; b=SC+EBdj7zfdXei
-	adptynp/W89C6wTYXhymNs9n6/ap7R54hUpsJh4PR4bjKc9nXzW37wShWey6Cku3lKWtE5luLVj75
-	oVUgujAlNlJ6+kyaS50ZQCK0S3J1A7SEnezFTjFAu0ZzhiUCFrdGvT2mKZFnpJwRv9qjM6J/Kw87y
-	CApPhDeV6B80gALLVrmX+0EoLTWkMKdk1NfgH+19emQUTHuE0o49lw5BVqmcYFrHjE1revsYy4O2u
-	VRKrzHbXdwvL7F1Z4t5oaNSk+lLlh09/bYONJbvfAssezi1wR0/38HFr9T/e6ocRIRf7iEq+kLGqE
-	lIYq/LQkWuZnsTnxdOaA==;
+	List-Owner; bh=TRPTKpDv8fb5IOpls+v2Q3kUg+RQHQ95QjpWwvgN+oo=; b=Inz6t8Y1Kavlj/
+	pzLuG6kNejsQOgl3PtkSr2F+HOZq0ZMXwVZboWYCelVI6X22QQz6mKT3EuDiytibjzUtmcdhyoWZO
+	AVejOACi6GYtbjiJd7a6I5bVU+j9OSHE+lxGA6Q9xc7ZS7ELJnGqtfZWfpHNEr0hR8YgatEo8ZkAx
+	Ft0TigLgytWSwGv0Sdfvhf7KvDCgHcMzNRhw86pfJbBUvyuOMFR9JknFm0t1xh1h34i9zzQzseTUG
+	tJf0ibJJV0mAOaagUa1aFWt8NrchaO/g9Apt7ldhL4nzlKJGNPDJUmNARDEgCBOvaG4DS+HR6e+Si
+	uZcR94Nqfypm635loLRw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vxLV5-0000000EpAT-3GSt;
-	Tue, 03 Mar 2026 08:53:07 +0000
-Received: from smtpout-03.galae.net ([185.246.85.4])
+	id 1vxM2p-0000000EsOY-1Tmn;
+	Tue, 03 Mar 2026 09:27:59 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vxLV2-0000000Ep9H-3WXv;
-	Tue, 03 Mar 2026 08:53:06 +0000
-Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-03.galae.net (Postfix) with ESMTPS id 0C6914E424F4;
-	Tue,  3 Mar 2026 08:53:02 +0000 (UTC)
-Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id CF6105FF29;
-	Tue,  3 Mar 2026 08:53:01 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id B877610368535;
-	Tue,  3 Mar 2026 09:52:49 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1772527980; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 content-transfer-encoding:in-reply-to:references;
-	bh=dHzjooMLjEqCTLZkR7Emb0dRbrH9mQHksD/dLPxL7GM=;
-	b=WRRhIhW7vgeQlUBtRYy3lSHT0g7ssIR9CeRQtfoaN7OdZZdWE5SukFGsLLbCIdZ9Rvk5P5
-	x3YGBf1y7LiWXgLFbXOctHmnCPnz6MEz3JcxtoJgT292PBQcgsZgMb67LDJ4ygTtonXGHl
-	NptOg5QWRQocFJ+rT7Ew6sQ0KYNhopPIv/Sav8VfDWGHMf3N+Fwfq3dDYHpRN0lgFNsuS4
-	Ag/RcE50VgDX70ljiGOuXWmZFxz47/OxtST229tGXoP+k/sbo+ZIeYJPL0S9DBPiU1pXDO
-	7lRXVgu2hOg0vCWsWnhBaS9gdwTuafASl358/MHiepvPTdxf4JFQsgDLCDOXbQ==
-Mime-Version: 1.0
-Date: Tue, 03 Mar 2026 09:52:49 +0100
-Message-Id: <DGT0Q3TGTG26.KD9DBZYH63DY@bootlin.com>
-Cc: "Heikki Krogerus" <heikki.krogerus@linux.intel.com>, "Greg
- Kroah-Hartman" <gregkh@linuxfoundation.org>, "Dmitry Baryshkov"
- <dmitry.baryshkov@oss.qualcomm.com>, "Peter Chen" <hzpeterchen@gmail.com>,
- "Rob Herring" <robh@kernel.org>, "Krzysztof Kozlowski"
- <krzk+dt@kernel.org>, "Conor Dooley" <conor+dt@kernel.org>, "Vinod Koul"
- <vkoul@kernel.org>, "Kishon Vijay Abraham I" <kishon@kernel.org>, "Heiko
- Stuebner" <heiko@sntech.de>, "Sandy Huang" <hjc@rock-chips.com>, "Andy Yan"
- <andy.yan@rock-chips.com>, "Yubing Zhang" <yubing.zhang@rock-chips.com>,
- "Frank Wang" <frank.wang@rock-chips.com>, "Andrzej Hajda"
- <andrzej.hajda@intel.com>, "Neil Armstrong" <neil.armstrong@linaro.org>,
- "Robert Foss" <rfoss@kernel.org>, "Laurent Pinchart"
- <Laurent.pinchart@ideasonboard.com>, "Jonas Karlman" <jonas@kwiboo.se>,
- "Jernej Skrabec" <jernej.skrabec@gmail.com>, "Maarten Lankhorst"
- <maarten.lankhorst@linux.intel.com>, "Maxime Ripard" <mripard@kernel.org>,
- "Thomas Zimmermann" <tzimmermann@suse.de>, "David Airlie"
- <airlied@gmail.com>, "Simona Vetter" <simona@ffwll.ch>, "Amit Sunil Dhamne"
- <amitsd@google.com>, "Dragan Simic" <dsimic@manjaro.org>, "Johan Jonker"
- <jbx6244@gmail.com>, "Diederik de Haas" <didi.debian@cknow.org>, "Peter
- Robinson" <pbrobinson@gmail.com>, <linux-usb@vger.kernel.org>,
- <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
- <linux-phy@lists.infradead.org>, <linux-arm-kernel@lists.infradead.org>,
- <linux-rockchip@lists.infradead.org>, <dri-devel@lists.freedesktop.org>
-To: "Chaoyi Chen" <chaoyi.chen@rock-chips.com>
-From: "Luca Ceresoli" <luca.ceresoli@bootlin.com>
-Subject: Re: [PATCH v14 7/9] drm/rockchip: cdn-dp: Add multiple bridges to
- support PHY port selection
-X-Mailer: aerc 0.20.1
-References: <20260119073100.143-1-kernel@airkyi.com>
- <20260119073100.143-8-kernel@airkyi.com>
- <DGSHIQOB2YTB.1559SD1YLGT7P@bootlin.com>
- <601a8b51-7411-429d-91a1-0633cabce9ee@rock-chips.com>
-In-Reply-To: <601a8b51-7411-429d-91a1-0633cabce9ee@rock-chips.com>
-X-Last-TLS-Session-Version: TLSv1.3
+	id 1vxM2m-0000000EsNQ-3pqu
+	for linux-phy@lists.infradead.org;
+	Tue, 03 Mar 2026 09:27:58 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 1D3DB4407B;
+	Tue,  3 Mar 2026 09:27:54 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id ED395C19425;
+	Tue,  3 Mar 2026 09:27:50 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1772530074;
+	bh=SBVQh6r2Q+TQ8oufapkjvVPEEK4nBLLPJpy29offkyU=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=HC4Py1tb6Xk6lZN3vnm53HvzK+DePoC3Loc5E59wRwVS++gJTFH6g0SB417J9Nc9s
+	 ltuigYBv+/c0w3Be3jQYjPYnpI6c11nwJFPTrSde8hB8DRm9EtNyHNWvCEOIWdjK/v
+	 Fu27uJaBWS/CCrqO+bHh/xDG6A3g+t6L+09g9A8gV70CPvDPx3NqP8K4WTJ7BHmof5
+	 cOL5EepIfxjnYFTgjMwft+VSpzL+ZF3pETqtV5Sb56RKoeC7SsQqHwGF+U7Ustftl9
+	 cG5+D5dpRRttO+whCm0JLeagFH+T26Iu1giHUnL8kwNchmRUDzOuQjZAJXxVAmMO97
+	 rHiyVnia+O48w==
+Message-ID: <03b44922-72d5-465b-96e1-97a19655e97d@kernel.org>
+Date: Tue, 3 Mar 2026 09:27:47 +0000
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 1/2] dt-bindings: phy: qcom: Add CSI2 C-PHY/DPHY schema
+To: Vijay Kumar Tumati <vijay.tumati@oss.qualcomm.com>,
+ Bryan O'Donoghue <bryan.odonoghue@linaro.org>, Vinod Koul
+ <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>
+Cc: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+References: <20260226-x1e-csi2-phy-v3-0-11e608759410@linaro.org>
+ <20260226-x1e-csi2-phy-v3-1-11e608759410@linaro.org>
+ <4pFL6wOeTKUt-Zq4YbjqJdacMgUIPSYJD-4-5DcIMEZ1sM7JsNFYcSv1bd7ZRVOklTsmkEfxM2b6tTflmiECNQ==@protonmail.internalid>
+ <c85fe457-c140-441c-93ed-342dce32e604@oss.qualcomm.com>
+From: Bryan O'Donoghue <bod@kernel.org>
+Content-Language: en-US
+In-Reply-To: <c85fe457-c140-441c-93ed-342dce32e604@oss.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260303_005305_018602_5144B9D0 
-X-CRM114-Status: GOOD (  13.27  )
+X-CRM114-CacheID: sfid-20260303_012757_010416_382B02F3 
+X-CRM114-Status: GOOD (  22.03  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,74 +78,189 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello Chaoyi,
-
-On Tue Mar 3, 2026 at 1:44 AM CET, Chaoyi Chen wrote:
->>> +static int cdn_dp_parse_next_bridge_dt(struct cdn_dp_device *dp)
->>> +{
->>> +	struct device_node *np = dp->dev->of_node;
->>> +	struct device_node *port __free(device_node) = of_graph_get_port_by_id(np, 1);
->>> +	struct drm_bridge *bridge;
->>> +	int count = 0;
->>> +	int ret = 0;
->>> +	int i;
->>> +
->>> +	/* If device use extcon, do not use hpd bridge */
->>> +	for (i = 0; i < dp->ports; i++) {
->>> +		if (dp->port[i]->extcon) {
->>> +			dp->bridge_count = 1;
->>> +			return 0;
->>> +		}
->>> +	}
->>> +
->>> +	/* One endpoint may correspond to one next bridge. */
->>> +	for_each_of_graph_port_endpoint(port, dp_ep) {
->>> +		struct device_node *next_bridge_node __free(device_node) =
->>> +			of_graph_get_remote_port_parent(dp_ep);
->>> +
->>> +		bridge = of_drm_find_bridge(next_bridge_node);
->>> +		if (!bridge) {
->>> +			ret = -EPROBE_DEFER;
->>> +			goto out;
->>> +		}
->>> +
->>> +		drm_bridge_get(bridge);
->>> +		dp->next_bridge_valid = true;
->>> +		dp->next_bridge_list[count] = bridge;
+On 03/03/2026 01:51, Vijay Kumar Tumati wrote:
+> Hi Bryan,
+> 
+> On 2/26/2026 4:34 AM, Bryan O'Donoghue wrote:
+>> Add a base schema initially compatible with x1e80100 to describe MIPI CSI2
+>> PHY devices.
 >>
->> Correct, but the drm_bridge_get() slightly far away from the assignement is
->> a bit misleading. I hadn't seen it initially so I suspected a missing get.
+>> The hardware can support both C-PHY and D-PHY modes. The CSIPHY devices
+>> have their own pinouts on the SoC as well as their own individual voltage
+>> rails.
 >>
->> I suggest to do it in a single statement, for clarity:
+>> The need to model voltage rails on a per-PHY basis leads us to define
+>> CSIPHY devices as individual nodes.
 >>
->> 		dp->next_bridge_list[count] = bridgedrm_bridge_get(bridge);
+>> Two nice outcomes in terms of schema and DT arise from this change.
 >>
->
-> I think the bridgedrm_bridge_get here seems to be a typo?
+>> 1. The ability to define on a per-PHY basis voltage rails.
+>> 2. The ability to require those voltage.
+>>
+>> We have had a complete bodge upstream for this where a single set of
+>> voltage rail for all CSIPHYs has been buried inside of CAMSS.
+>>
+>> Much like the I2C bus which is dedicated to Camera sensors - the CCI bus in
+>> CAMSS parlance, the CSIPHY devices should be individually modelled.
+>>
+>> Signed-off-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+>> ---
+>>    .../bindings/phy/qcom,x1e80100-csi2-phy.yaml       | 114 +++++++++++++++++++++
+>>    1 file changed, 114 insertions(+)
+>>
+>> diff --git a/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml
+>> new file mode 100644
+>> index 0000000000000..c937d26ccbda9
+>> --- /dev/null
+>> +++ b/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml
+>> @@ -0,0 +1,114 @@
+>> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+>> +%YAML 1.2
+>> +---
+>> +$id: http://devicetree.org/schemas/phy/qcom,x1e80100-csi2-phy.yaml#
+>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>> +
+>> +title: Qualcomm CSI2 PHY
+>> +
+>> +maintainers:
+>> +  - Bryan O'Donoghue <bod@kernel.org>
+>> +
+>> +description:
+>> +  Qualcomm MIPI CSI2 C-PHY/D-PHY combination PHY. Connects MIPI CSI2 sensors
+>> +  to Qualcomm's Camera CSI Decoder. The PHY supports both C-PHY and D-PHY
+>> +  modes.
+>> +
+>> +properties:
+>> +  compatible:
+>> +    const: qcom,x1e80100-csi2-phy
+>> +
+>> +  reg:
+>> +    maxItems: 1
+>> +
+>> +  "#phy-cells":
+>> +    const: 1
+>> +
+>> +  clocks:
+>> +    maxItems: 4
+>> +
+>> +  clock-names:
+>> +    items:
+>> +      - const: csiphy
+>> +      - const: csiphy_timer
+>> +      - const: camnoc_axi
+>> +      - const: cpas_ahb
+>> +
+>> +  interrupts:
+>> +    maxItems: 1
+>> +
+>> +  operating-points-v2:
+>> +    maxItems: 1
+>> +
+>> +  power-domains:
+>> +    maxItems: 1
+>> +
+>> +  vdda-0p8-supply:
+>> +    description: Phandle to a 0.8V regulator supply to a PHY.
+>> +
+>> +  vdda-1p2-supply:
+>> +    description: Phandle to 1.2V regulator supply to a PHY.
+>> +
+>> +required:
+>> +  - compatible
+>> +  - reg
+>> +  - "#phy-cells"
+>> +  - clocks
+>> +  - clock-names
+>> +  - interrupts
+>> +  - operating-points-v2
+>> +  - power-domains
+>> +  - vdda-0p8-supply
+>> +  - vdda-1p2-supply
+>> +
+>> +additionalProperties: false
+>> +
+>> +examples:
+>> +  - |
+>> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+>> +    #include <dt-bindings/clock/qcom,x1e80100-camcc.h>
+>> +    #include <dt-bindings/clock/qcom,x1e80100-gcc.h>
+>> +    #include <dt-bindings/phy/phy.h>
+>> +
+>> +    csiphy@ace4000 {
+>> +        compatible = "qcom,x1e80100-csi2-phy";
+>> +        reg = <0x0ace4000 0x2000>;
+>> +        #phy-cells = <1>;
+>> +
+>> +        clocks = <&camcc CAM_CC_CSIPHY0_CLK>,
+>> +                 <&camcc CAM_CC_CSI0PHYTIMER_CLK>,
+>> +                 <&camcc CAM_CC_CAMNOC_AXI_RT_CLK>,
+>> +                 <&camcc CAM_CC_CPAS_AHB_CLK>;
+>> +        clock-names = "csiphy",
+>> +                      "csiphy_timer",
+>> +                      "camnoc_axi",
+>> +                      "cpas_ahb";
+>> +
+>> +        operating-points-v2 = <&csiphy_opp_table>;
+>> +
+>> +        interrupts = <GIC_SPI 477 IRQ_TYPE_EDGE_RISING>;
+>> +
+>> +        power-domains = <&camcc CAM_CC_TITAN_TOP_GDSC>;
+> As we are cleaning up the PHY device nodes, we should consider fixing
+> the power domains as well. Although TOP GDSC is defined as a power
+> domain, it is not the power source for the PHY devices. Rather, it is
+> the MMCX, MXC and optionally MXA based on the architecture (Refer to
+> 'Voltage rail' column for PHY clocks in IPCAT). 
 
-Oops, of course! :)
+Feel free to send me a qcom laptop and I will :)
 
-As you probably guessed, I was meaning:
+ From memory though I _thought_ only the TOP was required for the PHY. 
+I'd be grateful if you could confirm yourself in ipcat.
 
-		dp->next_bridge_list[count] = drm_bridge_get(bridge);
+- TITAN_TOP_GDSC
+- MXC
+- MMCX
+- MXA - first time I've heard of this rail, from memory I don't remember
+         having seen this in ipcat when I could do so.
 
+There is no
+> parent-child relationship between the TOP GDSC and these in the clock
+> driver and it was just working as the required power rails are getting
+> enabled by/for other MM devices.
 
-> Anyway, thank you very much for your efforts on the bridge lifetime.
-> I will fix this in the next version :)
+Well only the GDSC is supplied by the clock controller.
 
-Thanks!
+>> +
+>> +        vdda-0p8-supply = <&vreg_l2c_0p8>;
+>> +        vdda-1p2-supply = <&vreg_l1c_1p2>;
+>> +    };
+>> +
+>> +    csiphy_opp_table: opp-table-csiphy {
+>> +        compatible = "operating-points-v2";
+>> +
+>> +        opp-300000000 {
+>> +            opp-hz = /bits/ 64 <300000000>;
+>> +            required-opps = <&rpmhpd_opp_low_svs_d1>;
+>> +        };
+>> +
+>> +        opp-400000000 {
+>> +            opp-hz = /bits/ 64 <400000000>;
+>> +            required-opps = <&rpmhpd_opp_low_svs>;
+>> +        };
+>> +
+>> +        opp-480000000 {
+>> +            opp-hz = /bits/ 64 <480000000>;
+>> +            required-opps = <&rpmhpd_opp_low_svs>;
+>> +        };
+>> +    };
+>>
+> Thanks,
+> Vijay.
 
-Luca
-
---
-Luca Ceresoli, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
 
 -- 
 linux-phy mailing list
