@@ -4,155 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9F030EFCE39
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Mar 2026 18:01:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DA6EEEFCE3B
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Mar 2026 18:58:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yKMKUZK30AShjndT01BVVGY0S/k74gu/dAav1EXvE8c=; b=0BjYEzSC6jawJF
-	4SBwa0VyUGyuI1F7W3E41wFLhbMKl1YUeJ8E24yvNBzLHLDe/Na/cMVo85MhXYQY0978nkgtAaNMr
-	GY2J3gUYLlaFyJjp+KKGWrX6mnhW43spSxuSjZnPvllbDUpRBbKFPbopwKFMs1wkHjvSx/YcNMhGR
-	5xL0HEeNt9Lp6gPXMyawwvDVfCuo8GwQ38Cn5zwW29YvhZol+qsXVPfDmCkuMb9hyqxQr5bdWGlNy
-	pBwF/DsYpcs/9pyxauT/BKZIx58UtDczaP+Mf8Rg8gglCtdrRBok77051vZCM46Y+v4pIeS6jfASp
-	mfgfdus5DpDCaTRZhbkw==;
+	List-Owner; bh=8gpm31smHyb1BRvBBbnyVe96JH823bwj1/MJEXEs5w4=; b=buhUUX2vIWBUZM
+	qJ1kIfa7fHCxauIe6j/njfegL75YX4oI5D7E/aFnT5RmgHuUghLcEAV/wUlxNgPwVsE9HDxXT5toD
+	XpV4c7PTuL+jWMs9mZK7xnpIlFPYukttYpu+65cRiF2CXgEW2EJdeifrdLqpsbd/EJtXnpXI4J5q1
+	WTaeoSPM87AjkQnA0dAi2IM8LttlKeD/SaxLr4Sc99zbC66bp3u1ti0mUM1PYYXEpIAK9UFi92uwc
+	gzzXeMkrv5hZqX6VzYYSXT4oLbWkw9kNI5+I25GsB/h8QDk/zOGnqgdFd3rozamJcG7567J0yzScK
+	J7nIt/qRoVZVBBV7bs9g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vxqXk-00000000GQh-2cEz;
-	Wed, 04 Mar 2026 18:01:56 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1vxrQJ-00000000MzQ-2Qtl;
+	Wed, 04 Mar 2026 18:58:19 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vxqWq-00000000F2U-1KMI;
-	Wed, 04 Mar 2026 18:01:00 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=MIME-Version:Content-Type:
-	Content-Transfer-Encoding:References:In-Reply-To:Message-ID:Date:Subject:Cc:
-	To:From:Sender:Reply-To:Content-ID:Content-Description;
-	bh=TufLQkkJicSIiMXLOmdkprNfKKLjXmStM1jfSJ1WAM0=; b=Cc9b5WijK3T5r2v6Ct488OQmhs
-	1nyZaNPkO1AYmfE6dSKMX2D9a/QqHsZJySxZ9cS/vWS1K8kJuTDD8PVLPrVu4C7QlydZmPlHDuAWU
-	lYAYnukIXrySWW3WYm9b9qg3UM8ASutlNx2Hr2nP2Uk3Eh/YaQroVbfw03zkeqwxBAQ7FU11tF7WJ
-	fbLoC4RJV3x2T4dVQjg1hpjYhGAQz+2JY0B0B8mpyfAOuXO2MFJG/G7tY+oq6Qu6fyzg9U4quCnyN
-	iin5ATsWT9z/TMRSS0IttMNtRUsklojsDpQW7MFdyNwWKIzUakshFxuy89sPZm+ql+Mx5KJeEjZzu
-	0TDzZ4Dw==;
-Received: from mail-northeuropeazon11011005.outbound.protection.outlook.com ([52.101.65.5] helo=DU2PR03CU002.outbound.protection.outlook.com)
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vxqWm-00000005H8M-1PFY;
-	Wed, 04 Mar 2026 18:00:58 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=s5/dhSvknCenkz90bG0cOm+9smJ1VDY2fFWJG7Bn5KVaF7qsBkgU8tI2q1bZVis6YY1CqJqauek8Jxz2O7RuEEo6yBpR4s/ewfqJ4urFsNVyxLWeId/LYNYrQv0TyTwqVbup8qIkG+kJq+HZS2gaUYbvcTDl4BLEUQpaH4VO5FZka+SI+TbmS8KBemwgvbwcXyjFKgx0gRiu1eeBPzbmowU//9KdRXCA/sEslaou2bwaN+UzGujdadOEUbEUexx/gF0gAeVD/OLzJ7R6JU2DPXmPL6rpMQObmm/2kHyxGMbK3l2sX6i9ZMXcUBDQY0PSPJzaELZlKkiIC57FNpoteA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=TufLQkkJicSIiMXLOmdkprNfKKLjXmStM1jfSJ1WAM0=;
- b=yu6jblo7mFHqkWZxInMxT7+ajMp5zENa3HE/GYTR8q5JH8OWpbyj5bZfybmXOj7w1pirHu1laP0TefCWuFMRxXpo1FACMY06JVLlRYDoVj3FFMhIoCv/Fu8l9lA6COeDW7geXMwAIHx9ybNwjanPKhoJBQjiwHDVKNFnX4VjGGsWtVKCSKsQFE/HB86xmr6ImRmRls4ko1tiecdyH8ZhTmcc6DVytg3TA84U432SSqTjmatYrzU+AfZtSzkA7meYjwPgtXM8B/1j6WBqORAoOrskIkOLQhwRHcpiMeS1EcyuAQp+oLiUC8p+TuvvDbcPkpz077vh/zzYmXdaF0rI9A==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=TufLQkkJicSIiMXLOmdkprNfKKLjXmStM1jfSJ1WAM0=;
- b=NdYtsoKFgnqXldFvG5DuuY6rDsC5DgjnJlvokwFUqsHgpbOut+rMhmH18VMo6uII/R5n1p+CztkIKxgZTVJ/xluDw7xcMM7Oh6QbW0uFYUWNLC5nq8O7LgZGLn2cZd9WXPkAk05G5XMt8QjdJ1PKj14EG7bR2QswIHjRaFbVUZJSZ1IRoP2ssw7kyISW9+7BpMMlPuXNVXRhcDXkP7izDGOJfDEDYS2/iMTr+HQZhDWs0VjZZRsZ6TzQalMfdgOP4ecNIk7UgBdHg5H1MIuPTll2sPi+Dnyaoy3tKeKOaQMUt9Aw/eQRsKmOtFs6kY6AjL/6vILuaKBlv3VXIi5dgA==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from AM9PR04MB8585.eurprd04.prod.outlook.com (2603:10a6:20b:438::13)
- by GV1PR04MB10275.eurprd04.prod.outlook.com (2603:10a6:150:1ad::15) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9678.18; Wed, 4 Mar
- 2026 18:00:41 +0000
-Received: from AM9PR04MB8585.eurprd04.prod.outlook.com
- ([fe80::f010:fca8:7ef:62f4]) by AM9PR04MB8585.eurprd04.prod.outlook.com
- ([fe80::f010:fca8:7ef:62f4%4]) with mapi id 15.20.9678.016; Wed, 4 Mar 2026
- 18:00:41 +0000
-From: Vladimir Oltean <vladimir.oltean@nxp.com>
-To: linux-phy@lists.infradead.org
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	dri-devel@lists.freedesktop.org,
-	freedreno@lists.freedesktop.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-arm-msm@vger.kernel.org,
-	linux-can@vger.kernel.org,
-	linux-gpio@vger.kernel.org,
-	linux-ide@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-media@vger.kernel.org,
-	linux-pci@vger.kernel.org,
-	linux-renesas-soc@vger.kernel.org,
-	linux-riscv@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	linux-samsung-soc@vger.kernel.org,
-	linux-sunxi@lists.linux.dev,
-	linux-tegra@vger.kernel.org,
-	linux-usb@vger.kernel.org,
-	netdev@vger.kernel.org,
-	spacemit@lists.linux.dev,
-	UNGLinuxDriver@microchip.com
-Subject: [PATCH phy-next 22/22] MAINTAINERS: add regex for linux-phy
-Date: Wed,  4 Mar 2026 19:57:35 +0200
-Message-ID: <20260304175735.2660419-23-vladimir.oltean@nxp.com>
-X-Mailer: git-send-email 2.43.0
-In-Reply-To: <20260304175735.2660419-1-vladimir.oltean@nxp.com>
-References: <20260304175735.2660419-1-vladimir.oltean@nxp.com>
-X-ClientProxiedBy: VI1P195CA0030.EURP195.PROD.OUTLOOK.COM
- (2603:10a6:802:5a::19) To AM9PR04MB8585.eurprd04.prod.outlook.com
- (2603:10a6:20b:438::13)
+	id 1vxrQH-00000000Mz1-1oW1
+	for linux-phy@lists.infradead.org;
+	Wed, 04 Mar 2026 18:58:18 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 53E0644387;
+	Wed,  4 Mar 2026 18:58:14 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8D7E9C4CEF7;
+	Wed,  4 Mar 2026 18:57:49 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1772650694;
+	bh=pu3OJFJuXTN1mbkxo4zJRrJEcUuyxNxIUZrmOglqj/c=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=AwB8CcU3+sXaDNelrTNcdKED5BuooBcptyjoz9pyiIDJlix/dUrVlBRAtY2KBDSD7
+	 h6KrDy4b73ZJdvM4hktgVTAjTX6zRTc+gvSTQ/5RottG6nhL+D3O/QjhQk8OWJVt2/
+	 MvKM3oW0h8rAaH+Xy1nyrLgibke4pf8Ytw146llNQq7shcJlSKiDHrM6C9X7NfmYak
+	 j4f0yovpFJlvkk+d+Ppu2se2Y2B54cqTv7SCSCMtvTuyxvwIBBCn9Oi3G8xndWyLtN
+	 BQYRKVOwWfHkMT/8IdaQvAWQhI9w2L1pW92h2u/lnv7UgDWNOHQ2tQ439iGinuyOqk
+	 Kz5iPPq8G9rwQ==
+Date: Wed, 4 Mar 2026 12:57:43 -0600
+From: Bjorn Andersson <andersson@kernel.org>
+To: Ritesh Kumar <quic_riteshk@quicinc.com>
+Cc: robin.clark@oss.qualcomm.com, lumag@kernel.org, 
+	abhinav.kumar@linux.dev, sean@poorly.run, marijn.suijten@somainline.org, 
+	maarten.lankhorst@linux.intel.com, mripard@kernel.org, tzimmermann@suse.de, airlied@gmail.com, 
+	simona@ffwll.ch, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, 
+	quic_mahap@quicinc.com, konradybcio@kernel.org, mani@kernel.org, 
+	James.Bottomley@hansenpartnership.com, martin.petersen@oracle.com, vkoul@kernel.org, kishon@kernel.org, 
+	cros-qcom-dts-watchers@chromium.org, linux-phy@lists.infradead.org, linux-arm-msm@vger.kernel.org, 
+	dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-scsi@vger.kernel.org, quic_vproddut@quicinc.com
+Subject: Re: [PATCH v4 1/2] dt-bindings: phy: qcom-edp: Add reference clock
+ for sa8775p eDP PHY
+Message-ID: <gurq34svc5p52bqx5qwkgjmschzcbklmssjzmu2tg5wzgppkft@c6nrw2ageyp2>
+References: <20260128114853.2543416-1-quic_riteshk@quicinc.com>
+ <20260128114853.2543416-2-quic_riteshk@quicinc.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AM9PR04MB8585:EE_|GV1PR04MB10275:EE_
-X-MS-Office365-Filtering-Correlation-Id: ec05bbf8-40d3-489b-029b-08de7a17f30b
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|52116014|7416014|376014|10070799003|19092799006|1800799024|366016;
-X-Microsoft-Antispam-Message-Info: +SBK3VHa1vZFfOpMFSaJye05PDV6Gz1zMpqvynvth4ses8x/WIzrCmh4zxPy5wxjNoZXoBpyHm2rceZR/q4aI99iJdE/M1dwD2yY3AnPjalydxlT/EuT7JSS/p9NxuwNMxZv9mFi59EuROhJW4dx/LFoZEocxkNLVN2OgfMcHNZ0a9E3cTP/fN9H7vese7UB2Qjb/NSxFXGisNjlzhFpFXd6+mUfXrO7MaI/g/+mhFXbjGv8QKHbIMKN020ho8NlRMMPpoUwC1Pqm9k83FzW4f4BH+h6U4G/oaiVKesY3bWxVO+VGYDzne6vYKl3WSZM7sfFGk/FK587q3o78VOZvOV43pEah5zITbjXXQ7AkUdiya2Pttt53Njhtc6YQvoipSpddUmblmiYlNXSFU4+lizLX06P28StyC2C4wN9t9hoQp4zQE6NxNcDxPbUV4gzbzXRVLyTPMDc3A55pi9/vNdmKBsHBAAtoygwfZrDHzwE+PJ9dyTG44YgsrXkjg7TSdEB8J60hrZ/r5QPFO4c+SvCTK+GHv1A1UbwpIrzYo9THe6t/zAbYx2L2T8H+u1g0AfeZ3Vileez7U1CI72fJyOpslUZpMVXPkSbK2aUsYqOI92YSjGR8G8GFHrWiKP17lbjtVCPnKgAjlgEG+Iwex/U/eluXPNUxdobjgwJ/MpkSBgU3Gib7bfV3HMs6m1k9ILf9GF/BtRiNqnWaMk51J0aJZ+o54/AyvHM4onjsfM=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM9PR04MB8585.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(52116014)(7416014)(376014)(10070799003)(19092799006)(1800799024)(366016);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 2
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?mKopRMUnQUHc8NUFY7AZAI3xNfDDSroafoZQmWRdbb8wYktTtr7hgApmWe22?=
- =?us-ascii?Q?Ad3x27ywMBCkjQartSDWvCtsBQ3VAWJmWR1y+ABAYoZMlF6nvffRhnZl2ZlR?=
- =?us-ascii?Q?Q8Gf80Ok+6geFdl6Dk6yj0KOzefJJ/nqxfVJZIU6QbdS/d7QdysnqNjNhh1Y?=
- =?us-ascii?Q?tFtCzvLcfidLSIUtNqmB0JpPIZCyQtQ2fhBBQt9DRTRa4sOwGx9s47uYC0Cx?=
- =?us-ascii?Q?+8YIupQohvjKyaQTxzEGr7wkM2WJDa1ZzXNxzpgmEbn/ZNYqTfGxzB64+FMV?=
- =?us-ascii?Q?Nk8O4ayLngu+8aDBHbGdvBgbGq7FKRRMwwuxbw/k/4OL9Q0zDovT6YcZhvvX?=
- =?us-ascii?Q?oGMZG+7opNfxETuRKogyZJPy0KNnlykHDK9L1WRzKXGX6hkUG1a2bdoPLyr2?=
- =?us-ascii?Q?p7D6VvCxaVp+yitAa1179m1+j9UYFM7yutkDS219v+mHm98+vu7D21uus9/j?=
- =?us-ascii?Q?pD+RhHdK9EU34SozEV8E4W7xpzaihCDsnWByq1G/CzjCp+VnWfNj55gNFGQw?=
- =?us-ascii?Q?yzOfqsyFPGKJkxxfmJobSLAFQrosDW/q0zSSKAyc94HmXzJh+9RA8KSduwRv?=
- =?us-ascii?Q?QUbUO4PzVLmzxl1TBpCBvOUx2/b73hup5kJTlBq59iVP5JHhIYLL4FKx0jpM?=
- =?us-ascii?Q?ad1tL95Oapy7KdWmJFp9QsBEznLfGBTaKYY+AB0xM4VUNDFrxNA9HjuJJ8za?=
- =?us-ascii?Q?TxxH+tGgwu0BXiPC++o6/ZQuY065pk1wD4BS9XKTRIjb2u5pnuzWKVdCqGBe?=
- =?us-ascii?Q?peHJFxd10yAkGJP/JO9bEi/nOeqlGVt6Ni1cVCc2JXKPxh2kARi5jS2eLrau?=
- =?us-ascii?Q?mznkwKXbUHorUTVT6/iUG2TZAN3dWeW9zjKxqaBJUqNMXXnQJ0Jy42OfmHXz?=
- =?us-ascii?Q?MjdPi/MsRx5RYKWWiJ2f4XgApnLfcBQoHsMsQP9JCbTCNNPS4ATuqKgNnZRy?=
- =?us-ascii?Q?jUfoY6BicjMHo/7NosFdCwybSqeE/efPR7hGool8olNkC3chSYOAqn7q7/L9?=
- =?us-ascii?Q?ntxiYsMtPbwceZ9kDaNFurHvzs7MT8sZyWDmkTLwfb0Ak+51sRnM15UuAEcY?=
- =?us-ascii?Q?mKamWPzvdahQGGnz4itl+NE4ei4Jr9LVwv9iVuMvGyMfGiHG0w4zuQCgaFtc?=
- =?us-ascii?Q?Vb1MTyW9NiTqDmWULK2eXY2zVcnWgzJMMXBXrAwbV8MMj9xri/X/o6JFtjzr?=
- =?us-ascii?Q?sXr2lR3XBPp8nhte0F9w4Q360pCfwpNMrECMesgpQj/AekSTZAXo4JcHQbW5?=
- =?us-ascii?Q?dGrzs/elcGX3lY6yNzQlH79z0Kj37unESNZmU9RUlkOZfhlAY5wwMLnqtUSk?=
- =?us-ascii?Q?9Ammz77cUiJ5PbyIVDApwMwAr0uS0iOGwpC9O4ZYFVjLXSrdybPAuBy8/dYw?=
- =?us-ascii?Q?AcZk24sCznKc9kuHUg4xpg8OdVwhR6fmV+ct4YheQIeIjWxn+kdcnmx8x511?=
- =?us-ascii?Q?+rN1paEGBiKoYDbFbynzyA8TjhkSUpb6szUwZr7yrYmeyLjKla6N/1XzydtW?=
- =?us-ascii?Q?19jH46UblRopzT4VJ7dAg/7N++EfpApIm7OxQrS+2ubI4ll4+Y71lBbCETlM?=
- =?us-ascii?Q?UnMb91oHWoE67W4ihxSitNORSCZHXK4MGfRsE90NgPBT6O+3hcFVnh7reCgi?=
- =?us-ascii?Q?KxQay0bmnoVdA9tzJi/ivmXqrIY6NsR9w8tV3ytE2XEUM1oolrt9lH+a3I4V?=
- =?us-ascii?Q?ElvvFa7SmI1EV3805tvCSwfvy3vB+FcI+Ne7noSPRAVjU2qcKyc9CCur6tI6?=
- =?us-ascii?Q?iudTL11fQyiVwswGQYuN0UI0CGjhLxGYtPrZapwzO6YPnkRUUVGbwesv25Cz?=
-X-MS-Exchange-AntiSpam-MessageData-1: a/e0Snxr9Mr7YKO8XJVVsH1AY+hWKDiZvIQ=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ec05bbf8-40d3-489b-029b-08de7a17f30b
-X-MS-Exchange-CrossTenant-AuthSource: AM9PR04MB8585.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Mar 2026 18:00:41.6640
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: Hav+faJSFtcsdnxGhRK0OVzAN+CtIQjA+X/PCA/OoH6DY10G0RTe43uOcrp+Fhq8+OIOU4cF439iPwzJYUWruA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV1PR04MB10275
+Content-Disposition: inline
+In-Reply-To: <20260128114853.2543416-2-quic_riteshk@quicinc.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260304_180056_441444_329B6C43 
-X-CRM114-Status: GOOD (  11.41  )
+X-CRM114-CacheID: sfid-20260304_105817_552524_A411C69B 
+X-CRM114-Status: GOOD (  18.20  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -169,42 +81,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Some pragmatic shortcuts are being taken by PHY consumer driver authors,
-which put a burden on the framework. A lot of these can be caught during
-review.
+On Wed, Jan 28, 2026 at 05:18:49PM +0530, Ritesh Kumar wrote:
+> The initial sa8775p eDP PHY binding contribution missed adding support for
+> voting on the eDP reference clock. This went unnoticed because the UFS PHY
+> driver happened to enable the same clock.
+> 
+> After commit 77d2fa54a945 ("scsi: ufs: qcom : Refactor phy_power_on/off
+> calls"), the eDP reference clock is no longer kept enabled, which results
+> in the following PHY power-on failure:
+> 
+> phy phy-aec2a00.phy.10: phy poweron failed --> -110
+> 
+> To fix this, explicit voting for the eDP reference clock is required.
+> This patch adds the eDP reference clock for sa8775p eDP PHY and updates
+> the corresponding example node.
+> 
+> Signed-off-by: Ritesh Kumar <quic_riteshk@quicinc.com>
 
-Make sure the linux-phy list is copied on as many keywords that a regex
-can reasonably catch.
+Is there any reason why you didn't follow up on this patch Ritesh?
+Looks like it's ready to be merged.
 
-For simplicity sake this is not perfect (devm_ and of_ are not valid
-prefixes for all function names), but I tried to pay attention on
-avoiding false matches on things like:
-- drivers/net/vendor/device/phy.h
-- include/linux/phy.h - network PHY, not generic PHY
+Reviewed-by: Bjorn Andersson <andersson@kernel.org>
 
-So I used \b to try to match on actual word boundaries and be explicit
-about what is matched on.
+Regards,
+Bjorn
 
-Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
----
- MAINTAINERS | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 55af015174a5..bdfa47d9c774 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -10713,6 +10713,7 @@ F:	Documentation/devicetree/bindings/phy/
- F:	drivers/phy/
- F:	include/dt-bindings/phy/
- F:	include/linux/phy/
-+K:	\b(devm_)?(of_)?phy_(create|destroy|init|exit|reset|power_(on|off)|configure|validate|calibrate|(get|set)_(mode|media|speed|bus_width|drvdata)|get_max_link_rate|pm_runtime_(get|put)|notify_(connect|disconnect|state)|get|put|optional_get|provider_(un)?register|simple_xlate|(create|remove)_lookup)\b|(struct\s+)?phy(_ops|_attrs|_lookup|_provider)?\b|linux/phy/phy\.h|phy-props\.h|phy-provider\.h
- 
- GENERIC PINCTRL I2C DEMULTIPLEXER DRIVER
- M:	Wolfram Sang <wsa+renesas@sang-engineering.com>
--- 
-2.43.0
-
+> ---
+>  .../devicetree/bindings/display/msm/qcom,sa8775p-mdss.yaml  | 6 ++++--
+>  Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml     | 1 +
+>  2 files changed, 5 insertions(+), 2 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/display/msm/qcom,sa8775p-mdss.yaml b/Documentation/devicetree/bindings/display/msm/qcom,sa8775p-mdss.yaml
+> index e2730a2f25cf..6c827cf9692b 100644
+> --- a/Documentation/devicetree/bindings/display/msm/qcom,sa8775p-mdss.yaml
+> +++ b/Documentation/devicetree/bindings/display/msm/qcom,sa8775p-mdss.yaml
+> @@ -200,9 +200,11 @@ examples:
+>                    <0x0aec2000 0x1c8>;
+>  
+>              clocks = <&dispcc0 MDSS_DISP_CC_MDSS_DPTX0_AUX_CLK>,
+> -                     <&dispcc0 MDSS_DISP_CC_MDSS_AHB_CLK>;
+> +                     <&dispcc0 MDSS_DISP_CC_MDSS_AHB_CLK>,
+> +                     <&gcc GCC_EDP_REF_CLKREF_EN>;
+>              clock-names = "aux",
+> -                          "cfg_ahb";
+> +                          "cfg_ahb",
+> +                          "ref";
+>  
+>              #clock-cells = <1>;
+>              #phy-cells = <0>;
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
+> index 4a1daae3d8d4..0bf8bf4f66ac 100644
+> --- a/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
+> @@ -74,6 +74,7 @@ allOf:
+>          compatible:
+>            enum:
+>              - qcom,glymur-dp-phy
+> +            - qcom,sa8775p-edp-phy
+>              - qcom,x1e80100-dp-phy
+>      then:
+>        properties:
+> -- 
+> 2.34.1
+> 
 
 -- 
 linux-phy mailing list
