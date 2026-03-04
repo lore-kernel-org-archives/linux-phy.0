@@ -4,146 +4,136 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7B97DEB7EBC
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Mar 2026 10:32:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CBE0DEB7ECF
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Mar 2026 12:19:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=R7Kdl8Cyztn2eiaE2NFmeKUUdnWqp3NeAymn2FeQd60=; b=FNf9PhS2Gxs81w
-	WSrG+3yxa9v34pCfyAfAZjcdY5tICBk2nfVTp7+tJcTG614iSsO17hLEkk+PB0iOD2khzfFoJj5ly
-	lkKkLTkySu20nQ/Az2+IZUs3S78qFlgND6fGljWq/aUtKNOwbiB7gtu6ODO7ULABhcaZx1JCluEAx
-	JpBhMOZZXg4oreB40482Syu3Jz9XIM2DWclAXmUAC0tbDDOiPVzNq++qK9FVpWcs9jwvZBXOif77A
-	Ba6pSl+pyJSnJzV5iLA0MKHsttniRKDiQKO/znq/XZT9GGRF0QkrtD1y52UWUDNA1ESxqcy6PQF71
-	9+VV6I90nIueGF2k3aJQ==;
+	List-Owner; bh=0vNgWs3frICc09rFFesjjewCy3e/cL0jxpz7wwsvWnE=; b=2tmTKodmhi9Dtc
+	uZBq7jEKoaiFaSwqU5C/oim/FfDZVlWKUWzeGGDH/Cpk1csx/hppQX8CgVqktd3GyjySqMAuW+Qci
+	IEG2iUpVgrYbHyKkaO2sxW0c3zSeCI+c0pIFzi+Mhqy7c60cU/orR47XoJKQ4eHQSVcwC/gzqgQhW
+	f3PXxJhG7bSk6CrbrOC9w724IXgikama6vSWvhUoUyJ/JqYyLFe0r8G6gOpJaYZpEsxuQpvE9ecQn
+	LVT1RvFk3b4Ia51pa34MyFQnQqw4MmfLMtP+JNtPlI9bVr6KK7laBFyCuArNU3O2NXGZqhloSQ28G
+	wpFigzItksbM28uqRKhA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vxjWy-0000000GzqO-0GYB;
-	Wed, 04 Mar 2026 10:32:40 +0000
+	id 1vxlC4-0000000HAi4-0cAm;
+	Wed, 04 Mar 2026 12:19:12 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vxjWv-0000000Gzq3-1rSZ
+	id 1vxlC1-0000000HAhN-38Vj
 	for linux-phy@lists.infradead.org;
-	Wed, 04 Mar 2026 10:32:38 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6245SWQM152585
-	for <linux-phy@lists.infradead.org>; Wed, 4 Mar 2026 10:32:36 GMT
+	Wed, 04 Mar 2026 12:19:11 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 624C6KdW2306399
+	for <linux-phy@lists.infradead.org>; Wed, 4 Mar 2026 12:19:09 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	kD/fzWEvkZUb0Aeqg8CKGCrD5Hp3noy4/2L2GfbrChM=; b=MWP4kULZIakaZCeO
-	zhzxs6HaMnpq6PTEhvzCmOWcBPwLWJDftweYgysUed37fsAXuwVfCd2oBjoLFi1B
-	T6XXLOdfbetJbHBfoVgiKhY21BGQQ2ED0UL02T6p41/FjXU8y/cUQvh8K/rc55YZ
-	TMiFTvFp1XjDViTIM6PZrwuuzYM0ksMjSE9N1NdMmDftTJIepgfkkLvoAN/9zJHE
-	Myh+Sj9qaM1jKGtoNULr/NnOH+OqDSlduGB3RBhH+vwFA3LcE/6R/OJ2r7ah6MKN
-	SJ2/13hV4mrq+XaaVMg9l32dYsukJenGzA32E2uJPZ6BljQZrqQbO8iKVlFsVccs
-	PGSNNg==
-Received: from mail-qk1-f199.google.com (mail-qk1-f199.google.com [209.85.222.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4cp3tvk9c7-1
+	uxsB5NCYJ9Wco9EkS82OhpVjd4FUOfck6CfUcK9bWk8=; b=FNipxwmRoZDqij/1
+	gNq+1TLME3dHhg342F64Rh+fXPYNGsS8N3uzJM8pGNiMOs2XETbyEqOOEyDT4GlG
+	KIGY0PRuHdQW9dLfUaxGmYy3T0g0eh3Rt6vnFRU4zdMH5yBpjyOxoxC0fsVJGq/u
+	X4Osm1dqzhGIY/J0DX1DHiX6nXroA6lHvo54T19UDXdbDxaDtLJJDBYtySroiLh4
+	7WLj1ZqV8lsCOkmLV1YV3vTwQpDG4SRjcIS29tc9cxZ4qAFeX2kVH+OwAkGLaiki
+	xdLc89Hd4jhSLzzahmXKOihPwGCDCk2OJla4boH+JBIHVlkFwJ7aUlF4Y7ovDvcy
+	YsCjYA==
+Received: from mail-qv1-f72.google.com (mail-qv1-f72.google.com [209.85.219.72])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4cpau8t2xn-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Wed, 04 Mar 2026 10:32:36 +0000 (GMT)
-Received: by mail-qk1-f199.google.com with SMTP id af79cd13be357-8cb50dfd542so523062485a.0
-        for <linux-phy@lists.infradead.org>; Wed, 04 Mar 2026 02:32:36 -0800 (PST)
+	for <linux-phy@lists.infradead.org>; Wed, 04 Mar 2026 12:19:08 +0000 (GMT)
+Received: by mail-qv1-f72.google.com with SMTP id 6a1803df08f44-89a04e9d4faso12582636d6.1
+        for <linux-phy@lists.infradead.org>; Wed, 04 Mar 2026 04:19:08 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1772620355; x=1773225155; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1772626748; x=1773231548; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:from:content-language
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=kD/fzWEvkZUb0Aeqg8CKGCrD5Hp3noy4/2L2GfbrChM=;
-        b=Ash1LbaR7T7FrPt8viqTBGuoPVrRvJ2ke9Yi0HrCyxbE54DgejMymi9hqFKffD31X/
-         Gi+75BiuMRn8cHUweYC/cp9Eqdw/GtF1YL4B5nlIHED5nyk+9w8smQIGZ6Rn3YD4fDEq
-         cAYfwAS61qXKBWdf0OwCQyMXK99uuKbS07bspZh4OiAQmU+wMqEkDMuEepDUYlPe2f5Y
-         5X5svT9EySwDe4ypqYwdAPWDwG0B466wkks1JUPbp+3BLpGuY8kwl3VHmbe0TUHASZDa
-         4lds8A8qc7gH4+HzqwHo5KK8nNPnnxxgeJcg6qHs+IneH0eTrGD+TMrBvfrcS6Z6cddc
-         jfxg==
+        bh=uxsB5NCYJ9Wco9EkS82OhpVjd4FUOfck6CfUcK9bWk8=;
+        b=Yn3QyRyjg/dcNAQvUml5mkxNQ4dYL2AZsAXrm2dr7dDz7obk6oyLRHDY6BKOnHgA08
+         ZI/iSFT2xX7MghatMfEupwu5yTyi7v1aI8NpOpFkrgIt4cHpXR2AC2ciQpkKJG5xWixH
+         vjzCUSG1px/mQo8sOHwI0xJZegfcP/IFMZAjeiGPNVX8zw88A/IqPF6J0RmoWH6as87r
+         DWQskofK0krXE7HYEDz0BWvEOh8uQuOcFBSzcGEMeMU53fpe6OywalEePaGKvp5X0XXM
+         9l3qcaCjInLWCLF7KuBj08Bk61ViBwa5qDLJbj8Kdc+NziXt220pa5Zdbcs+GqQTvTJJ
+         D36w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1772620355; x=1773225155;
+        d=1e100.net; s=20230601; t=1772626748; x=1773231548;
         h=content-transfer-encoding:in-reply-to:from:content-language
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=kD/fzWEvkZUb0Aeqg8CKGCrD5Hp3noy4/2L2GfbrChM=;
-        b=YdR6LQCUnHWxT9Dv2n7oQiBw6oykK5vVVuzErSnNg6KwVk+uoxAnb769CptWytBe/B
-         rbWtLbJGFMQ+CuT104PDcVbnJwuiZVaspfJkhdm68i1GEQ6aVa4JUT+nSkh/H/EGUFgd
-         6QgiHi4VB6ihJzfygsB1q1wxcy/Am26cJON3SYhKtWyncHry2CJL9RWAwcujZ4OgzGbC
-         9I4cAz382Tuc5siiCJUboLYYbEzFiQA+cQU8UBQaLF7uTUspgAl6HqydvTZ2/4DFan6T
-         rQo+1BYGNua/ODlnyQRUzkdpMUMIEA7KOSaUh3f86Jk1Hv7lFz1KkjCZhG6gGpsElp/6
-         xecA==
-X-Forwarded-Encrypted: i=1; AJvYcCWu75hSzfFJnTZ2HIF1h4d2Z64mxiQd/HhyEggsA629/2BmyhiAaMtc8dxTQQfU0KcAcbpPqBqETkA=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx/nSoS5NinpjzUqVI9YpnQi2NVGj7ZoZZB7WRcxOF48DcGsFjt
-	1wjqHxBn6ymtseSvuQ5V2MpzUBbNuT12zXSfEu9tEXfqZLxkMNZw3yjtZ8WmUTP1HzVs3WvLMk5
-	8uPT05viCVOLyRYz8ld/Fag/g+2PxpxXHvXhfP6JGK6ImUhB+8kGXBOLveEFOUMOcfFOx
-X-Gm-Gg: ATEYQzyCCdcjtrNiyIswIrnSwdEBB1EnLW0Wjx4TIWTD14L2VcICLLpmUJLhx2B68qh
-	nGod8SySPTTPCTOD90n6dUMtwYPxU6DhWcVA7LQeL4X7T9lx8zitm2MjL2K4CTX6PQkF/J6+WNm
-	Aiu4Pokq6hFDjTQYUFFTJluFTeXx4eCHT6NFpyZXCvtDun7drbGF928M/o0LdGOWMcSznYE+rvK
-	E9xMQIlVejS65q/kG8OnloQ3mkNhnjxSZtRFk7Rf4Apx/eQ3mLrJkumkxSvLVtp9UPqORA6pftH
-	4anhDTN082iwVlOFRFWtmYCT1R3ZbhH8YJyogKPS/AwjOonIpJBe/EcklgT5PnszytFO63PCMKb
-	m/7FrTAFd0rtMVQjEVGjnZmDqCD6vc1B7N9KOmET36utWmVd9Bw7T0ip4NHCTHNnSAstIOsQn+Y
-	/ZAMI=
-X-Received: by 2002:a05:620a:46a4:b0:8c5:3892:a554 with SMTP id af79cd13be357-8cd5af181b0mr131177485a.3.1772620355563;
-        Wed, 04 Mar 2026 02:32:35 -0800 (PST)
-X-Received: by 2002:a05:620a:46a4:b0:8c5:3892:a554 with SMTP id af79cd13be357-8cd5af181b0mr131175785a.3.1772620354995;
-        Wed, 04 Mar 2026 02:32:34 -0800 (PST)
+        bh=uxsB5NCYJ9Wco9EkS82OhpVjd4FUOfck6CfUcK9bWk8=;
+        b=xB/JNV2Msk4RKlJSVroa13aXPTa4PSFPzOyNdUaHYIUMDNGQCV+V2PjEDPrHXPkCtW
+         fDdgFEk9yFlPujSsh9H6SMKm+RKPuMkQevKbio/J6Nlwmv2mXF79WDrF5enkeoE/mwtd
+         ao3a14kvKRjC/dZlL2Sy3YmY21reNPzrt5EY6M/QdATrn8z4uqZ6zmu9UMWMBmk06WE9
+         2GFaW0TEiK9D42qv3Kb4VRNbaqOmf82DJUumRvvgjVAeKFfgo3KHX6fGWIfwtwe6w8iu
+         R+2cNJAVdeqMr8LAvJl7w9uu2QhsLAirUQG+aLTTxuTXNwOoUEBRLbcERTEYonarq1l8
+         oc4w==
+X-Forwarded-Encrypted: i=1; AJvYcCUEBZ6W68Xt1AHBrES613DQ5LtUpzgoKCi+Poho0Y0TQSnra3bP/epRvNH6uIJ5Ya9aLJkBRWEhrWg=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz3aKO8nqlk6Gbj6meYq+qE1ainxAZYg3HO2ZR0t+49v++UsnXy
+	u7jFr534RSTG+cgLRUtrVXIeSWPjOnJOhPmy57BS1yrP4TGdPoQwTNjNDQj8sgGQI1ynoWTY/55
+	uuoSoX10veMQPqjAL7yKt+5gKtI/I8jjpAZYbApXz1CtkiWKjneK7sepjF0auKciuBIHd
+X-Gm-Gg: ATEYQzwwM+uqH0ycpQ6+pT/XsHBpfG7/IBrPdTb2MY4FagAUCJ5mTb8iJpJ1lqTVlrs
+	aUOpH+vVKIhPFzOiA6SmRGWY1HFx7POn2tOATfiQfOCIBSW7r/Dy93/lkh57Ro+BY4vyHpWyKk9
+	/Na5JzYtPvaCKkOK1fRch93pgQsOc12WaPUvsM5or5dX8oSHP2coRPbOR1Phk0pOZ9NNq1QcCNz
+	xIBk//IbwemT6IvezMrogMCh5xh65ZotFhohybJzHEtnaMDOWioK505fN1pcqm2Vo1nOrDD/7qa
+	2RSI2T/4fow4NB+Ltt037pkLlgg8tlpHWtjnITuPVtSF3zNcFcjryqY2PzaPMWlMJgtrCWApKDq
+	ALjX0uYkKaa5Y+zpfexJfcb5Qeq5oCBbdPiU6B/xHgr4uf1YRU4LCembTgqXwdex2s1j/m0Ou/Z
+	pYpoM=
+X-Received: by 2002:a05:6214:4c84:b0:89a:c:97cf with SMTP id 6a1803df08f44-89a19989f7dmr14654566d6.1.1772626747791;
+        Wed, 04 Mar 2026 04:19:07 -0800 (PST)
+X-Received: by 2002:a05:6214:4c84:b0:89a:c:97cf with SMTP id 6a1803df08f44-89a19989f7dmr14654246d6.1.1772626747219;
+        Wed, 04 Mar 2026 04:19:07 -0800 (PST)
 Received: from [192.168.119.254] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
-        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-660bf4d8249sm1224812a12.17.2026.03.04.02.32.32
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-b93c7eaa49dsm274435766b.18.2026.03.04.04.19.05
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 04 Mar 2026 02:32:34 -0800 (PST)
-Message-ID: <5bdfb62f-c3d2-4705-a49c-8830577342f9@oss.qualcomm.com>
-Date: Wed, 4 Mar 2026 11:32:31 +0100
+        Wed, 04 Mar 2026 04:19:06 -0800 (PST)
+Message-ID: <0a703589-48cc-4717-a629-4424ff55b7bf@oss.qualcomm.com>
+Date: Wed, 4 Mar 2026 13:19:04 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 1/2] dt-bindings: phy: qcom: Add CSI2 C-PHY/DPHY schema
-To: Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
-        Bryan O'Donoghue <bod@nxsw.ie>, Bryan O'Donoghue <bod@kernel.org>,
-        Vijay Kumar Tumati <vijay.tumati@oss.qualcomm.com>,
-        Vinod Koul <vkoul@kernel.org>,
+Subject: Re: [PATCH v2] phy: qcom: qmp-combo: Move pipe_clk on/off to common
+To: Val Packett <val@packett.cool>, Vinod Koul <vkoul@kernel.org>,
         Kishon Vijay Abraham I <kishon@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
+        Bjorn Andersson <bjorn.andersson@oss.qualcomm.com>,
+        Wesley Cheng <wesley.cheng@oss.qualcomm.com>,
         Neil Armstrong <neil.armstrong@linaro.org>
-Cc: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
+Cc: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
         linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        linux-media@vger.kernel.org, devicetree@vger.kernel.org,
         linux-kernel@vger.kernel.org
-References: <20260226-x1e-csi2-phy-v3-0-11e608759410@linaro.org>
- <20260226-x1e-csi2-phy-v3-1-11e608759410@linaro.org>
- <c85fe457-c140-441c-93ed-342dce32e604@oss.qualcomm.com>
- <676e2a9f-d274-40fa-988f-e9388ba40f71@nxsw.ie>
- <04f22394-2dbb-4b7b-bce3-9b41ebfb7709@oss.qualcomm.com>
- <1082062b-87a7-4254-b5e7-2dc3769a619f@linaro.org>
+References: <20260228220634.22778-2-val@packett.cool>
 Content-Language: en-US
 From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <1082062b-87a7-4254-b5e7-2dc3769a619f@linaro.org>
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzA0MDA4MSBTYWx0ZWRfX3zrcCt038HES
- +VPa3mtldFrFnSNPPTTA8zSdoApvMaSrsPcBfkl5vcgITJZI452d4Z77z1BDxDtsiWuDSbK4Pay
- VFKJWFE5tvBgm8nXGv2QOT8tle24sBsrmPIiL5aJiYCbxsZP1aBkLdrd62s9EpIHkQMkpc4U67Y
- VHVWwhKlWhHM9L5/+0I0Od6gHp4L8gWtOTylkUNm6VPyTz+KRQO0tHLYBNjN3A328HfC0Ej/HF2
- xVjnbS5PwtY8JNSFzzyWrTq88ahdBpAWX9EXK0o3nsMytEapuKEhFIxPT7ZNAw/XrmX4HFqQxER
- x4+jlQ4JKg7CbM5+gFh9FGaME5zzfN8eDzSkDQE9JQmv9AGM26EWIXBssyB2VowQbyX+fnxhHDs
- bWYaIrCn7i+khIEaZutkEHYD1stOKmpaSn3OjadKCBqMz6W8Rapowm8MH6kOUeuFhj6tF0L3aaC
- jiuq2Bevu+eWoSpRgyQ==
-X-Authority-Analysis: v=2.4 cv=VYv6/Vp9 c=1 sm=1 tr=0 ts=69a80a44 cx=c_pps
- a=HLyN3IcIa5EE8TELMZ618Q==:117 a=FpWmc02/iXfjRdCD7H54yg==:17
+In-Reply-To: <20260228220634.22778-2-val@packett.cool>
+X-Authority-Analysis: v=2.4 cv=AJS1/0o2 c=1 sm=1 tr=0 ts=69a8233c cx=c_pps
+ a=7E5Bxpl4vBhpaufnMqZlrw==:117 a=FpWmc02/iXfjRdCD7H54yg==:17
  a=IkcTkHD0fZMA:10 a=Yq5XynenixoA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=YMgV9FUhrdKAYTUUvYB2:22
- a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=JUammnum_Y0_sDqSRXIA:9 a=QEXdDO2ut3YA:10
- a=bTQJ7kPSJx9SKPbeHEYW:22
-X-Proofpoint-GUID: fEEO5twj_iMDhLFQQzMVFbNea1owMW4i
-X-Proofpoint-ORIG-GUID: fEEO5twj_iMDhLFQQzMVFbNea1owMW4i
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=DJpcGTmdVt4CTyJn9g5Z:22
+ a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=2YwZb52RRteD79CL59QA:9 a=QEXdDO2ut3YA:10
+ a=pJ04lnu7RYOZP9TFuWaZ:22
+X-Proofpoint-ORIG-GUID: TmPF0Sfj6wK2roAAEeH75S2ppa7WsQqy
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzA0MDA5NyBTYWx0ZWRfX7vElzOIf8KAU
+ 891QDO7xV1Nqwr3QzRV0PPzcclqF0eUoRtigpD0sxHpYFBtVLoIQ+m4ZSiLT32VOsoL1el70cOa
+ VHDmhsreR35VpJRpX/Lr3Ke5w8yzs+JJFsV2uxGUVArLjXTTf8IIRswzCgyWZFQulnUOmaj5H9P
+ CGHAGsVXz/eNC5CWqlOL+JlUQ5GOW6yE++DXPcP6fBD+pKXCH9lvpokH86HBh+4Q1yHRZvLJPg/
+ 4OJfR2b8M9dgbVssUx7w6MWsTJhf0ODTYa+DVU4wlKKzlr+mLBfXkmfx5kDDgHsi/ttYVzdKRNa
+ nt0F6an+KXe3BJ/76e2ogRx93KHB8E4Mz8ksHTiE26HSY7IdKcOfrph9bCw5T2ZmXYpP7MA5Go+
+ gxGkmN9ekveCv3EyGlO6F0+PxaYhWfnKnQUh8TQ2ANWf7zS7gXrdwO461Jj9Cj4CYghYc3YRe+z
+ Ye3OJmTr0H3IhJcRpqw==
+X-Proofpoint-GUID: TmPF0Sfj6wK2roAAEeH75S2ppa7WsQqy
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
  definitions=2026-03-04_05,2026-03-03_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 lowpriorityscore=0 suspectscore=0 bulkscore=0 adultscore=0
- spamscore=0 phishscore=0 priorityscore=1501 impostorscore=0 malwarescore=0
+ impostorscore=0 lowpriorityscore=0 malwarescore=0 suspectscore=0 spamscore=0
+ phishscore=0 adultscore=0 priorityscore=1501 clxscore=1015 bulkscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2602130000 definitions=main-2603040081
+ reason=mlx scancount=1 engine=8.22.0-2602130000 definitions=main-2603040097
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260304_023237_528421_C4561E54 
-X-CRM114-Status: GOOD (  11.55  )
+X-CRM114-CacheID: sfid-20260304_041909_794091_A31DC36F 
+X-CRM114-Status: GOOD (  21.17  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -160,27 +150,66 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 3/3/26 3:56 PM, Bryan O'Donoghue wrote:
-> On 03/03/2026 12:34, Konrad Dybcio wrote:
->> That depends on the use case.
->>
->> MXA is always-on (that's the 'A' in the name, as opposed to 'C'
->> for 'Collapsible'), but it's not always at the required performance
->> state (svs, nom, etc.). For some clock controllers specifically, there
->> is no need to put them into the picture, as the rail may be unconnected
->> altogether, or only used for some retention mechanisms (which only
->> require the rail to be enabled and nothing more)
+On 2/28/26 11:05 PM, Val Packett wrote:
+> Keep the USB pipe clock working when the phy is in DP-only mode, because
+> the dwc controller still needs it for USB 2.0 over the same Type-C port.
 > 
-> Does this rail have an OPP table you can share ?
+> Tested with the BenQ RD280UA monitor which has a downstream-facing port
+> for data passthrough that's manually switchable between USB 2 and 3,
+> corresponding to 4-lane and 2-lane DP respectively.
+> 
+> Note: the suspend/resume callbacks were already gating the enable/disable
+> of this clock only on init_count and not usb_init_count!
+> 
+> Signed-off-by: Val Packett <val@packett.cool>
+> ---
+> See https://lore.kernel.org/all/389ca5d3-a698-4dac-911c-39ba057e3d17@oss.qualcomm.com/ for more info.
+> BTW https://lore.kernel.org/all/20260205160240.748371-2-loic.poulain@oss.qualcomm.com/ helped with coldplug.
+> 
+> v2: Reorder disables as suggested
+> v1: https://lore.kernel.org/all/20250927093915.45124-2-val@packett.cool/
+> ---
+>  drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 16 ++++++++--------
+>  1 file changed, 8 insertions(+), 8 deletions(-)
+> 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> index 93f1aa10d400..28428a8d1192 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> @@ -3691,6 +3691,13 @@ static int qmp_combo_com_init(struct qmp_combo *qmp, bool force)
+>  	if (ret)
+>  		goto err_assert_reset;
+>  
+> +	/* In DP-only mode, the pipe clk is still required for USB2 */
+> +	ret = clk_prepare_enable(qmp->pipe_clk);
+> +	if (ret) {
+> +		dev_err(qmp->dev, "pipe_clk enable failed err=%d\n", ret);
+> +		return ret;
 
-Camera clocks on X1 (mclks and the fixed PLL2, which is exclusively used
-to derive MCLKs) that potentially depend on this rail (awaiting Taniya's
-opinion on the other thread [1]) would only need LOWSVS_D1 for all of
-their configurations (ftbl_cam_cc_mclk0_clk_src[])
+I didn't notice this before - please add this hunk
 
-i.e. let's wait for a definitive answer as there's a lot of layers..
-
-[1] https://lore.kernel.org/linux-arm-msm/382725b5-1e72-44b2-b9ae-38aea1f7a976@oss.qualcomm.com/
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+index 28428a8d1192..cdcfad2e86b1 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+@@ -3695,7 +3695,7 @@ static int qmp_combo_com_init(struct qmp_combo *qmp, bool force)
+        ret = clk_prepare_enable(qmp->pipe_clk);
+        if (ret) {
+                dev_err(qmp->dev, "pipe_clk enable failed err=%d\n", ret);
+-               return ret;
++               goto err_disable_clocks;
+        }
+ 
+        qphy_setbits(com, QPHY_V3_DP_COM_POWER_DOWN_CTRL, SW_PWRDN);
+@@ -3756,6 +3756,8 @@ static int qmp_combo_com_init(struct qmp_combo *qmp, bool force)
+ 
+        return 0;
+ 
++err_disable_clocks:
++       clk_bulk_disable_unprepare(qmp->num_clks, qmp->clks);
+ err_assert_reset:
+        reset_control_bulk_assert(cfg->num_resets, qmp->resets);
+ err_disable_regulators:
 
 Konrad
 
