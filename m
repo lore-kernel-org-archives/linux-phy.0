@@ -4,56 +4,112 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 81AC1EB7EB8
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Mar 2026 10:13:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 49370EB7EB6
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Mar 2026 10:27:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=4pkL/nYBCb6P9L3Wo9xZg0P8xncWTWhHXKGl1CO6qtA=; b=c3VIxnY2BfFhLF
-	5mWqc1nGt9AjBG7odyJQUmnPo1uYPWo9jt4lMoMd4brGtNhSj8kUjmLx17M6VapLtlKTu3goi8KFU
-	yiR83v6uclDfEBdFyUAN5BbvYb8xYHkcRvWk6HCVw+/4QPXkWF3lXz+LceAwUUTySsOvwjsNj6HD8
-	Wt/jVrfjNpYjAFnJpSq0jQX+yW/Q4QufBabTRMjekglZNzKblNyGAn+KNIYaZTYpO+wk/MAHLykKo
-	d2PYPn91/OnLagFRHNuqW8eZrNcSy1I+5dtNrPzBDIsMtka4teQBskn5Lo4hp5paT2F6xINTSzR8y
-	1w3KezeBWosQrkT7/uyQ==;
+	List-Owner; bh=klbMs8DZz7aH1wPZldDhIHk95v+50Fq/zVhyRbPvKVo=; b=a8QlRssq2VMm7Z
+	9e7dHDXqDa5I9gXRBrAKNvmbO61ffJx4luKFAeKxcT2jWuCwwAn0bkiImzqmcmhzIIiIXQptkAZ+m
+	RPQ7DT81fupoU4BpKbyZS1jFXrufN45aLzquJlnP+QqLQgwXes0/+PTvItbGCnUJZp7JOE3ddOIN1
+	B5Kzx1RqXMo5cp4RNcoO2RheQnnipVdH/w/90Q0mMYe4UbMZWbu3RN/9Uf9ldIeODzhu+K7NcEwxu
+	V+/PhdXlGbKrx3sYIRbjq7I1PAPZkK6Eijb1oRGxKCpRCwL1kw6+4hZTvOAJ0Ww+YSdtz9aEfc0V+
+	3AY7Zq8WRkEcMLsYiXVw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vxjEo-0000000GxX8-2VB3;
-	Wed, 04 Mar 2026 10:13:54 +0000
-Received: from mail-m3284.qiye.163.com ([220.197.32.84])
+	id 1vxjRi-0000000GzYx-3GBi;
+	Wed, 04 Mar 2026 10:27:14 +0000
+Received: from mail-eastus2azon11011006.outbound.protection.outlook.com ([52.101.57.6] helo=BN8PR05CU002.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vxjEk-0000000GxWc-39e5;
-	Wed, 04 Mar 2026 10:13:52 +0000
-Received: from localhost.localdomain (unknown [58.22.7.114])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 35ba2940f;
-	Wed, 4 Mar 2026 18:13:38 +0800 (GMT+08:00)
-From: Shawn Lin <shawn.lin@rock-chips.com>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: linux-rockchip@lists.infradead.org,
-	linux-phy@lists.infradead.org,
-	Heiko Stuebner <heiko@sntech.de>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	linux-kernel@vger.kernel.org,
-	Shawn Lin <shawn.lin@rock-chips.com>
-Subject: [PATCH] phy: rockchip: naneng-combphy: configure SSC for PCIe on rk3588 and rk3576
-Date: Wed,  4 Mar 2026 18:13:31 +0800
-Message-Id: <1772619211-99875-1-git-send-email-shawn.lin@rock-chips.com>
-X-Mailer: git-send-email 2.7.4
-X-HM-Tid: 0a9cb856bc0109cckunm4782c6fd1211b72
-X-HM-MType: 1
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZQkIeSFZLTxodGR0fHh5LQkJWFRQJFh
-	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSU9PT0
-	hVSktLVUpCS0tZBg++
-DKIM-Signature: a=rsa-sha256;
-	b=kwKv2jYSfjbf+NU2SoNUU2ne4Nx44AmIPW0MdGdAPBvjOJYqNIKZZOyrLbsCtRMS0OgHdntdJ493eEPULPEnEc1s54oYvkiG24j0vkcmlRiki/b9IgYtl+20d/Iv2yGLFUdc1V8Gc4dFebNyQsX9+2NOlnIrUwzLFKuzx3c2ctI=; s=default; c=relaxed/relaxed; d=rock-chips.com; v=1;
-	bh=tUOMhFui9GpdBqGsKp6MZutaSK0/qQb/Gl9iLt1soAo=;
-	h=date:mime-version:subject:message-id:from;
+	id 1vxjRg-0000000GzYc-2ajT
+	for linux-phy@lists.infradead.org;
+	Wed, 04 Mar 2026 10:27:13 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=LJsjUmz50F3UoOCUPJ5YSYdczKD2Ud4A8DE99krfAMBEoNL1TRKVkxggv+ymf/eqqnaQf4BYhcnjspJ3zd3DSoRt4B978eY9xHYWh1BV9oWzaQWp+tMHS9QISDhdo7DPmtxL7z0eYwtgA+MiDIklm7jMv33AHcrnx14CxhcYjJoEzWquYZPTXtS/lgNF7YOFGRxg8m4PFF4n640ORQI4Lhn74J0auh1rMWpDxMsfJml9r4r2aEBncLPaH2+6+gT4S5vHtjBnYVYuAZWEFJSpJyEq21mC+LIDEm1gX3GrP3GLJk8as9diZlkhqj5fv8HDnzEzC7GuWmI8lNDrMWP2JQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=vScpLzeCgkRB/AJvaibBwE/DpSCyziQRav85tYqRakw=;
+ b=x988GfrWbNKgmioiHu83x43FGbO8VteJVtgNBlMPgYvE3voQC59BhQAsIIu9hS/s11MM5Pm7SJFPDWRG73KXJA/64+6uRmr9msKX1cZVUvz/TTzL/UinSo5mHhLlRzo3OOQExImt5bD7POirO+rSVrtqAxACQ4qfVlDbpkHWhX54wr29Z1g/sE+E7mbKCN2V72QnyCQz6Sf0Is25Oin/XPn/8QdVpm/aCBUAgaQqFpTJOw1XLSw4EMcN9QKX9hF7YE4x9AtZ3t8DE9sIgpi2Ebhri2V+uhGlXwyl1+vMMyoPYjSwXoW2tECwBx9uguKJlwjCVAgo/eBsSVXPmLkpaQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 216.228.117.160) smtp.rcpttodomain=kernel.org smtp.mailfrom=nvidia.com;
+ dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
+ dkim=none (message not signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=vScpLzeCgkRB/AJvaibBwE/DpSCyziQRav85tYqRakw=;
+ b=GV+rD+sxozat/UNgGY0LXsDCBhGf0bjAlyTwVoXn9Luu3B3cIbca9KlswOR2jg+niFWdgywhD9NgyaCGlt95bwD5MTuxD5Q5Ss/FWDP2Xf960oSA+crzSNu7LHngkjuPs+Wpi0CaTRCdlbGGepSwXpDJs+b+w6+gt2uVlAFCDwtRLz8ZKCqYNgN6c1lIET1HEEQXajSgLPQ+wsLdIXU5yhwjYsBpXzdihVIwPchdbijoTd9h2mZPJX+38uuJYIKPntJdpXLSI6CWOgcRpVD6il0ZDLhM4a4PnKkyyVqEM4Euj+B4fSgHqBr+lOvN0we3utyPVZAgyaTdsENbXwgwdQ==
+Received: from SJ0PR05CA0034.namprd05.prod.outlook.com (2603:10b6:a03:33f::9)
+ by CY5PR12MB6575.namprd12.prod.outlook.com (2603:10b6:930:41::17) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9678.17; Wed, 4 Mar
+ 2026 10:27:04 +0000
+Received: from SJ1PEPF0000231C.namprd03.prod.outlook.com
+ (2603:10b6:a03:33f:cafe::8) by SJ0PR05CA0034.outlook.office365.com
+ (2603:10b6:a03:33f::9) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9654.19 via Frontend Transport; Wed,
+ 4 Mar 2026 10:27:04 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.160)
+ smtp.mailfrom=nvidia.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=nvidia.com;
+Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
+ 216.228.117.160 as permitted sender) receiver=protection.outlook.com;
+ client-ip=216.228.117.160; helo=mail.nvidia.com; pr=C
+Received: from mail.nvidia.com (216.228.117.160) by
+ SJ1PEPF0000231C.mail.protection.outlook.com (10.167.242.233) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.9654.16 via Frontend Transport; Wed, 4 Mar 2026 10:27:03 +0000
+Received: from rnnvmail204.nvidia.com (10.129.68.6) by mail.nvidia.com
+ (10.129.200.66) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Wed, 4 Mar
+ 2026 02:26:53 -0800
+Received: from rnnvmail201.nvidia.com (10.129.68.8) by rnnvmail204.nvidia.com
+ (10.129.68.6) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Wed, 4 Mar
+ 2026 02:26:52 -0800
+Received: from 5b171f0-lcelt.nvidia.com (10.127.8.13) by mail.nvidia.com
+ (10.129.68.8) with Microsoft SMTP Server id 15.2.2562.20 via Frontend
+ Transport; Wed, 4 Mar 2026 02:26:50 -0800
+From: Wei-Cheng Chen <weichengc@nvidia.com>
+To: <jckuo@nvidia.com>, <vkoul@kernel.org>, <neil.armstrong@linaro.org>,
+	<thierry.reding@gmail.com>, <jonathanh@nvidia.com>
+CC: <linux-phy@lists.infradead.org>, <linux-tegra@vger.kernel.org>,
+	<linux-kernel@vger.kernel.org>, <waynec@nvidia.com>, <wtsai@nvidia.com>,
+	Wei-Cheng Chen <weichengc@nvidia.com>
+Subject: [PATCH] phy: tegra: xusb: Fix per-pad high-speed termination calibration
+Date: Wed, 4 Mar 2026 18:26:49 +0800
+Message-ID: <20260304102649.3670783-1-weichengc@nvidia.com>
+X-Mailer: git-send-email 2.43.0
+MIME-Version: 1.0
+X-NV-OnPremToCloud: ExternallySecured
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: SJ1PEPF0000231C:EE_|CY5PR12MB6575:EE_
+X-MS-Office365-Filtering-Correlation-Id: 9ac05364-757f-442c-91f9-08de79d89448
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|36860700016|1800799024|82310400026|376014;
+X-Microsoft-Antispam-Message-Info: QJTOtYUiZKisyg7TOQkfsaKvdf+OZ59vzxHc8J/MtNP3TTbfY8oyhNyzYO6i+X+hPdze1NfHAtv5FhGeTkAlZ4iwmvg/TM9aZ+AaEKRadfBS9GQsGjCq3to7ognwI3LgEgkOFbZZycBcqYyhfvejPQwB+at52d7zRlg4W81HlmB9POZF1LkaWDl6igZ/KyVpxeG3GgkKDS7edKF1aylKOt4HwfUyKV6o/+/q5WYo+BSnrc9B+7jNDkafVvBSMogHZzGFmWd8C8X+BXP6PPKNNsev5GsQo2xv3L58cTBSOoitnfx37baG+6O2ukFnfqNrS5+QerQJdnGbLiv+nhLNKY9wJ355sgngnDqMtclkAKg5V9J0k+XOh20fE8FabgKmddh2v6sU7NqralzRc6WaYznUzDEOP1QYIe/Z9ek7JLb9IPqLH44F2dmK1yGx9xiqjRZ/FvG3+rRHwrcCoBUlQ9QkjU99JYMg3u19bjHNJztyRr14EJ50hlcBO/mBI3KdiTAPo/x2uZWnLUw8beJDnJKiBVdsPzaABTGSgZFl6kPPBmVz9c5QxETe/XZbNVJyNwsG6Skl6SEw63sA7vtnLGBe1ZOSlOwu1ur2pAO7NeCa6F8kX+36z/tD5DZ/yMLIrb8LJXMB4e5GKmYLHraCMgjUO2MZGh2LfjAQ3PquQoyRZo6hWCMz6QnNGRUppl6QAbWvM0cdQv8vs77fbxcbNyz0KxYUYe/XmFWraSQm8S1KT6pQo6za8OWX4mlf+9UKswz8vb2TC033EBQXzuWoBg==
+X-Forefront-Antispam-Report: CIP:216.228.117.160;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge1.nvidia.com;CAT:NONE;SFS:(13230040)(36860700016)(1800799024)(82310400026)(376014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: uInmFNRPEW9QNYEGxY6dhooAWQ6/G1IykxkOAJaFolm9btSnRkfGwwNgooUjnnYwdJeSmMe9SUmY00JMZpfSvgxQO8dqAGsywK+NHjWEAa3zZgrjyJwc2t6b4Yq3DKbswVk1Awm+3AnHoni970O/lkVpSz83ea6qWQhd1C1qnEmrDbneVWKvCFPoDJL7nPTxP4EpRvj1WRC6GNgRuPFLkmxE5+M+Jz9PpzvwGc9MJXj0H5j/zZt8OcLOJxVwMLH+Nbyq+rr6eZgyQwEr0gmJpJA9ekrhyfEF18Z2DFabXU4LWtCzvPz0spjALVjtEv+bKAIgKXOOEwCUdDLskXDoLCbrljfTBrxPJn1gaKFtVHbGJ5/LL/hGMpbduxLrBhI1c10KU1ACJV9Wp5mGCJPRFAX14rOY0OkHqXvvPPOU0Rmk5SFKDqa74SuGDSkKc+OR
+X-OriginatorOrg: Nvidia.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Mar 2026 10:27:03.9620
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 9ac05364-757f-442c-91f9-08de79d89448
+X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.160];Helo=[mail.nvidia.com]
+X-MS-Exchange-CrossTenant-AuthSource: SJ1PEPF0000231C.namprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY5PR12MB6575
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260304_021351_341510_3A492CA0 
-X-CRM114-Status: GOOD (  16.35  )
+X-CRM114-CacheID: sfid-20260304_022712_684646_64FFEEF0 
+X-CRM114-Status: GOOD (  17.49  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -65,164 +121,153 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add a dedicated function rk_combphy_cfg_ssc_for_pcie() to configure
-Spread Spectrum Clocking (SSC) for the PCIe PHY on compatible platforms.
+From: Wayne Chang <waynec@nvidia.com>
 
-The function first checks the device tree node's compatible string.
-Currently, SSC tuning is specifically implemented and applied only for
-"rockchip,rk3588-naneng-combphy" and "rockchip,rk3576-naneng-combphy".
+The existing code reads a single hs_term_range_adj value from bit field
+[10:7] of FUSE_SKU_CALIB_0 and applies it to all USB2 pads uniformly.
+However, on SoCs that support per-pad termination, each pad has its own
+hs_term_range_adj field: pad 0 in FUSE_SKU_CALIB_0[10:7], and pads 1-3
+in FUSE_USB_CALIB_EXT_0 at bit offsets [8:5], [12:9], and [16:13]
+respectively.
 
-The correct SSC configuration for these platforms involves:
-1.  Enabling SSC via the RK3568_PHYREG8_SSC_EN bit.
-2.  Setting the PLL SSC module control via the newly defined
-    RK3568_PHYREG33_PLL_SSC_CTRL bit.
-3.  For PCIe phys with a 24MHz reference clock, additional PLL loop
-    divider and signal adjustment values are programmed to optimiz
-    performance.
+Fix the calibration by reading per-pad values from the appropriate fuse
+registers. For SoCs that do not support per-pad termination, replicate
+pad 0's value to all pads to maintain existing behavior.
 
-This SSC configuration is intended to improve EMI characteristics or
-meet specific clock tolerance requirements for PCIe interfaces on
-these SoCs.
+Add a has_per_pad_term flag to the SoC data to indicate whether per-pad
+termination values are available in FUSE_USB_CALIB_EXT_0.
 
-Signed-off-by: Shawn Lin <shawn.lin@rock-chips.com>
+Fixes: 1ef535c6ba8e ("phy: tegra: xusb: Add Tegra194 support")
+Cc: stable@vger.kernel.org
+Signed-off-by: Wayne Chang <waynec@nvidia.com>
+Signed-off-by: Wei-Cheng Chen <weichengc@nvidia.com>
 ---
+ drivers/phy/tegra/xusb-tegra186.c | 33 ++++++++++++++++++++++++-------
+ drivers/phy/tegra/xusb.h          |  1 +
+ 2 files changed, 27 insertions(+), 7 deletions(-)
 
- drivers/phy/rockchip/phy-rockchip-naneng-combphy.c | 93 +++++++++++++---------
- 1 file changed, 55 insertions(+), 38 deletions(-)
-
-diff --git a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-index b60d6bf..aa09d71 100644
---- a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-+++ b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-@@ -121,6 +121,7 @@
- #define RK3568_PHYREG32_SSC_OFFSET_500PPM	1
+diff --git a/drivers/phy/tegra/xusb-tegra186.c b/drivers/phy/tegra/xusb-tegra186.c
+index bec9616c4a2..4452e73fb82 100644
+--- a/drivers/phy/tegra/xusb-tegra186.c
++++ b/drivers/phy/tegra/xusb-tegra186.c
+@@ -20,8 +20,8 @@
+ /* FUSE USB_CALIB registers */
+ #define HS_CURR_LEVEL_PADX_SHIFT(x)	((x) ? (11 + (x - 1) * 6) : 0)
+ #define HS_CURR_LEVEL_PAD_MASK		0x3f
+-#define HS_TERM_RANGE_ADJ_SHIFT		7
+-#define HS_TERM_RANGE_ADJ_MASK		0xf
++#define HS_TERM_RANGE_ADJ_PADX_SHIFT(x)	((x) ? (5 + (x - 1) * 4) : 7)
++#define HS_TERM_RANGE_ADJ_PAD_MASK	0xf
+ #define HS_SQUELCH_SHIFT		29
+ #define HS_SQUELCH_MASK			0x7
  
- #define RK3568_PHYREG33				0x80
-+#define RK3568_PHYREG33_PLL_SSC_CTRL		BIT(5)
- #define RK3568_PHYREG33_PLL_KVCO_MASK		GENMASK(4, 2)
- #define RK3568_PHYREG33_PLL_KVCO_SHIFT		2
- #define RK3568_PHYREG33_PLL_KVCO_VALUE		2
-@@ -964,6 +965,56 @@ static const struct rockchip_combphy_cfg rk3568_combphy_cfgs = {
- 	.combphy_cfg	= rk3568_combphy_cfg,
+@@ -253,7 +253,7 @@
+ struct tegra_xusb_fuse_calibration {
+ 	u32 *hs_curr_level;
+ 	u32 hs_squelch;
+-	u32 hs_term_range_adj;
++	u32 *hs_term_range_adj;
+ 	u32 rpd_ctrl;
  };
  
-+static void rk_combphy_cfg_ssc_for_pcie(struct rockchip_combphy_priv *priv, unsigned long rate)
-+{
-+	struct device_node *np = priv->dev->of_node;
-+	u32 val;
-+
-+	/* Some SoCs' combphys share the same PCIe SSC tuning result */
-+	if (!of_device_is_compatible(np, "rockchip,rk3588-naneng-combphy") ||
-+	    !of_device_is_compatible(np, "rockchip,rk3576-naneng-combphy")) {
-+		dev_warn(priv->dev, "Incompatible platform\n");
-+		return;
-+	}
-+
-+	val = readl(priv->mmio + RK3568_PHYREG8);
-+	val |= RK3568_PHYREG8_SSC_EN;
-+	writel(val, priv->mmio + RK3568_PHYREG8);
-+
-+	/* PLL control SSC module period should be set */
-+	val = readl(priv->mmio + RK3568_PHYREG33);
-+	val |= RK3568_PHYREG33_PLL_SSC_CTRL;
-+	writel(val, priv->mmio + RK3568_PHYREG33);
-+
-+	if (priv->type == PHY_TYPE_PCIE && rate == REF_CLOCK_24MHz) {
-+		/* Set PLL loop divider */
-+		writel(0x00, priv->mmio + RK3576_PHYREG17);
-+		writel(RK3568_PHYREG18_PLL_LOOP, priv->mmio + RK3568_PHYREG18);
-+
-+		/* Set up rx_pck invert and rx msb to disable */
-+		writel(0x00, priv->mmio + RK3588_PHYREG27);
-+
-+		/*
-+		 * Set up SU adjust signal:
-+		 * su_trim[7:0],   PLL KVCO adjust bits[2:0] to min
-+		 * su_trim[15:8],  PLL LPF R1 adujst bits[9:7]=3'b101
-+		 * su_trim[23:16], CKRCV adjust
-+		 * su_trim[31:24], CKDRV adjust
-+		 */
-+		writel(0x90, priv->mmio + RK3568_PHYREG11);
-+		writel(0x02, priv->mmio + RK3568_PHYREG12);
-+		writel(0x08, priv->mmio + RK3568_PHYREG13);
-+		writel(0x57, priv->mmio + RK3568_PHYREG14);
-+		writel(0x40, priv->mmio + RK3568_PHYREG15);
-+
-+		writel(RK3568_PHYREG16_SSC_CNT_VALUE, priv->mmio + RK3568_PHYREG16);
-+
-+		val = FIELD_PREP(RK3568_PHYREG33_PLL_KVCO_MASK,
-+				 RK3576_PHYREG33_PLL_KVCO_VALUE);
-+		writel(val, priv->mmio + RK3568_PHYREG33);
-+	}
-+}
-+
- static int rk3576_combphy_cfg(struct rockchip_combphy_priv *priv)
+@@ -930,7 +930,7 @@ static int tegra186_utmi_phy_power_on(struct phy *phy)
+ 
+ 	value = padctl_readl(padctl, XUSB_PADCTL_USB2_OTG_PADX_CTL1(index));
+ 	value &= ~TERM_RANGE_ADJ(~0);
+-	value |= TERM_RANGE_ADJ(priv->calib.hs_term_range_adj);
++	value |= TERM_RANGE_ADJ(priv->calib.hs_term_range_adj[index]);
+ 	value &= ~RPD_CTRL(~0);
+ 	value |= RPD_CTRL(priv->calib.rpd_ctrl);
+ 	padctl_writel(padctl, value, XUSB_PADCTL_USB2_OTG_PADX_CTL1(index));
+@@ -1464,17 +1464,23 @@ static const char * const tegra186_usb3_functions[] = {
+ static int
+ tegra186_xusb_read_fuse_calibration(struct tegra186_xusb_padctl *padctl)
  {
- 	const struct rockchip_combphy_grfcfg *cfg = priv->cfg->grfcfg;
-@@ -1156,39 +1207,8 @@ static int rk3576_combphy_cfg(struct rockchip_combphy_priv *priv)
- 		}
- 	}
++	const struct tegra_xusb_padctl_soc *soc = padctl->base.soc;
+ 	struct device *dev = padctl->base.dev;
+ 	unsigned int i, count;
+ 	u32 value, *level;
++	u32 *hs_term_range_adj;
+ 	int err;
  
--	if (priv->enable_ssc) {
--		val = readl(priv->mmio + RK3568_PHYREG8);
--		val |= RK3568_PHYREG8_SSC_EN;
--		writel(val, priv->mmio + RK3568_PHYREG8);
--
--		if (priv->type == PHY_TYPE_PCIE && rate == REF_CLOCK_24MHz) {
--			/* Set PLL loop divider */
--			writel(0x00, priv->mmio + RK3576_PHYREG17);
--			writel(RK3568_PHYREG18_PLL_LOOP, priv->mmio + RK3568_PHYREG18);
--
--			/* Set up rx_pck invert and rx msb to disable */
--			writel(0x00, priv->mmio + RK3588_PHYREG27);
--
--			/*
--			 * Set up SU adjust signal:
--			 * su_trim[7:0],   PLL KVCO adjust bits[2:0] to min
--			 * su_trim[15:8],  PLL LPF R1 adujst bits[9:7]=3'b101
--			 * su_trim[23:16], CKRCV adjust
--			 * su_trim[31:24], CKDRV adjust
--			 */
--			writel(0x90, priv->mmio + RK3568_PHYREG11);
--			writel(0x02, priv->mmio + RK3568_PHYREG12);
--			writel(0x08, priv->mmio + RK3568_PHYREG13);
--			writel(0x57, priv->mmio + RK3568_PHYREG14);
--			writel(0x40, priv->mmio + RK3568_PHYREG15);
--
--			writel(RK3568_PHYREG16_SSC_CNT_VALUE, priv->mmio + RK3568_PHYREG16);
--
--			val = FIELD_PREP(RK3568_PHYREG33_PLL_KVCO_MASK,
--					 RK3576_PHYREG33_PLL_KVCO_VALUE);
--			writel(val, priv->mmio + RK3568_PHYREG33);
--		}
--	}
-+	if (priv->enable_ssc)
-+		rk_combphy_cfg_ssc_for_pcie(priv, rate);
+-	count = padctl->base.soc->ports.usb2.count;
++	count = soc->ports.usb2.count;
  
+ 	level = devm_kcalloc(dev, count, sizeof(u32), GFP_KERNEL);
+ 	if (!level)
+ 		return -ENOMEM;
+ 
++	hs_term_range_adj = devm_kcalloc(dev, count, sizeof(u32), GFP_KERNEL);
++	if (!hs_term_range_adj)
++		return -ENOMEM;
++
+ 	err = tegra_fuse_readl(TEGRA_FUSE_SKU_CALIB_0, &value);
+ 	if (err)
+ 		return dev_err_probe(dev, err,
+@@ -1490,8 +1496,8 @@ tegra186_xusb_read_fuse_calibration(struct tegra186_xusb_padctl *padctl)
+ 
+ 	padctl->calib.hs_squelch = (value >> HS_SQUELCH_SHIFT) &
+ 					HS_SQUELCH_MASK;
+-	padctl->calib.hs_term_range_adj = (value >> HS_TERM_RANGE_ADJ_SHIFT) &
+-						HS_TERM_RANGE_ADJ_MASK;
++	hs_term_range_adj[0] = (value >> HS_TERM_RANGE_ADJ_PADX_SHIFT(0)) &
++				HS_TERM_RANGE_ADJ_PAD_MASK;
+ 
+ 	err = tegra_fuse_readl(TEGRA_FUSE_USB_CALIB_EXT_0, &value);
+ 	if (err) {
+@@ -1503,6 +1509,17 @@ tegra186_xusb_read_fuse_calibration(struct tegra186_xusb_padctl *padctl)
+ 
+ 	padctl->calib.rpd_ctrl = (value >> RPD_CTRL_SHIFT) & RPD_CTRL_MASK;
+ 
++	for (i = 1; i < count; i++) {
++		if (soc->has_per_pad_term)
++			hs_term_range_adj[i] =
++				(value >> HS_TERM_RANGE_ADJ_PADX_SHIFT(i)) &
++				HS_TERM_RANGE_ADJ_PAD_MASK;
++		else
++			hs_term_range_adj[i] = hs_term_range_adj[0];
++	}
++
++	padctl->calib.hs_term_range_adj = hs_term_range_adj;
++
  	return 0;
  }
-@@ -1371,11 +1391,8 @@ static int rk3588_combphy_cfg(struct rockchip_combphy_priv *priv)
- 		}
- 	}
  
--	if (priv->enable_ssc) {
--		val = readl(priv->mmio + RK3568_PHYREG8);
--		val |= RK3568_PHYREG8_SSC_EN;
--		writel(val, priv->mmio + RK3568_PHYREG8);
--	}
-+	if (priv->enable_ssc)
-+		rk_combphy_cfg_ssc_for_pcie(priv, rate);
+@@ -1708,6 +1725,7 @@ const struct tegra_xusb_padctl_soc tegra194_xusb_padctl_soc = {
+ 	.num_supplies = ARRAY_SIZE(tegra194_xusb_padctl_supply_names),
+ 	.supports_gen2 = true,
+ 	.poll_trk_completed = true,
++	.has_per_pad_term = true,
+ };
+ EXPORT_SYMBOL_GPL(tegra194_xusb_padctl_soc);
  
- 	return 0;
- }
+@@ -1732,6 +1750,7 @@ const struct tegra_xusb_padctl_soc tegra234_xusb_padctl_soc = {
+ 	.trk_hw_mode = false,
+ 	.trk_update_on_idle = true,
+ 	.supports_lp_cfg_en = true,
++	.has_per_pad_term = true,
+ };
+ EXPORT_SYMBOL_GPL(tegra234_xusb_padctl_soc);
+ #endif
+diff --git a/drivers/phy/tegra/xusb.h b/drivers/phy/tegra/xusb.h
+index d2b5f956513..810b410672f 100644
+--- a/drivers/phy/tegra/xusb.h
++++ b/drivers/phy/tegra/xusb.h
+@@ -436,6 +436,7 @@ struct tegra_xusb_padctl_soc {
+ 	bool trk_hw_mode;
+ 	bool trk_update_on_idle;
+ 	bool supports_lp_cfg_en;
++	bool has_per_pad_term;
+ };
+ 
+ struct tegra_xusb_padctl {
 -- 
-2.7.4
+2.43.0
 
 
 -- 
