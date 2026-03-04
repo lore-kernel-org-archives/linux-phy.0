@@ -4,94 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3026EF8FED
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Mar 2026 14:37:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 78269EF8FF3
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Mar 2026 14:54:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=TU/DIfAu1VH1GU4NfSZl2HOZidy2erQfgxasDlJgNVk=; b=qGr7lnewYIm2r2y+Q/Xh62IwvE
-	F8wrAe/fC4orW3Sx5DtqxWDJWD9Zm/6a8woKFPnvf2WG1ZqFHJOIWu0k1QULSk0tvHpCwKySaz6wC
-	D8IBv3KuExIqhp0hInR2e4OGtu4Yom1PJv6rIBoTdlKi8dKRJzCWzxewH6hcC74OMm12R3t/vPzal
-	2QBxmVJtrJhd7v5x0RhUfVoN+q9GbuIT1oBa1Se5LD8vyuHo0OnJYtA8EbI+eMa4nlX0rPeAoiPbm
-	xII9wvL4yVIPi2blae6E0pGEUEQPEjE1vOVLimy17GAEqfPsf6rZf0XhLGlNOcGIcwnDptg8U6XmN
-	nTz8QtoQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=25rHCihqP1DkySx4byXGRpdMi/wxBDodbF7DNaHfWYc=; b=Dy//s/MoqgPCWP
+	5Vsbh8W5vJ65q7e1+jN4bK1tDvPM83wdkSijW3rQuR0SJMwMCyRQsnHfgTB0duPOZa2ci7k9mkBe1
+	D5+DFPHTu2waa7htLHEWsmuKftl9CJ6a+08ebXLcvGlmmmJZClV8hIJxXhVPWh46drgTxc/T+nLCl
+	53/Yf7556VANqiBETN2Zm6PVCU+YrZMCJaThxGoySX8disL+juTEK0mLj/UFoo04wkwwQ4Q3qKdYS
+	jgY0a0jEDefvCrGmfH6DIO8zL3MYbPaiT+uHQMvLH7wsK1emzs2CIKnvI5vPWb3oapInzFYmaiKPG
+	FNg9KultrD+dSlBTfskA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vxnLm-0000000HPmZ-1vk6;
-	Wed, 04 Mar 2026 14:37:22 +0000
-Received: from mx-relay164-hz1.antispameurope.com ([94.100.133.57])
+	id 1vxnbu-0000000HS5v-08O0;
+	Wed, 04 Mar 2026 14:54:02 +0000
+Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vxnLj-0000000HPla-3VGd
-	for linux-phy@lists.infradead.org;
-	Wed, 04 Mar 2026 14:37:21 +0000
-ARC-Authentication-Results: i=1; mx-gate164-hz1.hornetsecurity.com 1;
- spf=pass reason=mailfrom (ip=94.100.132.6, headerfrom=ew.tq-group.com)
- smtp.mailfrom=ew.tq-group.com smtp.helo=smtp-out01-hz1.hornetsecurity.com;
- dmarc=pass header.from=ew.tq-group.com orig.disposition=pass
-ARC-Message-Signature: a=rsa-sha256;
- bh=S65+QOpEDDtGcLkv1l5kDyDDm+1HHGKbmX7NekvLsrU=; c=relaxed/relaxed;
- d=hornetsecurity.com; h=from:to:date:subject:mime-version:; i=1; s=hse1;
- t=1772635028;
- b=QBcpYdCNKkYjQzXyQwyZn6ZMhJ+dZsmGI+CintLvGaNFI2p2VEnQ0wNeh/eEBinC1QrDIyPA
- dk3cInD6MXE1PmUvxk1TiIxKasPODrFd6Uo84hBhdLYFuMLrt1nrZEllInVaMopcUkjFFaoxHck
- 0/5Goz+M/jA/9A1ZIDBz4lDIjb5XLcT+kjZBZvu1foY/LbfSwKxasi8XHjlLmQoqwPm/s7Bd7S9
- QT3u1RGy/C6dkC6ZQqmC1Mut0YwIQZvxPENvMDtmf+LSjYXc7lR1jWbiWWU3b3lPH0AzNOeV3d5
- tnpcgu/ITYgcaOgJRLLldIv2gITV90uw/GYDkN0FwEWmQ==
-ARC-Seal: a=rsa-sha256; cv=none; d=hornetsecurity.com; i=1; s=hse1;
- t=1772635028;
- b=VE0yAIME3Hg50MAqB8L+ElLgcTMDCnL7kSnjQYifQnRESMN71RBRS8zkfiDUoEvTXd6Gj14p
- HYQWXTv3Sw2ys3GTD7plwCyMqSgZpTsTgH90DA3SF+wsaxHjD6lf2XzTsuXSgU9gZ6fzXEdEi9U
- NE09GRJRdg731zDu2jfcVL9VgelwR4sDTZBwZbLCpoc7Ey7N1kLT/+h5hH6WSV39lEmtUH5255e
- rtFT5tPme5E9bLVuyhmvYVNljMYh5/jmu4t6eG6UJvEGbaDBHxJI/Zq7mYgeLtpkBqsfBKzXVfp
- Il47qs2qhPsGDharLi9usvrsd4Ss3XzYD5cuAyA3+hWIQ==
-Received: from he-nlb01-hz1.hornetsecurity.com ([94.100.132.6]) by mx-relay164-hz1.antispameurope.com;
- Wed, 04 Mar 2026 15:37:08 +0100
-Received: from steina-w.localnet (host-82-135-125-110.customer.m-online.net [82.135.125.110])
-	(Authenticated sender: alexander.stein@ew.tq-group.com)
-	by smtp-out01-hz1.hornetsecurity.com (Postfix) with ESMTPSA id F2378A406A9;
-	Wed,  4 Mar 2026 15:36:51 +0100 (CET)
-From: Alexander Stein <alexander.stein@ew.tq-group.com>
-To: Frank Li <Frank.li@nxp.com>, Vinod Koul <vkoul@kernel.org>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, linux-phy@lists.infradead.org,
- imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: Re: [RESEND 1/1] phy: freescale: imx8qm-hsio: provide regmap names
-Date: Wed, 04 Mar 2026 15:36:51 +0100
-Message-ID: <4790031.44csPzL39Z@steina-w>
-Organization: TQ-Systems GmbH
-In-Reply-To: <aYygzojdO0QACdqX@lizhi-Precision-Tower-5810>
-References: <20260211144949.1128122-1-alexander.stein@ew.tq-group.com>
- <aYygzojdO0QACdqX@lizhi-Precision-Tower-5810>
+	id 1vxnbp-0000000HS3e-3ui8;
+	Wed, 04 Mar 2026 14:54:00 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1772636016; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=FoPI9w5GQ9MR+obyELlf6irpuMlWNHKCwPMszn64u55yl6zYZADlJwTusDzmSSTGFBPOU+c2L8zhWeSpGH2334sfpc+AjOX2j5lIcrQuBwvayIX+ypMVW+03UJxpjAFO+hiQUIgO+wSixcg9vgohddqahSMSxY+mVqgfyVOZOXg=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1772636016; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=wIUS+P9KTYwp9LndB8yjQ3RjTNoJrePfDlm02gE6g6U=; 
+	b=JI/aMSV0fA+u+JVXaVRGN9i4o1HvurhRH33yZt1bj+kEbJ4D+0pb3zf1FmeFPs0U565pFXzQ9vph0ljPPlP5tSRXEJirLv3USonZdxK4ryMCVKKt6ORPxS5lm+ZekOvRgdCjwtQ7jet+/1MohQbLdyI+wpD5NotiqPU/P9t4T4g=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=nicolas.frattaroli@collabora.com;
+	dmarc=pass header.from=<nicolas.frattaroli@collabora.com>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1772636016;
+	s=zohomail; d=collabora.com; i=nicolas.frattaroli@collabora.com;
+	h=From:From:Date:Date:Subject:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-Id:Message-Id:References:In-Reply-To:To:To:Cc:Cc:Reply-To;
+	bh=wIUS+P9KTYwp9LndB8yjQ3RjTNoJrePfDlm02gE6g6U=;
+	b=Sm5Jqb98JGs2N1IWHZw8+t/3RdPkGtrN8XvF0/jmL/znVuZDOHpAkoghjT+ze3bl
+	7seJyreHVRR1yWK3io+x/dnx+Gxx3ZJPHEkZkGS0w513zU38OPy8aQjEc1Tsu//rSOx
+	m6Gb7I2VvNUH089OKVN/CiBkCGD8AP68U6wrIozY=
+Received: by mx.zohomail.com with SMTPS id 1772636014066884.4766831898646;
+	Wed, 4 Mar 2026 06:53:34 -0800 (PST)
+From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+Date: Wed, 04 Mar 2026 15:53:06 +0100
+Subject: [PATCH v8 01/23] dt-bindings: phy: Add mediatek,mt8196-ufsphy
+ variant
 MIME-Version: 1.0
-X-cloud-security-sender: alexander.stein@ew.tq-group.com
-X-cloud-security-recipient: linux-phy@lists.infradead.org
-X-cloud-security-crypt: load encryption module
-X-cloud-security-Mailarchiv: E-Mail archived for: alexander.stein@ew.tq-group.com
-X-cloud-security-Mailarchivtype: outbound
-X-cloud-security-Virusscan: CLEAN
-X-cloud-security-disclaimer: This E-Mail was scanned by E-Mailservice on mx-relay164-hz1.antispameurope.com with 4fQwGr4Cjjz3xc4N
-X-cloud-security-connect: he-nlb01-hz1.hornetsecurity.com[94.100.132.6], TLS=1, IP=94.100.132.6
-X-cloud-security-Digest: cc7fdbe6e2458b426077c21ba7604f44
-X-cloud-security: scantime:6.857
-DKIM-Signature: a=rsa-sha256;
- bh=S65+QOpEDDtGcLkv1l5kDyDDm+1HHGKbmX7NekvLsrU=; c=relaxed/relaxed;
- d=ew.tq-group.com;
- h=content-type:mime-version:subject:from:to:message-id:date; s=hse1;
- t=1772635028; v=1;
- b=EH86MbtXGrP2fMJSVQXaHSOkKql9dgUUPd91YhbYrxnsi8bm7YHFxOd8Pa0xGA7Z2cYdGqro
- CpsmzHaq3ddnXYhbTxTNnd6Y/54G7a/6UClQLR28iYrQ9+B+1nJ9Bh8g5x0mrM/3wkzHuyA1ZfY
- Dmcx3rAo2azKDApHdg7AswL+vguJVWLQL5gIdGOGi4daeRRDVxlKPcH+O7HFgpjbyA7w4808OBu
- 0dMTtGvtUcd02iAXP/2+Wy5dZld32JRj5v4Ax/Z8H8ppGuUwbd3mQ011U+vUBKhGM+fziBXjiU3
- Qs5upzqgAL82kdvnOlNbMWm7FCd/NKRqNJcQLvZl4TmDw==
+Message-Id: <20260304-mt8196-ufs-v8-1-5b0eac23314f@collabora.com>
+References: <20260304-mt8196-ufs-v8-0-5b0eac23314f@collabora.com>
+In-Reply-To: <20260304-mt8196-ufs-v8-0-5b0eac23314f@collabora.com>
+To: Alim Akhtar <alim.akhtar@samsung.com>, 
+ Avri Altman <avri.altman@wdc.com>, Bart Van Assche <bvanassche@acm.org>, 
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Matthias Brugger <matthias.bgg@gmail.com>, 
+ AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, 
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Peter Wang <peter.wang@mediatek.com>, Stanley Jhu <chu.stanley@gmail.com>, 
+ "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>, 
+ "Martin K. Petersen" <martin.petersen@oracle.com>, 
+ Philipp Zabel <p.zabel@pengutronix.de>, Liam Girdwood <lgirdwood@gmail.com>, 
+ Mark Brown <broonie@kernel.org>, Chaotian Jing <Chaotian.Jing@mediatek.com>, 
+ Neil Armstrong <neil.armstrong@linaro.org>
+Cc: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>, 
+ kernel@collabora.com, linux-scsi@vger.kernel.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org, 
+ linux-phy@lists.infradead.org, 
+ Nicolas Frattaroli <nicolas.frattaroli@collabora.com>, 
+ Conor Dooley <conor.dooley@microchip.com>
+X-Mailer: b4 0.14.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260304_063720_011834_FE0F1687 
-X-CRM114-Status: GOOD (  23.29  )
+X-CRM114-CacheID: sfid-20260304_065358_035163_6048690E 
+X-CRM114-Status: GOOD (  10.31  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,151 +90,74 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============6733437340105676058=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
---===============6733437340105676058==
-Content-Type: multipart/signed; boundary="nextPart10034661.T7Z3S40VBb";
- micalg="pgp-sha512"; protocol="application/pgp-signature"
+The MediaTek MT8196 SoC includes an M-PHY compatible with the already
+existing mt8183 binding.
 
---nextPart10034661.T7Z3S40VBb
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/plain; charset="iso-8859-1"; protected-headers="v1"
-From: Alexander Stein <alexander.stein@ew.tq-group.com>
-To: Frank Li <Frank.li@nxp.com>, Vinod Koul <vkoul@kernel.org>
-Date: Wed, 04 Mar 2026 15:36:51 +0100
-Message-ID: <4790031.44csPzL39Z@steina-w>
-Organization: TQ-Systems GmbH
-In-Reply-To: <aYygzojdO0QACdqX@lizhi-Precision-Tower-5810>
-MIME-Version: 1.0
+However, one omission from the original binding was that all of these
+variants may have an optional reset.
 
-Hi,
+Add the new compatible, and also the resets property, with an example.
 
-Am Mittwoch, 11. Februar 2026, 16:31:26 CET schrieb Frank Li:
-> On Wed, Feb 11, 2026 at 03:49:48PM +0100, Alexander Stein wrote:
-> > This driver uses multiple regmaps, which will causes name conflicts
-> > in debugfs like:
-> >   debugfs: '5f1a0000.phy' already exists in 'regmap'
-> > Fix this by using a dedicated regmap config for each resource, each
-> > having a dedicated regmap name.
-> >
-> > Signed-off-by: Alexander Stein <alexander.stein@ew.tq-group.com>
-> > ---
-> Reviewed-by: Frank Li <Frank.Li@nxp.com>
+Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Reviewed-by: Peter Wang <peter.wang@mediatek.com>
+Acked-by: Conor Dooley <conor.dooley@microchip.com>
+Acked-by: Vinod Koul <vkoul@kernel.org>
+Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+---
+ .../devicetree/bindings/phy/mediatek,ufs-phy.yaml        | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
 
-gentle ping. Any additional feedback?
+diff --git a/Documentation/devicetree/bindings/phy/mediatek,ufs-phy.yaml b/Documentation/devicetree/bindings/phy/mediatek,ufs-phy.yaml
+index 6e2edd43fc2a..ee71dfa4e0c0 100644
+--- a/Documentation/devicetree/bindings/phy/mediatek,ufs-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/mediatek,ufs-phy.yaml
+@@ -27,6 +27,7 @@ properties:
+       - items:
+           - enum:
+               - mediatek,mt8195-ufsphy
++              - mediatek,mt8196-ufsphy
+           - const: mediatek,mt8183-ufsphy
+       - const: mediatek,mt8183-ufsphy
+ 
+@@ -43,6 +44,10 @@ properties:
+       - const: unipro
+       - const: mp
+ 
++  resets:
++    items:
++      - description: Optional UFS M-PHY reset.
++
+   "#phy-cells":
+     const: 0
+ 
+@@ -66,5 +71,16 @@ examples:
+         clock-names = "unipro", "mp";
+         #phy-cells = <0>;
+     };
++  - |
++    #include <dt-bindings/reset/mediatek,mt8196-resets.h>
++    ufs-phy@16800000 {
++        compatible = "mediatek,mt8196-ufsphy", "mediatek,mt8183-ufsphy";
++        reg = <0x16800000 0x10000>;
++        clocks = <&ufs_ao_clk 3>,
++                 <&ufs_ao_clk 5>;
++        clock-names = "unipro", "mp";
++        resets = <&ufs_ao_clk MT8196_UFSAO_RST0_UFS_MPHY>;
++        #phy-cells = <0>;
++    };
+ 
+ ...
 
-Best regards,
-Alexander
+-- 
+2.53.0
 
-> > Same as the one sent in December but with an updated CC list.
-> >
-> >  drivers/phy/freescale/phy-fsl-imx8qm-hsio.c | 23 +++++++++++++++++----
-> >  1 file changed, 19 insertions(+), 4 deletions(-)
-> >
-> > diff --git a/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c b/drivers/phy/=
-freescale/phy-fsl-imx8qm-hsio.c
-> > index 279b8ac7822df..4ab45c9f53dff 100644
-> > --- a/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c
-> > +++ b/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c
-> > @@ -107,7 +107,22 @@ static const char * const lan2_pcieb_clks[] =3D {"=
-apb_pclk2", "pclk2", "ctl1_crr",
-> >  static const char * const lan2_sata_clks[] =3D {"pclk2", "epcs_tx", "e=
-pcs_rx",
-> >  					      "phy1_crr", "misc_crr"};
-> >
-> > -static const struct regmap_config regmap_config =3D {
-> > +static const struct regmap_config regmap_phy_config =3D {
-> > +	.name =3D "phy",
-> > +	.reg_bits =3D 32,
-> > +	.val_bits =3D 32,
-> > +	.reg_stride =3D 4,
-> > +};
-> > +
-> > +static const struct regmap_config regmap_ctrl_config =3D {
-> > +	.name =3D "ctrl",
-> > +	.reg_bits =3D 32,
-> > +	.val_bits =3D 32,
-> > +	.reg_stride =3D 4,
-> > +};
-> > +
-> > +static const struct regmap_config regmap_misc_config =3D {
-> > +	.name =3D "misc",
-> >  	.reg_bits =3D 32,
-> >  	.val_bits =3D 32,
-> >  	.reg_stride =3D 4,
-> > @@ -562,19 +577,19 @@ static int imx_hsio_probe(struct platform_device =
-*pdev)
-> >  		return PTR_ERR(priv->base);
-> >
-> >  	off =3D devm_platform_ioremap_resource_byname(pdev, "phy");
-> > -	priv->phy =3D devm_regmap_init_mmio(dev, off, &regmap_config);
-> > +	priv->phy =3D devm_regmap_init_mmio(dev, off, &regmap_phy_config);
-> >  	if (IS_ERR(priv->phy))
-> >  		return dev_err_probe(dev, PTR_ERR(priv->phy),
-> >  				     "unable to find phy csr registers\n");
-> >
-> >  	off =3D devm_platform_ioremap_resource_byname(pdev, "ctrl");
-> > -	priv->ctrl =3D devm_regmap_init_mmio(dev, off, &regmap_config);
-> > +	priv->ctrl =3D devm_regmap_init_mmio(dev, off, &regmap_ctrl_config);
-> >  	if (IS_ERR(priv->ctrl))
-> >  		return dev_err_probe(dev, PTR_ERR(priv->ctrl),
-> >  				     "unable to find ctrl csr registers\n");
-> >
-> >  	off =3D devm_platform_ioremap_resource_byname(pdev, "misc");
-> > -	priv->misc =3D devm_regmap_init_mmio(dev, off, &regmap_config);
-> > +	priv->misc =3D devm_regmap_init_mmio(dev, off, &regmap_misc_config);
-> >  	if (IS_ERR(priv->misc))
-> >  		return dev_err_probe(dev, PTR_ERR(priv->misc),
-> >  				     "unable to find misc csr registers\n");
-> > --
-> > 2.43.0
-> >
->=20
-
-
-=2D-=20
-TQ-Systems GmbH | M=FChlstra=DFe 2, Gut Delling | 82229 Seefeld, Germany
-Amtsgericht M=FCnchen, HRB 105018
-Gesch=E4ftsf=FChrer: Detlef Schneider, R=FCdiger Stahl, Stefan Schneider
-http://www.tq-group.com/
---nextPart10034661.T7Z3S40VBb
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part.
-Content-Transfer-Encoding: 7Bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEByESxqszIvkmWRwbaS+g2M0Z/iUFAmmoQ4MACgkQaS+g2M0Z
-/iXEwAf9GBONzrpx0QZxqc/tjXVVNBxtfFMIWIpmqhW2P3EqsUIygmNtmMcUnPel
-7DAxvDtWy78DIFN+X25IKGbfsvNvtCwSk60RBJS/w5ZSIl3RrMUiaCjg73DKp615
-E/4cBrbdhPzarLe4AbsYGqmOWh66JITuqA25STPr9TV3+n+fWLN8Yi4mBWO6159N
-zGEORkXKrKIL9igOncF3N0twnqCBoD/PgKV98OABPY6gxEQRI6PiugImylCxDzNX
-AzaAqwAdmRcgkpFemCGZ2VvCQmXgqmz8eHKr5cpBgQgob2n+MW2TPx2gTpsOopGz
-XqbH935kCh8B2o+L29CoshVgIOpHEQ==
-=XFgl
------END PGP SIGNATURE-----
-
---nextPart10034661.T7Z3S40VBb--
-
-
-
-
-
---===============6733437340105676058==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============6733437340105676058==--
-
-
-
-
