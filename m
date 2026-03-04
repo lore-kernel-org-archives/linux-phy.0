@@ -4,112 +4,146 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 49370EB7EB6
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Mar 2026 10:27:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7B97DEB7EBC
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Mar 2026 10:32:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=klbMs8DZz7aH1wPZldDhIHk95v+50Fq/zVhyRbPvKVo=; b=a8QlRssq2VMm7Z
-	9e7dHDXqDa5I9gXRBrAKNvmbO61ffJx4luKFAeKxcT2jWuCwwAn0bkiImzqmcmhzIIiIXQptkAZ+m
-	RPQ7DT81fupoU4BpKbyZS1jFXrufN45aLzquJlnP+QqLQgwXes0/+PTvItbGCnUJZp7JOE3ddOIN1
-	B5Kzx1RqXMo5cp4RNcoO2RheQnnipVdH/w/90Q0mMYe4UbMZWbu3RN/9Uf9ldIeODzhu+K7NcEwxu
-	V+/PhdXlGbKrx3sYIRbjq7I1PAPZkK6Eijb1oRGxKCpRCwL1kw6+4hZTvOAJ0Ww+YSdtz9aEfc0V+
-	3AY7Zq8WRkEcMLsYiXVw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=R7Kdl8Cyztn2eiaE2NFmeKUUdnWqp3NeAymn2FeQd60=; b=FNf9PhS2Gxs81w
+	WSrG+3yxa9v34pCfyAfAZjcdY5tICBk2nfVTp7+tJcTG614iSsO17hLEkk+PB0iOD2khzfFoJj5ly
+	lkKkLTkySu20nQ/Az2+IZUs3S78qFlgND6fGljWq/aUtKNOwbiB7gtu6ODO7ULABhcaZx1JCluEAx
+	JpBhMOZZXg4oreB40482Syu3Jz9XIM2DWclAXmUAC0tbDDOiPVzNq++qK9FVpWcs9jwvZBXOif77A
+	Ba6pSl+pyJSnJzV5iLA0MKHsttniRKDiQKO/znq/XZT9GGRF0QkrtD1y52UWUDNA1ESxqcy6PQF71
+	9+VV6I90nIueGF2k3aJQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vxjRi-0000000GzYx-3GBi;
-	Wed, 04 Mar 2026 10:27:14 +0000
-Received: from mail-eastus2azon11011006.outbound.protection.outlook.com ([52.101.57.6] helo=BN8PR05CU002.outbound.protection.outlook.com)
+	id 1vxjWy-0000000GzqO-0GYB;
+	Wed, 04 Mar 2026 10:32:40 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vxjRg-0000000GzYc-2ajT
+	id 1vxjWv-0000000Gzq3-1rSZ
 	for linux-phy@lists.infradead.org;
-	Wed, 04 Mar 2026 10:27:13 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=LJsjUmz50F3UoOCUPJ5YSYdczKD2Ud4A8DE99krfAMBEoNL1TRKVkxggv+ymf/eqqnaQf4BYhcnjspJ3zd3DSoRt4B978eY9xHYWh1BV9oWzaQWp+tMHS9QISDhdo7DPmtxL7z0eYwtgA+MiDIklm7jMv33AHcrnx14CxhcYjJoEzWquYZPTXtS/lgNF7YOFGRxg8m4PFF4n640ORQI4Lhn74J0auh1rMWpDxMsfJml9r4r2aEBncLPaH2+6+gT4S5vHtjBnYVYuAZWEFJSpJyEq21mC+LIDEm1gX3GrP3GLJk8as9diZlkhqj5fv8HDnzEzC7GuWmI8lNDrMWP2JQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=vScpLzeCgkRB/AJvaibBwE/DpSCyziQRav85tYqRakw=;
- b=x988GfrWbNKgmioiHu83x43FGbO8VteJVtgNBlMPgYvE3voQC59BhQAsIIu9hS/s11MM5Pm7SJFPDWRG73KXJA/64+6uRmr9msKX1cZVUvz/TTzL/UinSo5mHhLlRzo3OOQExImt5bD7POirO+rSVrtqAxACQ4qfVlDbpkHWhX54wr29Z1g/sE+E7mbKCN2V72QnyCQz6Sf0Is25Oin/XPn/8QdVpm/aCBUAgaQqFpTJOw1XLSw4EMcN9QKX9hF7YE4x9AtZ3t8DE9sIgpi2Ebhri2V+uhGlXwyl1+vMMyoPYjSwXoW2tECwBx9uguKJlwjCVAgo/eBsSVXPmLkpaQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 216.228.117.160) smtp.rcpttodomain=kernel.org smtp.mailfrom=nvidia.com;
- dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
- dkim=none (message not signed); arc=none (0)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=vScpLzeCgkRB/AJvaibBwE/DpSCyziQRav85tYqRakw=;
- b=GV+rD+sxozat/UNgGY0LXsDCBhGf0bjAlyTwVoXn9Luu3B3cIbca9KlswOR2jg+niFWdgywhD9NgyaCGlt95bwD5MTuxD5Q5Ss/FWDP2Xf960oSA+crzSNu7LHngkjuPs+Wpi0CaTRCdlbGGepSwXpDJs+b+w6+gt2uVlAFCDwtRLz8ZKCqYNgN6c1lIET1HEEQXajSgLPQ+wsLdIXU5yhwjYsBpXzdihVIwPchdbijoTd9h2mZPJX+38uuJYIKPntJdpXLSI6CWOgcRpVD6il0ZDLhM4a4PnKkyyVqEM4Euj+B4fSgHqBr+lOvN0we3utyPVZAgyaTdsENbXwgwdQ==
-Received: from SJ0PR05CA0034.namprd05.prod.outlook.com (2603:10b6:a03:33f::9)
- by CY5PR12MB6575.namprd12.prod.outlook.com (2603:10b6:930:41::17) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9678.17; Wed, 4 Mar
- 2026 10:27:04 +0000
-Received: from SJ1PEPF0000231C.namprd03.prod.outlook.com
- (2603:10b6:a03:33f:cafe::8) by SJ0PR05CA0034.outlook.office365.com
- (2603:10b6:a03:33f::9) with Microsoft SMTP Server (version=TLS1_3,
- cipher=TLS_AES_256_GCM_SHA384) id 15.20.9654.19 via Frontend Transport; Wed,
- 4 Mar 2026 10:27:04 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.160)
- smtp.mailfrom=nvidia.com; dkim=none (message not signed)
- header.d=none;dmarc=pass action=none header.from=nvidia.com;
-Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
- 216.228.117.160 as permitted sender) receiver=protection.outlook.com;
- client-ip=216.228.117.160; helo=mail.nvidia.com; pr=C
-Received: from mail.nvidia.com (216.228.117.160) by
- SJ1PEPF0000231C.mail.protection.outlook.com (10.167.242.233) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.9654.16 via Frontend Transport; Wed, 4 Mar 2026 10:27:03 +0000
-Received: from rnnvmail204.nvidia.com (10.129.68.6) by mail.nvidia.com
- (10.129.200.66) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Wed, 4 Mar
- 2026 02:26:53 -0800
-Received: from rnnvmail201.nvidia.com (10.129.68.8) by rnnvmail204.nvidia.com
- (10.129.68.6) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Wed, 4 Mar
- 2026 02:26:52 -0800
-Received: from 5b171f0-lcelt.nvidia.com (10.127.8.13) by mail.nvidia.com
- (10.129.68.8) with Microsoft SMTP Server id 15.2.2562.20 via Frontend
- Transport; Wed, 4 Mar 2026 02:26:50 -0800
-From: Wei-Cheng Chen <weichengc@nvidia.com>
-To: <jckuo@nvidia.com>, <vkoul@kernel.org>, <neil.armstrong@linaro.org>,
-	<thierry.reding@gmail.com>, <jonathanh@nvidia.com>
-CC: <linux-phy@lists.infradead.org>, <linux-tegra@vger.kernel.org>,
-	<linux-kernel@vger.kernel.org>, <waynec@nvidia.com>, <wtsai@nvidia.com>,
-	Wei-Cheng Chen <weichengc@nvidia.com>
-Subject: [PATCH] phy: tegra: xusb: Fix per-pad high-speed termination calibration
-Date: Wed, 4 Mar 2026 18:26:49 +0800
-Message-ID: <20260304102649.3670783-1-weichengc@nvidia.com>
-X-Mailer: git-send-email 2.43.0
+	Wed, 04 Mar 2026 10:32:38 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6245SWQM152585
+	for <linux-phy@lists.infradead.org>; Wed, 4 Mar 2026 10:32:36 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	kD/fzWEvkZUb0Aeqg8CKGCrD5Hp3noy4/2L2GfbrChM=; b=MWP4kULZIakaZCeO
+	zhzxs6HaMnpq6PTEhvzCmOWcBPwLWJDftweYgysUed37fsAXuwVfCd2oBjoLFi1B
+	T6XXLOdfbetJbHBfoVgiKhY21BGQQ2ED0UL02T6p41/FjXU8y/cUQvh8K/rc55YZ
+	TMiFTvFp1XjDViTIM6PZrwuuzYM0ksMjSE9N1NdMmDftTJIepgfkkLvoAN/9zJHE
+	Myh+Sj9qaM1jKGtoNULr/NnOH+OqDSlduGB3RBhH+vwFA3LcE/6R/OJ2r7ah6MKN
+	SJ2/13hV4mrq+XaaVMg9l32dYsukJenGzA32E2uJPZ6BljQZrqQbO8iKVlFsVccs
+	PGSNNg==
+Received: from mail-qk1-f199.google.com (mail-qk1-f199.google.com [209.85.222.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4cp3tvk9c7-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Wed, 04 Mar 2026 10:32:36 +0000 (GMT)
+Received: by mail-qk1-f199.google.com with SMTP id af79cd13be357-8cb50dfd542so523062485a.0
+        for <linux-phy@lists.infradead.org>; Wed, 04 Mar 2026 02:32:36 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1772620355; x=1773225155; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=kD/fzWEvkZUb0Aeqg8CKGCrD5Hp3noy4/2L2GfbrChM=;
+        b=Ash1LbaR7T7FrPt8viqTBGuoPVrRvJ2ke9Yi0HrCyxbE54DgejMymi9hqFKffD31X/
+         Gi+75BiuMRn8cHUweYC/cp9Eqdw/GtF1YL4B5nlIHED5nyk+9w8smQIGZ6Rn3YD4fDEq
+         cAYfwAS61qXKBWdf0OwCQyMXK99uuKbS07bspZh4OiAQmU+wMqEkDMuEepDUYlPe2f5Y
+         5X5svT9EySwDe4ypqYwdAPWDwG0B466wkks1JUPbp+3BLpGuY8kwl3VHmbe0TUHASZDa
+         4lds8A8qc7gH4+HzqwHo5KK8nNPnnxxgeJcg6qHs+IneH0eTrGD+TMrBvfrcS6Z6cddc
+         jfxg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1772620355; x=1773225155;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=kD/fzWEvkZUb0Aeqg8CKGCrD5Hp3noy4/2L2GfbrChM=;
+        b=YdR6LQCUnHWxT9Dv2n7oQiBw6oykK5vVVuzErSnNg6KwVk+uoxAnb769CptWytBe/B
+         rbWtLbJGFMQ+CuT104PDcVbnJwuiZVaspfJkhdm68i1GEQ6aVa4JUT+nSkh/H/EGUFgd
+         6QgiHi4VB6ihJzfygsB1q1wxcy/Am26cJON3SYhKtWyncHry2CJL9RWAwcujZ4OgzGbC
+         9I4cAz382Tuc5siiCJUboLYYbEzFiQA+cQU8UBQaLF7uTUspgAl6HqydvTZ2/4DFan6T
+         rQo+1BYGNua/ODlnyQRUzkdpMUMIEA7KOSaUh3f86Jk1Hv7lFz1KkjCZhG6gGpsElp/6
+         xecA==
+X-Forwarded-Encrypted: i=1; AJvYcCWu75hSzfFJnTZ2HIF1h4d2Z64mxiQd/HhyEggsA629/2BmyhiAaMtc8dxTQQfU0KcAcbpPqBqETkA=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yx/nSoS5NinpjzUqVI9YpnQi2NVGj7ZoZZB7WRcxOF48DcGsFjt
+	1wjqHxBn6ymtseSvuQ5V2MpzUBbNuT12zXSfEu9tEXfqZLxkMNZw3yjtZ8WmUTP1HzVs3WvLMk5
+	8uPT05viCVOLyRYz8ld/Fag/g+2PxpxXHvXhfP6JGK6ImUhB+8kGXBOLveEFOUMOcfFOx
+X-Gm-Gg: ATEYQzyCCdcjtrNiyIswIrnSwdEBB1EnLW0Wjx4TIWTD14L2VcICLLpmUJLhx2B68qh
+	nGod8SySPTTPCTOD90n6dUMtwYPxU6DhWcVA7LQeL4X7T9lx8zitm2MjL2K4CTX6PQkF/J6+WNm
+	Aiu4Pokq6hFDjTQYUFFTJluFTeXx4eCHT6NFpyZXCvtDun7drbGF928M/o0LdGOWMcSznYE+rvK
+	E9xMQIlVejS65q/kG8OnloQ3mkNhnjxSZtRFk7Rf4Apx/eQ3mLrJkumkxSvLVtp9UPqORA6pftH
+	4anhDTN082iwVlOFRFWtmYCT1R3ZbhH8YJyogKPS/AwjOonIpJBe/EcklgT5PnszytFO63PCMKb
+	m/7FrTAFd0rtMVQjEVGjnZmDqCD6vc1B7N9KOmET36utWmVd9Bw7T0ip4NHCTHNnSAstIOsQn+Y
+	/ZAMI=
+X-Received: by 2002:a05:620a:46a4:b0:8c5:3892:a554 with SMTP id af79cd13be357-8cd5af181b0mr131177485a.3.1772620355563;
+        Wed, 04 Mar 2026 02:32:35 -0800 (PST)
+X-Received: by 2002:a05:620a:46a4:b0:8c5:3892:a554 with SMTP id af79cd13be357-8cd5af181b0mr131175785a.3.1772620354995;
+        Wed, 04 Mar 2026 02:32:34 -0800 (PST)
+Received: from [192.168.119.254] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
+        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-660bf4d8249sm1224812a12.17.2026.03.04.02.32.32
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 04 Mar 2026 02:32:34 -0800 (PST)
+Message-ID: <5bdfb62f-c3d2-4705-a49c-8830577342f9@oss.qualcomm.com>
+Date: Wed, 4 Mar 2026 11:32:31 +0100
 MIME-Version: 1.0
-X-NV-OnPremToCloud: ExternallySecured
-X-EOPAttributedMessage: 0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: SJ1PEPF0000231C:EE_|CY5PR12MB6575:EE_
-X-MS-Office365-Filtering-Correlation-Id: 9ac05364-757f-442c-91f9-08de79d89448
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|36860700016|1800799024|82310400026|376014;
-X-Microsoft-Antispam-Message-Info: QJTOtYUiZKisyg7TOQkfsaKvdf+OZ59vzxHc8J/MtNP3TTbfY8oyhNyzYO6i+X+hPdze1NfHAtv5FhGeTkAlZ4iwmvg/TM9aZ+AaEKRadfBS9GQsGjCq3to7ognwI3LgEgkOFbZZycBcqYyhfvejPQwB+at52d7zRlg4W81HlmB9POZF1LkaWDl6igZ/KyVpxeG3GgkKDS7edKF1aylKOt4HwfUyKV6o/+/q5WYo+BSnrc9B+7jNDkafVvBSMogHZzGFmWd8C8X+BXP6PPKNNsev5GsQo2xv3L58cTBSOoitnfx37baG+6O2ukFnfqNrS5+QerQJdnGbLiv+nhLNKY9wJ355sgngnDqMtclkAKg5V9J0k+XOh20fE8FabgKmddh2v6sU7NqralzRc6WaYznUzDEOP1QYIe/Z9ek7JLb9IPqLH44F2dmK1yGx9xiqjRZ/FvG3+rRHwrcCoBUlQ9QkjU99JYMg3u19bjHNJztyRr14EJ50hlcBO/mBI3KdiTAPo/x2uZWnLUw8beJDnJKiBVdsPzaABTGSgZFl6kPPBmVz9c5QxETe/XZbNVJyNwsG6Skl6SEw63sA7vtnLGBe1ZOSlOwu1ur2pAO7NeCa6F8kX+36z/tD5DZ/yMLIrb8LJXMB4e5GKmYLHraCMgjUO2MZGh2LfjAQ3PquQoyRZo6hWCMz6QnNGRUppl6QAbWvM0cdQv8vs77fbxcbNyz0KxYUYe/XmFWraSQm8S1KT6pQo6za8OWX4mlf+9UKswz8vb2TC033EBQXzuWoBg==
-X-Forefront-Antispam-Report: CIP:216.228.117.160;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge1.nvidia.com;CAT:NONE;SFS:(13230040)(36860700016)(1800799024)(82310400026)(376014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: uInmFNRPEW9QNYEGxY6dhooAWQ6/G1IykxkOAJaFolm9btSnRkfGwwNgooUjnnYwdJeSmMe9SUmY00JMZpfSvgxQO8dqAGsywK+NHjWEAa3zZgrjyJwc2t6b4Yq3DKbswVk1Awm+3AnHoni970O/lkVpSz83ea6qWQhd1C1qnEmrDbneVWKvCFPoDJL7nPTxP4EpRvj1WRC6GNgRuPFLkmxE5+M+Jz9PpzvwGc9MJXj0H5j/zZt8OcLOJxVwMLH+Nbyq+rr6eZgyQwEr0gmJpJA9ekrhyfEF18Z2DFabXU4LWtCzvPz0spjALVjtEv+bKAIgKXOOEwCUdDLskXDoLCbrljfTBrxPJn1gaKFtVHbGJ5/LL/hGMpbduxLrBhI1c10KU1ACJV9Wp5mGCJPRFAX14rOY0OkHqXvvPPOU0Rmk5SFKDqa74SuGDSkKc+OR
-X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Mar 2026 10:27:03.9620
- (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 9ac05364-757f-442c-91f9-08de79d89448
-X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.160];Helo=[mail.nvidia.com]
-X-MS-Exchange-CrossTenant-AuthSource: SJ1PEPF0000231C.namprd03.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY5PR12MB6575
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 1/2] dt-bindings: phy: qcom: Add CSI2 C-PHY/DPHY schema
+To: Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
+        Bryan O'Donoghue <bod@nxsw.ie>, Bryan O'Donoghue <bod@kernel.org>,
+        Vijay Kumar Tumati <vijay.tumati@oss.qualcomm.com>,
+        Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Neil Armstrong <neil.armstrong@linaro.org>
+Cc: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
+        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org
+References: <20260226-x1e-csi2-phy-v3-0-11e608759410@linaro.org>
+ <20260226-x1e-csi2-phy-v3-1-11e608759410@linaro.org>
+ <c85fe457-c140-441c-93ed-342dce32e604@oss.qualcomm.com>
+ <676e2a9f-d274-40fa-988f-e9388ba40f71@nxsw.ie>
+ <04f22394-2dbb-4b7b-bce3-9b41ebfb7709@oss.qualcomm.com>
+ <1082062b-87a7-4254-b5e7-2dc3769a619f@linaro.org>
+Content-Language: en-US
+From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+In-Reply-To: <1082062b-87a7-4254-b5e7-2dc3769a619f@linaro.org>
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzA0MDA4MSBTYWx0ZWRfX3zrcCt038HES
+ +VPa3mtldFrFnSNPPTTA8zSdoApvMaSrsPcBfkl5vcgITJZI452d4Z77z1BDxDtsiWuDSbK4Pay
+ VFKJWFE5tvBgm8nXGv2QOT8tle24sBsrmPIiL5aJiYCbxsZP1aBkLdrd62s9EpIHkQMkpc4U67Y
+ VHVWwhKlWhHM9L5/+0I0Od6gHp4L8gWtOTylkUNm6VPyTz+KRQO0tHLYBNjN3A328HfC0Ej/HF2
+ xVjnbS5PwtY8JNSFzzyWrTq88ahdBpAWX9EXK0o3nsMytEapuKEhFIxPT7ZNAw/XrmX4HFqQxER
+ x4+jlQ4JKg7CbM5+gFh9FGaME5zzfN8eDzSkDQE9JQmv9AGM26EWIXBssyB2VowQbyX+fnxhHDs
+ bWYaIrCn7i+khIEaZutkEHYD1stOKmpaSn3OjadKCBqMz6W8Rapowm8MH6kOUeuFhj6tF0L3aaC
+ jiuq2Bevu+eWoSpRgyQ==
+X-Authority-Analysis: v=2.4 cv=VYv6/Vp9 c=1 sm=1 tr=0 ts=69a80a44 cx=c_pps
+ a=HLyN3IcIa5EE8TELMZ618Q==:117 a=FpWmc02/iXfjRdCD7H54yg==:17
+ a=IkcTkHD0fZMA:10 a=Yq5XynenixoA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=YMgV9FUhrdKAYTUUvYB2:22
+ a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=JUammnum_Y0_sDqSRXIA:9 a=QEXdDO2ut3YA:10
+ a=bTQJ7kPSJx9SKPbeHEYW:22
+X-Proofpoint-GUID: fEEO5twj_iMDhLFQQzMVFbNea1owMW4i
+X-Proofpoint-ORIG-GUID: fEEO5twj_iMDhLFQQzMVFbNea1owMW4i
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
+ definitions=2026-03-04_05,2026-03-03_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ clxscore=1015 lowpriorityscore=0 suspectscore=0 bulkscore=0 adultscore=0
+ spamscore=0 phishscore=0 priorityscore=1501 impostorscore=0 malwarescore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2602130000 definitions=main-2603040081
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260304_022712_684646_64FFEEF0 
-X-CRM114-Status: GOOD (  17.49  )
+X-CRM114-CacheID: sfid-20260304_023237_528421_C4561E54 
+X-CRM114-Status: GOOD (  11.55  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -126,149 +160,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Wayne Chang <waynec@nvidia.com>
+On 3/3/26 3:56 PM, Bryan O'Donoghue wrote:
+> On 03/03/2026 12:34, Konrad Dybcio wrote:
+>> That depends on the use case.
+>>
+>> MXA is always-on (that's the 'A' in the name, as opposed to 'C'
+>> for 'Collapsible'), but it's not always at the required performance
+>> state (svs, nom, etc.). For some clock controllers specifically, there
+>> is no need to put them into the picture, as the rail may be unconnected
+>> altogether, or only used for some retention mechanisms (which only
+>> require the rail to be enabled and nothing more)
+> 
+> Does this rail have an OPP table you can share ?
 
-The existing code reads a single hs_term_range_adj value from bit field
-[10:7] of FUSE_SKU_CALIB_0 and applies it to all USB2 pads uniformly.
-However, on SoCs that support per-pad termination, each pad has its own
-hs_term_range_adj field: pad 0 in FUSE_SKU_CALIB_0[10:7], and pads 1-3
-in FUSE_USB_CALIB_EXT_0 at bit offsets [8:5], [12:9], and [16:13]
-respectively.
+Camera clocks on X1 (mclks and the fixed PLL2, which is exclusively used
+to derive MCLKs) that potentially depend on this rail (awaiting Taniya's
+opinion on the other thread [1]) would only need LOWSVS_D1 for all of
+their configurations (ftbl_cam_cc_mclk0_clk_src[])
 
-Fix the calibration by reading per-pad values from the appropriate fuse
-registers. For SoCs that do not support per-pad termination, replicate
-pad 0's value to all pads to maintain existing behavior.
+i.e. let's wait for a definitive answer as there's a lot of layers..
 
-Add a has_per_pad_term flag to the SoC data to indicate whether per-pad
-termination values are available in FUSE_USB_CALIB_EXT_0.
+[1] https://lore.kernel.org/linux-arm-msm/382725b5-1e72-44b2-b9ae-38aea1f7a976@oss.qualcomm.com/
 
-Fixes: 1ef535c6ba8e ("phy: tegra: xusb: Add Tegra194 support")
-Cc: stable@vger.kernel.org
-Signed-off-by: Wayne Chang <waynec@nvidia.com>
-Signed-off-by: Wei-Cheng Chen <weichengc@nvidia.com>
----
- drivers/phy/tegra/xusb-tegra186.c | 33 ++++++++++++++++++++++++-------
- drivers/phy/tegra/xusb.h          |  1 +
- 2 files changed, 27 insertions(+), 7 deletions(-)
-
-diff --git a/drivers/phy/tegra/xusb-tegra186.c b/drivers/phy/tegra/xusb-tegra186.c
-index bec9616c4a2..4452e73fb82 100644
---- a/drivers/phy/tegra/xusb-tegra186.c
-+++ b/drivers/phy/tegra/xusb-tegra186.c
-@@ -20,8 +20,8 @@
- /* FUSE USB_CALIB registers */
- #define HS_CURR_LEVEL_PADX_SHIFT(x)	((x) ? (11 + (x - 1) * 6) : 0)
- #define HS_CURR_LEVEL_PAD_MASK		0x3f
--#define HS_TERM_RANGE_ADJ_SHIFT		7
--#define HS_TERM_RANGE_ADJ_MASK		0xf
-+#define HS_TERM_RANGE_ADJ_PADX_SHIFT(x)	((x) ? (5 + (x - 1) * 4) : 7)
-+#define HS_TERM_RANGE_ADJ_PAD_MASK	0xf
- #define HS_SQUELCH_SHIFT		29
- #define HS_SQUELCH_MASK			0x7
- 
-@@ -253,7 +253,7 @@
- struct tegra_xusb_fuse_calibration {
- 	u32 *hs_curr_level;
- 	u32 hs_squelch;
--	u32 hs_term_range_adj;
-+	u32 *hs_term_range_adj;
- 	u32 rpd_ctrl;
- };
- 
-@@ -930,7 +930,7 @@ static int tegra186_utmi_phy_power_on(struct phy *phy)
- 
- 	value = padctl_readl(padctl, XUSB_PADCTL_USB2_OTG_PADX_CTL1(index));
- 	value &= ~TERM_RANGE_ADJ(~0);
--	value |= TERM_RANGE_ADJ(priv->calib.hs_term_range_adj);
-+	value |= TERM_RANGE_ADJ(priv->calib.hs_term_range_adj[index]);
- 	value &= ~RPD_CTRL(~0);
- 	value |= RPD_CTRL(priv->calib.rpd_ctrl);
- 	padctl_writel(padctl, value, XUSB_PADCTL_USB2_OTG_PADX_CTL1(index));
-@@ -1464,17 +1464,23 @@ static const char * const tegra186_usb3_functions[] = {
- static int
- tegra186_xusb_read_fuse_calibration(struct tegra186_xusb_padctl *padctl)
- {
-+	const struct tegra_xusb_padctl_soc *soc = padctl->base.soc;
- 	struct device *dev = padctl->base.dev;
- 	unsigned int i, count;
- 	u32 value, *level;
-+	u32 *hs_term_range_adj;
- 	int err;
- 
--	count = padctl->base.soc->ports.usb2.count;
-+	count = soc->ports.usb2.count;
- 
- 	level = devm_kcalloc(dev, count, sizeof(u32), GFP_KERNEL);
- 	if (!level)
- 		return -ENOMEM;
- 
-+	hs_term_range_adj = devm_kcalloc(dev, count, sizeof(u32), GFP_KERNEL);
-+	if (!hs_term_range_adj)
-+		return -ENOMEM;
-+
- 	err = tegra_fuse_readl(TEGRA_FUSE_SKU_CALIB_0, &value);
- 	if (err)
- 		return dev_err_probe(dev, err,
-@@ -1490,8 +1496,8 @@ tegra186_xusb_read_fuse_calibration(struct tegra186_xusb_padctl *padctl)
- 
- 	padctl->calib.hs_squelch = (value >> HS_SQUELCH_SHIFT) &
- 					HS_SQUELCH_MASK;
--	padctl->calib.hs_term_range_adj = (value >> HS_TERM_RANGE_ADJ_SHIFT) &
--						HS_TERM_RANGE_ADJ_MASK;
-+	hs_term_range_adj[0] = (value >> HS_TERM_RANGE_ADJ_PADX_SHIFT(0)) &
-+				HS_TERM_RANGE_ADJ_PAD_MASK;
- 
- 	err = tegra_fuse_readl(TEGRA_FUSE_USB_CALIB_EXT_0, &value);
- 	if (err) {
-@@ -1503,6 +1509,17 @@ tegra186_xusb_read_fuse_calibration(struct tegra186_xusb_padctl *padctl)
- 
- 	padctl->calib.rpd_ctrl = (value >> RPD_CTRL_SHIFT) & RPD_CTRL_MASK;
- 
-+	for (i = 1; i < count; i++) {
-+		if (soc->has_per_pad_term)
-+			hs_term_range_adj[i] =
-+				(value >> HS_TERM_RANGE_ADJ_PADX_SHIFT(i)) &
-+				HS_TERM_RANGE_ADJ_PAD_MASK;
-+		else
-+			hs_term_range_adj[i] = hs_term_range_adj[0];
-+	}
-+
-+	padctl->calib.hs_term_range_adj = hs_term_range_adj;
-+
- 	return 0;
- }
- 
-@@ -1708,6 +1725,7 @@ const struct tegra_xusb_padctl_soc tegra194_xusb_padctl_soc = {
- 	.num_supplies = ARRAY_SIZE(tegra194_xusb_padctl_supply_names),
- 	.supports_gen2 = true,
- 	.poll_trk_completed = true,
-+	.has_per_pad_term = true,
- };
- EXPORT_SYMBOL_GPL(tegra194_xusb_padctl_soc);
- 
-@@ -1732,6 +1750,7 @@ const struct tegra_xusb_padctl_soc tegra234_xusb_padctl_soc = {
- 	.trk_hw_mode = false,
- 	.trk_update_on_idle = true,
- 	.supports_lp_cfg_en = true,
-+	.has_per_pad_term = true,
- };
- EXPORT_SYMBOL_GPL(tegra234_xusb_padctl_soc);
- #endif
-diff --git a/drivers/phy/tegra/xusb.h b/drivers/phy/tegra/xusb.h
-index d2b5f956513..810b410672f 100644
---- a/drivers/phy/tegra/xusb.h
-+++ b/drivers/phy/tegra/xusb.h
-@@ -436,6 +436,7 @@ struct tegra_xusb_padctl_soc {
- 	bool trk_hw_mode;
- 	bool trk_update_on_idle;
- 	bool supports_lp_cfg_en;
-+	bool has_per_pad_term;
- };
- 
- struct tegra_xusb_padctl {
--- 
-2.43.0
-
+Konrad
 
 -- 
 linux-phy mailing list
