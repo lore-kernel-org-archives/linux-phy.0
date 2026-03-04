@@ -4,53 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 457D6EF8FF8
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Mar 2026 14:54:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A1CDDEF8FF3
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Mar 2026 14:54:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IkoCagHqJfogTHig3D696cEAiKAz1y1zMwqtw/lpEyg=; b=gDy1gg8GxAgFUP
-	7PcTZoYfNOrCr2He6gipdA/IA2CnRdq2ZYUhd9KkNI6T98iwmcusozgKFnaFZrpae74SbUaTRLTDY
-	xXzQSSwfyekTpSeUi2PRfCPEtfpEJbEKPNuC98rAjXtDKnkMSVGVBqlKPIVu+9he0Je42XI8424X0
-	Yfi9dlG813PKdXyDcECRmZUVaCGW6TUr3VoXO6V1+AG3AvBcZsY9fZANZXCFCEJtMe6u9Z13RG1L/
-	X3eRqgCbtayGRqID/KphfbSBLrKx4vkc9dhZNBGYrim6VByBP/3LQwhzFDv1QWt5FSNs0DNvy3Gfh
-	XjcIySg3B7NLmS2R0bSw==;
+	List-Owner; bh=tixWlsuCjHdJ8L3SdE6zBpMWttKcg6FaIYKITt7ajiY=; b=3s8sBRZe4CzUJ4
+	weD3Q8hLwNSZblNGpEIfwfwr2GOP0UoRGXQFRGwWUwp3byNz6l8JBHf4dwhcNLsfXWFafx1bkVmok
+	pT4yyt0o80iDH28HsRbIc7vpObRNrrabYXdbZl3B3jOlPY8ylgWWQLRsIlFsefvaHdYIl0YqaRs6T
+	JJ9tu70QpgO4x6IuDrTfEF0U5sppODhuWF9NLssp9+IKUFMSpXn8PJmlcpyCyyoxjGKsePjfV3SP/
+	5bnbwK2FeuTaMiX98jXcDeVDvfTUC5jeqt6D+08o7kDAxr4NDsHXNI8GwOhzz8AlffS85EzSANAd5
+	9fHF8d8AxrD9QRV/iIoA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vxncO-0000000HSly-3e93;
-	Wed, 04 Mar 2026 14:54:32 +0000
+	id 1vxncZ-0000000HSwy-12xS;
+	Wed, 04 Mar 2026 14:54:43 +0000
 Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vxncL-0000000HSgz-3zE9;
-	Wed, 04 Mar 2026 14:54:31 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1772636060; cv=none; 
+	id 1vxncW-0000000HStr-1ajA;
+	Wed, 04 Mar 2026 14:54:41 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1772636070; cv=none; 
 	d=zohomail.com; s=zohoarc; 
-	b=IkFcR+ACxOSuZ6h08RP7eOUQjM5pRmMGNIAXyzmK3q3ozi+c4vcaC1evXiMnFXJHnHBu1TWS7JVRa0bTO7StJioHlNlEnZXQd5Mq6VX4EwYBsHG1GKlRMWIbUS2TjnY+JXWzSQwpAOuOsckQyUJ52lg4SMg6xAlGHCGMewxrwUg=
+	b=Qb8JNV5/QP17oFWTUQYigEZMt9KCnYVDtTWwvLgZBKpI/+7W2KRtFy4U2/Oz5LNgSCC6Feh1vDOF3H4uBYjv9d9oIjeUmnG/I61GPaa4MLSwSGBfPcwDoBRhYFGePsZBtYNeaKJpZD0Vz1n+noK4ABUKgm6OJbs2dR7vDCGprIM=
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1772636060; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=d9XFO+6vVicvKYzyxt4XDXnPuWzQjPnCjS9mL4eNcmY=; 
-	b=VMLQsFW5/wxar6i7Nl5IDtS/CWB4lTWMMoZ9oFC/Ng6MBj3ez5wgN+x6ZYiCtOYBC9GVxHo6ZaFF1tu8GTWQ6OyM68YwEJObssTiGa53GRLcukTJS4Daj7lcgHVYQ6DD734hZkfwmqLh4FrorpUPtcENnmyKmgbsdpMHt282TPU=
+	t=1772636070; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=au/PFvBm4Y6c/Oc5xEFsRbs7vzM0l5TSt2QALrMYuJA=; 
+	b=J/JFI9dAR+vi90g+tAM8T9ACQeYO0LjlZNpBgT/BAI21i7+qyPu5h3vBDMsDgl2mxPCqDexh/SoIRRlHLxI4wRsjhfYcCrN8g21lUKCwfeIw06ZxGscAxG0+quOQhG4GmeCzlmfrO92vWgpu7vG/ZCQi+bavr13uIaDLgg4NU7U=
 ARC-Authentication-Results: i=1; mx.zohomail.com;
 	dkim=pass  header.i=collabora.com;
 	spf=pass  smtp.mailfrom=nicolas.frattaroli@collabora.com;
 	dmarc=pass header.from=<nicolas.frattaroli@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1772636060;
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1772636070;
 	s=zohomail; d=collabora.com; i=nicolas.frattaroli@collabora.com;
 	h=From:From:Date:Date:Subject:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-Id:Message-Id:References:In-Reply-To:To:To:Cc:Cc:Reply-To;
-	bh=d9XFO+6vVicvKYzyxt4XDXnPuWzQjPnCjS9mL4eNcmY=;
-	b=bSatu8YvAk28dzdcFy/mda8+yHmI1/mw9xCAoafMo1+CRkYj+XdKYGCAL559ba51
-	O1oVLvm1EJJ3l5cNmJcuquEnVew7D0udzlX3Ye1UU8ZsgKdTDCeQwQ3HEW7rN07sSov
-	cHXn346VL9RQ3Q5P6qSveYX6L3qxn4dt8zn+7ST0=
-Received: by mx.zohomail.com with SMTPS id 1772636059013903.2401021804582;
-	Wed, 4 Mar 2026 06:54:19 -0800 (PST)
+	bh=au/PFvBm4Y6c/Oc5xEFsRbs7vzM0l5TSt2QALrMYuJA=;
+	b=NsVjCvVuFibMHR8q7R7oUfQ26Pd/f71MnMEoCJW72g6ShUuHRnmbOEv4wOvzGWyU
+	Xk43ADXIRGBvITPwh2vsABaz0enl8PMr8BUioqspN0rzH4MBszfBns3pipCpKRwqpOo
+	7NnV1QSXmuqotULWMmXQ0vfG/5GgKyPHMhI+xcE0=
+Received: by mx.zohomail.com with SMTPS id 1772636069999840.4920752243178;
+	Wed, 4 Mar 2026 06:54:29 -0800 (PST)
 From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-Date: Wed, 04 Mar 2026 15:53:14 +0100
-Subject: [PATCH v8 09/23] scsi: ufs: mediatek: Rework the crypt-boost stuff
+Date: Wed, 04 Mar 2026 15:53:16 +0100
+Subject: [PATCH v8 11/23] scsi: ufs: mediatek: Remove undocumented
+ downstream reset cruft
 MIME-Version: 1.0
-Message-Id: <20260304-mt8196-ufs-v8-9-5b0eac23314f@collabora.com>
+Message-Id: <20260304-mt8196-ufs-v8-11-5b0eac23314f@collabora.com>
 References: <20260304-mt8196-ufs-v8-0-5b0eac23314f@collabora.com>
 In-Reply-To: <20260304-mt8196-ufs-v8-0-5b0eac23314f@collabora.com>
 To: Alim Akhtar <alim.akhtar@samsung.com>, 
@@ -75,8 +76,8 @@ Cc: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>,
  Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 X-Mailer: b4 0.14.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260304_065430_024349_AF29CA57 
-X-CRM114-Status: GOOD (  15.21  )
+X-CRM114-CacheID: sfid-20260304_065440_467312_F24D29EA 
+X-CRM114-Status: GOOD (  14.20  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,82 +89,75 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SSBkb24ndCBrbm93IHdoZXRoZXIgdGhlIGNyeXB0LWJvb3N0IGZ1bmN0aW9uYWxpdHkgYXMgaXQg
-aXMgY3VycmVudGx5CmltcGxlbWVudGVkIGlzIGV2ZW4gYXBwcm9wcmlhdGUgZm9yIG1haW5saW5l
-LiBJdCBtaWdodCBiZSBiZXR0ZXIgZG9uZSBpbgpzb21lIGdlbmVyaWMgd2F5LiBCdXQgd2hhdCBJ
-IGRvIGtub3cgaXMgdGhhdCBJIGNhbiByZXdvcmsgdGhlIGNvZGUgdG8KbWFrZSBpdCBsZXNzIG9i
-dHVzZS4KClByZWZpeCB0aGUgYm9vc3Qgc3R1ZmYgd2l0aCB0aGUgYXBwcm9wcmlhdGUgdmVuZG9y
-IHByZWZpeCwgcmVtb3ZlIHRoZQpwb2ludGxlc3MgY2xvY2sgd3JhcHBlcnMsIGFuZCByZXdvcmsg
-dGhlIGZ1bmN0aW9uLgoKUmV2aWV3ZWQtYnk6IEFuZ2Vsb0dpb2FjY2hpbm8gRGVsIFJlZ25vIDxh
-bmdlbG9naW9hY2NoaW5vLmRlbHJlZ25vQGNvbGxhYm9yYS5jb20+ClJldmlld2VkLWJ5OiBQZXRl
-ciBXYW5nICjnjovkv6Hlj4spIDxwZXRlci53YW5nQG1lZGlhdGVrLmNvbT4KU2lnbmVkLW9mZi1i
-eTogTmljb2xhcyBGcmF0dGFyb2xpIDxuaWNvbGFzLmZyYXR0YXJvbGlAY29sbGFib3JhLmNvbT4K
-LS0tCiBkcml2ZXJzL3Vmcy9ob3N0L3Vmcy1tZWRpYXRlay5jIHwgODkgKysrKysrKysrKysrKyst
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KIDEgZmlsZSBjaGFuZ2VkLCAzMCBpbnNlcnRpb25z
-KCspLCA1OSBkZWxldGlvbnMoLSkKCmRpZmYgLS1naXQgYS9kcml2ZXJzL3Vmcy9ob3N0L3Vmcy1t
-ZWRpYXRlay5jIGIvZHJpdmVycy91ZnMvaG9zdC91ZnMtbWVkaWF0ZWsuYwppbmRleCAzOTIzODNl
-MDNhYjAuLjliN2Q3ZTRiYTRiYSAxMDA2NDQKLS0tIGEvZHJpdmVycy91ZnMvaG9zdC91ZnMtbWVk
-aWF0ZWsuYworKysgYi9kcml2ZXJzL3Vmcy9ob3N0L3Vmcy1tZWRpYXRlay5jCkBAIC01NjIsMjEg
-KzU2Miw2IEBAIHN0YXRpYyBpbnQgdWZzX210a19tcGh5X3Bvd2VyX29uKHN0cnVjdCB1ZnNfaGJh
-ICpoYmEsIGJvb2wgb24pCiAJcmV0dXJuIDA7CiB9CiAKLXN0YXRpYyBpbnQgdWZzX210a19nZXRf
-aG9zdF9jbGsoc3RydWN0IGRldmljZSAqZGV2LCBjb25zdCBjaGFyICpuYW1lLAotCQkJCXN0cnVj
-dCBjbGsgKipjbGtfb3V0KQotewotCXN0cnVjdCBjbGsgKmNsazsKLQlpbnQgZXJyID0gMDsKLQot
-CWNsayA9IGRldm1fY2xrX2dldChkZXYsIG5hbWUpOwotCWlmIChJU19FUlIoY2xrKSkKLQkJZXJy
-ID0gUFRSX0VSUihjbGspOwotCWVsc2UKLQkJKmNsa19vdXQgPSBjbGs7Ci0KLQlyZXR1cm4gZXJy
-OwotfQotCiBzdGF0aWMgdm9pZCB1ZnNfbXRrX2Jvb3N0X2NyeXB0KHN0cnVjdCB1ZnNfaGJhICpo
-YmEsIGJvb2wgYm9vc3QpCiB7CiAJc3RydWN0IHVmc19tdGtfaG9zdCAqaG9zdCA9IHVmc2hjZF9n
-ZXRfdmFyaWFudChoYmEpOwpAQCAtNjMzLDY1ICs2MTgsNTEgQEAgc3RhdGljIHZvaWQgdWZzX210
-a19ib29zdF9jcnlwdChzdHJ1Y3QgdWZzX2hiYSAqaGJhLCBib29sIGJvb3N0KQogCWNsa19kaXNh
-YmxlX3VucHJlcGFyZShjZmctPmNsa19jcnlwdF9tdXgpOwogfQogCi1zdGF0aWMgaW50IHVmc19t
-dGtfaW5pdF9ob3N0X2NsayhzdHJ1Y3QgdWZzX2hiYSAqaGJhLCBjb25zdCBjaGFyICpuYW1lLAot
-CQkJCSBzdHJ1Y3QgY2xrICoqY2xrKQotewotCWludCByZXQ7Ci0KLQlyZXQgPSB1ZnNfbXRrX2dl
-dF9ob3N0X2NsayhoYmEtPmRldiwgbmFtZSwgY2xrKTsKLQlpZiAocmV0KSB7Ci0JCWRldl9pbmZv
-KGhiYS0+ZGV2LCAiJXM6IGZhaWxlZCB0byBnZXQgJXM6ICVkIiwgX19mdW5jX18sCi0JCQkgbmFt
-ZSwgcmV0KTsKLQl9Ci0KLQlyZXR1cm4gcmV0OwotfQotCiBzdGF0aWMgdm9pZCB1ZnNfbXRrX2lu
-aXRfYm9vc3RfY3J5cHQoc3RydWN0IHVmc19oYmEgKmhiYSkKIHsKIAlzdHJ1Y3QgdWZzX210a19o
-b3N0ICpob3N0ID0gdWZzaGNkX2dldF92YXJpYW50KGhiYSk7CiAJc3RydWN0IHVmc19tdGtfY3J5
-cHRfY2ZnICpjZmc7CiAJc3RydWN0IGRldmljZSAqZGV2ID0gaGJhLT5kZXY7Ci0Jc3RydWN0IHJl
-Z3VsYXRvciAqcmVnOwotCXUzMiB2b2x0OworCWludCByZXQ7CiAKLQlob3N0LT5jcnlwdCA9IGRl
-dm1fa3phbGxvYyhkZXYsIHNpemVvZigqKGhvc3QtPmNyeXB0KSksCi0JCQkJICAgR0ZQX0tFUk5F
-TCk7Ci0JaWYgKCFob3N0LT5jcnlwdCkKLQkJZ290byBkaXNhYmxlX2NhcHM7CisJY2ZnID0gZGV2
-bV9remFsbG9jKGRldiwgc2l6ZW9mKCpjZmcpLCBHRlBfS0VSTkVMKTsKKwlpZiAoIWNmZykKKwkJ
-cmV0dXJuOwogCi0JcmVnID0gZGV2bV9yZWd1bGF0b3JfZ2V0X29wdGlvbmFsKGRldiwgImR2ZnNy
-Yy12Y29yZSIpOwotCWlmIChJU19FUlIocmVnKSkgewotCQlkZXZfaW5mbyhkZXYsICJmYWlsZWQg
-dG8gZ2V0IGR2ZnNyYy12Y29yZTogJWxkIiwKLQkJCSBQVFJfRVJSKHJlZykpOwotCQlnb3RvIGRp
-c2FibGVfY2FwczsKKwljZmctPnJlZ192Y29yZSA9IGRldm1fcmVndWxhdG9yX2dldF9vcHRpb25h
-bChkZXYsICJkdmZzcmMtdmNvcmUiKTsKKwlpZiAoSVNfRVJSKGNmZy0+cmVnX3Zjb3JlKSkgewor
-CQlkZXZfZXJyKGRldiwgIkZhaWxlZCB0byBnZXQgZHZmc3JjLXZjb3JlOiAlcGUiLCBjZmctPnJl
-Z192Y29yZSk7CisJCXJldHVybjsKIAl9CiAKLQlpZiAob2ZfcHJvcGVydHlfcmVhZF91MzIoZGV2
-LT5vZl9ub2RlLCAiYm9vc3QtY3J5cHQtdmNvcmUtbWluIiwKLQkJCQkgJnZvbHQpKSB7Ci0JCWRl
-dl9pbmZvKGRldiwgImZhaWxlZCB0byBnZXQgYm9vc3QtY3J5cHQtdmNvcmUtbWluIik7Ci0JCWdv
-dG8gZGlzYWJsZV9jYXBzOworCXJldCA9IG9mX3Byb3BlcnR5X3JlYWRfdTMyKGRldi0+b2Zfbm9k
-ZSwgIm1lZGlhdGVrLGJvb3N0LWNyeXB0LXZjb3JlLW1pbiIsCisJCQkJICAgJmNmZy0+dmNvcmVf
-dm9sdCk7CisJaWYgKHJldCkgeworCQlkZXZfZXJyKGRldiwgIkZhaWxlZCB0byBnZXQgbWVkaWF0
-ZWssYm9vc3QtY3J5cHQtdmNvcmUtbWluOiAlcGVcbiIsCisJCQlFUlJfUFRSKHJldCkpOworCQly
-ZXR1cm47CiAJfQogCi0JY2ZnID0gaG9zdC0+Y3J5cHQ7Ci0JaWYgKHVmc19tdGtfaW5pdF9ob3N0
-X2NsayhoYmEsICJjcnlwdF9tdXgiLAotCQkJCSAgJmNmZy0+Y2xrX2NyeXB0X211eCkpCi0JCWdv
-dG8gZGlzYWJsZV9jYXBzOworCWNmZy0+Y2xrX2NyeXB0X211eCA9IGRldm1fY2xrX2dldChkZXYs
-ICJjcnlwdF9tdXgiKTsKKwlpZiAoSVNfRVJSKGNmZy0+Y2xrX2NyeXB0X211eCkpIHsKKwkJZGV2
-X2VycihkZXYsICJGYWlsZWQgdG8gZ2V0IGNsb2NrIGNyeXB0X211eDogJXBlXG4iLCBjZmctPmNs
-a19jcnlwdF9tdXgpOworCQlyZXR1cm47CisJfQogCi0JaWYgKHVmc19tdGtfaW5pdF9ob3N0X2Ns
-ayhoYmEsICJjcnlwdF9scCIsCi0JCQkJICAmY2ZnLT5jbGtfY3J5cHRfbHApKQotCQlnb3RvIGRp
-c2FibGVfY2FwczsKKwljZmctPmNsa19jcnlwdF9scCA9IGRldm1fY2xrX2dldChkZXYsICJjcnlw
-dF9scCIpOworCWlmIChJU19FUlIoY2ZnLT5jbGtfY3J5cHRfbHApKSB7CisJCWRldl9lcnIoZGV2
-LCAiRmFpbGVkIHRvIGdldCBjbG9jayBjcnlwdF9scDogJXBlXG4iLCBjZmctPmNsa19jcnlwdF9s
-cCk7CisJCXJldHVybjsKKwl9CiAKLQlpZiAodWZzX210a19pbml0X2hvc3RfY2xrKGhiYSwgImNy
-eXB0X3BlcmYiLAotCQkJCSAgJmNmZy0+Y2xrX2NyeXB0X3BlcmYpKQotCQlnb3RvIGRpc2FibGVf
-Y2FwczsKKwljZmctPmNsa19jcnlwdF9wZXJmID0gZGV2bV9jbGtfZ2V0KGRldiwgImNyeXB0X3Bl
-cmYiKTsKKwlpZiAoSVNfRVJSKGNmZy0+Y2xrX2NyeXB0X3BlcmYpKSB7CisJCWRldl9lcnIoZGV2
-LCAiRmFpbGVkIHRvIGdldCBjbG9jayBjcnlwdF9wZXJmOiAlcGVcbiIsIGNmZy0+Y2xrX2NyeXB0
-X3BlcmYpOworCQlyZXR1cm47CisJfQogCi0JY2ZnLT5yZWdfdmNvcmUgPSByZWc7Ci0JY2ZnLT52
-Y29yZV92b2x0ID0gdm9sdDsKKwlob3N0LT5jcnlwdCA9IGNmZzsKIAlob3N0LT5jYXBzIHw9IFVG
-U19NVEtfQ0FQX0JPT1NUX0NSWVBUX0VOR0lORTsKLQotZGlzYWJsZV9jYXBzOgotCXJldHVybjsK
-IH0KIAogc3RhdGljIHZvaWQgdWZzX210a19pbml0X2hvc3RfY2FwcyhzdHJ1Y3QgdWZzX2hiYSAq
-aGJhKQoKLS0gCjIuNTMuMAoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBs
-aXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LXBoeQo=
+The MediaTek UFS host driver's probe function allows using a
+ti,syscon-reset as a reset, without going through the appropriate
+abstractions, or by documenting this in the binding at all.
+
+Remove this, it's downstream code and does not belong here.
+
+Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+---
+ drivers/ufs/host/ufs-mediatek.c | 32 +++-----------------------------
+ 1 file changed, 3 insertions(+), 29 deletions(-)
+
+diff --git a/drivers/ufs/host/ufs-mediatek.c b/drivers/ufs/host/ufs-mediatek.c
+index 3282b2d2d498..5f08fbbaa447 100644
+--- a/drivers/ufs/host/ufs-mediatek.c
++++ b/drivers/ufs/host/ufs-mediatek.c
+@@ -2383,38 +2383,12 @@ MODULE_DEVICE_TABLE(of, ufs_mtk_of_match);
+ static int ufs_mtk_probe(struct platform_device *pdev)
+ {
+ 	int err;
+-	struct device *dev = &pdev->dev, *phy_dev = NULL;
+-	struct device_node *reset_node, *phy_node = NULL;
+-	struct platform_device *reset_pdev, *phy_pdev = NULL;
+-	struct device_link *link;
+ 	struct ufs_hba *hba;
++	struct platform_device *phy_pdev = NULL;
++	struct device *dev = &pdev->dev;
++	struct device_node *phy_node = NULL;
+ 	struct ufs_mtk_host *host;
+ 
+-	reset_node = of_find_compatible_node(NULL, NULL,
+-					     "ti,syscon-reset");
+-	if (!reset_node) {
+-		dev_notice(dev, "find ti,syscon-reset fail\n");
+-		goto skip_reset;
+-	}
+-	reset_pdev = of_find_device_by_node(reset_node);
+-	if (!reset_pdev) {
+-		dev_notice(dev, "find reset_pdev fail\n");
+-		goto skip_reset;
+-	}
+-	link = device_link_add(dev, &reset_pdev->dev,
+-		DL_FLAG_AUTOPROBE_CONSUMER);
+-	put_device(&reset_pdev->dev);
+-	if (!link) {
+-		dev_notice(dev, "add reset device_link fail\n");
+-		goto skip_reset;
+-	}
+-	/* supplier is not probed */
+-	if (link->status == DL_STATE_DORMANT) {
+-		err = -EPROBE_DEFER;
+-		goto out;
+-	}
+-
+-skip_reset:
+ 	/* find phy node */
+ 	phy_node = of_parse_phandle(dev->of_node, "phys", 0);
+ 
+
+-- 
+2.53.0
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
