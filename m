@@ -4,58 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C4528EF8FE5
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Mar 2026 13:48:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3026EF8FED
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Mar 2026 14:37:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Cc:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=1Bwa7+lZt3G9Ksbf5psZTkdws88Th+iVv/HmO92Owag=; b=qY0V2+MArxPPAoBpkABoqyzPcF
-	IW67jARS6ar13kiikwy9OkmWLWwRQ+NmxrUfdfgpommPRvYPYBbidWLnmBfTxTJMVY8+FjDxvxjqK
-	g5eRP4D6WvtFPDChNp/XUR7tT9u82z4xNl9/XrVqyQ8ZsFwVd1ZC0KAUQoE4aKH1OD28tjU4pZsXS
-	zWEt3EAX9en1obQVfXvmv0E5xEOcKt5sudhdoD7eyiq92Hr9TARX21XdzcfSrbRRFH6FqwUu5N1VZ
-	08QkdrJ8Jklq7WMZeWl1swlQsDefjJ+MQlgdiMsSSQYn+T5Kt+spv20pcaVJ52R7i4Ir7dFpUEIsK
-	Wmd65Zvg==;
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=TU/DIfAu1VH1GU4NfSZl2HOZidy2erQfgxasDlJgNVk=; b=qGr7lnewYIm2r2y+Q/Xh62IwvE
+	F8wrAe/fC4orW3Sx5DtqxWDJWD9Zm/6a8woKFPnvf2WG1ZqFHJOIWu0k1QULSk0tvHpCwKySaz6wC
+	D8IBv3KuExIqhp0hInR2e4OGtu4Yom1PJv6rIBoTdlKi8dKRJzCWzxewH6hcC74OMm12R3t/vPzal
+	2QBxmVJtrJhd7v5x0RhUfVoN+q9GbuIT1oBa1Se5LD8vyuHo0OnJYtA8EbI+eMa4nlX0rPeAoiPbm
+	xII9wvL4yVIPi2blae6E0pGEUEQPEjE1vOVLimy17GAEqfPsf6rZf0XhLGlNOcGIcwnDptg8U6XmN
+	nTz8QtoQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vxma0-0000000HH7z-1ayz;
-	Wed, 04 Mar 2026 13:48:00 +0000
-Received: from mail-m19731107.qiye.163.com ([220.197.31.107])
+	id 1vxnLm-0000000HPmZ-1vk6;
+	Wed, 04 Mar 2026 14:37:22 +0000
+Received: from mx-relay164-hz1.antispameurope.com ([94.100.133.57])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vxmZw-0000000HH7W-1nXo;
-	Wed, 04 Mar 2026 13:47:58 +0000
-Received: from [172.16.12.14] (unknown [58.22.7.114])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 35bf2ed81;
-	Wed, 4 Mar 2026 21:47:52 +0800 (GMT+08:00)
-Cc: shawn.lin@rock-chips.com, linux-phy@lists.infradead.org,
- Heiko Stuebner <heiko@sntech.de>, Neil Armstrong
- <neil.armstrong@linaro.org>, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] phy: rockchip: naneng-combphy: configure SSC for PCIe on
- rk3588 and rk3576
-To: Vinod Koul <vkoul@kernel.org>, linux-rockchip@lists.infradead.org
-References: <1772619211-99875-1-git-send-email-shawn.lin@rock-chips.com>
-From: Shawn Lin <shawn.lin@rock-chips.com>
-Message-ID: <2aca186f-e252-19cf-f9ac-08cb15174bc9@rock-chips.com>
-Date: Wed, 4 Mar 2026 21:47:50 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101
- Thunderbird/78.11.0
+	id 1vxnLj-0000000HPla-3VGd
+	for linux-phy@lists.infradead.org;
+	Wed, 04 Mar 2026 14:37:21 +0000
+ARC-Authentication-Results: i=1; mx-gate164-hz1.hornetsecurity.com 1;
+ spf=pass reason=mailfrom (ip=94.100.132.6, headerfrom=ew.tq-group.com)
+ smtp.mailfrom=ew.tq-group.com smtp.helo=smtp-out01-hz1.hornetsecurity.com;
+ dmarc=pass header.from=ew.tq-group.com orig.disposition=pass
+ARC-Message-Signature: a=rsa-sha256;
+ bh=S65+QOpEDDtGcLkv1l5kDyDDm+1HHGKbmX7NekvLsrU=; c=relaxed/relaxed;
+ d=hornetsecurity.com; h=from:to:date:subject:mime-version:; i=1; s=hse1;
+ t=1772635028;
+ b=QBcpYdCNKkYjQzXyQwyZn6ZMhJ+dZsmGI+CintLvGaNFI2p2VEnQ0wNeh/eEBinC1QrDIyPA
+ dk3cInD6MXE1PmUvxk1TiIxKasPODrFd6Uo84hBhdLYFuMLrt1nrZEllInVaMopcUkjFFaoxHck
+ 0/5Goz+M/jA/9A1ZIDBz4lDIjb5XLcT+kjZBZvu1foY/LbfSwKxasi8XHjlLmQoqwPm/s7Bd7S9
+ QT3u1RGy/C6dkC6ZQqmC1Mut0YwIQZvxPENvMDtmf+LSjYXc7lR1jWbiWWU3b3lPH0AzNOeV3d5
+ tnpcgu/ITYgcaOgJRLLldIv2gITV90uw/GYDkN0FwEWmQ==
+ARC-Seal: a=rsa-sha256; cv=none; d=hornetsecurity.com; i=1; s=hse1;
+ t=1772635028;
+ b=VE0yAIME3Hg50MAqB8L+ElLgcTMDCnL7kSnjQYifQnRESMN71RBRS8zkfiDUoEvTXd6Gj14p
+ HYQWXTv3Sw2ys3GTD7plwCyMqSgZpTsTgH90DA3SF+wsaxHjD6lf2XzTsuXSgU9gZ6fzXEdEi9U
+ NE09GRJRdg731zDu2jfcVL9VgelwR4sDTZBwZbLCpoc7Ey7N1kLT/+h5hH6WSV39lEmtUH5255e
+ rtFT5tPme5E9bLVuyhmvYVNljMYh5/jmu4t6eG6UJvEGbaDBHxJI/Zq7mYgeLtpkBqsfBKzXVfp
+ Il47qs2qhPsGDharLi9usvrsd4Ss3XzYD5cuAyA3+hWIQ==
+Received: from he-nlb01-hz1.hornetsecurity.com ([94.100.132.6]) by mx-relay164-hz1.antispameurope.com;
+ Wed, 04 Mar 2026 15:37:08 +0100
+Received: from steina-w.localnet (host-82-135-125-110.customer.m-online.net [82.135.125.110])
+	(Authenticated sender: alexander.stein@ew.tq-group.com)
+	by smtp-out01-hz1.hornetsecurity.com (Postfix) with ESMTPSA id F2378A406A9;
+	Wed,  4 Mar 2026 15:36:51 +0100 (CET)
+From: Alexander Stein <alexander.stein@ew.tq-group.com>
+To: Frank Li <Frank.li@nxp.com>, Vinod Koul <vkoul@kernel.org>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-phy@lists.infradead.org,
+ imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: Re: [RESEND 1/1] phy: freescale: imx8qm-hsio: provide regmap names
+Date: Wed, 04 Mar 2026 15:36:51 +0100
+Message-ID: <4790031.44csPzL39Z@steina-w>
+Organization: TQ-Systems GmbH
+In-Reply-To: <aYygzojdO0QACdqX@lizhi-Precision-Tower-5810>
+References: <20260211144949.1128122-1-alexander.stein@ew.tq-group.com>
+ <aYygzojdO0QACdqX@lizhi-Precision-Tower-5810>
 MIME-Version: 1.0
-In-Reply-To: <1772619211-99875-1-git-send-email-shawn.lin@rock-chips.com>
-X-HM-Tid: 0a9cb91ae19909cckunmb1b70496122a5ef
-X-HM-MType: 1
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZQ05MQlZMS0hMGh5OGUxOSElWFRQJFh
-	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSU9PT0
-	hVSktLVUpCS0tZBg++
+X-cloud-security-sender: alexander.stein@ew.tq-group.com
+X-cloud-security-recipient: linux-phy@lists.infradead.org
+X-cloud-security-crypt: load encryption module
+X-cloud-security-Mailarchiv: E-Mail archived for: alexander.stein@ew.tq-group.com
+X-cloud-security-Mailarchivtype: outbound
+X-cloud-security-Virusscan: CLEAN
+X-cloud-security-disclaimer: This E-Mail was scanned by E-Mailservice on mx-relay164-hz1.antispameurope.com with 4fQwGr4Cjjz3xc4N
+X-cloud-security-connect: he-nlb01-hz1.hornetsecurity.com[94.100.132.6], TLS=1, IP=94.100.132.6
+X-cloud-security-Digest: cc7fdbe6e2458b426077c21ba7604f44
+X-cloud-security: scantime:6.857
 DKIM-Signature: a=rsa-sha256;
-	b=bUTpIk6De4Zk+Z8tVlqztc8LU4LztXPBJW1UU+X/dRJEYD8iQwMQcFQE03B81MY8YIL/mbU/jgqUUzypsOr0jFwksl2bEWhGdjzm1g/UtHTRToGDxZHKGqxEHGD37IgMvlsaALbjqHfK+JEUlBviihebvpHQMXBz9qpz5ybas5E=; s=default; c=relaxed/relaxed; d=rock-chips.com; v=1;
-	bh=+OeyBAAAjTeMYjPetfU4d2PR9NHaM+Szdg+cNZThpQw=;
-	h=date:mime-version:subject:message-id:from;
+ bh=S65+QOpEDDtGcLkv1l5kDyDDm+1HHGKbmX7NekvLsrU=; c=relaxed/relaxed;
+ d=ew.tq-group.com;
+ h=content-type:mime-version:subject:from:to:message-id:date; s=hse1;
+ t=1772635028; v=1;
+ b=EH86MbtXGrP2fMJSVQXaHSOkKql9dgUUPd91YhbYrxnsi8bm7YHFxOd8Pa0xGA7Z2cYdGqro
+ CpsmzHaq3ddnXYhbTxTNnd6Y/54G7a/6UClQLR28iYrQ9+B+1nJ9Bh8g5x0mrM/3wkzHuyA1ZfY
+ Dmcx3rAo2azKDApHdg7AswL+vguJVWLQL5gIdGOGi4daeRRDVxlKPcH+O7HFgpjbyA7w4808OBu
+ 0dMTtGvtUcd02iAXP/2+Wy5dZld32JRj5v4Ax/Z8H8ppGuUwbd3mQ011U+vUBKhGM+fziBXjiU3
+ Qs5upzqgAL82kdvnOlNbMWm7FCd/NKRqNJcQLvZl4TmDw==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260304_054757_087063_1538F911 
-X-CRM114-Status: GOOD (  26.83  )
+X-CRM114-CacheID: sfid-20260304_063720_011834_FE0F1687 
+X-CRM114-Status: GOOD (  23.29  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -67,112 +103,151 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="gbk"; Format="flowed"
+Content-Type: multipart/mixed; boundary="===============6733437340105676058=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-1NogMjAyNi8wMy8wNCDQx8bayP0gMTg6MTMsIFNoYXduIExpbiDQtLXAOgo+IEFkZCBhIGRlZGlj
-YXRlZCBmdW5jdGlvbiBya19jb21icGh5X2NmZ19zc2NfZm9yX3BjaWUoKSB0byBjb25maWd1cmUK
-PiBTcHJlYWQgU3BlY3RydW0gQ2xvY2tpbmcgKFNTQykgZm9yIHRoZSBQQ0llIFBIWSBvbiBjb21w
-YXRpYmxlIHBsYXRmb3Jtcy4KPiAKPiBUaGUgZnVuY3Rpb24gZmlyc3QgY2hlY2tzIHRoZSBkZXZp
-Y2UgdHJlZSBub2RlJ3MgY29tcGF0aWJsZSBzdHJpbmcuCj4gQ3VycmVudGx5LCBTU0MgdHVuaW5n
-IGlzIHNwZWNpZmljYWxseSBpbXBsZW1lbnRlZCBhbmQgYXBwbGllZCBvbmx5IGZvcgo+ICJyb2Nr
-Y2hpcCxyazM1ODgtbmFuZW5nLWNvbWJwaHkiIGFuZCAicm9ja2NoaXAscmszNTc2LW5hbmVuZy1j
-b21icGh5Ii4KPiAKClNvcnJ5LCBJIGFtZW5kZWQgdGhlIHBhdGNoIGluIHRoZSBsYXN0IG1pbnV0
-ZSBiZWZvcmUgc2VuZGluZyBpdCB3aGljaApzZWVtcyBub3QgYWJsZSB0byB3b3JrIGFmdGVyIHJl
-LXRlc3RpbmcuIFdpbGwgdXBkYXRlIHYyLgoKCj4gVGhlIGNvcnJlY3QgU1NDIGNvbmZpZ3VyYXRp
-b24gZm9yIHRoZXNlIHBsYXRmb3JtcyBpbnZvbHZlczoKPiAxLiAgRW5hYmxpbmcgU1NDIHZpYSB0
-aGUgUkszNTY4X1BIWVJFRzhfU1NDX0VOIGJpdC4KPiAyLiAgU2V0dGluZyB0aGUgUExMIFNTQyBt
-b2R1bGUgY29udHJvbCB2aWEgdGhlIG5ld2x5IGRlZmluZWQKPiAgICAgIFJLMzU2OF9QSFlSRUcz
-M19QTExfU1NDX0NUUkwgYml0Lgo+IDMuICBGb3IgUENJZSBwaHlzIHdpdGggYSAyNE1IeiByZWZl
-cmVuY2UgY2xvY2ssIGFkZGl0aW9uYWwgUExMIGxvb3AKPiAgICAgIGRpdmlkZXIgYW5kIHNpZ25h
-bCBhZGp1c3RtZW50IHZhbHVlcyBhcmUgcHJvZ3JhbW1lZCB0byBvcHRpbWl6Cj4gICAgICBwZXJm
-b3JtYW5jZS4KPiAKPiBUaGlzIFNTQyBjb25maWd1cmF0aW9uIGlzIGludGVuZGVkIHRvIGltcHJv
-dmUgRU1JIGNoYXJhY3RlcmlzdGljcyBvcgo+IG1lZXQgc3BlY2lmaWMgY2xvY2sgdG9sZXJhbmNl
-IHJlcXVpcmVtZW50cyBmb3IgUENJZSBpbnRlcmZhY2VzIG9uCj4gdGhlc2UgU29Dcy4KPiAKPiBT
-aWduZWQtb2ZmLWJ5OiBTaGF3biBMaW4gPHNoYXduLmxpbkByb2NrLWNoaXBzLmNvbT4KPiAtLS0K
-PiAKPiAgIGRyaXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC1uYW5lbmctY29tYnBoeS5j
-IHwgOTMgKysrKysrKysrKysrKy0tLS0tLS0tLQo+ICAgMSBmaWxlIGNoYW5nZWQsIDU1IGluc2Vy
-dGlvbnMoKyksIDM4IGRlbGV0aW9ucygtKQo+IAo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9y
-b2NrY2hpcC9waHktcm9ja2NoaXAtbmFuZW5nLWNvbWJwaHkuYyBiL2RyaXZlcnMvcGh5L3JvY2tj
-aGlwL3BoeS1yb2NrY2hpcC1uYW5lbmctY29tYnBoeS5jCj4gaW5kZXggYjYwZDZiZi4uYWEwOWQ3
-MSAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtbmFuZW5n
-LWNvbWJwaHkuYwo+ICsrKyBiL2RyaXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC1uYW5l
-bmctY29tYnBoeS5jCj4gQEAgLTEyMSw2ICsxMjEsNyBAQAo+ICAgI2RlZmluZSBSSzM1NjhfUEhZ
-UkVHMzJfU1NDX09GRlNFVF81MDBQUE0JMQo+ICAgCj4gICAjZGVmaW5lIFJLMzU2OF9QSFlSRUcz
-MwkJCQkweDgwCj4gKyNkZWZpbmUgUkszNTY4X1BIWVJFRzMzX1BMTF9TU0NfQ1RSTAkJQklUKDUp
-Cj4gICAjZGVmaW5lIFJLMzU2OF9QSFlSRUczM19QTExfS1ZDT19NQVNLCQlHRU5NQVNLKDQsIDIp
-Cj4gICAjZGVmaW5lIFJLMzU2OF9QSFlSRUczM19QTExfS1ZDT19TSElGVAkJMgo+ICAgI2RlZmlu
-ZSBSSzM1NjhfUEhZUkVHMzNfUExMX0tWQ09fVkFMVUUJCTIKPiBAQCAtOTY0LDYgKzk2NSw1NiBA
-QCBzdGF0aWMgY29uc3Qgc3RydWN0IHJvY2tjaGlwX2NvbWJwaHlfY2ZnIHJrMzU2OF9jb21icGh5
-X2NmZ3MgPSB7Cj4gICAJLmNvbWJwaHlfY2ZnCT0gcmszNTY4X2NvbWJwaHlfY2ZnLAo+ICAgfTsK
-PiAgIAo+ICtzdGF0aWMgdm9pZCBya19jb21icGh5X2NmZ19zc2NfZm9yX3BjaWUoc3RydWN0IHJv
-Y2tjaGlwX2NvbWJwaHlfcHJpdiAqcHJpdiwgdW5zaWduZWQgbG9uZyByYXRlKQo+ICt7Cj4gKwlz
-dHJ1Y3QgZGV2aWNlX25vZGUgKm5wID0gcHJpdi0+ZGV2LT5vZl9ub2RlOwo+ICsJdTMyIHZhbDsK
-PiArCj4gKwkvKiBTb21lIFNvQ3MnIGNvbWJwaHlzIHNoYXJlIHRoZSBzYW1lIFBDSWUgU1NDIHR1
-bmluZyByZXN1bHQgKi8KPiArCWlmICghb2ZfZGV2aWNlX2lzX2NvbXBhdGlibGUobnAsICJyb2Nr
-Y2hpcCxyazM1ODgtbmFuZW5nLWNvbWJwaHkiKSB8fAo+ICsJICAgICFvZl9kZXZpY2VfaXNfY29t
-cGF0aWJsZShucCwgInJvY2tjaGlwLHJrMzU3Ni1uYW5lbmctY29tYnBoeSIpKSB7Cj4gKwkJZGV2
-X3dhcm4ocHJpdi0+ZGV2LCAiSW5jb21wYXRpYmxlIHBsYXRmb3JtXG4iKTsKPiArCQlyZXR1cm47
-Cj4gKwl9Cj4gKwo+ICsJdmFsID0gcmVhZGwocHJpdi0+bW1pbyArIFJLMzU2OF9QSFlSRUc4KTsK
-PiArCXZhbCB8PSBSSzM1NjhfUEhZUkVHOF9TU0NfRU47Cj4gKwl3cml0ZWwodmFsLCBwcml2LT5t
-bWlvICsgUkszNTY4X1BIWVJFRzgpOwo+ICsKPiArCS8qIFBMTCBjb250cm9sIFNTQyBtb2R1bGUg
-cGVyaW9kIHNob3VsZCBiZSBzZXQgKi8KPiArCXZhbCA9IHJlYWRsKHByaXYtPm1taW8gKyBSSzM1
-NjhfUEhZUkVHMzMpOwo+ICsJdmFsIHw9IFJLMzU2OF9QSFlSRUczM19QTExfU1NDX0NUUkw7Cj4g
-Kwl3cml0ZWwodmFsLCBwcml2LT5tbWlvICsgUkszNTY4X1BIWVJFRzMzKTsKPiArCj4gKwlpZiAo
-cHJpdi0+dHlwZSA9PSBQSFlfVFlQRV9QQ0lFICYmIHJhdGUgPT0gUkVGX0NMT0NLXzI0TUh6KSB7
-Cj4gKwkJLyogU2V0IFBMTCBsb29wIGRpdmlkZXIgKi8KPiArCQl3cml0ZWwoMHgwMCwgcHJpdi0+
-bW1pbyArIFJLMzU3Nl9QSFlSRUcxNyk7Cj4gKwkJd3JpdGVsKFJLMzU2OF9QSFlSRUcxOF9QTExf
-TE9PUCwgcHJpdi0+bW1pbyArIFJLMzU2OF9QSFlSRUcxOCk7Cj4gKwo+ICsJCS8qIFNldCB1cCBy
-eF9wY2sgaW52ZXJ0IGFuZCByeCBtc2IgdG8gZGlzYWJsZSAqLwo+ICsJCXdyaXRlbCgweDAwLCBw
-cml2LT5tbWlvICsgUkszNTg4X1BIWVJFRzI3KTsKPiArCj4gKwkJLyoKPiArCQkgKiBTZXQgdXAg
-U1UgYWRqdXN0IHNpZ25hbDoKPiArCQkgKiBzdV90cmltWzc6MF0sICAgUExMIEtWQ08gYWRqdXN0
-IGJpdHNbMjowXSB0byBtaW4KPiArCQkgKiBzdV90cmltWzE1OjhdLCAgUExMIExQRiBSMSBhZHVq
-c3QgYml0c1s5OjddPTMnYjEwMQo+ICsJCSAqIHN1X3RyaW1bMjM6MTZdLCBDS1JDViBhZGp1c3QK
-PiArCQkgKiBzdV90cmltWzMxOjI0XSwgQ0tEUlYgYWRqdXN0Cj4gKwkJICovCj4gKwkJd3JpdGVs
-KDB4OTAsIHByaXYtPm1taW8gKyBSSzM1NjhfUEhZUkVHMTEpOwo+ICsJCXdyaXRlbCgweDAyLCBw
-cml2LT5tbWlvICsgUkszNTY4X1BIWVJFRzEyKTsKPiArCQl3cml0ZWwoMHgwOCwgcHJpdi0+bW1p
-byArIFJLMzU2OF9QSFlSRUcxMyk7Cj4gKwkJd3JpdGVsKDB4NTcsIHByaXYtPm1taW8gKyBSSzM1
-NjhfUEhZUkVHMTQpOwo+ICsJCXdyaXRlbCgweDQwLCBwcml2LT5tbWlvICsgUkszNTY4X1BIWVJF
-RzE1KTsKPiArCj4gKwkJd3JpdGVsKFJLMzU2OF9QSFlSRUcxNl9TU0NfQ05UX1ZBTFVFLCBwcml2
-LT5tbWlvICsgUkszNTY4X1BIWVJFRzE2KTsKPiArCj4gKwkJdmFsID0gRklFTERfUFJFUChSSzM1
-NjhfUEhZUkVHMzNfUExMX0tWQ09fTUFTSywKPiArCQkJCSBSSzM1NzZfUEhZUkVHMzNfUExMX0tW
-Q09fVkFMVUUpOwo+ICsJCXdyaXRlbCh2YWwsIHByaXYtPm1taW8gKyBSSzM1NjhfUEhZUkVHMzMp
-Owo+ICsJfQo+ICt9Cj4gKwo+ICAgc3RhdGljIGludCByazM1NzZfY29tYnBoeV9jZmcoc3RydWN0
-IHJvY2tjaGlwX2NvbWJwaHlfcHJpdiAqcHJpdikKPiAgIHsKPiAgIAljb25zdCBzdHJ1Y3Qgcm9j
-a2NoaXBfY29tYnBoeV9ncmZjZmcgKmNmZyA9IHByaXYtPmNmZy0+Z3JmY2ZnOwo+IEBAIC0xMTU2
-LDM5ICsxMjA3LDggQEAgc3RhdGljIGludCByazM1NzZfY29tYnBoeV9jZmcoc3RydWN0IHJvY2tj
-aGlwX2NvbWJwaHlfcHJpdiAqcHJpdikKPiAgIAkJfQo+ICAgCX0KPiAgIAo+IC0JaWYgKHByaXYt
-PmVuYWJsZV9zc2MpIHsKPiAtCQl2YWwgPSByZWFkbChwcml2LT5tbWlvICsgUkszNTY4X1BIWVJF
-RzgpOwo+IC0JCXZhbCB8PSBSSzM1NjhfUEhZUkVHOF9TU0NfRU47Cj4gLQkJd3JpdGVsKHZhbCwg
-cHJpdi0+bW1pbyArIFJLMzU2OF9QSFlSRUc4KTsKPiAtCj4gLQkJaWYgKHByaXYtPnR5cGUgPT0g
-UEhZX1RZUEVfUENJRSAmJiByYXRlID09IFJFRl9DTE9DS18yNE1Ieikgewo+IC0JCQkvKiBTZXQg
-UExMIGxvb3AgZGl2aWRlciAqLwo+IC0JCQl3cml0ZWwoMHgwMCwgcHJpdi0+bW1pbyArIFJLMzU3
-Nl9QSFlSRUcxNyk7Cj4gLQkJCXdyaXRlbChSSzM1NjhfUEhZUkVHMThfUExMX0xPT1AsIHByaXYt
-Pm1taW8gKyBSSzM1NjhfUEhZUkVHMTgpOwo+IC0KPiAtCQkJLyogU2V0IHVwIHJ4X3BjayBpbnZl
-cnQgYW5kIHJ4IG1zYiB0byBkaXNhYmxlICovCj4gLQkJCXdyaXRlbCgweDAwLCBwcml2LT5tbWlv
-ICsgUkszNTg4X1BIWVJFRzI3KTsKPiAtCj4gLQkJCS8qCj4gLQkJCSAqIFNldCB1cCBTVSBhZGp1
-c3Qgc2lnbmFsOgo+IC0JCQkgKiBzdV90cmltWzc6MF0sICAgUExMIEtWQ08gYWRqdXN0IGJpdHNb
-MjowXSB0byBtaW4KPiAtCQkJICogc3VfdHJpbVsxNTo4XSwgIFBMTCBMUEYgUjEgYWR1anN0IGJp
-dHNbOTo3XT0zJ2IxMDEKPiAtCQkJICogc3VfdHJpbVsyMzoxNl0sIENLUkNWIGFkanVzdAo+IC0J
-CQkgKiBzdV90cmltWzMxOjI0XSwgQ0tEUlYgYWRqdXN0Cj4gLQkJCSAqLwo+IC0JCQl3cml0ZWwo
-MHg5MCwgcHJpdi0+bW1pbyArIFJLMzU2OF9QSFlSRUcxMSk7Cj4gLQkJCXdyaXRlbCgweDAyLCBw
-cml2LT5tbWlvICsgUkszNTY4X1BIWVJFRzEyKTsKPiAtCQkJd3JpdGVsKDB4MDgsIHByaXYtPm1t
-aW8gKyBSSzM1NjhfUEhZUkVHMTMpOwo+IC0JCQl3cml0ZWwoMHg1NywgcHJpdi0+bW1pbyArIFJL
-MzU2OF9QSFlSRUcxNCk7Cj4gLQkJCXdyaXRlbCgweDQwLCBwcml2LT5tbWlvICsgUkszNTY4X1BI
-WVJFRzE1KTsKPiAtCj4gLQkJCXdyaXRlbChSSzM1NjhfUEhZUkVHMTZfU1NDX0NOVF9WQUxVRSwg
-cHJpdi0+bW1pbyArIFJLMzU2OF9QSFlSRUcxNik7Cj4gLQo+IC0JCQl2YWwgPSBGSUVMRF9QUkVQ
-KFJLMzU2OF9QSFlSRUczM19QTExfS1ZDT19NQVNLLAo+IC0JCQkJCSBSSzM1NzZfUEhZUkVHMzNf
-UExMX0tWQ09fVkFMVUUpOwo+IC0JCQl3cml0ZWwodmFsLCBwcml2LT5tbWlvICsgUkszNTY4X1BI
-WVJFRzMzKTsKPiAtCQl9Cj4gLQl9Cj4gKwlpZiAocHJpdi0+ZW5hYmxlX3NzYykKPiArCQlya19j
-b21icGh5X2NmZ19zc2NfZm9yX3BjaWUocHJpdiwgcmF0ZSk7Cj4gICAKPiAgIAlyZXR1cm4gMDsK
-PiAgIH0KPiBAQCAtMTM3MSwxMSArMTM5MSw4IEBAIHN0YXRpYyBpbnQgcmszNTg4X2NvbWJwaHlf
-Y2ZnKHN0cnVjdCByb2NrY2hpcF9jb21icGh5X3ByaXYgKnByaXYpCj4gICAJCX0KPiAgIAl9Cj4g
-ICAKPiAtCWlmIChwcml2LT5lbmFibGVfc3NjKSB7Cj4gLQkJdmFsID0gcmVhZGwocHJpdi0+bW1p
-byArIFJLMzU2OF9QSFlSRUc4KTsKPiAtCQl2YWwgfD0gUkszNTY4X1BIWVJFRzhfU1NDX0VOOwo+
-IC0JCXdyaXRlbCh2YWwsIHByaXYtPm1taW8gKyBSSzM1NjhfUEhZUkVHOCk7Cj4gLQl9Cj4gKwlp
-ZiAocHJpdi0+ZW5hYmxlX3NzYykKPiArCQlya19jb21icGh5X2NmZ19zc2NfZm9yX3BjaWUocHJp
-diwgcmF0ZSk7Cj4gICAKPiAgIAlyZXR1cm4gMDsKPiAgIH0KPiAKCi0tIApsaW51eC1waHkgbWFp
-bGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5m
-cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+--===============6733437340105676058==
+Content-Type: multipart/signed; boundary="nextPart10034661.T7Z3S40VBb";
+ micalg="pgp-sha512"; protocol="application/pgp-signature"
+
+--nextPart10034661.T7Z3S40VBb
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="iso-8859-1"; protected-headers="v1"
+From: Alexander Stein <alexander.stein@ew.tq-group.com>
+To: Frank Li <Frank.li@nxp.com>, Vinod Koul <vkoul@kernel.org>
+Date: Wed, 04 Mar 2026 15:36:51 +0100
+Message-ID: <4790031.44csPzL39Z@steina-w>
+Organization: TQ-Systems GmbH
+In-Reply-To: <aYygzojdO0QACdqX@lizhi-Precision-Tower-5810>
+MIME-Version: 1.0
+
+Hi,
+
+Am Mittwoch, 11. Februar 2026, 16:31:26 CET schrieb Frank Li:
+> On Wed, Feb 11, 2026 at 03:49:48PM +0100, Alexander Stein wrote:
+> > This driver uses multiple regmaps, which will causes name conflicts
+> > in debugfs like:
+> >   debugfs: '5f1a0000.phy' already exists in 'regmap'
+> > Fix this by using a dedicated regmap config for each resource, each
+> > having a dedicated regmap name.
+> >
+> > Signed-off-by: Alexander Stein <alexander.stein@ew.tq-group.com>
+> > ---
+> Reviewed-by: Frank Li <Frank.Li@nxp.com>
+
+gentle ping. Any additional feedback?
+
+Best regards,
+Alexander
+
+> > Same as the one sent in December but with an updated CC list.
+> >
+> >  drivers/phy/freescale/phy-fsl-imx8qm-hsio.c | 23 +++++++++++++++++----
+> >  1 file changed, 19 insertions(+), 4 deletions(-)
+> >
+> > diff --git a/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c b/drivers/phy/=
+freescale/phy-fsl-imx8qm-hsio.c
+> > index 279b8ac7822df..4ab45c9f53dff 100644
+> > --- a/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c
+> > +++ b/drivers/phy/freescale/phy-fsl-imx8qm-hsio.c
+> > @@ -107,7 +107,22 @@ static const char * const lan2_pcieb_clks[] =3D {"=
+apb_pclk2", "pclk2", "ctl1_crr",
+> >  static const char * const lan2_sata_clks[] =3D {"pclk2", "epcs_tx", "e=
+pcs_rx",
+> >  					      "phy1_crr", "misc_crr"};
+> >
+> > -static const struct regmap_config regmap_config =3D {
+> > +static const struct regmap_config regmap_phy_config =3D {
+> > +	.name =3D "phy",
+> > +	.reg_bits =3D 32,
+> > +	.val_bits =3D 32,
+> > +	.reg_stride =3D 4,
+> > +};
+> > +
+> > +static const struct regmap_config regmap_ctrl_config =3D {
+> > +	.name =3D "ctrl",
+> > +	.reg_bits =3D 32,
+> > +	.val_bits =3D 32,
+> > +	.reg_stride =3D 4,
+> > +};
+> > +
+> > +static const struct regmap_config regmap_misc_config =3D {
+> > +	.name =3D "misc",
+> >  	.reg_bits =3D 32,
+> >  	.val_bits =3D 32,
+> >  	.reg_stride =3D 4,
+> > @@ -562,19 +577,19 @@ static int imx_hsio_probe(struct platform_device =
+*pdev)
+> >  		return PTR_ERR(priv->base);
+> >
+> >  	off =3D devm_platform_ioremap_resource_byname(pdev, "phy");
+> > -	priv->phy =3D devm_regmap_init_mmio(dev, off, &regmap_config);
+> > +	priv->phy =3D devm_regmap_init_mmio(dev, off, &regmap_phy_config);
+> >  	if (IS_ERR(priv->phy))
+> >  		return dev_err_probe(dev, PTR_ERR(priv->phy),
+> >  				     "unable to find phy csr registers\n");
+> >
+> >  	off =3D devm_platform_ioremap_resource_byname(pdev, "ctrl");
+> > -	priv->ctrl =3D devm_regmap_init_mmio(dev, off, &regmap_config);
+> > +	priv->ctrl =3D devm_regmap_init_mmio(dev, off, &regmap_ctrl_config);
+> >  	if (IS_ERR(priv->ctrl))
+> >  		return dev_err_probe(dev, PTR_ERR(priv->ctrl),
+> >  				     "unable to find ctrl csr registers\n");
+> >
+> >  	off =3D devm_platform_ioremap_resource_byname(pdev, "misc");
+> > -	priv->misc =3D devm_regmap_init_mmio(dev, off, &regmap_config);
+> > +	priv->misc =3D devm_regmap_init_mmio(dev, off, &regmap_misc_config);
+> >  	if (IS_ERR(priv->misc))
+> >  		return dev_err_probe(dev, PTR_ERR(priv->misc),
+> >  				     "unable to find misc csr registers\n");
+> > --
+> > 2.43.0
+> >
+>=20
+
+
+=2D-=20
+TQ-Systems GmbH | M=FChlstra=DFe 2, Gut Delling | 82229 Seefeld, Germany
+Amtsgericht M=FCnchen, HRB 105018
+Gesch=E4ftsf=FChrer: Detlef Schneider, R=FCdiger Stahl, Stefan Schneider
+http://www.tq-group.com/
+--nextPart10034661.T7Z3S40VBb
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part.
+Content-Transfer-Encoding: 7Bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEByESxqszIvkmWRwbaS+g2M0Z/iUFAmmoQ4MACgkQaS+g2M0Z
+/iXEwAf9GBONzrpx0QZxqc/tjXVVNBxtfFMIWIpmqhW2P3EqsUIygmNtmMcUnPel
+7DAxvDtWy78DIFN+X25IKGbfsvNvtCwSk60RBJS/w5ZSIl3RrMUiaCjg73DKp615
+E/4cBrbdhPzarLe4AbsYGqmOWh66JITuqA25STPr9TV3+n+fWLN8Yi4mBWO6159N
+zGEORkXKrKIL9igOncF3N0twnqCBoD/PgKV98OABPY6gxEQRI6PiugImylCxDzNX
+AzaAqwAdmRcgkpFemCGZ2VvCQmXgqmz8eHKr5cpBgQgob2n+MW2TPx2gTpsOopGz
+XqbH935kCh8B2o+L29CoshVgIOpHEQ==
+=XFgl
+-----END PGP SIGNATURE-----
+
+--nextPart10034661.T7Z3S40VBb--
+
+
+
+
+
+--===============6733437340105676058==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============6733437340105676058==--
+
+
+
+
