@@ -4,72 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4775AEFCE42
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Mar 2026 20:14:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 443BCEFCE4A
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Mar 2026 20:46:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vtBeaLVdl/uAak39uWkJtLjQ8bIYAMIG68ovZKuqNII=; b=2J5JOOSgzgTC6f
-	P3Q/cNd0hr9VyDmdaTh7jb5YPrmpTho4fFVqLBJ5gOTuqW7Z3i3VoWM+OBkOcf7gmEYoE25yU/T6X
-	4d80H+hyokgNAMP5pa20tGfnX4ey0trSSzLdIi41Xg8heiO2hMobekdlroB7r5GB1ZqkWu0tAADbB
-	dvJeVE6JVASGDGPClkC39QS+KDvKTNe65wXKAyTOTwBZYewW/Ya9dRRTkaTl4p28zIth16no5Nkp2
-	IhGm1nnYpen6lAV4RAezC+hucz9vhfMA0Rw7uZ/BnZRznhsDoAtfxezvwvIgX/lalwBjiTLRS+St8
-	py44B94sF3mwfje9jG2g==;
+	List-Owner; bh=JdZakeKPzesP6yuahX9LvUKvDTYooAW3r4fKuxQKItA=; b=FCN2CdBw4JGzxp
+	00TXJGIX5//0Ox1Rgvyzo6ZItfOGxgFRO7xpDMgDe0/mBWXO/s+kdd84LSGBqRdxgZ3y6LTNCerm1
+	NxHXz6vcvS3ecfmNq/7zefHWskyGaiNVNbnbZTfNKUsF/Kc7n6jAf9aC0bk2wkMa8w+J4aWyBujMx
+	lR+BG9YeI5AJD6MLZOOykYpeOpjWPFO9KvQf7CEnatMcCrlyESNe/5YIm/8E/xgTt4EYmYe5JBVBz
+	U48O0bBWzG5Dt/D0tH6E9ujsYP+u0i9ppHomSc0vHyjEpKxfLOgEnPmya+E3lyVkm2oVKkOQ9US7S
+	vX6jhAkqplSPzmIYHQ8A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vxsbw-00000000RUf-4BCT;
-	Wed, 04 Mar 2026 20:14:25 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1vxt7C-00000000TKy-0MvA;
+	Wed, 04 Mar 2026 20:46:42 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vxsbt-00000000RU2-2unJ;
-	Wed, 04 Mar 2026 20:14:22 +0000
+	id 1vxt7A-00000000TKq-3qxF
+	for linux-phy@lists.infradead.org;
+	Wed, 04 Mar 2026 20:46:41 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 69FD2402F4;
-	Wed,  4 Mar 2026 20:14:20 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B5684C4CEF7;
-	Wed,  4 Mar 2026 20:14:16 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 9C61D60053;
+	Wed,  4 Mar 2026 20:46:39 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B95EFC4CEF7;
+	Wed,  4 Mar 2026 20:46:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1772655260;
-	bh=7LbZg6skQwe1JIVxe4uIFooiyh42caVjXi8zFEyCeHA=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=vOSWAYP0ASIUMPrNsRctEnLesB/qOpdMCrQy6ahbi4pLYMii7O8IIBA8F63PZsyg0
-	 ZcCnF1kj3cVmc84Vx9h9Kq96VZaMCMHxuCArllf1CYolj2oqppgnv3vXM3w6laZHlz
-	 NOtq23rucRl5IE/Bb02Fai9gX/5ewV1hAPdziT8RA9B2ev0oqJbQtiikHUnSW5L9q5
-	 Uk7uAI6xqy1wRgSUh7h36AH8oidWLE77AQilsTltHa4bvKQfckiIg6DJMG3yRydPNA
-	 OvbzcQS3k3wio6bMSaigTPS0yMDQddq1Qx4b83K8C3Iv2VNsdfZAH1Ox9lzB5Wl3zL
-	 iEzLjD3XL6GFw==
-Message-ID: <679dbfdd-9e46-4265-a01c-faf163924ec3@kernel.org>
-Date: Thu, 5 Mar 2026 05:14:14 +0900
+	s=k20201202; t=1772657199;
+	bh=xZPU+lO15zbS01J/5fhSubvCHoqF8ecKxJyi14RpyjE=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=XFtrj/CfE7jawNLOVd9//PL4AXeNcwg7aU2khJ2s3QPivnnq8v1QTuywFUWuNkCIc
+	 Hd5/evtUohpOUbwHRqikiTH2OU2K7N8j8TBM08HgAwmCtklm2J7GI/dWMViFl3CG1W
+	 QOdbUPYl62X3ibbincSJD1obKO54k3qe3PrCU0FyCUHyLExhtdHUw3n5qHX9TVKyRL
+	 OdMR5zk7Dah5eLwQVZOxKlKLBUSkep7RziDbGG7EN2jq2HsP4zkE5lC+ulY16of1Gg
+	 PGHG0h6ONyCzYYXkCy5ZWvF5o1fFzJ15kkkEXpgRnJzG/i+Ho5CrNVIgzkKZtMdrRJ
+	 fngDBxHqKqc1w==
+Date: Wed, 4 Mar 2026 14:46:22 -0600
+From: Bjorn Andersson <andersson@kernel.org>
+To: Qiang Yu <qiang.yu@oss.qualcomm.com>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Philipp Zabel <p.zabel@pengutronix.de>, Konrad Dybcio <konradybcio@kernel.org>, 
+	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 2/5] phy: qcom: qmp-pcie: Add multiple power-domains
+ support
+Message-ID: <qmtl3j7czisocywmkwgaxxuzhc6e6zzvaqmqjs5p2phcpk2q3x@rocbjxeguv4g>
+References: <20260304-glymur_gen5x8_phy-v1-0-849e9a72e125@oss.qualcomm.com>
+ <20260304-glymur_gen5x8_phy-v1-2-849e9a72e125@oss.qualcomm.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH phy-next 01/22] ata: add <linux/pm_runtime.h> where
- missing
-To: Vladimir Oltean <vladimir.oltean@nxp.com>, linux-phy@lists.infradead.org
-Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
- <neil.armstrong@linaro.org>, dri-devel@lists.freedesktop.org,
- freedreno@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org,
- linux-arm-msm@vger.kernel.org, linux-can@vger.kernel.org,
- linux-gpio@vger.kernel.org, linux-ide@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-media@vger.kernel.org,
- linux-pci@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
- linux-riscv@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-samsung-soc@vger.kernel.org, linux-sunxi@lists.linux.dev,
- linux-tegra@vger.kernel.org, linux-usb@vger.kernel.org,
- netdev@vger.kernel.org, spacemit@lists.linux.dev,
- UNGLinuxDriver@microchip.com, Niklas Cassel <cassel@kernel.org>
-References: <20260304175735.2660419-1-vladimir.oltean@nxp.com>
- <20260304175735.2660419-2-vladimir.oltean@nxp.com>
-Content-Language: en-US
-From: Damien Le Moal <dlemoal@kernel.org>
-Organization: Western Digital Research
-In-Reply-To: <20260304175735.2660419-2-vladimir.oltean@nxp.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260304_121421_781953_4C994118 
-X-CRM114-Status: UNSURE (   6.52  )
-X-CRM114-Notice: Please train this message.
+Content-Disposition: inline
+In-Reply-To: <20260304-glymur_gen5x8_phy-v1-2-849e9a72e125@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,20 +75,93 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 3/5/26 02:57, Vladimir Oltean wrote:
-> It appears that libahci.c, ahci.c as well as the ahci_brcm, ahci_ceva
-> and ahci_qoriq drivers are using runtime PM operations without including
-> <linux/pm_runtime.h>. This header is somehow being indirectly provided
-> by <linux/phy/phy.h>, which would like to drop it (none of the functions
-> it exports need it).
+On Wed, Mar 04, 2026 at 12:21:56AM -0800, Qiang Yu wrote:
+> The Glymur SoC's 3rd PCIe instance supports 8-lane mode using two PHYs in
+> a bifurcated configuration. Each PHY has its own power domain (phy_gdsc)
+> that must be powered on before initialization per hardware requirements.
 > 
-> Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
+> Current PHY power management assumes a single power domain per PHY,
+> preventing proper setup for this dual-PHY scenario. Add support for
+> multiple power domains by using devm_pm_domain_attach_list() to attach
+> power domains manually, while maintaining compatibility with single
+> power domain PHYs.
+> 
+> Enable runtime PM to allow power domain control when the PCIe driver
+> calls phy_power_on/phy_power_off:
+> 
 
-Acked-by: Damien Le Moal <dlemoal@kernel.org>
+Enabling runtime PM seems like a separate change that impacts all
+existing targets, while adding multiple power domains should only affect
+the specific ones.
 
--- 
-Damien Le Moal
-Western Digital Research
+I'm not sure if it's too picky, but it would be nice to separate this -
+so that any issues that might arise can be bisected down to one or the
+other of these two changes?
+
+> - Single power domain: QMP PHY platform device directly attaches to
+>   power domain and controls it during runtime resume/suspend
+> - Multiple power domains: devm_pm_domain_attach_list() creates virtual
+>   devices as power domain suppliers, linked to the QMP PHY platform
+>   device as consumer
+> 
+> This ensures power domains are properly attached and turned on/off
+> for both single and multiple power domain configurations.
+> 
+> Signed-off-by: Qiang Yu <qiang.yu@oss.qualcomm.com>
+> ---
+>  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 13 +++++++++++++
+>  1 file changed, 13 insertions(+)
+> 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> index fed2fc9bb31108d51f88d34f3379c7744681f485..7369c291be51aa1ad7a330459dcb857f5a1988f6 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> @@ -17,6 +17,7 @@
+>  #include <linux/phy/pcie.h>
+>  #include <linux/phy/phy.h>
+>  #include <linux/platform_device.h>
+> +#include <linux/pm_domain.h>
+>  #include <linux/regmap.h>
+>  #include <linux/regulator/consumer.h>
+>  #include <linux/reset.h>
+> @@ -3334,6 +3335,8 @@ struct qmp_pcie {
+>  
+>  	struct clk_fixed_rate pipe_clk_fixed;
+>  	struct clk_fixed_rate aux_clk_fixed;
+> +
+> +	struct dev_pm_domain_list *pd_list;
+
+This is just an pointer to the list allocated inside
+devm_pm_domain_attach_list(), as far as I can tell you don't need to
+keep this in the qmp_pcie struct - as you're not using it anyways.
+
+Regards,
+Bjorn
+
+>  };
+>  
+>  static bool qphy_checkbits(const void __iomem *base, u32 offset, u32 val)
+> @@ -5348,6 +5351,16 @@ static int qmp_pcie_probe(struct platform_device *pdev)
+>  	WARN_ON_ONCE(!qmp->cfg->pwrdn_ctrl);
+>  	WARN_ON_ONCE(!qmp->cfg->phy_status);
+>  
+> +	ret = devm_pm_domain_attach_list(dev, NULL, &qmp->pd_list);
+> +	if (ret < 0 && ret != -EEXIST) {
+> +		dev_err(dev, "Failed to attach power domain\n");
+> +		return ret;
+> +	}
+> +
+> +	ret = devm_pm_runtime_enable(dev);
+> +	if (ret)
+> +		return ret;
+> +
+>  	ret = qmp_pcie_clk_init(qmp);
+>  	if (ret)
+>  		return ret;
+> 
+> -- 
+> 2.34.1
+> 
 
 -- 
 linux-phy mailing list
