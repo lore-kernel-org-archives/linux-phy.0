@@ -4,96 +4,143 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6C76EB7EA0
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Mar 2026 08:08:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 60A80EB7EA0
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Mar 2026 08:22:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=e0PCtMTi7/CBCODO6L5M86keRogDwhurAu3ySWpAaw4=; b=LLytxXiTUhkxzZ
-	+dAO1a8VayEN2kXd3qek7Fmzc6UJNAnAWh1l1Cx/8Q+A9c2ySQURfXKZtNCJb9Izn5pyeHKiWLICU
-	wnP4mcAwuMbIWgai54YlgaJTDSVZARr2a2ad/+/aDyZygm4U8E8v4NRUIAgDiGLaaxdPxkzJS+C2U
-	23WudKLuHnD1wu3hlG7SCMnxU8JY26Cpju3JM9uQM5Lbbd0P1vhCD6KareDy+eMVT8+WcjKwek6Pm
-	PledfUQZQWX0xlbz/MmLU+ud5+5wHKKe4H/rFafVZ/DB6Zi6DIH4D6ThUyTNjMfOuWop66aUPQKkU
-	cUVhgP1cB4fhe4NWWmeg==;
+	List-Owner; bh=aQq5/80bgyP1kp3lPWsfqds1LeYUJFRqgpRZPJAgOxc=; b=cUBGwRkKJNDfFY
+	RNEJX6BpddllUXQWs8P59Ic9Wtl/+44gyyeno2SxUnVrLRHFt2kS3g6Us+cZZBNHHxfF9MGP41XP8
+	VTKI0hXOe9g1iKcxqIG6MvGCWrwjS6q/2eYD91Ggn2za1E/brS1afm0wQ7Q1fa7SoKNhUKfpvdcwL
+	r8QXcRwrMTUNkS0wg0G59IVx4dbgsLYS7naiYrcx5giKrD+WekjvULHOrn+Bga5lcKb2uzLSYrkHK
+	wH0bpN52ooRjTvsyIINAswGVVmsDDMhiGPSNngLGPBmPVN1TD8FmFk8aNYU/gC7FjDK4dkSNF/nWa
+	mzryre0GbMTY0lWbMdjg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vxhHb-0000000GhPG-1jJa;
-	Wed, 04 Mar 2026 08:08:39 +0000
-Received: from mail-pj1-x1035.google.com ([2607:f8b0:4864:20::1035])
+	id 1vxhUa-0000000Gjam-0NRa;
+	Wed, 04 Mar 2026 08:22:04 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vxhHY-0000000GhNS-225I
+	id 1vxhUX-0000000GjZg-2ikr
 	for linux-phy@lists.infradead.org;
-	Wed, 04 Mar 2026 08:08:37 +0000
-Received: by mail-pj1-x1035.google.com with SMTP id 98e67ed59e1d1-3598e7155bbso2002802a91.2
-        for <linux-phy@lists.infradead.org>; Wed, 04 Mar 2026 00:08:36 -0800 (PST)
+	Wed, 04 Mar 2026 08:22:02 +0000
+Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6245SVZo1072461
+	for <linux-phy@lists.infradead.org>; Wed, 4 Mar 2026 08:22:00 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	+feDmpxyjcw2Gpw8JLF/SSE3a9sEyKxeVIjgMxiPBLY=; b=UrTFhOkQGwc7B7A8
+	rz6cCieTGQtkwoi5U5DUOGeYak7oBh2+hlJaOYrhjf97CKFTfY26zYEMJNpAIZFM
+	Sqkjstvk3CHfm3QXv/tA8N5fLmJMHk0MOvVyHWcgI29g4OVmLY2Cs+X3Yr5KNTHp
+	yEPs12Fw5gGoTD8mXS2R4pPnRMmQF+B2wPdCNNHP2gw1A9o1JT9iZWqjt+UmbKDK
+	mhwxbF/pRS09E/0dCTFhP7b9/C2tcCdUxFJsh+Iz5XeZTqcdoR1ZGhrIYHbgg659
+	0+2tIgjefqaLTnr9DGrWoL1MNfHYDxfSA+F0Z3ZHH4gzN1cXAvdrvaikpXxrBpc9
+	K1eHhw==
+Received: from mail-ot1-f70.google.com (mail-ot1-f70.google.com [209.85.210.70])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4cpcxfguur-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Wed, 04 Mar 2026 08:22:00 +0000 (GMT)
+Received: by mail-ot1-f70.google.com with SMTP id 46e09a7af769-7d4c1b2651fso34236775a34.3
+        for <linux-phy@lists.infradead.org>; Wed, 04 Mar 2026 00:22:00 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1772611715; x=1773216515; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=6V4ZABAoBYAEDoOVQvmIQ76oRldfMwh5wzfjWSFa+/U=;
-        b=GeLsPWi0o2US/4x7jHwy5SEWD/Tic2YaHwvLO8pSB5u+v6sGGHoRKfZyd/c9LDbtJq
-         5Z/2RlinWiiU6pQnWHNEhOcIge0obr7ulTLhSfObEpl7sil4M4Z9XznhT5wfRWGtnsP1
-         fUY/8Y50tp844P/txnNzCt33Ls1Tn/ghbNKIMoF690el5H5abmh3+TQgw7ajzqYl+BPt
-         r5avRK6pYCksHpv41mFlJFRRbWB+DB82c3O8AmNt1vS4/UEnHX4YLybGIMqERHhom3DT
-         JSLmmEpfrQrEPTCKrPCMRTecBZI/B+zWjBqxwMwGuYFjark6m2nVUpMZYYegpTcWDTzl
-         BtwA==
+        d=oss.qualcomm.com; s=google; t=1772612519; x=1773217319; darn=lists.infradead.org;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=+feDmpxyjcw2Gpw8JLF/SSE3a9sEyKxeVIjgMxiPBLY=;
+        b=RXCFIDoGyvVBa1muU+QPGgAuOSPT4DBMNoJyk1yoGc9Miityv4SXi0TPIAK30TwE5Z
+         9hV+PDQE4AQtS2vghF591j7S/BbUYLocGKNdWFQikkbhks7MoITyERncVcjg9/U6h2yb
+         oczDOCHdtaiXO293srp6WZdImFZOoGe29eZ/KWG4n7o+WlUB2HCw7NeoCbSrAtztZ4xq
+         8Iq1GAQpyTzIlBy/Tu16qM1WvBI6FvQKyhHSYHdlmkrbpulx3QMOVsJTreaMDSLza+oX
+         fiNB69zVZU+Nj3cRUgweteBx9t/DH5VmDhOMt5fZqpYlRmZpkCrJm/zWCsYYhS4CBhr/
+         QzFg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1772611715; x=1773216515;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=6V4ZABAoBYAEDoOVQvmIQ76oRldfMwh5wzfjWSFa+/U=;
-        b=RxhUWa12UfvTGHHOfzMEwrZ+CqIpGeo1Z4d8eFAVGQ56xm1GivMfg3NLSNDF4c3zBF
-         ACDu6whr3xVel0uF9P8z+WPlbgfMi2yeP6c7rcp8Jvsajrrr5Nx5pT3MtmAk8UkzbAf1
-         ukQWzFigsf1CNEbHN8O9K4YvGKJz95I+hFMPaLMzKigtkl3Wgr4CNNdKzsM6DJhKvNAc
-         FuA3LYe4Mi1glfY9lnfYhrcoymp0J88UoCfYJK//o8I1jOwDbVOljV6wOX0bn/SEqLnf
-         BXekaPNZj+Y4UTn1SSnG5ib508mjoLgO9UHAFycjBTWjFivgaOqVBtactmT2qkFbMAS8
-         7B1w==
-X-Forwarded-Encrypted: i=1; AJvYcCXYCMJCV5rYazcWHNp2bnXPiy+T9z5TRCcjSziF6T2lirALJDewJ+oENzNvtLdHzfH5X33hZ6F+frY=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx1BXrktQ4Y8pA3uneWezftTjbZG5HYAnfOwN1ovVqaC0KYQ3vG
-	2/rfJCdNGtZ2Cqc/i6G2tV4oD92g4u2DN9GQUHXR7y5ipnc6JZxzkbar
-X-Gm-Gg: ATEYQzxDSRE+aQSv4mzOu9ZFcsTh3hezwrliXMiAPx5Yuzro9nmcnD8QzRe6valVI7H
-	wz56AwS7ap2VTW3Lttxc+rNkb9nEk6jB7cMT5gqimqie75jojynAPNKNd6dNQ3vW4jrSLQuof8x
-	ooEcGz5FPnhG+1AE6lSDKS4yqr3NyRBd7XmXwZP7knJ9PhzGOOkNGE5oXzX2pefkEByA+d+UQj3
-	7MgdlA63/1sc76W9OIL1CRC4Yw/07RHXCcE72tQhj+p9OPsnK8/n5zUzD0oSaJficd/qiW8J4sX
-	0j8rqxASvDLEuvhdCcxmgrfE/7QUVEgwZRIGOgzzGq0UPGsHWcXYhNBJnPJtBumkdtH30e3R0US
-	AifIOLak97tQB2gAbU7DZwnzVReMLMhEZfAl/pU4Ak43Z849BiNC34vQoeYcohQCR19QLiIoFYJ
-	+xGmlOWHmMkZm8+R0g29BkN/j2PW5h2W+cTWYjz5g=
-X-Received: by 2002:a17:90b:2fc8:b0:359:8e1c:542 with SMTP id 98e67ed59e1d1-359a6a3c1ddmr1261053a91.18.1772611715477;
-        Wed, 04 Mar 2026 00:08:35 -0800 (PST)
-Received: from DESKTOP-TIT0J8O.localdomain ([49.47.198.15])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3599c3acea3sm4504552a91.16.2026.03.04.00.08.27
+        d=1e100.net; s=20230601; t=1772612519; x=1773217319;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:x-gm-gg:x-gm-message-state:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=+feDmpxyjcw2Gpw8JLF/SSE3a9sEyKxeVIjgMxiPBLY=;
+        b=vB2h/z3FR2hdSPlPn5SRvM9r+QrIpipg6kxSB/JGIE3WiQcXs5dyIPhRL/5m6LLxXm
+         jlG/4r0gpFl5ISibAQEGluJ3KmkAaLYK/OWIR1pzv9TcxLsKr2z6qC01HreWEy3HkLKR
+         +Os7nYlL7jqgYAhbU3N4YRcWzR3trJW2BSrnwxO253SpDX5Rumcnd6GXupGoq2Vgn99/
+         BCabWfVvaovRdBustkYL+X3rQ0bMjsiwJGgBbJxfI+M0T6kCZdtHXcoJ5n0n3IMLoOjD
+         X3jRMAy0k0YE7NDFGm+wCLSIuh0V8W4i/9TvnLQK1D16DPNH9WF8HrhODtGim9Rt7FVc
+         +6OQ==
+X-Forwarded-Encrypted: i=1; AJvYcCVRRqszoLhPW47/PQgxXsg9BK2gq+kEFTVdzabcy+/lSZmbndF1+Kc5aJHluHtJB8xaxlvamu2XTx4=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yx0ZdWVcAchS0ffQea9+TwVTx5soKMAYTv2a1oThCBV0BiMbuP5
+	0+DNNO28RxnS3WQMbNRLOmZH4yGKhBv4OamgVJjNFxBVeQ8OYez5Z5JQDzsS4WI/T4mdNGguQaM
+	BRD2lQ3q0h8XOWYZ5DY+6a0Xe9Dcj09QIZQJoNgzyvg+qdbwAmKpWD5uN51uO2aPFxU/w
+X-Gm-Gg: ATEYQzxVLblCek0gXNLbzRrR6T4NugBmP79/yNEFyjTEzqRLQI0ey5XcxQ8KGMlERec
+	mn15OctFzCsezJD534AoBLsLGk21qY5s4x2g+Sqcllewz700n/L7RzUKpJraD+Pt8kURDbFB5fk
+	M7YfL6Kkj/hrqpWFiG6uWNnsXTHj6JKIpL3tk2gTt9zwJDmdZFtzR56vghG/EGLX5TZh76rxcIk
+	TLcuuQYvR1zSdnj0yIEUDEy56e1ukU3JIJJAIxeNjrkyhbsBb5h2Pwa6YZxhhl35JtFUnZDPolL
+	C+px2F8nMoceH/ANNIguYorz4JQK1iyf1YyOPHp9O/eKIeWHv6Rv6/ibTBcKHAfT0qgeufxCN1x
+	N69syDZNKFIDnVzoGD68gPJ9WljTov8JS85nbCj/5z2okAGHaWKCT0VscnSmKLX1ZrhVc
+X-Received: by 2002:a05:6820:1905:b0:679:a4fe:f024 with SMTP id 006d021491bc7-67b1775f4demr849072eaf.46.1772612519448;
+        Wed, 04 Mar 2026 00:21:59 -0800 (PST)
+X-Received: by 2002:a05:6820:1905:b0:679:a4fe:f024 with SMTP id 006d021491bc7-67b1775f4demr849053eaf.46.1772612519072;
+        Wed, 04 Mar 2026 00:21:59 -0800 (PST)
+Received: from hu-qianyu-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
+        by smtp.gmail.com with ESMTPSA id 586e51a60fabf-4160d26d9absm18006952fac.16.2026.03.04.00.21.58
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 04 Mar 2026 00:08:35 -0800 (PST)
-Date: Wed, 4 Mar 2026 12:08:25 +0400
-From: Ahmed Naseef <naseefkm@gmail.com>
-To: Bjorn Helgaas <helgaas@kernel.org>
-Cc: Caleb James DeLisle <cjd@cjdns.fr>, linux-mips@vger.kernel.org,
-	mturquette@baylibre.com, sboyd@kernel.org, robh@kernel.org,
-	krzk+dt@kernel.org, conor+dt@kernel.org, tsbogend@alpha.franken.de,
-	ryder.lee@mediatek.com, jianjun.wang@mediatek.com,
-	lpieralisi@kernel.org, kwilczynski@kernel.org, mani@kernel.org,
-	bhelgaas@google.com, vkoul@kernel.org, neil.armstrong@linaro.org,
-	p.zabel@pengutronix.de, matthias.bgg@gmail.com,
-	angelogioacchino.delregno@collabora.com, nbd@nbd.name,
-	ansuelsmth@gmail.com, linux-clk@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-pci@vger.kernel.org, linux-mediatek@lists.infradead.org,
-	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH 7/8] PCI: Skip bridge window reads when window is not
- supported
-Message-ID: <aafoedMHhKNuEwFE@DESKTOP-TIT0J8O.localdomain>
-References: <20260303190948.694783-8-cjd@cjdns.fr>
- <20260303213723.GA4075286@bhelgaas>
+        Wed, 04 Mar 2026 00:21:58 -0800 (PST)
+From: Qiang Yu <qiang.yu@oss.qualcomm.com>
+Date: Wed, 04 Mar 2026 00:21:55 -0800
+Subject: [PATCH 1/5] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Add
+ support for glymur Gen5 x8 bifurcation mode
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260303213723.GA4075286@bhelgaas>
+Message-Id: <20260304-glymur_gen5x8_phy-v1-1-849e9a72e125@oss.qualcomm.com>
+References: <20260304-glymur_gen5x8_phy-v1-0-849e9a72e125@oss.qualcomm.com>
+In-Reply-To: <20260304-glymur_gen5x8_phy-v1-0-849e9a72e125@oss.qualcomm.com>
+To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Philipp Zabel <p.zabel@pengutronix.de>,
+        Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        Qiang Yu <qiang.yu@oss.qualcomm.com>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1772612517; l=3719;
+ i=qiang.yu@oss.qualcomm.com; s=20250513; h=from:subject:message-id;
+ bh=0cxDH4J+ogpnd/2Sh8T/+lD9ulgjspAUfkAYG3Mt/CY=;
+ b=u//xzciC0iOy71tQzdkre/5ZzPbinP8Hp0mSQdZG6U7/pN91pAkszc0NfvrWioUvLrrK2HRok
+ 5wHzs+4x0vhCOT40wazLhj02LqmEoGsg7xZ3H+EjViGQw7WhGpd3YyD
+X-Developer-Key: i=qiang.yu@oss.qualcomm.com; a=ed25519;
+ pk=Rr94t+fykoieF1ngg/bXxEfr5KoQxeXPtYxM8fBQTAI=
+X-Proofpoint-ORIG-GUID: LMHJmmvOaYiqigcQkD2dDTxAQuqdkBkT
+X-Authority-Analysis: v=2.4 cv=R4gO2NRX c=1 sm=1 tr=0 ts=69a7eba8 cx=c_pps
+ a=7uPEO8VhqeOX8vTJ3z8K6Q==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=IkcTkHD0fZMA:10 a=Yq5XynenixoA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=eoimf2acIAo5FJnRuUoq:22
+ a=EUspDBNiAAAA:8 a=RFdnLZz7-LqoW1cxMWEA:9 a=QEXdDO2ut3YA:10
+ a=EXS-LbY8YePsIyqnH6vw:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzA0MDA2NCBTYWx0ZWRfX8LLN0FNnQrI4
+ i25wJtCdmKzP3rAyEqhFmlpNvoyB8vYlqZIvl+rCQHYtCU7NfeuHiBxUMC8pKv5yssHBKHiA+pJ
+ D+P/IokpSit7p08YNsNJj2E4o7PtiYqiOz4ZoNqMb0ZFOTdsdBCtV5m4V8KZS1BaGlGTVTyTn6J
+ QhMulIjGs32EMrVucrTE9+szL4LHzL/Rw2iSMQPf/Cj47jPTAvC1bxjFfp/FuDp25HfaxdfhUSp
+ ++9NSlOw15+prDHauGRYaVIOkVrazPS8PZg1kGxqqLPHWvTl9Uv25XkNWnv16xGlzlVJFUQg1/E
+ wZM/JLjHj0N6VAIrTjV1yJoe+wyTRQXXD3fNq7sXKjE5BRDYmBuAtI2yJjCZCB3ZnA3PiaJgAoe
+ v2PZVQXAyIzY4V/HElCM6P9sxIF8kT+fL/FI6ECztwpXtxhgGVag0t0R0TJ4CtQrqkGNJaztqbX
+ KEYQ2NRO6Ky7VaokZEw==
+X-Proofpoint-GUID: LMHJmmvOaYiqigcQkD2dDTxAQuqdkBkT
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
+ definitions=2026-03-04_04,2026-03-03_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ malwarescore=0 priorityscore=1501 clxscore=1015 phishscore=0 bulkscore=0
+ lowpriorityscore=0 impostorscore=0 spamscore=0 suspectscore=0 adultscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2602130000 definitions=main-2603040064
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260304_000836_533975_420867D3 
-X-CRM114-Status: GOOD (  28.17  )
+X-CRM114-CacheID: sfid-20260304_002201_699669_6EB5070F 
+X-CRM114-Status: GOOD (  12.62  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,96 +157,132 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Mar 03, 2026 at 03:37:23PM -0600, Bjorn Helgaas wrote:
-> On Tue, Mar 03, 2026 at 07:09:47PM +0000, Caleb James DeLisle wrote:
-> > pci_read_bridge_io() and pci_read_bridge_mmio_pref() read bridge window
-> > registers unconditionally. If the registers are hardwired to zero
-> > (not implemented), both base and limit will be 0. Since (0 <= 0) is
-> > true, a bogus window [mem 0x00000000-0x000fffff] or [io 0x0000-0x0fff]
-> > gets created.
-> > 
-> > pci_read_bridge_windows() already detects unsupported windows by
-> > testing register writability and sets io_window/pref_window flags
-> > accordingly. Check these flags at the start of pci_read_bridge_io()
-> > and pci_read_bridge_mmio_pref() to skip reading registers when the
-> > window is not supported.
-> 
-> BTW, I'm still interested in the details of how we got here.  It
-> shouldn't be too unusual to have a bridge without an I/O window or
-> maybe even without a prefetchable (64-bit) memory window.
-> 
-Hi Bjorn,
+The Glymur SoC has pcie3a and pcie3b PHYs that can operate in two modes:
 
-I'm fairly new to the PCI subsystem, so please correct me if
-any of my understanding below is wrong.
+1. Independent 4-lane mode: Each PHY operates as a separate PCIe Gen5
+   4-lane interface, compatible with qcom,glymur-qmp-gen5x4-pcie-phy
+2. Bifurcation mode (8-lane): pcie3a phy acts as leader and pcie3b phy as
+   follower to form a single 8-lane PCIe Gen5 interface
 
-Regarding the I/O window check: I only hit the issue with the
-prefetchable window. The I/O window check was added per your
-suggestion in our earlier discussion, since the same logic
-applies. Neither downstream device (MT7603, MT7663) has I/O
-BARs, so I haven't been able to test that path.
+In bifurcation mode, the hardware design requires controlling additional
+resources beyond the standard pcie3a PHY configuration:
 
-The EN7528 SoC's PCIe bridge does not implement the optional
-prefetchable memory window , the registers are hardwired to
-zero. The downstream device (MT7663 WiFi) has 64-bit
-prefetchable BARs.
+- pcie3b's aux_clk (phy_b_aux)
+- pcie3b's phy_gdsc power domain
+- pcie3b's bcr/nocsr reset
 
-The problem is that pci_read_bridge_bases() reads these
-registers without checking pref_window. With both base and
-limit hardwired to zero, base(0) <= limit(0) evaluates true,
-creating a bogus [mem 0x00000000-0x000fffff pref] window.
-This makes the allocator believe the bridge has a prefetch
-window and route the prefetchable BARs through it. But since
-the hardware can't actually forward through this non-existent
-window, the device becomes unreachable.
+Add qcom,glymur-qmp-gen5x8-pcie-phy compatible string to document this
+8-lane bifurcation configuration.
 
-This patch skips the register read when pref_window is not
-set, so no bogus resource is created, and the allocator
-correctly falls back to the non-prefetchable MMIO window.
+The phy_b_aux clock is used as the 6th clock instead of pipediv2,
+requiring the clock-names enum to be extended to support both
+[phy_b_aux, pipediv2] options at index 5. This follows the existing
+pattern used for [rchng, refgen] clocks at index 3.
 
-As to why this hasn't surfaced before , I'm not sure. It may
-depend on whether pci_read_bridge_bases() gets called on a
-given platform and whether the downstream devices have
-prefetchable BARs. But I don't have enough experience with
-other platforms to say for certain.
+Signed-off-by: Qiang Yu <qiang.yu@oss.qualcomm.com>
+---
+ .../bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml   | 45 ++++++++++++++++++----
+ 1 file changed, 37 insertions(+), 8 deletions(-)
 
-Reagrds,
-Ahmed Naseef
+diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+index 3a35120a77ec0ceb814a1cdcacff32fef32b4f7b..25717bc9be98824e38f3c27c3299fbd1f2e7e299 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+@@ -18,6 +18,7 @@ properties:
+     enum:
+       - qcom,glymur-qmp-gen4x2-pcie-phy
+       - qcom,glymur-qmp-gen5x4-pcie-phy
++      - qcom,glymur-qmp-gen5x8-pcie-phy
+       - qcom,kaanapali-qmp-gen3x2-pcie-phy
+       - qcom,qcs615-qmp-gen3x1-pcie-phy
+       - qcom,qcs8300-qmp-gen4x2-pcie-phy
+@@ -68,20 +69,23 @@ properties:
+       - const: ref
+       - enum: [rchng, refgen]
+       - const: pipe
+-      - const: pipediv2
++      - enum: [phy_b_aux, pipediv2]
+ 
+   power-domains:
+-    maxItems: 1
++    minItems: 1
++    maxItems: 2
+ 
+   resets:
+     minItems: 1
+-    maxItems: 2
++    maxItems: 4
+ 
+   reset-names:
+     minItems: 1
+     items:
+       - const: phy
+       - const: phy_nocsr
++      - const: phy_b
++      - const: phy_b_nocsr
+ 
+   vdda-phy-supply: true
+ 
+@@ -183,6 +187,7 @@ allOf:
+             enum:
+               - qcom,glymur-qmp-gen4x2-pcie-phy
+               - qcom,glymur-qmp-gen5x4-pcie-phy
++              - qcom,glymur-qmp-gen5x8-pcie-phy
+               - qcom,qcs8300-qmp-gen4x2-pcie-phy
+               - qcom,sa8775p-qmp-gen4x2-pcie-phy
+               - qcom,sa8775p-qmp-gen4x4-pcie-phy
+@@ -201,6 +206,17 @@ allOf:
+         clock-names:
+           minItems: 6
+ 
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - qcom,glymur-qmp-gen5x8-pcie-phy
++    then:
++      properties:
++        power-domains:
++          minItems: 2
++
+   - if:
+       properties:
+         compatible:
+@@ -223,11 +239,24 @@ allOf:
+         reset-names:
+           minItems: 2
+     else:
+-      properties:
+-        resets:
+-          maxItems: 1
+-        reset-names:
+-          maxItems: 1
++      if:
++        properties:
++          compatible:
++            contains:
++              enum:
++                - qcom,glymur-qmp-gen5x8-pcie-phy
++      then:
++        properties:
++          resets:
++            minItems: 4
++          reset-names:
++            minItems: 4
++      else:
++        properties:
++          resets:
++            maxItems: 1
++          reset-names:
++            maxItems: 1
+ 
+   - if:
+       properties:
 
-> > Suggested-by: Bjorn Helgaas <helgaas@kernel.org>
-> > Signed-off-by: Ahmed Naseef <naseefkm@gmail.com>
-> > Signed-off-by: Caleb James DeLisle <cjd@cjdns.fr>
-> > ---
-> >  drivers/pci/probe.c | 6 ++++++
-> >  1 file changed, 6 insertions(+)
-> > 
-> > diff --git a/drivers/pci/probe.c b/drivers/pci/probe.c
-> > index bccc7a4bdd79..4eacb741b4ec 100644
-> > --- a/drivers/pci/probe.c
-> > +++ b/drivers/pci/probe.c
-> > @@ -395,6 +395,9 @@ static void pci_read_bridge_io(struct pci_dev *dev, struct resource *res,
-> >  	unsigned long io_mask, io_granularity, base, limit;
-> >  	struct pci_bus_region region;
-> >  
-> > +	if (!dev->io_window)
-> > +		return;
-> > +
-> >  	io_mask = PCI_IO_RANGE_MASK;
-> >  	io_granularity = 0x1000;
-> >  	if (dev->io_window_1k) {
-> > @@ -465,6 +468,9 @@ static void pci_read_bridge_mmio_pref(struct pci_dev *dev, struct resource *res,
-> >  	pci_bus_addr_t base, limit;
-> >  	struct pci_bus_region region;
-> >  
-> > +	if (!dev->pref_window)
-> > +		return;
-> > +
-> >  	pci_read_config_word(dev, PCI_PREF_MEMORY_BASE, &mem_base_lo);
-> >  	pci_read_config_word(dev, PCI_PREF_MEMORY_LIMIT, &mem_limit_lo);
-> >  	base64 = (mem_base_lo & PCI_PREF_RANGE_MASK) << 16;
-> > -- 
-> > 2.39.5
-> > 
+-- 
+2.34.1
+
 
 -- 
 linux-phy mailing list
