@@ -4,90 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CD827EDEC08
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Mar 2026 04:34:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6C76EB7EA0
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Mar 2026 08:08:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Nd0iLRtKpBS6nEYR6IwgHy9l2S3n2g0NoN4w7FJX/gs=; b=ocSwoOG5BQQmkH
-	CpBsvUIKef1RjFB8lFXuGWiFxL0CHVFKJ/EiEKGEIz5aK8s03pR6f1ZiFtRechNreOB5beloGD6no
-	csrx8Lnmh2isqsBojPk3ASs4tvsDcp7704nvzw5P3WC4DlusxZ8tXbYnW2VkjidJDLSq79UO8/Doj
-	boLxh1ikWaMCJzkVa63c4Pq8V8n3KDvw7fDchh9VaizYCombLKO/leLrkOEJirfbEa6C8QM+qsOHN
-	96SOfWZbC8GXm2kYha1Co2iR1VglJ3LtOpNg170L2HL8Z8l9KZuUMvgL1ck48Gn7Vf1nfIXelpmVK
-	s51zbZWqQZj9nNmGIpvA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=e0PCtMTi7/CBCODO6L5M86keRogDwhurAu3ySWpAaw4=; b=LLytxXiTUhkxzZ
+	+dAO1a8VayEN2kXd3qek7Fmzc6UJNAnAWh1l1Cx/8Q+A9c2ySQURfXKZtNCJb9Izn5pyeHKiWLICU
+	wnP4mcAwuMbIWgai54YlgaJTDSVZARr2a2ad/+/aDyZygm4U8E8v4NRUIAgDiGLaaxdPxkzJS+C2U
+	23WudKLuHnD1wu3hlG7SCMnxU8JY26Cpju3JM9uQM5Lbbd0P1vhCD6KareDy+eMVT8+WcjKwek6Pm
+	PledfUQZQWX0xlbz/MmLU+ud5+5wHKKe4H/rFafVZ/DB6Zi6DIH4D6ThUyTNjMfOuWop66aUPQKkU
+	cUVhgP1cB4fhe4NWWmeg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vxdwZ-0000000GRXw-1n2S;
-	Wed, 04 Mar 2026 04:34:43 +0000
-Received: from mail-pl1-x62a.google.com ([2607:f8b0:4864:20::62a])
+	id 1vxhHb-0000000GhPG-1jJa;
+	Wed, 04 Mar 2026 08:08:39 +0000
+Received: from mail-pj1-x1035.google.com ([2607:f8b0:4864:20::1035])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vxdwW-0000000GRWk-1JHb
+	id 1vxhHY-0000000GhNS-225I
 	for linux-phy@lists.infradead.org;
-	Wed, 04 Mar 2026 04:34:42 +0000
-Received: by mail-pl1-x62a.google.com with SMTP id d9443c01a7336-2ae505619baso17276485ad.2
-        for <linux-phy@lists.infradead.org>; Tue, 03 Mar 2026 20:34:39 -0800 (PST)
+	Wed, 04 Mar 2026 08:08:37 +0000
+Received: by mail-pj1-x1035.google.com with SMTP id 98e67ed59e1d1-3598e7155bbso2002802a91.2
+        for <linux-phy@lists.infradead.org>; Wed, 04 Mar 2026 00:08:36 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1772598879; x=1773203679; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=h4+RxyEzVVfMeQjameS7WuxM58R+fJWfpg/21/ewVWI=;
-        b=PBr+3alqtjI9o4M2o0t2FQyibJ6N627RvN2osXpue2FgvRsiJe+AjDc1isgodNIVp0
-         m+Y6+GLyOqrSzbftc7usUeIKfjI3I+XD25b/7AAx+ef5sLDK8qIx5yg+ivy2lrhUnAEr
-         IG+vS0m4awtsnBs+bEpRWk6FKe6savkNaZd9fWO1Nr6LleeNPlpPj1AKt9Fql5nxUvSm
-         XPGToCXUgdWyhFBXcDwetkfNYBvqu1Cp5cDwCmKqsRtWm4O6QvxbaHQc4WdYHUNZE2rE
-         JVsk9FyPTwgZwp3NFauFQ3SSfYmw8j33RuZqy90V+7nCz5JWvsr2WYFsbeCYdNHNc6PA
-         zLyw==
+        d=gmail.com; s=20230601; t=1772611715; x=1773216515; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=6V4ZABAoBYAEDoOVQvmIQ76oRldfMwh5wzfjWSFa+/U=;
+        b=GeLsPWi0o2US/4x7jHwy5SEWD/Tic2YaHwvLO8pSB5u+v6sGGHoRKfZyd/c9LDbtJq
+         5Z/2RlinWiiU6pQnWHNEhOcIge0obr7ulTLhSfObEpl7sil4M4Z9XznhT5wfRWGtnsP1
+         fUY/8Y50tp844P/txnNzCt33Ls1Tn/ghbNKIMoF690el5H5abmh3+TQgw7ajzqYl+BPt
+         r5avRK6pYCksHpv41mFlJFRRbWB+DB82c3O8AmNt1vS4/UEnHX4YLybGIMqERHhom3DT
+         JSLmmEpfrQrEPTCKrPCMRTecBZI/B+zWjBqxwMwGuYFjark6m2nVUpMZYYegpTcWDTzl
+         BtwA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1772598879; x=1773203679;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=h4+RxyEzVVfMeQjameS7WuxM58R+fJWfpg/21/ewVWI=;
-        b=ed55OCC2NYF2f92GL8kA/DaREr+KP/ZCjdmLGXuR9ReUUCPH3FG6h4uKn6Q1KnjUJk
-         hj9tfvBnYEAmmJuMaFfalHgUxISvRae3/+vh63NJz7tYxefaN3mLP7eB/gsnsiV5Gs/L
-         i8crBMOIotgWNjO8N1QdYYWpajUWWxCpYgc2buAHZFGgHcfb7xsR5XikjTiW5k+wEcSA
-         LefyE08JVi8UbmyQCfAelTxIbgcKBvhBppX6FwhfhZ7HiaVdWrbAxzdIPkDKQyfIsqkh
-         YrON9Cv/qUhV/tllQBRiXFjF7KG0ljhUzVQWkl1FDkQbqSKiSELNSB4pkT44OrDeetUd
-         KSIA==
-X-Gm-Message-State: AOJu0YykLUVtYTQyrWYRHOWHYG34uDij19RGg+l8Fco3WVNuIzizTUQ+
-	J65ldMAwEetaVgouhDVPz8nEFADIo4+5R12Y5NvpodiQajn8SU1ttRNxTvveBZpYAsM=
-X-Gm-Gg: ATEYQzztmX7GhrVyrfgQqMIJotFhHZ0HiJ0Bx2w/ykM+okcuqfkB1QqEh29KVzMil1U
-	YBxXRP+OqvxbiXLBsU39ysgjvMcuNhhelYwZGmPSKROiIGIrS3WMMAsybOUmiyyKLi4GBdY9iGw
-	r/Cm/7otsgKhKLvum8E2quYOx3TPzGDDxOMxG6BvIPfvBKdfxmq4WUMInMIrZ50rWlzbmaPc/Y8
-	istCjSfH5lV18Rxga8XsrF/NTYzrsIvhuyWgJpDe945Yn93CwzMxn8ZU7c2PJmhdoJx/bjw8hBE
-	B2rEjDpzf9B4JD7aRM6go/84+wilN3nVOIH79ediXMKhUypYyOmfLqfJd8b5EtJRmZ4QB/8kCle
-	IMGqE8h67wZphbP164iDH8oU/xliiBBj9k1BUppQR7PrMXh8Re6pHSygl8qfsEizW6i9pRwvX23
-	Y+uAnX8wkB8lentKjNUHsWLEzz8Ap1E3fOiqQv2AnqV4Wsf0dXttZVfXghLB3w5ka4
-X-Received: by 2002:a17:903:1a67:b0:2ae:57cc:63d7 with SMTP id d9443c01a7336-2ae6a9de1a3mr7732125ad.7.1772598878948;
-        Tue, 03 Mar 2026 20:34:38 -0800 (PST)
-Received: from ryzen ([2601:644:8000:56f5::8bd])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2ae4651e409sm115173435ad.44.2026.03.03.20.34.37
+        d=1e100.net; s=20230601; t=1772611715; x=1773216515;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=6V4ZABAoBYAEDoOVQvmIQ76oRldfMwh5wzfjWSFa+/U=;
+        b=RxhUWa12UfvTGHHOfzMEwrZ+CqIpGeo1Z4d8eFAVGQ56xm1GivMfg3NLSNDF4c3zBF
+         ACDu6whr3xVel0uF9P8z+WPlbgfMi2yeP6c7rcp8Jvsajrrr5Nx5pT3MtmAk8UkzbAf1
+         ukQWzFigsf1CNEbHN8O9K4YvGKJz95I+hFMPaLMzKigtkl3Wgr4CNNdKzsM6DJhKvNAc
+         FuA3LYe4Mi1glfY9lnfYhrcoymp0J88UoCfYJK//o8I1jOwDbVOljV6wOX0bn/SEqLnf
+         BXekaPNZj+Y4UTn1SSnG5ib508mjoLgO9UHAFycjBTWjFivgaOqVBtactmT2qkFbMAS8
+         7B1w==
+X-Forwarded-Encrypted: i=1; AJvYcCXYCMJCV5rYazcWHNp2bnXPiy+T9z5TRCcjSziF6T2lirALJDewJ+oENzNvtLdHzfH5X33hZ6F+frY=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yx1BXrktQ4Y8pA3uneWezftTjbZG5HYAnfOwN1ovVqaC0KYQ3vG
+	2/rfJCdNGtZ2Cqc/i6G2tV4oD92g4u2DN9GQUHXR7y5ipnc6JZxzkbar
+X-Gm-Gg: ATEYQzxDSRE+aQSv4mzOu9ZFcsTh3hezwrliXMiAPx5Yuzro9nmcnD8QzRe6valVI7H
+	wz56AwS7ap2VTW3Lttxc+rNkb9nEk6jB7cMT5gqimqie75jojynAPNKNd6dNQ3vW4jrSLQuof8x
+	ooEcGz5FPnhG+1AE6lSDKS4yqr3NyRBd7XmXwZP7knJ9PhzGOOkNGE5oXzX2pefkEByA+d+UQj3
+	7MgdlA63/1sc76W9OIL1CRC4Yw/07RHXCcE72tQhj+p9OPsnK8/n5zUzD0oSaJficd/qiW8J4sX
+	0j8rqxASvDLEuvhdCcxmgrfE/7QUVEgwZRIGOgzzGq0UPGsHWcXYhNBJnPJtBumkdtH30e3R0US
+	AifIOLak97tQB2gAbU7DZwnzVReMLMhEZfAl/pU4Ak43Z849BiNC34vQoeYcohQCR19QLiIoFYJ
+	+xGmlOWHmMkZm8+R0g29BkN/j2PW5h2W+cTWYjz5g=
+X-Received: by 2002:a17:90b:2fc8:b0:359:8e1c:542 with SMTP id 98e67ed59e1d1-359a6a3c1ddmr1261053a91.18.1772611715477;
+        Wed, 04 Mar 2026 00:08:35 -0800 (PST)
+Received: from DESKTOP-TIT0J8O.localdomain ([49.47.198.15])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3599c3acea3sm4504552a91.16.2026.03.04.00.08.27
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 03 Mar 2026 20:34:38 -0800 (PST)
-From: Rosen Penev <rosenp@gmail.com>
-To: linux-phy@lists.infradead.org
-Cc: Chunfeng Yun <chunfeng.yun@mediatek.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Kees Cook <kees@kernel.org>,
-	"Gustavo A. R. Silva" <gustavoars@kernel.org>,
-	linux-arm-kernel@lists.infradead.org (moderated list:ARM/Mediatek USB3 PHY DRIVER),
-	linux-mediatek@lists.infradead.org (moderated list:ARM/Mediatek USB3 PHY DRIVER),
-	linux-kernel@vger.kernel.org (open list:ARM/Mediatek SoC support),
-	linux-hardening@vger.kernel.org (open list:KERNEL HARDENING (not covered by other areas):Keyword:\b__counted_by(_le|_be)?\b)
-Subject: [PATCH] phy: mediatek: xsphy: reduce main allocation
-Date: Tue,  3 Mar 2026 20:34:20 -0800
-Message-ID: <20260304043420.14151-1-rosenp@gmail.com>
-X-Mailer: git-send-email 2.53.0
+        Wed, 04 Mar 2026 00:08:35 -0800 (PST)
+Date: Wed, 4 Mar 2026 12:08:25 +0400
+From: Ahmed Naseef <naseefkm@gmail.com>
+To: Bjorn Helgaas <helgaas@kernel.org>
+Cc: Caleb James DeLisle <cjd@cjdns.fr>, linux-mips@vger.kernel.org,
+	mturquette@baylibre.com, sboyd@kernel.org, robh@kernel.org,
+	krzk+dt@kernel.org, conor+dt@kernel.org, tsbogend@alpha.franken.de,
+	ryder.lee@mediatek.com, jianjun.wang@mediatek.com,
+	lpieralisi@kernel.org, kwilczynski@kernel.org, mani@kernel.org,
+	bhelgaas@google.com, vkoul@kernel.org, neil.armstrong@linaro.org,
+	p.zabel@pengutronix.de, matthias.bgg@gmail.com,
+	angelogioacchino.delregno@collabora.com, nbd@nbd.name,
+	ansuelsmth@gmail.com, linux-clk@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-pci@vger.kernel.org, linux-mediatek@lists.infradead.org,
+	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH 7/8] PCI: Skip bridge window reads when window is not
+ supported
+Message-ID: <aafoedMHhKNuEwFE@DESKTOP-TIT0J8O.localdomain>
+References: <20260303190948.694783-8-cjd@cjdns.fr>
+ <20260303213723.GA4075286@bhelgaas>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20260303213723.GA4075286@bhelgaas>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260303_203440_346022_6EF84B4A 
-X-CRM114-Status: GOOD (  12.41  )
+X-CRM114-CacheID: sfid-20260304_000836_533975_420867D3 
+X-CRM114-Status: GOOD (  28.17  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,59 +110,96 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Instead of kzalloc and kcalloc, we can use a flex array to reduce to a
-single allocation.
+On Tue, Mar 03, 2026 at 03:37:23PM -0600, Bjorn Helgaas wrote:
+> On Tue, Mar 03, 2026 at 07:09:47PM +0000, Caleb James DeLisle wrote:
+> > pci_read_bridge_io() and pci_read_bridge_mmio_pref() read bridge window
+> > registers unconditionally. If the registers are hardwired to zero
+> > (not implemented), both base and limit will be 0. Since (0 <= 0) is
+> > true, a bogus window [mem 0x00000000-0x000fffff] or [io 0x0000-0x0fff]
+> > gets created.
+> > 
+> > pci_read_bridge_windows() already detects unsupported windows by
+> > testing register writability and sets io_window/pref_window flags
+> > accordingly. Check these flags at the start of pci_read_bridge_io()
+> > and pci_read_bridge_mmio_pref() to skip reading registers when the
+> > window is not supported.
+> 
+> BTW, I'm still interested in the details of how we got here.  It
+> shouldn't be too unusual to have a bridge without an I/O window or
+> maybe even without a prefetchable (64-bit) memory window.
+> 
+Hi Bjorn,
 
-Also added __counted_by() for extra possible analysis.
+I'm fairly new to the PCI subsystem, so please correct me if
+any of my understanding below is wrong.
 
-Signed-off-by: Rosen Penev <rosenp@gmail.com>
----
- drivers/phy/mediatek/phy-mtk-xsphy.c | 15 ++++++---------
- 1 file changed, 6 insertions(+), 9 deletions(-)
+Regarding the I/O window check: I only hit the issue with the
+prefetchable window. The I/O window check was added per your
+suggestion in our earlier discussion, since the same logic
+applies. Neither downstream device (MT7603, MT7663) has I/O
+BARs, so I haven't been able to test that path.
 
-diff --git a/drivers/phy/mediatek/phy-mtk-xsphy.c b/drivers/phy/mediatek/phy-mtk-xsphy.c
-index c0ddb9273cc3..cc1d66954212 100644
---- a/drivers/phy/mediatek/phy-mtk-xsphy.c
-+++ b/drivers/phy/mediatek/phy-mtk-xsphy.c
-@@ -112,10 +112,10 @@ struct xsphy_instance {
- struct mtk_xsphy {
- 	struct device *dev;
- 	void __iomem *glb_base;	/* only shared u3 sif */
--	struct xsphy_instance **phys;
--	int nphys;
- 	int src_ref_clk; /* MHZ, reference clock for slew rate calibrate */
- 	int src_coef;    /* coefficient for slew rate calibrate */
-+	int nphys;
-+	struct xsphy_instance *phys[] __counted_by(nphys);
- };
- 
- static void u2_phy_slew_rate_calibrate(struct mtk_xsphy *xsphy,
-@@ -515,18 +515,15 @@ static int mtk_xsphy_probe(struct platform_device *pdev)
- 	struct resource *glb_res;
- 	struct mtk_xsphy *xsphy;
- 	struct resource res;
-+	size_t nphys;
- 	int port;
- 
--	xsphy = devm_kzalloc(dev, sizeof(*xsphy), GFP_KERNEL);
-+	nphys = of_get_child_count(np);
-+	xsphy = devm_kzalloc(dev, struct_size(xsphy, phys, nphys), GFP_KERNEL);
- 	if (!xsphy)
- 		return -ENOMEM;
- 
--	xsphy->nphys = of_get_child_count(np);
--	xsphy->phys = devm_kcalloc(dev, xsphy->nphys,
--				       sizeof(*xsphy->phys), GFP_KERNEL);
--	if (!xsphy->phys)
--		return -ENOMEM;
--
-+	xsphy->nphys = nphys;
- 	xsphy->dev = dev;
- 	platform_set_drvdata(pdev, xsphy);
- 
--- 
-2.53.0
+The EN7528 SoC's PCIe bridge does not implement the optional
+prefetchable memory window , the registers are hardwired to
+zero. The downstream device (MT7663 WiFi) has 64-bit
+prefetchable BARs.
 
+The problem is that pci_read_bridge_bases() reads these
+registers without checking pref_window. With both base and
+limit hardwired to zero, base(0) <= limit(0) evaluates true,
+creating a bogus [mem 0x00000000-0x000fffff pref] window.
+This makes the allocator believe the bridge has a prefetch
+window and route the prefetchable BARs through it. But since
+the hardware can't actually forward through this non-existent
+window, the device becomes unreachable.
+
+This patch skips the register read when pref_window is not
+set, so no bogus resource is created, and the allocator
+correctly falls back to the non-prefetchable MMIO window.
+
+As to why this hasn't surfaced before , I'm not sure. It may
+depend on whether pci_read_bridge_bases() gets called on a
+given platform and whether the downstream devices have
+prefetchable BARs. But I don't have enough experience with
+other platforms to say for certain.
+
+Reagrds,
+Ahmed Naseef
+
+> > Suggested-by: Bjorn Helgaas <helgaas@kernel.org>
+> > Signed-off-by: Ahmed Naseef <naseefkm@gmail.com>
+> > Signed-off-by: Caleb James DeLisle <cjd@cjdns.fr>
+> > ---
+> >  drivers/pci/probe.c | 6 ++++++
+> >  1 file changed, 6 insertions(+)
+> > 
+> > diff --git a/drivers/pci/probe.c b/drivers/pci/probe.c
+> > index bccc7a4bdd79..4eacb741b4ec 100644
+> > --- a/drivers/pci/probe.c
+> > +++ b/drivers/pci/probe.c
+> > @@ -395,6 +395,9 @@ static void pci_read_bridge_io(struct pci_dev *dev, struct resource *res,
+> >  	unsigned long io_mask, io_granularity, base, limit;
+> >  	struct pci_bus_region region;
+> >  
+> > +	if (!dev->io_window)
+> > +		return;
+> > +
+> >  	io_mask = PCI_IO_RANGE_MASK;
+> >  	io_granularity = 0x1000;
+> >  	if (dev->io_window_1k) {
+> > @@ -465,6 +468,9 @@ static void pci_read_bridge_mmio_pref(struct pci_dev *dev, struct resource *res,
+> >  	pci_bus_addr_t base, limit;
+> >  	struct pci_bus_region region;
+> >  
+> > +	if (!dev->pref_window)
+> > +		return;
+> > +
+> >  	pci_read_config_word(dev, PCI_PREF_MEMORY_BASE, &mem_base_lo);
+> >  	pci_read_config_word(dev, PCI_PREF_MEMORY_LIMIT, &mem_limit_lo);
+> >  	base64 = (mem_base_lo & PCI_PREF_RANGE_MASK) << 16;
+> > -- 
+> > 2.39.5
+> > 
 
 -- 
 linux-phy mailing list
