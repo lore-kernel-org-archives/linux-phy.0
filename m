@@ -4,70 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 84D0DEB7EA1
-	for <linux-phy@archiver.kernel.org>; Wed,  4 Mar 2026 08:31:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 34AD2EB7EA1
+	for <linux-phy@archiver.kernel.org>; Wed,  4 Mar 2026 08:39:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bKAjD8yHWNE+NfWRZHjYatq6obqqau+RUcZu5bLOYtg=; b=PPzHDscHMCD3P6
-	jun/htE3NORDh8flfy71xgThh1tadhxajJSHB1R+ePJ6fslPKbBhCc0c7jYnGFsA/YYYZHCWRiFsn
-	+2ViJI7cyqWTCXAjkV+3ZTi1a6TX1RJf6EpQ6VTAbK9OmZA9wjUuDvZ0M68fyuNNhPyJ1zZv5uyRC
-	Z24FpuBfhND9xRmzpc+UKZnFlQGQeFFMr9viMIKdoosIxm5st32zNNLVXtKY9E63/nuFTtNXYDGsi
-	EFtYK04ibypp8jLPWqR10Qd+zZAhSE34HyLoMqyvBFciur6V/h92IlQNtums+ims8xwll51W0Ssqj
-	ppHs1FrsFkcfmr0BjVhQ==;
+	List-Owner; bh=EjbZ8UHoORAy/TUsRVB6stlC0mFALNg5lgNv4LH8fXE=; b=lO0YgWyABVwOCS
+	I2xk1uVH5861Ut+D/+1CRJOHkWXHeoUYCYchpdrPCUy5fpZIJD84k9GanuTxTEY2LkX8FrlWwPNJk
+	f2xgUKCG1g1m5qd4Op73/qyxj/w6PRORIDFy8pbcdKHNpkLQOXCfMGXxo1S5Vx+MAgo/+JdCvqhFK
+	CylC5o4VO8UkjIRyCf9Nz10EfR3+maWQpWDVzj5mDfxAzkSv+hqp/Bp+8pm5XeQi+GNAHrh1tJ0Wd
+	GspP6LnxHnGEDX0ybVO6tPRnOusEnfukzQEAkaW/bAnTOpqLgc7uFsJhQOED92jbbmylZwHAYV0oL
+	VYSKlAttADWT36CBbHFA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vxhe3-0000000GkcH-0Y8L;
-	Wed, 04 Mar 2026 08:31:51 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1vxhlc-0000000GlJi-35rn;
+	Wed, 04 Mar 2026 08:39:40 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vxhe2-0000000Gkbs-0frt;
-	Wed, 04 Mar 2026 08:31:50 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
-	:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=85L/7Hr747a8G/82IzAVHIbDO+NM/sNeFzNtQkKnSck=; b=X8fRgwWYRwQItjStX3HUSOAS9T
-	5F3ML/5zvm0nuSxsH6eVr3P+U1IBmZtqKicXAyMKjXrb9MOo3sS0Nkenpndlo8m1sqFbxF0Pqfi/p
-	heBG/Ax2Su++vp/pQ01Y2xr6ePh7H+h2/RZbPF7Knu50uT7zlXkHS/S3T9KueOyY8LbrAFRO3SQgx
-	za8F0QVr0T/4lweYQWU0fy6nCIH63+gCDSybsIvxMA3iD7I5jeAaj7yawSvyGpJLjeMJD9O6z85F1
-	I6IwpKd2kTZl69JNmDpaLq1pbQonWjqILLdTfUgxjpYjyVK1yEMWPCp5aLrgIjkcHszzR0Wjm25LS
-	o24a8TIA==;
-Received: from mx.socionext.com ([202.248.49.38])
-	by desiato.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vxhdy-000000048MG-2DyE;
-	Wed, 04 Mar 2026 08:31:49 +0000
-Received: from unknown (HELO kinkan3-ex.css.socionext.com) ([172.31.9.52])
-  by mx.socionext.com with ESMTP; 04 Mar 2026 17:31:37 +0900
-Received: from mail.mfilter.local (mail-arc02.css.socionext.com [10.213.46.40])
-	by kinkan3-ex.css.socionext.com (Postfix) with ESMTP id B44312069FEA;
-	Wed,  4 Mar 2026 17:31:37 +0900 (JST)
-Received: from iyokan3.css.socionext.com ([172.31.9.53]) by m-FILTER with ESMTP; Wed, 4 Mar 2026 17:31:37 +0900
-Received: from [10.212.247.202] (unknown [10.212.247.202])
-	by iyokan3.css.socionext.com (Postfix) with ESMTP id 67D1810A016;
-	Wed,  4 Mar 2026 17:31:37 +0900 (JST)
-Message-ID: <32838929-e5ed-4796-845b-ce45712a440b@socionext.com>
-Date: Wed, 4 Mar 2026 17:31:36 +0900
+	id 1vxhlY-0000000GlIo-3z5l;
+	Wed, 04 Mar 2026 08:39:38 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id D6649417F6;
+	Wed,  4 Mar 2026 08:39:35 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 31FECC19425;
+	Wed,  4 Mar 2026 08:39:35 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1772613575;
+	bh=BW1MAMlh/nk9MxeyiUabogHzZOl5p0qUa7BasAromto=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=EfR5j+GgtqBCJg9fn4WlhlRXNMZoren5zEMp9IawERa7OzBlNPqY3ntehvva1btFW
+	 8xsJbUsmmWUhHnyf+jBxr2ja0Z8XZPiZal3Ylk/3mOuZJejvLg3d75YRVyKtZdprcg
+	 du8ajEQ+Ke7oW16KjYjfs9lxtrhRAWfHdC2W7FfL0ikdn7SSR3xv6tA9gxGOn+61Uc
+	 aJoEXQO1hg25LbX54rzdUD9KMQBbAsnJUoTM2OgDHwScrid+WkGTn1iv8KsLAC7UNK
+	 PXbWKWLa+44L3myxtKVDYzc3noL5tTlb/+Kj7FWnBEPU6Tksq/+2cPWi+vHz59pIZ2
+	 X/LjKrskKwZJA==
+Date: Wed, 4 Mar 2026 09:39:33 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Caleb James DeLisle <cjd@cjdns.fr>
+Cc: linux-mips@vger.kernel.org, naseefkm@gmail.com, 
+	mturquette@baylibre.com, sboyd@kernel.org, robh@kernel.org, krzk+dt@kernel.org, 
+	conor+dt@kernel.org, tsbogend@alpha.franken.de, ryder.lee@mediatek.com, 
+	jianjun.wang@mediatek.com, lpieralisi@kernel.org, kwilczynski@kernel.org, mani@kernel.org, 
+	bhelgaas@google.com, vkoul@kernel.org, neil.armstrong@linaro.org, 
+	p.zabel@pengutronix.de, matthias.bgg@gmail.com, angelogioacchino.delregno@collabora.com, 
+	nbd@nbd.name, ansuelsmth@gmail.com, linux-clk@vger.kernel.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org, 
+	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org, 
+	linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH 1/8] dt-bindings: clock, reset: Add econet EN751221
+ bindings
+Message-ID: <20260304-accomplished-helpful-orca-5d6b81@quoll>
+References: <20260303190948.694783-1-cjd@cjdns.fr>
+ <20260303190948.694783-2-cjd@cjdns.fr>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] phy: uniphier-usb3: no devm for nvmem_cell_get
-To: Rosen Penev <rosenp@gmail.com>
-Cc: linux-phy@lists.infradead.org, Vinod Koul <vkoul@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>,
- Masami Hiramatsu <mhiramat@kernel.org>,
- "moderated list:ARM/UNIPHIER ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- open list <linux-kernel@vger.kernel.org>
-References: <20260304041602.7539-1-rosenp@gmail.com>
-Content-Language: en-US
-From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-In-Reply-To: <20260304041602.7539-1-rosenp@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <20260303190948.694783-2-cjd@cjdns.fr>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260304_083146_950524_6E20D117 
-X-CRM114-Status: GOOD (  15.98  )
+X-CRM114-CacheID: sfid-20260304_003937_120882_4D7765A1 
+X-CRM114-Status: GOOD (  20.74  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,54 +76,154 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Rosen,
+On Tue, Mar 03, 2026 at 07:09:41PM +0000, Caleb James DeLisle wrote:
+> Add clock and reset bindings for EN751221 as well as
+> a "chip-scu" which is an additional regmap that is used
+> by the clock driver as well as others. This split of the
+> SCU across two register areas is the same as the Airoha
+> AN758x family.
 
-On 2026/03/04 13:16, Rosen Penev wrote:
-> There is absolutely no reason to extend the lifetime of nvmem_cell_get
-> to after removal of the driver. Use and free right after use.
+Please wrap commit message according to Linux coding style / submission
+process (neither too early nor over the limit):
+https://elixir.bootlin.com/linux/v6.4-rc1/source/Documentation/process/submitting-patches.rst#L597
+
+A nit, subject: drop second/last, redundant "bindings". The
+"dt-bindings" prefix is already stating that these are bindings.
+See also:
+https://elixir.bootlin.com/linux/v6.17-rc3/source/Documentation/devicetree/bindings/submitting-patches.rst#L18
+
 > 
-> Signed-off-by: Rosen Penev <rosenp@gmail.com>
+> Signed-off-by: Caleb James DeLisle <cjd@cjdns.fr>
 > ---
->   drivers/phy/socionext/phy-uniphier-usb3hs.c | 3 ++-
->   1 file changed, 2 insertions(+), 1 deletion(-)
+>  .../bindings/clock/airoha,en7523-scu.yaml     | 19 ++++++-
+>  .../mips/econet,en751221-chip-scu.yaml        | 41 ++++++++++++++++
+>  MAINTAINERS                                   |  3 ++
+>  .../dt-bindings/clock/econet,en751221-scu.h   | 15 ++++++
+>  .../dt-bindings/reset/econet,en751221-scu.h   | 49 +++++++++++++++++++
+>  5 files changed, 126 insertions(+), 1 deletion(-)
+>  create mode 100644 Documentation/devicetree/bindings/mips/econet,en751221-chip-scu.yaml
+>  create mode 100644 include/dt-bindings/clock/econet,en751221-scu.h
+>  create mode 100644 include/dt-bindings/reset/econet,en751221-scu.h
 > 
-> diff --git a/drivers/phy/socionext/phy-uniphier-usb3hs.c
-> b/drivers/phy/socionext/phy-uniphier-usb3hs.c
-> index 8c8673df0084..c8971eee3640 100644
-> --- a/drivers/phy/socionext/phy-uniphier-usb3hs.c
-> +++ b/drivers/phy/socionext/phy-uniphier-usb3hs.c
-> @@ -104,11 +104,12 @@ static int uniphier_u3hsphy_get_nvparam(struct
-> uniphier_u3hsphy_priv *priv,
->   	struct nvmem_cell *cell;
->   	u8 *buf;
->   
-> -	cell = devm_nvmem_cell_get(priv->dev, name);
-> +	cell = nvmem_cell_get(priv->dev, name);
->   	if (IS_ERR(cell))
->   		return PTR_ERR(cell);
->   
->   	buf = nvmem_cell_read(cell, NULL);
-> +	nvmem_cell_put(cell);
->   	if (IS_ERR(buf))
->   		return PTR_ERR(buf);
->   
+> diff --git a/Documentation/devicetree/bindings/clock/airoha,en7523-scu.yaml b/Documentation/devicetree/bindings/clock/airoha,en7523-scu.yaml
+> index a8471367175b..e60e54273393 100644
+> --- a/Documentation/devicetree/bindings/clock/airoha,en7523-scu.yaml
+> +++ b/Documentation/devicetree/bindings/clock/airoha,en7523-scu.yaml
+> @@ -32,6 +32,7 @@ properties:
+>        - enum:
+>            - airoha,en7523-scu
+>            - airoha,en7581-scu
+> +          - econet,en751221-scu
+>  
+>    reg:
+>      items:
+> @@ -67,7 +68,10 @@ allOf:
+>    - if:
+>        properties:
+>          compatible:
+> -          const: airoha,en7581-scu
+> +          items:
 
-Looks good to me.
-This function is called multiple times and creates a cell each time,
-so it's probably better to delete it after using it.
+Drop items, it's just enum
 
-Reviewed-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+> +            - enum:
+> +                - airoha,en7581-scu
+> +                - econet,en751221-scu
+>      then:
+>        properties:
+>          reg:
+> @@ -98,3 +102,16 @@ examples:
+>                #reset-cells = <1>;
+>        };
+>      };
+> +
+> +  - |
+> +    soc {
+> +      #address-cells = <1>;
+> +      #size-cells = <1>;
 
-Thank you,
+No need for new example, especially without any differences. You already
+have there two.
 
----
-Best Regards
-Kunihiko Hayashi
+> +
+> +      scuclk2: clock-controller@1fb00000 {
+> +        compatible = "econet,en751221-scu";
+> +        reg = <0x1fb00000 0x970>;
+> +        #clock-cells = <1>;
+> +        #reset-cells = <1>;
+> +      };
+> +    };
+> diff --git a/Documentation/devicetree/bindings/mips/econet,en751221-chip-scu.yaml b/Documentation/devicetree/bindings/mips/econet,en751221-chip-scu.yaml
+> new file mode 100644
+> index 000000000000..7c7c8cf8d2a5
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/mips/econet,en751221-chip-scu.yaml
+> @@ -0,0 +1,41 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/mips/econet,en751221-chip-scu.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: EcoNet Chip SCU Controller for EN751221 SoC
+> +
+> +maintainers:
+> +  - Caleb James DeLisle <cjd@cjdns.fr>
+> +
+> +description:
+> +  The EcoNet chip-scu block provides a configuration interface for clock,
+> +  io-muxing and other functionalities used by multiple controllers (e.g. clock,
+> +  pinctrl, ecc) on EN751221 SoC.
+> +
+> +properties:
+> +  compatible:
+> +    items:
+> +      - const: econet,en751221-chip-scu
+> +      - const: syscon
+
+And it does not fit existing syscon bindings file, because ... ?
+
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    soc {
+> +      #address-cells = <1>;
+> +      #size-cells = <1>;
+> +      syscon@1fa20000 {
+> +        compatible = "econet,en751221-chip-scu", "syscon";
+> +        reg = <0x1fa20000 0x388>;
+> +      };
+> +    };
+
+...
+
+> +
+> +#define EN751221_MAX_CLKS	6
+
+Drop, not a binding.
+
+> +
+> +#endif /* _DT_BINDINGS_CLOCK_ECONET_EN751221_SCU_H_ */
+> diff --git a/include/dt-bindings/reset/econet,en751221-scu.h b/include/dt-bindings/reset/econet,en751221-scu.h
+> new file mode 100644
+
+Best regards,
+Krzysztof
+
 
 -- 
 linux-phy mailing list
