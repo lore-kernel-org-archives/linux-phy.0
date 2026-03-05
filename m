@@ -4,136 +4,100 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 06CFFF47CC5
-	for <linux-phy@archiver.kernel.org>; Thu,  5 Mar 2026 19:48:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DE4A1F47CBA
+	for <linux-phy@archiver.kernel.org>; Thu,  5 Mar 2026 19:53:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/As7fu+/2xrFNtRv5QJ6cEVyBI1PVgUZl7h0vHS4RHw=; b=P1SBpAeLDQxmlX
-	HhbYK4oqLqANOnR14up26iMERHkD+DqH9wJ9wUCWNqUxvKVnTxwUAh625tXC3RxWbGwxcNGTSjA1n
-	ik5hYMQz5i/RDpVyzh5cZAm3QHB2PoMCLAqlsZpaf6ZaM8xuLNgNn6mriGsoxbqLLe0+hlaof2/lZ
-	NC2umWF/nbRwhBN5R4bnqAD+5oLFMMy6hUYd04jJxkEek1FEl/1qAXazfIb1EHTnfYIrEexMGJuMx
-	cS68c1OrYT6ZBPEGgopN8YZyOJoLlTNglSm5guKx1yZaaXf2GU+xUVvfFl81cPuH5nJaxXAw7JMTx
-	/6XBXkugMNplhR4cFavQ==;
+	List-Owner; bh=M9TskR4a1yuk7xdB8y2jNwRLB47IgSrwTDIifa8h/OI=; b=bVqKoBjULDeM23
+	ApgJb0nbWWox2tTXE76RsOel7oeUeEKIY+GwJwoXpvRQF2xz/upYErqPAhtgtsC7PfFfmBTWYpTW7
+	ihrwQ/C1B7VOOnMn6gcSLTaqmMHpciygXxf2UqJ6zYv1kURZIR2tur05+J98ohXoHr77WFq/v6KEy
+	LP7rd7TRCugbQSyoR5CwN2gqIMIMZCA6nULfiAVOnXghqdpDh33jpSY+UTZp8k/K4wKKBTaqStFEb
+	BHLJGPG5bQxu/4g5n6NxG4iL3Ta/ETWf76wBn2a2vm7mMzCclJIPbUMxyeWs2u+vp4jtlVbLYUohD
+	23lyH7ezkmLZO3m67spQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vyEgY-00000002Tb7-1WQh;
-	Thu, 05 Mar 2026 19:48:38 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1vyElb-00000002U6o-2ZLd;
+	Thu, 05 Mar 2026 19:53:51 +0000
+Received: from omta40.uswest2.a.cloudfilter.net ([35.89.44.39])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vyEgV-00000002Ta7-1mY2
+	id 1vyElY-00000002U5t-2Vda
 	for linux-phy@lists.infradead.org;
-	Thu, 05 Mar 2026 19:48:36 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 625IqD2d4043726
-	for <linux-phy@lists.infradead.org>; Thu, 5 Mar 2026 19:48:35 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=brQJvLzGSg1FNHbunEnKNL87
-	CiKohImsgvm9vmEVnZc=; b=HWRqKTXJDv9CRYuHW6AkxIrJUi7AT0CwdvxIMPMZ
-	yAhmVgLfj0z5w+OFNPRT0xQisHx8Yt3UK/+vQxGxX5KP0P7CzKR7LFaCi/rUII9E
-	9pgY+Av8R1//h3p6JXQZj+ry8vPl946OxRAVDnma8KigEffmCR1PpKOuMqu1T28p
-	PDg1SVQxMnlvDrEdfw3p/0bXfrH9+XV18D9NCZnVbdDjMqzfBfx0JOOtMfYUYNd+
-	as/StFXtjiEoONus6618GPgkciGX4LRf1N72Ec4j5X62GOxVZeGIPef4w3N1Vffs
-	I0UYBAAOnW8v1wuRjJhwoVBQnLipRjXuOisw+AGegYL+hg==
-Received: from mail-pj1-f70.google.com (mail-pj1-f70.google.com [209.85.216.70])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4cqfg68604-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Thu, 05 Mar 2026 19:48:34 +0000 (GMT)
-Received: by mail-pj1-f70.google.com with SMTP id 98e67ed59e1d1-358e425c261so7503079a91.3
-        for <linux-phy@lists.infradead.org>; Thu, 05 Mar 2026 11:48:34 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1772740114; x=1773344914; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=brQJvLzGSg1FNHbunEnKNL87CiKohImsgvm9vmEVnZc=;
-        b=JFOdNWYtHUzCZbytGeMVNxS+s7m/5CKHntYBpO3kguU4uhAoYajFTEaQxM/GoinzFD
-         Ge141t7DrZNDWfTCWXNGqELm/fgpBhB9VJ4XAzC0pjARpsnlXNx8Elcn7U6baNdzKeS/
-         SPSjTOEQqEw/gdqMuAVmi7/UhyjOKLonRAlLa+RUVaidYwG/HWmh29hxbw5TYKEGTyVC
-         bTZLQWFjboy0yUVLkdn3KS4k2Twn9QBCMsnsN+9X++VnDPXRTayhDvi+L1Bze9XaPeJa
-         N3CoYg2i7TKIE6Gu8q6bkz2GoFzAm926avgBIIUKKQmVsDboZT5YSBT/dJt3Y+BG9i4g
-         f/ww==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1772740114; x=1773344914;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=brQJvLzGSg1FNHbunEnKNL87CiKohImsgvm9vmEVnZc=;
-        b=aV9T3D9T5HS/ORst9Z6c41USccIgCeePHjqQau8W294uDtVgnBEKZrT6bdUto00DiG
-         ZgcPSwb/+SanRiQf6h/qo7hNJtObY5DKGkMrC82ZPyqOtu8PZqarx4TySFEpOrCalF0t
-         Jf6y4LGKL27wqFJbu6ziYFUIzkxLSSqQFWbiZozCcT9iC7OkwyXJQlHU8JDdb6nZNzNh
-         rW6vcSHbZtN+YLybKFUVrsNOuapIJryYc4TGypjDspZqVfnuu0xOwdUg3n2n5rbtUWKX
-         JXN5mAIRRohis4LcPxJJdYSV/pf8ovWbpTpRKecNjLfAo7yl1tJpupNXYcAtN4iRB/1+
-         ts0g==
-X-Forwarded-Encrypted: i=1; AJvYcCUkNipY6MiR/XQ65hMxyb4X01ZuLLx9JvfgRdFkhbOFX6UpwCel2vz2/3lhJKorPyaOHwq40P6TleA=@lists.infradead.org
-X-Gm-Message-State: AOJu0YykoEr4WF3GlENGdEzFbSnbr1GpGS0zXH/D1zUFt/KEpDx5KnW7
-	MGM/+FUlHcgxJiBlZCb80xJ2OJwhtIaHCNekvJ6HfYvOmIxJditO0Dwa28UqmQNeKKuBrymd2Pn
-	kk6UkgVQ3EYINOJ8dXBZWwa9P9Rbu0ycdnI75v4tckaJXH8TijEDWtXoL+WzqUo4CqGfI
-X-Gm-Gg: ATEYQzwdnDECjbjM2yNZDSDfQ8106qrJWz2dQplOK4ArFJ0MNQ53gjBMc9zrTiw2Phk
-	aKFHyyTGg8TFc5+oznEhS0mYZbbdB5bve2rkJgKVYcPzkQEPSfqQdH1meZZTbb2NERIlgoUARzL
-	CH4qHhifD0ItLUE1bA8+5asReWQ193Y/aRWiQ+w2Z633psuxI+75lQJi8ECJCv37hahgkSsKC3e
-	SQWVh11cbKSeoUMwNmnYN8pHeTTzJu1Pot2UJzxpvdNrEtALcdQAeFk82DUy7GwDergIqBAPTjN
-	mHoK7vyB+NEytb4TOVPvypHKpi8n1ba+YB9UKwwQtO0sVUXoNW7LHz3qs2A/Zg5lDFGMoe0lH/y
-	+haMP0FBwJw/e5ZGh4Moxk3683Fm1x8Qsgxo=
-X-Received: by 2002:a17:903:2c03:b0:2ad:ad0f:bbc3 with SMTP id d9443c01a7336-2ae6aab2710mr80733005ad.33.1772740114015;
-        Thu, 05 Mar 2026 11:48:34 -0800 (PST)
-X-Received: by 2002:a17:903:2c03:b0:2ad:ad0f:bbc3 with SMTP id d9443c01a7336-2ae6aab2710mr80732835ad.33.1772740113587;
-        Thu, 05 Mar 2026 11:48:33 -0800 (PST)
-Received: from oss.qualcomm.com ([202.46.23.25])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2ae4dcf80f2sm127371555ad.90.2026.03.05.11.48.29
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 05 Mar 2026 11:48:33 -0800 (PST)
-Date: Fri, 6 Mar 2026 01:18:26 +0530
-From: Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>
-To: "Russell King (Oracle)" <rmk+kernel@armlinux.org.uk>
-Cc: Andrew Lunn <andrew@lunn.ch>,
-        Alexandre Torgue <alexandre.torgue@foss.st.com>,
-        Andrew Lunn <andrew+netdev@lunn.ch>,
-        "David S. Miller" <davem@davemloft.net>,
-        Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>,
-        linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
-        linux-phy@lists.infradead.org,
-        linux-stm32@st-md-mailman.stormreply.com,
-        Neil Armstrong <neil.armstrong@linaro.org>, netdev@vger.kernel.org,
-        Paolo Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>
-Subject: Re: [PATCH net-next v2 2/7] net: stmmac: qcom-ethqos: convert to use
- phy_set_mode_ext()
-Message-ID: <aaneCvwkgMOLFsVl@oss.qualcomm.com>
-References: <aacD3osfaZkLsGxm@shell.armlinux.org.uk>
- <E1vxS44-0000000BQXU-38lG@rmk-PC.armlinux.org.uk>
+	Thu, 05 Mar 2026 19:53:49 +0000
+Received: from eig-obgw-6003b.ext.cloudfilter.net ([10.0.30.175])
+	by cmsmtp with ESMTPS
+	id yDOpvM07waPqLyElLv2P4v; Thu, 05 Mar 2026 19:53:35 +0000
+Received: from gator4166.hostgator.com ([108.167.133.22])
+	by cmsmtp with ESMTPS
+	id yElEvlDy7hoT4yElFvA9jo; Thu, 05 Mar 2026 19:53:29 +0000
+X-Authority-Analysis: v=2.4 cv=XZyJzJ55 c=1 sm=1 tr=0 ts=69a9df3e
+ a=1YbLdUo/zbTtOZ3uB5T3HA==:117 a=k5Y5iPg+dmTXVWgYE/XtfQ==:17
+ a=IkcTkHD0fZMA:10 a=Yq5XynenixoA:10 a=7T7KSl7uo7wA:10 a=pGLkceISAAAA:8
+ a=cHXIWmrghMx9ieuqI_QA:9 a=QEXdDO2ut3YA:10 a=2aFnImwKRvkU0tJ3nQRT:22
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=embeddedor.com; s=default; h=Content-Transfer-Encoding:Content-Type:
+	In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender
+	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+	List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=F2xE/DQ+Q5r7oMcXl0ntg1chhQRqOV9k4gwBnHRdV80=; b=VRZpQFp+atIYsQW5dHJl2ybcVq
+	qAE6jUAUdVaOWYFaYTwH0wT428oYj/lfXrlDMX8UduRhlYO/kE8Q7USuhA2lONB/WN2oYOI4MrB1p
+	xXNh50MQhPOqS6pRdGCkKtmkiJflyrqvqIe6yNlumxvXKgEgX/8fYcRp6S42rOk8Kq0NszgDWphnQ
+	0qm/AFkA9S4J5W+u2oVtkp+v45pGtUVqq+0aNuj6JrFN2SXCaqaN8JVsFMEM1JEXYN/OmF3wqwcJH
+	cRJq+V51GbDjZQ/9ZLI4eYl56vKPoHxPW0Dqpw+33JMdRjJ+2MmvJrUWi9+a5jlZg16EsCW+9JQD7
+	sZuMA8TA==;
+Received: from [177.238.16.13] (port=51890 helo=[192.168.0.21])
+	by gator4166.hostgator.com with esmtpsa  (TLS1.2) tls TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+	(Exim 4.99.1)
+	(envelope-from <gustavo@embeddedor.com>)
+	id 1vyElE-00000000oh1-1DvD;
+	Thu, 05 Mar 2026 13:53:28 -0600
+Message-ID: <5bcef6ea-e83b-47c3-b75a-cfd13e4073c7@embeddedor.com>
+Date: Thu, 5 Mar 2026 13:52:49 +0900
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <E1vxS44-0000000BQXU-38lG@rmk-PC.armlinux.org.uk>
-X-Proofpoint-GUID: ylgnU4CgFbuhnic6h7nvuGe1_vtGJCU4
-X-Proofpoint-ORIG-GUID: ylgnU4CgFbuhnic6h7nvuGe1_vtGJCU4
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzA1MDE2NSBTYWx0ZWRfX652mTgSrmdFL
- 2G3Q9HYRYihE1l2PCYDOiruQ8Jp0u5cZNzlvhqfVa0mwnzVOc7Q+NiPrAxNlgZrohGiHOQ0cxzS
- AjnsNvf7Qv65ZZGxOznOvqPYouqwwJh929ZjgwZ24HF6hLgqSgXZ4cppwhjvhY972M/s/TTymMK
- mcYx79pKTplm0WpwvoCzhFxjRGHNpfM6IQYszCztt58dy5EZlSQOn2Jn9XG4mvmzQRypki5T48q
- cyvb/FMfebTrrjO2cZ0BlXQmn6Z4JPtPLP2KKbUnL1JqGXEzqvKQdiyrulaTmi9rT0XqjoPc2BJ
- Kc2H6wyTo/QBVzlxQIr5RtzZNsPB0iVSP9pJmhGApJVBzTeoGFBmnc9iso4DmjG2whRTpsUHIUO
- J9fK4RTkIZtSHUP1erU9Q88SPBaPRlohqhJY00R2MVX+3Uxf/k3O+QRTKFZpMWtzppSPhZLP9Ly
- 4jW2/Bzws5an6zmwGRQ==
-X-Authority-Analysis: v=2.4 cv=XKg9iAhE c=1 sm=1 tr=0 ts=69a9de12 cx=c_pps
- a=0uOsjrqzRL749jD1oC5vDA==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
- a=kj9zAlcOel0A:10 a=Yq5XynenixoA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_K5XuSEh1TEqbUxoQ0s3:22
- a=EUspDBNiAAAA:8 a=PHq6YzTAAAAA:8 a=a1qNmnCxCMJs4MpL8WAA:9 a=CjuIK1q_8ugA:10
- a=mQ_c8vxmzFEMiUWkPHU9:22 a=ZKzU8r6zoKMcqsNulkmm:22
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
- definitions=2026-03-05_05,2026-03-04_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- suspectscore=0 adultscore=0 clxscore=1015 priorityscore=1501 phishscore=0
- malwarescore=0 spamscore=0 lowpriorityscore=0 impostorscore=0 bulkscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2602130000 definitions=main-2603050165
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] phy: qualcomm: usb-hs-28nm: use flex array
+To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
+ Rosen Penev <rosenp@gmail.com>, linux-phy@lists.infradead.org
+Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
+ <neil.armstrong@linaro.org>, Kees Cook <kees@kernel.org>,
+ "Gustavo A. R. Silva" <gustavoars@kernel.org>,
+ "open list:ARM/QUALCOMM MAILING LIST" <linux-arm-msm@vger.kernel.org>,
+ open list <linux-kernel@vger.kernel.org>,
+ open "list:KERNEL" HARDENING "(not" covered by other
+ "areas):Keyword:b__counted_by(_le|_be)?b" <linux-hardening@vger.kernel.org>
+References: <20260304230636.27808-1-rosenp@gmail.com>
+ <8d7a25e8-3af6-4adf-bcec-394895519bea@oss.qualcomm.com>
+Content-Language: en-US
+From: "Gustavo A. R. Silva" <gustavo@embeddedor.com>
+In-Reply-To: <8d7a25e8-3af6-4adf-bcec-394895519bea@oss.qualcomm.com>
+X-AntiAbuse: This header was added to track abuse, please include it with any abuse report
+X-AntiAbuse: Primary Hostname - gator4166.hostgator.com
+X-AntiAbuse: Original Domain - lists.infradead.org
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - embeddedor.com
+X-BWhitelist: no
+X-Source-IP: 177.238.16.13
+X-Source-L: No
+X-Exim-ID: 1vyElE-00000000oh1-1DvD
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
+X-Source-Sender: ([192.168.0.21]) [177.238.16.13]:51890
+X-Source-Auth: gustavo@embeddedor.com
+X-Email-Count: 36
+X-Org: HG=hgshared;ORG=hostgator;
+X-Source-Cap: Z3V6aWRpbmU7Z3V6aWRpbmU7Z2F0b3I0MTY2Lmhvc3RnYXRvci5jb20=
+X-Local-Domain: yes
+X-CMAE-Envelope: MS4xfEYlCh+rXAbPt8DZQb/Uy8ueARrHuFfdGRfTEMUD9uyetMULaf3HsJR2YrwHNOJFlHmSb+Q1WaxpKtfbkqgnPXFbbQLyXZt0HgApFFvqKazXqC2h55Pf
+ Lfyav8uEKwsDtBH7RQbinVuhKv10sR/nwSqyQNbXEhDq0H3amXUy3xuxSzbAhG0X26D0U6XymCcrwfP9oSEzEBNOoBAR+fox8x3zccrnJ8pXfqvmU7/7K+CK
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260305_114835_464025_9748D1BA 
-X-CRM114-Status: GOOD (  11.15  )
+X-CRM114-CacheID: sfid-20260305_115348_687918_EBED67A8 
+X-CRM114-Status: UNSURE (   6.42  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -145,23 +109,37 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Mar 03, 2026 at 03:53:40PM +0000, Russell King (Oracle) wrote:
-> qcom-sgmii-eth now accepts the phy_set_mode*() calls to configure the
-> SerDes, taking a PHY interface mode rather than a speed. This allows
-> the elimination of the interface mode to speed conversion in
-> ethqos_mac_finish_serdes().
+Hi!
+
+On 3/5/26 19:06, Konrad Dybcio wrote:
+> On 3/5/26 12:06 AM, Rosen Penev wrote:
+>> Allows simplifying allocation to a single kzalloc call.
+>>
+>> Also allows using __counted_by for extra runtime analysis.
+>>
+>> Signed-off-by: Rosen Penev <rosenp@gmail.com>
+>> ---
 > 
-> Tested-by: Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>
-> Signed-off-by: Russell King (Oracle) <rmk+kernel@armlinux.org.uk>
+> I don't see how this is an improvement - __counted_by() is useful for
+> cases where we don't know how many entries there are, but in this
+> case it's fully deterministic (as priv->num_clks is a compile-time
+> constant)
 
-Reviewed-by: Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>
+Will this always be the case in the future (entries being a compile-time
+constant)?
 
-	Ayaan
+Thanks
+-Gustavo
+
+> 
+> Konrad
+> 
+
 
 -- 
 linux-phy mailing list
