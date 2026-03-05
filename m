@@ -4,56 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 72167EEF314
-	for <linux-phy@archiver.kernel.org>; Thu,  5 Mar 2026 07:41:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 35E8CEEF314
+	for <linux-phy@archiver.kernel.org>; Thu,  5 Mar 2026 07:48:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=etka8Z788+GD9Ikngc0eXtnm9ETEj5/GWR0JD1ecwvU=; b=pReLhHQvfxF1th
-	NQ5z4jPwHN60wUMVaZqOY5Gy/S6gw6oc3HQESEEaaeBqy8rCr/J6Kczqh74aD/dnl2P+1xwM6qf4D
-	QzEArDk/GASBVmezNs5KiwOm/zip6XL8SD5pre79rbY/V+iKvmFEufkt9zcGDAQhES0lC4368QKyK
-	TtK4uFkIZLkz4dkMdnnOS2Hiif/iVXHUGBZvLkZFwxA4wbfpMh8XIFFq9VaQCDStD0X9TwfK5HjCC
-	//xeSQsLV1V0AFHRdHlY8VuLswXxjTlXd+QuFbuRPxe3vR39l9/NTaGiG2OIUHF1URjyMWl+at0NK
-	zBwS2etzNlDU6Fsh2fbQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xW8lb/ODJBmJn3W7UyyjJVLCGNLKElBsM/f3igl8hr8=; b=WZl/jbqS3lIWg9
+	8kx0CPYpEPRNcX0pIVd7OBQwNXHQAQZ/B+Osl5cPu+WnDveiDZWujZudkKXRQTUIU6GXv/cuJSymk
+	uEZHkqCGXySO2K4SYMRvzXED1R6QtG5FOv53TRw9a6CrCKkUcL14/VacihwGwUuzeUcK4g0pfVAI+
+	FJLFJzxLMD/C08WdZBxa367ir8W6wmMu7T9yQ4Nto1BrbNIjXr1o7UB2AEWr7Y5WyKW3sN7pnO+AL
+	5r5g7IaqWcBS4fFZXM3OS7NFPxXp/3WXJNjoKEhWbI7ZPT6XyFMmr/2khI7BteJQGaQTcjU/H2a4B
+	fkeCXi5uXtIKbWqajMOw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vy3Kg-000000016Hg-0AOj;
-	Thu, 05 Mar 2026 07:41:18 +0000
-Received: from mail-m32113.qiye.163.com ([220.197.32.113])
+	id 1vy3RC-0000000176l-441J;
+	Thu, 05 Mar 2026 07:48:02 +0000
+Received: from mail-vs1-f51.google.com ([209.85.217.51])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vy3Kb-000000016Gp-2kFJ;
-	Thu, 05 Mar 2026 07:41:16 +0000
-Received: from localhost.localdomain (unknown [58.22.7.114])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 35d9317f8;
-	Thu, 5 Mar 2026 15:41:03 +0800 (GMT+08:00)
-From: Shawn Lin <shawn.lin@rock-chips.com>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: linux-rockchip@lists.infradead.org,
-	linux-phy@lists.infradead.org,
-	Heiko Stuebner <heiko@sntech.de>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	linux-kernel@vger.kernel.org,
-	Shawn Lin <shawn.lin@rock-chips.com>
-Subject: [PATCH v2] phy: rockchip: naneng-combphy: Consolidate SSC configuration
-Date: Thu,  5 Mar 2026 15:40:50 +0800
-Message-Id: <1772696450-139583-1-git-send-email-shawn.lin@rock-chips.com>
-X-Mailer: git-send-email 2.7.4
-X-HM-Tid: 0a9cbcf1660e09cckunm0862caed12fd36f
-X-HM-MType: 1
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZGU1JQ1ZOTUNLQ0tCTEIYGBpWFRQJFh
-	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSU9PT0
-	hVSktLVUpCS0tZBg++
-DKIM-Signature: a=rsa-sha256;
-	b=VrrBuC4c15/Ax++RlsCKGBOIsXdhU7ldTTYgxpU2ZObRq1M6eOPmQ5GF8ywPA0QCbNYfupVFuOmPCEBx6X/mONKqojMinuOjNyvUXJw/qUV3vswUTze9EC9Pg5BLrGj1zx4lHzI9BlbrE1BpbV0Ero+t02hvv6eSA8Z3BRw2N98=; s=default; c=relaxed/relaxed; d=rock-chips.com; v=1;
-	bh=maimN4Jc4wmapo/URqQAONndbW9GZM1s29wAClxj9ME=;
-	h=date:mime-version:subject:message-id:from;
+	id 1vy3RA-0000000175o-1LW0
+	for linux-phy@lists.infradead.org;
+	Thu, 05 Mar 2026 07:48:01 +0000
+Received: by mail-vs1-f51.google.com with SMTP id ada2fe7eead31-5ff1703cb9eso2132721137.3
+        for <linux-phy@lists.infradead.org>; Wed, 04 Mar 2026 23:47:59 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1772696879; x=1773301679;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=7xyHjzGnphi32H4Bte19x6wQV76UaiJqzbc3zMkJKs8=;
+        b=dEa+JsxO9XS/SVuyMf0xNWTC7r6cqIk4TqQUoJCy+e8t+fcsUlmizSzhymcNTEBNoD
+         o+0m/GNe0y/oSDIGLy524R+AH3Ecr1kaj7OI7d0Us7JFGMKeUOzloOAptRc7r37VMEw6
+         ChkfRsSQFHYBZYiOH0yTzCOq+ebRqqwfPMZK2yztvLSPo6c0fzhHckiwlrHRhG/x27lv
+         //goC1GFHVLzQaNFxHKPXhrEl/HljFOI9LTg84HgjBr9qTpKoosNL3QB+xTa7sjagU5q
+         WPaJnjxwSC7Ilw1YP+9mBbdNedXCB+CdCD1yTD4V1F2XpgGRoMoJmTtb17ZKI+WEFnp3
+         VONQ==
+X-Gm-Message-State: AOJu0Yx0U3fcO4Pkkc5iYocSzZr1yyw/IBHemylIBULgXmJswWGc6z0c
+	MNo2ZGE6dj5/TBxUJLXu3UAQosRdCwDA1N69aGPsEoSA2Xf5agqm5rjNxUUkumIS
+X-Gm-Gg: ATEYQzz0bCD6esJthJSyX4DeIa20usDEuE0xSTaylCqKXk7Wjt3yfMYoBzScaIsWWYJ
+	u9QCMTTeA4ptR5UX9Kihh7T9IkVJ9UfDlYXjPwwDDF0nL6N/tBrqaUI+BfTynpaeI6iOpPKk6po
+	3Kh6D0aDMSsVBsoOyeMwMj15WM0oUt13E3jqTdr8MY2WbhNjmBH95MgSCHuU9xjj/LMNLsizeLd
+	lBlGvHSU7FuxgZd55b5bChzFL1I308jjge2yPdukTYGSVglAITLYRm/Krr6rwEXIg6enMR9zqkD
+	jMuLEERCXiIIUC0XA+lNeXusflfqSkMs2XGw4QWqt7eYCv25mhwtwMb09K2r3l3AtkkbHNDtR6K
+	YHuKrPALBHQYkY6NF4BDmM1VUP2CO8O31feZhMSSsqlDPwuCcYP0sB/7Fs7RRgBZAT82DUlt3kk
+	ONxftDetmloODHpMaY7RQ4hefznnkDD0fXkLTT1nXk+HKxeNH/1MTxYdFZTh26
+X-Received: by 2002:a05:6102:c8d:b0:5ff:9e4f:6946 with SMTP id ada2fe7eead31-5ffaa6c35f4mr2058165137.0.1772696878818;
+        Wed, 04 Mar 2026 23:47:58 -0800 (PST)
+Received: from mail-vs1-f46.google.com (mail-vs1-f46.google.com. [209.85.217.46])
+        by smtp.gmail.com with ESMTPSA id ada2fe7eead31-5ffbf2b3b0csm2906057137.2.2026.03.04.23.47.58
+        for <linux-phy@lists.infradead.org>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 04 Mar 2026 23:47:58 -0800 (PST)
+Received: by mail-vs1-f46.google.com with SMTP id ada2fe7eead31-5ff1703cb9eso2132709137.3
+        for <linux-phy@lists.infradead.org>; Wed, 04 Mar 2026 23:47:58 -0800 (PST)
+X-Received: by 2002:a05:6102:32c1:b0:5ff:a16b:93f9 with SMTP id
+ ada2fe7eead31-5ffaae2d5b0mr1883200137.21.1772696877960; Wed, 04 Mar 2026
+ 23:47:57 -0800 (PST)
+MIME-Version: 1.0
+References: <20260304175735.2660419-1-vladimir.oltean@nxp.com> <20260304175735.2660419-14-vladimir.oltean@nxp.com>
+In-Reply-To: <20260304175735.2660419-14-vladimir.oltean@nxp.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Thu, 5 Mar 2026 08:47:47 +0100
+X-Gmail-Original-Message-ID: <CAMuHMdUNtqsui3ek1RYCTyiuDLRajpSBMnrdzED6wu6i7-QcuA@mail.gmail.com>
+X-Gm-Features: AaiRm514iMGAdfTBAVsgfVfK-GGHy9jHY4ezK-Lp3w09-JWpnENLQ0I4lkIFgvE
+Message-ID: <CAMuHMdUNtqsui3ek1RYCTyiuDLRajpSBMnrdzED6wu6i7-QcuA@mail.gmail.com>
+Subject: Re: [PATCH phy-next 13/22] phy: introduce phy_get_max_link_rate()
+ helper for consumers
+To: Vladimir Oltean <vladimir.oltean@nxp.com>
+Cc: linux-phy@lists.infradead.org, Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, dri-devel@lists.freedesktop.org, 
+	freedreno@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org, 
+	linux-arm-msm@vger.kernel.org, linux-can@vger.kernel.org, 
+	linux-gpio@vger.kernel.org, linux-ide@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-media@vger.kernel.org, 
+	linux-pci@vger.kernel.org, linux-renesas-soc@vger.kernel.org, 
+	linux-riscv@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+	linux-samsung-soc@vger.kernel.org, linux-sunxi@lists.linux.dev, 
+	linux-tegra@vger.kernel.org, linux-usb@vger.kernel.org, 
+	netdev@vger.kernel.org, spacemit@lists.linux.dev, 
+	UNGLinuxDriver@microchip.com, Andrzej Hajda <andrzej.hajda@intel.com>, 
+	Robert Foss <rfoss@kernel.org>, Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, 
+	Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>, 
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, 
+	Thomas Zimmermann <tzimmermann@suse.de>, David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
+	Andy Yan <andy.yan@rock-chips.com>, Marc Kleine-Budde <mkl@pengutronix.de>, 
+	Vincent Mailhol <mailhol@kernel.org>, Nicolas Ferre <nicolas.ferre@microchip.com>, 
+	Alexandre Belloni <alexandre.belloni@bootlin.com>, Claudiu Beznea <claudiu.beznea@tuxon.dev>, 
+	Markus Schneider-Pargmann <msp@baylibre.com>, Magnus Damm <magnus.damm@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260304_234115_068037_8E6ADE5E 
-X-CRM114-Status: GOOD (  16.70  )
+X-CRM114-CacheID: sfid-20260304_234800_366026_AAFB8936 
+X-CRM114-Status: GOOD (  21.74  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -65,325 +107,60 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The PCIe SSC configuration for the RK3588 and RK3576 SoCs required
-additional tuning which is missing. When adding these same SSC
-configurations for both of these two SoCs, as well as upcoming
-platforms, it's obvious the SSC setup code was largely duplicated
-across the platform-specific configuration functions. This becomes
-harder to maintain as more platforms are added.
+Hi Vladimir,
 
-So extract the common SSC logic into a shared helper function,
-rk_combphy_common_cfg_ssc(). This cleans up the per-platform drivers
-and centralizes the standard configuration as possible.
+On Wed, 4 Mar 2026 at 19:00, Vladimir Oltean <vladimir.oltean@nxp.com> wrote:
+> Consumer drivers shouldn't dereference struct phy, not even to get to
+> its attributes.
+>
+> We have phy_get_bus_width() as a precedent for getting the bus_width
+> attribute, so let's add phy_get_max_link_rate() and use it in DRM and
+> CAN drivers.
+>
+> Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
 
-Signed-off-by: Shawn Lin <shawn.lin@rock-chips.com>
+Thanks for your patch!
 
----
+>  drivers/net/can/rcar/rcar_canfd.c                   | 2 +-
 
-Changes in v2:
-- rework to consolidate more configuration
-- reword the commit message
+For the Renesas part:
+Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
 
- drivers/phy/rockchip/phy-rockchip-naneng-combphy.c | 173 +++++++++------------
- 1 file changed, 73 insertions(+), 100 deletions(-)
+> --- a/drivers/phy/phy-core.c
+> +++ b/drivers/phy/phy-core.c
+> @@ -640,6 +640,12 @@ void phy_set_bus_width(struct phy *phy, int bus_width)
+>  }
+>  EXPORT_SYMBOL_GPL(phy_set_bus_width);
+>
+> +u32 phy_get_max_link_rate(struct phy *phy)
+> +{
+> +       return phy->attrs.max_link_rate;
+> +}
+> +EXPORT_SYMBOL_GPL(phy_get_max_link_rate);
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-index b60d6bf..2b0f152 100644
---- a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-+++ b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-@@ -121,6 +121,7 @@
- #define RK3568_PHYREG32_SSC_OFFSET_500PPM	1
- 
- #define RK3568_PHYREG33				0x80
-+#define RK3568_PHYREG33_PLL_SSC_CTRL		BIT(5)
- #define RK3568_PHYREG33_PLL_KVCO_MASK		GENMASK(4, 2)
- #define RK3568_PHYREG33_PLL_KVCO_SHIFT		2
- #define RK3568_PHYREG33_PLL_KVCO_VALUE		2
-@@ -446,6 +447,74 @@ static int rockchip_combphy_probe(struct platform_device *pdev)
- 	return PTR_ERR_OR_ZERO(phy_provider);
- }
- 
-+static void rk_combphy_common_cfg_ssc(struct rockchip_combphy_priv *priv, unsigned long rate)
-+{
-+	struct device_node *np = priv->dev->of_node;
-+	u32 val;
-+
-+	if (!priv->enable_ssc)
-+		return;
-+
-+	/* Set SSC downward spread spectrum for PCIe and USB3 */
-+	if (priv->type == PHY_TYPE_PCIE || priv->type == PHY_TYPE_USB3) {
-+		val = FIELD_PREP(RK3568_PHYREG32_SSC_MASK, RK3568_PHYREG32_SSC_DOWNWARD);
-+		rockchip_combphy_updatel(priv, RK3568_PHYREG32_SSC_MASK, val, RK3568_PHYREG32);
-+	}
-+
-+	/* Set SSC downward spread spectrum +500ppm for SATA in 100MHz */
-+	if (priv->type == PHY_TYPE_SATA && rate == REF_CLOCK_100MHz) {
-+		val = FIELD_PREP(RK3568_PHYREG32_SSC_DIR_MASK,
-+				 RK3568_PHYREG32_SSC_DOWNWARD);
-+		val |= FIELD_PREP(RK3568_PHYREG32_SSC_OFFSET_MASK,
-+				  RK3568_PHYREG32_SSC_OFFSET_500PPM);
-+		rockchip_combphy_updatel(priv, RK3568_PHYREG32_SSC_MASK, val,
-+					 RK3568_PHYREG32);
-+	}
-+
-+	/* Enable SSC */
-+	val = readl(priv->mmio + RK3568_PHYREG8);
-+	val |= RK3568_PHYREG8_SSC_EN;
-+	writel(val, priv->mmio + RK3568_PHYREG8);
-+
-+	/* Some SoCs need tuning PCIe SSC instead of default configuration in 24MHz */
-+	if (!of_device_is_compatible(np, "rockchip,rk3588-naneng-combphy") &&
-+	    !of_device_is_compatible(np, "rockchip,rk3576-naneng-combphy"))
-+		return;
-+
-+	/* PLL control SSC module period should be set if need tuning */
-+	val = readl(priv->mmio + RK3568_PHYREG33);
-+	val |= RK3568_PHYREG33_PLL_SSC_CTRL;
-+	writel(val, priv->mmio + RK3568_PHYREG33);
-+
-+	if (priv->type == PHY_TYPE_PCIE && rate == REF_CLOCK_24MHz) {
-+		/* Set PLL loop divider */
-+		writel(0x00, priv->mmio + RK3576_PHYREG17);
-+		writel(RK3568_PHYREG18_PLL_LOOP, priv->mmio + RK3568_PHYREG18);
-+
-+		/* Set up rx_pck invert and rx msb to disable */
-+		writel(0x00, priv->mmio + RK3588_PHYREG27);
-+
-+		/*
-+		 * Set up SU adjust signal:
-+		 * su_trim[7:0],   PLL KVCO adjust bits[2:0] to min
-+		 * su_trim[15:8],  PLL LPF R1 adujst bits[9:7]=3'b101
-+		 * su_trim[23:16], CKRCV adjust
-+		 * su_trim[31:24], CKDRV adjust
-+		 */
-+		writel(0x90, priv->mmio + RK3568_PHYREG11);
-+		writel(0x02, priv->mmio + RK3568_PHYREG12);
-+		writel(0x08, priv->mmio + RK3568_PHYREG13);
-+		writel(0x57, priv->mmio + RK3568_PHYREG14);
-+		writel(0x40, priv->mmio + RK3568_PHYREG15);
-+
-+		writel(RK3568_PHYREG16_SSC_CNT_VALUE, priv->mmio + RK3568_PHYREG16);
-+
-+		val = FIELD_PREP(RK3568_PHYREG33_PLL_KVCO_MASK,
-+				 RK3576_PHYREG33_PLL_KVCO_VALUE);
-+		writel(val, priv->mmio + RK3568_PHYREG33);
-+	}
-+}
-+
- static int rk3528_combphy_cfg(struct rockchip_combphy_priv *priv)
- {
- 	const struct rockchip_combphy_grfcfg *cfg = priv->cfg->grfcfg;
-@@ -600,21 +669,12 @@ static int rk3562_combphy_cfg(struct rockchip_combphy_priv *priv)
- 
- 	switch (priv->type) {
- 	case PHY_TYPE_PCIE:
--		/* Set SSC downward spread spectrum */
--		val = RK3568_PHYREG32_SSC_DOWNWARD << RK3568_PHYREG32_SSC_DIR_SHIFT;
--		rockchip_combphy_updatel(priv, RK3568_PHYREG32_SSC_MASK, val, RK3568_PHYREG32);
--
- 		rockchip_combphy_param_write(priv->phy_grf, &cfg->con0_for_pcie, true);
- 		rockchip_combphy_param_write(priv->phy_grf, &cfg->con1_for_pcie, true);
- 		rockchip_combphy_param_write(priv->phy_grf, &cfg->con2_for_pcie, true);
- 		rockchip_combphy_param_write(priv->phy_grf, &cfg->con3_for_pcie, true);
- 		break;
- 	case PHY_TYPE_USB3:
--		/* Set SSC downward spread spectrum */
--		val = RK3568_PHYREG32_SSC_DOWNWARD << RK3568_PHYREG32_SSC_DIR_SHIFT;
--		rockchip_combphy_updatel(priv, RK3568_PHYREG32_SSC_MASK, val,
--					 RK3568_PHYREG32);
--
- 		/* Enable adaptive CTLE for USB3.0 Rx */
- 		rockchip_combphy_updatel(priv, RK3568_PHYREG15_CTLE_EN,
- 					 RK3568_PHYREG15_CTLE_EN, RK3568_PHYREG15);
-@@ -706,11 +766,7 @@ static int rk3562_combphy_cfg(struct rockchip_combphy_priv *priv)
- 		}
- 	}
- 
--	if (priv->enable_ssc) {
--		val = readl(priv->mmio + RK3568_PHYREG8);
--		val |= RK3568_PHYREG8_SSC_EN;
--		writel(val, priv->mmio + RK3568_PHYREG8);
--	}
-+	rk_combphy_common_cfg_ssc(priv, rate);
- 
- 	return 0;
- }
-@@ -755,11 +811,6 @@ static int rk3568_combphy_cfg(struct rockchip_combphy_priv *priv)
- 
- 	switch (priv->type) {
- 	case PHY_TYPE_PCIE:
--		/* Set SSC downward spread spectrum. */
--		val = RK3568_PHYREG32_SSC_DOWNWARD << RK3568_PHYREG32_SSC_DIR_SHIFT;
--
--		rockchip_combphy_updatel(priv, RK3568_PHYREG32_SSC_MASK, val, RK3568_PHYREG32);
--
- 		rockchip_combphy_param_write(priv->phy_grf, &cfg->con0_for_pcie, true);
- 		rockchip_combphy_param_write(priv->phy_grf, &cfg->con1_for_pcie, true);
- 		rockchip_combphy_param_write(priv->phy_grf, &cfg->con2_for_pcie, true);
-@@ -767,10 +818,6 @@ static int rk3568_combphy_cfg(struct rockchip_combphy_priv *priv)
- 		break;
- 
- 	case PHY_TYPE_USB3:
--		/* Set SSC downward spread spectrum. */
--		val = RK3568_PHYREG32_SSC_DOWNWARD << RK3568_PHYREG32_SSC_DIR_SHIFT,
--		rockchip_combphy_updatel(priv, RK3568_PHYREG32_SSC_MASK, val, RK3568_PHYREG32);
--
- 		/* Enable adaptive CTLE for USB3.0 Rx. */
- 		val = readl(priv->mmio + RK3568_PHYREG15);
- 		val |= RK3568_PHYREG15_CTLE_EN;
-@@ -880,13 +927,6 @@ static int rk3568_combphy_cfg(struct rockchip_combphy_priv *priv)
- 
- 			writel(RK3568_PHYREG18_PLL_LOOP, priv->mmio + RK3568_PHYREG18);
- 			writel(RK3568_PHYREG11_SU_TRIM_0_7, priv->mmio + RK3568_PHYREG11);
--		} else if (priv->type == PHY_TYPE_SATA) {
--			/* downward spread spectrum +500ppm */
--			val = RK3568_PHYREG32_SSC_DOWNWARD << RK3568_PHYREG32_SSC_DIR_SHIFT;
--			val |= RK3568_PHYREG32_SSC_OFFSET_500PPM <<
--			       RK3568_PHYREG32_SSC_OFFSET_SHIFT;
--			rockchip_combphy_updatel(priv, RK3568_PHYREG32_SSC_MASK, val,
--						 RK3568_PHYREG32);
- 		}
- 		break;
- 
-@@ -909,11 +949,7 @@ static int rk3568_combphy_cfg(struct rockchip_combphy_priv *priv)
- 		}
- 	}
- 
--	if (priv->enable_ssc) {
--		val = readl(priv->mmio + RK3568_PHYREG8);
--		val |= RK3568_PHYREG8_SSC_EN;
--		writel(val, priv->mmio + RK3568_PHYREG8);
--	}
-+	rk_combphy_common_cfg_ssc(priv, rate);
- 
- 	return 0;
- }
-@@ -972,10 +1008,6 @@ static int rk3576_combphy_cfg(struct rockchip_combphy_priv *priv)
- 
- 	switch (priv->type) {
- 	case PHY_TYPE_PCIE:
--		/* Set SSC downward spread spectrum */
--		val = FIELD_PREP(RK3568_PHYREG32_SSC_MASK, RK3568_PHYREG32_SSC_DOWNWARD);
--		rockchip_combphy_updatel(priv, RK3568_PHYREG32_SSC_MASK, val, RK3568_PHYREG32);
--
- 		rockchip_combphy_param_write(priv->phy_grf, &cfg->con0_for_pcie, true);
- 		rockchip_combphy_param_write(priv->phy_grf, &cfg->con1_for_pcie, true);
- 		rockchip_combphy_param_write(priv->phy_grf, &cfg->con2_for_pcie, true);
-@@ -983,10 +1015,6 @@ static int rk3576_combphy_cfg(struct rockchip_combphy_priv *priv)
- 		break;
- 
- 	case PHY_TYPE_USB3:
--		/* Set SSC downward spread spectrum */
--		val = FIELD_PREP(RK3568_PHYREG32_SSC_MASK, RK3568_PHYREG32_SSC_DOWNWARD);
--		rockchip_combphy_updatel(priv, RK3568_PHYREG32_SSC_MASK, val, RK3568_PHYREG32);
--
- 		/* Enable adaptive CTLE for USB3.0 Rx */
- 		val = readl(priv->mmio + RK3568_PHYREG15);
- 		val |= RK3568_PHYREG15_CTLE_EN;
-@@ -1110,14 +1138,6 @@ static int rk3576_combphy_cfg(struct rockchip_combphy_priv *priv)
- 			writel(0x88, priv->mmio + RK3568_PHYREG13);
- 			writel(0x56, priv->mmio + RK3568_PHYREG14);
- 		} else if (priv->type == PHY_TYPE_SATA) {
--			/* downward spread spectrum +500ppm */
--			val = FIELD_PREP(RK3568_PHYREG32_SSC_DIR_MASK,
--					 RK3568_PHYREG32_SSC_DOWNWARD);
--			val |= FIELD_PREP(RK3568_PHYREG32_SSC_OFFSET_MASK,
--					  RK3568_PHYREG32_SSC_OFFSET_500PPM);
--			rockchip_combphy_updatel(priv, RK3568_PHYREG32_SSC_MASK, val,
--						 RK3568_PHYREG32);
--
- 			/* ssc ppm adjust to 3500ppm */
- 			rockchip_combphy_updatel(priv, RK3576_PHYREG10_SSC_PCM_MASK,
- 						 RK3576_PHYREG10_SSC_PCM_3500PPM,
-@@ -1156,39 +1176,7 @@ static int rk3576_combphy_cfg(struct rockchip_combphy_priv *priv)
- 		}
- 	}
- 
--	if (priv->enable_ssc) {
--		val = readl(priv->mmio + RK3568_PHYREG8);
--		val |= RK3568_PHYREG8_SSC_EN;
--		writel(val, priv->mmio + RK3568_PHYREG8);
--
--		if (priv->type == PHY_TYPE_PCIE && rate == REF_CLOCK_24MHz) {
--			/* Set PLL loop divider */
--			writel(0x00, priv->mmio + RK3576_PHYREG17);
--			writel(RK3568_PHYREG18_PLL_LOOP, priv->mmio + RK3568_PHYREG18);
--
--			/* Set up rx_pck invert and rx msb to disable */
--			writel(0x00, priv->mmio + RK3588_PHYREG27);
--
--			/*
--			 * Set up SU adjust signal:
--			 * su_trim[7:0],   PLL KVCO adjust bits[2:0] to min
--			 * su_trim[15:8],  PLL LPF R1 adujst bits[9:7]=3'b101
--			 * su_trim[23:16], CKRCV adjust
--			 * su_trim[31:24], CKDRV adjust
--			 */
--			writel(0x90, priv->mmio + RK3568_PHYREG11);
--			writel(0x02, priv->mmio + RK3568_PHYREG12);
--			writel(0x08, priv->mmio + RK3568_PHYREG13);
--			writel(0x57, priv->mmio + RK3568_PHYREG14);
--			writel(0x40, priv->mmio + RK3568_PHYREG15);
--
--			writel(RK3568_PHYREG16_SSC_CNT_VALUE, priv->mmio + RK3568_PHYREG16);
--
--			val = FIELD_PREP(RK3568_PHYREG33_PLL_KVCO_MASK,
--					 RK3576_PHYREG33_PLL_KVCO_VALUE);
--			writel(val, priv->mmio + RK3568_PHYREG33);
--		}
--	}
-+	rk_combphy_common_cfg_ssc(priv, rate);
- 
- 	return 0;
- }
-@@ -1255,10 +1243,6 @@ static int rk3588_combphy_cfg(struct rockchip_combphy_priv *priv)
- 		}
- 		break;
- 	case PHY_TYPE_USB3:
--		/* Set SSC downward spread spectrum */
--		val = RK3568_PHYREG32_SSC_DOWNWARD << RK3568_PHYREG32_SSC_DIR_SHIFT;
--		rockchip_combphy_updatel(priv, RK3568_PHYREG32_SSC_MASK, val, RK3568_PHYREG32);
--
- 		/* Enable adaptive CTLE for USB3.0 Rx. */
- 		val = readl(priv->mmio + RK3568_PHYREG15);
- 		val |= RK3568_PHYREG15_CTLE_EN;
-@@ -1343,13 +1327,6 @@ static int rk3588_combphy_cfg(struct rockchip_combphy_priv *priv)
- 
- 			/* Set up su_trim:  */
- 			writel(RK3568_PHYREG11_SU_TRIM_0_7, priv->mmio + RK3568_PHYREG11);
--		} else if (priv->type == PHY_TYPE_SATA) {
--			/* downward spread spectrum +500ppm */
--			val = RK3568_PHYREG32_SSC_DOWNWARD << RK3568_PHYREG32_SSC_DIR_SHIFT;
--			val |= RK3568_PHYREG32_SSC_OFFSET_500PPM <<
--			       RK3568_PHYREG32_SSC_OFFSET_SHIFT;
--			rockchip_combphy_updatel(priv, RK3568_PHYREG32_SSC_MASK, val,
--						 RK3568_PHYREG32);
- 		}
- 		break;
- 	default:
-@@ -1371,11 +1348,7 @@ static int rk3588_combphy_cfg(struct rockchip_combphy_priv *priv)
- 		}
- 	}
- 
--	if (priv->enable_ssc) {
--		val = readl(priv->mmio + RK3568_PHYREG8);
--		val |= RK3568_PHYREG8_SSC_EN;
--		writel(val, priv->mmio + RK3568_PHYREG8);
--	}
-+	rk_combphy_common_cfg_ssc(priv, rate);
- 
- 	return 0;
- }
+Any specific reason you are not making this a simple static inline
+function, like phy_get_bus_width()?
+
+> +
+>  /**
+>   * _of_phy_get() - lookup and obtain a reference to a phy by phandle
+>   * @np: device_node for which to get the phy
+
+Gr{oetje,eeting}s,
+
+                        Geert
+
 -- 
-2.7.4
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
 
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 -- 
 linux-phy mailing list
