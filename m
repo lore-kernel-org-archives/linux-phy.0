@@ -4,190 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0DE7FF30928
-	for <linux-phy@archiver.kernel.org>; Thu,  5 Mar 2026 09:39:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C3248F30922
+	for <linux-phy@archiver.kernel.org>; Thu,  5 Mar 2026 09:53:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:CC:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5YD2E3Lq+dDwtX3qC0aj3ykYduy1TUNvPCKdr7LjshA=; b=Ea8MM05KAixcau
-	ei+gmRpQXABqip8hHGmOHd6eLqh4HcWe7xwzgpJvqjYREEojcB0bNQGg0mYathfkh2TvhbWRA2YFc
-	O98aA13/dQD2da53+iMUyOPi7DAVj85IMYcS+e/zI/5lzzMRk9A8CFk8XlzwYOMldNLzLd8k7114Z
-	02dfJuVFrRsUN7RfrFzpipF/niDydi2Sf7oJ5hGYyLi+wnRJ+URVax/+D1EVKwdlI6Dk41xc7JEWz
-	C77PFI9zyEdJ+se3btb6QKPHtbQhg5BGA0RzeTtSsTFOJMHbBOyqdKs+AZSxV7vtZnR4EMeWv24I4
-	i9T133nHUPztyidn/Cpg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=Dj/VqmTgGKCQ8Sx2pfQNqKGivtlkXx0215jEBJtMhRw=; b=VW8ZA/T6gs+wbBNDv58VJ0PYIA
+	B0ZWG67ZqXoSylj2XVMlr1wNU9E8zsI5mQX8AXH2+VV7bzhlusNROpX86AsnWjSTAeCNTvrTZrGLN
+	jj6glAz9D8LEvk9860cVH6JQ67gnctMa5kF/ZM7epfXOvxN0TXS/XMFi2+zC+jVW/RnuiKy6KUdA0
+	k0qIGkbRla9PSFynrPJIptPGAiz/6cY4q3YIFwzeQ233NHkXYPGSIh0nlpKyEl/82C6OwCJ1AlQ01
+	0ueaoM57fo4e4JkZDDi+R3AxgzDY8ka9KLOMNRkt2pq9odyZLb6M1gep89NQ096FSjRQeYfUyd8vC
+	pl6vYRGw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vy5BA-00000001QNQ-31v6;
-	Thu, 05 Mar 2026 09:39:36 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1vy5OT-00000001TBw-1Kjp;
+	Thu, 05 Mar 2026 09:53:21 +0000
+Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vy5B7-00000001QLN-2G0T;
-	Thu, 05 Mar 2026 09:39:34 +0000
-X-UUID: 33783e70187711f1ad39f32c34db0b1c-20260305
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
-	h=MIME-Version:Content-Transfer-Encoding:Content-ID:Content-Type:In-Reply-To:References:Message-ID:Date:Subject:CC:To:From; bh=1iJmHmzWIj7ydbWIIanQwVPbV1m+mhKTS0wHuyHKT+g=;
-	b=d1wtylG40KIG/s+ZU1rs17MzAHjT7FB59ZVVNEcqtckUM7ho+T7y9BtBczzmw1Ihz3dwhZb+X+coADwhYB1tLJTVeQbCmMGNOcgBOj8SZ1bfbvYS57wWW58IJU9PBlZJLZ0ynPKcfJGLuKOF4sFb3E0hl5RXugXPF5pAFnc2RC4=;
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.3.11,REQID:9f9354de-19f3-4af8-b900-15a26d7ad0df,IP:0,U
-	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
-	release,TS:0
-X-CID-META: VersionHash:89c9d04,CLOUDID:dca98d7b-8c8a-4fc4-88c0-3556e7711556,B
-	ulkID:nil,BulkQuantity:0,Recheck:0,SF:80|81|82|83|102|110|111|836|888|898,
-	TC:-5,Content:0|15|50,EDM:-3,IP:nil,URL:0,File:130,RT:0,Bulk:nil,QS:nil,BE
-	C:-1,COL:0,OSI:0,OSA:0,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
-X-CID-BVR: 2,SSN|SDN
-X-CID-BAS: 2,SSN|SDN,0,_
-X-CID-FACTOR: TF_CID_SPAM_SNR
-X-CID-RHF: D41D8CD98F00B204E9800998ECF8427E
-X-UUID: 33783e70187711f1ad39f32c34db0b1c-20260305
-Received: from mtkmbs13n2.mediatek.inc [(172.21.101.108)] by mailgw02.mediatek.com
-	(envelope-from <peter.wang@mediatek.com>)
-	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
-	with ESMTP id 1135453454; Thu, 05 Mar 2026 02:39:26 -0700
-Received: from mtkmbs10n1.mediatek.inc (172.21.101.34) by
- mtkmbs13n1.mediatek.inc (172.21.101.193) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.29; Thu, 5 Mar 2026 17:39:24 +0800
-Received: from SI4PR04CU002.outbound.protection.outlook.com (172.21.101.237)
- by mtkmbs10n1.mediatek.inc (172.21.101.34) with Microsoft SMTP Server id
- 15.2.2562.29 via Frontend Transport; Thu, 5 Mar 2026 17:39:24 +0800
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=LPaWfr+QG5eVLwW5MgucOCa5btkn2v5SLdd5sORv255eGdCCJGCAFkL0w+Js7sVwIGrAcQ66BeULhiwU2e9LQpmQ1CW44ks4ls3fuRrJIzIxJIQWoHdeeAcR7gZCFQ4Mr3hp58QXBaKwJ1QIcfY+IdLgP5DbqZp+Kf1fvgWjMx3hMi0ukvWzNbeO21A4rlhQJu2vqSHak0bdt6vTC7N9rLQG4yXuPnP2D2WUp72fWmGDRMX/WxMBII0M6aC01fUpyb7MqXYhKj8VC1Hs9Dbi/qSAXiCdbe8ExOAlM8PRnEHtISiFISimVKdldtnaEaABuH0PqOASpdSVZJJ2+BxV5A==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=1iJmHmzWIj7ydbWIIanQwVPbV1m+mhKTS0wHuyHKT+g=;
- b=fO9MveMPg/YDS4WJ+bQrzVUVvn1x51lhvcjCmuy06vK/489i3iucC+vzVY6SDGFjilode4HxcAiV+QOxAu5fxiWkNbUP1WHoVcB67hJ/Kmub1G5F79W3g80EDPSPvT2VeHD80m1GccY4m1TFoih4Xkwg2qfrWqAzBcm5Z6VGYt1/u+PXGrib9wH08sFfKENwT8xKDHUKbkVNdDsQOid44t990PUWsmanoozGxkyAiZY+jBpflAQoPSvtBxBZEH7Xv4Vddu6/NkOjTi76sQCE2aryBgvf2JMWMbF0K9BHmt5H/E5Q4BorPtEtwD+KBhLiF1B3zLbxyr2obPC9en05Nw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=mediatek.com; dmarc=pass action=none header.from=mediatek.com;
- dkim=pass header.d=mediatek.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=mediateko365.onmicrosoft.com; s=selector2-mediateko365-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=1iJmHmzWIj7ydbWIIanQwVPbV1m+mhKTS0wHuyHKT+g=;
- b=Fw/+elGssoKcxFABJTqeZSlb0+yX0Rk8ZHEGYcugPFs3ATkdJZiSsdI+x3GboCM4OyDJwMlp+VlXFcnTu9AecDb3ldPVUGbpb9IUGFTVS1Lxp1x2UGWzJRFUYZQoL23QyuZuhJ8EO3DnpiwSIIq9KOD+VXm85EVCMGFcx0xy+9Q=
-Received: from PSAPR03MB5605.apcprd03.prod.outlook.com (2603:1096:301:66::6)
- by KL1PR03MB8822.apcprd03.prod.outlook.com (2603:1096:820:144::13) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9678.17; Thu, 5 Mar
- 2026 09:39:21 +0000
-Received: from PSAPR03MB5605.apcprd03.prod.outlook.com
- ([fe80::165:d36a:3f76:2925]) by PSAPR03MB5605.apcprd03.prod.outlook.com
- ([fe80::165:d36a:3f76:2925%4]) with mapi id 15.20.9678.017; Thu, 5 Mar 2026
- 09:39:21 +0000
-From: =?utf-8?B?UGV0ZXIgV2FuZyAo546L5L+h5Y+LKQ==?= <peter.wang@mediatek.com>
-To: "chu.stanley@gmail.com" <chu.stanley@gmail.com>, "robh@kernel.org"
-	<robh@kernel.org>, =?utf-8?B?Q2h1bmZlbmcgWXVuICjkupHmmKXls7Ap?=
-	<Chunfeng.Yun@mediatek.com>, "kishon@kernel.org" <kishon@kernel.org>,
-	"James.Bottomley@HansenPartnership.com"
-	<James.Bottomley@HansenPartnership.com>, "bvanassche@acm.org"
-	<bvanassche@acm.org>, AngeloGioacchino Del Regno
-	<angelogioacchino.delregno@collabora.com>, "neil.armstrong@linaro.org"
-	<neil.armstrong@linaro.org>, "conor+dt@kernel.org" <conor+dt@kernel.org>,
-	=?utf-8?B?Q2hhb3RpYW4gSmluZyAo5LqV5pyd5aSpKQ==?=
-	<Chaotian.Jing@mediatek.com>, "lgirdwood@gmail.com" <lgirdwood@gmail.com>,
-	"nicolas.frattaroli@collabora.com" <nicolas.frattaroli@collabora.com>,
-	"vkoul@kernel.org" <vkoul@kernel.org>, "krzk+dt@kernel.org"
-	<krzk+dt@kernel.org>, "p.zabel@pengutronix.de" <p.zabel@pengutronix.de>,
-	"alim.akhtar@samsung.com" <alim.akhtar@samsung.com>, "matthias.bgg@gmail.com"
-	<matthias.bgg@gmail.com>, "avri.altman@wdc.com" <avri.altman@wdc.com>,
-	"martin.petersen@oracle.com" <martin.petersen@oracle.com>,
-	"broonie@kernel.org" <broonie@kernel.org>
-CC: "linux-scsi@vger.kernel.org" <linux-scsi@vger.kernel.org>,
-	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-	"linux-arm-kernel@lists.infradead.org"
-	<linux-arm-kernel@lists.infradead.org>, "linux-phy@lists.infradead.org"
-	<linux-phy@lists.infradead.org>, "linux-mediatek@lists.infradead.org"
-	<linux-mediatek@lists.infradead.org>, Louis-Alexis Eyraud
-	<louisalexis.eyraud@collabora.com>, "kernel@collabora.com"
-	<kernel@collabora.com>
-Subject: Re: [PATCH v8 20/23] scsi: ufs: mediatek: Back up idle timer in
- per-instance struct
-Thread-Topic: [PATCH v8 20/23] scsi: ufs: mediatek: Back up idle timer in
- per-instance struct
-Thread-Index: AQHcq+cF2cnBq3nuRUSLS7+9UR1t9rWfsBQA
-Date: Thu, 5 Mar 2026 09:39:21 +0000
-Message-ID: <7b85028c529ce1b4ab33d2cc3e385dcefd51a1d4.camel@mediatek.com>
-References: <20260304-mt8196-ufs-v8-0-5b0eac23314f@collabora.com>
-	 <20260304-mt8196-ufs-v8-20-5b0eac23314f@collabora.com>
-In-Reply-To: <20260304-mt8196-ufs-v8-20-5b0eac23314f@collabora.com>
-Accept-Language: zh-TW, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=mediatek.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: PSAPR03MB5605:EE_|KL1PR03MB8822:EE_
-x-ms-office365-filtering-correlation-id: c9ebb213-5bad-4310-b521-08de7a9b143a
-x-ld-processed: a7687ede-7a6b-4ef6-bace-642f677fbe31,ExtAddr
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230040|7416014|376014|1800799024|366016|921020|38070700021;
-x-microsoft-antispam-message-info: CJGDIjX+Xrt//Hw9PgNIEGuTArH/fltC54kXCK7bll2daJTkDtA25JczGd/symxgJxvlR37jgcIXXFINV/0U5GTdqyJldBiwxGzOHakry/6d21zQCYrpDkOi9U3PFp2MAqnTQxdmVhzYwvGhHwvTQ5+cfdxPPwt3QOMMvbmDxH0Kf+cIlpgapucqcMvLi9DrqwMeCVv2wbt01rXWW/L7iV9mBJhjSbMPBfVd6guNocAzBEpnTF445SL0RzPYpc70Wl7ZktR5jcnxmWoMIl9jvnbFc4cP+C+vFPdHRx6h1RxLMbuIM/f4QA8Thcik/BC16X0lRHJWQi/1IdLTDtWLEocXEd63Aez0dTuOaA9SUze4nIYJFSJNSTEkV6kIpQbvGvTlpM4GVkugJ6Y145a9y5nUP6G8zfh7vr5gYxjBBhtIhEvVsDlrnbt8U4AZGNXRwmarJUdMHknah43F1TbtGQ/i4u7yMGJiZK45LMqzWZGaZybFGUBS3CIbavOoazl02FQHZ5FfYDvie5nhuuLdFjWHslOoZhuJzRpDc8UYyBuAeI1lTRe1YOGMqrZ5++TpiIvZ9rnL0rIeMY+Hto1q1tFz5T25vdh3D7oo+Ax6QAwKGbW6XFt0VVFC06klxnc7jfR47uRNyFSJUx6a1ppvqUy1vyoL4qYPx5/jJM2uB7EBMWBDt3E5JOgQVocgGO2JDSjou5MPYejj/HdeMSQuI+k0KnsvoDTS5S0F3YRlTOZzgZ/ascv7Mncft9nD/c+8G/po9MYXaAj6r+Cxkp0pkDzwCZVkFi4GOLt9Xel7ZFO02GRS7Nb8QSn8o7to/4o2
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PSAPR03MB5605.apcprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(7416014)(376014)(1800799024)(366016)(921020)(38070700021);DIR:OUT;SFP:1101;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?utf-8?B?OFVrb1dyM2hSNklFSC8xZVdhclI3cW4vdm0xRjhSNEpkR0EzVS9ycG1SU3VO?=
- =?utf-8?B?UWE1S0E2VnJHRlhHUURoM3lkMVdIMGs2L2FMSURhelNwR3VSbHNGRjNCa3JO?=
- =?utf-8?B?TFpYNUUzN2puSmpTa1BPVGFzdkU4Rm15b2pQVU14dDNpeDRKekNBTGFjbE50?=
- =?utf-8?B?MndZRTNzVWwzbEQ3Qk1rL2didkFwa29kUG9oS3B2bEp6QkJibHdMWW1JSWNJ?=
- =?utf-8?B?Y3g2c2xFZ0JERkR0cXNrY09uTWMxeDRxREVyWVhUUDljZ3ByS0lUQjh2ZEhk?=
- =?utf-8?B?a0VFYzJESUtYVUNRQ0RDNExLVnk0WVl0emljOXJad011UUpuN0xRcFFsekEy?=
- =?utf-8?B?emhBbGNGNkErYnVVOWtDdTA1dnlnbTZqSE9neDdueFAwTWtyaTVMd2t5UkVV?=
- =?utf-8?B?U2krRWc4M2ZUQys1eWNLdWVyVEVTOWl6NWdKaW5XWmtRMjdnWGk5aDdHTEZa?=
- =?utf-8?B?N3lKek82Y1Q2OGtDUVgrNGFkbFR2ZW8wL3R3dmhiL1ZrU2xFT2hpMmtJcVZM?=
- =?utf-8?B?NkVUMUx4ZzNqTndjQ3J4M1A0S2RwT1pNUis2cWhaTlMxN0tOakZoUWxKcHpn?=
- =?utf-8?B?eG1lYUN0dzg2NDVYV0JFUkQrcjNUdVJRYk10QUt0TEc1ZXNjVFBMNHN2U0ZX?=
- =?utf-8?B?MFJ4cWlhT2UyNmJoa1g5S2VSSWJEM3Nkdks0VW4yMXpFWE1GZkltUCtwTlhT?=
- =?utf-8?B?dVpFeTFkK0JaQjVDd0ZSMk9UNmVaN1gyTnlVSDM0OXdmMnpRZkUySmplcG5o?=
- =?utf-8?B?elNqeU1pcThNR3ZSV3R0SWlMZTNITDRLRE40SitRSjArZ20wK0pPK1NuSVZP?=
- =?utf-8?B?cDNkMHJ0R1llWUljRGhDdTBOOS9oMjU2bmh5aXFLenp1OEg0bjltbFpCMXFv?=
- =?utf-8?B?bk54RXpIcE1BSVRZRzlKWjRON0dOTUZWQ2htblltTXhSYVlIUjM4TWNRWlFV?=
- =?utf-8?B?MC8wK01uMEx3aWpNaDI3WkxPU0QrdjJqQXpZVGd3bEFoOFhsRVRZUmE3RHhT?=
- =?utf-8?B?RFEvSXFnOFkwZ0ljYThHT1FjNGRnNE1vSnljSkVnS1FwRGcwU3JwTEMxSjJF?=
- =?utf-8?B?dS8zVVJPeWdBeGVxOU83K2s2UXhxbWllYlorUmtZeU5yRDl0Y3ovM3Q3R2NK?=
- =?utf-8?B?cTh4R0RSY3AyNkhkR1ZJOGRFNXlEL0tDVnQ3VDVLbnpEbEw3ajhMUWprQ3Bn?=
- =?utf-8?B?T1BMWC9kSGNDVFpPeExYOXQxbGx2M0Q5MVQ1ZlhESGQycW9WZjJPRmREdFJx?=
- =?utf-8?B?c1JESVpYeWZpSjBJelRtUU1vL1NhbFBMcGtyOWFLSEoxdWxPS0JmV3Z6VHdl?=
- =?utf-8?B?aG54dkYxajhGY1R3RTd2SnBuU0ZFdG5xSnA1Uk9oTHBVc2VwRDNlUWZ4N2Ey?=
- =?utf-8?B?SGF3K25wQjlqcjY4V1ViR2E4VDVmMktobjdMb2htSFltdmxWRXZDQ0JCMGNz?=
- =?utf-8?B?TGpEcVV2amF2VnE2UU95S2dtdTNNQXNBRXVhM2VwOFlCVlltNmtFMll6SW9R?=
- =?utf-8?B?cVpjRkdiOGh2cmJ1a2pRbXBWTEs4S0ZtQnJGYk1RYTNzMmFjOGM4NGJYYmFS?=
- =?utf-8?B?aFljbXNZN21JZVVYdnh3bzJYWTBqZmI2VnVRcXltL2E0OEJna2VrdzhkanVH?=
- =?utf-8?B?YmRjV2R4TGptdHRxWG9tRWtVWlZrVHFBQXU2cGI1ZGRhdjM1RTFVcGdwOVFX?=
- =?utf-8?B?SUErdkdweDEwSURhbW9obGJ0MlZtWllxak5UV0VBU3cwckhTeCs2bzN3Wlo4?=
- =?utf-8?B?RDdvZzJBUWJrYVFBbGlqTWorWlBQWUt3Y2tBUzYwVS9NUjdyd2ZiOCtYTFhG?=
- =?utf-8?B?TTlQRnI0ZGJ6U3dZODFsdmZSVEJTWXVrWDkyT3VYUFNWb0JQM0s4RFZBOUlJ?=
- =?utf-8?B?UDU5eHU4ekV2QW93OWhJZzFIV24yVHVtS0pUV2dCQlNXSCtZekNheFdjRCtV?=
- =?utf-8?B?eDd5VU9zWFZVTVY2cGRYTHB3MFpXU0h4c01oUndScTg5MzBxNU0yWkQ0SzU0?=
- =?utf-8?B?d0ozRGlwOElXYng0Rk5KYW5wUVRZd09qMmpxUVZpbVFvZXdtVHpIT3BnV2F0?=
- =?utf-8?B?dUQ3T1ZId2ZsVUt5UVRhcVVLVCszcGRBTEhpMFQ2b29ZK0pyTnhpZGg3QmVQ?=
- =?utf-8?B?REsxNlJiVzcrVjZWTlpxOUU0emtYeHZSbnB4WVN1N0F1RlZmb1JHWUdqRmUw?=
- =?utf-8?B?cUZHVlFPRWlQM21Xdmd4dWVRMXhJRVU1cE81WUd3OHI2REdHcUtudUw2L2g5?=
- =?utf-8?B?SzJvSXNyUWZXbDR4RVc5alJyRitKQXhsSzlLNTdaTlpFTFVsK3FmMEtTUDFH?=
- =?utf-8?B?Z0F4eS9OS1pUazRURXBLb01ibHVRWUQwVG1sMFBCbTIrN01IaVRjQT09?=
-Content-ID: <81C892C81748AD49BA31EF4593CEBA22@apcprd03.prod.outlook.com>
+	id 1vy5OP-00000001TAG-2W6Z;
+	Thu, 05 Mar 2026 09:53:19 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1772704388; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=ILbpyWSpgsHBsljKSeJYbS7Vw03gooRrhFM0zfvSJ0mMnsLhlex4dZfvu0oPRIpkKO47xszQ2NfzHWwj0pqoFXT4WttLKvDbi1tiW3nCRR4ojr4Vznpxn72wH7dC+ms4XVRbfVzqDJCc2LgWtNUaXznEcvPGtkEc57jsG4V4QXU=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1772704388; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=nzu6bAtb37Rscm3wTe12q1wA4WbiMxsyc0YgbMDmKhU=; 
+	b=mYJnA6goY8gyGl8bcxdTO/ByoiY0b4sP3KBwTqzQqQEu2c5WKfTddS9Fe6+yv32bTaxDKYI77aHYbYDm3y0nylvB+35tg6Dif1cn+oIsHiwDCXjvuTbZTh5SotriBERyVv4hZBgBiBYR/T0QbFyyAxO9Bo5rJckG1guguTRV57Q=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=sebastian.reichel@collabora.com;
+	dmarc=pass header.from=<sebastian.reichel@collabora.com>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1772704388;
+	s=zohomail; d=collabora.com; i=sebastian.reichel@collabora.com;
+	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:References:MIME-Version:Content-Type:In-Reply-To:Message-Id:Reply-To;
+	bh=nzu6bAtb37Rscm3wTe12q1wA4WbiMxsyc0YgbMDmKhU=;
+	b=kuQ6wgoyu9T6YeGL0SUqZ9zx8isgTeA+3UHBcaeWieFRMa3K4z+NnEetspD5wWZI
+	TL1RG3LK6Yh1ZgrkSKhInXGy6ScbB4h0qNcCIN3ps5vMT5cv/qWX4tybyGlWVkJHBrt
+	Vz08HTmqhf50ivIQbgSUcJHFeQhtd9qRZpIk3S4c=
+Received: by mx.zohomail.com with SMTPS id 1772704385504238.17185557574544;
+	Thu, 5 Mar 2026 01:53:05 -0800 (PST)
+Received: by venus (Postfix, from userid 1000)
+	id 8DA0C180891; Thu, 05 Mar 2026 10:52:59 +0100 (CET)
+Date: Thu, 5 Mar 2026 10:52:59 +0100
+From: Sebastian Reichel <sebastian.reichel@collabora.com>
+To: Vladimir Oltean <vladimir.oltean@nxp.com>
+Cc: linux-phy@lists.infradead.org, Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org, 
+	linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org, linux-can@vger.kernel.org, 
+	linux-gpio@vger.kernel.org, linux-ide@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-media@vger.kernel.org, linux-pci@vger.kernel.org, linux-renesas-soc@vger.kernel.org, 
+	linux-riscv@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+	linux-samsung-soc@vger.kernel.org, linux-sunxi@lists.linux.dev, linux-tegra@vger.kernel.org, 
+	linux-usb@vger.kernel.org, netdev@vger.kernel.org, spacemit@lists.linux.dev, 
+	UNGLinuxDriver@microchip.com
+Subject: Re: [PATCH phy-next 19/22] power: supply: cpcap-charger: include
+ missing <linux/property.h>
+Message-ID: <aalSUJI5jFG2kJBL@venus>
+References: <20260304175735.2660419-1-vladimir.oltean@nxp.com>
+ <20260304175735.2660419-20-vladimir.oltean@nxp.com>
 MIME-Version: 1.0
-X-Exchange-RoutingPolicyChecked: IrRyVrHCEI8Fsn06mX5RVud67ncO9BqVbcI9TiEwbMJhJau7BGMe6l/0OPoxNrg+YXCMt9s5yyldeLWRpg15CxHX72S9rtp2Nv/ZGLkB/mY6UXUk3tc2G7cMlY1BbfK92QyQreHzbp7u/RhOKOcSiABxUS1gEp4PxIspgkklTSeOqLjlvMGSMl7ehv6uGgQpalO9t08+fJ5g48kDtUixKN66GzU3eghgB3vx826ddKQdBmXA5uMpkG/CWSZTngDJhYmJ0Jiwh+UhbvLhW/am313CczVylPEkl0wiLpyNZ2bUS2CATHGPuvQFM8rZp3ABOQyEqxiYqv/PrKzpBRj6+g==
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: PSAPR03MB5605.apcprd03.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c9ebb213-5bad-4310-b521-08de7a9b143a
-X-MS-Exchange-CrossTenant-originalarrivaltime: 05 Mar 2026 09:39:21.0907
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: a7687ede-7a6b-4ef6-bace-642f677fbe31
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: Hiw3LDi00L8Y3IQQh6oKjxYnkyGm1bw0JADOxd3h2yR7IwwJG+40oE0sn7yIklUQfT++AV4my0f7AsouVfs0Cg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: KL1PR03MB8822
-X-MTK: N
+In-Reply-To: <20260304175735.2660419-20-vladimir.oltean@nxp.com>
+X-Zoho-Virus-Status: 1
+X-Zoho-AV-Stamp: zmail-av-0.2.1.1.4.3/272.682.15
+X-ZohoMailClient: External
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260305_013933_585027_1CC0EEC2 
-X-CRM114-Status: UNSURE (   8.62  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260305_015317_712134_90E683F0 
+X-CRM114-Status: GOOD (  14.66  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -199,17 +84,105 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============2885634962849144687=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gV2VkLCAyMDI2LTAzLTA0IGF0IDE1OjUzICswMTAwLCBOaWNvbGFzIEZyYXR0YXJvbGkgd3Jv
-dGU6DQo+IEBAIC0xODcsNiArMTg3LDcgQEAgc3RydWN0IHVmc19tdGtfaG9zdCB7DQo+IMKgCXUx
-NiByZWZfY2xrX2dhdGluZ193YWl0X3VzOw0KPiDCoAl1MzIgaXBfdmVyOw0KPiDCoAlib29sIGxl
-Z2FjeV9pcF92ZXI7DQo+ICsJdTMyIGhpYmVybmF0ZV9pZGxlX3RpbWVyOw0KPiDCoA0KDQpTYW1l
-IGFzIGluIHBhdGNoIFY3LCB0aGlzIHZhcmlhYmxlIGlzIG5vdCBjbGVhciB0byBtZS4NClBsZWFz
-ZSBkbyBub3Qgb21pdCAiYXV0byIgb3IgY29uc2lkZXIgdXNpbmcgImFoaXQiIGFzIA0KaXMgY3Vz
-dG9tYXJ5IGluIHRoZSBVRlMgY29tbXVuaXR5Lg0KDQpUaGFua3MNClBldGVyDQotLSAKbGludXgt
-cGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xp
-c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+
+--===============2885634962849144687==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="2vxe7ox52jklnq2g"
+Content-Disposition: inline
+
+
+--2vxe7ox52jklnq2g
+Content-Type: text/plain; protected-headers=v1; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Subject: Re: [PATCH phy-next 19/22] power: supply: cpcap-charger: include
+ missing <linux/property.h>
+MIME-Version: 1.0
+
+Hi,
+
+On Wed, Mar 04, 2026 at 07:57:32PM +0200, Vladimir Oltean wrote:
+> This file uses dev_fwnode() without including the proper header for it,
+> relying on transitive header inclusion from:
+>=20
+> drivers/power/supply/cpcap-charger.c
+> - include/linux/phy/omap_usb.h
+>   - include/linux/usb/phy_companion.h
+>     - include/linux/usb/otg.h
+>       - include/linux/phy/phy.h
+>         - drivers/phy/phy-provider.h
+>           - include/linux/of.h
+>             - include/linux/property.h
+>=20
+> With the future removal of drivers/phy/phy-provider.h from
+> include/linux/phy/phy.h, this transitive inclusion would break.
+>=20
+> Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
+> ---
+> Cc: Sebastian Reichel <sre@kernel.org>
+> ---
+
+Acked-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+
+-- Sebastian
+
+>  drivers/power/supply/cpcap-charger.c | 1 +
+>  1 file changed, 1 insertion(+)
+>=20
+> diff --git a/drivers/power/supply/cpcap-charger.c b/drivers/power/supply/=
+cpcap-charger.c
+> index d0c3008db534..24221244b45b 100644
+> --- a/drivers/power/supply/cpcap-charger.c
+> +++ b/drivers/power/supply/cpcap-charger.c
+> @@ -21,6 +21,7 @@
+>  #include <linux/mod_devicetable.h>
+>  #include <linux/platform_device.h>
+>  #include <linux/power_supply.h>
+> +#include <linux/property.h>
+>  #include <linux/regmap.h>
+> =20
+>  #include <linux/gpio/consumer.h>
+> --=20
+> 2.43.0
+>=20
+
+--2vxe7ox52jklnq2g
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmmpUncACgkQ2O7X88g7
++prvUBAAiDlamBegg+ohGQtBVAORFIULNrYOBZOk8AG1Qluc6NS+fOqK9Cpw1hjn
+4u0f9h1GsBhjBMOb0dS/kxcNWI+xKiTxrMzu4llAu0C9WimbA0CieynGh2b2a3Ja
+R/9RQ6pXqPuVZk+7oVlT6gk++/w8TU83M31vyXL0Kx786QzieoSbOvgyZqhEwLez
+W41hmnYSkPas6nVkhjp0mnP7eqYQRhXLBeFJgUWhgXvy5YMVAfRrso3DK5JA7hB3
+4q8qNISMg2IrcIDMdDaTKVq+3+Ba1z8pRgr4WpIaOpH+Gsq8e8tzt/SEsGt/4SIY
+bKuAPMOCmsYuR8RskVyUWJiWX4qt4/YIRU01cg2xxXP404xIKR49X9Z12aEOKjg8
+DoBnNzlrSRN/RP85te7hG74Mbc/eVL2fJM9dL+7yZylsv03FFoeii0d+a50bbrQT
+QfQy75KNMSMkb7BDrpalL0DhG9bJoZn96pso0p4aD+viqdbpIybrsgMhuUv9DKVS
+2rIsnhe/N1gPds7wwpt/4shjn93YGbngre66mxi0y0YvvBQqc3eCf4YbPkGttJ0g
+18vYhd7giJO8RE2ApEXsQzT6eKtQFPh01zUJhxvemKoAb6hr3Tptep+/2bn4BVzY
+k3rY5iRgS6ono6DZg08TuLXoB3Ck/kz2OE+ntIibQIQNa0GY/4w=
+=oTrF
+-----END PGP SIGNATURE-----
+
+--2vxe7ox52jklnq2g--
+
+
+--===============2885634962849144687==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============2885634962849144687==--
+
