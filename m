@@ -4,134 +4,138 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 981BBEEF32A
-	for <linux-phy@archiver.kernel.org>; Thu,  5 Mar 2026 08:52:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 62974EEF331
+	for <linux-phy@archiver.kernel.org>; Thu,  5 Mar 2026 08:57:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OxPfdDzuqNoHt/YsxOi7spobhH6+qMxWmUVaC2WEhi8=; b=et8KJc2E8vxB4K
-	OIJY1nBqhMed8wG60oj/x0yDGTK6A7oiJTMRfw2kBrtnG47xSEv3sRtVgq1r3rOL2+WydIyCUqpEB
-	N9dwahFcj5MLsBcGffDrtWhT/3udVjoQ7RmQ0TrEEwkjRCiHBVMNedBwSXMnhvx0cSDjmKM8VL1R+
-	6QkcV7ttcajgak08mqJHjsVHuOY9xrdQFcGXqbC3PqKGOjwNjCSyg2ABtPkbaoyPA2DiwWnU8bkTC
-	kgAT8LcA6dAvtckMG9ZJIPIIYgS1BMeUWq3XH2ppHIbgLkOW1gmcmxjpLgUdhJEG8i7P3RqTeSiJ+
-	wrJY3wpIbIEF4UOmQwtg==;
+	List-Owner; bh=biWvKHcwqBkK381SOIjL+/ou5ExA9K9LN9xFvvt0KAI=; b=gUcJJHzFWzF8Jl
+	bfCrQoeI0QtKta7RMJgepcWMnm0hsDS3luem9uSEZpxYagBy5hVoq8C4LqC1KCr1uQi3qzxPDJ40l
+	LIleAIllMe4rEApFgW6OWYrZh14fekL+E+Pm4ShDk/jcAlvOLiwXsVxLRg/43w7nnUA3zADXs+dUa
+	Bq4oFqTAw1dlXgGRmgHkO0O/rrvqCW8Vxx91VuwQQiKo2aT4AH5kvhcnbOmZ7jFiQ66NM20wNy2mE
+	MYlxpj8iBvb8QPG+92jxufhpyUrZQPxTZVnVng3BXrpHo/stYzNY0YoHy/Z1usTIFZvS9FCE2COMa
+	SHbtPV+pQtD3W2nVSfag==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vy4R6-00000001FKg-1Eof;
-	Thu, 05 Mar 2026 08:52:00 +0000
-Received: from mail-westeuropeazon11010032.outbound.protection.outlook.com ([52.101.69.32] helo=AM0PR83CU005.outbound.protection.outlook.com)
+	id 1vy4WQ-00000001GNk-0LlF;
+	Thu, 05 Mar 2026 08:57:30 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vy4R2-00000001FHj-3JBF;
-	Thu, 05 Mar 2026 08:51:57 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=xAByO/jqb6mUdfc1nRUWLmcodNPsbWLQcJoYdh/pu0elyJChyxZFB1dbV0K5Gz6tsLoZlb7t5vHJHH17ORM/JJI0T8QeFYC1W5ZYP4po2776AOrQVFQybb2gN+3Tywefp5DxO6JD9LxrRt08j98QQQS3m6k4cfHyHkfQ4uZy8AwS1w4ORwSQV3ZpVCsENpbsdWeSG8UTRKIBImtWrddnouztkfugKxSiJZLJvNBtkt1O2Hdr5Y4bWV91kZbj/esf26AVMmVXhE9cYcpPl0VEYJzRkrjGtctrycHIeZmeMxM6/6XzEVXQZhqTFr7wbxT1La6sRogx7hwEB0Gj/9u1iA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=kn80cKSe+gXqxGplEDzaGs6vJx+xuyMZJX1zgh+9xkI=;
- b=m6nHWl0UM8t31p+Lk9vrhr0s52x1TMfE0LanigWgzFrEYECT03jLszivor1bp+DL5g9pANX8Zm1KWhvG+WbE2eayiiFpFg/cQcxXZ4qnPJG8PINZGFdpWBF7fT8b9QcYknSHm3fWjjH5Q+0PlGxxr/PIBNyjUHTq5dyEAkUmfVRes6UCgP7O2NMTvf3QVbshUi+6Hscq/3Xn538MhKbAdiRsR7EQETQYmv84kFxxwTfoZiHAWp+pnyqZUJczT8kceYJNAC0jKLkpQQkY63TYhwT/9EmcV4JsksL1IxY8DqnG9f7SiSvcICksKlMhXKmf52PbJ7JdWju7MpnvhQUr3Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=kn80cKSe+gXqxGplEDzaGs6vJx+xuyMZJX1zgh+9xkI=;
- b=C+bTmHYXiM/8qbNSIABCIW7sPlOtEek3sQptB89NdJ428z0eFOqwSpazkDwqFQH/JKdmi34p1LjZ0VIE8uU0DUVQqLwvNMeOcja9ieQHzcDAy8XuOR51G9FJ5mOGjisuEtBhdCCmZd+k1po/Ov2bteJI1PPnvCU60z6rXKIS0/GrTfKiJ2jCEoYnBokoHu2j0KwUyWGTAdGDW3/5RJiPXX2nH74cZROU5Y5M2WPHSJpWRSc6Hlxi+Quzyj4U/7twafKWWYCDnr0ztcmn69Bha80gisu5YFWqtueb3EgAsdqIJWggSzek1MwxFylKEZ/SpY92HteS7pemO2W14Blnjw==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from AM9PR04MB8585.eurprd04.prod.outlook.com (2603:10a6:20b:438::13)
- by AM9PR04MB8940.eurprd04.prod.outlook.com (2603:10a6:20b:40b::6) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9678.18; Thu, 5 Mar
- 2026 08:51:52 +0000
-Received: from AM9PR04MB8585.eurprd04.prod.outlook.com
- ([fe80::f010:fca8:7ef:62f4]) by AM9PR04MB8585.eurprd04.prod.outlook.com
- ([fe80::f010:fca8:7ef:62f4%4]) with mapi id 15.20.9678.016; Thu, 5 Mar 2026
- 08:51:52 +0000
-Date: Thu, 5 Mar 2026 10:51:48 +0200
-From: Vladimir Oltean <vladimir.oltean@nxp.com>
+	id 1vy4WN-00000001GMu-1mvo
+	for linux-phy@lists.infradead.org;
+	Thu, 05 Mar 2026 08:57:28 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6258nVpW021019
+	for <linux-phy@lists.infradead.org>; Thu, 5 Mar 2026 08:57:27 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=g2QX49Vqh00Z07fTh/aNaujc
+	J84T6LYPP7usUAtLV70=; b=PTNTgkuxe4kDhyEN14MR94TGk1n8uX5dsmw8l3cD
+	R+V2ZHdkmEqqmzQnGnsEs/R6F/QQsq8/C4eF15o7HYol/DxmhCJi0gK2EeMOog2n
+	e710eqoLrx4Z0XzeEXGmitYubB6UjyPWyzanCWBt/j8qpBktsu/stcGFA4UVSgM4
+	6yKEPG332QAZ89fQMnTZxMicvtNbTsxXKODT0HoFtwItchPm6P8EIyfcb5PX8YA3
+	lDiG3kVq9+B2BTH2rs7sMQ2UH+2bjnu5rhoJghvihxxWcEXXOcOY94XbEb7cWaGy
+	6DIBYGIg19GrmhrI+hmrQPiv1OigAVfRMp+hGUvHFZfpGA==
+Received: from mail-dl1-f71.google.com (mail-dl1-f71.google.com [74.125.82.71])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4cpuptj0bh-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Thu, 05 Mar 2026 08:57:26 +0000 (GMT)
+Received: by mail-dl1-f71.google.com with SMTP id a92af1059eb24-12776bebeb3so3716234c88.1
+        for <linux-phy@lists.infradead.org>; Thu, 05 Mar 2026 00:57:26 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1772701046; x=1773305846; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=g2QX49Vqh00Z07fTh/aNaujcJ84T6LYPP7usUAtLV70=;
+        b=PY64NzEDN+k7VKiiy85wGwYzJ5hr72mL7u0L2ng+QYMgZXrbWAzLrauOniCNtpqjxP
+         9vP9AQu48T+74ti2eXzn3HciPB76c+OTXVi6+Gw19yyZuooLx+FjKI9i0LCWIFgjt8bF
+         1MC9MvM/rOT5ZaZ+1LjNdtHf1TEug6x8N9L3/uCvtDGbuftAPpVgo5l+Q390e0mpW2aF
+         5RjLp5fv1kxT/Uu3jimzFdpbKgb+q7knqAMUWx3cdpNtbl9pmIZQRx2gDaJJNVnDtWGu
+         oECSrfrxrE17klZcCLdUt341b2BE+rKY1mLWm0wSdzwbydTkYg7tSnVshPTYjYfgnZ22
+         7cEg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1772701046; x=1773305846;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=g2QX49Vqh00Z07fTh/aNaujcJ84T6LYPP7usUAtLV70=;
+        b=Fm0dlDF2zyz29ylre46TvirCLJw3RlsrVohZJ0jOTNq+7URXG0JVczSu4JtYyGYdj0
+         tV3VO2fxUx3+h7ALKZ3Mls4aSHyHI6uFsMx+2h3WGl6jTrjq/e2F9zPHRhcvibo7aS8v
+         z79lxdutqVtZysfLYr0Nqu2+Nqv9JnQGobeJNuuHpFjBgnzOdc2nRXz3bkr9ksR4ey1N
+         NJt/9ejkfiifky8rA89Hgrp0fdWssdwrA96mlnrxBhoCXdPJKQ3o99SCVMp8jWJgVYyO
+         ctFSWf6deZCBo6AU5IMDmgHeUaJOwqM7NnQBgNlOpxpxcdjXJXpwYspFFIwcGEX9C30G
+         erTg==
+X-Forwarded-Encrypted: i=1; AJvYcCWleqWa2izxfHlK14Rl1g33vl8JTkZZHm4GbKFvSwbbCX25se+XFvEvCs+UwS7tnWrR6EN63edEmbE=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yx2h7cZO3Lz7jmQeM+7zLCG+PtPIo8nQFeTfw/kuQsLg3yb58gi
+	1Uv6OkNgGorMWrv3ZJNbzKkmSVz6eZMgr/EJtcqbjJS1x208a5Ytyfcx2GiIYhvHXrJJ3pbPLo8
+	Y6Yu4bNRAePfIZJ+N+yv9sF5VhoWP35fJ7TTDS2+J+odpQ0NxTDvqn3d4+iIYJMcHzWTw
+X-Gm-Gg: ATEYQzzAuO2bnsOQf4Rjc0lxyAppfmpNxD6cuXA3PoJkaB/vFK0qbOu3eN8vw0LTRP3
+	7Gps08gWuvseXvzGkTCbx/PBcauNNvdT2JMTerGOgpaD/JSemrAakLfOanJ5muCZZyCQrkHpKuT
+	w23q+0AMrnqJKk781LydFVeGPBW+0rz1/PBhg/rqnrm3VrMjIOdHA/JtWFSqG4APC+oT6ERJzL+
+	FWUTVuKFjJIqSutUaL/I/lUqU+46GYK48lGgexEeWsT4xZDKZkmU7HsrHEzBBTqu4bxHnkJUaHI
+	w5y6bb3vnQtX2j8ACdOB1TUj3ahDAM7KeLv1HhdLqF7kLXrL+0XMLOpeL5izDWTVmwFCO2wuktD
+	xifWMrJ1kf3xjq6IQBNwt2CeYiudgXdjkY9HKqn+t6xPCicOE4gj6Qm6nJOQ4BuFqlceq
+X-Received: by 2002:a05:7300:fd04:b0:2ba:8018:cc53 with SMTP id 5a478bee46e88-2be311d1920mr1882892eec.35.1772701045730;
+        Thu, 05 Mar 2026 00:57:25 -0800 (PST)
+X-Received: by 2002:a05:7300:fd04:b0:2ba:8018:cc53 with SMTP id 5a478bee46e88-2be311d1920mr1882872eec.35.1772701045085;
+        Thu, 05 Mar 2026 00:57:25 -0800 (PST)
+Received: from hu-qianyu-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-2be2056acd1sm5583020eec.22.2026.03.05.00.57.23
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 05 Mar 2026 00:57:24 -0800 (PST)
+Date: Thu, 5 Mar 2026 00:57:22 -0800
+From: Qiang Yu <qiang.yu@oss.qualcomm.com>
 To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Cc: linux-phy@lists.infradead.org, Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
-	linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
-	linux-can@vger.kernel.org, linux-gpio@vger.kernel.org,
-	linux-ide@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-media@vger.kernel.org, linux-pci@vger.kernel.org,
-	linux-renesas-soc@vger.kernel.org, linux-riscv@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	linux-samsung-soc@vger.kernel.org, linux-sunxi@lists.linux.dev,
-	linux-tegra@vger.kernel.org, linux-usb@vger.kernel.org,
-	netdev@vger.kernel.org, spacemit@lists.linux.dev,
-	UNGLinuxDriver@microchip.com
-Subject: Re: [PATCH phy-next 22/22] MAINTAINERS: add regex for linux-phy
-Message-ID: <20260305085148.7cwo3yflp7vcfldf@skbuf>
-References: <20260304175735.2660419-1-vladimir.oltean@nxp.com>
- <20260304175735.2660419-23-vladimir.oltean@nxp.com>
- <a8fee1cd-1e69-4a9e-8533-c0988c480fb9@oss.qualcomm.com>
-Content-Disposition: inline
-In-Reply-To: <a8fee1cd-1e69-4a9e-8533-c0988c480fb9@oss.qualcomm.com>
-X-ClientProxiedBy: WA2P291CA0047.POLP291.PROD.OUTLOOK.COM
- (2603:10a6:1d0:1f::16) To AM9PR04MB8585.eurprd04.prod.outlook.com
- (2603:10a6:20b:438::13)
+Cc: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+        Krzysztof Kozlowski <krzk@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+        Neil Armstrong <neil.armstrong@linaro.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>, linux-arm-msm@vger.kernel.org,
+        linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 1/2] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Add
+ vdda-refgen supply for Glymur
+Message-ID: <aalFcobmkaTTjQlE@hu-qianyu-lv.qualcomm.com>
+References: <20260208-refgen-v1-0-87ca84fd78b3@oss.qualcomm.com>
+ <20260208-refgen-v1-1-87ca84fd78b3@oss.qualcomm.com>
+ <20260209-magic-conscious-seahorse-b81c8b@quoll>
+ <aY1Jx5J8x/OALk5M@hu-qianyu-lv.qualcomm.com>
+ <hcslao22elcihjw56ltu4yo54lotheqpikzsrq6tia33di4fs4@2ygrbwhcfx2a>
+ <aaVkpKZcrNM7k4Xm@hu-qianyu-lv.qualcomm.com>
+ <578c485e-b7d3-4468-bece-efeb6db2b1e1@oss.qualcomm.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AM9PR04MB8585:EE_|AM9PR04MB8940:EE_
-X-MS-Office365-Filtering-Correlation-Id: f3794075-8f10-4c5a-7756-08de7a94722a
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|19092799006|7416014|10070799003|1800799024|366016;
-X-Microsoft-Antispam-Message-Info: HVVOfQwxdDmxSz3P8/MbGt4uP1dgx0+vQ35z3nC9LmY/OPQe90dIa6fgFsLF+wE70xpEBm2htokbQf4jpAWudymIfm8J2yNCEcRuRqo5C2XBDA6zkJ1dstfF61J9RNDtSgRE4AAIVN0fVIsm0+o6c4ai/tCPI4WFqhxwDVIG6P4hrp00OWar2Vo4JxWPdVBTC2p1Y49UtXCCbbbjMRI36jDM6BSvKecO/aQNtVNzDlKlDo/xXQUkVpkYvDgDq45BSeLf9vuA3C9RmG0kGTNUzDaZA2AH/QoEiMQ3IXSBaSFy6bOCaIyuN1ow+mHrzvye6hdWMdmwRytoWqF4FKBRmVGZx61EH24WFUWrHk3TmLAf3cj1C5pIe0aj8LLomMCYvBbOVhNTFB6EpzH1ZEiaeWUkgssGptp2Njdo6M6RLZkrM13vGHWqn70+fJR7v2FudCYQ1bGyNDTBg1BuatEynuKmi1WSZbDR5wnE9OkGv8JlZLS+7v86TBRxME1PdfQJh9UaitRfRIUJ4Uqo8DAyg4crxhQh3Nc2tIQ5+beVbuGnSLEzoDJZOX+JP8Gl2jLUpcAafiUf2bzezZL2W9ssZx0i05eVQ7IJr7WRPAVv9cownPUUe6S1fnzTUKjYFGbJLSxtyEgQTaTgNwBICtoyOPuTwWQTf6OR6pW+UTPOfH+arMSo0Q0hcdnf77Gs1a7UEV3BDYwRJ3xijZ6B4An5JPl/K5DNkVCiRpiq5/YnTrM=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM9PR04MB8585.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(19092799006)(7416014)(10070799003)(1800799024)(366016);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 2
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?8Wg0RTbJr9xq26XXL3fWxdwYiqnn3CLZVKs7wvIj1p4/glF+msfF3igVUhEk?=
- =?us-ascii?Q?KCrqL4R1O31j4GlOKrxe6L13t/5l1cFMXeuycRmlpnm+hVML5ol4Ix5k9++z?=
- =?us-ascii?Q?ENHi0slX1nFivxmkGsBq2jZ/GE1DdINOegGdgT1LiBqHp1kOUihGBJn2NKFs?=
- =?us-ascii?Q?u6nGJZCRf0GAQywqQh5scqoF6GHMkpDbc2YbtTNOYOxgz3nyd5J1PS7399ps?=
- =?us-ascii?Q?QZsv+uxLSZbqnqddfe/4ml0Z96N1Zrtnp/NQVSp7hhV4WjBPqJ3fPUxxAjP+?=
- =?us-ascii?Q?VRjARKN/+wIQYthv4YYtLEk+5kuPBNdAZJOZYrZv2V7fjXGpb/HUsb9Yk7XZ?=
- =?us-ascii?Q?AOf6Ubz68j+n5jXmUz6QhGG3tXT/BS+otZfXL7m0izOoDysUdFRQjJ+Mtna0?=
- =?us-ascii?Q?ZhNF+Td6TtsFjRzrbqKZjhtctZoDOmi2bEzOGaqYLOi8tazjyOpulv4QFDWp?=
- =?us-ascii?Q?qrNdXS6JqXyLGhnnwUVnydvNsIqR9YrbzDnC5FuWoh3xIQ0+5mFK3ijPN0eZ?=
- =?us-ascii?Q?Vo/vOd3RXOe0oTXlpoo0EehEIMR9THbVxoVjfMsgrhzVmPFgxh6GOOjHyR58?=
- =?us-ascii?Q?8Lu1h72yT3veAsP6kvtoHxzUmtvXCKixC1RBMf/8Sk97St9rkh0H5TYa6S4h?=
- =?us-ascii?Q?XfRW7IDsk7/sNFyMyKyjus0nOQIkcqPY8HEw2NXYerbfhtDi+gxpZFtUg9/4?=
- =?us-ascii?Q?Z1XEPhoT4j/Uhp2ufaUIQiSxqzGF2cMEBivy3NSlfbnBjwu98samuDjiQLm0?=
- =?us-ascii?Q?eEix2pHT2S8KRHOoBjohlTXojoLKZVt0GGbRr7idsAbI+LwaYMiZVOcQKsrn?=
- =?us-ascii?Q?VxzCTrL/pVqi2abrg7QskZdShspViikyZTSLotT61X94gkB/nqAIF5o9v337?=
- =?us-ascii?Q?Upj/zjMlTvsam4s2eyvnXWz35zqSgncttHtPMcurUnutsse5kG21xlerkenB?=
- =?us-ascii?Q?dft9OtJF6j1D8mWsddb5mn6bBefH+eBMNzpzR5LVPlgpjcTU2gCO69lmPZOi?=
- =?us-ascii?Q?FysX+sCdWJLeLPvD0WcHsuJmeyr319aEXLbomL1dD7VN3kw2fvAhugARwiju?=
- =?us-ascii?Q?aldqFp9LnqfD5lGrK0rvWeL95T4bCNwCb6erOrCY4dovC8RHA3b6Os2givgw?=
- =?us-ascii?Q?KC3XN9C5LI2kWRMnKmmiJyYtQdwZ9yR5ceMLMktcDNerCi0Umt3RiTH8Mjue?=
- =?us-ascii?Q?Xh9eGrTuhykA/BB+HllPlGSAGN+cc7n6XuJWX7BtA4Yoaks5yVQRrVXiX4s9?=
- =?us-ascii?Q?NCCeqAjChN6GQyZMzZUdwMih9h1pNSkDssrt2c18HczGr/dZgooC4Inouxjn?=
- =?us-ascii?Q?ozb8ms/EvkClLQ2whMD9Xz3mkKFgp70E52b0VOjBzO5mDfWK3sJHK85/A9TG?=
- =?us-ascii?Q?poeHie6ggNcL8VOqu4x4pKjWtCxMzKkuOVMAKhy4maRK5EKllvs2e77iZ3vc?=
- =?us-ascii?Q?Tigh0A5HwW+xT7T+5T26pufK7ap4/7rTt1ycR9NX++6ZYOaX8FXn+JzBq0ii?=
- =?us-ascii?Q?ZQlRqfeP4EA54jerfCOFefliHhxgVGiXBgwBrnxjutI99pYBEX3cwDFvisxr?=
- =?us-ascii?Q?/QlTnIxu5DjY+Wg8k/Q48pZXHqGOGBTzD4bLpL1gh9WjwxP5oO1UXltbRWgA?=
- =?us-ascii?Q?xw9w/deTkKZ9KGyzotH1bJHA//64/ANkkd+hwBFyJQY9ds1dPIZuOe0xHTuG?=
- =?us-ascii?Q?/7Xug35243duqW9muCFVZH4AkTRtwBkywcDDw1cySXdFOog3U4HMzw2uKKMN?=
- =?us-ascii?Q?4PSdUyo3njuFZnydZVcvx5cJookxkeuml7OASINihJWnyA7cuUqquTrX1RCK?=
-X-MS-Exchange-AntiSpam-MessageData-1: fWnlM+bZmrVk06iF7ehT70ZwXbi6ZEOkcK8=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: f3794075-8f10-4c5a-7756-08de7a94722a
-X-MS-Exchange-CrossTenant-AuthSource: AM9PR04MB8585.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Mar 2026 08:51:52.5667
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: KEuVcQAeBdYuEQfCMqrD9vqGTo4XMNyAvV0aKCkz9TdQwqrWu+DWT/dWho4m8aKp9DX/eUS9C6p2HqafjCcG2g==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM9PR04MB8940
+Content-Disposition: inline
+In-Reply-To: <578c485e-b7d3-4468-bece-efeb6db2b1e1@oss.qualcomm.com>
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzA1MDA3MSBTYWx0ZWRfX4e9SG8dGUHJO
+ slFSBoxuntIi9YRZ1MNyMb2HdZtroQKGDTCn3oykm9ERvFf7K5HTkkdZHxlS5yiWGP7js/enEM4
+ jO6J2KhRMITXqCgmG0ufNeNAnyN1FDxjS3PXa36Up6JghYLFKzB4RciQ3gELj0sVn+ECPS9tL7x
+ dVLOlIHdVGK3vdXs/U+lEQodm1yFdhfhJ6g5SNG6N0IyHlfY7k1Pz2Nb0VpyjTYZCfxNDRxD04a
+ dMgtYSeeYIg/AWnMi1IpPozXAJIquaUb9nh8WzXybx4/CO7D4iIrNcf11aAMlBBelMssVRlZ+aE
+ BF7SjVOfEkEwxZ7C5E1SiJ+CUiXm3cDJ1ZrpmD2rhoOq0+7BrPnteQz6st4as9Bcj6q6LCyI4zw
+ gUqMquxFaVGgYA0pjClys0uWYyqXVSI7PK4dRiBWnxQxGQOVi3Zavm2xt/ibIXTnR4O2K90eOTP
+ Y4RrM4yqSs2WzN9FVLQ==
+X-Proofpoint-ORIG-GUID: G9u_TFovkwnsPPmRDlL69Hh0WomcTtli
+X-Authority-Analysis: v=2.4 cv=Ddsaa/tW c=1 sm=1 tr=0 ts=69a94576 cx=c_pps
+ a=JYo30EpNSr/tUYqK9jHPoA==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=kj9zAlcOel0A:10 a=Yq5XynenixoA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=Um2Pa8k9VHT-vaBCBUpS:22
+ a=o9cD3-WFi3VABs8zBZsA:9 a=CjuIK1q_8ugA:10 a=Fk4IpSoW4aLDllm1B1p-:22
+X-Proofpoint-GUID: G9u_TFovkwnsPPmRDlL69Hh0WomcTtli
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
+ definitions=2026-03-05_02,2026-03-04_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ clxscore=1015 priorityscore=1501 suspectscore=0 bulkscore=0 impostorscore=0
+ malwarescore=0 spamscore=0 adultscore=0 phishscore=0 lowpriorityscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2602130000 definitions=main-2603050071
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260305_005156_842705_D5AE3D54 
-X-CRM114-Status: GOOD (  14.48  )
+X-CRM114-CacheID: sfid-20260305_005727_472830_20B4DEAD 
+X-CRM114-Status: GOOD (  39.83  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -148,36 +152,80 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello Konrad,
-
-On Thu, Mar 05, 2026 at 09:39:35AM +0100, Konrad Dybcio wrote:
-> > diff --git a/MAINTAINERS b/MAINTAINERS
-> > index 55af015174a5..bdfa47d9c774 100644
-> > --- a/MAINTAINERS
-> > +++ b/MAINTAINERS
-> > @@ -10713,6 +10713,7 @@ F:    Documentation/devicetree/bindings/phy/
-> >  F:   drivers/phy/
-> >  F:   include/dt-bindings/phy/
-> >  F:   include/linux/phy/
-> > +K:   \b(devm_)?(of_)?phy_(create|destroy|init|exit|reset|power_(on|off)|configure|validate|calibrate|(get|set)_(mode|media|speed|bus_width|drvdata)|get_max_link_rate|pm_runtime_(get|put)|notify_(connect|disconnect|state)|get|put|optional_get|provider_(un)?register|simple_xlate|(create|remove)_lookup)\b|(struct\s+)?phy(_ops|_attrs|_lookup|_provider)?\b|linux/phy/phy\.h|phy-props\.h|phy-provider\.h
+On Tue, Mar 03, 2026 at 12:14:29PM +0100, Konrad Dybcio wrote:
+> On 3/2/26 11:21 AM, Qiang Yu wrote:
+> > On Fri, Feb 13, 2026 at 07:47:36PM +0200, Dmitry Baryshkov wrote:
+> >> On Wed, Feb 11, 2026 at 07:32:23PM -0800, Qiang Yu wrote:
+> >>> On Mon, Feb 09, 2026 at 09:06:23AM +0100, Krzysztof Kozlowski wrote:
+> >>>> On Sun, Feb 08, 2026 at 08:49:39PM -0800, Qiang Yu wrote:
+> >>>>> The PCIe QMP PHYs on Glymur require stable reference voltage provided by
+> >>>>> refgen. The refgen itself requires two separate power supplies:
+> >>>>> vdda-refgen0p9 and vdda-refgen1p2.
+> >>>>>
+> >>>>> Since there is no dedicated driver for REFGEN, add vdda-refgen0p9-supply
+> >>>>
+> >>>> How does the driver matter for the bindings? If I add dedicated driver
+> >>>> for refgen, then I change the bindings?
+> >>>
+> >>> Yeah, I know that dt-bindings should describe hardware, not software. But
+> >>> what I meant to say is that the refgen is different from qref which is
+> >>> controlled via TCSR registers and its LDOs are requested to vote in
+> >>> tcsrcc driver. The refgen doesn't required register setting and it doesn't
+> >>> have dedicated driver, so we vote its LDOs in phy driver. I will avoid
+> >>> this statement in next version.
+> >>
+> >> I must admit, I could not find references to the refgen in any of Glymur
+> >> PCIe-related HPGs.
+> >>
+> >>>
+> >>>>
+> >>>> There is qcom,sc8280xp-refgen-regulator so why there cannot be
+> >>>> qcom,x1e-refgen-regulator?
+> >>>
+> >>> I think we can and it seems better because the refgen for pcie phy also
+> >>> supplies reference voltage to other modules like usb. But I checked the
+> >>> qcom-refgen-regulator.c, it contains some register settings and there is
+> >>> no LDOs voting. I'm not sure what does those register do, maybe Konrad
+> >>> can provide some backgroud.
+> >>
+> >> Those regs provide voting for refgen, because on those platforms DSI
+> >> block doesn't have a hardware vote for refgen.
+> > 
+> > Hi Konrad, Dmitry
+> > 
+> > I tried to model the reference voltage as a fixed regulator but the fixed
+> > regulator driver only supports a single vin-supply. However, the refgen
+> > block requires two separate power supplies (1.2V and 0.9V LDOs).
+> > 
+> > Would it be appropriate to modify the qcom-refgen-regulator.c driver to
+> > handle LDO voting for both the 1.2V and 0.9V supplies? In the regulator's
+> > enable/disable callbacks, we could vote for and unvote these two LDOs
+> > instead of performing register operations.
 > 
-> Would looking for the devm/of_phy_ prefix followed by an open parentheses
-> not suffice for the 'has function call' case, instead of listing all
-> currently present exported functions?
-
-This would maybe work when you run ./scripts/get_maintainer.pl on a file.
-But I would like it to have good coverage on individual patches too. And
-since the devm/of_phy prefix only matches when you "get" the PHY, not
-"use" it, my fear is we would still be missing out on the most important
-part of the patches.
-
+> Wait, so you want to associate the MMIO-controlled refgen's driver with
+> a dummy regulator that takes 2 supplies? I didn't catch that part earlier,
+> that's not great..
 > 
-> My worry is that this approach is overbuilt and absolutely no one will
-> remember to update it
+> Or do we actually have access to the MMIO of *this* refgen and can control
 
-I think I can add a test in the patch build automation that correlates
-function and struct names from <linux/phy/phy.h> with their presence in
-MAINTAINERS.
+I can't find related info in any documentation.
+
+> it (except we don't do that today because X Y Z)?
+>
+
+But even if we could find registers to enable/disable the refgen block,
+the two LDOs (1.2V and 0.9V) would still need to be voted/unvoted manually
+since they're separate power rails that feed the refgen.
+
+I searched through the drivers/regulator/ directory and couldn't find any
+existing examples where a regulator driver enables/disables other
+regulators in its own enable/disable callbacks. This pattern doesn't seem
+to be commonly used in the kernel.
+
+So seems like we have to vote this two LDOs in phy driver.
+
+- Qiang Yu
+> Konrad
 
 -- 
 linux-phy mailing list
