@@ -4,79 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E4FBCEEF319
-	for <linux-phy@archiver.kernel.org>; Thu,  5 Mar 2026 09:19:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D4B54F30923
+	for <linux-phy@archiver.kernel.org>; Thu,  5 Mar 2026 09:30:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1MOF77rj0uEmebp9C99k4YSJwV0/hmhE1DziNKPIc5Q=; b=aCjB8ifBNZOZF6
-	nipNDGmz3vYUvMLyZhUll2XdYNz+k1dGtwfNGx2k8Rpkns7vdCXZNxyv3jGiKGH2OzM5WxwvZpaaz
-	mlWoGBOz7+IRoDVzVcmrxr4iofu7/Kczw8WU3MjsX23UZPwZSsMSfvcPXnjQ/0VzL7QnV8KQEms+v
-	bwiqhruITlisYI6qUSN3GyHFP8DRzy+WbfksLvQc4XhbyfEDyx0IONccJ1sVPSDo57Ja2wIuUPOw5
-	SDvYoifCI15kxwn4CiHLvn/Ay8SMcfvJDO6Jkd5gResTAuRQPCqdUtWzb9dl4t3eF9RVuiN7GS4/L
-	+qO40nWfVxOUlYwfaAZw==;
+	List-Owner; bh=FoKZ4g3mRcNcrCHArJzWs3hB5HH+WHzPgkl12UwJY7s=; b=cESlhGSzBKfUyx
+	PIgXTvM4p7+DV7fmBzKTTDeW4zWfx4qjG0JhFhq2fXyZ74f3p2BltFulinzd2DQ9Lu1lbhd+ZFySc
+	7h8C655jrQmcBYgV94QJPRpcaFK+C07nnxDHA2UTRd3SyaSWQfBJqKd/mqzKTRrPy0UjNIYq99GEy
+	DQ3c4MATmdmvtCRCHzKAsM/pXhmlQ4GSGajKPzxOly8Y2gsiiuOGR+pSM3uEi/2H4JgA7P4lfinpK
+	msU/QcgWE6aQKjsdWXDd7PjTTXhKKWjZ+pkY32kLUNY6bAwOTMLzNETIP+9JMH7LCvxC94ChsQ+tX
+	Gw40pQqvVHv6Y315R1AQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vy4s7-00000001MBT-2TV9;
-	Thu, 05 Mar 2026 09:19:55 +0000
-Received: from mgamail.intel.com ([198.175.65.10])
+	id 1vy52m-00000001ONj-1umD;
+	Thu, 05 Mar 2026 09:30:56 +0000
+Received: from smtprelay0011.hostedemail.com ([216.40.44.11] helo=relay.hostedemail.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vy4s0-00000001M6n-2nSf;
-	Thu, 05 Mar 2026 09:19:52 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1772702389; x=1804238389;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=yVVOJTE/zUJqhnidUw+HOA7ZyLMPee+UqnKATnAGtjc=;
-  b=NBBg+DDhsHAMX70v9JiwFGyan1QfYmi2tmQNVTJQR8KSA8sd6I8Sk3RG
-   2dYaSqDhT6SKsM4/M9e+wg+LOS0gvzNKV3Lli3mfHn+0uRiLG2AZvnovP
-   YzDRm7rqNGkOh2hTmJ/q6+OnTSgFl4iVQSaUb1AMecvNCPUJ0TzhsQJ8W
-   xrWOaEmxldtSUWzw0a7rTRZv51uXBS27PMgy65vhYdOLWV/+1WRjoCAJh
-   5Qzo8TNNWO2sMXbie5T78IA/xLE76qqs3m5v+i91MKWjPbCzoXHYYUz67
-   7pS3/jV3dfQnKfc2eovKyIEnRLAoeb/A44W1Uz7PgEr/4q+1UzxCmnr5y
-   g==;
-X-CSE-ConnectionGUID: /sAJvzXfSsaym/XYsaYa0w==
-X-CSE-MsgGUID: WoXQIYWnSMOkbTJr1V5GHg==
-X-IronPort-AV: E=McAfee;i="6800,10657,11719"; a="91172598"
-X-IronPort-AV: E=Sophos;i="6.23,325,1770624000"; 
-   d="scan'208";a="91172598"
-Received: from fmviesa001.fm.intel.com ([10.60.135.141])
-  by orvoesa102.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 05 Mar 2026 01:19:46 -0800
-X-CSE-ConnectionGUID: 3dYZ3uZqRW2W1VQJXXPtuQ==
-X-CSE-MsgGUID: oj9nWylPSQyWZXvbMNo52w==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.23,325,1770624000"; 
-   d="scan'208";a="245123518"
-Received: from lkp-server01.sh.intel.com (HELO cadc4577a874) ([10.239.97.150])
-  by fmviesa001.fm.intel.com with ESMTP; 05 Mar 2026 01:19:43 -0800
-Received: from kbuild by cadc4577a874 with local (Exim 4.98.2)
-	(envelope-from <lkp@intel.com>)
-	id 1vy4rs-000000000Ow-1L25;
-	Thu, 05 Mar 2026 09:19:40 +0000
-Date: Thu, 5 Mar 2026 17:18:55 +0800
-From: kernel test robot <lkp@intel.com>
-To: Christian Marangi <ansuelsmth@gmail.com>, Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Lorenzo Bianconi <lorenzo@kernel.org>,
-	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Cc: oe-kbuild-all@lists.linux.dev
-Subject: Re: [PATCH v5 4/4] phy: airoha: Add support for Airoha AN7581 USB PHY
-Message-ID: <202603051725.x2cR2ynI-lkp@intel.com>
-References: <20260304005843.2680-5-ansuelsmth@gmail.com>
+	id 1vy52k-00000001OMR-08U2;
+	Thu, 05 Mar 2026 09:30:55 +0000
+Received: from omf12.hostedemail.com (a10.router.float.18 [10.200.18.1])
+	by unirelay04.hostedemail.com (Postfix) with ESMTP id 6EF351A090A;
+	Thu,  5 Mar 2026 09:30:48 +0000 (UTC)
+Received: from [HIDDEN] (Authenticated sender: joe@perches.com) by omf12.hostedemail.com (Postfix) with ESMTPA id ABA5119;
+	Thu,  5 Mar 2026 09:30:41 +0000 (UTC)
+Message-ID: <f3a5aa3df78553ffc0fd0024f5fd36a4e2158c88.camel@perches.com>
+Subject: Re: [PATCH phy-next 22/22] MAINTAINERS: add regex for linux-phy
+From: Joe Perches <joe@perches.com>
+To: Vladimir Oltean <vladimir.oltean@nxp.com>, Konrad Dybcio
+	 <konrad.dybcio@oss.qualcomm.com>
+Cc: linux-phy@lists.infradead.org, Vinod Koul <vkoul@kernel.org>, Neil
+ Armstrong <neil.armstrong@linaro.org>, dri-devel@lists.freedesktop.org, 
+	freedreno@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org, 
+	linux-arm-msm@vger.kernel.org, linux-can@vger.kernel.org, 
+	linux-gpio@vger.kernel.org, linux-ide@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-media@vger.kernel.org, 
+	linux-pci@vger.kernel.org, linux-renesas-soc@vger.kernel.org, 
+	linux-riscv@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+	linux-samsung-soc@vger.kernel.org, linux-sunxi@lists.linux.dev, 
+	linux-tegra@vger.kernel.org, linux-usb@vger.kernel.org,
+ netdev@vger.kernel.org, 	spacemit@lists.linux.dev,
+ UNGLinuxDriver@microchip.com
+Date: Thu, 05 Mar 2026 01:30:40 -0800
+In-Reply-To: <20260305085148.7cwo3yflp7vcfldf@skbuf>
+References: <20260304175735.2660419-1-vladimir.oltean@nxp.com>
+	 <20260304175735.2660419-23-vladimir.oltean@nxp.com>
+	 <a8fee1cd-1e69-4a9e-8533-c0988c480fb9@oss.qualcomm.com>
+	 <20260305085148.7cwo3yflp7vcfldf@skbuf>
+User-Agent: Evolution 3.58.3 (3.58.3-1.fc43) 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260304005843.2680-5-ansuelsmth@gmail.com>
+X-Rspamd-Server: rspamout07
+X-Rspamd-Queue-Id: ABA5119
+X-Stat-Signature: isin6ba55864u4k7cspzxagise7enff6
+X-Session-Marker: 6A6F6540706572636865732E636F6D
+X-Session-ID: U2FsdGVkX1+c/QqwBFj4RnbTOHAHP0u/fhPSDrZvfXg=
+X-HE-Tag: 1772703041-391055
+X-HE-Meta: U2FsdGVkX18CpOmWAsQNq/nzIGrueYMCLFpafncVkMPEeWn8lMHmxGid0nuFShmczpxd7LMIQ2HkJXitNrouaAWweblPom1aNWswKBKkaGGCen5irY0lnX3z9ty7T8amhD6qn9Q5wfYeFrX1AAy/tVHr70RJ5jxHv1CzpDKls395qE7TAifFzgOqcxBZ+LxnR/uVacI/Z8SiG+R8Q0lWc4dUv5BUq0HaFG5uC1dlHaBdlDEn65TIo3X5+7C0AcoUpQeypXp8sK9gp+VHT+vsBW/Ta2vT0Zqxi066+g9opvcn5emNN3z91009RwQ+r7ADwt/gmX2gmKTLfK9kac3enKskM+3ua1Jz
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260305_011949_982495_CAC95125 
-X-CRM114-Status: GOOD (  13.47  )
+X-CRM114-CacheID: sfid-20260305_013054_125886_B2628A00 
+X-CRM114-Status: UNSURE (   7.75  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,121 +83,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Christian,
+On Thu, 2026-03-05 at 10:51 +0200, Vladimir Oltean wrote:
+> On Thu, Mar 05, 2026 at 09:39:35AM +0100, Konrad Dybcio wrote:
+> diff --git a/MAINTAINERS b/MAINTAINERS
+> > > index 55af015174a5..bdfa47d9c774 100644
+> > > --- a/MAINTAINERS
+> > > +++ b/MAINTAINERS
+> > > @@ -10713,6 +10713,7 @@ F:    Documentation/devicetree/bindings/phy/
+> > >  F:   drivers/phy/
+> > >  F:   include/dt-bindings/phy/
+> > >  F:   include/linux/phy/
+> > > +K:   \b(devm_)?(of_)?phy_(create|destroy|init|exit|reset|power_(on|off)|configure|validate|calibrate|(get|set)_(mode|media|speed|bus_width|drvdata)|get_max_link_rate|pm_runtime_(get|put)|notify_(connect|disconnect|state)|get|put|optional_get|provider_(un)?register|simple_xlate|(create|remove)_lookup)\b|(struct\s+)?phy(_ops|_attrs|_lookup|_provider)?\b|linux/phy/phy\.h|phy-props\.h|phy-provider\.h
 
-kernel test robot noticed the following build warnings:
+You could use multiple K: entries instead of this monster.
 
-[auto build test WARNING on next-20260303]
-[cannot apply to robh/for-next linus/master v7.0-rc2 v7.0-rc1 v6.19 v7.0-rc2]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
-
-url:    https://github.com/intel-lab-lkp/linux/commits/Christian-Marangi/dt-bindings-soc-Add-bindings-for-Airoha-SCU-Serdes-lines/20260304-090107
-base:   next-20260303
-patch link:    https://lore.kernel.org/r/20260304005843.2680-5-ansuelsmth%40gmail.com
-patch subject: [PATCH v5 4/4] phy: airoha: Add support for Airoha AN7581 USB PHY
-config: powerpc64-randconfig-r131-20260305 (https://download.01.org/0day-ci/archive/20260305/202603051725.x2cR2ynI-lkp@intel.com/config)
-compiler: clang version 23.0.0git (https://github.com/llvm/llvm-project 9a109fbb6e184ec9bcce10615949f598f4c974a9)
-sparse: v0.6.5-rc1
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20260305/202603051725.x2cR2ynI-lkp@intel.com/reproduce)
-
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202603051725.x2cR2ynI-lkp@intel.com/
-
-sparse warnings: (new ones prefixed by >>)
->> drivers/phy/airoha/phy-an7581-usb.c:569:14: sparse: sparse: incorrect type in assignment (different address spaces) @@     expected void *base @@     got void [noderef] __iomem * @@
-   drivers/phy/airoha/phy-an7581-usb.c:569:14: sparse:     expected void *base
-   drivers/phy/airoha/phy-an7581-usb.c:569:14: sparse:     got void [noderef] __iomem *
->> drivers/phy/airoha/phy-an7581-usb.c:573:24: sparse: sparse: incorrect type in argument 3 (different address spaces) @@     expected void [noderef] __iomem *regs @@     got void *base @@
-   drivers/phy/airoha/phy-an7581-usb.c:573:24: sparse:     expected void [noderef] __iomem *regs
-   drivers/phy/airoha/phy-an7581-usb.c:573:24: sparse:     got void *base
-
-vim +569 drivers/phy/airoha/phy-an7581-usb.c
-
-   545	
-   546	static int an7581_usb_phy_probe(struct platform_device *pdev)
-   547	{
-   548		struct phy_provider *phy_provider;
-   549		struct an7581_usb_phy_priv *priv;
-   550		struct device *dev = &pdev->dev;
-   551		unsigned int index;
-   552		void *base;
-   553		int ret;
-   554	
-   555		priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
-   556		if (!priv)
-   557			return -ENOMEM;
-   558	
-   559		priv->dev = dev;
-   560	
-   561		ret = of_property_read_u32(dev->of_node, "airoha,usb2-monitor-clk-sel",
-   562					   &priv->monclk_sel);
-   563		if (ret)
-   564			return dev_err_probe(dev, ret, "Monitor clock selection is mandatory for USB PHY calibration\n");
-   565	
-   566		if (priv->monclk_sel > 3)
-   567			return dev_err_probe(dev, -EINVAL, "only 4 Monitor clock are selectable on the SoC\n");
-   568	
- > 569		base = devm_platform_ioremap_resource(pdev, 0);
-   570		if (IS_ERR(base))
-   571			return PTR_ERR(base);
-   572	
- > 573		priv->regmap = devm_regmap_init_mmio(dev, base, &an7581_usb_phy_regmap_config);
-   574		if (IS_ERR(priv->regmap))
-   575			return PTR_ERR(priv->regmap);
-   576	
-   577		platform_set_drvdata(pdev, priv);
-   578	
-   579		for (index = 0; index < AIROHA_PHY_USB_MAX; index++) {
-   580			enum an7581_usb_phy_instance_type phy_type;
-   581			struct an7581_usb_phy_instance *instance;
-   582	
-   583			switch (index) {
-   584			case AIROHA_PHY_USB2:
-   585				phy_type = PHY_TYPE_USB2;
-   586				break;
-   587			case AIROHA_PHY_USB3:
-   588				phy_type = PHY_TYPE_USB3;
-   589				break;
-   590			}
-   591	
-   592			if (phy_type == PHY_TYPE_USB3) {
-   593				ret = of_property_read_u32(dev->of_node, "airoha,usb3-serdes",
-   594							   &priv->serdes_port);
-   595				if (ret)
-   596					return dev_err_probe(dev, ret, "missing serdes line for USB 3.0\n");
-   597	
-   598				priv->scu = syscon_regmap_lookup_by_compatible("airoha,en7581-scu");
-   599				if (IS_ERR(priv->scu))
-   600					return dev_err_probe(dev, PTR_ERR(priv->scu), "failed to get SCU syscon\n");
-   601			}
-   602	
-   603			instance = devm_kzalloc(dev, sizeof(*instance), GFP_KERNEL);
-   604			if (!instance)
-   605				return -ENOMEM;
-   606	
-   607			instance->type = phy_type;
-   608			priv->phys[index] = instance;
-   609	
-   610			instance->phy = devm_phy_create(dev, NULL, &airoha_phy);
-   611			if (IS_ERR(instance->phy))
-   612				return dev_err_probe(dev, PTR_ERR(instance->phy), "failed to create phy\n");
-   613	
-   614			phy_set_drvdata(instance->phy, instance);
-   615		}
-   616	
-   617		phy_provider = devm_of_phy_provider_register(&pdev->dev, an7581_usb_phy_xlate);
-   618	
-   619		return PTR_ERR_OR_ZERO(phy_provider);
-   620	}
-   621	
-
--- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+And please use (?:<foo>) to avoid capture groups too.
 
 -- 
 linux-phy mailing list
