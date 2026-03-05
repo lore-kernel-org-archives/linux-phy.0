@@ -4,92 +4,135 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 49682EEF312
-	for <linux-phy@archiver.kernel.org>; Thu,  5 Mar 2026 07:52:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 386C9EEF316
+	for <linux-phy@archiver.kernel.org>; Thu,  5 Mar 2026 08:17:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PO9ASvqvvBcLKnFBAbSwXKK/XyduGzfewa1XlNLKRb4=; b=ygIbfpKiABDpWH
-	xfUODKoZf1B7Gv31xvAVheFCy8q4BEHnQ0bONA6bMjSAq58Nwx2LMw5GhmdliRHlLp2jIU4WJxzFY
-	NonfOGr3Rb+ypkyLVNIxiYKF6Ljm0lZoTda9B1dDQAmv0O7dqvNi/WGVO/ZMg2nGxy6o2Z9SZTNTX
-	tqd8nY+6egtaxtgUlM4LZ/d5Zqs2HuMnuU24h0ihdEavmHsijo0hTNpXHdYhTTAEsrqTu7463/GM5
-	6JYdE9EAIc0Lxi8iM7r9jSBgFuzkuFebSJUbgQ/qmedvQAiO/rn03b1fV52Gmg78aRoEEMPJeN1KV
-	CLkb9Y4BEK/G4HB8Rkmg==;
+	List-Owner; bh=eCgm/2i+hqvzOoAywh699mM9HKE/+WF683kGGj7CAD0=; b=y6Qjq0QMBGrK0i
+	TcN0sKGImTP7/FlEwcN9eFMqotCnWXw1s47rdDzSDDXLuqkMC94h+K4P8ARf+QBH97cXE4mb9nP2n
+	kD4UUDLw/HEu0XUfGp54Gx1sPuD5zB0d6E9e8yuL2NuzsN28uJT2gTrY8PUbYff8bBYqtSE5NbRJm
+	126xaCZRMAC/36UjC4RrNQ24sgBk/2xocQUKtAV5WTzwdC82fGZh05zidZPTeRYb3flfEgl0kl7oY
+	49T8cwE4Da46W+79nMKRP5I8Jtxgqsu/tKpzOBEZybE3RiAwJsZuUYUvqjsB2ocOPqCp5y8RperMf
+	VG5+9rt+OpcUPvJFNwfw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vy3Vl-000000017zI-3jHC;
-	Thu, 05 Mar 2026 07:52:45 +0000
-Received: from mail-qk1-f176.google.com ([209.85.222.176])
+	id 1vy3u3-00000001Ash-1fXz;
+	Thu, 05 Mar 2026 08:17:51 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vy3Vj-000000017yq-1em0
+	id 1vy3u1-00000001AsH-068R
 	for linux-phy@lists.infradead.org;
-	Thu, 05 Mar 2026 07:52:44 +0000
-Received: by mail-qk1-f176.google.com with SMTP id af79cd13be357-8cb3fb47559so902035285a.1
-        for <linux-phy@lists.infradead.org>; Wed, 04 Mar 2026 23:52:42 -0800 (PST)
+	Thu, 05 Mar 2026 08:17:50 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6251BgpU020981
+	for <linux-phy@lists.infradead.org>; Thu, 5 Mar 2026 08:17:48 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=q4sUrbxHy2pMOYEs+LSTZiBd
+	Zk/ji3z+RNUVNHVIhhw=; b=UsGUHSeJ2RRCGjK/0qyLbT1eImVu4HIo3GdgngQv
+	4N14c2vIsnysb2Y3QWY1Nldaza+6Vio6sS/yhBtFBbggydlR7FgBDf1h38JEWwCf
+	oBhcLcmotyjpAD85dvbfFqJC1mfg2ZMg7UChjZZ8s744Ws/85yy/L4kaOl5Fjed1
+	Pk7RTJCBfV6Ep1LY20BeGDWYCCh/JuVXiSOH3T/WhgJtnD2ogGKVDOn5pGHzzinC
+	T1Lnt6s00KOCqhTJOFrDYO6tyLLDJAKW7Ok04nOu9SfF8fRSUC7IWySQkzP4KL6v
+	txs+wUyeps5KFciBKGMw4/f8lnX0hgTF7xPHVjJ0YAbRiw==
+Received: from mail-dy1-f199.google.com (mail-dy1-f199.google.com [74.125.82.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4cpupthuts-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Thu, 05 Mar 2026 08:17:48 +0000 (GMT)
+Received: by mail-dy1-f199.google.com with SMTP id 5a478bee46e88-2be21f89332so2888848eec.0
+        for <linux-phy@lists.infradead.org>; Thu, 05 Mar 2026 00:17:48 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1772698667; x=1773303467; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=q4sUrbxHy2pMOYEs+LSTZiBdZk/ji3z+RNUVNHVIhhw=;
+        b=bIuKPepIkCLGANSPHvQA0r9sVtaQXFVGpO+LWOXLWrBsruWoVeXR/BfCRE7+CcuN0w
+         FfPnba1FsQNOyuHA2tzKjqSt2KT1G7dr/nLtqrBvba0YLcyyavuemZlBTjG1a+KZNQJZ
+         59JoED8e/gO/WHp62FqXgZaoPt3ecxKNExFUVJCbasjGXtPOqYnj1W1qQ/aLnuBLJIeR
+         O1NT5ajGdM/9yjhjclYTstelQN+7bXrqcnRabWWkp0umapMavcBPmspII7UwLk+q252m
+         hhcYngU5+z3nd6dd4NtpS1wQxB1V6WiyHoB1UIQBvFQ8HFBizIhyiAtZD9zO6MTConTV
+         M9Gw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1772697162; x=1773301962;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=KLWXJFRzKXYfvRWexgs1gCb/dTgnevi1M5AetCjur0g=;
-        b=vbZOeoZsS543dnt6uWy9pJLOUj02ftlZtdQ7FepBTCcjkefvpISweYv9CCVNCupyFT
-         ZPz3HVy2ftedQ7Z6dZ9bSvyHvrXuN8QCl5BQIT0fOlbIO2Bv0ysxNMCEXmOk0OU33uug
-         SpdL1HWCuTtBBHXrQM9EfC+pn+SlE8kSJp1Eu+DgvVmeP9GfHA3LsU/yZjcJNf72Uuki
-         kVyTrG1Ps9PMHTQGdY2aKfusaNS2dIXeKEmUyWtv0plK2Z0Kc+5WrXV+1BsiWh8eRNVB
-         NknVOiqEWBXlbgl84uGaMd9nh/MUYvlEsiml81mepbAvaCSBKKZ9n52MrsA6v0GlzWPq
-         5Y9A==
-X-Gm-Message-State: AOJu0YwElUD9Fyld+HiSu1x3h/0tyCgYmhdulsF/Flz1kUUIfJDFn3TV
-	loKpKPt5ZlDBOiZ8qlB0ohqJBcOlRU+4iXBlZ9Nbh6BCFnC8RJfjoVZ5DsK5uCkQ
-X-Gm-Gg: ATEYQzxnaiRxNUe0dCGSoIgHlvuWM+Oh7Y8BT8o2QzxuLctbxVW9+HlutaGnJcGRB74
-	+vh9SlaKeto2kw/tmJ2Rz1a+QWH4IP/gITFJBQLdIQeKZRXA92RSPjMCnWy/9ZOAZTeBMjwr0eM
-	bPwvNXjQgF7/X2+NV7UdjaFcoDc0b3JCEp08IkPydBJHE8eo6OTjPiHrZMdQSQ6FV8JVbQvRj7N
-	oriZ2fdPw3CpZzlRKIQPZEMDFZD6Tn1qeAJvhMpSCYtJRtioZFhMqVxShaNxjg1lzHZpydjKW28
-	KASi0LEJhVcciuo2IiBrIl2ifzXd5IgbaReY50rsctCIn3iekT9er6n1zQr0aASXD8C/bSFxS+Z
-	ZwL5n8aXw1LdW7HBbntUOjRMCSGe83mt7v+mFylI3tT1MwCWZPFwFOpFCw6U7IYjk+vxfroKq3j
-	kmtEmy1OutDtIiycJgxp/0EHndfvllvvy0KipIeRX6rYYM5CcQkkC6r9kAR1HQYMGD
-X-Received: by 2002:a05:620a:f03:b0:8cb:4b1d:e424 with SMTP id af79cd13be357-8cd5af79f99mr609623685a.45.1772697161743;
-        Wed, 04 Mar 2026 23:52:41 -0800 (PST)
-Received: from mail-qk1-f170.google.com (mail-qk1-f170.google.com. [209.85.222.170])
-        by smtp.gmail.com with ESMTPSA id af79cd13be357-8cbbf72d3casm1855398185a.42.2026.03.04.23.52.41
-        for <linux-phy@lists.infradead.org>
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 04 Mar 2026 23:52:41 -0800 (PST)
-Received: by mail-qk1-f170.google.com with SMTP id af79cd13be357-8cb40149037so804626485a.2
-        for <linux-phy@lists.infradead.org>; Wed, 04 Mar 2026 23:52:41 -0800 (PST)
-X-Received: by 2002:a05:6102:441c:b0:5f9:3a22:85a2 with SMTP id
- ada2fe7eead31-5ffaac72675mr2059267137.12.1772696734612; Wed, 04 Mar 2026
- 23:45:34 -0800 (PST)
+        d=1e100.net; s=20230601; t=1772698667; x=1773303467;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=q4sUrbxHy2pMOYEs+LSTZiBdZk/ji3z+RNUVNHVIhhw=;
+        b=EWNHKlMlOWSwy9XAhcUQ7ayFFSEOQafZCb9qI67D08uaBmPFWKAMZhJnvWQYoOduQb
+         lf+7wj5yb8fX8wXxtaGWFFL4AWNbnpw+bBVal9aZgos61IGLB9tCbSOTws2jO+SsN/F/
+         YhqYYByN9AjFH6Vkht/qjzFxJavV0rAxkp3khZjVi5CUyN3EJ0Wdhb8ygrmbirs6c6cF
+         iSl2JrSwKMHsQtCz811NEfZvLxe6hTIm4yJtsfNYbOjR0OyxOCaQHl6oxOKqP9f9KEe9
+         RXmdgpEEUU2FyzR5bQIK8DFw8PE/U9tNCc0D6o6Lx6umwD2IzxAQyL5MKLB7uk1LQlYa
+         1fZw==
+X-Forwarded-Encrypted: i=1; AJvYcCUk8B9fBooZroOfr68yA4lT9Y9yujGFmsEU8PTsUrxgvph7JkjtXpAfaX+thcIxhEQbLC95NrC4QUw=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yxsvneh1JJ/xGaxjvdqBRVAGWwxVl5rUuda769u6jPNeFXK5niU
+	MPKFVle5GxSMSDtSF9qK80hp8qQ/5DszPausRU4IVEnjnko//ncFb6xPjlilDTl5z4hv018SYYe
+	5L9/H/kBPLqf97UHSX8qbSJORJKJJEUXFm/uUu/IhNq4GMuUeKl0B3PxilRWP9jYJa38F
+X-Gm-Gg: ATEYQzxZJDLCJmhhbgjF01yFJDnxsYbn9VTtpFmuS/6XWbxcOEOs6L+oado6pwkKQg8
+	rRnDWFN8xwmrtwQG4mUHH/uqRBWwZh6nqfncFsTfZOD3gQ78oDf+jFXnWFHDthYu0tTv8Mcd+gW
+	4DoEZrilCawkqhtjMaG2Gn3vynSMvpQ2u9taiVpvkNzwf28PLwhWbZpxKSuPKF/mxDoG/2A8Rfl
+	t7fSKU6FCVQqslj6FL0SPCDZVb1AeXbtPkerBm09APRUTMhLgpMMlfrSD2yVpTX/72Wd4UpHzX2
+	shElGv2gJ4ijRxldHD4a77m1cgl7i+s8SFLg4NKEhcjwPRfpWLgf8p5F0YBCAKmrHfwxemoYKX+
+	xIR/NXwcAc135ymsF3ZSD14aQNtOrLUJhEK/9+doTc2wZHs/k45spfq9gI8OjEqL9Bk4t
+X-Received: by 2002:a05:7300:72d5:b0:2b7:35c8:32cf with SMTP id 5a478bee46e88-2be311c3691mr1682121eec.28.1772698667407;
+        Thu, 05 Mar 2026 00:17:47 -0800 (PST)
+X-Received: by 2002:a05:7300:72d5:b0:2b7:35c8:32cf with SMTP id 5a478bee46e88-2be311c3691mr1682100eec.28.1772698666798;
+        Thu, 05 Mar 2026 00:17:46 -0800 (PST)
+Received: from hu-qianyu-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-2be2800c89asm4204838eec.31.2026.03.05.00.17.45
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 05 Mar 2026 00:17:46 -0800 (PST)
+Date: Thu, 5 Mar 2026 00:17:44 -0800
+From: Qiang Yu <qiang.yu@oss.qualcomm.com>
+To: Bjorn Andersson <andersson@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Philipp Zabel <p.zabel@pengutronix.de>,
+        Konrad Dybcio <konradybcio@kernel.org>, linux-arm-msm@vger.kernel.org,
+        linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 2/5] phy: qcom: qmp-pcie: Add multiple power-domains
+ support
+Message-ID: <aak8KGKjD8/Hsndp@hu-qianyu-lv.qualcomm.com>
+References: <20260304-glymur_gen5x8_phy-v1-0-849e9a72e125@oss.qualcomm.com>
+ <20260304-glymur_gen5x8_phy-v1-2-849e9a72e125@oss.qualcomm.com>
+ <qmtl3j7czisocywmkwgaxxuzhc6e6zzvaqmqjs5p2phcpk2q3x@rocbjxeguv4g>
 MIME-Version: 1.0
-References: <20260304175735.2660419-1-vladimir.oltean@nxp.com> <20260304175735.2660419-6-vladimir.oltean@nxp.com>
-In-Reply-To: <20260304175735.2660419-6-vladimir.oltean@nxp.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Thu, 5 Mar 2026 08:45:23 +0100
-X-Gmail-Original-Message-ID: <CAMuHMdXA67BO8Umz8-4jRg1SLvtZUSEzK0p7WxSvomnBk+WiyA@mail.gmail.com>
-X-Gm-Features: AaiRm52ziEM93YxO07h7pOV0rTYZnULijxTOwLRm9EW_k_lOxLulmwK4PITV2jw
-Message-ID: <CAMuHMdXA67BO8Umz8-4jRg1SLvtZUSEzK0p7WxSvomnBk+WiyA@mail.gmail.com>
-Subject: Re: [PATCH phy-next 05/22] phy: add <linux/pm_runtime.h> where missing
-To: Vladimir Oltean <vladimir.oltean@nxp.com>
-Cc: linux-phy@lists.infradead.org, Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, dri-devel@lists.freedesktop.org, 
-	freedreno@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org, 
-	linux-arm-msm@vger.kernel.org, linux-can@vger.kernel.org, 
-	linux-gpio@vger.kernel.org, linux-ide@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-media@vger.kernel.org, 
-	linux-pci@vger.kernel.org, linux-renesas-soc@vger.kernel.org, 
-	linux-riscv@lists.infradead.org, linux-rockchip@lists.infradead.org, 
-	linux-samsung-soc@vger.kernel.org, linux-sunxi@lists.linux.dev, 
-	linux-tegra@vger.kernel.org, linux-usb@vger.kernel.org, 
-	netdev@vger.kernel.org, spacemit@lists.linux.dev, 
-	UNGLinuxDriver@microchip.com, Peter Griffin <peter.griffin@linaro.org>, 
-	=?UTF-8?Q?Andr=C3=A9_Draszik?= <andre.draszik@linaro.org>, 
-	Tudor Ambarus <tudor.ambarus@linaro.org>, Geert Uytterhoeven <geert+renesas@glider.be>, 
-	Magnus Damm <magnus.damm@gmail.com>, Heiko Stuebner <heiko@sntech.de>
+Content-Disposition: inline
+In-Reply-To: <qmtl3j7czisocywmkwgaxxuzhc6e6zzvaqmqjs5p2phcpk2q3x@rocbjxeguv4g>
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzA1MDA2NSBTYWx0ZWRfX/2o1B0rpiOfs
+ neX6IqjgcvZAzUfRWMWkhT7X27++wZAiLfDxCkqxRUb0P+CBptp4Asl6u9Ax+EcHVn/+u5Bnj7L
+ NampTVhiAhRbSVp+3Ih6ykEtqLpZKNZ5aRt2xxyF/iMrGZRzIKLRozIcrTOXUhW40I3lHoU666R
+ C9kn9CF88OlZYzkfLEOi7N8ugD8IT3R/O3EBPtoTd8haTyyDzbdf0nn8y49z0TDIqCi5C6SQkzg
+ aH3XxDH6MdlP/UKZseplH2QIfYp/HbpwZmv7iuiMdhgcy29LWEgM3lmdzbe8VaG6NWAdI8eHwu0
+ /Gh2gXJAVk8b8xIO9DLWNg3ZSru4QyMvL8+5TVAYHs3Wbr93KN0cyDChDuGKm3zcodHbywx+ck9
+ 1hcjE4EtPnVx9xIDp5XHhL9u+A9aXcocLfjzQOwj2/LLpC/1tM4ZftA7dtSyX2ZKzCqfmku7+1G
+ 7IU1QG+4Eo/Dokd8ODQ==
+X-Proofpoint-ORIG-GUID: qGbGYmPphi8og7foOl6GfJH5om486DRc
+X-Authority-Analysis: v=2.4 cv=Ddsaa/tW c=1 sm=1 tr=0 ts=69a93c2c cx=c_pps
+ a=cFYjgdjTJScbgFmBucgdfQ==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+ a=kj9zAlcOel0A:10 a=Yq5XynenixoA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=Um2Pa8k9VHT-vaBCBUpS:22
+ a=EUspDBNiAAAA:8 a=E1WQ5AqD19wTCYbunv0A:9 a=CjuIK1q_8ugA:10
+ a=scEy_gLbYbu1JhEsrz4S:22
+X-Proofpoint-GUID: qGbGYmPphi8og7foOl6GfJH5om486DRc
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
+ definitions=2026-03-05_02,2026-03-04_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ clxscore=1015 priorityscore=1501 suspectscore=0 bulkscore=0 impostorscore=0
+ malwarescore=0 spamscore=0 adultscore=0 phishscore=0 lowpriorityscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2602130000 definitions=main-2603050065
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260304_235243_431815_AC5E9FC1 
-X-CRM114-Status: GOOD (  18.81  )
+X-CRM114-CacheID: sfid-20260305_001749_115539_35E07BA4 
+X-CRM114-Status: GOOD (  36.18  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,33 +149,103 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, 4 Mar 2026 at 19:00, Vladimir Oltean <vladimir.oltean@nxp.com> wrote:
-> It appears that the phy-mapphone-mdm6600, phy-qcom-snps-femto-v2,
-> phy-rcar-gen3-pcie, r8a779f0-ether-serdes and phy-rockchip-typec drivers
-> call runtime PM operations without including the proper header.
->
-> This was provided by <linux/phy/phy.h> but no function exported by this
-> header directly needs it. So we need to drop it from there, and fix up
-> drivers that used to depend on that.
->
-> Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
+On Wed, Mar 04, 2026 at 02:46:22PM -0600, Bjorn Andersson wrote:
+> On Wed, Mar 04, 2026 at 12:21:56AM -0800, Qiang Yu wrote:
+> > The Glymur SoC's 3rd PCIe instance supports 8-lane mode using two PHYs in
+> > a bifurcated configuration. Each PHY has its own power domain (phy_gdsc)
+> > that must be powered on before initialization per hardware requirements.
+> > 
+> > Current PHY power management assumes a single power domain per PHY,
+> > preventing proper setup for this dual-PHY scenario. Add support for
+> > multiple power domains by using devm_pm_domain_attach_list() to attach
+> > power domains manually, while maintaining compatibility with single
+> > power domain PHYs.
+> > 
+> > Enable runtime PM to allow power domain control when the PCIe driver
+> > calls phy_power_on/phy_power_off:
+> > 
+> 
+> Enabling runtime PM seems like a separate change that impacts all
+> existing targets, while adding multiple power domains should only affect
+> the specific ones.
+> 
+> I'm not sure if it's too picky, but it would be nice to separate this -
+> so that any issues that might arise can be bisected down to one or the
+> other of these two changes?
 
->  drivers/phy/renesas/phy-rcar-gen3-pcie.c       | 1 +
->  drivers/phy/renesas/r8a779f0-ether-serdes.c    | 1 +
+The devm_pm_domain_attach_list() function calls genpd_dev_pm_attach_by_id,
+which in turn calls __genpd_dev_pm_attach() with power_on=false. This
+means the attached power domains are not powered on during attachment.
 
-For the Renesas parts:
-Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
+> 
+> > - Single power domain: QMP PHY platform device directly attaches to
+> >   power domain and controls it during runtime resume/suspend
+> > - Multiple power domains: devm_pm_domain_attach_list() creates virtual
+> >   devices as power domain suppliers, linked to the QMP PHY platform
+> >   device as consumer
+> > 
+> > This ensures power domains are properly attached and turned on/off
+> > for both single and multiple power domain configurations.
+> > 
+> > Signed-off-by: Qiang Yu <qiang.yu@oss.qualcomm.com>
+> > ---
+> >  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 13 +++++++++++++
+> >  1 file changed, 13 insertions(+)
+> > 
+> > diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> > index fed2fc9bb31108d51f88d34f3379c7744681f485..7369c291be51aa1ad7a330459dcb857f5a1988f6 100644
+> > --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> > +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> > @@ -17,6 +17,7 @@
+> >  #include <linux/phy/pcie.h>
+> >  #include <linux/phy/phy.h>
+> >  #include <linux/platform_device.h>
+> > +#include <linux/pm_domain.h>
+> >  #include <linux/regmap.h>
+> >  #include <linux/regulator/consumer.h>
+> >  #include <linux/reset.h>
+> > @@ -3334,6 +3335,8 @@ struct qmp_pcie {
+> >  
+> >  	struct clk_fixed_rate pipe_clk_fixed;
+> >  	struct clk_fixed_rate aux_clk_fixed;
+> > +
+> > +	struct dev_pm_domain_list *pd_list;
+> 
+> This is just an pointer to the list allocated inside
+> devm_pm_domain_attach_list(), as far as I can tell you don't need to
+> keep this in the qmp_pcie struct - as you're not using it anyways.
 
-Gr{oetje,eeting}s,
+Okay, will remove this part in next version.
 
-                        Geert
-
--- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+- Qiang Yu
+> 
+> Regards,
+> Bjorn
+> 
+> >  };
+> >  
+> >  static bool qphy_checkbits(const void __iomem *base, u32 offset, u32 val)
+> > @@ -5348,6 +5351,16 @@ static int qmp_pcie_probe(struct platform_device *pdev)
+> >  	WARN_ON_ONCE(!qmp->cfg->pwrdn_ctrl);
+> >  	WARN_ON_ONCE(!qmp->cfg->phy_status);
+> >  
+> > +	ret = devm_pm_domain_attach_list(dev, NULL, &qmp->pd_list);
+> > +	if (ret < 0 && ret != -EEXIST) {
+> > +		dev_err(dev, "Failed to attach power domain\n");
+> > +		return ret;
+> > +	}
+> > +
+> > +	ret = devm_pm_runtime_enable(dev);
+> > +	if (ret)
+> > +		return ret;
+> > +
+> >  	ret = qmp_pcie_clk_init(qmp);
+> >  	if (ret)
+> >  		return ret;
+> > 
+> > -- 
+> > 2.34.1
+> > 
 
 -- 
 linux-phy mailing list
