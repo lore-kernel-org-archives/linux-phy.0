@@ -4,89 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 35C5DF01822
-	for <linux-phy@archiver.kernel.org>; Fri,  6 Mar 2026 10:29:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8F105F01821
+	for <linux-phy@archiver.kernel.org>; Fri,  6 Mar 2026 10:34:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
 	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=wsja5qa1EUicis3s05EA/UzrakUbu5rBK2idDmequII=; b=BNM/pQ3wS0LTv6QBKdYK3O4un+
-	w7tPAKZdPfJvNnlTLlsH+/Aubk365+fbPwjyDmXQV9k4L5o3+fKbUaza/Zs1/9m96VtS+rxbuzQuU
-	wizt4WMGtb8OFYsg1a2NQbgRXy3wwh0RR9wedYaH2T3AHo5ksr7Y2OB7VpySKOyuX8IUhrMbZf/n0
-	/aB21xMqWKuVXbCgQT8tmpPeHJoj7Al/9MVkFLiIDg/ZFEh8Dw06IsagbGr0fZnepVV/kUve9+UI4
-	+xad8heGeUUxZ7P8Ev548AydxYymeczELhsbnJxV7CTg9n+oS6I0iVVkpfkPp8mqFxKQihJ2D5OrT
-	Qtw47nMQ==;
+	bh=h+i3p2t75wAjFeJI0EQV4FctOF3ERdDZ1N/a3vieFoI=; b=jFwINOiosj4Qv4oFD/5yzeltyA
+	9Y0NBe/dFOjhQFxjEtwCnuaiv6DbrUhW4D2Y9L9ZYDbPJogjoAcGNq9kp40J5podsJxW6BxpRH9rt
+	wYkpgzdRAF0rGgfZelPOt2zpXzqjNtK+LwHIKSn/op9uUyuLPDYfgC1vHunmzddSOSyRHJ1aUn8Us
+	ndsHXlEFWoUpZfLfAz404bEaWSEO2omcL9HDAVoNwtSoCBRH7V7kPeokDJgbjBgS22sSQUlRgAv20
+	5F7XQyD6o6zroZBepvWIi97dbmpUnEoUQIsT9wtzf61PPS1ydNhA+GWC6FJFwp+R8J5kS6sS+D5YN
+	o6i2LEBQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vySQn-00000003SRc-3MFT;
-	Fri, 06 Mar 2026 10:29:17 +0000
-Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
+	id 1vySW4-00000003Twr-0PD2;
+	Fri, 06 Mar 2026 10:34:44 +0000
+Received: from mail-wm1-x336.google.com ([2a00:1450:4864:20::336])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vySQk-00000003SPg-0ZuW
+	id 1vySW0-00000003TwH-3lh0
 	for linux-phy@lists.infradead.org;
-	Fri, 06 Mar 2026 10:29:16 +0000
-Received: by mail-wm1-x330.google.com with SMTP id 5b1f17b1804b1-48379a42f76so79162185e9.0
-        for <linux-phy@lists.infradead.org>; Fri, 06 Mar 2026 02:29:13 -0800 (PST)
+	Fri, 06 Mar 2026 10:34:42 +0000
+Received: by mail-wm1-x336.google.com with SMTP id 5b1f17b1804b1-4836d4c26d3so71752195e9.2
+        for <linux-phy@lists.infradead.org>; Fri, 06 Mar 2026 02:34:40 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1772792952; x=1773397752; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1772793279; x=1773398079; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=3xGUS0AK0m4csV0s16m7dkz17YbnAtG49idhDDUR/A4=;
-        b=ZE6Szuv92KgNFdh1j7pZsmBVP9Rbvx3dWM1SXaumu8vlIGzXkSYODm3D7axwfLwNqT
-         ihuR2pTf/TniJrpghpNdKho4TpKSLnvP9lD+WAgCbGi50pkO0Ur6Le9Bh1u+ceLFlS1Z
-         aMIBfNBgF7k0PE/vLFgK9xq1F1rxorW2nd1VIkgvlPAOBIIDz19ixTFlyY9C56L4kRvY
-         g5/iZ2GT+nX1T3pslbaH9up6bJ8nDbF8CAr6g0Syh2D+3npK9Fq1PfJ27rAIkvRne4JO
-         sbSNMPpdOlzhu9BLEIegonT/hd7RbcRq6fHMYQu5uHh3pVYQbrdV4+yl/zkCZNo1omr3
-         muDw==
+        bh=vkkHpa9La9cb+M6Z0UUZsGUfrfqDbpK8tOGQLDZgWkU=;
+        b=aEdZ3ltI0Oyxfr9r88H9qklvgLJMxcGQnZuzWR1BB2JGVNJNgX8LfQGZGltPBthzXx
+         F87qYPtLPg9/Cw9pWdlEPPmP/juq9W5M3gS9D6aAzNODlxeM+k/i08foRWETlF2ZVZvr
+         CLkxwzCuYgdke4/f3rqr2pE3YDAwmfzixWqVXFKMOcvuyS+gwjZKCLStANrF+dam1hRG
+         sWrTfBTUFL4fXan/4NbEnYjp/TRqJ8fP9QWHfZpKErFSf1hUFjOnPt5ATBdatTuxM14t
+         RjfVStbkO+G6vECz5KotPE6BROTGvIVwiROXL6zxUm5WZNzzh6qC1VmxDO9b9y3G7O4S
+         tI3w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1772792952; x=1773397752;
+        d=1e100.net; s=20230601; t=1772793279; x=1773398079;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:x-gm-gg:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=3xGUS0AK0m4csV0s16m7dkz17YbnAtG49idhDDUR/A4=;
-        b=NL3uLJA5Ne6SIUtM84kJCy1Ve2/a3r2buGsrchWMha0qAmsFr7YU6WsEgHvO/B3Dgh
-         uObAalrxHrdXDZgp/N3eJ30C7D6X1I1NeQJbdS/o4I/Pb0q4aek+UVXErZgws3BddMVv
-         WaGKY9YpIWGmPBqmN788tVBMh3lElLAI9F1BVtu+VadVtcV+AM3ANgP6N72kxy6PIFcT
-         ij6Vck76KhmPO0vT6y+gjG5X4V4bOl1JkYhti8b6r9iCcloHapuKK5mud7531FwAQebd
-         Ra6Um3MlvPdmTKd7+JT5qHL1MRSN/v0dKwJEXmfahz12/MDGKE2on2FEMhHwWcDfJB4F
-         6ZsA==
-X-Forwarded-Encrypted: i=1; AJvYcCULhUJWigdni05HOFjc8Gdsd86qP8vTdkAZVCPCkcIfA0KhNTcEzWCe1CDlD52PXKCRYhkIqPbeUvQ=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yzc5fQBp5qV5n60KqJ8IbO+Slrb6Ug/AQHRmKYdPClsmDaPQuy/
-	QRxvgp44nuXETA5nX6u/y1I/EbxZJusVo1E7PNbJaSL6NAvfgAMVICjsNMoEG7lWlO8=
-X-Gm-Gg: ATEYQzwS/bFifZ3iJkdFHtUK5DTqkiPEZRjukARDqbbqzXxG6nyhFrxqHLsNhX6xJ5v
-	EHcOpvrpHcNyw1VO5RDRPkYmNMmz4ZxWz1CXqkd1LxbdhvyBKaUejNemrW+8gZkt3MVOfz0gDgg
-	YEJCqNSaACgDmGWyOeTZfGoxdbZpyuU8E4MCB04QPU6onfqwLzQYYFu21wMR8KwZZDaTESG4BQx
-	SXXhh6Jr5gq0BD8ONZd8tF3Tj01zuDGVhmq9TFE7/bEPtJ+Y6yYRzN5oDcwDJy29k9MVh3mdKAw
-	Ff5IQJ24lovOD9heYhTArvDbzBC/r3c0S317xfBEmc4nnMMQaz3ajG5bCLKYTGl8zaVB2fAl7M3
-	b68zyn3UUQJGay44D3PcZaBbISbL/qyyTpCa8D2Flj4yulJFlQhSzKcaS3ooLvdNHMG34MqDfD4
-	t0xHPU2jQUyLzHNY0uFayOKIckRTgu4k3zvzowekGuAC2F0HV0QB5XMXQgAq2Qu3UxTcnmfbQY2
-	Hy8dcHZdYD8zXI=
-X-Received: by 2002:a05:600c:1c08:b0:477:55ce:f3c2 with SMTP id 5b1f17b1804b1-48526944ca7mr25339545e9.14.1772792952009;
-        Fri, 06 Mar 2026 02:29:12 -0800 (PST)
+        bh=vkkHpa9La9cb+M6Z0UUZsGUfrfqDbpK8tOGQLDZgWkU=;
+        b=m+ntQtebkK2ig8NEjq00nZL+sDOAkITYy0Y2Xahbo4fSEEg87233y6R8bHjpKLZ/XH
+         iH1WTOPkGRl1WWSczvcIPNOY+TxSMigGK5EM9GVBnGvMLzTxof7aMQezfV2Spg+CSl+5
+         JH+GF+WA6y9X6HfDKc7Z0t+/PuW+hgw1sWS+az0Tb4bhkNZO6No5XTFJHTUpVb9kekvE
+         NKUQb+6ZVdh9qtX3A7ju2Kj59LP0+7Y2fMBevfReOZ/k5L7VP4z4gqjyktK8rG7EQFJc
+         6uHmCEguJRjMrSKrtykkWcAnEoigseG8x/HwNzJbfda6MYqTk+Rk3Tm1YTZc0QYayPUQ
+         eNiA==
+X-Forwarded-Encrypted: i=1; AJvYcCUbkHFjvhTSDY2UlGO211MeQy/kwwn16uJ/dYZxIkFxKbDcevFDxDfIutM4vu8weFPLHsYWXOBecCc=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzlHMXuVpb8+U/Unt7U78fWPGms1l1QApW6ZQoGRYkYspc4DIIG
+	Q35hYRHOtvPyiKVJ0dyhQ9CGlFblVpVUAyelNP8mnSFDxv8+1eShe11ez7OJrKBXjBM=
+X-Gm-Gg: ATEYQzw0OM7igNdONywZL3UmI+SeXmWev6iEdq3cyJNuZIITKku3YtJbquwzVV+1rxi
+	RXkGXd5uoBr2tInqZidYEfGK8KrfVr5hgGHu9wq0kqcSXFYX9+byR8/mjOwfbWo0nGc5Xr15Qr1
+	z62mes/FXVi5xF8++8I1bWCHG+MiAtBBx4hjuQYf4KEIIRxvvhzpD8HrxxZzGIr7VuwFFoBASA6
+	8CYvb7vMsnNtjAH5tfeVXJXcB4SUwg1u+SuZEOTf8hdi45CdhDOdU71CNGXvPt3X5YqUX+9vZbj
+	B3jmDp2f+ClfeK6EabthtIZKTE2raHQnyt32YBJPeTAzq6XYNcSrz0PFK1DH+HiKpqTOB5/1GGo
+	XcypUEGBQSlIyk+YtIHTtrkV75X+jLwVDdHMUbrOTEjp8qEb58Eae+mh5r2yr7W8wMpUQCrWKGZ
+	tIx2SBP6nHpOVtqSw8TqTSIIz+SKXW4QxLIufLFdz8M1ZYSJRGTg9pmecWeCNWsu3ytzKr6Ar80
+	Kbn
+X-Received: by 2002:a05:600c:8184:b0:480:6999:27ec with SMTP id 5b1f17b1804b1-48526930cdbmr28598765e9.13.1772793278683;
+        Fri, 06 Mar 2026 02:34:38 -0800 (PST)
 Received: from ?IPV6:2a01:e0a:106d:1080:cbfe:649:7f17:8b95? ([2a01:e0a:106d:1080:cbfe:649:7f17:8b95])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4851fb3668csm185167915e9.13.2026.03.06.02.29.11
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-48527686bcesm39742425e9.7.2026.03.06.02.34.37
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 06 Mar 2026 02:29:11 -0800 (PST)
-Message-ID: <a25ea62b-8d1f-4229-9ee2-ad8b161ce03e@linaro.org>
-Date: Fri, 6 Mar 2026 11:29:10 +0100
+        Fri, 06 Mar 2026 02:34:38 -0800 (PST)
+Message-ID: <fb75023e-8fac-49c1-a8b7-2eb8b70fda3e@linaro.org>
+Date: Fri, 6 Mar 2026 11:34:37 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 From: Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH v2] phy: cadence: Sierra: Do not modify register when
- getting parent clock
-To: Gregory CLEMENT <gregory.clement@bootlin.com>,
- Vinod Koul <vkoul@kernel.org>, Aswath Govindraju <a-govindraju@ti.com>,
- Swapnil Jakhade <sjakhade@cadence.com>
-Cc: =?UTF-8?Q?Th=C3=A9o_Lebrun?= <theo.lebrun@bootlin.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Vladimir Kondratiev <vladimir.kondratiev@mobileye.com>,
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-References: <20260306-fix_sierra_get_parent-v2-1-cafe89ee5382@bootlin.com>
+Subject: Re: [PATCH 0/5] phy: qcom: qmp-pcie: Add PCIe Gen5 8-lane bifurcation
+ support for Glymur
+To: Qiang Yu <qiang.yu@oss.qualcomm.com>,
+ Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
+ Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konradybcio@kernel.org>, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+References: <20260304-glymur_gen5x8_phy-v1-0-849e9a72e125@oss.qualcomm.com>
+ <42a9dd4d-eb96-42c0-b836-dcd7cb9405ff@oss.qualcomm.com>
+ <aaqdv7Zx5AODzg6P@hu-qianyu-lv.qualcomm.com>
 Content-Language: en-US, fr
 Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
@@ -113,10 +117,10 @@ Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
  QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
 Organization: Linaro
-In-Reply-To: <20260306-fix_sierra_get_parent-v2-1-cafe89ee5382@bootlin.com>
+In-Reply-To: <aaqdv7Zx5AODzg6P@hu-qianyu-lv.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260306_022914_211211_A27BB23A 
-X-CRM114-Status: GOOD (  16.24  )
+X-CRM114-CacheID: sfid-20260306_023440_981655_6DCB4DBE 
+X-CRM114-Status: GOOD (  19.39  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -134,69 +138,113 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 3/6/26 11:23, Gregory CLEMENT wrote:
-> The get_parent() callback for the PLL_CMNLC1 clock was incorrectly
-> writing to the register while determining the parent clock index. This
-> unintended register access forces the PHY back into training mode. If
-> the PHY is already configured, this unexpected change prevents it from
-> exiting training mode.
-> 
-> Remove the register write operation to ensure the PHY remains stable
-> during the get_parent() callback.
-> 
-> Fixes: da08aab940092 ("phy: cadence: Sierra: Fix to get correct parent for mux clocks")
-> Signed-off-by: Gregory CLEMENT <gregory.clement@bootlin.com>
-> ---
-> Changes in v2:
-> 
-> - Removed unused variable spotted by the 0-DAY CI Kernel Test Service:
->    https://lore.kernel.org/oe-kbuild-all/202603061235.hrl27Jvj-lkp@intel.com/
-> - Link to v1: https://lore.kernel.org/r/20260305-fix_sierra_get_parent-v1-1-a7c18e9e6c58@bootlin.com
-> ---
->   drivers/phy/cadence/phy-cadence-sierra.c | 11 ++---------
->   1 file changed, 2 insertions(+), 9 deletions(-)
-> 
-> diff --git a/drivers/phy/cadence/phy-cadence-sierra.c b/drivers/phy/cadence/phy-cadence-sierra.c
-> index 92ab1a31646ae..dbeda7f01cbb2 100644
-> --- a/drivers/phy/cadence/phy-cadence-sierra.c
-> +++ b/drivers/phy/cadence/phy-cadence-sierra.c
-> @@ -698,23 +698,16 @@ static const struct phy_ops noop_ops = {
->   static u8 cdns_sierra_pll_mux_get_parent(struct clk_hw *hw)
->   {
->   	struct cdns_sierra_pll_mux *mux = to_cdns_sierra_pll_mux(hw);
-> -	struct regmap_field *plllc1en_field = mux->plllc1en_field;
-> -	struct regmap_field *termen_field = mux->termen_field;
->   	struct regmap_field *field = mux->pfdclk_sel_preg;
->   	unsigned int val;
->   	int index;
->   
->   	regmap_field_read(field, &val);
->   
-> -	if (strstr(clk_hw_get_name(hw), clk_names[CDNS_SIERRA_PLL_CMNLC1])) {
-> +	if (strstr(clk_hw_get_name(hw), clk_names[CDNS_SIERRA_PLL_CMNLC1]))
->   		index = clk_mux_val_to_index(hw, cdns_sierra_pll_mux_table[CMN_PLLLC1], 0, val);
-> -		if (index == 1) {
-> -			regmap_field_write(plllc1en_field, 1);
-> -			regmap_field_write(termen_field, 1);
-> -		}
-> -	} else {
-> +	else
->   		index = clk_mux_val_to_index(hw, cdns_sierra_pll_mux_table[CMN_PLLLC], 0, val);
-> -	}
->   
->   	return index;
->   }
-> 
-> ---
-> base-commit: 11439c4635edd669ae435eec308f4ab8a0804808
-> change-id: 20260305-fix_sierra_get_parent-9c8435cc65e7
-> 
-> Best regards,
+On 3/6/26 10:26, Qiang Yu wrote:
+> On Thu, Mar 05, 2026 at 10:14:05AM +0100, Konrad Dybcio wrote:
+>> On 3/4/26 9:21 AM, Qiang Yu wrote:
+>>> This patch series adds support for PCIe Gen5 8-lane bifurcation mode on
+>>> the Glymur SoC's third PCIe controller. In this configuration, pcie3a PHY
+>>> acts as leader and pcie3b PHY as follower to form a single 8-lane PCIe
+>>> Gen5 interface.
+>>>
+>>> To support 8-lanes mode, this patch series add multiple power domain and
+>>> multi nocsr reset infrastructure as the hardware programming guide
+>>> specifies a strict initialization sequence for bifurcation mode that
+>>> requires coordinated multi-PHY resource management:
+>>>
+>>> 1. Turn on both pcie3a_phy_gdsc and pcie3b_phy_gdsc power domains
+>>> 2. Assert both pcie3a and pcie3b nocsr resets, then deassert them together
+>>> 3. Enable all pcie3a PHY clocks and pcie3b PHY aux clock (bifur_aux)
+>>> 4. Poll for PHY ready status
+>>
+>> I think we never concluded the discussion where I suggested the
+>> bifurcated PHY may be better expressed as a single node with
+>> #phy-cells = <1>, removing the need for duplicated resource references
 
-Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
+DT requires strict hardware description, no abstraction for HW, so if there's
+2 PHYs, then add 2 separate phys and reference them from the PCie controller.
 
-Thanks,
+On platforms where you want 2x4, then add 2 pcie_ports using 2 phys, on platforms
+with 1x8 a single pcie_port with 2 phys.
+
 Neil
+
+>>
+> I understand your suggestion would look like below. I agree that the
+> unified PHY approach being more elegant from a device tree perspective,
+> provide better DT flexibility and eliminate the need for different
+> compatibles and dupicated resources between 1x8 and 2x4 modes.
+> 
+> However, this will include implementation complexity to phy driver.
+> The driver would need conditional logic to selectively enable different
+> clocks/resets based on the PHY parameter and maintain mode-specific
+> resource arrays. There's also the issue that assigned-clocks
+> GCC_PCIE_3A_PHY_RCHNG_CLK and GCC_PCIE_3B_PHY_RCHNG_CLK will be set before
+> probe no matter which mode is used, even though in 1x8 mode or only one of
+> them is actually needed. For pipe clock outputs, only pcie3a_pipe_clk would
+> be needed in 1x8 mode while pcie3b_pipe_clk would be unused. For
+> powerdomain, we also need to add additional logic to attach and turn
+> on/off them.
+> 
+> While these challenges could be resolved, I'm not sure the benefits
+> justify the added complexity.
+> 
+> pcie3_unified_phy {
+>      compatible = "qcom,glymur-qmp-gen5-pcie-phy";
+>      reg = <0 0x00f00000 0 0x10000>, <0 0x00f10000 0 0x10000>;  /* Both PHY ranges */
+> 
+>      clocks = <&gcc GCC_PCIE_PHY_3A_AUX_CLK>,
+>               <&gcc GCC_PCIE_3A_CFG_AHB_CLK>,
+>               <&tcsr TCSR_PCIE_3_CLKREF_EN>,
+>               <&gcc GCC_PCIE_3A_PHY_RCHNG_CLK>,
+>               <&gcc GCC_PCIE_3A_PIPE_CLK>,
+>               <&gcc GCC_PCIE_PHY_3B_AUX_CLK>,
+>               <&gcc GCC_PCIE_3B_CFG_AHB_CLK>,
+>               <&gcc GCC_PCIE_3B_PHY_RCHNG_CLK>,
+>               <&gcc GCC_PCIE_3B_PIPE_CLK>,
+>               <&gcc GCC_PCIE_3B_PIPE_DIV2_CLK>;
+> 
+>      power-domains = <&gcc GCC_PCIE_3A_PHY_GDSC>,
+>                      <&gcc GCC_PCIE_3B_PHY_GDSC>;
+> 
+>      resets = <&gcc GCC_PCIE_3A_PHY_BCR>,
+>               <&gcc GCC_PCIE_3A_NOCSR_COM_PHY_BCR>,
+>               <&gcc GCC_PCIE_3B_PHY_BCR>,
+>               <&gcc GCC_PCIE_3B_NOCSR_COM_PHY_BCR>;
+> 
+> 	#clock-cells = <1>;
+>      clock-output-names = "pcie3a_pipe_clk", "pcie3b_pipe_clk";
+>      assigned-clocks = <&gcc GCC_PCIE_3A_PHY_RCHNG_CLK>,
+>                        <&gcc GCC_PCIE_3B_PHY_RCHNG_CLK>;
+>      assigned-clock-rates = <100000000>, <100000000>;
+> 
+>      #phy-cells = <1>;  /* Parameter: 0=PHY_A, 1=PHY_B, 2=UNIFIED_8LANE */
+> };
+> 
+> For 2x4 mode (independent 4-lane PHYs):
+> &pcie3a {
+>      phys = <&pcie3_unified_phy PHY_A>;  /* PHY A only */
+>      status = "okay";
+> };
+> 
+> &pcie3b {
+>      phys = <&pcie3_unified_phy PHY_B>;  /* PHY B only */
+>      status = "okay";
+> };
+> 
+> For 1x8 mode (unified 8-lane PHY):
+> 
+> &pcie3a {
+>      phys = <&pcie3_unified_phy PHY_AB>;
+>      num-lanes = <8>;
+>      status = "okay";
+> };
+> 
+> &pcie3b {
+>      status = "disabled";
+> };
+> 
+> - Qiang Yu
+
 
 -- 
 linux-phy mailing list
