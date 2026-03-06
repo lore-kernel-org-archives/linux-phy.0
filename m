@@ -4,53 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E60ECF01835
-	for <linux-phy@archiver.kernel.org>; Fri,  6 Mar 2026 13:26:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BE888F01832
+	for <linux-phy@archiver.kernel.org>; Fri,  6 Mar 2026 13:26:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IkoCagHqJfogTHig3D696cEAiKAz1y1zMwqtw/lpEyg=; b=qf0b+rjP8ftuTu
-	t8OGFclWH3G/YmMyx+hcTlPTcxLx0aIHzaP3BvQbbe8QrJza5kumIZo0BQZRzmJxpV91Xaf0jPaMP
-	LRgdbQEzy9mKkgz+HlOqEVmQYVwZWxl1rNXiS37LSGjGKK8Sub+fOt9Ba9jSpGcGXIuMs9VVDIgRm
-	FdTMqsbby4hCl7AIEg+tjaJD9S7mLvLWv6gFfVhhW/LrtErTcQ1PPJ8/JniWbNaKHqhmcgmcDBks7
-	b74mCSYBTkFQmimiypwSL8A/5rJGeyynA8CEiGWGJevld3HxofZ0SOY1RUOth5/ERNMFfmowtTIzY
-	PPmrEzkXMV5MQLFsPETw==;
+	List-Owner; bh=2P4SmYgZyZ1QtSfUjZfUevl7M9QmoOY6qILbzlzWqz0=; b=ZraoEbQmnvBiZM
+	yw+aANeHX8GTQc7/Bg7GtTN3KP6u2Kmz29eepCrWN8VLLSJtdj3Ex/F0tb1tstMLWrN/myAxrR5dV
+	RNhAxXwuODG9vk0csmEi8ga/HgdcmUel0Kp+7uiV/efOd02qgl3UHUNEEXGe977NowgTOBFXKsT/S
+	hzTFu5ppxnuwq1bUnUJLFzpIxv88izys62gkUcbVwlruq1bv4mSXonYXFZrfesdMOJZZ/86hYwfXq
+	FiVCcPSBQt3AgivlyzkgLolsY2Aq3MuktDj+nXeWJ8Pj/g8CzP15SMsThVaS4dWFPeUrUEJa+w4C4
+	LmwXROgR3Uq7WKrgx+1g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vyVBy-00000003kf0-1ZI7;
-	Fri, 06 Mar 2026 13:26:10 +0000
+	id 1vyVC4-00000003kle-1bxL;
+	Fri, 06 Mar 2026 13:26:16 +0000
 Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vyVBu-00000003kaX-3ToP;
-	Fri, 06 Mar 2026 13:26:07 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1772803555; cv=none; 
+	id 1vyVC0-00000003khg-3w0p;
+	Fri, 06 Mar 2026 13:26:14 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1772803561; cv=none; 
 	d=zohomail.com; s=zohoarc; 
-	b=VA3JjCyVgzen/zdpcAcgK+56qjSbk9HsoO5UQ5d6jqfAZN3I1Vvs4Dkoc1KV3EaaUW8qGvCDeTONtO/FQEwisCONXG7wXbw+Pdu6nu6cR91dC5UATUGGXhj/KgJYqzrspMCi9aPhIvriku/AHUyZD9kaACd5SeycLtzs0M164aQ=
+	b=OC2rXeR52OCB3Sg9gb6nx44BwtEnPzFhVR4v9unEiq9eKKTNOWNyvC1gmyiX5dTyQWoWHIHWLajlDHoZCZ7FDsgpp1sj6195kIFJzX8ma+ebCUavEpCdl0MRnqSdgAa5d4blNQIHvLxRWHW4ftl8HCj6pVODmB9fR5KvFMKVc/s=
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1772803555; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=d9XFO+6vVicvKYzyxt4XDXnPuWzQjPnCjS9mL4eNcmY=; 
-	b=gjHPOriUisICc+daOCNKpy9H7xJVKcNA2NZnLEOFHtHX/ZkLFmW20WH3zZkeUUco45qDhKES1m4eII4R0oN0/kMv1V0dFa263HEKdorl5eS9fIHktS695Y1rKyFle7frbVzV9gLjYx9T8F4nJIvXTaCUPh/oRx7LsDcgTeMguJo=
+	t=1772803561; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=5Xyy8e3p/cq+P8guK42rqsXIPHr3owm/c/IQ70yQSTU=; 
+	b=W/0qr7YEVwzN3WzOtTP/2a5CFudi9SX0nKan1HuFEjSc6io8AmDK9QNrJE/PyAXa/oe+fs7j4V2lThbFSVQTxr0+e/MB07jpYA5Mt8D9iJul+CvBf2i8MWf/7D8q1yNcE+1FZAqEkMsAQacSh9E6E7GuoKjRIA2/ZOlr4QKl4Ak=
 ARC-Authentication-Results: i=1; mx.zohomail.com;
 	dkim=pass  header.i=collabora.com;
 	spf=pass  smtp.mailfrom=nicolas.frattaroli@collabora.com;
 	dmarc=pass header.from=<nicolas.frattaroli@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1772803555;
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1772803561;
 	s=zohomail; d=collabora.com; i=nicolas.frattaroli@collabora.com;
 	h=From:From:Date:Date:Subject:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-Id:Message-Id:References:In-Reply-To:To:To:Cc:Cc:Reply-To;
-	bh=d9XFO+6vVicvKYzyxt4XDXnPuWzQjPnCjS9mL4eNcmY=;
-	b=O6M/bUuF4dHHKf1PHAHwVbQSZW0z6tpF9hi3rfLR2wyqAWWDlRftiGxc+8g9HY+X
-	c0HGgmoxssHdhXRqgt4wcqku2hndkR2vmNWOyTBtUQAWqW4etCj2CukADbr+aJIpKbx
-	WaQN4xWlhoRGdNnU9CGaVZIQA8BlnTOck7NN25Hk=
-Received: by mx.zohomail.com with SMTPS id 1772803553901361.63276592858654;
-	Fri, 6 Mar 2026 05:25:53 -0800 (PST)
+	bh=5Xyy8e3p/cq+P8guK42rqsXIPHr3owm/c/IQ70yQSTU=;
+	b=jVS5d1F3qz2G06VMoTop7qI3FKguH46tvRuIU1v8kJOaPYNMZdP7dgjhkov9h7xK
+	ZE/ks408IXcmd1gMcN4ZehBa4cJPobBFfWZZiUUB9xFWZAp1z3aDAJaFA5jhpaWLhXS
+	+1cqwg6twyYVdWSlUO6/6KMCphz0loQq0nfYg3ds=
+Received: by mx.zohomail.com with SMTPS id 177280355950865.93873774029385;
+	Fri, 6 Mar 2026 05:25:59 -0800 (PST)
 From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-Date: Fri, 06 Mar 2026 14:24:50 +0100
-Subject: [PATCH v9 09/23] scsi: ufs: mediatek: Rework the crypt-boost stuff
+Date: Fri, 06 Mar 2026 14:24:51 +0100
+Subject: [PATCH v9 10/23] scsi: ufs: mediatek: Handle misc host voltage
+ regulators
 MIME-Version: 1.0
-Message-Id: <20260306-mt8196-ufs-v9-9-55b073f7a830@collabora.com>
+Message-Id: <20260306-mt8196-ufs-v9-10-55b073f7a830@collabora.com>
 References: <20260306-mt8196-ufs-v9-0-55b073f7a830@collabora.com>
 In-Reply-To: <20260306-mt8196-ufs-v9-0-55b073f7a830@collabora.com>
 To: Alim Akhtar <alim.akhtar@samsung.com>, 
@@ -75,8 +76,8 @@ Cc: Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>,
  Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
 X-Mailer: b4 0.14.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260306_052606_942539_564BBB81 
-X-CRM114-Status: GOOD (  14.01  )
+X-CRM114-CacheID: sfid-20260306_052613_040891_15D0BAE0 
+X-CRM114-Status: GOOD (  14.24  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,82 +89,101 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SSBkb24ndCBrbm93IHdoZXRoZXIgdGhlIGNyeXB0LWJvb3N0IGZ1bmN0aW9uYWxpdHkgYXMgaXQg
-aXMgY3VycmVudGx5CmltcGxlbWVudGVkIGlzIGV2ZW4gYXBwcm9wcmlhdGUgZm9yIG1haW5saW5l
-LiBJdCBtaWdodCBiZSBiZXR0ZXIgZG9uZSBpbgpzb21lIGdlbmVyaWMgd2F5LiBCdXQgd2hhdCBJ
-IGRvIGtub3cgaXMgdGhhdCBJIGNhbiByZXdvcmsgdGhlIGNvZGUgdG8KbWFrZSBpdCBsZXNzIG9i
-dHVzZS4KClByZWZpeCB0aGUgYm9vc3Qgc3R1ZmYgd2l0aCB0aGUgYXBwcm9wcmlhdGUgdmVuZG9y
-IHByZWZpeCwgcmVtb3ZlIHRoZQpwb2ludGxlc3MgY2xvY2sgd3JhcHBlcnMsIGFuZCByZXdvcmsg
-dGhlIGZ1bmN0aW9uLgoKUmV2aWV3ZWQtYnk6IEFuZ2Vsb0dpb2FjY2hpbm8gRGVsIFJlZ25vIDxh
-bmdlbG9naW9hY2NoaW5vLmRlbHJlZ25vQGNvbGxhYm9yYS5jb20+ClJldmlld2VkLWJ5OiBQZXRl
-ciBXYW5nICjnjovkv6Hlj4spIDxwZXRlci53YW5nQG1lZGlhdGVrLmNvbT4KU2lnbmVkLW9mZi1i
-eTogTmljb2xhcyBGcmF0dGFyb2xpIDxuaWNvbGFzLmZyYXR0YXJvbGlAY29sbGFib3JhLmNvbT4K
-LS0tCiBkcml2ZXJzL3Vmcy9ob3N0L3Vmcy1tZWRpYXRlay5jIHwgODkgKysrKysrKysrKysrKyst
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KIDEgZmlsZSBjaGFuZ2VkLCAzMCBpbnNlcnRpb25z
-KCspLCA1OSBkZWxldGlvbnMoLSkKCmRpZmYgLS1naXQgYS9kcml2ZXJzL3Vmcy9ob3N0L3Vmcy1t
-ZWRpYXRlay5jIGIvZHJpdmVycy91ZnMvaG9zdC91ZnMtbWVkaWF0ZWsuYwppbmRleCAzOTIzODNl
-MDNhYjAuLjliN2Q3ZTRiYTRiYSAxMDA2NDQKLS0tIGEvZHJpdmVycy91ZnMvaG9zdC91ZnMtbWVk
-aWF0ZWsuYworKysgYi9kcml2ZXJzL3Vmcy9ob3N0L3Vmcy1tZWRpYXRlay5jCkBAIC01NjIsMjEg
-KzU2Miw2IEBAIHN0YXRpYyBpbnQgdWZzX210a19tcGh5X3Bvd2VyX29uKHN0cnVjdCB1ZnNfaGJh
-ICpoYmEsIGJvb2wgb24pCiAJcmV0dXJuIDA7CiB9CiAKLXN0YXRpYyBpbnQgdWZzX210a19nZXRf
-aG9zdF9jbGsoc3RydWN0IGRldmljZSAqZGV2LCBjb25zdCBjaGFyICpuYW1lLAotCQkJCXN0cnVj
-dCBjbGsgKipjbGtfb3V0KQotewotCXN0cnVjdCBjbGsgKmNsazsKLQlpbnQgZXJyID0gMDsKLQot
-CWNsayA9IGRldm1fY2xrX2dldChkZXYsIG5hbWUpOwotCWlmIChJU19FUlIoY2xrKSkKLQkJZXJy
-ID0gUFRSX0VSUihjbGspOwotCWVsc2UKLQkJKmNsa19vdXQgPSBjbGs7Ci0KLQlyZXR1cm4gZXJy
-OwotfQotCiBzdGF0aWMgdm9pZCB1ZnNfbXRrX2Jvb3N0X2NyeXB0KHN0cnVjdCB1ZnNfaGJhICpo
-YmEsIGJvb2wgYm9vc3QpCiB7CiAJc3RydWN0IHVmc19tdGtfaG9zdCAqaG9zdCA9IHVmc2hjZF9n
-ZXRfdmFyaWFudChoYmEpOwpAQCAtNjMzLDY1ICs2MTgsNTEgQEAgc3RhdGljIHZvaWQgdWZzX210
-a19ib29zdF9jcnlwdChzdHJ1Y3QgdWZzX2hiYSAqaGJhLCBib29sIGJvb3N0KQogCWNsa19kaXNh
-YmxlX3VucHJlcGFyZShjZmctPmNsa19jcnlwdF9tdXgpOwogfQogCi1zdGF0aWMgaW50IHVmc19t
-dGtfaW5pdF9ob3N0X2NsayhzdHJ1Y3QgdWZzX2hiYSAqaGJhLCBjb25zdCBjaGFyICpuYW1lLAot
-CQkJCSBzdHJ1Y3QgY2xrICoqY2xrKQotewotCWludCByZXQ7Ci0KLQlyZXQgPSB1ZnNfbXRrX2dl
-dF9ob3N0X2NsayhoYmEtPmRldiwgbmFtZSwgY2xrKTsKLQlpZiAocmV0KSB7Ci0JCWRldl9pbmZv
-KGhiYS0+ZGV2LCAiJXM6IGZhaWxlZCB0byBnZXQgJXM6ICVkIiwgX19mdW5jX18sCi0JCQkgbmFt
-ZSwgcmV0KTsKLQl9Ci0KLQlyZXR1cm4gcmV0OwotfQotCiBzdGF0aWMgdm9pZCB1ZnNfbXRrX2lu
-aXRfYm9vc3RfY3J5cHQoc3RydWN0IHVmc19oYmEgKmhiYSkKIHsKIAlzdHJ1Y3QgdWZzX210a19o
-b3N0ICpob3N0ID0gdWZzaGNkX2dldF92YXJpYW50KGhiYSk7CiAJc3RydWN0IHVmc19tdGtfY3J5
-cHRfY2ZnICpjZmc7CiAJc3RydWN0IGRldmljZSAqZGV2ID0gaGJhLT5kZXY7Ci0Jc3RydWN0IHJl
-Z3VsYXRvciAqcmVnOwotCXUzMiB2b2x0OworCWludCByZXQ7CiAKLQlob3N0LT5jcnlwdCA9IGRl
-dm1fa3phbGxvYyhkZXYsIHNpemVvZigqKGhvc3QtPmNyeXB0KSksCi0JCQkJICAgR0ZQX0tFUk5F
-TCk7Ci0JaWYgKCFob3N0LT5jcnlwdCkKLQkJZ290byBkaXNhYmxlX2NhcHM7CisJY2ZnID0gZGV2
-bV9remFsbG9jKGRldiwgc2l6ZW9mKCpjZmcpLCBHRlBfS0VSTkVMKTsKKwlpZiAoIWNmZykKKwkJ
-cmV0dXJuOwogCi0JcmVnID0gZGV2bV9yZWd1bGF0b3JfZ2V0X29wdGlvbmFsKGRldiwgImR2ZnNy
-Yy12Y29yZSIpOwotCWlmIChJU19FUlIocmVnKSkgewotCQlkZXZfaW5mbyhkZXYsICJmYWlsZWQg
-dG8gZ2V0IGR2ZnNyYy12Y29yZTogJWxkIiwKLQkJCSBQVFJfRVJSKHJlZykpOwotCQlnb3RvIGRp
-c2FibGVfY2FwczsKKwljZmctPnJlZ192Y29yZSA9IGRldm1fcmVndWxhdG9yX2dldF9vcHRpb25h
-bChkZXYsICJkdmZzcmMtdmNvcmUiKTsKKwlpZiAoSVNfRVJSKGNmZy0+cmVnX3Zjb3JlKSkgewor
-CQlkZXZfZXJyKGRldiwgIkZhaWxlZCB0byBnZXQgZHZmc3JjLXZjb3JlOiAlcGUiLCBjZmctPnJl
-Z192Y29yZSk7CisJCXJldHVybjsKIAl9CiAKLQlpZiAob2ZfcHJvcGVydHlfcmVhZF91MzIoZGV2
-LT5vZl9ub2RlLCAiYm9vc3QtY3J5cHQtdmNvcmUtbWluIiwKLQkJCQkgJnZvbHQpKSB7Ci0JCWRl
-dl9pbmZvKGRldiwgImZhaWxlZCB0byBnZXQgYm9vc3QtY3J5cHQtdmNvcmUtbWluIik7Ci0JCWdv
-dG8gZGlzYWJsZV9jYXBzOworCXJldCA9IG9mX3Byb3BlcnR5X3JlYWRfdTMyKGRldi0+b2Zfbm9k
-ZSwgIm1lZGlhdGVrLGJvb3N0LWNyeXB0LXZjb3JlLW1pbiIsCisJCQkJICAgJmNmZy0+dmNvcmVf
-dm9sdCk7CisJaWYgKHJldCkgeworCQlkZXZfZXJyKGRldiwgIkZhaWxlZCB0byBnZXQgbWVkaWF0
-ZWssYm9vc3QtY3J5cHQtdmNvcmUtbWluOiAlcGVcbiIsCisJCQlFUlJfUFRSKHJldCkpOworCQly
-ZXR1cm47CiAJfQogCi0JY2ZnID0gaG9zdC0+Y3J5cHQ7Ci0JaWYgKHVmc19tdGtfaW5pdF9ob3N0
-X2NsayhoYmEsICJjcnlwdF9tdXgiLAotCQkJCSAgJmNmZy0+Y2xrX2NyeXB0X211eCkpCi0JCWdv
-dG8gZGlzYWJsZV9jYXBzOworCWNmZy0+Y2xrX2NyeXB0X211eCA9IGRldm1fY2xrX2dldChkZXYs
-ICJjcnlwdF9tdXgiKTsKKwlpZiAoSVNfRVJSKGNmZy0+Y2xrX2NyeXB0X211eCkpIHsKKwkJZGV2
-X2VycihkZXYsICJGYWlsZWQgdG8gZ2V0IGNsb2NrIGNyeXB0X211eDogJXBlXG4iLCBjZmctPmNs
-a19jcnlwdF9tdXgpOworCQlyZXR1cm47CisJfQogCi0JaWYgKHVmc19tdGtfaW5pdF9ob3N0X2Ns
-ayhoYmEsICJjcnlwdF9scCIsCi0JCQkJICAmY2ZnLT5jbGtfY3J5cHRfbHApKQotCQlnb3RvIGRp
-c2FibGVfY2FwczsKKwljZmctPmNsa19jcnlwdF9scCA9IGRldm1fY2xrX2dldChkZXYsICJjcnlw
-dF9scCIpOworCWlmIChJU19FUlIoY2ZnLT5jbGtfY3J5cHRfbHApKSB7CisJCWRldl9lcnIoZGV2
-LCAiRmFpbGVkIHRvIGdldCBjbG9jayBjcnlwdF9scDogJXBlXG4iLCBjZmctPmNsa19jcnlwdF9s
-cCk7CisJCXJldHVybjsKKwl9CiAKLQlpZiAodWZzX210a19pbml0X2hvc3RfY2xrKGhiYSwgImNy
-eXB0X3BlcmYiLAotCQkJCSAgJmNmZy0+Y2xrX2NyeXB0X3BlcmYpKQotCQlnb3RvIGRpc2FibGVf
-Y2FwczsKKwljZmctPmNsa19jcnlwdF9wZXJmID0gZGV2bV9jbGtfZ2V0KGRldiwgImNyeXB0X3Bl
-cmYiKTsKKwlpZiAoSVNfRVJSKGNmZy0+Y2xrX2NyeXB0X3BlcmYpKSB7CisJCWRldl9lcnIoZGV2
-LCAiRmFpbGVkIHRvIGdldCBjbG9jayBjcnlwdF9wZXJmOiAlcGVcbiIsIGNmZy0+Y2xrX2NyeXB0
-X3BlcmYpOworCQlyZXR1cm47CisJfQogCi0JY2ZnLT5yZWdfdmNvcmUgPSByZWc7Ci0JY2ZnLT52
-Y29yZV92b2x0ID0gdm9sdDsKKwlob3N0LT5jcnlwdCA9IGNmZzsKIAlob3N0LT5jYXBzIHw9IFVG
-U19NVEtfQ0FQX0JPT1NUX0NSWVBUX0VOR0lORTsKLQotZGlzYWJsZV9jYXBzOgotCXJldHVybjsK
-IH0KIAogc3RhdGljIHZvaWQgdWZzX210a19pbml0X2hvc3RfY2FwcyhzdHJ1Y3QgdWZzX2hiYSAq
-aGJhKQoKLS0gCjIuNTMuMAoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBs
-aXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LXBoeQo=
+MediaTek SoCs handled by this driver contain a per-SoC specific set of
+miscellaneous supplies. These feed parts of the UFS controller silicon
+inside the SoC, as opposed to the UFS card.
+
+Add the necessary driver code to acquire these supplies using the
+regulator bulk API. They should be kept on during suspend, so enable
+them when acquiring.
+
+Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Reviewed-by: Peter Wang <peter.wang@mediatek.com>
+Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+---
+ drivers/ufs/host/ufs-mediatek.c | 37 ++++++++++++++++++++++++++++++++++---
+ 1 file changed, 34 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/ufs/host/ufs-mediatek.c b/drivers/ufs/host/ufs-mediatek.c
+index 9b7d7e4ba4ba..3282b2d2d498 100644
+--- a/drivers/ufs/host/ufs-mediatek.c
++++ b/drivers/ufs/host/ufs-mediatek.c
+@@ -40,6 +40,8 @@ static void _ufs_mtk_clk_scale(struct ufs_hba *hba, bool scale_up);
+ 
+ struct ufs_mtk_soc_data {
+ 	bool has_avdd09;
++	u8 num_reg_names;
++	const char *const *reg_names;
+ };
+ 
+ static const struct ufs_dev_quirk ufs_mtk_dev_fixups[] = {
+@@ -1188,8 +1190,21 @@ static int ufs_mtk_get_supplies(struct ufs_mtk_host *host)
+ {
+ 	struct device *dev = host->hba->dev;
+ 	const struct ufs_mtk_soc_data *data = of_device_get_match_data(dev);
++	int ret;
++
++	if (!data)
++		return 0;
++
++	if (data->num_reg_names) {
++		ret = devm_regulator_bulk_get_enable(dev, data->num_reg_names,
++						     data->reg_names);
++		if (ret) {
++			dev_err(dev, "Failed to get misc regulators: %pe\n", ERR_PTR(ret));
++			return ret;
++		}
++	}
+ 
+-	if (!data || !data->has_avdd09)
++	if (!data->has_avdd09)
+ 		return 0;
+ 
+ 	host->reg_avdd09 = devm_regulator_get_optional(dev, "avdd09");
+@@ -2331,14 +2346,30 @@ static const struct ufs_hba_variant_ops ufs_hba_mtk_vops = {
+ 	.config_scsi_dev     = ufs_mtk_config_scsi_dev,
+ };
+ 
++static const char *const ufs_mtk_regs_avdd12_avdd18[] = {
++	"avdd12", "avdd18"
++};
++
++static const char *const ufs_mtk_regs_avdd12_ckbuf_avdd18[] = {
++	"avdd12", "avdd12-ckbuf", "avdd18"
++};
++
+ static const struct ufs_mtk_soc_data mt8183_data = {
+ 	.has_avdd09 = true,
++	.reg_names = ufs_mtk_regs_avdd12_avdd18,
++	.num_reg_names = ARRAY_SIZE(ufs_mtk_regs_avdd12_avdd18),
++};
++
++static const struct ufs_mtk_soc_data mt8192_8195_data = {
++	.has_avdd09 = false,
++	.reg_names = ufs_mtk_regs_avdd12_ckbuf_avdd18,
++	.num_reg_names = ARRAY_SIZE(ufs_mtk_regs_avdd12_ckbuf_avdd18),
+ };
+ 
+ static const struct of_device_id ufs_mtk_of_match[] = {
+ 	{ .compatible = "mediatek,mt8183-ufshci", .data = &mt8183_data },
+-	{ .compatible = "mediatek,mt8192-ufshci" },
+-	{ .compatible = "mediatek,mt8195-ufshci" },
++	{ .compatible = "mediatek,mt8192-ufshci", .data = &mt8192_8195_data },
++	{ .compatible = "mediatek,mt8195-ufshci", .data = &mt8192_8195_data },
+ 	{},
+ };
+ MODULE_DEVICE_TABLE(of, ufs_mtk_of_match);
+
+-- 
+2.53.0
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
