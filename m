@@ -4,64 +4,193 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6551CF513EE
-	for <linux-phy@archiver.kernel.org>; Fri,  6 Mar 2026 03:32:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3A8E2F513FB
+	for <linux-phy@archiver.kernel.org>; Fri,  6 Mar 2026 05:39:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Date:
-	Message-Id:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:CC:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=141Qm50gMpfJEQKKn8fM2lwDxSnS2dqcYLdCTJu8BwE=; b=gTL76qEch8gWrD
-	/e1YoX6l31jCBIFYQgCv+TB+rX6KniUg0fO6x6zQckaLzLbE13xBheedaE48aQrnsF5JFUl9WM+PZ
-	HkIALj1v9exwagk+r/UcTMYVrkupVtJ7EQolc3kdGQc/tUqbOAmMyKt/3SVqD52IbgRxj1HgK+/PP
-	6tOlYntMq/0j1H5afMlX6OjNTJaWVv/4Ij2W4mepywgqyxbSyVtQ1nmIXd8dm2uZdR46vRC/b1+3X
-	kdaHFUeR3wbFV6+rPv4l3h0gG2GNYQ95mEeZ5lcunQ5H9JPSG5cIKZLW2yq7LpK5S53sKY16Wfi5X
-	zsuzJyp45bn+SGA01JeQ==;
+	List-Owner; bh=YCyKeCghZFPpwTmriJlrJUDIhPRwYbg5+2g1s4X0LxI=; b=Pd6lhkyLchEkoS
+	J4Q437GRc9ySn88Q/+nZFYOYrCslCCsjKtH6d4rxNJ3qCybxMRiN3zWc7Gku7ZOnWhOPVx3SNo9R5
+	BN/BjUGY0X2XVCfkAKBPot0AlylR0QqC6pQT/Ebk2k9VowXf6hZFHFFMmF2cM8T+CeecQtTBS5ICL
+	Dauh5f1enfQWobsivGNwY/aNyJzsiw8nHSDRp2sD4PVNJRUuTNLnAw1ifare39bmvt+lnXlighsdj
+	1zgi1mB4oQZ4uULwIz0zmP4fpSuQzRZGxffWn1Z3x+5l44ecemYyb5quJs9v2RJ07TNKdTpJQ/+1g
+	9rOCezV4+rp+f6Cw0AkQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vyLvt-00000002xy1-0cyY;
-	Fri, 06 Mar 2026 03:32:57 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1vyNuT-0000000339m-32fP;
+	Fri, 06 Mar 2026 05:39:37 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vyLvp-00000002xv7-2idy;
-	Fri, 06 Mar 2026 03:32:56 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 82CEE4400D;
-	Fri,  6 Mar 2026 03:32:52 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 63326C116C6;
-	Fri,  6 Mar 2026 03:32:52 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1772767972;
-	bh=J5WNpI9IFOZTn+5xxMTNRdxLsLhlZZ5pCnKzZHghzHU=;
-	h=Subject:From:Date:References:In-Reply-To:To:Cc:From;
-	b=CiZHaT+iDF0JBJhKP5j+xHrw3HKoiJahdSNW1m5LuGTPLlSgRRlmggtREW6U1dtdu
-	 eO1inZLnbuc81n2FDTFA5ImteQHR8K7Bg0t6726FgJf63jOJgUMvBSTLS2j1wuHiER
-	 lDbPDz7PQ9WNn8Hh7HDoNbMVNAdO1dIXOyEPYVHlwcgA9Vay8p1Loo5INeR+2dSc30
-	 ktxCqHrbbLEEdO0HgR2MbJBI4EysmfY3ATloJ0dJpvTT1IIx0axex6J4tS6bF9v5gF
-	 Jn46/XT8RyMWYDrDfXYEaa5+Sp+KCyB8zeR/2CJUzESI2HgZT7uPBFh01v29Nzc94a
-	 PyFl4bi2dPmbw==
-Received: from [10.30.226.235] (localhost [IPv6:::1])
-	by aws-us-west-2-korg-oddjob-rhel9-1.codeaurora.org (Postfix) with ESMTP id 3FEF53808200;
-	Fri,  6 Mar 2026 03:32:53 +0000 (UTC)
+	id 1vyNuQ-0000000338Y-1SMC;
+	Fri, 06 Mar 2026 05:39:35 +0000
+X-UUID: d88ea802191e11f19e7563141e833ce8-20260305
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
+	h=MIME-Version:Content-Transfer-Encoding:Content-ID:Content-Type:In-Reply-To:References:Message-ID:Date:Subject:CC:To:From; bh=tQ3hwBNBrbSbUT6CXdE2XeDiKhlwKqs6J5sKwzgDqc0=;
+	b=r0Qg74TwyWuZ+MsfX1tYre1RYXbuKjuk/5yYNnwl+xmCRyh3hePhDIqJNk6hk23O6PH5bhSexA8c/4JPEbqadLfRZVXO5GFViQtGWYJDadbroOo3V385SE9yC+C8uyeVGIVpBl1XrmUlxMwJawHYhKT1j0STSJ+kay7DNhvKXRU=;
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.3.11,REQID:c89b4ed3-9547-4397-8c94-b2ef5ee1248b,IP:0,U
+	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
+	release,TS:0
+X-CID-META: VersionHash:89c9d04,CLOUDID:17f4957b-8c8a-4fc4-88c0-3556e7711556,B
+	ulkID:nil,BulkQuantity:0,Recheck:0,SF:80|81|82|83|102|110|111|836|888|898,
+	TC:-5,Content:0|15|50,EDM:-3,IP:nil,URL:0,File:130,RT:0,Bulk:nil,QS:nil,BE
+	C:-1,COL:0,OSI:0,OSA:0,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
+X-CID-BVR: 2,SSN|SDN
+X-CID-BAS: 2,SSN|SDN,0,_
+X-CID-FACTOR: TF_CID_SPAM_SNR
+X-CID-RHF: D41D8CD98F00B204E9800998ECF8427E
+X-UUID: d88ea802191e11f19e7563141e833ce8-20260305
+Received: from mtkmbs11n2.mediatek.inc [(172.21.101.187)] by mailgw01.mediatek.com
+	(envelope-from <peter.wang@mediatek.com>)
+	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
+	with ESMTP id 148908889; Thu, 05 Mar 2026 22:39:29 -0700
+Received: from mtkmbs10n1.mediatek.inc (172.21.101.34) by
+ MTKMBS14N1.mediatek.inc (172.21.101.75) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.29; Fri, 6 Mar 2026 13:39:27 +0800
+Received: from SG2PR04CU009.outbound.protection.outlook.com (172.21.101.237)
+ by mtkmbs10n1.mediatek.inc (172.21.101.34) with Microsoft SMTP Server id
+ 15.2.2562.29 via Frontend Transport; Fri, 6 Mar 2026 13:39:27 +0800
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=XSroepFvi50i7ivrXQey2aW40eet1Wqx5FT8s7lhwdi45WLGNjPxYAqRRZoyWGssbyg8bEdMUfTeieTVasnzZ5rDTxmndrMl0MHp2u0ZYabxRPcnFNxGn+rtBS8HLRRV3AaXg0KCSMlz/vPaPjFzhuY08MjFftQw+bIzcrqIeo6NJVOU+nfX8L7uqf8mz6p5G2b0WTHdb8sPP7D3qkDweUgKfyjjjl4xjfbbnKb+h7U+3P3aXzNQ8M4LI7y/aPWym37yYePXYgcrgoRrcg3+Eg1pns71kYz8KuLITQSRbSa7NI7UsWkUgsZHbl6EKZAHk8RuYPDgBnXtXxO152yDyA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=tQ3hwBNBrbSbUT6CXdE2XeDiKhlwKqs6J5sKwzgDqc0=;
+ b=ltu/f8xU663sPRKGqmZBTfAjgiuXLRAzX2wXl4g7su/EdT7a25YDhNCJt9mCHdH2RP/aYsNh49Jrey+9bQankWqCsE8guzkVZRwFgRYI1zATN7CK06MNseOrY2UAfRJtivgjPVUSO/3qQUwtu/inJt8udc9MFIQ4ad3qePuJhIyjWOJwonbkMJcg/Q70qLFjnfM849GtcMUsL4kC9dY9nXQYwd4TmgRQYqhKVWLP+/xh9ZEfLuqCpuS6ltgbHjbbN1bnOhOIdaqoxhIDb/mdL2M2TX6msoLwEf8rUTJHwGNalQtwFNTkWfRRNLk6UNapvYkg9V5TS7u4/P7nu8XHAA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=mediatek.com; dmarc=pass action=none header.from=mediatek.com;
+ dkim=pass header.d=mediatek.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=mediateko365.onmicrosoft.com; s=selector2-mediateko365-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=tQ3hwBNBrbSbUT6CXdE2XeDiKhlwKqs6J5sKwzgDqc0=;
+ b=Hxqo4zztucudpvnhNOdgoCaagXhFQ50vEykLQ0Wp7DNO3jItQ+3gJS5M74W5FBmQs3Knbvf/nq4KF0nPrWmKTqZ94OH1Pp9B6E09EFBWpWUx5C/R2ZM7sbIPRrQTyX6Mz3UtBJ4nl/YU8dFNblYh5Gegv78eRc3+SRimlQvD5OM=
+Received: from PSAPR03MB5605.apcprd03.prod.outlook.com (2603:1096:301:66::6)
+ by TYPPR03MB9697.apcprd03.prod.outlook.com (2603:1096:405:397::17) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9678.17; Fri, 6 Mar
+ 2026 05:39:23 +0000
+Received: from PSAPR03MB5605.apcprd03.prod.outlook.com
+ ([fe80::165:d36a:3f76:2925]) by PSAPR03MB5605.apcprd03.prod.outlook.com
+ ([fe80::165:d36a:3f76:2925%4]) with mapi id 15.20.9678.017; Fri, 6 Mar 2026
+ 05:39:22 +0000
+From: =?utf-8?B?UGV0ZXIgV2FuZyAo546L5L+h5Y+LKQ==?= <peter.wang@mediatek.com>
+To: "chu.stanley@gmail.com" <chu.stanley@gmail.com>, "robh@kernel.org"
+	<robh@kernel.org>, =?utf-8?B?Q2h1bmZlbmcgWXVuICjkupHmmKXls7Ap?=
+	<Chunfeng.Yun@mediatek.com>, "kishon@kernel.org" <kishon@kernel.org>,
+	"James.Bottomley@hansenpartnership.com"
+	<James.Bottomley@hansenpartnership.com>, "bvanassche@acm.org"
+	<bvanassche@acm.org>, AngeloGioacchino Del Regno
+	<angelogioacchino.delregno@collabora.com>,
+	=?utf-8?B?Q2hhb3RpYW4gSmluZyAo5LqV5pyd5aSpKQ==?=
+	<Chaotian.Jing@mediatek.com>, "conor+dt@kernel.org" <conor+dt@kernel.org>,
+	"lgirdwood@gmail.com" <lgirdwood@gmail.com>,
+	"nicolas.frattaroli@collabora.com" <nicolas.frattaroli@collabora.com>,
+	"vkoul@kernel.org" <vkoul@kernel.org>, "krzk+dt@kernel.org"
+	<krzk+dt@kernel.org>, "p.zabel@pengutronix.de" <p.zabel@pengutronix.de>,
+	"alim.akhtar@samsung.com" <alim.akhtar@samsung.com>,
+	"neil.armstrong@linaro.org" <neil.armstrong@linaro.org>,
+	"matthias.bgg@gmail.com" <matthias.bgg@gmail.com>, "avri.altman@wdc.com"
+	<avri.altman@wdc.com>, "broonie@kernel.org" <broonie@kernel.org>,
+	"martin.petersen@oracle.com" <martin.petersen@oracle.com>
+CC: "linux-scsi@vger.kernel.org" <linux-scsi@vger.kernel.org>,
+	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+	"linux-arm-kernel@lists.infradead.org"
+	<linux-arm-kernel@lists.infradead.org>, "linux-phy@lists.infradead.org"
+	<linux-phy@lists.infradead.org>, "linux-mediatek@lists.infradead.org"
+	<linux-mediatek@lists.infradead.org>, Louis-Alexis Eyraud
+	<louisalexis.eyraud@collabora.com>, "kernel@collabora.com"
+	<kernel@collabora.com>
+Subject: Re: [PATCH v8 11/23] scsi: ufs: mediatek: Remove undocumented
+ downstream reset cruft
+Thread-Topic: [PATCH v8 11/23] scsi: ufs: mediatek: Remove undocumented
+ downstream reset cruft
+Thread-Index: AQHcq+b6PlWf3exVv0qNnn0g4WhUMbWfqTWAgAAMDoCAAUoZgA==
+Date: Fri, 6 Mar 2026 05:39:22 +0000
+Message-ID: <2a68eb32987c21b6a48547ce044ee38d1eb01fa5.camel@mediatek.com>
+References: <20260304-mt8196-ufs-v8-0-5b0eac23314f@collabora.com>
+	 <20260304-mt8196-ufs-v8-11-5b0eac23314f@collabora.com>
+	 <3aeee75e78fed2be92038c776463a231b94462f3.camel@mediatek.com>
+	 <3472277.mvXUDI8C0e@workhorse>
+In-Reply-To: <3472277.mvXUDI8C0e@workhorse>
+Accept-Language: zh-TW, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=mediatek.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: PSAPR03MB5605:EE_|TYPPR03MB9697:EE_
+x-ms-office365-filtering-correlation-id: 3d948339-c611-46f2-4846-08de7b42b84e
+x-ld-processed: a7687ede-7a6b-4ef6-bace-642f677fbe31,ExtAddr
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;ARA:13230040|1800799024|366016|7416014|376014|38070700021|921020;
+x-microsoft-antispam-message-info: l+dKLB/UFO9+8uWK3hlpbZJzbp2ZvEUTnv3kI+ylmpCZPf9VF9CD1aECtUMy4A7ldzduuCbzAWT43RHyduipoasPAUONSX4Ib4lWDt5EMc4wFb2iVQUI+FWb6yd0/DTrg3FQ1Cx2zvnGN40rBQdXTp3CnNNTwu+MZyydmw0UE5g9gkCFpMjk6FD/5RievP/SNVfqlDY1ujI0fwXDjt2r5K87GvDdRJ8ZHfYnZPfneITwLJ9nGko0PXE/ItZ7Yg32wjAXsODMMTnOSpg81nHnYutRmCfCHQ5/I2gVMjsyF/tpb1lqxM+2SwNfEomG/ublUjOhOis4+Ni9fwdkq2yuucTzyMjf2xYws/0QewAhr96qVDuq3/Kg8DYLHuUtluOcx6Yf8vAjkYpfAiyjk08SXPn0jkTfbb4bAcUd+A04igHsJA3VklgSmjaOyOSbd2NL80XWA9XzNtMrLsOJ2lcKSO+66qJSF53nDwYRZ91Quwzelq9y9bvIejERfT1JgfprE2bLeNVGsfGKWgWtV9Oj04BQWuos3p46Z5h72gQ3j/5aQHkAFFNNDPME8YkozV3O5qu6k39HAJyIhGYqApNDZSVOuyRym93ugwQnKTNv/jt3DOFgBiil9/cfNzvs95hW+w4GNP7RwNlXcAwhRx1xGxUy55Y3lcEH6IIc5IeRp7aRdBQmRCBl9i9c2UMcaz6oJFu/M8w/dhZ+dlKOk5+ITOd9NFv5Id3qeH+Gl0ToQBJIwnnIZA9w/Xs0K5cnzqwJov8d/j51M0zAOupQvFwMkohMUzlvkYk8fnI3d4v4Jvc=
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PSAPR03MB5605.apcprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(7416014)(376014)(38070700021)(921020);DIR:OUT;SFP:1101;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?utf-8?B?aW9LZWk5TkR6UVF0ekZuMVNZbnVQSFpqMWxnMGJnUVRVdnhiTmhrSU9hTDg4?=
+ =?utf-8?B?aWYzQlh4bDNpOGJuTmlwdFAyN2YweGNnR2Fab1U5QW9mQ3lMMUZmbWNLQnBo?=
+ =?utf-8?B?WWd4eUU0SFVOWEZULy9FSlA4U2FBdzJ6b080c2xReHRiMzl1UXd3T3dJMUxz?=
+ =?utf-8?B?end0bkJXT2MvbVRvUTZ3OWJHMm5UeEJzTGtKUFZmRUlzY2xkdGt0NUNLVURr?=
+ =?utf-8?B?eVNKRi9LSkhzdi9QOGVzN1dKZEVwUWRMYXNnKzB2aGRyNUhsZUR2eitqWGpC?=
+ =?utf-8?B?RjU0UlVzdEJMU05UNlQxbnZJUDQ3TXBWbDhjM0hId0pYWXRnbGpSTTdZazRH?=
+ =?utf-8?B?QWtCUlNXWGx3b1dJYnMrSDhLZE5iLyt5K0NIa3NuUEtFNVdySkw0cnMxTUEr?=
+ =?utf-8?B?RmZybHFQUk5PWUxTQS9yOE8wVjJORmgwMGt5SXJMQ2RnUjdTS1V2MWJVOGFh?=
+ =?utf-8?B?ZTd1TmUzVEdwVlBjSEd4ZFIzTmZRR1dFc1JaSEViS0pzKzlWUitBSllhNEJ1?=
+ =?utf-8?B?bFpSK1RGeXlWWEljZWdwS1JXZWdiZE9GQytuOFI3eFZnN09uSkVRcjdoYXBy?=
+ =?utf-8?B?WklycFdNRnc3c0RHekV6L2xQSEZqMFgyUHBTVDhrclE5b0lVQVhSK0RGaTdh?=
+ =?utf-8?B?TzlvWWcwYkMySXdJa21UUEdJS3JYODd3WTNwK0h1V2Z1MWY5NEdGVmM1U3Uz?=
+ =?utf-8?B?U3BGdGx0Qm1QdkttQXN6Z2lYVWpHZ2E4NWdLWXZybURYWmdQQm45TS85TTNY?=
+ =?utf-8?B?ZHNEaWRjRi8wZkg4ZVVqTkwrSW1IM0EyNWV3aWdhU0xsTVdSZDhZTGJRRWlT?=
+ =?utf-8?B?R1hSaVFGcEFuODk0RnZZYlcwVnNIemJFQlBtTC82Rzh5Zis0aENrZzNlWHdj?=
+ =?utf-8?B?bnU0akNFWTVpd3JwbGFsSUh0alpPQzNhTFRteDR5V2hyaG5rVzdRRVFtU1cz?=
+ =?utf-8?B?TU9LMVNiRGVRS2Q3M2VvbjlEc3ZNRG4yRERuV01HZ3V3eVozUFVOU3U0dHI0?=
+ =?utf-8?B?UDZENVpKUzhEbk41UTd4Wk5jL1BTWkhJR1pURGZnVmk4V2pYOW1sVmRxWkhj?=
+ =?utf-8?B?djNYVmJhOCtiRmZHNHdERFMwamtaT0ZhQkNaQ1BhenlBaEFhdjNuZHhTcDhq?=
+ =?utf-8?B?dm1pL1ZvNmdyK2JrWTAvNnRDZlZKdUtmazBGTW91VzBoN2s4UnNkNDEwWTgv?=
+ =?utf-8?B?eVhoMVd2ckZVZ2Y2OFlnbGlMbS9rVmhUK1hIbUZlOGxlbWxWVlNRVlZ2QjFO?=
+ =?utf-8?B?L1lqbk9XTFN1SU15RHpKYTlJdkEyTjRTQi9tRnhqdU0rMjNuNVcxb2FvWFVS?=
+ =?utf-8?B?M1RpQnlGcjQxNkc0MnYrZU9wNjByOHllSUcxcjVKQi83VGdRN09FQ0JxRTBU?=
+ =?utf-8?B?Q0JjNjQwUzRXbUV0cFdWZC9vbXplOW9ZY2xOaUUxSFpmSi9DZmhqUE92V0s5?=
+ =?utf-8?B?NWh1M2p1Wk1BWXV0S0xlTjBhWU4wYndBRmd4UkZWY0tXbGNWS2dtWGkza3hm?=
+ =?utf-8?B?SERzU2kzYU13M3M5YzhXSUJqUTM3QjUxbE5kcFowSmEzWVVqK1IxdlhUa0VR?=
+ =?utf-8?B?elgrSGg4bmNqckRMOFhDU0w5YVFGQm1GSXRUMld0SGlEbGpqN0xDcDRucnlN?=
+ =?utf-8?B?cHoybDZHNFBHZVJNcWtQaDc3Q0t6OHkzTG9KSDFOT1BQTEIwelNKZHVZV3d5?=
+ =?utf-8?B?Q1R4QktnZFVRVFdhMFF5alVUOHdBTlZxejgrVE00aGs4dFphWUVQOWVrMjBX?=
+ =?utf-8?B?S2VnQkszamxPYldOZzV6ekxpREJNSXVDUm9hc0c4V2FxKytYVGJhbWdBN3Nh?=
+ =?utf-8?B?VXVKYmpualN3bVl1WDhRQmxMRUFhLzJ0SGR2bjJWaHZOSlJuR2JkQmJzRmVM?=
+ =?utf-8?B?b0RqZjZTSGV3MTBnQ1dZMWsrL3h1WnVId3V1NExTNU9FNDQ0aGF3QUF4YUR1?=
+ =?utf-8?B?clZidm1xVWo5S1AzdTBtYzhGMjB0Vjl0bkFuWS9za0tzRGxMdWFpR3RQYTRC?=
+ =?utf-8?B?UW4yckhrSU10L0tMdUJ2U2syeWwwRHdELy8xMnZEUlpObW0rUzVkZ1dDL0p5?=
+ =?utf-8?B?ZkdrK3ZZa1RpSUVzQWNuVnMxR2VIT0xqVVlmS2lwRVJ6T1h6K2IyVDl4MzZa?=
+ =?utf-8?B?U2dJaWlEUkM5RU9kR1RQMmhSVmk3cjFzNllCbmZSQkNPd1F1TWNiL3RjRGI2?=
+ =?utf-8?B?U3Z3UGlqWnY2UTEwaGViZ0R0eEdLVlFkVC9LVDd5bGgyUEZhUG96eFVNN3ZH?=
+ =?utf-8?B?dlJ6eElVUzdjT2ZZbTgvdnFZTzdncU5RaG8vdWtvYTJ4WVg3cDc5V2ZuWFdk?=
+ =?utf-8?B?QUxRQnpVeDBnZlBYYm1CMWJYQ3ZzU1RrMUtnbGFLUStKQjEyN1VuS3NIZW9B?=
+ =?utf-8?Q?LLOjVfmRY7AzKgv0=3D?=
+Content-ID: <C1866723AEE81C468C046914DBA376DC@apcprd03.prod.outlook.com>
 MIME-Version: 1.0
-Subject: Re: [PATCH net-next v2 0/7] net: stmmac: qcom-ethqos: further serdes
- reorganisation
-From: patchwork-bot+netdevbpf@kernel.org
-Message-Id: <177276797180.3348267.4879154054522782350.git-patchwork-notify@kernel.org>
-Date: Fri, 06 Mar 2026 03:32:51 +0000
-References: <aacD3osfaZkLsGxm@shell.armlinux.org.uk>
-In-Reply-To: <aacD3osfaZkLsGxm@shell.armlinux.org.uk>
-To: Russell King (Oracle) <linux@armlinux.org.uk>
-Cc: andrew@lunn.ch, alexandre.torgue@foss.st.com, andrew+netdev@lunn.ch,
- davem@davemloft.net, edumazet@google.com, kuba@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-stm32@st-md-mailman.stormreply.com,
- mohd.anwar@oss.qualcomm.com, neil.armstrong@linaro.org,
- netdev@vger.kernel.org, pabeni@redhat.com, vkoul@kernel.org
+X-Exchange-RoutingPolicyChecked: rNBcI3lOgRiJSlcoOSUcr5Bklsa6Sg6bl3nhCHjLMN+Y8gPJFKnA/wDW7NDNR7aOlzUePhy8InxET5tX4tp2LnVKMpKE3c7rrpN6cmz54CiOUXPMzObDOZTFl1dgzjRUqMn3gaJ6g7NUnmaybAYzQskGZ//WAoMjXyfFWrHXNSr/K9hCpWp8ce0AMP8ZC38gfm/MmXTigquRf6jeG275wbKVgRVAnogxiRATXFyX8Uv2RvZ5V71v18i0S/2IkgiOajSJovzMmhT0HWD9SUwVj/SDDraC5rQElABYdGjtVbD9Vp0iYYgUw/828AgSZlzmopkTueM3EroAD/AQKmCXXw==
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: PSAPR03MB5605.apcprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 3d948339-c611-46f2-4846-08de7b42b84e
+X-MS-Exchange-CrossTenant-originalarrivaltime: 06 Mar 2026 05:39:22.3101
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: a7687ede-7a6b-4ef6-bace-642f677fbe31
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 8PRiyb05iIPS/ri44W/m37aGRkU5XIgAQ+w+APd2kDem15Xz6kVaZZo0DXKCBb4X0uXIhiwJ4e462yM0Aa7QSA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYPPR03MB9697
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260305_193253_709260_85A9D93E 
-X-CRM114-Status: UNSURE (   9.85  )
+X-CRM114-CacheID: sfid-20260305_213934_404916_65DD43A3 
+X-CRM114-Status: UNSURE (   8.67  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -79,44 +208,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello:
-
-This series was applied to netdev/net-next.git (main)
-by Jakub Kicinski <kuba@kernel.org>:
-
-On Tue, 3 Mar 2026 15:53:02 +0000 you wrote:
-> This is part 2 of the qcom-ethqos series, part 1 and patch 2 of part 2
-> has now been merged.
+On Thu, 2026-03-05 at 10:57 +0100, Nicolas Frattaroli wrote:
 > 
-> This part of the series focuses on the generic PHY driver, but these
-> changes have dependencies on the ethernet driver, hence why
-> it will need to go via net-next. Furthermore, subsequent changes
-> depend on these patches.
+> Yes, these are the kinds of mistakes that happen when you ask someone
+> to pick apart patches for your downstream convenience.
 > 
-> [...]
+> I'll hand dealing with any further fixups and variable naming
+> concerns
+> you have over to Angelo, as I can't be bothered to deal with you
+> anymore.
+> 
 
-Here is the summary with links:
-  - [net-next,v2,1/7] net: stmmac: qcom-ethqos: move ethqos_set_serdes_speed()
-    https://git.kernel.org/netdev/net-next/c/fc8ca5da896e
-  - [net-next,v2,2/7] net: stmmac: qcom-ethqos: convert to use phy_set_mode_ext()
-    https://git.kernel.org/netdev/net-next/c/4999e0a2ab34
-  - [net-next,v2,3/7] phy: qcom-sgmii-eth: remove .set_speed() implementation
-    https://git.kernel.org/netdev/net-next/c/b7721597547d
-  - [net-next,v2,4/7] phy: qcom-sgmii-eth: use PHY interface mode for SerDes settings
-    https://git.kernel.org/netdev/net-next/c/d2b20acdaed8
-  - [net-next,v2,5/7] phy: qcom-sgmii-eth: remove qcom_dwmac_sgmii_phy_interface()
-    https://git.kernel.org/netdev/net-next/c/f82210ce8cb8
-  - [net-next,v2,6/7] phy: qcom-sgmii-eth: relax order of .power_on() vs .set_mode*()
-    https://git.kernel.org/netdev/net-next/c/ebe8b48b88ad
-  - [net-next,v2,7/7] net: stmmac: qcom-ethqos: remove phy_set_mode_ext() after phy_power_on()
-    https://git.kernel.org/netdev/net-next/c/038a8e8eb90d
-
-You are awesome, thank you!
--- 
-Deet-doot-dot, I am a bot.
-https://korg.docs.kernel.org/patchwork/pwbot.html
-
-
+I thought ensuring that every patch builds successfully
+was a basic requirement.
 
 -- 
 linux-phy mailing list
