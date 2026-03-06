@@ -4,82 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 701ECFCB619
-	for <linux-phy@archiver.kernel.org>; Fri,  6 Mar 2026 16:33:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6FE17FCC04D
+	for <linux-phy@archiver.kernel.org>; Fri,  6 Mar 2026 17:30:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NSNaYt/mAphEDz8WENPj2YjktCO8lmYaa/dNVchyPXU=; b=rqhSGxDM1AuxfT
-	X5Mu1vkuDGVSVb3EeJSlYBkhAz4BoOAjgoaEiwoqbMYsWJidUZ99vSP7/F/2BpTZOha/0ltGzO5vX
-	jn+T2RrvseA52wL+FbnHOO4nh37obBRIuWngERkJesIGBVs/fR3rk7OlrulIa0h9z+4fvUHbIw8tO
-	f9Ja81yNTE0Kpu8LnoBHql6Lz/LgapUd0yzmoIHx3qdZR9a8peNApj2S8T4QajKe7ViqbPNyPrl8z
-	02x9lIcaaTSiqTn0S/9ZEuk/UTXB8wqOf/vJDe59U9MfM6xjJcyXHm+lTVqn9b3h4DFwnSnTcQb9Z
-	n4uXC2wbXZ3gZSS9jaBw==;
+	List-Owner; bh=8440xYQwrBXxu9tdhrjAdMF4THeTNd6wIh2g0QJFMSM=; b=cFF8K8NLNC4RhE
+	vxH873oQJBHYa4H/NL8OFsI0knXWYhfNWfEmFhv7xo3+VS659cxGrUenPkl1CohhqWmargHuj5DJR
+	YOyfMo+bGeb6i5L/3QO0XcAd4uAglK5vAAiCLV8dEmCT1ypRHRG8/Tq1jb+jDcsTC4kAlB7kCKC/k
+	z49QpCtcASfGkIi95N+15e+18rrpdQPT/jZnngGPaEBaFkD4aP9SOfIYtRAvRVxJbJW2ZmqtiA5M4
+	CnDiOl1AxVJtOku0/CN4ByK4k5DBdnV8MdIOBjLXaYgnSqKieuk4oFbkxSR8oWm/WI06swxqpQgyl
+	0lGOF0ppvY6hPTIwWKNg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vyY6y-00000004AfM-0HEq;
-	Fri, 06 Mar 2026 16:33:12 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1vyZ0Y-00000004HDK-3VUx;
+	Fri, 06 Mar 2026 17:30:38 +0000
+Received: from mgamail.intel.com ([192.198.163.13])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vyY6u-00000004Aej-3UGK;
-	Fri, 06 Mar 2026 16:33:09 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 3AF67404CB;
-	Fri,  6 Mar 2026 16:33:07 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id EC168C4CEF7;
-	Fri,  6 Mar 2026 16:33:06 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1772814787;
-	bh=CnQoePDGbm0PHXBOJYOu5eMNk8PFbwki0J91SPH+ipw=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=CfhEK+zVvjIgeRlPT1wuB79AM2+Dd9id+GxlsrUhswzSVDVUu9UDDm4qe2NH9faZG
-	 9H1TXikDsT4sJaDwGccf/iVUWw1WaLTxkkO5CtoF6payK6po9/yuH3tALljqDQBrnh
-	 qI+ZmpGDndHmXj60/uJMWHmrWkVwRhNHKVIlSOnAE0ZEXhW4QnGHTpdcm29b5sKceW
-	 wS58IrVfEBLrFojjoFgbGC4bvmXP2TJCpE3FfalC7meebPH8WyEfQpfGAtVd55i5pf
-	 B8FYa3oY6Sgq+SWcqf1mDZ+H49BzKN42/3/e03c0lTfooVRXt7laYoN6DoDk/6KRYH
-	 fOJ+dWIRF9Yog==
-Date: Fri, 6 Mar 2026 10:33:05 -0600
-From: Rob Herring <robh@kernel.org>
-To: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-Cc: Alim Akhtar <alim.akhtar@samsung.com>,
-	Avri Altman <avri.altman@wdc.com>,
-	Bart Van Assche <bvanassche@acm.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Matthias Brugger <matthias.bgg@gmail.com>,
-	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-	Chunfeng Yun <chunfeng.yun@mediatek.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Peter Wang <peter.wang@mediatek.com>,
-	Stanley Jhu <chu.stanley@gmail.com>,
-	"James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
-	"Martin K. Petersen" <martin.petersen@oracle.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Liam Girdwood <lgirdwood@gmail.com>,
-	Mark Brown <broonie@kernel.org>,
-	Chaotian Jing <Chaotian.Jing@mediatek.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>,
-	kernel@collabora.com, linux-scsi@vger.kernel.org,
+	id 1vyZ0T-00000004HCc-37uK;
+	Fri, 06 Mar 2026 17:30:37 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1772818234; x=1804354234;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=8VmuFnYbiOKgaR+BBAUnY6HUkEujulh2Twpm6HK6CSU=;
+  b=WlbUfbrtdpW8UO0jqDLo4POvpY8U2GcYCDe94DBPZvZ2AqD6vwrHxsMU
+   IXyxD/T0EG9HyUZDiwKnY0/TIuNXbYauA0Obd9t9mkhoJ8C69IiSzhmDr
+   vJU0omO4MTTisiPpRIX5La++2YtwQrG5jBm87D+1I7p/BQHo7ybPKXpJq
+   yI8CKeJvIDJew2in9qIs1R+cXXYSNSCZfAdlLVq3IU/NTYidwPh/pNVtd
+   71AaMjXxzurC6pOpdtx91oM+FmW1RUxqoqsqg5b9CbEwbH/fVV64kW7Yb
+   2wDxI4qB7ZcLZBKFXgJ/y5OErBCdLapabZSOl+pdQOFTFa96ndW9PaIcj
+   g==;
+X-CSE-ConnectionGUID: FyIrSxaeTROzfckO1V22dw==
+X-CSE-MsgGUID: YvMyj8kWSAe+M4pwxzswqQ==
+X-IronPort-AV: E=McAfee;i="6800,10657,11721"; a="76536352"
+X-IronPort-AV: E=Sophos;i="6.23,105,1770624000"; 
+   d="scan'208";a="76536352"
+Received: from orviesa010.jf.intel.com ([10.64.159.150])
+  by fmvoesa107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 06 Mar 2026 09:30:32 -0800
+X-CSE-ConnectionGUID: 0bx+XxIITUy/ALxxQyoj5Q==
+X-CSE-MsgGUID: qc/tcyJERO+MUV1m2NxX4Q==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.23,105,1770624000"; 
+   d="scan'208";a="218305101"
+Received: from lkp-server01.sh.intel.com (HELO 058beb05654c) ([10.239.97.150])
+  by orviesa010.jf.intel.com with ESMTP; 06 Mar 2026 09:30:26 -0800
+Received: from kbuild by 058beb05654c with local (Exim 4.98.2)
+	(envelope-from <lkp@intel.com>)
+	id 1vyZ0H-00000000197-44lO;
+	Fri, 06 Mar 2026 17:30:21 +0000
+Date: Sat, 7 Mar 2026 01:29:40 +0800
+From: kernel test robot <lkp@intel.com>
+To: Caleb James DeLisle <cjd@cjdns.fr>, linux-mips@vger.kernel.org
+Cc: oe-kbuild-all@lists.linux.dev, naseefkm@gmail.com,
+	mturquette@baylibre.com, sboyd@kernel.org, robh@kernel.org,
+	krzk+dt@kernel.org, conor+dt@kernel.org, cjd@cjdns.fr,
+	tsbogend@alpha.franken.de, ryder.lee@mediatek.com,
+	jianjun.wang@mediatek.com, lpieralisi@kernel.org,
+	kwilczynski@kernel.org, mani@kernel.org, bhelgaas@google.com,
+	vkoul@kernel.org, neil.armstrong@linaro.org, p.zabel@pengutronix.de,
+	matthias.bgg@gmail.com, angelogioacchino.delregno@collabora.com,
+	nbd@nbd.name, ansuelsmth@gmail.com, linux-clk@vger.kernel.org,
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org,
-	Conor Dooley <conor.dooley@microchip.com>
-Subject: Re: [PATCH v9 03/23] dt-bindings: ufs: mediatek,ufs: Add mt8196
- variant
-Message-ID: <20260306163305.GA2680515-robh@kernel.org>
-References: <20260306-mt8196-ufs-v9-0-55b073f7a830@collabora.com>
- <20260306-mt8196-ufs-v9-3-55b073f7a830@collabora.com>
+	linux-pci@vger.kernel.org, linux-mediatek@lists.infradead.org,
+	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH 6/8] PCI: mediatek: Add support for EcoNet EN7528 SoC
+Message-ID: <202603070131.ufbXMWzw-lkp@intel.com>
+References: <20260303190948.694783-7-cjd@cjdns.fr>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260306-mt8196-ufs-v9-3-55b073f7a830@collabora.com>
+In-Reply-To: <20260303190948.694783-7-cjd@cjdns.fr>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260306_083308_914025_BCD45E79 
-X-CRM114-Status: GOOD (  18.76  )
+X-CRM114-CacheID: sfid-20260306_093033_803797_A1924F9F 
+X-CRM114-Status: UNSURE (   8.82  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,60 +98,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Mar 06, 2026 at 02:24:44PM +0100, Nicolas Frattaroli wrote:
-> The MediaTek MT8196 SoC's UFS controller uses three additional clocks
-> compared to the MT8195, and a different set of supplies. It is therefore
-> not compatible with the MT8195.
-> 
-> While it does have a AVDD09_UFS_1 pin in addition to the AVDD09_UFS pin,
-> it appears that these two pins are commoned together, as the board
-> schematic I have access to uses the same supply for both, and the
-> downstream driver does not distinguish between the two supplies either.
-> 
-> Add a compatible for it, and modify the binding correspondingly.
-> 
-> Reviewed-by: Conor Dooley <conor.dooley@microchip.com>
-> Acked-by: Vinod Koul <vkoul@kernel.org>
-> Acked-by: Conor Dooley <conor.dooley@microchip.com>
-> Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-> Signed-off-by: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-> ---
->  .../devicetree/bindings/ufs/mediatek,ufs.yaml      | 58 +++++++++++++++++++++-
->  1 file changed, 57 insertions(+), 1 deletion(-)
-> 
-> diff --git a/Documentation/devicetree/bindings/ufs/mediatek,ufs.yaml b/Documentation/devicetree/bindings/ufs/mediatek,ufs.yaml
-> index e0aef3e5f56b..a82119ecbfe8 100644
-> --- a/Documentation/devicetree/bindings/ufs/mediatek,ufs.yaml
-> +++ b/Documentation/devicetree/bindings/ufs/mediatek,ufs.yaml
-> @@ -16,10 +16,11 @@ properties:
->        - mediatek,mt8183-ufshci
->        - mediatek,mt8192-ufshci
->        - mediatek,mt8195-ufshci
-> +      - mediatek,mt8196-ufshci
->  
->    clocks:
->      minItems: 1
-> -    maxItems: 13
-> +    maxItems: 16
->  
->    clock-names:
->      minItems: 1
-> @@ -37,6 +38,9 @@ properties:
->        - const: crypt_perf
->        - const: ufs_rx_symbol0
->        - const: ufs_rx_symbol1
-> +      - const: ufs_sel
+Hi Caleb,
 
-"ufs" is redundant as all the clocks are for UFS. Same comment on prior 
-patch.
+kernel test robot noticed the following build errors:
 
-> +      - const: ufs_sel_min_src
-> +      - const: ufs_sel_max_src
+[auto build test ERROR on 3fa5e5702a82d259897bd7e209469bc06368bf31]
 
-"src" sounds like a parent clock? If so, probably shouldn't be in the 
-clocks list. 'assigned-clocks' is for dealing with parent clocks.
+url:    https://github.com/intel-lab-lkp/linux/commits/Caleb-James-DeLisle/dt-bindings-clock-reset-Add-econet-EN751221-bindings/20260304-031451
+base:   3fa5e5702a82d259897bd7e209469bc06368bf31
+patch link:    https://lore.kernel.org/r/20260303190948.694783-7-cjd%40cjdns.fr
+patch subject: [PATCH 6/8] PCI: mediatek: Add support for EcoNet EN7528 SoC
+config: parisc-allmodconfig (https://download.01.org/0day-ci/archive/20260307/202603070131.ufbXMWzw-lkp@intel.com/config)
+compiler: hppa-linux-gcc (GCC) 15.2.0
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20260307/202603070131.ufbXMWzw-lkp@intel.com/reproduce)
 
-Rob
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202603070131.ufbXMWzw-lkp@intel.com/
+
+All errors (new ones prefixed by >>, old ones prefixed by <<):
+
+>> ERROR: modpost: "pcie_retrain_link" [drivers/pci/controller/pcie-mediatek.ko] undefined!
+
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-phy mailing list
