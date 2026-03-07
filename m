@@ -4,92 +4,107 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3578DFC9EF8
-	for <linux-phy@archiver.kernel.org>; Sat,  7 Mar 2026 11:00:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 48781F55101
+	for <linux-phy@archiver.kernel.org>; Sat,  7 Mar 2026 16:38:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Subject:Cc:To:From:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/021obCUY8xM1o+Kp2OB/zd36DLFfhjkUnfk3HoNsj4=; b=CLIOJXxva9vmS6
-	nMz8rjp10aWL63tiU++u+7v/an07jsfOFD05tLdx5X72lRzzE1t2+3Iw3GZFvL//62Vp764b1uoeG
-	GjdoQIiqCJs0540WYcDH3sVSdHZkEOOZLckxBGugJTBL7asKTWK9oPu5c6xGRPxuJlbb/QX3wk7pf
-	3v8uSzaN5VbctDUj1JmyaykUyBYzzq6KA8MCKVYihdhQwVDyAySc2+NGSw3Rr4bc0E8sLD8ZHuyLP
-	FTB2rwXsdAODZFju4uO9pPcD9X+22siH7LYRr4I9WCWw/IaFppOZs4mxrzzbkpq5KSGC0vQmSjBrL
-	Uy5vjyamoAYRVE4VXmtA==;
+	List-Owner; bh=yFNb5U8AIOL+sWXHzCDKFFjPjEvZE9TIr/9pFV/GoYk=; b=x3Gi9dQXcQCDyi
+	8s9zM3OxJxw9Ua8i4v3dcxhGDdDODIC5vTjluwekc0llb4kQCCGMb+S9uwrhCtFlbGGLx2GQXgUaI
+	pFsTgYtsal1aQMbHbNz7QVhzHN1jWlOeE3BdcR0Ft7p2+QaO9y4J+fLa2otmnhjnV7bLXX5ISxN2b
+	E/phb11Ix3K9WH9aR6RdQzlSDCNRz6JxkjGnL3wERiKspSlkv0fuVnHO5nqVmzAnkdNF0k3T+b+g4
+	5WHQPeaA0mo740jenSj1G0Y/NLtfoeyah5qha1cK1qsIORWbCoVJy2evNtiZcLYy533GByUq6aGV4
+	ar8zgKt/kvTPUws6EgVA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vypOO-000000058E4-3yNv;
-	Sat, 07 Mar 2026 11:00:20 +0000
-Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
+	id 1vyufj-00000005Mfp-07qM;
+	Sat, 07 Mar 2026 16:38:35 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vypOJ-000000058CW-3yBb
-	for linux-phy@lists.infradead.org;
-	Sat, 07 Mar 2026 11:00:17 +0000
-Received: by mail-wm1-x331.google.com with SMTP id 5b1f17b1804b1-483a233819aso99676545e9.3
-        for <linux-phy@lists.infradead.org>; Sat, 07 Mar 2026 03:00:15 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1772881214; x=1773486014; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:subject:cc
-         :to:from:date:message-id:from:to:cc:subject:date:message-id:reply-to;
-        bh=QCI1kb7TlrpTPNFKPwflk45oBxqy/E4b7hXMBF9DXnE=;
-        b=Op0mgIbC9/qL4l3f0NsbLBjZJPT8iUhBq+JnAjyOXVcMG2WTeczWYU9Ye6TVPT2NKj
-         1rkAhcn4hwKQDKNO6nY6MFhc38oICFialtCnly7PSLy2K3SaWushcFHMoFx3dIQz8SAH
-         oez6HbAoB+k60zZT54xakh1ODXtboWwMg6QrxsxHA+spS1PceCJKfBwzdXfLg7KXLYZe
-         6ULRsMdbjxh4DsDINaKvbc3sHceVFLJKJGi/vm3C2AZbV9mtOBYpcHgQ4blIRvmsf95m
-         NRzQnGLlrQ/Bz1lBwlmEvhQdVz+rn8tb0mMw9eUd/99eaqd95ZkcwfG2BfL0yOtrmFJI
-         +Hww==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1772881214; x=1773486014;
-        h=in-reply-to:content-disposition:mime-version:references:subject:cc
-         :to:from:date:message-id:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=QCI1kb7TlrpTPNFKPwflk45oBxqy/E4b7hXMBF9DXnE=;
-        b=mQHfX/Zem+dzMQRQry9Vo/mre5c6w/y/9fY553vmmu5ysEAjYTKElAqfINvey0GfTo
-         +jz6dNa3str/DRbqVQvHqBGYkFUWbUEuVhIL0jYSXGcspgb9jT6KLlZ3ZLZgKrm2Fv/l
-         DoM86w1wSkRKkp08eop9XiLzpEzAMkA7H5gLc1yydd0GNPy4IPi0VFSy6G0w2iCEv9Gw
-         tg0Tu7dU4oFjvOxEhewBp17s38Wiim2VZ2SSVG0G01m6t8Q9WR08lOEKGg8oUXuhl5t/
-         tWlKqq7ttsR3B5Qi38VIAuaG/PRk2USTP0tUx+5CVah15feUK+GiyxVUPMm8IZS84Kmg
-         nhdA==
-X-Forwarded-Encrypted: i=1; AJvYcCV9tAonYt5ehC4SdyvUJwOojOtrF6/FpCs7ha20AYnlbV09nBuTDbuwHk7ZH0Mo95aOVKrtqFkoyoE=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzgYrdOs3ZMNPZX40TVdBIlaKZy/0Rqgl6FwYRQ2WB1J3N/QyqO
-	3u6LvUIZqii7N0h5cUQeQ/lt7vre2mVX9XLRyHAGFdGTm8k+PEAyr3z6
-X-Gm-Gg: ATEYQzwsd/mjBhoTriQExpgHc5XgXGbzcWFmckd9Yl82Jkz7Sq8qv3mlWbr/N0d9XOD
-	UDcGcLtoVDzXP1acy/FsiEwb8RiO70n3JjakJGgu4V+ZdufzcA8x9axKpBZmbctqRFDlgTpN1pj
-	Z2Vf+QWzmSr1yN8CtwU1lKEkjkai/ojm9Jx/MOFbbiOhDyefh8QBmQJ4/QmTxi6byToEagmqKBj
-	2o3T24tVUnvLpIdOtv6cPdF5kM+Rgc/A8LzlaWblaQedH5dLNE/FTVSP+eAsP5tC30qmwOIAmWm
-	wA+FDJf7b51Zu010xipd7ydcQKkoVQ+aXtMrAaYMqKB5DdecQPqZoX68GjRyJGgCYmXcMSwrsws
-	NxhVr7YPrTPEjHd5tZzlaH7AHZ2zWIN9TgrHBf2/47UAdCAxX6yPQwCbXwoMMLgsRJC45q1rS0w
-	TSxdPacEAByi9BxYnPCu8uO3Ldwt2WTSC62zu7llX4C9peYJiUSIePRjFqXx4D+LM1
-X-Received: by 2002:a05:600c:45c6:b0:483:c35d:3662 with SMTP id 5b1f17b1804b1-48526957c37mr81366225e9.18.1772881213827;
-        Sat, 07 Mar 2026 03:00:13 -0800 (PST)
-Received: from Ansuel-XPS. (93-34-88-122.ip49.fastwebnet.it. [93.34.88.122])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4852e38c013sm84256225e9.8.2026.03.07.03.00.12
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 07 Mar 2026 03:00:13 -0800 (PST)
-Message-ID: <69ac053d.050a0220.24143c.6b14@mx.google.com>
-X-Google-Original-Message-ID: <aawFO9rx_7g3C7eg@Ansuel-XPS.>
-Date: Sat, 7 Mar 2026 12:00:11 +0100
-From: Christian Marangi <ansuelsmth@gmail.com>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Lorenzo Bianconi <lorenzo@kernel.org>,
-	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v6 0/4] airoha: an7581: USB support
-References: <20260306190156.22297-1-ansuelsmth@gmail.com>
- <20260307-poetic-salmon-of-order-33a4d0@quoll>
+	id 1vyuff-00000005MfZ-3bJf;
+	Sat, 07 Mar 2026 16:38:31 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id CDEDE6001D;
+	Sat,  7 Mar 2026 16:38:30 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D778DC19422;
+	Sat,  7 Mar 2026 16:38:27 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1772901510;
+	bh=GgYhTuG+U8qCqyt6YR2UooulYaCofpgoCdJojn6OTyw=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=psJvfMHGSMXtWgS0VhCZODcnp4mxeQaGAs9tLBpFKEFsKCBgD6u5XdpU83xn560kh
+	 nwdpdup66SBJ1q4cD7uwl0avIdM7LMof4RGSKv17t0wW8ZmJynq1MO6Qh7Nmq69b42
+	 CQrj9U4wKZ2+yvkvMkQqJdy6gHDxW69Sk/LFUik95UBO1GloeCWeCH10jW3ohfOuHf
+	 SAWhHUEd0H/VB/f+vC0XsHnJ9M/5vyK8NlUnPBJKwr6pi0arT8EDaBYI1CnUxSpJwH
+	 9FOYhyv0m9LUWicS1XYaXlxOpDYy/oA58VFRHuihiRna2uBq/bN3QjmGbG0yO0wHu7
+	 6t9glmRfDTiNg==
+Message-ID: <abbf81f7-556b-4fb0-9fb7-41f4c730f1d6@kernel.org>
+Date: Sat, 7 Mar 2026 17:38:25 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260307-poetic-salmon-of-order-33a4d0@quoll>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260307_030016_003489_45EB5744 
-X-CRM114-Status: GOOD (  23.65  )
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v6 4/4] phy: airoha: Add support for Airoha AN7581 USB PHY
+To: Christian Marangi <ansuelsmth@gmail.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
+ <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Lorenzo Bianconi <lorenzo@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <20260306190156.22297-1-ansuelsmth@gmail.com>
+ <20260306190156.22297-5-ansuelsmth@gmail.com>
+ <20260307-otter-of-imminent-merriment-d3475d@quoll>
+ <69abffe6.050a0220.18164c.58d6@mx.google.com>
+ <52123051-0d2d-42b2-b677-99a5de0f2c4e@kernel.org>
+ <69ac04a6.5d0a0220.2969f9.9d81@mx.google.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 a/A=
+In-Reply-To: <69ac04a6.5d0a0220.2969f9.9d81@mx.google.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,67 +121,65 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, Mar 07, 2026 at 11:28:29AM +0100, Krzysztof Kozlowski wrote:
-> On Fri, Mar 06, 2026 at 08:01:49PM +0100, Christian Marangi wrote:
-> > This is a major rework of the old v2 series.
-> > 
-> > The SoC always support USB 2.0 but for USB 3.0 it needs additional
-> > configuration for the Serdes port. Such port can be either configured
-> > for USB usage or for PCIe lines or HSGMII and these are configured
-> > in the SCU space.
-> > 
-> > The previous implementation of a dedicated SSR driver was too
-> > complex and fragile for the simple task of configuring a register
-> > hence it was dropped and the handling is entirely in the PHY driver.
-> > 
-> > Everything was reducted to the dt-bindings to describe the Serdes line.
-> > 
-> > Also the property for the PHY are renamed to a more suitable name and
-> > everything is now mandatory to simplify the implementation.
-> > (the PHY are always present and active on the SoC)
-> > 
-> > Also other unrelated patch are dropped from this series.
-> > 
-> > Changes v6:
-> > - Fix kernel test robot (sparse warning)
-> > 
-> > Changes v5:
-> > - Add Ack and Review tag from Connor
-> > - Implement Ethernet support in the USB driver
-> >   (testing support for this Serdes on a special reference board)
-> > - Use an7581 prefix for USB PHY driver
-> >   Link: https://lore.kernel.org/all/20251107160251.2307088-1-ansuelsmth@gmail.com/
-> > 
-> > Changes v4:
-> > - Rename PCIe and USB PHY to AN7581
-> > - Drop airoha,scu (handled directly in driver)
-> > - Drop dt-bindings for monitor clock in favor of raw values
-> > - Better describe the usage of airoha,usb3-serdes
-> > - Simplify values of dt-bindings SSR SERDES
-> >   Link: https://lore.kernel.org/all/20251107160251.2307088-1-ansuelsmth@gmail.com/
+On 07/03/2026 11:57, Christian Marangi wrote:
+> On Sat, Mar 07, 2026 at 11:40:48AM +0100, Krzysztof Kozlowski wrote:
+>> On 07/03/2026 11:37, Christian Marangi wrote:
+>>>>> +
+>>>>> +		if (phy_type == PHY_TYPE_USB3) {
+>>>>> +			ret = of_property_read_u32(dev->of_node, "airoha,usb3-serdes",
+>>>>> +						   &priv->serdes_port);
+>>>>> +			if (ret)
+>>>>> +				return dev_err_probe(dev, ret, "missing serdes line for USB 3.0\n");
+>>>>> +
+>>>>> +			priv->scu = syscon_regmap_lookup_by_compatible("airoha,en7581-scu");
+>>>>
+>>>> Nope, you need phandle to express proper device links.
+>>>>
+>>>> Don't sprinkle compatible lookups for new code which does not need to
+>>>> keep things backwards compatible. How do you manage device links
+>>>> without phandle? How do you manage device probe ordering?
+>>>>
+>>>
+>>> Hi,
+>>>
+>>> the phandle to SCU was present in old implementation but later dropped as it was
+>>> said that it wouldn't describe the HW.
+>>
+>>
+>> I went through v3 review and I did not find such said arguments. Can you
+>> point me to it?
+>>
+>>
 > 
-> Why is this the same link as v5?
->
-
-Sorry a copy paste error. Here [0]
-
-[0] https://lore.kernel.org/all/20260304005843.2680-1-ansuelsmth@gmail.com/
- 
-> > 
-> > Changes v3:
-> > - Drop clk changes
-> > - Drop SSR driver
-> > - Rename property in Documentation
-> > - Simplify PHY handling
-> > - Move SSR handling inside the PHY driver
-> >   Link: https://lore.kernel.org/all/20251029173713.7670-1-ansuelsmth@gmail.com/
+> Here was v2 [0] that was clock + USB PHY. (there were clock stuff as the SCU
+> implementation was different) The link wasn't added in the changelog as it's
+> quite different than this current series.
 > 
-> Best regards,
-> Krzysztof
+> In patch 7 Rob pointed out that serdes-port + scu was a bit unusual.
 > 
+> Then the implementation changed in favor of a more simple one where it's the PHY
+> that configure everything and in this new version the usage of the SCU phandle
+> is really to just get the regmap and modify the single bit to select the PHY
+> path/mode for USB 3.0. (it's mainly the reason the SCU is referenced directly
+> with a compatible instead of a phandle, in the previous implementation we used a
+> function exposed by the SCU SSR, while in this it's just a regmap that can
+> PROBE_DEFER)
+> 
+> Rob suggested an additional layer (a PHY) to handle this but I don't feel it
+> would actually describe the HW this way as that bit doesn't modify another PHY
+> but it just toggle the mode to the related USB 3.0 PHY.
+> 
+> This is really another case of not-so-organized register mapping on the SoC.
+> 
+> [0] https://lore.kernel.org/all/20250320130054.4804-1-ansuelsmth@gmail.com/
 
--- 
-	Ansuel
+
+That's the cover letter. I guess you did not implement Rob's feedback,
+either. This is either phy (for phy) as Rob asked or scu phandle.
+Removing scu phandle and not implementing phy is not what Rob proposed.
+
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
