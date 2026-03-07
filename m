@@ -4,108 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 30CC5FC9EF1
-	for <linux-phy@archiver.kernel.org>; Sat,  7 Mar 2026 10:40:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 16FCFFC9EF8
+	for <linux-phy@archiver.kernel.org>; Sat,  7 Mar 2026 10:57:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Subject:Cc:To:From:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=84N6l6q6e2TVe0eQDqBibw0bxBo0KYROXnhIjmqP/QY=; b=wXGJkEYqUyUcgq
-	73S+ZHt28p6vbTuAPNG5ZjVw9DQvxiAleDxSQ5f7ORH+D7t7jNE9HMWmHZoi2bP3Re1vlkaI4J8vL
-	GoL2klkSS+yEu0Neb2cDYXevsJsP/GvvVXs5LSlitQXXz5mPuT5Nhb1bNuNDg+hgbjYDc3WZkAoNc
-	q8/aEXbR11E3R0cWBlmxqGH66HN8IUxfAftmaiLX4G2+OaN/jyCT2zKklILP3aqD8baGfatArxV8d
-	qoYimXDYWKAMdinaSc2HLZOIQI/dwXT7eQwYUQLPjIiMJkl0zqaUIuhd+DplsHYmWSWCd5tvEBb/A
-	Uyr5UebmjXWW3EEfPgvw==;
+	List-Owner; bh=IC5MrteNeNHJzsITO63eDwdWMUolloANJLUCOyrs7cI=; b=o6yCv0Kb390p+5
+	6D/4RuQX3M/XAYXE8WLEBWiChlxwpax5F5AECLkmru8vlLhY32HCTrJCSy4CZP4/He1T6FlRo24vO
+	4I19CRoyScmnFRxz6QLBbtIJF413xaALFZ5gl/Yvy5Fi1/XLhTncu5lLlwGhQEDltfe28j0X9OXUT
+	H/v7f37g5QpbwAdhSiaSjOvScvwSgwLZGZaEPZa9ciVbHllc0zu/awz9amKGvmb/Bq5MOFWFKnDDP
+	i3AgLIiWTarMZGCViI4kzf0z9r9xt9BmZe6g6MWD9A0rXJlf7CoEmN11cXC+MZo3E0WuWzNPv8aVX
+	wgoT5h62wmfv6IUrzrxQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vyp5c-000000056ly-3vCd;
-	Sat, 07 Mar 2026 10:40:56 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1vypLv-000000057ov-2qZ6;
+	Sat, 07 Mar 2026 10:57:47 +0000
+Received: from mail-wr1-x42c.google.com ([2a00:1450:4864:20::42c])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vyp5Z-000000056lH-23Gq;
-	Sat, 07 Mar 2026 10:40:54 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 6354A415F2;
-	Sat,  7 Mar 2026 10:40:52 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DA852C19422;
-	Sat,  7 Mar 2026 10:40:49 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1772880052;
-	bh=Ep2L6B/DX+LoskPz8R1G0RGyHKDPRSfywYdEWDEnoPE=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=WYItZSzqAUC0n1dzmKdmC0ZgpvwpBt5Lj9mzFJ8B75qU3mIOodwhfxnzWq+/+ohtM
-	 GM5XtMNWnsMLKsfzMRLQw2rGW2J75t581Y6jeXWngoOb83STtPcGf+RN/NwwTgVoip
-	 liDyp5gOcbG8RC+Bz5TftyYHCe+7fPMYIf6xpJ7dNtt/nuEvrEsR9Sac8BoK+AcyUR
-	 4RFRTJ8OUSY87tGMEB/OqXmJZzF8Du+Wivnw3eF2zmZeK+frIeHxaV3NjOXbVcbE6B
-	 W9RzFQoAEryE+kVACh5Mz9gra/kZUOIrcvkIUXoEPWgKFqPrgWEMkV076Fnrp2QdWf
-	 js2ux5I7wvEHg==
-Message-ID: <52123051-0d2d-42b2-b677-99a5de0f2c4e@kernel.org>
-Date: Sat, 7 Mar 2026 11:40:48 +0100
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
+	id 1vypLt-000000057ng-1lvq
+	for linux-phy@lists.infradead.org;
+	Sat, 07 Mar 2026 10:57:46 +0000
+Received: by mail-wr1-x42c.google.com with SMTP id ffacd0b85a97d-439ac15f35fso6645455f8f.0
+        for <linux-phy@lists.infradead.org>; Sat, 07 Mar 2026 02:57:44 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1772881063; x=1773485863; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:subject:cc
+         :to:from:date:message-id:from:to:cc:subject:date:message-id:reply-to;
+        bh=V94QkQoEyTd6cBgukGsABnXYIA0vAI5uUZxButFAf2M=;
+        b=ejrrNjoxbUUbiX55GH4gZ3XUnSkwu2YmjRBwoweo/0lmcrp1G9kGNIeiXVrQyk+7h/
+         xb5vtspU/sMyO0V1qaf7lZ8CqBcfEWMHwDqzQi2HVes614xWhNtiMOi1YkP0ElvD7o+y
+         iPIpeAGlUMUslV4TYKveYu5/E0RHw9G81BVU8r0IbnB31Sj/QDNn+REXSeqEfHAKONul
+         pbDlQbSuURNnMpjYnCAHAdTva8mIpyl066+XhLYXoPPJBhymqIesc3g/ugQ/qM5xsFc0
+         49dYm2Nbxsb288zkiipR7uUlmtUJcR9VKXmRIeKl/MT1CGc8fMAXRzOwfSjoWi+29e8s
+         OP4g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1772881063; x=1773485863;
+        h=in-reply-to:content-disposition:mime-version:references:subject:cc
+         :to:from:date:message-id:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=V94QkQoEyTd6cBgukGsABnXYIA0vAI5uUZxButFAf2M=;
+        b=rCeYI7iahVrmXkD3vCqa3+WzMxBVIiVjuPCbkjpWI2Y9Pk1cVlJKUmwKXhc3L93uDC
+         LyBN0by0E4ef4+8TOvBIDhZGswZ+xF2isF8Fv6Nn6LPWBmtKQra/ma5ak5sSMR7qwKLq
+         yTSqvQ+PKhkUg23tkV6FFQ9B1K7pa8D5qvyHAvFxRoKdDP5Sk0gXmpr0De3KnhzB2Zax
+         6yN5+FG3fAm+TotLK232AsTgkmv7ISbpPka9K0/Q6Ip/8ao0Ysu0XHzETl3fbLGCZ4US
+         jSIFWjAT74ynAPr7q1tHQZn70jtSZHzLAL0YRBZMD2zoOI9LcoV9LLcPce3Gf3RTWyY2
+         By+w==
+X-Forwarded-Encrypted: i=1; AJvYcCVobD4+193VhSzS8a+WXyVii6wsr4YTRogMbKOpZlNcecvUOzDtXvYJPLQQOLCRneBMO3blvJoYOI0=@lists.infradead.org
+X-Gm-Message-State: AOJu0YySkZs/C7xNGzk6cExs8mCE344EYcKa+MjRZagcUSUra8ATsP5Z
+	ST6sMRB86QLIqDyKQbnPmDP4swke4ehjsUV0mtl/4NKD7qf9ZjYRk01U
+X-Gm-Gg: ATEYQzzw5b0kAhMBTaOapjccKtwYgjhgwyFqdEJzwxIgtI/rGInVdZPvpokEOfYc9Vq
+	eq1TUSmSiaXXHPibKZSU6CUA618gOYIVvj5Jh0huKPg5UZ3c+cTd+FcsglgHUdY62ufWkBpFksk
+	QMaY1KsEFxkqn0juOz1zvNkOAxLOwF0aJuTVYaI0IGwaY9n7EO8eYj0+tpTziD5UcNlxbrXhY6q
+	Ood1IMt0U8dNQhDOJ5etvUqQfVUuzxYTTrkUUifa9nsq8tL96uWx1C/UM3FgmDvfASdvI1IvITL
+	aGXdP5Xa3uiYFKR7yf7I68ofH0+yS+cYxvzMzpV8sQ+VJy9rLLCwxRv6Ao7myGNxjH+mmhUPV/B
+	M/5V4vBpyBXYQR6yYZA51F6H0AHuBT/p9ghuqXJA0HjIEbd36MS60MHz6sltShfjv43yL8VXWrW
+	zNQRXpREtz0sZoWDwJgNFmLOQkeExhFFPVM71EBWsHwXuzHvImitWv24go2bZ2whOH
+X-Received: by 2002:a05:6000:1447:b0:439:beba:300 with SMTP id ffacd0b85a97d-439da31e274mr9511165f8f.1.1772881063378;
+        Sat, 07 Mar 2026 02:57:43 -0800 (PST)
+Received: from Ansuel-XPS. (93-34-88-122.ip49.fastwebnet.it. [93.34.88.122])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-439dad8ec97sm11439826f8f.5.2026.03.07.02.57.42
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 07 Mar 2026 02:57:42 -0800 (PST)
+Message-ID: <69ac04a6.5d0a0220.2969f9.9d81@mx.google.com>
+X-Google-Original-Message-ID: <aawEpAhvHEz_ocj3@Ansuel-XPS.>
+Date: Sat, 7 Mar 2026 11:57:40 +0100
+From: Christian Marangi <ansuelsmth@gmail.com>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Lorenzo Bianconi <lorenzo@kernel.org>,
+	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
 Subject: Re: [PATCH v6 4/4] phy: airoha: Add support for Airoha AN7581 USB PHY
-To: Christian Marangi <ansuelsmth@gmail.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
- <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Lorenzo Bianconi <lorenzo@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
 References: <20260306190156.22297-1-ansuelsmth@gmail.com>
  <20260306190156.22297-5-ansuelsmth@gmail.com>
  <20260307-otter-of-imminent-merriment-d3475d@quoll>
  <69abffe6.050a0220.18164c.58d6@mx.google.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
- cFgcqTTuNHjAvxtUG8pQgGTHAObYs6xeYJtjUH0ZX6ndJ33FJYf5V3yXqqjcZ30FgHzJCFUu
- JMp7PSyMPzpUXfU12yfcRYVEMQrmplNZssmYhiTeVicuOOypWugZKVLGNm0IweVCaZ/DJDIH
- gNbpvVwjcKYrx85m9cBVEBUGaQP6AT7qlVCkrf50v8bofSIyVa2xmubbAwwFA1oxoOusjPIE
- J3iadrwpFvsZjF5uHAKS+7wHLoW9hVzOnLbX6ajk5Hf8Pb1m+VH/E8bPBNNYKkfTtypTDUCj
- NYcd27tjnXfG+SDs/EXNUAIRefCyvaRG7oRYF3Ec+2RgQDRnmmjCjoQNbFrJvJkFHlPeHaeS
- BosGY+XWKydnmsfY7SSnjAzLUGAFhLd/XDVpb1Een2XucPpKvt9ORF+48gy12FA5GduRLhQU
- vK4tU7ojoem/G23PcowM1CwPurC8sAVsQb9KmwTGh7rVz3ks3w/zfGBy3+WmLg++C2Wct6nM
- Pd8/6CBVjEWqD06/RjI2AnjIq5fSEH/BIfXXfC68nMp9BZoy3So4ZsbOlBmtAPvMYX6U8VwD
- TNeBxJu5Ex0Izf1NV9CzC3nNaFUYOY8KfN01X5SExAoVTr09ewARAQABzSVLcnp5c3p0b2Yg
- S296bG93c2tpIDxrcnprQGtlcm5lbC5vcmc+wsGVBBMBCgA/AhsDBgsJCAcDAgYVCAIJCgsE
- FgIDAQIeAQIXgBYhBJvQfg4MUfjVlne3VBuTQ307QWKbBQJoF1BKBQkWlnSaAAoJEBuTQ307
- QWKbHukP/3t4tRp/bvDnxJfmNdNVn0gv9ep3L39IntPalBFwRKytqeQkzAju0whYWg+R/rwp
- +r2I1Fzwt7+PTjsnMFlh1AZxGDmP5MFkzVsMnfX1lGiXhYSOMP97XL6R1QSXxaWOpGNCDaUl
- ajorB0lJDcC0q3xAdwzRConxYVhlgmTrRiD8oLlSCD5baEAt5Zw17UTNDnDGmZQKR0fqLpWy
- 786Lm5OScb7DjEgcA2PRm17st4UQ1kF0rQHokVaotxRM74PPDB8bCsunlghJl1DRK9s1aSuN
- hL1Pv9VD8b4dFNvCo7b4hfAANPU67W40AaaGZ3UAfmw+1MYyo4QuAZGKzaP2ukbdCD/DYnqi
- tJy88XqWtyb4UQWKNoQqGKzlYXdKsldYqrLHGoMvj1UN9XcRtXHST/IaLn72o7j7/h/Ac5EL
- 8lSUVIG4TYn59NyxxAXa07Wi6zjVL1U11fTnFmE29ALYQEXKBI3KUO1A3p4sQWzU7uRmbuxn
- naUmm8RbpMcOfa9JjlXCLmQ5IP7Rr5tYZUCkZz08LIfF8UMXwH7OOEX87Y++EkAB+pzKZNNd
- hwoXulTAgjSy+OiaLtuCys9VdXLZ3Zy314azaCU3BoWgaMV0eAW/+gprWMXQM1lrlzvwlD/k
- whyy9wGf0AEPpLssLVt9VVxNjo6BIkt6d1pMg6mHsUEVzsFNBFVDXDQBEADNkrQYSREUL4D3
- Gws46JEoZ9HEQOKtkrwjrzlw/tCmqVzERRPvz2Xg8n7+HRCrgqnodIYoUh5WsU84N03KlLue
- MNsWLJBvBaubYN4JuJIdRr4dS4oyF1/fQAQPHh8Thpiz0SAZFx6iWKB7Qrz3OrGCjTPcW6ei
- OMheesVS5hxietSmlin+SilmIAPZHx7n242u6kdHOh+/SyLImKn/dh9RzatVpUKbv34eP1wA
- GldWsRxbf3WP9pFNObSzI/Bo3kA89Xx2rO2roC+Gq4LeHvo7ptzcLcrqaHUAcZ3CgFG88CnA
- 6z6lBZn0WyewEcPOPdcUB2Q7D/NiUY+HDiV99rAYPJztjeTrBSTnHeSBPb+qn5ZZGQwIdUW9
- YegxWKvXXHTwB5eMzo/RB6vffwqcnHDoe0q7VgzRRZJwpi6aMIXLfeWZ5Wrwaw2zldFuO4Dt
- 91pFzBSOIpeMtfgb/Pfe/a1WJ/GgaIRIBE+NUqckM+3zJHGmVPqJP/h2Iwv6nw8U+7Yyl6gU
- BLHFTg2hYnLFJI4Xjg+AX1hHFVKmvl3VBHIsBv0oDcsQWXqY+NaFahT0lRPjYtrTa1v3tem/
- JoFzZ4B0p27K+qQCF2R96hVvuEyjzBmdq2esyE6zIqftdo4MOJho8uctOiWbwNNq2U9pPWmu
- 4vXVFBYIGmpyNPYzRm0QPwARAQABwsF8BBgBCgAmAhsMFiEEm9B+DgxR+NWWd7dUG5NDfTtB
- YpsFAmgXUF8FCRaWWyoACgkQG5NDfTtBYptO0w//dlXJs5/42hAXKsk+PDg3wyEFb4NpyA1v
- qmx7SfAzk9Hf6lWwU1O6AbqNMbh6PjEwadKUk1m04S7EjdQLsj/MBSgoQtCT3MDmWUUtHZd5
- RYIPnPq3WVB47GtuO6/u375tsxhtf7vt95QSYJwCB+ZUgo4T+FV4hquZ4AsRkbgavtIzQisg
- Dgv76tnEv3YHV8Jn9mi/Bu0FURF+5kpdMfgo1sq6RXNQ//TVf8yFgRtTUdXxW/qHjlYURrm2
- H4kutobVEIxiyu6m05q3e9eZB/TaMMNVORx+1kM3j7f0rwtEYUFzY1ygQfpcMDPl7pRYoJjB
- dSsm0ZuzDaCwaxg2t8hqQJBzJCezTOIkjHUsWAK+tEbU4Z4SnNpCyM3fBqsgYdJxjyC/tWVT
- AQ18NRLtPw7tK1rdcwCl0GFQHwSwk5pDpz1NH40e6lU+NcXSeiqkDDRkHlftKPV/dV+lQXiu
- jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
- zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
- XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <69abffe6.050a0220.18164c.58d6@mx.google.com>
+ <52123051-0d2d-42b2-b677-99a5de0f2c4e@kernel.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <52123051-0d2d-42b2-b677-99a5de0f2c4e@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260307_024053_820801_15FB092E 
-X-CRM114-Status: GOOD (  13.15  )
+X-CRM114-CacheID: sfid-20260307_025745_479512_35734713 
+X-CRM114-Status: GOOD (  24.48  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -122,44 +109,71 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 07/03/2026 11:37, Christian Marangi wrote:
->>> +
->>> +		if (phy_type == PHY_TYPE_USB3) {
->>> +			ret = of_property_read_u32(dev->of_node, "airoha,usb3-serdes",
->>> +						   &priv->serdes_port);
->>> +			if (ret)
->>> +				return dev_err_probe(dev, ret, "missing serdes line for USB 3.0\n");
->>> +
->>> +			priv->scu = syscon_regmap_lookup_by_compatible("airoha,en7581-scu");
->>
->> Nope, you need phandle to express proper device links.
->>
->> Don't sprinkle compatible lookups for new code which does not need to
->> keep things backwards compatible. How do you manage device links
->> without phandle? How do you manage device probe ordering?
->>
+On Sat, Mar 07, 2026 at 11:40:48AM +0100, Krzysztof Kozlowski wrote:
+> On 07/03/2026 11:37, Christian Marangi wrote:
+> >>> +
+> >>> +		if (phy_type == PHY_TYPE_USB3) {
+> >>> +			ret = of_property_read_u32(dev->of_node, "airoha,usb3-serdes",
+> >>> +						   &priv->serdes_port);
+> >>> +			if (ret)
+> >>> +				return dev_err_probe(dev, ret, "missing serdes line for USB 3.0\n");
+> >>> +
+> >>> +			priv->scu = syscon_regmap_lookup_by_compatible("airoha,en7581-scu");
+> >>
+> >> Nope, you need phandle to express proper device links.
+> >>
+> >> Don't sprinkle compatible lookups for new code which does not need to
+> >> keep things backwards compatible. How do you manage device links
+> >> without phandle? How do you manage device probe ordering?
+> >>
+> > 
+> > Hi,
+> > 
+> > the phandle to SCU was present in old implementation but later dropped as it was
+> > said that it wouldn't describe the HW.
 > 
-> Hi,
 > 
-> the phandle to SCU was present in old implementation but later dropped as it was
-> said that it wouldn't describe the HW.
-
-
-I went through v3 review and I did not find such said arguments. Can you
-point me to it?
-
-
+> I went through v3 review and I did not find such said arguments. Can you
+> point me to it?
 > 
-> I will readd as airoha,scu. Is it ok for you?
-> 
-> (I actually prefer phandle than hardcoding compatible as it makes things more
-> descriptive and prevent all kind of problem in the future, so I'm more than
-> happy than using that)
-> 
+>
 
+Here was v2 [0] that was clock + USB PHY. (there were clock stuff as the SCU
+implementation was different) The link wasn't added in the changelog as it's
+quite different than this current series.
 
-Best regards,
-Krzysztof
+In patch 7 Rob pointed out that serdes-port + scu was a bit unusual.
+
+Then the implementation changed in favor of a more simple one where it's the PHY
+that configure everything and in this new version the usage of the SCU phandle
+is really to just get the regmap and modify the single bit to select the PHY
+path/mode for USB 3.0. (it's mainly the reason the SCU is referenced directly
+with a compatible instead of a phandle, in the previous implementation we used a
+function exposed by the SCU SSR, while in this it's just a regmap that can
+PROBE_DEFER)
+
+Rob suggested an additional layer (a PHY) to handle this but I don't feel it
+would actually describe the HW this way as that bit doesn't modify another PHY
+but it just toggle the mode to the related USB 3.0 PHY.
+
+This is really another case of not-so-organized register mapping on the SoC.
+
+[0] https://lore.kernel.org/all/20250320130054.4804-1-ansuelsmth@gmail.com/
+ 
+> > 
+> > I will readd as airoha,scu. Is it ok for you?
+> > 
+> > (I actually prefer phandle than hardcoding compatible as it makes things more
+> > descriptive and prevent all kind of problem in the future, so I'm more than
+> > happy than using that)
+> > 
+> 
+> 
+> Best regards,
+> Krzysztof
+
+-- 
+	Ansuel
 
 -- 
 linux-phy mailing list
