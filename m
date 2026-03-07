@@ -4,90 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 94784FCC07D
-	for <linux-phy@archiver.kernel.org>; Fri,  6 Mar 2026 22:25:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96F7FFC9EE4
+	for <linux-phy@archiver.kernel.org>; Sat,  7 Mar 2026 10:28:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ki+jhxsdgiQU+asm7K7A5RJfYYjUm+fpzRZ7elHbNsI=; b=tquuvURzCbWjMb
-	Eqkdml+KNkHqtZNxexy7V6qTG04HhDvdBDAC2G45vGpeSspZDBt16DrNi4LUByQ1qEDn5opZnja4g
-	HMDypROgRikG7iN1Okt7CuTiN1pby9mevKauJMwc3PZ2MJ8CuF4DPdFa0s6cm0zwwEc9wL10yB0uq
-	7XOfnMQVbpshxe9mKD9qScRoiZwVmozVbizjADUYBk8M4RUt0TE4MLo2Lzhy9hGsh/WLwjjMHhwYs
-	yfrPU12iaOZQKfHudgoPt8Y6uzY9JgdPVCDQP5ddrbn0X08oFoMBJ+nqi2I/GnyJOYeUAuIdDBAeC
-	6JDmku99+gJRPUxTVh8Q==;
+	List-Owner; bh=bVafOz73sl4YpwyaQKYsHrNKoGzxGZ5zWYlj7gZvinQ=; b=xDLAXOwoG8aXmw
+	dQHmX7hW/3AHIh+G1cXmrMi7sU32NolUMAMerqlR0V7QL9cr9rGEkwzI0Aj3TNmnh3H4MnaiAnwKM
+	q8sM7mO4G3ylPEj9poP0qc7UmLGKKqiwzTMYTmEC9ECWZWnI/l0niiOcisOpWqrjnnULB9pb0E7Mc
+	baclIdC5cri6BATx19lgbhekwXh00b07++mXwF3Jk4w8XxnRi4R1fD5YJfrP36KEtUHZlXfaUE5aa
+	Kdd/I+khdmtpq1EP3+DrKkS6aqdZJne10WOM0y7D43baHzTByEUunWeCE744MsXQYKMySUsOlQo5b
+	ED/0GQSumCYDpa8weWpQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vydbm-00000004aSq-1RAu;
-	Fri, 06 Mar 2026 22:25:22 +0000
-Received: from mail-pg1-x533.google.com ([2607:f8b0:4864:20::533])
+	id 1vyote-000000055sl-1MXh;
+	Sat, 07 Mar 2026 10:28:34 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vydbj-00000004aQJ-38DT
-	for linux-phy@lists.infradead.org;
-	Fri, 06 Mar 2026 22:25:20 +0000
-Received: by mail-pg1-x533.google.com with SMTP id 41be03b00d2f7-c6e3e4e7388so3892241a12.1
-        for <linux-phy@lists.infradead.org>; Fri, 06 Mar 2026 14:25:19 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1772835918; x=1773440718; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=BA9nb83nCkXGkJ9IKyGDJ21XOXhsf5BHbt5T5gtrqN0=;
-        b=Ly8zLU1V4Rm8KgDsR4ggDCxck3hSO2LBZSIjVVZIBTrvfE4jg0wjpVOG280vgCXosn
-         r4RTcCyvUKta/37JXcA2/gLkQEEIcifvdL+Beaj2I+pkZtDKwAGOr6U4McSoCv4WXB6t
-         HPgKnQogh5MtcytZebmwfIXwVtPdnYmhtcOgWvwWiLvwmmpVAub8hVw9MYRk419ACs7M
-         l3Rhtq5E9TSFJH54HIu1t3YWg2oPLZJiGenIjjrZemdb/v5WiFv64btZXMz3Vm58vbGd
-         NK1tF+Gwqu5g4ktQXkAKXKBuQZ20cw2Wtz3MMdr6sOBRB+VoZAYf+RhYIi5xNHd9iQfR
-         TubQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1772835918; x=1773440718;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=BA9nb83nCkXGkJ9IKyGDJ21XOXhsf5BHbt5T5gtrqN0=;
-        b=JUqEJec/sSemQ86VZBRqkl6viDKnTsjClrzONEthGdW7TEf70s0oJjgEslAaEW1IVe
-         lb3fWoer5U+MHJsFnH70jyw4gs+mHOK/k/deJBE1GPltTjwewkI/qHqXN+JE1dN2Az/Z
-         3m0mPty52qRN1Df1jvjvTJ0Ks/sTTwV92013WuFBv0xlUAeDwFgiMPEmwNWAgjDDRqPi
-         sp+y8H7oU3nq2gHbu5h+QAXFwARnmyWndXRxZPW5VnVQnehXPwPe8jTpkg3bsY+Zkodr
-         Y8LmfsVE2C/20sH3O8mOE+hCO8rIQMvdcNQJrhUhMSFhVpBbWEPhwdBiiIJDxYbsyDun
-         83Uw==
-X-Gm-Message-State: AOJu0Ywn6dhX0sYCaMjCeG7XzfZV3/o+nGisiaWbJ7cosXRH2f2dmp3d
-	C1+t0j+0FD1+l2INzTmHHUs48wyv+1taHyGFUhYZzJ2g87xc9sbdjduxtKDXdBePdZ0=
-X-Gm-Gg: ATEYQzwa8IghB7oIqgQ2lUAx0A876AF6yeKpNo6KVM/RiSl1kphzAKJizJ32PM8Qc5l
-	Vix3efX1PQJ/zqPx6RUaIOpjPSdGTetHQ26aC4CtuCtsu09Agq66aLUfBC/kZ2yqNwMMnin7UyD
-	/nFb304ipyPib4+QCX6kbSTYHlS6pPoNoaDNZ5VO5Nx/g0HQBmcZzDeBpmGUdAt25qMFW2AxBIl
-	/mo1BGx2YarjNRJa/FpJzdF70Y4JCAV1yciqnio4l3d56Zpcxs13iZVXQCTVytKdQhqMuIMOtcu
-	iHzhxqo1E7qLZsq+kwT8GUIYobgjJoy12ijo/q6p1mObiIlAovHSMIejLka3kt4aAe9oeARY+E9
-	2VOzCDHhCcaspdl4AIm2F830q/Uij1x8cn6wWUKNmZbR66miP+LEWozNNzwyFxQRmSSLOObxDZQ
-	7GEk3RtVjjPh7E1s+Z5ZzdL+p1U+undy4I44Pi6iOMCZVrok5YCS/M4do=
-X-Received: by 2002:a17:902:e790:b0:2ae:5aed:1f4d with SMTP id d9443c01a7336-2ae8245cd73mr32902025ad.42.1772835918443;
-        Fri, 06 Mar 2026 14:25:18 -0800 (PST)
-Received: from ryzen ([2601:644:8000:56f5::8bd])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2ae83e7c58asm32516605ad.25.2026.03.06.14.25.17
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 06 Mar 2026 14:25:17 -0800 (PST)
-From: Rosen Penev <rosenp@gmail.com>
-To: linux-phy@lists.infradead.org
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Patrice Chotard <patrice.chotard@foss.st.com>,
-	Kees Cook <kees@kernel.org>,
-	"Gustavo A. R. Silva" <gustavoars@kernel.org>,
-	linux-kernel@vger.kernel.org (open list),
-	linux-arm-kernel@lists.infradead.org (moderated list:ARM/STI ARCHITECTURE),
-	linux-hardening@vger.kernel.org (open list:KERNEL HARDENING (not covered by other areas):Keyword:\b__counted_by(_le|_be)?\b)
-Subject: [PATCHv2 2/2] phy: miphy28lp: kzalloc + kcalloc to single kzalloc
-Date: Fri,  6 Mar 2026 14:24:57 -0800
-Message-ID: <20260306222457.8400-3-rosenp@gmail.com>
-X-Mailer: git-send-email 2.53.0
-In-Reply-To: <20260306222457.8400-1-rosenp@gmail.com>
-References: <20260306222457.8400-1-rosenp@gmail.com>
+	id 1vyotc-000000055sY-3r3c;
+	Sat, 07 Mar 2026 10:28:32 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 0C9F460053;
+	Sat,  7 Mar 2026 10:28:32 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2CF26C19422;
+	Sat,  7 Mar 2026 10:28:30 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1772879311;
+	bh=aL7xWU2QFVQcszBZ0W6WzvMqzl2GSm9ttovms5QsrHA=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=uC54ZokK0oi4qdp5kBriDIZmn+01uJywrf38JJure2NLqyIaXDrb926rMFwO+CxpL
+	 CdNVnDzWiA61aqVLf/eiQEG9g887D/6zJFbEr8aZuN0ENsVXocGUiUocCoD6ue9w5H
+	 pFmpdTguSu5Ldt2bMs03kXnj3MqD0XTSxFrZLPVne0lUSqW7tQKkJcB4q12xsCsyHG
+	 YRI9lG4a0x2M7YOLJacLGldEcvQJ2YVvRtP48kPzWaFN7qQMJWIbdMSAMYM3KptkZg
+	 uXmb5xruv7cU5uYhSNxsOm0N05EpgvyQsVhqN3NuVUuteNEQA8Cg8cJ2C1KApnNhjv
+	 3xYAW1RC4M/+g==
+Date: Sat, 7 Mar 2026 11:28:29 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Christian Marangi <ansuelsmth@gmail.com>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Lorenzo Bianconi <lorenzo@kernel.org>, linux-arm-kernel@lists.infradead.org, 
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v6 0/4] airoha: an7581: USB support
+Message-ID: <20260307-poetic-salmon-of-order-33a4d0@quoll>
+References: <20260306190156.22297-1-ansuelsmth@gmail.com>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260306_142519_783604_5946DEB0 
-X-CRM114-Status: GOOD (  10.32  )
+Content-Disposition: inline
+In-Reply-To: <20260306190156.22297-1-ansuelsmth@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,52 +71,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Use flex array to simplify allocation.
+On Fri, Mar 06, 2026 at 08:01:49PM +0100, Christian Marangi wrote:
+> This is a major rework of the old v2 series.
+> 
+> The SoC always support USB 2.0 but for USB 3.0 it needs additional
+> configuration for the Serdes port. Such port can be either configured
+> for USB usage or for PCIe lines or HSGMII and these are configured
+> in the SCU space.
+> 
+> The previous implementation of a dedicated SSR driver was too
+> complex and fragile for the simple task of configuring a register
+> hence it was dropped and the handling is entirely in the PHY driver.
+> 
+> Everything was reducted to the dt-bindings to describe the Serdes line.
+> 
+> Also the property for the PHY are renamed to a more suitable name and
+> everything is now mandatory to simplify the implementation.
+> (the PHY are always present and active on the SoC)
+> 
+> Also other unrelated patch are dropped from this series.
+> 
+> Changes v6:
+> - Fix kernel test robot (sparse warning)
+> 
+> Changes v5:
+> - Add Ack and Review tag from Connor
+> - Implement Ethernet support in the USB driver
+>   (testing support for this Serdes on a special reference board)
+> - Use an7581 prefix for USB PHY driver
+>   Link: https://lore.kernel.org/all/20251107160251.2307088-1-ansuelsmth@gmail.com/
+> 
+> Changes v4:
+> - Rename PCIe and USB PHY to AN7581
+> - Drop airoha,scu (handled directly in driver)
+> - Drop dt-bindings for monitor clock in favor of raw values
+> - Better describe the usage of airoha,usb3-serdes
+> - Simplify values of dt-bindings SSR SERDES
+>   Link: https://lore.kernel.org/all/20251107160251.2307088-1-ansuelsmth@gmail.com/
 
-Allows using __counted_by for extra runtime analysis.
+Why is this the same link as v5?
 
-Signed-off-by: Rosen Penev <rosenp@gmail.com>
----
- drivers/phy/st/phy-miphy28lp.c | 12 +++++-------
- 1 file changed, 5 insertions(+), 7 deletions(-)
+> 
+> Changes v3:
+> - Drop clk changes
+> - Drop SSR driver
+> - Rename property in Documentation
+> - Simplify PHY handling
+> - Move SSR handling inside the PHY driver
+>   Link: https://lore.kernel.org/all/20251029173713.7670-1-ansuelsmth@gmail.com/
 
-diff --git a/drivers/phy/st/phy-miphy28lp.c b/drivers/phy/st/phy-miphy28lp.c
-index 43cef89af55e..c576fc5569fe 100644
---- a/drivers/phy/st/phy-miphy28lp.c
-+++ b/drivers/phy/st/phy-miphy28lp.c
-@@ -224,8 +224,8 @@ struct miphy28lp_dev {
- 	struct device *dev;
- 	struct regmap *regmap;
- 	struct mutex miphy_mutex;
--	struct miphy28lp_phy **phys;
- 	int nphys;
-+	struct miphy28lp_phy *phys[] __counted_by(nphys);
- };
-
- enum miphy_sata_gen { SATA_GEN1, SATA_GEN2, SATA_GEN3 };
-@@ -1168,16 +1168,14 @@ static int miphy28lp_probe(struct platform_device *pdev)
- 	struct phy_provider *provider;
- 	struct phy *phy;
- 	int ret, port = 0;
-+	size_t nphys;
-
--	miphy_dev = devm_kzalloc(&pdev->dev, sizeof(*miphy_dev), GFP_KERNEL);
-+	nphys = of_get_child_count(np);
-+	miphy_dev = devm_kzalloc(&pdev->dev, struct_size(miphy_dev, phys, nphys), GFP_KERNEL);
- 	if (!miphy_dev)
- 		return -ENOMEM;
-
--	miphy_dev->nphys = of_get_child_count(np);
--	miphy_dev->phys = devm_kcalloc(&pdev->dev, miphy_dev->nphys,
--				       sizeof(*miphy_dev->phys), GFP_KERNEL);
--	if (!miphy_dev->phys)
--		return -ENOMEM;
-+	miphy_dev->nphys = nphys;
-
- 	miphy_dev->regmap = syscon_regmap_lookup_by_phandle(np, "st,syscfg");
- 	if (IS_ERR(miphy_dev->regmap)) {
---
-2.53.0
+Best regards,
+Krzysztof
 
 
 -- 
