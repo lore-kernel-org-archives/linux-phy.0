@@ -4,202 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1958BF55103
-	for <linux-phy@archiver.kernel.org>; Sat,  7 Mar 2026 18:01:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ED2F4F55102
+	for <linux-phy@archiver.kernel.org>; Sat,  7 Mar 2026 18:48:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:References:Message-ID
-	:In-Reply-To:From:Subject:Cc:To:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Subject:Cc:To:From:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZUNNNN+xBW7U9LHYeHhkE+3IzMEyn/SgLQlCDqymbT8=; b=C5Myut5YB4tlu2
-	nNDZ/hQ8ezirpw1irKLeAD4gZ6ee1K4Qo7FfRczOfqIrzzdHmM/TfEvlMa+FW7HhQ/taR4hsgJOBr
-	KlWc1OSg6hglQvTAGNGo6CyVODYxX5JdU2NkNGTsgXcxuErbt1jGBMYZ0dOeDV1bq0p9ZFuCWQErf
-	vZMeYQdvAWwBREYhSxMe1E7j4OWEejrn8pi1W+XARvICJkPqmTN/HXAvwZD2suZ/g5c0n51WuKZb6
-	Svg1L06FwQ1qLVVxL2LPE4PQC8cYYLS9dp0kUiwDE/YSpa15btqyztOptaQndESHzBYVWMwzQ4osK
-	zhArsuOm91klpI1iv9OQ==;
+	List-Owner; bh=o+kZJ+nJK4Jl1V2oeBO01T40ybzfoZNDePzKiiREERk=; b=YmyvBULcsreJbq
+	5au9rTmlH8MI7GzocngpmrKXi27pP7tcVRQxe/2BgR64VkGSbufvhJH5xsjbw8+KSo1uL7GCWy+hg
+	8jvEMOjcYDpRTEtPuuaQNXUBah5sK9FA7ObysVVA0ZMZf0VJd+QePPyP4xUnmmg5hcyfhCBLDfuhF
+	Foz7AfO+L9v+hoH9ErO02+9NSBN9RxkqIR5bKCSAr/09928+16m5gHBqcBBl17b6TTGn8XNH/tYuM
+	SlWCoGzc9aKMox/Um5rBn/mpulkZinwplm27dxn5joyDACl+Y8W5PlDEA3EWtK23ImtgBvIpc2fEd
+	B2NZDf3wwx+jTOWETMsQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vyvyK-00000005Pjw-2W3X;
-	Sat, 07 Mar 2026 18:01:52 +0000
-Received: from mx0b-00069f02.pphosted.com ([205.220.177.32])
+	id 1vywh0-00000005R6u-2DbR;
+	Sat, 07 Mar 2026 18:48:02 +0000
+Received: from mail-wr1-x430.google.com ([2a00:1450:4864:20::430])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vyvyG-00000005Pj7-3lTi;
-	Sat, 07 Mar 2026 18:01:50 +0000
-Received: from pps.filterd (m0333520.ppops.net [127.0.0.1])
-	by mx0b-00069f02.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 627I1TgB3804501;
-	Sat, 7 Mar 2026 18:01:29 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com; h=cc
-	:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=corp-2025-04-25; bh=qO5EF5QzSDbMuBjjeR
-	lpfRn1O0QKLY2MN1L5/v+5ByI=; b=bFk0TZ3C7SXRtRP7uLjcScqS/BcJjl5aZ6
-	lKtt/zFtffIPAvF58ZsC/fwuDW5KY3hiHcnoAhHRQiQToG0h7u7KNiarbq4e8Ny4
-	TUj3oes4AeackOiG3qUTfBOBNJdsF7OiUZSuFtnEoLZKaN9bZX6dkEkKEEczOGV/
-	LavfLJP1Kk+cRu5L1HEPe4Y6BiR6Mifv6ENjm3uxdu4hSDoQ74wSxtA5OF0oMcQx
-	p3vR7SxJayRx//bzNfJQfyse13dysT2wrqhH1LGDfn0j6GWYLjSIYF6+Zs/vY0im
-	T5KMm0QFf4cHL81cN/SHHq349Q5ZGWRrzJE4TfDGSY9Kf/ohOY5Q==
-Received: from iadpaimrmta02.imrmtpd1.prodappiadaev1.oraclevcn.com (iadpaimrmta02.appoci.oracle.com [147.154.18.20])
-	by mx0b-00069f02.pphosted.com (PPS) with ESMTPS id 4crrx6g007-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
-	Sat, 07 Mar 2026 18:01:29 +0000 (GMT)
-Received: from pps.filterd (iadpaimrmta02.imrmtpd1.prodappiadaev1.oraclevcn.com [127.0.0.1])
-	by iadpaimrmta02.imrmtpd1.prodappiadaev1.oraclevcn.com (8.18.1.2/8.18.1.2) with ESMTP id 627HufcR012887;
-	Sat, 7 Mar 2026 18:01:28 GMT
-Received: from ch4pr04cu002.outbound.protection.outlook.com (mail-northcentralusazon11013032.outbound.protection.outlook.com [40.107.201.32])
-	by iadpaimrmta02.imrmtpd1.prodappiadaev1.oraclevcn.com (PPS) with ESMTPS id 4crafbrqur-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
-	Sat, 07 Mar 2026 18:01:28 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=QcMDX8RGz1050FpyGzdJd1RGNl1pXMju/EH9E/iTbgjPyJrXDlPwhvzAtTVYgVqy8sNDlu/wZ/XjCKxcFIWgdAV/Sny/WJxXoTmTdXgoyhkdHA9Lwn/lyFQeO0yL8xdfWRfTQdRDhUY2F4iOIcxGvCXS3CUeAUYjLLD3+DrC1Bj2Q4gD62HjyV6AWQH9FjA9QVZJnG5X0Zl+9KvmqCwpH2YOTFw31wixMnBN0yNH2x5dywWafsJPp5husalBW57fGYBXTOVM92Rn6EY2viUk7YfX4FcAg7YeCTOdfo6wycJoAiqrXy7wyBgSaOuaYYcEewJ/ORyAx9YAGPbdJw/hwQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=qO5EF5QzSDbMuBjjeRlpfRn1O0QKLY2MN1L5/v+5ByI=;
- b=iiyy+gigoVY63ni6SOblo3Cv00+layeCmix4PeNx0P6qe9+XQdTvX5ly+lE2oa17zkL1s/KTFl6OLit38xXvFTN7vdejX/tIA6myoCaeSBKdnX9DxpKvuwzZpeIj5Ipp/kAYsqLMSEDJ1xBGlH8rGLoLblq3ZTD4ge55IeQxQ8GEnv8uGGV+v1zkOy7lJALj3Y+MSTYk53nYAEQSifcLK43lLFrNEtJRFP6mytNh5Wc5cPqYY4hHFJGb58dbrjT/xyILHxnLKbG9sYEeB7ZAwTDw2QIYiGVmImWgu+HDQ1meVxlPnneOQj0fJ8bCmGwOzQLp+CtEmHmkwTk3E34svw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oracle.com; dmarc=pass action=none header.from=oracle.com;
- dkim=pass header.d=oracle.com; arc=none
+	id 1vywgx-00000005R6A-3zgN
+	for linux-phy@lists.infradead.org;
+	Sat, 07 Mar 2026 18:48:01 +0000
+Received: by mail-wr1-x430.google.com with SMTP id ffacd0b85a97d-439c9eb5d36so3643517f8f.2
+        for <linux-phy@lists.infradead.org>; Sat, 07 Mar 2026 10:47:59 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=oracle.onmicrosoft.com; s=selector2-oracle-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=qO5EF5QzSDbMuBjjeRlpfRn1O0QKLY2MN1L5/v+5ByI=;
- b=soDi83fV/a8WTqADDl76ISEjbe2k43zf7kBcNJFw/36mRRQZ7YAHs0Sd8273VKUBy1POX3mV0tio6m8D/m1y1cQS6JZvyOmA+FTOikLyOzgOJJbxt6ffeytdYp3WzJLKR+9a49t2Q8l6Jp0qBO93vTRlCpV/H+x6nFC4vYoP7/g=
-Received: from CH0PR10MB5338.namprd10.prod.outlook.com (2603:10b6:610:cb::8)
- by SJ2PR10MB7037.namprd10.prod.outlook.com (2603:10b6:a03:4c5::14) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9678.18; Sat, 7 Mar
- 2026 18:01:25 +0000
-Received: from CH0PR10MB5338.namprd10.prod.outlook.com
- ([fe80::e525:dd71:b002:6ad5]) by CH0PR10MB5338.namprd10.prod.outlook.com
- ([fe80::e525:dd71:b002:6ad5%6]) with mapi id 15.20.9678.017; Sat, 7 Mar 2026
- 18:01:19 +0000
-To: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-Cc: Rob Herring <robh@kernel.org>, Alim Akhtar <alim.akhtar@samsung.com>,
-        Avri Altman <avri.altman@wdc.com>,
-        Bart Van Assche <bvanassche@acm.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley
- <conor+dt@kernel.org>,
-        Matthias Brugger <matthias.bgg@gmail.com>,
-        AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
-        Chunfeng Yun <chunfeng.yun@mediatek.com>,
-        Vinod Koul <vkoul@kernel.org>,
-        Kishon Vijay Abraham I <kishon@kernel.org>,
-        Peter Wang
- <peter.wang@mediatek.com>,
-        Stanley Jhu <chu.stanley@gmail.com>,
-        "James
- E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
-        "Martin K.
- Petersen" <martin.petersen@oracle.com>,
-        Philipp Zabel
- <p.zabel@pengutronix.de>,
-        Liam Girdwood <lgirdwood@gmail.com>, Mark
- Brown <broonie@kernel.org>,
-        Chaotian Jing <Chaotian.Jing@mediatek.com>,
-        Neil Armstrong <neil.armstrong@linaro.org>,
-        Louis-Alexis Eyraud
- <louisalexis.eyraud@collabora.com>,
-        kernel@collabora.com, linux-scsi@vger.kernel.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        linux-arm-kernel@lists.infradead.org,
-        linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org,
-        Conor Dooley <conor.dooley@microchip.com>
-Subject: Re: [PATCH v9 03/23] dt-bindings: ufs: mediatek,ufs: Add mt8196
- variant
-From: "Martin K. Petersen" <martin.petersen@oracle.com>
-In-Reply-To: <4089450.ElGaqSPkdT@workhorse> (Nicolas Frattaroli's message of
-	"Fri, 06 Mar 2026 19:37:02 +0100")
-Organization: Oracle Corporation
-Message-ID: <yq14imrwp3z.fsf@ca-mkp.ca.oracle.com>
-References: <20260306-mt8196-ufs-v9-0-55b073f7a830@collabora.com>
-	<20260306-mt8196-ufs-v9-3-55b073f7a830@collabora.com>
-	<20260306163305.GA2680515-robh@kernel.org>
-	<4089450.ElGaqSPkdT@workhorse>
-Date: Sat, 07 Mar 2026 13:01:17 -0500
-X-ClientProxiedBy: CH2PR14CA0059.namprd14.prod.outlook.com
- (2603:10b6:610:56::39) To CH0PR10MB5338.namprd10.prod.outlook.com
- (2603:10b6:610:cb::8)
+        d=gmail.com; s=20230601; t=1772909278; x=1773514078; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:subject:cc
+         :to:from:date:message-id:from:to:cc:subject:date:message-id:reply-to;
+        bh=fePtVH1XrSdcxkm/f3Lu86HTCbPhsyR6IapTe3JHplY=;
+        b=J57077D7n5pIETQRzwE1rHg+R/bpwicJrwlTYTxOmBZrioATAR7LqL74WthG+baTqa
+         s0n+VhyIY6y5yVjQDHL8pDAE/CvtPX7zJYy2uwPJMMnGaeCppQCAgiZgnYPk7aW0u7Ud
+         AFs/g/l5k7qPCneqMLMydZ0cHmJ+McwmU0KR2ituJnbBc+ifWAaOELmi8hY0sruZNnS+
+         l4EX40iT5iF8ceM9aQohseO3JtWOBia9UVu566zxHsbdvS93kEeNmld54JJCk8YBnUIh
+         75dfh5vZ+it10Ne3ZUZr91KxpX9ZK9hyZp7escajVTieL9qDKn/3VZNpY/awomXdpAHd
+         d0Ag==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1772909278; x=1773514078;
+        h=in-reply-to:content-disposition:mime-version:references:subject:cc
+         :to:from:date:message-id:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=fePtVH1XrSdcxkm/f3Lu86HTCbPhsyR6IapTe3JHplY=;
+        b=p5PDG7Ca0FvggiDNL6MV6CWFitsAN+deAIAi84h+LcSp0lQOkpZeSu7d1Krp1XfBFm
+         1tRYIxFHMRsscSez1cQMcqvlwhW+8q2DauuLO0jHwmCFftXJmxavW+dszMwKSGH4g13j
+         ajhoQhu7qYN5TVTp+sZTifZhfch2dol+2O32+wXA+1dOCZ7hXc6vYaM3JdifoWf/AEk+
+         CIhUhCNORfaBgz2TApHa5UHgARb5GOR9Tt5xvkLV6UoBHdXimU1/vVMFx/PHuwlvBzwn
+         N70kpbv9l0Ah5dWdVlkhMSD0dFeCombY8XH1Sn/M6upO9CE5EyKx2PQyY4MqYM7uMhGU
+         yeMg==
+X-Forwarded-Encrypted: i=1; AJvYcCVPRxvu+s7qPAARQWZc3sjwuboBIHoHLVDS9Pn5QRwv5KoP6RpRMubpFZk2x8uBfM9SFe1yDtJG2tI=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyuqOpRZ4LA8RZC0Bi2Gdv1rexdHqKhcC3UejZns4yZ8wfKyUZG
+	yk2lwGuN/kZ4rnM2eqv/3pFdJMtPKVzZCRTWlrp0XxfKTGo8Ujabf3Cd
+X-Gm-Gg: ATEYQzyuVhZWh+5lfe9kdJuUyXq82KBOeVrJMQL8cJiYO691ZrClP1L/DHni0zhkcrp
+	dTrgnfXyhoWNhrB/xdR+MDDpuBq11mXwHYuzbMkVV9hbw6/fMzxdWEKlBBmXrBa9/OIt4bWxwjp
+	gEShPgjvW98cjIItmifS9otWmzsGZkHtJLJlzxw/ZZex5m7gNNyByRpJY/i1gseRevgKfit528s
+	EdhbjWzHCIJnDB6ucSGHhiP73ZTa2HserHVOl05+g3DBDWHCGnaZSEV9FJRM1XK+wuTiND6xfnF
+	QLtEym9+s44ZQdgqGuX/TsVwPUzMHxJiDellNpt/GytXyMe4x7FNS32qNcVLDwKPJzueGtpR+qF
+	lNjM/+yMpbSrdlmxWInSR26Pp2R31GrL8LlS/DIyuw3yjj+uUJigdDJgblMtM66OhxOJH8kmeNM
+	cuBEPUD2b0K81RecWqRPT+OAgg2z+X0LBu7Yx5DduKtdpjAtx1jM14TQ==
+X-Received: by 2002:a05:6000:401e:b0:439:b3f1:8011 with SMTP id ffacd0b85a97d-439da35f838mr11120861f8f.29.1772909277570;
+        Sat, 07 Mar 2026 10:47:57 -0800 (PST)
+Received: from Ansuel-XPS. (93-34-88-122.ip49.fastwebnet.it. [93.34.88.122])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-439dae3c80esm11455641f8f.29.2026.03.07.10.47.56
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 07 Mar 2026 10:47:57 -0800 (PST)
+Message-ID: <69ac72dd.df0a0220.a3fa6.8d4f@mx.google.com>
+X-Google-Original-Message-ID: <aaxy2m9QxsbU0hRM@Ansuel-XPS.>
+Date: Sat, 7 Mar 2026 19:47:54 +0100
+From: Christian Marangi <ansuelsmth@gmail.com>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Lorenzo Bianconi <lorenzo@kernel.org>,
+	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v6 4/4] phy: airoha: Add support for Airoha AN7581 USB PHY
+References: <20260306190156.22297-1-ansuelsmth@gmail.com>
+ <20260306190156.22297-5-ansuelsmth@gmail.com>
+ <20260307-otter-of-imminent-merriment-d3475d@quoll>
+ <69abffe6.050a0220.18164c.58d6@mx.google.com>
+ <52123051-0d2d-42b2-b677-99a5de0f2c4e@kernel.org>
+ <69ac04a6.5d0a0220.2969f9.9d81@mx.google.com>
+ <abbf81f7-556b-4fb0-9fb7-41f4c730f1d6@kernel.org>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: CH0PR10MB5338:EE_|SJ2PR10MB7037:EE_
-X-MS-Office365-Filtering-Correlation-Id: fb565a3d-f2a9-4928-136f-08de7c73887b
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|1800799024|7416014|366016;
-X-Microsoft-Antispam-Message-Info: ZyPtggGVgx8HUD1t8+wzmPJHwW0d49NzDpGyvC6CEV3DM213bB731FLk5hHQPKaRQ2vmb3O4vytq23xuDfak9xbo33Z53E0xLIY0XoG04KF7VjU8pqukwu5Fj0idkF9HIoDaajrULsZwi89P6bgAPq9XpzHOdoOggzYy2US9wSQtdduJEQr6bQ6ODzULUaDezLqaH7WxN7OLH/P0Tcph3Ew+FDhd6+sDqyoZ0YN+W6MMM7FI0pTkKo+hPO13YubnW+McNCh0/yafJDRpWQeAiYdqcXupKllirRhA7TeM8H+d0KX6cAiQllRGqoX4nqpf0HcRIhlPjbDwXXF7aJ94Tv18qFICA4RtCCR+3QiVnyn6ACrpQbytbQasVeV0ehdGNdONqLrOQhNSy7TSMNcAXLsZ1CpqMq+VYngiruNIMmoYu+YZAFQdJvkkgBhjhLuTvKNTyIHWTYZXMmoT/u1Qs7jMev0htNnnCxxaFeY11vpl+Sfaz4O6SIw5CA6aZ7JaPrJrjPArwvX5Pqmzmabh03+6weTFR2UMuuMaDBXLet6nQMsowX2ca3fnwOh7TcF4ijL/3LfTUc6XRQ3Phze+UTSt8bCUkRUB3pUiGlPcIru/MwcoKO62hOlUFo2hQDQaQVDFhjVyFpdwK+vkxFvhXZ1UtvQxAkWLguknL5vEiL9SpFaqnYkO1ZGZ02rSntO+IkWbi7FzjUZNFSygi1mQehd/hldk/k0xkm65o548XxQ=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:CH0PR10MB5338.namprd10.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(1800799024)(7416014)(366016);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?KWG43+Pf2dvrJ4CvzrkqpEyrmdeKNnqqeWgelwTddXIWJDfz6KFDohkTGGjc?=
- =?us-ascii?Q?vPzwDwqMJUUch3dmS73QYvdXSCYtNiQlWgb6rHkThrVdQ4Ibqi1OI3jePi5d?=
- =?us-ascii?Q?s7yRa7a7rrxvN1tf0LihvkFX7u2lbzemMt7MIpToCdjFiUzFrbYY3eJwh/fQ?=
- =?us-ascii?Q?iG1WRo0iLWVN2C5z/9KwoDZ6lll6B6nBfd1dUeiuJb0KuwneCKHBHUlmZ/PG?=
- =?us-ascii?Q?KKEiq042BgBNB8coaljvod2lBZWIk45O75u9fMkhly3SFRm+ItGJcHeFQR+m?=
- =?us-ascii?Q?np1SZcJvR8Yic0e0PLNVC1V20t8wjIGWJJ+2WNn+nqSTCiX4+UAxNUa2Jn0h?=
- =?us-ascii?Q?ODDUrSQ3lwPyX9PDx8vJRXkpmjSlRdE1XYekBj+fOdNXzLOQr0h+XgvI1QOq?=
- =?us-ascii?Q?k2n9/4yU6doV9FFFUWq4Iw3BtLVIt7NRPRm7VCKqUvu5W21c43Jjr+dPHjZj?=
- =?us-ascii?Q?DmwtiTV4cCLwYCZqecypu1U4c9YGaUk7aeXJ3wAfA47SCUzS2qUJBwBfyy0Y?=
- =?us-ascii?Q?5LI3Q1J4rQ+AsLsxm+y5UUKPb2s2RqGZ5OzAhvnjVn3etwW0NyUEe4w44tMy?=
- =?us-ascii?Q?V2RNcUxZPCQyP+GEWfXdmzh4jVzcfpecy7WnlS8QceagyOQFINGyy6B8mqSk?=
- =?us-ascii?Q?a2GBwvtsQWXb8+VlDlY6mCKc43VJsT8SC5BFDeFdWvMdKpK+Zv6TdE5K0Ehe?=
- =?us-ascii?Q?JYdwKTOzbvW+Q8RbURVzyjIBddQo4VWKkmm7QILR7ckojBK20e6zE2XyV1iR?=
- =?us-ascii?Q?dewYWdUyQcEygHWj80QJ5jYO35VSsSmEi7WwBLbp64Gv02AChEYynCYr3l7U?=
- =?us-ascii?Q?fL4nuETjRh5sSiLfhajr2ENbtinroWKrVsCaFqKHz3l4AtjFVASgBc+Fwc8S?=
- =?us-ascii?Q?kNXmR/ySDB5T/NgsgAi1Shg4h1FFSJf7ID4wPEcjGgFp1vvDvJHelTxhNpmF?=
- =?us-ascii?Q?ScNpYo5fCxXVoffJUOyaVBUzFH+iREmPSuf3SqRMkviZuy8N2/zpHdhVmWvW?=
- =?us-ascii?Q?3pYvd2XX19civeRG4faMvg1Rxpv3pT+8mQQeKMFr203E4R+FO/m5SDhsMQgW?=
- =?us-ascii?Q?kyOfJxysCh6PZi17UFkURHbb34AlMEZAjPNGgbdRumU+rynS592Cgn0hYVzd?=
- =?us-ascii?Q?DbuZ1QRUbhwSUnPfr/xF51PsqyqiT0PqM2yXEUe/FWUBdz7TAcroE78y6x+r?=
- =?us-ascii?Q?6GbZeiV908xAVMOVY1O3a5OJT9m3kcdhn6fMBrCcEEL6OJAoDbTzbfmvGIQt?=
- =?us-ascii?Q?b6/NQNDjE1ozQL1B1vBuUVYK/QxiBHMykP61De1IBvCECTJHLEjmrYchPh2J?=
- =?us-ascii?Q?+77vtmkaSfgNnROxreWKhH1TMemEN0Dwd1TmVlhi6OhpFx2PJ6+mwKVKRkpN?=
- =?us-ascii?Q?Wm4wRMbfI0/Rygz5KzSiPvWLwziA9flA/MaCjjhG50CIlOcJfH2pFNZfbqKU?=
- =?us-ascii?Q?t6xcvZzRqfYlH2hsaD+vADv3i93+tpbzH/3y8jttgPKRnT+5SxSNbFe699Db?=
- =?us-ascii?Q?TnTT/z8R3rwGNC0uSTmjNgvs6PLYQyNhEjcAsGPCuobprEEt0rjSc3TKQJ+J?=
- =?us-ascii?Q?jnOjTLBcLiqY9E28RIzgQuLOHMn7oHlSdiG/FjluicioB3waWLSkkb2nKEh1?=
- =?us-ascii?Q?jDUCgBSO0eUzZqEMVGtY4rkOcijuyq0QFhPAgGylu4YO9gpAmOmzp3OWGjP7?=
- =?us-ascii?Q?Jbg6RO+Gqua8KHnFotrl5REbPmbi41uIlQCQU9fzyI/jz+8L8xqJWp9DHRGl?=
- =?us-ascii?Q?15mwAZP6wacwRmz7FBL/AAPdUWZW7CE=3D?=
-X-Exchange-RoutingPolicyChecked: r2Bh8Ge+0H6/1fNkeZsovptyFI0hzcFLhZ21GF6icb9P/RpmEskO2QWjlShzMicYBbYOGuh+v68OfA0GozfJxIm/memkeKSykx4yV3RwFpAqzLG5S/sleTXtACzHPL4myay7tAd9TwvmjipIEsSYysEO2m2bnHc7tPleFcJ1va05wpiYCYzCe8baZP7/aJNAdX3SAjEhb8psVsLFLIN4wcwu3Kg9nBss+OYnXns33llwcU4NDNOvyDsqTzxlSli6Of2x7oQDfXHQXVfmUw54LhdPFfVOGzrroJ6zcQ/0IHvPRioY0GSd/o6IKD+1F4ZYbJ8xrUvyy/9Fxx1jWl6SiQ==
-X-MS-Exchange-AntiSpam-ExternalHop-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-ExternalHop-MessageData-0: efkepFJeg95Owt8u+XlpQ49cywgnEDpB0RFUXGcZgY7RvosLY9xDFaUJm8DEw7Y/F0ipCRCLXP1e3mXT+niuzmqE8kYkMixN3iVJTwLLgIoHplUOPrWggynkaF2FxYGO/wPUovzX20Do4b0IgefylnjwL22YC+2n5o0YkW96obMLjmohs4XF++3/TIv0EwwfaDcBVxChTt7VgqlKi3or29b+Dmxi53dmR9ltBIJZaWdox9hC/i2jwGcONqWFrh0ozVmEv20Yl5WsjWOIBjn9f6S8v8VCC3aHqu+7L8GxN3sQRqxSx0zWMWc3cbAOuxCLF+vOlaFFosb8/n8olxGNvgj04kN6/pMMRX4lzR3wkXpTBzDklSqnbMywbWMhXSRf08dsL2bxL9nx//Jyq4PArt15zu1vbynBJu4Xw8MWDN7vTlB25Q0dp3G67JzSgnjj3+KFjVUt4RRRsGxxbL9p2P896C1STAs8mPwnoLUXE7d4op3AcpiYyGlPnm/EKAqhaMAdoccCUyhZSibXzpSNnlYWJuVYu8/9J8aGs7IgmoRdjWlMyTzhFtNrIqbaj5L9X7Kg37TpA/9VYaDSv5ThPJGQGGN1PDLe2DJ/p2zDd9A=
-X-OriginatorOrg: oracle.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: fb565a3d-f2a9-4928-136f-08de7c73887b
-X-MS-Exchange-CrossTenant-AuthSource: CH0PR10MB5338.namprd10.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 07 Mar 2026 18:01:18.8176
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 4e2c6054-71cb-48f1-bd6c-3a9705aca71b
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: YxPA/7iym1eGHkueANR5JOq2mHywY8n4FJmHaxAGUwBqml+kurJOgNu5HTdkf8R6vD4Vmo6uBitJZHtSTnoW8kkdyhmKc9ELGgwehD4jU5A=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SJ2PR10MB7037
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
- definitions=2026-03-07_06,2026-03-06_02,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0 malwarescore=0 bulkscore=0
- mlxlogscore=574 adultscore=0 phishscore=0 suspectscore=0 mlxscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2602130000
- definitions=main-2603070170
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzA3MDE3MCBTYWx0ZWRfXyZxUOIc4Zhny
- xb5Pj2xdanHxoiDISCJlDbjaZqPOaXv66EV6vzgn3fvPoSZVrOnrXDBq1k6LsjE8H5OEi+NnRms
- Vw2SwsdUOazpwZ6TDXFrgdM9713WjRVAg7ZwiUg/Q0PT9FvI7b51wQCkHY/I4Nir6htUvnkX/ky
- 1kQtjWSKP5tNzNFnHrFs527TRI3z/kmDgcJCexfXXbOg8cBwyRcZjp9tL9WqePhfj0BmUui6ZTC
- proXkqzx89qX/XUjkBxcK/coGpmMWGFRlEBm7Zs1WIXz2PiFU2B6gt2i0nhGkrUwW7X6/AXHJ5C
- 6hGj/sFWBqJEIsWaDI20rmWpYNP6tBtYxPJm0J1z+dQMc4Evm5CZ1PrL5m9XaZoX2ATvEvbBbMd
- cz7+TJuK0fSbYOV5hoX8k0iLRZzo3OxHGw5DTMPtAW6QtC82VMPzdw8TUGv8qd13E7nQJyfDPr4
- dpBTExoiej6U4rsBS3hmPXlsw6S5ET33aGLpl/aM=
-X-Proofpoint-GUID: 8sMbPKye09k7zMknwpWkKbl365H1o6JP
-X-Proofpoint-ORIG-GUID: 8sMbPKye09k7zMknwpWkKbl365H1o6JP
-X-Authority-Analysis: v=2.4 cv=BqmQAIX5 c=1 sm=1 tr=0 ts=69ac67f9 b=1 cx=c_pps
- a=e1sVV491RgrpLwSTMOnk8w==:117 a=e1sVV491RgrpLwSTMOnk8w==:17
- a=6eWqkTHjU83fiwn7nKZWdM+Sl24=:19 a=z/mQ4Ysz8XfWz/Q5cLBRGdckG28=:19
- a=lCpzRmAYbLLaTzLvsPZ7Mbvzbb8=:19 a=xqWC_Br6kY4A:10 a=Yq5XynenixoA:10
- a=GoEa3M9JfhUA:10 a=VkNPw1HP01LnGYTKEx00:22 a=jiCTI4zE5U7BLdzWsZGv:22
- a=BqU2WV_vvsyTyxaotp0D:22 a=CslV5lx4VL2Be9-TwssA:9 cc=ntf awl=host:13812
+Content-Disposition: inline
+In-Reply-To: <abbf81f7-556b-4fb0-9fb7-41f4c730f1d6@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260307_100149_086237_7DF95A8C 
-X-CRM114-Status: GOOD (  12.70  )
+X-CRM114-CacheID: sfid-20260307_104800_036658_1A1D0168 
+X-CRM114-Status: GOOD (  29.91  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -216,26 +111,76 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On Sat, Mar 07, 2026 at 05:38:25PM +0100, Krzysztof Kozlowski wrote:
+> On 07/03/2026 11:57, Christian Marangi wrote:
+> > On Sat, Mar 07, 2026 at 11:40:48AM +0100, Krzysztof Kozlowski wrote:
+> >> On 07/03/2026 11:37, Christian Marangi wrote:
+> >>>>> +
+> >>>>> +		if (phy_type == PHY_TYPE_USB3) {
+> >>>>> +			ret = of_property_read_u32(dev->of_node, "airoha,usb3-serdes",
+> >>>>> +						   &priv->serdes_port);
+> >>>>> +			if (ret)
+> >>>>> +				return dev_err_probe(dev, ret, "missing serdes line for USB 3.0\n");
+> >>>>> +
+> >>>>> +			priv->scu = syscon_regmap_lookup_by_compatible("airoha,en7581-scu");
+> >>>>
+> >>>> Nope, you need phandle to express proper device links.
+> >>>>
+> >>>> Don't sprinkle compatible lookups for new code which does not need to
+> >>>> keep things backwards compatible. How do you manage device links
+> >>>> without phandle? How do you manage device probe ordering?
+> >>>>
+> >>>
+> >>> Hi,
+> >>>
+> >>> the phandle to SCU was present in old implementation but later dropped as it was
+> >>> said that it wouldn't describe the HW.
+> >>
+> >>
+> >> I went through v3 review and I did not find such said arguments. Can you
+> >> point me to it?
+> >>
+> >>
+> > 
+> > Here was v2 [0] that was clock + USB PHY. (there were clock stuff as the SCU
+> > implementation was different) The link wasn't added in the changelog as it's
+> > quite different than this current series.
+> > 
+> > In patch 7 Rob pointed out that serdes-port + scu was a bit unusual.
+> > 
+> > Then the implementation changed in favor of a more simple one where it's the PHY
+> > that configure everything and in this new version the usage of the SCU phandle
+> > is really to just get the regmap and modify the single bit to select the PHY
+> > path/mode for USB 3.0. (it's mainly the reason the SCU is referenced directly
+> > with a compatible instead of a phandle, in the previous implementation we used a
+> > function exposed by the SCU SSR, while in this it's just a regmap that can
+> > PROBE_DEFER)
+> > 
+> > Rob suggested an additional layer (a PHY) to handle this but I don't feel it
+> > would actually describe the HW this way as that bit doesn't modify another PHY
+> > but it just toggle the mode to the related USB 3.0 PHY.
+> > 
+> > This is really another case of not-so-organized register mapping on the SoC.
+> > 
+> > [0] https://lore.kernel.org/all/20250320130054.4804-1-ansuelsmth@gmail.com/
+> 
+> 
+> That's the cover letter. I guess you did not implement Rob's feedback,
+> either. This is either phy (for phy) as Rob asked or scu phandle.
+> Removing scu phandle and not implementing phy is not what Rob proposed.
+> 
 
-Nicolas,
+It was to give the full series. The specific comment from Rob was [0].
 
->> "ufs" is redundant as all the clocks are for UFS. Same comment on prior 
->> patch.
->
-> Is this naming a big enough concern to block this series with two
-> explicit acks on this patch that fixes a wholly broken and useless
-> binding?
+SCU phandle is going back to the old dual binding that Rob was against but PHY
+for PHY would not be descriptive of the HW.
 
-It is if it comes from one of the DT maintainers.
+I can do that but would it be correct?
 
-> I am trying to put out this dumpster fire of a downstream turd that
-> made its way into mainline as the review process has been completely
-> subverted, and is only getting worse with each passing month
-
-This has to stop. Please read Documentation/process/code-of-conduct.rst.
+[0] https://lore.kernel.org/all/20250324154919.GA101272-robh@kernel.org/
 
 -- 
-Martin K. Petersen
+	Ansuel
 
 -- 
 linux-phy mailing list
