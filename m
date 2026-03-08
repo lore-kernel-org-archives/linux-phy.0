@@ -4,81 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9D235F55106
-	for <linux-phy@archiver.kernel.org>; Sun,  8 Mar 2026 02:06:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AA564F5513C
+	for <linux-phy@archiver.kernel.org>; Sun,  8 Mar 2026 10:32:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=smGUieZxW8+expbupzHSfmQwXdo+GcSDoAzWeskJRJg=; b=Ry41ANtxs70ys9
-	c1R4EH8D/T7RTlMPAONe4Tk+1YJaig8n7LEmNosQna++/Bescn4FwvOSMeadEFLw5QcRxa5e833qD
-	Jd0nNKih1wSlUEJfeCIKO5E7PAMqbHX68VjTboef1FOe6Sf5vR16gPWKxUBks2EtCJhqxsqEQINQv
-	a+JRM6f5n1RGLKpjSXfYfYWtR5OpYR+ncCHezQmn2pwqKOuy1/3L+EX3gp6AEvbemxPYeGYuZPSTf
-	Ac9CZbc/2+9WuvQGQ2C0DdcWkwwvsS7A6B9+zVu9Tylu0lP9b/YPMip6TQvrbBGYzU1SIqEFWg00I
-	83yuIKv2Q7O4y98lLiRA==;
+	List-Owner; bh=fn7CJ2fdXDNLWNUaKfHFAataS0OsAG2DwAIStptbGc8=; b=3yDVDbdQ34eQ3/
+	SNCHRVCZinkbyDQyQdG2nHvkI1QW6iHVmaLADvdhlRiVxJmWBknDZRperzdN1xdLBMT+LQel+wiaI
+	OAo0Gc3utvlkxAriCnjZBSFtAwx0Fs51UccL9/0QVTrj7R+nxGJaB35ZijMtcv3CI+o5UEiENZtxf
+	1Um0xd1EkHJUsvTNpcBAuLOdNwTHjDPZ05PLmQnPzzVSANmtovQ5AzL/hXq8qV5H8mxL1JEWF/v/G
+	ijoCvh5e60IyQEkTONDzR/UI5NfOzJS3I48nc6PRq6dXfc2f4djYS+TvfcBcJF0vCktms85fvucJz
+	dj++8gqbBbdPx6cjvrBw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vz3Xb-00000005deu-1jzt;
-	Sun, 08 Mar 2026 02:06:47 +0000
-Received: from mgamail.intel.com ([198.175.65.20])
+	id 1vzBQp-00000005sRO-2ra3;
+	Sun, 08 Mar 2026 10:32:19 +0000
+Received: from mgamail.intel.com ([192.198.163.10])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vz3XU-00000005deX-2rH3
-	for linux-phy@lists.infradead.org;
-	Sun, 08 Mar 2026 02:06:46 +0000
+	id 1vzBQl-00000005sQp-1Mx9;
+	Sun, 08 Mar 2026 10:32:17 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1772935601; x=1804471601;
+  t=1772965935; x=1804501935;
   h=date:from:to:cc:subject:message-id:references:
-   mime-version:content-transfer-encoding:in-reply-to;
-  bh=giRqWk7pth7htlw/kAdoXs6485fAk6mlmbYY0pBBaUw=;
-  b=cGwt6mlgX0Fs60aEgnRB1NoI2hXhDpi462T/Xy1VFhxgODMCXKqqrbtX
-   T2lMIFIGJQ4pDl+0kyyceYmzhxvZE/4SeVnqpjwMzlJTXAK0cMSQEfNCC
-   jo9HroCUaFk1fLTe3//ceDq/r2jirCigT8EMztnNVNxRJAKLEfxoz7JRz
-   tr+5vH0WvSh9OKtVz0srawx+BMbKchIJpa2PfdYqoNN6q+pp4P340PJh7
-   lEhyCCfAKTxqYSnETR8HNKc/nCcfinBSZGC4eZgmU1TYGI/NZvfLDhf0u
-   r8oD4NZ6xfJXKFp8r12lW/cQzz4AGbCFSd7qWZhN3eAEpzr98e2AZKrXq
-   w==;
-X-CSE-ConnectionGUID: gsqPcgLAQG6Mr8p6Iaog0A==
-X-CSE-MsgGUID: rwboOql0RPakQ3Ix9Sgy1Q==
-X-IronPort-AV: E=McAfee;i="6800,10657,11722"; a="73698373"
-X-IronPort-AV: E=Sophos;i="6.23,107,1770624000"; 
-   d="scan'208";a="73698373"
-Received: from fmviesa003.fm.intel.com ([10.60.135.143])
-  by orvoesa112.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 07 Mar 2026 18:06:37 -0800
-X-CSE-ConnectionGUID: twwjLKsfTKSm1fOsBzm82g==
-X-CSE-MsgGUID: hS775U/kQ0qL7q9xVa9jcA==
+   mime-version:in-reply-to;
+  bh=J09zkkMc6nwZpCtbBGADOJnfZUNEnobOKYU2m/BqZbs=;
+  b=ZL4RPRibTcPybVeJavJ3xaKoIirRXbKnwkQ80t+kTyQWxvNQCVt7k4/j
+   RY/oVubRl7nf1sC28nbh7VZQlHBwuwAW++ie3TDbvkNrV1J5sLLp/S2MC
+   H0dBMcMkhqQI6Rtm0xozGvPzxZPFixXcVxOa2UmzuDjmDA945UqbXrG+X
+   siraixChFRqdFzzjPdVjKuvBBXnxqIn0R7NTyoUHsMVDEXBpcVIJGWahq
+   JCQHoKbcU/ySp7rjZMD/C8zCBILDNBFTypwxZ5+002ivIBBEgr+FPFpQq
+   gvxlT1V6HDiBtXQowLzyaOUZ6I4f+LGeribjVnyrxreusdnlq0pupZ2Pv
+   A==;
+X-CSE-ConnectionGUID: Hm+o8lfgQCmmS8G3YqTRdQ==
+X-CSE-MsgGUID: 3lLCxKOzTnePr6g8SUG0Og==
+X-IronPort-AV: E=McAfee;i="6800,10657,11722"; a="85367081"
+X-IronPort-AV: E=Sophos;i="6.23,108,1770624000"; 
+   d="scan'208";a="85367081"
+Received: from orviesa008.jf.intel.com ([10.64.159.148])
+  by fmvoesa104.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 08 Mar 2026 03:32:10 -0700
+X-CSE-ConnectionGUID: t8zOX5JEQn2k6A5dgS2Q6w==
+X-CSE-MsgGUID: HVncasczSrez9SydP0b2aA==
 X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.23,108,1770624000"; 
+   d="scan'208";a="219441274"
 Received: from lkp-server01.sh.intel.com (HELO 058beb05654c) ([10.239.97.150])
-  by fmviesa003.fm.intel.com with ESMTP; 07 Mar 2026 18:06:34 -0800
+  by orviesa008.jf.intel.com with ESMTP; 08 Mar 2026 03:32:03 -0700
 Received: from kbuild by 058beb05654c with local (Exim 4.98.2)
 	(envelope-from <lkp@intel.com>)
-	id 1vz3XL-000000002pF-1fGw;
-	Sun, 08 Mar 2026 02:06:31 +0000
-Date: Sun, 8 Mar 2026 10:06:29 +0800
+	id 1vzBQV-0000000031t-1c3D;
+	Sun, 08 Mar 2026 10:31:59 +0000
+Date: Sun, 8 Mar 2026 18:31:44 +0800
 From: kernel test robot <lkp@intel.com>
-To: =?iso-8859-1?Q?Th=E9o?= Lebrun <theo.lebrun@bootlin.com>,
+To: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>,
+	Alim Akhtar <alim.akhtar@samsung.com>,
+	Avri Altman <avri.altman@wdc.com>,
+	Bart Van Assche <bvanassche@acm.org>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	Chunfeng Yun <chunfeng.yun@mediatek.com>,
 	Vinod Koul <vkoul@kernel.org>,
+	Kishon Vijay Abraham I <kishon@kernel.org>,
+	Peter Wang <peter.wang@mediatek.com>,
+	Stanley Jhu <chu.stanley@gmail.com>,
+	"James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
+	"Martin K. Petersen" <martin.petersen@oracle.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Liam Girdwood <lgirdwood@gmail.com>,
+	Mark Brown <broonie@kernel.org>,
+	Chaotian Jing <Chaotian.Jing@mediatek.com>,
 	Neil Armstrong <neil.armstrong@linaro.org>
-Cc: oe-kbuild-all@lists.linux.dev, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org, linux-mips@vger.kernel.org,
-	Vladimir Kondratiev <vladimir.kondratiev@mobileye.com>,
-	Gregory CLEMENT <gregory.clement@bootlin.com>,
-	=?iso-8859-1?Q?Beno=EEt?= Monin <benoit.monin@bootlin.com>,
-	Tawfik Bayouk <tawfik.bayouk@mobileye.com>,
-	Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
-	Luca Ceresoli <luca.ceresoli@bootlin.com>,
-	=?iso-8859-1?Q?Th=E9o?= Lebrun <theo.lebrun@bootlin.com>
-Subject: Re: [PATCH v8] phy: Add driver for EyeQ5 Ethernet PHY wrapper
-Message-ID: <202603081000.NLJ9u8XA-lkp@intel.com>
-References: <20260306-macb-phy-v8-1-b5c48ee61402@bootlin.com>
+Cc: oe-kbuild-all@lists.linux.dev,
+	Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>,
+	kernel@collabora.com, linux-scsi@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org,
+	Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
+Subject: Re: [PATCH v9 19/23] scsi: ufs: mediatek: Rework hardware version
+ reading
+Message-ID: <202603081809.R9OrrITa-lkp@intel.com>
+References: <20260306-mt8196-ufs-v9-19-55b073f7a830@collabora.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260306-macb-phy-v8-1-b5c48ee61402@bootlin.com>
+In-Reply-To: <20260306-mt8196-ufs-v9-19-55b073f7a830@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260307_180642_685788_0EDEFE83 
-X-CRM114-Status: GOOD (  10.62  )
+X-CRM114-CacheID: sfid-20260308_033215_410180_E9A12423 
+X-CRM114-Status: GOOD (  14.06  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,104 +107,106 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Th=E9o,
+Hi Nicolas,
 
 kernel test robot noticed the following build warnings:
 
-[auto build test WARNING on next-20260305]
-[cannot apply to linus/master v7.0-rc2 v7.0-rc1 v6.19 v7.0-rc2]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
+[auto build test WARNING on 11e703f54ac21f4dc609ea12ab578ffa47c87e11]
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Th-o-Lebrun/phy-Add-=
-driver-for-EyeQ5-Ethernet-PHY-wrapper/20260307-034032
-base:   next-20260305
-patch link:    https://lore.kernel.org/r/20260306-macb-phy-v8-1-b5c48ee6140=
-2%40bootlin.com
-patch subject: [PATCH v8] phy: Add driver for EyeQ5 Ethernet PHY wrapper
-config: arm-randconfig-r111-20260308 (https://download.01.org/0day-ci/archi=
-ve/20260308/202603081000.NLJ9u8XA-lkp@intel.com/config)
-compiler: arm-linux-gnueabi-gcc (GCC) 10.5.0
-sparse: v0.6.5-rc1
-reproduce (this is a W=3D1 build): (https://download.01.org/0day-ci/archive=
-/20260308/202603081000.NLJ9u8XA-lkp@intel.com/reproduce)
+url:    https://github.com/intel-lab-lkp/linux/commits/Nicolas-Frattaroli/dt-bindings-phy-Add-mediatek-mt8196-ufsphy-variant/20260306-215930
+base:   11e703f54ac21f4dc609ea12ab578ffa47c87e11
+patch link:    https://lore.kernel.org/r/20260306-mt8196-ufs-v9-19-55b073f7a830%40collabora.com
+patch subject: [PATCH v9 19/23] scsi: ufs: mediatek: Rework hardware version reading
+config: arm-randconfig-002-20260308 (https://download.01.org/0day-ci/archive/20260308/202603081809.R9OrrITa-lkp@intel.com/config)
+compiler: arm-linux-gnueabi-gcc (GCC) 8.5.0
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20260308/202603081809.R9OrrITa-lkp@intel.com/reproduce)
 
-If you fix the issue in a separate patch/commit (i.e. not just a new versio=
-n of
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
 the same patch/commit), kindly add following tags
 | Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202603081000.NLJ9u8XA-lkp@i=
-ntel.com/
+| Closes: https://lore.kernel.org/oe-kbuild-all/202603081809.R9OrrITa-lkp@intel.com/
 
-sparse warnings: (new ones prefixed by >>)
->> drivers/phy/phy-eyeq5-eth.c:246:14: sparse: sparse: incorrect type in as=
-signment (different address spaces) @@     expected void [noderef] __iomem =
-*base @@     got void * @@
-   drivers/phy/phy-eyeq5-eth.c:246:14: sparse:     expected void [noderef] =
-__iomem *base
-   drivers/phy/phy-eyeq5-eth.c:246:14: sparse:     got void *
+All warnings (new ones prefixed by >>):
 
-vim +246 drivers/phy/phy-eyeq5-eth.c
-
-   230	=
-
-   231	static int eq5_phy_probe(struct auxiliary_device *adev,
-   232				 const struct auxiliary_device_id *id)
-   233	{
-   234		struct device *dev =3D &adev->dev;
-   235		struct phy_provider *provider;
-   236		struct eq5_phy_private *priv;
-   237		void __iomem *base;
-   238		int ret;
-   239	=
-
-   240		priv =3D devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
-   241		if (!priv)
-   242			return -ENOMEM;
-   243	=
-
-   244		dev_set_drvdata(dev, priv);
-   245	=
-
- > 246		base =3D dev_get_platdata(dev);
-   247	=
-
-   248		ret =3D eq5_phy_probe_phy(dev, priv, 0, base, EQ5_PHY0_GP,
-   249					EQ5_PHY0_SGMII, true);
-   250		if (ret)
-   251			return ret;
-   252	=
-
-   253		ret =3D eq5_phy_probe_phy(dev, priv, 1, base, EQ5_PHY1_GP,
-   254					EQ5_PHY1_SGMII, false);
-   255		if (ret)
-   256			return ret;
-   257	=
-
-   258		provider =3D devm_of_phy_provider_register(dev, eq5_phy_xlate);
-   259		if (IS_ERR(provider))
-   260			return dev_err_probe(dev, PTR_ERR(provider),
-   261					     "registering provider failed\n");
-   262	=
-
-   263		return 0;
-   264	}
-   265	=
+   In file included from drivers/ufs/host/ufs-mediatek.c:10:
+   drivers/ufs/host/ufs-mediatek.c: In function 'ufs_mtk_get_hw_ip_version':
+>> include/linux/bitfield.h:195:40: warning: result of '268435456 << 24' requires 54 bits to represent, but 'int' only has 32 bits [-Wshift-overflow=]
+      *(_reg_p) |= (((typeof(_mask))(_val) << __bf_shf(_mask)) & (_mask)); \
+                                           ^~
+   drivers/ufs/host/ufs-mediatek.c:838:3: note: in expansion of macro 'FIELD_MODIFY'
+      FIELD_MODIFY(MTK_UFS_VER_PREFIX_M, &version, BIT(28));
+      ^~~~~~~~~~~~
 
 
--- =
+vim +195 include/linux/bitfield.h
 
+e2192de59e457a Johannes Berg      2023-01-18  142  
+e2192de59e457a Johannes Berg      2023-01-18  143  /**
+e2192de59e457a Johannes Berg      2023-01-18  144   * FIELD_PREP_CONST() - prepare a constant bitfield element
+e2192de59e457a Johannes Berg      2023-01-18  145   * @_mask: shifted mask defining the field's length and position
+e2192de59e457a Johannes Berg      2023-01-18  146   * @_val:  value to put in the field
+e2192de59e457a Johannes Berg      2023-01-18  147   *
+e2192de59e457a Johannes Berg      2023-01-18  148   * FIELD_PREP_CONST() masks and shifts up the value.  The result should
+e2192de59e457a Johannes Berg      2023-01-18  149   * be combined with other fields of the bitfield using logical OR.
+e2192de59e457a Johannes Berg      2023-01-18  150   *
+e2192de59e457a Johannes Berg      2023-01-18  151   * Unlike FIELD_PREP() this is a constant expression and can therefore
+e2192de59e457a Johannes Berg      2023-01-18  152   * be used in initializers. Error checking is less comfortable for this
+e2192de59e457a Johannes Berg      2023-01-18  153   * version, and non-constant masks cannot be used.
+e2192de59e457a Johannes Berg      2023-01-18  154   */
+e2192de59e457a Johannes Berg      2023-01-18  155  #define FIELD_PREP_CONST(_mask, _val)					\
+e2192de59e457a Johannes Berg      2023-01-18  156  	(								\
+e2192de59e457a Johannes Berg      2023-01-18  157  		/* mask must be non-zero */				\
+e2192de59e457a Johannes Berg      2023-01-18  158  		BUILD_BUG_ON_ZERO((_mask) == 0) +			\
+e2192de59e457a Johannes Berg      2023-01-18  159  		/* check if value fits */				\
+e2192de59e457a Johannes Berg      2023-01-18  160  		BUILD_BUG_ON_ZERO(~((_mask) >> __bf_shf(_mask)) & (_val)) + \
+e2192de59e457a Johannes Berg      2023-01-18  161  		/* check if mask is contiguous */			\
+e2192de59e457a Johannes Berg      2023-01-18  162  		__BF_CHECK_POW2((_mask) + (1ULL << __bf_shf(_mask))) +	\
+e2192de59e457a Johannes Berg      2023-01-18  163  		/* and create the value */				\
+e2192de59e457a Johannes Berg      2023-01-18  164  		(((typeof(_mask))(_val) << __bf_shf(_mask)) & (_mask))	\
+e2192de59e457a Johannes Berg      2023-01-18  165  	)
+e2192de59e457a Johannes Berg      2023-01-18  166  
+3e9b3112ec74f1 Jakub Kicinski     2016-08-31  167  /**
+3e9b3112ec74f1 Jakub Kicinski     2016-08-31  168   * FIELD_GET() - extract a bitfield element
+3e9b3112ec74f1 Jakub Kicinski     2016-08-31  169   * @_mask: shifted mask defining the field's length and position
+7240767450d6d8 Masahiro Yamada    2017-10-03  170   * @_reg:  value of entire bitfield
+3e9b3112ec74f1 Jakub Kicinski     2016-08-31  171   *
+3e9b3112ec74f1 Jakub Kicinski     2016-08-31  172   * FIELD_GET() extracts the field specified by @_mask from the
+3e9b3112ec74f1 Jakub Kicinski     2016-08-31  173   * bitfield passed in as @_reg by masking and shifting it down.
+3e9b3112ec74f1 Jakub Kicinski     2016-08-31  174   */
+3e9b3112ec74f1 Jakub Kicinski     2016-08-31  175  #define FIELD_GET(_mask, _reg)						\
+3e9b3112ec74f1 Jakub Kicinski     2016-08-31  176  	({								\
+2a6c045640c38a Geert Uytterhoeven 2025-11-06  177  		__BF_FIELD_CHECK_REG(_mask, _reg, "FIELD_GET: ");	\
+2a6c045640c38a Geert Uytterhoeven 2025-11-06  178  		__FIELD_GET(_mask, _reg, "FIELD_GET: ");		\
+3e9b3112ec74f1 Jakub Kicinski     2016-08-31  179  	})
+3e9b3112ec74f1 Jakub Kicinski     2016-08-31  180  
+a256ae22570ee4 Luo Jie            2025-04-17  181  /**
+a256ae22570ee4 Luo Jie            2025-04-17  182   * FIELD_MODIFY() - modify a bitfield element
+a256ae22570ee4 Luo Jie            2025-04-17  183   * @_mask: shifted mask defining the field's length and position
+a256ae22570ee4 Luo Jie            2025-04-17  184   * @_reg_p: pointer to the memory that should be updated
+a256ae22570ee4 Luo Jie            2025-04-17  185   * @_val: value to store in the bitfield
+a256ae22570ee4 Luo Jie            2025-04-17  186   *
+a256ae22570ee4 Luo Jie            2025-04-17  187   * FIELD_MODIFY() modifies the set of bits in @_reg_p specified by @_mask,
+a256ae22570ee4 Luo Jie            2025-04-17  188   * by replacing them with the bitfield value passed in as @_val.
+a256ae22570ee4 Luo Jie            2025-04-17  189   */
+a256ae22570ee4 Luo Jie            2025-04-17  190  #define FIELD_MODIFY(_mask, _reg_p, _val)						\
+a256ae22570ee4 Luo Jie            2025-04-17  191  	({										\
+a256ae22570ee4 Luo Jie            2025-04-17  192  		typecheck_pointer(_reg_p);						\
+a256ae22570ee4 Luo Jie            2025-04-17  193  		__BF_FIELD_CHECK(_mask, *(_reg_p), _val, "FIELD_MODIFY: ");		\
+a256ae22570ee4 Luo Jie            2025-04-17  194  		*(_reg_p) &= ~(_mask);							\
+a256ae22570ee4 Luo Jie            2025-04-17 @195  		*(_reg_p) |= (((typeof(_mask))(_val) << __bf_shf(_mask)) & (_mask));	\
+a256ae22570ee4 Luo Jie            2025-04-17  196  	})
+a256ae22570ee4 Luo Jie            2025-04-17  197  
+
+-- 
 0-DAY CI Kernel Test Service
 https://github.com/intel/lkp-tests/wiki
 
--- =
-
+-- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
