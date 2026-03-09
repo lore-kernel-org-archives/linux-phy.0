@@ -4,80 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AD4C3F3C24C
-	for <linux-phy@archiver.kernel.org>; Mon,  9 Mar 2026 13:19:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A3611F417E7
+	for <linux-phy@archiver.kernel.org>; Mon,  9 Mar 2026 14:37:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wlQLU12ADjPS/uVkbniFofZF1J48RyaijEptUBO37Hc=; b=FOVO81rlhBCDzx
-	iST8bfTv6nMQHOg8sT4YjlqRRMJqRIVtMBeCSd0k2t90FDGUC/AQAa+Hja0rXlR1rXDZ1PXHT4vkQ
-	ISvTBlCEogbpWrCslxruiB1uE9zIytBJdl5uwMEm6MQWGwhNW5Fy7VsM7gbys0ZK61ynjwAjP2dTY
-	5ZZT+Z68FLpb8k939pzPyFwsoMU7bHDYl7Tz4wEneTbN2fzUTiTzvRkyNwh8yWwwWNu9CHU5ZRVjp
-	hS+deziI/wrBLvUEGf0QRS/pRP5Fy3VFDrKNjUebDPSN15VGzD9UB8xy9YUX1WIZErfE9Vl5d+KJj
-	+mhjNJ9ck8rX/8BHIICg==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=M1BdA9SqIrI0oGgrtCWUOcQspbvIgQog0qbPD6ACNwA=; b=3AdToqYmtkQwKg
+	1AiCd+44DC4sVNtLg0yhDx9SErrx2QaUuN9x/qNjqYA3u2d8H4LDRnwwJfFNY/w5bDDXteeTyWL/T
+	eYZTLcMjs71yYmHknvaTYKL8uqcx+4LeH4nWwyHDUFA5zx+rf4NzqZXFKR4mwVcjaWNQ8U6xkZo1J
+	sSbftVsPz2fiYEC1oVbfJgXD0n4j6YA/iO+w9GziLUWTra40Q+0lJaoQVs+ZxaznQx7sGOKUhcO7z
+	17+OZ4rXKmq4EvSBYOWd6h0DKdx/SE0yFFk6kg1APwNAGXpx0JLDHEKBfRVGs/Ea1V3e9bREW4w6M
+	BN3aqh1SXG+4UQwFDnFw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzaW4-00000007NTX-1D4y;
-	Mon, 09 Mar 2026 13:19:24 +0000
-Received: from mail.cjdns.fr ([5.135.140.105])
+	id 1vzbk5-00000007UKD-0aXo;
+	Mon, 09 Mar 2026 14:37:57 +0000
+Received: from smtpout-02.galae.net ([185.246.84.56])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzaW1-00000007NMZ-0dQN;
-	Mon, 09 Mar 2026 13:19:22 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 173DE286152;
-	Mon,  9 Mar 2026 14:19:13 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cjdns.fr; s=dkim;
-	t=1773062357; h=from:subject:date:message-id:to:cc:mime-version:
-	 content-transfer-encoding:in-reply-to:references;
-	bh=AsslNjPsniHPFq7y9ACqeRGOIicsFNpWA+I3qRFhHu8=;
-	b=j9ecNe94U9Em4IEwzKUh0fU8VAQGLclzvHLaHHqfT106fFGiQDskAYkhTzaE1I6qjgyzGB
-	fzHSl3OV+SjCc2QfXwjyk3yMQLg7T39ghqRKxskqHiybQKxgOfaq5qCLdF/Ewkkym92M4i
-	D9RG+xHxpH0Rcbc7ezS0pZE4VKZJpacQjXW291iNDzVEpnLXuikzBcl2FFHwLxgwYFWxMF
-	RphLbS4y7iN4bji5qazjWyDImLHqnPZ1tXdm1UYNaVs6l13v8UoCR5wmGIbMJWqPjr5MfE
-	SDf5XydOSUjXeliTSKntn/ovIe2m9Wdk7LS6oGl7bpbcJ8nEHlAZkjr2ABmwDw==
-From: Caleb James DeLisle <cjd@cjdns.fr>
-To: linux-mips@vger.kernel.org
-Cc: naseefkm@gmail.com,
-	mturquette@baylibre.com,
-	sboyd@kernel.org,
-	robh@kernel.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	cjd@cjdns.fr,
-	tsbogend@alpha.franken.de,
-	ryder.lee@mediatek.com,
-	jianjun.wang@mediatek.com,
-	lpieralisi@kernel.org,
-	kwilczynski@kernel.org,
-	mani@kernel.org,
-	bhelgaas@google.com,
-	vkoul@kernel.org,
-	neil.armstrong@linaro.org,
-	p.zabel@pengutronix.de,
-	matthias.bgg@gmail.com,
-	angelogioacchino.delregno@collabora.com,
-	nbd@nbd.name,
-	ansuelsmth@gmail.com,
-	linux-clk@vger.kernel.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-pci@vger.kernel.org,
-	linux-mediatek@lists.infradead.org,
-	linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 8/8] mips: dts: Add PCIe to EcoNet EN751221
-Date: Mon,  9 Mar 2026 13:18:18 +0000
-Message-Id: <20260309131818.74467-9-cjd@cjdns.fr>
-In-Reply-To: <20260309131818.74467-1-cjd@cjdns.fr>
-References: <20260309131818.74467-1-cjd@cjdns.fr>
+	id 1vzbk1-00000007UJK-3AvF
+	for linux-phy@lists.infradead.org;
+	Mon, 09 Mar 2026 14:37:55 +0000
+Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
+	by smtpout-02.galae.net (Postfix) with ESMTPS id 49C7E1A2D84;
+	Mon,  9 Mar 2026 14:37:49 +0000 (UTC)
+Received: from mail.galae.net (mail.galae.net [212.83.136.155])
+	by smtpout-01.galae.net (Postfix) with ESMTPS id 1D1075FFB8;
+	Mon,  9 Mar 2026 14:37:49 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 6EF9910369BDB;
+	Mon,  9 Mar 2026 15:37:45 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
+	t=1773067068; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 content-transfer-encoding; bh=S7RflR24v5ndLnYfQLDt2bC9qfbeEHQQDotQm7iWvUU=;
+	b=iJXaLjtimyROfSYmiuYp22lM8oQd9wuDeBYhGRr51byrU/ky5c9PrpTuf8uPPxRaJqHEz/
+	RFkCEYWw/ZBEJtGgX3NU2q7kCri0OGxIGJbx+OcinO0czW7FqeOb6fe4jS72ifLdZgHPh0
+	R9ggdocg2IREg5jWrvWRLLRhvhcu2BOPSFw/q0KcfQ6zkKns3HgrzSKD1MPfp4dmyTlAcu
+	ewgl5mTjBew3mwK3IbVGiN1+xIuwXa1/hpxwjcPK3h3PxfEBhHU1bWWWS3KorxtlhWFR+1
+	VLO584GBchv8n36ivuPLYFUotdzE5O4nxJU/jOefrk2MyYYrBPZiXU8OGxuvvA==
+From: =?utf-8?q?Th=C3=A9o_Lebrun?= <theo.lebrun@bootlin.com>
+Subject: [PATCH v9] phy: Add generic PHY driver used by MACB/GEM on EyeQ5
+Date: Mon, 09 Mar 2026 15:37:33 +0100
+Message-Id: <20260309-macb-phy-v9-0-5afd87d9db43@bootlin.com>
 MIME-Version: 1.0
+X-B4-Tracking: v=1; b=H4sIAC3brmkC/23Py2rDMBAF0F8JWtdFM3p31f8oXegxqgWNHexgG
+ oL/vXKgWMVZ3mHOHebOZpoKzeztdGcTLWUu41CDezmx2Pvhi7qSambIUQFH7M4+hu7S3zqEECV
+ ByiEYVtcvE+Xy86j6+Ky5L/N1nG6P5gW26ZOSBTreZXQZbfZkEN7DOF6/y/AaxzPbahbcKXBoK
+ FYaQYEjyqCTOFLRUHANFZWS8yYQWO3FEyobirKhslKnVNSovAVvjlTtFEE1VFXqXcrkhUteyCP
+ Vf1RzQNNQvf2akpVcWQvWHqnZKWJ71Wy/KgTwGlJQ+kjtTgXXDbWVBhWlJdIgOf6n67r+AsZZT
+ +I/AgAA
+X-Change-ID: 20251022-macb-phy-21bc4e1dfbb7
+To: Vinod Koul <vkoul@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ linux-mips@vger.kernel.org, 
+ Vladimir Kondratiev <vladimir.kondratiev@mobileye.com>, 
+ Gregory CLEMENT <gregory.clement@bootlin.com>, 
+ =?utf-8?q?Beno=C3=AEt_Monin?= <benoit.monin@bootlin.com>, 
+ Tawfik Bayouk <tawfik.bayouk@mobileye.com>, 
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>, 
+ Luca Ceresoli <luca.ceresoli@bootlin.com>, 
+ =?utf-8?q?Th=C3=A9o_Lebrun?= <theo.lebrun@bootlin.com>
+X-Mailer: b4 0.15-dev
 X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260309_061921_605389_4F4FC243 
-X-CRM114-Status: UNSURE (   9.51  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260309_073753_956847_46F352D5 
+X-CRM114-Status: GOOD (  18.18  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,208 +82,129 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add PCIe based on EN7528 PCIe driver, also add two MT76 wifi devices
-to SmartFiber XP8421-B.
-
-Signed-off-by: Caleb James DeLisle <cjd@cjdns.fr>
----
- arch/mips/boot/dts/econet/en751221.dtsi       | 114 ++++++++++++++++++
- .../econet/en751221_smartfiber_xp8421-b.dts   |  21 ++++
- arch/mips/econet/Kconfig                      |   2 +
- 3 files changed, 137 insertions(+)
-
-diff --git a/arch/mips/boot/dts/econet/en751221.dtsi b/arch/mips/boot/dts/econet/en751221.dtsi
-index 2abeef5b744a..72cb65654c34 100644
---- a/arch/mips/boot/dts/econet/en751221.dtsi
-+++ b/arch/mips/boot/dts/econet/en751221.dtsi
-@@ -1,6 +1,8 @@
- // SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
- /dts-v1/;
- 
-+#include <dt-bindings/clock/econet,en751221-scu.h>
-+
- / {
- 	compatible = "econet,en751221";
- 	#address-cells = <1>;
-@@ -30,6 +32,30 @@ cpuintc: interrupt-controller {
- 		#interrupt-cells = <1>;
- 	};
- 
-+	chip_scu: syscon@1fa20000 {
-+		compatible = "econet,en751221-chip-scu", "syscon";
-+		reg = <0x1fa20000 0x388>;
-+	};
-+
-+	pcie_phy1: pcie-phy@1fac0000 {
-+		compatible = "econet,en751221-pcie-gen2";
-+		reg = <0x1fac0000 0x1000>;
-+		#phy-cells = <0>;
-+	};
-+
-+	pcie_phy0: pcie-phy@1faf2000 {
-+		compatible = "econet,en751221-pcie-gen1";
-+		reg = <0x1faf2000 0x1000>;
-+		#phy-cells = <0>;
-+	};
-+
-+	scuclk: clock-controller@1fb00000 {
-+		compatible = "econet,en751221-scu";
-+		reg = <0x1fb00000 0x970>;
-+		#clock-cells = <1>;
-+		#reset-cells = <1>;
-+	};
-+
- 	intc: interrupt-controller@1fb40000 {
- 		compatible = "econet,en751221-intc";
- 		reg = <0x1fb40000 0x100>;
-@@ -41,6 +67,94 @@ intc: interrupt-controller@1fb40000 {
- 		econet,shadow-interrupts = <7 2>, <8 3>, <13 12>, <30 29>;
- 	};
- 
-+	pciecfg: pciecfg@1fb80000 {
-+		compatible = "mediatek,generic-pciecfg", "syscon";
-+		reg = <0x1fb80000 0x1000>;
-+	};
-+
-+	pcie0: pcie@1fb81000 {
-+		compatible = "econet,en7528-pcie";
-+		device_type = "pci";
-+		reg = <0x1fb81000 0x1000>;
-+		reg-names = "port0";
-+		linux,pci-domain = <0>;
-+		#address-cells = <3>;
-+		#size-cells = <2>;
-+		interrupt-parent = <&intc>;
-+		interrupts = <23>;
-+		interrupt-names = "pcie_irq";
-+		clocks = <&scuclk EN751221_CLK_PCIE>;
-+		clock-names = "sys_ck0";
-+		phys = <&pcie_phy0>;
-+		phy-names = "pcie-phy0";
-+		bus-range = <0x00 0xff>;
-+		ranges = <0x01000000 0 0x00000000 0x1f600000 0 0x00008000>,
-+			 <0x82000000 0 0x20000000 0x20000000 0 0x08000000>;
-+		status = "disabled";
-+
-+		#interrupt-cells = <1>;
-+		interrupt-map-mask = <0 0 0 7>;
-+		interrupt-map = <0 0 0 1 &pcie_intc0 0>,
-+				<0 0 0 2 &pcie_intc0 1>,
-+				<0 0 0 3 &pcie_intc0 2>,
-+				<0 0 0 4 &pcie_intc0 3>;
-+
-+		pcie_intc0: interrupt-controller {
-+			interrupt-controller;
-+			#address-cells = <0>;
-+			#interrupt-cells = <1>;
-+		};
-+
-+		slot0: pcie@0,0 {
-+			reg = <0x0000 0 0 0 0>;
-+			device_type = "pci";
-+			#address-cells = <3>;
-+			#size-cells = <2>;
-+			ranges;
-+		};
-+	};
-+
-+	pcie1: pcie@1fb83000 {
-+		compatible = "econet,en7528-pcie";
-+		device_type = "pci";
-+		reg = <0x1fb83000 0x1000>;
-+		reg-names = "port1";
-+		linux,pci-domain = <1>;
-+		#address-cells = <3>;
-+		#size-cells = <2>;
-+		interrupt-parent = <&intc>;
-+		interrupts = <24>;
-+		interrupt-names = "pcie_irq";
-+		clocks = <&scuclk EN751221_CLK_PCIE>;
-+		clock-names = "sys_ck1";
-+		phys = <&pcie_phy1>;
-+		phy-names = "pcie-phy1";
-+		bus-range = <0x00 0xff>;
-+		ranges = <0x81000000 0 0x00000000 0x1f608000 0 0x00008000>,
-+			 <0x82000000 0 0x28000000 0x28000000 0 0x08000000>;
-+		status = "disabled";
-+
-+		#interrupt-cells = <1>;
-+		interrupt-map-mask = <0 0 0 7>;
-+		interrupt-map = <0 0 0 1 &pcie_intc1 0>,
-+				<0 0 0 2 &pcie_intc1 1>,
-+				<0 0 0 3 &pcie_intc1 2>,
-+				<0 0 0 4 &pcie_intc1 3>;
-+
-+		pcie_intc1: interrupt-controller {
-+			interrupt-controller;
-+			#address-cells = <0>;
-+			#interrupt-cells = <1>;
-+		};
-+
-+		slot1: pcie@1,0 {
-+			reg = <0x0800 0 0 0 0>;
-+			#address-cells = <3>;
-+			#size-cells = <2>;
-+			ranges;
-+		};
-+	};
-+
- 	uart: serial@1fbf0000 {
- 		compatible = "ns16550";
- 		reg = <0x1fbf0000 0x30>;
-diff --git a/arch/mips/boot/dts/econet/en751221_smartfiber_xp8421-b.dts b/arch/mips/boot/dts/econet/en751221_smartfiber_xp8421-b.dts
-index 8223c5bce67f..c633bf73add6 100644
---- a/arch/mips/boot/dts/econet/en751221_smartfiber_xp8421-b.dts
-+++ b/arch/mips/boot/dts/econet/en751221_smartfiber_xp8421-b.dts
-@@ -17,3 +17,24 @@ chosen {
- 		linux,usable-memory-range = <0x00020000 0x1bfe0000>;
- 	};
- };
-+
-+&pcie0 {
-+	status = "okay";
-+};
-+&slot0 {
-+	wifi@0,0 {
-+		/* MT7612E */
-+		compatible = "mediatek,mt76";
-+		reg = <0x0000 0 0 0 0>;
-+	};
-+};
-+&pcie1 {
-+	status = "okay";
-+};
-+&slot1 {
-+	wifi@0,0 {
-+		/* MT7592 */
-+		compatible = "mediatek,mt76";
-+		reg = <0x0000 0 0 0 0>;
-+	};
-+};
-diff --git a/arch/mips/econet/Kconfig b/arch/mips/econet/Kconfig
-index fd69884cc9a8..b37b9d25d5a4 100644
---- a/arch/mips/econet/Kconfig
-+++ b/arch/mips/econet/Kconfig
-@@ -13,7 +13,9 @@ choice
- 		bool "EN751221 family"
- 		select COMMON_CLK
- 		select ECONET_EN751221_INTC
-+		select HAVE_PCI
- 		select IRQ_MIPS_CPU
-+		select PCI_DRIVERS_GENERIC
- 		select SMP
- 		select SMP_UP
- 		select SYS_SUPPORTS_SMP
--- 
-2.39.5
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+RXllUTUgU29DcyBpbnRlZ3JhdGUgdHdvIEdFTSBpbnN0YW5jZXMuIEEgc3lzdGVtLWNvbnRyb2xs
+ZXIgcmVnaXN0ZXIKcmVnaW9uIG5hbWVkICJPTEIiIGhhcyBzb21lIGNvbnRyb2wgb3ZlciB0aGUg
+RXRoZXJuZXQgUEhZIGludGVncmF0aW9uLgoKRXh0ZW5kIHRoZSBjdXJyZW50IE9MQiBlY29zeXN0
+ZW0gd2l0aCBhIG5ldyBnZW5lcmljIFBIWSBkcml2ZXIuCiAtIE9MQiBpcyBjYXJyaWVkIGJ5IG9u
+ZSBtYWluIHBsYXRmb3JtIGRyaXZlcjogY2xrLWV5ZXEuCiAtIEl0IGluc3RhbnRpYXRlcyBhdXhp
+bGlhcnkgZGV2aWNlczogcmVzZXQtZXllcSAmIHBpbmN0cmwtZXllcTUuCiAtIFdlIGFkZCBhIG5l
+dyBvbmU6IHBoeS1leWVxNS1ldGguCgpBYm91dCByZWxhdGVkIHBhdGNoZXM6CgogLSBUaGUgTUFD
+QiBzZXJpZXMgWzFdIGhhcyBiZWVuIG1lcmdlZCBpbiB2Ni4xOS1yYzEuIEl0IG1ha2VzIE1BQ0IK
+ICAgY29uc3VtZSBhIGdlbmVyaWMgUEhZIGZyb20gZGV2aWNldHJlZSB3aXRoIHRoZSBFeWVRNSBj
+b21wYXRpYmxlLgoKIC0gY2xrIHBhdGNoZXMgYXJlIG9uIHRoZSBsa21sIFszXTsgdGhleSBtYWtl
+IGNsay1leWVxIGluc3RhbnRpYXRlIHRoaXMKICAgbmV3IGF1eGlsaWFyeSBkZXZpY2UuIFRoZXkg
+YWxzbyBlbnN1cmUgd2UgZ2V0IGEgZGV2LT5vZl9ub2RlCiAgIGFzc2lnbmVkLiBQYXRjaGVzIHVz
+ZWQgdG8gYmUgWzJdIGluIHRoZSBzYW1lIHNlcmllcy4KCiAtIE1JUFMgcGF0Y2hlcyBhcmUgb24g
+dGhlIGxrbWwgWzRdOyB0aGV5IGFkZCBNQUNCL0dFTSBpbnN0YW5jZXMgaW4KICAgZGV2aWNldHJl
+ZSBhbmQgdGhlaXIgYXNzb2NpYXRlZCBQSFlzLiBUaGV5IGFsc28gdXBkYXRlIGR0LWJpbmRpbmdz
+CiAgIHRvIHJlZmxlY3QgdGhpcyBuZXcgZmVhdHVyZSBPTEIgcHJvdmlkZXMuIFBhdGNoZXMgdXNl
+ZCB0byBiZSBbMl0gaW4KICAgdGhlIHNhbWUgc2VyaWVzLgoKSGF2ZSBhIG5pY2UgZGF5LApUaGFu
+a3MhClRow6lvCgpbMF06IGh0dHBzOi8vbG9yZS5rZXJuZWwub3JnL2xrbWwvMjAyNTA2MjctbWFj
+Yi12Mi0xNS1mZjgyMDdkMGJiNzdAYm9vdGxpbi5jb20vClsxXTogaHR0cHM6Ly9sb3JlLmtlcm5l
+bC5vcmcvbGttbC8yMDI1MTAyMi1tYWNiLWV5ZXE1LXYyLTAtN2MxNDBhYmIwNTgxQGJvb3RsaW4u
+Y29tLwpbMl06IGh0dHBzOi8vbG9yZS5rZXJuZWwub3JnL2FsbC8yMDI2MDEyNy1tYWNiLXBoeS12
+Ni0wLWNkZDg0MDU4ODE4OEBib290bGluLmNvbS8KWzNdOiBodHRwczovL2xvcmUua2VybmVsLm9y
+Zy9hbGwvMjAyNjAyMjUtbWFjYi1waHktdjctMC02NjViZDg2MTlkNTFAYm9vdGxpbi5jb20vCls0
+XTogaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvYWxsLzIwMjYwMjI1LW1hY2ItcGh5LXY3LTAtZDNj
+OTg0MmVjOTMxQGJvb3RsaW4uY29tLwoKU2lnbmVkLW9mZi1ieTogVGjDqW8gTGVicnVuIDx0aGVv
+LmxlYnJ1bkBib290bGluLmNvbT4KLS0tCkNoYW5nZXMgaW4gdjk6Ci0gRXhwbGljaXRseSBjYXN0
+IGRldl9nZXRfcGxhdGRhdGEoKSBmcm9tIGB2b2lkICpgIHRvIGB2b2lkIF9faW9tZW0gKmAsCiAg
+dG8gZml4ICJkaWZmZXJlbnQgYWRkcmVzcyBzcGFjZXMiIHNwYXJzZSB3YXJuaW5nLgotIExpbmsg
+dG8gdjg6IGh0dHBzOi8vcGF0Y2gubXNnaWQubGluay8yMDI2MDMwNi1tYWNiLXBoeS12OC0wLWI1
+YzQ4ZWU2MTQwMkBib290bGluLmNvbQoKQ2hhbmdlcyBpbiB2ODoKLSBSZWJhc2UgdXBvbiBsaW51
+eC1waHkvbmV4dC4gRHJvcCBzb3J0aW5nIEtjb25maWcvTWFrZWZpbGUgcGF0Y2gKICBiZWNhdXNl
+IG9uZSBleGlzdHMgdXBzdHJlYW0uCi0gSW5zdGVhZCBvZiBzdG9yaW5nIGEgcGh5X2ludGVyZmFj
+ZV90IHRvIGtub3cgd2hpY2ggc3VibW9kZSB0byB0YXJnZXQsCiAgc3RvcmUgYSBjdXN0b20gZW51
+bSB3aXRoIHR3byBzdGF0ZXMgKFJHTUlJL1NHTUlJKS4gSWdub3JlIFJHTUlJCiAgdGltaW5ncyBp
+biB0aGlzIGdlbmVyaWMgUEhZIGRyaXZlciBiZWNhdXNlIHRoZXkgYXJlIGhhbmRsZWQgYnkgdGhl
+CiAgbmV0IFBIWS4KLSBlcTVfcGh5X3NldF9tb2RlKCkgY2FsbHMgaW50byBlcTVfcGh5X3ZhbGlk
+YXRlKCkgYW5kIG5vdyBwcm9wYWdhdGVzCiAgaXRzIGVycm9yIHJldHVybiB2YWx1ZS4gUHJldmlv
+dXNseSBpdCBzaGFkb3dlZCBFSU5WQUwgd2l0aCBFT1BOT1RTVVBQLgotIExpbmsgdG8gdjc6IGh0
+dHBzOi8vbG9yZS5rZXJuZWwub3JnL3IvMjAyNjAyMjUtbWFjYi1waHktdjctMC1lNTIxMWE2MWRi
+NTZAYm9vdGxpbi5jb20KCkNoYW5nZXMgaW4gdjc6Ci0gU2VwYXJhdGUgUEhZIC8gY2xrIC8gTUlQ
+UyBwYXRjaGVzIGludG8gdGhyZWUgc2VyaWVzLgotIEltcGxlbWVudCBwaHlfdmFsaWRhdGUoKS4K
+LSBwaHlfcG93ZXJfb24oKSBub3cgc3VwcG9ydHMgYmVpbmcgY2FsbGVkIHdpdGhvdXQgYSBwcmlv
+cgogIHBoeV9zZXRfbW9kZSgpIGJlY2F1c2UgYXQgcHJvYmUgd2UgcmVhZCB0aGUgaGFyZHdhcmUg
+c3RhdGUgdG8KICBpbml0aWFsaXNlIGluc3QtPnBoeV9pbnN0YW5jZS4KLSBwaHlfc2V0X21vZGUo
+KSBub3cgc3VwcG9ydCBiZWluZyBjYWxsZWQgd2hpbGUgdGhlIFBIWSBpcyBwb3dlcmVkIG9uLgot
+IEFkZCBzZ21paV9zdXBwb3J0IGJvb2wgZm9yIGVhY2ggUEhZIGluc3RhbmNlIHRvIHJlamVjdCBT
+R01JSQogIGNvbmZpZ3VyYXRpb24gb24gUEhZIDEgd2hpY2ggb25seSBzdXBwb3J0cyBSR01JSS4K
+LSBEcm9wIGRldl9kYmcoKSBjYWxscy4KLSBEcm9wIHJlYWRsKGdwKSBpbiBwaHlfaW5pdCgpLgot
+IFJlcGxhY2UgaW5zdC0+cHJpdiBmaWVsZCBieSBpbnN0LT5kZXY7IHRoYXQgaXMgdGhlIG9ubHkg
+dmFsdWUgd2UgbmVlZAogIGZyb20gdGhlIGRyaXZlciBwcml2YXRlIGRhdGEuIERyb3AgcHJpdi0+
+ZGV2IGZpZWxkIHRoYXQgaXMgdW51c2VkLgotIENhbGwgaW50byBwaHlfZXhpdCgpIGZyb20gcGh5
+X2luaXQoKSBhcyB0aGUgc2VxdWVuY2UgaXMgdGhlIHNhbWUuCiAgQWRkIGNvbW1lbnQgdG8gZXhw
+bGFpbiB0aGUgcmVhc29uaW5nLgotIFRha2UgUmV2aWV3ZWQtYnk6IEx1Y2Egb24gInBoeTogc29y
+dCBLY29uZmlnIGFuZCBNYWtlZmlsZSIuCi0gUmViYXNlIG9udG8gdjcuMC1yYzEgYW5kIHRlc3Qg
+b24gRXllUTUuIE9ubHkgZGlmZiB0byByZXBvcnQ6CiAgUEhZX0NPTU1PTl9QUk9QUyBhbmQgUEhZ
+X0NPTU1PTl9QUk9QU19URVNUIGFyZSBrZXB0IGF0IHRoZSB0b3AgaW4gdGhlCiAgc29ydGluZyBw
+YXRjaDsgd2UgZG8gbm90IHN0cmljdGx5IHJlc3BlY3QgYW4gYWxwaGFiZXRpY2FsIG9yZGVyaW5n
+LgotIExpbmsgdG8gdjY6IGh0dHBzOi8vbG9yZS5rZXJuZWwub3JnL3IvMjAyNjAxMjctbWFjYi1w
+aHktdjYtMC1jZGQ4NDA1ODgxODhAYm9vdGxpbi5jb20KCkNoYW5nZXMgaW4gdjY6Ci0gUmViYXNl
+IHVwb24gdjYuMTktcmM3OyBub3RoaW5nIHRvIHJlcG9ydC4KLSBBZGQgbmV3IHBhdGNoICJwaHk6
+IHNvcnQgS2NvbmZpZyBhbmQgTWFrZWZpbGUiLgotIHBoeS1leWVxNS1ldGg6IGRyb3AgdXNlbGVz
+cyBleHBsaWNpdCBfX2lvbWVtIGNhc3QgdG8KICBkZXZfZ2V0X3BsYXRkYXRhKCkgcmV0dXJuIHZh
+bHVlLgotIEkgZGlkICpub3QqIGRyb3AgdGhlIEtjb25maWcgYGRlZmF1bHQgTUFDSF9FWUVRNWAg
+bm9yIGRyaXZlcgogIGBkZXZfZGJnKClgLiBJIHRoaW5rIGJvdGggYXJlIHVzZWZ1bCBhbmQgc2hv
+dWxkIGJlIGtlcHQuIFNlZQogIGxhc3QgcmV2aXNpb24gZGlzY3Vzc2lvbiBoZXJlOgogIGh0dHBz
+Oi8vbG9yZS5rZXJuZWwub3JnL2xrbWwvREZHU01OODI2OE8wLjMzVFlDUURCVkhVSFpAYm9vdGxp
+bi5jb20vCi0gTGluayB0byB2NTogaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvci8yMDI1MTIxNS1t
+YWNiLXBoeS12NS0wLWE5ZGZlYTM5ZGEzNEBib290bGluLmNvbQoKQ2hhbmdlcyBpbiB2NToKLSBw
+aHktZXllcTUtZXRoOgogIC0gZml4ICNpbmNsdWRlczogYWRkIGRlbGF5LCBnZnBfdHlwZXMsIG1v
+ZHVsZSBhbmQgZHJvcCBhcnJheV9zaXplLAogICAgYnVnLCBjbGVhbnVwLCBjb250YWluZXJfb2Ys
+IGxvY2tkZXAsIG11dGV4LgogIC0gZXE1X3BoeV94bGF0ZSgpOiBhdm9pZCBtYWdpYyB2YWx1ZSwg
+dXNlIEVRNV9QSFlfQ09VTlQuCiAgLSB1c2UgZGV2X2Vycl9wcm9iZSgpIGluIGVycm9yIGNhc2Vz
+IG9mIGRldm1fcGh5X2NyZWF0ZSgpIGFuZAogICAgZGV2bV9vZl9waHlfcHJvdmlkZXJfcmVnaXN0
+ZXIoKS4KLSAzeCBSZXZpZXdlZC1ieTogTHVjYSBDZXJlc29saS4KLSBBZGQgTmVpbCBBcm1zdHJv
+bmcgdG8gQ2MgYXMgbmV3IFBIWSBzdWJzeXN0ZW0gcmV2aWV3ZXIuCi0gUmViYXNlIG9uIHY2LjE5
+LXJjMSwgdGVzdGVkIG9uIGhhcmR3YXJlLCBubyBjaGFuZ2VzLgotIExpbmsgdG8gdjQ6IGh0dHBz
+Oi8vbG9yZS5rZXJuZWwub3JnL3IvMjAyNTExMjQtbWFjYi1waHktdjQtMC05NTVjNjI1YTgxYTdA
+Ym9vdGxpbi5jb20KCkNoYW5nZXMgaW4gdjQ6Ci0gQXBwZW5kIG15IFNvQiB0byBKZXJvbWUncyBw
+YXRjaDoKICBbUEFUQ0ggdjQgMy83XSBjbGs6IGV5ZXE6IHVzZSB0aGUgYXV4aWxpYXJ5IGRldmlj
+ZSBjcmVhdGlvbiBoZWxwZXIKLSBSZWJhc2Ugb24gbmV0LW5leHQgJiBsaW51eC17Y2xrLG1pcHMs
+cGh5fS4gTm90aGluZyB0byByZXBvcnQuCi0gTGluayB0byB2MzogaHR0cHM6Ly9sb3JlLmtlcm5l
+bC5vcmcvci8yMDI1MTExOS1tYWNiLXBoeS12My0wLWU5YTdiZTE4NmEzM0Bib290bGluLmNvbQoK
+Q2hhbmdlcyBpbiB2MzoKLSBUYWtlIFBoaWxpcHAgWmFiZWwncyBSZXZpZXdlZC1ieSAmIEFja2Vk
+LWJ5IHRyYWlsZXJzIG9uIHJlc2V0IHBhdGNoLgotIFRha2UgVGhvbWFzIEJvZ2VuZG9lcmZlcidz
+IHR3byBBY2tlZC1ieSB0cmFpbGVycyBvbiBEVCBwYXRjaGVzLgotIFJlYmFzZSBvbiBuZXQtbmV4
+dCAmIHRlc3Qgb24gdGFyZ2V0LiBOb3RoaW5nIHRvIHJlcG9ydC4KLSBMaW5rIHRvIHYyOiBodHRw
+czovL2xvcmUua2VybmVsLm9yZy9yLzIwMjUxMTAxLW1hY2ItcGh5LXYyLTAtYzE1MTllZWYxNmQz
+QGJvb3RsaW4uY29tCgpDaGFuZ2VzIGluIHYyOgotIFRha2UgQWNrZWQtYnk6IENvbm9yIERvb2xl
+eSBvbiBkdC1iaW5kaW5ncy1wYXRjaC4KLSBzLyVsZC8ldHUvIGZvciBwcmludGluZyBwdHJkaWZm
+X3Q7IHdhcm5pbmdzIG9uIDMyLWJpdCBhcmNocy4KICBSZXBvcnRlZCBieSBOSVBBJ3MgbmV0ZGV2
+L2J1aWxkXzMyYml0IHRlc3QuCiAgaHR0cHM6Ly9wYXRjaHdvcmsua2VybmVsLm9yZy9wcm9qZWN0
+L25ldGRldmJwZi9wYXRjaC8yMDI1MTAyMS1tYWNiLWV5ZXE1LXYxLTctM2IwYjVhOWQyZjg1QGJv
+b3RsaW4uY29tLwogIGh0dHBzOi8vbmV0ZGV2LmJvdHMubGludXguZGV2L3N0YXRpYy9uaXBhLzEw
+MTQxMjYvMTQyNzc4NTcvYnVpbGRfMzJiaXQvc3RkZXJyCi0gTGluayB0byB2MTogaHR0cHM6Ly9s
+b3JlLmtlcm5lbC5vcmcvci8yMDI1MTAyMi1tYWNiLXBoeS12MS0wLWYyOWYyOGZhZTcyMUBib290
+bGluLmNvbQoKQ2hhbmdlcyBzaW5jZSBNQUNCIFYxOgotIERyb3AgdGhlIG9sZCAibW9iaWxleWUs
+b2xiIiBwcm9wZXJ0aWVzIGZyb20gRFQgcGF0Y2hlczsgZm91bmQgd2hpbGUKICBydW5uaW5nIGR0
+YnNfY2hlY2sgYW5kIGR0X2JpbmRpbmdfY2hlY2suCi0gRHJvcCBhbGwgcGF0Y2hlcyB0YXJnZXRp
+bmcgbmV0LW5leHQuIFRoYXQgaXMgTUFDQiBkdC1iaW5kaW5ncyBwYXRjaAogIGFuZCBNQUNCIGRy
+aXZlciBjb2RlLiBTZWUgdGhlcmUgaGVyZSBbMV0uCi0gTGluayB0byB2MTogaHR0cHM6Ly9sb3Jl
+Lmtlcm5lbC5vcmcvbGttbC8yMDI1MTAyMS1tYWNiLWV5ZXE1LXYxLTAtM2IwYjVhOWQyZjg1QGJv
+b3RsaW4uY29tLwoKUGFzdCB2ZXJzaW9ucyBvZiBNQUNCIHBhdGNoZXM6CiAtIE1hcmNoIDIwMjU6
+IFtQQVRDSCBuZXQtbmV4dCAwMC8xM10gU3VwcG9ydCB0aGUgQ2FkZW5jZSBNQUNCL0dFTQogICBp
+bnN0YW5jZXMgb24gTW9iaWxleWUgRXllUTUgU29DcwogICBodHRwczovL2xvcmUua2VybmVsLm9y
+Zy9sa21sLzIwMjUwMzIxLW1hY2ItdjEtMC01MzdiN2UzNzk3MWRAYm9vdGxpbi5jb20vCiAtIEp1
+bmUgMjAyNTogW1BBVENIIG5ldC1uZXh0IHYyIDAwLzE4XSBTdXBwb3J0IHRoZSBDYWRlbmNlIE1B
+Q0IvR0VNCiAgIGluc3RhbmNlcyBvbiBNb2JpbGV5ZSBFeWVRNSBTb0NzCiAgIGh0dHBzOi8vbG9y
+ZS5rZXJuZWwub3JnL2xrbWwvMjAyNTA2MjctbWFjYi12Mi0wLWZmODIwN2QwYmI3N0Bib290bGlu
+LmNvbS8KIC0gQXVndXN0IDIwMjU6IFtQQVRDSCBuZXQgdjMgMDAvMTZdIG5ldDogbWFjYjogdmFy
+aW91cyBmaXhlcyAmIGNsZWFudXAKICAgaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvbGttbC8yMDI1
+MDgwOC1tYWNiLWZpeGVzLXYzLTAtMDhmMWZjYjUxNzlmQGJvb3RsaW4uY29tLwoKLS0tClRow6lv
+IExlYnJ1biAoMSk6CiAgICAgIHBoeTogQWRkIGRyaXZlciBmb3IgRXllUTUgRXRoZXJuZXQgUEhZ
+IHdyYXBwZXIKCiBNQUlOVEFJTkVSUyAgICAgICAgICAgICAgICAgfCAgIDEgKwogZHJpdmVycy9w
+aHkvS2NvbmZpZyAgICAgICAgIHwgIDEzICsrCiBkcml2ZXJzL3BoeS9NYWtlZmlsZSAgICAgICAg
+fCAgIDEgKwogZHJpdmVycy9waHkvcGh5LWV5ZXE1LWV0aC5jIHwgMjgwICsrKysrKysrKysrKysr
+KysrKysrKysrKysrKysrKysrKysrKysrKysrKysrCiA0IGZpbGVzIGNoYW5nZWQsIDI5NSBpbnNl
+cnRpb25zKCspCi0tLQpiYXNlLWNvbW1pdDogY2FmMDg1MTRiYmVlMDczNmMzMWQ4ZDRmNDA2ZTM0
+MTVjZGY3MjZiYgpjaGFuZ2UtaWQ6IDIwMjUxMDIyLW1hY2ItcGh5LTIxYmM0ZTFkZmJiNwoKQmVz
+dCByZWdhcmRzLAotLSAgClRow6lvIExlYnJ1biA8dGhlby5sZWJydW5AYm9vdGxpbi5jb20+CgoK
+LS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcK
+aHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
