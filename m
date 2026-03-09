@@ -4,78 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 403C8EFCD77
-	for <linux-phy@archiver.kernel.org>; Mon,  9 Mar 2026 10:04:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3C886F3C24C
+	for <linux-phy@archiver.kernel.org>; Mon,  9 Mar 2026 13:18:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OpPOT1godKRjOZ2Eoskz/ho2GQzS1xYz0vNHYpHqsrs=; b=OsdNLmix1yuYaS
-	FgaL7vrtW1WVeg+AQWc8xKXzARIPwZnrqiO7xqfRnXeCMDg+ZYhHkp0UzHxBYyXKUU26IwCQNCIoI
-	/EfzMO2yGgV2xKBLlA2mevXt3+AXkd3prMnOG5dw45nuiZDnFvme2eOtXdyKpOgB7206QP1yJeQTh
-	lAWBFl+zloraPA4WMp64YlSgMV4cGbtHjkHm+OSsDefBsakkrv1W8SLOOiIZ8V1xrxRYLmxd8qrV6
-	a4ZTc6Tgvg5xfUkyea3QUwXXKdxMifkkRGNwTRvAMXyRx+0pJNqLOyKUZzDxt96Z+9mJN2YkkxdWR
-	LTfIZs5a88PU4f0CMsMw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=K0xjZvEPEtsEp84D0DpE2y0XCTlhpNIN9Ae9fBz8ODM=; b=riPaa8wz9xcU8y
+	ejXS1mOZQB8M8BdAPMmDJNXyFF+IZn8ODyJJpfh35Ch3ADanNo0BJGgZPks8yS+HROEFHnVE4olMO
+	1cmYj417XnBmUCBAVM7+sVDK/ef2ZDKp+JTLeWI+ymZulLJi52kYmADHdM2X69/J+Z7NKKiWr7VmM
+	FInoPkFm1tcW3L5icHs0vllDNQ7kBRPdIK2VkiV0luwHQCKBEvHMfcl20YYtpv8o2nQviKYcVF5pl
+	rZkEdOe9G8k9TFaMOKCoygLEqd6Y8p9BD0SJ5dBK8Vj1J+oQmAW8b2D3jT+CqWox407JPbB+rorUR
+	+iPm2p3hp0Ul7gC5ZV8A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzXTn-000000072mz-3Ddr;
-	Mon, 09 Mar 2026 10:04:51 +0000
-Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
+	id 1vzaVU-00000007MsI-3AXl;
+	Mon, 09 Mar 2026 13:18:48 +0000
+Received: from mail.cjdns.fr ([5.135.140.105])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzXTj-000000072lz-48Tu;
-	Mon, 09 Mar 2026 10:04:49 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1773050663; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=WPKrdsecXgvpHVw3d3nA7UKT5PHJNT4CVQC1wG3jkoTNIrWS0kkfHp25A9EAsGTtUg3my3EIBZ9cAYhDH/7GZ87SYfPkLX9nWSV0hO7AsCEktYkMz08X1zMu77OuRIbRaX/3r1+PpRfXlG66IkdIhRZvRncGQ7Z9ascvWR05+D4=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1773050663; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=NlPBU6mm/vR3l3IynQJyTnSVRzr3DXJWAgerFRXKwLY=; 
-	b=ITht2xuBtAY+LyVbcl9bvvuPCXhHUIobCtTsZc5aFz2E4VdopHHB54s6J/T26V2aPee8kKx0Y8T/PCGRwsXTB5HQzkXEBUtiVmomJr13U5450kH9p11rX8gGW9jmq3SEV1GAmDKZIyxElT/VTgzgGJfOPj8GKyWMbhV1gitWc0M=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=nicolas.frattaroli@collabora.com;
-	dmarc=pass header.from=<nicolas.frattaroli@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1773050663;
-	s=zohomail; d=collabora.com; i=nicolas.frattaroli@collabora.com;
-	h=From:From:To:To:Cc:Cc:Subject:Subject:Date:Date:Message-ID:In-Reply-To:References:MIME-Version:Content-Transfer-Encoding:Content-Type:Message-Id:Reply-To;
-	bh=NlPBU6mm/vR3l3IynQJyTnSVRzr3DXJWAgerFRXKwLY=;
-	b=FfyXGNfa7BdEYR+/X2BWXaCeOR1xLNi6bU3NnS6twJjCEsBQSvH3U0tRJJlNxVin
-	EthZxVdVb5u3865e3MDpOBj6BEMpriUN0Oqy+EMI529/FmafrTz8JcGKAzykVNai9Go
-	VPM5cR5IPh4kSsAqFib03nKGO6VeWMO4YndPgj5I=
-Received: by mx.zohomail.com with SMTPS id 1773050662683221.52211658341253;
-	Mon, 9 Mar 2026 03:04:22 -0700 (PDT)
-From: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>
-To: "Martin K. Petersen" <martin.petersen@oracle.com>
-Cc: Rob Herring <robh@kernel.org>, Alim Akhtar <alim.akhtar@samsung.com>,
- Avri Altman <avri.altman@wdc.com>, Bart Van Assche <bvanassche@acm.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Peter Wang <peter.wang@mediatek.com>, Stanley Jhu <chu.stanley@gmail.com>,
- "James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
- "Martin K. Petersen" <martin.petersen@oracle.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, Liam Girdwood <lgirdwood@gmail.com>,
- Mark Brown <broonie@kernel.org>, Chaotian Jing <Chaotian.Jing@mediatek.com>,
- Neil Armstrong <neil.armstrong@linaro.org>,
- Louis-Alexis Eyraud <louisalexis.eyraud@collabora.com>, kernel@collabora.com,
- linux-scsi@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org,
- Conor Dooley <conor.dooley@microchip.com>
-Subject: Re: [PATCH v9 03/23] dt-bindings: ufs: mediatek,ufs: Add mt8196 variant
-Date: Mon, 09 Mar 2026 11:04:14 +0100
-Message-ID: <5973984.DvuYhMxLoT@workhorse>
-In-Reply-To: <yq14imrwp3z.fsf@ca-mkp.ca.oracle.com>
-References: <20260306-mt8196-ufs-v9-0-55b073f7a830@collabora.com>
- <4089450.ElGaqSPkdT@workhorse> <yq14imrwp3z.fsf@ca-mkp.ca.oracle.com>
+	id 1vzaVR-00000007MrI-2dG9;
+	Mon, 09 Mar 2026 13:18:47 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 7695B284DD7;
+	Mon,  9 Mar 2026 14:18:32 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cjdns.fr; s=dkim;
+	t=1773062319; h=from:subject:date:message-id:to:cc:mime-version:
+	 content-transfer-encoding; bh=Y07gyMyA+v61AkgAjpiX1Hx/H6h+2ViD5prXyk9P3U4=;
+	b=GjMOdncYe6alUKv1iGSD8mSIJWw9X7w8G8Tw2F5S3/Wz052nxQrUNbclTyhViUsqFhy8uf
+	C6/MKgSsiwk2MpOzEieAkEdUbYEUan9KLAJ6Cj/A/75ZTBzlkw5zTzbhwMs8ovUNnySttd
+	v4Ne/HYsA2K1D9If9zwt3WXq5sYb64cYAfkGCj2Po4Pxir1dJVnEiQ0YWEYnSI6RgMB7+3
+	YJ9p5GYweAJtS0hxLYE+ynGtr2gH7+YVKrdT3D9pdOwL23NOFYR7xlpuAaPel1K521I8lw
+	GCEavo2ObQVrYDX3oPynx9/EjTSt4Ex/t3pyfwxOKJd44gMtMK6MlCYlu9KD0A==
+From: Caleb James DeLisle <cjd@cjdns.fr>
+To: linux-mips@vger.kernel.org
+Cc: naseefkm@gmail.com,
+	mturquette@baylibre.com,
+	sboyd@kernel.org,
+	robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	cjd@cjdns.fr,
+	tsbogend@alpha.franken.de,
+	ryder.lee@mediatek.com,
+	jianjun.wang@mediatek.com,
+	lpieralisi@kernel.org,
+	kwilczynski@kernel.org,
+	mani@kernel.org,
+	bhelgaas@google.com,
+	vkoul@kernel.org,
+	neil.armstrong@linaro.org,
+	p.zabel@pengutronix.de,
+	matthias.bgg@gmail.com,
+	angelogioacchino.delregno@collabora.com,
+	nbd@nbd.name,
+	ansuelsmth@gmail.com,
+	linux-clk@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-pci@vger.kernel.org,
+	linux-mediatek@lists.infradead.org,
+	linux-phy@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v2 0/8] mips: econet: Add clk/reset and PCIe support
+Date: Mon,  9 Mar 2026 13:18:10 +0000
+Message-Id: <20260309131818.74467-1-cjd@cjdns.fr>
 MIME-Version: 1.0
+X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260309_030448_079243_CE5D8CDD 
-X-CRM114-Status: GOOD (  16.72  )
+X-CRM114-CacheID: sfid-20260309_061845_887558_F0595E9A 
+X-CRM114-Status: GOOD (  10.44  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,37 +90,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Saturday, 7 March 2026 19:01:17 Central European Standard Time Martin K. Petersen wrote:
-> 
-> Nicolas,
-> 
-> >> "ufs" is redundant as all the clocks are for UFS. Same comment on prior 
-> >> patch.
-> >
-> > Is this naming a big enough concern to block this series with two
-> > explicit acks on this patch that fixes a wholly broken and useless
-> > binding?
-> 
-> It is if it comes from one of the DT maintainers.
-> 
-> > I am trying to put out this dumpster fire of a downstream turd that
-> > made its way into mainline as the review process has been completely
-> > subverted, and is only getting worse with each passing month
-> 
-> This has to stop. Please read Documentation/process/code-of-conduct.rst.
-> 
-> 
+Add clock/reset and PCIe support to EcoNet EN751221 and related SoCs.
+This builds on the Airoha EN7523 clock driver and the Mediatek PCIe driver.
 
-I apologise for my tone, it's my frustration getting the better of me.
+Patch 6 is upstreaming of Ahmed Naseef's work on EcoNet PCIe, which was
+developed to support the EN7528, but which works equally on the EN751221.
 
-I'll be handing off this series to someone else, so you won't have to
-deal with me anymore.
+There is also a workaround in patch 7 to gracefully handle PCI hardware
+which does not advertize a bridge window and instead always reads zero.
 
-I do ask however that you don't apply patches from MediaTek blindly;
-if there's code to read an OF property, and that OF property is not
-in the binding, then the patch should be rejected, even if there's an
-Ack from the MediaTek maintainer.
+Changes in v2:
+* clock/econet,en751221-scu.h drop EN751221_MAX_CLKS
+* clk-en7523.c add EN751221_MAX_CLKS
+* econet,en751221-chip-scu.yaml drop in favor of using mtd/syscon.yaml
+* airoha,en7523-scu.yaml drop redundant example
+* econet,en751221-pcie-phy.yaml Refer to PHYs as "gen1" and "gen2"
+* pcie-mediatek.c Exclude pcie_retrain_link() when building as a module
+* en751221.dtsi "econet,en751221-scu" is not a "syscon"
+* Rebase to linux-next
+* v1: https://lore.kernel.org/linux-mips/20260303190948.694783-1-cjd@cjdns.fr/
 
+Caleb James DeLisle (8):
+  dt-bindings: clock, reset: Add econet EN751221
+  clk: airoha: Add econet EN751221 clock/reset support to en7523-scu
+  dt-bindings: phy: Document PCIe PHY in EcoNet EN751221 and EN7528
+  phy: econet: Add PCIe PHY driver for EcoNet EN751221 and EN7528 SoCs.
+  dt-bindings: PCI: mediatek: Add support for EcoNet EN7528
+  PCI: mediatek: Add support for EcoNet EN7528 SoC
+  PCI: Skip bridge window reads when window is not supported
+  mips: dts: Add PCIe to EcoNet EN751221
+
+ .../bindings/clock/airoha,en7523-scu.yaml     |   7 +-
+ .../devicetree/bindings/mfd/syscon.yaml       |   2 +
+ .../bindings/pci/mediatek-pcie.yaml           |   1 +
+ .../phy/econet,en751221-pcie-phy.yaml         |  50 ++++
+ MAINTAINERS                                   |   9 +
+ arch/mips/boot/dts/econet/en751221.dtsi       | 114 +++++++++
+ .../econet/en751221_smartfiber_xp8421-b.dts   |  21 ++
+ arch/mips/econet/Kconfig                      |   2 +
+ drivers/clk/Kconfig                           |   6 +-
+ drivers/clk/clk-en7523.c                      | 238 +++++++++++++++++-
+ drivers/pci/controller/Kconfig                |   2 +-
+ drivers/pci/controller/pcie-mediatek.c        | 118 +++++++++
+ drivers/pci/probe.c                           |   6 +
+ drivers/phy/Kconfig                           |  12 +
+ drivers/phy/Makefile                          |   1 +
+ drivers/phy/phy-econet-pcie.c                 | 180 +++++++++++++
+ .../dt-bindings/clock/econet,en751221-scu.h   |  13 +
+ .../dt-bindings/reset/econet,en751221-scu.h   |  49 ++++
+ 18 files changed, 821 insertions(+), 10 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/phy/econet,en751221-pcie-phy.yaml
+ create mode 100644 drivers/phy/phy-econet-pcie.c
+ create mode 100644 include/dt-bindings/clock/econet,en751221-scu.h
+ create mode 100644 include/dt-bindings/reset/econet,en751221-scu.h
+
+
+base-commit: 3fa5e5702a82d259897bd7e209469bc06368bf31
+-- 
+2.39.5
 
 
 -- 
