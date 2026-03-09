@@ -4,136 +4,116 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 008FDEF36E1
-	for <linux-phy@archiver.kernel.org>; Mon,  9 Mar 2026 06:13:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 01532EF36E6
+	for <linux-phy@archiver.kernel.org>; Mon,  9 Mar 2026 06:49:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ufUmisLV5boDLBM6lS5T2plAXkqXM767dUMNXhKWxYA=; b=FHebVyPYcFJno5
-	eenX3nMJ/vbtWIgy3FRFCoP8m1C1d36FlVzFWZXhPNn+NHldgjcyAb5NpsvIIXzwcZ86ZyV+l2WLC
-	jt74j+PArsVV79bx9lfPG17GpTkPOS0cACM1zA5Q4TEBRCGr/qaSThABp9x49zpw/v2RJqPjKITyY
-	pNRxqybLe2F9athYtebZErcBpzdopl7fdHKkcCFYQC8YAyJG1Z19EY1W/5XeGlX08VgIlfif4jdZ2
-	4D4MAqjlfV4cXhcHvoXbwbaf4w2XWzbn23VnX0jnxhMVcsiM/2tliferHX0voUzfpWY2pnk3M8sTr
-	4zXzCJnb6TRLXWBXDV5A==;
+	List-Owner; bh=AfAbtcZB8szCfcLyRU4USf5Ox9FbAvh/0j+mz9d685A=; b=l6DhQ+4/kjIb/i
+	fWGB/eyYem+kT6ZAHQfuOb7wm4F5A+NlSoI5sdJxlRWHvX20CsKTHut2R2vNZ5FmMVuZlibAc6Yc7
+	i9akCatJ8T32A69Abi4EKNtXwxn+yoxcwd0XtUscHaCPdU+aqUrwZGZvGzujNDORR6LGV/olb/9HC
+	bKfdI/A3FY2yypNH+1pTDVElQcfbB1tTuFKzDlHBwCB7edvCc97Gt5ZHLT7VyBphT8D4zms65RMvz
+	tSIFQV/PellThrOJYe8eaXPrlu16mAas2o0S8721QR1YHRYPG1cIzTvDt2sSwK05nI/hHMiQjT2iQ
+	3UPrrgMYilM6RXebdawA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzTrq-00000006iPA-1pf7;
-	Mon, 09 Mar 2026 06:13:26 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1vzUQX-00000006lG9-2Q6Z;
+	Mon, 09 Mar 2026 06:49:17 +0000
+Received: from mail-northeuropeazon11011060.outbound.protection.outlook.com ([52.101.65.60] helo=DU2PR03CU002.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzTrn-00000006iOp-3h5X
-	for linux-phy@lists.infradead.org;
-	Mon, 09 Mar 2026 06:13:25 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 628NjPqv118856
-	for <linux-phy@lists.infradead.org>; Mon, 9 Mar 2026 06:13:22 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=uik8PKSTrs9X48gkBNE0kt0a
-	/VsJjkEh2LT70pMKrCY=; b=g39Y4S4kiB2QQ08sitLp+PcDwK/z3WoVUTym+W6B
-	kkbeDD7J1JOauEVnEI758UoGIlZlTl1C8J8kwVIf4eZHjaNF0d8YuK4Jwgdpdk4A
-	1U1VH1qHaIE7Vsji22xA+/EdAX6eLoP/q88TkDiMDdHOqhmEDUtwhZxLDdE+yaQL
-	af/mcno/I8mJAqw5qKdMhGe8mxn9JLd80ysX+ueaCKuu9jjYs/Jkjp7TuzdTO2eV
-	/gUbBkt5NRjcvEZ29ZsUjT2qWIWUfo2uY9jUsTtusU3V3I1uiJ7MDFGvIi9YPsWh
-	jLRrOxgnHGmpsTnngQSQi27TYvAvO9Z/WUuE9Kc2A16BHg==
-Received: from mail-dy1-f199.google.com (mail-dy1-f199.google.com [74.125.82.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4crd6fc0ex-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Mon, 09 Mar 2026 06:13:22 +0000 (GMT)
-Received: by mail-dy1-f199.google.com with SMTP id 5a478bee46e88-2bdf6fe90a9so10489011eec.1
-        for <linux-phy@lists.infradead.org>; Sun, 08 Mar 2026 23:13:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1773036802; x=1773641602; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=uik8PKSTrs9X48gkBNE0kt0a/VsJjkEh2LT70pMKrCY=;
-        b=W3KWpmSuW5RnD1x/vSb70PV7e/0/fdv8EG5P+OTTflEDMmC5OiWxvE281G3DhgsgwT
-         eAZxgCnBCaJi1EEYwk1K4d8KwLJ5dkT+IlTti/mBydqk9WRSELID+2R9dXNG2rH+SV3Y
-         Y+XplXm2FVPAZZ0rlY2g8AuYTG6sI7gdoYZ2lod/yiEa4D+fkiDbwVHMSdfVa2BF4Aht
-         g6Y24p3OYipeuQFjBuuQbHtWxwwkAq4YpOlAhqwnZmj5bme+3yFbiT8mvQ1Izg9kO5X9
-         kcR37Fz/7hfvVY6C60yAiSA+1MPfFd19KjQ9sBajX5DECeWG8k6P7S+B81aP2GQkPYyz
-         3JKQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1773036802; x=1773641602;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=uik8PKSTrs9X48gkBNE0kt0a/VsJjkEh2LT70pMKrCY=;
-        b=RhZrUF393TU0gpB8w0agcfnd507hcQ9Wb30UZK7pAv0VlWo+u4KDHQWUk4FP7CPcR2
-         hwr5ipc7GL45p7O+VxCTU6ATzAtIxpnAOeaVUFbgHsxr8avkqeZTiGTRmCZF1hpvAeg4
-         8ZnY3dFCr60PuMMehQKSLy4VNtF3YG9pn2inojpShKvez1e3+5EnvMOtMuvHNpjSVlXT
-         WmgJLe19jEf78m6e5SsCn6XdH6HU8lC31mTUSfRCfPhujvC+gtpmBcIppRt/HOLdXLWU
-         U4OuKWOjHKWrNaON5yxr/xpsBDJaAZ01UHORwvOZVE12tTz9zUHpwnn5rtmAoYDWQXc6
-         H18w==
-X-Forwarded-Encrypted: i=1; AJvYcCVKqD8kpLfvbgfJD11lMWWlQIsMKwt7gv27Rsk5ShkWKjMFm0Q7MkyUv8UDAZPjJCwaLpB942i1QIU=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzlQVO69n8XAxWL/Si+ZSxlHtOUFlSyrThkAf6yYFMAnCFg/4+N
-	n4cX22DnpdnzjDAESKY+BptzkKKPXm1cF6QBdc8Hl6kx2GdBXiTCGWUg9oB/Xu0nIHEbFBsBSn+
-	GQQiR4RfTRks00eXnulPUH5ppnbLLBawnN5Kw1GpKTwaCIURlbrx13mrItKF36l3I6fuc
-X-Gm-Gg: ATEYQzycmakfLtC7u/sIc7dpzpT0pZBiQnyc1NmxMV66U5QsfWilgMV7g1WodSjG3gZ
-	qV/sImTMNZJ8cVpulEnMKpaAQIo3s9x9thP2NB+p6xif5YtzcqwWeb7g81O/SXJmaJ3U045PYX+
-	iBPmjt7vCzKIDAwPkFHFrIVX8jucUcFoeKUq/FFdF8+Ky9mL3X7YOICpeO356ajzKGJWyaviZnP
-	Moa2k6xLOpl/6cnl8B8WYQB61SYnu2FD4+QOBTnAWZaNjV2xlCFRdTgWLuhuUTv6jnRfsy1tYEG
-	1K2gbqmto41n6++T7MkhlOQ/L5/+9eKeNQMl94l3oqtVkdH376gex+AlYuET8jtCBMpGUlp82Dz
-	dORpMFDWiYrUl/YKy1/gl6p0R9y75aR37Z1YXvaxlZ3eeP5+GJYiPVPLnvZdFtaW29Lc4
-X-Received: by 2002:a05:693c:60d3:b0:2be:142f:d481 with SMTP id 5a478bee46e88-2be4e03ea2bmr2842693eec.32.1773036800959;
-        Sun, 08 Mar 2026 23:13:20 -0700 (PDT)
-X-Received: by 2002:a05:693c:60d3:b0:2be:142f:d481 with SMTP id 5a478bee46e88-2be4e03ea2bmr2842682eec.32.1773036800377;
-        Sun, 08 Mar 2026 23:13:20 -0700 (PDT)
-Received: from hu-qianyu-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-2be4f8078c6sm9451943eec.5.2026.03.08.23.13.19
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 08 Mar 2026 23:13:20 -0700 (PDT)
-Date: Sun, 8 Mar 2026 23:13:18 -0700
-From: Qiang Yu <qiang.yu@oss.qualcomm.com>
-To: Neil Armstrong <neil.armstrong@linaro.org>
-Cc: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
-        Vinod Koul <vkoul@kernel.org>, Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Philipp Zabel <p.zabel@pengutronix.de>,
-        Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>, linux-arm-msm@vger.kernel.org,
-        linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 0/5] phy: qcom: qmp-pcie: Add PCIe Gen5 8-lane
- bifurcation support for Glymur
-Message-ID: <aa5k/tBs3vGXE0uY@hu-qianyu-lv.qualcomm.com>
-References: <20260304-glymur_gen5x8_phy-v1-0-849e9a72e125@oss.qualcomm.com>
- <42a9dd4d-eb96-42c0-b836-dcd7cb9405ff@oss.qualcomm.com>
- <aaqdv7Zx5AODzg6P@hu-qianyu-lv.qualcomm.com>
- <fb75023e-8fac-49c1-a8b7-2eb8b70fda3e@linaro.org>
+	id 1vzUQU-00000006lFh-02yp;
+	Mon, 09 Mar 2026 06:49:16 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=Ana9S4hrWBDe1PlkvOKc+tqmLpuHkoXJnObRWuzNWTr/G3JlJkhNIx/bj0Kzka8jH2YPGrLcKW+O5Wy1vn23XHHa+n+lAg6rWni9iev1v9t76DmhyzHhr2NbyMhutqQrtX1/HbsV1/aQ1jP1oS3ILLUCuZOL+h5IZ2lEwhFR1viXpE/yBj0CNoY/NhVEukXUECHhUY+KdvUWOzb+w6v+f5i3mJ/d+gtz8dqcSI0DEg+WMmH0JWDZijX97XO5D8bpC8kDn7u69J/3hmROIOyoLuGJ/uHBMKT4nqKM56FDntu1A6Ycw7mwhOAVUcvUWyhMTdJMC0rTSqHj/hApY+Pnzg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=rVVXAnIRVaSxFm5PMF+o7ZkokKwZJQ09G10aHMWjxe0=;
+ b=uoBzFHHyf4cgp1ZwkvwkQAapI/1a0ZEfNXhUsx3WY7nSUCBLin8Avex7GvCIUOu6SiqpOTnWGSb5msO2Kgm1iHEo3PsD3lGt7VehIq35ERPUd72gOZqcDGA1zUMyfcQfyJpHtIpLClxchuxhCbP+b/8lYNjmYMDeIJp6W585lFsDMAcdFCNzPUsgVD0qLiI5x8fz8Hp/6kYAGuH0V7rKShL+2aXbjQwA4s6vHWEkap5EWw5/4tIDrTpTKcnFGVs+jP59rKGd+T6biAOw1umkZAnyrvsjdaUWoW+H7mS5uuuz9HqRqjExp8E4e141fvszn1dMuSl026/nRUzsTp1drw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=fail (sender ip is
+ 164.130.1.59) smtp.rcpttodomain=gmail.com smtp.mailfrom=foss.st.com;
+ dmarc=fail (p=none sp=none pct=100) action=none header.from=foss.st.com;
+ dkim=none (message not signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=rVVXAnIRVaSxFm5PMF+o7ZkokKwZJQ09G10aHMWjxe0=;
+ b=hSlCY1sY9QMv5oit4Sj3oSwV5jMCnxedne7tJUpnH5drQ+l34WThQzP1PuyXPgpKn+2N9cruT+erPy/1cCpmxQEmWHirc36/UpzBxFOKEBjVVOtBRgutYjFbcPU7LlqGHtSsVaAH00KUmdgi8I0iQHt4ZQkcM+L+zw+sneCduYsimFjMnb/bErnxDjOjUiPfDAjhaqGbSIbbQNs7swreMgRITWCSom0b/MBU2OkNAaK4M7yiUtnoqJcp+3j6K0zMf/2UhbLEtKq3Ldfjin5fz3+I8mQlaRn+1rrLvMGYXsa6x5XXNGUbaYb1zhUGFFsIk/CqmTsD/45zrY9ySKaPmg==
+Received: from DUZPR01CA0264.eurprd01.prod.exchangelabs.com
+ (2603:10a6:10:4b9::20) by GV2PR10MB6209.EURPRD10.PROD.OUTLOOK.COM
+ (2603:10a6:150:76::8) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9678.22; Mon, 9 Mar
+ 2026 06:49:03 +0000
+Received: from DB1PEPF000509FE.eurprd03.prod.outlook.com
+ (2603:10a6:10:4b9:cafe::51) by DUZPR01CA0264.outlook.office365.com
+ (2603:10a6:10:4b9::20) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9678.25 via Frontend Transport; Mon,
+ 9 Mar 2026 06:49:02 +0000
+X-MS-Exchange-Authentication-Results: spf=fail (sender IP is 164.130.1.59)
+ smtp.mailfrom=foss.st.com; dkim=none (message not signed)
+ header.d=none;dmarc=fail action=none header.from=foss.st.com;
+Received-SPF: Fail (protection.outlook.com: domain of foss.st.com does not
+ designate 164.130.1.59 as permitted sender) receiver=protection.outlook.com;
+ client-ip=164.130.1.59; helo=smtpO365.st.com;
+Received: from smtpO365.st.com (164.130.1.59) by
+ DB1PEPF000509FE.mail.protection.outlook.com (10.167.242.40) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.9654.16 via Frontend Transport; Mon, 9 Mar 2026 06:49:02 +0000
+Received: from STKDAG1NODE1.st.com (10.75.128.132) by smtpo365.st.com
+ (10.250.44.71) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.29; Mon, 9 Mar
+ 2026 07:51:29 +0100
+Received: from [10.48.87.93] (10.48.87.93) by STKDAG1NODE1.st.com
+ (10.75.128.132) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.29; Mon, 9 Mar
+ 2026 07:49:01 +0100
+Message-ID: <70cf60db-52df-481c-881c-5b63959876d6@foss.st.com>
+Date: Mon, 9 Mar 2026 07:49:02 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <fb75023e-8fac-49c1-a8b7-2eb8b70fda3e@linaro.org>
-X-Proofpoint-ORIG-GUID: xNAOCiW5Ho7YYgj0poSoXk2hdwAJsAeR
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzA5MDA1NSBTYWx0ZWRfX4H4wZ3CzSzOs
- 0k0Z1mzK4NQkBIeyNxI0rbtNuuowLcgrI4H9tJy/eGS1do0wxrEjfTya4E4fvBLX+/XXOxOseT+
- F597kbTJcrt5FNjUqcU7fTG6UYJqFBbsa3cjeUm96n2IQHVMa0+Xg+/YEgdck0OoKhbtnkEpsv8
- 0B47F/gPPWmBU1jcRPffWXbgMEhipki8yw3TgwCKQZq/zgPiASOyIlM/EKJP3fdkVE4pUQRgS0q
- lS7aKcTaEhrHt3Iv6bvRg9CewKVfoA3RImq8Vv10vbyp8IL+Bd5ouXlZKu2iTfOEntchsdGuKdP
- SjW4tgBDp1n9ZK1g66wckjJ/3pqYp+AvQUp+8gSYxLc/S+iwtHY8X6vYUnjzBy+F9suU/iVglkk
- IIUP+LvqnrowrahlUus/YcPorC9axSjoTkyKQFS2zSF5jw7NB3/0WndClv80xFNrCeh6IRlmZp9
- ya9qVFJ7ZyoJuEQtA4A==
-X-Proofpoint-GUID: xNAOCiW5Ho7YYgj0poSoXk2hdwAJsAeR
-X-Authority-Analysis: v=2.4 cv=RP++3oi+ c=1 sm=1 tr=0 ts=69ae6502 cx=c_pps
- a=cFYjgdjTJScbgFmBucgdfQ==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
- a=kj9zAlcOel0A:10 a=Yq5XynenixoA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=DJpcGTmdVt4CTyJn9g5Z:22
- a=O2xUQfZD2m46tlq_ZQMA:9 a=CjuIK1q_8ugA:10 a=scEy_gLbYbu1JhEsrz4S:22
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
- definitions=2026-03-09_02,2026-03-06_02,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- adultscore=0 priorityscore=1501 malwarescore=0 spamscore=0 phishscore=0
- clxscore=1015 bulkscore=0 lowpriorityscore=0 impostorscore=0 suspectscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2602130000 definitions=main-2603090055
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCHv2 1/2] phy: miphy28lp: add COMPILE_TEST
+To: Rosen Penev <rosenp@gmail.com>, <linux-phy@lists.infradead.org>
+CC: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
+	Kees Cook <kees@kernel.org>, "Gustavo A. R. Silva" <gustavoars@kernel.org>,
+	open list <linux-kernel@vger.kernel.org>, "moderated list:ARM/STI
+ ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>, "open list:KERNEL
+ HARDENING (not covered by other areas):Keyword:b__counted_by(_le|_be)?b"
+	<linux-hardening@vger.kernel.org>
+References: <20260306222457.8400-1-rosenp@gmail.com>
+ <20260306222457.8400-2-rosenp@gmail.com>
+Content-Language: en-US
+From: Patrice CHOTARD <patrice.chotard@foss.st.com>
+In-Reply-To: <20260306222457.8400-2-rosenp@gmail.com>
+X-Originating-IP: [10.48.87.93]
+X-ClientProxiedBy: STKCAS1NODE1.st.com (10.75.128.134) To STKDAG1NODE1.st.com
+ (10.75.128.132)
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DB1PEPF000509FE:EE_|GV2PR10MB6209:EE_
+X-MS-Office365-Filtering-Correlation-Id: dd51eac0-7205-4c79-8ffc-08de7da7f357
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|36860700016|82310400026|376014|1800799024|7053199007;
+X-Microsoft-Antispam-Message-Info: 0clEI7yc/JE6rXnjny8XrjhBfDL/+FgQM0u03TM9azAwqgxzTc+JOEVpPYO4KaLu02V0xQ6R23vqbYHiBdbmuwZTeGoDAFSQK+l/G8aD3srYtudhqOrJmAEAwwVleSbQ8OigCuLfRvZARx02QCFpt286C82t66III7QVuxM1fjytTvzAR+win59NUdm1BkkMz+HMuJkjjW890NxpebCYGXhbJgxhAcQUkAvI7vUaZh+8CLNpNP4VKi74gRw8H5i64UfdtE5OfPZH16fXNxI0NzhHiCHRw8WUiFUGxu695kfY16Gp5ZPt+wLTiOv/88GmKmVUFlCvtvRt/wgjsv2E2LDX17G/QsAco4YAAijYaSNOOTHEO5ILhj9zve8Oq66J9x+un2bwIC0kx7U5Gwe89MtvssMdAOwWb5hnMB1kaHZQ7YAF7CMfOLMMVgnnXEXG+L5cO/EQsvYQbT16NOC6CNgx7/FUayv6OvL+F/DvDAGiXNnMmq7shzypl/cGDzmGfr67wpVRjqAykE2gCpPMixalaAK9DY2gLkeH1MYVfQxmguc9x7a8JE/KBYWYEhj12pm4JEJbGjYYCrRussYu78Ek/hYKZKX4QXqzexwKV1s1UAt9ANC6V0Xd4XG0PWK/xNYibph5RHKgRZf8mlLbMzPdSdZuM1UXe1Qy+szahXGBMKO1vSfnL+M5Wt8mhfwgrqg9Bp93E/D1/NWQNHoOFN7wuBBG2mhprp+rPACQmf3/tMfxlmptEIn3suOzGLetJ/r2FwlMs6E5/JYGmsAd+g==
+X-Forefront-Antispam-Report: CIP:164.130.1.59;CTRY:IT;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:smtpO365.st.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(36860700016)(82310400026)(376014)(1800799024)(7053199007);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: ZWpd0lI+0oeLmU2iBRVe6HxgiYw6ztMYuhK2OSTGfywbKBC3F8mC7OCDRCHWHVRB+Z5FqIHo49bMLMbrVR2pcmzr9fKJGn7tsKRf485LU9iyYGsW5TU2jVA5p5UEHOZ8XVJS2CFKlJ6wB74Al1O98VMNOujMfq4KfIDMWU6GVRSDkzNVZaG2BrNS+2cVcw5yxe7Z2dhx16xfkEcjvdkxeiHSATBULOELMBFf0Rqv/NxnQxSa0EtOInSh2zdURzZjamHKG2UVYMypeddxOlIW2epD6z0lVN7x1+GWD7tsULLAIegM+akXTIptGGa0mi6j9sEoyIV8E8nQAeDtj4KFyhPt1Agw12j3otBJ5FBqKVVI3etCFCzv48uxbmPUyaWPi5bbn1wpJqPlzMflyPsfHZWN76PYCuizkGceVTHWg+JCECrnIu/ye88plS3U7oQ4
+X-OriginatorOrg: foss.st.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Mar 2026 06:49:02.7733
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: dd51eac0-7205-4c79-8ffc-08de7da7f357
+X-MS-Exchange-CrossTenant-Id: 75e027c9-20d5-47d5-b82f-77d7cd041e8f
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=75e027c9-20d5-47d5-b82f-77d7cd041e8f;Ip=[164.130.1.59];Helo=[smtpO365.st.com]
+X-MS-Exchange-CrossTenant-AuthSource: DB1PEPF000509FE.eurprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV2PR10MB6209
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260308_231323_947841_9C127351 
-X-CRM114-Status: GOOD (  33.38  )
+X-CRM114-CacheID: sfid-20260308_234915_282177_1D3325B1 
+X-CRM114-Status: GOOD (  12.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -150,127 +130,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Mar 06, 2026 at 11:34:37AM +0100, Neil Armstrong wrote:
-> On 3/6/26 10:26, Qiang Yu wrote:
-> > On Thu, Mar 05, 2026 at 10:14:05AM +0100, Konrad Dybcio wrote:
-> > > On 3/4/26 9:21 AM, Qiang Yu wrote:
-> > > > This patch series adds support for PCIe Gen5 8-lane bifurcation mode on
-> > > > the Glymur SoC's third PCIe controller. In this configuration, pcie3a PHY
-> > > > acts as leader and pcie3b PHY as follower to form a single 8-lane PCIe
-> > > > Gen5 interface.
-> > > > 
-> > > > To support 8-lanes mode, this patch series add multiple power domain and
-> > > > multi nocsr reset infrastructure as the hardware programming guide
-> > > > specifies a strict initialization sequence for bifurcation mode that
-> > > > requires coordinated multi-PHY resource management:
-> > > > 
-> > > > 1. Turn on both pcie3a_phy_gdsc and pcie3b_phy_gdsc power domains
-> > > > 2. Assert both pcie3a and pcie3b nocsr resets, then deassert them together
-> > > > 3. Enable all pcie3a PHY clocks and pcie3b PHY aux clock (bifur_aux)
-> > > > 4. Poll for PHY ready status
-> > > 
-> > > I think we never concluded the discussion where I suggested the
-> > > bifurcated PHY may be better expressed as a single node with
-> > > #phy-cells = <1>, removing the need for duplicated resource references
-> 
-> DT requires strict hardware description, no abstraction for HW, so if there's
-> 2 PHYs, then add 2 separate phys and reference them from the PCie controller.
-> 
-> On platforms where you want 2x4, then add 2 pcie_ports using 2 phys, on platforms
-> with 1x8 a single pcie_port with 2 phys.
 
-For 1x8 mode, we can't add a single pcie_port with 2 phys. I have to treat
-3a_phy and 3b_phy as a single device because of HPG init sequence
-requirement:
 
-1. Turn on both pcie3a_phy_gdsc and pcie3b_phy_gdsc power domains
-2. Assert both pcie3a and pcie3b nocsr resets, then deassert them together
-3. Enable all pcie3a PHY clocks and pcie3b PHY aux clock.
-4. Poll for PHY ready status
+On 3/6/26 23:24, Rosen Penev wrote:
+> There's nothing special here to prevent compilation on non ARM hosts.
+> 
+> Matches every other st phy driver.
+> 
+> Signed-off-by: Rosen Penev <rosenp@gmail.com>
+> ---
+>  drivers/phy/st/Kconfig | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/phy/st/Kconfig b/drivers/phy/st/Kconfig
+> index 304614b6dabf..49206185e563 100644
+> --- a/drivers/phy/st/Kconfig
+> +++ b/drivers/phy/st/Kconfig
+> @@ -4,7 +4,7 @@
+>  #
+>  config PHY_MIPHY28LP
+>  	tristate "STMicroelectronics MIPHY28LP PHY driver for STiH407"
+> -	depends on ARCH_STI
+> +	depends on ARCH_STI || COMPILE_TEST
+>  	select GENERIC_PHY
+>  	help
+>  	  Enable this to support the miphy transceiver (for SATA/PCIE/USB3)
+> --
+> 2.53.0
+> 
 
-For X1E80100 PCIe6a, we also added a single phy node for 1x4 mode.
+Reviewed-by: Patrice Chotard <patrice.chotard@foss.st.com>
 
-- Qiang Yu
-> 
-> Neil
-> 
-> > > 
-> > I understand your suggestion would look like below. I agree that the
-> > unified PHY approach being more elegant from a device tree perspective,
-> > provide better DT flexibility and eliminate the need for different
-> > compatibles and dupicated resources between 1x8 and 2x4 modes.
-> > 
-> > However, this will include implementation complexity to phy driver.
-> > The driver would need conditional logic to selectively enable different
-> > clocks/resets based on the PHY parameter and maintain mode-specific
-> > resource arrays. There's also the issue that assigned-clocks
-> > GCC_PCIE_3A_PHY_RCHNG_CLK and GCC_PCIE_3B_PHY_RCHNG_CLK will be set before
-> > probe no matter which mode is used, even though in 1x8 mode or only one of
-> > them is actually needed. For pipe clock outputs, only pcie3a_pipe_clk would
-> > be needed in 1x8 mode while pcie3b_pipe_clk would be unused. For
-> > powerdomain, we also need to add additional logic to attach and turn
-> > on/off them.
-> > 
-> > While these challenges could be resolved, I'm not sure the benefits
-> > justify the added complexity.
-> > 
-> > pcie3_unified_phy {
-> >      compatible = "qcom,glymur-qmp-gen5-pcie-phy";
-> >      reg = <0 0x00f00000 0 0x10000>, <0 0x00f10000 0 0x10000>;  /* Both PHY ranges */
-> > 
-> >      clocks = <&gcc GCC_PCIE_PHY_3A_AUX_CLK>,
-> >               <&gcc GCC_PCIE_3A_CFG_AHB_CLK>,
-> >               <&tcsr TCSR_PCIE_3_CLKREF_EN>,
-> >               <&gcc GCC_PCIE_3A_PHY_RCHNG_CLK>,
-> >               <&gcc GCC_PCIE_3A_PIPE_CLK>,
-> >               <&gcc GCC_PCIE_PHY_3B_AUX_CLK>,
-> >               <&gcc GCC_PCIE_3B_CFG_AHB_CLK>,
-> >               <&gcc GCC_PCIE_3B_PHY_RCHNG_CLK>,
-> >               <&gcc GCC_PCIE_3B_PIPE_CLK>,
-> >               <&gcc GCC_PCIE_3B_PIPE_DIV2_CLK>;
-> > 
-> >      power-domains = <&gcc GCC_PCIE_3A_PHY_GDSC>,
-> >                      <&gcc GCC_PCIE_3B_PHY_GDSC>;
-> > 
-> >      resets = <&gcc GCC_PCIE_3A_PHY_BCR>,
-> >               <&gcc GCC_PCIE_3A_NOCSR_COM_PHY_BCR>,
-> >               <&gcc GCC_PCIE_3B_PHY_BCR>,
-> >               <&gcc GCC_PCIE_3B_NOCSR_COM_PHY_BCR>;
-> > 
-> > 	#clock-cells = <1>;
-> >      clock-output-names = "pcie3a_pipe_clk", "pcie3b_pipe_clk";
-> >      assigned-clocks = <&gcc GCC_PCIE_3A_PHY_RCHNG_CLK>,
-> >                        <&gcc GCC_PCIE_3B_PHY_RCHNG_CLK>;
-> >      assigned-clock-rates = <100000000>, <100000000>;
-> > 
-> >      #phy-cells = <1>;  /* Parameter: 0=PHY_A, 1=PHY_B, 2=UNIFIED_8LANE */
-> > };
-> > 
-> > For 2x4 mode (independent 4-lane PHYs):
-> > &pcie3a {
-> >      phys = <&pcie3_unified_phy PHY_A>;  /* PHY A only */
-> >      status = "okay";
-> > };
-> > 
-> > &pcie3b {
-> >      phys = <&pcie3_unified_phy PHY_B>;  /* PHY B only */
-> >      status = "okay";
-> > };
-> > 
-> > For 1x8 mode (unified 8-lane PHY):
-> > 
-> > &pcie3a {
-> >      phys = <&pcie3_unified_phy PHY_AB>;
-> >      num-lanes = <8>;
-> >      status = "okay";
-> > };
-> > 
-> > &pcie3b {
-> >      status = "disabled";
-> > };
-> > 
-> > - Qiang Yu
-> 
+Thanks
+Patrice
 
 -- 
 linux-phy mailing list
