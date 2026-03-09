@@ -4,100 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ED4F7F4180B
-	for <linux-phy@archiver.kernel.org>; Mon,  9 Mar 2026 15:44:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9B54EF41812
+	for <linux-phy@archiver.kernel.org>; Mon,  9 Mar 2026 17:01:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FpiTdOIt6E/VY2Ci9mh+itBTBPX1NJhrK1UfmwdBViU=; b=dd/zmlNOaxAFsS
-	pOFgXNtgX7dQYeYbtxjAYdc0aC19ep2FmDyhspgJczb/WhOkolQKod+Q0+A3HwTuKt+CbGPHpBD2y
-	A6dyZ35ekMV/1tmnCb3pIm238YRvKZZkFHxQZq+wrsceVIZjTv43OKi8SOVDynkdYJfkFvjcc5Vec
-	arE0QnB4B9jrRqEglx5hrDljOiMu2qAS0m1l1RrlwNZX9JvIknfoQJcwe5rI4qbM0dPiLD0AXJ93x
-	t98Ps2khHjyCtaIBg5BHAW7gm6YeIZZmtN5iJS86xCQxO7zI0gPzDMdX+Cs8n3Z7af7pKLfVeM12/
-	+yKK4hJpfYnXQ6EA23ew==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:From:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=YYH3ljmSCF7bx6873V9wxfbpInCxgV6MMbHbS6LyVDI=; b=AP8ZbA6vR94odS
+	pWQ8x4J6iNhBxdmfY2Hd4Tb9eAO6/gyai17v8VtA/WZZ9EFqu6lwwn/0Xzdc+CCkxNM74ma7bW7zw
+	N1oQubuGxF8HwpJ1GtCC8AG5Eu962SvvQPecZ2cPutOUIuMvqlb92Rb4o5cxe0cvlBh9xjlSguEnz
+	S0fIcsPKKCTSwPwsUMgGxQt1/SUOdNtn9UWPSRVaBnM7MAdUckU3hkS+tHckt8ANHEb+1uF+O/fiE
+	Wthh67SoEA0d7CK/iX3it9V/0MOVbdq7VS99QbVmtPKkWUoxb9teFIWQssKY4TsJOmjI6OZrEgEtI
+	R0G3v0mJDPyhno9FWETA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzcme-00000007dLY-2zlF;
-	Mon, 09 Mar 2026 15:44:40 +0000
-Received: from mail-wr1-x42b.google.com ([2a00:1450:4864:20::42b])
+	id 1vzdyt-00000007mRz-0ajK;
+	Mon, 09 Mar 2026 17:01:23 +0000
+Received: from mail-wm1-x329.google.com ([2a00:1450:4864:20::329])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzcmb-00000007dJj-3rF7
+	id 1vzdyq-00000007mRX-2SW9
 	for linux-phy@lists.infradead.org;
-	Mon, 09 Mar 2026 15:44:39 +0000
-Received: by mail-wr1-x42b.google.com with SMTP id ffacd0b85a97d-439c43992ffso347009f8f.0
-        for <linux-phy@lists.infradead.org>; Mon, 09 Mar 2026 08:44:37 -0700 (PDT)
+	Mon, 09 Mar 2026 17:01:21 +0000
+Received: by mail-wm1-x329.google.com with SMTP id 5b1f17b1804b1-482f454be5bso120426405e9.0
+        for <linux-phy@lists.infradead.org>; Mon, 09 Mar 2026 10:01:19 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1773071076; x=1773675876; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=qcTW7+6Cg2+gxZdrQfqfkBSqoWwEQDXBlUTitYt0Mio=;
-        b=BD98Y2lOpXgX2PE5DwfTI8TfJjXNDzAxHOdPxLsJq4s/F1H3cSojwpq0CyDTFwE0C3
-         FUYtN1kU1pG9Shaw4cYn/fhIOTM22/uci6uT+H5QaPzzP11F42B3XsHV/NIEoxNJ1pHO
-         tDYQXy88/GyNLomtPNXNNHm0vJBLQXEtaE2Tt+rojedWasP3hZ/ms8da7ajNuwxdNbNK
-         kjZmjl3iGZvLWsTylUsg6UgUwR/SVqr4M8TNg4zK0Pz4q1Uroygdf+z1mup4nrh+86bd
-         qCPqd+3dQ4JlvofUYUyW7qww1eEmaob/5hs163amBVuiht/0WF8N6sryLX2ojetPBmnD
-         jlkw==
+        d=gmail.com; s=20230601; t=1773075678; x=1773680478; darn=lists.infradead.org;
+        h=content-transfer-encoding:cc:to:subject:from:content-language
+         :user-agent:mime-version:date:message-id:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=6bGjAJZg3kAEKg3RqCoiUO430+IHfGMI5W87dJSgovE=;
+        b=gG9bC0T06GmKH6BpfF4lj2OTfaVGdtZo6L6YkcpCGKaCkIZl4WTtfoHjG0eKXHev3D
+         25NCmHF+2yawrJ2PaBVF7Vf0pUERZCjDIGfSEBx1HObIcnZ8TJAbBDuEUMkTc5v2e6NT
+         PoXeiQMqGzdhZNeez4E/2oD3E+4iDW+NV1f0cDSg8EplXq57YPj97wWnpLJXBzwklbEW
+         Nrw6G+dp2JdWojogfB5d1VWHQ5b9Pg97Z8TztmYYho2IQcS6IBQcucby6+he5vy4A+1e
+         dfpa3IWU5duUmLSt64T5sSfcwkFJK1ywcRzt/wI9sGOnR3XTgqmCjACUomD+ARu359Va
+         MWAA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1773071076; x=1773675876;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=qcTW7+6Cg2+gxZdrQfqfkBSqoWwEQDXBlUTitYt0Mio=;
-        b=AOoYwZiFcGlucQKptctEnmKwJSBNYZxGkmM6rd0ADzEO3k8/E9zNKR19fgoIQ6KLml
-         NM/EYishLUKjZD8RqvVp2Z8vQIbYfarbWaJnVQKX+tKxbKYqsYg71tJVnbS118pAn0Bi
-         uzJoCSgxUlprEj1w3y9p9MFwWz1M37GojsW2KeM1WPQukIeThkAEeiy/X1nwztEqxRlV
-         sh9uqkXs7LRcQ4gBIZ905CoFuwh1l/7SNpEfufizsHS6HRR7AQnFbml+UwZXvjR2H8m/
-         AyTMriCuOcYBuHkcAP8BWbCeumxLHO6SDQBH9/tyqQq6fcIhV1AibViyrXU1gqRweTNp
-         5dKA==
-X-Forwarded-Encrypted: i=1; AJvYcCWBHZpp45w6ddDXIpNi6C1wvMqNrsGWlY4KEMbUWndnhM1i/FsQxXTc//jIqqapcuR2JYtOEzFE5hU=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxJGKMLlQFr5RAaycgpx8MboB1Q/uWOrv1vtQoGx9V5n1J2ucbJ
-	ARUlX5DaBCj34QNTpz6PCC2qUIR/wegGpic3r8MlSDkZi1KmYp5a97E3
-X-Gm-Gg: ATEYQzyJAEymx6S9qeOOinJcYHWwWvyCIEnKQDfQdwo8MZwjo+tVc97fUKkIojKe4GR
-	7Q2RlZn4brqaFYXfxQRE4qGIY9WJJe0/wg85m0HGvLCv2Juv6kxGXLSiP9NA4plmBAbM8W3X9h2
-	XXK4DeWfnyKAzVuEwqiE7gUd2xBuG78iQnIi7G1a5+Q7/J033nVq4Y1Av66lljREsZk15sny711
-	Rqb6z4Va0/iZpx+2cnObl9mPSudkKpPVR36l+PtGN/xqti5dZ/fW55Im28P5hkJlWaKuhDC1He0
-	OWPhf45eYOnnL72pjDI5gVq+A7zGrWiDcSGcrroK9LG/SAjf7YxJo7QRzJ9PIrKuz1ZfeQQjQeX
-	hVaN+aEjS54TEsufYtVboPZBbVflPpecgpSgbZW+4OdvFpW+FkzYyPUbiWf6x1KO22tNabqT5cr
-	LCiAexGskicXk8fw==
-X-Received: by 2002:a05:600c:c4a2:b0:471:ab1:18f5 with SMTP id 5b1f17b1804b1-48526978618mr112712015e9.7.1773071075458;
-        Mon, 09 Mar 2026 08:44:35 -0700 (PDT)
-Received: from skbuf ([2a02:2f04:d00a:e00:8799:3a7d:3c86:3200])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-48541a6bbcesm439845e9.3.2026.03.09.08.44.33
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 09 Mar 2026 08:44:34 -0700 (PDT)
-Date: Mon, 9 Mar 2026 17:44:32 +0200
-From: Vladimir Oltean <olteanv@gmail.com>
-To: Jakub Kicinski <kuba@kernel.org>
-Cc: "Russell King (Oracle)" <linux@armlinux.org.uk>,
-	Andrew Lunn <andrew@lunn.ch>,
-	Alexandre Torgue <alexandre.torgue@foss.st.com>,
-	Andrew Lunn <andrew+netdev@lunn.ch>,
-	"David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-stm32@st-md-mailman.stormreply.com,
-	Mohd Ayaan Anwar <mohd.anwar@oss.qualcomm.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>, netdev@vger.kernel.org,
-	Paolo Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>
-Subject: Re: [PATCH RESEND2 net-next 0/8] net: stmmac: qcom-ethqos: further
- serdes reorganisation
-Message-ID: <20260309154432.b3dbantow3e3tkry@skbuf>
-References: <aaDSJAc-x2-klvHJ@shell.armlinux.org.uk>
- <aaIysVxy-WxbiJz9@shell.armlinux.org.uk>
- <20260227165556.5cf9e844@kernel.org>
- <20260228083111.5df8550c@kernel.org>
- <aaRBjWhP4-7Kru9D@shell.armlinux.org.uk>
- <20260302155736.1fd2980e@kernel.org>
+        d=1e100.net; s=20230601; t=1773075678; x=1773680478;
+        h=content-transfer-encoding:cc:to:subject:from:content-language
+         :user-agent:mime-version:date:message-id:x-gm-gg:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=6bGjAJZg3kAEKg3RqCoiUO430+IHfGMI5W87dJSgovE=;
+        b=gXAXO0Jsad81fvVYL8Cz/cT34L2QOy6pMxeGtt7/SOs4hw7cpXxlPsfitQMUaa8EVo
+         qTQlIvZN/RCNCrRudzL+n3yebCCgc0wQIuyZtIZltVdhQ2EdL90BwhN4m+Z9pCRQ1hIe
+         TOu0gxZnG7dNjKrrC2BmTTf5ABomyM28++57ODx3M7QVsBb+oADOQFLp3oS1yDPw5KjN
+         Sqtxuq/2aIMhmCoIA/CCAeHM/yL1zaxKxbnl+qQ3xbjr7jag9AWqVWXdfH8afEvZsfK3
+         sw7KXw4Hn/K8F9EZUpzOq3AMT4B9H7MuJUH9AND2pIovWqejv+A4AayX9jqHTjZuUmFJ
+         eKng==
+X-Forwarded-Encrypted: i=1; AJvYcCVgtKVZV/F/lgCXeL61EUmCQoeZrF09FZhBvpt0Agp3mmqkS2wkOvpncqaZTMafnWT384xQWwojHwo=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yzys0gXWkphR5Yqa0+kIEPPWqxbGXJxXFA4x8hrEbeuXYtNBLp6
+	MdJlELkL1QtQVXyXilpDrddiRiR//4sc8Z9sXdSNeJ6fciNGCQBiWRDL
+X-Gm-Gg: ATEYQzy8XdvMfM9ZBWnMaQWyk35ujCHg9poSsJge0rELWhOfxAbY/DIqPu0OJ9BAo4/
+	tnmne4lbGUD1Xsyy3ddPmyxI08T9EqbsWsRph/ymWSfS/eHLTBIEqRbVA3s0SzmEcRz7FziAV2u
+	Pv1I0cY805Tph27frZFXTubHx+XI1XgRN48vGv3by9WO4SntZFkmEETzAbY0pkR2KlQ/pDcYUVg
+	3uVPzQ1JHdzS1uzNcFMN/PKwEwLWByWMS0MD5EEaHlcd/n9RJp79NMNsyEQPAnT511g93t8Vd15
+	Pb13W964vtGsfbdRfNey60imSoPAElLl6eUdcsoyTBKqucTTztx0WQOgqhbiuPa3vuCpLMi/2kR
+	lEPjn5GYyva1CXluLXatRVbN4U0VV/eRN9OfezSCsXTSITwnaUt2Roi4DuG7A1zE5HGdAxVwul3
+	racAAT1CqIGrxIkRAMnHtj+JuFREQWKRUj1XpdACbm9wY3rZmxIGK/m651i0zzlc7SAdOWfeRD+
+	yeMi+LjdRHDpnH1N3pqGxcjrZd+Bby5ud+MQQx9fplwVMaRwWFsPYL5h7pBPnk=
+X-Received: by 2002:a05:600c:5894:b0:47e:e48f:43b5 with SMTP id 5b1f17b1804b1-48541a7f3f5mr3310265e9.18.1773075678161;
+        Mon, 09 Mar 2026 10:01:18 -0700 (PDT)
+Received: from ?IPV6:2003:ea:8f46:ce00:5f9:7f3c:5f9a:2a3d? (p200300ea8f46ce0005f97f3c5f9a2a3d.dip0.t-ipconnect.de. [2003:ea:8f46:ce00:5f9:7f3c:5f9a:2a3d])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-439dae3d98asm31393267f8f.30.2026.03.09.10.01.17
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 09 Mar 2026 10:01:17 -0700 (PDT)
+Message-ID: <9d5724bc-e525-4f8f-b3f8-b16dd5a1164e@gmail.com>
+Date: Mon, 9 Mar 2026 18:01:16 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260302155736.1fd2980e@kernel.org>
+User-Agent: Mozilla Thunderbird
+Content-Language: en-US
+From: Heiner Kallweit <hkallweit1@gmail.com>
+Subject: [PATCH v2 net-next 0/5] net: phy: further decouple provider from
+ consumer part
+To: Andrew Lunn <andrew@lunn.ch>,
+ Russell King - ARM Linux <linux@armlinux.org.uk>,
+ Paolo Abeni <pabeni@redhat.com>, Jakub Kicinski <kuba@kernel.org>,
+ David Miller <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>,
+ Bjorn Andersson <andersson@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>, Stephen Boyd
+ <sboyd@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>
+Cc: "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>, linux-clk@vger.kernel.org,
+ linux-phy@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260309_084437_976138_0525DB35 
-X-CRM114-Status: GOOD (  11.58  )
+X-CRM114-CacheID: sfid-20260309_100120_642251_9D3CA24A 
+X-CRM114-Status: UNSURE (   7.96  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,27 +110,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Mar 02, 2026 at 03:57:36PM -0800, Jakub Kicinski wrote:
-> Alright, I think the best we can do here is to merge patch 2 
-> in a "stable tag" way. The rest will have to go via net-next.
-> 
-> I applied patch 2, Russell please rebase the rest on net-next 
-> and repost. Patch 2 should disappear. I don't want to merge it
-> now as is without an explicit nod from Vinod. He did ask for 
-> a tag and we won't provide one.
-> 
-> Vinod / Vladimir, to merge the "stable tag" of patch 2:
-> 
-> tag_name=phy-qcom-sgmii-eth-add-set_mode-and-validate-methods
-> git fetch https://git.kernel.org/pub/scm/linux/kernel/git/netdev/net-next.git
-> git tag $tag_name 0e8147f4da00
-> git merge $tag_name
-> git tag -d $tag_name
-> 
-> I think this should work.
+This series aims at further decoupling the provider and consumer part
+in phylib.
 
-Thanks for the anonymous tag. I think you mean sha1sum
-4ff5801f45b494ad8251a16ec06c9f303ed3b9a0, not 0e8147f4da00.
+v2:
+- patch 2: add needed Kconfig dependency changes
+- patch 5: explain false positive checkpatch error
+
+Heiner Kallweit (5):
+  net: phy: move mdio_device reset handling functions in the code
+  net: phy: make mdio_device.c part of libphy
+  net: phy: move (of_)mdio_find_bus to mdio_bus_provider.c
+  net: phy: move registering mdio_bus_class and mdio_bus_type to libphy
+  net: phy: move remaining provider code to mdio_bus_provider.c
+
+ drivers/clk/qcom/Kconfig            |   2 +-
+ drivers/net/phy/Makefile            |   6 +-
+ drivers/net/phy/mdio-private.h      |  11 -
+ drivers/net/phy/mdio_bus.c          | 385 ----------------------------
+ drivers/net/phy/mdio_bus_provider.c | 319 +++++++++++++++++++++++
+ drivers/net/phy/mdio_device.c       | 165 +++++++-----
+ drivers/net/phy/phy_device.c        |  13 +
+ drivers/net/phy/phylib-internal.h   |   7 +
+ drivers/phy/broadcom/Kconfig        |   4 +-
+ include/linux/mdio.h                |   2 -
+ include/linux/phy.h                 |   3 -
+ 11 files changed, 444 insertions(+), 473 deletions(-)
+ delete mode 100644 drivers/net/phy/mdio-private.h
+
+-- 
+2.53.0
+
 
 -- 
 linux-phy mailing list
