@@ -4,115 +4,109 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2F29EEF36E5
-	for <linux-phy@archiver.kernel.org>; Mon,  9 Mar 2026 07:00:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 29E56EFCD6D
+	for <linux-phy@archiver.kernel.org>; Mon,  9 Mar 2026 09:19:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TuJo9Ln6gJoWyrKUs5XQDQ+Jn7g80yyh1pEd3s+T9s8=; b=Om+lhgrXhiFt4U
-	F065el1joBqBR8KtMpZjQA+ggK1ffTZaK0fUIA80Zd1jeG8jq10UbT2usaqEEatk7im2OD/j25eM0
-	sc0ur4l2Fg/tFK/V9/3x3Kl31+2/AhSDyjPX6zpFIhfSTR8bUPvI9rk5LAWjtqX+z6mG7XxBWUp49
-	dUTw+3Ki4OF9DZFMmBHRWQKY3t30ASx+OReZTcgB8GuNFZMaurakhUw0p6je0txCFw/zSywr8dgx0
-	/fhNW4ZaPyBr1/urW0Vp2VaTCukEoThGmQioy5mbmhxFUosC9o7jX5MkSW6C2GUm8Gb/WPxJmrPZ8
-	RLy3YhmD5TQyyxB7QUfQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:References:To:From:Subject:Cc:Message-Id:Date:Mime-Version:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=M8lkyMwIYVNjq/xbFwMwg6IMvE8GNA5oNiJFWI8eoY0=; b=Xvg8DcBSyEXYQBLtT1c+aVql5z
+	FMPxw8eNqUZL1BYVyMxPRhNVLUDKH2pYaHwgzHTMkBZiymEq7yPbFDThVDJk6i75idQ8BAEYMHY61
+	BcXfgFBL2I6Ja/3Hso4boWDqq9fZtSAE8G4yHE9bWhH5vHcluWp870HbDibYkEKpN7Sa91lAfCl8b
+	zUVQLDz23LerEO4UiSLqy/TXi7NEVSFa/MBJ+O6i6FfKlZIQcYPI0BimFu3nikRCZihv/XA7nUfXv
+	59tiL43F+9JXF8+n/GpOnIKedL5uv09xMzeHDd3Jekn5IPdNs5foKtHCN+oh/KEmYPoKkz2JQm8m6
+	hMrWxJCA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzUbI-00000006mK9-37Jg;
-	Mon, 09 Mar 2026 07:00:24 +0000
-Received: from mail-francesouthazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c207::3] helo=MRWPR03CU001.outbound.protection.outlook.com)
+	id 1vzWlX-00000006xEN-37nV;
+	Mon, 09 Mar 2026 09:19:07 +0000
+Received: from mail-wr1-x434.google.com ([2a00:1450:4864:20::434])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzUbG-00000006mJi-1Wev;
-	Mon, 09 Mar 2026 07:00:23 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=U/V2npyzhpIkXfSzg5Xz3fiMVz/uTP01HwuH9hvmxaJkL2xI4Hq3zVWSBmMZVfMXldhaITj2auyH7PUEMW4EFuSxCxBrQf8igTnwxTzShKhmG0Fsb83SKda56l9jcmzeoFmozDjRRjRxER4rw0X0lGgkn8iMwdbXKGUGZ/nyYvpXMP0P7iSs6dRDcFGoKU03MlgR8PHgPpkbvierTzRPmHtSmv/QPhUb4Wjrcqs/rGP16KRBD1L+ulLZVqEIi7vBCDIPje+GV7GS/kBUoUxpkedBzAhIVJB00/ItadGehDgiqJsMePAS64cFDxgs0glLuGizRFLmAjNjKYZ7bwCjXQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=7PCTrkm/Uaxqp8htbsT4MVXydewMRCi6NzW73ePH1Iw=;
- b=wdot4Om6qdtgy4dQ+c6XvNjLnspGvh4suH8u7sKgrzrWcLU+55XHfJKZMjPXacJ3AFlglH7GZ01M3CRVYjCbpUXZx3xVrXw9BilGzk3XTLPfAIYTTlBpQP58R/bviBpnNpj10OOPsc1cI/XKAMJekUgvh6weGdsxl5tZFJnpOT+nai9trHHFmt1Fg4CK9WeHqcuBVQRy6msQQHYCr+zB28vp1xL/fJpAPlaMSTFejR6KweWGQm4EuTlPoyS15OzDEJCcwGWcxV5j2J4i0/dEF/2gb36te3XQBrm/eF51AbUbuejvtyFe5Os6DM+XISYpzDokR3y5ydvFQ5jqEIphTw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=fail (sender ip is
- 164.130.1.59) smtp.rcpttodomain=gmail.com smtp.mailfrom=foss.st.com;
- dmarc=fail (p=none sp=none pct=100) action=none header.from=foss.st.com;
- dkim=none (message not signed); arc=none (0)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=7PCTrkm/Uaxqp8htbsT4MVXydewMRCi6NzW73ePH1Iw=;
- b=BxHBanEAa0CA4W1DHLTC1oTny41nHUd8KfdECQ/fp+UyFHXeHOOPcLA4YKXNCEKVOoM5XbP21Z1pq3RJL/+NgLwDRNpd8NPgPLO2RmFh3udKD7uRNZ7qIaTLqGB4F+dvC5rr90S5Sw0j7AFhL+v/1Mhu5pdY+ZpKPYlr5U/yhUTvDOL90qa+/uHTjaY6OMyhIA4023lAzsZFAt/QGA6Aq6MO75qcBl4R/1WevUPFPyNd4Zo17L/IbrxBS7pwkgWVOTV0FoPI0HB6M+hkVdV7SjeTW2q2hCpTyx0XjMTdy4Rkh/mMQt7hqfydNV4y8CIfnT9CuzqWhr7BDVKzLEMpXA==
-Received: from DU7P250CA0014.EURP250.PROD.OUTLOOK.COM (2603:10a6:10:54f::8) by
- GV1PR10MB6396.EURPRD10.PROD.OUTLOOK.COM (2603:10a6:150:3d::8) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.9678.20; Mon, 9 Mar 2026 07:00:16 +0000
-Received: from DB1PEPF000509E3.eurprd03.prod.outlook.com
- (2603:10a6:10:54f:cafe::29) by DU7P250CA0014.outlook.office365.com
- (2603:10a6:10:54f::8) with Microsoft SMTP Server (version=TLS1_3,
- cipher=TLS_AES_256_GCM_SHA384) id 15.20.9678.24 via Frontend Transport; Mon,
- 9 Mar 2026 07:00:15 +0000
-X-MS-Exchange-Authentication-Results: spf=fail (sender IP is 164.130.1.59)
- smtp.mailfrom=foss.st.com; dkim=none (message not signed)
- header.d=none;dmarc=fail action=none header.from=foss.st.com;
-Received-SPF: Fail (protection.outlook.com: domain of foss.st.com does not
- designate 164.130.1.59 as permitted sender) receiver=protection.outlook.com;
- client-ip=164.130.1.59; helo=smtpO365.st.com;
-Received: from smtpO365.st.com (164.130.1.59) by
- DB1PEPF000509E3.mail.protection.outlook.com (10.167.242.53) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.9654.16 via Frontend Transport; Mon, 9 Mar 2026 07:00:15 +0000
-Received: from STKDAG1NODE1.st.com (10.75.128.132) by smtpo365.st.com
- (10.250.44.71) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.29; Mon, 9 Mar
- 2026 08:02:28 +0100
-Received: from [10.48.87.93] (10.48.87.93) by STKDAG1NODE1.st.com
- (10.75.128.132) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.29; Mon, 9 Mar
- 2026 08:00:00 +0100
-Message-ID: <bd4c6cab-bc1f-4275-87aa-2e0daf0e5620@foss.st.com>
-Date: Mon, 9 Mar 2026 08:00:01 +0100
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCHv2 2/2] phy: miphy28lp: kzalloc + kcalloc to single kzalloc
-To: Rosen Penev <rosenp@gmail.com>, <linux-phy@lists.infradead.org>
-CC: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
-	Kees Cook <kees@kernel.org>, "Gustavo A. R. Silva" <gustavoars@kernel.org>,
-	open list <linux-kernel@vger.kernel.org>, "moderated list:ARM/STI
- ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>, "open list:KERNEL
- HARDENING (not covered by other areas):Keyword:b__counted_by(_le|_be)?b"
-	<linux-hardening@vger.kernel.org>
-References: <20260306222457.8400-1-rosenp@gmail.com>
- <20260306222457.8400-3-rosenp@gmail.com>
-Content-Language: en-US
-From: Patrice CHOTARD <patrice.chotard@foss.st.com>
-In-Reply-To: <20260306222457.8400-3-rosenp@gmail.com>
-X-Originating-IP: [10.48.87.93]
-X-ClientProxiedBy: STKCAS1NODE1.st.com (10.75.128.134) To STKDAG1NODE1.st.com
- (10.75.128.132)
-X-EOPAttributedMessage: 0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DB1PEPF000509E3:EE_|GV1PR10MB6396:EE_
-X-MS-Office365-Filtering-Correlation-Id: 841da89d-00c6-4bad-e6d6-08de7da9844a
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|82310400026|36860700016|1800799024|7053199007;
-X-Microsoft-Antispam-Message-Info: 05B95VJZRvxOTUDrwu+0/7VoD1hjcCMkc2oeKr8itiH7Wjk7oPtcab00/B9AvxZWOI/jAGsSdEPlnlJcyc41op1J4XzkMcgz3Pi1OEtdH69owqX39MLnRKLl3t4mCW1AFk+/PEDOMHfqns094Cy9W4fYMy0vLBxs1EoHwP25XOxS/pJlvYKkVQGSscL3Lpzy2Dk2nS7IHuD/JdGskl4IHNkuZcqf3XI4UerIiCoCDjnwJnDu3lhF8ib4OwYqfrIXuCY1xRDI1Ug/IxAf5KHYVtBLjvmicBiM8uiuo5BUy5+9vdg/yQGQAxADNccKxc4WEIEK9/MbzVD253lOXNNea8S7cJizMgyDn87skr+WSrgroJGlui080Y6R5I92dbVUO48pFpUq1Oy6K2stQ4NvzoNA+O2/rFxRn9uuqi1S+w7bbW0mMEHRWWk1TdWhRmdOzH8LW97Ciifj0FdiqregMooQ0mZaefJFpzh4pPmWmMyG/hwZw30V0oCDNSNPmSc1Wxlzrxt/a68mkpmWFyaefhqXFQzFJwR5lqLclZ7QTkBAsr2jrZxl/bI6GQmrYQYIelwvAZIQlIBkPjnfx10EmeNLo9GSaHM2DDI03zy88iQsVXls0xV6jmKWvH/x6uw0o2+8vlw6ByrCiw25fgyMnlg5/VpzM72Ti5yqCAzvYWnaUo9rplT5CEgmkHT+pXpfYmgCkSObNubMAJqR6e1rotSc2YqKMCD3vxrfCVfIPmJa8jiHWFM9SdPLORcD6l+yk6EwnzS2i1lIklvhWyDh8Q==
-X-Forefront-Antispam-Report: CIP:164.130.1.59;CTRY:IT;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:smtpO365.st.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(376014)(82310400026)(36860700016)(1800799024)(7053199007);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: haps6col/zvm9rcNUT5wy4WF8lYfMav0PmISyFXG2rPFPYQSlbFagBv9bjJgA5JPmFB9l6QAr2kDTKCUJpa4A7p/rGucc6OMhajfUx7Vi8rdRC0D39m4cn5+TRtGHyAgAk5qvoPAy8hMtH4E+43jpy+j3+1SBVSbh8wkKKNr/B/l0Crk3XCYNAsrUvA0FS2m5bEc7M5VLU+hUreoh+/jr2vgMEOSUVKWDcSgiOc7NBR4icNGSkGkVnk67En7i5muGTttXzD3iW0kOEreft9TUke5YhFR9012oieD+wrgUWJ30kDiDSZ1u0jT68s4CDru/bcAhYV28S8Cs6FZRZ28cLaKh3FXAG6KiNYCo+AWaGmzVoA2DRUoecH+2gjN0fbl9Z14bzyB6Mi4v1Dm0e90y2GLq6nNhQhEB2cx8e3H3k2LcvFYIYbX1EbIVWSyzFk2
-X-OriginatorOrg: foss.st.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Mar 2026 07:00:15.4458
- (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 841da89d-00c6-4bad-e6d6-08de7da9844a
-X-MS-Exchange-CrossTenant-Id: 75e027c9-20d5-47d5-b82f-77d7cd041e8f
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=75e027c9-20d5-47d5-b82f-77d7cd041e8f;Ip=[164.130.1.59];Helo=[smtpO365.st.com]
-X-MS-Exchange-CrossTenant-AuthSource: DB1PEPF000509E3.eurprd03.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV1PR10MB6396
+	id 1vzWlS-00000006xAz-1GoC
+	for linux-phy@lists.infradead.org;
+	Mon, 09 Mar 2026 09:19:05 +0000
+Received: by mail-wr1-x434.google.com with SMTP id ffacd0b85a97d-439b790af67so4612801f8f.0
+        for <linux-phy@lists.infradead.org>; Mon, 09 Mar 2026 02:19:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=baylibre-com.20230601.gappssmtp.com; s=20230601; t=1773047940; x=1773652740; darn=lists.infradead.org;
+        h=in-reply-to:references:to:from:subject:cc:message-id:date
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=kNiLR6YNrMRtTldTWTQRiLTdnMm5k8O8M4DvpvHP74I=;
+        b=OeoimyfhGyCEPhz/f/T7GVP0+x0lQSO2xUcbi6R6/S+cgxqAKAYmRmFRcyyGDWgqmy
+         GO5kJlGrsHfj3Rumw9tulmFf9Jokd5J8wqLOVZWc9yeR9fsco7LDSURBb47RlzDyhDg1
+         GNEZOItDyE0UPKPlYvGSc2oN2Ija96UwF0qGV1e8zP667X0uaijeeZy9yTs2ph6XtePA
+         7+I4WzXE+lfk0Bp+SzHnztkEM8doWI7hMSTWNlfeBqE+xn81McqTBAMHDhPUQFBaNgPk
+         GY3oCU/CVSmdgFuuofYXyhKgSGjTwe6wYXN3oeIu/TLnVinODE456hffHmtyCWq3X1lb
+         Zeqw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1773047940; x=1773652740;
+        h=in-reply-to:references:to:from:subject:cc:message-id:date
+         :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=kNiLR6YNrMRtTldTWTQRiLTdnMm5k8O8M4DvpvHP74I=;
+        b=oKkPJrsgjSdX6xM2m2MTd9Ss5JJS+IsvfO6aNyoDmZAyf6aN+hiJJqamRepj+nyLt2
+         5qc6WJZuy3Bw+HJanqb5BqURfMqSX1ugFLiLRGAXiH12GS2xNOCa8YCkrB8niVUsj5Mi
+         5EHCR5juj5dVYt1sYEr/G/hzUpI08AHIBAgoNL6U20/AxRn6bYAFgBvwOmVyfVVoUsHl
+         usiym+qoVoAJ50Jya2GZZ51tnIiLEMYgIpRYle5cDnJLiEZJNS3TC+53AAXJFsBWOYBg
+         becoqInj0YQuRqOwuGh4b7Hyp05NyGFg1P21Q2R2brFClY15rAuw5h+Ad95Z2Yww2POl
+         W8mg==
+X-Forwarded-Encrypted: i=1; AJvYcCX29d8XSOTlkNQcYssNJ85PEb9nHlwLJnQicqWDHu9TvWFBXVfh22zXK7XTMjkGxV5IsdPyQadRykw=@lists.infradead.org
+X-Gm-Message-State: AOJu0YygK4AT3eHWR4ODBVXMX9A+fnsY8+35mKFIe0QYniGAvFt9bImH
+	4txDIO1r+eM2FgQcdhq0yi8HW5GPIOjnx8C6oPbpBgpc2iZC1fhYBbwmo0AWf5mL6GA=
+X-Gm-Gg: ATEYQzzmu7A7z/Iv0Sc6LxPgB4UZCK3miUYBNlKp/toZL97XUnPrPdODjK7iwLWVjqm
+	yUdwmUXSOBqf2WgyPXWHYftCYINRJxibWS3CDLxJY7F2lFWt4dbJndtFUMXxdAUdarN4cHZtAYn
+	x6y/QfE2zjFw1HS8uGvibI1ln3Yy49zw8gCwioXPz0KvWaDHks8zDBMRFIQjEAbotlsjEjB0Z/K
+	LgI8awhm1Xy/WR8omYq5nUs6MVj/rAUwyWUqcKP+eCG8auAfNtH1GVNu4JXn2a7BHm4DQPi+JTj
+	BcO4FYZc6/EgSWQ224+aIt1I0qMD+HKJQLrIksWWbZPDIvVf9R38j4XLea9JXWGxOIa2ToZM1JO
+	R88IbUqQ2iT304uhfRpAu4ShRwWuz9YT54eY4k6Hjr4hGiko9VmeMcA9f8ZQ4xHQ0deFd7VbqpO
+	5Sch97OzdcNcaW1ZY=
+X-Received: by 2002:a05:6000:603:b0:439:909f:c5a3 with SMTP id ffacd0b85a97d-439da3277d9mr17145973f8f.4.1773047939930;
+        Mon, 09 Mar 2026 02:18:59 -0700 (PDT)
+Received: from localhost ([195.52.25.213])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-439dada9116sm23029936f8f.14.2026.03.09.02.18.58
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 09 Mar 2026 02:18:59 -0700 (PDT)
+Mime-Version: 1.0
+Date: Mon, 09 Mar 2026 10:18:50 +0100
+Message-Id: <DGY51AQLSNAD.3LE77TJER4LGF@baylibre.com>
+Cc: "Vinod Koul" <vkoul@kernel.org>, "Neil Armstrong"
+ <neil.armstrong@linaro.org>, <dri-devel@lists.freedesktop.org>,
+ <freedreno@lists.freedesktop.org>, <linux-arm-kernel@lists.infradead.org>,
+ <linux-arm-msm@vger.kernel.org>, <linux-can@vger.kernel.org>,
+ <linux-gpio@vger.kernel.org>, <linux-ide@vger.kernel.org>,
+ <linux-kernel@vger.kernel.org>, <linux-media@vger.kernel.org>,
+ <linux-pci@vger.kernel.org>, <linux-renesas-soc@vger.kernel.org>,
+ <linux-riscv@lists.infradead.org>, <linux-rockchip@lists.infradead.org>,
+ <linux-samsung-soc@vger.kernel.org>, <linux-sunxi@lists.linux.dev>,
+ <linux-tegra@vger.kernel.org>, <linux-usb@vger.kernel.org>,
+ <netdev@vger.kernel.org>, <spacemit@lists.linux.dev>,
+ <UNGLinuxDriver@microchip.com>, "Andrzej Hajda" <andrzej.hajda@intel.com>,
+ "Robert Foss" <rfoss@kernel.org>, "Laurent Pinchart"
+ <Laurent.pinchart@ideasonboard.com>, "Jonas Karlman" <jonas@kwiboo.se>,
+ "Jernej Skrabec" <jernej.skrabec@gmail.com>, "Maarten Lankhorst"
+ <maarten.lankhorst@linux.intel.com>, "Maxime Ripard" <mripard@kernel.org>,
+ "Thomas Zimmermann" <tzimmermann@suse.de>, "David Airlie"
+ <airlied@gmail.com>, "Simona Vetter" <simona@ffwll.ch>, "Andy Yan"
+ <andy.yan@rock-chips.com>, "Marc Kleine-Budde" <mkl@pengutronix.de>,
+ "Vincent Mailhol" <mailhol@kernel.org>, "Nicolas Ferre"
+ <nicolas.ferre@microchip.com>, "Alexandre Belloni"
+ <alexandre.belloni@bootlin.com>, "Claudiu Beznea"
+ <claudiu.beznea@tuxon.dev>, "Markus Schneider-Pargmann" <msp@baylibre.com>,
+ "Geert Uytterhoeven" <geert+renesas@glider.be>, "Magnus Damm"
+ <magnus.damm@gmail.com>
+Subject: Re: [PATCH v2 phy-next 14/24] phy: introduce
+ phy_get_max_link_rate() helper for consumers
+From: "Markus Schneider-Pargmann" <msp@baylibre.com>
+To: <vladimir.oltean@nxp.com>, <linux-phy@lists.infradead.org>
+X-Mailer: aerc 0.21.0
+References: <20260308114009.2546587-1-vladimir.oltean@nxp.com>
+ <20260308114009.2546587-15-vladimir.oltean@nxp.com>
+In-Reply-To: <20260308114009.2546587-15-vladimir.oltean@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260309_000022_412703_078A988C 
-X-CRM114-Status: GOOD (  14.25  )
+X-CRM114-CacheID: sfid-20260309_021902_537945_5592B369 
+X-CRM114-Status: GOOD (  26.86  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,67 +118,256 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============4544276736771705293=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+--===============4544276736771705293==
+Content-Type: multipart/signed;
+ boundary=840703edd9f3f1e1e79a02bb78a8d4f69f696b0531524c2c45c8075436e0;
+ micalg=pgp-sha512; protocol="application/pgp-signature"
 
+--840703edd9f3f1e1e79a02bb78a8d4f69f696b0531524c2c45c8075436e0
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
 
-On 3/6/26 23:24, Rosen Penev wrote:
-> Use flex array to simplify allocation.
-> 
-> Allows using __counted_by for extra runtime analysis.
-> 
-> Signed-off-by: Rosen Penev <rosenp@gmail.com>
+Hi,
+
+On Sun Mar 8, 2026 at 12:39 PM CET, vladimir.oltean wrote:
+> Consumer drivers shouldn't dereference struct phy, not even to get to
+> its attributes.
+>
+> We have phy_get_bus_width() as a precedent for getting the bus_width
+> attribute, so let's add phy_get_max_link_rate() and use it in DRM and
+> CAN drivers.
+>
+> In CAN drivers, the transceiver is acquired through devm_phy_optional_get=
+()
+> and NULL is given by the API as a non-error case, so the PHY API should
+> also tolerate NULL coming back to it. This means we can further simplify
+> the call sites that test for the NULL quality of the transceiver.
+
+Thanks for adding this.
+
+>
+> Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
 > ---
->  drivers/phy/st/phy-miphy28lp.c | 12 +++++-------
->  1 file changed, 5 insertions(+), 7 deletions(-)
-> 
-> diff --git a/drivers/phy/st/phy-miphy28lp.c b/drivers/phy/st/phy-miphy28lp.c
-> index 43cef89af55e..c576fc5569fe 100644
-> --- a/drivers/phy/st/phy-miphy28lp.c
-> +++ b/drivers/phy/st/phy-miphy28lp.c
-> @@ -224,8 +224,8 @@ struct miphy28lp_dev {
->  	struct device *dev;
->  	struct regmap *regmap;
->  	struct mutex miphy_mutex;
-> -	struct miphy28lp_phy **phys;
->  	int nphys;
-> +	struct miphy28lp_phy *phys[] __counted_by(nphys);
->  };
-> 
->  enum miphy_sata_gen { SATA_GEN1, SATA_GEN2, SATA_GEN3 };
-> @@ -1168,16 +1168,14 @@ static int miphy28lp_probe(struct platform_device *pdev)
->  	struct phy_provider *provider;
->  	struct phy *phy;
->  	int ret, port = 0;
-> +	size_t nphys;
-> 
-> -	miphy_dev = devm_kzalloc(&pdev->dev, sizeof(*miphy_dev), GFP_KERNEL);
-> +	nphys = of_get_child_count(np);
-> +	miphy_dev = devm_kzalloc(&pdev->dev, struct_size(miphy_dev, phys, nphys), GFP_KERNEL);
->  	if (!miphy_dev)
->  		return -ENOMEM;
-> 
-> -	miphy_dev->nphys = of_get_child_count(np);
-> -	miphy_dev->phys = devm_kcalloc(&pdev->dev, miphy_dev->nphys,
-> -				       sizeof(*miphy_dev->phys), GFP_KERNEL);
-> -	if (!miphy_dev->phys)
-> -		return -ENOMEM;
-> +	miphy_dev->nphys = nphys;
-> 
->  	miphy_dev->regmap = syscon_regmap_lookup_by_phandle(np, "st,syscfg");
->  	if (IS_ERR(miphy_dev->regmap)) {
-> --
-> 2.53.0
-> 
-Reviewed-by: Patrice Chotard <patrice.chotard@foss.st.com>
+> Cc: Andrzej Hajda <andrzej.hajda@intel.com>
+> Cc: Neil Armstrong <neil.armstrong@linaro.org>
+> Cc: Robert Foss <rfoss@kernel.org>
+> Cc: Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
+> Cc: Jonas Karlman <jonas@kwiboo.se>
+> Cc: Jernej Skrabec <jernej.skrabec@gmail.com>
+> Cc: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>
+> Cc: Maxime Ripard <mripard@kernel.org>
+> Cc: Thomas Zimmermann <tzimmermann@suse.de>
+> Cc: David Airlie <airlied@gmail.com>
+> Cc: Simona Vetter <simona@ffwll.ch>
+> Cc: Andy Yan <andy.yan@rock-chips.com>
+> Cc: Marc Kleine-Budde <mkl@pengutronix.de>
+> Cc: Vincent Mailhol <mailhol@kernel.org>
+> Cc: Nicolas Ferre <nicolas.ferre@microchip.com>
+> Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>
+> Cc: Claudiu Beznea <claudiu.beznea@tuxon.dev>
+> Cc: Markus Schneider-Pargmann <msp@baylibre.com>
+> Cc: Geert Uytterhoeven <geert+renesas@glider.be>
+> Cc: Magnus Damm <magnus.damm@gmail.com>
+>
+> v1->v2: make phy_get_bus_width() NULL-tolerant to simplify CAN callers
+> ---
+>  drivers/gpu/drm/bridge/cadence/cdns-mhdp8546-core.c | 4 ++--
+>  drivers/gpu/drm/bridge/synopsys/dw-dp.c             | 2 +-
+>  drivers/net/can/at91_can.c                          | 3 +--
+>  drivers/net/can/flexcan/flexcan-core.c              | 3 +--
+>  drivers/net/can/m_can/m_can_platform.c              | 3 +--
 
-Thanks
-Patrice
+For m_can:
+Acked-by: Markus Schneider-Pargmann <msp@baylibre.com>
+
+Best
+Markus
+
+>  drivers/net/can/rcar/rcar_canfd.c                   | 3 +--
+>  drivers/phy/phy-core.c                              | 9 +++++++++
+>  include/linux/phy/phy.h                             | 6 ++++++
+>  8 files changed, 22 insertions(+), 11 deletions(-)
+>
+> diff --git a/drivers/gpu/drm/bridge/cadence/cdns-mhdp8546-core.c b/driver=
+s/gpu/drm/bridge/cadence/cdns-mhdp8546-core.c
+> index a8b6ae58cb0a..ed7ed82ddb64 100644
+> --- a/drivers/gpu/drm/bridge/cadence/cdns-mhdp8546-core.c
+> +++ b/drivers/gpu/drm/bridge/cadence/cdns-mhdp8546-core.c
+> @@ -1300,7 +1300,7 @@ static u32 cdns_mhdp_get_training_interval_us(struc=
+t cdns_mhdp_device *mhdp,
+> =20
+>  static void cdns_mhdp_fill_host_caps(struct cdns_mhdp_device *mhdp)
+>  {
+> -	unsigned int link_rate;
+> +	u32 link_rate;
+> =20
+>  	/* Get source capabilities based on PHY attributes */
+> =20
+> @@ -1308,7 +1308,7 @@ static void cdns_mhdp_fill_host_caps(struct cdns_mh=
+dp_device *mhdp)
+>  	if (!mhdp->host.lanes_cnt)
+>  		mhdp->host.lanes_cnt =3D 4;
+> =20
+> -	link_rate =3D mhdp->phy->attrs.max_link_rate;
+> +	link_rate =3D phy_get_max_link_rate(mhdp->phy);
+>  	if (!link_rate)
+>  		link_rate =3D drm_dp_bw_code_to_link_rate(DP_LINK_BW_8_1);
+>  	else
+> diff --git a/drivers/gpu/drm/bridge/synopsys/dw-dp.c b/drivers/gpu/drm/br=
+idge/synopsys/dw-dp.c
+> index 4ab6922dd79c..79c72ee8e263 100644
+> --- a/drivers/gpu/drm/bridge/synopsys/dw-dp.c
+> +++ b/drivers/gpu/drm/bridge/synopsys/dw-dp.c
+> @@ -536,7 +536,7 @@ static int dw_dp_link_parse(struct dw_dp *dp, struct =
+drm_connector *connector)
+> =20
+>  	link->revision =3D link->dpcd[DP_DPCD_REV];
+>  	link->rate =3D min_t(u32, min(dp->plat_data.max_link_rate,
+> -				    dp->phy->attrs.max_link_rate * 100),
+> +				    phy_get_max_link_rate(dp->phy) * 100),
+>  			   drm_dp_max_link_rate(link->dpcd));
+>  	link->lanes =3D min_t(u8, phy_get_bus_width(dp->phy),
+>  			    drm_dp_max_lane_count(link->dpcd));
+> diff --git a/drivers/net/can/at91_can.c b/drivers/net/can/at91_can.c
+> index 58da323f14d7..7749da0a58f6 100644
+> --- a/drivers/net/can/at91_can.c
+> +++ b/drivers/net/can/at91_can.c
+> @@ -1125,8 +1125,7 @@ static int at91_can_probe(struct platform_device *p=
+dev)
+> =20
+>  	can_rx_offload_add_timestamp(dev, &priv->offload);
+> =20
+> -	if (transceiver)
+> -		priv->can.bitrate_max =3D transceiver->attrs.max_link_rate;
+> +	priv->can.bitrate_max =3D phy_get_max_link_rate(transceiver);
+> =20
+>  	if (at91_is_sam9263(priv))
+>  		dev->sysfs_groups[0] =3D &at91_sysfs_attr_group;
+> diff --git a/drivers/net/can/flexcan/flexcan-core.c b/drivers/net/can/fle=
+xcan/flexcan-core.c
+> index f5d22c61503f..093e48b8da58 100644
+> --- a/drivers/net/can/flexcan/flexcan-core.c
+> +++ b/drivers/net/can/flexcan/flexcan-core.c
+> @@ -2210,8 +2210,7 @@ static int flexcan_probe(struct platform_device *pd=
+ev)
+>  	priv->reg_xceiver =3D reg_xceiver;
+>  	priv->transceiver =3D transceiver;
+> =20
+> -	if (transceiver)
+> -		priv->can.bitrate_max =3D transceiver->attrs.max_link_rate;
+> +	priv->can.bitrate_max =3D phy_get_max_link_rate(transceiver);
+> =20
+>  	if (priv->devtype_data.quirks & FLEXCAN_QUIRK_NR_IRQ_3) {
+>  		priv->irq_boff =3D platform_get_irq(pdev, 1);
+> diff --git a/drivers/net/can/m_can/m_can_platform.c b/drivers/net/can/m_c=
+an/m_can_platform.c
+> index 56da411878af..2a0f163a683a 100644
+> --- a/drivers/net/can/m_can/m_can_platform.c
+> +++ b/drivers/net/can/m_can/m_can_platform.c
+> @@ -131,8 +131,7 @@ static int m_can_plat_probe(struct platform_device *p=
+dev)
+>  		goto probe_fail;
+>  	}
+> =20
+> -	if (transceiver)
+> -		mcan_class->can.bitrate_max =3D transceiver->attrs.max_link_rate;
+> +	mcan_class->can.bitrate_max =3D phy_get_max_link_rate(transceiver);
+> =20
+>  	priv->base =3D addr;
+>  	priv->mram_base =3D mram_addr;
+> diff --git a/drivers/net/can/rcar/rcar_canfd.c b/drivers/net/can/rcar/rca=
+r_canfd.c
+> index eaf8cac78038..9062db48d477 100644
+> --- a/drivers/net/can/rcar/rcar_canfd.c
+> +++ b/drivers/net/can/rcar/rcar_canfd.c
+> @@ -1884,8 +1884,7 @@ static int rcar_canfd_channel_probe(struct rcar_can=
+fd_global *gpriv, u32 ch,
+>  	priv->transceiver =3D transceiver;
+>  	priv->channel =3D ch;
+>  	priv->gpriv =3D gpriv;
+> -	if (transceiver)
+> -		priv->can.bitrate_max =3D transceiver->attrs.max_link_rate;
+> +	priv->can.bitrate_max =3D phy_get_max_link_rate(transceiver);
+>  	priv->can.clock.freq =3D fcan_freq;
+>  	dev_info(dev, "can_clk rate is %u\n", priv->can.clock.freq);
+> =20
+> diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
+> index 0d0be494cfd7..737a760d97d1 100644
+> --- a/drivers/phy/phy-core.c
+> +++ b/drivers/phy/phy-core.c
+> @@ -647,6 +647,15 @@ void phy_set_bus_width(struct phy *phy, int bus_widt=
+h)
+>  }
+>  EXPORT_SYMBOL_GPL(phy_set_bus_width);
+> =20
+> +u32 phy_get_max_link_rate(struct phy *phy)
+> +{
+> +	if (!phy)
+> +		return 0;
+> +
+> +	return phy->attrs.max_link_rate;
+> +}
+> +EXPORT_SYMBOL_GPL(phy_get_max_link_rate);
+> +
+>  /**
+>   * _of_phy_get() - lookup and obtain a reference to a phy by phandle
+>   * @np: device_node for which to get the phy
+> diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
+> index a7e2432ca1ae..34b656084caf 100644
+> --- a/include/linux/phy/phy.h
+> +++ b/include/linux/phy/phy.h
+> @@ -57,6 +57,7 @@ int phy_notify_disconnect(struct phy *phy, int port);
+>  int phy_notify_state(struct phy *phy, union phy_notify state);
+>  int phy_get_bus_width(struct phy *phy);
+>  void phy_set_bus_width(struct phy *phy, int bus_width);
+> +u32 phy_get_max_link_rate(struct phy *phy);
+>  #else
+>  static inline struct phy *phy_get(struct device *dev, const char *string=
+)
+>  {
+> @@ -256,6 +257,11 @@ static inline int phy_get_bus_width(struct phy *phy)
+>  static inline void phy_set_bus_width(struct phy *phy, int bus_width)
+>  {
+>  }
+> +
+> +static inline u32 phy_get_max_link_rate(struct phy *phy)
+> +{
+> +	return 0;
+> +}
+>  #endif /* IS_ENABLED(CONFIG_GENERIC_PHY) */
+> =20
+>  #endif /* __PHY_CONSUMER_H */
+
+
+--840703edd9f3f1e1e79a02bb78a8d4f69f696b0531524c2c45c8075436e0
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iKMEABYKAEsWIQSJYVVm/x+5xmOiprOFwVZpkBVKUwUCaa6QehsUgAAAAAAEAA5t
+YW51MiwyLjUrMS4xMiwyLDIRHG1zcEBiYXlsaWJyZS5jb20ACgkQhcFWaZAVSlO3
+cwEAzFZFZ21Yi1E3bmSFVrYlzos6oRC2RIJXE4meDDVCTjUA/2INMu045NS1yRGm
+V6PI/m62S0rUjMso1TupNVful6QE
+=gdIq
+-----END PGP SIGNATURE-----
+
+--840703edd9f3f1e1e79a02bb78a8d4f69f696b0531524c2c45c8075436e0--
+
+
+--===============4544276736771705293==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============4544276736771705293==--
+
