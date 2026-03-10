@@ -4,47 +4,48 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D42D3EB105A
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Mar 2026 11:57:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3A8CAEB1064
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Mar 2026 11:57:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BLjv/DGiPvMWIFM4EKDkThdgxKCqkx+Jgv9+A2W6qYE=; b=HfuNsl0zM6vyp8
-	013MtGDnneYz222arUHurq2KCGM3ggZtiLmU6bUk1VRnZ8eQF7hILLABqW5oInqXSc2qqNL16oJQP
-	XxCeiBrZVBHrK8GBKmh/9okNF8q0W2n+ime1EBDSezhytPtWdn2OgAJgobWVMSryHRG2xVlpO3O3M
-	+KjIJ+N27Xfs2qLBjP/hVZmHoGqsFUf0RySzaC+2W6mw7kAvU3enONBwf1TDFrz/4XTk3yQ+XWI31
-	RlOZPYbb8jOf0RQpAVQxzlbgQCVtsxqbA7QkiT/A9B5Ipele3lJD1lE9g1ORGM5KANJkkI0ke0MvH
-	IE2eB3YFzWSQTcIKCeuA==;
+	List-Owner; bh=wOYdGOsCCyYFRFl6f1R43sC58GST0KBNuMqLqwuzfMY=; b=jLIOl1glVDkXwb
+	tWqwaa/ewjpjlEC6SH9hxPnJa7h7igiNErCc2GQnw74Re9pVy3/IIeItNpg1GEmxMYBgjYnII3SAE
+	j2jDY2O3rMNJx8znJhQI7vtg1XRGRjCKy59ReZgNAW2jJkcCu/LKLXJ7Z72pMYl4D+tj49ynOLHXK
+	8clka3HotOUarOjreBAbgbLpxfy7ICgdCbLs51IPxpRdVAmhEr9PqNQmlWMk9sKXqbyjGcpr3iDLD
+	GWE5YBVtWt3+873fiPWnD3UYouhsskdbqJgbuVtbOqNikhK3Pw5ZzQqvVLl/rvNz0RWc2Y/CpFt2B
+	MkeeIhQM6QZtp73RwL0Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzviG-00000009NG7-3g9H;
-	Tue, 10 Mar 2026 11:57:24 +0000
-Received: from mail.avm.de ([212.42.244.94])
+	id 1vzviP-00000009NZz-1xO3;
+	Tue, 10 Mar 2026 11:57:33 +0000
+Received: from mail.avm.de ([212.42.244.119])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzvgb-00000009KXd-45dX;
-	Tue, 10 Mar 2026 11:55:43 +0000
+	id 1vzvgd-00000009KZx-2KNn;
+	Tue, 10 Mar 2026 11:55:46 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=avm.de; s=mail;
-	t=1773143728; bh=P8RHvB1pDU6Ba6KZR0cIN2NAbDWAknWQIRz8JMX8gns=;
+	t=1773143727; bh=7QEjQvc53kHdYvJikGIe0XIqNo63J0gbffxhQyvvDmc=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=Pw5J/ZKa7qdOD/KHliFHGAPgoeYPtxmoMsaCQF/FKai+LG5vkmyJowXsEzkD3cPot
-	 34kvrGSUxg1JnjFKHY6NsLgrOVug3M9Be4rVveawRMrk6MR1C1BR6jP8hIlA4X3hU4
-	 jr1s0kl9i2R1ifgZ0ZoS8j1AZYiWtKMhO7fCyfSs=
-Received: from [2001:bf0:244:244::71] (helo=mail.avm.de)
+	b=xkT1xwtnaKnF5zwky80U90tVBtgjXUcX+GeykmrAvdmpppC5+8VK/cr2uIrG8dU1M
+	 7wm2m1OyU4JV6u1islMHTFtIiUXXXY5n/w/md+c+5C+f1bhtmzGNVLxiuCLq3+FykP
+	 yZ+BZpZfQ6y4Yx2gZPgoiPOharwFnkzMOEjjrW34=
+Received: from [212.42.244.71] (helo=mail.avm.de)
 	by mail.avm.de with ESMTP (eXpurgate 4.55.2)
 	(envelope-from <phahn-oss@avm.de>)
-	id 69b006af-e21d-7f0000032729-7f000001bab8-1
-	for <multiple-recipients>; Tue, 10 Mar 2026 12:55:28 +0100
-Received: from mail-auth.avm.de (dovecot-mx-01.avm.de [IPv6:2001:bf0:244:244::71])
+	id 69b006af-2367-7f0000032729-7f000001c9aa-1
+	for <multiple-recipients>; Tue, 10 Mar 2026 12:55:27 +0100
+Received: from mail-auth.avm.de (dovecot-mx-01.avm.de [212.42.244.71])
 	by mail.avm.de (Postfix) with ESMTPS;
 	Tue, 10 Mar 2026 12:55:27 +0100 (CET)
 From: Philipp Hahn <phahn-oss@avm.de>
-Date: Tue, 10 Mar 2026 12:49:14 +0100
-Subject: [PATCH 48/61] mtd: Prefer IS_ERR_OR_NULL over manual NULL check
+Date: Tue, 10 Mar 2026 12:49:07 +0100
+Subject: [PATCH 41/61] pinctrl: Prefer IS_ERR_OR_NULL over manual NULL
+ check
 MIME-Version: 1.0
-Message-Id: <20260310-b4-is_err_or_null-v1-48-bd63b656022d@avm.de>
+Message-Id: <20260310-b4-is_err_or_null-v1-41-bd63b656022d@avm.de>
 References: <20260310-b4-is_err_or_null-v1-0-bd63b656022d@avm.de>
 In-Reply-To: <20260310-b4-is_err_or_null-v1-0-bd63b656022d@avm.de>
 To: amd-gfx@lists.freedesktop.org, apparmor@lists.ubuntu.com, 
@@ -74,28 +75,28 @@ To: amd-gfx@lists.freedesktop.org, apparmor@lists.ubuntu.com,
  sched-ext@lists.linux.dev, target-devel@vger.kernel.org, 
  tipc-discussion@lists.sourceforge.net, v9fs@lists.linux.dev, 
  Philipp Hahn <phahn-oss@avm.de>
-Cc: Miquel Raynal <miquel.raynal@bootlin.com>, 
- Richard Weinberger <richard@nod.at>, Vignesh Raghavendra <vigneshr@ti.com>
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1817; i=phahn-oss@avm.de;
- h=from:subject:message-id; bh=P8RHvB1pDU6Ba6KZR0cIN2NAbDWAknWQIRz8JMX8gns=;
- b=kA0DAAoBNC0GU9GsrNsByyZiAGmwBnnIluZqwXeZ26oYYynjfBoy02QQTmlYcSsBV5M99kkBR
- okBMwQAAQoAHRYhBDls8G2tYNRwNAKmmDQtBlPRrKzbBQJpsAZ5AAoJEDQtBlPRrKzbhhQIALOH
- 7GGUb7lDbOgP/8xq1PNX4SyEuog4C5Kqug0EL27yDZ5DTcHtYtEWvTOVFh3DoBIg9oWZIhltbqf
- zQqvypi0p020OQBz5OD/FKYzR1JLtT/NpVkDjTnrh0FIsLPISsJn9k8DorrTpQE5Fk5zPEGhmlk
- HlvpEuSvvQD0MQibzxJjUYSjgq+Ll386Twc/QQfm3hFYZT/c4I4Yb80f4z0CM2WhT7S3udW5nGM
- BjGFdYImnQ9uAgWz45BEBVAwZb3P7349MoFLUJ9ZHvqc+4UOIWn+5d35lrOEZcvkJpfol2G0RFZ
- WFsYepS2AbdMtsza99K9TLlncKCIQLIaXnPIWJM=
+Cc: Linus Walleij <linusw@kernel.org>
+X-Developer-Signature: v=1; a=openpgp-sha256; l=974; i=phahn-oss@avm.de;
+ h=from:subject:message-id; bh=7QEjQvc53kHdYvJikGIe0XIqNo63J0gbffxhQyvvDmc=;
+ b=owEBbQGS/pANAwAKATQtBlPRrKzbAcsmYgBpsAZht0v/gzetsO7BqEut/SimpAgjLSUxejqDN
+ jYPITjd+qeJATMEAAEKAB0WIQQ5bPBtrWDUcDQCppg0LQZT0ays2wUCabAGYQAKCRA0LQZT0ays
+ 2w/2B/4pX609pdZXvqHfb+Vqmmi/TuKtxSLe3zgXgKoCJW/gh17vsp/T22wIBqf6SXS4OIznDwc
+ CqIbsgeOEAAlNDyBRYAY6KPNdElI/rv3fa2ORfx9RdjhIHa4x5wKb3P01gEbIVxJDT7L+eaQBY5
+ W5yNdsizunhdj+FuJcUWkiWweG/sakXiGLIkqX5NlLESVIppvEGGOaxwjbsMisZ9PSaDKihHXQV
+ LTJsTcuZgnx6Ly3LMJ0SQkiMEfMsx1Sbu6dG9rRM3ckN2uFTC5HrsnBNmmT4sZqY9FpULICBCkq
+ q7sHGVDOpWpuw1oJ3VO2Y9YZsG2cD9KHQpB9olXNSESNKBcu
 X-Developer-Key: i=phahn-oss@avm.de; a=openpgp;
  fpr=58AF7C2E007CDBE62C59E078F50EFDCF8AD04B1A
-X-purgate-ID: 149429::1773143728-90660F2F-3D7E05AD/0/0
+X-purgate-ID: 149429::1773143727-86C91E1F-25F0153A/0/0
 X-purgate-type: clean
-X-purgate-size: 1819
+X-purgate-size: 976
 X-purgate-Ad: Categorized by eleven eXpurgate (R) https://www.eleven.de
 X-purgate: This mail is considered clean (visit https://www.eleven.de for further information)
 X-purgate: clean
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260310_045542_243201_3C1796BF 
-X-CRM114-Status: GOOD (  12.07  )
+X-CRM114-CacheID: sfid-20260310_045543_838922_37096A86 
+X-CRM114-Status: UNSURE (   9.73  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,54 +118,27 @@ check.
 
 Change generated with coccinelle.
 
-To: Miquel Raynal <miquel.raynal@bootlin.com>
-To: Richard Weinberger <richard@nod.at>
-To: Vignesh Raghavendra <vigneshr@ti.com>
-Cc: linux-mtd@lists.infradead.org
+To: Linus Walleij <linusw@kernel.org>
+Cc: linux-gpio@vger.kernel.org
 Cc: linux-kernel@vger.kernel.org
 Signed-off-by: Philipp Hahn <phahn-oss@avm.de>
 ---
- drivers/mtd/nand/raw/gpio.c | 10 +++++-----
- 1 file changed, 5 insertions(+), 5 deletions(-)
+ drivers/pinctrl/core.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/mtd/nand/raw/gpio.c b/drivers/mtd/nand/raw/gpio.c
-index 69e5e43532a448aa6273f3df79f53145784ccc05..86a8b62fb9e8510d36f925b8b468ec17c77e26d8 100644
---- a/drivers/mtd/nand/raw/gpio.c
-+++ b/drivers/mtd/nand/raw/gpio.c
-@@ -276,9 +276,9 @@ static void gpio_nand_remove(struct platform_device *pdev)
- 	nand_cleanup(chip);
+diff --git a/drivers/pinctrl/core.c b/drivers/pinctrl/core.c
+index b5e97689589fbf1b6750620fc193bc820012be2b..97a80989601abbe969d4b64cb0f3926fd4f291f5 100644
+--- a/drivers/pinctrl/core.c
++++ b/drivers/pinctrl/core.c
+@@ -1991,7 +1991,7 @@ static void pinctrl_init_device_debugfs(struct pinctrl_dev *pctldev)
+ 	device_root = debugfs_create_dir(debugfs_name, debugfs_root);
+ 	pctldev->device_root = device_root;
  
- 	/* Enable write protection and disable the chip */
--	if (gpiomtd->nwp && !IS_ERR(gpiomtd->nwp))
-+	if (!IS_ERR_OR_NULL(gpiomtd->nwp))
- 		gpiod_set_value(gpiomtd->nwp, 0);
--	if (gpiomtd->nce && !IS_ERR(gpiomtd->nce))
-+	if (!IS_ERR_OR_NULL(gpiomtd->nce))
- 		gpiod_set_value(gpiomtd->nce, 0);
- }
- 
-@@ -358,7 +358,7 @@ static int gpio_nand_probe(struct platform_device *pdev)
- 	platform_set_drvdata(pdev, gpiomtd);
- 
- 	/* Disable write protection, if wired up */
--	if (gpiomtd->nwp && !IS_ERR(gpiomtd->nwp))
-+	if (!IS_ERR_OR_NULL(gpiomtd->nwp))
- 		gpiod_direction_output(gpiomtd->nwp, 1);
- 
- 	/*
-@@ -381,10 +381,10 @@ static int gpio_nand_probe(struct platform_device *pdev)
- 		return 0;
- 
- err_wp:
--	if (gpiomtd->nwp && !IS_ERR(gpiomtd->nwp))
-+	if (!IS_ERR_OR_NULL(gpiomtd->nwp))
- 		gpiod_set_value(gpiomtd->nwp, 0);
- out_ce:
--	if (gpiomtd->nce && !IS_ERR(gpiomtd->nce))
-+	if (!IS_ERR_OR_NULL(gpiomtd->nce))
- 		gpiod_set_value(gpiomtd->nce, 0);
- 
- 	return ret;
+-	if (IS_ERR(device_root) || !device_root) {
++	if (IS_ERR_OR_NULL(device_root)) {
+ 		pr_warn("failed to create debugfs directory for %s\n",
+ 			dev_name(pctldev->dev));
+ 		return;
 
 -- 
 2.43.0
