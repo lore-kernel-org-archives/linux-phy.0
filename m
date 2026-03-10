@@ -4,41 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CFA93EB1057
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Mar 2026 11:56:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C22E1EB1054
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Mar 2026 11:56:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wbgL1YIO5fk7KQIR2OMdkGZSFnrOaYL4XO/BysV9/Ng=; b=IjOtRF3NaCmWlW
-	T3oP4xOFdfz+tWha1V1irna0NodVpf64hXqH0HwYSuydzuQ5sn5sXbgM3/3J4G97z235WmAXlqg9d
-	80bzd2LcPRMiIBq3mKorOiFnSr8Qax7doPmR6Xor4Di5b8DdmilP3S0+oqWooUXYah4ScHk96gEMX
-	UP97SLXibRR9morYjnNz0KG7XkLrz1QwconXU2d8TrZmXgpkebcB1t1DALt7PWPYn5P2vrK7Rbbln
-	rSjkGtN5J83flPkWsJSw/Te/b3m+cPAocsQDPSpWyK9/oWKJ2VZatsgAjtGQ945AMmMkZqI5YPeq/
-	4AmqG0IRx71vBof6FxYQ==;
+	List-Owner; bh=lFR0NnkaGAxVpR589lzw96NEixcLYWIoC6skw05vqE0=; b=NEitFsKR1NU3rN
+	Zv86e5OXiMFpLxzrhZxEkcHlInpyU2uRY5gesYwnsrp0i15Bl6MyW4fEVUcjXt5SjxSKJSi6FI4H7
+	gQEM/lxzQ+7o6iDWtXQ1kmMnYlIE0q2Dez16n0lFvOfdjXAsGvnU+zYov8fO2j8Iz/6iSFEe7C3j8
+	BZfbcb8YRqnw2Zijgt+wgXRB0hmKKblxgS0QyE+qLehJYyNX5l6iVetumIdqgAD7D0wIo/H8ZvLNW
+	bFoIGpYJNJvFrFI37V8WnYEHqYsx26ISpARGaXmm2q8ku6jLhTtxupxgoa8YLv0lyTOH+UFn5Gj9D
+	tJ+8zJPQSzjdLvl0uNbg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzvh6-00000009LSA-3i0p;
-	Tue, 10 Mar 2026 11:56:12 +0000
-Received: from mail.avm.de ([2001:bf0:244:244::94])
+	id 1vzvhJ-00000009Ljq-2m0F;
+	Tue, 10 Mar 2026 11:56:25 +0000
+Received: from mail.avm.de ([2001:bf0:244:244::120])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzvgQ-00000009KMN-1whY;
-	Tue, 10 Mar 2026 11:55:38 +0000
+	id 1vzvgU-00000009KPl-0v7f;
+	Tue, 10 Mar 2026 11:55:39 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=avm.de; s=mail;
+	t=1773143724; bh=Z5CcgUmxb8TIHuxVENT8+Rdbeolb2IW3uV9KbiLoZl0=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
+	b=HvCb/8oi+QjPTMN2Yg58hVQgISqDho2KSemsYUZ+vy5VD2bnZIm5jRkx5UuokMrry
+	 Cd/bADEMvLj4WpFiDDooSYtHMuljYAEx/RujmrWNzucIvLCjqd0TnsL6u3xLqdwjKn
+	 SoUF7kcbAi1lGgdxzJJB8ERoQMMzj0TR7iF4FK9M=
 Received: from [212.42.244.71] (helo=mail.avm.de)
 	by mail.avm.de with ESMTP (eXpurgate 4.55.2)
 	(envelope-from <phahn-oss@avm.de>)
-	id 69b006ac-e21d-7f0000032729-7f000001d9c0-1
-	for <multiple-recipients>; Tue, 10 Mar 2026 12:55:24 +0100
+	id 69b006ab-b734-7f0000032729-7f000001bfb4-1
+	for <multiple-recipients>; Tue, 10 Mar 2026 12:55:23 +0100
 Received: from mail-auth.avm.de (dovecot-mx-01.avm.de [212.42.244.71])
 	by mail.avm.de (Postfix) with ESMTPS;
-	Tue, 10 Mar 2026 12:55:24 +0100 (CET)
+	Tue, 10 Mar 2026 12:55:23 +0100 (CET)
 From: Philipp Hahn <phahn-oss@avm.de>
-Date: Tue, 10 Mar 2026 12:48:37 +0100
-Subject: [PATCH 11/61] pstore: Prefer IS_ERR_OR_NULL over manual NULL check
+Date: Tue, 10 Mar 2026 12:48:34 +0100
+Subject: [PATCH 08/61] fuse: Prefer IS_ERR_OR_NULL over manual NULL check
 MIME-Version: 1.0
-Message-Id: <20260310-b4-is_err_or_null-v1-11-bd63b656022d@avm.de>
+Message-Id: <20260310-b4-is_err_or_null-v1-8-bd63b656022d@avm.de>
 References: <20260310-b4-is_err_or_null-v1-0-bd63b656022d@avm.de>
 In-Reply-To: <20260310-b4-is_err_or_null-v1-0-bd63b656022d@avm.de>
 To: amd-gfx@lists.freedesktop.org, apparmor@lists.ubuntu.com, 
@@ -68,28 +74,27 @@ To: amd-gfx@lists.freedesktop.org, apparmor@lists.ubuntu.com,
  sched-ext@lists.linux.dev, target-devel@vger.kernel.org, 
  tipc-discussion@lists.sourceforge.net, v9fs@lists.linux.dev, 
  Philipp Hahn <phahn-oss@avm.de>
-Cc: Kees Cook <kees@kernel.org>, Tony Luck <tony.luck@intel.com>, 
- "Guilherme G. Piccoli" <gpiccoli@igalia.com>
-X-Developer-Signature: v=1; a=openpgp-sha256; l=958; i=phahn-oss@avm.de;
- h=from:subject:message-id; bh=50ahf3Ovo2xs3bKtWfsEny3TDWNoY4zAg8ay7QEz3LI=;
- b=owEBbQGS/pANAwAKATQtBlPRrKzbAcsmYgBpsAX7sQcV3VwS+mx5jK1HizkW2meRfNqVaBq2u
- sez6firU+2JATMEAAEKAB0WIQQ5bPBtrWDUcDQCppg0LQZT0ays2wUCabAF+wAKCRA0LQZT0ays
- 2xq8B/0SUo4r3rxVq9RsANPcVwQvjAVIq5IHS3vrGpufO9mdcUCVswBYAGcqVWlGUWYhZ9D5Afm
- wOzPQKPaAOE+fY5h8prRvYwP+dSX3nADwI8Y6unKqygPjUrnO+GjcQ97MVfA906q0I9/A6k6cjF
- jRX1r++tFvKvjX46AZyTpQKZC7YoNaBrH37lhDan3ZiZqsJrJDSI+f2JPLEkh5ffnrBrT1NRvPO
- /GMhxFHqkXWNux7Q6NSnWc5GTjmQY/JD/+/V9BILGVpDvPcV2orOeVbtK+hA0s3T4ekXooFahFe
- 5VVhIFMEZXUHZMw53adA+fpwHBkKMznHg4ePWJsQNeHf/dyM
+Cc: Miklos Szeredi <miklos@szeredi.hu>
+X-Developer-Signature: v=1; a=openpgp-sha256; l=890; i=phahn-oss@avm.de;
+ h=from:subject:message-id; bh=Z5CcgUmxb8TIHuxVENT8+Rdbeolb2IW3uV9KbiLoZl0=;
+ b=owEBbQGS/pANAwAKATQtBlPRrKzbAcsmYgBpsAXxKvlvqCH0DwJSbq+UNs0LTyfOD3vzlRqtT
+ 2TRtqiRMXSJATMEAAEKAB0WIQQ5bPBtrWDUcDQCppg0LQZT0ays2wUCabAF8QAKCRA0LQZT0ays
+ 2xgMCACJUN2JSxzamJUFQvwc92wfvAAIT82LlFBC4CNAPLjUwClhfMFmMBmKAZA8HDz81VrcG/p
+ fo2P5eS+rFs83E9iVI/bW+OpSphb7hd9/Pa3DNpSkaQcLQUMHw39s5ltgUYmcwhQdUpEa+pWYW+
+ gg+34EAVtKnYkmIuH1aWQKSSPRHXFEEIj8Mu1YI3EnTGvDB+NleQt1zN6UaIksTNUf5+3I2W33b
+ Z+hxOEmA2AEpaox3bemtlkSQbWv4qtVtcFYcWHKzhKpkUH0i5WAZ0lUSrDgtHsTI7KM+223fQQ9
+ V7CmYp8rYAFlP8Yb8uQbtjIbd9Kw5z3oAZRh0mglz23o1NU6
 X-Developer-Key: i=phahn-oss@avm.de; a=openpgp;
  fpr=58AF7C2E007CDBE62C59E078F50EFDCF8AD04B1A
-X-purgate-ID: 149429::1773143724-9167EF2F-D7D1D994/0/0
+X-purgate-ID: 149429::1773143723-035C7A3D-B44CD0B6/0/0
 X-purgate-type: clean
-X-purgate-size: 960
+X-purgate-size: 892
 X-purgate-Ad: Categorized by eleven eXpurgate (R) https://www.eleven.de
 X-purgate: This mail is considered clean (visit https://www.eleven.de for further information)
 X-purgate: clean
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260310_045530_646705_F134541D 
-X-CRM114-Status: UNSURE (   9.81  )
+X-CRM114-CacheID: sfid-20260310_045534_479581_C52607E9 
+X-CRM114-Status: UNSURE (   9.25  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -112,28 +117,27 @@ check.
 
 Change generated with coccinelle.
 
-To: Kees Cook <kees@kernel.org>
-To: Tony Luck <tony.luck@intel.com>
-To: "Guilherme G. Piccoli" <gpiccoli@igalia.com>
+To: Miklos Szeredi <miklos@szeredi.hu>
+Cc: linux-fsdevel@vger.kernel.org
 Cc: linux-kernel@vger.kernel.org
 Signed-off-by: Philipp Hahn <phahn-oss@avm.de>
 ---
- fs/pstore/zone.c | 2 +-
+ fs/fuse/dir.c | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/fs/pstore/zone.c b/fs/pstore/zone.c
-index a3b003f9a3a079c482b673f57023ce88fc290dbf..dce8403ca18566cc4a7a853ccdc7e1c165666fcb 100644
---- a/fs/pstore/zone.c
-+++ b/fs/pstore/zone.c
-@@ -1226,7 +1226,7 @@ static struct pstore_zone **psz_init_zones(enum pstore_type_id type,
- 
- 	for (i = 0; i < c; i++) {
- 		zone = psz_init_zone(type, off, record_size);
--		if (!zone || IS_ERR(zone)) {
-+		if (IS_ERR_OR_NULL(zone)) {
- 			pr_err("initialize zones %s failed\n", name);
- 			psz_free_zones(&zones, &i);
- 			return (void *)zone;
+diff --git a/fs/fuse/dir.c b/fs/fuse/dir.c
+index 7ac6b232ef12323e3afb97b98301f623bce917a4..7b39c013027bd9c4ba6f080bfc9b3ec22bc2dd4a 100644
+--- a/fs/fuse/dir.c
++++ b/fs/fuse/dir.c
+@@ -1599,7 +1599,7 @@ int fuse_reverse_inval_entry(struct fuse_conn *fc, u64 parent_nodeid,
+ 		goto put_parent;
+ 	while (!entry) {
+ 		struct dentry *child = try_lookup_noperm(name, dir);
+-		if (!child || IS_ERR(child))
++		if (IS_ERR_OR_NULL(child))
+ 			goto put_parent;
+ 		entry = start_removing_dentry(dir, child);
+ 		dput(child);
 
 -- 
 2.43.0
