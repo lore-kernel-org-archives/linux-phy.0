@@ -4,48 +4,48 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F1F80EB1052
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Mar 2026 11:57:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0FCD2EB1053
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Mar 2026 11:57:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TkJtVUU/H5Rj0hutZZNVChZ+nafmJ9xFeJZf2+ZHUXU=; b=CV9utYkmh3tlED
-	I/4Ls0nV3n1YhhqlSz7TjuwBCQAGlo8wz/eT1h1Tlr6Z/PWAjET3ampC4zKye8qC7dQQKalrIkLWF
-	s8VDdX3V6uz37W8Arx/mz6CUOvNT/jEwnCSuuIokU1o9uDRJjtpje6wAXXchNR/R01ouSQOIqd7kc
-	TIYcqpx+M2un8diw+zTT5fXYv7Gu3lXbtTylnrBHqmmCITRbvbfWlhE9TI5GKPa64Y3R8B+VDMwR8
-	C2qFiNBLIRmoE3ZiFCKLSa93Njty5g9pdulPDI9+iVBVZyMLBt9ZWfKCPHQErLtyoiOAhWyKlpOiR
-	b+vgZLA8r4+imArXdJEw==;
+	List-Owner; bh=ppSXfXKGLC029fmj2JiHLmeNoUCjJLmcSha+xwZT60Q=; b=GwZFaIGUpYFhlf
+	qbLEMWbF+fMZtf5SXTxV5aHB+MJAxn93AgMpoIltXJIRBw1LIUpnxGzXo8bStCegM/8jemMyd7+8T
+	al6cEsMbUPErFjj4mqTy4zW0DGlFIFdAa9fG9t6Q41/fmNYNOgoV/Sa33TUnfjo7jWHvvohzGdUvJ
+	58VgNZLCvW9LIv3MClTbcUNalkRx0aGJ/gzA/sBM5JTIvlEn9WuMniqDkFtInV7xesJeDCSPhQ/zO
+	WPf/TMhhcS1aCqoEjiU8te8WWk8o1tA0CH+sX6C4eTK2bD29zOuUnYvD9NECwiNGx/Mjyzj41zvBd
+	SSqyxiyF/erzhXXqKk0w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzvhv-00000009MgJ-0oAh;
-	Tue, 10 Mar 2026 11:57:03 +0000
-Received: from mail.avm.de ([212.42.244.119])
+	id 1vzvhv-00000009Mhc-48G3;
+	Tue, 10 Mar 2026 11:57:04 +0000
+Received: from mail.avm.de ([212.42.244.94])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzvgZ-00000009KUa-1CIh;
+	id 1vzvgT-00000009KPZ-41YN;
 	Tue, 10 Mar 2026 11:55:41 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=avm.de; s=mail;
-	t=1773143725; bh=c7VqPpX5FOMjU1fomf/slDzrk65Fe9+ZUNfqosDKTdI=;
+	t=1773143726; bh=/e9fhAri3fvWicTXaGdDwpg1S0XTbSGg5f30RLJZwGo=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=IViq9CY9kXhTGFn2wUsXBESaNCGz69a5nG3mhGowHHuPZ1SldVYsbRj6+GmFeE33Z
-	 /voEH0js7pDgeDh21Z+MjLukbWz6LUMqpwiLZaBJ7bgJ90kdMj+qEaksFeCP8FnFLU
-	 ahCh3Altzen7MVBVZyzIJ7pSy8eLwZR3MIuEFpPs=
-Received: from [212.42.244.71] (helo=mail.avm.de)
+	b=P4cFZP/3ySCkqkvFmysB/zTqxbD/PjzdR54YsQWs2B7Ag1WfdJL7tNy9mM+YApj2D
+	 ndVw5Z3V4gfnNIxLGP9hoQNh4xHTmaffyOwYpsHdTRxcA8+K0XD0gxaMwz/nUN0o0X
+	 SCmLqyt5cLBWipGIDG9rrJsNtObMa14/gIb9ntNs=
+Received: from [2001:bf0:244:244::71] (helo=mail.avm.de)
 	by mail.avm.de with ESMTP (eXpurgate 4.55.2)
 	(envelope-from <phahn-oss@avm.de>)
-	id 69b006ad-2367-7f0000032729-7f0000019d84-1
-	for <multiple-recipients>; Tue, 10 Mar 2026 12:55:25 +0100
-Received: from mail-auth.avm.de (dovecot-mx-01.avm.de [212.42.244.71])
+	id 69b006ae-e21d-7f0000032729-7f000001da1e-1
+	for <multiple-recipients>; Tue, 10 Mar 2026 12:55:26 +0100
+Received: from mail-auth.avm.de (dovecot-mx-01.avm.de [IPv6:2001:bf0:244:244::71])
 	by mail.avm.de (Postfix) with ESMTPS;
-	Tue, 10 Mar 2026 12:55:25 +0100 (CET)
+	Tue, 10 Mar 2026 12:55:26 +0100 (CET)
 From: Philipp Hahn <phahn-oss@avm.de>
-Date: Tue, 10 Mar 2026 12:48:49 +0100
-Subject: [PATCH 23/61] net/ipv6: Prefer IS_ERR_OR_NULL over manual NULL
+Date: Tue, 10 Mar 2026 12:49:01 +0100
+Subject: [PATCH 35/61] arch/mips: Prefer IS_ERR_OR_NULL over manual NULL
  check
 MIME-Version: 1.0
-Message-Id: <20260310-b4-is_err_or_null-v1-23-bd63b656022d@avm.de>
+Message-Id: <20260310-b4-is_err_or_null-v1-35-bd63b656022d@avm.de>
 References: <20260310-b4-is_err_or_null-v1-0-bd63b656022d@avm.de>
 In-Reply-To: <20260310-b4-is_err_or_null-v1-0-bd63b656022d@avm.de>
 To: amd-gfx@lists.freedesktop.org, apparmor@lists.ubuntu.com, 
@@ -75,30 +75,29 @@ To: amd-gfx@lists.freedesktop.org, apparmor@lists.ubuntu.com,
  sched-ext@lists.linux.dev, target-devel@vger.kernel.org, 
  tipc-discussion@lists.sourceforge.net, v9fs@lists.linux.dev, 
  Philipp Hahn <phahn-oss@avm.de>
-Cc: "David S. Miller" <davem@davemloft.net>, 
- David Ahern <dsahern@kernel.org>, Eric Dumazet <edumazet@google.com>, 
- Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
- Simon Horman <horms@kernel.org>
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1558; i=phahn-oss@avm.de;
- h=from:subject:message-id; bh=c7VqPpX5FOMjU1fomf/slDzrk65Fe9+ZUNfqosDKTdI=;
- b=owEBbQGS/pANAwAKATQtBlPRrKzbAcsmYgBpsAYkT2ujfxBt0/qzL4FNFAkOp+gWHYFk2Lkit
- DIh+cvm64iJATMEAAEKAB0WIQQ5bPBtrWDUcDQCppg0LQZT0ays2wUCabAGJAAKCRA0LQZT0ays
- 28wAB/9/0/0cpf5vUgxn9MJJYzgxi6whlUVZ+hEx14I9GPhNabUzF2GH9pZZve+bNpQXnutoTyU
- +K2sycG7CaZHe4KrWGw/XkousnHUY+/rbl34+pCGgHYhtioeCxrYnt9GpyhiDjCITZjPGFnwVQd
- tZoQ5ZBU+ihaHpCBS+WuTGNPnpJCCDmn98dooJV56KJmahzsCdhoR05xOLdt45OLH8bgiYvcsMo
- XA7dPRY2ZqI4sORPZUvgQgkReuo3OWATKHpGF0IEcgG6WPoIcp2tLoXu42clOKjzJCoMFBALo5l
- /DTaIDOUTWpiOr9bQY0VQkO8G6JfVgMRTCJghvSt33zKNrUt
+Cc: John Crispin <john@phrozen.org>, 
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>
+X-Developer-Signature: v=1; a=openpgp-sha256; l=861; i=phahn-oss@avm.de;
+ h=from:subject:message-id; bh=/e9fhAri3fvWicTXaGdDwpg1S0XTbSGg5f30RLJZwGo=;
+ b=owEBbQGS/pANAwAKATQtBlPRrKzbAcsmYgBpsAZM2fTyCYVfDSlmEmcm8t3ybPKD3MDuGKTUj
+ vCjhqZWFOmJATMEAAEKAB0WIQQ5bPBtrWDUcDQCppg0LQZT0ays2wUCabAGTAAKCRA0LQZT0ays
+ 2z2rCAC7oYhghVATpgjsAoGRn4N5/GCkNEQ5d/YNbMHtku5Ne/hNSs0W+K9kYWVkFPm5TlrH0DE
+ 8/RGH1u5MDT7P37KNp17NEpcRPc+zR1hHTpFzNLygQMhigzbVOt/7U+vGXQh1CXjciuY8j7FckI
+ dtMHKNN16hVWRN9J7DdvS7Q09vOysbfuZGn+o8hs1SmUg64a9Ig5/41sPHN38J7SQblPeyGhLri
+ 3JgxiG8Mz5G70Y5/Rddk73/lgtWO+z4F7ECaPWtfktQ/wSj5ZuFGkTm2dn045+qsqR71gKKNbgQ
+ /lgkcaOekPRGDC/jtk9N/uPlc4vBw/GKHnCp8LPegSQzk/iw
 X-Developer-Key: i=phahn-oss@avm.de; a=openpgp;
  fpr=58AF7C2E007CDBE62C59E078F50EFDCF8AD04B1A
-X-purgate-ID: 149429::1773143725-85C93E1F-A15B4641/0/0
+X-purgate-ID: 149429::1773143726-86614F2F-8EE3A410/0/0
 X-purgate-type: clean
-X-purgate-size: 1560
+X-purgate-size: 863
 X-purgate-Ad: Categorized by eleven eXpurgate (R) https://www.eleven.de
 X-purgate: This mail is considered clean (visit https://www.eleven.de for further information)
 X-purgate: clean
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260310_045539_533710_E0CAAB6C 
-X-CRM114-Status: GOOD (  11.64  )
+X-CRM114-CacheID: sfid-20260310_045534_192891_C77FCFFB 
+X-CRM114-Status: UNSURE (   9.37  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,46 +119,28 @@ check.
 
 Change generated with coccinelle.
 
-To: "David S. Miller" <davem@davemloft.net>
-To: David Ahern <dsahern@kernel.org>
-To: Eric Dumazet <edumazet@google.com>
-To: Jakub Kicinski <kuba@kernel.org>
-To: Paolo Abeni <pabeni@redhat.com>
-To: Simon Horman <horms@kernel.org>
-Cc: netdev@vger.kernel.org
+To: John Crispin <john@phrozen.org>
+To: Thomas Bogendoerfer <tsbogend@alpha.franken.de>
+Cc: linux-mips@vger.kernel.org
 Cc: linux-kernel@vger.kernel.org
 Signed-off-by: Philipp Hahn <phahn-oss@avm.de>
 ---
- net/ipv6/ila/ila_xlat.c | 2 +-
- net/ipv6/ndisc.c        | 2 +-
- 2 files changed, 2 insertions(+), 2 deletions(-)
+ arch/mips/lantiq/clk.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/net/ipv6/ila/ila_xlat.c b/net/ipv6/ila/ila_xlat.c
-index 8991805fc3d60cfd2499146e522da142f33ddc50..c5e3954488ab7a1b1c07aff86385f5000945f1e4 100644
---- a/net/ipv6/ila/ila_xlat.c
-+++ b/net/ipv6/ila/ila_xlat.c
-@@ -545,7 +545,7 @@ int ila_xlat_nl_dump(struct sk_buff *skb, struct netlink_callback *cb)
- 	/* Get first entry */
- 	ila = rhashtable_walk_peek(rhiter);
+diff --git a/arch/mips/lantiq/clk.c b/arch/mips/lantiq/clk.c
+index 2d5a0bcb0cec156dc5f0daedbdd7c56ff8d62ca4..4ae271a887c39163370d070b49d9e5152a709bd7 100644
+--- a/arch/mips/lantiq/clk.c
++++ b/arch/mips/lantiq/clk.c
+@@ -60,7 +60,7 @@ EXPORT_SYMBOL_GPL(clk_get_ppe);
  
--	if (ila && !IS_ERR(ila) && skip) {
-+	if (!IS_ERR_OR_NULL(ila) && skip) {
- 		/* Skip over visited entries */
+ static inline int clk_good(struct clk *clk)
+ {
+-	return clk && !IS_ERR(clk);
++	return !IS_ERR_OR_NULL(clk);
+ }
  
- 		while (ila && skip) {
-diff --git a/net/ipv6/ndisc.c b/net/ipv6/ndisc.c
-index f6a5d8c73af9721741c11b543e5abeecdbf2079f..ab340f2489c0c7555f48c1f3f5215cb1d0b5b341 100644
---- a/net/ipv6/ndisc.c
-+++ b/net/ipv6/ndisc.c
-@@ -1083,7 +1083,7 @@ static enum skb_drop_reason ndisc_recv_na(struct sk_buff *skb)
- 		}
- 	}
- 
--	if (neigh && !IS_ERR(neigh)) {
-+	if (!IS_ERR_OR_NULL(neigh)) {
- 		u8 old_flags = neigh->flags;
- 		struct net *net = dev_net(dev);
- 
+ unsigned long clk_get_rate(struct clk *clk)
 
 -- 
 2.43.0
