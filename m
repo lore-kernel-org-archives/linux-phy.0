@@ -4,62 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1EB7AFD2D60
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Mar 2026 11:57:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 74B74FD2D6A
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Mar 2026 11:57:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UYjmwR3RMcqiuAgxctPs9HTmVb1h546OHW3TwnMe/AE=; b=vVnQJCSaiAc1NZ
-	d28bWllfax3FSikK5a//+3H31DL17FyA6l8SP4FySvMaY95d1oNo+t9uQtLGUys4XdNN/petMBywF
-	5qFinw/v8DFlILbgXug00QbYCuAMMXn5jlT8K69s8fh3JGqtGl6kiD80E/FeyewTorXsH6vDOpxpd
-	JJFxXX/C0x2dHVZDvqse7zG4Qj6yp1kx40uStw/RVLQPNNoz4VSfWeVnuqAC12bX9YG18+5Hs1hnb
-	5OU7A21EsFkKza5sG7/ZOG4Y2R/EpuZIh6peGe68W9ADz+VVWzsvEXYKV+emoX3empaH2goXbToBk
-	XVuZPXM3nw4FN+YmY4ow==;
+	List-Owner; bh=YMJ4A0EQLsHjBAVyjQ5P9qMIS8YntOLBqcHqIqGxLCw=; b=ItQAldzLLsEN9W
+	EYWHtanc7EnHYSILAXFAX/RqXzPYdQ/xZ/kOJGOa4FL89s1Le3ChwxbktfE3xinStbP9fa+PeD/Ph
+	xIw5pEQN34xFj642c3r376DGfVcTz59jPetB8OrXEzN8nkGotBVNH/FyQkct7xPJUNNHbSyPmp1oi
+	6NVw7lHBwUgXiG36bMIdnt5EnHwa9G7+mraZoCneX8gYIOJ7HS8kAO7CQ56sBY13+5bXRPhTWW77U
+	7IdZoubCGhK+PnBQjZrtoA1FBTCfmxn8NXW+wm63yVXJzXfOPB1XWND3tSIacYXXqeiUFL1Ob0ssH
+	UJhcn2WwEq57Jwa4dgmQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzvid-00000009O5d-0QyZ;
-	Tue, 10 Mar 2026 11:57:47 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1vzvig-00000009OAT-36Bj;
+	Tue, 10 Mar 2026 11:57:50 +0000
+Received: from mail.avm.de ([212.42.244.94])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzvgh-00000009KiP-0F6T;
-	Tue, 10 Mar 2026 11:55:47 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=casper.20170209; h=Cc:To:In-Reply-To:References:Message-Id
-	:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:From:Sender
-	:Reply-To:Content-ID:Content-Description;
-	bh=Bw00K/cYen8HzVy4Opfh9Xr2YPOPoH4QqmKdT33VAv8=; b=g39lsCW5jpQYrqE/YbtVc8E3To
-	gdn5U+XaK9204ECYR7ab6zTj0q4Ua4ZfJhhA0jHoTg6qSuYlcE7gJAp1ogQFsJtMZhS1c0vYck+LE
-	IwIKs9aVBH+UzIEa82QoIU8mSbXGwK5Q4nKYeUYy9NN/Woh9WdNqW4XlGphGQma1FWkaO2fsylRgg
-	5os+uXQFCGuSMgDqtvZjLFroEzVu/KQxDedlpfpnCV3u+JYOa2pFr/RVjewrs036/PaZxzeb413e+
-	bEM0hH87eN7syvUFutlLSdZNRJafUc9DZCAynIEbk3jmB2L2vEbzFIerYmKyi3FVzkm7kbOjgzH3r
-	giVEbB3Q==;
-Received: from mail.avm.de ([2001:bf0:244:244::119])
-	by casper.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzvgX-00000007ldJ-2jV1;
-	Tue, 10 Mar 2026 11:55:44 +0000
+	id 1vzvgd-00000009Kak-3qAw;
+	Tue, 10 Mar 2026 11:55:45 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=avm.de; s=mail;
-	t=1773143725; bh=pn4l4Bneda6cRvLB6hSFUDCMaCdQu5yrimDpnU+4XNM=;
+	t=1773143728; bh=sIEabNGpfTtaNmN5jdtpnoUYPpUdFMe596BbQNmq6Ew=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=XrOjEMLxKN0Q5AmyrWHNIKWYwAXYvxSGofpRw1fSzyTCz7O3kSu9wZMVhCigrODma
-	 xaDgiBmBXDbNfcoI5fcc6yYimuO3Cnj4vKRdoox62XvE8LKZz+/gN4z3zTXbmuJ2J8
-	 09unIVObBESNuzHAoxHz8OyIcq6YqGzcxhMd6Jyc=
-Received: from [2001:bf0:244:244::71] (helo=mail.avm.de)
+	b=xKnBkg5622xaCaFlGwFQ3bswFSgdcTVbCDHB3k8l65KFt6Ule9kyi3QR8HfOXuW5L
+	 MKbugm+H1wq/E04UmM1cfkP9mUjiEZ3Ws7yzlEjYYTJHZ64lqewOtbO15JI10WApm1
+	 CoPFx+DZxYAYXylALiT4nuOog37Am7eL2zh2ct4Q=
+Received: from [212.42.244.71] (helo=mail.avm.de)
 	by mail.avm.de with ESMTP (eXpurgate 4.55.2)
 	(envelope-from <phahn-oss@avm.de>)
-	id 69b006ac-2367-7f0000032729-7f0000019d5a-1
-	for <multiple-recipients>; Tue, 10 Mar 2026 12:55:25 +0100
-Received: from mail-auth.avm.de (dovecot-mx-01.avm.de [IPv6:2001:bf0:244:244::71])
+	id 69b006b0-e21d-7f0000032729-7f000001bae4-1
+	for <multiple-recipients>; Tue, 10 Mar 2026 12:55:28 +0100
+Received: from mail-auth.avm.de (dovecot-mx-01.avm.de [212.42.244.71])
 	by mail.avm.de (Postfix) with ESMTPS;
-	Tue, 10 Mar 2026 12:55:24 +0100 (CET)
+	Tue, 10 Mar 2026 12:55:28 +0100 (CET)
 From: Philipp Hahn <phahn-oss@avm.de>
-Date: Tue, 10 Mar 2026 12:48:46 +0100
-Subject: [PATCH 20/61] apparmor: Prefer IS_ERR_OR_NULL over manual NULL
- check
+Date: Tue, 10 Mar 2026 12:49:19 +0100
+Subject: [PATCH 53/61] hyperv: Prefer IS_ERR_OR_NULL over manual NULL check
 MIME-Version: 1.0
-Message-Id: <20260310-b4-is_err_or_null-v1-20-bd63b656022d@avm.de>
+Message-Id: <20260310-b4-is_err_or_null-v1-53-bd63b656022d@avm.de>
 References: <20260310-b4-is_err_or_null-v1-0-bd63b656022d@avm.de>
 In-Reply-To: <20260310-b4-is_err_or_null-v1-0-bd63b656022d@avm.de>
 To: amd-gfx@lists.freedesktop.org, apparmor@lists.ubuntu.com, 
@@ -89,29 +74,29 @@ To: amd-gfx@lists.freedesktop.org, apparmor@lists.ubuntu.com,
  sched-ext@lists.linux.dev, target-devel@vger.kernel.org, 
  tipc-discussion@lists.sourceforge.net, v9fs@lists.linux.dev, 
  Philipp Hahn <phahn-oss@avm.de>
-Cc: John Johansen <john.johansen@canonical.com>, 
- Paul Moore <paul@paul-moore.com>, James Morris <jmorris@namei.org>, 
- "Serge E. Hallyn" <serge@hallyn.com>
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1034; i=phahn-oss@avm.de;
- h=from:subject:message-id; bh=pn4l4Bneda6cRvLB6hSFUDCMaCdQu5yrimDpnU+4XNM=;
- b=owEBbQGS/pANAwAKATQtBlPRrKzbAcsmYgBpsAYZg+c1WuLJkNtjs3nyvfVhnVwRMFZkjRyjg
- 9Bta5ElUMSJATMEAAEKAB0WIQQ5bPBtrWDUcDQCppg0LQZT0ays2wUCabAGGQAKCRA0LQZT0ays
- 21AMCAC7XRT2CFV3uyPK4StoEGsXQYqMR1ynn7bit9TqTcf+0Wgtn6TYvMctAHR6A5S0MhH7yf7
- gILWOKn6+HLqPdr3lmY3ZuYwuYUr4OHhvBA9aCnbDXWOuH1dD12oVxx3wu0+3drbZUUw1a5lJWN
- hsJfyDm3gNagxfOpgqCfQqiJ9xVVghJWjS+o0/hto7AZgqOBw9ObaanKLghJUEDwwTwpQEVda2+
- 0LDNyTd4iej+Ak8COmDse1KGC2gcs+EiSzfYOC0pte2fBmGM11VRcAnsxd2vAsBFmvs/mJ8XFJS
- YSqDB3vEx2vFoOZdvhWx2ECAhXN2w/fnobSlleabiSgRaViM
+Cc: "K. Y. Srinivasan" <kys@microsoft.com>, 
+ Haiyang Zhang <haiyangz@microsoft.com>, Wei Liu <wei.liu@kernel.org>, 
+ Dexuan Cui <decui@microsoft.com>, Long Li <longli@microsoft.com>
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1146; i=phahn-oss@avm.de;
+ h=from:subject:message-id; bh=sIEabNGpfTtaNmN5jdtpnoUYPpUdFMe596BbQNmq6Ew=;
+ b=owEBbQGS/pANAwAKATQtBlPRrKzbAcsmYgBpsAaKQPK6RykE0QE2RJD5htL1ZvRNh+zI6jTmu
+ VOYpL5CXyeJATMEAAEKAB0WIQQ5bPBtrWDUcDQCppg0LQZT0ays2wUCabAGigAKCRA0LQZT0ays
+ 29fzB/oCGLAMazrUNiEmwKr9nq0MNT5XdhZH3wkJWE4yJ+UKMd35Xi9PPSb65qZMk+N4uMiZj2H
+ T6Td1MreYgfIRLT7kTJk/n1BuSWWFP55nfvFZFjjhY5aoonvuH6RpMC7x9+9tNKQtJ7ne+y8JUp
+ qmDL3C1GxXXFNKbwYmtZySONDO5gXmgMnGjDdckVFucnIkQYwHywWpIrPTZv3zUS9k6qS6F4HLs
+ npSrcLjQ++9xnCfmtppGIezlVuCbkGtNbWVtJ6RuDAqRXXu4e1NER6f7pIlU/5AgYfpLOxyecDo
+ JLi+d7tyzKhXU/h5ql9oJc0IZPZktOy6eLbVlaElpfc4YFhD
 X-Developer-Key: i=phahn-oss@avm.de; a=openpgp;
  fpr=58AF7C2E007CDBE62C59E078F50EFDCF8AD04B1A
-X-purgate-ID: 149429::1773143725-914AAE1F-0BAD1D24/0/0
+X-purgate-ID: 149429::1773143728-95676F2F-E8C255A2/0/0
 X-purgate-type: clean
-X-purgate-size: 1036
+X-purgate-size: 1148
 X-purgate-Ad: Categorized by eleven eXpurgate (R) https://www.eleven.de
 X-purgate: This mail is considered clean (visit https://www.eleven.de for further information)
 X-purgate: clean
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260310_115538_769810_C1614DFD 
-X-CRM114-Status: UNSURE (   9.86  )
+X-CRM114-CacheID: sfid-20260310_045544_182066_FD62AD9F 
+X-CRM114-Status: UNSURE (   9.23  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -134,31 +119,35 @@ check.
 
 Change generated with coccinelle.
 
-To: John Johansen <john.johansen@canonical.com>
-To: Paul Moore <paul@paul-moore.com>
-To: James Morris <jmorris@namei.org>
-To: "Serge E. Hallyn" <serge@hallyn.com>
-Cc: apparmor@lists.ubuntu.com
-Cc: linux-security-module@vger.kernel.org
+To: "K. Y. Srinivasan" <kys@microsoft.com>
+To: Haiyang Zhang <haiyangz@microsoft.com>
+To: Wei Liu <wei.liu@kernel.org>
+To: Dexuan Cui <decui@microsoft.com>
+To: Long Li <longli@microsoft.com>
+Cc: linux-hyperv@vger.kernel.org
 Cc: linux-kernel@vger.kernel.org
 Signed-off-by: Philipp Hahn <phahn-oss@avm.de>
 ---
- security/apparmor/apparmorfs.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/hv/mshv_eventfd.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/security/apparmor/apparmorfs.c b/security/apparmor/apparmorfs.c
-index 2f84bd23edb69e7e69cb097e554091df0132816d..5145b0c9c699514697291967c5a7b1e96b8753d1 100644
---- a/security/apparmor/apparmorfs.c
-+++ b/security/apparmor/apparmorfs.c
-@@ -352,7 +352,7 @@ static void aafs_remove(struct dentry *dentry)
- {
- 	struct inode *dir;
+diff --git a/drivers/hv/mshv_eventfd.c b/drivers/hv/mshv_eventfd.c
+index d8471546e6a0c7e6eca933c640459f1d02152cb2..24dff7a498ac9c3edd31f4c9bc2f23729ba2a6ce 100644
+--- a/drivers/hv/mshv_eventfd.c
++++ b/drivers/hv/mshv_eventfd.c
+@@ -516,10 +516,10 @@ static int mshv_irqfd_assign(struct mshv_partition *pt,
+ 	if (irqfd->irqfd_resampler)
+ 		mshv_irqfd_resampler_shutdown(irqfd);
  
--	if (!dentry || IS_ERR(dentry))
-+	if (IS_ERR_OR_NULL(dentry))
- 		return;
+-	if (resamplefd && !IS_ERR(resamplefd))
++	if (!IS_ERR_OR_NULL(resamplefd))
+ 		eventfd_ctx_put(resamplefd);
  
- 	/* ->d_parent is stable as rename is not supported */
+-	if (eventfd && !IS_ERR(eventfd))
++	if (!IS_ERR_OR_NULL(eventfd))
+ 		eventfd_ctx_put(eventfd);
+ 
+ out:
 
 -- 
 2.43.0
