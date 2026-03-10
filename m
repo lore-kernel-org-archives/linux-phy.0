@@ -4,47 +4,48 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BF541EB1053
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Mar 2026 11:56:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EBC42EB1059
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Mar 2026 11:56:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0jFBs9qYtKn47nw7gXcBSi+Wo4Uto3sFCT8bRgP83h0=; b=HEyUkblwydhJVj
-	938HjAII2pb0WSLpAaULBnRSQPOZhQh9+3Ehv1hfALPr71JC26hdOGn3twWFaHNGFleVQTbuJ1par
-	5WH7s8PLU6xjQLIIru2/is0YCWxdjlwwQsrsH/6vtTfXpSJDsx+CtlJteDdYfcU5JV3JNDYBMvDVF
-	7klGWRhfZcfOmvBziVITkqMc1NQbibd9rU1FHtusT+/SUHYvHwRqhw+3Kt1hg1UrtKLgH5PZsb8gA
-	OcQsTPyuEUYDyIVVTTpfDKqm5KKi1b2Ohq5VoQdA7KKgA9nSC9kNvKSZZ34IRnU/VPcwnixiBaIYv
-	86XQ30s/p1lVXs4MKxYg==;
+	List-Owner; bh=uWj7f1PeYArO+mi3Q/WOgWQ2XHQ3lPXjhNMd2wF1SMY=; b=4jrtVyGHYzEjAU
+	chkLzhWRR7frTfXV+GYVp80VGUbqIeXb22/DvLQSvnRVsxPxiy9ryaPbcIpCtsoBOX4QACpl41Ado
+	wCyF+ylG+X/K7zcXXTjj0+7otvVZm9WTrSRN+KhxPFSnOoS4ade4mJPJil/+6pv5qJTsST458XX+0
+	6xV22CCZssGhqlA08nr36Un0C/SjcKxBA6AmDpniKm3vunJSE4B1/XBHh7VUSmQdM+QGSx8h8wLNO
+	x7u46pHqiSxyU3oA1C4JvgbqGkEoMgsgBZIyJWqC0We3luSoF/1Ij+XhhH2it8eHH60mt517Uhefw
+	DZ38MMSx5mLb/QKWJ5Ow==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzvgx-00000009LBs-1sOO;
-	Tue, 10 Mar 2026 11:56:03 +0000
-Received: from mail.avm.de ([2001:bf0:244:244::120])
+	id 1vzvh9-00000009LWY-16xc;
+	Tue, 10 Mar 2026 11:56:15 +0000
+Received: from mail.avm.de ([2001:bf0:244:244::94])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzvgQ-00000009KMI-1C09;
-	Tue, 10 Mar 2026 11:55:37 +0000
+	id 1vzvgU-00000009KPX-01ZI;
+	Tue, 10 Mar 2026 11:55:39 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=avm.de; s=mail;
-	t=1773143724; bh=TePjCBJ2mRHkUlSzKz9AEyXwCeNO/T4sJeJlLVRUEek=;
+	t=1773143726; bh=pDm3lCNTlSjUg9te/2qYAZpsW6tvI+d2q74vAk/3XKc=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=CWhZH8pYoPHXJ9GodRv8bZf7CTCXPR5biEc/ESvLjFSG7M9EoK4FQxeOy1o2q/xFG
-	 adtTUhZFnjWgEtd3EnUld9xRhtBPP2LCXHOMBXjK/IfTv5IvUPb5jOISEusb1eiq65
-	 jalyJvpG8KfbWsOaQK+eTSDIbq4VvwVTL38wqr+Y=
+	b=fVELfbwvQoehRpaJFY7JhfI6hh7CeBxkQsPfYq55sQ0vUjWp9z+lIlt95Xk2AyEJh
+	 PbXsF1cpAtdhOegTLvrb0S9nq62cukWwwyYrxLjCI0wmTbF+WNMrGuES99sNVPjj/b
+	 EsWE3JQi9cza2Xm4SWbcDWKe4CCvCMWDAHq2lZUk=
 Received: from [2001:bf0:244:244::71] (helo=mail.avm.de)
 	by mail.avm.de with ESMTP (eXpurgate 4.55.2)
 	(envelope-from <phahn-oss@avm.de>)
-	id 69b006ab-b734-7f0000032729-7f000001c000-1
-	for <multiple-recipients>; Tue, 10 Mar 2026 12:55:23 +0100
+	id 69b006ae-e21d-7f0000032729-7f000001da20-1
+	for <multiple-recipients>; Tue, 10 Mar 2026 12:55:26 +0100
 Received: from mail-auth.avm.de (dovecot-mx-01.avm.de [IPv6:2001:bf0:244:244::71])
 	by mail.avm.de (Postfix) with ESMTPS;
-	Tue, 10 Mar 2026 12:55:23 +0100 (CET)
+	Tue, 10 Mar 2026 12:55:26 +0100 (CET)
 From: Philipp Hahn <phahn-oss@avm.de>
-Date: Tue, 10 Mar 2026 12:48:44 +0100
-Subject: [PATCH 18/61] sound: Prefer IS_ERR_OR_NULL over manual NULL check
+Date: Tue, 10 Mar 2026 12:49:02 +0100
+Subject: [PATCH 36/61] arch/sh: Prefer IS_ERR_OR_NULL over manual NULL
+ check
 MIME-Version: 1.0
-Message-Id: <20260310-b4-is_err_or_null-v1-18-bd63b656022d@avm.de>
+Message-Id: <20260310-b4-is_err_or_null-v1-36-bd63b656022d@avm.de>
 References: <20260310-b4-is_err_or_null-v1-0-bd63b656022d@avm.de>
 In-Reply-To: <20260310-b4-is_err_or_null-v1-0-bd63b656022d@avm.de>
 To: amd-gfx@lists.freedesktop.org, apparmor@lists.ubuntu.com, 
@@ -74,30 +75,30 @@ To: amd-gfx@lists.freedesktop.org, apparmor@lists.ubuntu.com,
  sched-ext@lists.linux.dev, target-devel@vger.kernel.org, 
  tipc-discussion@lists.sourceforge.net, v9fs@lists.linux.dev, 
  Philipp Hahn <phahn-oss@avm.de>
-Cc: Sylwester Nawrocki <s.nawrocki@samsung.com>, 
- Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, 
- Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>, 
- Max Filippov <jcmvbkbc@gmail.com>
-X-Developer-Signature: v=1; a=openpgp-sha256; l=2160; i=phahn-oss@avm.de;
- h=from:subject:message-id; bh=TePjCBJ2mRHkUlSzKz9AEyXwCeNO/T4sJeJlLVRUEek=;
- b=owEBbQGS/pANAwAKATQtBlPRrKzbAcsmYgBpsAYTbY49pcWmI+zPeufRNN/9dH/gm0tUhIW5M
- sSE0KnGvN+JATMEAAEKAB0WIQQ5bPBtrWDUcDQCppg0LQZT0ays2wUCabAGEwAKCRA0LQZT0ays
- 20TjCACXYevOdzzWZ8zg+QT0mj5XNSQgsj+29ztKUJ+NhTXTaWid39EhUMP397Ax0ta31zsGPRm
- 0odiGii9nvcNMTK3z0LbXHwAyd2Q0fNqi4zFsqaNgSljw41n6QLzk50RIIvlMAtwUsismcvcfkc
- GlGmvCqi0YMh5Ps6ZKTVJuHiANRfJwasfti849ayN0tL2bNpZjcStJrsD6oocum/i0yO/DOehLD
- OGOf2TSq2UVG28aLw7N49gUvv1bUDwk6CT215ovMEtUyRG0UE7FpDGWKSdiW4/MWJSzpOO7eARa
- NIfS+Ckmg34HqAiCowU5EbKs98L8LUAVBFgmoB7oAUhpavOc
+Cc: Yoshinori Sato <ysato@users.sourceforge.jp>, 
+ Rich Felker <dalias@libc.org>, 
+ John Paul Adrian Glaubitz <glaubitz@physik.fu-berlin.de>
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1014; i=phahn-oss@avm.de;
+ h=from:subject:message-id; bh=pDm3lCNTlSjUg9te/2qYAZpsW6tvI+d2q74vAk/3XKc=;
+ b=owEBbQGS/pANAwAKATQtBlPRrKzbAcsmYgBpsAZQlhc7PU7tZE01ILV/cgCsTY0g2y915SWo2
+ WOp3PFfMVuJATMEAAEKAB0WIQQ5bPBtrWDUcDQCppg0LQZT0ays2wUCabAGUAAKCRA0LQZT0ays
+ 25iRB/4+DNoMMW2koOlN/DfR0crLtH1nZDxAJOmf/8RHXFfdriIuA3iATU5mx4bxDWjpvaGsmVF
+ sScQl/IREquLsn2WvMNqP8VTO6O5b6dTKbFCMkwD4BQk0G2mg/TcyproVTFFc53eOopbKdhzKTm
+ Isr1LIuVwpZ0FQ6SRPCDxxmnQfxV1v9dSs1qwmVTacxHLQeT5J39Og4hMR9wi3vpAJ5eehJCv9n
+ lR3Su7JxXXqg12+uTsE16DABRCYs7reggRC+HE7/WglPKMOyMs6b/M6GTKoEx8jwE+9yNdG13UM
+ RWdxOZdqo69T8hgV/W9OJAR9jWWipbKE58eiOeRYxFyI6r6y
 X-Developer-Key: i=phahn-oss@avm.de; a=openpgp;
  fpr=58AF7C2E007CDBE62C59E078F50EFDCF8AD04B1A
-X-purgate-ID: 149429::1773143723-26DC0A3D-7CFC2EAB/0/0
+X-purgate-ID: 149429::1773143726-35BF0F2F-C3FAD55E/0/0
 X-purgate-type: clean
-X-purgate-size: 2162
+X-purgate-size: 1016
 X-purgate-Ad: Categorized by eleven eXpurgate (R) https://www.eleven.de
 X-purgate: This mail is considered clean (visit https://www.eleven.de for further information)
 X-purgate: clean
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260310_045530_519487_54ABA70D 
-X-CRM114-Status: GOOD (  13.84  )
+X-CRM114-CacheID: sfid-20260310_045534_251337_4A2FE180 
+X-CRM114-Status: UNSURE (   9.34  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,55 +120,29 @@ check.
 
 Change generated with coccinelle.
 
-To: Sylwester Nawrocki <s.nawrocki@samsung.com>
-To: Liam Girdwood <lgirdwood@gmail.com>
-To: Mark Brown <broonie@kernel.org>
-To: Jaroslav Kysela <perex@perex.cz>
-To: Takashi Iwai <tiwai@suse.com>
-To: Max Filippov <jcmvbkbc@gmail.com>
-Cc: linux-sound@vger.kernel.org
+To: Yoshinori Sato <ysato@users.sourceforge.jp>
+To: Rich Felker <dalias@libc.org>
+To: John Paul Adrian Glaubitz <glaubitz@physik.fu-berlin.de>
+Cc: linux-sh@vger.kernel.org
 Cc: linux-kernel@vger.kernel.org
 Signed-off-by: Philipp Hahn <phahn-oss@avm.de>
 ---
- sound/soc/samsung/i2s.c       | 4 ++--
- sound/soc/xtensa/xtfpga-i2s.c | 2 +-
- 2 files changed, 3 insertions(+), 3 deletions(-)
+ arch/sh/mm/ioremap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/sound/soc/samsung/i2s.c b/sound/soc/samsung/i2s.c
-index e9964f0e010aee549cced75d8fe2023e8271d443..6e86f3a0a52dd3f8fc728d634594eb81f9945c57 100644
---- a/sound/soc/samsung/i2s.c
-+++ b/sound/soc/samsung/i2s.c
-@@ -559,7 +559,7 @@ static int i2s_set_sysclk(struct snd_soc_dai *dai, int clk_id, unsigned int rfs,
- 			clk_id = 1;
+diff --git a/arch/sh/mm/ioremap.c b/arch/sh/mm/ioremap.c
+index 5bbde53fb32d785607f8281f9e9cee16d16fc551..06c3bfe2511fd0d5e67e28a8882aa9159991c30a 100644
+--- a/arch/sh/mm/ioremap.c
++++ b/arch/sh/mm/ioremap.c
+@@ -97,7 +97,7 @@ void __iomem __ref *ioremap_prot(phys_addr_t phys_addr, size_t size,
+ 	 */
+ 	mapped = pmb_remap_caller(phys_addr, size, pgprot,
+ 			__builtin_return_address(0));
+-	if (mapped && !IS_ERR(mapped))
++	if (!IS_ERR_OR_NULL(mapped))
+ 		return mapped;
  
- 		if (!any_active(i2s)) {
--			if (priv->op_clk && !IS_ERR(priv->op_clk)) {
-+			if (!IS_ERR_OR_NULL(priv->op_clk)) {
- 				if ((clk_id && !(mod & rsrc_mask)) ||
- 					(!clk_id && (mod & rsrc_mask))) {
- 					clk_disable_unprepare(priv->op_clk);
-@@ -812,7 +812,7 @@ static int i2s_hw_params(struct snd_pcm_substream *substream,
- 	i2s->frmclk = params_rate(params);
- 
- 	rclksrc = priv->clk_table[CLK_I2S_RCLK_SRC];
--	if (rclksrc && !IS_ERR(rclksrc))
-+	if (!IS_ERR_OR_NULL(rclksrc))
- 		priv->rclk_srcrate = clk_get_rate(rclksrc);
- 
- 	return 0;
-diff --git a/sound/soc/xtensa/xtfpga-i2s.c b/sound/soc/xtensa/xtfpga-i2s.c
-index 678ded059b959d475b6be3766867c8a78bdd4e54..698905257b690457a5d3d315e77d99d487d91f77 100644
---- a/sound/soc/xtensa/xtfpga-i2s.c
-+++ b/sound/soc/xtensa/xtfpga-i2s.c
-@@ -609,7 +609,7 @@ static void xtfpga_i2s_remove(struct platform_device *pdev)
- {
- 	struct xtfpga_i2s *i2s = dev_get_drvdata(&pdev->dev);
- 
--	if (i2s->regmap && !IS_ERR(i2s->regmap)) {
-+	if (!IS_ERR_OR_NULL(i2s->regmap)) {
- 		regmap_write(i2s->regmap, XTFPGA_I2S_CONFIG, 0);
- 		regmap_write(i2s->regmap, XTFPGA_I2S_INT_MASK, 0);
- 		regmap_write(i2s->regmap, XTFPGA_I2S_INT_STATUS,
+ 	return generic_ioremap_prot(phys_addr, size, pgprot);
 
 -- 
 2.43.0
