@@ -4,66 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2A27DFCC9D6
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Mar 2026 08:24:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 30F60FCC9D6
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Mar 2026 08:25:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sMbY6Qsfjkwk/YQRxEYjE6b0h5YTrg0zcEmvt8P6U2M=; b=kAZhaDfkFVaIbA
-	eV1pD8G1RULlBZ5BTJyBBMFCKc/iB2Tl6S2os+Sq2gtkG0wdu0UxyTFO7AZqB0fQUXSXSayfeIuBR
-	LoIhmcqelU61KLGRQL2ZUOYrZqQyetNTPK9QQ+O5PPY18O1D6J8bGms0756XrucbFAVeowuRr1g3a
-	IPLUHNPIVKGyav8p5JtWL43VHx9p3jRT3P1sCEyFVPjCu0+FugfuHCecsGCG/92SBfvrL12XNrpvh
-	ZnLjPrehfkv+p4boz2LkY3F1hoJym4yIWQUxuJx0UppxppcEyxsRGZi+hbukekYSTIrcorKgkC23d
-	EcmQoORrxctDM+8ONulw==;
+	List-Owner; bh=AuijAPnS2YBb/TVLBZobn+7oEouYLLu0SesdXXGHX6U=; b=gQikXN0CtRfDWb
+	BDp2EbrPpj6pkwsEv2EjDIL+3pJGpgpZhGra76bSLq6alRil+AxrAq5vR1/VCleT4nCLCIDWIkF/S
+	9rdJNm1dIZxpm4uylWE/HJ7EDa8ephOPCQRgFC8XCRvKp1gqpYHio0NPmN0qtgq/xm/qk+ek6dW9A
+	5BPfifU5ai2ZZz8JLTWX+R6bIfkQnb4+2Y2dRgSyKP2dUgC0DpZ0qzw+1R5DMiw62RPkqwXtepCUE
+	XLVEqr+51UYRCONZEwLfiUA4cYn3j6ikg7x+0wOasJgTL0IEvWmuOV9RGrudvPQ5ivtpLx/JidBVn
+	qb+6CHOgBW5PcU2Xs7qg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzsOf-00000008wEe-3nmW;
-	Tue, 10 Mar 2026 08:24:57 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1vzsPU-00000008wSA-3m6Z;
+	Tue, 10 Mar 2026 08:25:48 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzsOe-00000008wD9-0ULN;
-	Tue, 10 Mar 2026 08:24:57 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
-	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
-	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Reply-To;
-	bh=2W8R6JKoSWBQ/NVWe1VH8DTpdfOcfJODkzczD104anE=; b=JuC/yhxDoPy5BzKCllx+4lcx/F
-	aT/7U8Uk8l3EzePnMXUbbxXawsxzRHryg8fghP2VOHv5kHVBckllNBimOOiJ0d8LfnHjtGmniMUoP
-	q+tI4zY5GQIiNsEUe+qxnask3JoIfvvZdpBRFnoZGdldxQgpw2opTa6+/x5nJBA//K40leHf2j3eZ
-	QL1kjydLamseRW0i8hF8yC9BA+ISD2o9MPNpUsGC0DfntkB9k4h7pa/Fd+8ADCPiSf0DDEzQCBI5M
-	9HJQrDTSAcTC9UmZ18rrV1bkPrtisS78iMGtNExAIokgAvG70PlOoOoPpo/Lna+ZPaU1pgFFTLn9P
-	iDkZROYQ==;
-From: Heiko Stuebner <heiko@sntech.de>
-To: linux-phy@lists.infradead.org, Vladimir Oltean <vladimir.oltean@nxp.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
- dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
- linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
- linux-can@vger.kernel.org, linux-gpio@vger.kernel.org,
- linux-ide@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-media@vger.kernel.org, linux-pci@vger.kernel.org,
- linux-renesas-soc@vger.kernel.org, linux-riscv@lists.infradead.org,
- linux-rockchip@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
- linux-scsi@vger.kernel.org, linux-sunxi@lists.linux.dev,
- linux-tegra@vger.kernel.org, linux-usb@vger.kernel.org,
- netdev@vger.kernel.org, spacemit@lists.linux.dev,
- UNGLinuxDriver@microchip.com, Sandy Huang <hjc@rock-chips.com>,
- Andy Yan <andy.yan@rock-chips.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>
-Subject: Re: [PATCH v3 phy-next 10/24] drm/rockchip: dw_hdmi: avoid direct dereference
- of phy->dev.of_node
-Date: Tue, 10 Mar 2026 09:24:43 +0100
-Message-ID: <2218670.OBFZWjSADL@phil>
-In-Reply-To: <20260309190842.927634-11-vladimir.oltean@nxp.com>
-References: <20260309190842.927634-1-vladimir.oltean@nxp.com>
- <20260309190842.927634-11-vladimir.oltean@nxp.com>
+	id 1vzsPS-00000008wR7-3pQQ;
+	Tue, 10 Mar 2026 08:25:46 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 57F1560054;
+	Tue, 10 Mar 2026 08:25:46 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 77E43C19423;
+	Tue, 10 Mar 2026 08:25:45 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1773131146;
+	bh=cuyXodzCUJDUciuTuMLZ7yq7kwx0PZeH+CANPawJXyo=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=JieQepDVERwVWnitXD9N0MA2AcgB0PzHHytY/SxYWvP2Xligm3ViBnsiU8IYik0dR
+	 +GgsBzXMC+1Sb674F/+Vrzicw7e4nnJCBVRozia6Zw2unGpEwFwYkdSKoHMJQs0Rnl
+	 1WnAIDL8Y0AMpElTrVqOgd4qcLzL4Iryfv8XC2vObnJLBhLpPYFvOzMyG3Mb0+kI9E
+	 ZVi7cuwk/TJp5wf9lfyGHBWhPFvmGQpVWSg48WyYdJMC8xgBxEUhCMBnJAeWLSpAvu
+	 TMlz+ZnNkCKWW4b3G0MEbyElarMvt/40ChM9TztCXTpysEDuaBfNFGdV+Q12NVj7Sz
+	 Aza/AOg1DwWmg==
+Date: Tue, 10 Mar 2026 09:25:43 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Caleb James DeLisle <cjd@cjdns.fr>
+Cc: linux-mips@vger.kernel.org, naseefkm@gmail.com, 
+	mturquette@baylibre.com, sboyd@kernel.org, robh@kernel.org, krzk+dt@kernel.org, 
+	conor+dt@kernel.org, tsbogend@alpha.franken.de, ryder.lee@mediatek.com, 
+	jianjun.wang@mediatek.com, lpieralisi@kernel.org, kwilczynski@kernel.org, mani@kernel.org, 
+	bhelgaas@google.com, vkoul@kernel.org, neil.armstrong@linaro.org, 
+	p.zabel@pengutronix.de, matthias.bgg@gmail.com, angelogioacchino.delregno@collabora.com, 
+	nbd@nbd.name, ansuelsmth@gmail.com, linux-clk@vger.kernel.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org, 
+	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org, 
+	linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH v2 5/8] dt-bindings: PCI: mediatek: Add support for
+ EcoNet EN7528
+Message-ID: <20260310-onyx-ibex-of-progress-fdf1bf@quoll>
+References: <20260309131818.74467-1-cjd@cjdns.fr>
+ <20260309131818.74467-6-cjd@cjdns.fr>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260310_012456_159317_F0DF1613 
-X-CRM114-Status: GOOD (  13.16  )
+Content-Disposition: inline
+In-Reply-To: <20260309131818.74467-6-cjd@cjdns.fr>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,41 +73,44 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-QW0gTW9udGFnLCA5LiBNw6RyeiAyMDI2LCAyMDowODoyOCBNaXR0ZWxldXJvcMOkaXNjaGUgTm9y
-bWFsemVpdCBzY2hyaWViIFZsYWRpbWlyIE9sdGVhbjoKPiBUaGUgZHdfaGRtaS1yb2NrY2hpcCBk
-cml2ZXIgdmFsaWRhdGVzIHBpeGVsIGNsb2NrIHJhdGVzIGFnYWluc3QgdGhlCj4gSERNSSBQSFkn
-cyBpbnRlcm5hbCBjbG9jayBwcm92aWRlciBvbiBjZXJ0YWluIFNvQ3MgbGlrZSBSSzMzMjguCj4g
-VGhpcyBpcyBjdXJyZW50bHkgYWNoaWV2ZWQgYnkgZGVyZWZlcmVuY2luZyBoZG1pLT5waHktPmRl
-di5vZl9ub2RlCj4gdG8gb2J0YWluIHRoZSBwcm92aWRlciBub2RlLCB3aGljaCB2aW9sYXRlcyB0
-aGUgR2VuZXJpYyBQSFkgQVBJJ3MKPiBlbmNhcHN1bGF0aW9uICh0aGUgZ29hbCBpcyBmb3Igc3Ry
-dWN0IHBoeSB0byBiZSBhbiBvcGFxdWUgcG9pbnRlcikuCj4gCj4gUmVmYWN0b3IgZHdfaGRtaV9y
-b2NrY2hpcF9iaW5kKCkgdG8gcGVyZm9ybSBhIG1hbnVhbCBwaGFuZGxlIGxvb2t1cAo+IG9uIHRo
-ZSAiaGRtaSIgUEhZIGluZGV4IHdpdGhpbiB0aGUgY29udHJvbGxlcidzIERUIG5vZGUuIFRoaXMg
-cHJvdmlkZXMKPiBhIHBhcmFsbGVsIHBhdGggdG8gdGhlIGNsb2NrIHByb3ZpZGVyJ3MgT0Ygbm9k
-ZSB3aXRob3V0IHJlbHlpbmcgb24gdGhlCj4gaW50ZXJuYWwgc3RydWN0dXJlIG9mIHRoZSBzdHJ1
-Y3QgcGh5IGhhbmRsZS4KPiAKPiBTaWduZWQtb2ZmLWJ5OiBWbGFkaW1pciBPbHRlYW4gPHZsYWRp
-bWlyLm9sdGVhbkBueHAuY29tPgo+IC0tLQo+IENjOiBTYW5keSBIdWFuZyA8aGpjQHJvY2stY2hp
-cHMuY29tPgo+IENjOiAiSGVpa28gU3TDvGJuZXIiIDxoZWlrb0BzbnRlY2guZGU+Cj4gQ2M6IEFu
-ZHkgWWFuIDxhbmR5LnlhbkByb2NrLWNoaXBzLmNvbT4KPiBDYzogTWFhcnRlbiBMYW5raG9yc3Qg
-PG1hYXJ0ZW4ubGFua2hvcnN0QGxpbnV4LmludGVsLmNvbT4KPiBDYzogTWF4aW1lIFJpcGFyZCA8
-bXJpcGFyZEBrZXJuZWwub3JnPgo+IENjOiBUaG9tYXMgWmltbWVybWFubiA8dHppbW1lcm1hbm5A
-c3VzZS5kZT4KPiBDYzogRGF2aWQgQWlybGllIDxhaXJsaWVkQGdtYWlsLmNvbT4KPiBDYzogU2lt
-b25hIFZldHRlciA8c2ltb25hQGZmd2xsLmNoPgo+IAo+IHYxLT52Mzogbm9uZQo+IC0tLQoKWy4u
-Ll0KCj4gQEAgLTU4OCwxMyArNTg5LDE3IEBAIHN0YXRpYyBpbnQgZHdfaGRtaV9yb2NrY2hpcF9i
-aW5kKHN0cnVjdCBkZXZpY2UgKmRldiwgc3RydWN0IGRldmljZSAqbWFzdGVyLAo+ICAJCXJldHVy
-biBkZXZfZXJyX3Byb2JlKGhkbWktPmRldiwgcmV0LCAiZmFpbGVkIHRvIGdldCBwaHlcbiIpOwo+
-ICAJfQo+ICAKPiAtCWlmIChoZG1pLT5waHkpIHsKCm5pdDogYSBjb21tZW50IHdvdWxkIGJlIG5p
-Y2UgaGVyZS4gSS5lLiBoZG1pLT5waHkgYmVpbmcgYW4gb3BhcXVlIHBvaW50ZXIKc28gY2hlY2tp
-bmcgaGRtaS0+cGh5ICE9IE5VTEwgaXMgbm90IHBvc3NpYmxlLgoKV2l0aCB0aGF0IGJlaW5nIGEg
-ImdvYWwiLCBJIGFzc3VtZSB0aGF0IGluZm9ybWF0aW9uIGlzIG5vdCB3aWRlbHkgc3ByZWFkCnNv
-IHRoaXMgd291bGQgcHJldmVudCB0aGUgbmV4dCBkZXZlbG9wZXIgdHJ5aW5nIHRvIGNoYW5nZSBp
-dCBiYWNrIHRvCiJpZiAoaGRtaS0+cGh5KSIgd2hpbGUgdGhhdCBoYW5kbGluZyBjaGFuZ2UgdHJp
-Y2tsZXMgZG93bi4KCgphcGFydCBmcm9tIHRoYXQ6CgpSZXZpZXdlZC1ieTogSGVpa28gU3R1ZWJl
-ciA8aGVpa29Ac250ZWNoLmRlPgoKCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgt
-cGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
-YW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On Mon, Mar 09, 2026 at 01:18:15PM +0000, Caleb James DeLisle wrote:
+> Introduce EcoNet EN7528 SoC compatible in MediaTek PCIe controller
+> binding.
+> 
+> EcoNet PCIe controller has the same configuration model as
+> Mediatek v2 but is initiallized more similarly to an MT7621
+> PCIe.
+> 
+> Signed-off-by: Caleb James DeLisle <cjd@cjdns.fr>
+> ---
+>  Documentation/devicetree/bindings/pci/mediatek-pcie.yaml | 1 +
+> 	 1 file changed, 1 insertion(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/pci/mediatek-pcie.yaml b/Documentation/devicetree/bindings/pci/mediatek-pcie.yaml
+> index 0b8c78ec4f91..57cbfbff7a31 100644
+> --- a/Documentation/devicetree/bindings/pci/mediatek-pcie.yaml
+> +++ b/Documentation/devicetree/bindings/pci/mediatek-pcie.yaml
+> @@ -14,6 +14,7 @@ properties:
+>      oneOf:
+>        - enum:
+>            - airoha,an7583-pcie
+> +          - econet,en7528-pcie
+
+Patch is heavily incomplete - why do you have variable number of clocks?
+1, 2, 3 ... or 6 at the same time?
+
+Look at the rest of this file to understand what you need to write.
+
+Best regards,
+Krzysztof
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
