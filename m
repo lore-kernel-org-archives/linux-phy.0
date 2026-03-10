@@ -4,62 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AFB09FD2D63
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Mar 2026 11:58:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0E7C4FD2D6C
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Mar 2026 11:58:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hTCz/qC319JK9NQSkBjSb00TpfqtyzQ2uXMcp3QgXZI=; b=q6YuGPm7zVObq4
-	Tf8S0iEqBxDe/2a4P4kL58zc2bXM4DS9ZqTtTi/oCihFEi1tXikp/04joRmDeIrgydP9Litukrk6a
-	E8ON2kBm81J1gFuSLW5SVwBtZOqHswwgrXvVXrFW5q9nQqwnlL9mLRv/97SlSSOAWA9xyjtPGlt58
-	bmijGI3vDanNoSB29cZUuqdlxt7xn6U4GFdazIDoooOXWpRMV/o2c3ZSVEk+OwNawu0PNAyfWRVOo
-	DgP9eAMXSfqETG2VnM+p965RCCQ6D5ZO/ow/Hub28XGH71QQ8uYYcwCG69Xz9C2zDuO67if1jJG57
-	dftD1dU/5nu060BAVHbA==;
+	List-Owner; bh=T30VNDvcLl9z9jb1Pb0XLWLi/W02JRtVrMzHILIjSAU=; b=iSAQa5SW++1/6G
+	Rdf7cmBcDCCDDqbvS2HzJYUYFXrBwHCD23pNVrITcFsogDWR3wWzkENBI7w07BgzG3VrYedlWhH4h
+	j8r7dn9CVQ4dTum4OJjkv19Tacx5+O4wrhHi+aUdlmIqihY4KRIyw7jnDISqJxI5tmB0wFBX9kOvB
+	UOnEKqJ6fqTMx3Ks9VDHZ0UV/iOR7SguIvdcegVfNsA+yjy7DPSvIfr05EzTpc7WgRlqdbBxvFGx3
+	CQlNvt2ucAima25a+1FS8TzDj/CNE+cBON0sVADwC5OzCMx2emZkMXmRoKpsbJPnyzKhUMUTwo9HS
+	3Ve7ql5D6zYX3k5e7nXA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzvj2-00000009Oqb-0qHP;
-	Tue, 10 Mar 2026 11:58:12 +0000
+	id 1vzvj5-00000009Oz4-33pm;
+	Tue, 10 Mar 2026 11:58:15 +0000
 Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzvgi-00000009Klo-3qVP;
-	Tue, 10 Mar 2026 11:55:48 +0000
+	id 1vzvgj-00000009Kms-19iv;
+	Tue, 10 Mar 2026 11:55:49 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=casper.20170209; h=Cc:To:In-Reply-To:References:Message-Id
 	:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:From:Sender
 	:Reply-To:Content-ID:Content-Description;
-	bh=XP4gpPWqTj9pDSzwMZXMboF2wk9nIzIBQDXj9hzH44E=; b=MpUY58TxhN1hpy5a4vApv0BQYt
-	mt6qvEdADemNTPh7b4gX0ILzsME/+smhA9EaBIRpp5p80HJMcvsyig88sPyBxTfujKlA8A4XfEhL4
-	Ma5+EOOoa6tBrigoAyv53jDX5s6uhKojv3wZPOlqqB/9LPMua1fo2NFETWPa0P/+05+KWBdB5gVav
-	+J2z2cqio/n6Xt/xTHvGrbzDzP9368o10AtEzgcNGdE1ECELmXKNgZzDt2Ngh6XTP8Hx8JOP9cAq9
-	t4TcnX7Qb7+5lGFKGqKZerwyHLyIbOx0qySreH2MmfYNs/Y/I0mcaYUn6sI5tfhGXCnq3FvLeryb7
-	+vhVh7ZA==;
-Received: from mail.avm.de ([2001:bf0:244:244::119])
+	bh=uE139u5zoua9TnetiXGtcYlFuz9R+VpXRn5VBlrCpnQ=; b=H+kym4x+kBs1D1inN5iW5E8f3L
+	ErEEAir1syofsovpY4uQykOfSGAodg7up+yhnzXBFI7ZGCANp0Em3fdvdjG8/icabb+7kiwIDPONc
+	S9eZPjvMyiQ5qUtfffCHf+qExgxLh/N0L1vaOOo6Sr6AJVnJA3rdmi5RpFPECLh6bL7qcYOBK/hXM
+	M6V4xuzlvaBCL7F8JgyHWs9DEjJEKXVYojOZX004SAvVLTMDvHX4i6ml43KTsY8JQ+59MtnNLEf2B
+	jcVWjKPpJF8nfkmzzT6Qr+XUpcFI2ZXtL1eO15InFHYA9OkiX+fXjTR6tib7Cvi+l9motAz2P+g6/
+	+ZHEiSjA==;
+Received: from mail.avm.de ([2001:bf0:244:244::94])
 	by casper.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzvgb-00000007lgI-1INh;
+	id 1vzvgc-00000007lhz-2VM2;
 	Tue, 10 Mar 2026 11:55:47 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=avm.de; s=mail;
-	t=1773143726; bh=Ch69HE8buqP46euP+YYFTxXSo2whzs/OaZa7KOXrnvQ=;
+	t=1773143728; bh=u291MpoQyOoQ8laFPzXzGEOIKYw0K1QgWZAkzpMyO94=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=cflriKS/Uv58AGT33/uwNkwB7J2sdEXakW9Rj3yjFGXI+RI4a366cceElHliZyuuJ
-	 mPSZ4TFmYIg3AF1ANgH8AJ4fIbLOCMfBhLuXzJMYqTbevJEc4r+piLw+nWaz0hy5uE
-	 Y9GvHMtmRIkJRf4y+wtLqshG0kOCxTBOOJdztUGI=
-Received: from [212.42.244.71] (helo=mail.avm.de)
+	b=ykq5xCtCLnpuisjh7yCkntpXVoj7+lenTonMwnNyj3HEswqyJb7tAewrRcpMAVrss
+	 htdRzuKIhEkY2u9z8HmZVLAVG9LXQEK5KzfFb+glv/mPDwZDOJWP8p2pGfwANfwg8Y
+	 cyh+Ai5Y49rs9bC9KZyLfdR4nR4N9Gt4Gg3G9z8A=
+Received: from [2001:bf0:244:244::71] (helo=mail.avm.de)
 	by mail.avm.de with ESMTP (eXpurgate 4.55.2)
 	(envelope-from <phahn-oss@avm.de>)
-	id 69b006ad-2367-7f0000032729-7f000001c97a-1
-	for <multiple-recipients>; Tue, 10 Mar 2026 12:55:26 +0100
-Received: from mail-auth.avm.de (dovecot-mx-01.avm.de [212.42.244.71])
+	id 69b006af-e21d-7f0000032729-7f000001ba8e-1
+	for <multiple-recipients>; Tue, 10 Mar 2026 12:55:27 +0100
+Received: from mail-auth.avm.de (dovecot-mx-01.avm.de [IPv6:2001:bf0:244:244::71])
 	by mail.avm.de (Postfix) with ESMTPS;
-	Tue, 10 Mar 2026 12:55:25 +0100 (CET)
+	Tue, 10 Mar 2026 12:55:27 +0100 (CET)
 From: Philipp Hahn <phahn-oss@avm.de>
-Date: Tue, 10 Mar 2026 12:48:58 +0100
-Subject: [PATCH 32/61] net/wireless: Prefer IS_ERR_OR_NULL over manual NULL
+Date: Tue, 10 Mar 2026 12:49:11 +0100
+Subject: [PATCH 45/61] thermal: Prefer IS_ERR_OR_NULL over manual NULL
  check
 MIME-Version: 1.0
-Message-Id: <20260310-b4-is_err_or_null-v1-32-bd63b656022d@avm.de>
+Message-Id: <20260310-b4-is_err_or_null-v1-45-bd63b656022d@avm.de>
 References: <20260310-b4-is_err_or_null-v1-0-bd63b656022d@avm.de>
 In-Reply-To: <20260310-b4-is_err_or_null-v1-0-bd63b656022d@avm.de>
 To: amd-gfx@lists.freedesktop.org, apparmor@lists.ubuntu.com, 
@@ -89,27 +89,30 @@ To: amd-gfx@lists.freedesktop.org, apparmor@lists.ubuntu.com,
  sched-ext@lists.linux.dev, target-devel@vger.kernel.org, 
  tipc-discussion@lists.sourceforge.net, v9fs@lists.linux.dev, 
  Philipp Hahn <phahn-oss@avm.de>
-Cc: Johannes Berg <johannes@sipsolutions.net>
-X-Developer-Signature: v=1; a=openpgp-sha256; l=917; i=phahn-oss@avm.de;
- h=from:subject:message-id; bh=Ch69HE8buqP46euP+YYFTxXSo2whzs/OaZa7KOXrnvQ=;
- b=owEBbQGS/pANAwAKATQtBlPRrKzbAcsmYgBpsAZCB6VtswQFIkNrtK394BinlB0uxLllvDTnj
- z6f33li4q+JATMEAAEKAB0WIQQ5bPBtrWDUcDQCppg0LQZT0ays2wUCabAGQgAKCRA0LQZT0ays
- 29wzCAChPFrcW+FfvZBVjABe7F29XZ5724a8XRQE85Iu6UGQCVTrGSBLyo8jXYsg5J3peaPVeKT
- KKhoEQfBVKbt6EAaScrTEpLi3KNOnd86Q8Wna7PddPHX6e15k2MlGUGDjd2Bw64F5NdG8ERAjc6
- DA0lCDlLGGjTu5XPxTGz5ABOwv4DjK6Yeb1iOXElewR1+d8c0JuR13TfzCtZK7b2pKqoZzkmtsk
- 88UMWo9/5GiOCX9lUMyP/7qRCJPVDMHslX+kZfg6K27OVxqrHU+QQ1K66P5yscc52ULdw9obFw9
- w1Ny2/RuJ7C5Uaac1egGmoDY7u2Te8bNEht0/tO/Xq6O2NMq
+Cc: Eduardo Valentin <edubezval@gmail.com>, Keerthy <j-keerthy@ti.com>, 
+ "Rafael J. Wysocki" <rafael@kernel.org>, 
+ Daniel Lezcano <daniel.lezcano@kernel.org>, Zhang Rui <rui.zhang@intel.com>, 
+ Lukasz Luba <lukasz.luba@arm.com>
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1238; i=phahn-oss@avm.de;
+ h=from:subject:message-id; bh=u291MpoQyOoQ8laFPzXzGEOIKYw0K1QgWZAkzpMyO94=;
+ b=owEBbQGS/pANAwAKATQtBlPRrKzbAcsmYgBpsAZv85jT8mK77P0DgzyoB3jbjqxnd52qin/43
+ 73TECCS4NSJATMEAAEKAB0WIQQ5bPBtrWDUcDQCppg0LQZT0ays2wUCabAGbwAKCRA0LQZT0ays
+ 2zstCACwpYJlOocsZ3HBVMWCF0IhNq09wby5LkvAsENXavKVYKWH0lNK553mHyG2L0hqOjwgfmQ
+ 2R6ChfeUAdB1pLjTViMeeaIXq4AlyCRjEyAsVR/bQ5/US1JrFGhJzXarTPhODhjHiBoPAuzZhOB
+ 8fipmcjA1HLbJFaREcynXwQWmFtG9ouLXgkvipVtzsg9HQdQPWOUefHLkAAvMOKdk+hmDB4ECbB
+ NiykkLaAUziz7cfWSAQQRPcA1Gr6EaK8Vw6tF4Kl2S0zRlJlORdN+u8vB04XH9TW/DB1ISJvpll
+ cqhryBZ8g4FfGeREfmgUyiQqqlzXdeOdKWH1FU8uNB4YFH+q
 X-Developer-Key: i=phahn-oss@avm.de; a=openpgp;
  fpr=58AF7C2E007CDBE62C59E078F50EFDCF8AD04B1A
-X-purgate-ID: 149429::1773143726-964B0E1F-7D6D0A0A/0/0
+X-purgate-ID: 149429::1773143727-7DE07F2F-8C4B41F9/0/0
 X-purgate-type: clean
-X-purgate-size: 919
+X-purgate-size: 1240
 X-purgate-Ad: Categorized by eleven eXpurgate (R) https://www.eleven.de
 X-purgate: This mail is considered clean (visit https://www.eleven.de for further information)
 X-purgate: clean
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260310_115541_564229_4EAE7B66 
-X-CRM114-Status: UNSURE (   9.85  )
+X-CRM114-CacheID: sfid-20260310_115543_708850_0EA54416 
+X-CRM114-Status: UNSURE (   9.67  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -132,27 +135,33 @@ check.
 
 Change generated with coccinelle.
 
-To: Johannes Berg <johannes@sipsolutions.net>
-Cc: linux-wireless@vger.kernel.org
+To: Eduardo Valentin <edubezval@gmail.com>
+To: Keerthy <j-keerthy@ti.com>
+To: "Rafael J. Wysocki" <rafael@kernel.org>
+To: Daniel Lezcano <daniel.lezcano@kernel.org>
+To: Zhang Rui <rui.zhang@intel.com>
+To: Lukasz Luba <lukasz.luba@arm.com>
+Cc: linux-pm@vger.kernel.org
+Cc: linux-omap@vger.kernel.org
 Cc: linux-kernel@vger.kernel.org
 Signed-off-by: Philipp Hahn <phahn-oss@avm.de>
 ---
- net/wireless/reg.c | 2 +-
+ drivers/thermal/ti-soc-thermal/ti-thermal-common.c | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/net/wireless/reg.c b/net/wireless/reg.c
-index 1c5c38d18febd511285bc4aab93a60b4287dc054..222764a151ea25bec6179dbaffa87f34fdbf8da6 100644
---- a/net/wireless/reg.c
-+++ b/net/wireless/reg.c
-@@ -1014,7 +1014,7 @@ static void regdb_fw_cb(const struct firmware *fw, void *context)
- 	}
+diff --git a/drivers/thermal/ti-soc-thermal/ti-thermal-common.c b/drivers/thermal/ti-soc-thermal/ti-thermal-common.c
+index 0cf0826b805a998abd0d4e2cfa6938de8a46c4f0..9218417e6d923ec370e032f5b91f9a839fd293f4 100644
+--- a/drivers/thermal/ti-soc-thermal/ti-thermal-common.c
++++ b/drivers/thermal/ti-soc-thermal/ti-thermal-common.c
+@@ -228,7 +228,7 @@ int ti_thermal_register_cpu_cooling(struct ti_bandgap *bgp, int id)
+ 		return 0;
  
- 	rtnl_lock();
--	if (regdb && !IS_ERR(regdb)) {
-+	if (!IS_ERR_OR_NULL(regdb)) {
- 		/* negative case - a bug
- 		 * positive case - can happen due to race in case of multiple cb's in
- 		 * queue, due to usage of asynchronous callback
+ 	data = ti_bandgap_get_sensor_data(bgp, id);
+-	if (!data || IS_ERR(data))
++	if (IS_ERR_OR_NULL(data))
+ 		data = ti_thermal_build_data(bgp, id);
+ 
+ 	if (!data)
 
 -- 
 2.43.0
