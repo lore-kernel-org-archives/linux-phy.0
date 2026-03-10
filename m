@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 495CAFD2D71
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B03DDFD2D73
 	for <linux-phy@archiver.kernel.org>; Tue, 10 Mar 2026 11:57:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,39 +12,54 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RjgeAvArnoj0a65OuLBq6AaY1vhN0hAWk+kII3a7bq0=; b=sK9wteve8fmqw/
-	c0qsEQ//Uyyn4Y4jV7JqMlFoa+mNHTjfaNHrR6Ajpv5h+PFoKPAYYP+RSlrWteLeWEB6AGeBgcy8I
-	CQRVtoW++sihvTlhhn7woBK4tI6RaHK6ZK1LIG1gUGG088YLy7VSjS3giGgU9iolX2Om7zTZN10bu
-	necuNMkoV6AOPkUDhvWKr+GA5VXqAvtHZz5tAdcytHEjNhTQ+2w2KYT9ieeBONPjKQhZnCGK+g2wn
-	yXcT1BozJTXWHxLH4IJjIBJloYjN3E6MBl5kH3NyAWdQhHjhc7RhxD654DFv9LE1rqVonclmiHWiI
-	zLxYRLUlMFNGjSMEFkgw==;
+	List-Owner; bh=BMQfzbFCA1GVFzuKMkgt/syaVjRiVVG4btCPk4dw/fU=; b=FYJioy0RfVfM3V
+	fx9+MB/Ubh2WeKXEWIyK7D8vAm8EWTJQyh2T1yAPS3GcnZ8ZKpQhN/WUvew+JyaFGDjd7E8COpSuq
+	/Vk+l2JSxzE0XldYqaOYAnvbKVrsa79S30a0r+Y7AcOrPoqJaJrijc8Cdg3OEGsbPS2Fe15X4jCUU
+	ngUNaeggZ3lBTdQX5Hg1c7H+MFu+N8Pcp6LSC/GD3BXNhv4YzS/P06XXoC9XHFHAUe0rGbVg5ye19
+	0pQkfITlo5dO6WZukOa9kKo/FVlbzGPc/C88TJiIQFsQGOn7Avs3xWJ0GYKdYWp6rMy6xjL1KpvKl
+	kq2ZeshLzsLh9JJY1f0A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzvii-00000009OEt-2Omy;
-	Tue, 10 Mar 2026 11:57:52 +0000
-Received: from mail.avm.de ([2001:bf0:244:244::119])
+	id 1vzvij-00000009OG3-0PGr;
+	Tue, 10 Mar 2026 11:57:53 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzvgd-00000009Ka2-1zbd;
-	Tue, 10 Mar 2026 11:55:45 +0000
+	id 1vzvgf-00000009Kfv-3BER;
+	Tue, 10 Mar 2026 11:55:46 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Cc:To:In-Reply-To:References:
+	Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
+	From:Sender:Reply-To:Content-ID:Content-Description;
+	bh=gy402GJXbgyAJ+YKb8LodXTXPBtJ8ptnh7Eq9VEeyMQ=; b=cds7Er5HGCB05t9xE84Z1oyYro
+	T0u8ENugRcuyTxz2D8nyU9EW2vRHeyMxP/VvxA6mpjg/5PWknG9D0DGCZUH5QNJnXhjnBnmWRVhGx
+	Sy4BcI13RRzT6PaRwWgjaNfsxmnodpD83YpxdntTps5y7VrHxANs1ogGE/fLHLuHmlCE1OcnC/TH2
+	+PPIXjVkaypD7+tY+iiQp8LMh3vgFybz3K6dLfyjIM1ldM/3UZq2EWu97ueMtVyF7DNxSk7KVOdcF
+	u/MlwsQsjErwku3rj0LsdtXBCj416m8ZIvmUJkOJ4hGUvAQcdha7My4YBkTakKaujt4Yjx/2xUA7Z
+	RP9J+1aw==;
+Received: from mail.avm.de ([212.42.244.94])
+	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1vzvgS-0000000EQ6j-3nKx;
+	Tue, 10 Mar 2026 11:55:40 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=avm.de; s=mail;
-	t=1773143727; bh=zh0NA9cMXwD2DkPFVL0EOnYz45KEbaJC9E9Miol506A=;
+	t=1773143726; bh=ObADPYZ6pJh7dF4ZtW/umhCREHwhUDWMyq9N6rBcVwQ=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=SxQcNNRuEiFwL/5k7L3uNmiPeI5MF2imk5edf5+bENjDS759Fz4qD+/GE8T78XGoj
-	 y3Anx7ULmIKK+LqK0b0jH70rnI3ftcXHXYxeZ0UjeUBfUOOob6Uk/Ag51Y5ZWXmM5b
-	 3t6vwVKkMaMk0t3qb5EymyzCnKyZ6WtwRBwC159Q=
+	b=dw1nuFFWpVVdrKOfBC8Dj4wKZMjU9ddsg9cir5xT91Je3Qc4zdD9Tv9d84zEGU77U
+	 bneXu7o4d3sJr/YNLcP9VRF/8FE25ShEW6LPrPIHkFN36JlEXF0VOvnj++ND2duaOC
+	 CYWW988mCr9Su8D1d7S5dskAeFMN3TEqL7EVGhxg=
 Received: from [2001:bf0:244:244::71] (helo=mail.avm.de)
 	by mail.avm.de with ESMTP (eXpurgate 4.55.2)
 	(envelope-from <phahn-oss@avm.de>)
-	id 69b006af-2367-7f0000032729-7f000001c9bc-1
-	for <multiple-recipients>; Tue, 10 Mar 2026 12:55:27 +0100
+	id 69b006ad-e21d-7f0000032729-7f000001da1a-1
+	for <multiple-recipients>; Tue, 10 Mar 2026 12:55:25 +0100
 Received: from mail-auth.avm.de (dovecot-mx-01.avm.de [IPv6:2001:bf0:244:244::71])
 	by mail.avm.de (Postfix) with ESMTPS;
-	Tue, 10 Mar 2026 12:55:27 +0100 (CET)
+	Tue, 10 Mar 2026 12:55:25 +0100 (CET)
 From: Philipp Hahn <phahn-oss@avm.de>
-Date: Tue, 10 Mar 2026 12:49:12 +0100
-Subject: [PATCH 46/61] vfio: Prefer IS_ERR_OR_NULL over manual NULL check
+Date: Tue, 10 Mar 2026 12:48:57 +0100
+Subject: [PATCH 31/61] net/tipc: Prefer IS_ERR_OR_NULL over manual NULL
+ check
 MIME-Version: 1.0
-Message-Id: <20260310-b4-is_err_or_null-v1-46-bd63b656022d@avm.de>
+Message-Id: <20260310-b4-is_err_or_null-v1-31-bd63b656022d@avm.de>
 References: <20260310-b4-is_err_or_null-v1-0-bd63b656022d@avm.de>
 In-Reply-To: <20260310-b4-is_err_or_null-v1-0-bd63b656022d@avm.de>
 To: amd-gfx@lists.freedesktop.org, apparmor@lists.ubuntu.com, 
@@ -74,28 +89,29 @@ To: amd-gfx@lists.freedesktop.org, apparmor@lists.ubuntu.com,
  sched-ext@lists.linux.dev, target-devel@vger.kernel.org, 
  tipc-discussion@lists.sourceforge.net, v9fs@lists.linux.dev, 
  Philipp Hahn <phahn-oss@avm.de>
-Cc: Alex Williamson <alex@shazbot.org>
-X-Developer-Signature: v=1; a=openpgp-sha256; l=940; i=phahn-oss@avm.de;
- h=from:subject:message-id; bh=zh0NA9cMXwD2DkPFVL0EOnYz45KEbaJC9E9Miol506A=;
- b=owEBbQGS/pANAwAKATQtBlPRrKzbAcsmYgBpsAZyWhsmplRS68Hjc75s841x9LkbYtnoYEUHf
- 5sKSdvRLCOJATMEAAEKAB0WIQQ5bPBtrWDUcDQCppg0LQZT0ays2wUCabAGcgAKCRA0LQZT0ays
- 26J5B/950clmJMa20JiDvd2Y9XUU4IMRZvZhOhN1i+pY6SIYFFSSWrstAJqpIpGOZ3R9V9O+AHS
- +c7Qni9AFhXI7buBYvtSAJWLJA8EJ41+9M8UOXpQoB5DcXO1c0CGt0ajsPjByLrSehp36R5PzH2
- wWu5vJHC6K9Bj9PLCfIhxzyGkz/hL0gcZbuCGZMCsvjzhhK3aqUIEmC2PQzNoj/okoSky7H2ok5
- Weutgt7pTJ9Q0oTr+n0PVtebcJ9O9+q3o9Yrs2sONA2GIXHGzM3vgOrYqV1Xoa6t/eWQHNiKxUs
- zghoWpQpcWwkFeKxopN3kqosmr1/sM4hUF11IDDx0e4ZVVPT
+Cc: Jon Maloy <jmaloy@redhat.com>, "David S. Miller" <davem@davemloft.net>, 
+ Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>, 
+ Paolo Abeni <pabeni@redhat.com>, Simon Horman <horms@kernel.org>
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1121; i=phahn-oss@avm.de;
+ h=from:subject:message-id; bh=ObADPYZ6pJh7dF4ZtW/umhCREHwhUDWMyq9N6rBcVwQ=;
+ b=owEBbQGS/pANAwAKATQtBlPRrKzbAcsmYgBpsAY/UcXAwJovG6A4nB7YjchfS8dWMTKJR/2Zu
+ MZwvRUzfSuJATMEAAEKAB0WIQQ5bPBtrWDUcDQCppg0LQZT0ays2wUCabAGPwAKCRA0LQZT0ays
+ 2xl9CAC38JfIZK13/o0jdZIM8Gu3hUV57MgGCpPmPgAkgZQzEtBGs2FDO8Fx54b796heUI6C17z
+ ZbGY2wRKWGjXSBCngfD+Y2a/1jCSzGEuQ4jVEtxbgFKGiVGPc8zPo3j7RIqGt+XkDfXhUJV/WGs
+ +J2xRVA9B3RKAYgO58tDVBDDKVuZmX4cu+ETIaOpu3+o52epJyZqzezdrVwvwMz+c005iQpPVgY
+ LKvEVu+vfw1C/S2Bm6+j0K7soEoH7Q1wM0z8TR821F0SvZ3KgnganCVQOD062Ix1eouKRv0CD2a
+ gtvYCJFRo6JoTu9p/1jJVnIebiN1A5uUYXaP+Bibs/sNVbrI
 X-Developer-Key: i=phahn-oss@avm.de; a=openpgp;
  fpr=58AF7C2E007CDBE62C59E078F50EFDCF8AD04B1A
-X-purgate-ID: 149429::1773143727-BACB9E1F-6BD158D9/0/0
+X-purgate-ID: 149429::1773143725-2FBCCF2F-19F0E4AB/0/0
 X-purgate-type: clean
-X-purgate-size: 942
+X-purgate-size: 1123
 X-purgate-Ad: Categorized by eleven eXpurgate (R) https://www.eleven.de
 X-purgate: This mail is considered clean (visit https://www.eleven.de for further information)
 X-purgate: clean
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260310_045543_740301_2A3C13D1 
-X-CRM114-Status: UNSURE (   9.68  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260310_115533_767031_E31BF9D6 
+X-CRM114-Status: GOOD (  10.04  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,27 +133,33 @@ check.
 
 Change generated with coccinelle.
 
-To: Alex Williamson <alex@shazbot.org>
-Cc: kvm@vger.kernel.org
+To: Jon Maloy <jmaloy@redhat.com>
+To: "David S. Miller" <davem@davemloft.net>
+To: Eric Dumazet <edumazet@google.com>
+To: Jakub Kicinski <kuba@kernel.org>
+To: Paolo Abeni <pabeni@redhat.com>
+To: Simon Horman <horms@kernel.org>
+Cc: netdev@vger.kernel.org
+Cc: tipc-discussion@lists.sourceforge.net
 Cc: linux-kernel@vger.kernel.org
 Signed-off-by: Philipp Hahn <phahn-oss@avm.de>
 ---
- drivers/vfio/vfio_main.c | 2 +-
+ net/tipc/socket.c | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/vfio/vfio_main.c b/drivers/vfio/vfio_main.c
-index 742477546b15d4dbaf9ebcfb2e67627db71521e0..d71922dfde5885967398deddec3e9e04b05adfec 100644
---- a/drivers/vfio/vfio_main.c
-+++ b/drivers/vfio/vfio_main.c
-@@ -923,7 +923,7 @@ vfio_ioctl_device_feature_mig_device_state(struct vfio_device *device,
+diff --git a/net/tipc/socket.c b/net/tipc/socket.c
+index 4c618c2b871db681e69f7aec8f660d6130a13346..0d9cb21ffbf1539b7740e76521e3aac5fde322e3 100644
+--- a/net/tipc/socket.c
++++ b/net/tipc/socket.c
+@@ -2971,7 +2971,7 @@ void tipc_sk_reinit(struct net *net)
+ 	do {
+ 		rhashtable_walk_start(&iter);
  
- 	/* Handle the VFIO_DEVICE_FEATURE_SET */
- 	filp = device->mig_ops->migration_set_state(device, mig.device_state);
--	if (IS_ERR(filp) || !filp)
-+	if (IS_ERR_OR_NULL(filp))
- 		goto out_copy;
- 
- 	return vfio_ioct_mig_return_fd(filp, arg, &mig);
+-		while ((tsk = rhashtable_walk_next(&iter)) && !IS_ERR(tsk)) {
++		while (!IS_ERR_OR_NULL((tsk = rhashtable_walk_next(&iter)))) {
+ 			sock_hold(&tsk->sk);
+ 			rhashtable_walk_stop(&iter);
+ 			lock_sock(&tsk->sk);
 
 -- 
 2.43.0
