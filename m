@@ -4,66 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 493BAEA8550
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Mar 2026 09:08:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A59C2FCC9DB
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Mar 2026 09:24:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6rby9oEKUZ5oLU4NaQ5KYDteUzr83zMB5n0aTQxTvag=; b=SFMDQNLSoImAN6
-	bi+upJY7MNTWBVAyVhET0Q7IBb/lPNqNrrzohpZnLLoyq4uP+TuHEuhrQDRO2jCMyeGNFdJlWCwVS
-	seMRv/anpZmn/GJkHNUCnb+ZwGp5iRWSHp+enaCdi8VxMd5QqDQw+PzYHOH8DIrjCTaHYUmtAJiZp
-	RKjZsBeu8PtaG+z/+2KsbdYf1nJnnNOmIknwE7Mk4quQVcEqUSHTMZz7rJle+QWbjdYRvs7b5qBhz
-	zumHU/2pbdiyZpN/iDW1TqW1rvv13qVeA8bvb+gzx7/2nraF0r3343PeVQZft3nLfA3srWQh85Xzi
-	KTRm+25sSPueBYOLGs2g==;
+	List-Owner; bh=tet5PsJv+VjpujQsjoB1rENv0eAFDKNCP2TFucu1/3Y=; b=nNkEc9n5tvE9Yt
+	/qh7NdfyYySKCrX/6WpEt5ElKM59qfgnGy3jBqVJAmH1Cm6ZwwJq+7/pmr1M26Rie7lvOdQwkZoXj
+	eUC7jV+zs3YMe3P8Xcv2HSy7lfdBAYzz0M0Wu1oy6Y2rPfycB88hLACf736X1BSsvIIcccYWvb18Z
+	obJgWaVjLaPiEwnQwvC8femBa9GnfnVnumjQWinTCfgiSekx4fEwsRCvx9jch0EznvKuM6wQCd1cJ
+	gnMMxwWGAWE74sQLSxPj346jZK0Drsn3/eV/3bx2YiGBSF2nH+l6lft/PfJkt57Sa5DaTQVgGx6cB
+	9yJ1bSGpjuUEbsXr+DvQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzt4g-000000092Uo-0607;
-	Tue, 10 Mar 2026 09:08:22 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1vztK3-0000000951e-0rCl;
+	Tue, 10 Mar 2026 09:24:15 +0000
+Received: from mail-wm1-x334.google.com ([2a00:1450:4864:20::334])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzt4e-000000092T7-0tTH;
-	Tue, 10 Mar 2026 09:08:21 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
-	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
-	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Reply-To;
-	bh=x+sKkqEen+FTZVcatdq7BWmJBRObIwAqW8MBSeFsbCg=; b=2P8w16KW4mcJ4VoQcD9GwW+Aaw
-	LPnWPTjV+iBSgpGU8VvlZBgivFQ41jbbUv9xPLTe0UGiC2O/TtxW9n87YjtaKXtEvok+d9X3m90n3
-	88MyVWdnk4KdCug4lCgmQ65VmF5YA3tIEvuVR5jNAJV+kyyiI3aJ/12D7cJW361aI64t62QfKt+G8
-	DpRgtf8aKTCqaf2K91HStN6cfzfIMJzfn16r4ZEdGteuKTcM5375CxPjFb+Zcjq9TyhP53oWNANrb
-	QG5VUTphEsm3do+5av7k096Uzt/+LkiRWIWXHy5//oKgMhx3VYbZAmsubGNimoJORazjXzWfE9QP0
-	iOm5zq+A==;
-From: Heiko Stuebner <heiko@sntech.de>
-To: Vladimir Oltean <vladimir.oltean@nxp.com>
-Cc: linux-phy@lists.infradead.org, Vinod Koul <vkoul@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>, dri-devel@lists.freedesktop.org,
- freedreno@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org,
- linux-arm-msm@vger.kernel.org, linux-can@vger.kernel.org,
- linux-gpio@vger.kernel.org, linux-ide@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-media@vger.kernel.org,
- linux-pci@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
- linux-riscv@lists.infradead.org, linux-rockchip@lists.infradead.org,
- linux-samsung-soc@vger.kernel.org, linux-scsi@vger.kernel.org,
- linux-sunxi@lists.linux.dev, linux-tegra@vger.kernel.org,
- linux-usb@vger.kernel.org, netdev@vger.kernel.org, spacemit@lists.linux.dev,
- UNGLinuxDriver@microchip.com, Sandy Huang <hjc@rock-chips.com>,
- Andy Yan <andy.yan@rock-chips.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>
-Subject: Re: [PATCH v3 phy-next 10/24] drm/rockchip: dw_hdmi: avoid direct dereference
- of phy->dev.of_node
-Date: Tue, 10 Mar 2026 10:08:07 +0100
-Message-ID: <2772778.X9hSmTKtgW@phil>
-In-Reply-To: <20260310083752.ms6u4qpy3snl4h6w@skbuf>
-References: <20260309190842.927634-1-vladimir.oltean@nxp.com> <2218670.OBFZWjSADL@phil>
- <20260310083752.ms6u4qpy3snl4h6w@skbuf>
+	id 1vztK0-00000009515-4Ab1
+	for linux-phy@lists.infradead.org;
+	Tue, 10 Mar 2026 09:24:14 +0000
+Received: by mail-wm1-x334.google.com with SMTP id 5b1f17b1804b1-485350d142fso677475e9.1
+        for <linux-phy@lists.infradead.org>; Tue, 10 Mar 2026 02:24:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1773134651; x=1773739451; darn=lists.infradead.org;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=WZCj/TjHIXVRoVKGE6NQ7feI9pXMgzpRbm+P3PxeGt4=;
+        b=lM165KjjyFOgPvp+JWy6dOSi7BzCcbX2B7AADk1pYcBKsVg44qI4Ux3bDwnNHr4dft
+         wjKsL1RicSjSSsAXyMRA0aYX3MyWN4ncE+TeqvmiBpf9xCKQbbfREHFZ98537AMpt47u
+         +Plh6jQFKRfdf9TVXclj1Sd9F6Pqer4J02qe/HC8kSI+AXV+GyonBCIPAQnJHR4DYX6u
+         5iFpoypA7eVwJ6uPVES0cYmdjZ1cce0bIVwlnIbfkEM4gDc7mETNPPZmiNIjDZFBk1W6
+         7O3ZniqApTFUYm37OBJ7jnnKqNCZom3/+VXY/kPM1T/Nl5oc7VAnq6qCd1v+W2i9L4cq
+         iuEw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1773134651; x=1773739451;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=WZCj/TjHIXVRoVKGE6NQ7feI9pXMgzpRbm+P3PxeGt4=;
+        b=VxFXvqYL5GKGaMgOuEg3l0EN07HcK3oaN3nru9Tb6PvvC/LFi8ZAxDhfuags9fZM3K
+         84OYbGwQeK+2SjwVJW0MJv1L1Ed/XfFv47Jn7VyznAd5tZ3ouoGtIOQH/FyiHt09DO0i
+         fpHITVq1/XXUirJZNV5P4FlOFR+xsgUnfj3RQ4cpobKfKa7DFRcURwN27bWasxj9efUc
+         GeNaDNajAWdnAkvBZZ3PaUwDShswyS4TK/4KQzauh3fkwKlRxCRBq/gkzq1T22KSF/mp
+         QOfri+JgB5XMR0UHjzB05smi1xmPkRP21ntqml35YbQ2cUbEamIC//s1PVhivpMKnWUz
+         2ZTA==
+X-Forwarded-Encrypted: i=1; AJvYcCV78f0RECej8CtCtu3iTxgSEFDbW/vnPxAyXx+jJxOCF/LZ9Gu3eD/AsVYH4gznt2EPTYTLycJQOBA=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yw9aOf5fVBHwR/8k2n8CZyATI6pjRRLOCUOZpTLyUkd+z0UUTKV
+	oBzCE1l6gm2ufOczGJyvnRz9VQp177qFAGo3TJi6zBCRjhhM0jtJS/x0
+X-Gm-Gg: ATEYQzyj/PZXxrDhhhZe90awclXbpo+kCBoo6qbGFKOteIhn7Iijb2NqWNpAfdpeNPu
+	TZyhgK6vXtfQBIA6XvlurJA/lS2C0iKC5MysNF5NFeTDiuVouRb4zzej8mFfO0JrfZhut9ZXUHg
+	61SbKSQsCEwconsXpN4a8Lxuq62tLQ9dnCXNG/2vzy+rYS08lG3KRs6B3dBjey/vaAlyZBCRkWU
+	apsQlnLWrBfhzl5IrCLYeeQw9OgPVc038BSUHxMce8ayylCLasNIEhfIu1IF2bJnJr71eRsYuPU
+	4c4ZDRNdqqoyYrZQoJTgtfK3WcjTSZjPTfaDOMZ4T3vHVLDXqgtFHlNXuRKw42G9LZ2qoBxtstC
+	4DDcz5nWuV+f7HwQL+FWBx0GX0iB7AcyHU3Y8uxWY4Knd/4ubjGRfEBuS7q1kEi6keeVaNXjVIa
+	7EiiYoaMVJhQsUj0rYZ/B6wZpB
+X-Received: by 2002:a05:600c:198f:b0:485:3b3c:1c18 with SMTP id 5b1f17b1804b1-4853b3c1d8emr61523235e9.2.1773134650905;
+        Tue, 10 Mar 2026 02:24:10 -0700 (PDT)
+Received: from skbuf ([2a02:2f04:d00a:e00:8799:3a7d:3c86:3200])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-485246fd127sm169882015e9.6.2026.03.10.02.24.09
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 10 Mar 2026 02:24:10 -0700 (PDT)
+Date: Tue, 10 Mar 2026 11:24:07 +0200
+From: Vladimir Oltean <olteanv@gmail.com>
+To: =?utf-8?B?VGjDqW8=?= Lebrun <theo.lebrun@bootlin.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
+	linux-mips@vger.kernel.org,
+	Vladimir Kondratiev <vladimir.kondratiev@mobileye.com>,
+	Gregory CLEMENT <gregory.clement@bootlin.com>,
+	=?utf-8?Q?Beno=C3=AEt?= Monin <benoit.monin@bootlin.com>,
+	Tawfik Bayouk <tawfik.bayouk@mobileye.com>,
+	Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+	Luca Ceresoli <luca.ceresoli@bootlin.com>
+Subject: Re: [PATCH v9] phy: Add driver for EyeQ5 Ethernet PHY wrapper
+Message-ID: <20260310092407.uk5dsn73ccelflgd@skbuf>
+References: <20260309-macb-phy-v9-0-5afd87d9db43@bootlin.com>
+ <20260309-macb-phy-v9-0-5afd87d9db43@bootlin.com>
+ <20260309-macb-phy-v9-1-5afd87d9db43@bootlin.com>
+ <20260309-macb-phy-v9-1-5afd87d9db43@bootlin.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20260309-macb-phy-v9-1-5afd87d9db43@bootlin.com>
+ <20260309-macb-phy-v9-1-5afd87d9db43@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260310_020820_252540_E1A53DBC 
-X-CRM114-Status: GOOD (  20.56  )
+X-CRM114-CacheID: sfid-20260310_022413_042423_1BD7257C 
+X-CRM114-Status: UNSURE (   8.34  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,49 +107,29 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-QW0gRGllbnN0YWcsIDEwLiBNw6RyeiAyMDI2LCAwOTozNzo1MiBNaXR0ZWxldXJvcMOkaXNjaGUg
-Tm9ybWFsemVpdCBzY2hyaWViIFZsYWRpbWlyIE9sdGVhbjoKPiBPbiBUdWUsIE1hciAxMCwgMjAy
-NiBhdCAwOToyNDo0M0FNICswMTAwLCBIZWlrbyBTdHVlYm5lciB3cm90ZToKPiA+IEFtIE1vbnRh
-ZywgOS4gTcOkcnogMjAyNiwgMjA6MDg6MjggTWl0dGVsZXVyb3DDpGlzY2hlIE5vcm1hbHplaXQg
-c2NocmllYiBWbGFkaW1pciBPbHRlYW46Cj4gPiA+IFRoZSBkd19oZG1pLXJvY2tjaGlwIGRyaXZl
-ciB2YWxpZGF0ZXMgcGl4ZWwgY2xvY2sgcmF0ZXMgYWdhaW5zdCB0aGUKPiA+ID4gSERNSSBQSFkn
-cyBpbnRlcm5hbCBjbG9jayBwcm92aWRlciBvbiBjZXJ0YWluIFNvQ3MgbGlrZSBSSzMzMjguCj4g
-PiA+IFRoaXMgaXMgY3VycmVudGx5IGFjaGlldmVkIGJ5IGRlcmVmZXJlbmNpbmcgaGRtaS0+cGh5
-LT5kZXYub2Zfbm9kZQo+ID4gPiB0byBvYnRhaW4gdGhlIHByb3ZpZGVyIG5vZGUsIHdoaWNoIHZp
-b2xhdGVzIHRoZSBHZW5lcmljIFBIWSBBUEkncwo+ID4gPiBlbmNhcHN1bGF0aW9uICh0aGUgZ29h
-bCBpcyBmb3Igc3RydWN0IHBoeSB0byBiZSBhbiBvcGFxdWUgcG9pbnRlcikuCj4gPiA+IAo+ID4g
-PiBSZWZhY3RvciBkd19oZG1pX3JvY2tjaGlwX2JpbmQoKSB0byBwZXJmb3JtIGEgbWFudWFsIHBo
-YW5kbGUgbG9va3VwCj4gPiA+IG9uIHRoZSAiaGRtaSIgUEhZIGluZGV4IHdpdGhpbiB0aGUgY29u
-dHJvbGxlcidzIERUIG5vZGUuIFRoaXMgcHJvdmlkZXMKPiA+ID4gYSBwYXJhbGxlbCBwYXRoIHRv
-IHRoZSBjbG9jayBwcm92aWRlcidzIE9GIG5vZGUgd2l0aG91dCByZWx5aW5nIG9uIHRoZQo+ID4g
-PiBpbnRlcm5hbCBzdHJ1Y3R1cmUgb2YgdGhlIHN0cnVjdCBwaHkgaGFuZGxlLgo+ID4gPiAKPiA+
-ID4gU2lnbmVkLW9mZi1ieTogVmxhZGltaXIgT2x0ZWFuIDx2bGFkaW1pci5vbHRlYW5AbnhwLmNv
-bT4KPiA+ID4gLS0tCj4gPiA+IENjOiBTYW5keSBIdWFuZyA8aGpjQHJvY2stY2hpcHMuY29tPgo+
-ID4gPiBDYzogIkhlaWtvIFN0w7xibmVyIiA8aGVpa29Ac250ZWNoLmRlPgo+ID4gPiBDYzogQW5k
-eSBZYW4gPGFuZHkueWFuQHJvY2stY2hpcHMuY29tPgo+ID4gPiBDYzogTWFhcnRlbiBMYW5raG9y
-c3QgPG1hYXJ0ZW4ubGFua2hvcnN0QGxpbnV4LmludGVsLmNvbT4KPiA+ID4gQ2M6IE1heGltZSBS
-aXBhcmQgPG1yaXBhcmRAa2VybmVsLm9yZz4KPiA+ID4gQ2M6IFRob21hcyBaaW1tZXJtYW5uIDx0
-emltbWVybWFubkBzdXNlLmRlPgo+ID4gPiBDYzogRGF2aWQgQWlybGllIDxhaXJsaWVkQGdtYWls
-LmNvbT4KPiA+ID4gQ2M6IFNpbW9uYSBWZXR0ZXIgPHNpbW9uYUBmZndsbC5jaD4KPiA+ID4gCj4g
-PiA+IHYxLT52Mzogbm9uZQo+ID4gPiAtLS0KPiA+IAo+ID4gWy4uLl0KPiA+IAo+ID4gPiBAQCAt
-NTg4LDEzICs1ODksMTcgQEAgc3RhdGljIGludCBkd19oZG1pX3JvY2tjaGlwX2JpbmQoc3RydWN0
-IGRldmljZSAqZGV2LCBzdHJ1Y3QgZGV2aWNlICptYXN0ZXIsCj4gPiA+ICAJCXJldHVybiBkZXZf
-ZXJyX3Byb2JlKGhkbWktPmRldiwgcmV0LCAiZmFpbGVkIHRvIGdldCBwaHlcbiIpOwo+ID4gPiAg
-CX0KPiA+ID4gIAo+ID4gPiAtCWlmIChoZG1pLT5waHkpIHsKPiA+IAo+ID4gbml0OiBhIGNvbW1l
-bnQgd291bGQgYmUgbmljZSBoZXJlLiBJLmUuIGhkbWktPnBoeSBiZWluZyBhbiBvcGFxdWUgcG9p
-bnRlcgo+ID4gc28gY2hlY2tpbmcgaGRtaS0+cGh5ICE9IE5VTEwgaXMgbm90IHBvc3NpYmxlLgo+
-ID4gCj4gPiBXaXRoIHRoYXQgYmVpbmcgYSAiZ29hbCIsIEkgYXNzdW1lIHRoYXQgaW5mb3JtYXRp
-b24gaXMgbm90IHdpZGVseSBzcHJlYWQKPiA+IHNvIHRoaXMgd291bGQgcHJldmVudCB0aGUgbmV4
-dCBkZXZlbG9wZXIgdHJ5aW5nIHRvIGNoYW5nZSBpdCBiYWNrIHRvCj4gPiAiaWYgKGhkbWktPnBo
-eSkiIHdoaWxlIHRoYXQgaGFuZGxpbmcgY2hhbmdlIHRyaWNrbGVzIGRvd24uCj4gCj4gVGVzdGlu
-ZyB0aGUgTlVMTCBxdWFsaXR5IG9mICJzdHJ1Y3QgcGh5ICpwaHkiIGlzIHN0aWxsIHBvc3NpYmxl
-IGFuZCBsZWdhbC4KPiBJdCBtZWFucyB0aGF0IHlvdSBjYWxsZWQgYW4gIm9wdGlvbmFsIiB2YXJp
-YW50IG9mIHBoeV9nZXQoKSwgYW5kIHRoZXJlCj4gd2FzIG5vIFBIWS4KCm9rLCBJJ2xsIGtlZXAg
-dGhhdCBpbiBtaW5kIDotKQoKCkhlaWtvCgoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0Cmxp
-bnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
-YWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+On Mon, Mar 09, 2026 at 03:37:34PM +0100, Th=E9o Lebrun wrote:
+> EyeQ5 embeds a system-controller called OLB. It features many unrelated
+> registers, and some of those are registers used to configure the
+> integration of the RGMII/SGMII Cadence PHY used by MACB/GEM instances.
+> =
+
+> Wrap in a neat generic PHY provider, exposing two PHYs with standard
+> phy_init() / phy_set_mode() / phy_power_on() operations.
+> =
+
+> Reviewed-by: Luca Ceresoli <luca.ceresoli@bootlin.com>
+> Signed-off-by: Th=E9o Lebrun <theo.lebrun@bootlin.com>
+> ---
+
+Reviewed-by: Vladimir Oltean <olteanv@gmail.com>
+
+-- =
+
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
