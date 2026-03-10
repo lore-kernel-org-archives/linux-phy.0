@@ -4,62 +4,48 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C9D82EB1056
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Mar 2026 11:56:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 558CDEB1055
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Mar 2026 11:56:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k6IsEQAY4BM9Li86f761KkdMlRWfGUw0rodZwLDYxes=; b=McJK5Ue9D3ViT4
-	ur8C3wxl5owjKlHulA3n26A5PQb0qa2Rol0PPEWiYF1aH+1QMJhAR512BhtXqjF6Nadp0IYaCTupK
-	w1k+3vacFDxgqBnd5honXBcyszlfd2mDolonrfqS3/U8HCXESEdusVmBKMRzgYDyKPtU+2OPtZBMU
-	0DB70LjRLaFebKMpXh3+fehDGXpoPnjYMh+4nk+l1w9N8UyPblLt9aZ//2KGIVVCcOOaiCywFI6Me
-	i8375+wqJYo7BkJuPN5RpcD5H5tJ8Yp4cdAzCv6keP7/9LflIFCrVvnHcq9AASQ3xljRW1s0HyDqL
-	zSC3Q+VigCBArrl/+llA==;
+	List-Owner; bh=U0Sdw1fkROiD688eszXsDnvbphtXvJ21af/W4QcvSWk=; b=p6McLCdeipju8f
+	ZZYvkx9GGa/fuwrb47VEzUJfC7lU8SuWGHQK6+JoOmrzCJYx96cPC8yP0xR0i6B9/51oabsdZ4aex
+	rqeRuDcIDTca4oGIwgrpPDGrIC/C2ouwpiXiIGa/T8Yiebe+7HANCmBU7cAwA+JTPKNjqQqlF1wgz
+	ZIJ6jz04x6qLon98ZKjJUTfXH6gcRI7IMH9cGJdqs51sgT+wp3CUVCOa7mowgX/uZTf15frDx1O93
+	zphCMl8Nu1L5WT1VVN2fUxcOPA8tmAqUZoyn1T058+1RgHj6eAYfCJVZGhnQWAjVbegFmVEf7HwxV
+	inawWBkl1WBD0+PUjvjg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzvhb-00000009M8k-08jb;
+	id 1vzvhb-00000009MAD-3M8w;
 	Tue, 10 Mar 2026 11:56:43 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
-	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzvga-00000009KXq-47Vi;
-	Tue, 10 Mar 2026 11:55:40 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=casper.20170209; h=Cc:To:In-Reply-To:References:Message-Id
-	:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:From:Sender
-	:Reply-To:Content-ID:Content-Description;
-	bh=RkVJJN6s61vqv/oYn7Rklty5Kyy7/KKuT2I194xYAyU=; b=CinRNcpzUFNMgqa0/94EViidbB
-	IC+XUOmnylcj5NJLZwM5NJeoAJbByABVSOLCE2B6dRUVFfw4jVV0WVLRrX7m/Wnob/jv80ztHpawW
-	aDAeXsqXHoQE+T7bIpOPJxD5F2ldBZwjH/Lgi1RbFeKkdgcJLTTyI3ppNCE92mc6BCwBhxjkPYfN7
-	vV3tiB4ijU0NA8m9RH0fklwGldYP1nyAwevjNnPXe31yJf+uzBWlFh/jtz686TNoTEs/ylUyej7Wg
-	fLYQQK+IaHfLRo6WZmB0LZ6k4Zl3loiAw4K2JviDFly1cnNjI1Pb6sFVrp9HPKIAV0l8nfVpwDFnM
-	a4CIhLcg==;
 Received: from mail.avm.de ([2001:bf0:244:244::119])
-	by casper.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzvgX-00000007ldH-2jLP;
-	Tue, 10 Mar 2026 11:55:39 +0000
+	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1vzvga-00000009KUc-1TZO;
+	Tue, 10 Mar 2026 11:55:42 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=avm.de; s=mail;
-	t=1773143725; bh=x2oaB0qg8CghMqZVE4wv6e6u03uqEA8RFTswQdfTK1Q=;
+	t=1773143725; bh=uPgyjK+s+NGMdE+cG5MPshRhc7ZZgUWwr7PoRjCZSpk=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=qDt+eOK17tgbgqdmabp3KToGWo0cL117JvmRPKJVxtawLwwb7ps7z1wEd3vWO7I7I
-	 4b7B5Oqe+82BCygMvdbmbm7KFHTrarRdpcpv9cxBTuo4h8o6I4dLLRK4rlBY6AdxnJ
-	 EBWBkLJwSKE2HvUxw9o04CGzwbSOLqvvPPh3XW/0=
-Received: from [212.42.244.71] (helo=mail.avm.de)
+	b=EmfqFdXEdiCWqgoXgX8BLevw6sTpNgfg8llLMS9eEaTKVg51Kp8K29SjBZVEdIV/s
+	 M7bvI3BPyHpPb6vMRi2BheqpUIfCWQ/6jm+gYuX79PpwCNDjLncHrcFsaokOkzLrgm
+	 dBKJjX9bdtP/6DkQEVr2DPx5QPmWYl9+WXcAxUUE=
+Received: from [2001:bf0:244:244::71] (helo=mail.avm.de)
 	by mail.avm.de with ESMTP (eXpurgate 4.55.2)
 	(envelope-from <phahn-oss@avm.de>)
-	id 69b006ad-2367-7f0000032729-7f0000019d98-1
+	id 69b006ad-2367-7f0000032729-7f0000019d9a-1
 	for <multiple-recipients>; Tue, 10 Mar 2026 12:55:25 +0100
-Received: from mail-auth.avm.de (dovecot-mx-01.avm.de [212.42.244.71])
+Received: from mail-auth.avm.de (dovecot-mx-01.avm.de [IPv6:2001:bf0:244:244::71])
 	by mail.avm.de (Postfix) with ESMTPS;
 	Tue, 10 Mar 2026 12:55:25 +0100 (CET)
 From: Philipp Hahn <phahn-oss@avm.de>
-Date: Tue, 10 Mar 2026 12:48:52 +0100
-Subject: [PATCH 26/61] net/core: Prefer IS_ERR_OR_NULL over manual NULL
+Date: Tue, 10 Mar 2026 12:48:55 +0100
+Subject: [PATCH 29/61] net/sctp: Prefer IS_ERR_OR_NULL over manual NULL
  check
 MIME-Version: 1.0
-Message-Id: <20260310-b4-is_err_or_null-v1-26-bd63b656022d@avm.de>
+Message-Id: <20260310-b4-is_err_or_null-v1-29-bd63b656022d@avm.de>
 References: <20260310-b4-is_err_or_null-v1-0-bd63b656022d@avm.de>
 In-Reply-To: <20260310-b4-is_err_or_null-v1-0-bd63b656022d@avm.de>
 To: amd-gfx@lists.freedesktop.org, apparmor@lists.ubuntu.com, 
@@ -89,33 +75,30 @@ To: amd-gfx@lists.freedesktop.org, apparmor@lists.ubuntu.com,
  sched-ext@lists.linux.dev, target-devel@vger.kernel.org, 
  tipc-discussion@lists.sourceforge.net, v9fs@lists.linux.dev, 
  Philipp Hahn <phahn-oss@avm.de>
-Cc: Alexei Starovoitov <ast@kernel.org>, 
- Daniel Borkmann <daniel@iogearbox.net>, 
- "David S. Miller" <davem@davemloft.net>, Jakub Kicinski <kuba@kernel.org>, 
- Jesper Dangaard Brouer <hawk@kernel.org>, 
- John Fastabend <john.fastabend@gmail.com>, 
- Stanislav Fomichev <sdf@fomichev.me>, Eric Dumazet <edumazet@google.com>, 
+Cc: Marcelo Ricardo Leitner <marcelo.leitner@gmail.com>, 
+ Xin Long <lucien.xin@gmail.com>, "David S. Miller" <davem@davemloft.net>, 
+ Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>, 
  Paolo Abeni <pabeni@redhat.com>, Simon Horman <horms@kernel.org>
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1267; i=phahn-oss@avm.de;
- h=from:subject:message-id; bh=x2oaB0qg8CghMqZVE4wv6e6u03uqEA8RFTswQdfTK1Q=;
- b=owEBbQGS/pANAwAKATQtBlPRrKzbAcsmYgBpsAYuz1CTGrbQpXzwm84r9mgKg2KIh9nV8i33X
- Xzcah43D7uJATMEAAEKAB0WIQQ5bPBtrWDUcDQCppg0LQZT0ays2wUCabAGLgAKCRA0LQZT0ays
- 231ZB/0bxZ/Qbs9IAD9kpPvo4QA+XnJGKWUdztF9j621/TW306I8+ggVrnqlG+FNuG2wVrw0WhJ
- ixcD9BMxptD/u4aa6XFjRfTlj5zAYq7AiLoV88hQ2zukJ0WZTgZ9ho7LLdTHbtDdQJg3IZi/ib8
- fJneCHe6P6SZ1m2EjqIO05fxr5kL7CgbuXZRdzSHe3+MgFHVghSrb0gT6dh9+gXstARt02FCx1t
- CbFc8t5W3HCfOWn15oLGczjOwJcE0jsoiVRPvvyO1awUr0bgUV2AJDFjkVpAz2ZTueHBx4ee0oO
- uXTsT9eV0KkVBz5xaaOgAyF5s8m06WIrMfH8OhTYPEwluE5m
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1169; i=phahn-oss@avm.de;
+ h=from:subject:message-id; bh=uPgyjK+s+NGMdE+cG5MPshRhc7ZZgUWwr7PoRjCZSpk=;
+ b=owEBbQGS/pANAwAKATQtBlPRrKzbAcsmYgBpsAY4baP8me9X19X7pKru5bhCt+OcLVsbTz9gw
+ 3EXL2x+9HiJATMEAAEKAB0WIQQ5bPBtrWDUcDQCppg0LQZT0ays2wUCabAGOAAKCRA0LQZT0ays
+ 20eCB/9R10a8QtWnOE8FDIK68et8w+x4vBIl7DAH3ljWsVvEsJtllIM7WoriXoMKcy69weBfdTt
+ udsIaDDf3FpSbi6d23LNVWvY7/j8StHi4Mb7YRTkDtjVuH7qFkxhMIEkO0P72RZbdjNmUsWZOT+
+ 4yfdZZ4sqiFeE73LKQ05t8sm9/1XHgZKcnk5I6ebEYNeQeVfoiugFSvaTmWSBPUItBis/2y3N1h
+ 19AfztgUerK/fadW7Y/vZ3pDRpIi5ZAslPLWaCgGa6B5OoDoVAvOz5XPc/Ut45LGyZkJYA2qiTr
+ TmaKunQohnKINyK0THlxz9DBNJM47y+p9em5r+zCNMTJFQSn
 X-Developer-Key: i=phahn-oss@avm.de; a=openpgp;
  fpr=58AF7C2E007CDBE62C59E078F50EFDCF8AD04B1A
-X-purgate-ID: 149429::1773143725-7ACF9E1F-2B37C654/0/0
+X-purgate-ID: 149429::1773143725-73CEFE1F-39E0F1CD/0/0
 X-purgate-type: clean
-X-purgate-size: 1269
+X-purgate-size: 1171
 X-purgate-Ad: Categorized by eleven eXpurgate (R) https://www.eleven.de
 X-purgate: This mail is considered clean (visit https://www.eleven.de for further information)
 X-purgate: clean
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260310_115537_769376_E2AFB90F 
-X-CRM114-Status: GOOD (  10.42  )
+X-CRM114-CacheID: sfid-20260310_045540_672427_B59E066F 
+X-CRM114-Status: GOOD (  10.12  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -137,37 +120,34 @@ check.
 
 Change generated with coccinelle.
 
-To: Alexei Starovoitov <ast@kernel.org>
-To: Daniel Borkmann <daniel@iogearbox.net>
+To: Marcelo Ricardo Leitner <marcelo.leitner@gmail.com>
+To: Xin Long <lucien.xin@gmail.com>
 To: "David S. Miller" <davem@davemloft.net>
-To: Jakub Kicinski <kuba@kernel.org>
-To: Jesper Dangaard Brouer <hawk@kernel.org>
-To: John Fastabend <john.fastabend@gmail.com>
-To: Stanislav Fomichev <sdf@fomichev.me>
 To: Eric Dumazet <edumazet@google.com>
+To: Jakub Kicinski <kuba@kernel.org>
 To: Paolo Abeni <pabeni@redhat.com>
 To: Simon Horman <horms@kernel.org>
+Cc: linux-sctp@vger.kernel.org
 Cc: netdev@vger.kernel.org
-Cc: bpf@vger.kernel.org
 Cc: linux-kernel@vger.kernel.org
 Signed-off-by: Philipp Hahn <phahn-oss@avm.de>
 ---
- net/core/xdp.c | 2 +-
+ net/sctp/socket.c | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/net/core/xdp.c b/net/core/xdp.c
-index 9890a30584ba7b08b246dacb984b639908f16242..c92cac2ccdb759457c7ce6a38e04e20190dff2a3 100644
---- a/net/core/xdp.c
-+++ b/net/core/xdp.c
-@@ -101,7 +101,7 @@ static void mem_allocator_disconnect(void *allocator)
- 	do {
- 		rhashtable_walk_start(&iter);
+diff --git a/net/sctp/socket.c b/net/sctp/socket.c
+index 05fb00c9c33576d1e18ee31c34974d8b76efa768..a0596c94be4ad6afae6be13adb3bce17140264e9 100644
+--- a/net/sctp/socket.c
++++ b/net/sctp/socket.c
+@@ -5349,7 +5349,7 @@ struct sctp_transport *sctp_transport_get_idx(struct net *net,
+ 	if (!pos)
+ 		return SEQ_START_TOKEN;
  
--		while ((xa = rhashtable_walk_next(&iter)) && !IS_ERR(xa)) {
-+		while (!IS_ERR_OR_NULL((xa = rhashtable_walk_next(&iter)))) {
- 			if (xa->allocator == allocator)
- 				mem_xa_remove(xa);
- 		}
+-	while ((t = sctp_transport_get_next(net, iter)) && !IS_ERR(t)) {
++	while (!IS_ERR_OR_NULL((t = sctp_transport_get_next(net, iter)))) {
+ 		if (!--pos)
+ 			break;
+ 		sctp_transport_put(t);
 
 -- 
 2.43.0
