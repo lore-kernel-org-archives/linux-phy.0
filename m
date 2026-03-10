@@ -4,61 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 79D91FD2D62
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Mar 2026 11:58:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AFB09FD2D63
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Mar 2026 11:58:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o2+t+sS3uPRB4ELwmzjBNPF5S79HCxeBByOlws76TKo=; b=EL2iDqtO9X8Qer
-	DM1npDq5kU4MJhYXzZp7DZrkUATlqpYXepbwYFok4I98ISEhSCEAa168kIu0g3lcZbETuhwXehyph
-	aWrqQYLBE2WIlK3MUSz5l5PWHYG2Fr66yAbLxlwcMnFePHCrVsFVEqcl8nweG2TacXa95Z9C4KAPP
-	n7wd3Sndaik7Z2qQeD5WLzRJ08R/5wOsWy2QtIR14a7KLmghVJZUJ6AgUjDeOsLoy0yaUmiC90xA9
-	GUqXmeE490ujM6bYQrsd91qLPkujkGyeRFfC9JOJuRBGFL1LT0V5JJwhHHTeEXv+rM3/iPNZMEfS3
-	9VLV1eu5GStOtXpDce4A==;
+	List-Owner; bh=hTCz/qC319JK9NQSkBjSb00TpfqtyzQ2uXMcp3QgXZI=; b=q6YuGPm7zVObq4
+	Tf8S0iEqBxDe/2a4P4kL58zc2bXM4DS9ZqTtTi/oCihFEi1tXikp/04joRmDeIrgydP9Litukrk6a
+	E8ON2kBm81J1gFuSLW5SVwBtZOqHswwgrXvVXrFW5q9nQqwnlL9mLRv/97SlSSOAWA9xyjtPGlt58
+	bmijGI3vDanNoSB29cZUuqdlxt7xn6U4GFdazIDoooOXWpRMV/o2c3ZSVEk+OwNawu0PNAyfWRVOo
+	DgP9eAMXSfqETG2VnM+p965RCCQ6D5ZO/ow/Hub28XGH71QQ8uYYcwCG69Xz9C2zDuO67if1jJG57
+	dftD1dU/5nu060BAVHbA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzviz-00000009Oks-3wJG;
-	Tue, 10 Mar 2026 11:58:09 +0000
+	id 1vzvj2-00000009Oqb-0qHP;
+	Tue, 10 Mar 2026 11:58:12 +0000
 Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzvgh-00000009Kij-1pj7;
-	Tue, 10 Mar 2026 11:55:47 +0000
+	id 1vzvgi-00000009Klo-3qVP;
+	Tue, 10 Mar 2026 11:55:48 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=casper.20170209; h=Cc:To:In-Reply-To:References:Message-Id
 	:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:From:Sender
 	:Reply-To:Content-ID:Content-Description;
-	bh=x7yqvKgRQlPCuPxWpeGgWE7MFZhfk9JfcC1gFXD6dw4=; b=c0Nti3MguF4OIlMpTUoz0nSvq/
-	B/1MTcQa087XuiaIN4smvplAamC8QhmDhxa7HwicOhPUFD5HIsqxNouu3lS/SHBz/vE6Y7U2pGsRi
-	OHp9gJJdXO58TxM2a55XoH5pGibjb0Th4zNZk80c30nJMmHMTK7KvPbuP2UwEqgozCWoV6LmUD/9Y
-	tKUw4Dquclj54LTJ5s8gNMZMNz7pRTBq/1rkNIDXsCJblCSbo03EOjdw5hLX7NTZx6UJZCtlXqa2L
-	sOrGOD/oWl3Fq7lCscJ43tPN72yjj6Y8B9/1hSb76dm1kT5a03ekaNlZ0c6wy3qcK7qxno/Fr5t4a
-	jxB7RWgg==;
+	bh=XP4gpPWqTj9pDSzwMZXMboF2wk9nIzIBQDXj9hzH44E=; b=MpUY58TxhN1hpy5a4vApv0BQYt
+	mt6qvEdADemNTPh7b4gX0ILzsME/+smhA9EaBIRpp5p80HJMcvsyig88sPyBxTfujKlA8A4XfEhL4
+	Ma5+EOOoa6tBrigoAyv53jDX5s6uhKojv3wZPOlqqB/9LPMua1fo2NFETWPa0P/+05+KWBdB5gVav
+	+J2z2cqio/n6Xt/xTHvGrbzDzP9368o10AtEzgcNGdE1ECELmXKNgZzDt2Ngh6XTP8Hx8JOP9cAq9
+	t4TcnX7Qb7+5lGFKGqKZerwyHLyIbOx0qySreH2MmfYNs/Y/I0mcaYUn6sI5tfhGXCnq3FvLeryb7
+	+vhVh7ZA==;
 Received: from mail.avm.de ([2001:bf0:244:244::119])
 	by casper.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzvgb-00000007lgE-0q7z;
-	Tue, 10 Mar 2026 11:55:45 +0000
+	id 1vzvgb-00000007lgI-1INh;
+	Tue, 10 Mar 2026 11:55:47 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=avm.de; s=mail;
-	t=1773143726; bh=Axff4FnAHPNmyZXZ2vgEuavJkfKhCKJPqZGqnoou9Q8=;
+	t=1773143726; bh=Ch69HE8buqP46euP+YYFTxXSo2whzs/OaZa7KOXrnvQ=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=vC8qGYtmoTTFtKG57rlNoXWnybB42U6r7mF3yDjZNK169i+LPPc6FbsKjJViJXz0P
-	 z0SkvHe3S8CzlbyDQgjnVKCfReu3jwjo1Tnr6q9iIPykZjcNCRLdwFjqB3/YTiencA
-	 upketXPZTZxW0W7lPSDpgLsiq82FnKI8pFh7qlSE=
+	b=cflriKS/Uv58AGT33/uwNkwB7J2sdEXakW9Rj3yjFGXI+RI4a366cceElHliZyuuJ
+	 mPSZ4TFmYIg3AF1ANgH8AJ4fIbLOCMfBhLuXzJMYqTbevJEc4r+piLw+nWaz0hy5uE
+	 Y9GvHMtmRIkJRf4y+wtLqshG0kOCxTBOOJdztUGI=
 Received: from [212.42.244.71] (helo=mail.avm.de)
 	by mail.avm.de with ESMTP (eXpurgate 4.55.2)
 	(envelope-from <phahn-oss@avm.de>)
-	id 69b006ae-2367-7f0000032729-7f000001c97e-1
+	id 69b006ad-2367-7f0000032729-7f000001c97a-1
 	for <multiple-recipients>; Tue, 10 Mar 2026 12:55:26 +0100
 Received: from mail-auth.avm.de (dovecot-mx-01.avm.de [212.42.244.71])
 	by mail.avm.de (Postfix) with ESMTPS;
-	Tue, 10 Mar 2026 12:55:26 +0100 (CET)
+	Tue, 10 Mar 2026 12:55:25 +0100 (CET)
 From: Philipp Hahn <phahn-oss@avm.de>
-Date: Tue, 10 Mar 2026 12:48:59 +0100
-Subject: [PATCH 33/61] mm: Prefer IS_ERR_OR_NULL over manual NULL check
+Date: Tue, 10 Mar 2026 12:48:58 +0100
+Subject: [PATCH 32/61] net/wireless: Prefer IS_ERR_OR_NULL over manual NULL
+ check
 MIME-Version: 1.0
-Message-Id: <20260310-b4-is_err_or_null-v1-33-bd63b656022d@avm.de>
+Message-Id: <20260310-b4-is_err_or_null-v1-32-bd63b656022d@avm.de>
 References: <20260310-b4-is_err_or_null-v1-0-bd63b656022d@avm.de>
 In-Reply-To: <20260310-b4-is_err_or_null-v1-0-bd63b656022d@avm.de>
 To: amd-gfx@lists.freedesktop.org, apparmor@lists.ubuntu.com, 
@@ -88,28 +89,27 @@ To: amd-gfx@lists.freedesktop.org, apparmor@lists.ubuntu.com,
  sched-ext@lists.linux.dev, target-devel@vger.kernel.org, 
  tipc-discussion@lists.sourceforge.net, v9fs@lists.linux.dev, 
  Philipp Hahn <phahn-oss@avm.de>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, 
- Andrew Morton <akpm@linux-foundation.org>
-X-Developer-Signature: v=1; a=openpgp-sha256; l=3181; i=phahn-oss@avm.de;
- h=from:subject:message-id; bh=Axff4FnAHPNmyZXZ2vgEuavJkfKhCKJPqZGqnoou9Q8=;
- b=owEBbQGS/pANAwAKATQtBlPRrKzbAcsmYgBpsAZGGzCaztqu0lpdWvBpBbRCmO+WdPRS9iZCq
- y8ebihz4r+JATMEAAEKAB0WIQQ5bPBtrWDUcDQCppg0LQZT0ays2wUCabAGRgAKCRA0LQZT0ays
- 21/8B/wPP7xI3S+6VTDXKISgyNvBqi0UZCbrYypvYfajV0SZbWCEuGKdkXjsEnnFt9YRKxoHeyi
- XmpmbA47CMrp+VNl6him9YVO8BEPZHU4T3m6BB2+Ps31+3rQDfYs7d+nPEStYiJ7CseLk0vc9Xu
- aMyI8bSdyPpcRveFxPuH/uy4iV8zrSXLAoi0Ddm83MyR2aRNl2iCZfPRsvcbR2T8dPBVJjhKzKb
- 5v+Zz66IZ/QArfKSmSkUD+nw+Micr3w6XFCa9e1WMrdcQ/Zh9MZx0TWZwcRgOAgfEwQG/fxgX8/
- bLP83oq+8G1pw01czFBtKoe7eUKh6J8z9KOOUPoqLrMipRXq
+Cc: Johannes Berg <johannes@sipsolutions.net>
+X-Developer-Signature: v=1; a=openpgp-sha256; l=917; i=phahn-oss@avm.de;
+ h=from:subject:message-id; bh=Ch69HE8buqP46euP+YYFTxXSo2whzs/OaZa7KOXrnvQ=;
+ b=owEBbQGS/pANAwAKATQtBlPRrKzbAcsmYgBpsAZCB6VtswQFIkNrtK394BinlB0uxLllvDTnj
+ z6f33li4q+JATMEAAEKAB0WIQQ5bPBtrWDUcDQCppg0LQZT0ays2wUCabAGQgAKCRA0LQZT0ays
+ 29wzCAChPFrcW+FfvZBVjABe7F29XZ5724a8XRQE85Iu6UGQCVTrGSBLyo8jXYsg5J3peaPVeKT
+ KKhoEQfBVKbt6EAaScrTEpLi3KNOnd86Q8Wna7PddPHX6e15k2MlGUGDjd2Bw64F5NdG8ERAjc6
+ DA0lCDlLGGjTu5XPxTGz5ABOwv4DjK6Yeb1iOXElewR1+d8c0JuR13TfzCtZK7b2pKqoZzkmtsk
+ 88UMWo9/5GiOCX9lUMyP/7qRCJPVDMHslX+kZfg6K27OVxqrHU+QQ1K66P5yscc52ULdw9obFw9
+ w1Ny2/RuJ7C5Uaac1egGmoDY7u2Te8bNEht0/tO/Xq6O2NMq
 X-Developer-Key: i=phahn-oss@avm.de; a=openpgp;
  fpr=58AF7C2E007CDBE62C59E078F50EFDCF8AD04B1A
-X-purgate-ID: 149429::1773143726-05CBBE1F-4CFCA352/0/0
+X-purgate-ID: 149429::1773143726-964B0E1F-7D6D0A0A/0/0
 X-purgate-type: clean
-X-purgate-size: 3183
+X-purgate-size: 919
 X-purgate-Ad: Categorized by eleven eXpurgate (R) https://www.eleven.de
 X-purgate: This mail is considered clean (visit https://www.eleven.de for further information)
 X-purgate: clean
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260310_115541_319078_E6C81344 
-X-CRM114-Status: UNSURE (   7.42  )
+X-CRM114-CacheID: sfid-20260310_115541_564229_4EAE7B66 
+X-CRM114-Status: UNSURE (   9.85  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -130,93 +130,29 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 Prefer using IS_ERR_OR_NULL() over using IS_ERR() and a manual NULL
 check.
 
-Change generated with coccinelle and adapted by hand.
+Change generated with coccinelle.
 
-To: Catalin Marinas <catalin.marinas@arm.com>
-To: Andrew Morton <akpm@linux-foundation.org>
-Cc: linux-mm@kvack.org
+To: Johannes Berg <johannes@sipsolutions.net>
+Cc: linux-wireless@vger.kernel.org
 Cc: linux-kernel@vger.kernel.org
 Signed-off-by: Philipp Hahn <phahn-oss@avm.de>
 ---
- mm/kmemleak.c | 16 ++++++++--------
- 1 file changed, 8 insertions(+), 8 deletions(-)
+ net/wireless/reg.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/mm/kmemleak.c b/mm/kmemleak.c
-index d79acf5c51006c3ed42fd88a2246ca148e401999..91136be23a84d825698e98b4f2d0e666429dd593 100644
---- a/mm/kmemleak.c
-+++ b/mm/kmemleak.c
-@@ -1092,7 +1092,7 @@ void __ref kmemleak_alloc(const void *ptr, size_t size, int min_count,
- {
- 	pr_debug("%s(0x%px, %zu, %d)\n", __func__, ptr, size, min_count);
+diff --git a/net/wireless/reg.c b/net/wireless/reg.c
+index 1c5c38d18febd511285bc4aab93a60b4287dc054..222764a151ea25bec6179dbaffa87f34fdbf8da6 100644
+--- a/net/wireless/reg.c
++++ b/net/wireless/reg.c
+@@ -1014,7 +1014,7 @@ static void regdb_fw_cb(const struct firmware *fw, void *context)
+ 	}
  
--	if (kmemleak_enabled && ptr && !IS_ERR(ptr))
-+	if (kmemleak_enabled && !IS_ERR_OR_NULL(ptr))
- 		create_object((unsigned long)ptr, size, min_count, gfp);
- }
- EXPORT_SYMBOL_GPL(kmemleak_alloc);
-@@ -1152,7 +1152,7 @@ void __ref kmemleak_free(const void *ptr)
- {
- 	pr_debug("%s(0x%px)\n", __func__, ptr);
- 
--	if (kmemleak_free_enabled && ptr && !IS_ERR(ptr))
-+	if (kmemleak_free_enabled && !IS_ERR_OR_NULL(ptr))
- 		delete_object_full((unsigned long)ptr, 0);
- }
- EXPORT_SYMBOL_GPL(kmemleak_free);
-@@ -1170,7 +1170,7 @@ void __ref kmemleak_free_part(const void *ptr, size_t size)
- {
- 	pr_debug("%s(0x%px)\n", __func__, ptr);
- 
--	if (kmemleak_enabled && ptr && !IS_ERR(ptr))
-+	if (kmemleak_enabled && !IS_ERR_OR_NULL(ptr))
- 		delete_object_part((unsigned long)ptr, size, 0);
- }
- EXPORT_SYMBOL_GPL(kmemleak_free_part);
-@@ -1238,7 +1238,7 @@ void __ref kmemleak_not_leak(const void *ptr)
- {
- 	pr_debug("%s(0x%px)\n", __func__, ptr);
- 
--	if (kmemleak_enabled && ptr && !IS_ERR(ptr))
-+	if (kmemleak_enabled && !IS_ERR_OR_NULL(ptr))
- 		make_gray_object((unsigned long)ptr);
- }
- EXPORT_SYMBOL(kmemleak_not_leak);
-@@ -1255,7 +1255,7 @@ void __ref kmemleak_transient_leak(const void *ptr)
- {
- 	pr_debug("%s(0x%px)\n", __func__, ptr);
- 
--	if (kmemleak_enabled && ptr && !IS_ERR(ptr))
-+	if (kmemleak_enabled && !IS_ERR_OR_NULL(ptr))
- 		reset_checksum((unsigned long)ptr);
- }
- EXPORT_SYMBOL(kmemleak_transient_leak);
-@@ -1287,7 +1287,7 @@ void __ref kmemleak_ignore(const void *ptr)
- {
- 	pr_debug("%s(0x%px)\n", __func__, ptr);
- 
--	if (kmemleak_enabled && ptr && !IS_ERR(ptr))
-+	if (kmemleak_enabled && !IS_ERR_OR_NULL(ptr))
- 		make_black_object((unsigned long)ptr, 0);
- }
- EXPORT_SYMBOL(kmemleak_ignore);
-@@ -1307,7 +1307,7 @@ void __ref kmemleak_scan_area(const void *ptr, size_t size, gfp_t gfp)
- {
- 	pr_debug("%s(0x%px)\n", __func__, ptr);
- 
--	if (kmemleak_enabled && ptr && size && !IS_ERR(ptr))
-+	if (kmemleak_enabled && size && !IS_ERR_OR_NULL(ptr))
- 		add_scan_area((unsigned long)ptr, size, gfp);
- }
- EXPORT_SYMBOL(kmemleak_scan_area);
-@@ -1325,7 +1325,7 @@ void __ref kmemleak_no_scan(const void *ptr)
- {
- 	pr_debug("%s(0x%px)\n", __func__, ptr);
- 
--	if (kmemleak_enabled && ptr && !IS_ERR(ptr))
-+	if (kmemleak_enabled && !IS_ERR_OR_NULL(ptr))
- 		object_no_scan((unsigned long)ptr);
- }
- EXPORT_SYMBOL(kmemleak_no_scan);
+ 	rtnl_lock();
+-	if (regdb && !IS_ERR(regdb)) {
++	if (!IS_ERR_OR_NULL(regdb)) {
+ 		/* negative case - a bug
+ 		 * positive case - can happen due to race in case of multiple cb's in
+ 		 * queue, due to usage of asynchronous callback
 
 -- 
 2.43.0
