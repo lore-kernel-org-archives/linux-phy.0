@@ -4,64 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D9901FCC9DC
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Mar 2026 08:24:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2A27DFCC9D6
+	for <linux-phy@archiver.kernel.org>; Tue, 10 Mar 2026 08:24:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i+a1+sygMvAeALGjahWoBmP83yV7RC6sZayZ6YbRylU=; b=G/6+wQ4n4A6W2y
-	q6fOjjtFmrGjBVS4rs4Ye2M1A3U2idDAOnVTZohYu5WNb+L9JqChi2BuTkX+SguhxBEecG4jG3GUi
-	P68xNk5T7cEsY4Hu4xSf2kMnYloeJVIwULmnhsns5phujmCsTEaLJZzqfi3e+y17ouMqo720+fsmt
-	aBnqY++TtA+8Lwzdzsn60p06Z1AnbBp9idCke+HtHl0u+u51KFJOk1yGvLGYMVRaHAmoR0vo1eJ7A
-	OV1+DL9ZC/zZOeN/LDwMYvEZYf5yNvLf85kUdsKdIzI8rFvcKHmYbkUmJ9tP/W+9DCO0HDWXTr/l0
-	aJVGvile29w8o0KEiimQ==;
+	List-Owner; bh=sMbY6Qsfjkwk/YQRxEYjE6b0h5YTrg0zcEmvt8P6U2M=; b=kAZhaDfkFVaIbA
+	eV1pD8G1RULlBZ5BTJyBBMFCKc/iB2Tl6S2os+Sq2gtkG0wdu0UxyTFO7AZqB0fQUXSXSayfeIuBR
+	LoIhmcqelU61KLGRQL2ZUOYrZqQyetNTPK9QQ+O5PPY18O1D6J8bGms0756XrucbFAVeowuRr1g3a
+	IPLUHNPIVKGyav8p5JtWL43VHx9p3jRT3P1sCEyFVPjCu0+FugfuHCecsGCG/92SBfvrL12XNrpvh
+	ZnLjPrehfkv+p4boz2LkY3F1hoJym4yIWQUxuJx0UppxppcEyxsRGZi+hbukekYSTIrcorKgkC23d
+	EcmQoORrxctDM+8ONulw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzsNx-00000008w8U-2cJz;
-	Tue, 10 Mar 2026 08:24:13 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vzsOf-00000008wEe-3nmW;
+	Tue, 10 Mar 2026 08:24:57 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzsNw-00000008w7p-0gk6;
-	Tue, 10 Mar 2026 08:24:12 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 1B17860054;
-	Tue, 10 Mar 2026 08:24:11 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 45449C19423;
-	Tue, 10 Mar 2026 08:24:10 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1773131050;
-	bh=X93Yxq3bUx636kMPKo1AS2iratZcYw/WWrjo9W6vW9c=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=MDZ3AMGNrWWJr5OO/Vv7W7DPwZ840Y/Cw7CurnzVxWroksyoh8Dqe9AaGC4rCwprR
-	 NqqY9Axsh71dzpfh/4oGqBvaF+Mn7OjU63cNLDMV2IiIlSl9ByjqLa+7gyOb/wv5nZ
-	 iacizi1sBrvWpHv/TDBzI0FP41KgS5/iGVGJ325LoczzcdDF4PTj0OUmmlD60bnk/S
-	 QA1dgecDr2zleSU8epPC5M0Hwy1fWWF7EDqo+stAapt5cBUdhxcbJVfsOEBDUJH3I1
-	 EMkDhDZBZQv1AXbKrsoGqoxmueiwb3LLHV+6ScLghnJM43vV5vKNlOV9ZyElByVpmF
-	 eUdQ3lYXxYQTg==
-Date: Tue, 10 Mar 2026 09:24:08 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Caleb James DeLisle <cjd@cjdns.fr>
-Cc: linux-mips@vger.kernel.org, naseefkm@gmail.com, 
-	mturquette@baylibre.com, sboyd@kernel.org, robh@kernel.org, krzk+dt@kernel.org, 
-	conor+dt@kernel.org, tsbogend@alpha.franken.de, ryder.lee@mediatek.com, 
-	jianjun.wang@mediatek.com, lpieralisi@kernel.org, kwilczynski@kernel.org, mani@kernel.org, 
-	bhelgaas@google.com, vkoul@kernel.org, neil.armstrong@linaro.org, 
-	p.zabel@pengutronix.de, matthias.bgg@gmail.com, angelogioacchino.delregno@collabora.com, 
-	nbd@nbd.name, ansuelsmth@gmail.com, linux-clk@vger.kernel.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org, 
-	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org, 
-	linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH v2 3/8] dt-bindings: phy: Document PCIe PHY in EcoNet
- EN751221 and EN7528
-Message-ID: <20260310-scrupulous-fat-ara-eab47c@quoll>
-References: <20260309131818.74467-1-cjd@cjdns.fr>
- <20260309131818.74467-4-cjd@cjdns.fr>
+	id 1vzsOe-00000008wD9-0ULN;
+	Tue, 10 Mar 2026 08:24:57 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
+	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
+	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Reply-To;
+	bh=2W8R6JKoSWBQ/NVWe1VH8DTpdfOcfJODkzczD104anE=; b=JuC/yhxDoPy5BzKCllx+4lcx/F
+	aT/7U8Uk8l3EzePnMXUbbxXawsxzRHryg8fghP2VOHv5kHVBckllNBimOOiJ0d8LfnHjtGmniMUoP
+	q+tI4zY5GQIiNsEUe+qxnask3JoIfvvZdpBRFnoZGdldxQgpw2opTa6+/x5nJBA//K40leHf2j3eZ
+	QL1kjydLamseRW0i8hF8yC9BA+ISD2o9MPNpUsGC0DfntkB9k4h7pa/Fd+8ADCPiSf0DDEzQCBI5M
+	9HJQrDTSAcTC9UmZ18rrV1bkPrtisS78iMGtNExAIokgAvG70PlOoOoPpo/Lna+ZPaU1pgFFTLn9P
+	iDkZROYQ==;
+From: Heiko Stuebner <heiko@sntech.de>
+To: linux-phy@lists.infradead.org, Vladimir Oltean <vladimir.oltean@nxp.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
+ dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
+ linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
+ linux-can@vger.kernel.org, linux-gpio@vger.kernel.org,
+ linux-ide@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-media@vger.kernel.org, linux-pci@vger.kernel.org,
+ linux-renesas-soc@vger.kernel.org, linux-riscv@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
+ linux-scsi@vger.kernel.org, linux-sunxi@lists.linux.dev,
+ linux-tegra@vger.kernel.org, linux-usb@vger.kernel.org,
+ netdev@vger.kernel.org, spacemit@lists.linux.dev,
+ UNGLinuxDriver@microchip.com, Sandy Huang <hjc@rock-chips.com>,
+ Andy Yan <andy.yan@rock-chips.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
+ David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>
+Subject: Re: [PATCH v3 phy-next 10/24] drm/rockchip: dw_hdmi: avoid direct dereference
+ of phy->dev.of_node
+Date: Tue, 10 Mar 2026 09:24:43 +0100
+Message-ID: <2218670.OBFZWjSADL@phil>
+In-Reply-To: <20260309190842.927634-11-vladimir.oltean@nxp.com>
+References: <20260309190842.927634-1-vladimir.oltean@nxp.com>
+ <20260309190842.927634-11-vladimir.oltean@nxp.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260309131818.74467-4-cjd@cjdns.fr>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260310_012456_159317_F0DF1613 
+X-CRM114-Status: GOOD (  13.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,35 +75,41 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Mar 09, 2026 at 01:18:13PM +0000, Caleb James DeLisle wrote:
-> EN751221 and EN7528 SoCs have two PCIe slots, and each one has a PHY
-> which behaves slightly differently because one slot is Gen1/Gen2 while
-> the other is Gen1 only.
-> 
-> Signed-off-by: Caleb James DeLisle <cjd@cjdns.fr>
-
-Still, four separate subsystems unnecessarily merged into one patchset.
-Split independent parts of your work per subsystem. See also submitting
-patches.
-
-> ---
->  .../phy/econet,en751221-pcie-phy.yaml         | 50 +++++++++++++++++++
->  MAINTAINERS                                   |  6 +++
->  2 files changed, 56 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/econet,en751221-pcie-phy.yaml
-
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
-
-Best regards,
-Krzysztof
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+QW0gTW9udGFnLCA5LiBNw6RyeiAyMDI2LCAyMDowODoyOCBNaXR0ZWxldXJvcMOkaXNjaGUgTm9y
+bWFsemVpdCBzY2hyaWViIFZsYWRpbWlyIE9sdGVhbjoKPiBUaGUgZHdfaGRtaS1yb2NrY2hpcCBk
+cml2ZXIgdmFsaWRhdGVzIHBpeGVsIGNsb2NrIHJhdGVzIGFnYWluc3QgdGhlCj4gSERNSSBQSFkn
+cyBpbnRlcm5hbCBjbG9jayBwcm92aWRlciBvbiBjZXJ0YWluIFNvQ3MgbGlrZSBSSzMzMjguCj4g
+VGhpcyBpcyBjdXJyZW50bHkgYWNoaWV2ZWQgYnkgZGVyZWZlcmVuY2luZyBoZG1pLT5waHktPmRl
+di5vZl9ub2RlCj4gdG8gb2J0YWluIHRoZSBwcm92aWRlciBub2RlLCB3aGljaCB2aW9sYXRlcyB0
+aGUgR2VuZXJpYyBQSFkgQVBJJ3MKPiBlbmNhcHN1bGF0aW9uICh0aGUgZ29hbCBpcyBmb3Igc3Ry
+dWN0IHBoeSB0byBiZSBhbiBvcGFxdWUgcG9pbnRlcikuCj4gCj4gUmVmYWN0b3IgZHdfaGRtaV9y
+b2NrY2hpcF9iaW5kKCkgdG8gcGVyZm9ybSBhIG1hbnVhbCBwaGFuZGxlIGxvb2t1cAo+IG9uIHRo
+ZSAiaGRtaSIgUEhZIGluZGV4IHdpdGhpbiB0aGUgY29udHJvbGxlcidzIERUIG5vZGUuIFRoaXMg
+cHJvdmlkZXMKPiBhIHBhcmFsbGVsIHBhdGggdG8gdGhlIGNsb2NrIHByb3ZpZGVyJ3MgT0Ygbm9k
+ZSB3aXRob3V0IHJlbHlpbmcgb24gdGhlCj4gaW50ZXJuYWwgc3RydWN0dXJlIG9mIHRoZSBzdHJ1
+Y3QgcGh5IGhhbmRsZS4KPiAKPiBTaWduZWQtb2ZmLWJ5OiBWbGFkaW1pciBPbHRlYW4gPHZsYWRp
+bWlyLm9sdGVhbkBueHAuY29tPgo+IC0tLQo+IENjOiBTYW5keSBIdWFuZyA8aGpjQHJvY2stY2hp
+cHMuY29tPgo+IENjOiAiSGVpa28gU3TDvGJuZXIiIDxoZWlrb0BzbnRlY2guZGU+Cj4gQ2M6IEFu
+ZHkgWWFuIDxhbmR5LnlhbkByb2NrLWNoaXBzLmNvbT4KPiBDYzogTWFhcnRlbiBMYW5raG9yc3Qg
+PG1hYXJ0ZW4ubGFua2hvcnN0QGxpbnV4LmludGVsLmNvbT4KPiBDYzogTWF4aW1lIFJpcGFyZCA8
+bXJpcGFyZEBrZXJuZWwub3JnPgo+IENjOiBUaG9tYXMgWmltbWVybWFubiA8dHppbW1lcm1hbm5A
+c3VzZS5kZT4KPiBDYzogRGF2aWQgQWlybGllIDxhaXJsaWVkQGdtYWlsLmNvbT4KPiBDYzogU2lt
+b25hIFZldHRlciA8c2ltb25hQGZmd2xsLmNoPgo+IAo+IHYxLT52Mzogbm9uZQo+IC0tLQoKWy4u
+Ll0KCj4gQEAgLTU4OCwxMyArNTg5LDE3IEBAIHN0YXRpYyBpbnQgZHdfaGRtaV9yb2NrY2hpcF9i
+aW5kKHN0cnVjdCBkZXZpY2UgKmRldiwgc3RydWN0IGRldmljZSAqbWFzdGVyLAo+ICAJCXJldHVy
+biBkZXZfZXJyX3Byb2JlKGhkbWktPmRldiwgcmV0LCAiZmFpbGVkIHRvIGdldCBwaHlcbiIpOwo+
+ICAJfQo+ICAKPiAtCWlmIChoZG1pLT5waHkpIHsKCm5pdDogYSBjb21tZW50IHdvdWxkIGJlIG5p
+Y2UgaGVyZS4gSS5lLiBoZG1pLT5waHkgYmVpbmcgYW4gb3BhcXVlIHBvaW50ZXIKc28gY2hlY2tp
+bmcgaGRtaS0+cGh5ICE9IE5VTEwgaXMgbm90IHBvc3NpYmxlLgoKV2l0aCB0aGF0IGJlaW5nIGEg
+ImdvYWwiLCBJIGFzc3VtZSB0aGF0IGluZm9ybWF0aW9uIGlzIG5vdCB3aWRlbHkgc3ByZWFkCnNv
+IHRoaXMgd291bGQgcHJldmVudCB0aGUgbmV4dCBkZXZlbG9wZXIgdHJ5aW5nIHRvIGNoYW5nZSBp
+dCBiYWNrIHRvCiJpZiAoaGRtaS0+cGh5KSIgd2hpbGUgdGhhdCBoYW5kbGluZyBjaGFuZ2UgdHJp
+Y2tsZXMgZG93bi4KCgphcGFydCBmcm9tIHRoYXQ6CgpSZXZpZXdlZC1ieTogSGVpa28gU3R1ZWJl
+ciA8aGVpa29Ac250ZWNoLmRlPgoKCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgt
+cGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
+YW4vbGlzdGluZm8vbGludXgtcGh5Cg==
