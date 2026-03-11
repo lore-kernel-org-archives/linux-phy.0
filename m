@@ -4,106 +4,106 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 88F971125838
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Mar 2026 14:14:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C13B7FD0651
+	for <linux-phy@archiver.kernel.org>; Wed, 11 Mar 2026 14:39:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b/qPdQkW8+2hIGhWGQHbuWLcAxTfBt5hRUtSMNb5hIo=; b=WCnouFqLomh7ht
-	MNgQSiFXTDCElfQ05oyjnW+K3WmSV+yukBtxnQtIw6aNxHfVGIO5RfNiIEKeWe7XCD0MXawn3wXlU
-	SvONCLjnXPayBni+CCHdJ55K1MxI8dsQy789bWFIJ5sGgrip6rLEfEey3Y6KoKZzVmFJQ3A1Ku7cl
-	CYCu0j4WOIx22lRHCer4V272fr2BA2EkYKwuUIrnJUATQB79eQG4FO7VF7DLQ1s+ovUd3qN3oxo21
-	mvZZfqMreEXM4xxma4GGOxQAzSF5O2oTrPk6QCDYC77esEhauWP6o48VbOg8MTBbCiIgMK21hJgks
-	uZn7tSNhyRVhlrK9Cgzw==;
+	List-Owner; bh=8QM/UGK1jeCXWlsJoBZemwubk8ob5Zqi826tfJ3snAA=; b=a7rH0IFq7x15Uq
+	3Z3YZoLkWH6EUApoMnBMHafxL5a0mfupLZsChn8TJ9MXc7zVjf3O7eLopj4UWTtMtGUxC+8vyT5mS
+	uIXLpxuGYPW1Qvqz/g1k+QtQ+vp5bGzcOdmfm8ORPj07IdQLlqHMGXcEVSL0UKtlVtTsAC9AAPH9x
+	CXgJOGRer0y9F4p9AxBU+564lFgc8jEphOUvDib+8TncnniYpWNgjq+0AsSyJ5EbmE7sp7AM9NcsE
+	0laBHH9scsnIlQ1J5ZxER0NEsCn/gcWnao2wWUF0r3LvXiI/g/2YatD9Erp2qYkLbXwVJgGIuUuzr
+	mrSBefa7mZ2Bn1s8fNmQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w0KKL-0000000Bgfg-2ohP;
-	Wed, 11 Mar 2026 14:14:21 +0000
-Received: from mail-ej1-f50.google.com ([209.85.218.50])
+	id 1w0Kiv-0000000Bio8-19xX;
+	Wed, 11 Mar 2026 14:39:45 +0000
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w0KKJ-0000000BgeS-0c9p
+	id 1w0Kit-0000000Bin9-24T8
 	for linux-phy@lists.infradead.org;
-	Wed, 11 Mar 2026 14:14:20 +0000
-Received: by mail-ej1-f50.google.com with SMTP id a640c23a62f3a-b942b36de08so190859766b.1
-        for <linux-phy@lists.infradead.org>; Wed, 11 Mar 2026 07:14:18 -0700 (PDT)
+	Wed, 11 Mar 2026 14:39:44 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+	s=mimecast20190719; t=1773239982;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=ScPnG58aqq2rKj5V4Ln0f95KwKGhklc24sWRuV/GqW8=;
+	b=GqJPhwRcQpChOsOvuUwDyRXcz2emDAZ7vVyaF7PfawtCUp8gaZXUqy/y+2aeasXFFc6hq0
+	9NMRhpy7g25JO1NpDniMgT+O6JFLfNQM8zre1n6zWwf2syjzb+ENADACW3jVtuszZMX/Ti
+	G5sBPfjw/oXCTzTysA7mRi41kVgU95I=
+Received: from mail-qk1-f200.google.com (mail-qk1-f200.google.com
+ [209.85.222.200]) by relay.mimecast.com with ESMTP with STARTTLS
+ (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
+ us-mta-652-p1I8a8rXMHKWewa4TyzKQg-1; Wed, 11 Mar 2026 10:39:41 -0400
+X-MC-Unique: p1I8a8rXMHKWewa4TyzKQg-1
+X-Mimecast-MFC-AGG-ID: p1I8a8rXMHKWewa4TyzKQg_1773239980
+Received: by mail-qk1-f200.google.com with SMTP id af79cd13be357-8cd77e5e187so2463137885a.1
+        for <linux-phy@lists.infradead.org>; Wed, 11 Mar 2026 07:39:41 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1773238457; x=1773843257;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=wIz9Fr5w5J45ZN4rxwvT/0kjXMGfLP1VpB2aKPOax7k=;
-        b=Lmyjv/v7c//p/QV3YK+qvLNVrHc7DjOif3ttWcKbOtGaVB3jnnU5rTlpScHDye9ffo
-         /MMZ7b4bExx2Vw2Xo7yrcjeNj9is3RUDtBRYTs0qclcACT1Mc8LEB05/msLj48WVhmwv
-         lEBUGJrtb7sJVK8nXBoke7SchZoovXOnTwE/ysGJHdi7s+FearZJ/CcwEm8k/4wNMmpQ
-         j+REIK+rZp7riK4gfW3AgQFJPasq67rYvZje7D496o3Y2CAlRJWIpxIiic5Tnee8HMUQ
-         MAfEEzmYuWZk8cz5LaRdURJY+9eK7JpQ4yZ59aDfq6/UzwW4eZpu7J+QTj0BO6LuC7hk
-         VW+g==
-X-Forwarded-Encrypted: i=1; AJvYcCVjABhNY/uqod2x4S4epjQpxSA/zXWPOGJU5uDPIfFKHlZ275t1REZ374vSyNxZFSoXZaFjMhJrTeU=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yyb5wVooXPCMuFD8qMK1y0S74Bvvjs04BbY5jhknrjR3STgiwwH
-	iCxrIa59wH08S0I1AOsfbYbqTaQ8MJ5Dzm0v8/PGh0qwouqI+ck0mlHrZPEayzBh9wnbzg==
-X-Gm-Gg: ATEYQzzH66jE3WRhiSwsOC368IkhmdypdoPymCcI3NXQ0DrSig9H4FFG54gwZjalLGc
-	+SJj8S48GrLWqXFk4ow/IZ06pzHZ5v2wwTpaVhwKA2tE1CXS8yuU5tRjATLmeBw0JYKWyjXxn/j
-	vMrcWeA0x85+OHjdcryyeYSMvd3sOWBpB3pBh2NCpbwzhK7bvl+VmCtnCdzfOPVGZM7Fiwi9IYP
-	nn2wGzBefyhbl/7G5byfySKrc+0+4qlNPurCKFmvb/tsyePkGaxvJp8UbGoj1ckinnUijVbbgOu
-	Y9XlqS5SIpRt9kcDV9i/GnYlddzpEXSVpyrsqm/9SCukPxX0P6lTksrkJXNUx4pkR8EIJpWqvLv
-	aad7FX9pNaKPY9p4UGSqM9Ik8YP/0pnTqw+C9Wu2y2IVrR77j55GWnXM0jCF8bq4xo/6lXpYpjZ
-	dK9x3meVyVMLcpXjw/72gN/9v6bBqrAeSrbBK+MC5t/wQrWtF2agNmmNPcqDTNdBgFGXUkeSA=
-X-Received: by 2002:a17:907:3fa2:b0:b93:6ab6:5b72 with SMTP id a640c23a62f3a-b9711851235mr484491266b.7.1773238456853;
-        Wed, 11 Mar 2026 07:14:16 -0700 (PDT)
-Received: from mail-ed1-f41.google.com (mail-ed1-f41.google.com. [209.85.208.41])
-        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-6631419b0e4sm620303a12.2.2026.03.11.07.14.15
-        for <linux-phy@lists.infradead.org>
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 11 Mar 2026 07:14:16 -0700 (PDT)
-Received: by mail-ed1-f41.google.com with SMTP id 4fb4d7f45d1cf-66174cf4549so2117697a12.0
-        for <linux-phy@lists.infradead.org>; Wed, 11 Mar 2026 07:14:15 -0700 (PDT)
-X-Forwarded-Encrypted: i=1; AJvYcCWn8Xx8UY2FbpbsOfj+z8tGscEwpwN9Yh1SOipSs8So203W1k2B2I4dXwwCCwA5asMZ/ei/A++90+o=@lists.infradead.org
-X-Received: by 2002:a17:907:6d16:b0:b88:4f25:81da with SMTP id
- a640c23a62f3a-b97113ff0b9mr462021166b.0.1773237981235; Wed, 11 Mar 2026
- 07:06:21 -0700 (PDT)
+        d=1e100.net; s=20230601; t=1773239980; x=1773844780;
+        h=user-agent:in-reply-to:content-disposition:mime-version:references
+         :message-id:subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to;
+        bh=ScPnG58aqq2rKj5V4Ln0f95KwKGhklc24sWRuV/GqW8=;
+        b=YkdXybOK3iKgWaFcqX0czDH+GJ8UKvRxhpX+XY8E4TLaOLpcIQvhf/JwZ1cP5VWqhc
+         og2hz+dwo9jwyFIZ5MAqbJW/loqBNaglrwjMIVtcFnvFNlU2eUP8sjOdBYU45sVk/ZCn
+         kCf5BGfZLN5FoC73APVps3kHieuDSk581UC4597GTAmWyzA9XG9ZIyb+rATytT7yiTNN
+         6tp7mvgJYo4qoa7oebrRwPXjeuddxijkLBc44vkqkPdQQEz0Jo6ZiI2ud+tY/G6zMxLs
+         6W9cJpTFn66bQICBH+6dqy7lIhelL1AgOt4SOsHGZd0XkComCvJb129OT/9pud9r6wA7
+         XuIQ==
+X-Forwarded-Encrypted: i=1; AJvYcCXqZhWUgaiqWdW+Kw5CK6UmI0gudKRTs/dpZ20DisjrBqm3byZXugDy+gg2KdDRTQVFRjq0AGHz1FU=@lists.infradead.org
+X-Gm-Message-State: AOJu0YySGN3REDuVjbbbsdS8xudHjKdgsH5AGtXRm67rNtG79zBP+5Qo
+	iWOMx4qBW88hdPTlmwAplj5Yoa6sNe/Cun2aD004LQxdmAlfejinzKPRFHYip6uPGGAW5UVI6kV
+	q6uCpHWRN+9ViZcUNA2CkdXEVqfI8qRibUMMPTxatEVbj2UynTe+vkBk56S8KR/Pnw0Q=
+X-Gm-Gg: ATEYQzxL03baWFwkp2vHJcBpC16mMoSgeQ+fZBKf0kH26/oS73VNMowfM+yNO9LZuK9
+	sFlWMJVKxJNwpXYyLM5QMy34mN+5rffQ18D50C2NqbbBPvohWZpdkKUXsrQq60QKug0HYSQc4BV
+	Y6GioFPUxru+Zb9WHHgBlc3BnXjibsMKyWFfZQP2PxGqjRHbp3qVDjJUmg5x88Y4AO2aVfhXSCg
+	8JuEeXdAmOTrkp3P0WNp4WlIFVjVoLDdZA6/MGLdivjVsPnQDyN2vmDa8/IbkeiX7T7VBzJKJ8P
+	OKubHVouw6x3DICzn7LTJkmXRTgomB6HzyRxWccavBHNxZy3JjJlkX2FVZnyIncTOJcm5m2yA91
+	N2sVDAyCkh4D2oiEGdCA2cQIKfBxUnQi8cHibs2AERNDRUhP40+FXvIy2
+X-Received: by 2002:a05:620a:468d:b0:8b3:14dc:4821 with SMTP id af79cd13be357-8cda193ebb9mr330790785a.3.1773239980360;
+        Wed, 11 Mar 2026 07:39:40 -0700 (PDT)
+X-Received: by 2002:a05:620a:468d:b0:8b3:14dc:4821 with SMTP id af79cd13be357-8cda193ebb9mr330787285a.3.1773239979887;
+        Wed, 11 Mar 2026 07:39:39 -0700 (PDT)
+Received: from redhat.com (c-73-183-52-120.hsd1.pa.comcast.net. [73.183.52.120])
+        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-89a65ce3924sm15069116d6.24.2026.03.11.07.39.37
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 11 Mar 2026 07:39:39 -0700 (PDT)
+Date: Wed, 11 Mar 2026 10:39:36 -0400
+From: Brian Masney <bmasney@redhat.com>
+To: Caleb James DeLisle <cjd@cjdns.fr>
+Cc: linux-mips@vger.kernel.org, naseefkm@gmail.com, mturquette@baylibre.com,
+	sboyd@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
+	conor+dt@kernel.org, tsbogend@alpha.franken.de,
+	ryder.lee@mediatek.com, jianjun.wang@mediatek.com,
+	lpieralisi@kernel.org, kwilczynski@kernel.org, mani@kernel.org,
+	bhelgaas@google.com, vkoul@kernel.org, neil.armstrong@linaro.org,
+	p.zabel@pengutronix.de, matthias.bgg@gmail.com,
+	angelogioacchino.delregno@collabora.com, nbd@nbd.name,
+	ansuelsmth@gmail.com, linux-clk@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-pci@vger.kernel.org, linux-mediatek@lists.infradead.org,
+	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH v2 2/8] clk: airoha: Add econet EN751221 clock/reset
+ support to en7523-scu
+Message-ID: <abF-qFC1Oa4dz-fh@redhat.com>
+References: <20260309131818.74467-1-cjd@cjdns.fr>
+ <20260309131818.74467-3-cjd@cjdns.fr>
 MIME-Version: 1.0
-References: <20260310-b4-is_err_or_null-v1-0-bd63b656022d@avm.de>
- <20260310-b4-is_err_or_null-v1-15-bd63b656022d@avm.de> <20260310100750.303af303@gandalf.local.home>
- <20260311141332.b611237d36b61b2409e66cb3@kernel.org> <20260311100332.6a2ce4b1@gandalf.local.home>
-In-Reply-To: <20260311100332.6a2ce4b1@gandalf.local.home>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Wed, 11 Mar 2026 15:06:07 +0100
-X-Gmail-Original-Message-ID: <CAMuHMdX4kRGLaKMzPuhS1Pmxh609eiqQW-cAS_jWBBbt-vE6SA@mail.gmail.com>
-X-Gm-Features: AaiRm53WEGMMLW4z34e7P-lM1qFvsCJGZ_o4JNL5NPWbhJPKmcqz6k9bJcyL--8
-Message-ID: <CAMuHMdX4kRGLaKMzPuhS1Pmxh609eiqQW-cAS_jWBBbt-vE6SA@mail.gmail.com>
-Subject: Re: [PATCH 15/61] trace: Prefer IS_ERR_OR_NULL over manual NULL check
-To: Steven Rostedt <rostedt@goodmis.org>
-Cc: "Masami Hiramatsu (Google)" <mhiramat@kernel.org>, Philipp Hahn <phahn-oss@avm.de>, amd-gfx@lists.freedesktop.org, 
-	apparmor@lists.ubuntu.com, bpf@vger.kernel.org, ceph-devel@vger.kernel.org, 
-	cocci@inria.fr, dm-devel@lists.linux.dev, dri-devel@lists.freedesktop.org, 
-	gfs2@lists.linux.dev, intel-gfx@lists.freedesktop.org, 
-	intel-wired-lan@lists.osuosl.org, iommu@lists.linux.dev, kvm@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-block@vger.kernel.org, 
-	linux-bluetooth@vger.kernel.org, linux-btrfs@vger.kernel.org, 
-	linux-cifs@vger.kernel.org, linux-clk@vger.kernel.org, 
-	linux-erofs@lists.ozlabs.org, linux-ext4@vger.kernel.org, 
-	linux-fsdevel@vger.kernel.org, linux-gpio@vger.kernel.org, 
-	linux-hyperv@vger.kernel.org, linux-input@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-leds@vger.kernel.org, 
-	linux-media@vger.kernel.org, linux-mips@vger.kernel.org, linux-mm@kvack.org, 
-	linux-modules@vger.kernel.org, linux-mtd@lists.infradead.org, 
-	linux-nfs@vger.kernel.org, linux-omap@vger.kernel.org, 
-	linux-phy@lists.infradead.org, linux-pm@vger.kernel.org, 
-	linux-rockchip@lists.infradead.org, linux-s390@vger.kernel.org, 
-	linux-scsi@vger.kernel.org, linux-sctp@vger.kernel.org, 
-	linux-security-module@vger.kernel.org, linux-sh@vger.kernel.org, 
-	linux-sound@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com, 
-	linux-trace-kernel@vger.kernel.org, linux-usb@vger.kernel.org, 
-	linux-wireless@vger.kernel.org, netdev@vger.kernel.org, ntfs3@lists.linux.dev, 
-	samba-technical@lists.samba.org, sched-ext@lists.linux.dev, 
-	target-devel@vger.kernel.org, tipc-discussion@lists.sourceforge.net, 
-	v9fs@lists.linux.dev, Mathieu Desnoyers <mathieu.desnoyers@efficios.com>
+In-Reply-To: <20260309131818.74467-3-cjd@cjdns.fr>
+User-Agent: Mutt/2.2.14 (2025-02-20)
+X-Mimecast-Spam-Score: 0
+X-Mimecast-MFC-PROC-ID: nb119iaiITKVDfQzidVRVkNK4HpLRlruNvz6AUvWdNo_1773239980
+X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260311_071419_199623_3536909D 
-X-CRM114-Status: GOOD (  20.76  )
+X-CRM114-CacheID: sfid-20260311_073943_682108_861B3699 
+X-CRM114-Status: GOOD (  33.52  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,37 +120,403 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Steven,
+Hi Caleb,
 
-On Wed, 11 Mar 2026 at 15:03, Steven Rostedt <rostedt@goodmis.org> wrote:
-> On Wed, 11 Mar 2026 14:13:32 +0900
-> Masami Hiramatsu (Google) <mhiramat@kernel.org> wrote:
->
-> > Hmm, now IS_ERR_OR_NULL() is an inline function, so it is safe.
-> > But if you want to use IS_ERR_OR_NULL() here, it will be better something like
-> >
-> > node = rhashtable_walk_next(&iter);
-> > while (!IS_ERR_OR_NULL(node)) {
-> >       fprobe_remove_node_in_module(mod, node, &alist);
-> >       node = rhashtable_walk_next(&iter);
-> > }
->
-> But now you need to have a duplicate code in order to acquire "node"
->
-> I think the patch just makes the code worse.
+On Mon, Mar 09, 2026 at 01:18:12PM +0000, Caleb James DeLisle wrote:
+> EcoNet EN751221 clock/reset driver is significantly similar to the
+> EN7523 / EN7581, however the EN751221 does not have a neat batch of clock
+> divider registers so there are fewer known clocks, and the frequency of
+> each clock is derived differently. This clock driver will probably work
+> correctly on EN751627, EN7528, and EN7580.
+> 
+> Signed-off-by: Caleb James DeLisle <cjd@cjdns.fr>
+> ---
+>  drivers/clk/Kconfig      |   6 +-
+>  drivers/clk/clk-en7523.c | 238 ++++++++++++++++++++++++++++++++++++++-
+>  2 files changed, 236 insertions(+), 8 deletions(-)
+> 
+> diff --git a/drivers/clk/Kconfig b/drivers/clk/Kconfig
+> index 3d803b4cf5c1..47df6073a72b 100644
+> --- a/drivers/clk/Kconfig
+> +++ b/drivers/clk/Kconfig
+> @@ -218,13 +218,13 @@ config COMMON_CLK_CS2000_CP
+>  	  If you say yes here you get support for the CS2000 clock multiplier.
+>  
+>  config COMMON_CLK_EN7523
+> -	bool "Clock driver for Airoha EN7523 SoC system clocks"
+> +	bool "Clock driver for Airoha/EcoNet SoC system clocks"
+>  	depends on OF
+> -	depends on ARCH_AIROHA || COMPILE_TEST
+> +	depends on ARCH_AIROHA || ECONET || COMPILE_TEST
+>  	default ARCH_AIROHA
+>  	help
+>  	  This driver provides the fixed clocks and gates present on Airoha
+> -	  ARM silicon.
+> +	  and EcoNet silicon.
+>  
+>  config COMMON_CLK_EP93XX
+>  	tristate "Clock driver for Cirrus Logic ep93xx SoC"
+> diff --git a/drivers/clk/clk-en7523.c b/drivers/clk/clk-en7523.c
+> index 08cc8e5acf43..f7bd7034cf7f 100644
+> --- a/drivers/clk/clk-en7523.c
+> +++ b/drivers/clk/clk-en7523.c
+> @@ -1,5 +1,6 @@
+>  // SPDX-License-Identifier: GPL-2.0-only
+>  
+> +#include <linux/bitfield.h>
+>  #include <linux/delay.h>
+>  #include <linux/clk-provider.h>
+>  #include <linux/io.h>
+> @@ -11,6 +12,8 @@
+>  #include <dt-bindings/clock/en7523-clk.h>
+>  #include <dt-bindings/reset/airoha,en7523-reset.h>
+>  #include <dt-bindings/reset/airoha,en7581-reset.h>
+> +#include <dt-bindings/clock/econet,en751221-scu.h>
+> +#include <dt-bindings/reset/econet,en751221-scu.h>
+>  
+>  #define RST_NR_PER_BANK			32
+>  
+> @@ -33,15 +36,49 @@
+>  #define   REG_RESET_CONTROL_PCIEHB	BIT(29)
+>  #define   REG_RESET_CONTROL_PCIE1	BIT(27)
+>  #define   REG_RESET_CONTROL_PCIE2	BIT(26)
+> +#define REG_HIR				0x064
+> +#define   REG_HIR_MASK			GENMASK(31, 16)
+>  /* EN7581 */
+>  #define REG_NP_SCU_PCIC			0x88
+>  #define REG_NP_SCU_SSTR			0x9c
+>  #define REG_PCIE_XSI0_SEL_MASK		GENMASK(14, 13)
+>  #define REG_PCIE_XSI1_SEL_MASK		GENMASK(12, 11)
+>  #define REG_CRYPTO_CLKSRC2		0x20c
+> +/* EN751221 */
+> +#define EN751221_REG_SPI_DIV		0x0cc
+> +#define EN751221_REG_SPI_DIV_MASK	GENMASK(31, 8)
+> +#define EN751221_SPI_BASE		500000000
+> +#define EN751221_SPI_BASE_EN7526C	400000000
+> +#define EN751221_REG_BUS		0x284
+> +#define EN751221_REG_BUS_MASK		GENMASK(21, 12)
+> +#define EN751221_REG_SSR3		0x094
+> +#define EN751221_REG_SSR3_GSW_MASK	GENMASK(9, 8)
+>  
+>  #define REG_RST_CTRL2			0x830
+>  #define REG_RST_CTRL1			0x834
+> +#define EN751221_REG_RST_DMT		0x84
+> +#define EN751221_REG_RST_USB		0xec
+> +
+> +#define EN751221_MAX_CLKS		6
+> +
+> +enum en_hir {
+> +	HIR_UNKNOWN	= -1,
+> +	HIR_TC3169	= 0,
+> +	HIR_TC3182	= 1,
+> +	HIR_RT65168	= 2,
+> +	HIR_RT63165	= 3,
+> +	HIR_RT63365	= 4,
+> +	HIR_MT751020	= 5,
+> +	HIR_MT7505	= 6,
+> +	HIR_EN751221	= 7,
+> +	HIR_EN7526C	= 8,
+> +	HIR_EN751627	= 9,
+> +	HIR_EN7580	= 10,
+> +	HIR_EN7528	= 11,
+> +	HIR_EN7523	= 12,
+> +	HIR_EN7581	= 13,
+> +	HIR_MAX		= 14,
+> +};
+>  
+>  struct en_clk_desc {
+>  	int id;
+> @@ -93,6 +130,8 @@ static const u32 bus7581_base[] = { 600000000, 540000000 };
+>  static const u32 npu7581_base[] = { 800000000, 750000000, 720000000, 600000000 };
+>  static const u32 crypto_base[] = { 540000000, 480000000 };
+>  static const u32 emmc7581_base[] = { 200000000, 150000000 };
+> +/* EN751221 */
+> +static const u32 gsw751221_base[] = { 500000000, 250000000, 400000000, 200000000 };
+>  
+>  static const struct en_clk_desc en7523_base_clks[] = {
+>  	{
+> @@ -300,6 +339,13 @@ static const u16 en7581_rst_ofs[] = {
+>  	REG_RST_CTRL1,
+>  };
+>  
+> +static const u16 en751221_rst_ofs[] = {
+> +	REG_RST_CTRL2,
+> +	REG_RST_CTRL1,
+> +	EN751221_REG_RST_DMT,
+> +	EN751221_REG_RST_USB,
+> +};
+> +
+>  static const u16 en7523_rst_map[] = {
+>  	/* RST_CTRL2 */
+>  	[EN7523_XPON_PHY_RST]		= 0,
+> @@ -405,8 +451,61 @@ static const u16 en7581_rst_map[] = {
+>  	[EN7581_XPON_MAC_RST]		= RST_NR_PER_BANK + 31,
+>  };
+>  
+> +static const u16 en751221_rst_map[] = {
+> +	/* RST_CTRL2 */
+> +	[EN751221_XPON_PHY_RST]		= 0,
+> +	[EN751221_GFAST_RST]		= 1,
+> +	[EN751221_CPU_TIMER2_RST]	= 2,
+> +	[EN751221_UART3_RST]		= 3,
+> +	[EN751221_UART4_RST]		= 4,
+> +	[EN751221_UART5_RST]		= 5,
+> +	[EN751221_I2C2_RST]		= 6,
+> +	[EN751221_XSI_MAC_RST]		= 7,
+> +	[EN751221_XSI_PHY_RST]		= 8,
+> +
+> +	/* RST_CTRL1 */
+> +	[EN751221_PCM1_ZSI_ISI_RST]	= RST_NR_PER_BANK + 0,
+> +	[EN751221_FE_QDMA1_RST]		= RST_NR_PER_BANK + 1,
+> +	[EN751221_FE_QDMA2_RST]		= RST_NR_PER_BANK + 2,
+> +	[EN751221_FE_UNZIP_RST]		= RST_NR_PER_BANK + 3,
+> +	[EN751221_PCM2_RST]		= RST_NR_PER_BANK + 4,
+> +	[EN751221_PTM_MAC_RST]		= RST_NR_PER_BANK + 5,
+> +	[EN751221_CRYPTO_RST]		= RST_NR_PER_BANK + 6,
+> +	[EN751221_SAR_RST]		= RST_NR_PER_BANK + 7,
+> +	[EN751221_TIMER_RST]		= RST_NR_PER_BANK + 8,
+> +	[EN751221_INTC_RST]		= RST_NR_PER_BANK + 9,
+> +	[EN751221_BONDING_RST]		= RST_NR_PER_BANK + 10,
+> +	[EN751221_PCM1_RST]		= RST_NR_PER_BANK + 11,
+> +	[EN751221_UART_RST]		= RST_NR_PER_BANK + 12,
+> +	[EN751221_GPIO_RST]		= RST_NR_PER_BANK + 13,
+> +	[EN751221_GDMA_RST]		= RST_NR_PER_BANK + 14,
+> +	[EN751221_I2C_MASTER_RST]	= RST_NR_PER_BANK + 16,
+> +	[EN751221_PCM2_ZSI_ISI_RST]	= RST_NR_PER_BANK + 17,
+> +	[EN751221_SFC_RST]		= RST_NR_PER_BANK + 18,
+> +	[EN751221_UART2_RST]		= RST_NR_PER_BANK + 19,
+> +	[EN751221_GDMP_RST]		= RST_NR_PER_BANK + 20,
+> +	[EN751221_FE_RST]		= RST_NR_PER_BANK + 21,
+> +	[EN751221_USB_HOST_P0_RST]	= RST_NR_PER_BANK + 22,
+> +	[EN751221_GSW_RST]		= RST_NR_PER_BANK + 23,
+> +	[EN751221_SFC2_PCM_RST]		= RST_NR_PER_BANK + 25,
+> +	[EN751221_PCIE0_RST]		= RST_NR_PER_BANK + 26,
+> +	[EN751221_PCIE1_RST]		= RST_NR_PER_BANK + 27,
+> +	[EN751221_CPU_TIMER_RST]	= RST_NR_PER_BANK + 28,
+> +	[EN751221_PCIE_HB_RST]		= RST_NR_PER_BANK + 29,
+> +	[EN751221_SIMIF_RST]		= RST_NR_PER_BANK + 30,
+> +	[EN751221_XPON_MAC_RST]		= RST_NR_PER_BANK + 31,
+> +
+> +	/* RST_DMT */
+> +	[EN751221_DMT_RST]		= 2 * RST_NR_PER_BANK + 0,
+> +
+> +	/* RST_USB */
+> +	[EN751221_USB_PHY_P0_RST]	= 3 * RST_NR_PER_BANK + 6,
+> +	[EN751221_USB_PHY_P1_RST]	= 3 * RST_NR_PER_BANK + 7,
+> +};
+> +
+>  static int en7581_reset_register(struct device *dev, void __iomem *base,
+> -				 const u16 *rst_map, int nr_resets);
+> +				 const u16 *rst_map, int nr_resets,
+> +				 const u16 *rst_reg_ofs);
+>  
+>  static u32 en7523_get_base_rate(const struct en_clk_desc *desc, u32 val)
+>  {
+> @@ -604,7 +703,8 @@ static int en7523_clk_hw_init(struct platform_device *pdev,
+>  	en7523_register_clocks(&pdev->dev, clk_data, base, np_base);
+>  
+>  	return en7581_reset_register(&pdev->dev, np_base, en7523_rst_map,
+> -				     ARRAY_SIZE(en7523_rst_map));
+> +				     ARRAY_SIZE(en7523_rst_map),
+> +				     en7581_rst_ofs);
 
-Obviously we need a new for_each_*() helper hiding all the gory internals?
+I assume the mix of en7523 and en7581 is ok here?
 
-Gr{oetje,eeting}s,
+>  }
+>  
+>  static void en7581_register_clocks(struct device *dev, struct clk_hw_onecell_data *clk_data,
+> @@ -705,7 +805,8 @@ static const struct reset_control_ops en7581_reset_ops = {
+>  };
+>  
+>  static int en7581_reset_register(struct device *dev, void __iomem *base,
+> -				 const u16 *rst_map, int nr_resets)
+> +				 const u16 *rst_map, int nr_resets,
+> +				 const u16 *rst_reg_ofs)
+>  {
+>  	struct en_rst_data *rst_data;
+>  
+> @@ -713,7 +814,7 @@ static int en7581_reset_register(struct device *dev, void __iomem *base,
+>  	if (!rst_data)
+>  		return -ENOMEM;
+>  
+> -	rst_data->bank_ofs = en7581_rst_ofs;
+> +	rst_data->bank_ofs = rst_reg_ofs;
+>  	rst_data->idx_map = rst_map;
+>  	rst_data->base = base;
+>  
+> @@ -752,7 +853,123 @@ static int en7581_clk_hw_init(struct platform_device *pdev,
+>  	writel(val | 3, base + REG_NP_SCU_PCIC);
+>  
+>  	return en7581_reset_register(&pdev->dev, base, en7581_rst_map,
+> -				     ARRAY_SIZE(en7581_rst_map));
+> +				     ARRAY_SIZE(en7581_rst_map),
+> +				     en7581_rst_ofs);
+> +}
+> +
+> +static enum en_hir get_hw_id(void __iomem *np_base)
+> +{
+> +	u32 val = FIELD_GET(REG_HIR_MASK, readl(np_base + REG_HIR));
+> +
+> +	if (val < HIR_MAX)
+> +		return (enum en_hir) val;
 
-                        Geert
+No space with the cast.
 
--- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+> +
+> +	return HIR_UNKNOWN;
+> +}
+> +
+> +static void en751221_try_register_clk(struct device *dev, int key,
+> +				      struct clk_hw_onecell_data *clk_data,
+> +				      const char *name, u32 rate)
+> +{
+> +	struct clk_hw *hw;
+> +
+> +	hw = clk_hw_register_fixed_rate(dev, name, NULL, 0, rate);
+> +	if (IS_ERR(hw) || key >= EN751221_MAX_CLKS)
+> +		pr_err("Failed to register clk %s: %pe\n", name, hw);
 
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+Is %pe correct in the case when key >= EN751221_MAX_CLKS?
+
+> +	else
+> +		clk_data->hws[key] = hw;
+
+Should the error code be returned here? I know the function has try in
+it's name, however if this fails, then it still registers it.
+
+> +}
+> +
+> +static void en751221_register_clocks(struct device *dev,
+> +				     struct clk_hw_onecell_data *clk_data,
+> +				     struct regmap *map, void __iomem *np_base)
+> +{
+> +	enum en_hir hid = get_hw_id(np_base);
+> +	struct clk_hw *hw;
+> +	u32 rate;
+> +	u32 div;
+> +	int err;
+> +
+> +	/* PCI */
+> +	hw = en7523_register_pcie_clk(dev, np_base);
+> +	clk_data->hws[EN751221_CLK_PCIE] = hw;
+> +
+> +	/* SPI */
+> +	rate = EN751221_SPI_BASE;
+> +	if (hid == HIR_EN7526C)
+> +		rate = EN751221_SPI_BASE_EN7526C;
+> +
+> +	err = regmap_read(map, EN751221_REG_SPI_DIV, &div);
+> +	if (err) {
+> +		pr_err("Failed reading fixed clk div %s: %d\n",
+> +		       "spi", err);
+> +	} else {
+> +		div = FIELD_GET(EN751221_REG_SPI_DIV_MASK, div) * 2;
+> +		if (!div)
+> +			div = 40;
+
+Should 40 be documented a little better with a #define?
+
+> +
+> +		en751221_try_register_clk(dev, EN751221_CLK_SPI, clk_data,
+> +					  "spi", rate / div);
+> +	}
+> +
+> +	/* BUS */
+> +	rate = FIELD_GET(EN751221_REG_BUS_MASK,
+> +			 readl(np_base + EN751221_REG_BUS));
+> +	rate *= 1000000;
+> +	en751221_try_register_clk(dev, EN751221_CLK_BUS, clk_data, "bus",
+> +				  rate);
+> +
+> +	/* CPU */
+> +	en751221_try_register_clk(dev, EN751221_CLK_CPU, clk_data, "cpu",
+> +				  rate * 4);
+> +
+> +	/* HPT */
+> +	switch (hid) {
+> +	case HIR_EN751221:
+> +	case HIR_EN751627:
+> +	case HIR_EN7526C:
+> +	case HIR_EN7580:
+> +	case HIR_EN7528:
+> +		rate = 200000000;
+> +		break;
+> +	case HIR_MT7505:
+> +		rate = 100000000;
+> +		break;
+> +	case HIR_MT751020:
+> +		rate = 800000000 / 3;
+> +		break;
+> +	default:
+> +		rate = 250000000;
+
+Should a warning be logged here or in get_hw_id() above? hid can be set
+to HIR_UNKNOWN here.
+
+> +	}
+> +	en751221_try_register_clk(dev, EN751221_CLK_HPT, clk_data, "hpt",
+> +				  rate);
+> +
+> +	/* GSW */
+> +	rate = FIELD_GET(EN751221_REG_SSR3_GSW_MASK,
+> +			 readl(np_base + EN751221_REG_SSR3));
+> +	en751221_try_register_clk(dev, EN751221_CLK_GSW, clk_data, "gsw",
+> +				  gsw751221_base[rate]);
+> +}
+> +
+> +static int en751221_clk_hw_init(struct platform_device *pdev,
+> +				struct clk_hw_onecell_data *clk_data)
+> +{
+> +	struct regmap *map;
+> +	void __iomem *base;
+> +
+> +	map = syscon_regmap_lookup_by_compatible("econet,en751221-chip-scu");
+> +	if (IS_ERR(map))
+> +		return PTR_ERR(map);
+> +
+> +	base = devm_platform_ioremap_resource(pdev, 0);
+> +	if (IS_ERR(base))
+> +		return PTR_ERR(base);
+> +
+> +	en751221_register_clocks(&pdev->dev, clk_data, map, base);
+
+Again, any reason why the error handling is missing here?
+
+Brian
+
+
+> +
+> +	return en7581_reset_register(&pdev->dev, base, en751221_rst_map,
+> +				     ARRAY_SIZE(en751221_rst_map),
+> +				     en751221_rst_ofs);
+>  }
+>  
+>  static int en7523_clk_probe(struct platform_device *pdev)
+> @@ -799,9 +1016,20 @@ static const struct en_clk_soc_data en7581_data = {
+>  	.hw_init = en7581_clk_hw_init,
+>  };
+>  
+> +static const struct en_clk_soc_data en751221_data = {
+> +	.num_clocks = EN751221_MAX_CLKS,
+> +	.pcie_ops = {
+> +		.is_enabled = en7523_pci_is_enabled,
+> +		.prepare = en7523_pci_prepare,
+> +		.unprepare = en7523_pci_unprepare,
+> +	},
+> +	.hw_init = en751221_clk_hw_init,
+> +};
+> +
+>  static const struct of_device_id of_match_clk_en7523[] = {
+>  	{ .compatible = "airoha,en7523-scu", .data = &en7523_data },
+>  	{ .compatible = "airoha,en7581-scu", .data = &en7581_data },
+> +	{ .compatible = "econet,en751221-scu", .data = &en751221_data },
+>  	{ /* sentinel */ }
+>  };
+>  
+> -- 
+> 2.39.5
+> 
+
 
 -- 
 linux-phy mailing list
