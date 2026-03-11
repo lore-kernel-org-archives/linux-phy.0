@@ -4,72 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F3FAEFD4F1D
-	for <linux-phy@archiver.kernel.org>; Tue, 10 Mar 2026 18:40:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B4C0EFD88D5
+	for <linux-phy@archiver.kernel.org>; Wed, 11 Mar 2026 00:16:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pQphGvJhHXrNOKnqpKOK0qMMkkSeSzhTl4yrWpLoSx0=; b=o34noH1LLFcA1A
-	1WgxYX9h+l0Fy8FgJJJUx4VeJaKXMn3zdvU8JMCIVJER6I8uHvtHUwtcUAE7F6bBMwPW8N5VhwzjP
-	mAIi1/+eA8C/GQn9DIb72AP5cAUkCjHxzydwPEUR/t1r88z3MYZBv8aPyQ5V896fYn6mhMCLnojOM
-	c0QlNUrIHh4JchrWagPqhUAwwL0w4Q2uwFxTTxKZDrPptCtLKQrTAxNfqPqPUJB7XGi2FkWKtV6aH
-	zsdMd/2Z+LE1gyfcwZjHdZFyCdrr521uJA9bH+gZLVlC7Kk1X4CH24ab0gMpGl9vBtbF2zpdEvKqJ
-	IsPR/XrpYQtSIAVekCAw==;
+	List-Owner; bh=dJzhd3iQpHxzFsJDfByanTCvnH1WdikBNfl3u/DWf0c=; b=baNkmi2knyt04c
+	Pw6lfJR+ycBJXK8YjBgWXtJMXlqOzcJrfx5lVwbrmNOXo09Kr/YNs6fV3eEkdBQWPDXp2GQOURySO
+	9gOgmqDLk+SDUalMEis5CYjqqGHTx6HpEwN4Mq88xoqPZVdyHuWxbfnOJdB92e6qf1SaUrVHYq1GB
+	A6aRNZ+b2unnOjLk0FlJ7cRNyDcilGCpRSsfGEH1+DIx3OSDmODeVUzBX7RLfoA9I/CM6EYSyL5J5
+	S3a5oSigKxwCVgoWYjsZrpLeTntGcBXaUT3NTkXwCOKnfv8NaxbgAuYTR362Tln/ClK/dGxiEFD8u
+	iwa9KXpj5K+ziobt5ohw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w020l-0000000A6Fq-31Y1;
-	Tue, 10 Mar 2026 18:40:55 +0000
-Received: from mail-pl1-x62d.google.com ([2607:f8b0:4864:20::62d])
+	id 1w07FX-0000000AQ36-1Mtw;
+	Wed, 11 Mar 2026 00:16:31 +0000
+Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w020h-0000000A6BH-1rNs
-	for linux-phy@lists.infradead.org;
-	Tue, 10 Mar 2026 18:40:54 +0000
-Received: by mail-pl1-x62d.google.com with SMTP id d9443c01a7336-2ae82df847bso30023695ad.2
-        for <linux-phy@lists.infradead.org>; Tue, 10 Mar 2026 11:40:50 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1773168050; x=1773772850; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=bjFZ9oZWWc3RZ4UdO5rq+AZbr7uPDX73K58gh1+yuH0=;
-        b=gtLybQfMSjecfKBaGNqaukRn3K/7o8JorJppIKNpCc+QM/VJDFJvQwwbooZQ9FcmwP
-         GCJvFN1msrobA2RnJ6du+aZ+7LE8i6/Pk9CnOufc1FiA/Ls9JTwqbiEwN0GiAlxEDCyW
-         7H7mM09xEr8SCiQcpLZ64RPaXO8aM0vVmSFf5Iw80b+sAnAm9XsVaGZVzWdCHJWBX+ib
-         /6nxmSb16ClMReUtBFSqlLUtXsyUxp9FlN1rO2Ktv660+THVRNhWB7k87ee+i1sMFwOr
-         JgIovHR0jlAXD5w0qlh76L4y4llZogMns7Q8v4LbegdO35xX29KypZYhSSLLNFLOppEI
-         Cy2w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1773168050; x=1773772850;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=bjFZ9oZWWc3RZ4UdO5rq+AZbr7uPDX73K58gh1+yuH0=;
-        b=YGNBe/PuaUUQwuZGxmKLxCE3e1ebzw8yR6t6+/Yx7eqcD2O9iB/yzZDh7KmAUBnIkU
-         bnkK8KHjFxXfNY63VqzHrss3yfuG7akdN+ElBMMk1iDBRsCUNohUKN6eF3siHqhgEp+p
-         sw6fS6HvImXyj5VaHJ0YefxXLpTeoynV0o6qMIqAuPOUFe/IqMaY/MZLgh+je55owj2d
-         NuWC41dLC0ptmN1izSQQroSUoGTrDRVi8+fwJzDyYV2hA+1uf24nqALy5G9c0Z6lOp+f
-         ibOKlpFQUDWh7hwe7vTT0FQwWKlQWnaqO2WK17crUpWN1as0Ow3ojm61puLTlYl6sNpS
-         y0gw==
-X-Forwarded-Encrypted: i=1; AJvYcCVkHECEO4RwbrBePxBSRgYntQBADgga28iG/p5h3HVO/QfkPF1i3cmeMHqeYtq1Z3ncxxm3/xI92ok=@lists.infradead.org
-X-Gm-Message-State: AOJu0Ywhl+XmgXyjD9MDVqd6eNSeVP290xg5RHmMtLzesj3pCHeVQfTt
-	Cp4zV6ztpBC8B6m/UXfsljNb6tnWBPPtSF1eDPnqxAJ6spT7eO4l9whQ
-X-Gm-Gg: ATEYQzzmqwY2N+nWtWyMPy6DrA0WmtFy88jPRZtG67Kze91Zdzzdr1ClnhEb7b/5If7
-	i+/7gILF7UtrwW1HoLhoP7xUwiOspkUTc2G+HQHZrGSVcbnX87nB6N7x/G4qN4BQ7Tqy8y3P3qj
-	x/tkZwiE0QQm/cQp9KCpOUNaIEVO6C6GYN5++taigODjRPzPlt4B9tOuJVifceFhKel9zoodggT
-	ntdjeaGkDli9MzMNFE+4u+1JsD5/0h4mVwnI5xCxXOvGDd5V5xR75LL1mGaEVa0G1m0STigYoB8
-	Wr8JMJYIrUGR65ZzIQSm7HldOcIo3XyISol5KZ5rtQhXX8vA8ZVJA+0+URjVKTo9sobVI0H/4yq
-	PUJcTlrA7iLjAQ3JIB2V8kt3x/V75z+HnhdXKInVChz9a4qX5FcV/8MWvp4R/YJdDM/z/wVVzu7
-	1mbi3Ap8BNbQSFEdS7z7ZRyJFmNvegJwoR9HomSr8YV76p8Q==
-X-Received: by 2002:a17:903:28c8:b0:2ae:5671:7071 with SMTP id d9443c01a7336-2ae8252cf0fmr96662285ad.43.1773168050081;
-        Tue, 10 Mar 2026 11:40:50 -0700 (PDT)
-Received: from google.com ([2402:7500:a44:85b:2953:97d3:b283:95c3])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2ae83e58592sm220535625ad.14.2026.03.10.11.40.38
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 10 Mar 2026 11:40:49 -0700 (PDT)
-Date: Wed, 11 Mar 2026 02:40:36 +0800
-From: Kuan-Wei Chiu <visitorckw@gmail.com>
+	id 1w07FS-0000000AQ1e-3Dfm;
+	Wed, 11 Mar 2026 00:16:28 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=G+5qjaihAOE3Wva2YLY8jATPGvyCa7CiJLk7V/SbO+c=; b=v5WQ+aGF0sps0WNhC7Zp3i4qfq
+	0Hb0SCVWpSXvSr7WdAe2bPHF4KfJ/Ed1eiaiCb8D0oCv1z5xwK7JuLf0tC0l8hY2t6eWn1tcNZSpg
+	QYrAEXTacs2n4b4dGxTmR/QZFsu7Xre8GI0M2CDH+d6uoN0gFUU9MJ/Uqp3GyqqaO1XmybhsS5lVz
+	KPXBqq6BLZCCQzpQ8jMEzm8MnKJZE/MMCDQxbCe0qlHGv5pHIS812K52VRhLCysEP1IhQjrayukQi
+	lGpFnxogge7mHLP+wP8QrSVC+xUyVfKJNzw96REdhpsHijJHvcSndISQsei/F/gJP6wWuF34GUcce
+	0I/0wllQ==;
+Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:55974)
+	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.98.2)
+	(envelope-from <linux@armlinux.org.uk>)
+	id 1w07FF-000000005dP-41aF;
+	Wed, 11 Mar 2026 00:16:14 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.98.2)
+	(envelope-from <linux@shell.armlinux.org.uk>)
+	id 1w07FB-000000005hj-1vhz;
+	Wed, 11 Mar 2026 00:16:09 +0000
+Date: Wed, 11 Mar 2026 00:16:09 +0000
+From: "Russell King (Oracle)" <linux@armlinux.org.uk>
 To: Philipp Hahn <phahn-oss@avm.de>
 Cc: amd-gfx@lists.freedesktop.org, apparmor@lists.ubuntu.com,
 	bpf@vger.kernel.org, ceph-devel@vger.kernel.org, cocci@inria.fr,
@@ -97,17 +77,35 @@ Cc: amd-gfx@lists.freedesktop.org, apparmor@lists.ubuntu.com,
 	linux-wireless@vger.kernel.org, netdev@vger.kernel.org,
 	ntfs3@lists.linux.dev, samba-technical@lists.samba.org,
 	sched-ext@lists.linux.dev, target-devel@vger.kernel.org,
-	tipc-discussion@lists.sourceforge.net, v9fs@lists.linux.dev
-Subject: Re: [PATCH 00/61] treewide: Use IS_ERR_OR_NULL over manual NULL
- check - refactor
-Message-ID: <abBlpGKO842B3yl9@google.com>
+	tipc-discussion@lists.sourceforge.net, v9fs@lists.linux.dev,
+	Igor Russkikh <irusskikh@marvell.com>,
+	Andrew Lunn <andrew+netdev@lunn.ch>,
+	"David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+	Pavan Chebbi <pavan.chebbi@broadcom.com>,
+	Michael Chan <mchan@broadcom.com>,
+	Potnuri Bharat Teja <bharat@chelsio.com>,
+	Tony Nguyen <anthony.l.nguyen@intel.com>,
+	Przemek Kitszel <przemyslaw.kitszel@intel.com>,
+	Taras Chornyi <taras.chornyi@plvision.eu>,
+	Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+	Alexandre Torgue <alexandre.torgue@foss.st.com>,
+	Iyappan Subramanian <iyappan@os.amperecomputing.com>,
+	Keyur Chudgar <keyur@os.amperecomputing.com>,
+	Quan Nguyen <quan@os.amperecomputing.com>,
+	Heiner Kallweit <hkallweit1@gmail.com>
+Subject: Re: [PATCH 38/61] net: Prefer IS_ERR_OR_NULL over manual NULL check
+Message-ID: <abC0Se_cstwTWp9r@shell.armlinux.org.uk>
 References: <20260310-b4-is_err_or_null-v1-0-bd63b656022d@avm.de>
+ <20260310-b4-is_err_or_null-v1-38-bd63b656022d@avm.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260310-b4-is_err_or_null-v1-0-bd63b656022d@avm.de>
+In-Reply-To: <20260310-b4-is_err_or_null-v1-38-bd63b656022d@avm.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260310_114051_514521_D3FBB68D 
-X-CRM114-Status: GOOD (  16.62  )
+X-CRM114-CacheID: sfid-20260310_171626_806591_1B8E99B4 
+X-CRM114-Status: UNSURE (   9.04  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,42 +122,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Philipp,
+On Tue, Mar 10, 2026 at 12:49:04PM +0100, Philipp Hahn wrote:
+> diff --git a/drivers/net/mdio/mdio-xgene.c b/drivers/net/mdio/mdio-xgene.c
+> index a8f91a4b7fed0927ee14e408000cd3a2bfb9b09a..09b30b563295c6085dc1358ac361301e5cf6b2a8 100644
+> --- a/drivers/net/mdio/mdio-xgene.c
+> +++ b/drivers/net/mdio/mdio-xgene.c
+> @@ -265,7 +265,7 @@ struct phy_device *xgene_enet_phy_register(struct mii_bus *bus, int phy_addr)
+>  	struct phy_device *phy_dev;
+>  
+>  	phy_dev = get_phy_device(bus, phy_addr, false);
+> -	if (!phy_dev || IS_ERR(phy_dev))
+> +	if (IS_ERR_OR_NULL(phy_dev))
 
-On Tue, Mar 10, 2026 at 12:48:26PM +0100, Philipp Hahn wrote:
-> While doing some static code analysis I stumbled over a common pattern,
-> where IS_ERR() is combined with a NULL check. For that there is
-> IS_ERR_OR_NULL().
-> 
-> I've written a Coccinelle patch to find and patch those instances.
-> The patches follow grouped by subsystem.
-> 
-> Patches 55-58 may be dropped as they have a (minor?) semantic change:
-> They use WARN_ON() or WARN_ON_ONCE(), but only in the IS_ERR() path, not
-> for the NULL check. Iff it is okay to print the warning also for NULL,
-> then the patches can be applied.
-> 
-> While generating the patch set `checkpatch` complained about mixing
-> [un]likely() with IS_ERR_OR_NULL(), which already uses likely()
-> internally. I found and fixed several locations, where that combination
-> has been used.
+As noted in reply to your cover message, the check for NULL here is
+incorrect - get_phy_device() returns either a valid pointer or an
+error pointer, but never NULL.
 
-Thanks for the patchset. However, I think we need a explanation for why
-switching to IS_ERR_OR_NULL() is an improvement over the existing code.
-
-IMHO, the necessity of IS_ERR_OR_NULL() often highlights a confusing or
-flawed API design. It usually implies that the caller is unsure whether
-a failure results in an error pointer or a NULL pointer. Rather than
-doing a treewide conversion of this pattern, I believe it would be much
-more meaningful to review these instances case-by-case and fix the
-underlying APIs or caller logic instead.
-
-Additionally, a treewide refactoring like this has the practical
-drawback of creating unnecessary merge conflicts when backporting to
-stable trees.
-
-Regards,
-Kuan-Wei
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTP is here! 80Mbps down 10Mbps up. Decent connectivity at last!
 
 -- 
 linux-phy mailing list
