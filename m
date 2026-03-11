@@ -4,86 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 779D1FD88FF
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Mar 2026 05:13:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 647CFFD064D
+	for <linux-phy@archiver.kernel.org>; Wed, 11 Mar 2026 07:42:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Message-Id:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Wmxs0SYz2fEBQ1ls/D9t3MYhNejrZA86GEH0jGy0t6o=; b=K4V3lJ9OcgFnKz
-	snUYP3wi4jzG9TVv7c9QFPyE5Wbrh8XJ/wHovU0vONXbdNirbql9ROVv1PLo2lBXIa3c1W125v3hj
-	PRpRku1TUnKUuJPp/H5xKiMwE+ojSf2U+EXnQOv8fyVgzrn9jku2DukC0ITgKiI/BxMWYyWMSPFmK
-	xlpDu2BDGbx93FhAszNWEBfL/yL2Kej/bk7hj8yWm5fw0qvG7zjZIhJjMtUOqqYz8R3NS+0B4/aXj
-	JaKrsOooTYEnJOuoOuhKhW16GU0IPfBTJwvn5Byv5dy95gEJtt7x3g8zwHYsiS7sIbMit5qZXGc04
-	vHNqqfYf0Vsh99PUvbng==;
+	List-Owner; bh=btvmrI1ocRKn/JlDllJj/jWIwLI0Av8DoQF+ZP+KYm0=; b=13lajzBK10pEgp
+	xT1KcUS3oSK+8XXR0jxKqBFTL9HDi3ULA/xA6Obb9lhf5DbwNR8ziA2+1dA0j/AarRLzYC8bbevmg
+	iN7iKIkejVpHq+55zbKAPYgReHm/8pWxF/+HAZSlkRhAakrM1a/fItt5OSsE+DL6DYLS10F5LGsSt
+	3E8eItFtJtulRFrJ72CY0haqpfFODH5SG+wcz14KB3C72cSkQeJ9gS6vjL7qUqVFfoaX8Jywwojkb
+	X+2wDEUJDVlbNvwZLSqlKNnAzUgcj6tM8SAByZo/dALFhX8qvL5dJtIstjEU8iXnDT59F9aygRBg8
+	yx+FuBew6L8OmSF3VqYw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w0BtC-0000000AlDJ-021b;
-	Wed, 11 Mar 2026 05:13:46 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1w0ECv-0000000B4im-3Rz5;
+	Wed, 11 Mar 2026 07:42:17 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w0Bt8-0000000AlCg-2K69;
-	Wed, 11 Mar 2026 05:13:43 +0000
+	id 1w0ECu-0000000B4iR-1Z1N
+	for linux-phy@lists.infradead.org;
+	Wed, 11 Mar 2026 07:42:16 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 8E663440BC;
-	Wed, 11 Mar 2026 05:13:40 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0B290C4CEF7;
-	Wed, 11 Mar 2026 05:13:33 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 6653F6014B;
+	Wed, 11 Mar 2026 07:42:15 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 652C0C4CEF7;
+	Wed, 11 Mar 2026 07:42:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1773206020;
-	bh=28by/08L5sQfVInnpnws13wBN8rSRzXkYuFZbXIDejE=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
-	b=fBD8jk+Az9XLzjQybetTno+W1ryvU+pJL+N7BKChPP4rEV9IYqgPEFF2K1MPy7V+I
-	 icuIUfL/Dg5/kgC+Hmy6YXnokVmu1zBps2v+geMH037tafu9KbfbPBt55PGuheVQJI
-	 z4qBbYgbztbgPszs8uOt3DWOo4BLsomiZb502AAVr8RGodlkXenJkrZoPQ7T4PM4Oz
-	 vrK0XegnvMjvVzXWSmVe1LK/JeGbm1OZeYQWd07yKlzuY4gn+/WuMImks+j3fST4ms
-	 212iplG27c78T1c+7zhxUp3BWeQ6jYmUF3g5aNFDkxAetR3pCSSickOn/0/x8U56nb
-	 McVwjAbkgnZAA==
-Date: Wed, 11 Mar 2026 14:13:32 +0900
-From: Masami Hiramatsu (Google) <mhiramat@kernel.org>
-To: Steven Rostedt <rostedt@goodmis.org>
-Cc: Philipp Hahn <phahn-oss@avm.de>, amd-gfx@lists.freedesktop.org,
- apparmor@lists.ubuntu.com, bpf@vger.kernel.org, ceph-devel@vger.kernel.org,
- cocci@inria.fr, dm-devel@lists.linux.dev, dri-devel@lists.freedesktop.org,
- gfs2@lists.linux.dev, intel-gfx@lists.freedesktop.org,
- intel-wired-lan@lists.osuosl.org, iommu@lists.linux.dev,
- kvm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-block@vger.kernel.org, linux-bluetooth@vger.kernel.org,
- linux-btrfs@vger.kernel.org, linux-cifs@vger.kernel.org,
- linux-clk@vger.kernel.org, linux-erofs@lists.ozlabs.org,
- linux-ext4@vger.kernel.org, linux-fsdevel@vger.kernel.org,
- linux-gpio@vger.kernel.org, linux-hyperv@vger.kernel.org,
- linux-input@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-leds@vger.kernel.org, linux-media@vger.kernel.org,
- linux-mips@vger.kernel.org, linux-mm@kvack.org,
- linux-modules@vger.kernel.org, linux-mtd@lists.infradead.org,
- linux-nfs@vger.kernel.org, linux-omap@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-pm@vger.kernel.org,
- linux-rockchip@lists.infradead.org, linux-s390@vger.kernel.org,
- linux-scsi@vger.kernel.org, linux-sctp@vger.kernel.org,
- linux-security-module@vger.kernel.org, linux-sh@vger.kernel.org,
- linux-sound@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
- linux-trace-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
- linux-wireless@vger.kernel.org, netdev@vger.kernel.org,
- ntfs3@lists.linux.dev, samba-technical@lists.samba.org,
- sched-ext@lists.linux.dev, target-devel@vger.kernel.org,
- tipc-discussion@lists.sourceforge.net, v9fs@lists.linux.dev, Masami
- Hiramatsu <mhiramat@kernel.org>, Mathieu Desnoyers
- <mathieu.desnoyers@efficios.com>
-Subject: Re: [PATCH 15/61] trace: Prefer IS_ERR_OR_NULL over manual NULL
- check
-Message-Id: <20260311141332.b611237d36b61b2409e66cb3@kernel.org>
-In-Reply-To: <20260310100750.303af303@gandalf.local.home>
-References: <20260310-b4-is_err_or_null-v1-0-bd63b656022d@avm.de>
-	<20260310-b4-is_err_or_null-v1-15-bd63b656022d@avm.de>
-	<20260310100750.303af303@gandalf.local.home>
-X-Mailer: Sylpheed 3.8.0beta1 (GTK+ 2.24.33; x86_64-pc-linux-gnu)
-Mime-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260310_221342_659258_AFDC25EB 
-X-CRM114-Status: GOOD (  21.31  )
+	s=k20201202; t=1773214935;
+	bh=QeLzGLF8CNjkYSPppK6zWOOzDKT7ad73s5qPIAspWWk=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=IaDeYa6HVLa5+Y+GeU4WjTVwOsw2dslf81mBsXvq4uvNyyVpVoQLS0E6dgtOZSR+z
+	 20OEJPhAX7rrfue/1OOZHoQPpiKzLp+h3m+/RaKNbFn/zcW4opLrFuZJrE46dO0wgS
+	 20AC+JAsRromrO84+WIlL2bXLxGjx3E+EwF/eZRLmXMT7nrJNxUELfuiZYj7yH4YdV
+	 pxx9T/NOF3BfiUwdw58jaYYcPxHvQ5T1IOPBxUfoe1IBi575PZmoA2Cf1rrPsqqfxy
+	 /xblIbH0T4EuLRcyX185vyZ93GjXW3yyhofcwCum6r49Iefw07Pm/jRQmzN4xDEzMj
+	 O1lVEbYwPD8iQ==
+Message-ID: <604e98e6-dd40-4b44-92c4-5164c02cb996@kernel.org>
+Date: Wed, 11 Mar 2026 07:42:08 +0000
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v8 05/10] nvmem: qcom-spmi-sdam: Migrate to
+ devm_spmi_subdevice_alloc_and_add()
+To: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+ jic23@kernel.org
+Cc: dlechner@baylibre.com, nuno.sa@analog.com, andy@kernel.org,
+ arnd@arndb.de, gregkh@linuxfoundation.org, srini@kernel.org,
+ vkoul@kernel.org, neil.armstrong@linaro.org, sre@kernel.org,
+ sboyd@kernel.org, krzk@kernel.org, dmitry.baryshkov@oss.qualcomm.com,
+ quic_wcheng@quicinc.com, melody.olvera@oss.qualcomm.com,
+ quic_nsekar@quicinc.com, ivo.ivanov.ivanov1@gmail.com, abelvesa@kernel.org,
+ luca.weiss@fairphone.com, konrad.dybcio@oss.qualcomm.com,
+ mitltlatltl@gmail.com, krishna.kurapati@oss.qualcomm.com,
+ linux-arm-msm@vger.kernel.org, linux-iio@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-pm@vger.kernel.org, kernel@collabora.com
+References: <20260114092742.13231-1-angelogioacchino.delregno@collabora.com>
+ <20260114092742.13231-6-angelogioacchino.delregno@collabora.com>
+Content-Language: en-US
+From: Srinivas Kandagatla <srini@kernel.org>
+In-Reply-To: <20260114092742.13231-6-angelogioacchino.delregno@collabora.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,96 +82,153 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, 10 Mar 2026 10:07:50 -0400
-Steven Rostedt <rostedt@goodmis.org> wrote:
-
-> On Tue, 10 Mar 2026 12:48:41 +0100
-> Philipp Hahn <phahn-oss@avm.de> wrote:
-> 
-> > Prefer using IS_ERR_OR_NULL() over using IS_ERR() and a manual NULL
-> > check.
-> 
-> Why?
-> 
-> > 
-> > Change generated with coccinelle.
-> > 
-> > To: Steven Rostedt <rostedt@goodmis.org>
-> > To: Masami Hiramatsu <mhiramat@kernel.org>
-> > To: Mathieu Desnoyers <mathieu.desnoyers@efficios.com>
-> > Cc: linux-kernel@vger.kernel.org
-> > Cc: linux-trace-kernel@vger.kernel.org
-> > Signed-off-by: Philipp Hahn <phahn-oss@avm.de>
-> > ---
-> >  kernel/trace/fprobe.c                | 2 +-
-> >  kernel/trace/kprobe_event_gen_test.c | 2 +-
-> >  kernel/trace/trace_events_hist.c     | 2 +-
-> >  3 files changed, 3 insertions(+), 3 deletions(-)
-> > 
-> > diff --git a/kernel/trace/fprobe.c b/kernel/trace/fprobe.c
-> > index dcadf1d23b8a31f571392d0c49cbd22df1716b4f..a94ce810d83b90f55d1178a9bd29c78fd068df4c 100644
-> > --- a/kernel/trace/fprobe.c
-> > +++ b/kernel/trace/fprobe.c
-> > @@ -607,7 +607,7 @@ static int fprobe_module_callback(struct notifier_block *nb,
-> >  	do {
-> >  		rhashtable_walk_start(&iter);
-> >  
-> > -		while ((node = rhashtable_walk_next(&iter)) && !IS_ERR(node))
-> > +		while (!IS_ERR_OR_NULL((node = rhashtable_walk_next(&iter))))
-> 
-> Ug, No!
-> 
-> That looks so much worse than the original.
-
-Hmm, now IS_ERR_OR_NULL() is an inline function, so it is safe.
-But if you want to use IS_ERR_OR_NULL() here, it will be better something like
-
-node = rhashtable_walk_next(&iter);
-while (!IS_ERR_OR_NULL(node)) {
-	fprobe_remove_node_in_module(mod, node, &alist);
-	node = rhashtable_walk_next(&iter);
-}
-
-Thanks,
-
-> 
-> -- Steve
-> 
-> >  			fprobe_remove_node_in_module(mod, node, &alist);
-> >  
-> >  		rhashtable_walk_stop(&iter);
-> > diff --git a/kernel/trace/kprobe_event_gen_test.c b/kernel/trace/kprobe_event_gen_test.c
-> > index 5a4b722b50451bfdee42769a6d3be39c055690d1..a1735ca273f0b756aa1fcfcdab30ddad9bc51c5f 100644
-> > --- a/kernel/trace/kprobe_event_gen_test.c
-> > +++ b/kernel/trace/kprobe_event_gen_test.c
-> > @@ -75,7 +75,7 @@ static struct trace_event_file *gen_kretprobe_test;
-> >  
-> >  static bool trace_event_file_is_valid(struct trace_event_file *input)
-> >  {
-> > -	return input && !IS_ERR(input);
-> > +	return !IS_ERR_OR_NULL(input);
-> >  }
-> >  
-> >  /*
-> > diff --git a/kernel/trace/trace_events_hist.c b/kernel/trace/trace_events_hist.c
-> > index 73ea180cad555898693e92ee397a1c9493c7c167..59df215e1dfd9349eca1c0823ed709ec7285f766 100644
-> > --- a/kernel/trace/trace_events_hist.c
-> > +++ b/kernel/trace/trace_events_hist.c
-> > @@ -3973,7 +3973,7 @@ trace_action_create_field_var(struct hist_trigger_data *hist_data,
-> >  	 */
-> >  	field_var = create_target_field_var(hist_data, system, event, var);
-> >  
-> > -	if (field_var && !IS_ERR(field_var)) {
-> > +	if (!IS_ERR_OR_NULL(field_var)) {
-> >  		save_field_var(hist_data, field_var);
-> >  		hist_field = field_var->var;
-> >  	} else {
-> > 
-> 
 
 
--- 
-Masami Hiramatsu (Google) <mhiramat@kernel.org>
+On 1/14/26 9:27 AM, AngeloGioacchino Del Regno wrote:
+> Some Qualcomm PMICs integrate a SDAM device, internally located in
+> a specific address range reachable through SPMI communication.
+> 
+> Instead of using the parent SPMI device (the main PMIC) as a kind
+> of syscon in this driver, register a new SPMI sub-device for SDAM
+> and initialize its own regmap with this sub-device's specific base
+> address, retrieved from the devicetree.
+> 
+> This allows to stop manually adding the register base address to
+> every R/W call in this driver, as this can be, and is now, handled
+> by the regmap API instead.
+> 
+> Reviewed-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+> Tested-by: Neil Armstrong <neil.armstrong@linaro.org> # on SM8650-QRD
+> Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+> ---
+
+Am not sure what is the merge strategy, if you want me to take it via
+nvmem tree, please let me know otherwise
+
+
+Acked-by: Srinivas Kandagatla <srini@kernel.org>
+
+
+--srini
+>  drivers/nvmem/Kconfig          |  1 +
+>  drivers/nvmem/qcom-spmi-sdam.c | 38 +++++++++++++++++++++++-----------
+>  2 files changed, 27 insertions(+), 12 deletions(-)
+> 
+> diff --git a/drivers/nvmem/Kconfig b/drivers/nvmem/Kconfig
+> index bf47a982cf62..5e924c869e77 100644
+> --- a/drivers/nvmem/Kconfig
+> +++ b/drivers/nvmem/Kconfig
+> @@ -368,6 +368,7 @@ config NVMEM_SNVS_LPGPR
+>  config NVMEM_SPMI_SDAM
+>  	tristate "SPMI SDAM Support"
+>  	depends on SPMI
+> +	select REGMAP_SPMI
+>  	help
+>  	  This driver supports the Shared Direct Access Memory Module on
+>  	  Qualcomm Technologies, Inc. PMICs. It provides the clients
+> diff --git a/drivers/nvmem/qcom-spmi-sdam.c b/drivers/nvmem/qcom-spmi-sdam.c
+> index 4f1cca6eab71..4974105dd963 100644
+> --- a/drivers/nvmem/qcom-spmi-sdam.c
+> +++ b/drivers/nvmem/qcom-spmi-sdam.c
+> @@ -9,6 +9,7 @@
+>  #include <linux/nvmem-provider.h>
+>  #include <linux/platform_device.h>
+>  #include <linux/regmap.h>
+> +#include <linux/spmi.h>
+>  
+>  #define SDAM_MEM_START			0x40
+>  #define REGISTER_MAP_ID			0x40
+> @@ -20,7 +21,6 @@
+>  struct sdam_chip {
+>  	struct regmap			*regmap;
+>  	struct nvmem_config		sdam_config;
+> -	unsigned int			base;
+>  	unsigned int			size;
+>  };
+>  
+> @@ -73,7 +73,7 @@ static int sdam_read(void *priv, unsigned int offset, void *val,
+>  		return -EINVAL;
+>  	}
+>  
+> -	rc = regmap_bulk_read(sdam->regmap, sdam->base + offset, val, bytes);
+> +	rc = regmap_bulk_read(sdam->regmap, offset, val, bytes);
+>  	if (rc < 0)
+>  		dev_err(dev, "Failed to read SDAM offset %#x len=%zd, rc=%d\n",
+>  						offset, bytes, rc);
+> @@ -100,7 +100,7 @@ static int sdam_write(void *priv, unsigned int offset, void *val,
+>  		return -EINVAL;
+>  	}
+>  
+> -	rc = regmap_bulk_write(sdam->regmap, sdam->base + offset, val, bytes);
+> +	rc = regmap_bulk_write(sdam->regmap, offset, val, bytes);
+>  	if (rc < 0)
+>  		dev_err(dev, "Failed to write SDAM offset %#x len=%zd, rc=%d\n",
+>  						offset, bytes, rc);
+> @@ -110,8 +110,17 @@ static int sdam_write(void *priv, unsigned int offset, void *val,
+>  
+>  static int sdam_probe(struct platform_device *pdev)
+>  {
+> +	struct regmap_config sdam_regmap_config = {
+> +		.reg_bits = 16,
+> +		.val_bits = 8,
+> +		.max_register = 0xff,
+> +		.fast_io = true,
+> +	};
+>  	struct sdam_chip *sdam;
+>  	struct nvmem_device *nvmem;
+> +	struct spmi_device *sparent;
+> +	struct spmi_subdevice *sub_sdev;
+> +	struct device *dev = &pdev->dev;
+>  	unsigned int val;
+>  	int rc;
+>  
+> @@ -119,19 +128,23 @@ static int sdam_probe(struct platform_device *pdev)
+>  	if (!sdam)
+>  		return -ENOMEM;
+>  
+> -	sdam->regmap = dev_get_regmap(pdev->dev.parent, NULL);
+> -	if (!sdam->regmap) {
+> -		dev_err(&pdev->dev, "Failed to get regmap handle\n");
+> -		return -ENXIO;
+> -	}
+> +	sparent = to_spmi_device(dev->parent);
+> +	sub_sdev = devm_spmi_subdevice_alloc_and_add(dev, sparent);
+> +	if (IS_ERR(sub_sdev))
+> +		return PTR_ERR(sub_sdev);
+>  
+> -	rc = of_property_read_u32(pdev->dev.of_node, "reg", &sdam->base);
+> +	rc = device_property_read_u32(dev, "reg", &sdam_regmap_config.reg_base);
+>  	if (rc < 0) {
+> -		dev_err(&pdev->dev, "Failed to get SDAM base, rc=%d\n", rc);
+> +		dev_err(dev, "Failed to get SDAM base, rc=%d\n", rc);
+>  		return -EINVAL;
+>  	}
+>  
+> -	rc = regmap_read(sdam->regmap, sdam->base + SDAM_SIZE, &val);
+> +	sdam->regmap = devm_regmap_init_spmi_ext(&sub_sdev->sdev, &sdam_regmap_config);
+> +	if (IS_ERR(sdam->regmap))
+> +		return dev_err_probe(dev, PTR_ERR(sdam->regmap),
+> +				     "Failed to get regmap handle\n");
+> +
+> +	rc = regmap_read(sdam->regmap, SDAM_SIZE, &val);
+>  	if (rc < 0) {
+>  		dev_err(&pdev->dev, "Failed to read SDAM_SIZE rc=%d\n", rc);
+>  		return -EINVAL;
+> @@ -159,7 +172,7 @@ static int sdam_probe(struct platform_device *pdev)
+>  	}
+>  	dev_dbg(&pdev->dev,
+>  		"SDAM base=%#x size=%u registered successfully\n",
+> -		sdam->base, sdam->size);
+> +		sdam_regmap_config.reg_base, sdam->size);
+>  
+>  	return 0;
+>  }
+> @@ -181,3 +194,4 @@ module_platform_driver(sdam_driver);
+>  
+>  MODULE_DESCRIPTION("QCOM SPMI SDAM driver");
+>  MODULE_LICENSE("GPL v2");
+> +MODULE_IMPORT_NS("SPMI");
+
 
 -- 
 linux-phy mailing list
