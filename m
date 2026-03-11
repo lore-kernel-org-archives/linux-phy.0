@@ -4,106 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C13B7FD0651
-	for <linux-phy@archiver.kernel.org>; Wed, 11 Mar 2026 14:39:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5584B1125842
+	for <linux-phy@archiver.kernel.org>; Wed, 11 Mar 2026 15:13:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:Subject:References:Cc:
+	To:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8QM/UGK1jeCXWlsJoBZemwubk8ob5Zqi826tfJ3snAA=; b=a7rH0IFq7x15Uq
-	3Z3YZoLkWH6EUApoMnBMHafxL5a0mfupLZsChn8TJ9MXc7zVjf3O7eLopj4UWTtMtGUxC+8vyT5mS
-	uIXLpxuGYPW1Qvqz/g1k+QtQ+vp5bGzcOdmfm8ORPj07IdQLlqHMGXcEVSL0UKtlVtTsAC9AAPH9x
-	CXgJOGRer0y9F4p9AxBU+564lFgc8jEphOUvDib+8TncnniYpWNgjq+0AsSyJ5EbmE7sp7AM9NcsE
-	0laBHH9scsnIlQ1J5ZxER0NEsCn/gcWnao2wWUF0r3LvXiI/g/2YatD9Erp2qYkLbXwVJgGIuUuzr
-	mrSBefa7mZ2Bn1s8fNmQ==;
+	List-Owner; bh=M/m0/xvVLcY8V3/+oiUUerpF2ubwr5MAftH7GN+DqQo=; b=gUVK7p2kYRaaqI
+	VDN8sjKOKCelZzynIZ3aSiUU1jp4xGE3Ysr/e4fYl8AUiw4bXI74fjsr7yc4YQPNADL8zxeHdJi16
+	7m4cg1woonZLW6QlZiTFDFKvvaPexjq2/HZXsNhxLVHTzt4HTe4+aC0yyAtQ4ZnEVz9TGvSj36hnf
+	/DFkrsO3uMI1BWXvj1mO4BzlYB8JTyfz9IgM787wx2QALv9tjjH8ZM5ksPiK3PM47pVryjl2xCxT0
+	lp0YAW3XTisM1q50kcqDDQCllZCeemW4g1l2KrW3yl0CLL/bKgSgAl06ks04yTKav7ZtAmxU38Ji+
+	UR+toc9rtNvfjWIptbdQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w0Kiv-0000000Bio8-19xX;
-	Wed, 11 Mar 2026 14:39:45 +0000
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
+	id 1w0LFj-0000000Blyq-3oMa;
+	Wed, 11 Mar 2026 15:13:39 +0000
+Received: from mout.web.de ([212.227.15.4])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w0Kit-0000000Bin9-24T8
-	for linux-phy@lists.infradead.org;
-	Wed, 11 Mar 2026 14:39:44 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1773239982;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=ScPnG58aqq2rKj5V4Ln0f95KwKGhklc24sWRuV/GqW8=;
-	b=GqJPhwRcQpChOsOvuUwDyRXcz2emDAZ7vVyaF7PfawtCUp8gaZXUqy/y+2aeasXFFc6hq0
-	9NMRhpy7g25JO1NpDniMgT+O6JFLfNQM8zre1n6zWwf2syjzb+ENADACW3jVtuszZMX/Ti
-	G5sBPfjw/oXCTzTysA7mRi41kVgU95I=
-Received: from mail-qk1-f200.google.com (mail-qk1-f200.google.com
- [209.85.222.200]) by relay.mimecast.com with ESMTP with STARTTLS
- (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
- us-mta-652-p1I8a8rXMHKWewa4TyzKQg-1; Wed, 11 Mar 2026 10:39:41 -0400
-X-MC-Unique: p1I8a8rXMHKWewa4TyzKQg-1
-X-Mimecast-MFC-AGG-ID: p1I8a8rXMHKWewa4TyzKQg_1773239980
-Received: by mail-qk1-f200.google.com with SMTP id af79cd13be357-8cd77e5e187so2463137885a.1
-        for <linux-phy@lists.infradead.org>; Wed, 11 Mar 2026 07:39:41 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1773239980; x=1773844780;
-        h=user-agent:in-reply-to:content-disposition:mime-version:references
-         :message-id:subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=ScPnG58aqq2rKj5V4Ln0f95KwKGhklc24sWRuV/GqW8=;
-        b=YkdXybOK3iKgWaFcqX0czDH+GJ8UKvRxhpX+XY8E4TLaOLpcIQvhf/JwZ1cP5VWqhc
-         og2hz+dwo9jwyFIZ5MAqbJW/loqBNaglrwjMIVtcFnvFNlU2eUP8sjOdBYU45sVk/ZCn
-         kCf5BGfZLN5FoC73APVps3kHieuDSk581UC4597GTAmWyzA9XG9ZIyb+rATytT7yiTNN
-         6tp7mvgJYo4qoa7oebrRwPXjeuddxijkLBc44vkqkPdQQEz0Jo6ZiI2ud+tY/G6zMxLs
-         6W9cJpTFn66bQICBH+6dqy7lIhelL1AgOt4SOsHGZd0XkComCvJb129OT/9pud9r6wA7
-         XuIQ==
-X-Forwarded-Encrypted: i=1; AJvYcCXqZhWUgaiqWdW+Kw5CK6UmI0gudKRTs/dpZ20DisjrBqm3byZXugDy+gg2KdDRTQVFRjq0AGHz1FU=@lists.infradead.org
-X-Gm-Message-State: AOJu0YySGN3REDuVjbbbsdS8xudHjKdgsH5AGtXRm67rNtG79zBP+5Qo
-	iWOMx4qBW88hdPTlmwAplj5Yoa6sNe/Cun2aD004LQxdmAlfejinzKPRFHYip6uPGGAW5UVI6kV
-	q6uCpHWRN+9ViZcUNA2CkdXEVqfI8qRibUMMPTxatEVbj2UynTe+vkBk56S8KR/Pnw0Q=
-X-Gm-Gg: ATEYQzxL03baWFwkp2vHJcBpC16mMoSgeQ+fZBKf0kH26/oS73VNMowfM+yNO9LZuK9
-	sFlWMJVKxJNwpXYyLM5QMy34mN+5rffQ18D50C2NqbbBPvohWZpdkKUXsrQq60QKug0HYSQc4BV
-	Y6GioFPUxru+Zb9WHHgBlc3BnXjibsMKyWFfZQP2PxGqjRHbp3qVDjJUmg5x88Y4AO2aVfhXSCg
-	8JuEeXdAmOTrkp3P0WNp4WlIFVjVoLDdZA6/MGLdivjVsPnQDyN2vmDa8/IbkeiX7T7VBzJKJ8P
-	OKubHVouw6x3DICzn7LTJkmXRTgomB6HzyRxWccavBHNxZy3JjJlkX2FVZnyIncTOJcm5m2yA91
-	N2sVDAyCkh4D2oiEGdCA2cQIKfBxUnQi8cHibs2AERNDRUhP40+FXvIy2
-X-Received: by 2002:a05:620a:468d:b0:8b3:14dc:4821 with SMTP id af79cd13be357-8cda193ebb9mr330790785a.3.1773239980360;
-        Wed, 11 Mar 2026 07:39:40 -0700 (PDT)
-X-Received: by 2002:a05:620a:468d:b0:8b3:14dc:4821 with SMTP id af79cd13be357-8cda193ebb9mr330787285a.3.1773239979887;
-        Wed, 11 Mar 2026 07:39:39 -0700 (PDT)
-Received: from redhat.com (c-73-183-52-120.hsd1.pa.comcast.net. [73.183.52.120])
-        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-89a65ce3924sm15069116d6.24.2026.03.11.07.39.37
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 11 Mar 2026 07:39:39 -0700 (PDT)
-Date: Wed, 11 Mar 2026 10:39:36 -0400
-From: Brian Masney <bmasney@redhat.com>
-To: Caleb James DeLisle <cjd@cjdns.fr>
-Cc: linux-mips@vger.kernel.org, naseefkm@gmail.com, mturquette@baylibre.com,
-	sboyd@kernel.org, robh@kernel.org, krzk+dt@kernel.org,
-	conor+dt@kernel.org, tsbogend@alpha.franken.de,
-	ryder.lee@mediatek.com, jianjun.wang@mediatek.com,
-	lpieralisi@kernel.org, kwilczynski@kernel.org, mani@kernel.org,
-	bhelgaas@google.com, vkoul@kernel.org, neil.armstrong@linaro.org,
-	p.zabel@pengutronix.de, matthias.bgg@gmail.com,
-	angelogioacchino.delregno@collabora.com, nbd@nbd.name,
-	ansuelsmth@gmail.com, linux-clk@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-pci@vger.kernel.org, linux-mediatek@lists.infradead.org,
-	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH v2 2/8] clk: airoha: Add econet EN751221 clock/reset
- support to en7523-scu
-Message-ID: <abF-qFC1Oa4dz-fh@redhat.com>
-References: <20260309131818.74467-1-cjd@cjdns.fr>
- <20260309131818.74467-3-cjd@cjdns.fr>
+	id 1w0LFg-0000000Blxy-0rzg;
+	Wed, 11 Mar 2026 15:13:38 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=web.de;
+	s=s29768273; t=1773241960; x=1773846760; i=markus.elfring@web.de;
+	bh=giiOm4nN20bJPCHKicALa9KbdO4HtuSxDT6eKFGA2mo=;
+	h=X-UI-Sender-Class:Message-ID:Date:MIME-Version:To:Cc:References:
+	 Subject:From:In-Reply-To:Content-Type:Content-Transfer-Encoding:
+	 cc:content-transfer-encoding:content-type:date:from:message-id:
+	 mime-version:reply-to:subject:to;
+	b=Wag9Fxf+yNYQPXsTRyON3wRt6746M7liQFpZpr6olBI3Hroz514SMRate1mi9Xg/
+	 MIASsdEYNcunoz8/0486PBcCtmiUbXpXZk7SZ9UfEjg2yZ/tPzswVOTPVBMcMOZI0
+	 P5tpvgiKmN/AWRSyt4QzAOeFSzOnPlGV7COlz4Px5LChMrnWVtTVF6O0hgI7HspJ9
+	 ZFokJK/ysEIyBkMx8vWGA+V0bsSD1FiKNQpHbXMbvGQ3/XnE4gJZFGitvxFp9Ukqq
+	 G2o9A+gT473BGTVzhrJiV0v2XUcnMqFfYGkufDQuk2aN8veffUebr4e9kMFhtnu0/
+	 59bsB5DtXuFN3mqFBA==
+X-UI-Sender-Class: 814a7b36-bfc1-4dae-8640-3722d8ec6cd6
+Received: from client.hidden.invalid by smtp.web.de (mrweb006
+ [213.165.67.108]) with ESMTPSA (Nemesis) id 1N9cHJ-1vWLef0wrt-00vzxd; Wed, 11
+ Mar 2026 16:12:40 +0100
+Message-ID: <e6145c17-64ce-494e-a41a-c847df3d999e@web.de>
+Date: Wed, 11 Mar 2026 16:12:34 +0100
 MIME-Version: 1.0
-In-Reply-To: <20260309131818.74467-3-cjd@cjdns.fr>
-User-Agent: Mutt/2.2.14 (2025-02-20)
-X-Mimecast-Spam-Score: 0
-X-Mimecast-MFC-PROC-ID: nb119iaiITKVDfQzidVRVkNK4HpLRlruNvz6AUvWdNo_1773239980
-X-Mimecast-Originator: redhat.com
-Content-Disposition: inline
+User-Agent: Mozilla Thunderbird
+To: Philipp Hahn <phahn-oss@avm.de>, cocci@inria.fr,
+ Julia Lawall <Julia.Lawall@inria.fr>, Nicolas Palix <nicolas.palix@imag.fr>
+Cc: amd-gfx@lists.freedesktop.org, apparmor@lists.ubuntu.com,
+ bpf@vger.kernel.org, ceph-devel@vger.kernel.org, dm-devel@lists.linux.dev,
+ dri-devel@lists.freedesktop.org, gfs2@lists.linux.dev,
+ intel-gfx@lists.freedesktop.org, intel-wired-lan@lists.osuosl.org,
+ iommu@lists.linux.dev, kvm@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-block@vger.kernel.org,
+ linux-bluetooth@vger.kernel.org, linux-btrfs@vger.kernel.org,
+ linux-cifs@vger.kernel.org, linux-clk@vger.kernel.org,
+ linux-erofs@lists.ozlabs.org, linux-ext4@vger.kernel.org,
+ linux-fsdevel@vger.kernel.org, linux-gpio@vger.kernel.org,
+ linux-hyperv@vger.kernel.org, linux-input@vger.kernel.org,
+ linux-leds@vger.kernel.org, linux-media@vger.kernel.org,
+ linux-mips@vger.kernel.org, linux-mm@kvack.org,
+ linux-modules@vger.kernel.org, linux-mtd@lists.infradead.org,
+ linux-nfs@vger.kernel.org, linux-omap@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-pm@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, linux-s390@vger.kernel.org,
+ linux-scsi@vger.kernel.org, linux-sctp@vger.kernel.org,
+ linux-security-module@vger.kernel.org, linux-sh@vger.kernel.org,
+ linux-sound@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ linux-trace-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
+ linux-wireless@vger.kernel.org, netdev@vger.kernel.org,
+ ntfs3@lists.linux.dev, samba-technical@lists.samba.org,
+ sched-ext@lists.linux.dev, target-devel@vger.kernel.org,
+ tipc-discussion@lists.sourceforge.net, v9fs@lists.linux.dev,
+ LKML <linux-kernel@vger.kernel.org>
+References: <20260310-b4-is_err_or_null-v1-1-bd63b656022d@avm.de>
+Subject: Re: [PATCH 01/61] Coccinelle: Prefer IS_ERR_OR_NULL over manual NULL
+ check
+Content-Language: en-GB, de-DE
+From: Markus Elfring <Markus.Elfring@web.de>
+In-Reply-To: <20260310-b4-is_err_or_null-v1-1-bd63b656022d@avm.de>
+X-Provags-ID: V03:K1:8uNlJJTAs0E3eVrueF6w+kamgZld8V5k307BMa2qc/KwhoVrne3
+ cPN5KceT1D2i5YOSNggwsPxOs655cWyte1CKlNlBLyuH93VGvstvy+ggV5GDmk4PUMu8Iwj
+ lIBpLLqKBgo7uQxQM9uBZQLnvS5wa1t6ITQ23zK6Z5KinOA9Ud5Ss1etUILA/92IsKQJLWt
+ MbIOhZYtTIg4ZGnA6bYYw==
+UI-OutboundReport: notjunk:1;M01:P0:JCtAJ/zNjOI=;sDWY82KXUVoSud92r84ZXuFAtv9 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 tJ2F8GMFz7+S2uTh+G9X
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260311_073943_682108_861B3699 
-X-CRM114-Status: GOOD (  33.52  )
+X-CRM114-CacheID: sfid-20260311_081336_529503_9228D97F 
+X-CRM114-Status: UNSURE (   3.49  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,410 +102,26 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Caleb,
-
-On Mon, Mar 09, 2026 at 01:18:12PM +0000, Caleb James DeLisle wrote:
-> EcoNet EN751221 clock/reset driver is significantly similar to the
-> EN7523 / EN7581, however the EN751221 does not have a neat batch of clock
-> divider registers so there are fewer known clocks, and the frequency of
-> each clock is derived differently. This clock driver will probably work
-> correctly on EN751627, EN7528, and EN7580.
-> 
-> Signed-off-by: Caleb James DeLisle <cjd@cjdns.fr>
-> ---
->  drivers/clk/Kconfig      |   6 +-
->  drivers/clk/clk-en7523.c | 238 ++++++++++++++++++++++++++++++++++++++-
->  2 files changed, 236 insertions(+), 8 deletions(-)
-> 
-> diff --git a/drivers/clk/Kconfig b/drivers/clk/Kconfig
-> index 3d803b4cf5c1..47df6073a72b 100644
-> --- a/drivers/clk/Kconfig
-> +++ b/drivers/clk/Kconfig
-> @@ -218,13 +218,13 @@ config COMMON_CLK_CS2000_CP
->  	  If you say yes here you get support for the CS2000 clock multiplier.
->  
->  config COMMON_CLK_EN7523
-> -	bool "Clock driver for Airoha EN7523 SoC system clocks"
-> +	bool "Clock driver for Airoha/EcoNet SoC system clocks"
->  	depends on OF
-> -	depends on ARCH_AIROHA || COMPILE_TEST
-> +	depends on ARCH_AIROHA || ECONET || COMPILE_TEST
->  	default ARCH_AIROHA
->  	help
->  	  This driver provides the fixed clocks and gates present on Airoha
-> -	  ARM silicon.
-> +	  and EcoNet silicon.
->  
->  config COMMON_CLK_EP93XX
->  	tristate "Clock driver for Cirrus Logic ep93xx SoC"
-> diff --git a/drivers/clk/clk-en7523.c b/drivers/clk/clk-en7523.c
-> index 08cc8e5acf43..f7bd7034cf7f 100644
-> --- a/drivers/clk/clk-en7523.c
-> +++ b/drivers/clk/clk-en7523.c
-> @@ -1,5 +1,6 @@
->  // SPDX-License-Identifier: GPL-2.0-only
->  
-> +#include <linux/bitfield.h>
->  #include <linux/delay.h>
->  #include <linux/clk-provider.h>
->  #include <linux/io.h>
-> @@ -11,6 +12,8 @@
->  #include <dt-bindings/clock/en7523-clk.h>
->  #include <dt-bindings/reset/airoha,en7523-reset.h>
->  #include <dt-bindings/reset/airoha,en7581-reset.h>
-> +#include <dt-bindings/clock/econet,en751221-scu.h>
-> +#include <dt-bindings/reset/econet,en751221-scu.h>
->  
->  #define RST_NR_PER_BANK			32
->  
-> @@ -33,15 +36,49 @@
->  #define   REG_RESET_CONTROL_PCIEHB	BIT(29)
->  #define   REG_RESET_CONTROL_PCIE1	BIT(27)
->  #define   REG_RESET_CONTROL_PCIE2	BIT(26)
-> +#define REG_HIR				0x064
-> +#define   REG_HIR_MASK			GENMASK(31, 16)
->  /* EN7581 */
->  #define REG_NP_SCU_PCIC			0x88
->  #define REG_NP_SCU_SSTR			0x9c
->  #define REG_PCIE_XSI0_SEL_MASK		GENMASK(14, 13)
->  #define REG_PCIE_XSI1_SEL_MASK		GENMASK(12, 11)
->  #define REG_CRYPTO_CLKSRC2		0x20c
-> +/* EN751221 */
-> +#define EN751221_REG_SPI_DIV		0x0cc
-> +#define EN751221_REG_SPI_DIV_MASK	GENMASK(31, 8)
-> +#define EN751221_SPI_BASE		500000000
-> +#define EN751221_SPI_BASE_EN7526C	400000000
-> +#define EN751221_REG_BUS		0x284
-> +#define EN751221_REG_BUS_MASK		GENMASK(21, 12)
-> +#define EN751221_REG_SSR3		0x094
-> +#define EN751221_REG_SSR3_GSW_MASK	GENMASK(9, 8)
->  
->  #define REG_RST_CTRL2			0x830
->  #define REG_RST_CTRL1			0x834
-> +#define EN751221_REG_RST_DMT		0x84
-> +#define EN751221_REG_RST_USB		0xec
-> +
-> +#define EN751221_MAX_CLKS		6
-> +
-> +enum en_hir {
-> +	HIR_UNKNOWN	= -1,
-> +	HIR_TC3169	= 0,
-> +	HIR_TC3182	= 1,
-> +	HIR_RT65168	= 2,
-> +	HIR_RT63165	= 3,
-> +	HIR_RT63365	= 4,
-> +	HIR_MT751020	= 5,
-> +	HIR_MT7505	= 6,
-> +	HIR_EN751221	= 7,
-> +	HIR_EN7526C	= 8,
-> +	HIR_EN751627	= 9,
-> +	HIR_EN7580	= 10,
-> +	HIR_EN7528	= 11,
-> +	HIR_EN7523	= 12,
-> +	HIR_EN7581	= 13,
-> +	HIR_MAX		= 14,
-> +};
->  
->  struct en_clk_desc {
->  	int id;
-> @@ -93,6 +130,8 @@ static const u32 bus7581_base[] = { 600000000, 540000000 };
->  static const u32 npu7581_base[] = { 800000000, 750000000, 720000000, 600000000 };
->  static const u32 crypto_base[] = { 540000000, 480000000 };
->  static const u32 emmc7581_base[] = { 200000000, 150000000 };
-> +/* EN751221 */
-> +static const u32 gsw751221_base[] = { 500000000, 250000000, 400000000, 200000000 };
->  
->  static const struct en_clk_desc en7523_base_clks[] = {
->  	{
-> @@ -300,6 +339,13 @@ static const u16 en7581_rst_ofs[] = {
->  	REG_RST_CTRL1,
->  };
->  
-> +static const u16 en751221_rst_ofs[] = {
-> +	REG_RST_CTRL2,
-> +	REG_RST_CTRL1,
-> +	EN751221_REG_RST_DMT,
-> +	EN751221_REG_RST_USB,
-> +};
-> +
->  static const u16 en7523_rst_map[] = {
->  	/* RST_CTRL2 */
->  	[EN7523_XPON_PHY_RST]		= 0,
-> @@ -405,8 +451,61 @@ static const u16 en7581_rst_map[] = {
->  	[EN7581_XPON_MAC_RST]		= RST_NR_PER_BANK + 31,
->  };
->  
-> +static const u16 en751221_rst_map[] = {
-> +	/* RST_CTRL2 */
-> +	[EN751221_XPON_PHY_RST]		= 0,
-> +	[EN751221_GFAST_RST]		= 1,
-> +	[EN751221_CPU_TIMER2_RST]	= 2,
-> +	[EN751221_UART3_RST]		= 3,
-> +	[EN751221_UART4_RST]		= 4,
-> +	[EN751221_UART5_RST]		= 5,
-> +	[EN751221_I2C2_RST]		= 6,
-> +	[EN751221_XSI_MAC_RST]		= 7,
-> +	[EN751221_XSI_PHY_RST]		= 8,
-> +
-> +	/* RST_CTRL1 */
-> +	[EN751221_PCM1_ZSI_ISI_RST]	= RST_NR_PER_BANK + 0,
-> +	[EN751221_FE_QDMA1_RST]		= RST_NR_PER_BANK + 1,
-> +	[EN751221_FE_QDMA2_RST]		= RST_NR_PER_BANK + 2,
-> +	[EN751221_FE_UNZIP_RST]		= RST_NR_PER_BANK + 3,
-> +	[EN751221_PCM2_RST]		= RST_NR_PER_BANK + 4,
-> +	[EN751221_PTM_MAC_RST]		= RST_NR_PER_BANK + 5,
-> +	[EN751221_CRYPTO_RST]		= RST_NR_PER_BANK + 6,
-> +	[EN751221_SAR_RST]		= RST_NR_PER_BANK + 7,
-> +	[EN751221_TIMER_RST]		= RST_NR_PER_BANK + 8,
-> +	[EN751221_INTC_RST]		= RST_NR_PER_BANK + 9,
-> +	[EN751221_BONDING_RST]		= RST_NR_PER_BANK + 10,
-> +	[EN751221_PCM1_RST]		= RST_NR_PER_BANK + 11,
-> +	[EN751221_UART_RST]		= RST_NR_PER_BANK + 12,
-> +	[EN751221_GPIO_RST]		= RST_NR_PER_BANK + 13,
-> +	[EN751221_GDMA_RST]		= RST_NR_PER_BANK + 14,
-> +	[EN751221_I2C_MASTER_RST]	= RST_NR_PER_BANK + 16,
-> +	[EN751221_PCM2_ZSI_ISI_RST]	= RST_NR_PER_BANK + 17,
-> +	[EN751221_SFC_RST]		= RST_NR_PER_BANK + 18,
-> +	[EN751221_UART2_RST]		= RST_NR_PER_BANK + 19,
-> +	[EN751221_GDMP_RST]		= RST_NR_PER_BANK + 20,
-> +	[EN751221_FE_RST]		= RST_NR_PER_BANK + 21,
-> +	[EN751221_USB_HOST_P0_RST]	= RST_NR_PER_BANK + 22,
-> +	[EN751221_GSW_RST]		= RST_NR_PER_BANK + 23,
-> +	[EN751221_SFC2_PCM_RST]		= RST_NR_PER_BANK + 25,
-> +	[EN751221_PCIE0_RST]		= RST_NR_PER_BANK + 26,
-> +	[EN751221_PCIE1_RST]		= RST_NR_PER_BANK + 27,
-> +	[EN751221_CPU_TIMER_RST]	= RST_NR_PER_BANK + 28,
-> +	[EN751221_PCIE_HB_RST]		= RST_NR_PER_BANK + 29,
-> +	[EN751221_SIMIF_RST]		= RST_NR_PER_BANK + 30,
-> +	[EN751221_XPON_MAC_RST]		= RST_NR_PER_BANK + 31,
-> +
-> +	/* RST_DMT */
-> +	[EN751221_DMT_RST]		= 2 * RST_NR_PER_BANK + 0,
-> +
-> +	/* RST_USB */
-> +	[EN751221_USB_PHY_P0_RST]	= 3 * RST_NR_PER_BANK + 6,
-> +	[EN751221_USB_PHY_P1_RST]	= 3 * RST_NR_PER_BANK + 7,
-> +};
-> +
->  static int en7581_reset_register(struct device *dev, void __iomem *base,
-> -				 const u16 *rst_map, int nr_resets);
-> +				 const u16 *rst_map, int nr_resets,
-> +				 const u16 *rst_reg_ofs);
->  
->  static u32 en7523_get_base_rate(const struct en_clk_desc *desc, u32 val)
->  {
-> @@ -604,7 +703,8 @@ static int en7523_clk_hw_init(struct platform_device *pdev,
->  	en7523_register_clocks(&pdev->dev, clk_data, base, np_base);
->  
->  	return en7581_reset_register(&pdev->dev, np_base, en7523_rst_map,
-> -				     ARRAY_SIZE(en7523_rst_map));
-> +				     ARRAY_SIZE(en7523_rst_map),
-> +				     en7581_rst_ofs);
-
-I assume the mix of en7523 and en7581 is ok here?
-
->  }
->  
->  static void en7581_register_clocks(struct device *dev, struct clk_hw_onecell_data *clk_data,
-> @@ -705,7 +805,8 @@ static const struct reset_control_ops en7581_reset_ops = {
->  };
->  
->  static int en7581_reset_register(struct device *dev, void __iomem *base,
-> -				 const u16 *rst_map, int nr_resets)
-> +				 const u16 *rst_map, int nr_resets,
-> +				 const u16 *rst_reg_ofs)
->  {
->  	struct en_rst_data *rst_data;
->  
-> @@ -713,7 +814,7 @@ static int en7581_reset_register(struct device *dev, void __iomem *base,
->  	if (!rst_data)
->  		return -ENOMEM;
->  
-> -	rst_data->bank_ofs = en7581_rst_ofs;
-> +	rst_data->bank_ofs = rst_reg_ofs;
->  	rst_data->idx_map = rst_map;
->  	rst_data->base = base;
->  
-> @@ -752,7 +853,123 @@ static int en7581_clk_hw_init(struct platform_device *pdev,
->  	writel(val | 3, base + REG_NP_SCU_PCIC);
->  
->  	return en7581_reset_register(&pdev->dev, base, en7581_rst_map,
-> -				     ARRAY_SIZE(en7581_rst_map));
-> +				     ARRAY_SIZE(en7581_rst_map),
-> +				     en7581_rst_ofs);
-> +}
-> +
-> +static enum en_hir get_hw_id(void __iomem *np_base)
-> +{
-> +	u32 val = FIELD_GET(REG_HIR_MASK, readl(np_base + REG_HIR));
-> +
-> +	if (val < HIR_MAX)
-> +		return (enum en_hir) val;
-
-No space with the cast.
-
-> +
-> +	return HIR_UNKNOWN;
-> +}
-> +
-> +static void en751221_try_register_clk(struct device *dev, int key,
-> +				      struct clk_hw_onecell_data *clk_data,
-> +				      const char *name, u32 rate)
-> +{
-> +	struct clk_hw *hw;
-> +
-> +	hw = clk_hw_register_fixed_rate(dev, name, NULL, 0, rate);
-> +	if (IS_ERR(hw) || key >= EN751221_MAX_CLKS)
-> +		pr_err("Failed to register clk %s: %pe\n", name, hw);
-
-Is %pe correct in the case when key >= EN751221_MAX_CLKS?
-
-> +	else
-> +		clk_data->hws[key] = hw;
-
-Should the error code be returned here? I know the function has try in
-it's name, however if this fails, then it still registers it.
-
-> +}
-> +
-> +static void en751221_register_clocks(struct device *dev,
-> +				     struct clk_hw_onecell_data *clk_data,
-> +				     struct regmap *map, void __iomem *np_base)
-> +{
-> +	enum en_hir hid = get_hw_id(np_base);
-> +	struct clk_hw *hw;
-> +	u32 rate;
-> +	u32 div;
-> +	int err;
-> +
-> +	/* PCI */
-> +	hw = en7523_register_pcie_clk(dev, np_base);
-> +	clk_data->hws[EN751221_CLK_PCIE] = hw;
-> +
-> +	/* SPI */
-> +	rate = EN751221_SPI_BASE;
-> +	if (hid == HIR_EN7526C)
-> +		rate = EN751221_SPI_BASE_EN7526C;
-> +
-> +	err = regmap_read(map, EN751221_REG_SPI_DIV, &div);
-> +	if (err) {
-> +		pr_err("Failed reading fixed clk div %s: %d\n",
-> +		       "spi", err);
-> +	} else {
-> +		div = FIELD_GET(EN751221_REG_SPI_DIV_MASK, div) * 2;
-> +		if (!div)
-> +			div = 40;
-
-Should 40 be documented a little better with a #define?
-
-> +
-> +		en751221_try_register_clk(dev, EN751221_CLK_SPI, clk_data,
-> +					  "spi", rate / div);
-> +	}
-> +
-> +	/* BUS */
-> +	rate = FIELD_GET(EN751221_REG_BUS_MASK,
-> +			 readl(np_base + EN751221_REG_BUS));
-> +	rate *= 1000000;
-> +	en751221_try_register_clk(dev, EN751221_CLK_BUS, clk_data, "bus",
-> +				  rate);
-> +
-> +	/* CPU */
-> +	en751221_try_register_clk(dev, EN751221_CLK_CPU, clk_data, "cpu",
-> +				  rate * 4);
-> +
-> +	/* HPT */
-> +	switch (hid) {
-> +	case HIR_EN751221:
-> +	case HIR_EN751627:
-> +	case HIR_EN7526C:
-> +	case HIR_EN7580:
-> +	case HIR_EN7528:
-> +		rate = 200000000;
-> +		break;
-> +	case HIR_MT7505:
-> +		rate = 100000000;
-> +		break;
-> +	case HIR_MT751020:
-> +		rate = 800000000 / 3;
-> +		break;
-> +	default:
-> +		rate = 250000000;
-
-Should a warning be logged here or in get_hw_id() above? hid can be set
-to HIR_UNKNOWN here.
-
-> +	}
-> +	en751221_try_register_clk(dev, EN751221_CLK_HPT, clk_data, "hpt",
-> +				  rate);
-> +
-> +	/* GSW */
-> +	rate = FIELD_GET(EN751221_REG_SSR3_GSW_MASK,
-> +			 readl(np_base + EN751221_REG_SSR3));
-> +	en751221_try_register_clk(dev, EN751221_CLK_GSW, clk_data, "gsw",
-> +				  gsw751221_base[rate]);
-> +}
-> +
-> +static int en751221_clk_hw_init(struct platform_device *pdev,
-> +				struct clk_hw_onecell_data *clk_data)
-> +{
-> +	struct regmap *map;
-> +	void __iomem *base;
-> +
-> +	map = syscon_regmap_lookup_by_compatible("econet,en751221-chip-scu");
-> +	if (IS_ERR(map))
-> +		return PTR_ERR(map);
-> +
-> +	base = devm_platform_ioremap_resource(pdev, 0);
-> +	if (IS_ERR(base))
-> +		return PTR_ERR(base);
-> +
-> +	en751221_register_clocks(&pdev->dev, clk_data, map, base);
-
-Again, any reason why the error handling is missing here?
-
-Brian
-
-
-> +
-> +	return en7581_reset_register(&pdev->dev, base, en751221_rst_map,
-> +				     ARRAY_SIZE(en751221_rst_map),
-> +				     en751221_rst_ofs);
->  }
->  
->  static int en7523_clk_probe(struct platform_device *pdev)
-> @@ -799,9 +1016,20 @@ static const struct en_clk_soc_data en7581_data = {
->  	.hw_init = en7581_clk_hw_init,
->  };
->  
-> +static const struct en_clk_soc_data en751221_data = {
-> +	.num_clocks = EN751221_MAX_CLKS,
-> +	.pcie_ops = {
-> +		.is_enabled = en7523_pci_is_enabled,
-> +		.prepare = en7523_pci_prepare,
-> +		.unprepare = en7523_pci_unprepare,
-> +	},
-> +	.hw_init = en751221_clk_hw_init,
-> +};
-> +
->  static const struct of_device_id of_match_clk_en7523[] = {
->  	{ .compatible = "airoha,en7523-scu", .data = &en7523_data },
->  	{ .compatible = "airoha,en7581-scu", .data = &en7581_data },
-> +	{ .compatible = "econet,en751221-scu", .data = &en751221_data },
->  	{ /* sentinel */ }
->  };
->  
-> -- 
-> 2.39.5
-> 
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+4oCmCj4gKy8vIENvbmZpZGVuY2U6IEhpZ2gKClNvbWUgY29udHJpYnV0b3JzIHByZXNlbnRlZCBk
+aXNjZXJuaW5nIGNvbW1lbnRzIGZvciB0aGlzIGNoYW5nZSBhcHByb2FjaC4KVGh1cyBJIGJlY2Ft
+ZSBhbHNvIGN1cmlvdXMgaG93IG11Y2ggdGhleSBjYW4gZXZlbnR1YWxseSBiZSB0YWtlbiBiZXR0
+ZXIgaW50byBhY2NvdW50CmJ5IHRoZSBtZWFucyBvZiB0aGUgc2VtYW50aWMgcGF0Y2ggbGFuZ3Vh
+Z2UgKENvY2NpbmVsbGUgc29mdHdhcmUpLgoK4oCmCitAcDEgZGVwZW5kcyBvbiBwYXRjaEAKK2V4
+cHJlc3Npb24gRTsKK0BACisoCj4gKy0JRSAhPSBOVUxMICYmICFJU19FUlIoRSkKPiArKwkhSVNf
+RVJSX09SX05VTEwoRSkKPiArfAo+ICstCUUgPT0gTlVMTCB8fCBJU19FUlIoRSkKPiArKwlJU19F
+UlJfT1JfTlVMTChFKQo+ICt8Cj4gKy0JIUlTX0VSUihFKSAmJiBFICE9IE5VTEwKPiArKwkhSVNf
+RVJSX09SX05VTEwoRSkKPiArfAo+ICstCUlTX0VSUihFKSB8fCBFID09IE5VTEwKPiArKwlJU19F
+UlJfT1JfTlVMTChFKQo+ICspCgpTZXZlcmFsIGRldGVjdGVkIGV4cHJlc3Npb25zIHNob3VsZCBy
+ZWZlciB0byByZXR1cm4gdmFsdWVzIGZyb20gZnVuY3Rpb24gY2FsbHMuCmh0dHBzOi8vZW4ud2lr
+aXBlZGlhLm9yZy93aWtpL1JldHVybl9zdGF0ZW1lbnQKCiogRG8gYW55IGRldmVsb3BtZW50IGNo
+YWxsZW5nZXMgaGluZGVyIHN0aWxsIHRoZSBkZXRlcm1pbmF0aW9uIG9mIGNvcnJlc3BvbmRpbmcK
+ICBmYWlsdXJlIHByZWRpY2F0ZXM/CgoqIEhvdyB3aWxsIGludGVyZXN0cyBldm9sdmUgdG8gaW1w
+cm92ZSBkYXRhIHByb2Nlc3NpbmcgYW55IGZ1cnRoZXIgZm9yIHN1Y2gKICB1c2UgY2FzZXM/CgoK
+UmVnYXJkcywKTWFya3VzCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlz
+dHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
+aW5mby9saW51eC1waHkK
