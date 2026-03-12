@@ -4,62 +4,119 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5A180106ACC9
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Mar 2026 16:44:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 961A6106ACCF
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Mar 2026 16:54:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lQ1kRV1i74L5NxAHCUpqOE9oTpFo82sm38QH7ixkZ1c=; b=FSCL4GGaYAOa/S
-	gmwWYcnwqHah0w1+B/ORjHIpN+Q+0lWd9mRp9e9OEg2kNqfIqMC/+nMzZ+zT8eAMPdw2bxPA1nI9O
-	MmjuzqQUQ470CqK8z3yos6/r7FUgRdO97iXfrGYBJGz9k91N2EIHpsrRt/szAIfiAaAYqi3eNZA3t
-	Xe+3Mi4UJ0I9Bu50xjyTdUBdW6LeHoUsEG+CnBq5R2g+F/6sJsnCZElei5A7gRqGnU5X8YolghKuX
-	kM4hG0opr0iu6lv3QQhw5HZQAsPKAP+RxGTmwnJJtDGW0L1DoCpFIcO9VUWD/RMiMuDRk8UwSZbVS
-	lLTQDGDDGQqa82bVHC6w==;
+	List-Owner; bh=t9lhhP+JhMIW07SUvETgekRBtDZj/k0phztT2waf5Jw=; b=CBaWzTSEshXjjo
+	8Bv0tzgRoKCaFEiZ+61+PTw+kw0oVFrRtqM4jTojuQhd3WnUPE3ZzKO4ByeiNfyalcTl5LUupKiF7
+	9RhLqpceVcQZLn1MJT218FCuSAMmU3mGQ1iwRpEVxm1fLAcSfZIO1zXwQ1fGHu/37as5NmrzzCYK0
+	CR0Fue5pB2QUlxgP9VzpR+Y/Cp3KJlTW8+J9kTFKLPjG5fiBo4GvLbS6VBia8kYQFj82KndCgbzhd
+	iU8ZVtnUaZzMvcgTDE7pM22UIETXq/TbFeSXle/RkkydTxdmVZjRMdj5tsCLdWeb9XnP36N1NvXoK
+	tj/WfXlSiF2W55QASjEg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w0j9Y-0000000Ebzz-0O04;
-	Thu, 12 Mar 2026 16:44:52 +0000
-Received: from mail.cjdns.fr ([5.135.140.105])
+	id 1w0jJI-0000000Edb2-0jRs;
+	Thu, 12 Mar 2026 16:54:56 +0000
+Received: from mail-qt1-x82e.google.com ([2607:f8b0:4864:20::82e])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w0j9V-0000000EbyH-2NgI
+	id 1w0jJE-0000000EdYm-0PdW
 	for linux-phy@lists.infradead.org;
-	Thu, 12 Mar 2026 16:44:50 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id EFF992C6C3F;
-	Thu, 12 Mar 2026 17:44:45 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cjdns.fr; s=dkim;
-	t=1773333887; h=from:subject:date:message-id:to:cc:mime-version:
-	 content-transfer-encoding:in-reply-to:references;
-	bh=lIVo4U43vKJTmOpE3Xdpd73u3mWBksP94PzdDDxFbsc=;
-	b=ltvfPEjXYedsVa93vCEHWNIzS8nfdV4XQBCObsn/FAP3xYtyOYePkZll1dHY/ZPk2+SbHM
-	MJDD6kfvLyq0lZ0W1u0Ow3uqAxdY5GJ7xOhzjzJGHibmdZTu5DHiJNI4F1N7OgBG5s1k8+
-	8AiwtBh3dBj53qPH57VmYpYXn8PW1ON5oCFNg/wyVPm64tJWGDGgcdsJsMHNj62TvNB/ul
-	iK5j0g821nEKgLK3LYXl5RE84wHkz4nJpxyr4g8o9yBfFVTl8q3rfVvmYOBFL7Dmngk763
-	usCqUW/FEe5Hh1TfU/Z4bTH2azLR7pRCCZoMbIw/Jn1AXjCxti0RIrw1kK0JuQ==
-From: Caleb James DeLisle <cjd@cjdns.fr>
-To: linux-phy@lists.infradead.org
-Cc: naseefkm@gmail.com,
-	vkoul@kernel.org,
-	neil.armstrong@linaro.org,
-	robh@kernel.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	linux-mips@vger.kernel.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	Caleb James DeLisle <cjd@cjdns.fr>
-Subject: [PATCH 2/2] phy: econet: Add PCIe PHY driver for EcoNet EN751221 and EN7528 SoCs.
-Date: Thu, 12 Mar 2026 16:44:32 +0000
-Message-Id: <20260312164432.569566-3-cjd@cjdns.fr>
-In-Reply-To: <20260312164432.569566-1-cjd@cjdns.fr>
-References: <20260312164432.569566-1-cjd@cjdns.fr>
+	Thu, 12 Mar 2026 16:54:54 +0000
+Received: by mail-qt1-x82e.google.com with SMTP id d75a77b69052e-5094e1d17d3so7532931cf.3
+        for <linux-phy@lists.infradead.org>; Thu, 12 Mar 2026 09:54:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=ziepe.ca; s=google; t=1773334491; x=1773939291; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=VQXCfPVu6b6dIVECzm0C8AUD7IL7VvpSkD5+M4S95sw=;
+        b=UsdsnAJqPQvBZshtgN+VLLU3SwT08TUrr4ghixmMtGsByjJ1qVVWXYQ81GJLYPAQMS
+         k/jsNU7shUhDXIm9x/y5r5vSBhTUYOwT5l/P9fRwoqHTWu6G/HMrTKt1nd8IppqVScK6
+         oYfxrRlSnEh5Z6hLhagvYqI6BTSYgZug+uUPYF19v2CgPNzAKgDoxkDjOdqRROsxj8Zw
+         RaTSGy0d7otss8KX82R3WOLZhr/WYFIyduQDfW7WxW8US8oQcLhN1K9MpJkylY5LU0Bg
+         qkMEXYu6exBlWS3thd/XMLJkHngzIZGxE9nMIC2b6k0WkjohyfH7CrLt+vgd4O660HIX
+         lRLQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1773334491; x=1773939291;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=VQXCfPVu6b6dIVECzm0C8AUD7IL7VvpSkD5+M4S95sw=;
+        b=qs56+b9QD2QjnHuE4diEb8RRvakqIPsoKKzkJr3NDUYUaBwyukER34HRWmEtJM5nw7
+         zP+lcmsmaHrrOHkj0V80h5g4/v4YvaYFawdpxshtHkwCiJPAYM1ei0OHAFVyVOEItX0d
+         4EbfPbEOrRtBW9YxO97jF7+4ObE/hwdWn9AMPpPRnzA2n3yNb8JCKZ1rbRds4yIUIJSL
+         2/B1whykVqmobSCeFb3nDgNg2bWzdAKl7XsLf8Gy1tQAoht5RlwuQEKp0iEZItSkQbKt
+         4oaOrTykjCo5sU0ZjrxNVfntg80t7bL7zREgaOjPbF0P7dSwUCqc7obE8QXJt9TOnj6U
+         NMlQ==
+X-Forwarded-Encrypted: i=1; AJvYcCXpUBFACvZdnsk1ykocDU9kwiaNO8y774Anz/nWaKAjQqpyv2lTYkQ9/8i/Q67cUUyAdQ/mK/zsWK0=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzML+9AQuNZQP2jrbx0kdeBlYkvFv33PCPTrx7UChoKmZ+z81WS
+	U1TQmG6psMAeiKV8oSlFv4xkHeP1fwSDKWmvzE07+wKJ+HxwBdClafPNW5LWXwvIxzg=
+X-Gm-Gg: ATEYQzxaw3jMxddbXYjV2DS8TEfAbldKS2lb+6Rq3df3Dd3nBXGUrhoZCrjag4KOmrI
+	SAlzfa8j9iZ+ForAm9GVUszsoPKDhKtVp7lnIroHpPkJobW/GvfCwsZOpAM6MwcOFkJnq8GCvYB
+	EWlMwG0fWfhbJpzFgCwIJCb/YFmtteoe+6f3GN8Q1qeOtrdUhi99TPHtEgPG+fs8Kg3pHKw8b9D
+	o3v3z/xGjVO4t8/Ur4hP6ozULiYG4ibRW9dg0yuBP0pftvRweZ66UyP2mNOEY9fJjyq2SmkxCYr
+	XZW4Ld2P+lBOySKGI0WHaKpeJmVV+Z00vrfDNKqGZjll2JM0ZEm/dpJkxfqAq1aFyGYpqFqdKpP
+	C+O+8b7XAwUd2O/uA8K7Ibq8u3ESWrEoYeuEJXvQXUo/ef/1t6zjw8ArBgAfBRf03dyNivX35e5
+	NXF85XBFzbRg8TrZYhC76p+0htuQRzBJe9Ykgu+Yjdxo3QRgOZmkoaOJLeo/KQZ2kMsHvqAxodI
+	Vl7ijv8LGSM1WeNhGI=
+X-Received: by 2002:a05:622a:289:b0:509:44c3:5ffa with SMTP id d75a77b69052e-50957e10673mr1403911cf.52.1773334490530;
+        Thu, 12 Mar 2026 09:54:50 -0700 (PDT)
+Received: from ziepe.ca (hlfxns017vw-142-162-112-119.dhcp-dynamic.fibreop.ns.bellaliant.net. [142.162.112.119])
+        by smtp.gmail.com with ESMTPSA id d75a77b69052e-5093a119602sm36658181cf.28.2026.03.12.09.54.49
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 12 Mar 2026 09:54:49 -0700 (PDT)
+Received: from jgg by wakko with local (Exim 4.97)
+	(envelope-from <jgg@ziepe.ca>)
+	id 1w0jJA-00000006i8N-40X9;
+	Thu, 12 Mar 2026 13:54:48 -0300
+Date: Thu, 12 Mar 2026 13:54:48 -0300
+From: Jason Gunthorpe <jgg@ziepe.ca>
+To: James Bottomley <James.Bottomley@hansenpartnership.com>
+Cc: Kuan-Wei Chiu <visitorckw@gmail.com>, Philipp Hahn <phahn-oss@avm.de>,
+	amd-gfx@lists.freedesktop.org, apparmor@lists.ubuntu.com,
+	bpf@vger.kernel.org, ceph-devel@vger.kernel.org, cocci@inria.fr,
+	dm-devel@lists.linux.dev, dri-devel@lists.freedesktop.org,
+	gfs2@lists.linux.dev, intel-gfx@lists.freedesktop.org,
+	intel-wired-lan@lists.osuosl.org, iommu@lists.linux.dev,
+	kvm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-block@vger.kernel.org, linux-bluetooth@vger.kernel.org,
+	linux-btrfs@vger.kernel.org, linux-cifs@vger.kernel.org,
+	linux-clk@vger.kernel.org, linux-erofs@lists.ozlabs.org,
+	linux-ext4@vger.kernel.org, linux-fsdevel@vger.kernel.org,
+	linux-gpio@vger.kernel.org, linux-hyperv@vger.kernel.org,
+	linux-input@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-leds@vger.kernel.org, linux-media@vger.kernel.org,
+	linux-mips@vger.kernel.org, linux-mm@kvack.org,
+	linux-modules@vger.kernel.org, linux-mtd@lists.infradead.org,
+	linux-nfs@vger.kernel.org, linux-omap@vger.kernel.org,
+	linux-phy@lists.infradead.org, linux-pm@vger.kernel.org,
+	linux-rockchip@lists.infradead.org, linux-s390@vger.kernel.org,
+	linux-scsi@vger.kernel.org, linux-sctp@vger.kernel.org,
+	linux-security-module@vger.kernel.org, linux-sh@vger.kernel.org,
+	linux-sound@vger.kernel.org,
+	linux-stm32@st-md-mailman.stormreply.com,
+	linux-trace-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
+	linux-wireless@vger.kernel.org, netdev@vger.kernel.org,
+	ntfs3@lists.linux.dev, samba-technical@lists.samba.org,
+	sched-ext@lists.linux.dev, target-devel@vger.kernel.org,
+	tipc-discussion@lists.sourceforge.net, v9fs@lists.linux.dev
+Subject: Re: [PATCH 00/61] treewide: Use IS_ERR_OR_NULL over manual NULL
+ check - refactor
+Message-ID: <20260312165448.GN1469476@ziepe.ca>
+References: <20260310-b4-is_err_or_null-v1-0-bd63b656022d@avm.de>
+ <abBlpGKO842B3yl9@google.com>
+ <20260312125730.GI1469476@ziepe.ca>
+ <f5688b895eaebabae6545a0d9baf8f1404e8454e.camel@HansenPartnership.com>
 MIME-Version: 1.0
-X-Last-TLS-Session-Version: TLSv1.3
+Content-Disposition: inline
+In-Reply-To: <f5688b895eaebabae6545a0d9baf8f1404e8454e.camel@HansenPartnership.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260312_094449_995320_0AD28CED 
-X-CRM114-Status: GOOD (  22.54  )
+X-CRM114-CacheID: sfid-20260312_095452_239758_5DFF8D86 
+X-CRM114-Status: GOOD (  19.90  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,259 +133,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Introduce support for EcoNet PCIe PHY controllers found in EN751221
-and EN7528 SoCs, these SoCs are not identical but are similar, each
-having one Gen1 port, and one Gen1/Gen2 port.
+On Thu, Mar 12, 2026 at 11:32:37AM -0400, James Bottomley wrote:
+> On Thu, 2026-03-12 at 09:57 -0300, Jason Gunthorpe wrote:
+> > On Wed, Mar 11, 2026 at 02:40:36AM +0800, Kuan-Wei Chiu wrote:
+> > 
+> > > IMHO, the necessity of IS_ERR_OR_NULL() often highlights a
+> > > confusing or flawed API design. It usually implies that the caller
+> > > is unsure whether a failure results in an error pointer or a NULL
+> > > pointer. 
+> > 
+> > +1
+> > 
+> > IS_ERR_OR_NULL() should always be looked on with suspicion. Very
+> > little should be returning some tri-state 'ERR' 'NULL' 'SUCCESS'
+> > pointer. What does the middle condition even mean? IS_ERR_OR_NULL()
+> > implies ERR and NULL are semanticly the same, so fix the things to
+> > always use ERR.
+> 
+> Not in any way supporting the original patch.  However, the pattern
+> ERR, NULL, PTR is used extensively in the dentry code of filesystems. 
+> See the try_lookup..() set of functions in fs/namei.c
+> 
+> The meaning is
+> 
+> PTR - I found it
+> NULL - It definitely doesn't exist
+> ERR - something went wrong during the lookup.
+> 
+> So I don't think you can blanket say this pattern is wrong.
 
-Co-developed-by: Ahmed Naseef <naseefkm@gmail.com>
-Signed-off-by: Ahmed Naseef <naseefkm@gmail.com>
-[cjd@cjdns.fr: add EN751221 support and refactor for clarity]
-Co-developed-by: Caleb James DeLisle <cjd@cjdns.fr>
-Signed-off-by: Caleb James DeLisle <cjd@cjdns.fr>
----
- MAINTAINERS                   |   1 +
- drivers/phy/Kconfig           |  12 +++
- drivers/phy/Makefile          |   1 +
- drivers/phy/phy-econet-pcie.c | 180 ++++++++++++++++++++++++++++++++++
- 4 files changed, 194 insertions(+)
- create mode 100644 drivers/phy/phy-econet-pcie.c
+Lots of places also would return ENOENT, I'd argue that is easier to
+use..
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 557b6a47ec98..0b2b129e168b 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -9125,6 +9125,7 @@ M:	Caleb James DeLisle <cjd@cjdns.fr>
- L:	linux-mips@vger.kernel.org
- S:	Maintained
- F:	Documentation/devicetree/bindings/phy/econet,en751221-pcie-phy.yaml
-+F:	drivers/phy/phy-econet-pcie.c
- 
- ECRYPT FILE SYSTEM
- M:	Tyler Hicks <code@tyhicks.com>
-diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
-index 02467dfd4fb0..60efc37f6eb0 100644
---- a/drivers/phy/Kconfig
-+++ b/drivers/phy/Kconfig
-@@ -123,6 +123,18 @@ config PHY_AIROHA_PCIE
- 	  This driver create the basic PHY instance and provides initialize
- 	  callback for PCIe GEN3 port.
- 
-+config PHY_ECONET_PCIE
-+	tristate "EcoNet PCIe-PHY Driver"
-+	depends on ECONET || COMPILE_TEST
-+	depends on OF
-+	select GENERIC_PHY
-+	select REGMAP_MMIO
-+	help
-+	  Say Y here to add support for EcoNet PCIe PHY driver.
-+	  This driver create the basic PHY instance and provides initialize
-+	  callback for PCIe GEN1 and GEN2 ports. This PHY is found on
-+	  EcoNet SoCs including EN751221 and EN7528.
-+
- config PHY_NXP_PTN3222
- 	tristate "NXP PTN3222 1-port eUSB2 to USB2 redriver"
- 	depends on I2C
-diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
-index a648c2e02a83..a77f182ee8f3 100644
---- a/drivers/phy/Makefile
-+++ b/drivers/phy/Makefile
-@@ -15,6 +15,7 @@ obj-$(CONFIG_PHY_PISTACHIO_USB)		+= phy-pistachio-usb.o
- obj-$(CONFIG_PHY_SNPS_EUSB2)		+= phy-snps-eusb2.o
- obj-$(CONFIG_USB_LGM_PHY)		+= phy-lgm-usb.o
- obj-$(CONFIG_PHY_AIROHA_PCIE)		+= phy-airoha-pcie.o
-+obj-$(CONFIG_PHY_ECONET_PCIE)		+= phy-econet-pcie.o
- obj-$(CONFIG_PHY_NXP_PTN3222)		+= phy-nxp-ptn3222.o
- obj-$(CONFIG_PHY_SPACEMIT_K1_PCIE)	+= phy-spacemit-k1-pcie.o
- obj-$(CONFIG_GENERIC_PHY)		+= allwinner/	\
-diff --git a/drivers/phy/phy-econet-pcie.c b/drivers/phy/phy-econet-pcie.c
-new file mode 100644
-index 000000000000..d2c6e0c1f331
---- /dev/null
-+++ b/drivers/phy/phy-econet-pcie.c
-@@ -0,0 +1,180 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+/*
-+ * Author: Caleb James DeLisle <cjd@cjdns.fr>
-+ *	   Ahmed Naseef <naseefkm@gmail.com>
-+ */
-+
-+#include <linux/bitfield.h>
-+#include <linux/module.h>
-+#include <linux/of.h>
-+#include <linux/phy/phy.h>
-+#include <linux/platform_device.h>
-+#include <linux/regmap.h>
-+
-+/* Rx detection timing for EN751221: 16*8 clock cycles  */
-+#define EN751221_RXDET_VAL		16
-+
-+/* Rx detection timing when in power mode 3 */
-+#define EN75_RXDET_P3_REG		0xa28
-+#define EN75_RXDET_P3_MASK		GENMASK(17, 9)
-+
-+/* Rx detection timing when in power mode 2 */
-+#define EN75_RXDET_P2_REG		0xa2c
-+#define EN75_RXDET_P2_MASK		GENMASK(8, 0)
-+
-+/* Rx impedance */
-+#define EN75_RX_IMPEDANCE_REG		0xb2c
-+#define EN75_RX_IMPEDANCE_MASK		GENMASK(13, 12)
-+enum en75_rx_impedance {
-+	EN75_RX_IMPEDANCE_100_OHM	= 0,
-+	EN75_RX_IMPEDANCE_95_OHM	= 1,
-+	EN75_RX_IMPEDANCE_90_OHM	= 2,
-+};
-+
-+/* PLL Invert clock */
-+#define EN75_PLL_PH_INV_REG		0x4a0
-+#define EN75_PLL_PH_INV_MASK		BIT(5)
-+
-+struct en75_phy_op {
-+	u32 reg;
-+	u32 mask;
-+	u32 val;
-+};
-+
-+struct en7528_pcie_phy {
-+	struct regmap *regmap;
-+	const struct en75_phy_op *data;
-+};
-+
-+/* Port 0 PHY: set LCDDS_CLK_PH_INV for PLL operation */
-+static const struct en75_phy_op en7528_phy_gen1[] = {
-+	{
-+		.reg = EN75_PLL_PH_INV_REG,
-+		.mask = EN75_PLL_PH_INV_MASK,
-+		.val = 1,
-+	},
-+	{ /* sentinel */ }
-+};
-+
-+/* EN7528 Port 1 PHY: Rx impedance tuning, target R -5 Ohm */
-+static const struct en75_phy_op en7528_phy_gen2[] = {
-+	{
-+		.reg = EN75_RX_IMPEDANCE_REG,
-+		.mask = EN75_RX_IMPEDANCE_MASK,
-+		.val = EN75_RX_IMPEDANCE_95_OHM,
-+	},
-+	{ /* sentinel */ }
-+};
-+
-+/* EN751221 Port 1 PHY, set RX detect to 16*8 clock cycles */
-+static const struct en75_phy_op en751221_phy_gen2[] = {
-+	{
-+		.reg = EN75_RXDET_P3_REG,
-+		.mask = EN75_RXDET_P3_MASK,
-+		.val = EN751221_RXDET_VAL,
-+	},
-+	{
-+		.reg = EN75_RXDET_P2_REG,
-+		.mask = EN75_RXDET_P2_MASK,
-+		.val = EN751221_RXDET_VAL,
-+	},
-+	{ /* sentinel */ }
-+};
-+
-+static int en75_pcie_phy_init(struct phy *phy)
-+{
-+	struct en7528_pcie_phy *ephy = phy_get_drvdata(phy);
-+	const struct en75_phy_op *data = ephy->data;
-+	int i, ret;
-+	u32 val;
-+
-+	for (i = 0; data[i].mask || data[i].val; i++) {
-+		if (i)
-+			usleep_range(1000, 2000);
-+
-+		val = field_prep(data[i].mask, data[i].val);
-+
-+		ret = regmap_update_bits(ephy->regmap, data[i].reg,
-+					 data[i].mask, val);
-+		if (ret)
-+			return ret;
-+	}
-+
-+	return 0;
-+}
-+
-+static const struct phy_ops en75_pcie_phy_ops = {
-+	.init	= en75_pcie_phy_init,
-+	.owner	= THIS_MODULE,
-+};
-+
-+static int en75_pcie_phy_probe(struct platform_device *pdev)
-+{
-+	struct regmap_config regmap_config = {
-+		.reg_bits = 32,
-+		.val_bits = 32,
-+		.reg_stride = 4,
-+	};
-+	struct device *dev = &pdev->dev;
-+	const struct en75_phy_op *data;
-+	struct phy_provider *provider;
-+	struct en7528_pcie_phy *ephy;
-+	void __iomem *base;
-+	struct phy *phy;
-+	int i;
-+
-+	data = of_device_get_match_data(dev);
-+	if (!data)
-+		return -EINVAL;
-+
-+	ephy = devm_kzalloc(dev, sizeof(*ephy), GFP_KERNEL);
-+	if (!ephy)
-+		return -ENOMEM;
-+
-+	ephy->data = data;
-+
-+	base = devm_platform_ioremap_resource(pdev, 0);
-+	if (IS_ERR(base))
-+		return PTR_ERR(base);
-+
-+	/* Set max_register to highest used register */
-+	for (i = 0; data[i].mask || data[i].val; i++)
-+		if (data[i].reg > regmap_config.max_register)
-+			regmap_config.max_register = data[i].reg;
-+
-+	ephy->regmap = devm_regmap_init_mmio(dev, base, &regmap_config);
-+	if (IS_ERR(ephy->regmap))
-+		return PTR_ERR(ephy->regmap);
-+
-+	phy = devm_phy_create(dev, dev->of_node, &en75_pcie_phy_ops);
-+	if (IS_ERR(phy))
-+		return PTR_ERR(phy);
-+
-+	phy_set_drvdata(phy, ephy);
-+
-+	provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-+
-+	return PTR_ERR_OR_ZERO(provider);
-+}
-+
-+static const struct of_device_id en75_pcie_phy_ids[] = {
-+	{ .compatible = "econet,en7528-pcie-gen1", .data = en7528_phy_gen1 },
-+	{ .compatible = "econet,en7528-pcie-gen2", .data = en7528_phy_gen2 },
-+	{ .compatible = "econet,en751221-pcie-gen1", .data = en7528_phy_gen1 },
-+	{ .compatible = "econet,en751221-pcie-gen2", .data = en751221_phy_gen2 },
-+	{ /* sentinel */ }
-+};
-+MODULE_DEVICE_TABLE(of, en75_pcie_phy_ids);
-+
-+static struct platform_driver en75_pcie_phy_driver = {
-+	.probe = en75_pcie_phy_probe,
-+	.driver = {
-+		.name = "econet-pcie-phy",
-+		.of_match_table = en75_pcie_phy_ids,
-+	},
-+};
-+module_platform_driver(en75_pcie_phy_driver);
-+
-+MODULE_AUTHOR("Caleb James DeLisle <cjd@cjdns.fr>");
-+MODULE_DESCRIPTION("EcoNet PCIe PHY driver");
-+MODULE_LICENSE("GPL");
--- 
-2.39.5
+But yes, I did use the word "suspicion" not blanket wrong :)
 
+Jason
 
 -- 
 linux-phy mailing list
