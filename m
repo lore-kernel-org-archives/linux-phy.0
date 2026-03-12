@@ -4,106 +4,118 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 59B4D105A585
-	for <linux-phy@archiver.kernel.org>; Thu, 12 Mar 2026 11:06:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 22EE4105A591
+	for <linux-phy@archiver.kernel.org>; Thu, 12 Mar 2026 12:57:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lRSXqDUI+TY5z8nhHriULimuBzy2RIUqmO2cPocM7WM=; b=C0IAMb+6yxryK2
-	Y5rivKbgeugJ6lNI25Mb1D+iZMZHw4+7lsIovzk+Ig1xacamjCkuQ/JRTSX28mSPW7hbCFRows67G
-	96bnc4AB9iEnPxr2X+0xaGGDhPtRPeQkpvruWwQY7H/aAdGYgM4T7tkOmK9gIMJ0ctllPQzsoRKeo
-	EFcI/AnGADAyyMQtmilcZcLVW9AN3VhNAukVaKZYNsrx9iR5vrgfP+5ZD+/+YitKlRvDGo6H1lQpy
-	x7g3x4voAoGA+qzGywTbYzYclE/wz/fLERvFH7Rr4adIOvGL01Rlvfdok8sLu09PWTQ7vhIOAhRDU
-	kqHjjKnyxnqiR+cdIaAQ==;
+	List-Owner; bh=R+MRmFiO3RN9vhRGbQHGltWOG7RFmpjEZigd8HbIBV8=; b=iUQFmkPqeqUpSj
+	e7+P40Fsxq9ADw4eJYMUKii5w/GHTStkX3IhXZISRhA0Bxf8l8QiHtbnfNGN9Hw64cA/W6+/Ds+1r
+	bEG1l7nOzmaB9xtNI4UHoN9mqeWExPgtWEUz0bYMnzsRLolB+2zpP6YgYotc78PSuFXxZaCLeF17Y
+	pUfSBjZ9J2dp7Mi7S2ZvAkb+jz8zbm8AAOM+UI3nI4B6YaI/YnY1ZP+fWVk+Z/QkyfK3026SuQwFd
+	zQR604kIcuFcorSvS6fUdvRRyR6h7O/3SJN1drBNzx0pGkKJYYEEb8xJAQn9FV0Wv6N/hmuNCCFdF
+	TOa20tT3XTirzQzrnTJg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w0drx-0000000DufY-39Gi;
-	Thu, 12 Mar 2026 11:06:21 +0000
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
+	id 1w0fbc-0000000E5bY-3hR3;
+	Thu, 12 Mar 2026 12:57:36 +0000
+Received: from mail-qt1-x830.google.com ([2607:f8b0:4864:20::830])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w0drt-0000000DueD-3yVI
+	id 1w0fbZ-0000000E5Zx-2IR8
 	for linux-phy@lists.infradead.org;
-	Thu, 12 Mar 2026 11:06:20 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
-	s=mimecast20190719; t=1773313575;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=Q0GjOCrLZMJdWmBqARXEFoO0AI1gLdN5XafIHahOrOo=;
-	b=RUBfpx6Sd2sqvki1w64iamZVIWTJndxzLy8KP8ZSh3lyfnmrZCcC+8cnLBWu+pV4FWw4sZ
-	uZOVG/eRm8oqzowyrscvf8RUzMhOzYUXAhFiNFMicb5a7cREbiXCcc/O4CTBkptir6WYoW
-	0441mB+wTqJLH2pfumtGlRh3U5rbjEc=
-Received: from mail-wm1-f72.google.com (mail-wm1-f72.google.com
- [209.85.128.72]) by relay.mimecast.com with ESMTP with STARTTLS
- (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
- us-mta-65-jLc4xC_VNkuZr3lxRFojQw-1; Thu, 12 Mar 2026 07:06:13 -0400
-X-MC-Unique: jLc4xC_VNkuZr3lxRFojQw-1
-X-Mimecast-MFC-AGG-ID: jLc4xC_VNkuZr3lxRFojQw_1773313572
-Received: by mail-wm1-f72.google.com with SMTP id 5b1f17b1804b1-4853466655dso9207725e9.3
-        for <linux-phy@lists.infradead.org>; Thu, 12 Mar 2026 04:06:13 -0700 (PDT)
+	Thu, 12 Mar 2026 12:57:35 +0000
+Received: by mail-qt1-x830.google.com with SMTP id d75a77b69052e-506251815a3so8617421cf.0
+        for <linux-phy@lists.infradead.org>; Thu, 12 Mar 2026 05:57:32 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=ziepe.ca; s=google; t=1773320252; x=1773925052; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=J1SF1XBHkHR0j7NZVucv0LxpGoGXl67PUefLsfwpAbo=;
+        b=iw5qPPT34HDEMIsXfVuGQVadqiiLiCX9PSYu6mfSb5q8pG2Zta++Bi5jO5hu2g6YFJ
+         wTc1x4CTfGSRObks11vRzEMH0mSz+45H7uSO3crnDdnisto+K8YOB10zRI6ki0FMCFsl
+         quYIW0rxZamxVD0Dvo41iehkwXSFpyOoaEKCRjIdmnKSkyfT9qp/tn9EWTZSyUGjskqL
+         L0tHRaj/DsG8f62JeRyuh3eRb4WbBZYm7Us9AVQUnVgVM7W9mZjWm7bYERmVff30jOwO
+         3xQXwyYZejNFjkOKkdENzhA0keU8N9kA7HoVCtMQNarVUa6rmwTyDoQj4IqEckHnTW6K
+         dJ6w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1773313572; x=1773918372;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=Q0GjOCrLZMJdWmBqARXEFoO0AI1gLdN5XafIHahOrOo=;
-        b=GQQL6AIPPa/c5mMFvcB/clX+qrTNUEemfZaRBjHlQV0+Eo2c+VcqWKsJNUIFdCXnKv
-         HPJjWepJvABVU4OXWQJ89D05gXR+LNsLPiYZYELkS+Y47Js3KCaY4wDpRRZRcgAo0LUI
-         itC6hFjtu7QzE/LXyPMEp8+Qlk2iSN+8R89PK9KfQXeTCfWB3jLa5YJI/bQIZwY578tu
-         uZmMU46+fgEbU1t7jFxgw+FKYA5iSo4LTvnbkodLmGXKA0U+SwAV6YoUWllUTQvgmHHh
-         00lgMmAKQCuLu65hLx3rXYLyxhfUwUpLa4Vwy0omF1dN7VSuI7EUJ3AuvEl1dlI7fM47
-         0M1g==
-X-Forwarded-Encrypted: i=1; AJvYcCWHZnzVpY/GWq6PH3r7QczeYy3VDVM9JhmAkQPM9IR9AzVH+QuEztPqKD7OBjw4H504bxYYXJbjtD8=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwQQ/A6J5JyJvlENY8al2hHS2Ua1n+6wsf7j1HnjpRAmzpDDOuN
-	Wu4ApbmtPCz60+n7A9jq/BkqsmmtVcr3tHEXmakVmXUPpLdCr8rYSSsnremUhheQRQQfnBDr1Zv
-	TwJTCmQr83dYafZBPyUl29KVlWhMmhog+JQHdIWtXEyeoJqCJWLa78KAt3Hxcdenjf4k=
-X-Gm-Gg: ATEYQzxvgywf/dJSX7noE5EMf5DXWn4oGpnA8LRB6FM+NBoRP955wWlRlbkdIC54wTO
-	UtbfDVD+0nkKgNf3wfUb77BV2XahhdzNwtx1gIe1+NGfNIIp+nFCHnqUBjc0gjuVTPk/RjXpVrA
-	OCeA2JbZorSeBhp6npVFlLhiPn1W2sHpmbsDaoHeETOCPmFacvGrQhCy2GjcVv2qdMUYih1loha
-	/E3Q1ebYP04+M75PzvefAlt3CFzCEJOOyXToa0MKI5NLFfTkdFOfQGilR3eG/Jmu94cZVcx2jnC
-	AD/xreJH0lRML7IEfqMhJ7qmvwjI+GP8EZdR1tna3aN5XzkObYTAeQ/+31FyUlYZ/IsC2Jtw730
-	JhQuOtKUVcHrl580bR6a/tT3CfOE8JP2k7bENkMh82NzH2Xso3Lmo+Ws=
-X-Received: by 2002:a05:600c:3548:b0:485:345b:ccb1 with SMTP id 5b1f17b1804b1-4854b129fffmr97036425e9.27.1773313572450;
-        Thu, 12 Mar 2026 04:06:12 -0700 (PDT)
-X-Received: by 2002:a05:600c:3548:b0:485:345b:ccb1 with SMTP id 5b1f17b1804b1-4854b129fffmr97035605e9.27.1773313571932;
-        Thu, 12 Mar 2026 04:06:11 -0700 (PDT)
-Received: from [192.168.88.32] ([216.128.11.95])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4854b5f6b95sm116309065e9.6.2026.03.12.04.06.10
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 12 Mar 2026 04:06:11 -0700 (PDT)
-Message-ID: <04439ab3-818d-460a-9307-2c6cca4f9ab7@redhat.com>
-Date: Thu, 12 Mar 2026 12:06:09 +0100
+        d=1e100.net; s=20230601; t=1773320252; x=1773925052;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=J1SF1XBHkHR0j7NZVucv0LxpGoGXl67PUefLsfwpAbo=;
+        b=SiR4czV2soJPIYgZ29tV8tA+y1+XNhBA/7dl3NkGRiriIEEMUb/nLJ3W1uM1K5XqCV
+         jdppJZhIRWzJ2zvzdkEcMGL0UvJyQ4ITB+MQm+Ve/FOPX2Q4SEfsIb0QlUiX3XdzJ9DX
+         WdUGIXwK9e+T0FrLVKiMNf+NIatlfS+39ltef2KmPW1+96QVsFqcH14PJJSZaJSbNZzV
+         //p6h/3JEPgml7k83dG12eamFf9lfxBjcdcUIzA45zEWXwaAfTyjdMsJ8oSHEVGO5vQC
+         jtxfUGBd5sxoMISNneEab0/EVqr8Df6kDmKQKt9G1fY3XVVdpPsmyvu58EDF8+BrYtnf
+         R+vA==
+X-Forwarded-Encrypted: i=1; AJvYcCWsTQBE09ly8u4wLnSjORoFeiszBB9qNnhrN9buARJaz25nVwVhxib4NPgS5T6EraFOe1j0VYFwt9g=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yzh6MquyqCVn4E/MSyJ6fXpIKn/umAwXH9WaT4oPzctmDOqiV9+
+	d0747N9KNdeY9YfXnr58gMZGd2AhlqktMf6F5rlwzIGRIibFZ3CgYSo4TO7WOfRhi8U=
+X-Gm-Gg: ATEYQzziFCg0/bVZcx5BfvVNKxMgO9MJRX3DRXhJSTjnmuwLG2uu/BRJaNmW+qoWtGt
+	pi315hCn3ZLwvodU9OziaqYnDI79GfJ2xagwaRRyHdyzZCuoMqYwNAdt8RmWLAiEThFHRm+fhmw
+	1ql/ljal7AI/7XnYtFkrDWFqlSCt6C2lfUWFCpYJUoCKQRWoYQQYMvPqQu7vZsiShlc5Ege91mj
+	yzhi7RSsYhkr3Cshc9tl9Ag0on6mPMZtjW5VZkIdqiGkQRwkOTaa4EbgA39tfDCOvzeuy68KOf3
+	Eu1VmP4v3qxhqWVx+iOhpfgS2B6gTdEyDOcQk+PHCFNJbUEf+YbGCUyFYoz24Xt9qpoOv+XIutH
+	W8vbSlKff9DvdDtNANCSmDbV1XnQq5n9512NkNO6BXaV56OgLnY8NNp6bymhkXPjOEuo5lQBrXy
+	JyZsP3GDgG9j1PUMHg2YEw5rjtc69zgCUSPit/l2sUKU8geezfnM0jaSD5f5QIEiG/Xe0wT/Yb8
+	z1HA2pq
+X-Received: by 2002:ac8:5d4d:0:b0:509:cbc:127b with SMTP id d75a77b69052e-5093a1bd58fmr77950521cf.60.1773320251710;
+        Thu, 12 Mar 2026 05:57:31 -0700 (PDT)
+Received: from ziepe.ca (hlfxns017vw-142-162-112-119.dhcp-dynamic.fibreop.ns.bellaliant.net. [142.162.112.119])
+        by smtp.gmail.com with ESMTPSA id 6a1803df08f44-89a65bd318fsm33341196d6.8.2026.03.12.05.57.30
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 12 Mar 2026 05:57:31 -0700 (PDT)
+Received: from jgg by wakko with local (Exim 4.97)
+	(envelope-from <jgg@ziepe.ca>)
+	id 1w0fbW-00000006fKD-1POa;
+	Thu, 12 Mar 2026 09:57:30 -0300
+Date: Thu, 12 Mar 2026 09:57:30 -0300
+From: Jason Gunthorpe <jgg@ziepe.ca>
+To: Kuan-Wei Chiu <visitorckw@gmail.com>
+Cc: Philipp Hahn <phahn-oss@avm.de>, amd-gfx@lists.freedesktop.org,
+	apparmor@lists.ubuntu.com, bpf@vger.kernel.org,
+	ceph-devel@vger.kernel.org, cocci@inria.fr,
+	dm-devel@lists.linux.dev, dri-devel@lists.freedesktop.org,
+	gfs2@lists.linux.dev, intel-gfx@lists.freedesktop.org,
+	intel-wired-lan@lists.osuosl.org, iommu@lists.linux.dev,
+	kvm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-block@vger.kernel.org, linux-bluetooth@vger.kernel.org,
+	linux-btrfs@vger.kernel.org, linux-cifs@vger.kernel.org,
+	linux-clk@vger.kernel.org, linux-erofs@lists.ozlabs.org,
+	linux-ext4@vger.kernel.org, linux-fsdevel@vger.kernel.org,
+	linux-gpio@vger.kernel.org, linux-hyperv@vger.kernel.org,
+	linux-input@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-leds@vger.kernel.org, linux-media@vger.kernel.org,
+	linux-mips@vger.kernel.org, linux-mm@kvack.org,
+	linux-modules@vger.kernel.org, linux-mtd@lists.infradead.org,
+	linux-nfs@vger.kernel.org, linux-omap@vger.kernel.org,
+	linux-phy@lists.infradead.org, linux-pm@vger.kernel.org,
+	linux-rockchip@lists.infradead.org, linux-s390@vger.kernel.org,
+	linux-scsi@vger.kernel.org, linux-sctp@vger.kernel.org,
+	linux-security-module@vger.kernel.org, linux-sh@vger.kernel.org,
+	linux-sound@vger.kernel.org,
+	linux-stm32@st-md-mailman.stormreply.com,
+	linux-trace-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
+	linux-wireless@vger.kernel.org, netdev@vger.kernel.org,
+	ntfs3@lists.linux.dev, samba-technical@lists.samba.org,
+	sched-ext@lists.linux.dev, target-devel@vger.kernel.org,
+	tipc-discussion@lists.sourceforge.net, v9fs@lists.linux.dev
+Subject: Re: [PATCH 00/61] treewide: Use IS_ERR_OR_NULL over manual NULL
+ check - refactor
+Message-ID: <20260312125730.GI1469476@ziepe.ca>
+References: <20260310-b4-is_err_or_null-v1-0-bd63b656022d@avm.de>
+ <abBlpGKO842B3yl9@google.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 net-next 2/5] net: phy: make mdio_device.c part of
- libphy
-To: Heiner Kallweit <hkallweit1@gmail.com>,
- Bjorn Andersson <andersson@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>
-Cc: "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>, linux-clk@vger.kernel.org,
- linux-phy@lists.infradead.org, Andrew Lunn <andrew@lunn.ch>,
- Russell King - ARM Linux <linux@armlinux.org.uk>,
- Jakub Kicinski <kuba@kernel.org>, David Miller <davem@davemloft.net>,
- Eric Dumazet <edumazet@google.com>, Vinod Koul <vkoul@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>
-References: <9d5724bc-e525-4f8f-b3f8-b16dd5a1164e@gmail.com>
- <c6dbf9b3-3ca0-434b-ad3a-71fe602ab809@gmail.com>
-From: Paolo Abeni <pabeni@redhat.com>
-In-Reply-To: <c6dbf9b3-3ca0-434b-ad3a-71fe602ab809@gmail.com>
-X-Mimecast-Spam-Score: 0
-X-Mimecast-MFC-PROC-ID: hhnEBKy1WQORY5nnHRGZ_7OcmSpL0-2ou0a0oGln6oI_1773313572
-X-Mimecast-Originator: redhat.com
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <abBlpGKO842B3yl9@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260312_040618_059203_8A48EFDF 
-X-CRM114-Status: GOOD (  16.57  )
+X-CRM114-CacheID: sfid-20260312_055733_592831_BA625628 
+X-CRM114-Status: UNSURE (   8.52  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,54 +132,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 3/9/26 6:03 PM, Heiner Kallweit wrote:
-> This patch
-> - makes mdio_device.c part of libphy
-> - makes mdio_device_(un)register_reset() static
-> - moves mdiobus_(un)register_device() from mdio_bus.c to mdio_device.c,
->   stops exporting both functions and makes them private to phylib
-> 
-> This further decouples the MDIO consumer functionality from libphy.
-> 
-> Note: This makes MDIO driver registration part of phylib, therefore
->       adjust Kconfig dependencies where needed.
-> 
-> Signed-off-by: Heiner Kallweit <hkallweit1@gmail.com>
-> ---
-> v2:
-> - add needed Kconfig dependency changes
-> ---
->  drivers/clk/qcom/Kconfig          |  2 +-
->  drivers/net/phy/Makefile          |  6 ++---
->  drivers/net/phy/mdio-private.h    | 11 ---------
->  drivers/net/phy/mdio_bus.c        | 36 ----------------------------
->  drivers/net/phy/mdio_device.c     | 39 ++++++++++++++++++++++++++++---
->  drivers/net/phy/phylib-internal.h |  4 ++++
->  drivers/phy/broadcom/Kconfig      |  4 ++--
->  include/linux/mdio.h              |  2 --
->  8 files changed, 46 insertions(+), 58 deletions(-)
->  delete mode 100644 drivers/net/phy/mdio-private.h
-> 
-> diff --git a/drivers/clk/qcom/Kconfig b/drivers/clk/qcom/Kconfig
-> index a8a86ea6bb7..a277c434d64 100644
-> --- a/drivers/clk/qcom/Kconfig
-> +++ b/drivers/clk/qcom/Kconfig
-> @@ -392,7 +392,7 @@ config IPQ_NSSCC_9574
->  
->  config IPQ_NSSCC_QCA8K
->  	tristate "QCA8K(QCA8386 or QCA8084) NSS Clock Controller"
-> -	depends on MDIO_BUS
-> +	depends on PHYLIB
->  	help
->  	  Support for NSS(Network SubSystem) clock controller on
->  	  qca8386/qca8084 chip.
+On Wed, Mar 11, 2026 at 02:40:36AM +0800, Kuan-Wei Chiu wrote:
 
-Bjorn, Micahel, Stephen: are you ok with this change?
+> IMHO, the necessity of IS_ERR_OR_NULL() often highlights a confusing or
+> flawed API design. It usually implies that the caller is unsure whether
+> a failure results in an error pointer or a NULL pointer. 
 
-Thanks,
++1
 
-Paolo
+IS_ERR_OR_NULL() should always be looked on with suspicion. Very
+little should be returning some tri-state 'ERR' 'NULL' 'SUCCESS'
+pointer. What does the middle condition even mean? IS_ERR_OR_NULL()
+implies ERR and NULL are semanticly the same, so fix the things to
+always use ERR.
 
+If you want to improve things work to get rid of the NULL checks this
+script identifies. Remove ERR or NULL because only one can ever
+happen, or fix the source to consistently return ERR.
+
+Jason
 
 -- 
 linux-phy mailing list
