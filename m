@@ -4,89 +4,112 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 74C66107BCD5
-	for <linux-phy@archiver.kernel.org>; Fri, 13 Mar 2026 17:58:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C4EDB107BCD6
+	for <linux-phy@archiver.kernel.org>; Fri, 13 Mar 2026 18:36:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o2wtWuBM0g7cS7q2lcheOVFkxOJs/7HmWXGgH3vq5zE=; b=hEAp8E9I2Cwbj+
-	rIsL7XlsPSFs5JbFS9c25PvQ/Hl4BxkN5hOqOJovolUhqPvm7OiiSlvwwlLCIVeIqdenKmOFURQjm
-	0FIiwOr6+kZ1Sdyi9MsbTs1RR1LpNVmEUGst1PesdshL016THxgzpxDlVNWk6AVbYTFspbtFoFitJ
-	PlknouIFqT4rPlkctQD/vJFbZ+XqeXrJ97CKl/tQQ+Swd7VQQdKq4hijcPTI6gKZsl5aTC3pudO6F
-	clQIdsLclvc3j0bmi+xXn5Xi5gLuSHGyv/Oh6I+RFKOxBokfp4RUR03jck8/FzQ4iOaQv4zNGWoIq
-	clc/Mqd8AzyuEPap80jA==;
+	List-Owner; bh=Z8cCtUBFqVnsKNt4nFnK0tzQX7WDH6TMVOxzI0k2jrI=; b=L1ckwtrHvLcmFC
+	5yyOglrajfmnIAfRF0iqe/3SLSVyA3EXiQ3TjBR28LomogyYX+uDjVM+HHqa/EOXNcsJABDm686AM
+	uh1Hsg4vqmkZYERbO7DHvhEQBgenY6VVQuK1mseXoH/nRAlmGBH+PsDUlLEJKg2Gszov3kBCRQwBl
+	hxuUqFTmLOoniKYGdn2JEF8XTTb3cM0u+xLNHE5mkCi4QacssLlhsC8at3CtmTt62OSwxu+LYpu1o
+	ciQWVRswqzW+Y+yWYPiHV4lS7AEx5F9U5I49okaef/bug/XZzOOdNUoRY0Scg9v+nIOXMNwXc2rG9
+	LTDjcOKD6IyhTnVGZSAw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w16m8-00000000ojO-0tHZ;
-	Fri, 13 Mar 2026 17:58:16 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+	id 1w17N6-00000000vbP-2WDW;
+	Fri, 13 Mar 2026 18:36:28 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w16lP-00000000noZ-2YFb;
-	Fri, 13 Mar 2026 17:57:34 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1773424642;
-	bh=KzWYZJRx7rQzuj7r18U7pjbg7yHx7AbFbAxlSXP9BPY=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=QrYeTACiJxKKlI/r2ldYTzpOaqXhLSBONGa1zXclVkZjccBCSnaLEhFx2uTvacsgt
-	 vVqjFXI+7LxwshL9nuzRd2WIxwP/RTP7q5YkXI5eyFaxUuf7IB7Cg1D57FWd2kWKgC
-	 vkDhp/TLaaPjZB8e6LjCRZSUqE0FQlQJHxUSLI69Yz/ZyxkoZ6TwJ9Nwoiu/LzR/ZR
-	 sDHpH+NMDvhkjHUSy62cuJDnvS8vhLicZkNLsx3Z2N2rSGF/nq44DacLRNZ4fa1QQw
-	 6LKGoQkEJKymvZ6NX/fViWeCwLO+JRRG2pG83Pt4bO87hLdGds3EblueFRFs752K9o
-	 W73XwmmobWszA==
-Received: from jupiter.universe (dyndsl-091-248-210-078.ewe-ip-backbone.de [91.248.210.78])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
-	(No client certificate requested)
-	(Authenticated sender: sre)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id E935817E1428;
-	Fri, 13 Mar 2026 18:57:21 +0100 (CET)
-Received: by jupiter.universe (Postfix, from userid 1000)
-	id 302CF480030; Fri, 13 Mar 2026 18:57:21 +0100 (CET)
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-Date: Fri, 13 Mar 2026 18:57:19 +0100
-Subject: [PATCH v3 10/12] phy: rockchip: usbdp: Cleanup DP lane selection
- function
+	id 1w17N3-00000000vaR-47n3;
+	Fri, 13 Mar 2026 18:36:27 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 25F7542E56;
+	Fri, 13 Mar 2026 18:36:25 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A140BC19424;
+	Fri, 13 Mar 2026 18:36:22 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1773426985;
+	bh=o0v/ZnAf66UD4OY9xdCau0smA1KApQNZewsYj55Ha5g=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=OuY8jiXSIDgbrXg+bgoCvPZi6MkDNdjC+Zh9TeRrn/FlQMFfAWp3c+cL4kPkG0JOU
+	 iwqdoY76aPwgRxJNzz8AqWK/GwkpuSx7/Rz3+Cet/uVhwGLh05K4asltW6eyKbw6vE
+	 UHYwnSv+Ad2C2eOp7AMIxDkEt/ns2snf5qNB1yAP2LDZdbI5Y22l0ZeZRcYSZpaGgO
+	 ThqWGRUvEeEB38njsE3MfKFecbDbDhGLa5MgWq49tE/bfg/A0GWegyGB2q0xPBMvS8
+	 GAnptatQBlI6altDHSg1TWXQAHZq1O8M/45mCqLwn8v9L0syx107qmgfLZogKCpA23
+	 DkApxZiYPbdIw==
+Message-ID: <d4886596-a812-439d-920a-c415660cae4c@kernel.org>
+Date: Fri, 13 Mar 2026 19:36:20 +0100
 MIME-Version: 1.0
-Message-Id: <20260313-rockchip-usbdp-cleanup-v3-10-3e8fe89a35b5@collabora.com>
-References: <20260313-rockchip-usbdp-cleanup-v3-0-3e8fe89a35b5@collabora.com>
-In-Reply-To: <20260313-rockchip-usbdp-cleanup-v3-0-3e8fe89a35b5@collabora.com>
-To: Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Heiko Stuebner <heiko@sntech.de>, Frank Wang <frank.wang@rock-chips.com>, 
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>
-Cc: Andy Yan <andy.yan@rock-chips.com>, Dmitry Baryshkov <lumag@kernel.org>, 
- Yubing Zhang <yubing.zhang@rock-chips.com>, 
- Alexey Charkov <alchark@gmail.com>, linux-phy@lists.infradead.org, 
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
- linux-kernel@vger.kernel.org, kernel@collabora.com, 
- devicetree@vger.kernel.org, 
- Sebastian Reichel <sebastian.reichel@collabora.com>
-X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1832;
- i=sebastian.reichel@collabora.com; h=from:subject:message-id;
- bh=KzWYZJRx7rQzuj7r18U7pjbg7yHx7AbFbAxlSXP9BPY=;
- b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGm0UAE3fAsaU6bZH0Ajn7fx4V4/KbQDPIw/z
- 7gGNUMfKL3pr4kCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJptFABAAoJENju1/PI
- O/qayukP/09EhJbhE8xRGJs8u6Eha6NASzcgtWC6dwGU6hWb/jXgQeRzZ/KLkt+dX5DIGD+iRwk
- g8SXObY2xdjlR7G5fmXkH0Qw6iH9DcAXID4L7XXse5JJcplXtSmaTXoIhrFCnWZj+FVtyeRC7fs
- SBkMLwwUScpyRmrP1XCZYQIoNFXCVFWaDanFYaCi3d8vMF7CjbiXTUQE2pzun411ozdckvW3D+2
- Ta5zCxUghOnmerCvBlfoAad3j99bl/RB29Wkaj06h2s2INt0lAlgVRlZkHJjCzZNFrTbNTJoPL7
- FCIyM/z9GxAAXUzO7BBoa/1akUprT1T7BhhLf3IAiCGcS5gAabegNWqPUB9nMPi5i5RPKyRvh9k
- IW5c7ZGysGV9iRJllQa7iLOvO9QEIigpxMXj0gLlPD8x71v25oZ2P/dMhxm5+oS4UsXfZW9yIqm
- 37mlcHvLgOgIsG7cVZXOrwI/gyG3onUdp/FQc1GIylanZ7ToqIfP6DeVIjt8ZRsPvftFOZPSatn
- 8rjsHI+yonFzM4MmpclqDtzGTsiCXTXGPv5WsmlaoFd7AvZcd+pmtemDn9g2u7j4dyG9Rj20MwK
- vkobrRbHAC5Kog5aDoNg9fEmU+Hi/acvlyIJJw9XlxygBFs8fqmVBHGLzDi++FwIXSxX/ZWgtm/
- K/EpAkY7CETFNE+ZveI0mew==
-X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
- fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v6 4/4] phy: airoha: Add support for Airoha AN7581 USB PHY
+To: Christian Marangi <ansuelsmth@gmail.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
+ <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Lorenzo Bianconi <lorenzo@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <20260306190156.22297-1-ansuelsmth@gmail.com>
+ <20260306190156.22297-5-ansuelsmth@gmail.com>
+ <20260307-otter-of-imminent-merriment-d3475d@quoll>
+ <69abffe6.050a0220.18164c.58d6@mx.google.com>
+ <52123051-0d2d-42b2-b677-99a5de0f2c4e@kernel.org>
+ <69ac04a6.5d0a0220.2969f9.9d81@mx.google.com>
+ <abbf81f7-556b-4fb0-9fb7-41f4c730f1d6@kernel.org>
+ <69ac72dd.df0a0220.a3fa6.8d4f@mx.google.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
+ cFgcqTTuNHjAvxtUG8pQgGTHAObYs6xeYJtjUH0ZX6ndJ33FJYf5V3yXqqjcZ30FgHzJCFUu
+ JMp7PSyMPzpUXfU12yfcRYVEMQrmplNZssmYhiTeVicuOOypWugZKVLGNm0IweVCaZ/DJDIH
+ gNbpvVwjcKYrx85m9cBVEBUGaQP6AT7qlVCkrf50v8bofSIyVa2xmubbAwwFA1oxoOusjPIE
+ J3iadrwpFvsZjF5uHAKS+7wHLoW9hVzOnLbX6ajk5Hf8Pb1m+VH/E8bPBNNYKkfTtypTDUCj
+ NYcd27tjnXfG+SDs/EXNUAIRefCyvaRG7oRYF3Ec+2RgQDRnmmjCjoQNbFrJvJkFHlPeHaeS
+ BosGY+XWKydnmsfY7SSnjAzLUGAFhLd/XDVpb1Een2XucPpKvt9ORF+48gy12FA5GduRLhQU
+ vK4tU7ojoem/G23PcowM1CwPurC8sAVsQb9KmwTGh7rVz3ks3w/zfGBy3+WmLg++C2Wct6nM
+ Pd8/6CBVjEWqD06/RjI2AnjIq5fSEH/BIfXXfC68nMp9BZoy3So4ZsbOlBmtAPvMYX6U8VwD
+ TNeBxJu5Ex0Izf1NV9CzC3nNaFUYOY8KfN01X5SExAoVTr09ewARAQABzSVLcnp5c3p0b2Yg
+ S296bG93c2tpIDxrcnprQGtlcm5lbC5vcmc+wsGVBBMBCgA/AhsDBgsJCAcDAgYVCAIJCgsE
+ FgIDAQIeAQIXgBYhBJvQfg4MUfjVlne3VBuTQ307QWKbBQJoF1BKBQkWlnSaAAoJEBuTQ307
+ QWKbHukP/3t4tRp/bvDnxJfmNdNVn0gv9ep3L39IntPalBFwRKytqeQkzAju0whYWg+R/rwp
+ +r2I1Fzwt7+PTjsnMFlh1AZxGDmP5MFkzVsMnfX1lGiXhYSOMP97XL6R1QSXxaWOpGNCDaUl
+ ajorB0lJDcC0q3xAdwzRConxYVhlgmTrRiD8oLlSCD5baEAt5Zw17UTNDnDGmZQKR0fqLpWy
+ 786Lm5OScb7DjEgcA2PRm17st4UQ1kF0rQHokVaotxRM74PPDB8bCsunlghJl1DRK9s1aSuN
+ hL1Pv9VD8b4dFNvCo7b4hfAANPU67W40AaaGZ3UAfmw+1MYyo4QuAZGKzaP2ukbdCD/DYnqi
+ tJy88XqWtyb4UQWKNoQqGKzlYXdKsldYqrLHGoMvj1UN9XcRtXHST/IaLn72o7j7/h/Ac5EL
+ 8lSUVIG4TYn59NyxxAXa07Wi6zjVL1U11fTnFmE29ALYQEXKBI3KUO1A3p4sQWzU7uRmbuxn
+ naUmm8RbpMcOfa9JjlXCLmQ5IP7Rr5tYZUCkZz08LIfF8UMXwH7OOEX87Y++EkAB+pzKZNNd
+ hwoXulTAgjSy+OiaLtuCys9VdXLZ3Zy314azaCU3BoWgaMV0eAW/+gprWMXQM1lrlzvwlD/k
+ whyy9wGf0AEPpLssLVt9VVxNjo6BIkt6d1pMg6mHsUEVzsFNBFVDXDQBEADNkrQYSREUL4D3
+ Gws46JEoZ9HEQOKtkrwjrzlw/tCmqVzERRPvz2Xg8n7+HRCrgqnodIYoUh5WsU84N03KlLue
+ MNsWLJBvBaubYN4JuJIdRr4dS4oyF1/fQAQPHh8Thpiz0SAZFx6iWKB7Qrz3OrGCjTPcW6ei
+ OMheesVS5hxietSmlin+SilmIAPZHx7n242u6kdHOh+/SyLImKn/dh9RzatVpUKbv34eP1wA
+ GldWsRxbf3WP9pFNObSzI/Bo3kA89Xx2rO2roC+Gq4LeHvo7ptzcLcrqaHUAcZ3CgFG88CnA
+ 6z6lBZn0WyewEcPOPdcUB2Q7D/NiUY+HDiV99rAYPJztjeTrBSTnHeSBPb+qn5ZZGQwIdUW9
+ YegxWKvXXHTwB5eMzo/RB6vffwqcnHDoe0q7VgzRRZJwpi6aMIXLfeWZ5Wrwaw2zldFuO4Dt
+ 91pFzBSOIpeMtfgb/Pfe/a1WJ/GgaIRIBE+NUqckM+3zJHGmVPqJP/h2Iwv6nw8U+7Yyl6gU
+ BLHFTg2hYnLFJI4Xjg+AX1hHFVKmvl3VBHIsBv0oDcsQWXqY+NaFahT0lRPjYtrTa1v3tem/
+ JoFzZ4B0p27K+qQCF2R96hVvuEyjzBmdq2esyE6zIqftdo4MOJho8uctOiWbwNNq2U9pPWmu
+ 4vXVFBYIGmpyNPYzRm0QPwARAQABwsF8BBgBCgAmAhsMFiEEm9B+DgxR+NWWd7dUG5NDfTtB
+ YpsFAmgXUF8FCRaWWyoACgkQG5NDfTtBYptO0w//dlXJs5/42hAXKsk+PDg3wyEFb4NpyA1v
+ qmx7SfAzk9Hf6lWwU1O6AbqNMbh6PjEwadKUk1m04S7EjdQLsj/MBSgoQtCT3MDmWUUtHZd5
+ RYIPnPq3WVB47GtuO6/u375tsxhtf7vt95QSYJwCB+ZUgo4T+FV4hquZ4AsRkbgavtIzQisg
+ Dgv76tnEv3YHV8Jn9mi/Bu0FURF+5kpdMfgo1sq6RXNQ//TVf8yFgRtTUdXxW/qHjlYURrm2
+ H4kutobVEIxiyu6m05q3e9eZB/TaMMNVORx+1kM3j7f0rwtEYUFzY1ygQfpcMDPl7pRYoJjB
+ dSsm0ZuzDaCwaxg2t8hqQJBzJCezTOIkjHUsWAK+tEbU4Z4SnNpCyM3fBqsgYdJxjyC/tWVT
+ AQ18NRLtPw7tK1rdcwCl0GFQHwSwk5pDpz1NH40e6lU+NcXSeiqkDDRkHlftKPV/dV+lQXiu
+ jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
+ zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
+ XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
+In-Reply-To: <69ac72dd.df0a0220.a3fa6.8d4f@mx.google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260313_105731_950993_654B5B2C 
-X-CRM114-Status: UNSURE (   9.66  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260313_113626_106553_7B5DE53D 
+X-CRM114-Status: GOOD (  20.29  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,60 +126,78 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Use FIELD_PREP_WM16() helpers to simplify the DP lane selection
-logic.
+On 07/03/2026 19:47, Christian Marangi wrote:
+> On Sat, Mar 07, 2026 at 05:38:25PM +0100, Krzysztof Kozlowski wrote:
+>> On 07/03/2026 11:57, Christian Marangi wrote:
+>>> On Sat, Mar 07, 2026 at 11:40:48AM +0100, Krzysztof Kozlowski wrote:
+>>>> On 07/03/2026 11:37, Christian Marangi wrote:
+>>>>>>> +
+>>>>>>> +		if (phy_type == PHY_TYPE_USB3) {
+>>>>>>> +			ret = of_property_read_u32(dev->of_node, "airoha,usb3-serdes",
+>>>>>>> +						   &priv->serdes_port);
+>>>>>>> +			if (ret)
+>>>>>>> +				return dev_err_probe(dev, ret, "missing serdes line for USB 3.0\n");
+>>>>>>> +
+>>>>>>> +			priv->scu = syscon_regmap_lookup_by_compatible("airoha,en7581-scu");
+>>>>>>
+>>>>>> Nope, you need phandle to express proper device links.
+>>>>>>
+>>>>>> Don't sprinkle compatible lookups for new code which does not need to
+>>>>>> keep things backwards compatible. How do you manage device links
+>>>>>> without phandle? How do you manage device probe ordering?
+>>>>>>
+>>>>>
+>>>>> Hi,
+>>>>>
+>>>>> the phandle to SCU was present in old implementation but later dropped as it was
+>>>>> said that it wouldn't describe the HW.
+>>>>
+>>>>
+>>>> I went through v3 review and I did not find such said arguments. Can you
+>>>> point me to it?
+>>>>
+>>>>
+>>>
+>>> Here was v2 [0] that was clock + USB PHY. (there were clock stuff as the SCU
+>>> implementation was different) The link wasn't added in the changelog as it's
+>>> quite different than this current series.
+>>>
+>>> In patch 7 Rob pointed out that serdes-port + scu was a bit unusual.
+>>>
+>>> Then the implementation changed in favor of a more simple one where it's the PHY
+>>> that configure everything and in this new version the usage of the SCU phandle
+>>> is really to just get the regmap and modify the single bit to select the PHY
+>>> path/mode for USB 3.0. (it's mainly the reason the SCU is referenced directly
+>>> with a compatible instead of a phandle, in the previous implementation we used a
+>>> function exposed by the SCU SSR, while in this it's just a regmap that can
+>>> PROBE_DEFER)
+>>>
+>>> Rob suggested an additional layer (a PHY) to handle this but I don't feel it
+>>> would actually describe the HW this way as that bit doesn't modify another PHY
+>>> but it just toggle the mode to the related USB 3.0 PHY.
+>>>
+>>> This is really another case of not-so-organized register mapping on the SoC.
+>>>
+>>> [0] https://lore.kernel.org/all/20250320130054.4804-1-ansuelsmth@gmail.com/
+>>
+>>
+>> That's the cover letter. I guess you did not implement Rob's feedback,
+>> either. This is either phy (for phy) as Rob asked or scu phandle.
+>> Removing scu phandle and not implementing phy is not what Rob proposed.
+>>
+> 
+> It was to give the full series. The specific comment from Rob was [0].
+> 
+> SCU phandle is going back to the old dual binding that Rob was against but PHY
+> for PHY would not be descriptive of the HW.
+> 
+> I can do that but would it be correct?
 
-Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
----
- drivers/phy/rockchip/phy-rockchip-usbdp.c | 28 +++++++---------------------
- 1 file changed, 7 insertions(+), 21 deletions(-)
+You cannot avoid proper DT structure and DT review by re-implementing
+the DT properties by such lookups.
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-index 1bfc365e2b2c..beab20e4c512 100644
---- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
-+++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-@@ -550,30 +550,16 @@ static void rk_udphy_usb_bvalid_enable(struct rk_udphy *udphy, u8 enable)
- static void rk_udphy_dp_lane_select(struct rk_udphy *udphy)
- {
- 	const struct rk_udphy_cfg *cfg = udphy->cfgs;
--	u32 value = 0;
--
--	switch (udphy->dp_lanes) {
--	case 4:
--		value |= 3 << udphy->dp_lane_sel[3] * 2;
--		value |= 2 << udphy->dp_lane_sel[2] * 2;
--		fallthrough;
--
--	case 2:
--		value |= 1 << udphy->dp_lane_sel[1] * 2;
--		fallthrough;
-+	u32 value = FIELD_PREP_WM16(DP_LANE_SEL_ALL, 0);
-+	int i;
- 
--	case 1:
--		value |= 0 << udphy->dp_lane_sel[0] * 2;
--		break;
-+	for (i = 0; i < udphy->dp_lanes; i++)
-+		value |= field_prep(DP_LANE_SEL_N(udphy->dp_lane_sel[i]), i);
- 
--	default:
--		break;
--	}
-+	value |= FIELD_PREP_WM16(DP_AUX_DIN_SEL, udphy->dp_aux_din_sel);
-+	value |= FIELD_PREP_WM16(DP_AUX_DOUT_SEL, udphy->dp_aux_dout_sel);
- 
--	regmap_write(udphy->vogrf, cfg->vogrfcfg[udphy->id].dp_lane_reg,
--		     ((DP_AUX_DIN_SEL | DP_AUX_DOUT_SEL | DP_LANE_SEL_ALL) << 16) |
--		     FIELD_PREP(DP_AUX_DIN_SEL, udphy->dp_aux_din_sel) |
--		     FIELD_PREP(DP_AUX_DOUT_SEL, udphy->dp_aux_dout_sel) | value);
-+	regmap_write(udphy->vogrf, cfg->vogrfcfg[udphy->id].dp_lane_reg, value);
- }
- 
- static void rk_udphy_dp_lane_enable(struct rk_udphy *udphy, int dp_lanes)
-
--- 
-2.51.0
-
+Best regards,
+Krzysztof
 
 -- 
 linux-phy mailing list
