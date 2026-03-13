@@ -4,53 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5A75C107BCD5
-	for <linux-phy@archiver.kernel.org>; Fri, 13 Mar 2026 17:57:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E06D5107BCD7
+	for <linux-phy@archiver.kernel.org>; Fri, 13 Mar 2026 17:57:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uFBsLFfRY2P4/dMc4Ekx+oURUxivbsfjnEDsjtnMFi0=; b=K34JbTJ/wuH47B
-	VVagkPcL+WV3PNgw2ZAmweMlm/OG0EGFdQsyL22U7DY5seZlF6WDfEQGWLIvSVjjXimcVtbXQL+GT
-	g1FxPNd1VS6DlOj3CK2hJyPmN6V1ZN514OvKQjIWymCPf3F0wy/EH3h8O+KH5ZOIrkqet1isYmW8p
-	gP7mIz1Kbvor921XRptjqpQvtGjdo/6B/TNYIZR398JNOCg3jjpqmFUwV5pxznm5eOaOqSPa+rG34
-	a8gnaK2WoskB84YRgixXnB1UnH6RJoN10VyrBnK47fCUVsG65UdZsm+1GHBaBbFG7/ThTbLE0d3fU
-	brWKJeK09T10+OtOh2Zg==;
+	List-Owner; bh=60e0gQft270daO7OMH9UXODmPI2I25tVlmB7DvRCidk=; b=AgkYmTpi2qWl1Z
+	eI3Oz5knaHGhBIUM4WydRHqpqfZgN4jj2xsymBRZvsnF44FPJVLVBhC2ZxYnxK43TR9TCkIsUxZKi
+	R2z+oyRxQbbNunYmoQv7KD8fQbK2FKrUOYVzEStLLz9PmpZ8mY6kDcnYGhZYyFnzh+a/O/Vgg2oBr
+	Go8qdFZbHb7ZT9RMMCVYvkL6O0bNhdkMqzzGoRiCT0/+De15kPOM7qxI6AFRx36zmFXGFsoC+55ro
+	rz5DtvufKdK4hxWsUqwn0Ns3FiXJAJzRc7o1iaFOGFzN+/OjrGF55XXq6qugMl3XrlGaY5U4SmMbe
+	CTj103yptXmDun5xAXJw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w16lW-00000000o02-0Mj8;
-	Fri, 13 Mar 2026 17:57:38 +0000
-Received: from bali.collaboradmins.com ([148.251.105.195])
+	id 1w16lX-00000000o2b-2W1k;
+	Fri, 13 Mar 2026 17:57:39 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w16lJ-00000000nlm-2I4G;
+	id 1w16lJ-00000000nlg-2hhI;
 	Fri, 13 Mar 2026 17:57:28 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
 	s=mail; t=1773424641;
-	bh=oqVjDoZa94zSu90rk9b/ENEd4dpixcUZCizM4KN3zCI=;
+	bh=7erG1vSntiZYfDvD9BPxDXJhjGY+cucRfQBaEqe1HlY=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=oFXyBgYP+FDS7aaLeugsmGtsCiW/HnTWTBrRXpjnA0LIz0gt+3JCRV9UITtHJ0Gmk
-	 rmHIOE9gAyBrdyayEAXQ6MPzGJl7wrhbXHhId2YqZcpvXDrEO3oAKixqUC0FPazig0
-	 uQyFrgl2WRL7xEXbIZ9oMRzupjn7IeRyfLLpULu8ZO4D42DmDU/MPKGqG2QyDym4oE
-	 OoQTEsjwjzg0XhUB8JFNAEatilTEcDbmo+JIk5lxLt8XN5EfWxI5WAu1JJCJJfdT4y
-	 E3SDMZoXErJs8H1Pq2xiXSUzwAt0SL4wst1cOFGCLbJhd/xtzrzxpxgsIwUySzpuaZ
-	 JnA/ezk5+O4FQ==
+	b=ieLBvGr+yVicWy/eXV2T4tHKZZs7vEsi2DA+COe02Sv8188BReGoSdqnp/Ftf5Eds
+	 c1hayddhGwN6gX8x4a0Lzx9tBoFWkZYfJSOcMW+91cNHHs++LAyYXFq037t9SD+W+U
+	 Dv3qVBg3bLVwecpDexIyDypoTF3GgFJiTkfvbRpi/wK5VPw4bfcgHAUfA6MKaSjQYj
+	 M57FIlkPQz6N/9jeZcvL3Rf1HkmnC8Pj2NUAwkqz29y8zspjgH98/Ok//L9NN6hVD/
+	 NW+LksSSagaep6BqdCfDw3wmrpRUvNvy8OqznBoPgQMdq0rbWB0eBQRiCoj4ZoNOov
+	 ff+owCO5N6zzg==
 Received: from jupiter.universe (dyndsl-091-248-210-078.ewe-ip-backbone.de [91.248.210.78])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: sre)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 6C6FF17E05B5;
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 6F17417E0EB4;
 	Fri, 13 Mar 2026 18:57:21 +0100 (CET)
 Received: by jupiter.universe (Postfix, from userid 1000)
-	id 26E1B480029; Fri, 13 Mar 2026 18:57:21 +0100 (CET)
+	id 283F548002A; Fri, 13 Mar 2026 18:57:21 +0100 (CET)
 From: Sebastian Reichel <sebastian.reichel@collabora.com>
-Date: Fri, 13 Mar 2026 18:57:12 +0100
-Subject: [PATCH v3 03/12] phy: rockchip: usbdp: Keep clocks running on PHY
- re-init
+Date: Fri, 13 Mar 2026 18:57:13 +0100
+Subject: [PATCH v3 04/12] phy: rockchip: usbdp: Amend SSC modulation
+ deviation
 MIME-Version: 1.0
-Message-Id: <20260313-rockchip-usbdp-cleanup-v3-3-3e8fe89a35b5@collabora.com>
+Message-Id: <20260313-rockchip-usbdp-cleanup-v3-4-3e8fe89a35b5@collabora.com>
 References: <20260313-rockchip-usbdp-cleanup-v3-0-3e8fe89a35b5@collabora.com>
 In-Reply-To: <20260313-rockchip-usbdp-cleanup-v3-0-3e8fe89a35b5@collabora.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -66,26 +66,27 @@ Cc: Andy Yan <andy.yan@rock-chips.com>, Dmitry Baryshkov <lumag@kernel.org>,
  devicetree@vger.kernel.org, 
  Sebastian Reichel <sebastian.reichel@collabora.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1079;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1708;
  i=sebastian.reichel@collabora.com; h=from:subject:message-id;
- bh=oqVjDoZa94zSu90rk9b/ENEd4dpixcUZCizM4KN3zCI=;
- b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGm0UAD6PHbw0tG/5ourLt9uGtRk64mEIdSNT
- oHKRnmp+NJHTokCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJptFAAAAoJENju1/PI
- O/qaT8AQAJ6JK+6GTTvQWH+aIc3Z5FvcsOPP9AAjPLiMh5GjwajeigQVwogeZCgqpuGqHe069QW
- cHzxFeiB1yLA0pncuhpdBsr9ak+u8sug+1UX1sM6sxn5Tlv7RLCgK3PJacOWLFUzmDIK3oFkASW
- jpAdsro421VCoRuyxiimoLTDMcB8+ysJDDlrRa4rQ3F8frr2jRGzmQmjVdAldBEbPPcFhuE2EO/
- DWbiYhffPYarDscNRTZ7VL0LtARdykH7BrCikSXMxc0pN9SHU8ixQXaMZ51bW8GW5ONtoeCFqAV
- HIzmOJ9dSEW8VkzK6M75Le3W2eaZvf3YAmiude8MzEPc3/cbHJr3/jkswbi4D25qHekOfPmVP8E
- 8M+ZcURDQ/EVojnkAK1b/lrWR0z7hTfUGuGdKctbQCUOUJuvRkMmVdRIma8q7O05NdEhKYKDuXH
- z5hdLhXMVz2ZJLdpEJsHtpBmYdB6fHTiTswgbr1qOv1ZNT7HQanPTXbXf4j+YxkB5JLBxt0RI1l
- 2nxw22xh4lVO1xUXyXtaIS1rrLDILA+RPwyXIn8bBokW4wfv/JWNcIWwFYK3xstVR82X7rnmJHN
- 0/05/uLvWnSxzJI0Ym0tabG6fVabGGid10fzNYz1NCFxZQYajXbUs3DU7W/6xS/cYiR6e4SjXBj
- EYkgYvJcxrdD4SEzEJV0vXA==
+ bh=DmJGqquNgLK3sA4UZxU1kvwePYoRCEplGjQQLTvjtuw=;
+ b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGm0UAD4zFEFy+De1oL5KQyUrINHyjejz91ck
+ WMnwecOweACFIkCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJptFAAAAoJENju1/PI
+ O/qaijcP+gPgApeWWe7B/YUbIe/y383lh+xKjKfOsVjayjBxlstwoxHaQOTXSZmb3vyf8OCPzUe
+ nlWQm8OQ7Pr2w5fjdSvJlgoY+sVoBLevGdon7LIKdQcOYidKKWFKF+ddlvZuSqHOO1Z9LbL5HBA
+ ByznkxrY6ITcb/+KD/WPzLYIeuzUK/BnYvwFvKzuKBXR4AZ64VKUUrVmaZqEzze4bORHXCFwDNI
+ q+EwnxViNT0+tIQktfPiBd6PFtblDVtFw5EmTdjay9Q35EH6UvU6sKfscR0x3aIJGSt5g1TDUby
+ gs3LyPNEs6ez/jmunADZ3ngcb4NRXb2jGXnsZa10VXHpFJlRgFETPl+/cImvFkr2EWhe/fhgahi
+ Dk3VX+fFt2JSKSPrtcdo2CPEy+rvFMSxOsqnsUWgP1bFyfaLgSc/Z7pgCn9slPomT9n+Z93yLM2
+ SFhtiW4E/4B15m9UrCKkJvaRY41qO6FemTlSB6IkoxvuCFaRgxr0mYZi3FSUfeu8JtRsB02b2G7
+ /Nk9U3rwxQSbIVKH1EzDAT9IkNqnkD2MLw9M41zrjyMR0IpMnnWtMgpqjm/R+aNHcC4bjQAN1E8
+ gcQDZ/oDxzA5Yka0MgLdrkUTlSTrB+TZKbJrai0VnKZCqUHXbvB7XxOE/+6GAsSuoAZLStuyb92
+ 9bueVVC2V+ErEEqCnPx84hQ==
 X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
  fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260313_105725_766071_70D6AE08 
-X-CRM114-Status: GOOD (  10.14  )
+X-CRM114-CacheID: sfid-20260313_105725_894226_72105ADB 
+X-CRM114-Status: UNSURE (   9.85  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,33 +103,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-When a mode change is required rk_udphy_power_on() disables
-the clocks and then calls rk_udphy_setup(), which then enables
-all the clocks again before continuing with rk_udphy_init().
+From: Frank Wang <frank.wang@rock-chips.com>
 
-Considering that rk_udphy_init() does assert the reset lines,
-re-enabling the clocks is just delaying things. Avoid it by
-directly calling rk_udphy_init().
+Move SSC modulation deviation into private config of clock
 
+ - 24M: 0x00d4[5:0] = 0x30
+ - 26M: 0x00d4[5:0] = 0x33
+
+Signed-off-by: Frank Wang <frank.wang@rock-chips.com>
+[Taken over from rockchip's kernel tree; register 0x00d4 is not
+described in the TRM]
 Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 ---
- drivers/phy/rockchip/phy-rockchip-usbdp.c | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+ drivers/phy/rockchip/phy-rockchip-usbdp.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-index 744cc7c642f4..98562a888b42 100644
+index 98562a888b42..1f686844c337 100644
 --- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
 +++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-@@ -1012,8 +1012,7 @@ static int rk_udphy_power_on(struct rk_udphy *udphy, u8 mode)
- 		if (udphy->mode == UDPHY_MODE_DP)
- 			rk_udphy_u3_port_disable(udphy, true);
+@@ -350,7 +350,8 @@ static const struct reg_sequence rk_udphy_24m_refclk_cfg[] = {
+ 	{0x0a64, 0xa8}, {0x1a3c, 0xd0},
+ 	{0x1a44, 0xd0}, {0x1a48, 0x01},
+ 	{0x1a4c, 0x0d}, {0x1a54, 0xe0},
+-	{0x1a5c, 0xe0}, {0x1a64, 0xa8}
++	{0x1a5c, 0xe0}, {0x1a64, 0xa8},
++	{0x00d4, 0x30}
+ };
  
--		rk_udphy_disable(udphy);
--		ret = rk_udphy_setup(udphy);
-+		ret = rk_udphy_init(udphy);
- 		if (ret)
- 			return ret;
- 	}
+ static const struct reg_sequence rk_udphy_26m_refclk_cfg[] = {
+@@ -377,7 +378,7 @@ static const struct reg_sequence rk_udphy_26m_refclk_cfg[] = {
+ 	{0x0c30, 0x0e}, {0x0c48, 0x06},
+ 	{0x1c30, 0x0e}, {0x1c48, 0x06},
+ 	{0x028c, 0x18}, {0x0af0, 0x00},
+-	{0x1af0, 0x00}
++	{0x1af0, 0x00}, {0x00d4, 0x33}
+ };
+ 
+ static const struct reg_sequence rk_udphy_init_sequence[] = {
+@@ -412,8 +413,7 @@ static const struct reg_sequence rk_udphy_init_sequence[] = {
+ 	{0x0070, 0x7d}, {0x0074, 0x68},
+ 	{0x0af4, 0x1a}, {0x1af4, 0x1a},
+ 	{0x0440, 0x3f}, {0x10d4, 0x08},
+-	{0x20d4, 0x08}, {0x00d4, 0x30},
+-	{0x0024, 0x6e},
++	{0x20d4, 0x08}, {0x0024, 0x6e}
+ };
+ 
+ static inline int rk_udphy_grfreg_write(struct regmap *base,
 
 -- 
 2.51.0
