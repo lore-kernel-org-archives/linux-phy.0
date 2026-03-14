@@ -4,92 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6DCEA107BCE9
-	for <linux-phy@archiver.kernel.org>; Sat, 14 Mar 2026 09:16:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4F46210706D5
+	for <linux-phy@archiver.kernel.org>; Sat, 14 Mar 2026 12:18:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=29hJsddnm+HeY1+388OdbkY9HWczo9oQp0Xu1oEMRDI=; b=0l489jW7q0l/lm
-	be0o9G4MNlBiKi1Du6nOdNEZIJCS04OBqsKRtZSl0iBt1e+kLoXfzIf2ov8fGT8uTYY59mC58ReUJ
-	M5rBz63nvADBBQaLqeNuxI8+jCXL/ryHRHrAzE2ckBeCbRvz5hMVZpi2mcDlqwHdw3s54XUzDRyGf
-	JXn7knig5Ta6UGd0jz/i4uEsEattvbapTaVCs35PAZnLJLEC1rqTLbKqQZLMg3yRn3nJY/s1NpER3
-	N17ICE4BmwH7/hm/s6mRP18bLCEvSVmQIH6Rte+y5VZ+lLv5sAsxeiTws69HQadsP6s/J00T2ILXF
-	z3r13Zma4ApFIOH/sxYQ==;
+	List-Owner; bh=AHqndBYgofkdv13hbbvKQcIhuapEmdGZqKMOGzaOFCI=; b=K5bac9qjfykpAv
+	A+CrDDyYmys7PQn1pz2pW8sJBo7SNta+/nKULUG6OkCfLjQ+3yvYVokFD2XXSymlIIM84K/272Vtd
+	Z25A5+Nnee/aWOFfWaQz24gkmFKUzF5/m+1iF64t/S+s6s//QmCV8uFQL64FgEqbXEsfOXO35eCZP
+	ZZBAeRshRjlfYRhOomjiZKG0bvMt0ShLv0ZWcqybJOyWvY1nONBOfxoPVhZAarTni/G5bl2Jbnn6t
+	NVITOkJWk9p/ka+SDuQoPUvMgBmp+8C8TH+l3corSOfNZPEZPtvlkXIodKwxM6elkwkNoJD/GDIHp
+	M4/D/DMmEtBeBpQY10IQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w1L6c-00000001f59-06mO;
-	Sat, 14 Mar 2026 09:16:22 +0000
+	id 1w1NxK-00000001psw-3YCe;
+	Sat, 14 Mar 2026 12:18:58 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w1L6Y-00000001f4p-47PP
+	id 1w1NxH-00000001ps9-1Xl7
 	for linux-phy@lists.infradead.org;
-	Sat, 14 Mar 2026 09:16:19 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 62E3ndFk2907467
-	for <linux-phy@lists.infradead.org>; Sat, 14 Mar 2026 09:16:18 GMT
+	Sat, 14 Mar 2026 12:18:56 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 62E4lXaT2006983
+	for <linux-phy@lists.infradead.org>; Sat, 14 Mar 2026 12:18:54 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=6QZSlYjY7FUoTlmFUn5G39wa
-	7XITUwMGaj1FXZhuVSw=; b=phL61z5WPZLLhlI5udYKD0e4DH7fW46qdKao2ht7
-	tHdfmq9A6NLfDr3bhzWcbZDsn2bOTCg3rQGocVKigpDQGkGtu395/pk1sohVMqlA
-	uM9RkFBUXdIhhqXphWSzJ3mSS2Oryeb+exSEKEJSwqGFnliJGZQP1hoaTozjYjLe
-	xtMf6rMtk9NQndaZJMEw1dovTwxLKHuivtn/ziiVAJj4Q22WRfbkjNr1Ty6VJs8E
-	pVPJ9S/Vldqj854xFWpm3Z/6XKzJi3Bqrg7qPcuYS4lUBRbz3AXGO1mtxK2FFu7J
-	UCngyyEkMTR0C8p3z1ZLptGIZH2Yxls5BUDxxjB6hQ5Bqg==
-Received: from mail-qt1-f200.google.com (mail-qt1-f200.google.com [209.85.160.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4cw043gfj2-1
+	:references:subject:to; s=qcppdkim1; bh=rjL0UUHtNTqtONAtn/OGRWnp
+	lN9kMYG/3SiGmBzEtGk=; b=irVB2IcG3MtZ/if42m8TBemLjO9hx1+FGhNcAR5f
+	YcM0KCzr5FgLdy768Eq//ULPCnmWn4Sjver3K5+LGbQJeiSGkgTM5tWypkRfmLLV
+	BDpxJFzuK7WTUwHjAgrdpqmJrCNMQoNKXnpu906fL4nEG4f7XlSRZZsw0sGoQOln
+	KiWf2Wv9ysAdxP4AFNoYg8z+XEl3hB9jZYavtAcwbZowbXBCgsx79Ur6Badlm1at
+	cVHHSJtVIE0uyPj1zhTjPZytD6Ds1ue758UTqXhsGiEilmQ5r0YXmFG6t4egwzqb
+	gY3XrLBbAAakN7nVTBKTOjFhxv6UCzPw9cw4Ek8L5KDL+g==
+Received: from mail-dy1-f200.google.com (mail-dy1-f200.google.com [74.125.82.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4cw0y7rmp2-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Sat, 14 Mar 2026 09:16:18 +0000 (GMT)
-Received: by mail-qt1-f200.google.com with SMTP id d75a77b69052e-5091a96f0bcso168829511cf.1
-        for <linux-phy@lists.infradead.org>; Sat, 14 Mar 2026 02:16:18 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Sat, 14 Mar 2026 12:18:54 +0000 (GMT)
+Received: by mail-dy1-f200.google.com with SMTP id 5a478bee46e88-2be9e7c2116so35451417eec.0
+        for <linux-phy@lists.infradead.org>; Sat, 14 Mar 2026 05:18:54 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1773479777; x=1774084577; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1773490734; x=1774095534; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=6QZSlYjY7FUoTlmFUn5G39wa7XITUwMGaj1FXZhuVSw=;
-        b=SGhbBBX1hSwW4kLy5br3fyga1kafc0Pfv5a2/V9G4a9SvTSdcT6EnnPvcNUW6tJhJT
-         rL30NWbS2q/4HW8Tk1A/OTqQAR2rML0e5FavvLulV01VE0UXKgMuHL8izW5pK5LRXetH
-         GZCUZrAH9PNqpi5/zU3v5SplY3IF4hyPpTPmOb0Jis3y/KvnPRUcxODTQLLKXpTneyU1
-         9gdn48nrVOGnLnEqiPwOkq8ZCKP/VEbWGwi7Uko0IsG9DZQynqxK0ulta2pRdHNQH/DR
-         MNb0I/xVuDA6ebJKQ345fIuDIdPh26F1O18E1tuJh50Gi6XidBG0mPPdGB0ealDWfQTD
-         aXow==
+        bh=rjL0UUHtNTqtONAtn/OGRWnplN9kMYG/3SiGmBzEtGk=;
+        b=NU43Y3Tb8MqJNKYY4b1jvusxudxC6/GAz0ZMKLNPBoTW1ZaQpw6YpUu2EPV1SAj4il
+         j41T/rSGNxsnlJAQX7ZL/ko6TLLH9TrImLIVLhK6FC00qgV1ELhwH0hV2kn0fyiqgbFJ
+         aHWHDc5oN+B4Y/LRMRdvCxWrRSdVmFnERGR409jf1cmDhT1fYKFBHvGzDxXmyLFsYKf8
+         JYd79ffU6ZnxCIE7ZLcAvBNA6gN5M2RWY/oAjcHLnotXSLbhJr04VW9JceGHlqgLK021
+         /AwXN+7av5y6tmYUpj8Yvvfo9S8SRt7a7vwsHi/R1KPQCHdgrQhlUMJwWQEE7uo3GgzP
+         zl8w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1773479777; x=1774084577;
+        d=1e100.net; s=20251104; t=1773490734; x=1774095534;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=6QZSlYjY7FUoTlmFUn5G39wa7XITUwMGaj1FXZhuVSw=;
-        b=KFxK10VXZBUGhcwYyDFEbTDHWQAJ1QB+M8ZA2p5toXs6jmBFrdFGH9pCv63Sd6+Nir
-         VKYs/J+LcRvxdf3Ic6geat0qn4dsyNOI0HsBPUu+qacmtbH4nhVvH2pTcCUYCnC+ld3M
-         196O//tXhJ58FG0GtwN04ZuE2MRqsnR5N2wsxmvuJMsJu+7xlpoXZAAEcdU51Gk5jUeq
-         1JHN7yDMJD3KnOvkXpfV74AL039jru6Gv9TOJGhB4N+76XpA5ZVKh+wYU/tSzjHtXypd
-         Ke2dzpKp8xyLBGEpf4iJoL0i9xuwPIPyrIpeErrCLVwne0K2EKbylRuzwgjR0HVTJBHI
-         luzA==
-X-Forwarded-Encrypted: i=1; AJvYcCXVe93OLy/jwkd7uU5W30KGixA9dWOV2N+1oAUGHB/x9JttSUpOd54MJ9R5Iu7WKFv4eCpXxYgXAUM=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxgighL0QbI7S0ZfMCZtQ6bmM7Y9VK97OwllWooz9Sm98ePrpG1
-	IjovAeycmccI/kG8h+91NfNR6c3LpcjWR4i/w1qGcXcWc4saKkg7/tNzbgNOHz0TtEJtfiOX3Ly
-	rLtzrBzRkltAK+LsxJ19dTRtjbW/L8tiu+KZOG+ZxqXTpmW8/myTPYi20P/l8Ac8hapGj
-X-Gm-Gg: ATEYQzyB73behvNlibq38pBqbefIUjVw99N+O8NAsRObgUW5AJ2ZIQSpYRMGlDtEzcC
-	L5qBsfEqD46PFAKmSKEFT15/QBNAEb2+0mn+DrB/gdzPIO37aRDpqP+Op8BuQbVk0G1dJ4WfrXq
-	M7IMaQYmHKu7SQnORT3R8l0MJVWnSmqfkIpXp9qurjQQ5ACSLm8L0Q9oIEcY+WhzWqx/yBMoS9M
-	YUSI+ZjisLF7LObUTPbHqBMpglsA+bVlukVp8Tbdi17eOVcolNMygg0sgs2tTF1TQL/DSdoNUs4
-	a811eHEj12u5qBCs8AegoXgeXmU5nUjk8xPDKsiP56w8Uer40LIrLQkpBuSyxgX2aM8mK+TrPON
-	yfTMz3U5MVdERIhUPLS9aLWFb45fTBpIKwk2MEB9078xm3F7hnlkL417tw9dapNnHm0VatOCB5T
-	eVUiBMMvKiIXwhfCb4AhVpyNLZ5AsY3kXpFK4=
-X-Received: by 2002:ac8:6907:0:b0:509:58d1:71fc with SMTP id d75a77b69052e-50958d177d6mr77215981cf.69.1773479777563;
-        Sat, 14 Mar 2026 02:16:17 -0700 (PDT)
-X-Received: by 2002:ac8:6907:0:b0:509:58d1:71fc with SMTP id d75a77b69052e-50958d177d6mr77215771cf.69.1773479777132;
-        Sat, 14 Mar 2026 02:16:17 -0700 (PDT)
-Received: from umbar.lan (2001-14ba-a073-af00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a073:af00:264b:feff:fe8b:be8a])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5a15602e60csm2096116e87.33.2026.03.14.02.16.14
+        bh=rjL0UUHtNTqtONAtn/OGRWnplN9kMYG/3SiGmBzEtGk=;
+        b=Tx5EiuZboshKvS/PhIJvQjjcG8Zww3kantcfvtJCJ7yBIaePVAJKfRvZnnQpp9InsG
+         UwhRNbHaiC+dIpKbP4Tgx4oHTFCkSCjhjTTyK63pKSYJgbBiG5gD3n/pf/2vguTkIWoY
+         0LXF+ErRG+Rmc543LhN2MePtxhWxwbV40ULkC2nVfdh+NWbuCfbANeyq4ixLjUOXTJQw
+         Li7kv/E1TrNKo1vOHYQ9zjrp2/mowTaYlh8NjC5/cl2LIauoYMIjvJw/ouMaGoZkwspm
+         nz+SiX7qUksut220QZ2tfYbdJdlBA/xANYc35XrUi2iONU7Ua20cnxug9vX14WjUQW5N
+         ltsA==
+X-Forwarded-Encrypted: i=1; AJvYcCWVfn4f73OuC4gSh9y5fB5gEW9DtBwMlG4KeS9dtkIf4HiuUedycf+zkCxqNSGy2gyAcFpq4uiza0c=@lists.infradead.org
+X-Gm-Message-State: AOJu0Ywr4F69xz+suNIBGaRyY7KRT+kDg5JIzKK4JTYW42IM3SUTz3Ni
+	g4QEjhU6WC6XgWqpazmdmlP7neOVpa+WOVmg856tWK/t9o1aANBKcKr4WVxl30MzOQrSgn5bQQn
+	poMlyR7ueyc73ucwWt5+3rk8ztPjG4dycoeCFaAyoitRddoEsLORdAdgdFZKgPeE1tQT4
+X-Gm-Gg: ATEYQzxihWaufrtZL7jUyEhP6JsAJf0W6MC/+1qusr/HbKxLBanRl/h3qrCe/lvouJ8
+	wF1ogH8EiorZu2CZ7qhtS2cceDMTeIxs6mdOn0L603SPd4mB6ZwFTqLPxntJwKTo+fXzPywSm6K
+	BpUtU/OuhuO5Q3+tSZbXUC7yQgb1b4vMLnsdk23rRF4o9B6TxDptbC3Mp5eU8Visfqzfk8g+dWz
+	o/FFjssxXpnyjEhfO+MRYH35I2b5ShzJCwRiDBMsfNf3bKeBwdbUbZ5fT5H4hdfgWOyCrhZYCtq
+	HrQtnOI855j1w81U+J2u8Z7Sc6uSTALiFOOQFaDlBnY0LwHwMkRWa47aVT9FcdlFCyZPK+TJcvZ
+	C1oqOYtWaI+cf/qpv3xK8BA/bRCzWLr7jauLkVqAehSxLtXMQWeMosH+hPC1SojPR
+X-Received: by 2002:a05:7301:19a9:b0:2be:8650:b0fc with SMTP id 5a478bee46e88-2bea53daafemr3320861eec.5.1773490734085;
+        Sat, 14 Mar 2026 05:18:54 -0700 (PDT)
+X-Received: by 2002:a05:7301:19a9:b0:2be:8650:b0fc with SMTP id 5a478bee46e88-2bea53daafemr3320843eec.5.1773490733556;
+        Sat, 14 Mar 2026 05:18:53 -0700 (PDT)
+Received: from QCOM-aGQu4IUr3Y (i-global052.qualcomm.com. [199.106.103.52])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-2beab526d3csm6422176eec.18.2026.03.14.05.18.50
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 14 Mar 2026 02:16:14 -0700 (PDT)
-Date: Sat, 14 Mar 2026 11:16:13 +0200
-From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-To: Shawn Guo <shengchao.guo@oss.qualcomm.com>
+        Sat, 14 Mar 2026 05:18:53 -0700 (PDT)
+Date: Sat, 14 Mar 2026 20:18:47 +0800
+From: Shawn Guo <shengchao.guo@oss.qualcomm.com>
+To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
 Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
         Abel Vesa <abelvesa@kernel.org>,
         Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
@@ -97,41 +96,41 @@ Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
         Manivannan Sadhasivam <mani@kernel.org>,
         Luca Weiss <luca.weiss@fairphone.com>, linux-kernel@vger.kernel.org,
         linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH 3/6] phy: qcom-qmp-usbc: Use register definitions in
- qserdes-txrx-v3
-Message-ID: <nhsqgpaiqtipfqcbjtjfps7xmhas7wfwhqq2qaa2574dzw4w4n@gkjl7rcgdf7q>
+Subject: Re: [PATCH 4/6] phy: qcom-qmp-usbc: Rename QCS615 DP PHY variables
+ and functions
+Message-ID: <abVSJ2-mMFf-rsw1@QCOM-aGQu4IUr3Y>
 References: <20260314051325.198137-1-shengchao.guo@oss.qualcomm.com>
- <20260314051325.198137-4-shengchao.guo@oss.qualcomm.com>
+ <20260314051325.198137-5-shengchao.guo@oss.qualcomm.com>
+ <ckj6c2rute5bzachye3tl6hs3fgw7wtafoldsdutkszxjc2vsp@nplvcpzqzwfn>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260314051325.198137-4-shengchao.guo@oss.qualcomm.com>
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzE0MDA3MSBTYWx0ZWRfX5PpDoPXVL+O+
- 13dyRPk8skOO2sV3V0nGyYD29lpxRZf3mgulFOYYMhC6TbZmb0A+LbeTiUJUDBAMO2RwiqbCjAK
- NvJnBZ5PhbzuUhvcquaLl8fHTqvjy0tqHk1+yzW39J0jkRbhruyU8zrQSq5VEmjNr82yE8HMFff
- UALzV6UZLZKaUGJZ5DDrPl36eVtL1sEBYad32Iw20UIKkeb3tMbBrbEeyYBhRPkf7NMEY6jO8jj
- w/shyvOntVJzylg+1xz8TT9GaaQXXwKyj6XIo1+1tqDDJb6ZMBE3ZQZSfGdXIEh8FJXkUtRLUSQ
- Qq1dJVR3lXxc5FnhLQNQLvFbAAaBTYuI7fO4YTObvRAoJP+DlxwKJd5GE3WQ3gQStY03VNJ58Ch
- 8QZzeX0KGkAsqEVUMSmrviGuNoH6dyhnsHB3VcdpTvTo0K4xVUEGLskOTtQIn+0h/B5LlMjKCAa
- glNhlsxikkza3C/y0Uw==
-X-Proofpoint-GUID: vrVGhHmso7-59PiE7yhzWYzHNe2-dneY
-X-Authority-Analysis: v=2.4 cv=fLs0HJae c=1 sm=1 tr=0 ts=69b52762 cx=c_pps
- a=JbAStetqSzwMeJznSMzCyw==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
- a=Yq5XynenixoA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=yOCtJkima9RkubShWh1s:22 a=EUspDBNiAAAA:8
- a=OGSOfDE9ixvFzz5TOUQA:9 a=CjuIK1q_8ugA:10 a=uxP6HrT_eTzRwkO_Te1X:22
-X-Proofpoint-ORIG-GUID: vrVGhHmso7-59PiE7yhzWYzHNe2-dneY
+In-Reply-To: <ckj6c2rute5bzachye3tl6hs3fgw7wtafoldsdutkszxjc2vsp@nplvcpzqzwfn>
+X-Proofpoint-GUID: CXvcy3vNe_NBm4EK8JwIPoAZ6ECkLqqT
+X-Proofpoint-ORIG-GUID: CXvcy3vNe_NBm4EK8JwIPoAZ6ECkLqqT
+X-Authority-Analysis: v=2.4 cv=D9xK6/Rj c=1 sm=1 tr=0 ts=69b5522e cx=c_pps
+ a=PfFC4Oe2JQzmKTvty2cRDw==:117 a=b9+bayejhc3NMeqCNyeLQQ==:17
+ a=kj9zAlcOel0A:10 a=Yq5XynenixoA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=YMgV9FUhrdKAYTUUvYB2:22
+ a=UXx_BxqW5X7b_lvge-cA:9 a=CjuIK1q_8ugA:10 a=6Ab_bkdmUrQuMsNx7PHu:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzE0MDA5NSBTYWx0ZWRfX0ocB9gx3ndjf
+ lXGc3jbXmR2rqWLVs2sdqyI9ThtgTKjdK1wN3moSKKD4bq3v9AcU2k53eJRs7wiCqxynwoPOw36
+ b/8PZfL/c9O/aaeRj/rQYbps68Q927AJaP9ze9k7qKc4KWpYvmTBDfC6QlHCPKxMEY6dV3Agoah
+ XcaScPG173DLms3tO6YXQDOLDAwKKdV7JjFzTLLHHqoLOGYGlAAog5euRIdKJz5A7MP5rkOSmi1
+ 5JVMw6y/pS07dGJuXAgTvPag4cJ1RarXY6A5xBdXcbo94EO2a5ke/XNuG7icZAWBYQx1mr+MR5R
+ mCgBkZkC1YQEAKsz2QZ/JIlMb0OHCsp41xc4AHWhLaQxcOseg2Fngdtrn3tGCPYZP426TC80QZg
+ jZz2d3U4sf2K6ACCuKCaBGKlMY7YNRbMqTq7DRZr1A2HG1LZndIHupD3yFfemCwR1uehrvLdeT7
+ vAHEHId2kFZuyL4EsDQ==
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
- definitions=2026-03-14_03,2026-03-13_01,2025-10-01_01
+ definitions=2026-03-14_04,2026-03-13_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- phishscore=0 priorityscore=1501 malwarescore=0 lowpriorityscore=0
- suspectscore=0 impostorscore=0 clxscore=1015 adultscore=0 spamscore=0
- bulkscore=0 classifier=typeunknown authscore=0 authtc= authcc= route=outbound
- adjust=0 reason=mlx scancount=1 engine=8.22.0-2603050001
- definitions=main-2603140071
+ malwarescore=0 impostorscore=0 lowpriorityscore=0 spamscore=0 suspectscore=0
+ clxscore=1015 bulkscore=0 priorityscore=1501 phishscore=0 adultscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2603050001 definitions=main-2603140095
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260314_021619_020780_1480BD2B 
-X-CRM114-Status: GOOD (  11.07  )
+X-CRM114-CacheID: sfid-20260314_051855_423276_BC1AE837 
+X-CRM114-Status: GOOD (  15.43  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -148,25 +147,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, Mar 14, 2026 at 01:13:22PM +0800, Shawn Guo wrote:
-> The register definitions in header qserdes-txrx-v2 and qserdes-txrx-v3
-> are actually identical.  Considering that QSERDES TX/RX v2 is already
-> defined by header qserdes-txrx, qserdes-txrx-v2 is really just
-> a duplication of qserdes-txrx-v3 for QSERDES TX/RX v3.  Switch
-> qcom-qmp-usbc driver to use v3 registers.
+On Sat, Mar 14, 2026 at 11:14:56AM +0200, Dmitry Baryshkov wrote:
+> On Sat, Mar 14, 2026 at 01:13:23PM +0800, Shawn Guo wrote:
+> > Commit 81791c45c8e0 ("phy: qcom: qmp-usbc: Add QCS615 USB/DP PHY config
+> > and DP mode support") chose to name  QCS615 DP PHY variables/functions
+> > with qmp_v2 prefix, by assuming that QMP PHY registers are versioned
+> > as a whole.  However, the reality is that the registers are versioned
+> > in sub-modules like QSERDES COM and QSERDES TXRX respectively, e.g.
+> > QCS615 DP PHY has registers of QSERDES COM v2 and QSERDES TXRX v3.
+> > Thus it may cause confusion that qmp_v2_xxx table and functions access
+> > QSERDES TXRX v3 registers.
+> > 
+> > Rename QCS615 DP PHY variables and functions to be prefixed by qcs615
+> > instead of qmp_v2.  This better aligns with how the driver names USB3 PHY
+> > variables for QCM2290 etc.
 > 
-> Signed-off-by: Shawn Guo <shengchao.guo@oss.qualcomm.com>
-> ---
->  drivers/phy/qualcomm/phy-qcom-qmp-usbc.c | 64 ++++++++++++------------
->  1 file changed, 32 insertions(+), 32 deletions(-)
-> 
+> Well... I'm a bit reluctant with this one. The driver needs to support
+> DP programming on three platforms: qcs615/sm6150, sdm660 and msm8998. As
+> far as I can see, most of the DP setup between SDM660 and QCS615 is
+> common. 
 
-Reviewed-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+In that case, could we just reuse QCS615 DP tables/functions for SDM660,
+just like QCM2290 USB3 tables being reused for QCS615 and SDM660?
 
-
--- 
-With best wishes
-Dmitry
+Shawn
 
 -- 
 linux-phy mailing list
