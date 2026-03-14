@@ -4,90 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9FA8CFD88ED
-	for <linux-phy@archiver.kernel.org>; Sat, 14 Mar 2026 05:14:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 109B9107BCF9
+	for <linux-phy@archiver.kernel.org>; Sat, 14 Mar 2026 05:14:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WRm39BOnL4mAGtP1i+ziVRpBaeB6LEUZiYkDtWjCA6c=; b=g62Wv5RrQKbxfH
-	nvpeyFjy/NBvL5Oc2c+eioE0TwxMv3196UZwHPrtMvc3wyaJpt84Ti2060EO4TbO7xAXDGfY0tznY
-	zyQGJx7X8273xF2N86G7gi5DPnKiFK69mpZ7W+fP4EzEwlVKg9NYJRR05Qt+YtyeYPGffPS52YZ77
-	BzpvMFcPSmI+izHtn733W2q0bGtpx7PU2UXo8KLgiUY8rln2z20lNQoWFMkkWKIP9GO8JmUZvsYZQ
-	6fIJ4WXuNXgoIyrhNPu41XQ4oOqP6hFic98xlz0N0VQapA0JSc6uNWamxENaAGj7hnO0NYaA048Jh
-	WYftnuOzwdetkMBAVoLQ==;
+	List-Owner; bh=KDDCpsT1UpJ4GAEGT1mTuDAWPote3NsEFtDtbtj4AsA=; b=lFJBeIR8rCJ+wD
+	RcNEeMCgOUAecOs3BXbpI1EUxuqSOu0HoX8pgiZ9zpng7gWJV3Z1Vg6DhfeXCr5hJfpSthADck3gq
+	vOPGzEKWCrTYKyLz3oGaiM8DMQ6kSVrxo7wlJCK4rNxScH4B+I1t11rUb6a87dJ9cQyeAf+PaO3Si
+	uuxkZYoSQ2Fujcy8Qaf2lZOgc1nSPV/wB9wiUOJB4ibAXdtikdf7rse4JFybYZq4/ZmH5k/j4hcyh
+	JC1wqhJgLBbNtlJG1QrEjz8I5yenPsU8aFMHPOcfM2fF1nvztdwgiPY4/XJ3Uh+hhf2TKRua84ihd
+	4z/qjb375Pe2evAq0v4g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w1HKm-00000001W4W-10wl;
-	Sat, 14 Mar 2026 05:14:44 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1w1HKp-00000001W8Q-2bJQ;
+	Sat, 14 Mar 2026 05:14:47 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w1HKW-00000001Vul-1LwM
+	id 1w1HKg-00000001VzW-2Eym
 	for linux-phy@lists.infradead.org;
-	Sat, 14 Mar 2026 05:14:31 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 62E3nW5j1999501
-	for <linux-phy@lists.infradead.org>; Sat, 14 Mar 2026 05:14:27 GMT
+	Sat, 14 Mar 2026 05:14:45 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 62E4dnjD4128463
+	for <linux-phy@lists.infradead.org>; Sat, 14 Mar 2026 05:14:38 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=w4lgBk11lnq
-	JfyG5r/Q27PLunT6Zdu7/stuTRfC09ME=; b=OuxXDeyVYxmXpd7ypGQQalrjiYp
-	damZc9LNlJTdpfZpcV4GK033qyPKkQKfrWzs2J+ff3CQnH4GLPZqbyMEHzsN1iM0
-	awBJYf5p5iQW/iqXY4MRVPufvgLG6FoXSS5/M4L9tQfwk6JUDAiHz036O8yjHwOC
-	hAapG5teFvusmUFOSE/B8XqQKlllnvsY9S9lBdAeOqY3VXsiwNXpcy+i5B0wS1o2
-	gR18skWXgBfhfGHp/W1DHQMTNYkHaZhT72iLqO6SorUPlJ+ThvIBCrvOvxUCfaSn
-	+WC5mW2Ygt3bECscGj5mFOsvNKeyLHTtRsXvr7tH1XPTMGeyjL48HUvJpoQ==
-Received: from mail-dy1-f198.google.com (mail-dy1-f198.google.com [74.125.82.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4cw0420416-1
+	:mime-version:references:subject:to; s=qcppdkim1; bh=i0uq0SR6mwb
+	bqC++gFl8h/nAq2mYNPEsdoUtMq3rJyM=; b=HHXIKG+IiE/lNxCNcGudSlwpH0q
+	9HZRVJYn4mhEz58WvSBpE1yKxZM61kwu61EFYDDNP7MjLr9W8jB9QLlx8HP6ma7J
+	0x963Nl9gWzQr4nUO5HvpEzpYbZFmYMIi7BZFlS1XFsk4JavwtMe1Dn4/iXO1JC0
+	V5ZIpm+Fw9p+XoGepMjRzFFmknBvJ4Xj+pfnryIQn9zeYZYFbIGl682HXGGO82xf
+	iQVQRnDwMWSU0zmtkx/3iAstYTSdOxfVwNjOtgaFeJWdCdaWO90ZS+eDy+erNGF6
+	0ILn2ZMuqD+slFVFwssMCm5rVu9ND/R77TYuLPuLn9pggCBhiM8kwEMAGIg==
+Received: from mail-dy1-f199.google.com (mail-dy1-f199.google.com [74.125.82.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4cw0udg1t7-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Sat, 14 Mar 2026 05:14:27 +0000 (GMT)
-Received: by mail-dy1-f198.google.com with SMTP id 5a478bee46e88-2bdd327d970so1636392eec.1
-        for <linux-phy@lists.infradead.org>; Fri, 13 Mar 2026 22:14:27 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Sat, 14 Mar 2026 05:14:37 +0000 (GMT)
+Received: by mail-dy1-f199.google.com with SMTP id 5a478bee46e88-2bea3b0d83bso44011743eec.1
+        for <linux-phy@lists.infradead.org>; Fri, 13 Mar 2026 22:14:37 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1773465266; x=1774070066; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1773465277; x=1774070077; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=w4lgBk11lnqJfyG5r/Q27PLunT6Zdu7/stuTRfC09ME=;
-        b=BwaosRPl5mBwVFXarSqmkzBabE3dEDPg7iMsRCIc4vjEApal2qqV+OhBxuKf5+NX7X
-         uDSgAldxc23ZpzfzIIvAis5QAGzkH0UaXSkOsJbiYxAI5Y0XDrsNkrCz0keh9TetfB8P
-         7DeZK1eqsqGCNEMbdwg+VteBVVVtbxF/4kILlIJ1jt/DyeJV3SFtNAeLJoUX7PR9Kc6T
-         c4UYPcBLFXwaFOeTzC99tKdLM8NZPnRHyBTniG6OQJ1I1HjW4EwvwxlXLhc6SDFUvPXw
-         Rm4QoP7Kqixa3GbzFb4j4YegJRKXPVzhFZoWOta2/J9aPo6Uf4eQ5bmYF0lQfbQa3ART
-         NJOg==
+        bh=i0uq0SR6mwbbqC++gFl8h/nAq2mYNPEsdoUtMq3rJyM=;
+        b=OAPE97mIUTgwy6Eh6nN9pq4S+kBK0OC3CmdQLu38CkSPuMc+P3TJQSHlQaQczkVf/9
+         RpH70uxmzU8H0g8a++v2Y5eRsuspaFs4MQ6Db9Ixa5p+ZAczfun6S/+aQozn7d7JGjb6
+         MmzEdD0rNVAx51T65/5OMASVz22mQCb9aPmVezpAbOVkEx+sMOb+wBpPA9CKxX+J2KLW
+         ATM+TWNBznvjD+0AsLi07en+RNfyzb8e8Ay9F6+W8a2KSyVjs6JOi1T+Xk/4wxuRU4aj
+         IKMfVyyS1HfARr3NCOijKULzLut6YVv5VR7wxZ3+coLLGyG/eJ1QVeHH31c0VpwLexuH
+         b09Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1773465266; x=1774070066;
+        d=1e100.net; s=20251104; t=1773465277; x=1774070077;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to;
-        bh=w4lgBk11lnqJfyG5r/Q27PLunT6Zdu7/stuTRfC09ME=;
-        b=dpAlBiXf+5lUFYWupHW8RrI0QYSd82LOzmqg+bo1XgnXFs4m4OLlnjL+gQ0BNrxKXy
-         NgYzfoCrTwNYI4KjjQj5Xy/N/OcvhE5iQ8p9ewr/ZITs+5+0U9Ux/HtsanVwZ7wlgKIa
-         nPlhAQydVL2bPKLjUzR2wF584EY9es5p7Inzc1fgyk26uzFqg73JBtba5eIpmwZMdRm+
-         sqGP4tx1+7GHb6C1H3V0OO4hq0IdtDiznwsZ4Oq1Q+mdq5+m3VYNLw6q1WRxcEPzXClt
-         A18+ztvNo87/QtcO6gHchXX9n6yjJN32wANpPCRFIIXgNJR2OG2lR4VvVo9W+3oLrzNV
-         iY6w==
-X-Forwarded-Encrypted: i=1; AJvYcCWKHr3xRca8cuRUi+WkNVzh1/nUnoR+d3DQNJBkOHc3YDnbhlthbRNRYjK8aL1fays4iMb499ZSgtc=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yz9B2qeH//A79PDwwh9J6fgEDTVxmoOuSLlonMHf+xuyb65qlnn
-	C3/5rEt9zOd5tHtLYT1wygfl96TJ9kEJJE1ilg8r4VjSE2kXo9qnAQPo677bFTg3kzNkzfzPPcC
-	cnRxSQg3sw2Fxr1k1VFRG64mHCH78Q6o8ldJYoVZ38O4fjHSs2Iw6pPr0OEATuP1pIMRO
-X-Gm-Gg: ATEYQzxAiLcHRTTuWII0cNB3abGFg+DSANT8C7AJokKm4PAo9yPpTDcP404rUvr+mST
-	1nsgAsJPxMLJeMnoP7XY1fZ5Dh+R5nTvNIfIELShxeAwLpsV9uvjd6Hwg2GDZPyGaM8PfD1XGzs
-	s+MnndxOVT0Yzxnwb8omA9exwA2XJQbHj00t/lMIxHREyIWnyovbwbWAx2ZaYqYbePdo7GTyKgW
-	qrEyC6ni7ocppKeb2TzNrlNl9FaApN/oaKobwtsYwGrxD/ZqVqi4DKFwuwcYCqu/EYJg2pl5yBh
-	2LRirLD5tDab2QcPQnIi7LqJm4o7YSYGMv+0roQgHSiisjJBibGDDp8xROL7iQqABQP6L79Nhcf
-	F3m5f7tw+LniXIG33H+2UIqNYds7eHGAALwIhKth2+PkWxRtCwVMjP/tppeev297NlVh3bd99X+
-	kQTNg0YA==
-X-Received: by 2002:a05:7300:a506:b0:2b6:bb18:c70a with SMTP id 5a478bee46e88-2be9447abfbmr3754936eec.15.1773465265828;
-        Fri, 13 Mar 2026 22:14:25 -0700 (PDT)
-X-Received: by 2002:a05:7300:a506:b0:2b6:bb18:c70a with SMTP id 5a478bee46e88-2be9447abfbmr3754919eec.15.1773465265133;
-        Fri, 13 Mar 2026 22:14:25 -0700 (PDT)
+        bh=i0uq0SR6mwbbqC++gFl8h/nAq2mYNPEsdoUtMq3rJyM=;
+        b=eMpz3ivS7CekCFEaZcYe2z4DnVrATA0e3Ip+8YoZiXZ9NpR8guqrL0KRmKGt4dDAzU
+         poyQO3AXhPp1LrsWuxHkYMPE/eBQHKI/cTp3IsJXSLiGfwBIRXTOdxxQaimJ0VyUPGxw
+         QLH3EIbRIiYBIRMeshcBVNIUqJlNnT8AFtDfFuAVwbrmv484B1cyZCQqAFHEcv9/Rnol
+         mze1WYCOJJlTZq6GOya3UFC9GzNGKfnDHOUfG63USVVCeDEWgDy00fjxBQb7XqOOqjRs
+         HJkYrwvXjPW+XpuYEJ4TuuMjBG4CbadhMK3eZlSp1sRlaqVCXaNuxKj15lG64cMKIwCi
+         fceA==
+X-Forwarded-Encrypted: i=1; AJvYcCWxcb9gld/SjYl2+kUT+yhG1NDGEj2tvi0xyfYMA8YTH0aP97cmZoEjB/zNx6i+QtIudYVc1PtSxhA=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxBowIIQfusrQzYCBZA0taA9iSyDGrSH/ZrpCblNjkr5wrdMbN3
+	TKKoEWARw4ssmp+q+nKON6Ylt2/WwSVaqe9nrSwtLU/pC2YPyTJGJVuK5JZ3FKytqx75/49f2Lc
+	uojxWWRBdf8a5kuBiFXD/a/F9ZWfX3DO+F4Nx/rqw58SQUK9Qfpo6qKifpz7A+S66isd3
+X-Gm-Gg: ATEYQzx+6mdLdQdV5QOoqhRQcZCI7Ue14rdHZTtuns+UxjsB5P2vlXtUecC5OMjKt+v
+	6+10iWc6VnJcJR4R30vCF78Qvl+2c1jXfIC2ny3ELBVLGiO3XSsyL1nhOW99pg1Rnva4hh57DO+
+	rMvP7s7rOB1zKrYIFeSVh/vNYjuHUHfMjDvIzp3GgG1D8bPbgT8lADwxnBOQXODUMcuczWkuCtK
+	U0aKRQ+icxR5kJeNaeebxnlhL0BjnPoLfMn134XNZycy8wPgJp5YCiBxDThdDtpW3qaK/1+MwEt
+	a1ABkg2ext7BDvh1JbpRddxOrs3HogVXeLSC6gF8HSU0j2xGMCTHPMyaMXZ0Sh9ozZi5V8ZuWo/
+	2092q3xG0a2IXxRZxo0MbxbIeiIK7Iu6qT4U8tJuBg9r/umG9bT9t3fmBym0LEVke0HVIwnAd/T
+	qLpSbqrw==
+X-Received: by 2002:a05:7301:1f0e:b0:2ba:6458:b325 with SMTP id 5a478bee46e88-2bea5585cb6mr2947996eec.23.1773465277233;
+        Fri, 13 Mar 2026 22:14:37 -0700 (PDT)
+X-Received: by 2002:a05:7301:1f0e:b0:2ba:6458:b325 with SMTP id 5a478bee46e88-2bea5585cb6mr2947979eec.23.1773465276646;
+        Fri, 13 Mar 2026 22:14:36 -0700 (PDT)
 Received: from QCOM-aGQu4IUr3Y.qualcomm.com (i-global052.qualcomm.com. [199.106.103.52])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-2c098cbd4dasm1784045eec.0.2026.03.13.22.14.21
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-2c098cbd4dasm1784045eec.0.2026.03.13.22.14.33
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 13 Mar 2026 22:14:24 -0700 (PDT)
+        Fri, 13 Mar 2026 22:14:36 -0700 (PDT)
 From: Shawn Guo <shengchao.guo@oss.qualcomm.com>
 To: Vinod Koul <vkoul@kernel.org>
 Cc: Neil Armstrong <neil.armstrong@linaro.org>,
@@ -99,39 +99,39 @@ Cc: Neil Armstrong <neil.armstrong@linaro.org>,
         Luca Weiss <luca.weiss@fairphone.com>, linux-kernel@vger.kernel.org,
         linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
         Shawn Guo <shengchao.guo@oss.qualcomm.com>
-Subject: [PATCH 2/6] phy: qcom-qmp: Use explicit QSERDES COM v2 register definitions
-Date: Sat, 14 Mar 2026 13:13:21 +0800
-Message-ID: <20260314051325.198137-3-shengchao.guo@oss.qualcomm.com>
+Subject: [PATCH 5/6] phy: qcom-qmp: Drop unused register headers
+Date: Sat, 14 Mar 2026 13:13:24 +0800
+Message-ID: <20260314051325.198137-6-shengchao.guo@oss.qualcomm.com>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20260314051325.198137-1-shengchao.guo@oss.qualcomm.com>
 References: <20260314051325.198137-1-shengchao.guo@oss.qualcomm.com>
 MIME-Version: 1.0
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzE0MDAzOCBTYWx0ZWRfXzAh5e8VKBxgv
- L6vvWeisHWICvGc1GFOgUoShF1gLthiVO82DMoDMDKR6+vNb0s7870PiKw5JX8csmc9MrvmtwVE
- LK0S4cvjLMxFrue7P+SoR+DkAb1UqnmupI5jkvZDgqlml0PwgftRpub8wfo9XvQeIssVCMfhZh6
- jqEXYGq5JNsGeyenTrxK4RcClZflU8x0T4t8AD7KQhddy5vw8hYfe0t7WsYsY4xLYV6i4smBjw6
- k07AAOKX6hC/QeM1ujXXh5k8GgwEC+DPQ93H91t7oH6BhVxmyzgDunQFQ+ybF48/jpJLLn1WeIS
- 1J4Qrbsn4lFNYcR0sWe6pfep2kVhxHGQ0oBqk68dvfb4LPRGItxId7MNo9R8sTDZnzECejomH69
- Za5GzK7XxeS4jMWTZrexSmsMvp3ow7wWEM2MIhHEn7hr3DR1PeyJHCZjLrgzn/SJ3QUJk2L7ON2
- s1yNz8tJzEvC4wDHsxQ==
-X-Proofpoint-GUID: 6ZlzEM-Wfeb8BdiYnDKnBBQk-Y2Wo6vg
-X-Authority-Analysis: v=2.4 cv=SJJPlevH c=1 sm=1 tr=0 ts=69b4eeb3 cx=c_pps
- a=wEP8DlPgTf/vqF+yE6f9lg==:117 a=b9+bayejhc3NMeqCNyeLQQ==:17
+X-Authority-Analysis: v=2.4 cv=BJ2+bVQG c=1 sm=1 tr=0 ts=69b4eebd cx=c_pps
+ a=cFYjgdjTJScbgFmBucgdfQ==:117 a=b9+bayejhc3NMeqCNyeLQQ==:17
  a=Yq5XynenixoA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=ZpdpYltYx_vBUK5n70dp:22 a=EUspDBNiAAAA:8
- a=DJ2Tc-a1hsMvy5d54m8A:9 a=bBxd6f-gb0O0v-kibOvt:22
-X-Proofpoint-ORIG-GUID: 6ZlzEM-Wfeb8BdiYnDKnBBQk-Y2Wo6vg
+ a=u7WPNUs3qKkmUXheDGA7:22 a=DJpcGTmdVt4CTyJn9g5Z:22 a=EUspDBNiAAAA:8
+ a=zYeDregsQ1GP4i_2LSEA:9 a=scEy_gLbYbu1JhEsrz4S:22
+X-Proofpoint-GUID: nadvVmOmDG9kTU-YYiUxBpRTA0xmhAoe
+X-Proofpoint-ORIG-GUID: nadvVmOmDG9kTU-YYiUxBpRTA0xmhAoe
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzE0MDAzOCBTYWx0ZWRfX4+KZ2zx68N/G
+ Wc9QiU8dN8G7M9dGgcR05jpHLP6cCAhPT3VfGq0pBMHaKqRs7Ti5pS3HbGsqA+95fABYX+TDxG5
+ cfqNMY58lZ0/Tv/DdqDAJGG3YaWrRAxT3I7LSw163p6INQu4M3b1yI/9kuxRVGYVKWj9uC0ouTS
+ 9gzBPf7rf2TAF5Pr8go3FBnKlc5WuqRTBJPQbWI0KU1MFc0OJ7kwr91ODK+fJzj/slO51uPAgtW
+ fmOnm/YW7ubix+sDORNpiVYnk2PXhS+9Z3dWg/xsZYauoSKMNbRoiTTggY4YBLneoMg38EUTTzb
+ /ALeJmAp5//ulqGRH1YKlJWvCSnDo1Qq4v/g9TfMi3NvkFOYJgQZqIMXiS7L6j9c3fPOw5COsWw
+ G4+DkZiNKfpWu70AfrPGRVqpkxghnqPK+RDtwNgDRxr4p+UTp4xkQYxoTpaG5MywG19o1iGtLlQ
+ +s+U4/poiLdZ5DGOhpQ==
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
  definitions=2026-03-14_01,2026-03-13_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- suspectscore=0 phishscore=0 clxscore=1011 lowpriorityscore=0 adultscore=0
- impostorscore=0 priorityscore=1501 malwarescore=0 bulkscore=0 spamscore=0
+ clxscore=1011 lowpriorityscore=0 adultscore=0 priorityscore=1501 phishscore=0
+ bulkscore=0 impostorscore=0 spamscore=0 suspectscore=0 malwarescore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2603050001 definitions=main-2603140038
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260313_221428_678660_8791CF48 
-X-CRM114-Status: GOOD (  10.75  )
+X-CRM114-CacheID: sfid-20260313_221443_015637_A4A7A2D5 
+X-CRM114-Status: GOOD (  10.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -148,962 +148,254 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-As the code comments in the headers say, both qserdes-com and
-qserdes-com-v2 define QSERDES COM registers for QMP V2 PHY.  Switch
-phy-qcom-qmp drivers to use register definitions in qserdes-com-v2
-to make the QSERDES COM version explicit.
+None of qcom-qmp drivers uses header qserdes-com or qserdes-txrx-v2.
+Drop them.
 
 Signed-off-by: Shawn Guo <shengchao.guo@oss.qualcomm.com>
 ---
- .../phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c  |  86 ++++----
- drivers/phy/qualcomm/phy-qcom-qmp-pcie.c      | 162 +++++++--------
- drivers/phy/qualcomm/phy-qcom-qmp-ufs.c       | 194 +++++++++---------
- drivers/phy/qualcomm/phy-qcom-qmp-usb.c       | 188 ++++++++---------
- drivers/phy/qualcomm/phy-qcom-qmp-usbc.c      | 180 ++++++++--------
- 5 files changed, 405 insertions(+), 405 deletions(-)
+ .../phy/qualcomm/phy-qcom-qmp-qserdes-com.h   | 140 ------------------
+ .../qualcomm/phy-qcom-qmp-qserdes-txrx-v2.h   |  68 ---------
+ drivers/phy/qualcomm/phy-qcom-qmp.h           |   2 -
+ 3 files changed, 210 deletions(-)
+ delete mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com.h
+ delete mode 100644 drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v2.h
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
-index a7c65cfe31df..24b5d66e9ecf 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie-msm8996.c
-@@ -59,49 +59,49 @@ static const unsigned int pciephy_regs_layout[QPHY_LAYOUT_SIZE] = {
- };
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com.h b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com.h
+deleted file mode 100644
+index 7fa5363feeb9..000000000000
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-com.h
++++ /dev/null
+@@ -1,140 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0 */
+-/*
+- * Copyright (c) 2017, The Linux Foundation. All rights reserved.
+- */
+-
+-#ifndef QCOM_PHY_QMP_QSERDES_COM_H_
+-#define QCOM_PHY_QMP_QSERDES_COM_H_
+-
+-/* Only for QMP V2 PHY - QSERDES COM registers */
+-#define QSERDES_COM_ATB_SEL1				0x000
+-#define QSERDES_COM_ATB_SEL2				0x004
+-#define QSERDES_COM_FREQ_UPDATE				0x008
+-#define QSERDES_COM_BG_TIMER				0x00c
+-#define QSERDES_COM_SSC_EN_CENTER			0x010
+-#define QSERDES_COM_SSC_ADJ_PER1			0x014
+-#define QSERDES_COM_SSC_ADJ_PER2			0x018
+-#define QSERDES_COM_SSC_PER1				0x01c
+-#define QSERDES_COM_SSC_PER2				0x020
+-#define QSERDES_COM_SSC_STEP_SIZE1			0x024
+-#define QSERDES_COM_SSC_STEP_SIZE2			0x028
+-#define QSERDES_COM_POST_DIV				0x02c
+-#define QSERDES_COM_POST_DIV_MUX			0x030
+-#define QSERDES_COM_BIAS_EN_CLKBUFLR_EN			0x034
+-#define QSERDES_COM_CLK_ENABLE1				0x038
+-#define QSERDES_COM_SYS_CLK_CTRL			0x03c
+-#define QSERDES_COM_SYSCLK_BUF_ENABLE			0x040
+-#define QSERDES_COM_PLL_EN				0x044
+-#define QSERDES_COM_PLL_IVCO				0x048
+-#define QSERDES_COM_LOCK_CMP1_MODE0			0x04c
+-#define QSERDES_COM_LOCK_CMP2_MODE0			0x050
+-#define QSERDES_COM_LOCK_CMP3_MODE0			0x054
+-#define QSERDES_COM_LOCK_CMP1_MODE1			0x058
+-#define QSERDES_COM_LOCK_CMP2_MODE1			0x05c
+-#define QSERDES_COM_LOCK_CMP3_MODE1			0x060
+-#define QSERDES_COM_LOCK_CMP1_MODE2			0x064
+-#define QSERDES_COM_CMN_RSVD0				0x064
+-#define QSERDES_COM_LOCK_CMP2_MODE2			0x068
+-#define QSERDES_COM_EP_CLOCK_DETECT_CTRL		0x068
+-#define QSERDES_COM_LOCK_CMP3_MODE2			0x06c
+-#define QSERDES_COM_SYSCLK_DET_COMP_STATUS		0x06c
+-#define QSERDES_COM_BG_TRIM				0x070
+-#define QSERDES_COM_CLK_EP_DIV				0x074
+-#define QSERDES_COM_CP_CTRL_MODE0			0x078
+-#define QSERDES_COM_CP_CTRL_MODE1			0x07c
+-#define QSERDES_COM_CP_CTRL_MODE2			0x080
+-#define QSERDES_COM_CMN_RSVD1				0x080
+-#define QSERDES_COM_PLL_RCTRL_MODE0			0x084
+-#define QSERDES_COM_PLL_RCTRL_MODE1			0x088
+-#define QSERDES_COM_PLL_RCTRL_MODE2			0x08c
+-#define QSERDES_COM_CMN_RSVD2				0x08c
+-#define QSERDES_COM_PLL_CCTRL_MODE0			0x090
+-#define QSERDES_COM_PLL_CCTRL_MODE1			0x094
+-#define QSERDES_COM_PLL_CCTRL_MODE2			0x098
+-#define QSERDES_COM_CMN_RSVD3				0x098
+-#define QSERDES_COM_PLL_CNTRL				0x09c
+-#define QSERDES_COM_PHASE_SEL_CTRL			0x0a0
+-#define QSERDES_COM_PHASE_SEL_DC			0x0a4
+-#define QSERDES_COM_CORE_CLK_IN_SYNC_SEL		0x0a8
+-#define QSERDES_COM_BIAS_EN_CTRL_BY_PSM			0x0a8
+-#define QSERDES_COM_SYSCLK_EN_SEL			0x0ac
+-#define QSERDES_COM_CML_SYSCLK_SEL			0x0b0
+-#define QSERDES_COM_RESETSM_CNTRL			0x0b4
+-#define QSERDES_COM_RESETSM_CNTRL2			0x0b8
+-#define QSERDES_COM_RESTRIM_CTRL			0x0bc
+-#define QSERDES_COM_RESTRIM_CTRL2			0x0c0
+-#define QSERDES_COM_RESCODE_DIV_NUM			0x0c4
+-#define QSERDES_COM_LOCK_CMP_EN				0x0c8
+-#define QSERDES_COM_LOCK_CMP_CFG			0x0cc
+-#define QSERDES_COM_DEC_START_MODE0			0x0d0
+-#define QSERDES_COM_DEC_START_MODE1			0x0d4
+-#define QSERDES_COM_DEC_START_MODE2			0x0d8
+-#define QSERDES_COM_VCOCAL_DEADMAN_CTRL			0x0d8
+-#define QSERDES_COM_DIV_FRAC_START1_MODE0		0x0dc
+-#define QSERDES_COM_DIV_FRAC_START2_MODE0		0x0e0
+-#define QSERDES_COM_DIV_FRAC_START3_MODE0		0x0e4
+-#define QSERDES_COM_DIV_FRAC_START1_MODE1		0x0e8
+-#define QSERDES_COM_DIV_FRAC_START2_MODE1		0x0ec
+-#define QSERDES_COM_DIV_FRAC_START3_MODE1		0x0f0
+-#define QSERDES_COM_DIV_FRAC_START1_MODE2		0x0f4
+-#define QSERDES_COM_VCO_TUNE_MINVAL1			0x0f4
+-#define QSERDES_COM_DIV_FRAC_START2_MODE2		0x0f8
+-#define QSERDES_COM_VCO_TUNE_MINVAL2			0x0f8
+-#define QSERDES_COM_DIV_FRAC_START3_MODE2		0x0fc
+-#define QSERDES_COM_CMN_RSVD4				0x0fc
+-#define QSERDES_COM_INTEGLOOP_INITVAL			0x100
+-#define QSERDES_COM_INTEGLOOP_EN			0x104
+-#define QSERDES_COM_INTEGLOOP_GAIN0_MODE0		0x108
+-#define QSERDES_COM_INTEGLOOP_GAIN1_MODE0		0x10c
+-#define QSERDES_COM_INTEGLOOP_GAIN0_MODE1		0x110
+-#define QSERDES_COM_INTEGLOOP_GAIN1_MODE1		0x114
+-#define QSERDES_COM_INTEGLOOP_GAIN0_MODE2		0x118
+-#define QSERDES_COM_VCO_TUNE_MAXVAL1			0x118
+-#define QSERDES_COM_INTEGLOOP_GAIN1_MODE2		0x11c
+-#define QSERDES_COM_VCO_TUNE_MAXVAL2			0x11c
+-#define QSERDES_COM_RES_TRIM_CONTROL2			0x120
+-#define QSERDES_COM_VCO_TUNE_CTRL			0x124
+-#define QSERDES_COM_VCO_TUNE_MAP			0x128
+-#define QSERDES_COM_VCO_TUNE1_MODE0			0x12c
+-#define QSERDES_COM_VCO_TUNE2_MODE0			0x130
+-#define QSERDES_COM_VCO_TUNE1_MODE1			0x134
+-#define QSERDES_COM_VCO_TUNE2_MODE1			0x138
+-#define QSERDES_COM_VCO_TUNE1_MODE2			0x13c
+-#define QSERDES_COM_VCO_TUNE_INITVAL1			0x13c
+-#define QSERDES_COM_VCO_TUNE2_MODE2			0x140
+-#define QSERDES_COM_VCO_TUNE_INITVAL2			0x140
+-#define QSERDES_COM_VCO_TUNE_TIMER1			0x144
+-#define QSERDES_COM_VCO_TUNE_TIMER2			0x148
+-#define QSERDES_COM_SAR					0x14c
+-#define QSERDES_COM_SAR_CLK				0x150
+-#define QSERDES_COM_SAR_CODE_OUT_STATUS			0x154
+-#define QSERDES_COM_SAR_CODE_READY_STATUS		0x158
+-#define QSERDES_COM_CMN_STATUS				0x15c
+-#define QSERDES_COM_RESET_SM_STATUS			0x160
+-#define QSERDES_COM_RESTRIM_CODE_STATUS			0x164
+-#define QSERDES_COM_PLLCAL_CODE1_STATUS			0x168
+-#define QSERDES_COM_PLLCAL_CODE2_STATUS			0x16c
+-#define QSERDES_COM_BG_CTRL				0x170
+-#define QSERDES_COM_CLK_SELECT				0x174
+-#define QSERDES_COM_HSCLK_SEL				0x178
+-#define QSERDES_COM_INTEGLOOP_BINCODE_STATUS		0x17c
+-#define QSERDES_COM_PLL_ANALOG				0x180
+-#define QSERDES_COM_CORECLK_DIV				0x184
+-#define QSERDES_COM_SW_RESET				0x188
+-#define QSERDES_COM_CORE_CLK_EN				0x18c
+-#define QSERDES_COM_C_READY_STATUS			0x190
+-#define QSERDES_COM_CMN_CONFIG				0x194
+-#define QSERDES_COM_CMN_RATE_OVERRIDE			0x198
+-#define QSERDES_COM_SVS_MODE_CLK_SEL			0x19c
+-#define QSERDES_COM_DEBUG_BUS0				0x1a0
+-#define QSERDES_COM_DEBUG_BUS1				0x1a4
+-#define QSERDES_COM_DEBUG_BUS2				0x1a8
+-#define QSERDES_COM_DEBUG_BUS3				0x1ac
+-#define QSERDES_COM_DEBUG_BUS_SEL			0x1b0
+-#define QSERDES_COM_CMN_MISC1				0x1b4
+-#define QSERDES_COM_CMN_MISC2				0x1b8
+-#define QSERDES_COM_CORECLK_DIV_MODE1			0x1bc
+-#define QSERDES_COM_CORECLK_DIV_MODE2			0x1c0
+-#define QSERDES_COM_CMN_RSVD5				0x1c4
+-
+-#endif
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v2.h b/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v2.h
+deleted file mode 100644
+index 34919720b7bc..000000000000
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v2.h
++++ /dev/null
+@@ -1,68 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0 */
+-/*
+- * Copyright (c) 2017, The Linux Foundation. All rights reserved.
+- */
+-
+-#ifndef QCOM_PHY_QMP_QSERDES_TXRX_V2_H_
+-#define QCOM_PHY_QMP_QSERDES_TXRX_V2_H_
+-
+-/* Only for QMP V2 PHY - TX registers */
+-#define QSERDES_V2_TX_BIST_MODE_LANENO			0x000
+-#define QSERDES_V2_TX_CLKBUF_ENABLE			0x008
+-#define QSERDES_V2_TX_TX_EMP_POST1_LVL			0x00c
+-#define QSERDES_V2_TX_TX_DRV_LVL			0x01c
+-#define QSERDES_V2_TX_RESET_TSYNC_EN			0x024
+-#define QSERDES_V2_TX_PRE_STALL_LDO_BOOST_EN		0x028
+-#define QSERDES_V2_TX_TX_BAND				0x02c
+-#define QSERDES_V2_TX_SLEW_CNTL				0x030
+-#define QSERDES_V2_TX_INTERFACE_SELECT			0x034
+-#define QSERDES_V2_TX_RES_CODE_LANE_TX			0x03c
+-#define QSERDES_V2_TX_RES_CODE_LANE_RX			0x040
+-#define QSERDES_V2_TX_RES_CODE_LANE_OFFSET_TX		0x044
+-#define QSERDES_V2_TX_RES_CODE_LANE_OFFSET_RX		0x048
+-#define QSERDES_V2_TX_DEBUG_BUS_SEL			0x058
+-#define QSERDES_V2_TX_TRANSCEIVER_BIAS_EN		0x05c
+-#define QSERDES_V2_TX_HIGHZ_DRVR_EN			0x060
+-#define QSERDES_V2_TX_TX_POL_INV			0x064
+-#define QSERDES_V2_TX_PARRATE_REC_DETECT_IDLE_EN	0x068
+-#define QSERDES_V2_TX_LANE_MODE_1			0x08c
+-#define QSERDES_V2_TX_LANE_MODE_2			0x090
+-#define QSERDES_V2_TX_LANE_MODE_3			0x094
+-#define QSERDES_V2_TX_RCV_DETECT_LVL_2			0x0a4
+-#define QSERDES_V2_TX_TRAN_DRVR_EMP_EN			0x0c0
+-#define QSERDES_V2_TX_TX_INTERFACE_MODE			0x0c4
+-#define QSERDES_V2_TX_VMODE_CTRL1			0x0f0
+-
+-/* Only for QMP V2 PHY - RX registers */
+-#define QSERDES_V2_RX_UCDR_FO_GAIN			0x008
+-#define QSERDES_V2_RX_UCDR_SO_GAIN_HALF			0x00c
+-#define QSERDES_V2_RX_UCDR_SO_GAIN			0x014
+-#define QSERDES_V2_RX_UCDR_SVS_SO_GAIN_HALF		0x024
+-#define QSERDES_V2_RX_UCDR_SVS_SO_GAIN_QUARTER		0x028
+-#define QSERDES_V2_RX_UCDR_SVS_SO_GAIN			0x02c
+-#define QSERDES_V2_RX_UCDR_FASTLOCK_FO_GAIN		0x030
+-#define QSERDES_V2_RX_UCDR_SO_SATURATION_AND_ENABLE	0x034
+-#define QSERDES_V2_RX_UCDR_FASTLOCK_COUNT_LOW		0x03c
+-#define QSERDES_V2_RX_UCDR_FASTLOCK_COUNT_HIGH		0x040
+-#define QSERDES_V2_RX_UCDR_PI_CONTROLS			0x044
+-#define QSERDES_V2_RX_RX_TERM_BW			0x07c
+-#define QSERDES_V2_RX_VGA_CAL_CNTRL1			0x0bc
+-#define QSERDES_V2_RX_VGA_CAL_CNTRL2			0x0c0
+-#define QSERDES_V2_RX_RX_EQ_GAIN2_LSB			0x0c8
+-#define QSERDES_V2_RX_RX_EQ_GAIN2_MSB			0x0cc
+-#define QSERDES_V2_RX_RX_EQU_ADAPTOR_CNTRL1		0x0d0
+-#define QSERDES_V2_RX_RX_EQU_ADAPTOR_CNTRL2		0x0d4
+-#define QSERDES_V2_RX_RX_EQU_ADAPTOR_CNTRL3		0x0d8
+-#define QSERDES_V2_RX_RX_EQU_ADAPTOR_CNTRL4		0x0dc
+-#define QSERDES_V2_RX_RX_EQ_OFFSET_ADAPTOR_CNTRL1	0x0f8
+-#define QSERDES_V2_RX_RX_OFFSET_ADAPTOR_CNTRL2		0x0fc
+-#define QSERDES_V2_RX_SIGDET_ENABLES			0x100
+-#define QSERDES_V2_RX_SIGDET_CNTRL			0x104
+-#define QSERDES_V2_RX_SIGDET_LVL			0x108
+-#define QSERDES_V2_RX_SIGDET_DEGLITCH_CNTRL		0x10c
+-#define QSERDES_V2_RX_RX_BAND				0x110
+-#define QSERDES_V2_RX_RX_INTERFACE_MODE			0x11c
+-#define QSERDES_V2_RX_RX_MODE_00			0x164
+-#define QSERDES_V2_RX_RX_MODE_01			0x168
+-
+-#endif
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp.h b/drivers/phy/qualcomm/phy-qcom-qmp.h
+index a873bdd7bffe..19e91f44e84e 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp.h
++++ b/drivers/phy/qualcomm/phy-qcom-qmp.h
+@@ -6,11 +6,9 @@
+ #ifndef QCOM_PHY_QMP_H_
+ #define QCOM_PHY_QMP_H_
  
- static const struct qmp_phy_init_tbl msm8996_pcie_serdes_tbl[] = {
--	QMP_PHY_INIT_CFG(QSERDES_COM_BIAS_EN_CLKBUFLR_EN, 0x1c),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CLK_ENABLE1, 0x10),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CLK_SELECT, 0x33),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CMN_CONFIG, 0x06),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP_EN, 0x42),
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE_MAP, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE_TIMER1, 0xff),
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE_TIMER2, 0x1f),
--	QMP_PHY_INIT_CFG(QSERDES_COM_HSCLK_SEL, 0x01),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SVS_MODE_CLK_SEL, 0x01),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CORE_CLK_EN, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CORECLK_DIV, 0x0a),
--	QMP_PHY_INIT_CFG(QSERDES_COM_BG_TIMER, 0x09),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DEC_START_MODE0, 0x82),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START3_MODE0, 0x03),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START2_MODE0, 0x55),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START1_MODE0, 0x55),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP3_MODE0, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP2_MODE0, 0x1a),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP1_MODE0, 0x0a),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CLK_SELECT, 0x33),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SYS_CLK_CTRL, 0x02),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SYSCLK_BUF_ENABLE, 0x1f),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SYSCLK_EN_SEL, 0x04),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CP_CTRL_MODE0, 0x0b),
--	QMP_PHY_INIT_CFG(QSERDES_COM_PLL_RCTRL_MODE0, 0x16),
--	QMP_PHY_INIT_CFG(QSERDES_COM_PLL_CCTRL_MODE0, 0x28),
--	QMP_PHY_INIT_CFG(QSERDES_COM_INTEGLOOP_GAIN1_MODE0, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_INTEGLOOP_GAIN0_MODE0, 0x80),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_EN_CENTER, 0x01),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_PER1, 0x31),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_PER2, 0x01),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_ADJ_PER1, 0x02),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_ADJ_PER2, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_STEP_SIZE1, 0x2f),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_STEP_SIZE2, 0x19),
--	QMP_PHY_INIT_CFG(QSERDES_COM_RESCODE_DIV_NUM, 0x15),
--	QMP_PHY_INIT_CFG(QSERDES_COM_BG_TRIM, 0x0f),
--	QMP_PHY_INIT_CFG(QSERDES_COM_PLL_IVCO, 0x0f),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CLK_EP_DIV, 0x19),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CLK_ENABLE1, 0x10),
--	QMP_PHY_INIT_CFG(QSERDES_COM_HSCLK_SEL, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_RESCODE_DIV_NUM, 0x40),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_BIAS_EN_CLKBUFLR_EN, 0x1c),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CLK_ENABLE1, 0x10),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CLK_SELECT, 0x33),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CMN_CONFIG, 0x06),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP_EN, 0x42),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE_MAP, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE_TIMER1, 0xff),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE_TIMER2, 0x1f),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_HSCLK_SEL, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SVS_MODE_CLK_SEL, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CORE_CLK_EN, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CORECLK_DIV, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_BG_TIMER, 0x09),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DEC_START_MODE0, 0x82),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START3_MODE0, 0x03),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START2_MODE0, 0x55),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START1_MODE0, 0x55),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP3_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP2_MODE0, 0x1a),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP1_MODE0, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CLK_SELECT, 0x33),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SYS_CLK_CTRL, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SYSCLK_BUF_ENABLE, 0x1f),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SYSCLK_EN_SEL, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CP_CTRL_MODE0, 0x0b),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_PLL_RCTRL_MODE0, 0x16),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_PLL_CCTRL_MODE0, 0x28),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_INTEGLOOP_GAIN1_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_INTEGLOOP_GAIN0_MODE0, 0x80),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_EN_CENTER, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_PER1, 0x31),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_PER2, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_ADJ_PER1, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_ADJ_PER2, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_STEP_SIZE1, 0x2f),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_STEP_SIZE2, 0x19),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_RESCODE_DIV_NUM, 0x15),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_BG_TRIM, 0x0f),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_PLL_IVCO, 0x0f),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CLK_EP_DIV, 0x19),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CLK_ENABLE1, 0x10),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_HSCLK_SEL, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_RESCODE_DIV_NUM, 0x40),
- };
+-#include "phy-qcom-qmp-qserdes-com.h"
+ #include "phy-qcom-qmp-qserdes-txrx.h"
  
- static const struct qmp_phy_init_tbl msm8996_pcie_tx_tbl[] = {
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-index fed2fc9bb311..aa2f8da93a02 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-@@ -309,46 +309,46 @@ static const struct qmp_phy_init_tbl ipq6018_pcie_pcs_misc_tbl[] = {
- };
+ #include "phy-qcom-qmp-qserdes-com-v2.h"
+-#include "phy-qcom-qmp-qserdes-txrx-v2.h"
  
- static const struct qmp_phy_init_tbl ipq8074_pcie_serdes_tbl[] = {
--	QMP_PHY_INIT_CFG(QSERDES_COM_BIAS_EN_CLKBUFLR_EN, 0x18),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CLK_ENABLE1, 0x10),
--	QMP_PHY_INIT_CFG(QSERDES_COM_BG_TRIM, 0xf),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP_EN, 0x1),
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE_MAP, 0x0),
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE_TIMER1, 0xff),
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE_TIMER2, 0x1f),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CMN_CONFIG, 0x6),
--	QMP_PHY_INIT_CFG(QSERDES_COM_PLL_IVCO, 0xf),
--	QMP_PHY_INIT_CFG(QSERDES_COM_HSCLK_SEL, 0x0),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SVS_MODE_CLK_SEL, 0x1),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CORE_CLK_EN, 0x20),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CORECLK_DIV, 0xa),
--	QMP_PHY_INIT_CFG(QSERDES_COM_RESETSM_CNTRL, 0x20),
--	QMP_PHY_INIT_CFG(QSERDES_COM_BG_TIMER, 0xa),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SYSCLK_EN_SEL, 0xa),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DEC_START_MODE0, 0x82),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START3_MODE0, 0x3),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START2_MODE0, 0x55),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START1_MODE0, 0x55),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP3_MODE0, 0x0),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP2_MODE0, 0xD),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP1_MODE0, 0xD04),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CLK_SELECT, 0x33),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SYS_CLK_CTRL, 0x2),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SYSCLK_BUF_ENABLE, 0x1f),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CP_CTRL_MODE0, 0xb),
--	QMP_PHY_INIT_CFG(QSERDES_COM_PLL_RCTRL_MODE0, 0x16),
--	QMP_PHY_INIT_CFG(QSERDES_COM_PLL_CCTRL_MODE0, 0x28),
--	QMP_PHY_INIT_CFG(QSERDES_COM_INTEGLOOP_GAIN1_MODE0, 0x0),
--	QMP_PHY_INIT_CFG(QSERDES_COM_INTEGLOOP_GAIN0_MODE0, 0x80),
--	QMP_PHY_INIT_CFG(QSERDES_COM_BIAS_EN_CTRL_BY_PSM, 0x1),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_EN_CENTER, 0x1),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_PER1, 0x31),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_PER2, 0x1),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_ADJ_PER1, 0x2),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_ADJ_PER2, 0x0),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_STEP_SIZE1, 0x2f),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_STEP_SIZE2, 0x19),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CLK_EP_DIV, 0x19),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_BIAS_EN_CLKBUFLR_EN, 0x18),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CLK_ENABLE1, 0x10),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_BG_TRIM, 0xf),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP_EN, 0x1),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE_MAP, 0x0),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE_TIMER1, 0xff),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE_TIMER2, 0x1f),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CMN_CONFIG, 0x6),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_PLL_IVCO, 0xf),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_HSCLK_SEL, 0x0),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SVS_MODE_CLK_SEL, 0x1),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CORE_CLK_EN, 0x20),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CORECLK_DIV, 0xa),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_RESETSM_CNTRL, 0x20),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_BG_TIMER, 0xa),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SYSCLK_EN_SEL, 0xa),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DEC_START_MODE0, 0x82),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START3_MODE0, 0x3),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START2_MODE0, 0x55),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START1_MODE0, 0x55),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP3_MODE0, 0x0),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP2_MODE0, 0xD),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP1_MODE0, 0xD04),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CLK_SELECT, 0x33),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SYS_CLK_CTRL, 0x2),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SYSCLK_BUF_ENABLE, 0x1f),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CP_CTRL_MODE0, 0xb),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_PLL_RCTRL_MODE0, 0x16),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_PLL_CCTRL_MODE0, 0x28),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_INTEGLOOP_GAIN1_MODE0, 0x0),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_INTEGLOOP_GAIN0_MODE0, 0x80),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_BIAS_EN_CTRL_BY_PSM, 0x1),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_EN_CENTER, 0x1),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_PER1, 0x31),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_PER2, 0x1),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_ADJ_PER1, 0x2),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_ADJ_PER2, 0x0),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_STEP_SIZE1, 0x2f),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_STEP_SIZE2, 0x19),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CLK_EP_DIV, 0x19),
- };
- 
- static const struct qmp_phy_init_tbl ipq8074_pcie_tx_tbl[] = {
-@@ -752,47 +752,47 @@ static const struct qmp_phy_init_tbl ipq9574_gen3x2_pcie_pcs_misc_tbl[] = {
- };
- 
- static const struct qmp_phy_init_tbl qcs615_pcie_serdes_tbl[] = {
--	QMP_PHY_INIT_CFG(QSERDES_COM_BIAS_EN_CLKBUFLR_EN, 0x18),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CLK_ENABLE1, 0x10),
--	QMP_PHY_INIT_CFG(QSERDES_COM_BG_TRIM, 0xf),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP_EN, 0x1),
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE_MAP, 0x0),
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE_TIMER1, 0xff),
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE_TIMER2, 0x1f),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CMN_CONFIG, 0x6),
--	QMP_PHY_INIT_CFG(QSERDES_COM_PLL_IVCO, 0xf),
--	QMP_PHY_INIT_CFG(QSERDES_COM_HSCLK_SEL, 0x0),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SVS_MODE_CLK_SEL, 0x1),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CORE_CLK_EN, 0x20),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CORECLK_DIV, 0xa),
--	QMP_PHY_INIT_CFG(QSERDES_COM_RESETSM_CNTRL, 0x20),
--	QMP_PHY_INIT_CFG(QSERDES_COM_BG_TIMER, 0x9),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SYSCLK_EN_SEL, 0x4),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DEC_START_MODE0, 0x82),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START3_MODE0, 0x3),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START2_MODE0, 0x55),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START1_MODE0, 0x55),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP3_MODE0, 0x0),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP2_MODE0, 0xd),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP1_MODE0, 0x04),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CLK_SELECT, 0x35),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SYS_CLK_CTRL, 0x2),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SYSCLK_BUF_ENABLE, 0x1f),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CP_CTRL_MODE0, 0x4),
--	QMP_PHY_INIT_CFG(QSERDES_COM_PLL_RCTRL_MODE0, 0x16),
--	QMP_PHY_INIT_CFG(QSERDES_COM_PLL_CCTRL_MODE0, 0x30),
--	QMP_PHY_INIT_CFG(QSERDES_COM_INTEGLOOP_GAIN1_MODE0, 0x0),
--	QMP_PHY_INIT_CFG(QSERDES_COM_INTEGLOOP_GAIN0_MODE0, 0x80),
--	QMP_PHY_INIT_CFG(QSERDES_COM_BIAS_EN_CTRL_BY_PSM, 0x1),
--	QMP_PHY_INIT_CFG(QSERDES_COM_BG_TIMER, 0xa),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_EN_CENTER, 0x1),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_PER1, 0x31),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_PER2, 0x1),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_ADJ_PER1, 0x2),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_ADJ_PER2, 0x0),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_STEP_SIZE1, 0x2f),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_STEP_SIZE2, 0x19),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CLK_EP_DIV, 0x19),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_BIAS_EN_CLKBUFLR_EN, 0x18),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CLK_ENABLE1, 0x10),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_BG_TRIM, 0xf),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP_EN, 0x1),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE_MAP, 0x0),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE_TIMER1, 0xff),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE_TIMER2, 0x1f),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CMN_CONFIG, 0x6),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_PLL_IVCO, 0xf),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_HSCLK_SEL, 0x0),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SVS_MODE_CLK_SEL, 0x1),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CORE_CLK_EN, 0x20),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CORECLK_DIV, 0xa),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_RESETSM_CNTRL, 0x20),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_BG_TIMER, 0x9),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SYSCLK_EN_SEL, 0x4),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DEC_START_MODE0, 0x82),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START3_MODE0, 0x3),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START2_MODE0, 0x55),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START1_MODE0, 0x55),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP3_MODE0, 0x0),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP2_MODE0, 0xd),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP1_MODE0, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CLK_SELECT, 0x35),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SYS_CLK_CTRL, 0x2),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SYSCLK_BUF_ENABLE, 0x1f),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CP_CTRL_MODE0, 0x4),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_PLL_RCTRL_MODE0, 0x16),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_PLL_CCTRL_MODE0, 0x30),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_INTEGLOOP_GAIN1_MODE0, 0x0),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_INTEGLOOP_GAIN0_MODE0, 0x80),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_BIAS_EN_CTRL_BY_PSM, 0x1),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_BG_TIMER, 0xa),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_EN_CENTER, 0x1),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_PER1, 0x31),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_PER2, 0x1),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_ADJ_PER1, 0x2),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_ADJ_PER2, 0x0),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_STEP_SIZE1, 0x2f),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_STEP_SIZE2, 0x19),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CLK_EP_DIV, 0x19),
- };
- 
- static const struct qmp_phy_init_tbl qcs615_pcie_rx_tbl[] = {
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-index df138a5442eb..cb799015c494 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-@@ -147,52 +147,52 @@ static const struct qmp_phy_init_tbl milos_ufsphy_pcs[] = {
- };
- 
- static const struct qmp_phy_init_tbl msm8996_ufsphy_serdes[] = {
--	QMP_PHY_INIT_CFG(QSERDES_COM_CMN_CONFIG, 0x0e),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SYSCLK_EN_SEL, 0xd7),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CLK_SELECT, 0x30),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SYS_CLK_CTRL, 0x06),
--	QMP_PHY_INIT_CFG(QSERDES_COM_BIAS_EN_CLKBUFLR_EN, 0x08),
--	QMP_PHY_INIT_CFG(QSERDES_COM_BG_TIMER, 0x0a),
--	QMP_PHY_INIT_CFG(QSERDES_COM_HSCLK_SEL, 0x05),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CORECLK_DIV, 0x0a),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CORECLK_DIV_MODE1, 0x0a),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP_EN, 0x01),
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE_CTRL, 0x10),
--	QMP_PHY_INIT_CFG(QSERDES_COM_RESETSM_CNTRL, 0x20),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CORE_CLK_EN, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP_CFG, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE_TIMER1, 0xff),
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE_TIMER2, 0x3f),
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE_MAP, 0x54),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SVS_MODE_CLK_SEL, 0x05),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DEC_START_MODE0, 0x82),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START1_MODE0, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START2_MODE0, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START3_MODE0, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CP_CTRL_MODE0, 0x0b),
--	QMP_PHY_INIT_CFG(QSERDES_COM_PLL_RCTRL_MODE0, 0x16),
--	QMP_PHY_INIT_CFG(QSERDES_COM_PLL_CCTRL_MODE0, 0x28),
--	QMP_PHY_INIT_CFG(QSERDES_COM_INTEGLOOP_GAIN0_MODE0, 0x80),
--	QMP_PHY_INIT_CFG(QSERDES_COM_INTEGLOOP_GAIN1_MODE0, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE1_MODE0, 0x28),
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE2_MODE0, 0x02),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP1_MODE0, 0xff),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP2_MODE0, 0x0c),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP3_MODE0, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DEC_START_MODE1, 0x98),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START1_MODE1, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START2_MODE1, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START3_MODE1, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CP_CTRL_MODE1, 0x0b),
--	QMP_PHY_INIT_CFG(QSERDES_COM_PLL_RCTRL_MODE1, 0x16),
--	QMP_PHY_INIT_CFG(QSERDES_COM_PLL_CCTRL_MODE1, 0x28),
--	QMP_PHY_INIT_CFG(QSERDES_COM_INTEGLOOP_GAIN0_MODE1, 0x80),
--	QMP_PHY_INIT_CFG(QSERDES_COM_INTEGLOOP_GAIN1_MODE1, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE1_MODE1, 0xd6),
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE2_MODE1, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP1_MODE1, 0x32),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP2_MODE1, 0x0f),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP3_MODE1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CMN_CONFIG, 0x0e),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SYSCLK_EN_SEL, 0xd7),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CLK_SELECT, 0x30),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SYS_CLK_CTRL, 0x06),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_BIAS_EN_CLKBUFLR_EN, 0x08),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_BG_TIMER, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_HSCLK_SEL, 0x05),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CORECLK_DIV, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CORECLK_DIV_MODE1, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP_EN, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE_CTRL, 0x10),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_RESETSM_CNTRL, 0x20),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CORE_CLK_EN, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP_CFG, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE_TIMER1, 0xff),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE_TIMER2, 0x3f),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE_MAP, 0x54),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SVS_MODE_CLK_SEL, 0x05),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DEC_START_MODE0, 0x82),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START1_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START2_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START3_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CP_CTRL_MODE0, 0x0b),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_PLL_RCTRL_MODE0, 0x16),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_PLL_CCTRL_MODE0, 0x28),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_INTEGLOOP_GAIN0_MODE0, 0x80),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_INTEGLOOP_GAIN1_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE1_MODE0, 0x28),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE2_MODE0, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP1_MODE0, 0xff),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP2_MODE0, 0x0c),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP3_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DEC_START_MODE1, 0x98),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START1_MODE1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START2_MODE1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START3_MODE1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CP_CTRL_MODE1, 0x0b),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_PLL_RCTRL_MODE1, 0x16),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_PLL_CCTRL_MODE1, 0x28),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_INTEGLOOP_GAIN0_MODE1, 0x80),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_INTEGLOOP_GAIN1_MODE1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE1_MODE1, 0xd6),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE2_MODE1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP1_MODE1, 0x32),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP2_MODE1, 0x0f),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP3_MODE1, 0x00),
- };
- 
- static const struct qmp_phy_init_tbl msm8996_ufsphy_tx[] = {
-@@ -320,60 +320,60 @@ static const struct qmp_phy_init_tbl sc7280_ufsphy_hs_g4_rx[] = {
- };
- 
- static const struct qmp_phy_init_tbl sm6115_ufsphy_serdes[] = {
--	QMP_PHY_INIT_CFG(QSERDES_COM_CMN_CONFIG, 0x0e),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SYSCLK_EN_SEL, 0x14),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CLK_SELECT, 0x30),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SYS_CLK_CTRL, 0x02),
--	QMP_PHY_INIT_CFG(QSERDES_COM_BIAS_EN_CLKBUFLR_EN, 0x08),
--	QMP_PHY_INIT_CFG(QSERDES_COM_BG_TIMER, 0x0a),
--	QMP_PHY_INIT_CFG(QSERDES_COM_HSCLK_SEL, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CORECLK_DIV, 0x0a),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CORECLK_DIV_MODE1, 0x0a),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP_EN, 0x01),
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE_CTRL, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_RESETSM_CNTRL, 0x20),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CORE_CLK_EN, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP_CFG, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE_TIMER1, 0xff),
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE_TIMER2, 0x3f),
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE_MAP, 0x04),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SVS_MODE_CLK_SEL, 0x05),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DEC_START_MODE0, 0x82),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START1_MODE0, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START2_MODE0, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START3_MODE0, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CP_CTRL_MODE0, 0x0b),
--	QMP_PHY_INIT_CFG(QSERDES_COM_PLL_RCTRL_MODE0, 0x16),
--	QMP_PHY_INIT_CFG(QSERDES_COM_PLL_CCTRL_MODE0, 0x28),
--	QMP_PHY_INIT_CFG(QSERDES_COM_INTEGLOOP_GAIN0_MODE0, 0x80),
--	QMP_PHY_INIT_CFG(QSERDES_COM_INTEGLOOP_GAIN1_MODE0, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE1_MODE0, 0x28),
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE2_MODE0, 0x02),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP1_MODE0, 0xff),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP2_MODE0, 0x0c),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP3_MODE0, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DEC_START_MODE1, 0x98),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START1_MODE1, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START2_MODE1, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START3_MODE1, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CP_CTRL_MODE1, 0x0b),
--	QMP_PHY_INIT_CFG(QSERDES_COM_PLL_RCTRL_MODE1, 0x16),
--	QMP_PHY_INIT_CFG(QSERDES_COM_PLL_CCTRL_MODE1, 0x28),
--	QMP_PHY_INIT_CFG(QSERDES_COM_INTEGLOOP_GAIN0_MODE1, 0x80),
--	QMP_PHY_INIT_CFG(QSERDES_COM_INTEGLOOP_GAIN1_MODE1, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE1_MODE1, 0xd6),
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE2_MODE1, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP1_MODE1, 0x32),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP2_MODE1, 0x0f),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP3_MODE1, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_PLL_IVCO, 0x0f),
--	QMP_PHY_INIT_CFG(QSERDES_COM_BG_TRIM, 0x0f),
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE_INITVAL1, 0xff),
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE_INITVAL2, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CMN_CONFIG, 0x0e),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SYSCLK_EN_SEL, 0x14),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CLK_SELECT, 0x30),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SYS_CLK_CTRL, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_BIAS_EN_CLKBUFLR_EN, 0x08),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_BG_TIMER, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_HSCLK_SEL, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CORECLK_DIV, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CORECLK_DIV_MODE1, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP_EN, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE_CTRL, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_RESETSM_CNTRL, 0x20),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CORE_CLK_EN, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP_CFG, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE_TIMER1, 0xff),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE_TIMER2, 0x3f),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE_MAP, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SVS_MODE_CLK_SEL, 0x05),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DEC_START_MODE0, 0x82),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START1_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START2_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START3_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CP_CTRL_MODE0, 0x0b),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_PLL_RCTRL_MODE0, 0x16),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_PLL_CCTRL_MODE0, 0x28),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_INTEGLOOP_GAIN0_MODE0, 0x80),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_INTEGLOOP_GAIN1_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE1_MODE0, 0x28),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE2_MODE0, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP1_MODE0, 0xff),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP2_MODE0, 0x0c),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP3_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DEC_START_MODE1, 0x98),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START1_MODE1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START2_MODE1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START3_MODE1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CP_CTRL_MODE1, 0x0b),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_PLL_RCTRL_MODE1, 0x16),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_PLL_CCTRL_MODE1, 0x28),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_INTEGLOOP_GAIN0_MODE1, 0x80),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_INTEGLOOP_GAIN1_MODE1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE1_MODE1, 0xd6),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE2_MODE1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP1_MODE1, 0x32),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP2_MODE1, 0x0f),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP3_MODE1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_PLL_IVCO, 0x0f),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_BG_TRIM, 0x0f),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE_INITVAL1, 0xff),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE_INITVAL2, 0x00),
- };
- 
- static const struct qmp_phy_init_tbl sm6115_ufsphy_hs_b_serdes[] = {
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE_MAP, 0x44),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE_MAP, 0x44),
- };
- 
- static const struct qmp_phy_init_tbl sm6115_ufsphy_tx[] = {
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-index b0ecd5ba2464..f43650f9a45c 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-usb.c
-@@ -244,40 +244,40 @@ static const struct qmp_phy_init_tbl glymur_usb3_uniphy_pcs_usb_tbl[] = {
- };
- 
- static const struct qmp_phy_init_tbl ipq9574_usb3_serdes_tbl[] = {
--	QMP_PHY_INIT_CFG(QSERDES_COM_SYSCLK_EN_SEL, 0x1a),
--	QMP_PHY_INIT_CFG(QSERDES_COM_BIAS_EN_CLKBUFLR_EN, 0x08),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CLK_SELECT, 0x30),
--	QMP_PHY_INIT_CFG(QSERDES_COM_BG_TRIM, 0x0f),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SYSCLK_EN_SEL, 0x1a),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_BIAS_EN_CLKBUFLR_EN, 0x08),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CLK_SELECT, 0x30),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_BG_TRIM, 0x0f),
- 	QMP_PHY_INIT_CFG(QSERDES_RX_UCDR_FASTLOCK_FO_GAIN, 0x0b),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SVS_MODE_CLK_SEL, 0x01),
--	QMP_PHY_INIT_CFG(QSERDES_COM_HSCLK_SEL, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CMN_CONFIG, 0x06),
--	QMP_PHY_INIT_CFG(QSERDES_COM_PLL_IVCO, 0x0f),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SYS_CLK_CTRL, 0x06),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SVS_MODE_CLK_SEL, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_HSCLK_SEL, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CMN_CONFIG, 0x06),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_PLL_IVCO, 0x0f),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SYS_CLK_CTRL, 0x06),
- 	/* PLL and Loop filter settings */
--	QMP_PHY_INIT_CFG(QSERDES_COM_DEC_START_MODE0, 0x68),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START1_MODE0, 0xab),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START2_MODE0, 0xaa),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START3_MODE0, 0x02),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CP_CTRL_MODE0, 0x09),
--	QMP_PHY_INIT_CFG(QSERDES_COM_PLL_RCTRL_MODE0, 0x16),
--	QMP_PHY_INIT_CFG(QSERDES_COM_PLL_CCTRL_MODE0, 0x28),
--	QMP_PHY_INIT_CFG(QSERDES_COM_INTEGLOOP_GAIN0_MODE0, 0xa0),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP1_MODE0, 0xaa),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP2_MODE0, 0x29),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP3_MODE0, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CORE_CLK_EN, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP_CFG, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE_MAP, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_BG_TIMER, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DEC_START_MODE0, 0x68),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START1_MODE0, 0xab),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START2_MODE0, 0xaa),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START3_MODE0, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CP_CTRL_MODE0, 0x09),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_PLL_RCTRL_MODE0, 0x16),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_PLL_CCTRL_MODE0, 0x28),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_INTEGLOOP_GAIN0_MODE0, 0xa0),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP1_MODE0, 0xaa),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP2_MODE0, 0x29),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP3_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CORE_CLK_EN, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP_CFG, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE_MAP, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_BG_TIMER, 0x0a),
- 	/* SSC settings */
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_EN_CENTER, 0x01),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_PER1, 0x7d),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_PER2, 0x01),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_ADJ_PER1, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_ADJ_PER2, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_STEP_SIZE1, 0x0a),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_STEP_SIZE2, 0x05),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_EN_CENTER, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_PER1, 0x7d),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_PER2, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_ADJ_PER1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_ADJ_PER2, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_STEP_SIZE1, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_STEP_SIZE2, 0x05),
- };
- 
- static const struct qmp_phy_init_tbl ipq9574_usb3_tx_tbl[] = {
-@@ -326,40 +326,40 @@ static const struct qmp_phy_init_tbl ipq9574_usb3_pcs_tbl[] = {
- };
- 
- static const struct qmp_phy_init_tbl ipq8074_usb3_serdes_tbl[] = {
--	QMP_PHY_INIT_CFG(QSERDES_COM_SYSCLK_EN_SEL, 0x1a),
--	QMP_PHY_INIT_CFG(QSERDES_COM_BIAS_EN_CLKBUFLR_EN, 0x08),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CLK_SELECT, 0x30),
--	QMP_PHY_INIT_CFG(QSERDES_COM_BG_TRIM, 0x0f),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SYSCLK_EN_SEL, 0x1a),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_BIAS_EN_CLKBUFLR_EN, 0x08),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CLK_SELECT, 0x30),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_BG_TRIM, 0x0f),
- 	QMP_PHY_INIT_CFG(QSERDES_RX_UCDR_FASTLOCK_FO_GAIN, 0x0b),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SVS_MODE_CLK_SEL, 0x01),
--	QMP_PHY_INIT_CFG(QSERDES_COM_HSCLK_SEL, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CMN_CONFIG, 0x06),
--	QMP_PHY_INIT_CFG(QSERDES_COM_PLL_IVCO, 0x0f),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SYS_CLK_CTRL, 0x06),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SVS_MODE_CLK_SEL, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_HSCLK_SEL, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CMN_CONFIG, 0x06),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_PLL_IVCO, 0x0f),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SYS_CLK_CTRL, 0x06),
- 	/* PLL and Loop filter settings */
--	QMP_PHY_INIT_CFG(QSERDES_COM_DEC_START_MODE0, 0x82),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START1_MODE0, 0x55),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START2_MODE0, 0x55),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START3_MODE0, 0x03),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CP_CTRL_MODE0, 0x0b),
--	QMP_PHY_INIT_CFG(QSERDES_COM_PLL_RCTRL_MODE0, 0x16),
--	QMP_PHY_INIT_CFG(QSERDES_COM_PLL_CCTRL_MODE0, 0x28),
--	QMP_PHY_INIT_CFG(QSERDES_COM_INTEGLOOP_GAIN0_MODE0, 0x80),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP1_MODE0, 0x15),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP2_MODE0, 0x34),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP3_MODE0, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CORE_CLK_EN, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP_CFG, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE_MAP, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_BG_TIMER, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DEC_START_MODE0, 0x82),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START1_MODE0, 0x55),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START2_MODE0, 0x55),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START3_MODE0, 0x03),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CP_CTRL_MODE0, 0x0b),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_PLL_RCTRL_MODE0, 0x16),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_PLL_CCTRL_MODE0, 0x28),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_INTEGLOOP_GAIN0_MODE0, 0x80),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP1_MODE0, 0x15),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP2_MODE0, 0x34),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP3_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CORE_CLK_EN, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP_CFG, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE_MAP, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_BG_TIMER, 0x0a),
- 	/* SSC settings */
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_EN_CENTER, 0x01),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_PER1, 0x31),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_PER2, 0x01),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_ADJ_PER1, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_ADJ_PER2, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_STEP_SIZE1, 0xde),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_STEP_SIZE2, 0x07),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_EN_CENTER, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_PER1, 0x31),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_PER2, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_ADJ_PER1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_ADJ_PER2, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_STEP_SIZE1, 0xde),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_STEP_SIZE2, 0x07),
- };
- 
- static const struct qmp_phy_init_tbl ipq8074_usb3_rx_tbl[] = {
-@@ -401,40 +401,40 @@ static const struct qmp_phy_init_tbl ipq8074_usb3_pcs_tbl[] = {
- };
- 
- static const struct qmp_phy_init_tbl msm8996_usb3_serdes_tbl[] = {
--	QMP_PHY_INIT_CFG(QSERDES_COM_SYSCLK_EN_SEL, 0x14),
--	QMP_PHY_INIT_CFG(QSERDES_COM_BIAS_EN_CLKBUFLR_EN, 0x08),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CLK_SELECT, 0x30),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CMN_CONFIG, 0x06),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SVS_MODE_CLK_SEL, 0x01),
--	QMP_PHY_INIT_CFG(QSERDES_COM_HSCLK_SEL, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_BG_TRIM, 0x0f),
--	QMP_PHY_INIT_CFG(QSERDES_COM_PLL_IVCO, 0x0f),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SYS_CLK_CTRL, 0x04),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SYSCLK_EN_SEL, 0x14),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_BIAS_EN_CLKBUFLR_EN, 0x08),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CLK_SELECT, 0x30),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CMN_CONFIG, 0x06),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SVS_MODE_CLK_SEL, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_HSCLK_SEL, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_BG_TRIM, 0x0f),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_PLL_IVCO, 0x0f),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SYS_CLK_CTRL, 0x04),
- 	/* PLL and Loop filter settings */
--	QMP_PHY_INIT_CFG(QSERDES_COM_DEC_START_MODE0, 0x82),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START1_MODE0, 0x55),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START2_MODE0, 0x55),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START3_MODE0, 0x03),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CP_CTRL_MODE0, 0x0b),
--	QMP_PHY_INIT_CFG(QSERDES_COM_PLL_RCTRL_MODE0, 0x16),
--	QMP_PHY_INIT_CFG(QSERDES_COM_PLL_CCTRL_MODE0, 0x28),
--	QMP_PHY_INIT_CFG(QSERDES_COM_INTEGLOOP_GAIN0_MODE0, 0x80),
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE_CTRL, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP1_MODE0, 0x15),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP2_MODE0, 0x34),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP3_MODE0, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CORE_CLK_EN, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP_CFG, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE_MAP, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_BG_TIMER, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DEC_START_MODE0, 0x82),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START1_MODE0, 0x55),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START2_MODE0, 0x55),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START3_MODE0, 0x03),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CP_CTRL_MODE0, 0x0b),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_PLL_RCTRL_MODE0, 0x16),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_PLL_CCTRL_MODE0, 0x28),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_INTEGLOOP_GAIN0_MODE0, 0x80),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE_CTRL, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP1_MODE0, 0x15),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP2_MODE0, 0x34),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP3_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CORE_CLK_EN, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP_CFG, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE_MAP, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_BG_TIMER, 0x0a),
- 	/* SSC settings */
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_EN_CENTER, 0x01),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_PER1, 0x31),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_PER2, 0x01),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_ADJ_PER1, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_ADJ_PER2, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_STEP_SIZE1, 0xde),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_STEP_SIZE2, 0x07),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_EN_CENTER, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_PER1, 0x31),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_PER2, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_ADJ_PER1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_ADJ_PER2, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_STEP_SIZE1, 0xde),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_STEP_SIZE2, 0x07),
- };
- 
- static const struct qmp_phy_init_tbl msm8996_usb3_tx_tbl[] = {
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c b/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
-index 14feb77789b3..1b841e805536 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-usbc.c
-@@ -177,44 +177,44 @@ static const struct qmp_phy_init_tbl msm8998_usb3_pcs_tbl[] = {
- };
- 
- static const struct qmp_phy_init_tbl qcm2290_usb3_serdes_tbl[] = {
--	QMP_PHY_INIT_CFG(QSERDES_COM_SYSCLK_EN_SEL, 0x14),
--	QMP_PHY_INIT_CFG(QSERDES_COM_BIAS_EN_CLKBUFLR_EN, 0x08),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CLK_SELECT, 0x30),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SYS_CLK_CTRL, 0x06),
--	QMP_PHY_INIT_CFG(QSERDES_COM_RESETSM_CNTRL, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_RESETSM_CNTRL2, 0x08),
--	QMP_PHY_INIT_CFG(QSERDES_COM_BG_TRIM, 0x0f),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SVS_MODE_CLK_SEL, 0x01),
--	QMP_PHY_INIT_CFG(QSERDES_COM_HSCLK_SEL, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DEC_START_MODE0, 0x82),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START1_MODE0, 0x55),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START2_MODE0, 0x55),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START3_MODE0, 0x03),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CP_CTRL_MODE0, 0x0b),
--	QMP_PHY_INIT_CFG(QSERDES_COM_PLL_RCTRL_MODE0, 0x16),
--	QMP_PHY_INIT_CFG(QSERDES_COM_PLL_CCTRL_MODE0, 0x28),
--	QMP_PHY_INIT_CFG(QSERDES_COM_INTEGLOOP_GAIN0_MODE0, 0x80),
--	QMP_PHY_INIT_CFG(QSERDES_COM_INTEGLOOP_GAIN1_MODE0, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CORECLK_DIV, 0x0a),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP1_MODE0, 0x15),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP2_MODE0, 0x34),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP3_MODE0, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP_EN, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CORE_CLK_EN, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP_CFG, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE_MAP, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_BG_TIMER, 0x0a),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_EN_CENTER, 0x01),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_PER1, 0x31),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_PER2, 0x01),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_ADJ_PER1, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_ADJ_PER2, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_STEP_SIZE1, 0xde),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SSC_STEP_SIZE2, 0x07),
--	QMP_PHY_INIT_CFG(QSERDES_COM_PLL_IVCO, 0x0f),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CMN_CONFIG, 0x06),
--	QMP_PHY_INIT_CFG(QSERDES_COM_INTEGLOOP_INITVAL, 0x80),
--	QMP_PHY_INIT_CFG(QSERDES_COM_BIAS_EN_CTRL_BY_PSM, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SYSCLK_EN_SEL, 0x14),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_BIAS_EN_CLKBUFLR_EN, 0x08),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CLK_SELECT, 0x30),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SYS_CLK_CTRL, 0x06),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_RESETSM_CNTRL, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_RESETSM_CNTRL2, 0x08),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_BG_TRIM, 0x0f),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SVS_MODE_CLK_SEL, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_HSCLK_SEL, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DEC_START_MODE0, 0x82),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START1_MODE0, 0x55),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START2_MODE0, 0x55),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START3_MODE0, 0x03),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CP_CTRL_MODE0, 0x0b),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_PLL_RCTRL_MODE0, 0x16),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_PLL_CCTRL_MODE0, 0x28),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_INTEGLOOP_GAIN0_MODE0, 0x80),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_INTEGLOOP_GAIN1_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CORECLK_DIV, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP1_MODE0, 0x15),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP2_MODE0, 0x34),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP3_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP_EN, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CORE_CLK_EN, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP_CFG, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE_MAP, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_BG_TIMER, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_EN_CENTER, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_PER1, 0x31),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_PER2, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_ADJ_PER1, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_ADJ_PER2, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_STEP_SIZE1, 0xde),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SSC_STEP_SIZE2, 0x07),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_PLL_IVCO, 0x0f),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CMN_CONFIG, 0x06),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_INTEGLOOP_INITVAL, 0x80),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_BIAS_EN_CTRL_BY_PSM, 0x01),
- };
- 
- static const struct qmp_phy_init_tbl qcm2290_usb3_tx_tbl[] = {
-@@ -291,63 +291,63 @@ static const struct qmp_phy_init_tbl qcm2290_usb3_pcs_tbl[] = {
- };
- 
- static const struct qmp_phy_init_tbl qmp_v2_dp_serdes_tbl[] = {
--	QMP_PHY_INIT_CFG(QSERDES_COM_SVS_MODE_CLK_SEL, 0x01),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SYSCLK_EN_SEL, 0x37),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CLK_SELECT, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SYS_CLK_CTRL, 0x06),
--	QMP_PHY_INIT_CFG(QSERDES_COM_BIAS_EN_CLKBUFLR_EN, 0x3f),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CLK_ENABLE1, 0x0e),
--	QMP_PHY_INIT_CFG(QSERDES_COM_BG_CTRL, 0x0f),
--	QMP_PHY_INIT_CFG(QSERDES_COM_SYSCLK_BUF_ENABLE, 0x06),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CLK_SELECT, 0x30),
--	QMP_PHY_INIT_CFG(QSERDES_COM_PLL_IVCO, 0x0f),
--	QMP_PHY_INIT_CFG(QSERDES_COM_PLL_CCTRL_MODE0, 0x28),
--	QMP_PHY_INIT_CFG(QSERDES_COM_PLL_RCTRL_MODE0, 0x16),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CP_CTRL_MODE0, 0x0b),
--	QMP_PHY_INIT_CFG(QSERDES_COM_INTEGLOOP_GAIN0_MODE0, 0x40),
--	QMP_PHY_INIT_CFG(QSERDES_COM_INTEGLOOP_GAIN1_MODE0, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE_MAP, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_BG_TIMER, 0x08),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CORECLK_DIV, 0x05),
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE_CTRL, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE1_MODE0, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE2_MODE0, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_VCO_TUNE_CTRL, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CORE_CLK_EN, 0x0f),
--	QMP_PHY_INIT_CFG(QSERDES_COM_CMN_CONFIG, 0x02),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SVS_MODE_CLK_SEL, 0x01),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SYSCLK_EN_SEL, 0x37),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CLK_SELECT, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SYS_CLK_CTRL, 0x06),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_BIAS_EN_CLKBUFLR_EN, 0x3f),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CLK_ENABLE1, 0x0e),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_BG_CTRL, 0x0f),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_SYSCLK_BUF_ENABLE, 0x06),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CLK_SELECT, 0x30),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_PLL_IVCO, 0x0f),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_PLL_CCTRL_MODE0, 0x28),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_PLL_RCTRL_MODE0, 0x16),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CP_CTRL_MODE0, 0x0b),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_INTEGLOOP_GAIN0_MODE0, 0x40),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_INTEGLOOP_GAIN1_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE_MAP, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_BG_TIMER, 0x08),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CORECLK_DIV, 0x05),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE_CTRL, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE1_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE2_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_VCO_TUNE_CTRL, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CORE_CLK_EN, 0x0f),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_CMN_CONFIG, 0x02),
- };
- 
- static const struct qmp_phy_init_tbl qmp_v2_dp_serdes_tbl_rbr[] = {
--	QMP_PHY_INIT_CFG(QSERDES_COM_HSCLK_SEL, 0x2c),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DEC_START_MODE0, 0x69),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START1_MODE0, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START2_MODE0, 0x80),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START3_MODE0, 0x07),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP1_MODE0, 0xbf),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP2_MODE0, 0x21),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP3_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_HSCLK_SEL, 0x2c),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DEC_START_MODE0, 0x69),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START1_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START2_MODE0, 0x80),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START3_MODE0, 0x07),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP1_MODE0, 0xbf),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP2_MODE0, 0x21),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP3_MODE0, 0x00),
- };
- 
- static const struct qmp_phy_init_tbl qmp_v2_dp_serdes_tbl_hbr[] = {
--	QMP_PHY_INIT_CFG(QSERDES_COM_HSCLK_SEL, 0x24),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DEC_START_MODE0, 0x69),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START1_MODE0, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START2_MODE0, 0x80),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START3_MODE0, 0x07),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP1_MODE0, 0x3f),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP2_MODE0, 0x38),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP3_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_HSCLK_SEL, 0x24),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DEC_START_MODE0, 0x69),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START1_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START2_MODE0, 0x80),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START3_MODE0, 0x07),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP1_MODE0, 0x3f),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP2_MODE0, 0x38),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP3_MODE0, 0x00),
- };
- 
- static const struct qmp_phy_init_tbl qmp_v2_dp_serdes_tbl_hbr2[] = {
--	QMP_PHY_INIT_CFG(QSERDES_COM_HSCLK_SEL, 0x20),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DEC_START_MODE0, 0x8c),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START1_MODE0, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START2_MODE0, 0x00),
--	QMP_PHY_INIT_CFG(QSERDES_COM_DIV_FRAC_START3_MODE0, 0x0a),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP1_MODE0, 0x7f),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP2_MODE0, 0x70),
--	QMP_PHY_INIT_CFG(QSERDES_COM_LOCK_CMP3_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_HSCLK_SEL, 0x20),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DEC_START_MODE0, 0x8c),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START1_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START2_MODE0, 0x00),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_DIV_FRAC_START3_MODE0, 0x0a),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP1_MODE0, 0x7f),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP2_MODE0, 0x70),
-+	QMP_PHY_INIT_CFG(QSERDES_V2_COM_LOCK_CMP3_MODE0, 0x00),
- };
- 
- static const struct qmp_phy_init_tbl qmp_v2_dp_tx_tbl[] = {
-@@ -906,9 +906,9 @@ static int qmp_v2_configure_dp_phy(struct qmp_usbc *qmp)
- 	writel(0x01, qmp->dp_dp_phy + QSERDES_DP_PHY_CFG);
- 	writel(0x09, qmp->dp_dp_phy + QSERDES_DP_PHY_CFG);
- 
--	writel(0x20, qmp->dp_serdes + QSERDES_COM_RESETSM_CNTRL);
-+	writel(0x20, qmp->dp_serdes + QSERDES_V2_COM_RESETSM_CNTRL);
- 
--	if (readl_poll_timeout(qmp->dp_serdes + QSERDES_COM_C_READY_STATUS,
-+	if (readl_poll_timeout(qmp->dp_serdes + QSERDES_V2_COM_C_READY_STATUS,
- 			       status,
- 			       ((status & BIT(0)) > 0),
- 			       500,
-@@ -917,7 +917,7 @@ static int qmp_v2_configure_dp_phy(struct qmp_usbc *qmp)
- 		return -ETIMEDOUT;
- 	}
- 
--	if (readl_poll_timeout(qmp->dp_serdes + QSERDES_COM_CMN_STATUS,
-+	if (readl_poll_timeout(qmp->dp_serdes + QSERDES_V2_COM_CMN_STATUS,
- 			       status,
- 			       ((status & BIT(0)) > 0),
- 			       500,
-@@ -926,7 +926,7 @@ static int qmp_v2_configure_dp_phy(struct qmp_usbc *qmp)
- 		return -ETIMEDOUT;
- 	}
- 
--	if (readl_poll_timeout(qmp->dp_serdes + QSERDES_COM_CMN_STATUS,
-+	if (readl_poll_timeout(qmp->dp_serdes + QSERDES_V2_COM_CMN_STATUS,
- 			       status,
- 			       ((status & BIT(1)) > 0),
- 			       500,
+ #include "phy-qcom-qmp-qserdes-com-v3.h"
+ #include "phy-qcom-qmp-qserdes-txrx-v3.h"
 -- 
 2.43.0
 
