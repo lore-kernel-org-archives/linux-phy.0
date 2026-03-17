@@ -4,126 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 69071F013FA
-	for <linux-phy@archiver.kernel.org>; Mon, 16 Mar 2026 22:11:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EF64AFB5EBE
+	for <linux-phy@archiver.kernel.org>; Tue, 17 Mar 2026 05:26:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z9q08SHi2JsiXJ0BruRwotHW65HidlZ0nA9RFHaG6Rg=; b=D1OnvGXaMqACcZ
-	B4ZLYthzNwMInM/VrM+gd4pZIUUDl3l2F7avUgmBsDBBQjMDEI4GPWHBpq1F+FgNiVjxQfTEn8LvP
-	d3fvC++KXxLZUfjsLwc2icGxKHqyJjlKmneZrp6SUkToYsnMG2yWFjNCmx13Zhaar4qbs1nYIz+gn
-	CWMjniq9AMsjmpml0JPRFdDPYP4XDAlYbjmvHRlluSmPfppoR4NlkEFipdALswOpdvZLu/7CVhT0T
-	GpGvBnwquydzNgz1tJPIR8jv7ZUqZFXztPc+j/qETUeoLu+vGHxS6E+UdS4CpQhqTYY9+U7UEEgc4
-	ObfiyuSuQc2XDMhD2lsg==;
+	List-Owner; bh=xUpRNIkHf+ddvjwLCARDwtXN30oB1CvPHLQgnu3Z1lg=; b=E8fxTo/9X9pfff
+	R2Aa8NjOlq0CXqdIHeFwXy30VE4x4XKYmPdEBPt9AVwdhZB1q6cX18Zkn5QeTUFbyWOvsHPnXbl8+
+	OzjNhIlC9zQeesuok2Cq+wQ5w7MvRe0t2VI5ygSaf+5cP0hKASja8jXnDfCLyxP165n1otW2MJwMr
+	qMDgVnfYjNjqD4WWN0j91ZaJcK+RBtkk+VzHqh82MD2erOu8WdVLBHyCtfQ4Y0gbtmhRgV/6WWgla
+	xEIlnW9FeANi+DJBD4mlRHwDqKq49I7NQw+6gyJTTmjjlzhKDo0EG4E8lJbEsvCzGXAYGMlnRJWfe
+	9/6csfDALAEDw8Q3jGkw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w2G9Q-00000004yp0-300W;
-	Mon, 16 Mar 2026 22:11:04 +0000
-Received: from flow-a3-smtp.messagingengine.com ([103.168.172.138])
+	id 1w2Mx0-00000005RJ5-0GZq;
+	Tue, 17 Mar 2026 05:26:42 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w2G9M-00000004yoD-2bKa;
-	Mon, 16 Mar 2026 22:11:02 +0000
-Received: from phl-compute-01.internal (phl-compute-01.internal [10.202.2.41])
-	by mailflow.phl.internal (Postfix) with ESMTP id 96E81138028E;
-	Mon, 16 Mar 2026 18:10:56 -0400 (EDT)
-Received: from phl-frontend-04 ([10.202.2.163])
-  by phl-compute-01.internal (MEProxy); Mon, 16 Mar 2026 18:10:56 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=shazbot.org; h=
-	cc:cc:content-transfer-encoding:content-type:content-type:date
-	:date:from:from:in-reply-to:in-reply-to:message-id:mime-version
-	:references:reply-to:subject:subject:to:to; s=fm3; t=1773699056;
-	 x=1773706256; bh=pZj8f0JboyjKt94J8KB7OLIiCOoml43GOZ4w8rDpLPA=; b=
-	eyO5nsRGgscBaSPTlSrjx8D8qsmxFZTD+YBT90C8JLtkSU+JG9otBsGP68/aDjfq
-	Ip8/CY7pDqj8uLfl6tk9PaoCLmHFx9BmC+OLDsgQIKz5wruWwvglBIFTzX8Bgo1G
-	D7tyDhfcq/yYvbxAZYbPlVlov+W1BUQwVVZx34myYfSzzczy+o0TvO2AJR+dEy1d
-	h9Fy4zA0IHy3AyAu2lJw7cTPeRVsoH7Q9DZJUhPGVmEq8IZ5byXvr46eUf3RwYLV
-	Pd21rN+O2sxo21UD0KoApMpHYwnhY5vI1CKlHqs6nb1Q0ON5mjBcz18/WvPyI4M2
-	g7ed/wORmv3aHNEvlM9NEQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=cc:cc:content-transfer-encoding
-	:content-type:content-type:date:date:feedback-id:feedback-id
-	:from:from:in-reply-to:in-reply-to:message-id:mime-version
-	:references:reply-to:subject:subject:to:to:x-me-proxy
-	:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; t=1773699056; x=
-	1773706256; bh=pZj8f0JboyjKt94J8KB7OLIiCOoml43GOZ4w8rDpLPA=; b=g
-	uCypQjfxr+Zi7JxdTC/p3wGQ4VV0q/Wv3rf4QuOSSvRwPZ4hwWoKXSQwRlJppx/A
-	eTD/kX8ytMBkqeeAHXi8QojGoDJPwhemKEl1A5BQyy+VTfQ0kjCklEhRU0D9TNU6
-	QzoouUhJdY7Fi24kVLMS4vkfF5Xif+sxcGuZ+ZH9bmNOAZhg/6jHFnuxjrIUYo4Y
-	sJAjmQ/c58h+MsTVokuL8c2t4xBbVGwnTgXIvKplEwnaY81NNzKXbPGa+zPU58N/
-	vwQ/zZfUYT5zYdyXfBWrfC5sZSkqzhpuD1WACxXIM/TD7Jh2N1ZXy8qS+O1DtSBY
-	h24uS6YuZ9c79L+rKNYRA==
-X-ME-Sender: <xms:73-4aYdtUUIQC679P0YPl8k6UZ10Tz8-qTD319yDZEtXusdBhZuXRA>
-    <xme:73-4aTUav9FvduIIOmc0jldmINr5W_MhUsWQFGzP1fBm1dpf8ggOxSMvCMHniLmCu
-    LbRPk360ujIo39hLA6fsP95YlnCLki5WcrUsiuRyEwh6NcxWlxF>
-X-ME-Received: <xmr:73-4aSY56rJyFtQwMFw-H9dfM29zbbMWxWkWrpi3kYaZ1kbqDyXdf5bHU5U>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeefgedrtddtgddvleelheegucetufdoteggodetrf
-    dotffvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfurfetoffkrfgpnffqhgenuceu
-    rghilhhouhhtmecufedttdenucenucfjughrpeffhffvvefukfgjfhfogggtgfesthejre
-    dtredtvdenucfhrhhomheptehlvgigucghihhllhhirghmshhonhcuoegrlhgvgiesshhh
-    rgiisghothdrohhrgheqnecuggftrfgrthhtvghrnhepvdekfeejkedvudfhudfhteekud
-    fgudeiteetvdeukedvheetvdekgfdugeevueeunecuvehluhhsthgvrhfuihiivgeptden
-    ucfrrghrrghmpehmrghilhhfrhhomheprghlvgigsehshhgriigsohhtrdhorhhgpdhnsg
-    gprhgtphhtthhopeehhedpmhhouggvpehsmhhtphhouhhtpdhrtghpthhtohepphhhrghh
-    nhdqohhsshesrghvmhdruggvpdhrtghpthhtoheprghmugdqghhfgieslhhishhtshdrfh
-    hrvggvuggvshhkthhophdrohhrghdprhgtphhtthhopegrphhprghrmhhorheslhhishht
-    shdruhgsuhhnthhurdgtohhmpdhrtghpthhtohepsghpfhesvhhgvghrrdhkvghrnhgvlh
-    drohhrghdprhgtphhtthhopegtvghphhdquggvvhgvlhesvhhgvghrrdhkvghrnhgvlhdr
-    ohhrghdprhgtphhtthhopegtohgttghisehinhhrihgrrdhfrhdprhgtphhtthhopegumh
-    dquggvvhgvlheslhhishhtshdrlhhinhhugidruggvvhdprhgtphhtthhopegurhhiqdgu
-    vghvvghlsehlihhsthhsrdhfrhgvvgguvghskhhtohhprdhorhhgpdhrtghpthhtohepgh
-    hfshdvsehlihhsthhsrdhlihhnuhigrdguvghv
-X-ME-Proxy: <xmx:73-4aQltNdDVIdEqvCmz7Mlt0qW50NA4CHgJQUMNlacMN4MGiVKHfA>
-    <xmx:73-4acHdFw15OLpR73_B1AdIXJMG-pYssiD_C0T2dj2N-8ux7fVHFg>
-    <xmx:73-4aU6P6J2BtdvPwSPzfrUNjz9-qYacHOOWBucSAMlha23fXDTcIg>
-    <xmx:73-4aaO5YEqAXlnOLRO88GZx1RbxPW8QtXAeqZQNaqmxlgOL7PgFkQ>
-    <xmx:8H-4abIvs_QYur641c9BpnDuFQ6ssCC-7-o-rPLEHWyRxStBDxJEr6SL>
-Feedback-ID: i03f14258:Fastmail
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Mon,
- 16 Mar 2026 18:10:52 -0400 (EDT)
-Date: Mon, 16 Mar 2026 16:10:50 -0600
-From: Alex Williamson <alex@shazbot.org>
-To: Philipp Hahn <phahn-oss@avm.de>
-Cc: amd-gfx@lists.freedesktop.org, apparmor@lists.ubuntu.com,
- bpf@vger.kernel.org, ceph-devel@vger.kernel.org, cocci@inria.fr,
- dm-devel@lists.linux.dev, dri-devel@lists.freedesktop.org,
- gfs2@lists.linux.dev, intel-gfx@lists.freedesktop.org,
- intel-wired-lan@lists.osuosl.org, iommu@lists.linux.dev,
- kvm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-block@vger.kernel.org, linux-bluetooth@vger.kernel.org,
- linux-btrfs@vger.kernel.org, linux-cifs@vger.kernel.org,
- linux-clk@vger.kernel.org, linux-erofs@lists.ozlabs.org,
- linux-ext4@vger.kernel.org, linux-fsdevel@vger.kernel.org,
- linux-gpio@vger.kernel.org, linux-hyperv@vger.kernel.org,
- linux-input@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-leds@vger.kernel.org, linux-media@vger.kernel.org,
- linux-mips@vger.kernel.org, linux-mm@kvack.org,
- linux-modules@vger.kernel.org, linux-mtd@lists.infradead.org,
- linux-nfs@vger.kernel.org, linux-omap@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-pm@vger.kernel.org,
- linux-rockchip@lists.infradead.org, linux-s390@vger.kernel.org,
- linux-scsi@vger.kernel.org, linux-sctp@vger.kernel.org,
- linux-security-module@vger.kernel.org, linux-sh@vger.kernel.org,
- linux-sound@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
- linux-trace-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
- linux-wireless@vger.kernel.org, netdev@vger.kernel.org,
- ntfs3@lists.linux.dev, samba-technical@lists.samba.org,
- sched-ext@lists.linux.dev, target-devel@vger.kernel.org,
- tipc-discussion@lists.sourceforge.net, v9fs@lists.linux.dev,
- alex@shazbot.org
-Subject: Re: [PATCH 46/61] vfio: Prefer IS_ERR_OR_NULL over manual NULL
- check
-Message-ID: <20260316161050.01c82973@shazbot.org>
-In-Reply-To: <20260310-b4-is_err_or_null-v1-46-bd63b656022d@avm.de>
-References: <20260310-b4-is_err_or_null-v1-0-bd63b656022d@avm.de>
-	<20260310-b4-is_err_or_null-v1-46-bd63b656022d@avm.de>
-X-Mailer: Claws Mail 4.3.1 (GTK 3.24.51; x86_64-pc-linux-gnu)
+	id 1w2Mwy-00000005RIx-2HYv
+	for linux-phy@lists.infradead.org;
+	Tue, 17 Mar 2026 05:26:40 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id A56A860018;
+	Tue, 17 Mar 2026 05:26:39 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id BB66CC4CEF7;
+	Tue, 17 Mar 2026 05:26:36 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1773725199;
+	bh=iRRuxqRIArqXAoR/NBolpSJ0w2RG2sEua0rX3QTRhAI=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=DG2ofQYcOyhl31A2USOEdaGUOarol/cHRyEL/51Tq13oizmN/DcrvFJLPF7uGoOUr
+	 FN2852k1L81iX4Nwqcs6fST+H5cTsuyo3vqf6MDIZtzjZxBTjdQai/5k1nzvIB7NgB
+	 fSRdG7t2tLV9wHpx4VZgltxt136jYETum/Qi1corRl2oiN4RDfdzDj+G0e69brz3pM
+	 djOpFM+0+NNj0SjCvI/7qXtO48zlfEmE3rXH0pOcb5lKYbb9TcMvpJ/qG7l7KG3lM3
+	 5HSp1F7Sayo9FCpIauk1+eOF7IEqAALpO6egjc5JHMrmDx0WMxf5t5f5buA5ahYrcH
+	 LXMg8GeSMdHkA==
+Message-ID: <edf766b8-2664-4dac-b626-551807b3e5ef@kernel.org>
+Date: Tue, 17 Mar 2026 05:26:35 +0000
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260316_151101_180900_7360ED0A 
-X-CRM114-Status: GOOD (  15.92  )
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v4 1/2] dt-bindings: phy: qcom: Add CSI2 C-PHY/DPHY schema
+To: Vijay Kumar Tumati <vijay.tumati@oss.qualcomm.com>,
+ Bryan O'Donoghue <bryan.odonoghue@linaro.org>, Vinod Koul
+ <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>
+Cc: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+References: <20260315-x1e-csi2-phy-v4-0-90c09203888d@linaro.org>
+ <20260315-x1e-csi2-phy-v4-1-90c09203888d@linaro.org>
+ <3VqSGUgMUKaCja5WYOrOP8nJ_mw_eDPdItA8d1CvqUg4ASPS5IUc_aT2E-XIo0YmnYo8QltXVw8_6NDxtdqGGw==@protonmail.internalid>
+ <5705b48a-fc24-4c5f-aa6d-40952f0070d9@oss.qualcomm.com>
+From: Bryan O'Donoghue <bod@kernel.org>
+Content-Language: en-US
+In-Reply-To: <5705b48a-fc24-4c5f-aa6d-40952f0070d9@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -135,49 +75,206 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, 10 Mar 2026 12:49:12 +0100
-Philipp Hahn <phahn-oss@avm.de> wrote:
+On 16/03/2026 21:31, Vijay Kumar Tumati wrote:
+> Hi Bryan,
+> 
+> On 3/15/2026 4:52 PM, Bryan O'Donoghue wrote:
+>> Add a base schema initially compatible with x1e80100 to describe MIPI CSI2
+>> PHY devices.
+>>
+>> The hardware can support both C-PHY and D-PHY modes. The CSIPHY devices
+>> have their own pinouts on the SoC as well as their own individual voltage
+>> rails.
+>>
+>> The need to model voltage rails on a per-PHY basis leads us to define
+>> CSIPHY devices as individual nodes.
+>>
+>> Two nice outcomes in terms of schema and DT arise from this change.
+>>
+>> 1. The ability to define on a per-PHY basis voltage rails.
+>> 2. The ability to require those voltage.
+>>
+>> We have had a complete bodge upstream for this where a single set of
+>> voltage rail for all CSIPHYs has been buried inside of CAMSS.
+>>
+>> Much like the I2C bus which is dedicated to Camera sensors - the CCI bus in
+>> CAMSS parlance, the CSIPHY devices should be individually modelled.
+>>
+>> Signed-off-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+>> ---
+>>    .../bindings/phy/qcom,x1e80100-csi2-phy.yaml       | 133 +++++++++++++++++++++
+>>    1 file changed, 133 insertions(+)
+>>
+>> diff --git a/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml
+>> new file mode 100644
+>> index 0000000000000..b83c2d65ebc6e
+>> --- /dev/null
+>> +++ b/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml
+>> @@ -0,0 +1,133 @@
+>> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+>> +%YAML 1.2
+>> +---
+>> +$id: http://devicetree.org/schemas/phy/qcom,x1e80100-csi2-phy.yaml#
+>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>> +
+>> +title: Qualcomm CSI2 PHY
+>> +
+>> +maintainers:
+>> +  - Bryan O'Donoghue <bod@kernel.org>
+>> +
+>> +description:
+>> +  Qualcomm MIPI CSI2 C-PHY/D-PHY combination PHY. Connects MIPI CSI2 sensors
+>> +  to Qualcomm's Camera CSI Decoder. The PHY supports both C-PHY and D-PHY
+>> +  modes.
+>> +
+>> +properties:
+>> +  compatible:
+>> +    const: qcom,x1e80100-csi2-phy
+>> +
+>> +  reg:
+>> +    maxItems: 1
+>> +
+>> +  "#phy-cells":
+>> +    const: 1
+>> +
+>> +  clocks:
+>> +    maxItems: 4
+>> +
+>> +  clock-names:
+>> +    items:
+>> +      - const: csiphy
+>> +      - const: csiphy_timer
+>> +      - const: camnoc_axi
+>> +      - const: cpas_ahb
+>> +
+>> +  interrupts:
+>> +    maxItems: 1
+>> +
+>> +  operating-points-v2:
+>> +    maxItems: 1
+>> +
+>> +  power-domains:
+>> +    items:
+>> +      - description: TITAN TOP GDSC
+>> +      - description: MXC or MXA voltage rail
+> Would it be better to provision MXA or MXC as an additional optional
+> power domain? I see 'cam_cc_cphy_rx_clk_src', the parent of all CSIPHYx
+> clocks, need all three power domains on this chipset.
 
-> Prefer using IS_ERR_OR_NULL() over using IS_ERR() and a manual NULL
-> check.
-> 
-> Change generated with coccinelle.
-> 
-> To: Alex Williamson <alex@shazbot.org>
-> Cc: kvm@vger.kernel.org
-> Cc: linux-kernel@vger.kernel.org
-> Signed-off-by: Philipp Hahn <phahn-oss@avm.de>
-> ---
->  drivers/vfio/vfio_main.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/vfio/vfio_main.c b/drivers/vfio/vfio_main.c
-> index 742477546b15d4dbaf9ebcfb2e67627db71521e0..d71922dfde5885967398deddec3e9e04b05adfec 100644
-> --- a/drivers/vfio/vfio_main.c
-> +++ b/drivers/vfio/vfio_main.c
-> @@ -923,7 +923,7 @@ vfio_ioctl_device_feature_mig_device_state(struct vfio_device *device,
->  
->  	/* Handle the VFIO_DEVICE_FEATURE_SET */
->  	filp = device->mig_ops->migration_set_state(device, mig.device_state);
-> -	if (IS_ERR(filp) || !filp)
-> +	if (IS_ERR_OR_NULL(filp))
->  		goto out_copy;
->  
->  	return vfio_ioct_mig_return_fd(filp, arg, &mig);
-> 
+I don't think this should be optional. Have the dts point to an "mx" 
+power-domain and then select which one is right for a PHY MX/MXA or MXC.
 
-As others have expressed in general, this doesn't seem to be cleaner
-and tends to mask that we consider IS_ERR() and NULL as separate cases
-in the goto.  This code looks like it could use some refactoring, and
-likely that refactoring should handle the IS_ERR() and NULL cases
-separately, but conflating them here is not an improvement.  Thanks,
+Your worst case here is some future PHY which has more or fewer PDs 
+which is then either a special case in this file or a whole new file for 
+that compat.
 
-Alex
+>> +      - description: MMCX voltage rail
+>> +
+>> +  power-domain-names:
+>> +    items:
+>> +      - const: top
+>> +      - const: mx
+>> +      - const: mmcx
+>> +
+>> +  vdda-0p8-supply:
+>> +    description: Phandle to a 0.8V regulator supply to a PHY.
+>> +
+>> +  vdda-1p2-supply:
+>> +    description: Phandle to 1.2V regulator supply to a PHY.
+>> +
+>> +required:
+>> +  - compatible
+>> +  - reg
+>> +  - "#phy-cells"
+>> +  - clocks
+>> +  - clock-names
+>> +  - interrupts
+>> +  - operating-points-v2
+>> +  - power-domains
+>> +  - power-domain-names
+>> +  - vdda-0p8-supply
+>> +  - vdda-1p2-supply
+>> +
+>> +additionalProperties: false
+>> +
+>> +examples:
+>> +  - |
+>> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+>> +    #include <dt-bindings/clock/qcom,x1e80100-camcc.h>
+>> +    #include <dt-bindings/clock/qcom,x1e80100-gcc.h>
+>> +    #include <dt-bindings/phy/phy.h>
+>> +    #include <dt-bindings/power/qcom,rpmhpd.h>
+>> +
+>> +    csiphy@ace4000 {
+>> +        compatible = "qcom,x1e80100-csi2-phy";
+>> +        reg = <0x0ace4000 0x2000>;
+>> +        #phy-cells = <1>;
+>> +
+>> +        clocks = <&camcc CAM_CC_CSIPHY0_CLK>,
+>> +                 <&camcc CAM_CC_CSI0PHYTIMER_CLK>,
+>> +                 <&camcc CAM_CC_CAMNOC_AXI_RT_CLK>,
+>> +                 <&camcc CAM_CC_CPAS_AHB_CLK>;
+>> +        clock-names = "csiphy",
+>> +                      "csiphy_timer",
+>> +                      "camnoc_axi",
+>> +                      "cpas_ahb";
+> Although it's not a concern from my side, just want to be explicitly
+> sure that everyone is happy with the clock names, just to avoid any
+> changes later on when other modules are separated out.
+
+These are the names we already use in CAMSS so ... they're good enough 
+to start from.
+
+>> +
+>> +        operating-points-v2 = <&csiphy_opp_table>;
+>> +
+>> +        interrupts = <GIC_SPI 477 IRQ_TYPE_EDGE_RISING>;
+>> +
+>> +        power-domains = <&camcc CAM_CC_TITAN_TOP_GDSC>,
+>> +                        <&rpmhpd RPMHPD_MX>,
+>> +                        <&rpmhpd RPMHPD_MMCX>;
+>> +        power-domain-names = "top",
+>> +                             "mx",
+>> +                             "mmcx";
+>> +
+>> +        vdda-0p8-supply = <&vreg_l2c_0p8>;
+>> +        vdda-1p2-supply = <&vreg_l1c_1p2>;
+>> +    };
+>> +
+>> +    csiphy_opp_table: opp-table {
+>> +        compatible = "operating-points-v2";
+>> +
+>> +        opp-300000000 {
+>> +            opp-hz = /bits/ 64 <300000000>;
+>> +            required-opps = <&rpmhpd_opp_low_svs_d1>,
+>> +                            <&rpmhpd_opp_low_svs_d1>;
+>> +        };
+>> +
+>> +        opp-400000000 {
+>> +            opp-hz = /bits/ 64 <400000000>;
+>> +            required-opps = <&rpmhpd_opp_low_svs>,
+>> +                            <&rpmhpd_opp_low_svs>;
+>> +        };
+>> +
+>> +        opp-480000000 {
+>> +            opp-hz = /bits/ 64 <480000000>;
+>> +            required-opps = <&rpmhpd_opp_low_svs>,
+>> +                            <&rpmhpd_opp_low_svs>;
+> 480mhz should be svs?
+
+Yes you're right thanks for spotting.
+
+>> +        };
+>> +    };
+>>
+> Thanks,
+> Vijay.
+
 
 -- 
 linux-phy mailing list
