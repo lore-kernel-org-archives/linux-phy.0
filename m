@@ -4,121 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7550AFEDA1E
-	for <linux-phy@archiver.kernel.org>; Tue, 17 Mar 2026 19:52:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 16B3FFD707A
+	for <linux-phy@archiver.kernel.org>; Tue, 17 Mar 2026 20:13:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=g0KsUs/WX02e4Eyo/v+XIFCZlBGRIegKo9wTQkzygQ8=; b=YQrb4slyNzSnoC
-	GUzXbceihguiQpNS1MvjUgzeKxpLvIoRGfOZTaai98SyHwborIBaX4D5519z1m8BWj9KCS5RizI19
-	BrLmpjqHHq8g9hjDbWIbeQfx73bUK9tDkX1QPvEhveVeXdvuEafxNgh9ujFJx3F//a1HND9ZgwL48
-	AUmdoVpG8+YZweow3cuMlcrzs7Osg0UPxz/DCu3bktkklY065a2rZsQvgbzRLxgxOG7WQO/Yb+0Qs
-	BwRktW/6GiAJzn3c8Sx13bsL5Ll4aaTc8P2Y/UAU/Kkp+mGn3ZfGBMfyrrXAtzRPZCxxC9Qii3R53
-	VJH5oL8RHpTNIYSTI83w==;
+	List-Owner; bh=/U6m8uiADSnBX3WXx084H9Egw68LVjuz2woY+Dq+hOk=; b=VmUS1gWDr2B0rl
+	mQxXc+Yrj20XrzzNTt027LnH8PjlEQyV4lyFVRyrbIxSudSCscH7c/vlsnbK+26TGVkNcZReK0T3N
+	L4b42RMYj9zXAv4XE993o3RXCreppR/lTvVlgob8PIJxJndqphUnU5SS46BVFDUu/8pUReOvNAelT
+	813lacVqPTfX+F0q0vs+llp3XSDnPBb8H0ilyi7F2wD50fXOyeO6RhXtEMfQxopsoRhIOvuqO/0YJ
+	KeEJP3p11jGGU48kMYYSI4STgYG/AS4Pus2tYUmALKKf22/cCnVJG8LQlhyLOayPWtQ4WqBMy+47R
+	1dyg+b7ejs2M6RUFl6OA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w2aSp-000000079T5-0ZvK;
-	Tue, 17 Mar 2026 19:52:27 +0000
-Received: from mail-westcentralusazon11023114.outbound.protection.outlook.com ([40.93.201.114] helo=CY3PR05CU001.outbound.protection.outlook.com)
+	id 1w2anS-00000007BBo-2u1c;
+	Tue, 17 Mar 2026 20:13:46 +0000
+Received: from mgamail.intel.com ([198.175.65.16])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w2aSj-000000079MY-24Wf;
-	Tue, 17 Mar 2026 19:52:22 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=CIde6rD2Kgo7ZalgnqA74ed14gMtMdO9e5XTL21D4rsKaNWO4Sf1z04IhLqs9uoK6zLyg08k0wLXpog9YsOSjF7rEonRtf13g1mZuxM3BA5DNVk3Ocmb99RmeTuBAuv4PEOMXUzoza+h9oVBLa1rdm+swhchZwCq7FAdnzqwHGMXKv+dBOlZ29zc++RdZdfocMaX7hIU8tXBrFqfZuCCaH1VB7j30C8iK91JT90l9ziGiOh5C1Q3pbw0u23E4WSNMCZ+ptAft8UfOBmJJy2wPi1Bqq+dGm0lxqynhtH8WXgIKXrUOZED/I34xHGt3r/2JEP4yRMIyM/rdPfBWMF5Rw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=ON9zurSJSI4QQT1BMl1VRtFngSU5U/rUteO/tCC7Fn0=;
- b=L8/mWx8Kw8g5y9Mf+kom6guvwAURmSJPLs/3mC690SBXDxZmvnWGskkz0VkF5g1kWjMNDreHdyoQP5OupGATqOkuygGPgRo9IyNspt3q/bcFcww6u22kNAadapPznSun576hn+LVXc3qnYY2BCy7IIRj7e9zEdvyyLpl+v7dL1WRjUmQqpA9Aba7W7jfldMpVN/K7yk9dUGVhMVmozMtwuH5EqQOdizkLPQV4oBivQ9HdmoouuSI5skKKoq+bCCYZ60J0H+p5hpI8Uatxupxu6zWMPFZMgm1BJ59PMBxSj49U7LHihhFf0ECTAfrqEgEcc8sVW/w2SOZ7IPkyLhFkQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=fail (sender ip is
- 50.233.182.194) smtp.rcpttodomain=axiado.com smtp.mailfrom=axiado.com;
- dmarc=none action=none header.from=axiado.com; dkim=none (message not
- signed); arc=none (0)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=axiado.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ON9zurSJSI4QQT1BMl1VRtFngSU5U/rUteO/tCC7Fn0=;
- b=pmiR/xx3z4M7UcC6wU/Z0ztgz076hZyE/haGJh26jI1EnAfYQgpgD+4FynCa7lG/fWs8Z382WAPj1Ah5If9jPE3jHn9VwYl0WtOIACi9kvVHtxQ10LxNvGDupYP8l9WfRNEner1BttNfmDmbDiNW3IZJpszYh8tC1Mq9nm13YBz0sZmRRbx4KZKYNrbO7nOmethQOLB+fqjVWxkMpDostZe5ocdQgLkEhh6o50R2kMforcoQA4lEf0Io1WPaBTZZzKpwxpNyKrVVpW9zs26jjR1Xg0mQpj51RigHlQRrRwf5ntaqoGHX8+lhQ+g1yAGmS4V1em2z33eZzVCoV0/qHA==
-Received: from BN9PR03CA0056.namprd03.prod.outlook.com (2603:10b6:408:fb::31)
- by IA3PR18MB6310.namprd18.prod.outlook.com (2603:10b6:208:529::6) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9700.22; Tue, 17 Mar
- 2026 19:52:12 +0000
-Received: from BN2PEPF000055DC.namprd21.prod.outlook.com
- (2603:10b6:408:fb:cafe::db) by BN9PR03CA0056.outlook.office365.com
- (2603:10b6:408:fb::31) with Microsoft SMTP Server (version=TLS1_3,
- cipher=TLS_AES_256_GCM_SHA384) id 15.20.9700.25 via Frontend Transport; Tue,
- 17 Mar 2026 19:51:53 +0000
-X-MS-Exchange-Authentication-Results: spf=fail (sender IP is 50.233.182.194)
- smtp.mailfrom=axiado.com; dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=axiado.com;
-Received-SPF: Fail (protection.outlook.com: domain of axiado.com does not
- designate 50.233.182.194 as permitted sender)
- receiver=protection.outlook.com; client-ip=50.233.182.194;
- helo=smtp.corp.axiado.com;
-Received: from smtp.corp.axiado.com (50.233.182.194) by
- BN2PEPF000055DC.mail.protection.outlook.com (10.167.245.6) with Microsoft
- SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.9745.0
- via Frontend Transport; Tue, 17 Mar 2026 19:52:12 +0000
-Received: from axz-uw1-build-vm02.corp.axiado.com (unknown [10.14.1.22])
-	by smtp.corp.axiado.com (Postfix) with ESMTPS id 762454186B5A;
-	Tue, 17 Mar 2026 12:52:10 -0700 (PDT)
-From: Tzu-Hao Wei <twei@axiado.com>
-Date: Tue, 17 Mar 2026 12:52:09 -0700
-Subject: [PATCH v3 2/4] phy: axiado: add Axiado eMMC PHY driver
+	id 1w2anP-00000007BBI-0zl0
+	for linux-phy@lists.infradead.org;
+	Tue, 17 Mar 2026 20:13:45 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1773778424; x=1805314424;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=KZKC5dweiUltLgvGdpbBEo4qhcUxzi8dFn/JCc64rdE=;
+  b=CdYFOFm9LgfGxvuruE1catbDMcVN6RU6KRDjXo7ovx2ljxCwgo2Qs97M
+   +q8twjcUM99jWQ01QW20t4Brb2vn0nFTCAThI7DfOu7gy7guo4St6kqca
+   P07iH8ni2ZSfjkWkmNJ7SoL6K/y2NsVXU+oHsWlF0l6PrM5+MfXeuHkBh
+   jBUNWT2TyfH3zmJSCRZH0T9tc91OGCsjcfSuASLL8//GY+LFGIsoWb5kB
+   il8u6BGrvbJT/l3OYE2hen9ZdaWPorCne9ect1Vhyvgcfw1ncahbVMAf/
+   5S+HA6wVUUu2IJM/f4jkA1B5hc7M2Twg38R0Cp8m+qH5sqFQa4w66NLZX
+   w==;
+X-CSE-ConnectionGUID: lHuI5JmTTvSqa1cAcPsC1g==
+X-CSE-MsgGUID: HmGA0GspRZ2dhbbenkU58w==
+X-IronPort-AV: E=McAfee;i="6800,10657,11732"; a="75008859"
+X-IronPort-AV: E=Sophos;i="6.23,126,1770624000"; 
+   d="scan'208";a="75008859"
+Received: from orviesa005.jf.intel.com ([10.64.159.145])
+  by orvoesa108.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 17 Mar 2026 13:13:41 -0700
+X-CSE-ConnectionGUID: HRKDKhvpQUmZMAeV5nyi0g==
+X-CSE-MsgGUID: NkTofqqjS+ae7BfqpP+itg==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.23,126,1770624000"; 
+   d="scan'208";a="227332051"
+Received: from abityuts-desk.ger.corp.intel.com (HELO localhost) ([10.245.245.97])
+  by orviesa005-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 17 Mar 2026 13:13:38 -0700
+Date: Tue, 17 Mar 2026 22:13:35 +0200
+From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+To: Vladimir Oltean <olteanv@gmail.com>
+Cc: linux-can@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Marc Kleine-Budde <mkl@pengutronix.de>,
+	Vincent Mailhol <mailhol@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Josua Mayer <josua@solid-run.com>
+Subject: Re: [PATCH v1 1/4] phy: phy-can-transceiver: Convert to use device
+ property API
+Message-ID: <abm172Lkn_1EYIDZ@ashevche-desk.local>
+References: <20260219202910.2304440-1-andriy.shevchenko@linux.intel.com>
+ <20260219202910.2304440-1-andriy.shevchenko@linux.intel.com>
+ <20260219202910.2304440-2-andriy.shevchenko@linux.intel.com>
+ <20260219202910.2304440-2-andriy.shevchenko@linux.intel.com>
+ <20260224162606.spnzzedvmvp2h7xd@skbuf>
+ <aZ3X2J1rBq1pMkae@smile.fi.intel.com>
+ <20260224183000.txlazzyw7z34nhsj@skbuf>
+ <aaLNBTZsUQ2vMfOW@ashevche-desk.local>
+ <abkvyrkkqKRffVUr@ashevche-desk.local>
 MIME-Version: 1.0
-Message-Id: <20260317-axiado-ax3000-add-emmc-phy-driver-support-v3-2-fbf790f3f711@axiado.com>
-References: <20260317-axiado-ax3000-add-emmc-phy-driver-support-v3-0-fbf790f3f711@axiado.com>
-In-Reply-To: <20260317-axiado-ax3000-add-emmc-phy-driver-support-v3-0-fbf790f3f711@axiado.com>
-To: SriNavmani A <srinavmani@axiado.com>, 
- Prasad Bolisetty <pbolisetty@axiado.com>, Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, 
- openbmc@lists.ozlabs.org, Tzu-Hao Wei <twei@axiado.com>
-X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=9023; i=twei@axiado.com;
- h=from:subject:message-id; bh=YBprfDKFNQn6DMWhRJHAypcI9/qyZHy+Jg3oeuFZQSY=;
- b=owEB7QES/pANAwAKAXgQMF3EWvHXAcsmYgBpubDqfUZdlxF3buCvOd8JJZGUngOI2iqQXEO03
- 9mIEQOiFs2JAbMEAAEKAB0WIQSZyWINOowtFmDvdYF4EDBdxFrx1wUCabmw6gAKCRB4EDBdxFrx
- 16SPDACcZxXbTanOGISDFQq8ybC1A4PVm8+uNyOYj+yhCIatypGzvxrnLvajOPe8XEUFzZEeXVd
- 29QBT1VhSiL4GkUG8WfXgGmrFLfc4FJtOKb21oQfWYczR5Ih1Ck9F7vlhNgopHdR1iIm0WZsHFS
- rTWlUf4wS43md8Bera/aVamxATKAE9uIRkU6XsD9j4iAQEBt2Z4Tb7YL8076a2xt6zXAe/J4cJI
- 55mvPTbVjXEPSIqwMFiOa6TuFQ7NtPQL3MDgwd6bjSpQ4B0nmMcomfVPYbgXTNOaHpiNq8a2cuC
- URvxNevXsn2P1ufk7X16YeIdbz1yhPOsFbK8tMJSCsbhIX6952oyIi/ugFQ+7cBYAQLw7CCkbzN
- AP1DcFlkop8KZnScFD9hY6ueWFnh4ZHiDzGqqTT8XxxWcHxiYqtauQq+a5Y4xY/V01rDXfXkDch
- G0qH+VF1WD2zIyPzC13NrChUl711SguH2GGv2ID0LzqhWy3oJ5jfMbgWSIvO1M7YSAH+4=
-X-Developer-Key: i=twei@axiado.com; a=openpgp;
- fpr=99C9620D3A8C2D1660EF75817810305DC45AF1D7
-X-EOPAttributedMessage: 0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: BN2PEPF000055DC:EE_|IA3PR18MB6310:EE_
-X-MS-Office365-Filtering-Correlation-Id: 66f70436-86b3-4239-f0c8-08de845eae95
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|42112799006|7416014|376014|82310400026|36860700016|22082099003|18002099003|56012099003;
-X-Microsoft-Antispam-Message-Info: 0e10hXMsPd4+shsKyWSIp7vs7BHrgFV8C+BwKclm69oVk0kzdKiHQuNDEt/7RaaEIIgyoqMbX9GpwNSEnvhZcv5Gp7e0Kw72e63/hrY2rCgoAyUZGGDZ8o/kwOKhur1YOEqMHzOYHBhQPMC3eIOL0MNc6dTj53whm8yFr93RmROVljduayBM2BzYFNENPiVrMaZCNaSaLre6IQImLQgLm/qJZ9CyniIYbWxeQACIFMvGKtHqU2qTyBsUY8Q2RSg3x0UOSAXYPqobSU4JfM5Gg1FW7iTXnph9yJephitUl4nixBzcihCc/DGTPbhyQaO84p7I93qM+iZ1b7O6DPbe8lkS+s5JyCJso3AkMMFuATmMOTxzYdbX/fQT2kpHLxhvt3Khl69mJuPBjpEYwy3Z7p7ZPJdlj+Cy8jhs1VmlYbTNnHj5MNZgV5z+B3AyeIno/FZP4x+9/CBjE7OE2P3BXPW2oF2AwvKebFPodl4sIOPhUeFPOJ8/XnNr74WQBVphuFBsfIzycM9/kBbr47qiZ8O8fDtIh2LM5GW/kunk7GmsHzFNHj4cTfK60D+aX6o/mWR0Z06di4BXNVvOyAz+5N0tC20pMTliR+W5qtjiJtm44Qki4eF2mzcb1rbn5HqprWoC16sR2Hlcs2d2D8OCWZZ7h+4zGbDIzsSq0E81jSwI2nGz5y6h6CdP69//9mdP0V3Gs78mGi34CA1w66VSLNinL/pcC48gFam/d8nDnXMCWYh7aOeMzgKFr72zwbWv09qbjI7+umE9/ephBpIWLw==
-X-Forefront-Antispam-Report: CIP:50.233.182.194;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:smtp.corp.axiado.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(1800799024)(42112799006)(7416014)(376014)(82310400026)(36860700016)(22082099003)(18002099003)(56012099003);DIR:OUT;SFP:1102;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: H52RrLJej0qSrpMPOsNYw2aIfd9d9E79Hw8pXdXwN9Lk+XkmcBwEhVOzCnTAZaaS7HQQFZCgoss085G1BF39bTRae4VHaicb+A4vCDG5D1bP3Jpbf9o/2G9AgCzvKXSYWbrfi6hfXcDkU4XxkuMMa5jWP7pYchj4JAFIgALlTevIP2ELK0WUyYb3vciJyyNdn70No8y4IwGPIK1Jyt9r5y4AVDuEhAZI/6ldvPQ4ya9y8UCR4Ll4AWCJ7BwUEkaeouGS1xbjOHGFg44EgHb6yOCQD4nv+xluh80Pzy7uYwrhAZy1exIcpMGFLxZT6l/Uv7TpatKyziF/zSVwIw88rpb0Oi81m2IZYcc569EPKdqK9T65H0w2t3Wml0n6k0qMMp8aaeoX+EQHcCsNUwKWsdFhxmxAsKHjYMJRbfrUkL23IkYFt2LsWu3fbusOant6
-X-OriginatorOrg: axiado.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Mar 2026 19:52:12.2326
- (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 66f70436-86b3-4239-f0c8-08de845eae95
-X-MS-Exchange-CrossTenant-Id: ff2db17c-4338-408e-9036-2dee8e3e17d7
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=ff2db17c-4338-408e-9036-2dee8e3e17d7;Ip=[50.233.182.194];Helo=[smtp.corp.axiado.com]
-X-MS-Exchange-CrossTenant-AuthSource: BN2PEPF000055DC.namprd21.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: IA3PR18MB6310
+Content-Disposition: inline
+In-Reply-To: <abkvyrkkqKRffVUr@ashevche-desk.local>
+Organization: Intel Finland Oy - BIC 0357606-4 - c/o Alberga Business Park, 6
+ krs, Bertel Jungin Aukio 5, 02600 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260317_125221_643947_4AB3BAFC 
-X-CRM114-Status: GOOD (  16.32  )
+X-CRM114-CacheID: sfid-20260317_131343_348139_936BA514 
+X-CRM114-Status: GOOD (  44.98  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -135,297 +99,98 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: SriNavmani A <srinavmani@axiado.com>
+On Tue, Mar 17, 2026 at 12:41:19PM +0200, Andy Shevchenko wrote:
+> On Sat, Feb 28, 2026 at 01:10:02PM +0200, Andy Shevchenko wrote:
+> > On Tue, Feb 24, 2026 at 08:30:00PM +0200, Vladimir Oltean wrote:
+> > > On Tue, Feb 24, 2026 at 06:54:48PM +0200, Andy Shevchenko wrote:
+> > > > On Tue, Feb 24, 2026 at 06:26:06PM +0200, Vladimir Oltean wrote:
+> > > > > On Thu, Feb 19, 2026 at 09:26:19PM +0100, Andy Shevchenko wrote:
 
-It provides the required configurations for Axiado eMMC PHY driver for
-HS200 mode.
+...
 
-Signed-off-by: SriNavmani A <srinavmani@axiado.com>
-Co-developed-by: Prasad Bolisetty <pbolisetty@axiado.com>
-Signed-off-by: Prasad Bolisetty <pbolisetty@axiado.com>
-Signed-off-by: Tzu-Hao Wei <twei@axiado.com>
----
- drivers/phy/Kconfig                  |   1 +
- drivers/phy/Makefile                 |   1 +
- drivers/phy/axiado/Kconfig           |  11 ++
- drivers/phy/axiado/Makefile          |   1 +
- drivers/phy/axiado/phy-axiado-emmc.c | 217 +++++++++++++++++++++++++++++++++++
- 5 files changed, 231 insertions(+)
+> > > > > > -	if (!of_property_present(dev->of_node, "mux-states"))
+> > > > > > +	if (!device_property_present(dev, "mux-states"))
+> > > > > 
+> > > > > There's an entire saga with this function - devm_mux_state_get_optional().
+> > > > > Josua Mayer is preparing to move it to the MUX core, which will be a cross-tree series.
+> > > > > Would you mind not touching this, to avoid complicating what is already
+> > > > > a complicated operation? It is going away anyway, and from what I can
+> > > > > see in Josua's last series, its implementation from drivers/mux/core.c
+> > > > > is already using device property APIs:
+> > > > > https://lore.kernel.org/linux-phy/20260208-rz-sdio-mux-v9-2-9a3be13c1280@solid-run.com/
+> > > > 
+> > > > Basically you ask me to postpone the series until that will be in. Since this
+> > > > file is a mess in terms of OF/fwnode API use in exchange I would like whoever
+> > > > is doing the other part to speed up a bit if possible.
+> > > > 
+> > > > I prefer to see cleaner solution to be applied sooner and last in a long distance,
+> > > > that's why I see either mine first but soon, or that first but also soon should
+> > > > be in. Can we try to achieve that?
+> > > 
+> > > The idea is that Ulf already expressed the availability to take the phy-can-transceiver
+> > > patch through the mmc tree and provide back a tag to be pulled into linux-phy:
+> > > https://lore.kernel.org/linux-phy/CAPDyKFrtTaJ5fqqbGrE_K6SAdTZYUfp-BycGjtWs4SabwBysKA@mail.gmail.com/
+> > > 
+> > > If linux-phy takes your patch first, there will be a conflict when pulling the
+> > > stable branch, and it won't be so fun, plus we can't even build-test Josua's
+> > > submission on linux-phy, so that's obviously not great.
+> > > 
+> > > So yeah, I'm not requesting you to postpone the entire series, just not
+> > > touch devm_mux_state_get_optional() and don't let it appear in your
+> > > patch context.
+> > 
+> > Thanks for explanation. I prefer that Ulf's staff settles down first as it seems
+> > more important.
+> 
+> Any news on that front?
 
-diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
-index 678dd0452f0aa0597773433f04d2a9ba77474d2a..b802274ea45a84bd36d7c0b7fb90e368a5c018b4 100644
---- a/drivers/phy/Kconfig
-+++ b/drivers/phy/Kconfig
-@@ -103,6 +103,7 @@ config PHY_NXP_PTN3222
- 
- source "drivers/phy/allwinner/Kconfig"
- source "drivers/phy/amlogic/Kconfig"
-+source "drivers/phy/axiado/Kconfig"
- source "drivers/phy/broadcom/Kconfig"
- source "drivers/phy/cadence/Kconfig"
- source "drivers/phy/freescale/Kconfig"
-diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
-index bfb27fb5a494283d7fd05dd670ebd1b12df8b1a1..f1b9e4a8673bcde3fdc0fdc06a3deddb5785ced1 100644
---- a/drivers/phy/Makefile
-+++ b/drivers/phy/Makefile
-@@ -15,6 +15,7 @@ obj-$(CONFIG_PHY_AIROHA_PCIE)		+= phy-airoha-pcie.o
- obj-$(CONFIG_PHY_NXP_PTN3222)		+= phy-nxp-ptn3222.o
- obj-y					+= allwinner/	\
- 					   amlogic/	\
-+					   axiado/	\
- 					   broadcom/	\
- 					   cadence/	\
- 					   freescale/	\
-diff --git a/drivers/phy/axiado/Kconfig b/drivers/phy/axiado/Kconfig
-new file mode 100644
-index 0000000000000000000000000000000000000000..d159e0345345987c7f48dcd12d3237997735d2b5
---- /dev/null
-+++ b/drivers/phy/axiado/Kconfig
-@@ -0,0 +1,11 @@
-+#
-+# PHY drivers for Axiado platforms
-+#
-+
-+config PHY_AX3000_EMMC
-+	tristate "Axiado eMMC PHY driver"
-+	depends on OF && (ARCH_AXIADO || COMPILE_TEST)
-+	select GENERIC_PHY
-+	help
-+	  Enables this to support for the AX3000 EMMC PHY driver.
-+	  If unsure, say N.
-diff --git a/drivers/phy/axiado/Makefile b/drivers/phy/axiado/Makefile
-new file mode 100644
-index 0000000000000000000000000000000000000000..1e2b1ba016092eaffdbd7acbd9cdc8577d79b35c
---- /dev/null
-+++ b/drivers/phy/axiado/Makefile
-@@ -0,0 +1 @@
-+obj-$(CONFIG_PHY_AX3000_EMMC)		+= phy-axiado-emmc.o
-diff --git a/drivers/phy/axiado/phy-axiado-emmc.c b/drivers/phy/axiado/phy-axiado-emmc.c
-new file mode 100644
-index 0000000000000000000000000000000000000000..e0e2174776ad027df0a10a8c4741b1b4ef9ef40e
---- /dev/null
-+++ b/drivers/phy/axiado/phy-axiado-emmc.c
-@@ -0,0 +1,217 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later
-+/*
-+ * Axiado eMMC PHY driver
-+ *
-+ * Copyright (C) 2017 Arasan Chip Systems Inc.
-+ * Copyright (C) 2022-2026 Axiado Corporation (or its affiliates).
-+ *
-+ * Based on Arasan Driver (sdhci-pci-arasan.c)
-+ * sdhci-pci-arasan.c - Driver for Arasan PCI Controller with integrated phy.
-+ */
-+#include <linux/bitfield.h>
-+#include <linux/delay.h>
-+#include <linux/io.h>
-+#include <linux/iopoll.h>
-+#include <linux/module.h>
-+#include <linux/of.h>
-+#include <linux/phy/phy.h>
-+#include <linux/platform_device.h>
-+
-+/* Arasan eMMC 5.1 - PHY configuration registers */
-+#define CAP_REG_IN_S1_MSB		0x04
-+#define PHY_CTRL_1			0x38
-+#define PHY_CTRL_2			0x3c
-+#define PHY_CTRL_3			0x40
-+#define STATUS				0x50
-+
-+#define DLL_ENBL	BIT(26)
-+#define RTRIM_EN	BIT(21)
-+#define PDB_ENBL	BIT(23)
-+#define RETB_ENBL	BIT(1)
-+
-+#define REN_STRB	BIT(27)
-+#define REN_CMD_EN	GENMASK(20, 12)
-+
-+/* Pull-UP Enable on CMD Line */
-+#define PU_CMD_EN	GENMASK(11, 3)
-+
-+/* Selection value for the optimum delay from 1-32 output tap lines */
-+#define OTAP_DLY	0x02
-+/* DLL charge pump current trim default [1000] */
-+#define DLL_TRM_ICP	0x08
-+/* Select the frequency range of DLL Operation */
-+#define FRQ_SEL	0x01
-+
-+#define OTAP_SEL_MASK		GENMASK(10, 7)
-+#define DLL_TRM_MASK		GENMASK(25, 22)
-+#define DLL_FRQSEL_MASK		GENMASK(27, 25)
-+
-+#define OTAP_SEL(x)		(FIELD_PREP(OTAP_SEL_MASK, x) | OTAPDLY_EN)
-+#define DLL_TRM(x)		(FIELD_PREP(DLL_TRM_MASK, x) | DLL_ENBL)
-+#define DLL_FRQSEL(x)	FIELD_PREP(DLL_FRQSEL_MASK, x)
-+
-+#define OTAPDLY_EN	BIT(11)
-+
-+#define SEL_DLY_RXCLK	BIT(18)
-+#define SEL_DLY_TXCLK	BIT(19)
-+
-+#define CALDONE_MASK	0x40
-+#define DLL_RDY_MASK	0x1
-+#define MAX_CLK_BUF0	BIT(20)
-+#define MAX_CLK_BUF1	BIT(21)
-+#define MAX_CLK_BUF2	BIT(22)
-+
-+#define CLK_MULTIPLIER	0xc008e
-+#define POLL_TIMEOUT_MS	3000
-+#define POLL_DELAY_US	100
-+
-+struct axiado_emmc_phy {
-+	void __iomem *reg_base;
-+	struct device *dev;
-+};
-+
-+static int axiado_emmc_phy_init(struct phy *phy)
-+{
-+	struct axiado_emmc_phy *ax_phy = phy_get_drvdata(phy);
-+	struct device *dev = ax_phy->dev;
-+	u32 val;
-+	int ret;
-+
-+	val = readl(ax_phy->reg_base + PHY_CTRL_1);
-+	writel(val | RETB_ENBL | RTRIM_EN, ax_phy->reg_base + PHY_CTRL_1);
-+
-+	val = readl(ax_phy->reg_base + PHY_CTRL_3);
-+	writel(val | PDB_ENBL, ax_phy->reg_base + PHY_CTRL_3);
-+
-+	ret = readl_poll_timeout(ax_phy->reg_base + STATUS, val,
-+				 val & CALDONE_MASK, POLL_DELAY_US,
-+				 POLL_TIMEOUT_MS * 1000);
-+	if (ret) {
-+		dev_err(dev, "PHY calibration timeout\n");
-+		return ret;
-+	}
-+
-+	val = readl(ax_phy->reg_base + PHY_CTRL_1);
-+	writel(val | REN_CMD_EN | PU_CMD_EN, ax_phy->reg_base + PHY_CTRL_1);
-+
-+	val = readl(ax_phy->reg_base + PHY_CTRL_2);
-+	writel(val | REN_STRB, ax_phy->reg_base + PHY_CTRL_2);
-+
-+	val = readl(ax_phy->reg_base + PHY_CTRL_3);
-+	writel(val | MAX_CLK_BUF0 | MAX_CLK_BUF1 | MAX_CLK_BUF2,
-+	       ax_phy->reg_base + PHY_CTRL_3);
-+
-+	writel(CLK_MULTIPLIER, ax_phy->reg_base + CAP_REG_IN_S1_MSB);
-+
-+	val = readl(ax_phy->reg_base + PHY_CTRL_3);
-+	writel(val | SEL_DLY_RXCLK | SEL_DLY_TXCLK,
-+	       ax_phy->reg_base + PHY_CTRL_3);
-+
-+	return 0;
-+}
-+
-+static int axiado_emmc_phy_power_on(struct phy *phy)
-+{
-+	struct axiado_emmc_phy *ax_phy = phy_get_drvdata(phy);
-+	struct device *dev = ax_phy->dev;
-+	u32 val;
-+	int ret;
-+
-+	val = readl(ax_phy->reg_base + PHY_CTRL_1);
-+	writel(val | RETB_ENBL, ax_phy->reg_base + PHY_CTRL_1);
-+
-+	val = readl(ax_phy->reg_base + PHY_CTRL_3);
-+	writel(val | PDB_ENBL, ax_phy->reg_base + PHY_CTRL_3);
-+
-+	val = readl(ax_phy->reg_base + PHY_CTRL_2);
-+	writel(val | OTAP_SEL(OTAP_DLY), ax_phy->reg_base + PHY_CTRL_2);
-+
-+	val = readl(ax_phy->reg_base + PHY_CTRL_1);
-+	writel(val | DLL_TRM(DLL_TRM_ICP), ax_phy->reg_base + PHY_CTRL_1);
-+
-+	val = readl(ax_phy->reg_base + PHY_CTRL_3);
-+	writel(val | DLL_FRQSEL(FRQ_SEL), ax_phy->reg_base + PHY_CTRL_3);
-+
-+	ret = read_poll_timeout(readl, val, val & DLL_RDY_MASK, POLL_DELAY_US,
-+				POLL_TIMEOUT_MS * 1000, false,
-+				ax_phy->reg_base + STATUS);
-+	if (ret) {
-+		dev_err(dev, "DLL ready timeout\n");
-+		return ret;
-+	}
-+
-+	return 0;
-+}
-+
-+static int axiado_emmc_phy_power_off(struct phy *phy)
-+{
-+	struct axiado_emmc_phy *ax_phy = phy_get_drvdata(phy);
-+	u32 val;
-+
-+	val = readl(ax_phy->reg_base + PHY_CTRL_1);
-+	val &= ~(DLL_TRM_MASK | DLL_ENBL);
-+	writel(val, ax_phy->reg_base + PHY_CTRL_1);
-+
-+	val = readl(ax_phy->reg_base + PHY_CTRL_3);
-+	val &= ~(DLL_FRQSEL_MASK | PDB_ENBL);
-+	writel(val, ax_phy->reg_base + PHY_CTRL_3);
-+
-+	return 0;
-+}
-+
-+static const struct phy_ops axiado_emmc_phy_ops = {
-+	.init = axiado_emmc_phy_init,
-+	.power_on = axiado_emmc_phy_power_on,
-+	.power_off = axiado_emmc_phy_power_off,
-+	.owner = THIS_MODULE,
-+};
-+
-+static const struct of_device_id axiado_emmc_phy_of_match[] = {
-+	{ .compatible = "axiado,ax3000-emmc-phy" },
-+	{ /* sentinel */ },
-+};
-+MODULE_DEVICE_TABLE(of, axiado_emmc_phy_of_match);
-+
-+static int axiado_emmc_phy_probe(struct platform_device *pdev)
-+{
-+	struct axiado_emmc_phy *ax_phy;
-+	struct phy_provider *phy_provider;
-+	struct device *dev = &pdev->dev;
-+	struct phy *generic_phy;
-+
-+	if (!dev->of_node)
-+		return -ENODEV;
-+
-+	ax_phy = devm_kzalloc(dev, sizeof(*ax_phy), GFP_KERNEL);
-+	if (!ax_phy)
-+		return -ENOMEM;
-+
-+	ax_phy->reg_base = devm_platform_ioremap_resource(pdev, 0);
-+	if (IS_ERR(ax_phy->reg_base))
-+		return PTR_ERR(ax_phy->reg_base);
-+
-+	ax_phy->dev = dev;
-+
-+	generic_phy = devm_phy_create(dev, dev->of_node, &axiado_emmc_phy_ops);
-+	if (IS_ERR(generic_phy))
-+		return dev_err_probe(dev, PTR_ERR(generic_phy),
-+				     "failed to create PHY\n");
-+
-+	phy_set_drvdata(generic_phy, ax_phy);
-+	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-+
-+	return PTR_ERR_OR_ZERO(phy_provider);
-+}
-+
-+static struct platform_driver axiado_emmc_phy_driver = {
-+	.probe = axiado_emmc_phy_probe,
-+	.driver = {
-+		.name = "axiado-emmc-phy",
-+		.of_match_table = axiado_emmc_phy_of_match,
-+	},
-+};
-+module_platform_driver(axiado_emmc_phy_driver);
-+
-+MODULE_DESCRIPTION("AX3000 eMMC PHY Driver");
-+MODULE_AUTHOR("Axiado Corporation");
-+MODULE_LICENSE("GPL");
+Okay, I found the new patches in Linux Next.
+I will respin my set based on that.
+
+> > > Somebody will have to remove "#include <linux/of.h>" at the end of the
+> > > whole process, but that's minor.
+
+...
+
+> > > > > > -		phy = devm_phy_create(dev, dev->of_node, &can_transceiver_phy_ops);
+> > > > > > +		phy = devm_phy_create(dev, NULL, &can_transceiver_phy_ops);
+> > > > > 
+> > > > > It is not obvious why you replaced dev->of_node with NULL here.
+> > > > > It doesn't appear correct. You seem to be breaking OF-based PHY lookups.
+> > > > 
+> > > > It's the default. Yeah, I probably have to explain this in the commit message.
+> > > 
+> > > Ah, ok. Found the "phy->dev.of_node = node ?: dev->of_node;" assignment.
+> > > Sorry and noted, but please add it to the commit message too.
+> > 
+> > Sure.
+> > 
+> > > > Basically all devm_phy_create(dev, dev->of_node, ...) for clarity should be
+> > > > converted to that approach. Or even better, a new (agnostic) API should take
+> > > > default fwnode from the same device.
+> > > > 
+> > > > 		phy = devm_phy_create_simple(dev, &..._phy_ops);
+> > > > 
+> > > > // name was quickly chosen and may be not the best we can come up with
+> > > 
+> > > I agree in principle. PHY drivers shouldn't be given a function where
+> > > they routinely have to set one of the arguments to NULL, but a simpler
+> > > function without that argument.
+> > > 
+> > > But the phy-core.c doesn't support fwnode at all yet, it uses OF
+> > > throughout. I think it would be preferable to leave this change to
+> > > somebody who has business in that area.
+> > > 
+> > > (are you interested in PHYs with a fwnode for any particular reason, or
+> > > just because the API is more "generic" just in case?)
+> > 
+> > Because of inconsistency. This makes my mind blown and the code is not good
+> > for others to read and understand when it's inconsistent like this. That's it.
 
 -- 
-2.34.1
+With Best Regards,
+Andy Shevchenko
+
 
 
 -- 
