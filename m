@@ -4,100 +4,99 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3699A1088E73
-	for <linux-phy@archiver.kernel.org>; Thu, 19 Mar 2026 03:48:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 53B421088E70
+	for <linux-phy@archiver.kernel.org>; Thu, 19 Mar 2026 03:48:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
-	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=LH8K89rXWIMrY55J99+1H03Oxcz01XMcinyEBBjrNc4=; b=s85VqmMwZZJUXZ
-	m26D2MGY7P01ofAnuvH3Gz5F1enE8DAp4fX+LvwyJ8Soi8xyl+Pgh19dKI89+W6KHpBRxEQs5x+BJ
-	olxzdvbeSxn+xahrds3hxS5sLkx+a8UYPl1deQEwYGdbbhVq47Q1ck/Y9dC53uK5Ew8Fd3p+1FAD6
-	2AlQFgDbvGikdjV7vHv8JwdAWGEsapi9uZL8BwrmBzXMw/FQ9Tm+KxbOa4hEL5HtEYhlFb62BcW9t
-	XOQ96lsPeE8cl5lCY3p2v6URbj/xPqUpDs0SDg8IgloW077GbDou7GQtGRrpR3rTE+iT6JKdP1o8q
-	bWy3ky44pJ+nT9ZpYsWQ==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tHPOJtpRmZ949WH5c6xJP1/SM8ksbyA3UezSBWXwnv8=; b=cLMJ9X/LhdXMRl
+	cdDmPhCcjr+d9U6kNcOx8QgpaJOujdVDjYCx2tAwLUswwVGY9d2Eb5TKnCkh8UN/rBIOdwiThIeEi
+	hZWzy9fKy9qhmN/B8fNaR4pHwFEDMim/NjbbS6Bw2POr+9p0hJbh4F2I7NoHNCvYWFmBiyf88LFrb
+	agzaebu7nkD2vav6JzA9msOeEhlBq4AlCL0TiWklWQOtE7n9n3Cz7RRPzdJe1mr87UElTVW8sPtRQ
+	rQEafoiZGzbBH/jfkWJZVTdCYDk3z8jErotv/t7n6kx7o3EoVW+WEJqYE2nJaiCYLK4t4fL+3Dr/t
+	0Dt7U4PnBGYwbnxGOX3w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w34N0-00000009r0B-3FuL;
-	Thu, 19 Mar 2026 03:48:26 +0000
+	id 1w34N7-00000009r1N-05qu;
+	Thu, 19 Mar 2026 03:48:33 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w34My-00000009qzR-0etZ
+	id 1w34N4-00000009r0v-1zh9
 	for linux-phy@lists.infradead.org;
-	Thu, 19 Mar 2026 03:48:25 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 62J3A69d3228017
-	for <linux-phy@lists.infradead.org>; Thu, 19 Mar 2026 03:48:23 GMT
+	Thu, 19 Mar 2026 03:48:31 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 62J1gu6Q005327
+	for <linux-phy@lists.infradead.org>; Thu, 19 Mar 2026 03:48:30 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=JX6V7P6bsRPeotKtiH7RJ9
-	N7+4pq9ewOSYm/l2L69q8=; b=QKdWofywVfC8mLqUB1djykNVRCqNJ4ytFYOYsG
-	/KtKWI5O+WHdjewmYRcN8l2ftdjgz2OcQgkoZFO4ZV6dzlsTLA6BiQ0+/Ie1ZIyA
-	1QC3UnyJdguaRDBn42y8Og9AzfxsxIVaE1oNbtydb0XDq7Yjxyi3zCKi3wUWESfg
-	kN9vkZjY2zCNRoFk7F9jLdq+HnNW385cWuZTXaOiGd0JZCWs9Luy3M5ZcYOwMHot
-	8nD7/BJuwXG3GhO4Ds72zomPIh4nmIyUJzqxlXPSorNSTWPfYLh4Cwo2x1P956Am
-	Rx2pi0zE2MABMqJbgKTRvNOk7r98BNNeWRdU28eVB3rk6Y4w==
-Received: from mail-qt1-f199.google.com (mail-qt1-f199.google.com [209.85.160.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4d00eg9n5k-1
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	omnRmyUQg5dIWgAiljjvcZxQHMNx7Y0vRQtYTvOpk/4=; b=BNmEnLY3GIBW4LUT
+	qu7tTWdpaA1C/APSaGUKAz+99326cWQmMl63Nkjoupy9RRLWLLxnt0VvJKl+KtuB
+	wSf+JYQbVGP/GX2KcVErAKZwIwHIz9EQe1dZZpOGu3dH/Gj3YYRtZJUgFIDaFaO2
+	c3SbYGgVPRVUcYLR8+x2OgLp/9R29qLns1DDPtITSKshhDXY2fDHaHYPFAN4ym7v
+	te3Ep1oUq2oI7R1g2pBKdtA2NJJXAYyY9BDmEU/bemWLsS9yQ24Vq5G/GFJ+hREe
+	LF7ykL2InouxOGjum33qwzq2o+skhyJ+w6a/HdawNCqe8MA86abHBE3xC2YiCVzA
+	4ZFXdQ==
+Received: from mail-qt1-f197.google.com (mail-qt1-f197.google.com [209.85.160.197])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4cyyhg9wvd-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Thu, 19 Mar 2026 03:48:22 +0000 (GMT)
-Received: by mail-qt1-f199.google.com with SMTP id d75a77b69052e-50937cf66b5so71716101cf.3
-        for <linux-phy@lists.infradead.org>; Wed, 18 Mar 2026 20:48:22 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Thu, 19 Mar 2026 03:48:29 +0000 (GMT)
+Received: by mail-qt1-f197.google.com with SMTP id d75a77b69052e-50937cf66b5so71729861cf.3
+        for <linux-phy@lists.infradead.org>; Wed, 18 Mar 2026 20:48:29 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1773892102; x=1774496902; darn=lists.infradead.org;
-        h=cc:to:content-transfer-encoding:mime-version:message-id:date
-         :subject:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=JX6V7P6bsRPeotKtiH7RJ9N7+4pq9ewOSYm/l2L69q8=;
-        b=RMvMsJbukUPoYCq/zw9xWChb5G3QBdTisx+1C/y9P+CKNr1OQmpqb1UB5YWTdS86cv
-         lXTLjJTS3Cjsyx7mroIyNzkNKipGHve1uVPN8qsdy3s8jHytXANs610yfZ2f3bfcpjfo
-         edlZf3fgqGRhJEf/hFL1f4JUNm4u50srBNhz1s200gvc93IXo/vkGeQ5CqKUi+3+RNLm
-         a99YJigjWYt678LLWj7Jbu+pHIJ9TSyhmag1bkKUkbxVi2jrb9FcmrRGBohApKa9WiBn
-         TZD14wob/6pMQR/lDbD25ug7j8FKueB/BbXViDtyIV1w3AC/rqmnGNV9CJKUTYWnptfu
-         h3xA==
+        d=oss.qualcomm.com; s=google; t=1773892109; x=1774496909; darn=lists.infradead.org;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=omnRmyUQg5dIWgAiljjvcZxQHMNx7Y0vRQtYTvOpk/4=;
+        b=CJ/dwyRf8kg9ACL8kNo0i8qXP1T1teKL12POp1XKzYFT4pkcGuKs9/O+IyazKgNkjz
+         3qQs+oAAhu0pXK73Jw0iwXDaanY5I1qmHyjY62ff7swV3koVJeMsCNdfxNhpb28gp8NQ
+         QAm6d5aJwxdFrQwDBNCuEeE33aEFllrBMhLhiDge0EPefZLraCP5xVm0oodSGNlifcqO
+         RGaoILviObJy+4LzO1OSt5j3+OQlFw/+Dm5vwdU/7uLVW4MJttEkPFsMTEIZWFV1s4Ww
+         qJtOtx6ulMQw86l8BsH2mbouH+Mp2NU5FU9+nAB7TVCVXdrc7dgyrE2nHFwtBE67qVN2
+         bvwA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1773892102; x=1774496902;
-        h=cc:to:content-transfer-encoding:mime-version:message-id:date
-         :subject:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=JX6V7P6bsRPeotKtiH7RJ9N7+4pq9ewOSYm/l2L69q8=;
-        b=EWVJKA+8kGBsAk77QevA4T48MhcOgFXwsaGzz8VTJN9y1iUhBWmPP6JVvq1mST0+nm
-         d9hdipU/sUX0Zyz+2oOrh0q30MzJ+x0x+OqBOR11D3ybnSw3+uXtYJbRR3Lw2ms1pblZ
-         n9ItTSeB92goQQLvOzMyxDXZUNVOyH3o/SKRHalxsxKhEJKCzdPS/UNE9qVIGuftpvd1
-         2IHCzHGzuCb9fMUrGRp6KKjVGxbrVn8mmm6kC8gbXNCmIuSSg3YiqwDMaQ7r0o5Qmyw6
-         FJhoxV24H+Pf5XNP5J1hwQ/Kpjk8YWIBQoTut9r23g89UZW9a4qCY47NH6HbtgJ6bf6c
-         WLoQ==
-X-Forwarded-Encrypted: i=1; AJvYcCUnprsk14nKF/pwBgqKiIu6iPvKSg0jJN2AsemRBfs9xQJm8YPPbkKTG6ZSnreufuJpxnDVHRCkyRA=@lists.infradead.org
-X-Gm-Message-State: AOJu0YypH4I2X9SGxdO/p6QZFcF5UkUWEOtK0aZ9z8MJw7lP0NHqoJEA
-	xAN8yLx9CqGau/xzgPS8Unyw2Kgw1GOQ7PpNjEF3pfkM3d8E0XB+PhdFyP/pt+kWbZV0vW/z5YW
-	/yD6OccnCFG/eCW6/4Ga8k1nJEOk5cw4Kf5QpK12bmxuDsfdEvoHKzq0QSKpGXBAONVHa
-X-Gm-Gg: ATEYQzyMCeRH2IZstl0o2piScBsbacbjsFubymyanNe+VPwkAB6IWR4kAEug8+WGHNf
-	CFzrDH4eOCri9KCwTRYQ3vT9E0hSEb6DZ7CmHW72ZrYJkJ3ulHQ5/v6CTSXimAHnfFG08nclnzR
-	2zyDVr5xLEhkt5OB5DBBEysoNXbH3LAXfi2rmWcAOOH3UnHELS4WkOorpxG+SzdlrWYlYni0ooP
-	n/K+0fK7Ey1PoFnKhrNPm47cbYr+PFVxxfZsiLrPoDNgXAD75hteOY8c+uiYNj3rTytS5vqbJJC
-	enZci6D5iJ3HujI1dky1wdRtr3P62uR0n1qZQXmJfnqpmqDAUCD3o/llNCKIe+Q7/fEL/eljAEd
-	pmAd5ydABP4y/YVEmntvD1ab02MfUXzp5NT5ZykwR6+ksbmcYpAUsUOUlKBoxaEh9zJAAJJMbr0
-	ytLGo/GlhFR8cOZDogbNSUiUToPHyRpjYl6Tc=
-X-Received: by 2002:ac8:7f04:0:b0:50b:2e8c:6ad8 with SMTP id d75a77b69052e-50b2e8c6cadmr226541cf.34.1773892101685;
-        Wed, 18 Mar 2026 20:48:21 -0700 (PDT)
-X-Received: by 2002:ac8:7f04:0:b0:50b:2e8c:6ad8 with SMTP id d75a77b69052e-50b2e8c6cadmr226291cf.34.1773892101202;
-        Wed, 18 Mar 2026 20:48:21 -0700 (PDT)
+        d=1e100.net; s=20251104; t=1773892109; x=1774496909;
+        h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
+         :mime-version:subject:date:from:x-gm-gg:x-gm-message-state:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=omnRmyUQg5dIWgAiljjvcZxQHMNx7Y0vRQtYTvOpk/4=;
+        b=CJnjEljhoiCCccRw/Mz1c+JQ5tUaQX28yjeGaZCnKSr91dEjXY4kzS+28+Qc6iPwNh
+         XlVxqHZ1i2OuZhkgp69Sz6j995Zcwt2VlRhcgjFfIz2RHtnOb4NMq7d45Pvfr3YNNj9Y
+         a97Rryju60QJ99QF9oJW/RXg7vAKWT10muOUvn8fsuu0UgPo5KQS1mGi42n1IAfbhHhP
+         XYzPoOj39oSg8e5PJkWQfpBThAmbRnWo5vBolMB43MGgQw4dt8uh3yQQvzG62AvqPTK9
+         c2iYVI1VpGU6hOMJ6RRbcgXAChV5YXLLuKaGrxG8499bJc1Tl0h/G0i4EkipMxRgSFHq
+         tz+A==
+X-Forwarded-Encrypted: i=1; AJvYcCWepo6RD292+gGKMdenfGPm186uhnyjgWgMYBXDRzf5FgyUbIjZGVhekyTjYJ/iNLc1WHH+W7/5qpo=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzTcOn9/wASmZYeWyBscY06zGALGDSo32Ctm8df2e5dguZimswi
+	1VvLd1NGjoBo7zFvc/nfROWNo78ekj38CIyKP9hDRYjHuUDdxvsEQr21Kz/4DxHXxVntuULagtb
+	0I996v5BqS8pLsTg1BQd0zS9AsMNRhRv1az3CGKc3ZLTF9jrgOwrZmi56Ywi2c5f4DbKy
+X-Gm-Gg: ATEYQzysFrfbqyJPgJMUdmEXHoHTi+WFEn+8jNcILau4FvwLxcbwzo9QnkbWYJBdNSn
+	2Y8x3JaJDH/zxmh9BA1ng3yulSKsoq7BhhR+5tTMABDJPMWY1M5+aVMjAoRFqUgXNhjgKiXxAGF
+	+jNY0Zab/mnDV6hp9gM7cUq988wSN6EvBrrs1H0K45fVEhXI4zIANU+PU1WtFDxu6zRd4Wpiw0U
+	5fBHoGx8GNpr//L+2obg3MWtKTt/yJRYOhiIwbB+wd+uUMMIaiL/H7qW/4kfk810c5+6cpwrojP
+	LpciYXmt/2Sbv2Ky4bd5Yhp79PWAln+PAC9z1CNzLDiIOp95qT8QqjVLWl8Btd6kdKjgy5c6Kul
+	sVLRIzlhB3GaSPthpq9xQiOUqgg6NCGyfWUE4e7iesZnKrudTMxgKWktK06SNvtaP2CWo8DUtta
+	LQe0SCARHb53BSWuG8EZpIubFWDBn5OINNkuw=
+X-Received: by 2002:a05:622a:191f:b0:509:211e:3624 with SMTP id d75a77b69052e-50b147459a3mr71590251cf.4.1773892108966;
+        Wed, 18 Mar 2026 20:48:28 -0700 (PDT)
+X-Received: by 2002:a05:622a:191f:b0:509:211e:3624 with SMTP id d75a77b69052e-50b147459a3mr71590081cf.4.1773892108505;
+        Wed, 18 Mar 2026 20:48:28 -0700 (PDT)
 Received: from umbar.lan (2001-14ba-a073-af00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a073:af00:264b:feff:fe8b:be8a])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5a279c79442sm907649e87.70.2026.03.18.20.48.19
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5a279c79442sm907649e87.70.2026.03.18.20.48.26
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 18 Mar 2026 20:48:20 -0700 (PDT)
+        Wed, 18 Mar 2026 20:48:27 -0700 (PDT)
 From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Subject: [PATCH v6 0/4] drm/msm/hdmi & phy: use generic PHY framework
-Date: Thu, 19 Mar 2026 05:48:17 +0200
-Message-Id: <20260319-fd-hdmi-phy-v6-0-cefc08a55470@oss.qualcomm.com>
+Date: Thu, 19 Mar 2026 05:48:19 +0200
+Subject: [PATCH v6 2/4] phy: qcom: apq8064-sata: extract UNI PLL register
+ defines
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIAAFyu2kC/23Oy2rDMBAF0F8JWldCo5etrvIfpQu9HInGViq5o
- ib43ysHsgh0M3AH7uHeUQ0lhYreT3dUQks15aUH9XZCLprlEnDyPSNGmaBANZ48jn5O+BY3LIQ
- dOejJOjeg3riVMKXfh/bx2fNU8ozXWIJ5GpxqNgKA4pQAg0GAxoC7t5aNWFO2Gr9yO1/TYkomu
- VwONqa65rI9NjZx4AclqWT0ZU4TuD+cNUZJZvwgz7lW8v1jri7PM+kHHauafBKKchCvhOyEHIE
- xE7Ty3P5D7Pv+BwRCMEM3AQAA
-X-Change-ID: 20240109-fd-hdmi-phy-44b8319fbcc7
+Message-Id: <20260319-fd-hdmi-phy-v6-2-cefc08a55470@oss.qualcomm.com>
+References: <20260319-fd-hdmi-phy-v6-0-cefc08a55470@oss.qualcomm.com>
+In-Reply-To: <20260319-fd-hdmi-phy-v6-0-cefc08a55470@oss.qualcomm.com>
 To: Rob Clark <robin.clark@oss.qualcomm.com>,
         Dmitry Baryshkov <lumag@kernel.org>,
         Abhinav Kumar <abhinav.kumar@linux.dev>,
@@ -109,48 +108,47 @@ To: Rob Clark <robin.clark@oss.qualcomm.com>,
 Cc: linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org,
         dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
         linux-phy@lists.infradead.org,
-        Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
-        Konrad Dybcio <konradybcio@kernel.org>
+        Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=openpgp-sha256; l=4372;
+X-Developer-Signature: v=1; a=openpgp-sha256; l=3165;
  i=dmitry.baryshkov@oss.qualcomm.com; h=from:subject:message-id;
- bh=GjT8hX4GoLE57pLmBQAVyLUFHndk0TADrBaKx6V+sLU=;
- b=owEBbQGS/pANAwAKAYs8ij4CKSjVAcsmYgBpu3ICJCKy3A19oDDChvBzxx7B9r5GPU+ihItK3
- ZBilBRuiYmJATMEAAEKAB0WIQRMcISVXLJjVvC4lX+LPIo+Aiko1QUCabtyAgAKCRCLPIo+Aiko
- 1VXFB/9LpajkYmQVIUq/d8ZFH142i2Gr/sXj5aitG99qq0vTEUO1esGql0jcvkWJvnYNPUoK1fk
- whb1q0odkeY4adRCYRXu6R5R6eXgsdMMeq9BQ1FpOHQhaW/Gn0A/hRNNFLMQGos/WnvTKXa1CDu
- 72ISmg/zqatGwp/xsPYZ9HCCnk3BpPhTCC8itvG23j+XTc8UZkPWtPkCakjzmbjLaFRoG4RUCpR
- SXt4EgExHOw5PA/pTk+j4COVYr91kfPGmewrXnb7aVpK98cyzB9JpwewaIYu3NjRHo+NY8U32Su
- gw8MEdwvEqFIOE0nr3UeWEM9PFs1zGXH8uQOe6j0pX7K3r0N
+ bh=ouscQfS7cqU8c/8/Fh7An6AeO5MKx3nAag0yIE0xM6c=;
+ b=owEBbQGS/pANAwAKAYs8ij4CKSjVAcsmYgBpu3IDDi645peGptL7/F79A71XAhmb6MVeBqCUx
+ Bssp3LIXqWJATMEAAEKAB0WIQRMcISVXLJjVvC4lX+LPIo+Aiko1QUCabtyAwAKCRCLPIo+Aiko
+ 1RkLB/95cspi3AcyS1PADLsVFrzCyg/JkttSiEFW1tZnkZVnuslG2tzA8avFg7mtLAnlq1Gd3UA
+ 3uIn997wVGIos/XKYO/rSnehYJNNfFg2G6lg6mYKN05p6icobqPm6Tmy7q5C2y2q58aLoKTPlEA
+ F+IHvwRc+T7QIk7JIzWUpSDsmYU/7DLcRupggEGXbmAf8McKFBBMYl6JONqQCkbSuWksYMPrJeQ
+ lT1I9j8lkxj3jB2oS9tJY3ZMXmyGLzMps4TzZlDVkqgepOQURu3SMnPXKgijYnJvVjlek3HaJMM
+ TFABjZlk5a4QYpQLhHrUA/GjZG1gR7uSN8i675OyJ/xcY15S
 X-Developer-Key: i=dmitry.baryshkov@oss.qualcomm.com; a=openpgp;
  fpr=8F88381DD5C873E4AE487DA5199BF1243632046A
-X-Authority-Analysis: v=2.4 cv=MMNtWcZl c=1 sm=1 tr=0 ts=69bb7206 cx=c_pps
- a=WeENfcodrlLV9YRTxbY/uA==:117 a=xqWC_Br6kY4A:10 a=IkcTkHD0fZMA:10
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzE5MDAyNiBTYWx0ZWRfX1KZlNfFxSUm1
+ RYbhVxhrceBSf0pWG8dh6X+6d4D5ESrjmrdgsBzpc2hrrSzBcUzyNAtCyFqMOM9h3yseMu7HrlM
+ dGLOyfIEzkUkN5o1QumRIbpinn5s85QjICRrPCc8xfxmtGZ43NcnTxpzG0C7ykV4wOHOLPkdlF4
+ ZYZW8AMoGLS+9dPN39zrYj6b2Jzv11jIaA0zd9emI9/ZnOXToA2FLrPencJzFDBEcdPWQotaX/n
+ tH7ncCdziDuJxlH/YRU1VGK3DPk5+B7preqIpGRslYuwj1y7jWUmRC+zIN0+yjjMEE6iEVkmLph
+ MmBTk3A/ub9LjsCTraIM1SZZUCgcuZyMi39g4tEmTsl6p+DicEh7BVu7xdnV22WF4Cd68Ioxwp4
+ e7SIHolrhdG2Widj9w8h9rD9AuP8GFK/dDHjXokHamWZm91AjxQ9X7a/m22qexT7eDA/lUmZvL4
+ bItxCDSil/n0c4ZtI7w==
+X-Proofpoint-ORIG-GUID: xCl8MRHAv7ASNuVYTnbV9ShyWc4PN8HZ
+X-Authority-Analysis: v=2.4 cv=IbSKmGqa c=1 sm=1 tr=0 ts=69bb720e cx=c_pps
+ a=EVbN6Ke/fEF3bsl7X48z0g==:117 a=xqWC_Br6kY4A:10 a=IkcTkHD0fZMA:10
  a=Yq5XynenixoA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=YMgV9FUhrdKAYTUUvYB2:22 a=VwQbUJbxAAAA:8
- a=EUspDBNiAAAA:8 a=aG6DWvB8Nz23F0sxf60A:9 a=QEXdDO2ut3YA:10
- a=kacYvNCVWA4VmyqE58fU:22
-X-Proofpoint-ORIG-GUID: v-qzwttZlVfVsYm6ycge83CFPznkbNTv
-X-Proofpoint-GUID: v-qzwttZlVfVsYm6ycge83CFPznkbNTv
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzE5MDAyNiBTYWx0ZWRfX1AmKIJzUXx/R
- LuS2l8ZEO4sGhjiPINg0BRop/kS3lTyOE7aDcyQj2XTIEEBcrVfr/uQDy2Si+fKMZcj8jEkyZMW
- kbqtqua9IaZSozmoc2D6CREBIi0KlHsUmc/xtuCiyn8a5LR7hHtU+CaVFwrN4gdvYCLZDOKRJDi
- h1f5Iwx0p37Ew66FPXq5X6bDFvv/IUDMJY1L6vxEG/VDp3bq7/2QAX7I5KdwzkqWyTF317O8h0v
- ZUBVbPN/0vIbrKkEC2j8zI5DjpJ1775eg31keVHXARJShS9zHMqjm/Jpmy8Fn/DFfqZ/CvupLyv
- 5qm+eH/954x9h1T0ppNJlafDYZyO40mUfIrpRKFFdZvlDJxzYjVT69JlzrURQmhLM+U5r6gjkXc
- bFwDGCHdTNria9Q9pfnC0x1MFZ5JxbnKHbuC8sAlGXBt5eGlnGZi2G7cZon8uY3TOG9Kfd2Q0gd
- IDj5UXZw3yIFSHpU5XQ==
+ a=u7WPNUs3qKkmUXheDGA7:22 a=yOCtJkima9RkubShWh1s:22 a=KKAkSRfTAAAA:8
+ a=EUspDBNiAAAA:8 a=_xNQ4P_HJxdd5osA_owA:9 a=QEXdDO2ut3YA:10
+ a=a_PwQJl-kcHnX1M80qC6:22 a=cvBusfyB2V15izCimMoJ:22
+X-Proofpoint-GUID: xCl8MRHAv7ASNuVYTnbV9ShyWc4PN8HZ
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
  definitions=2026-03-18_02,2026-03-17_02,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 bulkscore=0 clxscore=1015 impostorscore=0 lowpriorityscore=0
- malwarescore=0 adultscore=0 phishscore=0 priorityscore=1501 suspectscore=0
+ bulkscore=0 suspectscore=0 lowpriorityscore=0 spamscore=0 impostorscore=0
+ clxscore=1015 adultscore=0 malwarescore=0 phishscore=0 priorityscore=1501
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2603050001 definitions=main-2603190026
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260318_204824_227912_617429B8 
-X-CRM114-Status: GOOD (  16.92  )
+X-CRM114-CacheID: sfid-20260318_204830_528562_CF790C2F 
+X-CRM114-Status: GOOD (  14.12  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -167,96 +165,96 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The MSM HDMI PHYs have been using the ad-hoc approach / API instead of
-using the generic API framework. Move MSM HDMI PHY drivers to
-drivers/phy/qualcomm and rework them to use generic PHY framework. This
-way all the QMP-related code is kept at the same place.
-Also MSM8974 HDMI PHY, 28nm DSI PHY and apq8964 SATA PHY now can use
-common helpers for the UNI PLL.
+From: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
 
-This also causes some design changes. Currently on MSM8996 the HDMI PLL
-implements clock's set_rate(), while other HDMI PHY drivers used the
-ad-hoc PHY API for setting the PLL rate (this includes in-tree MSM8960
-driver and posted, but not merged, MSM8974 driver). This might result in
-the PLL being set to one rate, while the rest of the PHY being tuned to
-work at another rate. Adopt the latter idea and always use
-phy_configure() to tune the PHY and set the PLL rate.
+The "uni" PLL is shared between several PHYS: APQ8064's SATA,
+MSM8974/APQ8084 HDMI, MSM8916 DSI, MSM8974/APQ8084 DSI. Extract the
+common register names to a separate header with the hope of later having
+the common code to handle PLL in those PHYs.
 
-Merge strategy: cross-tree merge via the immutable tag.
-
+Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@linaro.org>
+Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
 ---
-Changes in v6:
-- Changed MSM8974 HDMI PHY driver to use FIELD_PREP / FIELD_GET (Konrad)
-- Fixed rate recalculation for MSM8974 HDMI PHY (Konrad)
-- Dropped register read/write wrappers
-- Link to v5: https://lore.kernel.org/r/20260314-fd-hdmi-phy-v5-0-58122ae96d3b@oss.qualcomm.com
+ drivers/phy/qualcomm/phy-qcom-apq8064-sata.c | 23 +-------------------
+ drivers/phy/qualcomm/phy-qcom-uniphy.h       | 32 ++++++++++++++++++++++++++++
+ 2 files changed, 33 insertions(+), 22 deletions(-)
 
-Changes in v5:
-- Kept only a single place which handles extp clk (after PHY power on,
-  before PHY power off) (Neil)
-- Inlined pm_runtime calls in the HDMI TX driver, replaced
-  pm_runtime_resume_and_get() with pm_runtime_get_sync(), since
-  atomic_pre_enable() can not fail.
-- Renamed registers defines to drop the REG_ prefix.
-- Link to v4: https://lore.kernel.org/r/20250520-fd-hdmi-phy-v4-0-fcbaa652ad75@oss.qualcomm.com
+diff --git a/drivers/phy/qualcomm/phy-qcom-apq8064-sata.c b/drivers/phy/qualcomm/phy-qcom-apq8064-sata.c
+index cae290a6e19f..dd9929429f9a 100644
+--- a/drivers/phy/qualcomm/phy-qcom-apq8064-sata.c
++++ b/drivers/phy/qualcomm/phy-qcom-apq8064-sata.c
+@@ -15,28 +15,7 @@
+ #include <linux/platform_device.h>
+ #include <linux/phy/phy.h>
+ 
+-/* PHY registers */
+-#define UNIPHY_PLL_REFCLK_CFG		0x000
+-#define UNIPHY_PLL_PWRGEN_CFG		0x014
+-#define UNIPHY_PLL_GLB_CFG		0x020
+-#define UNIPHY_PLL_SDM_CFG0		0x038
+-#define UNIPHY_PLL_SDM_CFG1		0x03C
+-#define UNIPHY_PLL_SDM_CFG2		0x040
+-#define UNIPHY_PLL_SDM_CFG3		0x044
+-#define UNIPHY_PLL_SDM_CFG4		0x048
+-#define UNIPHY_PLL_SSC_CFG0		0x04C
+-#define UNIPHY_PLL_SSC_CFG1		0x050
+-#define UNIPHY_PLL_SSC_CFG2		0x054
+-#define UNIPHY_PLL_SSC_CFG3		0x058
+-#define UNIPHY_PLL_LKDET_CFG0		0x05C
+-#define UNIPHY_PLL_LKDET_CFG1		0x060
+-#define UNIPHY_PLL_LKDET_CFG2		0x064
+-#define UNIPHY_PLL_CAL_CFG0		0x06C
+-#define UNIPHY_PLL_CAL_CFG8		0x08C
+-#define UNIPHY_PLL_CAL_CFG9		0x090
+-#define UNIPHY_PLL_CAL_CFG10		0x094
+-#define UNIPHY_PLL_CAL_CFG11		0x098
+-#define UNIPHY_PLL_STATUS		0x0C0
++#include "phy-qcom-uniphy.h"
+ 
+ #define SATA_PHY_SER_CTRL		0x100
+ #define SATA_PHY_TX_DRIV_CTRL0		0x104
+diff --git a/drivers/phy/qualcomm/phy-qcom-uniphy.h b/drivers/phy/qualcomm/phy-qcom-uniphy.h
+new file mode 100644
+index 000000000000..e5b79a4dc270
+--- /dev/null
++++ b/drivers/phy/qualcomm/phy-qcom-uniphy.h
+@@ -0,0 +1,32 @@
++/* SPDX-License-Identifier: GPL-2.0-only */
++/*
++ * Copyright (c) 2014, The Linux Foundation. All rights reserved.
++ */
++
++#ifndef PHY_QCOM_UNIPHY_H
++#define PHY_QCOM_UNIPHY_H
++
++/* PHY registers */
++#define UNIPHY_PLL_REFCLK_CFG		0x000
++#define UNIPHY_PLL_PWRGEN_CFG		0x014
++#define UNIPHY_PLL_GLB_CFG		0x020
++#define UNIPHY_PLL_SDM_CFG0		0x038
++#define UNIPHY_PLL_SDM_CFG1		0x03c
++#define UNIPHY_PLL_SDM_CFG2		0x040
++#define UNIPHY_PLL_SDM_CFG3		0x044
++#define UNIPHY_PLL_SDM_CFG4		0x048
++#define UNIPHY_PLL_SSC_CFG0		0x04c
++#define UNIPHY_PLL_SSC_CFG1		0x050
++#define UNIPHY_PLL_SSC_CFG2		0x054
++#define UNIPHY_PLL_SSC_CFG3		0x058
++#define UNIPHY_PLL_LKDET_CFG0		0x05c
++#define UNIPHY_PLL_LKDET_CFG1		0x060
++#define UNIPHY_PLL_LKDET_CFG2		0x064
++#define UNIPHY_PLL_CAL_CFG0		0x06c
++#define UNIPHY_PLL_CAL_CFG8		0x08c
++#define UNIPHY_PLL_CAL_CFG9		0x090
++#define UNIPHY_PLL_CAL_CFG10		0x094
++#define UNIPHY_PLL_CAL_CFG11		0x098
++#define UNIPHY_PLL_STATUS		0x0c0
++
++#endif
 
-Changes in v3-v4:
-- Rebased on top of linux-next, solving conflicts
-- Squashed add-and-remove patches into a single git mv patch
-- Dropped HDMI PHY header patch (merged upstream)
-
-Changes in v2:
-- Changed msm8960 / apq8064 to calculate register data instead of using
-  fixed tables. This extends the list of supported modes.
-  (Implementation is based on mdss-hdmi-pll-28lpm.c from msm-4.14).
-
-- Fixed the reprogramming of PLL rate on apq8064.
-
-- Merged all non-QMP HDMI PHY drivers into a common PHY_QCOM_HDMI
-  driver (suggested by Rob Clark)
-
----
-Dmitry Baryshkov (4):
-      drm/msm/hdmi: switch to generic PHY subsystem
-      phy: qcom: apq8064-sata: extract UNI PLL register defines
-      phy: qcom-uniphy: add more registers from display PHYs
-      phy: qualcomm: add MSM8974 HDMI PHY support
-
- drivers/gpu/drm/msm/Makefile                     |   7 -
- drivers/gpu/drm/msm/hdmi/hdmi.c                  |  58 +-
- drivers/gpu/drm/msm/hdmi/hdmi.h                  |  80 +--
- drivers/gpu/drm/msm/hdmi/hdmi_bridge.c           |  80 ++-
- drivers/gpu/drm/msm/hdmi/hdmi_phy.c              | 225 -------
- drivers/gpu/drm/msm/hdmi/hdmi_phy_8960.c         |  51 --
- drivers/gpu/drm/msm/hdmi/hdmi_phy_8996.c         | 761 ----------------------
- drivers/gpu/drm/msm/hdmi/hdmi_phy_8998.c         | 765 -----------------------
- drivers/gpu/drm/msm/hdmi/hdmi_phy_8x60.c         | 141 -----
- drivers/gpu/drm/msm/hdmi/hdmi_phy_8x74.c         |  44 --
- drivers/gpu/drm/msm/hdmi/hdmi_pll_8960.c         | 460 --------------
- drivers/gpu/drm/msm/registers/display/hdmi.xml   | 537 ----------------
- drivers/phy/qualcomm/Kconfig                     |  24 +
- drivers/phy/qualcomm/Makefile                    |  14 +
- drivers/phy/qualcomm/phy-qcom-apq8064-sata.c     |  23 +-
- drivers/phy/qualcomm/phy-qcom-hdmi-28hpm.c       | 352 +++++++++++
- drivers/phy/qualcomm/phy-qcom-hdmi-28lpm.c       | 462 ++++++++++++++
- drivers/phy/qualcomm/phy-qcom-hdmi-45nm.c        | 186 ++++++
- drivers/phy/qualcomm/phy-qcom-hdmi-preqmp.c      | 212 +++++++
- drivers/phy/qualcomm/phy-qcom-hdmi-preqmp.h      |  59 ++
- drivers/phy/qualcomm/phy-qcom-qmp-hdmi-base.c    | 185 ++++++
- drivers/phy/qualcomm/phy-qcom-qmp-hdmi-msm8996.c | 443 +++++++++++++
- drivers/phy/qualcomm/phy-qcom-qmp-hdmi-msm8998.c | 496 +++++++++++++++
- drivers/phy/qualcomm/phy-qcom-qmp-hdmi.h         |  77 +++
- drivers/phy/qualcomm/phy-qcom-uniphy.h           |  74 +++
- 25 files changed, 2628 insertions(+), 3188 deletions(-)
----
-base-commit: 95bcfacccdad8a76e02a8eaa92baaf09c879877e
-change-id: 20240109-fd-hdmi-phy-44b8319fbcc7
-
-Best regards,
 -- 
-With best wishes
-Dmitry
+2.47.3
 
 
 -- 
