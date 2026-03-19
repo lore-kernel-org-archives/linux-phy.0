@@ -4,135 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3240B1090233
-	for <linux-phy@archiver.kernel.org>; Thu, 19 Mar 2026 14:14:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9CAE41090235
+	for <linux-phy@archiver.kernel.org>; Thu, 19 Mar 2026 14:37:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PDAiSxp64DfBN1gxTnV2GXdAiyU5pwyf/5O+p8l4s7U=; b=F9xaaQVMhoOHLk
-	RudWykyOIY0LlyR0E2f/FoVv76y3mlMBg1mR1T3r0OIaXZLo0/2XCMO0Z7L9tl2wn5XSkBr0IUkR6
-	cMDrcE1vt2+4AKFUOUfKjqgdx+//OEHFt/YQOl/FpRCcNuql4TXGawtIbZ8suahppyggPP8lTNcdB
-	VXoIkihQ+myvAxHYrsRz36rNfCQlgIVGYjb9EbC9CK6zfLPw9/+g3f/vdiOHN3lKwns8ZqAUsHOnk
-	NuYeVBrlKNlyMKz/VMDGjOo+yiHY+miQ6ZevWoXSPOFZnZ75WkeNb91/Xx5g8QdOGshtmAHCT4hMH
-	XdIwaQe4+wqef+J9Ik1w==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=yXsFw8vxMbZgynolpxesDJ7S12s6VkcH/iv1m055J5E=; b=qkoG3wA8LCI8jB03cudYxobMHM
+	pNxadk4LP8US4SQT8XsPQe2f/O16vnBvVWzAq5ogFo4Q0MNia1+EJgIdAGeUIV3tL1VndcjK1mRaO
+	W66jSGqGwJj1FzUUUgQt/CUPcBtnelFUIgZ3XbExDPT9XX9yPQxnkvQp+zVZ7kiP5tEEWCNBIisov
+	urciNF/W038jAyNdnTP/z0IJuDxQ7xKNLqhqALGVe9PLrPqglRdi6bK99dQ1+jT8TV824V5fzOmiC
+	GtRlzH0gZ8dLonYVmyDXVtQcCvbVxxowxAHupsnrT4NMs+tPjTlHs/taKi5aaYTqTbzNqXdGlzaBr
+	iSi3znKw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w3E8O-0000000Akmp-46oP;
-	Thu, 19 Mar 2026 14:14:01 +0000
-Received: from smtp-out2.suse.de ([2a07:de40:b251:101:10:150:64:2])
+	id 1w3EVE-0000000Aod9-0g31;
+	Thu, 19 Mar 2026 14:37:36 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w3E8L-0000000Akku-0xX3
-	for linux-phy@lists.infradead.org;
-	Thu, 19 Mar 2026 14:13:59 +0000
-Received: from imap1.dmz-prg2.suse.org (unknown [10.150.64.97])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	by smtp-out2.suse.de (Postfix) with ESMTPS id 233AB5BD4B;
-	Thu, 19 Mar 2026 14:13:51 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=suse.cz; s=susede2_rsa;
-	t=1773929632; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
-	 mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=4fUFXPph0d+U/6GDmGbgLZ/FXBjYuxpYsgD69WTKZEc=;
-	b=qJFdgiFwZof840urwELAyJUPmqr5R5KSb1T4rwYuc7bb8XNbCm/kv+M5FkrKSBEOM1bZiu
-	/MGyuwm/OFnFKmJm/t/Uz/+GbEcAEAQCMtEWioCbgwKOh4DWZ0qNVZOg9g66xDY+m4U+fD
-	w9Xqoe30eNI+goFz62hSwZMzWorThdA=
-DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; d=suse.cz;
-	s=susede2_ed25519; t=1773929632;
-	h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
-	 mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=4fUFXPph0d+U/6GDmGbgLZ/FXBjYuxpYsgD69WTKZEc=;
-	b=4jpB79ycXSQsxOkgtV3HKUa6Dm/vQ/wRir8pmFsiYnB6qgK3LbPe12RtulXb4tol7/E3ij
-	faYPra8B4GTfZjDQ==
-Authentication-Results: smtp-out2.suse.de;
-	none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=suse.cz; s=susede2_rsa;
-	t=1773929631; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
-	 mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=4fUFXPph0d+U/6GDmGbgLZ/FXBjYuxpYsgD69WTKZEc=;
-	b=OrcSAEzL/6c4UDB40dZmtUkHL2UKN/t418W/3/WLfRE3VUYtttdOTA1LBRs2LexriSZBXr
-	IUCLAcO9QxQoLCNXA0PSitgNb7BC5cuH9t+EXroQLbXGhfbC1mTChSWj64vc6V41FfYy8R
-	mio6pb/J12e+5TPnOnmBoDRex83ce1A=
-DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; d=suse.cz;
-	s=susede2_ed25519; t=1773929631;
-	h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
-	 mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=4fUFXPph0d+U/6GDmGbgLZ/FXBjYuxpYsgD69WTKZEc=;
-	b=HXVk5/yPJtxIjyky0dtujMNvVHE9KONXRU8D1O6wb4LBxoqwDaKPYOnkGEkCrYDJmYyVOA
-	klxEA++oJw6AsaAw==
-Received: from imap1.dmz-prg2.suse.org (localhost [127.0.0.1])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	by imap1.dmz-prg2.suse.org (Postfix) with ESMTPS id 14B714273B;
-	Thu, 19 Mar 2026 14:13:51 +0000 (UTC)
-Received: from dovecot-director2.suse.de ([2a07:de40:b281:106:10:150:64:167])
-	by imap1.dmz-prg2.suse.org with ESMTPSA
-	id TmUEBZ8EvGlPZwAAD6G6ig
-	(envelope-from <jack@suse.cz>); Thu, 19 Mar 2026 14:13:51 +0000
-Received: by quack3.suse.cz (Postfix, from userid 1000)
-	id C850FA0B32; Thu, 19 Mar 2026 15:13:46 +0100 (CET)
-Date: Thu, 19 Mar 2026 15:13:46 +0100
-From: Jan Kara <jack@suse.cz>
-To: Philipp Hahn <phahn-oss@avm.de>
-Cc: amd-gfx@lists.freedesktop.org, apparmor@lists.ubuntu.com, 
-	bpf@vger.kernel.org, ceph-devel@vger.kernel.org, cocci@inria.fr, 
-	dm-devel@lists.linux.dev, dri-devel@lists.freedesktop.org, gfs2@lists.linux.dev, 
-	intel-gfx@lists.freedesktop.org, intel-wired-lan@lists.osuosl.org, iommu@lists.linux.dev, 
-	kvm@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
-	linux-block@vger.kernel.org, linux-bluetooth@vger.kernel.org, linux-btrfs@vger.kernel.org, 
-	linux-cifs@vger.kernel.org, linux-clk@vger.kernel.org, linux-erofs@lists.ozlabs.org, 
-	linux-ext4@vger.kernel.org, linux-fsdevel@vger.kernel.org, linux-gpio@vger.kernel.org, 
-	linux-hyperv@vger.kernel.org, linux-input@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-leds@vger.kernel.org, linux-media@vger.kernel.org, linux-mips@vger.kernel.org, 
-	linux-mm@kvack.org, linux-modules@vger.kernel.org, linux-mtd@lists.infradead.org, 
-	linux-nfs@vger.kernel.org, linux-omap@vger.kernel.org, linux-phy@lists.infradead.org, 
-	linux-pm@vger.kernel.org, linux-rockchip@lists.infradead.org, linux-s390@vger.kernel.org, 
-	linux-scsi@vger.kernel.org, linux-sctp@vger.kernel.org, 
-	linux-security-module@vger.kernel.org, linux-sh@vger.kernel.org, linux-sound@vger.kernel.org, 
-	linux-stm32@st-md-mailman.stormreply.com, linux-trace-kernel@vger.kernel.org, linux-usb@vger.kernel.org, 
-	linux-wireless@vger.kernel.org, netdev@vger.kernel.org, ntfs3@lists.linux.dev, 
-	samba-technical@lists.samba.org, sched-ext@lists.linux.dev, target-devel@vger.kernel.org, 
-	tipc-discussion@lists.sourceforge.net, v9fs@lists.linux.dev, Jan Kara <jack@suse.com>
-Subject: Re: [PATCH 12/61] quota: Prefer IS_ERR_OR_NULL over manual NULL check
-Message-ID: <ol2d7c5z7yfyuwo5tyfxurgqedruhr6bzmuv37bx5phhrmmoyh@4zjspbtexid3>
-References: <20260310-b4-is_err_or_null-v1-0-bd63b656022d@avm.de>
- <20260310-b4-is_err_or_null-v1-12-bd63b656022d@avm.de>
+	id 1w3EVD-0000000Aock-08rD;
+	Thu, 19 Mar 2026 14:37:35 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 737D860097;
+	Thu, 19 Mar 2026 14:37:34 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 46C01C19424;
+	Thu, 19 Mar 2026 14:37:30 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1773931054;
+	bh=KLDhtxsHsK8rztqKAtAqMROmIfFr0P5kwaXY6DoAmsY=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=NpRLQu8lLh5mgVxrGIq5qNOsH7ANyRHYIRnYo1YmESCVUnnBBcCR9Mi0p/tf7XxNs
+	 D3LrNInZhWa7j6aLAOqDUqy0HseKeaXPXOASXsuDPisTzcxtZyofvkZHNUWZgfkSvJ
+	 PBh23kpF9RDHhRtqv+t4kHkCH7sOtzU4U8dPesWJWHlu66+UjWwAOwYlDz2SHhmI4S
+	 qGeKyjJhfMUqpfghEcpQ/qzz3vZFdle7At8qkf9LFCZKRxheQamD6zFkIBD8VViVi1
+	 seG/T87aAQWxehb6O3OfoFmaRSvuGiPYGphZd3+5wjxai0kBgrTp7Qe8TiKzmHQU2m
+	 YRZN1lMY069Lw==
+Date: Thu, 19 Mar 2026 14:37:27 +0000
+From: Conor Dooley <conor@kernel.org>
+To: Nora Schiffer <nora.schiffer@ew.tq-group.com>
+Cc: Andrew Lunn <andrew+netdev@lunn.ch>,
+	"David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+	Nishanth Menon <nm@ti.com>, Vignesh Raghavendra <vigneshr@ti.com>,
+	Tero Kristo <kristo@kernel.org>,
+	Siddharth Vadapalli <s-vadapalli@ti.com>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>, netdev@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+	linux@ew.tq-group.com
+Subject: Re: [PATCH 3/7] dt-bindings: net: ti: k3-am654-cpsw-nuss: Add
+ ti,j722s-cpsw-nuss compatible
+Message-ID: <20260319-embroider-cloud-0f8b7ea975eb@spud>
+References: <cover.1773751309.git.nora.schiffer@ew.tq-group.com>
+ <1382fed198246f1563dea091478757aebc4e4948.1773751309.git.nora.schiffer@ew.tq-group.com>
+ <20260318-sustained-reshuffle-eaf180729a9c@spud>
+ <37396c094c7124169ca376cf6aea5350971aec54.camel@ew.tq-group.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260310-b4-is_err_or_null-v1-12-bd63b656022d@avm.de>
-X-Spamd-Result: default: False [-2.30 / 50.00];
-	BAYES_HAM(-3.00)[99.99%];
-	SUSPICIOUS_RECIPS(1.50)[];
-	NEURAL_HAM_LONG(-1.00)[-1.000];
-	MID_RHS_NOT_FQDN(0.50)[];
-	NEURAL_HAM_SHORT(-0.20)[-0.999];
-	MIME_GOOD(-0.10)[text/plain];
-	RCVD_VIA_SMTP_AUTH(0.00)[];
-	TO_DN_SOME(0.00)[];
-	ARC_NA(0.00)[];
-	FUZZY_RATELIMITED(0.00)[rspamd.com];
-	MISSING_XM_UA(0.00)[];
-	MIME_TRACE(0.00)[0:+];
-	FROM_HAS_DN(0.00)[];
-	RCVD_COUNT_THREE(0.00)[3];
-	TO_MATCH_ENVRCPT_SOME(0.00)[];
-	FROM_EQ_ENVFROM(0.00)[];
-	R_RATELIMIT(0.00)[to_ip_from(RLck44p98ib5bmd95s13xxw3gp)];
-	RCVD_TLS_LAST(0.00)[];
-	DKIM_SIGNED(0.00)[suse.cz:s=susede2_rsa,suse.cz:s=susede2_ed25519];
-	RCPT_COUNT_GT_50(0.00)[55];
-	DBL_BLOCKED_OPENRESOLVER(0.00)[suse.com:email]
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260319_071357_472722_6DB483DB 
-X-CRM114-Status: GOOD (  17.91  )
+In-Reply-To: <37396c094c7124169ca376cf6aea5350971aec54.camel@ew.tq-group.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -144,52 +78,81 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============4608158525882097041=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue 10-03-26 12:48:38, Philipp Hahn wrote:
-> Prefer using IS_ERR_OR_NULL() over using IS_ERR() and a manual NULL
-> check.
-> 
-> Change generated with coccinelle.
-> 
-> To: Jan Kara <jack@suse.com>
-> Cc: linux-kernel@vger.kernel.org
-> Signed-off-by: Philipp Hahn <phahn-oss@avm.de>
 
-Thanks for the patch but frankly I find the original variant clearer wrt
-what is going on. So I prefer to keep the code as is.
+--===============4608158525882097041==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="xd7J1FUbMSfddi+G"
+Content-Disposition: inline
 
-								Honza
 
-> ---
->  fs/quota/quota.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/fs/quota/quota.c b/fs/quota/quota.c
-> index 33bacd70758007129e0375bab44d7431195ec441..2e09fc247d0cf45b9e83a4f8a0be7ea694c8c2a1 100644
-> --- a/fs/quota/quota.c
-> +++ b/fs/quota/quota.c
-> @@ -965,7 +965,7 @@ SYSCALL_DEFINE4(quotactl, unsigned int, cmd, const char __user *, special,
->  	else
->  		drop_super_exclusive(sb);
->  out:
-> -	if (pathp && !IS_ERR(pathp))
-> +	if (!IS_ERR_OR_NULL(pathp))
->  		path_put(pathp);
->  	return ret;
->  }
-> 
-> -- 
-> 2.43.0
-> 
--- 
-Jan Kara <jack@suse.com>
-SUSE Labs, CR
+--xd7J1FUbMSfddi+G
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Thu, Mar 19, 2026 at 09:55:24AM +0100, Nora Schiffer wrote:
+> On Wed, 2026-03-18 at 17:35 +0000, Conor Dooley wrote:
+> > On Wed, Mar 18, 2026 at 03:05:25PM +0100, Nora Schiffer wrote:
+> > > The J722S CPSW3G is mostly identical to the AM64's, but additionally
+> > > supports SGMII.
+> > >=20
+> > > Signed-off-by: Nora Schiffer <nora.schiffer@ew.tq-group.com>
+> > > ---
+> > >  Documentation/devicetree/bindings/net/ti,k3-am654-cpsw-nuss.yaml | 1=
+ +
+> > >  1 file changed, 1 insertion(+)
+> > >=20
+> > > diff --git a/Documentation/devicetree/bindings/net/ti,k3-am654-cpsw-n=
+uss.yaml b/Documentation/devicetree/bindings/net/ti,k3-am654-cpsw-nuss.yaml
+> > > index a959c1d7e643a..9ab8237c7f79e 100644
+> > > --- a/Documentation/devicetree/bindings/net/ti,k3-am654-cpsw-nuss.yaml
+> > > +++ b/Documentation/devicetree/bindings/net/ti,k3-am654-cpsw-nuss.yaml
+> > > @@ -59,6 +59,7 @@ properties:
+> > >        - ti,j7200-cpswxg-nuss
+> > >        - ti,j721e-cpsw-nuss
+> > >        - ti,j721e-cpswxg-nuss
+> > > +      - ti,j722s-cpsw-nuss
+> >=20
+> > For all these bindings, why is a fallback not suitable? Seems like it'd
+> > be possible here, since there's just a new feature. Is there some other
+> > programming model difference?
+>=20
+> I think a fallback makes sense, I didn't add one because other variants d=
+erived
+> from the AM64 don't have one either. I can include a fallback in v2 (for =
+all 3
+> bindings in this series).
+
+Unless someones got a good reason not to, I think you should do so.
+
+--xd7J1FUbMSfddi+G
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCabwKJwAKCRB4tDGHoIJi
+0mZPAQDOmTS3hQH1+4EWz3iVgYp6/DejsN7lwqlJyuo0AsAX4AEApNRPLGqBM0jO
+szx8cd91ntJY8h7pt4Fw5f8sH3YbFA8=
+=r2h7
+-----END PGP SIGNATURE-----
+
+--xd7J1FUbMSfddi+G--
+
+
+--===============4608158525882097041==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============4608158525882097041==--
+
