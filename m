@@ -4,81 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C65091090238
-	for <linux-phy@archiver.kernel.org>; Thu, 19 Mar 2026 14:56:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C4EEE109023A
+	for <linux-phy@archiver.kernel.org>; Thu, 19 Mar 2026 15:07:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zG05e4bz36cdNehmM/s71K8XVk1v4DGJNUMEjHfVXh0=; b=IcoXGodPpdZJPr
-	HNmMlqGXUgtXXah4wWaJylXxY/C4HGtY+RhPIIFE7cGiqdQHRRbn9buO2V2m+UT3lCVuqqOanipRw
-	T2foTcQzkg5nMwr6U3aU1YPedXZqQ9U89jzOh4kR7aOSuOaupv96lmIDeUGHkdixtaU+qICcxHfG+
-	TjJQo+0CZys7EzxhtoU8CX5NL1eyf9krRNIWZzACTtHSyiSxzhaJt3xcyoqWyyJ34T8VsH7RpdtPl
-	fLqWAtARAtxpyELsRiwpqD80PwePhadjajTVJ3HpSvxjbQ6CNeRB2HgsocKRm1cfs1U/4xsnysWKz
-	mrSaUSDtNGcTL8ta+XNQ==;
+	List-Owner; bh=oF7gDCE6lKdayoC3KTjMml4WpRK2IehCFsOnWNWtKFg=; b=s8QmFq1s7S+b0u
+	L1C9NEX0GLrfF9J73BDXkYmgfv8ZeJsX/XT+59lgEvJTRqjsV4cktvCEAWtS4UPQ6tqSVomssR833
+	CpRN8M8QxzXltfIjbG4BhIxYjVWZ5nfwx+AYR2Fmz6KSBhaYl+HSfLaO420hzz4cqiOIeMAnrFThO
+	SgLIE9Mx5sQb2T58Tun0Vp7QcYeR4grayEIu6z0sqfh+aFKbfDPqPa444b5dYpGzLWfaIss/TTrQp
+	RjfVFUDNXa+mLgqJYSSG9ezVNr3sarygBOG5xyPemcwLKPlpmoGm5ea3KZwp1ZWaoL523QhWqwu3H
+	Djo6nqoXaQmqIEziQcsw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w3EnS-0000000Aqbw-2P2F;
-	Thu, 19 Mar 2026 14:56:26 +0000
-Received: from mail-lj1-x22c.google.com ([2a00:1450:4864:20::22c])
+	id 1w3Exg-0000000ArvC-1kRV;
+	Thu, 19 Mar 2026 15:07:00 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w3EnQ-0000000AqbZ-0pAh
+	id 1w3Exe-0000000Aruo-1x1a
 	for linux-phy@lists.infradead.org;
-	Thu, 19 Mar 2026 14:56:25 +0000
-Received: by mail-lj1-x22c.google.com with SMTP id 38308e7fff4ca-386c441ba1dso950551fa.2
-        for <linux-phy@lists.infradead.org>; Thu, 19 Mar 2026 07:56:23 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1773932182; x=1774536982; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to:subject
-         :user-agent:mime-version:date:message-id:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=nFE8LLUUKG9iTuvDaB93WvqlPoGXC9p6rn4PhnM6x18=;
-        b=psqibZO3gVUWGAmaFsbbAbm86dCxel2qP8Nz7lCID7UZa73+kkE6Z0SVSl47/NXhMJ
-         zy5ZJRML7mfdLqhSFqWadAMlm+bU6QnACR3rDJHsn8mqP49zlbsKLg0fMiGepJAG/8iB
-         9P50kcsaRhKwHlP11qUKhueqFxvPfxolyhKs0HCJeOtEvORaNkG+c3sUmNGy8qvXNbXz
-         IFSf5UKGAsBRvCewN4tRVisfRwfcDhqzS1+U/jZxkGeWrJ50yQeyptr/Fltp8AL+OpQ/
-         pK77vE/foG+4ax7QW4pcnl7TdT7jV4SqMcOlITQxYIUTvOX2RVUri1+sMFLyjmLOJfC7
-         LVig==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1773932182; x=1774536982;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to:subject
-         :user-agent:mime-version:date:message-id:x-gm-gg:x-gm-message-state
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=nFE8LLUUKG9iTuvDaB93WvqlPoGXC9p6rn4PhnM6x18=;
-        b=hvFaVP/l/4y+VWj0l9vCdeq9nBZ8n5Y74fAemMlDjStnNyBKRKb72TK2TX3XgPHc7O
-         k5R/eyX9hbwriBcatrBas8B5UEtCJpe5GzR1+MDtUkUczjx3Uu5LC+I/UjGalqfUiJ+l
-         StoMpLaEBjG8ENZkPyJzzPYIp15RqIN20Ivc6S2NDfXgOiTELGzdR0nz28Fc3rxY15CO
-         77JDpoMjKYvZUYZ6QNplZdg2VDdr3ahtc9Fh7faTzk1thhIM4+nNoWzXTjxG4RlyeBPE
-         lY/v6D98SZh72vPJbN2hnRs6067Fmw5lgW+UhGyEOZn/UNpw9aX9vo1Y20QPvtFJ6ByE
-         nh0g==
-X-Forwarded-Encrypted: i=1; AJvYcCUdtvUXF8lSq4iMwdcxTGGtmJ28hgdRcq4yp1mevXdvkHxOaK8ctaudKNSe5zEgV3G47HZvrlBJ+Q8=@lists.infradead.org
-X-Gm-Message-State: AOJu0YymCWPPfBqDBTeq+5P0d+LGgMHjpFURcCvzjwFC9jkj5ti9fb27
-	wFGkvORddFHDJkgtLO9zYAm8nnmWPvz5Cr7YHm2lfenxllKTDbAX+byE9SqYEkiV9nguNxxL468
-	PtXsA
-X-Gm-Gg: ATEYQzwcoXQeWmQQ74Scz6m8oLstU/hliqw/hOVdUXDr6oYgc2yU1b7duieAdIQD68u
-	8TXcXIT8UxNJSXcNJSmpAgZ0maFYuEN5gb3jU9+x93xBTNwlVU9OgPyH+Kq4XIMBFnqCEjmWiSR
-	0NHKif9BFaKq6MypxKW72ODSmbPadUC4/kCieGeHsDOelJIRUn6dH0oycmAHh6UdsOIPHTDK7K5
-	HJ+ytbH9GbR3xhP75WYQwDkyUpKjoDUd1931+SXp+PbkYDAHXM3ki3YoG4Ad7zayfm7HCi7FN8j
-	X46xadEcExtRnMJWxqtw+c4+x379/28FDHobHtNEe6ztwphonU/76PGV8ZBC+biJLN4L8sbCql/
-	XI5fo2HLYcuDHY0BNmXo2s+eNkdPhIKO5gyR5AIMHGvAE1ZFXmHpu38fMFU+v0eLHdIICpFFS/A
-	SLaRE9JIiqnVmB6bjmC36ukbCNwGpUbv1YDCYcXlRmCOzhiFDC2HPNu6UPx1hOMh4xCgUhs+g45
-	PuopQ==
-X-Received: by 2002:a05:6512:3b82:b0:5a2:7c19:414f with SMTP id 2adb3069b0e04-5a27c1941bfmr1196514e87.3.1773932181770;
-        Thu, 19 Mar 2026 07:56:21 -0700 (PDT)
-Received: from [192.168.1.100] (91-159-24-186.elisa-laajakaista.fi. [91.159.24.186])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5a279c2be56sm1230577e87.19.2026.03.19.07.56.20
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 19 Mar 2026 07:56:21 -0700 (PDT)
-Message-ID: <d6616fc0-75fb-47e2-96cd-ae81fa1a8e82@linaro.org>
-Date: Thu, 19 Mar 2026 16:56:20 +0200
+	Thu, 19 Mar 2026 15:06:59 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 8ECA14378F;
+	Thu, 19 Mar 2026 15:06:56 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6A7AEC19424;
+	Thu, 19 Mar 2026 15:06:53 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1773932816;
+	bh=iWMn2mqaeBlBrAT5D6y+nE5Iz4bKcLZY2PCtIYzPMKI=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=iN/IcxvxjmBw+DWdH/+faofTJaE9hFATxGB3X5UDnD7HnuCZ3L2a1JAg9stIQQqoa
+	 kXV5tyY02zSsqBg82LcwtvahmRPSoKo5cPru/0ATiO6Ez4AR8mc+z6usF9XytZeJ3v
+	 74GU2zSHKnWmfYK41edlEVimGn/CUYKFQrrgfvip7gdm1qgJgjKCviooFG6AB/nmhD
+	 eUxXRSLnrwk2goIriwa8ZyI7uxpJi3ok1xdFbH4iLYJZD7E1uvIDp5KjIALzAbyRYc
+	 5AtMKDAh1tHXb7ltPO+KtMMkrgKFPASrR42GF0eOGin2h4gYDvwFfOZGvoe9Q+bzBm
+	 Cr+r+vA2rKQbQ==
+Message-ID: <cb752d25-9eab-4cb0-91a5-8aebb7e49169@kernel.org>
+Date: Thu, 19 Mar 2026 15:06:51 +0000
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v4 2/2] phy: qcom-mipi-csi2: Add a CSI2 MIPI DPHY driver
-To: Bryan O'Donoghue <bod@kernel.org>,
- Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
- Neil Armstrong <neil.armstrong@linaro.org>
+To: Neil Armstrong <neil.armstrong@linaro.org>,
+ Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
+ Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
 Cc: Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
  Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
  Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
@@ -94,11 +65,14 @@ References: <20260315-x1e-csi2-phy-v4-0-90c09203888d@linaro.org>
  <26XTdUyQTB41Oc4D5HnMtSm_QpZRjlkljQRJVw-u1Zp3Ltn9s4LVU-LQkP6drdl3Z3GGssLCCbsVYPFEqssHcQ==@protonmail.internalid>
  <65e06b2e-eeb9-45af-97ac-4ae60f652361@linaro.org>
  <9578400d-30ac-4d8c-9295-ee4ec8af3b2c@kernel.org>
-From: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
-In-Reply-To: <9578400d-30ac-4d8c-9295-ee4ec8af3b2c@kernel.org>
+ <pXsqxK3NVHOSeJHN2u2QbCefn-pOmgmVNM9AKAxinHJdvEBjZy40Asek29h6THEIWLKZFT1dIr17tF2QRSA7UA==@protonmail.internalid>
+ <4d376a1b-37d7-4d37-8579-a0053f7b91f2@linaro.org>
+From: Bryan O'Donoghue <bod@kernel.org>
+Content-Language: en-US
+In-Reply-To: <4d376a1b-37d7-4d37-8579-a0053f7b91f2@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260319_075624_270090_9E6B3A0E 
-X-CRM114-Status: GOOD (  13.37  )
+X-CRM114-CacheID: sfid-20260319_080658_543579_F813EEF9 
+X-CRM114-Status: GOOD (  11.08  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,39 +89,31 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 3/19/26 15:17, Bryan O'Donoghue wrote:
-> On 19/03/2026 13:08, Vladimir Zapolskiy wrote:
->>> Why do you want a media driver? Isn't PHY driver enough?
->>>
->> As for today CAMSS CSIPHY are already media devices, and a user applies media
->> specific properties to them, for instance media bus format, resolution etc.
->> Technically this might be removed from CAMSS, but if so, then it should be
->> done before this new PHY driver model is applied.
+On 19/03/2026 14:05, Neil Armstrong wrote:
+>> There's no reason to remove that from CAMSS - it would be an ABI break in user-space anyway.
 >>
->> --
->> Best wishes,
+>> The media entity in CAMSS msm_csiphyX handles format negotiation and pipeline routing. The PHY driver handles electrical configuration. They don't conflict and there multiple cited examples of this upstream already.
+> If csiphy component was only handling  electrical configuration, the only code handling csiphy would be phy API calls, not be part of the pipeline configuration. Today, it's a media element
 > 
-> There's no reason to remove that from CAMSS - it would be an ABI break
-> in user-space anyway.
-
-If technically CAMSS CSIPHY could be excluded from the list of CAMSS media
-subdevices, then for the sake of simplification it should be done for all
-supported platforms in advance, such a change will be independent from this
-particular phy series, and vice versa, this CAMSS only driver change will
-prepare a ground for media-less CAMSS CSIPHY device drivers, hence it shall
-precede this particular CAMSS CSIPHY series.
-
-For backward compatibility with userspace a noop stub will be good enough,
-it's not an issue at all.
-
-> The media entity in CAMSS msm_csiphyX handles format negotiation and
-> pipeline routing. The PHY driver handles electrical configuration. They
-> don't conflict and there multiple cited examples of this upstream already.
+> The whole CAMSS architecture is wrong, it should be modular, each hardware module should be an independent driver and all be connected via port/endpoint and configured with the media controller API.
 > 
+> If you_really_ want to move the "electrical configuration" part of the CSPIPHY out of camss frankendriver, fine, then first just create an internal PHY device as an aux device, then continue migrating_all_ CAMSS components into independent driver modules, then in the end re-architecture the whole DT description by adding a node per component with a proper port/endpoint representation to be configured via the media controller API.
+> 
+> Neil
 
--- 
-Best wishes,
-Vladimir
+Re-architecting the whole driver without breaking legacy code is well 
+out of scope.
+
+I'd note making a standalone CSIPHY driver 100% fits in with such a 
+goal. I don't think I've seen one good reason why CAMSS needs an aux 
+device and can't follow established upstream paradigms for Cadence and 
+Rockchip.
+
+Anyway I take the feedback on polarities and will in v5 of this patch 
+address.
+
+---
+bod
 
 -- 
 linux-phy mailing list
