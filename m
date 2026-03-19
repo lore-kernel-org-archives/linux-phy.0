@@ -4,133 +4,145 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 49C6C1091901
-	for <linux-phy@archiver.kernel.org>; Thu, 19 Mar 2026 17:40:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8E3F2109192C
+	for <linux-phy@archiver.kernel.org>; Thu, 19 Mar 2026 22:32:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
-	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=5EMTz3e//SLc77opVZYUqK3tXF+sD8U1gOsu0Ku6HI8=; b=HwbyxFsSkFUhQ6pGBb8W4q1Sn/
-	wwrNEnvIf0G+56QxsHjtqlUV7VMmmAJ7VFfXVG5lGujny3APbREX/6voxBb7PbumjbGnfFUByA7YQ
-	Q1D1bJvjiQssYAa6wwwkl8VDvbSg2gG9HXVurfqRcIU3KHZ1UZp9els+XkBs6BjgkSfpnG4+Guh9x
-	yd8BK+ZRQUyaiIyYUEIS/TC9Ck/aFBR1SJTLKfRKqebt7nb8OgysK/Pd4ZJMMtXQEH7IsJ5+6BLnJ
-	mkCucArfRg87nQ9FhaQmjT6uuGUcmusuIh21xIXjJqgNbIp53uBVOcCODniU/NInG20Z6dh+SbbCZ
-	qBpPk7sg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nEdLdU364E8HCNGBM7JNaBQV2+q7vr/eqjVbbyba7AE=; b=XE8jZbXBiLCcar
+	YpyaMhqIU64Ii3Wl6Tt+IXj8EcNjA6pEQ/rTx5yFoPbxq6ko5MrMJRpCWHhjxd6cawWOSY21C/dVJ
+	cnLqtuIH4VEeimd6ENxDZhxTX3/xl81hzhk5jVeTOPRYOouidsa6Qi+ePBgg/7MQUDOkBOzaF+bO0
+	NXIvtfbloVGPlidLXKfjQgK9WWh0zJlXkdgx9UK4t08cgTj2r0G3pDlw6mUXQmwDn9ZeiCPYYAMfd
+	ZGlXXKqgBbHrJVcdc8UQQGKlmuQ5UtuBL/59n5n57Fpk6FAyVoMfO+GRLASNaiZuJr6Mh0/LNC233
+	GVc7se7///EF+F90PV7A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w3HLl-0000000BDxv-3knF;
-	Thu, 19 Mar 2026 17:40:01 +0000
-Received: from mail-wm1-f45.google.com ([209.85.128.45])
+	id 1w3LvG-0000000BfAC-0I23;
+	Thu, 19 Mar 2026 22:32:58 +0000
+Received: from mail-francecentralazon11013009.outbound.protection.outlook.com ([40.107.162.9] helo=PA4PR04CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w3HLk-0000000BDw9-0CEQ
-	for linux-phy@lists.infradead.org;
-	Thu, 19 Mar 2026 17:40:01 +0000
-Received: by mail-wm1-f45.google.com with SMTP id 5b1f17b1804b1-48540d21f7dso13454985e9.0
-        for <linux-phy@lists.infradead.org>; Thu, 19 Mar 2026 10:39:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1773941998; x=1774546798; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=4DcGpNehVMlOMwMq5jxWCnF0zEBU9hVO79S4un3Z6Go=;
-        b=niLGANytlINbL1u9IYeD5BOUngOYGWJZmXAzyfqEzSpRnIA9uO2hiEAFtkqV9k7BKm
-         xkPylzLlIQ6jd66l3k9zCJTsUmQNiGq4hiORSeEV0Q3f3GYEY+JDDgStAtLA8XYtcyFP
-         t1koLgI81FSIGVvXTWGzm7H3gtiBQjO1xFq8z+u74Lx2FcuMkehyGek867HAgUL31nOP
-         +NTGTvtKS1rCvIzOckyCqrKrtmUJ8eRFiR1QhxKBbouJIikFN8rIyy8OoG5IijFMttUx
-         j0xYuJupejiWaPu4StW6Tw+9UIkaP2YS+V72TyjKkgSFvT8LvV62Cv1msXI30xkN2T+J
-         4H/w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1773941998; x=1774546798;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=4DcGpNehVMlOMwMq5jxWCnF0zEBU9hVO79S4un3Z6Go=;
-        b=F9Tn+Zw+WH4i4pA5cINhRHjmOE9v+lS8m6IfgZbAaqUJIF+Xt8QQ2024gWXVjS5EgY
-         5xFnHeXJ5bplTMwFXcyTrb84KQwvUxBuzXbHZsD8a5uzqz0DE5fgUIu/D785QdcW6DNq
-         KraDBL2wc9iDppnYohNFyP8BggGWswaz2KMLifSAk1NhyH5A0mEW+8BExVZ7nPzHn9ca
-         AeA7C4WypyEMrh+VC98FLNJOCSZ/WV5+FAr1Pr3pI9dWlDWSbtYA6ad1dywg4BgmYH/m
-         iyb20PMscrNYzQNxyeYSK/WA+5yhDm76NYkjRgmYIEnAigabhSJ6vUtqbiVIEjM2b6xU
-         pK1Q==
-X-Forwarded-Encrypted: i=1; AJvYcCUWqKRgWU0PXOxElgvl6Nj9hpD/B9knd3S9wXhU83b82NjzgLh9jxrnRqDn2y1n31DmJnONoboemew=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yy075E1TJdEcfy5sSKy8QBBizw8RmJFiDGolZpX9QZ3LJJ98Qju
-	v01RLeYccXNd2JKpOFXXVdEF0V4Zr1N9xvz6i+qyb2YmHesAVaKU1O4mUq4nJpnOITkwnKRcSug
-	ZXHm3jV+EDg==
-X-Gm-Gg: ATEYQzyTIyKH9kzxwW7OUu5foox/Fe/MNZxQl32+ULz6Kjgh6lQyi8XAbV1mIDdqkgV
-	5F/NrY5wcHBQF2IVIgikKiCvvTm2JCg6PxDm2wsHfQ5qiLuM3cLy4baIC9rVnTtR7IW9sIxnLk6
-	MriR/hnro5v7K6yLjjEydBb7/n2FsMyoyVS2XuIh+n2PszDIvfhVjeV5ikZFiaLMBcMr+JNlQqk
-	2rKF3xn/nBsi7isgTRH/8QfTQEVrzsO7VFYyOh5y4JatfOsVnNrvjkjVeClCbzl/M6k/z/dF61I
-	Hey6h7hq8rq50dlhg2VJyPsJBbRtRbLeXDxY0C/kbMeyOWhEiqrAy/s58BRwGTDzzVYHQouwV1h
-	3BAHiFLa4faJrev8kdnw/lkU6Vp3IgoPBwRk6L+pS/7nRLHbRgGskEbudGiCrulCW/fXcLvQCDb
-	pJtCyIeTFp2QmlfTfw4hTlcx+BoWm7sDuiUwxG5ptbuFe4D3iDGvkprlClKbvwNnPn+tXh3mhRf
-	jra
-X-Received: by 2002:a05:600c:3d90:b0:485:4535:73d with SMTP id 5b1f17b1804b1-486f442e607mr132291005e9.2.1773941997619;
-        Thu, 19 Mar 2026 10:39:57 -0700 (PDT)
-Received: from ?IPV6:2a01:e0a:106d:1080:55fd:bfb9:c88:691c? ([2a01:e0a:106d:1080:55fd:bfb9:c88:691c])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-486fc4d90f4sm49410245e9.1.2026.03.19.10.39.56
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 19 Mar 2026 10:39:57 -0700 (PDT)
-Message-ID: <117d9294-87ce-4060-9c8b-71190b649e64@linaro.org>
-Date: Thu, 19 Mar 2026 18:39:56 +0100
+	id 1w3LvD-0000000Bf9g-365u;
+	Thu, 19 Mar 2026 22:32:56 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=eXIisY8sJtwnV4659apnzDZjoFQg6xaYbA2PFpbDbgo0fdAvNRoyZ3ZB/AusJb5nLwvcnZmruLuIFHAPjaw6Fm14OKhrD/h0jUAwJ7kjaeMF23MBrJ6F04bDO7VXGMbS8si9bkk+qfI9lYj1DQKHfLvImsD/bCNA7U8bVc7A7AX0i2f5fEXNuLYu3oWrVC6gBRPM6WiPo29Hae/2DE+y3QTgzwt7snD2IXPz8JBublfbEL7m/zD/FQAFczIToFGdOrWC0l1rxLpx8Eqk5zdUqqwMhOod3+lT3qjF/055blmIh9Yva89kBeO90/vQtREPIhglzy2d8MqTfSSvOJlXtw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=sp/GfWK69gwrQc5CRDy0/bt/Jc9/I2kE1t3OvSA1dPY=;
+ b=EHWvJjo66cfZqMUwTwEqcXTAnD6h2NgRvoYSsRSLntRlshzGic6/wxNzVzmp1wAJbFtQr5PsGsg/2/22uQq/farjMLSR6nUgXznDaIxobTBSWwJTTQGnlUmPxxzUoGDNnIwpxbGvElh/7AhmrWeEywjkT84RcggH9cJx1q2QsobF8XV6jlFjaiMV3Vm2X/Oe+oKcs0yBOskxrQhrsZjr46i7Mk8ViYkiHxKPcV+ecLOMJ8469SpgiRD3VTMxXo3n1C4MV7BJ5j1lJ/3bEuEJnEd0CrsK3ttMTWwXaN3uQ9tji2JoWQiAVa8Cw1hEf2gid0f0GslZCM+ToDYu+e81Lw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=sp/GfWK69gwrQc5CRDy0/bt/Jc9/I2kE1t3OvSA1dPY=;
+ b=WPGK3avTA/eqX8LldGuG8vZk+h2hhjkZiXsXi9flwaHeTrkWggIIp+jFtRsJMfexhNQrzs72MhZLpa1G7iH7V+3bAfm1F8++YkOu493ULseFjXMIOId8pHUC36l1jtexjHz/yc95tL+po9NFQ8VyygVUAlTCi+eGwVNsFv2cZJszSOkE6uCxdUXkuRx7nR796vKsHu+J5lETNOi3snouN3JorepwILvKoOkFodi3juU4jNQAleTthWUAXJaMw2OxfCBZ9SfNW8c/oVm2NRHnX8dA/IPmtyHCK49u/+bYxr7KxlqFvqNbtt6mQM11O5eKav8ryQUjplHwZA5pKpfS9A==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AM9PR04MB8585.eurprd04.prod.outlook.com (2603:10a6:20b:438::13)
+ by GV4PR04MB11355.eurprd04.prod.outlook.com (2603:10a6:150:296::16) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9723.19; Thu, 19 Mar
+ 2026 22:32:42 +0000
+Received: from AM9PR04MB8585.eurprd04.prod.outlook.com
+ ([fe80::f010:fca8:7ef:62f4]) by AM9PR04MB8585.eurprd04.prod.outlook.com
+ ([fe80::f010:fca8:7ef:62f4%4]) with mapi id 15.20.9723.018; Thu, 19 Mar 2026
+ 22:32:40 +0000
+From: Vladimir Oltean <vladimir.oltean@nxp.com>
+To: linux-phy@lists.infradead.org
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	dri-devel@lists.freedesktop.org,
+	freedreno@lists.freedesktop.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-arm-msm@vger.kernel.org,
+	linux-can@vger.kernel.org,
+	linux-gpio@vger.kernel.org,
+	linux-ide@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-media@vger.kernel.org,
+	linux-pci@vger.kernel.org,
+	linux-renesas-soc@vger.kernel.org,
+	linux-riscv@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-samsung-soc@vger.kernel.org,
+	linux-scsi@vger.kernel.org,
+	linux-sunxi@lists.linux.dev,
+	linux-tegra@vger.kernel.org,
+	linux-usb@vger.kernel.org,
+	netdev@vger.kernel.org,
+	spacemit@lists.linux.dev,
+	UNGLinuxDriver@microchip.com,
+	Damien Le Moal <dlemoal@kernel.org>,
+	Niklas Cassel <cassel@kernel.org>
+Subject: [PATCH v5 phy-next 01/27] ata: add <linux/pm_runtime.h> where missing
+Date: Fri, 20 Mar 2026 00:32:15 +0200
+Message-ID: <20260319223241.1351137-2-vladimir.oltean@nxp.com>
+X-Mailer: git-send-email 2.43.0
+In-Reply-To: <20260319223241.1351137-1-vladimir.oltean@nxp.com>
+References: <20260319223241.1351137-1-vladimir.oltean@nxp.com>
+X-ClientProxiedBy: WA2P291CA0045.POLP291.PROD.OUTLOOK.COM
+ (2603:10a6:1d0:1f::19) To AM9PR04MB8585.eurprd04.prod.outlook.com
+ (2603:10a6:20b:438::13)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-From: Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH v4 2/2] phy: qcom-mipi-csi2: Add a CSI2 MIPI DPHY driver
-To: Bryan O'Donoghue <bod@kernel.org>,
- Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
- Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, linux-arm-msm@vger.kernel.org,
- linux-phy@lists.infradead.org, linux-media@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20260315-x1e-csi2-phy-v4-0-90c09203888d@linaro.org>
- <20260315-x1e-csi2-phy-v4-2-90c09203888d@linaro.org>
- <3f11de22-b729-4d06-b6c8-18e649e1979c@linaro.org>
- <80ddc2b4-d6f8-4e8d-a45e-69c05d100aa2@linaro.org>
- <16b10f17-ecd3-4cdd-ac3f-f64127d60ace@linaro.org>
- <ulenfus552ggobis4gmi7eh27tikdaxbgm2oj63b5l2vemlfxc@ib5f2xaqurj6>
- <26XTdUyQTB41Oc4D5HnMtSm_QpZRjlkljQRJVw-u1Zp3Ltn9s4LVU-LQkP6drdl3Z3GGssLCCbsVYPFEqssHcQ==@protonmail.internalid>
- <65e06b2e-eeb9-45af-97ac-4ae60f652361@linaro.org>
- <9578400d-30ac-4d8c-9295-ee4ec8af3b2c@kernel.org>
- <d6616fc0-75fb-47e2-96cd-ae81fa1a8e82@linaro.org>
- <f3c62284-ac78-42c6-a4f0-cd984b7124cd@linaro.org>
- <7eda931a-f30e-4e01-a130-996ec7f450d1@linaro.org>
- <a42f837c-4b90-4e0f-a98f-793fbd20a140@kernel.org>
-Content-Language: en-US, fr
-Autocrypt: addr=neil.armstrong@linaro.org; keydata=
- xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
- GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
- BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
- qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
- 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
- AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
- OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
- Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
- YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
- GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
- UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
- GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
- yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
- QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
- SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
- 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
- Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
- oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
- M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
- 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
- KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
- 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
- QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
-Organization: Linaro
-In-Reply-To: <a42f837c-4b90-4e0f-a98f-793fbd20a140@kernel.org>
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM9PR04MB8585:EE_|GV4PR04MB11355:EE_
+X-MS-Office365-Filtering-Correlation-Id: f991486c-b6e7-4470-c894-08de86076de7
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|366016|10070799003|1800799024|376014|7416014|22082099003|56012099003|18002099003;
+X-Microsoft-Antispam-Message-Info: ni/LtzVP003250LRDeQc7k67Fn3qKn8coAQ1u9g1wB8sHb0nY8ZhoJlMoqMdOih+c9eyO2I70xQALUFqSyzKBoqZVjAhaXGWZVek3xR8FAHRf7+mA0fuo/uarmZIfXWa5kZeVuw35Mpxt65Dk/6FM0W2tk8LXL7xF8RyT5N5LO6/1v1nR1E15FnhAq3OQx7kL3FyvhucTgFrFAqCL/W+t9nJ6X3qLYPp5b9q6pxzwJgON3Ew3dE9L916L8F/X6LKWcs9HdN3RXuRpZ99zOKgZWa9Fd+IEnEewiZ3pyzW5NnUHVD3ot4Gf0oAvhfmFMlEqB14K6HsrOFy3bk0fu4cnLWypa1krDt3YWT8na5QsDZePkUKxQCmDp5AFSRgk88H0iAkzprdAbSD9EyfTmi+qyuQp3LX46s0GG7g3B7/tKxig7wNkCh4fdjHYusrAU1P+jLJqp7/hlZKUiMB/GLV3Y7WdU8KnzML0jb3CKAgRJ4nQRR0yVGnlHR6iPc3jiK6eClRbAH4ngJCZE23O2Xo7yJr5YTRNGi6gNnsHzH0biUH2jbmOzdldqFfE6KgQrW2m0Sh3AxHCg0G+LZFdWhkz1lcxlSK3FIsDW49YeS51jVMrbpCM0ajrGEB/JXD7cqffRciZAgoqX+HiCRUtp+GkRTMjk1iKoUw/DIbwpwXy4ffGmLmbqhA8segJ2v4eB7e42QRomb9iiyIK40f/tx8XdqcD9mRuRrRx6QbHewLXRI=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM9PR04MB8585.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(366016)(10070799003)(1800799024)(376014)(7416014)(22082099003)(56012099003)(18002099003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 2
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?TsDZdn1D9lJJru6e+E/MtjMvE3BsC/eSk1iHJraQFWQFbOEM/tTYR4MD8wgM?=
+ =?us-ascii?Q?mvVbPgEBddKJSVylxqhj0P7CHxQnpc3LeSzApeg2iJCBfEfgSzAJtFaWhQip?=
+ =?us-ascii?Q?dOnk23E/rccNHpxm44b6SsqPsa6kHZt8JQc/Th3GJGDcHbUOsfw9CmLPa341?=
+ =?us-ascii?Q?2PrUp79l+UpM/cK94LfVzp6Tsk5/uvuE0hkA1JDLDJbRsSXIp2uOjQB6ynwl?=
+ =?us-ascii?Q?HSt6LOZd024xghJ4koihHSSrTsiguK2h7fAU4eROXobPLFn7kp3crXvy6XQz?=
+ =?us-ascii?Q?MGSN7sUEOBVVk5a5xDLMulNFUwWmz0DAX2qJsgVA/BOq+h/gmguBCm02HLMV?=
+ =?us-ascii?Q?2lI3k2PtLSushKx86VeGrAVMzp0mD5kuHU3VRRnh8KpuqLcBnIAhgJrXhMbe?=
+ =?us-ascii?Q?+0bEwqOgdeTY0U5nqWwQF2tz4yRN/K3Ch21zMSTYM0UBMh6EuyK9KnMQaf4v?=
+ =?us-ascii?Q?ITStG1BV0UNA0ntzpSwI/6yDHA5eFhP4xs3zsn8tP9g8rDpdZAEQ1z5s6ja3?=
+ =?us-ascii?Q?keLHdKzJzsp7S21YeaTTSRu/HHoeXHDA6TbjbYDzh1OUd6oP9uXWJdR/CWJr?=
+ =?us-ascii?Q?JU1iO6S4t1nT7PMRUIMPcvfbFcJrswB6oZCgzZDtZNrGf0gCI6h+muNMEzhe?=
+ =?us-ascii?Q?bIUhITd2SMKUhmQ0A8dR1wPI1WaVXGk+swGXYaafG/+cpsBBGGwyUnmSW2Xj?=
+ =?us-ascii?Q?j8m0cNJUbUlb+fuNf8DMVi1CRuIBrklewGualrhFpVVyOn2+Mpv2gmA6XrFd?=
+ =?us-ascii?Q?iZFBa1uDzRcggBtSYBpPpSnT9hZrsRU1YhFNxGBBzU+CzsCYBIIIkK+yIGK9?=
+ =?us-ascii?Q?L4iVbuGfwDAm8XaAet8yoPnGZjoRmyzHRLfQ+Ui2HOhsOCGwooVodj5RZCfD?=
+ =?us-ascii?Q?lKVsdCo5qvYXWQN23cvzNd33ocrCsLXOeOaeQ96o6B+s0EZYsHKpTU8zNt2w?=
+ =?us-ascii?Q?7rZ1NJSvlnZyc27igscO0vOPhKuAzljadIjmhd8Izf4lCXCceLDiAb1jXdQL?=
+ =?us-ascii?Q?0yLY/CumKl2uR6MF8EJ2/Y+14VxkZwR3mMczRSncp/gIcVdKOcF9DZx1N42S?=
+ =?us-ascii?Q?zLqT805lVMW/aQ1/p2uPrnUUjaZlUPVKD/8E8uKPtrUXrN+f2L3AB6xf1UCI?=
+ =?us-ascii?Q?ZErQq38iy7P3OU8VuYLvjh2rFmVCR7Urcjf7nwjK17yCJ8qz9Qdy1D0vyL1k?=
+ =?us-ascii?Q?DWJGgaaWLkLWNEhYZK5dHzgURsPzSDHYElSZL2xv1k+jXBfaXDPdHp5p03V9?=
+ =?us-ascii?Q?ijCdmd7miFxuvqg/GPaAfK9hnfl+g1LqoJu/zQfTM3ZPYVYCXkvESosasjc/?=
+ =?us-ascii?Q?lzMGSHN9clGnya4yNhkJRpvypO/kzD+Sc80A7OOlv618NqM6LJmPaD5PrXE+?=
+ =?us-ascii?Q?bMO7d07FzDfX6fCx/Oy3YPchH9jckG/AC/Q1TUdUbCxxkRYXxeWKU5DyJsZM?=
+ =?us-ascii?Q?+/LbwtZRHHoqZ5IQfBO6cehp340Awy7EU44q8vaX04+vbASVAyeP8V5ZHlni?=
+ =?us-ascii?Q?rrqeIsP0tOQSi2L7vtsuF9f0fgVk/UQ8kNPWGTjDDQTV5t2y0b6MtXc/MzyW?=
+ =?us-ascii?Q?VHV7G1WagDQ4qJ5+AmH9t3mqNphQaE6cl0e4o0wSaBRrw7SOOEu29xg5EPF7?=
+ =?us-ascii?Q?0nGZbU9phe9FdWyAiIUk3lIQ/dFzjhd0lS0XT6T4cT27G4YxZwUiElXZFeFZ?=
+ =?us-ascii?Q?Pjv6e/gWLxudnHUAUAkEji6sO/G80B3hGwr2xnjwnQLn5AWn0mJA4escT/rD?=
+ =?us-ascii?Q?/jlehz+b0JK3NUdtsr01e/frs8CwwcCctMxQGLAiy0M37hlN+ME+XxFPajiD?=
+X-MS-Exchange-AntiSpam-MessageData-1: ZlSXl+TlgibzFXdBloOHE0hap3gXQcttSbo=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: f991486c-b6e7-4470-c894-08de86076de7
+X-MS-Exchange-CrossTenant-AuthSource: AM9PR04MB8585.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 Mar 2026 22:32:40.1130
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: HqOrMr9EcZHrILstsJfktmVS8cGgWeUlvtIjyQ6ztgqudmoF1tlGF3mCxYrtPdGTLasGUBrZTX0Md2eXImNwRg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV4PR04MB11355
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260319_104000_133048_1023DDE6 
-X-CRM114-Status: GOOD (  21.88  )
+X-CRM114-CacheID: sfid-20260319_153255_796908_2D019572 
+X-CRM114-Status: UNSURE (   9.99  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -142,60 +154,95 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: Neil Armstrong <neil.armstrong@linaro.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 3/19/26 17:56, Bryan O'Donoghue wrote:
-> On 19/03/2026 16:08, Neil Armstrong wrote:
->> On 3/19/26 16:18, Bryan O'Donoghue wrote:
->>> On 19/03/2026 14:56, Vladimir Zapolskiy wrote:
->>>>> There's no reason to remove that from CAMSS - it would be an ABI break
->>>>> in user-space anyway.
->>>>
->>>> If technically CAMSS CSIPHY could be excluded from the list of CAMSS media
->>>> subdevices, then for the sake of simplification it should be done for all
->>>> supported platforms in advance, such a change will be independent from this
->>>> particular phy series, and vice versa, this CAMSS only driver change will
->>>> prepare a ground for media-less CAMSS CSIPHY device drivers, hence it shall
->>>> precede this particular CAMSS CSIPHY series.
->>>>
->>>> For backward compatibility with userspace a noop stub will be good enough,
->>>> it's not an issue at all.
->>>
->>> The standalone PHY driver doesn't require removing the CSIPHY media
->>> entity from CAMSS. They serve different purposes and coexist - its important to have a NOP from user-space perspective for legacy and indeed for new implementations.
->>>
->>> How the PHY gets represented in the kernel is of zero interest to user-sapce.
->>>
->>> That said, stubbing out the media entity is independent work that can happen in any order and IMO is a separate debate. Whether or not CSIPHY init sequences live inside of a monolithic CAMSS driver or live inside off a discrete csiphy driver is not related to the media graph.
->>>
->>> Happy to have that debate - and if indicated, carefully apply patches separately.
->>
->> So what does this actually solves ?
->>
->> Neil
-> Per-PHY voltage rails, per-PHY power domains and per-PHY OPP scaling.
-> 
-> Using the PHY API instead of rolling our own, as well as separate nodes in the DT.
-> 
-> We've been getting away with power-domains, opp scaling etc by sheer luck. The feedback from the list alone now addressed in this driver makes the conversion worthwhile.
+It appears that libahci.c, ahci.c as well as the ahci_brcm, ahci_ceva
+and ahci_qoriq drivers are using runtime PM operations without including
+<linux/pm_runtime.h>. This header is somehow being indirectly provided
+by <linux/phy/phy.h>, which would like to drop it (none of the functions
+it exports need it).
 
-The PHY API doesn't solve that, having proper nodes solves that, you could add a separate csiphy node, add a port/endpoint between camss and the csiphy and attach a camss aux driver to the node, and it would have the same effect with little code change.
-And this could be done for all the CAMSS hardware elements incrementally, and if you wish the move the electrical phy part under the phy API then you just spin a PHY aux driver controlled by the csiphy media element.
+Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
+Acked-by: Damien Le Moal <dlemoal@kernel.org>
+---
+Cc: Damien Le Moal <dlemoal@kernel.org>
+Cc: Niklas Cassel <cassel@kernel.org>
 
-I understand you find it simpler to use the phys property in camss, but it has plenty of drawbacks like not be able to describe data link properties specific to the CSIPHY properties or easily describe new hardware layouts without having a fixed association table between phy-names and whatever CAMSS media elements interconnections.
+v2->v5: none
+v1->v2: collect tag
+---
+ drivers/ata/ahci.c       | 1 +
+ drivers/ata/ahci_brcm.c  | 1 +
+ drivers/ata/ahci_ceva.c  | 1 +
+ drivers/ata/ahci_qoriq.c | 1 +
+ drivers/ata/libahci.c    | 1 +
+ 5 files changed, 5 insertions(+)
 
-My question would be that if we were to completely split out the CAMSS into several separate nodes linked with port/endpoint graph, to which hardware element the phys would be associated to ? is there a fixed connection between a CSID and a CSIPHY ? is seems the CSID gen2 & gen3 can actually connect to different CSIPHY meaning a CSIPHY is a not simple electrical PHY but can be dynamically connected to different consumers.
-There's no way we can handle that with the PHY API.
-
-Neil
-
-> 
-> ---
-> bod
+diff --git a/drivers/ata/ahci.c b/drivers/ata/ahci.c
+index 931d0081169b..aa3c4949c4ab 100644
+--- a/drivers/ata/ahci.c
++++ b/drivers/ata/ahci.c
+@@ -26,6 +26,7 @@
+ #include <linux/device.h>
+ #include <linux/dmi.h>
+ #include <linux/gfp.h>
++#include <linux/pm_runtime.h>
+ #include <scsi/scsi_host.h>
+ #include <scsi/scsi_cmnd.h>
+ #include <linux/libata.h>
+diff --git a/drivers/ata/ahci_brcm.c b/drivers/ata/ahci_brcm.c
+index 29be74fedcf0..48460e515722 100644
+--- a/drivers/ata/ahci_brcm.c
++++ b/drivers/ata/ahci_brcm.c
+@@ -16,6 +16,7 @@
+ #include <linux/module.h>
+ #include <linux/of.h>
+ #include <linux/platform_device.h>
++#include <linux/pm_runtime.h>
+ #include <linux/reset.h>
+ #include <linux/string.h>
+ 
+diff --git a/drivers/ata/ahci_ceva.c b/drivers/ata/ahci_ceva.c
+index 2d6a08c23d6a..3938bf378341 100644
+--- a/drivers/ata/ahci_ceva.c
++++ b/drivers/ata/ahci_ceva.c
+@@ -12,6 +12,7 @@
+ #include <linux/module.h>
+ #include <linux/of.h>
+ #include <linux/platform_device.h>
++#include <linux/pm_runtime.h>
+ #include <linux/reset.h>
+ #include "ahci.h"
+ 
+diff --git a/drivers/ata/ahci_qoriq.c b/drivers/ata/ahci_qoriq.c
+index 0dec1a17e5b1..409152bfefb6 100644
+--- a/drivers/ata/ahci_qoriq.c
++++ b/drivers/ata/ahci_qoriq.c
+@@ -14,6 +14,7 @@
+ #include <linux/device.h>
+ #include <linux/of.h>
+ #include <linux/platform_device.h>
++#include <linux/pm_runtime.h>
+ #include <linux/libata.h>
+ #include "ahci.h"
+ 
+diff --git a/drivers/ata/libahci.c b/drivers/ata/libahci.c
+index c79abdfcd7a9..e0de4703a4f2 100644
+--- a/drivers/ata/libahci.c
++++ b/drivers/ata/libahci.c
+@@ -30,6 +30,7 @@
+ #include <scsi/scsi_cmnd.h>
+ #include <linux/libata.h>
+ #include <linux/pci.h>
++#include <linux/pm_runtime.h>
+ #include "ahci.h"
+ #include "libata.h"
+ 
+-- 
+2.43.0
 
 
 -- 
