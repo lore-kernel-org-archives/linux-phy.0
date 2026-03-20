@@ -4,60 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 362311098789
-	for <linux-phy@archiver.kernel.org>; Fri, 20 Mar 2026 14:26:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9303B1099B35
+	for <linux-phy@archiver.kernel.org>; Fri, 20 Mar 2026 19:08:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HV3fPPS7fqSDK3M360XdfXeW/owp3PrqkL+Gb8mbNNU=; b=OZw2FkTXyv8bW+
-	0Xi5S5QLT8XdvzSEor8nBF7Vo0lw0Lw7aQOqtOYSCqDoUkPtIqMRxndCp84fk8dVhaDfB2/jeMzoE
-	u7LFZBveGaMDyO12Xl27U984zgl4xBhfse+EagY/WTHxgvrRSPutQsnagoYtFZTMs8ljwUVhrqxLu
-	R6SrW80LL4c8EQLLA4I6bE1jcewiHFimYjTCffKL6+YrIAfgXKFN/vudRIHFSLbH0hvM07dC+qu5n
-	rjmVkPzkCLnTuLx48ZtvKGATaiHK/ZMIb9RAMJrkG9JksQBNOJBR6/i5WM8r9u9/zIhuU6bf5UFV2
-	oNyaSHIbvK5WMP7ph2Xg==;
+	List-Owner; bh=2aKXsILhhWNi1LCk6q8WK7Q2JGhD+Rd8iuMqipJDCHI=; b=Qe2S6JFKAXYsJ2
+	wtG/uEEM9NR7aIbFFNZP7pYdzZ9PYkuZs+SexCpLGSMhwAC0TDBmV8Zsm1MgzpnGs8Poy6jDHEAEq
+	bCJal2K2FaH1JxqZfbRJQ8zMc0ibYuKTckHmfYeOxBJv0DC+1ZVOWB34QEtBFx4N4rUQrRz/GTR7r
+	6qfq80jOpiEDYOPj1Yvpy5jktJGWRExLlukoF0Py1A6E1bw4guwUDPI7J0hrzGeP8pq1EMIlQOsfJ
+	nEEHuQ5M6dJjBrNdFgNLwlYylNSWU5fKdOLDjfOeW14Ddp5MJCIpmEpnvK5A1Q9pTemqnEiv7w3kL
+	DFfSUK2KePrlWMBRsFtw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w3aoK-0000000CwCM-364i;
-	Fri, 20 Mar 2026 14:26:48 +0000
-Received: from mgamail.intel.com ([198.175.65.21])
+	id 1w3fDI-0000000DQ08-0C0L;
+	Fri, 20 Mar 2026 19:08:52 +0000
+Received: from mgamail.intel.com ([198.175.65.20])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w3aoH-0000000CwBt-1KTf;
-	Fri, 20 Mar 2026 14:26:46 +0000
+	id 1w3fDE-0000000DPzb-3VhM;
+	Fri, 20 Mar 2026 19:08:51 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1774016806; x=1805552806;
+  t=1774033729; x=1805569729;
   h=date:from:to:cc:subject:message-id:references:
    mime-version:in-reply-to;
-  bh=y1KAz+Qo2KIAojrgIrwzWp+iq0iub9vjOkzH9qUQnOM=;
-  b=WmRGpYMbMstTFdcA+yhGvvIxilivrtr/AnegBdQI7eCnXJXvujKkdIZu
-   TQurrUTIfWkuRWfeS0RZPnUA9rvVaP+X10goEZdYItXXCfWfQZmYChgBx
-   TwJzD9vHlCMKTZOqxrQvEvWg0T9WdV7S6ZgeAAN/mZEQ5tLknE3FFwL7u
-   TxywCGnNuRHaiBm2x0Kmjn6PwPwVZvaTZw1QsLSlMsbsa3qvs1MNZ+ozz
-   fcHKCioTPihpYbPZwkfi1mz7cqcgavSCn9lxRtVmFREEMMX4dntbC3vRp
-   c2VZNRo9THdrmN6mWymD8c2MrTIa9y7ne56MfVseNofzM/2PdS9yiQV2u
-   Q==;
-X-CSE-ConnectionGUID: 1iIxEOyYR/OVQoiSvgUWlQ==
-X-CSE-MsgGUID: m0NWECRySYWBnenAOoWRaw==
-X-IronPort-AV: E=McAfee;i="6800,10657,11735"; a="74994307"
+  bh=7WNZM6g9R3CLfh6cWhvFwVZyrccgJ4B0ROAyC9BBclU=;
+  b=hsnPl9PuA4ePLELW2nWJeNM/4paj/mzgLVQBsvlULuU/q5oQ3iq4qora
+   PattH3FuLG8s5ez6rPi/oX+vUUKqLhtYXaOTEkvnnqlRfUGYikbfI8bHN
+   9Rgl25CF12t7BkS4+ckqJeiCtsKpvIRECel3Lyh1WLgZ+4BcpghHKbBft
+   IM8GSdFGWIpahpe7b3A3lgqUhOCH7XKJlR6cxDV8WFzhb85wqYN1uYjOc
+   ihv+wUEUXXiL4corzrc7ztB185GfTLe9gwY5G/O5NO8DTpTFWJz+iOfKQ
+   6/Xcp6ioyHpjS6WFjFQBvsgi2yTfGcmilzp/uwB6+nvWZZ838PjLFB7hr
+   w==;
+X-CSE-ConnectionGUID: bSASFQRnS7GIPyn6Nx8nFg==
+X-CSE-MsgGUID: zw8zW2xFSLKUv3Yz0xvURA==
+X-IronPort-AV: E=McAfee;i="6800,10657,11735"; a="74829516"
 X-IronPort-AV: E=Sophos;i="6.23,130,1770624000"; 
-   d="scan'208";a="74994307"
-Received: from orviesa006.jf.intel.com ([10.64.159.146])
-  by orvoesa113.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 20 Mar 2026 07:26:45 -0700
-X-CSE-ConnectionGUID: DJ9w2MqSQ0SB7oNoKNuhOg==
-X-CSE-MsgGUID: nldR9LigRtu7fAmhfFsyXg==
+   d="scan'208";a="74829516"
+Received: from orviesa008.jf.intel.com ([10.64.159.148])
+  by orvoesa112.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 20 Mar 2026 12:08:48 -0700
+X-CSE-ConnectionGUID: rrwaT2HISvqx5APreFqssA==
+X-CSE-MsgGUID: oniAF6+OTwupmekwYzMoCw==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.23,130,1770624000"; 
-   d="scan'208";a="222392533"
-Received: from lkp-server02.sh.intel.com (HELO a51c2a36b9df) ([10.239.97.151])
-  by orviesa006.jf.intel.com with ESMTP; 20 Mar 2026 07:26:39 -0700
-Received: from kbuild by a51c2a36b9df with local (Exim 4.98.2)
+   d="scan'208";a="223404640"
+Received: from lkp-server02.sh.intel.com (HELO ef9b23065726) ([10.239.97.151])
+  by orviesa008.jf.intel.com with ESMTP; 20 Mar 2026 12:08:43 -0700
+Received: from kbuild by ef9b23065726 with local (Exim 4.98.2)
 	(envelope-from <lkp@intel.com>)
-	id 1w3ank-000000002Sz-0eKM;
-	Fri, 20 Mar 2026 14:26:14 +0000
-Date: Fri, 20 Mar 2026 22:23:29 +0800
+	id 1w3fBq-0000000006z-2ufW;
+	Fri, 20 Mar 2026 19:07:47 +0000
+Date: Sat, 21 Mar 2026 03:06:32 +0800
 From: kernel test robot <lkp@intel.com>
 To: Nora Schiffer <nora.schiffer@ew.tq-group.com>,
 	Andrew Lunn <andrew+netdev@lunn.ch>,
@@ -66,8 +66,8 @@ To: Nora Schiffer <nora.schiffer@ew.tq-group.com>,
 	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
 	Nishanth Menon <nm@ti.com>, Vignesh Raghavendra <vigneshr@ti.com>,
 	Tero Kristo <kristo@kernel.org>
-Cc: oe-kbuild-all@lists.linux.dev, netdev@vger.kernel.org,
-	Siddharth Vadapalli <s-vadapalli@ti.com>,
+Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
+	netdev@vger.kernel.org, Siddharth Vadapalli <s-vadapalli@ti.com>,
 	Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzk@kernel.org>,
 	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
@@ -78,14 +78,14 @@ Cc: oe-kbuild-all@lists.linux.dev, netdev@vger.kernel.org,
 	Nora Schiffer <nora.schiffer@ew.tq-group.com>
 Subject: Re: [PATCH 6/7] net: ethernet: ti: am65-cpsw: add support for J722S
  SoC family
-Message-ID: <202603202224.XkGRjqgx-lkp@intel.com>
+Message-ID: <202603210254.ABl6TQWc-lkp@intel.com>
 References: <4cc3dd9fab460d35215c8f97496b9ae16c5bcb22.1773751309.git.nora.schiffer@ew.tq-group.com>
 MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <4cc3dd9fab460d35215c8f97496b9ae16c5bcb22.1773751309.git.nora.schiffer@ew.tq-group.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260320_072645_435058_3E4F4E50 
-X-CRM114-Status: GOOD (  11.58  )
+X-CRM114-CacheID: sfid-20260320_120848_936830_AC60093B 
+X-CRM114-Status: GOOD (  11.04  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -116,20 +116,26 @@ url:    https://github.com/intel-lab-lkp/linux/commits/Nora-Schiffer/dt-bindings
 base:   https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git for-next
 patch link:    https://lore.kernel.org/r/4cc3dd9fab460d35215c8f97496b9ae16c5bcb22.1773751309.git.nora.schiffer%40ew.tq-group.com
 patch subject: [PATCH 6/7] net: ethernet: ti: am65-cpsw: add support for J722S SoC family
-config: arm64-defconfig (https://download.01.org/0day-ci/archive/20260320/202603202224.XkGRjqgx-lkp@intel.com/config)
-compiler: aarch64-linux-gcc (GCC) 15.2.0
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20260320/202603202224.XkGRjqgx-lkp@intel.com/reproduce)
+config: arm64-allmodconfig (https://download.01.org/0day-ci/archive/20260321/202603210254.ABl6TQWc-lkp@intel.com/config)
+compiler: clang version 19.1.7 (https://github.com/llvm/llvm-project cd708029e0b2869e80abe31ddb175f7c35361f90)
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20260321/202603210254.ABl6TQWc-lkp@intel.com/reproduce)
 
 If you fix the issue in a separate patch/commit (i.e. not just a new version of
 the same patch/commit), kindly add following tags
 | Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202603202224.XkGRjqgx-lkp@intel.com/
+| Closes: https://lore.kernel.org/oe-kbuild-all/202603210254.ABl6TQWc-lkp@intel.com/
 
 All errors (new ones prefixed by >>):
 
->> drivers/net/ethernet/ti/am65-cpsw-nuss.c:3470:54: error: 'AM64_CPSW_QUIRK_CUT_THRU' undeclared here (not in a function)
+   drivers/net/ethernet/ti/am65-cpsw-nuss.c:762:9: warning: cast to smaller integer type 'enum am65_cpsw_tx_buf_type' from 'void *' [-Wvoid-pointer-to-enum-cast]
+     762 |         return (enum am65_cpsw_tx_buf_type)k3_cppi_desc_pool_desc_info(tx_chn->desc_pool,
+         |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     763 |                                                                        desc_idx);
+         |                                                                        ~~~~~~~~~
+>> drivers/net/ethernet/ti/am65-cpsw-nuss.c:3470:47: error: use of undeclared identifier 'AM64_CPSW_QUIRK_CUT_THRU'
     3470 |         .quirks = AM64_CPSW_QUIRK_DMA_RX_TDOWN_IRQ | AM64_CPSW_QUIRK_CUT_THRU,
-         |                                                      ^~~~~~~~~~~~~~~~~~~~~~~~
+         |                                                      ^
+   1 warning and 1 error generated.
 
 
 vim +/AM64_CPSW_QUIRK_CUT_THRU +3470 drivers/net/ethernet/ti/am65-cpsw-nuss.c
