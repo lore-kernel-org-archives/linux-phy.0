@@ -4,88 +4,124 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9303B1099B35
-	for <linux-phy@archiver.kernel.org>; Fri, 20 Mar 2026 19:08:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4A0E21099B58
+	for <linux-phy@archiver.kernel.org>; Sat, 21 Mar 2026 01:15:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2aKXsILhhWNi1LCk6q8WK7Q2JGhD+Rd8iuMqipJDCHI=; b=Qe2S6JFKAXYsJ2
-	wtG/uEEM9NR7aIbFFNZP7pYdzZ9PYkuZs+SexCpLGSMhwAC0TDBmV8Zsm1MgzpnGs8Poy6jDHEAEq
-	bCJal2K2FaH1JxqZfbRJQ8zMc0ibYuKTckHmfYeOxBJv0DC+1ZVOWB34QEtBFx4N4rUQrRz/GTR7r
-	6qfq80jOpiEDYOPj1Yvpy5jktJGWRExLlukoF0Py1A6E1bw4guwUDPI7J0hrzGeP8pq1EMIlQOsfJ
-	nEEHuQ5M6dJjBrNdFgNLwlYylNSWU5fKdOLDjfOeW14Ddp5MJCIpmEpnvK5A1Q9pTemqnEiv7w3kL
-	DFfSUK2KePrlWMBRsFtw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=kNAfpRU/OJyQ9MY5gZEOiNE3IzPF+r9Gb7TGwIHS3FQ=; b=smiJtmKasaVgHb
+	oT0PeILVSlxg5KSueJ5Hr0Av4IzwUAp3v126f1cOL664XFvknvv2C77k8uBQ1iBreWxUVQdso8xBM
+	WSafNjX/YFQZDTCwd1FB8wZjutqjqOhZUxs+KD2w9cR2eFj8Zx+fl2VWlmETXA/axfD9LM1in5Jpu
+	YTC9QkJjxX4iSpKwQ67IJ7bSvg6BSPWVQDyIgzvCs9gPbJWomz351pxcOaoWgVGaRuI/kHOZhhCFy
+	uw4O2vOXnL7cA6XYMhnPUcyDEkpL2PfePHNycEctuFmuw4aNv5jDVczf5zvlIMMr/kL8AFXwV1DxE
+	0svTEOFTT4eB7ghnceOg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w3fDI-0000000DQ08-0C0L;
-	Fri, 20 Mar 2026 19:08:52 +0000
-Received: from mgamail.intel.com ([198.175.65.20])
+	id 1w3kvg-0000000DrZG-1ngz;
+	Sat, 21 Mar 2026 01:15:04 +0000
+Received: from mail-swedencentralazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c202::7] helo=GVXPR05CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w3fDE-0000000DPzb-3VhM;
-	Fri, 20 Mar 2026 19:08:51 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1774033729; x=1805569729;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=7WNZM6g9R3CLfh6cWhvFwVZyrccgJ4B0ROAyC9BBclU=;
-  b=hsnPl9PuA4ePLELW2nWJeNM/4paj/mzgLVQBsvlULuU/q5oQ3iq4qora
-   PattH3FuLG8s5ez6rPi/oX+vUUKqLhtYXaOTEkvnnqlRfUGYikbfI8bHN
-   9Rgl25CF12t7BkS4+ckqJeiCtsKpvIRECel3Lyh1WLgZ+4BcpghHKbBft
-   IM8GSdFGWIpahpe7b3A3lgqUhOCH7XKJlR6cxDV8WFzhb85wqYN1uYjOc
-   ihv+wUEUXXiL4corzrc7ztB185GfTLe9gwY5G/O5NO8DTpTFWJz+iOfKQ
-   6/Xcp6ioyHpjS6WFjFQBvsgi2yTfGcmilzp/uwB6+nvWZZ838PjLFB7hr
-   w==;
-X-CSE-ConnectionGUID: bSASFQRnS7GIPyn6Nx8nFg==
-X-CSE-MsgGUID: zw8zW2xFSLKUv3Yz0xvURA==
-X-IronPort-AV: E=McAfee;i="6800,10657,11735"; a="74829516"
-X-IronPort-AV: E=Sophos;i="6.23,130,1770624000"; 
-   d="scan'208";a="74829516"
-Received: from orviesa008.jf.intel.com ([10.64.159.148])
-  by orvoesa112.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 20 Mar 2026 12:08:48 -0700
-X-CSE-ConnectionGUID: rrwaT2HISvqx5APreFqssA==
-X-CSE-MsgGUID: oniAF6+OTwupmekwYzMoCw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.23,130,1770624000"; 
-   d="scan'208";a="223404640"
-Received: from lkp-server02.sh.intel.com (HELO ef9b23065726) ([10.239.97.151])
-  by orviesa008.jf.intel.com with ESMTP; 20 Mar 2026 12:08:43 -0700
-Received: from kbuild by ef9b23065726 with local (Exim 4.98.2)
-	(envelope-from <lkp@intel.com>)
-	id 1w3fBq-0000000006z-2ufW;
-	Fri, 20 Mar 2026 19:07:47 +0000
-Date: Sat, 21 Mar 2026 03:06:32 +0800
-From: kernel test robot <lkp@intel.com>
-To: Nora Schiffer <nora.schiffer@ew.tq-group.com>,
-	Andrew Lunn <andrew+netdev@lunn.ch>,
-	"David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
-	Nishanth Menon <nm@ti.com>, Vignesh Raghavendra <vigneshr@ti.com>,
-	Tero Kristo <kristo@kernel.org>
-Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
-	netdev@vger.kernel.org, Siddharth Vadapalli <s-vadapalli@ti.com>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	id 1w3kve-0000000DrYN-24HU
+	for linux-phy@lists.infradead.org;
+	Sat, 21 Mar 2026 01:15:03 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=prJikQqQYHtclCLBTEZCgsq4WpuaJ5APNkTiia4WUd4mh5Wq66NfHUwOXaKX35ZeZeppjXd6+erU/fQTR6us4iGx16vTqdGMOG9P+FAbCTTyT1sjJvqT3TUQABY7tdSindQt5bPVBE9kTGmCQv9qShWjqxmHYK6lzDBpHJA+/nsstbtRtL9zuGkpSLgZOGvsTk3z0ZSBO4EwiS7Du/FkaJCQccRdjkI5xQgJ+u6gGJ0jCmon0FRt/Pcs0xTHpWJBPo36XktQ+zrrfT0hQfM7LTUeOMjqtzPq6mfWIrjBPdE+bXe/0l6xtdW1jonC+jPpbG/7kV1yYbsdlZvvKq/tng==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=/0cMpv5CeALb2BGgrwQJtD78Tt3oAhU6GOp6WM/P1GA=;
+ b=OkB28xeWZpCPTlazBcn/vLv143AAdqwZTVE2mDyR2ocWR4K8pp3zERyS1jfnNv9KA+KjFt3QYxvhYbYbTJ+JYoDgfKDzyaY1AxQKk1gYwp0J80IEFN9vTP5IbRhIxTc1tT7GV1ovdfN9eOLjgZdQbI2uxB9T1WzgcwZPg0uaXA4EGEQdWfw4C7zWo2pZWVNrndBXwRPZBBsSRj4MdE1hFnUkJGoXyYqle8HUEnczq0S8bzHgwFcBoJQvE2jthcCwQX3XS2dvk1YwTu6pRtBc4qTKzVPPSPUgY7B+Lbx4e0yl8/8e3rI7FIDf8KIMfcUmZqbtx9slOcF42EWBeEYQiw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=/0cMpv5CeALb2BGgrwQJtD78Tt3oAhU6GOp6WM/P1GA=;
+ b=LCppQ+XcaNewh+cZlmt5eHE8P11g1NbJghphI+N113zGLq6zw1rwha+YZplicPzq/TaMVhXqv6w9bigf+muaRmQyp9J/eOC5QSCzh8dL2lsBwkskBF3QdgrfSk4dy5aDK2257TXJ54z2WDiObhbWS+osHGBlfmcX6Kv1A/q6idos65MVSts2AjexATqNzRwaDAczw66Y+5DxHGnqRvr9odWVoPOUXNv1MIZQQ+Q3EbwG37NGRx/ZkxxCzCXxsSnWUiQF1mm5DtEoUOW6m7pjAaPIaHmOEBR20dut8NtkOpaWfLk3PYi4L8nP4ndkwgSayPEUUXTZrJlapPcVllakfg==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AM9PR04MB8585.eurprd04.prod.outlook.com (2603:10a6:20b:438::13)
+ by VE1PR04MB7360.eurprd04.prod.outlook.com (2603:10a6:800:1a3::14) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9723.19; Sat, 21 Mar
+ 2026 01:14:38 +0000
+Received: from AM9PR04MB8585.eurprd04.prod.outlook.com
+ ([fe80::f010:fca8:7ef:62f4]) by AM9PR04MB8585.eurprd04.prod.outlook.com
+ ([fe80::f010:fca8:7ef:62f4%4]) with mapi id 15.20.9723.018; Sat, 21 Mar 2026
+ 01:14:39 +0000
+From: Vladimir Oltean <vladimir.oltean@nxp.com>
+To: linux-phy@lists.infradead.org
+Cc: netdev@vger.kernel.org,
+	Ioana Ciornei <ioana.ciornei@nxp.com>,
+	Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
-	linux@ew.tq-group.com,
-	Nora Schiffer <nora.schiffer@ew.tq-group.com>
-Subject: Re: [PATCH 6/7] net: ethernet: ti: am65-cpsw: add support for J722S
- SoC family
-Message-ID: <202603210254.ABl6TQWc-lkp@intel.com>
-References: <4cc3dd9fab460d35215c8f97496b9ae16c5bcb22.1773751309.git.nora.schiffer@ew.tq-group.com>
+	Josua Mayer <josua@solid-run.com>,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH phy-next 0/3] Lynx 28G: better init(), exit(), power_on(), power_off()
+Date: Sat, 21 Mar 2026 03:14:48 +0200
+Message-Id: <20260321011451.1557091-1-vladimir.oltean@nxp.com>
+X-Mailer: git-send-email 2.34.1
+X-ClientProxiedBy: AM0PR10CA0039.EURPRD10.PROD.OUTLOOK.COM
+ (2603:10a6:20b:150::19) To AM9PR04MB8585.eurprd04.prod.outlook.com
+ (2603:10a6:20b:438::13)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <4cc3dd9fab460d35215c8f97496b9ae16c5bcb22.1773751309.git.nora.schiffer@ew.tq-group.com>
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM9PR04MB8585:EE_|VE1PR04MB7360:EE_
+X-MS-Office365-Filtering-Correlation-Id: 4b928a22-592b-4927-5cff-08de86e73929
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|366016|10070799003|376014|1800799024|18002099003|56012099003;
+X-Microsoft-Antispam-Message-Info: z03rBMh5AehSO2fcf/cAP+h/D3UWEP4YF7OvzUziQTu9mHY4kZ0MWF7bI6+VPuirgnZeEcfTOgy75iOEvy3Qzds9jby1i6rxi7BlPUq+MyVF68H+7pbWNaqc7YlxQpDKw8WREPXt1nVkgMI7vFjloab+CpzPBIrgP9WdTptvwQao0IRNrsPg3OaPoc17SupcteaUmEBSdueRqSWkVsiOmY5EdL/mVohqmJWCFp9dp4DcssTwxVnf1apjSxYHcMcm8iYcb/Pi8Bqu157YV9FMpGETxQfDRZDHKJwTSF9y9XFDfJIGlCNKKbI9APrjcD6J9psDgD7QG9+uvXSYLdlotCnmdEefdkztqFRi7Fxamg4YdV/Q4QUf4UOC7CsBTCVpzap+IXwQXOZYTUqhtQHATbr882jaGdhIAGtAxZcMYrGNm94tzj0kP3dsNudkhmY1YSqBn7t5cSIqnVDZrPH6b9GeTsOfwc67I0WFF1SlmPJYcrdA8TUV/zHN27AUbvywUndN3ojXCVJUYFcj4vL0hanbxS5W5fK4oxdG9Ccp03XrIj9erf6Et6yU0Hbvwr46DAMsz5xrYON/wX5anXVDwZRKeM9sT9h8n1lH5LeOlznBAJcZqr6YAKahA6UfXm5+fV8YsZ+j3LwBEqAa1Ev9JHj7FIvQALTKPPXpvjQpoM9FtFNyqjYSDY6taJVCWpHEJXvzLfXSXxLWwSi+TwbGODtmTwvnoFL1CLovrneIOCQ=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM9PR04MB8585.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(366016)(10070799003)(376014)(1800799024)(18002099003)(56012099003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?ZJ7eToPnSph2l3PFx4HmCDmlSSon2kO++a4uDvLFNWHLFoUshj0qOQOTvR8B?=
+ =?us-ascii?Q?/kMVfdvXtk+MHmoHjOzNEsr2mFZLgLRh2CwEEbqOSfjr501LtOKfe2Wn4dSl?=
+ =?us-ascii?Q?xe/vEd4fPBJ4eCuiPVq4m8aRmpuU2nPG1o94bpjprWVriaJvdgJk1C9kdUPT?=
+ =?us-ascii?Q?z+DgbdAvlJtjyTqmnnsUxudKQADnqMyETC0cQDYafaRmAlf0Ob187xJ0WSIg?=
+ =?us-ascii?Q?4DlkcafhI+YdpT7+2X8hHvxaYaHZhNrZ7AAk4goRqc/SwFB2nafOrWmgcLjV?=
+ =?us-ascii?Q?8/7cF0gIF5uHFyp2K9+FYfd3zcbVjpc1RUqKpPw0gUVDI86d2dU6bLtPKIc7?=
+ =?us-ascii?Q?fkgKgZkbtBhI9p2CcdAXtPKmLWUhkEluafIrN2LorPPizvyyAbGftwU6pnpY?=
+ =?us-ascii?Q?57sCPfMWjRZpTg703O+8B8NjaXzU88RgkzWLUoVVli84RxPmkVxTs91mOtGw?=
+ =?us-ascii?Q?hJ06RmsUNCym0rFPfCpzub1Y73RyAEz914jj/mbtf7C6pandgKi56z9zJO14?=
+ =?us-ascii?Q?9V+EXn2Xo0sATmQ2Ft769brICtmPnE7R6mmksr8cMxMHhq4SkH66ydX21I9X?=
+ =?us-ascii?Q?+f2vGQFVsVOOqEnHg7AaiK9bih+JXaVY3B8S99sFPFRguFNQxGB9lZ1FFS9j?=
+ =?us-ascii?Q?as5XU1K1XDq0i6X9KcakunQmlvTGxKztt7QjWhCW5+xWhevQ6mb9INfD6hhm?=
+ =?us-ascii?Q?tiJHH5RoEAfncJuG5Lvl4UjEvivAVuJkwj67N6F0iSQCfvWQmDs0c45DN4RY?=
+ =?us-ascii?Q?O5q4ktr6cH33lQlKDiG/QW3VDa85hyD/XOGq9kjSKvAbBOGYCGop+5W/7wMx?=
+ =?us-ascii?Q?jaMLn+cFQXaroNiDxZltWE/zz9pj+xPpvYGI+VKRCqs2zgG/HBPCHglVC1VL?=
+ =?us-ascii?Q?spiXlGvmR8jVwaBx2pSa3YR2qSAjTszfCxHFgDF5PVZRRfEM/V6SHKzqbi2l?=
+ =?us-ascii?Q?6Mcrt9mZ7lkfUwzxqJLn+zqMpyS6epVWjKtuLzgU/SnbNKptxBj2sIalM8mH?=
+ =?us-ascii?Q?mhhdumaje35BXXwHs/6L0J8bqyuM+YPY3sDW3Z5z+EtfZjshC17ov5YJlRxg?=
+ =?us-ascii?Q?8HKAIfKvHyzxmDHmUtJpcwBMyrtn9hbbsRvuL1Yj/st2lNYDW8uJaOGeU10g?=
+ =?us-ascii?Q?VrAOK2ujDvwJhiq3f4j751qKC3RZqwo8Ld375N8PqjfCZ7GFpIBSse0D7Gjy?=
+ =?us-ascii?Q?BsV1ZcRC9ADyxZeNqnODA6QEABsfrfc7KES+K4ahuAa2pouH1Q+dxUgAuYjF?=
+ =?us-ascii?Q?KPwLPR18sq4qV84xqDnwrIn8npxFWal2eM6P0gQH2RUdUG4FKChM1UabZv2F?=
+ =?us-ascii?Q?qDY1ipkDYkVVcXsMAQCBVh+K29yOhxcFwym3B0NU8FXDmeLa+99w/pLNn8OQ?=
+ =?us-ascii?Q?pSLQSdOMV4nzplbcZVgicb3FhESq5ZjexvbEJKIwjaN9ynC259KKFoAcn5tJ?=
+ =?us-ascii?Q?TKclGCEaTfoeEJGpu8IC1IDm+cX7KJMy0OUBQ3Ep/1FX4CHEpi7Jsfy6GI6e?=
+ =?us-ascii?Q?ThrWiddwPrXpAONhkJAhzd72NEmftWD7x5VQMviTWMO9AsfQz2QR9UcEIzL7?=
+ =?us-ascii?Q?DUxiXIrtd+4AWHmSEayoW2moz/0v51FAV/plFS2XmyJB+20wARF7pUqhnSeX?=
+ =?us-ascii?Q?342mJWCH/Vwx3bhv6bbj4QSe2EdRJ/UyP1aOscSoUK6kejNoncdjEAnp0wZ5?=
+ =?us-ascii?Q?4p+RyR204ZcOnl0n43PRIhWn/gyTJOLj2jPQmN9M57YXk3OwtKfvo8geWRlO?=
+ =?us-ascii?Q?mXlS7qXDbBtRRKy0fKy+FQwLuuMfBfi9K4iPnGtdq2zTJYbWrOqG?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4b928a22-592b-4927-5cff-08de86e73929
+X-MS-Exchange-CrossTenant-AuthSource: AM9PR04MB8585.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 21 Mar 2026 01:14:38.9470
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: Dw0U+3A7+Vpmr/cuiRgprhKOvY0kJn2OL2yPe9qNAQvN6TFmx55ucPT3l07KO04S3/0idMTc4JYErUQnPa06aA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB7360
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260320_120848_936830_AC60093B 
-X-CRM114-Status: GOOD (  11.04  )
+X-CRM114-CacheID: sfid-20260320_181502_593595_45D72EAA 
+X-CRM114-Status: UNSURE (   7.70  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,56 +138,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Nora,
+This is a set of 3 improvements to the 28G Lynx SerDes driver as found
+on NXP Layerscape:
+- avoid kernel hangs if lane resets/halts fail due to other bugs
+- actually have phy_power_down() cut power from lanes, not just halt them
+- allow consumers to call phy_exit(), to balance the phy->init_count
 
-kernel test robot noticed the following build errors:
+Especially change 3 will allow further development of the dpaa2-eth
+consumer. To permit phy_exit() and other patches in net-next to be
+submitted in this development cycle without functionally breaking
+networking, please apply this change on top of v7.0-rc1 and provide
+it as a stable tag to be pulled in netdev.
 
-[auto build test ERROR on robh/for-next]
-[also build test ERROR on net-next/main net/main linus/master v7.0-rc4 next-20260319]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
+Vladimir Oltean (3):
+  phy: lynx-28g: use timeouts when waiting for lane halt and reset
+  phy: lynx-28g: truly power the lanes up or down
+  phy: lynx-28g: implement phy_exit() operation
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Nora-Schiffer/dt-bindings-phy-ti-phy-j721e-wiz-Add-ti-j722s-wiz-10g-compatible/20260320-033344
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git for-next
-patch link:    https://lore.kernel.org/r/4cc3dd9fab460d35215c8f97496b9ae16c5bcb22.1773751309.git.nora.schiffer%40ew.tq-group.com
-patch subject: [PATCH 6/7] net: ethernet: ti: am65-cpsw: add support for J722S SoC family
-config: arm64-allmodconfig (https://download.01.org/0day-ci/archive/20260321/202603210254.ABl6TQWc-lkp@intel.com/config)
-compiler: clang version 19.1.7 (https://github.com/llvm/llvm-project cd708029e0b2869e80abe31ddb175f7c35361f90)
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20260321/202603210254.ABl6TQWc-lkp@intel.com/reproduce)
-
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202603210254.ABl6TQWc-lkp@intel.com/
-
-All errors (new ones prefixed by >>):
-
-   drivers/net/ethernet/ti/am65-cpsw-nuss.c:762:9: warning: cast to smaller integer type 'enum am65_cpsw_tx_buf_type' from 'void *' [-Wvoid-pointer-to-enum-cast]
-     762 |         return (enum am65_cpsw_tx_buf_type)k3_cppi_desc_pool_desc_info(tx_chn->desc_pool,
-         |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-     763 |                                                                        desc_idx);
-         |                                                                        ~~~~~~~~~
->> drivers/net/ethernet/ti/am65-cpsw-nuss.c:3470:47: error: use of undeclared identifier 'AM64_CPSW_QUIRK_CUT_THRU'
-    3470 |         .quirks = AM64_CPSW_QUIRK_DMA_RX_TDOWN_IRQ | AM64_CPSW_QUIRK_CUT_THRU,
-         |                                                      ^
-   1 warning and 1 error generated.
-
-
-vim +/AM64_CPSW_QUIRK_CUT_THRU +3470 drivers/net/ethernet/ti/am65-cpsw-nuss.c
-
-  3468	
-  3469	static const struct am65_cpsw_pdata j722s_cpswxg_pdata = {
-> 3470		.quirks = AM64_CPSW_QUIRK_DMA_RX_TDOWN_IRQ | AM64_CPSW_QUIRK_CUT_THRU,
-  3471		.ale_dev_id = "am64-cpswxg",
-  3472		.fdqring_mode = K3_RINGACC_RING_MODE_RING,
-  3473		.extra_modes = BIT(PHY_INTERFACE_MODE_SGMII),
-  3474	};
-  3475	
+ drivers/phy/freescale/phy-fsl-lynx-28g.c | 190 +++++++++++++++++++----
+ 1 file changed, 157 insertions(+), 33 deletions(-)
 
 -- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+2.34.1
+
 
 -- 
 linux-phy mailing list
