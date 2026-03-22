@@ -4,84 +4,115 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 625A6FC72C4
-	for <linux-phy@archiver.kernel.org>; Sun, 22 Mar 2026 16:45:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5B402D58CA1
+	for <linux-phy@archiver.kernel.org>; Sun, 22 Mar 2026 22:24:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DmBigWIHQwWnpt/1J3QXb62QTChvTNQw+U3r6c6bE28=; b=Q99w+BQzH6AOjf
-	3XRIIUpE9CcJ3SuVM1ILJ6eqaEWJ4FrKYBir+OreqmCOX/uD/SC23YFDco48cY7pylGmmvZxCpQOz
-	+GircImTomQAWhY5j9QC2N7I7ywZSrBFyjJ3kB2k2YXc1PThVpyymlJdFNpO3KiYiy5mY0oRhQrlv
-	WpqedcdmBd2J+t0ZYIEMQQl1ABdmFTCRpZPpPb1vgc4uzHzpg5lt1/BNONe/L+U91H6UPRSAad/La
-	j4BGpJr7CNeZBvhfOHWMrihKaa0TvWR8s2g3+SrEO6KkvrDzLHvKQYvJk8Swrh4I+oBhFbcHIV+OU
-	YILbkgkFf23V+F4KzmJg==;
+	List-Owner; bh=gva8Va/7Se/0LwzeoM+cyzGu/y5Sd64yax7XIFaJkIg=; b=11fyA4AOYmr7Eb
+	EpIK1+lQ3T9LP3K8KhUsMxDkwyUqTlXJH/rzFel3WsYsdFREm91PI5KfLXcOIeS1dn+WG2TPpXQ8e
+	N5VMwEg2LJFzF0XB5r+P1mwxBYTyxTA+H+9IM8khXYdFh7U/8xMLC0i9ktDy+f0WazSyLsBl51FF1
+	/4CzOoo6ts2HiyuVw0arPGLxvi2fIlBZ3lnRjdEWh/MLMPv3UUIs++x4ipS9y4WDr87uHMVw6TnFX
+	nvCUpkd7XD/o35vQXtsUWyVgfFei9uB1uIrx/8g8eWLfr72zBrwBZAdnKkNq5zqLTNE/zmD32cfo0
+	9d7KapRUL2ng1/7iHqRw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w4Lvg-0000000FW28-2nU0;
-	Sun, 22 Mar 2026 16:45:32 +0000
-Received: from mgamail.intel.com ([192.198.163.17])
+	id 1w4RDk-0000000FiQd-1yvE;
+	Sun, 22 Mar 2026 22:24:32 +0000
+Received: from mail-dy1-x132c.google.com ([2607:f8b0:4864:20::132c])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w4Lvd-0000000FW1e-1pSw
+	id 1w4RDg-0000000FiPp-2iqu
 	for linux-phy@lists.infradead.org;
-	Sun, 22 Mar 2026 16:45:31 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1774197929; x=1805733929;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=rGui68uRyg3X6940x/LNfy9+wopMGRcwkbytlfYAgxw=;
-  b=dJgjekb1Db+LEXyDo7Yvy69NddDAL34CBtntFBo1MX4lmzMCkPR9gG+q
-   M2cct1ab83EiMy8Xzwdl9iSGoS5O+8MSXCZIVlfOXHWaYS1SvVxVqE7ne
-   qc8D2g/vGSc9v0GEti6Nhv9BKFEUmrBbNFkPLuoG7bOhQt40zbjOQqRl9
-   0SwtgyYrgSzt6+wiM861jspaFQkm9I18ukDc6M+nvk9j2xUPPPxLSY+RD
-   EcuHrQIQFaL/1cpc4bWS8/cmQKY37yHYKbPw4O9ieBmOXF3CQITPl+mM7
-   Y4U64CCy04H3cWMkeTbYM9BDm2t0ggLTjJNkgLKEqBhsufKyZAIRM5Efu
-   Q==;
-X-CSE-ConnectionGUID: kgZ4WOg5RzO57nGrf3nP1g==
-X-CSE-MsgGUID: emD5AEuESFGscojA23Pfyw==
-X-IronPort-AV: E=McAfee;i="6800,10657,11737"; a="75118686"
-X-IronPort-AV: E=Sophos;i="6.23,135,1770624000"; 
-   d="scan'208";a="75118686"
-Received: from fmviesa002.fm.intel.com ([10.60.135.142])
-  by fmvoesa111.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 22 Mar 2026 09:45:27 -0700
-X-CSE-ConnectionGUID: SXflohIkSweq+msEphRqWA==
-X-CSE-MsgGUID: AuNdDOZfQ2a4F3et6wkiZg==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.23,135,1770624000"; 
-   d="scan'208";a="246829831"
-Received: from lkp-server02.sh.intel.com (HELO d7fefbca0d04) ([10.239.97.151])
-  by fmviesa002.fm.intel.com with ESMTP; 22 Mar 2026 09:45:24 -0700
-Received: from kbuild by d7fefbca0d04 with local (Exim 4.98.2)
-	(envelope-from <lkp@intel.com>)
-	id 1w4LvK-000000002Of-3ofZ;
-	Sun, 22 Mar 2026 16:45:12 +0000
-Date: Mon, 23 Mar 2026 00:44:13 +0800
-From: kernel test robot <lkp@intel.com>
-To: Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>
-Cc: oe-kbuild-all@lists.linux.dev, Bryan O'Donoghue <bod@kernel.org>,
-	Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-media@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v4 2/2] phy: qcom-mipi-csi2: Add a CSI2 MIPI DPHY driver
-Message-ID: <202603230048.ZxbvVL5L-lkp@intel.com>
-References: <20260315-x1e-csi2-phy-v4-2-90c09203888d@linaro.org>
+	Sun, 22 Mar 2026 22:24:30 +0000
+Received: by mail-dy1-x132c.google.com with SMTP id 5a478bee46e88-2c0ecaae7dfso6138569eec.1
+        for <linux-phy@lists.infradead.org>; Sun, 22 Mar 2026 15:24:27 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1774218267; x=1774823067; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=wHlux91S1pcszks5LnQqDKbd7Lhdihe1iwVw4ZIiPgU=;
+        b=gxd8CJTZ9AQODd25sqVcrR1WH+FRPYbsmqZHvqGDv56KQbQ3qbIfAz83UJWdMuLZNH
+         XXw4ctwRdZkj/cg5vMeh1IwuGpNzRXqHGO+o0S3/9j0P46H3YgcObQqrf9N4G3gQGKBz
+         TNQ+D35/iC9AQ8CdEHsfk0pjKajVKikrel5ujvhRh3mKuUD4dpI6UNKLKNFHXZlD7cBk
+         jGH7Pmpv8Xd7B6NlpZdo/XNquSIstvFioTJMFLGc2YT/jEUGtP/YqcP6hLISvAjg3W2e
+         LGB8BaCCHKXqUr6+EEDrau/M1A8YkFxr6/U5vUTRs+uArut5Jl6eqX2ZuQzuzR9DEnMi
+         8S3Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1774218267; x=1774823067;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=wHlux91S1pcszks5LnQqDKbd7Lhdihe1iwVw4ZIiPgU=;
+        b=Awjuqm9NCe0gUTqfRWFgyokSz73WFi6lah/xJ01KD+62gbfLAXNENbysPCTWuNQvjI
+         Pugd4hCPFmxg195Gl9JfQ6Z2mcr7AhWR/tA8vm0EMVW7+hvtZf1P9YUtAP35R7UeDg6x
+         aD1b/gh9Vz2k/lZNtCJPRt7gMe9/2hZQF30JlCvQlUOAUzwUFegYQP2/slzzPa/IpC3K
+         TenNwMHpJJLiZtUuPTu3JwXi25ys8enM6bgLljH94e+4rLNvFePsk36g3sEDE3qNW4TQ
+         6wGAuQI0sJGnY89U/7B1Zyy6Em91FaeBZxdmtnfVoRAllO7tpVbUEVV8sbidzrAKi6tB
+         P7lA==
+X-Forwarded-Encrypted: i=1; AJvYcCUIXUy2jY6KjndQzXTpLo61BIx/3P9Ecere9ENvjFpkxyJcgXOHY+KR7Lwwe81jPkFMLphNBQuJeds=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyePyoK0NdsMKB7kuWgQnVHH6IUshvLV1ZSN8zy6d3Ap/3+tJBo
+	knk+ImvPgwzphbrs3aiJ+Mbxug/8EoQU6mX2xWdYqPLjWzd4kDkujKSM
+X-Gm-Gg: ATEYQzzVAo9Qv9ztt7qdnqfj1O/PSx9jtFvO8KsMcM0wScouxhryNOLgBoqFeuP1R1U
+	IUybEEajzO68JDzbsdJvYbjCCX3MWeP05cxEH7zmkzpFoWELBVc9rhXEQxgNd1MZq6CE58VAexI
+	SuZaR27kfnFNHMTSvzBgr6kHzUNTdFLfi+yGW176+cZNcv/9t1K8EAahaMRqfZcqYvJSzB1qsJR
+	jwG/DPk60v5MPCGkUPjKabduD+KZPUs9xc2u3pGNX0jdpYqrS+hEG5EP2zAqED2IEXZlRocbYfo
+	Aprlw0PdxDHTWMrY8TwV1jiyI+EfUUIMF+TWWAM/lbQv3tC5eYsbyo/YFHAuAMV8NWsV3NuHny2
+	nLwiXg71NhB7wV6HzFPreOqaEjjSmJ0UUTFRo5dG1xf04v+VHPrVIx26ntUKZQGXz8j6sZSKtXq
+	tNACiD5vN2kvBnganNPCo95k9Ve8DwVJlLiNijoh/Z3ncvQbt+YslLC4Ap/1Hq0CZo/xV1h8zRd
+	/o=
+X-Received: by 2002:a05:7300:134a:b0:2c1:7ca:ceb1 with SMTP id 5a478bee46e88-2c109567522mr4864099eec.6.1774218266887;
+        Sun, 22 Mar 2026 15:24:26 -0700 (PDT)
+Received: from google.com ([2a00:79e0:2ebe:8:b768:22ed:3eba:aeb3])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-2c10b1a88e5sm13452469eec.13.2026.03.22.15.24.23
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 22 Mar 2026 15:24:26 -0700 (PDT)
+Date: Sun, 22 Mar 2026 15:24:21 -0700
+From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
+To: Romain Gantois <romain.gantois@bootlin.com>
+Cc: MyungJoo Ham <myungjoo.ham@samsung.com>, 
+	Chanwoo Choi <cw00.choi@samsung.com>, Guenter Roeck <linux@roeck-us.net>, 
+	Peter Rosin <peda@axentia.se>, Jonathan Cameron <jic23@kernel.org>, 
+	David Lechner <dlechner@baylibre.com>, Nuno =?utf-8?B?U8Oh?= <nuno.sa@analog.com>, 
+	Andy Shevchenko <andy@kernel.org>, Lars-Peter Clausen <lars@metafoo.de>, 
+	Michael Hennerich <Michael.Hennerich@analog.com>, Mariel Tinaco <Mariel.Tinaco@analog.com>, 
+	Kevin Tsai <ktsai@capellamicro.com>, Linus Walleij <linus.walleij@linaro.org>, 
+	Eugen Hristev <eugen.hristev@linaro.org>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Sebastian Reichel <sre@kernel.org>, Chen-Yu Tsai <wens@csie.org>, 
+	Hans de Goede <hansg@kernel.org>, Support Opensource <support.opensource@diasemi.com>, 
+	Paul Cercueil <paul@crapouillou.net>, Iskren Chernev <me@iskren.info>, 
+	Krzysztof Kozlowski <krzk@kernel.org>, Marek Szyprowski <m.szyprowski@samsung.com>, 
+	Matheus Castello <matheus@castello.eng.br>, Saravanan Sekar <sravanhome@gmail.com>, 
+	Matthias Brugger <matthias.bgg@gmail.com>, 
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>, Casey Connolly <casey.connolly@linaro.org>, 
+	Pali =?utf-8?B?Um9ow6Fy?= <pali@kernel.org>, Orson Zhai <orsonzhai@gmail.com>, 
+	Baolin Wang <baolin.wang@linux.alibaba.com>, Chunyan Zhang <zhang.lyra@gmail.com>, 
+	Amit Kucheria <amitk@kernel.org>, Thara Gopinath <thara.gopinath@gmail.com>, 
+	"Rafael J. Wysocki" <rafael@kernel.org>, Daniel Lezcano <daniel.lezcano@linaro.org>, 
+	Zhang Rui <rui.zhang@intel.com>, Lukasz Luba <lukasz.luba@arm.com>, 
+	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>, Liam Girdwood <lgirdwood@gmail.com>, 
+	Mark Brown <broonie@kernel.org>, Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>, 
+	Sylwester Nawrocki <s.nawrocki@samsung.com>, Olivier Moysan <olivier.moysan@foss.st.com>, 
+	Arnaud Pouliquen <arnaud.pouliquen@foss.st.com>, Maxime Coquelin <mcoquelin.stm32@gmail.com>, 
+	Alexandre Torgue <alexandre.torgue@foss.st.com>, Thomas Petazzoni <thomas.petazzoni@bootlin.com>, 
+	linux-kernel@vger.kernel.org, linux-hwmon@vger.kernel.org, linux-iio@vger.kernel.org, 
+	linux-input@vger.kernel.org, linux-phy@lists.infradead.org, linux-pm@vger.kernel.org, 
+	linux-mips@vger.kernel.org, linux-mediatek@lists.infradead.org, 
+	linux-arm-msm@vger.kernel.org, linux-sound@vger.kernel.org, 
+	linux-stm32@st-md-mailman.stormreply.com, Sebastian Reichel <sebastian.reichel@collabora.com>, 
+	Andy Shevchenko <andriy.shevchenko@intel.com>
+Subject: Re: [PATCH v2 2/2] iio: inkern: Use namespaced exports
+Message-ID: <acBr-W2ILu9tnMyd@google.com>
+References: <20251209-iio-inkern-use-namespaced-exports-v2-0-9799a33c4b7f@bootlin.com>
+ <20251209-iio-inkern-use-namespaced-exports-v2-2-9799a33c4b7f@bootlin.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260315-x1e-csi2-phy-v4-2-90c09203888d@linaro.org>
+In-Reply-To: <20251209-iio-inkern-use-namespaced-exports-v2-2-9799a33c4b7f@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260322_094530_379046_A193E2E5 
-X-CRM114-Status: UNSURE (   9.96  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260322_152428_695200_A6FF206E 
+X-CRM114-Status: GOOD (  12.66  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,56 +129,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Bryan,
+On Tue, Dec 09, 2025 at 09:25:56AM +0100, Romain Gantois wrote:
+> Use namespaced exports for IIO consumer API functions.
+> 
+> This will make it easier to manage the IIO export surface. Consumer drivers
+> will only be provided access to a specific set of functions, thereby
+> restricting usage of internal IIO functions by other parts of the kernel.
+> 
+> This change cannot be split into several parts without breaking
+> bisectability, thus all of the affected drivers are modified at once.
+> 
+> Acked-by: Sebastian Reichel <sebastian.reichel@collabora.com> # for power-supply
+> Acked-by: Guenter Roeck <linux@roeck-us.net>
+> Reviewed-by: Andy Shevchenko <andriy.shevchenko@intel.com>
+> Signed-off-by: Romain Gantois <romain.gantois@bootlin.com>
 
-kernel test robot noticed the following build warnings:
+For input:
 
-[auto build test WARNING on c824345288d11e269ce41b36c105715bc2286050]
+Acked-by: Dmitry Torokhov <dmitry.torokhov@gmail.com>
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Bryan-O-Donoghue/dt-bindings-phy-qcom-Add-CSI2-C-PHY-DPHY-schema/20260316-081353
-base:   c824345288d11e269ce41b36c105715bc2286050
-patch link:    https://lore.kernel.org/r/20260315-x1e-csi2-phy-v4-2-90c09203888d%40linaro.org
-patch subject: [PATCH v4 2/2] phy: qcom-mipi-csi2: Add a CSI2 MIPI DPHY driver
-config: arc-allyesconfig (https://download.01.org/0day-ci/archive/20260323/202603230048.ZxbvVL5L-lkp@intel.com/config)
-compiler: arc-linux-gcc (GCC) 15.2.0
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20260323/202603230048.ZxbvVL5L-lkp@intel.com/reproduce)
-
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202603230048.ZxbvVL5L-lkp@intel.com/
-
-All warnings (new ones prefixed by >>):
-
-   drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c: In function 'phy_qcom_mipi_csi2_power_off':
->> drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c:153:13: warning: unused variable 'i' [-Wunused-variable]
-     153 |         int i;
-         |             ^
-
-
-vim +/i +153 drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c
-
-   149	
-   150	static int phy_qcom_mipi_csi2_power_off(struct phy *phy)
-   151	{
-   152		struct mipi_csi2phy_device *csi2phy = phy_get_drvdata(phy);
- > 153		int i;
-   154	
-   155		for (int i = 0; i < csi2phy->num_pds; i++)
-   156			dev_pm_genpd_set_performance_state(csi2phy->pds[i], 0);
-   157	
-   158		clk_bulk_disable_unprepare(csi2phy->soc_cfg->num_clk,
-   159					   csi2phy->clks);
-   160		regulator_bulk_disable(csi2phy->soc_cfg->num_supplies,
-   161				       csi2phy->supplies);
-   162	
-   163		return 0;
-   164	}
-   165	
+Thanks.
 
 -- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+Dmitry
 
 -- 
 linux-phy mailing list
