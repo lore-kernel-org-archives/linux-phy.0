@@ -4,72 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 209B2D58CBB
-	for <linux-phy@archiver.kernel.org>; Mon, 23 Mar 2026 01:54:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 81A5AD58CBB
+	for <linux-phy@archiver.kernel.org>; Mon, 23 Mar 2026 01:54:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/u7dE5JXrS8Veci9XzMiod5yRO8mtMU+/T3y/x51x/M=; b=jO8gzRrqGbfdqM
-	k4EEQtamKSVU0/34EP4boMw5h/WlBSJfwDfhI1JsMKbgEoygc+QQQno1E6AtFMQXwF7IUJFiTAnic
-	VqVvVAYcE6Bvpz8ZGKOEMCkhcmnfu9olhrsBm3V++LsTVTxhNGqbq0BuBxj2k9s8R7CDmHG3Xqc7M
-	8KbktOyaVDTNcanBZTb7z43gEvmMX2GuLpccmaB/QMkPZls6R9u7PKtua7Hp1Xjp/milNiLAqynTh
-	fsOgpOpoiqx6hoHNJPy6dN2Q4R+PqbLg+75rr2BQcBWGMISWQmhlfWcAupglfBueKyf1/Fv1766cv
-	XtdfyRN0SyX+RaNC0OqA==;
+	List-Owner; bh=SwtnE+yTw1Ec+1LJqqNFmhNoS/IdTKvxg62LFRNuJdg=; b=jnUBurRE29Kv9N
+	8gYHpiyXm065MRHy3DgL0DogI68IpmD69fccBhEAjDkTLofCdqTmFpBvNrtcb6uXuqzgxmq6mk7DU
+	h3hq1yFOcTrBu4DxxINdpgIWUg4CWmd8RZknafMI1zS8WWTJR/wM1/JarQ8T5PrUZwcY7eLJKsGb/
+	pbVD+4X0qOJlwsUS3OgqdnFi09iRPbmUnMUZKQREgRTcrpUAWwKgHXdOv7+W1zzEstvsnD1B61+SD
+	X2LTEcWccL3GXRSG9Qm5zeU6WwSNPsWGc/LJ5tEJWeffBZ1nclt9B2ZzIaR5I+4tVN3mXHAfVqRRr
+	E9RZvty86A3eWYHHh3aQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w4UVI-0000000FsDQ-3cMv;
-	Mon, 23 Mar 2026 01:54:52 +0000
-Received: from mail-dy1-x132f.google.com ([2607:f8b0:4864:20::132f])
+	id 1w4UVM-0000000FsEG-0S8R;
+	Mon, 23 Mar 2026 01:54:56 +0000
+Received: from mail-dl1-x122d.google.com ([2607:f8b0:4864:20::122d])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w4UVF-0000000FsCm-40Me
+	id 1w4UVI-0000000FsDJ-49G8
 	for linux-phy@lists.infradead.org;
-	Mon, 23 Mar 2026 01:54:51 +0000
-Received: by mail-dy1-x132f.google.com with SMTP id 5a478bee46e88-2c107ef474fso4398389eec.0
-        for <linux-phy@lists.infradead.org>; Sun, 22 Mar 2026 18:54:49 -0700 (PDT)
+	Mon, 23 Mar 2026 01:54:54 +0000
+Received: by mail-dl1-x122d.google.com with SMTP id a92af1059eb24-126ea4b77adso3523268c88.1
+        for <linux-phy@lists.infradead.org>; Sun, 22 Mar 2026 18:54:52 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1774230889; x=1774835689; darn=lists.infradead.org;
+        d=gmail.com; s=20230601; t=1774230892; x=1774835692; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=xQXLY86FxuKQON46KYMFrgiDaURA8SjvslLPqZRssqU=;
-        b=S59wGHl+SlZk/rQCAW1vuUhCry9iJ/0nT5NeUY52G5l4ncuAoR8J8T2OxbaXUINz6S
-         qXTKKbQH/212zZ2XETW5AlF1cVoHpXrvBBVocTb9a7geRfO38ISM4ha9HuogIZoeuAMC
-         lH3UJZcHmjLa+9gVQXeupdumev14RDVzg1Ta1pEBc8ZH6C1aedw8Sw2iSEDJ0EofjsqG
-         aC1g0ScsbdlXVQ1Lh5VfTmC4PSv1jkA6yAZNCya6BMs1RsKqPwx17TrONVy7lzk2EUUH
-         GOtrIoqVfyStPeRh05FGQGpIKVn3k7lnB7eed0+33zB+ORh+SFW/VdKya1KjxKj7oU9a
-         wI/w==
+        bh=L0G/uhHXfu21xXv3gnOSiW9nh+0t2XQiNOcz2tPqgk4=;
+        b=D8sL+8ThXQLGNlQa1CeKvGaIUcd1Nro+si4mIFMUnMnuAsv61fiCRnR9EzbWuWiHW5
+         F0dVHNcybKoYqWIlDTZgzHTKRvNZiy1Mu+ff1hfThoSRvAXTP/KK1A0hKk2USkz4Gpxn
+         SLThPAllrhC1w1n0dhDvFGU/Jockf8tyZMmBB/OSVYSaGjENYB5ZqhoR5m3yh02+IyoH
+         qFA8fg1L/yGWYXc2jJPHcU4fxmRwcYaLXxtymUUTnDrNyKFL4FWM4LyC/pjRNIA1kuOl
+         VNP+39uYo3lFdyYfNVpSee6+EAFZ/8C9lUAkQnISbolXNaArXYGbSeliAsTiKqAUzNlb
+         sb9Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1774230889; x=1774835689;
+        d=1e100.net; s=20251104; t=1774230892; x=1774835692;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to;
-        bh=xQXLY86FxuKQON46KYMFrgiDaURA8SjvslLPqZRssqU=;
-        b=asSj6gU3KBXLYTqx0tS4fN40ZDAEaiZkfbvFkUyV5l2qt3duTqN0OTuztluBHmq5pF
-         FIWbELBbYaZlmh1jlIpgECk2K2ZrP2zT+UezGdUG3lDryrMp+keb0aoX76/yEi44xWk7
-         OnCjWjadT6vWtjpcAWz/jHHLL2aLRLXrkrmv/uorSp0Nhchv9T8ydxpYXZlLy1egfTif
-         XtqL4jym5Sq5KeTRDPxAWyluWNAA42m9A0uZUGk8KCZury9dFXBOAguKNm17CUJBSAZQ
-         lLwUOz4Mxyk4/R+R0fDl6W8Q7GFOvR0La/WwRbUlpabgbCxVlmWmSX2k0cqBVuW9GuYc
-         l4jw==
-X-Forwarded-Encrypted: i=1; AJvYcCVbOOBCR+x8IoaAhkGlkbAWQng+RL+KcrQgla/M+26mxkc6+y47ftU+xnfmFdNaDrxUTP0FD1ZDfUY=@lists.infradead.org
-X-Gm-Message-State: AOJu0Ywz9DZKmbKaQndqKXodgR0uaOVGXit08EweDPhTslC+C1hcOgGD
-	QyAOpDlmgEv5r0U/54VTt0QFwA1L4IwTn7FGMN5g/u3NlBHSOFQVNK6G
-X-Gm-Gg: ATEYQzyk7L2tbbu0k4Q3RFRyHXDu9aFnoxcqs8ksWiUs2R/md0DDKVwCwYxa7B1O1Wa
-	hV/lRA76ycK52xWWm31DRJBSfw5e39q4Q3cSwTkg8uVupBjzPyQIxhukvWghyiAEt0DVEj39IBz
-	4MIMqkadeqMxBlEOP/+qMGrqmgmdV7wWzHCBz9GZjA2J6kp+Wvb6L27eX2jO8UanCzteZqYZ9yb
-	aK1O7cwjN0sT+Oa2USi6MgAeUnmKEdAJL5j3bbKF8FiguZLFbQbaFXYrTX1BwJIUXhrSc2TOBGJ
-	TnixHQYZmcLYv6CwCE9DG3KcCOYr9O83oxYDZd5N7YMoO++hrlz59y9q1AR+ywqM4JWQaOutoRw
-	ph3/+xym2rQ4/Y8wrU/P3h9uKqZDXE2pgBVr3StASMD1kVnomuqP7UVD7hY/aFxK0p6KB+x/juR
-	02vkdXpfrG1pHDJLUsypSxAykTjxNGoIOENHg6eIFnwICz6+pEmEIEi3GqvHoadVs9nnY0dsA9m
-	bA+IdT9qyygi60=
-X-Received: by 2002:a05:7300:572a:b0:2c0:bd6f:42a3 with SMTP id 5a478bee46e88-2c10974f0d6mr5302324eec.22.1774230888985;
-        Sun, 22 Mar 2026 18:54:48 -0700 (PDT)
+        bh=L0G/uhHXfu21xXv3gnOSiW9nh+0t2XQiNOcz2tPqgk4=;
+        b=FipuOb8Jzpr6epFPzN9x2Hyb/ykvCOH0mIEQ9Y5TC3OvYDP3QRwXpN7432VJa02+WW
+         IYZbx466uAFymSlAbCnQ3w0T+v6Ed9Na/TiRtmsYL8q8ddYhf51CIGlRZhmWBTln6ubp
+         ZSW/UZBEPJmRuahaE3WeOEh2fEcNRqJNcsny9y8kz7pDLd83wHd/YrGPKgvpVtJcq4R5
+         +/L4fziGJRuVcOBc7VXLnkSNs1W8qNbHISyhx01VpLpMRn0JfkwYgq/NnZlrF/Ac6giH
+         9pB+tvraMoSfLT947x6yM0MtnVw/tArVQxd2w+YKnUebfa+D9WzTpmkoNPyYBZST/2Tw
+         QRzA==
+X-Forwarded-Encrypted: i=1; AJvYcCVqei5t/JD/aQ334aAsKU7As8zX3nc3oEnW6to4Y1hlPiECqbqAyiffBzyy3KACWVnHxFMziO7WNxw=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwESdW+M/kYlTfrjqDnQJLqVBXTBrnQ528l8RNMnAxf7sRjTIE3
+	WgTCQJuMjEgpHCnv5++HfJyrfe4Eh3gHvviBnABfSq3By5GZMzAqp+yg
+X-Gm-Gg: ATEYQzyw8WBdh+Sd8EoZ1gzGJe2RLLHBEoX/cD8iauDZ78SE4z9oaUq6MV/1UAXSLtO
+	84MARxQ0meZEyV4e06/xsyBDJ8TZCLlTvRMvvHCFnIYbki3Cy+vv3ZFpeWlepO4Z4vdXOhgdZLf
+	YgFYbrN4Tvvf0MaY71J/Sjh9ZZhhmGGSuo/2T7BZZ/vPFCfyVO3BTdvcka5n5iM6dOuvxoQ07mE
+	1wFXAh+NWh7tAWllgq+sMrjv92WKsj80zFVHfUcc1NtNggIqX6ZGDxK3oCIZti+qDiGiMvPttQS
+	oApYZlBUOStSieu+crXQZ8YOtzcagtIPc8LGhYccmQa+v+HsqOSFy6oEX6D70Ozc1KRpno2mdEt
+	IPhTIjnElhYnVQnwlpUiHr4cbcqIPB8SrMyZT66ODoKNkrIayZDGX9Msif8II29N8sJnF0Bigh6
+	4kVzcaSFXOnKCfEuDTiEQ07aeeK5xGMIWtGpGu2NaEL/FviQ+ozoeCcL9ZP5raVddsM947JcHTD
+	O8BLBlbii4c9fg=
+X-Received: by 2002:a05:7022:eac8:b0:128:d3de:c9e4 with SMTP id a92af1059eb24-12a726db2ffmr4311793c88.30.1774230892088;
+        Sun, 22 Mar 2026 18:54:52 -0700 (PDT)
 Received: from dtor-ws.sjc.corp.google.com ([2a00:79e0:2ebe:8:b768:22ed:3eba:aeb3])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-2c10b2cf068sm10976952eec.22.2026.03.22.18.54.46
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-2c10b2cf068sm10976952eec.22.2026.03.22.18.54.49
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 22 Mar 2026 18:54:47 -0700 (PDT)
+        Sun, 22 Mar 2026 18:54:50 -0700 (PDT)
 From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
 To: Andrew Lunn <andrew+netdev@lunn.ch>,
 	"David S. Miller" <davem@davemloft.net>,
@@ -99,17 +99,17 @@ Cc: netdev@vger.kernel.org,
 	linux-leds@vger.kernel.org,
 	linux-fpga@vger.kernel.org,
 	driver-core@lists.linux.dev
-Subject: [PATCH 05/10] leds: led-class: switch to using class_find_device_by_fwnode()
-Date: Sun, 22 Mar 2026 18:54:23 -0700
-Message-ID: <20260322-remove-device-find-by-of-node-v1-5-b72eb22a1215@gmail.com>
+Subject: [PATCH 06/10] mux: switch to using class_find_device_by_fwnode()
+Date: Sun, 22 Mar 2026 18:54:24 -0700
+Message-ID: <20260322-remove-device-find-by-of-node-v1-6-b72eb22a1215@gmail.com>
 X-Mailer: git-send-email 2.53.0.959.g497ff81fa9-goog
 In-Reply-To: <20260322-remove-device-find-by-of-node-v1-0-b72eb22a1215@gmail.com>
 References: <20260322-remove-device-find-by-of-node-v1-0-b72eb22a1215@gmail.com>
 MIME-Version: 1.0
 X-Mailer: b4 0.15-dev-a6826
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260322_185450_087777_F67D3EBE 
-X-CRM114-Status: GOOD (  12.05  )
+X-CRM114-CacheID: sfid-20260322_185453_084291_58F7AEFE 
+X-CRM114-Status: GOOD (  12.16  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -131,22 +131,22 @@ using class_find_device_by_fwnode().
 
 Signed-off-by: Dmitry Torokhov <dmitry.torokhov@gmail.com>
 ---
- drivers/leds/led-class.c | 2 +-
+ drivers/mux/core.c | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/leds/led-class.c b/drivers/leds/led-class.c
-index d34a19453560..8d7ec9ccb173 100644
---- a/drivers/leds/led-class.c
-+++ b/drivers/leds/led-class.c
-@@ -273,7 +273,7 @@ static struct led_classdev *of_led_get(struct device_node *np, int index,
- 	if (!led_node)
- 		return ERR_PTR(-ENOENT);
+diff --git a/drivers/mux/core.c b/drivers/mux/core.c
+index 23538de2c91b..774d4cc67cc1 100644
+--- a/drivers/mux/core.c
++++ b/drivers/mux/core.c
+@@ -521,7 +521,7 @@ static struct mux_chip *of_find_mux_chip_by_node(struct device_node *np)
+ {
+ 	struct device *dev;
  
--	led_dev = class_find_device_by_of_node(&leds_class, led_node);
-+	led_dev = class_find_device_by_fwnode(&leds_class, of_fwnode_handle(led_node));
- 	of_node_put(led_node);
+-	dev = class_find_device_by_of_node(&mux_class, np);
++	dev = class_find_device_by_fwnode(&mux_class, of_fwnode_handle(np));
  
- 	return led_module_get(led_dev);
+ 	return dev ? to_mux_chip(dev) : NULL;
+ }
 
 -- 
 2.53.0.959.g497ff81fa9-goog
