@@ -4,78 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EFED0F483C6
-	for <linux-phy@archiver.kernel.org>; Mon, 23 Mar 2026 16:16:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3EC4EF483D5
+	for <linux-phy@archiver.kernel.org>; Mon, 23 Mar 2026 17:16:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MFo6CVU94l/zzmywIA5q4BOr2sVBi8sJJ2AbfdGgIIE=; b=HODR1fCWxZgRGE
-	z8SUBsHc4OHCQEg/1tJhxGtGp6PTfh9mY46kTbuj9tDN/UZtxxrNnXyJXJbUtNfhodhzXZQRW3rPR
-	Np3kAXc+irdnjjWSK9djZw0vAxzipK9Reh13u/DE4f5rmdBYOzxiCTXnGRzV2hFBUx81Ey1Kc1Ad7
-	6JAlokVuca6WjIwVI7sAxCMPjnasnwRQGl2/i4SREq2SNmckZIclszUdfIt1YbphyA4MRCNTTnXac
-	mgjraUsUZCDYKNQBp/tv4ZL3sz0cNrZ9e6Hb1OoVBcjDYZ5qRmFu2cRCyPQ7Z8dPgMyeh3Du91s2Q
-	NIDlX/c/RvoL2EEn9fVw==;
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=RnNuA4X2wdAUSh0NS6oZoOMIP5JZ9W+HBNAPQKqrIEc=; b=CqdxNzgeLCp2MfWQJ49M/Tzuyo
+	OmugAEtbSLD9c/fuay1MnbTua8mRvDo6dARx4UHhZo/MNT5AJ/d2gkulycAAZBfIyW6e4qVq7P0On
+	hForLbJeB9rjI5h3ZyBBhct6W5iriNYPHWqbeK6x/CPdrJI3exsi/6EmGB4jarcu2UM3d5nJzeGjL
+	Rx/+fQBzoDG7L6+q12eTAlAzzUT4VmbWwsGf0pqUe+G7BG3DONlV16JSb+wWDyZS4RUv2bxNiyRtn
+	W4qBEGTzWjuXtyeLI+BAklPbDz0cT/CCujfDUaGsojUZ3T48vTJG0443kIi3+Bw342znb7e9kGEUG
+	IYk4o3Tg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w4hwp-0000000H6zd-2Vtb;
-	Mon, 23 Mar 2026 16:16:11 +0000
-Received: from smtp1.tecnico.ulisboa.pt ([193.136.128.21])
+	id 1w4isy-0000000HD8x-2F1O;
+	Mon, 23 Mar 2026 17:16:18 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w4hwm-0000000H6ux-0ver
+	id 1w4isw-0000000HD8S-2qNv
 	for linux-phy@lists.infradead.org;
-	Mon, 23 Mar 2026 16:16:10 +0000
-Received: from localhost (localhost.localdomain [127.0.0.1])
-	by smtp1.tecnico.ulisboa.pt (Postfix) with ESMTP id C350E600882A;
-	Mon, 23 Mar 2026 16:15:46 +0000 (WET)
-X-Virus-Scanned: by amavis-2.13.0 (20230106) (Debian) at tecnico.ulisboa.pt
-Received: from smtp1.tecnico.ulisboa.pt ([127.0.0.1])
- by localhost (smtp1.tecnico.ulisboa.pt [127.0.0.1]) (amavis, port 10025)
- with LMTP id 126tTdIN8NTm; Mon, 23 Mar 2026 16:15:44 +0000 (WET)
-Received: from mail1.tecnico.ulisboa.pt (mail1.ist.utl.pt [193.136.128.10])
-	by smtp1.tecnico.ulisboa.pt (Postfix) with ESMTPS id E2AB36008813;
-	Mon, 23 Mar 2026 16:15:42 +0000 (WET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tecnico.ulisboa.pt;
-	s=mail2; t=1774282543;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=oxX+OUc3xAG2hwZFdRqs0R//MKXMT1i1SmwKlI7QCUU=;
-	b=SwGLjMrK9ln3TcNEAy+X0mypZiqlB9obo5qLLYD5EBTUgUj81QnjKt4tNkkCO/mjjfLHo2
-	Y3PEOU09sIAODUjaPNDpqo8otBGKVMH1F3dMorf4JQkK59Kd9t8gDl0REdd3ML2ISfa8Nz
-	xrmRUHJjFZk015wqZPQfQEY+5UCcGar+nTkVXv5d0H7/JE04N/KYuScurMaSJD+96Gidfo
-	dZjlL3FAbJq76/l/qMwZIXalTwJLtpmVI+NFuV0B5AIO8SCGPyqLBrFoIElXWbMarS1Zka
-	u4xxGAi8SdMWEwhWRMzTd2WgoTDOZ6Z04F/vuH6KRUMU+VLL9EJCGdzVPKcEYw==
-Received: from [IPV6:2001:8a0:57db:f00:3ee2:38aa:e2c9:7dde] (unknown [IPv6:2001:8a0:57db:f00:3ee2:38aa:e2c9:7dde])
-	(Authenticated sender: ist187313)
-	by mail1.tecnico.ulisboa.pt (Postfix) with ESMTPSA id 767D33601AC;
-	Mon, 23 Mar 2026 16:15:41 +0000 (WET)
-Message-ID: <54167943-deac-40ec-be86-7ddc6b015c2d@tecnico.ulisboa.pt>
-Date: Mon, 23 Mar 2026 16:15:24 +0000
+	Mon, 23 Mar 2026 17:16:15 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 09B36429FB;
+	Mon, 23 Mar 2026 17:16:14 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E8213C4CEF7;
+	Mon, 23 Mar 2026 17:16:08 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1774286173;
+	bh=GPZRjw9420otJR954wv9jlY5KaF4RQTzb5PccDoBlqA=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=oEPcAVYx8EfysVPLpGplRNI3M4k/Ct3YJWskSAod8cjNc1kdUYhIGoTf63okXWz2q
+	 0hEGs2DfACbPoNyzgdtj87k/P+cEFXjqR4zVObWBaUkYJisObzaPTFF88rBaqW7kDE
+	 u44XlLVOUONXIUPzTC9AC634kEAVIofUv5uLsWXnrnV6jadm4XyQlj4vWrFFiFKajE
+	 To4Ze8LqNXjukWlYqjZq7F8XbbETwBxXQK5qIyqZx2UXnkN7Gp69ERU2MgblYsng5A
+	 A/wZC66xfEiHhhCI5f/gGI3mYjB7rlZ7Sw+E+px2pkPKpvS8rJRJTMHzbqXvw/P49f
+	 S+GsHsIhgxKOA==
+Date: Mon, 23 Mar 2026 17:16:04 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Dmitry Torokhov <dmitry.torokhov@gmail.com>
+Cc: Andrew Lunn <andrew+netdev@lunn.ch>,
+	"David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Liam Girdwood <lgirdwood@gmail.com>, Lee Jones <lee@kernel.org>,
+	Pavel Machek <pavel@kernel.org>, Peter Rosin <peda@axentia.se>,
+	Andrew Lunn <andrew@lunn.ch>,
+	Heiner Kallweit <hkallweit1@gmail.com>,
+	Russell King <linux@armlinux.org.uk>,
+	Moritz Fischer <mdf@kernel.org>, Xu Yilun <yilun.xu@intel.com>,
+	Tom Rix <trix@redhat.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	"Rafael J. Wysocki" <rafael@kernel.org>,
+	Danilo Krummrich <dakr@kernel.org>, netdev@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-spi@vger.kernel.org, linux-leds@vger.kernel.org,
+	linux-fpga@vger.kernel.org, driver-core@lists.linux.dev
+Subject: Re: [PATCH 03/10] spi: switch to using class_find_device_by_fwnode()
+Message-ID: <098e1856-feee-4f4b-8059-85a53967f6b3@sirena.org.uk>
+References: <20260322-remove-device-find-by-of-node-v1-0-b72eb22a1215@gmail.com>
+ <20260322-remove-device-find-by-of-node-v1-3-b72eb22a1215@gmail.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 0/6] Fixes to Tegra USB role switching and phy handling
-To: Mathias Nyman <mathias.nyman@intel.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Thierry Reding <thierry.reding@gmail.com>,
- Jonathan Hunter <jonathanh@nvidia.com>, JC Kuo <jckuo@nvidia.com>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>
-Cc: linux-usb@vger.kernel.org, linux-tegra@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, stable@vger.kernel.org
-References: <20260127-diogo-tegra_phy-v2-0-787b9eed3ed5@tecnico.ulisboa.pt>
-Content-Language: en-US
-From: Diogo Ivo <diogo.ivo@tecnico.ulisboa.pt>
-In-Reply-To: <20260127-diogo-tegra_phy-v2-0-787b9eed3ed5@tecnico.ulisboa.pt>
+In-Reply-To: <20260322-remove-device-find-by-of-node-v1-3-b72eb22a1215@gmail.com>
+X-Cookie: Avoid gunfire in the bathroom tonight.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260323_091608_689782_54C81A9B 
-X-CRM114-Status: GOOD (  18.32  )
+X-CRM114-CacheID: sfid-20260323_101614_766929_5132F01C 
+X-CRM114-Status: GOOD (  13.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,80 +85,74 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: multipart/mixed; boundary="===============2946383648708511633=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello,
 
-Ping on this series as it has been quite a while since this was sent out
-originally.
+--===============2946383648708511633==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="5CiJK9+3S3OZYzXr"
+Content-Disposition: inline
 
-Best regards,
 
-Diogo
+--5CiJK9+3S3OZYzXr
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-On 1/27/26 15:11, Diogo Ivo wrote:
-> Hello,
-> 
-> This patch series contains fixes/improvements for USB role switching on the
-> Tegra210 and Tegra186 SoCs.
-> 
-> The first patch addresses a wrong check on the logic that disables the
-> VBUS regulator.
-> 
-> The second patch removes a redundant mutex lock when setting the PHY
-> mode.
-> 
-> The third patch guarantees proper ordering of events when switching PHY
-> roles.
-> 
-> The remaining patches are included to standardize the PHY .set_mode()
-> callback between Tegra186 and Tegra210.
-> 
-> With this patch series this feature can only be controlled from userspace,
-> by writing the desired role to sysfs as
-> 
-> echo "role" > /sys/class/usb_role/usb2-0-role-switch/role
-> 
-> with role being one of {device, host, none}.
-> 
-> Further patches will enable automatic role switching via the 'cros_ec_typec'
-> driver which is currently broken on Smaug.
-> 
-> Signed-off-by: Diogo Ivo <diogo.ivo@tecnico.ulisboa.pt>
-> ---
-> Changes in v2:
-> - Remove DT patches already taken to be upstreamed
-> - Add standardization between Tegra210 and Tegra186
-> - Address review comments from v1, detailed descriptions in each patch
-> - Link to v1: https://lore.kernel.org/r/20251204-diogo-tegra_phy-v1-0-51a2016d0be8@tecnico.ulisboa.pt
-> 
-> ---
-> Diogo Ivo (6):
->        phy: tegra: xusb: Fix USB2 port regulator disable logic
->        usb: xhci: tegra: Remove redundant mutex when setting phy mode
->        phy: tegra: xusb: Fix ordering issue when switching roles on USB2 ports
->        phy: tegra: xusb: Add ID override support to padctl
->        phy: tegra: xusb: Move .set_mode() to a shared location
->        phy: tegra: xusb: Move T186 .set_mode() to common implementation
-> 
->   drivers/phy/tegra/xusb-tegra186.c   | 73 +++++----------------------------
->   drivers/phy/tegra/xusb-tegra210.c   | 42 +------------------
->   drivers/phy/tegra/xusb.c            | 80 +++++++++++++++++++++++++++++++++++++
->   drivers/phy/tegra/xusb.h            |  4 ++
->   drivers/usb/gadget/udc/tegra-xudc.c |  4 ++
->   drivers/usb/host/xhci-tegra.c       | 14 ++++---
->   include/linux/phy/tegra/xusb.h      |  3 ++
->   7 files changed, 111 insertions(+), 109 deletions(-)
-> ---
-> base-commit: b02a5530af8abe0d3cd4852ba48990716e962934
-> change-id: 20251201-diogo-tegra_phy-86c89cab7377
-> 
-> Best regards,
+On Sun, Mar 22, 2026 at 06:54:21PM -0700, Dmitry Torokhov wrote:
+> In preparation to class_find_device_by_of_node() going away switch to
+> using class_find_device_by_fwnode().
+
+>  struct spi_controller *of_find_spi_controller_by_node(struct device_node=
+ *node)
+>  {
+> +	struct fwnode_handle *fwnode =3D of_fwnode_handle(node);
+>  	struct device *dev;
+> =20
+> -	dev =3D class_find_device_by_of_node(&spi_controller_class, node);
+> +	dev =3D class_find_device_by_fwnode(&spi_controller_class, fwnode);
+>  	if (!dev && IS_ENABLED(CONFIG_SPI_SLAVE))
+> -		dev =3D class_find_device_by_of_node(&spi_target_class, node);
+> +		dev =3D class_find_device_by_fwnode(&spi_target_class, fwnode);
+>  	if (!dev)
+>  		return NULL;
+
+Actually, no - this just looks weird.  We're in the middle of an OF
+specific function but we're having to jump up to fwnode for no apparent
+reason.  If we actually decide to get rid of the OF specific function
+then I guess but I'm really not convinced this is an improvement in
+isolation.
+
+--5CiJK9+3S3OZYzXr
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAmnBdVMACgkQJNaLcl1U
+h9AZpwf+IYUP90323AiTlXT8gw1Dypm0TDgs0IOfZCsY6eI2ifZgGPN9bmjL/nqn
+qOCQnievL6WWoQiEOvgXsLRJl9rBwFIoqSVqZ5KSwziQt3eVC1C8h2BBG1RRNUTs
+iAN2o35mqWmLWMjutA6YleGKMYmsZYLPhv47Bn89wSF5X2/KO2oAUR3pc4t1UZwV
+iB4S4xXHm268iBSZduYC+IqDTV8Dd6HABhODhHHz96h17qZlzPM64vxVlOU30dlc
+QEHhAL5tfwE+km7QmFrPh176jDVmndTGdXRJbtRICsUHDLuIPIjeuCFwom9RyzhN
+v8Jk4nJOfxCXEkLHHAlP8AtJaBLsrw==
+=ncpO
+-----END PGP SIGNATURE-----
+
+--5CiJK9+3S3OZYzXr--
+
+
+--===============2946383648708511633==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============2946383648708511633==--
+
