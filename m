@@ -4,72 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E8961D58CBB
-	for <linux-phy@archiver.kernel.org>; Mon, 23 Mar 2026 01:54:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2FE75D58CB0
+	for <linux-phy@archiver.kernel.org>; Mon, 23 Mar 2026 01:54:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2COM9Pi76rbpb/JTi+g37Gt1oFIwnMgUom+AbetQKsY=; b=maXSV6LBvgVJ8o
-	PtSrGuScyEbZ+EP/ndWmFsKL8h3Acj2mOaxXgfwc8mspZ6qlqigAXJDn8WfIdIz2HO3fcLMMW3BJ2
-	Z4JTSWdVmPbtAs9RJ031rmmJZy+nnmdLepu5SJ+as5tzOgGEzxQTcQfblP2WjnaWpAJeR18a10+5g
-	vEMi3Cv6l3BwUqqWuNoAfBkUZ2mWI9SSJLEwUKKjTzJ69H0y3UDyv0SIMTW3WespBBvKwCQktq45c
-	7Evy68E+EeIgZ8YvPXppf4nG0/wAZHYCltQr0VN8pfsB4jj53k5MCCahiB3wT6YgGXrHicXQGhPlc
-	Hrict+nmRXU0PLjwqoog==;
+	List-Owner; bh=RREDNwkaF1UmrjbEfM63zTIb3CsfniFLby+kRZjUm0Q=; b=rBCM4twEWp1TqW
+	VHeDVqsUbumtXJlZFUsJfcbmi3x8weXle3Y9ovU53rzVGdAniWTKLAhMLkn/t91c67yldi4sr5oDd
+	acND5tJVj4fHPiwJ84VbnJY1GOuOHOK69lH0KFp+SsnE0qeoQjqYhAADmxKf74olpc7/dwUJToiCm
+	PuA09zkcEo0kwdQLypRHSMDJ9Ec5wqRnRUeobon3TpEasgirlg6M8MtWPgOoWrJIp8hCHl7407Ako
+	T2ejrG5GTBuVOzQAsl3qfFFJuFlbNDtf8szZ7dbcYRz7Pj4QOSZNu5dlh1B2n8vNIM++0+YIgN+EJ
+	6Bp1aQ6UEhG6WCJWYVLA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w4UVC-0000000FsBV-2qnH;
-	Mon, 23 Mar 2026 01:54:46 +0000
-Received: from mail-dy1-x1330.google.com ([2607:f8b0:4864:20::1330])
+	id 1w4UVD-0000000FsBy-3vMW;
+	Mon, 23 Mar 2026 01:54:47 +0000
+Received: from mail-dy1-x132c.google.com ([2607:f8b0:4864:20::132c])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w4UV8-0000000Fs9o-2LsM
+	id 1w4UVA-0000000FsAn-3Bm3
 	for linux-phy@lists.infradead.org;
-	Mon, 23 Mar 2026 01:54:43 +0000
-Received: by mail-dy1-x1330.google.com with SMTP id 5a478bee46e88-2c1092cc08cso1024186eec.1
-        for <linux-phy@lists.infradead.org>; Sun, 22 Mar 2026 18:54:42 -0700 (PDT)
+	Mon, 23 Mar 2026 01:54:46 +0000
+Received: by mail-dy1-x132c.google.com with SMTP id 5a478bee46e88-2ba9c484e5eso2165293eec.1
+        for <linux-phy@lists.infradead.org>; Sun, 22 Mar 2026 18:54:44 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1774230882; x=1774835682; darn=lists.infradead.org;
+        d=gmail.com; s=20230601; t=1774230884; x=1774835684; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=7X8icAi5hW5PHcS4B3NheItH86dqdd76W8IY0AZdTSQ=;
-        b=ckMfik60FA0sy8HhloyZK1LPu0VXNGcpOGN4vMHph9ArOXooP+ii61sOCQ7tm8c1cc
-         jUOV1BFHdQjBy2Xp6fMys/LCVO5/RZ5NIVP+uudPW/zpDxT6nRLbesC7w4Pw+g5TJ4Ta
-         UpoeEnIgp2WiwhmLA53vJBdy5RBVWwJuMaoZAW1FT0JKboiJpPiiT2bEWqDXaWWfonix
-         hpGrSG5lPxBy16Vz08usEPsymJ09DMpXADizI85WN3P5o5wuKOAiZNtBGYzklmEJ61+h
-         3wBjEPZ3bYT5t4tJqAenVhnOmdE9a6QgCRwuT+NOiqX7+mNN7GrsE1CoJmxyGnlazEjn
-         XZvA==
+        bh=hFZooOyb7hfKDEpM9yx+Ztfv9BY6tuw4luVBl13uVrY=;
+        b=KoQXhTcpv11ZtgWbLELCbDr2OmIiAWcWrO38jiEzBHP/M1Eb5fdtdkhspKJS7Qrxhn
+         Vrt47mCMLx8wzUL8o98iObA34gEHv3X42mfyPM71n/otJfS3B+JHoZnHvmwO+T1+AkaP
+         aos4fbwH/XjNmwEf+jOXBWkl0CmUWECf+gXLOJ7Blsr4jGRnrwmYMim+N1zmqvmMewR+
+         QzvzmvFRduzBMKFuVUNlPLftziAmaDHqQpfF+haUP6JkTEkPzFO3pw2QUQA4a8BBl5d1
+         U7fg7gzZPooJ0m8+BLvk3fRMrMCQqJmu+k1harLom/aB0rb2jpMicDxG9rDjujezl3di
+         zJUg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1774230882; x=1774835682;
+        d=1e100.net; s=20251104; t=1774230884; x=1774835684;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to;
-        bh=7X8icAi5hW5PHcS4B3NheItH86dqdd76W8IY0AZdTSQ=;
-        b=BEQ9vIVFwjHFZGnEuBWzvS/O3A9I5lVSCcMZiDeTWoPjFR+QFgPvYYplvJhtz9smlJ
-         KR+jzTWTnTML/uuwiYQQkzlg6p7REuhRes28ttzQUhY/kRV0NQtzfuLk4x3sCBEXVAIC
-         NjQ/4fDqNEGRXKjyHv77mZLOuXo85jpc1uETLnBU8fNfs29gpka+jOOBt3dgTySdxAiV
-         ObkjcUiY0rLYRzCQlzJzTVoaaeqJgXZzxv5g94Ae0fypGSEqRs/6NfNUlDcssOxlSQHT
-         6unzkbeL3zhbMnTDCZ/yfDrUxgamVWVQygEl42QwSdnZagAMO9TsyHlFtHSd/ftEKUqd
-         aciw==
-X-Forwarded-Encrypted: i=1; AJvYcCVXbI/iDjuN+YW/3IGbyTtdrwEljzZGIgQ7709gAZrxgnF54/pRBrTs9u7eHJKDBq64t5qZW+aSpDY=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzAeCofLMlzc3uD2GnYKqDU9Yjg/657Ffj5uSsTAl4ElrbL44YE
-	UFAzZjxh9ADt57x10V5vC1mpF+YmEo8nx9k7j/IJQ+7xmMG6u/lytVI6
-X-Gm-Gg: ATEYQzzsNkGiteftT/kN2e3SM2KI47gN9KcmW9P2rESz3gUjJ350fks9v5xDdYZ/ATL
-	BMOYMKURuAqfq6X5hJNfK2dWOSxOmE9sdWI61zNdyhHAONzFVk51kv487ySJJamJGKXYlozlHtL
-	HYivT6liMm6eu30GkyjFUJtKwK4SfBT9cWW7yJ/MXNcfzp5iMZvN1QiC23vZ2BrwHOxDJDXbGzE
-	yV6i9Zadwpv2JQpGp0ITCfamEQiFngdTt2RueKBCgb9UJ7/hpGOKtoaFsTwAJ3zMO5moOF/K3YO
-	863dWnRZJK5ZYyahyKw2qD3hI0UWEDDSxraRV+XY9MPu+PMmY8nF8qzJMw96RPpEkIXUJhpOTqm
-	55iG4aduhq+fe3V3A3mG1qHXgJBy3/F54UNq6iuw37ByHJkc2fYDVjFzpWw1guUtBj2ffAp+PW8
-	4sQ5w2btiFYYMKXOyoh5BRwu3jBPPo4NOT4tSt1fv21SCpdeY6UmKi3glMFG8EyT6/luUTJOsjw
-	4QO1xyrsiMGG2A=
-X-Received: by 2002:a05:7300:e7ac:b0:2be:9d3:c8c5 with SMTP id 5a478bee46e88-2c109816b87mr4889998eec.34.1774230881836;
-        Sun, 22 Mar 2026 18:54:41 -0700 (PDT)
+        bh=hFZooOyb7hfKDEpM9yx+Ztfv9BY6tuw4luVBl13uVrY=;
+        b=KAmE1SF95vHPffNxCJj8IWY0/mizeP0vadZm2fF5fkfdHLphceLJjiC4W3qlYcAwlD
+         Fxl0+hBps40rImb4mgRJ0fJ+AgtpykZzTj63AWT0k64qmKqCM5l9vXIQ+aG5LY4339vT
+         SIUEfijMd2P/miGeD5v//whTSExj5D/DXgLhDTlK20pmMsdS/EbBBwoMNx6grHjcWZiN
+         s0GWf0gnEQG5Pi944FmXEzmECAw/5dc4IQVxj2yVp5qyLpGlJnZIyJNr3iPJUiCYGLfO
+         9FPyZbQLnEVuGs30HR0yPsmfVKUo4jhERHfisA+pOrCuFJZyQFix/CrpZsf+g7tY0j9G
+         L/AA==
+X-Forwarded-Encrypted: i=1; AJvYcCUFsjXhRPpEvgC1pv8NM26bPLfL5YXadVlbgnyc64hFdfqndrIZMUNCAycVrEq52Vz68/u9iiJ2NOY=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwoDVff3RKmg7nbdYCGdMCwitJaHWJSLX2GHioD7rxR7wKkQZ8f
+	1kbes8iwElJLx9ruSt9PBWVRZCEJf3p4J0392CNwoTvXhT4xaXbAkFdH
+X-Gm-Gg: ATEYQzwPSAQLO4honoe91R3elnFz67SO6AC+SGieTHX+mf5Gu2fJuv4s+8TRiK3mmkx
+	XiOCvLijKt0pT49YOf1T+Wn5kieecpPZHjgTxmiaCTzvDZX6S2QUs56geZGd5sXoH0w/oKvQmCE
+	1Y6uHtP1TPWkUR4iW1xR2YwKyaSSdcprUG1WjoILWVbG4TbAUOfEGSHMVSacbDSb0f8Ay/nlpo+
+	vKaJN2reYqQ5aXk2imSVchs2Q0bZ05dnArPI/w0+yts231+7HCqYbkYVGlt//2sPSdVV37tU41a
+	Peh1IPv1vmoHryTCBuD3cloTSEEvVGyjYCI7qSggwmo7UQOQrbnzoWWAtXlhmRdNjzBOALSHXyP
+	4bbvnqqIPAfkNKhZqk0JgC3NUwzjAsphz6EnKNPp0Jtoo4IWwSvQDwI8Soqpp2Gvk7/68dKwkcM
+	ipa28WXslY4WoV0O9jyvnyCcdZc2TWqW4hGfKXhreaaJKaZNXBH1qj2w4d+XEFsvFHj7MjYxz4x
+	6sBhbEvZSVm994=
+X-Received: by 2002:a05:7300:d517:b0:2be:1cb2:3a6 with SMTP id 5a478bee46e88-2c10980a523mr4129993eec.33.1774230883846;
+        Sun, 22 Mar 2026 18:54:43 -0700 (PDT)
 Received: from dtor-ws.sjc.corp.google.com ([2a00:79e0:2ebe:8:b768:22ed:3eba:aeb3])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-2c10b2cf068sm10976952eec.22.2026.03.22.18.54.39
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-2c10b2cf068sm10976952eec.22.2026.03.22.18.54.42
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 22 Mar 2026 18:54:41 -0700 (PDT)
+        Sun, 22 Mar 2026 18:54:43 -0700 (PDT)
 From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
 To: Andrew Lunn <andrew+netdev@lunn.ch>,
 	"David S. Miller" <davem@davemloft.net>,
@@ -99,17 +99,17 @@ Cc: netdev@vger.kernel.org,
 	linux-leds@vger.kernel.org,
 	linux-fpga@vger.kernel.org,
 	driver-core@lists.linux.dev
-Subject: [PATCH 02/10] phy: core: switch to using class_find_device_by_fwnode()
-Date: Sun, 22 Mar 2026 18:54:20 -0700
-Message-ID: <20260322-remove-device-find-by-of-node-v1-2-b72eb22a1215@gmail.com>
+Subject: [PATCH 03/10] spi: switch to using class_find_device_by_fwnode()
+Date: Sun, 22 Mar 2026 18:54:21 -0700
+Message-ID: <20260322-remove-device-find-by-of-node-v1-3-b72eb22a1215@gmail.com>
 X-Mailer: git-send-email 2.53.0.959.g497ff81fa9-goog
 In-Reply-To: <20260322-remove-device-find-by-of-node-v1-0-b72eb22a1215@gmail.com>
 References: <20260322-remove-device-find-by-of-node-v1-0-b72eb22a1215@gmail.com>
 MIME-Version: 1.0
 X-Mailer: b4 0.15-dev-a6826
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260322_185442_614627_85DA8D97 
-X-CRM114-Status: GOOD (  11.60  )
+X-CRM114-CacheID: sfid-20260322_185444_824869_5996AA3F 
+X-CRM114-Status: GOOD (  12.68  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -131,22 +131,35 @@ using class_find_device_by_fwnode().
 
 Signed-off-by: Dmitry Torokhov <dmitry.torokhov@gmail.com>
 ---
- drivers/phy/phy-core.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ drivers/spi/spi.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/phy/phy-core.c b/drivers/phy/phy-core.c
-index 21aaf2f76e53..57bce6b63a31 100644
---- a/drivers/phy/phy-core.c
-+++ b/drivers/phy/phy-core.c
-@@ -761,7 +761,8 @@ struct phy *of_phy_simple_xlate(struct device *dev,
+diff --git a/drivers/spi/spi.c b/drivers/spi/spi.c
+index bf1df365f795..071a9ffdb59d 100644
+--- a/drivers/spi/spi.c
++++ b/drivers/spi/spi.c
+@@ -21,6 +21,7 @@
+ #include <linux/kthread.h>
+ #include <linux/mod_devicetable.h>
+ #include <linux/mutex.h>
++#include <linux/of.h>
+ #include <linux/of_device.h>
+ #include <linux/of_irq.h>
+ #include <linux/percpu.h>
+@@ -4948,11 +4949,12 @@ EXPORT_SYMBOL_GPL(spi_write_then_read);
+ /* The spi controllers are not using spi_bus, so we find it with another way */
+ struct spi_controller *of_find_spi_controller_by_node(struct device_node *node)
  {
- 	struct device *target_dev;
++	struct fwnode_handle *fwnode = of_fwnode_handle(node);
+ 	struct device *dev;
  
--	target_dev = class_find_device_by_of_node(&phy_class, args->np);
-+	target_dev = class_find_device_by_fwnode(&phy_class,
-+						 of_fwnode_handle(args->np));
- 	if (!target_dev)
- 		return ERR_PTR(-ENODEV);
+-	dev = class_find_device_by_of_node(&spi_controller_class, node);
++	dev = class_find_device_by_fwnode(&spi_controller_class, fwnode);
+ 	if (!dev && IS_ENABLED(CONFIG_SPI_SLAVE))
+-		dev = class_find_device_by_of_node(&spi_target_class, node);
++		dev = class_find_device_by_fwnode(&spi_target_class, fwnode);
+ 	if (!dev)
+ 		return NULL;
  
 
 -- 
