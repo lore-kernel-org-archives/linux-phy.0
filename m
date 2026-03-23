@@ -4,100 +4,102 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AE8F6D58CBF
-	for <linux-phy@archiver.kernel.org>; Mon, 23 Mar 2026 21:41:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2543EF483F8
+	for <linux-phy@archiver.kernel.org>; Mon, 23 Mar 2026 21:50:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IEPM96y5CA7RxKqJv3Mkt36GDZvQCGzbtbfC05kV77w=; b=h7zLEf7OezRnmr
-	q9uCk6Rn6DOFoqaayyRRwWt77dXX/WnD4krNPI8oCASZ1CYsauvEMlujVT2LXmQfKEQSrKiXZHKET
-	THQcAAQBaELE6pOnOJAWmN80FIP16yT5sD57mAk7PtK2T97E/CBt/hONt5GZmu5Mg+ulOKaSsOgNy
-	D3QCAs3bDeGpfWW3wFB21dQ6MeNYDjc0F6WKh+o6O7+7syNYAWYCvCXgpO5VyAcyniafc3TnrYWy7
-	9N2F9v+c1sII6UzkQPza6M8ACSx8Vbw9CgYigkqe/QWXIfsydKyA3dw20XXcqCj1KyFosC9dkQPlM
-	uXYfmUozEAc6AgzJo0xw==;
+	List-Owner; bh=WZ1V5VChxojNsou4lpZ+Ew9OFi3i36+Hd8HA4KTICVc=; b=rdy4MReX3x8h7/
+	hdreD//mu3yc+88u2IlATPGHXF5mCPW5qIxeHwPr+soCGZH3QVCabOEDH8FLsV0kkS/W51kAYR3Lh
+	Z+tCvtc+SZAdaPdHsj0J1Zo2h/lyOkwO21KXgBZmWFISUguRUVMoplpYIQs6C0BzcTzy1ATbyDNVb
+	3NiYJykVRKnyG0g36xQWJEVP2TWp/32ioOaaf6pBEctwds8BG4wodstIrTXDqvRaPqvgpGeoxvUbA
+	wxAoNkGH0po8mXy5j9ZiL9ZnAf9hl9iqHUsaAL61ZoHf0ml+2z9Jp3HQvY7sEVacBZIzBS8OLnrN6
+	Xjy738ZGZhLhLSTm7WJA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w4n1N-000000001v3-1ssX;
-	Mon, 23 Mar 2026 21:41:13 +0000
-Received: from mail-dl1-x122e.google.com ([2607:f8b0:4864:20::122e])
+	id 1w4n9v-000000002Vy-3iR2;
+	Mon, 23 Mar 2026 21:50:03 +0000
+Received: from mail-dy1-x1336.google.com ([2607:f8b0:4864:20::1336])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w4n1J-000000001uR-01cI
+	id 1w4n9t-000000002VJ-3uWo
 	for linux-phy@lists.infradead.org;
-	Mon, 23 Mar 2026 21:41:10 +0000
-Received: by mail-dl1-x122e.google.com with SMTP id a92af1059eb24-126ea4b77adso4850658c88.1
-        for <linux-phy@lists.infradead.org>; Mon, 23 Mar 2026 14:41:08 -0700 (PDT)
+	Mon, 23 Mar 2026 21:50:03 +0000
+Received: by mail-dy1-x1336.google.com with SMTP id 5a478bee46e88-2c107ef474fso1408720eec.0
+        for <linux-phy@lists.infradead.org>; Mon, 23 Mar 2026 14:50:01 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1774302068; x=1774906868; darn=lists.infradead.org;
+        d=gmail.com; s=20251104; t=1774302601; x=1774907401; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=Q7HCZ5YthEu6Sto4GADNi5rznGP/hi6UoU7AjdQU+RY=;
-        b=Rb0awcRRckR1CtSkShgEqE71ZMLEIh6xlVRzQymcaopzTzefDdRghNkHoOYNc46e5r
-         v8ciMIe9uj5iXFimRtYMXxop+5BQ3FoCM01R2tozf4b0SFPYGrI1+R85ufYgUF/JKoQA
-         VKcqYNeTTUk3dmxWQztHUwZsTJmO8a0QHKNy2hbk2X//TPIgS/j6jXwsWF8WTGoPE/qs
-         JsQotYhr5/WvyG3OWaXgmZYySNj1PUVXeM2cIl4Dnh/lnyiCUg4Rnn5YgcMnRoedTkVT
-         CSlLJZ4YOnn3Q6EN73t2uyJhaaY30rNgsnxV9yHrsbf6qr4SiN79Me2/ccWjnmkxVJib
-         R8nw==
+        bh=+m0/AdxnnWyHs/Fd93ISLCpoYSuqRajs8ccdfR5letY=;
+        b=jLHSN/6lWtfK7FyB9WXNOry5XTtxN8acClTH+qwrhHljZPoXcv01bW3qNx8acdnPt0
+         OeY66L9BgOOQH80vF9waK23rQVTlY0ryu16IA9kTP5P4A8RtDrKOaSH2O5uCm5rzN6qg
+         dbsL2vEH8EvHbayI8IEwvbY/fCjXbtC+GNBQaF84GFlQFzeyhvf7WIy8XAAFqFbI0Hxw
+         jML9RC4mcvf8FXL2oEVPMPxUMjDyXMKcZlCBL+howM/wQnET4d5w4HnMf8AYwXwqFgWw
+         6Jp8xN9ocC7hbZs02YnasVJedbqejmm8Cl0RYPLJwtnKkVSPa/8ZMH8m2Tr33p8KUp/c
+         okFA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1774302068; x=1774906868;
+        d=1e100.net; s=20251104; t=1774302601; x=1774907401;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=Q7HCZ5YthEu6Sto4GADNi5rznGP/hi6UoU7AjdQU+RY=;
-        b=ChY7Pp791tm3k7TAyz/KFHiSOdTmYnWLwl/ILm9BKcCSF2E2aSNUH+7Bh6KfaULZhS
-         GKjKn0Yw73Q3qOjJhY4cGWokpXo2u4u8zIlrLqgbsANSKxh3cFqg9rnA3IwREucAEMUh
-         9vEDOOe6elYh4pmViPVQ2w5X3caxQtK2mYGwfq2Fhkvh0UDPfmVkOnIVYDp2H9UzSzGP
-         jb9ryJ2mBI2uMEP+9s4+OG96lYxRbMAaI4Gx8HdJ/J7YBK0WoRCOZoxZnx6dH8Hc6MvQ
-         KgtiOjwNPzzTdX9u/gZ+/ZVoTI0yUl/yHmYFZZA3yYI8QcB4qNd7l/nzBqn/zGMY0udw
-         HDlw==
-X-Forwarded-Encrypted: i=1; AJvYcCXoM4MT1W2QZ6f7l67W1QnYodTwo9MqFldygIsazIOa00ZhJnHShOJIawMwixMYwAODPzXYS02wsUw=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxIGu9qS27LxfnXsLgLScowloUZun77u8/389ELXcNNNnp4+52U
-	cddKILF8GZQkUT0Ch0mkctcLaVe0ye0e41eyBmN0U4nLY5wHLd96+LnP
-X-Gm-Gg: ATEYQzxX1g4tdZXRSpPs5Rlbl/qvnnkSXr9cK8hq1z1DF5rrMzBR7ZtZn591cyRdCFE
-	5CPES4hIiChkhB0DbxiJm8Ncwvch4BqdqgN4fNSvyersqfuyjLJrqpVWHT82B8kNcPPU+Lse3hv
-	YNkw5lIZlY97Jvdt98jhZSn7wV1dWkWqiwqiVlJ3qVuPVe4K2vAV0WmXixqkvYz6u2XiRfL9KoT
-	/q6u8FfuUTxMA/1Ad0DQetN2kRk765QUMafuYOuIGW1HeLyJnQeojU1QqRLLQv2/t9XyS7grEYp
-	b0nXhebQC7cvi1CZMxKeckNIALqzdl8RTVFNWpqVDRLBdWg0PYeQcyl8B0EODKQ2HjVSxb4FNrf
-	LuV9qdpbsAhOXlLs2ODHpSZLLWgOzaXwIJpnQSCiXTb+gEvRG8DZ+Qz2/d5YUA9mxDMchfVRdPf
-	a8OiBWue7IwejLJszWRTpzy1949a+o4pzStG/GXA0u8PyKIfbJ2kAI+MU1x0+Ht6+k
-X-Received: by 2002:a05:7022:31a:b0:128:d24a:a5ba with SMTP id a92af1059eb24-12a726cafe2mr5295048c88.20.1774302067990;
-        Mon, 23 Mar 2026 14:41:07 -0700 (PDT)
+        bh=+m0/AdxnnWyHs/Fd93ISLCpoYSuqRajs8ccdfR5letY=;
+        b=pLHStHKUNMFFxClzddZr7bxEOo0KzOWVnxlYetjFnnYn7l2kJdY4Ql+RI+cXVwLWE3
+         BYG5zyccP5iQ0JSox2Kx/J/wAOX3wIpsxAciCjnAnPFTvTrpiVZaoduqu8UqL0ke33+H
+         MdHiiT+/MU0LXeEv5Dx6uvbpWk6gn0I5niE6T9xLmw2UpO0zBmRFavdw2uiuCXfaaV6p
+         L3HWs8B+emWW/syu8PVgGgLprGHHK/Xmy+XZseN262BCMpjzTPTBJTiaKgiBZ7s67lBJ
+         vRCPwY7cwMlDqk7BUzIN5JGfEaAWOWCsy9zgc9AvWdJFE7FvwcftGs2FTsXM72oNLWWn
+         ZrHw==
+X-Forwarded-Encrypted: i=1; AJvYcCXANMg8wEe+sZryfYCMifXaZ9GevKlsc+NbXzSuUvS2wHTca/fokq++jZUbubVdOsh64QByXLAJgVg=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yw3q8702un6tEk5MVzOi0dpMaT2FHYJ4NATycQcFXr0YQCmLAXx
+	LM4brMKAk77JDbIhd6TGEzyK0HjW9CccMau5ynxAmzurhq+ZrSI28cTu
+X-Gm-Gg: ATEYQzyCwOXf320Aw0MFCVjEWpiEE+SVkuRZ8mC/Ykj7eZYwFPVXYslWKQwV4gyxiVR
+	gZUQ96r0bN1svhlXiFv4QP9sVKXulSgAvObfh9OHIRrsuqfi3oT469vXcYvwm6hmrSrCTijfPTG
+	8G2JYo0FvW8sVjqGdWuJFHbDbEsHNKefJKBOWmm6utLUY1wt8Wk7fRe3w5bq33wV8tvpmKBgBXg
+	A74wYFlBxOTtEsa0R18NBPRjZ7yILlSaU1CWGbxyzKY1ueLljV2+F9UcsxkRoo7Q30+eic8Xr5b
+	YVj661INFrxG6vmWwl40OU0ANbzTYdx9G+pwYXC5fadvGuWvWDF7NPRn3md2C7ZI1/gq+dfztzZ
+	+Zuali6GBvKcwPqE8j3C1Imk+kHQb0eYzdByKkYmdPNt46umQ8iQ4q4KYFKowlpsblXQi/z2FyB
+	apY55cJtmemNjfTDfI+Zm2sdc1+QWHxVhp5Cl3iMBZ/1bENV9GMx+4zbmcv0I5Ls6K
+X-Received: by 2002:a05:7300:72c7:b0:2b7:1e86:3604 with SMTP id 5a478bee46e88-2c1095e6a9fmr7621666eec.6.1774302601091;
+        Mon, 23 Mar 2026 14:50:01 -0700 (PDT)
 Received: from google.com ([2a00:79e0:2ebe:8:a296:1211:5ab0:bc95])
-        by smtp.gmail.com with ESMTPSA id a92af1059eb24-12a733d199asm9682893c88.4.2026.03.23.14.41.06
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-2c10b31ebd5sm13412438eec.27.2026.03.23.14.49.58
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 23 Mar 2026 14:41:07 -0700 (PDT)
-Date: Mon, 23 Mar 2026 14:41:03 -0700
+        Mon, 23 Mar 2026 14:50:00 -0700 (PDT)
+Date: Mon, 23 Mar 2026 14:49:56 -0700
 From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-To: Mark Brown <broonie@kernel.org>
-Cc: Andrew Lunn <andrew@lunn.ch>, Andrew Lunn <andrew+netdev@lunn.ch>, 
-	"David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Liam Girdwood <lgirdwood@gmail.com>, Lee Jones <lee@kernel.org>, 
-	Pavel Machek <pavel@kernel.org>, Peter Rosin <peda@axentia.se>, 
-	Heiner Kallweit <hkallweit1@gmail.com>, Russell King <linux@armlinux.org.uk>, 
+To: Andrew Lunn <andrew@lunn.ch>
+Cc: "Russell King (Oracle)" <linux@armlinux.org.uk>, 
+	Andrew Lunn <andrew+netdev@lunn.ch>, "David S. Miller" <davem@davemloft.net>, 
+	Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>, 
+	Paolo Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Mark Brown <broonie@kernel.org>, 
+	Liam Girdwood <lgirdwood@gmail.com>, Lee Jones <lee@kernel.org>, Pavel Machek <pavel@kernel.org>, 
+	Peter Rosin <peda@axentia.se>, Heiner Kallweit <hkallweit1@gmail.com>, 
 	Moritz Fischer <mdf@kernel.org>, Xu Yilun <yilun.xu@intel.com>, Tom Rix <trix@redhat.com>, 
 	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, "Rafael J. Wysocki" <rafael@kernel.org>, 
 	Danilo Krummrich <dakr@kernel.org>, netdev@vger.kernel.org, linux-kernel@vger.kernel.org, 
 	linux-phy@lists.infradead.org, linux-spi@vger.kernel.org, linux-leds@vger.kernel.org, 
 	linux-fpga@vger.kernel.org, driver-core@lists.linux.dev
-Subject: Re: [PATCH 04/10] regulator: of: switch to using
+Subject: Re: [PATCH net-next 07/10] net: phy: switch to using
  class_find_device_by_fwnode()
-Message-ID: <acGzJV3vKhuty3nd@google.com>
+Message-ID: <acG1JNGVBJ2Mf7jC@google.com>
 References: <20260322-remove-device-find-by-of-node-v1-0-b72eb22a1215@gmail.com>
- <20260322-remove-device-find-by-of-node-v1-4-b72eb22a1215@gmail.com>
- <360a8b4a-6507-417a-9fc1-c53b14868657@sirena.org.uk>
- <acGFksyx3SA0kJ5b@google.com>
- <7d46803e-b285-4e9c-8856-10100fa0ea85@sirena.org.uk>
- <cf92122d-6b15-458a-bf89-189a0a6874f7@lunn.ch>
- <193e194a-498f-464f-b22c-c283c16db6c1@sirena.org.uk>
+ <20260322-remove-device-find-by-of-node-v1-7-b72eb22a1215@gmail.com>
+ <32679fc0-c388-4cd7-a030-5f5ed5abab78@lunn.ch>
+ <acDLzK8vpptTUMf1@google.com>
+ <acEBCBgMV3RrGKiU@shell.armlinux.org.uk>
+ <acGGWTmSMuc5h3Od@google.com>
+ <acGI4PI3MHML9Pce@shell.armlinux.org.uk>
+ <f37684ff-57af-425a-bb18-bd5e8de3bba3@lunn.ch>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <193e194a-498f-464f-b22c-c283c16db6c1@sirena.org.uk>
+In-Reply-To: <f37684ff-57af-425a-bb18-bd5e8de3bba3@lunn.ch>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260323_144109_044035_C861582B 
-X-CRM114-Status: GOOD (  13.04  )
+X-CRM114-CacheID: sfid-20260323_145001_975005_4DF5F36F 
+X-CRM114-Status: GOOD (  14.65  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,23 +116,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Mar 23, 2026 at 09:36:07PM +0000, Mark Brown wrote:
-> On Mon, Mar 23, 2026 at 09:01:47PM +0100, Andrew Lunn wrote:
+On Mon, Mar 23, 2026 at 09:15:11PM +0100, Andrew Lunn wrote:
+> > This is not "foreign territory" - ACPI in general doesn't want to
+> > describe e.g. the individual components of a network card, unlike
+> > DT.
 > 
-> > How do you handle deprecated OF properties? This is a problem i've run
-> > into before. A developer needs an ACPI binding, so they blindly
-> > convert from of_ to device_ without engaging brain. As a result, they
-> > bring all the deprecated OF properties we want to die into the brand
-> > new ACPI bindings.
-> 
-> Honestly that one hasn't really come up much for me - not too many
-> deprecated properties.
+> It has also been suggested that the MDIO bus should be added to the
+> ACPI specification as a first class bus, similar to I2C, SPI,
+> etc. This would make it different to the DT. So we don't want to
+> encourage developers to use the networking DT concepts in ACPI, it
+> will just cause problems if the ACPI spec every actually covers the
+> use cases of networking.
 
-Given that we position properties as an ABI even if they are deprecated
-we supposed to handle them forever. Newer properties usually offer
-benefits over old ones and that is how users get moved over.
-
-Thanks.
+BTW, why would not we want to push for the unified binding? They are the
+same pieces of hardware...
 
 -- 
 Dmitry
