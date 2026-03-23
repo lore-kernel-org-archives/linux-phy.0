@@ -4,45 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6518EFC72CA
-	for <linux-phy@archiver.kernel.org>; Mon, 23 Mar 2026 07:43:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3FAB8EC01A6
+	for <linux-phy@archiver.kernel.org>; Mon, 23 Mar 2026 09:00:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mqpRi7csRh2V2R5yevZAKlni+EyBzK7mWvV1XBNgj8s=; b=dikliuUgz/757v
-	mtbJsL89VtxubC30ypsa9wl03ARlIZWOhVY2co1eWa5v7a9Te3HiXSaHGYGA8iKwLj+Rwg1sSIPjO
-	0wtvyhBRKvitQxCYNxs5dl5j946nDpYuXaYNHMvie6aAOf2v2Fs76il84voSnVNMhO7IE7ljdD3g5
-	DuBY0/9q7L4BGN/St+zohNsAGNgSAZW5D+DcmqM4G7ts8srD/gjPvoRAysTPmlKuHLOdxVJEsM8di
-	1uNaAwDsrNaXk0RSgDM324ozwYaI+mpgVM6+sQ3MRB9c/0aD98HzOP6fnFVjdk7tlRaUGqfEMJnzZ
-	q63B7CIzmi1hTJ8+5MDA==;
+	List-Owner; bh=WiwgcTO5UPuiaRswwy+fVDtBGPY3YPidujVD1fdLT2A=; b=S8TjvO6i0rkGcp
+	RElPTcXogBAY7D3UXvuSfh5HEPz0kU+YK7TW5oqNDqSzEjVbpYQd7gryyCwLzpPjmsksi152ls8uv
+	owvUwvHJSuZRPvCw0R2r4GgN357Dq+IWoQank0z7R1oavqLFS9QjEI6W3TnrLfK2jLCy1PLILfldT
+	i3rfFkQOslnLJPp4nkZy+z+2CBiHE3Gv8MgUwvjEm76hiJkQccCULZhVOT7fc0QMJkMgbLAffVsHW
+	CAEyKmyRixc49Vl78mNGV0ix8Q++MWCeZRAB2DHAfsEW8SfffkUKetjjkvbQy1sP7xmACajqqPvZ8
+	QHjaSE/MnmKIUlC5KpJg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w4Zx3-0000000GD5x-2l2f;
-	Mon, 23 Mar 2026 07:43:53 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1w4b9E-0000000GK4G-3b6O;
+	Mon, 23 Mar 2026 09:00:32 +0000
+Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w4Zx2-0000000GD5R-1Bcu
+	id 1w4b9B-0000000GK3l-0hV9
 	for linux-phy@lists.infradead.org;
-	Mon, 23 Mar 2026 07:43:52 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 23BF760051;
-	Mon, 23 Mar 2026 07:43:51 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 59CC0C4CEF7;
-	Mon, 23 Mar 2026 07:43:50 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
-	s=korg; t=1774251830;
-	bh=lr5Fhmgun0YWB96hanC0s/lc635kRBaObUfJNlkomyE=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=RmEl+FrurzTKfi+DrQDWO5WCLiGdO1TjB2N061ypBfroEMSGfEtJ7xKT2isDCZEFr
-	 PD654e+uSKF5iqt1M8EEqEVxr7PW6DpUCsNgi07TUcpFnQ/GST+cWHFNU61ODUd28e
-	 vZJjr3Q4LbqEkvaeQMg2O2dzOchzgGj9VmR1W80s=
-Date: Mon, 23 Mar 2026 08:43:29 +0100
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+	Mon, 23 Mar 2026 09:00:30 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+	MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=yMWdX5rPU/LnYnaKYFuAJpacSJjdsYtQkCNE/5cAkNw=; b=PSwEOmg+s3OczIMqw7GtGr0Fdf
+	HA30SHMempCUFsF4P+/wB4O9mxAJuHBvKfp+WopGLmcVaWKey4NeTTNgrCfcludwaigtBAvL9AKy9
+	8aKNh6qwqzU15V1EkY49I1k0ExipPVcIuFfZKT40j53SnOJOki341VbB9gviwD+1G1WYuTn+6djf4
+	Co73IutMNyyt7iaIhJWnbAdqd7wVO0CVjDKF4+CH1H2AwCYPaoHJHA4qtXmx+URFIrsxOmLraeEOx
+	uC0UiZMh9oYmRKRMHBboKtS4j73+15+KcBX3gfsOkW5zdkl6cy5Mm0u9h378R3sO1FFB3I8BtvfAa
+	4gisQ0dA==;
+Received: from shell.armlinux.org.uk ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:53602)
+	by pandora.armlinux.org.uk with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.98.2)
+	(envelope-from <linux@armlinux.org.uk>)
+	id 1w4b8f-0000000009l-0dMz;
+	Mon, 23 Mar 2026 08:59:57 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.98.2)
+	(envelope-from <linux@shell.armlinux.org.uk>)
+	id 1w4b8a-000000003tW-2pe0;
+	Mon, 23 Mar 2026 08:59:52 +0000
+Date: Mon, 23 Mar 2026 08:59:52 +0000
+From: "Russell King (Oracle)" <linux@armlinux.org.uk>
 To: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-Cc: Andrew Lunn <andrew+netdev@lunn.ch>,
+Cc: Andrew Lunn <andrew@lunn.ch>, Andrew Lunn <andrew+netdev@lunn.ch>,
 	"David S. Miller" <davem@davemloft.net>,
 	Eric Dumazet <edumazet@google.com>,
 	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
@@ -51,23 +61,28 @@ Cc: Andrew Lunn <andrew+netdev@lunn.ch>,
 	Mark Brown <broonie@kernel.org>,
 	Liam Girdwood <lgirdwood@gmail.com>, Lee Jones <lee@kernel.org>,
 	Pavel Machek <pavel@kernel.org>, Peter Rosin <peda@axentia.se>,
-	Andrew Lunn <andrew@lunn.ch>,
 	Heiner Kallweit <hkallweit1@gmail.com>,
-	Russell King <linux@armlinux.org.uk>,
 	Moritz Fischer <mdf@kernel.org>, Xu Yilun <yilun.xu@intel.com>,
-	Tom Rix <trix@redhat.com>, "Rafael J. Wysocki" <rafael@kernel.org>,
+	Tom Rix <trix@redhat.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	"Rafael J. Wysocki" <rafael@kernel.org>,
 	Danilo Krummrich <dakr@kernel.org>, netdev@vger.kernel.org,
 	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
 	linux-spi@vger.kernel.org, linux-leds@vger.kernel.org,
 	linux-fpga@vger.kernel.org, driver-core@lists.linux.dev
-Subject: Re: [PATCH 10/10] driver core: class: remove
- class_find_device_by_of_node()
-Message-ID: <2026032321-freeing-outreach-be2e@gregkh>
+Subject: Re: [PATCH net-next 07/10] net: phy: switch to using
+ class_find_device_by_fwnode()
+Message-ID: <acEBCBgMV3RrGKiU@shell.armlinux.org.uk>
 References: <20260322-remove-device-find-by-of-node-v1-0-b72eb22a1215@gmail.com>
- <20260322-remove-device-find-by-of-node-v1-10-b72eb22a1215@gmail.com>
+ <20260322-remove-device-find-by-of-node-v1-7-b72eb22a1215@gmail.com>
+ <32679fc0-c388-4cd7-a030-5f5ed5abab78@lunn.ch>
+ <acDLzK8vpptTUMf1@google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260322-remove-device-find-by-of-node-v1-10-b72eb22a1215@gmail.com>
+In-Reply-To: <acDLzK8vpptTUMf1@google.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260323_020029_489637_23135407 
+X-CRM114-Status: GOOD (  14.62  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,17 +99,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sun, Mar 22, 2026 at 06:54:28PM -0700, Dmitry Torokhov wrote:
-> All users of class_find_device_by_of_node() have been converted to
-> using class_find_device_by_fwnode(). Remove the former.
+On Sun, Mar 22, 2026 at 10:17:15PM -0700, Dmitry Torokhov wrote:
+> On Mon, Mar 23, 2026 at 03:54:09AM +0100, Andrew Lunn wrote:
+> > > -	d = class_find_device_by_of_node(&mdio_bus_class, mdio_bus_np);
+> > > +	d = class_find_device_by_fwnode(&mdio_bus_class,
+> > > +					of_fwnode_handle(mdio_bus_np));
+> > 
+> > When you look at this, why is it better?
 > 
-> Signed-off-by: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-> ---
->  include/linux/device/class.h | 12 ------------
->  1 file changed, 12 deletions(-)
+> I think we should move as much as possible towards firmware-agnostic
+> APIs and use fwnode_handle instead of device_node or software_node or
+> ACPI companion. To discourage this I think we better remove
+> firmware-specific APIs where we have firmware-agnostic ones and
+> eventually clean up drivers that use OF- or ACPI-specific APIs.
 
+Basically, no. This is wrong.
 
-Acked-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+It may sound like a good goal, but there's an underlying issue. This
+goal assumes that the firmware description in OF and ACPI are
+indentical.
+
+Sure, looking up devices by fwnode handle makes sense, but looking up
+anything that is described in firmware is not suitable for this kind
+of conversion, because in doing so, you effectively "port" the DT
+bindings to ACPI, and it may not be suitable for ACPI.
+
+So, please don't make wholesale changes that transfer the DT bindings
+into ACPI.
+
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTP is here! 80Mbps down 10Mbps up. Decent connectivity at last!
 
 -- 
 linux-phy mailing list
