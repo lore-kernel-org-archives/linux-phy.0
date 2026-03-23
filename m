@@ -4,72 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D712D58CBB
-	for <linux-phy@archiver.kernel.org>; Mon, 23 Mar 2026 01:54:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 80AD1D58CBB
+	for <linux-phy@archiver.kernel.org>; Mon, 23 Mar 2026 01:55:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eFONh4b4NyY4jOTEBcpdTfY3A+UFW4GxVx1+0SCdal8=; b=0Q1n4P2jacs2yC
-	nGgIo+W0c6tz0Dgpp6xRlIx1ZZygfP5bK2VcO2BrVH5IX2JxniG5UfQMOnSAtFccJeNltGlZ31uBh
-	Ckir1i1tQ+1AfS/sAaLJsu6pgxJMjHAzRHVwYLOyk+NYkZdI+BeeALbObdab61hCSt4VI9eZgozEf
-	monGAukNGAoNPpFr6Ejx+OqeAJj7lOmVtF+szmTibtWyhDvpjdDFsE0mC8TJ0Y1yGUR/kyyap6wC+
-	8KGKS312jbNTPy46DYB/j5hBqLt+jFo/c0VwwW1R8uA+JXHJtjw4T3kHl+uDkSX7FSF8+jwcOslLk
-	ewG1lnolsimXfkT5sWSw==;
+	List-Owner; bh=no2NP/yxEQnRmL6/EJECmwy1ZFGpjsxLlkoXi7FWMWQ=; b=I5YPi7LU09Q5YJ
+	RxjYIg86DqiUAJw/D21xWFfnd0r/O4bwFRHT9711dJqP12ngyveCoXTOd4RCiM00ARZDKOwnkjwng
+	kMcmMEETYl+/1acuD36cM+DbHO0eN7RviI2VhAIZIlKeD+IeHEZEtPx0zbgOXrUbtXzSpoxrDP+DR
+	4j8avgZ0f1srYA0iBmi1tKym5CBunpv6y1w6dxCYNo+fclRhFxX1FUOQcRI1B/Zg/zGWwu5YtR3RK
+	5HB5kL3paAGsLuuNTx8CpuPBsUMRqtayi11BLYT9+w06MSg0kRGS3gUcpyiOdkn1X6yPwfPwBPRdJ
+	csAssMWOH1fndazMxX+w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w4UVO-0000000FsFA-25jA;
-	Mon, 23 Mar 2026 01:54:58 +0000
-Received: from mail-dl1-x122b.google.com ([2607:f8b0:4864:20::122b])
+	id 1w4UVR-0000000FsGR-10mY;
+	Mon, 23 Mar 2026 01:55:01 +0000
+Received: from mail-dy1-x1330.google.com ([2607:f8b0:4864:20::1330])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w4UVM-0000000FsEF-0A1Y
+	id 1w4UVN-0000000FsEp-3OZO
 	for linux-phy@lists.infradead.org;
-	Mon, 23 Mar 2026 01:54:57 +0000
-Received: by mail-dl1-x122b.google.com with SMTP id a92af1059eb24-12a71ade78cso2804617c88.0
-        for <linux-phy@lists.infradead.org>; Sun, 22 Mar 2026 18:54:55 -0700 (PDT)
+	Mon, 23 Mar 2026 01:54:59 +0000
+Received: by mail-dy1-x1330.google.com with SMTP id 5a478bee46e88-2c0e3a2605fso653000eec.0
+        for <linux-phy@lists.infradead.org>; Sun, 22 Mar 2026 18:54:57 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1774230895; x=1774835695; darn=lists.infradead.org;
+        d=gmail.com; s=20230601; t=1774230897; x=1774835697; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=mfkDMRyvNYwOzv0q3wBq2OUYpD97VO+f6771zL+oLTY=;
-        b=D2UdY95v0i/GbcNz0ylpTWwxw+4Iu70okCDrrjzD1O6ROeEfrSBeIwzLriX4Etmw25
-         LAD9g9LZVi4VvOXoz+a8JLA9MO62VhghCywHZUOcGdTIGMvAx2MS/NXDfRzA2c4Rh/1e
-         48j/fA266rRlErZ13MUMzZQyOfuT+lR4vZ1u9bW4/0RbLHwLoZ/kluiIyHBdIiulxp9o
-         bZTlspM02c/MiP8oH+afDfGBKPOghc80J9qVvMBOIhH0bb1+p/roTo1rgOAf716l69f2
-         /DibeWmxvfm28R5uIhEr/I+jjb33QDkaBVrl6BXZsCbvYvzzJO2FAwTjJ7fzRTUnZXRE
-         /RhA==
+        bh=JV33ceOiC1VxLFfbHMOp1tzZ4L73tAWczcXKydNsu3s=;
+        b=Eot7GmTgCAOKDpwFqBvZRHAew19FYFisXNsMv7nEnDmw2HM2/BW/ssbp3983dRzAhT
+         o4nV12J45e1C0XDLAi5+UR/anHTmiXH3lZXEi2KJZd+3ZTq8QQj+UZVm9lrlYtECy0P+
+         tI0XoSQAe4LtlpEOVwq2EoepYNTsuCcuIJj08/Y3b0/A2Q5tALBn5WwUPKuKolePc79h
+         QyzENQOF0zjMlDJpDCTvTGFCH6a8R5yqkw1iZ9vLbNcut9ZS5qd876SawPxObHrLDgJM
+         REhUZ1NKcdBJOSjCOTdfoImdZKX4l4a49bKCQkaxKCb2iSz8kiOfWQbRriOLV/N+5VVu
+         g1FA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1774230895; x=1774835695;
+        d=1e100.net; s=20251104; t=1774230897; x=1774835697;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to;
-        bh=mfkDMRyvNYwOzv0q3wBq2OUYpD97VO+f6771zL+oLTY=;
-        b=n3H/pZ+UiJd35W31K289oviLGLVwF/0M1cwJLCManPi6Oq+C+kzgnkuH2OwI1wXrzy
-         KczV+Z3h9fpbYDL0eZZhn9ZlopxcZjEF4pfujxeXJSNrNVsX6A2QZ1d25cr7OzvKE/6Q
-         fUre+CniQtbg/Z3HEa3Lcr8kN65OydTvlOztVuFewn3JNsL4hKtjhjz10IAnOGSHWROk
-         9Ef0p5jXGbFNA/K9B5XJmuAlQJm5+DgH2N4RXjIiikUUcSt66zSHZqtfBj1s5gzlwfk7
-         HEHqSceVp1FZ6k796Fga3ynMHVWjACNFYNr19g8niRp3Hi9vtxXnAX3xNtGR/dKIhZq9
-         UdFg==
-X-Forwarded-Encrypted: i=1; AJvYcCXYydLqQLIPBnYxkWdGQxe3j67iHpL/DmccqkWSL/TI7y1QRuPgOBEB74PvA1v4GIwLSmdtkuORJ9o=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yz3UK9GGCkoRay7cOwpYZ9+K6m3ZZ+NIO0iYHEdh6+Isknxw/ig
-	Gkjovv7erqzgFZEgHSr6dWhreY+e+4LHLhRsi4k65ukfd1bqEdwdHkAb
-X-Gm-Gg: ATEYQzxaFssFqiGwvDuhlCOP3uKoldSle6iOg0/i5SuqCWaM5QA7gyYN1AT/rtMuU1x
-	5ZN0CoxhyQQTVj9UGu1Iveh7vQ6GroVvLPTogjpSp6/1y5Oc5SwWEuBIsCTGBJw5v40T1T7s3xP
-	88X3t1T+abpyFSMIddXGk7WpmGM0an/toBOqAUMaE00Cah8rqQKw/di2doyFp8YQRgeBnHEGud0
-	ogxoqSok+EhbDhYQON9K/0bTg6HPrCRelAB4Sfjs8s3ife9YnYyHzrFD5xx5+zE1vg+6ypFW7km
-	53yo9m6YBDRU23wo5TjDnUlnInQJOEfXk9S9BCkF+dRA9fC2Yry3xihAI2SCTSq9+lUhgRo//l+
-	giTaNgVaHsQGqWCGWTKcW8OfETyqx/195PbjUVTTFuXFER0AQdMyUBwiosP1QOdpMP6eQK5TNHc
-	PdfLOtMn9nsBFt6gGCQEbnKNSExmtKPPmu6BQcmQ+9GZPHVS6Up0JzQaPf9e2hgG+QxpLiPg8nc
-	DxknujSzIx/MrA=
-X-Received: by 2002:a05:7022:3846:b0:12a:6b99:1ad4 with SMTP id a92af1059eb24-12a72684aa1mr4380934c88.11.1774230895127;
-        Sun, 22 Mar 2026 18:54:55 -0700 (PDT)
+        bh=JV33ceOiC1VxLFfbHMOp1tzZ4L73tAWczcXKydNsu3s=;
+        b=VuGbtndzQFOT2/e6spzwJxIYXDP6wVT4XnBFSQbLmZMIa+wk0kDw/XtDcTWxFiOWbA
+         mGXNDmDyKu6cFPXdMhNFknTfMCWu5eCaXqu/diytLQv0+yUuA4CbP2hojGOHb5WhFgRm
+         7+oi145Jku/cOWNjvfCUO9v7vi41u0av9v53dmPBcZtQpJzOyuyATr1l99AIg8/+qWJ0
+         KKoVOhzQAErtgP9YhaMuHur8IYIHQpy2o0dZvdVrbPqqbRC7j2IEBxPqll/+bD7OAoca
+         BXEKoQYUzg8a7deFp2eP2Ay8BiH5y4bDGd0JUDdn0tDB0NXbhRjyZWfHqJOPGghzIQWX
+         UFyg==
+X-Forwarded-Encrypted: i=1; AJvYcCUeSUD50w894Z4bDi6mNkshaSvRDeWEhmF4LUXNWExrO7X9mTbzKzaD69UmWrZ+aJoj/SiddagT+Y4=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yx13PZnqbEiOhmP66ACPt2wiXRhvgqY5MklJRD27B4lF7nWolzV
+	dB0XWkWQc0wrzGQLwPzP6uMX5tjQa5sReLERZMwQn22JVCi4VsaoC1Pk
+X-Gm-Gg: ATEYQzx6h/0uI7uu1CunGKMKmkOgzdOIhV7ETUwa62O9Y9bgDy6at/ruPdF07DHPsBV
+	HfMbCIrK8q5Yy/2yGu7BDnjoIP22tLucZDK/eAE4v1iiK9fARxjCbFnUEJBi79f7/lX2GvWeGGp
+	lQA9I/FvHn+74rGZs7jkIkHqpLmNIEazdShMLDVOfs38lmTUxTTAfG14O/lzDbZWzWPvcJG+HvT
+	Y6AfB2qzKY6NJ9iTDlwYLRsQ910reyxx2LNF/OqHWG6TXCulMuLM4DCz3CgpIfU27AHAGfDPMki
+	aa/iC0BNiYDRwNnpRpf19ZBrdPx2gZOzqiBFmWsG0zpXVxRC4Xva7oP7zZteGXHbbknajQGGNS2
+	CbM0blJZtjeBh/gakOlclhHz1hsmJg5hxG0iSb79ziXJ2TC4mhbjDLXT6NkfWeQAi66Q2DHiL+0
+	Y7D5M8G8bFtixJDHI5Y9Y7KclhdeDukHtyr5/wyAhM+osKq5lSLnatS01vdCKhArMDbjKDrT/x/
+	RYEs6wOrO1borg=
+X-Received: by 2002:a05:7300:e2cc:b0:2c1:27c:75a6 with SMTP id 5a478bee46e88-2c1095fbaa9mr4810786eec.10.1774230897161;
+        Sun, 22 Mar 2026 18:54:57 -0700 (PDT)
 Received: from dtor-ws.sjc.corp.google.com ([2a00:79e0:2ebe:8:b768:22ed:3eba:aeb3])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-2c10b2cf068sm10976952eec.22.2026.03.22.18.54.52
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-2c10b2cf068sm10976952eec.22.2026.03.22.18.54.55
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 22 Mar 2026 18:54:54 -0700 (PDT)
+        Sun, 22 Mar 2026 18:54:56 -0700 (PDT)
 From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
 To: Andrew Lunn <andrew+netdev@lunn.ch>,
 	"David S. Miller" <davem@davemloft.net>,
@@ -99,19 +99,17 @@ Cc: netdev@vger.kernel.org,
 	linux-leds@vger.kernel.org,
 	linux-fpga@vger.kernel.org,
 	driver-core@lists.linux.dev
-Subject: [PATCH net-next 07/10] net: phy: switch to using
- class_find_device_by_fwnode()
-Date: Sun, 22 Mar 2026 18:54:25 -0700
-Message-ID: <20260322-remove-device-find-by-of-node-v1-7-b72eb22a1215@gmail.com>
+Subject: [PATCH 08/10] fpga: bridge: switch to using class_find_device_by_fwnode()
+Date: Sun, 22 Mar 2026 18:54:26 -0700
+Message-ID: <20260322-remove-device-find-by-of-node-v1-8-b72eb22a1215@gmail.com>
 X-Mailer: git-send-email 2.53.0.959.g497ff81fa9-goog
 In-Reply-To: <20260322-remove-device-find-by-of-node-v1-0-b72eb22a1215@gmail.com>
 References: <20260322-remove-device-find-by-of-node-v1-0-b72eb22a1215@gmail.com>
 MIME-Version: 1.0
 X-Mailer: b4 0.15-dev-a6826
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260322_185456_265530_230DBCD4 
-X-CRM114-Status: UNSURE (   9.30  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260322_185457_965287_708185ED 
+X-CRM114-Status: GOOD (  12.39  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -133,31 +131,31 @@ using class_find_device_by_fwnode().
 
 Signed-off-by: Dmitry Torokhov <dmitry.torokhov@gmail.com>
 ---
- drivers/net/phy/mdio_bus_provider.c | 4 +++-
+ drivers/fpga/fpga-bridge.c | 4 +++-
  1 file changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/net/phy/mdio_bus_provider.c b/drivers/net/phy/mdio_bus_provider.c
-index 041576eba47a..ed3cd9a37c67 100644
---- a/drivers/net/phy/mdio_bus_provider.c
-+++ b/drivers/net/phy/mdio_bus_provider.c
-@@ -21,6 +21,7 @@
- #include <linux/mii.h>
- #include <linux/mm.h>
- #include <linux/netdevice.h>
+diff --git a/drivers/fpga/fpga-bridge.c b/drivers/fpga/fpga-bridge.c
+index 8c275bd48a0d..3e04bb4341c7 100644
+--- a/drivers/fpga/fpga-bridge.c
++++ b/drivers/fpga/fpga-bridge.c
+@@ -9,6 +9,7 @@
+ #include <linux/idr.h>
+ #include <linux/kernel.h>
+ #include <linux/module.h>
 +#include <linux/of.h>
- #include <linux/of_device.h>
- #include <linux/of_mdio.h>
- #include <linux/phy.h>
-@@ -754,7 +755,8 @@ struct mii_bus *of_mdio_find_bus(struct device_node *mdio_bus_np)
- 	if (!mdio_bus_np)
- 		return NULL;
+ #include <linux/of_platform.h>
+ #include <linux/slab.h>
+ #include <linux/spinlock.h>
+@@ -94,7 +95,8 @@ struct fpga_bridge *of_fpga_bridge_get(struct device_node *np,
+ 	struct fpga_bridge *bridge;
+ 	struct device *bridge_dev;
  
--	d = class_find_device_by_of_node(&mdio_bus_class, mdio_bus_np);
-+	d = class_find_device_by_fwnode(&mdio_bus_class,
-+					of_fwnode_handle(mdio_bus_np));
- 	return d ? to_mii_bus(d) : NULL;
- }
- EXPORT_SYMBOL(of_mdio_find_bus);
+-	bridge_dev = class_find_device_by_of_node(&fpga_bridge_class, np);
++	bridge_dev = class_find_device_by_fwnode(&fpga_bridge_class,
++						 of_fwnode_handle(np));
+ 	if (!bridge_dev)
+ 		return ERR_PTR(-ENODEV);
+ 
 
 -- 
 2.53.0.959.g497ff81fa9-goog
