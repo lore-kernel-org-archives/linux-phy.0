@@ -4,78 +4,104 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 18198F4613E
-	for <linux-phy@archiver.kernel.org>; Mon, 23 Mar 2026 22:12:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 418C2F4613F
+	for <linux-phy@archiver.kernel.org>; Mon, 23 Mar 2026 22:21:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jWNmrC6JlGM83/bei6Q1chXtje7olelt1pwlpxBI5Kg=; b=F+nABxKOhVhGzV
-	OtxrZjHJW/k5WZ80cRrN5rJGDHl8XpN9uGzQY2oP3W6SOTkfaNtKI6s0F9oBVBGahj+D5B0gtb/uy
-	MaeMPKMnezbX5eaFax+Ky81T3Iwup8SdMgjaD7v2Xoai/1zeOI+pKu0dKLchUONih1qmNxd/AW3Sc
-	ilnh/uAQhHkUCjMDytSY9FyZjfCAeVEWAP16cRgBZFNf9ObBXOgddCr9AMjpl72riHM55htkwQYHN
-	YF9OT9q7NC8015Nov76EP9VU15SJBam6QVUpPPEloRJAk537nOdsXb7qppNXXMivNJy8GbZmaSBX2
-	nQgKhD+SFRULEmLr2TQw==;
+	List-Owner; bh=NvzT/HaUm9y5c1qTqErA2DuoSrCqA4q7f8iCiev4sY0=; b=RJ4PzUuuLznBvV
+	xVAHKIm3VHT1+1hDl0ABcKdPvnfoLFL2SGsY6083RAOumHU1PuqMlcCUpD9CSX/kLnKJkgOOUdDaN
+	h+M4lB8hir0xVJviwY2FbhrEGoIyW46tGPzGL5eZVC4hRFTrk8FI/ROfPYbhlormJAENQPNLx+SFO
+	8N5Aan8VGo/OV3af0UP5dO5T0i6l4QKNfzh/xEEKlp/wsV3XYol6NkPvW1JHm2s9nJ+IBeW4m+IQl
+	YoyZQqikHQXAKQDZoR4L3sQUQ4aEWu7FyOHrL1B9IUUrkF4OP/JlUkpCcKZqiKok+NrlIUr4IjqSt
+	bcWqFy+5j7nbZbjPyeaw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w4nVy-000000003ep-2pp5;
-	Mon, 23 Mar 2026 22:12:50 +0000
-Received: from vps0.lunn.ch ([156.67.10.101])
+	id 1w4ndr-000000004Rn-49iv;
+	Mon, 23 Mar 2026 22:20:59 +0000
+Received: from mail-dy1-x1336.google.com ([2607:f8b0:4864:20::1336])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w4nVJ-000000003Ys-2dk4
+	id 1w4ndq-000000004QP-0uU1
 	for linux-phy@lists.infradead.org;
-	Mon, 23 Mar 2026 22:12:49 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
-	s=20171124; h=In-Reply-To:Content-Disposition:Content-Type:MIME-Version:
-	References:Message-ID:Subject:Cc:To:From:Date:From:Sender:Reply-To:Subject:
-	Date:Message-ID:To:Cc:MIME-Version:Content-Type:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Content-Disposition:In-Reply-To:References;
-	bh=SI0+KwkPfwgoDdX+0jEvH5cFTJRTk67LUQ/ONMeOpow=; b=noCTwJeMau3v7UV4VnKCLpWr8W
-	hRXYUl4+OExs9pxY2TJcr2o32iliV9RSn3RC+oFjgYV3efZnpsd8Du461lFenp5kt1BIelV4DQcSa
-	W2WRCGcQidhFzFUWZuanxinEGa7W4CUzIfW5/C4vR82SiVdrk1Xqrb1bwK2BKSLS5DeA=;
-Received: from andrew by vps0.lunn.ch with local (Exim 4.94.2)
-	(envelope-from <andrew@lunn.ch>)
-	id 1w4nV8-00D0AX-Ki; Mon, 23 Mar 2026 23:11:58 +0100
-Date: Mon, 23 Mar 2026 23:11:58 +0100
-From: Andrew Lunn <andrew@lunn.ch>
-To: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-Cc: Mark Brown <broonie@kernel.org>, Andrew Lunn <andrew+netdev@lunn.ch>,
-	"David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Liam Girdwood <lgirdwood@gmail.com>, Lee Jones <lee@kernel.org>,
-	Pavel Machek <pavel@kernel.org>, Peter Rosin <peda@axentia.se>,
-	Heiner Kallweit <hkallweit1@gmail.com>,
-	Russell King <linux@armlinux.org.uk>,
-	Moritz Fischer <mdf@kernel.org>, Xu Yilun <yilun.xu@intel.com>,
-	Tom Rix <trix@redhat.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	"Rafael J. Wysocki" <rafael@kernel.org>,
-	Danilo Krummrich <dakr@kernel.org>, netdev@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-spi@vger.kernel.org, linux-leds@vger.kernel.org,
+	Mon, 23 Mar 2026 22:20:59 +0000
+Received: by mail-dy1-x1336.google.com with SMTP id 5a478bee46e88-2c0c955a481so4047462eec.1
+        for <linux-phy@lists.infradead.org>; Mon, 23 Mar 2026 15:20:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1774304457; x=1774909257; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=7kzF6SFWkNpwiVT7Tzq/JseNp5uopL7N2rNpwm2glC8=;
+        b=j5jXq8flPE1lKew4E6l71zxqbDNcMtttI9fzclFiS9oyS/0KjiO+PG3XWSaPLDGR+5
+         pyyF1J7MLnZuTS96/wvTmgymlNc+fPXaHBzb8pz52lmXge645Fvt3bneVDTGXeVfrYTo
+         GKqqZLJDJ8WG6Xc+MghpDknQ0SQoLL+gn9XTiVHG1r0LCRLbtX4do4r6yGBPmUPdKxml
+         eHKkLIPtXBRoIcEsSlYpzd37+yLU7VKIItOfNOC5ZsFO+Eenp2Yxqje33mHUSGmYvccl
+         MmZdEPCnelmoMlew7IWu/3qkuRAZADJS7ZhBoFlQNyuwbeu32vBd+EXviLRAq01Cc76N
+         AQZg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1774304457; x=1774909257;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=7kzF6SFWkNpwiVT7Tzq/JseNp5uopL7N2rNpwm2glC8=;
+        b=byzRpYTo9hVcFlCpH2KWVpFfmJB6DRwyC7wQMgXzJXrNsnWVaQDnYRime2jW4XB03C
+         k6pVLjW0rmL7YdjLRlbJzjsrKOniN1x7ttakB3oM7pdH16ykKCt16vQAIbQILwOZetsO
+         Ckqgk8z+9AkERs4Ad7bUKF7HOMocZGCLWBHo1DZEsc2wfxvP0dNIqkGP1fBzyKWeIm79
+         2Ppkyo+jRcKmsOFL/2GcE6y8R2Cv7J5IU2yNi+KFFt1pkCQ0w9WZlywXp5phYQb/zwlt
+         7lV/QglEpTZY6Ih5OgBvxHk7NBBF7egxMo06zoAYCjWf9t3Wkx13OJ3Iw7Gj4R388FKN
+         lmag==
+X-Forwarded-Encrypted: i=1; AJvYcCVl/bOsimDt3SS6JCoRXKe+4STEWwUtX22pzvmkHppnLd756JB/gc+UkXczVkBh46lL0Bt8oxTjwZg=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzEF/bAEE9xKxIyE5L6Q/vswt0zsDEA+pjpwbxJK2Fwjf2y8Kqj
+	02LyDumppRgRNUpek33wSfwEqi1vTYzqaH0EmcI4K5PSXuacmeTAVfs3
+X-Gm-Gg: ATEYQzyZWLleIX6vt7sRVWymGGFP6CzWEhhFmFDYEF0/3WKe0dxnq93dKKvSHp2/I0w
+	YazwHj8fZmTUZt8qkTeN4KRaFxzRXE/QHF5Pb2Dvb0+94ZbuElFanD9MvoDj2DdsUm/rekcRz8m
+	DjL5tLGvTwJVWaOpXHq36n5rHu14J+uSbYisYJNsabOezNroJHSSux/CnW7hySPGykTsLOpdWvI
+	fhFF14BwKgH0LRK/W0HC7qwi/fkS52jyZvvxNNw4wxLscl0xtfv6OoakkTGLGk6sBcUdHFGzNvg
+	PPOiFpiJiWNXXdZ2v6t9LAjKaUZ0jKO05FV6YBFpZJN716XoS3h9i9a1lBDX3v5XQ/5VrAD1HRH
+	DaVPpn8tTABTHWL9mPIw6bzE7GGF2T1OR7m5mMZfSaSB/UKjXfTpnnG6zwh5IlV+LncQBH1ya10
+	XojJnvx1S55v7vqfuEKFW0qxk4eWcyLv1iafXu5yaHHtvpPIvcE8D0x/MoJQXqJjU5
+X-Received: by 2002:a05:693c:3b0b:b0:2be:ca4:e119 with SMTP id 5a478bee46e88-2c1097abc22mr6650334eec.30.1774304457110;
+        Mon, 23 Mar 2026 15:20:57 -0700 (PDT)
+Received: from google.com ([2a00:79e0:2ebe:8:a296:1211:5ab0:bc95])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-2c10b2d673asm16033079eec.24.2026.03.23.15.20.54
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 23 Mar 2026 15:20:56 -0700 (PDT)
+Date: Mon, 23 Mar 2026 15:20:52 -0700
+From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
+To: Andrew Lunn <andrew@lunn.ch>
+Cc: "Russell King (Oracle)" <linux@armlinux.org.uk>, 
+	Andrew Lunn <andrew+netdev@lunn.ch>, "David S. Miller" <davem@davemloft.net>, 
+	Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>, 
+	Paolo Abeni <pabeni@redhat.com>, Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Mark Brown <broonie@kernel.org>, 
+	Liam Girdwood <lgirdwood@gmail.com>, Lee Jones <lee@kernel.org>, Pavel Machek <pavel@kernel.org>, 
+	Peter Rosin <peda@axentia.se>, Heiner Kallweit <hkallweit1@gmail.com>, 
+	Moritz Fischer <mdf@kernel.org>, Xu Yilun <yilun.xu@intel.com>, Tom Rix <trix@redhat.com>, 
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, "Rafael J. Wysocki" <rafael@kernel.org>, 
+	Danilo Krummrich <dakr@kernel.org>, netdev@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-phy@lists.infradead.org, linux-spi@vger.kernel.org, linux-leds@vger.kernel.org, 
 	linux-fpga@vger.kernel.org, driver-core@lists.linux.dev
-Subject: Re: [PATCH 04/10] regulator: of: switch to using
+Subject: Re: [PATCH net-next 07/10] net: phy: switch to using
  class_find_device_by_fwnode()
-Message-ID: <09072374-65e7-4792-af7e-97d7df93f9bd@lunn.ch>
+Message-ID: <acG4hY23zHHCRywx@google.com>
 References: <20260322-remove-device-find-by-of-node-v1-0-b72eb22a1215@gmail.com>
- <20260322-remove-device-find-by-of-node-v1-4-b72eb22a1215@gmail.com>
- <360a8b4a-6507-417a-9fc1-c53b14868657@sirena.org.uk>
- <acGFksyx3SA0kJ5b@google.com>
- <7d46803e-b285-4e9c-8856-10100fa0ea85@sirena.org.uk>
- <cf92122d-6b15-458a-bf89-189a0a6874f7@lunn.ch>
- <193e194a-498f-464f-b22c-c283c16db6c1@sirena.org.uk>
- <acGzJV3vKhuty3nd@google.com>
+ <20260322-remove-device-find-by-of-node-v1-7-b72eb22a1215@gmail.com>
+ <32679fc0-c388-4cd7-a030-5f5ed5abab78@lunn.ch>
+ <acDLzK8vpptTUMf1@google.com>
+ <acEBCBgMV3RrGKiU@shell.armlinux.org.uk>
+ <acGGWTmSMuc5h3Od@google.com>
+ <acGI4PI3MHML9Pce@shell.armlinux.org.uk>
+ <f37684ff-57af-425a-bb18-bd5e8de3bba3@lunn.ch>
+ <acG1JNGVBJ2Mf7jC@google.com>
+ <f3c51f5d-e001-4a6d-a219-f2e0698f35f9@lunn.ch>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <acGzJV3vKhuty3nd@google.com>
+In-Reply-To: <f3c51f5d-e001-4a6d-a219-f2e0698f35f9@lunn.ch>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260323_151209_669995_E5AD4E6E 
-X-CRM114-Status: GOOD (  16.63  )
+X-CRM114-CacheID: sfid-20260323_152058_280249_08314ABA 
+X-CRM114-Status: GOOD (  15.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,34 +118,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Mar 23, 2026 at 02:41:03PM -0700, Dmitry Torokhov wrote:
-> On Mon, Mar 23, 2026 at 09:36:07PM +0000, Mark Brown wrote:
-> > On Mon, Mar 23, 2026 at 09:01:47PM +0100, Andrew Lunn wrote:
-> > 
-> > > How do you handle deprecated OF properties? This is a problem i've run
-> > > into before. A developer needs an ACPI binding, so they blindly
-> > > convert from of_ to device_ without engaging brain. As a result, they
-> > > bring all the deprecated OF properties we want to die into the brand
-> > > new ACPI bindings.
-> > 
-> > Honestly that one hasn't really come up much for me - not too many
-> > deprecated properties.
+On Mon, Mar 23, 2026 at 11:00:05PM +0100, Andrew Lunn wrote:
+> > BTW, why would not we want to push for the unified binding? They are the
+> > same pieces of hardware...
 > 
-> Given that we position properties as an ABI even if they are deprecated
-> we supposed to handle them forever. Newer properties usually offer
-> benefits over old ones and that is how users get moved over.
+> I don't think the ACPI committee would be too happy if i ask them to
+> throw away their standard and just use DT.
 
-~/linux/Documentation/devicetree/bindings/net$ grep -r deprecated * | wc
-     75     361    4195
+I meant if we are introducing a new to ACPI schema... Not throwing away
+existing one.
 
-So networking has ~ 75 of them.
+> 
+> ACPI and DT are different and we just have to accept it.
+> 
+> Nobody really cares about describing networking hardware in ACPI, so
+> there is no need to support it. KISS and keep everything DT.
 
-Within the OF world, they are ABI and we need to keep them. But we
-don't want them in ACPI or any other firmware. Any code looking for
-properties needs to know what is underneath so it can decide if it
-should look for the deprecated, OF only property, or not.
+OK, but even for DT I think we should be using device_property_*() and
+fwnode_handle.
 
-     Andrew
+If there is an ACPI support for mdio it is perfectly valid to use fwnode
+handle on an ACPI system to locate an instance of mdio bus. And
+hopefully the caller of this function does not really need to parse
+properties itself but will use mdio APIs (mii_bus).
+
+Thanks.
+
+-- 
+Dmitry
 
 -- 
 linux-phy mailing list
