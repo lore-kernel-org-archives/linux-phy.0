@@ -4,84 +4,111 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2F2DED58CB0
-	for <linux-phy@archiver.kernel.org>; Sun, 22 Mar 2026 23:33:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5C6E3D58CB0
+	for <linux-phy@archiver.kernel.org>; Mon, 23 Mar 2026 01:54:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pxkzzNFMNx95Hzvdxxap2zuGZRtokgzMcl/QAzPTYGA=; b=dtCSRHmbYjMVfB
-	e8d6T0IjT7NID3f4k8JTaMDGcQAN2FGnFtmHfjKG3nBtjNZv8dGC4tl3w5gtMw7iYps8TzVXqk7wR
-	1ovZZAyE2OjceVC3JlgicsvcqE/fAN1+HBqzrNqYSeaTW7dATNkErOO2SSnOjphuEmeqTKvB+ijKL
-	rWvlJVPp5//r1pyu8GpGLggBbqIS/qW+IHjhHIZ/1U6T053BBIUo9sNYVWMdfGCNf0dA0M/PqF21S
-	8gkRMLrEbw4BGM3rVhxxdWxyLy3HIBkCEOpDNchDUzaY7tfPnPcbBq4q4Iw9JK91BlJVkjXg7hagL
-	zKr8V0aD1O+dIsKoAWvg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=YB67yQGk30edoUC2pSsATpblF5a0AgegWxe7MyEdBN4=; b=A0Apagns53pU8i
+	DDIns0ltDBxeW/3dX5yONanl217sALgkRHR/t4/NcqS8xXzZcfSCZrnXCM8RffwgdSRW9WQdLqiJf
+	tLP9V7O7v/cY6+jrtDEKm6usbn7DfwtIppikivqbIQdRInfW8GgSbvBRYIAmfMv1U4ZpwGEbRlHl8
+	SwEBXuiA+E1HGZYvIlY8auIJLGBipnx5QIPyKlrNwHt6aSBsIzegLyuNrhjgRX2/hihH4DjRbtQ4D
+	RWdXtmPaPP6q4aZD+jTI0ac/jKZYwlnUd4xP7bDmJJtlrHhm06grIcDTqBsCQXxh4rocnXuOk4Aey
+	xQHuuE37W5XcG0aMxF8A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w4SIi-0000000Fl8i-2Q1G;
-	Sun, 22 Mar 2026 23:33:44 +0000
-Received: from mgamail.intel.com ([192.198.163.15])
+	id 1w4UV7-0000000Fs9S-36QD;
+	Mon, 23 Mar 2026 01:54:41 +0000
+Received: from mail-dy1-x1336.google.com ([2607:f8b0:4864:20::1336])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w4SIg-0000000Fl8P-1ZIK
+	id 1w4UV4-0000000Fs8v-3tG7
 	for linux-phy@lists.infradead.org;
-	Sun, 22 Mar 2026 23:33:43 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1774222422; x=1805758422;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=Iyq/kR8m/ROKeqOrN3lBBgrhZ0QikXX9ty57LXSzHu0=;
-  b=jhvKPZt3TN5WA4MRJ2XBr/+SErkOiNcnBZS8e/cMUxKjmgGFxzMdk4D1
-   aG2JlIgS/8uxLoCZVzxFZCOifUYLOqIqnTMCElDl7BrE2pWkIy7K3GwqI
-   kYl5aTqqS/1f+rzt1Zp1OeECtZA6w+QXtC48F1sQ1k4x87DVbwxJizinp
-   vbXDE4xkeTwfKuhoyDxryOKHEQ7ZppE08Y9E8NOTG/Pll8zTsR5njXXqi
-   QsfyoKKFPhDRptP3G+n5Z+Jy/OBXQa14gDxe3cUaFKxW1Kc9//p25D8Kg
-   C+QTY9xgn3bB4+Jx/emPj7dLTyg0ULmNFBVfDkQfxuPQWoqDtLuOh7+Pz
-   Q==;
-X-CSE-ConnectionGUID: qi4JOAAISH+utMxMWcZVGg==
-X-CSE-MsgGUID: oNbxEv4rQvGqpxnIp42BAA==
-X-IronPort-AV: E=McAfee;i="6800,10657,11737"; a="75343994"
-X-IronPort-AV: E=Sophos;i="6.23,136,1770624000"; 
-   d="scan'208";a="75343994"
-Received: from orviesa001.jf.intel.com ([10.64.159.141])
-  by fmvoesa109.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 22 Mar 2026 16:33:41 -0700
-X-CSE-ConnectionGUID: L5lU3e1hSneBMqQipXjSAA==
-X-CSE-MsgGUID: LXf5SMqNRLiXfBtk9LP7DQ==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.23,136,1770624000"; 
-   d="scan'208";a="261766636"
-Received: from lkp-server02.sh.intel.com (HELO 391eea459618) ([10.239.97.151])
-  by orviesa001.jf.intel.com with ESMTP; 22 Mar 2026 16:32:45 -0700
-Received: from kbuild by 391eea459618 with local (Exim 4.98.2)
-	(envelope-from <lkp@intel.com>)
-	id 1w4SHh-0000000007Z-2kCJ;
-	Sun, 22 Mar 2026 23:32:41 +0000
-Date: Mon, 23 Mar 2026 07:31:52 +0800
-From: kernel test robot <lkp@intel.com>
-To: Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
+	Mon, 23 Mar 2026 01:54:40 +0000
+Received: by mail-dy1-x1336.google.com with SMTP id 5a478bee46e88-2c11c43aca0so882146eec.1
+        for <linux-phy@lists.infradead.org>; Sun, 22 Mar 2026 18:54:38 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1774230878; x=1774835678; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=CFNqFKHYHzU+/IYMzEM9SYl6am5Pz+NCaLhPwszpQBw=;
+        b=HA606wbuDiu5yjrimpFnKftEjbOgHsGYZ0p802h7NBPyjxXASSVQEV7jgdyAjgvNy3
+         tgXOAe3GkQsRzhRCredJHlQAJWo8498xu7eHE+FUdmzJbSqaLEm68ky7NxjP5r0Q71eC
+         eimi1Gq6lGSSxIuofqvzh7NgOHGLrBed0OxC+xqr1zzvXz3zVzJZZsGwdBzsf05dqoc0
+         que9g+R8G/OUUTtA8TufLmAvhPGDZ5Ezxewnxy9HcGLFhkpnOlygpJWOJxdJYXkZCWtD
+         B12U5XJ3IHFt0r/FBUbBnzxEb5+l1uwjCI7ruu47KIP9e7x+qscwD5637sH1HVf9N2C+
+         AI/A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1774230878; x=1774835678;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=CFNqFKHYHzU+/IYMzEM9SYl6am5Pz+NCaLhPwszpQBw=;
+        b=aTqwPP1N5HNmoPEht+q6b/8Q96ROnQg1Pdv9dQeNUkYHsAKcPNDVQ5qsMiavTeHJEj
+         xl2XbTyZhBpqLbliUAQ4Zig/HICKf1ZjEYraeSwBEfwzzmHflv1nG6llTqp6RdTtuiaa
+         Csk2GLoohlU1Atefn78TuO59FwaEgTtfdKyIF3KoPmPzEIAB5U5vLE1oRRhiuk39EPcu
+         80a4lg6AKcvrO3cxj3k3tzfDixIu4DLY5AWtmISj/9kSdsg9Bkr2AeGhfmbXUBQjw4pG
+         GIV63h8zm8Rs8Zg5oHpDcrChbyp6T+pN3loYDq9TPsNljOuFTtyMkkILzREpplFB9/Lz
+         Ebhw==
+X-Forwarded-Encrypted: i=1; AJvYcCXdBdaPg95yoqVXOOxfyBj6AfMEOyiRc17fj17F9lSTPFN4k/Zc8s6URNlpYs38i5t3hVVHs1XVEmA=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxUlVX+PapiD44xXQQjxBrp+yx67d/JPLYy3ViWBgdTx4BYNfQa
+	h/OLrRb/CqBSzT7BmuMj83mjYL9zKxiA0W5Ro/1K3Req5PSX04h13kfC
+X-Gm-Gg: ATEYQzw0q4e5WG2Ns/ZdbVM7OGVnfOP9KyrF9A5I0jfc4Yyt7jbvZgc+o3BZe2zPs+m
+	RpmOgFbMs7llg0VQatJaLRWI4bkxwDcHzrNkvwhjXDxMLJWXgeeZnihJJ+hEHOW8U/EoxGRu0Bn
+	1eEA9esUA5IExc/0PlQ1p5IiqfMaUFDCQlY0KTLJzotuDdClHROGd8etoG/WxXmj47N7rL+B81n
+	hCK7fyifeQU4ffN+HIW8kqfucAUKp+wgXP+JgvZbChCTRofj/TjNEmT6kt+v8uEyGeRwgDsnwCc
+	I85tquUzFabOWFLIuLU76jk+l8j8MJbGkFJAFVemb1U0rp5woJ6I6JLa5oP+NkKYtilE+flRhKJ
+	TNkulOtgy+CteVC2LaKGdWRpkz9rgXZZgb6hbWQFX7nFkXeIuH//cRz4ctoO9gPiurImJrtt8gF
+	9UURjQicdOxS4wnVsRhsR3kFvkPiIUxctbrWDAFG2PyLxrYNwdEjLnNrYFhcq2hg5vs31a0gmb7
+	LyChJQ0NzY6L3s=
+X-Received: by 2002:a05:7300:571e:b0:2ba:a1a6:c73 with SMTP id 5a478bee46e88-2c10974ccb6mr3875035eec.6.1774230877711;
+        Sun, 22 Mar 2026 18:54:37 -0700 (PDT)
+Received: from dtor-ws.sjc.corp.google.com ([2a00:79e0:2ebe:8:b768:22ed:3eba:aeb3])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-2c10b2cf068sm10976952eec.22.2026.03.22.18.54.35
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 22 Mar 2026 18:54:37 -0700 (PDT)
+From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
+To: Andrew Lunn <andrew+netdev@lunn.ch>,
+	"David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>,
+	Paolo Abeni <pabeni@redhat.com>,
 	Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>
-Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
-	Bryan O'Donoghue <bod@kernel.org>,
-	Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
-	linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-media@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v4 2/2] phy: qcom-mipi-csi2: Add a CSI2 MIPI DPHY driver
-Message-ID: <202603230713.5uOUC5EI-lkp@intel.com>
-References: <20260315-x1e-csi2-phy-v4-2-90c09203888d@linaro.org>
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Mark Brown <broonie@kernel.org>,
+	Liam Girdwood <lgirdwood@gmail.com>,
+	Lee Jones <lee@kernel.org>,
+	Pavel Machek <pavel@kernel.org>,
+	Peter Rosin <peda@axentia.se>,
+	Andrew Lunn <andrew@lunn.ch>,
+	Heiner Kallweit <hkallweit1@gmail.com>,
+	Russell King <linux@armlinux.org.uk>,
+	Moritz Fischer <mdf@kernel.org>,
+	Xu Yilun <yilun.xu@intel.com>,
+	Tom Rix <trix@redhat.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	"Rafael J. Wysocki" <rafael@kernel.org>,
+	Danilo Krummrich <dakr@kernel.org>
+Cc: netdev@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-spi@vger.kernel.org,
+	linux-leds@vger.kernel.org,
+	linux-fpga@vger.kernel.org,
+	driver-core@lists.linux.dev
+Subject: [PATCH 00/10] Remove class_find_device_by_of_node in favor of
+ finding by firmware node
+Date: Sun, 22 Mar 2026 18:54:18 -0700
+Message-ID: <20260322-remove-device-find-by-of-node-v1-0-b72eb22a1215@gmail.com>
+X-Mailer: git-send-email 2.53.0.959.g497ff81fa9-goog
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260315-x1e-csi2-phy-v4-2-90c09203888d@linaro.org>
+X-Change-ID: 20260220-remove-device-find-by-of-node-077784fa109c
+X-Mailer: b4 0.15-dev-a6826
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260322_163342_445668_E4DD9EFF 
-X-CRM114-Status: UNSURE (   9.93  )
+X-CRM114-CacheID: sfid-20260322_185438_995911_59B6C438 
+X-CRM114-Status: UNSURE (   7.92  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -99,53 +126,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Bryan,
+Firmware nodes are generalization of OF device nodes and generic APIs
+should offer only fwnode variants instead of providing firmware-specific
+handlers.
 
-kernel test robot noticed the following build errors:
+This series switches all users of class_find_device_by_of_node() to
+class_find_device_by_fwnode() and removes the OF variant.
 
-[auto build test ERROR on c824345288d11e269ce41b36c105715bc2286050]
+I believe this can be applied through individual subsystems and then the
+last patch can go into the driver core.
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Bryan-O-Donoghue/dt-bindings-phy-qcom-Add-CSI2-C-PHY-DPHY-schema/20260316-081353
-base:   c824345288d11e269ce41b36c105715bc2286050
-patch link:    https://lore.kernel.org/r/20260315-x1e-csi2-phy-v4-2-90c09203888d%40linaro.org
-patch subject: [PATCH v4 2/2] phy: qcom-mipi-csi2: Add a CSI2 MIPI DPHY driver
-config: riscv-allyesconfig (https://download.01.org/0day-ci/archive/20260323/202603230713.5uOUC5EI-lkp@intel.com/config)
-compiler: clang version 16.0.6 (https://github.com/llvm/llvm-project 7cbf1a2591520c2491aa35339f227775f4d3adf6)
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20260323/202603230713.5uOUC5EI-lkp@intel.com/reproduce)
+Signed-off-by: Dmitry Torokhov <dmitry.torokhov@gmail.com>
+---
+Dmitry Torokhov (10):
+      net: wan: framer: switch to using class_find_device_by_fwnode()
+      phy: core: switch to using class_find_device_by_fwnode()
+      spi: switch to using class_find_device_by_fwnode()
+      regulator: of: switch to using class_find_device_by_fwnode()
+      leds: led-class: switch to using class_find_device_by_fwnode()
+      mux: switch to using class_find_device_by_fwnode()
+      net: phy: switch to using class_find_device_by_fwnode()
+      fpga: bridge: switch to using class_find_device_by_fwnode()
+      fpga: manager: switch to using class_find_device_by_fwnode()
+      driver core: class: remove class_find_device_by_of_node()
 
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202603230713.5uOUC5EI-lkp@intel.com/
+ drivers/fpga/fpga-bridge.c           |  4 +++-
+ drivers/fpga/fpga-mgr.c              |  3 ++-
+ drivers/leds/led-class.c             |  2 +-
+ drivers/mux/core.c                   |  2 +-
+ drivers/net/phy/mdio_bus_provider.c  |  4 +++-
+ drivers/net/wan/framer/framer-core.c |  2 +-
+ drivers/phy/phy-core.c               |  3 ++-
+ drivers/regulator/of_regulator.c     |  2 +-
+ drivers/spi/spi.c                    |  6 ++++--
+ include/linux/device/class.h         | 12 ------------
+ 10 files changed, 18 insertions(+), 22 deletions(-)
+---
+base-commit: 785f0eb2f85decbe7c1ef9ae922931f0194ffc2e
+change-id: 20260220-remove-device-find-by-of-node-077784fa109c
 
-All errors (new ones prefixed by >>):
-
->> drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c:360:13: error: initializer element is not a compile-time constant
-           .opp_clk = x1e_clks[2],
-                      ^~~~~~~~~~~
-   1 error generated.
-
-
-vim +360 drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c
-
-   347	
-   348	const struct mipi_csi2phy_soc_cfg mipi_csi2_dphy_4nm_x1e = {
-   349		.ops = &phy_qcom_mipi_csi2_ops_3ph_1_0,
-   350		.reg_info = {
-   351			.init_seq = lane_regs_x1e80100,
-   352			.lane_array_size = ARRAY_SIZE(lane_regs_x1e80100),
-   353			.common_regs_offset = 0x1000,
-   354			.generation = GEN2,
-   355		},
-   356		.supply_names = (const char **)x1e_supplies,
-   357		.num_supplies = ARRAY_SIZE(x1e_supplies),
-   358		.clk_names = (const char **)x1e_clks,
-   359		.num_clk = ARRAY_SIZE(x1e_clks),
- > 360		.opp_clk = x1e_clks[2],
+Thanks.
 
 -- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+Dmitry
+
 
 -- 
 linux-phy mailing list
