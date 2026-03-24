@@ -4,107 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 44604E9A777
-	for <linux-phy@archiver.kernel.org>; Tue, 24 Mar 2026 12:18:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EBC97E9A77B
+	for <linux-phy@archiver.kernel.org>; Tue, 24 Mar 2026 12:28:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YhSsvpfJL5MNNgn748xgAoAC9WmuEAMNUTV7ghiH8l4=; b=UjgTEMVzuEgdIf
-	sO4nCchJu5tNNVjAWDwbvpAJk6jeSbdj9g2kFgAzQAhA7tb71sz7cBBLIt0KLEREI/bImgdxbhTr6
-	rE4TzADVOoLuhOkBStdF12hiv5UG64BjCGRvc/dXkvb3ecu7eeUVCKNhsg6yaFHo3IzJCKbGBvnTe
-	0fuHHO4EgCrUMHbFdDJ6fXp/xtTCwXbSiSnWv2WYPmTVSpxZE3gu4uBoEUHP5WRy+aZPrEHIjvzb1
-	ellTOpgQG8bop/Hd7AK27AomcNX89bmuoepKmZPVt7s0F/FwYI7M4es3lT0IGBzmeckzykN51cwvy
-	UAOzpatsL1UntArnd4sQ==;
+	List-Owner; bh=HapRPDzUYNPCii2pHGxec0O2bhvy3ZSfSjjLAcMP5t8=; b=TPunkKlurxbz5s
+	bDNUuSpDASk2rZLtxtwGkQQEd/bweQXmLL6RKIjfHnRSF79HuG1TLiyDdyfZ0fqyFl6OupA9RhhAQ
+	7RqHNBqgV+//7KqUgGP+RI0roWHAQgGaEMTI8D3c1Y2HwQ7QwH7NAuuOOi2/fqEeUNqaPYP3FB+WR
+	fR9rpGn56b5tT8k4WRG0Bs0zKWvN5YbtHLOEaQq8H6DE0JbNZAzwh7lJ6DvE8lsEcluXNoxZ9g7V/
+	1bQguUwL+nFH3Fp0rjZCSvvIn6qDNxhx+KaCzxfZ448IJiAijCnIqoDvjczEX67jGAKQTpJinjVnM
+	4yX1EoLK+NJmOw6BRSZA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w50iX-00000001MOF-47S2;
-	Tue, 24 Mar 2026 12:18:42 +0000
-Received: from mail-wr1-x42d.google.com ([2a00:1450:4864:20::42d])
+	id 1w50rx-00000001NPh-2G6a;
+	Tue, 24 Mar 2026 12:28:25 +0000
+Received: from smtp1.tecnico.ulisboa.pt ([193.136.128.21])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w50iU-00000001MLc-3cJc
+	id 1w50rt-00000001NP8-1mWp
 	for linux-phy@lists.infradead.org;
-	Tue, 24 Mar 2026 12:18:40 +0000
-Received: by mail-wr1-x42d.google.com with SMTP id ffacd0b85a97d-43b467dcf0bso3770413f8f.0
-        for <linux-phy@lists.infradead.org>; Tue, 24 Mar 2026 05:18:38 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1774354717; cv=none;
-        d=google.com; s=arc-20240605;
-        b=OjJ9tyP+GbjITUbSrfMsJc1bLQtXheHUr0SpP26HG6nfkuF1oHWzrR3kXzZ7+ulAvu
-         qtNN7UR9NKwkfydujsXghmy/EWT9Xb20qKwANYmpG3l58pQLHhfFjhGHAjsJAwrXJF9I
-         L1AOovXoC3pkI4ckJ4QsFBwKKTFZ3k+mjOqpRGJt4Et8EljAjU1sR240ajTIfVbcnCmU
-         Wj0wCTzEeDp3S5aIa1JoLZyGHuhlntieFEt+vQtKG6+xxymvxLMczdJPYdcdiqLFZ6bn
-         Ys5HSx2SX/f6tAuxHD1/14MDNukzpnsRypPlZdbyAnrufxzDjw7RuAiZQOgDv3zqxSIX
-         RTQw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:dkim-signature;
-        bh=QxEuLOp4xC2eZw18lsPki8VzBGwyaM4MJgqBUAEFTC0=;
-        fh=JWH73FFl3HBbZpcV7uu8l+NQDDBChM9NbPGV+49dgTE=;
-        b=C1KCMyKdfdhWM8sDyx/VRyC3f1RTSjAV50gNlEph+3hw/NwiH5D+DKeF9V1Kbfe04Z
-         U1rW3N4oU62KTB9rCwWIuCACgaW3VH4WdNq4zQyVtyPodTMOB6ay23iUU3fOYEJJWM2U
-         /lngfty+KCq0Iiovqu0JRN/vKeoHsfzegNGUXc/P9xZmXFijfe8+/QOiX9Tp8rhHUh1l
-         efzyuiD2B6g5f153XJL11m9bLeT2hNNNYrwtA88jIKrqsxrrzq8da7ZJIOM1d8ec5/ae
-         8lRiyhsHPR+DyweOailIj515KR6ph++n6+ilBrgXlhTRP4CQjsw/LqGWJBX4jSdrd5Du
-         Cj5Q==;
-        darn=lists.infradead.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1774354717; x=1774959517; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=QxEuLOp4xC2eZw18lsPki8VzBGwyaM4MJgqBUAEFTC0=;
-        b=LRK6pxEzHKwK/KGOfpxlT+90wvEm9b5ogYHXEckX4+FmIrl8nfk3i7+k1Y5NGt2Ulf
-         jgz6WjFoRJipC7K6vABVZ7hjeFehNtmTok3zHCCGzk3pOHJWxRdWxhOc0mGIfMAKc9CN
-         j/lruPt+v9DQxpGkZw64IjzGBGr1Fz5zkJxkOjDKTdNvt8YXNX+XdfbI1W6NpigCUpm+
-         oMwa/qyLAR0hgFqsLHYoTAWPeZpnXALB11ZH6jqqgPOQVjRw+jqHmsPNzfBUauOOgiXC
-         1/zr8JJUwDlFUpttGkbY5lhswr54muv+y4WR+lP4rpdQ08QkFI7QyKXHAuX9ATvfgUlQ
-         s5UQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1774354717; x=1774959517;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=QxEuLOp4xC2eZw18lsPki8VzBGwyaM4MJgqBUAEFTC0=;
-        b=TfGGF7XS4vEXDGYhBWjdTekMkuwDtqYbaZEwJsW/v7JsL2vujZpkBoXOUFhUu+ofgG
-         FiaVdxspvrsBKDhUbaxMP1f697UdGdOCd9BC3QK+rf4WsY2av7uanoHBBDpDhwElUe6d
-         0uiHlhwDGT6U1Rud7HDi4Rd5LIEF3Sh6m0rLB3hMw5alemq5vXSipXqfGHCpiFe91L2o
-         72Q5glF9ouI1Mdd8kuKbfRM4xJ5vNttgchDtfzpas7xvFIu8pN+qonAk7fsgwqKAll0c
-         uhuaJnkWtuojzV3rd3yjSutQX0R+m/4xORfuJQ674iW0EHq1ONowsw2CcTvqswmTP4+l
-         JY3w==
-X-Forwarded-Encrypted: i=1; AJvYcCXGQhKk5P+Ge+pjfOU+k+kR2/UtcsuH/x6Vi6fCEBiGRV4Nz6vH1ZlZUyvnkQx9Me/zxiAPvLUmf5w=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yxps5FqPeoStPujMYTC5O5BixxVz44dIiXpR6Jutj2BCyEKqAtn
-	BQOYVOcuRZtL+oit6FwspUB9+Vxn2pApC6YVD4uiHyufMCEQ+tuQkwSgohW5OVGp4JbbrfSOPfD
-	52GzznKLg+Cx68SjwBFNHXO5cbkrHdQs=
-X-Gm-Gg: ATEYQzyPdIwdMuvxXc+gKGfLtyBtyRw2qMMVRPIMfTbi7cZItWCvo2RY+i3X98HkWdY
-	hJ90sNMKLS6kz4JyjSuQcFvdY+N/fuhfBEcwuXb/ep7Fvgww7jcJmWrU8ytvoPERUTIqg7qNiD9
-	jnpY6Gb5fPFIzhHzkE9bbrZ3TW+oBFT3RM9g99Tp8aCdZgSOwYDsA5sgHDgZUh5wpuKoSlW6wJi
-	R3pXgebx9dNdXuO+W6mPi+9ZrBT9Bh+rI868XkNdGSDW5FDB4g6nLj9VWVS9R55rYHPX+a+s8WN
-	l1gMnClOnZcqDJAAgApExL03weKSFhy7ki0o3aMzjoV+L8OPj6vVCqGFFAe1ZHn3rfVelA==
-X-Received: by 2002:a05:6000:2dc4:b0:439:bb46:7457 with SMTP id
- ffacd0b85a97d-43b80592278mr5255822f8f.16.1774354716596; Tue, 24 Mar 2026
- 05:18:36 -0700 (PDT)
+	Tue, 24 Mar 2026 12:28:22 +0000
+Received: from localhost (localhost.localdomain [127.0.0.1])
+	by smtp1.tecnico.ulisboa.pt (Postfix) with ESMTP id 44CD0600085A;
+	Tue, 24 Mar 2026 12:28:19 +0000 (WET)
+X-Virus-Scanned: by amavis-2.13.0 (20230106) (Debian) at tecnico.ulisboa.pt
+Received: from smtp1.tecnico.ulisboa.pt ([127.0.0.1])
+ by localhost (smtp1.tecnico.ulisboa.pt [127.0.0.1]) (amavis, port 10025)
+ with LMTP id ZSyy3OFlWjsN; Tue, 24 Mar 2026 12:28:17 +0000 (WET)
+Received: from mail1.tecnico.ulisboa.pt (mail1.ist.utl.pt [IPv6:2001:690:2100:1::b3dd:b9ac])
+	by smtp1.tecnico.ulisboa.pt (Postfix) with ESMTPS id B7CE36000872;
+	Tue, 24 Mar 2026 12:28:16 +0000 (WET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tecnico.ulisboa.pt;
+	s=mail2; t=1774355296;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=0H07sbfA7geFvMVbwBHgjO9Zv4YRqDulO8wi0QJ4JIg=;
+	b=R1r/LdNxDWwh5jSyABP8e+EE3vZwy4hwHQI6Fb+sHg77++Ws2tOUkybACtMSYyv1beB9bT
+	Ia7pVb1GUjrjT2sWiAmuZ3wT/znd3dEBIyiiUMMrMnnwiVfSJzSELd9Saj9OrIN+xyRqlE
+	5qYq/U02pF8nrIhBKMGz3rn03bRE/suN1vgf4jNFJ7YFeXEHg63FH+Btc9D66tGirT6a6B
+	rfIervl+oGLlR5NxihO/gaz3dcI2Xswn7SISTuXtkl5Zz/FFJp87s95VH7dcZ1hUzVon+c
+	cK8xdEWDNzomsLF6f7CSX+AbM77BXQio+Y+acBK9zAl6pilcUQbqHWZtIXvr2Q==
+Received: from [IPV6:2001:8a0:57db:f00:3ee2:38aa:e2c9:7dde] (unknown [IPv6:2001:8a0:57db:f00:3ee2:38aa:e2c9:7dde])
+	(Authenticated sender: ist187313)
+	by mail1.tecnico.ulisboa.pt (Postfix) with ESMTPSA id 466F1360187;
+	Tue, 24 Mar 2026 12:28:16 +0000 (WET)
+Message-ID: <991ecd66-9db0-468d-b3b0-570ca89191bf@tecnico.ulisboa.pt>
+Date: Tue, 24 Mar 2026 12:28:16 +0000
 MIME-Version: 1.0
-References: <20260324121608.3444943-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
-In-Reply-To: <20260324121608.3444943-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
-From: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
-Date: Tue, 24 Mar 2026 12:18:10 +0000
-X-Gm-Features: AQROBzBFprl-LlBR1W4wMVA0lHzQhEG_DuaiN79xSlKGLKZrUA1HLFUH8G-m0yg
-Message-ID: <CA+V-a8uP1dEiGH3mRGAUmzcB5u_ZgYMMPPJU__6OPv52ua+pGQ@mail.gmail.com>
-Subject: Re: [PATCH] phy: renesas: rcar-gen3-usb2: Simplify ID/VBUS detection logic
-To: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Geert Uytterhoeven <geert+renesas@glider.be>, 
-	Magnus Damm <magnus.damm@gmail.com>, Pavel Machek <pavel@nabladev.com>
-Cc: linux-renesas-soc@vger.kernel.org, linux-phy@lists.infradead.org, 
-	linux-kernel@vger.kernel.org, Biju Das <biju.das.jz@bp.renesas.com>, 
-	Fabrizio Castro <fabrizio.castro.jz@renesas.com>, 
-	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 2/6] usb: xhci: tegra: Remove redundant mutex when
+ setting phy mode
+To: Thierry Reding <thierry.reding@kernel.org>
+Cc: Mathias Nyman <mathias.nyman@intel.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Jonathan Hunter <jonathanh@nvidia.com>, JC Kuo <jckuo@nvidia.com>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>, linux-usb@vger.kernel.org,
+ linux-tegra@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org
+References: <20260127-diogo-tegra_phy-v2-0-787b9eed3ed5@tecnico.ulisboa.pt>
+ <20260127-diogo-tegra_phy-v2-2-787b9eed3ed5@tecnico.ulisboa.pt>
+ <acJ50sQraVmy4zXs@orome>
+Content-Language: en-US
+From: Diogo Ivo <diogo.ivo@tecnico.ulisboa.pt>
+In-Reply-To: <acJ50sQraVmy4zXs@orome>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260324_051838_929092_F258FC0D 
-X-CRM114-Status: UNSURE (   8.16  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260324_052821_622553_F1782A2B 
+X-CRM114-Status: GOOD (  13.51  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -116,23 +90,58 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGkgQWxsLAoKT24gVHVlLCBNYXIgMjQsIDIwMjYgYXQgMTI6MTbigK9QTSBQcmFiaGFrYXIgPHBy
-YWJoYWthci5jc2VuZ2dAZ21haWwuY29tPiB3cm90ZToKPgo+IEZyb206IExhZCBQcmFiaGFrYXIg
-PHByYWJoYWthci5tYWhhZGV2LWxhZC5yakBicC5yZW5lc2FzLmNvbT4KPgo+IFJlYWQgdGhlIFVT
-QjJfQURQQ1RSTCByZWdpc3RlciBvbmNlIGluIHJjYXJfZ2VuM19jaGVja19pZCgpIGFuZCByZXVz
-ZQo+IHRoZSB2YWx1ZSBpbnN0ZWFkIG9mIHBlcmZvcm1pbmcgbXVsdGlwbGUgTU1JTyByZWFkcy4K
-Pgo+IFNpbXBsaWZ5IHRoZSByZXR1cm4gbG9naWMgYnkgY29tcGFyaW5nIHRoZSBJRERJRyBhbmQg
-VkJVU1ZBTElEIGJpdHMKPiBkaXJlY3RseS4gVGhpcyBwcmVzZXJ2ZXMgdGhlIGV4aXN0aW5nIGJl
-aGF2aW91ciB3aGlsZSBpbXByb3ZpbmcgY29kZQo+IGNsYXJpdHkgYW5kIGF2b2lkaW5nIHJlZHVu
-ZGFudCByZWdpc3RlciBhY2Nlc3Nlcy4KPgo+IFJlcG9ydGVkLWJ5OiBQYXZlbCBNYWNoZWsgPHBh
-dmVsQG5hYmxhZGV2LmNvbT4KPiBDbG9zZXM6IGh0dHBzOi8vbG9yZS5rZXJuZWwub3JnL2FsbC9h
-Y0pWLVhxLTJ1cV9KRk1uQGR1by51Y3cuY3ovCk15IGJhZCwgd3JvbmcgbGluaywgaHR0cHM6Ly9s
-b3JlLmtlcm5lbC5vcmcvYWxsL2FjSlZDT2RsY2hMaVNlNW5AZHVvLnVjdy5jei8KCgpDaGVlcnMs
-ClByYWJoYWthcgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmlu
-ZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
-bGludXgtcGh5Cg==
+
+
+On 3/24/26 11:48, Thierry Reding wrote:
+> On Tue, Jan 27, 2026 at 03:11:48PM +0000, Diogo Ivo wrote:
+>> As the PHY subsystem already synchronizes concurrent accesses to a PHY
+>> instance with a core-internal mutex remove the driver specific mutex
+>> synchronization.
+>>
+>> Signed-off-by: Diogo Ivo <diogo.ivo@tecnico.ulisboa.pt>
+>> ---
+>> v1->v2:
+>> - New patch
+>> ---
+>>   drivers/usb/host/xhci-tegra.c | 4 ----
+>>   1 file changed, 4 deletions(-)
+>>
+>> diff --git a/drivers/usb/host/xhci-tegra.c b/drivers/usb/host/xhci-tegra.c
+>> index 8b492871d21d..927861ca14f2 100644
+>> --- a/drivers/usb/host/xhci-tegra.c
+>> +++ b/drivers/usb/host/xhci-tegra.c
+>> @@ -1357,15 +1357,11 @@ static void tegra_xhci_id_work(struct work_struct *work)
+>>   
+>>   	dev_dbg(tegra->dev, "host mode %s\n", str_on_off(tegra->host_mode));
+>>   
+>> -	mutex_lock(&tegra->lock);
+>> -
+>>   	if (tegra->host_mode)
+>>   		phy_set_mode_ext(phy, PHY_MODE_USB_OTG, USB_ROLE_HOST);
+>>   	else
+>>   		phy_set_mode_ext(phy, PHY_MODE_USB_OTG, USB_ROLE_NONE);
+>>   
+>> -	mutex_unlock(&tegra->lock);
+>> -
+> 
+> It looks to me like the mutex here is trying to protect against
+> tegra->host_mode changing while we're setting a different mode. That
+> doesn't seem to be taken care of by the PHY internal mutex.
+
+I'm not sure I understand your point. Do you mean guarding against
+tegra->host_mode changing in tegra_xhci_id_notify()? If so I don't see
+how it would guard against that.
+
+Diogo
+
+> Thierry
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
