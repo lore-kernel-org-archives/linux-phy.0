@@ -4,80 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 59859E9A76B
-	for <linux-phy@archiver.kernel.org>; Tue, 24 Mar 2026 11:31:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4E5E1E9A777
+	for <linux-phy@archiver.kernel.org>; Tue, 24 Mar 2026 11:48:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Wv2BCYQa6uyWVpLnIc+j1V2fY8SDKfB2pzfu+lWEz30=; b=pZuIbOqY0vJwkg
-	cjCl+43hYz8xltoPjaup7iPjxVsGzIAGy2hDEpRohVl48dP2ip9nfn1ZnGsnYcw/ehTap2uGd2ihl
-	2Tl+Orn3FhvKSbdA9huQXmRUOCoI8dlTXqHQjLu0fo2kEXh9nbRauL/ARH1QEfl40JOdCo4t2mUUC
-	gZgn8LozTgkoouiYVy33au/D6WJY2RB/jLu7eNFrUb+8l/qxeDBHO/1FGIfGV1o6mmbaeCs63Yu1M
-	Gq8HiItPwdI0MeeJIG8P0DWhxt+3sgrIVzPweCoYu2RlIceOIow06N121sEzC/uhJyI+aSHNLqHCW
-	yxabLxokztkmwK1t9rLg==;
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=f5qovlN2G37e6PQCFbru4g7D6Xn8L0IokF1C5SI4L6M=; b=rBRHJmefvoBwv6vW/wR6jmgILK
+	xs2bIVgm8doJqL+Al3FWDM6r3ZL3ttYdPegaYGl6VMjN7OEncnkc1D4V1/WCob10ejWLjO8tb2eLQ
+	sRajj0e+uSZFeRTcfAbGWUAkwEdW+4Oh83L8bH10RBhvoJB7ByTnu9XwufnPZouaWHyUdQzpgyLt0
+	+MsK9f/R4gnpJUpLXJXmgFa1B7S4Uh3ErkM9i7dXmV8b+LD0obvZiqZX2kLbghTGUB2tT6K5JWBLr
+	1t56MgQhK6sKyOXpVYc2RnAScFGBXoUoyrgxymECWOpk9+AYZG1RLabgApcv+b/LTSvRo1vgJCjkG
+	5g01bkeA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w4zyt-00000001Hfi-2ivi;
-	Tue, 24 Mar 2026 11:31:31 +0000
-Received: from smtp1.tecnico.ulisboa.pt ([193.136.128.21])
+	id 1w50FN-00000001J8j-07rL;
+	Tue, 24 Mar 2026 11:48:33 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w4zyp-00000001HeV-3dBM
+	id 1w50FL-00000001J7B-0yoL
 	for linux-phy@lists.infradead.org;
-	Tue, 24 Mar 2026 11:31:29 +0000
-Received: from localhost (localhost.localdomain [127.0.0.1])
-	by smtp1.tecnico.ulisboa.pt (Postfix) with ESMTP id EECEF6002439;
-	Tue, 24 Mar 2026 11:31:21 +0000 (WET)
-X-Virus-Scanned: by amavis-2.13.0 (20230106) (Debian) at tecnico.ulisboa.pt
-Received: from smtp1.tecnico.ulisboa.pt ([127.0.0.1])
- by localhost (smtp1.tecnico.ulisboa.pt [127.0.0.1]) (amavis, port 10025)
- with LMTP id YRfo6YsFNLkN; Tue, 24 Mar 2026 11:31:19 +0000 (WET)
-Received: from mail1.tecnico.ulisboa.pt (mail1.ist.utl.pt [IPv6:2001:690:2100:1::b3dd:b9ac])
-	by smtp1.tecnico.ulisboa.pt (Postfix) with ESMTPS id 736066002436;
-	Tue, 24 Mar 2026 11:31:19 +0000 (WET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tecnico.ulisboa.pt;
-	s=mail2; t=1774351879;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=zSwCOD4R8nBRbYuCX+0wUTZPA2P7sMyjbzopSB4njWE=;
-	b=lgHrWBaHuXpubfTTTI1CnMeRCMIPwkhn1V0/z5oDj59D4RJJS7er242v736fbfdxLlwj6t
-	211O8rhOZ2/B6nEHXFV8kgrrI6bQfu6xTpoRqZEZI3AjyBLetL+CEQq70aZo3dG7zIbCdt
-	GfPyYA6LVlmos7uq01plRG9SjiQGr1OjntVB2PPqeKUXCQR6ybTkphVYvLOi2Bwuc6moGg
-	GOEQ0Ss2+7nUNLKb+7kSItPNdCbwDSGH28zKXyRGueeTIleNp6waxnXIKFHeYsTuy1ZZMX
-	GiGSxZrZEbaemjGMv2jyJUJLjhdQU6Xf62+q4NYkAyBKSauFJgE7/EYcbfH8HQ==
-Received: from [IPV6:2001:8a0:57db:f00:3ee2:38aa:e2c9:7dde] (unknown [IPv6:2001:8a0:57db:f00:3ee2:38aa:e2c9:7dde])
-	(Authenticated sender: ist187313)
-	by mail1.tecnico.ulisboa.pt (Postfix) with ESMTPSA id 6EDB6360164;
-	Tue, 24 Mar 2026 11:31:18 +0000 (WET)
-Message-ID: <5a5397c8-cc32-4d6b-86a4-76f924ae6d75@tecnico.ulisboa.pt>
-Date: Tue, 24 Mar 2026 11:31:17 +0000
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 6/6] phy: tegra: xusb: Move T186 .set_mode() to common
- implementation
-To: Jon Hunter <jonathanh@nvidia.com>, Mathias Nyman
- <mathias.nyman@intel.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Thierry Reding <thierry.reding@gmail.com>, JC Kuo <jckuo@nvidia.com>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>
-Cc: linux-usb@vger.kernel.org, linux-tegra@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org
+	Tue, 24 Mar 2026 11:48:31 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 66F0C6013F;
+	Tue, 24 Mar 2026 11:48:30 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B8EBFC19424;
+	Tue, 24 Mar 2026 11:48:29 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1774352910;
+	bh=6CXTjNHX0J4uF5Ojb5ZTtc7BYWwcUfE/5znpHFlnD7w=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=gsaRuY6eViu8X3g7+P8vdzfxU4G+qz03aiKEZuxnGTNsLVxiKXMSAswe4uAP4Voff
+	 9Ya58a36gSb4qTTV2ALgFbdUiig5NcEiPClqZfMMpWh47cbVgEFlfyQE7SR/lhNk4d
+	 jXzk2INfqyjbAPNNKbbjeeKw144hv7CcDnL7MbSF2wt5ImoiprqnaXr+p9eEJhMVbi
+	 a1Fznmx7J3yfrSTOVsNjX+TwRExiB67lrRqxzPeABK3epFD8N4N4dMLlH/kC2Xc0hC
+	 zWfjNxa/AqFXRF0eCkSus1j1bgH5+Aq6qAHRrRo1IliJcDMUYbKBG5kgQ3HLQn4g0s
+	 f7Wv2zWveKrWw==
+Date: Tue, 24 Mar 2026 12:48:27 +0100
+From: Thierry Reding <thierry.reding@kernel.org>
+To: Diogo Ivo <diogo.ivo@tecnico.ulisboa.pt>
+Cc: Mathias Nyman <mathias.nyman@intel.com>, 
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Thierry Reding <thierry.reding@gmail.com>, 
+	Jonathan Hunter <jonathanh@nvidia.com>, JC Kuo <jckuo@nvidia.com>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, linux-usb@vger.kernel.org, linux-tegra@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org
+Subject: Re: [PATCH v2 2/6] usb: xhci: tegra: Remove redundant mutex when
+ setting phy mode
+Message-ID: <acJ50sQraVmy4zXs@orome>
 References: <20260127-diogo-tegra_phy-v2-0-787b9eed3ed5@tecnico.ulisboa.pt>
- <20260127-diogo-tegra_phy-v2-6-787b9eed3ed5@tecnico.ulisboa.pt>
- <af04fc85-1ed4-4046-86ee-1ffcec8c44cd@nvidia.com>
-Content-Language: en-US
-From: Diogo Ivo <diogo.ivo@tecnico.ulisboa.pt>
-In-Reply-To: <af04fc85-1ed4-4046-86ee-1ffcec8c44cd@nvidia.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260324_043128_328884_EAC006A2 
-X-CRM114-Status: GOOD (  14.42  )
+ <20260127-diogo-tegra_phy-v2-2-787b9eed3ed5@tecnico.ulisboa.pt>
+MIME-Version: 1.0
+In-Reply-To: <20260127-diogo-tegra_phy-v2-2-787b9eed3ed5@tecnico.ulisboa.pt>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,54 +70,96 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: multipart/mixed; boundary="===============1376381629144745558=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
+--===============1376381629144745558==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="geubzoieqitgmbmw"
+Content-Disposition: inline
 
-On 3/24/26 10:16, Jon Hunter wrote:
-> 
-> On 27/01/2026 15:11, Diogo Ivo wrote:
->> Move the Tegra186 PHY .set_mode() callback to a common implementation.
->> In order to do this first revert cefc1caee9dd.
-> 
-> This commit message does not seem complete.
 
-How so? It is succint but it states exactly what the commit does. It
-reverts cefc1caee9dd and changes T186 to the common implementation
-prepared in the previous patch.
+--geubzoieqitgmbmw
+Content-Type: text/plain; protected-headers=v1; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Subject: Re: [PATCH v2 2/6] usb: xhci: tegra: Remove redundant mutex when
+ setting phy mode
+MIME-Version: 1.0
 
-> Furthermore, I am not sure why we want to revert cefc1caee9dd. We 
-> purposely moved the regulator_enable/disable into 
-> tegra186_xusb_padctl_id_override() because it is tied to setting the 
-> USB2_VBUS_ID. So I would prefer to keep it this way and move the 
-> Tegra210 implementation in the same direction (if possible).
+On Tue, Jan 27, 2026 at 03:11:48PM +0000, Diogo Ivo wrote:
+> As the PHY subsystem already synchronizes concurrent accesses to a PHY
+> instance with a core-internal mutex remove the driver specific mutex
+> synchronization.
+>=20
+> Signed-off-by: Diogo Ivo <diogo.ivo@tecnico.ulisboa.pt>
+> ---
+> v1->v2:
+> - New patch
+> ---
+>  drivers/usb/host/xhci-tegra.c | 4 ----
+>  1 file changed, 4 deletions(-)
+>=20
+> diff --git a/drivers/usb/host/xhci-tegra.c b/drivers/usb/host/xhci-tegra.c
+> index 8b492871d21d..927861ca14f2 100644
+> --- a/drivers/usb/host/xhci-tegra.c
+> +++ b/drivers/usb/host/xhci-tegra.c
+> @@ -1357,15 +1357,11 @@ static void tegra_xhci_id_work(struct work_struct=
+ *work)
+> =20
+>  	dev_dbg(tegra->dev, "host mode %s\n", str_on_off(tegra->host_mode));
+> =20
+> -	mutex_lock(&tegra->lock);
+> -
+>  	if (tegra->host_mode)
+>  		phy_set_mode_ext(phy, PHY_MODE_USB_OTG, USB_ROLE_HOST);
+>  	else
+>  		phy_set_mode_ext(phy, PHY_MODE_USB_OTG, USB_ROLE_NONE);
+> =20
+> -	mutex_unlock(&tegra->lock);
+> -
 
-I don't agree that this is the best solution.
+It looks to me like the mutex here is trying to protect against
+tegra->host_mode changing while we're setting a different mode. That
+doesn't seem to be taken care of by the PHY internal mutex.
 
-We really benefit from a common implementation for the two platforms, not
-only because of duplicate code but more importantly because without it
-whenever a bug is found and fixed on either platform it most likely will
-not be fixed on the other one. Case in point, cefc1caee9dd fixed a bug
-on T186 but not the same bug on T210 (which then led to this series) since
-the implementation was not shared among them. Were it the case that they
-shared the implementation the fix would have come "free" for T210.
+Thierry
 
-This will keep happening for as long as we have duplicate implementations,
-which becomes more relevant since there is a severe lack of testing in
-older Tegra platforms. I also thought about making the id_override()
-implementation shared between T186 and T210 but that would be take more
-changes since register definitions would need to be moved somewhere
-else too.
+--geubzoieqitgmbmw
+Content-Type: application/pgp-signature; name="signature.asc"
 
-Diogo
+-----BEGIN PGP SIGNATURE-----
 
-> Jon
-> 
+iQIzBAABCgAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAmnCegsACgkQ3SOs138+
+s6ESAQ/9EMcAUytgVdqWsJtOBxpPlq0tVZ2c5MSbDjInQhkZMWHEEqh4CS0S7gwO
+524kejcplYr2DTbmr/wI0zjfWP7Aomr7HGRWiUUCVCYru/V9YLwXak5A0+OtKusq
+i4aCxyzdzUcXYdXCxglPOBPW0nr3v/NGkG/fqvBEKAMiSfgWhXL3Y7BPsPw/g0o5
+ro+f10rx1QlLR9V+2Zkie2CufCkpqChsutAgGM0o0b6FpT1H3ICTBFW0AJ6a8sv7
+fMB4cba7XWBLC38BEfjKsRum62s5ImJklbTYahVZbkLp0cFIBaMQPZhAbkH937i4
+ouJXF/2oew+Z9d3aN4eLhOMvoml0a9Ttthhx8S1QgJ+tF4uII9wrSlVnNsOU3wRc
+ft3RaKEffEJJ8/796FF0x+kLPeqeIhE0GC8/O2LavsZLQJo6T55g1sG1hytkixM1
+DsEaCG1qqe4yAthaW1Gge28uq5yd6k36cxOORwIhrP9usHKV1X6Z5IPbkziJ8XeJ
+a+tSM/AD6m1oKMxPRJke7PkM04oc+cZzSPcmZ2abBocV2t/CLmd5TCgGPZ+er8aT
+wOW0l0ERdomQMAGhMo8rJHN225YRE7fG3Hy5lhTux1mcAQsb4Y61QW8qxA1nCIqJ
+d0tqu1GKLIwTGZEGG+fydMq7BAy+F3+duGopgY5IJ4bU1YGjsaU=
+=eWzY
+-----END PGP SIGNATURE-----
+
+--geubzoieqitgmbmw--
+
+
+--===============1376381629144745558==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============1376381629144745558==--
+
