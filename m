@@ -4,69 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F78BF54AAC
-	for <linux-phy@archiver.kernel.org>; Tue, 24 Mar 2026 13:03:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0734F54AAC
+	for <linux-phy@archiver.kernel.org>; Tue, 24 Mar 2026 13:05:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aaWvpYc/BpiflpSZGnnUtoqKSbUl5l6Y00sCU2SXBo0=; b=IQPiAH15kL72Li
-	QzWQZ2stGjrdJ0wSRk/8+Fzlt48nqoM56y6gVJe7UzxzzDD/+JxBwmbHhsG2DWDhiQXVV/AB3eyYt
-	inLMOM1OcOFiB1j7XiP4FMnFcVy714FcPG7keUjA1jhzLULwIcOxoTD9N/ZBzN9Tvz4k8fotwJcD8
-	jCpXbapp61AIfqi1Rga7BL5m549wtGXetDSEbuECqD/4Uo2eS8BeHzWRsha2vzDn/bMNLgcYwpjQb
-	MV/U41tJrVbp0+UcDdrEndvW61qPNN9Jcxs7jn9q91RCvgaAmplzhjhANSCIdRP/RRjazI0Sbghtu
-	OwwsWZ+8rXD9ia1dYhQQ==;
+	List-Owner; bh=pE5YTda2toNdPD1Z4XzPF520Ja4oiFKUSa+qiTb0czs=; b=SQ0TAAVdvxWf9h
+	O+GbMKh/swRJmRZ2TuV3Br1BZc1hoYl/kTFRBaYlLEvT22C8nt2rkpZ46pWz1qI5yOD89DQq0LmVW
+	l+GwBHCE5DJEcQYAEqSuqrTvD4FWZlV8EQxH2BHb7hJcLlJiZ+PJkskeSSXofVNTNXR4IUiUI/tAo
+	1LugFA49l+Y+AlXNXOo4kENW/Aka7cmKQGDgPV7uxlq7L4wpFktF/FuWyTldTzDk7hOQkNVuRtr/Z
+	s/n20MIs5p66ps3QEWwwauViq/iA1iMxHUyMhV8gnOZPkLXhDOWQzdvnzDrETa6pT/TVvA8tqQQ5h
+	BkZFcHjvllTTZrC10JXg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w51Q9-00000001U9r-3gyA;
-	Tue, 24 Mar 2026 13:03:45 +0000
-Received: from smtp81.cstnet.cn ([159.226.251.81] helo=cstnet.cn)
+	id 1w51SE-00000001UVM-4640;
+	Tue, 24 Mar 2026 13:05:54 +0000
+Received: from mail-ej1-f42.google.com ([209.85.218.42])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w51Q6-00000001U8q-05JK;
-	Tue, 24 Mar 2026 13:03:44 +0000
-Received: from duge-virtual-machine (unknown [183.192.222.244])
-	by APP-03 (Coremail) with SMTP id rQCowAAnSeCTi8JpkXyqCw--.7469S2;
-	Tue, 24 Mar 2026 21:03:16 +0800 (CST)
-Date: Tue, 24 Mar 2026 21:03:15 +0800
-From: Jiayu Du <jiayu.riscv@isrc.iscas.ac.cn>
-To: robh@kernel.org
-Cc: neil.armstrong@linaro.org, robh@kernel.org, krzk+dt@kernel.org,
-	pjw@kernel.org, palmer@dabbelt.com, aou@eecs.berkeley.edu,
-	alex@ghiti.fr, linux-phy@lists.infradead.org,
-	linux-usb@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-riscv@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v5 2/4] dt-bindings: usb: dwc2: Add support for Canaan
- K230 SoC
-Message-ID: <acKLk3fbIj7hdsWr@duge-virtual-machine>
-References: <20260121145526.14672-1-jiayu.riscv@isrc.iscas.ac.cn>
- <20260121145526.14672-3-jiayu.riscv@isrc.iscas.ac.cn>
+	id 1w51SC-00000001UUj-3ViP
+	for linux-phy@lists.infradead.org;
+	Tue, 24 Mar 2026 13:05:54 +0000
+Received: by mail-ej1-f42.google.com with SMTP id a640c23a62f3a-b97a06d7629so707852366b.0
+        for <linux-phy@lists.infradead.org>; Tue, 24 Mar 2026 06:05:51 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1774357550; x=1774962350;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=gpbsDmhCapUwh9Cve29legSkefqaTko+/wOGcVZ2UCA=;
+        b=EtLgi0S1Ot+Qvd5rkBr5fIQP/Ecz13ZURTavudH5x1l+mgoS7NLWuEtAOkjjZjzyuJ
+         /t88DGJc5vs8+glr5neYKitzO0qQX0pYlruEHW3aE14HJwiRdCS0xTnYq5s6zJFmcrXd
+         Qk2DCGEWAnQmGQvS1fISmc7EqRV3PM+FKbzac+NOcgWt5KtnYmbAYskk6MD6D2txyrUO
+         oAWOHr+5t4h6kxuhXdEfUH/EgW+Qih+jr1jBMVeIU/F1lepH3Sn9/xDmqYEr49WkqfNq
+         fAcwUP5KlMn3rKeP0Ae6Lt/vW4iFc4SHd5tslk5utvL6Gzigi98ODslD893JrT/C1iIs
+         oyZQ==
+X-Forwarded-Encrypted: i=1; AJvYcCU2GkJTwHtxoFDDRieUOL/f0fvPWhvItMr3paYu2AojgdGdMc3zI/u9/fTGW0UfqUicMSr3WqJgM14=@lists.infradead.org
+X-Gm-Message-State: AOJu0Ywj+cn8I1Bx5w4TL8lQBPrIavGE1FUGL19jEz9Nsefibuhr5oI0
+	JN5MA1QO0Ppk9bPkZeAXN5h51MGPI9IPJz6tuCXo9iMocDVEoGRzK1t3/4fzy7Vmpis=
+X-Gm-Gg: ATEYQzzL8Th7F9jiwBWvj8X+muEcc3HD4mX6pQhgv6lCz5wrkmJcIkmaGxwmB5o7oNx
+	9G2+grbdLa3V1nqP1OVrfpKo9/KtBNnFgBDORshOIzdywggjAWBCY+rVA2muTxd+uBoDngQywA4
+	DeD2RFE563VaZSrFDPDZ9SjnpRwaNRt95Ky7ya2+NF6vZWLl2hPv3/8xuu0gtdRDv4gNBJakM8p
+	sQU1c7ExrIjPybeC4FVVHvYiv9eGf1IN/27fXzfGqgUEsQjSnBKtslNfiitYHYgFh4Ejaq4TQSP
+	8sLlMPMR/522CB8JkJWc6R/THjNFt+ZefCQ8ep9++rwFtCYb6EkQvxKzGb/tD9BNeMizmpR34J+
+	3JRSNN/Gn8UqJg+gMbJNCN5Arq1GYvcmwtabyO/g1dOwJMf3y+Fn2fcx6B7Eci9dugrLSzfTXSY
+	dQB21nc1h9EDa3p+bF8Cv9ontz/L8lpWkZK9C6znsbwYjHFBElW4y7KmuHQVFl
+X-Received: by 2002:a17:907:9381:b0:b98:4246:8e6e with SMTP id a640c23a62f3a-b984246a925mr760725366b.53.1774357550221;
+        Tue, 24 Mar 2026 06:05:50 -0700 (PDT)
+Received: from mail-ej1-f42.google.com (mail-ej1-f42.google.com. [209.85.218.42])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-b9832f8c13csm628394866b.18.2026.03.24.06.05.45
+        for <linux-phy@lists.infradead.org>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 24 Mar 2026 06:05:48 -0700 (PDT)
+Received: by mail-ej1-f42.google.com with SMTP id a640c23a62f3a-b979d16dd0cso783090166b.1
+        for <linux-phy@lists.infradead.org>; Tue, 24 Mar 2026 06:05:45 -0700 (PDT)
+X-Forwarded-Encrypted: i=1; AJvYcCXEk94RnrVKWHheSOOqqy+HVAPxpto3mNPp6gZS6VSx6p80A9IuZ0WkOD+xpv31LyLpPZGEpf0ck2M=@lists.infradead.org
+X-Received: by 2002:a17:907:3d06:b0:b98:3fdc:150e with SMTP id
+ a640c23a62f3a-b983fdc1df6mr1119666566b.2.1774357545379; Tue, 24 Mar 2026
+ 06:05:45 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260121145526.14672-3-jiayu.riscv@isrc.iscas.ac.cn>
-X-CM-TRANSID: rQCowAAnSeCTi8JpkXyqCw--.7469S2
-X-Coremail-Antispam: 1UD129KBjvdXoW7Jw1Dur1DtF1DGF47Xr18Zrb_yoWkCwc_Z3
-	ZrCw4rCa9xJF9Yqw4qyFs2yw1Yyw42gas7uF1qqFn8Gw40krs8Wayktw1ayry5CF4Uurn3
-	WFn3Xrn2gFsFgjkaLaAFLSUrUUUUjb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
-	9fnUUIcSsGvfJTRUUUbsxYjsxI4VWkKwAYFVCjjxCrM7AC8VAFwI0_Gr0_Xr1l1xkIjI8I
-	6I8E6xAIw20EY4v20xvaj40_Wr0E3s1l1IIY67AEw4v_Jr0_Jr4l8cAvFVAK0II2c7xJM2
-	8CjxkF64kEwVA0rcxSw2x7M28EF7xvwVC0I7IYx2IY67AKxVWUJVWUCwA2z4x0Y4vE2Ix0
-	cI8IcVCY1x0267AKxVW8JVWxJwA2z4x0Y4vEx4A2jsIE14v26r4j6F4UM28EF7xvwVC2z2
-	80aVCY1x0267AKxVW8JVW8Jr1le2I262IYc4CY6c8Ij28IcVAaY2xG8wAqx4xG64xvF2IE
-	w4CE5I8CrVC2j2WlYx0E2Ix0cI8IcVAFwI0_Jr0_Jr4lYx0Ex4A2jsIE14v26r1j6r4UMc
-	vjeVCFs4IE7xkEbVWUJVW8JwACjcxG0xvEwIxGrwACI402YVCY1x02628vn2kIc2xKxwCY
-	1x0262kKe7AKxVWUtVW8ZwCF04k20xvY0x0EwIxGrwCFx2IqxVCFs4IE7xkEbVWUJVW8Jw
-	C20s026c02F40E14v26r1j6r18MI8I3I0E7480Y4vE14v26r106r1rMI8E67AF67kF1VAF
-	wI0_Jw0_GFylIxkGc2Ij64vIr41lIxAIcVC0I7IYx2IY67AKxVWUJVWUCwCI42IY6xIIjx
-	v20xvEc7CjxVAFwI0_Gr0_Cr1lIxAIcVCF04k26cxKx2IYs7xG6r1j6r1xMIIF0xvEx4A2
-	jsIE14v26r1j6r4UMIIF0xvEx4A2jsIEc7CjxVAFwI0_Gr0_Gr1UYxBIdaVFxhVjvjDU0x
-	ZFpf9x07betCcUUUUU=
-X-Originating-IP: [183.192.222.244]
-X-CM-SenderInfo: 5mld534oul2uny6l223fol2u1dvotugofq/
+References: <20260324121608.3444943-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+In-Reply-To: <20260324121608.3444943-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Tue, 24 Mar 2026 14:05:31 +0100
+X-Gmail-Original-Message-ID: <CAMuHMdV_94xOmqRqDKW_e740ckmRoyW+oaHvorphNg27JNKUrw@mail.gmail.com>
+X-Gm-Features: AQROBzBJaCVgwv-vRbaayLKwJjAAqLez24emj_-XOEZTvNken81UxnWww_VtevE
+Message-ID: <CAMuHMdV_94xOmqRqDKW_e740ckmRoyW+oaHvorphNg27JNKUrw@mail.gmail.com>
+Subject: Re: [PATCH] phy: renesas: rcar-gen3-usb2: Simplify ID/VBUS detection logic
+To: Prabhakar <prabhakar.csengg@gmail.com>
+Cc: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Magnus Damm <magnus.damm@gmail.com>, 
+	Pavel Machek <pavel@nabladev.com>, linux-renesas-soc@vger.kernel.org, 
+	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+	Biju Das <biju.das.jz@bp.renesas.com>, 
+	Fabrizio Castro <fabrizio.castro.jz@renesas.com>, 
+	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260324_060342_429150_782DE1CC 
-X-CRM114-Status: GOOD (  13.02  )
+X-CRM114-CacheID: sfid-20260324_060552_894494_D7985005 
+X-CRM114-Status: GOOD (  21.68  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,47 +100,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jan 21, 2026 at 10:55:23PM +0800, Jiayu Du wrote:
-> Add 'canaan,k230-usb' compatible string with 'snps,dwc2' as fallback
-> for the DWC2 IP which is used by Canaan K230.
-> 
-> Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
-> Signed-off-by: Jiayu Du <jiayu.riscv@isrc.iscas.ac.cn>
+Hi Prabhakar,
 
-Hi Rob,
+On Tue, 24 Mar 2026 at 13:16, Prabhakar <prabhakar.csengg@gmail.com> wrote:
+> From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+>
+> Read the USB2_ADPCTRL register once in rcar_gen3_check_id() and reuse
+> the value instead of performing multiple MMIO reads.
+>
+> Simplify the return logic by comparing the IDDIG and VBUSVALID bits
+> directly. This preserves the existing behaviour while improving code
+> clarity and avoiding redundant register accesses.
+>
+> Reported-by: Pavel Machek <pavel@nabladev.com>
+> Closes: https://lore.kernel.org/all/acJV-Xq-2uq_JFMn@duo.ucw.cz/
+> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 
-Will this patch2 be applied for next?
+Thanks for your patch!
 
-Best regards,
-Jiayu Du
+> --- a/drivers/phy/renesas/phy-rcar-gen3-usb2.c
+> +++ b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
+> @@ -314,13 +314,14 @@ static void rcar_gen3_init_from_a_peri_to_a_host(struct rcar_gen3_chan *ch)
+>  static bool rcar_gen3_check_id(struct rcar_gen3_chan *ch)
+>  {
+>         if (ch->phy_data->vblvl_ctrl) {
+> +               u32 val = readl(ch->base + USB2_ADPCTRL);
+>                 bool vbus_valid;
+>                 bool device;
+>
+> -               device = !!(readl(ch->base + USB2_ADPCTRL) & USB2_ADPCTRL_IDDIG);
+> -               vbus_valid = !!(readl(ch->base + USB2_ADPCTRL) & USB2_ADPCTRL_VBUSVALID);
+> +               device = !!(val & USB2_ADPCTRL_IDDIG);
+> +               vbus_valid = !!(val & USB2_ADPCTRL_VBUSVALID);
 
-> ---
->  Documentation/devicetree/bindings/usb/dwc2.yaml | 3 +++
->  1 file changed, 3 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/usb/dwc2.yaml b/Documentation/devicetree/bindings/usb/dwc2.yaml
-> index 6c3a10991b8b..352487c6392a 100644
-> --- a/Documentation/devicetree/bindings/usb/dwc2.yaml
-> +++ b/Documentation/devicetree/bindings/usb/dwc2.yaml
-> @@ -17,6 +17,9 @@ properties:
->    compatible:
->      oneOf:
->        - const: brcm,bcm2835-usb
-> +      - items:
-> +          - const: canaan,k230-usb
-> +          - const: snps,dwc2
->        - const: hisilicon,hi6220-usb
->        - const: ingenic,jz4775-otg
->        - const: ingenic,jz4780-otg
-> -- 
-> 2.52.0
-> 
-> 
-> -- 
-> linux-phy mailing list
-> linux-phy@lists.infradead.org
-> https://lists.infradead.org/mailman/listinfo/linux-phy
+Perhaps combine variable declarations and assignments?
+The "!!" is not needed when assigning to a bool.
 
+>
+> -               return vbus_valid ? device : !device;
+> +               return device == vbus_valid;
+>         }
+>
+>         if (!ch->uses_otg_pins)
+
+Gr{oetje,eeting}s,
+
+                        Geert
+
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 -- 
 linux-phy mailing list
