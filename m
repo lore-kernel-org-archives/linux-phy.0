@@ -4,70 +4,134 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5E2F9F532E2
-	for <linux-phy@archiver.kernel.org>; Tue, 24 Mar 2026 06:07:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 99152F532FF
+	for <linux-phy@archiver.kernel.org>; Tue, 24 Mar 2026 09:11:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AR7Hi4hc3UnRtETLMt6Ttla28SVQYJ0XaDDjcIelvJ0=; b=gmFxNLjc8fLYDt
-	d6cx+qdRZEZGLmmNVEqWZCuMKdoC9MGw6koLW3mY/bTtEmExxNP37Ek8t3VUSdN7JU7foTB+jbN/N
-	o1AkjX42Ze8Shym8tiGrHkPW5qz+U5M7hg5BVo5fhjnWqCr7C/xmPlxxfnEHWbBj1Re4/jflctRzs
-	J+uv/ZXsH39j+dopZBtnPMxHtWqVQZHD2E6qnmk1yGHWlqHhD5NZ1Rj/Aa9Vnv+cKYXG6v9bqIEph
-	2jtA8aeS2zodrczMTpMjbyrDuvMSpdOdEe75SgLgfbCm5hNxTgwl9ctI+MHUVxdQGDqRieSfzwV5f
-	fk0fpWm+AGIu7lcyxjRQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:References:Cc:To:
+	Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=vAHO6Frx+Axiqxe+Ypmi/wniqlCrQPLoQ1B/UpRtmw0=; b=W4HaRxpKqPdg8KXR/s+Gh60/44
+	6ZfINDvSHSoq67Bj5Xw27oWEtR8xwVNlgTLO9sdPAQm9e1UWc9ZmYFYzbsqL4F7gg5juVNs7li1Vo
+	gdXpv0wzd+WeaXuQ3x8tVJg8xHTCdjJ2WvymbHZ0S2etJ8/woKQQcQfmr7cs+bYtTFhzyYyiByuGj
+	6YENFuoCvU042df8CFSE2cga4bIq8yX36WMXHpPYZIsZw+v0rsIO6sg2CybpZluVf62HNWyeLW2f9
+	yAf7yY+8Os3MypUBMqdhWr0ePrFQQyzW0jU1uklUN+X21LPX9AbtKGwV/k3e6w7kGTrX7hPlADnwA
+	nW7epDtg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w4uvl-00000000ddv-3jVf;
-	Tue, 24 Mar 2026 06:07:57 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1w4xnZ-000000013N7-10Sy;
+	Tue, 24 Mar 2026 09:11:41 +0000
+Received: from mail-eastusazlp17011000f.outbound.protection.outlook.com ([2a01:111:f403:c100::f] helo=BL2PR02CU003.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w4uvh-00000000dWJ-0ItO
+	id 1w4xnW-000000013MM-3PqW
 	for linux-phy@lists.infradead.org;
-	Tue, 24 Mar 2026 06:07:53 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 6A0396013F;
-	Tue, 24 Mar 2026 06:07:52 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 66789C2BCB6;
-	Tue, 24 Mar 2026 06:07:44 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1774332472;
-	bh=CbrBDMvrxeaN6eqoq4nlJm50oGW9GYqdyJhdu9KIQjc=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=J8FFdrjpIm66Ud6FZQmqgFoLE3tQOuVgS10sKNaKTr0Oi+Zg8yPtGHldalvpKl1aR
-	 5ork1c0yk7RzktocuBMmHVdiPxTvRSOMHDnSVUD8q+CiRdeYAE7E+LHWWxtgItjr6r
-	 qLaT84wB7VJ8mLRYoFLy8oxLfwaTOXsyupgexMedPclhYyLFV/zXtPzzNrmYpssapW
-	 E+CUcUBlxBxFBD5llM++URWYBUwjMCVhTEU+JIm5telWaOtHQrMxX6y9nRi5n/+g4p
-	 mL+FUC8m6F8gYC1i8NL3j9x3qEJVtm/iPgD1FbmZwkkbmFiNLu4e+aSnxQgOx6alvM
-	 8do02E7SokWxg==
-Date: Tue, 24 Mar 2026 11:37:35 +0530
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: Tobias Heider <tobias.heider@canonical.com>
-Cc: Bjorn Andersson <andersson@kernel.org>, 
-	Bjorn Helgaas <helgaas@kernel.org>, Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>, 
-	konradybcio@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, 
-	jingoohan1@gmail.com, lpieralisi@kernel.org, kwilczynski@kernel.org, 
-	bhelgaas@google.com, johan+linaro@kernel.org, vkoul@kernel.org, kishon@kernel.org, 
-	neil.armstrong@linaro.org, abel.vesa@linaro.org, kw@linux.com, 
-	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org, qiang.yu@oss.qualcomm.com, 
-	quic_krichai@quicinc.com, quic_vbadigan@quicinc.com
-Subject: Re: [PATCH v1 1/1] arm64: dts: qcom: hamoa: Move PCIe PERST and Wake
- GPIOs to port nodes
-Message-ID: <dnx4ge2e2zy2unw5jtmmhktyzlnmmhrogb5skskxewi6y7ekau@vpfdphzay7td>
-References: <20260313094618.1361418-1-ziyue.zhang@oss.qualcomm.com>
- <20260313164542.GA1405513@bhelgaas>
- <en5a7jrgpbn4bsmw5qwprugb2qmjkqw2x5eey6jxxu63634duz@b43rhcsqkj3o>
- <abdviJbrluDn2Vrx@baldur>
- <kqpgjzcxnazjohiop27exget6qrv37wn3csmixt5nmc6d5dkbg@n7qjo6flaabn>
- <abtgaXSv-zRysJqO@baldur>
- <4byysnjodmlphwcevw5gb2asxbwwwlf526mtpwpkfi6crjxoqb@vyuktezfu2wu>
- <CAARv3RSag8n0=ut9KGm0yALRPVTiyQ+bBBbT+3Vf1sNOCBLbGA@mail.gmail.com>
+	Tue, 24 Mar 2026 09:11:40 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=c3rkiiY6HWH/PliF240FnDEafMjIyLy2eJpa+aG3GPgWjgI4oGNp3XzdzwUQmGIUwJ6mfBXYFuIky4/mlD/avT2HxrqDi5+IPRGCV4M9Y0DK1qC9qACQmZrbk73wD7xKh1libM3DG91zYOVBfoBW8i30WLyUCQWCvHMaHKkEQ+7xqorpw1BQrjMUCnD7WDkrhu+ySM+maYdi70Re2zAKuTDwKircRPJ/U5nqM12eLinrTHWJFzVYwOTDCpau8DpUycfCT3tdwJXskJlduTZsAVnaclXdSKLYS0c5c5UWSy9nAnRkXtW9vDPhHVhJBvzcGI6WQGD4oyAi1enJAYUASQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=XRoV4YsyFouIFMdeoswkp+pV3mfPSc9P89W4EzmbIK4=;
+ b=qxOlmWoxCnKSpljNgjPAM8pnkokD0aj8CxAtK1oPLqte8fNgqkcMtLvdrg2Zqnyv5pSFoMZyZ0d9b4hB8LF2LnpzgNV0n1h2VvvvUPqAJreVtBfxf7VqF4Pmy4nUTq2XLAts+q861mmp/jk64awyuzWulgosvqQ8z3oGLT8Gj2Q6e7f5ASqU/PDhVCDOj++HW0hYRtuwPhQXa/aswKk5tKKTS1x+hTNzB1S+rYeGz0whyeshEfX4jNBqoWj3r/PcRGnDO4cExCYczIS6GQ7Nqkka+9DNwHleFRBSAeWi8ustGq79iaot57hWUFbUQGeJJj15zYa67te6QHvoDOtjCg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nvidia.com; dmarc=pass action=none header.from=nvidia.com;
+ dkim=pass header.d=nvidia.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=XRoV4YsyFouIFMdeoswkp+pV3mfPSc9P89W4EzmbIK4=;
+ b=THZLffNWxie8j1lqJYwkWPRhetz7WRCRBT5F9GbnIJYqX+sKWqFbVeUwM3TIq0ZVne+9+Td5r1NK+MFLoU1pWTNF+pC5xx3Co4A3stC9jUQAQyikTfWq9g/P2ZxF9xRMjWC4g3VAbe09MmgS69AjyFN16cXQYPbVmEz3FFOElaz6Ehi/cQRasWo3aZOw/OYWcyNp8tlMs+kIBlWUTDLUtjAponPjtcMrzDInNk4q13OL07J2fMqsdgIcCdn6SHHd8W6m1Fa56c5/VMMGX3oOWflZ/a4kjOsnhyto4VLQGmiVatFnvXqad+Rxb+VuV9LDyPfrDbgw2z3HHgcwdSNyjg==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nvidia.com;
+Received: from DS2PR12MB9750.namprd12.prod.outlook.com (2603:10b6:8:2b0::12)
+ by DS4PR12MB9658.namprd12.prod.outlook.com (2603:10b6:8:280::14) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9745.20; Tue, 24 Mar
+ 2026 09:11:30 +0000
+Received: from DS2PR12MB9750.namprd12.prod.outlook.com
+ ([fe80::56a8:d6bf:e24c:b391]) by DS2PR12MB9750.namprd12.prod.outlook.com
+ ([fe80::56a8:d6bf:e24c:b391%6]) with mapi id 15.20.9745.019; Tue, 24 Mar 2026
+ 09:11:30 +0000
+Message-ID: <82f3ca77-7b8f-41b8-85fb-c502bc343778@nvidia.com>
+Date: Tue, 24 Mar 2026 09:11:26 +0000
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] phy: tegra: xusb: Fix per-pad high-speed termination
+ calibration
+To: Wei-Cheng Chen <weichengc@nvidia.com>, jckuo@nvidia.com,
+ vkoul@kernel.org, neil.armstrong@linaro.org, thierry.reding@gmail.com
+Cc: linux-phy@lists.infradead.org, linux-tegra@vger.kernel.org,
+ linux-kernel@vger.kernel.org, waynec@nvidia.com, wtsai@nvidia.com
+References: <20260304102649.3670783-1-weichengc@nvidia.com>
+From: Jon Hunter <jonathanh@nvidia.com>
+Content-Language: en-US
+In-Reply-To: <20260304102649.3670783-1-weichengc@nvidia.com>
+X-ClientProxiedBy: LO4P123CA0033.GBRP123.PROD.OUTLOOK.COM
+ (2603:10a6:600:151::20) To DS2PR12MB9750.namprd12.prod.outlook.com
+ (2603:10b6:8:2b0::12)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAARv3RSag8n0=ut9KGm0yALRPVTiyQ+bBBbT+3Vf1sNOCBLbGA@mail.gmail.com>
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DS2PR12MB9750:EE_|DS4PR12MB9658:EE_
+X-MS-Office365-Filtering-Correlation-Id: 6aed4a87-9912-49c2-e57e-08de8985564f
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|1800799024|376014|18002099003|56012099003|22082099003;
+X-Microsoft-Antispam-Message-Info: q1B4x7oWZpHNSbFiNsXmDo6WhK8RzDS28PICKUEOwpKu215eJGNGV4b9AwtimHvvJPn/f39RLX0YOeMiRAi0q892yyWklAeJnwX1cfclpuE8gZo1hFQpWY+qrb9seYt6PkDDQ53SGl9WpUnIdDtf2QZK2UO9xgktSqv3byKT0B2LfydVr7flB1thUMq+VACYi+WQT+0IiyKwE2492ja0wxyksiK0uAyPrqPbE2oO+KrxMpvg5F420GVnEwIcZYNb26IHQI1aUxnd1Ele/xCN0zarTINSBxxwxX5b8tYgiUbiAENyOnMXs0n7DUD1koBPtZLV5bStjW33XOV6kbYlQJrKwjVZmQg5C3bNgBUsGSugJ0olnDr6g6k/AK7N9VJgOebTTc+E+ApCVUF/yPnEE8m+EGEI0ucRlGcMMZeWy5lI9uobEbnnzeZpKefZlqkCzbhWDqLi6pXEq7bT6zbdegC3aHrIjbmMmlG0qk8fp5k43AW9Q7VNMs8A4duDH9rH+1Xyl7MZJdppsEGFzweZH88XHbjbHJoSih/BqoeC/13rDqh5vI6c+qJB71i9JPKMh9VruzgUI5qgl+T3PSiAeg535vLqlllWeOKd9sGWUh62F6QCR3yuQ9Mrpwd9uGtlmThCwH2YOrysTCOtJqK4n/AvvIIVATy0c34ZwMvMIvSUDTLjE6kua03NVf3CN7JvQwHxqWONgh5b1YPSI7p64jbQ1iPJhJu1+7q9t0qh+/4=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DS2PR12MB9750.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(376014)(18002099003)(56012099003)(22082099003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?MXdiNGZZUXk2VHQ2eCtIRzdzZzFDQXlpVTRlcHF2MjhZaXpiRWFmUHZRWFJz?=
+ =?utf-8?B?NWZxUjYycTZibDNISkVGYUpPMjU2SHl6WHJBSzZBYU9oK3R1MGJaZlVCU3Ji?=
+ =?utf-8?B?a3IrdXpyQXZTcytNU2VtQ2NpZk9tbWd1aGxBMU01VGEwcDVzRGROL3Q3Wnlr?=
+ =?utf-8?B?MWJtY1picmFDZUhpSDgwQ25sL2pYUXd2ekd3WW43YWZMTEoxUUFvbFFvMWc2?=
+ =?utf-8?B?aHNtclE5ekordDF1MnA2MWduK3FkdUJCWitkOGcvUnNaUFdDeTJHRzlyQVoz?=
+ =?utf-8?B?akJHWUgxVVpsajVYL1ZQN3NLUUxRejFhcTVPeGtjSmV5OUtFbVNid0tTNDZB?=
+ =?utf-8?B?WldLSmdxTTBmWjlEUmxMQlEwL0FKVDhuVVlKeUhFVUY4Q0lMcysvdHIxODVy?=
+ =?utf-8?B?U2tOWDF6cnRwb1BjT2U2S1RwMHhyM1VXR3hIL0dqNGZqelVyMUs2NEZhcXQr?=
+ =?utf-8?B?NCtrNzBrU1UzZnlkdm1YUXRTNVlpaVZiZkcxbThycTFSVG03OGcyd2xhYkZy?=
+ =?utf-8?B?cWt2bHNVVjB3NGVwUnEvYWluU3dQOEtQQU5SZ2QxOFZVTTk0R0huU2QrUkhC?=
+ =?utf-8?B?QXF0aFgvd3pTck5mWTN4QTlQUmQ2VDlqQlBZRFdtT1J1dTFGVEorUThINkpw?=
+ =?utf-8?B?VEM2MEoyUXpQTUFTcXBvYlNkR1JLSG1WT1orOXB5cTJkcDUxclRZREE3c2ZW?=
+ =?utf-8?B?Q1JoRFNJL0dFK0l1L1F1RHFYSlJxMUhEZVM2TngvQlBXSEYvVWhpbzNrQ2R2?=
+ =?utf-8?B?UEtxTysxemVZM1J6TG9BUWRmOUxXenJXVU9keVIwcUZBcThjRkIrRzljaDJL?=
+ =?utf-8?B?cmhvOWVuTi9HZVZVUllTUnoyb0FNUnprZHhUZkNHOU5lRmFmelJxWG0yOWFl?=
+ =?utf-8?B?SjJDa1p6Q09JSXlFMUZwM2V2U29wQk5rMGFRVDF3b1M5NTMyaGRSWHhEaUM4?=
+ =?utf-8?B?N3gyQThoTFVLMlJhNlRkU0l6TkxrcWdNc3ljZ0k5QkpnSmdEdHBkcG5aRkhx?=
+ =?utf-8?B?cFN2WWJmMDVUWEk1VTJBaUx3RGcwTGhMUFh0TEN2QnVaa1RRU1Z3Rk44bHBl?=
+ =?utf-8?B?VlVSenZ3VCt5NGNUeDBtSWQ2dzdmMGNKaERuWEQ4NjlrblNpYVpvTFNMS21k?=
+ =?utf-8?B?bWo0Snd1Kzc0Rlc2WkpxaGZ1eGVUOGlqOEFCVVR4eS9McXRibngzbHNQNUtj?=
+ =?utf-8?B?d0dOOU43ZUlkQWRkOGYyNG1FK3RjRjBxVjJmaHVGTE4wNVpVY1dDcFFPMStj?=
+ =?utf-8?B?REVmcVFaM0xtc0llaVhlT1p3L2IrSHorbFFEYitOekJlYTJ0aGs5MDY4eUE1?=
+ =?utf-8?B?WW0reitMUWcrdHN2aUFJZGVnMkdydmJ2Y3kxaTU3ZDFKSmRmQysvc3Bha3hI?=
+ =?utf-8?B?RVE2bTlnSjBGUVZXd1VncmtRMjArcGpuZDNTa3lEd1JsZ1FCamRCenV6L2U1?=
+ =?utf-8?B?aEVHSzFtNHhyNXd5Q0RGQUlnMWhIcVpOOTQrb3BtaUtReEdSdThsYm8yNmN0?=
+ =?utf-8?B?bkJBQ0xKenNUUjZDOGtPSUQvMU9CVDd4aDFSVkEvR1Y1QlM4SlBmRFN4Qlkv?=
+ =?utf-8?B?THpXWStXOUFiRWNrUHhTZ2QzdGVyQTdpRjdzdmR3WWNUeW92Zkh5Vnhnc0VJ?=
+ =?utf-8?B?ZDl2Z1BPWG5PN1ZmeldkQ244VFNkTzhac09qaEtzdW5oRWp1OWM0bE1ZOVZB?=
+ =?utf-8?B?Sk5xTGl1OHBjNjFtRGRYR1hrK2VMYkI1RjdFS1JaMkJOd3YyVHEra1gxdDRJ?=
+ =?utf-8?B?WmpPY3pCYk1ZR3RPb3FHcnAwN29zNkYyVUpBc3ZqckpORE1XVTZ5NE10RTYx?=
+ =?utf-8?B?Y0w1RGxQaUlPdUdZMjBMRW1ETGI1SlNRYTZoQXN6ZWhyWFZySEpqODF2UlVQ?=
+ =?utf-8?B?QXoxRkdmSzBGMXNIQ0xjVHpEWkU0YUtwbWNvaXorNmtacHJNdVBmcE1SbmpL?=
+ =?utf-8?B?OE5NYXRGS2lpYnkzdFBvRENQQ0tWbXI2UmtwdTNaemZEU3RlUTdOelZtVzM4?=
+ =?utf-8?B?R2gxZVhtdDZJbHFDK2tnZERBNzNmNlhIYjRjczF2WjhhZ3dsVDdZcGFYRmxP?=
+ =?utf-8?B?cDNwTHREZGNOOGZaOE0reE4yaDRqWmpGanVxVFV4SkQ3YmN2N2RoSlRORHFD?=
+ =?utf-8?B?N2laTm5CdkJ3dm9ES3lRZTluaS9zMzJSN3orcnRuVVVtZmZsV1p6ZHlRRkpZ?=
+ =?utf-8?B?RGNYVHFOekN0SkhaaEdqQ0NwVE84bTkrcHQxYkdkTXNIWWk2Ym5sdWxNenhh?=
+ =?utf-8?B?bU90K2hObkRYcUtoQjV1cU1mazRlcWxzY3hDemc3QzJiYnlQQW12bTNMamdT?=
+ =?utf-8?B?aEduRm5xSjZJZVdCS2xwVzhzZ0thTGd2V0xaN1QxVjdKQm43bTBMQT09?=
+X-OriginatorOrg: Nvidia.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 6aed4a87-9912-49c2-e57e-08de8985564f
+X-MS-Exchange-CrossTenant-AuthSource: DS2PR12MB9750.namprd12.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 24 Mar 2026 09:11:30.5983
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: D+fPEipm4w47tXSWKferMsd4u99HsD2+GWai4jU3yPCqGt0PSUdvQzSYWv6pJB8F80qHvnLtKNTNfFbBkTnGYw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DS4PR12MB9658
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260324_021138_882419_04FC75F5 
+X-CRM114-Status: GOOD (  23.50  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,103 +143,165 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gVGh1LCBNYXIgMTksIDIwMjYgYXQgMDI6NTA6MzdQTSArMDEwMCwgVG9iaWFzIEhlaWRlciB3
-cm90ZToKPiBSZXNlbmRpbmcgYmVjYXVzZSB0aGUgcHJldmlvdXMgbWFpbCBlbmRlZCB1cCBiZWlu
-ZyBIVE1MIChzb3JyeSkKPiAKPiBPbiBUaHUsIE1hciAxOSwgMjAyNiBhdCA2OjM54oCvQU0gTWFu
-aXZhbm5hbiBTYWRoYXNpdmFtIDxtYW5pQGtlcm5lbC5vcmc+IHdyb3RlOgo+ID4KPiA+IE9uIFdl
-ZCwgTWFyIDE4LCAyMDI2IGF0IDA5OjQyOjU2UE0gLTA1MDAsIEJqb3JuIEFuZGVyc3NvbiB3cm90
-ZToKPiA+ID4gT24gTW9uLCBNYXIgMTYsIDIwMjYgYXQgMDg6NTA6MTJBTSArMDUzMCwgTWFuaXZh
-bm5hbiBTYWRoYXNpdmFtIHdyb3RlOgo+ID4gPiA+IE9uIFN1biwgTWFyIDE1LCAyMDI2IGF0IDA5
-OjUzOjMzUE0gLTA1MDAsIEJqb3JuIEFuZGVyc3NvbiB3cm90ZToKPiA+ID4gPiA+IE9uIFNhdCwg
-TWFyIDE0LCAyMDI2IGF0IDA3OjUwOjUwUE0gKzA1MzAsIE1hbml2YW5uYW4gU2FkaGFzaXZhbSB3
-cm90ZToKPiA+ID4gPiA+ID4gT24gRnJpLCBNYXIgMTMsIDIwMjYgYXQgMTE6NDU6NDJBTSAtMDUw
-MCwgQmpvcm4gSGVsZ2FhcyB3cm90ZToKPiA+ID4gPiA+ID4gPiBPbiBGcmksIE1hciAxMywgMjAy
-NiBhdCAwNTo0NjoxOFBNICswODAwLCBaaXl1ZSBaaGFuZyB3cm90ZToKPiA+ID4gPiA+ID4gPiA+
-IENvbW1pdCA5NjA2MDliMjJiZTUgKCJhcm02NDogZHRzOiBxY29tOiBoYW1vYTogTW92ZSBQSFks
-IFBFUlNULCBhbmQgV2FrZQo+ID4gPiA+ID4gPiA+ID4gR1BJT3MgdG8gUENJZSBwb3J0IG5vZGVz
-IGFuZCBhZGQgcG9ydCBOb2RlcyBmb3IgYWxsIFBDSWUgcG9ydHMiKSBkaWQgbm90Cj4gPiA+ID4g
-PiA+ID4gPiBjb252ZXJ0IGFsbCBIYW1vYeKAkWJhc2VkIHBsYXRmb3JtcyB0byB0aGUgbmV3IG1l
-dGhvZCBvZiBkZWZpbmluZyBQRVJTVCBhbmQKPiA+ID4gPiA+ID4gPiA+IFdha2UgR1BJT3MgaW4g
-dGhlIFBDSWUgcm9vdCBwb3J0IG5vZGVzLgo+ID4gPiA+ID4gPiA+ID4KPiA+ID4gPiA+ID4gPiA+
-IFdpdGhvdXQgdGhlIGNoYW5nZSBQQ0llIHByb2JlIHdpbGwgZmFpbC4gVGhlIHByb2JlIGZhaWx1
-cmUgaGFwcGVucyBiZWNhdXNlCj4gPiA+ID4gPiA+ID4gPiB0aGUgUEhZIHN0YXlzIGluIHRoZSBj
-b250cm9sbGVyIG5vZGUgd2hpbGUgdGhlIFBFUlNUL1dha2UgR1BJT3Mgd2VyZSBtb3ZlZAo+ID4g
-PiA+ID4gPiA+ID4gdG8gdGhlIHBvcnQgbm9kZXMuCj4gPiA+ID4gPiA+ID4gPgo+ID4gPiA+ID4g
-PiA+ID4gVGhpcyBmaXhlcyBwcm9iZSBmYWlsdXJlcyBzZWVuIG9uIHRoZSBmb2xsb3dpbmcgcGxh
-dGZvcm1zOgo+ID4gPiA+ID4gPiA+ID4gIC0geDEtaHAtb21uaWJvb2steDE0Cj4gPiA+ID4gPiA+
-ID4gPiAgLSB4MS1taWNyb3NvZnQtZGVuYWxpCj4gPiA+ID4gPiA+ID4gPiAgLSB4MWU4MDEwMC1s
-ZW5vdm8teW9nYS1zbGltN3gKPiA+ID4gPiA+ID4gPiA+ICAtIHgxZTgwMTAwLW1lZGlvbi1zcHJj
-aHJnZC0xNC1zMQo+ID4gPiA+ID4gPiA+ID4gIC0geDFwNDIxMDAtbGVub3ZvLXRoaW5rYm9vay0x
-Ngo+ID4gPiA+ID4gPiA+ID4gIC0geDEtYXN1cy16ZW5ib29rLWExNAo+ID4gPiA+ID4gPiA+ID4g
-IC0geDEtY3JkCj4gPiA+ID4gPiA+ID4gPiAgLSB4MS1kZWxsLXRoZW5hCj4gPiA+ID4gPiA+ID4g
-Pgo+ID4gPiA+ID4gPiA+ID4gRml4ZXM6IDk2MDYwOWIyMmJlNSAoImFybTY0OiBkdHM6IHFjb206
-IGhhbW9hOiBNb3ZlIFBIWSwgUEVSU1QsIGFuZCBXYWtlIEdQSU9zIHRvIFBDSWUgcG9ydCBub2Rl
-cyBhbmQgYWRkIHBvcnQgTm9kZXMgZm9yIGFsbCBQQ0llIHBvcnRzIikKPiA+ID4gPiA+ID4gPgo+
-ID4gPiA+ID4gPiA+IEFyZSB5b3Ugc2F5aW5nIHRoYXQgRFRzIGluIHRoZSBmaWVsZCBicm9rZSBi
-ZWNhdXNlIG9mIHNvbWUga2VybmVsCj4gPiA+ID4gPiA+ID4gY2hhbmdlPyAgVGhhdCdzIG5vdCBz
-dXBwb3NlZCB0byBoYXBwZW4uICBFdmVuIHRob3VnaCBQSFksIFBFUlNULCBhbmQKPiA+ID4gPiA+
-ID4gPiBXYWtlIEdQSU9zIHNob3VsZCBiZSBkZXNjcmliZWQgaW4gUm9vdCBQb3J0IG5vZGVzIGlu
-c3RlYWQgb2YgdGhlIFJvb3QKPiA+ID4gPiA+ID4gPiBDb21wbGV4IG5vZGUgaW4gKmZ1dHVyZSog
-RFRzLCB0aGUga2VybmVsIGlzIHN0aWxsIHN1cHBvc2VkIHRvIGFjY2VwdAo+ID4gPiA+ID4gPiA+
-IHRoZSBvbGQgc3R5bGUgd2l0aCB0aGVtIGRlc2NyaWJlZCBpbiB0aGUgUm9vdCBDb21wbGV4IG5v
-ZGUuCj4gPiA+ID4gPiA+ID4KPiA+ID4gPiA+ID4KPiA+ID4gPiA+ID4gVGhpcyBpcyBub3QgcmVs
-YXRlZCB0byB0aGUgZHJpdmVyIGNoYW5nZS4gVGhlIGRyaXZlciBjb3JyZWN0bHkgcGFyc2VzIGFs
-bCBSb290Cj4gPiA+ID4gPiA+IFBvcnQgcHJvcGVydGllcyBlaXRoZXIgaW4gdGhlIFJvb3QgQ29t
-cGxleCBub2RlIChvbGQgYmluZGluZykgb3IgUm9vdCBQb3J0IG5vZGUKPiA+ID4gPiA+ID4gKG5l
-dyBiaW5kaW5nKS4gQnV0IGNvbW1pdCA5NjA2MDliMjJiZTUsIGxlZnQgY29udmVydGluZyBtZW50
-aW9uZWQgYm9hcmQgRFRTIHRvCj4gPiA+ID4gPiA+IHRoZSBuZXcgYmluZGluZywgbGVhdmluZyB0
-aG9zZSBhZmZlY3RlZCBwbGF0Zm9ybXMgaW4gYSBoYWxmIGJha2VkIHN0YXRlIGkuZS4sCj4gPiA+
-ID4gPiA+IHNvbWUgcHJvcGVydGllcyBpbiBSQyBub2RlIGFuZCBzb21lIGluIFJvb3QgUG9ydCBu
-b2RlLiBEcml2ZXIgY2Fubm90IHBhcnNlIHN1Y2gKPiA+ID4gPiA+ID4gY29tYmluYXRpb25zLCBz
-byBpdCBmYWlscyBjb3JyZWN0bHkgc28uCj4gPiA+ID4gPiA+Cj4gPiA+ID4gPgo+ID4gPiA+ID4g
-QXJlIHlvdSBzYXlpbmcgdGhhdCBhYm92ZSBsaXN0ZWQgbWFjaGluZXMgaGFzIGJyb2tlbiBQQ0ll
-IHN1cHBvcnQgaW4KPiA+ID4gPiA+IHY3LjAtcmM/Cj4gPiA+ID4gPgo+ID4gPiA+Cj4gPiA+ID4g
-SSBoYXZlbid0IHZlcmlmaWVkIGl0LCBidXQgSSdtIHByZXR0eSBzdXJlIFBDSWUgaXMgYnJva2Vu
-IG9uIHRoZXNlIHBsYXRmb3Jtcy4KPiA+ID4gPgo+ID4gPgo+ID4gPiBJbiBsaW5lIHdpdGggQmpv
-cm4ncyByZXF1ZXN0LCB3ZSBzaG91bGRuJ3QgaGF2ZSB0byBndWVzcy4KPiA+ID4KPiA+ID4gPiA+
-IEl0IHNlZW1zIHRoaXMgaXMgYSAocGFydGlhbCkgcmV2ZXJ0IG9mIDk2MDYwOWIyMmJlNSwgaXMg
-dGhpcyBhY3R1YWxseQo+ID4gPiA+ID4gZml4aW5nIHRoYXQgY2hhbmdlLCBvciBpcyBpdCBvbmx5
-IGFwcGxpY2FibGUgb25jZSBzb21lIG90aGVyIGNoYW5nZXMgYXJlCj4gPiA+ID4gPiBhcHBsaWVk
-Pwo+ID4gPiA+ID4KPiA+ID4gPgo+ID4gPiA+IFRoaXMgY2hhbmdlIGlzIGZpeGluZyB0aGUgaXNz
-dWUgaW4gdGhlIHJlc3BlY3RpdmUgYm9hcmQgRFRTIGFuZCBpcyBhIHN0YW5kYWxvbmUKPiA+ID4g
-PiBmaXggb24gdG9wIG9mIHY3LjAtcmMxLgo+ID4gPiA+Cj4gPiA+Cj4gPiA+IFNvIDk2MDYwOWIy
-MmJlNSB3YXMgYnJva2VuIHdoZW4gSSBtZXJnZWQgaXQ/Cj4gPiA+Cj4gPgo+ID4gQnJva2VuIG9u
-IHRoZSBtYWNoaW5lcyBtZW50aW9uZWQgaW4gdGhlIGNvbW1pdCBtZXNzYWdlLCBub3QgZm9yIGFs
-bCBIYW1vYQo+ID4gcGxhdGZvcm1zLgo+ID4KPiA+ID4gVGhlIGNvbW1pdCBtZXNzYWdlIHNheXMg
-dGhhdCB0aGUgY29tbWl0IHdhcyBpbmNvbXBsZXRlLCBpbiB0aGF0IGl0Cj4gPiA+IGRpZG4ndCBm
-dWxseSBjb252ZXJ0IGZyb20gdGhlIG9sZCB0byB0aGUgbmV3IHN0eWxlLCBzbyBpdCBzb3VuZHMg
-bGlrZQo+ID4gPiB0aGUgb2ZmZW5kaW5nIGNvbW1pdCB3YXMgaW5jb21wbGV0ZSAtIGJ1dCBJIGJl
-bGlldmUgdGhlIG9mZmVuZGluZyBjb21taXQKPiA+ID4gd2FzIGEgd29ya2Fyb3VuZCBmb3IgdGhl
-IG5ldyBzb2x1dGlvbiBub3QgYmVpbmcgaW4gcGxhY2UgYW5kIHRoaXMgY29tbWl0Cj4gPiA+IG1v
-c3RseSByZXZlcnRzIHRoZSBjaGFuZ2VzIGluIHRoZSBvZmZlbmRpbmcgY29tbWl0Lgo+ID4gPgo+
-ID4KPiA+IFNvIDk2MDYwOWIyMmJlNSB3YXMgc3VwcG9zZWQgdG8gbW92ZSBhbGwgdGhlIHBsYXRm
-b3JtcyBmcm9tIG9sZCBQQ0llIGJpbmRpbmcgdG8KPiA+IG5ldyBmb3IgZ3JlYXRlciBnb29kLCBi
-dXQgaXQgYXBwYXJlbnRseSBkZWNpZGVkIHRvIGRvIHNvIG9ubHkgZm9yIGEgc3Vic2V0IG9mCj4g
-PiB0aGUgcGxhdGZvcm1zIGZvciBzb21lIHJlYXNvbiB3aGljaCAgZG9uJ3Qga25vdy4gQnV0IHRo
-ZSBwcm9ibGVtIGFyaXNlcyBkdWUgdG8KPiA+IDk2MDYwOWIyMmJlNSBjaGFuZ2luZyB0aGUgaGFt
-b2EuZHRzaSB0byB0aGUgbmV3IGJpbmRpbmcgd2hpY2ggYWxzbyB3YXJyYW50cyB0aGUKPiA+IHBs
-YXRmb3JtIERUUyB0byBhbHNvIGJlIGNoYW5nZWQgdG8gdGhlIG5ldyBiaW5kaW5nLiBJZiB3ZSBv
-bmx5IGhhdmUgZWl0aGVyIGR0c2kKPiA+IG9yIGR0cyBjb252ZXJ0ZWQgYW5kIG5vdCBib3RoIHRv
-IHRoZSBuZXcgYmluZGluZywgdGhlIGRyaXZlciB3aWxsIGdldCBjb25mdXNlZAo+ID4gYW5kIGZh
-aWwuIEFuZCB0aGlzIGlzIHdoYXQgZXhhY3RseSBoYXBwZW5kZWQgZm9yIGJlbG93IG1hY2hpbmVz
-Ogo+ID4KPiA+ICAtIHgxLWhwLW9tbmlib29rLXgxNAo+ID4gIC0geDEtbWljcm9zb2Z0LWRlbmFs
-aQo+ID4gIC0geDFlODAxMDAtbGVub3ZvLXlvZ2Etc2xpbTd4Cj4gPiAgLSB4MWU4MDEwMC1tZWRp
-b24tc3ByY2hyZ2QtMTQtczEKPiA+ICAtIHgxcDQyMTAwLWxlbm92by10aGlua2Jvb2stMTYKPiA+
-ICAtIHgxLWFzdXMtemVuYm9vay1hMTQKPiA+ICAtIHgxLWNyZAo+ID4gIC0geDEtZGVsbC10aGVu
-YQo+IAo+IEkgY2FuIGNvbmZpcm0gdGhlIGJyZWFrYWdlIGZvciAoc29tZSBvZikgdGhlIGxpc3Rl
-ZCBkZXZpY2VzIG9uIFVidW50dS4KPiBXZSBhcmUgZXhwZXJpbWVudGluZyB3aXRoIDcuMC1yY3Mg
-YWhlYWQgb2Ygb3VyIDI2LjA0IHJlbGVhc2UuCj4gCj4gSSdsbCB0cnkgdG8gY29sbGVjdCBzb21l
-IHRlc3QgZmVlZGJhY2sgZm9yIHRoZSBmaXguCj4gSSdkIGNlcnRhaW5seSBhcHByZWNpYXRlIHRo
-aXMgYmVpbmcgaW5jbHVkZWQgYXMgYW4gcmMgZml4IHNpbmNlCj4gY3VycmVudGx5IGhhbGYgb2YK
-PiB0aGUgeDEgbGFwdG9wIGRldmljZXMgYXJlIGJyb2tlbi4KPiAKClRoYW5rcyBmb3IgdGhlIHJl
-cG9ydC4gV2Ugd2lsbCB0cnkgdG8gZ2V0IHRoaXMgcGF0Y2ggaW50byB2Ny4wLXJjUy4KCkl0J2Qg
-YmUgYXBwcmVjaWF0ZWQgaWYgeW91IGNhbiB0ZXN0IHRoaXMgcGF0Y2ggYW5kIGdpdmUgeW91ciB0
-ZXN0ZWQtYnkgdGFnLgoKLSBNYW5pCgotLSAK4K6u4K6j4K6/4K614K6j4K+N4K6j4K6p4K+NIOCu
-muCupOCuvuCumuCuv+CuteCuruCvjQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgt
-cGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
-YW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+
+On 04/03/2026 10:26, Wei-Cheng Chen wrote:
+> From: Wayne Chang <waynec@nvidia.com>
+> 
+> The existing code reads a single hs_term_range_adj value from bit field
+> [10:7] of FUSE_SKU_CALIB_0 and applies it to all USB2 pads uniformly.
+> However, on SoCs that support per-pad termination, each pad has its own
+> hs_term_range_adj field: pad 0 in FUSE_SKU_CALIB_0[10:7], and pads 1-3
+> in FUSE_USB_CALIB_EXT_0 at bit offsets [8:5], [12:9], and [16:13]
+> respectively.
+> 
+> Fix the calibration by reading per-pad values from the appropriate fuse
+> registers. For SoCs that do not support per-pad termination, replicate
+> pad 0's value to all pads to maintain existing behavior.
+> 
+> Add a has_per_pad_term flag to the SoC data to indicate whether per-pad
+> termination values are available in FUSE_USB_CALIB_EXT_0.
+> 
+> Fixes: 1ef535c6ba8e ("phy: tegra: xusb: Add Tegra194 support")
+> Cc: stable@vger.kernel.org
+> Signed-off-by: Wayne Chang <waynec@nvidia.com>
+> Signed-off-by: Wei-Cheng Chen <weichengc@nvidia.com>
+> ---
+>   drivers/phy/tegra/xusb-tegra186.c | 33 ++++++++++++++++++++++++-------
+>   drivers/phy/tegra/xusb.h          |  1 +
+>   2 files changed, 27 insertions(+), 7 deletions(-)
+> 
+> diff --git a/drivers/phy/tegra/xusb-tegra186.c b/drivers/phy/tegra/xusb-tegra186.c
+> index bec9616c4a2..4452e73fb82 100644
+> --- a/drivers/phy/tegra/xusb-tegra186.c
+> +++ b/drivers/phy/tegra/xusb-tegra186.c
+> @@ -20,8 +20,8 @@
+>   /* FUSE USB_CALIB registers */
+>   #define HS_CURR_LEVEL_PADX_SHIFT(x)	((x) ? (11 + (x - 1) * 6) : 0)
+>   #define HS_CURR_LEVEL_PAD_MASK		0x3f
+> -#define HS_TERM_RANGE_ADJ_SHIFT		7
+> -#define HS_TERM_RANGE_ADJ_MASK		0xf
+> +#define HS_TERM_RANGE_ADJ_PADX_SHIFT(x)	((x) ? (5 + (x - 1) * 4) : 7)
+> +#define HS_TERM_RANGE_ADJ_PAD_MASK	0xf
+>   #define HS_SQUELCH_SHIFT		29
+>   #define HS_SQUELCH_MASK			0x7
+>   
+> @@ -253,7 +253,7 @@
+>   struct tegra_xusb_fuse_calibration {
+>   	u32 *hs_curr_level;
+>   	u32 hs_squelch;
+> -	u32 hs_term_range_adj;
+> +	u32 *hs_term_range_adj;
+>   	u32 rpd_ctrl;
+>   };
+>   
+> @@ -930,7 +930,7 @@ static int tegra186_utmi_phy_power_on(struct phy *phy)
+>   
+>   	value = padctl_readl(padctl, XUSB_PADCTL_USB2_OTG_PADX_CTL1(index));
+>   	value &= ~TERM_RANGE_ADJ(~0);
+> -	value |= TERM_RANGE_ADJ(priv->calib.hs_term_range_adj);
+> +	value |= TERM_RANGE_ADJ(priv->calib.hs_term_range_adj[index]);
+>   	value &= ~RPD_CTRL(~0);
+>   	value |= RPD_CTRL(priv->calib.rpd_ctrl);
+>   	padctl_writel(padctl, value, XUSB_PADCTL_USB2_OTG_PADX_CTL1(index));
+> @@ -1464,17 +1464,23 @@ static const char * const tegra186_usb3_functions[] = {
+>   static int
+>   tegra186_xusb_read_fuse_calibration(struct tegra186_xusb_padctl *padctl)
+>   {
+> +	const struct tegra_xusb_padctl_soc *soc = padctl->base.soc;
+>   	struct device *dev = padctl->base.dev;
+>   	unsigned int i, count;
+>   	u32 value, *level;
+> +	u32 *hs_term_range_adj;
+>   	int err;
+>   
+> -	count = padctl->base.soc->ports.usb2.count;
+> +	count = soc->ports.usb2.count;
+>   
+>   	level = devm_kcalloc(dev, count, sizeof(u32), GFP_KERNEL);
+>   	if (!level)
+>   		return -ENOMEM;
+>   
+> +	hs_term_range_adj = devm_kcalloc(dev, count, sizeof(u32), GFP_KERNEL);
+> +	if (!hs_term_range_adj)
+> +		return -ENOMEM;
+> +
+>   	err = tegra_fuse_readl(TEGRA_FUSE_SKU_CALIB_0, &value);
+>   	if (err)
+>   		return dev_err_probe(dev, err,
+> @@ -1490,8 +1496,8 @@ tegra186_xusb_read_fuse_calibration(struct tegra186_xusb_padctl *padctl)
+>   
+>   	padctl->calib.hs_squelch = (value >> HS_SQUELCH_SHIFT) &
+>   					HS_SQUELCH_MASK;
+> -	padctl->calib.hs_term_range_adj = (value >> HS_TERM_RANGE_ADJ_SHIFT) &
+> -						HS_TERM_RANGE_ADJ_MASK;
+> +	hs_term_range_adj[0] = (value >> HS_TERM_RANGE_ADJ_PADX_SHIFT(0)) &
+> +				HS_TERM_RANGE_ADJ_PAD_MASK;
+>   
+>   	err = tegra_fuse_readl(TEGRA_FUSE_USB_CALIB_EXT_0, &value);
+>   	if (err) {
+> @@ -1503,6 +1509,17 @@ tegra186_xusb_read_fuse_calibration(struct tegra186_xusb_padctl *padctl)
+>   
+>   	padctl->calib.rpd_ctrl = (value >> RPD_CTRL_SHIFT) & RPD_CTRL_MASK;
+>   
+> +	for (i = 1; i < count; i++) {
+> +		if (soc->has_per_pad_term)
+> +			hs_term_range_adj[i] =
+> +				(value >> HS_TERM_RANGE_ADJ_PADX_SHIFT(i)) &
+> +				HS_TERM_RANGE_ADJ_PAD_MASK;
+> +		else
+> +			hs_term_range_adj[i] = hs_term_range_adj[0];
+> +	}
+> +
+> +	padctl->calib.hs_term_range_adj = hs_term_range_adj;
+> +
+>   	return 0;
+>   }
+>   
+> @@ -1708,6 +1725,7 @@ const struct tegra_xusb_padctl_soc tegra194_xusb_padctl_soc = {
+>   	.num_supplies = ARRAY_SIZE(tegra194_xusb_padctl_supply_names),
+>   	.supports_gen2 = true,
+>   	.poll_trk_completed = true,
+> +	.has_per_pad_term = true,
+>   };
+>   EXPORT_SYMBOL_GPL(tegra194_xusb_padctl_soc);
+>   
+> @@ -1732,6 +1750,7 @@ const struct tegra_xusb_padctl_soc tegra234_xusb_padctl_soc = {
+>   	.trk_hw_mode = false,
+>   	.trk_update_on_idle = true,
+>   	.supports_lp_cfg_en = true,
+> +	.has_per_pad_term = true,
+>   };
+>   EXPORT_SYMBOL_GPL(tegra234_xusb_padctl_soc);
+>   #endif
+> diff --git a/drivers/phy/tegra/xusb.h b/drivers/phy/tegra/xusb.h
+> index d2b5f956513..810b410672f 100644
+> --- a/drivers/phy/tegra/xusb.h
+> +++ b/drivers/phy/tegra/xusb.h
+> @@ -436,6 +436,7 @@ struct tegra_xusb_padctl_soc {
+>   	bool trk_hw_mode;
+>   	bool trk_update_on_idle;
+>   	bool supports_lp_cfg_en;
+> +	bool has_per_pad_term;
+>   };
+>   
+>   struct tegra_xusb_padctl {
+
+Reviewed-by: Jon Hunter <jonathanh@nvidia.com>
+Tested-by: Jon Hunter <jonathanh@nvidia.com>
+
+Thanks
+Jon
+
+-- 
+nvpublic
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
