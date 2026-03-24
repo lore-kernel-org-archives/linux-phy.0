@@ -4,144 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C4E33F54AB8
-	for <linux-phy@archiver.kernel.org>; Tue, 24 Mar 2026 13:33:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7225AF54ABA
+	for <linux-phy@archiver.kernel.org>; Tue, 24 Mar 2026 13:50:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:References:Cc:To:
-	Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=nXBArPZL8deSIomG4RM+WYi5zoXPEBFSAScCuYrEgi4=; b=jk7jgbOyP8JArNeWHOffEv2UIp
-	1XlPtS6o2metauegvOZn/UyCN2rX+GCIyYWDZeXRmUKnbl8QdTmEnk3QUmuuzAq0D6/M2DxlJAlnY
-	wBq0abP0aK7hXsWja6MyRfPoWXBFlOce9h2hBmsjUIm6PnHH4Y0ytdjh8S5plC4yKgn1zHU5HIm/0
-	BzK322fxG3u+qEuGRhqC1hJNQmsgIkkW/Q7zJvJ0gJrUmP4F+WbUM45O2fPnO5T9+y3QG6ZAc2i8B
-	hgx42NwOVKlCCivvYeh/IAcLyDbhhXnujgMNyX/+vyILftP2hVuUCK2rjUq88MoVRfKZKTJe5y8TY
-	+jexQBhg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9kSQxMxfcLN42rzyPB2nwNZ6oA0Pd5bpT8X3zRdzpzU=; b=nmLSSm14bpDwtT
+	TfBKrGT5R/mlGwTC7/PrST89OBLjvRIUHaOSGPO/CoDq3YmNfvl3aLlKIO7cNxRUbXQnyBu1rkZmh
+	YB14D85wHNOeQlmLpva7iAxJSwJoPgvh47xeXFaYSYaOyDv4LP7gPb4/cot35UeeqQc30hEtx9l2x
+	Q756G0a3sTLuXuA4/LiBs6ucZRUdwP/1BIPoOqjebiC2PGGUb9epluVFxbitkKHIvcEWCrPCondnT
+	+ICpEbi+v0+WKAO1S7shvV938yTvVo9hLkPAWO65Zo6h0/so4ReHI9wx8Sp+ha/Dyp3ECqafE5XPz
+	fTbh8zBnvfEYragIqbsw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w51sy-00000001YKL-1HhW;
-	Tue, 24 Mar 2026 13:33:32 +0000
-Received: from mail-southcentralusazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c10d::3] helo=SN4PR0501CU005.outbound.protection.outlook.com)
+	id 1w529N-00000001ZyY-3BrY;
+	Tue, 24 Mar 2026 13:50:29 +0000
+Received: from vps0.lunn.ch ([156.67.10.101])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w51sv-00000001YJx-2gYI
+	id 1w529K-00000001ZyC-03f5
 	for linux-phy@lists.infradead.org;
-	Tue, 24 Mar 2026 13:33:30 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=ZqZhJmOa/I6J1zddIMyLMPIFw15bikJXDf7InSe6+QYFlJo/0fbifB8obytZvwjszxGROdZV+/NPi+vj/4HHkhJhqsz6OombuxWEyvoWRnZIgEF7ztrkxRv1ICY0Z4ZBrlVKzlRSYzt7dqGr3O5KsuFEmdspeQnDhrGkSHZJRBOQsdL+JeRqlqde/qdwvTxhO7ktv80CHp9P1BzxMsjLxzmOqed9jdGleWPHJupuQ63imTh7tZciiXJ0Zlc25b8axRIBrlnWjGvIrUOV/S6BG37NMagfPrv0S51JL0AdPPAKDrYl3lwNApQAnVzeOh72iB9oNTT/x5dxovUZVeF1fA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=7ZCIFpUENMXB5Rh8UX5aYxAw+tkASxgH6B6AnJbICJc=;
- b=j/7ClS+BnnM/dNl2twx+IEuRnC4KFuSRVNYgN0hmA2MsVShc8+dRkZrPs940AypgQUrA4It8CEwCHWSWkDtHbbHV7wvxbn7K5bMJVR52noXi2AxU6okT5WKUKYeOi0srygnK3SjMYkmb7BWhoLq/eXPkU1b0uvVvjjNWgNOKtpADCy2Y+9sdCbP+yG0EGyeQbDDA8E/M5q9skRm/8FgJT8zlmuTR62Xl5F3RREjuRWpxYoTzB8TsMNYTs5WzWdy91wyNQ6EGhIDExGZdzc5APfKfsemgoKPVrz+mW6XpFattnVLWwKHrd5dTwzq5BbAeCe2G8ExC/Cy9ydw+3lSUXw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nvidia.com; dmarc=pass action=none header.from=nvidia.com;
- dkim=pass header.d=nvidia.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=7ZCIFpUENMXB5Rh8UX5aYxAw+tkASxgH6B6AnJbICJc=;
- b=YAVZfCrXkk503tot27wiCkBf4ic3Dm7MKMHQimtt898P8jtFy+AnvAPefGKIU5gGWGEIFl9DEVJfFo2634tSP0fvGKh99GDhGkCVHSnGh9lqmVuR7+3yw31fkPQ5sE7PPg/+cg3V46AOVBtvgoCSCe5uMX5rTlUV/B1BvPngwqMQpC1T11UUcef11hO493anr5TkDJe8mwBREHutKzuP4NtGA5XGC6Oqv3mOGkqhlSKs6YIJ5PJvVNejdp4RFMDxfdUADlqs7f9X7lxly7aASWExxpwMa/u8nVquPBinCFRf4/vYtM4DUoh2nQs0Gzd/NciCXQOKKlROSACt9+x74w==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nvidia.com;
-Received: from DS2PR12MB9750.namprd12.prod.outlook.com (2603:10b6:8:2b0::12)
- by LV9PR12MB9805.namprd12.prod.outlook.com (2603:10b6:408:2ee::15) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9745.20; Tue, 24 Mar
- 2026 13:33:22 +0000
-Received: from DS2PR12MB9750.namprd12.prod.outlook.com
- ([fe80::56a8:d6bf:e24c:b391]) by DS2PR12MB9750.namprd12.prod.outlook.com
- ([fe80::56a8:d6bf:e24c:b391%6]) with mapi id 15.20.9745.019; Tue, 24 Mar 2026
- 13:33:22 +0000
-Message-ID: <7a6f8967-c635-4d84-bbab-9e019ff79134@nvidia.com>
-Date: Tue, 24 Mar 2026 13:33:17 +0000
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 6/6] phy: tegra: xusb: Move T186 .set_mode() to common
- implementation
-To: Diogo Ivo <diogo.ivo@tecnico.ulisboa.pt>,
- Mathias Nyman <mathias.nyman@intel.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Thierry Reding <thierry.reding@gmail.com>, JC Kuo <jckuo@nvidia.com>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>
-Cc: linux-usb@vger.kernel.org, linux-tegra@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org
-References: <20260127-diogo-tegra_phy-v2-0-787b9eed3ed5@tecnico.ulisboa.pt>
- <20260127-diogo-tegra_phy-v2-6-787b9eed3ed5@tecnico.ulisboa.pt>
- <af04fc85-1ed4-4046-86ee-1ffcec8c44cd@nvidia.com>
- <5a5397c8-cc32-4d6b-86a4-76f924ae6d75@tecnico.ulisboa.pt>
-From: Jon Hunter <jonathanh@nvidia.com>
-Content-Language: en-US
-In-Reply-To: <5a5397c8-cc32-4d6b-86a4-76f924ae6d75@tecnico.ulisboa.pt>
-X-ClientProxiedBy: LO0P265CA0015.GBRP265.PROD.OUTLOOK.COM
- (2603:10a6:600:355::6) To DS2PR12MB9750.namprd12.prod.outlook.com
- (2603:10b6:8:2b0::12)
+	Tue, 24 Mar 2026 13:50:27 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+	s=20171124; h=In-Reply-To:Content-Disposition:Content-Type:MIME-Version:
+	References:Message-ID:Subject:Cc:To:From:Date:From:Sender:Reply-To:Subject:
+	Date:Message-ID:To:Cc:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Content-Disposition:In-Reply-To:References;
+	bh=8udT26h8eiURJoy49HOh8J1+Wsitw5BtoND+1sPb32Q=; b=ZKzoudrLGlLDpDbhGpajeL+IKO
+	h76Ykl9fp2x8hZnqh7FNbmpYh6dfGwrfUi3e610nE34b7pY0O+S/kGKka24cRHw64wJcMES0xYUIu
+	VaFG5tbOs6lQXx+3ljkV8cSPlakgpVcdaKTrqhafeP00GrpvLFxpO7suxaCkdVKJZmdo=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.94.2)
+	(envelope-from <andrew@lunn.ch>)
+	id 1w5291-00D6tO-K7; Tue, 24 Mar 2026 14:50:07 +0100
+Date: Tue, 24 Mar 2026 14:50:07 +0100
+From: Andrew Lunn <andrew@lunn.ch>
+To: Dmitry Torokhov <dmitry.torokhov@gmail.com>
+Cc: Mark Brown <broonie@kernel.org>, Andrew Lunn <andrew+netdev@lunn.ch>,
+	"David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Liam Girdwood <lgirdwood@gmail.com>, Lee Jones <lee@kernel.org>,
+	Pavel Machek <pavel@kernel.org>, Peter Rosin <peda@axentia.se>,
+	Heiner Kallweit <hkallweit1@gmail.com>,
+	Russell King <linux@armlinux.org.uk>,
+	Moritz Fischer <mdf@kernel.org>, Xu Yilun <yilun.xu@intel.com>,
+	Tom Rix <trix@redhat.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	"Rafael J. Wysocki" <rafael@kernel.org>,
+	Danilo Krummrich <dakr@kernel.org>, netdev@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-spi@vger.kernel.org, linux-leds@vger.kernel.org,
+	linux-fpga@vger.kernel.org, driver-core@lists.linux.dev
+Subject: Re: [PATCH 04/10] regulator: of: switch to using
+ class_find_device_by_fwnode()
+Message-ID: <f8595a3a-fe9a-4294-8270-3364bc5c14e6@lunn.ch>
+References: <360a8b4a-6507-417a-9fc1-c53b14868657@sirena.org.uk>
+ <acGFksyx3SA0kJ5b@google.com>
+ <7d46803e-b285-4e9c-8856-10100fa0ea85@sirena.org.uk>
+ <cf92122d-6b15-458a-bf89-189a0a6874f7@lunn.ch>
+ <193e194a-498f-464f-b22c-c283c16db6c1@sirena.org.uk>
+ <acGzJV3vKhuty3nd@google.com>
+ <09072374-65e7-4792-af7e-97d7df93f9bd@lunn.ch>
+ <acG9BPkFr_De-ulu@google.com>
+ <27f4ed63-08a2-4621-8943-c50261de31cd@lunn.ch>
+ <acHCIA1d5-s2xkvz@google.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DS2PR12MB9750:EE_|LV9PR12MB9805:EE_
-X-MS-Office365-Filtering-Correlation-Id: ab4d7983-8a00-430e-0e91-08de89a9eb0b
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|1800799024|7416014|376014|921020|56012099003|18002099003|22082099003;
-X-Microsoft-Antispam-Message-Info: pYKf2Qt4wr7nR9qVe3JWMVAOmzovazcBvd1d45sk0rc5BmBNc5gUTqgMAoABnpV+qpOSVqF+pn6uuU/1iboJJTB7JDjSRaqY9XijQftfmq15skHFFUBV9x7R3vx5HBKUlhfWv5ciF9AdeRzzWeLMeGsPc9wKAQR49NyvQdfZX1C8e/zQcORsUM6OqoCDuKyXh3gVjQ8b1Bx24AWzJFOlC5ZTVrX+OAbUUNPMWkmc9Ok2XJFAU5Lr/q0UBieYrTEckmfmMcIKqrhFayDX2TxoL7sD2SF/2zvKuSf1f05XjkcFY5ELB1ib3gVg0Qoqnx09H/6cribjR97eLO+eyUu+tImOFVDHcLJfNcCl0Hlv9NfbSUeaTEJsB8DWvL8ILdaCLbI4tVCDQMuqpSFj0wn5a7fZLcG4PBQPOlztTHmdnFS5G6QBwjhHh/Kr30arDpqPmGZqbDq/AdWfcldyF0IQBVNcgDBLYcTlgD05GCtStERNrNbL2k1vOQS1wnQ5vuVoCaBrjuMaOWQToqW20VuzYB1UmQVYthS5bmJ3Qii0LTRAq2hirDJQHkUvtmX4GxuS20Tl70NpdQVfAIDHzT1OpUeRqYaXnQ4Ze7CFaqUBTCjHI0X81q3SaejwWFutDEe+6wNr9j+lN1it8QtgrwoexPjumJqm7S4QYD98e1TCjWtim3CEPm6I3H3m9thZD5q5S/DhGMMfHN/cjddL9STe+cLPKrfv9l+L22mcOBrcHoGjfYErKrjiy4sfoEO7dtCiC3rAkRTEpuv3I2l8lRQErg==
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DS2PR12MB9750.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(7416014)(376014)(921020)(56012099003)(18002099003)(22082099003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?RGl1N1NsT3JlWXY0KzZNSHQvbWsrUEdQNjMvSTlxZUNJakZxemZKK1BTQVVJ?=
- =?utf-8?B?cTNFRzFGWS91c1NxZFB0bDFKVWFZa3psTUFMVHZ1cUxHSi9xU0VMemtOcEYr?=
- =?utf-8?B?bnk4bWxEOGh3ZER3aEVPYjlVUGVabFVIRDJqOUFaTlVreW01cUVDRDFqYktj?=
- =?utf-8?B?VURPVmZyY3BLTTFnVU9nTkpNY3dzWDBKMVhVQ0hwellyemtuMmUvMkNhdHdM?=
- =?utf-8?B?ZFZyVVZtRmc1bVFROGVsTjI1NThUUFMwNEYySmpLalIwRHI2NHk2R21hZHdm?=
- =?utf-8?B?Z3VObHE2YldiZ0NtYy9FSDRHWFF5MEhsQ0I0OVJPeVVpMThTcDJKZ1lHZDV3?=
- =?utf-8?B?d1NpT3dyR3NabXF0dmZLS2RKbkZKOGFzVmtjQkV2bVZPMzdGSmRPTTNtVzAy?=
- =?utf-8?B?TERxeEpQZVRkaHlaTUdKemJKK1RmWlBmOUpNN244TDg3cS9kYjhLVmxYbXNX?=
- =?utf-8?B?Rjg3aUErRnFBZ2xHNXJSTzhydC9kTHdyMkJFTEdWa3RyUVVSQ012bEc1Tm8y?=
- =?utf-8?B?Uzh1UnBuaExRV0RwaThVcWsrZ3AvRXhxZlVPUE9TRkhJTjVzRnlHd21ZS1hn?=
- =?utf-8?B?Y3JkY3RQNi9hZUJkWVJMVnd3ZldMVHhjUy9BeWhBVkdTSWtWYkRIbWdJWlJD?=
- =?utf-8?B?L0tLU3VabUFaMXFkUUVZWDlwTzl6ekFQNiszYVFjOEJiWnh2MkNPTGxuaHlN?=
- =?utf-8?B?Q2F4eXBwQ09WMEhUQmpjQVU0c0t4elZNUWpkN3B3aEIzb0pNcExMRTJHQ0p4?=
- =?utf-8?B?b0xLVk9LaXJDM2ZyV3dtTTBhaHg2QmRTczBRL0ZyMHhNVy9EZzd1UFFnTExV?=
- =?utf-8?B?WjFtSElJMmxwMlhHQUZ2VGNVMmpDNVU3Q3pBQWJwRWhjRnFnbHdCZ0pGRUZG?=
- =?utf-8?B?TTFSWS8vWXR1RHVrSmtMNUlIMmtLc1hHaEw4amhzbi9MOERLVkZaRHdFc0Qx?=
- =?utf-8?B?Ti9NUE0xdUREdS9sdUpXelZUeHdvTk1uWXQ2RlE1SHh4ZW5QOEJsTm9uMzVz?=
- =?utf-8?B?VWVVZEcyeFlGaXVINThYdjY4bGtHOUVFOFVoS0RoVlFXcFpWV0s2by8xbHdp?=
- =?utf-8?B?UTh1RE1YWndMa2dzV1BuZXBTWHY3R0tPeExSY0svdkFJc3dlTFZUVk5WOFJm?=
- =?utf-8?B?RjZUNFlHSCthNG5rcUVDUTltb3VaSzBhaVFYQ0xRY3R5TC9ibExYUUJjR0hS?=
- =?utf-8?B?SUUyalFydlJMNm51U0d5cUdtVzZQOG9NOWhVVDcvWW45ZG11ZHpTSkxlZndO?=
- =?utf-8?B?SU1PV0RRTitpMHdRY2IxTCt0UEZKWUJhVDArNStoUUg3TWtZZ1dxZU5jOE9O?=
- =?utf-8?B?aU9aWnJwMnZOTVlYZVlwR0ZURHlRUDlybCtsd0JwMU4vZmkzY1N3enBLN1Vr?=
- =?utf-8?B?Zk5WeXZpWEgvSkFoaWNpajF0MUtGWFFueG5MTHBoRWt1VWl3alRha1J4ZzRY?=
- =?utf-8?B?RkhBcHpqSUR5VnMvSkJ3dlkzV3poekZicjlFVDllMnkyUElicW03TU16WUZP?=
- =?utf-8?B?cTZSMnNCVnU5N0I2eTRmZ3c4UEYxTEJFdzg5SUNjeGhKSVpENFlZUWFXWFRB?=
- =?utf-8?B?aG1iUHhza1dkWG8wdFBCNVRPbWREOWEyS3ZDNWtQQ3I2cmxoeVZzakVac1BV?=
- =?utf-8?B?RG5Qa0c3UWo3TEp1K1kyZkFBL2J6b2twTEpFaThYejZaZ3h4UlFSOTNYQzc0?=
- =?utf-8?B?Q0ZMbnVjUk9kQVYza2V3RSt4ak5xVEJ1UVJseUc2YkVUenVORzByZlpHL1RP?=
- =?utf-8?B?K1h6K0VyaGEzTW9KTEM2bkV5RXFERjhSUzBQZ2lvOEZVamwyZkFHZVM2aXN5?=
- =?utf-8?B?WFE0RGowSWJsLys5RHQxT1lxT2dTRTY3eVpCb2MrQXRjZUVHK2tKeGNtaldC?=
- =?utf-8?B?bVcwQk85aGpvU1dYdnMvbHkxOXYwWDRZREtlbHltQ1p2YldLTGtpNUVUMjJ5?=
- =?utf-8?B?VkVtbDBndjVJZDlpR2dXUTNxTUhCaTNYWUJaWk5zRWozMDFXK2RnRGM4MVRN?=
- =?utf-8?B?R0VlRmE2VWw2OTVyOFdwcUp3dE10bUJDN0d4Y2lOUGVON1N2Q2ZhMW8xRVpB?=
- =?utf-8?B?UlVvSGFkN1d4YVFHOHN6TTlQZXNSci9JNjM3akJCUi9sckFTME9oYnpvcTRP?=
- =?utf-8?B?NDVIYjdIenZZSktKRG5aWkJnKzdZcHhTTkpqdHRjYkE4ZkluVG1tSDhGcmJX?=
- =?utf-8?B?M3grWHNIN0Q3dHAvQm5oNVFxZ1dzSjZXWEVNTW5sM0I4SS9TTkY4dmh6ZzJ3?=
- =?utf-8?B?RGM3V0pmQ2xWbjRvd2Z1ZmV1bzdhL3dxcFhLOXVBU0IrYnMzbHdKb2YzL25w?=
- =?utf-8?B?Y2ZTcndwVzV6d1pmNWE0N1hCenBxclh0bjI4VlYyM2Y1UUhCNXFOdz09?=
-X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ab4d7983-8a00-430e-0e91-08de89a9eb0b
-X-MS-Exchange-CrossTenant-AuthSource: DS2PR12MB9750.namprd12.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 24 Mar 2026 13:33:22.0048
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: vvE73lhMOOQWOQobwyE6lo73mtTN+M6H1yEqcvCGR+jQ5eDbs8Id+Bb+QvwQu6h38U/cCGglbpRzWnuilfVw4A==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: LV9PR12MB9805
+Content-Disposition: inline
+In-Reply-To: <acHCIA1d5-s2xkvz@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260324_063329_710939_8E39D6AC 
-X-CRM114-Status: GOOD (  20.27  )
+X-CRM114-CacheID: sfid-20260324_065026_062392_B7ED3CB9 
+X-CRM114-Status: GOOD (  19.56  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -153,63 +89,44 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-
-On 24/03/2026 11:31, Diogo Ivo wrote:
+On Mon, Mar 23, 2026 at 03:48:42PM -0700, Dmitry Torokhov wrote:
+> On Mon, Mar 23, 2026 at 11:39:03PM +0100, Andrew Lunn wrote:
+> > > If there is a deprecated property you can do:
+> > > 
+> > > 	error = device_property_read_u32(dev, "prop", &val);
+> > > 	if (error == -ENOENT)
+> > > 		error = device_property_read_u32(dev, "deprecated-prop", &val);
+> > 
+> > It is not as simple as that. There are a lot of optional
+> > properties. Say "prop" is optional? And not present. So -ENOENT. We
+> > then look for this deprecated property. That should not happen.
 > 
-> 
-> On 3/24/26 10:16, Jon Hunter wrote:
->>
->> On 27/01/2026 15:11, Diogo Ivo wrote:
->>> Move the Tegra186 PHY .set_mode() callback to a common implementation.
->>> In order to do this first revert cefc1caee9dd.
->>
->> This commit message does not seem complete.
-> 
-> How so? It is succint but it states exactly what the commit does. It
-> reverts cefc1caee9dd and changes T186 to the common implementation
-> prepared in the previous patch.
+> Why? That is exactly what you want: you favor new one if it is present
+> and fall back to deprecated one if it is absent. And then you decide
+> whether to continue or abort.
 
-It does not read clearly to me. The 2nd sentence sounds like that's all 
-this is doing but we are not, we are reverting and doing the move.
->> Furthermore, I am not sure why we want to revert cefc1caee9dd. We 
->> purposely moved the regulator_enable/disable into 
->> tegra186_xusb_padctl_id_override() because it is tied to setting the 
->> USB2_VBUS_ID. So I would prefer to keep it this way and move the 
->> Tegra210 implementation in the same direction (if possible).
-> 
-> I don't agree that this is the best solution.
-> 
-> We really benefit from a common implementation for the two platforms, not
-> only because of duplicate code but more importantly because without it
-> whenever a bug is found and fixed on either platform it most likely will
-> not be fixed on the other one. Case in point, cefc1caee9dd fixed a bug
-> on T186 but not the same bug on T210 (which then led to this series) since
-> the implementation was not shared among them. Were it the case that they
-> shared the implementation the fix would have come "free" for T210.
-> 
-> This will keep happening for as long as we have duplicate implementations,
-> which becomes more relevant since there is a severe lack of testing in
-> older Tegra platforms. I also thought about making the id_override()
-> implementation shared between T186 and T210 but that would be take more
-> changes since register definitions would need to be moved somewhere
-> else too.
+The old property is only valid in DT, where it is deprecated, but
+still valid. It should never appear in any other newer firmware
+bindings.
 
-I am all for a common implementation. I believe that in the 
-tegra186_xusb_padctl_id_override() function the only thing that is 
-different is the offset for the USB2_VBUS_ID register, which should be 
-easy to handle.
+> If you only have of_property_read_u32() then it will not stand out. If
+> you advocate of using device_property_read_u32() normally but
+> of_property_read_u32() for deprecated only - that is a possibility, but
+> I do not know if anyone does this.
 
-Jon
+For the subsystems i've dealt with, when somebody proposes a patch
+adding an ACPI binding, and they do an of_ to device_ conversion
+without engaging brain, i point out the issues, they should not be
+adding deprecated properties to a brand new binding, and they go away
+and never come back. And so the code remains OF only. Which is fine,
+nobody does networking devices using ACPI.
 
--- 
-nvpublic
-
+       Andrew
 
 -- 
 linux-phy mailing list
