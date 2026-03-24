@@ -4,99 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1931CF4613D
-	for <linux-phy@archiver.kernel.org>; Tue, 24 Mar 2026 12:30:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F78BF54AAC
+	for <linux-phy@archiver.kernel.org>; Tue, 24 Mar 2026 13:03:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YotCEG0rjWtQF/ikFEVQBxxYKp9rZvNkPmDYWjL3xrQ=; b=oc5DsPzLGI/ZcU
-	GwuOi95V3VIEEWE0prt9z0hHMQhCPWnt3YYUBQXwzE40ucaurW68ugXjB1gXSLOxZfbLkJrE3+poA
-	BAkYnRDccQoFSekxHMtrOkSIKj2//pv7gr5T/0+HVq6E1JKcRF/SqhwollF4sO+VVpFspMs7eZXg1
-	h4lcQMINy5vt1aockdx1NJv3XHq82HfV+4zkecaFbUZnXKkKOT8/+XSnEi8T/b6lGsCfwMGpFvFuK
-	fFbRdLuHUWnddfjUZWH0rkLcCZ8VOyd+CDrY22wJFzxBqdwARx7y1LgVDNpHha2825LTBTaMCheou
-	0OBJHr17SavUysKyMnOQ==;
+	List-Owner; bh=aaWvpYc/BpiflpSZGnnUtoqKSbUl5l6Y00sCU2SXBo0=; b=IQPiAH15kL72Li
+	QzWQZ2stGjrdJ0wSRk/8+Fzlt48nqoM56y6gVJe7UzxzzDD/+JxBwmbHhsG2DWDhiQXVV/AB3eyYt
+	inLMOM1OcOFiB1j7XiP4FMnFcVy714FcPG7keUjA1jhzLULwIcOxoTD9N/ZBzN9Tvz4k8fotwJcD8
+	jCpXbapp61AIfqi1Rga7BL5m549wtGXetDSEbuECqD/4Uo2eS8BeHzWRsha2vzDn/bMNLgcYwpjQb
+	MV/U41tJrVbp0+UcDdrEndvW61qPNN9Jcxs7jn9q91RCvgaAmplzhjhANSCIdRP/RRjazI0Sbghtu
+	OwwsWZ+8rXD9ia1dYhQQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w50uC-00000001NhS-3RiJ;
-	Tue, 24 Mar 2026 12:30:44 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1w51Q9-00000001U9r-3gyA;
+	Tue, 24 Mar 2026 13:03:45 +0000
+Received: from smtp81.cstnet.cn ([159.226.251.81] helo=cstnet.cn)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w50u3-00000001NZn-0pKb;
-	Tue, 24 Mar 2026 12:30:35 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
-	:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=iXZKh39YA9QQda5suRG0NPBgfkw/vmM7xN5WKLiYDaU=; b=i8UNoNA/hxhadaLGm/d4Fd1G2q
-	7j7JO8AiRKHRhHJah+uzxob5FYsJPyJv/uUPCbfxeads49JImor+2fkEXe5IchZEJRbVXvIr9nKKb
-	v/u4PtYRFqbFeEq/55oZGvWW1E3o7/gQacHEq/betjnZ2fnVZtBcFkxbWc++bRkVGhvI0WblC1CmN
-	UrxdxOqMGtU72ADk4p+vmh5st84pBdjy3mOKFSBUfmXAO+U6GfhyDV9iqfeMP7SXndyNzJ1+ZoGQf
-	i3dlyk30C5oxZB3jgVbP98/KnLYjneFZC1u+dKVom9UNaO+d/PbAEmzrzOBqEuoQuFj89jPFG1PlY
-	bIkU2hQA==;
-Received: from www537.your-server.de ([188.40.3.216])
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w50tz-000000041qP-3yBE;
-	Tue, 24 Mar 2026 12:30:33 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=ew.tq-group.com; s=default2602; h=Content-Transfer-Encoding:Content-Type:
-	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID;
-	bh=iXZKh39YA9QQda5suRG0NPBgfkw/vmM7xN5WKLiYDaU=; b=L9OxChIfuhMcJbtZretGycJO+z
-	JSbzBTUdCha7XnaSzSAiqoFcCDkr+ijHtD8MktLNAkhXIAnlt2HzODXXJZRxMJ8uSYHoPFTtUInq5
-	000sJiTlP9o4p+1CURJZzAPGjdTgx1a95cd/aF7PqSjZrvdWqFa9wJpAIQ9QXaaCQEQFQxsXcyWlJ
-	cjmh9oFIEy3Dd/unvAeYjTEb9l/HbHY/3I5SHAFj5bBCfylVR6LpY3P2Di37MGy/VdFAvmivyhzdJ
-	s9V5pwaZFJXPxk5sit8JRZOBi/XOmE/pGLEJsE0EIx4HysbBREMYkCvQTSYqaZkdVvmpuxevTKlDh
-	flE7j8MA==;
-Received: from sslproxy05.your-server.de ([78.46.172.2])
-	by www537.your-server.de with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
-	(Exim 4.96.2)
-	(envelope-from <nora.schiffer@ew.tq-group.com>)
-	id 1w50tt-0005r6-1s;
-	Tue, 24 Mar 2026 13:30:25 +0100
-Received: from localhost ([127.0.0.1])
-	by sslproxy05.your-server.de with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
-	(Exim 4.96)
-	(envelope-from <nora.schiffer@ew.tq-group.com>)
-	id 1w50tt-000Pna-1M;
-	Tue, 24 Mar 2026 13:30:24 +0100
-From: Nora Schiffer <nora.schiffer@ew.tq-group.com>
-To: Andrew Lunn <andrew+netdev@lunn.ch>,
-	"David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>,
-	Paolo Abeni <pabeni@redhat.com>,
-	Nishanth Menon <nm@ti.com>,
-	Vignesh Raghavendra <vigneshr@ti.com>,
-	Tero Kristo <kristo@kernel.org>
-Cc: Siddharth Vadapalli <s-vadapalli@ti.com>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	netdev@vger.kernel.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux@ew.tq-group.com,
-	Nora Schiffer <nora.schiffer@ew.tq-group.com>
-Subject: [PATCH v2 7/7] arm64: dts: ti: k3-j722s-main: use J722S compatibles for WIZ, gmii-sel and CPSW3G
-Date: Tue, 24 Mar 2026 13:29:43 +0100
-Message-ID: <f978c27ab4ad2b9bd9828ce50be13a72a1b58942.1774354734.git.nora.schiffer@ew.tq-group.com>
-X-Mailer: git-send-email 2.53.0
-In-Reply-To: <cover.1774354734.git.nora.schiffer@ew.tq-group.com>
-References: <cover.1774354734.git.nora.schiffer@ew.tq-group.com>
+	id 1w51Q6-00000001U8q-05JK;
+	Tue, 24 Mar 2026 13:03:44 +0000
+Received: from duge-virtual-machine (unknown [183.192.222.244])
+	by APP-03 (Coremail) with SMTP id rQCowAAnSeCTi8JpkXyqCw--.7469S2;
+	Tue, 24 Mar 2026 21:03:16 +0800 (CST)
+Date: Tue, 24 Mar 2026 21:03:15 +0800
+From: Jiayu Du <jiayu.riscv@isrc.iscas.ac.cn>
+To: robh@kernel.org
+Cc: neil.armstrong@linaro.org, robh@kernel.org, krzk+dt@kernel.org,
+	pjw@kernel.org, palmer@dabbelt.com, aou@eecs.berkeley.edu,
+	alex@ghiti.fr, linux-phy@lists.infradead.org,
+	linux-usb@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-riscv@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v5 2/4] dt-bindings: usb: dwc2: Add support for Canaan
+ K230 SoC
+Message-ID: <acKLk3fbIj7hdsWr@duge-virtual-machine>
+References: <20260121145526.14672-1-jiayu.riscv@isrc.iscas.ac.cn>
+ <20260121145526.14672-3-jiayu.riscv@isrc.iscas.ac.cn>
 MIME-Version: 1.0
-X-Virus-Scanned: Clear (ClamAV 1.4.3/27950/Tue Mar 24 07:24:19 2026)
+Content-Disposition: inline
+In-Reply-To: <20260121145526.14672-3-jiayu.riscv@isrc.iscas.ac.cn>
+X-CM-TRANSID: rQCowAAnSeCTi8JpkXyqCw--.7469S2
+X-Coremail-Antispam: 1UD129KBjvdXoW7Jw1Dur1DtF1DGF47Xr18Zrb_yoWkCwc_Z3
+	ZrCw4rCa9xJF9Yqw4qyFs2yw1Yyw42gas7uF1qqFn8Gw40krs8Wayktw1ayry5CF4Uurn3
+	WFn3Xrn2gFsFgjkaLaAFLSUrUUUUjb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+	9fnUUIcSsGvfJTRUUUbsxYjsxI4VWkKwAYFVCjjxCrM7AC8VAFwI0_Gr0_Xr1l1xkIjI8I
+	6I8E6xAIw20EY4v20xvaj40_Wr0E3s1l1IIY67AEw4v_Jr0_Jr4l8cAvFVAK0II2c7xJM2
+	8CjxkF64kEwVA0rcxSw2x7M28EF7xvwVC0I7IYx2IY67AKxVWUJVWUCwA2z4x0Y4vE2Ix0
+	cI8IcVCY1x0267AKxVW8JVWxJwA2z4x0Y4vEx4A2jsIE14v26r4j6F4UM28EF7xvwVC2z2
+	80aVCY1x0267AKxVW8JVW8Jr1le2I262IYc4CY6c8Ij28IcVAaY2xG8wAqx4xG64xvF2IE
+	w4CE5I8CrVC2j2WlYx0E2Ix0cI8IcVAFwI0_Jr0_Jr4lYx0Ex4A2jsIE14v26r1j6r4UMc
+	vjeVCFs4IE7xkEbVWUJVW8JwACjcxG0xvEwIxGrwACI402YVCY1x02628vn2kIc2xKxwCY
+	1x0262kKe7AKxVWUtVW8ZwCF04k20xvY0x0EwIxGrwCFx2IqxVCFs4IE7xkEbVWUJVW8Jw
+	C20s026c02F40E14v26r1j6r18MI8I3I0E7480Y4vE14v26r106r1rMI8E67AF67kF1VAF
+	wI0_Jw0_GFylIxkGc2Ij64vIr41lIxAIcVC0I7IYx2IY67AKxVWUJVWUCwCI42IY6xIIjx
+	v20xvEc7CjxVAFwI0_Gr0_Cr1lIxAIcVCF04k26cxKx2IYs7xG6r1j6r1xMIIF0xvEx4A2
+	jsIE14v26r1j6r4UMIIF0xvEx4A2jsIEc7CjxVAFwI0_Gr0_Gr1UYxBIdaVFxhVjvjDU0x
+	ZFpf9x07betCcUUUUU=
+X-Originating-IP: [183.192.222.244]
+X-CM-SenderInfo: 5mld534oul2uny6l223fol2u1dvotugofq/
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260324_123032_074303_CD290A50 
-X-CRM114-Status: UNSURE (   8.82  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260324_060342_429150_782DE1CC 
+X-CRM114-Status: GOOD (  13.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,40 +78,54 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VXBkYXRlIFdJWiwgZ21paS1zZWwgYW5kIENQU1czRyB0byB1c2UgdGhlIEo3MjJTLXNwZWNpZmlj
-IGNvbXBhdGlibGUKc3RyaW5ncywgZW5hYmxpbmcgU0dNSUkgc3VwcG9ydC4gVGhlIGZhbGxiYWNr
-IGNvbXBhdGlibGVzIHByZXNlcnZlCmNvbXBhdGliaWxpdHkgb2YgdGhlIHVwZGF0ZWQgRGV2aWNl
-IFRyZWVzIHdpdGggb2xkZXIga2VybmVscy4KClNpZ25lZC1vZmYtYnk6IE5vcmEgU2NoaWZmZXIg
-PG5vcmEuc2NoaWZmZXJAZXcudHEtZ3JvdXAuY29tPgotLS0KIGFyY2gvYXJtNjQvYm9vdC9kdHMv
-dGkvazMtajcyMnMtbWFpbi5kdHNpIHwgMTIgKysrKysrKysrKy0tCiAxIGZpbGUgY2hhbmdlZCwg
-MTAgaW5zZXJ0aW9ucygrKSwgMiBkZWxldGlvbnMoLSkKCmRpZmYgLS1naXQgYS9hcmNoL2FybTY0
-L2Jvb3QvZHRzL3RpL2szLWo3MjJzLW1haW4uZHRzaSBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvdGkv
-azMtajcyMnMtbWFpbi5kdHNpCmluZGV4IDllZTVkMGM4ZmZkMWUuLjcwZjQzMGFhM2E5NDQgMTAw
-NjQ0Ci0tLSBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvdGkvazMtajcyMnMtbWFpbi5kdHNpCisrKyBi
-L2FyY2gvYXJtNjQvYm9vdC9kdHMvdGkvazMtajcyMnMtbWFpbi5kdHNpCkBAIC0xOCw3ICsxOCw3
-IEBAIHNlcmRlc19yZWZjbGs6IGNsay0wIHsKIAogJmNiYXNzX21haW4gewogCXNlcmRlc193aXow
-OiBwaHlAZjAwMDAwMCB7Ci0JCWNvbXBhdGlibGUgPSAidGksYW02NC13aXotMTBnIjsKKwkJY29t
-cGF0aWJsZSA9ICJ0aSxqNzIycy13aXotMTBnIiwgInRpLGFtNjQtd2l6LTEwZyI7CiAJCXJhbmdl
-cyA9IDwweDBmMDAwMDAwIDB4MCAweDBmMDAwMDAwIDB4MDAwMTAwMDA+OwogCQkjYWRkcmVzcy1j
-ZWxscyA9IDwxPjsKIAkJI3NpemUtY2VsbHMgPSA8MT47CkBAIC01Niw3ICs1Niw3IEBAIHNlcmRl
-czA6IHNlcmRlc0BmMDAwMDAwIHsKIAl9OwogCiAJc2VyZGVzX3dpejE6IHBoeUBmMDEwMDAwIHsK
-LQkJY29tcGF0aWJsZSA9ICJ0aSxhbTY0LXdpei0xMGciOworCQljb21wYXRpYmxlID0gInRpLGo3
-MjJzLXdpei0xMGciLCAidGksYW02NC13aXotMTBnIjsKIAkJcmFuZ2VzID0gPDB4MGYwMTAwMDAg
-MHgwIDB4MGYwMTAwMDAgMHgwMDAxMDAwMD47CiAJCSNhZGRyZXNzLWNlbGxzID0gPDE+OwogCQkj
-c2l6ZS1jZWxscyA9IDwxPjsKQEAgLTQ1MSw2ICs0NTEsMTQgQEAgcGNpZTBfY3RybDogcGNpZTAt
-Y3RybEA0MDcwIHsKIAl9OwogfTsKIAorJmNwc3czZyB7CisJY29tcGF0aWJsZSA9ICJ0aSxqNzIy
-cy1jcHN3LW51c3MiLCAidGksYW02NDItY3Bzdy1udXNzIjsKK307CisKKyZwaHlfZ21paV9zZWwg
-eworCWNvbXBhdGlibGUgPSAidGksajcyMnMtcGh5LWdtaWktc2VsIiwgInRpLGFtNjU0LXBoeS1n
-bWlpLXNlbCI7Cit9OworCiAmb2Nfc3JhbSB7CiAJcmVnID0gPDB4MDAgMHg3MDAwMDAwMCAweDAw
-IDB4NDAwMDA+OwogCXJhbmdlcyA9IDwweDAwIDB4MDAgMHg3MDAwMDAwMCAweDQwMDAwPjsKLS0g
-ClRRLVN5c3RlbXMgR21iSCB8IE3DvGhsc3RyYcOfZSAyLCBHdXQgRGVsbGluZyB8IDgyMjI5IFNl
-ZWZlbGQsIEdlcm1hbnkKQW10c2dlcmljaHQgTcO8bmNoZW4sIEhSQiAxMDUwMTgKR2VzY2jDpGZ0
-c2bDvGhyZXI6IERldGxlZiBTY2huZWlkZXIsIFLDvGRpZ2VyIFN0YWhsLCBTdGVmYW4gU2NobmVp
-ZGVyCmh0dHBzOi8vd3d3LnRxLWdyb3VwLmNvbS8KCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlz
-dApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5v
-cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+On Wed, Jan 21, 2026 at 10:55:23PM +0800, Jiayu Du wrote:
+> Add 'canaan,k230-usb' compatible string with 'snps,dwc2' as fallback
+> for the DWC2 IP which is used by Canaan K230.
+> 
+> Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
+> Signed-off-by: Jiayu Du <jiayu.riscv@isrc.iscas.ac.cn>
+
+Hi Rob,
+
+Will this patch2 be applied for next?
+
+Best regards,
+Jiayu Du
+
+> ---
+>  Documentation/devicetree/bindings/usb/dwc2.yaml | 3 +++
+>  1 file changed, 3 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/usb/dwc2.yaml b/Documentation/devicetree/bindings/usb/dwc2.yaml
+> index 6c3a10991b8b..352487c6392a 100644
+> --- a/Documentation/devicetree/bindings/usb/dwc2.yaml
+> +++ b/Documentation/devicetree/bindings/usb/dwc2.yaml
+> @@ -17,6 +17,9 @@ properties:
+>    compatible:
+>      oneOf:
+>        - const: brcm,bcm2835-usb
+> +      - items:
+> +          - const: canaan,k230-usb
+> +          - const: snps,dwc2
+>        - const: hisilicon,hi6220-usb
+>        - const: ingenic,jz4775-otg
+>        - const: ingenic,jz4780-otg
+> -- 
+> 2.52.0
+> 
+> 
+> -- 
+> linux-phy mailing list
+> linux-phy@lists.infradead.org
+> https://lists.infradead.org/mailman/listinfo/linux-phy
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
