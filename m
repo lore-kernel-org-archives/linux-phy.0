@@ -4,82 +4,136 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C0910F54AC6
-	for <linux-phy@archiver.kernel.org>; Tue, 24 Mar 2026 14:37:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19727F54AD8
+	for <linux-phy@archiver.kernel.org>; Tue, 24 Mar 2026 16:26:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FFFvlXz1h699QQ2IedLSLJBY0S46E3ziVwlVNmU8+dE=; b=CKGe89v94TkDCK
-	OftZXUGEll8AoKO2koHtJe/WvDmQD0Y8Ir206QBz903VwXUAZFFneYvY7HG0ZTg/2E1+u5FSXxacw
-	owOsRKnjRzgRFBKAXmRKcQUTAwSwstSFFUp7PVy6KBrCiKOyQ4SkfyRDfkBdNdWYh+OHc1Q1Ptcga
-	4wHGunAjZ277IW+nviIvMBWO7rhyEQsN2TK+91oM6b6WFlSwXzOEu2yUnNTk+epYNx0dTfkIY6FI1
-	eaWwc/SDOwmeOTcyTtuUecMbkdeb4m/82mZDsLgLxxGNfG8W4Q3SQFTeCI1tS1/WMwDsUj6vUezE+
-	EbgioTair5NIls+Ct7nA==;
+	List-Owner; bh=c+tTAB3ZsQxf+39oxYF7M/Fsxa6BPvYuJEWk/emwfig=; b=VD0hmlO9By2/Sf
+	RIlLpMlcT9iG8WDZQHBDeZCxdHkk/TWKfKc5UIauomR1PWEG7NYG8hpCCoyA0PTHGuH7aUQImkl+P
+	jf8e5w9mskP2AotuOgBv5P8r2CJ76RglRMUnkfVFKHDiOgFnlVzBLyeBp1HbDGAQ0y6aGU8VbMC0g
+	B9VB9o6e7LtjFEb+L6F3eEIqQ4NWPlkmjoCN4uTr6wESm/vGvboVD29YOYb6gdNHXb8qwycYctMpC
+	wy6M6szhqxxTw1WTg+NPWVAdisL35F9MVsRkrSXCLwOV887lLny3os62TT1kVvIAMYsFvE2rHSL47
+	sdu/H1749wQN/H2k7Tow==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w52sR-00000001fDU-2MNf;
-	Tue, 24 Mar 2026 14:37:04 +0000
-Received: from smtp1.tecnico.ulisboa.pt ([2001:690:2100:1::15])
+	id 1w54aJ-00000001t2e-2LMA;
+	Tue, 24 Mar 2026 16:26:27 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w52sN-00000001fCl-3sYQ
+	id 1w54aG-00000001t2L-3ypr
 	for linux-phy@lists.infradead.org;
-	Tue, 24 Mar 2026 14:37:01 +0000
-Received: from localhost (localhost.localdomain [127.0.0.1])
-	by smtp1.tecnico.ulisboa.pt (Postfix) with ESMTP id 3BCAE600230C;
-	Tue, 24 Mar 2026 14:36:52 +0000 (WET)
-X-Virus-Scanned: by amavis-2.13.0 (20230106) (Debian) at tecnico.ulisboa.pt
-Received: from smtp1.tecnico.ulisboa.pt ([127.0.0.1])
- by localhost (smtp1.tecnico.ulisboa.pt [127.0.0.1]) (amavis, port 10025)
- with LMTP id ZFZeKCH7NTFC; Tue, 24 Mar 2026 14:36:49 +0000 (WET)
-Received: from mail1.tecnico.ulisboa.pt (mail1.ist.utl.pt [IPv6:2001:690:2100:1::b3dd:b9ac])
-	by smtp1.tecnico.ulisboa.pt (Postfix) with ESMTPS id 8F9D960022FE;
-	Tue, 24 Mar 2026 14:36:49 +0000 (WET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tecnico.ulisboa.pt;
-	s=mail2; t=1774363009;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=2zWSTkt+TZRxqfL4or/GcsQYMaV+0vZsmOBl4HXog6Y=;
-	b=Fpx0AwDkYLWE5tsos9uLbjPzDgbdmM4oPrNAjmV5hWv/npcEazDQyw7pdrNmDrzsFrWZ3u
-	sAJx58RBRUDAebkdnpaRxj2DRU4fchddeTeY2JWgqfy+nNSFtNdLpL2xL4V8zDW8sxOusL
-	SivlaHAF+/O7PZtvMVEOUrYwDqykgw0FaxDHX/aIG+0p2LH/pmQUOxSkHko8LDJPrd+Pfe
-	hHEbGYCJ8QrFyG1GOLQ6TGt/wJxi/TDEHt/9NNzoCyv9mR4w2dTgLyVueqdUlGGBjRogDr
-	bPZAkwUJ3Jtw07pcg14V8QLrMz0ZNPqAnln6Be3qad7beJgjr8HQfYggksykRA==
-Received: from [192.168.2.116] (unknown [148.63.39.39])
-	(Authenticated sender: ist187313)
-	by mail1.tecnico.ulisboa.pt (Postfix) with ESMTPSA id 44B1D360194;
-	Tue, 24 Mar 2026 14:36:48 +0000 (WET)
-Message-ID: <2c7fa782-f7f1-43c6-bda4-296fa7ab88c2@tecnico.ulisboa.pt>
-Date: Tue, 24 Mar 2026 14:36:46 +0000
+	Tue, 24 Mar 2026 16:26:26 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 62OEbfac2488047
+	for <linux-phy@lists.infradead.org>; Tue, 24 Mar 2026 16:26:24 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=qYMcGVL12sVLD6LswJRJjS62
+	cG5yQyLOgBfgiqP9H9Y=; b=SpROFtP2onSZ6qFBxGVgW5Oh+EIZMBwNpmix5jLk
+	eI767TcZ4HluH3fV1aXKidI3oG7+0q2M1PS9wztxaWRgHd4ZwHVcgQmvxW/rMm6E
+	xrBF8V0qXMo7Ges7VlQ+eVF+0FhQxwvNzlCpgUIjDoX3L+EXp10d1IXecvKSAD+N
+	BzEALPn2CqFZJdBs9zrYRKocUwgh/tU1vaZWAOOJ4leudpGV01kdw3q/LRbg4+rs
+	YprmX4jaIkQfv/crcevpka6ukyADPBpgkqpeg3qR9N+/OwKIm9WZT6TS+7PaQzEt
+	Wh+FnXEY5XRp2fPHyPpqC/2rpD8R6b6gJ4UUBPIyaIW06Q==
+Received: from mail-qt1-f199.google.com (mail-qt1-f199.google.com [209.85.160.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4d3vhvrfdq-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Tue, 24 Mar 2026 16:26:23 +0000 (GMT)
+Received: by mail-qt1-f199.google.com with SMTP id d75a77b69052e-50925fed647so97955041cf.3
+        for <linux-phy@lists.infradead.org>; Tue, 24 Mar 2026 09:26:23 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1774369583; x=1774974383; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=qYMcGVL12sVLD6LswJRJjS62cG5yQyLOgBfgiqP9H9Y=;
+        b=gbSbD+8AIgVWU6nE61wd13ZyIhqY5n9ZzJ9XzfiRfj86EXO9l3yXOdzc4xIZHxLfB/
+         5pLXVQWgQd7bHcthclYlno6VRV7Q9TvvlI8J/tQVYbE0F9rO4MfznPXjV/ApxFTvPwm4
+         OE5TKKBFZTvjoDyElmArmyfHM/g4wc2gdtcn0PAQhi7ZGU2qXRkURKgMWtkIQGkw6JN3
+         zXBh1e1QZTQ+0U0Jt42HPSo15tFdWxmIWwv6yBSiOZrtM2e/sEQ53zbkL2TOLFJ7B43Q
+         O0Zxhd3IcdrwgJQXQhB5WhN9wJda5qGMOH9DQCFMd8R6/+pnIY8efUu1QSx5YKGU4HJa
+         Elqg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1774369583; x=1774974383;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=qYMcGVL12sVLD6LswJRJjS62cG5yQyLOgBfgiqP9H9Y=;
+        b=WjFdyo0vN8tXywqePmt5/rexF0E705PxiGa4oe3kaCJ9RkKK7tb3KotiIYfgpH7FS+
+         diLUiHDm6biKEyvLOxi07GWgv7E/tGStV0J1u8bFKTLkEOPXyhL8ydregE6escXTKPao
+         Gugd3aXAylwasBkvJofZbvQgYGJBPH8IRIBQ8yzBml87j2Xqlf9rJHFMNFNlERC85pV/
+         V/ZKLBnvCENcMBW0vrI4ARUkebllibkhGo8EvYQPwX9C3A+QKOj/FAKZi9p+Gfm3fK6o
+         nL+xpe76iOQFhE5WTqIB+y6nbigQMcuPpd4h5xlqUV6RDl269o74oqQY4n59jr9D2y5f
+         ugMw==
+X-Forwarded-Encrypted: i=1; AJvYcCU9HAllLswfudhW/LO6yh7v9p9SrpdegUCkC+6mIwtXD5cc1pCSQacaMD7OoFOkhQMS7di6XQoi6aY=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yzt9yPjW+yi1hwSxtFGhvChFcFdN1BQsHwitZEHEP2c9zDuFFY4
+	5JX0sFg+H0c0r8OL4IfIKA48M+ieHPEy3B+XmTvORIg10PgNtdA3LZW2HCe0SwYtZHcQckDqKYm
+	ihVFaR3RSpkY+w+1f31hJtUcLeZsJqRCgj6SF8la/P2t/+tQU+x3Nislo8y8MR+9Y6dHl
+X-Gm-Gg: ATEYQzzQzbZ6VOV3KBQ8LQNtc1KL6xp4Ru9AWbFm6hiq7ZSHf/oS6S+uFhnyFndJzyI
+	l9KeQdEesxhHZmoSZXEss0Y3q/MMRmgssKy7tZUklRRNfsKpEXIgeKJMBHOTVFf31/Zmf9fJEpf
+	WMTSKY9R4br11VAzIwPIl19DYt9XAWmOCps0dlYLxuBONFSLcYqaO0FDfL+HVgHpFcCEEYsph7j
+	XTLSLw/imjPtprMiVtaLt5rGoRkRiHGdfkNcGFVy78/zXsAbnfV5GCq/2OAt60dIhdoN+k/DkR0
+	s26VFlb/628UFLCdLuLVaVAHNXYWwhPN3h+UPjIqAplMa+yuNc+nO1sXl6eyF9YOnWc8JlO3uKX
+	CAsLRd36ie/FKBHXfoHqOchwyFA3fOeyNiw==
+X-Received: by 2002:a05:622a:2285:b0:509:3141:312c with SMTP id d75a77b69052e-50b81b0f234mr18101cf.40.1774369582480;
+        Tue, 24 Mar 2026 09:26:22 -0700 (PDT)
+X-Received: by 2002:a05:622a:2285:b0:509:3141:312c with SMTP id d75a77b69052e-50b81b0f234mr17591cf.40.1774369581870;
+        Tue, 24 Mar 2026 09:26:21 -0700 (PDT)
+Received: from oss.qualcomm.com ([82.79.95.133])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-43b644bdaf8sm44763958f8f.13.2026.03.24.09.26.18
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 24 Mar 2026 09:26:20 -0700 (PDT)
+Date: Tue, 24 Mar 2026 18:26:17 +0200
+From: Abel Vesa <abel.vesa@oss.qualcomm.com>
+To: Qiang Yu <qiang.yu@oss.qualcomm.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Philipp Zabel <p.zabel@pengutronix.de>,
+        Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>, linux-arm-msm@vger.kernel.org,
+        linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v2 4/5] phy: qcom: qmp-pcie: Add Gen5 8-lanes mode for
+ Glymur
+Message-ID: <rtlki432tho35wzq6t252na52eaz4tqtembz7goqhble73aogt@wusxa6s3xjh3>
+References: <20260323-glymur_gen5x8_phy_0323-v2-0-ce0fc07f0e52@oss.qualcomm.com>
+ <20260323-glymur_gen5x8_phy_0323-v2-4-ce0fc07f0e52@oss.qualcomm.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 6/6] phy: tegra: xusb: Move T186 .set_mode() to common
- implementation
-To: Jon Hunter <jonathanh@nvidia.com>, Mathias Nyman
- <mathias.nyman@intel.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Thierry Reding <thierry.reding@gmail.com>, JC Kuo <jckuo@nvidia.com>,
- Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>
-Cc: linux-usb@vger.kernel.org, linux-tegra@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org
-References: <20260127-diogo-tegra_phy-v2-0-787b9eed3ed5@tecnico.ulisboa.pt>
- <20260127-diogo-tegra_phy-v2-6-787b9eed3ed5@tecnico.ulisboa.pt>
- <af04fc85-1ed4-4046-86ee-1ffcec8c44cd@nvidia.com>
- <5a5397c8-cc32-4d6b-86a4-76f924ae6d75@tecnico.ulisboa.pt>
- <7a6f8967-c635-4d84-bbab-9e019ff79134@nvidia.com>
-Content-Language: en-US
-From: Diogo Ivo <diogo.ivo@tecnico.ulisboa.pt>
-In-Reply-To: <7a6f8967-c635-4d84-bbab-9e019ff79134@nvidia.com>
+Content-Disposition: inline
+In-Reply-To: <20260323-glymur_gen5x8_phy_0323-v2-4-ce0fc07f0e52@oss.qualcomm.com>
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzI0MDEyOCBTYWx0ZWRfX+NL4p5dfZAoJ
+ UTGDiyICLg+0GbtkL5swR0eXD3U4kLL2WutFN5ByvHPqVvoOg36/kvL6L046LjIIQKo+7uONpZ0
+ xrIe8giNp5tvD155hJtrO7cNyHQVbtXp2HpB46jMAzOUJ2P9ybHt/wtMhzs6Evvdr6R5XPrQRrl
+ RKUxizZHNb/58B+P+TZ82bLD9Zb4wUE9DUbFbiokVGT5IsNHMXH9MzM8Bp14l67Ci3O62+jcRx1
+ ijkkQMBooO8rWV2Eq80lHLhL0jcCRHgHNKfvy3DzeprP5wWdjpQgA+jc7DN2uK1LjMPT6jmuWEY
+ tey/pWxgsBVM/QWcFDgm2vK2H9Xaljib6aH2GZnE/mp3G6IZnKgnyu2TqNYvZJ28LMasMU7Gjw5
+ 1/UPn1rPXFr5toxmzHef1H4Qffk6z7gdJcF7YATPY1taHAdumRs8hVRTkx9nvYPOnnzMM+4n6WR
+ uqkh5yah9J4Rze/N7Aw==
+X-Authority-Analysis: v=2.4 cv=P5M3RyAu c=1 sm=1 tr=0 ts=69c2bb2f cx=c_pps
+ a=WeENfcodrlLV9YRTxbY/uA==:117 a=iKs3dpp2RB4k51ZqCjcyjQ==:17
+ a=kj9zAlcOel0A:10 a=Yq5XynenixoA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=DJpcGTmdVt4CTyJn9g5Z:22
+ a=EUspDBNiAAAA:8 a=TM4ErUj_GH9VF2dpSNYA:9 a=CjuIK1q_8ugA:10
+ a=kacYvNCVWA4VmyqE58fU:22
+X-Proofpoint-ORIG-GUID: XbWjD1ZcHA3JA7NTg3giTvqJUE27oBgr
+X-Proofpoint-GUID: XbWjD1ZcHA3JA7NTg3giTvqJUE27oBgr
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
+ definitions=2026-03-24_03,2026-03-23_02,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ impostorscore=0 phishscore=0 adultscore=0 lowpriorityscore=0 malwarescore=0
+ priorityscore=1501 spamscore=0 bulkscore=0 clxscore=1015 suspectscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2603050001 definitions=main-2603240128
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260324_073700_388474_3830EF57 
-X-CRM114-Status: GOOD (  19.75  )
+X-CRM114-CacheID: sfid-20260324_092625_018137_669EC2A6 
+X-CRM114-Status: UNSURE (   9.66  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,72 +145,23 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-
-On 3/24/26 13:33, Jon Hunter wrote:
+On 26-03-23 00:15:31, Qiang Yu wrote:
+> The third PCIe controller on Glymur SoC supports 8-lane operation via
+> bifurcation of two PHYs (each requires separate power domian, resets and
+> aux clk).
 > 
+> Add dedicated reset/no_csr reset list ("phy_b", "phy_b_nocsr") and
+> clock ("phy_b_aux") required for 8-lane operation. Introduce new
+> glymur_qmp_gen5x8_pciephy_cfg configuration to enable PCIe Gen5 x8 mode.
 > 
-> On 24/03/2026 11:31, Diogo Ivo wrote:
->>
->>
->> On 3/24/26 10:16, Jon Hunter wrote:
->>>
->>> On 27/01/2026 15:11, Diogo Ivo wrote:
->>>> Move the Tegra186 PHY .set_mode() callback to a common implementation.
->>>> In order to do this first revert cefc1caee9dd.
->>>
->>> This commit message does not seem complete.
->>
->> How so? It is succint but it states exactly what the commit does. It
->> reverts cefc1caee9dd and changes T186 to the common implementation
->> prepared in the previous patch.
-> 
-> It does not read clearly to me. The 2nd sentence sounds like that's all 
-> this is doing but we are not, we are reverting and doing the move.
->>> Furthermore, I am not sure why we want to revert cefc1caee9dd. We 
->>> purposely moved the regulator_enable/disable into 
->>> tegra186_xusb_padctl_id_override() because it is tied to setting the 
->>> USB2_VBUS_ID. So I would prefer to keep it this way and move the 
->>> Tegra210 implementation in the same direction (if possible).
->>
->> I don't agree that this is the best solution.
->>
->> We really benefit from a common implementation for the two platforms, not
->> only because of duplicate code but more importantly because without it
->> whenever a bug is found and fixed on either platform it most likely will
->> not be fixed on the other one. Case in point, cefc1caee9dd fixed a bug
->> on T186 but not the same bug on T210 (which then led to this series) 
->> since
->> the implementation was not shared among them. Were it the case that they
->> shared the implementation the fix would have come "free" for T210.
->>
->> This will keep happening for as long as we have duplicate 
->> implementations,
->> which becomes more relevant since there is a severe lack of testing in
->> older Tegra platforms. I also thought about making the id_override()
->> implementation shared between T186 and T210 but that would be take more
->> changes since register definitions would need to be moved somewhere
->> else too.
-> 
-> I am all for a common implementation. I believe that in the 
-> tegra186_xusb_padctl_id_override() function the only thing that is 
-> different is the offset for the USB2_VBUS_ID register, which should be 
-> easy to handle.
+> Signed-off-by: Qiang Yu <qiang.yu@oss.qualcomm.com>
 
-Ok, I can make it common there as well. However I still feel like
-reverting cefc1caee9dd leads to cleaner code since vbus_override() and
-id_override() will look similar and only do exactly what they state in
-their names and the overall logic looks cleaner.
-
-Diogo
-
-> Jon
-> 
+Reviewed-by: Abel Vesa <abel.vesa@oss.qualcomm.com>
 
 -- 
 linux-phy mailing list
