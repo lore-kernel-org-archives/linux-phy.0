@@ -4,86 +4,144 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0734F54AAC
-	for <linux-phy@archiver.kernel.org>; Tue, 24 Mar 2026 13:05:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C4E33F54AB8
+	for <linux-phy@archiver.kernel.org>; Tue, 24 Mar 2026 13:33:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pE5YTda2toNdPD1Z4XzPF520Ja4oiFKUSa+qiTb0czs=; b=SQ0TAAVdvxWf9h
-	O+GbMKh/swRJmRZ2TuV3Br1BZc1hoYl/kTFRBaYlLEvT22C8nt2rkpZ46pWz1qI5yOD89DQq0LmVW
-	l+GwBHCE5DJEcQYAEqSuqrTvD4FWZlV8EQxH2BHb7hJcLlJiZ+PJkskeSSXofVNTNXR4IUiUI/tAo
-	1LugFA49l+Y+AlXNXOo4kENW/Aka7cmKQGDgPV7uxlq7L4wpFktF/FuWyTldTzDk7hOQkNVuRtr/Z
-	s/n20MIs5p66ps3QEWwwauViq/iA1iMxHUyMhV8gnOZPkLXhDOWQzdvnzDrETa6pT/TVvA8tqQQ5h
-	BkZFcHjvllTTZrC10JXg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:References:Cc:To:
+	Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=nXBArPZL8deSIomG4RM+WYi5zoXPEBFSAScCuYrEgi4=; b=jk7jgbOyP8JArNeWHOffEv2UIp
+	1XlPtS6o2metauegvOZn/UyCN2rX+GCIyYWDZeXRmUKnbl8QdTmEnk3QUmuuzAq0D6/M2DxlJAlnY
+	wBq0abP0aK7hXsWja6MyRfPoWXBFlOce9h2hBmsjUIm6PnHH4Y0ytdjh8S5plC4yKgn1zHU5HIm/0
+	BzK322fxG3u+qEuGRhqC1hJNQmsgIkkW/Q7zJvJ0gJrUmP4F+WbUM45O2fPnO5T9+y3QG6ZAc2i8B
+	hgx42NwOVKlCCivvYeh/IAcLyDbhhXnujgMNyX/+vyILftP2hVuUCK2rjUq88MoVRfKZKTJe5y8TY
+	+jexQBhg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w51SE-00000001UVM-4640;
-	Tue, 24 Mar 2026 13:05:54 +0000
-Received: from mail-ej1-f42.google.com ([209.85.218.42])
+	id 1w51sy-00000001YKL-1HhW;
+	Tue, 24 Mar 2026 13:33:32 +0000
+Received: from mail-southcentralusazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c10d::3] helo=SN4PR0501CU005.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w51SC-00000001UUj-3ViP
+	id 1w51sv-00000001YJx-2gYI
 	for linux-phy@lists.infradead.org;
-	Tue, 24 Mar 2026 13:05:54 +0000
-Received: by mail-ej1-f42.google.com with SMTP id a640c23a62f3a-b97a06d7629so707852366b.0
-        for <linux-phy@lists.infradead.org>; Tue, 24 Mar 2026 06:05:51 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1774357550; x=1774962350;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=gpbsDmhCapUwh9Cve29legSkefqaTko+/wOGcVZ2UCA=;
-        b=EtLgi0S1Ot+Qvd5rkBr5fIQP/Ecz13ZURTavudH5x1l+mgoS7NLWuEtAOkjjZjzyuJ
-         /t88DGJc5vs8+glr5neYKitzO0qQX0pYlruEHW3aE14HJwiRdCS0xTnYq5s6zJFmcrXd
-         Qk2DCGEWAnQmGQvS1fISmc7EqRV3PM+FKbzac+NOcgWt5KtnYmbAYskk6MD6D2txyrUO
-         oAWOHr+5t4h6kxuhXdEfUH/EgW+Qih+jr1jBMVeIU/F1lepH3Sn9/xDmqYEr49WkqfNq
-         fAcwUP5KlMn3rKeP0Ae6Lt/vW4iFc4SHd5tslk5utvL6Gzigi98ODslD893JrT/C1iIs
-         oyZQ==
-X-Forwarded-Encrypted: i=1; AJvYcCU2GkJTwHtxoFDDRieUOL/f0fvPWhvItMr3paYu2AojgdGdMc3zI/u9/fTGW0UfqUicMSr3WqJgM14=@lists.infradead.org
-X-Gm-Message-State: AOJu0Ywj+cn8I1Bx5w4TL8lQBPrIavGE1FUGL19jEz9Nsefibuhr5oI0
-	JN5MA1QO0Ppk9bPkZeAXN5h51MGPI9IPJz6tuCXo9iMocDVEoGRzK1t3/4fzy7Vmpis=
-X-Gm-Gg: ATEYQzzL8Th7F9jiwBWvj8X+muEcc3HD4mX6pQhgv6lCz5wrkmJcIkmaGxwmB5o7oNx
-	9G2+grbdLa3V1nqP1OVrfpKo9/KtBNnFgBDORshOIzdywggjAWBCY+rVA2muTxd+uBoDngQywA4
-	DeD2RFE563VaZSrFDPDZ9SjnpRwaNRt95Ky7ya2+NF6vZWLl2hPv3/8xuu0gtdRDv4gNBJakM8p
-	sQU1c7ExrIjPybeC4FVVHvYiv9eGf1IN/27fXzfGqgUEsQjSnBKtslNfiitYHYgFh4Ejaq4TQSP
-	8sLlMPMR/522CB8JkJWc6R/THjNFt+ZefCQ8ep9++rwFtCYb6EkQvxKzGb/tD9BNeMizmpR34J+
-	3JRSNN/Gn8UqJg+gMbJNCN5Arq1GYvcmwtabyO/g1dOwJMf3y+Fn2fcx6B7Eci9dugrLSzfTXSY
-	dQB21nc1h9EDa3p+bF8Cv9ontz/L8lpWkZK9C6znsbwYjHFBElW4y7KmuHQVFl
-X-Received: by 2002:a17:907:9381:b0:b98:4246:8e6e with SMTP id a640c23a62f3a-b984246a925mr760725366b.53.1774357550221;
-        Tue, 24 Mar 2026 06:05:50 -0700 (PDT)
-Received: from mail-ej1-f42.google.com (mail-ej1-f42.google.com. [209.85.218.42])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-b9832f8c13csm628394866b.18.2026.03.24.06.05.45
-        for <linux-phy@lists.infradead.org>
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 24 Mar 2026 06:05:48 -0700 (PDT)
-Received: by mail-ej1-f42.google.com with SMTP id a640c23a62f3a-b979d16dd0cso783090166b.1
-        for <linux-phy@lists.infradead.org>; Tue, 24 Mar 2026 06:05:45 -0700 (PDT)
-X-Forwarded-Encrypted: i=1; AJvYcCXEk94RnrVKWHheSOOqqy+HVAPxpto3mNPp6gZS6VSx6p80A9IuZ0WkOD+xpv31LyLpPZGEpf0ck2M=@lists.infradead.org
-X-Received: by 2002:a17:907:3d06:b0:b98:3fdc:150e with SMTP id
- a640c23a62f3a-b983fdc1df6mr1119666566b.2.1774357545379; Tue, 24 Mar 2026
- 06:05:45 -0700 (PDT)
+	Tue, 24 Mar 2026 13:33:30 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=ZqZhJmOa/I6J1zddIMyLMPIFw15bikJXDf7InSe6+QYFlJo/0fbifB8obytZvwjszxGROdZV+/NPi+vj/4HHkhJhqsz6OombuxWEyvoWRnZIgEF7ztrkxRv1ICY0Z4ZBrlVKzlRSYzt7dqGr3O5KsuFEmdspeQnDhrGkSHZJRBOQsdL+JeRqlqde/qdwvTxhO7ktv80CHp9P1BzxMsjLxzmOqed9jdGleWPHJupuQ63imTh7tZciiXJ0Zlc25b8axRIBrlnWjGvIrUOV/S6BG37NMagfPrv0S51JL0AdPPAKDrYl3lwNApQAnVzeOh72iB9oNTT/x5dxovUZVeF1fA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=7ZCIFpUENMXB5Rh8UX5aYxAw+tkASxgH6B6AnJbICJc=;
+ b=j/7ClS+BnnM/dNl2twx+IEuRnC4KFuSRVNYgN0hmA2MsVShc8+dRkZrPs940AypgQUrA4It8CEwCHWSWkDtHbbHV7wvxbn7K5bMJVR52noXi2AxU6okT5WKUKYeOi0srygnK3SjMYkmb7BWhoLq/eXPkU1b0uvVvjjNWgNOKtpADCy2Y+9sdCbP+yG0EGyeQbDDA8E/M5q9skRm/8FgJT8zlmuTR62Xl5F3RREjuRWpxYoTzB8TsMNYTs5WzWdy91wyNQ6EGhIDExGZdzc5APfKfsemgoKPVrz+mW6XpFattnVLWwKHrd5dTwzq5BbAeCe2G8ExC/Cy9ydw+3lSUXw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nvidia.com; dmarc=pass action=none header.from=nvidia.com;
+ dkim=pass header.d=nvidia.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=7ZCIFpUENMXB5Rh8UX5aYxAw+tkASxgH6B6AnJbICJc=;
+ b=YAVZfCrXkk503tot27wiCkBf4ic3Dm7MKMHQimtt898P8jtFy+AnvAPefGKIU5gGWGEIFl9DEVJfFo2634tSP0fvGKh99GDhGkCVHSnGh9lqmVuR7+3yw31fkPQ5sE7PPg/+cg3V46AOVBtvgoCSCe5uMX5rTlUV/B1BvPngwqMQpC1T11UUcef11hO493anr5TkDJe8mwBREHutKzuP4NtGA5XGC6Oqv3mOGkqhlSKs6YIJ5PJvVNejdp4RFMDxfdUADlqs7f9X7lxly7aASWExxpwMa/u8nVquPBinCFRf4/vYtM4DUoh2nQs0Gzd/NciCXQOKKlROSACt9+x74w==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nvidia.com;
+Received: from DS2PR12MB9750.namprd12.prod.outlook.com (2603:10b6:8:2b0::12)
+ by LV9PR12MB9805.namprd12.prod.outlook.com (2603:10b6:408:2ee::15) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9745.20; Tue, 24 Mar
+ 2026 13:33:22 +0000
+Received: from DS2PR12MB9750.namprd12.prod.outlook.com
+ ([fe80::56a8:d6bf:e24c:b391]) by DS2PR12MB9750.namprd12.prod.outlook.com
+ ([fe80::56a8:d6bf:e24c:b391%6]) with mapi id 15.20.9745.019; Tue, 24 Mar 2026
+ 13:33:22 +0000
+Message-ID: <7a6f8967-c635-4d84-bbab-9e019ff79134@nvidia.com>
+Date: Tue, 24 Mar 2026 13:33:17 +0000
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 6/6] phy: tegra: xusb: Move T186 .set_mode() to common
+ implementation
+To: Diogo Ivo <diogo.ivo@tecnico.ulisboa.pt>,
+ Mathias Nyman <mathias.nyman@intel.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Thierry Reding <thierry.reding@gmail.com>, JC Kuo <jckuo@nvidia.com>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>
+Cc: linux-usb@vger.kernel.org, linux-tegra@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org
+References: <20260127-diogo-tegra_phy-v2-0-787b9eed3ed5@tecnico.ulisboa.pt>
+ <20260127-diogo-tegra_phy-v2-6-787b9eed3ed5@tecnico.ulisboa.pt>
+ <af04fc85-1ed4-4046-86ee-1ffcec8c44cd@nvidia.com>
+ <5a5397c8-cc32-4d6b-86a4-76f924ae6d75@tecnico.ulisboa.pt>
+From: Jon Hunter <jonathanh@nvidia.com>
+Content-Language: en-US
+In-Reply-To: <5a5397c8-cc32-4d6b-86a4-76f924ae6d75@tecnico.ulisboa.pt>
+X-ClientProxiedBy: LO0P265CA0015.GBRP265.PROD.OUTLOOK.COM
+ (2603:10a6:600:355::6) To DS2PR12MB9750.namprd12.prod.outlook.com
+ (2603:10b6:8:2b0::12)
 MIME-Version: 1.0
-References: <20260324121608.3444943-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
-In-Reply-To: <20260324121608.3444943-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Tue, 24 Mar 2026 14:05:31 +0100
-X-Gmail-Original-Message-ID: <CAMuHMdV_94xOmqRqDKW_e740ckmRoyW+oaHvorphNg27JNKUrw@mail.gmail.com>
-X-Gm-Features: AQROBzBJaCVgwv-vRbaayLKwJjAAqLez24emj_-XOEZTvNken81UxnWww_VtevE
-Message-ID: <CAMuHMdV_94xOmqRqDKW_e740ckmRoyW+oaHvorphNg27JNKUrw@mail.gmail.com>
-Subject: Re: [PATCH] phy: renesas: rcar-gen3-usb2: Simplify ID/VBUS detection logic
-To: Prabhakar <prabhakar.csengg@gmail.com>
-Cc: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Magnus Damm <magnus.damm@gmail.com>, 
-	Pavel Machek <pavel@nabladev.com>, linux-renesas-soc@vger.kernel.org, 
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	Biju Das <biju.das.jz@bp.renesas.com>, 
-	Fabrizio Castro <fabrizio.castro.jz@renesas.com>, 
-	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DS2PR12MB9750:EE_|LV9PR12MB9805:EE_
+X-MS-Office365-Filtering-Correlation-Id: ab4d7983-8a00-430e-0e91-08de89a9eb0b
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|1800799024|7416014|376014|921020|56012099003|18002099003|22082099003;
+X-Microsoft-Antispam-Message-Info: pYKf2Qt4wr7nR9qVe3JWMVAOmzovazcBvd1d45sk0rc5BmBNc5gUTqgMAoABnpV+qpOSVqF+pn6uuU/1iboJJTB7JDjSRaqY9XijQftfmq15skHFFUBV9x7R3vx5HBKUlhfWv5ciF9AdeRzzWeLMeGsPc9wKAQR49NyvQdfZX1C8e/zQcORsUM6OqoCDuKyXh3gVjQ8b1Bx24AWzJFOlC5ZTVrX+OAbUUNPMWkmc9Ok2XJFAU5Lr/q0UBieYrTEckmfmMcIKqrhFayDX2TxoL7sD2SF/2zvKuSf1f05XjkcFY5ELB1ib3gVg0Qoqnx09H/6cribjR97eLO+eyUu+tImOFVDHcLJfNcCl0Hlv9NfbSUeaTEJsB8DWvL8ILdaCLbI4tVCDQMuqpSFj0wn5a7fZLcG4PBQPOlztTHmdnFS5G6QBwjhHh/Kr30arDpqPmGZqbDq/AdWfcldyF0IQBVNcgDBLYcTlgD05GCtStERNrNbL2k1vOQS1wnQ5vuVoCaBrjuMaOWQToqW20VuzYB1UmQVYthS5bmJ3Qii0LTRAq2hirDJQHkUvtmX4GxuS20Tl70NpdQVfAIDHzT1OpUeRqYaXnQ4Ze7CFaqUBTCjHI0X81q3SaejwWFutDEe+6wNr9j+lN1it8QtgrwoexPjumJqm7S4QYD98e1TCjWtim3CEPm6I3H3m9thZD5q5S/DhGMMfHN/cjddL9STe+cLPKrfv9l+L22mcOBrcHoGjfYErKrjiy4sfoEO7dtCiC3rAkRTEpuv3I2l8lRQErg==
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DS2PR12MB9750.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(7416014)(376014)(921020)(56012099003)(18002099003)(22082099003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?RGl1N1NsT3JlWXY0KzZNSHQvbWsrUEdQNjMvSTlxZUNJakZxemZKK1BTQVVJ?=
+ =?utf-8?B?cTNFRzFGWS91c1NxZFB0bDFKVWFZa3psTUFMVHZ1cUxHSi9xU0VMemtOcEYr?=
+ =?utf-8?B?bnk4bWxEOGh3ZER3aEVPYjlVUGVabFVIRDJqOUFaTlVreW01cUVDRDFqYktj?=
+ =?utf-8?B?VURPVmZyY3BLTTFnVU9nTkpNY3dzWDBKMVhVQ0hwellyemtuMmUvMkNhdHdM?=
+ =?utf-8?B?ZFZyVVZtRmc1bVFROGVsTjI1NThUUFMwNEYySmpLalIwRHI2NHk2R21hZHdm?=
+ =?utf-8?B?Z3VObHE2YldiZ0NtYy9FSDRHWFF5MEhsQ0I0OVJPeVVpMThTcDJKZ1lHZDV3?=
+ =?utf-8?B?d1NpT3dyR3NabXF0dmZLS2RKbkZKOGFzVmtjQkV2bVZPMzdGSmRPTTNtVzAy?=
+ =?utf-8?B?TERxeEpQZVRkaHlaTUdKemJKK1RmWlBmOUpNN244TDg3cS9kYjhLVmxYbXNX?=
+ =?utf-8?B?Rjg3aUErRnFBZ2xHNXJSTzhydC9kTHdyMkJFTEdWa3RyUVVSQ012bEc1Tm8y?=
+ =?utf-8?B?Uzh1UnBuaExRV0RwaThVcWsrZ3AvRXhxZlVPUE9TRkhJTjVzRnlHd21ZS1hn?=
+ =?utf-8?B?Y3JkY3RQNi9hZUJkWVJMVnd3ZldMVHhjUy9BeWhBVkdTSWtWYkRIbWdJWlJD?=
+ =?utf-8?B?L0tLU3VabUFaMXFkUUVZWDlwTzl6ekFQNiszYVFjOEJiWnh2MkNPTGxuaHlN?=
+ =?utf-8?B?Q2F4eXBwQ09WMEhUQmpjQVU0c0t4elZNUWpkN3B3aEIzb0pNcExMRTJHQ0p4?=
+ =?utf-8?B?b0xLVk9LaXJDM2ZyV3dtTTBhaHg2QmRTczBRL0ZyMHhNVy9EZzd1UFFnTExV?=
+ =?utf-8?B?WjFtSElJMmxwMlhHQUZ2VGNVMmpDNVU3Q3pBQWJwRWhjRnFnbHdCZ0pGRUZG?=
+ =?utf-8?B?TTFSWS8vWXR1RHVrSmtMNUlIMmtLc1hHaEw4amhzbi9MOERLVkZaRHdFc0Qx?=
+ =?utf-8?B?Ti9NUE0xdUREdS9sdUpXelZUeHdvTk1uWXQ2RlE1SHh4ZW5QOEJsTm9uMzVz?=
+ =?utf-8?B?VWVVZEcyeFlGaXVINThYdjY4bGtHOUVFOFVoS0RoVlFXcFpWV0s2by8xbHdp?=
+ =?utf-8?B?UTh1RE1YWndMa2dzV1BuZXBTWHY3R0tPeExSY0svdkFJc3dlTFZUVk5WOFJm?=
+ =?utf-8?B?RjZUNFlHSCthNG5rcUVDUTltb3VaSzBhaVFYQ0xRY3R5TC9ibExYUUJjR0hS?=
+ =?utf-8?B?SUUyalFydlJMNm51U0d5cUdtVzZQOG9NOWhVVDcvWW45ZG11ZHpTSkxlZndO?=
+ =?utf-8?B?SU1PV0RRTitpMHdRY2IxTCt0UEZKWUJhVDArNStoUUg3TWtZZ1dxZU5jOE9O?=
+ =?utf-8?B?aU9aWnJwMnZOTVlYZVlwR0ZURHlRUDlybCtsd0JwMU4vZmkzY1N3enBLN1Vr?=
+ =?utf-8?B?Zk5WeXZpWEgvSkFoaWNpajF0MUtGWFFueG5MTHBoRWt1VWl3alRha1J4ZzRY?=
+ =?utf-8?B?RkhBcHpqSUR5VnMvSkJ3dlkzV3poekZicjlFVDllMnkyUElicW03TU16WUZP?=
+ =?utf-8?B?cTZSMnNCVnU5N0I2eTRmZ3c4UEYxTEJFdzg5SUNjeGhKSVpENFlZUWFXWFRB?=
+ =?utf-8?B?aG1iUHhza1dkWG8wdFBCNVRPbWREOWEyS3ZDNWtQQ3I2cmxoeVZzakVac1BV?=
+ =?utf-8?B?RG5Qa0c3UWo3TEp1K1kyZkFBL2J6b2twTEpFaThYejZaZ3h4UlFSOTNYQzc0?=
+ =?utf-8?B?Q0ZMbnVjUk9kQVYza2V3RSt4ak5xVEJ1UVJseUc2YkVUenVORzByZlpHL1RP?=
+ =?utf-8?B?K1h6K0VyaGEzTW9KTEM2bkV5RXFERjhSUzBQZ2lvOEZVamwyZkFHZVM2aXN5?=
+ =?utf-8?B?WFE0RGowSWJsLys5RHQxT1lxT2dTRTY3eVpCb2MrQXRjZUVHK2tKeGNtaldC?=
+ =?utf-8?B?bVcwQk85aGpvU1dYdnMvbHkxOXYwWDRZREtlbHltQ1p2YldLTGtpNUVUMjJ5?=
+ =?utf-8?B?VkVtbDBndjVJZDlpR2dXUTNxTUhCaTNYWUJaWk5zRWozMDFXK2RnRGM4MVRN?=
+ =?utf-8?B?R0VlRmE2VWw2OTVyOFdwcUp3dE10bUJDN0d4Y2lOUGVON1N2Q2ZhMW8xRVpB?=
+ =?utf-8?B?UlVvSGFkN1d4YVFHOHN6TTlQZXNSci9JNjM3akJCUi9sckFTME9oYnpvcTRP?=
+ =?utf-8?B?NDVIYjdIenZZSktKRG5aWkJnKzdZcHhTTkpqdHRjYkE4ZkluVG1tSDhGcmJX?=
+ =?utf-8?B?M3grWHNIN0Q3dHAvQm5oNVFxZ1dzSjZXWEVNTW5sM0I4SS9TTkY4dmh6ZzJ3?=
+ =?utf-8?B?RGM3V0pmQ2xWbjRvd2Z1ZmV1bzdhL3dxcFhLOXVBU0IrYnMzbHdKb2YzL25w?=
+ =?utf-8?B?Y2ZTcndwVzV6d1pmNWE0N1hCenBxclh0bjI4VlYyM2Y1UUhCNXFOdz09?=
+X-OriginatorOrg: Nvidia.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: ab4d7983-8a00-430e-0e91-08de89a9eb0b
+X-MS-Exchange-CrossTenant-AuthSource: DS2PR12MB9750.namprd12.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 24 Mar 2026 13:33:22.0048
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: vvE73lhMOOQWOQobwyE6lo73mtTN+M6H1yEqcvCGR+jQ5eDbs8Id+Bb+QvwQu6h38U/cCGglbpRzWnuilfVw4A==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: LV9PR12MB9805
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260324_060552_894494_D7985005 
-X-CRM114-Status: GOOD (  21.68  )
+X-CRM114-CacheID: sfid-20260324_063329_710939_8E39D6AC 
+X-CRM114-Status: GOOD (  20.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,64 +153,63 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Prabhakar,
 
-On Tue, 24 Mar 2026 at 13:16, Prabhakar <prabhakar.csengg@gmail.com> wrote:
-> From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
->
-> Read the USB2_ADPCTRL register once in rcar_gen3_check_id() and reuse
-> the value instead of performing multiple MMIO reads.
->
-> Simplify the return logic by comparing the IDDIG and VBUSVALID bits
-> directly. This preserves the existing behaviour while improving code
-> clarity and avoiding redundant register accesses.
->
-> Reported-by: Pavel Machek <pavel@nabladev.com>
-> Closes: https://lore.kernel.org/all/acJV-Xq-2uq_JFMn@duo.ucw.cz/
-> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 
-Thanks for your patch!
+On 24/03/2026 11:31, Diogo Ivo wrote:
+> 
+> 
+> On 3/24/26 10:16, Jon Hunter wrote:
+>>
+>> On 27/01/2026 15:11, Diogo Ivo wrote:
+>>> Move the Tegra186 PHY .set_mode() callback to a common implementation.
+>>> In order to do this first revert cefc1caee9dd.
+>>
+>> This commit message does not seem complete.
+> 
+> How so? It is succint but it states exactly what the commit does. It
+> reverts cefc1caee9dd and changes T186 to the common implementation
+> prepared in the previous patch.
 
-> --- a/drivers/phy/renesas/phy-rcar-gen3-usb2.c
-> +++ b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
-> @@ -314,13 +314,14 @@ static void rcar_gen3_init_from_a_peri_to_a_host(struct rcar_gen3_chan *ch)
->  static bool rcar_gen3_check_id(struct rcar_gen3_chan *ch)
->  {
->         if (ch->phy_data->vblvl_ctrl) {
-> +               u32 val = readl(ch->base + USB2_ADPCTRL);
->                 bool vbus_valid;
->                 bool device;
->
-> -               device = !!(readl(ch->base + USB2_ADPCTRL) & USB2_ADPCTRL_IDDIG);
-> -               vbus_valid = !!(readl(ch->base + USB2_ADPCTRL) & USB2_ADPCTRL_VBUSVALID);
-> +               device = !!(val & USB2_ADPCTRL_IDDIG);
-> +               vbus_valid = !!(val & USB2_ADPCTRL_VBUSVALID);
+It does not read clearly to me. The 2nd sentence sounds like that's all 
+this is doing but we are not, we are reverting and doing the move.
+>> Furthermore, I am not sure why we want to revert cefc1caee9dd. We 
+>> purposely moved the regulator_enable/disable into 
+>> tegra186_xusb_padctl_id_override() because it is tied to setting the 
+>> USB2_VBUS_ID. So I would prefer to keep it this way and move the 
+>> Tegra210 implementation in the same direction (if possible).
+> 
+> I don't agree that this is the best solution.
+> 
+> We really benefit from a common implementation for the two platforms, not
+> only because of duplicate code but more importantly because without it
+> whenever a bug is found and fixed on either platform it most likely will
+> not be fixed on the other one. Case in point, cefc1caee9dd fixed a bug
+> on T186 but not the same bug on T210 (which then led to this series) since
+> the implementation was not shared among them. Were it the case that they
+> shared the implementation the fix would have come "free" for T210.
+> 
+> This will keep happening for as long as we have duplicate implementations,
+> which becomes more relevant since there is a severe lack of testing in
+> older Tegra platforms. I also thought about making the id_override()
+> implementation shared between T186 and T210 but that would be take more
+> changes since register definitions would need to be moved somewhere
+> else too.
 
-Perhaps combine variable declarations and assignments?
-The "!!" is not needed when assigning to a bool.
+I am all for a common implementation. I believe that in the 
+tegra186_xusb_padctl_id_override() function the only thing that is 
+different is the offset for the USB2_VBUS_ID register, which should be 
+easy to handle.
 
->
-> -               return vbus_valid ? device : !device;
-> +               return device == vbus_valid;
->         }
->
->         if (!ch->uses_otg_pins)
-
-Gr{oetje,eeting}s,
-
-                        Geert
+Jon
 
 -- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+nvpublic
 
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
 
 -- 
 linux-phy mailing list
