@@ -4,87 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9BAC1106B522
-	for <linux-phy@archiver.kernel.org>; Wed, 25 Mar 2026 12:30:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 32089109C033
+	for <linux-phy@archiver.kernel.org>; Wed, 25 Mar 2026 16:24:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zfaADA2lPXRmeXpDCZ3fZp1cLpiv87KXbCPpm2JvisM=; b=4zefSk0/93GStk
-	2QhAFBBEH6euO+xV6OVGe3sk0Vd10nRXu2ydOQOpWUS7teztVd09SOgfRaaLaGHF3mGa0gxid/BXq
-	9mGMZi8cUmkFmoRQZRHwfUSQj6NkqHzDYuioNMVi5xuSExSMqPBQLkxcIP18a4H1/la/gyHnSvsxc
-	plc8gyyOYDk26UK9BTjgxT2Q8LP6CSEXstyVhqg+O6lBVxpMHyXObWZkhADmn943zWbl1LqI1JWNW
-	/1stHeSzr8AcGQ8wr4B5pfVs256O3Ho56OIIGY93QgLixtbCIDODiX0ZSzxE264WbpB/kObdv8z4b
-	PQRNuwdFLJUTriNQ+llA==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
+	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=tDWmhyZv1NLnk0iq9zr5y5H6ahhhQ8kU7jQRYYhDt5A=; b=VkOzPZXosHQm+4
+	xY7kBcqh2/xgloanrpvhLZRFce6bxFFHFkABrUlpwnpaoRX62ys+xbczXKkFBtMWetrYNpIcJ/PYT
+	GDXX98ZI3rs/UpEa351Dp44Ju9Y6jiiEKzGIh+yG5awEdyVdokkZye7hTAlLLSxHB28Sw//cn/Ylc
+	a6OfPWRJW+senAWpN/ZOAWIyDpRxy4erwBwFIte+uJ0qHUqFRdMo5+hoRgE59AdGQ+SmXZLIUTlnB
+	nosPkDEn4liGYTgjpkfBlEtgjSP4Tf4iB2+pNQwKqHb+XnwUiIB22eJiu6uimT8VN37/RIqemLoGh
+	nHFEWO9fP1h/XsG2LfLQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w5NNR-00000003NER-0x8Q;
-	Wed, 25 Mar 2026 12:30:25 +0000
-Received: from mail-vs1-f52.google.com ([209.85.217.52])
+	id 1w5R1a-00000003sNP-2w7L;
+	Wed, 25 Mar 2026 16:24:06 +0000
+Received: from mail-pf1-x435.google.com ([2607:f8b0:4864:20::435])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w5NNO-00000003NE4-1r3k
+	id 1w5R1Y-00000003sMN-2Ucy
 	for linux-phy@lists.infradead.org;
-	Wed, 25 Mar 2026 12:30:24 +0000
-Received: by mail-vs1-f52.google.com with SMTP id ada2fe7eead31-60318fdfd25so662105137.3
-        for <linux-phy@lists.infradead.org>; Wed, 25 Mar 2026 05:30:22 -0700 (PDT)
+	Wed, 25 Mar 2026 16:24:05 +0000
+Received: by mail-pf1-x435.google.com with SMTP id d2e1a72fcca58-82418b0178cso20312b3a.1
+        for <linux-phy@lists.infradead.org>; Wed, 25 Mar 2026 09:24:03 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1774455843; x=1775060643; darn=lists.infradead.org;
+        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
+         :date:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=9qbvYscf4zAVK6F+BRBQCeZsFQW9PNBr6bbrHWczJms=;
+        b=bthUHdiDtIvHNX/M5+2XY33ErPaxPAbxSJ96sGLob6L7EK5cgGqaCHYph6JzmplkHA
+         4qEtMsawmlduB6z7kb6anZqDXc/LflfbKuGTChWHjMJgSOoov0NFRUqeIM1mFA5O1uln
+         UDsXdS+50KPEZEQW5HYN7ARVJQ1B8ynIv9xY49j0DNi1taRFbeml4E5gya2ayETT8DGn
+         UouyD9l8qb9CMMuj/RgtP462blSVLGa0r7IhVzhnE3Le3sNjbfcNPFmsw1oiRzec9/Ck
+         EeNC4staTt/zD8xWHRxuaX6RYnX4SPoPvTkjNCkWveFOB5mI/aUTpsoegTxpaqRp03fp
+         xNdQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1774441821; x=1775046621;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=1e100.net; s=20251104; t=1774455843; x=1775060643;
+        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
+         :date:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=MagvQBlfcuzFnX7huBL5/4v4ny2T/Dp0z42O+1ynv88=;
-        b=QSPrn0T0On+X6nbY2JztKllUc/AoddSGU/3+MFF47ATtOOehz4+y/jfe6Wfz3v+lgj
-         vy+xMt8myh2d5wG3h9RAZTnpGl+MebWa8EBYDove3REEdJQX2Xp/1ODkZQFG4jUYCsBV
-         Urd8piivlWX8Ds2uAGfs2yznhVL2MK2l+XQu8XnGbtu7k6WHv8eqMtPu5nK47xDVv0bM
-         d7e4JHdfmBmDRUNsjkcEpjP6WwV0zevNwhP6zv7GbqjS6ClJqd+K/ololknlniKc3yhz
-         59bGoupEdVJwMQWsd85YTWTcBcbRhAxXty/oK45xpTT4PUK/N/CODodqwqxPeFk2oaM7
-         lN3A==
-X-Forwarded-Encrypted: i=1; AJvYcCUE05B0YMI0W6yUzjQE4AU2xhVBww0HEkW6LrAh3uv1mYs4TU6XmvIaCn5nOejJFeSqzVUViQt3KHU=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxDMl81x8kfTZotyylOjbxSnbowwFfB1wxmzrA6ZbabBQGDhddB
-	IO5/tbvfgAa8coNpK7tjGJNN94NO0mkHr3g8FTaLQZY1kk0gue78tNm5jJPoXGmQUnU=
-X-Gm-Gg: ATEYQzykcC+ulIep+mhWSdMC3c5WqCfZsXUmnjB2cmjlucMncp/6DgTi2Xj5133gsuD
-	i/fb7274z66BalZQxg0ppRk8sVd18uxJnwos13mkGBsAKNenwXU+pPuRBzdOuB3MOc1Pmzboi5V
-	2wrnCgvJKmkDQNs2JwbvQe1LF/KmV9m7zLBpooT8CdJDOhVbI15qDhZB4OQBT8ZnfxygjaJIOYy
-	kPPFe9ap4bZcO9CHGHVcHPHez168helMEJHl/o1jOhC6ct8pqY6/ISj1aTJw2YHRzgeO6l57+nb
-	FZoaCCMnHBpZNk3fhFtFTF8l82QKArRUsbb4nBuYXgq3CJk5DHXFy50hcX2EftQ8mILy2u8OcGq
-	UoMRfgcSg0kUH9Hu1C1nGVqfmT2Gdm5d/MVqST9AbQDCDjJXvX5BtgHczWioSlMUSrCc/3UTkoC
-	Nfs1hW59aoTO6tPUdR8LomTyy6PU6LuF9B22zc7KVL+0VDe754JbZNgF5cID/TN5Px
-X-Received: by 2002:a05:6102:508b:b0:5ff:a4e0:193d with SMTP id ada2fe7eead31-60379001ddamr1568254137.2.1774441820808;
-        Wed, 25 Mar 2026 05:30:20 -0700 (PDT)
-Received: from mail-vk1-f178.google.com (mail-vk1-f178.google.com. [209.85.221.178])
-        by smtp.gmail.com with ESMTPSA id ada2fe7eead31-602af5ea90esm13804286137.0.2026.03.25.05.30.19
-        for <linux-phy@lists.infradead.org>
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 25 Mar 2026 05:30:19 -0700 (PDT)
-Received: by mail-vk1-f178.google.com with SMTP id 71dfb90a1353d-56cc6fe8815so2818244e0c.1
-        for <linux-phy@lists.infradead.org>; Wed, 25 Mar 2026 05:30:19 -0700 (PDT)
-X-Forwarded-Encrypted: i=1; AJvYcCVqcE5gpkOAejGCH/nApFnysIweGEwLYBbSZhrEQ+B58bHN2HzX1xgbIvnpFF6EVSoBN6O0t/tROvQ=@lists.infradead.org
-X-Received: by 2002:a05:6102:508b:b0:5ff:a4e0:193d with SMTP id
- ada2fe7eead31-60379001ddamr1568201137.2.1774441819157; Wed, 25 Mar 2026
- 05:30:19 -0700 (PDT)
+        bh=9qbvYscf4zAVK6F+BRBQCeZsFQW9PNBr6bbrHWczJms=;
+        b=ZabI+Ndg0fGRWqymKAsYjcXMRtoAc40Y0EokEW3vOF0uQXGDwAxF8ytx6TaB14xIi0
+         Bn5EMg1inZCeniL9L5g9bKA0mDJl0WDyAIFWKlbB2N0y9weFS9XzCNWOZlVFX9oDrwpa
+         zNrhFHnFdpfmfL8ADk5Ui1fLAX6q278Z3Qa5TNF2XY7gepiJj+kN5hqGVUyh6rpK8qNv
+         B7Koo2Gbxgeq8D35SCu0imhaCcVqzedLt/3zhB1dTXSKfhJrV3tkK65DTuLySdE/6+H6
+         cYHsocZ9v28S26gDvGP18udg/ag9l7fl8rqGvsdJBkMFDa+cz5KXLhA/h7kjsmN//qH0
+         7gew==
+X-Gm-Message-State: AOJu0YzW8Z0EDh15r5vLYswj3y7cT2fP6a/tTX4tDHL8eUMlv8JBslQr
+	JTrdbCJjKlHWHgBhf/yncxpIuUFWeQmk/Igc0hgb8HqfSemL/TfJ7aFt
+X-Gm-Gg: ATEYQzygBkAsmIGIbBmKIYjNiSG5N+Bg4Cw6/oCeMemM8JZUI6D3LRQSdNL1DiHoKMB
+	NKy0KfwBxFKAb4P0eP9qHoJIcaOc8TT3cHCp4rYNnd1bVv9n+/aV5LBmSfzDa50GKoJ3lCzxnlI
+	DpVLyhcYZguIjLk/fXwGXDk5lrJ5clwlVNg7B7Yypi+YCIFImrznddt6Me86RrymICve1xWGL4U
+	0w52yFm4KKeB3kd9VR6zoqXyChhgA1Nav+xE5vo6niHGQ+1a4dcOizm3Mm0mH/gS5U+4jgyWE86
+	XKV0RPT7KYhmvuxZaUhySvn8oDETnG5Jd6NTAPpUh2kw+GWXSAng9nCsLcfGloOF4BtGlhthPsL
+	VI+1GKjswK+xNgaISKuPpYF+gJnRE9TXaA7eEA65Fv+oZrH0qAfJj519XBzBr3gnjn20MC+j60A
+	lMMnmoc3pDF3iniVkV4UERFs6bubtc2W9vsjyF
+X-Received: by 2002:a05:6a00:414b:b0:822:6830:5900 with SMTP id d2e1a72fcca58-82c6de927e1mr3843698b3a.6.1774455843050;
+        Wed, 25 Mar 2026 09:24:03 -0700 (PDT)
+Received: from junjungu-PC.localdomain ([223.167.147.240])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-82c7d3fe576sm154141b3a.54.2026.03.25.09.24.00
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 25 Mar 2026 09:24:02 -0700 (PDT)
+From: Felix Gu <ustc.gu@gmail.com>
+Date: Thu, 26 Mar 2026 00:23:58 +0800
+Subject: [PATCH] phy: spacemit: Remove incorrect clk_disable() in
+ spacemit_usb2phy_init()
 MIME-Version: 1.0
-References: <20260325112039.464992-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
-In-Reply-To: <20260325112039.464992-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Wed, 25 Mar 2026 13:30:07 +0100
-X-Gmail-Original-Message-ID: <CAMuHMdUV_UDHW6-CvoWz2av_YMVzA65K9rKs-kUUfsJ2sJoPKQ@mail.gmail.com>
-X-Gm-Features: AQROBzAIcY15L6Naxddr5yUVr1T2XZAbydwo78ZmXjWvOA-eeKK6ZT76WMUzHz4
-Message-ID: <CAMuHMdUV_UDHW6-CvoWz2av_YMVzA65K9rKs-kUUfsJ2sJoPKQ@mail.gmail.com>
-Subject: Re: [PATCH v2] phy: renesas: rcar-gen3-usb2: Simplify ID/VBUS
- detection logic
-To: Prabhakar <prabhakar.csengg@gmail.com>
-Cc: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Magnus Damm <magnus.damm@gmail.com>, 
-	Pavel Machek <pavel@nabladev.com>, linux-renesas-soc@vger.kernel.org, 
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	Biju Das <biju.das.jz@bp.renesas.com>, 
-	Fabrizio Castro <fabrizio.castro.jz@renesas.com>, 
-	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+Message-Id: <20260326-k1-usb3-v1-1-0c2b6adf5185@gmail.com>
+X-B4-Tracking: v=1; b=H4sIAB0MxGkC/6tWKk4tykwtVrJSqFYqSi3LLM7MzwNyDHUUlJIzE
+ vPSU3UzU4B8JSMDIzMDYyMz3WxD3dLiJGPdNLNEU6M0E0NjM0MzJaDqgqLUtMwKsEnRsbW1AEl
+ nPspZAAAA
+X-Change-ID: 20260326-k1-usb3-f6a52f413616
+To: Vinod Koul <vkoul@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, Yixun Lan <dlan@kernel.org>, 
+ Ze Huang <huang.ze@linux.dev>
+Cc: linux-phy@lists.infradead.org, linux-riscv@lists.infradead.org, 
+ spacemit@lists.linux.dev, linux-kernel@vger.kernel.org, 
+ Felix Gu <ustc.gu@gmail.com>
+X-Mailer: b4 0.14.3
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1774455840; l=994;
+ i=ustc.gu@gmail.com; h=from:subject:message-id;
+ bh=HX2kS2CXlof3uu3i5x67Qry8KYMPozu4hVnaRzMVy1A=;
+ b=sSdhxxaVsPk/RdstKNgVGGb1XcCzLpe10MvOCK2PNP2EgqoJLouU9wzirIXc7obo9ACJIFgct
+ lGVdOCDrwH0Dluk863nVDQj75lYZPTyRtb/Zqo0J6KxN9VFH7fpY6Kq
+X-Developer-Key: i=ustc.gu@gmail.com; a=ed25519;
+ pk=fjUXwmjchVN7Ja6KGP55IXOzFeCl9edaHoQIEUA+/hw=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260325_053022_510689_C39F63F1 
-X-CRM114-Status: GOOD (  19.34  )
+X-CRM114-CacheID: sfid-20260325_092404_637214_C373BCD0 
+X-CRM114-Status: UNSURE (   8.48  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,41 +111,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, 25 Mar 2026 at 12:20, Prabhakar <prabhakar.csengg@gmail.com> wrote:
-> From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
->
-> Read USB2_ADPCTRL once in rcar_gen3_check_id() instead of issuing
-> multiple MMIO reads, and derive both IDDIG and VBUSVALID from the same
-> value.
->
-> Drop the redundant !! operator, as assigning a masked u32 value to a
-> bool already performs the required normalization. Simplify the logic by
-> comparing the ID and VBUS status directly, which is equivalent to the
-> previous conditional but easier to follow.
->
-> Reported-by: Pavel Machek <pavel@nabladev.com>
-> Closes: https://lore.kernel.org/all/acJVCOdlchLiSe5n@duo.ucw.cz/
-> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> ---
-> v1->v2:
-> - Rebased on top of latest next-20260324
-> - Combined variable declarations and assignments and dropped
->   redundant !! operator
-> - Updated commit message
-> - Corrected the link for closes tag
+When clk_enable() fails, the clock was never enabled. Calling
+clk_disable() in this error path is incorrect.
 
-Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
+Remove the spurious clk_disable() call from the error handling
+in spacemit_usb2phy_init().
 
-Gr{oetje,eeting}s,
+Fixes: fe4bc1a08638 ("phy: spacemit: support K1 USB2.0 PHY controller")
+Signed-off-by: Felix Gu <ustc.gu@gmail.com>
+---
+ drivers/phy/spacemit/phy-k1-usb2.c | 1 -
+ 1 file changed, 1 deletion(-)
 
-                        Geert
+diff --git a/drivers/phy/spacemit/phy-k1-usb2.c b/drivers/phy/spacemit/phy-k1-usb2.c
+index 9215d0b223b2..e8c1e26428a9 100644
+--- a/drivers/phy/spacemit/phy-k1-usb2.c
++++ b/drivers/phy/spacemit/phy-k1-usb2.c
+@@ -97,7 +97,6 @@ static int spacemit_usb2phy_init(struct phy *phy)
+ 	ret = clk_enable(sphy->clk);
+ 	if (ret) {
+ 		dev_err(&phy->dev, "failed to enable clock\n");
+-		clk_disable(sphy->clk);
+ 		return ret;
+ 	}
+ 
 
+---
+base-commit: 85964cdcad0fac9a0eb7b87a0f9d88cc074b854c
+change-id: 20260326-k1-usb3-f6a52f413616
+
+Best regards,
 -- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+Felix Gu <ustc.gu@gmail.com>
 
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
 
 -- 
 linux-phy mailing list
