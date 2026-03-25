@@ -4,56 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5B9B4FEA820
-	for <linux-phy@archiver.kernel.org>; Wed, 25 Mar 2026 07:23:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6DC54FEA83E
+	for <linux-phy@archiver.kernel.org>; Wed, 25 Mar 2026 11:20:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Sau+EG4MBtZVr88XN2+kGD9YuZKRPzpV8GwgNjOrJqE=; b=xkM7DxTk7wOUYv
-	rmNRCfnTQB/rH35hHwsM+oBa3KUf3hROIS4ojW8riMNOfcDV4QpBMO+0Hoqtnznc9aoBYhrwbh5GZ
-	X5BgFVhZreWZktQotfbto1thVYgJ3tw3QT3y8sDeHPLfdyNiyDUIz/PHf41H9OPH6ZNFhfHpWLAAi
-	QR11+i5EW6BMHFBbzu8Ekx+Sa/rpPcT/gJM+qI/knu4aqfHKzS6kwpn7DLeXFQo59qxIBC0mNWTjz
-	KxZ+pilE9ZwaOciLQJgRbPMghZPd8SP/3fWazipLPt0Sa7aLF1A4xuN+V6A2GlJcqRbk8PreJJ2Ji
-	6sjBwo20xNMp+2Yh/XXw==;
+	List-Owner; bh=25sbjO8FlR5fCBuT1hNhf+cpvumMEVbhcgNTHo0i+AU=; b=V2YYZV3CwevMfv
+	ckEFXkInQDIQiFB9onxjilb2uAHajfuth8tbawAElWYOwJ4FCVXKrE1jFuCfWvX2kSGW5yR3KKZfM
+	wh0E+PfM1WNBOBev3yOTMQcSD7xQFDKqvqQUV8flLAtYk+QdCbFHoHg5k0nqxyvZEviXEDSuI7dAv
+	XcsaE2RdIbjHL419KnBdV2AnUVAeO+oTZGhuIk3mCTwH8nC9p5KaBsW63D3Bik0lLZP1F4ByW5wfH
+	5LcbIFzzlxEbmMQgEj0S0WMp5M60DFJGvDwhx3aX6qo2V7pMYECv10i7OWlN0wJDg8DbxfLtu6QIP
+	aVQSnvuu9BXMS5NuocUw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w5IaI-00000002r4H-3Y5L;
-	Wed, 25 Mar 2026 07:23:22 +0000
-Received: from mail-m19731113.qiye.163.com ([220.197.31.113])
+	id 1w5MI7-00000003FB5-0q6V;
+	Wed, 25 Mar 2026 11:20:51 +0000
+Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w5IaE-00000002r3a-3OHi;
-	Wed, 25 Mar 2026 07:23:22 +0000
-Received: from localhost.localdomain (unknown [58.22.7.114])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 3839e259b;
-	Wed, 25 Mar 2026 15:23:12 +0800 (GMT+08:00)
-From: Shawn Lin <shawn.lin@rock-chips.com>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: linux-rockchip@lists.infradead.org,
-	linux-phy@lists.infradead.org,
-	Heiko Stuebner <heiko@sntech.de>,
+	id 1w5MI4-00000003FAN-20Ck
+	for linux-phy@lists.infradead.org;
+	Wed, 25 Mar 2026 11:20:49 +0000
+Received: by mail-wm1-x32c.google.com with SMTP id 5b1f17b1804b1-486fd5360d4so26519955e9.1
+        for <linux-phy@lists.infradead.org>; Wed, 25 Mar 2026 04:20:47 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1774437646; x=1775042446; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=0dwTG4J1M8IL8PPbtOF4W3xYh4+M5sfK/wvLd5SnCE8=;
+        b=shJGAMYgEknbNfmqrwnbkbMtV7Xq4tpS+0KFH4PNcz13mtW2mNS3UsFt3innwLi0/g
+         asEfalmMQDoBqfyEvQ5z6MVPXG4NKP7GcXRPBp8aQo1+jwcJ6fnmlZqW2lLqNeExYQP0
+         hJ/yggIamQkQg2mU6tNocobtdzChpfgckvraFOrQpOunFEI3KdPrDzKggbUM6VEDLmxg
+         JdVNOCMXOqMKexQOnLH2kfqRr8imUnf0QInX3Qz3xyu6IpTv3IqWT6TcBrLV3IPZjWUA
+         YtaqZDkhtWCCr2giCA+H7dUJHIel6Ip0Svkfce2ol3XP7mYMBko0dL81QN0OcbjIhRMK
+         bgEw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1774437646; x=1775042446;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=0dwTG4J1M8IL8PPbtOF4W3xYh4+M5sfK/wvLd5SnCE8=;
+        b=ZsJrULtiVY9O2z34uTYNOc0qiiG5ygYcTacqFxvrMxLEGGnStlQgZiTAeWyCH3tKie
+         BU2E+qeRFQEjtsu55CI5axGU3R3oLK+6K/qWy+OEOXIGJBei8hiE4cYDYODYp9FkuXyP
+         62lmEJojdmVeUcfb/T4ps1PwtjwPxUd2N3zuCC0YOd/o3tk1khQI0iiqBuUrKj4XOdMQ
+         4KDtFWxTibNSi/E+urQrlqGxyVUFfgJaQ1J1vTbXbT6aVk98GcN0ZiELDk8GF1hkskG/
+         9iYITH9pay4A1+2aAMJlqVIgGz3Em35A8dSLas8r0JCjVTfqPtVGS2a4QFoyhqHgF3GZ
+         E08A==
+X-Forwarded-Encrypted: i=1; AJvYcCVTZPvh6SY2dQO/WHyaNSeO41dPg6GdlOPuJEngRpbPSdw7LIaZARbpjSY1jj7OKqLm6XxVh1CbVgg=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz/zdLV8fK6k/ECxEQNCK9o3QL8IIoRaDvySpjW7lshtNGaYYEI
+	J6RHnL27sAyKKWpVBtsi0EMAw+c3q5W4+M5UVhtP1dzfWSybMTTi+5pV
+X-Gm-Gg: ATEYQzzB9uXwM0ViZ1h8W99WjS34C958RHwOh2aToqTxKu9ndzPd7a/7+q7sNLqbd7E
+	aZA8813bu7lvmkgA5burBeuDTNbKVaHqL4ZgaiM9kZCd+yLIfWD/VQNcEkpNZfbGTjM1C4UDQOs
+	dryIeRZkkU3xssM8PZVf8r2sJa3BlyXJabe3GumhUpQ+aVqQlhdTN7L1DWAKpA7vCNsdNqI0Co7
+	a7PRwV0JVO4uFW4emRviMc/kMRhfWuS9q9vr5Yetp4PWL58QAbnM8xAgFEO3hCAyzw6QpaxyQ2H
+	oYWMrZykW8KwTJNOvL7yGgP64vUcfGRwNOIdT/EJ2RjPWnwouc+aqtF76pTpF6BxfKv5/3EXXvS
+	LmFD7yKu6FPeqmFC7wDdh6qApaujsf7tEwV44yTKH6uehX9uifRFzwgsY/JSvRaCJCftHNURQ4m
+	OH0/0s7/rmtmxMVcdicO+ENsEF6qZHX48OVjBySUhXniMZDJGP3UJhlKqL2iLkaSOlhD8gjaRgc
+	xY/DyXiHmbG9vbhx8HoTvmJK0cSZfK0sPiS
+X-Received: by 2002:a05:600c:1e09:b0:487:5c0:671f with SMTP id 5b1f17b1804b1-48715fe711emr53696995e9.9.1774437646297;
+        Wed, 25 Mar 2026 04:20:46 -0700 (PDT)
+Received: from iku.Home ([2a06:5906:61b:2d00:3783:5d64:bc35:885])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-487165ecf00sm20077425e9.5.2026.03.25.04.20.45
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 25 Mar 2026 04:20:45 -0700 (PDT)
+From: Prabhakar <prabhakar.csengg@gmail.com>
+X-Google-Original-From: Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+To: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+	Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	Magnus Damm <magnus.damm@gmail.com>,
+	Pavel Machek <pavel@nabladev.com>
+Cc: linux-renesas-soc@vger.kernel.org,
+	linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
-	Shawn Lin <shawn.lin@rock-chips.com>
-Subject: [PATCH] phy: rockchip: naneng-combphy: Fix TX detect RX termination errata
-Date: Wed, 25 Mar 2026 15:23:03 +0800
-Message-Id: <1774423383-36599-1-git-send-email-shawn.lin@rock-chips.com>
-X-Mailer: git-send-email 2.7.4
-X-HM-Tid: 0a9d23e0409309cckunmc407d4e1aadef8
-X-HM-MType: 1
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZGUlDT1ZOS01OSUgaSU1JGB9WFRQJFh
-	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZT0tIVUpLSU9PT0
-	hVSktLVUpCS0tZBg++
-DKIM-Signature: a=rsa-sha256;
-	b=KFk7n0mGkODzoEAZFEsaZF8hbqLkb7qvrNLszhp5Whvez9C8qfqDyu8ZzvJhyBOZyROiafsQH6fJ7f9STlna5FoHfzmoSfuBdzc1iXbqh/Pn8Kcpf1dEiHxWOj3vjk+5yJ2RlSNRNZNE2Tw5mgdFH0npA3zMF606iagwPLM7Fw4=; s=default; c=relaxed/relaxed; d=rock-chips.com; v=1;
-	bh=srSIYmLdFnX0p7+ayVgQBmHUMD03vlZS2quJ2yF9fps=;
-	h=date:mime-version:subject:message-id:from;
+	Prabhakar <prabhakar.csengg@gmail.com>,
+	Biju Das <biju.das.jz@bp.renesas.com>,
+	Fabrizio Castro <fabrizio.castro.jz@renesas.com>,
+	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+Subject: [PATCH v2] phy: renesas: rcar-gen3-usb2: Simplify ID/VBUS detection logic
+Date: Wed, 25 Mar 2026 11:20:39 +0000
+Message-ID: <20260325112039.464992-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+X-Mailer: git-send-email 2.53.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260325_002320_363216_2DA08582 
-X-CRM114-Status: GOOD (  12.43  )
+X-CRM114-CacheID: sfid-20260325_042048_531976_8EFE7925 
+X-CRM114-Status: GOOD (  10.27  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -65,103 +103,60 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Some PHY revisions may fail to detect the peer RX's termination
-resistor (RTERM) under certain critical temperature conditions.
-This causes TX detection failures on PCIe links.
+From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 
-Add a workaround to force the RTERM detection ready signal for
-affected PHY revisions. This ensures reliable TX-to-RX termination
-detection across all operating temperature ranges.
+Read USB2_ADPCTRL once in rcar_gen3_check_id() instead of issuing
+multiple MMIO reads, and derive both IDDIG and VBUSVALID from the same
+value.
 
-The fix applies to RK3562, RK3568, RK3576 and RK3588 SoCs which share
-the same PHY IP with this hardware errata.
+Drop the redundant !! operator, as assigning a masked u32 value to a
+bool already performs the required normalization. Simplify the logic by
+comparing the ID and VBUS status directly, which is equivalent to the
+previous conditional but easier to follow.
 
-Signed-off-by: Shawn Lin <shawn.lin@rock-chips.com>
+Reported-by: Pavel Machek <pavel@nabladev.com>
+Closes: https://lore.kernel.org/all/acJVCOdlchLiSe5n@duo.ucw.cz/
+Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 ---
+v1->v2:
+- Rebased on top of latest next-20260324
+- Combined variable declarations and assignments and dropped
+  redundant !! operator
+- Updated commit message
+- Corrected the link for closes tag
+---
+ drivers/phy/renesas/phy-rcar-gen3-usb2.c | 10 ++++------
+ 1 file changed, 4 insertions(+), 6 deletions(-)
 
- drivers/phy/rockchip/phy-rockchip-naneng-combphy.c | 19 +++++++++++++++++++
- 1 file changed, 19 insertions(+)
-
-diff --git a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-index b60d6bf..76d4994 100644
---- a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-+++ b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-@@ -106,6 +106,9 @@
- #define RK3568_PHYREG18				0x44
- #define RK3568_PHYREG18_PLL_LOOP		0x32
+diff --git a/drivers/phy/renesas/phy-rcar-gen3-usb2.c b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
+index 79e820e2fe55..9a45d840efeb 100644
+--- a/drivers/phy/renesas/phy-rcar-gen3-usb2.c
++++ b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
+@@ -314,13 +314,11 @@ static void rcar_gen3_init_from_a_peri_to_a_host(struct rcar_gen3_chan *ch)
+ static bool rcar_gen3_check_id(struct rcar_gen3_chan *ch)
+ {
+ 	if (ch->phy_data->vblvl_ctrl) {
+-		bool vbus_valid;
+-		bool device;
++		u32 val = readl(ch->base + USB2_ADPCTRL);
++		bool vbus_valid = val & USB2_ADPCTRL_VBUSVALID;
++		bool device = val & USB2_ADPCTRL_IDDIG;
  
-+#define RK3568_PHYREG26				0x64
-+#define RK3568_PHYREG26_FORCE_RTERM_DET_RDY	BIT(5)
-+
- #define RK3568_PHYREG30				0x74
- #define RK3568_PHYREG30_GATE_TX_PCK_SEL         BIT(7)
- #define RK3568_PHYREG30_GATE_TX_PCK_DLY_PLL_OFF BIT(7)
-@@ -193,6 +196,7 @@ struct rockchip_combphy_cfg {
- 	unsigned int num_phys;
- 	unsigned int phy_ids[3];
- 	const struct rockchip_combphy_grfcfg *grfcfg;
-+	bool force_rxterm_det_rdy;
- 	int (*combphy_cfg)(struct rockchip_combphy_priv *priv);
- };
+-		device = !!(readl(ch->base + USB2_ADPCTRL) & USB2_ADPCTRL_IDDIG);
+-		vbus_valid = !!(readl(ch->base + USB2_ADPCTRL) & USB2_ADPCTRL_VBUSVALID);
+-
+-		return vbus_valid ? device : !device;
++		return device == vbus_valid;
+ 	}
  
-@@ -264,6 +268,17 @@ static int rockchip_combphy_init(struct phy *phy)
- 
- 	switch (priv->type) {
- 	case PHY_TYPE_PCIE:
-+		/*
-+		 * Hardware Errata: TX fails to detect peer RX termination.
-+		 * Some PHY revisions may fail to detect remote RX's RTERM
-+		 * (receiver termination resistor) under certain critical
-+		 * temperature conditions. Set force rterm detect ready to
-+		 * fix it.
-+		 */
-+		if (priv->cfg->force_rxterm_det_rdy)
-+			rockchip_combphy_updatel(priv, RK3568_PHYREG26_FORCE_RTERM_DET_RDY,
-+					RK3568_PHYREG26_FORCE_RTERM_DET_RDY, RK3568_PHYREG26);
-+		fallthrough;
- 	case PHY_TYPE_USB3:
- 	case PHY_TYPE_SATA:
- 	case PHY_TYPE_SGMII:
-@@ -745,6 +760,7 @@ static const struct rockchip_combphy_cfg rk3562_combphy_cfgs = {
- 	},
- 	.grfcfg		= &rk3562_combphy_grfcfgs,
- 	.combphy_cfg	= rk3562_combphy_cfg,
-+	.force_rxterm_det_rdy  = true,
- };
- 
- static int rk3568_combphy_cfg(struct rockchip_combphy_priv *priv)
-@@ -962,6 +978,7 @@ static const struct rockchip_combphy_cfg rk3568_combphy_cfgs = {
- 	},
- 	.grfcfg		= &rk3568_combphy_grfcfgs,
- 	.combphy_cfg	= rk3568_combphy_cfg,
-+	.force_rxterm_det_rdy  = true,
- };
- 
- static int rk3576_combphy_cfg(struct rockchip_combphy_priv *priv)
-@@ -1231,6 +1248,7 @@ static const struct rockchip_combphy_cfg rk3576_combphy_cfgs = {
- 	},
- 	.grfcfg		= &rk3576_combphy_grfcfgs,
- 	.combphy_cfg	= rk3576_combphy_cfg,
-+	.force_rxterm_det_rdy  = true,
- };
- 
- static int rk3588_combphy_cfg(struct rockchip_combphy_priv *priv)
-@@ -1418,6 +1436,7 @@ static const struct rockchip_combphy_cfg rk3588_combphy_cfgs = {
- 	},
- 	.grfcfg		= &rk3588_combphy_grfcfgs,
- 	.combphy_cfg	= rk3588_combphy_cfg,
-+	.force_rxterm_det_rdy  = true,
- };
- 
- static const struct of_device_id rockchip_combphy_of_match[] = {
+ 	if (!ch->uses_otg_pins)
 -- 
-2.7.4
+2.53.0
 
 
 -- 
