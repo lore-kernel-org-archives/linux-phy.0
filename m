@@ -4,152 +4,144 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9F49D10ED656
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Mar 2026 10:19:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 157A010ED659
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Mar 2026 11:29:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=np+YljIXjMH2nHnDCRowxjPDYMek82b1Wb/ipH7LFJI=; b=TFZf3AwIkEXgGt
-	RxrVYqP5y+2YF29cy4VYbq+BbOIcPMYC0nfHYjMCTJp0k0gjgblf090lUUH6wnHMf//iihfYkb9tj
-	zAZGufG6nPbOaPSnu8p3N2o5Rfs18niKlIF/KIqkmLnbGkx+t0s/7gbo6NwLKgJq7BtoYJTqzYmgn
-	+p/CqIGiM4ZHhwD2NBGkZh9bJ+N63T+NIG2XJbgSos3mXrTb4xwXVeDFzPwy+Lp+sDHzBP3Ue4kDn
-	roq0PhyDjMkhzTZREyoYbrT2cdl7i7C4FejTfyIW3+8gcwwrZp8nHHMm6Mn0xA7URsqQKkGfh4dfd
-	sodYTjCjQEHcu9uXsFdg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:
+	Content-Type:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=00ds4u99MN27Pq+CU68uynh6BWC3DKkmDRZJdf7oHdk=; b=ltlxn1c2eZSFHbQ61V/bjK8R1n
+	4PIcE1G6AtMBocQSs/o7mHJeniraTvLw1168jre6cTqPbgKOdaJ5m5Zk7iPxdlEKvB0CY9lfhmb5H
+	io1CIhTqVbZcMh5Xboy6N5WLCkCPBbbt/43oAw65tY/eP3noaTGvwmKFDQD68x+9MTP3TQjc05XU/
+	qy+KsU1qWIH//a1XlqdkNhYoU7CiwNDQDYMW2+BwRNNHajC+iQnXeAF3/Fn4/cU+w7lPs+dH2JgnK
+	yff+eUQ76DWTHf4zMw5QY0Dy39q8p567IBEAPCNHonXTDFDnTt8zdi6dRd9/qM0JnKjcLnlYhFO0L
+	Dw0GSxyg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w64HX-0000000796y-0urh;
-	Fri, 27 Mar 2026 10:19:11 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1w65NK-00000007DZ1-3Pzj;
+	Fri, 27 Mar 2026 11:29:14 +0000
+Received: from mail-northeuropeazon11010071.outbound.protection.outlook.com ([52.101.84.71] helo=DB3PR0202CU003.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w64HU-0000000796J-1e4J
-	for linux-phy@lists.infradead.org;
-	Fri, 27 Mar 2026 10:19:09 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 62R6vwqb298714
-	for <linux-phy@lists.infradead.org>; Fri, 27 Mar 2026 10:19:07 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	rQYr3AYKQwuRgXI9rkkXjVvvYljG41TZ7dhq0zRFpaQ=; b=F5jsLVqjeA8iQBfQ
-	ADJGtH6UsyVMYJ056GyPDw2sGvOdbEpFgSSk+wqbAsCPV4qBzpWz5lliwQPPl7Ht
-	crZU2SAi5T+uZbHyECEEuZ3algyGBN4GhoTEmMZvJV6OBHPwokpukVV+BNQi0D3R
-	c66l7H6JQGzysN/xJIx9I9PupopDFK3JCvW+blt2yjTaSdngOZeRnyNVFflLf5Zp
-	4XO+va5jR0FjOuRCjTr/U0eDeeYMpG4YjM+WDS893GygArnneiA2AGpjlX6WavXk
-	SdmDgAXmVfyJS738mbqIZDB2WDhVtfKOGE7OSF8UpXCvHD+hH4SFyNUN0k9fGtOz
-	BHmLig==
-Received: from mail-qt1-f197.google.com (mail-qt1-f197.google.com [209.85.160.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4d5bd8tn45-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Fri, 27 Mar 2026 10:19:06 +0000 (GMT)
-Received: by mail-qt1-f197.google.com with SMTP id d75a77b69052e-50947db2e97so5941731cf.3
-        for <linux-phy@lists.infradead.org>; Fri, 27 Mar 2026 03:19:06 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1774606746; x=1775211546; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=rQYr3AYKQwuRgXI9rkkXjVvvYljG41TZ7dhq0zRFpaQ=;
-        b=VB6/aeaZDC9rjBXNfa5wJWsdeQTROlSyUaYys8TtRipNoS1kFYoVcUL+/eSDVX7Lcu
-         iSB1/UMvMbyGJoeFAl9kFUFwA/5T0rYuTH0uwjdql+6pWpt3shz4E5rWFSAoXVtLMab/
-         2fA6G3tvOfvVpfUVV34cA3L8n24eBlu6H89/Yu0J7Sa944OJoRfLq8jwJYxeDLY7V4gF
-         Bc/b+6nPJYrbORFGH48awucHBDNdFVslleE0yraWtAW70wOoqhsgwt7sLNmiUDNjntdP
-         4L4E0WvfU73uW1vXmSLaJLl4rsrgDij4ewSZRQ8bz9nV0XfqEBrosNKYoa0Ww53mCO0R
-         guMQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1774606746; x=1775211546;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=rQYr3AYKQwuRgXI9rkkXjVvvYljG41TZ7dhq0zRFpaQ=;
-        b=EvUyqEcgYHZoGCVaoCTnDCT8IQXZKclhFzOYBDcirDfA9ZPlstSNeUvBJrUhNxIeUQ
-         WEbf9utuKjjfXxdrFO6RJSah8zpMKaeokg+kIzDAanW36+aLIrNU14f6jjaXwK16VHU6
-         Yxh6X1xbsAYPzmvdRYbTKO7qLuP5T1LrC7X3ERjgdPgesFg8WrC2EC5gDiVsu818gTev
-         sLQFVrV6IvzT3jG4TolVUptyXZD/8uKk0RfgY1XxIjHPrCi7P/USynx2EaBQuC9jCrh+
-         40L7YWuxnByhP4ex4HmW6aUGEmwWkrj4Tjgs1U2yB+7l57RdyB4LHMHhckJc0uFa850I
-         bjjA==
-X-Forwarded-Encrypted: i=1; AJvYcCX9krYRpwFgFeOFiojwd9VElCgIE+E72FxYGgp3F+zroC/wIZ/iySd1L9dQDIvfSJKaylCGWO9jxII=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx7M1n0oByxK7g4k7lhBmOYM+6WKIE9NM5Pwvhp3jUL+Wdj1m/P
-	JMWcNx6GW2WoI2Tck4Zk7nAmUHVCMGWJ4sC6OqFDLCj8IghveBq3PtKNmwht58mYhKvKEZPztZ8
-	+iF38onA2JQk0DFebbr2JTSN6GLXui7M1IRYqocu8X9TE13U5cVV4aBiiSBzPxfe0eRlt
-X-Gm-Gg: ATEYQzwBfo6B9k154SRdWX9zXeIRRLzQmX1bYfnRnCjkv99x4K+Yh9O/mKvT7OjOnTO
-	w/jPi+N6gb0vLwvYp2wYJ8cifvQ6XmluIULsR6yaHXOAAUs2PP+R1xhBA4j17tFArxP5yvEZQlS
-	yKWnnyN7Ih9qAImbQMsFbUmZIgWj4nYvzxECFvcbOVFVuTuQDz1KT6xn7YbhBMOIsLUMudbYBYH
-	dlgsD6/DKthie2pPOBvv/rzHNpkfKmR8jCawkMk2VdW+3K7Vz81W5+OvInUz5NNT41RKPy/eKQE
-	FsHWn8MNHLmtfniyXTS8i9hR+n66SblkNuvsE1g1D6bu7lcoHvAqCZCQX1H3jesMvS289jiS1M/
-	MCnkqJy0H89bwHFKPbkFTKsLXABIi0MOt5T/S6u6bhoDlvbNhEDliDBhUIPZdfOA/oPmWVxgtS/
-	UbCXE=
-X-Received: by 2002:ac8:5fd3:0:b0:509:1057:4a67 with SMTP id d75a77b69052e-50ba381931bmr18863001cf.2.1774606746243;
-        Fri, 27 Mar 2026 03:19:06 -0700 (PDT)
-X-Received: by 2002:ac8:5fd3:0:b0:509:1057:4a67 with SMTP id d75a77b69052e-50ba381931bmr18862791cf.2.1774606745759;
-        Fri, 27 Mar 2026 03:19:05 -0700 (PDT)
-Received: from [192.168.119.254] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-b9b2043add3sm234305966b.58.2026.03.27.03.19.02
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 27 Mar 2026 03:19:04 -0700 (PDT)
-Message-ID: <75f32587-b1e0-4a12-ba99-d2702a299142@oss.qualcomm.com>
-Date: Fri, 27 Mar 2026 11:19:01 +0100
+	id 1w65NF-00000007DX8-2cWL;
+	Fri, 27 Mar 2026 11:29:12 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=bi+RNwJJNC5DaXrN/DiRuzn66oz6WTXTnoQ7E+lh9ZYoX2uPo1X30A00tqc6HETW0GvezzbYAhiyRkpRhCAmW6pQwMSa8p9M/wQXB2fAHRP+9VO5dG8UbtHCPxahrmrhcU9sByc6KilDZN6MjMmIbSp+dOoC6IdYIUiSYPsw9cR6invRE/7g3OGQFfss3n6GlBUTTYL7xvv1cO8TQWQjzR8fcttvXeFZiJhfQLGIoE81f54TYAYdyD8el7Q5xqzrWZjDVpmTwYAe6FI9R/p0GD9vHqhVBla3qt1x+4mWwGM236cKGYHs4mQINDh3c7BQagGJkRVyn3S+ZpMCFoKDsw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=S1zVIvmAcRlEyydV7FuFfw5IxvYqfXEXsDEljHz56Fg=;
+ b=IzEDytsqXb4rL9VntYmZizDvdZlyl29W6A9PCfCNlZuV6aTR7FsBub8rbwfth4nLBrpEDNPriAuEVUKogk6aAcdrvxMqc3Msxa2iXyK6Ais1Lam1CJ+/eV17Y9ahD49QJE+FelmaXLvOg3tdpGAoACWKKkn84TSAfFhQP3+w0nPXakZMynHwylJdNSMeI69wdGoehl8lmBO9ogfh1RJgdNI9VhJK5eKk74/yc4xOdTXBG2yTqqP0E/FBed34c5jAtyNAGTYEZ/FnF+dysJlBEwgiOte8PzAyLqAw/fw8a4QOzNduvfSy+lQiOU5qgKyGCh26Ewmn/y/yEMrD0jPwUw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=S1zVIvmAcRlEyydV7FuFfw5IxvYqfXEXsDEljHz56Fg=;
+ b=DJ6eg8dWqU2iXeCQxhnZvFrWRhnsbUkPDRb0cZbPMPxdTlaUT3HYakrDZe4CDT/8bf+fWgVoLgMGO42MkK8bLzSNvtSxhthCT5gf+nlzGrXpF+58lnRUTjacJpEAx75d8mIIoT0nOQuO6uLWdGFsjIjIyZgl49t3mByGwPNvbqEN/gRRmIEgLXMJXKI2PRSqsXNTyyWqTrpX1pknrf4dyZJPJJdxXHx11xHOaKFJ3bB8gFgb655ZX9112Y+IPuV8IZRTokzJK+snlwB44Fgdd7x6dAuGyX1zd1eSE1fLaU8cbySh+6xVYE9VB7/E9yXP7VZS+X1ZqoTvZz7EAj9sqA==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AM9PR04MB8585.eurprd04.prod.outlook.com (2603:10a6:20b:438::13)
+ by DBBPR04MB7817.eurprd04.prod.outlook.com (2603:10a6:10:1ef::6) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9745.23; Fri, 27 Mar
+ 2026 11:29:04 +0000
+Received: from AM9PR04MB8585.eurprd04.prod.outlook.com
+ ([fe80::f010:fca8:7ef:62f4]) by AM9PR04MB8585.eurprd04.prod.outlook.com
+ ([fe80::f010:fca8:7ef:62f4%4]) with mapi id 15.20.9723.030; Fri, 27 Mar 2026
+ 11:29:03 +0000
+Date: Fri, 27 Mar 2026 13:28:58 +0200
+From: Vladimir Oltean <vladimir.oltean@nxp.com>
+To: Manivannan Sadhasivam <mani@kernel.org>
+Cc: linux-phy@lists.infradead.org, Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
+	linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
+	linux-can@vger.kernel.org, linux-gpio@vger.kernel.org,
+	linux-ide@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-media@vger.kernel.org, linux-pci@vger.kernel.org,
+	linux-renesas-soc@vger.kernel.org, linux-riscv@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-samsung-soc@vger.kernel.org, linux-scsi@vger.kernel.org,
+	linux-sunxi@lists.linux.dev, linux-tegra@vger.kernel.org,
+	linux-usb@vger.kernel.org, netdev@vger.kernel.org,
+	spacemit@lists.linux.dev, UNGLinuxDriver@microchip.com,
+	"James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
+	"Martin K. Petersen" <martin.petersen@oracle.com>,
+	Nitin Rawat <quic_nitirawa@quicinc.com>
+Subject: Re: [PATCH v5 phy-next 10/27] scsi: ufs: qcom: keep parallel track
+ of PHY power state
+Message-ID: <20260327112858.r5lpqygtvsane2vf@skbuf>
+References: <20260319223241.1351137-1-vladimir.oltean@nxp.com>
+ <20260319223241.1351137-11-vladimir.oltean@nxp.com>
+ <ezrcjjwtg5n76w4m65l27szu5mywx66ti3xuprkfcp3x6quvbf@2rew4zrnnbt2>
+ <20260325114309.3k7xkfrffpxp5xq4@skbuf>
+ <vu3cxpynr5mu2fzkrtmjcwijc5jz323wlnbc3r7lp2wxqmhydx@z5xhgf4myw2d>
+ <20260325115731.genmq2yew2p4dvbs@skbuf>
+ <20260326080444.gbesciaa5zwvcgoy@skbuf>
+ <gq4sswslkjaoe5hhxe2mz6z57uiumotqknkryadvfsstj4srx4@qgenqekgrqv4>
+Content-Type: multipart/mixed; boundary="5nqk7qqoimem4szp"
+Content-Disposition: inline
+In-Reply-To: <gq4sswslkjaoe5hhxe2mz6z57uiumotqknkryadvfsstj4srx4@qgenqekgrqv4>
+X-ClientProxiedBy: WA2P291CA0010.POLP291.PROD.OUTLOOK.COM
+ (2603:10a6:1d0:1e::16) To AM9PR04MB8585.eurprd04.prod.outlook.com
+ (2603:10a6:20b:438::13)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 2/2] phy: qcom-mipi-csi2: Add a CSI2 MIPI DPHY driver
-To: Neil Armstrong <neil.armstrong@linaro.org>,
-        Bryan O'Donoghue <bod@kernel.org>,
-        Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
-        Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley
- <conor+dt@kernel.org>, linux-arm-msm@vger.kernel.org,
-        linux-phy@lists.infradead.org, linux-media@vger.kernel.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20260315-x1e-csi2-phy-v4-0-90c09203888d@linaro.org>
- <20260315-x1e-csi2-phy-v4-2-90c09203888d@linaro.org>
- <3f11de22-b729-4d06-b6c8-18e649e1979c@linaro.org>
- <80ddc2b4-d6f8-4e8d-a45e-69c05d100aa2@linaro.org>
- <16b10f17-ecd3-4cdd-ac3f-f64127d60ace@linaro.org>
- <ulenfus552ggobis4gmi7eh27tikdaxbgm2oj63b5l2vemlfxc@ib5f2xaqurj6>
- <26XTdUyQTB41Oc4D5HnMtSm_QpZRjlkljQRJVw-u1Zp3Ltn9s4LVU-LQkP6drdl3Z3GGssLCCbsVYPFEqssHcQ==@protonmail.internalid>
- <65e06b2e-eeb9-45af-97ac-4ae60f652361@linaro.org>
- <9578400d-30ac-4d8c-9295-ee4ec8af3b2c@kernel.org>
- <d6616fc0-75fb-47e2-96cd-ae81fa1a8e82@linaro.org>
- <f3c62284-ac78-42c6-a4f0-cd984b7124cd@linaro.org>
- <7eda931a-f30e-4e01-a130-996ec7f450d1@linaro.org>
- <a42f837c-4b90-4e0f-a98f-793fbd20a140@kernel.org>
- <117d9294-87ce-4060-9c8b-71190b649e64@linaro.org>
-Content-Language: en-US
-From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <117d9294-87ce-4060-9c8b-71190b649e64@linaro.org>
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzI3MDA3NSBTYWx0ZWRfXzTjOGTeSudfQ
- 4QRIgg7+4X2yY1JNZnFv8Xc2SY2Us9fPJRkogWV4VKBVaR8/67vOX0Nb14pDbxPT1/cHRlYUjFt
- 0uopNES8QBdxEnExBnIby/uT+TqueX6s/trV/m7GbCNWAT0O6MogpBOD1ZPql/8lhug5y5vvG0H
- CyrH7kz7/j1lLY87ZNUSG6bCbTd7k4jheq8P4uY8U0AR+iA0qibu7Ledu4+Inl+WRslFk9jes0v
- MHL6FEkcxCZmL93W4V8KwY7JVAfHgzco5MkpvwIYGxT3q1j5g7Q0fYzRRFkuMs88+91cz2IAO4g
- Qy7to75ORCdPCoSYn4tD9ov0Y0safIlXfPZYvaA1BGKLoXfdEbvtrcsgfTHmV1uMydOFNkQ5q4w
- qLH2F7njwfgaAvaNDgPiqc01PXqd/0Ye33VsA+EsfWIIWbqEv2H2HgNHBxhRNuPC/WOFDfsEJzO
- tVQD6F6pQnlXRTbPIag==
-X-Proofpoint-ORIG-GUID: Eg6zVggAXvL67XBBd3uiFnf8J3GGfLo7
-X-Authority-Analysis: v=2.4 cv=BZrVE7t2 c=1 sm=1 tr=0 ts=69c6599b cx=c_pps
- a=EVbN6Ke/fEF3bsl7X48z0g==:117 a=FpWmc02/iXfjRdCD7H54yg==:17
- a=IkcTkHD0fZMA:10 a=Yq5XynenixoA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=ZpdpYltYx_vBUK5n70dp:22
- a=tOyMFtvu8Owbn7gLMVQA:9 a=QEXdDO2ut3YA:10 a=a_PwQJl-kcHnX1M80qC6:22
-X-Proofpoint-GUID: Eg6zVggAXvL67XBBd3uiFnf8J3GGfLo7
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
- definitions=2026-03-26_04,2026-03-26_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- suspectscore=0 lowpriorityscore=0 adultscore=0 priorityscore=1501 bulkscore=0
- phishscore=0 clxscore=1015 impostorscore=0 spamscore=0 malwarescore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2603050001 definitions=main-2603270075
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM9PR04MB8585:EE_|DBBPR04MB7817:EE_
+X-MS-Office365-Filtering-Correlation-Id: fc1dc106-c1aa-47b9-7d5a-08de8bf40c64
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|366016|6049299003|376014|7416014|10070799003|19092799006|18002099003|56012099003|22082099003|4053099003;
+X-Microsoft-Antispam-Message-Info: wO7exTkz0bVlqUvNuNmHpJy7npncU/7L/KRFfR8SmzjFDeWcCnNIR802dKo71Gdzzx3cmNg3G3MwtxUS6e/0QZBfgVSax0b6CTZacQ8L96JM1FVcJpWQjBZDSN0dHPiKOW+XdscpBe4gXBpJoOVtryH640LzTRRD3OPYZdGk4gi5kfbcpD8NDVhxifvS/V5QlhZgNAeaMLt9HWGAVwScPDrwgcOMEBnkL9mSwJIqzEuMrlMlgJ04DEUCfYwn1SZUtO4XPuzyrAFcctSU2PYsI2uWR8VRKxDtKuqkjyqaqja2Ez3JiJS04EBl8SVmUt7b2vfTP911fzIzw7vpMMFWnObsZjrevxxVWS8SaY+IT0o7IhG4KAiECCQ7c1XxVSh2V3VkzEMPLHG05sf2O8oOhp6WUP/rRFTk6InswrswlSvVmX/7K2gupR+4kcdvffwYnZlf8LaxDNgUsThmzkVXCYx9y5qfew8hAMMq+P6DrEUBP3Ulw83+EKbtJFNrR9zaQYcH4qHoTEBOU2fq0F1ZSB+XaHOyJNyEyEdwtXtJkS0BQsHVZrwS48679qh0AKgeQnXJznS+1/8Loemw8qRlEDRJdlHehhxMvQ3JyEQRcJArVM3aRIlFcP01QZGD8CYu9ooqjybTFOiURmlZ035TJfU4r4mJRCMkgMuNIKVzTTUWAgwGHNP74ILL1fJoRaFmI6ymnSnPSo71ykacYYgrnBAfRviH89WRgmkmK1Cg0HM=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM9PR04MB8585.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(6049299003)(376014)(7416014)(10070799003)(19092799006)(18002099003)(56012099003)(22082099003)(4053099003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 2
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?yoRvvaCKMRsezlqrOkzCOMGXqO9duFmQXCFD1Na33vm1wSMr4NhOtpqMuhaS?=
+ =?us-ascii?Q?pTHquA5L7BI9IbTcqi+sMkIJjROKVj6oEvfjPodcyRlHxKKRdmjr7ut1H3XX?=
+ =?us-ascii?Q?hoUJwiXz5oDfeSBUz3YVskdSUxG3eU2eJOi4Wg4W+O/O5LOYNW1twt5ESjiP?=
+ =?us-ascii?Q?YMzOYocu0T3Mqdcq6Ze59j/1JFQy6PUVVKud2ujPkMlx4X69WwRIuBBMCi0M?=
+ =?us-ascii?Q?NYQMIko8zYyzHFNinjLPNMYY5g2rdWWwgX4WyFGhoKbyal5B43chHY0poz1V?=
+ =?us-ascii?Q?Ea86Jq7KPlKP3bk98wua+AB50keXNKUBgq4NPpHFYl6yYFCryfuoz9fxxD+I?=
+ =?us-ascii?Q?q3kcQAXo5Ub/B1rP8cgxXpA6N8iIBo9dOv4znwn1zLsZ82twK9qdBVuI/Xqn?=
+ =?us-ascii?Q?h60J82pKIUeAO5ZjJrfEA4T3TOwTBYqSnDaKKTXn5xRFMGOzzJIV8W8mQ9H4?=
+ =?us-ascii?Q?O39eMvcPQEdLY6v2cJn+zCxcWq+H3L+mJfEGjD2gOqHWxLLCzL1mzeqkyY8f?=
+ =?us-ascii?Q?4+dSTAlwG8Sd5BTajNzLnEM1GI6xh/INtIn8ciMkK/DsSEUNjSUN2dH7Idjb?=
+ =?us-ascii?Q?lXDg9gBpanSRMiyBhCZiaElDMpAniEV7Z25yv2VpHQnV0fJqtKfC2XBoj1/3?=
+ =?us-ascii?Q?0fXfBbXCc3G7FkL8tyb0p2iclnRWzbO435qO7uunQlaM9IqmmrwcdtgXp2+X?=
+ =?us-ascii?Q?ufvoMXHywiVoBwUWHNbzn2x58lz0W1SU8QpkBJlBQKBu2rezjxhHR/GX8dYB?=
+ =?us-ascii?Q?wGWdvg0GDAffe2auxLFID8iyhlVGRbHilHjlFaaaMvH4k8APhj3pi5QE3ZCW?=
+ =?us-ascii?Q?q9Zy5VFWOlI/3ekKOLARhTWh4krcKlh/SQrnPJ5wYMpzs96cD5tobo/+VXWD?=
+ =?us-ascii?Q?qVmvUIRRR/a3cMYUgJLKzWlaTXKqVEHt3kGtT8jX+41GNXXS8iikD4Y9ixTr?=
+ =?us-ascii?Q?xOdaXUBMMAbQ2hyGFj3AF5WJweIr3qIJOxraEEO1GXhfsWkKAe5wQZ649MHf?=
+ =?us-ascii?Q?8t02pUAjj/NnzMeRsmGWDFhbzmP3Oydq/XneNWwyyzktCIpJyB7JKVZhPYxQ?=
+ =?us-ascii?Q?Y1BRNEU3linGq1P9BmejJ/wxLKG0b8qcz/616BvJVin49ymcEkj+9lTWYigx?=
+ =?us-ascii?Q?Cp81n2KJUtSzfYf98obcH0Rs3P6usH3lQ+wk1LE6oRVmIdDf5sm1iA5X8hII?=
+ =?us-ascii?Q?pM/dWDpimDUNHoR8dheGyeF974JBL+nsaCb4kwBbCfuAOmYCxOo27OmTGyS0?=
+ =?us-ascii?Q?NU9x08zjXQxL2OfM3mnQw3NWBdT6acfZ74zcvBIOjGbLNFxViEl5Zh7/SUPh?=
+ =?us-ascii?Q?SYgJ4XcrS5bSs/wS9a16QkHmXyxk5tC7I+AulIcdS+yRb84oTj4qGB++DbC5?=
+ =?us-ascii?Q?+srvK+xIGevHtsHVJ+2sx7FpRSuNb/9L/zQCLoPY2wQsgYbSZEisDXF1PSxj?=
+ =?us-ascii?Q?gp0QHKqO59WoTH2Zw+rzxAhA5KkfPWeKHevJRIDGSdgqbEGNvkaofcWdLkvo?=
+ =?us-ascii?Q?+YvC8SndkZAYXmQTNm1VqF+NzjMMhlkhb9o6AtvYUj0sBEQEXoa/EAh095n9?=
+ =?us-ascii?Q?s93hRNK+v3TGbymOGQ9Xuoq4h9p7ljqB65cnwNtn/HMJhMgZV9ie6PYY1ai1?=
+ =?us-ascii?Q?F5g3f+iQhbPUrixF7jzKdI2fc6jmvRNWr02s62+7uwy082zKk1hcRJ88Qnqw?=
+ =?us-ascii?Q?QeEtAC4kg95zLbmFz4zydLIvEA76IJpyKXvsHSUYgAhBAy/v1wQ4XKQ6M1lq?=
+ =?us-ascii?Q?GlrFDj9nrOz+m6dc64m40PlgFW0oHtLwO4c3UcFGAUK+xziAOem8N95JDR8s?=
+X-MS-Exchange-AntiSpam-MessageData-1: pI7j9jq+ytydeS6doXzniOLt7qDpCoouen4=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: fc1dc106-c1aa-47b9-7d5a-08de8bf40c64
+X-MS-Exchange-CrossTenant-AuthSource: AM9PR04MB8585.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 Mar 2026 11:29:03.1462
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: yk4qGyQhUqcxqxg18o2Ny9wTgOBR7nJTm7QqFObWEByjDith/2+Nnt+0shNPDCfiiQtcSXByx8cZbqVFlH4J5Q==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DBBPR04MB7817
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260327_031908_581324_913B8185 
-X-CRM114-Status: GOOD (  26.00  )
+X-CRM114-CacheID: sfid-20260327_042911_383569_7323273B 
+X-CRM114-Status: GOOD (  31.05  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -161,67 +153,313 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 3/19/26 6:39 PM, Neil Armstrong wrote:
-> On 3/19/26 17:56, Bryan O'Donoghue wrote:
->> On 19/03/2026 16:08, Neil Armstrong wrote:
->>> On 3/19/26 16:18, Bryan O'Donoghue wrote:
->>>> On 19/03/2026 14:56, Vladimir Zapolskiy wrote:
->>>>>> There's no reason to remove that from CAMSS - it would be an ABI break
->>>>>> in user-space anyway.
->>>>>
->>>>> If technically CAMSS CSIPHY could be excluded from the list of CAMSS media
->>>>> subdevices, then for the sake of simplification it should be done for all
->>>>> supported platforms in advance, such a change will be independent from this
->>>>> particular phy series, and vice versa, this CAMSS only driver change will
->>>>> prepare a ground for media-less CAMSS CSIPHY device drivers, hence it shall
->>>>> precede this particular CAMSS CSIPHY series.
->>>>>
->>>>> For backward compatibility with userspace a noop stub will be good enough,
->>>>> it's not an issue at all.
->>>>
->>>> The standalone PHY driver doesn't require removing the CSIPHY media
->>>> entity from CAMSS. They serve different purposes and coexist - its important to have a NOP from user-space perspective for legacy and indeed for new implementations.
->>>>
->>>> How the PHY gets represented in the kernel is of zero interest to user-sapce.
->>>>
->>>> That said, stubbing out the media entity is independent work that can happen in any order and IMO is a separate debate. Whether or not CSIPHY init sequences live inside of a monolithic CAMSS driver or live inside off a discrete csiphy driver is not related to the media graph.
->>>>
->>>> Happy to have that debate - and if indicated, carefully apply patches separately.
->>>
->>> So what does this actually solves ?
->>>
->>> Neil
->> Per-PHY voltage rails, per-PHY power domains and per-PHY OPP scaling.
->>
->> Using the PHY API instead of rolling our own, as well as separate nodes in the DT.
->>
->> We've been getting away with power-domains, opp scaling etc by sheer luck. The feedback from the list alone now addressed in this driver makes the conversion worthwhile.
-> 
-> The PHY API doesn't solve that, having proper nodes solves that, you could add a separate csiphy node, add a port/endpoint between camss and the csiphy and attach a camss aux driver to the node, and it would have the same effect with little code change.
-> And this could be done for all the CAMSS hardware elements incrementally, and if you wish the move the electrical phy part under the phy API then you just spin a PHY aux driver controlled by the csiphy media element.
-> 
-> I understand you find it simpler to use the phys property in camss, but it has plenty of drawbacks like not be able to describe data link properties specific to the CSIPHY properties or easily describe new hardware layouts without having a fixed association table between phy-names and whatever CAMSS media elements interconnections.
-> 
-> My question would be that if we were to completely split out the CAMSS into several separate nodes linked with port/endpoint graph, to which hardware element the phys would be associated to ? is there a fixed connection between a CSID and a CSIPHY ? is seems the CSID gen2 & gen3 can actually connect to different CSIPHY meaning a CSIPHY is a not simple electrical PHY but can be dynamically connected to different consumers.
-> There's no way we can handle that with the PHY API.
+--5nqk7qqoimem4szp
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-Because almost all CAMSS components may be muxed around (at runtime), I
-believe the endgame is to have a central place storing references to all
-of them (which would end up as "the camss driver") and managing the
-actual connections (turning on the respective PHYs, programming routing registers
-etc.), based on incoming v4l2 requests
+On Fri, Mar 27, 2026 at 12:22:46PM +0530, Manivannan Sadhasivam wrote:
+> I tested the patch. But it fails ufs_qcom_power_up_sequence() if PHY was already
+> powered on:
+> 
+> [   31.513321] qcom-qmp-ufs-phy 1d87000.phy: phy initialization timed-out
+> [   31.513335] ufshcd-qcom 1d84000.ufshc: Failed to calibrate PHY: -110
+> [   31.565273] ufshcd-qcom 1d84000.ufshc: Enabling the controller failed
+> 
+> Funny thing is, it didn't affect the functionality since the UFS core retries
+> ufshcd_hba_enable() and in the error path of ufs_qcom_power_up_sequence(),
+> phy_power_off() gets called and that causes the next try to succeed. So it is
+> evident that, if PHY was already powered ON, it should be powered off before
+> ufs_qcom_phy_power_on(). And due to the UFS driver design,
+> ufs_qcom_power_up_sequence() can get called multiple times. So we cannot just
+> remove phy_power_off().
+> 
+> Below diff on top of your patch fixes the issue:
+> 
+> ```
+> diff --git a/drivers/ufs/host/ufs-qcom.c b/drivers/ufs/host/ufs-qcom.c
+> index ed067247d72a..2c9fe03f349e 100644
+> --- a/drivers/ufs/host/ufs-qcom.c
+> +++ b/drivers/ufs/host/ufs-qcom.c
+> @@ -567,6 +567,8 @@ static int ufs_qcom_power_up_sequence(struct ufs_hba *hba)
+>         if (ret)
+>                 return ret;
+>  
+> +       ufs_qcom_phy_power_off(host);
+> +
+>         ret = ufs_qcom_phy_set_gear(host, mode);
+>         if (ret) {
+>                 dev_err(hba->dev, "%s: phy_set_mode_ext() failed, ret = %d\n",
+> ```
+> 
+> - Mani
 
-For older targets without that configurability, the same logic could be used,
-except with predefined boundaries
+Understood. Thanks for testing.
 
-Konrad
+I'm still not satisfied with this level of complexity. If I get you
+right, ufs_qcom_phy_power_off() is still needed because phy_calibrate()
+expects a "fresh after power on" state, otherwise it fails? That would
+be the second reason, apart from the first one I already identified
+(undo a phy_power_on() done prior to phy_init()).
+
+If so, could you please test the 3 patches attached (no relationship
+with anything else we've exchanged thus far)?
+
+--5nqk7qqoimem4szp
+Content-Type: text/x-diff; charset=us-ascii
+Content-Disposition: attachment;
+	filename="0001-phy-qcom-qmp-ufs-support-dynamic-gear-changing.patch"
+
+From 2d42c2d40e6ddfd0c73fc39601f93f7b81a42401 Mon Sep 17 00:00:00 2001
+From: Vladimir Oltean <vladimir.oltean@nxp.com>
+Date: Fri, 27 Mar 2026 12:41:00 +0200
+Subject: [PATCH 1/3] phy: qcom-qmp-ufs: support dynamic gear changing
+
+Currently, phy_set_mode_ext() on the QMP UFS PHY expects the PHY to be
+powered down, and it makes no change to the hardware state, instead
+phy_power_on() followed by phy_calibrate() must be run afterwards.
+
+"Order of API calls" from Documentation/driver-api/phy/phy.rst has a
+roundabout and not really clear way of saying that both calling
+sequences should be supported. This was further discussed here,
+documentation is pending an update:
+https://lore.kernel.org/linux-phy/E1vo0mF-00000007kbg-1OeA@rmk-PC.armlinux.org.uk/
+
+By absorbing the phy_power_off() -> ... -> phy_power_on() ->
+phy_configure() surrounding sequence into phy_set_mode_ext(), consumer
+drivers can be greatly simplified, and we also have a proper
+self-standing phy_set_mode_ext() implementation which does not rely on
+other calls to do its job.
+
+Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
+---
+ drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+index df138a5442eb..e75b059bf246 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
+@@ -2004,15 +2004,24 @@ static int qmp_ufs_set_mode(struct phy *phy, enum phy_mode mode, int submode)
+ {
+ 	struct qmp_ufs *qmp = phy_get_drvdata(phy);
+ 	const struct qmp_phy_cfg *cfg = qmp->cfg;
++	bool powered_on = phy->power_count;
+ 
+ 	if (submode > cfg->max_supported_gear || submode == 0) {
+ 		dev_err(qmp->dev, "Invalid PHY submode %d\n", submode);
+ 		return -EINVAL;
+ 	}
+ 
++	if (powered_on)
++		qmp_ufs_power_off(phy);
++
+ 	qmp->mode = mode;
+ 	qmp->submode = submode;
+ 
++	if (powered_on) {
++		qmp_ufs_power_on(phy);
++		return qmp_ufs_phy_calibrate(phy);
++	}
++
+ 	return 0;
+ }
+ 
+-- 
+2.34.1
+
+
+--5nqk7qqoimem4szp
+Content-Type: text/x-diff; charset=us-ascii
+Content-Disposition: attachment;
+	filename="0002-scsi-ufs-qcom-call-phy_init-before-phy_power_on.patch"
+
+From 8d156781d38597865da37a86417f553143d74eaa Mon Sep 17 00:00:00 2001
+From: Vladimir Oltean <vladimir.oltean@nxp.com>
+Date: Fri, 27 Mar 2026 13:14:39 +0200
+Subject: [PATCH 2/3] scsi: ufs: qcom: call phy_init() before phy_power_on()
+
+The Qualcomm UFS host controller driver violates the Generic PHY API
+expectation, documented in section "Order of API calls" from
+Documentation/driver-api/phy/phy.rst, and then tries to hide it.
+
+The expectation is that calls must be made in the phy_init() ->
+phy_power_on() -> phy_power_off() -> phy_exit() sequence.
+
+What we actually have is:
+
+ufshcd_init()
+-> ufshcd_hba_init()
+   -> ufshcd_setup_clocks(hba, true)
+      -> ufshcd_vops_setup_clocks(hba, true, POST_CHANGE)
+         -> ufs_qcom_setup_clocks(hba, true, POST_CHANGE)
+            -> phy_power_on(phy)
+   -> ufshcd_variant_hba_init()
+      -> ufs_qcom_init()
+         -> ufs_qcom_setup_clocks(hba, true, POST_CHANGE)
+            -> phy_power_on(phy)
+-> ufshcd_hba_enable()
+   -> ufshcd_vops_hce_enable_notify()
+      -> ufs_qcom_hce_enable_notify()
+         -> ufs_qcom_power_up_sequence()
+            -> if (phy->power_count) phy_power_off(phy)
+            -> phy_init(phy)
+
+This "works" because the way that the "phy_power_on was called before
+phy_init\n" condition is detected in phy-core.c is if the power_count is
+positive at the phy_init() call time.
+
+By having that "if (phy->power_count) phy_power_off(phy)" logic, the
+ufs-qcom.c technically sidesteps the test, but actually violates the
+Generic PHY API even more (calls phy_power_on() *and* phy_power_off()
+before phy_init()).
+
+The reason why I stumbled upon this was that I was trying to remove
+dereferences of phy->power_count from drivers. This is a PHY-internal
+field, and using it from drivers is highly likely to be incorrect, as
+this case showcases rather well.
+
+As commit 77d2fa54a945 ("scsi: ufs: qcom : Refactor phy_power_on/off
+calls") shows, this driver tries to couple the PHY power state with the
+HBA clocks, for power saving reasons. I won't try to change that, I will
+just move the phy_init() call earlier, to ufs_qcom_init().
+
+After the phy_init() movement, ufs_qcom_power_up_sequence() should no
+longer need to do either phy_init() nor the conditional phy_power_off().
+However, phy_power_off() is still needed, for a separate reason which
+will be dealt with separately.
+
+Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
+---
+Cc: "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>
+Cc: Manivannan Sadhasivam <mani@kernel.org>
+Cc: "Martin K. Petersen" <martin.petersen@oracle.com>
+Cc: Nitin Rawat <quic_nitirawa@quicinc.com>
+
+v5->v6: rewrite after actually understanding the core issue
+v4->v5: patch is new
+---
+ drivers/ufs/host/ufs-qcom.c | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+diff --git a/drivers/ufs/host/ufs-qcom.c b/drivers/ufs/host/ufs-qcom.c
+index 375fd24ba458..ffa70c6c7143 100644
+--- a/drivers/ufs/host/ufs-qcom.c
++++ b/drivers/ufs/host/ufs-qcom.c
+@@ -513,13 +513,6 @@ static int ufs_qcom_power_up_sequence(struct ufs_hba *hba)
+ 
+ 
+ 	/* phy initialization - calibrate the phy */
+-	ret = phy_init(phy);
+-	if (ret) {
+-		dev_err(hba->dev, "%s: phy init failed, ret = %d\n",
+-			__func__, ret);
+-		return ret;
+-	}
+-
+ 	ret = phy_set_mode_ext(phy, mode, host->phy_gear);
+ 	if (ret)
+ 		goto out_disable_phy;
+@@ -1441,6 +1434,13 @@ static int ufs_qcom_init(struct ufs_hba *hba)
+ 	if (err)
+ 		goto out_variant_clear;
+ 
++	err = phy_init(host->generic_phy);
++	if (err) {
++		dev_err(hba->dev, "%s: phy_init failed, ret = %d\n",
++			__func__, err);
++		goto out_variant_clear;
++	}
++
+ 	ufs_qcom_setup_clocks(hba, true, POST_CHANGE);
+ 
+ 	ufs_qcom_get_default_testbus_cfg(host);
+-- 
+2.34.1
+
+
+--5nqk7qqoimem4szp
+Content-Type: text/x-diff; charset=us-ascii
+Content-Disposition: attachment;
+	filename="0003-scsi-ufs-qcom-make-use-of-QMP-PHY-dynamic-gear-switc.patch"
+
+From 88f4bdfee770cd433a940a14e318d8c8b5dfa516 Mon Sep 17 00:00:00 2001
+From: Vladimir Oltean <vladimir.oltean@nxp.com>
+Date: Fri, 27 Mar 2026 13:18:05 +0200
+Subject: [PATCH 3/3] scsi: ufs: qcom: make use of QMP PHY dynamic gear
+ switching ability
+
+The QMP UFS PHY can now tolerate having phy_set_mode_ext() being called
+while the PHY is powered up. We no longer need to power it down, back up
+and calibrate it.
+
+Simplify ufs_qcom_power_up_sequence() by relying on just phy_set_mode_ext()
+and let PHY power management be handled just by ufs_qcom_setup_clocks().
+
+Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
+---
+ drivers/ufs/host/ufs-qcom.c | 25 +------------------------
+ 1 file changed, 1 insertion(+), 24 deletions(-)
+
+diff --git a/drivers/ufs/host/ufs-qcom.c b/drivers/ufs/host/ufs-qcom.c
+index ffa70c6c7143..cf7b67f2021e 100644
+--- a/drivers/ufs/host/ufs-qcom.c
++++ b/drivers/ufs/host/ufs-qcom.c
+@@ -508,37 +508,14 @@ static int ufs_qcom_power_up_sequence(struct ufs_hba *hba)
+ 	if (ret)
+ 		return ret;
+ 
+-	if (phy->power_count)
+-		phy_power_off(phy);
+-
+-
+ 	/* phy initialization - calibrate the phy */
+ 	ret = phy_set_mode_ext(phy, mode, host->phy_gear);
+ 	if (ret)
+-		goto out_disable_phy;
+-
+-	/* power on phy - start serdes and phy's power and clocks */
+-	ret = phy_power_on(phy);
+-	if (ret) {
+-		dev_err(hba->dev, "%s: phy power on failed, ret = %d\n",
+-			__func__, ret);
+-		goto out_disable_phy;
+-	}
+-
+-	ret = phy_calibrate(phy);
+-	if (ret) {
+-		dev_err(hba->dev, "Failed to calibrate PHY: %d\n", ret);
+-		goto out_disable_phy;
+-	}
++		return ret;
+ 
+ 	ufs_qcom_select_unipro_mode(host);
+ 
+ 	return 0;
+-
+-out_disable_phy:
+-	phy_exit(phy);
+-
+-	return ret;
+ }
+ 
+ /*
+-- 
+2.34.1
+
+
+--5nqk7qqoimem4szp
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--5nqk7qqoimem4szp--
+
