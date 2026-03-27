@@ -4,144 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 157A010ED659
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Mar 2026 11:29:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ACFFF10ED679
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Mar 2026 14:06:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:
-	Content-Type:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=00ds4u99MN27Pq+CU68uynh6BWC3DKkmDRZJdf7oHdk=; b=ltlxn1c2eZSFHbQ61V/bjK8R1n
-	4PIcE1G6AtMBocQSs/o7mHJeniraTvLw1168jre6cTqPbgKOdaJ5m5Zk7iPxdlEKvB0CY9lfhmb5H
-	io1CIhTqVbZcMh5Xboy6N5WLCkCPBbbt/43oAw65tY/eP3noaTGvwmKFDQD68x+9MTP3TQjc05XU/
-	qy+KsU1qWIH//a1XlqdkNhYoU7CiwNDQDYMW2+BwRNNHajC+iQnXeAF3/Fn4/cU+w7lPs+dH2JgnK
-	yff+eUQ76DWTHf4zMw5QY0Dy39q8p567IBEAPCNHonXTDFDnTt8zdi6dRd9/qM0JnKjcLnlYhFO0L
-	Dw0GSxyg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=pQZNYQsrK6rYi2jMVL/Ab5f353OA/NBZ3iGHt8xz+eU=; b=iPEH4mYl6SR4aNNdEwTMQB/a2m
+	95SBl4HZMydNPJIS4KNtGl1G+S930ACcLifOto5wFr9tWe2bRQ2zBiUOE7f+eutfH64FLuFnmNWkx
+	09e6hc+QbmL5TfpQfY/vQQ9G1v5/cgJ1CcgIlwR4qPkUl8G+QvVZjzVPfLjpZPwnYBD2X2IyZjB3c
+	2aaGV+0AxAHjxGP7PP458crxccQ/I/OTzAId8u4yqtHjlloJEBlPrLRwz/J59M01zZoQxk47TDyfr
+	lawVwmOrXhmeLK+sAOtknFtss/IOwNW+e9+m9xTYPOXSa4XxaL/LKergzUTvVKR43D7CZgdU6mp4b
+	7eZDlJ/g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w65NK-00000007DZ1-3Pzj;
-	Fri, 27 Mar 2026 11:29:14 +0000
-Received: from mail-northeuropeazon11010071.outbound.protection.outlook.com ([52.101.84.71] helo=DB3PR0202CU003.outbound.protection.outlook.com)
+	id 1w67pY-00000007ZAo-1n3q;
+	Fri, 27 Mar 2026 14:06:32 +0000
+Received: from mail-wr1-x42c.google.com ([2a00:1450:4864:20::42c])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w65NF-00000007DX8-2cWL;
-	Fri, 27 Mar 2026 11:29:12 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=bi+RNwJJNC5DaXrN/DiRuzn66oz6WTXTnoQ7E+lh9ZYoX2uPo1X30A00tqc6HETW0GvezzbYAhiyRkpRhCAmW6pQwMSa8p9M/wQXB2fAHRP+9VO5dG8UbtHCPxahrmrhcU9sByc6KilDZN6MjMmIbSp+dOoC6IdYIUiSYPsw9cR6invRE/7g3OGQFfss3n6GlBUTTYL7xvv1cO8TQWQjzR8fcttvXeFZiJhfQLGIoE81f54TYAYdyD8el7Q5xqzrWZjDVpmTwYAe6FI9R/p0GD9vHqhVBla3qt1x+4mWwGM236cKGYHs4mQINDh3c7BQagGJkRVyn3S+ZpMCFoKDsw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=S1zVIvmAcRlEyydV7FuFfw5IxvYqfXEXsDEljHz56Fg=;
- b=IzEDytsqXb4rL9VntYmZizDvdZlyl29W6A9PCfCNlZuV6aTR7FsBub8rbwfth4nLBrpEDNPriAuEVUKogk6aAcdrvxMqc3Msxa2iXyK6Ais1Lam1CJ+/eV17Y9ahD49QJE+FelmaXLvOg3tdpGAoACWKKkn84TSAfFhQP3+w0nPXakZMynHwylJdNSMeI69wdGoehl8lmBO9ogfh1RJgdNI9VhJK5eKk74/yc4xOdTXBG2yTqqP0E/FBed34c5jAtyNAGTYEZ/FnF+dysJlBEwgiOte8PzAyLqAw/fw8a4QOzNduvfSy+lQiOU5qgKyGCh26Ewmn/y/yEMrD0jPwUw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=S1zVIvmAcRlEyydV7FuFfw5IxvYqfXEXsDEljHz56Fg=;
- b=DJ6eg8dWqU2iXeCQxhnZvFrWRhnsbUkPDRb0cZbPMPxdTlaUT3HYakrDZe4CDT/8bf+fWgVoLgMGO42MkK8bLzSNvtSxhthCT5gf+nlzGrXpF+58lnRUTjacJpEAx75d8mIIoT0nOQuO6uLWdGFsjIjIyZgl49t3mByGwPNvbqEN/gRRmIEgLXMJXKI2PRSqsXNTyyWqTrpX1pknrf4dyZJPJJdxXHx11xHOaKFJ3bB8gFgb655ZX9112Y+IPuV8IZRTokzJK+snlwB44Fgdd7x6dAuGyX1zd1eSE1fLaU8cbySh+6xVYE9VB7/E9yXP7VZS+X1ZqoTvZz7EAj9sqA==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from AM9PR04MB8585.eurprd04.prod.outlook.com (2603:10a6:20b:438::13)
- by DBBPR04MB7817.eurprd04.prod.outlook.com (2603:10a6:10:1ef::6) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9745.23; Fri, 27 Mar
- 2026 11:29:04 +0000
-Received: from AM9PR04MB8585.eurprd04.prod.outlook.com
- ([fe80::f010:fca8:7ef:62f4]) by AM9PR04MB8585.eurprd04.prod.outlook.com
- ([fe80::f010:fca8:7ef:62f4%4]) with mapi id 15.20.9723.030; Fri, 27 Mar 2026
- 11:29:03 +0000
-Date: Fri, 27 Mar 2026 13:28:58 +0200
-From: Vladimir Oltean <vladimir.oltean@nxp.com>
-To: Manivannan Sadhasivam <mani@kernel.org>
-Cc: linux-phy@lists.infradead.org, Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
-	linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
-	linux-can@vger.kernel.org, linux-gpio@vger.kernel.org,
-	linux-ide@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-media@vger.kernel.org, linux-pci@vger.kernel.org,
-	linux-renesas-soc@vger.kernel.org, linux-riscv@lists.infradead.org,
-	linux-rockchip@lists.infradead.org,
-	linux-samsung-soc@vger.kernel.org, linux-scsi@vger.kernel.org,
-	linux-sunxi@lists.linux.dev, linux-tegra@vger.kernel.org,
-	linux-usb@vger.kernel.org, netdev@vger.kernel.org,
-	spacemit@lists.linux.dev, UNGLinuxDriver@microchip.com,
-	"James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
-	"Martin K. Petersen" <martin.petersen@oracle.com>,
-	Nitin Rawat <quic_nitirawa@quicinc.com>
-Subject: Re: [PATCH v5 phy-next 10/27] scsi: ufs: qcom: keep parallel track
- of PHY power state
-Message-ID: <20260327112858.r5lpqygtvsane2vf@skbuf>
-References: <20260319223241.1351137-1-vladimir.oltean@nxp.com>
- <20260319223241.1351137-11-vladimir.oltean@nxp.com>
- <ezrcjjwtg5n76w4m65l27szu5mywx66ti3xuprkfcp3x6quvbf@2rew4zrnnbt2>
- <20260325114309.3k7xkfrffpxp5xq4@skbuf>
- <vu3cxpynr5mu2fzkrtmjcwijc5jz323wlnbc3r7lp2wxqmhydx@z5xhgf4myw2d>
- <20260325115731.genmq2yew2p4dvbs@skbuf>
- <20260326080444.gbesciaa5zwvcgoy@skbuf>
- <gq4sswslkjaoe5hhxe2mz6z57uiumotqknkryadvfsstj4srx4@qgenqekgrqv4>
-Content-Type: multipart/mixed; boundary="5nqk7qqoimem4szp"
-Content-Disposition: inline
-In-Reply-To: <gq4sswslkjaoe5hhxe2mz6z57uiumotqknkryadvfsstj4srx4@qgenqekgrqv4>
-X-ClientProxiedBy: WA2P291CA0010.POLP291.PROD.OUTLOOK.COM
- (2603:10a6:1d0:1e::16) To AM9PR04MB8585.eurprd04.prod.outlook.com
- (2603:10a6:20b:438::13)
+	id 1w67pW-00000007Z9u-2g6Z
+	for linux-phy@lists.infradead.org;
+	Fri, 27 Mar 2026 14:06:31 +0000
+Received: by mail-wr1-x42c.google.com with SMTP id ffacd0b85a97d-43b41b545d9so2227746f8f.2
+        for <linux-phy@lists.infradead.org>; Fri, 27 Mar 2026 07:06:29 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1774620388; x=1775225188; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=QSUpIlblw1Y8p0Flz+2ps8AGucj2y3pRw8IP0aJ+OJI=;
+        b=S6D4zwvThnSh0/tUJ/kyAmzceNf7WhpNEMQ05WoYKUcBJOehsVzzdyFngdE9q1uoEY
+         g46qZ1kVrCdYqiPg0oxGnzoCMISSsYKKq5N5eCl+ZgapgTlkacgqIi00XqCDOriFoBYX
+         AgGqG6GTG+Ua7N4tP3OftpEJKgsl6AeadQNAy3N1Vf0KCMUQ8WOPzQ5juC9YUdofzd+b
+         0LcARRMhX+ETn8Ap7B9AjwGun/qYK9Z5+H7avErOP9vriEn1LzaqJW22ezeqv3cRN5MN
+         evvYc3TZrlNg0W6GbEKDgAcC3aXLNH4frs3w0iOPaEpMbfoBzULFFPvJGt3DfFsRLWYm
+         CXew==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1774620388; x=1775225188;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=QSUpIlblw1Y8p0Flz+2ps8AGucj2y3pRw8IP0aJ+OJI=;
+        b=CxiT+k6IKaaLI5hQ6ZzL8IXwPIX1LaK2UUXQzRHn7tDhCmfJLyz2YLnVtQOOvQYlNw
+         NzkK6jVBR+1PymHzLeGHqAyE6vIojwhFRELzGVULIl8K0dhyLFFZ9qXj4JOc0B+Ii6gX
+         ECc7JbLE5qexHdKL7tY/V4sQPI9WB5z3Myln6hH1nGAGu+NXED91QnK2+49fZH2Ou9H3
+         Mj/YwMwzDYLOLRh6TAKXgQdD3sDzbRkmds5zFZoqYremVyGdTYqBgQ20SpLzeOBVlxuq
+         u3cD8z47zDJ3v48awIiulrjizOqDydnrsnNR0mogOPvqkSR/q8yUDrArnO24uEc0MVBa
+         M4pA==
+X-Forwarded-Encrypted: i=1; AJvYcCX9fUUuoewsVYP/amyWVIlDH5kqA3hoBpQMBTOGJpyPMkyn2+OGn1yEg8zdXDEzd4sLrh4gFEgqHUs=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxFBahTNy4TKuJWsNfYkYkuAjsLF7jkMp2nz9ONfeNVNUgVPmoq
+	b/ocQauMnBDD8lPqe1AOBFATXRWRB4FyOVg5sPccM7k7TsP3VwTmKkTR
+X-Gm-Gg: ATEYQzxUqKNtj/OFoqhLlCXSWaOc6g9EscckN07soJzYa6seN7uOlLpYI8c0GHRZliJ
+	/CSA9ojki32EQyRdxJuam6fV4VuoCDMvY1P8DGRwqs0IsVRbz2g2lW0I9hVxWGAoHmn7WAYHqqQ
+	/kjcgfxMJAGxRJThmjIoIyR8OHG/kea45YNCQVH0LnahiBvk8t+sMK+F0FPPGJ1FMn7W3e4U1Gp
+	AU5uBJWdvaBD6/hzYm5wQQXAh5drjQwOQqyHZ04M9wgWshcW72DzuBb/KZ7mrsx6ywa1sMJmHrY
+	qEjxV1u0O/UXGelPn+Bwd/JvQZ5OypKo5n0gmZhkOqZZyae/OPD8I8gLVX/8385ocQe8hrsGP4z
+	u2Oy+jTjxT5G4+7e5E3DvAjihuU0V3Qd7eM2rVQNj82Uht9kY1iy0ndFqhHHCHd6mnHZQRPsoAp
+	JX1vzM6/UybqwN18U8Y+pPJY4CzdymvLkg1xEEr1KfPj9VcPHDq6lBy/xDrGmvD/hZT70c8kVq4
+	jafKz70rq9lmQ==
+X-Received: by 2002:a05:6000:4212:b0:43b:95e9:413c with SMTP id ffacd0b85a97d-43b9ea6390fmr4110385f8f.44.1774620388098;
+        Fri, 27 Mar 2026 07:06:28 -0700 (PDT)
+Received: from orome (p200300e41f249a00f22f74fffe1f3a53.dip0.t-ipconnect.de. [2003:e4:1f24:9a00:f22f:74ff:fe1f:3a53])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-43b9192e305sm16052576f8f.8.2026.03.27.07.06.25
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 27 Mar 2026 07:06:26 -0700 (PDT)
+Date: Fri, 27 Mar 2026 15:06:23 +0100
+From: Thierry Reding <thierry.reding@gmail.com>
+To: Diogo Ivo <diogo.ivo@tecnico.ulisboa.pt>
+Cc: Thierry Reding <thierry.reding@kernel.org>, 
+	Mathias Nyman <mathias.nyman@intel.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+	Jonathan Hunter <jonathanh@nvidia.com>, JC Kuo <jckuo@nvidia.com>, Vinod Koul <vkoul@kernel.org>, 
+	Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, linux-usb@vger.kernel.org, linux-tegra@vger.kernel.org, 
+	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org
+Subject: Re: [PATCH v2 2/6] usb: xhci: tegra: Remove redundant mutex when
+ setting phy mode
+Message-ID: <acaNBQkGgQ_N6Krh@orome>
+References: <20260127-diogo-tegra_phy-v2-0-787b9eed3ed5@tecnico.ulisboa.pt>
+ <20260127-diogo-tegra_phy-v2-2-787b9eed3ed5@tecnico.ulisboa.pt>
+ <acJ50sQraVmy4zXs@orome>
+ <00aeda7a-e5e5-4779-b212-6e56c2c5ec31@tecnico.ulisboa.pt>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AM9PR04MB8585:EE_|DBBPR04MB7817:EE_
-X-MS-Office365-Filtering-Correlation-Id: fc1dc106-c1aa-47b9-7d5a-08de8bf40c64
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|366016|6049299003|376014|7416014|10070799003|19092799006|18002099003|56012099003|22082099003|4053099003;
-X-Microsoft-Antispam-Message-Info: wO7exTkz0bVlqUvNuNmHpJy7npncU/7L/KRFfR8SmzjFDeWcCnNIR802dKo71Gdzzx3cmNg3G3MwtxUS6e/0QZBfgVSax0b6CTZacQ8L96JM1FVcJpWQjBZDSN0dHPiKOW+XdscpBe4gXBpJoOVtryH640LzTRRD3OPYZdGk4gi5kfbcpD8NDVhxifvS/V5QlhZgNAeaMLt9HWGAVwScPDrwgcOMEBnkL9mSwJIqzEuMrlMlgJ04DEUCfYwn1SZUtO4XPuzyrAFcctSU2PYsI2uWR8VRKxDtKuqkjyqaqja2Ez3JiJS04EBl8SVmUt7b2vfTP911fzIzw7vpMMFWnObsZjrevxxVWS8SaY+IT0o7IhG4KAiECCQ7c1XxVSh2V3VkzEMPLHG05sf2O8oOhp6WUP/rRFTk6InswrswlSvVmX/7K2gupR+4kcdvffwYnZlf8LaxDNgUsThmzkVXCYx9y5qfew8hAMMq+P6DrEUBP3Ulw83+EKbtJFNrR9zaQYcH4qHoTEBOU2fq0F1ZSB+XaHOyJNyEyEdwtXtJkS0BQsHVZrwS48679qh0AKgeQnXJznS+1/8Loemw8qRlEDRJdlHehhxMvQ3JyEQRcJArVM3aRIlFcP01QZGD8CYu9ooqjybTFOiURmlZ035TJfU4r4mJRCMkgMuNIKVzTTUWAgwGHNP74ILL1fJoRaFmI6ymnSnPSo71ykacYYgrnBAfRviH89WRgmkmK1Cg0HM=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM9PR04MB8585.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(6049299003)(376014)(7416014)(10070799003)(19092799006)(18002099003)(56012099003)(22082099003)(4053099003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 2
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?yoRvvaCKMRsezlqrOkzCOMGXqO9duFmQXCFD1Na33vm1wSMr4NhOtpqMuhaS?=
- =?us-ascii?Q?pTHquA5L7BI9IbTcqi+sMkIJjROKVj6oEvfjPodcyRlHxKKRdmjr7ut1H3XX?=
- =?us-ascii?Q?hoUJwiXz5oDfeSBUz3YVskdSUxG3eU2eJOi4Wg4W+O/O5LOYNW1twt5ESjiP?=
- =?us-ascii?Q?YMzOYocu0T3Mqdcq6Ze59j/1JFQy6PUVVKud2ujPkMlx4X69WwRIuBBMCi0M?=
- =?us-ascii?Q?NYQMIko8zYyzHFNinjLPNMYY5g2rdWWwgX4WyFGhoKbyal5B43chHY0poz1V?=
- =?us-ascii?Q?Ea86Jq7KPlKP3bk98wua+AB50keXNKUBgq4NPpHFYl6yYFCryfuoz9fxxD+I?=
- =?us-ascii?Q?q3kcQAXo5Ub/B1rP8cgxXpA6N8iIBo9dOv4znwn1zLsZ82twK9qdBVuI/Xqn?=
- =?us-ascii?Q?h60J82pKIUeAO5ZjJrfEA4T3TOwTBYqSnDaKKTXn5xRFMGOzzJIV8W8mQ9H4?=
- =?us-ascii?Q?O39eMvcPQEdLY6v2cJn+zCxcWq+H3L+mJfEGjD2gOqHWxLLCzL1mzeqkyY8f?=
- =?us-ascii?Q?4+dSTAlwG8Sd5BTajNzLnEM1GI6xh/INtIn8ciMkK/DsSEUNjSUN2dH7Idjb?=
- =?us-ascii?Q?lXDg9gBpanSRMiyBhCZiaElDMpAniEV7Z25yv2VpHQnV0fJqtKfC2XBoj1/3?=
- =?us-ascii?Q?0fXfBbXCc3G7FkL8tyb0p2iclnRWzbO435qO7uunQlaM9IqmmrwcdtgXp2+X?=
- =?us-ascii?Q?ufvoMXHywiVoBwUWHNbzn2x58lz0W1SU8QpkBJlBQKBu2rezjxhHR/GX8dYB?=
- =?us-ascii?Q?wGWdvg0GDAffe2auxLFID8iyhlVGRbHilHjlFaaaMvH4k8APhj3pi5QE3ZCW?=
- =?us-ascii?Q?q9Zy5VFWOlI/3ekKOLARhTWh4krcKlh/SQrnPJ5wYMpzs96cD5tobo/+VXWD?=
- =?us-ascii?Q?qVmvUIRRR/a3cMYUgJLKzWlaTXKqVEHt3kGtT8jX+41GNXXS8iikD4Y9ixTr?=
- =?us-ascii?Q?xOdaXUBMMAbQ2hyGFj3AF5WJweIr3qIJOxraEEO1GXhfsWkKAe5wQZ649MHf?=
- =?us-ascii?Q?8t02pUAjj/NnzMeRsmGWDFhbzmP3Oydq/XneNWwyyzktCIpJyB7JKVZhPYxQ?=
- =?us-ascii?Q?Y1BRNEU3linGq1P9BmejJ/wxLKG0b8qcz/616BvJVin49ymcEkj+9lTWYigx?=
- =?us-ascii?Q?Cp81n2KJUtSzfYf98obcH0Rs3P6usH3lQ+wk1LE6oRVmIdDf5sm1iA5X8hII?=
- =?us-ascii?Q?pM/dWDpimDUNHoR8dheGyeF974JBL+nsaCb4kwBbCfuAOmYCxOo27OmTGyS0?=
- =?us-ascii?Q?NU9x08zjXQxL2OfM3mnQw3NWBdT6acfZ74zcvBIOjGbLNFxViEl5Zh7/SUPh?=
- =?us-ascii?Q?SYgJ4XcrS5bSs/wS9a16QkHmXyxk5tC7I+AulIcdS+yRb84oTj4qGB++DbC5?=
- =?us-ascii?Q?+srvK+xIGevHtsHVJ+2sx7FpRSuNb/9L/zQCLoPY2wQsgYbSZEisDXF1PSxj?=
- =?us-ascii?Q?gp0QHKqO59WoTH2Zw+rzxAhA5KkfPWeKHevJRIDGSdgqbEGNvkaofcWdLkvo?=
- =?us-ascii?Q?+YvC8SndkZAYXmQTNm1VqF+NzjMMhlkhb9o6AtvYUj0sBEQEXoa/EAh095n9?=
- =?us-ascii?Q?s93hRNK+v3TGbymOGQ9Xuoq4h9p7ljqB65cnwNtn/HMJhMgZV9ie6PYY1ai1?=
- =?us-ascii?Q?F5g3f+iQhbPUrixF7jzKdI2fc6jmvRNWr02s62+7uwy082zKk1hcRJ88Qnqw?=
- =?us-ascii?Q?QeEtAC4kg95zLbmFz4zydLIvEA76IJpyKXvsHSUYgAhBAy/v1wQ4XKQ6M1lq?=
- =?us-ascii?Q?GlrFDj9nrOz+m6dc64m40PlgFW0oHtLwO4c3UcFGAUK+xziAOem8N95JDR8s?=
-X-MS-Exchange-AntiSpam-MessageData-1: pI7j9jq+ytydeS6doXzniOLt7qDpCoouen4=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: fc1dc106-c1aa-47b9-7d5a-08de8bf40c64
-X-MS-Exchange-CrossTenant-AuthSource: AM9PR04MB8585.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 Mar 2026 11:29:03.1462
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: yk4qGyQhUqcxqxg18o2Ny9wTgOBR7nJTm7QqFObWEByjDith/2+Nnt+0shNPDCfiiQtcSXByx8cZbqVFlH4J5Q==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DBBPR04MB7817
+In-Reply-To: <00aeda7a-e5e5-4779-b212-6e56c2c5ec31@tecnico.ulisboa.pt>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260327_042911_383569_7323273B 
-X-CRM114-Status: GOOD (  31.05  )
+X-CRM114-CacheID: sfid-20260327_070630_700540_E45DEF97 
+X-CRM114-Status: GOOD (  29.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -153,304 +102,107 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: multipart/mixed; boundary="===============7326367983329062520=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
---5nqk7qqoimem4szp
-Content-Type: text/plain; charset=us-ascii
+
+--===============7326367983329062520==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="ktw4w3vv6m4wgb3m"
 Content-Disposition: inline
 
-On Fri, Mar 27, 2026 at 12:22:46PM +0530, Manivannan Sadhasivam wrote:
-> I tested the patch. But it fails ufs_qcom_power_up_sequence() if PHY was already
-> powered on:
-> 
-> [   31.513321] qcom-qmp-ufs-phy 1d87000.phy: phy initialization timed-out
-> [   31.513335] ufshcd-qcom 1d84000.ufshc: Failed to calibrate PHY: -110
-> [   31.565273] ufshcd-qcom 1d84000.ufshc: Enabling the controller failed
-> 
-> Funny thing is, it didn't affect the functionality since the UFS core retries
-> ufshcd_hba_enable() and in the error path of ufs_qcom_power_up_sequence(),
-> phy_power_off() gets called and that causes the next try to succeed. So it is
-> evident that, if PHY was already powered ON, it should be powered off before
-> ufs_qcom_phy_power_on(). And due to the UFS driver design,
-> ufs_qcom_power_up_sequence() can get called multiple times. So we cannot just
-> remove phy_power_off().
-> 
-> Below diff on top of your patch fixes the issue:
-> 
-> ```
-> diff --git a/drivers/ufs/host/ufs-qcom.c b/drivers/ufs/host/ufs-qcom.c
-> index ed067247d72a..2c9fe03f349e 100644
-> --- a/drivers/ufs/host/ufs-qcom.c
-> +++ b/drivers/ufs/host/ufs-qcom.c
-> @@ -567,6 +567,8 @@ static int ufs_qcom_power_up_sequence(struct ufs_hba *hba)
->         if (ret)
->                 return ret;
->  
-> +       ufs_qcom_phy_power_off(host);
-> +
->         ret = ufs_qcom_phy_set_gear(host, mode);
->         if (ret) {
->                 dev_err(hba->dev, "%s: phy_set_mode_ext() failed, ret = %d\n",
-> ```
-> 
-> - Mani
 
-Understood. Thanks for testing.
+--ktw4w3vv6m4wgb3m
+Content-Type: text/plain; protected-headers=v1; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Subject: Re: [PATCH v2 2/6] usb: xhci: tegra: Remove redundant mutex when
+ setting phy mode
+MIME-Version: 1.0
 
-I'm still not satisfied with this level of complexity. If I get you
-right, ufs_qcom_phy_power_off() is still needed because phy_calibrate()
-expects a "fresh after power on" state, otherwise it fails? That would
-be the second reason, apart from the first one I already identified
-(undo a phy_power_on() done prior to phy_init()).
+On Thu, Mar 26, 2026 at 02:17:33PM +0000, Diogo Ivo wrote:
+> Hello,
+>=20
+> On 3/24/26 11:48, Thierry Reding wrote:
+> > On Tue, Jan 27, 2026 at 03:11:48PM +0000, Diogo Ivo wrote:
+> > > As the PHY subsystem already synchronizes concurrent accesses to a PHY
+> > > instance with a core-internal mutex remove the driver specific mutex
+> > > synchronization.
+> > >=20
+> > > Signed-off-by: Diogo Ivo <diogo.ivo@tecnico.ulisboa.pt>
+> > > ---
+> > > v1->v2:
+> > > - New patch
+> > > ---
+> > >   drivers/usb/host/xhci-tegra.c | 4 ----
+> > >   1 file changed, 4 deletions(-)
+> > >=20
+> > > diff --git a/drivers/usb/host/xhci-tegra.c b/drivers/usb/host/xhci-te=
+gra.c
+> > > index 8b492871d21d..927861ca14f2 100644
+> > > --- a/drivers/usb/host/xhci-tegra.c
+> > > +++ b/drivers/usb/host/xhci-tegra.c
+> > > @@ -1357,15 +1357,11 @@ static void tegra_xhci_id_work(struct work_st=
+ruct *work)
+> > >   	dev_dbg(tegra->dev, "host mode %s\n", str_on_off(tegra->host_mode)=
+);
+> > > -	mutex_lock(&tegra->lock);
+> > > -
+> > >   	if (tegra->host_mode)
+> > >   		phy_set_mode_ext(phy, PHY_MODE_USB_OTG, USB_ROLE_HOST);
+> > >   	else
+> > >   		phy_set_mode_ext(phy, PHY_MODE_USB_OTG, USB_ROLE_NONE);
+> > > -	mutex_unlock(&tegra->lock);
+> > > -
+> >=20
+> > It looks to me like the mutex here is trying to protect against
+> > tegra->host_mode changing while we're setting a different mode. That
+> > doesn't seem to be taken care of by the PHY internal mutex.
+>=20
+> After taking another look at it I think I understand your point for the
+> mutex, but in that case wouldn't it also need to be held in the writer
+> of host_mode, tegra_xhci_id_notify()?
 
-If so, could you please test the 3 patches attached (no relationship
-with anything else we've exchanged thus far)?
+Yes, I think it probably would need to. I don't know how likely it is,
+but I think the purpose of this is to protect against the ID notifier
+firing quickly in succession. Although, given that this runs on a work
+queue and work queue instances are non-reentrant to my knowledge, I
+don't think we need the mutex here after all.
 
---5nqk7qqoimem4szp
-Content-Type: text/x-diff; charset=us-ascii
-Content-Disposition: attachment;
-	filename="0001-phy-qcom-qmp-ufs-support-dynamic-gear-changing.patch"
+> This patch has been picked up as-is into usb-next so it would be nice to
+> figure this out before it gets merged in the next merge window.
 
-From 2d42c2d40e6ddfd0c73fc39601f93f7b81a42401 Mon Sep 17 00:00:00 2001
-From: Vladimir Oltean <vladimir.oltean@nxp.com>
-Date: Fri, 27 Mar 2026 12:41:00 +0200
-Subject: [PATCH 1/3] phy: qcom-qmp-ufs: support dynamic gear changing
+Given the above, I think it's fine. Maybe the commit message doesn't
+give a correct reason for why we don't need the mutex, but the resulting
+code looks like it should be fine regardless.
 
-Currently, phy_set_mode_ext() on the QMP UFS PHY expects the PHY to be
-powered down, and it makes no change to the hardware state, instead
-phy_power_on() followed by phy_calibrate() must be run afterwards.
+Thierry
 
-"Order of API calls" from Documentation/driver-api/phy/phy.rst has a
-roundabout and not really clear way of saying that both calling
-sequences should be supported. This was further discussed here,
-documentation is pending an update:
-https://lore.kernel.org/linux-phy/E1vo0mF-00000007kbg-1OeA@rmk-PC.armlinux.org.uk/
+--ktw4w3vv6m4wgb3m
+Content-Type: application/pgp-signature; name="signature.asc"
 
-By absorbing the phy_power_off() -> ... -> phy_power_on() ->
-phy_configure() surrounding sequence into phy_set_mode_ext(), consumer
-drivers can be greatly simplified, and we also have a proper
-self-standing phy_set_mode_ext() implementation which does not rely on
-other calls to do its job.
+-----BEGIN PGP SIGNATURE-----
 
-Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
----
- drivers/phy/qualcomm/phy-qcom-qmp-ufs.c | 9 +++++++++
- 1 file changed, 9 insertions(+)
+iQIzBAABCgAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAmnGjtwACgkQ3SOs138+
+s6Goig//SnPG7Rf8K0gKeOP5TZWyD90YKXfxg4roWTYyRNVHdUU2H14n31xJS1Oo
+pMQvSFpK/kjChe09fFOUecq5vW68Rrfm2+Vi5rqfW+GHUlGo+5S70gJ8lbpV4wOh
+Ee7fuEilJgSjIMVxxwQY6rupnrXIPufzsSHGwbtaSYy04ibP9vhDn2REJ0bkIuZc
+AWzBBUQXf+aDMyKkliS5Ll15t54oQRdjZp/c02Zd1ffBX/6vx2/lx7hbSTBEm8mF
+eTyQV9XU3so3X9+mmff5uYEOLkHOxEJgOOVdMW8XDrTTLqR+PgTJ44zoGcOnCrNk
+2sOuA8ThjZBqgmjmVvi1zTasc0jHB7McIwHD8XLHmBS1SM1k8y7Lwjzm3VXXqYOl
+aXaMCIEwzp+WeYuxLPDQp5Qj8HEbNmAqZMztnucMn0h6riFsFX1SICiQ7o8DXe3/
+qTPjRWL7qvtiJSBCN068/hZF6l0m2hIfJqflvmF9CqDd4wzAfUqgSZiavmwpJpYt
+refzB/wklao+yrD+cp895hPidxJVmG6omcleeczxJmVVKWm6pOYJP3LCLGezArVn
+phgVYhRDOUvKWQk6sgtCqJbf6h0T1Nf1YvN/Cu1y6MAB1tgGiMUV6JEVuhaPN+kd
+PnN3cFTF/8ATfGpMSArmO8l4VYoGHx5FxgE/LFRPED4LZgaGlZU=
+=g7fB
+-----END PGP SIGNATURE-----
 
-diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-index df138a5442eb..e75b059bf246 100644
---- a/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-+++ b/drivers/phy/qualcomm/phy-qcom-qmp-ufs.c
-@@ -2004,15 +2004,24 @@ static int qmp_ufs_set_mode(struct phy *phy, enum phy_mode mode, int submode)
- {
- 	struct qmp_ufs *qmp = phy_get_drvdata(phy);
- 	const struct qmp_phy_cfg *cfg = qmp->cfg;
-+	bool powered_on = phy->power_count;
- 
- 	if (submode > cfg->max_supported_gear || submode == 0) {
- 		dev_err(qmp->dev, "Invalid PHY submode %d\n", submode);
- 		return -EINVAL;
- 	}
- 
-+	if (powered_on)
-+		qmp_ufs_power_off(phy);
-+
- 	qmp->mode = mode;
- 	qmp->submode = submode;
- 
-+	if (powered_on) {
-+		qmp_ufs_power_on(phy);
-+		return qmp_ufs_phy_calibrate(phy);
-+	}
-+
- 	return 0;
- }
- 
--- 
-2.34.1
+--ktw4w3vv6m4wgb3m--
 
 
---5nqk7qqoimem4szp
-Content-Type: text/x-diff; charset=us-ascii
-Content-Disposition: attachment;
-	filename="0002-scsi-ufs-qcom-call-phy_init-before-phy_power_on.patch"
-
-From 8d156781d38597865da37a86417f553143d74eaa Mon Sep 17 00:00:00 2001
-From: Vladimir Oltean <vladimir.oltean@nxp.com>
-Date: Fri, 27 Mar 2026 13:14:39 +0200
-Subject: [PATCH 2/3] scsi: ufs: qcom: call phy_init() before phy_power_on()
-
-The Qualcomm UFS host controller driver violates the Generic PHY API
-expectation, documented in section "Order of API calls" from
-Documentation/driver-api/phy/phy.rst, and then tries to hide it.
-
-The expectation is that calls must be made in the phy_init() ->
-phy_power_on() -> phy_power_off() -> phy_exit() sequence.
-
-What we actually have is:
-
-ufshcd_init()
--> ufshcd_hba_init()
-   -> ufshcd_setup_clocks(hba, true)
-      -> ufshcd_vops_setup_clocks(hba, true, POST_CHANGE)
-         -> ufs_qcom_setup_clocks(hba, true, POST_CHANGE)
-            -> phy_power_on(phy)
-   -> ufshcd_variant_hba_init()
-      -> ufs_qcom_init()
-         -> ufs_qcom_setup_clocks(hba, true, POST_CHANGE)
-            -> phy_power_on(phy)
--> ufshcd_hba_enable()
-   -> ufshcd_vops_hce_enable_notify()
-      -> ufs_qcom_hce_enable_notify()
-         -> ufs_qcom_power_up_sequence()
-            -> if (phy->power_count) phy_power_off(phy)
-            -> phy_init(phy)
-
-This "works" because the way that the "phy_power_on was called before
-phy_init\n" condition is detected in phy-core.c is if the power_count is
-positive at the phy_init() call time.
-
-By having that "if (phy->power_count) phy_power_off(phy)" logic, the
-ufs-qcom.c technically sidesteps the test, but actually violates the
-Generic PHY API even more (calls phy_power_on() *and* phy_power_off()
-before phy_init()).
-
-The reason why I stumbled upon this was that I was trying to remove
-dereferences of phy->power_count from drivers. This is a PHY-internal
-field, and using it from drivers is highly likely to be incorrect, as
-this case showcases rather well.
-
-As commit 77d2fa54a945 ("scsi: ufs: qcom : Refactor phy_power_on/off
-calls") shows, this driver tries to couple the PHY power state with the
-HBA clocks, for power saving reasons. I won't try to change that, I will
-just move the phy_init() call earlier, to ufs_qcom_init().
-
-After the phy_init() movement, ufs_qcom_power_up_sequence() should no
-longer need to do either phy_init() nor the conditional phy_power_off().
-However, phy_power_off() is still needed, for a separate reason which
-will be dealt with separately.
-
-Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
----
-Cc: "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>
-Cc: Manivannan Sadhasivam <mani@kernel.org>
-Cc: "Martin K. Petersen" <martin.petersen@oracle.com>
-Cc: Nitin Rawat <quic_nitirawa@quicinc.com>
-
-v5->v6: rewrite after actually understanding the core issue
-v4->v5: patch is new
----
- drivers/ufs/host/ufs-qcom.c | 14 +++++++-------
- 1 file changed, 7 insertions(+), 7 deletions(-)
-
-diff --git a/drivers/ufs/host/ufs-qcom.c b/drivers/ufs/host/ufs-qcom.c
-index 375fd24ba458..ffa70c6c7143 100644
---- a/drivers/ufs/host/ufs-qcom.c
-+++ b/drivers/ufs/host/ufs-qcom.c
-@@ -513,13 +513,6 @@ static int ufs_qcom_power_up_sequence(struct ufs_hba *hba)
- 
- 
- 	/* phy initialization - calibrate the phy */
--	ret = phy_init(phy);
--	if (ret) {
--		dev_err(hba->dev, "%s: phy init failed, ret = %d\n",
--			__func__, ret);
--		return ret;
--	}
--
- 	ret = phy_set_mode_ext(phy, mode, host->phy_gear);
- 	if (ret)
- 		goto out_disable_phy;
-@@ -1441,6 +1434,13 @@ static int ufs_qcom_init(struct ufs_hba *hba)
- 	if (err)
- 		goto out_variant_clear;
- 
-+	err = phy_init(host->generic_phy);
-+	if (err) {
-+		dev_err(hba->dev, "%s: phy_init failed, ret = %d\n",
-+			__func__, err);
-+		goto out_variant_clear;
-+	}
-+
- 	ufs_qcom_setup_clocks(hba, true, POST_CHANGE);
- 
- 	ufs_qcom_get_default_testbus_cfg(host);
--- 
-2.34.1
-
-
---5nqk7qqoimem4szp
-Content-Type: text/x-diff; charset=us-ascii
-Content-Disposition: attachment;
-	filename="0003-scsi-ufs-qcom-make-use-of-QMP-PHY-dynamic-gear-switc.patch"
-
-From 88f4bdfee770cd433a940a14e318d8c8b5dfa516 Mon Sep 17 00:00:00 2001
-From: Vladimir Oltean <vladimir.oltean@nxp.com>
-Date: Fri, 27 Mar 2026 13:18:05 +0200
-Subject: [PATCH 3/3] scsi: ufs: qcom: make use of QMP PHY dynamic gear
- switching ability
-
-The QMP UFS PHY can now tolerate having phy_set_mode_ext() being called
-while the PHY is powered up. We no longer need to power it down, back up
-and calibrate it.
-
-Simplify ufs_qcom_power_up_sequence() by relying on just phy_set_mode_ext()
-and let PHY power management be handled just by ufs_qcom_setup_clocks().
-
-Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
----
- drivers/ufs/host/ufs-qcom.c | 25 +------------------------
- 1 file changed, 1 insertion(+), 24 deletions(-)
-
-diff --git a/drivers/ufs/host/ufs-qcom.c b/drivers/ufs/host/ufs-qcom.c
-index ffa70c6c7143..cf7b67f2021e 100644
---- a/drivers/ufs/host/ufs-qcom.c
-+++ b/drivers/ufs/host/ufs-qcom.c
-@@ -508,37 +508,14 @@ static int ufs_qcom_power_up_sequence(struct ufs_hba *hba)
- 	if (ret)
- 		return ret;
- 
--	if (phy->power_count)
--		phy_power_off(phy);
--
--
- 	/* phy initialization - calibrate the phy */
- 	ret = phy_set_mode_ext(phy, mode, host->phy_gear);
- 	if (ret)
--		goto out_disable_phy;
--
--	/* power on phy - start serdes and phy's power and clocks */
--	ret = phy_power_on(phy);
--	if (ret) {
--		dev_err(hba->dev, "%s: phy power on failed, ret = %d\n",
--			__func__, ret);
--		goto out_disable_phy;
--	}
--
--	ret = phy_calibrate(phy);
--	if (ret) {
--		dev_err(hba->dev, "Failed to calibrate PHY: %d\n", ret);
--		goto out_disable_phy;
--	}
-+		return ret;
- 
- 	ufs_qcom_select_unipro_mode(host);
- 
- 	return 0;
--
--out_disable_phy:
--	phy_exit(phy);
--
--	return ret;
- }
- 
- /*
--- 
-2.34.1
-
-
---5nqk7qqoimem4szp
+--===============7326367983329062520==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -461,5 +213,5 @@ linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
 
---5nqk7qqoimem4szp--
+--===============7326367983329062520==--
 
