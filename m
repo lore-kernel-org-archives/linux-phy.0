@@ -4,130 +4,141 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 66ED010F2867
-	for <linux-phy@archiver.kernel.org>; Fri, 27 Mar 2026 20:24:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EB51A10F2865
+	for <linux-phy@archiver.kernel.org>; Fri, 27 Mar 2026 20:51:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=F/f5Aoyd7Nr0fteFzp4GoBL04R9/r6+lGsycp4UUm9Q=; b=oVt3zrYBj4GKw0
-	cQLZJrw2xu3MiSj30bFsJoOtbSmYoMVI3oW1L4sEAT+cjiymOpuPL8bMDPGlDUfyynUMZvZiDq63L
-	BvJZ9UfgA1RNqFutydNYGAJxrPoPwkCff5clpe+NRgyKHdXGYfJpLlJAx4eevcSBDW9hyvDlApf/z
-	akNclvsFVEN5qIAD40AKRcFsyrg05MWCHIJeiTHdUNN28m0QzaKev83s8MhQbq0/TZ7JGJE9jXmYl
-	nvYqHLsAIxtEEccMUhKtChmP0nMFSM53UMoH4enzj5eC+O8uXFdmyXb7hjvzgpCwtf8t1CUtFMz5+
-	yhZCd4sTrKOp/UZO6vow==;
+	List-Owner; bh=yBfrXr1dVTjfaeRZKjIMRw512hTZMgRJ1EBacs1TnW0=; b=MBU0jxhzDwUnRs
+	ztJCtpfkqbLG6kvqLNOrx/V+ozL87+XelVWMq9YZrkLxP9N3CoSHjCsCrj6fsD9lU4YgXyQ5GHI9A
+	dSPJnvZWNcLECgZm3AKvPSXi0pTUQKiMB3FqG+D4xeEQAXtSSLCcqROhreHdNOHWvcmzqkGexKsq1
+	JoGTKZG9rh2VBh1so5oPlrtBMuQHRbSWLDuEXCioxBSyLhuIM3h6wV7C149h5Nah5WUjB+FLPKU6e
+	XQX/ESnCj/R5JOIdybmu6rz6gNE5FEDdo6zyHiFdf7PPwda2XGx6J3VWBsP77hIi1xxIhEvaQrb/w
+	PoNJ4l/bjLCUqP3ObIAg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w6DjC-000000089rg-0VtI;
-	Fri, 27 Mar 2026 20:24:22 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1w6E9O-00000008CQE-26zj;
+	Fri, 27 Mar 2026 20:51:26 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w6DjA-000000089r5-1Dpc
-	for linux-phy@bombadil.infradead.org;
-	Fri, 27 Mar 2026 20:24:20 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Type:Cc:To:Subject:Message-ID:
-	Date:From:In-Reply-To:References:MIME-Version:Sender:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description;
-	bh=9WeOtA6rLKd2feImk1nWk/a5NsEeM0kN8oqqyEId0bQ=; b=iS34NWxAuhrQ7+3J/9+fZxdhAQ
-	lf75SNJ/z7HsQlY6l0vkVHGtyKSH5QTJqJwKPSaoTB/QAZzp4RYAEPMdm4GIBrJT0ThX15TB0Oqa5
-	5J1KTUSil6G8t+v6KMeVM6eEqBWR6cBwrWzAoTZH9FbjgaXRXpDzT8J43GthnCSzF1pXNqM4umLQN
-	GQntV/L9ahOXLF4fgS6vrzcCnLMG1EorhLX+fOyq4p3Wj2tGBkUHKd5/dAdetKzA+gdGzPSjc915c
-	LU+Lr6c3O+rEGYke3obKWPzzcqmTsUC4DrrIW1zYiugKOKphDsm0vKTKAOBGN7AoNPGcW+AL5AJCu
-	jFnoUExw==;
-Received: from mail-ed1-x52d.google.com ([2a00:1450:4864:20::52d])
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w6Dj0-0000000BE2x-2Qhz
+	id 1w6E9K-00000008CP4-2tmL
 	for linux-phy@lists.infradead.org;
-	Fri, 27 Mar 2026 20:24:19 +0000
-Received: by mail-ed1-x52d.google.com with SMTP id 4fb4d7f45d1cf-66b51bfe5f3so1545364a12.2
-        for <linux-phy@lists.infradead.org>; Fri, 27 Mar 2026 13:24:08 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1774643047; cv=none;
-        d=google.com; s=arc-20240605;
-        b=g3WApaDsBunMQpTQLqHdI1oWzmP015IA3yAkwED4Y6ig/XjTNZqDKd/4Zpmnzdu31N
-         TmgXJw3P1LuKMQhoXc0fY3eSbmAboShzNQfPL8Bm1LiH9UIfKB7eBbV70tE1Y56YXBze
-         SZjXQPa8yPMy7guEaJgfMYAOSwu9LSC9/+fU/VUg11BBQx06atbU7RcD/Ua361h+TqOI
-         Y/h3rUr+Edegulesf5KfJxmGK0h4SBqIi1t2LFqBL+0cy7YhUWfOdUL9CT5zXnw9L8ko
-         teMjTX9Z7XNHxf1NfKUhkFk6caUOnD8XwLPM1pFTA+7KgP5U07S/8ZCa1D7vVLhn9btz
-         FRrg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:dkim-signature;
-        bh=9WeOtA6rLKd2feImk1nWk/a5NsEeM0kN8oqqyEId0bQ=;
-        fh=Sm0515sn8kqJ4nMntSRGJy4M741BcM0eFV3ijczLoYg=;
-        b=DO/VpglGohQpCOJv/qFDZyf8gaPdTAAfwyhwyi16DB07LhqT3PcI4PB1yC+V9uk1Hf
-         S/MhNgEWT/MCU7shf+oel/R+pwfN8Xi4T2Dfo1jNZXtPcjzg6CsRjIdo9JLP7DxJRgoh
-         YBNG8T/078xCv3nKmSfSDDE/+OADT7gHvLqJSyVjSv001HCQNb0zRFRpOvbw6qLDtVrG
-         QtPjWTWZvSpI5XDenxX3Hcfml9d45yAj74WAXoVbRweWXiU8FLHw2ugXLfmt3UyXTuDs
-         pWbuVjY0LCiB07yE9SZSC8P2dSeeJ9XeLaCzYSJInjQ8Bh3S8dekSduVKzZcAR4xvxS4
-         6Mxg==;
-        darn=lists.infradead.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
+	Fri, 27 Mar 2026 20:51:25 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 62RI2otI3351908
+	for <linux-phy@lists.infradead.org>; Fri, 27 Mar 2026 20:51:12 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-type:date:from:in-reply-to:message-id:mime-version
+	:references:subject:to; s=qcppdkim1; bh=5vNj1FkteFeY/dYUVbMc/bS/
+	d+JE8rzOzKMJKumnlKY=; b=mcgozyTN+95TSr5y+vMcle6H75WtNTDawO4OJPxB
+	8OiSc//+NEPdLsjDNRwlFZ44/U9KAz+sKWjb89Nq8QOxYg9LX0a0cgR9M4Ho8Uwm
+	EuBLRlI1vWRUnZad1isiC1+7jzhjvZZu4MMWVhb7lU8y/evPuMtfwsFimzrSOdAd
+	in262LVUWrQoTSV+yNi7TSs0fcPQI6nceztj+L+/aXnjyuHLEcVswJPan65XZ3Ba
+	O95oYjPDxrTMI6KHwfBV0MwoThdw3WYom28iMTQTUTxUZ0rT2NAswUHfblQJBdBr
+	D16y6YxSVLP+lQTnlYXanNRFE2lBILf6geFIBeOF27/cvA==
+Received: from mail-qt1-f198.google.com (mail-qt1-f198.google.com [209.85.160.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4d5bxv4n7s-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Fri, 27 Mar 2026 20:51:12 +0000 (GMT)
+Received: by mail-qt1-f198.google.com with SMTP id d75a77b69052e-50911c94db1so61102331cf.0
+        for <linux-phy@lists.infradead.org>; Fri, 27 Mar 2026 13:51:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1774643047; x=1775247847; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=9WeOtA6rLKd2feImk1nWk/a5NsEeM0kN8oqqyEId0bQ=;
-        b=tPiVudZrKWH5LTTvmhnYDqFOJyyk5sAfhGUhLn+yB/mCpgOz9auKLaegCrXEQ59Vvi
-         YJDDhg2iIOYQ19A+L+8/WF3KyXJj8F4uOuHKUPuZZYPeZNbHlHqOTnLZQEfXax1vFbWt
-         8627Ed1dpmJJ+QuGFA24cl/IaVeGKBYc9ZcAqdWQLqri6lLclJsHw/3P5g+v5oi1wC1v
-         w55pPNoq8e4RX89LaC69Q6KfXNPCI1PXv2GpaTpNZe5rELaEMIyrB9Gs81v/UW4H8aYI
-         lhbAHfpUi7/I60wRNvP8bU7UCtCW72gV0ch4y9G7PCRVTyyjlYLrZIA6KsPNmEyyoDoL
-         zoXg==
+        d=oss.qualcomm.com; s=google; t=1774644671; x=1775249471; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=5vNj1FkteFeY/dYUVbMc/bS/d+JE8rzOzKMJKumnlKY=;
+        b=GVucg6glymEMnR/0pEYnvGcxdcfZCQpS1NhkbhzvG0fBDYy2CdS21wf30kCzQWOO0c
+         jAhdv1stocjGaZ7Ak7f1YkDsfAtluD16kvmpJ63aJj4v3j3oh8o8jZZaf6C6j0uSHLYs
+         ZmcxdxAW5CuNVz7BFjZHK4b9W8r6A2e7Xebfl+uP7IwQypkzV/5WJIIpMOHxE3AD3KxJ
+         a3zRxLVe04eJ/hvFjpxkUL5dJRTZsAjbVr/XopJw2EJ7Cm3x8ZKLDHd+8T2yw0W0aUR0
+         P2QciAqfafBnuGDi00pIgWoN/w1KLn0seBs8n2bhhJPwGteGHsayM3zlmgU+lU9cfh4J
+         i3cg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1774643047; x=1775247847;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=9WeOtA6rLKd2feImk1nWk/a5NsEeM0kN8oqqyEId0bQ=;
-        b=f0jeQEcNzjY86FEWv17l9z0U96KFwB4Y7hgGeJnjc4AWn4bBe5fV5Hj1uSfiMtS40B
-         HwH/+0CiMykLRlUkEqu3/HodzbJF09+gi7yL/HaPgYmD0l//YTAtucp/IiZ/XCZpgyNd
-         LTMC177yxV/8M26O7uJRiEXQXSfuIdgrs5SHRmWeud2Gj/CuSv44sA1bn52k27IM4KSu
-         DyCyqO0hL6JX3pGczdNpIoGPsI/DGs0AOlP1MiS1zNfxB6Mc0cQfB0bg5SmrbvLC2rM8
-         iBp1Ij8RlTSVP9ZSpVHVZnWQyqTIQyCWBL4H+FsVDuWogP8XOF7PXJuP4VI87/5ret5X
-         QaDA==
-X-Gm-Message-State: AOJu0YwHmHNi6MRcfZxToU7tsq2VdPeX3AGURctvNulWkHQ2uJYN0vTj
-	U36nVYiRkdLBHBNj85DPrpiKzCUpG2vELC/BjDefFLSjV6qy05mah/wjixMfK6HkyqVXYQcoQWc
-	Kxq7JIPsmax8OuAKHa5/4DiXRrvfAEkoeuR2OHC7www==
-X-Gm-Gg: ATEYQzzQpuB0GkUNC4dxmE21BMvVnqFYKP/Z7uY4ysYRbQx/ij//QZ+MBJCx0z5QQjF
-	AwuYDPafJWNrEVoeAMxy8rP5DY/GB5jU1L6TMy0rUeaa7OsNzUIcs6VTL3NUawGT0GgY3+qsVsa
-	At/waZjFJl91+h1nVvdl45g5K1vUsXGyR8BZBq9Wzm6SwhCJ/GjuiUxFk/RqCEMl35YHPif9YJz
-	Fv8qMkWbLghUXjbREWaKp2obFb5J5nGoBk6JIyu1gsYzPhdtStpYObolST8BhRKsUxDb05JdBf8
-	WmocLVDdn5PNp5/GICJmaLpkrOZYM7VJayWxYSkX
-X-Received: by 2002:a05:6402:46db:b0:66a:199d:138 with SMTP id
- 4fb4d7f45d1cf-66b28c66cbemr2039826a12.20.1774643046839; Fri, 27 Mar 2026
- 13:24:06 -0700 (PDT)
+        d=1e100.net; s=20251104; t=1774644671; x=1775249471;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=5vNj1FkteFeY/dYUVbMc/bS/d+JE8rzOzKMJKumnlKY=;
+        b=F2FYXA10JEEsKXH/DK4YSeBQO3pxv0VXU4JpqMcfFTDc6iBh+IBBo34vWZhKg2k1Vb
+         tougtaZToz89gLOgERe/eQd6YC5WR4Q5ZWSey436G/nRZpyahl+IJoFw6+00kE5Syj2F
+         9ziGZ8p51RlSE64y90uTGHMS4iYA+l7lTCBtRk71HqyxMnZYmDR3kyqBPMDjnvzpnjVo
+         0IABdJROdzoEJYyaG7WrxpoQT7oBFtUMpxrvLV1Mg5Jz7QxAKsJ/rGA5+cWe/cjsdM85
+         y7VaAahFHE4rE5eWfANI6Mf5WC0Mx1XLSR/rTq/ckaFS49tye9rQHhlDR7oUwOEzWz6y
+         vTgA==
+X-Forwarded-Encrypted: i=1; AJvYcCUk7+wrwHu0BrwtP6WQBzdTq3P3qJixidSSIex0AhhjFskTojhZukCl+r3PzpsqjaNqWEaTdGs7zeA=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzzqovfDFDAqq7aBygoxoOoWQ3LRsrdO2MEsyW6aCS9vMjliWhg
+	5UcVe5ruuHJit2H46N2zbwJ2k3dcBwiFlGAoScwZCSWZAm/S0LuAuY+84shpCW7T94oX4K642La
+	1C2u0SySDGdzExTWb+dsWoX9/VbXqwsjnjXV8xPyCm8XbUqbe/Foi4MLk0Ifxn79bevO+
+X-Gm-Gg: ATEYQzwHTvZ4Uvg8vUQm0WuRIK0QSDO9IyiJOm5JFsREM7Exi7JVMP90vjCP2uOzebF
+	UcdlRut/W90lmTEz0HLCsi0spUcFYTDoqbZZdcTBO0QpkY39+vflxZlXCTZKZINQSJsJJwkIm78
+	gSo6aCYCRJbvWuXDeDj+sBJg80j0NJwGQYT/GSPY5vlaPQmCqehs4FJ8dhEM5WZwHsTdSeWl5gT
+	ybvp0gylJCxHEAFVzIXMNHXPGuX6qZ+i+DUzARkSzmWjBolukO0VDS9XQFZ35Exg3Iw60xefDV3
+	Rd/3rdUQqnY9+N2K7phk6fKbkJlpMQKQlULxLbibhd9pt7j3UxdW0oEFE15gytuEUj+w/PlLFuX
+	9zlDtQ4HyJ08xAsi6/xKD7q36MBDRWdy6utIIIi7qSSc5zASV6YtDcgJuXMHA86RKmXO6UUcLw6
+	m6yGl0CKUeI3SerGQUae2UQpdEVxClz+yHTpY=
+X-Received: by 2002:a05:622a:510:b0:50b:3a6d:db5d with SMTP id d75a77b69052e-50ba39ad465mr55341021cf.65.1774644671588;
+        Fri, 27 Mar 2026 13:51:11 -0700 (PDT)
+X-Received: by 2002:a05:622a:510:b0:50b:3a6d:db5d with SMTP id d75a77b69052e-50ba39ad465mr55340701cf.65.1774644671181;
+        Fri, 27 Mar 2026 13:51:11 -0700 (PDT)
+Received: from umbar.lan (2001-14ba-a073-af00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a073:af00:264b:feff:fe8b:be8a])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5a2b13f4329sm16395e87.3.2026.03.27.13.51.09
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 27 Mar 2026 13:51:10 -0700 (PDT)
+Date: Fri, 27 Mar 2026 22:51:08 +0200
+From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+To: Bryan O'Donoghue <bod@kernel.org>
+Cc: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
+        Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
+        Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Neil Armstrong <neil.armstrong@linaro.org>,
+        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v5 1/2] dt-bindings: phy: qcom: Add CSI2 C-PHY/DPHY schema
+Message-ID: <2houacfdkozzk35ky5xtwe3utkvyx4lroyrhvibb5lg6lad2g6@56akvtqigaep>
+References: <20260326-x1e-csi2-phy-v5-0-0c0fc7f5c01b@linaro.org>
+ <20260326-x1e-csi2-phy-v5-1-0c0fc7f5c01b@linaro.org>
+ <72ef6c9e-feb6-4e57-b8cc-7801bd748698@linaro.org>
+ <f1c8c412-1d27-4c83-8c5e-76b9369ea6e9@linaro.org>
+ <VwCtoebjwHqLTucsrGruvBpedA4k-Melt7C0DA0aHSVld3PeotwZdtMUm3EFpvQyScrl6yejmLaK7bY1avT1zQ==@protonmail.internalid>
+ <8ac55e5f-72ed-4331-bf42-92ccf97507dd@linaro.org>
+ <5d7d5bf8-4420-4d75-b928-820bb9233e52@kernel.org>
 MIME-Version: 1.0
-References: <20260327184706.1600329-1-vladimir.oltean@nxp.com> <20260327184706.1600329-10-vladimir.oltean@nxp.com>
-In-Reply-To: <20260327184706.1600329-10-vladimir.oltean@nxp.com>
-From: Peter Griffin <peter.griffin@linaro.org>
-Date: Fri, 27 Mar 2026 20:23:54 +0000
-X-Gm-Features: AQROBzCjrloDfUGTlNvOpQXdM4anVOjHCl2P0WQRB2XbIrpLYVg7AhYSjcExBJI
-Message-ID: <CADrjBPqMwtrae7LB9A8xipg6R0rHGewe69awQ_jJnsf=2c=eTw@mail.gmail.com>
-Subject: Re: [PATCH v6 phy-next 09/28] scsi: ufs: exynos: stop poking into
- struct phy guts
-To: Vladimir Oltean <vladimir.oltean@nxp.com>
-Cc: linux-phy@lists.infradead.org, Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, dri-devel@lists.freedesktop.org, 
-	freedreno@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org, 
-	linux-arm-msm@vger.kernel.org, linux-can@vger.kernel.org, 
-	linux-gpio@vger.kernel.org, linux-ide@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-media@vger.kernel.org, 
-	linux-pci@vger.kernel.org, linux-renesas-soc@vger.kernel.org, 
-	linux-riscv@lists.infradead.org, linux-rockchip@lists.infradead.org, 
-	linux-samsung-soc@vger.kernel.org, linux-scsi@vger.kernel.org, 
-	linux-sunxi@lists.linux.dev, linux-tegra@vger.kernel.org, 
-	linux-usb@vger.kernel.org, netdev@vger.kernel.org, spacemit@lists.linux.dev, 
-	UNGLinuxDriver@microchip.com, Bart Van Assche <bvanassche@acm.org>, 
-	Alim Akhtar <alim.akhtar@samsung.com>, 
-	"James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>, 
-	"Martin K. Petersen" <martin.petersen@oracle.com>, Krzysztof Kozlowski <krzk@kernel.org>, 
-	Chanho Park <chanho61.park@samsung.com>
+Content-Disposition: inline
+In-Reply-To: <5d7d5bf8-4420-4d75-b928-820bb9233e52@kernel.org>
+X-Authority-Analysis: v=2.4 cv=A99h/qWG c=1 sm=1 tr=0 ts=69c6edc0 cx=c_pps
+ a=mPf7EqFMSY9/WdsSgAYMbA==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
+ a=Yq5XynenixoA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
+ a=u7WPNUs3qKkmUXheDGA7:22 a=yOCtJkima9RkubShWh1s:22 a=g4nqrqiC9Za9_vF1seoA:9
+ a=CjuIK1q_8ugA:10 a=dawVfQjAaf238kedN5IG:22
+X-Proofpoint-ORIG-GUID: ULiIMitaQ6koRbP8sIovQGs6hNYmickD
+X-Proofpoint-GUID: ULiIMitaQ6koRbP8sIovQGs6hNYmickD
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzI3MDE0NiBTYWx0ZWRfXwlgfthgGdY7U
+ BAJhV/E3SZ4vFmhKS9DkhFBYcpFIo+ZOT6uLdwhnMyT/dA4VZDWwojb27DJSEdjiv0x7dIxCQpQ
+ SZ/8xtVwoK6ta5nM/DecaWPu84tYZnc2WLdK2Mf1GLW3vhL85WdRUc32RDwFmjuqNMQAwQ31rzi
+ cFh+F4UdNgzgOfk4OtiHkh9z3AmGZ4Cc2B68tdng8vIiFUP48zy/QHUJ6ZOfToz6cw0OeZfZZdc
+ Ql18QxWImBwkyKJYloQxVnJnSgy8VitpjYbgyJDZpZvtmTWOaZqeZ55CBGCiLb32wbb5e1uzJfu
+ DNlqZgDtDi17q1iC3630lmuarK2gx04lw8apVEDAmVa85HVjwicjNIfxKk3gyie5erFTSfd0fjL
+ 9LgxVg4Ir9r4M9O5jAW6Amqyp5LlLciucRVQNqDphlufC3to26GDEx1gidirAvR/9OCNjrEXFQn
+ NFgTQ7YKKaY2XSk5Srg==
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
+ definitions=2026-03-27_01,2026-03-26_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ suspectscore=0 adultscore=0 malwarescore=0 spamscore=0 impostorscore=0
+ phishscore=0 bulkscore=0 lowpriorityscore=0 clxscore=1015 priorityscore=1501
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2603050001 definitions=main-2603270146
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260327_202417_034543_95D0E39D 
-X-CRM114-Status: GOOD (  28.23  )
+X-CRM114-CacheID: sfid-20260327_135124_198551_26605602 
+X-CRM114-Status: GOOD (  31.39  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -144,142 +155,68 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, 27 Mar 2026 at 18:48, Vladimir Oltean <vladimir.oltean@nxp.com> wrote:
->
-> The Exynos host controller driver is clearly a PHY consumer (gets the
-> ufs->phy using devm_phy_get()), but pokes into the guts of struct phy
-> to get the generic_phy->power_count.
->
-> The UFS core (specifically ufshcd_link_startup()) may call the variant
-> operation exynos_ufs_pre_link() -> exynos_ufs_phy_init() multiple times
-> if the link startup fails and needs to be retried.
->
-> However ufs-exynos shouldn't be doing what it's doing, i.e. looking at
-> the generic_phy->power_count, because in the general sense of the API, a
-> single Generic PHY may have multiple consumers. If ufs-exynos looks at
-> generic_phy->power_count, there's no guarantee that this ufs-exynos
-> instance is the one who previously bumped that power count. So it may be
-> powering down the PHY on behalf of another consumer.
->
-> The correct way in which this should be handled is ufs-exynos should
-> *remember* whether it has initialized and powered up the PHY before, and
-> power it down during link retries. Not rely on the power_count (which,
-> btw, on the writer side is modified under &phy->mutex, but on the reader
-> side is accessed unlocked). This is a discouraged pattern even if here
-> it doesn't cause functional problems.
->
-> Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
-> Reviewed-by: Bart Van Assche <bvanassche@acm.org>
-> Acked-by: Alim Akhtar <alim.akhtar@samsung.com>
-> Tested-by: Alim Akhtar <alim.akhtar@samsung.com>
-> ---
+On Thu, Mar 26, 2026 at 02:42:10PM +0000, Bryan O'Donoghue wrote:
+> On 26/03/2026 10:28, Vladimir Zapolskiy wrote:
+> > On 3/26/26 04:03, Bryan O'Donoghue wrote:
+> > > On 26/03/2026 01:46, Vladimir Zapolskiy wrote:
+> > > > On 3/26/26 03:04, Bryan O'Donoghue wrote:
+> > > > > Add a base schema initially compatible with x1e80100 to describe MIPI
+> > > > > CSI2
+> > > > > PHY devices.
+> > > > > 
+> > > > > The hardware can support both CPHY, DPHY and a special split-mode
+> > > > > DPHY. We
+> > > > > capture those modes as:
+> > > > > 
+> > > > > - PHY_QCOM_CSI2_MODE_DPHY
+> > > > > - PHY_QCOM_CSI2_MODE_CPHY
+> > > > > - PHY_QCOM_CSI2_MODE_SPLIT_DPHY
+> > > > 
+> > > > Distinction between PHY_QCOM_CSI2_MODE_DPHY and
+> > > > PHY_QCOM_CSI2_MODE_SPLIT_DPHY
+> > > > is
+> > > > 1) insufficient in just this simplistic form, because the assignment of
+> > > > particular lanes is also needed,
+> > > > 2) and under the assumption that the lane mapping is set somewhere else,
+> > > > then
+> > > > there should be no difference between PHY_QCOM_CSI2_MODE_{DPHY,SPLIT_DPHY},
+> > > > it's just DPHY, and the subtype is deductible from data-lanes property on
+> > > > the consumer side.
+> > > > 
+> > > > So far the rationale is unclear, why anything above regular PHY_TYPE_DPHY
+> > > > and PHY_TYPE_CPHY is needed here, those two are sufficient.
+> > > 
+> > > Because knowing the split-mode exists and that you have asked about how
+> > > such a thing would be supported, I thought about how to represent that
+> > > mode right from the start, even if we don't support it.
+> > 
+> > It is good to think about this hardware confguration in advance, however
+> > the process of describing such hardware setup is incomplete.
+> > 
+> > > 
+> > > To support split phy we will need to pass the parameter.
+> > 
+> > What you call "split phy" is a DPHY, and "split phy" can not be supported
+> > by adding this parameter, because it does not provide information about
+> > lanes, and after removing this information it is just DPHY.
+> 
+> That's just not true. If you read the camx source code you can see
+> split/combo mode 2+1 1+1 data/clock mode requires special programming of the
+> PHY to support.
 
-Reviewed-by: Peter Griffin <peter.griffin@linaro.org>
+This needs to be identified from the data-lanes / clock-lanes topology.
+And once you do that, there would be (probably) no difference in the
+hardware definition.
 
-> Cc: Alim Akhtar <alim.akhtar@samsung.com>
-> Cc: Peter Griffin <peter.griffin@linaro.org>
-> Cc: "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>
-> Cc: "Martin K. Petersen" <martin.petersen@oracle.com>
-> Cc: Krzysztof Kozlowski <krzk@kernel.org>
-> Cc: Chanho Park <chanho61.park@samsung.com>
->
-> v5->v6: collect tags from Alim Akhtar
-> v4->v5: collect tag, add "scsi: " prefix to commit title
-> v3->v4: none
-> v2->v3:
-> - add Cc Chanho Park, author of commit 3d73b200f989 ("scsi: ufs:
->   ufs-exynos: Change ufs phy control sequence")
-> v1->v2:
-> - add better ufs->phy_powered_on handling in exynos_ufs_exit(),
->   exynos_ufs_suspend() and exynos_ufs_resume() which ensures we won't
->   enter a phy->power_count underrun condition
-> ---
->  drivers/ufs/host/ufs-exynos.c | 24 ++++++++++++++++++++----
->  drivers/ufs/host/ufs-exynos.h |  1 +
->  2 files changed, 21 insertions(+), 4 deletions(-)
->
-> diff --git a/drivers/ufs/host/ufs-exynos.c b/drivers/ufs/host/ufs-exynos.c
-> index 76fee3a79c77..274e53833571 100644
-> --- a/drivers/ufs/host/ufs-exynos.c
-> +++ b/drivers/ufs/host/ufs-exynos.c
-> @@ -963,9 +963,10 @@ static int exynos_ufs_phy_init(struct exynos_ufs *ufs)
->
->         phy_set_bus_width(generic_phy, ufs->avail_ln_rx);
->
-> -       if (generic_phy->power_count) {
-> +       if (ufs->phy_powered_on) {
->                 phy_power_off(generic_phy);
->                 phy_exit(generic_phy);
-> +               ufs->phy_powered_on = false;
->         }
->
->         ret = phy_init(generic_phy);
-> @@ -979,6 +980,8 @@ static int exynos_ufs_phy_init(struct exynos_ufs *ufs)
->         if (ret)
->                 goto out_exit_phy;
->
-> +       ufs->phy_powered_on = true;
-> +
->         return 0;
->
->  out_exit_phy:
-> @@ -1527,6 +1530,9 @@ static void exynos_ufs_exit(struct ufs_hba *hba)
->  {
->         struct exynos_ufs *ufs = ufshcd_get_variant(hba);
->
-> +       if (!ufs->phy_powered_on)
-> +               return;
-> +
->         phy_power_off(ufs->phy);
->         phy_exit(ufs->phy);
->  }
-> @@ -1728,8 +1734,10 @@ static int exynos_ufs_suspend(struct ufs_hba *hba, enum ufs_pm_op pm_op,
->         if (ufs->drv_data->suspend)
->                 ufs->drv_data->suspend(ufs);
->
-> -       if (!ufshcd_is_link_active(hba))
-> +       if (!ufshcd_is_link_active(hba) && ufs->phy_powered_on) {
->                 phy_power_off(ufs->phy);
-> +               ufs->phy_powered_on = false;
-> +       }
->
->         return 0;
->  }
-> @@ -1737,9 +1745,17 @@ static int exynos_ufs_suspend(struct ufs_hba *hba, enum ufs_pm_op pm_op,
->  static int exynos_ufs_resume(struct ufs_hba *hba, enum ufs_pm_op pm_op)
->  {
->         struct exynos_ufs *ufs = ufshcd_get_variant(hba);
-> +       int err;
->
-> -       if (!ufshcd_is_link_active(hba))
-> -               phy_power_on(ufs->phy);
-> +       if (!ufshcd_is_link_active(hba) && !ufs->phy_powered_on) {
-> +               err = phy_power_on(ufs->phy);
-> +               if (err) {
-> +                       dev_err(hba->dev, "Failed to power on PHY: %pe\n",
-> +                               ERR_PTR(err));
-> +               } else {
-> +                       ufs->phy_powered_on = true;
-> +               }
-> +       }
->
->         exynos_ufs_config_smu(ufs);
->         exynos_ufs_fmp_resume(hba);
-> diff --git a/drivers/ufs/host/ufs-exynos.h b/drivers/ufs/host/ufs-exynos.h
-> index abe7e472759e..683b9150e2ba 100644
-> --- a/drivers/ufs/host/ufs-exynos.h
-> +++ b/drivers/ufs/host/ufs-exynos.h
-> @@ -227,6 +227,7 @@ struct exynos_ufs {
->         int avail_ln_rx;
->         int avail_ln_tx;
->         int rx_sel_idx;
-> +       bool phy_powered_on;
->         struct ufs_pa_layer_attr dev_req_params;
->         struct ufs_phy_time_cfg t_cfg;
->         ktime_t entry_hibern8_t;
-> --
-> 2.43.0
->
+
+In other words, I'd also ask to drop this mode from the DT. This
+infromation can and should be deduced from other, already-defined
+properties.
+
+
+-- 
+With best wishes
+Dmitry
 
 -- 
 linux-phy mailing list
