@@ -4,146 +4,125 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E75AA10D14A2
-	for <linux-phy@archiver.kernel.org>; Mon, 30 Mar 2026 11:49:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E414E10D14A6
+	for <linux-phy@archiver.kernel.org>; Mon, 30 Mar 2026 12:01:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lAjEAJL4ei5bzknT0EsuTbBErfjQH5fKDZIKGcfj3II=; b=rWKvJ8ipY2m2cb
-	70qv2rBLpJuHuZXwKaPa1rYS9rqGMt8HXC4HEVFoaGQv9Hh0g5ueZSGonWX1Nsup4P/VY0LEHzUca
-	WRh0MQ0QleoyEZAMaPSEGzij2RuAbzUnMWktHR61c30NyK5GIfhuxaGPFWSdGyoxmhJAnW2DEn3JK
-	jd9ruqAQg2Us0khRUDDoSP7nLmf+dT+zMm6I+6iNZfch29Jmak38GFGqXFyJr4S30vl/5//kvdAzC
-	yizSSpVL94r3fUHW9tcxgAkJiRinaWyAm3KTC5qF75qK646HfG712kaaUz90QE7eQkxn2kI0oq2Bp
-	N8aT+jrxbLGNqC9DN0vg==;
+	List-Owner; bh=htRnt/wocX1hhIGJkmIB38jQoM1ZD/YKL4dgMB4w2DA=; b=loUXgdvGgg+DmK
+	yQ6jUjcTFEbH4wbyRTq/taIZUlVwwb40zI10brjn8ZG7v73XloLxMf0HO3qr0J/qXly5g+y5g4Chp
+	SwE4aVP72HLJoZkP0GAB1K3sedch5u8HUeLboXRETyJCRokBjI9k/3f+SKnr/s9JvWeyjBYq0Mg8T
+	GMOcOBPbLE0yCN9t5Wc+839yXrXLCInAbHNZTHGmPN2HYcN+eXxRECznw9H2ymxhuSsRFa/FVFmwF
+	tFRDPsnWHc0ysDOJwds1hReLRINKqz7LDCrGC0eTP7VGfJOd1QFPlKHAg844eLTUFgetsi0SsY5n6
+	BeVkezl8LQoBlZGar4vQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w7B7S-0000000BBqN-1ihF;
-	Mon, 30 Mar 2026 11:49:22 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1w7BJb-0000000BCl0-1siX;
+	Mon, 30 Mar 2026 12:01:55 +0000
+Received: from mail-norwayeastazon11013050.outbound.protection.outlook.com ([40.107.159.50] helo=OSPPR02CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w7B7P-0000000BBpy-3hwN
+	id 1w7BJQ-0000000BChU-1HTd
 	for linux-phy@lists.infradead.org;
-	Mon, 30 Mar 2026 11:49:21 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 62UAGcui3173906
-	for <linux-phy@lists.infradead.org>; Mon, 30 Mar 2026 11:49:18 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=hebXS8dFlHSczLktf6Y+/HKY
-	041XZ7QQsM+NHoi8IeA=; b=PDM0g9Xys8JS9E0kCWkQkTc700SzDc1JTkxu5Qpz
-	9ekcybnN9tccvtsIO8d0ZPQ88RvcHbMQD5T/H0GaX1VQ1i33spid+sGOqNbiG/5Z
-	y8fvrTNtkORjQBKbOD0vuReX3mNc+mmsARDRAAz9SSt+jvkgfeIt6qwnLhkUBS+i
-	LnXURhZi3291MV50+VsM7acoEohDXa7VO9N7WCGlev8exGag1jF5l4b9xN/9MQ0/
-	J1U9+uyKDYk+cvHpRzMdfFsFubnLFfhJBA1iXDtJG3U96CrdyB6OZM3HiGxVvqRm
-	4l4o+9TBVVAlAF0PuBBS82YU58tb7z+XPYQI+zFOMFdMpQ==
-Received: from mail-qt1-f197.google.com (mail-qt1-f197.google.com [209.85.160.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4d7q9h09g3-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Mon, 30 Mar 2026 11:49:17 +0000 (GMT)
-Received: by mail-qt1-f197.google.com with SMTP id d75a77b69052e-50b34223670so80678261cf.0
-        for <linux-phy@lists.infradead.org>; Mon, 30 Mar 2026 04:49:17 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1774871357; x=1775476157; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=hebXS8dFlHSczLktf6Y+/HKY041XZ7QQsM+NHoi8IeA=;
-        b=Jq0qr37w1xx5xLcaJV7Ggf/lUJujiHbCV3KTWl6nOSHL1jw0b9A8Cjw5xEbIERtExi
-         /Wn/cqakq17De3gLywvE7UCrTTQs1+RQUHGIfMbsqHunIxPfiUj4Rc1xhfj5lBAPvUR5
-         WwqbaVSObui/MaVqUIc7xveVwVGboRzTK2WAQBBV7CQ5yIKIXUpvDdt9nHb8GuYl9qb+
-         XzDWEs5VA6OCgtY2ajvah7RoewYCmlec4WoypuPTpoEAB/489PN2TzLNcmwwD8tMs49d
-         RlS/wHwYW6Fq0GF8YyEMcPvFrL6cFwCVJE9Yq91Nshkn38Zmx6eOo2ixi780E0F2WZix
-         ahKg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1774871357; x=1775476157;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=hebXS8dFlHSczLktf6Y+/HKY041XZ7QQsM+NHoi8IeA=;
-        b=Of2ZKe68WWqalxe8Ckvtgofq8EUQPhARY0nTherz0ZXRLDp8HUZ9//4apBwRsKjn/j
-         rGFvPjYJMK3q6dCtP5CV8Vo5BwCqfldcVag3s8wZEsSSezGMQoz2FFj/c0ChrOuttbyb
-         t/ihMUh13K40kCPjgkQY2CBH9PdMaMAqnwdOGAL28d/6BH23ioFKCaAB21V5SxRNdY4c
-         7tuekDRRkMWQblx68Cugj2usabvlbKpHELyqFLIulBwRvpmylqOn8BKNLHbSKj7ahFMZ
-         2dRur2hjZQwMjYZIUKdacqJoAFyZ3V+8KuHRTt6a3y2169m0YFvBCwTQNM+hTdStjwaY
-         QWyg==
-X-Forwarded-Encrypted: i=1; AJvYcCWLnm+oSUTP4QvMBFP8dPddFJfmX6c+8YP87Juuv5yjsUCj+WeUTY43cdsgn5lqWry7jCYm0cbBvnc=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxaQv95f602RW8PlIQkRCYGGEyNWGsMmno2sfvSMGiVouYsIHEX
-	vKlUNTwh5Lef5IHvrUw3Fe30g9vg9RoNID3BgeF6r8VhwZ5q0fT0qFZFqeNytcihvyMdXXhz7k0
-	A91wnfKpHQZQZA2zbONa7pxtEsNpjBp8UmGt6OW9hyIwcsy0p5FEE4wRHRp9vMv5GVBu6
-X-Gm-Gg: ATEYQzwaKowDBbBo99lilYYqfmvzxgkiNqcPzulM+2BvUqhg5dVLJoIDbduZ+pJKNuY
-	0VH165F6MyGrauGzMY/O486RHloPF8vWj/QA2+u+5KtbidOUPVeLOz28vzxigHvk9gXNvVWBcuT
-	Hqg81Xl6OHAzhuKKwTmhoyNmyeshPNZc00/m/IhpsrrFHFKrkP0eZSfxoZmlPlkDoVq8fVALbtL
-	ZruKkBT/aQ5YaXO6UPOz9T7isWm2yz5wu7Vbfvdu9Ty7NuSCvw5qVL9cU6sItK/vn+F0X6ydNtQ
-	o1qMCJxnb+Y4lKMBJywYXPqLZTIKCwpiW7qz1SSe1fNrypS1lIkfxD/5pyBjjEL/nc8KK/Mbmj4
-	ZUHqYPp/ob+ZAT7i4oaMqi8NW2V9PizVjbUCSGYXV40lGw7FOdSehm3LlzYpiE7J5BakxExLusJ
-	dd9wRioV1NE6R66tsHEOtX/rVbcqu4WTj0h30=
-X-Received: by 2002:a05:622a:295:b0:50b:4e65:95d3 with SMTP id d75a77b69052e-50ba398eabfmr172138671cf.65.1774871357272;
-        Mon, 30 Mar 2026 04:49:17 -0700 (PDT)
-X-Received: by 2002:a05:622a:295:b0:50b:4e65:95d3 with SMTP id d75a77b69052e-50ba398eabfmr172138191cf.65.1774871356694;
-        Mon, 30 Mar 2026 04:49:16 -0700 (PDT)
-Received: from umbar.lan (2001-14ba-a073-af00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a073:af00:264b:feff:fe8b:be8a])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5a2b145642dsm1615209e87.65.2026.03.30.04.49.15
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 30 Mar 2026 04:49:15 -0700 (PDT)
-Date: Mon, 30 Mar 2026 14:49:13 +0300
-From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-Cc: Bryan O'Donoghue <bod@kernel.org>,
-        Neil Armstrong <neil.armstrong@linaro.org>,
-        Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
-        Vinod Koul <vkoul@kernel.org>,
-        Kishon Vijay Abraham I <kishon@kernel.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
-        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        linux-media@vger.kernel.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v5 1/2] dt-bindings: phy: qcom: Add CSI2 C-PHY/DPHY schema
-Message-ID: <gcu6qzsoff2fox3nbytegyikajn65ae4ekowcn7bs4x2k53vao@rykmxndzzhlu>
-References: <7712fbdd-a225-49f0-aeb9-ebcbb9d5abac@oss.qualcomm.com>
- <da3ed78d-fb5e-4820-95d6-527d540cf03e@linaro.org>
- <1f38187a-9464-4aa9-b70a-03b767349d56@linaro.org>
- <c5278028-dfe9-4d09-970a-a25977967bdd@linaro.org>
- <016c03b8-27c3-41dc-a630-8e7095db1f88@linaro.org>
- <456ded59-d13e-4b61-975b-97ca48b5e771@linaro.org>
- <RAPaPhpxA39W0ykm-Cr1KaDiJKpRqdQTXUeEmt5mQn4lJBHEGaIS010ejjmhUYEBsHjzrTX41Ek9zLU2bae_YA==@protonmail.internalid>
- <76ea03d0-d41b-4880-a48c-06570eb089ed@linaro.org>
- <0101d8bc-1ae8-475e-bb9e-cc1e16db87ec@kernel.org>
- <6d5ebab6-3c4e-4a1c-9578-6e926cbd96de@oss.qualcomm.com>
-MIME-Version: 1.0
+	Mon, 30 Mar 2026 12:01:53 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=oF6ltUX4IIQgwyQHCN0vQ1e+/jp1FlUtnEcGTuLAfzFpcZSAIyq3jA6FYuJdfK4/5or8n5IACS6KZhFNUlpz0yW5B2EYdHWVzPZX751sAEmJBSjFlUb2JCJj4ZaaqoKf4h3IeQYPFvjR90xNTUrCwWPp7hNKwBhq3DrUijXmtlCVNeKNt6XrgguhnIrd7eD4fG5SP9lFCzM6rdoMb/nSigqde5rV5R3nm0xw2lTRtxH9MA1W4aEda4IrGydOkFf4zWp+w2mjZIrVuaP7udc2uC5jkWmVmd4lpQPnLg7YjypDT8fNUX2uUz0WgHSn1czk8hZowpfnvwDFidwqsY7lKA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=6fj6ITh1IAT4NXFjhx7MZS5cWsaUT05KqkEuAnTR2Y8=;
+ b=vEyKY6o4wvKNhxy5RHn2msa67sQYzuetvOVAViqAhgOjrTEclQ8Ys+rhVsA7+nvu2gS7oLGv3qxnMeGGT4/3t5lZOQBlsBLklLqUeKF4UT0gkhqhHznmxjRAihRbLBCJDEpt55DniBCpeLWZTn5FJxjlD9W8wSYCGqZvCDevS5W9H8vJS0A8ZRyUlVy3NEnZsmj7q3jusV1dAMdJ24pFkMzsCAXSJNcpWRPpu2iJ0HO1cyfUHY4ha1/oaVNvgF4JH5doony1FSgs/6ic6oR9YhKhFiDnnohHWWMjxUm6uHu2ofoUHYRo73+QjVfg2MAIwUdk1UNAt5vsLVOLRndTcg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=6fj6ITh1IAT4NXFjhx7MZS5cWsaUT05KqkEuAnTR2Y8=;
+ b=k/k0GIbEb+DSdxJPdKUt7PQabk4GLylTw1piZjpWb2+Aq5q5z49swxWboES/AzMxzpzaKyeUASpfTMqO/TRYbuXWcKH8S45QDbYs3PibVGC17Kkx2CEa0zQ37FhdAxjUsGezViplRs2RnWQRZuMTSoUVu1HI5YAqoxXjQPwyL2SwV+xHGmNdgEEycI5l2LjY13u5HnYWREiBr/4HhaMxu6KDz0OcILTwPcUJ5NcBSKK0d5ybIfI92u09mVx+ErSFt8Q1R1xjgDGA8SQjYn3SKYcevtnm7YUgrdWJGQqbuuT00eIfVrN28rafoM+CH6M5uv+9e0fzn7UM55hfD0fR9w==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AM9PR04MB8585.eurprd04.prod.outlook.com (2603:10a6:20b:438::13)
+ by DU4PR04MB11815.eurprd04.prod.outlook.com (2603:10a6:10:622::6) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9745.28; Mon, 30 Mar
+ 2026 11:46:23 +0000
+Received: from AM9PR04MB8585.eurprd04.prod.outlook.com
+ ([fe80::f010:fca8:7ef:62f4]) by AM9PR04MB8585.eurprd04.prod.outlook.com
+ ([fe80::f010:fca8:7ef:62f4%4]) with mapi id 15.20.9745.027; Mon, 30 Mar 2026
+ 11:46:23 +0000
+Date: Mon, 30 Mar 2026 14:46:20 +0300
+From: Vladimir Oltean <vladimir.oltean@nxp.com>
+To: linux-phy@lists.infradead.org
+Cc: netdev@vger.kernel.org, Ioana Ciornei <ioana.ciornei@nxp.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Josua Mayer <josua@solid-run.com>, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH phy-next 0/3] Lynx 28G: better init(), exit(),
+ power_on(), power_off()
+Message-ID: <20260330114620.7uvdlxgfgmmmuugt@skbuf>
+References: <20260321011451.1557091-1-vladimir.oltean@nxp.com>
 Content-Disposition: inline
-In-Reply-To: <6d5ebab6-3c4e-4a1c-9578-6e926cbd96de@oss.qualcomm.com>
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzMwMDA5MiBTYWx0ZWRfXwP2pf8YjeNQp
- kPNXBpfGlyGSkahX6/1MeGm94peVMCJgHE459Na6Qa2XCLzir/wP8/J1KhVhrs3kI3YoMCV6wPW
- rIcLm3RVqP1wDvCKbE54HM56mH5iIdy7aU60tjvmKO86JAS3KkwZ/+f9M6BszaGLJeFyags/4iE
- WZ1HHeC01awm/mA89EuEMqeYS+HATWemhpP80k9PzTGS9WYNzc4t7p2fQf7lM5GkyCBKUI4HsmR
- AHvUM/cJR4PQmI4b0oFvTwzsl9YvPQCJAXQuvREO5O8SUlgmK5AklLOYxqb5Y2hnC//McLMV9/Z
- RyE1l4B1nBsnSRXFlwIgq8SCZdNEYBlY43fEnuud3Km1DygALKImiCXq1dcSxDXxQyn9ZiZfkYM
- 9j2CXwt9mlHldENhIoWywhJ0GlHDbtw+8RK85HY35oRlXxTNKGpWTyE4BZDn5428WRTxG7H3y86
- ljEic/X+vLcDse1D0DQ==
-X-Authority-Analysis: v=2.4 cv=AZS83nXG c=1 sm=1 tr=0 ts=69ca633d cx=c_pps
- a=EVbN6Ke/fEF3bsl7X48z0g==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
- a=Yq5XynenixoA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=3WHJM1ZQz_JShphwDgj5:22 a=f9JiygmAj-6OnV0y8IgA:9
- a=CjuIK1q_8ugA:10 a=a_PwQJl-kcHnX1M80qC6:22
-X-Proofpoint-GUID: eerhnVI0p46c2xyWBt0A_xrvvG9jUdXZ
-X-Proofpoint-ORIG-GUID: eerhnVI0p46c2xyWBt0A_xrvvG9jUdXZ
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
- definitions=2026-03-29_05,2026-03-28_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- lowpriorityscore=0 phishscore=0 priorityscore=1501 clxscore=1015
- impostorscore=0 suspectscore=0 bulkscore=0 adultscore=0 malwarescore=0
- spamscore=0 classifier=typeunknown authscore=0 authtc= authcc= route=outbound
- adjust=0 reason=mlx scancount=1 engine=8.22.0-2603050001
- definitions=main-2603300092
+In-Reply-To: <20260321011451.1557091-1-vladimir.oltean@nxp.com>
+X-ClientProxiedBy: WA2P291CA0048.POLP291.PROD.OUTLOOK.COM
+ (2603:10a6:1d0:1f::10) To AM9PR04MB8585.eurprd04.prod.outlook.com
+ (2603:10a6:20b:438::13)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM9PR04MB8585:EE_|DU4PR04MB11815:EE_
+X-MS-Office365-Filtering-Correlation-Id: 52dcf873-3afb-4f1a-5dba-08de8e51f7be
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|10070799003|366016|376014|1800799024|19092799006|56012099003|18002099003|22082099003;
+X-Microsoft-Antispam-Message-Info: 7ZJ2DxYRy1jXsJgbkWcizW+awfAMCSoSfNabvk/g57lIsecYF+bCsOKfryjJ0RHOIWSJPj3mModci6HQ0uoeqiY9YpaHocGlBYIHO8lZSUGjrk2cW7RJh0IwBjPfC1T1Q03WQHPt5Tmxu2DpsSUPib94/pTbNIAENTziHgX3O/Bf/onSEinWh2kwsMLf6eh7CqzDRHjX6jLIn7Qb0/or4Mph8dldx7jfro9PrJ2CjAE0fdc5DWzFZ0KUKH17zce7iQnTAjgH3qagnk8Nnum/g8N0SZo+ZoI0D5VKys5wgziNPg6ePPB+VMPaVIhP+txd5O7Y1dDk3ayKPAUryGkMeN8vWcjzB2sXTofuiPkOC/MstMJIEKZ/YuIPV1fRfku1mKfwMWGTe7Q2Cy3SVkaL2f+ZkzOmrl+YQXtfJHQ9vzaJ67LrcV6uWIaxbVyEFMk/OvQQ+S4HYGkr5E8DMLn1ToLflB9+89yn+fJ2UFoFi47hmcMEeeO7SgFaJQSTRdHvSKdv4xtMVXG7ntq66ZjpMzBKM5A8S7UvOgt4A6IxIPZry9W9swO9n5jujlFdITucKkU3QRqFW37BHMfjXa4Kr8nsSVUDs3Eh+o8SV95zj0pi0Rk5zmdEGSjbgHlHXmjyGqk3tznBUE9tSOaFTs5Q4eMaQA82NnDtXAHz3se2mQ4ZU7sGPwbpE6kRK4mpMoz9
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM9PR04MB8585.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(10070799003)(366016)(376014)(1800799024)(19092799006)(56012099003)(18002099003)(22082099003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 2
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?5YBDRfSZ4JGbRXLwpjrnU0g2K9YVxk2W01mv7iFvPbPBaZMQaYg4GHdKBD0Y?=
+ =?us-ascii?Q?l5YyOc+4scD0Uj0lHyBtyPfcyVZoes8M3qrYo/btsE9xeckZHyg4S7IanMyF?=
+ =?us-ascii?Q?LrBZDWPfmveByPyQWKQp4PYx1fUOeYsgUpTMomKl5vVGhvjnYTOG5ooVha7n?=
+ =?us-ascii?Q?jBE0IwuSgfLnFXMBRJ90rO5gEA2XsKDxmCc56VBX2KuurxPeF8kkCa0UW0Re?=
+ =?us-ascii?Q?xHxNlNxZ3ONSKnsR3Axf4uoKJqFt50Ppr+U8dNJl91RLfFIdRiwJ7aUuStL2?=
+ =?us-ascii?Q?7rrH0But7BfKThkM3fEoLMEixqT/jroeRhgEMM8az64Cpu1jsYblge++8lNI?=
+ =?us-ascii?Q?50UTAEkDxik8N/suwqFGKhRfKtwK9OyTJ1QXNCCQUpqmr5+pucRJw8bFZold?=
+ =?us-ascii?Q?pFPRmTCEqoNGhnSTSO64Q1fiMD3/bouphsICG3cCXLs1kXS2GFt3sFIcV3Xo?=
+ =?us-ascii?Q?kJoYrXXoyLRBtio9N9NjkQodJ+RFPvURDO7kZZfVUnbokNSN7xWzh0pNzgzF?=
+ =?us-ascii?Q?339aiunTznhnQxcu41I2ZNtXU01qSFFS3MXVsuCSrfyEoxWPFApveSCo4JUf?=
+ =?us-ascii?Q?PnnkC5J/v3PTEzeEFM+JMAD7PKMduhEmTuqDWe/+Sa6Oz3h5PhZcSlw6p372?=
+ =?us-ascii?Q?7BLNPz9Ehewh38gnq4X5D23JXyRcuOz1F09zPW1y1rYknu28LbdKeWS+3cQf?=
+ =?us-ascii?Q?hwLSQvEyzrqo8MvpIQnhB3SlSFXr5pPXxG2zrFpzHe5iQubO7f/EIDhMaVt1?=
+ =?us-ascii?Q?tpEejcAIwEe5YaHYkbjQwFE0hURPv3qiAQcQOw0/dtg2n2ZIjpE5MF61bExn?=
+ =?us-ascii?Q?i2m9fKxrNBGIEvMzKKp0Y34Qb7gHTdvx1Nqbf3S5FTzzO5KnnWyKQOQ08XkC?=
+ =?us-ascii?Q?s5iOQ7uZvbX39+RaFMlgWQEH9nlPUklGhZOdq4RKn0FEhXOoNkq7YILqwXqb?=
+ =?us-ascii?Q?y0H21rcXpLfebuKIHL2Q0tfCu4sCkyTwTevp5zivlKyHeYiN5nweG1k2Akm4?=
+ =?us-ascii?Q?xrdB5zKBFZ4u7PXY4+AuTR4U3ofE+9I06OOmRgfSl5p6KE1XIEx8DI6tQSTX?=
+ =?us-ascii?Q?pRiIpCozLm3Fvwn0y5TKSLRUNcjGqkcUz6/xFzmBIGG0ONRx0hfabdzInRwy?=
+ =?us-ascii?Q?FsJjVdux3MFHZjqV1geq5oz8NqPvIUdFVBEli1Ua3bcMRvhpP+sMSo7G+5VY?=
+ =?us-ascii?Q?EoLZp6JWaW+p4AmigyncwPW01g7uCMC1fqR4YjSKviuoQWNdQdn2b3NZ7KWV?=
+ =?us-ascii?Q?DzRiYkcfDlA7g4/kzBHqkZX5QSIbRQku0RT8BPA7zwlc5Tv9VnWSL4qM52i7?=
+ =?us-ascii?Q?T5OOdXEaBFsfPPj2DGtUxxdgTR4tdtLuz/yLxqFj97bF7f798qZyykfVq374?=
+ =?us-ascii?Q?8q+dEetO6NgALTwAGJKYbIpsYS5q545N5urK9hIc75reH/t7VG6SpiENNSe0?=
+ =?us-ascii?Q?wpvKlIfzCM0fPbhFWdFexNSdRHxRy6MZrBTuc7YHg4qwastffLAi0MBJ3IlF?=
+ =?us-ascii?Q?tgQTE8rX5W9uh8MecmYTQSK+kKN9MWg2N3Z7wGwACwCywTJqjDh9dkzO9IQ3?=
+ =?us-ascii?Q?/dvRNGT9z+WpQfI6+JZPui3f+uVuDOgMYEEnSY0HOL5ir5wC2RkKHr4EYA3m?=
+ =?us-ascii?Q?7KXiiEOLPWsVepoZEtFiVn56j+PJpcgjiXamWtkcky2y10kH4uE/31HP+BVa?=
+ =?us-ascii?Q?TlG1G+YnxX6a0R7UZw1YRHuGONjfRu497c3YU/6Yqp1WspZJDScvptIoEAIk?=
+ =?us-ascii?Q?7SuvIe9r+Bolvp6cXUbgthzmFQGYn3FSXi7ko1mdhvz36+LuXUP+4ZWEIeOs?=
+X-MS-Exchange-AntiSpam-MessageData-1: JSqwlddShgvFpwF5oqno2nG/CerCdbnwcwY=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 52dcf873-3afb-4f1a-5dba-08de8e51f7be
+X-MS-Exchange-CrossTenant-AuthSource: AM9PR04MB8585.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 30 Mar 2026 11:46:23.5622
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: pmc2gsrwLLBEAPGdvhp1nHRL0EI68/q1ge7RDlk6k+EtIfDn4lg3xcfLiRSf/pChdOjLclzfvHU/qC5v/RIADQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU4PR04MB11815
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260330_044920_086503_CFB27C24 
-X-CRM114-Status: GOOD (  27.59  )
+X-CRM114-CacheID: sfid-20260330_050152_078645_6E085DA9 
+X-CRM114-Status: GOOD (  41.61  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -160,83 +139,143 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Mar 30, 2026 at 01:34:57PM +0200, Konrad Dybcio wrote:
-> On 3/30/26 11:25 AM, Bryan O'Donoghue wrote:
-> > On 30/03/2026 10:17, Neil Armstrong wrote:
-> >> On 3/30/26 11:02, Bryan O'Donoghue wrote:
-> >>> On 30/03/2026 08:49, Neil Armstrong wrote:
-> >>>> On 3/27/26 18:42, Bryan O'Donoghue wrote:
-> >>>>> On 27/03/2026 15:28, Neil Armstrong wrote:
-> >>>>>>> To be frankly honest you can make an argument for it either way. However my honestly held position is analysing other upstream implementations connecting to the PHY means we can't make the PHY device a drivers/phy device - it would have to be a V4L2 device and then for me the question is why is that even required ?
-> >>>>>>
-> >>>>>> This is plain wrong, DT definition is different from software implementation, you can do whatever you want if you describe HW accurately.
-> >>>>>
-> >>>>> I'm not sure what point it is you are trying to make here. Are you trying to say drivers/phy is OK with you but you want an endpoint ? If so, please just say so.
-> >>>>
-> >>>> I'm against using the "phys = <>" property in the CAMSS to reference the PHYs, a "PHY" in the classic terminology is tied to a single consumer, and if it can be shared to multiple consumer you must model a mux or whatever in the middle.
-> >>>
-> >>> The CSIPHY-to-CSID routing is runtime-configurable and is already managed by the media controller framework.
-> >>
-> >> This is not compatible with the PHY bindings if you don't have a defined MUX device in the middle, it's wrong. You're hiding the muxing details in the CAMSS blob node.
-> >>
-> >>>
-> >>> DT describes static hardware connections. The dynamic mux is a software concern, not a hardware description concern.
-> >>
-> >> DT must describe the possible interconnections between the nodes, if a PHY can be used by multiple hardware components, it must be described.
-> > 
-> > But right now the CAMSS block is described as a single block. There is no CSID device in the kernel _yet_.
-> > 
-> > When we break CSID into its own block then fine, lets have a debate about a mux then but right now the "nodes" are CAMSS[MONOLITH] <=> CSIPHY there is no DT CSID device to model this to.
+On Sat, Mar 21, 2026 at 03:14:48AM +0200, Vladimir Oltean wrote:
+> This is a set of 3 improvements to the 28G Lynx SerDes driver as found
+> on NXP Layerscape:
+> - avoid kernel hangs if lane resets/halts fail due to other bugs
+> - actually have phy_power_down() cut power from lanes, not just halt them
+> - allow consumers to call phy_exit(), to balance the phy->init_count
 > 
-> Let's take a step back - since any CSIPHY can feed into any CSID (at runtime),
-> the resulting nodes would either look like:
+> Especially change 3 will allow further development of the dpaa2-eth
+> consumer. To permit phy_exit() and other patches in net-next to be
+> submitted in this development cycle without functionally breaking
+> networking, please apply this change on top of v7.0-rc1 and provide
+> it as a stable tag to be pulled in netdev.
 > 
-> // hardcoded, m may != n
-> csid_n: csid@1000000 {
-> 	phys = <&csiphy_m>;
-> };
+> Vladimir Oltean (3):
+>   phy: lynx-28g: use timeouts when waiting for lane halt and reset
+>   phy: lynx-28g: truly power the lanes up or down
+>   phy: lynx-28g: implement phy_exit() operation
 > 
-> or
+>  drivers/phy/freescale/phy-fsl-lynx-28g.c | 190 +++++++++++++++++++----
+>  1 file changed, 157 insertions(+), 33 deletions(-)
 > 
-> // determined at runtime
-> csid_n: csid@1000000 {
-> 	phys = <&csiphy_0>,
-> 	       [...]
-> 	       <&csiphy_n-1>;
-> };
+> -- 
+> 2.34.1
+>
 
-I think the bigger problem is:
+I've analyzed the AI review output from
+https://sashiko.dev/#/patchset/20260321011451.1557091-1-vladimir.oltean%40nxp.com
+and I don't consider anything from it to be actionable.
 
-&csid_L: {
-	phys = <&csiphy_M>;
-};
+> > @@ -1065,7 +1097,7 @@ static void lynx_28g_cdr_lock_check(struct work_struct *work)
+> >  	struct lynx_28g_priv *priv = work_to_lynx(work);
+> >  	struct lynx_28g_lane *lane;
+> >  	u32 rrstctl;
+> > -	int i;
+> > +	int err, i;
+> >
+> >  	for (i = 0; i < LYNX_28G_NUM_LANE; i++) {
+> >  		lane = &priv->lane[i];
+> Can this dereference a NULL pointer for unpopulated lanes?
+> If the device tree contains available child nodes, lynx_28g_probe_lane()
+> is only called for lanes explicitly defined by the "reg" property, leaving
+> lane->phy as NULL for the rest.
+> Since the loop unconditionally iterates over all LYNX_28G_NUM_LANE (8) lanes:
+> 	for (i = 0; i < LYNX_28G_NUM_LANE; i++) {
+> 		lane = &priv->lane[i];
+> 		mutex_lock(&lane->phy->mutex);
+> 		if (!lane->init || !lane->powered_up) {
+> Would it crash on mutex_lock(&lane->phy->mutex) before checking
+> if the lane is initialized?
 
-&csid_N: {
-	phys = <&csiphy_M>;
-};
+This is fixed as of commit
+https://git.kernel.org/pub/scm/linux/kernel/git/phy/linux-phy.git/commit/?id=a258d843a3e4cb687da19437f8f81fee55ad7d35
+not present in linux-phy/next.
 
-aka split mode.
+> > @@ -1081,9 +1113,17 @@ static void lynx_28g_cdr_lock_check(struct work_struct *work)
+> >  		if (!(rrstctl & LNaRRSTCTL_CDR_LOCK)) {
+> >  			lynx_28g_lane_rmw(lane, LNaRRSTCTL, LNaRRSTCTL_RST_REQ,
+> >  					  LNaRRSTCTL_RST_REQ);
+> > -			do {
+> > -				rrstctl = lynx_28g_lane_read(lane, LNaRRSTCTL);
+> > -			} while (!(rrstctl & LNaRRSTCTL_RST_DONE));
+> > +
+> > +			err = read_poll_timeout(lynx_28g_lane_read, rrstctl,
+> > +						!!(rrstctl & LNaRRSTCTL_RST_DONE),
+> > +						LYNX_28G_LANE_RESET_SLEEP_US,
+> > +						LYNX_28G_LANE_RESET_TIMEOUT_US,
+> > +						false, lane, LNaRRSTCTL);
+> > +			if (err) {
+> > +				dev_warn_once(&lane->phy->dev,
+> > +					      "Lane %c receiver reset failed: %pe\n",
+> > +					      'A' + lane->id, ERR_PTR(err));
+> > +			}
+> Since dev_warn_once() uses a static boolean flag that is evaluated per call
+> site rather than per lane, will this mask errors for subsequent lanes?
+> If a receiver reset times out on any lane, the warning is printed and the
+> static flag is set to true. If any other lane subsequently fails the reset,
+> the warning will be silently suppressed.
+> Would a per-lane state tracking mechanism or dev_warn_ratelimited() be more
+> appropriate here to ensure multi-lane failures can be diagnosed?
 
-> 
-> or we could store them once, centrally, in the "CAMSS_TOP" node and
-> pass handles around as necessary:
-> 
-> // camss "catalog/manager" driver/library provides CSIDn with PHYm
-> camss: camss@10000000 {
-> 	phys = <&csiphy_0>,
-> 	       [...]
-> 	       <&csiphy_n-1>;
-> 
-> 	csid_n: csid@1000 {
-> 		// no PHY references
-> 	};
-> };
-> 
-> Konrad
+Unjustified complexity for an error case that should never really trigger
+in production environments.
 
--- 
-With best wishes
-Dmitry
+> > diff --git a/drivers/phy/freescale/phy-fsl-lynx-28g.c b/drivers/phy/freescale/phy-fsl-lynx-28g.c
+> > --- a/drivers/phy/freescale/phy-fsl-lynx-28g.c
+> > +++ b/drivers/phy/freescale/phy-fsl-lynx-28g.c
+> [ ... ]
+> > +static int lynx_28g_power_on(struct phy *phy)
+> > +{
+> > +	struct lynx_28g_lane *lane = phy_get_drvdata(phy);
+> > +	int err;
+> > +
+> > +	if (lane->powered_up)
+> > +		return 0;
+> > +
+> > +	/* Power up the RX and TX portions of the lane */
+> > +	lynx_28g_lane_rmw(lane, LNaRRSTCTL, 0, LNaRRSTCTL_DIS);
+> > +	lynx_28g_lane_rmw(lane, LNaTRSTCTL, 0, LNaTRSTCTL_DIS);
+> > +
+> > +	err = lynx_28g_lane_reset(phy);
+> > +	if (err)
+> > +		return err;
+> If lynx_28g_lane_reset() returns an error, the function returns immediately
+> without setting lane->powered_up to true. Does this leave the hardware
+> powered up while the software state considers it powered off?
+> If a subsequent cleanup calls lynx_28g_power_off(), it will check
+> if (!lane->powered_up) and return 0 immediately, leaving the DIS bits
+> cleared permanently. Should the error path restore the DIS bits before
+> returning?
+
+Same. If lynx_28g_lane_reset() times out, there is really no way to keep
+the software state in sync no matter whether lane->powered_up is true or
+false. The lane is broken regardless.
+
+> > @@ -1007,7 +1074,7 @@ static int lynx_28g_set_mode(struct phy *phy, enum phy_mode mode, int submode)
+> >
+> >  out:
+> >  	if (powered_up)
+> > -		lynx_28g_power_on(phy);
+> > +		lynx_28g_lane_reset(phy);
+> >
+> >  	return err;
+> >  }
+> If lynx_28g_lane_reset() fails during the success path where err is 0,
+> the return value of the reset call is discarded and the function still
+> returns 0.
+> Can this hide a hardware failure from the caller, misleading the MAC driver
+> into thinking the link is successfully brought back up? Should err be
+> updated with the return value of lynx_28g_lane_reset() here if err is
+> currently 0?
+
+As explained in the commit message, handling and propagating the
+lynx_28g_lane_reset() error to the caller isn't really any better.
+The caller would think that lynx_28g_set_mode() failed, thus that the
+mode wasn't changed. But it was changed.
+
+I do not plan to send a v2 to address any of the change suggestions above.
 
 -- 
 linux-phy mailing list
