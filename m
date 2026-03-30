@@ -4,125 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E414E10D14A6
-	for <linux-phy@archiver.kernel.org>; Mon, 30 Mar 2026 12:01:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EB8B610D14A4
+	for <linux-phy@archiver.kernel.org>; Mon, 30 Mar 2026 12:03:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=htRnt/wocX1hhIGJkmIB38jQoM1ZD/YKL4dgMB4w2DA=; b=loUXgdvGgg+DmK
-	yQ6jUjcTFEbH4wbyRTq/taIZUlVwwb40zI10brjn8ZG7v73XloLxMf0HO3qr0J/qXly5g+y5g4Chp
-	SwE4aVP72HLJoZkP0GAB1K3sedch5u8HUeLboXRETyJCRokBjI9k/3f+SKnr/s9JvWeyjBYq0Mg8T
-	GMOcOBPbLE0yCN9t5Wc+839yXrXLCInAbHNZTHGmPN2HYcN+eXxRECznw9H2ymxhuSsRFa/FVFmwF
-	tFRDPsnWHc0ysDOJwds1hReLRINKqz7LDCrGC0eTP7VGfJOd1QFPlKHAg844eLTUFgetsi0SsY5n6
-	BeVkezl8LQoBlZGar4vQ==;
+	List-Owner; bh=V1xoRzYsE7RX3caeDqP03gAq0lrhGRIuM9Sdgg82I0M=; b=fdQepTbTgcHDes
+	8Y7QmsmcZf67FC6T6XjqWdWIzOJaQPaJN8edYfCj+rBR4Je1Kwt6fc3iAJr6R8cca6PUVR8Pc5TYB
+	JSZ3BAOnPpjRciOENUb8VLvoQW4ofrRDZ0PSU0J3ofYKoudVJb8V4e8ZNeYHNHpd99MBQZ21JD+/F
+	PnISpjxqDzFhtjl8ME2uwMxoEXbjvBAzfhXDNbvpR2j/879U5Xm+DD3cvS30SD8IboIfY2VKQjkgD
+	g4MA/ornMv8GpP1vIE0nU06aGEPD/duApL01vk15d70/TkZwG96y6C8vOjVxngn/FTDfql+T0/sTh
+	Fg6lS5UvMyvr3GxDoJ1Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w7BJb-0000000BCl0-1siX;
-	Mon, 30 Mar 2026 12:01:55 +0000
-Received: from mail-norwayeastazon11013050.outbound.protection.outlook.com ([40.107.159.50] helo=OSPPR02CU001.outbound.protection.outlook.com)
+	id 1w7BL1-0000000BD7W-2zRz;
+	Mon, 30 Mar 2026 12:03:23 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w7BJQ-0000000BChU-1HTd
+	id 1w7BL0-0000000BD7O-2L8z
 	for linux-phy@lists.infradead.org;
-	Mon, 30 Mar 2026 12:01:53 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=oF6ltUX4IIQgwyQHCN0vQ1e+/jp1FlUtnEcGTuLAfzFpcZSAIyq3jA6FYuJdfK4/5or8n5IACS6KZhFNUlpz0yW5B2EYdHWVzPZX751sAEmJBSjFlUb2JCJj4ZaaqoKf4h3IeQYPFvjR90xNTUrCwWPp7hNKwBhq3DrUijXmtlCVNeKNt6XrgguhnIrd7eD4fG5SP9lFCzM6rdoMb/nSigqde5rV5R3nm0xw2lTRtxH9MA1W4aEda4IrGydOkFf4zWp+w2mjZIrVuaP7udc2uC5jkWmVmd4lpQPnLg7YjypDT8fNUX2uUz0WgHSn1czk8hZowpfnvwDFidwqsY7lKA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=6fj6ITh1IAT4NXFjhx7MZS5cWsaUT05KqkEuAnTR2Y8=;
- b=vEyKY6o4wvKNhxy5RHn2msa67sQYzuetvOVAViqAhgOjrTEclQ8Ys+rhVsA7+nvu2gS7oLGv3qxnMeGGT4/3t5lZOQBlsBLklLqUeKF4UT0gkhqhHznmxjRAihRbLBCJDEpt55DniBCpeLWZTn5FJxjlD9W8wSYCGqZvCDevS5W9H8vJS0A8ZRyUlVy3NEnZsmj7q3jusV1dAMdJ24pFkMzsCAXSJNcpWRPpu2iJ0HO1cyfUHY4ha1/oaVNvgF4JH5doony1FSgs/6ic6oR9YhKhFiDnnohHWWMjxUm6uHu2ofoUHYRo73+QjVfg2MAIwUdk1UNAt5vsLVOLRndTcg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=6fj6ITh1IAT4NXFjhx7MZS5cWsaUT05KqkEuAnTR2Y8=;
- b=k/k0GIbEb+DSdxJPdKUt7PQabk4GLylTw1piZjpWb2+Aq5q5z49swxWboES/AzMxzpzaKyeUASpfTMqO/TRYbuXWcKH8S45QDbYs3PibVGC17Kkx2CEa0zQ37FhdAxjUsGezViplRs2RnWQRZuMTSoUVu1HI5YAqoxXjQPwyL2SwV+xHGmNdgEEycI5l2LjY13u5HnYWREiBr/4HhaMxu6KDz0OcILTwPcUJ5NcBSKK0d5ybIfI92u09mVx+ErSFt8Q1R1xjgDGA8SQjYn3SKYcevtnm7YUgrdWJGQqbuuT00eIfVrN28rafoM+CH6M5uv+9e0fzn7UM55hfD0fR9w==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from AM9PR04MB8585.eurprd04.prod.outlook.com (2603:10a6:20b:438::13)
- by DU4PR04MB11815.eurprd04.prod.outlook.com (2603:10a6:10:622::6) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9745.28; Mon, 30 Mar
- 2026 11:46:23 +0000
-Received: from AM9PR04MB8585.eurprd04.prod.outlook.com
- ([fe80::f010:fca8:7ef:62f4]) by AM9PR04MB8585.eurprd04.prod.outlook.com
- ([fe80::f010:fca8:7ef:62f4%4]) with mapi id 15.20.9745.027; Mon, 30 Mar 2026
- 11:46:23 +0000
-Date: Mon, 30 Mar 2026 14:46:20 +0300
-From: Vladimir Oltean <vladimir.oltean@nxp.com>
-To: linux-phy@lists.infradead.org
-Cc: netdev@vger.kernel.org, Ioana Ciornei <ioana.ciornei@nxp.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Josua Mayer <josua@solid-run.com>, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH phy-next 0/3] Lynx 28G: better init(), exit(),
- power_on(), power_off()
-Message-ID: <20260330114620.7uvdlxgfgmmmuugt@skbuf>
-References: <20260321011451.1557091-1-vladimir.oltean@nxp.com>
-Content-Disposition: inline
-In-Reply-To: <20260321011451.1557091-1-vladimir.oltean@nxp.com>
-X-ClientProxiedBy: WA2P291CA0048.POLP291.PROD.OUTLOOK.COM
- (2603:10a6:1d0:1f::10) To AM9PR04MB8585.eurprd04.prod.outlook.com
- (2603:10a6:20b:438::13)
+	Mon, 30 Mar 2026 12:03:22 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 84E41600CB;
+	Mon, 30 Mar 2026 12:03:21 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 31E8FC4CEF7;
+	Mon, 30 Mar 2026 12:03:18 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1774872201;
+	bh=6rGfrEd7z0om+/8Eg1iaTxQn0X+cJxlNGLuxFE1DC0k=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=tKbA9FX3bQnMvq28DJdJFIlUDQ97waRpWk5wHoypnrirkiYLozRGRBGOWiCBZnzPt
+	 Iyr9C7YAWqWm9cV2GbXZJA/20Nu+lp7oMCBgid0p/3PH6z5ZJ56F7fg5OYkHvgQC3x
+	 VEFiDD6yNO4WtmZ2N7Q7wqbL0Cf+7Mzgk6063AvhHryA+5i2sFl7CakNgJMC4gj24z
+	 lJbjBsQRgr3U9X6KCMHBbCHFVCNDhq6uP0RCx0RtkWm0BwoucR48gcmRGtMoAkQGPR
+	 1mzO/e4HAOmyTZgE+/HUSX66pifxjrKHDib3534K77aeamIt4raa8vN3othKczeWmH
+	 fMo/IjByXuqZg==
+Message-ID: <f2a70c77-f00a-479e-a662-64aa359ddc9b@kernel.org>
+Date: Mon, 30 Mar 2026 13:03:16 +0100
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AM9PR04MB8585:EE_|DU4PR04MB11815:EE_
-X-MS-Office365-Filtering-Correlation-Id: 52dcf873-3afb-4f1a-5dba-08de8e51f7be
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|10070799003|366016|376014|1800799024|19092799006|56012099003|18002099003|22082099003;
-X-Microsoft-Antispam-Message-Info: 7ZJ2DxYRy1jXsJgbkWcizW+awfAMCSoSfNabvk/g57lIsecYF+bCsOKfryjJ0RHOIWSJPj3mModci6HQ0uoeqiY9YpaHocGlBYIHO8lZSUGjrk2cW7RJh0IwBjPfC1T1Q03WQHPt5Tmxu2DpsSUPib94/pTbNIAENTziHgX3O/Bf/onSEinWh2kwsMLf6eh7CqzDRHjX6jLIn7Qb0/or4Mph8dldx7jfro9PrJ2CjAE0fdc5DWzFZ0KUKH17zce7iQnTAjgH3qagnk8Nnum/g8N0SZo+ZoI0D5VKys5wgziNPg6ePPB+VMPaVIhP+txd5O7Y1dDk3ayKPAUryGkMeN8vWcjzB2sXTofuiPkOC/MstMJIEKZ/YuIPV1fRfku1mKfwMWGTe7Q2Cy3SVkaL2f+ZkzOmrl+YQXtfJHQ9vzaJ67LrcV6uWIaxbVyEFMk/OvQQ+S4HYGkr5E8DMLn1ToLflB9+89yn+fJ2UFoFi47hmcMEeeO7SgFaJQSTRdHvSKdv4xtMVXG7ntq66ZjpMzBKM5A8S7UvOgt4A6IxIPZry9W9swO9n5jujlFdITucKkU3QRqFW37BHMfjXa4Kr8nsSVUDs3Eh+o8SV95zj0pi0Rk5zmdEGSjbgHlHXmjyGqk3tznBUE9tSOaFTs5Q4eMaQA82NnDtXAHz3se2mQ4ZU7sGPwbpE6kRK4mpMoz9
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM9PR04MB8585.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(10070799003)(366016)(376014)(1800799024)(19092799006)(56012099003)(18002099003)(22082099003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 2
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?5YBDRfSZ4JGbRXLwpjrnU0g2K9YVxk2W01mv7iFvPbPBaZMQaYg4GHdKBD0Y?=
- =?us-ascii?Q?l5YyOc+4scD0Uj0lHyBtyPfcyVZoes8M3qrYo/btsE9xeckZHyg4S7IanMyF?=
- =?us-ascii?Q?LrBZDWPfmveByPyQWKQp4PYx1fUOeYsgUpTMomKl5vVGhvjnYTOG5ooVha7n?=
- =?us-ascii?Q?jBE0IwuSgfLnFXMBRJ90rO5gEA2XsKDxmCc56VBX2KuurxPeF8kkCa0UW0Re?=
- =?us-ascii?Q?xHxNlNxZ3ONSKnsR3Axf4uoKJqFt50Ppr+U8dNJl91RLfFIdRiwJ7aUuStL2?=
- =?us-ascii?Q?7rrH0But7BfKThkM3fEoLMEixqT/jroeRhgEMM8az64Cpu1jsYblge++8lNI?=
- =?us-ascii?Q?50UTAEkDxik8N/suwqFGKhRfKtwK9OyTJ1QXNCCQUpqmr5+pucRJw8bFZold?=
- =?us-ascii?Q?pFPRmTCEqoNGhnSTSO64Q1fiMD3/bouphsICG3cCXLs1kXS2GFt3sFIcV3Xo?=
- =?us-ascii?Q?kJoYrXXoyLRBtio9N9NjkQodJ+RFPvURDO7kZZfVUnbokNSN7xWzh0pNzgzF?=
- =?us-ascii?Q?339aiunTznhnQxcu41I2ZNtXU01qSFFS3MXVsuCSrfyEoxWPFApveSCo4JUf?=
- =?us-ascii?Q?PnnkC5J/v3PTEzeEFM+JMAD7PKMduhEmTuqDWe/+Sa6Oz3h5PhZcSlw6p372?=
- =?us-ascii?Q?7BLNPz9Ehewh38gnq4X5D23JXyRcuOz1F09zPW1y1rYknu28LbdKeWS+3cQf?=
- =?us-ascii?Q?hwLSQvEyzrqo8MvpIQnhB3SlSFXr5pPXxG2zrFpzHe5iQubO7f/EIDhMaVt1?=
- =?us-ascii?Q?tpEejcAIwEe5YaHYkbjQwFE0hURPv3qiAQcQOw0/dtg2n2ZIjpE5MF61bExn?=
- =?us-ascii?Q?i2m9fKxrNBGIEvMzKKp0Y34Qb7gHTdvx1Nqbf3S5FTzzO5KnnWyKQOQ08XkC?=
- =?us-ascii?Q?s5iOQ7uZvbX39+RaFMlgWQEH9nlPUklGhZOdq4RKn0FEhXOoNkq7YILqwXqb?=
- =?us-ascii?Q?y0H21rcXpLfebuKIHL2Q0tfCu4sCkyTwTevp5zivlKyHeYiN5nweG1k2Akm4?=
- =?us-ascii?Q?xrdB5zKBFZ4u7PXY4+AuTR4U3ofE+9I06OOmRgfSl5p6KE1XIEx8DI6tQSTX?=
- =?us-ascii?Q?pRiIpCozLm3Fvwn0y5TKSLRUNcjGqkcUz6/xFzmBIGG0ONRx0hfabdzInRwy?=
- =?us-ascii?Q?FsJjVdux3MFHZjqV1geq5oz8NqPvIUdFVBEli1Ua3bcMRvhpP+sMSo7G+5VY?=
- =?us-ascii?Q?EoLZp6JWaW+p4AmigyncwPW01g7uCMC1fqR4YjSKviuoQWNdQdn2b3NZ7KWV?=
- =?us-ascii?Q?DzRiYkcfDlA7g4/kzBHqkZX5QSIbRQku0RT8BPA7zwlc5Tv9VnWSL4qM52i7?=
- =?us-ascii?Q?T5OOdXEaBFsfPPj2DGtUxxdgTR4tdtLuz/yLxqFj97bF7f798qZyykfVq374?=
- =?us-ascii?Q?8q+dEetO6NgALTwAGJKYbIpsYS5q545N5urK9hIc75reH/t7VG6SpiENNSe0?=
- =?us-ascii?Q?wpvKlIfzCM0fPbhFWdFexNSdRHxRy6MZrBTuc7YHg4qwastffLAi0MBJ3IlF?=
- =?us-ascii?Q?tgQTE8rX5W9uh8MecmYTQSK+kKN9MWg2N3Z7wGwACwCywTJqjDh9dkzO9IQ3?=
- =?us-ascii?Q?/dvRNGT9z+WpQfI6+JZPui3f+uVuDOgMYEEnSY0HOL5ir5wC2RkKHr4EYA3m?=
- =?us-ascii?Q?7KXiiEOLPWsVepoZEtFiVn56j+PJpcgjiXamWtkcky2y10kH4uE/31HP+BVa?=
- =?us-ascii?Q?TlG1G+YnxX6a0R7UZw1YRHuGONjfRu497c3YU/6Yqp1WspZJDScvptIoEAIk?=
- =?us-ascii?Q?7SuvIe9r+Bolvp6cXUbgthzmFQGYn3FSXi7ko1mdhvz36+LuXUP+4ZWEIeOs?=
-X-MS-Exchange-AntiSpam-MessageData-1: JSqwlddShgvFpwF5oqno2nG/CerCdbnwcwY=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 52dcf873-3afb-4f1a-5dba-08de8e51f7be
-X-MS-Exchange-CrossTenant-AuthSource: AM9PR04MB8585.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 30 Mar 2026 11:46:23.5622
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: pmc2gsrwLLBEAPGdvhp1nHRL0EI68/q1ge7RDlk6k+EtIfDn4lg3xcfLiRSf/pChdOjLclzfvHU/qC5v/RIADQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU4PR04MB11815
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260330_050152_078645_6E085DA9 
-X-CRM114-Status: GOOD (  41.61  )
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v5 1/2] dt-bindings: phy: qcom: Add CSI2 C-PHY/DPHY schema
+To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+ Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>,
+ Bryan O'Donoghue <bryan.odonoghue@linaro.org>, Vinod Koul
+ <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>,
+ Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+References: <7712fbdd-a225-49f0-aeb9-ebcbb9d5abac@oss.qualcomm.com>
+ <da3ed78d-fb5e-4820-95d6-527d540cf03e@linaro.org>
+ <1f38187a-9464-4aa9-b70a-03b767349d56@linaro.org>
+ <c5278028-dfe9-4d09-970a-a25977967bdd@linaro.org>
+ <016c03b8-27c3-41dc-a630-8e7095db1f88@linaro.org>
+ <456ded59-d13e-4b61-975b-97ca48b5e771@linaro.org>
+ <RAPaPhpxA39W0ykm-Cr1KaDiJKpRqdQTXUeEmt5mQn4lJBHEGaIS010ejjmhUYEBsHjzrTX41Ek9zLU2bae_YA==@protonmail.internalid>
+ <76ea03d0-d41b-4880-a48c-06570eb089ed@linaro.org>
+ <0101d8bc-1ae8-475e-bb9e-cc1e16db87ec@kernel.org>
+ <6d5ebab6-3c4e-4a1c-9578-6e926cbd96de@oss.qualcomm.com>
+ <jm31MCQxrDbbf5WzmGa4xB-Qr91ZClFN9-AenTxBa0BtCGq29Rf_ydChxtWcrnbHSbkUII3eAXPK4auAprPYtQ==@protonmail.internalid>
+ <gcu6qzsoff2fox3nbytegyikajn65ae4ekowcn7bs4x2k53vao@rykmxndzzhlu>
+From: Bryan O'Donoghue <bod@kernel.org>
+Content-Language: en-US
+In-Reply-To: <gcu6qzsoff2fox3nbytegyikajn65ae4ekowcn7bs4x2k53vao@rykmxndzzhlu>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -134,148 +84,108 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, Mar 21, 2026 at 03:14:48AM +0200, Vladimir Oltean wrote:
-> This is a set of 3 improvements to the 28G Lynx SerDes driver as found
-> on NXP Layerscape:
-> - avoid kernel hangs if lane resets/halts fail due to other bugs
-> - actually have phy_power_down() cut power from lanes, not just halt them
-> - allow consumers to call phy_exit(), to balance the phy->init_count
+On 30/03/2026 12:49, Dmitry Baryshkov wrote:
+>> // determined at runtime
+>> csid_n: csid@1000000 {
+>> 	phys = <&csiphy_0>,
+>> 	       [...]
+>> 	       <&csiphy_n-1>;
+>> };
+> I think the bigger problem is:
 > 
-> Especially change 3 will allow further development of the dpaa2-eth
-> consumer. To permit phy_exit() and other patches in net-next to be
-> submitted in this development cycle without functionally breaking
-> networking, please apply this change on top of v7.0-rc1 and provide
-> it as a stable tag to be pulled in netdev.
+> &csid_L: {
+> 	phys = <&csiphy_M>;
+> };
 > 
-> Vladimir Oltean (3):
->   phy: lynx-28g: use timeouts when waiting for lane halt and reset
->   phy: lynx-28g: truly power the lanes up or down
->   phy: lynx-28g: implement phy_exit() operation
+> &csid_N: {
+> 	phys = <&csiphy_M>;
+> };
 > 
->  drivers/phy/freescale/phy-fsl-lynx-28g.c | 190 +++++++++++++++++++----
->  1 file changed, 157 insertions(+), 33 deletions(-)
-> 
-> -- 
-> 2.34.1
->
+> aka split mode.
 
-I've analyzed the AI review output from
-https://sashiko.dev/#/patchset/20260321011451.1557091-1-vladimir.oltean%40nxp.com
-and I don't consider anything from it to be actionable.
+Depends on how you model it.
 
-> > @@ -1065,7 +1097,7 @@ static void lynx_28g_cdr_lock_check(struct work_struct *work)
-> >  	struct lynx_28g_priv *priv = work_to_lynx(work);
-> >  	struct lynx_28g_lane *lane;
-> >  	u32 rrstctl;
-> > -	int i;
-> > +	int err, i;
-> >
-> >  	for (i = 0; i < LYNX_28G_NUM_LANE; i++) {
-> >  		lane = &priv->lane[i];
-> Can this dereference a NULL pointer for unpopulated lanes?
-> If the device tree contains available child nodes, lynx_28g_probe_lane()
-> is only called for lanes explicitly defined by the "reg" property, leaving
-> lane->phy as NULL for the rest.
-> Since the loop unconditionally iterates over all LYNX_28G_NUM_LANE (8) lanes:
-> 	for (i = 0; i < LYNX_28G_NUM_LANE; i++) {
-> 		lane = &priv->lane[i];
-> 		mutex_lock(&lane->phy->mutex);
-> 		if (!lane->init || !lane->powered_up) {
-> Would it crash on mutex_lock(&lane->phy->mutex) before checking
-> if the lane is initialized?
+It feels like a philosophical as opposed to an engineering debate in a way.
 
-This is fixed as of commit
-https://git.kernel.org/pub/scm/linux/kernel/git/phy/linux-phy.git/commit/?id=a258d843a3e4cb687da19437f8f81fee55ad7d35
-not present in linux-phy/next.
+The CSIPHY block is defined as one thing - is split mode one PHY or two ?
 
-> > @@ -1081,9 +1113,17 @@ static void lynx_28g_cdr_lock_check(struct work_struct *work)
-> >  		if (!(rrstctl & LNaRRSTCTL_CDR_LOCK)) {
-> >  			lynx_28g_lane_rmw(lane, LNaRRSTCTL, LNaRRSTCTL_RST_REQ,
-> >  					  LNaRRSTCTL_RST_REQ);
-> > -			do {
-> > -				rrstctl = lynx_28g_lane_read(lane, LNaRRSTCTL);
-> > -			} while (!(rrstctl & LNaRRSTCTL_RST_DONE));
-> > +
-> > +			err = read_poll_timeout(lynx_28g_lane_read, rrstctl,
-> > +						!!(rrstctl & LNaRRSTCTL_RST_DONE),
-> > +						LYNX_28G_LANE_RESET_SLEEP_US,
-> > +						LYNX_28G_LANE_RESET_TIMEOUT_US,
-> > +						false, lane, LNaRRSTCTL);
-> > +			if (err) {
-> > +				dev_warn_once(&lane->phy->dev,
-> > +					      "Lane %c receiver reset failed: %pe\n",
-> > +					      'A' + lane->id, ERR_PTR(err));
-> > +			}
-> Since dev_warn_once() uses a static boolean flag that is evaluated per call
-> site rather than per lane, will this mask errors for subsequent lanes?
-> If a receiver reset times out on any lane, the warning is printed and the
-> static flag is set to true. If any other lane subsequently fails the reset,
-> the warning will be silently suppressed.
-> Would a per-lane state tracking mechanism or dev_warn_ratelimited() be more
-> appropriate here to ensure multi-lane failures can be diagnosed?
+You could argue it either way BUT one strong argument for it being one 
+PHY is - voltage rails, input clocks etc power the block.
 
-Unjustified complexity for an error case that should never really trigger
-in production environments.
+Sure there is an esoteric mode called split or combo mode but the 
+hardware block itself the thing we usually call the PHY lives as a block 
+diagram as a discreet entity.
 
-> > diff --git a/drivers/phy/freescale/phy-fsl-lynx-28g.c b/drivers/phy/freescale/phy-fsl-lynx-28g.c
-> > --- a/drivers/phy/freescale/phy-fsl-lynx-28g.c
-> > +++ b/drivers/phy/freescale/phy-fsl-lynx-28g.c
-> [ ... ]
-> > +static int lynx_28g_power_on(struct phy *phy)
-> > +{
-> > +	struct lynx_28g_lane *lane = phy_get_drvdata(phy);
-> > +	int err;
-> > +
-> > +	if (lane->powered_up)
-> > +		return 0;
-> > +
-> > +	/* Power up the RX and TX portions of the lane */
-> > +	lynx_28g_lane_rmw(lane, LNaRRSTCTL, 0, LNaRRSTCTL_DIS);
-> > +	lynx_28g_lane_rmw(lane, LNaTRSTCTL, 0, LNaTRSTCTL_DIS);
-> > +
-> > +	err = lynx_28g_lane_reset(phy);
-> > +	if (err)
-> > +		return err;
-> If lynx_28g_lane_reset() returns an error, the function returns immediately
-> without setting lane->powered_up to true. Does this leave the hardware
-> powered up while the software state considers it powered off?
-> If a subsequent cleanup calls lynx_28g_power_off(), it will check
-> if (!lane->powered_up) and return 0 immediately, leaving the DIS bits
-> cleared permanently. Should the error path restore the DIS bits before
-> returning?
+So I think split-mode really is more like
 
-Same. If lynx_28g_lane_reset() times out, there is really no way to keep
-the software state in sync no matter whether lane->powered_up is true or
-false. The lane is broken regardless.
+&csid_L: {
+	phys = <&csiphy_0 DPHY>, <&csiphy_1 CPHY>;
+};
 
-> > @@ -1007,7 +1074,7 @@ static int lynx_28g_set_mode(struct phy *phy, enum phy_mode mode, int submode)
-> >
-> >  out:
-> >  	if (powered_up)
-> > -		lynx_28g_power_on(phy);
-> > +		lynx_28g_lane_reset(phy);
-> >
-> >  	return err;
-> >  }
-> If lynx_28g_lane_reset() fails during the success path where err is 0,
-> the return value of the reset call is discarded and the function still
-> returns 0.
-> Can this hide a hardware failure from the caller, misleading the MAC driver
-> into thinking the link is successfully brought back up? Should err be
-> updated with the return value of lynx_28g_lane_reset() here if err is
-> currently 0?
+&csid_M: {
+	phys = <&csiphy_0 DPHY>, <&csiphy_1 CPHY>;
+};
 
-As explained in the commit message, handling and propagating the
-lynx_28g_lane_reset() error to the caller isn't really any better.
-The caller would think that lynx_28g_set_mode() failed, thus that the
-mode wasn't changed. But it was changed.
+Recall the debate about a mux is because CSID may connect to any CSIPHY.
 
-I do not plan to send a v2 to address any of the change suggestions above.
+csiphy_0: {
+
+	clocks = <&camcc CAM_CC_CSIPHY0_CLK>,
+		 <&camcc CAM_CC_CSI0PHYTIMER_CLK>;
+	clock-names = "core",
+		      "timer";
+
+	operating-points-v2 = <&csiphy_opp_table>;
+
+	interrupts = <GIC_SPI 1 IRQ_TYPE_EDGE_RISING>;
+
+	power-domains = <&rpmhpd RPMHPD_MX>,
+			<&rpmhpd RPMHPD_MMCX>;
+	power-domain-names = "mx",
+			     "mmcx";
+
+	vdda-0p9-supply = <&vreg_xyz_0p8>;
+	vdda-1p2-supply = <&vreg_qrs_1p2>;
+
+	ports {
+		port@0{};
+		port@1{};
+	};
+};
+
+csiphy_N: {
+	clocks = <&camcc CAM_CC_CSIPHY1_CLK>,
+		 <&camcc CAM_CC_CSI1PHYTIMER_CLK>;
+	clock-names = "core",
+		      "timer";
+
+	operating-points-v2 = <&csiphy_opp_table>;
+
+	interrupts = <GIC_SPI 2 IRQ_TYPE_EDGE_RISING>;
+
+	power-domains = <&rpmhpd RPMHPD_MX>,
+			<&rpmhpd RPMHPD_MMCX>;
+	power-domain-names = "mx",
+			     "mmcx";
+
+	vdda-0p9-supply = <&vreg_abc_0p8>;
+	vdda-1p2-supply = <&vreg_def_1p2>;
+
+	ports {
+		port@0{};
+	};
+};
+
+IMO split mode is a special mode of that hardware block, not two 
+individual PHYs.
+
+---
+bod
 
 -- 
 linux-phy mailing list
