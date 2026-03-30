@@ -4,66 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4281C1061B02
-	for <linux-phy@archiver.kernel.org>; Mon, 30 Mar 2026 14:28:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8AEF31061B12
+	for <linux-phy@archiver.kernel.org>; Mon, 30 Mar 2026 16:02:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JKIO2gii8jgwoQnNB4a33/6Lq7ofInKnp+1P9YSlWq4=; b=SuXF5WhCbjxT0p
-	YFkdKVFMYHT3bSWBlX2wEwIO9bwFQ/5ucwjLcaKPmUHi6TFLuPphYmtJhl3fu/OtvOhJ99aZ9D0Fc
-	qfwFuy1cDarvIep9mgtAElSanDKKRPjo0UcUhwNJLdg9M3plJJsC1mqH8gBzf1NojW/NJTt3qnzFv
-	eaOQlqzuQ7QUZlDaRdIcbm+4bizNgK/1dmFdz5tPEZUaSQ3xbBmKcvLH98rfQ065dVeePNNPB6WMl
-	ytosjF8A7Tkl0ruqHucbmP9IwuilATfDzGebDxzaI/uC+MF13EoMJWS1a38tNtl4+jGeCnRIY7+3H
-	sLiDcVRqr8cF7uXdwzPg==;
+	List-Owner; bh=NnAtT91fSAgkbmKomTJIBP/5ERgvQHxsBR6zB60LXIA=; b=n0gwv0xF/sHzZ5
+	8r4T7/FKKd8fqW2OP+4y/iZ0QnGWfyeNhwYS5eG+meGSnt6ZLTWlEZzxJ+H3m7ymk485HySi7cVXX
+	dFu5GU552ameof/mM5Vy9PeOu5Xe8yty4N30yy5TUayef7Q0uRYCXhZrnbjrV1LFWloMsgM62rLLf
+	9QLmiCkzXbOm4oQ2NzrnAYCcqeoG/dCvavi5pVHUxVNm/xfk3grnlRQV+NwiZyhqkCemLovjnsOnH
+	LGm68YVbP29npTROkzR4WVBC6+uWo1Z8u3nkAsc2BsosusMm8mT3d478TDssy0UBiRchyfV572Rzh
+	tXJ4W1bRHpd1AXtIzcdw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w7Dbk-0000000BQ3d-3CKX;
-	Mon, 30 Mar 2026 14:28:48 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1w7F4L-0000000Bbqo-006k;
+	Mon, 30 Mar 2026 16:02:25 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w7Dbj-0000000BQ3U-0jn5
+	id 1w7F4I-0000000Bbq7-2lyM
 	for linux-phy@lists.infradead.org;
-	Mon, 30 Mar 2026 14:28:47 +0000
+	Mon, 30 Mar 2026 16:02:23 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 660C8600AE;
-	Mon, 30 Mar 2026 14:28:46 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7DDA1C4CEF7;
-	Mon, 30 Mar 2026 14:28:43 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id D4BC740BA7;
+	Mon, 30 Mar 2026 16:02:21 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2A04CC2BCB3;
+	Mon, 30 Mar 2026 16:02:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1774880926;
-	bh=OoPe8AbkdWCfK+Bx27MFyVex52ff4rXkE2+CiqmLJxQ=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=O7cMcjweWItBG0J6SJKa9mc/r180E1Am1NLMtsywGPX9btnU1BI/+27tGNPrm4hzZ
-	 lC1m3oNFs8IYaL1OP0GjP/t5HKMvCEs4ZreLTTipC5Y1ncnzo743uasRJVDgW+Vkb2
-	 Yy63n8cR+iXT/Jo06u9K4FGmRktSiHQ9JrmPbz7MWBD9CeMFTwMtS1KMMtLt8R/yXL
-	 MR20oqGh8asm7DkO4clBY0xHThVMbeD6AZFFgVBj1Ga+YcB4CFZXHL0HadzEOzlx+D
-	 j1nkodPY2C+EKgDwL30i5CQXLp7c1jtTwxVD+iApBCgrSLfaGSszPxsseR29sPG/U4
-	 mWp2ILgmY+h7g==
-Date: Mon, 30 Mar 2026 09:28:40 -0500
+	s=k20201202; t=1774886541;
+	bh=FCHnG0LQp25k68PKS3ZW4mVElham+3FqSHgF2cAqLlc=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=hg4gQq7/1FIfhs7FhOHKCnJUjw3WYAUqCTvSTho6VBDHanGpYUtTt/Et/sdk1Yrra
+	 WGEdzggvCsFe/FOAgKDnXwi6TkXjVHUd951bk3ILzvRtJx3oTO4Ugn9mNH37Q3MAul
+	 2sZxRN1k4HA2jXM9POGpM2Ouy7i2J47jfb3npi2WFdkfuWV89V9Xc6DlIem6kp7KwN
+	 Ukrdio5xQv1/DXcbEl98jD3FGaUPXbfra5RCjHjRDWdYHNk41Pod9nTQaSlCqsOV8G
+	 zZBF3DvaqH4yxX4tKdmjEAe7Z+daamSH/P+96N6WAMU/uCxFFbKfSxv3Zx/n5xvP/y
+	 ASafoU6UOZg0w==
 From: Bjorn Andersson <andersson@kernel.org>
-To: Ritesh Kumar <quic_riteshk@quicinc.com>
-Cc: robin.clark@oss.qualcomm.com, lumag@kernel.org, 
-	abhinav.kumar@linux.dev, sean@poorly.run, marijn.suijten@somainline.org, 
-	maarten.lankhorst@linux.intel.com, mripard@kernel.org, tzimmermann@suse.de, airlied@gmail.com, 
-	simona@ffwll.ch, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, 
-	quic_mahap@quicinc.com, konradybcio@kernel.org, mani@kernel.org, 
-	James.Bottomley@hansenpartnership.com, martin.petersen@oracle.com, vkoul@kernel.org, kishon@kernel.org, 
-	cros-qcom-dts-watchers@chromium.org, linux-phy@lists.infradead.org, linux-arm-msm@vger.kernel.org, 
-	dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-scsi@vger.kernel.org, quic_vproddut@quicinc.com
-Subject: Re: [PATCH v4 1/2] dt-bindings: phy: qcom-edp: Add reference clock
- for sa8775p eDP PHY
-Message-ID: <acqGFwaVFQ3ZNmlR@baldur>
-References: <20260128114853.2543416-1-quic_riteshk@quicinc.com>
- <20260128114853.2543416-2-quic_riteshk@quicinc.com>
- <gurq34svc5p52bqx5qwkgjmschzcbklmssjzmu2tg5wzgppkft@c6nrw2ageyp2>
- <c77ff64f-57d1-4495-bfbd-986644aad71d@quicinc.com>
+To: konradybcio@kernel.org,
+	robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	jingoohan1@gmail.com,
+	mani@kernel.org,
+	lpieralisi@kernel.org,
+	kwilczynski@kernel.org,
+	bhelgaas@google.com,
+	johan+linaro@kernel.org,
+	vkoul@kernel.org,
+	kishon@kernel.org,
+	neil.armstrong@linaro.org,
+	Abel Vesa <abelvesa@kernel.org>,
+	Ziyue Zhang <ziyue.zhang@oss.qualcomm.com>
+Cc: linux-arm-msm@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-pci@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	qiang.yu@oss.qualcomm.com,
+	quic_krichai@quicinc.com,
+	quic_vbadigan@quicinc.com
+Subject: Re: (subset) [PATCH v2 1/1] arm64: dts: qcom: hamoa: Fix incomplete Root Port property migration
+Date: Mon, 30 Mar 2026 11:01:39 -0500
+Message-ID: <177488647748.633011.4846757332023994409.b4-ty@kernel.org>
+X-Mailer: git-send-email 2.53.0
+In-Reply-To: <20260330020934.3501247-1-ziyue.zhang@oss.qualcomm.com>
+References: <20260330020934.3501247-1-ziyue.zhang@oss.qualcomm.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <c77ff64f-57d1-4495-bfbd-986644aad71d@quicinc.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260330_090222_740420_BCA4D138 
+X-CRM114-Status: UNSURE (   8.49  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,89 +93,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Mar 11, 2026 at 06:37:31PM +0530, Ritesh Kumar wrote:
+
+On Mon, 30 Mar 2026 10:09:34 +0800, Ziyue Zhang wrote:
+> Historically, the Qualcomm PCIe controller node (Host bridge) described
+> all Root Port properties, such as PHY, PERST#, and WAKE#. But to provide
+> a more accurate hardware description and to support future multi-Root Port
+> controllers, these properties were moved to the Root Port node in the
+> devicetree bindings.
 > 
-> On 3/5/2026 12:27 AM, Bjorn Andersson wrote:
-> > On Wed, Jan 28, 2026 at 05:18:49PM +0530, Ritesh Kumar wrote:
-> > > The initial sa8775p eDP PHY binding contribution missed adding support for
-> > > voting on the eDP reference clock. This went unnoticed because the UFS PHY
-> > > driver happened to enable the same clock.
-> > > > After commit 77d2fa54a945 ("scsi: ufs: qcom : Refactor
-> > phy_power_on/off
-> > > calls"), the eDP reference clock is no longer kept enabled, which results
-> > > in the following PHY power-on failure:
-> > > > phy phy-aec2a00.phy.10: phy poweron failed --> -110
-> > > > To fix this, explicit voting for the eDP reference clock is
-> > required.
-> > > This patch adds the eDP reference clock for sa8775p eDP PHY and updates
-> > > the corresponding example node.
-> > > > Signed-off-by: Ritesh Kumar <quic_riteshk@quicinc.com>
-> > 
-> > Is there any reason why you didn't follow up on this patch Ritesh?
-> > Looks like it's ready to be merged.
+> Commit 960609b22be5 ("arm64: dts: qcom: hamoa: Move PHY, PERST, and Wake
+> GPIOs to PCIe port nodes and add port Nodes for all PCIe ports")
+> initiated this transition for the Hamoa platform by moving the PHY
+> property to the Root Port node in hamoa.dtsi. However, it only updated
+> some platform specific DTS files for PERST# and WAKE#, leaving others in
+> a "mixed" binding state.
 > 
-> I was waiting for patch to merge as there is no pending comments.
-> 
+> [...]
 
-It's been two months now, if you want your patches to be merged please
-show that - ask the maintainer for a status update, ask a colleague to
-send a reviewed-by...
+Applied, thanks!
 
-Perhaps the maintainer lost track of your change?
+[1/1] arm64: dts: qcom: hamoa: Fix incomplete Root Port property migration
+      commit: 11b72b1ca9891c77bc876ef9fc39d6825847ffee
 
-Perhaps it's not clear that the change "need" an Ack from e.g. Dmitry
-and then it should be merged by Vinod? Because you're changing two
-different subsystems but leave it up to the maintainers to figure out
-how to deal with this...
-
-
-Either way, show that you want this to be merged, don't just wait until
-the situation resolves itself.
-
-Regards,
-Bjorn
-
-> > Reviewed-by: Bjorn Andersson <andersson@kernel.org>
-> > 
-> > Regards,
-> > Bjorn
-> > 
-> > > ---
-> > >  .../devicetree/bindings/display/msm/qcom,sa8775p-mdss.yaml  | 6 ++++--
-> > >  Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml     | 1 +
-> > >  2 files changed, 5 insertions(+), 2 deletions(-)
-> > > > diff --git
-> > a/Documentation/devicetree/bindings/display/msm/qcom,sa8775p-mdss.yaml
-> > b/Documentation/devicetree/bindings/display/msm/qcom,sa8775p-mdss.yaml
-> > > index e2730a2f25cf..6c827cf9692b 100644
-> > > --- a/Documentation/devicetree/bindings/display/msm/qcom,sa8775p-mdss.yaml
-> > > +++ b/Documentation/devicetree/bindings/display/msm/qcom,sa8775p-mdss.yaml
-> > > @@ -200,9 +200,11 @@ examples:
-> > >                    <0x0aec2000 0x1c8>;
-> > >  >              clocks = <&dispcc0 MDSS_DISP_CC_MDSS_DPTX0_AUX_CLK>,
-> > > -                     <&dispcc0 MDSS_DISP_CC_MDSS_AHB_CLK>;
-> > > +                     <&dispcc0 MDSS_DISP_CC_MDSS_AHB_CLK>,
-> > > +                     <&gcc GCC_EDP_REF_CLKREF_EN>;
-> > >              clock-names = "aux",
-> > > -                          "cfg_ahb";
-> > > +                          "cfg_ahb",
-> > > +                          "ref";
-> > >  >              #clock-cells = <1>;
-> > >              #phy-cells = <0>;
-> > > diff --git a/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
-> > > index 4a1daae3d8d4..0bf8bf4f66ac 100644
-> > > --- a/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
-> > > +++ b/Documentation/devicetree/bindings/phy/qcom,edp-phy.yaml
-> > > @@ -74,6 +74,7 @@ allOf:
-> > >          compatible:
-> > >            enum:
-> > >              - qcom,glymur-dp-phy
-> > > +            - qcom,sa8775p-edp-phy
-> > >              - qcom,x1e80100-dp-phy
-> > >      then:
-> > >        properties:
-> > > -- > 2.34.1
-> > >
+Best regards,
+-- 
+Bjorn Andersson <andersson@kernel.org>
 
 -- 
 linux-phy mailing list
