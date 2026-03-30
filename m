@@ -4,92 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8F77A1061B22
-	for <linux-phy@archiver.kernel.org>; Mon, 30 Mar 2026 21:52:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AE6A61061B24
+	for <linux-phy@archiver.kernel.org>; Mon, 30 Mar 2026 22:37:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3urybYUo/LE4vyqodvlK+cweG5Z2SQWxY2Mpfk8qP88=; b=uanPxqt31H/QHT
-	DEBmuZBvztM+JWX6+P0A9sxODFvHjPUDLpasvKww02TJykRDAoWtYubQLrVz/TYPwMl/pOF05aiDT
-	N9LQwjnN7ZgUMCg4ThlR+Sq+bJzmkVircyAApbswGCeH2ukY97OeU8WuP43SjUAq5duzCTVAokCxb
-	0B0bhKVOMpWSIYAiwGz6isxoyFyADpEgl3RS/vJxiKPSlTx77Sm/awBhc6DZ0Am4juYd2iio+cOXI
-	b12Nfrmk4ptKSv9V4w+UxheWnGzUzsm2hg+f3CeqeWFiaJu8uK/XKGZVpJX3hHJ2GFm5TxbDgqvLN
-	JkR/N5AiTm7ACyhqiOSQ==;
+	List-Owner; bh=GT7Lxhoo6139pBbyO+v345RYlLZf+VUoFbPwfgRUYzw=; b=RsfIAESXVgGtVD
+	MB2UbMnQKi+BaYQTBycki2RpOhs4WN388rCJDJnijNWgNPRI/n8EehiivgRJx3hSljleklfoZHCgj
+	OE37kYOCWZddtWZ4b8gUaW1vuR2MOsbYd0bNWFHFNV1hwneQu7nAaWeKYAuonVtWxxZtJOc/tzuFu
+	4VOKOhWQXvdb68zq8cGWe92DrEdSi2tTQBhI2WEcHgScUxt/ZGPZ7EjWmUyX8Tj+xshBySHMwO/aV
+	8CvhsV8Exv/UrIpuaVlc40Eak/p9qBe+wSqZia3N84MeQ8XFonhIzDl78qVJ8ULmF/L08f3nAbz81
+	sxRecQtJeNLIPnOZaj5Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w7KWs-0000000Bvqi-1KmV;
-	Mon, 30 Mar 2026 21:52:14 +0000
-Received: from mail-wm1-x32d.google.com ([2a00:1450:4864:20::32d])
+	id 1w7LF0-0000000Byky-1CJJ;
+	Mon, 30 Mar 2026 22:37:50 +0000
+Received: from mail-wm1-x331.google.com ([2a00:1450:4864:20::331])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w7KWp-0000000BvqN-3nmx
+	id 1w7LEx-0000000Byjp-0E4h
 	for linux-phy@lists.infradead.org;
-	Mon, 30 Mar 2026 21:52:13 +0000
-Received: by mail-wm1-x32d.google.com with SMTP id 5b1f17b1804b1-4853a5ffc05so10653495e9.0
-        for <linux-phy@lists.infradead.org>; Mon, 30 Mar 2026 14:52:11 -0700 (PDT)
+	Mon, 30 Mar 2026 22:37:48 +0000
+Received: by mail-wm1-x331.google.com with SMTP id 5b1f17b1804b1-48533a598fcso9475905e9.0
+        for <linux-phy@lists.infradead.org>; Mon, 30 Mar 2026 15:37:46 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1774907530; x=1775512330; darn=lists.infradead.org;
+        d=gmail.com; s=20251104; t=1774910265; x=1775515065; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=i9VtVxRJozztTdXG3B3HhY7EDhQNxzzr8H6rdGSXE0o=;
-        b=fIbQYntsWsAZwvPTy2v2VYzQrz5IG2B4pFXfrD/609tHhE7PzgvE5C1Rv+Ocuz2MTY
-         JqwU4ct2uD7arv1cLIpfhz+/TQ9hNtwMq7dZjWsl0F7Dpb6q6iZqVKNdPJt2Bztw+vqS
-         RY0JV3/fB727MnTEEhF7k5IyBXjiRGpXPpXy+nS/OMBbZ243y0XbsejALskFAOkxDz/k
-         UtaTOMKVyKe1Ttn1jk6ytZyZsIWO3LJE+GvXr3Xp6FdYwBXKLlm2FAOVxrcikIAoiCu/
-         4WyMn4coYodl/qRjuW6LuLYQnvxjE7QWIwyJG5kl63EBgC8xgt7fTu1d/OjIUO/sYLNM
-         ES1Q==
+        bh=3jfJJje0KBtM9hz5w5lHt1nnYJf3r1NFmOVPbBE39ug=;
+        b=kOM+5447/u7QXQRnIfn58Y5GqkAZ+XPOcO0jgx/oLuNh+jfSb2fa2CKmLq0Z3kF+0E
+         1znoVIKiiaNGzb8GZrSrZj+yrpsOtHsbE2f1wxSm1SkxCTgfgrz1sJcE2QcArYvZ72HK
+         f1LdrgoFwh30dNGcywWRXDTnMs5xmDh7qaNoPtPSqY65mobG5YvIGGtQsSMzSgh0z8VA
+         UAM9hKx8f0UXM5F179MPtbmR+GG2kgy9A0cK8w3zJ44+EkSG0/K+/6NHSlnblnbjXf8V
+         Z+158G3jBv+5TexDBMgtojThzqjVJ5He+vF7B+ye33K5em+mbMboJmzolPIXDtyHkOVg
+         7HlQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1774907530; x=1775512330;
+        d=1e100.net; s=20251104; t=1774910265; x=1775515065;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=i9VtVxRJozztTdXG3B3HhY7EDhQNxzzr8H6rdGSXE0o=;
-        b=KstujJ++7kDYJndeUH4eq8e282/fhCqaaxNc67IjdvbcP0r4RUP+GVxzQadizIs0Rj
-         eFniSgQmqaIn6AW5I9azZvn1Vo1eZxdbqy2NcnDBOZn2EfMLEqz/jPIn9Frx5DrClmWn
-         4ON1yPdtOJSr8OnU+v9lHS5QFIxhSAVnu1zY8AGcIy5K2iU2CEII2CjsjzXCwf6DrxvV
-         H+X7Pof62bnDaTx73dGMsxYlF/BiWea4yXht3fGGJZUFW93NqPdVG5sYRPhtTzbTnCap
-         +9oEM/O3/nK4huPU/De8cDVRUStH0LESguuEgT82XYWz63D+4zxRvOpx1uZJ6XiNBAWJ
-         exmQ==
-X-Forwarded-Encrypted: i=1; AJvYcCVvKig2rrkCrji6r4uTcnADF9xEu7WrVvRuRgGf/qiWNEQw3j09JAJ2rlVWf3LBITh500ciXWt5l4w=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxOxwx2XtsXvc6fQaVCCF+gsS+qCEJ5Isa2b6isuJxUghzfNlw1
-	w2M6HJ+z/XeKnTQMIMTmcu8j4D29y+LE+9Zr5ItwMjDWl5pg9SukQcUR
-X-Gm-Gg: ATEYQzz41605UvYzGUVwRPyCJp7ok0iNyx2yW6rzNh7a++s/B/P4s6Pa0QdFACw0b3Z
-	did+Dr7SwESEH2Yt/bUVDW4HekAGGzzH/WNmvpA03l3cEO19lNoTeX6+oWCzBHua4p+PcmeEVO7
-	/CzLOARKz+iTAAMXrLTt6ok/unVqA/djR9mR+8VnZu8uClbXhzI+AMZStvPMms0RYmRI4MWOOKa
-	I5ZDXJp4FNqZWfOv6/S0SDyZkO0rqIY5mldaHCuhk+9kvOVKIyVsVPWIscl5jABTahjuog4PQp+
-	fWUX1nQbtf0BopNajm2VBxMYIKf2kqMf5TXQFi8nr7XnxlUaXcQrvn8SNDROorP+lBQxBnnu3Q0
-	iHpwpYQjCulERG1AVKaK5mUznyEuRhGWSM7aXw+kjJOPhCl/qHQm9NETB4guj7Wi/tZVr7hDR9D
-	xKqREc9Np15ZppwNH8In9HkQC9Ew==
-X-Received: by 2002:a05:600c:1d1e:b0:485:385f:674d with SMTP id 5b1f17b1804b1-48727f0e5acmr122902805e9.8.1774907529964;
-        Mon, 30 Mar 2026 14:52:09 -0700 (PDT)
+        bh=3jfJJje0KBtM9hz5w5lHt1nnYJf3r1NFmOVPbBE39ug=;
+        b=VfT4vJw3U7qXIa+tq+a/v/+3qZnjtURBibQp7IJ6zudZvosRrebeYk7611vbsaaw8j
+         +5X4qgobVuGocaOm+yeTRGv4hnrTRPR1SrnoitjvpYqo4oWe7XmGvEH0DEC76mtHuEBS
+         FORjComTlrunI1erTPO1XF+RuuFdomDRXIS9uC8qt2dcJpNCEr/wI2DG5DREsTXUCIR1
+         0459L4SY3SbtkGc4cXupFHeJGhEPtPTBhJLff/pxDh2+D4kZLhAn4+gecidNSqckUWNM
+         gw8i9QLSfnoK+PO3Lms/HPzcd5q5eQ1uqu4g7lTh+0gw59skCXSwU0Mc13jJbGhRCEOj
+         kVkA==
+X-Forwarded-Encrypted: i=1; AJvYcCVCCyoJaibkwq7LdbZJBgutQoTzOvSV0CfR97IBTYzM9M1APGYNwfHe3+I5OsG4J5sCmntWepVP2A4=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxLTttGfgIvebXc86Rr+uBZ5Xr2i4T5iF3XmYzH6Cu7Z+IUYxZD
+	WHuwf/KBGu8MXjAHkWII0Hg64DuSOo28GiKHWMBs7jit5LmZNSkjGc+5
+X-Gm-Gg: ATEYQzyejdgDD+Oxr8+epU56jM5wbvfQh90+il5xhcheUkZ8Qpd4brwRWAKGt07oAxt
+	DfY5t7n/lve6CySExBjLPa69k2HtiaXhD8LCJ9rZwtRt67kcSpwsFfaPJdiYA3nuM9hTVNZ0gZL
+	BuU82+fbcu2AirFUlpkzd7dU6NW/lvwNozg9PhI8sy+wM5In8LOzXrVIn43FDTx4uA5n0fzZhH/
+	d3HgKrEFYV6Xu4BjHsQo5cLRs5U2Ieomez/rTGybKB4xXD+CY2z/nH2m1It870bfxKHiym4i1Bj
+	RaZ8xuG2a6+dEG13RmCOqtVVI80WZ/+gqPuhoXNa5Roz/Klnoba3GJhkl7orSd3JmnQ29wAwt5I
+	aVqSl3Gm2PknPr5fAiomm1FUjrDjBCsNznNMLOSdG740IoG9yoRMLXchYgraE91amhN20t7o4I6
+	6BJPFuyfR612sU1rQAt5Q1fl/lPg==
+X-Received: by 2002:a05:6000:4014:b0:43c:fd96:2b8a with SMTP id ffacd0b85a97d-43cfd963552mr5568854f8f.2.1774910265013;
+        Mon, 30 Mar 2026 15:37:45 -0700 (PDT)
 Received: from skbuf ([2a02:2f04:d50a:b400:fc92:d05b:3301:b722])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4887ad2b379sm3209085e9.4.2026.03.30.14.52.08
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-43cf24739easm23222604f8f.30.2026.03.30.15.37.43
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 30 Mar 2026 14:52:09 -0700 (PDT)
-Date: Tue, 31 Mar 2026 00:52:07 +0300
+        Mon, 30 Mar 2026 15:37:44 -0700 (PDT)
+Date: Tue, 31 Mar 2026 01:37:41 +0300
 From: Vladimir Oltean <olteanv@gmail.com>
-To: Rustam Adilov <adilov@disroot.org>
-Cc: Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
+To: Nora Schiffer <nora.schiffer@ew.tq-group.com>
+Cc: Andrew Lunn <andrew+netdev@lunn.ch>,
+	"David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+	Nishanth Menon <nm@ti.com>, Vignesh Raghavendra <vigneshr@ti.com>,
+	Tero Kristo <kristo@kernel.org>,
+	Siddharth Vadapalli <s-vadapalli@ti.com>,
 	Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Stanley Chang <stanley_chang@realtek.com>,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2 6/6] phy: realtek: usb2: Make configs available for
- MACH_REALTEK_RTL
-Message-ID: <20260330215207.stx6qbjr7kctm4xt@skbuf>
-References: <20260327160638.15134-1-adilov@disroot.org>
- <20260327160638.15134-7-adilov@disroot.org>
+	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>, netdev@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+	linux@ew.tq-group.com
+Subject: Re: [PATCH v2 5/7] phy: ti: gmii-sel: add support for J722S SoC
+ family
+Message-ID: <20260330223741.pmrx25cslrlpbcea@skbuf>
+References: <cover.1774354734.git.nora.schiffer@ew.tq-group.com>
+ <5d00697f133cd33a1df62ac7ebf73e507e49ed2f.1774354734.git.nora.schiffer@ew.tq-group.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260327160638.15134-7-adilov@disroot.org>
+In-Reply-To: <5d00697f133cd33a1df62ac7ebf73e507e49ed2f.1774354734.git.nora.schiffer@ew.tq-group.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260330_145212_034711_CC33022F 
-X-CRM114-Status: GOOD (  16.19  )
+X-CRM114-CacheID: sfid-20260330_153747_112599_C68C5CC4 
+X-CRM114-Status: GOOD (  17.99  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,42 +112,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, Mar 27, 2026 at 09:06:38PM +0500, Rustam Adilov wrote:
-> Add the MACH_REALTEK_RTL to the if statement to make the config
-> options available for Realtek RTL SoCs as well.
+Hi Nora,
+
+On Tue, Mar 24, 2026 at 01:29:41PM +0100, Nora Schiffer wrote:
+> The J722S gmii-sel is mostly identical to the AM64's, but additionally
+> supports SGMII.
 > 
-> Signed-off-by: Rustam Adilov <adilov@disroot.org>
+> Signed-off-by: Nora Schiffer <nora.schiffer@ew.tq-group.com>
 > ---
->  drivers/phy/realtek/Kconfig | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+>  drivers/phy/ti/phy-gmii-sel.c | 11 +++++++++++
+>  1 file changed, 11 insertions(+)
 > 
-> diff --git a/drivers/phy/realtek/Kconfig b/drivers/phy/realtek/Kconfig
-> index 75ac7e7c31ae..f9eadffacd18 100644
-> --- a/drivers/phy/realtek/Kconfig
-> +++ b/drivers/phy/realtek/Kconfig
-> @@ -3,7 +3,7 @@
->  # Phy drivers for Realtek platforms
->  #
+> diff --git a/drivers/phy/ti/phy-gmii-sel.c b/drivers/phy/ti/phy-gmii-sel.c
+> index 6213c2b6005a5..4e242b1892334 100644
+> --- a/drivers/phy/ti/phy-gmii-sel.c
+> +++ b/drivers/phy/ti/phy-gmii-sel.c
+> @@ -251,6 +251,13 @@ struct phy_gmii_sel_soc_data phy_gmii_sel_soc_am654 = {
+>  	.regfields = phy_gmii_sel_fields_am654,
+>  };
 >  
-> -if ARCH_REALTEK || COMPILE_TEST
-> +if ARCH_REALTEK || MACH_REALTEK_RTL || COMPILE_TEST
->  
->  config PHY_RTK_RTD_USB2PHY
->  	tristate "Realtek RTD USB2 PHY Transceiver Driver"
-> -- 
-> 2.53.0
-> 
-> 
+> +static const
+> +struct phy_gmii_sel_soc_data phy_gmii_sel_soc_j722s = {
+> +	.use_of_data = true,
+> +	.regfields = phy_gmii_sel_fields_am654,
+> +	.extra_modes = BIT(PHY_INTERFACE_MODE_SGMII),
 
-The file now reads:
+I'm not familiar with the hardware, but "mostly identical to AM64, but
+additionally supports SGMII" does not explain why j722s does not inherit
+the features that am654 has (PHY_GMII_SEL_RGMII_ID_MODE and
+BIT(PHY_GMII_SEL_FIXED_TX_DELAY).
 
-if ARCH_REALTEK || MACH_REALTEK_RTL || COMPILE_TEST
+The phy-gmii-sel from j722s does support RGMII, right? Because in lack
+of the PHY_GMII_SEL_RGMII_ID_MODE feature, phy_gmii_sel_mode() will just
+silently skip the regmap_field_write(regfield, rgmii_id) call, and
+return successfully despite an incomplete configuration.
 
-...
+We have the phy_validate() call and phy_ops::validate() through which
+the PHY can report to the Ethernet controller which phy_interface_t it
+supports and which it doesn't. If the j722s doesn't support RGMII, maybe
+it should implement this method.
 
-endif # ARCH_REALTEK || COMPILE_TEST
-
-Please update the end comment as well.
+> +};
+> +
 
 -- 
 linux-phy mailing list
