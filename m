@@ -4,87 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 690CFFB3CE6
-	for <linux-phy@archiver.kernel.org>; Mon, 30 Mar 2026 09:17:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A993AFB3CE5
+	for <linux-phy@archiver.kernel.org>; Mon, 30 Mar 2026 09:25:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
-	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=F2OdGHEqKCmUV9ENOL3y/lFN/fOLhvXnVtCyuC5xqlI=; b=0ezsh9x4+F2qd4BI16za6xs1Ph
-	nTCiBcqTHOIUIc/RSIjtLH0+htw2mvuUZmDqvZPenehDO0rbdCfv0duOJbKtsquY1ftV3X3NGQCHY
-	k8li/wD+1DbX6IiKubd+ayPVKYZVKrtaoYnmyijTygSGRk/hP7urBV7qQRILNrplUPNY1OvJ2rJiT
-	MkLUi7W0pAD6J5HNc/hpO28xFe4ito6n5GzhFhS0d0N2vrjRhCWvdI141vvClqBYuIGF/WpTL94k/
-	AJ2FR8HR0Tjw6xHOXC9yT8+k7Vof/RdBdFG8QihiNeyoNxj2dQNzvBQLH8rtIz5fPuFxgCmnChn3e
-	L58d3UOA==;
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=TGgSTJ1UxdjQ0gtmaUDam7LDvRp92tBwT1eF9bbmG7A=; b=mMWpurFwd1lQ8D
+	ZpcD77oA8x55GPMyckI4L4b2XoEPwhEe6Hx3hJuq6lLVBl6ok7r2ojfVuvJINtdJvLbuweXxUhheW
+	YEIskDvTrJ92z2/kw0Q7v0fjCnhkon9dGf3yZxKwl5tlKNY1mio8xHQNgBdszJO/nzXqI/iRbHXYu
+	P/5287tTD9AE0e64Mecx6s4Uo3SsB1mac/5OA45IMEabi/4Gw6oMDPiYnStin6Y6u8rK7mx/4XfHT
+	FUglQ9pUJePCrO2OGTW3f1YQTNRVtdDcfVBiMiYoQJ7nu9t3uvy5ADo+VJnGpmowWCS4twk/VjgS+
+	4U7CB9fa3s1l/Q06zqnQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w78kD-0000000AwpO-3tA5;
-	Mon, 30 Mar 2026 09:17:13 +0000
-Received: from mail-wr1-x430.google.com ([2a00:1450:4864:20::430])
+	id 1w78sF-0000000AxcU-1njq;
+	Mon, 30 Mar 2026 09:25:31 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w78kB-0000000Awoq-2PY1
+	id 1w78sD-0000000Axbe-0gDt
 	for linux-phy@lists.infradead.org;
-	Mon, 30 Mar 2026 09:17:13 +0000
-Received: by mail-wr1-x430.google.com with SMTP id ffacd0b85a97d-43cfd96354aso477646f8f.1
-        for <linux-phy@lists.infradead.org>; Mon, 30 Mar 2026 02:17:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1774862230; x=1775467030; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=4VOM/b3KwJ3A3R51aHiZRtwvN8eEVduEBIFhFs9QUVY=;
-        b=Vj+YUkGZmwgT1+TF4l+fkFCH+SIftfykploLh1laCB/L/qoge3zRsviubRas7YKAVt
-         hv09MMM9PSw0xsHsL+x8t8Iw0Q77l56bAr+i0K0jJCqbRUb1bxtUgrZMjPHZXg/p33Su
-         sv0a1lySBXBQu56dYEXKhOt1QP7Y6ctvDN9KA8ChK7Wle72fwX/D0h0z2kviYa0uX1As
-         5Me4UOR1HTq321/XusRP5S/A4qZUXgNVyFxeN21KI8Pl0ni63UnGGkXa9HWiDPPdBoBl
-         6sUSPtWnwH/VQhjRZwgwllu/MNISAt0dyuLf0F7lr/cts+WAablKriizIZFgmGCgQ6lU
-         Eptw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1774862230; x=1775467030;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=4VOM/b3KwJ3A3R51aHiZRtwvN8eEVduEBIFhFs9QUVY=;
-        b=gOGhOvfF27EWFG8+cPKdb2zL24eLGABgPgm5XuwbnjqXT6Juj0DkpcMCBExFfZgmVy
-         VSSByR/PaE2GBp2e8bOzuhf6DUtq6BIHhNsVSm8JwvAf6+kP0Gp3QDZ/KeDNOVzLZ0vq
-         W3tdSNN36I1sMLuvV9P36+qIOhkaR3alc/Gu4qrXYXOsgc7iZSTzOHtTN+kxZo9oPO2h
-         /j7pwp06K5iVv5SIPKs5YG86lFH7XPQ0MZAjMhybz1PysQ0rkns8+gP/aIDJtCkBmWsL
-         sBOmjyFF+nKfzGFY0kiNSWAI2Nb3GXPJRk1aAjUvAsInqErU6mKs7JB5SBWuOFydwgPk
-         W3Kw==
-X-Forwarded-Encrypted: i=1; AJvYcCXxLn/lLozbfwH8g+XI0fgrCBF5ie0ZzXElK8lbNEMM6TuR8wfLoRY9rHR0ytpAHI8nTGzuqKMV37s=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxOEnHqSklMkGAsvy6WGnkhZ/VUebsoAGD5yKCKfIfpsrOvKSHd
-	8IEuNqERYx2VXE0hT+/tZ2eOAKheLMfSWm4AhksaJrOIAI5Vp0JJL4BL/BLzpQdO89k=
-X-Gm-Gg: ATEYQzzKNpP66yWNQmvz9adD9f0XvQ3xghFVqmzi1RobwlYn6lL3RpmhR7L5nKlzdBG
-	pgEiP+wYSkKRLo9QSTL6vKkGaPBhNtAobTdmDwhN+yEwrm8LH9eLN3KE/IGX6XFnGBVgbA0duoU
-	p9Ndot7SsbRmDJIGQKvwWelD4qlqyXdpI8f/sdzUXVwuhIkC7Mwque+avdLHDg07EaW+MnYGL+9
-	hFYPcOId+GCRQMXMfK7GAdgNOfoWfRosu9i76ylBKF+lk5fMQml7k1YVB8DPblR41ckFuJvhawJ
-	FtVszm/uwNZYnGrsvnpAfvHAG+viB2MoshDm12Ig9Kfusbt9r48dkoNZhCgKpRN5O+Btj6US+22
-	XBLjo+vLFDKNfwvWGuP0Lk8ZmYeBF5W93uL1qbn2FbBn/3jiApgJ20607LuFS4l7r6rja4L101h
-	VcadkSEB/beTxEKCInSLlbUzg3Xuit76iX9UcZP1cZ5miF6dNOY7Eu7mK55FVCtQRmfRba/A95S
-	hU5O1o=
-X-Received: by 2002:a05:6000:2f87:b0:43c:ff58:35c2 with SMTP id ffacd0b85a97d-43cff583701mr5346372f8f.20.1774862229397;
-        Mon, 30 Mar 2026 02:17:09 -0700 (PDT)
-Received: from ?IPV6:2a01:e0a:106d:1080:cb3c:d0d2:870b:6ad0? ([2a01:e0a:106d:1080:cb3c:d0d2:870b:6ad0])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-43cf21e2628sm19089838f8f.6.2026.03.30.02.17.08
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 30 Mar 2026 02:17:09 -0700 (PDT)
-Message-ID: <76ea03d0-d41b-4880-a48c-06570eb089ed@linaro.org>
-Date: Mon, 30 Mar 2026 11:17:08 +0200
+	Mon, 30 Mar 2026 09:25:30 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 36A2343BA7;
+	Mon, 30 Mar 2026 09:25:27 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3630EC4CEF7;
+	Mon, 30 Mar 2026 09:25:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1774862727;
+	bh=9bQ/OYfV+keQ5xo2EhGFiUEry34Hic8CujRdJP9iYiM=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=i+5ZjBvMd74lpS/usvh16Cm14l1ZC/XvVznSnDamBKq87Kz+frVYkLCeeIgT8Ao1F
+	 0UH814n7osomW+K9KR+fL82rfnmrPm2ihy80OUI5NnwfmryCArj8PB8sfEoDl8DvcP
+	 JOb2tND7bEzGh+7c28HzhooZX/EkA62Je17T9Vp6ldqMAXZuEdjEvuY/XI2nxfD1O+
+	 nlXVybgjDJBgqfeUZcawpxhvS5HsjLMjzNPLfcua+5LcuMxzc9lcmcAxUHO/M76P9v
+	 /Ni/qaAGXdqEszH0ywM1aJF6ETqXcHIPSbix/uqx0Br7mejmcnDez5kvqWaJAGsQA9
+	 XxeP/Idob3nmg==
+Message-ID: <0101d8bc-1ae8-475e-bb9e-cc1e16db87ec@kernel.org>
+Date: Mon, 30 Mar 2026 10:25:22 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-From: Neil Armstrong <neil.armstrong@linaro.org>
 Subject: Re: [PATCH v5 1/2] dt-bindings: phy: qcom: Add CSI2 C-PHY/DPHY schema
-To: Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
+To: Neil Armstrong <neil.armstrong@linaro.org>,
+ Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
  Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, Vinod Koul
  <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
  Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
  Conor Dooley <conor+dt@kernel.org>
-Cc: Bryan O'Donoghue <bod@kernel.org>,
- Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
+Cc: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
  linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  linux-media@vger.kernel.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org
@@ -96,36 +65,14 @@ References: <20260326-x1e-csi2-phy-v5-0-0c0fc7f5c01b@linaro.org>
  <c5278028-dfe9-4d09-970a-a25977967bdd@linaro.org>
  <016c03b8-27c3-41dc-a630-8e7095db1f88@linaro.org>
  <456ded59-d13e-4b61-975b-97ca48b5e771@linaro.org>
-Content-Language: en-US, fr
-Autocrypt: addr=neil.armstrong@linaro.org; keydata=
- xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
- GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
- BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
- qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
- 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
- AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
- OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
- Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
- YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
- GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
- UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
- GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
- yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
- QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
- SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
- 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
- Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
- oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
- M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
- 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
- KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
- 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
- QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
-Organization: Linaro
-In-Reply-To: <456ded59-d13e-4b61-975b-97ca48b5e771@linaro.org>
+ <RAPaPhpxA39W0ykm-Cr1KaDiJKpRqdQTXUeEmt5mQn4lJBHEGaIS010ejjmhUYEBsHjzrTX41Ek9zLU2bae_YA==@protonmail.internalid>
+ <76ea03d0-d41b-4880-a48c-06570eb089ed@linaro.org>
+From: Bryan O'Donoghue <bod@kernel.org>
+Content-Language: en-US
+In-Reply-To: <76ea03d0-d41b-4880-a48c-06570eb089ed@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260330_021711_856518_36953146 
-X-CRM114-Status: GOOD (  41.15  )
+X-CRM114-CacheID: sfid-20260330_022529_248955_C9D84A3E 
+X-CRM114-Status: GOOD (  38.75  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -137,150 +84,135 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: Neil Armstrong <neil.armstrong@linaro.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMy8zMC8yNiAxMTowMiwgQnJ5YW4gTydEb25vZ2h1ZSB3cm90ZToKPiBPbiAzMC8wMy8yMDI2
-IDA4OjQ5LCBOZWlsIEFybXN0cm9uZyB3cm90ZToKPj4gT24gMy8yNy8yNiAxODo0MiwgQnJ5YW4g
-TydEb25vZ2h1ZSB3cm90ZToKPj4+IE9uIDI3LzAzLzIwMjYgMTU6MjgsIE5laWwgQXJtc3Ryb25n
-IHdyb3RlOgo+Pj4+PiBUbyBiZSBmcmFua2x5IGhvbmVzdCB5b3UgY2FuIG1ha2UgYW4gYXJndW1l
-bnQgZm9yIGl0IGVpdGhlciB3YXkuIEhvd2V2ZXIgbXkgaG9uZXN0bHkgaGVsZCBwb3NpdGlvbiBp
-cyBhbmFseXNpbmcgb3RoZXIgdXBzdHJlYW0gaW1wbGVtZW50YXRpb25zIGNvbm5lY3RpbmcgdG8g
-dGhlIFBIWSBtZWFucyB3ZSBjYW4ndCBtYWtlIHRoZSBQSFkgZGV2aWNlIGEgZHJpdmVycy9waHkg
-ZGV2aWNlIC0gaXQgd291bGQgaGF2ZSB0byBiZSBhIFY0TDIgZGV2aWNlIGFuZCB0aGVuIGZvciBt
-ZSB0aGUgcXVlc3Rpb24gaXMgd2h5IGlzIHRoYXQgZXZlbiByZXF1aXJlZCA/Cj4+Pj4KPj4+PiBU
-aGlzIGlzIHBsYWluIHdyb25nLCBEVCBkZWZpbml0aW9uIGlzIGRpZmZlcmVudCBmcm9tIHNvZnR3
-YXJlIGltcGxlbWVudGF0aW9uLCB5b3UgY2FuIGRvIHdoYXRldmVyIHlvdSB3YW50IGlmIHlvdSBk
-ZXNjcmliZSBIVyBhY2N1cmF0ZWx5Lgo+Pj4KPj4+IEknbSBub3Qgc3VyZSB3aGF0IHBvaW50IGl0
-IGlzIHlvdSBhcmUgdHJ5aW5nIHRvIG1ha2UgaGVyZS4gQXJlIHlvdSB0cnlpbmcgdG8gc2F5IGRy
-aXZlcnMvcGh5IGlzIE9LIHdpdGggeW91IGJ1dCB5b3Ugd2FudCBhbiBlbmRwb2ludCA/IElmIHNv
-LCBwbGVhc2UganVzdCBzYXkgc28uCj4+Cj4+IEknbSBhZ2FpbnN0IHVzaW5nIHRoZSAicGh5cyA9
-IDw+IiBwcm9wZXJ0eSBpbiB0aGUgQ0FNU1MgdG8gcmVmZXJlbmNlIHRoZSBQSFlzLCBhICJQSFki
-IGluIHRoZSBjbGFzc2ljIHRlcm1pbm9sb2d5IGlzIHRpZWQgdG8gYSBzaW5nbGUgY29uc3VtZXIs
-IGFuZCBpZiBpdCBjYW4gYmUgc2hhcmVkIHRvIG11bHRpcGxlIGNvbnN1bWVyIHlvdSBtdXN0IG1v
-ZGVsIGEgbXV4IG9yIHdoYXRldmVyIGluIHRoZSBtaWRkbGUuCj4gCj4gVGhlIENTSVBIWS10by1D
-U0lEIHJvdXRpbmcgaXMgcnVudGltZS1jb25maWd1cmFibGUgYW5kIGlzIGFscmVhZHkgbWFuYWdl
-ZCBieSB0aGUgbWVkaWEgY29udHJvbGxlciBmcmFtZXdvcmsuCgpUaGlzIGlzIG5vdCBjb21wYXRp
-YmxlIHdpdGggdGhlIFBIWSBiaW5kaW5ncyBpZiB5b3UgZG9uJ3QgaGF2ZSBhIGRlZmluZWQgTVVY
-IGRldmljZSBpbiB0aGUgbWlkZGxlLCBpdCdzIHdyb25nLiBZb3UncmUgaGlkaW5nIHRoZSBtdXhp
-bmcgZGV0YWlscyBpbiB0aGUgQ0FNU1MgYmxvYiBub2RlLgoKPiAKPiBEVCBkZXNjcmliZXMgc3Rh
-dGljIGhhcmR3YXJlIGNvbm5lY3Rpb25zLiBUaGUgZHluYW1pYyBtdXggaXMgYSBzb2Z0d2FyZSBj
-b25jZXJuLCBub3QgYSBoYXJkd2FyZSBkZXNjcmlwdGlvbiBjb25jZXJuLgoKRFQgbXVzdCBkZXNj
-cmliZSB0aGUgcG9zc2libGUgaW50ZXJjb25uZWN0aW9ucyBiZXR3ZWVuIHRoZSBub2RlcywgaWYg
-YSBQSFkgY2FuIGJlIHVzZWQgYnkgbXVsdGlwbGUgaGFyZHdhcmUgY29tcG9uZW50cywgaXQgbXVz
-dCBiZSBkZXNjcmliZWQuCgo+IAo+IAo+PiBUaGUgUEhZIEFQSSBhcyBhbiBpbnRlcm5hbCBzb2Z0
-d2FyZSBpbXBsZW1lbnRhdGlvbiBpcyBwcm9iYWJseSBmaW5lLCBldmVuIGlmIGl0IG1ha2VzIGlt
-cGxlbWVudGF0aW9uIG9mIHNwbGl0IG1vZGUgbXVjaCBtdWNoIGhhcmRlciBhbmQgZG9lc24ndCBy
-ZWFsbHkgc29sdmUgYW55dGhpbmcsIHlvdSBjYW4ganVzdCBjYWxsIGluaXQoKS9wb3dlcm9uKCkv
-IHBvd2Vyb2ZmKCkvZXhpdCgpIGRpcmVjdGx5IGZyb20gdGhlIENTSVBIWSBtZWRpYSBjYWxsYmFj
-a3MuCj4gCj4gR3JlYXQuCj4gCj4+PiBJIGNhbiBzZWUgYW4gYXJndW1lbnQgZm9yIHRoYXQgaGVu
-Y2UgbXkgcmVzcG9uc2UgdG8gS29ucmFkLCBJIGp1c3QgZG9uJ3Qgc2VlIHdoeSBpdHMgYSBRdWFs
-Y29tbSBzcGVjaWZpYyBhcmd1bWVudCBhbmQgb2YgY291cnNlIHVuZGVyc3Rvb2Qgc3R1ZmYgYnVi
-YmxlcyB1cCBpbiByZXZpZXcsIHdlIGhhdmUgYSBwdWJsaWMgZGViYXRlIGFuZCBjb21lIHRvIGEg
-Y29uc2Vuc3VzIC0gdGhhdCdzIGEgZ29vZCB0aGluZy4KPj4+Cj4+PiBIb3dldmVyLCBJJ2Qgd2Fu
-dCB3aWRlciBidXktaW4gYW5kIHVuZGVyc3RhbmRpbmcgdGhhdCBlbmRwb2ludHMgaW4gdGhlIFBI
-WXMgaXMgYSBtb3JlIGFjY3VyYXRlIGRlc2NyaXB0aW9uIG9mIHRoZSBkYXRhLWZsb3cuCj4+Cj4+
-IEl0IGlzLCBhbmQgaXQgd2FzIGRlc2lnbmVkIGZvciB0aGF0LCBhbmQgZXh0ZW5zaXZlbHkgdXNl
-ZCBpbiB0aGUgbWVkaWEgRFQgcmVwcmVzZW50YXRpb24sIHNvIEkgd29uZGVyIGhlcmUgeW91IHdv
-dWxkIG5vdCB1c2UgaXQuLi4KPj4gSW4gYW4gaWRlYWwgd29ybGQsIHlvdSB3b3VsZCBhZGQgbm9k
-ZXMgZm9yIGVhY2ggQ0FNU1MgaHcgZWxlbWVudHMgYW5kIGFkZHMgcG9ydC9lbmRwb2ludHMgbGlu
-a3MgYmV0d2VlbiBhbGwgbm9kZXMgdG8gZGVzY3JpYmUgdGhlIGRhdGEgZ3JhcGgsIHRoaXMgd291
-bGQgYmUgdXNlZCB0byBjb25zdHJ1Y3QgdGhlIG1lZGlhIGNvbnRyb2xsZXIgZ3JhcGgsIGFuZCBt
-YWtlIGl0IG11Y2ggZWFzaWVyIHN1cHBvcnRpbmcgbmV3IGhhcmR3YXJlLgo+IAo+IFllcyBidXQg
-YmUgcHJhZ21hdGljIE5laWwuIFRoZSBmaXJzdCBzdGVwIGluIG1ha2luZyB0aGUgbW9ub2xpdGgg
-aW50byBzdWItbm9kZXMgaXMgdGhlIENTSVBIWS4KCkkgYW0sIGFuZCBJIGFncmVlIGl0J3MgZmlu
-ZSB0byBkbyBpdCBzdGVwIGJ5IHN0ZXAuCgo+IAo+IE9uY2UgdGhlIENTSVBIWSBpcyBpbiwgd2Ug
-Y2FuIGZvbGxvdyBvbiB3aXRoIGFkZGluZyBuZXcgbm9kZXMgdGhhdCB3YXkgSVBFLCBCUFMsIElD
-UCwgSlBFRyB3aGF0ZXZlciBhbmQgYWxzbyB3b3JrIG9uIGltcGxlbWVudGluZyB0aGUgb2xkIHN0
-dWZmIGluIHRoYXQgbmV3IHdheS4KCkkgYWdyZWUgb24gdGhlIGFwcHJvYWNoLCBJIG5ldmVyIHNh
-aWQgb3RoZXJ3aXNlLCBidXQgeW91IG5lZWQgdG8gaGF2ZSB0aGUgYmlnIHBpY3R1cmUgaW4gbWlu
-ZC4KCldoZW4geW91J2xsIGhhdmUgdGhlIENTSUQgc3Vibm9kZXMsIHdoZXJlIHdpbGwgeW91IGFk
-ZCB0aGUgcGh5cyBwcm9wZXJ0aWVzID8geW91J2xsIGtlZXAgdGhlbSBpbiB0aGUgQ0FNU1MgdG9w
-IG5vZGUgPyBhZGQgYWxsIENTSVBIWSB0byBhbGwgQ1NJRCBub2RlcyA/IHRoaXMgaXMgd3Jvbmcg
-YW5kIHRoaXMgbmVlZHMgdG8gYmUgZml4ZWQgbm93LgoKPiAKPiAKPj4KPj4+Cj4+PiBXZSd2ZSBi
-ZWVuIGFwcGx5aW5nIERUIGJpbmRpbmdzIGFwbGVudHkgd2l0aG91dCB0aGF0IHNvIGZhci4gU28g
-d2Ugd291bGQgZXN0YWJsaXNoIG5ldyBDU0kyIFBIWSBiaW5kaW5ncyBzaG91bGQgcmVwcmVzZW50
-IHRoZSBzZW5zb3IgZW5kcG9pbnRzLgo+Pgo+PiBXZSd2ZSBiZWVuIHVzaW5nIGEgZHVtbXkgcmVw
-cmVzZW50YXRpb24gb2YgQ0FNTSBpbiBhIHNpbmdsZSBub2RlIHdpdGggb25seSBlbmRwb2ludHMg
-Y29ubmVjdGluZyB0byB0aGUgc2Vuc29ycyBhbmQgaGlkaW5nIGFsbCB0aGUgaGFyZHdhcmUgbGF5
-b3V0IGluIGNvZGUsIGl0IGRvZXNuJ3Qgc2NhbGUgYW5kIG1ha2VzIHN1cHBvcnRpbmcgbmV3IEhX
-IGhhcmQuCj4+IEkgbWVhbiB0aGlzIGlzIGNvbW1vbiBzZW5zZSwgd2h5IHdvdWxkIHdlIGNvbnRp
-bnVlIHRvIHN0aWNrIHRvIHRoZSBjdXJyZW50IENBTVNTIGJpbmRpbmdzID8/Pwo+IAo+IFdlIF93
-b24ndF8gSSBqdXN0IGRvbid0IHN1cHBvcnQgYSBiaWcgYmFuZyBpbnRlZ3JhdGlvbi4gUHJvZ3Jl
-c3NpdmUgY2hhbmdlcyBvdmVyIGEgbG9uZ2VyIHRpbWVsaW5lIG1ha2UgdGhlIHRyYW5zaXRpb24g
-bWFuYWdlYWJsZSwgd2l0aG91dCBhY2NlcHRpbmcgZW5kbGVzcyBzdWItc3RhbmRhcmQgc3R1ZmYg
-aW4gdGhlIG1lYW50aW1lIG9yIGhvbGRpbmcgdXAgYWxsIG5ldyBTb0Mgc3VibWlzc2lvbiB1bmxl
-c3MvdW50aWwuCj4gCj4gSSBtZWFuIHRoZXJlIGlzIGEgQ0FNU1MgbWVldGluZyB3aGljaCBJJ3Zl
-IGJlZW4gcnVubmluZyBmb3IgbmVhcmx5IGEgeWVhciBub3cgdGhhdCBib3RoIHlvdSBhbmQgVmxh
-ZCBhcmUgaW52aXRlZCB0byB3aGVyZSB3ZSBoYXZlIGJlZW4gZGlzY3Vzc2luZyB0aGlzIGZvciBt
-b250aHMuLi4KPiAKPiBBbnl3YXkgb25lIGNvbmNsdXNpb24gb2YgdGhhdCBpcyB3ZSB3YW50IHRv
-IHRyYW5zaXRpb24gdG8gaW5kaXZpZHVhbCBub2RlcyBmb3IgZXZlcnl0aGluZy4KPiAKPiBQSFkg
-aXMgdGhlIGZpcnN0IHN0ZXAgd2hpY2ggSSdtIHRha2luZyBiZWNhdXNlIGl0cyBlYXNpZXIgZm9y
-IG1lIGFzIENBTVNTIG1haW50YWluZXIgdG8gY29udmluY2UgdGhlIENBTVNTIG1haW50YWluZXIg
-dG8gdGFrZSB0aGUgcmVsZXZhbnQgcGF0Y2hlcy4KPiAKPiBkcml2ZXJzL3BoeSBub3R3aXRoc3Rh
-bmRpbmcuCgpBcyBJIHNhaWQgSSBhZ3JlZSBvbiB0aGUgcHJvZ3Jlc3NpdmUgYXBwcm9hY2gsIG5v
-dCB0aGUgUEhZIERUIGJpbmRpbnMgYXBwcm9hY2guCgo+IAo+Pj4KPj4+IElzIHRoYXQgd2hhdCB5
-b3Ugd2FudCA/Cj4+Pgo+Pj4+IFRoZSBDU0lQSFlzIGFyZSBub3QgdGllZCB0byBhIHNpbmdsZSAi
-Y29uc3VtZXIiIGJsb2NrLCB0aGV5IGNhbiBiZSBjb25uZWN0ZWQgdG8gZGlmZmVyZW50IGNvbnN1
-bWVycyBhdCBydW50aW1lLCB3aGljaCBpcyBub3Qgc29tZXRoaW5nIGNsYXNzaWMgUEhZIGRldmlj
-ZXMgYXJlIGRlc2lnbmVkIGZvci4gU28gdGhleSBhcmUgZGUgZmFjdG8gYSBtZWRpYSBlbGVtZW50
-IGluIHRoZSBkeW5hbWljIGNhbWVyYSBwaXBlbGluZS4KPj4+Cj4+PiBUaGUgZXhpc3RpbmcgQ0FN
-U1MgYmluZGluZyBhbmQgbWVkaWEgZ3JhcGggYXJlIG5vdCBjaGFuZ2VkIGJ5IHRoaXMgc2VyaWVz
-Lgo+Pgo+PiBUaGlzIGlzIG5vdCBteSBwb2ludCwgSSBkb24ndCBjYXJlIGFib3V0IHRoZSBzb2Z0
-d2FyZSBpbXBsZW1lbnRhdGlvbiBhdCBhbGwsIEkgY2FyZSBhYm91dCBhY2N1cmF0ZSBoYXJkd2Fy
-ZSByZXByZXNlbnRhdGlvbi4gVXNpbmcgdGhlICJwaHlzID0gPD4iIHByb3BlcnR5IGRvZXMgbm90
-IGRlc2NyaWJlIGhhcmR3YXJlIGFjY3VyYXRlbHkuCj4+Cj4+IEluIG90aGVyIHdvcmRzOiBUaGUg
-Q1NJUEhZIGFyZSBub3QgY29ubmVjdGVkIHRvIENBTVNTLiBUaGlzIGlzIF9ub3RfIHRydWUsIHR5
-aW5nIHRoZSBDU0lQSFlzIHRvIHRoZSBDQU1TUyBibG9jayBoaWRlcyB0aGUgcmVhbCBkYXRhIG11
-eGluZyBpbiBzb2Z0d2FyZS4KPj4KPj4gUGxlYXNlIHJlbWluZCBEVCBpcyB1c2VkIGJ5IG11bHRp
-cGxlIG9wZXJhdGluZyBzeXN0ZW1zLCBhbmQgcHJvcGVybHkgZGVzY3JpYmluZyBoYXJkd2FyZSBp
-biBEVCB3aWxsIGhlbHAgaGF2ZSBnb29kIHNvZnR3YXJlIHN1cHBvcnQgb3ZlciBhbGwgT1Nlcywg
-bm90IGp1c3QgTGludXguCj4+Cj4+Pgo+Pj4+IEFuZCBhY3R1YWxseSBSb2IgSGVycmluZyBhc2tl
-ZCB1c2UgdG8gZGVmaW5lIHRoZSBjb21wbGV0ZSBkYXRhIGZsb3csIGl0IHdhcyBhIHN0cm9uZyBy
-ZXF1aXJlbWVudC4gSSBkb24ndCBzZWUgd2h5IHdlIHdvdWxkbid0IGhlcmUuCj4+Pgo+Pj4gSSdt
-IGltcGxlbWVudGluZyBmZWVkYmFjayBmcm9tIFJvYi4KPj4+Cj4+PiBodHRwczovL2xvcmUua2Vy
-bmVsLm9yZy9saW51eC1tZWRpYS8yMDI1MDcxMDIzMDg0Ni5HQTQ0NDgzLSByb2JoQGtlcm5lbC5v
-cmcvCj4+Cj4+IFdoZXJlIGRpZCBoZSBhc2sgdXNpbmcgdGhlIFBIWSBEVCBiaW5kaW5ncyA/IElz
-IGhlIGF3YXJlIHRob3NlIENTSVBIWXMgYXJlIG11eGVkIHRvIG11bHRpcGxlIGNvbnN1bWVycyB3
-aGljaCBhcmUgYnVycmllZCBpbiB0aGUgQ0FNU1MgY29kZSA/Cj4gCj4gSSBmcmVlbHkgYWRtaXQg
-dG8gdGFraW5nIHRoZSBpbml0aWF0aXZlIG9mIHBoeXMgPSA8PiBidXQgTmVpbCB0aGVyZSBpcyBf
-bm9fY2hhbmdlXyB0byB0aGUgbWVkaWEgZ3JhcGggYW5kIHRoZSAibXV4IiBpcyBhIHJ1bnRpbWUg
-Y29uZmlndXJhdGlvbiB0aGF0IGlzIG9uZSByZWdpc3RlciBpbiB0aGUgQ1NJRC4KCkhvbmVzdGx5
-IEkgZG9uJ3QgY2FyZSBhYm91dCB0aGUgdXNlcnNwYWNlIG1lZGlhIGdyYXBoLCB0aGlzIGlzIGEg
-c29mdHdhcmUgcHJvYmxlbSBhbmQgd2UgY2FuIHRvdGFsbHkgbWFrZSB0aGUgdHJhbnNpdGlvbiBz
-ZWFtbGVzcyBpZiB3ZSB3YW50LgoKRG9uJ3QgbGltaXQgdGhlIERUIGhhcmR3YXJlIGRlc2NyaXB0
-aW9uIGJlY2F1c2Ugb2YgYSBzb2Z0d2FyZSB1c2Vyc3BhY2UgQUJJIGJyZWFrYWdlLCB0aGlzIGFw
-cHJvYWNoIGlzIG5vdCB0aGUgcmlnaHQgb25lLgoKPiAKPiBZb3Ugc2VyaW91c2x5IHdhbnQgYSBt
-dXggZGV2aWNlIGluIHRoZSBrZXJuZWwgdG8gbW9kZWwgb25lIGJpdCBpbiBhIHJlZ2lzdGVyID8K
-CldoeSBub3QgPyBXZSBoYXZlIGRyaXZlcnMgdGhhdCBldmVuIHRvZ2dsZXMgZXZlbiBzaW5nbGUg
-Yml0IHRvIHNvbHZlIHRob3NlIGtpbmQgb2Ygc2l0dWF0aW9ucy4KClBoeXNpY2FsbHkgdGhleSdy
-ZSBhIG11eCB0byByb3V0ZSB0aGUgQ1NJUEhZIHRvIHRoZSBjb25zdW1lcnMsIGl0J3MgYSBmYWN0
-Li4uIGV2ZW4gaWYgaXQncyBhIHJlZ2lzdGVyIG9yIGEgc2luZ2xlIGJpdC4KCj4gCj4gTm8uCj4g
-Cj4+Pgo+Pj4gVG8gbWUsIGhlcmUgaXMgd2hlcmUgd2Ugc3RhbmQ6Cj4+Pgo+Pj4gLSBJbmRpdmlk
-dWFsIG5vZGVzIC0gd2UgYWxsIGFncmVlIHRoYXQKPj4+IC0gQXMgc3ViLW5vZGVzIC0gSSB0aGlu
-ayB0aGUgbWFqb3JpdHkgYWdyZWVzIHRoaXMgS3J6c3p0b2YsIERtaXRyeQo+Pj4gwqDCoCBJJ20g
-ZmluZSB3aXRoIGl0IHRvby4KPj4+IC0gZHJpdmVycy9waHkgLSBJIHRoaW5rIHdlIGFyZSBhY2Nl
-cHRpbmcgdGhpcyBpcyBhbHNvIGZpbmUgPwo+Pgo+PiBMaWtlIEkgc2FpZCB0aGlzIGFkZHMgYSBz
-dXBwbGVtZW50YXJ5IEFQSSBsYXllciBmb3Igbm8gcmVhc29uIGFuZCB3aWxsIG1ha2UgbGlmZSBo
-YXJkZXIsIGJ1dCBJIGRvbid0IGNhcmUgcGVyc29uYWxseS4KPj4KPj4+IC0gZW5kcG9pbnRzIHNo
-b3VsZCBmbG93IGludG8gdGhlIFBIWSBhbmQgdGhlbiBiYWNrIHRvIHRoZSBjb250cm9sbGVyCj4+
-Pgo+Pj4gSSBnZXQgdGhhdCBhcmd1bWVudC4gSW4gZmFjdCBJIF9saWtlXyB0aGF0IGFyZ3VtZW50
-IGF0IGxlYXN0IEkgbGlrZSBteSBjb25jZXB0aW9uIG9mIHRoYXQgYXJndW1lbnQuCj4+Pgo+Pj4g
-SSdsbCBzdGlwdWxhdGUgdG8gdGhhdCBhcmd1bWVudCBtZWFuaW5nIHRoZW4gdGhhdCwgbmV3IENT
-STIgUEhZcyBzaGFsbCBpbmNsdWRlIGVuZHBvaW50cyBmb3IgdGhpcyBwdXJwb3NlIGdsb2JhbGx5
-Lgo+Pj4KPj4+IEFzIEkndmUgc2FpZCBiZWZvcmUsIHRoZXJlJ3Mgbm90aGluZyBRdWFsY29tbSBz
-cGVjaWZpYyBhYm91dCB0aGlzIGRpc2N1c3Npb24sIHJlYWxseS4KPj4KPj4gVGhlcmUgaXMsIGJl
-Y2F1c2UgdGhlIGN1cnJlbnQgUXVhbGNvbW0gQ0FNU1MgYmluZGluZ3MgYXJlIGluc3VmZmljaWVu
-dCBhbmQgc2hvdWxkIGJlIGVudGlyZWx5IHJlZGVzaWduZWQgZnJvbSB0aGUgZ3JvdW5kIHVwIHRv
-IHByb3Blcmx5IGRlc2NyaWJlIHRoZSBIVy4KPiAKPiBUaGUgbG9uZyB0ZXJtIHBsYW4gaXMgdG8g
-ZG8gdGhhdC4gRGlzY3Vzc2VkIGV4dGVuc2l2ZWx5IHdpdGggdGhlIFFjb20gdGVhbXMgZGVsaXZl
-cmluZyBDQU1TUywgZXZlbiBpbnZpdGVkIGNvbW11bml0eSBtZW1iZXJzIGFsb25nLgo+IAo+IEhl
-cmUgYXJlIHRoZSBtZWV0aW5nIG5vdGVzIC0gaXRzIGFsbCBpbiB0aGUgcHVibGljIGRvbWFpbgo+
-IAo+IGh0dHBzOi8vZG9jcy5nb29nbGUuY29tL2RvY3VtZW50L2QvMXlVd1dIYUtMdW92S1ZnR1R6
-dkttNjhLMXpTNnhCT05WempPc1JqRGwwM1UvZWRpdD90YWI9dC4wI2hlYWRpbmc9aC5tdGJtN3Fm
-b2h3ZnMKPiAKPiAtLS0KPiBib2QKCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1w
-aHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
-bi9saXN0aW5mby9saW51eC1waHkK
+On 30/03/2026 10:17, Neil Armstrong wrote:
+> On 3/30/26 11:02, Bryan O'Donoghue wrote:
+>> On 30/03/2026 08:49, Neil Armstrong wrote:
+>>> On 3/27/26 18:42, Bryan O'Donoghue wrote:
+>>>> On 27/03/2026 15:28, Neil Armstrong wrote:
+>>>>>> To be frankly honest you can make an argument for it either way. However my honestly held position is analysing other upstream implementations connecting to the PHY means we can't make the PHY device a drivers/phy device - it would have to be a V4L2 device and then for me the question is why is that even required ?
+>>>>>
+>>>>> This is plain wrong, DT definition is different from software implementation, you can do whatever you want if you describe HW accurately.
+>>>>
+>>>> I'm not sure what point it is you are trying to make here. Are you trying to say drivers/phy is OK with you but you want an endpoint ? If so, please just say so.
+>>>
+>>> I'm against using the "phys = <>" property in the CAMSS to reference the PHYs, a "PHY" in the classic terminology is tied to a single consumer, and if it can be shared to multiple consumer you must model a mux or whatever in the middle.
+>>
+>> The CSIPHY-to-CSID routing is runtime-configurable and is already managed by the media controller framework.
+> 
+> This is not compatible with the PHY bindings if you don't have a defined MUX device in the middle, it's wrong. You're hiding the muxing details in the CAMSS blob node.
+> 
+>>
+>> DT describes static hardware connections. The dynamic mux is a software concern, not a hardware description concern.
+> 
+> DT must describe the possible interconnections between the nodes, if a PHY can be used by multiple hardware components, it must be described.
+
+But right now the CAMSS block is described as a single block. There is 
+no CSID device in the kernel _yet_.
+
+When we break CSID into its own block then fine, lets have a debate 
+about a mux then but right now the "nodes" are CAMSS[MONOLITH] <=> 
+CSIPHY there is no DT CSID device to model this to.
+
+> 
+>>
+>>
+>>> The PHY API as an internal software implementation is probably fine, even if it makes implementation of split mode much much harder and doesn't really solve anything, you can just call init()/poweron()/ poweroff()/exit() directly from the CSIPHY media callbacks.
+>>
+>> Great.
+>>
+>>>> I can see an argument for that hence my response to Konrad, I just don't see why its a Qualcomm specific argument and of course understood stuff bubbles up in review, we have a public debate and come to a consensus - that's a good thing.
+>>>>
+>>>> However, I'd want wider buy-in and understanding that endpoints in the PHYs is a more accurate description of the data-flow.
+>>>
+>>> It is, and it was designed for that, and extensively used in the media DT representation, so I wonder here you would not use it...
+>>> In an ideal world, you would add nodes for each CAMSS hw elements and adds port/endpoints links between all nodes to describe the data graph, this would be used to construct the media controller graph, and make it much easier supporting new hardware.
+>>
+>> Yes but be pragmatic Neil. The first step in making the monolith into sub-nodes is the CSIPHY.
+> 
+> I am, and I agree it's fine to do it step by step.
+
+Cool.
+
+So let's talk about muxing to CSID devices, when we have CSID devices in 
+the DT.
+
+>>
+>> Once the CSIPHY is in, we can follow on with adding new nodes that way IPE, BPS, ICP, JPEG whatever and also work on implementing the old stuff in that new way.
+> 
+> I agree on the approach, I never said otherwise, but you need to have the big picture in mind.
+> 
+> When you'll have the CSID subnodes, where will you add the phys properties ? you'll keep them in the CAMSS top node ? add all CSIPHY to all CSID nodes ? this is wrong and this needs to be fixed now.
+> 
+>>
+>>
+>>>
+>>>>
+>>>> We've been applying DT bindings aplenty without that so far. So we would establish new CSI2 PHY bindings should represent the sensor endpoints.
+>>>
+>>> We've been using a dummy representation of CAMM in a single node with only endpoints connecting to the sensors and hiding all the hardware layout in code, it doesn't scale and makes supporting new HW hard.
+>>> I mean this is common sense, why would we continue to stick to the current CAMSS bindings ???
+>>
+>> We _won't_ I just don't support a big bang integration. Progressive changes over a longer timeline make the transition manageable, without accepting endless sub-standard stuff in the meantime or holding up all new SoC submission unless/until.
+>>
+>> I mean there is a CAMSS meeting which I've been running for nearly a year now that both you and Vlad are invited to where we have been discussing this for months...
+>>
+>> Anyway one conclusion of that is we want to transition to individual nodes for everything.
+>>
+>> PHY is the first step which I'm taking because its easier for me as CAMSS maintainer to convince the CAMSS maintainer to take the relevant patches.
+>>
+>> drivers/phy notwithstanding.
+> 
+> As I said I agree on the progressive approach, not the PHY DT bindins approach.
+> 
+>>
+>>>>
+>>>> Is that what you want ?
+>>>>
+>>>>> The CSIPHYs are not tied to a single "consumer" block, they can be connected to different consumers at runtime, which is not something classic PHY devices are designed for. So they are de facto a media element in the dynamic camera pipeline.
+>>>>
+>>>> The existing CAMSS binding and media graph are not changed by this series.
+>>>
+>>> This is not my point, I don't care about the software implementation at all, I care about accurate hardware representation. Using the "phys = <>" property does not describe hardware accurately.
+>>>
+>>> In other words: The CSIPHY are not connected to CAMSS. This is _not_ true, tying the CSIPHYs to the CAMSS block hides the real data muxing in software.
+>>>
+>>> Please remind DT is used by multiple operating systems, and properly describing hardware in DT will help have good software support over all OSes, not just Linux.
+>>>
+>>>>
+>>>>> And actually Rob Herring asked use to define the complete data flow, it was a strong requirement. I don't see why we wouldn't here.
+>>>>
+>>>> I'm implementing feedback from Rob.
+>>>>
+>>>> https://lore.kernel.org/linux-media/20250710230846.GA44483- robh@kernel.org/
+>>>
+>>> Where did he ask using the PHY DT bindings ? Is he aware those CSIPHYs are muxed to multiple consumers which are burried in the CAMSS code ?
+>>
+>> I freely admit to taking the initiative of phys = <> but Neil there is _no_change_ to the media graph and the "mux" is a runtime configuration that is one register in the CSID.
+> 
+> Honestly I don't care about the userspace media graph, this is a software problem and we can totally make the transition seamless if we want.
+> 
+> Don't limit the DT hardware description because of a software userspace ABI breakage, this approach is not the right one.
+> 
+>>
+>> You seriously want a mux device in the kernel to model one bit in a register ?
+> 
+> Why not ? We have drivers that even toggles even single bit to solve those kind of situations.
+> 
+> Physically they're a mux to route the CSIPHY to the consumers, it's a fact... even if it's a register or a single bit.
+
+That's fine. I can understanding making that case if/when CSID becomes 
+its own node but, I don't think it makes sense when connecting the PHY 
+back to the monolith.
+
+---
+bod
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
