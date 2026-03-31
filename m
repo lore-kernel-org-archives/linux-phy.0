@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C62E310F92E0
-	for <linux-phy@archiver.kernel.org>; Tue, 31 Mar 2026 16:35:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D89AB10F92E3
+	for <linux-phy@archiver.kernel.org>; Tue, 31 Mar 2026 16:48:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:
 	Subject:Cc:To:From:Date:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MjY5jqzogCxouriyJI+vll0G/NdQTb5m6UhpV5h2WFY=; b=LFC1zadtGZKpLE
-	xiefmHnb+U1nrAJaz92GMJFaYkw6ejUeJmAJkxcsQuNYCSD7kFLy+mfZiPutFGIoGU83JgRzsgeA4
-	vuhKTx30L3U9uHvx9ML1CLHO7anGNTJsypN6/fcm3U9ecx2GCvUmVT6AF1XwLsmvMpBPQ0M9VAAbu
-	ndRVudHXXyvxKAqihLLMGVmXOoXaENf4Zc1ZoNTVWkTq10rk1Y9sanQPlaQcUMTe7YqiZF+qXGM0P
-	Ai4qmvY4DJI0EvnHoGZ3X3ILV1M+W6hPmhTeVZcFS5riFUyg0qG34fFY3T2o3hffvPrvvHtuj539g
-	n1Dn7jDVurc5PeL3r+5w==;
+	List-Owner; bh=q2ALNi1hinHwrBs/GfQ+QZR8utzovslNH9l4KmWZtQM=; b=eHp0MdiOMSkpNl
+	op4Dab5orUei1ozGQTJLe0vmmYNJw/MhId1Is+t38XdXnjDO0dGGcWZmpv0ALNXhfh3L57Z+AN2tq
+	UHZ8knj8ApoF31YyN9UqegNGzoFEwX21kV/IifeJ6/xeUSB+Cbnk4mngPoFqkfM98YtYKE2/4E76b
+	3r/N7bn/Y5DuCglcZNFiNHYDTqt6hvokTj6wZ9evOPrDQQojMqkQ0NYDVk2GQBpe4sTZAcgBsh0Yj
+	J+a7ta/hIP353/EwyYidYGo97EplTU65BW97JnyumWSezU37mFZuoi6ui6648NaY2kd+nVAuEoong
+	VJntAmkXf4YPVYqMccJg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w7c46-0000000DGei-1mME;
-	Tue, 31 Mar 2026 16:35:42 +0000
+	id 1w7cGG-0000000DHIt-22r6;
+	Tue, 31 Mar 2026 16:48:16 +0000
 Received: from layka.disroot.org ([178.21.23.139])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w7c42-0000000DGeN-3ov4
+	id 1w7cGD-0000000DHI7-2KuQ
 	for linux-phy@lists.infradead.org;
-	Tue, 31 Mar 2026 16:35:40 +0000
+	Tue, 31 Mar 2026 16:48:15 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
-	by disroot.org (Postfix) with ESMTP id 1160E2671D;
-	Tue, 31 Mar 2026 18:35:37 +0200 (CEST)
+	by disroot.org (Postfix) with ESMTP id F08BB26EF6;
+	Tue, 31 Mar 2026 18:48:09 +0200 (CEST)
 X-Virus-Scanned: SPAM Filter at disroot.org
 Received: from layka.disroot.org ([127.0.0.1])
  by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
- id hkzXFXxmI-VP; Tue, 31 Mar 2026 18:35:36 +0200 (CEST)
+ id fESk11EWd7J9; Tue, 31 Mar 2026 18:48:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
-	t=1774974936; bh=JNIdF6YFprLOSGOmgyQMSfnEajfhoSvqY+/nJiYsWQs=;
+	t=1774975689; bh=oQVnWLcfPVpq4oy73T6GwO7+A9grr8DISYy08Kii5GU=;
 	h=Date:From:To:Cc:Subject:In-Reply-To:References;
-	b=IvRL2ZyWSVjvR85Rb67rNefcDhx1K6ALaW4yl2BSz6TDcWxObI5nKxDHYk++blFoB
-	 jLxKSpuwBFW1egDH/fopjGXYeWECWRqRgSOUhdunshkuS5HIsJ4dlURAymh7BUoX3S
-	 mNOCkYcMrtwbtlEzghY0mQ8+h2ONJOvFMMxobWNYmKxe50DZ8lQK6dr2dkNXrNYgVM
-	 RUX/dHqs+GQRNFN+vtsYwLiRPDoIEV1cD6XmpBJ4QYFJP9MurgXv2KyWI8TOvBnak9
-	 gMoHeTwZAD635k2+R4ntDHJDfey5eJxMtUDh5kEByniqz75ffQFYArUS2ZVOmM43oJ
-	 LhNtJ6j54GD/w==
+	b=Jw9v4wv/H1km3ntJN8fHVEOc5EBgYEwgJusgYGlQvRt5CDL/qm1zhLFn+hT1CLhIc
+	 RgzzXPZjNo+0heB1bWuB6EQ/yZSEc4itdJ7+mLNyKVNVYRpDkaGZYfp4xvudqprUo9
+	 bsRWIiqEsBLAekx7oFGb593gx60ENQf3hf33+AkgYrczDR4ECeD7JbmAmGu2gNaKy2
+	 QcxjdmefcpYbmStxlomqM4how9qnQ4grclOIKki9Xt1YmuVi328LhvmFX+kiSzZIu5
+	 5dJ50MnqtXjPPZ51SSMqj5hlmssN7LwHZ8XGMWx51TxhyNalbs5KDY6zwEaF9dYL6o
+	 pnAyKKFVWuI8A==
 MIME-Version: 1.0
-Date: Tue, 31 Mar 2026 16:35:36 +0000
+Date: Tue, 31 Mar 2026 16:48:08 +0000
 From: Rustam Adilov <adilov@disroot.org>
 To: Vladimir Oltean <olteanv@gmail.com>
 Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
@@ -53,19 +53,19 @@ Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
  Chang <stanley_chang@realtek.com>, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, Michael Zavertkin
  <misha.zavertkin@mail.ru>
-Subject: Re: [PATCH v2 4/6] phy: realtek: usb2: introduce reset controller
- struct
-In-Reply-To: <20260330213955.udqpa77ek7n4arsq@skbuf>
+Subject: Re: [PATCH v2 5/6] phy: realtek: usb2: add support for RTL9607C USB2
+ PHY
+In-Reply-To: <20260330215033.ven3bllyw3jverfg@skbuf>
 References: <20260327160638.15134-1-adilov@disroot.org>
  <20260327160638.15134-1-adilov@disroot.org>
- <20260327160638.15134-5-adilov@disroot.org>
- <20260327160638.15134-5-adilov@disroot.org>
- <20260330213955.udqpa77ek7n4arsq@skbuf>
-Message-ID: <fcf97f76c391ca2a4eb0ecd195f63017@disroot.org>
+ <20260327160638.15134-6-adilov@disroot.org>
+ <20260327160638.15134-6-adilov@disroot.org>
+ <20260330215033.ven3bllyw3jverfg@skbuf>
+Message-ID: <1884dee6134e1c069e9f68edb2fdcd7f@disroot.org>
 X-Sender: adilov@disroot.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260331_093539_239236_66C0CDBA 
-X-CRM114-Status: GOOD (  28.87  )
+X-CRM114-CacheID: sfid-20260331_094814_163041_ABA76104 
+X-CRM114-Status: GOOD (  20.88  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,106 +82,200 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 2026-03-30 21:39, Vladimir Oltean wrote:
-> On Fri, Mar 27, 2026 at 09:06:36PM +0500, Rustam Adilov wrote:
->> In RTL9607C, there is so called "IP Enable Controller" which resemble
->> reset controller with reset lines and is used for various things like
->> USB, PCIE, GMAC and such.
+On 2026-03-30 21:50, Vladimir Oltean wrote:
+> On Fri, Mar 27, 2026 at 09:06:37PM +0500, Rustam Adilov wrote:
+>> Add support for the usb2 phy of RTL9607C series based SoCs.
+>> Add the macros and phy config struct for rtl9607.
 >> 
->> Introduce the reset_control struct to this driver to handle deasserting
->> usb2 phy reset line.
+>> RTL9607C requires to clear a "force host disconnect" bit in the
+>> specific register (which is at an offset from reg_wrap_vstatus)
+>> before proceeding with phy parameter writes.
 >> 
->> Make use of the function devm_reset_control_array_get_optional_exclusive()
->> function to get the reset controller and since existing RTD SoCs don't
->> specify the resets we can have a cleaner code.
+>> Add the bool variable to the driver data struct and hide this whole
+>> procedure under the if statement that checks this new variable.
 >> 
 >> Co-developed-by: Michael Zavertkin <misha.zavertkin@mail.ru>
 >> Signed-off-by: Michael Zavertkin <misha.zavertkin@mail.ru>
 >> Signed-off-by: Rustam Adilov <adilov@disroot.org>
 >> ---
->>  drivers/phy/realtek/phy-rtk-usb2.c | 12 ++++++++++++
->>  1 file changed, 12 insertions(+)
+>>  drivers/phy/realtek/phy-rtk-usb2.c | 57 ++++++++++++++++++++++++++++++
+>>  1 file changed, 57 insertions(+)
 >> 
 >> diff --git a/drivers/phy/realtek/phy-rtk-usb2.c b/drivers/phy/realtek/phy-rtk-usb2.c
->> index e65b8525b88b..070cba1e0e0a 100644
+>> index 070cba1e0e0a..bf22d12681dc 100644
 >> --- a/drivers/phy/realtek/phy-rtk-usb2.c
 >> +++ b/drivers/phy/realtek/phy-rtk-usb2.c
->> @@ -17,6 +17,7 @@
->>  #include <linux/sys_soc.h>
->>  #include <linux/mfd/syscon.h>
->>  #include <linux/phy/phy.h>
->> +#include <linux/reset.h>
->>  #include <linux/usb.h>
+>> @@ -26,6 +26,12 @@
+>>  #define PHY_VCTRL_SHIFT 8
+>>  #define PHY_REG_DATA_MASK 0xff
 >>  
->>  /* GUSB2PHYACCn register */
->> @@ -130,6 +131,7 @@ struct rtk_phy {
->>  	struct phy_cfg *phy_cfg;
->>  	int num_phy;
->>  	struct phy_parameter *phy_parameter;
->> +	struct reset_control *phy_rst;
+>> +#define PHY_9607_VSTS_BUSY BIT(17)
+>> +#define PHY_9607_NEW_REG_REQ BIT(13)
+>> +
+>> +#define PHY_9607_FORCE_DISCONNECT_REG 0x10
+>> +#define PHY_9607_FORCE_DISCONNECT_BIT BIT(5)
+>> +
+>>  #define GET_LOW_NIBBLE(addr) ((addr) & 0x0f)
+>>  #define GET_HIGH_NIBBLE(addr) (((addr) & 0xf0) >> 4)
 >>  
->>  	struct dentry *debug_dir;
+>> @@ -109,6 +115,7 @@ struct phy_cfg {
+>>  
+>>  	u32 (*read)(void __iomem *reg);
+>>  	void (*write)(u32 val, void __iomem *reg);
+>> +	bool force_host_disconnect;
 >>  };
->> @@ -602,6 +604,10 @@ static int do_rtk_phy_init(struct rtk_phy *rtk_phy, int index)
->>  	phy_parameter = &((struct phy_parameter *)rtk_phy->phy_parameter)[index];
->>  	phy_reg = &phy_parameter->phy_reg;
 >>  
->> +	reset_control_deassert(rtk_phy->phy_rst);
-> 
-> LLM review says:
-> 
-> (less important)
-> Can reset_control_deassert() fail here? If there is a hardware communication
-> error with the reset controller, should this check the return value and
-> propagate the error up instead of proceeding to configure the PHY?
-> Additionally, since the exclusive reset line is deasserted here, does this
-> code need a corresponding reset_control_assert() in the driver's teardown
-> or exit path? Leaving the IP block permanently enabled after shutdown could
-> lead to power leaks and prevent proper hardware re-initialization.
-
-It realistically shouldn't fail. But I can add the return error for this.
-And no, it doesn't need the reset_control_assert.
-
+>>  struct phy_parameter {
+>> @@ -614,6 +621,16 @@ static int do_rtk_phy_init(struct rtk_phy *rtk_phy, int index)
+>>  		goto do_toggle;
+>>  	}
+>>  
+>> +	if (phy_cfg->force_host_disconnect) {
+>> +		/* disable force-host-disconnect */
+>> +		u32 temp = readl(phy_reg->reg_wrap_vstatus + PHY_9607_FORCE_DISCONNECT_REG);
 >> +
->> +	mdelay(5);
-> 
-> (more important)
-> This code unnecessarily penalizes existing platforms. If rtk_phy->phy_rst
-> is NULL (as on older platforms where the optional reset is not defined), the
-> delay still executes.
-> 
-> Also, since PHY initialization callbacks run in a sleepable context, would it
-> be better to use a sleep-based delay like usleep_range(5000, 6000) to yield
-> the CPU instead of busy-waiting with mdelay(5)?
-
-I can change mdelay to msleep and wrap it around something like if (rtk_phy->phy_rst).
-
+>> +		temp &= ~PHY_9607_FORCE_DISCONNECT_BIT;
+>> +		writel(temp, phy_reg->reg_wrap_vstatus + PHY_9607_FORCE_DISCONNECT_REG);
 >> +
->>  	if (phy_cfg->use_default_parameter) {
->>  		dev_dbg(rtk_phy->dev, "%s phy#%d use default parameter\n",
->>  			__func__, index);
->> @@ -1069,6 +1075,12 @@ static int rtk_usb2phy_probe(struct platform_device *pdev)
->>  
->>  	rtk_phy->num_phy = phy_cfg->num_phy;
->>  
->> +	rtk_phy->phy_rst = devm_reset_control_array_get_optional_exclusive(dev);
->> +	if (IS_ERR(rtk_phy->phy_rst)) {
->> +		dev_err(dev, "usb2 phy resets are not working\n");
->> +		return PTR_ERR(rtk_phy->phy_rst);
+>> +		mdelay(10);
+> 
+> LLM review:
+> 
+> Could we use msleep(10) or usleep_range(10000, 11000) here instead of
+> mdelay(10)?
+> Since do_rtk_phy_init() executes as part of the phy_ops->init callback
+> with a mutex held from a sleepable process context, spinning the CPU for
+> 10ms wastes CPU resources and increases scheduling latency.
+
+I can change it to msleep instead.
+
 >> +	}
 >> +
+>>  	/* Set page 0 */
+>>  	phy_data_page = phy_cfg->page0;
+>>  	rtk_phy_set_page(phy_reg, 0);
+>> @@ -1141,6 +1158,7 @@ static const struct phy_cfg rtd1295_phy_cfg = {
+>>  	.new_reg_req = PHY_NEW_REG_REQ,
+>>  	.read = phy_read,
+>>  	.write = phy_write,
+>> +	.force_host_disconnect = false,
 > 
-> (still LLM review)
-> If the reset controller driver is not yet ready, this will return
-> -EPROBE_DEFER and print an error message to the kernel log.
-> Should this use dev_err_probe() to silently handle probe deferral while
-> correctly logging actual errors?
+> You don't need to initialize rodata struct fields with false/0/NULL.
 
-I can change it to dev_err_probe, no problem with that.
+From what i can see, it lines up with other phy_cfg structs, and thats how they
+did it and it did get accepted. You can check the rtd1295_phy_cfg as an example.
 
->>  	ret = parse_phy_data(rtk_phy);
->>  	if (ret)
->>  		goto err;
+I am personally fine with removing the "force_host_disconnect = false" and other
+falses in rtl9607_phy_cfg but i am debating because it wouldn't line up with the rest.
+
+>>  };
+>>  
+>>  static const struct phy_cfg rtd1395_phy_cfg = {
+>> @@ -1170,6 +1188,7 @@ static const struct phy_cfg rtd1395_phy_cfg = {
+>>  	.new_reg_req = PHY_NEW_REG_REQ,
+>>  	.read = phy_read,
+>>  	.write = phy_write,
+>> +	.force_host_disconnect = false,
+>>  };
+>>  
+>>  static const struct phy_cfg rtd1395_phy_cfg_2port = {
+>> @@ -1199,6 +1218,7 @@ static const struct phy_cfg rtd1395_phy_cfg_2port = {
+>>  	.new_reg_req = PHY_NEW_REG_REQ,
+>>  	.read = phy_read,
+>>  	.write = phy_write,
+>> +	.force_host_disconnect = false,
+>>  };
+>>  
+>>  static const struct phy_cfg rtd1619_phy_cfg = {
+>> @@ -1226,6 +1246,7 @@ static const struct phy_cfg rtd1619_phy_cfg = {
+>>  	.new_reg_req = PHY_NEW_REG_REQ,
+>>  	.read = phy_read,
+>>  	.write = phy_write,
+>> +	.force_host_disconnect = false,
+>>  };
+>>  
+>>  static const struct phy_cfg rtd1319_phy_cfg = {
+>> @@ -1257,6 +1278,7 @@ static const struct phy_cfg rtd1319_phy_cfg = {
+>>  	.new_reg_req = PHY_NEW_REG_REQ,
+>>  	.read = phy_read,
+>>  	.write = phy_write,
+>> +	.force_host_disconnect = false,
+>>  };
+>>  
+>>  static const struct phy_cfg rtd1312c_phy_cfg = {
+>> @@ -1287,6 +1309,7 @@ static const struct phy_cfg rtd1312c_phy_cfg = {
+>>  	.new_reg_req = PHY_NEW_REG_REQ,
+>>  	.read = phy_read,
+>>  	.write = phy_write,
+>> +	.force_host_disconnect = false,
+>>  };
+>>  
+>>  static const struct phy_cfg rtd1619b_phy_cfg = {
+>> @@ -1317,6 +1340,7 @@ static const struct phy_cfg rtd1619b_phy_cfg = {
+>>  	.new_reg_req = PHY_NEW_REG_REQ,
+>>  	.read = phy_read,
+>>  	.write = phy_write,
+>> +	.force_host_disconnect = false,
+>>  };
+>>  
+>>  static const struct phy_cfg rtd1319d_phy_cfg = {
+>> @@ -1347,6 +1371,7 @@ static const struct phy_cfg rtd1319d_phy_cfg = {
+>>  	.new_reg_req = PHY_NEW_REG_REQ,
+>>  	.read = phy_read,
+>>  	.write = phy_write,
+>> +	.force_host_disconnect = false,
+>>  };
+>>  
+>>  static const struct phy_cfg rtd1315e_phy_cfg = {
+>> @@ -1378,6 +1403,37 @@ static const struct phy_cfg rtd1315e_phy_cfg = {
+>>  	.new_reg_req = PHY_NEW_REG_REQ,
+>>  	.read = phy_read,
+>>  	.write = phy_write,
+>> +	.force_host_disconnect = false,
+>> +};
+>> +
+>> +static const struct phy_cfg rtl9607_phy_cfg = {
+>> +	.page0_size = MAX_USB_PHY_PAGE0_DATA_SIZE,
+>> +	.page0 = { [0] = {0xe0, 0x95},
+>> +		   [4] = {0xe4, 0x6a},
+>> +		  [12] = {0xf3, 0x31}, },
+>> +	.page1_size = MAX_USB_PHY_PAGE1_DATA_SIZE,
+>> +	.page1 = { [0] = {0xe0, 0x26}, },
+>> +	.page2_size = MAX_USB_PHY_PAGE2_DATA_SIZE,
+>> +	.page2 = { [7] = {0xe7, 0x33}, },
+>> +	.num_phy = 1,
+>> +	.check_efuse = false,
+> 
+> Similar for these (+do_toggle_driving, use_default_parameter).
+> 
+>> +	.check_efuse_version = CHECK_EFUSE_V2,
+>> +	.efuse_dc_driving_rate = EFUS_USB_DC_CAL_RATE,
+>> +	.dc_driving_mask = 0x1f,
+>> +	.efuse_dc_disconnect_rate = EFUS_USB_DC_DIS_RATE,
+>> +	.dc_disconnect_mask = 0xf,
+>> +	.usb_dc_disconnect_at_page0 = true,
+>> +	.do_toggle = true,
+>> +	.do_toggle_driving = false,
+>> +	.driving_updated_for_dev_dis = 0x8,
+>> +	.use_default_parameter = false,
+>> +	.is_double_sensitivity_mode = true,
+>> +	.vstatus_offset = 0xc,
+>> +	.vstatus_busy = PHY_9607_VSTS_BUSY,
+>> +	.new_reg_req = PHY_9607_NEW_REG_REQ,
+>> +	.read = phy_read_le,
+>> +	.write = phy_write_le,
+>> +	.force_host_disconnect = true,
+>>  };
+>>  
+>>  static const struct of_device_id usbphy_rtk_dt_match[] = {
+>> @@ -1390,6 +1446,7 @@ static const struct of_device_id usbphy_rtk_dt_match[] = {
+>>  	{ .compatible = "realtek,rtd1395-usb2phy-2port", .data = &rtd1395_phy_cfg_2port },
+>>  	{ .compatible = "realtek,rtd1619-usb2phy", .data = &rtd1619_phy_cfg },
+>>  	{ .compatible = "realtek,rtd1619b-usb2phy", .data = &rtd1619b_phy_cfg },
+>> +	{ .compatible = "realtek,rtl9607-usb2phy", .data = &rtl9607_phy_cfg },
+>>  	{},
+>>  };
+>>  MODULE_DEVICE_TABLE(of, usbphy_rtk_dt_match);
 >> -- 
 >> 2.53.0
 >> 
