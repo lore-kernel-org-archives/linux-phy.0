@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C1AB910F92E5
-	for <linux-phy@archiver.kernel.org>; Tue, 31 Mar 2026 16:26:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C62E310F92E0
+	for <linux-phy@archiver.kernel.org>; Tue, 31 Mar 2026 16:35:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:
 	Subject:Cc:To:From:Date:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8r26nO3fKRip2EsYx76ymVFP8tr7sqh+FhqXXeVZLN8=; b=fZlFRDoF73EJZu
-	Uax7KRMJsdM+ugZIG0ddgD2k72uDUaG4LLIsmUbsHgYyzJxxDgoIvyAWlneKrGhdCWogjR9GPqM7g
-	f6hqimszhhYiTUMFAkm0D5OxAxjPMP1tVFdSHq9K0I7fsgnSeCI2PleI0+dzATT0l3QJo7vFF9/8c
-	CwNGKQeVsnW1yaz7IGr7O+X6kI7UchmWjX4UeunC/qidmYYmXpEH0h4HrdiwB7qFwU06Xn9q+pDin
-	7AazlWNvQR4UKgbsIxovdLvXE9NcgGdDqcO4v7KOQWF//8lSSdICGOqjLoZBxQasRvOQK+4VK91SD
-	gphb/eHvDbJkGGizTmlQ==;
+	List-Owner; bh=MjY5jqzogCxouriyJI+vll0G/NdQTb5m6UhpV5h2WFY=; b=LFC1zadtGZKpLE
+	xiefmHnb+U1nrAJaz92GMJFaYkw6ejUeJmAJkxcsQuNYCSD7kFLy+mfZiPutFGIoGU83JgRzsgeA4
+	vuhKTx30L3U9uHvx9ML1CLHO7anGNTJsypN6/fcm3U9ecx2GCvUmVT6AF1XwLsmvMpBPQ0M9VAAbu
+	ndRVudHXXyvxKAqihLLMGVmXOoXaENf4Zc1ZoNTVWkTq10rk1Y9sanQPlaQcUMTe7YqiZF+qXGM0P
+	Ai4qmvY4DJI0EvnHoGZ3X3ILV1M+W6hPmhTeVZcFS5riFUyg0qG34fFY3T2o3hffvPrvvHtuj539g
+	n1Dn7jDVurc5PeL3r+5w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w7bvb-0000000DFx5-1OvV;
-	Tue, 31 Mar 2026 16:26:55 +0000
+	id 1w7c46-0000000DGei-1mME;
+	Tue, 31 Mar 2026 16:35:42 +0000
 Received: from layka.disroot.org ([178.21.23.139])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w7bvY-0000000DFwk-0bFO
+	id 1w7c42-0000000DGeN-3ov4
 	for linux-phy@lists.infradead.org;
-	Tue, 31 Mar 2026 16:26:53 +0000
+	Tue, 31 Mar 2026 16:35:40 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
-	by disroot.org (Postfix) with ESMTP id 0546225F3F;
-	Tue, 31 Mar 2026 18:26:50 +0200 (CEST)
+	by disroot.org (Postfix) with ESMTP id 1160E2671D;
+	Tue, 31 Mar 2026 18:35:37 +0200 (CEST)
 X-Virus-Scanned: SPAM Filter at disroot.org
 Received: from layka.disroot.org ([127.0.0.1])
  by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
- id yEFNASaRFbob; Tue, 31 Mar 2026 18:26:49 +0200 (CEST)
+ id hkzXFXxmI-VP; Tue, 31 Mar 2026 18:35:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
-	t=1774974409; bh=4/KOV5r9948VYhuiUcfo+u6YJ2ubFSTwMYYsK55YSNI=;
+	t=1774974936; bh=JNIdF6YFprLOSGOmgyQMSfnEajfhoSvqY+/nJiYsWQs=;
 	h=Date:From:To:Cc:Subject:In-Reply-To:References;
-	b=mkl841Yf5Uzpm0YCBamFprdHBM9aPwhUAhzqkP7JGPqLeP92X4/qMAoRmqvZEIZQZ
-	 n7LMpw6OHGQN5JV/Uw2qDbfoE+q1deCWNtflgVJJ5SlkUVA5LnkC0oFpn8rFMfGrla
-	 sDGyhyO3NJ4JGc/IR5A/7Niw6Fdr7pLn/nZEQngg9z4dvpYoSs7B42Pg8Zp5laeliz
-	 lIPdM8bx5T5UWBlTB4aURf3JhBrZQGberYWaQ49ZSrqyF1kxqnvgfE+b7Z3992bnug
-	 AGtF2QhvGQXxAY/broksmc+3uG6Uk0jxTqdakr3/7F+jOe8NSZWwdwMqRFiKfxS4Zr
-	 ffLn2fZyAvstw==
+	b=IvRL2ZyWSVjvR85Rb67rNefcDhx1K6ALaW4yl2BSz6TDcWxObI5nKxDHYk++blFoB
+	 jLxKSpuwBFW1egDH/fopjGXYeWECWRqRgSOUhdunshkuS5HIsJ4dlURAymh7BUoX3S
+	 mNOCkYcMrtwbtlEzghY0mQ8+h2ONJOvFMMxobWNYmKxe50DZ8lQK6dr2dkNXrNYgVM
+	 RUX/dHqs+GQRNFN+vtsYwLiRPDoIEV1cD6XmpBJ4QYFJP9MurgXv2KyWI8TOvBnak9
+	 gMoHeTwZAD635k2+R4ntDHJDfey5eJxMtUDh5kEByniqz75ffQFYArUS2ZVOmM43oJ
+	 LhNtJ6j54GD/w==
 MIME-Version: 1.0
-Date: Tue, 31 Mar 2026 16:26:48 +0000
+Date: Tue, 31 Mar 2026 16:35:36 +0000
 From: Rustam Adilov <adilov@disroot.org>
 To: Vladimir Oltean <olteanv@gmail.com>
 Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
@@ -53,18 +53,19 @@ Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
  Chang <stanley_chang@realtek.com>, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, Michael Zavertkin
  <misha.zavertkin@mail.ru>
-Subject: Re: [PATCH v2 2/6] phy: realtek: usb2: introduce read and write
- functions to driver data
-In-Reply-To: <20260330213227.zujvcvsxdfknzltz@skbuf>
+Subject: Re: [PATCH v2 4/6] phy: realtek: usb2: introduce reset controller
+ struct
+In-Reply-To: <20260330213955.udqpa77ek7n4arsq@skbuf>
 References: <20260327160638.15134-1-adilov@disroot.org>
- <20260327160638.15134-3-adilov@disroot.org>
- <20260330211918.y7su36j47e3uelcv@skbuf>
- <20260330213227.zujvcvsxdfknzltz@skbuf>
-Message-ID: <4663266d3a7d428d9d28edb96227cb8c@disroot.org>
+ <20260327160638.15134-1-adilov@disroot.org>
+ <20260327160638.15134-5-adilov@disroot.org>
+ <20260327160638.15134-5-adilov@disroot.org>
+ <20260330213955.udqpa77ek7n4arsq@skbuf>
+Message-ID: <fcf97f76c391ca2a4eb0ecd195f63017@disroot.org>
 X-Sender: adilov@disroot.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260331_092652_478001_9196654B 
-X-CRM114-Status: GOOD (  27.77  )
+X-CRM114-CacheID: sfid-20260331_093539_239236_66C0CDBA 
+X-CRM114-Status: GOOD (  28.87  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,133 +82,110 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 2026-03-30 21:32, Vladimir Oltean wrote:
-> On Tue, Mar 31, 2026 at 12:19:18AM +0300, Vladimir Oltean wrote:
->> On Fri, Mar 27, 2026 at 09:06:34PM +0500, Rustam Adilov wrote:
->> > +static inline u32 phy_read(void __iomem *reg)
->> > +{
->> > +	return readl(reg);
->> > +}
->> > +
->> > +static inline u32 phy_read_le(void __iomem *reg)
->> > +{
->> > +	return le32_to_cpu(readl(reg));
->> > +}
->> > +
->> > +static inline void phy_write(u32 val, void __iomem *reg)
->> > +{
->> > +	writel(val, reg);
->> > +}
->> > +
->> > +static inline void phy_write_le(u32 val, void __iomem *reg)
->> > +{
->> > +	writel(cpu_to_le32(val), reg);
->> > +}
+On 2026-03-30 21:39, Vladimir Oltean wrote:
+> On Fri, Mar 27, 2026 at 09:06:36PM +0500, Rustam Adilov wrote:
+>> In RTL9607C, there is so called "IP Enable Controller" which resemble
+>> reset controller with reset lines and is used for various things like
+>> USB, PCIE, GMAC and such.
 >> 
->> Please don't name driver-level functions phy_read() and phy_write().
->> That will collide with networking API functions of the same name and
->> will make grep-based code searching more difficult.
+>> Introduce the reset_control struct to this driver to handle deasserting
+>> usb2 phy reset line.
 >> 
->> Also, have you looked at regmap? It has native support for endianness;
->> it supports regmap_field_read()/regmap_field_write() for abstracting
->> registers which may be found at different places for different HW;
->> it offers regmap_read_poll_timeout() so you don't have to pass the
->> function pointer to utmi_wait_register(). It seems the result would be a
->> bit more elegant.
+>> Make use of the function devm_reset_control_array_get_optional_exclusive()
+>> function to get the reset controller and since existing RTD SoCs don't
+>> specify the resets we can have a cleaner code.
+>> 
+>> Co-developed-by: Michael Zavertkin <misha.zavertkin@mail.ru>
+>> Signed-off-by: Michael Zavertkin <misha.zavertkin@mail.ru>
+>> Signed-off-by: Rustam Adilov <adilov@disroot.org>
+>> ---
+>>  drivers/phy/realtek/phy-rtk-usb2.c | 12 ++++++++++++
+>>  1 file changed, 12 insertions(+)
+>> 
+>> diff --git a/drivers/phy/realtek/phy-rtk-usb2.c b/drivers/phy/realtek/phy-rtk-usb2.c
+>> index e65b8525b88b..070cba1e0e0a 100644
+>> --- a/drivers/phy/realtek/phy-rtk-usb2.c
+>> +++ b/drivers/phy/realtek/phy-rtk-usb2.c
+>> @@ -17,6 +17,7 @@
+>>  #include <linux/sys_soc.h>
+>>  #include <linux/mfd/syscon.h>
+>>  #include <linux/phy/phy.h>
+>> +#include <linux/reset.h>
+>>  #include <linux/usb.h>
+>>  
+>>  /* GUSB2PHYACCn register */
+>> @@ -130,6 +131,7 @@ struct rtk_phy {
+>>  	struct phy_cfg *phy_cfg;
+>>  	int num_phy;
+>>  	struct phy_parameter *phy_parameter;
+>> +	struct reset_control *phy_rst;
+>>  
+>>  	struct dentry *debug_dir;
+>>  };
+>> @@ -602,6 +604,10 @@ static int do_rtk_phy_init(struct rtk_phy *rtk_phy, int index)
+>>  	phy_parameter = &((struct phy_parameter *)rtk_phy->phy_parameter)[index];
+>>  	phy_reg = &phy_parameter->phy_reg;
+>>  
+>> +	reset_control_deassert(rtk_phy->phy_rst);
 > 
-> Even if you decide not to use regmap. I thought I should let you know
-> that LLM review says:
+> LLM review says:
 > 
->   Are these double byte-swaps intentional?
+> (less important)
+> Can reset_control_deassert() fail here? If there is a hardware communication
+> error with the reset controller, should this check the return value and
+> propagate the error up instead of proceeding to configure the PHY?
+> Additionally, since the exclusive reset line is deasserted here, does this
+> code need a corresponding reset_control_assert() in the driver's teardown
+> or exit path? Leaving the IP block permanently enabled after shutdown could
+> lead to power leaks and prevent proper hardware re-initialization.
+
+It realistically shouldn't fail. But I can add the return error for this.
+And no, it doesn't need the reset_control_assert.
+
+>> +
+>> +	mdelay(5);
 > 
->   Since readl() and writel() inherently perform little-endian memory accesses
->   and handle byte-swapping on big-endian architectures automatically, won't
->   wrapping them in le32_to_cpu() and cpu_to_le32() apply a second, redundant
->   byte-swap?
-
-From my experience (and also understanding), readl returns value in native endian
-and doesn't do byte swapping. The same goes writel.
-Thus wrapping le32_to_cpu() and cpu_to_le32() around them correctly swaps the
-bytes from big endian to little endian, without the double byte-swaps.
-
-The comment even mentions it "{read,write}{b,w,l,q}() access little endian memory
-and return result in native endianness." which was provided for reference later on.
-
->   On big-endian systems, wouldn't these double swaps cancel each other out
->   and result in a native big-endian access instead of the intended
->   little-endian access? If the SoC bus bridge implicitly swaps and requires
->   a native access, should __raw_readl() and __raw_writel() (or ioread32be /
->   iowrite32be) be used instead to avoid obfuscating it with double-swaps?
-
-The __raw_readl() and __raw_writel() are indeed in native endian, and for
-RTL9607C SoC it is in big endian.
-
-The way Realtek did it is by using the volatile and wrapping them around
-le32_to_cpu() and cpu_to_le32() respectively, which is certainly hacky.
-
- static inline unsigned int ehci_readl(const struct ehci_hcd *ehci,
- 		__u32 __iomem *regs)
- {
-+#if defined(CONFIG_RTK_MIPS_SOC)
-+	return (le32_to_cpu((*(volatile unsigned long *)(regs))));
-+#else
-[...]
-
- static inline void ehci_writel(const struct ehci_hcd *ehci,
- 		const unsigned int val, __u32 __iomem *regs)
- {
-+#if defined(CONFIG_RTK_MIPS_SOC)
-+	((*(volatile unsigned long *)(regs))=cpu_to_le32(val));
-+#else
-
-We did a bit of debugging with usb some time ago and and printed the value
-of the readl result from the base usb address and got this
-[    1.327473] ehci_setup:694 ehci caps: 0xb8021000, value: 0x10000001
-[    1.334478] ehci_setup:695 ehci regs: 0xb8021001
-[    1.339706] ehci_halt:187 ehci regs: 0xb8021001
-
-"0x10000001" is supposed to be "0x01000010". Otherwise, it would take 0x01
-for the cap length and result in immediate halt from timeout.
-
-Even though it is for linux-usb and not the phy subsystem, it was worth
-mentioning as it is very much related to this issue.
-
-What is surprising, the ioread32be and iowrite32be functions actually do
-swap bytes, thus resulting in little endian (ironic). But using it here
-would be just incorrect as it is intended for accessing big endian mmio, 
-not for big endian CPU and its little endian USB phy/host.
-
-So, that is a conundrum we have here. Let me know if what you think of it
-and maybe even how to better solve it.
-
-Will hold on posting v3 until this hopefully is more or less solved..
-
->   Also, does passing the __le32 restricted type returned by cpu_to_le32()
->   into writel() (which expects a native u32) trigger Sparse static analysis
->   warnings for an incorrect type in argument?
+> (more important)
+> This code unnecessarily penalizes existing platforms. If rtk_phy->phy_rst
+> is NULL (as on older platforms where the optional reset is not defined), the
+> delay still executes.
 > 
-> For reference:
-> https://elixir.bootlin.com/linux/v6.19.10/source/include/asm-generic/io.h#L184
-> /*
->  * {read,write}{b,w,l,q}() access little endian memory and return result in
->  * native endianness.
->  */
+> Also, since PHY initialization callbacks run in a sleepable context, would it
+> be better to use a sleep-based delay like usleep_range(5000, 6000) to yield
+> the CPU instead of busy-waiting with mdelay(5)?
+
+I can change mdelay to msleep and wrap it around something like if (rtk_phy->phy_rst).
+
+>> +
+>>  	if (phy_cfg->use_default_parameter) {
+>>  		dev_dbg(rtk_phy->dev, "%s phy#%d use default parameter\n",
+>>  			__func__, index);
+>> @@ -1069,6 +1075,12 @@ static int rtk_usb2phy_probe(struct platform_device *pdev)
+>>  
+>>  	rtk_phy->num_phy = phy_cfg->num_phy;
+>>  
+>> +	rtk_phy->phy_rst = devm_reset_control_array_get_optional_exclusive(dev);
+>> +	if (IS_ERR(rtk_phy->phy_rst)) {
+>> +		dev_err(dev, "usb2 phy resets are not working\n");
+>> +		return PTR_ERR(rtk_phy->phy_rst);
+>> +	}
+>> +
 > 
-> and yes, your patch does trigger sparse warnings:
-> ../drivers/phy/realtek/phy-rtk-usb2.c:153:16: warning: cast to restricted __le32
-> ../drivers/phy/realtek/phy-rtk-usb2.c:163:16: warning: incorrect type in argument 1 (different base types)
-> ../drivers/phy/realtek/phy-rtk-usb2.c:163:16:    expected unsigned int val
-> ../drivers/phy/realtek/phy-rtk-usb2.c:163:16:    got restricted __le32 [usertype]
+> (still LLM review)
+> If the reset controller driver is not yet ready, this will return
+> -EPROBE_DEFER and print an error message to the kernel log.
+> Should this use dev_err_probe() to silently handle probe deferral while
+> correctly logging actual errors?
 
-I can alleviate it by creating a temp u32 variable to hold the cpu_to_le32() and then
-using that temp variable for writel.
+I can change it to dev_err_probe, no problem with that.
 
-> Furthermore, please drop the 'inline' keyword from C files and let the
-> compiler decide. Your use of this keyword has no value - you declare
-> phy_read(), phy_read_le() etc as inline but then assign function
-> pointers to them. How can the compiler inline the indirect calls?
-
-Will drop these.
+>>  	ret = parse_phy_data(rtk_phy);
+>>  	if (ret)
+>>  		goto err;
+>> -- 
+>> 2.53.0
+>> 
+>>
 
 -- 
 linux-phy mailing list
