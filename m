@@ -4,100 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DE628D3517D
-	for <linux-phy@archiver.kernel.org>; Wed,  1 Apr 2026 12:38:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6802DD3517C
+	for <linux-phy@archiver.kernel.org>; Wed,  1 Apr 2026 13:07:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Dm/WEwiG92a4LUbKqqbcumwrJoq70QVdPDyj3hSnT+c=; b=HKG9i/6LgABWUo
-	tWoXL4UiSv+qdSFoAtq/oRYjJcrPOmsSZYoAoMlFRd3U/MLHD7j6t1F37fhzbyfSeJlfWz7oi63Zf
-	gu5hBrxAIEvFfGuJEtJMnehVPLw8A4Cx9eqEd4HV+75tAunovPkroPPomQDa6Nots70c01DjJbs8M
-	FD+gt2if2Syj01zoI94sLujHRfxH0knfi/O22Rug4B9gvZCC/ZBLW2rpTwMCeEiM3uwuAjX8LHYkR
-	yYbbcLNo4wiREhiYs6IEERTzr2TxQp1qw8/xeVjec8fbFWN+uVjLhe/MDlsW6cLKj6l44CXfD65QQ
-	qTictuU7rgoFy8GqEdgA==;
+	List-Owner; bh=W9BGOYOP8HAaafD8/QUD0AQ9+ektG5omvjtdLPB2BOE=; b=q8E5YQ7rNsAWI4
+	wmHQfVoKDIXsmLMhBFG9I+BKuKaVmx8o2K+abJxBYCsc2ah1RJSzgIteokiXeIoYXOaZhyZ2OpZlR
+	ti9eUb0tQtx8DCIrhx+gv40LCwdEC02Y/mtUhIkZtdDQ+i9nWVbB83+FCR5kVhlfzTC6hEozjWTIx
+	pCM5gdA3gGwLCUx0XJA1seklt4To+vwLDnuCFhI6BZfjumv2VTGujVbocwqfaK5LFVWU94xh/XT6q
+	QTfPhQ7XVHhCiDYjMSAls1VPMa4PeGIuW+5sJxRJIHaPgphu6jCjEgmkEB5lT8z9EICYxTp4S2m3X
+	00L+qyE1s8R+0Hjz1q+w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w7upp-0000000FCjR-2ZbY;
-	Wed, 01 Apr 2026 12:38:13 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1w7vI1-0000000FGpz-3cbO;
+	Wed, 01 Apr 2026 13:07:21 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w7ueG-0000000F3t4-0QFk;
-	Wed, 01 Apr 2026 12:26:16 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
-	:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=HXjqylECdGDFHUiyugySRrfNFcwy5NMDZ6un9XJQF4g=; b=quFpSU/1GK66ukHf8jteXi40qJ
-	zmmrKTeJutf9PfRwEljqLg6G67VH24EKKqq3EWX7Pc4+KLYrV1mxuh3LT/mIczDBbXBgFuUcChTYZ
-	CBpJyT2dmE+BcPeWsX8450iIDXqsJ1zBYCvaey3nhrFo323uhkD8/NSwwqp8Y6zjud4gS7D6q5be7
-	cVg+ye3u6eQ7/kxDjZR4rqj6m9taL2iOxteDovGA8ItJEzIvynZMeAtXexp8sF+0Qzyra5TX6AlrD
-	de7zFM2lTuMug20kbCqxe7cK1p8FEkA0t4xS7+blmytSdF5p7elEABp4Jhiv6iCy1po1q+rkBEXpk
-	/ydKOW6g==;
-Received: from www537.your-server.de ([188.40.3.216])
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w7ueB-00000000KvX-3hes;
-	Wed, 01 Apr 2026 12:26:15 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=ew.tq-group.com; s=default2602; h=Content-Transfer-Encoding:Content-Type:
-	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID;
-	bh=HXjqylECdGDFHUiyugySRrfNFcwy5NMDZ6un9XJQF4g=; b=h6kxBhb+t/yRyIf9XD0uFBqw0E
-	BMmiQpL+SoEgqb6viTrEzrmea6LtF6+wsrfHplUl7my4eWHobKNK/jIrR5M9AxagZASYJwANlnLv0
-	5mfuW0Mi12TdkaOJCUg+AUDOS1TWMfknTHj4gcyrCaJKh1YLwvkOyXiIslNUAfSsdYMJjutSDnU5U
-	HCjEZGVo13Cj2B2WE7fE/OqfKamb35EsmZYMxkxtSxzJmUTwxkM8NHF02Tw4ufEOvomKvoygjGx32
-	n6mjeW6yb9SMb0cWwwAABOvC8hjJzsQbNdrDLbHfJ/Jn5H0bI1O18+58NAu3WdKeOL5gHbvUnLn0H
-	XVVG1Lgg==;
-Received: from sslproxy07.your-server.de ([78.47.199.104])
-	by www537.your-server.de with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
-	(Exim 4.96.2)
-	(envelope-from <nora.schiffer@ew.tq-group.com>)
-	id 1w7ue3-000IQX-0A;
-	Wed, 01 Apr 2026 14:26:03 +0200
-Received: from localhost ([127.0.0.1])
-	by sslproxy07.your-server.de with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
-	(Exim 4.96)
-	(envelope-from <nora.schiffer@ew.tq-group.com>)
-	id 1w7ue2-00089b-1p;
-	Wed, 01 Apr 2026 14:26:02 +0200
-From: Nora Schiffer <nora.schiffer@ew.tq-group.com>
-To: Nishanth Menon <nm@ti.com>,
-	Vignesh Raghavendra <vigneshr@ti.com>,
-	Tero Kristo <kristo@kernel.org>,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>
-Cc: Andrew Lunn <andrew+netdev@lunn.ch>,
-	"David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>,
-	Paolo Abeni <pabeni@redhat.com>,
-	Siddharth Vadapalli <s-vadapalli@ti.com>,
-	Roger Quadros <rogerq@kernel.org>,
+	id 1w7vHy-0000000FGpV-3icO;
+	Wed, 01 Apr 2026 13:07:20 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 796FF4020D;
+	Wed,  1 Apr 2026 13:07:16 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C8D89C116C6;
+	Wed,  1 Apr 2026 13:07:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1775048836;
+	bh=3ZKzNrUwMIHn6dhPALdVNb5G43e3YDmvzJegFVvQeAU=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=INthCzna6u4qZOg0xCpIEj8XgnOT8J6+WweNGRff2a25OzhsScGaDe/NfK8Ui7F3l
+	 wcTL+2r9CDDzCj/l07TgY8TB9h4YVwGKQcm0rcM/Zv/9ojn48m8CPSDtGZOw77ANDt
+	 sfCilYhtStkjFswMw91yoOQ5xV93i7lH/wJFwnErfso0A9CWWM4R+usOtg1D5Fpgs8
+	 ghj2KTWVIhVXoUNnNRQpRkKCO3mGZb6Gl1J4PQVARp7mDZgSf+mNnVcB0V97pn/ubR
+	 Pmx0E3NhmWZaBn4eJriAz+LXHrVC4nL/e+hnd4zJ2noc8gT2MwaPO86Jeix0SK1BwC
+	 t592VqBC2Hsqg==
+Date: Wed, 1 Apr 2026 21:07:13 +0800
+From: Yixun Lan <dlan@kernel.org>
+To: Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
 	Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	netdev@vger.kernel.org,
-	devicetree@vger.kernel.org,
+	Conor Dooley <conor+dt@kernel.org>, Ze Huang <huang.ze@linux.dev>
+Cc: Junzhong Pan <panjunzhong@linux.spacemit.com>,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-riscv@lists.infradead.org, spacemit@lists.linux.dev,
 	linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux@ew.tq-group.com,
-	Nora Schiffer <nora.schiffer@ew.tq-group.com>
-Subject: [PATCH v3 1/5] dt-bindings: phy: ti: phy-j721e-wiz: Add ti,j722s-wiz-10g compatible
-Date: Wed,  1 Apr 2026 14:25:21 +0200
-Message-ID: <b9d6a9322ce4f7dc3363dc00d93ab0256e12a8af.1775045279.git.nora.schiffer@ew.tq-group.com>
-X-Mailer: git-send-email 2.53.0
-In-Reply-To: <cover.1775045279.git.nora.schiffer@ew.tq-group.com>
-References: <cover.1775045279.git.nora.schiffer@ew.tq-group.com>
+	Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>,
+	Yao Zi <me@ziyao.cc>
+Subject: Re: [PATCH v4 0/2] phy: spacemit: Add USB2 PHY support for K3 SoC
+Message-ID: <20260401130713-GKD976850@kernel.org>
+References: <20260305-11-k3-usb2-phy-v4-0-15554fb933bc@kernel.org>
+ <20260326001443-GKB777612@kernel.org>
 MIME-Version: 1.0
-X-Virus-Scanned: Clear (ClamAV 1.4.3/27958/Wed Apr  1 08:24:34 2026)
+Content-Disposition: inline
+In-Reply-To: <20260326001443-GKB777612@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260401_132613_283297_E2E7CBD2 
-X-CRM114-Status: UNSURE (   8.16  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260401_060718_968621_F1B3EB2B 
+X-CRM114-Status: GOOD (  14.54  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,36 +75,45 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhlIEo3MjJTIFdJWiBpcyBtb3N0bHkgaWRlbnRpY2FsIHRvIHRoZSBBTTY0J3MsIGJ1dCBhZGRp
-dGlvbmFsbHkgc3VwcG9ydHMKU0dNSUkuIFRoZSBBTTY0IGNvbXBhdGlibGUgdGksYW02NC13aXot
-MTBnIGlzIHVzZWQgYXMgYSBmYWxsYmFjay4KClNpZ25lZC1vZmYtYnk6IE5vcmEgU2NoaWZmZXIg
-PG5vcmEuc2NoaWZmZXJAZXcudHEtZ3JvdXAuY29tPgotLS0KIC4uLi9iaW5kaW5ncy9waHkvdGks
-cGh5LWo3MjFlLXdpei55YW1sICAgICAgICB8IDIwICsrKysrKysrKysrKy0tLS0tLS0KIDEgZmls
-ZSBjaGFuZ2VkLCAxMyBpbnNlcnRpb25zKCspLCA3IGRlbGV0aW9ucygtKQoKZGlmZiAtLWdpdCBh
-L0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9waHkvdGkscGh5LWo3MjFlLXdpei55
-YW1sIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS90aSxwaHktajcyMWUt
-d2l6LnlhbWwKaW5kZXggM2YxNmZmMTQ0ODRkMi4uMjgzZTNlZWRjMGYzMSAxMDA2NDQKLS0tIGEv
-RG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS90aSxwaHktajcyMWUtd2l6Lnlh
-bWwKKysrIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS90aSxwaHktajcy
-MWUtd2l6LnlhbWwKQEAgLTEyLDEzICsxMiwxOSBAQCBtYWludGFpbmVyczoKIAogcHJvcGVydGll
-czoKICAgY29tcGF0aWJsZToKLSAgICBlbnVtOgotICAgICAgLSB0aSxqNzIxZS13aXotMTZnCi0g
-ICAgICAtIHRpLGo3MjFlLXdpei0xMGcKLSAgICAgIC0gdGksajcyMXMyLXdpei0xMGcKLSAgICAg
-IC0gdGksYW02NC13aXotMTBnCi0gICAgICAtIHRpLGo3MjAwLXdpei0xMGcKLSAgICAgIC0gdGks
-ajc4NHM0LXdpei0xMGcKKyAgICBvbmVPZjoKKyAgICAgIC0gaXRlbXM6CisgICAgICAgICAgLSBl
-bnVtOgorICAgICAgICAgICAgICAtIHRpLGo3MjFlLXdpei0xNmcKKyAgICAgICAgICAgICAgLSB0
-aSxqNzIxZS13aXotMTBnCisgICAgICAgICAgICAgIC0gdGksajcyMXMyLXdpei0xMGcKKyAgICAg
-ICAgICAgICAgLSB0aSxhbTY0LXdpei0xMGcKKyAgICAgICAgICAgICAgLSB0aSxqNzIwMC13aXot
-MTBnCisgICAgICAgICAgICAgIC0gdGksajc4NHM0LXdpei0xMGcKKyAgICAgIC0gaXRlbXM6Cisg
-ICAgICAgICAgLSBlbnVtOgorICAgICAgICAgICAgICAtIHRpLGo3MjJzLXdpei0xMGcKKyAgICAg
-ICAgICAtIGNvbnN0OiB0aSxhbTY0LXdpei0xMGcKIAogICBwb3dlci1kb21haW5zOgogICAgIG1h
-eEl0ZW1zOiAxCi0tIApUUS1TeXN0ZW1zIEdtYkggfCBNw7xobHN0cmHDn2UgMiwgR3V0IERlbGxp
-bmcgfCA4MjIyOSBTZWVmZWxkLCBHZXJtYW55CkFtdHNnZXJpY2h0IE3DvG5jaGVuLCBIUkIgMTA1
-MDE4Ckdlc2Now6RmdHNmw7xocmVyOiBEZXRsZWYgU2NobmVpZGVyLCBSw7xkaWdlciBTdGFobCwg
-U3RlZmFuIFNjaG5laWRlcgpodHRwczovL3d3dy50cS1ncm91cC5jb20vCgoKLS0gCmxpbnV4LXBo
-eSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0
-cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+Hi Vinod Koul,
+
+On 08:14 Thu 26 Mar     , Yixun Lan wrote:
+> Hi Vinod Koul,
+> 
+> On 01:00 Thu 05 Mar     , Yixun Lan wrote:
+> > The series trys to add USB2 PHY support for SpacemiT K3 SoC, while 
+> > patch [1/2] implement a disconnect function which is needed during
+> > next connection.
+> > 
+> > No DTS part has been inclueded in this series, instead I plan to
+> > submit them later while adding USB host support.
+> > 
+> > I've collected all patches and pushed a complete review branch here[1],
+> > for people who interested to test easily, which include DTS and necessary
+> > changes, other patches may still need to improve, but sufficient for
+> > verifying the functionality.
+> > 
+> > Link: https://github.com/spacemit-com/linux/tree/WIP/k3/usb2 [1]
+> > 
+> 
+> Just want to ping this, Can you queue it for v7.1? Thanks
+> 
+Ping again, I'd like to see USB2.0 support in v7.1 for SpacemiT K3
+SoC.. and I think this phy patch is the only dependency that waiting
+for, the USB DWC[1], and hub[2] patch already merged
+
+Link: https://git.kernel.org/pub/scm/linux/kernel/git/gregkh/usb.git/commit/?h=usb-next&id=c05cf9d274daf72dc7e433480cf2e0e888f6bd89 [1] 
+Link: https://git.kernel.org/pub/scm/linux/kernel/git/gregkh/usb.git/commit/?h=usb-next&id=00b4fe5be06aecd6426930de86b7cffc2330f4b8 [2]
+
+-- 
+Yixun Lan (dlan)
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
