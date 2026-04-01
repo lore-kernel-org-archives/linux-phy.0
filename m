@@ -4,72 +4,100 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9279BD35162
-	for <linux-phy@archiver.kernel.org>; Wed,  1 Apr 2026 11:44:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 54127D3517C
+	for <linux-phy@archiver.kernel.org>; Wed,  1 Apr 2026 12:38:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/NV5SNP6Or8p+MvoPpCX/h7OE72CQPbBl/hfbwp/ffk=; b=Kz8SzA8udBnhIA
-	LzBV3h42MHmcwqpT3eyyZV+fDYaOC0PUy0RfKUVT+m2n+TbNHDdthF7usLrKL3OnNcuCgeBq4QR+m
-	mUhb04lZcYtuGCCfnHC9mbskzPR2xWtylle8rl0D1J0QkssyETia6Kgs/IrkycFOOxkDatU2LFf9k
-	I6k5cNn7BE10mxHoU5jkjojEUY5ms5FyJAZJXylbDJQqIigdvevmbqlr6uO24GxzZ4ujABjPeJT3x
-	zhsT2Sn5kuDC9A9vSoThf0wqvmPgrWSIFgshBfo6I8xF1Ts+feQ1Ti+6t7SxWlBOtH2+hGMk4hSJR
-	k8pA8tx/GrxzPmcmI2bA==;
+	List-Owner; bh=trjIkuvG5AARHJP6EQfiKn7LmbUpFHUdXcwqPhWaZNw=; b=w+i0mzMd4qSj9d
+	bZYYxFCPCbk31stJds4j3Z3n1ejCfQGa3eY9DZwDGm8TOs1gzW6f21GPA70wJh6VcF5+MMnh5OeKs
+	7AmoQzUN1eKTiFJBQXp4xnLX7C3M7WuWDCmfcyCvNGdpGyWsG5j+SwjVkjj48NRP0H7zag3Gmc34+
+	v+9nR1V+Bx3Br0EcKmdph+/vmdcgY681/XL8BGnLjCqkO/SVpvAJj0/4K0sOmhsvgb/P2rur20v8d
+	0Z0Wsvng3w1IjdbTDJWKq+xVy0uFNyvXi3eFV1juH27cuDHOMEKfx60k8wnZinPts4rp5xBFynq/M
+	WSKLaqeFmQx4XhuEjkmQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w7u00-0000000EfhV-4481;
-	Wed, 01 Apr 2026 11:44:40 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1w7upk-0000000FCbP-3jPt;
+	Wed, 01 Apr 2026 12:38:08 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w7tzz-0000000EfhK-3H8m
-	for linux-phy@lists.infradead.org;
-	Wed, 01 Apr 2026 11:44:40 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id F160260154;
-	Wed,  1 Apr 2026 11:44:38 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id F1302C4CEF7;
-	Wed,  1 Apr 2026 11:44:37 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1775043878;
-	bh=Va7mIxLnyICoaYV/3PFg8DT/TwERBVHi5jqPQ1fMaYQ=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=KjalVSFomMHQw9jrtzoO4BetpMS6WKRzzShqOhB6fQ/SeS8TJYv7IU97r4cYxg1qI
-	 7I2FPPs6wggy3tbmfjugp9S1q/bgKQuNgeqXxkzEUgnqWLQ8fBntjEIXXo+wx75Cie
-	 gZta2cayQCXmny9cHy//QWW4Ldc0w5uGJ75/exCuMWfP4Hj5Zm4u/XhrI9s+UMuAoD
-	 WaevcNFCZWeI7nQNhHNmjYaGxnr+Wx8ocoykbyquPrIVhlUHTiqSrvRZ13RjHRVVqr
-	 WKnlR8z4sHL+NSbt3VlQcv5ICI8MF2qIKkKGH+UwCpr9b3Oo77H3B6hStGLvUdyNKd
-	 5JtW81FaLo/Jg==
-Date: Wed, 1 Apr 2026 17:14:34 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Cc: Rob Clark <robin.clark@oss.qualcomm.com>,
-	Dmitry Baryshkov <lumag@kernel.org>,
-	Abhinav Kumar <abhinav.kumar@linux.dev>,
-	Jessica Zhang <jesszhan0024@gmail.com>, Sean Paul <sean@poorly.run>,
-	Marijn Suijten <marijn.suijten@somainline.org>,
-	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
+	id 1w7ueA-0000000F3o3-22wq;
+	Wed, 01 Apr 2026 12:26:10 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
+	:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=E2G3cP9X4cNiCp8YAHg4IjVGgRKZxQbDkjOgRFSfK7s=; b=lxU386sE9EDZnbnyqkBMBFC9q3
+	LjoXGlPXmzvsS0ItERM6+4R8hyD5F7B+4iZ5inOlfjhDyvMplvtrrWZMD7yurU2GaJvdnYUcuQ8bq
+	rqFjSKgHI5iG8IBeVPvkoNCjxmHKIFl1LZG5hlHbv4G9O/BMghYzgQKpLeJaK3LUYqqlZxZQ4w2Hu
+	KsajjwzSP20sSBv/4Y5abS27eELl9MHOlVPqlPwAjt+6EZIi4X/OjYss6ekuu3LDGIvQDztNKd+nK
+	LUtVl9rcrqEWOKZk8ljbtX0MRUWqnrfHuyDzyDiiWv2waL4a5LOAPtoVd/mfuHURgcuRtoeN/Ando
+	Mz1gSqoA==;
+Received: from www537.your-server.de ([188.40.3.216])
+	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1w7ue7-00000000Ktp-1Nau;
+	Wed, 01 Apr 2026 12:26:09 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=ew.tq-group.com; s=default2602; h=Content-Transfer-Encoding:Content-Type:
+	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender
+	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID;
+	bh=E2G3cP9X4cNiCp8YAHg4IjVGgRKZxQbDkjOgRFSfK7s=; b=qUPqjwtj78zGf4p2xh8VKaEQ+Q
+	nXh0ts7fQKRqRNCbcMe+P/Qdiy6M/f2n/Gkt+xCOOKyQSjQAVmiVAsngP00UMTqqrNikSusWRdnyJ
+	HoAOnGFoKlFfEWH+8ewMciN9PotAn5dqkZuL5zQbxgSz+r7SPxXXi1AfOk0u3DUJuj9zE4HxWSclL
+	Wxr41qgXd//s/IAhl9wvXLV+9vWEWF3NytCTUTN7M9548MRofsfaMaCtjzwh0qzQA3bgMJGqo9ExM
+	hl/fGl4BPN3TATHfh8JfCQLqCLmTz+Iso5CHa0lnTN2KXpe7xM2cNxBsWPbnoqe37oLgDZG+CGlaY
+	5u0no4Uw==;
+Received: from sslproxy07.your-server.de ([78.47.199.104])
+	by www537.your-server.de with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
+	(Exim 4.96.2)
+	(envelope-from <nora.schiffer@ew.tq-group.com>)
+	id 1w7ue3-000IQk-26;
+	Wed, 01 Apr 2026 14:26:03 +0200
+Received: from localhost ([127.0.0.1])
+	by sslproxy07.your-server.de with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
+	(Exim 4.96)
+	(envelope-from <nora.schiffer@ew.tq-group.com>)
+	id 1w7ue3-00089b-0X;
+	Wed, 01 Apr 2026 14:26:02 +0200
+From: Nora Schiffer <nora.schiffer@ew.tq-group.com>
+To: Nishanth Menon <nm@ti.com>,
+	Vignesh Raghavendra <vigneshr@ti.com>,
+	Tero Kristo <kristo@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>
+Cc: Andrew Lunn <andrew+netdev@lunn.ch>,
+	"David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>,
+	Paolo Abeni <pabeni@redhat.com>,
+	Siddharth Vadapalli <s-vadapalli@ti.com>,
+	Roger Quadros <rogerq@kernel.org>,
 	Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
 	Conor Dooley <conor+dt@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Krishna Manikandan <quic_mkrishn@quicinc.com>,
-	Jonathan Marek <jonathan@marek.ca>, linux-arm-msm@vger.kernel.org,
-	dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org
-Subject: Re: [PATCH] dt-bindings: display/msm: move DSI PHY bindings to phy/
- subdir
-Message-ID: <ac0FIqUk6wV74qIU@vaman>
-References: <20260305-msm-dsi-phy-v1-1-0a99ac665995@oss.qualcomm.com>
+	netdev@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux@ew.tq-group.com,
+	Nora Schiffer <nora.schiffer@ew.tq-group.com>
+Subject: [PATCH v3 2/5] dt-bindings: phy: ti: phy-gmii-sel: Add ti,j722s-phy-gmii-sel compatible
+Date: Wed,  1 Apr 2026 14:25:22 +0200
+Message-ID: <5ac1c52827a1a246584dddb62335f9ce4715eceb.1775045279.git.nora.schiffer@ew.tq-group.com>
+X-Mailer: git-send-email 2.53.0
+In-Reply-To: <cover.1775045279.git.nora.schiffer@ew.tq-group.com>
+References: <cover.1775045279.git.nora.schiffer@ew.tq-group.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260305-msm-dsi-phy-v1-1-0a99ac665995@oss.qualcomm.com>
+X-Virus-Scanned: Clear (ClamAV 1.4.3/27958/Wed Apr  1 08:24:34 2026)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260401_132607_505414_70579611 
+X-CRM114-Status: UNSURE (   8.20  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,23 +109,41 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 05-03-26, 01:47, Dmitry Baryshkov wrote:
-> Historically DSI PHY bindings landed to the display/msm subdir, however
-> they describe PHYs and as such they should be in the phy/ subdir.
-> Follow the example of other Qualcomm display-related PHYs (HDMI, eDP)
-> and move bindings for the Qualcomm DSI PHYs to the correct subdir.
-
-Acked-by: Vinod Koul <vkoul@kernel.org>
-
--- 
-~Vinod
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhlIEo3MjJTIGdtaWktc2VsIGlzIG1vc3RseSBpZGVudGljYWwgdG8gdGhlIEFNNjQncywgYnV0
+IGFkZGl0aW9uYWxseQpzdXBwb3J0cyBTR01JSS4gVGhlIEFNNjQgY29tcGF0aWJsZSB0aSxhbTY1
+NC1waHktZ21paS1zZWwgaXMgdXNlZCBhcyBhCmZhbGxiYWNrLgoKU2lnbmVkLW9mZi1ieTogTm9y
+YSBTY2hpZmZlciA8bm9yYS5zY2hpZmZlckBldy50cS1ncm91cC5jb20+Ci0tLQogLi4uL2JpbmRp
+bmdzL3BoeS90aSxwaHktZ21paS1zZWwueWFtbCAgICAgICAgIHwgMjQgKysrKysrKysrKysrLS0t
+LS0tLQogMSBmaWxlIGNoYW5nZWQsIDE1IGluc2VydGlvbnMoKyksIDkgZGVsZXRpb25zKC0pCgpk
+aWZmIC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS90aSxwaHkt
+Z21paS1zZWwueWFtbCBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9waHkvdGks
+cGh5LWdtaWktc2VsLnlhbWwKaW5kZXggYmU0MWI0NTQ3ZWM2ZC4uNmUxMmE3NTEwMGViOCAxMDA2
+NDQKLS0tIGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS90aSxwaHktZ21p
+aS1zZWwueWFtbAorKysgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcGh5L3Rp
+LHBoeS1nbWlpLXNlbC55YW1sCkBAIC00NywxNSArNDcsMjEgQEAgZGVzY3JpcHRpb246IHwKIAog
+cHJvcGVydGllczoKICAgY29tcGF0aWJsZToKLSAgICBlbnVtOgotICAgICAgLSB0aSxhbTMzNTIt
+cGh5LWdtaWktc2VsCi0gICAgICAtIHRpLGRyYTd4eC1waHktZ21paS1zZWwKLSAgICAgIC0gdGks
+YW00M3h4LXBoeS1nbWlpLXNlbAotICAgICAgLSB0aSxkbTgxNC1waHktZ21paS1zZWwKLSAgICAg
+IC0gdGksYW02NTQtcGh5LWdtaWktc2VsCi0gICAgICAtIHRpLGo3MjAwLWNwc3c1Zy1waHktZ21p
+aS1zZWwKLSAgICAgIC0gdGksajcyMWUtY3BzdzlnLXBoeS1nbWlpLXNlbAotICAgICAgLSB0aSxq
+Nzg0czQtY3BzdzlnLXBoeS1nbWlpLXNlbAorICAgIG9uZU9mOgorICAgICAgLSBpdGVtczoKKyAg
+ICAgICAgICAtIGVudW06CisgICAgICAgICAgICAgIC0gdGksYW0zMzUyLXBoeS1nbWlpLXNlbAor
+ICAgICAgICAgICAgICAtIHRpLGRyYTd4eC1waHktZ21paS1zZWwKKyAgICAgICAgICAgICAgLSB0
+aSxhbTQzeHgtcGh5LWdtaWktc2VsCisgICAgICAgICAgICAgIC0gdGksZG04MTQtcGh5LWdtaWkt
+c2VsCisgICAgICAgICAgICAgIC0gdGksYW02NTQtcGh5LWdtaWktc2VsCisgICAgICAgICAgICAg
+IC0gdGksajcyMDAtY3BzdzVnLXBoeS1nbWlpLXNlbAorICAgICAgICAgICAgICAtIHRpLGo3MjFl
+LWNwc3c5Zy1waHktZ21paS1zZWwKKyAgICAgICAgICAgICAgLSB0aSxqNzg0czQtY3BzdzlnLXBo
+eS1nbWlpLXNlbAorICAgICAgLSBpdGVtczoKKyAgICAgICAgICAtIGVudW06CisgICAgICAgICAg
+ICAgIC0gdGksajcyMnMtcGh5LWdtaWktc2VsCisgICAgICAgICAgLSBjb25zdDogdGksYW02NTQt
+cGh5LWdtaWktc2VsCiAKICAgcmVnOgogICAgIG1heEl0ZW1zOiAxCi0tIApUUS1TeXN0ZW1zIEdt
+YkggfCBNw7xobHN0cmHDn2UgMiwgR3V0IERlbGxpbmcgfCA4MjIyOSBTZWVmZWxkLCBHZXJtYW55
+CkFtdHNnZXJpY2h0IE3DvG5jaGVuLCBIUkIgMTA1MDE4Ckdlc2Now6RmdHNmw7xocmVyOiBEZXRs
+ZWYgU2NobmVpZGVyLCBSw7xkaWdlciBTdGFobCwgU3RlZmFuIFNjaG5laWRlcgpodHRwczovL3d3
+dy50cS1ncm91cC5jb20vCgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxp
+c3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
+dGluZm8vbGludXgtcGh5Cg==
