@@ -4,66 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6802DD3517C
-	for <linux-phy@archiver.kernel.org>; Wed,  1 Apr 2026 13:07:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AE36B1076382
+	for <linux-phy@archiver.kernel.org>; Wed,  1 Apr 2026 14:26:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:
+	Subject:Cc:To:From:Date:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W9BGOYOP8HAaafD8/QUD0AQ9+ektG5omvjtdLPB2BOE=; b=q8E5YQ7rNsAWI4
-	wmHQfVoKDIXsmLMhBFG9I+BKuKaVmx8o2K+abJxBYCsc2ah1RJSzgIteokiXeIoYXOaZhyZ2OpZlR
-	ti9eUb0tQtx8DCIrhx+gv40LCwdEC02Y/mtUhIkZtdDQ+i9nWVbB83+FCR5kVhlfzTC6hEozjWTIx
-	pCM5gdA3gGwLCUx0XJA1seklt4To+vwLDnuCFhI6BZfjumv2VTGujVbocwqfaK5LFVWU94xh/XT6q
-	QTfPhQ7XVHhCiDYjMSAls1VPMa4PeGIuW+5sJxRJIHaPgphu6jCjEgmkEB5lT8z9EICYxTp4S2m3X
-	00L+qyE1s8R+0Hjz1q+w==;
+	List-Owner; bh=qoxkk+hwcSO9Pxbh19lg1zp7IG14nmokTtMNZ/EIHR8=; b=vTKKEGfHjg+xAJ
+	gUzzVb+6J+Yt3lFWmRIgackKjaljHHxBfZM1rYDgQoSuqLBw0xGLr+WUElzCHZcQwmiwpI2LpCuLb
+	oZp6ZpbHADGfuJhcMsZi4QyNcC5PB/IhI/KQsF2KZV8g4Lh1xqGQoMj6ixSupveq90XuXkIJ/JFne
+	iXnC/tjSxnwePY61h+mZecNHiFpH8dbNDWjkiUpiKDOfcQl+02ZhxSd3Hsc5GZcH+uHO12jgnDGse
+	vllyW9sgTA31fux7gRBK32D0Alh/5MLbnybmm3wZZqOs0WH1GuL3BfP6vUkpdq0R1naabdVO0kDXv
+	mXcL85Ls1f4ez5s2QjQQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w7vI1-0000000FGpz-3cbO;
-	Wed, 01 Apr 2026 13:07:21 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1w7wWk-0000000FUEm-1CH9;
+	Wed, 01 Apr 2026 14:26:38 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w7vHy-0000000FGpV-3icO;
-	Wed, 01 Apr 2026 13:07:20 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 796FF4020D;
-	Wed,  1 Apr 2026 13:07:16 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C8D89C116C6;
-	Wed,  1 Apr 2026 13:07:15 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1775048836;
-	bh=3ZKzNrUwMIHn6dhPALdVNb5G43e3YDmvzJegFVvQeAU=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=INthCzna6u4qZOg0xCpIEj8XgnOT8J6+WweNGRff2a25OzhsScGaDe/NfK8Ui7F3l
-	 wcTL+2r9CDDzCj/l07TgY8TB9h4YVwGKQcm0rcM/Zv/9ojn48m8CPSDtGZOw77ANDt
-	 sfCilYhtStkjFswMw91yoOQ5xV93i7lH/wJFwnErfso0A9CWWM4R+usOtg1D5Fpgs8
-	 ghj2KTWVIhVXoUNnNRQpRkKCO3mGZb6Gl1J4PQVARp7mDZgSf+mNnVcB0V97pn/ubR
-	 Pmx0E3NhmWZaBn4eJriAz+LXHrVC4nL/e+hnd4zJ2noc8gT2MwaPO86Jeix0SK1BwC
-	 t592VqBC2Hsqg==
-Date: Wed, 1 Apr 2026 21:07:13 +0800
-From: Yixun Lan <dlan@kernel.org>
-To: Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Ze Huang <huang.ze@linux.dev>
-Cc: Junzhong Pan <panjunzhong@linux.spacemit.com>,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-riscv@lists.infradead.org, spacemit@lists.linux.dev,
-	linux-kernel@vger.kernel.org,
-	Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>,
-	Yao Zi <me@ziyao.cc>
-Subject: Re: [PATCH v4 0/2] phy: spacemit: Add USB2 PHY support for K3 SoC
-Message-ID: <20260401130713-GKD976850@kernel.org>
-References: <20260305-11-k3-usb2-phy-v4-0-15554fb933bc@kernel.org>
- <20260326001443-GKB777612@kernel.org>
+	id 1w7wWi-0000000FUDj-1vX2
+	for linux-phy@bombadil.infradead.org;
+	Wed, 01 Apr 2026 14:26:37 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
+	:Message-ID:References:In-Reply-To:Subject:Cc:To:From:Date:MIME-Version:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=M2w21oun33WgtlPUcXSFT/DHhBGpx/SI0UcRMiFXjvw=; b=W/jaX7rv1ARItTzLLOOKocl+aI
+	YLW8EzI5t73MzK55dswQfCATzC1rTVkREN+8pRWukO+lAyM77YWJf4m4+p/P4D57Fu/jMYKuasIvg
+	t7G3xa4GEnWC4KIjWIr4uspEUEdEjOKQLoG2HjunlVR31PQrhaLrobNHvVdJTidGMwiYFChe8+gj2
+	jCn7OpuXiMje8u/2klsR2HUKf8spf1F12mc2YMTkMcYm3n1fvQ/4fGAj2OTXKjAB4BsDbzKj0IJBK
+	XSSu7+YMGOb7Hlpj9p4OJJQdgf9iF80BBQNyqGgIvP4TRpjjXr5WdstPD7DCd91a333IeOoAAlA1L
+	/zeg0mcg==;
+Received: from layka.disroot.org ([178.21.23.139])
+	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1w7wWf-00000000bk0-2nLM
+	for linux-phy@lists.infradead.org;
+	Wed, 01 Apr 2026 14:26:35 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+	by disroot.org (Postfix) with ESMTP id 254D025B54;
+	Wed,  1 Apr 2026 16:16:32 +0200 (CEST)
+X-Virus-Scanned: SPAM Filter at disroot.org
+Received: from layka.disroot.org ([127.0.0.1])
+ by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
+ id QwdR6VfRREnd; Wed,  1 Apr 2026 16:16:31 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
+	t=1775052991; bh=l/kKl2NbggH/pZZmWsvlyPmIQF3xYezbfisa6juo6xk=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:References;
+	b=co9WldhhChMYGL0aGxYa7Ajvf5zeeUHeZEZPR23Vw45J63PCqhmu6ccCq6PfcNpVA
+	 QcsR+dgG91m46cTQvk478EodHHFTqVXRjAhcXJPrU+cralUgEPgJ0+LojtLO9YSrXv
+	 8/e4+kQ6mROpCmTMtuIBQIbecGtdA7MKgZbviC8j4OFfdrqjIloxMaBNF9VvnOxraq
+	 h1R62jdQf90dkNJLdxgWhyuLDN96R/fH5RZgXPNpYToQ+0mmIKTXeNiV1KpzVCu16Q
+	 8m7M1oHJv6OCuJnJO2X5wsqdgqZVDaotLZalLvpd3f+0qaRtXFpbWo6RXHYRjfkb0O
+	 LnMH2iabY2mgw==
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260326001443-GKB777612@kernel.org>
+Date: Wed, 01 Apr 2026 14:16:31 +0000
+From: Rustam Adilov <adilov@disroot.org>
+To: Vladimir Oltean <olteanv@gmail.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
+ <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, Krzysztof
+ Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Stanley
+ Chang <stanley_chang@realtek.com>, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, Michael Zavertkin
+ <misha.zavertkin@mail.ru>
+Subject: Re: [PATCH v2 5/6] phy: realtek: usb2: add support for RTL9607C USB2
+ PHY
+In-Reply-To: <20260331193647.nhaej266v4gudrek@skbuf>
+References: <20260327160638.15134-1-adilov@disroot.org>
+ <20260327160638.15134-1-adilov@disroot.org>
+ <20260327160638.15134-6-adilov@disroot.org>
+ <20260327160638.15134-6-adilov@disroot.org>
+ <20260330215033.ven3bllyw3jverfg@skbuf>
+ <1884dee6134e1c069e9f68edb2fdcd7f@disroot.org>
+ <20260331193647.nhaej266v4gudrek@skbuf>
+Message-ID: <a01c9b92e70a7274ed56355fbe559828@disroot.org>
+X-Sender: adilov@disroot.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260401_060718_968621_F1B3EB2B 
-X-CRM114-Status: GOOD (  14.54  )
+X-CRM114-CacheID: sfid-20260401_152633_787533_7102C3ED 
+X-CRM114-Status: UNSURE (   7.74  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,38 +100,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Vinod Koul,
-
-On 08:14 Thu 26 Mar     , Yixun Lan wrote:
-> Hi Vinod Koul,
+On 2026-03-31 19:36, Vladimir Oltean wrote:
+> On Tue, Mar 31, 2026 at 04:48:08PM +0000, Rustam Adilov wrote:
+>> I am personally fine with removing the "force_host_disconnect = false" and other
+>> falses in rtl9607_phy_cfg but i am debating because it wouldn't line up with the rest.
 > 
-> On 01:00 Thu 05 Mar     , Yixun Lan wrote:
-> > The series trys to add USB2 PHY support for SpacemiT K3 SoC, while 
-> > patch [1/2] implement a disconnect function which is needed during
-> > next connection.
-> > 
-> > No DTS part has been inclueded in this series, instead I plan to
-> > submit them later while adding USB host support.
-> > 
-> > I've collected all patches and pushed a complete review branch here[1],
-> > for people who interested to test easily, which include DTS and necessary
-> > changes, other patches may still need to improve, but sufficient for
-> > verifying the functionality.
-> > 
-> > Link: https://github.com/spacemit-com/linux/tree/WIP/k3/usb2 [1]
-> > 
-> 
-> Just want to ping this, Can you queue it for v7.1? Thanks
-> 
-Ping again, I'd like to see USB2.0 support in v7.1 for SpacemiT K3
-SoC.. and I think this phy patch is the only dependency that waiting
-for, the USB DWC[1], and hub[2] patch already merged
+> You can also remove the other unnecessary initializations.
 
-Link: https://git.kernel.org/pub/scm/linux/kernel/git/gregkh/usb.git/commit/?h=usb-next&id=c05cf9d274daf72dc7e433480cf2e0e888f6bd89 [1] 
-Link: https://git.kernel.org/pub/scm/linux/kernel/git/gregkh/usb.git/commit/?h=usb-next&id=00b4fe5be06aecd6426930de86b7cffc2330f4b8 [2]
+After thinking about it, removing other unnecessary initializations would be out of scope
+for this patch series but i can remove unnecessary things introduced by my patch series,
+i.e force_host_disconnect, and specifically things inside the rtl9607_phy_cfg.
 
--- 
-Yixun Lan (dlan)
+Later on, someone else can clean up the rest as a separate patch.
 
 -- 
 linux-phy mailing list
