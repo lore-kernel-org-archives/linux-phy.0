@@ -4,63 +4,117 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7D65210F6FAA
-	for <linux-phy@archiver.kernel.org>; Wed,  1 Apr 2026 14:41:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B399110F6FC2
+	for <linux-phy@archiver.kernel.org>; Wed,  1 Apr 2026 15:06:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KBq1YgSh1cbA4AiaeKmTmBxgEdurKub+h1biG5VZmG8=; b=Nznxa/Q0FerTZw
-	RcT57fQug+0SOE5KCqlYCeU1iqAX0f8iY5FbF5PEsKTNEWC+5QuJg/pCcn297Bdrd+ZlMAB+/Z7T+
-	3OH5BpCI5mGLTvKr/lDpRt+ZMuInZr8mw0kc5qhqSKksQ5gwDyIbXD1fM5uL5cYQhOlnz435WyVAY
-	/QW0cZ5ftm8zdKkKEejQTtCatDNTZS9biyADPFsrVy9CSNW7pkWfLDgtfGAm92BH0xJ1SlGB7No9x
-	CR0VqVKJmmmrNMaHNVmuEfQYBUz8NrYSxr8GzfLmYB2g19t4bfZ0PNkUVhpq+a9blvT74c9xU7Km1
-	9sycdVRrGK8ZahmxV2fg==;
+	List-Owner; bh=WIEWMjxTsZxb5/YqY3AJecN2UPVft37ZErfbi5Jn1aY=; b=CpVcjQuGXffa32
+	3O8P/cJRgp57xvaAcwCO7JwHNczbfqlz4R9rxcLAqWO7LgizIWymfpMmKFZF4eMJobgKbt/+4sVeJ
+	lAcjvJ9Af2SP/5CxtrlnKmKYe9pvxFvOLfRh/VMiImdlnTl4obBKmiuoMUhelRi/DybXeq7/fi09/
+	4yi9fAxLqsV9AKYesz6L6G0g+EUyYgZHSPaZBqJx7vQ5rTYGNfl4aykZ0nYSznU4uUSEw+c09mAot
+	T5T95vr6TK5A7mMvth0BOM7kez8rpioan0lLWumPIZ/yY4bPwoQb3u+KZ1RaXXk3oEEy0CUWh6Qmm
+	GfYNRBW2us+QSEc9WpMg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w7wkn-0000000FWHI-0Tjw;
-	Wed, 01 Apr 2026 14:41:09 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1w7x91-0000000FaQO-1v2F;
+	Wed, 01 Apr 2026 15:06:11 +0000
+Received: from s2.avantea.pl ([46.242.128.95])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w7wkm-0000000FWH7-0wiY
-	for linux-phy@lists.infradead.org;
-	Wed, 01 Apr 2026 14:41:08 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 9BAEB60127;
-	Wed,  1 Apr 2026 14:41:07 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6581AC19423;
-	Wed,  1 Apr 2026 14:41:06 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1775054467;
-	bh=TgjfJ9DwxAIF8WY3udzvv+dr98Azs03jjfDQs703n+k=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=WsX83Ribv38zaI3V2htPkFLab4N/Sjjucxt8ccy274mnMKq9dKvywOvb2Hs1SROrW
-	 xL3+P+Gyw2Q2qA5JzyhaEhCm6p+VIjVNqXAdOsRCjS5/IvDQ71PdMZGtNvNctnmyU1
-	 OKTeGIUehPf4V2S8bdo7aHepS9EfD36cBofs75fVJdywXXGFuPf74qJ6GWz+Ui3vQK
-	 UyMYELBU70577ZABGHU19vg69mFNjeN4gk30F1Lh1qD8wLqJ0AzpzrR/v+404ncu1v
-	 zeHzj0oFEsxAf6bdb+SgPAEyUuryvSD61jULa1p6Syew/83lfILSLrOGdPzhwpB1VD
-	 GN3G2ZlHxlBZw==
-Date: Wed, 1 Apr 2026 09:41:03 -0500
-From: Bjorn Andersson <andersson@kernel.org>
-To: Qiang Yu <qiang.yu@oss.qualcomm.com>
-Cc: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>, 
-	Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
-	Conor Dooley <conor+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>, 
-	Konrad Dybcio <konradybcio@kernel.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2 4/5] phy: qcom: qmp-pcie: Add Gen5 8-lanes mode for
- Glymur
-Message-ID: <ac0ubhTTsUNKHD__@baldur>
-References: <20260323-glymur_gen5x8_phy_0323-v2-0-ce0fc07f0e52@oss.qualcomm.com>
- <20260323-glymur_gen5x8_phy_0323-v2-4-ce0fc07f0e52@oss.qualcomm.com>
- <x3ts7to7c4qnorloahe7cgup3uekn4wolmmorqa3b3bjfslqfn@eijnzdp2ops3>
- <acua8Me0zo3v/CBi@hu-qianyu-lv.qualcomm.com>
+	id 1w7x8x-0000000FaLs-3oxX;
+	Wed, 01 Apr 2026 15:06:09 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=szczodrzynski.pl; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To
+	:From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=Yfl/w1ij3MgpyEqu5acDmeSHKzp1JdcGMEvJsVUioeI=; b=dTapjwhlsakHuG9/ro3lz63N01
+	XdRqX6PAtHDsv/Hqx89CpF904TiwsjZnD8ckUY/929k3Kqh6zJWEV/bZwHUToTvKGf9yVJ6uGH3ls
+	8Kwrz9WhU0B/zKeitP6JlW0f7htpsvS6bhNBxQXHc1qf9f77rtkXHumMFFi0polKAmpE1zRkNzspa
+	fHCxnwx+tD75qpHwxRukvdgbcqzqhSja9xlzKE8/AnrpaVpvoBqytXXymP5r5Ao7xRd6gc1mYVTR8
+	2QTy+ybeTSBCzaSl9bns7x65+O5sMF5eXEPOAWZiSq47yrUdD32xbkhLxziC+Rkra+/azUmpQMB6A
+	ZJ/I/QVg==;
+Received: from d100-78.icpnet.pl ([77.65.100.78] helo=[192.168.0.120])
+	by s2.avantea.pl with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
+	(Exim 4.98.1)
+	(envelope-from <kuba@szczodrzynski.pl>)
+	id 1w7x8q-0000000Ajrx-2VZg;
+	Wed, 01 Apr 2026 17:06:00 +0200
+Message-ID: <5e9f5f0c-1ff0-4b6c-ad2d-ccf6fafbef30@szczodrzynski.pl>
+Date: Wed, 1 Apr 2026 17:04:48 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <acua8Me0zo3v/CBi@hu-qianyu-lv.qualcomm.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 0/6] drm/sun4i: Support LVDS on D1s/T113 combo D-PHY
+To: Parthiban <parthiban@linumiz.com>, Maxime Ripard <mripard@kernel.org>,
+ Samuel Holland <samuel@sholland.org>, Chen-Yu Tsai <wens@csie.org>,
+ Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Thomas Zimmermann <tzimmermann@suse.de>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>
+Cc: David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+ linux-arm-kernel@lists.infradead.org, linux-sunxi@lists.linux.dev,
+ linux-kernel@vger.kernel.org, linux-riscv@lists.infradead.org,
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, paulk@sys-base.io
+References: <20250221161751.1278049-1-kuba@szczodrzynski.pl>
+ <20251116134609.447043-1-kuba@szczodrzynski.pl>
+ <a5f6aeb1-b038-462e-8989-c4da65966134@linumiz.com>
+ <1027afd7-dec6-4ff3-85eb-2d9a1646ada6@linumiz.com>
+Content-Language: pl
+From: =?UTF-8?Q?Kuba_Szczodrzy=C5=84ski?= <kuba@szczodrzynski.pl>
+Autocrypt: addr=kuba@szczodrzynski.pl; keydata=
+ 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
+In-Reply-To: <1027afd7-dec6-4ff3-85eb-2d9a1646ada6@linumiz.com>
+X-Authenticated-Id: kuba@szczodrzynski.pl
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260401_080608_158536_D964482F 
+X-CRM114-Status: UNSURE (   9.99  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,89 +126,29 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Mar 31, 2026 at 02:59:12AM -0700, Qiang Yu wrote:
-> On Tue, Mar 24, 2026 at 11:23:19PM +0200, Dmitry Baryshkov wrote:
-> > On Mon, Mar 23, 2026 at 12:15:31AM -0700, Qiang Yu wrote:
-> > > The third PCIe controller on Glymur SoC supports 8-lane operation via
-> > > bifurcation of two PHYs (each requires separate power domian, resets and
-> > > aux clk).
-> > > 
-> > > Add dedicated reset/no_csr reset list ("phy_b", "phy_b_nocsr") and
-> > > clock ("phy_b_aux") required for 8-lane operation. Introduce new
-> > > glymur_qmp_gen5x8_pciephy_cfg configuration to enable PCIe Gen5 x8 mode.
-> > > 
-> > > Signed-off-by: Qiang Yu <qiang.yu@oss.qualcomm.com>
-> > > ---
-> > >  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 30 +++++++++++++++++++++++++++++-
-> > >  1 file changed, 29 insertions(+), 1 deletion(-)
-> > > 
-> > > @@ -4705,6 +4713,23 @@ static const struct qmp_phy_cfg glymur_qmp_gen4x2_pciephy_cfg = {
-> > >  	.phy_status		= PHYSTATUS_4_20,
-> > >  };
-> > >  
-> > > +static const struct qmp_phy_cfg glymur_qmp_gen5x8_pciephy_cfg = {
-> > > +	.lanes = 8,
-> > > +
-> > > +	.offsets		= &qmp_pcie_offsets_v8_50,
-> > > +
-> > > +	.reset_list		= glymur_pciephy_reset_l,
-> > > +	.num_resets		= ARRAY_SIZE(glymur_pciephy_reset_l),
-> > > +	.nocsr_reset_list	= glymur_pciephy_nocsr_reset_l,
-> > > +	.num_nocsr_resets	= ARRAY_SIZE(glymur_pciephy_nocsr_reset_l),
-> > 
-> > Just for my understanding. If it was not the NOCSR case and had to
-> > program the registers, would we have needed to program anything in the
-> > PCIe3B space?
-> 
-> The PCIe3B PHY registers need to be programmed.
-
-Why?
-
-Regards,
-Bjorn
-
-> But we don't need to do it explicitly because there are also broadcast
-> registers: writing to these registers will automatically write the same
-> offset and value to both PHY ports simultaneously.
-> 
-> - Qiang Yu
-> > 
-> > > +	.vreg_list		= qmp_phy_vreg_l,
-> > > +	.num_vregs		= ARRAY_SIZE(qmp_phy_vreg_l),
-> > > +
-> > > +	.regs			= pciephy_v8_50_regs_layout,
-> > > +
-> > > +	.phy_status		= PHYSTATUS_4_20,
-> > > +};
-> > > +
-> > >  static void qmp_pcie_init_port_b(struct qmp_pcie *qmp, const struct qmp_phy_cfg_tbls *tbls)
-> > >  {
-> > >  	const struct qmp_phy_cfg *cfg = qmp->cfg;
-> > > @@ -5483,6 +5508,9 @@ static const struct of_device_id qmp_pcie_of_match_table[] = {
-> > >  	}, {
-> > >  		.compatible = "qcom,glymur-qmp-gen5x4-pcie-phy",
-> > >  		.data = &glymur_qmp_gen5x4_pciephy_cfg,
-> > > +	}, {
-> > > +		.compatible = "qcom,glymur-qmp-gen5x8-pcie-phy",
-> > > +		.data = &glymur_qmp_gen5x8_pciephy_cfg,
-> > >  	}, {
-> > >  		.compatible = "qcom,ipq6018-qmp-pcie-phy",
-> > >  		.data = &ipq6018_pciephy_cfg,
-> > > 
-> > > -- 
-> > > 2.34.1
-> > > 
-> > 
-> > -- 
-> > With best wishes
-> > Dmitry
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+SGksCgpXIGRuaXUgMjAyNi0wNC0wMSBvwqAxMDozOTo0MiwgUGFydGhpYmFuIHBpc3plOgoKPiBE
+ZWFyIEt1YmEsCj4KPiBPbiAyLzcvMjYgMjozNCBQTSwgUGFydGhpYmFuIHdyb3RlOgo+PiBPbiAx
+MS8xNi8yNSAyOjQ2IFBNLCBLdWJhIFN6Y3pvZHJ6ecWEc2tpIHdyb3RlOgo+Pj4gU29tZSBBbGx3
+aW5uZXIgY2hpcHMgKG5vdGFibHkgdGhlIEQxcy9UMTEzIGFuZCB0aGUgQTEwMCkgaGF2ZSBhICJj
+b21ibwo+Pj4gTUlQSSBEU0kgRC1QSFkiIHdoaWNoIGlzIHJlcXVpcmVkIHdoZW4gdXNpbmcgc2lu
+Z2xlLWxpbmsgTFZEUzAuIFRoZSBzYW1lCj4+PiBQRDAuLlBEOSBwaW5zIGFyZSB1c2VkIGZvciBl
+aXRoZXIgRFNJIG9yIExWRFMuCj4+Pgo+Pj4gT3RoZXIgdGhhbiBoYXZpbmcgdG8gdXNlIHRoZSBj
+b21ibyBELVBIWSwgTFZEUyBvdXRwdXQgaXMgY29uZmlndXJlZCBpbgo+Pj4gdGhlIHNhbWUgd2F5
+IGFzIG9uIG9sZGVyIGNoaXBzLgo+Pj4KPj4+IFRoaXMgc2VyaWVzIGVuYWJsZXMgdGhlIHN1bjZp
+IE1JUEkgRC1QSFkgdG8gYWxzbyB3b3JrIGluIExWRFMgbW9kZS4gSXQKPj4+IGlzIHRoZW4gY29u
+ZmlndXJlZCBieSB0aGUgTENEIFRDT04sIHdoaWNoIGFsbG93cyBjb25uZWN0aW5nIGEKPj4+IHNp
+bmdsZS1saW5rIExWRFMgZGlzcGxheSBwYW5lbC4KPiBOb3cgSSBhbHNvIGhhdmUgdGhlIE1JUEkg
+YW5kIExWRFMgd29ya2luZyB0b2dldGhlciBvbiBBMTMzLiBDYW4gSSBwaWNrIHlvdXIKPiBjaGFu
+Z2VzIGFuZCBwb3N0IGEgY29tYmluZWQgc2VyaWVzIGZvciB0aGUgZGlzcGxheSBzdXBwb3J0IGZv
+ciBBMTMzPyBUaGlzIHdpbGwKPiBhbHNvIGFkZHJlc3MgRDFzL1QxMTQgYXMgd2VsbC4KCkkgZ3Vl
+c3MgaXQncyBiZWVuIHdhaXRpbmcgZm9yIHRvbyBsb25nIGFueXdheSAtIHNvIHllcywgaWYgeW91
+IGtub3cgaG93IAp0byBwdXNoIGl0IGZ1cnRoZXIsIHRoZW4gcGxlYXNlIGRvIHNvLgoKUmVnYXJk
+cyBLdWJhCgo+IC0tCj4gVGhhbmtzLAo+IFBhcnRoaWJhbgo+IGh0dHBzOi8vbGludW1pei5jb20K
+PiBodHRwczovL3d3dy5saW5rZWRpbi5jb20vY29tcGFueS9saW51bWl6CgotLSAKbGludXgtcGh5
+IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3Rz
+LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
