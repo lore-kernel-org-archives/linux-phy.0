@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 520BCCC6B0E
-	for <linux-phy@archiver.kernel.org>; Thu,  2 Apr 2026 07:27:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8C275CC6B0E
+	for <linux-phy@archiver.kernel.org>; Thu,  2 Apr 2026 07:28:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oICz3tCj0L7C6FF+1STiepoTOANPuFW3sTMoN8ZERIY=; b=LGWLSaC817UDcK
-	QRCx60pVlli5jDFZ7H1htMb7X0LCIbKh3EU2RpQ6grj2bvS+9e0pPJE97JqZ4mvb+K+cSaqQuq7rF
-	l6qebEEph2zyXd7kB4Zrm2ILsDpDqzesfowIBaOt/l0BdUxd9hWcXO2aURbZ1Vdrb/LGmX9JbdKH/
-	Jn9YlhD0MBGyVTQ8Gfoc1+Khd0uZ/WEtVp1+nsl6WM2I/vXcNjclkr9umBw+RYrmNUYdO5yDRCBeB
-	Jm+gu/9C+K6Ma1kEKBioZ5tqCOg7Lp4grnM15TGN3D57+ii1tbfP18b6D91YT47HFuWJtFgWKwCfg
-	M+n3BgT/FNiDiodBeDaw==;
+	List-Owner; bh=Fb9WrPEzXCip3JkqI5Z6bVgv700QSvo9NStFR/fo9i4=; b=emOaTLEh54ej+4
+	+jUgR0DGnMHzGXqMrxhWUsbzt9lN8rjBA7yolTVsBCbrwVIEMqOIwH++IycxQSCQpihViHEafVzRm
+	Ipsl+vH/CJU/IFNDvpNRTk6ICR2gGBDoxe11dR2dZAZu4i6vXQmQfmnLi7P51rq9DhskeotKzZHak
+	1WAlyoNC4GvEQjy18Gl5Uqutar1XQmoeouVDB0lbzYX/jBEK6lNJfj13IJNMH9rpd1p1tDEntOC8K
+	NFB6ZedfUaI/A9Y7c5M/FPgB4sUDzU1iM5A5GDWt0Qu84RwwRQQeYbOL5oUz/MzEcoSwLs26SBck1
+	sgmDN+R1k/MhZR1sOuJw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w8CT2-0000000H589-33yr;
-	Thu, 02 Apr 2026 07:27:52 +0000
+	id 1w8CTV-0000000H5IW-1NUZ;
+	Thu, 02 Apr 2026 07:28:21 +0000
 Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w8CT0-0000000H56k-452Z;
-	Thu, 02 Apr 2026 07:27:51 +0000
+	id 1w8CTT-0000000H5Hf-1Tq6;
+	Thu, 02 Apr 2026 07:28:19 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 2D95961855;
-	Thu,  2 Apr 2026 07:27:50 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 538C8C19423;
-	Thu,  2 Apr 2026 07:27:49 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id C77A561855;
+	Thu,  2 Apr 2026 07:28:18 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 22974C19423;
+	Thu,  2 Apr 2026 07:28:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1775114869;
-	bh=5bRmQu9RvXClAs1iQSBeDGNT17zARgjIP+fvVutZf3Q=;
+	s=k20201202; t=1775114898;
+	bh=9coRbM7iQYguurCkJbtaZbv43ox1qglRLQ+Jv/1pW3k=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=a9ShTm8PDRbfUkdE2e8mHA6CENFhMOiZjJlaUOV+LDDB35fjc6k2zilgX/TrwmJal
-	 FOvXn6YWtFw6qmigqe/nFB5W4OO1pXv9HA8amyqLS2mBan2o+6JxuTRqjpiO5M34UY
-	 XsJwXuhBkdWUJCf3/7AGcEcabFjA38M7h1FIJkqsfnjXvq0JQYy487pRkXambMbyfT
-	 53Qes3UBdJe6dc2+jQgoYs9wQ08TNJHATIUcv5ZlRipcllGLi+6rMEJvAS8QciMttb
-	 V/SIkpejAErs+Dhn1ezID1cClJMBXtByHDUfF8N5jsbhGNrsVIrIIyLeHyxhv7ELU1
-	 8iYezR9Y+rHvw==
-Date: Thu, 2 Apr 2026 09:27:47 +0200
+	b=YEYzy0dCdgAZaeFtTncS/0Geo14pHpbUm5TiDpNQtlPXUCbv7gf3Cu6a9AFE5CORR
+	 gQJtqGMe+xBph2gKQkEuyOBqWThpV4rbo1PuWIoejFYI+1B60pUUovzHFrlf3Hr3zT
+	 86kUT6sGKnx1btgom069H3GvuYCbq0aUkD438RejcRaroutMR6/A0XTi+rPWBDzubT
+	 PGbpAH2vOAiVcf0+Zqj0Il4DBSdXL6PD5luQbYQB1sEMJibWPztODvDxOCEYZRzC8X
+	 d66YxKw+b5c8ESxW0sMtqQ1yOM/jDLY/BVaqwj6LE7fNWt5JXXKQqjiNbdNkqGFOoD
+	 vhMnw0LHusSAg==
+Date: Thu, 2 Apr 2026 09:28:16 +0200
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Nora Schiffer <nora.schiffer@ew.tq-group.com>
 Cc: Nishanth Menon <nm@ti.com>, Vignesh Raghavendra <vigneshr@ti.com>, 
@@ -53,14 +53,14 @@ Cc: Nishanth Menon <nm@ti.com>, Vignesh Raghavendra <vigneshr@ti.com>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, netdev@vger.kernel.org, 
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
 	linux-arm-kernel@lists.infradead.org, linux@ew.tq-group.com
-Subject: Re: [PATCH v3 2/5] dt-bindings: phy: ti: phy-gmii-sel: Add
- ti,j722s-phy-gmii-sel compatible
-Message-ID: <20260402-curly-heavy-bustard-bd8c63@quoll>
+Subject: Re: [PATCH v3 1/5] dt-bindings: phy: ti: phy-j721e-wiz: Add
+ ti,j722s-wiz-10g compatible
+Message-ID: <20260402-unnatural-polecat-of-promise-31fbde@quoll>
 References: <cover.1775045279.git.nora.schiffer@ew.tq-group.com>
- <5ac1c52827a1a246584dddb62335f9ce4715eceb.1775045279.git.nora.schiffer@ew.tq-group.com>
+ <b9d6a9322ce4f7dc3363dc00d93ab0256e12a8af.1775045279.git.nora.schiffer@ew.tq-group.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <5ac1c52827a1a246584dddb62335f9ce4715eceb.1775045279.git.nora.schiffer@ew.tq-group.com>
+In-Reply-To: <b9d6a9322ce4f7dc3363dc00d93ab0256e12a8af.1775045279.git.nora.schiffer@ew.tq-group.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,37 +77,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Apr 01, 2026 at 02:25:22PM +0200, Nora Schiffer wrote:
-> The J722S gmii-sel is mostly identical to the AM64's, but additionally
-> supports SGMII. The AM64 compatible ti,am654-phy-gmii-sel is used as a
-> fallback.
+On Wed, Apr 01, 2026 at 02:25:21PM +0200, Nora Schiffer wrote:
+> The J722S WIZ is mostly identical to the AM64's, but additionally supports
+> SGMII. The AM64 compatible ti,am64-wiz-10g is used as a fallback.
 > 
 > Signed-off-by: Nora Schiffer <nora.schiffer@ew.tq-group.com>
 > ---
->  .../bindings/phy/ti,phy-gmii-sel.yaml         | 24 ++++++++++++-------
->  1 file changed, 15 insertions(+), 9 deletions(-)
+>  .../bindings/phy/ti,phy-j721e-wiz.yaml        | 20 ++++++++++++-------
+>  1 file changed, 13 insertions(+), 7 deletions(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml b/Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml
-> index be41b4547ec6d..6e12a75100eb8 100644
-> --- a/Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml
-> +++ b/Documentation/devicetree/bindings/phy/ti,phy-gmii-sel.yaml
-> @@ -47,15 +47,21 @@ description: |
+> diff --git a/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml b/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml
+> index 3f16ff14484d2..283e3eedc0f31 100644
+> --- a/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml
+> +++ b/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml
+> @@ -12,13 +12,19 @@ maintainers:
 >  
 >  properties:
 >    compatible:
 > -    enum:
-> -      - ti,am3352-phy-gmii-sel
-> -      - ti,dra7xx-phy-gmii-sel
-> -      - ti,am43xx-phy-gmii-sel
-> -      - ti,dm814-phy-gmii-sel
-> -      - ti,am654-phy-gmii-sel
-> -      - ti,j7200-cpsw5g-phy-gmii-sel
-> -      - ti,j721e-cpsw9g-phy-gmii-sel
-> -      - ti,j784s4-cpsw9g-phy-gmii-sel
+> -      - ti,j721e-wiz-16g
+> -      - ti,j721e-wiz-10g
+> -      - ti,j721s2-wiz-10g
+> -      - ti,am64-wiz-10g
+> -      - ti,j7200-wiz-10g
+> -      - ti,j784s4-wiz-10g
 > +    oneOf:
 > +      - items:
 
-Same comments.
+Same comments as for netdev patch.
 
 Best regards,
 Krzysztof
