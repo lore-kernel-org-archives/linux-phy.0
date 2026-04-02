@@ -4,63 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8C275CC6B0E
-	for <linux-phy@archiver.kernel.org>; Thu,  2 Apr 2026 07:28:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BFCE0D6AAE2
+	for <linux-phy@archiver.kernel.org>; Thu,  2 Apr 2026 15:44:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Fb9WrPEzXCip3JkqI5Z6bVgv700QSvo9NStFR/fo9i4=; b=emOaTLEh54ej+4
-	+jUgR0DGnMHzGXqMrxhWUsbzt9lN8rjBA7yolTVsBCbrwVIEMqOIwH++IycxQSCQpihViHEafVzRm
-	Ipsl+vH/CJU/IFNDvpNRTk6ICR2gGBDoxe11dR2dZAZu4i6vXQmQfmnLi7P51rq9DhskeotKzZHak
-	1WAlyoNC4GvEQjy18Gl5Uqutar1XQmoeouVDB0lbzYX/jBEK6lNJfj13IJNMH9rpd1p1tDEntOC8K
-	NFB6ZedfUaI/A9Y7c5M/FPgB4sUDzU1iM5A5GDWt0Qu84RwwRQQeYbOL5oUz/MzEcoSwLs26SBck1
-	sgmDN+R1k/MhZR1sOuJw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=1qm0QbackKjszr65UgknLqLKBq4CdS56XnVf4BjfbO8=; b=FCKquMf8My87mW
+	G1vizP7o6L6pFf86kdhwu0ZmqmqUsaUsOBNNJ+ISlaXwJrCgVuXSpKU+7iabHtQ1HLh9NDK67+5K7
+	++O/PDtcme5PnytUQE14iTRHiOW3o+9I+HmJOI/HPXmu5/7VLICi56GtNgET+MTGOyYMU8FspOL78
+	Qkv/CIW9Aqz4cGauDwqGQUQJ53u1mCCMcSYxFnZTBwZ/5hNmy1iGDqCbhpUc8UD1Mz6NAjeCPa9zc
+	PzboAtCTDAlyvuqGlUWXeC6vWU0E7XNb51iZRQfAcbc/wdCUUgAdGZSurcOKg4GWnFb68jDyBAzbS
+	rjgE3J3rsE8lQxI7wI7A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w8CTV-0000000H5IW-1NUZ;
-	Thu, 02 Apr 2026 07:28:21 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1w8KE2-00000000ScV-23XW;
+	Thu, 02 Apr 2026 15:44:54 +0000
+Received: from layka.disroot.org ([178.21.23.139])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w8CTT-0000000H5Hf-1Tq6;
-	Thu, 02 Apr 2026 07:28:19 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id C77A561855;
-	Thu,  2 Apr 2026 07:28:18 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 22974C19423;
-	Thu,  2 Apr 2026 07:28:17 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1775114898;
-	bh=9coRbM7iQYguurCkJbtaZbv43ox1qglRLQ+Jv/1pW3k=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=YEYzy0dCdgAZaeFtTncS/0Geo14pHpbUm5TiDpNQtlPXUCbv7gf3Cu6a9AFE5CORR
-	 gQJtqGMe+xBph2gKQkEuyOBqWThpV4rbo1PuWIoejFYI+1B60pUUovzHFrlf3Hr3zT
-	 86kUT6sGKnx1btgom069H3GvuYCbq0aUkD438RejcRaroutMR6/A0XTi+rPWBDzubT
-	 PGbpAH2vOAiVcf0+Zqj0Il4DBSdXL6PD5luQbYQB1sEMJibWPztODvDxOCEYZRzC8X
-	 d66YxKw+b5c8ESxW0sMtqQ1yOM/jDLY/BVaqwj6LE7fNWt5JXXKQqjiNbdNkqGFOoD
-	 vhMnw0LHusSAg==
-Date: Thu, 2 Apr 2026 09:28:16 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Nora Schiffer <nora.schiffer@ew.tq-group.com>
-Cc: Nishanth Menon <nm@ti.com>, Vignesh Raghavendra <vigneshr@ti.com>, 
-	Tero Kristo <kristo@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Andrew Lunn <andrew+netdev@lunn.ch>, 
-	"David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
-	Siddharth Vadapalli <s-vadapalli@ti.com>, Roger Quadros <rogerq@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, netdev@vger.kernel.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
-	linux-arm-kernel@lists.infradead.org, linux@ew.tq-group.com
-Subject: Re: [PATCH v3 1/5] dt-bindings: phy: ti: phy-j721e-wiz: Add
- ti,j722s-wiz-10g compatible
-Message-ID: <20260402-unnatural-polecat-of-promise-31fbde@quoll>
-References: <cover.1775045279.git.nora.schiffer@ew.tq-group.com>
- <b9d6a9322ce4f7dc3363dc00d93ab0256e12a8af.1775045279.git.nora.schiffer@ew.tq-group.com>
+	id 1w8KDz-00000000Sas-0tGb
+	for linux-phy@lists.infradead.org;
+	Thu, 02 Apr 2026 15:44:53 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+	by disroot.org (Postfix) with ESMTP id 867FF26EBC;
+	Thu,  2 Apr 2026 17:44:46 +0200 (CEST)
+X-Virus-Scanned: SPAM Filter at disroot.org
+Received: from layka.disroot.org ([127.0.0.1])
+ by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
+ id vuyV9FzdCJHh; Thu,  2 Apr 2026 17:44:45 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
+	t=1775144685; bh=ehukUNKCQJJS36gvIjnDSkX0muBe2NdLvE10oXemFaQ=;
+	h=From:To:Cc:Subject:Date;
+	b=C6nkODbKOMKve9s5HPGrE7wCA1yq5h0eCyzorJV6dSwLQYP0Huce2Y1jJd4sDnsGf
+	 HI7u+rGoF01n6biGCJLdqegAWjlyBwc/janTJgtY1HHW0SkgeUyJu2G4TyhGNF8QuY
+	 HOQUfiU2aMTuh59SzkY03Mna0fhDocEyZ75PjB8rnWXcOAuv5dfhkd4FEj6/VKzEt5
+	 pYzRsMx3NXKZIdPJXPbFd0Y8LryML5WhzVn1zXM743CK2NNQGyrPbEB9CHxFnMJwbK
+	 eFsnNdYRKdFAPLyyCXf9MBrqyMXncYC/Pq59AzDIt9POViAw5b9xOdkV0LJdVdUtil
+	 L/nVaQ04QCqBA==
+From: Rustam Adilov <adilov@disroot.org>
+To: Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Stanley Chang <stanley_chang@realtek.com>,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Cc: Rustam Adilov <adilov@disroot.org>
+Subject: [PATCH v3 0/6] phy: realtek: usb2: support for RTL9607C USB2 PHY
+Date: Thu,  2 Apr 2026 20:44:08 +0500
+Message-ID: <20260402154414.196012-1-adilov@disroot.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <b9d6a9322ce4f7dc3363dc00d93ab0256e12a8af.1775045279.git.nora.schiffer@ew.tq-group.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260402_084451_671408_1373D6A1 
+X-CRM114-Status: GOOD (  11.94  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,37 +77,66 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Apr 01, 2026 at 02:25:21PM +0200, Nora Schiffer wrote:
-> The J722S WIZ is mostly identical to the AM64's, but additionally supports
-> SGMII. The AM64 compatible ti,am64-wiz-10g is used as a fallback.
-> 
-> Signed-off-by: Nora Schiffer <nora.schiffer@ew.tq-group.com>
-> ---
->  .../bindings/phy/ti,phy-j721e-wiz.yaml        | 20 ++++++++++++-------
->  1 file changed, 13 insertions(+), 7 deletions(-)
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml b/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml
-> index 3f16ff14484d2..283e3eedc0f31 100644
-> --- a/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml
-> +++ b/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml
-> @@ -12,13 +12,19 @@ maintainers:
->  
->  properties:
->    compatible:
-> -    enum:
-> -      - ti,j721e-wiz-16g
-> -      - ti,j721e-wiz-10g
-> -      - ti,j721s2-wiz-10g
-> -      - ti,am64-wiz-10g
-> -      - ti,j7200-wiz-10g
-> -      - ti,j784s4-wiz-10g
-> +    oneOf:
-> +      - items:
+This patch series for Realtek USB2 PHY driver adds support for RTL9607C
+USB2 PHY.
 
-Same comments as for netdev patch.
+RTL9607C is a big endian MIPS CPU which is quite far from RTD series SoCs
+supported by realtek usb2 phy driver, but the phy initilization is found
+to be very indentical in most areas.
 
-Best regards,
-Krzysztof
+Most of the code was based on the Realtek's usb driver from the GPL tarball
+in [1] and adjusted to fit into the realtek usb2 phy driver code format.
+
+The patch series was split into smaller patches that add/change something
+in the driver that are not exactly related to RTL9607C and that also
+helps for easier review. That also means, patch 5 depends on all the prior
+patches that come before it.
+
+USB2 PHY on RTL9607C is primarly used for its internal OHCI/EHCI controllers.
+
+[1] - https://github.com/jameywine/GPL-for-GP3000/blob/main/linux-5.10.x/arch/mips/rtl9607c/usb.c
+
+---
+Changelog in v3:
+- Patch 2
+ - renamed phy read and functions to "rtk_usb2phy" to not collide with networking API functions
+ - fixed the sparse warnings by creating intermidiate "tmp" variable and then pass it to writel
+ - sligtly adjusted commit message to instead use "default read" not "default phy_read"
+- Patch 4
+ - added the check for reset_control_deassert() just in case
+ - changed mdelay(5) to msleep(5)
+ - changed dev_err and return combo with one dev_err_probe for phy_rst
+- Patch 5
+ - changed mdelay(10) under force_host_disconnect to msleep(10)
+ - removed struct fields with false like force_host_disconnect and more in rtl9607_phy_cfg
+- Patch 6
+ - updated the #endif commend to now include MACH_REALTEK_RTL to reflect if on top
+- Link to v2: https://lore.kernel.org/linux-phy/20260327160638.15134-1-adilov@disroot.org/
+
+Changelog in v2:
+- Patch 5
+ - removed the line about OHCI/EHCI controllers from description.
+ - set the resets to false for RTD SoC devices and changed the
+   commit message to reflect that.
+- Link to v1: https://lore.kernel.org/linux-phy/20260326193419.48419-1-adilov@disroot.org/
+
+Rustam Adilov (6):
+  phy: realtek: usb2: introduce vstatus/new_reg_req variables to driver
+    data
+  phy: realtek: usb2: introduce read and write functions to driver data
+  dt-bindings: phy: realtek,usb2phy.yaml: extend for resets and RTL9607C
+    support
+  phy: realtek: usb2: introduce reset controller struct
+  phy: realtek: usb2: add support for RTL9607C USB2 PHY
+  phy: realtek: Make configs available for MACH_REALTEK_RTL
+
+ .../bindings/phy/realtek,usb2phy.yaml         |  25 ++-
+ drivers/phy/realtek/Kconfig                   |   4 +-
+ drivers/phy/realtek/phy-rtk-usb2.c            | 183 ++++++++++++++++--
+ 3 files changed, 191 insertions(+), 21 deletions(-)
+
+-- 
+2.53.0
 
 
 -- 
