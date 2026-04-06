@@ -4,62 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AEA18E63FED
-	for <linux-phy@archiver.kernel.org>; Sat,  4 Apr 2026 18:49:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B303BEF4EB8
+	for <linux-phy@archiver.kernel.org>; Mon,  6 Apr 2026 07:06:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZL8tYCjzUHaD9MZTi0WGEwCmEzXJFFj6lkEvr/Itu4M=; b=q7jNLK/cU82LnT
-	Q+ZsdUcP+KV5riaEEPzqnK9vICl7R4RMsOYMEtOLvO6Nw/ucEiIOl0IvHjxIZytDddeUfiU+Z7P8b
-	VtcoSBCCTKLVk7j44mbHULCl3b5pAZ6GkrY9eZDguGVv0pufVSuua0/QC7+G/fFEyNEIKGUXUfD1d
-	W2A5VVoVE7tmpOJq9x3F+qSZZqtSfe2S+cwwsSgKjVSYKijyNil863khW3sKg/x3v6ro2BQBw3UJm
-	qBo9pS+wm7NSUB/kvoToASCjQCLW40xsSoA1b48ZwPvVeJ3v4BAvhoFl/nQLSjhn5G+WZe5wWutBL
-	Lb/HEMINsMo6ANYnw2aQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=hxj9/EaTlwXfyFBAT1uf4zcPNNoPi2qVwkBS3pqYJv4=; b=IPVrYS2SObL1wM
+	V/wigr3YJk4490ERpxiHKmSxT2L+IuPC53M4ga75DDiqJY1bqmM6akMKiZMQE4GYYbC05lQN3Z0x/
+	GLUZj0J5DxZM7lsAeFHRltsou5BsI3NmLOBWhyCdou0EVINLzXSMZFae2L3Xrq+EIBVEK7Oj4YO6n
+	AeU1A6tlqhu5vTd0HPAIzLoiyawNesnHxmKhI4wS7GJKMTyVnBhkRDMrhlHkCSGwmDgwtIW94ekLj
+	ZsLpWD/8O0h7elXXLfUxU77pL5/i7sZPDbGrs0NZIxRoXKxF5utV95Hy9qRaHMP1ia+XJYAO1+/cj
+	T+lwow4gaZVZBAxs0oJA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w963z-00000003g31-1tQQ;
-	Sat, 04 Apr 2026 18:49:43 +0000
-Received: from mail.cjdns.fr ([5.135.140.105])
+	id 1w9e2g-00000004sGi-0lOM;
+	Mon, 06 Apr 2026 07:06:38 +0000
+Received: from mail-ed1-f66.google.com ([209.85.208.66])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w963w-00000003g1w-1zSa
+	id 1w9e2d-00000004sG4-04J8
 	for linux-phy@lists.infradead.org;
-	Sat, 04 Apr 2026 18:49:42 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 6C29118EE6E;
-	Sat,  4 Apr 2026 20:49:34 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cjdns.fr; s=dkim;
-	t=1775328577; h=from:subject:date:message-id:to:cc:mime-version:
-	 content-transfer-encoding:in-reply-to:references;
-	bh=D8WfbgG8z1lQF1hnqRptlhs37W1XwP07P11T/RE55bg=;
-	b=NSioNvWriUEkgTiQBAtVBpfTUIWErXNu/QKQT5NofTtsQn0pc3JhasQobZsHA23WC6AkdB
-	J6Gg2O4FkLnLGwJuObKFsMeG4Bf1rLQJAESuqZvTzugur3us4YACUZylToNkF/zqjWFdT8
-	EZISedFJkAD2eguOzdTUDPwk0dT6nB0+tYesk6QPCgKAlvyR7lem6SeOfY21gwBT/2pjtY
-	tsy2rQjMCrgTZpXOtz8RTHRTBZDztoge5cPRfPKeXHEnAYSnTth0VqrSwpHaqlU80E4lVd
-	ZNlmy3tGwJqStkk4dj2UDtWP8hwLf49SxRp9EEHNqurlC30mm37rfb5wi+Ek2g==
-From: Caleb James DeLisle <cjd@cjdns.fr>
-To: linux-phy@lists.infradead.org
-Cc: naseefkm@gmail.com,
-	vkoul@kernel.org,
-	neil.armstrong@linaro.org,
-	robh@kernel.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	linux-mips@vger.kernel.org,
-	devicetree@vger.kernel.org,
+	Mon, 06 Apr 2026 07:06:36 +0000
+Received: by mail-ed1-f66.google.com with SMTP id 4fb4d7f45d1cf-66f2ea5c500so86176a12.3
+        for <linux-phy@lists.infradead.org>; Mon, 06 Apr 2026 00:06:33 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1775459192; x=1776063992;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=CmI+hzyBqRr28Y++VrQXgi0DtpH9W0BGd3T//ob2zds=;
+        b=XakxhrCMcgG2bBd7hzffXJuljn8PalwoKZPogeXWQ84epYgOEO59Oqdzn67T7Pb1tV
+         ciwX28kMIjtGsAWohlnxaqmpJBCUJnoa3pfTdCNIByHtT+MfbdKMcekG7JkbQXioBnIj
+         8kuzBRFzXAvIeog2BvEGy23UFaktqjELSg7ulIhfylNa4oEp84Zh6rzfiAj/YFDrD7Hh
+         /wBmxa4vvOEAtei4UYzcCZ5gwW5DSSga8toxg2Dioo3YpYGw8WeBtahUqOHVncbRUbaG
+         x/eT5zyKBo2D7qmxeJal4Q455CPbqIFsmYW29hpoEZuZqQSERIiKFqs93vD2+BrL0v0y
+         VyDA==
+X-Forwarded-Encrypted: i=1; AJvYcCU8IW4TJd87mRnca/p0YA6kKsbmm+3gs1zb+LYLB8Lj4n1/A4H4rdyUjOxXZY3uTs+LVvBe2VWlN8I=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxHrPxSlVhUTWferBIhhuvEnrvemQyJ9fBta8ZIwzL+o7aJMGoo
+	dSmILmOfHBUmXHT8P9FbfKqrFO0/qVZszQf2/ZO+xtYf3c391u4htcxh
+X-Gm-Gg: AeBDievoNeRw/6QmLEonbjyAam3lMTmSObldx5ZnH+QQ2gr2BqKkrFNM1hK4v4JbAJ1
+	lbws3E2mVh1/E808LPL6BnXZlgBml3visWuW91i04rTZIEdYCyC5Qx2OJfGBZ4hprBx3vgdAyrz
+	SowIgXOzbGl/zKxX9ab+f3u7xcB53R1fhJGhvyM0TA4BfIKFrz49GUpRoD7xV2SMheIy0dwPyku
+	/OJ4nIVbwVFpUgu0b8hBzEEUNN6t178U78G7P1S5fynlaXWbGbETsvGp8AHgjXPnRmf/Gdo98m/
+	diD6YjUqMgFVsyVWlzNpfNtLWCFrCnVcJ6bNNfUv5e3QIRPQOUt42Rq2h9iY6a/8RVz3qMPiNCA
+	fNz85oKWfxssz3E/mdv9PUt8nE7+VTSHR92UhLg34zZSyP4z1phPyC/Hr8+EOHlJw9+8mGz2vJu
+	hcpvdpW+c5t7f26RSPeMNdUHwFPanGZ9wCoLdGIMkkL4tSTDx2Ip1fxFybkcNZ6A==
+X-Received: by 2002:a17:906:4fd4:b0:b96:e11e:97c4 with SMTP id a640c23a62f3a-b9c676ad8bfmr559766366b.20.1775459192157;
+        Mon, 06 Apr 2026 00:06:32 -0700 (PDT)
+Received: from aorus.localdomain (5.185.72.109.ipv4.public.orange.pl. [5.185.72.109])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-b9c3cff131csm450129466b.52.2026.04.06.00.06.30
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 06 Apr 2026 00:06:31 -0700 (PDT)
+From: =?UTF-8?q?=C5=81ukasz=20Lebiedzi=C5=84ski?= <kernel@lvkasz.us>
+To: vkoul@kernel.org
+Cc: neil.armstrong@linaro.org,
+	krzk@kernel.org,
+	alim.akhtar@samsung.com,
+	andre.draszik@linaro.org,
+	pritam.sutar@samsung.com,
+	kauschluss@disroot.org,
+	johan@kernel.org,
+	ivo.ivanov.ivanov1@gmail.com,
+	linux-phy@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-samsung-soc@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
-	Caleb James DeLisle <cjd@cjdns.fr>
-Subject: [PATCH v2 2/2] phy: econet: Add PCIe PHY driver for EcoNet EN751221 and EN7528 SoCs.
-Date: Sat,  4 Apr 2026 18:49:18 +0000
-Message-Id: <20260404184918.2184070-3-cjd@cjdns.fr>
-In-Reply-To: <20260404184918.2184070-1-cjd@cjdns.fr>
-References: <20260404184918.2184070-1-cjd@cjdns.fr>
+	=?utf-8?q?=C5=81ukasz=20Lebiedzi=C5=84ski?= <kernel@lvkasz.us>,
+	stable@vger.kernel.org
+Subject: [PATCH] phy: exynos5-usbdrd: fix USB 2.0 HS PHY tuning values for Exynos7870
+Date: Mon,  6 Apr 2026 09:05:48 +0200
+Message-ID: <20260406070548.132491-1-kernel@lvkasz.us>
+X-Mailer: git-send-email 2.53.0
 MIME-Version: 1.0
-X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260404_114940_962603_35A73587 
-X-CRM114-Status: GOOD (  21.80  )
+X-CRM114-CacheID: sfid-20260406_000635_074995_60B02EFE 
+X-CRM114-Status: UNSURE (   8.84  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,265 +93,52 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Introduce support for EcoNet PCIe PHY controllers found in EN751221
-and EN7528 SoCs, these SoCs are not identical but are similar, each
-having one Gen1 port, and one Gen1/Gen2 port.
-
-Co-developed-by: Ahmed Naseef <naseefkm@gmail.com>
-Signed-off-by: Ahmed Naseef <naseefkm@gmail.com>
-[cjd@cjdns.fr: add EN751221 support and refactor for clarity]
-Signed-off-by: Caleb James DeLisle <cjd@cjdns.fr>
----
- MAINTAINERS                   |   1 +
- drivers/phy/Kconfig           |  12 +++
- drivers/phy/Makefile          |   1 +
- drivers/phy/phy-econet-pcie.c | 180 ++++++++++++++++++++++++++++++++++
- 4 files changed, 194 insertions(+)
- create mode 100644 drivers/phy/phy-econet-pcie.c
-
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 1b016212e4cb..b2d37c7c80af 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -9177,6 +9177,7 @@ M:	Caleb James DeLisle <cjd@cjdns.fr>
- L:	linux-mips@vger.kernel.org
- S:	Maintained
- F:	Documentation/devicetree/bindings/phy/econet,en751221-pcie-phy.yaml
-+F:	drivers/phy/phy-econet-pcie.c
- 
- ECRYPT FILE SYSTEM
- M:	Tyler Hicks <code@tyhicks.com>
-diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
-index 227b9a4c612e..9aad68829d72 100644
---- a/drivers/phy/Kconfig
-+++ b/drivers/phy/Kconfig
-@@ -66,6 +66,18 @@ config PHY_CAN_TRANSCEIVER
- 	  functional modes using gpios and sets the attribute max link
- 	  rate, for CAN drivers.
- 
-+config PHY_ECONET_PCIE
-+	tristate "EcoNet PCIe-PHY Driver"
-+	depends on ECONET || COMPILE_TEST
-+	depends on OF
-+	select GENERIC_PHY
-+	select REGMAP_MMIO
-+	help
-+	  Say Y here to add support for EcoNet PCIe PHY driver.
-+	  This driver create the basic PHY instance and provides initialize
-+	  callback for PCIe GEN1 and GEN2 ports. This PHY is found on
-+	  EcoNet SoCs including EN751221 and EN7528.
-+
- config PHY_GOOGLE_USB
- 	tristate "Google Tensor SoC USB PHY driver"
- 	select GENERIC_PHY
-diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
-index f49d83f00a3d..42959ed383fd 100644
---- a/drivers/phy/Makefile
-+++ b/drivers/phy/Makefile
-@@ -9,6 +9,7 @@ obj-$(CONFIG_GENERIC_PHY)		+= phy-core.o
- obj-$(CONFIG_GENERIC_PHY_MIPI_DPHY)	+= phy-core-mipi-dphy.o
- obj-$(CONFIG_PHY_AIROHA_PCIE)		+= phy-airoha-pcie.o
- obj-$(CONFIG_PHY_CAN_TRANSCEIVER)	+= phy-can-transceiver.o
-+obj-$(CONFIG_PHY_ECONET_PCIE)		+= phy-econet-pcie.o
- obj-$(CONFIG_PHY_GOOGLE_USB)		+= phy-google-usb.o
- obj-$(CONFIG_USB_LGM_PHY)		+= phy-lgm-usb.o
- obj-$(CONFIG_PHY_LPC18XX_USB_OTG)	+= phy-lpc18xx-usb-otg.o
-diff --git a/drivers/phy/phy-econet-pcie.c b/drivers/phy/phy-econet-pcie.c
-new file mode 100644
-index 000000000000..d2c6e0c1f331
---- /dev/null
-+++ b/drivers/phy/phy-econet-pcie.c
-@@ -0,0 +1,180 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+/*
-+ * Author: Caleb James DeLisle <cjd@cjdns.fr>
-+ *	   Ahmed Naseef <naseefkm@gmail.com>
-+ */
-+
-+#include <linux/bitfield.h>
-+#include <linux/module.h>
-+#include <linux/of.h>
-+#include <linux/phy/phy.h>
-+#include <linux/platform_device.h>
-+#include <linux/regmap.h>
-+
-+/* Rx detection timing for EN751221: 16*8 clock cycles  */
-+#define EN751221_RXDET_VAL		16
-+
-+/* Rx detection timing when in power mode 3 */
-+#define EN75_RXDET_P3_REG		0xa28
-+#define EN75_RXDET_P3_MASK		GENMASK(17, 9)
-+
-+/* Rx detection timing when in power mode 2 */
-+#define EN75_RXDET_P2_REG		0xa2c
-+#define EN75_RXDET_P2_MASK		GENMASK(8, 0)
-+
-+/* Rx impedance */
-+#define EN75_RX_IMPEDANCE_REG		0xb2c
-+#define EN75_RX_IMPEDANCE_MASK		GENMASK(13, 12)
-+enum en75_rx_impedance {
-+	EN75_RX_IMPEDANCE_100_OHM	= 0,
-+	EN75_RX_IMPEDANCE_95_OHM	= 1,
-+	EN75_RX_IMPEDANCE_90_OHM	= 2,
-+};
-+
-+/* PLL Invert clock */
-+#define EN75_PLL_PH_INV_REG		0x4a0
-+#define EN75_PLL_PH_INV_MASK		BIT(5)
-+
-+struct en75_phy_op {
-+	u32 reg;
-+	u32 mask;
-+	u32 val;
-+};
-+
-+struct en7528_pcie_phy {
-+	struct regmap *regmap;
-+	const struct en75_phy_op *data;
-+};
-+
-+/* Port 0 PHY: set LCDDS_CLK_PH_INV for PLL operation */
-+static const struct en75_phy_op en7528_phy_gen1[] = {
-+	{
-+		.reg = EN75_PLL_PH_INV_REG,
-+		.mask = EN75_PLL_PH_INV_MASK,
-+		.val = 1,
-+	},
-+	{ /* sentinel */ }
-+};
-+
-+/* EN7528 Port 1 PHY: Rx impedance tuning, target R -5 Ohm */
-+static const struct en75_phy_op en7528_phy_gen2[] = {
-+	{
-+		.reg = EN75_RX_IMPEDANCE_REG,
-+		.mask = EN75_RX_IMPEDANCE_MASK,
-+		.val = EN75_RX_IMPEDANCE_95_OHM,
-+	},
-+	{ /* sentinel */ }
-+};
-+
-+/* EN751221 Port 1 PHY, set RX detect to 16*8 clock cycles */
-+static const struct en75_phy_op en751221_phy_gen2[] = {
-+	{
-+		.reg = EN75_RXDET_P3_REG,
-+		.mask = EN75_RXDET_P3_MASK,
-+		.val = EN751221_RXDET_VAL,
-+	},
-+	{
-+		.reg = EN75_RXDET_P2_REG,
-+		.mask = EN75_RXDET_P2_MASK,
-+		.val = EN751221_RXDET_VAL,
-+	},
-+	{ /* sentinel */ }
-+};
-+
-+static int en75_pcie_phy_init(struct phy *phy)
-+{
-+	struct en7528_pcie_phy *ephy = phy_get_drvdata(phy);
-+	const struct en75_phy_op *data = ephy->data;
-+	int i, ret;
-+	u32 val;
-+
-+	for (i = 0; data[i].mask || data[i].val; i++) {
-+		if (i)
-+			usleep_range(1000, 2000);
-+
-+		val = field_prep(data[i].mask, data[i].val);
-+
-+		ret = regmap_update_bits(ephy->regmap, data[i].reg,
-+					 data[i].mask, val);
-+		if (ret)
-+			return ret;
-+	}
-+
-+	return 0;
-+}
-+
-+static const struct phy_ops en75_pcie_phy_ops = {
-+	.init	= en75_pcie_phy_init,
-+	.owner	= THIS_MODULE,
-+};
-+
-+static int en75_pcie_phy_probe(struct platform_device *pdev)
-+{
-+	struct regmap_config regmap_config = {
-+		.reg_bits = 32,
-+		.val_bits = 32,
-+		.reg_stride = 4,
-+	};
-+	struct device *dev = &pdev->dev;
-+	const struct en75_phy_op *data;
-+	struct phy_provider *provider;
-+	struct en7528_pcie_phy *ephy;
-+	void __iomem *base;
-+	struct phy *phy;
-+	int i;
-+
-+	data = of_device_get_match_data(dev);
-+	if (!data)
-+		return -EINVAL;
-+
-+	ephy = devm_kzalloc(dev, sizeof(*ephy), GFP_KERNEL);
-+	if (!ephy)
-+		return -ENOMEM;
-+
-+	ephy->data = data;
-+
-+	base = devm_platform_ioremap_resource(pdev, 0);
-+	if (IS_ERR(base))
-+		return PTR_ERR(base);
-+
-+	/* Set max_register to highest used register */
-+	for (i = 0; data[i].mask || data[i].val; i++)
-+		if (data[i].reg > regmap_config.max_register)
-+			regmap_config.max_register = data[i].reg;
-+
-+	ephy->regmap = devm_regmap_init_mmio(dev, base, &regmap_config);
-+	if (IS_ERR(ephy->regmap))
-+		return PTR_ERR(ephy->regmap);
-+
-+	phy = devm_phy_create(dev, dev->of_node, &en75_pcie_phy_ops);
-+	if (IS_ERR(phy))
-+		return PTR_ERR(phy);
-+
-+	phy_set_drvdata(phy, ephy);
-+
-+	provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-+
-+	return PTR_ERR_OR_ZERO(provider);
-+}
-+
-+static const struct of_device_id en75_pcie_phy_ids[] = {
-+	{ .compatible = "econet,en7528-pcie-gen1", .data = en7528_phy_gen1 },
-+	{ .compatible = "econet,en7528-pcie-gen2", .data = en7528_phy_gen2 },
-+	{ .compatible = "econet,en751221-pcie-gen1", .data = en7528_phy_gen1 },
-+	{ .compatible = "econet,en751221-pcie-gen2", .data = en751221_phy_gen2 },
-+	{ /* sentinel */ }
-+};
-+MODULE_DEVICE_TABLE(of, en75_pcie_phy_ids);
-+
-+static struct platform_driver en75_pcie_phy_driver = {
-+	.probe = en75_pcie_phy_probe,
-+	.driver = {
-+		.name = "econet-pcie-phy",
-+		.of_match_table = en75_pcie_phy_ids,
-+	},
-+};
-+module_platform_driver(en75_pcie_phy_driver);
-+
-+MODULE_AUTHOR("Caleb James DeLisle <cjd@cjdns.fr>");
-+MODULE_DESCRIPTION("EcoNet PCIe PHY driver");
-+MODULE_LICENSE("GPL");
--- 
-2.39.5
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhlIGV4aXN0aW5nIFBIWVBBUkFNMCB0dW5pbmcgdmFsdWVzIGZvciBFeHlub3M3ODcwIGFyZSBp
+bmNvcnJlY3QsCmNhdXNpbmcgdGhlIFVTQiAyLjAgUEhZIHRvIGZhaWwgaGlnaC1zcGVlZCBuZWdv
+dGlhdGlvbiBhbmQgZmFsbCBiYWNrCnRvIGZ1bGwtc3BlZWQgKDEyTWJwcykgb3BlcmF0aW9uLgoK
+Rml4IFRYVlJFRlRVTkUgKHRyYW5zbWl0dGVyIHZvbHRhZ2UgcmVmZXJlbmNlKSBmcm9tIDE0IHRv
+IDMsClRYUkVTVFVORSAodHJhbnNtaXR0ZXIgaW1wZWRhbmNlKSBmcm9tIDMgdG8gMiwgYW5kIFNR
+UlhUVU5FCihzcXVlbGNoIHRocmVzaG9sZCkgZnJvbSA2IHRvIDUuIEFsc28gZXhwbGljaXRseSBz
+ZXQKVFhQUkVFTVBQVUxTRVRVTkUgdG8gMCwgd2hpY2ggd2FzIHByZXZpb3VzbHkgbWlzc2luZyBm
+cm9tIHRoZQp0dW5pbmcgdGFibGUgZGVzcGl0ZSBiZWluZyBpbmNsdWRlZCBpbiB0aGUgcmVnaXN0
+ZXIgbWFzay4KCkFsbCB2YWx1ZXMgYXJlIGRlcml2ZWQgZnJvbSB0aGUgdmVuZG9yIGtlcm5lbCBm
+b3IgdGhlIFNhbXN1bmcKR2FsYXh5IEE2IChTTS1BNjAwRk4pLCBhcyBubyBwdWJsaWMgaGFyZHdh
+cmUgZG9jdW1lbnRhdGlvbiBpcwphdmFpbGFibGUgZm9yIHRoZSBFeHlub3M3ODcwIFVTQiBEUkQg
+UEhZLiBXaXRoIHRoZXNlIGNvcnJlY3Rpb25zLAp0aGUgUEhZIHN1Y2Nlc3NmdWxseSBuZWdvdGlh
+dGVzIGhpZ2gtc3BlZWQgKDQ4ME1icHMpIG9wZXJhdGlvbi4KCkZpeGVzOiA1ODhkNWQyMGNhOGQg
+KCJwaHk6IGV4eW5vczUtdXNiZHJkOiBhZGQgZXh5bm9zNzg3MCBVU0JEUkQgc3VwcG9ydCIpCkNj
+OiBzdGFibGVAdmdlci5rZXJuZWwub3JnClRlc3RlZC1ieTogxYF1a2FzeiBMZWJpZWR6acWEc2tp
+IDxrZXJuZWxAbHZrYXN6LnVzPgpUZXN0ZWQtYnk6IEthdXN0YWJoIENoYWtyYWJvcnR5IDxrYXVz
+Y2hsdXNzQGRpc3Jvb3Qub3JnPgpTaWduZWQtb2ZmLWJ5OiDFgXVrYXN6IExlYmllZHppxYRza2kg
+PGtlcm5lbEBsdmthc3oudXM+Ci0tLQogZHJpdmVycy9waHkvc2Ftc3VuZy9waHktZXh5bm9zNS11
+c2JkcmQuYyB8IDcgKysrKy0tLQogMSBmaWxlIGNoYW5nZWQsIDQgaW5zZXJ0aW9ucygrKSwgMyBk
+ZWxldGlvbnMoLSkKCmRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9zYW1zdW5nL3BoeS1leHlub3M1
+LXVzYmRyZC5jIGIvZHJpdmVycy9waHkvc2Ftc3VuZy9waHktZXh5bm9zNS11c2JkcmQuYwppbmRl
+eCA1YTE4MWNiNDU5N2UuLjg3MTFhM2I2MmM4ZSAxMDA2NDQKLS0tIGEvZHJpdmVycy9waHkvc2Ft
+c3VuZy9waHktZXh5bm9zNS11c2JkcmQuYworKysgYi9kcml2ZXJzL3BoeS9zYW1zdW5nL3BoeS1l
+eHlub3M1LXVzYmRyZC5jCkBAIC0xOTU4LDEzICsxOTU4LDE0IEBAIGNvbnN0IHN0cnVjdCBleHlu
+b3M1X3VzYmRyZF9waHlfdHVuaW5nIGV4eW5vczc4NzBfdHVuZXNfdXRtaV9wb3N0aW5pdFtdID0g
+ewogCQkJICAgICAgUEhZUEFSQU0wX1RYUFJFRU1QQU1QVFVORSB8IFBIWVBBUkFNMF9UWEhTWFZU
+VU5FIHwKIAkJCSAgICAgIFBIWVBBUkFNMF9UWEZTTFNUVU5FIHwgUEhZUEFSQU0wX1NRUlhUVU5F
+IHwKIAkJCSAgICAgIFBIWVBBUkFNMF9PVEdUVU5FIHwgUEhZUEFSQU0wX0NPTVBESVNUVU5FKSwK
+LQkJCSAgICAgKEZJRUxEX1BSRVBfQ09OU1QoUEhZUEFSQU0wX1RYVlJFRlRVTkUsIDE0KSB8CisJ
+CQkgICAgIChGSUVMRF9QUkVQX0NPTlNUKFBIWVBBUkFNMF9UWFZSRUZUVU5FLCAzKSB8CiAJCQkg
+ICAgICBGSUVMRF9QUkVQX0NPTlNUKFBIWVBBUkFNMF9UWFJJU0VUVU5FLCAxKSB8Ci0JCQkgICAg
+ICBGSUVMRF9QUkVQX0NPTlNUKFBIWVBBUkFNMF9UWFJFU1RVTkUsIDMpIHwKKwkJCSAgICAgIEZJ
+RUxEX1BSRVBfQ09OU1QoUEhZUEFSQU0wX1RYUkVTVFVORSwgMikgfAorCQkJICAgICAgRklFTERf
+UFJFUF9DT05TVChQSFlQQVJBTTBfVFhQUkVFTVBQVUxTRVRVTkUsIDApIHwKIAkJCSAgICAgIEZJ
+RUxEX1BSRVBfQ09OU1QoUEhZUEFSQU0wX1RYUFJFRU1QQU1QVFVORSwgMCkgfAogCQkJICAgICAg
+RklFTERfUFJFUF9DT05TVChQSFlQQVJBTTBfVFhIU1hWVFVORSwgMCkgfAogCQkJICAgICAgRklF
+TERfUFJFUF9DT05TVChQSFlQQVJBTTBfVFhGU0xTVFVORSwgMykgfAotCQkJICAgICAgRklFTERf
+UFJFUF9DT05TVChQSFlQQVJBTTBfU1FSWFRVTkUsIDYpIHwKKwkJCSAgICAgIEZJRUxEX1BSRVBf
+Q09OU1QoUEhZUEFSQU0wX1NRUlhUVU5FLCA1KSB8CiAJCQkgICAgICBGSUVMRF9QUkVQX0NPTlNU
+KFBIWVBBUkFNMF9PVEdUVU5FLCAyKSB8CiAJCQkgICAgICBGSUVMRF9QUkVQX0NPTlNUKFBIWVBB
+UkFNMF9DT01QRElTVFVORSwgMykpKSwKIAlQSFlfVFVOSU5HX0VOVFJZX0xBU1QKCmJhc2UtY29t
+bWl0OiBjYWYwODUxNGJiZWUwNzM2YzMxZDhkNGY0MDZlMzQxNWNkZjcyNmJiCi0tIAoyLjUzLjAK
+CgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9y
+ZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
