@@ -4,63 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2C455FD5F8D
-	for <linux-phy@archiver.kernel.org>; Wed,  8 Apr 2026 07:07:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 66E401073CAB
+	for <linux-phy@archiver.kernel.org>; Wed,  8 Apr 2026 12:59:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eRCUc20uQW33Y4+BXJh6DMZ13HqiRDve5sZuxQsCmn0=; b=Q7KjDvI3jqlvrH
-	EkdOpnhFZqRLlm+j5CPuNM/+LsNJq1iTY3xUK45t+1ClOJLvsqq088vNzmmyhbwaVhryVpIC0hYhb
-	t8WzlvXpnCyDtVGPm+0SyKgPv5rOrjheNDNxrnwGV3M1a3mJs16A9eHe+Xvdipbaz0qlM3xbSZvfI
-	Lcf+WQ2kMmIYlnHmDRjAm/6VbyQ+Og4/VNVUi9bOB893kPCc0wCWvtRlD8Brl2Tj/sOjjRdTOZYg+
-	2Dw0MQmDMiM6ipsVF0GV8aR4kUY/8k3CZ91/SBrXTMrHhuCO9uEd1B54Nb/ZHySDscoq3zS648ECE
-	wLOqARgltw38Vg2zwc7w==;
+	List-Owner; bh=9U9ctDhG58k038R5RnaTPC69ZyPthzCtnBBeuPzFbtE=; b=tBBZjAnv10p/Oo
+	TNRf5Orv69b30vwZzMISfr8udgfA2FozW+0k29mJ/OJxyqOAw3pm7aHnUiNaiGwW2bVz8Q8Wl+r+1
+	9U2e8ARdvxYpgDZ2BPxdwpzyupKSHOSuNXt85KrBQWMtYtGR9iueCWPEtPKTFzyKiC0HGuYCRW1Bh
+	qu6xY6/iq9q0v3kggVsgXsfHvCg6O6Oq5KsU6UmTl1K3Rn5oFFUc5wp0uQmKjOyEVhvungOybuvcf
+	0Rcfj3Bc1njacT/Agq5YAAhKfzj7Zc3S5ieF8SF2CO/riXHzOmw3Lz/T26t6OeUdtuObjU5C0N4Uw
+	OgrcdL4Em9SHgmm/UWyg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wAN0W-00000008OWO-3nKH;
-	Wed, 08 Apr 2026 07:07:24 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wASUx-00000008sfB-3h0v;
+	Wed, 08 Apr 2026 12:59:11 +0000
+Received: from mail.cjdns.fr ([5.135.140.105])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wAN0U-00000008OV8-30El;
-	Wed, 08 Apr 2026 07:07:22 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id E020E60123;
-	Wed,  8 Apr 2026 07:07:21 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9A3D8C19424;
-	Wed,  8 Apr 2026 07:07:20 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1775632041;
-	bh=/EreH6nnagSd63yl+aXKbpFWDULrFRnaJw1l/DUx2v4=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=FBu5Jew5BsdtPd/yMzktEyMWyEczIiAPASbp0PGr2s0AjLYzxUrnvpW6uYGSh9+rf
-	 kd4VGvl6+5GevSmpjdl4q/9e2ZTUg0BrwFf7yEWpwsRtmHnETZ52FxwuIpdHp5kkJV
-	 2B4wbfPgKNvyj5gVTkSeW4rJAtVlNyltUuQ8eG/G64WAsd6WyuIVn2sRh2Dl3qcRpc
-	 Ug5hhoamdKHbaI4ivMZxpJj8wmqYSXcJeNrwhpOC8RBjX9KP0XJn8eDJK0knhic/lW
-	 DOsiTagWejpMx8uSVxNosXWaAdm88LwCYlJMOzuPLzF8Oma7ZnpK49HgVGVvFpSYqd
-	 v0LD0WQTN+P7A==
-Date: Wed, 8 Apr 2026 09:07:17 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Nora Schiffer <nora.schiffer@ew.tq-group.com>
-Cc: Nishanth Menon <nm@ti.com>, Vignesh Raghavendra <vigneshr@ti.com>, 
-	Tero Kristo <kristo@kernel.org>, Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Andrew Lunn <andrew+netdev@lunn.ch>, 
-	"David S. Miller" <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, 
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
-	Siddharth Vadapalli <s-vadapalli@ti.com>, Roger Quadros <rogerq@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, netdev@vger.kernel.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
-	linux-arm-kernel@lists.infradead.org, linux@ew.tq-group.com
-Subject: Re: [PATCH v4 1/5] dt-bindings: phy: ti: phy-j721e-wiz: Add
- ti,j722s-wiz-10g compatible
-Message-ID: <20260408-faithful-stalwart-mosquito-cee89d@quoll>
-References: <cover.1775559102.git.nora.schiffer@ew.tq-group.com>
- <1ef8adf850f2fd41b6c4e3c89e4f4e6e0f469a0e.1775559102.git.nora.schiffer@ew.tq-group.com>
+	id 1wASUu-00000008seC-3uhx;
+	Wed, 08 Apr 2026 12:59:10 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id E27B91ED994;
+	Wed,  8 Apr 2026 14:58:36 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cjdns.fr; s=dkim;
+	t=1775653141; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 content-transfer-encoding:content-language:in-reply-to:references;
+	bh=eh2Ut171wqmOONOps9l0PZ9TIR9l30BuTl8yI4h9mus=;
+	b=o0tmtt43vL9xqdVsg1urR/4VzYAuHc1fUgU/VJm410m6/gCRT/WDV44NhtCuZKyFmgj7LM
+	r137un5/F3ZTCsLF0JjLzau92j7RqN+4Zvmf1arTW4jTnSteX2YwSigaITaV6pboxUE7Uk
+	9JKxWVIzdkb34nD0lkWZyTCyswJbqrUQJr25VfGvwdexO58xUyTwtpLW5g8IkZfd/8NhvU
+	QZ+Pl+d+z7OrV2Rtdb3G6BHBVZ1uT06dkGImxiE13U9Q+dJVUmP5DmaEvoK6iF2zLDhbND
+	ZigUHx7vKo9ZbcYMKmjhAfMBzu/cnOAZkRjHV93vVOYF2RtdUkD1IcpDTZOP0w==
+Message-ID: <468d439b-9a83-484b-8ada-fabef2d6c8da@cjdns.fr>
+Date: Wed, 8 Apr 2026 14:58:35 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1ef8adf850f2fd41b6c4e3c89e4f4e6e0f469a0e.1775559102.git.nora.schiffer@ew.tq-group.com>
+User-Agent: Mozilla Thunderbird Beta
+Subject: Re: [PATCH v2 8/8] mips: dts: Add PCIe to EcoNet EN751221
+To: Thomas Bogendoerfer <tsbogend@alpha.franken.de>
+Cc: linux-mips@vger.kernel.org, naseefkm@gmail.com, mturquette@baylibre.com,
+ sboyd@kernel.org, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+ ryder.lee@mediatek.com, jianjun.wang@mediatek.com, lpieralisi@kernel.org,
+ kwilczynski@kernel.org, mani@kernel.org, bhelgaas@google.com,
+ vkoul@kernel.org, neil.armstrong@linaro.org, p.zabel@pengutronix.de,
+ matthias.bgg@gmail.com, angelogioacchino.delregno@collabora.com,
+ nbd@nbd.name, ansuelsmth@gmail.com, linux-clk@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-pci@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+References: <20260309131818.74467-1-cjd@cjdns.fr>
+ <20260309131818.74467-9-cjd@cjdns.fr> <adOo9xZxXT3FkufM@alpha.franken.de>
+Content-Language: en-US
+From: Caleb James DeLisle <cjd@cjdns.fr>
+In-Reply-To: <adOo9xZxXT3FkufM@alpha.franken.de>
+X-Last-TLS-Session-Version: TLSv1.3
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260408_055909_209329_8D3FE3E8 
+X-CRM114-Status: UNSURE (   6.56  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,25 +74,33 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Apr 07, 2026 at 01:42:33PM +0200, Nora Schiffer wrote:
-> The J722S WIZ is mostly identical to the AM64's, but additionally supports
-> SGMII. The AM64 compatible ti,am64-wiz-10g is used as a fallback.
-> 
-> Signed-off-by: Nora Schiffer <nora.schiffer@ew.tq-group.com>
-> ---
->  .../bindings/phy/ti,phy-j721e-wiz.yaml        | 19 ++++++++++++-------
->  1 file changed, 12 insertions(+), 7 deletions(-)
 
-Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+On 06/04/2026 14:37, Thomas Bogendoerfer wrote:
+> On Mon, Mar 09, 2026 at 01:18:18PM +0000, Caleb James DeLisle wrote:
+>> Add PCIe based on EN7528 PCIe driver, also add two MT76 wifi devices
+>> to SmartFiber XP8421-B.
+>>
+>> Signed-off-by: Caleb James DeLisle <cjd@cjdns.fr>
+>> ---
+>>   arch/mips/boot/dts/econet/en751221.dtsi       | 114 ++++++++++++++++++
+>>   .../econet/en751221_smartfiber_xp8421-b.dts   |  21 ++++
+>>   arch/mips/econet/Kconfig                      |   2 +
+>>   3 files changed, 137 insertions(+)
+>>
+> applied to mips-next
 
-Best regards,
-Krzysztof
+Thank you very much.
 
+Caleb
+
+>
+> Thomas.
+>
 
 -- 
 linux-phy mailing list
