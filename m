@@ -4,85 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5E271F459F5
-	for <linux-phy@archiver.kernel.org>; Fri, 10 Apr 2026 15:23:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F4051F3ED4A
+	for <linux-phy@archiver.kernel.org>; Sun, 12 Apr 2026 00:25:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:Cc:From:Subject:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cgI/Ryhc2HaXhgdEgijW5mXOVl9BB2XHo318lbcw+6g=; b=EtG1Oyhnv16RFI
-	/EU1QHCkpW3vbpO5HHoxIiw2swRTUoDQ2ruFG8e7T7q2dAl8Kt5OmnRjmEndTTboyPpS3F+crinlQ
-	LONt83UdzfCojIvvA269LIrHySFKPKfLMa7OQlYdhjx9QPI+b6lzWxRE4AnRIsU3NO4/fi4ib2pju
-	KmhmeNr2g1KjHOpeiLVOyRDle4DwnImBKAhvoDsJTDLO0ufIDB2bFjAIDTkVa1MqET7dxvzIN79U7
-	BaGTe+EX7iH1JlDSZwryDng46ya+4q5wvqKtiJv2JzCek4LHWrfu8VeambR1fmJpZPNpu0STOFET9
-	gsFyS5ijn95pscjnlUKQ==;
+	List-Owner; bh=vsdJF1XUJ8ElNg6P9xA36JGCY2ysxShfJ29hc35yWyY=; b=Aza8udA1Ctq5VU
+	ULE6zWrnNTsa4k8rP7sD54wO7EPRdiK8Vq/fWE/wYQWghz0GcQ6LePwgq7LM/pngepIUSC5ccrlwe
+	kNQWElPRjbrOcuumzzxE43lln3rwFZJidlME3NkrigBReYbTAJbVjRzJ5jzhhvCwCd4mKP39wPTTv
+	0VJV6TmXPBCJ5g5DMkJZav+YPJr70ahs3mxsW8VEOKMjye8XF62SjTfkUjH7yJl5QE+LxcTBYYiJk
+	lD2F0RGWcxAh+usERnc0lGcdRqFrjejfLVdHIfmVPX5ToeGqPNm0SlMVtPsiJzOSOnLeVzZF0rQoz
+	thqEgOQs0Q1NOlLg8VnA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wBDhY-0000000CSVx-0Ge4;
-	Fri, 10 Apr 2026 15:23:20 +0000
-Received: from outgoing-auth-1.mit.edu ([18.9.28.11] helo=outgoing.mit.edu)
+	id 1wBida-0000000DuuU-2OxB;
+	Sun, 12 Apr 2026 00:25:18 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wBDhU-0000000CSVD-1JKW
+	id 1wBidY-0000000Duu4-0Dh0
 	for linux-phy@lists.infradead.org;
-	Fri, 10 Apr 2026 15:23:18 +0000
-Received: from trampoline.thunk.org (pool-173-48-116-90.bstnma.fios.verizon.net [173.48.116.90])
-	(authenticated bits=0)
-        (User authenticated as tytso@ATHENA.MIT.EDU)
-	by outgoing.mit.edu (8.14.7/8.12.4) with ESMTP id 63AFIonm015842
-	(version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Fri, 10 Apr 2026 11:18:51 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mit.edu; s=outgoing;
-	t=1775834338; bh=eTlXD+fEi5OyNbu4TxRTwpDmEzFd2ThBwniicSqJG9M=;
-	h=From:Subject:Date:Message-ID:MIME-Version:Content-Type;
-	b=VM9pR3FUqiyu4dGQLYjxtn5fwtIzfU7ySZMp0abbH18xV6/gDABRi9uB743lXz8hh
-	 DLg+D58JGiw6cmfTe96qrNZsfI1LrX8CH4Z4SZsryjUI4LnJNSYnME68kmTAWN0bac
-	 +APmObxjmRctPfSGmHJbriSXfrkN55pWYIbiVRfu2y0ECqpOPHSJun6K+BHM+LkVI2
-	 DM7T+QYmlRWbU/sqPlO03FdXluf2F9iRmmuiDmCsbPLwL4U9izV2zs90P/AyWnNi7/
-	 WJE2W3FtW9KojAgen2wKI5w3YJJGh4CS8IuF5T47bMgUta6WPQzUW9F7QaunmIRgXz
-	 enYXQQPwNnobw==
-Received: by trampoline.thunk.org (Postfix, from userid 15806)
-	id 0D7462E00E1; Fri, 10 Apr 2026 11:18:48 -0400 (EDT)
-From: "Theodore Ts'o" <tytso@mit.edu>
-To: amd-gfx@lists.freedesktop.org, apparmor@lists.ubuntu.com,
-        bpf@vger.kernel.org, ceph-devel@vger.kernel.org, cocci@inria.fr,
-        dm-devel@lists.linux.dev, dri-devel@lists.freedesktop.org,
-        gfs2@lists.linux.dev, intel-gfx@lists.freedesktop.org,
-        intel-wired-lan@lists.osuosl.org, iommu@lists.linux.dev,
-        kvm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-        linux-block@vger.kernel.org, linux-bluetooth@vger.kernel.org,
-        linux-btrfs@vger.kernel.org, linux-cifs@vger.kernel.org,
-        linux-clk@vger.kernel.org, linux-erofs@lists.ozlabs.org,
-        linux-ext4@vger.kernel.org, linux-fsdevel@vger.kernel.org,
-        linux-gpio@vger.kernel.org, linux-hyperv@vger.kernel.org,
-        linux-input@vger.kernel.org, linux-kernel@vger.kernel.org,
-        linux-leds@vger.kernel.org, linux-media@vger.kernel.org,
-        linux-mips@vger.kernel.org, linux-mm@kvack.org,
-        linux-modules@vger.kernel.org, linux-mtd@lists.infradead.org,
-        linux-nfs@vger.kernel.org, linux-omap@vger.kernel.org,
-        linux-phy@lists.infradead.org, linux-pm@vger.kernel.org,
-        linux-rockchip@lists.infradead.org, linux-s390@vger.kernel.org,
-        linux-scsi@vger.kernel.org, linux-sctp@vger.kernel.org,
-        linux-security-module@vger.kernel.org, linux-sh@vger.kernel.org,
-        linux-sound@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
-        linux-trace-kernel@vger.kernel.org, linux-usb@vger.kernel.org,
-        linux-wireless@vger.kernel.org, netdev@vger.kernel.org,
-        ntfs3@lists.linux.dev, samba-technical@lists.samba.org,
-        sched-ext@lists.linux.dev, target-devel@vger.kernel.org,
-        tipc-discussion@lists.sourceforge.net, v9fs@lists.linux.dev,
-        Philipp Hahn <phahn-oss@avm.de>
-Cc: "Theodore Ts'o" <tytso@mit.edu>, Andreas Dilger <adilger.kernel@dilger.ca>
-Subject: Re: [PATCH 04/61] ext4: Prefer IS_ERR_OR_NULL over manual NULL check
-Date: Fri, 10 Apr 2026 11:18:40 -0400
-Message-ID: <177583430870.2758959.6171961359325912353.b4-ty@b4>
-X-Mailer: git-send-email 2.51.0
-In-Reply-To: <20260310-b4-is_err_or_null-v1-4-bd63b656022d@avm.de>
-References: <20260310-b4-is_err_or_null-v1-4-bd63b656022d@avm.de>
+	Sun, 12 Apr 2026 00:25:17 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 5107B439BA;
+	Sun, 12 Apr 2026 00:25:15 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 229E5C116C6;
+	Sun, 12 Apr 2026 00:25:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1775953515;
+	bh=jC+7wE8oC9xbk+dHMqt+gP24pzKu1oVB11qgrU0Vvww=;
+	h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
+	b=GRMDwjlmc60AlAZfLY/n5TPWlzxmJnp5nk31S9gkaQ8taO/cSeBIaOy4C4D4fSzxu
+	 Wzes7GaYSdbwURm0gVNSDIvQtPoSTaccIi2+kMUoP65SAskZ4JUy1kRj8z+AiAL9+G
+	 7EAN9CYiy2/DHGka7a3cjNDm45WnjGHOltNc/+1+pWZkPTe6O9uh0B5Gfkq7j9sFWv
+	 X6yj8WwLc5COS7w2So+ItoUKMtr692KlRd/bHOUPkaxyeNF6rVm2Nb5XXjkCKbrSJG
+	 PRAV8TFHaYU2mCt61YeFun2FVk0q5qkSnWS6xqYzbq6/K6bU7umUFA5Le/ZloMdA/h
+	 +ROCp761w1DhA==
 MIME-Version: 1.0
+In-Reply-To: <c6dbf9b3-3ca0-434b-ad3a-71fe602ab809@gmail.com>
+References: <9d5724bc-e525-4f8f-b3f8-b16dd5a1164e@gmail.com> <c6dbf9b3-3ca0-434b-ad3a-71fe602ab809@gmail.com>
+Subject: Re: [PATCH v2 net-next 2/5] net: phy: make mdio_device.c part of libphy
+From: Stephen Boyd <sboyd@kernel.org>
+Cc: "netdev@vger.kernel.org" <netdev@vger.kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>, linux-arm-msm <linux-arm-msm@vger.kernel.org>, linux-clk@vger.kernel.org, linux-phy@lists.infradead.org
+To: Andrew Lunn <andrew@lunn.ch>, Bjorn Andersson <andersson@kernel.org>, David Miller <davem@davemloft.net>, Eric Dumazet <edumazet@google.com>, Heiner Kallweit <hkallweit1@gmail.com>, Jakub Kicinski <kuba@kernel.org>, Michael Turquette <mturquette@baylibre.com>, Neil Armstrong <neil.armstrong@linaro.org>, Paolo Abeni <pabeni@redhat.com>, Russell King - ARM Linux <linux@armlinux.org.uk>, Vinod Koul <vkoul@kernel.org>
+Date: Sat, 11 Apr 2026 17:25:12 -0700
+Message-ID: <177595351299.5403.14005254929672297956@lazor>
+User-Agent: alot/0.12
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260410_082316_584718_C91F36B4 
-X-CRM114-Status: UNSURE (   5.55  )
+X-CRM114-CacheID: sfid-20260411_172516_112300_F4D78AD9 
+X-CRM114-Status: UNSURE (   6.95  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -100,21 +72,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Tue, 10 Mar 2026 12:48:30 +0100, Philipp Hahn wrote:
-> Prefer using IS_ERR_OR_NULL() over using IS_ERR() and a manual NULL
-> check.
+Quoting Heiner Kallweit (2026-03-09 10:03:31)
+> This patch
+> - makes mdio_device.c part of libphy
+> - makes mdio_device_(un)register_reset() static
+> - moves mdiobus_(un)register_device() from mdio_bus.c to mdio_device.c,
+>   stops exporting both functions and makes them private to phylib
 > 
-> Change generated with coccinelle.
+> This further decouples the MDIO consumer functionality from libphy.
+> 
+> Note: This makes MDIO driver registration part of phylib, therefore
+>       adjust Kconfig dependencies where needed.
+> 
+> Signed-off-by: Heiner Kallweit <hkallweit1@gmail.com>
+> ---
 
-Applied, thanks!
-
-[04/61] ext4: Prefer IS_ERR_OR_NULL over manual NULL check
-        commit: 1d749e110277ce4103f27bd60d6181e52c0cc1e3
-
-Best regards,
--- 
-Theodore Ts'o <tytso@mit.edu>
+Acked-by: Stephen Boyd <sboyd@kernel.org>
 
 -- 
 linux-phy mailing list
