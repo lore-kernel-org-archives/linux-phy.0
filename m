@@ -4,83 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0708EBFD14
-	for <linux-phy@archiver.kernel.org>; Mon, 13 Apr 2026 08:10:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 81245F34C4F
+	for <linux-phy@archiver.kernel.org>; Mon, 13 Apr 2026 12:28:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+JOqv9z/3bzG8ohK8BjdC+iv0//FBTcpXeIP6tePGes=; b=zQ7IPGsliar5ab
-	TRCWuk/nhZyHbUDNBDPL9W5psTF3QGnZb+NF22XCY1cd6dA/QavMzJuzGhfieft4vlWQSWqF/SRcL
-	XZgtxD42IEmlGTlQbMNSJ6oTzUyadd18pZDkswVhEMQGYY+feeQN2wpzF26qNIKp3AMM34Uz8UCX9
-	b1R7AnPZfJwMatKdZetqXbOlR8VfXInigj+a7ish9XmfRDPK7HwtW7DsHy5EfuS3u14GSts4+7/1C
-	c7Bt8Q1lF8+aD3H2Qp5/F+pyd/+8MJccbMMF+ZNf4JtmAqOzL1JCBzlPK3HrMrt9WcmmbFFDl4YlL
-	IMClF6gqjv0T6U8xaYcg==;
+	List-Owner; bh=5HgC4yG8hIQZiYA8NlM41/WO4+pXHoJPeuyJFZDQ8fk=; b=WWR8zrm2Qzn6LK
+	GJYKmsklzHzMd2gK/bmJb9XSZgFn3dtR9Y3MG88GdEfBtSG9Kz2swVfMyz+vIe62nqovqsrEo/RIt
+	UlCrh8uuZdqQAhh57vTbsO+7bdUt3wA5NK+u5yDrmry2vSM5ZhJGhxwNueiCHo42Z0Q4fd6WrHksB
+	w38sKJAVe3pA6+Tz7l0H6RweRmlFQEXR05P9Mu9vOQEzJfMxbpviSMweE+M+3SfHQnEfMccgkxGFS
+	+BKRsNq9bFZ6OF8+39pf95wXwy9Eq7SY953VKBhvtC/ybt5cNjiRWuku3eNFewAO7ycU+HuLNthtG
+	m3PK2h0MeCILmOsFzVkg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wCCNl-0000000FEmd-17Uy;
-	Mon, 13 Apr 2026 08:10:57 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1wCGPH-0000000Fdr6-44Vf;
+	Mon, 13 Apr 2026 12:28:47 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wCCNj-0000000FEmS-2Mns
-	for linux-phy@bombadil.infradead.org;
-	Mon, 13 Apr 2026 08:10:55 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=MIME-Version:Content-Transfer-Encoding
-	:Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=05gdZHrfBZ8gTD8JnSOhaPmIgqmPLlQaccNKQ/PS1BE=; b=c3zK7osz82PnfH/tJe9yn0VvBx
-	x0fWFoo6D5VwE2qcSGfBKXFxpNRbjaJSVeXb+5twT6o+RTK3Y91u7cJzBA7Th8f0VQ0YVzrZo1nUx
-	TTPeDma0+JH8vF8Z33na7eyfNItiU6BmbDQTpxhfWAQ2qH5vuH1DoiQ/852nsdSObeAEwphOYsii9
-	jII6bbMqMPz4O1jlj7uC5QuRyay/ddFmMgbnu4Gh7qpdkRn6RDr9k5+5KobgUMmKlrt6CJaBwF0Vx
-	MMmsLuF5MshmvKKpZCnDP9CdxePioVFc9cJ11po4UVaKt0EJtSOsLC2CTBwCmOvKOHNnnb39hky1l
-	DZSy1TSw==;
-Received: from metis.whiteo.stw.pengutronix.de ([2a0a:edc0:2:b01:1d::104])
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wCCNg-0000000GMUY-1i1h
-	for linux-phy@lists.infradead.org;
-	Mon, 13 Apr 2026 08:10:54 +0000
-Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
-	by metis.whiteo.stw.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
-	(Exim 4.92)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1wCCNM-00032k-QK; Mon, 13 Apr 2026 10:10:32 +0200
-Received: from lupine.office.stw.pengutronix.de ([2a0a:edc0:0:900:1d::4e] helo=lupine)
-	by drehscheibe.grey.stw.pengutronix.de with esmtps  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.96)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1wCCNL-0058dy-2z;
-	Mon, 13 Apr 2026 10:10:31 +0200
-Received: from pza by lupine with local (Exim 4.98.2)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1wCCNL-000000004UV-3YPU;
-	Mon, 13 Apr 2026 10:10:31 +0200
-Message-ID: <2675a315153c83c14d1581e019fdddb611139da7.camel@pengutronix.de>
-Subject: Re: [PATCH v3 3/5] phy: qcom: qmp-pcie: Support multiple nocsr
- resets
-From: Philipp Zabel <p.zabel@pengutronix.de>
-To: Qiang Yu <qiang.yu@oss.qualcomm.com>, Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski	 <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Bjorn Andersson	 <andersson@kernel.org>, Konrad
- Dybcio <konradybcio@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Date: Mon, 13 Apr 2026 10:10:31 +0200
-In-Reply-To: <20260412-glymur_gen5x8_phy_0413-v3-3-affcebc16b8b@oss.qualcomm.com>
-References: <20260412-glymur_gen5x8_phy_0413-v3-0-affcebc16b8b@oss.qualcomm.com>
-	 <20260412-glymur_gen5x8_phy_0413-v3-3-affcebc16b8b@oss.qualcomm.com>
-User-Agent: Evolution 3.56.2-0+deb13u1 
+	id 1wCGPF-0000000Fdpx-2olE;
+	Mon, 13 Apr 2026 12:28:46 +0000
+X-UUID: 4ef0ad14373411f19e7563141e833ce8-20260413
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
+	h=Content-Type:Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From; bh=GvOqx4sdw0sMbNpfkb1Q+9eP9nnVJjINUA+bUhziztM=;
+	b=fCizvNALAnca8hJibh6f8IH6oyu5ggxTWPqs5hHDVgjAE99Vj0UT+IkKt4DyxK2VTd/L9fV59zWBqN1gYSVbETqzEzrTHB+dLy+t823tx/FyCcsngs3uqq5YWoTtXFAPoqd22h2KEqRsVtPN/Nj5+K0fW9+TDF2img1zIhBsiMg=;
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.3.12,REQID:9563ec93-7254-4cf9-a204-dbf1288079bb,IP:0,U
+	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
+	release,TS:0
+X-CID-META: VersionHash:e7bac3a,CLOUDID:15eb5d8f-6df4-4a3d-a7a4-fbdc42d669ce,B
+	ulkID:nil,BulkQuantity:0,Recheck:0,SF:81|82|102|836|865|888|898,TC:-5,Cont
+	ent:0|15|50,EDM:-3,IP:nil,URL:0,File:130,RT:0,Bulk:nil,QS:nil,BEC:-1,COL:0
+	,OSI:0,OSA:0,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
+X-CID-BVR: 2,SSN|SDN
+X-CID-BAS: 2,SSN|SDN,0,_
+X-CID-FACTOR: TF_CID_SPAM_SNR
+X-CID-RHF: D41D8CD98F00B204E9800998ECF8427E
+X-UUID: 4ef0ad14373411f19e7563141e833ce8-20260413
+Received: from mtkmbs14n1.mediatek.inc [(172.21.101.75)] by mailgw01.mediatek.com
+	(envelope-from <chunfeng.yun@mediatek.com>)
+	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
+	with ESMTP id 616013022; Mon, 13 Apr 2026 05:28:42 -0700
+Received: from mtkmbs13n2.mediatek.inc (172.21.101.108) by
+ MTKMBS14N2.mediatek.inc (172.21.101.76) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.29; Mon, 13 Apr 2026 20:28:40 +0800
+Received: from mhfsdcap04.gcn.mediatek.inc (10.17.3.154) by
+ mtkmbs13n2.mediatek.inc (172.21.101.73) with Microsoft SMTP Server id
+ 15.2.2562.29 via Frontend Transport; Mon, 13 Apr 2026 20:28:39 +0800
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: Vinod Koul <vkoul@kernel.org>, AngeloGioacchino Del Regno
+	<angelogioacchino.delregno@collabora.com>
+CC: Chunfeng Yun <chunfeng.yun@mediatek.com>, Neil Armstrong
+	<neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, Krzysztof
+ Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Matthias
+ Brugger <matthias.bgg@gmail.com>, <linux-arm-kernel@lists.infradead.org>,
+	<linux-mediatek@lists.infradead.org>, <linux-phy@lists.infradead.org>,
+	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>
+Subject: [PATCH V2 RESEND 2/2] phy: mediatek: xsphy: add support to set disconnect threshold
+Date: Mon, 13 Apr 2026 20:28:36 +0800
+Message-ID: <20260413122836.4848-2-chunfeng.yun@mediatek.com>
+X-Mailer: git-send-email 2.46.0
+In-Reply-To: <20260413122836.4848-1-chunfeng.yun@mediatek.com>
+References: <20260413122836.4848-1-chunfeng.yun@mediatek.com>
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
-X-SA-Exim-Mail-From: p.zabel@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.whiteo.stw.pengutronix.de); SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-phy@lists.infradead.org
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260413_091052_714197_93D95272 
-X-CRM114-Status: GOOD (  15.93  )
+X-CRM114-CacheID: sfid-20260413_052845_718726_5F192558 
+X-CRM114-Status: GOOD (  10.54  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,73 +90,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On So, 2026-04-12 at 23:25 -0700, Qiang Yu wrote:
-> Refactor nocsr reset handling to support multiple nocsr resets required
-> for PHY configurations with bifurcated operation modes.
-> 
-> The Glymur SoC's 3rd PCIe instance supports 8-lane mode using two PHYs
-> in bifurcation, where each PHY requires its own nocsr reset to be
-> controlled simultaneously. The current implementation only supports a
-> single nocsr reset per PHY configuration.
-> 
-> Add num_nocsr and nocsr_list fields to struct qmp_phy_cfg to represent the
-> number and names of a group of nocsr reset names. Initialize these fields
-> for all PHYs that have nocsr resets, allowing the driver to correctly
-> acquire multiple nocsr resets during probe and control them as an array
-> by using reset_control_bulk APIs.
-> 
-> The refactoring maintains backward compatibility for existing single
-> nocsr reset configurations while enabling support for multi-PHY
-> scenarios like Glymur's 8-lane bifurcation mode.
-> 
-> Additionally, introduces x1e80100_qmp_gen3x2_pciephy_cfg as a separate
-> configuration from sm8550_qmp_gen3x2_pciephy_cfg since the x1e80100 Gen3x2
-> PHY requires nocsr reset support while the sm8550 Gen3x2 PHY does not.
-> 
-> Signed-off-by: Qiang Yu <qiang.yu@oss.qualcomm.com>
-> ---
->  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 87 ++++++++++++++++++++++++++++----
->  1 file changed, 77 insertions(+), 10 deletions(-)
-> 
-> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> index 424c935e27a8766e1e26762bd3d7df527c1520e3..51db9eea41255bad0034bbcfbfdc36894c2bc95f 100644
-> --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
-[...]
-> @@ -4998,14 +5054,25 @@ static int qmp_pcie_reset_init(struct qmp_pcie *qmp)
->  	for (i = 0; i < cfg->num_resets; i++)
->  		qmp->resets[i].id = cfg->reset_list[i];
->  
-> -	ret = devm_reset_control_bulk_get_exclusive(dev, cfg->num_resets, qmp->resets);
-> +	ret = devm_reset_control_bulk_get_exclusive(dev, cfg->num_resets,
-> +						    qmp->resets);
+Add a property to tune usb2 phy's disconnect threshold.
 
-Unrelated and unnecessary change.
+Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+---
+v2: change property name
+---
+ drivers/phy/mediatek/phy-mtk-xsphy.c | 12 ++++++++++--
+ 1 file changed, 10 insertions(+), 2 deletions(-)
 
->  	if (ret)
->  		return dev_err_probe(dev, ret, "failed to get resets\n");
->  
-> -	qmp->nocsr_reset = devm_reset_control_get_optional_exclusive(dev, "phy_nocsr");
-> -	if (IS_ERR(qmp->nocsr_reset))
-> -		return dev_err_probe(dev, PTR_ERR(qmp->nocsr_reset),
-> -							"failed to get no-csr reset\n");
-> +	if (!cfg->num_nocsr_resets)
-> +		return 0;
-> +	qmp->nocsr_reset = devm_kcalloc(dev, cfg->num_nocsr_resets,
-> +				   sizeof(*qmp->nocsr_reset), GFP_KERNEL);
-> +	if (!qmp->nocsr_reset)
-> +		return -ENOMEM;
-> +
-> +	for (i = 0; i < cfg->num_nocsr_resets; i++)
-> +		qmp->nocsr_reset[i].id = cfg->nocsr_reset_list[i];
-> +
-> +	ret = devm_reset_control_bulk_get_exclusive(dev, cfg->num_nocsr_resets,
-> +						    qmp->nocsr_reset);
+diff --git a/drivers/phy/mediatek/phy-mtk-xsphy.c b/drivers/phy/mediatek/phy-mtk-xsphy.c
+index c0ddb9273cc3..46345e4f4189 100644
+--- a/drivers/phy/mediatek/phy-mtk-xsphy.c
++++ b/drivers/phy/mediatek/phy-mtk-xsphy.c
+@@ -61,6 +61,7 @@
+ #define XSP_USBPHYACR6		((SSUSB_SIFSLV_U2PHY_COM) + 0x018)
+ #define P2A6_RG_BC11_SW_EN	BIT(23)
+ #define P2A6_RG_OTG_VBUSCMP_EN	BIT(20)
++#define PA6_RG_U2_DISCTH	GENMASK(7, 4)
+ 
+ #define XSP_U2PHYDTM1		((SSUSB_SIFSLV_U2PHY_COM) + 0x06C)
+ #define P2D_FORCE_IDDIG		BIT(9)
+@@ -107,6 +108,7 @@ struct xsphy_instance {
+ 	int eye_src;
+ 	int eye_vrt;
+ 	int eye_term;
++	int discth;
+ };
+ 
+ struct mtk_xsphy {
+@@ -256,9 +258,12 @@ static void phy_parse_property(struct mtk_xsphy *xsphy,
+ 					 &inst->eye_vrt);
+ 		device_property_read_u32(dev, "mediatek,eye-term",
+ 					 &inst->eye_term);
+-		dev_dbg(dev, "intr:%d, src:%d, vrt:%d, term:%d\n",
++		device_property_read_u32(dev, "mediatek,discth",
++					 &inst->discth);
++		dev_dbg(dev, "intr:%d, src:%d, vrt:%d, term:%d, discth:%d\n",
+ 			inst->efuse_intr, inst->eye_src,
+-			inst->eye_vrt, inst->eye_term);
++			inst->eye_vrt, inst->eye_term,
++			inst->discth);
+ 		break;
+ 	case PHY_TYPE_USB3:
+ 		device_property_read_u32(dev, "mediatek,efuse-intr",
+@@ -301,6 +306,9 @@ static void u2_phy_props_set(struct mtk_xsphy *xsphy,
+ 	if (inst->eye_term)
+ 		mtk_phy_update_field(pbase + XSP_USBPHYACR1, P2A1_RG_TERM_SEL,
+ 				     inst->eye_term);
++	if (inst->discth)
++		mtk_phy_update_field(pbase + XSP_USBPHYACR6, PA6_RG_U2_DISCTH,
++				     inst->discth);
+ }
+ 
+ static void u3_phy_props_set(struct mtk_xsphy *xsphy,
+-- 
+2.45.2
 
-Should this be devm_reset_control_bulk_get_optional_exclusive()?
-
-regards
-Philipp
 
 -- 
 linux-phy mailing list
