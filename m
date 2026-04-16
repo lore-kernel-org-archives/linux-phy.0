@@ -4,137 +4,135 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 74EACF433DC
-	for <linux-phy@archiver.kernel.org>; Thu, 16 Apr 2026 02:58:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5EFACF433D6
+	for <linux-phy@archiver.kernel.org>; Thu, 16 Apr 2026 03:02:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T2dWp69HpLS9MvP8/VoxrZYR9+KmnMql0SFaPMkRRug=; b=MpeUANXV+zg/9P
-	pMiDQrVDOP8VA+DDMZYaVbctKLa67UbNs3U61veMwocsOtmDpKDRFAvhcM5MhuD3a2x3J6GrcGQYE
-	QCp++4gUN9wbRoJTOSixsiThB1Y7HhEJpdsRX5CXOgagZTOPdlkPWOa/FhEfbztmp2oX3zqTHoa2M
-	FsuirYrnGRtDjUVQGWxM9oEbbCpaEJ8beKHRer7KnJfCMyh4WeIa8nlmM/yQz/7rD3Kg/UMQDU6HZ
-	YUSmSpbZamQOdlFndkrmG+elKAoPnO+yfY5GCdUW8PAcTQ77XJkKsIfLM6hEJntjiBdBLqTDnvIv2
-	yYC5YlC9VAj7VUdy6cTg==;
+	List-Owner; bh=CRklwr300dRsXg3EzNbxGJyfTlLC48cV3pApIaZqEJM=; b=USiEH3Y5wT6nwt
+	b29H446UXVzlc/4khMp4CGcqRu2hryG0Rf3jvarnqILmMhoZnM2XgcucvXvhG10C1vxk3kjKzVZF7
+	MQeY2KMxiiiBzcDDy5+5xcshKZQa5GT/AGVD8Ypsua7Q8Rsz7p63gbn2ihPx5pe24xhch1c5Jfwm4
+	LOkE24P1dXYS4LRJGXT3AYcyHWMMkFSg3pu4399tGpF6S9uFJ7enRfBMUvjNT5ycPKp6DKcL8pk+s
+	qJqLkM2y57JO/223Z1VU10H2ggdocp0iITXkG6P+nU4klEYxwSrACmSw+GlQBTSijw9eL+Wute94w
+	UnSQv70XKiPX3z4weFEQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wDCvv-00000001taL-3hQp;
-	Thu, 16 Apr 2026 02:58:23 +0000
+	id 1wDCzx-00000001tkb-3O19;
+	Thu, 16 Apr 2026 03:02:33 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wDCvs-00000001tZx-2Z1d
+	id 1wDCzu-00000001tkB-1VIc
 	for linux-phy@lists.infradead.org;
-	Thu, 16 Apr 2026 02:58:22 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 63FGEsjh506954
-	for <linux-phy@lists.infradead.org>; Thu, 16 Apr 2026 02:58:17 GMT
+	Thu, 16 Apr 2026 03:02:32 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 63G0VJWo2973038
+	for <linux-phy@lists.infradead.org>; Thu, 16 Apr 2026 03:02:28 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=h7Cz/mpEmwKn1eYZoiIeySQz
-	A7Xab0QN0U/cYPnax80=; b=ZFAwbK2rsYnH8xFRLs/O7mlnJLtFy5AQpklL7HUx
-	zzH8PhpKXscxBLpqKINiJ4IGQ5eLPf/5U8HKOYtDZvuTbeC67CPoE82dMrmDXXgq
-	RIM9Cp+5VoiHXNDhC9/GV+MejXPRJtaXhsPEqw/5Eqj8CkFTPi2SyFsTpJLqSQoz
-	YXjmvdIRQJ3d9hVSV5mlmrLgVm99quHVByM/OKQ0+I/BzBOs17YeOkr/chnVFblE
-	E9exQ14ZWNFccUnTVZ8tbDokn7dv+7UMXWb+wEia2LsGovWAe3Hdo6y5fvLoDjF4
-	s6D0XvigVQFaTJhmWRDtOjKc0ZknDjw/nnqOlHV1eQZR/g==
-Received: from mail-dy1-f199.google.com (mail-dy1-f199.google.com [74.125.82.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4dje1e1qhh-1
+	:references:subject:to; s=qcppdkim1; bh=b44JNzE53BT1lgq7H+43OXDM
+	7qFNMprAAxSf+qAA9pU=; b=W8LD4ic5sFTbq8ktI7n9weBo7Ae8WFw7ggrALcDh
+	SY0R6/WHd9VqBiAdojbFuW2JakBmmo/8ZRTmijiLutiXAdKe9E5aq9hOB7cT3hEf
+	NVA+dMjeqozbRubOhCKbwjvdrq+6idLcpeyBLX6VhLfDAXl1CFKSJQ7Ua6vHAeyM
+	XFMvj2Ctn4GkE3AX796adBkjraDkkjj4gUEYtkAh78D3TUchV0cFm5iMhAaE9TBs
+	W7U7ZbazjrsCr1RanpoJTfmp8II/tkfIi6izEqsCQUM3qTZMrQhX2b6orwZsOqzD
+	sBnLYgPPZWjj2tnMoC1FxUEcf+ssKSLRQcj4RKHQp3i5uw==
+Received: from mail-dy1-f198.google.com (mail-dy1-f198.google.com [74.125.82.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4dj74gbf2u-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Thu, 16 Apr 2026 02:58:17 +0000 (GMT)
-Received: by mail-dy1-f199.google.com with SMTP id 5a478bee46e88-2c0ba59a830so9639225eec.0
-        for <linux-phy@lists.infradead.org>; Wed, 15 Apr 2026 19:58:17 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Thu, 16 Apr 2026 03:02:28 +0000 (GMT)
+Received: by mail-dy1-f198.google.com with SMTP id 5a478bee46e88-2da19227bc1so14706330eec.1
+        for <linux-phy@lists.infradead.org>; Wed, 15 Apr 2026 20:02:28 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1776308297; x=1776913097; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1776308547; x=1776913347; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=h7Cz/mpEmwKn1eYZoiIeySQzA7Xab0QN0U/cYPnax80=;
-        b=LvSTm92RnqyfSDznbrZ2NXFJMtELnREVjziiZ5X+4lbGlbwb+10qyR20iCB1n05q2b
-         EmTTg4gYhYw7kLI+l7hizSyF9UWjL2T32iniVBV0PHKl6X76mCesQaxkADlDgjUiVoB7
-         fS5OIbCBzOeihsgKqyhN6YrBPlXxu7RbnTvitxMccWX9oCtfwL/bdTPqBuCQnZTsHP9J
-         RLt1reEzP86RuFAT5p+Xxc4e7hqFEPl9ey76oZ8X8nmFXT9vOgo9Rv9tWJLi7dWc+ObR
-         AR1/DI+1oDxzYORifDxpYXFmuTwv3xEE95lRklNAthp/kXF5wB1y2sj0zVqHKL3fJdEx
-         +UhA==
+        bh=b44JNzE53BT1lgq7H+43OXDM7qFNMprAAxSf+qAA9pU=;
+        b=HZ0zYUXlkg+IUHcKNUPJjXdSNAi8YkpN/fVzSfbvnKYFrq988D6QWrCj89xgrlL8KR
+         Kim1/Y0Phpl7SG/Juqi4gQvYEt2IM3YSmbVp2CHMV7aFLyJ7WvfQFJ3NkQlRMWwfIf1U
+         +W9a2Q18fzeyf5isVjJcCGXDb96KZKQKdRqM95F0Dr6tnlCh2nVTRL1ehPxKvlsKQd7g
+         WnJB+mmQBIVifdDkepr6D2KdHAp4vZuj243PxDnpFX0bTWqb4q9IW7nJ4vQXv5hV9Ap4
+         p53vwr/5obZonlpIdFngzDrZuOOKZkBSd/n6sy+PBL+im+uKTzo36SLOju44E+vchoZk
+         ruQw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1776308297; x=1776913097;
+        d=1e100.net; s=20251104; t=1776308547; x=1776913347;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=h7Cz/mpEmwKn1eYZoiIeySQzA7Xab0QN0U/cYPnax80=;
-        b=gNlF4m6q01CPUcYlfLRdUjte8+2y4NICJX/HtZqYa0peTox/HgCFel4zKy20ai8LWh
-         1E1mwP/B4Lb7feHOn/Imu7YOA6i9jJfSPqpc2Ds9e8jvIIJ+2BLovfbzWyOQqt4PvPQh
-         P6vypCg//z489GVRxBpxM6ijFqD6v2mq9LXDt3sUnKxF7H5t5+1ZzJu6aW8D6n/d19kU
-         ZoYcAoA4Ug180wjVy8t7rMaQzs22789OEOc/huMU4Yb4j1Yf1TqnOrPsEjVFmXQvcLMO
-         pakUuRPD1lVikKzYQBag9BXwxk18ETrHRURCz+08F3O5WJwaYZ1hCA4xc6topiA9Kxgv
-         7wgw==
-X-Forwarded-Encrypted: i=1; AFNElJ/P1yitKuiX8rWaI41ON2mZ/vexHO88oEc4vCkznvEVXp1FeEbnryqTQMvdZAE3ExQOuAiAUp594IU=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxXD4NuVeLmTWmZyKvgXIIvdN3qP1c5Yt7oLPv8eranAUpEkJ6R
-	x3rGqFT68BS7A0lSbSxN1tmYk5bdKoDzlLQN022HLUFjR7oa8hVgFHvzUVFcBKilI22NM8wutPe
-	CMxpIsy2IsWnhtNdOhYxHhNCIGMXJMa+yW/2vN7EHTDRtiebrnwgazUg56tMycWIhDoJW
-X-Gm-Gg: AeBDievZN4CTRImW+G9ET1gf7Ax/bvzYq9ns3Mb423wrEUmZEuHniwW+nG43bj0g3HO
-	4FKBiSmWiq5wfOKuB78bGA2iLnA+xqTD+yvqZHA2zZNAOSfu3SNFRccOxg62DBG1hSEFS7KEr1c
-	Y6SkJNbSjlw9dPKP1kAyRgn8zd7XDSAhr3YPZM3ZFCBSgzgjzkuMJg/uW3Saub//NA8jDp72R5w
-	EA1HtGCMLpPsiWXkBYWcTMTaD5XqsLSlJw8a9zaMCi5HCBQxodQNDwbLYzOeQvlbmRbN6UCRXS5
-	+HtWRORz8ovXM61+lSjn+3eDsiOvycsuD6hRIv14/TZWQCPS4hZeOfJ16a7Veli8LgzqwWsWd/G
-	pNF9IRZSK88PDXVE4VDTHDUO7RRxKdpjBJ2GI3951q15odH9FCFhXz1El38Sx/JfgWavnK5RIas
-	44WQc=
-X-Received: by 2002:a05:7300:e2cc:b0:2c1:7793:7bbb with SMTP id 5a478bee46e88-2d5898a59fdmr13847137eec.27.1776308296619;
-        Wed, 15 Apr 2026 19:58:16 -0700 (PDT)
-X-Received: by 2002:a05:7300:e2cc:b0:2c1:7793:7bbb with SMTP id 5a478bee46e88-2d5898a59fdmr13847117eec.27.1776308296024;
-        Wed, 15 Apr 2026 19:58:16 -0700 (PDT)
+        bh=b44JNzE53BT1lgq7H+43OXDM7qFNMprAAxSf+qAA9pU=;
+        b=o3wa7HAJ3YXXeH5CL+5Yue13jaP1RvTZPtFnnu+9zwfdD+SFr66b0sdDz/YICZX7XX
+         OF6O0Fp/o5T/NXkegMojFYj6S9KOA9PI0/lLUPBT2ggtQWWQOTu/TzncV/s07I12mIBr
+         WoyS/WWCb2W7f1VAwWxPpwQk97PF9fFWPoc18qOiNpaDy0oAfsUzjoKtR6VNtP4PN0jx
+         6N4wm7p5v9SM8jTzdzJMqrwLSN5KgBegNhZ5Z8CfEZIM9i6OwZj9+JbRmeDAixoq79Gb
+         1rzyKur3xQIMnHSS9C4e3JoY/Ss0EchnGyxMYyyykQy81m5CGMAp9SxoNKnm6O++I9Wt
+         wkOw==
+X-Forwarded-Encrypted: i=1; AFNElJ+ERLHvMkxSAOt36RnCSQ5qIMoR8k38B4tja0dqpjPjmRmE4WfEIW3QfP5wIMqJVqmvGq62BFhynWU=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxCY4ih0zC0YxKh/g46NQi6lXs3C1RNwbFj9rybiLt/GlIN279D
+	ijQMz1iXJQIvATPk9vGkda35iEEHL+uQLQHQVH8Bb/s+AwzltQca0lCZqBLyeuFE1IFWE8xWARR
+	JZ9az4gQEMXV+Im9+UoU9Zar3W4xlxwkPLq2aC2msH9hbgcL6KfhOK6oDwFTJmkSQt+zq
+X-Gm-Gg: AeBDiev9TmQc8UYNVXeJVtxEubkwnqpOlOAQUhvRxU33H1kjjMvJXcKsiofp0UoTrP8
+	IKKUGUluaoXGTGTDwuVteG0pBUy054Cc/uOLV9TCeIxKr1OEgbDHLENxiDsp4PHXbFASoTo138+
+	XPIbLJ0W+5jqypgWCmGDII5UEdyAh7OUnKk3TFnCoIn8+JSPMMKhm6vpHVbgQEQXdlpt1UYC+nI
+	xhzvfMiWrKYvNUW1dkN/GJHjP0zXu1bS6xnpnPqEOAhwx77z+4tWNAUl0Mywv70/m2/GL5tzjGB
+	cy7jaHlVoxzSv5Mk/hHdvh9wDdhJt9gdcdKGWEVbnZO09JvJnn1g72XvKeg5kFJ1w5lz395zctd
+	nntWJKEg5m/v5R2u4Nv4bAbcKEJcyCLAY3pH0TdT1FEAGkmnulapRAMhSSbDvGb1CjFvftakPU/
+	EOYGs=
+X-Received: by 2002:a05:7301:fa04:b0:2c7:ea98:da0 with SMTP id 5a478bee46e88-2d5881acc5dmr13633621eec.19.1776308547132;
+        Wed, 15 Apr 2026 20:02:27 -0700 (PDT)
+X-Received: by 2002:a05:7301:fa04:b0:2c7:ea98:da0 with SMTP id 5a478bee46e88-2d5881acc5dmr13633600eec.19.1776308546480;
+        Wed, 15 Apr 2026 20:02:26 -0700 (PDT)
 Received: from hu-qianyu-lv.qualcomm.com (Global_NAT1.qualcomm.com. [129.46.96.20])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-2de8c605851sm5522629eec.9.2026.04.15.19.58.15
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-2de8eb84813sm5364174eec.18.2026.04.15.20.02.25
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 15 Apr 2026 19:58:15 -0700 (PDT)
-Date: Wed, 15 Apr 2026 19:58:13 -0700
+        Wed, 15 Apr 2026 20:02:26 -0700 (PDT)
+Date: Wed, 15 Apr 2026 20:02:24 -0700
 From: Qiang Yu <qiang.yu@oss.qualcomm.com>
-To: Krzysztof Kozlowski <krzk@kernel.org>
+To: Philipp Zabel <p.zabel@pengutronix.de>
 Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
         Rob Herring <robh@kernel.org>,
         Krzysztof Kozlowski <krzk+dt@kernel.org>,
         Conor Dooley <conor+dt@kernel.org>,
-        Philipp Zabel <p.zabel@pengutronix.de>,
         Bjorn Andersson <andersson@kernel.org>,
         Konrad Dybcio <konradybcio@kernel.org>, linux-arm-msm@vger.kernel.org,
         linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
         linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v3 1/5] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Add
- support for glymur Gen5 x8 bifurcation mode
-Message-ID: <aeBQRStG3imY0cOe@hu-qianyu-lv.qualcomm.com>
+Subject: Re: [PATCH v3 3/5] phy: qcom: qmp-pcie: Support multiple nocsr resets
+Message-ID: <aeBRQCmJ4PUBCU9J@hu-qianyu-lv.qualcomm.com>
 References: <20260412-glymur_gen5x8_phy_0413-v3-0-affcebc16b8b@oss.qualcomm.com>
- <20260412-glymur_gen5x8_phy_0413-v3-1-affcebc16b8b@oss.qualcomm.com>
- <20260415-wooden-prawn-of-lightning-dc1ddc@quoll>
+ <20260412-glymur_gen5x8_phy_0413-v3-3-affcebc16b8b@oss.qualcomm.com>
+ <2675a315153c83c14d1581e019fdddb611139da7.camel@pengutronix.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260415-wooden-prawn-of-lightning-dc1ddc@quoll>
-X-Authority-Analysis: v=2.4 cv=HZwkiCE8 c=1 sm=1 tr=0 ts=69e05049 cx=c_pps
- a=cFYjgdjTJScbgFmBucgdfQ==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
+In-Reply-To: <2675a315153c83c14d1581e019fdddb611139da7.camel@pengutronix.de>
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNDE2MDAyNiBTYWx0ZWRfX2srrO1Bm8JlF
+ lpvHopqhuDmNq+yC20pQVZK/CHFVqWH5zMTNXUJtfToNmASCTUbdHvlFPBF5Fu6m5SL2p7bKFX2
+ /PnJyOIBVCzjGYVfV+Uc6pECCpwhYIgAgQA+8YQNfA4KXB2B6EXzwurH6fv88wQ7l0eMZxLmbTc
+ I6gbq3TER9lFneBgxkLki/JbiuLFCDnhn8ko5TKXsAgOX8DT03LJFAW7dlcQpiuGtTh7x1wEgoy
+ eA3m+ScF7WBBglL9FxmOa8JpZCth96S/HlQA/YHYucgzlKgW+/epUKBABBtZkZedcAxqg53Lrpi
+ Nefas48O4zdO2rien7YV4D0fVtd6PEZMCEeLxSWZCRzwH5Dukk5vLYJiTNB3CHFbO2OVmBS00ko
+ nqQLGlUlXgpimAJgCnNoAVXk71AFrqfQjtt6mgIfcgJWYyHpHxO0jyxhXNIw5Do9QGgumRlK0HE
+ mD/zIF5V0cg6zP8F1xw==
+X-Proofpoint-ORIG-GUID: t0ZgNebMxG95XOMl9COAWD00oS4yZOLv
+X-Authority-Analysis: v=2.4 cv=ZIfnX37b c=1 sm=1 tr=0 ts=69e05144 cx=c_pps
+ a=wEP8DlPgTf/vqF+yE6f9lg==:117 a=ouPCqIW2jiPt+lZRy3xVPw==:17
  a=kj9zAlcOel0A:10 a=A5OVakUREuEA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=3WHJM1ZQz_JShphwDgj5:22
- a=EUspDBNiAAAA:8 a=73w2PV_BYJwXTn-nqSYA:9 a=CjuIK1q_8ugA:10
- a=scEy_gLbYbu1JhEsrz4S:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNDE2MDAyNSBTYWx0ZWRfX6QjbByraTbUc
- mDkNwHGMH6nJwb0gojh8IKjshm0Tg2Ysd2YNDBoWT5jyx4GfSIdvr/K13fZPzVVADPizjZnFdLm
- jY2myz396LHr3nSquqmvHqMhS2QSoNsmp6L7UBIgLkVaC9O/eHXsCJTj8E4lfu/ptGeLTSQCuXV
- JyllZLEbxqqDyBsqW2L2fHJQ7AplWH3BwcsNGRqeCOtzVIq30ENKgMQ2JBA8jaxtpydFDmBHzaY
- 83IuxIBNBKo12AjW3CurUy0Qvw/2oU+VBMvGcV50NT6u6c/C0GCz2AUG4R//u9jVtsgTcXfTWSw
- bUH3R+Me6qc7kvipB47Xj5FB+HO3k+tsZFdcTsBQYB8zrcYOKTh8aYzi4s7MgLkP+GivTlW6UNO
- B12I0PXGYP7xXuZmcxMG+Iw/GQN0q3lI/M2wDrU3IFKjqZKwxmBmwI9ecUUf8iUZBwU10LAzeCV
- PA1sEifpSa2cxXXZPyw==
-X-Proofpoint-ORIG-GUID: 86dj48Imw4zIoO-nD2s2IbGO-4SLNsRK
-X-Proofpoint-GUID: 86dj48Imw4zIoO-nD2s2IbGO-4SLNsRK
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=rJkE3RaqiGZ5pbrm-msn:22
+ a=EUspDBNiAAAA:8 a=cI-NCYQDPU_w6fRkyaMA:9 a=CjuIK1q_8ugA:10
+ a=bBxd6f-gb0O0v-kibOvt:22
+X-Proofpoint-GUID: t0ZgNebMxG95XOMl9COAWD00oS4yZOLv
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
  definitions=2026-04-16_01,2026-04-13_04,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- adultscore=0 suspectscore=0 impostorscore=0 lowpriorityscore=0 bulkscore=0
- clxscore=1015 malwarescore=0 priorityscore=1501 spamscore=0 phishscore=0
+ impostorscore=0 suspectscore=0 lowpriorityscore=0 spamscore=0 bulkscore=0
+ phishscore=0 clxscore=1015 malwarescore=0 adultscore=0 priorityscore=1501
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2604070000 definitions=main-2604160025
+ reason=mlx scancount=1 engine=8.22.0-2604070000 definitions=main-2604160026
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260415_195820_771925_B7A76D4A 
-X-CRM114-Status: GOOD (  30.52  )
+X-CRM114-CacheID: sfid-20260415_200230_538124_804F10F7 
+X-CRM114-Status: GOOD (  27.63  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -151,128 +149,82 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Apr 15, 2026 at 09:50:28AM +0200, Krzysztof Kozlowski wrote:
-> On Sun, Apr 12, 2026 at 11:25:56PM -0700, Qiang Yu wrote:
-> > The Glymur SoC has pcie3a and pcie3b PHYs that can operate in two modes:
+On Mon, Apr 13, 2026 at 10:10:31AM +0200, Philipp Zabel wrote:
+> On So, 2026-04-12 at 23:25 -0700, Qiang Yu wrote:
+> > Refactor nocsr reset handling to support multiple nocsr resets required
+> > for PHY configurations with bifurcated operation modes.
 > > 
-> > 1. Independent 4-lane mode: Each PHY operates as a separate PCIe Gen5
-> >    4-lane interface, compatible with qcom,glymur-qmp-gen5x4-pcie-phy
-> > 2. Bifurcation mode (8-lane): pcie3a phy acts as leader and pcie3b phy as
-> >    follower to form a single 8-lane PCIe Gen5 interface
+> > The Glymur SoC's 3rd PCIe instance supports 8-lane mode using two PHYs
+> > in bifurcation, where each PHY requires its own nocsr reset to be
+> > controlled simultaneously. The current implementation only supports a
+> > single nocsr reset per PHY configuration.
 > > 
-> > In bifurcation mode, the hardware design requires controlling additional
-> > resources beyond the standard pcie3a PHY configuration:
+> > Add num_nocsr and nocsr_list fields to struct qmp_phy_cfg to represent the
+> > number and names of a group of nocsr reset names. Initialize these fields
+> > for all PHYs that have nocsr resets, allowing the driver to correctly
+> > acquire multiple nocsr resets during probe and control them as an array
+> > by using reset_control_bulk APIs.
 > > 
-> > - pcie3b's aux_clk (phy_b_aux)
-> > - pcie3b's phy_gdsc power domain
-> > - pcie3b's bcr/nocsr reset
+> > The refactoring maintains backward compatibility for existing single
+> > nocsr reset configurations while enabling support for multi-PHY
+> > scenarios like Glymur's 8-lane bifurcation mode.
 > > 
-> > Add qcom,glymur-qmp-gen5x8-pcie-phy compatible string to document this
-> > 8-lane bifurcation configuration.
-> 
-> Do you describe PCI3A or PCI3B or something combined PCI3?
-
-I describe a single x8 PHY with resources from both the pcie3a and pcie3b
-PHY blocks for x8 operation.
-
-> 
-> > 
-> > The phy_b_aux clock is used as the 6th clock instead of pipediv2,
-> > requiring the clock-names enum to be extended to support both
-> > [phy_b_aux, pipediv2] options at index 5. This follows the existing
-> > pattern used for [rchng, refgen] clocks at index 3.
+> > Additionally, introduces x1e80100_qmp_gen3x2_pciephy_cfg as a separate
+> > configuration from sm8550_qmp_gen3x2_pciephy_cfg since the x1e80100 Gen3x2
+> > PHY requires nocsr reset support while the sm8550 Gen3x2 PHY does not.
 > > 
 > > Signed-off-by: Qiang Yu <qiang.yu@oss.qualcomm.com>
 > > ---
-> >  .../bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml   | 53 ++++++++++++++++++----
-> >  1 file changed, 45 insertions(+), 8 deletions(-)
+> >  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 87 ++++++++++++++++++++++++++++----
+> >  1 file changed, 77 insertions(+), 10 deletions(-)
 > > 
-> > diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-> > index 3a35120a77ec0ceb814a1cdcacff32fef32b4f7b..14eba5d705b1956c1bb00cc8c95171ed6488299b 100644
-> > --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-> > +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-> > @@ -18,6 +18,7 @@ properties:
-> >      enum:
-> >        - qcom,glymur-qmp-gen4x2-pcie-phy
-> >        - qcom,glymur-qmp-gen5x4-pcie-phy
-> > +      - qcom,glymur-qmp-gen5x8-pcie-phy
-> 
-> That's the same device as 5x4, no? One device, one compatible and this
-> suggests you will have three PCI phys in the DT - two 5x4 and one 5x8?
-> 
-
-It is not the same as the 5x4 PHY. In DT, we model three PHY nodes:
-phy_3a (1x4), phy_3b (1x4), and a separate phy_1x8 node for x8 mode.
-
-> 
-> >        - qcom,kaanapali-qmp-gen3x2-pcie-phy
-> >        - qcom,qcs615-qmp-gen3x1-pcie-phy
-> >        - qcom,qcs8300-qmp-gen4x2-pcie-phy
-> > @@ -68,20 +69,27 @@ properties:
-> >        - const: ref
-> >        - enum: [rchng, refgen]
-> >        - const: pipe
-> > -      - const: pipediv2
-> > +      - enum: [phy_b_aux, pipediv2]
+> > diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> > index 424c935e27a8766e1e26762bd3d7df527c1520e3..51db9eea41255bad0034bbcfbfdc36894c2bc95f 100644
+> > --- a/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> > +++ b/drivers/phy/qualcomm/phy-qcom-qmp-pcie.c
+> [...]
+> > @@ -4998,14 +5054,25 @@ static int qmp_pcie_reset_init(struct qmp_pcie *qmp)
+> >  	for (i = 0; i < cfg->num_resets; i++)
+> >  		qmp->resets[i].id = cfg->reset_list[i];
 > >  
-> >    power-domains:
-> > -    maxItems: 1
-> > +    minItems: 1
-> > +    items:
-> > +      - description: PCIe PHY power domain. For PHYs supporting
-> > +          bifurcation mode, this is the leader PHY power domain.
-> > +      - description: Additional PCIe PHY power domain for PHYs supporting
-> > +          bifurcation mode, used by the follower PHY.
-> >  
-> >    resets:
-> >      minItems: 1
-> > -    maxItems: 2
-> > +    maxItems: 4
-> >  
-> >    reset-names:
-> >      minItems: 1
-> >      items:
-> >        - const: phy
-> >        - const: phy_nocsr
-> > +      - const: phy_b
-> > +      - const: phy_b_nocsr
+> > -	ret = devm_reset_control_bulk_get_exclusive(dev, cfg->num_resets, qmp->resets);
+> > +	ret = devm_reset_control_bulk_get_exclusive(dev, cfg->num_resets,
+> > +						    qmp->resets);
 > 
-> And now I doubt that all the changes here are for duplicated node.
->
+> Unrelated and unnecessary change.
 
-All the changes here are for 1x8 PHY node.
+Ohk, I changed it by mistake.
 
-> Maybe just the commit msg is confusing and instead of describing some
-> node which combines two other phys just say what device is here being
-> described.
->
+> 
+> >  	if (ret)
+> >  		return dev_err_probe(dev, ret, "failed to get resets\n");
+> >  
+> > -	qmp->nocsr_reset = devm_reset_control_get_optional_exclusive(dev, "phy_nocsr");
+> > -	if (IS_ERR(qmp->nocsr_reset))
+> > -		return dev_err_probe(dev, PTR_ERR(qmp->nocsr_reset),
+> > -							"failed to get no-csr reset\n");
+> > +	if (!cfg->num_nocsr_resets)
+> > +		return 0;
+> > +	qmp->nocsr_reset = devm_kcalloc(dev, cfg->num_nocsr_resets,
+> > +				   sizeof(*qmp->nocsr_reset), GFP_KERNEL);
+> > +	if (!qmp->nocsr_reset)
+> > +		return -ENOMEM;
+> > +
+> > +	for (i = 0; i < cfg->num_nocsr_resets; i++)
+> > +		qmp->nocsr_reset[i].id = cfg->nocsr_reset_list[i];
+> > +
+> > +	ret = devm_reset_control_bulk_get_exclusive(dev, cfg->num_nocsr_resets,
+> > +						    qmp->nocsr_reset);
+> 
+> Should this be devm_reset_control_bulk_get_optional_exclusive()?
+> 
 
-Okay, I will focus on describing the required resources. Is the
-description below clearer?
-
-Glymur has two physical Gen5x4 PCIe PHY blocks: pcie3a phy and pcie3b phy.
-
-Besides the independent 2x4 topology, Glymur also supports an x8 topology
-that is described as a dedicated 1x8 PHY DT node. In this topology, the
-x8 PHY uses resources from both PHY blocks: pcie3a (leader) and pcie3b
-(follower) resources.
-
-Add qcom,glymur-qmp-gen5x8-pcie-phy to describe this x8 PHY node and
-document its extra required resources:
-- pcie3b PHY aux clock (phy_b_aux)
-- pcie3b PHY power domain
-- pcie3b PHY BCR/NOCSR resets
-
-The phy_b_aux clock is used as the 6th clock instead of pipediv2,
-requiring the clock-names enum to be extended to support both
-[phy_b_aux, pipediv2] options at index 5. This follows the existing
-pattern used for [rchng, refgen] clocks at index 3.
+I have get the num_nocsr_resets previously, so don't need to use
+devm_reset_control_bulk_get_optional_exclusive.
 
 - Qiang Yu
-
-> Best regards,
-> Krzysztof
-> 
+> regards
+> Philipp
 
 -- 
 linux-phy mailing list
