@@ -4,138 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 797D4F588C2
-	for <linux-phy@archiver.kernel.org>; Mon, 20 Apr 2026 12:49:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D43C4F588C3
+	for <linux-phy@archiver.kernel.org>; Mon, 20 Apr 2026 13:24:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OdXDHVUpe2XnueV3HWryEXHvxZ1K4Z586vmYUupt4E8=; b=nllB+MVqavb+uZ
-	Xxi5T97tP8PsaiKxbSQZXcSnw5ywqWqBPnXKAtP9NiYgQ8xyfYKGXOra4fsSkjRnV44P8dTJ+nGWd
-	9PA269lEf3uCriuV8QFHpJcojmxd89qp2c0gL6lTTFiS4I2HFqpO16HzeMNhRlpQO1MCIo+BtzCz6
-	jbks3iiboTsxeeYeSKZ8ocPRhvy7qtyBM1s8MI+18iIDKP3sYpVguuu1j1+Rm8okz7TNEGwinQagu
-	2I/Te6StPNe33reg/smDlga6ncns8FQxFjq5l59PnM1bdz/p1iQhm3FDqyiBekgYHIiAtO1K9+AzY
-	8l0TWAr7DqB/3NvHrxfA==;
+	List-Owner; bh=jFytahfSV4wuWzWvM95dbnR65Y9sb9i/37vKjR4vj94=; b=KQuZ2t2UZ0RIL/
+	Bu0T3d6XumxLqJNRemJ9EFI/hqnoQEFo/ZHMu3NCC7cZsPH1yMpJ3TSJAZZUsrgYjeHnYL2FpWJvg
+	iSVH7XYLk5PJ/OMoRppqQyLYio8kg1POdb2w1Xij1AdtivdzSim+4AkfIeh9EtNShFXQb0s5XGMy8
+	ZACOZAMspasKwn+iNGhJVyCfo7nZXRkN2P3niGH0nW15/Cx74wyDerdbRBQCMKRwBJBe/PTaZAwVA
+	OfDgTS7WxJBAbslL3eiCX3WsCB642G0YPwy26ljp4VDrgIY/v5f/DE8wafMrM6nfeoCQ2WfK0jXIP
+	1iqamppCjKnQCSyg5r1g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wEo4N-00000006uYt-0mvC;
-	Mon, 20 Apr 2026 12:49:43 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1wEobr-00000006ziJ-1Rka;
+	Mon, 20 Apr 2026 13:24:19 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wEo4K-00000006uYW-1zOb
+	id 1wEobp-00000006zhw-353w
 	for linux-phy@lists.infradead.org;
-	Mon, 20 Apr 2026 12:49:41 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 63K977rc2755626
-	for <linux-phy@lists.infradead.org>; Mon, 20 Apr 2026 12:49:39 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	sRtwY56nBQbf1x0k86FqJm1BNTc/81FVIoSrk2ABFhU=; b=CDqWVq6e9QRVF6zp
-	I4xFHZNE4Mf8ew6c0GXJAZBqfn8efH/FwUwPjuVOGAiLKx950bvsqH0w7qUqzZxy
-	vGpULUXVnw8UUBRMSmf8hG+vLjPEm5guU22WI76AmkUcVunMX3UlCTMkNf8ydumv
-	vMPf/ecCD4vh2EdqXAUfzPmc5MQGBnGi4F5UyBE/ioGU6dGwzFiXbfpE/eFHNE7G
-	2GnuVR5kxu7kYruQzeAaUp0V9wB7b6YdZNmqkj1TyvLcptiqD0HB5QqHW5jT14sO
-	xskU90iRIsYrU37rH3IPpJ4L6eZbTEX6/KaeQVY+kkPJSDI+yWieglydyUVSpI9A
-	hjvLcw==
-Received: from mail-qt1-f198.google.com (mail-qt1-f198.google.com [209.85.160.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4dnh7xgqhq-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Mon, 20 Apr 2026 12:49:39 +0000 (GMT)
-Received: by mail-qt1-f198.google.com with SMTP id d75a77b69052e-50e429ba4dfso4260071cf.3
-        for <linux-phy@lists.infradead.org>; Mon, 20 Apr 2026 05:49:39 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1776689378; x=1777294178; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=sRtwY56nBQbf1x0k86FqJm1BNTc/81FVIoSrk2ABFhU=;
-        b=IDr9lX8vmjpENLBENnq9j3sG7nFAsqxxHiDglLCKGCXt8t0zAWREBLfWMEEH67dvdB
-         oqrO0vjAPIzbFBV1292EWHJmaB5UTpbEXAY8ACy/HmPL0z2P9i4YIRTypmF8p/3bJznM
-         CQghw4mReAYnXz0K8xpI7UmYKD0XGc3IRR5Vzv1zDOUxYmipwcYU+n1YCoZjzyQ5TyWw
-         8rTed0tcimFnw9bpaBi5vvjNN+LOEEaDVr6PxfL/UMYVvhfLevJkTEiYV6BWNGLoJNfL
-         a9Cv/6/1emWCTUg8CTZ3qNR1BA4yHOx9uBRDbzp4digsAqt9KopCPO2jMgKMy7RljTjU
-         zwQg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1776689378; x=1777294178;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=sRtwY56nBQbf1x0k86FqJm1BNTc/81FVIoSrk2ABFhU=;
-        b=SW+7NanTItGfjXTOKYxTblpxFuahe3+SH36WlT2Y3UNzoeqTWWpNXwy8a0X1gEc78q
-         rghqeL6Jes7v9qhHIKiPLn1YGn6wZeVu2+1UZ66xWDLkhKk26TwRxDhXdc6mDaLFA58h
-         ccASspXkcHJToEaG+i69vo/9HGliLEn3bY+oPtTjQbCpkJMVhjT9Cfd1cIAyL9TOi4pH
-         ThNjG3+p3Z7GShMPH+fMx1T4QwLR8tYE9DLrR/Ui5TaU/pCOhWfhscGpAYKOCp+BN3oD
-         ebngmyncdxOZMcEPihWPaRle/4BrMy9iZt9f5fidTjsSLATkjy3X5ZCCpjQtcswW531T
-         b8Cg==
-X-Forwarded-Encrypted: i=1; AFNElJ9G4+1uORH8jqD1aTLo/jR+2ArAxi0yC3VFEiofYOvSTz3cn4DAjAsc9YmPsbckBSeE7XX4IDnHYsU=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxPGVI5Bb731XZYwfCABUgUYfCUHIs/y2qLhWVUqBH94S32mnhh
-	oiyBvuS4QoRzYmErbWvHkg+Bvep8ivzXlcsR7+42QmdKy1ud6GsSYAoXfrMheF958eCMvbgEOVE
-	QbhekYgUi9XUbCNMrv761PkuKxis5GRcX6F7dDvbydUedFBLI18Z8IpBzKAG74/Lq5c/t
-X-Gm-Gg: AeBDiesFMEbnpL79kOgDqfLSO8eM2F4VO97SvGpPBILO0niSehAWQCNorO7ANYxFP/x
-	wplWjp4jMiC+tL9M5vHKKOQoB/P45PnFaAM/6B2ceB1xKuM6rE+PabN2VNPJS6GjpdmjioWK4Wf
-	80HotFxPyfl0h2mh+Bzi/oqF33CYpX+fiAr+PjN2XtTV6oLCBzth5Bdttgvd70XuUrFbOKUSVmS
-	TpWG7k1m/GQCZt75AHJz8eOO/TbvNHPubpOGy3E04Rmo6Kmg90W9/vuCQFjcmDPmHz37mxSiV4k
-	BllSBKr778hOxxo57pXJ+hGzQ0e6wtcwMF6mw6jX1PsnPBPgU++FPjKg9RVmgLKIvoShkk874kE
-	Aa3WE/KXpTt/o/6OyPTH/x9RwgETJ46sbfkM4XZcqWuYh+gxXPT948vfSgSa43vbnAen0bHcvbZ
-	1EHx+pCDqyXi8AiQ==
-X-Received: by 2002:a05:622a:4cce:b0:509:2b5a:808 with SMTP id d75a77b69052e-50e3683910cmr123783541cf.2.1776689378432;
-        Mon, 20 Apr 2026 05:49:38 -0700 (PDT)
-X-Received: by 2002:a05:622a:4cce:b0:509:2b5a:808 with SMTP id d75a77b69052e-50e3683910cmr123783251cf.2.1776689377998;
-        Mon, 20 Apr 2026 05:49:37 -0700 (PDT)
-Received: from [192.168.119.254] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-ba451210e1bsm350415966b.3.2026.04.20.05.49.36
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 20 Apr 2026 05:49:37 -0700 (PDT)
-Message-ID: <e956b609-3e37-4c3c-9168-a50793722061@oss.qualcomm.com>
-Date: Mon, 20 Apr 2026 14:49:35 +0200
+	Mon, 20 Apr 2026 13:24:17 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 572CE60180;
+	Mon, 20 Apr 2026 13:23:46 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7FBD4C4AF09;
+	Mon, 20 Apr 2026 13:23:45 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1776691426;
+	bh=ywo/K+m8g61aFuYUwjJngKFcWB+wO9RjNtkZ4THPkfY=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=j2IllhUII1LeigQu/LhVqMjlicGgoRx0s29c4Rh2H8muX/VKwlTyHTUYdI9YJax2n
+	 F9Mt4ouIcD0BQdEevVWK41HZ+jCyMstdvCyvPqx3Qx3t34y8IsY3cHsrjF5p+PYVCP
+	 fLrIuFZJKDoHavwu+b1wMcXkxvmvssbbruQoFRRU3lVr1n22SG561k1PfXckYWTPLZ
+	 EzCry+M5RLD2ISQnscbPMNJZb2ZN57b8iGw0dxhjCnx4ZjCvyA6iySosXff3BKaolQ
+	 foIw+bN4+DtnR+4A1Z+GrpMlTxq5GUEpvrDFYph6yuRUPNGpAQvJ+1/4DQj5ZsXzFK
+	 K1MffoiFVDUMQ==
+Date: Mon, 20 Apr 2026 15:23:43 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Qiang Yu <qiang.yu@oss.qualcomm.com>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Philipp Zabel <p.zabel@pengutronix.de>, Bjorn Andersson <andersson@kernel.org>, 
+	Konrad Dybcio <konradybcio@kernel.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v3 1/5] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Add
+ support for glymur Gen5 x8 bifurcation mode
+Message-ID: <20260420-optimistic-unnatural-stingray-80da35@quoll>
+References: <20260412-glymur_gen5x8_phy_0413-v3-0-affcebc16b8b@oss.qualcomm.com>
+ <20260412-glymur_gen5x8_phy_0413-v3-1-affcebc16b8b@oss.qualcomm.com>
+ <20260415-wooden-prawn-of-lightning-dc1ddc@quoll>
+ <aeBQRStG3imY0cOe@hu-qianyu-lv.qualcomm.com>
+ <20260417-awesome-tacky-coot-e59a30@quoll>
+ <aeXUZ1uSEJ9InUtw@hu-qianyu-lv.qualcomm.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 1/2] phy: qcom: edp: Add eDP/DP mode switch support
-To: Yongxing Mou <yongxing.mou@oss.qualcomm.com>,
-        Vinod Koul <vkoul@kernel.org>,
-        Neil Armstrong <neil.armstrong@linaro.org>,
-        Stephen Boyd <swboyd@chromium.org>,
-        Bjorn Andersson <andersson@kernel.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
-        linux-kernel@vger.kernel.org, stable@vger.kernel.org
-References: <20260302-edp_phy-v3-0-ca8888d793b0@oss.qualcomm.com>
- <20260302-edp_phy-v3-1-ca8888d793b0@oss.qualcomm.com>
- <245f4589-d7ca-4d6b-8162-a86972752bd8@oss.qualcomm.com>
- <12e8a8de-49b8-463a-8b88-2cbbf1ab901c@oss.qualcomm.com>
-Content-Language: en-US
-From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-In-Reply-To: <12e8a8de-49b8-463a-8b88-2cbbf1ab901c@oss.qualcomm.com>
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNDIwMDEyNCBTYWx0ZWRfX+3qzf4fTHuAU
- bQXSa5imoQC0h59Qr5M6rRJ8uo0E4vAKKAvC9HmbhNeDNSXWivZCB8Fk7iJ/Hq0lqWHLbfcFh3L
- 5hmz6PSRVFUUH82OA26QKtby/gwcUciEV2U1MUGNwMYZObl2Um7ZUELsv1A8hyabcKP1aqG8TxS
- FeSw8DCXtPeSKrmKCw2j/HaTxPcKBdukNouE6riD/UrjXYfdStboe9kKmcD/Vv5LQlXqgqtlG/d
- dljwwIZicfotywPOdxOvzttrrTQqWuciFxe1qxWCDtiUHTgL6+Xn89DcrZwBCr+ahkWjHHLGxyO
- gsMBkFQi0jxBhAh08lroWlgqxtOhNVLCDvpKGnUHxQvHOMUawxBGxExzA3O/HAh48oG2tCSGXWc
- EQTzSrY03BNK+I0BunICWVYyc9PBE3IoNgzi6izhGLdI6coC8roKsC5lxzu3kSTWYMoFJsiiB1m
- Lq78OoGD4m2uVqe1xsg==
-X-Authority-Analysis: v=2.4 cv=BPmDalQG c=1 sm=1 tr=0 ts=69e620e3 cx=c_pps
- a=mPf7EqFMSY9/WdsSgAYMbA==:117 a=FpWmc02/iXfjRdCD7H54yg==:17
- a=IkcTkHD0fZMA:10 a=A5OVakUREuEA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=DJpcGTmdVt4CTyJn9g5Z:22
- a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=ij7slcz6KMvQTOyTLR8A:9 a=3ZKOabzyN94A:10
- a=QEXdDO2ut3YA:10 a=dawVfQjAaf238kedN5IG:22
-X-Proofpoint-ORIG-GUID: hz5kNW0Av8gT8cNs787Z1ZNZR58qb1Fm
-X-Proofpoint-GUID: hz5kNW0Av8gT8cNs787Z1ZNZR58qb1Fm
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
- definitions=2026-04-20_02,2026-04-17_04,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 phishscore=0 adultscore=0 malwarescore=0 spamscore=0
- lowpriorityscore=0 impostorscore=0 suspectscore=0 clxscore=1015 bulkscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2604070000 definitions=main-2604200124
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260420_054940_614961_3BA16A1F 
-X-CRM114-Status: GOOD (  13.02  )
+Content-Disposition: inline
+In-Reply-To: <aeXUZ1uSEJ9InUtw@hu-qianyu-lv.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -147,37 +74,127 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gNC8yMC8yNiAyOjQ4IFBNLCBZb25neGluZyBNb3Ugd3JvdGU6Cj4gCj4gCj4gT24gNC8xNi8y
-MDI2IDU6MzQgUE0sIEtvbnJhZCBEeWJjaW8gd3JvdGU6Cj4+IE9uIDMvMi8yNiA5OjI4IEFNLCBZ
-b25neGluZyBNb3Ugd3JvdGU6Cj4+PiBUaGUgZURQIFBIWSBzdXBwb3J0cyBib3RoIGVEUCZEUCBt
-b2RlcywgZWFjaCByZXF1aXJlcyBhIGRpZmZlcmVudCB0YWJsZS4KPj4+IFRoZSBjdXJyZW50IGRy
-aXZlciBkb2Vzbid0IGZ1bGx5IHN1cHBvcnQgZXZlcnkgY29tYm8gUEhZIG1vZGUgYW5kIHVzZQo+
-Pj4gZWl0aGVyIHRoZSBlRFAgb3IgRFAgdGFibGUgd2hlbiBlbmFibGUgdGhlIHBsYXRmb3JtLiBJ
-biBhZGRpdGlvbiwgc29tZQo+Pj4gcGxhdGZvcm1zIG1pc21hdGNoIGJldHdlZW4gdGhlIG1vZGUg
-YW5kIHRoZSB0YWJsZSB3aGVyZSBEUCBtb2RlIHVzZXMKPj4+IHRoZSBlRFAgdGFibGUgb3IgZURQ
-IG1vZGUgdXNlIHRoZSBEUCB0YWJsZS4KPj4+Cj4+PiBDbGVhbiB1cCBhbmQgY29ycmVjdCB0aGUg
-dGFibGVzIGZvciBjdXJyZW50bHkgc3VwcG9ydGVkIHBsYXRmb3JtcyBiYXNlZCBvbgo+Pj4gdGhl
-IEhQRyBzcGVjaWZpY2F0aW9uLgo+Pj4KPj4+IEhlcmUgbGlzdHMgdGhlIHRhYmxlcyBjYW4gYmUg
-cmV1c2VkIGFjcm9zcyBjdXJyZW50IHBsYXRmb3Jtcy4KPj4+IERQIG1vZGXvvJoKPj4+IMKgwqDC
-oMKgLXNhODc3NXAvc2M3MjgwL3NjODI4MHhwL3gxZTgwMTAwCj4+PiDCoMKgwqDCoC1nbHltdXIK
-Pj4+IGVEUCBtb2RlKGxvdyB2ZGlmZik6Cj4+PiDCoMKgwqDCoC1nbHltdXIvc2E4Nzc1cC9zYzgy
-ODB4cC94MWU4MDEwMAo+Pj4gwqDCoMKgwqAtc2M3MjgwCj4+Pgo+Pj4gQ2M6IHN0YWJsZUB2Z2Vy
-Lmtlcm5lbC5vcmcKPj4+IEZpeGVzOiBmMTk5MjIzY2I0OTAgKCJwaHk6IHFjb206IEludHJvZHVj
-ZSBuZXcgZURQIFBIWSBkcml2ZXIiKQo+Pj4gU2lnbmVkLW9mZi1ieTogWW9uZ3hpbmcgTW91IDx5
-b25neGluZy5tb3VAb3NzLnF1YWxjb21tLmNvbT4KPj4+IC0tLQo+Pgo+PiBJIHdlbnQgdGhyb3Vn
-aCBldmVyeXRoaW5nIGFuZCBhbGwgdGhlIHNlcXVlbmNlcyBhcmUgT0suCj4+Cj4+IFNDODE4MFgg
-d2lsbCBuZWVkIGNoYW5nZXMsIGJ1dCBpdCdzIGFscmVhZHkgaW5jb3JyZWN0IHNvIHRoaXMKPj4g
-ZG9lc24ndCBuZWNlc3NhcmlseSBhZmZlY3QgaXQKPj4KPj4gVGhhbmtzIQo+Pgo+PiBSZXZpZXdl
-ZC1ieTogS29ucmFkIER5YmNpbyA8a29ucmFkLmR5YmNpb0Bvc3MucXVhbGNvbW0uY29tPgo+Pgo+
-PiBLb25yYWQKPiBUaGFua3MgaGVyZS4uIEkgZGlkbuKAmXQgbm90aWNlIGJlZm9yZSB0aGF0IFND
-ODE4MFggaXMgZGlmZmVyZW50IGZyb20gU0M3MjgwLCBhbmQgd2lsbCBjb3JyZWN0IGl0IGluIHRo
-ZSBuZXh0IHZlcnNpb24uCgpQbGVhc2UgbWFrZSBpdCBhbm90aGVyIHBhdGNoIG9uIHRvcCBvZiB0
-aGVzZSB0d28sIHNvIHRoYXQgd2UgZG9uJ3QgaGF2ZQp0byByZS12YWxpZGF0ZSB0aGUgZXhpc3Rp
-bmcgZGlmZgoKS29ucmFkCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlz
-dHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
-aW5mby9saW51eC1waHkK
+On Mon, Apr 20, 2026 at 12:23:19AM -0700, Qiang Yu wrote:
+> On Fri, Apr 17, 2026 at 11:18:08AM +0200, Krzysztof Kozlowski wrote:
+> > On Wed, Apr 15, 2026 at 07:58:13PM -0700, Qiang Yu wrote:
+> > > On Wed, Apr 15, 2026 at 09:50:28AM +0200, Krzysztof Kozlowski wrote:
+> > > > On Sun, Apr 12, 2026 at 11:25:56PM -0700, Qiang Yu wrote:
+> > > > > The Glymur SoC has pcie3a and pcie3b PHYs that can operate in two modes:
+> > > > > 
+> > > > > 1. Independent 4-lane mode: Each PHY operates as a separate PCIe Gen5
+> > > > >    4-lane interface, compatible with qcom,glymur-qmp-gen5x4-pcie-phy
+> > > > > 2. Bifurcation mode (8-lane): pcie3a phy acts as leader and pcie3b phy as
+> > > > >    follower to form a single 8-lane PCIe Gen5 interface
+> > > > > 
+> > > > > In bifurcation mode, the hardware design requires controlling additional
+> > > > > resources beyond the standard pcie3a PHY configuration:
+> > > > > 
+> > > > > - pcie3b's aux_clk (phy_b_aux)
+> > > > > - pcie3b's phy_gdsc power domain
+> > > > > - pcie3b's bcr/nocsr reset
+> > > > > 
+> > > > > Add qcom,glymur-qmp-gen5x8-pcie-phy compatible string to document this
+> > > > > 8-lane bifurcation configuration.
+> > > > 
+> > > > Do you describe PCI3A or PCI3B or something combined PCI3?
+> > > 
+> > > I describe a single x8 PHY with resources from both the pcie3a and pcie3b
+> > > PHY blocks for x8 operation.
+> > > 
+> > > > 
+> > > > > 
+> > > > > The phy_b_aux clock is used as the 6th clock instead of pipediv2,
+> > > > > requiring the clock-names enum to be extended to support both
+> > > > > [phy_b_aux, pipediv2] options at index 5. This follows the existing
+> > > > > pattern used for [rchng, refgen] clocks at index 3.
+> > > > > 
+> > > > > Signed-off-by: Qiang Yu <qiang.yu@oss.qualcomm.com>
+> > > > > ---
+> > > > >  .../bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml   | 53 ++++++++++++++++++----
+> > > > >  1 file changed, 45 insertions(+), 8 deletions(-)
+> > > > > 
+> > > > > diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+> > > > > index 3a35120a77ec0ceb814a1cdcacff32fef32b4f7b..14eba5d705b1956c1bb00cc8c95171ed6488299b 100644
+> > > > > --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+> > > > > +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
+> > > > > @@ -18,6 +18,7 @@ properties:
+> > > > >      enum:
+> > > > >        - qcom,glymur-qmp-gen4x2-pcie-phy
+> > > > >        - qcom,glymur-qmp-gen5x4-pcie-phy
+> > > > > +      - qcom,glymur-qmp-gen5x8-pcie-phy
+> > > > 
+> > > > That's the same device as 5x4, no? One device, one compatible and this
+> > > > suggests you will have three PCI phys in the DT - two 5x4 and one 5x8?
+> > > > 
+> > > 
+> > > It is not the same as the 5x4 PHY. In DT, we model three PHY nodes:
+> > > phy_3a (1x4), phy_3b (1x4), and a separate phy_1x8 node for x8 mode.
+> > 
+> > OK, that's what I wanted to hear. And that's what should not be done,
+> > 
+> > You should not have a separate node for the same hardware. First, DTC
+> > will give you a W=1 warning, although warning itself should be moved to
+> > W=2.
+> > 
+> > Second, the warning tells important story - same hardware is described
+> > twice.
+> > 
+> > You only need phy_3a and phy_3b, so only two in total.
+> 
+> We can keep only phy_3a and phy_3b, but still add new compatible
+> qcom,glymur-qmp-gen5x8-pcie-phy in binding, right?
+> 
+> For boards that support pcie3a(1x4) + pcie3b(1x4), DTS would be:
+> 
+> pcie3a_phy { compatible = "qcom,glymur-qmp-gen5x4-pcie-phy"; };
+> pcie3b_phy { compatible = "qcom,glymur-qmp-gen5x4-pcie-phy"; };
+> 
+> For boards that support 1x8, we would override pcie3a_phy with:
+> 
+> pcie3a_phy { compatible = "qcom,glymur-qmp-gen5x8-pcie-phy"; /* additional resources */ };
+> pcie3b_phy { compatible = "qcom,glymur-qmp-gen5x4-pcie-phy"; };
+> 
+> This still uses only two PHY nodes and DTC will not report warning.
+
+IMO, you do not need another compatible. Device is exactly the same. If
+wiring on the board differs, e.g. you have 8x instead of 4x, you:
+1. disable unused 3B phy.
+2. Add to 3A missing resources or the phandle to companion node.
+
+At least that is what I tought till now, when I opened the HPG/manual
+for Glymur phy.  Someone skipped important information when PCIe PHY was
+upstreamed first and glymur.dtsi already got PHY 3B described.
+
+Reminder: writing bindings asks you explicitly to post COMPLETE
+bindings.
+
+If you posted COMPLETE bindings we would question all this and you would
+have to check in user manual that this is actually ONE device.
+
+There is no 5x4 phy 3A and 3B, at least HPG is pretty clear here.
+
+And you should start with that.
+
+But you posted first incomplete binding, hiding the rest and now you
+have 5x4 merged into DTSI.
+
+So let's rephrase based on manual:
+You have only one PCIE phy3. Not 3A + 3B. That one phy3 can be
+configured by consumers (board) differently, e.g. by requesting 8-lane
+or twice 4-lane phys.
+
+Let me send correction note for glymur.dtsi.
+
+Best regards,
+Krzysztof
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
