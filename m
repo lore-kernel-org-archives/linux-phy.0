@@ -4,63 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 010E5F5A8B6
-	for <linux-phy@archiver.kernel.org>; Mon, 20 Apr 2026 19:25:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BD253F5A8C5
+	for <linux-phy@archiver.kernel.org>; Mon, 20 Apr 2026 23:10:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=5P/qo5v9FjkVfn2moltU70R/tGtePGP3oHZVmF/opUQ=; b=HczjC+4LT+QhI8
-	2G5BtU/d6zdZyMcWMJ5wDdWlXfVnBjTQHLVtcbQsYSQjKskNa55aOlv21udja01xPXja79XmLj7mX
-	uTrQU/NQ3fC2+ydmAZtZGRlCkt7dW5jA2g5lElkXbl8V5c/6LGnBR5obio7FasTTesG2cpCeNpaoN
-	SqOglw5bBDwn8DCdTTg82IDE8VmZBcbDQgPrN+C8jmXp1IfSwIKYPpAMcTw4/oiTW5mosyQAnYoNZ
-	mV7abXAMFfZFncTVYX3Au6p7M66UaMxT7ojREN2wOki5oUMlWxYVcxKTJJmtxvkTaKvs+BB/r5bEQ
-	SfNGuPJf78aIcrkMpstQ==;
+	List-Owner; bh=DCP+LwyNyQjV87r4EPISWnicORq5pRFIipBm85jpxn0=; b=JQJVcsrXqhpNI0
+	FD4x1ArGPScFtAwFVm8xD7MSn+KV8WZNthXm7g4Ps2WEEqLmJBI9QPegesE06xg9jo53mtgL2TTfi
+	GQrzbPh800kstqlM3xDP5/4IlprMey+liB6DOs0T/nBlDA8R/oZGd74urq8z/8MODdsVW/O76LHZt
+	tDcfvyPqbGHnDfzPRNbz8eLkvaF39JM8AewGEv0z+aQdvhVFFcgnA//YRE320vY/xxPE4BGrb87NF
+	VEl0myZwllui/66sj9IfSzD1Mz43tHtaJQpOOR2ufTmlzrtiy9BVoDC09qjfM37+4C6Fh469zLlzs
+	Dwa7LM6wDXCT9iFznYAw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wEuFb-00000007aRh-2p1Z;
-	Mon, 20 Apr 2026 19:25:43 +0000
-Received: from layka.disroot.org ([178.21.23.139])
+	id 1wExlK-00000007nxl-3dJ7;
+	Mon, 20 Apr 2026 23:10:42 +0000
+Received: from mail-wr1-x432.google.com ([2a00:1450:4864:20::432])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wEuFZ-00000007aRI-0LUY
+	id 1wExlI-00000007nwy-2Y6B
 	for linux-phy@lists.infradead.org;
-	Mon, 20 Apr 2026 19:25:42 +0000
-Received: from mail01.disroot.lan (localhost [127.0.0.1])
-	by disroot.org (Postfix) with ESMTP id 92412268AA;
-	Mon, 20 Apr 2026 21:20:07 +0200 (CEST)
-X-Virus-Scanned: SPAM Filter at disroot.org
-Received: from layka.disroot.org ([127.0.0.1])
- by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
- id pvCkL8zNxL38; Mon, 20 Apr 2026 21:20:06 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
-	t=1776712806; bh=xJFP8XOtSI4JqArA2dTYZ3WsgBDOe/KT5mW+ndQHPps=;
-	h=From:To:Cc:Subject:Date;
-	b=ZCOrWLgAxjQJunogBwfFM3W17YpqpoFDJntd5bGYrXm/vuInteJfXNjoWAluwKi6f
-	 sHrSOBxjpiy78ewcPlOARYgoaDOFiaZSJsIUReeS/XimDdsBLt1QbxgBP+83ctIT1C
-	 Fs6DgoWUu/ItIgS3wpHMLx7O6did/vs+6uuVdrLBQI6pszl5QQZb8JfU71Jcy7z+hx
-	 XSFJZIAH9lFCrTj4vJNByBymZukei94gOoEBNTqUQF0w0ZRgPN1+OsJkBpVLMPTh2E
-	 CL6R2nt0jYuSE+o8qL1+FP1r79Oh26GpmNq+Enm7OQtybjmH6Ln/KqAfybF7FjbT5j
-	 W8kTFTz99COnQ==
-From: Rustam Adilov <adilov@disroot.org>
-To: Vinod Koul <vkoul@kernel.org>,
+	Mon, 20 Apr 2026 23:10:41 +0000
+Received: by mail-wr1-x432.google.com with SMTP id ffacd0b85a97d-43fea39e066so2667136f8f.1
+        for <linux-phy@lists.infradead.org>; Mon, 20 Apr 2026 16:10:39 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1776726638; x=1777331438; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=8BFbqe6zs9zdE69IPJo3pEdqtjhoEkNZOLj14gX1oP8=;
+        b=UfVE2tFXMgVL5YcUGoXmdi+HBQojMVw3LSv9tEOp+yhGeybntzTNH0R4HotAacm2/Z
+         Q2JmIEi4x5RdYjqdUHIg3ToMXMPwWaUZIN/l08e9yVAg6qVa5fHX3RsnJKX21WjZ1JKq
+         YdorC6qkOF0AyJTkA6ZY3JdsN5dTDZzAU2g+/Iln+qgk7laf7TERB7H0wrV7iRAzmB++
+         34WNqRkWqgDmUcAgyHFGkErm2QATe4BkBg/tiq6Af5fPyvm3U9gAZbg5T8k5dERC1Nk/
+         6KYQK+HGUfZpqs/QFNmdqMyrZINCc3yipp8Pr2lmheY57dpv0aPoKQS+elo+xHlCit9m
+         dDPQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1776726638; x=1777331438;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=8BFbqe6zs9zdE69IPJo3pEdqtjhoEkNZOLj14gX1oP8=;
+        b=Ve9yZpJg2wp+sAwrUrmthbMO7c9Gc+l6gVpoi1ZybnT8uS9/AOSFfXwAygu6b0YTNs
+         SAlf8oGq+d5nHmy5tSZ2V/z9qFmrjAayuNBUaWRNmwljUEQztS/d1juW33T3GOf9HboK
+         021Zhyxkf+SQOPKt6CJe75qJaJDS9izv97fgNoazPAOAfoy7E10w08o5/vuSV3pVdj+H
+         lqEcdS0P4wMc2SUQCIdV9HljJmr3lTcdgxLwxHDDl6ObcObXzJbfytR5z689A4d84DRp
+         6WlE3QAMaPfyLX9BQCNz/oCZn4u2jV9Rx6T6Ogu+Z1vAg4T5LDVE5a5KDRAVtCD63r7I
+         LzGQ==
+X-Forwarded-Encrypted: i=1; AFNElJ8n1F3t0Vpbrl/2qFvZ8JmJv/TgtRGmu+9EwaUdNtQZNrV2PiHG9hBl0apaTPFr8T8XqWg9g/DNOYU=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy7N4OmT+oqesSqg+OvMGFYq5N72L0QRQfBLqJgxnW+ADU1ipe3
+	yuSEPOQBWZ+k7+GTl7pCLW10h7MoAu76BKY1r3dhO+dpOqVlzxSFHRSX
+X-Gm-Gg: AeBDievAKsyiWULSTsEie9Zbk9xrlhOySnL0dP1UeDP4afyixULhSWw5cm9ClqaF4zg
+	yxeKp1hZU0mgL0D+FiunH/5miEmAcQTV+odIqmwsYCuXAv9iLK5oRkrzEIDT/6QcPX4HvpMAIWv
+	dC8QF1PEdnMOBeP7q3HH1BTY1qxIXv8kBUCDdR8OHPCyFiTCdCnRqwLKX8RR0YBLJhw81I148ep
+	LHhAkknRC5caNCjZ0DUKgbmM23QEQK7XcYHToavO1S02MfkPNn0/ddDLMTXa/t/F3VU1ePnbMwY
+	bdLS5WzESlYQIo3KnGFEBs5R0sKbqICa1ESyg3LYygtCFSOMrRdjZxMvt5K35Mgr//vXXkrgZqj
+	7XYOa49HoMMRtRtfLOt9cQmRThgtCWhAj0GirrQE8qG7hLRQhg551wGx09b0BUXaREzRLteowqC
+	CG1GaFeS0xV/meRFr4tSkaXsrSauL7N0J/cppHftiiwqi22AXiFbJtGKb/CJefj3vtC1YedehB4
+	grbpa0epY6o/RSCyR4VlQ==
+X-Received: by 2002:a05:6000:1acc:b0:43e:a70d:7622 with SMTP id ffacd0b85a97d-43fe3e0c612mr24008948f8f.22.1776726637610;
+        Mon, 20 Apr 2026 16:10:37 -0700 (PDT)
+Received: from dohko.chello.ie (188-141-5-72.dynamic.upc.ie. [188.141.5.72])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-43fe4e3a174sm36837571f8f.18.2026.04.20.16.10.36
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 20 Apr 2026 16:10:37 -0700 (PDT)
+From: David Carlier <devnexen@gmail.com>
+To: Sven Peter <sven@kernel.org>,
+	Janne Grunau <j@jannau.net>,
+	Neal Gompa <neal@gompa.dev>,
+	Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Stanley Chang <stanley_chang@realtek.com>,
+	Hector Martin <marcan@marcan.st>,
+	Philipp Zabel <p.zabel@pengutronix.de>
+Cc: David Carlier <devnexen@gmail.com>,
+	asahi@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org,
 	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org
-Cc: Rustam Adilov <adilov@disroot.org>
-Subject: [PATCH v5 0/6] phy: realtek: usb2: support for RTL9607C USB2 PHY
-Date: Tue, 21 Apr 2026 00:19:35 +0500
-Message-ID: <20260420191941.81834-1-adilov@disroot.org>
+Subject: [PATCH] phy: apple: atc: Fix typec switch/mux leak and UAF on unbind
+Date: Tue, 21 Apr 2026 00:10:13 +0100
+Message-ID: <20260420231014.35462-1-devnexen@gmail.com>
+X-Mailer: git-send-email 2.53.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260420_122541_264709_CDAD5759 
-X-CRM114-Status: GOOD (  15.89  )
+X-CRM114-CacheID: sfid-20260420_161040_672175_1C8AC5B2 
+X-CRM114-Status: GOOD (  11.68  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,93 +106,98 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This patch series for Realtek USB2 PHY driver adds support for RTL9607C
-USB2 PHY.
+atcphy_probe_switch() and atcphy_probe_mux() discard the pointers
+returned by typec_switch_register() and typec_mux_register(). The
+platform driver has no .remove callback, so the registered switch
+and mux devices outlive the apple_atcphy struct, which is released
+by devm cleanup on driver unbind.
 
-RTL9607C is a big endian MIPS CPU which is quite far from RTD series SoCs
-supported by realtek usb2 phy driver, but the phy initilization is found
-to be very indentical in most areas.
+A subsequent typec event (cable orientation change, alt-mode
+transition) then invokes the registered atcphy_sw_set() or
+atcphy_mux_set() callback, which retrieves the freed apple_atcphy
+and dereferences it. Unbind followed by a cable replug or alt-mode
+change is enough to trigger the use-after-free.
 
-Most of the code was based on the Realtek's usb driver from the GPL tarball
-in [1] and adjusted to fit into the realtek usb2 phy driver code format.
+Save the registered switch and mux and unregister them through
+devm_add_action_or_reset() so the framework references disappear in
+step with the driver's devm-allocated state. Drop the unused struct
+apple_atcphy::sw and ::mux fields, which were declared with the
+wrong consumer-side types and never assigned.
 
-The patch series was split into smaller patches that add/change something
-in the driver that are not exactly related to RTL9607C and that also
-helps for easier review. That also means, patch 5 depends on all the prior
-patches that come before it.
-
-USB2 PHY on RTL9607C is primarly used for its internal OHCI/EHCI controllers.
-
-[1] - https://github.com/jameywine/GPL-for-GP3000/blob/main/linux-5.10.x/arch/mips/rtl9607c/usb.c
-
+Fixes: 8e98ca1e74db ("phy: apple: Add Apple Type-C PHY")
+Signed-off-by: David Carlier <devnexen@gmail.com>
 ---
-Changelog in v5:
-Mostly addressing LLM review
-- Patch 1
- - changed int to u32 type for new_reg_req and vstatus_busy data fields.
- - changed comments in rtk_phy_read/write from PHY_NEW_REG_REQ to phy_reg->new_reg_req.
-- Patch 2
- - explained readl/writel native endianess issue in more detail.
- - explained why vstatus register doesn't need byte swapping.
-- Patch 4
- - moved reset_control_deassert to rtk_phy_init function to keep it outside of for loop.
- - changed msleep(5) to usleep_range(5000, 6000).
- - explained why reset_control_assert is not needed.
-- Patch 5
- - explained readl/writel native endianess issue here as well.
- - explained why FORCE_DISCONNECT_REG doesn't need byte swapping.
-- Link to v4: https://lore.kernel.org/linux-phy/20260406181228.25892-1-adilov@disroot.org/
+ drivers/phy/apple/atc.c | 27 ++++++++++++++++++++++-----
+ 1 file changed, 22 insertions(+), 5 deletions(-)
 
-Changelog in v4:
-- Patch 2
- - moved the le variations of read/write functions to Patch 5 where it is actually used because
-   otherwise, it results in unused errors when only Patch 2 is applied.
- - updated the commit message to to point the reason for le32 wrappers around readl/writel.
-- Patch 3
- - added "Reviewed by Krzysztof Kozlowski"
-- Patch 5
- - updated the commit message to include the addition of little endian read/write functions from
-   Patch 2.
-- Link to v3: https://lore.kernel.org/linux-phy/20260402154414.196012-1-adilov@disroot.org/
-
-Changelog in v3:
-- Patch 2
- - renamed phy read and functions to "rtk_usb2phy" to not collide with networking API functions
- - fixed the sparse warnings by creating intermidiate "tmp" variable and then pass it to writel
- - sligtly adjusted commit message to instead use "default read" not "default phy_read"
-- Patch 4
- - added the check for reset_control_deassert() just in case
- - changed mdelay(5) to msleep(5)
- - changed dev_err and return combo with one dev_err_probe for phy_rst
-- Patch 5
- - changed mdelay(10) under force_host_disconnect to msleep(10)
- - removed struct fields with false like force_host_disconnect and more in rtl9607_phy_cfg
-- Patch 6
- - updated the #endif commend to now include MACH_REALTEK_RTL to reflect if on top
-- Link to v2: https://lore.kernel.org/linux-phy/20260327160638.15134-1-adilov@disroot.org/
-
-Changelog in v2:
-- Patch 3
- - removed the line about OHCI/EHCI controllers from description.
- - set the resets to false for RTD SoC devices and changed the
-   commit message to reflect that.
-- Link to v1: https://lore.kernel.org/linux-phy/20260326193419.48419-1-adilov@disroot.org/
-
-Rustam Adilov (6):
-  phy: realtek: usb2: introduce vstatus/new_reg_req variables to driver
-    data
-  phy: realtek: usb2: introduce read and write functions to driver data
-  dt-bindings: phy: realtek,usb2phy.yaml: extend for resets and RTL9607C
-    support
-  phy: realtek: usb2: introduce reset controller struct
-  phy: realtek: usb2: add support for RTL9607C USB2 PHY
-  phy: realtek: Make configs available for MACH_REALTEK_RTL
-
- .../bindings/phy/realtek,usb2phy.yaml         |  25 ++-
- drivers/phy/realtek/Kconfig                   |   4 +-
- drivers/phy/realtek/phy-rtk-usb2.c            | 191 ++++++++++++++++--
- 3 files changed, 195 insertions(+), 25 deletions(-)
-
+diff --git a/drivers/phy/apple/atc.c b/drivers/phy/apple/atc.c
+index e9d106f135c5..4156fabad742 100644
+--- a/drivers/phy/apple/atc.c
++++ b/drivers/phy/apple/atc.c
+@@ -628,9 +628,6 @@ struct apple_atcphy {
+ 
+ 	struct reset_controller_dev rcdev;
+ 
+-	struct typec_switch *sw;
+-	struct typec_mux *mux;
+-
+ 	struct mutex lock;
+ };
+ 
+@@ -2066,15 +2063,25 @@ static int atcphy_sw_set(struct typec_switch_dev *sw, enum typec_orientation ori
+ 	return 0;
+ }
+ 
++static void atcphy_typec_switch_unregister(void *data)
++{
++	typec_switch_unregister(data);
++}
++
+ static int atcphy_probe_switch(struct apple_atcphy *atcphy)
+ {
++	struct typec_switch_dev *sw;
+ 	struct typec_switch_desc sw_desc = {
+ 		.drvdata = atcphy,
+ 		.fwnode = atcphy->dev->fwnode,
+ 		.set = atcphy_sw_set,
+ 	};
+ 
+-	return PTR_ERR_OR_ZERO(typec_switch_register(atcphy->dev, &sw_desc));
++	sw = typec_switch_register(atcphy->dev, &sw_desc);
++	if (IS_ERR(sw))
++		return PTR_ERR(sw);
++
++	return devm_add_action_or_reset(atcphy->dev, atcphy_typec_switch_unregister, sw);
+ }
+ 
+ static int atcphy_mux_set(struct typec_mux_dev *mux, struct typec_mux_state *state)
+@@ -2146,15 +2153,25 @@ static int atcphy_mux_set(struct typec_mux_dev *mux, struct typec_mux_state *sta
+ 	return atcphy_configure(atcphy, target_mode);
+ }
+ 
++static void atcphy_typec_mux_unregister(void *data)
++{
++	typec_mux_unregister(data);
++}
++
+ static int atcphy_probe_mux(struct apple_atcphy *atcphy)
+ {
++	struct typec_mux_dev *mux;
+ 	struct typec_mux_desc mux_desc = {
+ 		.drvdata = atcphy,
+ 		.fwnode = atcphy->dev->fwnode,
+ 		.set = atcphy_mux_set,
+ 	};
+ 
+-	return PTR_ERR_OR_ZERO(typec_mux_register(atcphy->dev, &mux_desc));
++	mux = typec_mux_register(atcphy->dev, &mux_desc);
++	if (IS_ERR(mux))
++		return PTR_ERR(mux);
++
++	return devm_add_action_or_reset(atcphy->dev, atcphy_typec_mux_unregister, mux);
+ }
+ 
+ static int atcphy_load_tunables(struct apple_atcphy *atcphy)
 -- 
 2.53.0
 
