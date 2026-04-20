@@ -4,65 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D43C4F588C3
-	for <linux-phy@archiver.kernel.org>; Mon, 20 Apr 2026 13:24:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 90F5BF588C3
+	for <linux-phy@archiver.kernel.org>; Mon, 20 Apr 2026 13:25:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jFytahfSV4wuWzWvM95dbnR65Y9sb9i/37vKjR4vj94=; b=KQuZ2t2UZ0RIL/
-	Bu0T3d6XumxLqJNRemJ9EFI/hqnoQEFo/ZHMu3NCC7cZsPH1yMpJ3TSJAZZUsrgYjeHnYL2FpWJvg
-	iSVH7XYLk5PJ/OMoRppqQyLYio8kg1POdb2w1Xij1AdtivdzSim+4AkfIeh9EtNShFXQb0s5XGMy8
-	ZACOZAMspasKwn+iNGhJVyCfo7nZXRkN2P3niGH0nW15/Cx74wyDerdbRBQCMKRwBJBe/PTaZAwVA
-	OfDgTS7WxJBAbslL3eiCX3WsCB642G0YPwy26ljp4VDrgIY/v5f/DE8wafMrM6nfeoCQ2WfK0jXIP
-	1iqamppCjKnQCSyg5r1g==;
+	List-Owner; bh=ACHg4bSeAXWSWrw5ht9XMCbu9TIbWF10XnkK6iqXDTg=; b=ZfWKfgAFAm1193
+	wE9VfuaQ82aemz4XuiWOFVsulfJkqboPVXwGm5iWDIuhl++k1jiJJzeLNW7auov1A3+7YrzlVeidO
+	1Aa7CHRB9PXY1a1y7asIdmeXHXIvMjR7YxAu5uiwTF5afW2QHfyfz5gPyo/chcqzPOGpLpKXtPY0l
+	mi23o1KekuvAs20gXh/2+tJzXAeKeKj6QJqzrwSdzbz/YaIjYmpjvxR3madgHPuOSqc7HCRyunOpy
+	mUWa1qvS9/3iNMUZfkhvoHQU6FTSQCgNZwnRNfWfMKEgHa+CnqALz5necpZup43J/DfKVeEzDE5qp
+	FJuYKWYEafUuCYnAGYmA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wEobr-00000006ziJ-1Rka;
-	Mon, 20 Apr 2026 13:24:19 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wEoco-00000006zxY-1JGf;
+	Mon, 20 Apr 2026 13:25:18 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wEobp-00000006zhw-353w
-	for linux-phy@lists.infradead.org;
-	Mon, 20 Apr 2026 13:24:17 +0000
+	id 1wEock-00000006zvU-1V6r;
+	Mon, 20 Apr 2026 13:25:15 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 572CE60180;
-	Mon, 20 Apr 2026 13:23:46 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7FBD4C4AF09;
-	Mon, 20 Apr 2026 13:23:45 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id DAF5044307;
+	Mon, 20 Apr 2026 13:25:13 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6F967C2BCB4;
+	Mon, 20 Apr 2026 13:25:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1776691426;
-	bh=ywo/K+m8g61aFuYUwjJngKFcWB+wO9RjNtkZ4THPkfY=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=j2IllhUII1LeigQu/LhVqMjlicGgoRx0s29c4Rh2H8muX/VKwlTyHTUYdI9YJax2n
-	 F9Mt4ouIcD0BQdEevVWK41HZ+jCyMstdvCyvPqx3Qx3t34y8IsY3cHsrjF5p+PYVCP
-	 fLrIuFZJKDoHavwu+b1wMcXkxvmvssbbruQoFRRU3lVr1n22SG561k1PfXckYWTPLZ
-	 EzCry+M5RLD2ISQnscbPMNJZb2ZN57b8iGw0dxhjCnx4ZjCvyA6iySosXff3BKaolQ
-	 foIw+bN4+DtnR+4A1Z+GrpMlTxq5GUEpvrDFYph6yuRUPNGpAQvJ+1/4DQj5ZsXzFK
-	 K1MffoiFVDUMQ==
-Date: Mon, 20 Apr 2026 15:23:43 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Qiang Yu <qiang.yu@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Philipp Zabel <p.zabel@pengutronix.de>, Bjorn Andersson <andersson@kernel.org>, 
-	Konrad Dybcio <konradybcio@kernel.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v3 1/5] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Add
- support for glymur Gen5 x8 bifurcation mode
-Message-ID: <20260420-optimistic-unnatural-stingray-80da35@quoll>
-References: <20260412-glymur_gen5x8_phy_0413-v3-0-affcebc16b8b@oss.qualcomm.com>
- <20260412-glymur_gen5x8_phy_0413-v3-1-affcebc16b8b@oss.qualcomm.com>
- <20260415-wooden-prawn-of-lightning-dc1ddc@quoll>
- <aeBQRStG3imY0cOe@hu-qianyu-lv.qualcomm.com>
- <20260417-awesome-tacky-coot-e59a30@quoll>
- <aeXUZ1uSEJ9InUtw@hu-qianyu-lv.qualcomm.com>
+	s=k20201202; t=1776691513;
+	bh=lxK8mzMpPAy8qmTHJCf6vQTdOIk5p9rqZwYog5ZsSSo=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=qudr/Zds1sfzyFWF8NnKa9jtzk9qx9nUxcjfaV3vuQ7/ucJMq6rbMTXy/STS4BmHE
+	 TG2Qf/M1voGNIUcSALgo5WSOJg7Er/eBX0b9/+UNxzef6ZdYM4qft0Yqcc9r8mp4gi
+	 B2HMU5TNnCvgf1MVjWOGO2cvJaA2w5PCfniabzKKI2jMatM6VPdacFiFIOOx2VA8i3
+	 0X71Wil+fk+snGXjyrrq8oUkx5KnBr1aqJICD8VVyvcE2LAYE2uo+5gf6WODkmmaR6
+	 gU8dT3aMqGG3zzcMRRRfeQoRkxnCG+8NbWVnvlQGZCdjDKohjRa5LFThJC7P5PG/rA
+	 DaV4QI1bklpoQ==
+From: Sasha Levin <sashal@kernel.org>
+To: patches@lists.linux.dev,
+	stable@vger.kernel.org
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Sasha Levin <sashal@kernel.org>,
+	chunfeng.yun@mediatek.com,
+	matthias.bgg@gmail.com,
+	angelogioacchino.delregno@collabora.com,
+	linux-arm-kernel@lists.infradead.org,
+	linux-mediatek@lists.infradead.org,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH AUTOSEL 7.0-6.18] phy: phy-mtk-tphy: Update names and format of kernel-doc comments
+Date: Mon, 20 Apr 2026 09:17:48 -0400
+Message-ID: <20260420132314.1023554-74-sashal@kernel.org>
+X-Mailer: git-send-email 2.53.0
+In-Reply-To: <20260420132314.1023554-1-sashal@kernel.org>
+References: <20260420132314.1023554-1-sashal@kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <aeXUZ1uSEJ9InUtw@hu-qianyu-lv.qualcomm.com>
+X-stable: review
+X-Patchwork-Hint: Ignore
+X-stable-base: Linux 7.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260420_062514_501080_2EFCE8BC 
+X-CRM114-Status: GOOD (  19.26  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,119 +82,256 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Apr 20, 2026 at 12:23:19AM -0700, Qiang Yu wrote:
-> On Fri, Apr 17, 2026 at 11:18:08AM +0200, Krzysztof Kozlowski wrote:
-> > On Wed, Apr 15, 2026 at 07:58:13PM -0700, Qiang Yu wrote:
-> > > On Wed, Apr 15, 2026 at 09:50:28AM +0200, Krzysztof Kozlowski wrote:
-> > > > On Sun, Apr 12, 2026 at 11:25:56PM -0700, Qiang Yu wrote:
-> > > > > The Glymur SoC has pcie3a and pcie3b PHYs that can operate in two modes:
-> > > > > 
-> > > > > 1. Independent 4-lane mode: Each PHY operates as a separate PCIe Gen5
-> > > > >    4-lane interface, compatible with qcom,glymur-qmp-gen5x4-pcie-phy
-> > > > > 2. Bifurcation mode (8-lane): pcie3a phy acts as leader and pcie3b phy as
-> > > > >    follower to form a single 8-lane PCIe Gen5 interface
-> > > > > 
-> > > > > In bifurcation mode, the hardware design requires controlling additional
-> > > > > resources beyond the standard pcie3a PHY configuration:
-> > > > > 
-> > > > > - pcie3b's aux_clk (phy_b_aux)
-> > > > > - pcie3b's phy_gdsc power domain
-> > > > > - pcie3b's bcr/nocsr reset
-> > > > > 
-> > > > > Add qcom,glymur-qmp-gen5x8-pcie-phy compatible string to document this
-> > > > > 8-lane bifurcation configuration.
-> > > > 
-> > > > Do you describe PCI3A or PCI3B or something combined PCI3?
-> > > 
-> > > I describe a single x8 PHY with resources from both the pcie3a and pcie3b
-> > > PHY blocks for x8 operation.
-> > > 
-> > > > 
-> > > > > 
-> > > > > The phy_b_aux clock is used as the 6th clock instead of pipediv2,
-> > > > > requiring the clock-names enum to be extended to support both
-> > > > > [phy_b_aux, pipediv2] options at index 5. This follows the existing
-> > > > > pattern used for [rchng, refgen] clocks at index 3.
-> > > > > 
-> > > > > Signed-off-by: Qiang Yu <qiang.yu@oss.qualcomm.com>
-> > > > > ---
-> > > > >  .../bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml   | 53 ++++++++++++++++++----
-> > > > >  1 file changed, 45 insertions(+), 8 deletions(-)
-> > > > > 
-> > > > > diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-> > > > > index 3a35120a77ec0ceb814a1cdcacff32fef32b4f7b..14eba5d705b1956c1bb00cc8c95171ed6488299b 100644
-> > > > > --- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-> > > > > +++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml
-> > > > > @@ -18,6 +18,7 @@ properties:
-> > > > >      enum:
-> > > > >        - qcom,glymur-qmp-gen4x2-pcie-phy
-> > > > >        - qcom,glymur-qmp-gen5x4-pcie-phy
-> > > > > +      - qcom,glymur-qmp-gen5x8-pcie-phy
-> > > > 
-> > > > That's the same device as 5x4, no? One device, one compatible and this
-> > > > suggests you will have three PCI phys in the DT - two 5x4 and one 5x8?
-> > > > 
-> > > 
-> > > It is not the same as the 5x4 PHY. In DT, we model three PHY nodes:
-> > > phy_3a (1x4), phy_3b (1x4), and a separate phy_1x8 node for x8 mode.
-> > 
-> > OK, that's what I wanted to hear. And that's what should not be done,
-> > 
-> > You should not have a separate node for the same hardware. First, DTC
-> > will give you a W=1 warning, although warning itself should be moved to
-> > W=2.
-> > 
-> > Second, the warning tells important story - same hardware is described
-> > twice.
-> > 
-> > You only need phy_3a and phy_3b, so only two in total.
-> 
-> We can keep only phy_3a and phy_3b, but still add new compatible
-> qcom,glymur-qmp-gen5x8-pcie-phy in binding, right?
-> 
-> For boards that support pcie3a(1x4) + pcie3b(1x4), DTS would be:
-> 
-> pcie3a_phy { compatible = "qcom,glymur-qmp-gen5x4-pcie-phy"; };
-> pcie3b_phy { compatible = "qcom,glymur-qmp-gen5x4-pcie-phy"; };
-> 
-> For boards that support 1x8, we would override pcie3a_phy with:
-> 
-> pcie3a_phy { compatible = "qcom,glymur-qmp-gen5x8-pcie-phy"; /* additional resources */ };
-> pcie3b_phy { compatible = "qcom,glymur-qmp-gen5x4-pcie-phy"; };
-> 
-> This still uses only two PHY nodes and DTC will not report warning.
+From: Vinod Koul <vkoul@kernel.org>
 
-IMO, you do not need another compatible. Device is exactly the same. If
-wiring on the board differs, e.g. you have 8x instead of 4x, you:
-1. disable unused 3B phy.
-2. Add to 3A missing resources or the phandle to companion node.
+[ Upstream commit 8d869bc943cfe5db08f5aff355b1d8d3abeda865 ]
 
-At least that is what I tought till now, when I opened the HPG/manual
-for Glymur phy.  Someone skipped important information when PCIe PHY was
-upstreamed first and glymur.dtsi already got PHY 3B described.
+mtk_phy_pdata documentation does not use correct tag for struct, while at
+it fix one of member wrongly documented.
 
-Reminder: writing bindings asks you explicitly to post COMPLETE
-bindings.
+Warning: drivers/phy/mediatek/phy-mtk-tphy.c:289 cannot understand function prototype: 'struct mtk_phy_pdata'
+Warning: drivers/phy/mediatek/phy-mtk-tphy.c:296 struct member 'slew_ref_clock_mhz' not described in 'mtk_phy_pdata'
 
-If you posted COMPLETE bindings we would question all this and you would
-have to check in user manual that this is actually ONE device.
+Link: https://patch.msgid.link/20260223071032.408425-1-vkoul@kernel.org
+Signed-off-by: Vinod Koul <vkoul@kernel.org>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
 
-There is no 5x4 phy 3A and 3B, at least HPG is pretty clear here.
+LLM Generated explanations, may be completely bogus:
 
-And you should start with that.
+Based on my investigation, I have enough context to provide a thorough
+analysis.
 
-But you posted first incomplete binding, hiding the rest and now you
-have 5x4 merged into DTSI.
+## Analysis
 
-So let's rephrase based on manual:
-You have only one PCIE phy3. Not 3A + 3B. That one phy3 can be
-configured by consumers (board) differently, e.g. by requesting 8-lane
-or twice 4-lane phys.
+### PHASE 1: COMMIT MESSAGE FORENSICS
 
-Let me send correction note for glymur.dtsi.
+**Step 1.1** - Subject Line Parse:
+- Record: [phy/phy-mtk-tphy] [Update] [kernel-doc comment formatting and
+  member name correction]
 
-Best regards,
-Krzysztof
+**Step 1.2** - Tags:
+- Link:
+  https://patch.msgid.link/20260223071032.408425-1-vkoul@kernel.org
+- Signed-off-by: Vinod Koul <vkoul@kernel.org> (phy subsystem
+  maintainer)
+- No Fixes: tag, no Cc: stable, no Reported-by, no Tested-by, no
+  Reviewed-by
+
+**Step 1.3** - Commit Body:
+- Bug described: Two kernel-doc warnings:
+  1. `cannot understand function prototype: 'struct mtk_phy_pdata'`
+     (missing "struct" tag)
+  2. `struct member 'slew_ref_clock_mhz' not described` (doc says
+     `slew_ref_clk_mhz` but the actual struct member is
+     `slew_ref_clock_mhz`)
+- Failure mode: doc generation warnings; no runtime impact
+
+**Step 1.4** - Hidden bug fix detection:
+- Record: This is NOT a hidden bug fix. It is a pure kernel-
+  doc/documentation correctness fix. No runtime behavior changes.
+
+### PHASE 2: DIFF ANALYSIS
+
+**Step 2.1** - Inventory:
+- Files: `drivers/phy/mediatek/phy-mtk-tphy.c` (1 file)
+- Lines changed: 2 lines modified (comment only)
+- Functions: None (only a struct's kernel-doc block)
+- Scope: single-file, surgical, comments only
+
+**Step 2.2** - Flow change:
+- Before: `mtk_phy_pdata - SoC...` and `@slew_ref_clk_mhz:` in comments
+- After: `struct mtk_phy_pdata - SoC...` and `@slew_ref_clock_mhz:` in
+  comments
+- No executable code changed
+
+**Step 2.3** - Bug mechanism:
+- Category: Documentation correctness. The kernel-doc parser rejects the
+  struct doc block because it lacks the `struct` keyword, and then flags
+  the unmatched member name.
+
+**Step 2.4** - Fix quality:
+- Obviously correct (just comment text)
+- Zero regression risk (no runtime code)
+
+### PHASE 3: GIT HISTORY INVESTIGATION
+
+**Step 3.1** - Blame:
+- `9cc82c2498b4f` ("phy: mediatek: tphy: Clarify and add kerneldoc to
+  mtk_phy_pdata"): first added the kerneldoc without the `struct`
+  prefix. Landed in v6.17-rc1.
+- `d6306fc5d77b7` ("phy: mediatek: tphy: Cleanup and document slew
+  calibration"): introduced the `slew_ref_clk_mhz` doc line while naming
+  the actual member `slew_ref_clock_mhz`. Landed in v6.17-rc1.
+
+**Step 3.2** - No Fixes: tag. Effectively the fix addresses both commits
+above.
+
+**Step 3.3** - Related changes: None relevant; no dependency or series.
+
+**Step 3.4** - Author: Vinod Koul is the phy subsystem maintainer. High
+trust.
+
+**Step 3.5** - Dependencies: None. Standalone 2-line comment change.
+
+### PHASE 4: MAILING LIST RESEARCH
+
+- Lore fetch attempted but blocked by Anubis. The Link: tag points to
+  vkoul@kernel.org posting.
+- Record: Patch was posted on Feb 23 2026 by the subsystem maintainer.
+  No evidence of controversy.
+
+### PHASE 5: CODE SEMANTIC ANALYSIS
+
+- Only a comment block is changed; the struct itself and all callers are
+  unaffected. No reachability change.
+
+### PHASE 6: CROSS-REFERENCING AND STABLE TREE ANALYSIS
+
+**Step 6.1** - Buggy code presence:
+- Verified present in stable/linux-6.17.y, 6.18.y, 6.19.y (checked files
+  directly; same problematic kerneldoc block exists in all three).
+- Not present in 6.12.y and older (the kerneldoc block wasn't added
+  there).
+
+**Step 6.2** - Backport complications:
+- The diff applies against the exact same surrounding context in 6.17.y,
+  6.18.y, 6.19.y. Trivial clean apply.
+
+**Step 6.3** - No prior fix found in stable branches.
+
+### PHASE 7: SUBSYSTEM CONTEXT
+
+- Subsystem: drivers/phy/mediatek (PERIPHERAL - MediaTek SoC-specific
+  T-PHY)
+- Author is the subsystem maintainer
+
+### PHASE 8: IMPACT AND RISK ASSESSMENT
+
+**Step 8.1** - Affected: Only developers generating kernel docs. No end-
+user runtime impact whatsoever.
+
+**Step 8.2** - Trigger: Running `make htmldocs` or similar against the
+file.
+
+**Step 8.3** - Severity: LOW. Pure cosmetic/doc-build warnings. The
+struct's `slew_ref_clock_mhz` member appears as "undocumented" in
+generated docs, but no functional issue.
+
+**Step 8.4** - Benefit vs Risk:
+- Benefit: Silences two kernel-doc warnings; correct generated
+  documentation.
+- Risk: Essentially zero (comment text change).
+
+### PHASE 9: FINAL SYNTHESIS
+
+**Evidence FOR:**
+- Precedent: recent kernel-doc-only warning fixes have been AUTOSEL'd to
+  stable (e.g., `45285d357287b` backlight lp855x, `a1bf8ea50cbc4`
+  kfence, `18b6574d4c647` net/bridge, `c2277e285923b` scatterlist,
+  `1cce5a5ecafeb` mtd/docg3) with similar "struct member X not
+  described" style warnings
+- Stable kernel rules explicitly list documentation/comment fixes as
+  allowed (zero runtime regression risk)
+- Small and surgical (2 line comment diff)
+- Buggy doc exists in active stable trees (6.17+)
+- Author is the subsystem maintainer
+- Patch applies cleanly to 6.17.y / 6.18.y / 6.19.y
+
+**Evidence AGAINST:**
+- No Fixes: tag, no Cc: stable
+- Pure cosmetic - no user-visible impact
+- Does not fix a crash, leak, race, security issue, or data corruption
+- Fails the "important issue" criterion strictly
+
+**Stable rules check:**
+1. Obviously correct: YES (trivial comment fix)
+2. Fixes a real bug: Marginal (kerneldoc warning only)
+3. Important issue: NO by strict reading, but in the recognized
+   exception category (documentation fix)
+4. Small and contained: YES (2 lines)
+5. No new features: YES
+6. Applies to stable: YES
+
+**Exception category:** Falls under "Documentation and comment fixes" -
+explicitly allowed by stable rules as zero-risk.
+
+### Verification:
+- [Phase 1] Parsed tags: Link tag only; no Fixes, Reported-by, Cc
+  stable, Reviewed-by/Acked-by in this particular submission.
+- [Phase 2] Read the diff: verified only 2 comment lines change (adds
+  "struct " and renames `slew_ref_clk_mhz` -> `slew_ref_clock_mhz` in
+  kerneldoc).
+- [Phase 3] `git log -- drivers/phy/mediatek/phy-mtk-tphy.c`: confirmed
+  `9cc82c2498b4f` added the kerneldoc without "struct" prefix;
+  `d6306fc5d77b7` added the member-name mismatch.
+- [Phase 3] `git describe --contains` for `9cc82c2498b4f` and
+  `d6306fc5d77b7`: both resolve to v6.17-rc1.
+- [Phase 3] `git branch -r --contains d6306fc5d77b7`: present in
+  stable/linux-6.17.y, 6.18.y, 6.19.y; not in older stable.
+- [Phase 4] WebFetch of lore URL blocked by Anubis (UNVERIFIED); could
+  not examine review thread directly.
+- [Phase 6] `git show stable/linux-6.17.y:drivers/phy/mediatek/phy-mtk-
+  tphy.c` and the 6.18.y / 6.19.y equivalents: confirmed the same broken
+  kerneldoc block is present in all three active stable branches; the
+  struct member is `slew_ref_clock_mhz` in all of them; diff will apply
+  cleanly.
+- [Phase 6] Searched for prior fix in stable branches (`git log
+  --grep="slew_ref"`): none found.
+- [Phase 6] Verified similar AUTOSEL precedent: `git show
+  45285d357287b`, `a1bf8ea50cbc4`, `18b6574d4c647`, `c2277e285923b`,
+  `1cce5a5ecafeb` - all are kernel-doc-only warning fixes that were
+  AUTOSEL'd by Sasha Levin into stable.
+- [Phase 7] Author identity: Vinod Koul is the phy subsystem maintainer
+  (confirmed via MAINTAINERS history).
+- [Phase 8] Failure mode: kernel-doc build warnings only; no runtime
+  effect - verified by reading the diff (no executable code changed).
+- UNVERIFIED: Could not read mailing list thread (Anubis block); did not
+  verify reviewer feedback or stable nominations directly.
+
+### Decision
+
+The change is a pure kernel-doc warning fix: it adds the missing
+`struct` keyword and corrects a member-name typo so the kernel-doc
+parser emits the correct docs for `struct mtk_phy_pdata`. The broken
+kerneldoc exists in 6.17.y, 6.18.y and 6.19.y stable trees, the patch
+applies trivially, and the risk of regression is effectively zero (no
+executable code is touched). This falls squarely in the
+"Documentation/comment fixes" exception category explicitly allowed by
+stable kernel rules, and there is recent AUTOSEL precedent for
+backporting similar kerneldoc-only warning fixes (lp855x, kfence,
+bridge, scatterlist, docg3). The strongest argument against is that it
+fails the strict "important issue" test, but the risk/benefit and
+precedent tip it to YES.
+
+**YES**
+
+ drivers/phy/mediatek/phy-mtk-tphy.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c b/drivers/phy/mediatek/phy-mtk-tphy.c
+index f6504e0ecd1a7..acf5065295072 100644
+--- a/drivers/phy/mediatek/phy-mtk-tphy.c
++++ b/drivers/phy/mediatek/phy-mtk-tphy.c
+@@ -276,14 +276,14 @@ enum mtk_phy_version {
+ };
+ 
+ /**
+- * mtk_phy_pdata - SoC specific platform data
++ * struct mtk_phy_pdata - SoC specific platform data
+  * @avoid_rx_sen_degradation: Avoid TX Sensitivity level degradation (MT6795/8173 only)
+  * @sw_pll_48m_to_26m:        Workaround for V3 IP (MT8195) - switch the 48MHz PLL from
+  *                            fractional mode to integer to output 26MHz for U2PHY
+  * @sw_efuse_supported:       Switches off eFuse auto-load from PHY and applies values
+  *                            read from different nvmem (usually different eFuse array)
+  *                            that is pointed at in the device tree node for this PHY
+- * @slew_ref_clk_mhz:         Default reference clock (in MHz) for slew rate calibration
++ * @slew_ref_clock_mhz:         Default reference clock (in MHz) for slew rate calibration
+  * @slew_rate_coefficient:    Coefficient for slew rate calibration
+  * @version:                  PHY IP Version
+  */
+-- 
+2.53.0
 
 
 -- 
