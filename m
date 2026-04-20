@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3236EF5A8B8
-	for <linux-phy@archiver.kernel.org>; Mon, 20 Apr 2026 19:20:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 674B6F5A8BA
+	for <linux-phy@archiver.kernel.org>; Mon, 20 Apr 2026 19:20:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jizDgFow6ZHf07uYb9X8NjVTzqrz98BYbcchsnFoFa4=; b=u2SW2e5Ut8jP+M
-	WJI4wSjlDWX4Rq6xR2xxdWj3bQVtx4jWjvyRZYQrMkSRDB0DXW+Pz03EuxW1essJ7qDzGVq/pZ43u
-	mKCtUedR5+QIGHPyvxU0w3EMfs+1WGi0oYrr31r4Zm8OK/51jfWHTQLY+ZcXRStzz0PXcQQTEj8ah
-	JdXglwTx+rymDvDY3RDobcfwVA8zo4El1AihfxfdsqzhH6aLH/Y51uUSjD4ZkkoqB4fzpHhYEty98
-	Uar2zaF1hHcMWF8wDLg15cFPcmIHpqjt/IWEuDYx2KabA88W9/hhHR7w8TWiCuJ456B/jJZ9GOnWl
-	OQI+JNxkhK/fauBexatA==;
+	List-Owner; bh=RcLHE5U0O3Lg2sSovnuiZCY1XFq+F+8oaTMYPOIodJU=; b=W+urAljQ88gmpp
+	qapkZJ6GizobGTfpHQGMAXzdRfp3WGT9cLeVM9QV2lJDZ59Ir52GwsJh2b03obUIopGPlRkE72sxo
+	gAsG4IivSqYoi1Caa+UKB9hfZsMSeX+gxHFqGUNN3TQbPJOKSDsoUvLeUSmdhsbb+7TGawQVKIqWS
+	XkUOKq7cr1T0IAP7b/uKBwIe9Rk6pauoBNjBkkDZgfDjdEX5rC7vB559Q3HDVKnOUhNS1CfWnn3eC
+	7C50sVCcg63XduO3X7lOnoY1nsjSE2zlPW5j6VTP3XDFOk/kjamNnzMiAWThtly627X7kIkEwT7zy
+	ai4W+Q0DsoMif3TtCx6w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wEuAP-00000007aEc-2Ept;
-	Mon, 20 Apr 2026 19:20:21 +0000
+	id 1wEuAQ-00000007aF2-3M97;
+	Mon, 20 Apr 2026 19:20:22 +0000
 Received: from layka.disroot.org ([178.21.23.139])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wEuAM-00000007aDX-16c7
+	id 1wEuAN-00000007aDY-2Tbx
 	for linux-phy@lists.infradead.org;
 	Mon, 20 Apr 2026 19:20:20 +0000
 Received: from mail01.disroot.lan (localhost [127.0.0.1])
-	by disroot.org (Postfix) with ESMTP id E8F3026F22;
-	Mon, 20 Apr 2026 21:20:14 +0200 (CEST)
+	by disroot.org (Postfix) with ESMTP id 3ECA326F66;
+	Mon, 20 Apr 2026 21:20:10 +0200 (CEST)
 X-Virus-Scanned: SPAM Filter at disroot.org
 Received: from layka.disroot.org ([127.0.0.1])
  by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
- id pFDcml-QG7wp; Mon, 20 Apr 2026 21:20:14 +0200 (CEST)
+ id SZB-5Fth3vU0; Mon, 20 Apr 2026 21:20:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
-	t=1776712814; bh=f9s72veV302u0cDA0XC5ArjgV/PXcnfDIUMvghXl40c=;
+	t=1776712809; bh=Jcxwupu+wTBpDG6xdcuBM9DrQH2ZXWKxV+VH4aAhImk=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References;
-	b=LHDWL5ZD+sOqxKfpwbpzUTAriB1qnoe3N+hqxt2ifFPjgHMdhi/tIH8W9Hs1/1KQ+
-	 DQPQQ9I5lOA4L187zS7m9r3/+z+LD+tyq2XW4STdYJjRynVzR5uTGPp9rmyC3NGZ3q
-	 kvfMrp9JoS0yrBNa8ear0lPmTVbVznYcpUj4jSq0uNQUCz8VJ7VAmKVqFSbnyqZYeu
-	 E2vQuvOL3Yagd+fq5hn5aiMhyKBvY8tpbmkgHnLlDYwb/DXGZU/6FQOO6LkZ+A3OWj
-	 YT2NtRiMLamsRNTMHad5vRP2olfDG8apRCUFtzBPT6qalAUnerhYDZywyaYKrv8Nvb
-	 RoTRectGNN1ig==
+	b=akAmqQQnAWCdFcofrYq7GBx155c7PGBdIfRZ3YbmrPuR6Y7kqb8XkSB/i3Wd/jzos
+	 iLm7G4CDiSh3xLytIJ9BPgG30X17MBnxdaK8DJ4YKnWxAaKxK9V7Q/t6/Lj3fj0ump
+	 hz0p2PQXcdVFRBiW/IHdbEW3ZxLy7chQ7wnxaqfJxU6hXe52uRvmA03nw6NkrbanyW
+	 FjcWOGvs88T3mxFBTQA8wnMtQ+7Dd6v8eot3NG95PiYQic8MJaBz08Ga1icNDR1NEr
+	 ZfOuuttEqU6qEhjypZ7QM6Z8D0iBKI+IsuLdrrgc37oZUiIVQ7iPXmuqEGKVI/mMq5
+	 zMCwp6J2A4acA==
 From: Rustam Adilov <adilov@disroot.org>
 To: Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
@@ -53,17 +53,17 @@ To: Vinod Koul <vkoul@kernel.org>,
 	linux-phy@lists.infradead.org,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org
-Cc: Rustam Adilov <adilov@disroot.org>
-Subject: [PATCH v5 3/6] dt-bindings: phy: realtek,usb2phy.yaml: extend for resets and RTL9607C support
-Date: Tue, 21 Apr 2026 00:19:38 +0500
-Message-ID: <20260420191941.81834-4-adilov@disroot.org>
+Cc: Rustam Adilov <adilov@disroot.org>,
+	Michael Zavertkin <misha.zavertkin@mail.ru>
+Subject: [PATCH v5 1/6] phy: realtek: usb2: introduce vstatus/new_reg_req variables to driver data
+Date: Tue, 21 Apr 2026 00:19:36 +0500
+Message-ID: <20260420191941.81834-2-adilov@disroot.org>
 In-Reply-To: <20260420191941.81834-1-adilov@disroot.org>
 References: <20260420191941.81834-1-adilov@disroot.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260420_122018_720985_975F5095 
-X-CRM114-Status: UNSURE (   9.80  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260420_122019_929759_6B495FAE 
+X-CRM114-Status: GOOD (  12.21  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,89 +80,217 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add the "realtek,rtl9607-usb2phy" compatible for USB2 PHY on the RTL9607C
-SoC series.
+In RTL9607C SoC, the vstatus register is located at a certain offset from
+the base and so introduce the vstatus_offset to handle it.
 
-Add a resets property to properties to describe the usb2phy reset line.
+Busy bit of the vstatus and new_reg_req bit are also different and so
+introduce these variables to the driver data as well.
 
-In RTL9607C, USB2 PHY reset line is from "IP Enable controller" which is
-multipurpose and handle activating various SoC peripherals.
+Add these variables to the pre-existing phy cfg structs for RTD SoCs and
+assign them the default values.
 
-It is unclear whether RTD SoCs have something similar to that so set
-the resets to false for these devices.
-
-RTL9607C requires the "resets" to be specified so add the corresponding
-if check for the "realtek,rtl9607-usb2phy" compatible.
-
+Co-developed-by: Michael Zavertkin <misha.zavertkin@mail.ru>
+Signed-off-by: Michael Zavertkin <misha.zavertkin@mail.ru>
 Signed-off-by: Rustam Adilov <adilov@disroot.org>
 ---
- .../bindings/phy/realtek,usb2phy.yaml         | 25 ++++++++++++++++++-
- 1 file changed, 24 insertions(+), 1 deletion(-)
+ drivers/phy/realtek/phy-rtk-usb2.c | 67 +++++++++++++++++++++++-------
+ 1 file changed, 52 insertions(+), 15 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/realtek,usb2phy.yaml b/Documentation/devicetree/bindings/phy/realtek,usb2phy.yaml
-index 9911ada39ee7..7b50833c8e19 100644
---- a/Documentation/devicetree/bindings/phy/realtek,usb2phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/realtek,usb2phy.yaml
-@@ -11,7 +11,8 @@ maintainers:
-   - Stanley Chang <stanley_chang@realtek.com>
+diff --git a/drivers/phy/realtek/phy-rtk-usb2.c b/drivers/phy/realtek/phy-rtk-usb2.c
+index 248550ef98ca..f5f943518d4f 100644
+--- a/drivers/phy/realtek/phy-rtk-usb2.c
++++ b/drivers/phy/realtek/phy-rtk-usb2.c
+@@ -64,6 +64,9 @@ struct phy_reg {
+ 	void __iomem *reg_wrap_vstatus;
+ 	void __iomem *reg_gusb2phyacc0;
+ 	int vstatus_index;
++	int vstatus_offset;
++	u32 vstatus_busy;
++	u32 new_reg_req;
+ };
  
- description: |
--  Realtek USB 2.0 PHY support the digital home center (DHC) RTD series SoCs.
-+  Realtek USB 2.0 PHY support the digital home center (DHC) RTD and
-+  RTL9607C series SoCs.
-   The USB 2.0 PHY driver is designed to support the XHCI controller. The SoCs
-   support multiple XHCI controllers. One PHY device node maps to one XHCI
-   controller.
-@@ -57,6 +58,12 @@ description: |
-   XHCI controller#1 -- usb2phy -- phy#0
-   XHCI controller#2 -- usb2phy -- phy#0
+ struct phy_data {
+@@ -96,6 +99,9 @@ struct phy_cfg {
+ 	bool do_toggle_driving;
+ 	bool use_default_parameter;
+ 	bool is_double_sensitivity_mode;
++	int vstatus_offset;
++	u32 vstatus_busy;
++	u32 new_reg_req;
+ };
  
-+  RTL9607C SoCs USB
-+  The USB architecture includes OHCI and EHCI controllers.
-+  Both of them map to one USB2.0 PHY.
-+  OHCI controller#0 -- usb2phy -- phy#0
-+  EHCI controller#0 -- usb2phy -- phy#0
-+
- properties:
-   compatible:
-     enum:
-@@ -69,6 +76,7 @@ properties:
-       - realtek,rtd1395-usb2phy-2port
-       - realtek,rtd1619-usb2phy
-       - realtek,rtd1619b-usb2phy
-+      - realtek,rtl9607-usb2phy
+ struct phy_parameter {
+@@ -162,21 +168,21 @@ static char rtk_phy_read(struct phy_reg *phy_reg, char addr)
+ 	addr -= OFFEST_PHY_READ;
  
-   reg:
-     items:
-@@ -130,6 +138,9 @@ properties:
-     minimum: -8
-     maximum: 8
+ 	/* polling until VBusy == 0 */
+-	ret = utmi_wait_register(reg_gusb2phyacc0, PHY_VSTS_BUSY, 0);
++	ret = utmi_wait_register(reg_gusb2phyacc0, phy_reg->vstatus_busy, 0);
+ 	if (ret)
+ 		return (char)ret;
  
-+  resets:
-+    maxItems: 1
-+
- required:
-   - compatible
-   - reg
-@@ -157,6 +168,18 @@ allOf:
-     then:
-       properties:
-         realtek,driving-level-compensate: false
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            enum:
-+              - realtek,rtl9607-usb2phy
-+    then:
-+      required:
-+        - resets
-+    else:
-+      properties:
-+        resets: false
+-	/* VCtrl = low nibble of addr, and set PHY_NEW_REG_REQ */
+-	val = PHY_NEW_REG_REQ | (GET_LOW_NIBBLE(addr) << PHY_VCTRL_SHIFT);
++	/* VCtrl = low nibble of addr, and set phy_reg->new_reg_req */
++	val = phy_reg->new_reg_req | (GET_LOW_NIBBLE(addr) << PHY_VCTRL_SHIFT);
+ 	writel(val, reg_gusb2phyacc0);
+-	ret = utmi_wait_register(reg_gusb2phyacc0, PHY_VSTS_BUSY, 0);
++	ret = utmi_wait_register(reg_gusb2phyacc0, phy_reg->vstatus_busy, 0);
+ 	if (ret)
+ 		return (char)ret;
  
- additionalProperties: false
+-	/* VCtrl = high nibble of addr, and set PHY_NEW_REG_REQ */
+-	val = PHY_NEW_REG_REQ | (GET_HIGH_NIBBLE(addr) << PHY_VCTRL_SHIFT);
++	/* VCtrl = high nibble of addr, and set phy_reg->new_reg_req */
++	val = phy_reg->new_reg_req | (GET_HIGH_NIBBLE(addr) << PHY_VCTRL_SHIFT);
+ 	writel(val, reg_gusb2phyacc0);
+-	ret = utmi_wait_register(reg_gusb2phyacc0, PHY_VSTS_BUSY, 0);
++	ret = utmi_wait_register(reg_gusb2phyacc0, phy_reg->vstatus_busy, 0);
+ 	if (ret)
+ 		return (char)ret;
  
+@@ -194,25 +200,25 @@ static int rtk_phy_write(struct phy_reg *phy_reg, char addr, char data)
+ 	int ret = 0;
+ 
+ 	/* write data to VStatusOut2 (data output to phy) */
+-	writel((u32)data << shift_bits, reg_wrap_vstatus);
++	writel((u32)data << shift_bits, reg_wrap_vstatus + phy_reg->vstatus_offset);
+ 
+-	ret = utmi_wait_register(reg_gusb2phyacc0, PHY_VSTS_BUSY, 0);
++	ret = utmi_wait_register(reg_gusb2phyacc0, phy_reg->vstatus_busy, 0);
+ 	if (ret)
+ 		return ret;
+ 
+-	/* VCtrl = low nibble of addr, set PHY_NEW_REG_REQ */
+-	val = PHY_NEW_REG_REQ | (GET_LOW_NIBBLE(addr) << PHY_VCTRL_SHIFT);
++	/* VCtrl = low nibble of addr, set phy_reg->new_reg_req */
++	val = phy_reg->new_reg_req | (GET_LOW_NIBBLE(addr) << PHY_VCTRL_SHIFT);
+ 
+ 	writel(val, reg_gusb2phyacc0);
+-	ret = utmi_wait_register(reg_gusb2phyacc0, PHY_VSTS_BUSY, 0);
++	ret = utmi_wait_register(reg_gusb2phyacc0, phy_reg->vstatus_busy, 0);
+ 	if (ret)
+ 		return ret;
+ 
+-	/* VCtrl = high nibble of addr, set PHY_NEW_REG_REQ */
+-	val = PHY_NEW_REG_REQ | (GET_HIGH_NIBBLE(addr) << PHY_VCTRL_SHIFT);
++	/* VCtrl = high nibble of addr, set phy_reg->new_reg_req */
++	val = phy_reg->new_reg_req | (GET_HIGH_NIBBLE(addr) << PHY_VCTRL_SHIFT);
+ 
+ 	writel(val, reg_gusb2phyacc0);
+-	ret = utmi_wait_register(reg_gusb2phyacc0, PHY_VSTS_BUSY, 0);
++	ret = utmi_wait_register(reg_gusb2phyacc0, phy_reg->vstatus_busy, 0);
+ 	if (ret)
+ 		return ret;
+ 
+@@ -957,6 +963,7 @@ static int get_phy_data_by_efuse(struct rtk_phy *rtk_phy,
+ 
+ static int parse_phy_data(struct rtk_phy *rtk_phy)
+ {
++	struct phy_cfg *phy_cfg = rtk_phy->phy_cfg;
+ 	struct device *dev = rtk_phy->dev;
+ 	struct device_node *np = dev->of_node;
+ 	struct phy_parameter *phy_parameter;
+@@ -974,6 +981,9 @@ static int parse_phy_data(struct rtk_phy *rtk_phy)
+ 		phy_parameter->phy_reg.reg_wrap_vstatus = of_iomap(np, 0);
+ 		phy_parameter->phy_reg.reg_gusb2phyacc0 = of_iomap(np, 1) + index;
+ 		phy_parameter->phy_reg.vstatus_index = index;
++		phy_parameter->phy_reg.vstatus_offset = phy_cfg->vstatus_offset;
++		phy_parameter->phy_reg.vstatus_busy = phy_cfg->vstatus_busy;
++		phy_parameter->phy_reg.new_reg_req = phy_cfg->new_reg_req;
+ 
+ 		if (of_property_read_bool(np, "realtek,inverse-hstx-sync-clock"))
+ 			phy_parameter->inverse_hstx_sync_clock = true;
+@@ -1085,6 +1095,9 @@ static const struct phy_cfg rtd1295_phy_cfg = {
+ 	.driving_updated_for_dev_dis = 0xf,
+ 	.use_default_parameter = false,
+ 	.is_double_sensitivity_mode = false,
++	.vstatus_offset = 0,
++	.vstatus_busy = PHY_VSTS_BUSY,
++	.new_reg_req = PHY_NEW_REG_REQ,
+ };
+ 
+ static const struct phy_cfg rtd1395_phy_cfg = {
+@@ -1109,6 +1122,9 @@ static const struct phy_cfg rtd1395_phy_cfg = {
+ 	.driving_updated_for_dev_dis = 0xf,
+ 	.use_default_parameter = false,
+ 	.is_double_sensitivity_mode = false,
++	.vstatus_offset = 0,
++	.vstatus_busy = PHY_VSTS_BUSY,
++	.new_reg_req = PHY_NEW_REG_REQ,
+ };
+ 
+ static const struct phy_cfg rtd1395_phy_cfg_2port = {
+@@ -1133,6 +1149,9 @@ static const struct phy_cfg rtd1395_phy_cfg_2port = {
+ 	.driving_updated_for_dev_dis = 0xf,
+ 	.use_default_parameter = false,
+ 	.is_double_sensitivity_mode = false,
++	.vstatus_offset = 0,
++	.vstatus_busy = PHY_VSTS_BUSY,
++	.new_reg_req = PHY_NEW_REG_REQ,
+ };
+ 
+ static const struct phy_cfg rtd1619_phy_cfg = {
+@@ -1155,6 +1174,9 @@ static const struct phy_cfg rtd1619_phy_cfg = {
+ 	.driving_updated_for_dev_dis = 0xf,
+ 	.use_default_parameter = false,
+ 	.is_double_sensitivity_mode = false,
++	.vstatus_offset = 0,
++	.vstatus_busy = PHY_VSTS_BUSY,
++	.new_reg_req = PHY_NEW_REG_REQ,
+ };
+ 
+ static const struct phy_cfg rtd1319_phy_cfg = {
+@@ -1181,6 +1203,9 @@ static const struct phy_cfg rtd1319_phy_cfg = {
+ 	.driving_updated_for_dev_dis = 0xf,
+ 	.use_default_parameter = false,
+ 	.is_double_sensitivity_mode = true,
++	.vstatus_offset = 0,
++	.vstatus_busy = PHY_VSTS_BUSY,
++	.new_reg_req = PHY_NEW_REG_REQ,
+ };
+ 
+ static const struct phy_cfg rtd1312c_phy_cfg = {
+@@ -1206,6 +1231,9 @@ static const struct phy_cfg rtd1312c_phy_cfg = {
+ 	.driving_updated_for_dev_dis = 0xf,
+ 	.use_default_parameter = false,
+ 	.is_double_sensitivity_mode = true,
++	.vstatus_offset = 0,
++	.vstatus_busy = PHY_VSTS_BUSY,
++	.new_reg_req = PHY_NEW_REG_REQ,
+ };
+ 
+ static const struct phy_cfg rtd1619b_phy_cfg = {
+@@ -1231,6 +1259,9 @@ static const struct phy_cfg rtd1619b_phy_cfg = {
+ 	.driving_updated_for_dev_dis = 0x8,
+ 	.use_default_parameter = false,
+ 	.is_double_sensitivity_mode = true,
++	.vstatus_offset = 0,
++	.vstatus_busy = PHY_VSTS_BUSY,
++	.new_reg_req = PHY_NEW_REG_REQ,
+ };
+ 
+ static const struct phy_cfg rtd1319d_phy_cfg = {
+@@ -1256,6 +1287,9 @@ static const struct phy_cfg rtd1319d_phy_cfg = {
+ 	.driving_updated_for_dev_dis = 0x8,
+ 	.use_default_parameter = false,
+ 	.is_double_sensitivity_mode = true,
++	.vstatus_offset = 0,
++	.vstatus_busy = PHY_VSTS_BUSY,
++	.new_reg_req = PHY_NEW_REG_REQ,
+ };
+ 
+ static const struct phy_cfg rtd1315e_phy_cfg = {
+@@ -1282,6 +1316,9 @@ static const struct phy_cfg rtd1315e_phy_cfg = {
+ 	.driving_updated_for_dev_dis = 0x8,
+ 	.use_default_parameter = false,
+ 	.is_double_sensitivity_mode = true,
++	.vstatus_offset = 0,
++	.vstatus_busy = PHY_VSTS_BUSY,
++	.new_reg_req = PHY_NEW_REG_REQ,
+ };
+ 
+ static const struct of_device_id usbphy_rtk_dt_match[] = {
 -- 
 2.53.0
 
