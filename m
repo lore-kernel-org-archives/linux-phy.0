@@ -4,46 +4,46 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C73B1F94CC3
-	for <linux-phy@archiver.kernel.org>; Wed, 22 Apr 2026 06:27:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5F7AEF94CC3
+	for <linux-phy@archiver.kernel.org>; Wed, 22 Apr 2026 06:27:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2frqqf0l4JaT8QQG9KYxqj31qUlA9mjvZRNUm2ZMNXg=; b=SQDI8Ooad/OgC9
-	Wbsctqc7tQ1ehPoGzGch2IxemjlBUe3D6ERzXPEFJOlSvSdf0OKHPyHDPWmUE0nwJSBYLyPubZzlA
-	ATt8iuBoTzk1xBGF9usqIFP29yCTWrh6qiqSEnMb0ZeUzH01P348VXRkX/NDzVea2BtDimwYGxKaW
-	Tjbhuv4H6bHHhtYopNERsi9KgjAGFPF7vnd4OVv5mMJRwpPogideSRLGZvys5/ocncwhiNqMXiFov
-	1b0PJ8/9nD8xElF1YPQJdRJ2LldQc29O75IVbrqQ1FeNwxTJGD2/cIGsePwAC71YcfW4KXJBldqj3
-	8rM1KCjkRrXt4BvBsBuA==;
+	List-Owner; bh=1m6wY/YGPDA5ldVNEEWsTZVaDL/FqOTWvPPd5tnZ4eI=; b=n/wnz/BO9TQbQZ
+	wvVrO2KXMm6IVYS4ICQaRs8lIOFpUsSUzc0NZSjrtoQ6ZfyM0DA/7ksmCtKD5jwbk2ILzu+1dIUEQ
+	sMV+TKeivNwfDnLYf0gr8sh9VEDvT68aPrqc+yoOwfH0flUQxJFM/WP8G39g0qMjSbJVz2aPw3g35
+	KUkjIn829BrzIAJW9dPMeMmGXD2rLl5mdJFCpjYZ+6N6dLjFKh5VQLFBFxgA+PPPTeT+SpZpZY6mQ
+	Arj2aJfphwyXU3Zh6WSAY3a6T9aXMXNLsWNvmvEVp9YlPm1unOgI4tE48O9/VyOXyByONKyzGhFNp
+	6y7ufcAVfE1hknfplv+g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wFR3G-00000009f7n-2NIX;
-	Wed, 22 Apr 2026 06:27:10 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1wFR3h-00000009f9D-3VN0;
+	Wed, 22 Apr 2026 06:27:37 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wFR3E-00000009f7e-2JRz
+	id 1wFR3h-00000009f97-0taQ
 	for linux-phy@lists.infradead.org;
-	Wed, 22 Apr 2026 06:27:08 +0000
+	Wed, 22 Apr 2026 06:27:37 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 4F07D600CB;
-	Wed, 22 Apr 2026 06:27:07 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3B7FEC19425;
-	Wed, 22 Apr 2026 06:27:04 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 546136001A;
+	Wed, 22 Apr 2026 06:27:36 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5543BC19425;
+	Wed, 22 Apr 2026 06:27:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1776839227;
-	bh=6Rb4qSyzBQA/nmJgjgImV5t7kEoEhRWY6UXH+BsuQgk=;
+	s=k20201202; t=1776839256;
+	bh=+SIqJ8k3Ofu+hDR+0W066dLrUyDNulLp2dsa8s7SKmU=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=c0YYMrmtpZroghKk9iC30BnaH8PZDEz6otGdJPi4wLMiz7P0mzl53MG71gA7PVuxp
-	 FhyTfusDq2NGPCdFwnqAL04wtSgxv+tPY9mBY8AStfSdcpTWP98rwXjpxcP0cPtXL1
-	 dHcvxMwMUPIeVLDGbYffhaFWjbMhub3/LnpN5s0+Hi9VHd3zUj1iYNmnb/GK7CQYHJ
-	 gGPcVmOTOsN0nrPdfwsC58+r1uDOydrinBqaQ9xRFUaBzqRE6tC6O7SKFHn1dceH1l
-	 zKiZJTjKsqFJeeqLIrDgnRZZPGSLTD+HSsYxoA5K00Wso30qW1GQv1XS8MsiRnIY0L
-	 JVvdN0riJQDHQ==
-Message-ID: <fb6e8d3c-4cb1-4c20-a570-e9f6ae9a651c@kernel.org>
-Date: Wed, 22 Apr 2026 08:27:02 +0200
+	b=pmOmhxlg7Zkis6wJ5Gx11GlCbY48THRYq/sequKTFcEgJUdOYSPZJD2XbTXPc0kAX
+	 9pUB7VPsfHAtc8/tTmI0lJmf6daJZmrZooZk1xFRTeVn5FFjwEZbR5iTCOI8NphLVT
+	 qF72kUEU9TnyaUG//REF6zfn8JUwVfpsF4fbQYSvPT8tnkU6S7ULKdiZVBRt/IK6N2
+	 p1gWH2T+tP2PaSOtNumlj7ZD2CMQCfQnfsdLGDiKn4IknL3XYOSDv6F6GLflw6NdCp
+	 pmVDu9ynrv7gtS69+uFKbVoSEzvhpJWxxUfhSxz/zbrr6uYMi2tmtl0YSjNMYUSoK/
+	 mmGPJMUmPcNHQ==
+Message-ID: <3b21c15e-942a-4a01-a083-8fbe33197690@kernel.org>
+Date: Wed, 22 Apr 2026 08:27:31 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v3 1/5] dt-bindings: phy: qcom,sc8280xp-qmp-pcie-phy: Add
@@ -61,6 +61,8 @@ References: <20260412-glymur_gen5x8_phy_0413-v3-0-affcebc16b8b@oss.qualcomm.com>
  <20260412-glymur_gen5x8_phy_0413-v3-1-affcebc16b8b@oss.qualcomm.com>
  <20260415-wooden-prawn-of-lightning-dc1ddc@quoll>
  <aeBQRStG3imY0cOe@hu-qianyu-lv.qualcomm.com>
+ <20260417-awesome-tacky-coot-e59a30@quoll>
+ <aeXUZ1uSEJ9InUtw@hu-qianyu-lv.qualcomm.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -106,7 +108,7 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <aeBQRStG3imY0cOe@hu-qianyu-lv.qualcomm.com>
+In-Reply-To: <aeXUZ1uSEJ9InUtw@hu-qianyu-lv.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -123,32 +125,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 16/04/2026 04:58, Qiang Yu wrote:
->>>    reset-names:
->>>      minItems: 1
->>>      items:
->>>        - const: phy
->>>        - const: phy_nocsr
->>> +      - const: phy_b
->>> +      - const: phy_b_nocsr
+On 20/04/2026 09:23, Qiang Yu wrote:
+>>> It is not the same as the 5x4 PHY. In DT, we model three PHY nodes:
+>>> phy_3a (1x4), phy_3b (1x4), and a separate phy_1x8 node for x8 mode.
 >>
->> And now I doubt that all the changes here are for duplicated node.
+>> OK, that's what I wanted to hear. And that's what should not be done,
 >>
-> 
-> All the changes here are for 1x8 PHY node.
-> 
->> Maybe just the commit msg is confusing and instead of describing some
->> node which combines two other phys just say what device is here being
->> described.
+>> You should not have a separate node for the same hardware. First, DTC
+>> will give you a W=1 warning, although warning itself should be moved to
+>> W=2.
 >>
+>> Second, the warning tells important story - same hardware is described
+>> twice.
+>>
+>> You only need phy_3a and phy_3b, so only two in total.
 > 
-> Okay, I will focus on describing the required resources. Is the
-> description below clearer?
-> 
-> Glymur has two physical Gen5x4 PCIe PHY blocks: pcie3a phy and pcie3b phy.
+> We can keep only phy_3a and phy_3b, but still add new compatible
+> qcom,glymur-qmp-gen5x8-pcie-phy in binding, right?
 
 
-I just proven you that it is not true.
+No, you cannot. You cannot create fake device nodes.
 
 Best regards,
 Krzysztof
