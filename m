@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6DDF8FF885D
-	for <linux-phy@archiver.kernel.org>; Sat, 25 Apr 2026 10:31:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 95E75FF885C
+	for <linux-phy@archiver.kernel.org>; Sat, 25 Apr 2026 10:32:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NpqYbV1Dn9M1n/IjS9Mv+uY5pmSxj8mVMPHkVlrDygM=; b=E6q6g4GsiTZPbU
-	FSH3GwKBjF13hdxyHHnj/IDNvZdg6KJNqEoJj+gOJNmU3mHpYCoSiogmz6yOWei5odz3krBhbvi7d
-	TQaopf4jMB2LqpnqufGJp0OJQIm4Bi7/xNeFeS2CwtljNhyhgrz5pHM2EZHHlJBYDA6+xhHzgp6F/
-	v6GIN442V7X9dUgTYEv89hfcRriwzL/Iq2z1uoSHDaZHjHgmEiL/rTo+DaCqiqFCfN5RnJWWVQmTs
-	O7Wu4Gkr814VLL7dCfZIOwi0Aft8Eqyd1wGiLVQZC49oqoqlrSTJBqM9Ava6dBxtv7bbMZHiMnUpt
-	KtMZQm8xXX+qL9rpYRMA==;
+	List-Owner; bh=0bC13H9h+zpBEcvdzQpzz8uw8PHPNIiNFEfmt1gXJNs=; b=1y1TsNdM9eBzx6
+	owu4Io3M4v6H93rdYOAd9vQ7+UezIJ1k1t3bS1IIDOAB0g8x8Pz0AYCDr4ECTQzvdS6qTBiMa2ysO
+	UdNE6Meih9JnfLJzneEbvG4Sqf+PKbe32d0WQ+fR9vERsChcBNJc/jukliEOM3qnCgZiwIBthtMYr
+	1RlCLKhPvrNHDdwgwLRavtYYI1yoOUdfSekIdOQmh7Pwthrd45gX8X3dxFG0s6rJbadpMfVFz6EvT
+	ysjfWfjerTrMzyjeS7pj5yFLEnvp6bGJ/rTdBeoUy+Q48XcUzIOsnicBt7rg5q0pefw2JuBgSErJf
+	SF181nN8AuG02QUrB4QQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wGaHz-0000000ELYP-0Db5;
-	Sat, 25 Apr 2026 10:31:07 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wGaIu-0000000ELar-1RTM;
+	Sat, 25 Apr 2026 10:32:04 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wGaHv-0000000ELY2-493i
+	id 1wGaIt-0000000ELak-3qXK
 	for linux-phy@lists.infradead.org;
-	Sat, 25 Apr 2026 10:31:05 +0000
+	Sat, 25 Apr 2026 10:32:03 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 894C540B21;
-	Sat, 25 Apr 2026 10:31:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E8B44C2BCB0;
-	Sat, 25 Apr 2026 10:31:02 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id DF9B360052;
+	Sat, 25 Apr 2026 10:32:02 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E4E27C2BCB0;
+	Sat, 25 Apr 2026 10:32:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1777113063;
-	bh=3bUHD2YRRtUg0cgqA7r55OGxjlDxRc+QgJkJJZZyiCY=;
+	s=k20201202; t=1777113122;
+	bh=4DVuXvTYmVYipPsUJoa6EH06pMLRwKzKbnAs09ruEM8=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=IpHfHfvgAo51SnLX4WHrNu2umSPY43TiJoZMP5jLlmZYcah1HjCNJQK4ncGHB2Dif
-	 QncX2f1nDfcTrgsget9L+w/VmjfZu2qgz1qFxpbVKWy3ktV3kFWf9v8WCY1zM6cvwJ
-	 ZdDsVDtB+6CcqYQlQOyRoyOWm8BN6EhhWOmWj/xe6ARL0BLpCx/sR3oQoBx+jfA65V
-	 Q4ALOf0CeaOGO5L+iPlAGTrgYxdI0z5T3e4heg8neDlJtSF3kDHuppyoO9X0L2rkmZ
-	 WtM/gb85mkqpgADUg9WPteb/kTitNV43EkgNvfu7ctdj4aw9ATa849ZX5hqIzNY2Y4
-	 eos6ZgyJKVNsQ==
-Date: Sat, 25 Apr 2026 12:31:01 +0200
+	b=kShwqNNPEaY3f9gQcEXJNT+fnykzvRPkvxXUlQjre+fPf6VXYoNeg8r/3Ns0wLitk
+	 rYwxYiJu4MVjMbC96ERRN1EwiDcKwdilrF4jj2Y4r469m+sEIutIkg65SQy2cmY3Rb
+	 Wmtvf+4ODBuRsGSq1pyyWHB6fk1+oxLegVov3iJaJw2HrYIODDlYcVO21gpnUjaFP4
+	 th8Rukcl7OA3Ty88n7txnbu1tkZngit1IPEBSjiiNYHn8Kkvx6WtGgtHc5qpfVg23y
+	 PIo94ICGMztWG1+RWZWygyHuer2vLlRZvpvolkCa2G3DULrOzSAwMcEEDBqm3m3h6B
+	 3zspxMz/1DzYA==
+Date: Sat, 25 Apr 2026 12:32:00 +0200
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Ronak Raheja <ronak.raheja@oss.qualcomm.com>
 Cc: vkoul@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, 
@@ -50,18 +50,13 @@ Cc: vkoul@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
 	dmitry.baryshkov@oss.qualcomm.com, konrad.dybcio@oss.qualcomm.com, abel.vesa@oss.qualcomm.com, 
 	wesley.cheng@oss.qualcomm.com, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
 	devicetree@vger.kernel.org, linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 2/4] dt-bindings: phy: qcom,m31-eusb2-phy: Document M31
- eUSB2 PHY for Hawi
-Message-ID: <20260425-unique-powerful-zebra-cf5d42@quoll>
+Subject: Re: [PATCH 3/4] dt-bindings: usb: qcom,snps-dwc3: Add Hawi compatible
+Message-ID: <20260425-organic-basilisk-of-exercise-f14c6d@quoll>
 References: <20260425070002.348733-1-ronak.raheja@oss.qualcomm.com>
- <20260425070002.348733-3-ronak.raheja@oss.qualcomm.com>
+ <20260425070002.348733-4-ronak.raheja@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260425070002.348733-3-ronak.raheja@oss.qualcomm.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260425_033104_042878_9B95EF3C 
-X-CRM114-Status: UNSURE (   9.12  )
-X-CRM114-Notice: Please train this message.
+In-Reply-To: <20260425070002.348733-4-ronak.raheja@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,15 +73,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sat, Apr 25, 2026 at 12:00:00AM -0700, Ronak Raheja wrote:
-> Document the M31 eUSB2 PHY for Hawi which handles the USB2 path. Use
-> fallback to indicate the compatibility of the M31 eUSB2 PHY on the Hawi
-> with that on the SM8750.
+On Sat, Apr 25, 2026 at 12:00:01AM -0700, Ronak Raheja wrote:
+> Document the Synopsys DWC3 USB controller found on the Hawi platform.
 > 
 > Signed-off-by: Ronak Raheja <ronak.raheja@oss.qualcomm.com>
 > ---
->  Documentation/devicetree/bindings/phy/qcom,m31-eusb2-phy.yaml | 1 +
->  1 file changed, 1 insertion(+)
+>  Documentation/devicetree/bindings/usb/qcom,snps-dwc3.yaml | 3 +++
+>  1 file changed, 3 insertions(+)
 
 Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
 
