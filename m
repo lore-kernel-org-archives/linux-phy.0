@@ -4,39 +4,40 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9265DFF8861
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8F6C2FF885C
 	for <linux-phy@archiver.kernel.org>; Sat, 25 Apr 2026 17:37:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=m3mwl9BeZpr5N1lythYMWdLF5fASvpgp4iDA2q215Xk=; b=sOLoZE6MWxC5Yl
-	lyTYPUR3M/kDXChU4H2QIwzeY6gfjteqmo4WK29VJdj9Y2MVQj10Ic8HaOZDYYV0i6eFEAs0Vo/Cu
-	6utCmEXJJEsjWIz7H85s00LwY8SQKXI2Tejoqx9RubTg177Gf3Hg8jQwpQmRDiLLbBQzbdJCtGLiy
-	RGIo4JDWp70V7IdBUBjpi2T+g6RivU924aTiA69aoN9MgyytThcGhjAbcZ6y/nBMdXy+u/GDWSUoY
-	AqoYFqMdK6rCR954QN+k65lEFc5BorJATH2Xa2423iLTvekUpJE1Fd8VPtzyqyDG5ndLZE4sPiAb3
-	kfDRv86ETl5F3Xi6fczg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xSACFvyRIou5KgzEq1Mn11K666pZ7P3tRkSVaugiiuQ=; b=p5D+Z+0iGT9yKO
+	GUTjYkZP3QUJcq4FTPzxoil9P4cfFy2KB029cr9Y5owvsI/sd5XXJg8ZwuyPvhTibDvjyThRq3ITa
+	HlBerDi0oyPmXgOnODczZnlY5+PB8LKepxMX2CLv5GjKklEHOvDuOM8OrZjT2GctB6GU3/cD1/2n0
+	753zlr9h2JfewQZ2yehbeRRuTfxJ2NOjBf0R1N2O4cwbousdFp7QidLuxQwPWrUXPLVSW0RwSzxZr
+	yJrRGLiw2v2IHr8rZ/lX6yah4xlK5CoXKi4RGKOZuZmJiAVEdu3n7T5noX0A0Hx3dsZEIsYitXM7Y
+	AoSrXRtFLJ4km9gMLdzA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wGgw9-0000000Ebn2-30ro;
+	id 1wGgw9-0000000Ebn6-42Bd;
 	Sat, 25 Apr 2026 17:37:01 +0000
 Received: from mail.cjdns.fr ([5.135.140.105])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wGgw6-0000000Eblj-415R
+	id 1wGgw7-0000000EbmA-2bwq
 	for linux-phy@lists.infradead.org;
-	Sat, 25 Apr 2026 17:37:00 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 3C0B11E9463;
-	Sat, 25 Apr 2026 19:36:46 +0200 (CEST)
+	Sat, 25 Apr 2026 17:37:01 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 000A01EA4B0;
+	Sat, 25 Apr 2026 19:36:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cjdns.fr; s=dkim;
-	t=1777138610; h=from:subject:date:message-id:to:cc:mime-version:
-	 content-transfer-encoding; bh=5WGZ+bSSVS+1Vma9J9tn28vMMSbvmT6sMd+kIPkaZtk=;
-	b=qRbUKiOtTCmWQOtAJPYD0l/oZ/AaSVMv5QE5Yb+RWEXetBAtaBrSxjW5rcwT0IlWAysUcQ
-	xxpYRkmx1dyi6yrjY6LSyyy2+RsrBUf+1vmxzOKvwpZS+l+JRFqrXgoBPfF+jvU8pOM1wc
-	oOHjdo9jkrWvk6WoKhGrrzeHbWme6fmWDUrqAWxz0oaeYO2iyeJ13WYVxR74AMzxA5DMnE
-	HKMQdpvP4mVawndaQCxxVxS3sPOEEzTRfK0k17z/wOsAguMeWGsyLoZTdUswXjLfQWDeDG
-	e5KKgzXibAV7xjQ+82qzmN7Yl7lGwQHjRnNyJx/Bn8u/GxW5v1dLBRIkFkzNvg==
+	t=1777138615; h=from:subject:date:message-id:to:cc:mime-version:
+	 content-transfer-encoding:in-reply-to:references;
+	bh=vAWEtBcMRpyH/TOstbLm2FMWRi/LxSu+44PiFK5+3hE=;
+	b=IEA/Jrj1MqS9HrKw9hIOVGV5dQ5CjY74DruFSsGNkXW+ub+gS9MOcgXD+QCwE4xAbzZHMU
+	qI2et8mMiKHTpyAN82uX9NKuDw3y61u6fEN8SJC7MlrSBSO7EzVKrv+qVe6CdCOCocMYh0
+	3zXjez1fFikHUAGee8RK9YjPnz+BkNLjJNqGEuX8aa68/KGM8kWRkL0HeFKl1wFRnsFg1C
+	Jnq4fCrX56N2qZNV9X1GcScZFcGYSbeFxnkgi1PnZW0s38SrJtolslyP6+vgOmeM2GTeRi
+	rPcyzqWP6F4PNOsMm+8Hv8ODsPCBQI7LXXoezQuATqEFjHxKTDXCJ1oIf3jVLQ==
 From: Caleb James DeLisle <cjd@cjdns.fr>
 To: linux-phy@lists.infradead.org
 Cc: naseefkm@gmail.com,
@@ -49,15 +50,16 @@ Cc: naseefkm@gmail.com,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org,
 	Caleb James DeLisle <cjd@cjdns.fr>
-Subject: [PATCH v3 0/2] phy: econet: Add PCIe PHY driver for EcoNet SoCs
-Date: Sat, 25 Apr 2026 17:36:40 +0000
-Message-Id: <20260425173642.406089-1-cjd@cjdns.fr>
+Subject: [PATCH v3 2/2] phy: econet: Add PCIe PHY driver for EcoNet EN751221 and EN7528 SoCs.
+Date: Sat, 25 Apr 2026 17:36:42 +0000
+Message-Id: <20260425173642.406089-3-cjd@cjdns.fr>
+In-Reply-To: <20260425173642.406089-1-cjd@cjdns.fr>
+References: <20260425173642.406089-1-cjd@cjdns.fr>
 MIME-Version: 1.0
 X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260425_103659_215168_658C0105 
-X-CRM114-Status: UNSURE (   7.67  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260425_103700_039584_D32A852D 
+X-CRM114-Status: GOOD (  21.79  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,45 +76,257 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-I just added explicit includes per the recommendation of
-vladimiroltean/sashiko
-See https://sashiko.dev/#/patchset/20260404184918.2184070-1-cjd@cjdns.fr
+Introduce support for EcoNet PCIe PHY controllers found in EN751221
+and EN7528 SoCs, these SoCs are not identical but are similar, each
+having one Gen1 port, and one Gen1/Gen2 port.
 
-Changes from v2:
-* Added includes per recommendation of vladimiroltean/sashiko
-* Rebased on commit 7080e32d3f09 ("Add linux-next specific files for 20260424")
-* v2: https://lore.kernel.org/linux-mips/20260404184918.2184070-1-cjd@cjdns.fr/
-
-Changes from v1:
-* Rebased on commit 2febe6e6ee6e ("Add linux-next specific files for 20260403")
-* v1: https://lore.kernel.org/linux-mips/20260312164432.569566-1-cjd@cjdns.fr/
-
-This is split from a larger PCIe patchset which crossed multiple
-subsystems. I'm not labeling this a v3 because it's a new patchset, but
-I'm keeping the historical record anyway.
-
-Changes from econet-pcie v2: none relevant to this patch set
-* econet-pcie v2: https://lore.kernel.org/linux-mips/20260309131818.74467-1-cjd@cjdns.fr
-
-Changes from econet-pcie v1:
-* econet,en751221-pcie-phy.yaml Refer to PHYs as "gen1" and "gen2"
-* econet-pcie v1: https://lore.kernel.org/linux-mips/20260303190948.694783-1-cjd@cjdns.fr/
-
-Caleb James DeLisle (2):
-  dt-bindings: phy: Document PCIe PHY in EcoNet EN751221 and EN7528
-  phy: econet: Add PCIe PHY driver for EcoNet EN751221 and EN7528 SoCs.
-
- .../phy/econet,en751221-pcie-phy.yaml         |  50 +++++
- MAINTAINERS                                   |   7 +
- drivers/phy/Kconfig                           |  12 ++
- drivers/phy/Makefile                          |   1 +
- drivers/phy/phy-econet-pcie.c                 | 182 ++++++++++++++++++
- 5 files changed, 252 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/phy/econet,en751221-pcie-phy.yaml
+Co-developed-by: Ahmed Naseef <naseefkm@gmail.com>
+Signed-off-by: Ahmed Naseef <naseefkm@gmail.com>
+[cjd@cjdns.fr: add EN751221 support and refactor for clarity]
+Signed-off-by: Caleb James DeLisle <cjd@cjdns.fr>
+---
+ MAINTAINERS                   |   1 +
+ drivers/phy/Kconfig           |  12 +++
+ drivers/phy/Makefile          |   1 +
+ drivers/phy/phy-econet-pcie.c | 182 ++++++++++++++++++++++++++++++++++
+ 4 files changed, 196 insertions(+)
  create mode 100644 drivers/phy/phy-econet-pcie.c
 
-
-base-commit: 7080e32d3f09d8688c4a87d81bdcc71f7f606b16
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 6fc1f54c31d2..e7d7672c8ab3 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -9190,6 +9190,7 @@ M:	Caleb James DeLisle <cjd@cjdns.fr>
+ L:	linux-mips@vger.kernel.org
+ S:	Maintained
+ F:	Documentation/devicetree/bindings/phy/econet,en751221-pcie-phy.yaml
++F:	drivers/phy/phy-econet-pcie.c
+ 
+ ECRYPT FILE SYSTEM
+ M:	Tyler Hicks <code@tyhicks.com>
+diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
+index 227b9a4c612e..9aad68829d72 100644
+--- a/drivers/phy/Kconfig
++++ b/drivers/phy/Kconfig
+@@ -66,6 +66,18 @@ config PHY_CAN_TRANSCEIVER
+ 	  functional modes using gpios and sets the attribute max link
+ 	  rate, for CAN drivers.
+ 
++config PHY_ECONET_PCIE
++	tristate "EcoNet PCIe-PHY Driver"
++	depends on ECONET || COMPILE_TEST
++	depends on OF
++	select GENERIC_PHY
++	select REGMAP_MMIO
++	help
++	  Say Y here to add support for EcoNet PCIe PHY driver.
++	  This driver create the basic PHY instance and provides initialize
++	  callback for PCIe GEN1 and GEN2 ports. This PHY is found on
++	  EcoNet SoCs including EN751221 and EN7528.
++
+ config PHY_GOOGLE_USB
+ 	tristate "Google Tensor SoC USB PHY driver"
+ 	select GENERIC_PHY
+diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
+index f49d83f00a3d..42959ed383fd 100644
+--- a/drivers/phy/Makefile
++++ b/drivers/phy/Makefile
+@@ -9,6 +9,7 @@ obj-$(CONFIG_GENERIC_PHY)		+= phy-core.o
+ obj-$(CONFIG_GENERIC_PHY_MIPI_DPHY)	+= phy-core-mipi-dphy.o
+ obj-$(CONFIG_PHY_AIROHA_PCIE)		+= phy-airoha-pcie.o
+ obj-$(CONFIG_PHY_CAN_TRANSCEIVER)	+= phy-can-transceiver.o
++obj-$(CONFIG_PHY_ECONET_PCIE)		+= phy-econet-pcie.o
+ obj-$(CONFIG_PHY_GOOGLE_USB)		+= phy-google-usb.o
+ obj-$(CONFIG_USB_LGM_PHY)		+= phy-lgm-usb.o
+ obj-$(CONFIG_PHY_LPC18XX_USB_OTG)	+= phy-lpc18xx-usb-otg.o
+diff --git a/drivers/phy/phy-econet-pcie.c b/drivers/phy/phy-econet-pcie.c
+new file mode 100644
+index 000000000000..96be69d1ffeb
+--- /dev/null
++++ b/drivers/phy/phy-econet-pcie.c
+@@ -0,0 +1,182 @@
++// SPDX-License-Identifier: GPL-2.0+
++/*
++ * Author: Caleb James DeLisle <cjd@cjdns.fr>
++ *	   Ahmed Naseef <naseefkm@gmail.com>
++ */
++
++#include <linux/bitfield.h>
++#include <linux/module.h>
++#include <linux/of.h>
++#include <linux/phy/phy.h>
++#include <linux/platform_device.h>
++#include <linux/regmap.h>
++#include <linux/bits.h>
++#include <linux/delay.h>
++
++/* Rx detection timing for EN751221: 16*8 clock cycles  */
++#define EN751221_RXDET_VAL		16
++
++/* Rx detection timing when in power mode 3 */
++#define EN75_RXDET_P3_REG		0xa28
++#define EN75_RXDET_P3_MASK		GENMASK(17, 9)
++
++/* Rx detection timing when in power mode 2 */
++#define EN75_RXDET_P2_REG		0xa2c
++#define EN75_RXDET_P2_MASK		GENMASK(8, 0)
++
++/* Rx impedance */
++#define EN75_RX_IMPEDANCE_REG		0xb2c
++#define EN75_RX_IMPEDANCE_MASK		GENMASK(13, 12)
++enum en75_rx_impedance {
++	EN75_RX_IMPEDANCE_100_OHM	= 0,
++	EN75_RX_IMPEDANCE_95_OHM	= 1,
++	EN75_RX_IMPEDANCE_90_OHM	= 2,
++};
++
++/* PLL Invert clock */
++#define EN75_PLL_PH_INV_REG		0x4a0
++#define EN75_PLL_PH_INV_MASK		BIT(5)
++
++struct en75_phy_op {
++	u32 reg;
++	u32 mask;
++	u32 val;
++};
++
++struct en7528_pcie_phy {
++	struct regmap *regmap;
++	const struct en75_phy_op *data;
++};
++
++/* Port 0 PHY: set LCDDS_CLK_PH_INV for PLL operation */
++static const struct en75_phy_op en7528_phy_gen1[] = {
++	{
++		.reg = EN75_PLL_PH_INV_REG,
++		.mask = EN75_PLL_PH_INV_MASK,
++		.val = 1,
++	},
++	{ /* sentinel */ }
++};
++
++/* EN7528 Port 1 PHY: Rx impedance tuning, target R -5 Ohm */
++static const struct en75_phy_op en7528_phy_gen2[] = {
++	{
++		.reg = EN75_RX_IMPEDANCE_REG,
++		.mask = EN75_RX_IMPEDANCE_MASK,
++		.val = EN75_RX_IMPEDANCE_95_OHM,
++	},
++	{ /* sentinel */ }
++};
++
++/* EN751221 Port 1 PHY, set RX detect to 16*8 clock cycles */
++static const struct en75_phy_op en751221_phy_gen2[] = {
++	{
++		.reg = EN75_RXDET_P3_REG,
++		.mask = EN75_RXDET_P3_MASK,
++		.val = EN751221_RXDET_VAL,
++	},
++	{
++		.reg = EN75_RXDET_P2_REG,
++		.mask = EN75_RXDET_P2_MASK,
++		.val = EN751221_RXDET_VAL,
++	},
++	{ /* sentinel */ }
++};
++
++static int en75_pcie_phy_init(struct phy *phy)
++{
++	struct en7528_pcie_phy *ephy = phy_get_drvdata(phy);
++	const struct en75_phy_op *data = ephy->data;
++	int i, ret;
++	u32 val;
++
++	for (i = 0; data[i].mask || data[i].val; i++) {
++		if (i)
++			usleep_range(1000, 2000);
++
++		val = field_prep(data[i].mask, data[i].val);
++
++		ret = regmap_update_bits(ephy->regmap, data[i].reg,
++					 data[i].mask, val);
++		if (ret)
++			return ret;
++	}
++
++	return 0;
++}
++
++static const struct phy_ops en75_pcie_phy_ops = {
++	.init	= en75_pcie_phy_init,
++	.owner	= THIS_MODULE,
++};
++
++static int en75_pcie_phy_probe(struct platform_device *pdev)
++{
++	struct regmap_config regmap_config = {
++		.reg_bits = 32,
++		.val_bits = 32,
++		.reg_stride = 4,
++	};
++	struct device *dev = &pdev->dev;
++	const struct en75_phy_op *data;
++	struct phy_provider *provider;
++	struct en7528_pcie_phy *ephy;
++	void __iomem *base;
++	struct phy *phy;
++	int i;
++
++	data = of_device_get_match_data(dev);
++	if (!data)
++		return -EINVAL;
++
++	ephy = devm_kzalloc(dev, sizeof(*ephy), GFP_KERNEL);
++	if (!ephy)
++		return -ENOMEM;
++
++	ephy->data = data;
++
++	base = devm_platform_ioremap_resource(pdev, 0);
++	if (IS_ERR(base))
++		return PTR_ERR(base);
++
++	/* Set max_register to highest used register */
++	for (i = 0; data[i].mask || data[i].val; i++)
++		if (data[i].reg > regmap_config.max_register)
++			regmap_config.max_register = data[i].reg;
++
++	ephy->regmap = devm_regmap_init_mmio(dev, base, &regmap_config);
++	if (IS_ERR(ephy->regmap))
++		return PTR_ERR(ephy->regmap);
++
++	phy = devm_phy_create(dev, dev->of_node, &en75_pcie_phy_ops);
++	if (IS_ERR(phy))
++		return PTR_ERR(phy);
++
++	phy_set_drvdata(phy, ephy);
++
++	provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
++
++	return PTR_ERR_OR_ZERO(provider);
++}
++
++static const struct of_device_id en75_pcie_phy_ids[] = {
++	{ .compatible = "econet,en7528-pcie-gen1", .data = en7528_phy_gen1 },
++	{ .compatible = "econet,en7528-pcie-gen2", .data = en7528_phy_gen2 },
++	{ .compatible = "econet,en751221-pcie-gen1", .data = en7528_phy_gen1 },
++	{ .compatible = "econet,en751221-pcie-gen2", .data = en751221_phy_gen2 },
++	{ /* sentinel */ }
++};
++MODULE_DEVICE_TABLE(of, en75_pcie_phy_ids);
++
++static struct platform_driver en75_pcie_phy_driver = {
++	.probe = en75_pcie_phy_probe,
++	.driver = {
++		.name = "econet-pcie-phy",
++		.of_match_table = en75_pcie_phy_ids,
++	},
++};
++module_platform_driver(en75_pcie_phy_driver);
++
++MODULE_AUTHOR("Caleb James DeLisle <cjd@cjdns.fr>");
++MODULE_DESCRIPTION("EcoNet PCIe PHY driver");
++MODULE_LICENSE("GPL");
 -- 
 2.39.5
 
