@@ -4,55 +4,131 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0BC9CFF8850
-	for <linux-phy@archiver.kernel.org>; Mon, 27 Apr 2026 00:57:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0059FFF885D
+	for <linux-phy@archiver.kernel.org>; Mon, 27 Apr 2026 01:27:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:Cc:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=zFcE7C5cCTFJUuYS8IkXS2+9mKfsrfO36KEQFYqtKMM=; b=ovUsoCrEbmDbOU
-	a3zXGfQ0atZUuypieNu20JYupFLH0+Ewlj3eOkad2+k5RTrM1ZQZk868TC7pqm78I9qflwEzXRITU
-	U/buOkt7GRwa2SRHwEQ1J5csISwYXGqVrWD3HuW7rR23HLbI2kWf6fTqk/55mydnKupv4pbBEoy1r
-	LvgXucdOI+JqSrUy4dzu0CGk9sLLg0Fxb0gE8Gd7zhxmXe5HmfAeDJbNo1JoNBEHecTNFsjEP4ck9
-	7Zq+2oor4eQ5eply7wkQiHhNQfL0O2zllqkm/ffwEIno0kB6HHfoYin8AIYh/E3gNOENTnRmy+gM3
-	JFU4MXwXnioIPollruzw==;
+	List-Owner; bh=HxGxtobQ9nCzbljV3Us2/5ZStLKx70eMi0z5PCRPu60=; b=X+DvOjPj+CbrDU
+	m24biY5ZgGO6hDDJiTtws9iel7aUTfgbFN6wJxjDbj7GZ3emXDq2V7O0gm7Op4C6+sOL35wh5Orzb
+	nVY2VcUixZilgH+8u90kwsRm4yhx+aQhW7b0ZMXZzSwO0RspJ+IDMQUcdviOiROaH7V0SJJwK8DO7
+	Z6Ob1Pp1cZFz7yeBSrSUwslUn51Y1Yynp6wQXDfMsyqQda8m/gnKhWH5mxWNrdEk95qA9WI/EPjtA
+	g5Yxe4u3XgvJbvrUG+jkatbgZvlaVhzyn/wTeba+Noi5JY/KerXdbjOfncLUagT+NA378Z0rog7nu
+	9Jol2FC/JdLEcHPt6Ipg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wHAHv-0000000FzLb-2c92;
-	Mon, 27 Apr 2026 00:57:27 +0000
-Received: from mail-m1092.netease.com ([154.81.10.92])
+	id 1wHAlG-0000000G0r9-2kB7;
+	Mon, 27 Apr 2026 01:27:46 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wHAHs-0000000FzKs-12qu;
-	Mon, 27 Apr 2026 00:57:26 +0000
-Received: from localhost.localdomain (unknown [61.154.14.86])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 3c337d92c;
-	Mon, 27 Apr 2026 08:57:17 +0800 (GMT+08:00)
-From: Shawn Lin <shawn.lin@rock-chips.com>
+	id 1wHAlE-0000000G0qj-1Ekc
+	for linux-phy@lists.infradead.org;
+	Mon, 27 Apr 2026 01:27:45 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 63Q7rflx2632227
+	for <linux-phy@lists.infradead.org>; Mon, 27 Apr 2026 01:27:42 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:date:from:message-id:mime-version
+	:subject:to; s=qcppdkim1; bh=nq0TDOcXpxhAAnClfplnWd2fgSnOAj++nN4
+	/kbBkMow=; b=SQqL/5PTl9U8rSW1p8bVYmNTLOJqRbtoFYhcY4Ps7LeSd8Ve+vx
+	+UthAf4XQXccmXSoQMO6uGu3JpSaUHDFfWBhSfwT0XR3fJqwrN0cHobD9YNx4dRv
+	kMfbpjEhAMmD1XLAYWPYS2zqkCN3qEDdHvZ/yjo7CKlefjAYqCgBFVa3P2qf/cgF
+	CNitUuYjphKWD1G+l4itiLXCxpluOpsuYkIz0QvhXwa7m/rxp0s/qZXhW/5wl/1W
+	7QmoyP8fyy47OvjWDCdwPHR6rtqul3REnq6XxEftXJcIBpx2602b+O7PrziUhROD
+	cYto91+mqfotNZuWBu6hoF3UnypwMxyYz6g==
+Received: from mail-dy1-f200.google.com (mail-dy1-f200.google.com [74.125.82.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4drnqrkv42-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Mon, 27 Apr 2026 01:27:42 +0000 (GMT)
+Received: by mail-dy1-f200.google.com with SMTP id 5a478bee46e88-2cc75e79b97so26889397eec.1
+        for <linux-phy@lists.infradead.org>; Sun, 26 Apr 2026 18:27:42 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1777253261; x=1777858061; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=nq0TDOcXpxhAAnClfplnWd2fgSnOAj++nN4/kbBkMow=;
+        b=XQ+apW7FbzNiTAazOIO2H4J16L4iFOKNATy1thyICLI6ZrbCzH0RiL/Pn06znGMosG
+         +sB9sbCCnIZaKqZndYiNQE/PfUkCW8UH86yCkIfOU74V3jyTqv9oIxvIB14cSq0Dtb8k
+         NQzg6wAh5ty8lQBmJAmbIccil34CbKe9al7N7etD8EHwW2dOu3O7cFrkwigOV9NZmsJA
+         h42JFnhg1pqjrw++BAStRDRmXDl68KXjly6Ha2ddQcIKqwofUOgF5x6R8i1GxcD9lsHP
+         S9wh+zwpptAMFf2uPSdbHWBfgHuShNJtnqd/1uzKsK1f72i9yNVMpW80bcLM1rod3mGR
+         kQAw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1777253261; x=1777858061;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=nq0TDOcXpxhAAnClfplnWd2fgSnOAj++nN4/kbBkMow=;
+        b=jd4EVb9lP1cfxQZ9Sy+E3KcUOcakXkWC4KAQdcA8cuosieWmH3hFkzS87E6yWsy28S
+         0YLVyIxhFsSQZgC93WlD/krEf10RTCns6DDMTp6JxiZpoypOntzlpqSn196bEwWFTmcc
+         GHoQsLLj/rnjQkl4spfYYDC6w9UqGewh5iw75Tk7HkbJG4QJhnZn5cztaVvXeiqDm3WG
+         6jmAomKCU/R/pQDgAQ7k9mDVIMVMC2MLP6pCDt58IP3MXPaXsCvnNKi7DCaCMyKlIuOW
+         KrhaAk4piPABjiRkKfcDgNt5mxAUGj+5xAZRnnYu9xZkvtYeSwyuCo7wmlPaR+D4ngL7
+         6CcQ==
+X-Forwarded-Encrypted: i=1; AFNElJ9I38r2sdKCPmEoQgc4ssPgVpNgPjEjuYx90TS6fo2FEwGcZySPp/mVO5szmMzQiYQSx1yewN8qtBE=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzKbxJL+GQaOuw1ZOdzLs1m5IhqT9PxNw9y662MQuLtQI2sqzfw
+	kUCy5ipIMs5YE4NSVqP3QMH9dC64GC6sfvyUrvJF/EMWNQ0VSZ0Y4MUIW6P8QM60hrMTV07+URf
+	QHxFZbN/BPRg2B7g28dqD77XkScjyHT/BQQw900ehTyW/nj3ytguSKqRX/0bv4ddw8uGV
+X-Gm-Gg: AeBDievhq1S4cjO4myyBavDaLuUxCKpL63qE8vTB5pB0rs6T4qH3Jzd4Zv8QfOV+jaw
+	IYFh9JEyyWF+pamykKMdA4W2vXlZ+AyMb1tNE0v9ysu/6k4b3g27YRWN+FiguZf07XbM8fCXqz+
+	flcV0OLaOnq0+NwH1bkBipyautjVTNaCXF6Aezb1Bj1+es/KNbs84YAfKfBuihUkWealmdXIypR
+	aNKU+sZ/5yfwvhwLCj+GSzaBn1Vr6Iz0CnxSO7XfHlydFtAT24GFKAaGN3QvISF15OGZIyLOmAq
+	CY+Qf912Y5+E33Jv9E9Iwbu+6Woqulv6uqUeAw7HaqmkqVWNEiVj1af7r/rqLRysjqBy/QvNeHT
+	sCLCkWF4IjFCRALXYRnibWU0Q9B6yV8nHjS7mCu3fX1Q8SqqQ2Xij/snxtOMjpJiY8nt3dEFJRJ
+	xTXUOTjXDLlaghH/BK
+X-Received: by 2002:a05:7300:748a:b0:2c4:ec89:bd3 with SMTP id 5a478bee46e88-2e479419855mr24934171eec.24.1777253261459;
+        Sun, 26 Apr 2026 18:27:41 -0700 (PDT)
+X-Received: by 2002:a05:7300:748a:b0:2c4:ec89:bd3 with SMTP id 5a478bee46e88-2e479419855mr24934154eec.24.1777253260949;
+        Sun, 26 Apr 2026 18:27:40 -0700 (PDT)
+Received: from QCOM-aGQu4IUr3Y.qualcomm.com (i-global052.qualcomm.com. [199.106.103.52])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-2e539fa244csm41105411eec.2.2026.04.26.18.27.37
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 26 Apr 2026 18:27:40 -0700 (PDT)
+From: Shawn Guo <shengchao.guo@oss.qualcomm.com>
 To: Vinod Koul <vkoul@kernel.org>
-Cc: linux-rockchip@lists.infradead.org,
-	linux-phy@lists.infradead.org,
-	Heiko Stuebner <heiko@sntech.de>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Shawn Lin <shawn.lin@rock-chips.com>
-Subject: [PATCH v3] phy: rockchip: naneng-combphy: Consolidate SSC configuration
-Date: Mon, 27 Apr 2026 08:57:13 +0800
-Message-Id: <1777251433-110466-1-git-send-email-shawn.lin@rock-chips.com>
-X-Mailer: git-send-email 2.7.4
-X-HM-Tid: 0a9dcc70caff09cckunm2640b187175e0b
-X-HM-MType: 1
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFITzdXWRgWCB1ZQUpXWS1ZQUlXWQ8JGhUIEh9ZQVkaSB5MVh5KGB1PHh0YQhhCT1YVFA
-	kWGhdVEwETFhoSFyQUDg9ZV1kYEgtZQVlNSlVKTk9VSk9VQ01ZV1kWGg8SFR0UWUFZT0tIVUpLSU
-	9PT0hVSktLVUpCS0tZBg++
-DKIM-Signature: a=rsa-sha256;
-	b=TY2w+5MRvym6LvgEm7VnCfP9Bk+776dBX3iEN24Y5K18HGcmaNIbfPCRQrlEpm+FZfdzrVHH7h32NuybNc+o7NeylQ5LAppBvklwhzp79p/zG5XpFOivQT6cpwZYpwNUJpQ9qlPzqCho7SVjnPF0MJZxLeGsWW8zgw8NGznh/xo=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
-	bh=velWxyTzlXxI3TLbfC3EvlWnaZvgpLe2Fdo+RRJ8qyk=;
-	h=date:mime-version:subject:message-id:from;
+Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>,
+        Dmitry Baryshkov <lumag@kernel.org>,
+        Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>,
+        Deepti Jaggi <deepti.jaggi@oss.qualcomm.com>,
+        linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+        linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+        Shawn Guo <shengchao.guo@oss.qualcomm.com>
+Subject: [PATCH v2] dt-bindings: phy: qcom,sc8280xp-qmp-ufs-phy: Document Nord QMP UFS PHY
+Date: Mon, 27 Apr 2026 09:27:32 +0800
+Message-ID: <20260427012732.231611-1-shengchao.guo@oss.qualcomm.com>
+X-Mailer: git-send-email 2.43.0
+MIME-Version: 1.0
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNDI3MDAxMyBTYWx0ZWRfX4fl3GBpHUqK7
+ den8ktajSi9GeqmIqlgJsfhhTzgpHsHMttg70DCQ2o3HJbINf07RG2MCIF4qicV9SpymfU7arcD
+ OEQwPyR2BvSXzfQ6Y84098N+5z/TNtGVpltMypQjwrf99S/g0259sm2OhUTaaW4UIpDZhtKOqEo
+ odo4vFWxnHIqzB9QZKTpJHwEquoiCfVVktGrY4Of4cc7TBsqanx3KK8kRI/By2bq5gCHO4DTivN
+ u9bPLXaLJahWLDL8TNieuXUHm5kKQuxLUOA/vngYWSXAMxDBzMuiqHi0ZPokmTOiNgS11Vs5e3j
+ VX6J7KRHLnUCbymP09hgPVZTaiV1/tj1x786pkdnYPHTWG2Ce63+mTyMwJ7Pt3KaQ/pTOfDQWLo
+ 1CWQvB7zegcKDtDGx9D2e/nCmsbbJPhTRvr8BtJxLPzmATplR/m1FQzhAFgYR07muYOOgyJx+By
+ IhQoRACk2uf+hqBGA0g==
+X-Proofpoint-ORIG-GUID: YHYeFKTjG7Nou27GmTUjO96OdzwuoPC_
+X-Proofpoint-GUID: YHYeFKTjG7Nou27GmTUjO96OdzwuoPC_
+X-Authority-Analysis: v=2.4 cv=UcthjqSN c=1 sm=1 tr=0 ts=69eebb8e cx=c_pps
+ a=PfFC4Oe2JQzmKTvty2cRDw==:117 a=b9+bayejhc3NMeqCNyeLQQ==:17
+ a=A5OVakUREuEA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
+ a=u7WPNUs3qKkmUXheDGA7:22 a=_glEPmIy2e8OvE2BGh3C:22 a=VwQbUJbxAAAA:8
+ a=EUspDBNiAAAA:8 a=-P_PvXqPkIm6cR4a8nYA:9 a=6Ab_bkdmUrQuMsNx7PHu:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
+ definitions=2026-04-26_07,2026-04-21_02,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ clxscore=1015 malwarescore=0 spamscore=0 lowpriorityscore=0 impostorscore=0
+ adultscore=0 priorityscore=1501 bulkscore=0 suspectscore=0 phishscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2604200000 definitions=main-2604270013
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260426_175724_863994_AE99A291 
-X-CRM114-Status: GOOD (  14.72  )
+X-CRM114-CacheID: sfid-20260426_182744_457431_54B41E6F 
+X-CRM114-Status: GOOD (  10.04  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -64,318 +140,36 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The PCIe SSC configuration for the RK3588 and RK3576 SoCs required
-additional tuning which is missing. When adding these same SSC
-configurations for both of these two SoCs, as well as upcoming
-platforms, it's obvious the SSC setup code was largely duplicated
-across the platform-specific configuration functions. This becomes
-harder to maintain as more platforms are added.
+Document QMP UFS PHY on Qualcomm Nord SoC which is compatible with
+'qcom,sm8650-qmp-ufs-phy'.
 
-So extract the common SSC logic into a shared helper function,
-rk_combphy_common_cfg_ssc(). This cleans up the per-platform drivers
-and centralizes the standard configuration as possible.
-
-Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
-Reviewed-by: Heiko Stuebner <heiko@sntech.de>
-Signed-off-by: Shawn Lin <shawn.lin@rock-chips.com>
+Signed-off-by: Shawn Guo <shengchao.guo@oss.qualcomm.com>
 ---
- .../rockchip/phy-rockchip-naneng-combphy.c    | 173 ++++++++----------
- 1 file changed, 73 insertions(+), 100 deletions(-)
+Changes in v2:
+ - Add Nord compatible to existing qcom,sm8650-qmp-ufs-phy item instead
+   of duplicating (Thanks Krzysztof!)
+ - Link to v1: https://lore.kernel.org/all/20260420074942.1250414-1-shengchao.guo@oss.qualcomm.com/
 
-diff --git a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-index b60d6bf3f33c..2b0f152f5470 100644
---- a/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-+++ b/drivers/phy/rockchip/phy-rockchip-naneng-combphy.c
-@@ -121,6 +121,7 @@
- #define RK3568_PHYREG32_SSC_OFFSET_500PPM	1
- 
- #define RK3568_PHYREG33				0x80
-+#define RK3568_PHYREG33_PLL_SSC_CTRL		BIT(5)
- #define RK3568_PHYREG33_PLL_KVCO_MASK		GENMASK(4, 2)
- #define RK3568_PHYREG33_PLL_KVCO_SHIFT		2
- #define RK3568_PHYREG33_PLL_KVCO_VALUE		2
-@@ -446,6 +447,74 @@ static int rockchip_combphy_probe(struct platform_device *pdev)
- 	return PTR_ERR_OR_ZERO(phy_provider);
- }
- 
-+static void rk_combphy_common_cfg_ssc(struct rockchip_combphy_priv *priv, unsigned long rate)
-+{
-+	struct device_node *np = priv->dev->of_node;
-+	u32 val;
-+
-+	if (!priv->enable_ssc)
-+		return;
-+
-+	/* Set SSC downward spread spectrum for PCIe and USB3 */
-+	if (priv->type == PHY_TYPE_PCIE || priv->type == PHY_TYPE_USB3) {
-+		val = FIELD_PREP(RK3568_PHYREG32_SSC_MASK, RK3568_PHYREG32_SSC_DOWNWARD);
-+		rockchip_combphy_updatel(priv, RK3568_PHYREG32_SSC_MASK, val, RK3568_PHYREG32);
-+	}
-+
-+	/* Set SSC downward spread spectrum +500ppm for SATA in 100MHz */
-+	if (priv->type == PHY_TYPE_SATA && rate == REF_CLOCK_100MHz) {
-+		val = FIELD_PREP(RK3568_PHYREG32_SSC_DIR_MASK,
-+				 RK3568_PHYREG32_SSC_DOWNWARD);
-+		val |= FIELD_PREP(RK3568_PHYREG32_SSC_OFFSET_MASK,
-+				  RK3568_PHYREG32_SSC_OFFSET_500PPM);
-+		rockchip_combphy_updatel(priv, RK3568_PHYREG32_SSC_MASK, val,
-+					 RK3568_PHYREG32);
-+	}
-+
-+	/* Enable SSC */
-+	val = readl(priv->mmio + RK3568_PHYREG8);
-+	val |= RK3568_PHYREG8_SSC_EN;
-+	writel(val, priv->mmio + RK3568_PHYREG8);
-+
-+	/* Some SoCs need tuning PCIe SSC instead of default configuration in 24MHz */
-+	if (!of_device_is_compatible(np, "rockchip,rk3588-naneng-combphy") &&
-+	    !of_device_is_compatible(np, "rockchip,rk3576-naneng-combphy"))
-+		return;
-+
-+	/* PLL control SSC module period should be set if need tuning */
-+	val = readl(priv->mmio + RK3568_PHYREG33);
-+	val |= RK3568_PHYREG33_PLL_SSC_CTRL;
-+	writel(val, priv->mmio + RK3568_PHYREG33);
-+
-+	if (priv->type == PHY_TYPE_PCIE && rate == REF_CLOCK_24MHz) {
-+		/* Set PLL loop divider */
-+		writel(0x00, priv->mmio + RK3576_PHYREG17);
-+		writel(RK3568_PHYREG18_PLL_LOOP, priv->mmio + RK3568_PHYREG18);
-+
-+		/* Set up rx_pck invert and rx msb to disable */
-+		writel(0x00, priv->mmio + RK3588_PHYREG27);
-+
-+		/*
-+		 * Set up SU adjust signal:
-+		 * su_trim[7:0],   PLL KVCO adjust bits[2:0] to min
-+		 * su_trim[15:8],  PLL LPF R1 adujst bits[9:7]=3'b101
-+		 * su_trim[23:16], CKRCV adjust
-+		 * su_trim[31:24], CKDRV adjust
-+		 */
-+		writel(0x90, priv->mmio + RK3568_PHYREG11);
-+		writel(0x02, priv->mmio + RK3568_PHYREG12);
-+		writel(0x08, priv->mmio + RK3568_PHYREG13);
-+		writel(0x57, priv->mmio + RK3568_PHYREG14);
-+		writel(0x40, priv->mmio + RK3568_PHYREG15);
-+
-+		writel(RK3568_PHYREG16_SSC_CNT_VALUE, priv->mmio + RK3568_PHYREG16);
-+
-+		val = FIELD_PREP(RK3568_PHYREG33_PLL_KVCO_MASK,
-+				 RK3576_PHYREG33_PLL_KVCO_VALUE);
-+		writel(val, priv->mmio + RK3568_PHYREG33);
-+	}
-+}
-+
- static int rk3528_combphy_cfg(struct rockchip_combphy_priv *priv)
- {
- 	const struct rockchip_combphy_grfcfg *cfg = priv->cfg->grfcfg;
-@@ -600,21 +669,12 @@ static int rk3562_combphy_cfg(struct rockchip_combphy_priv *priv)
- 
- 	switch (priv->type) {
- 	case PHY_TYPE_PCIE:
--		/* Set SSC downward spread spectrum */
--		val = RK3568_PHYREG32_SSC_DOWNWARD << RK3568_PHYREG32_SSC_DIR_SHIFT;
--		rockchip_combphy_updatel(priv, RK3568_PHYREG32_SSC_MASK, val, RK3568_PHYREG32);
--
- 		rockchip_combphy_param_write(priv->phy_grf, &cfg->con0_for_pcie, true);
- 		rockchip_combphy_param_write(priv->phy_grf, &cfg->con1_for_pcie, true);
- 		rockchip_combphy_param_write(priv->phy_grf, &cfg->con2_for_pcie, true);
- 		rockchip_combphy_param_write(priv->phy_grf, &cfg->con3_for_pcie, true);
- 		break;
- 	case PHY_TYPE_USB3:
--		/* Set SSC downward spread spectrum */
--		val = RK3568_PHYREG32_SSC_DOWNWARD << RK3568_PHYREG32_SSC_DIR_SHIFT;
--		rockchip_combphy_updatel(priv, RK3568_PHYREG32_SSC_MASK, val,
--					 RK3568_PHYREG32);
--
- 		/* Enable adaptive CTLE for USB3.0 Rx */
- 		rockchip_combphy_updatel(priv, RK3568_PHYREG15_CTLE_EN,
- 					 RK3568_PHYREG15_CTLE_EN, RK3568_PHYREG15);
-@@ -706,11 +766,7 @@ static int rk3562_combphy_cfg(struct rockchip_combphy_priv *priv)
- 		}
- 	}
- 
--	if (priv->enable_ssc) {
--		val = readl(priv->mmio + RK3568_PHYREG8);
--		val |= RK3568_PHYREG8_SSC_EN;
--		writel(val, priv->mmio + RK3568_PHYREG8);
--	}
-+	rk_combphy_common_cfg_ssc(priv, rate);
- 
- 	return 0;
- }
-@@ -755,11 +811,6 @@ static int rk3568_combphy_cfg(struct rockchip_combphy_priv *priv)
- 
- 	switch (priv->type) {
- 	case PHY_TYPE_PCIE:
--		/* Set SSC downward spread spectrum. */
--		val = RK3568_PHYREG32_SSC_DOWNWARD << RK3568_PHYREG32_SSC_DIR_SHIFT;
--
--		rockchip_combphy_updatel(priv, RK3568_PHYREG32_SSC_MASK, val, RK3568_PHYREG32);
--
- 		rockchip_combphy_param_write(priv->phy_grf, &cfg->con0_for_pcie, true);
- 		rockchip_combphy_param_write(priv->phy_grf, &cfg->con1_for_pcie, true);
- 		rockchip_combphy_param_write(priv->phy_grf, &cfg->con2_for_pcie, true);
-@@ -767,10 +818,6 @@ static int rk3568_combphy_cfg(struct rockchip_combphy_priv *priv)
- 		break;
- 
- 	case PHY_TYPE_USB3:
--		/* Set SSC downward spread spectrum. */
--		val = RK3568_PHYREG32_SSC_DOWNWARD << RK3568_PHYREG32_SSC_DIR_SHIFT,
--		rockchip_combphy_updatel(priv, RK3568_PHYREG32_SSC_MASK, val, RK3568_PHYREG32);
--
- 		/* Enable adaptive CTLE for USB3.0 Rx. */
- 		val = readl(priv->mmio + RK3568_PHYREG15);
- 		val |= RK3568_PHYREG15_CTLE_EN;
-@@ -880,13 +927,6 @@ static int rk3568_combphy_cfg(struct rockchip_combphy_priv *priv)
- 
- 			writel(RK3568_PHYREG18_PLL_LOOP, priv->mmio + RK3568_PHYREG18);
- 			writel(RK3568_PHYREG11_SU_TRIM_0_7, priv->mmio + RK3568_PHYREG11);
--		} else if (priv->type == PHY_TYPE_SATA) {
--			/* downward spread spectrum +500ppm */
--			val = RK3568_PHYREG32_SSC_DOWNWARD << RK3568_PHYREG32_SSC_DIR_SHIFT;
--			val |= RK3568_PHYREG32_SSC_OFFSET_500PPM <<
--			       RK3568_PHYREG32_SSC_OFFSET_SHIFT;
--			rockchip_combphy_updatel(priv, RK3568_PHYREG32_SSC_MASK, val,
--						 RK3568_PHYREG32);
- 		}
- 		break;
- 
-@@ -909,11 +949,7 @@ static int rk3568_combphy_cfg(struct rockchip_combphy_priv *priv)
- 		}
- 	}
- 
--	if (priv->enable_ssc) {
--		val = readl(priv->mmio + RK3568_PHYREG8);
--		val |= RK3568_PHYREG8_SSC_EN;
--		writel(val, priv->mmio + RK3568_PHYREG8);
--	}
-+	rk_combphy_common_cfg_ssc(priv, rate);
- 
- 	return 0;
- }
-@@ -972,10 +1008,6 @@ static int rk3576_combphy_cfg(struct rockchip_combphy_priv *priv)
- 
- 	switch (priv->type) {
- 	case PHY_TYPE_PCIE:
--		/* Set SSC downward spread spectrum */
--		val = FIELD_PREP(RK3568_PHYREG32_SSC_MASK, RK3568_PHYREG32_SSC_DOWNWARD);
--		rockchip_combphy_updatel(priv, RK3568_PHYREG32_SSC_MASK, val, RK3568_PHYREG32);
--
- 		rockchip_combphy_param_write(priv->phy_grf, &cfg->con0_for_pcie, true);
- 		rockchip_combphy_param_write(priv->phy_grf, &cfg->con1_for_pcie, true);
- 		rockchip_combphy_param_write(priv->phy_grf, &cfg->con2_for_pcie, true);
-@@ -983,10 +1015,6 @@ static int rk3576_combphy_cfg(struct rockchip_combphy_priv *priv)
- 		break;
- 
- 	case PHY_TYPE_USB3:
--		/* Set SSC downward spread spectrum */
--		val = FIELD_PREP(RK3568_PHYREG32_SSC_MASK, RK3568_PHYREG32_SSC_DOWNWARD);
--		rockchip_combphy_updatel(priv, RK3568_PHYREG32_SSC_MASK, val, RK3568_PHYREG32);
--
- 		/* Enable adaptive CTLE for USB3.0 Rx */
- 		val = readl(priv->mmio + RK3568_PHYREG15);
- 		val |= RK3568_PHYREG15_CTLE_EN;
-@@ -1110,14 +1138,6 @@ static int rk3576_combphy_cfg(struct rockchip_combphy_priv *priv)
- 			writel(0x88, priv->mmio + RK3568_PHYREG13);
- 			writel(0x56, priv->mmio + RK3568_PHYREG14);
- 		} else if (priv->type == PHY_TYPE_SATA) {
--			/* downward spread spectrum +500ppm */
--			val = FIELD_PREP(RK3568_PHYREG32_SSC_DIR_MASK,
--					 RK3568_PHYREG32_SSC_DOWNWARD);
--			val |= FIELD_PREP(RK3568_PHYREG32_SSC_OFFSET_MASK,
--					  RK3568_PHYREG32_SSC_OFFSET_500PPM);
--			rockchip_combphy_updatel(priv, RK3568_PHYREG32_SSC_MASK, val,
--						 RK3568_PHYREG32);
--
- 			/* ssc ppm adjust to 3500ppm */
- 			rockchip_combphy_updatel(priv, RK3576_PHYREG10_SSC_PCM_MASK,
- 						 RK3576_PHYREG10_SSC_PCM_3500PPM,
-@@ -1156,39 +1176,7 @@ static int rk3576_combphy_cfg(struct rockchip_combphy_priv *priv)
- 		}
- 	}
- 
--	if (priv->enable_ssc) {
--		val = readl(priv->mmio + RK3568_PHYREG8);
--		val |= RK3568_PHYREG8_SSC_EN;
--		writel(val, priv->mmio + RK3568_PHYREG8);
--
--		if (priv->type == PHY_TYPE_PCIE && rate == REF_CLOCK_24MHz) {
--			/* Set PLL loop divider */
--			writel(0x00, priv->mmio + RK3576_PHYREG17);
--			writel(RK3568_PHYREG18_PLL_LOOP, priv->mmio + RK3568_PHYREG18);
--
--			/* Set up rx_pck invert and rx msb to disable */
--			writel(0x00, priv->mmio + RK3588_PHYREG27);
--
--			/*
--			 * Set up SU adjust signal:
--			 * su_trim[7:0],   PLL KVCO adjust bits[2:0] to min
--			 * su_trim[15:8],  PLL LPF R1 adujst bits[9:7]=3'b101
--			 * su_trim[23:16], CKRCV adjust
--			 * su_trim[31:24], CKDRV adjust
--			 */
--			writel(0x90, priv->mmio + RK3568_PHYREG11);
--			writel(0x02, priv->mmio + RK3568_PHYREG12);
--			writel(0x08, priv->mmio + RK3568_PHYREG13);
--			writel(0x57, priv->mmio + RK3568_PHYREG14);
--			writel(0x40, priv->mmio + RK3568_PHYREG15);
--
--			writel(RK3568_PHYREG16_SSC_CNT_VALUE, priv->mmio + RK3568_PHYREG16);
--
--			val = FIELD_PREP(RK3568_PHYREG33_PLL_KVCO_MASK,
--					 RK3576_PHYREG33_PLL_KVCO_VALUE);
--			writel(val, priv->mmio + RK3568_PHYREG33);
--		}
--	}
-+	rk_combphy_common_cfg_ssc(priv, rate);
- 
- 	return 0;
- }
-@@ -1255,10 +1243,6 @@ static int rk3588_combphy_cfg(struct rockchip_combphy_priv *priv)
- 		}
- 		break;
- 	case PHY_TYPE_USB3:
--		/* Set SSC downward spread spectrum */
--		val = RK3568_PHYREG32_SSC_DOWNWARD << RK3568_PHYREG32_SSC_DIR_SHIFT;
--		rockchip_combphy_updatel(priv, RK3568_PHYREG32_SSC_MASK, val, RK3568_PHYREG32);
--
- 		/* Enable adaptive CTLE for USB3.0 Rx. */
- 		val = readl(priv->mmio + RK3568_PHYREG15);
- 		val |= RK3568_PHYREG15_CTLE_EN;
-@@ -1343,13 +1327,6 @@ static int rk3588_combphy_cfg(struct rockchip_combphy_priv *priv)
- 
- 			/* Set up su_trim:  */
- 			writel(RK3568_PHYREG11_SU_TRIM_0_7, priv->mmio + RK3568_PHYREG11);
--		} else if (priv->type == PHY_TYPE_SATA) {
--			/* downward spread spectrum +500ppm */
--			val = RK3568_PHYREG32_SSC_DOWNWARD << RK3568_PHYREG32_SSC_DIR_SHIFT;
--			val |= RK3568_PHYREG32_SSC_OFFSET_500PPM <<
--			       RK3568_PHYREG32_SSC_OFFSET_SHIFT;
--			rockchip_combphy_updatel(priv, RK3568_PHYREG32_SSC_MASK, val,
--						 RK3568_PHYREG32);
- 		}
- 		break;
- 	default:
-@@ -1371,11 +1348,7 @@ static int rk3588_combphy_cfg(struct rockchip_combphy_priv *priv)
- 		}
- 	}
- 
--	if (priv->enable_ssc) {
--		val = readl(priv->mmio + RK3568_PHYREG8);
--		val |= RK3568_PHYREG8_SSC_EN;
--		writel(val, priv->mmio + RK3568_PHYREG8);
--	}
-+	rk_combphy_common_cfg_ssc(priv, rate);
- 
- 	return 0;
- }
+ .../devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml       | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
+index 9616c736b6d4..b2c5c9a375a3 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-ufs-phy.yaml
+@@ -31,6 +31,7 @@ properties:
+       - items:
+           - enum:
+               - qcom,eliza-qmp-ufs-phy
++              - qcom,nord-qmp-ufs-phy
+           - const: qcom,sm8650-qmp-ufs-phy
+       - items:
+           - enum:
 -- 
 2.43.0
 
