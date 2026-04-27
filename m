@@ -4,82 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9BE89FF8868
-	for <linux-phy@archiver.kernel.org>; Mon, 27 Apr 2026 15:26:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 30B2AFF8868
+	for <linux-phy@archiver.kernel.org>; Mon, 27 Apr 2026 19:48:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8sEj+9yAsj4Mv4N9Ni72Wb4e1AVALVZ7lpYkOkX+Vf8=; b=AQia2ccOH0QiNx
-	95vxWGu2fEFecUkuJJIGWGoow54VXkahRUIfQ+/EiSDk/Kvpvbi1PYHp8YnhCloVbsFhOPn+U+P7I
-	34rdpIvgl6MwAgj6Ds/hoa89fT9AaUouuscTpjEL16onqxQYqRLIxrWUf13BnZQc66STvWT06JfLj
-	92+EVPVj5fjibT7SfL3rb1jGkZq99Km4zKDzyCn4AJHlB0kDOB6vZmbaesgPosjj39hTOaoXSYetn
-	MQtclLjuO6a6W+rb7F0bsn8h0FkY2zR7PYnqtyE911+6eh/h7FK3nrhyMOZYTltoFkNbtV3gUZVDp
-	Vc/r2s6Zi2D9yoSzU/3Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=4sNFpzdTGYZnqN5oMWI/T8F43AZH3DJgswAF5D8n4w4=; b=bgKQodTd49NHqt
+	IIYf+WUItQFQ01jJvEEubzHF7tm2R20qdfynQPRIlxTZvL9js92gTRDEtVBshuUO5s6FjZ4pd+BPy
+	bJNlkKcD645FP1qyyVqp+89wVgtBEQ5ToD7NpDvA/QANsd8tRT1WSyBQ+bhp2fKYmIs0VDRGIFyH+
+	xoouwr+gitiB8DuJq1lwCofrjv0qaSz1dbgarIoNEubmvLC07OpJtPjrilmDQ6QsTwLCcmkEFuJgI
+	4lVXjxMP4msu3acdUH6THUgWau5HsAkcHlTcZU84zoMmfxhUcsqXWwaqN88u8Ro1gFub5eb3zcl9f
+	IFaAU6f9eOkqPjax9dLw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wHNr4-0000000HBey-0Mw0;
-	Mon, 27 Apr 2026 15:26:38 +0000
-Received: from mgamail.intel.com ([192.198.163.11])
-	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wHNr1-0000000HBeS-28rs
+	id 1wHRw2-000000004iI-3P5g;
+	Mon, 27 Apr 2026 19:48:02 +0000
+Received: from relmlor2.renesas.com ([210.160.252.172] helo=relmlie6.idc.renesas.com)
+	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1wHRw0-000000004hX-0Hn4
 	for linux-phy@lists.infradead.org;
-	Mon, 27 Apr 2026 15:26:36 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1777303595; x=1808839595;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=ULIjuYjHbAwmU6XaI+lBFkFaz6ssx3ysv2IbDMcn4no=;
-  b=TfzKIpBWTlGzcaXKuQ/OtAFNPxlWGaPRG8IGsHko19JG6umkB+Mqb09O
-   BLYPq+gjREOKYLKPBG82EzvaNS/WLF2YzsNtPTmjTKZfAGJK4IW4od6Au
-   oqTxZPwkYPQdRnYlPsocz/wOiDdWqTdAl07RT02RXvoOkAY8Hd3sZ9sRt
-   VfBypuT/IRBuj9VQtz7KV0ZRPtskFyzeGZML6POXI7bZYr935h7aL0tdu
-   pqJlZ1rtFSiC/ki3aum+Hxgfbj/y8Aa2zvVsiGpf2OX0RV0ADmsv9HS0c
-   tnikAUU6UJSAA/xADDLFFOpj8PgVwvxHadQr7Sn12rkTLuh0dBTjoqtNU
-   w==;
-X-CSE-ConnectionGUID: FqFbxq05R/uLWGUeGhRdHQ==
-X-CSE-MsgGUID: hibrEf8SSpqJV+hRsHIgMw==
-X-IronPort-AV: E=McAfee;i="6800,10657,11769"; a="88794680"
-X-IronPort-AV: E=Sophos;i="6.23,202,1770624000"; 
-   d="scan'208";a="88794680"
-Received: from fmviesa002.fm.intel.com ([10.60.135.142])
-  by fmvoesa105.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 27 Apr 2026 08:26:34 -0700
-X-CSE-ConnectionGUID: dFKvDgC0S7+53DMdOkTEeA==
-X-CSE-MsgGUID: +WNZa+T9RS+KAKKavp/61w==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.23,202,1770624000"; 
-   d="scan'208";a="256980399"
-Received: from fpallare-mobl4.ger.corp.intel.com (HELO localhost) ([10.245.244.2])
-  by fmviesa002-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 27 Apr 2026 08:26:32 -0700
-Date: Mon, 27 Apr 2026 18:26:29 +0300
-From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-To: Josua Mayer <josua@solid-run.com>
-Cc: "linux-can@vger.kernel.org" <linux-can@vger.kernel.org>,
-	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-	Marc Kleine-Budde <mkl@pengutronix.de>,
-	Vincent Mailhol <mailhol@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Ulf Hansson <ulf.hansson@linaro.org>
-Subject: Re: [PATCH v2 0/4] phy: phy-can-transceiver: Ad-hoc cleanups and
- refactoring
-Message-ID: <ae-AJdSrnXiuc1mW@ashevche-desk.local>
-References: <20260317203001.2108568-1-andriy.shevchenko@linux.intel.com>
- <ad6KwGIhpJn_2eVz@ashevche-desk.local>
- <7bcb68c4-e4bd-4ad9-bb75-99e0845b204c@solid-run.com>
- <ae9l4n8wocbVegcJ@ashevche-desk.local>
- <5d4c3c95-cbe1-4439-8036-b014264ce8c2@solid-run.com>
+	Mon, 27 Apr 2026 19:48:01 +0000
+X-CSE-ConnectionGUID: g1R6AtjKSc6XXZDk9QyuEQ==
+X-CSE-MsgGUID: V/1qxHOeQ2yp2jX/DEtgfw==
+Received: from unknown (HELO relmlir5.idc.renesas.com) ([10.200.68.151])
+  by relmlie6.idc.renesas.com with ESMTP; 28 Apr 2026 04:47:55 +0900
+Received: from vm01.adwin.renesas.com (unknown [10.226.92.8])
+	by relmlir5.idc.renesas.com (Postfix) with ESMTP id AA95B4001B5C;
+	Tue, 28 Apr 2026 04:47:52 +0900 (JST)
+From: Ovidiu Panait <ovidiu.panait.rb@renesas.com>
+To: vkoul@kernel.org,
+	neil.armstrong@linaro.org,
+	biju.das.jz@bp.renesas.com
+Cc: linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	linux-renesas-soc@vger.kernel.org,
+	Ovidiu Panait <ovidiu.panait.rb@renesas.com>
+Subject: [PATCH] phy: renesas: phy-rzg3e-usb3: Fix runtime PM underflow during suspend
+Date: Mon, 27 Apr 2026 19:47:41 +0000
+Message-ID: <20260427194741.161533-1-ovidiu.panait.rb@renesas.com>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <5d4c3c95-cbe1-4439-8036-b014264ce8c2@solid-run.com>
-Organization: Intel Finland Oy - BIC 0357606-4 - c/o Alberga Business Park, 6
- krs, Bertel Jungin Aukio 5, 02600 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260427_082635_665930_04717917 
-X-CRM114-Status: GOOD (  17.60  )
+X-CRM114-CacheID: sfid-20260427_124800_228664_82EE1A3D 
+X-CRM114-Status: GOOD (  15.53  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,42 +66,128 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, Apr 27, 2026 at 01:41:43PM +0000, Josua Mayer wrote:
-> Am 27.04.26 um 15:34 schrieb Andy Shevchenko:
-> > On Mon, Apr 27, 2026 at 11:09:48AM +0000, Josua Mayer wrote:
-> >> Am 14.04.26 um 20:43 schrieb Andy Shevchenko:
-> >>> On Tue, Mar 17, 2026 at 09:27:26PM +0100, Andy Shevchenko wrote:
+On the Renesas RZ/V2H platform, if the xhcd driver is unbound and the
+system is suspended afterwards, a PM underflow error will occur:
 
-...
+ # echo 15850000.usb > /sys/bus/platform/drivers/xhci-renesas-hcd/unbind
+ # systemctl suspend
+ 15870000.usb-phy: PM: dpm_run_callback(): genpd_resume_noirq returns -13
+ 15870000.usb-phy: PM: failed to resume noirq: error -13
+ 15870000.usb-phy: Runtime PM usage count underflow!
 
-> >> For unknown reason your patch-set did not arrive in my inbox.
-> >> Perhaps it went missing for others, too?
-> > Are you in the MAINTAINERS for this part of the kernel?
-> > The CAN NETWORK DRIVERS and GENERIC PHY FRAMEWORK do not list your name.
-> Correct. I touched can phy once related to mux only.
-> > If you think of mail delivery in general, it's delivered at least to the ML
-> > https://lore.kernel.org/all/20260317203001.2108568-1-andriy.shevchenko@linux.intel.com/
-> >
-> > TBH I don't know what to answer to your question as I don't know your expectations and
-> > how it should be fulfilled taking into account my above question...
-> 
-> Changelog v2:
-> - Cc'ed to Ulf and Josua due to above
-> 
-> This is why I expected it in my inbox.
-> Usually in this situation I blame my provider.
+Since the PHY framework is managing the runtime PM of the PHY via
+phy_power_on()/phy_power_off(), there is no need for the PHY driver to
+manipulate the runtime PM state during suspend.
 
-Ah, blame me then. I most likely missed to add your name to the Cc list.
+To fix this, remove the runtime PM calls from the suspend/resume paths
+and add a get/put pair inside rzg3e_phy_usb3_init_helper() to make sure
+the clock is enabled during init, even when there is no consumer for
+the PHY.
 
-> > But thanks for the reviewing! I will address the commit message in v3.
-> Great!
+Also, change the suspend ops from NOIRQ_SYSTEM_SLEEP_PM_OPS to
+SYSTEM_SLEEP_PM_OPS because runtime PM is disabled during the noirq phase
+and pm_runtime_resume_and_get() would not actually enable the device clock.
 
-And will try hard to make sure your address will be in the Cc list.
+Fixes: ee5f1a3f90a4 ("phy: renesas: Add Renesas RZ/G3E USB3.0 PHY driver")
+Signed-off-by: Ovidiu Panait <ovidiu.panait.rb@renesas.com>
+---
+ drivers/phy/renesas/phy-rzg3e-usb3.c | 31 ++++++++++++++++------------
+ 1 file changed, 18 insertions(+), 13 deletions(-)
 
+diff --git a/drivers/phy/renesas/phy-rzg3e-usb3.c b/drivers/phy/renesas/phy-rzg3e-usb3.c
+index 6b3453ea0004..055775e1a0f7 100644
+--- a/drivers/phy/renesas/phy-rzg3e-usb3.c
++++ b/drivers/phy/renesas/phy-rzg3e-usb3.c
+@@ -64,6 +64,7 @@
+ #define USB3_TEST_LANECONFIG0_DEFAULT		(0xd)
+ 
+ struct rz_usb3 {
++	struct device *dev;
+ 	void __iomem *base;
+ 	struct reset_control *rstc;
+ 	bool skip_reinit;
+@@ -130,11 +131,21 @@ static int rzg3e_phy_usb3test_phy_init(void __iomem *base)
+ 	return 0;
+ }
+ 
+-static int rzg3e_phy_usb3_init_helper(void __iomem *base)
++static int rzg3e_phy_usb3_init_helper(struct rz_usb3 *r)
+ {
+-	rzg3e_phy_usb2test_phy_init(base);
++	int ret;
++
++	ret = pm_runtime_resume_and_get(r->dev);
++	if (ret)
++		return ret;
++
++	rzg3e_phy_usb2test_phy_init(r->base);
+ 
+-	return rzg3e_phy_usb3test_phy_init(base);
++	ret = rzg3e_phy_usb3test_phy_init(r->base);
++
++	pm_runtime_put_sync(r->dev);
++
++	return ret;
+ }
+ 
+ static int rzg3e_phy_usb3_init(struct phy *p)
+@@ -143,7 +154,7 @@ static int rzg3e_phy_usb3_init(struct phy *p)
+ 	int ret = 0;
+ 
+ 	if (!r->skip_reinit)
+-		ret = rzg3e_phy_usb3_init_helper(r->base);
++		ret = rzg3e_phy_usb3_init_helper(r);
+ 
+ 	return ret;
+ }
+@@ -187,6 +198,7 @@ static int rzg3e_phy_usb3_probe(struct platform_device *pdev)
+ 
+ 	platform_set_drvdata(pdev, r);
+ 	phy_set_drvdata(phy, r);
++	r->dev = dev;
+ 
+ 	provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
+ 	if (IS_ERR(provider))
+@@ -199,7 +211,6 @@ static int rzg3e_phy_usb3_suspend(struct device *dev)
+ {
+ 	struct rz_usb3 *r = dev_get_drvdata(dev);
+ 
+-	pm_runtime_put(dev);
+ 	reset_control_assert(r->rstc);
+ 	r->skip_reinit = false;
+ 
+@@ -215,27 +226,21 @@ static int rzg3e_phy_usb3_resume(struct device *dev)
+ 	if (ret)
+ 		return ret;
+ 
+-	ret = pm_runtime_resume_and_get(dev);
++	ret = rzg3e_phy_usb3_init_helper(r);
+ 	if (ret)
+ 		goto reset_assert;
+ 
+-	ret = rzg3e_phy_usb3_init_helper(r->base);
+-	if (ret)
+-		goto pm_put;
+-
+ 	r->skip_reinit = true;
+ 
+ 	return 0;
+ 
+-pm_put:
+-	pm_runtime_put(dev);
+ reset_assert:
+ 	reset_control_assert(r->rstc);
+ 	return ret;
+ }
+ 
+ static const struct dev_pm_ops rzg3e_phy_usb3_pm = {
+-	NOIRQ_SYSTEM_SLEEP_PM_OPS(rzg3e_phy_usb3_suspend, rzg3e_phy_usb3_resume)
++	SYSTEM_SLEEP_PM_OPS(rzg3e_phy_usb3_suspend, rzg3e_phy_usb3_resume)
+ };
+ 
+ static const struct of_device_id rzg3e_phy_usb3_match_table[] = {
 -- 
-With Best Regards,
-Andy Shevchenko
-
+2.34.1
 
 
 -- 
