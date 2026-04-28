@@ -4,129 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0778DFF886F
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Apr 2026 06:17:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CB944FF886F
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Apr 2026 06:23:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WYL4xWNw3X0IY6rPZEJyfQwBEE/YL7urFQXVa93U4pY=; b=GGY4RZ3wp/d8tU
-	ioTtFYDEZbPKl1V0rfK4IdpbJXUlbvn9YJHfK2C9dbl45n2FRJ+FEXVcZ6qIAOBgTq63NW+wvPDa/
-	O0kJO9szXP7xlIn1czWXn5Gng0w/cPrBY7zYOmpPHBGEYmsPg2TdXs/tmFSFylZ4HnoFMDkmYG2ab
-	04NHg/L/HeOZA1OKCiG16wotdPz3chcfQDXgRpx1SmXVyL13dmd1MZA+abjDAFWvbOM3Pbp78cwPD
-	cb3bUTK2JLij48P0xmgmxAqRujWLrxSO3RTZE5f9WCFzs0XT4hjR+9uQYEyJGwq4RSXUpBRbAFhca
-	h/mpLszkMJImsVLlt6bA==;
+	List-Owner; bh=2PLHhnHebEoOpodiujx1XDHcknXCgFsSznKM60Wdl1c=; b=Zq+pmvuPGM3J02
+	w1/E+Z0yPfyg6Xqu2LH7LDcg3ipDNKrTm6RgjlAaLfICODvx9ApsKe2m+6mfgJuxXNAT7ro3Hrn3E
+	oiD6hnluSZ8r0zy8Yr3tGMREQr3NDnrneziBYj2uaavoQFrQuT9/GH6omGzE/utUQ/szzSBdOxn5K
+	jNN/eWKPS20ly3L+2BLe0SF3DHPeF0cPfKw1+Jx21Q7a1QORi3lGMgBuiver6P9f9GtLUci5eQ0XT
+	y0ndsDvqtBhWDww5kGdf2uut5MHXCQHa5E3OcXtEa1xXvt9UaJFfYX+5DFihamMU2ZPUqIXHehpDe
+	CNP10JMYtATAkGhW7tiQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wHbl9-00000000cf2-269w;
-	Tue, 28 Apr 2026 06:17:27 +0000
-Received: from mail-japanwestazlp170100003.outbound.protection.outlook.com ([2a01:111:f403:c407::3] helo=OS0P286CU011.outbound.protection.outlook.com)
+	id 1wHbrG-00000000cyR-2Uln;
+	Tue, 28 Apr 2026 06:23:46 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wHbl6-00000000cdm-3elI
+	id 1wHbrF-00000000cy9-0YcM
 	for linux-phy@lists.infradead.org;
-	Tue, 28 Apr 2026 06:17:26 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=yZMA/88aFU4yp8H0fqpZMAf5hAM6YASoZOxVr2DayT9ws63eo3rZy6WpB/TNQsAZz0Spv+oOI4ymIcYK1VHSJecBzy17/Wf0237+dnb2p2SlmsYR2RVbhgbq8S24KlJ7VBq8EByQsOZF7pjKJuVqfPWcz+vjlGhiYTw/0LiPk1HZ4tQpj7gGvrjnZA8TvhwoPj//eQZB1epi4QkQqyKh5azMVytKNsVIrU3uSXwkdqCBbpj1W+CCY7ogvFBXMsoNKCBTU2HGeqcdz8VpNEO7+CrooUWoxPHZwzSOrBrYfp638EqOhwdXC6S1HXQjbdjjH8TmFFOljyQ0kXqV4NOqJw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=5vdmBEWoP0p6rFdyAf1rZp5qTWZYtyt4N3uaPTxhS98=;
- b=AuNMPT8FDAh/35MFgGoKt7waOa7GHOXGquqlOMe++ck6V9AjMwbiVZbKrtPuMS5Pmp5bWlQMUtyEr0DJc++c5ETX5B5yOHyvm1G3Q5u5vdrJYU/3fe9c3XIppedLCGImSExc8dn+IEArr+t15K4L1dDXpIWDSyx6HzDwZfi9cvSFO1/HO7qWZgWv+2u1qZ5CbSGI7fsD5kL/6lZ1bA902yA/+pkYOfPO3O7T1/FtbyGPUARzFYl2Q3kKywpS1oPP9LWfQ50gmMIRuKMdfOqcAsvgNJxveurpdyIlg6RSLUfMxurOPELIij/o9ODiAaUo9oJJGYJBg5edeOFFnt3fDg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=bp.renesas.com; dmarc=pass action=none
- header.from=bp.renesas.com; dkim=pass header.d=bp.renesas.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bp.renesas.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=5vdmBEWoP0p6rFdyAf1rZp5qTWZYtyt4N3uaPTxhS98=;
- b=CG/YuTMunDjkVGZ5SYj/wXURZp54zsTnCWr392ct6Ku0Melfz7i6QRqEacx9Q6f83eH9jFSMIyYfva62eh465E+NjqgixzmRifXYxzOdBKd4wEn7G+CLj9UEib+JjalRRbS+SwtdFvoE7vSxCGH6Ub21vnMrpDxnTX2cWpT3REo=
-Received: from TY3PR01MB11346.jpnprd01.prod.outlook.com (2603:1096:400:3d0::7)
- by TYWPR01MB8605.jpnprd01.prod.outlook.com (2603:1096:400:13e::5) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9846.26; Tue, 28 Apr
- 2026 06:17:10 +0000
-Received: from TY3PR01MB11346.jpnprd01.prod.outlook.com
- ([fe80::87d1:4928:d55:97de]) by TY3PR01MB11346.jpnprd01.prod.outlook.com
- ([fe80::87d1:4928:d55:97de%4]) with mapi id 15.20.9846.025; Tue, 28 Apr 2026
- 06:17:08 +0000
-From: Biju Das <biju.das.jz@bp.renesas.com>
-To: Ovidiu Panait <ovidiu.panait.rb@renesas.com>, "vkoul@kernel.org"
-	<vkoul@kernel.org>, "neil.armstrong@linaro.org" <neil.armstrong@linaro.org>
-CC: "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-	"linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>,
-	Ovidiu Panait <ovidiu.panait.rb@renesas.com>
-Subject: RE: [PATCH] phy: renesas: phy-rzg3e-usb3: Fix runtime PM underflow
- during suspend
-Thread-Topic: [PATCH] phy: renesas: phy-rzg3e-usb3: Fix runtime PM underflow
- during suspend
-Thread-Index: AQHc1n6/R7hZJapUgEme8pFZ2/rXrrXz+kOQ
-Date: Tue, 28 Apr 2026 06:17:08 +0000
-Message-ID: <TY3PR01MB11346819FE6253E90C7B4F88486372@TY3PR01MB11346.jpnprd01.prod.outlook.com>
-References: <20260427194741.161533-1-ovidiu.panait.rb@renesas.com>
-In-Reply-To: <20260427194741.161533-1-ovidiu.panait.rb@renesas.com>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=bp.renesas.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: TY3PR01MB11346:EE_|TYWPR01MB8605:EE_
-x-ms-office365-filtering-correlation-id: ca895923-0a68-4401-b615-08dea4edc6e6
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230040|376014|366016|1800799024|56012099003|18002099003|22082099003|38070700021;
-x-microsoft-antispam-message-info: /ooAuoCvb/WNCJdkq1OpR2xXRsNxF8KcklNlj0vrEoIaIKsG09e1uImKRwFHre7ufI8+DXTdPj0gKGCVMN9u4i5LAWUqgbOxxrdBEgEqHyqYmTlZzi7NPxy7Zugl/OX9nRxHc/Og0qh/9IPWAT82eAeCS8nXU7GpE9zwHPRebBsNX8cjlxaAWYGLNjmydEAtf6OekxuCSQ7Pt2bAqPBbHleE1isdeAB/B7DO7FfCZcpAaR6O2qnfNYeqAbXAD/QzPyh7HbOIaDgHG9hYqNAmgk/49uHzK8nZ+l44XsROdx5INVOVM6ES4OkDf5b2LsUYyX7lPKVGBSPPfGY1Q/r4E6muzSVYrVqBkdG3vOwA1O+2eF4gfDgGows3mmJRlPYkv+gokKtUjB30CkLlxn8aYVnaTsPk7yiYHqiqs40YbWuEysQ3wI1myBSK6/IPR3tAum56NK9BEnnYbb7FdXJ8rTwE+sE9nuYYTMUwXAtERhDVL8J3ZLEOfyd3JzbJo+UVh2WOml3T3+9bXwAVcvP3VN2GD1WZP7+m+uOMb3b41IKYqNDFUM7OyTYBRGc+YjJNEztuHi3YGQxYRUdLv0dq6ULAkBFPRqYZYwM6QTtHAfPNwuaZD8MY62Y8a/g9ucCU14xEdV633KaIY4gRzC1QIBuaXwS7SnsrOUK9kRc1flUnduDcwVH/T7Smc1th85YHZWNbOmttRdscPeigtGZukXCw/tzUhh13lixyH2cJV/UD/9OBr0dBx2GIx1i/bFPh
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TY3PR01MB11346.jpnprd01.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(366016)(1800799024)(56012099003)(18002099003)(22082099003)(38070700021);DIR:OUT;SFP:1101;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?ZsBDLSVaCY4sPaf6eHFgbLU6bTn2RZs//Rls1CAYmhX2a6xFa7zdo45ghT1F?=
- =?us-ascii?Q?/syriaK8jWGyqZ2GKstomniW/NikhPLruuO8apjdkeCXrl1L4tPtQBMZ9V0e?=
- =?us-ascii?Q?ucPQlgkCNhXG1/JrApH8J3+92e2133nhDy5xJ8ApLi82Ak6AV+aHjXbsg9KP?=
- =?us-ascii?Q?s1DmUDC698B/6iV2qWasN9/vqTlqEj0loOrkUwzZG0r2zCIw9wZ2zwaR8RPT?=
- =?us-ascii?Q?DQ4mOZYUvLJZJ7D5qb9uKyOH4FIw+kidSjUV2xuXJjgYBkMDxRO4Otko81i+?=
- =?us-ascii?Q?luxvaoxEgaqnBMNrlIqR2A5Ty7FGA+cdGLKVWUoc40XMSr8GNmJKnUBpIhiF?=
- =?us-ascii?Q?gPZ+dFyCGtnvJGhEDi33JTUNLD3+eoEqrhM3H3KoGpbrhYKpLqiXMsXA/NdQ?=
- =?us-ascii?Q?vCJpMqL7zukfeuhIgbAcL698gaG8EfF1LyFqmv5aEG+421Hj3ZOc1ClPHeNh?=
- =?us-ascii?Q?CKEkB7NtMsRMK991DoXMK2qDUv/9b6shEel9L6VrCDk2ty3kh0DpesiKWfD7?=
- =?us-ascii?Q?fHgD6lEmtJnKBXiPXpjtKfWukLL73mRaO+TZGig/3y/eFOosjcHfNxZNcCV3?=
- =?us-ascii?Q?lv301tnPjPXuQctVUTEIUiLEfsJDfBYnTR8YMNl5h3uy00Jxp0QHfgtbR3S5?=
- =?us-ascii?Q?dA+jVtFRo9htGVPRAR8ITGD8I+G89NjAqdJTwaXjKoSj5D800KhhhqfGFBTq?=
- =?us-ascii?Q?G1B5MpkwnBVDxYta5xbcaaRUwjPmH/UAQlXo760FAFPIJelH9rND8O55aVFU?=
- =?us-ascii?Q?PqP1/PlpdCvhkHLR5O/G0qdEt1waeJwDPjP03NLCz96zkqdcy03kmBjyd9/l?=
- =?us-ascii?Q?Pp7mjQlf9DQOjfTwwn/ZQnA1uuS895l14biLbzobdSdMsMxd2B84gVpfQ7lX?=
- =?us-ascii?Q?YqRcdwClD23g1pBTH3GufT6ndskRliJzDrX8MzRk4kLy2GimU9+5utdzct8u?=
- =?us-ascii?Q?hXn+F0M42NBWlKTvnX+yAkoZYoj1zBtSE42Kf8SI4/B4yR/rOAFnBChnysVx?=
- =?us-ascii?Q?Nv6XZv4iVyDGpTq9ZGoNfeIcURrjqQtPiXOeURt+OD81bp3dcMIKrAOXu6aX?=
- =?us-ascii?Q?XR7hzuOJAQ936dPIsC1yiPklyl8ZrZ+E/D3N6u309ZxUamDvPQcZhLYaGlia?=
- =?us-ascii?Q?ZlyVGc/2G6BDRp+YOYLWQIYRYyL433qsGTFcf+ZAL+C2q1wfnQRAKYmv9YfK?=
- =?us-ascii?Q?K0iB4zTUbebPa3i5r7pvNz01xhNC4HmXOOLvzZ14DV7k7seP9QcKs7MfkXPm?=
- =?us-ascii?Q?OO8I4I9fLEIFWxHut1wvOVo+DylNbp7niJTU0+pmPY5tkec8MEpC86ZG+DQl?=
- =?us-ascii?Q?SSKLKDJRXBu+OPj0wN2tO8pIkCbjhl5/hvIUIZp0+NZsX3BYG18PIoF2x9U6?=
- =?us-ascii?Q?+fO6fNlMqPlS6lvABLwfjI/64MxPOw32ERlNk5qXgYbYwqpBaIOiKKgYDWNI?=
- =?us-ascii?Q?Vep636b/QLPlhGGMFFLqdbfgkZMW6QR0CEbS01B5j7G5wdi2beL1zcehKI/5?=
- =?us-ascii?Q?gKzrHa6XBZO7/eUxTPJmECBTiEi/G2mVEJ0GtG6GodFTFF3cbkp6tjP/eueW?=
- =?us-ascii?Q?zrfKnJYmk6DIY64u/f5nIRpK9Q+1eAvLCg6Oz6JpTknFx5oTR+0P/f/nILTh?=
- =?us-ascii?Q?8ghNr/QvoFKemlB/828wGkpkQWhJDNW/NvJQPoqDRtvk//1kVEav9tleeTcf?=
- =?us-ascii?Q?kklZI4MF78aNWLoV1HrZNJFYpQLWaxnoS8CO1eMM/ZWwjHruioGXsSkYoGRy?=
- =?us-ascii?Q?ZA23Mlib0w=3D=3D?=
+	Tue, 28 Apr 2026 06:23:46 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 5A0F241B19;
+	Tue, 28 Apr 2026 06:23:44 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A662BC2BCAF;
+	Tue, 28 Apr 2026 06:23:43 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1777357424;
+	bh=UZvg/yE8LIQ8RPyblTF9R9063/jm4KfLUiOFsofAWxM=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=q6o5jI20pgFjCSE0HckVSr3w7+cssiz0Egfd4cx22ZegutU6eKTlcznByt1XTQpYp
+	 Hub1Ao4F0qqkiIeSsW+UoEqqyo67lxu7JjVI6wU66YZawJJsXhXyoYfJxVRhKFc8r+
+	 5ih5g6KzMmYk81fM9H4y+8k8zessHh6v0zJOKgDzzqlVrHTGMszf6fEyg3FXGlroJm
+	 mhii7xHhqoMPD1dtTeBccCNj+Ukh5uX/gW+lU/O1VBoYPGbux2dvWBR6A1MUk6mVz5
+	 6W71old91Km/ZvMIMrATzMAPnuEWo+5U1qkJ9sHq0UuloqTCFOyLOduAr9sVyMsPPh
+	 TQ3kOaCO58MJQ==
+Date: Tue, 28 Apr 2026 08:23:41 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Shawn Guo <shengchao.guo@oss.qualcomm.com>
+Cc: Vinod Koul <vkoul@kernel.org>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Konrad Dybcio <konradybcio@kernel.org>, Dmitry Baryshkov <lumag@kernel.org>, 
+	Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>, Deepti Jaggi <deepti.jaggi@oss.qualcomm.com>, 
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-arm-msm@vger.kernel.org, 
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v2] dt-bindings: phy: qcom,sc8280xp-qmp-ufs-phy: Document
+ Nord QMP UFS PHY
+Message-ID: <20260428-portable-ultraviolet-swan-5f4759@quoll>
+References: <20260427012732.231611-1-shengchao.guo@oss.qualcomm.com>
 MIME-Version: 1.0
-X-OriginatorOrg: bp.renesas.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: TY3PR01MB11346.jpnprd01.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ca895923-0a68-4401-b615-08dea4edc6e6
-X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Apr 2026 06:17:08.4023
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 1WONc7heP/6+7Vs2zewkIOFlq4cKR8oGlJ8gTVODSy+BNFa2gtyh7w2zLNjH053q6EyouYSVvzy3IHLFQbNwYfpgMWJxFNkZToIf+vPAJ4M=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYWPR01MB8605
+Content-Disposition: inline
+In-Reply-To: <20260427012732.231611-1-shengchao.guo@oss.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260427_231724_932789_D58D5B94 
-X-CRM114-Status: GOOD (  23.54  )
+X-CRM114-CacheID: sfid-20260427_232345_223305_0ECC36C0 
+X-CRM114-Status: UNSURE (   7.09  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -143,162 +78,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Ovidiu,
+On Mon, Apr 27, 2026 at 09:27:32AM +0800, Shawn Guo wrote:
+> Document QMP UFS PHY on Qualcomm Nord SoC which is compatible with
+> 'qcom,sm8650-qmp-ufs-phy'.
 
-Thanks for the patch
+Why are you naming compatibles not devices in the commit msgs? We never
+used, never asked for it, there are basically no such commits. git log
+can help here, for example  last commit from Abel looks reasonable
+(although repeating "so use fallback" is redundant - it's obvious).
 
-> -----Original Message-----
-> From: Ovidiu Panait <ovidiu.panait.rb@renesas.com>
-> Sent: 27 April 2026 20:48
-> Subject: [PATCH] phy: renesas: phy-rzg3e-usb3: Fix runtime PM underflow during suspend
-> 
-> On the Renesas RZ/V2H platform, if the xhcd driver is unbound and the system is suspended afterwards, a
-> PM underflow error will occur:
-> 
->  # echo 15850000.usb > /sys/bus/platform/drivers/xhci-renesas-hcd/unbind
->  # systemctl suspend
->  15870000.usb-phy: PM: dpm_run_callback(): genpd_resume_noirq returns -13
->  15870000.usb-phy: PM: failed to resume noirq: error -13
->  15870000.usb-phy: Runtime PM usage count underflow!
-> 
-> Since the PHY framework is managing the runtime PM of the PHY via phy_power_on()/phy_power_off(), there
-> is no need for the PHY driver to manipulate the runtime PM state during suspend.
-> 
-> To fix this, remove the runtime PM calls from the suspend/resume paths and add a get/put pair inside
-> rzg3e_phy_usb3_init_helper() to make sure the clock is enabled during init, even when there is no
-> consumer for the PHY.
-> 
-> Also, change the suspend ops from NOIRQ_SYSTEM_SLEEP_PM_OPS to SYSTEM_SLEEP_PM_OPS because runtime PM
-> is disabled during the noirq phase and pm_runtime_resume_and_get() would not actually enable the device
-> clock.
-> 
-> Fixes: ee5f1a3f90a4 ("phy: renesas: Add Renesas RZ/G3E USB3.0 PHY driver")
-> Signed-off-by: Ovidiu Panait <ovidiu.panait.rb@renesas.com>
-> ---
->  drivers/phy/renesas/phy-rzg3e-usb3.c | 31 ++++++++++++++++------------
->  1 file changed, 18 insertions(+), 13 deletions(-)
-> 
-> diff --git a/drivers/phy/renesas/phy-rzg3e-usb3.c b/drivers/phy/renesas/phy-rzg3e-usb3.c
-> index 6b3453ea0004..055775e1a0f7 100644
-> --- a/drivers/phy/renesas/phy-rzg3e-usb3.c
-> +++ b/drivers/phy/renesas/phy-rzg3e-usb3.c
-> @@ -64,6 +64,7 @@
->  #define USB3_TEST_LANECONFIG0_DEFAULT		(0xd)
-> 
->  struct rz_usb3 {
-> +	struct device *dev;
-
-Do you need dev as struct phy has dev member [1]?
-
-[1]
-https://elixir.bootlin.com/linux/v6.0-rc4/source/include/linux/phy/phy.h#L153
-
->  	void __iomem *base;
->  	struct reset_control *rstc;
->  	bool skip_reinit;
-> @@ -130,11 +131,21 @@ static int rzg3e_phy_usb3test_phy_init(void __iomem *base)
->  	return 0;
->  }
-> 
-> -static int rzg3e_phy_usb3_init_helper(void __iomem *base)
-
-you can add one more function parameter dev here.
-
-static int rzg3e_phy_usb3_init_helper(struct device *dev, void __iomem *base)
-
-> +static int rzg3e_phy_usb3_init_helper(struct rz_usb3 *r)
->  {
-> -	rzg3e_phy_usb2test_phy_init(base);
-> +	int ret;
-> +
-> +	ret = pm_runtime_resume_and_get(r->dev);
-> +	if (ret)
-> +		return ret;
-> +
-> +	rzg3e_phy_usb2test_phy_init(r->base);
-> 
-> -	return rzg3e_phy_usb3test_phy_init(base);
-> +	ret = rzg3e_phy_usb3test_phy_init(r->base);
-> +
-> +	pm_runtime_put_sync(r->dev);
-> +
-> +	return ret;
->  }
-> 
->  static int rzg3e_phy_usb3_init(struct phy *p) @@ -143,7 +154,7 @@ static int
-> rzg3e_phy_usb3_init(struct phy *p)
->  	int ret = 0;
-> 
->  	if (!r->skip_reinit)
-> -		ret = rzg3e_phy_usb3_init_helper(r->base);
-> +		ret = rzg3e_phy_usb3_init_helper(r);
-
-ret = rzg3e_phy_usb3_init_helper(&p->dev, r->base);
-
-> 
->  	return ret;
->  }
-> @@ -187,6 +198,7 @@ static int rzg3e_phy_usb3_probe(struct platform_device *pdev)
-> 
->  	platform_set_drvdata(pdev, r);
-
->  	phy_set_drvdata(phy, r);
-> +	r->dev = dev;
-
-Drop this.
-
-> 
->  	provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
->  	if (IS_ERR(provider))
-> @@ -199,7 +211,6 @@ static int rzg3e_phy_usb3_suspend(struct device *dev)  {
->  	struct rz_usb3 *r = dev_get_drvdata(dev);
-> 
-> -	pm_runtime_put(dev);
->  	reset_control_assert(r->rstc);
->  	r->skip_reinit = false;
-> 
-> @@ -215,27 +226,21 @@ static int rzg3e_phy_usb3_resume(struct device *dev)
->  	if (ret)
->  		return ret;
-> 
-> -	ret = pm_runtime_resume_and_get(dev);
-> +	ret = rzg3e_phy_usb3_init_helper(r);
-
-	ret = rzg3e_phy_usb3_init_helper(dev, r->base);
-
-With the above addressed,
-
-Reviewed-by: Biju Das <biju.das.jz@bp.renesas.com>
-
-Cheers,
-Biju
-
->  	if (ret)
->  		goto reset_assert;
-> 
-> -	ret = rzg3e_phy_usb3_init_helper(r->base);
-> -	if (ret)
-> -		goto pm_put;
-> -
->  	r->skip_reinit = true;
-> 
->  	return 0;
-> 
-> -pm_put:
-> -	pm_runtime_put(dev);
->  reset_assert:
->  	reset_control_assert(r->rstc);
->  	return ret;
->  }
-> 
->  static const struct dev_pm_ops rzg3e_phy_usb3_pm = {
-> -	NOIRQ_SYSTEM_SLEEP_PM_OPS(rzg3e_phy_usb3_suspend, rzg3e_phy_usb3_resume)
-> +	SYSTEM_SLEEP_PM_OPS(rzg3e_phy_usb3_suspend, rzg3e_phy_usb3_resume)
->  };
-> 
->  static const struct of_device_id rzg3e_phy_usb3_match_table[] = {
-> --
-> 2.34.1
+Best regards,
+Krzysztof
 
 
 -- 
