@@ -4,101 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ACA84FF886D
-	for <linux-phy@archiver.kernel.org>; Tue, 28 Apr 2026 16:14:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 47CEDFF885A
+	for <linux-phy@archiver.kernel.org>; Tue, 28 Apr 2026 19:35:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XV9CqJWgEHb/9h+NsXDi4BXJ2htNPjBjPT9/PuzZfPA=; b=QWA7x4X9f8lWYm
-	bmmz+ndorcNOjhdAy6koEHFNxYI8dpYqd6ZwiHkDvAOBK8v1LqyrlI9kqS2Cs1r6aWotTJGZGvNlb
-	inb1nj31rxlS9IeP28iMBRh8nvzgG5LfUVX5+VUSPR6mynuCcjBCn1mVEaT8neRDrRhY+X+L4Hz28
-	aoqx8sn7Smh9r7MwOmh80WdiFTmSQBDbqX5GBETFRiCHdowLigBv1c1Tk64jqfVUuZY89TrCE0dV2
-	5GTIBCNtnF6KmVX8kpSoyUKk4i0DV/LJXe+zwQnkjkZKGO21d78iQdHO4moKrO8+oFPohMQTdZGs5
-	b29+CsS9PHX0WxXODQuA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=qtUlPJ7+pjQ6+letHr6XJ9sGJA7zkHfiBIxRw/VsjHI=; b=JCTqsfcBaruZEP
+	2fFNRaC7zFWoIRTEE7Z7NgTsEEFFdvXRT7O6e1nIPujY7CL1bvb7bFGB/Lz6NzfZacJNsWlurRB/I
+	1Ew+RqYpt3bqA55u/z6LqLEUv945mw7KF2TE4QnmP+T0npDyX+6FiW5ke54yFZ2jCIdifZpW3Jxl+
+	PIeajg4OWB4SNwb8ZJpr9YikoPJ/iz5JEs66maIpmQuloO0ARgjktsP5i+GokfmCdP40ColtteZbB
+	3V/0h/sFc88rwnLwOYM82/zz0ByPSgkaO3avKnGyEjsV8tudsNsG0x6uFMHFXY/uCNM96ujrEW+i1
+	qGwtqYldF2DfOXMFqL/g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wHl5E-00000001tsW-1jW5;
-	Tue, 28 Apr 2026 16:14:48 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1wHoDR-00000002ALl-09bT;
+	Tue, 28 Apr 2026 19:35:29 +0000
+Received: from mail-pj1-x1033.google.com ([2607:f8b0:4864:20::1033])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wHl4j-00000001svb-3UnT;
-	Tue, 28 Apr 2026 16:14:17 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Cc:To:In-Reply-To:References:
-	Message-Id:Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:
-	From:Sender:Reply-To:Content-ID:Content-Description;
-	bh=eu52mGUbetBRLmudxyVBLRUknGkgPUqu7SpGNBo93X8=; b=E0kJxIjkjiUv50AWrwfzouTYQI
-	E+Dhfk9IlBfLVy4Wt+meFkRo/Lu59SlIBIgcza0uAZLtwP6/PPbSYyXaRajGXKQU74jJIpsasQ2/C
-	C0TfYYr71XsWWP/4mlQZ+tsq3yerJUp5Z8hgbqCxYCP/Jl5HqU/PUgwKtoJyJKSFtZKQAarJx93Fb
-	niJGvPvGPLzkUAC8EYAqtahfzDw5V+5MstNi2TG6GAe0h/WJS/uV5KEdznOMEp8eulbmihQkm4ot3
-	rlUWi7yBagS7WFVDwPp3In80AeKjatcklfNjdUcvOVXgwtBrsGYU5CQDayLxJFxsXJbeAsH1BgolS
-	r0v6bBYw==;
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wHl4e-00000003ZLv-0ZTu;
-	Tue, 28 Apr 2026 16:14:16 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1777392842;
-	bh=2RDTD3i97hvqpAcQDq/HnQnUMc4wftjxgYkOHKmJn4U=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=qYTwRCvVxitM2Pnu8Km8cp6ScTYqD4RSacdYSxr/PbVX4M1yw8egMkOxU7YEOoBzL
-	 byApT/yjPttVKFK9DBXahCesoPQPYJNHxF8C+H2C8pcPWLmJa2kD6UYQ4pe1pTdBzZ
-	 i7htOZClsGbBC6/DXpa5fh66XcT/S/fcnUa7R+TpOgZBa3bO8yRnvheStoRf4QbaKL
-	 j3jyDB+vn2TXb8IzWfzgJnhYZP6j+XuiC++ujaiURrZMG5q882jmilC58hmftyzdR4
-	 PCv6G01d5kDG0qBgK2Ph/7iqKRwcPWdbaT5HJKy7yujdYO/ywLoZvoi32yiS9PYOb4
-	 WCNGeNpKHCIgw==
-Received: from jupiter.universe (unknown [100.64.1.62])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
-	(No client certificate requested)
-	(Authenticated sender: sre)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 4BF0617E15A3;
-	Tue, 28 Apr 2026 18:14:02 +0200 (CEST)
-Received: by jupiter.universe (Postfix, from userid 1000)
-	id 90311480052; Tue, 28 Apr 2026 18:14:01 +0200 (CEST)
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-Date: Tue, 28 Apr 2026 18:13:50 +0200
-Subject: [PATCH v4 11/16] phy: rockchip: usbdp: Register DP aux bridge
+	id 1wHoDP-00000002AL5-1oT6
+	for linux-phy@lists.infradead.org;
+	Tue, 28 Apr 2026 19:35:28 +0000
+Received: by mail-pj1-x1033.google.com with SMTP id 98e67ed59e1d1-35d965648a2so10588277a91.0
+        for <linux-phy@lists.infradead.org>; Tue, 28 Apr 2026 12:35:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1777404926; x=1778009726; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=koTQxkk4qv7km4iNuMHAOJaf/k281r1LMbxMyjh/No8=;
+        b=pFyxJ+ANu0akK+vFzfNcCAEYUTSY/bs1y7EX6ZlMEmeRFDncddznc3BB0RkCHuyRlB
+         tfZJvFhFDzHDi4o/4vTuirQFv+pOnRTb/Hirkcr3kpxfuHYfDMvO1qKNAsXRjos9dXRy
+         yW0Rix1guNSFYeIq7/6ryfNO/q70S+Lx6ettQWfeChyLhzwv8k1JiOHadLQb6sw6t0xw
+         8jW9mlGRcD3n0Nim7EZZiNDdNiDvF87zmHfE5FJk2xUXN6djdiuD+ETCa7x7cfhuWvPT
+         QjzY6KJWNfcxWufHELjqNwSvARvk15jiSMIEanCHywyg5hjVtX2FpDS3BadXyL48YcHw
+         GKzQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1777404926; x=1778009726;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=koTQxkk4qv7km4iNuMHAOJaf/k281r1LMbxMyjh/No8=;
+        b=Wng9RAFZmQI6eCkOuththY9hrYjons3HtP+uC7iqIA/Y7Jitz2mcwB2ErH0SmIBP/c
+         mqkT7rN/Fujkqgj8FI9GMgSXwSL3evKZmZh930DknRYwrOtwys8vXaTfWsr1xmv4sXqb
+         zK8r5c6SOOPYtXUTdnDq4WLT+JZccUjDzeJVFuH+SRsWGxQ86uo+Cn9uCD741NlsuH8o
+         5WIGlUv+QO05LhKrNwRPn5LtLV/a/sCEckLBQPJscbXO+Gu6icXF6oYxP2xgKWOiW1jn
+         yQSPEkm+kCi/iIZQlp+G0kFHNEV3lLFM6o8Ra7j6kBa+BcdMm9Fq33D6puO5n+CWRbbn
+         uO5w==
+X-Forwarded-Encrypted: i=1; AFNElJ/3BCwGR+t80q3zKtshnALEGSe1ZYzsxSrFrnxxlZSf8x4H5FTAq/L0jr1KZsLivJRPmmL68Sub8I8=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yw3XXMg2odzvExy5D7QjiJNAoeCk+kAJhizvTFL8Yb6kGf76B0d
+	zgtNAh9J+wEZvEw9svF9Xk7PqAKYU/2BjVqGXj8OC3jG5FynAIENiKYA
+X-Gm-Gg: AeBDieskbun5BzkL6W/M15BgzZqPa54TZgd4AkMAJcgtq+n+fZ/k/wyJ7eGbKu4UKtJ
+	dg5+3Vw1sbTd/9/bQuK9tR6RupKwaUdh1M7eo9blnbFEoFMKDFOO+F4phEuMDzrMHlwYxmRmKDb
+	4ExRhBUsaUWEpq5gA9Vu+F4L3i6L28WLVM8sO1Ys+RmidN0QOpRa/zb28FUJMMgNOcvM0mCbszq
+	YLaDWdiyyqtjb5AlP5jDpfP3S9Q0+xm81QWM5h4stMk2nHhrt8IAyHq33gRS+DUwajibNH7nCm7
+	MKIORP+iYXrbR84ODLmvAWDeQNBkc4ZkHYVcknb2fDGE9YXEb2zoBF9zrWBMNqp8j/CXvhvQ7Gh
+	5MNHeDgoEW0snBSrWctFUkTqH0Ia5etRRlLdmcStGHGiUApp2wRbe15oUfZLrLrkenPhdz1jKPa
+	/5ZwWPJrI5sQGAiKZbBL6GPpfE3gllJ40Yk7qKczonSiU6Qt69D40sGLDdBw==
+X-Received: by 2002:a17:90b:3506:b0:35f:b784:d3bf with SMTP id 98e67ed59e1d1-364a0ade6f9mr721896a91.1.1777404925971;
+        Tue, 28 Apr 2026 12:35:25 -0700 (PDT)
+Received: from LAPTOP-N4V2OTAG.localdomain ([49.36.186.79])
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-c7fc29b40aasm3196706a12.12.2026.04.28.12.35.20
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 28 Apr 2026 12:35:25 -0700 (PDT)
+From: Aditya Dabhade <aditya.dabhade066@gmail.com>
+To: Lorenzo Bianconi <lorenzo@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	linux-arm-kernel@lists.infradead.org,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Aditya Dabhade <aditya.dabhade066@gmail.com>
+Subject: [PATCH] phy: airoha: use C-style SPDX comment for header file
+Date: Wed, 29 Apr 2026 01:04:59 +0530
+Message-Id: <20260428193459.5865-1-aditya.dabhade066@gmail.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-Message-Id: <20260428-rockchip-usbdp-cleanup-v4-11-7775671ece22@collabora.com>
-References: <20260428-rockchip-usbdp-cleanup-v4-0-7775671ece22@collabora.com>
-In-Reply-To: <20260428-rockchip-usbdp-cleanup-v4-0-7775671ece22@collabora.com>
-To: Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Heiko Stuebner <heiko@sntech.de>, Frank Wang <frank.wang@rock-chips.com>, 
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>
-Cc: Andy Yan <andy.yan@rock-chips.com>, Dmitry Baryshkov <lumag@kernel.org>, 
- Yubing Zhang <yubing.zhang@rock-chips.com>, 
- Alexey Charkov <alchark@gmail.com>, linux-phy@lists.infradead.org, 
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
- linux-kernel@vger.kernel.org, kernel@collabora.com, 
- devicetree@vger.kernel.org, 
- Sebastian Reichel <sebastian.reichel@collabora.com>
-X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=openpgp-sha256; l=2934;
- i=sebastian.reichel@collabora.com; h=from:subject:message-id;
- bh=2RDTD3i97hvqpAcQDq/HnQnUMc4wftjxgYkOHKmJn4U=;
- b=owJ4nAFtApL9kA0DAAoB2O7X88g7+poByyZiAGnw3MmQSSSwrcFXLHqHG6CyyOtH5uQtKKZOz
- +82bfniCOEglYkCMwQAAQoAHRYhBO9mDQdGP4tyanlUE9ju1/PIO/qaBQJp8NzJAAoJENju1/PI
- O/qam/4P/3vhs4uoTFTRp6OFin+UhI0KhjUsLWVjRF/uTJlIifjNAzP2AceepnakSsVbiFn3A7D
- e89Gq8BgbKfSlf/KrK/x411ZBfKWrjHDc0ks7sFKNW+l5U9df9bXvHhhZeNWvCzCfaRL0ZzRSlQ
- WuqZ4iDT1tfzLdGMugPWGCH57gYAyvZZMFRS7q7+SoKplmPNYXKUY1bvNHAwCQFbp46bk/1P1IY
- MH3zN5g7MUqkKv2VKUbPVandQEDtwvpS+F8+kKvLoaXAJdcNMf2n3fzgHsWJ4ovfDhYUS+FkK4I
- YhBJrJc5EzKymDNIq8omudVQDwy4jjE3KmeUbY3R68ySqPTdXNtN6fEb1Wz4ozQNrGMdDXWRSpZ
- 0P9t4l1egmQBY+2iSJ/v66BQxMV4pc4sMi4BSxSy0tQ75y7Dl9/Soce6Df9Y7Jv3+Vki7LANPDQ
- 3pZr5spNYsTeqFQpC407taDkjMIURi0tQPrJ1rM9CkWQai/0D8hJM/NT4qCETLzq3/hsQV062dI
- WHd+go/xyBuxsqkj2lOKtl8xn8ogAGwkzpZFtoBw+bQUdIRkSiZMLKXQ9hjKFKt9LacwUnQEo3F
- VsvxxTmyhGPr/U4USlal6mjkms172FRzxxb93wqaygfBqHeSgPlsD3NPMoAVx8AZYEsU01E5114
- dmUpA6ncUrKq3JrInpeUyAQ==
-X-Developer-Key: i=sebastian.reichel@collabora.com; a=openpgp;
- fpr=EF660D07463F8B726A795413D8EED7F3C83BFA9A
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260428_171412_410037_94BA6E08 
-X-CRM114-Status: GOOD (  15.04  )
+X-CRM114-CacheID: sfid-20260428_123527_494678_0AD31452 
+X-CRM114-Status: GOOD (  10.46  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,91 +100,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add support to use USB-C connectors with the DP altmode helper code on
-devicetree based platforms. To get this working there must be a DRM
-bridge chain from the DisplayPort controller to the USB-C connector.
-E.g. on Rockchip RK3576:
+checkpatch reports an improper SPDX comment style for this header:
 
-root@rk3576 # cat /sys/kernel/debug/dri/0/encoder-0/bridges
-bridge[0]: dw_dp_bridge_funcs
-        refcount: 7
-        type: [10] DP
-        OF: /soc/dp@27e40000:rockchip,rk3576-dp
-        ops: [0x47] detect edid hpd
-bridge[1]: drm_aux_bridge_funcs
-        refcount: 4
-        type: [0] Unknown
-        OF: /soc/phy@2b010000:rockchip,rk3576-usbdp-phy
-        ops: [0x0]
-bridge[2]: drm_aux_hpd_bridge_funcs
-        refcount: 5
-        type: [10] DP
-        OF: /soc/i2c@2ac50000/typec-portc@22/connector:usb-c-connector
-        ops: [0x4] hpd
+    WARNING: Improper SPDX comment style for
+    'drivers/phy/phy-airoha-pcie-regs.h', please use '/*' instead
 
-Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+Per Documentation/process/license-rules.rst, C header files must use the
+'/* SPDX-License-Identifier: ...  */' form instead of the '// ....' form
+used in C source files. Fix it.
+
+Signed-off-by: Aditya Dabhade <aditya.dabhade066@gmail.com>
 ---
- drivers/phy/rockchip/Kconfig              |  2 ++
- drivers/phy/rockchip/phy-rockchip-usbdp.c | 14 ++++++++++++++
- 2 files changed, 16 insertions(+)
+ drivers/phy/phy-airoha-pcie-regs.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/phy/rockchip/Kconfig b/drivers/phy/rockchip/Kconfig
-index 14698571b607..39759bb2fa1d 100644
---- a/drivers/phy/rockchip/Kconfig
-+++ b/drivers/phy/rockchip/Kconfig
-@@ -136,8 +136,10 @@ config PHY_ROCKCHIP_USBDP
- 	tristate "Rockchip USBDP COMBO PHY Driver"
- 	depends on ARCH_ROCKCHIP && OF
- 	depends on TYPEC
-+	depends on DRM || DRM=n
- 	select GENERIC_PHY
- 	select USB_COMMON
-+	select DRM_AUX_BRIDGE if DRM_BRIDGE
- 	help
- 	  Enable this to support the Rockchip USB3.0/DP combo PHY with
- 	  Samsung IP block. This is required for USB3 support on RK3588.
-diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-index beab20e4c512..77ad2a89d4f2 100644
---- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
-+++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-@@ -6,6 +6,7 @@
-  * Copyright (C) 2024 Collabora Ltd
-  */
- 
-+#include <drm/bridge/aux-bridge.h>
- #include <dt-bindings/phy/phy.h>
- #include <linux/bitfield.h>
- #include <linux/bits.h>
-@@ -1434,6 +1435,7 @@ static int rk_udphy_probe(struct platform_device *pdev)
- {
- 	struct device *dev = &pdev->dev;
- 	struct phy_provider *phy_provider;
-+	struct fwnode_handle *dp_aux_ep;
- 	struct resource *res;
- 	struct rk_udphy *udphy;
- 	void __iomem *base;
-@@ -1492,6 +1494,18 @@ static int rk_udphy_probe(struct platform_device *pdev)
- 			return ret;
- 	}
- 
-+	/*
-+	 * Only register the DRM bridge, if the DP aux channel is connected.
-+	 * Some boards use the USBDP PHY only for its USB3 capabilities.
-+	 */
-+	dp_aux_ep = fwnode_graph_get_endpoint_by_id(dev_fwnode(dev), 3, 0, 0);
-+	if (dp_aux_ep) {
-+		ret = drm_aux_bridge_register(dev);
-+		fwnode_handle_put(dp_aux_ep);
-+		if (ret)
-+			return ret;
-+	}
-+
- 	udphy->phy_u3 = devm_phy_create(dev, dev->of_node, &rk_udphy_usb3_phy_ops);
- 	if (IS_ERR(udphy->phy_u3)) {
- 		ret = PTR_ERR(udphy->phy_u3);
-
+diff --git a/drivers/phy/phy-airoha-pcie-regs.h b/drivers/phy/phy-airoha-pcie-regs.h
+index b938a7b468f..58572c79372 100644
+--- a/drivers/phy/phy-airoha-pcie-regs.h
++++ b/drivers/phy/phy-airoha-pcie-regs.h
+@@ -1,4 +1,4 @@
+-// SPDX-License-Identifier: GPL-2.0-only
++/* SPDX-License-Identifier: GPL-2.0-only */
+ /*
+  * Copyright (c) 2024 AIROHA Inc
+  * Author: Lorenzo Bianconi <lorenzo@kernel.org>
 -- 
-2.53.0
+2.34.1
 
 
 -- 
