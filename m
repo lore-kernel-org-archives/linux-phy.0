@@ -4,99 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4F774FF8875
-	for <linux-phy@archiver.kernel.org>; Thu, 30 Apr 2026 12:05:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DBDC3FF8873
+	for <linux-phy@archiver.kernel.org>; Thu, 30 Apr 2026 12:47:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hz3bwpovKlC07DMzZzxRN0GIwmRlMUuShraqrx5+oIc=; b=rUvEaTSZXFXw5/
-	X29GG1D3O/DvLCYPzBHzJrgOZke3hwkwMjuqGWQizkiKV84Bhki2ogmGPnuLUCJ6DBDjxiY4pzV0X
-	LNzCb0CQvutbUY77FZN78/2Jb1Zag3GXNx0flpmmpzVh9eShHx15YQ7cEeWhGw6Zz4rS95XbOEDQd
-	0ctuxOAWcluQrSZG7fugecjbzpO0rAtUPRRDUyIo0LZdb26Ah5X7ds9OJUueCMwDBN/pmiJUBtkWc
-	zGFeLiqNVvzgVYJLwH+8XlUDzWAOGZk4z7ha9Cx4bxWPUu1ZFoAkH+M2xoJOqOvf3eEmcTiNcFeZS
-	yJ7ZmjaS1IGbJ6mpA0ng==;
+	List-Owner; bh=H4q5YTTwXhLSGqOCKDzPAC8UYzYXmHuM/DvB98iouM8=; b=r42QfyymsYbZ4H
+	4F780wtlPdFkec2TienKdR5KcMSnrnuxndOQq/DArMjP7qhtb7DrsclS0nMfMgReQExgveMzRovRG
+	lyDXjx3projnMj6KNE15VmKicryMazs9dEsvqJQf40I6PcFZ6+luwwgGISik81wmKxjh62nuQG316
+	9LbDU7IQveA4+mBvpbTbXdNBwVQG2T5woNTlce2IYoXCUL/+ttTwYC/vXEcpNP2V7/rD1xRjrzTaD
+	ZCpSGW3q4yggoMmLEO7+UcgbvIhWR18HDXWxuf1CYSQYAOz8RA6kKS8OR1fXxLSVB/Oi/lzclSdF0
+	+guAmZT8ouCxXXVLQayQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wIQ9L-00000005QVd-3iq0;
-	Thu, 30 Apr 2026 12:05:47 +0000
-Received: from mail-ot1-f48.google.com ([209.85.210.48])
+	id 1wIQo3-00000005Tzx-1vC4;
+	Thu, 30 Apr 2026 12:47:51 +0000
+Received: from www537.your-server.de ([188.40.3.216])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wIQ9J-00000005QUp-1PnL
-	for linux-phy@lists.infradead.org;
-	Thu, 30 Apr 2026 12:05:47 +0000
-Received: by mail-ot1-f48.google.com with SMTP id 46e09a7af769-7dcdca9aa0bso1420253a34.0
-        for <linux-phy@lists.infradead.org>; Thu, 30 Apr 2026 05:05:45 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1777550744; x=1778155544;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=ksIL4rip+tLI1Yx6QhQXSN6krUTnsd9SRkVzjQXrZjA=;
-        b=O3bGlDvrzUlx+9XNyanOwrze5vvX13Ft+Ytk8JK9z1oDHLK3ru8GDYs2I7rOXt/Sgo
-         njIs0VwHUBEx3CF1epwRTn5Et0m2gn2n5AGVzaweT4Rqy/bitxkOKzPa7eHmNh9+FbcA
-         6fqw2+lrhoVnoBpuScu7946XPDQFzv5rXS1hxiWBugyU2YWzHbUWrniZGQSwWMmohVbq
-         ZZwHVwEoD0WhDr+0MzqaZCvAMB8Lk+Mb+FW5XJ8ilefMAhV5bMlc0lyKdeSkplp5FHzE
-         AQeX2q+JlQxaNjrRlgHcc348iPuG2uzlbTekaEUE7HeUej3v1BF3yXaUptf8MG8EGvhv
-         jdIQ==
-X-Gm-Message-State: AOJu0YwwT4Ujwy0+ao83nU169fYTY5AbNztvZARw96dqQw1O9dx5Vu5w
-	rL0PALZVvW2eHVu3suStyJd9eRH6KJFdTgmaURJfDxqd1HFFi+ZQa3xBaRHcS9woBsM=
-X-Gm-Gg: AeBDievrtQoaRLRDO3xKsMKJiqrwDqPvY/O2BLZQdXtutSQMOUgNSHN0V876q9HNy3S
-	O2YXsx5ZCjJzILApBHbV4gEwagJryevAXUw9WjyMfHUL4EYo15a6jcotWC1RirTq2x0jwjmyKc5
-	KtfCfzn6wE/q5N+C1GG6gvegVF+Ob4rIej5EXX7vONyOrZ5dPEYU9eCtlr8SKC4yYjFG3YGyBDQ
-	4bJWV/GCvYE/ZIxcUHa/9N/Rc+7lsBgQntg5G3r1Dq475ts8pxuTuyQ9ZNZ6SQuL7FxtrQUcV6m
-	mSrqCP1YhclpJycEFFhdpJ+vT8p1leMwEo7330/yRQRn4m8l0KwG1rT20XVPWc8yezDSyplU1jK
-	/CfJsIL/Mto/y3kuCz4TDVN2fNw6/K7h6srU3s9q1H/nJ9WExvhMogyj2wMPuHvingy+fASypbX
-	iReX7XpnzZUcFmAy3XNoZ0s6C6JnAUfb6NqpolUAvgCmZ08aNO2R/luSAuMhhjrw/GdippPWw=
-X-Received: by 2002:a05:6820:338a:10b0:682:ecb8:c2b with SMTP id 006d021491bc7-6967bce3c34mr527189eaf.6.1777550744230;
-        Thu, 30 Apr 2026 05:05:44 -0700 (PDT)
-Received: from mail-ot1-f50.google.com (mail-ot1-f50.google.com. [209.85.210.50])
-        by smtp.gmail.com with ESMTPSA id 006d021491bc7-6966bbe3b99sm2918994eaf.6.2026.04.30.05.05.43
-        for <linux-phy@lists.infradead.org>
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 30 Apr 2026 05:05:43 -0700 (PDT)
-Received: by mail-ot1-f50.google.com with SMTP id 46e09a7af769-7d1872504cbso686674a34.0
-        for <linux-phy@lists.infradead.org>; Thu, 30 Apr 2026 05:05:43 -0700 (PDT)
-X-Received: by 2002:a67:e708:0:b0:610:347f:9f3b with SMTP id
- ada2fe7eead31-62afc506100mr613209137.3.1777550404889; Thu, 30 Apr 2026
- 05:00:04 -0700 (PDT)
+	id 1wIQo0-00000005Tyl-2Fy2;
+	Thu, 30 Apr 2026 12:47:50 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=ew.tq-group.com; s=default2602; h=Content-Type:Content-Transfer-Encoding:
+	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender
+	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID;
+	bh=ONGR1P2sejPwseI1U48nJ6Sn9Q1O9l+eOpPQC/6BOKQ=; b=GDxd1AZxCnVt3bGh86E2xy02FF
+	zD1YjTRphX9Wx+vRvEYcC2Bp/M+DJphjoDQr/LGJozmZ2YMKHeZQBzVpQzO9m6eDgct9qvvxWxcsc
+	o7eRgeivb+MvqVr1UPdmTr3gfrjQi+JYG8QN8yjvC95Xaz8yspeiX9phBRs+4u9W9pO4b7cmmiRkd
+	bf+9cTekx1kB/uJgozCHPDabIgck2MoipIjTezVRioi3g74uyWxNNsndFblVYF2UhnhsBKX9Spsip
+	b1vhwwPIMsSP6nPf6D+WoZG9vU5+khFElS03T84ODUAiL0DJvaycS3tWIqQJWkVhBGTcFOjEXbydo
+	1LyYCQ0Q==;
+Received: from sslproxy04.your-server.de ([78.46.152.42])
+	by www537.your-server.de with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
+	(Exim 4.96.2)
+	(envelope-from <alexander.stein@ew.tq-group.com>)
+	id 1wIQnh-000A3k-0Y;
+	Thu, 30 Apr 2026 14:47:29 +0200
+Received: from localhost ([127.0.0.1])
+	by sslproxy04.your-server.de with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
+	(Exim 4.96)
+	(envelope-from <alexander.stein@ew.tq-group.com>)
+	id 1wIQng-000HY2-06;
+	Thu, 30 Apr 2026 14:47:28 +0200
+From: Alexander Stein <alexander.stein@ew.tq-group.com>
+To: Luca Ceresoli <luca.ceresoli@bootlin.com>,
+ Laurentiu Palcu <laurentiu.palcu@oss.nxp.com>
+Cc: Parshuram Thombare <pthombar@cadence.com>,
+ Swapnil Jakhade <sjakhade@cadence.com>, Dmitry Baryshkov <lumag@kernel.org>,
+ Nikhil Devshatwar <nikhil.nd@ti.com>, Jayesh Choudhary <j-choudhary@ti.com>,
+ Andrzej Hajda <andrzej.hajda@intel.com>,
+ Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
+ David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+ dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+ imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org,
+ linux@ew.tq-group.com, Ying Liu <victor.liu@nxp.com>
+Subject: Re: [PATCH v22 4/8] drm: bridge: Cadence: Add MHDP8501 DP/HDMI driver
+Date: Thu, 30 Apr 2026 14:47:27 +0200
+Message-ID: <15228814.O9o76ZdvQC@steina-w>
+Organization: TQ-Systems GmbH
+In-Reply-To: <q7rze73ohtylj4jgtxun3cg6ih42crfs2u6tioby6yfqciemem@udrdm2g32fgn>
+References: <20260424-dcss-hdmi-upstreaming-v22-0-30a28f89298d@oss.nxp.com>
+ <DI3YF7J7ZW0P.3OKMUXAM7GW5C@bootlin.com>
+ <q7rze73ohtylj4jgtxun3cg6ih42crfs2u6tioby6yfqciemem@udrdm2g32fgn>
 MIME-Version: 1.0
-References: <20260430110652.558622-1-vladimir.oltean@nxp.com> <20260430110652.558622-18-vladimir.oltean@nxp.com>
-In-Reply-To: <20260430110652.558622-18-vladimir.oltean@nxp.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Thu, 30 Apr 2026 13:59:53 +0200
-X-Gmail-Original-Message-ID: <CAMuHMdWbeeRmLf6Ae0Fr0un=-z7z5ONc_hDdjebP=KVkXHPbhw@mail.gmail.com>
-X-Gm-Features: AVHnY4K0yYb6vTu9KdtDciwvAziqboYRX_ITZ386sa6ttixZ1EP_Mzy9gi4Pi0E
-Message-ID: <CAMuHMdWbeeRmLf6Ae0Fr0un=-z7z5ONc_hDdjebP=KVkXHPbhw@mail.gmail.com>
-Subject: Re: [PATCH v7 phy-next 17/27] phy: introduce phy_get_max_link_rate()
- helper for consumers
-To: Vladimir Oltean <vladimir.oltean@nxp.com>
-Cc: linux-phy@lists.infradead.org, Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, dri-devel@lists.freedesktop.org, 
-	freedreno@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org, 
-	linux-arm-msm@vger.kernel.org, linux-can@vger.kernel.org, 
-	linux-gpio@vger.kernel.org, linux-ide@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-media@vger.kernel.org, 
-	linux-pci@vger.kernel.org, linux-renesas-soc@vger.kernel.org, 
-	linux-riscv@lists.infradead.org, linux-rockchip@lists.infradead.org, 
-	linux-samsung-soc@vger.kernel.org, linux-scsi@vger.kernel.org, 
-	linux-sunxi@lists.linux.dev, linux-tegra@vger.kernel.org, 
-	linux-usb@vger.kernel.org, netdev@vger.kernel.org, spacemit@lists.linux.dev, 
-	UNGLinuxDriver@microchip.com, Markus Schneider-Pargmann <msp@baylibre.com>, 
-	Andrzej Hajda <andrzej.hajda@intel.com>, Robert Foss <rfoss@kernel.org>, 
-	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, Jonas Karlman <jonas@kwiboo.se>, 
-	Jernej Skrabec <jernej.skrabec@gmail.com>, 
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, Maxime Ripard <mripard@kernel.org>, 
-	Thomas Zimmermann <tzimmermann@suse.de>, David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
-	Andy Yan <andy.yan@rock-chips.com>, Marc Kleine-Budde <mkl@pengutronix.de>, 
-	Vincent Mailhol <mailhol@kernel.org>, Nicolas Ferre <nicolas.ferre@microchip.com>, 
-	Alexandre Belloni <alexandre.belloni@bootlin.com>, Claudiu Beznea <claudiu.beznea@tuxon.dev>, 
-	Geert Uytterhoeven <geert+renesas@glider.be>, Magnus Damm <magnus.damm@gmail.com>
+X-Virus-Scanned: Clear (ClamAV 1.4.3/27987/Thu Apr 30 08:25:46 2026)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260430_050545_373236_B63B77A3 
-X-CRM114-Status: GOOD (  22.68  )
+X-CRM114-CacheID: sfid-20260430_054748_684255_F1DA51C6 
+X-CRM114-Status: UNSURE (   9.73  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,61 +91,46 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Vladimir,
+Hi,
 
-On Thu, 30 Apr 2026 at 13:07, Vladimir Oltean <vladimir.oltean@nxp.com> wrote:
-> Consumer drivers shouldn't dereference struct phy, not even to get to
-> its attributes.
+Am Montag, 27. April 2026, 16:35:55 CEST schrieb Laurentiu Palcu:
+> Hi Luca,
 >
-> We have phy_get_bus_width() as a precedent for getting the bus_width
-> attribute, so let's add phy_get_max_link_rate() and use it in DRM and
-> CAN drivers.
->
-> In CAN drivers, the transceiver is acquired through devm_phy_optional_get()
-> and NULL is given by the API as a non-error case, so the PHY API should
-> also tolerate NULL coming back to it. This means we can further simplify
-> the call sites that test for the NULL quality of the transceiver.
->
-> Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
-> Acked-by: Markus Schneider-Pargmann <msp@baylibre.com> # m_can
+> [snip]
+> > =
 
-Thanks for your patch!
+> > Another question is whether this driver should have two compatible stri=
+ngs,
+> > one for hdmi and one for dp, and set the bridge_type based on that. This
+> > would make it a lot simpler and remove the need for this function.
+> =
 
->  drivers/net/can/rcar/rcar_canfd.c                   | 3 +--
+> I think this is a good idea. I see no reason why having 2 different
+> compatibles wouldn't work. I'll give it a try.
 
-Acked-by: Geert Uytterhoeven <geert+renesas@glider.be> # rcar_canfd
+IIRC the original implementation of Sandor had two compatibles, essentially
+duplicating lots of code for DP and HDMI. Maybe meanwhile with the rework t=
+he
+duplication is gone and the different compatibles are feasible again.
 
-> --- a/include/linux/phy/phy.h
-> +++ b/include/linux/phy/phy.h
-> @@ -57,6 +57,7 @@ int phy_notify_disconnect(struct phy *phy, int port);
->  int phy_notify_state(struct phy *phy, union phy_notify state);
->  int phy_get_bus_width(struct phy *phy);
->  void phy_set_bus_width(struct phy *phy, int bus_width);
-> +u32 phy_get_max_link_rate(struct phy *phy);
+Best regards,
+Alexander
+-- =
 
-This (and all the existing getters) should take a "const struct phy *".
+TQ-Systems GmbH | M=FChlstra=DFe 2, Gut Delling | 82229 Seefeld, Germany
+Amtsgericht M=FCnchen, HRB 105018
+Gesch=E4ftsf=FChrer: Detlef Schneider, R=FCdiger Stahl, Stefan Schneider
+http://www.tq-group.com/
 
->  #else
->  static inline struct phy *phy_get(struct device *dev, const char *string)
->  {
 
-Gr{oetje,eeting}s,
 
-                        Geert
+-- =
 
--- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
-
--- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
