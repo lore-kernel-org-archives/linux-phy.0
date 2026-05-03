@@ -4,67 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B97C9FF886F
-	for <linux-phy@archiver.kernel.org>; Sun,  3 May 2026 16:50:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A3527CD3424
+	for <linux-phy@archiver.kernel.org>; Sun,  3 May 2026 16:53:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yhVel3DHNtpJqyYreWk2FIwHWKrM2XvKf0QK4++Jr6o=; b=4soVAO6dxzUUnn
-	JZsepcEAnxSe08zsLS0m241Bs7S5B2Vkhtpui1MugFQMaTgNYVg7Iuibw92bVuQtovngU7SN+KBm2
-	3oFtt4hgjVvwtu0/ClUtfpYBaa8mp69OO75xbFFpuUwe3GthLee0zZzy6gBMYIw4kHNaeDYhI8J2N
-	E5OL97LrL3uMRO33HBJAFX7xQD11077zXBp58NzpBM4GsyU7t1nR1CPGDGwRjob8VibLpTY2Tiw+C
-	tLTaVsfBkCm3wHkdCjGGaIezzgh7HxPMi4i3qQvmdlSF2qfZi+UDSrs3kAYkounZZk0bAiTLm5kDe
-	5ojx7yl/KIn5mFoF4EEA==;
+	List-Owner; bh=JWLHbUxT0XWoDp4FB9rgiAupz0GSkDwo5ETBfopGiQo=; b=G2MjkA/OCJea9C
+	B548FplIgnOOxS484aoo1iQ2VfpnaTMalNzz758QIaUt6eBMm2OE3VBwkclUvNEXqUHobAWs9daE6
+	T3WK6VAutg2irOiaRmG6ZBKY6vA3OoVu8fh04ejuQCfgiUt2u/EBcHSmebojZvNNgZzyBfPKGwQ/p
+	esJkepbWjFKWsyf3axVqPO5vPD5+WwJDNPF1UEhPj3ft2R7jJmFzzSxiFOHKeVFd/Ki4/wv7ujsNw
+	/5vUPNXAeNNmippGnKSl6R1K8kDo2j66m0VMfX+QFH4JFhLFfx6jepVILdpnbsj4Y2w6QPU+CttSa
+	5EupfmAm1y1EISdS2hiA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wJa1L-0000000BKul-0S16;
-	Sun, 03 May 2026 16:50:19 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wJa4d-0000000BLNt-1AJj;
+	Sun, 03 May 2026 16:53:43 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wJa1J-0000000BKuM-3S1q;
-	Sun, 03 May 2026 16:50:17 +0000
+	id 1wJa4Z-0000000BLMs-3ShI;
+	Sun, 03 May 2026 16:53:41 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id CBC95600C3;
-	Sun,  3 May 2026 16:50:16 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9CB70C2BCB4;
-	Sun,  3 May 2026 16:50:15 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 25C7C43D13;
+	Sun,  3 May 2026 16:53:39 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 61020C2BCB4;
+	Sun,  3 May 2026 16:53:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1777827016;
-	bh=EcIJ+6nR1kdFOG4fTTp8uLBQCqZk2MyerUY14rOlOSA=;
+	s=k20201202; t=1777827219;
+	bh=1Etpq6wnGwOr5oR0u0952ST5kV6ZQp1I+Y9KByQY0Vc=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=lp0gv1z/9St8x7kSEsE5qrH6Uk67Q5ty4kT1IqtUMgeaA7dCVtmxE4u34QRnuxklE
-	 O2I60cgzCIEnUc6iUZjOu3togYE/T2wlhMgXbWAgiBkuJqBYWfOONaPoUvwXBQhh/8
-	 JZoiQ4rxka0GpD5g+h1EiI+StNJc95GjUTd90E/EKWYWCIjdJMeTquz1mjRKJ6aa+G
-	 pYJ0hFTVoliKB2hwUpP5xD5t8lAB9/MRgG4F9+MBiPH8bndVILIIZDUe93HgMXtmi3
-	 ZQjsW8/FQxyvlO8+PIQW9YBtvnfYaU7H7TA7KeFBqzma0aQIgXYOvES/mUIb9XkYhW
-	 7GPvp1xrhWmFQ==
-Date: Sun, 3 May 2026 22:20:12 +0530
+	b=ghW9LrpCOgQpUpZ6bt35gv9JaxPFBItxyJkeSUdmr8HmMdSQ81CCNedzh4qF8kb2U
+	 xNtoEOXtZ2L+CCm/4a2hUqrGZ0BbqTTjSqKIQLVOsxTAlOEOumoxBmQcW6ZELL7okp
+	 Wbn7S7zmfJN05INga6GyQ3euRVkhtXVPm6dYGHp3quwMW5zVRCZGTAcLC8mKpNXIi0
+	 fI/Al4q2y9c+CjhZIh99gUltSQIq3yNK2HqDOrpmtMlJNN4B9Tn22fQbEty0fPLUGR
+	 fAHzLWtr1EN9cGIh2HW45tymrTpfP30G/+Ot9WyRXIIJJ9EeiC9j56VqTem5wkFdU6
+	 eIyrz1g5Rfu8A==
+Date: Sun, 3 May 2026 22:23:34 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Sebastian Reichel <sebastian.reichel@collabora.com>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>,
-	Heiko Stuebner <heiko@sntech.de>,
-	Frank Wang <frank.wang@rock-chips.com>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Andy Yan <andy.yan@rock-chips.com>,
-	Dmitry Baryshkov <lumag@kernel.org>,
-	Yubing Zhang <yubing.zhang@rock-chips.com>,
-	Alexey Charkov <alchark@gmail.com>, linux-phy@lists.infradead.org,
-	linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
-	kernel@collabora.com, devicetree@vger.kernel.org,
-	William Wu <william.wu@rock-chips.com>
-Subject: Re: [PATCH v4 00/16] phy: rockchip: usbdp: Fixes, DP 1-lane support
- and cleanups
-Message-ID: <afd8xMS2hz208Lcl@vaman>
-References: <20260428-rockchip-usbdp-cleanup-v4-0-7775671ece22@collabora.com>
+To: Laurentiu Palcu <laurentiu.palcu@oss.nxp.com>
+Cc: Parshuram Thombare <pthombar@cadence.com>,
+	Swapnil Jakhade <sjakhade@cadence.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Frank Li <Frank.Li@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>, dri-devel@lists.freedesktop.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-phy@lists.infradead.org, imx@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org, linux@ew.tq-group.com,
+	Alexander Stein <alexander.stein@ew.tq-group.com>,
+	Ying Liu <victor.liu@nxp.com>
+Subject: Re: [PATCH v22 6/8] phy: freescale: Add DisplayPort/HDMI Combo-PHY
+ driver for i.MX8MQ
+Message-ID: <afd9juuQh8OB6SEw@vaman>
+References: <20260424-dcss-hdmi-upstreaming-v22-0-30a28f89298d@oss.nxp.com>
+ <20260424-dcss-hdmi-upstreaming-v22-6-30a28f89298d@oss.nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260428-rockchip-usbdp-cleanup-v4-0-7775671ece22@collabora.com>
+In-Reply-To: <20260424-dcss-hdmi-upstreaming-v22-6-30a28f89298d@oss.nxp.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260503_095339_886065_B40C8EB7 
+X-CRM114-Status: UNSURE (   7.29  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,25 +83,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Sebastian,
-
-On 28-04-26, 18:13, Sebastian Reichel wrote:
-> This series overhauls the Rockchip USBDP driver; apart from a
-> a bunch of cleanups and small improvements the main goal is to
-> get the driver ready for proper USB-C DP AltMode support.
+On 24-04-26, 11:07, Laurentiu Palcu wrote:
+> From: Sandor Yu <Sandor.yu@nxp.com>
 > 
-> Once this series has landed, it unblocks enabling proper USB-C
-> DP AltMode on the RK3588 and RK3576 platforms incl. runtime PM
-> for the Synopsys DesignWare DisplayPort controller.
+> Add Cadence HDP-TX DisplayPort and HDMI PHY driver for i.MX8MQ.
 > 
-> Apart from this series, further changes are required on the
-> DRM side. There are no compile-time dependencies between the
-> DRM side and the PHY side, but the PHY side must be applied
-> to avoid SErrors once runtime PM is added to the DisplayPort
-> controller driver. Thus it would be really good to land this
-> series in the next merge window.
+> Cadence HDP-TX PHY could be put in either DP mode or
+> HDMI mode base on the configuration chosen.
+> DisplayPort or HDMI PHY mode is configured in the driver.
 
-Looks like sasiko has flagged 8 high warning, can you please check them
+Hi,
+
+Please consider if this can be split from rest of the series and posted
+as phy driver
+
+Also sasiko has flagged some issues, please take a look https://sashiko.dev/#/patchset/20260424-dcss-hdmi-upstreaming-v22-0-30a28f89298d%40oss.nxp.com
 
 -- 
 ~Vinod
