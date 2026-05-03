@@ -4,62 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40AABCD3424
-	for <linux-phy@archiver.kernel.org>; Sun,  3 May 2026 17:01:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 93461FF886F
+	for <linux-phy@archiver.kernel.org>; Sun,  3 May 2026 17:12:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=egbOdN51+MiavWgUhFg+8zGgvfARfSoIf7SGsiIpHT4=; b=laLGXE7GH7/USD
-	3wyhGcXbWqYVFFZGCGq60bX2Cwc7q7YVmwEOjxU0H2NJXyPi6qA/Ag9lM0lx4Iee3OngkL26fc/HH
-	e+CrHIsHJaTlJoiC3zoZ9wI7h+13m4rtPnnse+xOeIQWJP2Z3IKp+ndyOXmUkvY7Vkqib1SWb8UpF
-	V2fnP0qWStj+7tz9H+3GNEzcnSFq/wnIposuQ/2m4b7XoHiDvHlLuaif5xpdncZdooS4Y5W2d6lX9
-	sP0XTeSP/7HLk/w+brYnESKxvLTb9zArYIc7kRbERgobU+c/+cnnQ7FwLBdwlZ+HvT2zicLBOTy9G
-	OSl+OBKLJhz6PKXK6DCA==;
+	List-Owner; bh=Yz+K2cp+ktirDdPg2RXNC68gGYkc8zX9nzq7IWtXGEA=; b=AEFQxEfhOhUhSY
+	Z2Lck2qIIYY7vobbhwBzuu009VrZnm+QhX6vfajn57KNkQUY8iui+LvBoyMRebfx6rvWGu6i4TLmk
+	KsOBfvkkWdxct5TLdrmzJ/NudqqWoVqi2pbPfy7x+zscES9xYncPhSCFWSIsjv/+5t4OWMsdr63TQ
+	fsPH5/mSrifBXOoZE2KUAQgAGiFQ4RqtqBrIrdNFPRRxr5sCK3pF9acnHaNN5iApuNHnzWyhl7bSn
+	73Hy3TWD0GFg3RzD7JnbCWKgTQXDOeyUW3gHc00s22wAqPVatyK3ROKYWFYIy+9/eFIGKYmEm5VzR
+	YYNEVZnb+7mfaouiLVeg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wJaCP-0000000BMML-4BMk;
-	Sun, 03 May 2026 17:01:46 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wJaMV-0000000BNEo-1z1k;
+	Sun, 03 May 2026 17:12:11 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wJaCO-0000000BMLp-1u5q
+	id 1wJaMU-0000000BNEW-1EN6
 	for linux-phy@lists.infradead.org;
-	Sun, 03 May 2026 17:01:44 +0000
+	Sun, 03 May 2026 17:12:10 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 5904060120;
-	Sun,  3 May 2026 17:01:43 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6D568C2BCB4;
-	Sun,  3 May 2026 17:01:42 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 56CAE600C3;
+	Sun,  3 May 2026 17:12:09 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9FFB9C2BCB4;
+	Sun,  3 May 2026 17:12:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1777827703;
-	bh=fiLiaWwKrVIjOWaSnEWgSySv6Hyt/1f/Gq3WlcytnLs=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=JDqRoansc7LG0FO9DJlMaR6cfChtEWl70hCLSoGRDnFHnCkaQwAenBhsF2TzVfISa
-	 NXqeR+nQdHHWLLvU5DmPtFtymssVHP5VuVxpa0mGwPH7htL6DspW+U5V9z7kJrixnk
-	 0e0O3bvmgP8nP0PKboyyHyNXBHHyFIhoINu4wMetgRoEZ2XEj1F2LoiGncWJ6DDhWP
-	 Qp3fCc+WHA6KhKHQxBQ0gJdXGq0pojPs2M9Xxz/k5RCDapNVMjkr5uFoQ1Ieu13I+F
-	 q+/y48w4rfKewY+hSdHpZwkT+5kGY4tdPYTazqRO+NwWXi8y85gbSFblD5PGcDYdr6
-	 Eg85pMzHzPmAQ==
-Date: Sun, 3 May 2026 22:31:38 +0530
+	s=k20201202; t=1777828329;
+	bh=VSVVTCxUpqH6gUJP/+1230YPiKCL5WEfgYBGdHK6SeY=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=G26YuI+x4jF+WpcAccWSTOdC0H9T9YrHmwMMoUBP9+YB1/C3etZyOdIrlyGK4QwHc
+	 2aROAFAYy6+I7rmVbu6VsZlk9mBPweYtLk31xneG2o31DBN+95HHVLPhodcER0S9sV
+	 eOzFd9UuvYV7DoCF+K1K3AFRqKovgDE8T/fPkAf84e3Dw3GCrHHN2IC8j8njysPCSq
+	 ltzzVEsCRDj75IWPPXNawl5vAXTdZ77j1jamfJk4+bXztI48WCEi8+/IVPAP1CzBGM
+	 TS3Qa2wu0iSHpH8tSoiYpci8JYW63dUuPcuiiNW3T2Yl3UaoRlWkcNB0hzxYXvGEGt
+	 aD89jy2KRxlrg==
 From: Vinod Koul <vkoul@kernel.org>
-To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-Cc: linux-can@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Marc Kleine-Budde <mkl@pengutronix.de>,
-	Vincent Mailhol <mailhol@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Josua Mayer <josua@solid-run.com>,
-	Ulf Hansson <ulf.hansson@linaro.org>
-Subject: Re: [PATCH v2 0/4] phy: phy-can-transceiver: Ad-hoc cleanups and
- refactoring
-Message-ID: <afd_csl0eHFfVWLP@vaman>
-References: <20260317203001.2108568-1-andriy.shevchenko@linux.intel.com>
- <ad6KwGIhpJn_2eVz@ashevche-desk.local>
+To: Neil Armstrong <neil.armstrong@linaro.org>, 
+ Stephen Boyd <swboyd@chromium.org>, Bjorn Andersson <andersson@kernel.org>, 
+ Yongxing Mou <yongxing.mou@oss.qualcomm.com>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, stable@vger.kernel.org, 
+ Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, 
+ Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+In-Reply-To: <20260427-edp_phy-v5-0-3bb876824475@oss.qualcomm.com>
+References: <20260427-edp_phy-v5-0-3bb876824475@oss.qualcomm.com>
+Subject: Re: [PATCH v5 0/5] phy: qcom: edp: Add DP/eDP switch for phys
+Message-Id: <177782832516.123780.10745485778034358012.b4-ty@kernel.org>
+Date: Sun, 03 May 2026 22:42:05 +0530
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <ad6KwGIhpJn_2eVz@ashevche-desk.local>
+X-Mailer: b4 0.13.0
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,21 +73,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 14-04-26, 21:43, Andy Shevchenko wrote:
-> On Tue, Mar 17, 2026 at 09:27:26PM +0100, Andy Shevchenko wrote:
-> > The driver does two things that need to be addressed:
-> > - includes subject to remove gpio.h
-> > - checks for error code from device property APIs when it can be done in
-> >   a robust way
-> > 
-> > This series addresses the above and adds a couple of additional refactoring.
+
+On Mon, 27 Apr 2026 14:35:18 +0800, Yongxing Mou wrote:
+> Currently the PHY selects the DP/eDP configuration tables in a fixed way,
+> choosing the table when enable. This driver has known issues:
+> 1. The selected table does not match the actual platform mode.
+> 2. It cannot support both modes at the same time.
 > 
-> Any comments on this? Doesn't look like it being applied so far...
+> As discussed here[1], this series:
+> 1. Cleans up duplicated and incorrect tables based on the HPG.
+> 2. Fixes the LDO programming error in eDP mode.
+> 3. Adds DP/eDP mode switching support.
+> 
+> [...]
 
-Apart from stray delete, rest looks, fine. Can you fix that and rebase
+Applied, thanks!
 
+[1/5] phy: qcom: edp: Unify generic DP/eDP swing and pre-emphasis tables
+      commit: fd672888cccd6b855154efe0ac78e7ce3e8ab088
+[2/5] phy: qcom: edp: Add eDP/DP mode switch support
+      commit: 3011c365a329cf2db6d55e8d684550dc88350436
+[3/5] phy: qcom: edp: Add SC7280/SC8180X swing/pre-emphasis tables
+      commit: 3d22594d6f842814b7718600486fe3ce9453abf0
+[4/5] phy: qcom: edp: Fix AUX_CFG8 programming for DP mode
+      commit: bf237a9fcbbf9d658522f7315ffc04bf2d49be42
+[5/5] phy: qcom: edp: Add PHY-specific LDO config for eDP low vdiff
+      commit: 519a228ee40d1be3453d1da339b4577c3785e333
+
+Best regards,
 -- 
 ~Vinod
+
+
 
 -- 
 linux-phy mailing list
