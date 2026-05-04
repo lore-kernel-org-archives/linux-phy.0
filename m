@@ -4,143 +4,152 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9124AFF885A
-	for <linux-phy@archiver.kernel.org>; Mon,  4 May 2026 12:12:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A749DFF885A
+	for <linux-phy@archiver.kernel.org>; Mon,  4 May 2026 16:03:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PYnys9BBhlHGoGX1zQ0oDoas4+RP0FdmUD+vQRHJWKc=; b=GgcBZjmg2A3QS2
-	MIM6A0TGstVk4CMB4vPsa7D/OG1cJIEfhHZKE+ddpuMJCmleNg/esknOdPdGVEBQrvpPkIlMEmZeE
-	+IZYCCqASZnsIuEahcUCc1jUE44cqpKnwgcr4Cb6JB/4Kgl2jyE/WNwjCkjptoYQH0hyEn/SBFx0z
-	p9qW1JVryW2zfozfn+l8aTDR9uw37RAeH52Y4BE0bHrDC1JLYa+UeYpA2oDmudcWQsOWJPO865Tkn
-	x4LI5lyZ8AtGp9pnr2N6LwHZuhJBkDWJICpTTbOFlP/6aNgQMgHD92kms+ymw2hK/b4f5ob3Uqi2f
-	3Ea6Ky1AWN/5oUv6jPsg==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
+	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=n5T+rAm0eiGggm9xtsAlgpWJEI6FECAVTiEp9kSCZK0=; b=OX4Lsmb40caJ8V
+	Mxci4ocJk4y43iOyLEqdHNnNcSJJBSEC9+8/OwWtklS53RFdCAEShkoPPnPNso+UyTDSSw5GH1961
+	qB9eEyuE4Jq3uAT7mzi1vgD/icah3nvSvax5x2ScCyg3bz3pKQjUP5xo01Ph3pUl3JQzW9ltnf8H/
+	nqpLRhMJILoOIumHKmWwkNKR+csXACoHSsxeA9AnaOOfrY7G6vM+yiPnMD8jZKkMpmzcqq/I/Ezts
+	i2N+vstYI2S/SBa5TmeDv1Kb1Hca2SvPGW+MOPLSXWf8XzCeUPg4Z+VKPvS0w0ZID2Hot4BygCYbX
+	kLhvwlVYpnkC7Wnr9HvQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wJs9Z-0000000D7kQ-46Qh;
-	Mon, 04 May 2026 12:12:02 +0000
-Received: from mail-japaneastazon11010001.outbound.protection.outlook.com ([52.101.229.1] helo=TY3P286CU002.outbound.protection.outlook.com)
+	id 1wJvlw-0000000DegA-0DZK;
+	Mon, 04 May 2026 16:03:52 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wJs9W-0000000D7jG-0ZDT
+	id 1wJvlu-0000000Defe-02E8
 	for linux-phy@lists.infradead.org;
-	Mon, 04 May 2026 12:12:00 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=pipyjWjVOO4NViGXRMUf3OXmHqWPHJbysganEInOU9AoQJ36u7DKqYz7JZohMFKrcJcVblb3wMznt/ibeGkpYU+peOgh4ptEp6wp70t7vHU2sDvtzeIBSNZ5f34/U5xhr8Kq3tvci/wyqm7kn2FC8LbwitcZML0NgSUUTQaeg88jCm6LdoK03+QdiBVVzsgctouGbWiAJVGHnlL5exYPzX2gcfV3c87zWJt1ukY0sdpktf6c/UzLZc78Yx11QO73DeVmodmxmiRp9YLHqIKFhZEcPd/kTc5YkTQpfUdxVwkgPWPtjuHjkBpPThl5hYjHqdtQDpI6sb9t0qtjTo0UdQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=wHFBxq+Pm/79WR+XYa5JYmgY9/k9NZqLfjP88Lh+qIQ=;
- b=N4m9TsbIAGWG0qY+oA71S4gA4Bl0ThCbtiLoJwFfMwPZXfX1RNe0csVjgI3Y+uwwt1wNHP1WOCqt4JJW2RBcWShMHMlwzk0uYqYXYVKsEe99DMgi6oujqVyePPGB1s++pbfy9fzo8O60VJNJUE7Ov3yat3ToxUt1JS9oQTqnvFBMDBKDq1uFDffeNqT1/VjoGxfj3TxzPgxV18TVmmYtUaRGRFotKAGUUK21D/q3wzYegwcMb2iNTAwA1n0vm1kYGnDYvMXkqyYrLSJOrYyjHTQ8FyNczlA1jyZhQUdBC9J4Aw0xqi4HdY1y7mUuTQIa2grQEY5rkYkrSLqeTGoQAQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=renesas.com; dmarc=pass action=none header.from=renesas.com;
- dkim=pass header.d=renesas.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=renesas.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=wHFBxq+Pm/79WR+XYa5JYmgY9/k9NZqLfjP88Lh+qIQ=;
- b=aXWeB99vMj+JGqc65E6g+NDuol8h4cBmFQJcx4MzfnD4iRqfuyNEAXMPRL2XJhxlfZOcJtD94MephSTgw4hTM/QohLEHMpLTW9IOPcR1GQ3zZGMY8Sg0FldzBl9AJ9mQ35wmplOMMorp0iMnHTclyCVw8t68q21CX0sk2ZPABq0=
-Received: from OSOP301MB1976.JPNP301.PROD.OUTLOOK.COM (2603:1096:604:465::6)
- by TYRP301MB1306.JPNP301.PROD.OUTLOOK.COM (2603:1096:405:305::10) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9870.25; Mon, 4 May
- 2026 12:11:45 +0000
-Received: from OSOP301MB1976.JPNP301.PROD.OUTLOOK.COM
- ([fe80::888:6ace:31a0:180]) by OSOP301MB1976.JPNP301.PROD.OUTLOOK.COM
- ([fe80::888:6ace:31a0:180%4]) with mapi id 15.20.9870.016; Mon, 4 May 2026
- 12:11:44 +0000
-From: Ovidiu Panait <ovidiu.panait.rb@renesas.com>
-To: geert <geert@linux-m68k.org>
-CC: Vinod Koul <vkoul@kernel.org>, "neil.armstrong@linaro.org"
-	<neil.armstrong@linaro.org>, Biju Das <biju.das.jz@bp.renesas.com>,
-	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-	"linux-renesas-soc@vger.kernel.org" <linux-renesas-soc@vger.kernel.org>
-Subject: RE: [PATCH] phy: renesas: phy-rzg3e-usb3: Fix runtime PM underflow
- during suspend
-Thread-Topic: [PATCH] phy: renesas: phy-rzg3e-usb3: Fix runtime PM underflow
- during suspend
-Thread-Index: AQHc1n7ANECNPwe9y0+ScapReaOqMbX8jucAgAEpLoCAABHIAIAAA3PA
-Date: Mon, 4 May 2026 12:11:44 +0000
-Message-ID: <OSOP301MB197608A7EC2A58F91BD98F2ED3312@OSOP301MB1976.JPNP301.PROD.OUTLOOK.COM>
-References: <20260427194741.161533-1-ovidiu.panait.rb@renesas.com>
- <afd-gj-F3OYDfCwJ@vaman>
- <OSOP301MB19766FF764E6626FF1CD6771D3312@OSOP301MB1976.JPNP301.PROD.OUTLOOK.COM>
- <CAMuHMdWT+hv37gxi-5fbLVc16Fk4SKsXuBis5Fg6_zm7TS6hkQ@mail.gmail.com>
-In-Reply-To: <CAMuHMdWT+hv37gxi-5fbLVc16Fk4SKsXuBis5Fg6_zm7TS6hkQ@mail.gmail.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=renesas.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: OSOP301MB1976:EE_|TYRP301MB1306:EE_
-x-ms-office365-filtering-correlation-id: 534c4cde-7a42-4e52-2ad5-08dea9d64f0e
-x-ld-processed: 53d82571-da19-47e4-9cb4-625a166a4a2a,ExtAddr
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230040|1800799024|366016|376014|18002099003|22082099003|56012099003|38070700021;
-x-microsoft-antispam-message-info: CR6179bRMUQmmDNJ04N5wedJ9UaSz+cPYh4M+XLpfgp3Cu9L4AN7zAr6sV8PhKpY9e4Bw3OtPp86r8Ga8jlplZkZ0uQftq9H1NgLpGLLAFSx8HHi1HC8qQuzel5kwoOeAqdGwAZv2ai/X7G5VO6vDco0kl2c5ITWar+/vJpG89sFVq5KfSeQno4Bjkv82omrkw3Mik2qqLCnKWMpjtBNHQEd4iP67h8D3l/cy8L4EAeyt1h1IrHgcviwnIN1P72jgtaqKDLiJxId4fMm5uv3kZcN2hcYxs2UIT40Kw1drqBhhKGTOmEC5m+X02585aV5pvZJ6agYa7bMyR6ZimpIaCGG/U0DVh9by3pGrnBpLgVegV4lu3yKfgJTXCQiLbH98gAiqivlawc32UXnyoJ1ymRg3YOuixIgrMMEjsWcOysFdm0cGqLToy62I9pNc0UnVm6+zfz+wxeiPmw+goAFa30cVLid9lW/j58cUzFkFkumyyks7Jwuv7rGzMWNskeVLot2uOb0a3qmp+poEz3eH/lMNfhEG6VbTXWySOuIP0VuiGaDc11OBaXiKl4/IMY8xKE99oEXMGQiPqPEQZKC0rc44Hx5t7PfqlceSvTGzOJHdYXEmDxF7sqW4RT9n/OV8cjWFINdPDTucUYrC8LcyC7pVedWQAucVaiPlOp+wBAy48CJfXM8wyCcv0BhiN7H
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:OSOP301MB1976.JPNP301.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(376014)(18002099003)(22082099003)(56012099003)(38070700021);DIR:OUT;SFP:1101;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?utf-8?B?d1E1Vm5paGxkQW5MYmNuanNqQWVmOXVPM2JuV1NDZk9NRE1iWkw1anF5aTBv?=
- =?utf-8?B?RWJSVjdNK0swaFlpalJMTjBFcmtlS3kwZ3JaQ3lVOFZUMFFjVTF6U1dKOU43?=
- =?utf-8?B?OG5YZTVCVTN0L0dyYnZkU2QwQjM2NzRRNHdBdmR0cHdZU2NHTVBWUkpTZ2lu?=
- =?utf-8?B?SE1FQ3VGeVNyS2NRbFFJMW05MVZSVkNwM1cwZDl4TE44b0lrRGxyeXJXZ2hr?=
- =?utf-8?B?WldBK1FnSStzOHlETks5dWg4cVRtVDJCL0FOeGtYQytVSHpUSmFVbi9oRGls?=
- =?utf-8?B?dzM0eXorWklETU15SkhRbnp6K1BTM2lhNjgrVTFhbmtIMWlkajZHZmcrZW1B?=
- =?utf-8?B?RnRXQmZuMTdNbDhkWU5DckJuNVArUGV6RjF6TzdVUVpCRkZZWVpXQVl3VE5a?=
- =?utf-8?B?cVpocDV4YXZ2RWg0dzI2RzVpTnJRdmZ2cTNPaTdIWVk2T0tidXNlNWZkUXRs?=
- =?utf-8?B?VVRPSTlNTGtmWU52VTJ5VVc2b2YyejNRSU4vTEJRNVJyS0JsZkkrc0dLam5F?=
- =?utf-8?B?Y2R0dXN5Z21RRDdGUkZXaDBuRVhodWMwWkswS3lXTm55Zk1iTEROblRqajRt?=
- =?utf-8?B?WGN5Rzl1TUpDRkVuNVgrRlJRV3ErRGVXRm1IbEFwSFBUUlg2cmE0aVVEUFpG?=
- =?utf-8?B?bFc2RmNWTnN2NDE2UVhaaVVJL3ozNFcwZ0czL0ZDd0x1Z2RxRWZpYklFT1NK?=
- =?utf-8?B?RUwrSDVkMGhzMGFKRTJFOHY3WDR6OTZZcGFLTEF0ZzVMUS9ESU9KRUtSZWFq?=
- =?utf-8?B?b0J3RUo4dDg1SmtwZXhDdm9GR1V6MVJ1dUkrUjRtdUdYc0E3TTRiV1F1bzlK?=
- =?utf-8?B?RVNHWnlUK1k5b001ZDlqMmlJb0RHSjZ1OFFOc3orZ1VVamkwZ2dBTHRHeVNO?=
- =?utf-8?B?RVR5T3pBak9icnJRclk3YmF1QXhjSUMrUXdYUis5Y3Ywa3c1bDlkNGREaXlD?=
- =?utf-8?B?WnhGQjhTcytucFVPWmZxT096ZG00V3A1Z013cFB3aWFqaXVxdElxaHMxWlBt?=
- =?utf-8?B?UXNnSjAyQ0IvcEFJTGFHaHIvcmw2dVFWZVRCUWhPQTEzWXVrTDhNQTN3ckFS?=
- =?utf-8?B?ellDNW1wWDN6VWFVZ21xcVduZjZVMWlPekFDYjhoUGpVazgremorZmVFSDE5?=
- =?utf-8?B?aWhqWFk1dmV6TnIrZDVLZmlNQzJYRkhURzdBb3dEb1FRK0JFNFpVME9kYWlS?=
- =?utf-8?B?Znd5Nyt1OFNla1N6SERqaGErenZwVisvOUU5QWlSQjltWmt5QnBaQmRIaFFk?=
- =?utf-8?B?Wkx6Q2NGTmVNb0Q1QW9EaTh5Rk5McXpxOUcxekluTDJneW5TTWF2YXVRbXZB?=
- =?utf-8?B?cWEvdkhyTnB2Wk45cE5BQ2tZS1BuNk5ZZVhEdHZjRlBkT2JHOTZ2MitLbndK?=
- =?utf-8?B?VUtBMnJaTzZKR1U5alVUZ281cUhtOThmODNHQTRscndHcDhtK3JZTkdxam10?=
- =?utf-8?B?Wjl5WGVWeVl4ajVaRldMenlvMkc1dkFGcmg3aGdlYXBoSWJ4T3VmNEpyWlhS?=
- =?utf-8?B?YWZWekUvNUNtcWhwTTVKY1k2Z045NUhwaWdzeVRxNDRpWlpjNVQ0a0xTaTJT?=
- =?utf-8?B?SFZoZ2VvdFhUYVZvcytGWXY3OUp4UFJnTlkxTXhNaU9RaC9mQ3c5dTd2d1Bq?=
- =?utf-8?B?QmlDY1p1cENDSldqb3VJS1B6eXpkTEh5ci9seGRBK0E1dzhTbmpPQzJDbEV3?=
- =?utf-8?B?S3hXRExBT0VqcElxdWl0MlIzaFcxbVkwTlJTL0JOanRmVk0vWEdrNysxbmxZ?=
- =?utf-8?B?L0x1ZDNUWUJoeTJWaS9ldlZCSTNETzJCQlZoc2t1ZUJaQ09MTHFxaksya0tj?=
- =?utf-8?B?K3ZyUHpxYm9oZTJiTzQ3RXVZaDNxa0tHek5TSlNxVUdKSmtpenc4WDQ1N1hk?=
- =?utf-8?B?OHJzRDU2WWFreWtkWXdJZ2dRN2QvUVhVTjVhcVRxZUdHV25SSVdWaXpqT3dq?=
- =?utf-8?B?YzAxMi9BUTZRNENYSGIrVUFSVzM1UDBkODVmaVZab1BLb3dHNFBsVEpzOVBL?=
- =?utf-8?B?MFZWOWEveDZ4L0UxV2t0eGM1RlBwYmhqRzkvK29sTVZ6UkdrczZCZUg2MUZC?=
- =?utf-8?B?dmF6b3JWMVZvb3BSSzdsUGg5SkVHdm9hNk1vKzRUMUIzbWt5VThtY3hkVzUv?=
- =?utf-8?B?VENDZzhBajZ5N2ljcHlkS1ZDdkg5T0VpU1Y5aEV1ZnJyc2YyWEd2bTQ5dGFH?=
- =?utf-8?B?b3VLcThDNzZpY2FWU2F4ZXl3YXlGamlLam1MWjlicllzMy9hM2ZJbHdDN0dD?=
- =?utf-8?B?eVhDKytoczBwMG0vTGFPclp2ZXlsVlNOZUY1VVFPZmIxN1JFM2dhK0ZKTndG?=
- =?utf-8?B?VXFxa0Y3QjU1OE9yUmFMT3h6TVAveFVkUVBtVkRqOS9SeWhQWUxpL2RXb3J0?=
- =?utf-8?Q?Ywt1XlyShBPQs/bE=3D?=
+	Mon, 04 May 2026 16:03:51 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 644B4E3c1151983
+	for <linux-phy@lists.infradead.org>; Mon, 4 May 2026 16:03:49 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=+A887ryxZ760eDs9FrcxFR
+	m/+JAqOQlZHeis+Bz9dNY=; b=UooZoNMI3pvgB8IzFhu9L9HgLBtmM/P2wifIU8
+	AzsAtCXSijlZPQky7r0XvcVWqg0H2w1PghBd5XCANmfZF6R/hmS1D34EOEspFwyf
+	7YF6nqQUwWC5K81OPMY0+MBjq6WlW5y/xvIe+BgnZjWyEStadU4S3X6nugd1XfNx
+	2SilPVRV61CLyKVEcroS5ekn+DJuqUrvVXYNodV+6HiZ6RYEDdJFDCXDlVmybsrj
+	JjmGjVybh57i1YNez7/Os34oewCaK8ksWOUZ5HjaDD2MCAPCBXr5LPoUbgxCC5OB
+	zLwnE5Aj+6Q8lG9LqZA2lix1ClVM2CDsus1D7SZEJqsVXbUg==
+Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com [209.85.216.71])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4dxscy95dh-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Mon, 04 May 2026 16:03:48 +0000 (GMT)
+Received: by mail-pj1-f71.google.com with SMTP id 98e67ed59e1d1-3653638874cso1499422a91.2
+        for <linux-phy@lists.infradead.org>; Mon, 04 May 2026 09:03:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1777910628; x=1778515428; darn=lists.infradead.org;
+        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
+         :date:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=+A887ryxZ760eDs9FrcxFRm/+JAqOQlZHeis+Bz9dNY=;
+        b=AMgMtJJYnaYvXNlRCzmb6clASSeVG5hu7Z9Pq0gO1CRxHjSdc4ZTJM+J/fbRuSS/iV
+         P578U/oqPhMvBZku6NrMJsZRoJOEECuUwzITWnCJjsmxKIlR2szc7xMAzoD84Wj02f5T
+         4TFWlawJcXLVpa81B2r3H9xYJ4B1qsLN4csSZ5US3J3e3gY69FLjGaFhjjsWPIH3foMQ
+         7ztyoI+xsD92/Ca++QAtSbfjwVNorJeooO+9IPzDPRAjkmZBeLHQIFouB4jWB/K19NNY
+         4PfekPkrfJABBsfQmTXNSZ5TW0xPsf0pPL8MUzI5/dziVuxV+HwkeiscZISRJ/Spoiw5
+         NpQA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1777910628; x=1778515428;
+        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
+         :date:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=+A887ryxZ760eDs9FrcxFRm/+JAqOQlZHeis+Bz9dNY=;
+        b=mKi5p0bF3Mbd6N8/sgyXscFvIqlWl6r49ekb9RLaq5fPZpxrggzDnInT5nbRCz+9+K
+         NdCX4xPyIqfphfOZ/a+5Zdo3q+1DwzUse+sYMXoiAwdG77pO/4jVyIXEugPTGZ4XCrp7
+         riz9U8qK1aVPXyBX7HQjFA+prSe6whf9mX94PJ94iwihdei9EPxc92bS7pyNj36/WyA3
+         KEzcrHq3lB+GHOiOUISBMujzY3BkCkeRdn4EaGUITsCJzr11YgqyTaTITTkkDloHDiX0
+         gYbY6cvyedwoBFUT5ugD/53ahFShwi9hKgn92eTeUk9+P34T7sVdl3MS3QC/FdJRJYlA
+         wpWw==
+X-Forwarded-Encrypted: i=1; AFNElJ/6xdDajhUQDm5uN6ZGbEWKwOVFXkSx07FIlknRLdofoV7rrZLXGVE+bxQpcBSO08RFkSEHuebFLl0=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz/2lQPXWTCySO81ZytbhhDPvkdmYLPKgUpaJMFo+n++BRHMPfo
+	eA594uZ3CUfnFpLPKbp1SXXBzY3gxJatud0v5GaO69dsliiefaYEJTCBHRcyrzhqaEVhDzX2Kuw
+	IH0yhlr9jxBIv778S1My5qy1IQd6VFUn1aVIAHulLIb/aEdiLMXwPyPoQ4H4vFwsGW6Wy
+X-Gm-Gg: AeBDietmNwNAj1m7Ce0awKJpQ1cn9cbFovivfHDMrHPolvKe2EiUCzjlhZa4VN721nI
+	MOdiKxcWulP5+Be6wUq/GnXVyZpjxYXACG6W3xU6tbGPp3HITt9zykIDqYgqVH6D1l5QInGhH25
+	wd/w6rVHlEMS5Jh7GO953dY1GeMBVq2i4gDCJ3myevAgM0/K5yGiSacFn+aNYbY2AADk1nAkxEY
+	+rurJPEBCT7LpfG4vYgZVaEvbMJ4Nje/UjQrBfIsnJQPXO641077AG76bXD3YFd1RimcZgBpsFZ
+	oyvJRNXP7Ufb1yX/E5RaJknPBPePq4VT7AyS4uCoiz5/U3BBqKcYRaadpx93SQXioL9+eIqSqHa
+	yx7nFKx3hMaQqJEAL5cNG1fSu1U1yzxdnSBL1jtgL
+X-Received: by 2002:a17:90a:ec86:b0:35f:bd29:75b9 with SMTP id 98e67ed59e1d1-3650cee7ca6mr10116941a91.22.1777910627019;
+        Mon, 04 May 2026 09:03:47 -0700 (PDT)
+X-Received: by 2002:a17:90a:ec86:b0:35f:bd29:75b9 with SMTP id 98e67ed59e1d1-3650cee7ca6mr10116537a91.22.1777910626023;
+        Mon, 04 May 2026 09:03:46 -0700 (PDT)
+Received: from hackbox.lan ([86.121.170.213])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-48af0d5a613sm105838635e9.2.2026.05.04.09.03.44
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 04 May 2026 09:03:44 -0700 (PDT)
+From: Abel Vesa <abel.vesa@oss.qualcomm.com>
+Date: Mon, 04 May 2026 19:03:41 +0300
+Subject: [PATCH v2] dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp-phy: Add
+ Eliza QMP PHY
 MIME-Version: 1.0
-X-OriginatorOrg: renesas.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: OSOP301MB1976.JPNP301.PROD.OUTLOOK.COM
-X-MS-Exchange-CrossTenant-Network-Message-Id: 534c4cde-7a42-4e52-2ad5-08dea9d64f0e
-X-MS-Exchange-CrossTenant-originalarrivaltime: 04 May 2026 12:11:44.7367
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 0sVVv2KQx2AAiyA0BvglPm+8FackBANW7vum5MC33DwNhxd5c8W0CLl65MNB9OYywFFWBSGHKkrYuLqs5l9zbfOdP+784+uQvwF5t+bZNZs=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYRP301MB1306
+Message-Id: <20260504-eliza-bindings-qmp-phy-v2-1-849c4de8d75f@oss.qualcomm.com>
+X-B4-Tracking: v=1; b=H4sIAFzD+GkC/4WNTQ6CMBSEr0K69pG2CBFX3sOw6J/yDFDoAyIS7
+ m7BA7iZ5Etm5lsZuYCO2DVZWXAzEvougjwlzNSqezpAG5lJLgueiQu4Bj8KNHYWuyfB0PbQ1wu
+ YPNPurLkWmWBx3Af3wPdxfK9+TJN+OTPub3ujRhp9WA7zLPbeX8ksQEBZKG5zWSor7c0TpcOkG
+ uPbNo3Bqm3bvjGkIzPVAAAA
+X-Change-ID: 20260318-eliza-bindings-qmp-phy-c53be4b0b131
+To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>,
+        Abel Vesa <abel.vesa@oss.qualcomm.com>
+X-Mailer: b4 0.15-dev-bc6c4
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1465;
+ i=abel.vesa@oss.qualcomm.com; h=from:subject:message-id;
+ bh=sFJV9piVyzoU80B+ueZIt2l+Kf+S0OFQbpZGdavIBN4=;
+ b=owEBbQKS/ZANAwAKARtfRMkAlRVWAcsmYgBp+MNeZbpdmCaBksw/dXfD3UnTRn8BKXcq8N4Pq
+ EUDVugo33KJAjMEAAEKAB0WIQRO8+4RTnqPKsqn0bgbX0TJAJUVVgUCafjDXgAKCRAbX0TJAJUV
+ VrPlEADDcd2ov63rM9EosgUP6lSLvDT6OHHGoa2SWfJBOD/93/4aLA2TLVWFKvTtfXAyWE8GEeY
+ l/aPuw1EDAED4Hlqt2Gz5si2h1CTeXXOKZu5q3+gJud03OoG7fUtko7Xo55DHVQh5QGP1P0+8wN
+ jl7uLT96wxCF3NTNt2bbBHq38MTPgfE5Cv4TI9XgJl9bo5DV3cKPisTLXi0RA2WvSJz3WOQqj9f
+ yYaiVOJ98H+0kl4jW1SRL6LW3GpDcjGomXWMnRsMboBq1436/p5gAPn8OObB09GUBil41viNhrx
+ 7X9BONjurBEUuU1CEBCjjMySuqB6nieL3/XyRBbPMCHcwd/WyPZZL353mhFo/f8qUYC/y4lnmjl
+ c55GjssGLs0aMKjZhv2fuPTebhXV4hSCkdLS7PHc44oOgy9l5lCBzCINLeWhIoQgCkaIoGe2mFH
+ jFCwpy3Yk6eRP/c2H3FGwwkz38535mV85x6T8copkn7HmDhUwyylGFz7TeAcrYGS9+QdKnmwUp1
+ fgnUv1J3QZMP5889xN6A6WGrJHjszoocAg9cvq/PjXBJHBImY+BmBjF4nBbPKNM7KlNy6/0BCYz
+ doBinewp9Ca/JUOtt9xlSab2ODL7ONzSnbDqG8tg+UqDEoAHGyvU6M2kTrMzauMImrKRLkz3AKj
+ B6qhLkDGmFm+lmg==
+X-Developer-Key: i=abel.vesa@oss.qualcomm.com; a=openpgp;
+ fpr=6AFF162D57F4223A8770EF5AF7BF214136F41FAE
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNTA0MDE1MSBTYWx0ZWRfXxEknPdxjDUNN
+ qTPiHRwBTdSTv6AGsJXAo4bh5cSIH4idpSbnRsBzG4ODeZShSzEeTyZ98KceZNZ1Sw06FWkIDNi
+ SQFkfrUwxRh2b6QjHOsxYhrW2BcZbIGf3SzSXJwPuEPcBZ+El9X7MukZn4GycaXSZbOfTjeoRdL
+ 18rcvXAJ12EYeubrOtcZxVOCDiAHYy43JmhnrTLlv3Ykm4xPgl3sF3zejUjN9e0M3d0HKNpnlDj
+ QDuIxjUhBmiIuS/CqL8qHugAPB2lv2KQNQW/gLu6yLtAnAys+36KO33625ktIkv3gCRGrrraxYL
+ DZGxsOUObdEnbjuwDTg6TcHGTC3NxyQVSkr1JMv3wUvZuhvttvgVKLloL1WIkPfijUVqdxkDAh2
+ 5BKwlF/uz7eC8w69S43VKUWnLVkctiYH4teN9baF/JY2dj+/vKptKtkXGrmSptPBbKTwjafeh4Y
+ SYgwB/ovIF54JSD2ZEw==
+X-Proofpoint-ORIG-GUID: fVdSohXUJ5rRwH0a9H4Oa0XmlXlWQjEk
+X-Proofpoint-GUID: fVdSohXUJ5rRwH0a9H4Oa0XmlXlWQjEk
+X-Authority-Analysis: v=2.4 cv=C47ZDwP+ c=1 sm=1 tr=0 ts=69f8c364 cx=c_pps
+ a=UNFcQwm+pnOIJct1K4W+Mw==:117 a=gcnggjyPzmaCdwFRn6A1TQ==:17
+ a=IkcTkHD0fZMA:10 a=NGcC8JguVDcA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=Um2Pa8k9VHT-vaBCBUpS:22
+ a=bC-a23v3AAAA:8 a=EUspDBNiAAAA:8 a=K6OwPNha_kR0oLd0V9oA:9 a=QEXdDO2ut3YA:10
+ a=uKXjsCUrEbL0IQVhDsJ9:22 a=FO4_E8m0qiDe52t0p3_H:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
+ definitions=2026-05-04_05,2026-04-30_02,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501 spamscore=0 phishscore=0 adultscore=0 suspectscore=0
+ bulkscore=0 impostorscore=0 lowpriorityscore=0 clxscore=1015 malwarescore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2604200000 definitions=main-2605040151
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260504_051158_190933_1F4EED52 
-X-CRM114-Status: GOOD (  33.31  )
+X-CRM114-CacheID: sfid-20260504_090350_059682_1B66A761 
+X-CRM114-Status: GOOD (  11.15  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -157,119 +166,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Geert,
+Document the compatible for the USB QMP PHY found on the Qualcomm Eliza
+SoC.
 
-> 
-> Hi Ovidiu,
-> 
-> On Mon, 4 May 2026 at 13:11, Ovidiu Panait <ovidiu.panait.rb@renesas.com>
-> wrote:
-> > > On 27-04-26, 19:47, Ovidiu Panait wrote:
-> > > > On the Renesas RZ/V2H platform, if the xhcd driver is unbound and
-> the
-> > > > system is suspended afterwards, a PM underflow error will occur:
-> > > >
-> > > >  # echo 15850000.usb > /sys/bus/platform/drivers/xhci-renesas-
-> hcd/unbind
-> > > >  # systemctl suspend
-> > > >  15870000.usb-phy: PM: dpm_run_callback(): genpd_resume_noirq
-> returns -
-> > > 13
-> > > >  15870000.usb-phy: PM: failed to resume noirq: error -13
-> > > >  15870000.usb-phy: Runtime PM usage count underflow!
-> > > >
-> > > > Since the PHY framework is managing the runtime PM of the PHY via
-> > > > phy_power_on()/phy_power_off(), there is no need for the PHY driver
-> to
-> > > > manipulate the runtime PM state during suspend.
-> > > >
-> > > > To fix this, remove the runtime PM calls from the suspend/resume
-> paths
-> > > > and add a get/put pair inside rzg3e_phy_usb3_init_helper() to make
-> sure
-> > > > the clock is enabled during init, even when there is no consumer for
-> > > > the PHY.
-> > >
-> > > > Also, change the suspend ops from NOIRQ_SYSTEM_SLEEP_PM_OPS to
-> > > > SYSTEM_SLEEP_PM_OPS because runtime PM is disabled during the noirq
-> > > phase
-> > > > and pm_runtime_resume_and_get() would not actually enable the device
-> > > clock.
-> > >
-> > > > Fixes: ee5f1a3f90a4 ("phy: renesas: Add Renesas RZ/G3E USB3.0 PHY
-> > > driver")
-> > > > Signed-off-by: Ovidiu Panait <ovidiu.panait.rb@renesas.com>
-> 
-> > > > index 6b3453ea0004..055775e1a0f7 100644
-> > > > --- a/drivers/phy/renesas/phy-rzg3e-usb3.c
-> > > > +++ b/drivers/phy/renesas/phy-rzg3e-usb3.c
-> 
-> > > > @@ -215,27 +226,21 @@ static int rzg3e_phy_usb3_resume(struct device
-> > > *dev)
-> > > >     if (ret)
-> > > >             return ret;
-> > > >
-> > > > -   ret = pm_runtime_resume_and_get(dev);
-> > > > +   ret = rzg3e_phy_usb3_init_helper(r);
-> > > >     if (ret)
-> > > >             goto reset_assert;
-> > > >
-> > > > -   ret = rzg3e_phy_usb3_init_helper(r->base);
-> > > > -   if (ret)
-> > > > -           goto pm_put;
-> > > > -
-> > > >     r->skip_reinit = true;
-> > >
-> > > https://sashiko.dev/#/patchset/20260427194741.161533-1-
-> > > ovidiu.panait.rb%40renesas.com
-> > >
-> >
-> > I think this is not applicable for our platforms, as the power domain
-> only
-> > gates the clock during runtime suspend, so the register state is not
-> lost
-> > across runtime suspend/resume.
-> >
-> > The power domain (drivers/clk/renesas/rzv2h-cpg.c) is marked as
-> > GENPD_FLAG_ALWAYS_ON.
-> 
-> Won't the SoC be powered down during s2ram?
-> 
+It is fully compatible with the one found on Qualcomm SM8650, so add it
+with the SM8650 as fallback.
 
-Yes, the SoC will be powered down during s2ram and the USB3 PHY is
-reinitialized in the resume callback:
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+Signed-off-by: Abel Vesa <abel.vesa@oss.qualcomm.com>
+---
+Changes in v2:
+- Rebased on next-20260430.
+- Picked-up Krzysztof's R-b tag.
+- Link to v1: https://patch.msgid.link/20260318-eliza-bindings-qmp-phy-v1-1-96a0d529ad2d@oss.qualcomm.com
+---
+ .../devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml        | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-static int rzg3e_phy_usb3_resume(struct device *dev)
-{
-...
-	ret = rzg3e_phy_usb3_init_helper(r->base);
-	if (ret)
-		goto pm_put;
+diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
+index 3d537b7f9985..4eff92343ce4 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
+@@ -16,6 +16,10 @@ description:
+ properties:
+   compatible:
+     oneOf:
++      - items:
++          - enum:
++              - qcom,eliza-qmp-usb3-dp-phy
++          - const: qcom,sm8650-qmp-usb3-dp-phy
+       - items:
+           - enum:
+               - qcom,kaanapali-qmp-usb3-dp-phy
 
-My understanding is that Sashiko's comment ([1]) is about runtime PM and
-whether the PM domain will be powered off after the refcount reaches 0,
-destroying the PHY state. Which does not happen on our platforms, as the
-CPG driver sets GENPD_FLAG_ALWAYS_ON and it only gates/ungates the clock
-across runtime suspend/resume, preserving the state.
+---
+base-commit: b9303e6bff706758c167af686b5315ad00233bf8
+change-id: 20260318-eliza-bindings-qmp-phy-c53be4b0b131
 
-[1] https://sashiko.dev/#/patchset/20260427194741.161533-1-ovidiu.panait.rb%40renesas.com
+Best regards,
+--  
+Abel Vesa <abel.vesa@oss.qualcomm.com>
 
-Thanks,
-Ovidiu
 
-> Gr{oetje,eeting}s,
-> 
->                         Geert
-> 
-> --
-> Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-
-> m68k.org
-> 
-> In personal conversations with technical people, I call myself a hacker.
-> But
-> when I'm talking to journalists I just say "programmer" or something like
-> that.
->                                 -- Linus Torvalds
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
