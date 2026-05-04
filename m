@@ -4,120 +4,113 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 090FDCD3424
-	for <linux-phy@archiver.kernel.org>; Mon,  4 May 2026 01:39:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 64BF0CD3424
+	for <linux-phy@archiver.kernel.org>; Mon,  4 May 2026 03:33:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=g0KsUs/WX02e4Eyo/v+XIFCZlBGRIegKo9wTQkzygQ8=; b=pIUaWuZNatA45+
-	ce+t+SZSYdXIE8UGWQFeFS3pzKS8mSXbNIQr8D2Gmdo4+fMGhTcfGgTVC8EphPZ8tz9O0CbtsKmxM
-	fXmH03ZPgXQZ/bEBwcUx5UOrG2hENbheEgOl7LZPZLkoLpH5zX0AdFJVYlZgYN4vnfqA5edIecB8T
-	ASP6MN84xpHjLCj8qK1OEO9ljqOhI2lgOqotxqrjaZlJFSkVnrzTekf0ECqpgVHLzii7lDLO0Ve+W
-	K905BV/zd6bLv6/cxBk8r++tHxTFl5h20g/TQhq92AaXaE5ywjWqoKG7+o6c5Ze/qqp8WVy39ZmCG
-	5tsaHEzCDwuoG+4Ifgcg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=DYr/27tYQe7cZaF2Hrith9EdTYDzKdLXje3RScgHy18=; b=vObnC3SA5Os6jr
+	7OHwJzjmXzewlkS0ktq7BjLJNZqD2mPmo3iwbIMvMtlng2/+XdUhYnCPHgJ70yb2FnuaMkw5hN9g5
+	a0Hui6TkwmoBvlBlw9DVL2OF6whcN4cZU+SV3At8RxzWC5wbQvKPAQbar9fkFiyTEq7U18VPwoSwN
+	bfA/WjD8GM4gF7MmF/kd1ejJ7vKbbW/ytB8xoL73QOKaxPrnVSFy0Wvoe9mAyUd4UnnW6pgNbRPSN
+	wvB+sqBH7pnBEKRw4yDDNdSm4uhq/tv2i0T81BgYtjguc6BBF6cQ9ccruPm+4Y7XVFyCIPXE6O+sa
+	JiZS4cc8OG1+cZCLk8bw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wJiH0-0000000C6d4-3JNz;
-	Mon, 04 May 2026 01:39:02 +0000
-Received: from mail-northcentralusazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c105::1] helo=CH1PR05CU001.outbound.protection.outlook.com)
+	id 1wJk3p-0000000CG0j-2mab;
+	Mon, 04 May 2026 03:33:33 +0000
+Received: from mail-westus3azon11012019.outbound.protection.outlook.com ([40.107.209.19] helo=PH8PR06CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wJiGt-0000000C6Xi-1OoT;
-	Mon, 04 May 2026 01:38:59 +0000
+	id 1wJk3l-0000000CG07-1Twu
+	for linux-phy@lists.infradead.org;
+	Mon, 04 May 2026 03:33:32 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=rSNzCaMJRFHO+2IBNd1eOeVfQ3h0g7QDlgE1V7GndGjx8+jyKNjG785q/oly1s9jcZXp6wsjF6Q8NISpBFgOu31Sf1g1n9HxzLEBvFgG0ewyTATpBDfe5tH777PNZqHb2y3OGZVem8ouN5BtgwarOhXIP/lN/LFxURpvT0yPDU0OKbzX5Fw1M1QBVr10vl4vR7FOjrbpyEr2BKCDfM8h6dy3FKzYGJiwxjxxKWiYd+NATYfy/Y6qNv8qYZ/hkhPU6YveWD5DKtviL8bbWBT7GYEqV41RRjIhweXUzuNGYhYX3gcKRkUSG7t+f9fbWNpfYBsKKb7rMrvicUUsQ+8C9A==
+ b=eSAtUxrZjZCvLuWoftgNSFpc5quXkJ538ICUG1RHjzDYqma/G4CyX7gIExV6o79enob6zefav1zC6ssMvyOMWmHw8GwteP4H+OK5RVjm/1Nzs60UpPzgIlnfxXtH3eZC6RUCzb5f8KW3PSm62vyrQhBZV/1X9zhcaCndx3QNZX2FlJwdzU2sL9i7IXTPxlWLR1PR2vAht7AVmDGnyUjq3BDd8yNstV5Q6ItPIep6luNSlIHoilMw76Xni/BoyjVjdCnPdJdSxV+s7biIrDu+s9yRtxG20l+GltamuBglaRQHPWioXeK/7wx+8S0M3EKL/UO8JKMsJBv2v+OIZHPXYg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=ON9zurSJSI4QQT1BMl1VRtFngSU5U/rUteO/tCC7Fn0=;
- b=Ht8d4rvPLhxvz4MyzA4fP/uyIyLm0n9wv3uIpHIL8WdQcFBFJ1ReAuw+9qNmC3whE8xOlhIfXL0L1SIrF9rEfH2HR8DjF/OOnOXbB17E7ZBgA7pkjVq5m4IIvn7BEKtF02buBbgsKOLnSSEg8pKe8AXuKGvLJJ9uMYCg6bYmwqhv6dB/rUlonrow4XRaqQv9iJTwVDiKZeHT3sIRjfte0Xb1jpyhiDolCjRFG36D/nzPQMswh0HZO0vjuJyfYfDXdYWlCVHxouqBLQIoHepid57xwOnckggYGvZDWMY3yGubRmA4Rgvyg6WdFo5oqF9GM09FizYAc6E49SJODAzrkg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=fail (sender ip is
- 64.62.143.114) smtp.rcpttodomain=axiado.com smtp.mailfrom=axiado.com;
- dmarc=none action=none header.from=axiado.com; dkim=none (message not
- signed); arc=none (0)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=axiado.com;
- s=selector1;
+ bh=g62HCHwFmhveodrjNFbtdfxdftGDv4RY9jwyLaU96ic=;
+ b=UzY/7rPnG0n546aP3k/ZP2EFpvIJdJOvF4TAiieUuaIYGDh+dP+uO5Yz7So4/4Yef7qrUsA//+eKuqc5rqO7FZHpgblYlewne/9GV1WE6pPc23XkzeFljigeUs4L3SfEs2NwLT4fJ2qpt9ADSDXE6fRafWza63GRoJHUmjaqGNmb0J5O/DTl9nC9f+297ZVlEBPoYGCTiD1iXrnNcZOfrPHwjcPALiucjDMb4M9hF+Bymn0lvv+RJH588Y5drDhQdOA9Bdx7BrCwqUG2Mbz3iOX4E/AfpBKeEaV3AWOA6LskbqzaRHTu6r5uZyqJI02HR+iMsEeJ9z5oR7FwHYknNw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 216.228.117.160) smtp.rcpttodomain=kernel.org smtp.mailfrom=nvidia.com;
+ dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
+ dkim=none (message not signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
+ s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ON9zurSJSI4QQT1BMl1VRtFngSU5U/rUteO/tCC7Fn0=;
- b=oVc5RjWTLQiXXm1RC5GyCSLKkyzIWsbiU+XavLpYK5/+aiVtAJFQbQ3+0VkP1F/oK5J7iel/XJXZBa+t+H3aNDg0907TilyoBB01GL9SIIteJh1XNgActl7jptgG+btDmIekNsqGreLOhGmC2c+e6rK4yX7b686eyFfVe4Se2BkRBLWTGfNpnrg2g9mTW+OsqSu/GoS5P+1rgyzVkW7NrFKgZSpqp3O9hl+0nH9RJnEad0Z7n5v5NtvlKDvqxmFwn94mVeCePlOTlLwuCx1ckmMzH0TuRxPc6br67s4d/XgGyy8zSzO1C22oLOFfIPjaklilt/artpX93dVKHgTrcQ==
-Received: from DS7PR05CA0101.namprd05.prod.outlook.com (2603:10b6:8:56::21) by
- LV0PR18MB927459.namprd18.prod.outlook.com (2603:10b6:408:33d::10) with
+ bh=g62HCHwFmhveodrjNFbtdfxdftGDv4RY9jwyLaU96ic=;
+ b=GwEM8BFFEvPp0w7WtYmxVo27QBkKNKUnA/iIwzJE6IF9jYIl+18uxYJjRmhHdQ+jUGIf3WA/CyMHCnF2W6T9aJFQT6SACv8EacyOOVk/MzlCXVUWPG0h0ie+PBuEpsgY2PWdmlrgpxXc35rr38OQtIqH2livEA1kJjfneN4YoGRlhiUnUowXUzOXsLGGaf2xREhTpQEUoZKGg0DibDSbz21N0SP9FLrZcfSnRHIMMueeIMKztTmHdu37otSTFzprAirtSV57+wl/cvqXFJWOrb4AcxhE0GU/XTNVE4LwEkJQ5Ecx6xxe8teuzwRXcK92ChVmHxq4enksOdAe9GaZgg==
+Received: from MN2PR20CA0004.namprd20.prod.outlook.com (2603:10b6:208:e8::17)
+ by CH8PR12MB9789.namprd12.prod.outlook.com (2603:10b6:610:260::17) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9870.25; Mon, 4 May
- 2026 01:38:47 +0000
-Received: from DM2PEPF00003FC3.namprd04.prod.outlook.com
- (2603:10b6:8:56:cafe::3e) by DS7PR05CA0101.outlook.office365.com
- (2603:10b6:8:56::21) with Microsoft SMTP Server (version=TLS1_3,
- cipher=TLS_AES_256_GCM_SHA384) id 15.20.9891.13 via Frontend Transport; Mon,
- 4 May 2026 01:38:47 +0000
-X-MS-Exchange-Authentication-Results: spf=fail (sender IP is 64.62.143.114)
- smtp.mailfrom=axiado.com; dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=axiado.com;
-Received-SPF: Fail (protection.outlook.com: domain of axiado.com does not
- designate 64.62.143.114 as permitted sender) receiver=protection.outlook.com;
- client-ip=64.62.143.114; helo=smtp.corp.axiado.com;
-Received: from smtp.corp.axiado.com (64.62.143.114) by
- DM2PEPF00003FC3.mail.protection.outlook.com (10.167.23.21) with Microsoft
- SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.9891.9
- via Frontend Transport; Mon, 4 May 2026 01:38:47 +0000
-Received: from axz-uw1-build-vm02.corp.axiado.com (unknown [10.14.1.22])
-	by smtp.corp.axiado.com (Postfix) with ESMTPS id D0A204186B5B;
-	Sun,  3 May 2026 18:36:50 -0700 (PDT)
-From: Tzu-Hao Wei <twei@axiado.com>
-Date: Mon, 04 May 2026 09:38:33 +0800
-Subject: [PATCH RESEND v3 2/4] phy: axiado: add Axiado eMMC PHY driver
+ 2026 03:33:19 +0000
+Received: from BL02EPF0001A0FB.namprd03.prod.outlook.com
+ (2603:10b6:208:e8:cafe::e3) by MN2PR20CA0004.outlook.office365.com
+ (2603:10b6:208:e8::17) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9870.25 via Frontend Transport; Mon,
+ 4 May 2026 03:33:19 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.160)
+ smtp.mailfrom=nvidia.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=nvidia.com;
+Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
+ 216.228.117.160 as permitted sender) receiver=protection.outlook.com;
+ client-ip=216.228.117.160; helo=mail.nvidia.com; pr=C
+Received: from mail.nvidia.com (216.228.117.160) by
+ BL02EPF0001A0FB.mail.protection.outlook.com (10.167.242.102) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.9891.9 via Frontend Transport; Mon, 4 May 2026 03:33:18 +0000
+Received: from rnnvmail203.nvidia.com (10.129.68.9) by mail.nvidia.com
+ (10.129.200.66) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Sun, 3 May
+ 2026 20:33:08 -0700
+Received: from rnnvmail205.nvidia.com (10.129.68.10) by rnnvmail203.nvidia.com
+ (10.129.68.9) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Sun, 3 May
+ 2026 20:33:08 -0700
+Received: from 5b171f0-lcelt.nvidia.com (10.127.8.13) by mail.nvidia.com
+ (10.129.68.10) with Microsoft SMTP Server id 15.2.2562.20 via Frontend
+ Transport; Sun, 3 May 2026 20:33:06 -0700
+From: Wei-Cheng Chen <weichengc@nvidia.com>
+To: Vinod Koul <vkoul@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>, "JC
+ Kuo" <jckuo@nvidia.com>, Neil Armstrong <neil.armstrong@linaro.org>, "Thierry
+ Reding" <thierry.reding@kernel.org>
+CC: Wayne Chang <waynec@nvidia.com>, WK Tsai <wtsai@nvidia.com>,
+	<linux-phy@lists.infradead.org>, <linux-tegra@vger.kernel.org>,
+	<linux-kernel@vger.kernel.org>
+Subject: [PATCH v2] phy: tegra: xusb: Fix per-pad high-speed termination calibration
+Date: Mon, 4 May 2026 11:33:05 +0800
+Message-ID: <20260504033305.2283145-1-weichengc@nvidia.com>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-Message-Id: <20260504-axiado-ax3000-add-emmc-phy-driver-support-v3-2-3ab7eb45b0c5@axiado.com>
-References: <20260504-axiado-ax3000-add-emmc-phy-driver-support-v3-0-3ab7eb45b0c5@axiado.com>
-In-Reply-To: <20260504-axiado-ax3000-add-emmc-phy-driver-support-v3-0-3ab7eb45b0c5@axiado.com>
-To: SriNavmani A <srinavmani@axiado.com>, 
- Prasad Bolisetty <pbolisetty@axiado.com>, Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, 
- openbmc@lists.ozlabs.org, Tzu-Hao Wei <twei@axiado.com>
-X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=openpgp-sha256; l=9023; i=twei@axiado.com;
- h=from:subject:message-id; bh=YBprfDKFNQn6DMWhRJHAypcI9/qyZHy+Jg3oeuFZQSY=;
- b=owEB7QES/pANAwAKAXgQMF3EWvHXAcsmYgBp9/imRhvYgYqDBP5EjqAtK/SumOryJWzA+erZb
- T7TrAf/BL2JAbMEAAEKAB0WIQSZyWINOowtFmDvdYF4EDBdxFrx1wUCaff4pgAKCRB4EDBdxFrx
- 1zwfC/9GEP5H3mgQG2et/viQlGShEh7I+YkyYgnvnoD1Gxj09VC/GxbfHo/KGJuPnma/4QQ0XEt
- hJg1+gsr7ITB7YSNhwn2gF63eO8zNC13DTb4UjmSNl1aLOfOAbqoo2RSwXYOYv7M+9r8dHyc2Ma
- UkNEIV7/cgn2+hgh2SWiDOgY1qN/F/l1jDzwi5ybT7CINk+ws4qjzAwwC64GFPL+8lgHK+decvf
- NzQKzv01n+gwUSf0Mx0TMNS4xL+Zbkj/86kcLZUyMym9jn+hTCnjNhQbXDxSCh/SVrYNq94BCxD
- CbOOr8RtPUl/5cCxXepp0czxyu4STGw4FzyfiuCYbbkAO8sMi4OOneryHZYngPqCsaIcvEiNdES
- 0riycpjJI7LCyGbLiuQcfM4VSP5MJHa7qpsdLwSimlmindF3fqKX0cgFXvHTHXoW7y/3PwfQtlv
- Hk2bt9tJir0mxbSSQGTi9y6uT+CjwYgV1tnrpVcE2++qvdZQQdM46fHJxjFZekTikqJnA=
-X-Developer-Key: i=twei@axiado.com; a=openpgp;
- fpr=99C9620D3A8C2D1660EF75817810305DC45AF1D7
+X-NV-OnPremToCloud: ExternallySecured
 X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DM2PEPF00003FC3:EE_|LV0PR18MB927459:EE_
-X-MS-Office365-Filtering-Correlation-Id: fb3d705d-46fd-4b00-e3da-08dea97de2a8
+X-MS-TrafficTypeDiagnostic: BL02EPF0001A0FB:EE_|CH8PR12MB9789:EE_
+X-MS-Office365-Filtering-Correlation-Id: d7a72528-2ef2-4b85-9e34-08dea98de2a2
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|7416014|1800799024|82310400026|34020700016|42112799006|36860700016|18002099003|22082099003|56012099003;
-X-Microsoft-Antispam-Message-Info: Tl9VpJkmOoTO65tDQPahiY8+PdblLfJ7XfH9uHgqxvnIJ6X5+JjguY6wpeLF8Wd8sUSP/KaO8BKZ0/XGm2BuKx2TRjgDDB5JYENmeq3a2ZKlWKd0nc+3eRgU7+CZWcwvPpgMwiDjBLO0LdoWpKlvSBQ51uww8xPOZciB9UPjgGiR4NxhM1PF7uTcDGivEPGpR3P4C2XHf3tmAnlnEIylnR3/OpwlD+rEzEj+YFB23XLYT80xvPcbRnJL28nL22ucT/K46blmbRXryScStEwAPzzRZlIXVSGqLyDzt6jZTa7Hm+3ExnYrP2BxjHzaoj7rmKWGLnO4TY07glDrjj+MKPr3MvVi86w29SFT5eMK2QK1uCkUFFFCX+bIChtcXYhwyReN8RSwgWa+9R/0n2tWrdCgCZjfs6306IP3Z8Djq7zcsZE4pI0FNGxMvXPYqHF793jwESDBMqTPApFZw73AQ7nP0A7vt2xjIh708U/NgI4gi13scaTFM3VAq9BEoESATAQauNhKNUt46Rd4qNNS1yORBIHUDyBA38LO9yd9XStcLOuuq/Jza7YXFB62WlOAZo36od7I/RfnC1+I7f5RilTNG3L3ltIcJC/gHKSH8DEzJXgX4hw3MZfC+3GwQ6B4UoSe1cUfUpewSVLL0S+e2Ey/kpfJjX+Eb+gsPysw+bUhsTmtAWkD2BR2AmF3K9ofenBiCFQIi+CTrMsKO1mKYjtbIT6f5eI9gzUCZSjzaBE=
-X-Forefront-Antispam-Report: CIP:64.62.143.114;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:smtp.corp.axiado.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(376014)(7416014)(1800799024)(82310400026)(34020700016)(42112799006)(36860700016)(18002099003)(22082099003)(56012099003);DIR:OUT;SFP:1102;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|36860700016|376014|82310400026|13003099007|18002099003|56012099003;
+X-Microsoft-Antispam-Message-Info: /2J2kjjWVmhr4eueQhFDitBmxaM37sXwRjJQTDLTkZIHsFWtdRG0LVzeaSn7LCIhBp3ulWdafrzxwFEdlG8TpeN5FXi67zaFJawdbsEamYQqBeLTZ59wuDMUIj89khyiazgWhUSB6Bx7X8W0xgQphJfMjbgXQSf2aIaVPM/rjs+ARypEDbSNySL4kG1KS20v+YSlV5ioDJ2mYI75LxSZN26ukHoTuBARocWIl7mLxG0zB6APo6P8w/qynu1/GDdO+mNDk4MwRpdWgyxDT+ya2dvUn1CDeawP5FHsZZ08ttAwXJxzjCQ1aFFVzp0ZTe09qeAEct5f9nZtInAjR2StwT1B96i+AekPejIsF+cTcsnTAJzOtPXMw9q58+ziQx3HilmyIDW6V5XXeVwHGrIJSgR0CL7VonIIKYUQoJD0KzgBRABsEblWSQGPNveSBJ3YAsbclWxiwj8gFKYjlN1tipHkI5Jljy2o8klzcK8rzWKf06/QNO4tPzIBovMGpwGkVpkPTXVhC2PRBV4eGnqu8tsHEEmfqBLaXMH09K3oFpCMuf00FwlckzAQBWrDqfwhndgVH/KtPXLJX9zdOz6i3EU9M8WkRs4vv0MHdbTVIjn6uxvnVX8b4SalaBH3tfGYXEFy+S7iOM26BST2p7SEXyjjrGy3Qw+AyxiMkhKbBfJDeJFza4/CEvXLfzIkNUIi2oZDvATk+l0uabP04E19J4GmwllYPDWCH/W448sqZxhB+61yqE5QS5mQyplt1DBG
+X-Forefront-Antispam-Report: CIP:216.228.117.160;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge1.nvidia.com;CAT:NONE;SFS:(13230040)(1800799024)(36860700016)(376014)(82310400026)(13003099007)(18002099003)(56012099003);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: +GSiwcnUSDp4IrpUJlkCN+4u1he6WIMzzGbfPHxN0s3W8WtbInU0b/fcfbD+T3EHVr4V9x7Bp3WXzfghjm2QUSuJNOJRej8Q9xR90ngdYetuR1TnLj+AWHKzGL9aDS4KsB6DMnfP/7hkvlPis2EVLvHLKe9Yzq5M495e6gJVu5Bf5un8Xtj9Qml/xai16Zg6hH61CaSJJ3z7RnnIfrF2yirjDieB4E1vonMy/96BGYcI92D2obBWy+d/ngtkqdrCXrjneYPRWOkgSqQ2uNIwyitDuXo89opJ2ke7wtdIO4kzZgpOIMRTU1CjS94oEdt3aMK3AwPm9ChtEI43bNVES8B2W5W71PGO+CKFZwiieS53m+bp6NfBdCQI92+ALJB1DlPkS3KRWMcCHmdPIVWYj67DILDlj2XWQ5FPk/wloPSI8HF9499dA/KxHMUp2+VD
-X-OriginatorOrg: axiado.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 May 2026 01:38:47.0640
+X-MS-Exchange-AntiSpam-MessageData-0: 6/iBOcL3GfoQDk2MtkqCeIbRH1PwqcFc4knz2c8w3+B1VojtvuVrOQ1YcAZJmzXTcbKTsJOFoSIhNN9bS+tmoOMVsEGvvD38Ey1PTThGM+DgCHu3AVrqszDY3Ap7Ab7pFjsaFScI4bNTsjEz0uYzj58+e9aufZ8zETlhLB07r5ZhpUWiscunGCIizwpfXZtgh5C5Mch8wQ1B/WBhECIo9F46vs5CY3S535clam7F8edorfunwIqVtud8Mlou+3tHBPGzkhBNFDF9yEWUlQvUuClb4tfMqzs53E8F0PS62Q2uX26rj68BStYxOU23Yao9HkMsfdB+XUHbp+n8x2R8em4RJp3J5xyHHgXDsDy+KGgbXeNNfzi+816fI/CSWEXML8QABUTQDwe0Q7xxdQtYiMZczr75CVWa/KoJbchbFL1QA/Jga4EcvpMRRhzwurIp
+X-OriginatorOrg: Nvidia.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 May 2026 03:33:18.9039
  (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: fb3d705d-46fd-4b00-e3da-08dea97de2a8
-X-MS-Exchange-CrossTenant-Id: ff2db17c-4338-408e-9036-2dee8e3e17d7
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=ff2db17c-4338-408e-9036-2dee8e3e17d7;Ip=[64.62.143.114];Helo=[smtp.corp.axiado.com]
-X-MS-Exchange-CrossTenant-AuthSource: DM2PEPF00003FC3.namprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: d7a72528-2ef2-4b85-9e34-08dea98de2a2
+X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.160];Helo=[mail.nvidia.com]
+X-MS-Exchange-CrossTenant-AuthSource: BL02EPF0001A0FB.namprd03.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Anonymous
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: LV0PR18MB927459
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH8PR12MB9789
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260503_183855_448931_633B5F3B 
-X-CRM114-Status: GOOD (  16.88  )
+X-CRM114-CacheID: sfid-20260503_203329_449200_58D564FF 
+X-CRM114-Status: GOOD (  17.62  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -134,297 +127,158 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: SriNavmani A <srinavmani@axiado.com>
+From: Wayne Chang <waynec@nvidia.com>
 
-It provides the required configurations for Axiado eMMC PHY driver for
-HS200 mode.
+The existing code reads a single hs_term_range_adj value from bit field
+[10:7] of FUSE_SKU_CALIB_0 and applies it to all USB2 pads uniformly.
+However, on SoCs that support per-pad termination, each pad has its own
+hs_term_range_adj field: pad 0 in FUSE_SKU_CALIB_0[10:7], and pads 1-3
+in FUSE_USB_CALIB_EXT_0 at bit offsets [8:5], [12:9], and [16:13]
+respectively.
 
-Signed-off-by: SriNavmani A <srinavmani@axiado.com>
-Co-developed-by: Prasad Bolisetty <pbolisetty@axiado.com>
-Signed-off-by: Prasad Bolisetty <pbolisetty@axiado.com>
-Signed-off-by: Tzu-Hao Wei <twei@axiado.com>
+Fix the calibration by reading per-pad values from the appropriate fuse
+registers. For SoCs that do not support per-pad termination, replicate
+pad 0's value to all pads to maintain existing behavior.
+
+Add a has_per_pad_term flag to the SoC data to indicate whether per-pad
+termination values are available in FUSE_USB_CALIB_EXT_0.
+
+Fixes: 1ef535c6ba8e ("phy: tegra: xusb: Add Tegra194 support")
+Cc: stable@vger.kernel.org
+Signed-off-by: Wayne Chang <waynec@nvidia.com>
+Signed-off-by: Wei-Cheng Chen <weichengc@nvidia.com>
+Reviewed-by: Jon Hunter <jonathanh@nvidia.com>
+Tested-by: Jon Hunter <jonathanh@nvidia.com>
 ---
- drivers/phy/Kconfig                  |   1 +
- drivers/phy/Makefile                 |   1 +
- drivers/phy/axiado/Kconfig           |  11 ++
- drivers/phy/axiado/Makefile          |   1 +
- drivers/phy/axiado/phy-axiado-emmc.c | 217 +++++++++++++++++++++++++++++++++++
- 5 files changed, 231 insertions(+)
+Changes in v2:
+- Rebased on v7.1-rc1 per Vinod's request. No functional changes;
+  range-diff vs v1 confirms identical payload.
+- Carried over Jon's Reviewed-by and Tested-by tags from v1
+  (https://lore.kernel.org/all/77285dd6-e240-4944-a034-a4bc3acf4052@nvidia.com/).
 
-diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
-index 678dd0452f0aa0597773433f04d2a9ba77474d2a..b802274ea45a84bd36d7c0b7fb90e368a5c018b4 100644
---- a/drivers/phy/Kconfig
-+++ b/drivers/phy/Kconfig
-@@ -103,6 +103,7 @@ config PHY_NXP_PTN3222
+ drivers/phy/tegra/xusb-tegra186.c | 33 ++++++++++++++++++++++++-------
+ drivers/phy/tegra/xusb.h          |  1 +
+ 2 files changed, 27 insertions(+), 7 deletions(-)
+
+diff --git a/drivers/phy/tegra/xusb-tegra186.c b/drivers/phy/tegra/xusb-tegra186.c
+index 1ddf1126597..60156aea270 100644
+--- a/drivers/phy/tegra/xusb-tegra186.c
++++ b/drivers/phy/tegra/xusb-tegra186.c
+@@ -20,8 +20,8 @@
+ /* FUSE USB_CALIB registers */
+ #define HS_CURR_LEVEL_PADX_SHIFT(x)	((x) ? (11 + (x - 1) * 6) : 0)
+ #define HS_CURR_LEVEL_PAD_MASK		0x3f
+-#define HS_TERM_RANGE_ADJ_SHIFT		7
+-#define HS_TERM_RANGE_ADJ_MASK		0xf
++#define HS_TERM_RANGE_ADJ_PADX_SHIFT(x)	((x) ? (5 + (x - 1) * 4) : 7)
++#define HS_TERM_RANGE_ADJ_PAD_MASK	0xf
+ #define HS_SQUELCH_SHIFT		29
+ #define HS_SQUELCH_MASK			0x7
  
- source "drivers/phy/allwinner/Kconfig"
- source "drivers/phy/amlogic/Kconfig"
-+source "drivers/phy/axiado/Kconfig"
- source "drivers/phy/broadcom/Kconfig"
- source "drivers/phy/cadence/Kconfig"
- source "drivers/phy/freescale/Kconfig"
-diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
-index bfb27fb5a494283d7fd05dd670ebd1b12df8b1a1..f1b9e4a8673bcde3fdc0fdc06a3deddb5785ced1 100644
---- a/drivers/phy/Makefile
-+++ b/drivers/phy/Makefile
-@@ -15,6 +15,7 @@ obj-$(CONFIG_PHY_AIROHA_PCIE)		+= phy-airoha-pcie.o
- obj-$(CONFIG_PHY_NXP_PTN3222)		+= phy-nxp-ptn3222.o
- obj-y					+= allwinner/	\
- 					   amlogic/	\
-+					   axiado/	\
- 					   broadcom/	\
- 					   cadence/	\
- 					   freescale/	\
-diff --git a/drivers/phy/axiado/Kconfig b/drivers/phy/axiado/Kconfig
-new file mode 100644
-index 0000000000000000000000000000000000000000..d159e0345345987c7f48dcd12d3237997735d2b5
---- /dev/null
-+++ b/drivers/phy/axiado/Kconfig
-@@ -0,0 +1,11 @@
-+#
-+# PHY drivers for Axiado platforms
-+#
-+
-+config PHY_AX3000_EMMC
-+	tristate "Axiado eMMC PHY driver"
-+	depends on OF && (ARCH_AXIADO || COMPILE_TEST)
-+	select GENERIC_PHY
-+	help
-+	  Enables this to support for the AX3000 EMMC PHY driver.
-+	  If unsure, say N.
-diff --git a/drivers/phy/axiado/Makefile b/drivers/phy/axiado/Makefile
-new file mode 100644
-index 0000000000000000000000000000000000000000..1e2b1ba016092eaffdbd7acbd9cdc8577d79b35c
---- /dev/null
-+++ b/drivers/phy/axiado/Makefile
-@@ -0,0 +1 @@
-+obj-$(CONFIG_PHY_AX3000_EMMC)		+= phy-axiado-emmc.o
-diff --git a/drivers/phy/axiado/phy-axiado-emmc.c b/drivers/phy/axiado/phy-axiado-emmc.c
-new file mode 100644
-index 0000000000000000000000000000000000000000..e0e2174776ad027df0a10a8c4741b1b4ef9ef40e
---- /dev/null
-+++ b/drivers/phy/axiado/phy-axiado-emmc.c
-@@ -0,0 +1,217 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later
-+/*
-+ * Axiado eMMC PHY driver
-+ *
-+ * Copyright (C) 2017 Arasan Chip Systems Inc.
-+ * Copyright (C) 2022-2026 Axiado Corporation (or its affiliates).
-+ *
-+ * Based on Arasan Driver (sdhci-pci-arasan.c)
-+ * sdhci-pci-arasan.c - Driver for Arasan PCI Controller with integrated phy.
-+ */
-+#include <linux/bitfield.h>
-+#include <linux/delay.h>
-+#include <linux/io.h>
-+#include <linux/iopoll.h>
-+#include <linux/module.h>
-+#include <linux/of.h>
-+#include <linux/phy/phy.h>
-+#include <linux/platform_device.h>
-+
-+/* Arasan eMMC 5.1 - PHY configuration registers */
-+#define CAP_REG_IN_S1_MSB		0x04
-+#define PHY_CTRL_1			0x38
-+#define PHY_CTRL_2			0x3c
-+#define PHY_CTRL_3			0x40
-+#define STATUS				0x50
-+
-+#define DLL_ENBL	BIT(26)
-+#define RTRIM_EN	BIT(21)
-+#define PDB_ENBL	BIT(23)
-+#define RETB_ENBL	BIT(1)
-+
-+#define REN_STRB	BIT(27)
-+#define REN_CMD_EN	GENMASK(20, 12)
-+
-+/* Pull-UP Enable on CMD Line */
-+#define PU_CMD_EN	GENMASK(11, 3)
-+
-+/* Selection value for the optimum delay from 1-32 output tap lines */
-+#define OTAP_DLY	0x02
-+/* DLL charge pump current trim default [1000] */
-+#define DLL_TRM_ICP	0x08
-+/* Select the frequency range of DLL Operation */
-+#define FRQ_SEL	0x01
-+
-+#define OTAP_SEL_MASK		GENMASK(10, 7)
-+#define DLL_TRM_MASK		GENMASK(25, 22)
-+#define DLL_FRQSEL_MASK		GENMASK(27, 25)
-+
-+#define OTAP_SEL(x)		(FIELD_PREP(OTAP_SEL_MASK, x) | OTAPDLY_EN)
-+#define DLL_TRM(x)		(FIELD_PREP(DLL_TRM_MASK, x) | DLL_ENBL)
-+#define DLL_FRQSEL(x)	FIELD_PREP(DLL_FRQSEL_MASK, x)
-+
-+#define OTAPDLY_EN	BIT(11)
-+
-+#define SEL_DLY_RXCLK	BIT(18)
-+#define SEL_DLY_TXCLK	BIT(19)
-+
-+#define CALDONE_MASK	0x40
-+#define DLL_RDY_MASK	0x1
-+#define MAX_CLK_BUF0	BIT(20)
-+#define MAX_CLK_BUF1	BIT(21)
-+#define MAX_CLK_BUF2	BIT(22)
-+
-+#define CLK_MULTIPLIER	0xc008e
-+#define POLL_TIMEOUT_MS	3000
-+#define POLL_DELAY_US	100
-+
-+struct axiado_emmc_phy {
-+	void __iomem *reg_base;
-+	struct device *dev;
-+};
-+
-+static int axiado_emmc_phy_init(struct phy *phy)
-+{
-+	struct axiado_emmc_phy *ax_phy = phy_get_drvdata(phy);
-+	struct device *dev = ax_phy->dev;
-+	u32 val;
-+	int ret;
-+
-+	val = readl(ax_phy->reg_base + PHY_CTRL_1);
-+	writel(val | RETB_ENBL | RTRIM_EN, ax_phy->reg_base + PHY_CTRL_1);
-+
-+	val = readl(ax_phy->reg_base + PHY_CTRL_3);
-+	writel(val | PDB_ENBL, ax_phy->reg_base + PHY_CTRL_3);
-+
-+	ret = readl_poll_timeout(ax_phy->reg_base + STATUS, val,
-+				 val & CALDONE_MASK, POLL_DELAY_US,
-+				 POLL_TIMEOUT_MS * 1000);
-+	if (ret) {
-+		dev_err(dev, "PHY calibration timeout\n");
-+		return ret;
-+	}
-+
-+	val = readl(ax_phy->reg_base + PHY_CTRL_1);
-+	writel(val | REN_CMD_EN | PU_CMD_EN, ax_phy->reg_base + PHY_CTRL_1);
-+
-+	val = readl(ax_phy->reg_base + PHY_CTRL_2);
-+	writel(val | REN_STRB, ax_phy->reg_base + PHY_CTRL_2);
-+
-+	val = readl(ax_phy->reg_base + PHY_CTRL_3);
-+	writel(val | MAX_CLK_BUF0 | MAX_CLK_BUF1 | MAX_CLK_BUF2,
-+	       ax_phy->reg_base + PHY_CTRL_3);
-+
-+	writel(CLK_MULTIPLIER, ax_phy->reg_base + CAP_REG_IN_S1_MSB);
-+
-+	val = readl(ax_phy->reg_base + PHY_CTRL_3);
-+	writel(val | SEL_DLY_RXCLK | SEL_DLY_TXCLK,
-+	       ax_phy->reg_base + PHY_CTRL_3);
-+
-+	return 0;
-+}
-+
-+static int axiado_emmc_phy_power_on(struct phy *phy)
-+{
-+	struct axiado_emmc_phy *ax_phy = phy_get_drvdata(phy);
-+	struct device *dev = ax_phy->dev;
-+	u32 val;
-+	int ret;
-+
-+	val = readl(ax_phy->reg_base + PHY_CTRL_1);
-+	writel(val | RETB_ENBL, ax_phy->reg_base + PHY_CTRL_1);
-+
-+	val = readl(ax_phy->reg_base + PHY_CTRL_3);
-+	writel(val | PDB_ENBL, ax_phy->reg_base + PHY_CTRL_3);
-+
-+	val = readl(ax_phy->reg_base + PHY_CTRL_2);
-+	writel(val | OTAP_SEL(OTAP_DLY), ax_phy->reg_base + PHY_CTRL_2);
-+
-+	val = readl(ax_phy->reg_base + PHY_CTRL_1);
-+	writel(val | DLL_TRM(DLL_TRM_ICP), ax_phy->reg_base + PHY_CTRL_1);
-+
-+	val = readl(ax_phy->reg_base + PHY_CTRL_3);
-+	writel(val | DLL_FRQSEL(FRQ_SEL), ax_phy->reg_base + PHY_CTRL_3);
-+
-+	ret = read_poll_timeout(readl, val, val & DLL_RDY_MASK, POLL_DELAY_US,
-+				POLL_TIMEOUT_MS * 1000, false,
-+				ax_phy->reg_base + STATUS);
-+	if (ret) {
-+		dev_err(dev, "DLL ready timeout\n");
-+		return ret;
-+	}
-+
-+	return 0;
-+}
-+
-+static int axiado_emmc_phy_power_off(struct phy *phy)
-+{
-+	struct axiado_emmc_phy *ax_phy = phy_get_drvdata(phy);
-+	u32 val;
-+
-+	val = readl(ax_phy->reg_base + PHY_CTRL_1);
-+	val &= ~(DLL_TRM_MASK | DLL_ENBL);
-+	writel(val, ax_phy->reg_base + PHY_CTRL_1);
-+
-+	val = readl(ax_phy->reg_base + PHY_CTRL_3);
-+	val &= ~(DLL_FRQSEL_MASK | PDB_ENBL);
-+	writel(val, ax_phy->reg_base + PHY_CTRL_3);
-+
-+	return 0;
-+}
-+
-+static const struct phy_ops axiado_emmc_phy_ops = {
-+	.init = axiado_emmc_phy_init,
-+	.power_on = axiado_emmc_phy_power_on,
-+	.power_off = axiado_emmc_phy_power_off,
-+	.owner = THIS_MODULE,
-+};
-+
-+static const struct of_device_id axiado_emmc_phy_of_match[] = {
-+	{ .compatible = "axiado,ax3000-emmc-phy" },
-+	{ /* sentinel */ },
-+};
-+MODULE_DEVICE_TABLE(of, axiado_emmc_phy_of_match);
-+
-+static int axiado_emmc_phy_probe(struct platform_device *pdev)
-+{
-+	struct axiado_emmc_phy *ax_phy;
-+	struct phy_provider *phy_provider;
-+	struct device *dev = &pdev->dev;
-+	struct phy *generic_phy;
-+
-+	if (!dev->of_node)
-+		return -ENODEV;
-+
-+	ax_phy = devm_kzalloc(dev, sizeof(*ax_phy), GFP_KERNEL);
-+	if (!ax_phy)
+@@ -253,7 +253,7 @@
+ struct tegra_xusb_fuse_calibration {
+ 	u32 *hs_curr_level;
+ 	u32 hs_squelch;
+-	u32 hs_term_range_adj;
++	u32 *hs_term_range_adj;
+ 	u32 rpd_ctrl;
+ };
+ 
+@@ -930,7 +930,7 @@ static int tegra186_utmi_phy_power_on(struct phy *phy)
+ 
+ 	value = padctl_readl(padctl, XUSB_PADCTL_USB2_OTG_PADX_CTL1(index));
+ 	value &= ~TERM_RANGE_ADJ(~0);
+-	value |= TERM_RANGE_ADJ(priv->calib.hs_term_range_adj);
++	value |= TERM_RANGE_ADJ(priv->calib.hs_term_range_adj[index]);
+ 	value &= ~RPD_CTRL(~0);
+ 	value |= RPD_CTRL(priv->calib.rpd_ctrl);
+ 	padctl_writel(padctl, value, XUSB_PADCTL_USB2_OTG_PADX_CTL1(index));
+@@ -1464,17 +1464,23 @@ static const char * const tegra186_usb3_functions[] = {
+ static int
+ tegra186_xusb_read_fuse_calibration(struct tegra186_xusb_padctl *padctl)
+ {
++	const struct tegra_xusb_padctl_soc *soc = padctl->base.soc;
+ 	struct device *dev = padctl->base.dev;
+ 	unsigned int i, count;
+ 	u32 value, *level;
++	u32 *hs_term_range_adj;
+ 	int err;
+ 
+-	count = padctl->base.soc->ports.usb2.count;
++	count = soc->ports.usb2.count;
+ 
+ 	level = devm_kcalloc(dev, count, sizeof(u32), GFP_KERNEL);
+ 	if (!level)
+ 		return -ENOMEM;
+ 
++	hs_term_range_adj = devm_kcalloc(dev, count, sizeof(u32), GFP_KERNEL);
++	if (!hs_term_range_adj)
 +		return -ENOMEM;
 +
-+	ax_phy->reg_base = devm_platform_ioremap_resource(pdev, 0);
-+	if (IS_ERR(ax_phy->reg_base))
-+		return PTR_ERR(ax_phy->reg_base);
+ 	err = tegra_fuse_readl(TEGRA_FUSE_SKU_CALIB_0, &value);
+ 	if (err)
+ 		return dev_err_probe(dev, err,
+@@ -1490,8 +1496,8 @@ tegra186_xusb_read_fuse_calibration(struct tegra186_xusb_padctl *padctl)
+ 
+ 	padctl->calib.hs_squelch = (value >> HS_SQUELCH_SHIFT) &
+ 					HS_SQUELCH_MASK;
+-	padctl->calib.hs_term_range_adj = (value >> HS_TERM_RANGE_ADJ_SHIFT) &
+-						HS_TERM_RANGE_ADJ_MASK;
++	hs_term_range_adj[0] = (value >> HS_TERM_RANGE_ADJ_PADX_SHIFT(0)) &
++				HS_TERM_RANGE_ADJ_PAD_MASK;
+ 
+ 	err = tegra_fuse_readl(TEGRA_FUSE_USB_CALIB_EXT_0, &value);
+ 	if (err) {
+@@ -1503,6 +1509,17 @@ tegra186_xusb_read_fuse_calibration(struct tegra186_xusb_padctl *padctl)
+ 
+ 	padctl->calib.rpd_ctrl = (value >> RPD_CTRL_SHIFT) & RPD_CTRL_MASK;
+ 
++	for (i = 1; i < count; i++) {
++		if (soc->has_per_pad_term)
++			hs_term_range_adj[i] =
++				(value >> HS_TERM_RANGE_ADJ_PADX_SHIFT(i)) &
++				HS_TERM_RANGE_ADJ_PAD_MASK;
++		else
++			hs_term_range_adj[i] = hs_term_range_adj[0];
++	}
 +
-+	ax_phy->dev = dev;
++	padctl->calib.hs_term_range_adj = hs_term_range_adj;
 +
-+	generic_phy = devm_phy_create(dev, dev->of_node, &axiado_emmc_phy_ops);
-+	if (IS_ERR(generic_phy))
-+		return dev_err_probe(dev, PTR_ERR(generic_phy),
-+				     "failed to create PHY\n");
-+
-+	phy_set_drvdata(generic_phy, ax_phy);
-+	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-+
-+	return PTR_ERR_OR_ZERO(phy_provider);
-+}
-+
-+static struct platform_driver axiado_emmc_phy_driver = {
-+	.probe = axiado_emmc_phy_probe,
-+	.driver = {
-+		.name = "axiado-emmc-phy",
-+		.of_match_table = axiado_emmc_phy_of_match,
-+	},
-+};
-+module_platform_driver(axiado_emmc_phy_driver);
-+
-+MODULE_DESCRIPTION("AX3000 eMMC PHY Driver");
-+MODULE_AUTHOR("Axiado Corporation");
-+MODULE_LICENSE("GPL");
+ 	return 0;
+ }
+ 
+@@ -1708,6 +1725,7 @@ const struct tegra_xusb_padctl_soc tegra194_xusb_padctl_soc = {
+ 	.num_supplies = ARRAY_SIZE(tegra194_xusb_padctl_supply_names),
+ 	.supports_gen2 = true,
+ 	.poll_trk_completed = true,
++	.has_per_pad_term = true,
+ };
+ EXPORT_SYMBOL_GPL(tegra194_xusb_padctl_soc);
+ 
+@@ -1732,6 +1750,7 @@ const struct tegra_xusb_padctl_soc tegra234_xusb_padctl_soc = {
+ 	.trk_hw_mode = false,
+ 	.trk_update_on_idle = true,
+ 	.supports_lp_cfg_en = true,
++	.has_per_pad_term = true,
+ };
+ EXPORT_SYMBOL_GPL(tegra234_xusb_padctl_soc);
+ #endif
+diff --git a/drivers/phy/tegra/xusb.h b/drivers/phy/tegra/xusb.h
+index cd277d0ed9e..77609e54de6 100644
+--- a/drivers/phy/tegra/xusb.h
++++ b/drivers/phy/tegra/xusb.h
+@@ -435,6 +435,7 @@ struct tegra_xusb_padctl_soc {
+ 	bool trk_hw_mode;
+ 	bool trk_update_on_idle;
+ 	bool supports_lp_cfg_en;
++	bool has_per_pad_term;
+ };
+ 
+ struct tegra_xusb_padctl {
 
+base-commit: 254f49634ee16a731174d2ae34bc50bd5f45e731
 -- 
-2.34.1
+2.43.0
 
 
 -- 
