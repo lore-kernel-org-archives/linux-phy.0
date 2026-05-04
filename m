@@ -4,113 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 64BF0CD3424
-	for <linux-phy@archiver.kernel.org>; Mon,  4 May 2026 03:33:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CA07DCD3423
+	for <linux-phy@archiver.kernel.org>; Mon,  4 May 2026 06:58:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=DYr/27tYQe7cZaF2Hrith9EdTYDzKdLXje3RScgHy18=; b=vObnC3SA5Os6jr
-	7OHwJzjmXzewlkS0ktq7BjLJNZqD2mPmo3iwbIMvMtlng2/+XdUhYnCPHgJ70yb2FnuaMkw5hN9g5
-	a0Hui6TkwmoBvlBlw9DVL2OF6whcN4cZU+SV3At8RxzWC5wbQvKPAQbar9fkFiyTEq7U18VPwoSwN
-	bfA/WjD8GM4gF7MmF/kd1ejJ7vKbbW/ytB8xoL73QOKaxPrnVSFy0Wvoe9mAyUd4UnnW6pgNbRPSN
-	wvB+sqBH7pnBEKRw4yDDNdSm4uhq/tv2i0T81BgYtjguc6BBF6cQ9ccruPm+4Y7XVFyCIPXE6O+sa
-	JiZS4cc8OG1+cZCLk8bw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9jpiGaDxwHzQs9b9bjWnh/dGe1FgMnKlTMP9a7FB66E=; b=hMi1A0aAFwg+iK
+	rahGSvOZqv8b1fylMAozT/avLt47flW/U32Yff/ZXp0ZCq25Oebsa/A2ksI9QG5d982FBHd/YIl0f
+	r0uwi63/XsH8oG7//GoePzTfzOBGoLRAcu0wPkMbbcHhzhQmWrJSL3lPAlVWcQEIJ5AdqJr3sm+XZ
+	D3IMtudLBxXe8hL1J5DUch3oo0kvfIhy3YxL1iAMKCgE36/BcgCdNDhCtoUkZYRpuztxkgstAazmY
+	YVTvU+ithPQP6yS8tMMsj5rWPiNOVOa+TxogKuLl9ziirlWNOtOxKUC1HSJdKT2o0QIH1SFkpKgn9
+	6lZEloEbA0fvTG1hefGA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wJk3p-0000000CG0j-2mab;
-	Mon, 04 May 2026 03:33:33 +0000
-Received: from mail-westus3azon11012019.outbound.protection.outlook.com ([40.107.209.19] helo=PH8PR06CU001.outbound.protection.outlook.com)
+	id 1wJnGQ-0000000CYGm-0X20;
+	Mon, 04 May 2026 06:58:46 +0000
+Received: from mgamail.intel.com ([198.175.65.20])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wJk3l-0000000CG07-1Twu
+	id 1wJnGM-0000000CYFQ-3iOI
 	for linux-phy@lists.infradead.org;
-	Mon, 04 May 2026 03:33:32 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=eSAtUxrZjZCvLuWoftgNSFpc5quXkJ538ICUG1RHjzDYqma/G4CyX7gIExV6o79enob6zefav1zC6ssMvyOMWmHw8GwteP4H+OK5RVjm/1Nzs60UpPzgIlnfxXtH3eZC6RUCzb5f8KW3PSm62vyrQhBZV/1X9zhcaCndx3QNZX2FlJwdzU2sL9i7IXTPxlWLR1PR2vAht7AVmDGnyUjq3BDd8yNstV5Q6ItPIep6luNSlIHoilMw76Xni/BoyjVjdCnPdJdSxV+s7biIrDu+s9yRtxG20l+GltamuBglaRQHPWioXeK/7wx+8S0M3EKL/UO8JKMsJBv2v+OIZHPXYg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=g62HCHwFmhveodrjNFbtdfxdftGDv4RY9jwyLaU96ic=;
- b=UzY/7rPnG0n546aP3k/ZP2EFpvIJdJOvF4TAiieUuaIYGDh+dP+uO5Yz7So4/4Yef7qrUsA//+eKuqc5rqO7FZHpgblYlewne/9GV1WE6pPc23XkzeFljigeUs4L3SfEs2NwLT4fJ2qpt9ADSDXE6fRafWza63GRoJHUmjaqGNmb0J5O/DTl9nC9f+297ZVlEBPoYGCTiD1iXrnNcZOfrPHwjcPALiucjDMb4M9hF+Bymn0lvv+RJH588Y5drDhQdOA9Bdx7BrCwqUG2Mbz3iOX4E/AfpBKeEaV3AWOA6LskbqzaRHTu6r5uZyqJI02HR+iMsEeJ9z5oR7FwHYknNw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 216.228.117.160) smtp.rcpttodomain=kernel.org smtp.mailfrom=nvidia.com;
- dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
- dkim=none (message not signed); arc=none (0)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=g62HCHwFmhveodrjNFbtdfxdftGDv4RY9jwyLaU96ic=;
- b=GwEM8BFFEvPp0w7WtYmxVo27QBkKNKUnA/iIwzJE6IF9jYIl+18uxYJjRmhHdQ+jUGIf3WA/CyMHCnF2W6T9aJFQT6SACv8EacyOOVk/MzlCXVUWPG0h0ie+PBuEpsgY2PWdmlrgpxXc35rr38OQtIqH2livEA1kJjfneN4YoGRlhiUnUowXUzOXsLGGaf2xREhTpQEUoZKGg0DibDSbz21N0SP9FLrZcfSnRHIMMueeIMKztTmHdu37otSTFzprAirtSV57+wl/cvqXFJWOrb4AcxhE0GU/XTNVE4LwEkJQ5Ecx6xxe8teuzwRXcK92ChVmHxq4enksOdAe9GaZgg==
-Received: from MN2PR20CA0004.namprd20.prod.outlook.com (2603:10b6:208:e8::17)
- by CH8PR12MB9789.namprd12.prod.outlook.com (2603:10b6:610:260::17) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9870.25; Mon, 4 May
- 2026 03:33:19 +0000
-Received: from BL02EPF0001A0FB.namprd03.prod.outlook.com
- (2603:10b6:208:e8:cafe::e3) by MN2PR20CA0004.outlook.office365.com
- (2603:10b6:208:e8::17) with Microsoft SMTP Server (version=TLS1_3,
- cipher=TLS_AES_256_GCM_SHA384) id 15.20.9870.25 via Frontend Transport; Mon,
- 4 May 2026 03:33:19 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.160)
- smtp.mailfrom=nvidia.com; dkim=none (message not signed)
- header.d=none;dmarc=pass action=none header.from=nvidia.com;
-Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
- 216.228.117.160 as permitted sender) receiver=protection.outlook.com;
- client-ip=216.228.117.160; helo=mail.nvidia.com; pr=C
-Received: from mail.nvidia.com (216.228.117.160) by
- BL02EPF0001A0FB.mail.protection.outlook.com (10.167.242.102) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.9891.9 via Frontend Transport; Mon, 4 May 2026 03:33:18 +0000
-Received: from rnnvmail203.nvidia.com (10.129.68.9) by mail.nvidia.com
- (10.129.200.66) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Sun, 3 May
- 2026 20:33:08 -0700
-Received: from rnnvmail205.nvidia.com (10.129.68.10) by rnnvmail203.nvidia.com
- (10.129.68.9) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Sun, 3 May
- 2026 20:33:08 -0700
-Received: from 5b171f0-lcelt.nvidia.com (10.127.8.13) by mail.nvidia.com
- (10.129.68.10) with Microsoft SMTP Server id 15.2.2562.20 via Frontend
- Transport; Sun, 3 May 2026 20:33:06 -0700
-From: Wei-Cheng Chen <weichengc@nvidia.com>
-To: Vinod Koul <vkoul@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>, "JC
- Kuo" <jckuo@nvidia.com>, Neil Armstrong <neil.armstrong@linaro.org>, "Thierry
- Reding" <thierry.reding@kernel.org>
-CC: Wayne Chang <waynec@nvidia.com>, WK Tsai <wtsai@nvidia.com>,
-	<linux-phy@lists.infradead.org>, <linux-tegra@vger.kernel.org>,
-	<linux-kernel@vger.kernel.org>
-Subject: [PATCH v2] phy: tegra: xusb: Fix per-pad high-speed termination calibration
-Date: Mon, 4 May 2026 11:33:05 +0800
-Message-ID: <20260504033305.2283145-1-weichengc@nvidia.com>
-X-Mailer: git-send-email 2.43.0
+	Mon, 04 May 2026 06:58:45 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1777877924; x=1809413924;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=HvE9Ruc8oUHtLsgmJ7bKJpqjHWRjMVBob2gyiyfqOk8=;
+  b=FfxgMrdncvkcFLxRew8M5Ne0+Fwnrc4ArDkVWlZxwoAe1o9nUZL6J11E
+   kl1DN1kVXyU9WXgdYNWOl9B3A8ooCl3JeROCAMOeAZFDyBOTfgZ/8A8N4
+   dRaRylpx3+DwPHla9qpRP/6GUpPBnt70fMPLYh7Hk7qzSCZ8D7htc95O/
+   Mu2TBIJ+MYvOyrgrp44aWdmkazNpFjcutJA+54w5yvw4YxO/R+A3qtWoX
+   Xj/weluXxVmy0bahUwLm08mlmIn2aQvwVlOIJuXZSWEVG/ftbc22PGlo9
+   Xyf+Hq5rfZg5w69uIT+/E6Yvbhllzq2D/Vdoo6i5iF1gU+5xTCsGWtVGA
+   A==;
+X-CSE-ConnectionGUID: yeUL3ywpRSeHwU7RL5+zPA==
+X-CSE-MsgGUID: Pqe/j71vR+K7yva6jsMcrQ==
+X-IronPort-AV: E=McAfee;i="6800,10657,11775"; a="78436932"
+X-IronPort-AV: E=Sophos;i="6.23,215,1770624000"; 
+   d="scan'208";a="78436932"
+Received: from orviesa010.jf.intel.com ([10.64.159.150])
+  by orvoesa112.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 03 May 2026 23:58:41 -0700
+X-CSE-ConnectionGUID: JCXgGk+rR6i2nSfOpMFl2g==
+X-CSE-MsgGUID: DuO2+JgmTzuW74sPUnpvqA==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.23,215,1770624000"; 
+   d="scan'208";a="234578650"
+Received: from hrotuna-mobl2.ger.corp.intel.com (HELO localhost) ([10.245.245.78])
+  by orviesa010-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 03 May 2026 23:58:38 -0700
+Date: Mon, 4 May 2026 09:58:35 +0300
+From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+To: Josua Mayer <josua@solid-run.com>
+Cc: "linux-can@vger.kernel.org" <linux-can@vger.kernel.org>,
+	"linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+	Marc Kleine-Budde <mkl@pengutronix.de>,
+	Vincent Mailhol <mailhol@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Ulf Hansson <ulf.hansson@linaro.org>
+Subject: Re: [PATCH v2 0/4] phy: phy-can-transceiver: Ad-hoc cleanups and
+ refactoring
+Message-ID: <afhDm5_ydU83xFKU@ashevche-desk.local>
+References: <20260317203001.2108568-1-andriy.shevchenko@linux.intel.com>
+ <ad6KwGIhpJn_2eVz@ashevche-desk.local>
+ <7bcb68c4-e4bd-4ad9-bb75-99e0845b204c@solid-run.com>
+ <ae9l4n8wocbVegcJ@ashevche-desk.local>
+ <5d4c3c95-cbe1-4439-8036-b014264ce8c2@solid-run.com>
+ <ae-AJdSrnXiuc1mW@ashevche-desk.local>
 MIME-Version: 1.0
-X-NV-OnPremToCloud: ExternallySecured
-X-EOPAttributedMessage: 0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: BL02EPF0001A0FB:EE_|CH8PR12MB9789:EE_
-X-MS-Office365-Filtering-Correlation-Id: d7a72528-2ef2-4b85-9e34-08dea98de2a2
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|36860700016|376014|82310400026|13003099007|18002099003|56012099003;
-X-Microsoft-Antispam-Message-Info: /2J2kjjWVmhr4eueQhFDitBmxaM37sXwRjJQTDLTkZIHsFWtdRG0LVzeaSn7LCIhBp3ulWdafrzxwFEdlG8TpeN5FXi67zaFJawdbsEamYQqBeLTZ59wuDMUIj89khyiazgWhUSB6Bx7X8W0xgQphJfMjbgXQSf2aIaVPM/rjs+ARypEDbSNySL4kG1KS20v+YSlV5ioDJ2mYI75LxSZN26ukHoTuBARocWIl7mLxG0zB6APo6P8w/qynu1/GDdO+mNDk4MwRpdWgyxDT+ya2dvUn1CDeawP5FHsZZ08ttAwXJxzjCQ1aFFVzp0ZTe09qeAEct5f9nZtInAjR2StwT1B96i+AekPejIsF+cTcsnTAJzOtPXMw9q58+ziQx3HilmyIDW6V5XXeVwHGrIJSgR0CL7VonIIKYUQoJD0KzgBRABsEblWSQGPNveSBJ3YAsbclWxiwj8gFKYjlN1tipHkI5Jljy2o8klzcK8rzWKf06/QNO4tPzIBovMGpwGkVpkPTXVhC2PRBV4eGnqu8tsHEEmfqBLaXMH09K3oFpCMuf00FwlckzAQBWrDqfwhndgVH/KtPXLJX9zdOz6i3EU9M8WkRs4vv0MHdbTVIjn6uxvnVX8b4SalaBH3tfGYXEFy+S7iOM26BST2p7SEXyjjrGy3Qw+AyxiMkhKbBfJDeJFza4/CEvXLfzIkNUIi2oZDvATk+l0uabP04E19J4GmwllYPDWCH/W448sqZxhB+61yqE5QS5mQyplt1DBG
-X-Forefront-Antispam-Report: CIP:216.228.117.160;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge1.nvidia.com;CAT:NONE;SFS:(13230040)(1800799024)(36860700016)(376014)(82310400026)(13003099007)(18002099003)(56012099003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: 6/iBOcL3GfoQDk2MtkqCeIbRH1PwqcFc4knz2c8w3+B1VojtvuVrOQ1YcAZJmzXTcbKTsJOFoSIhNN9bS+tmoOMVsEGvvD38Ey1PTThGM+DgCHu3AVrqszDY3Ap7Ab7pFjsaFScI4bNTsjEz0uYzj58+e9aufZ8zETlhLB07r5ZhpUWiscunGCIizwpfXZtgh5C5Mch8wQ1B/WBhECIo9F46vs5CY3S535clam7F8edorfunwIqVtud8Mlou+3tHBPGzkhBNFDF9yEWUlQvUuClb4tfMqzs53E8F0PS62Q2uX26rj68BStYxOU23Yao9HkMsfdB+XUHbp+n8x2R8em4RJp3J5xyHHgXDsDy+KGgbXeNNfzi+816fI/CSWEXML8QABUTQDwe0Q7xxdQtYiMZczr75CVWa/KoJbchbFL1QA/Jga4EcvpMRRhzwurIp
-X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 May 2026 03:33:18.9039
- (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: d7a72528-2ef2-4b85-9e34-08dea98de2a2
-X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.160];Helo=[mail.nvidia.com]
-X-MS-Exchange-CrossTenant-AuthSource: BL02EPF0001A0FB.namprd03.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH8PR12MB9789
+Content-Disposition: inline
+In-Reply-To: <ae-AJdSrnXiuc1mW@ashevche-desk.local>
+Organization: Intel Finland Oy - BIC 0357606-4 - c/o Alberga Business Park, 6
+ krs, Bertel Jungin Aukio 5, 02600 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260503_203329_449200_58D564FF 
-X-CRM114-Status: GOOD (  17.62  )
+X-CRM114-CacheID: sfid-20260503_235842_993498_29BE21D0 
+X-CRM114-Status: GOOD (  22.45  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -127,158 +97,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Wayne Chang <waynec@nvidia.com>
+On Mon, Apr 27, 2026 at 06:26:34PM +0300, Andy Shevchenko wrote:
+> On Mon, Apr 27, 2026 at 01:41:43PM +0000, Josua Mayer wrote:
+> > Am 27.04.26 um 15:34 schrieb Andy Shevchenko:
+> > > On Mon, Apr 27, 2026 at 11:09:48AM +0000, Josua Mayer wrote:
+> > >> Am 14.04.26 um 20:43 schrieb Andy Shevchenko:
+> > >>> On Tue, Mar 17, 2026 at 09:27:26PM +0100, Andy Shevchenko wrote:
 
-The existing code reads a single hs_term_range_adj value from bit field
-[10:7] of FUSE_SKU_CALIB_0 and applies it to all USB2 pads uniformly.
-However, on SoCs that support per-pad termination, each pad has its own
-hs_term_range_adj field: pad 0 in FUSE_SKU_CALIB_0[10:7], and pads 1-3
-in FUSE_USB_CALIB_EXT_0 at bit offsets [8:5], [12:9], and [16:13]
-respectively.
+...
 
-Fix the calibration by reading per-pad values from the appropriate fuse
-registers. For SoCs that do not support per-pad termination, replicate
-pad 0's value to all pads to maintain existing behavior.
+> > >> For unknown reason your patch-set did not arrive in my inbox.
+> > >> Perhaps it went missing for others, too?
+> > > Are you in the MAINTAINERS for this part of the kernel?
+> > > The CAN NETWORK DRIVERS and GENERIC PHY FRAMEWORK do not list your name.
+> > Correct. I touched can phy once related to mux only.
+> > > If you think of mail delivery in general, it's delivered at least to the ML
+> > > https://lore.kernel.org/all/20260317203001.2108568-1-andriy.shevchenko@linux.intel.com/
+> > >
+> > > TBH I don't know what to answer to your question as I don't know your expectations and
+> > > how it should be fulfilled taking into account my above question...
+> > 
+> > Changelog v2:
+> > - Cc'ed to Ulf and Josua due to above
+> > 
+> > This is why I expected it in my inbox.
+> > Usually in this situation I blame my provider.
+> 
+> Ah, blame me then. I most likely missed to add your name to the Cc list.
 
-Add a has_per_pad_term flag to the SoC data to indicate whether per-pad
-termination values are available in FUSE_USB_CALIB_EXT_0.
+Hmm... I have checked and your address is in the Cc for the whole series,
+so I withdraw that I admit earlier that problem is on my side. Please, check
+if everything fine on yours. Note, I'm about to send a v3.
 
-Fixes: 1ef535c6ba8e ("phy: tegra: xusb: Add Tegra194 support")
-Cc: stable@vger.kernel.org
-Signed-off-by: Wayne Chang <waynec@nvidia.com>
-Signed-off-by: Wei-Cheng Chen <weichengc@nvidia.com>
-Reviewed-by: Jon Hunter <jonathanh@nvidia.com>
-Tested-by: Jon Hunter <jonathanh@nvidia.com>
----
-Changes in v2:
-- Rebased on v7.1-rc1 per Vinod's request. No functional changes;
-  range-diff vs v1 confirms identical payload.
-- Carried over Jon's Reviewed-by and Tested-by tags from v1
-  (https://lore.kernel.org/all/77285dd6-e240-4944-a034-a4bc3acf4052@nvidia.com/).
+> > > But thanks for the reviewing! I will address the commit message in v3.
+> > Great!
+> 
+> And will try hard to make sure your address will be in the Cc list.
 
- drivers/phy/tegra/xusb-tegra186.c | 33 ++++++++++++++++++++++++-------
- drivers/phy/tegra/xusb.h          |  1 +
- 2 files changed, 27 insertions(+), 7 deletions(-)
-
-diff --git a/drivers/phy/tegra/xusb-tegra186.c b/drivers/phy/tegra/xusb-tegra186.c
-index 1ddf1126597..60156aea270 100644
---- a/drivers/phy/tegra/xusb-tegra186.c
-+++ b/drivers/phy/tegra/xusb-tegra186.c
-@@ -20,8 +20,8 @@
- /* FUSE USB_CALIB registers */
- #define HS_CURR_LEVEL_PADX_SHIFT(x)	((x) ? (11 + (x - 1) * 6) : 0)
- #define HS_CURR_LEVEL_PAD_MASK		0x3f
--#define HS_TERM_RANGE_ADJ_SHIFT		7
--#define HS_TERM_RANGE_ADJ_MASK		0xf
-+#define HS_TERM_RANGE_ADJ_PADX_SHIFT(x)	((x) ? (5 + (x - 1) * 4) : 7)
-+#define HS_TERM_RANGE_ADJ_PAD_MASK	0xf
- #define HS_SQUELCH_SHIFT		29
- #define HS_SQUELCH_MASK			0x7
- 
-@@ -253,7 +253,7 @@
- struct tegra_xusb_fuse_calibration {
- 	u32 *hs_curr_level;
- 	u32 hs_squelch;
--	u32 hs_term_range_adj;
-+	u32 *hs_term_range_adj;
- 	u32 rpd_ctrl;
- };
- 
-@@ -930,7 +930,7 @@ static int tegra186_utmi_phy_power_on(struct phy *phy)
- 
- 	value = padctl_readl(padctl, XUSB_PADCTL_USB2_OTG_PADX_CTL1(index));
- 	value &= ~TERM_RANGE_ADJ(~0);
--	value |= TERM_RANGE_ADJ(priv->calib.hs_term_range_adj);
-+	value |= TERM_RANGE_ADJ(priv->calib.hs_term_range_adj[index]);
- 	value &= ~RPD_CTRL(~0);
- 	value |= RPD_CTRL(priv->calib.rpd_ctrl);
- 	padctl_writel(padctl, value, XUSB_PADCTL_USB2_OTG_PADX_CTL1(index));
-@@ -1464,17 +1464,23 @@ static const char * const tegra186_usb3_functions[] = {
- static int
- tegra186_xusb_read_fuse_calibration(struct tegra186_xusb_padctl *padctl)
- {
-+	const struct tegra_xusb_padctl_soc *soc = padctl->base.soc;
- 	struct device *dev = padctl->base.dev;
- 	unsigned int i, count;
- 	u32 value, *level;
-+	u32 *hs_term_range_adj;
- 	int err;
- 
--	count = padctl->base.soc->ports.usb2.count;
-+	count = soc->ports.usb2.count;
- 
- 	level = devm_kcalloc(dev, count, sizeof(u32), GFP_KERNEL);
- 	if (!level)
- 		return -ENOMEM;
- 
-+	hs_term_range_adj = devm_kcalloc(dev, count, sizeof(u32), GFP_KERNEL);
-+	if (!hs_term_range_adj)
-+		return -ENOMEM;
-+
- 	err = tegra_fuse_readl(TEGRA_FUSE_SKU_CALIB_0, &value);
- 	if (err)
- 		return dev_err_probe(dev, err,
-@@ -1490,8 +1496,8 @@ tegra186_xusb_read_fuse_calibration(struct tegra186_xusb_padctl *padctl)
- 
- 	padctl->calib.hs_squelch = (value >> HS_SQUELCH_SHIFT) &
- 					HS_SQUELCH_MASK;
--	padctl->calib.hs_term_range_adj = (value >> HS_TERM_RANGE_ADJ_SHIFT) &
--						HS_TERM_RANGE_ADJ_MASK;
-+	hs_term_range_adj[0] = (value >> HS_TERM_RANGE_ADJ_PADX_SHIFT(0)) &
-+				HS_TERM_RANGE_ADJ_PAD_MASK;
- 
- 	err = tegra_fuse_readl(TEGRA_FUSE_USB_CALIB_EXT_0, &value);
- 	if (err) {
-@@ -1503,6 +1509,17 @@ tegra186_xusb_read_fuse_calibration(struct tegra186_xusb_padctl *padctl)
- 
- 	padctl->calib.rpd_ctrl = (value >> RPD_CTRL_SHIFT) & RPD_CTRL_MASK;
- 
-+	for (i = 1; i < count; i++) {
-+		if (soc->has_per_pad_term)
-+			hs_term_range_adj[i] =
-+				(value >> HS_TERM_RANGE_ADJ_PADX_SHIFT(i)) &
-+				HS_TERM_RANGE_ADJ_PAD_MASK;
-+		else
-+			hs_term_range_adj[i] = hs_term_range_adj[0];
-+	}
-+
-+	padctl->calib.hs_term_range_adj = hs_term_range_adj;
-+
- 	return 0;
- }
- 
-@@ -1708,6 +1725,7 @@ const struct tegra_xusb_padctl_soc tegra194_xusb_padctl_soc = {
- 	.num_supplies = ARRAY_SIZE(tegra194_xusb_padctl_supply_names),
- 	.supports_gen2 = true,
- 	.poll_trk_completed = true,
-+	.has_per_pad_term = true,
- };
- EXPORT_SYMBOL_GPL(tegra194_xusb_padctl_soc);
- 
-@@ -1732,6 +1750,7 @@ const struct tegra_xusb_padctl_soc tegra234_xusb_padctl_soc = {
- 	.trk_hw_mode = false,
- 	.trk_update_on_idle = true,
- 	.supports_lp_cfg_en = true,
-+	.has_per_pad_term = true,
- };
- EXPORT_SYMBOL_GPL(tegra234_xusb_padctl_soc);
- #endif
-diff --git a/drivers/phy/tegra/xusb.h b/drivers/phy/tegra/xusb.h
-index cd277d0ed9e..77609e54de6 100644
---- a/drivers/phy/tegra/xusb.h
-+++ b/drivers/phy/tegra/xusb.h
-@@ -435,6 +435,7 @@ struct tegra_xusb_padctl_soc {
- 	bool trk_hw_mode;
- 	bool trk_update_on_idle;
- 	bool supports_lp_cfg_en;
-+	bool has_per_pad_term;
- };
- 
- struct tegra_xusb_padctl {
-
-base-commit: 254f49634ee16a731174d2ae34bc50bd5f45e731
 -- 
-2.43.0
+With Best Regards,
+Andy Shevchenko
+
 
 
 -- 
