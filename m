@@ -4,58 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D428FCD3423
-	for <linux-phy@archiver.kernel.org>; Mon,  4 May 2026 07:01:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2F93DFF885A
+	for <linux-phy@archiver.kernel.org>; Mon,  4 May 2026 07:01:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=9KNA48Z1PZOO2fdBmXXMmrCh15oQWqZTvjTPNWWfyzE=; b=d32kCxDwz7yAzu
-	/cnqHF+5kFhwXiFWWzSLQ/xyaedef3/4GDS2hfWFoFrcVYzCVf1aRjp/64FBBkGJ7DH/tqA+bmbIM
-	qGbs7O2Bi4Iwd7yuZzz1s5iqWErbDl6y/R1a2OxZcWXQWQDzZ9SM+XmpJORtRlgMR+wKYE+SqXP8T
-	Y5EAyM20B5TLopOQhZ13VK0KhBwY8ByfCn4a7v2IbTqwBsmAW/Gjfmft2c6MFSraBZDWHUnzSyhYb
-	W6nkxUAlLGMmkecJqL7qhsCXG4ValP87U40EHGTeA/s/bSYlwRTD+iLV0N4xKCzHyqwiJE8cE9+UQ
-	GRSQoax7xJHoBEO2fmog==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=t5cf6GpFPX5oImfKGPfuaROYvbGweYVrb2b5lMhqwlY=; b=Ux6zabPVnAqr5E
+	AbHO+0HrwHG8CMdMZJumDpDpr1o3TTPG+QlC1jZBb0XJH4TtEDYSLJb2XPE1o4BmAnkVtP5bwDv65
+	EkY1R96bbJMaKDYhFhrrGTftArFeNCalNpghK/g9CVl6W3QJfnmafdMHMBtf0Ykttnqfak+13puit
+	Zm6YZ4/hbQm+ugpTRVQ78Ey7D/UWk1/B7GfLW5VUnfXkVXBUhVc9XxQ40DtRfIyjEjJJvFHVA9RB3
+	KjPZ7weMBnJh/jbmtNqKTL2CBEd4Ur1aEKamgtDAuwhlIxjYWt90cF4YyiGqKt8aSYJb6DfSybEgj
+	AMSL/7AQgNJ+G4lfRqnQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wJnIf-0000000CYaQ-2Up8;
+	id 1wJnIf-0000000CYav-3tus;
 	Mon, 04 May 2026 07:01:05 +0000
-Received: from mgamail.intel.com ([198.175.65.15])
+Received: from mgamail.intel.com ([192.198.163.12])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wJnId-0000000CYYt-14M5
+	id 1wJnIc-0000000CYYn-3K7b
 	for linux-phy@lists.infradead.org;
 	Mon, 04 May 2026 07:01:04 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1777878064; x=1809414064;
-  h=from:to:cc:subject:date:message-id:mime-version:
-   content-transfer-encoding;
-  bh=6a+NuN4eKBbINrUS/oYZuMVtQvHS3uko34ju1kyMzEg=;
-  b=PHT9pX9lxhOeVScOFYWez/3cY8lIOFxEqeqxnyh/LJTwibLRCwCC+/kY
-   KWavKBJAZp65JL2jmcF1W3PPkjbGCzywEYaVGyfhJGwmEtYn+/GsLkEwm
-   jg3Wxb9j4iu8AFxUh3CLxcaX1yzw/fvc4AOSI7aY+0/J4YWZxOfwMtr+2
-   k3aF4X+pA4H69sV5W7gEtaxaOArpY7oQzYjgaoF5EJ8pc+TDqsitqGQyc
-   B6ja70TMALpxCd1dHljrPDU9/yswFLd8S7hk8p+y1RwGhwQU1QHV5ofZI
-   cVr1EPk4YeUywQgGHZa97rLXG0OmA/flScwO++o/L3lztB1NKDDphPN5a
-   w==;
-X-CSE-ConnectionGUID: oiVoUL9GQLGhfTze5jaX1w==
-X-CSE-MsgGUID: 93lvbEqNQM+ApuGdgsaE4w==
-X-IronPort-AV: E=McAfee;i="6800,10657,11775"; a="82344145"
+  t=1777878062; x=1809414062;
+  h=from:to:cc:subject:date:message-id:in-reply-to:
+   references:mime-version:content-transfer-encoding;
+  bh=harktBiFvTyW0eTdv1xyo3FFw2GjXWrmry91+uh1PuI=;
+  b=Zz9rEKdahsHxOHx51w2N7fyU8s628JFX9aPHG8h2h7LwNuHz8l5x5h3C
+   7m/6vA1EKjbWdDzVCRESO6wtLt3Vxey/pO6ICvSqV28JqRlvMOb7fYWon
+   tQAkVhzZokswLuJ0p/3jcbHRZkg/hafIU+fIpYLEPBimxM5PqSFQmfdbu
+   AKx4ivh7hfuDnd1fQwEXrieyEMBHamnQsBRVBI/vJg/hJbSh4pg7zpmP+
+   OW9yB14kYaCiFwiPgldrXZjCeWfCxurQr+DSJDNMhV5UsAWJy9sUcBQ3J
+   3IkRXAE5C8aAb53qV63e5gnhjAQCSFA6VgdT/XVI0OkyL81k/2abPaq4E
+   A==;
+X-CSE-ConnectionGUID: kJRiq5ktToa6AYopVwpFAA==
+X-CSE-MsgGUID: X2NB04WMRimutTgrPFAiUg==
+X-IronPort-AV: E=McAfee;i="6800,10657,11775"; a="82582128"
 X-IronPort-AV: E=Sophos;i="6.23,215,1770624000"; 
-   d="scan'208";a="82344145"
-Received: from fmviesa005.fm.intel.com ([10.60.135.145])
-  by orvoesa107.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 May 2026 00:01:02 -0700
-X-CSE-ConnectionGUID: 5F5rVd/PT+yZ4vvXdx470g==
-X-CSE-MsgGUID: Bw3EQpWXTlqPbZWoCeDl0w==
+   d="scan'208";a="82582128"
+Received: from orviesa003.jf.intel.com ([10.64.159.143])
+  by fmvoesa106.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 May 2026 00:01:01 -0700
+X-CSE-ConnectionGUID: RfbcWwxES5KS/ONOQj+NLw==
+X-CSE-MsgGUID: 8uILAxpDToSZGx7mwtktIw==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.23,215,1770624000"; 
-   d="scan'208";a="240422852"
+   d="scan'208";a="239409101"
 Received: from black.igk.intel.com ([10.91.253.5])
-  by fmviesa005.fm.intel.com with ESMTP; 04 May 2026 00:00:59 -0700
+  by orviesa003.jf.intel.com with ESMTP; 04 May 2026 00:00:59 -0700
 Received: by black.igk.intel.com (Postfix, from userid 1003)
-	id 3157F98; Mon, 04 May 2026 09:00:58 +0200 (CEST)
+	id 3526099; Mon, 04 May 2026 09:00:58 +0200 (CEST)
 From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
 To: Peng Fan <peng.fan@nxp.com>,
 	linux-can@vger.kernel.org,
@@ -68,15 +68,16 @@ Cc: Marc Kleine-Budde <mkl@pengutronix.de>,
 	Josua Mayer <josua@solid-run.com>,
 	Ulf Hansson <ulfh@kernel.org>,
 	Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-Subject: [PATCH v3 0/4] phy: phy-can-transceiver: Ad-hoc cleanups and refactoring
-Date: Mon,  4 May 2026 08:58:51 +0200
-Message-ID: <20260504070054.29508-1-andriy.shevchenko@linux.intel.com>
+Subject: [PATCH v3 1/4] phy: phy-can-transceiver: use device_get_match_data()
+Date: Mon,  4 May 2026 08:58:52 +0200
+Message-ID: <20260504070054.29508-2-andriy.shevchenko@linux.intel.com>
 X-Mailer: git-send-email 2.50.1
+In-Reply-To: <20260504070054.29508-1-andriy.shevchenko@linux.intel.com>
+References: <20260504070054.29508-1-andriy.shevchenko@linux.intel.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260504_000103_355447_260E10AE 
-X-CRM114-Status: UNSURE (   8.87  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260504_000102_856023_582A5F08 
+X-CRM114-Status: GOOD (  12.70  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,37 +94,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The driver does two things that need to be addressed:
-- includes subject to remove gpio.h
-- checks for error code from device property APIs when it can be done in
-  a robust way
+Use the generic firmware node interface for retrieving
+device match data instead of the OF-specific one.
 
-This series addresses the above and adds a couple of additional refactoring.
+While at it, drop unneeded argument to devm_phy_create() which
+extracts device node from the given device by default.
 
-Changelog v3:
-- fixed commit message in patch 1 (Josua)
-- dropped stray change (Vinod)
-- collected tags (Josua)
+Reviewed-by: Josua Mayer <josua@solid-run.com>
+Signed-off-by: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+---
+ drivers/phy/phy-can-transceiver.c | 8 +++-----
+ 1 file changed, 3 insertions(+), 5 deletions(-)
 
-v2: 20260317203001.2108568-1-andriy.shevchenko@linux.intel.com
-
-Changelog v2:
-- rebased on top of the latest changes in the driver
-- Cc'ed to Ulf and Josua due to above
-- elaborated dropping of_node parameter (Vladimir)
-
-v1: 20260219202910.2304440-1-andriy.shevchenko@linux.intel.com
-
-Andy Shevchenko (4):
-  phy: phy-can-transceiver: use device_get_match_data()
-  phy: phy-can-transceiver: Move OF ID table closer to their user
-  phy: phy-can-transceiver: Don't check for specific errors when parsing
-    properties
-  phy: phy-can-transceiver: Drop unused include
-
- drivers/phy/phy-can-transceiver.c | 83 ++++++++++++++++---------------
- 1 file changed, 44 insertions(+), 39 deletions(-)
-
+diff --git a/drivers/phy/phy-can-transceiver.c b/drivers/phy/phy-can-transceiver.c
+index 2b52e47f247a..80eece74f77d 100644
+--- a/drivers/phy/phy-can-transceiver.c
++++ b/drivers/phy/phy-can-transceiver.c
+@@ -5,9 +5,9 @@
+  * Copyright (C) 2021 Texas Instruments Incorporated - https://www.ti.com
+  *
+  */
+-#include <linux/of.h>
+ #include <linux/phy/phy.h>
+ #include <linux/platform_device.h>
++#include <linux/property.h>
+ #include <linux/module.h>
+ #include <linux/gpio.h>
+ #include <linux/gpio/consumer.h>
+@@ -152,7 +152,6 @@ static int can_transceiver_phy_probe(struct platform_device *pdev)
+ 	struct can_transceiver_phy *can_transceiver_phy;
+ 	struct can_transceiver_priv *priv;
+ 	const struct can_transceiver_data *drvdata;
+-	const struct of_device_id *match;
+ 	struct phy *phy;
+ 	struct gpio_desc *silent_gpio;
+ 	struct gpio_desc *standby_gpio;
+@@ -161,8 +160,7 @@ static int can_transceiver_phy_probe(struct platform_device *pdev)
+ 	u32 max_bitrate = 0;
+ 	int err, i, num_ch = 1;
+ 
+-	match = of_match_node(can_transceiver_phy_ids, pdev->dev.of_node);
+-	drvdata = match->data;
++	drvdata = device_get_match_data(dev);
+ 	if (drvdata->flags & CAN_TRANSCEIVER_DUAL_CH)
+ 		num_ch = 2;
+ 
+@@ -187,7 +185,7 @@ static int can_transceiver_phy_probe(struct platform_device *pdev)
+ 		can_transceiver_phy = &priv->can_transceiver_phy[i];
+ 		can_transceiver_phy->priv = priv;
+ 
+-		phy = devm_phy_create(dev, dev->of_node, &can_transceiver_phy_ops);
++		phy = devm_phy_create(dev, NULL, &can_transceiver_phy_ops);
+ 		if (IS_ERR(phy)) {
+ 			dev_err(dev, "failed to create can transceiver phy\n");
+ 			return PTR_ERR(phy);
 -- 
 2.50.1
 
