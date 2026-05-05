@@ -4,74 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2F730CD3439
-	for <linux-phy@archiver.kernel.org>; Tue,  5 May 2026 16:26:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 626C6CD3427
+	for <linux-phy@archiver.kernel.org>; Tue,  5 May 2026 17:04:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=7BeN6thporY+jKUrGV1okd1u3POVYBA7JSKtUYf0MV0=; b=iHSRoXBwyYUe6f
-	xYDa5uk0rTlFdF1o+bKmM1PmeyrXr8AO/snYvDrfHvpKxMgk9hCTnOX0JxEW8TgADVOyBR7adz7OG
-	MClJ8UUtNo9axVG9BSp2kTofBAPj/NaYosJ3CwmcIh3B8Mnly5WeymVz1ngIrv90O/D3OZpszAfuY
-	oPC8eucWWubMYAXzkFRLYHFe3V9IuDwjrK3NM5GQgwvi2+sKMV0vIoOfAU9Cv4vFkfiG8IBk34KHU
-	A86dHKxoFxcGnKusbDQRt/dxs/8unf+ATJJSlowWgvPAMjEGmlCuU88p+MDPqkSyURSRZxZUj6wMa
-	Jq249p/yILq63VBaRJTQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=jlXa6aDAbSWSFervioHPrXXmkWWqznQBpdyzcM3DimI=; b=MirCje5nvcgQMh
+	y/pyyq+AmLyEZKGx3FVgJgOxc0oMGGZ1Fd5ZhE0oPs7gF1b6Vmvn/mZF/xCw2VPQn3oyVB1+3Qixs
+	Zo5/3VfyYWwo2GBBilA1ATG56JkBZ6uKFETWm4ALKGj56v8ZsNlVse06mC9qj1oFFRBoh7+3ky2U0
+	Dj0pMWeYKjJ+q/YZ69Nx5Cz9ai6ygbVhPvMJhIuIQpbnfnVWpdK8DzFManTKO+eRrbhAapwAot9pz
+	EsupVhGdHofk2/ptt7tHLXguMnl3981v5KkkMWL9qYy2G34Hh4+zffO2SE4oGrjYVtp6KIbKfw4t6
+	1QSeVhP9iu5Or1CHwVZg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wKIbS-0000000GsYm-3LYq;
-	Tue, 05 May 2026 16:26:34 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wKJC4-0000000Gz2e-0Usv;
+	Tue, 05 May 2026 17:04:24 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wKIbQ-0000000GsX8-0sVc;
-	Tue, 05 May 2026 16:26:33 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 5EC0740403;
-	Tue,  5 May 2026 16:26:31 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0D7D5C2BCB4;
-	Tue,  5 May 2026 16:26:31 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1777998391;
-	bh=d9oRhAaRGwydDiDuK7BhCRvRWDp8pOBlU9+d0qcoLXY=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:From;
-	b=P3c57A43Ly9U95oakv1tzSfsBDMAQvbGX3L5fDur0PPxN8g/BkGWOrF0IQ1vnb8kn
-	 q5FpFULXXt5CFm8Sy/qdB+pGfZ+595OPQ/+H2h/dpiAmaAvc14vlTx4Z7a774smhAG
-	 mRi8mWrUgi+n3TQ7klBwMiCHYz3eCKtTXeoo5Vugwd9W8wFUQWC/qxp4tUJmAVvLgS
-	 jHSgvFYD9WkXPVvCXJZvfwe/RjozMVbFHi4OoCu3mLeSQZDLHCSt79QQSlDeG2UmtL
-	 GPSyoqLckepvJjFkRnrQa3yfyKh+iIz18B0bEQzeLYkJERNnopW8hE0+mQWVZV5SLC
-	 bwYA1sJR8mQqw==
-Date: Tue, 5 May 2026 11:26:29 -0500
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Vladimir Oltean <vladimir.oltean@nxp.com>
-Cc: linux-phy@lists.infradead.org, Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
-	linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
-	linux-can@vger.kernel.org, linux-gpio@vger.kernel.org,
-	linux-ide@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-media@vger.kernel.org, linux-pci@vger.kernel.org,
-	linux-renesas-soc@vger.kernel.org, linux-riscv@lists.infradead.org,
+	id 1wKJC0-0000000Gz0A-1rhK;
+	Tue, 05 May 2026 17:04:21 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
+	s=gloria202408; h=Content-Transfer-Encoding:MIME-Version:Message-ID:Date:
+	Subject:Cc:To:From:Reply-To:Content-Type:In-Reply-To:References;
+	bh=93gcAeK+pFauxx7NJKjEKC10Wy8T4t0qkj8Q59r5KXI=; b=NAcz8RqXkqY5dOxTG9K1dh/z/f
+	52boxihZa0OxOBTr7wVTslPE+R0F5KYS2UGdNYUXW4wh+hCPsuND80dRa8FpMux5t1bPzmG39tK4J
+	zzbx8H5vAUmf/lFQmajJjfw8N3CrJn4L8U59oSTyvdTd0gOlxdt+CXNMTJSVHUdDlBdephBLnQeog
+	ppEQMXggCNno0ikQ4s9JIdbbiiQc6c+t8VCOqZ+xv+yACb3fisEG2popgjk5e/w+5v41AH1y1gMaC
+	joKorJNIOBF+y8+TFSlz7UdYnEZ/tcReyEXKSupcJxJdMZfa4PS2MMcKjTzjetZJUeHzMPv1NC6Wh
+	M8ZRbXjA==;
+From: Heiko Stuebner <heiko@sntech.de>
+To: vkoul@kernel.org
+Cc: neil.armstrong@linaro.org,
+	robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	heiko@sntech.de,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
 	linux-rockchip@lists.infradead.org,
-	linux-samsung-soc@vger.kernel.org, linux-scsi@vger.kernel.org,
-	linux-sunxi@lists.linux.dev, linux-tegra@vger.kernel.org,
-	linux-usb@vger.kernel.org, netdev@vger.kernel.org,
-	spacemit@lists.linux.dev, UNGLinuxDriver@microchip.com,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
-	Lorenzo Pieralisi <lpieralisi@kernel.org>,
-	Manikandan K Pillai <mpillai@cadence.com>,
-	Manivannan Sadhasivam <mani@kernel.org>,
-	Rob Herring <robh@kernel.org>, Tom Joseph <tjoseph@cadence.com>
-Subject: Re: [PATCH v8 phy-next 01/31] PCI: cadence: Preserve all error codes
- in cdns_plat_pcie_probe()
-Message-ID: <20260505162629.GA734488@bhelgaas>
+	linux-kernel@vger.kernel.org,
+	jonas@kwiboo.se
+Subject: [PATCH v2 0/5] rockchip: Add USB 2.0 support for RK3528
+Date: Tue,  5 May 2026 19:04:05 +0200
+Message-ID: <20260505170410.3265305-1-heiko@sntech.de>
+X-Mailer: git-send-email 2.47.3
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260505100523.1922388-2-vladimir.oltean@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260505_092632_286618_5A5FAA07 
-X-CRM114-Status: GOOD (  21.06  )
+X-CRM114-CacheID: sfid-20260505_100420_482220_8877489C 
+X-CRM114-Status: UNSURE (   9.35  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,52 +68,42 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-WytjYyBUb20sIGF1dGhvciBvZiBiZDIyODg1YWExODggaW4gY2FzZSB0aGVyZSdzIHNvbWV0aGlu
-ZyBzdWJ0bGUgaGVyZV0KCk9uIFR1ZSwgTWF5IDA1LCAyMDI2IGF0IDAxOjA0OjUzUE0gKzAzMDAs
-IFZsYWRpbWlyIE9sdGVhbiB3cm90ZToKPiBUaGUgYmxhbWVkIGNvbW1pdCBmdW5jdGlvbmFsbHkg
-Y2hhbmdlZCB0aGUgZXJyb3IgcGF0aCBvZgo+IGNkbnNfcGNpZV9ob3N0X3Byb2JlKCksIG5vdyBj
-ZG5zX3BsYXRfcGNpZV9wcm9iZSgpLgo+IAo+IFdoZW4gdGhlIG9sZCBjb2RlIHBhdGggZXhlY3V0
-ZWQgImdvdG8gZXJyX2dldF9zeW5jIiwgdGhlIFBDSWUgY29udHJvbGxlcgo+IHByb2JlIGZ1bmN0
-aW9uIHByb3BhZ2F0ZWQgdGhlIHBtX3J1bnRpbWVfZ2V0X3N5bmMoKSBlcnJvciBjb2RlLiBUaGUg
-bmV3Cj4gY29kZSBkb2Vzbid0LCBhbmQgcmV0dXJucyAwLgo+IAo+IFNpbWlsYXJseSBmb3IgdGhl
-ICJnb3RvIGVycl9pbml0IiBwcmV2aW91c2x5IHRyaWdnZXJlZCBieQo+IGNkbnNfcGNpZV9ob3N0
-X2luaXQoKSBlcnJvcnMsIGFuZCBub3cgdHJpZ2dlcmVkIGJ5Cj4gY2Ruc19wY2llX2hvc3Rfc2V0
-dXAoKSBhbmQgY2Ruc19wY2llX2VwX3NldHVwKCkgZXJyb3JzLiBUaGVzZSBhcmUgbm90Cj4gcHJv
-cGFnYXRlZCBhbmQgd2lsbCByZXN1bHQgaW4gcHJvYmluZyBzdWNjZXNzLCB3aGljaCBpcyBpbmNv
-cnJlY3QuCj4gCj4gRml4ZXM6IGJkMjI4ODVhYTE4OCAoIlBDSTogY2FkZW5jZTogUmVmYWN0b3Ig
-ZHJpdmVyIHRvIHVzZSBhcyBhIGNvcmUgbGlicmFyeSIpCj4gU2lnbmVkLW9mZi1ieTogVmxhZGlt
-aXIgT2x0ZWFuIDx2bGFkaW1pci5vbHRlYW5AbnhwLmNvbT4KPiAtLS0KPiBDYzogQmpvcm4gSGVs
-Z2FhcyA8YmhlbGdhYXNAZ29vZ2xlLmNvbT4KPiBDYzogIktyenlzenRvZiBXaWxjennFhHNraSIg
-PGt3aWxjenluc2tpQGtlcm5lbC5vcmc+Cj4gQ2M6IExvcmVuem8gUGllcmFsaXNpIDxscGllcmFs
-aXNpQGtlcm5lbC5vcmc+Cj4gQ2M6IE1hbmlrYW5kYW4gSyBQaWxsYWkgPG1waWxsYWlAY2FkZW5j
-ZS5jb20+Cj4gQ2M6IE1hbml2YW5uYW4gU2FkaGFzaXZhbSA8bWFuaUBrZXJuZWwub3JnPgo+IENj
-OiBSb2IgSGVycmluZyA8cm9iaEBrZXJuZWwub3JnPgoKSSBndWVzcyB0aGlzIGRyaXZlciBpcyBv
-cnBoYW5lZC4KCkFja2VkLWJ5OiBCam9ybiBIZWxnYWFzIDxiaGVsZ2Fhc0Bnb29nbGUuY29tPgoK
-PiB2Ny0+djg6IHBhdGNoIGlzIG5ldywgaXNzdWUgd2FzIGZsYWdnZWQgYnkgU2FzaGlrbwo+IGh0
-dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MDQzMDExMDY1Mi41NTg2MjItMS12bGFk
-aW1pci5vbHRlYW5AbnhwLmNvbQo+IC0tLQo+ICBkcml2ZXJzL3BjaS9jb250cm9sbGVyL2NhZGVu
-Y2UvcGNpZS1jYWRlbmNlLXBsYXQuYyB8IDIgKy0KPiAgMSBmaWxlIGNoYW5nZWQsIDEgaW5zZXJ0
-aW9uKCspLCAxIGRlbGV0aW9uKC0pCj4gCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGNpL2NvbnRy
-b2xsZXIvY2FkZW5jZS9wY2llLWNhZGVuY2UtcGxhdC5jIGIvZHJpdmVycy9wY2kvY29udHJvbGxl
-ci9jYWRlbmNlL3BjaWUtY2FkZW5jZS1wbGF0LmMKPiBpbmRleCBiMDY3YTMyOTZkZDMuLjhiMTJh
-NDZiNTYwMSAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL3BjaS9jb250cm9sbGVyL2NhZGVuY2UvcGNp
-ZS1jYWRlbmNlLXBsYXQuYwo+ICsrKyBiL2RyaXZlcnMvcGNpL2NvbnRyb2xsZXIvY2FkZW5jZS9w
-Y2llLWNhZGVuY2UtcGxhdC5jCj4gQEAgLTEyNiw3ICsxMjYsNyBAQCBzdGF0aWMgaW50IGNkbnNf
-cGxhdF9wY2llX3Byb2JlKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCj4gIAl3aGlsZSAo
-cGh5X2NvdW50LS0pCj4gIAkJZGV2aWNlX2xpbmtfZGVsKGNkbnNfcGxhdF9wY2llLT5wY2llLT5s
-aW5rW3BoeV9jb3VudF0pOwo+ICAKPiAtCXJldHVybiAwOwo+ICsJcmV0dXJuIHJldDsKClRoaXMg
-YWZmZWN0cyBjYXNlcyB3aGVyZSBwbV9ydW50aW1lX2dldF9zeW5jKCksCmNkbnNfcGNpZV9ob3N0
-X3NldHVwKCksIG9yIGNkbnNfcGNpZV9lcF9zZXR1cCgpIHJldHVybiBmYWlsdXJlLgoKU2VlbXMg
-cmlnaHQgdG8gbWUgdG8gZmFpbCB0aGUgcHJvYmUgd2hlbiB0aGVzZSBmYWlsLgoKTm90IGFsbCB1
-c2VycyBvZiBwbV9ydW50aW1lX2dldF9zeW5jKCkgY2hlY2sgZm9yIGZhaWx1cmUsIGJ1dCBJIHRo
-aW5rCmFsbCB0aGUgb3RoZXIgY29udHJvbGxlciBkcml2ZXJzIHRoYXQgZG8gY2hlY2sgcmV0dXJu
-IGZhaWx1cmVzIGZyb20KdGhlIC5wcm9iZSgpLgoKPiAgfQo+ICAKPiAgc3RhdGljIHZvaWQgY2Ru
-c19wbGF0X3BjaWVfc2h1dGRvd24oc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKPiAtLSAK
-PiAyLjM0LjEKPiAKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5p
-bmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
-L2xpbnV4LXBoeQo=
+This series adds support for USB 2.0 on Rockchip RK3528 to the
+Innosilicon usbphy driver.
+
+The usb3 support has already been merge for the naneng combophy
+last year.
+
+Changes in v2:
+- rebase on top of v7.1-rc1
+- split off dwc3 compatible and dts changes
+- add error handling to regmap_write (Vinod)
+- v1 is here
+  https://lore.kernel.org/linux-rockchip/20250723122323.2344916-1-jonas@kwiboo.se/
+
+Jianwei Zheng (1):
+  phy: rockchip: inno-usb2: Add support for RK3528
+
+Jonas Karlman (4):
+  dt-bindings: phy: rockchip,inno-usb2phy: Require GRF for RK3568/RV1108
+  phy: rockchip: inno-usb2: Simplify rockchip,usbgrf handling
+  dt-bindings: phy: rockchip,inno-usb2phy: Add compatible for RK3528
+  phy: rockchip: inno-usb2: Add clkout_ctl_phy support
+
+ .../bindings/phy/rockchip,inno-usb2phy.yaml   |  44 +++-
+ drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 191 +++++++++++++-----
+ 2 files changed, 176 insertions(+), 59 deletions(-)
+
+-- 
+2.47.3
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
