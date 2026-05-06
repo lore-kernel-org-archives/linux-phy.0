@@ -4,81 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4D5EBCD342C
-	for <linux-phy@archiver.kernel.org>; Wed,  6 May 2026 14:47:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D4297CD342C
+	for <linux-phy@archiver.kernel.org>; Wed,  6 May 2026 14:49:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
 	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=WLV5srtLGlTWsT+auZKClN4s+C/6TG0rJNe8gQroLP4=; b=QKPj14wMff9b2X77UAx8mg80w+
-	UH3cbZhNZTIZGorqiiYhVdWdrqqOwQjsuOxIU8Nv7VA2O0M0yciYnyxkbObtlaZf7qZH1g3kTMbT8
-	XDGPndPBVmWKKLrN7qOzcg3lgvGUXjD+B5E9wziMFjK4ovPiAK/rolhyO8o84giYuCAuisKghyCxG
-	sop8eldFrpwyAt1CZ/1WrF0fSv1acS3R6IjOfhQFaLnQ4AmyphmsSLeweCtY279rnUBVUfgMdsnIR
-	B9t67ev2dKn8f9o3LdFr3axuwg+wkv42sRUgWvRBfb3JvDQBF9poTQ+0wkcAUfNh6zi/dTWYF843Z
-	EXmGz3MA==;
+	bh=Ayei5iZCOFzf1N8tOJQnE9qy9l4zrl1PVF1wLLigXMg=; b=eUiCmg06w0qdLpgWrdHFQY84ln
+	P0nh5DrhcbdNKsy53FdDJpmgGM97v84sti2hIzLxP7xQrPAMmuWG4e4D6sr6pA4ocDDCYyrVTxdGt
+	V3HhevEXx3OPqR55PzO3RfoRcOYVSe211imd8HLIpVEmwTtjJqEASo9z2dzTpxX2KzBKhnS/zEM6w
+	V1WPP50DgIQ3V+MQl6qOJ2TkoNv/66v7FqESeC6Iuh/0YvkXSC92zNd95bGZOak8nOUHSRY4qAuFA
+	ZFo+uJKJ0MAVogw/c1S627nlTZHWI2oXH6eK094PGNBdcqVF85uSR6jvvYXy+D/7ShnN3p/fhwvyK
+	7tvsv3wA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wKdXQ-000000019YP-09oF;
-	Wed, 06 May 2026 14:47:48 +0000
-Received: from mail-wm1-x336.google.com ([2a00:1450:4864:20::336])
+	id 1wKdYw-000000019qI-2Pof;
+	Wed, 06 May 2026 14:49:22 +0000
+Received: from mail-wr1-x430.google.com ([2a00:1450:4864:20::430])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wKdXP-000000019X3-1oyq
+	id 1wKdYu-000000019p6-43fc
 	for linux-phy@lists.infradead.org;
-	Wed, 06 May 2026 14:47:47 +0000
-Received: by mail-wm1-x336.google.com with SMTP id 5b1f17b1804b1-48909558b3aso71948345e9.0
-        for <linux-phy@lists.infradead.org>; Wed, 06 May 2026 07:47:46 -0700 (PDT)
+	Wed, 06 May 2026 14:49:21 +0000
+Received: by mail-wr1-x430.google.com with SMTP id ffacd0b85a97d-449d6c68ed8so5046017f8f.0
+        for <linux-phy@lists.infradead.org>; Wed, 06 May 2026 07:49:20 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1778078865; x=1778683665; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1778078959; x=1778683759; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=T3vToQ5Y+vWhpVQnvtWFjRehlTKodwndWbzaDErO2cA=;
-        b=dRnJnnnqCyDKV7X4DIHogdflH1kW+DFhaqcX4SSbyxJMYrP7EDHFdHbUI3gjDFwHDv
-         XY/BQmY1U34tq4pIG5jKPrngg2H6s9rlcsZjfJsFsFPGG+35gyVDeT4ISzR4ZyRu3y45
-         lAnfczmyb7TH9tibMJo3USwdqFztw26f3Q0pOs0K7t/H3skemdLjScd+bqqYp+tXspN2
-         Nkum2401whXerjC0pIbx14vGOjeUpbI0y8aYOpijRHO3QD7KyIMCBYzDPqWf/lJFeY0c
-         a6VnOADH/RMZzHyDs+KFVuP9VJlfsiIeinvus4w0/w3Lv1ZaLr9JJ22uotAd6LprCM97
-         tdEg==
+        bh=ArIiOc5BIENDbFYudfD+oY6YZVBcrif0Q7lUYU811cI=;
+        b=N+4guF8XK8m/XhvU2w+xtX3AWuOfB5tVyEpyCONKLq/QtoSpqWKRPyif5ifHLXEdzP
+         CoUZCa37K03NuYBTwSW8F76MXTtim+0nW5DToimH9j+KyxGYKTK0ljhfZEITcgR3dmFU
+         jUm6vPVfUZp9qcp59bbBVaQWa8zELGb8M6o0chNRBPnZOg9PVbJqrDxyy87JuOOwZOoX
+         dYdrIEFcuAcfrV8CUjIGnwaMBg8cS/7n82mH1aooWGA32jImPuQqUy029G34Tg254Yfy
+         eqsrYZMh8BDubQuY1uPcjsbI+OUE7XoqJ39Y48kXajRLP0PzvsfeAJMgAhZg8SkaQA8I
+         BCMQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1778078865; x=1778683665;
+        d=1e100.net; s=20251104; t=1778078959; x=1778683759;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:x-gm-gg:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=T3vToQ5Y+vWhpVQnvtWFjRehlTKodwndWbzaDErO2cA=;
-        b=gayUiAPoiw2pmSFQzj4Ubt6tcupxakIJnoYBj9OeB5Ih3l+J5KZoTQo/X2t9k0HAAr
-         9OKCko36yK3jAg9wVcD6uk8vWVqQoeMof4H2AfuDtSbboAgmYFy7BaN2G/rA2tYnADrU
-         c8DcPiub8Ox3Cm5mMRHoN0yYr3DHVwpO578gKXIiQwAkW1tFo8IKx4N/M7334aPYn4l0
-         pqELPssQwdpz6zaZEt9RxIGf7G5dZdoe9pg0sk4Jz2Zh6rpc5CwLJhyekKq5+Q9vdJon
-         wKVluq8zZSMehFsKSC9CJw+cvzu0Bu1vDJ0axgApIB2ActDmLI/w1DQJxXh/9gQg0A9s
-         JeFQ==
-X-Forwarded-Encrypted: i=1; AFNElJ9no00Rvz1TqOT2TlNGUULxR39NgZ9qaokQ1808jchxX535G6ZpN8x5rDcmQ1cL8IezN0A49bc7nJw=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxOj3kN2nuz2NticbFkPon7WNjcCMzhyXAJ1H8EptOTUVrwSyun
-	EyvIVe55Bwm8hA5G09oZaQAV/xbWUxUg2Vlra5Cz8gseo2DhD32fCrWSzI/vo7V2Zwg=
-X-Gm-Gg: AeBDieugeV55iQe1FzdSlNfD+iSXKtdPr7HfmW9XmNu8dvgEwg4msOTOK05hKObaVVy
-	XwqRspr+reqQotP9TdD/DHV0NB/kDWYgl96hVpwt15k+2KIoPB6up1KMCihX5RAK0qWLcKC+lao
-	E5dfGA5AV+SXNFQ7vnfoJDuDvGXLdAnIIkvhXD+GOQl3dc8pwYZRgqi9ygn+tJJkm1z2cRkwxat
-	Ji1nGfiPytP4VUziTo9oLSlVVnL0TCffggFCU7Bp3bPBDzGHbTcBcke577v/yfUBKIh9fIze+RQ
-	atW6zcdZ6c4wY/ih59ligeKTXnSql7NVUhbziSKTncqn5v2nrz8i7fJ/n17dUgMmdzW8jFkmiNZ
-	AxoqRwgmNRKD4Zwrblagq1AIdoY0eXX0dW0sILsdA00/VA+Pi8rjUHsCpgn47pL6VvtIPLB0ZVe
-	MW1X6HfzHWnQajrSU/sRUuqQ6HllHXpikiiA4VFtuS+C/ANvxpCMA0aBpCBL3SwYsKhAS40heX5
-	m+R7WJHbZnEpKa/qg==
-X-Received: by 2002:a05:600d:849c:20b0:488:a2ac:a34c with SMTP id 5b1f17b1804b1-48e51f220e7mr48119355e9.12.1778078865201;
-        Wed, 06 May 2026 07:47:45 -0700 (PDT)
+        bh=ArIiOc5BIENDbFYudfD+oY6YZVBcrif0Q7lUYU811cI=;
+        b=OiJZr4RkEYmJqOLRJlaTzvwDkpbJ83BKyHL6NdWcdFrokzF7l7oAEV4L9ttUCA57Bs
+         hBdtBm8P05nPoW0tVEGyf/62Mm/xN8VfLT4UzpnzQ5bY9k8czPvun8OV44vQm8ej4qoj
+         FkE9TiLCFSLXklv/eek40frXNCKEVRntK2xS+E4SuxPAl/I/NQA65lsNPwmuYnphrCuz
+         HTMoQ2cDYA2JQgeNhwKfNVkHkI24bJHSHIntVzpDX+vgAI1SYf2kWFUBDwSEWgXlGd0B
+         T1gy2FbbfDX4wecxDnkFyPFX5npgEj0tOVvYRRGQehHiLhWPKPZzsD5D6Q+E3eWaES4F
+         XjyA==
+X-Forwarded-Encrypted: i=1; AFNElJ8Muxv7S9RE6NT9QQyjuV5FIfBAgAanq/duw9VNpqZcIRuFhE4Lh2dvEoOkYFwfxNBFNj3bEJEunH8=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzPqAj7RaRX/DQvh0eYBRIBXzmm2P52OxwfIqCHQagnuKb7ROs2
+	WleuSLrG28VjpE3511ofHA/FWQyUKs4VP8Ei0yKnKpeVW2pX9sgvX5AbrZF6RfhOgy4=
+X-Gm-Gg: AeBDietwfwGGWJYIPdKJr7Ms69DazgQgrm4oEr2XvnsAx8KP8jzS9x+uAykpAmpZKeG
+	+e1u43QBuytDGGHRIG5I18t9303aztfS7uCfi+KQ0CMVmhFbujNwQj6YBewrcO4ha/3Z9QLhMsd
+	h02HYbZT/ySf+FU3lebM3mKGxmwmT7YxnIJ42CABto2SjlZHyXGS5/Frw7KrKShyaPdLfts6dr5
+	rAzG24dprl/wNxFhnKxEEHbyUDmecYXYYmfQdRgeaFgkNKOeSPk+CljmzwIlqtZSD5NV5x5Bhkt
+	SQSAvqY1FqoA/PHzN35N+M5V1XK/NuXNhTxilApvhyO//dm+gUxtKXPnxqi02TauZN/APyNCIfT
+	/GsQaZp1LSS48bEYMBiLjtmNhnI8W75XFJwRgt5R+l9c8ijj+WDvKAcGGg3Y84+lVcL9TUQRiak
+	cQdb2CqQRHLu/6+rpGqix0whBTkpxMpLXhjJk9ak1joftg9jasKcfUr3KR16cnJzhbZ7yjWMQ7F
+	0oCL+WlHjk8OItllQ==
+X-Received: by 2002:a05:6000:144b:b0:446:db72:e8ec with SMTP id ffacd0b85a97d-4515ce1c55fmr6486902f8f.23.1778078958886;
+        Wed, 06 May 2026 07:49:18 -0700 (PDT)
 Received: from ?IPV6:2a01:e0a:106d:1080:5798:67fd:c866:b378? ([2a01:e0a:106d:1080:5798:67fd:c866:b378])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-48e530b213asm18805425e9.2.2026.05.06.07.47.44
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-45055960973sm12936695f8f.30.2026.05.06.07.49.17
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 06 May 2026 07:47:44 -0700 (PDT)
-Message-ID: <b4e3adc7-bfb9-49ed-a2aa-30feef074554@linaro.org>
-Date: Wed, 6 May 2026 16:47:43 +0200
+        Wed, 06 May 2026 07:49:18 -0700 (PDT)
+Message-ID: <2c913dd0-d49f-40c0-8951-ea8087d09c24@linaro.org>
+Date: Wed, 6 May 2026 16:49:17 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 From: Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH v4 02/16] phy: rockchip: usbdp: Do not loose USB3 PHY
- status
+Subject: Re: [PATCH v4 03/16] phy: rockchip: usbdp: Keep clocks running on PHY
+ re-init
 To: Sebastian Reichel <sebastian.reichel@collabora.com>,
  Vinod Koul <vkoul@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
  Frank Wang <frank.wang@rock-chips.com>, Rob Herring <robh@kernel.org>,
@@ -90,7 +90,7 @@ Cc: Andy Yan <andy.yan@rock-chips.com>, Dmitry Baryshkov <lumag@kernel.org>,
  linux-kernel@vger.kernel.org, kernel@collabora.com,
  devicetree@vger.kernel.org
 References: <20260428-rockchip-usbdp-cleanup-v4-0-7775671ece22@collabora.com>
- <20260428-rockchip-usbdp-cleanup-v4-2-7775671ece22@collabora.com>
+ <20260428-rockchip-usbdp-cleanup-v4-3-7775671ece22@collabora.com>
 Content-Language: en-US, fr
 Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
@@ -117,10 +117,10 @@ Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
  QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
 Organization: Linaro
-In-Reply-To: <20260428-rockchip-usbdp-cleanup-v4-2-7775671ece22@collabora.com>
+In-Reply-To: <20260428-rockchip-usbdp-cleanup-v4-3-7775671ece22@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260506_074747_492123_606862FE 
-X-CRM114-Status: GOOD (  18.25  )
+X-CRM114-CacheID: sfid-20260506_074921_059160_ED646988 
+X-CRM114-Status: GOOD (  13.35  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -139,42 +139,38 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 4/28/26 18:13, Sebastian Reichel wrote:
-> By default (i.e. without manually enabling runtime PM) DWC3 requests the
-> USB3 PHY once and keeps it enabled all the time. When DisplayPort is
-> being requested later on, a mode change is needed. This re-initializes
-> the PHY. During re-initialization the status variable has incorrectly
-> been cleared, which means the tracking information for USB3 ist lost.
-
---------------------------------------------------------------/\ is
-
+> When a mode change is required rk_udphy_power_on() disables
+> the clocks and then calls rk_udphy_setup(), which then enables
+> all the clocks again before continuing with rk_udphy_init().
 > 
-> This is not an immediate problem, since the DP side keeps the PHY
-> enabled. But once DP is toggled off, the whole PHY will be disabled.
-> This is a problem, because the USB side still needs it powered.
-> 
-> Fix things by not clearing the status flags.
+> Considering that rk_udphy_init() does assert the reset lines,
+> re-enabling the clocks is just delaying things. Avoid it by
+> directly calling rk_udphy_init().
 > 
 > Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 > ---
->   drivers/phy/rockchip/phy-rockchip-usbdp.c | 1 -
->   1 file changed, 1 deletion(-)
+>   drivers/phy/rockchip/phy-rockchip-usbdp.c | 3 +--
+>   1 file changed, 1 insertion(+), 2 deletions(-)
 > 
 > diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-> index fba35510d88c..744cc7c642f4 100644
+> index 744cc7c642f4..98562a888b42 100644
 > --- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
 > +++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-> @@ -1009,7 +1009,6 @@ static int rk_udphy_power_on(struct rk_udphy *udphy, u8 mode)
->   			rk_udphy_u3_port_disable(udphy, false);
->   	} else if (udphy->mode_change) {
->   		udphy->mode_change = false;
-> -		udphy->status = UDPHY_MODE_NONE;
+> @@ -1012,8 +1012,7 @@ static int rk_udphy_power_on(struct rk_udphy *udphy, u8 mode)
 >   		if (udphy->mode == UDPHY_MODE_DP)
 >   			rk_udphy_u3_port_disable(udphy, true);
 >   
+> -		rk_udphy_disable(udphy);
+> -		ret = rk_udphy_setup(udphy);
+> +		ret = rk_udphy_init(udphy);
+>   		if (ret)
+>   			return ret;
+>   	}
 > 
 
-Looks good, but any fixes tag ?
+Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
 
+Thanks,
 Neil
 
 -- 
