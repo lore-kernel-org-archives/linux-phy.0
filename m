@@ -4,80 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 56B74CD342C
-	for <linux-phy@archiver.kernel.org>; Wed,  6 May 2026 14:55:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AE197CD343B
+	for <linux-phy@archiver.kernel.org>; Wed,  6 May 2026 14:55:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
 	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=6RbcGpA/bZK6EaaGHk0x8vKrWpwd8Uw3PEfxyeshCYM=; b=R9Lvc21ftwy+7WsdGfcLBvhv+q
-	MjLAxYvLGRr0m4nnWhvK8oQgU78K0lqSdwd8xZUvhYxxHTXqW1fuqFgshYvPeoW4NyOt6CNyvA6z7
-	IvgfJwWqJkZo0Eut+gX9MJpyqBCbdKb7EeaXHqxgPN4e16/JWVrmK68ThswjfuXn1m5U0osgIAJPf
-	+DidhUCvIUPWj/qYXFDkkIweoICzeyF53JqP27OWQA/H7+F6Zy7oEjKHL69NJQDKV8T1o40a1moSR
-	ZINIwNiqp0DdcsUlplKwpbEzDrI9wcdUW8mkYgt6w6nn6xNEn2QXREb0loM/YS4fgm7Sji8YquH/a
-	aBgZ2+FA==;
+	bh=2czDK4sobEEI/pY2ZeP56I6VEcdsgXso3tT84lfxLzg=; b=YSNNOitxt0lAAGp4GK17SdtNaH
+	nCbmeab2lDa+pO5a8FeImS8rCL1wjUmQvDf9hBSK4C/nlG8x777X3cFKHVwBh00BzPj3otp0C7Kl8
+	rIxr4IdAiUq8IkbbqwQ87NNChieYNejc/CyiSbrOThBCeLin0GugYfM1EXM0bIUPVSBimTfHTeogn
+	Lxwk4J33jaLfqmF8du8yuSw54uTvR2RFE/8dEVy0poTdQN6HcfiqAuHyuhzF1G5YD0WsMb+fp2DmD
+	nj5Q/VfMzim95XGC8rsGv3Bxuv1l7YEef6ofmB6wy0MpR99C0xgQcEiORISilgCn8uncC/yjEKVWc
+	QVVDSEcQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wKdeQ-00000001Bw7-0SgZ;
-	Wed, 06 May 2026 14:55:02 +0000
-Received: from mail-wr1-x42a.google.com ([2a00:1450:4864:20::42a])
+	id 1wKdfL-00000001CC5-1v7s;
+	Wed, 06 May 2026 14:55:59 +0000
+Received: from mail-wm1-x329.google.com ([2a00:1450:4864:20::329])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wKdeO-00000001BuQ-3rkn
+	id 1wKdfK-00000001CAs-11iV
 	for linux-phy@lists.infradead.org;
-	Wed, 06 May 2026 14:55:01 +0000
-Received: by mail-wr1-x42a.google.com with SMTP id ffacd0b85a97d-43d73352cf2so5987609f8f.1
-        for <linux-phy@lists.infradead.org>; Wed, 06 May 2026 07:55:00 -0700 (PDT)
+	Wed, 06 May 2026 14:55:58 +0000
+Received: by mail-wm1-x329.google.com with SMTP id 5b1f17b1804b1-488ba840146so57993065e9.1
+        for <linux-phy@lists.infradead.org>; Wed, 06 May 2026 07:55:57 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1778079299; x=1778684099; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1778079356; x=1778684156; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=q9IziybJHuk3HSxCnNSfWSRrMnoKvg7/QyPJ8LC6HiM=;
-        b=do2MoIf3mvu7DVBk9TDfFy9Kr1dalphEbbFfb4hzNPbQP/cdNsSlVQaN7YE8In3sM2
-         WzLEyrmhqTmfBn5ReI4UGHO3HstSBE5bzzZrVi3mwEWtoU18aTHg48EyS2Nh7Uaqunno
-         dChJ+CGSkEF349sKmtZjyp4TKqH39ZepkcXCTrZO40ztZ7D21JB7NFpC3uSB2dXlqeM/
-         gWdCjCi2aP5bcW5vidMLinJuHlWk1MdKx5P4wMYQMsB+4lgKyIct9vG0KQicSiGAuNqU
-         dpDu85ry9J0OBVY/WPHmzA3bTxze+IxMhQ6kqN9mTJGOdFioDl2qvEtyTFWJHBtdB3aS
-         2l+Q==
+        bh=MideM2n02iIKTDCku+HSAt6i6mJ+89mrIgdH74VDGvI=;
+        b=gy5y+HQm9JwXSZOys28Jkf0g0SXhQCk+V7lT13pWwM5EVooeJMkwsmbdCYU5TH8jGY
+         RlPWYZeHunYWKOkQr4bvdB1bW+5b8g43rtnJ+7xbmM1X7ZxqrIOdL1lH5Aw1fq+M7feH
+         E27px2eQOTbemdYR6T90UMexwxqXq2+d/tU566WwvIbVbsC37IlY05vxVYxGHp/tL0Ta
+         3XG5dixf+MFwowNx3ogni5GxRVHlLds7HH7DCBU/lia8Eg9xaE1tDV3VogJJ09Ot1PxA
+         /vWdqg+t5kpRUCKh+HUyrADXWtBxjsxKB2LCL2ERS0siwzz7bU0rbClQVo8UQhNBbLdN
+         QgzQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1778079299; x=1778684099;
+        d=1e100.net; s=20251104; t=1778079356; x=1778684156;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:x-gm-gg:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=q9IziybJHuk3HSxCnNSfWSRrMnoKvg7/QyPJ8LC6HiM=;
-        b=osKWdaLMcLXOsaAYIqBZ8YEviuHapSywWjUENL0gcHqK8I9EX2IrKUD6W8hGJ584Kf
-         3PsbU2OzncT3zyYZ/FOtlEsaUKDK+bvsK1G9MiZGbb97aa/xrb1nSGigYGTi2BgqtLlS
-         GgyTFE0S1bvfv8MZcm/V5bWA6oyJi84VjFKedTUQWr025qpGThgHdyoiRJNi90mjRSxx
-         bOA1MQPtYEu2u9rrGstOpdcZNGnbday4gXYayg6SPp8kYqlzP1oPzev9+EYHlacVG/8q
-         bcjBNT5ND5Db/d9/t/58peblIZuWqQKUlKqGhCawVM+8uIk3MazUMIbui9YddT7batdv
-         V1ew==
-X-Forwarded-Encrypted: i=1; AFNElJ+rQORL9Fpuxk+O/8dIRtGn398faPLj1BFJj8zt2ul6oNr8fKv8BJuBYlronNp8IFutSmk3ZpVrkiE=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxuDXKDuxuhAXmomcZfg68KRUasxheioH6AdWqtjYMVcOb2ZRgK
-	CiZOyniV56F0jD6qqeY17qOQko+Zg50gf4SQr4oLZuecQME5ns8IvsuEUa1wpIDeYR0=
-X-Gm-Gg: AeBDietnG8vAcwDH6YQW0LbyGHw61sQKrn3dSB+QFePpus8K9UTHMIHrlXipnEcmZyD
-	HMgRlmR8cOuTh/SnXzjpNNd5B2Mx4uUWMEhiePDXWRv/EGFqRKY6Vij4ACJ0A/Arj2EoSkSgsw6
-	NoUghI+PmQXH2+w+U2EGoCPzhZRLADHy54//JQQJCwQcNyVGPSZeTacy9IXDFewjmP25pe1aKHv
-	Llgwz/fDRqWtAAz0Bys1XT/8yp3Lez0DIeB23gLS/CEAYdQW2WHtjiUxymsXp9BfwH07jq+U3Hm
-	0Ev4AK3OopYlmK+d2SdMbyke/STV+aayZw5yEBHHYv8cO++WEa1ZLkop40UM/+jBniHopBYXcbj
-	6tDnyu0x3UAmN/GLXZBkqO/ih89lQhOS5LFcYbZ0U5nmt8NXWv0PZaLTeJLsr5Dn3QCWcseXJcJ
-	sRC9lEhJWBssGcMJ9ew8b8aNZw3GT+bY4NLPajSGu4fIfa4g2NPdV2oJ2B2XilXv6KeFJz9C6PY
-	aIBrhZODCWKW51Ttw==
-X-Received: by 2002:a5d:64c9:0:b0:44a:3aee:370e with SMTP id ffacd0b85a97d-4515ce1c5aemr6073557f8f.25.1778079298902;
-        Wed, 06 May 2026 07:54:58 -0700 (PDT)
+        bh=MideM2n02iIKTDCku+HSAt6i6mJ+89mrIgdH74VDGvI=;
+        b=IkHGRQY/CT5vsDETZmkF+KLSajYgFM4lC7ivunnHXr+FuixAFpr/6xlYz4xrPKNIcC
+         F3B5Y00gk1ak9GdVpGCu/fgO5Jax/tCDlRWLhVs4PpYnmp0UqkkYqO69y3VfLiiJX3Fa
+         KktloxTY7G7x1cHdr2l9pap3mredT9tiQ82/3CNLXMUzGwVGq0l5wUN1NiBIhlWH6K3x
+         BeSrvAUQBfXc28zJMhraRW/AzyjHSvik3nnM/zIJ76FC4iEsljJnBApCWY6XDp8gORJ7
+         TUnEzpacXKunk4twQQN3x/v+gK3weEsIab7xvZeEarhNfIODx5tn5gEOs0/p4NzVIoEG
+         Sx2Q==
+X-Forwarded-Encrypted: i=1; AFNElJ802rnxR4preAknIHoNuOhw754t9K9PmAMxWsdUyAUecGJDEe6p1cOvAmAyF/aiPuXL++q7+hPs0j0=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyPTEzxiEyO6QK/euDlMGrWngP2Z+j/RfLjdEsqdqTADehwKbPP
+	93v6Z30vxFSr6+nZdKNjMY0mQaB8l/Jz6Cl4HGIGocub+wUTbbcueRsNLAITIJCMtDI=
+X-Gm-Gg: AeBDieurm6r3Zf2Cuprfi7CI1T8aRyesfwb7Ht0oNoCtRfajyxWwWBSFKov/Vbv0I5/
+	DCTYyrdcyfr054dRNjuNkZwlNYClTCmhoSL/696pxTWEVRjh9pdNGtTnQd/12ulLdCPPP1rVYDo
+	0PNv0yPH7uPKawi92ibgZH8VGU0KazvfpIGJ1NmLTC6mE4hkgtGafPbxHJ8AMc20C2CXN4eGsVn
+	PS93efFdlKDy8xtOf6UHVgQ9PUjqgm9V3A93mKlqB5Xotr0kRL5mx9EiSiC8SKk6flqVJBLGNjT
+	J4EXw1ls+qEVnoFwJ041m09fojlZuD+s/wqMZZHpKOI06XQ2sBjq2ZJl8cqyw867CaZSSSbhbHM
+	uKxuBpfy6pzQ/ySrOD0g2cGH3yM4f2pJIuXUO1KYKXFelbWQvq2hDt8XCSG0nJpfwQBppH+RrQg
+	qZPJPgF81h5zTGJyEa5+lRI2v5UNHjvOPEe3uBdtHES2p3lQdFYqJRzEMNUwn0r0rIzVrz+W0V5
+	J2eLW4KyNGfQrTd8g==
+X-Received: by 2002:a05:600c:a317:b0:488:a977:8d6 with SMTP id 5b1f17b1804b1-48e52bd4f32mr44117515e9.19.1778079356162;
+        Wed, 06 May 2026 07:55:56 -0700 (PDT)
 Received: from ?IPV6:2a01:e0a:106d:1080:5798:67fd:c866:b378? ([2a01:e0a:106d:1080:5798:67fd:c866:b378])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-45055960902sm14567686f8f.28.2026.05.06.07.54.57
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-48e530a67dcsm29024575e9.2.2026.05.06.07.55.55
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 06 May 2026 07:54:58 -0700 (PDT)
-Message-ID: <aeec8c6e-c0dc-4643-a117-be3f787fcec2@linaro.org>
-Date: Wed, 6 May 2026 16:54:57 +0200
+        Wed, 06 May 2026 07:55:55 -0700 (PDT)
+Message-ID: <18fb5696-8eb1-4d71-a35a-a26c3a8445f4@linaro.org>
+Date: Wed, 6 May 2026 16:55:54 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 From: Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH v4 09/16] phy: rockchip: usbdp: Use FIELD_PREP_WM16_CONST
+Subject: Re: [PATCH v4 10/16] phy: rockchip: usbdp: Cleanup DP lane selection
+ function
 To: Sebastian Reichel <sebastian.reichel@collabora.com>,
  Vinod Koul <vkoul@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
  Frank Wang <frank.wang@rock-chips.com>, Rob Herring <robh@kernel.org>,
@@ -89,7 +90,7 @@ Cc: Andy Yan <andy.yan@rock-chips.com>, Dmitry Baryshkov <lumag@kernel.org>,
  linux-kernel@vger.kernel.org, kernel@collabora.com,
  devicetree@vger.kernel.org
 References: <20260428-rockchip-usbdp-cleanup-v4-0-7775671ece22@collabora.com>
- <20260428-rockchip-usbdp-cleanup-v4-9-7775671ece22@collabora.com>
+ <20260428-rockchip-usbdp-cleanup-v4-10-7775671ece22@collabora.com>
 Content-Language: en-US, fr
 Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
@@ -116,10 +117,10 @@ Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
  QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
 Organization: Linaro
-In-Reply-To: <20260428-rockchip-usbdp-cleanup-v4-9-7775671ece22@collabora.com>
+In-Reply-To: <20260428-rockchip-usbdp-cleanup-v4-10-7775671ece22@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260506_075500_991099_E88EDEC7 
-X-CRM114-Status: GOOD (  12.29  )
+X-CRM114-CacheID: sfid-20260506_075558_320955_613C99BB 
+X-CRM114-Status: GOOD (  13.33  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -138,45 +139,56 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 4/28/26 18:13, Sebastian Reichel wrote:
-> Cleanup code by replacing open-coded version of FIELD_PREP_WM16_CONST
-> with the existing helper macro.
+> Use FIELD_PREP_WM16() helpers to simplify the DP lane selection
+> logic.
 > 
 > Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 > ---
->   drivers/phy/rockchip/phy-rockchip-usbdp.c | 6 +++---
->   1 file changed, 3 insertions(+), 3 deletions(-)
+>   drivers/phy/rockchip/phy-rockchip-usbdp.c | 28 +++++++---------------------
+>   1 file changed, 7 insertions(+), 21 deletions(-)
 > 
 > diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-> index 6d7ca11b308e..1bfc365e2b2c 100644
+> index 1bfc365e2b2c..beab20e4c512 100644
 > --- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
 > +++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-> @@ -12,6 +12,7 @@
->   #include <linux/clk.h>
->   #include <linux/delay.h>
->   #include <linux/gpio.h>
-> +#include <linux/hw_bitfield.h>
->   #include <linux/mfd/syscon.h>
->   #include <linux/mod_devicetable.h>
->   #include <linux/module.h>
-> @@ -75,7 +76,6 @@
->   #define TRSV_LN2_MON_RX_CDR_DONE_OFFSET		0x1b84	/* trsv_reg06E1 */
->   #define TRSV_LN2_MON_RX_CDR_LOCK_DONE		BIT(0)
+> @@ -550,30 +550,16 @@ static void rk_udphy_usb_bvalid_enable(struct rk_udphy *udphy, u8 enable)
+>   static void rk_udphy_dp_lane_select(struct rk_udphy *udphy)
+>   {
+>   	const struct rk_udphy_cfg *cfg = udphy->cfgs;
+> -	u32 value = 0;
+> -
+> -	switch (udphy->dp_lanes) {
+> -	case 4:
+> -		value |= 3 << udphy->dp_lane_sel[3] * 2;
+> -		value |= 2 << udphy->dp_lane_sel[2] * 2;
+> -		fallthrough;
+> -
+> -	case 2:
+> -		value |= 1 << udphy->dp_lane_sel[1] * 2;
+> -		fallthrough;
+> +	u32 value = FIELD_PREP_WM16(DP_LANE_SEL_ALL, 0);
+> +	int i;
 >   
-> -#define BIT_WRITEABLE_SHIFT			16
->   #define PHY_AUX_DP_DATA_POL_NORMAL		0
->   #define PHY_AUX_DP_DATA_POL_INVERT		1
->   #define PHY_LANE_MUX_USB			0
-> @@ -104,8 +104,8 @@ struct rk_udphy_grf_reg {
->   #define _RK_UDPHY_GEN_GRF_REG(offset, mask, disable, enable) \
->   {\
->   	offset, \
-> -	FIELD_PREP_CONST(mask, disable) | (mask << BIT_WRITEABLE_SHIFT), \
-> -	FIELD_PREP_CONST(mask, enable) | (mask << BIT_WRITEABLE_SHIFT), \
-> +	FIELD_PREP_WM16_CONST(mask, disable), \
-> +	FIELD_PREP_WM16_CONST(mask, enable), \
+> -	case 1:
+> -		value |= 0 << udphy->dp_lane_sel[0] * 2;
+> -		break;
+> +	for (i = 0; i < udphy->dp_lanes; i++)
+> +		value |= field_prep(DP_LANE_SEL_N(udphy->dp_lane_sel[i]), i);
+>   
+> -	default:
+> -		break;
+> -	}
+> +	value |= FIELD_PREP_WM16(DP_AUX_DIN_SEL, udphy->dp_aux_din_sel);
+> +	value |= FIELD_PREP_WM16(DP_AUX_DOUT_SEL, udphy->dp_aux_dout_sel);
+>   
+> -	regmap_write(udphy->vogrf, cfg->vogrfcfg[udphy->id].dp_lane_reg,
+> -		     ((DP_AUX_DIN_SEL | DP_AUX_DOUT_SEL | DP_LANE_SEL_ALL) << 16) |
+> -		     FIELD_PREP(DP_AUX_DIN_SEL, udphy->dp_aux_din_sel) |
+> -		     FIELD_PREP(DP_AUX_DOUT_SEL, udphy->dp_aux_dout_sel) | value);
+> +	regmap_write(udphy->vogrf, cfg->vogrfcfg[udphy->id].dp_lane_reg, value);
 >   }
 >   
->   #define RK_UDPHY_GEN_GRF_REG(offset, bitend, bitstart, disable, enable) \
+>   static void rk_udphy_dp_lane_enable(struct rk_udphy *udphy, int dp_lanes)
 > 
 
 Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
