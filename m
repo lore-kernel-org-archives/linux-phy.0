@@ -4,81 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 89FFCCD3440
-	for <linux-phy@archiver.kernel.org>; Wed,  6 May 2026 14:49:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 21D55CD342C
+	for <linux-phy@archiver.kernel.org>; Wed,  6 May 2026 14:50:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
 	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=WGVK3POyv0Eu28/1cnx6wy3kBjaqy3D5vBmBo1GRrO8=; b=MikZzvY0RaKxWTwSOXrp9/Eg55
-	JfPwabyGVtq3IG9RLPzm5MV8FVmkhLZpd1H9gFtGyJh5WAW1CBtTXvu6gVE3OZ7Pt0MD2GUHPIArB
-	/ByewkfB9zqK7Ldzqbar9HCe5TiXwMvcgMT5zZ59ewuW87fr5YoWnlEuO5ajrzifa53w5wewGuaYw
-	sAH8TAWayaPWoi0btUBMXQx2Gqra5IlZHBncOIw7dD7sIfjZeWM3WBStX7PBVKBOIm/Yu8ejDZvZL
-	0GE3pU4GX7XDmSFaBE6Sj9FSgbtCEB5aSnNXQf0265ncq3M9gLcK2qC/4jvebHcnunIPzrY0wgl+X
-	YyWJ1gYQ==;
+	bh=o5NU4+bybwj2Z436hbp1p4UVmT73pIP1Rwz/Dgsc7Mk=; b=NCb22BW4RVwTk/7AMTUrWL2099
+	IekDTv8CPIcBxKci9ULvBcve5TGm2gR/Cp8Y/PyqrrZUzqlkSvLNRKe8y0i8ZREiED0HkBw3MFr7i
+	eZzsUF+oLjJ/NJ6NZ56QKgDynHcVbCtditKdIbZB0g4Bat7APSoFxfv6A1txncHGhkqRNdISG0LWy
+	gPK+PUf/MvqfAismomvRpbuK4wpxHUyXjHVNYokdBgpfHOEr5rkS4w2oCz6Sqf7AQwo3IbWRn2Bf+
+	gVATFsGuErq/AHkw7gTwIt7DpSCDv8uUwJOrRsaP2OKcl5L8oR1mqP2LCBRoDOsFymWgT/biodQ2t
+	qmGICRYQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wKdZE-00000001A0Z-1Iut;
-	Wed, 06 May 2026 14:49:40 +0000
-Received: from mail-wr1-x431.google.com ([2a00:1450:4864:20::431])
+	id 1wKdZk-00000001AJg-3dDi;
+	Wed, 06 May 2026 14:50:12 +0000
+Received: from mail-wm1-x329.google.com ([2a00:1450:4864:20::329])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wKdZD-000000019ya-1jXP
+	id 1wKdZj-00000001AH1-0ePj
 	for linux-phy@lists.infradead.org;
-	Wed, 06 May 2026 14:49:39 +0000
-Received: by mail-wr1-x431.google.com with SMTP id ffacd0b85a97d-44a044cb827so4736639f8f.0
-        for <linux-phy@lists.infradead.org>; Wed, 06 May 2026 07:49:38 -0700 (PDT)
+	Wed, 06 May 2026 14:50:11 +0000
+Received: by mail-wm1-x329.google.com with SMTP id 5b1f17b1804b1-488a9033b2cso58390025e9.2
+        for <linux-phy@lists.infradead.org>; Wed, 06 May 2026 07:50:10 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1778078977; x=1778683777; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1778079009; x=1778683809; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=xgbuIPvwGTDZ1vH1DcLJwAkJi5BHMTFvMXCyADYeRKI=;
-        b=JrhYrE+S9MzFP6Nq6tTfOU+5OBmIToQj2bctqfpYBJg6BTNpHavH5888toanlK1DLL
-         TPIeWIRuyxaYSBUWcJ0Y+UpsLR+B1LH/Wjsk7/0KZL6l5f1VzLRTbaMe3JNcPgUdF4S3
-         xTaE0UHdUB6EWE2aErNydIxM1TRO76ffDjumySBjGefAhyfzTEJGrDxTidYzizO6ulm5
-         rnXCbRUUzraJu03/IDhzOBl4xfDKZZE6h3MOeS5ZxOC5o7e7PSL3PhZHXhntC7mN5jiz
-         3AWLzEgU/4dPFCQ3/KgGYUpRtmQhoflxYVp3CDv2vSlgIxGdDOtARjF6Ys30jxethYDG
-         lVsQ==
+        bh=iNlQdkQkqMvv6TX3zSIUZJDpuOz3OCXPy5mPofQZIh8=;
+        b=Jc3qWrly5HyEB1u/s4K8gMGI5CxNvxZbHiMiw6PT+HMeVYbaauQdX1D1GMeYcvUp/7
+         TwDH5JGEuCMZSB/5cKfIM7wVr/n1ogk11wDSdbUj6Z7xLYuQHqcvIwtX3mHJXCAnJNQn
+         8KYWaKJc/aa34iOhAlCPmK3nQVm58P87d2xMZmGTmKeIfDBo8CauR4oEjX8Jgc9IksgA
+         8uHwH0Ay49n0rcIs0DJPMIpL15Iq/YtLFTjjMTNAAx02Cr9qvqcAKSDPJfnRIImpJJAb
+         TpAKWSgnT8D70aYmB9uwA/vTHJSc/95H67rHTNboPqrikMBSV1g5ynKf5V66WLFs1dyV
+         uDKw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1778078977; x=1778683777;
+        d=1e100.net; s=20251104; t=1778079009; x=1778683809;
         h=content-transfer-encoding:in-reply-to:organization:autocrypt
          :content-language:references:cc:to:subject:reply-to:from:user-agent
          :mime-version:date:message-id:x-gm-gg:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=xgbuIPvwGTDZ1vH1DcLJwAkJi5BHMTFvMXCyADYeRKI=;
-        b=UtZb7r4NAc8E35ZpPEWP8alOWuc7fFRJQuLQ5hCn2mSsPqg1Y0dURUz5GZM4Od+rCD
-         FSGNc/9yFra/a9pwy61mKhkdLh1XQDP8AX9aZBnrIYWHtBwZIr5aiE8ki+uyOl2DhPQV
-         B0gv4kIgWktMoETLhIweRboQXem5Roak/WNuYlFOqd1IL9uNHc0et6ZnFKTPeKGj8SZk
-         mDfJqeWJUuYBUHQBn/xQUhxcmzosNm+CtAzoq5qW+znefHUHNMIdJfcQWzbXTe9vK2S7
-         UkF03urJmn/9FY7+CmdrlrQm3zwfZRFEmS4gNNRsmO4f6e+uHnnHnH76Js8eDUZQ0ZrX
-         iYOw==
-X-Forwarded-Encrypted: i=1; AFNElJ+knEsdsxW+tl4jncysMgAGNjvyBuGU6rd/FmiGropacszmhYw4/dSnwdbfyO/UL3Sc3qVj3sv41OA=@lists.infradead.org
-X-Gm-Message-State: AOJu0YySR/4k1TiGhppgkej02Q3djPuS2GWcZpbtkaT3TZ2kBPwUx6T1
-	WrOtwfnkTpkKlZkhCwjVfMgsREQbmvmpwJX6msP758mNG9lXjucIJz7OEnTyZJrHtLs=
-X-Gm-Gg: AeBDievYJps6jsCh8Lx/9EhLSmKvz1c0mEL341GMeQ53uO7n0vv5IbOozGUB2gpaScS
-	KKOCWQcCPXRtDDP4XsgXLw4YVteIB1y65WUCQMPo5SlIr0AvKmyMbRJspE1ORI2rsNg0jWu8cC/
-	k0tTlUA9GJWCmbFYPQ518kRKCRRZhAudTNFj2f+S4LhNnjSpd8Smh90swjAlHmCcv6NP7HW7GIB
-	SftCPeJTSljSvyCN4R2Xgt4Kj2pv3/NssXvXB+OVpvjCbv6gOFpsF02qLQquyrxfayqHeRqt1dz
-	43u6RT4jk2Zz/BizeAtj7VIVS0RelZE9LYVWRp16UPGto33wCYrhF2QW06kMC3T+tlo6a3BGL94
-	WoiYN1337yiDSE/mPWKWkpSj9VjTxSXM/eAGo1YpxV7O9q/lxRVmvov2tyomSll/TKyIbKeCBo0
-	Z23ijazihYhxUIvW2DkD95palWKUO4CjDqdwYqJiQ3EJ4HyyODfm6K8ikTX8g9+NRLQt4vTqH6W
-	2QxGO90c1hzQ2yqwA==
-X-Received: by 2002:a05:6000:2013:b0:43c:f3ef:ee36 with SMTP id ffacd0b85a97d-4515d4d0fbcmr6911189f8f.33.1778078977349;
-        Wed, 06 May 2026 07:49:37 -0700 (PDT)
+        bh=iNlQdkQkqMvv6TX3zSIUZJDpuOz3OCXPy5mPofQZIh8=;
+        b=YkcelZbLJI4OV/wsVfFpiLrLtDIjDE7UcIMovJrqGtADYp/ViHaeNW6n5/M79DEApd
+         I8iggeiKfmjbPG3aiiRkUDCMLjnviHLkVqvnPKlwpev2OmDrFt1zCpiJh0Gu2xG8Lcef
+         YiRLZbraTsRKowfwPx+ZRiU8n5lU2TkyZ2xM8iR6Kq+EYJ90ZeKl52mr9/V+4mhKG4BO
+         uoSa9Atd5AKVSzpReONlJqtsv/7mPoT4bY/FujJiAcUwjs+tQL0aiMtsl1RmPFsrZGma
+         Xs95YPbi4nci4MFe5ba+DxwhmQMY3Iw8bHiEezKYxCAWYhi1Ym+3K/QWx3bZXIdEuQzB
+         GCiQ==
+X-Forwarded-Encrypted: i=1; AFNElJ8gx6iolOGAqdfMsmYV9M8mSL5KVuzIfCJxYEKgsE0QyPs1VjB6MBSM5po5hBe6c3zVBs8wTcinvds=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz/jlF3dSuXfqG4ypGIe1YPLDyFlOG/++Q7+E69Ni8PKvzbCWfV
+	+Bo1QO1/XGoKwP0MsT+Mv9C/E866IIBEW7o41e07eHTeXj2e3n9TdkBtDI5BF2JeDrc=
+X-Gm-Gg: AeBDiesL/wbY9rd0jSL3SPTU3w9eSOjWotfRyxJJgLSM3sHfgVQ07OGDQWy2UFfBrRh
+	NikLZc9C15RWC8lSKvmbQOY/A2joTdk4V+FlEtdkDq5uaSTyIMN8sDMzZ4tn++iFA3n9NQT2JKK
+	m4X2METEjP6K8SV0tBvAznMc6aOxtHukwhznpLW5UH4ZkaPDAtO1F1RutCi4cbjZosv1D5d/beE
+	N3uCUxSPmRQOlKY7tje+iVw/tesS2/4nWDe50cv/f57vB7FpV6ahLFEyQiK02Z/ySHmZna9UvAr
+	pmuqJUpWjT4CClPdoY9WaMQV/V4DzjnZuexbbKZjmIEAZA4fHeJZjTqZ9hE3x7bUtZdRaVw2KzS
+	KWdNKYUbyWRh7+tX42nq2pwJFPz4tCKmb5BQt98TMTznzIpPshFHe9fC23E+YNh+BGkyMcIZ+Ad
+	4MxDqtx6ytNlN1nWPPLr9DGn6X1MC9ukAri1CcCI0xwUH8vIbLhzQNnFPuRLge/2bojpxxUmLwj
+	UdEB67I//qW3e6s7rHZP6nHHH1u
+X-Received: by 2002:a05:6000:268a:b0:451:3b12:9bca with SMTP id ffacd0b85a97d-4515ce1cde3mr6569525f8f.25.1778079009130;
+        Wed, 06 May 2026 07:50:09 -0700 (PDT)
 Received: from ?IPV6:2a01:e0a:106d:1080:5798:67fd:c866:b378? ([2a01:e0a:106d:1080:5798:67fd:c866:b378])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-45054b02c5asm13014040f8f.19.2026.05.06.07.49.36
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-45052483166sm12894076f8f.7.2026.05.06.07.50.05
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 06 May 2026 07:49:36 -0700 (PDT)
-Message-ID: <ab5efb9a-a2a7-4871-94c3-599ba8510dd3@linaro.org>
-Date: Wed, 6 May 2026 16:49:35 +0200
+        Wed, 06 May 2026 07:50:06 -0700 (PDT)
+Message-ID: <7430e331-5bc4-4814-baf1-e87a9104045f@linaro.org>
+Date: Wed, 6 May 2026 16:50:05 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 From: Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH v4 05/16] phy: rockchip: usbdp: Fix LFPS detect threshold
- control
+Subject: Re: [PATCH v4 06/16] phy: rockchip: usbdp: Add missing mode_change
+ update
 To: Sebastian Reichel <sebastian.reichel@collabora.com>,
  Vinod Koul <vkoul@kernel.org>, Heiko Stuebner <heiko@sntech.de>,
  Frank Wang <frank.wang@rock-chips.com>, Rob Herring <robh@kernel.org>,
@@ -88,9 +88,9 @@ Cc: Andy Yan <andy.yan@rock-chips.com>, Dmitry Baryshkov <lumag@kernel.org>,
  Alexey Charkov <alchark@gmail.com>, linux-phy@lists.infradead.org,
  linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
  linux-kernel@vger.kernel.org, kernel@collabora.com,
- devicetree@vger.kernel.org, William Wu <william.wu@rock-chips.com>
+ devicetree@vger.kernel.org
 References: <20260428-rockchip-usbdp-cleanup-v4-0-7775671ece22@collabora.com>
- <20260428-rockchip-usbdp-cleanup-v4-5-7775671ece22@collabora.com>
+ <20260428-rockchip-usbdp-cleanup-v4-6-7775671ece22@collabora.com>
 Content-Language: en-US, fr
 Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
@@ -117,10 +117,10 @@ Autocrypt: addr=neil.armstrong@linaro.org; keydata=
  4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
  QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
 Organization: Linaro
-In-Reply-To: <20260428-rockchip-usbdp-cleanup-v4-5-7775671ece22@collabora.com>
+In-Reply-To: <20260428-rockchip-usbdp-cleanup-v4-6-7775671ece22@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260506_074939_486065_2C032208 
-X-CRM114-Status: GOOD (  16.20  )
+X-CRM114-CacheID: sfid-20260506_075011_229373_D156A599 
+X-CRM114-Status: GOOD (  17.91  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -139,42 +139,59 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 4/28/26 18:13, Sebastian Reichel wrote:
-> From: William Wu <william.wu@rock-chips.com>
+> rk_udphy_set_typec_default_mapping() updates the available modes,
+> but does not set the mode_change as required. This results in
+> missing re-initialization and thus non-working DisplayPort.
 > 
-> According to the LFPS Tx Low Power/LFPS Rx Detect Threshold [1],
-> the device under test(DUT) must not respond if LFPS below the
-> minimum LFPS Rx Detect Threshold 100mV. Test fail on Rockchip
-> platforms, because the default LFPS detect threshold is set to
-> 65mV.
+> Fix this issue by introducing a new helper to update the available
+> modes.
 > 
-> The USBDP PHY LFPS detect threshold voltage could be set to
-> 30mV ~ 140mV, and since there could be 10-20% PVT variation,
-> we set LFPS detect threshold voltage to 110mV.
-> 
-> [1] https://compliance.usb.org/resources/LFPS_Rx_Tx_Low_Power_Compliance_Update_Rev5.pdf
-> 
-> Signed-off-by: William Wu <william.wu@rock-chips.com>
-> [Taken over from rockchip's kernel tree; the registers are not described
-> in the TRM]
 > Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 > ---
->   drivers/phy/rockchip/phy-rockchip-usbdp.c | 3 ++-
->   1 file changed, 2 insertions(+), 1 deletion(-)
+>   drivers/phy/rockchip/phy-rockchip-usbdp.c | 16 +++++++++++-----
+>   1 file changed, 11 insertions(+), 5 deletions(-)
 > 
 > diff --git a/drivers/phy/rockchip/phy-rockchip-usbdp.c b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-> index 1f686844c337..97e53b933225 100644
+> index 97e53b933225..febc148a754e 100644
 > --- a/drivers/phy/rockchip/phy-rockchip-usbdp.c
 > +++ b/drivers/phy/rockchip/phy-rockchip-usbdp.c
-> @@ -413,7 +413,8 @@ static const struct reg_sequence rk_udphy_init_sequence[] = {
->   	{0x0070, 0x7d}, {0x0074, 0x68},
->   	{0x0af4, 0x1a}, {0x1af4, 0x1a},
->   	{0x0440, 0x3f}, {0x10d4, 0x08},
-> -	{0x20d4, 0x08}, {0x0024, 0x6e}
-> +	{0x20d4, 0x08}, {0x0024, 0x6e},
-> +	{0x09c0, 0x0a}, {0x19c0, 0x0a}
->   };
+> @@ -619,6 +619,15 @@ static void rk_udphy_dp_hpd_event_trigger(struct rk_udphy *udphy, bool hpd)
+>   	rk_udphy_grfreg_write(udphy->vogrf, &cfg->vogrfcfg[udphy->id].hpd_trigger, hpd);
+>   }
 >   
->   static inline int rk_udphy_grfreg_write(struct regmap *base,
+> +static void rk_udphy_mode_set(struct rk_udphy *udphy, u8 mode)
+> +{
+> +	if (udphy->mode == mode)
+> +		return;
+> +
+> +	udphy->mode_change = true;
+> +	udphy->mode = mode;
+> +}
+> +
+>   static void rk_udphy_set_typec_default_mapping(struct rk_udphy *udphy)
+>   {
+>   	if (udphy->flip) {
+> @@ -649,7 +658,7 @@ static void rk_udphy_set_typec_default_mapping(struct rk_udphy *udphy)
+>   		gpiod_set_value_cansleep(udphy->sbu2_dc_gpio, 1);
+>   	}
+>   
+> -	udphy->mode = UDPHY_MODE_DP_USB;
+> +	rk_udphy_mode_set(udphy, UDPHY_MODE_DP_USB);
+>   }
+>   
+>   static int rk_udphy_orien_sw_set(struct typec_switch_dev *sw,
+> @@ -1385,10 +1394,7 @@ static int rk_udphy_typec_mux_set(struct typec_mux_dev *mux,
+>   			usleep_range(750, 800);
+>   			rk_udphy_dp_hpd_event_trigger(udphy, true);
+>   		} else if (data->status & DP_STATUS_HPD_STATE) {
+> -			if (udphy->mode != mode) {
+> -				udphy->mode = mode;
+> -				udphy->mode_change = true;
+> -			}
+> +			rk_udphy_mode_set(udphy, mode);
+>   			rk_udphy_dp_hpd_event_trigger(udphy, true);
+>   		} else {
+>   			rk_udphy_dp_hpd_event_trigger(udphy, false);
 > 
 
 Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
