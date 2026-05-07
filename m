@@ -4,31 +4,31 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C1E16CD343B
-	for <linux-phy@archiver.kernel.org>; Thu,  7 May 2026 08:18:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0FE9ECD3447
+	for <linux-phy@archiver.kernel.org>; Thu,  7 May 2026 08:18:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rHvcLftQjqaph0gnU6YE+RNcrJ02zU+YPmjOGrVjVVE=; b=BBhswlHGDfruP1
-	FzhSi7TVa9rgb8iFD9Vp+WsIvi7Bz6mP/4iLboJPK73kE+g1xIPrZb8Ow3AobMG4XORzcTdOlC9PI
-	5oqOUYNXH4j2y681syRUl2HuYtUw439mEwPw4Vea/1LCCI/RMuFLb2AHQLYsLRu6NxnOQXtlQ6Q10
-	7l9beyrYONQKwTa2/XXeb/kamzS2R+MCrge139KeC4WlZ7fyqOGbFH+xGeeBSQFNw9wId4A3rQMTE
-	sVduc8N/Vsp5GDj4M+aHSV8Xv8MNtj1nVIr1kyZiQlEIMZaRbBjeOOink2zcJEFK6RQTGUyhlBjwS
-	Zg3IN8JvhVJ65G8RC2Yw==;
+	List-Owner; bh=alUzswWJL5ok7d4ZJNZojO2bMqLbRQhPSbNm1sKMv80=; b=M6tm7x7/78/iao
+	lnFmYZ7/dfJas3MrJrK/ziwl5iHMak/gPwr6d57e8NfKIaQ/amhsFSRWTArEhj/M96h2twX4LO1De
+	spYvxLZSs1HhMsbLpB7PuxQmMqQhKQGFQerbTPhoqF/zmgvuRi4OUWegwCa5dsQ9JwWPBnjDm/2Yp
+	AdIEJr6QMG1p+50q1mSJfKVKhJoECMreQ4KAmxU4RzmZjizNYx+HPDkAUc1+i+XkpsCnKgGtAMulP
+	oyELNLlJ0wzf/j/O80HJ7yZMgFdHTJi00aUMr8TdvO77ksL6GI0qQWC2yQmM4PPxIC/2K2lIAmN5H
+	kYu6LgGHhRCJBVyunSYQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wKtw3-000000038ED-27r5;
-	Thu, 07 May 2026 08:18:19 +0000
+	id 1wKtwB-000000038PU-3HNt;
+	Thu, 07 May 2026 08:18:27 +0000
 Received: from smtp81.cstnet.cn ([159.226.251.81] helo=cstnet.cn)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wKtvz-0000000384r-3sOd;
-	Thu, 07 May 2026 08:18:17 +0000
+	id 1wKtw8-000000038Ig-1BfT;
+	Thu, 07 May 2026 08:18:25 +0000
 Received: from edelgard.fodlan.icenowy.me (unknown [112.94.100.82])
-	by APP-03 (Coremail) with SMTP id rQCowAC3m+KLSvxpI_pNEA--.42168S11;
-	Thu, 07 May 2026 16:17:33 +0800 (CST)
+	by APP-03 (Coremail) with SMTP id rQCowAC3m+KLSvxpI_pNEA--.42168S12;
+	Thu, 07 May 2026 16:17:38 +0800 (CST)
 From: Icenowy Zheng <zhengxingda@iscas.ac.cn>
 To: Drew Fustini <fustini@kernel.org>,
 	Guo Ren <guoren@kernel.org>,
@@ -57,37 +57,39 @@ Cc: Philipp Zabel <p.zabel@pengutronix.de>,
 	Icenowy Zheng <uwu@icenowy.me>,
 	Han Gao <rabenda.cn@gmail.com>,
 	Yao Zi <ziyao@disroot.org>,
+	Thomas Bonnefille <thomas.bonnefille@bootlin.com>,
+	Drew Fustini <dfustini@tenstorrent.com>,
 	Icenowy Zheng <zhengxingda@iscas.ac.cn>
-Subject: [PATCH 09/12] riscv: dts: thead: lpi4a: sort nodes
-Date: Thu,  7 May 2026 16:17:07 +0800
-Message-ID: <20260507081710.4090814-10-zhengxingda@iscas.ac.cn>
+Subject: [PATCH 10/12] riscv: dts: thead: Add TH1520 I2C nodes
+Date: Thu,  7 May 2026 16:17:08 +0800
+Message-ID: <20260507081710.4090814-11-zhengxingda@iscas.ac.cn>
 X-Mailer: git-send-email 2.52.0
 In-Reply-To: <20260507081710.4090814-1-zhengxingda@iscas.ac.cn>
 References: <20260507081710.4090814-1-zhengxingda@iscas.ac.cn>
 MIME-Version: 1.0
-X-CM-TRANSID: rQCowAC3m+KLSvxpI_pNEA--.42168S11
-X-Coremail-Antispam: 1UD129KBjvdXoW7Jw4DWF17tFy5Kr15uF1rJFb_yoWktFcEkF
-	W5ua95Zw1xGF1fJF9Fqr4xJ34kG3yS9a4kKFyIqr1UGF15ur4jqrWkt3yruw1F9rWYgFWx
-	Aw4DAryrtrnFkjkaLaAFLSUrUUUUjb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
-	9fnUUIcSsGvfJTRUUUbvAFF20E14v26rWj6s0DM7CY07I20VC2zVCF04k26cxKx2IYs7xG
-	6rWj6s0DM7CIcVAFz4kK6r1j6r18M28IrcIa0xkI8VA2jI8067AKxVWUAVCq3wA2048vs2
-	IY020Ec7CjxVAFwI0_Xr0E3s1l8cAvFVAK0II2c7xJM28CjxkF64kEwVA0rcxSw2x7M28E
-	F7xvwVC0I7IYx2IY67AKxVW7JVWDJwA2z4x0Y4vE2Ix0cI8IcVCY1x0267AKxVW8Jr0_Cr
-	1UM28EF7xvwVC2z280aVAFwI0_GcCE3s1l84ACjcxK6I8E87Iv6xkF7I0E14v26rxl6s0D
-	M2AIxVAIcxkEcVAq07x20xvEncxIr21l5I8CrVACY4xI64kE6c02F40Ex7xfMcIj6xIIjx
-	v20xvE14v26r1j6r18McIj6I8E87Iv67AKxVWUJVW8JwAm72CE4IkC6x0Yz7v_Jr0_Gr1l
-	F7xvr2IYc2Ij64vIr41lF7I21c0EjII2zVCS5cI20VAGYxC7M4IIrI8v6xkF7I0E8cxan2
-	IY04v7MxkF7I0En4kS14v26r4a6rW5MxAIw28IcxkI7VAKI48JMxC20s026xCaFVCjc4AY
-	6r1j6r4UMI8I3I0E5I8CrVAFwI0_Jr0_Jr4lx2IqxVCjr7xvwVAFwI0_JrI_JrWlx4CE17
-	CEb7AF67AKxVW8ZVWrXwCIc40Y0x0EwIxGrwCI42IY6xIIjxv20xvE14v26r1I6r4UMIIF
-	0xvE2Ix0cI8IcVCY1x0267AKxVW8Jr0_Cr1UMIIF0xvE42xK8VAvwI8IcIk0rVWUJVWUCw
-	CI42IY6I8E87Iv67AKxVW8JVWxJwCI42IY6I8E87Iv6xkF7I0E14v26r4UJVWxJrUvcSsG
-	vfC2KfnxnUUI43ZEXa7sRiHUDtUUUUU==
+X-CM-TRANSID: rQCowAC3m+KLSvxpI_pNEA--.42168S12
+X-Coremail-Antispam: 1UD129KBjvJXoWxCry3ArWxJryrKw45WrWfKrg_yoW5CryDpa
+	srArZ5Aws5XF1I93W3XFy2kFZxJan5uF92grnFkFWUCw1YgF4YvrW8tFyIvF1kXFWUXw1a
+	qFn3Cr10yrn8tw7anT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDU0xBIdaVrnRJUUUmS14x267AKxVWrJVCq3wAFc2x0x2IEx4CE42xK8VAvwI8IcIk0
+	rVWrJVCq3wAFIxvE14AKwVWUJVWUGwA2048vs2IY020E87I2jVAFwI0_JF0E3s1l82xGYI
+	kIc2x26xkF7I0E14v26ryj6s0DM28lY4IEw2IIxxk0rwA2F7IY1VAKz4vEj48ve4kI8wA2
+	z4x0Y4vE2Ix0cI8IcVAFwI0_Ar0_tr1l84ACjcxK6xIIjxv20xvEc7CjxVAFwI0_Gr1j6F
+	4UJwA2z4x0Y4vEx4A2jsIE14v26rxl6s0DM28EF7xvwVC2z280aVCY1x0267AKxVW0oVCq
+	3wAS0I0E0xvYzxvE52x082IY62kv0487Mc02F40EFcxC0VAKzVAqx4xG6I80ewAv7VC0I7
+	IYx2IY67AKxVWUJVWUGwAv7VC2z280aVAFwI0_Jr0_Gr1lOx8S6xCaFVCjc4AY6r1j6r4U
+	M4x0Y48IcxkI7VAKI48JM4x0x7Aq67IIx4CEVc8vx2IErcIFxwACI402YVCY1x02628vn2
+	kIc2xKxwCY1x0262kKe7AKxVW8ZVWrXwCF04k20xvY0x0EwIxGrwCFx2IqxVCFs4IE7xkE
+	bVWUJVW8JwC20s026c02F40E14v26r1j6r18MI8I3I0E7480Y4vE14v26r106r1rMI8E67
+	AF67kF1VAFwI0_GFv_WrylIxkGc2Ij64vIr41lIxAIcVC0I7IYx2IY67AKxVW8JVW5JwCI
+	42IY6xIIjxv20xvEc7CjxVAFwI0_Gr1j6F4UJwCI42IY6xAIw20EY4v20xvaj40_Jr0_JF
+	4lIxAIcVC2z280aVAFwI0_Gr0_Cr1lIxAIcVC2z280aVCY1x0267AKxVW8Jr0_Cr1UYxBI
+	daVFxhVjvjDU0xZFpf9x0pRQJ5wUUUUU=
 X-Originating-IP: [112.94.100.82]
 X-CM-SenderInfo: x2kh0wp0lqwv3d6l2u1dvotugofq/
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260507_011816_326202_27194B4F 
-X-CRM114-Status: UNSURE (   8.13  )
+X-CRM114-CacheID: sfid-20260507_011824_699959_572AB290 
+X-CRM114-Status: UNSURE (   7.81  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -105,62 +107,110 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Although "D" and "H" are earlier in the alphabet than "P", the DPU and
-HDMI nodes were added after PADCTRL node in the Lichee Pi 4A device tree.
+From: Thomas Bonnefille <thomas.bonnefille@bootlin.com>
 
-Sort the nodes in this device tree.
+Add nodes for the six I2C on the T-Head TH1520 RISCV SoC.
 
+Signed-off-by: Thomas Bonnefille <thomas.bonnefille@bootlin.com>
+Reviewed-by: Drew Fustini <dfustini@tenstorrent.com>
+[Icenowy: rebase on top of v7.1-rc2]
 Signed-off-by: Icenowy Zheng <zhengxingda@iscas.ac.cn>
 ---
- .../boot/dts/thead/th1520-lichee-pi-4a.dts    | 28 +++++++++----------
- 1 file changed, 14 insertions(+), 14 deletions(-)
+ arch/riscv/boot/dts/thead/th1520.dtsi | 60 +++++++++++++++++++++++++++
+ 1 file changed, 60 insertions(+)
 
-diff --git a/arch/riscv/boot/dts/thead/th1520-lichee-pi-4a.dts b/arch/riscv/boot/dts/thead/th1520-lichee-pi-4a.dts
-index 7cb7d28683bce..4198dbf953f06 100644
---- a/arch/riscv/boot/dts/thead/th1520-lichee-pi-4a.dts
-+++ b/arch/riscv/boot/dts/thead/th1520-lichee-pi-4a.dts
-@@ -96,6 +96,20 @@ fan: pwm-fan {
+diff --git a/arch/riscv/boot/dts/thead/th1520.dtsi b/arch/riscv/boot/dts/thead/th1520.dtsi
+index a6a3e114d0d2f..df49f8f749ef7 100644
+--- a/arch/riscv/boot/dts/thead/th1520.dtsi
++++ b/arch/riscv/boot/dts/thead/th1520.dtsi
+@@ -425,6 +425,36 @@ uart3: serial@ffe7f04000 {
+ 			status = "disabled";
+ 		};
  
- };
++		i2c0: i2c@ffe7f20000 {
++			compatible = "thead,th1520-i2c", "snps,designware-i2c";
++			reg = <0xff 0xe7f20000 0x0 0x4000>;
++			interrupts = <44 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&clk CLK_I2C0>;
++			#address-cells = <1>;
++			#size-cells = <0>;
++			status = "disabled";
++		};
++
++		i2c1: i2c@ffe7f24000 {
++			compatible = "thead,th1520-i2c", "snps,designware-i2c";
++			reg = <0xff 0xe7f24000 0x0 0x4000>;
++			interrupts = <45 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&clk CLK_I2C1>;
++			#address-cells = <1>;
++			#size-cells = <0>;
++			status = "disabled";
++		};
++
++		i2c4: i2c@ffe7f28000 {
++			compatible = "thead,th1520-i2c", "snps,designware-i2c";
++			reg = <0xff 0xe7f28000 0x0 0x4000>;
++			interrupts = <48 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&clk CLK_I2C4>;
++			#address-cells = <1>;
++			#size-cells = <0>;
++			status = "disabled";
++		};
++
+ 		gpio@ffe7f34000 {
+ 			compatible = "snps,dw-apb-gpio";
+ 			reg = <0xff 0xe7f34000 0x0 0x1000>;
+@@ -523,6 +553,16 @@ padctrl0_apsys: pinctrl@ffec007000 {
+ 			thead,pad-group = <3>;
+ 		};
  
-+&dpu {
-+	status = "okay";
-+};
++		i2c2: i2c@ffec00c000 {
++			compatible = "thead,th1520-i2c", "snps,designware-i2c";
++			reg = <0xff 0xec00c000 0x0 0x4000>;
++			interrupts = <46 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&clk CLK_I2C2>;
++			#address-cells = <1>;
++			#size-cells = <0>;
++			status = "disabled";
++		};
 +
-+&hdmi {
-+	status = "okay";
-+};
-+
-+&hdmi_out_port {
-+	hdmi_out_con: endpoint {
-+		remote-endpoint = <&hdmi_con_in>;
-+	};
-+};
-+
- &padctrl0_apsys {
- 	fan_pins: fan-0 {
- 		pwm1-pins {
-@@ -132,20 +146,6 @@ rx-pins {
- 	};
- };
+ 		uart2: serial@ffec010000 {
+ 			compatible = "snps,dw-apb-uart";
+ 			reg = <0xff 0xec010000 0x0 0x4000>;
+@@ -534,6 +574,16 @@ uart2: serial@ffec010000 {
+ 			status = "disabled";
+ 		};
  
--&dpu {
--	status = "okay";
--};
--
--&hdmi {
--	status = "okay";
--};
--
--&hdmi_out_port {
--	hdmi_out_con: endpoint {
--		remote-endpoint = <&hdmi_con_in>;
--	};
--};
--
- &uart0 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&uart0_pins>;
++		i2c3: i2c@ffec014000 {
++			compatible = "thead,th1520-i2c", "snps,designware-i2c";
++			reg = <0xff 0xec014000 0x0 0x4000>;
++			interrupts = <47 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&clk CLK_I2C3>;
++			#address-cells = <1>;
++			#size-cells = <0>;
++			status = "disabled";
++		};
++
+ 		pwm: pwm@ffec01c000 {
+ 			compatible = "thead,th1520-pwm";
+ 			reg = <0xff 0xec01c000 0x0 0x4000>;
+@@ -759,6 +809,16 @@ uart5: serial@fff7f0c000 {
+ 			status = "disabled";
+ 		};
+ 
++		i2c5: i2c@fff7f2c000 {
++			compatible = "thead,th1520-i2c", "snps,designware-i2c";
++			reg = <0xff 0xf7f2c000 0x0 0x4000>;
++			interrupts = <49 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&clk CLK_I2C5>;
++			#address-cells = <1>;
++			#size-cells = <0>;
++			status = "disabled";
++		};
++
+ 		timer4: timer@ffffc33000 {
+ 			compatible = "snps,dw-apb-timer";
+ 			reg = <0xff 0xffc33000 0x0 0x14>;
 -- 
 2.52.0
 
