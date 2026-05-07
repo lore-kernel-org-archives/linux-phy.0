@@ -4,31 +4,31 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CF362CD3445
-	for <linux-phy@archiver.kernel.org>; Thu,  7 May 2026 08:18:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 44DAACD3442
+	for <linux-phy@archiver.kernel.org>; Thu,  7 May 2026 08:18:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wA5+VAqA6Ws6Enl0iX8W8xC5+ClKJ96LWZ9OqGdlHpM=; b=eS9H/Av2fFTy7S
-	Z06WPalKCNpJn2vryflmWBeYLRnKJ5Ud+47AtPIDlnQHiAKZ6c4MYILyRgzHB5wNDBpECe927BNa+
-	fxUXhp9uM9xDiIOnUn+9wLlFqLJLPUesvOgEDcgvXBomDYBwZtcszk0oG9PaPymTvU6wNkxa5Jx64
-	y/iCfRkte/cDoNp5zk7C0I1OPEOxFcTIN0jSnsudpBhiMZeCkEX7yceWZbW7qq952Bn/w41+sVrOx
-	DGy2hpGJZUdz8sQgCNi3c75pppJSyXzEYn+IhPE8TyyQK1otmkXbTuqV2qn4uKluHcizTbxoVbCI/
-	vkMaC6NXfreDVuY6ZjOg==;
+	List-Owner; bh=L2DigEu7/YEKr+b8K2/2n1XVFtVJQDeymqYOSYzx8m0=; b=1ncLXD91obkbnD
+	wtdi7eAR2C6cZ6g/ce4ZKryGqukU0bgKuTfoSw6B/G5XhtoWbl+IAGs3enOKH107OaWz1jmhH3few
+	svGRNRmSRd5i/pLx9i3R2zYFwFZMkYTPh6g1huZnXJThpeOuPC4FjsKXhxsOin4aOwcc7tn3iAnkq
+	OjB7wIsGUkxHErAaZmiUcKrGnW4q2dGkkTW3L8GgbQMk4wbsIEruyKJ/11MfIyXa7D4ff/Ikti1y6
+	EXR8McCYNWdxuvlN1/7lolJoIko43py8Ugr3GTb76FhiC5ngdH4GTTi9+yA6IEHSil9JiqeRadtWR
+	yN9z39SZN/yuUXtVo1uw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wKtvy-0000000385x-2HDW;
-	Thu, 07 May 2026 08:18:14 +0000
+	id 1wKtw0-00000003899-42OJ;
+	Thu, 07 May 2026 08:18:16 +0000
 Received: from smtp81.cstnet.cn ([159.226.251.81] helo=cstnet.cn)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wKtvu-000000037z1-2Dey;
-	Thu, 07 May 2026 08:18:12 +0000
+	id 1wKtvw-00000003816-2snL;
+	Thu, 07 May 2026 08:18:14 +0000
 Received: from edelgard.fodlan.icenowy.me (unknown [112.94.100.82])
-	by APP-03 (Coremail) with SMTP id rQCowAC3m+KLSvxpI_pNEA--.42168S8;
-	Thu, 07 May 2026 16:17:28 +0800 (CST)
+	by APP-03 (Coremail) with SMTP id rQCowAC3m+KLSvxpI_pNEA--.42168S9;
+	Thu, 07 May 2026 16:17:29 +0800 (CST)
 From: Icenowy Zheng <zhengxingda@iscas.ac.cn>
 To: Drew Fustini <fustini@kernel.org>,
 	Guo Ren <guoren@kernel.org>,
@@ -57,37 +57,41 @@ Cc: Philipp Zabel <p.zabel@pengutronix.de>,
 	Icenowy Zheng <uwu@icenowy.me>,
 	Han Gao <rabenda.cn@gmail.com>,
 	Yao Zi <ziyao@disroot.org>,
-	Icenowy Zheng <zhengxingda@iscas.ac.cn>
-Subject: [PATCH 06/12] riscv: dts: thead: add device nodes for USB
-Date: Thu,  7 May 2026 16:17:04 +0800
-Message-ID: <20260507081710.4090814-7-zhengxingda@iscas.ac.cn>
+	Icenowy Zheng <zhengxingda@iscas.ac.cn>,
+	Hoan Tran <hoan@os.amperecomputing.com>,
+	Linus Walleij <linusw@kernel.org>,
+	Bartosz Golaszewski <brgl@kernel.org>,
+	Serge Semin <fancer.lancer@gmail.com>
+Subject: [PATCH 07/12] dt-bindings: gpio: dwapb: allow GPIO hogs
+Date: Thu,  7 May 2026 16:17:05 +0800
+Message-ID: <20260507081710.4090814-8-zhengxingda@iscas.ac.cn>
 X-Mailer: git-send-email 2.52.0
 In-Reply-To: <20260507081710.4090814-1-zhengxingda@iscas.ac.cn>
 References: <20260507081710.4090814-1-zhengxingda@iscas.ac.cn>
 MIME-Version: 1.0
-X-CM-TRANSID: rQCowAC3m+KLSvxpI_pNEA--.42168S8
-X-Coremail-Antispam: 1UD129KBjvJXoW7tF4xWryDXFW5Jr15Cr43Awb_yoW8ZF4kpw
-	47CrZ3ArsagFsa9anIyr1jgFs3XF4rCF1vgFnFka48CrsagrWjvrWxKa1fZFW8Jrs7Zw43
-	CFyUK340kr1qyw7anT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
-	9KBjDU0xBIdaVrnRJUUUmS14x267AKxVWrJVCq3wAFc2x0x2IEx4CE42xK8VAvwI8IcIk0
-	rVWrJVCq3wAFIxvE14AKwVWUJVWUGwA2048vs2IY020E87I2jVAFwI0_JF0E3s1l82xGYI
-	kIc2x26xkF7I0E14v26ryj6s0DM28lY4IEw2IIxxk0rwA2F7IY1VAKz4vEj48ve4kI8wA2
-	z4x0Y4vE2Ix0cI8IcVAFwI0_Ar0_tr1l84ACjcxK6xIIjxv20xvEc7CjxVAFwI0_Gr1j6F
-	4UJwA2z4x0Y4vEx4A2jsIE14v26rxl6s0DM28EF7xvwVC2z280aVCY1x0267AKxVW0oVCq
-	3wAS0I0E0xvYzxvE52x082IY62kv0487Mc02F40EFcxC0VAKzVAqx4xG6I80ewAv7VC0I7
-	IYx2IY67AKxVWUJVWUGwAv7VC2z280aVAFwI0_Jr0_Gr1lOx8S6xCaFVCjc4AY6r1j6r4U
-	M4x0Y48IcxkI7VAKI48JM4x0x7Aq67IIx4CEVc8vx2IErcIFxwACI402YVCY1x02628vn2
-	kIc2xKxwCY1x0262kKe7AKxVW8ZVWrXwCF04k20xvY0x0EwIxGrwCFx2IqxVCFs4IE7xkE
-	bVWUJVW8JwC20s026c02F40E14v26r1j6r18MI8I3I0E7480Y4vE14v26r106r1rMI8E67
-	AF67kF1VAFwI0_GFv_WrylIxkGc2Ij64vIr41lIxAIcVC0I7IYx2IY67AKxVWUCVW8JwCI
+X-CM-TRANSID: rQCowAC3m+KLSvxpI_pNEA--.42168S9
+X-Coremail-Antispam: 1UD129KBjvdXoW7XF13ArWkZry5ZFy8Kw4UArb_yoWDKrX_CF
+	s3Za1DCFWktFyYkws0yF4xAFyYy3y7GF1kCwn8Krn3Cwn2v3Z8GFZ3J345ArW7Wa1fuFyr
+	CF93AryqqFs7GjkaLaAFLSUrUUUUjb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+	9fnUUIcSsGvfJTRUUUb98FF20E14v26rWj6s0DM7CY07I20VC2zVCF04k26cxKx2IYs7xG
+	6rWj6s0DM7CIcVAFz4kK6r1j6r18M28IrcIa0xkI8VA2jI8067AKxVWUAVCq3wA2048vs2
+	IY020Ec7CjxVAFwI0_Xr0E3s1l8cAvFVAK0II2c7xJM28CjxkF64kEwVA0rcxSw2x7M28E
+	F7xvwVC0I7IYx2IY67AKxVW7JVWDJwA2z4x0Y4vE2Ix0cI8IcVCY1x0267AKxVW8Jr0_Cr
+	1UM28EF7xvwVC2z280aVAFwI0_GcCE3s1l84ACjcxK6I8E87Iv6xkF7I0E14v26rxl6s0D
+	M2AIxVAIcxkEcVAq07x20xvEncxIr21l5I8CrVACY4xI64kE6c02F40Ex7xfMcIj6xIIjx
+	v20xvE14v26r1j6r18McIj6I8E87Iv67AKxVWUJVW8JwAm72CE4IkC6x0Yz7v_Jr0_Gr1l
+	F7xvr2IYc2Ij64vIr41lF7I21c0EjII2zVCS5cI20VAGYxC7M4IIrI8v6xkF7I0E8cxan2
+	IY04v7MxkF7I0En4kS14v26r4a6rW5MxAIw28IcxkI7VAKI48JMxC20s026xCaFVCjc4AY
+	6r1j6r4UMI8I3I0E5I8CrVAFwI0_Jr0_Jr4lx2IqxVCjr7xvwVAFwI0_JrI_JrWlx4CE17
+	CEb7AF67AKxVWrXVW8Jr1lIxkGc2Ij64vIr41lIxAIcVC0I7IYx2IY67AKxVWUCVW8JwCI
 	42IY6xIIjxv20xvEc7CjxVAFwI0_Gr1j6F4UJwCI42IY6xAIw20EY4v20xvaj40_Jr0_JF
 	4lIxAIcVC2z280aVAFwI0_Gr0_Cr1lIxAIcVC2z280aVCY1x0267AKxVW8Jr0_Cr1UYxBI
 	daVFxhVjvjDU0xZFpf9x0pRQJ5wUUUUU=
 X-Originating-IP: [112.94.100.82]
 X-CM-SenderInfo: x2kh0wp0lqwv3d6l2u1dvotugofq/
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260507_011810_936506_16E18092 
-X-CRM114-Status: UNSURE (   8.79  )
+X-CRM114-CacheID: sfid-20260507_011813_104968_E9574A92 
+X-CRM114-Status: UNSURE (   6.66  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -105,64 +109,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The TH1520 SoC contains a Synopsys DesignWare Cores SuperSpeed USB3.0
-Dual Role Device controller in addition to a USB2+USB3 combo PHY based
-on Synopsys USB3.0 FemtoPHY.
+GPIO hogs are described in the gpio.txt binding as automatic default
+GPIO configuration items.
 
-Add device tree nodes for them. The USB controller is quite generic, new
-and properly configured during silicon design, but the PHY is a little
-quirky.
+Allow them for GPIO ports in DesignWare APB GPIO controller nodes.
 
+Cc: Hoan Tran <hoan@os.amperecomputing.com>
+Cc: Linus Walleij <linusw@kernel.org>
+Cc: Bartosz Golaszewski <brgl@kernel.org>
+Cc: Serge Semin <fancer.lancer@gmail.com>
 Signed-off-by: Icenowy Zheng <zhengxingda@iscas.ac.cn>
 ---
- arch/riscv/boot/dts/thead/th1520.dtsi | 27 +++++++++++++++++++++++++++
- 1 file changed, 27 insertions(+)
+ .../devicetree/bindings/gpio/snps,dw-apb-gpio.yaml          | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-diff --git a/arch/riscv/boot/dts/thead/th1520.dtsi b/arch/riscv/boot/dts/thead/th1520.dtsi
-index c9930e63bbe93..a6a3e114d0d2f 100644
---- a/arch/riscv/boot/dts/thead/th1520.dtsi
-+++ b/arch/riscv/boot/dts/thead/th1520.dtsi
-@@ -316,6 +316,20 @@ uart0: serial@ffe7014000 {
- 			status = "disabled";
- 		};
+diff --git a/Documentation/devicetree/bindings/gpio/snps,dw-apb-gpio.yaml b/Documentation/devicetree/bindings/gpio/snps,dw-apb-gpio.yaml
+index bba6f5b6606fd..55069533f6d91 100644
+--- a/Documentation/devicetree/bindings/gpio/snps,dw-apb-gpio.yaml
++++ b/Documentation/devicetree/bindings/gpio/snps,dw-apb-gpio.yaml
+@@ -95,6 +95,12 @@ patternProperties:
+       '#interrupt-cells':
+         const: 2
  
-+		usb: usb@ffe7040000 {
-+			compatible = "snps,dwc3";
-+			reg = <0xff 0xe7040000 0x0 0x10000>;
-+			interrupts = <68 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&clk_misc CLK_USB>,
-+				 <&clk_misc CLK_USB_CTL_REF>,
-+				 <&clk_misc CLK_USB_SUSPEND>;
-+			clock-names = "bus_early", "ref", "suspend";
-+			resets = <&rst_misc TH1520_RESET_ID_USB3_VCC>;
-+			phys = <&usb_phy>;
-+			phy-names = "usb3-phy";
-+			status = "disabled";
-+		};
++    patternProperties:
++      "^.+-hog(-[0-9]+)?$":
++        type: object
++        required:
++          - gpio-hog
 +
- 		gmac1: ethernet@ffe7060000 {
- 			compatible = "thead,th1520-gmac", "snps,dwmac-3.70a";
- 			reg = <0xff 0xe7060000 0x0 0x2000>, <0xff 0xec004000 0x0 0x1000>;
-@@ -540,6 +554,19 @@ clk_misc: clock-controller@ffec02c100 {
- 			#clock-cells = <1>;
- 		};
- 
-+		usb_phy: phy@ffec030000 {
-+			compatible = "thead,th1520-usb-phy";
-+			reg = <0xff 0xec030000 0x0 0x10000>;
-+			clocks = <&clk_misc CLK_USB>,
-+				 <&clk_misc CLK_USB_PHY_REF>;
-+			clock-names = "bus", "ref";
-+			resets = <&rst_misc TH1520_RESET_ID_USB3_APB>,
-+				 <&rst_misc TH1520_RESET_ID_USB3_PHY>;
-+			reset-names = "bus", "phy";
-+			#phy-cells = <0>;
-+			status = "disabled";
-+		};
-+
- 		rst_vp: reset-controller@ffecc30000 {
- 			compatible = "thead,th1520-reset-vp";
- 			reg = <0xff 0xecc30000 0x0 0x14>;
+     required:
+       - compatible
+       - reg
 -- 
 2.52.0
 
