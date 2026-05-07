@@ -4,119 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AF989CD343B
-	for <linux-phy@archiver.kernel.org>; Wed,  6 May 2026 15:03:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CD77FCD3446
+	for <linux-phy@archiver.kernel.org>; Thu,  7 May 2026 08:18:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:Subject:
-	From:MIME-Version:Date:Message-ID:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=JzTEQYYpe+fJEkRicuNtRMETZIcHDWQ8J/j71dkVja4=; b=ProCtoSUPgmuKHe2pBJ1gYYuFo
-	D0jCakmrk96zEtbJy5swFOL/ZC850xfOdAzLGGgLa0ieSKFrQzk1dizJJKKnMzjPfjpeTbCBYWtKp
-	O9uw2UjCbfrQb2P1ZQ/o3kRePAfnfTRvgCje8ii3PviotZtVzM0c3/BT619dj4/Qn2oP3rtxUuSym
-	7uoUA2Ja3CnWL0ubjJPjeJ4XiqFSJCQy6EfnjAWcLdMqSO7J8ozuL5TnTDopFdq9IQy82gloOZR2U
-	ei5CgsbMQNMgT6o05lIb51XmxtEbEJVuZ/wEiEcQfwcQ6V3WZeoElKegKfmRaavl3Wy8qHELEnqcz
-	JnSsn65Q==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8uQKfK6bfXg8PS2aPl94LWMZC6SFqBhk7PaQtdf3Ezs=; b=g5654oXnj1iJLY
+	u8CLJUuVaJFUo8z3Fp1iDaQAZJPfjtZaJ9mXO+cSH66XjxqmUTWVYKJMoCwbPNrsIJRk8Jei9+Pyu
+	amL9w0vt9gmhl/csnbnJF/yocpnak6j3rfiUpS46vWj8a556rgtY1mA1Qxmiw23444NLXmplDAoI2
+	uUr0koFdkrE+2FO8VzDqYdafibj0hn95EaLWW7kXzz2g/ImSPUvOSAmOT/xto4ANq2GXJskDwIoB0
+	qEsLCFhS53Pxi+K8A9/QUehdxcwOoTYMrRELgphJCb5nSGqRjKfCNLh/enbVml/3alWzNgD5FRz34
+	wutb09v4t0rnNPgMotsQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wKdma-00000001Dzr-1MUF;
-	Wed, 06 May 2026 15:03:28 +0000
-Received: from mail-ej1-x632.google.com ([2a00:1450:4864:20::632])
+	id 1wKtvu-0000000380T-1NHx;
+	Thu, 07 May 2026 08:18:10 +0000
+Received: from smtp81.cstnet.cn ([159.226.251.81] helo=cstnet.cn)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wKdmZ-00000001Dyy-1jEN
-	for linux-phy@lists.infradead.org;
-	Wed, 06 May 2026 15:03:27 +0000
-Received: by mail-ej1-x632.google.com with SMTP id a640c23a62f3a-bc2a455fd55so474492566b.2
-        for <linux-phy@lists.infradead.org>; Wed, 06 May 2026 08:03:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1778079805; x=1778684605; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=J2mDJXIFYlupSX9LmHl3D1F2SQl0bbq2hvtOpkX4whw=;
-        b=CskY9TXJ0i8CueA6Y+Aiig/p3JgCGjQ3uWbemVFWz03IMBWOQBokQb1cM8RbU3JkZS
-         KhoWjvWQdOGUS8KpgCUDHCI4PNM2TEwDiglcBFXZqfyUrn9jVmbT0APQfJsuCJKolyCC
-         GzqZYNgoDrdqYtqFJyTzmKJLaIi0j/WaViiLA+aaw0KcBQKdHGqIP06AEZt/660pRicN
-         4v5gGWvD2IJKyltbVrP2+wT7vF9Da21cn9+HasBYcBCZGy8GiJheXSr/WS8al6755Qk4
-         nRgeMnPU0z4lMEpHTNUVe7If2dectbGaIcbehbfSCxZEiIwcNUZOamDMCXyDOMnFk9v+
-         DDpg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1778079805; x=1778684605;
-        h=content-transfer-encoding:in-reply-to:organization:autocrypt
-         :content-language:references:cc:to:subject:reply-to:from:user-agent
-         :mime-version:date:message-id:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=J2mDJXIFYlupSX9LmHl3D1F2SQl0bbq2hvtOpkX4whw=;
-        b=AQi1rqrwGkBkTzbB5tz78vFJp5XD1LvuJ38e9MEpObMVK5pe8yuB4ibfrI3P2rnvEM
-         QJVXGfZ93vbYKWbkrAFmaPOkLfhe+1d6VtuWv75jwKek9XPXZRDOs7vRGTW6ShKr1bvg
-         /re6OfSlZKH6B0V6Q9r/aN0Pfjx5WfyCemcz2ISxGKt3SjjXaVFXfDjlnnzeY2nKVCm9
-         0zqx2ObOY2FT/y7/Cj1mcV0CfC8GAUIitYDKu+zpehekQtKaH/cvG7RGetkdfwWAUBCp
-         YCZz4++BBwDLTb2oCuMhKO0X6y/aVa3/tVjWyKYIqPo+YEzQgB1tZybUBrSluXSdqnBM
-         PAjw==
-X-Forwarded-Encrypted: i=1; AFNElJ9WeD2S49OGjn2/Hb0oop6XK65Z0WXQ+ZZq6esaq7DSX6fPig9soaS9XVfLPzDUnKnVx2wDN3ZRDZU=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyKz0sGoB7It7xT1OIpI+VOEME89n6A+o7af8tsyhnZX2fSMIEU
-	vqEZbWyPFg8A9mt0STcYvnS3N3ymdzZ5bqX70GbbPXhf8sDuQIl3g/P7rRrZh0eG6fQ=
-X-Gm-Gg: AeBDieuBHYcAqw7om/+C6Z0Xs8ZpmWHFxZgsUtaRvp2YPfbpW5bZ2wInDvonyG4GZCP
-	C7CWM8zKosvy+Yzjx1usPvSQvTBWlj40p+K29xVAlrVhT+MNKIe/TJwLeL9aG8hocyl+EWnTDLH
-	me3sxvvpfj605qCu/PPjpN3h7eb9a48UuuqHH0XqtMKlj0cG4APJ7hsfEGe0bMCHV7+QCWNSAJ7
-	fS6WBBt9nWB1QmcVRw+r6fJUzWEERLV4GeN2p0Bh/W5FBl6h2dTIj1CGvtG61l0Lnrk528qWPX+
-	udbVtv5kDMVORaghpPFfWL7JEPrZUecN//WnvXgtnwesqmwt1oGG70GPgijGRc9FAF0aHZ79O6+
-	M+a0dfTklSUaacvk57Exfh4CV7AjakEcIJDpMJHmz/sGcttBZw8B1BrQNege74ROkglwD5ryRwh
-	OY2DZezerGwUy61nG2jl93zWnDi/5lha1LJbs6ScdauGjpGtUM8Sa5HwyPe5LIj2oRix51CYe+o
-	yDGwnH75fZqZmvRsA==
-X-Received: by 2002:a17:907:fd8a:b0:bba:3bd7:17c7 with SMTP id a640c23a62f3a-bc56ac3654amr180224366b.7.1778079805146;
-        Wed, 06 May 2026 08:03:25 -0700 (PDT)
-Received: from ?IPV6:2a01:e0a:106d:1080:5798:67fd:c866:b378? ([2a01:e0a:106d:1080:5798:67fd:c866:b378])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-45052953383sm12652260f8f.13.2026.05.06.08.03.23
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 06 May 2026 08:03:24 -0700 (PDT)
-Message-ID: <e2427d64-c7dd-4184-8824-f79cf15773d5@linaro.org>
-Date: Wed, 6 May 2026 17:03:23 +0200
+	id 1wKtvp-000000037xX-3RUj;
+	Thu, 07 May 2026 08:18:08 +0000
+Received: from edelgard.fodlan.icenowy.me (unknown [112.94.100.82])
+	by APP-03 (Coremail) with SMTP id rQCowAC3m+KLSvxpI_pNEA--.42168S4;
+	Thu, 07 May 2026 16:17:21 +0800 (CST)
+From: Icenowy Zheng <zhengxingda@iscas.ac.cn>
+To: Drew Fustini <fustini@kernel.org>,
+	Guo Ren <guoren@kernel.org>,
+	Fu Wei <wefu@redhat.com>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Paul Walmsley <pjw@kernel.org>,
+	Palmer Dabbelt <palmer@dabbelt.com>,
+	Albert Ou <aou@eecs.berkeley.edu>,
+	Alexandre Ghiti <alex@ghiti.fr>,
+	Jisheng Zhang <jszhang@kernel.org>
+Cc: Philipp Zabel <p.zabel@pengutronix.de>,
+	linux-riscv@lists.infradead.org,
+	linux-clk@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-gpio@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-usb@vger.kernel.org,
+	Icenowy Zheng <uwu@icenowy.me>,
+	Han Gao <rabenda.cn@gmail.com>,
+	Yao Zi <ziyao@disroot.org>,
+	Icenowy Zheng <zhengxingda@iscas.ac.cn>
+Subject: [PATCH 02/12] clk: thead: th1520-ap: add support for MISC subsys clocks
+Date: Thu,  7 May 2026 16:17:00 +0800
+Message-ID: <20260507081710.4090814-3-zhengxingda@iscas.ac.cn>
+X-Mailer: git-send-email 2.52.0
+In-Reply-To: <20260507081710.4090814-1-zhengxingda@iscas.ac.cn>
+References: <20260507081710.4090814-1-zhengxingda@iscas.ac.cn>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-From: Neil Armstrong <neil.armstrong@linaro.org>
-Subject: Re: [PATCH v4 2/2] phy: k1-usb: k3: add USB2 PHY support
-To: Yixun Lan <dlan@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Ze Huang <huang.ze@linux.dev>
-Cc: Junzhong Pan <panjunzhong@linux.spacemit.com>,
- linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
- linux-riscv@lists.infradead.org, spacemit@lists.linux.dev,
- linux-kernel@vger.kernel.org, Yao Zi <me@ziyao.cc>
-References: <20260305-11-k3-usb2-phy-v4-0-15554fb933bc@kernel.org>
- <20260305-11-k3-usb2-phy-v4-2-15554fb933bc@kernel.org>
-Content-Language: en-US, fr
-Autocrypt: addr=neil.armstrong@linaro.org; keydata=
- xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
- GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
- BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
- qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
- 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
- AAHNKk5laWwgQXJtc3Ryb25nIDxuZWlsLmFybXN0cm9uZ0BsaW5hcm8ub3JnPsLAkQQTAQoA
- OwIbIwULCQgHAwUVCgkICwUWAgMBAAIeAQIXgBYhBInsPQWERiF0UPIoSBaat7Gkz/iuBQJk
- Q5wSAhkBAAoJEBaat7Gkz/iuyhMIANiD94qDtUTJRfEW6GwXmtKWwl/mvqQtaTtZID2dos04
- YqBbshiJbejgVJjy+HODcNUIKBB3PSLaln4ltdsV73SBcwUNdzebfKspAQunCM22Mn6FBIxQ
- GizsMLcP/0FX4en9NaKGfK6ZdKK6kN1GR9YffMJd2P08EO8mHowmSRe/ExAODhAs9W7XXExw
- UNCY4pVJyRPpEhv373vvff60bHxc1k/FF9WaPscMt7hlkbFLUs85kHtQAmr8pV5Hy9ezsSRa
- GzJmiVclkPc2BY592IGBXRDQ38urXeM4nfhhvqA50b/nAEXc6FzqgXqDkEIwR66/Gbp0t3+r
- yQzpKRyQif3OwE0ETVkGzwEIALyKDN/OGURaHBVzwjgYq+ZtifvekdrSNl8TIDH8g1xicBYp
- QTbPn6bbSZbdvfeQPNCcD4/EhXZuhQXMcoJsQQQnO4vwVULmPGgtGf8PVc7dxKOeta+qUh6+
- SRh3vIcAUFHDT3f/Zdspz+e2E0hPV2hiSvICLk11qO6cyJE13zeNFoeY3ggrKY+IzbFomIZY
- 4yG6xI99NIPEVE9lNBXBKIlewIyVlkOaYvJWSV+p5gdJXOvScNN1epm5YHmf9aE2ZjnqZGoM
- Mtsyw18YoX9BqMFInxqYQQ3j/HpVgTSvmo5ea5qQDDUaCsaTf8UeDcwYOtgI8iL4oHcsGtUX
- oUk33HEAEQEAAcLAXwQYAQIACQUCTVkGzwIbDAAKCRAWmrexpM/4rrXiB/sGbkQ6itMrAIfn
- M7IbRuiSZS1unlySUVYu3SD6YBYnNi3G5EpbwfBNuT3H8//rVvtOFK4OD8cRYkxXRQmTvqa3
- 3eDIHu/zr1HMKErm+2SD6PO9umRef8V82o2oaCLvf4WeIssFjwB0b6a12opuRP7yo3E3gTCS
- KmbUuLv1CtxKQF+fUV1cVaTPMyT25Od+RC1K+iOR0F54oUJvJeq7fUzbn/KdlhA8XPGzwGRy
- 4zcsPWvwnXgfe5tk680fEKZVwOZKIEuJC3v+/yZpQzDvGYJvbyix0lHnrCzq43WefRHI5XTT
- QbM0WUIBIcGmq38+OgUsMYu4NzLu7uZFAcmp6h8g
-Organization: Linaro
-In-Reply-To: <20260305-11-k3-usb2-phy-v4-2-15554fb933bc@kernel.org>
+X-CM-TRANSID: rQCowAC3m+KLSvxpI_pNEA--.42168S4
+X-Coremail-Antispam: 1UD129KBjvJXoWxJFWftrW7XFW8GFWxtrWrZrb_yoWrJFyUpa
+	yrGrWftF4kXF4rWay3Jr1IyFsxuF4SqFyqqa9rG34xKw4fWry5JFy0kayFyF4Fg34fCay7
+	Jrs8KrW5CFs8GFUanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDU0xBIdaVrnRJUUUmF14x267AKxVWrJVCq3wAFc2x0x2IEx4CE42xK8VAvwI8IcIk0
+	rVWrJVCq3wAFIxvE14AKwVWUJVWUGwA2048vs2IY020E87I2jVAFwI0_Jryl82xGYIkIc2
+	x26xkF7I0E14v26ryj6s0DM28lY4IEw2IIxxk0rwA2F7IY1VAKz4vEj48ve4kI8wA2z4x0
+	Y4vE2Ix0cI8IcVAFwI0_Ar0_tr1l84ACjcxK6xIIjxv20xvEc7CjxVAFwI0_Gr1j6F4UJw
+	A2z4x0Y4vEx4A2jsIE14v26rxl6s0DM28EF7xvwVC2z280aVCY1x0267AKxVW0oVCq3wAS
+	0I0E0xvYzxvE52x082IY62kv0487Mc02F40EFcxC0VAKzVAqx4xG6I80ewAv7VC0I7IYx2
+	IY67AKxVWUJVWUGwAv7VC2z280aVAFwI0_Jr0_Gr1lOx8S6xCaFVCjc4AY6r1j6r4UM4x0
+	Y48IcxkI7VAKI48JM4x0x7Aq67IIx4CEVc8vx2IErcIFxwACI402YVCY1x02628vn2kIc2
+	xKxwCY1x0262kKe7AKxVW8ZVWrXwCF04k20xvY0x0EwIxGrwCFx2IqxVCFs4IE7xkEbVWU
+	JVW8JwC20s026c02F40E14v26r1j6r18MI8I3I0E7480Y4vE14v26r106r1rMI8E67AF67
+	kF1VAFwI0_GFv_WrylIxkGc2Ij64vIr41lIxAIcVC0I7IYx2IY67AKxVWUJVWUCwCI42IY
+	6xIIjxv20xvEc7CjxVAFwI0_Cr0_Gr1UMIIF0xvE42xK8VAvwI8IcIk0rVWUJVWUCwCI42
+	IY6I8E87Iv67AKxVWUJVW8JwCI42IY6I8E87Iv6xkF7I0E14v26r4UJVWxJrUvcSsGvfC2
+	KfnxnUUI43ZEXa7sRipB-tUUUUU==
+X-Originating-IP: [112.94.100.82]
+X-CM-SenderInfo: x2kh0wp0lqwv3d6l2u1dvotugofq/
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260506_080327_493185_1D5441EA 
-X-CRM114-Status: GOOD (  19.67  )
+X-CRM114-CacheID: sfid-20260507_011806_230083_4B3CEC84 
+X-CRM114-Status: GOOD (  11.52  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -128,118 +99,127 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: Neil Armstrong <neil.armstrong@linaro.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 3/5/26 02:00, Yixun Lan wrote:
-> Add USB2 PHY support for SpacemiT K3 SoC.
-> 
-> Register layout of handling USB disconnect operation has been changed,
-> So introducing a platform data to distinguish the different SoCs.
-> 
-> Reviewed-by: Yao Zi <me@ziyao.cc>
-> Signed-off-by: Yixun Lan <dlan@kernel.org>
-> ---
->   drivers/phy/spacemit/phy-k1-usb2.c | 34 +++++++++++++++++++++++++++++-----
->   1 file changed, 29 insertions(+), 5 deletions(-)
-> 
-> diff --git a/drivers/phy/spacemit/phy-k1-usb2.c b/drivers/phy/spacemit/phy-k1-usb2.c
-> index 9215d0b223b2..87b943d9111f 100644
-> --- a/drivers/phy/spacemit/phy-k1-usb2.c
-> +++ b/drivers/phy/spacemit/phy-k1-usb2.c
-> @@ -51,6 +51,9 @@
->   #define PHY_K1_HS_HOST_DISC		0x40
->   #define  PHY_K1_HS_HOST_DISC_CLR		BIT(0)
->   
-> +#define PHY_K3_HS_HOST_DISC		0x20
-> +#define  PHY_K3_HS_HOST_DISC_CLR		BIT(8)
-> +
->   #define PHY_PLL_DIV_CFG			0x98
->   #define  PHY_FDIV_FRACT_8_15		GENMASK(7, 0)
->   #define  PHY_FDIV_FRACT_16_19		GENMASK(11, 8)
-> @@ -145,7 +148,7 @@ static int spacemit_usb2phy_exit(struct phy *phy)
->   	return 0;
->   }
->   
-> -static int spacemit_usb2phy_disconnect(struct phy *phy, int port)
-> +static int spacemit_k1_usb2phy_disconnect(struct phy *phy, int port)
->   {
->   	struct spacemit_usb2phy *sphy = phy_get_drvdata(phy);
->   
-> @@ -155,10 +158,27 @@ static int spacemit_usb2phy_disconnect(struct phy *phy, int port)
->   	return 0;
->   }
->   
-> -static const struct phy_ops spacemit_usb2phy_ops = {
-> +static int spacemit_k3_usb2phy_disconnect(struct phy *phy, int port)
-> +{
-> +	struct spacemit_usb2phy *sphy = phy_get_drvdata(phy);
-> +
-> +	regmap_update_bits(sphy->regmap_base, PHY_K3_HS_HOST_DISC,
-> +			   PHY_K3_HS_HOST_DISC_CLR, PHY_K3_HS_HOST_DISC_CLR);
-> +
-> +	return 0;
-> +}
-> +
-> +static const struct phy_ops spacemit_k1_usb2phy_ops = {
->   	.init = spacemit_usb2phy_init,
->   	.exit = spacemit_usb2phy_exit,
-> -	.disconnect = spacemit_usb2phy_disconnect,
-> +	.disconnect = spacemit_k1_usb2phy_disconnect,
-> +	.owner = THIS_MODULE,
-> +};
-> +
-> +static const struct phy_ops spacemit_k3_usb2phy_ops = {
-> +	.init = spacemit_usb2phy_init,
-> +	.exit = spacemit_usb2phy_exit,
-> +	.disconnect = spacemit_k3_usb2phy_disconnect,
->   	.owner = THIS_MODULE,
->   };
->   
-> @@ -167,12 +187,15 @@ static int spacemit_usb2phy_probe(struct platform_device *pdev)
->   	struct phy_provider *phy_provider;
->   	struct device *dev = &pdev->dev;
->   	struct spacemit_usb2phy *sphy;
-> +	const struct phy_ops *ops;
->   	void __iomem *base;
->   
->   	sphy = devm_kzalloc(dev, sizeof(*sphy), GFP_KERNEL);
->   	if (!sphy)
->   		return -ENOMEM;
->   
-> +	ops = device_get_match_data(dev);
-> +
->   	sphy->clk = devm_clk_get_prepared(&pdev->dev, NULL);
->   	if (IS_ERR(sphy->clk))
->   		return dev_err_probe(dev, PTR_ERR(sphy->clk), "Failed to get clock\n");
-> @@ -185,7 +208,7 @@ static int spacemit_usb2phy_probe(struct platform_device *pdev)
->   	if (IS_ERR(sphy->regmap_base))
->   		return dev_err_probe(dev, PTR_ERR(sphy->regmap_base), "Failed to init regmap\n");
->   
-> -	sphy->phy = devm_phy_create(dev, NULL, &spacemit_usb2phy_ops);
-> +	sphy->phy = devm_phy_create(dev, NULL, ops);
->   	if (IS_ERR(sphy->phy))
->   		return dev_err_probe(dev, PTR_ERR(sphy->phy), "Failed to create phy\n");
->   
-> @@ -196,7 +219,8 @@ static int spacemit_usb2phy_probe(struct platform_device *pdev)
->   }
->   
->   static const struct of_device_id spacemit_usb2phy_dt_match[] = {
-> -	{ .compatible = "spacemit,k1-usb2-phy", },
-> +	{ .compatible = "spacemit,k1-usb2-phy", .data = &spacemit_k1_usb2phy_ops },
-> +	{ .compatible = "spacemit,k3-usb2-phy", .data = &spacemit_k3_usb2phy_ops },
->   	{ /* sentinel */ }
->   };
->   MODULE_DEVICE_TABLE(of, spacemit_usb2phy_dt_match);
-> 
+The TH1520 SoC contains a MISC_SUBSYS clock controller, which allows
+controlling of USB related clocks and MMC/SD controller AHB bus clocks.
 
-Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
+Add support for this clock controller, in order to enable USB support.
 
-Thanks,
-Neil
+Signed-off-by: Icenowy Zheng <zhengxingda@iscas.ac.cn>
+---
+ drivers/clk/thead/clk-th1520-ap.c | 64 +++++++++++++++++++++++++++++++
+ 1 file changed, 64 insertions(+)
+
+diff --git a/drivers/clk/thead/clk-th1520-ap.c b/drivers/clk/thead/clk-th1520-ap.c
+index 3a6847f1c950f..24f785f0b329a 100644
+--- a/drivers/clk/thead/clk-th1520-ap.c
++++ b/drivers/clk/thead/clk-th1520-ap.c
+@@ -1266,6 +1266,41 @@ static CCU_GATE(CLK_MIPIDSI1_PIXCLK, mipi_dsi1_pixclk, "mipi-dsi1-pixclk",
+ static CCU_GATE(CLK_HDMI_PIXCLK, hdmi_pixclk, "hdmi-pixclk", video_pll_clk_pd,
+ 		0x4, 0, 0);
+ 
++static struct clk_fixed_factor usb_suspend_div_clk = {
++	.div		= 24,
++	.mult		= 1,
++	.hw.init	= CLK_HW_INIT_PARENTS_DATA("usb-suspend-div",
++						   osc_24m_clk,
++						   &clk_fixed_factor_ops,
++						   0),
++};
++
++static const struct clk_parent_data usb_suspend_parents[] = {
++	{ .hw = &usb_suspend_div_clk.hw },
++};
++
++static CCU_GATE(CLK_MISCSYS_ACLK, miscsys_aclk, "miscsys-aclk", axi_aclk_pd,
++		0x0, 0, CLK_IS_CRITICAL);
++
++static const struct clk_parent_data miscsys_aclk_pd[] = {
++	{ .hw = &miscsys_aclk.gate.hw },
++};
++
++static CCU_GATE(CLK_USB, usb_clk, "usb", miscsys_aclk_pd, 0x4, 0,
++		CLK_IS_CRITICAL);
++static CCU_GATE(CLK_USB_CTL_REF, usb_ctl_ref_clk, "usb-ctl-ref", osc_24m_clk,
++		0x4, 1, 0);
++static CCU_GATE(CLK_USB_PHY_REF, usb_phy_ref_clk, "usb-phy-ref", osc_24m_clk,
++		0x4, 2, 0);
++static CCU_GATE(CLK_USB_SUSPEND, usb_suspend_clk, "usb-suspend",
++		usb_suspend_parents, 0x4, 3, 0);
++static CCU_GATE(CLK_EMMC, emmc_clk, "emmc", perisys_ahb_hclk_pd, 0x8, 0,
++		0);
++static CCU_GATE(CLK_SDIO0, sdio0_clk, "sdio0", perisys_ahb_hclk_pd, 0xc, 0,
++		0);
++static CCU_GATE(CLK_SDIO1, sdio1_clk, "sdio1", perisys_ahb_hclk_pd, 0x10, 0,
++		0);
++
+ static CLK_FIXED_FACTOR_HW(gmac_pll_clk_100m, "gmac-pll-clk-100m",
+ 			   &gmac_pll_clk.common.hw, 10, 1, 0);
+ 
+@@ -1410,6 +1445,17 @@ static struct ccu_gate *th1520_vo_gate_clks[] = {
+ 	&hdmi_pixclk
+ };
+ 
++static struct ccu_gate *th1520_misc_gate_clks[] = {
++	&miscsys_aclk,
++	&usb_clk,
++	&usb_ctl_ref_clk,
++	&usb_phy_ref_clk,
++	&usb_suspend_clk,
++	&emmc_clk,
++	&sdio0_clk,
++	&sdio1_clk
++};
++
+ static const struct regmap_config th1520_clk_regmap_config = {
+ 	.reg_bits = 32,
+ 	.val_bits = 32,
+@@ -1451,6 +1497,14 @@ static const struct th1520_plat_data th1520_vo_platdata = {
+ 	.nr_gate_clks = ARRAY_SIZE(th1520_vo_gate_clks),
+ };
+ 
++static const struct th1520_plat_data th1520_misc_platdata = {
++	.th1520_gate_clks = th1520_misc_gate_clks,
++
++	.nr_clks = CLK_SDIO1 + 1,
++
++	.nr_gate_clks = ARRAY_SIZE(th1520_misc_gate_clks),
++};
++
+ /*
+  * Maintain clock rate of c910_bus_clk below TH1520_C910_BUS_MAX_RATE (750MHz)
+  * when its parent, c910_clk, changes the rate.
+@@ -1609,6 +1663,12 @@ static int th1520_clk_probe(struct platform_device *pdev)
+ 			return ret;
+ 	}
+ 
++	if (plat_data == &th1520_ap_platdata) {
++		ret = devm_clk_hw_register(dev, &usb_suspend_div_clk.hw);
++		if (ret)
++			return ret;
++	}
++
+ 	ret = devm_of_clk_add_hw_provider(dev, of_clk_hw_onecell_get, priv);
+ 	if (ret)
+ 		return ret;
+@@ -1625,6 +1685,10 @@ static const struct of_device_id th1520_clk_match[] = {
+ 		.compatible = "thead,th1520-clk-vo",
+ 		.data = &th1520_vo_platdata,
+ 	},
++	{
++		.compatible = "thead,th1520-clk-misc",
++		.data = &th1520_misc_platdata,
++	},
+ 	{ /* sentinel */ },
+ };
+ MODULE_DEVICE_TABLE(of, th1520_clk_match);
+-- 
+2.52.0
+
 
 -- 
 linux-phy mailing list
