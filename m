@@ -4,73 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D45D0CD37AF
-	for <linux-phy@archiver.kernel.org>; Sun, 10 May 2026 07:44:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4F6F9CD3427
+	for <linux-phy@archiver.kernel.org>; Sun, 10 May 2026 08:55:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tP3WuThPU0Eadr5BrIfmjscthUfAw44QkkaJra06+FU=; b=1DQrp6qLM65hmM
-	6yqLISiySuL5714Uw+8/3Kk8NsBVTyTLy95+BKaFGMEcN6zsh6gR3sF1zW/s6w/HqPdJ1ikjsFEnx
-	vUq8SHSedPZpbZEPOGb3or1D+7LsKLw7kHAkhyTagpsCRyZe96bqQYHO+Uwclbv5moigKuc6zXoe/
-	8oa297WJ2ec/FCWl7NGh52FfNxf6AShfy6upXbKrf0u1oBye8KO0Er19NlfuYQidxKQ2xhmzSOtTU
-	UpBxkxBNOWRbFS9sBqUgE0+oNPKxrg9Zex+HvnSG8GTiYcrBBO3CwOfDcFge2Q74u3MUKsQXMGBnq
-	jnYoQPaRjMiV9T4CQtJA==;
+	List-Owner; bh=nzGzWTatIgicGYJU6zlv1U9ywpnHNiQS/JAyBdikYmg=; b=Ul6S5QRLNuenfs
+	faF5u7tlLJrJHDsG73YMkdg7xM29umMgEbkuTur4tHbmUJJLSm2HxwF/9Xvc8xdpt1CL3o4uJqiZ+
+	1OR2nMo8cNVsIv/RZL5vGMJ6ChjNzubQOrLX5qOh0AWSB06hbnjGDSbbS8mIEp8dkysF6POgt0txS
+	UeGbGvR5uHJ0M00qQX1qr/s/yIEiYqHLqOS7A81GIYSaqGPo+vxD6aphnvG8NOEu3vpBywHKJjI3Y
+	hWYiQ5gxGFpxKH/COCFkGzZFYvfZaiN52aRpA2VtiAwuQRrZSOX1FzPCuKx/umNKzn/4P6n5S6dCV
+	bEbWLZ/I2vEVGmnKVmjA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wLypu-0000000AMbv-1kB3;
-	Sun, 10 May 2026 07:44:26 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wLzx9-0000000ARhz-0WVJ;
+	Sun, 10 May 2026 08:55:59 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wLypq-0000000AMb6-2Veb;
-	Sun, 10 May 2026 07:44:24 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 4492041E5A;
-	Sun, 10 May 2026 07:44:21 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 418C4C2BCB8;
-	Sun, 10 May 2026 07:44:20 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1778399061;
-	bh=JdzQ4anNbdp6hZvOcAV+vpR6o5TNnOw3BRE3u7jPJ3I=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=Srw5A2bCOfwk/jitLq7nfgkj2WCDxxbD2FIBLb/TQTOLxKHcxidSYyuEZ03osjmdr
-	 L2IwVt0iQHGEMwt3ajEdM28j7rl+pXTUfjkDXJpRNoTX5T7UtMAd1hA3+UElo/ftTl
-	 GxbOZ6eIY30unSLP0f08qKwX6VbzVh7A3m2pJov14i86Qq4xSgZeO/A775E3tFmWIK
-	 vnApd2+1/75BEmcmurPKNeJU7HFX11y76Wd/dFytTW5BGfXWPz+RUzza3mXvoVryXe
-	 HqHDRV3w8lReiaKoZjwCjs0cUXLMw673Uco1IorVW50vL8YSf0DgjZl81FCpwXOgUu
-	 emf7xO9RWG0rA==
-Date: Sun, 10 May 2026 13:14:17 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Icenowy Zheng <zhengxingda@iscas.ac.cn>
-Cc: Drew Fustini <fustini@kernel.org>, Guo Ren <guoren@kernel.org>,
-	Fu Wei <wefu@redhat.com>,
-	Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Paul Walmsley <pjw@kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>,
-	Albert Ou <aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>,
-	Jisheng Zhang <jszhang@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	linux-riscv@lists.infradead.org, linux-clk@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-gpio@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-usb@vger.kernel.org, Icenowy Zheng <uwu@icenowy.me>,
-	Han Gao <rabenda.cn@gmail.com>, Yao Zi <ziyao@disroot.org>
-Subject: Re: [PATCH 05/12] phy: add a driver for T-Head TH1520 USB PHY
-Message-ID: <agA3URhGA1u6R7LD@vaman>
-References: <20260507081710.4090814-1-zhengxingda@iscas.ac.cn>
- <20260507081710.4090814-6-zhengxingda@iscas.ac.cn>
+	id 1wLzx6-0000000ARgs-2Rh8;
+	Sun, 10 May 2026 08:55:57 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1778403351;
+	bh=YwiW+Q760MzYPbYvu9d9Xiw/mH/fNOhKEvXvG0HvquM=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=QFE5N1A3ga/Uu86j6mV7t3ln6mwZ1ZepXAvnVa8kVVlSGomKkqDfL4Dd8xoPkSgid
+	 RXCobStc/4gG8ymUdAmhwuEB1q2NlbHf3r1zmIFmdCsX47j1BvvyT4zNV8E9/p7ats
+	 LIt88bgCnLWvpv3zvTGpM3Y9QsngbCCkuA+/BkcPvdtP4FvdkvdvPz9IA/rjlNyfCC
+	 DlZuoEUMW0FnCzogFBS4Vh1tCfNjH5m6Qz73ywUdGDU29zP6194sCg5R4CdpUlydw4
+	 sp7ITNzvHApAAk572rSvCT6mWEHj/CDaGeGpx1r7d1ENBUSCTw/BfYKtKSDNfuNxPS
+	 y7AV31Hxou9xg==
+Received: from [100.64.0.241] (unknown [100.64.0.241])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: cristicc)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id B4AED17E0EB6;
+	Sun, 10 May 2026 10:55:50 +0200 (CEST)
+Message-ID: <c76d7020-2b3b-4f30-ab40-a8442c953966@collabora.com>
+Date: Sun, 10 May 2026 11:55:50 +0300
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260507081710.4090814-6-zhengxingda@iscas.ac.cn>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 0/6] phy: rockchip: samsung-hdptx: Clock fixes and API
+ transition cleanups
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>,
+ Heiko Stuebner <heiko@sntech.de>, Algea Cao <algea.cao@rock-chips.com>,
+ Dmitry Baryshkov <lumag@kernel.org>, kernel@collabora.com,
+ linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20260227-hdptx-clk-fixes-v1-0-f998f2762d0f@collabora.com>
+ <agA1dFpheTaBfyUt@vaman>
+Content-Language: en-US
+From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+In-Reply-To: <agA1dFpheTaBfyUt@vaman>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260510_004422_695281_DB090BA8 
-X-CRM114-Status: GOOD (  33.06  )
+X-CRM114-CacheID: sfid-20260510_015556_788372_5E68E7BE 
+X-CRM114-Status: GOOD (  12.77  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,296 +79,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 07-05-26, 16:17, Icenowy Zheng wrote:
-> The USB PHY on T-Head TH1520 SoC is a Synopsys USB 3.0 FemtoPHY, with
-> some PHY parameters exported as another system controller along with it.
+Hi Vinod,
+
+On 5/10/26 10:36 AM, Vinod Koul wrote:
+> On 27-02-26, 22:48, Cristian Ciocaltea wrote:
+>> This series provides a set of bug fixes and cleanups for the Rockchip
+>> Samsung HDPTX PHY driver.
+>>
+>> The first part of the series (i.e. PATCH 1 & 2) addresses clock rate
+>> calculation and synchronization issues.  Specifically, it fixes edge
+>> cases where the PHY PLL is pre-programmed by an external component (like
+>> a bootloader) or when changing the color depth (bpc) while keeping the
+>> modeline constant.  Because the Common Clock Framework .set_rate()
+>> callback might not be invoked if the pixel clock remains unchanged, this
+>> previously led to out-of-sync states between CCF and the actual HDMI PHY
+>> configuration.
+>>
+>> The second part focuses on code cleanups and modernizing the register
+>> access.  Now that dw_hdmi_qp driver has fully switched to using
+>> phy_configure(), we can drop the deprecated TMDS rate setup workarounds
+>> and the restrict_rate_change flag logic.  Finally, it refactors the
+>> driver to consistently use standard bitfield macros.
 > 
-> As a few PHY parameters' default value isn't ready to work, add a driver
-> configuring them before letting the PHY run, in addition to
-> clock/reset/regulator management.
+> Sorry looks like I have missed to review this one.
+> Can you please rebase on phy/fixes and send...
 
-Is there any dependency on the rest of series, if not please split up!
+I've just verified and it applies cleanly on top of phy/fixes.
+Do you still need a resend?
 
-Some warnings flagged by sashiko, please check
-https://sashiko.dev/#/patchset/20260507081710.4090814-1-zhengxingda%40iscas.ac.cn
-
-
-> 
-> Signed-off-by: Icenowy Zheng <zhengxingda@iscas.ac.cn>
-> ---
->  drivers/phy/Kconfig                |   1 +
->  drivers/phy/Makefile               |   1 +
->  drivers/phy/thead/Kconfig          |  12 ++
->  drivers/phy/thead/Makefile         |   2 +
->  drivers/phy/thead/phy-th1520-usb.c | 197 +++++++++++++++++++++++++++++
->  5 files changed, 213 insertions(+)
->  create mode 100644 drivers/phy/thead/Kconfig
->  create mode 100644 drivers/phy/thead/Makefile
->  create mode 100644 drivers/phy/thead/phy-th1520-usb.c
-> 
-> diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
-> index 227b9a4c612e8..ea1a52e14b839 100644
-> --- a/drivers/phy/Kconfig
-> +++ b/drivers/phy/Kconfig
-> @@ -164,6 +164,7 @@ source "drivers/phy/st/Kconfig"
->  source "drivers/phy/starfive/Kconfig"
->  source "drivers/phy/sunplus/Kconfig"
->  source "drivers/phy/tegra/Kconfig"
-> +source "drivers/phy/thead/Kconfig"
->  source "drivers/phy/ti/Kconfig"
->  source "drivers/phy/xilinx/Kconfig"
->  
-> diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
-> index f49d83f00a3d8..4604522548c91 100644
-> --- a/drivers/phy/Makefile
-> +++ b/drivers/phy/Makefile
-> @@ -48,5 +48,6 @@ obj-$(CONFIG_GENERIC_PHY)		+= allwinner/	\
->  					   starfive/	\
->  					   sunplus/	\
->  					   tegra/	\
-> +					   thead/	\
->  					   ti/		\
->  					   xilinx/
-> diff --git a/drivers/phy/thead/Kconfig b/drivers/phy/thead/Kconfig
-> new file mode 100644
-> index 0000000000000..14012db5973c4
-> --- /dev/null
-> +++ b/drivers/phy/thead/Kconfig
-> @@ -0,0 +1,12 @@
-> +# SPDX-License-Identifier: GPL-2.0-only
-> +config PHY_TH1520_USB
-> +	tristate "USB PHY driver for T-Head TH1520 SoC"
-> +	depends on ARCH_THEAD || COMPILE_TEST
-> +	depends on COMMON_CLK
-> +	depends on HAS_IOMEM
-> +	depends on OF
-> +	depends on RESET_CONTROLLER
-> +	select GENERIC_PHY
-> +	default ARCH_THEAD
-
-Why should this be default?
-
-> +	help
-> +	  Enable support for the USB PHY on the T-Head TH1520 SoC.
-> diff --git a/drivers/phy/thead/Makefile b/drivers/phy/thead/Makefile
-> new file mode 100644
-> index 0000000000000..5b459bc7004bd
-> --- /dev/null
-> +++ b/drivers/phy/thead/Makefile
-> @@ -0,0 +1,2 @@
-> +# SPDX-License-Identifier: GPL-2.0-only
-> +obj-$(CONFIG_PHY_TH1520_USB) += phy-th1520-usb.o
-> diff --git a/drivers/phy/thead/phy-th1520-usb.c b/drivers/phy/thead/phy-th1520-usb.c
-> new file mode 100644
-> index 0000000000000..c87bd779bbb74
-> --- /dev/null
-> +++ b/drivers/phy/thead/phy-th1520-usb.c
-> @@ -0,0 +1,197 @@
-> +// SPDX-License-Identifier: GPL-2.0-only
-> +/*
-> + * Copyright (C) 2026 Institute of Software, Chinese Academy of Sciences (ISCAS)
-> + *
-> + * Authors:
-> + * Icenowy Zheng <zhengxingda@iscas.ac.cn>
-> + */
-> +
-> +#include <linux/clk.h>
-> +#include <linux/module.h>
-> +#include <linux/of.h>
-> +#include <linux/phy/phy.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/regmap.h>
-> +#include <linux/regulator/consumer.h>
-> +#include <linux/reset.h>
-> +
-> +#define USB_SYSCON_OFFSET		0xf000
-> +
-> +/* All the below registers are in the USB syscon region */
-> +#define USB_CLK_GATE_STS		0x0
-> +#define USB_LOGIC_ANALYZER_TRACE_STS0	0x4
-> +#define USB_LOGIC_ANALYZER_TRACE_STS1	0x8
-> +#define USB_GPIO			0xc
-> +#define USB_DEBUG_STS0			0x10
-> +#define USB_DEBUG_STS1			0x14
-> +#define USB_DEBUG_STS2			0x18
-> +#define USBCTL_CLK_CTRL0		0x1c
-> +#define USBPHY_CLK_CTRL1		0x20
-> +#define USBPHY_TEST_CTRL0		0x24
-> +#define USBPHY_TEST_CTRL1		0x28
-> +#define USBPHY_TEST_CTRL2		0x2c
-> +#define USBPHY_TEST_CTRL3		0x30
-> +#define USB_SSP_EN			0x34
-> +#define USB_HADDR_SEL			0x38
-> +#define USB_SYS				0x3c
-> +#define USB_HOST_STATUS			0x40
-> +#define USB_HOST_CTRL			0x44
-> +#define USBPHY_HOST_CTRL		0x48
-> +#define USBPHY_HOST_STATUS		0x4c
-> +#define USB_TEST_REG0			0x50
-> +#define USB_TEST_REG1			0x54
-> +#define USB_TEST_REG2			0x58
-> +#define USB_TEST_REG3			0x5c
-
-Why do need these test registers, they seem unused?
-
-> +
-> +#define USB_SYS_COMMONONN		BIT(0)
-> +
-> +#define USB_SSP_EN_REF_SSP_EN		BIT(0)
-> +
-> +struct th1520_usb_phy {
-> +	struct platform_device *pdev;
-> +	struct phy *phy;
-> +	struct regmap *regmap;
-> +	struct clk *ref_clk;
-> +	struct reset_control *phy_reset;
-> +};
-> +
-> +static int th1520_usb_phy_init(struct phy *phy)
-> +{
-> +	struct th1520_usb_phy *th1520_phy = phy_get_drvdata(phy);
-> +	int ret;
-> +
-> +	ret = clk_prepare_enable(th1520_phy->ref_clk);
-> +	if (ret)
-> +		return ret;
-> +
-> +	ret = reset_control_assert(th1520_phy->phy_reset);
-> +	if (ret)
-> +		goto err_disable_clk;
-> +
-> +	/*
-> +	 * Do some initial PHY setup:
-> +	 * - Set COMMONONN to allow the PHY to automatically power down.
-> +	 * - Set REF_SSP_EN to enable feeding reference clock to SuperSpeed
-> +	 *   PHY clock PLL.
-> +	 */
-> +	regmap_set_bits(th1520_phy->regmap, USB_SYS, USB_SYS_COMMONONN);
-> +	regmap_set_bits(th1520_phy->regmap, USB_SSP_EN, USB_SSP_EN_REF_SSP_EN);
-> +
-> +	ret = reset_control_deassert(th1520_phy->phy_reset);
-> +	if (ret)
-> +		goto err_disable_clk;
-> +
-> +	udelay(10);
-> +
-> +	return 0;
-> +
-> +err_disable_clk:
-> +	clk_disable_unprepare(th1520_phy->ref_clk);
-> +	return ret;
-> +}
-> +
-> +static int th1520_usb_phy_exit(struct phy *phy)
-> +{
-> +	struct th1520_usb_phy *th1520_phy = phy_get_drvdata(phy);
-> +	int ret;
-> +
-> +	ret = reset_control_assert(th1520_phy->phy_reset);
-> +	if (ret)
-> +		return ret;
-> +
-> +	clk_disable_unprepare(th1520_phy->ref_clk);
-> +
-> +	return 0;
-> +}
-> +
-> +static const struct phy_ops th1520_usb_phy_ops = {
-> +	.init		= th1520_usb_phy_init,
-> +	.exit		= th1520_usb_phy_exit,
-> +	.owner		= THIS_MODULE,
-> +};
-> +
-> +static const struct regmap_config phy_regmap_config = {
-> +	.reg_bits = 32,
-> +	.val_bits = 32,
-> +	.reg_stride = 4,
-> +	.max_register = USB_TEST_REG3,
-> +};
-> +
-> +static int th1520_usb_phy_probe(struct platform_device *pdev)
-> +{
-> +	struct phy_provider *phy_provider;
-> +	struct device *dev = &pdev->dev;
-> +	struct th1520_usb_phy *th1520_phy;
-> +	struct reset_control *bus_reset;
-> +	void __iomem *base;
-> +	int ret;
-> +
-> +	th1520_phy = devm_kzalloc(dev, sizeof(*th1520_phy), GFP_KERNEL);
-> +	if (!th1520_phy)
-> +		return -ENOMEM;
-> +
-> +	th1520_phy->pdev = pdev;
-> +
-> +	base = devm_platform_ioremap_resource(pdev, 0);
-> +	if (IS_ERR(base))
-> +		return PTR_ERR(base);
-> +
-> +	th1520_phy->ref_clk = devm_clk_get(dev, "ref");
-> +	if (IS_ERR(th1520_phy->ref_clk))
-> +		return PTR_ERR(th1520_phy->ref_clk);
-> +
-> +	/* De-assert the bus reset and leave it that way */
-> +	bus_reset = devm_reset_control_get_exclusive_deasserted(dev, "bus");
-> +	if (IS_ERR(bus_reset))
-> +		return PTR_ERR(bus_reset);
-> +
-> +	th1520_phy->phy_reset = devm_reset_control_get_exclusive(dev, "phy");
-> +	if (IS_ERR(th1520_phy->phy_reset))
-> +		return PTR_ERR(th1520_phy->phy_reset);
-> +
-> +	/*
-> +	 * Schematics of several boards (Lichee Module 4A/Milk-V Meles)
-> +	 * describe this power rail as always-on.
-> +	 */
-> +	ret = devm_regulator_get_enable(dev, "avdd33-usb3");
-> +	if (ret)
-> +		return ret;
-> +
-> +	th1520_phy->regmap = devm_regmap_init_mmio_clk(dev, "bus",
-> +						       base + USB_SYSCON_OFFSET,
-> +						       &phy_regmap_config);
-> +	if (IS_ERR(th1520_phy->regmap))
-> +		return dev_err_probe(dev, PTR_ERR(th1520_phy->regmap),
-> +				     "Failed to init regmap\n");
-> +
-> +	th1520_phy->phy = devm_phy_create(dev, dev->of_node, &th1520_usb_phy_ops);
-> +	if (IS_ERR(th1520_phy->phy)) {
-> +		dev_err(dev, "failed to create PHY\n");
-> +		return PTR_ERR(th1520_phy->phy);
-> +	}
-> +
-> +	phy_set_drvdata(th1520_phy->phy, th1520_phy);
-> +
-> +	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
-> +
-> +	return PTR_ERR_OR_ZERO(phy_provider);
-> +}
-> +
-> +static const struct of_device_id th1520_usb_phy_of_table[] = {
-> +	{ .compatible = "thead,th1520-usb-phy" },
-> +	{ }
-> +};
-> +MODULE_DEVICE_TABLE(of, th1520_usb_phy_of_table);
-> +
-> +static struct platform_driver th1520_usb_phy_driver = {
-> +	.driver = {
-> +		.name = "th1520-usb-phy",
-> +		.of_match_table = th1520_usb_phy_of_table,
-> +	},
-> +	.probe = th1520_usb_phy_probe,
-> +};
-> +
-> +module_platform_driver(th1520_usb_phy_driver);
-> +
-> +MODULE_DESCRIPTION("T-Head TH1520 USB PHY driver");
-> +MODULE_LICENSE("GPL");
-> -- 
-> 2.52.0
-
--- 
-~Vinod
+Regards,
+Cristian
 
 -- 
 linux-phy mailing list
