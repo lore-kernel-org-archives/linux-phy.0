@@ -4,56 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 815E3CD37AF
-	for <linux-phy@archiver.kernel.org>; Sun, 10 May 2026 12:23:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 11386CD3427
+	for <linux-phy@archiver.kernel.org>; Sun, 10 May 2026 12:23:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tbPiA7/Idf3nicGuI1h+FgoYEURnxpsax79K5K3fwWY=; b=DopnyK6fTQdzMM
-	hKf5hGw8aW/Rp6V5Pmuw0JnhxHJkBFIp7ad27QNBNcJt8WrHjOyuil4hklvikSg9NkiXTu/zMldvH
-	7YVKvLuS9SUtvno6p7xatl+ZN+RDXMW6ViGJikgCCFryBQNLqmt69KrYrm5JqTTzQblYRfNPsqiBx
-	T6C9zDfxccc+gnvTfnOz6sKU3/yGWMQxAXwXljnfTpvN7s3zQ7N/uIZ47XkCcdiQmSTWgjwTJaO0c
-	Z4S9LlQjQw+VUwpD76orqXBFWIPQX/CXosbgLaNb7fJJA9sSjjXvAO/zy7wWr9vmrp2MM9SLv5g30
-	JcSfP2YhWN9wJMWenelg==;
+	List-Owner; bh=kSZWt9tJTigjEJK9d0GAJa8Txq/pYntDXu75GYFW6Bk=; b=kjUo9SVGgH04oi
+	gbMzeKNkezPfPvOfwYXQQmrIy7U9bTS+OvqGRPlSlC8tTi7Tr9fdcv7s7yp8BvaBM/Ana764g+ILk
+	VAwRP6pbiA5BZtmOWMiEFldt2T71V8MoH0kj8SUPqaaHfdH+8pBOOjLw2ch3ZyvTyq2uErjfhMfhd
+	lBE5preXt1ZwvZqHmPsoWzf30oKm0G0wEPVwhD5r6z+JxBGyfdkEpZ/JWljO6VtcjfMcCsqwXtTwO
+	I/0lpuLUrRKb4KcCL4s21Al7DhEI03T3TFptBhsf4xJ2Lws26scrigldII9gMhUVLBKFmJdRwKemB
+	ZchvCSiVOtNbDDA2tMbQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wM3CF-0000000AhU3-1CoU;
-	Sun, 10 May 2026 12:23:47 +0000
+	id 1wM3CI-0000000AhUz-1mB0;
+	Sun, 10 May 2026 12:23:50 +0000
 Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wM3CE-0000000AhTm-12qv
+	id 1wM3CH-0000000AhUa-1hcM
 	for linux-phy@lists.infradead.org;
-	Sun, 10 May 2026 12:23:46 +0000
+	Sun, 10 May 2026 12:23:49 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 48E696001A;
+	by tor.source.kernel.org (Postfix) with ESMTP id D7EE160121;
+	Sun, 10 May 2026 12:23:48 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 96487C2BCB8;
 	Sun, 10 May 2026 12:23:45 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 78EE0C2BCB8;
-	Sun, 10 May 2026 12:23:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1778415824;
-	bh=JRZ6kenYshiprUC0l6BGPDc6PZh14j8aJoryTH4ydpU=;
+	s=k20201202; t=1778415828;
+	bh=x1WogqHFVAt69woD/1Gf7Lf61vggakdMrNHQ3WQm5Yg=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=kH+n+H0psskCoMcfZetGi+Lpr57BSDb7rOA85FdlgO53ldE5QzgGjX4c10m6dfE+0
-	 4SDRHr1yUxawELAJPOqi7p25gKbMvyz7yUJsGb6aRJoxlSJi4YVqozYn/KMTscG454
-	 vvZoMx4iC2NfpT2uHj9Y0qixmL8XAm+uirNJmda1jvax435jpGH7ILA0NGshAcgtwK
-	 uqNJ17Jzh0lwtuP/bm/nlDCvFsiYR8QyTPqAhzsCQc/QVrXERQasNyM90Pp1P/LyNa
-	 GmeArJCBmuZO6NFKd9q5CS4nuCxwyzC3TUo7Qe9eRO80Pwq6Mh3fywGNDAn9S616kG
-	 ybJE0Zfn1/8SQ==
+	b=JgCk0u3sKA1e8f+nIhQbrj8DuqU8X0ml4I4RpPPTnqlAThnQE/HCnec8Ian6oZExP
+	 YP6lJaQFa1Cu2JZeG9pF8m2Dp5dyPPHUBwqh0T5KlUyeeGBaLQMnVNZYyZMsLlmuNW
+	 219aeKJMZbk2zOcXMGHF6cWM4VGncHUc6+OWqv80CErr0gSFgPVedZ+q8k0LRXAfvh
+	 ViqAXYCYya0TDeWkUW3HpXIJj4b3gpFetVDXdu4y5W+SOJVv00gLEIEILhjZvqE6Qb
+	 WrfvmRyL9GLyoQvPrqbi9zdTQXlpR03htjep8HTaxpXcOk+DB2ZEnxXWrM2XbZZl+S
+	 aG9mhG/1CXSog==
 From: Vinod Koul <vkoul@kernel.org>
-To: Miquel Raynal <miquel.raynal@bootlin.com>, 
+To: Jonathan Hunter <jonathanh@nvidia.com>, JC Kuo <jckuo@nvidia.com>, 
  Neil Armstrong <neil.armstrong@linaro.org>, 
- Igal Liberman <igall@marvell.com>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Gabor Juhos <j4g8y7@gmail.com>
-Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org
-In-Reply-To: <20260321-a3700-utmi-fix-usb2_phy_ctrl-access-v1-1-6005ff4b5058@gmail.com>
-References: <20260321-a3700-utmi-fix-usb2_phy_ctrl-access-v1-1-6005ff4b5058@gmail.com>
-Subject: Re: [PATCH phy-fixes] phy: marvell: mvebu-a3700-utmi: fix
- incorrect USB2_PHY_CTRL register access
-Message-Id: <177841582201.420676.8151752263414556886.b4-ty@kernel.org>
-Date: Sun, 10 May 2026 17:53:42 +0530
+ Thierry Reding <thierry.reding@kernel.org>, 
+ Wei-Cheng Chen <weichengc@nvidia.com>
+Cc: Wayne Chang <waynec@nvidia.com>, WK Tsai <wtsai@nvidia.com>, 
+ linux-phy@lists.infradead.org, linux-tegra@vger.kernel.org, 
+ linux-kernel@vger.kernel.org
+In-Reply-To: <20260504033305.2283145-1-weichengc@nvidia.com>
+References: <20260504033305.2283145-1-weichengc@nvidia.com>
+Subject: Re: [PATCH v2] phy: tegra: xusb: Fix per-pad high-speed
+ termination calibration
+Message-Id: <177841582520.420676.17804594742388538049.b4-ty@kernel.org>
+Date: Sun, 10 May 2026 17:53:45 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
 X-BeenThere: linux-phy@lists.infradead.org
@@ -67,23 +69,34 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Ck9uIFNhdCwgMjEgTWFyIDIwMjYgMTU6NDI6MzIgKzAxMDAsIEdhYm9yIEp1aG9zIHdyb3RlOgo+
-IFRoZSBtdmVidV9hMzcwMF91dG1pX3BoeV9wb3dlcl9vZmYoKSBmdW5jdGlvbiB0cmllcyB0byBt
-b2RpZnkgdGhlCj4gVVNCMl9QSFlfQ1RSTCByZWdpc3RlciBieSB1c2luZyB0aGUgSU8gYWRkcmVz
-cyBvZiB0aGUgUEhZIElQIGJsb2NrIGFsb25nCj4gd2l0aCB0aGUgcmVhZGwvd3JpdGVsIElPIGFj
-Y2Vzc29ycy4gSG93ZXZlciwgdGhlIHJlZ2lzdGVyIGV4aXN0IGluIHRoZQo+IFVTQiBtaXNjZWxs
-YW5lb3VzIHJlZ2lzdGVyIHNwYWNlLCBhbmQgYXMgc3VjaCBpdCBtdXN0IGJlIGFjY2Vzc2VkIHZp
-YQo+IHJlZ21hcCBsaWtlIGl0IGlzIGRvbmUgaW4gdGhlIG12ZWJ1X2EzNzAwX3V0bWlfcGh5X3Bv
-d2VyX29uKCkgZnVuY3Rpb24uCj4gCj4gQ2hhbmdlIHRoZSBjb2RlIHRvIHVzZSByZWdtYXBfdXBk
-YXRlX2JpdHMoKSBmb3IgbW9kw61meWluZyB0aGUgcmVnaXN0ZXIKPiB0byBmaXggdGhpcy4KPiAK
-PiBbLi4uXQoKQXBwbGllZCwgdGhhbmtzIQoKWzEvMV0gcGh5OiBtYXJ2ZWxsOiBtdmVidS1hMzcw
-MC11dG1pOiBmaXggaW5jb3JyZWN0IFVTQjJfUEhZX0NUUkwgcmVnaXN0ZXIgYWNjZXNzCiAgICAg
-IGNvbW1pdDogOTFkZGY2ZjcyMjA4NDM4M2ZiMDViZTczMWMwMTA3ODE0YjA1NWMwYwoKQmVzdCBy
-ZWdhcmRzLAotLSAKflZpbm9kCgoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBo
-eUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
-L2xpc3RpbmZvL2xpbnV4LXBoeQo=
+
+On Mon, 04 May 2026 11:33:05 +0800, Wei-Cheng Chen wrote:
+> The existing code reads a single hs_term_range_adj value from bit field
+> [10:7] of FUSE_SKU_CALIB_0 and applies it to all USB2 pads uniformly.
+> However, on SoCs that support per-pad termination, each pad has its own
+> hs_term_range_adj field: pad 0 in FUSE_SKU_CALIB_0[10:7], and pads 1-3
+> in FUSE_USB_CALIB_EXT_0 at bit offsets [8:5], [12:9], and [16:13]
+> respectively.
+> 
+> [...]
+
+Applied, thanks!
+
+[1/1] phy: tegra: xusb: Fix per-pad high-speed termination calibration
+      commit: da110228b54f2e2143d97ea7151e0dc22e539d67
+
+Best regards,
+-- 
+~Vinod
+
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
