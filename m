@@ -4,66 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6DBA4CD37B2
-	for <linux-phy@archiver.kernel.org>; Sun, 10 May 2026 12:31:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 90581CD3427
+	for <linux-phy@archiver.kernel.org>; Sun, 10 May 2026 12:32:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oqh6cb5Z4UMpqTg2FDLfyOZXw4BKYSfQYKBu33+kuyg=; b=RI/37FDDq+A5kq
-	/DdrE4M/kmhPjZpa/cCYV/ZW8X155rdSMX+Ba6YwobJUtAycRJfazT8P685e1rl1m/81Fz7wFw5mA
-	OXIx8YLsyWeGeZ5UVGKTvD+e6xcwxFshT5NYHRYz4JBojsbX6J6OXOthc0TyNTLYmUkyOL3bmJ0+6
-	r8aV7MPxlJFVmejpWrvQ5HWzEvTCl4SV1H8VzzPz8u0itVw4e26BHk8+VE5hVTG6ZuAedOMX1ADyo
-	VDuvGejExCj+Xl/DMwkelwD/3Pxrzm0+zjwqcqNfnfgar2bEnNUNqdcY6XLNpC1+h3UmQm8SYXBlD
-	JSQNLTrCtYGmioKSCPYA==;
+	List-Owner; bh=n7sE4qou7z8En1zUKUieOhlCtrI3MERZ0Yftm55tM70=; b=S93ysVO8uoqevZ
+	zSC0NbSmI+NTJqW+5C2b3xkGL6PjretTCcBt/lpU+Z2Svh8hgBjQSG5cLp0ILb1YvvcIoFVgNTJpc
+	UU19AhFAAd7D1yU7Q6wOXyQqUBlk0HNkEFKKF/0ipQH7Su1A8pW7H/6yn5V+/JXes4QeGBsWa43A1
+	H1zMjFRKvi6s0vwPgUtriFb2rp7AlI+QCxDdi0w+c+3hlf5ozw1NaJh00R+dqAOM1CaJlHvWDZshn
+	cz7IjXpkB0ZKUg24cXdyi4xh9bNXGWIaLxEbjAw7MCanqUfh67BzRJiXQyUlgPgSCNnDnUPyFOTcx
+	/cY4ZCY0KBohxPFYeV7A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wM3K7-0000000AiTv-0PfU;
-	Sun, 10 May 2026 12:31:55 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wM3KH-0000000AiX9-1RM2;
+	Sun, 10 May 2026 12:32:05 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wM3K4-0000000AiTJ-3ISn
+	id 1wM3KF-0000000AiWR-1igj
 	for linux-phy@lists.infradead.org;
-	Sun, 10 May 2026 12:31:54 +0000
+	Sun, 10 May 2026 12:32:03 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 8324A43AE5;
+	by tor.source.kernel.org (Postfix) with ESMTP id B685C6001A;
+	Sun, 10 May 2026 12:32:02 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2D1F2C2BCB8;
 	Sun, 10 May 2026 12:31:52 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 01429C2BCB8;
-	Sun, 10 May 2026 12:31:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1778416312;
-	bh=GpPVrg/PfFzPxLSfdWD2EavHi4G1RCtQ6isvE3x/6aY=;
+	s=k20201202; t=1778416322;
+	bh=vl/9MvkiblHAaPuDAQLv8KzOLc/tqBrxBmo1A4yiqGg=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=AsTYwwDAvD2+fevFM4EW+ggzoLazMD9YFsGj8KekN1e2BmGmfPzEOsNrNc3fEukT1
-	 N3gTVCto04JK10DV66IxSYRCUz9PybRRYPA46HGkJfG3Up4CzTENl8YQLpcvLYtCg8
-	 N8A/B1aeb0rp+ruK6Luth2EcvqKH9DYLsT57pBSSWKQyAPFH6OVVCDH4Df2P+rHxey
-	 Kka2SfENZ331XhzhCntFo4egw+cvTgUR23EyRg6SEzdJaYXVl1O706tYizdT5E30Ob
-	 0FmdpiUyUGsY14TFrStZDh1aPYPUiPohkRuAimaB2oxuj6RhcnpJFrewgNzbnXaB9j
-	 S5eaJmlqJV2ZA==
+	b=EuE7mAu7fP8Dnlp3qjz6t9jFXA1pltfOTzAMg5CqOv7HXZtT5upIrGId+YI+PWXDW
+	 IK43iGeb/jMsxErpwgSt0+eGRoyz2AF3eM6sttmHp8x+bGmfY+bDwmMEi3MQYQecCO
+	 RHN4pbiBV0q3wtRwluEJYFlm/9vNIrjtfZIjx1kc4VcBEt2V9LFlZSMoh2fVhQJOqH
+	 Ld2fZvWjXTsB2C80Tda1Pd59Ir41h+qf1tmPnM82KsWsOeW7Prizl60lq5c7SX5Dd0
+	 QZEl2okN//1l9UqYTAs00BWs+WfUDwGrFLZ6XkdJYLhx2EaS/n0R6fbuk/QXWrm+HO
+	 hWPowEnANsCxQ==
 From: Vinod Koul <vkoul@kernel.org>
-To: Shawn Guo <shengchao.guo@oss.qualcomm.com>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>, 
- Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>, 
- Abel Vesa <abelvesa@kernel.org>, 
- Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, 
- Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>, 
- Manivannan Sadhasivam <mani@kernel.org>, 
- Luca Weiss <luca.weiss@fairphone.com>, linux-kernel@vger.kernel.org, 
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org
-In-Reply-To: <20260314051325.198137-1-shengchao.guo@oss.qualcomm.com>
-References: <20260314051325.198137-1-shengchao.guo@oss.qualcomm.com>
-Subject: Re: [PATCH 0/6] phy: qcom-qmp: Clean up QSERDES COM and TXRX
- register headers
-Message-Id: <177841630857.434434.12057829864554711219.b4-ty@kernel.org>
-Date: Sun, 10 May 2026 18:01:48 +0530
+To: robin.clark@oss.qualcomm.com, lumag@kernel.org, abhinav.kumar@linux.dev, 
+ sean@poorly.run, marijn.suijten@somainline.org, 
+ maarten.lankhorst@linux.intel.com, mripard@kernel.org, tzimmermann@suse.de, 
+ airlied@gmail.com, simona@ffwll.ch, robh@kernel.org, krzk+dt@kernel.org, 
+ conor+dt@kernel.org, quic_mahap@quicinc.com, andersson@kernel.org, 
+ konradybcio@kernel.org, mani@kernel.org, 
+ James.Bottomley@HansenPartnership.com, martin.petersen@oracle.com, 
+ kishon@kernel.org, cros-qcom-dts-watchers@chromium.org, 
+ Ritesh Kumar <quic_riteshk@quicinc.com>
+Cc: linux-phy@lists.infradead.org, linux-arm-msm@vger.kernel.org, 
+ dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org, 
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ linux-scsi@vger.kernel.org, quic_vproddut@quicinc.com
+In-Reply-To: <20260128114853.2543416-1-quic_riteshk@quicinc.com>
+References: <20260128114853.2543416-1-quic_riteshk@quicinc.com>
+Subject: Re: (subset) [PATCH v4 0/2] Add edp reference clock for lemans
+Message-Id: <177841631271.434434.15769354853011852826.b4-ty@kernel.org>
+Date: Sun, 10 May 2026 18:01:52 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260510_053152_983510_05327DB6 
-X-CRM114-Status: UNSURE (   6.12  )
-X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,30 +80,54 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Sat, 14 Mar 2026 13:13:19 +0800, Shawn Guo wrote:
-> There are some duplications around QSERDES COM and TXRX v2/v3 register
-> definitions.  The series tries to clean them up, and also rename
-> v2 registers/headers to make the version explicit, just like all other
-> versions of the QSERDES registers.
+On Wed, 28 Jan 2026 17:18:48 +0530, Ritesh Kumar wrote:
+> On lemans chipset, edp reference clock is being voted by ufs mem phy
+> (ufs_mem_phy: phy@1d87000). But after commit 77d2fa54a945
+> ("scsi: ufs: qcom : Refactor phy_power_on/off calls") edp reference
+> clock is getting turned off, leading to below phy poweron failure on
+> lemans edp phy.
 > 
-> No functional changes is expected.
+> [   19.830220] phy phy-aec2a00.phy.10: phy poweron failed --> -110
+> [   19.842112] mdss_0_disp_cc_mdss_dptx0_link_clk status stuck at 'off'
+> [   19.842131] WARNING: CPU: 2 PID: 371 at drivers/clk/qcom/clk-branch.c:87 clk_branch_toggle+0x174/0x18c
+> [   19.984356] Hardware name: Qualcomm QCS9100 Ride (DT)
+> [   19.989548] pstate: 604000c5 (nZCv daIF +PAN -UAO -TCO -DIT -SSBS BTYPE=--)
+> [   19.996697] pc : clk_branch_toggle+0x174/0x18c
+> [   20.001267] lr : clk_branch_toggle+0x174/0x18c
+> [   20.005833] sp : ffff8000863ebbc0
+> [   20.009251] x29: ffff8000863ebbd0 x28: 0000000000000000 x27: 0000000000000000
+> [   20.016579] x26: 0000000000000000 x25: 0000000000000000 x24: 0000000000000001
+> [   20.023915] x23: ffff0000c53de980 x22: 0000000000000001 x21: ffffb4b57fd8d710
+> [   20.031245] x20: ffffb4b5bb238b88 x19: 0000000000000000 x18: ffffffffffff7198
+> [   20.038584] x17: 0000000000000014 x16: ffffb4b5bb1e2330 x15: 0000000000000048
+> [   20.045926] x14: 0000000000000000 x13: ffffb4b5bd386a48 x12: 0000000000000dfb
+> [   20.053263] x11: 00000000000004a9 x10: ffffb4b5bd3e5a20 x9 : ffffb4b5bd386a48
+> [   20.060600] x8 : 00000000ffffefff x7 : ffffb4b5bd3dea48 x6 : 00000000000004a9
+> [   20.067934] x5 : ffff000eb7d38408 x4 : 40000000fffff4a9 x3 : ffff4b58fb2b7000
+> [   20.075269] x2 : 0000000000000000 x1 : 0000000000000000 x0 : ffff000ec4fc3480
+> [   20.082601] Call trace:
+> [   20.085127]  clk_branch_toggle+0x174/0x18c (P)
+> [   20.089705]  clk_branch2_enable+0x1c/0x28
+> [   20.093829]  clk_core_enable+0x6c/0xac
+> [   20.097687]  clk_enable+0x2c/0x4c
+> [   20.101104]  clk_bulk_enable+0x4c/0xd8
+> [   20.104964]  msm_dp_ctrl_enable_mainlink_clocks+0x184/0x24c [msm]
+> [   20.111294]  msm_dp_ctrl_on_link+0xb0/0x400 [msm]
+> [   20.116178]  msm_dp_display_process_hpd_high+0x110/0x190 [msm]
+> [   20.122209]  msm_dp_hpd_plug_handle.isra.0+0xac/0x1c4 [msm]
+> [   20.127983]  hpd_event_thread+0x320/0x5cc [msm]
+> [   20.132680]  kthread+0x12c/0x204
+> [   20.136011]  ret_from_fork+0x10/0x20
+> [   20.139699] ---[ end trace 0000000000000000 ]---
+> [   20.144489] Failed to enable clk 'ctrl_link': -16
+> [   20.149340] [drm:msm_dp_ctrl_enable_mainlink_clocks [msm]] *ERROR* Unable to start link clocks. ret=-16
 > 
 > [...]
 
 Applied, thanks!
 
-[1/6] phy: qcom-qmp: Add missing QSERDES COM v2 registers
-      commit: 52595824b0027d075470f7f08afe805844c1b079
-[2/6] phy: qcom-qmp: Use explicit QSERDES COM v2 register definitions
-      commit: 764f409b840ab400253215e765a72b903feb6afd
-[3/6] phy: qcom-qmp-usbc: Use register definitions in qserdes-txrx-v3
-      commit: 9dfdd6e7bebd63eeef0ba57493adee91c34ae338
-[4/6] phy: qcom-qmp-usbc: Rename QCS615 DP PHY variables and functions
-      commit: c834f0a69051e5db52172262dadf8f7b5ff58bd0
-[5/6] phy: qcom-qmp: Drop unused register headers
-      commit: 9b1270d2b85bb7ce6bbc71232375b21d8be0b799
-[6/6] phy: qcom-qmp: Make QSERDES TXRX v2 registers explicit
-      commit: c7cd4798fafa84581502094d0be282072851c9b7
+[1/2] dt-bindings: phy: qcom-edp: Add reference clock for sa8775p eDP PHY
+      commit: 0cc64561b03d755bba54cbd0cf05e9210ab40a13
 
 Best regards,
 -- 
