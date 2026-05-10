@@ -4,60 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 15013CD37AF
-	for <linux-phy@archiver.kernel.org>; Sun, 10 May 2026 12:31:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 17963CD37AF
+	for <linux-phy@archiver.kernel.org>; Sun, 10 May 2026 12:31:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MlRNwxVdcY2D1w+W1ux55hImtp7aSDyyi6U1R+3LGKU=; b=HOZGeJXYhX+yy1
-	fwUSvzUGcRaCpE1x0+7by8cPtcA98fmVg4FZuOYPTHIp++qodoe5ZBm++QBHzU6xZYVafNXYNDJHh
-	3929cuMfT32Jz1WlolU16IvhvsbOiNWwLqvsjcrMCLxLEdnv8PrF4oKqJCrUGnrZ/05j2UotjKMIH
-	l1xI/0REzdR+yPhw8NkvIub/JoUiOBE6gvMPXQ2EJJzF5oYzFcY1nbO21kHsvFFG5F97igWUTfYQz
-	uCO84gq8v3IoAGNrKPXKCsVqGVdkZKvo4s4BPo+GPJQciYD9Nx+VrlDivvuiflTRSMeTMlDBtY/cJ
-	b3BgPyPIV/vm3bjd8QRg==;
+	List-Owner; bh=IIdwNprxyeKbPz80VRDof6UdDDhfB1jJUtdswlLkIdk=; b=kgRvj2Qc54COi9
+	2zmxa63FX4yhRIn6rt71r5/Rq1gr4JLNvL40XexLpSAj8hVHh9A1SlSg0L6q62CslgHzV2WPiNFfs
+	8BeYnymTMoWrHHTnt+q5eQoDuFb3AJZfpSLbVYaIvJZWQi8qP6yoHL6wLtgrxpotOjPOq3QFZsnxg
+	DvhY5JyFLcDmQJ+K3hjlza7BjzMJ4bmoMyesZstNjEVJWv8fsoad8rgjV+7uX7SC06CYJ8Z6l9dBk
+	mSDaVsJLm9zx+ysZkyEEyBVoWtlBoYWWw1EmsMQAYscrY9c+bc2s5960EjpNeDUIzqZma3wHvBnwV
+	lnNgxRZrY7vn0U9US7Mg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wM3Jy-0000000AiQI-2yvP;
-	Sun, 10 May 2026 12:31:46 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wM3K3-0000000AiSi-3WGx;
+	Sun, 10 May 2026 12:31:51 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wM3Jx-0000000AiPY-279L;
-	Sun, 10 May 2026 12:31:45 +0000
+	id 1wM3K0-0000000AiRA-3btu
+	for linux-phy@lists.infradead.org;
+	Sun, 10 May 2026 12:31:50 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id F033E6001A;
-	Sun, 10 May 2026 12:31:44 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E04CBC2BCB8;
-	Sun, 10 May 2026 12:31:40 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 5F39343F6D;
+	Sun, 10 May 2026 12:31:48 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 50945C2BCFB;
+	Sun, 10 May 2026 12:31:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1778416304;
-	bh=4sTIU6geCY/ofxbF1Nh9piJovvy17EjyERLoBxmWfXU=;
+	s=k20201202; t=1778416308;
+	bh=rYTVoUJlOhx6RpXKgdLOgKe0eiYOtQiy1WmXvoW1AEg=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=iwN6jy38FZsJGhyHrd3rGfDNTGiQp/9tOIrvIHRK8/NOPNZLFYqnKAYMudEYwFesC
-	 WqKhjTBM9MsbBOIkj7SQX2vWr4lBjnIlpETIUB65A1Vn8NXeiAYrg2inrHscyzQSMA
-	 fb+PM0HqQitNTnq5uPzNakka+yA5SvHzBOShXVpRW8VhnA1eGnexRF1hqFw4oNoFtG
-	 4/K3BOJhjE4VsfLy122sCWfYm+t37sbw0R0d+F3MtzZEBfZsTjqnIzC0fuAQRpLNAS
-	 8t152qSjsT9S1hw3PtLncacqzc6jfUdyyykxejokl1/hagWZQEbr3JeeUEMCIi6pgf
-	 6H7JbMmt55auQ==
+	b=jFUgWkyevAQAqAmOH0fekKaGkiwlHpWNb68zIEUx0hFLD0rRXm7tb5o3XkoXWcRj5
+	 2Esw4whwBb8jiAYNA9F/ZHQRa7xDsRV8T/UQp98xMg3+tSHrS7PhBMtY01QeCElLJI
+	 1X6FNCJ0GfBbD5rvdI/r1aLVZ8ZrvdLXCaYyPhc8FQp7d5/mhNDHa5MwOLude1xnkX
+	 LLpSP69vN0lCi/fQ5gfvwu+wrepNZRsAsPKFUWYdrk7ZXQJirzEr5dtWgfXTrFlrt/
+	 Opc311r4zPiJCWShvwZjBiIMZgDb9wHPgMdcMaYqeuKoC2b1VysqxyxJdaHmjsRJ6d
+	 xgCWNf+BXi9rw==
 From: Vinod Koul <vkoul@kernel.org>
-To: SriNavmani A <srinavmani@axiado.com>, 
- Prasad Bolisetty <pbolisetty@axiado.com>, 
- Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Tzu-Hao Wei <twei@axiado.com>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, 
- openbmc@lists.ozlabs.org
-In-Reply-To: <20260504-axiado-ax3000-add-emmc-phy-driver-support-v3-0-3ab7eb45b0c5@axiado.com>
-References: <20260504-axiado-ax3000-add-emmc-phy-driver-support-v3-0-3ab7eb45b0c5@axiado.com>
-Subject: Re: (subset) [PATCH RESEND v3 0/4] Add eMMC PHY support for Axiado
- AX3000 SoC
-Message-Id: <177841630053.434434.9292071839258247877.b4-ty@kernel.org>
-Date: Sun, 10 May 2026 18:01:40 +0530
+To: Sasha Levin <sashal@kernel.org>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>, 
+ Thierry Reding <thierry.reding@kernel.org>, 
+ Jonathan Hunter <jonathanh@nvidia.com>, Niklas Cassel <cassel@kernel.org>, 
+ Vidya Sagar <vidyas@nvidia.com>, linux-phy@lists.infradead.org, 
+ linux-tegra@vger.kernel.org, linux-kernel@vger.kernel.org
+In-Reply-To: <20260426000309.54959-1-sashal@kernel.org>
+References: <20260426000309.54959-1-sashal@kernel.org>
+Subject: Re: [PATCH] phy: tegra: xusb: Make USB_CONN_GPIO select
+ conditional on GPIOLIB
+Message-Id: <177841630492.434434.10037791395679049058.b4-ty@kernel.org>
+Date: Sun, 10 May 2026 18:01:44 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260510_053149_078185_6BDA3727 
+X-CRM114-Status: UNSURE (   4.27  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,26 +78,20 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Mon, 04 May 2026 09:38:31 +0800, Tzu-Hao Wei wrote:
-> Axiado AX3000 SoC contains Arasan PHY which provides the interface to the
-> HS200 eMMC controller.
+On Sat, 25 Apr 2026 20:03:09 -0400, Sasha Levin wrote:
+> kconfiglint reports:
 > 
-> This series includes:
-> 1. Add bindings for Axiado AX3000 eMMC PHY
-> 2. Add Axiado AX3000 eMMC phy driver
-> 3. Update MAINTAINERS for the new driver
-> 4. Update Axiado AX3000 device tree
+>   K006: config PHY_TEGRA_XUSB selects USB_CONN_GPIO which depends on
+>         GPIOLIB, but PHY_TEGRA_XUSB does not depend on GPIOLIB
+>   K002: config PHY_TEGRA_XUSB selects visible symbol USB_CONN_GPIO
+>         which has dependencies
 > 
 > [...]
 
 Applied, thanks!
 
-[1/4] dt-bindings: phy: axiado,ax3000-emmc-phy: add Axiado eMMC PHY
-      commit: 1a75ecefa4fbedefc1600e43445de4e1e7f03b55
-[2/4] phy: axiado: add Axiado eMMC PHY driver
-      commit: 9e7dfa4bcd4e2c3541c4ee954ea5e66edab94d3f
-[3/4] MAINTAINERS: Add Axiado AX3000 eMMC PHY driver
-      commit: 13ee293a904b7b7b0507aaa8c71f7be7e683800e
+[1/1] phy: tegra: xusb: Make USB_CONN_GPIO select conditional on GPIOLIB
+      commit: 18af47764d75bf2cd6297289255fd7f83967e7cf
 
 Best regards,
 -- 
