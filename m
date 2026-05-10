@@ -4,63 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 17D4ECD3427
-	for <linux-phy@archiver.kernel.org>; Sun, 10 May 2026 12:32:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 390CBCD3427
+	for <linux-phy@archiver.kernel.org>; Sun, 10 May 2026 12:32:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A7CWTpW/FhUOilu7YX2+PJxYfZAHXah+tSpfUh8d1t8=; b=1rUkiF+0GqYMf3
-	9ZWKufKTknR1iMW45unWnSfaWxFjcU6G5bjuefQkyNSpNBuLi+8NRrhRlYNmA51kV+oxcd87J9LIK
-	9GnoL9z/VnTtLSlgxrGv7RQhdE87iW3fDs7bD+0Q/oqjqacQlfrMq4ScGVW3GmXjVrnJoaMg2ao5M
-	/tNIax5sTn0VjoI7JtAHpx8+vL1EsJxte+9tJeGkS5C633pCS5N0+JRDFnwwj9wuxb4ynUnrHZB/R
-	BdR7Fg/bcigin8JFL1smXFhQM4LxdGvmIQaHiyhSA4C09RoiOMIR4IHdXGwA3d6uUKBe9LyeOvIv9
-	+4YRgGYSbV2awzSuIsww==;
+	List-Owner; bh=3cem8Pox8XrUvI1OHG9712dl+Ny+/94uw7+BE3D874c=; b=4DOCtFVnX4AICM
+	ib94WVT3auhgs+TbQfbqtabOrZIM34mUVRl4e+DE9PPLwbX74bfOIwcoJQHmd+GvchVZJHp6KoI/6
+	1SF/eNOhq/E5dSYZYFgOgHi6LV5DnnWp6GY0TDX4FbHDdexjamUmhnHV5D2qp2YetNnXoyEIarVwp
+	exP2f4lplPE+0e8bkgb/fMtTTuqk1YegvTutCjN3V3CEWvwH75Wug56FGd48m5Y6kxKwS2AWTg00k
+	eaPIR5wLXmhLWmsP7W3PeDdbnsLw5bNLpFq9VepJKfi2QAjN/5vJAq2mXJPFru32xFHaH9KZ7CBca
+	0TLfZbCeNP5D8gtnqEGQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wM3KT-0000000AicV-3TZI;
-	Sun, 10 May 2026 12:32:17 +0000
+	id 1wM3KX-0000000Aida-3pHd;
+	Sun, 10 May 2026 12:32:21 +0000
 Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wM3KR-0000000Aibw-3jBA
+	id 1wM3KW-0000000AidC-0eXP
 	for linux-phy@lists.infradead.org;
-	Sun, 10 May 2026 12:32:16 +0000
+	Sun, 10 May 2026 12:32:21 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 9BD6943CA8;
+	by sea.source.kernel.org (Postfix) with ESMTP id CC91A44432;
+	Sun, 10 May 2026 12:32:19 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 27DB5C2BCB8;
 	Sun, 10 May 2026 12:32:15 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AF274C2BCB8;
-	Sun, 10 May 2026 12:32:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1778416335;
-	bh=UuUOreEIGCslVe+CKSmlu63U/njoms5UEfXyNQelGxg=;
+	s=k20201202; t=1778416339;
+	bh=SDOEyFstRhWIMkhPcOaluZFaKKmrzRYi3jr799ZJPh0=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=kBrlfkj7ccdBBzpK8sQ/a/PMk8Ss2CMrKGG+1Rtx7sN3bwVMR8rRiqXnes+9Y2BTJ
-	 aNLfkwcxaKYePpvB8AobctmUMh8DeDyfhXaUdZZF7GwqQX7hJ0j1CRjN9vL9kQ+3BF
-	 RLZkJDE8IfiVL9KiqfNFa4ozhs3WhzqzaqkPtsoDlQg7GSB1UBs+lXWzz9szD4cw88
-	 bUAOpuYQ59MR35AWt8uTtZ07pA6EDho6v3WiZyTBDc9AloX9E8E7PT5dzmSD422GiX
-	 HO+eFcnvoF7gwuag2tWtKpQrqHObpHZS2c6aOo6zziGGgCRxAcYpuudX9223qDArUG
-	 MpXc2LL0fnDjg==
+	b=tdp3Vr9q+OVvwpFFWJqQriDFLOKGu+QmfmIBFNtDn26XkwAaK7xxm7avYWX+6q5tB
+	 peag60VoWYpfzsNQQCjCMlq7YNzjbVzb0mXTmZbOUVYXnrKNqkyKR+B0No7F/EhXEA
+	 D3PbhW837u9DGMV9ZS1t9fQqkXbkndnJhLUz/pSr9K7kS0X8nK/yFGOr6f2b6hJwWC
+	 cfzPZF9zdDJuT17QMbK4fefPAYZOoP3Xr6xDbqRYde2ZC1U9pIKskxwi16LFRMSgsd
+	 b1knbnJh18qx0miIlJtnOXPhsGRMBCZQDfbt1dGk4/auvbPglMZ9FFdFlCgIiYOYiH
+	 S9oRVa0hMmuKQ==
 From: Vinod Koul <vkoul@kernel.org>
-To: Biju <biju.das.au@gmail.com>
-Cc: Biju Das <biju.das.jz@bp.renesas.com>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Geert Uytterhoeven <geert+renesas@glider.be>, linux-phy@lists.infradead.org, 
- linux-kernel@vger.kernel.org, 
- Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>, 
- linux-renesas-soc@vger.kernel.org, Pavel Machek <pavel@nabladev.com>
-In-Reply-To: <20260319063211.5056-1-biju.das.jz@bp.renesas.com>
-References: <20260319063211.5056-1-biju.das.jz@bp.renesas.com>
-Subject: Re: [PATCH v2] phy: renesas: phy-rzg3e-usb3: Fix malformed
- MODULE_AUTHOR string
-Message-Id: <177841633229.434434.9116344944235165418.b4-ty@kernel.org>
-Date: Sun, 10 May 2026 18:02:12 +0530
+To: Neil Armstrong <neil.armstrong@linaro.org>, 
+ =?utf-8?q?Th=C3=A9o_Lebrun?= <theo.lebrun@bootlin.com>
+Cc: linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ linux-mips@vger.kernel.org, 
+ Vladimir Kondratiev <vladimir.kondratiev@mobileye.com>, 
+ Gregory CLEMENT <gregory.clement@bootlin.com>, 
+ =?utf-8?q?Beno=C3=AEt_Monin?= <benoit.monin@bootlin.com>, 
+ Tawfik Bayouk <tawfik.bayouk@mobileye.com>, 
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>, 
+ Luca Ceresoli <luca.ceresoli@bootlin.com>
+In-Reply-To: <20260309-macb-phy-v9-0-5afd87d9db43@bootlin.com>
+References: <20260309-macb-phy-v9-0-5afd87d9db43@bootlin.com>
+Subject: Re: [PATCH v9] phy: Add generic PHY driver used by MACB/GEM on
+ EyeQ5
+Message-Id: <177841633575.434434.2649556490244169751.b4-ty@kernel.org>
+Date: Sun, 10 May 2026 18:02:15 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260510_053215_957036_32EBD298 
-X-CRM114-Status: UNSURE (   4.59  )
+X-CRM114-CacheID: sfid-20260510_053220_230103_2D2A28BC 
+X-CRM114-Status: UNSURE (   5.61  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -73,32 +76,21 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Thu, 19 Mar 2026 06:32:07 +0000, Biju wrote:
-> Fix a malformed MODULE_AUTHOR macro in the RZ/G3E USB3.0 PHY driver where
-> the author's name and opening angle bracket were missing, leaving only the
-> email address with a stray closing >. Correct it to the standard Name
-> <email> format.
-> 
-> 
-
-Applied, thanks!
-
-[1/1] phy: renesas: phy-rzg3e-usb3: Fix malformed MODULE_AUTHOR string
-      commit: 53f60930e3d20883364fc01fd46b6099acb8127a
-
-Best regards,
--- 
-~Vinod
-
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+Ck9uIE1vbiwgMDkgTWFyIDIwMjYgMTU6Mzc6MzMgKzAxMDAsIFRow6lvIExlYnJ1biB3cm90ZToK
+PiBFeWVRNSBTb0NzIGludGVncmF0ZSB0d28gR0VNIGluc3RhbmNlcy4gQSBzeXN0ZW0tY29udHJv
+bGxlciByZWdpc3Rlcgo+IHJlZ2lvbiBuYW1lZCAiT0xCIiBoYXMgc29tZSBjb250cm9sIG92ZXIg
+dGhlIEV0aGVybmV0IFBIWSBpbnRlZ3JhdGlvbi4KPiAKPiBFeHRlbmQgdGhlIGN1cnJlbnQgT0xC
+IGVjb3N5c3RlbSB3aXRoIGEgbmV3IGdlbmVyaWMgUEhZIGRyaXZlci4KPiAgLSBPTEIgaXMgY2Fy
+cmllZCBieSBvbmUgbWFpbiBwbGF0Zm9ybSBkcml2ZXI6IGNsay1leWVxLgo+ICAtIEl0IGluc3Rh
+bnRpYXRlcyBhdXhpbGlhcnkgZGV2aWNlczogcmVzZXQtZXllcSAmIHBpbmN0cmwtZXllcTUuCj4g
+IC0gV2UgYWRkIGEgbmV3IG9uZTogcGh5LWV5ZXE1LWV0aC4KPiAKPiBbLi4uXQoKQXBwbGllZCwg
+dGhhbmtzIQoKWzEvMV0gcGh5OiBBZGQgZHJpdmVyIGZvciBFeWVRNSBFdGhlcm5ldCBQSFkgd3Jh
+cHBlcgogICAgICBjb21taXQ6IGI2ZTMzNDQzODc2ZDBjYTdlOTNjZjk0OTQ1NWUzYzFhMWEwYWFl
+MjQKCkJlc3QgcmVnYXJkcywKLS0gCn5WaW5vZAoKCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlz
+dApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5v
+cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
