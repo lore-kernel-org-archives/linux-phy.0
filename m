@@ -4,57 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AFB60CD37AF
-	for <linux-phy@archiver.kernel.org>; Sun, 10 May 2026 12:31:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 15013CD37AF
+	for <linux-phy@archiver.kernel.org>; Sun, 10 May 2026 12:31:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LNkJsGdq7zNeb5r20ukVTJ7gipeiHjvWb93RIPBPpPg=; b=zqAoFdMkHF6TjD
-	b48uVB20EOG26eGVF8guYY0/iZcxBJnuw9eUGlYSne0yjhJ2EWlU8j0nNZLgJXBtJXo0/c3eWkiga
-	gdHU1PYBOG1lGoaQze0xtV/713EVWOQ+jxOEjPpdAwaeTxE1JsCOYjvcLtYjPffxfhv4/xgIP2Tzc
-	DfLzrbTfhSee4T93j7WzdQA8zwng5kfpppcH5brZFpii8+5cd60UUhxRwjgGlsh76OQapHYUZh9Tt
-	2oU6+pWc1AWruVT253xC10J8/E15v6xsgU3QmhevIQByuYOZIp3Y3pD3W7DCOx+TECj7+V3Tyj9ri
-	3eZ94NBO6zKFmm1sBvqQ==;
+	List-Owner; bh=MlRNwxVdcY2D1w+W1ux55hImtp7aSDyyi6U1R+3LGKU=; b=HOZGeJXYhX+yy1
+	fwUSvzUGcRaCpE1x0+7by8cPtcA98fmVg4FZuOYPTHIp++qodoe5ZBm++QBHzU6xZYVafNXYNDJHh
+	3929cuMfT32Jz1WlolU16IvhvsbOiNWwLqvsjcrMCLxLEdnv8PrF4oKqJCrUGnrZ/05j2UotjKMIH
+	l1xI/0REzdR+yPhw8NkvIub/JoUiOBE6gvMPXQ2EJJzF5oYzFcY1nbO21kHsvFFG5F97igWUTfYQz
+	uCO84gq8v3IoAGNrKPXKCsVqGVdkZKvo4s4BPo+GPJQciYD9Nx+VrlDivvuiflTRSMeTMlDBtY/cJ
+	b3BgPyPIV/vm3bjd8QRg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wM3Ju-0000000AiOG-1jVG;
-	Sun, 10 May 2026 12:31:42 +0000
+	id 1wM3Jy-0000000AiQI-2yvP;
+	Sun, 10 May 2026 12:31:46 +0000
 Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wM3Jt-0000000AiNp-0UcY
-	for linux-phy@lists.infradead.org;
-	Sun, 10 May 2026 12:31:41 +0000
+	id 1wM3Jx-0000000AiPY-279L;
+	Sun, 10 May 2026 12:31:45 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 929A16001A;
+	by tor.source.kernel.org (Postfix) with ESMTP id F033E6001A;
+	Sun, 10 May 2026 12:31:44 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E04CBC2BCB8;
 	Sun, 10 May 2026 12:31:40 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 66BAEC2BCF6;
-	Sun, 10 May 2026 12:31:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1778416300;
-	bh=QhiPJ7oNWRgIuuxn9VuTh0SkuqQDWzHNu7+WPzds+88=;
+	s=k20201202; t=1778416304;
+	bh=4sTIU6geCY/ofxbF1Nh9piJovvy17EjyERLoBxmWfXU=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=nEGCoaK8CBx9+6oIWFcahlJtSwNBdc6FjEkcjc3upSA+oZ/1wf/6G9O1PbZX8CzhF
-	 vvWpBvR6XjVjSycBXZlPE7wS1ir9Hd5TZfAjs5CdxG2xhNtO+XFQh5hC9HtYA4Q/CP
-	 /gPnUKX5JNFg3D/0tfPMod/+K+S1rNorYe+tFjg5mQyhjtRLicji2NIJs49q/9f6E6
-	 OAsxAtUKG3HJhK5ARMPetK6qAMdjUuQo2RTmDsuPlYZ7CJN9ArLbxp45HfsSU7N/wY
-	 TqPrW0gjVi8Ar0AD+9sFxNWb2S6B/4Y4qlSlnVSzqLFhGyQ4cHAC7MDLaZe+Se6tEk
-	 qfk/J1qKShLMw==
+	b=iwN6jy38FZsJGhyHrd3rGfDNTGiQp/9tOIrvIHRK8/NOPNZLFYqnKAYMudEYwFesC
+	 WqKhjTBM9MsbBOIkj7SQX2vWr4lBjnIlpETIUB65A1Vn8NXeiAYrg2inrHscyzQSMA
+	 fb+PM0HqQitNTnq5uPzNakka+yA5SvHzBOShXVpRW8VhnA1eGnexRF1hqFw4oNoFtG
+	 4/K3BOJhjE4VsfLy122sCWfYm+t37sbw0R0d+F3MtzZEBfZsTjqnIzC0fuAQRpLNAS
+	 8t152qSjsT9S1hw3PtLncacqzc6jfUdyyykxejokl1/hagWZQEbr3JeeUEMCIi6pgf
+	 6H7JbMmt55auQ==
 From: Vinod Koul <vkoul@kernel.org>
-To: Neil Armstrong <neil.armstrong@linaro.org>, 
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Abel Vesa <abel.vesa@oss.qualcomm.com>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
- Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
-In-Reply-To: <20260504-eliza-bindings-qmp-phy-v2-1-849c4de8d75f@oss.qualcomm.com>
-References: <20260504-eliza-bindings-qmp-phy-v2-1-849c4de8d75f@oss.qualcomm.com>
-Subject: Re: [PATCH v2] dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp-phy:
- Add Eliza QMP PHY
-Message-Id: <177841629697.434434.1495203271597382952.b4-ty@kernel.org>
-Date: Sun, 10 May 2026 18:01:36 +0530
+To: SriNavmani A <srinavmani@axiado.com>, 
+ Prasad Bolisetty <pbolisetty@axiado.com>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Tzu-Hao Wei <twei@axiado.com>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ openbmc@lists.ozlabs.org
+In-Reply-To: <20260504-axiado-ax3000-add-emmc-phy-driver-support-v3-0-3ab7eb45b0c5@axiado.com>
+References: <20260504-axiado-ax3000-add-emmc-phy-driver-support-v3-0-3ab7eb45b0c5@axiado.com>
+Subject: Re: (subset) [PATCH RESEND v3 0/4] Add eMMC PHY support for Axiado
+ AX3000 SoC
+Message-Id: <177841630053.434434.9292071839258247877.b4-ty@kernel.org>
+Date: Sun, 10 May 2026 18:01:40 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
 X-BeenThere: linux-phy@lists.infradead.org
@@ -74,20 +75,26 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Mon, 04 May 2026 19:03:41 +0300, Abel Vesa wrote:
-> Document the compatible for the USB QMP PHY found on the Qualcomm Eliza
-> SoC.
+On Mon, 04 May 2026 09:38:31 +0800, Tzu-Hao Wei wrote:
+> Axiado AX3000 SoC contains Arasan PHY which provides the interface to the
+> HS200 eMMC controller.
 > 
-> It is fully compatible with the one found on Qualcomm SM8650, so add it
-> with the SM8650 as fallback.
-> 
+> This series includes:
+> 1. Add bindings for Axiado AX3000 eMMC PHY
+> 2. Add Axiado AX3000 eMMC phy driver
+> 3. Update MAINTAINERS for the new driver
+> 4. Update Axiado AX3000 device tree
 > 
 > [...]
 
 Applied, thanks!
 
-[1/1] dt-bindings: phy: qcom,sc8280xp-qmp-usb43dp-phy: Add Eliza QMP PHY
-      commit: d67a337d28a2d852ff539e983ad6790caf9c95f5
+[1/4] dt-bindings: phy: axiado,ax3000-emmc-phy: add Axiado eMMC PHY
+      commit: 1a75ecefa4fbedefc1600e43445de4e1e7f03b55
+[2/4] phy: axiado: add Axiado eMMC PHY driver
+      commit: 9e7dfa4bcd4e2c3541c4ee954ea5e66edab94d3f
+[3/4] MAINTAINERS: Add Axiado AX3000 eMMC PHY driver
+      commit: 13ee293a904b7b7b0507aaa8c71f7be7e683800e
 
 Best regards,
 -- 
