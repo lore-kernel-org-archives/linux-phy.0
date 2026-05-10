@@ -4,78 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7388CCD3427
-	for <linux-phy@archiver.kernel.org>; Sun, 10 May 2026 11:26:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3D562CD3427
+	for <linux-phy@archiver.kernel.org>; Sun, 10 May 2026 11:50:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=S672ZBEZuhfSI2nI4vUeCFTR8mLjIKJF893RYDjGfkQ=; b=gKNi5KPvgkTZcZ
-	05kPebNyv01vMyH1ED+biECWwL5vV7Gn2R1LDFH+8FjRulaaaMQ9H7/trCjcOGvAq7yjHS2v2RmH8
-	cZ1pEfNATQBwiCe1kRJavgVFIjFCVv3V4YuRKh1eFvO2NToohPyi9S+Fs6vE7cHmHULS3AH17OL9d
-	HBBzCTAXSIHvOd/aclJPiSuxdnnt2PpZbWTYUCqzKNG7FlE4Av6Ct164JTN9sU80tDU/fFN+HlomB
-	umFvpNy57tmC8xHyV/Ch0aGi28mQNLGysYTUZAnezuFFUysy/yOuaD8Svmn1GOGgkGpp3oj+zHRHG
-	jY/bpR7jue63e8QJFn/Q==;
+	List-Owner; bh=ZBM3Kw1njl7FRb97aXSjNo+aQn6zfIN3Q2EuF6rULDw=; b=drjduGBQNUZmyM
+	tc4yDX8+q9mAZhXFjQ414IswMCQ8mdFVSuZmQKyFC84rk/FtzZJWq4/c/gy3JAEwGobdqshgAChkH
+	ZDhVzNKTbg72zzsIGcWIKCgY8lizvvGk8oU3i0NPTO/9KqwqjhQBlAgvs//W66U60dEiOInkYb2zy
+	JEokQJE4gielAL317GnA932KRVhLlbp6TcYjYWaDifZc8tdxY22HpuAunfTNfBa2/jWbTcdCFbJlu
+	vxE8jXw73/cfRXZ7hmboNzjBuBDVKBxUyxmcArvmAcgTZf/iaxyZDtK1K3DmHhuu1lrsuttIkoFEd
+	g7RLziJyCqWruOnz1uyA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wM2Ia-0000000Adjv-4B5H;
-	Sun, 10 May 2026 11:26:17 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wM2fo-0000000AfKU-1XgY;
+	Sun, 10 May 2026 11:50:16 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wM2IY-0000000AdjK-04QJ
-	for linux-phy@lists.infradead.org;
-	Sun, 10 May 2026 11:26:15 +0000
+	id 1wM2fm-0000000AfJy-422q;
+	Sun, 10 May 2026 11:50:15 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 38A3E41A76;
-	Sun, 10 May 2026 11:26:13 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3DB5EC2BCB8;
-	Sun, 10 May 2026 11:26:12 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id EEADB6001A;
+	Sun, 10 May 2026 11:50:13 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D5BE4C2BCC9;
+	Sun, 10 May 2026 11:50:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1778412373;
-	bh=2KRTjZ2Lq8ZGRTyfYZPEXXRsQjgKx/NzMCHPT9+g3SI=;
+	s=k20201202; t=1778413813;
+	bh=NFtd+mTJBVH7K+laWInbZslx5+0S5y6GE1FbKK8hc9g=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=okjxQ6ZO2rCXK0FiyK77U2aTNgcVTcTMEALrRzyYXJoz/CRP62qy1NUH6tWADKkf0
-	 isu7QOlxxiBapWJhB4qY3oU6FAtuX+C5Yzx+8B0tGvmqPuIG2u+RliTjjhRkaEpHlg
-	 UIWjvvw+YhY910QWp9EIktPQ7gwAtBzz+HbHHhsDBcXLm91Hzh6NGOyydPmJ6gO+QX
-	 PE+Is2ED9RuUB225NOZ10NmtI1cg60/A0X1T4wQnyF3xtBnFhEdddYYNkKFk53xDlY
-	 J3As1YwnIgvhxHQZgXAvH54TOotwgSSPrXJfQQEfTJxY12U1cU/THOsOuTCZpbJX3H
-	 kp9cdbXw1mVbA==
-Date: Sun, 10 May 2026 16:56:08 +0530
+	b=ub60GZ+yc4YZUqsJiukrPgWWJJZdA71lPC0rOeaODli+Y1/pA3S6/QA+n/lQjSlcB
+	 ysM+RtCWOhnMFI+ax6CQ0SnU9qKWxtuh7EOO1r/YeE8uq8YfGGO5r8n66LLZz/MmP6
+	 GXxWZLp5fagv2iy9d7DkP3mEyThfbRyd2Kw2fulkyWrthaRtkgSkHjxO17TQ0mxt0d
+	 mkKO0t23By5V/bvAqcdf7+Sw0jo4Lxc2LzAAKkKgpZPonGGUXQNYOdGo/SasAcSAMk
+	 3bTCWzxgnxvIDuZbPR/EGecyBluk2Zedrfyn6tTG/NdOHu9IVVBpbZrvGZbwzCVgO9
+	 YL4UK+04mwTtg==
+Date: Sun, 10 May 2026 17:20:09 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-Cc: Andrew Lunn <andrew+netdev@lunn.ch>,
-	"David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>
+Cc: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
-	Mark Brown <broonie@kernel.org>,
-	Liam Girdwood <lgirdwood@gmail.com>, Lee Jones <lee@kernel.org>,
-	Pavel Machek <pavel@kernel.org>, Peter Rosin <peda@axentia.se>,
-	Andrew Lunn <andrew@lunn.ch>,
-	Heiner Kallweit <hkallweit1@gmail.com>,
-	Russell King <linux@armlinux.org.uk>,
-	Moritz Fischer <mdf@kernel.org>, Xu Yilun <yilun.xu@intel.com>,
-	Tom Rix <trix@redhat.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	"Rafael J. Wysocki" <rafael@kernel.org>,
-	Danilo Krummrich <dakr@kernel.org>, netdev@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-spi@vger.kernel.org, linux-leds@vger.kernel.org,
-	linux-fpga@vger.kernel.org, driver-core@lists.linux.dev
-Subject: Re: [PATCH 02/10] phy: core: switch to using
- class_find_device_by_fwnode()
-Message-ID: <agBrUA7SsOLwhOMc@vaman>
-References: <20260322-remove-device-find-by-of-node-v1-0-b72eb22a1215@gmail.com>
- <20260322-remove-device-find-by-of-node-v1-2-b72eb22a1215@gmail.com>
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Matthias Brugger <matthias.bgg@gmail.com>,
+	linux-arm-kernel@lists.infradead.org,
+	linux-mediatek@lists.infradead.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH V2 RESEND 2/2] phy: mediatek: xsphy: add support to set
+ disconnect threshold
+Message-ID: <agBw8aDJDSHUGe3S@vaman>
+References: <20260413122836.4848-1-chunfeng.yun@mediatek.com>
+ <20260413122836.4848-2-chunfeng.yun@mediatek.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260322-remove-device-find-by-of-node-v1-2-b72eb22a1215@gmail.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260510_042614_076713_2E78E721 
-X-CRM114-Status: UNSURE (   6.17  )
-X-CRM114-Notice: Please train this message.
+In-Reply-To: <20260413122836.4848-2-chunfeng.yun@mediatek.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,12 +77,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 22-03-26, 18:54, Dmitry Torokhov wrote:
-> In preparation to class_find_device_by_of_node() going away switch to
-> using class_find_device_by_fwnode().
+On 13-04-26, 20:28, Chunfeng Yun wrote:
+> Add a property to tune usb2 phy's disconnect threshold.
+> 
+> Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> ---
+> v2: change property name
+> ---
+>  drivers/phy/mediatek/phy-mtk-xsphy.c | 12 ++++++++++--
+>  1 file changed, 10 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/phy/mediatek/phy-mtk-xsphy.c b/drivers/phy/mediatek/phy-mtk-xsphy.c
+> index c0ddb9273cc3..46345e4f4189 100644
+> --- a/drivers/phy/mediatek/phy-mtk-xsphy.c
+> +++ b/drivers/phy/mediatek/phy-mtk-xsphy.c
+> @@ -61,6 +61,7 @@
+>  #define XSP_USBPHYACR6		((SSUSB_SIFSLV_U2PHY_COM) + 0x018)
+>  #define P2A6_RG_BC11_SW_EN	BIT(23)
+>  #define P2A6_RG_OTG_VBUSCMP_EN	BIT(20)
+> +#define PA6_RG_U2_DISCTH	GENMASK(7, 4)
+>  
+>  #define XSP_U2PHYDTM1		((SSUSB_SIFSLV_U2PHY_COM) + 0x06C)
+>  #define P2D_FORCE_IDDIG		BIT(9)
+> @@ -107,6 +108,7 @@ struct xsphy_instance {
+>  	int eye_src;
+>  	int eye_vrt;
+>  	int eye_term;
+> +	int discth;
 
-Acked-by: Vinod Koul <vkoul@kernel.org>
+Please see 
 
+https://sashiko.dev/#/patchset/20260413122836.4848-1-chunfeng.yun%40mediatek.com
+
+>  };
+>  
+>  struct mtk_xsphy {
+> @@ -256,9 +258,12 @@ static void phy_parse_property(struct mtk_xsphy *xsphy,
+>  					 &inst->eye_vrt);
+>  		device_property_read_u32(dev, "mediatek,eye-term",
+>  					 &inst->eye_term);
+> -		dev_dbg(dev, "intr:%d, src:%d, vrt:%d, term:%d\n",
+> +		device_property_read_u32(dev, "mediatek,discth",
+> +					 &inst->discth);
+> +		dev_dbg(dev, "intr:%d, src:%d, vrt:%d, term:%d, discth:%d\n",
+>  			inst->efuse_intr, inst->eye_src,
+> -			inst->eye_vrt, inst->eye_term);
+> +			inst->eye_vrt, inst->eye_term,
+> +			inst->discth);
+>  		break;
+>  	case PHY_TYPE_USB3:
+>  		device_property_read_u32(dev, "mediatek,efuse-intr",
+> @@ -301,6 +306,9 @@ static void u2_phy_props_set(struct mtk_xsphy *xsphy,
+>  	if (inst->eye_term)
+>  		mtk_phy_update_field(pbase + XSP_USBPHYACR1, P2A1_RG_TERM_SEL,
+>  				     inst->eye_term);
+> +	if (inst->discth)
+> +		mtk_phy_update_field(pbase + XSP_USBPHYACR6, PA6_RG_U2_DISCTH,
+> +				     inst->discth);
+>  }
+>  
+>  static void u3_phy_props_set(struct mtk_xsphy *xsphy,
+> -- 
+> 2.45.2
 
 -- 
 ~Vinod
