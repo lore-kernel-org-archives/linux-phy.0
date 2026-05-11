@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B1514CD37B9
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BEDFCCD4845
 	for <linux-phy@archiver.kernel.org>; Mon, 11 May 2026 10:08:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,38 +12,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0+0ZshW2WC0Pso52rPBKMSw5Y3mUWl3Lc95WHKK6kQc=; b=mnvQ6Bz1doPrNt
-	p+ggrdY9D3PKPKfOpYb2yKTWgzgiKrzhDafDdQ24VFQPwKPd1cyuqFS6E1tqX/1XzzddBlGXgGfp1
-	iVN1XOxGXHORWavZN4n1AxBpV8nS5BlpHPmTZL+zxMhpwSapZSaLPv6xPxhTMGzarQ+v3IFGdhw/A
-	xs/F5yBQUrqSH9I/GiNVmCAd7xGXF3TcXSbWUvNIpraPVEREpsbFquHvmpA6xrmbKNu9oreY02+GY
-	Isw9Kd1xrrddhI4yqGebPXmbCJJhhbXSO6T2/A1SGGRY+m2IAjJ8WBVPnCqHM86+RSNhsqpC2MXp/
-	sDHW2M2pfL8GeRJG+/7A==;
+	List-Owner; bh=kpjDZhvO78iHmIRuDURIRfmnfGA4iD52Q9fo+4Imn+c=; b=UrmPH0zOtC7K9W
+	BXxievcEhAMi+7f81ib6RGk1rJiEQWXX57XC3vLdIEsSH9jztrSXtIyW6eTMb5zoX6xWEWVINkTwp
+	hKVl6OAF8Xc9C1cMOMC+2gIEgG9HlQ+06gV6SxLJbfB2acuBIX4qqVA2HQemKXefjJGHT56qE/qGI
+	Y5ZafwrV+ARsky2taDwT6lw9vLfjxLTI35iYKPb+ifpRUBQ8rUyHCpzUOVWmiTDo9K9+LEx4sVfQJ
+	eMU0AuzuNR59o1WYLAERq5Nc0H3w/zKP9coTnl7wmJgzrADpV46f/TcfSmTwv9Q27iLe+Tfl9I9bR
+	WVg9PE8E9jt6qMufxyZg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wMNYk-0000000D3aj-1xOU;
+	id 1wMNYk-0000000D3ao-27zt;
 	Mon, 11 May 2026 10:08:22 +0000
-Received: from bali.collaboradmins.com ([148.251.105.195])
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wMNYh-0000000D3Xj-43wi
+	id 1wMNYi-0000000D3YE-3Snf
 	for linux-phy@lists.infradead.org;
-	Mon, 11 May 2026 10:08:21 +0000
+	Mon, 11 May 2026 10:08:22 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1778494098;
-	bh=IzjA+ss8fq+OudrP+OY7Jz200UbOdKWPNEasjm7Y7K0=;
+	s=mail; t=1778494099;
+	bh=hpKH8+a4lzsOjD5P5HS3DIAty/IrRxCeUm2CXF+3h/4=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=dGdICxss474RgqB7F+QN7dvyAKu6jrIsp8/hZMyqqv8tKY1NYa1bFqOe9bsPY5DjG
-	 vSNap1yvIMYh+QSto4mKbwsfQWE70l/Z6o12UzgKUoeuSoFWmy7btSlwD64AaJmCoC
-	 pbIdP488AhEdSzty4yHXWWvEGK+Kf4OYZIPManEEuoWkn7T+uHp/4q+OFFN8civ1L0
-	 zkM6QgmcbYK2E+t3iPwBgomsUDs3hnholLfnDs1MHttkkcH3VNq6K/FYIXWMGK1dHr
-	 nwluhBXjtvo/QSCYHIshuxQaH8oYjJ0kQW104akV7Q1pmJgSgTS4b/GijairlcMaNk
-	 36yMWXdJnLf8Q==
+	b=hBfbj+C9tE3UMsp+mlT4UBggXGMV7RRA2AhNGs0fSHzhPaV6VkgKHgvyIaSd7HVSg
+	 yw6SXHJ03UgPRZlRp82FgOaut+ReI4JCgT3fvkyxX6MKHKsr4eDidwcCxiXJyMWUBF
+	 5vfZTYz8TRmhXLLoaBlFCNq+Cijb/5jwb7RSLwO7+99X3duRyrH8KNw7X7WKbGNyKh
+	 7BMBdDXzs2yQv/a6mCw3hq3W6YkrgaagrYsWUIWgDXdAjLmeByofh8ACV89vEouYmU
+	 /ifE8vB4VeMDsOGckGWtCkZ7Ep9Da6cofu1VBvm5x3Z0zdIZS1V6ECZuwRETfbedbE
+	 IZRqPAKhieuLA==
 Received: from IcarusMOD.eternityproject.eu (unknown [100.64.1.21])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id D0F2D17E1537;
-	Mon, 11 May 2026 12:08:16 +0200 (CEST)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 2D6FA17E138B;
+	Mon, 11 May 2026 12:08:18 +0200 (CEST)
 From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 To: jic23@kernel.org
 Cc: dlechner@baylibre.com,
@@ -74,18 +74,17 @@ Cc: dlechner@baylibre.com,
 	linux-phy@lists.infradead.org,
 	linux-pm@vger.kernel.org,
 	kernel@collabora.com,
-	Abel Vesa <abel.vesa@linaro.org>,
 	Andy Shevchenko <andriy.shevchenko@intel.com>
-Subject: [PATCH RESEND v8 07/10] phy: qualcomm: eusb2-repeater: Migrate to devm_spmi_subdevice_alloc_and_add()
-Date: Mon, 11 May 2026 12:08:02 +0200
-Message-ID: <20260511100805.121432-8-angelogioacchino.delregno@collabora.com>
+Subject: [PATCH RESEND v8 08/10] misc: qcom-coincell: Migrate to devm_spmi_subdevice_alloc_and_add()
+Date: Mon, 11 May 2026 12:08:03 +0200
+Message-ID: <20260511100805.121432-9-angelogioacchino.delregno@collabora.com>
 X-Mailer: git-send-email 2.53.0
 In-Reply-To: <20260511100805.121432-1-angelogioacchino.delregno@collabora.com>
 References: <20260511100805.121432-1-angelogioacchino.delregno@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260511_030820_152594_E8A087D1 
-X-CRM114-Status: GOOD (  19.79  )
+X-CRM114-CacheID: sfid-20260511_030821_008464_39FD74E2 
+X-CRM114-Status: GOOD (  17.68  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,202 +101,139 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Some Qualcomm PMICs integrate an USB Repeater device, used to
-convert between eUSB2 and USB 2.0 signaling levels, reachable
-in a specific address range over SPMI.
+Some Qualcomm PMICs integrate a charger for coincells, usually
+powering an RTC when external (or main battery) power is missing.
 
 Instead of using the parent SPMI device (the main PMIC) as a kind
-of syscon in this driver, register a new SPMI sub-device for EUSB2
-and initialize its own regmap with this sub-device's specific base
+of syscon in this driver, register a new SPMI sub-device and
+initialize its own regmap with this sub-device's specific base
 address, retrieved from the devicetree.
 
 This allows to stop manually adding the register base address to
 every R/W call in this driver, as this can be, and is now, handled
 by the regmap API instead.
 
+Acked-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Tested-by: Neil Armstrong <neil.armstrong@linaro.org> # on SM8650-QRD
-Reviewed-by: Abel Vesa <abel.vesa@linaro.org>
-Acked-by: Vinod Koul <vkoul@kernel.org>
 Reviewed-by: Andy Shevchenko <andriy.shevchenko@intel.com>
 Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 ---
- drivers/phy/qualcomm/Kconfig                  |  2 +
- .../phy/qualcomm/phy-qcom-eusb2-repeater.c    | 55 ++++++++++++-------
- 2 files changed, 37 insertions(+), 20 deletions(-)
+ drivers/misc/Kconfig         |  2 ++
+ drivers/misc/qcom-coincell.c | 38 +++++++++++++++++++++++++-----------
+ 2 files changed, 29 insertions(+), 11 deletions(-)
 
-diff --git a/drivers/phy/qualcomm/Kconfig b/drivers/phy/qualcomm/Kconfig
-index 60a0ead127fa..902a788f35f1 100644
---- a/drivers/phy/qualcomm/Kconfig
-+++ b/drivers/phy/qualcomm/Kconfig
-@@ -128,7 +128,9 @@ config PHY_QCOM_QUSB2
- config PHY_QCOM_EUSB2_REPEATER
- 	tristate "Qualcomm PMIC eUSB2 Repeater Driver"
- 	depends on OF && (ARCH_QCOM || COMPILE_TEST)
+diff --git a/drivers/misc/Kconfig b/drivers/misc/Kconfig
+index 390256ed91f4..90947c015179 100644
+--- a/drivers/misc/Kconfig
++++ b/drivers/misc/Kconfig
+@@ -291,6 +291,8 @@ config HP_ILO
+ config QCOM_COINCELL
+ 	tristate "Qualcomm coincell charger support"
+ 	depends on MFD_SPMI_PMIC || COMPILE_TEST
 +	depends on SPMI
- 	select GENERIC_PHY
 +	select REGMAP_SPMI
  	help
- 	  Enable support for the USB high-speed eUSB2 repeater on Qualcomm
- 	  PMICs. The repeater is paired with a Synopsys or M31 eUSB2 Phy
-diff --git a/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c b/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
-index efeec4709a15..bf6e1f96d31c 100644
---- a/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
-+++ b/drivers/phy/qualcomm/phy-qcom-eusb2-repeater.c
-@@ -9,6 +9,7 @@
- #include <linux/regmap.h>
+ 	  This driver supports the coincell block found inside of
+ 	  Qualcomm PMICs.  The coincell charger provides a means to
+diff --git a/drivers/misc/qcom-coincell.c b/drivers/misc/qcom-coincell.c
+index 3c57f7429147..20f59b448d9a 100644
+--- a/drivers/misc/qcom-coincell.c
++++ b/drivers/misc/qcom-coincell.c
+@@ -9,11 +9,11 @@
  #include <linux/of.h>
- #include <linux/phy/phy.h>
+ #include <linux/regmap.h>
+ #include <linux/platform_device.h>
 +#include <linux/spmi.h>
  
- /* eUSB2 status registers */
- #define EUSB2_RPTR_STATUS		0x08
-@@ -66,7 +67,6 @@ struct eusb2_repeater {
- 	struct phy *phy;
- 	struct regulator_bulk_data *vregs;
- 	const struct eusb2_repeater_cfg *cfg;
--	u32 base;
- 	enum phy_mode mode;
+ struct qcom_coincell {
+ 	struct device	*dev;
+ 	struct regmap	*regmap;
+-	u32		base_addr;
  };
  
-@@ -143,7 +143,6 @@ static int eusb2_repeater_init(struct phy *phy)
- 	struct eusb2_repeater *rptr = phy_get_drvdata(phy);
- 	struct device_node *np = rptr->dev->of_node;
- 	struct regmap *regmap = rptr->regmap;
--	u32 base = rptr->base;
- 	u32 poll_val;
- 	s32 dt_val;
- 	int ret;
-@@ -154,37 +153,37 @@ static int eusb2_repeater_init(struct phy *phy)
- 	if (ret)
- 		return ret;
+ #define QCOM_COINCELL_REG_RSET		0x44
+@@ -35,7 +35,7 @@ static int qcom_coincell_chgr_config(struct qcom_coincell *chgr, int rset,
+ 	/* if disabling, just do that and skip other operations */
+ 	if (!enable)
+ 		return regmap_write(chgr->regmap,
+-			  chgr->base_addr + QCOM_COINCELL_REG_ENABLE, 0);
++			  QCOM_COINCELL_REG_ENABLE, 0);
  
--	regmap_write(regmap, base + EUSB2_EN_CTL1, EUSB2_RPTR_EN);
-+	regmap_write(regmap, EUSB2_EN_CTL1, EUSB2_RPTR_EN);
- 
- 	/* Write registers from init table */
- 	for (int i = 0; i < rptr->cfg->init_tbl_num; i++)
--		regmap_write(regmap, base + rptr->cfg->init_tbl[i].reg,
-+		regmap_write(regmap, rptr->cfg->init_tbl[i].reg,
- 			     rptr->cfg->init_tbl[i].value);
- 
- 	/* Override registers from devicetree values */
- 	if (!of_property_read_u8(np, "qcom,tune-usb2-preem", &val))
--		regmap_write(regmap, base + EUSB2_TUNE_USB2_PREEM, val);
-+		regmap_write(regmap, EUSB2_TUNE_USB2_PREEM, val);
- 
- 	if (!of_property_read_u8(np, "qcom,tune-usb2-disc-thres", &val))
--		regmap_write(regmap, base + EUSB2_TUNE_HSDISC, val);
-+		regmap_write(regmap, EUSB2_TUNE_HSDISC, val);
- 
- 	if (!of_property_read_u8(np, "qcom,tune-usb2-amplitude", &val))
--		regmap_write(regmap, base + EUSB2_TUNE_IUSB2, val);
-+		regmap_write(regmap, EUSB2_TUNE_IUSB2, val);
- 
- 	if (!of_property_read_u8(np, "qcom,tune-res-fsdif", &val))
--		regmap_write(regmap, base + EUSB2_TUNE_RES_FSDIF, val);
-+		regmap_write(regmap, EUSB2_TUNE_RES_FSDIF, val);
- 
- 	if (!of_property_read_s32(np, "qcom,squelch-detector-bp", &dt_val)) {
- 		for (i = 0; i < ARRAY_SIZE(squelch_detector); i++) {
- 			if (squelch_detector[i] == dt_val) {
--				regmap_write(regmap, base + EUSB2_TUNE_SQUELCH_U, i);
-+				regmap_write(regmap, EUSB2_TUNE_SQUELCH_U, i);
- 				break;
- 			}
- 		}
+ 	/* find index for current-limiting resistor */
+ 	for (i = 0; i < ARRAY_SIZE(qcom_rset_map); i++)
+@@ -58,7 +58,7 @@ static int qcom_coincell_chgr_config(struct qcom_coincell *chgr, int rset,
  	}
  
- 	/* Wait for status OK */
--	ret = regmap_read_poll_timeout(regmap, base + EUSB2_RPTR_STATUS, poll_val,
-+	ret = regmap_read_poll_timeout(regmap, EUSB2_RPTR_STATUS, poll_val,
- 				       poll_val & RPTR_OK, 10, 5);
- 	if (ret)
- 		dev_err(rptr->dev, "initialization timed-out\n");
-@@ -197,7 +196,6 @@ static int eusb2_repeater_set_mode(struct phy *phy,
- {
- 	struct eusb2_repeater *rptr = phy_get_drvdata(phy);
- 	struct regmap *regmap = rptr->regmap;
--	u32 base = rptr->base;
- 
- 	switch (mode) {
- 	case PHY_MODE_USB_HOST:
-@@ -206,8 +204,8 @@ static int eusb2_repeater_set_mode(struct phy *phy,
- 		 * per eUSB 1.2 Spec. Below implement software workaround until
- 		 * PHY and controller is fixing seen observation.
- 		 */
--		regmap_write(regmap, base + EUSB2_FORCE_EN_5, F_CLK_19P2M_EN);
--		regmap_write(regmap, base + EUSB2_FORCE_VAL_5, V_CLK_19P2M_EN);
-+		regmap_write(regmap, EUSB2_FORCE_EN_5, F_CLK_19P2M_EN);
-+		regmap_write(regmap, EUSB2_FORCE_VAL_5, V_CLK_19P2M_EN);
- 		break;
- 	case PHY_MODE_USB_DEVICE:
+ 	rc = regmap_write(chgr->regmap,
+-			  chgr->base_addr + QCOM_COINCELL_REG_RSET, i);
++			  QCOM_COINCELL_REG_RSET, i);
+ 	if (rc) {
  		/*
-@@ -216,8 +214,8 @@ static int eusb2_repeater_set_mode(struct phy *phy,
- 		 * repeater doesn't clear previous value due to shared
- 		 * regulators (say host <-> device mode switch).
- 		 */
--		regmap_write(regmap, base + EUSB2_FORCE_EN_5, 0);
--		regmap_write(regmap, base + EUSB2_FORCE_VAL_5, 0);
-+		regmap_write(regmap, EUSB2_FORCE_EN_5, 0);
-+		regmap_write(regmap, EUSB2_FORCE_VAL_5, 0);
- 		break;
- 	default:
- 		return -EINVAL;
-@@ -242,13 +240,23 @@ static const struct phy_ops eusb2_repeater_ops = {
+ 		 * This is mainly to flag a bad base_addr (reg) from dts.
+@@ -71,19 +71,28 @@ static int qcom_coincell_chgr_config(struct qcom_coincell *chgr, int rset,
+ 	}
  
- static int eusb2_repeater_probe(struct platform_device *pdev)
+ 	rc = regmap_write(chgr->regmap,
+-		chgr->base_addr + QCOM_COINCELL_REG_VSET, j);
++		QCOM_COINCELL_REG_VSET, j);
+ 	if (rc)
+ 		return rc;
+ 
+ 	/* set 'enable' register */
+ 	return regmap_write(chgr->regmap,
+-			    chgr->base_addr + QCOM_COINCELL_REG_ENABLE,
++			    QCOM_COINCELL_REG_ENABLE,
+ 			    QCOM_COINCELL_ENABLE);
+ }
+ 
+ static int qcom_coincell_probe(struct platform_device *pdev)
  {
-+	struct regmap_config eusb2_regmap_config = {
+-	struct device_node *node = pdev->dev.of_node;
++	struct regmap_config qcom_coincell_regmap_config = {
 +		.reg_bits = 16,
 +		.val_bits = 8,
 +		.max_register = 0xff,
 +		.fast_io = true,
 +	};
-+	struct spmi_device *sparent;
- 	struct eusb2_repeater *rptr;
++	struct device *dev = &pdev->dev;
++	struct device_node *node = dev->of_node;
 +	struct spmi_subdevice *sub_sdev;
- 	struct device *dev = &pdev->dev;
- 	struct phy_provider *phy_provider;
- 	struct device_node *np = dev->of_node;
--	u32 res;
- 	int ret;
++	struct spmi_device *sparent;
+ 	struct qcom_coincell chgr;
+ 	u32 rset = 0;
+ 	u32 vset = 0;
+@@ -92,16 +101,22 @@ static int qcom_coincell_probe(struct platform_device *pdev)
  
-+	if (!dev->parent)
-+		return -ENODEV;
+ 	chgr.dev = &pdev->dev;
+ 
+-	chgr.regmap = dev_get_regmap(pdev->dev.parent, NULL);
++	rc = device_property_read_u32(dev, "reg", &qcom_coincell_regmap_config.reg_base);
++	if (rc)
++		return rc;
 +
- 	rptr = devm_kzalloc(dev, sizeof(*rptr), GFP_KERNEL);
- 	if (!rptr)
- 		return -ENOMEM;
-@@ -260,15 +268,21 @@ static int eusb2_repeater_probe(struct platform_device *pdev)
- 	if (!rptr->cfg)
- 		return -EINVAL;
- 
--	rptr->regmap = dev_get_regmap(dev->parent, NULL);
--	if (!rptr->regmap)
 +	sparent = to_spmi_device(dev->parent);
-+	if (!sparent)
- 		return -ENODEV;
- 
--	ret = of_property_read_u32(np, "reg", &res);
 +	sub_sdev = devm_spmi_subdevice_alloc_and_add(dev, sparent);
 +	if (IS_ERR(sub_sdev))
 +		return PTR_ERR(sub_sdev);
 +
-+	ret = device_property_read_u32(dev, "reg", &eusb2_regmap_config.reg_base);
- 	if (ret < 0)
- 		return ret;
++	chgr.regmap = devm_regmap_init_spmi_ext(&sub_sdev->sdev,
++						&qcom_coincell_regmap_config);
+ 	if (!chgr.regmap) {
+ 		dev_err(chgr.dev, "Unable to get regmap\n");
+ 		return -EINVAL;
+ 	}
  
--	rptr->base = res;
-+	rptr->regmap = devm_regmap_init_spmi_ext(&sub_sdev->sdev, &eusb2_regmap_config);
-+	if (IS_ERR(rptr->regmap))
-+		return -ENODEV;
+-	rc = of_property_read_u32(node, "reg", &chgr.base_addr);
+-	if (rc)
+-		return rc;
+-
+ 	enable = !of_property_read_bool(node, "qcom,charger-disable");
  
- 	ret = eusb2_repeater_init_vregs(rptr);
- 	if (ret < 0) {
-@@ -335,3 +349,4 @@ module_platform_driver(eusb2_repeater_driver);
+ 	if (enable) {
+@@ -142,3 +157,4 @@ module_platform_driver(qcom_coincell_driver);
  
- MODULE_DESCRIPTION("Qualcomm PMIC eUSB2 Repeater driver");
- MODULE_LICENSE("GPL");
+ MODULE_DESCRIPTION("Qualcomm PMIC coincell charger driver");
+ MODULE_LICENSE("GPL v2");
 +MODULE_IMPORT_NS("SPMI");
 -- 
 2.53.0
