@@ -4,66 +4,108 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 038F9CD37BE
-	for <linux-phy@archiver.kernel.org>; Mon, 11 May 2026 16:30:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3F31DCD484F
+	for <linux-phy@archiver.kernel.org>; Mon, 11 May 2026 16:32:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Aw36BNuA5VfvKEUY+MRIl78XuEa+F1RFUedMUagy+XA=; b=3ANiG6V83MHkkqI/h/nztQoPLf
-	StfNLGsB38Q0Y7s6AbqEiwiXdgFQO8Xyg4iQaozo7sagllcYW663nbig993MkSWaGTBNOz0383vT6
-	N1vYyBpC/EQ8QJblUJpt/PYtRmVuooAIkJXjX3YUAWQYyhbwMhnp6Y9fALvk/gupS2VZRg5TtGLnQ
-	9m6JbOI8+CRQRhQG3W4cMGoOElSYMZKiQe24YLeB54Fd7xjjIUzGR1MdQnWhwOTieUy1oxFwAesJf
-	pp/Nd52lxiNW8wLmwKEjVPNk5NppIVd4oSNsPULDoFTHkTlE5SWKUZaS/UgPxAc85EKWZANPmZWLZ
-	kJk4N35w==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=P1415Z6yHIxMb3RHe/ePmrXVUro5Hdk7yyTLbunIZ6k=; b=jEwhusUn3js8a/
+	Sg0R9TmvLQipXLeIX9BJKYrRwYQTaVCs02qMjwjj6+dC+xawFQopqLhDCF4SoZirnTGYjoGvcJ94Y
+	uxhMhTDnl+gl/YSoYyekd3KhJ4JmkSXRO0zEiJzHym1161LNgs5yxxME3z9XA2PF5+B9Nlh/mcNyx
+	oDFiPhks7xHWQlafttMjnhYi3kWpyD5wlWTh5TBI3GkGIVLG3Pgma9cwaRk4Goml9KaRWkIklqpd2
+	LZVIqe7WaVElMOCQY6cyVfPddH7gBci8xxuJeRUTiKvhp0BGUvJT/f/xMtwNKcp7ksAT6Y6W2AYc+
+	Cpn9O41MdTvDuwupzIgg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wMTWu-0000000EDDr-2NbR;
-	Mon, 11 May 2026 16:30:52 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wMTYt-0000000EDTG-3sym;
+	Mon, 11 May 2026 16:32:55 +0000
+Received: from mail-southcentralusazon11011065.outbound.protection.outlook.com ([40.93.194.65] helo=SN4PR0501CU005.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wMTWq-0000000EDC9-3y6t
-	for linux-phy@lists.infradead.org;
-	Mon, 11 May 2026 16:30:50 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 555A7435EE;
-	Mon, 11 May 2026 16:30:48 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0914BC2BCC9;
-	Mon, 11 May 2026 16:30:45 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1778517048;
-	bh=YTRU0QzceM5GN/zCwgxklC12bklq+nXMEZMLiB/6JqI=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=iJmqDb7gz4VP8rgBw0PjA4gnd68l2YaczhY2DbmG5aKqwrBFCWYZCXWNMwCmaMGKD
-	 Bxo3HqhrV/vhFOZHfIUfspQbwXMO+J/CPgVCky1nRCX2FlTkmntSv8u6KlfKjM98Wc
-	 MM4yE5YpiToacIo6UhZL7FZ3bkYygdlQpqXfWRFk/eqFh/A2ee7NjmAw0wlTPU90cd
-	 eG6zzv4hNt3P+Lk+2rHVgyortDcfxiHln3ui9rA5u3QsoK6Uo2wNm1G98KdZEgDfjS
-	 PWwW0mR7K+xhgAXuT/oyiQSme4uQYGWfrXSSWSY11CvehpGNV/PdyWjBLDH696nA3d
-	 ybgRpdUEa1UIw==
-Date: Mon, 11 May 2026 17:30:44 +0100
-From: Conor Dooley <conor@kernel.org>
-To: Vladimir Oltean <vladimir.oltean@nxp.com>
-Cc: linux-phy@lists.infradead.org, netdev@vger.kernel.org,
-	Ioana Ciornei <ioana.ciornei@nxp.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Josua Mayer <josua@solid-run.com>, linux-kernel@vger.kernel.org,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, devicetree@vger.kernel.org
-Subject: Re: [PATCH phy-next 2/5] dt-bindings: phy: lynx-28g: add constraint
- on LX2162A lane indices
-Message-ID: <20260511-email-acuteness-19bf37f7ab6b@spud>
-References: <20260511150023.1903577-1-vladimir.oltean@nxp.com>
- <20260511150023.1903577-3-vladimir.oltean@nxp.com>
+	id 1wMTYr-0000000EDSl-16d2;
+	Mon, 11 May 2026 16:32:54 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=gxloN8TWolRaI6pQe/jT6DKzudvbRVi2wdXeehS2bamjPKIb+/47lVHLWFggl02myOPiWIa/HtKr0CSS2NsiN8zk7uz+dT868+EuEnsQmMxZDYvar4sxHNlwNse/LxZZNhHoJKCjJnHfT6J7wPV4oyQdFpy/Ek/5QEdO6lf+vB0RprxCfBnjc24cdSb+2suBHiqWhoHQQO2QqF4uq1zNqwG+Jnr5sgfIRVSIKUAyv7UQU56pNyqBuEJf8kLrMFq84oterVkiXU8ay9Hql7Rj4gjkUMcD6GyAfc1Ss1lYPgBhLdN9ASt2YH3H7ayMXPlZ/IzK7KHtTn9x3g8F4LSXIQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=lsiAOzaQ74kaxjx+Uq0MGP8ePYcDdh1dNRqbJGdqF3c=;
+ b=f3woYEQ5J72TFuDj7rNhge9CfZngwO29FtpM9SkIc3kEsV46hRtSIYxL58LS9odX9zquxUq4DfVp6tH2ekc2cv9HzeFMXn3K1drEWsbQ0gDHnjSTtuLPnyvgjaQE3p9K5nNgyZRPrpM72wI64OntlLyKykJSovo/kFpgm3379hy5SWUg5WkzbOrAiCEMJLgwrE1xLewT7tqGs2IZ0OgUX4QftdfHsmTtCfPf7iVVwPNNFyj33yPJ2yMssSqGzJcnXleOg73otO1wtGyZFZGRL1EubKwlmmGbBqlyhto9nAWLOsKDleRglDrtviPlHfyMhmHw3xosfyxfpeVHINcw5Q==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 165.204.84.17) smtp.rcpttodomain=ideasonboard.com smtp.mailfrom=amd.com;
+ dmarc=pass (p=quarantine sp=quarantine pct=100) action=none
+ header.from=amd.com; dkim=none (message not signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=amd.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=lsiAOzaQ74kaxjx+Uq0MGP8ePYcDdh1dNRqbJGdqF3c=;
+ b=bp4kmF4I9GZuFHODyYPjsD9+5oDV9BVB8atf1RHAIQsOdktBWXK6WvIbggdZ5NZe0ELljttdCQ4sLQTejcpM4aHnFrAxUNGUW2iM61Ie0e/adwzuTtUu391owB7yl2U/0l++8ZrCpcVsc7Ei2aqwkJZq/H2AMMScCxe8QixmyMo=
+Received: from DS7PR05CA0040.namprd05.prod.outlook.com (2603:10b6:8:2f::33) by
+ IA1PR12MB9529.namprd12.prod.outlook.com (2603:10b6:208:592::17) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9891.23; Mon, 11 May
+ 2026 16:32:44 +0000
+Received: from DS2PEPF00003443.namprd04.prod.outlook.com
+ (2603:10b6:8:2f:cafe::26) by DS7PR05CA0040.outlook.office365.com
+ (2603:10b6:8:2f::33) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.21.25.15 via Frontend Transport; Mon, 11
+ May 2026 16:32:44 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 165.204.84.17)
+ smtp.mailfrom=amd.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=amd.com;
+Received-SPF: Pass (protection.outlook.com: domain of amd.com designates
+ 165.204.84.17 as permitted sender) receiver=protection.outlook.com;
+ client-ip=165.204.84.17; helo=satlexmb07.amd.com; pr=C
+Received: from satlexmb07.amd.com (165.204.84.17) by
+ DS2PEPF00003443.mail.protection.outlook.com (10.167.17.70) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.21.25.13 via Frontend Transport; Mon, 11 May 2026 16:32:44 +0000
+Received: from satlexmb08.amd.com (10.181.42.217) by satlexmb07.amd.com
+ (10.181.42.216) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.41; Mon, 11 May
+ 2026 11:32:24 -0500
+Received: from xhdradheys41.xilinx.com (10.180.168.240) by satlexmb08.amd.com
+ (10.181.42.217) with Microsoft SMTP Server id 15.2.2562.41 via Frontend
+ Transport; Mon, 11 May 2026 11:32:21 -0500
+From: Radhey Shyam Pandey <radhey.shyam.pandey@amd.com>
+To: <laurent.pinchart@ideasonboard.com>, <vkoul@kernel.org>,
+	<neil.armstrong@linaro.org>, <michal.simek@amd.com>
+CC: <linux-kernel@vger.kernel.org>, <linux-phy@lists.infradead.org>,
+	<linux-arm-kernel@lists.infradead.org>, <git@amd.com>, Nava kishore Manne
+	<nava.kishore.manne@amd.com>, <stable@vger.kernel.org>, Radhey Shyam Pandey
+	<radhey.shyam.pandey@amd.com>
+Subject: [PATCH 2/3] phy: zynqmp: use read-modify-write for SERDES scrambler bypass
+Date: Mon, 11 May 2026 22:01:34 +0530
+Message-ID: <20260511163135.2924642-3-radhey.shyam.pandey@amd.com>
+X-Mailer: git-send-email 2.44.4
+In-Reply-To: <20260511163135.2924642-1-radhey.shyam.pandey@amd.com>
+References: <20260511163135.2924642-1-radhey.shyam.pandey@amd.com>
 MIME-Version: 1.0
-In-Reply-To: <20260511150023.1903577-3-vladimir.oltean@nxp.com>
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DS2PEPF00003443:EE_|IA1PR12MB9529:EE_
+X-MS-Office365-Filtering-Correlation-Id: a14f4037-ff35-4eb8-83e4-08deaf7aedbf
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|1800799024|36860700016|82310400026|18002099003|3023799003|11063799003|56012099003|22082099003;
+X-Microsoft-Antispam-Message-Info: 2506spoD3JHM9JRCVmKD8vDr7FUCxFKXh1+i4gSYygIh3YaRvnTYDVCi2aMbYmJHDhhFHo/QL6KnTNRvy+aQMlHDRgpz36+1w1LzedWLhjDYpCLYcyqKXgxlAsb5vPpl7AEirufTuGGbpPzlQC3ytWYfHovfRGLVjnNjrmVkjcr3HO9bLR+08zkRFZOHRO+o0n6dcdCUx9LtR2QD4XLa+kdVaFwW4xCUx6LfiHQK6Uqx9an4BFPHHfcppLwNaenPLiWYACXqlMmGta2gfV27DGiJqVUyEb0scAnJeTbL/Jb0UlyDZpx4K5HmQkIYpl5mZ5m+tJCHICLs19R8HVnwGyCyT8dHP+GmAjUSVixn4S/SY5Gkw8rdzUp64O1cLCJ+cRdD8v4gTmiC6Hyb8jxA3cf5RNngzDFgCUlju2u/BXdPo4EnxS6eAwMk6D72jI8sDzMWUwRpdioCjNQ4IknIq3qNWIj9R5SUGwtK5679ZevOyXbBJfh8xFEnOta6yPLsoMuwOT1Euy/5EzxP2NJYMVBmIc6UoScRmzP6ZVpk+UQahuCi0xteYDI8hpl6AYLeILKidHjvcnR0H/2pDzddaCbrwL6qbEVcfod+pqnMqPpKEAMwqklJLEvNuqOHRWklaiT5Sxfokw55ey/To2eKwFFggA0DPx6ISr7ikMIrfTQ2KK92Sz9N1t3ivfRGWNfLYxUkUX83qD2fJ85OfP+Sds5zfkfVTE1DI8CMOWILH5U=
+X-Forefront-Antispam-Report: CIP:165.204.84.17;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:satlexmb07.amd.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(376014)(1800799024)(36860700016)(82310400026)(18002099003)(3023799003)(11063799003)(56012099003)(22082099003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: 4LvkrVA/+2t8WZk6P/JefUVcDo4ft3B2y82O7bOTXzfPiT76NdeLK95XGVusDjAhBSPBcyVAIBa77XZMpDWp7KHNdBSsM46F9hfuvxpi8SU0RbtiFT7tIiQajK72sDABkpfyT/WLskfAW/ZVU/MWb8HSUxcwrRwogcOZtn8GNXIBJcPlvEp9B0j2aQPOzWjYI47+hq4UC8OU8tv2cVQpxSxTnhksdb4yReT0p68dUB1zqfc88NmK8rUXavgqa/agGm4g+GOpY/pt0jOizrqx6TWo99dIzL9tUUv7Vzn545Lls5hYjN8L0XlEb/709vcnDaGfzzo7Qf76wTZAUKDEyjXViyEi+iyh4ZulwmMfn6Zqp9U5rDYN6kNAnXeddyj15blwGtntk4m2f63M6g8/UEcH/fT74+Pa2VXL9pGFLwpGUIt5U73f6lyVpa57HpXJ
+X-OriginatorOrg: amd.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 May 2026 16:32:44.2001
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: a14f4037-ff35-4eb8-83e4-08deaf7aedbf
+X-MS-Exchange-CrossTenant-Id: 3dd8961f-e488-4e60-8e11-a82d994e183d
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=3dd8961f-e488-4e60-8e11-a82d994e183d;Ip=[165.204.84.17];Helo=[satlexmb07.amd.com]
+X-MS-Exchange-CrossTenant-AuthSource: DS2PEPF00003443.namprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: IA1PR12MB9529
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260511_093049_054814_4F3B3E3C 
-X-CRM114-Status: UNSURE (   7.98  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260511_093253_349377_4E99944E 
+X-CRM114-Status: GOOD (  10.61  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,57 +117,52 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0403743513444730526=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+From: Nava kishore Manne <nava.kishore.manne@amd.com>
 
---===============0403743513444730526==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="pG0Rwq2w5ThK7a69"
-Content-Disposition: inline
+xpsgtr_bypass_scrambler_8b10b() used xpsgtr_write_phy() which performs
+a full register write, silently clearing any bits beyond the intended
+bypass control fields.
 
+Switch to xpsgtr_clr_set_phy() with clr=mask, set=mask to set only
+the bypass bits while preserving the remaining bits in each register.
 
---pG0Rwq2w5ThK7a69
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Fixes: 4a33bea00314 ("phy: zynqmp: Add PHY driver for the Xilinx ZynqMP Gigabit Transceiver")
+Cc: stable@vger.kernel.org
+Signed-off-by: Nava kishore Manne <nava.kishore.manne@amd.com>
+Signed-off-by: Radhey Shyam Pandey <radhey.shyam.pandey@amd.com>
+---
+ drivers/phy/xilinx/phy-zynqmp.c | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
 
-On Mon, May 11, 2026 at 06:00:20PM +0300, Vladimir Oltean wrote:
-> The SerDes 1 of LX2162A has fewer lanes than all other instances, and
-> strangely, their indices are not 0-3, but 4-7.
->=20
-> This is a best-effort constraint, since we can only impose it when using
-> per-SoC compatible string and per-lane OF nodes.
->=20
-> Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
+diff --git a/drivers/phy/xilinx/phy-zynqmp.c b/drivers/phy/xilinx/phy-zynqmp.c
+index c037d7c13d48..6c56c4df8523 100644
+--- a/drivers/phy/xilinx/phy-zynqmp.c
++++ b/drivers/phy/xilinx/phy-zynqmp.c
+@@ -505,8 +505,12 @@ static void xpsgtr_lane_set_protocol(struct xpsgtr_phy *gtr_phy)
+ /* Bypass (de)scrambler and 8b/10b decoder and encoder. */
+ static void xpsgtr_bypass_scrambler_8b10b(struct xpsgtr_phy *gtr_phy)
+ {
+-	xpsgtr_write_phy(gtr_phy, L0_TM_DIG_6, L0_TM_DIS_DESCRAMBLE_DECODER);
+-	xpsgtr_write_phy(gtr_phy, L0_TX_DIG_61, L0_TM_DISABLE_SCRAMBLE_ENCODER);
++	xpsgtr_clr_set_phy(gtr_phy, L0_TM_DIG_6,
++			   L0_TM_DIS_DESCRAMBLE_DECODER,
++			   L0_TM_DIS_DESCRAMBLE_DECODER);
++	xpsgtr_clr_set_phy(gtr_phy, L0_TX_DIG_61,
++			   L0_TM_DISABLE_SCRAMBLE_ENCODER,
++			   L0_TM_DISABLE_SCRAMBLE_ENCODER);
+ }
+ 
+ /* DP-specific initialization. */
+-- 
+2.44.4
 
-Acked-by: Conor Dooley <conor.dooley@microchip.com>
-
---pG0Rwq2w5ThK7a69
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCagIEMwAKCRB4tDGHoIJi
-0v29AP4nagTZqyC0G4SrA+vnXDfh3QKP4eYpdEK6fbB0K0xuOwD/UCZR/LgmDCTj
-pIpzEGg7++UBUrtPWMHwj2M3yHH8Nww=
-=jWbI
------END PGP SIGNATURE-----
-
---pG0Rwq2w5ThK7a69--
-
-
---===============0403743513444730526==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============0403743513444730526==--
-
