@@ -4,66 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C4417CD37BE
-	for <linux-phy@archiver.kernel.org>; Mon, 11 May 2026 18:31:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B7822CD37BE
+	for <linux-phy@archiver.kernel.org>; Mon, 11 May 2026 21:27:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JffSzra9LYGst9snxurN9KRDXBkCd0qdueSuu1EHyqo=; b=xIfhBl9u+lQphC
-	emjCJKWHDCDlEhYqZvcN4WTXpjYWov2XllOUwD1eWb3Dbon3VS1pKfWibJ4+sbSIVjyAQ14Qi1LCd
-	O8LfDBA7UMLKJ/rciV4+jEgkn3TR3TNFp/fPeiE1aVlMwj5VrxMwUzTZVfR1u7i9m+3qUS3x9KOq9
-	kiH0vT1mQr/lGBQy6f3mVq7C3VTcCCqnGDAliC+UgkNdlWhwoD5F5FLsTI16jDT0n4ac/0Vc4Jd4q
-	Og38M9Mb6fohUQw42GU3z0q1qzfRiW5o/C127Wb8QDjEiqLmoKg/NuDPGanRSaQ/h6oh+8bEYwa5d
-	zzqt2lBHQ2TIioS/zUNA==;
+	List-Owner; bh=WazM+WVhRYcTMasv6zaRpLrZltoraIxwh8AGsvg2bgU=; b=eRLMVG/L6ucSIP
+	DtB7j9WuEiCJ94F9/bNSvJJfc92lMTAstYwLxGxxrNyFXDO7DZYHEtHeHd6hE0cyAo09mvdLT98LE
+	rqvWXzwaXQ7jtGXoEkQqgBBoIE8SnY2GhfouEyeMATZAD4rGmoQnB3aRK2VEUrc9HIog4cH4+y68n
+	tOfNamvn1p8sEQ7SBvTyYkhbr4e4wvlyzGoE7IQoi50rBEAXZKCp6WK/l4lf8EcyzbX+MA8wObBN1
+	QQGro6MimKRmM1Jg20CLcL5udSaFeMZfqGFKsX1lcnaw6ap6t3VmILEDaOHqXF+jF04gaiCuSpwll
+	AiipsJg+YJn8NSZ4RF4g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wMVPo-0000000EWC4-1U9O;
-	Mon, 11 May 2026 18:31:40 +0000
-Received: from bali.collaboradmins.com ([148.251.105.195])
+	id 1wMYAA-0000000EoSy-0uf0;
+	Mon, 11 May 2026 21:27:42 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wMVPl-0000000EWBA-3x6q;
-	Mon, 11 May 2026 18:31:39 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1778524295;
-	bh=yAroUwZ0Px8ARskG4DqFPBVU8jY00U9EJFO3vig1K9Q=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=GutqXGYO3JhKA3FnsetFtIbZHyWyyqJkjRYkQEkGaQhIIfwrA757hUQ5q8tn2932k
-	 xcpBsfXSaijdhk/XjmUJyOKH/6t5xqVdzv+7G9k6ZiZNsIsD6d333AulhcoTVVXAn3
-	 SdlpoML5KJrnLWxPvM0XxNTjmrTpdNNUBDB0yivI1UZNn0s2X482X4/IcRT3PvK7FD
-	 Iacp5x96JzOqR+zydNO6YOS8h26nFHNW9tZHisCS+phOwR9U0BYrSO5O+DeUgxFnZu
-	 Laz0qQfL9EL6Ox9BwEDg3I/YU/dJVvq5EUrZStlUAkkh0+AHQpJb/daZPWMlBABYxB
-	 DqGluskkQ0Siw==
-Received: from [100.64.0.241] (unknown [100.64.0.241])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: cristicc)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 1F6CF17E12AA;
-	Mon, 11 May 2026 20:31:35 +0200 (CEST)
-Message-ID: <466dd8c9-c80b-467a-ab99-e58a308079c9@collabora.com>
-Date: Mon, 11 May 2026 21:31:34 +0300
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 0/6] phy: rockchip: samsung-hdptx: Clock fixes and API
- transition cleanups
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>,
- Heiko Stuebner <heiko@sntech.de>, Algea Cao <algea.cao@rock-chips.com>,
- Dmitry Baryshkov <lumag@kernel.org>, kernel@collabora.com,
- linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
-References: <20260227-hdptx-clk-fixes-v1-0-f998f2762d0f@collabora.com>
- <agA1dFpheTaBfyUt@vaman> <c76d7020-2b3b-4f30-ab40-a8442c953966@collabora.com>
- <agIBa7qxIGgqCYZ1@vaman>
-Content-Language: en-US
-From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-In-Reply-To: <agIBa7qxIGgqCYZ1@vaman>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260511_113138_126333_B5609B99 
-X-CRM114-Status: GOOD (  12.54  )
+	id 1wMYA8-0000000EoSV-2k3W
+	for linux-phy@lists.infradead.org;
+	Mon, 11 May 2026 21:27:40 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id D2D70600CB;
+	Mon, 11 May 2026 21:27:39 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4C1D3C2BCF5;
+	Mon, 11 May 2026 21:27:39 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1778534859;
+	bh=ZNbDk99m1uCD5hVD2eOuv+3kWyEAbb3Cf3MwVp8Svx8=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date:From;
+	b=Th3o640sSLYmy9xBG1UInDzR/Kp5gGklPKhhUdWQp7LiXMFK3m3rZgQNvPlghLlEC
+	 bHMdb9taMM7YjGq/yACIni6EyhbJO44siostOJkIFwttS0DSEGvbmqSq3kLTp+5irX
+	 +Y0hZjJJpr98cgzpZRVca7cBjuSGfSHhnlAARfm+tb9WCqAvjkR/h7V8zeud6KF6A4
+	 WwPhiHg7BDLt37JQNAGUsct2OZS1qsg1c+aZnOlpWbTuUmk9NaK3ImF6PrWRfwblEp
+	 Xf7Z71hSEpDxNjgheyDldgBz0DUJQB6Dqbi1khgKN/hkU+LUPXoD/jOAs0+4qLX5mC
+	 3eBWq9/XMlkIg==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v2 1/2] phy: rockchip: inno-hdmi: Add configure() and
+ validate() ops
+To: "Jonas Karlman" <jonas@kwiboo.se>
+Cc: olteanv@gmail.com, linux-phy@lists.infradead.org, neil.armstrong@linaro.org, vkoul@kernel.org
+In-Reply-To: <20260510095731.1222705-2-jonas@kwiboo.se>
+References: <20260510095731.1222705-2-jonas@kwiboo.se>
+Date: Mon, 11 May 2026 21:27:38 +0000
+Message-Id: <20260511212739.4C1D3C2BCF5@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,56 +62,68 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 5/11/26 7:18 PM, Vinod Koul wrote:
-> On 10-05-26, 11:55, Cristian Ciocaltea wrote:
->> Hi Vinod,
->>
->> On 5/10/26 10:36 AM, Vinod Koul wrote:
->>> On 27-02-26, 22:48, Cristian Ciocaltea wrote:
->>>> This series provides a set of bug fixes and cleanups for the Rockchip
->>>> Samsung HDPTX PHY driver.
->>>>
->>>> The first part of the series (i.e. PATCH 1 & 2) addresses clock rate
->>>> calculation and synchronization issues.  Specifically, it fixes edge
->>>> cases where the PHY PLL is pre-programmed by an external component (like
->>>> a bootloader) or when changing the color depth (bpc) while keeping the
->>>> modeline constant.  Because the Common Clock Framework .set_rate()
->>>> callback might not be invoked if the pixel clock remains unchanged, this
->>>> previously led to out-of-sync states between CCF and the actual HDMI PHY
->>>> configuration.
->>>>
->>>> The second part focuses on code cleanups and modernizing the register
->>>> access.  Now that dw_hdmi_qp driver has fully switched to using
->>>> phy_configure(), we can drop the deprecated TMDS rate setup workarounds
->>>> and the restrict_rate_change flag logic.  Finally, it refactors the
->>>> driver to consistently use standard bitfield macros.
->>>
->>> Sorry looks like I have missed to review this one.
->>> Can you please rebase on phy/fixes and send...
->>
->> I've just verified and it applies cleanly on top of phy/fixes.
->> Do you still need a resend?
-> 
-> Yes please, it didnt apply for me
-
-Oh, I used the following branch, hopefully it's the right one:
-
-  https://git.kernel.org/pub/scm/linux/kernel/git/phy/linux-phy.git/log/?h=fixes
-
-Regardless, I submitted v2, rebased on the above, while providing a few minor
-changes:
-
-  https://lore.kernel.org/all/20260511-hdptx-clk-fixes-v2-0-664e41379cab@collabora.com/
-
-Thanks,
-Cristian
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIENhY2hpbmcgYHRtZHNf
+Y2hhcl9yYXRlYCBhcyBhbiBhYnNvbHV0ZSBmcmVxdWVuY3kgaW4gYHBoeV9jb25maWd1cmUoKWAg
+YnJlYWtzIHN1YnNlcXVlbnQgYGNsa19zZXRfcmF0ZSgpYCBjYWxscyBkdXJpbmcgcmVzb2x1dGlv
+biBjaGFuZ2VzLgotIFtNZWRpdW1dIGBpbm5vX2hkbWlfcGh5X3ZhbGlkYXRlKClgIGFydGlmaWNp
+YWxseSByZXN0cmljdHMgY29uZmlndXJhdGlvbnMgdG8gOC1iaXQgY29sb3IgbW9kZXMgYnkgZW5m
+b3JjaW5nIHRoYXQgdGhlIFRNRFMgY2hhcmFjdGVyIHJhdGUgZXF1YWxzIHRoZSBwaXhlbCBjbG9j
+ay4KLS0KCmNvbW1pdCAyODlmOTliZWFkZWU5YWI4MTcyZTJkNDA0ZGM0NGUxYThkZTViYzUzCkF1
+dGhvcjogSm9uYXMgS2FybG1hbiA8am9uYXNAa3dpYm9vLnNlPgoKcGh5OiByb2NrY2hpcDogaW5u
+by1oZG1pOiBBZGQgY29uZmlndXJlKCkgYW5kIHZhbGlkYXRlKCkgb3BzCgpUaGlzIGNvbW1pdCBh
+ZGRzIGNvbmZpZ3VyZSgpIGFuZCB2YWxpZGF0ZSgpIG9wZXJhdGlvbnMgdG8gdGhlIElubm8gSERN
+SQpQSFkgZHJpdmVyLiBJdCBhbGxvd3MgY29uc3VtZXJzIHRvIGNvbmZpZ3VyZSB0aGUgVE1EUyBj
+aGFyYWN0ZXIgcmF0ZSB2aWEKcGh5X2NvbmZpZ3VyZSgpLCB3aGlsZSBtYWludGFpbmluZyBmYWxs
+YmFjayBzdXBwb3J0IGZvciB0aGUgbGVnYWN5IGJ1cwp3aWR0aCBtZXRob2QuCgo+IGRpZmYgLS1n
+aXQgYS9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtaW5uby1oZG1pLmMgYi9kcml2
+ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtaW5uby1oZG1pLmMKPiBpbmRleCAxNDgzOTA3
+NDEzZmFhLi45Y2ZlOTU2ZmVmZTcxIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvcGh5L3JvY2tjaGlw
+L3BoeS1yb2NrY2hpcC1pbm5vLWhkbWkuYwo+ICsrKyBiL2RyaXZlcnMvcGh5L3JvY2tjaGlwL3Bo
+eS1yb2NrY2hpcC1pbm5vLWhkbWkuYwo+IEBAIC01NTQsNyArNTU1LDEyIEBAIHN0YXRpYyBpbmxp
+bmUgdm9pZCBpbm5vX3VwZGF0ZV9iaXRzKHN0cnVjdCBpbm5vX2hkbWlfcGh5ICppbm5vLCB1OCBy
+ZWcsCj4gIHN0YXRpYyB1bnNpZ25lZCBsb25nIGlubm9faGRtaV9waHlfZ2V0X3RtZHNjbGsoc3Ry
+dWN0IGlubm9faGRtaV9waHkgKmlubm8sCj4gIAkJCQkJICAgICAgIHVuc2lnbmVkIGxvbmcgcmF0
+ZSkKPiAgewo+IC0JaW50IGJ1c193aWR0aCA9IHBoeV9nZXRfYnVzX3dpZHRoKGlubm8tPnBoeSk7
+Cj4gKwlpbnQgYnVzX3dpZHRoOwo+ICsKPiArCWlmIChpbm5vLT5oZG1pX2NmZy50bWRzX2NoYXJf
+cmF0ZSkKPiArCQlyZXR1cm4gaW5uby0+aGRtaV9jZmcudG1kc19jaGFyX3JhdGU7CgpDYW4gY2Fj
+aGluZyB0aGUgYWJzb2x1dGUgdG1kc19jaGFyX3JhdGUgaGVyZSBicmVhayBzdWJzZXF1ZW50IGNs
+a19zZXRfcmF0ZSgpCmNhbGxzIGR1cmluZyByZXNvbHV0aW9uIGNoYW5nZXM/CgpEdXJpbmcgYSB0
+eXBpY2FsIERSTSBkaXNwbGF5IG1vZGUgY2hhbmdlLCB0aGUgQ1JUQyB1cGRhdGVzIHRoZSBwaXhl
+bCBjbG9jawp2aWEgY2xrX3NldF9yYXRlKCkgYmVmb3JlIHRoZSBIRE1JIGJyaWRnZSBjYWxscyBw
+aHlfY29uZmlndXJlKCkgdG8gYXBwbHkKdGhlIG5ldyBQSFkgb3B0aW9ucy4KCldoZW4gY2xrX3Nl
+dF9yYXRlKCkgaXMgY2FsbGVkIHdpdGggdGhlIG5ldyBwaXhlbCBjbG9jaywgdGhpcyBmdW5jdGlv
+biB3aWxsCmlnbm9yZSB0aGUgcmF0ZSBwYXJhbWV0ZXIgYW5kIHJldHVybiB0aGUgb2xkIGNhY2hl
+ZCB0bWRzX2NoYXJfcmF0ZS4KCldpbGwgdGhpcyBtaXNtYXRjaGVkIGNvbWJpbmF0aW9uIG9mIG5l
+dyBwaXhjbG9jayBhbmQgb2xkIFRNRFMgY2xvY2sgZmFpbCB0bwpmaW5kIGEgdmFsaWQgZW50cnkg
+aW4gcHJlX3BsbF9jZmdfdGFibGUsIGNhdXNpbmcgY2xrX3NldF9yYXRlKCkgdG8gcmV0dXJuCi1F
+SU5WQUwgYW5kIGFib3J0IHRoZSByZXNvbHV0aW9uIGNoYW5nZT8KClsgLi4uIF0KCj4gK3N0YXRp
+YyBpbnQgaW5ub19oZG1pX3BoeV92YWxpZGF0ZShzdHJ1Y3QgcGh5ICpwaHksIGVudW0gcGh5X21v
+ZGUgbW9kZSwKPiArCQkJCSAgaW50IHN1Ym1vZGUsIHVuaW9uIHBoeV9jb25maWd1cmVfb3B0cyAq
+b3B0cykKPiArewo+ICsJY29uc3Qgc3RydWN0IHByZV9wbGxfY29uZmlnICpjZmcgPSBwcmVfcGxs
+X2NmZ190YWJsZTsKPiArCXVuc2lnbmVkIGxvbmcgdG1kc2Nsb2NrOwo+ICsKPiArCWlmICghKG1v
+ZGUgPT0gUEhZX01PREVfSERNSSAmJiBzdWJtb2RlID09IFBIWV9IRE1JX01PREVfVE1EUykpCj4g
+KwkJcmV0dXJuIC1FSU5WQUw7Cj4gKwo+ICsJaWYgKCFvcHRzLT5oZG1pLnRtZHNfY2hhcl9yYXRl
+IHx8IG9wdHMtPmhkbWkudG1kc19jaGFyX3JhdGUgPiA1OTQwMDAwMDApCj4gKwkJcmV0dXJuIC1F
+SU5WQUw7Cj4gKwo+ICsJdG1kc2Nsb2NrID0gb3B0cy0+aGRtaS50bWRzX2NoYXJfcmF0ZTsKPiAr
+CWZvciAoOyBjZmctPnBpeGNsb2NrICE9IDA7IGNmZysrKQo+ICsJCWlmIChjZmctPnBpeGNsb2Nr
+ID09IHRtZHNjbG9jayAmJiBjZmctPnRtZHNjbG9jayA9PSB0bWRzY2xvY2spCj4gKwkJCXJldHVy
+biAwOwoKRG9lcyB0aGlzIHJlc3RyaWN0IGNvbmZpZ3VyYXRpb25zIHRvIDgtYml0IGNvbG9yIG1v
+ZGVzIGJ5IGVuZm9yY2luZyB0aGF0IHRoZQpUTURTIGNoYXJhY3RlciByYXRlIGVxdWFscyB0aGUg
+cGl4ZWwgY2xvY2s/CgpGb3IgZGVlcCBjb2xvciBtb2RlcyAoZS5nLiwgMTAtYml0KSwgdGhlIFRN
+RFMgY2hhcmFjdGVyIHJhdGUgaXMgc3RyaWN0bHkKZ3JlYXRlciB0aGFuIHRoZSBwaXhlbCBjbG9j
+ay4KCkJlY2F1c2UgdGhlIHZhbGlkYXRpb24gaW5zaXN0cyB0aGF0IGNmZy0+cGl4Y2xvY2sgbXVz
+dCBhbHNvIGVxdWFsIHRoZQpyZXF1ZXN0ZWQgdG1kc19jaGFyX3JhdGUsIHdpbGwgdmFsaWQgZGVl
+cCBjb2xvciBjb25maWd1cmF0aW9ucyBmYWlsIHRoaXMKY2hlY2sgYW5kIHJldHVybiAtRUlOVkFM
+PwoKPiArCj4gKwlyZXR1cm4gLUVJTlZBTDsKPiArfQoKLS0gClNhc2hpa28gQUkgcmV2aWV3IMK3
+IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MDUxMDA5NTczMS4xMjIyNzA1LTEt
+am9uYXNAa3dpYm9vLnNlP3BhcnQ9MQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgt
+cGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
+YW4vbGlzdGluZm8vbGludXgtcGh5Cg==
