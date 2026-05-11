@@ -4,65 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 91330CD37BE
-	for <linux-phy@archiver.kernel.org>; Mon, 11 May 2026 16:17:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0CFD9CD37BE
+	for <linux-phy@archiver.kernel.org>; Mon, 11 May 2026 16:18:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z8wA3/mTb/5uUFJqrdQpCB+Z9EbvWPlouBb48BXXR+E=; b=2JAVRqe6rKBIhL
-	W4Wf8sLwf77IQNgjnDP/iEVjjgMM8CbTAnxCPxc/zMZVZ9rDO1chvJ01FZ6U3ymgf7vfL1DSVK1mx
-	psVWx92JMEefIq/tmPEWZB5a0epUbmHEJp1cQbDl11iAUf0kEduI7ZZ8zHHDwpCeguBf3k+v9k+Qq
-	aTQwVDZA2AoYew969b0dXscRrk67pINhTW+IKF1HsNR6XRw1Dw45/XcwkXNxmYI0fEyW0pib1kIgp
-	OInZNk1xT3MUINXq9sGm7wAgeLlZry0VwEprqNSgdkmUrrqCC8swmAnUszQevl3CxV4M0PTn1SlcN
-	23mH34LCycDsguMX20OQ==;
+	List-Owner; bh=fJ9b221Z4dgAdl8fjoK8fJX/q1NlMBSMaJ4BN/3PyRk=; b=uoybi+o3ygYO/2
+	GEtQ/PesZx6FUtzaHFG2jahrLRAO8tIHv9wyhO9FFZL66Ac4eaHrfJNoB6T52Wlty9lflas13UGPh
+	5RKwxjvSiHTyTrUmdoxXprUCPXrj+6GFl/mqpvS9RcXJjYBCWGJSdCFKCoU/PgkHY48chSW0mmjW+
+	DCreDzHbqNvPsDuzZQStlMuEvgzaAf7WYXwAvCs//+SpYtisEAQ1rFUvWHUhtWHSsOgyezpzBpaKu
+	r22nX7yDjfrXaYnGm+5tsASIq/AKarenIUc8nwPfu7bqXRCNeLnPUg20yntDmTNZSdOrCH66vML81
+	k5X8hg9sxbt7tThh+j7w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wMTKM-0000000EAzL-0SoM;
-	Mon, 11 May 2026 16:17:54 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wMTLN-0000000EBDc-2aXN;
+	Mon, 11 May 2026 16:18:57 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wMTKF-0000000EAx0-2JdC
-	for linux-phy@lists.infradead.org;
-	Mon, 11 May 2026 16:17:52 +0000
+	id 1wMTLL-0000000EBCa-2ggQ;
+	Mon, 11 May 2026 16:18:55 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 4F657423E3;
-	Mon, 11 May 2026 16:17:46 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AEEE9C2BCFA;
-	Mon, 11 May 2026 16:17:45 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 1C86B600CB;
+	Mon, 11 May 2026 16:18:55 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4F270C2BCB0;
+	Mon, 11 May 2026 16:18:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1778516266;
-	bh=UFuvMK57CtfTjbHAGJyZ/VJ+24ftQifxmTKwtfW1Swg=;
+	s=k20201202; t=1778516334;
+	bh=U42E3LWzv0TbWP6oMpvlSaV2MRzXzGekhXV6lEcRbbw=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=aKjDP0aim5w0VintAabsM53oFP2hCokMq2HPDSN5IbF2h59wV0XQ4WJ9SxwnJPGk5
-	 ZvAnYmzl1jEq5OZz+aaMf9aTdp2xHf+uLJERGNYKraDhRZIF+HD+ShOa3Kf3nS9REP
-	 G8NeyloTLCqXFbLFMMOfjRFetIz88Sv0UKempSjXdDcM2v6zUto0UsR+LZPwNQIjoE
-	 NAKPlg1OukB7t7xAoWNJV4ndnFrTibZkDWwxI9x7MD5Sr3KNujp4Y7s57PtAXlRCjV
-	 fKYO+7s78V3QYU8nl8v92FQQ5/AYd29nHs1KgL+nw9ZVr7yq5D7jHE37WiYJP9x7zD
-	 70kTanvydI2Tg==
-Date: Mon, 11 May 2026 21:47:42 +0530
+	b=bp5IggbtfeBSdhgblUSlx5B9HKMPMNBePGqseTxadNe/RW825h2Z3OeVKgEDn3tcd
+	 xR3p4DuwGz3q9YXyxWYPblbXKoiI/tl6KzE3P2pfCLBgMHVySY/JLfAe77NL7aVBJZ
+	 Gp6TKLJ0a/MSOsI9UmCKZJxU020GgO6lwRQs3sLdLbdgfXGNyewkbUCc91qq4YOKDu
+	 xvMiYzOipBjq2iJvWHbxoWmxAFedqQd4iXjrt6KNElYEJ2qH5z+Bk0UQHqR4IxMIrx
+	 9MQmVrHtTuLRxBojQCIvevJ6espW6NozkWG+87beE1gvTi9gls3oCzx98M5NWzqzuz
+	 t/g6f7FJAkwVg==
+Date: Mon, 11 May 2026 21:48:51 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-Cc: Peng Fan <peng.fan@nxp.com>, linux-can@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-	Marc Kleine-Budde <mkl@pengutronix.de>,
-	Vincent Mailhol <mailhol@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Josua Mayer <josua@solid-run.com>, Ulf Hansson <ulfh@kernel.org>
-Subject: Re: [PATCH v3 0/4] phy: phy-can-transceiver: Ad-hoc cleanups and
- refactoring
-Message-ID: <agIBJsOl4Trk4_KN@vaman>
-References: <20260504070054.29508-1-andriy.shevchenko@linux.intel.com>
- <agBjOmnpKuZoDfWG@vaman>
- <agB_aj_2hzF3ON2h@ashevche-desk.local>
+To: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>,
+	Heiko Stuebner <heiko@sntech.de>,
+	Algea Cao <algea.cao@rock-chips.com>,
+	Dmitry Baryshkov <lumag@kernel.org>, kernel@collabora.com,
+	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 0/6] phy: rockchip: samsung-hdptx: Clock fixes and API
+ transition cleanups
+Message-ID: <agIBa7qxIGgqCYZ1@vaman>
+References: <20260227-hdptx-clk-fixes-v1-0-f998f2762d0f@collabora.com>
+ <agA1dFpheTaBfyUt@vaman>
+ <c76d7020-2b3b-4f30-ab40-a8442c953966@collabora.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <agB_aj_2hzF3ON2h@ashevche-desk.local>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260511_091747_683943_A3231FE7 
-X-CRM114-Status: GOOD (  22.36  )
+In-Reply-To: <c76d7020-2b3b-4f30-ab40-a8442c953966@collabora.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,38 +75,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 10-05-26, 15:51, Andy Shevchenko wrote:
-> On Sun, May 10, 2026 at 04:21:38PM +0530, Vinod Koul wrote:
-> > On 04-05-26, 08:58, Andy Shevchenko wrote:
-> > > The driver does two things that need to be addressed:
-> > > - includes subject to remove gpio.h
-> > > - checks for error code from device property APIs when it can be done in
-> > >   a robust way
-> > > 
-> > > This series addresses the above and adds a couple of additional refactoring.
+On 10-05-26, 11:55, Cristian Ciocaltea wrote:
+> Hi Vinod,
+> 
+> On 5/10/26 10:36 AM, Vinod Koul wrote:
+> > On 27-02-26, 22:48, Cristian Ciocaltea wrote:
+> >> This series provides a set of bug fixes and cleanups for the Rockchip
+> >> Samsung HDPTX PHY driver.
+> >>
+> >> The first part of the series (i.e. PATCH 1 & 2) addresses clock rate
+> >> calculation and synchronization issues.  Specifically, it fixes edge
+> >> cases where the PHY PLL is pre-programmed by an external component (like
+> >> a bootloader) or when changing the color depth (bpc) while keeping the
+> >> modeline constant.  Because the Common Clock Framework .set_rate()
+> >> callback might not be invoked if the pixel clock remains unchanged, this
+> >> previously led to out-of-sync states between CCF and the actual HDMI PHY
+> >> configuration.
+> >>
+> >> The second part focuses on code cleanups and modernizing the register
+> >> access.  Now that dw_hdmi_qp driver has fully switched to using
+> >> phy_configure(), we can drop the deprecated TMDS rate setup workarounds
+> >> and the restrict_rate_change flag logic.  Finally, it refactors the
+> >> driver to consistently use standard bitfield macros.
 > > 
-> > Sashiko flagged some issues, some of them not introduced by this, can
-> > you please check this:
-> > 
-> > https://sashiko.dev/#/patchset/20260504070054.29508-1-andriy.shevchenko%40linux.intel.com
+> > Sorry looks like I have missed to review this one.
+> > Can you please rebase on phy/fixes and send...
 > 
-> "Could this result in a null pointer dereference if device_get_match_data()
-> returns null?"
-> Yes, it sounds legit but not introduced here.
-> 
-> "In the original code, the warning was suppressed when the property was missing
-> because err evaluated to -EINVAL. Now, if the property is absent, max_bitrate
-> is explicitly set to 0 in the else block, which then unconditionally triggers
-> this warning."
-> True, but I don't know which is better here, I consider that it's
-> good to inform user about default being used as a fallback. I can change
-> this back to the original logic. What do you prefer?
-> 
-> The third one is the repetition of the first one (see above).
-> 
-> TL;DR: The only one legitimated question is about a (new old) warning.
+> I've just verified and it applies cleanly on top of phy/fixes.
+> Do you still need a resend?
 
-Yeah would be great if we could fix these as well please
+Yes please, it didnt apply for me
 
 -- 
 ~Vinod
