@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A62E6CD4F24
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B5D1ECD4F25
 	for <linux-phy@archiver.kernel.org>; Tue, 12 May 2026 13:08:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,50 +12,50 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2u2wccySTXn0M1k2YtFxkFimlwOfwC5bDvzi95eKDEg=; b=NNTTQC+9gxpw5q
-	DAU29POl5jlOQxEcGYOmB4rB4S1iwSXrLbXjNmYBAeHutacR1qw7dXsm053U0uSYe1O/jIUI+87eZ
-	QJCdntpuHbGWN8IQvFXI1s3/c4xq0KaUwCkO71+q6enR/ovnN3Jk1t8TAQyEJbP0swJfldb5VVI/2
-	OOS2CemSohgMGv3mhxYCtW9zqESLh+KcI0O6mnX6pVxIQChEOEiqMehg5uC6WC0Xv+KBMPe1HrxTZ
-	qSoEv5tx2Pqg45U+B5NZO7Ipkj6Bl2hBxt79mQAffwVWXvAjjyMpY70exbYlNIksfeiooWYNwFmZv
-	e+4IlRTaehtxLpW/v78Q==;
+	List-Owner; bh=QY3pUOBVcNc2UI6pJ1NXMdUz5cR5U1YZthBSs1iC3Z0=; b=gsaorDdLYZacbD
+	C1rT1wyDf3f531B9DxFrEZfShFGih3idVxL3WRZe0QbiZUdfAe9RJ+dV7uqlf9oRFLlhb30SQZka5
+	tiwZia1vZEz2B0Cq6gijx8LXxg58MQXGAg+5ANeb40VoieRdtDE9N5+0RPnuC2sOGlnKtRqGrPZD1
+	/i28bLCQSanc11qfbYq7OM3xRHug8zF2s3UjJVZTGF+YxPeLMwQ9D0iFpUuJz5AXTCjJji0wya3tF
+	LU4olngY53vztDNsfm8fUJCbrVNpvzTReKFedBAbKE3coehtB+fgP052tebSWntg4pwcve+UfeVnR
+	MS0lRTxNOfk806MbdCdw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wMmqI-0000000Gm5z-1dsO;
+	id 1wMmqI-0000000Gm66-1tXW;
 	Tue, 12 May 2026 13:08:10 +0000
-Received: from mgamail.intel.com ([192.198.163.12])
+Received: from mgamail.intel.com ([198.175.65.13])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wMmqD-0000000GkUR-16s7
+	id 1wMmqG-0000000GkUU-1Ub1
 	for linux-phy@lists.infradead.org;
-	Tue, 12 May 2026 13:08:08 +0000
+	Tue, 12 May 2026 13:08:09 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1778591285; x=1810127285;
+  t=1778591288; x=1810127288;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references:mime-version:content-transfer-encoding;
-  bh=4qMUuS6h5tFlP1suIW3fbkhM5BGhQH4sMAaS62b/lnw=;
-  b=oE1bab4WsnIpYFPTb3dHAznaubpfvjK7Bya1cUbhH8TwdFp+QED3vA/4
-   Mex7ZAXQ1TR3xIK482GhCbHaPKK6QYyYEY6c9jIqp/1lt6x+O7p3FhNUv
-   jKfefLuEww2KtaLLRCbkO8mpsAZaB1L1efwIILWT3zounFJY8TnTXEdiP
-   ufklyJw/htLDJ4KUxNmCztVwmXLf4svsGBhjNxyLmeklNI4fMSKwxv/Q4
-   KNzg+tnAeQodavtyq5yRzxxU6mcsXDNKvH9U9Y/IWhUZSrts7izYXtRZh
-   b3IuRpdcX8VSfmznmaYKUniY/VQuz5vPGfN2quhFxPziY6YWkGZ+/nSZ1
+  bh=DFpP2BywYHyUrUe3gUXm2RcGaGgJHXXxZahrn5QB5vw=;
+  b=gvsUYCn6TsSl3UzmSKrQI3TsOyE6/FaqBghFmraOjseytdCmaTt3JpNz
+   zvsawTXY1mGbXHbkHcl5rXtGZ7+Qyi7F4NjgZRuxbSzg37C4QA+dQ0+2W
+   0dJZiDLtr2vGeszJuTRjxJOlVIjxRtH4DSCj54yxQBPUaMtXg0cBmSUuw
+   Nk/xTDK6RK9cpbgNwa4j5nFmUXBaWO4R+t/y5sknBx9X3IlOINUSZ0N6y
+   0/EL/Fqj7em1ncyeV2iaWJpBGz8He1yBBiWsVRTFOWcm4jo9bzwSwNJNw
+   YitCgqrd6iZRgEEwqkOxyDAh2Bcj7c8E36ur9pyOFPfAXCrq3mdFTae/3
    w==;
-X-CSE-ConnectionGUID: 4gGeXNhUQYSlzdTfp2jv0Q==
-X-CSE-MsgGUID: LgHahjswSieRX3qbGndNaA==
-X-IronPort-AV: E=McAfee;i="6800,10657,11783"; a="83351808"
+X-CSE-ConnectionGUID: kp0X57y5Rv2qT7CBYaJlLg==
+X-CSE-MsgGUID: 2Ao3icBFQi2I9SCre2C0sQ==
+X-IronPort-AV: E=McAfee;i="6800,10657,11783"; a="90600361"
 X-IronPort-AV: E=Sophos;i="6.23,230,1770624000"; 
-   d="scan'208";a="83351808"
-Received: from orviesa010.jf.intel.com ([10.64.159.150])
-  by fmvoesa106.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 12 May 2026 06:06:02 -0700
-X-CSE-ConnectionGUID: RDmrtmE8RCiVomwOCGEuRg==
-X-CSE-MsgGUID: 2anfmBf/T9ul3t+yFab0jw==
+   d="scan'208";a="90600361"
+Received: from fmviesa006.fm.intel.com ([10.60.135.146])
+  by orvoesa105.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 12 May 2026 06:06:00 -0700
+X-CSE-ConnectionGUID: iU50rI4sSTeEvqb/tFGa9w==
+X-CSE-MsgGUID: qQdk7x+jRguKr//SLma6Mw==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.23,230,1770624000"; 
-   d="scan'208";a="236903550"
+   d="scan'208";a="233294182"
 Received: from black.igk.intel.com ([10.91.253.5])
-  by orviesa010.jf.intel.com with ESMTP; 12 May 2026 06:05:59 -0700
+  by fmviesa006.fm.intel.com with ESMTP; 12 May 2026 06:05:56 -0700
 Received: by black.igk.intel.com (Postfix, from userid 1003)
-	id 81DBDA1; Tue, 12 May 2026 15:05:55 +0200 (CEST)
+	id 794709D; Tue, 12 May 2026 15:05:55 +0200 (CEST)
 From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
 To: Peng Fan <peng.fan@nxp.com>,
 	linux-can@vger.kernel.org,
@@ -68,17 +68,16 @@ Cc: Marc Kleine-Budde <mkl@pengutronix.de>,
 	Josua Mayer <josua@solid-run.com>,
 	Ulf Hansson <ulfh@kernel.org>,
 	Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-Subject: [PATCH v4 5/5] phy: phy-can-transceiver: Drop unused include
-Date: Tue, 12 May 2026 15:01:53 +0200
-Message-ID: <20260512130552.272476-6-andriy.shevchenko@linux.intel.com>
+Subject: [PATCH v4 3/5] phy: phy-can-transceiver: Move OF ID table closer to their user
+Date: Tue, 12 May 2026 15:01:51 +0200
+Message-ID: <20260512130552.272476-4-andriy.shevchenko@linux.intel.com>
 X-Mailer: git-send-email 2.50.1
 In-Reply-To: <20260512130552.272476-1-andriy.shevchenko@linux.intel.com>
 References: <20260512130552.272476-1-andriy.shevchenko@linux.intel.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260512_060805_310663_80834A27 
-X-CRM114-Status: UNSURE (   9.54  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260512_060808_437633_FFDDE94A 
+X-CRM114-Status: GOOD (  12.54  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,33 +94,92 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-This file does not use the symbols from the legacy
-<linux/gpio.h> header, so let's drop it.
+There is no code that uses ID table directly, except the
+struct device_driver at the end of the file. Hence, move
+table closer to its user. It's always possible to access
+them via a pointer.
 
-Reviewed-by: Josua Mayer <josua@solid-run.com>
 Signed-off-by: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
 ---
- drivers/phy/phy-can-transceiver.c | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+ drivers/phy/phy-can-transceiver.c | 58 +++++++++++++++----------------
+ 1 file changed, 29 insertions(+), 29 deletions(-)
 
 diff --git a/drivers/phy/phy-can-transceiver.c b/drivers/phy/phy-can-transceiver.c
-index 973cc7ce651f..534a4fc482aa 100644
+index 5cfd09735204..23655956ace8 100644
 --- a/drivers/phy/phy-can-transceiver.c
 +++ b/drivers/phy/phy-can-transceiver.c
-@@ -5,12 +5,11 @@
-  * Copyright (C) 2021 Texas Instruments Incorporated - https://www.ti.com
-  *
-  */
-+#include <linux/gpio/consumer.h>
- #include <linux/phy/phy.h>
- #include <linux/platform_device.h>
- #include <linux/property.h>
- #include <linux/module.h>
--#include <linux/gpio.h>
--#include <linux/gpio/consumer.h>
- #include <linux/mux/consumer.h>
+@@ -97,35 +97,6 @@ static const struct can_transceiver_data tja1057_drvdata = {
+ 	.flags = CAN_TRANSCEIVER_SILENT_PRESENT,
+ };
  
- struct can_transceiver_data {
+-static const struct of_device_id can_transceiver_phy_ids[] = {
+-	{
+-		.compatible = "ti,tcan1042",
+-		.data = &tcan1042_drvdata
+-	},
+-	{
+-		.compatible = "ti,tcan1043",
+-		.data = &tcan1043_drvdata
+-	},
+-	{
+-		.compatible = "nxp,tja1048",
+-		.data = &tja1048_drvdata
+-	},
+-	{
+-		.compatible = "nxp,tja1051",
+-		.data = &tja1051_drvdata
+-	},
+-	{
+-		.compatible = "nxp,tja1057",
+-		.data = &tja1057_drvdata
+-	},
+-	{
+-		.compatible = "nxp,tjr1443",
+-		.data = &tcan1043_drvdata
+-	},
+-	{ }
+-};
+-MODULE_DEVICE_TABLE(of, can_transceiver_phy_ids);
+-
+ static struct phy *can_transceiver_phy_xlate(struct device *dev,
+ 					     const struct of_phandle_args *args)
+ {
+@@ -232,6 +203,35 @@ static int can_transceiver_phy_probe(struct platform_device *pdev)
+ 	return PTR_ERR_OR_ZERO(phy_provider);
+ }
+ 
++static const struct of_device_id can_transceiver_phy_ids[] = {
++	{
++		.compatible = "ti,tcan1042",
++		.data = &tcan1042_drvdata
++	},
++	{
++		.compatible = "ti,tcan1043",
++		.data = &tcan1043_drvdata
++	},
++	{
++		.compatible = "nxp,tja1048",
++		.data = &tja1048_drvdata
++	},
++	{
++		.compatible = "nxp,tja1051",
++		.data = &tja1051_drvdata
++	},
++	{
++		.compatible = "nxp,tja1057",
++		.data = &tja1057_drvdata
++	},
++	{
++		.compatible = "nxp,tjr1443",
++		.data = &tcan1043_drvdata
++	},
++	{ }
++};
++MODULE_DEVICE_TABLE(of, can_transceiver_phy_ids);
++
+ static struct platform_driver can_transceiver_phy_driver = {
+ 	.probe = can_transceiver_phy_probe,
+ 	.driver = {
 -- 
 2.50.1
 
