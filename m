@@ -4,72 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8DE00CD37BE
-	for <linux-phy@archiver.kernel.org>; Tue, 12 May 2026 01:16:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 704F1CD4846
+	for <linux-phy@archiver.kernel.org>; Tue, 12 May 2026 01:58:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GQpi0zXWGQCcCrZoI5GotacWc93DGGvw9+avgJPE4Dc=; b=yC0V50muOIdo8g
-	9mEtlhd3JoQ+Wqj8yb2DBZKYSbxSIRgJFpGcT57WfQjuPB68uLHbebLxgqxUkyD/j7L5DAOouGL+J
-	M6+3mYYkiPyQborm6lr+vkRLRvfmnzlTId26hw/TlhUcjb1x5s3qR3hgAsv87KKJVyvxHHQiPUL1t
-	hecgl8NPpUB6SnU1gVqj1jKaUDAcGhJePD6HZpk6I/CyFO1pGeGVTnXi4egACk+qmhfcxWQdxCrMe
-	dCzpUlNispUyv6Hasu4nRfvmJlQY8k66WNBvFwFuj5Rqi4TM2B9zg1DFdda7mK1sNuGYbuNglCecT
-	ZxraLAM2CbN5HzdgH8Pw==;
+	List-Owner; bh=kOjE0W2luRBl/ExEbNsPVNT5dQFzX87S4aUfiyJ39N8=; b=Ie8zCq8Kw6me3P
+	FtjXiMW74Kg+ve48+qoVAuk+an9OgXAYM+gJnf+PFiV6QGwtHtQFu6ZLk8XKHgYHLcSSi5FsfCgZG
+	KAEVrGk8YAmM6TQq44fY35XgCu8fPeY2k7YGDC4rwB+Vfkl59RlDsjVc3jZUUS/XuyTymtTa1nat0
+	hb5EtY3hCEAN+na0+pdM95UC0RgiYOAsNyEc6XqRq/cBuWfiyO/CJGCNPRmsx4hLGP2EeYBsyslky
+	11ONPGkarKSaBjkEXgNcyIPa5Ow43PZ4LdS+PFtaBX/CO1XMNOcUMNgJmLn6mnkbitjjmxFWfiTCL
+	lLwyFJfouQi8PWu2iYGQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wMbjG-0000000F9kl-1MtD;
-	Tue, 12 May 2026 01:16:10 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wMcNm-0000000FDf4-3fDB;
+	Tue, 12 May 2026 01:58:02 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wMbjD-0000000F9jD-44U9
+	id 1wMcNl-0000000FDem-23Vb
 	for linux-phy@lists.infradead.org;
-	Tue, 12 May 2026 01:16:09 +0000
+	Tue, 12 May 2026 01:58:01 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id D324E40737;
-	Tue, 12 May 2026 01:16:05 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6EA50C2BCB0;
-	Tue, 12 May 2026 01:16:02 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 9BC4260055;
+	Tue, 12 May 2026 01:58:00 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 05451C2BCB0;
+	Tue, 12 May 2026 01:57:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1778548565;
-	bh=ACf9F8mIe11uR9zPEzpLlpeJBEkpXvF/E/hQaOiFhrU=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=OUfhKIfwzuH226iZczHaYhoQACRSH2B1xVSUZfwTCDcXqu92SoJTYAQJG1dAkvSES
-	 ZAH9f7JH+WWSt/8oU9itsz8CkbQq3UvEf+kqcvyW618t3fSB2G8G4INL8vq43A9W25
-	 bozKFqvXU4Ex5W+9HEkFOfo7uCUFZ2gzoPUe6mYCzlei1Cx9u2uX7ltZZB3M9hrP4D
-	 m0/ISBGrpUlo7gTM4fE+cRTWgDzypCL6ZIyHLy0/KEwlJ2nS0t3sFReZ17FXkKFy8I
-	 2rBD1NceY8pJzxAnrE9gtu8N5wUV4VFgV4ACZCYZm3Sfhs8hxdB8WV+GxxnFTIoZu/
-	 lyuDz4wF/Fpig==
-Date: Tue, 12 May 2026 09:15:59 +0800
-From: "Peter Chen (CIX)" <peter.chen@kernel.org>
-To: Svyatoslav Ryhel <clamor95@gmail.com>
-Cc: Andrew Lunn <andrew+netdev@lunn.ch>,
-	"David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Thierry Reding <thierry.reding@kernel.org>,
-	Jonathan Hunter <jonathanh@nvidia.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	netdev@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-tegra@vger.kernel.org, linux-usb@vger.kernel.org
-Subject: Re: [PATCH v1 2/6] usb: chipidea: tegra: Avoid controller/PHY init
- if bus is externally controlled
-Message-ID: <agJ/T8nBGWEoblmd@nchen-desktop>
-References: <20260511135703.62470-1-clamor95@gmail.com>
- <20260511135703.62470-3-clamor95@gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260511135703.62470-3-clamor95@gmail.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260511_181608_207424_22AD9587 
-X-CRM114-Status: GOOD (  23.09  )
+	s=k20201202; t=1778551080;
+	bh=iqfO3wV8DsHY1dpGc1L13UmMbSWjqtruKM7buvHZzX0=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date:From;
+	b=k2a+evZc/ifufqH453KYkwVxGudkfqNcVzQB88SOlp/79tKNmFRPfjSuSnBiT1/cn
+	 kglSf8DlIFoDpyOApN9sqlkUTigDhDjiyvSydw2VoT7JbfoBdNfu9vFBPglQMQmw2L
+	 C05BO+/tvswrswWYqCaTEgx2RNoF3Z9Bgtcy5xAh98WbNqNDJHCWF0zu/d73HIc6Zq
+	 nDme0u+UnNViEr/SXiEXkpCEOWsV/V+TUn1i5t5HOnjkppJRLr36jAmrUa8GoffOv7
+	 stTOEN0ARC6WOodSAepybg9tnAWmO99DqEJSsINq3YSGNEV3VH94Bb3otXmh3I39gv
+	 ne83yGLSHbntQ==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH RESEND v8 04/10] spmi: Implement
+ spmi_subdevice_alloc_and_add() and devm variant
+To: "AngeloGioacchino Del Regno" <angelogioacchino.delregno@collabora.com>
+Cc: vkoul@kernel.org, olteanv@gmail.com, neil.armstrong@linaro.org, linux-phy@lists.infradead.org
+In-Reply-To: <20260511100805.121432-5-angelogioacchino.delregno@collabora.com>
+References: <20260511100805.121432-5-angelogioacchino.delregno@collabora.com>
+Date: Tue, 12 May 2026 01:57:59 +0000
+Message-Id: <20260512015800.05451C2BCB0@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,106 +62,65 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 26-05-11 16:56:57, Svyatoslav Ryhel wrote:
-> If the USB controller and PHY are externally controlled, then the
-> registration of the controller and the PHY initialization should be
-> skipped, since these configurations must be done by the device that
-> controls the bus to work correctly.
-> 
-
-I find you only control USB controller device add at PHY driver, most of USB drivers
-has PHY control, for chipidea, it has PHY control at core.c, would please try to
-adapt for it?
-
-Peter
-
-> Signed-off-by: Svyatoslav Ryhel <clamor95@gmail.com>
-> ---
->  drivers/usb/chipidea/ci_hdrc_tegra.c | 36 +++++++++++++++++-----------
->  1 file changed, 22 insertions(+), 14 deletions(-)
-> 
-> diff --git a/drivers/usb/chipidea/ci_hdrc_tegra.c b/drivers/usb/chipidea/ci_hdrc_tegra.c
-> index 372788f0f970..593390a818d1 100644
-> --- a/drivers/usb/chipidea/ci_hdrc_tegra.c
-> +++ b/drivers/usb/chipidea/ci_hdrc_tegra.c
-> @@ -32,6 +32,7 @@ struct tegra_usb {
->  	struct clk *clk;
->  
->  	bool needs_double_reset;
-> +	bool externally_controlled;
->  };
->  
->  struct tegra_usb_soc_info {
-> @@ -312,20 +313,25 @@ static int tegra_usb_probe(struct platform_device *pdev)
->  	if (device_property_present(&pdev->dev, "nvidia,needs-double-reset"))
->  		usb->needs_double_reset = true;
->  
-> +	if (device_property_present(&pdev->dev, "nvidia,external-control"))
-> +		usb->externally_controlled = true;
-> +
->  	err = tegra_usb_reset_controller(&pdev->dev);
->  	if (err) {
->  		dev_err_probe(&pdev->dev, err, "failed to reset controller");
->  		goto fail_power_off;
->  	}
->  
-> -	/*
-> -	 * USB controller registers shouldn't be touched before PHY is
-> -	 * initialized, otherwise CPU will hang because clocks are gated.
-> -	 * PHY driver controls gating of internal USB clocks on Tegra.
-> -	 */
-> -	err = usb_phy_init(usb->phy);
-> -	if (err)
-> -		goto fail_power_off;
-> +	if (!usb->externally_controlled) {
-> +		/*
-> +		 * USB controller registers shouldn't be touched before PHY is
-> +		 * initialized, otherwise CPU will hang because clocks are gated.
-> +		 * PHY driver controls gating of internal USB clocks on Tegra.
-> +		 */
-> +		err = usb_phy_init(usb->phy);
-> +		if (err)
-> +			goto fail_power_off;
-> +	}
->  
->  	/* setup and register ChipIdea HDRC device */
->  	usb->soc = soc;
-> @@ -342,12 +348,14 @@ static int tegra_usb_probe(struct platform_device *pdev)
->  	if (of_usb_get_phy_mode(pdev->dev.of_node) == USBPHY_INTERFACE_MODE_ULPI)
->  		usb->data.flags &= ~CI_HDRC_SUPPORTS_RUNTIME_PM;
->  
-> -	usb->dev = ci_hdrc_add_device(&pdev->dev, pdev->resource,
-> -				      pdev->num_resources, &usb->data);
-> -	if (IS_ERR(usb->dev)) {
-> -		err = dev_err_probe(&pdev->dev, PTR_ERR(usb->dev),
-> -				    "failed to add HDRC device");
-> -		goto phy_shutdown;
-> +	if (!usb->externally_controlled) {
-> +		usb->dev = ci_hdrc_add_device(&pdev->dev, pdev->resource,
-> +					      pdev->num_resources, &usb->data);
-> +		if (IS_ERR(usb->dev)) {
-> +			err = dev_err_probe(&pdev->dev, PTR_ERR(usb->dev),
-> +					    "failed to add HDRC device");
-> +			goto phy_shutdown;
-> +		}
->  	}
->  
->  	return 0;
-> -- 
-> 2.51.0
-> 
-
--- 
-
-Best regards,
-Peter
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MyBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW01lZGl1bV0gQ29tbWl0IG1lc3Nh
+Z2UgY2xhaW1zIHRvIGFkZCBzcG1pX3N1YmRldmljZV9wdXRfYW5kX3JlbW92ZSgpIGJ1dCBpdCBp
+cyBtaXNzaW5nCi0gW01lZGl1bV0gTWlzc2luZyByZWZlcmVuY2UgY291bnQgb24gU1BNSSBjb250
+cm9sbGVyIGNhdXNlcyBwb3RlbnRpYWwgVXNlLUFmdGVyLUZyZWUgKFVBRikKLSBbTG93XSBGb3Jt
+YXQgc3RyaW5nIHR5cGUgbWlzbWF0Y2ggZm9yIGNvbnRyb2xsZXIgbnVtYmVyIGluIGRldmljZSBu
+YW1lCi0tCgpjb21taXQgNDgxZDdjNDc5NGYzYjU4MGEwZTBkNDIyZDFhNWNjOGI2YTNiMTQ2NgpB
+dXRob3I6IEFuZ2Vsb0dpb2FjY2hpbm8gRGVsIFJlZ25vIDxhbmdlbG9naW9hY2NoaW5vLmRlbHJl
+Z25vQGNvbGxhYm9yYS5jb20+CgpzcG1pOiBJbXBsZW1lbnQgc3BtaV9zdWJkZXZpY2VfYWxsb2Nf
+YW5kX2FkZCgpIGFuZCBkZXZtIHZhcmlhbnQKClRoaXMgY29tbWl0IGludHJvZHVjZXMgc3BtaV9z
+dWJkZXZpY2VfYWxsb2NfYW5kX2FkZCgpIGFuZCBhIGRldnJlcyB2YXJpYW50CnRvIG1hbmFnZSBj
+b21wbGV4IHN1Yi1kZXZpY2VzIG9uIHRoZSBTUE1JIGJ1cy4gSXQgYWxsb3dzIFBNSUMgY29tcG9u
+ZW50cwpzaGFyaW5nIGEgc2luZ2xlIFNJRCB0byBiZSByZXByZXNlbnRlZCBhcyBzdWItZGV2aWNl
+cy4gVGhlIG5ldyBleHBvcnRzCmFyZSBwbGFjZWQgaW4gdGhlICJTUE1JIiBuYW1lc3BhY2UuCgo+
+IEFkZCBuZXcgZnVuY3Rpb25zIGFpbWVkIGF0IG1hbmFnaW5nIHN1Yi1kZXZpY2VzIG9mIGEgU1BN
+SSBkZXZpY2UKPiBzcG1pX3N1YmRldmljZV9hbGxvY19hbmRfYWRkKCkgYW5kIGEgc3BtaV9zdWJk
+ZXZpY2VfcHV0X2FuZF9yZW1vdmUoKQoKVGhpcyBpc24ndCBhIGJ1ZywgYnV0IHRoZSBjb21taXQg
+bWVzc2FnZSBtZW50aW9ucwpzcG1pX3N1YmRldmljZV9wdXRfYW5kX3JlbW92ZSgpLCB3aGlsZSB0
+aGUgaW1wbGVtZW50ZWQgZnVuY3Rpb24gaXMKYWN0dWFsbHkgbmFtZWQgc3BtaV9zdWJkZXZpY2Vf
+cmVtb3ZlKCkuIFNob3VsZCB0aGUgY29tbWl0IG1lc3NhZ2UgYmUKdXBkYXRlZCB0byBtYXRjaCB0
+aGUgY29kZT8KCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvc3BtaS9zcG1pLmMgYi9kcml2ZXJzL3Nw
+bWkvc3BtaS5jCj4gaW5kZXggOTFhNDBlYTgwMzFhZC4uY2RmM2U5OTE5NGM0YyAxMDA2NDQKPiAt
+LS0gYS9kcml2ZXJzL3NwbWkvc3BtaS5jCj4gKysrIGIvZHJpdmVycy9zcG1pL3NwbWkuYwoKWyAu
+Li4gXQoKPiArc3RydWN0IHNwbWlfc3ViZGV2aWNlICpzcG1pX3N1YmRldmljZV9hbGxvY19hbmRf
+YWRkKHN0cnVjdCBzcG1pX2RldmljZSAqc3BhcmVudCkKPiArewo+ICsJc3RydWN0IHNwbWlfc3Vi
+ZGV2aWNlICpzdWJfc2RldjsKPiArCXN0cnVjdCBzcG1pX2RldmljZSAqc2RldjsKPiArCWludCBy
+ZXQ7Cj4gKwo+ICsJc3ViX3NkZXYgPSBremFsbG9jKHNpemVvZigqc3ViX3NkZXYpLCBHRlBfS0VS
+TkVMKTsKPiArCWlmICghc3ViX3NkZXYpCj4gKwkJcmV0dXJuIEVSUl9QVFIoLUVOT01FTSk7Cj4g
+Kwo+ICsJc2RldiA9ICZzdWJfc2Rldi0+c2RldjsKPiArCXNkZXYtPmN0cmwgPSBzcGFyZW50LT5j
+dHJsOwoKRG9lcyB0aGlzIG1pc3NpbmcgcmVmZXJlbmNlIGNvdW50IG9uIHRoZSBjb250cm9sbGVy
+IGludHJvZHVjZSBhIHBvdGVudGlhbAp1c2UtYWZ0ZXItZnJlZSByZWdyZXNzaW9uPwoKSWYgdGhl
+IHBhcmVudCBQTUlDIGRldmljZSBpcyByZW1vdmVkIGFuZCBkcm9wcyBpdHMgcmVmZXJlbmNlIHRv
+IHRoZSBjb250cm9sbGVyLApjb3VsZCB0aGUgc3ViZGV2aWNlIG91dGxpdmUgaXQgYW5kIHN0aWxs
+IGhvbGQgYSBkYW5nbGluZyBwb2ludGVyIHRvCnNkZXYtPmN0cmw/IFNob3VsZCB0aGlzIGluaXRp
+YWxpemF0aW9uIHRha2UgYSByZWZlcmVuY2UgdmlhCmdldF9kZXZpY2UoJnNkZXYtPmN0cmwtPmRl
+dik/Cgo+ICsJc2Rldi0+dXNpZCA9IHNwYXJlbnQtPnVzaWQ7Cj4gKwo+ICsJcmV0ID0gaWRhX2Fs
+bG9jKCZzcG1pX3N1YmRldmljZV9pZGEsIEdGUF9LRVJORUwpOwo+ICsJaWYgKHJldCA8IDApIHsK
+PiArCQlrZnJlZShzdWJfc2Rldik7Cj4gKwkJcmV0dXJuIEVSUl9QVFIocmV0KTsKPiArCX0KPiAr
+CXN1Yl9zZGV2LT5kZXZpZCA9IHJldDsKPiArCj4gKwlkZXZpY2VfaW5pdGlhbGl6ZSgmc2Rldi0+
+ZGV2KTsKPiArCXNkZXYtPmRldi5wYXJlbnQgPSAmc3BhcmVudC0+ZGV2Owo+ICsJc2Rldi0+ZGV2
+LmJ1cyA9ICZzcG1pX2J1c190eXBlOwo+ICsJc2Rldi0+ZGV2LnR5cGUgPSAmc3BtaV9zdWJkZXZf
+dHlwZTsKPiArCj4gKwlyZXQgPSBkZXZfc2V0X25hbWUoJnNkZXYtPmRldiwgIiVkLSUwMnguJWQu
+YXV0byIsCj4gKwkJCSAgIHNkZXYtPmN0cmwtPm5yLCBzZGV2LT51c2lkLCBzdWJfc2Rldi0+ZGV2
+aWQpOwoKVGhpcyBpc24ndCBhIGJ1ZywgYnV0IGNvdWxkIHRoZSBmb3JtYXQgc3BlY2lmaWVyIGZv
+ciBzZGV2LT5jdHJsLT5ucgpjYXVzZSBhIHR5cGUgbWlzbWF0Y2ggd2FybmluZz8gTG9va2luZyBh
+dCBzdHJ1Y3Qgc3BtaV9jb250cm9sbGVyLCBuciBpcwphbiB1bnNpZ25lZCBpbnQsIHNvIHNob3Vs
+ZCB0aGlzIHVzZSAldSBpbnN0ZWFkIG9mICVkPwoKPiArCWlmIChyZXQpCj4gKwkJZ290byBlcnJf
+cHV0X2RldjsKPiArCj4gKwlyZXQgPSBkZXZpY2VfYWRkKCZzZGV2LT5kZXYpOwo+ICsJaWYgKHJl
+dCkgewo+ICsJCWRldl9lcnIoJnNkZXYtPmRldiwgIkNhbid0IGFkZCBkZXZpY2UsIHN0YXR1cyAl
+cGVcbiIsIEVSUl9QVFIocmV0KSk7Cj4gKwkJZ290byBlcnJfcHV0X2RldjsKPiArCX0KPiArCj4g
+KwlyZXR1cm4gc3ViX3NkZXY7CgotLSAKU2FzaGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNo
+aWtvLmRldi8jL3BhdGNoc2V0LzIwMjYwNTExMTAwODA1LjEyMTQzMi0xLWFuZ2Vsb2dpb2FjY2hp
+bm8uZGVscmVnbm9AY29sbGFib3JhLmNvbT9wYXJ0PTQKCi0tIApsaW51eC1waHkgbWFpbGluZyBs
+aXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFk
+Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
