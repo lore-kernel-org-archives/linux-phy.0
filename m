@@ -4,96 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0603BCD37AC
-	for <linux-phy@archiver.kernel.org>; Tue, 12 May 2026 04:08:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 63DEBCD37AC
+	for <linux-phy@archiver.kernel.org>; Tue, 12 May 2026 04:08:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b0HQ3Bsvf+cA03CAD+icMWySOeDS41krfpC3ovEHB74=; b=ultXfvZjLbXrE1
-	g8Le7cd9kU/+NZ47kaVjmeMJ/J6mm9nobQwudSrc6lGBRBA34gYJn6p2EpL/Lv5YYIokha0a46QhG
-	eUuRk4TImD8zyYJXn5aRBaECwGmbRqNjpz6jnYSjecaDQ0gYShRoIladbdmF5RU5a5tM+aaQNMOw0
-	HEgUUre5hbTFYqPAukbsJtyuNqXmnlY6ZPs68LCWPB9ENTLdR2OSZg1ngTiO1S6wxe5xX4NE2iR9e
-	/NSPSitHf3wQi6TEsXtjyxQLciWkwK5ArdyNEnZpLGb6aVaojOU14zB76LuwdVNgrX/XfXQBv4muj
-	iQbR9jY0j1q4KeXXouMQ==;
+	List-Owner; bh=Iy5SG2fl3wwN97VHe5y0/DAYEKZD+baylIpGdDsxUnY=; b=FYzV/fW7DVHQYn
+	kFE0OzK4BPOaK2TYcMLTTwJHwKn8AjzRG1dfMCT+uZjuzA6zE5tze8KW4WVvB2V8yy0QAhH4hDumx
+	ej1nPQObh5GBdL9XM9pUTjro0NinMSA88sgWLvH3Hh82VwoOKvRXDoEWBP2me+yEfmJ40qan1I6Ms
+	3G7LOPzCLLThMKO5wE6r+UAY602kk4AEBotsJsEGYgIY0C5/Mff5i695Kz6N4UFPU/SrJqBvue34N
+	h7RsFZxekXWr6Zexy+fCGUdaq46CdatVSfLv65gP7t33IuP5946zWqkU0JL3Gvl46KAyQ/4VbUTZJ
+	qKJY3TSBaVdwXjKVcLEw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wMeQE-0000000FRDA-3dRs;
-	Tue, 12 May 2026 04:08:42 +0000
+	id 1wMeQN-0000000FRF9-0dNh;
+	Tue, 12 May 2026 04:08:51 +0000
 Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wMeQC-0000000FRBy-16nd
+	id 1wMeQK-0000000FREK-0Re2
 	for linux-phy@lists.infradead.org;
-	Tue, 12 May 2026 04:08:41 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 64BK6hHj2186310
-	for <linux-phy@lists.infradead.org>; Tue, 12 May 2026 04:08:39 GMT
+	Tue, 12 May 2026 04:08:49 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 64BK70YZ2804455
+	for <linux-phy@lists.infradead.org>; Tue, 12 May 2026 04:08:47 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	X6gGgEnllp4zvZoYkPCyMOmUb+keOCb7VayvIxiJ+aM=; b=HloNPhUTK7PWr1y/
-	WH7OOakh2tbuJkbI4BWePgq2axLROMe+W25sJLDUNBT1zYC7oCuoFHFLZ508hJbt
-	niFJMCAdwZ10iANUBUzVyxbESEZ4lkvhdushTUaTXEo//MOx/bBRJqoapVE1wsyV
-	2JszTufhgmHXatEVvJjpR/PmHdptOcRIPhXtXuDh1/noZCoiNYxObWD3QZuroHHx
-	9tA4un2uufdDQdI9/2CzwY6IlHRwvXZ83xoocdS9UhIqV3BbmBAiALKlfWvqhN0q
-	NmfuaSNpWY0Gwve7DkV04lQpQMzNcrmmWui/MhrFVB3jHRmIb/M9xwmMKzzaFgI/
-	M1GQ7A==
+	nRRFkzcTXIOWeWFFxG4NGYivawSndyqITg2svdIqJXA=; b=KErZt2BDEVQ2Jw7c
+	XMRm2+ST7pwBfjAuVbtXwJIsDAyov6vgdZrnI4u7BhLVk4xXVA5qFewAYUmpo7NB
+	1IqpngDvlSPIoETrz4bGVqGK7KT1w/VT4+i2Y8rf5I6kHiXfBshkCmEom4M+Bhxd
+	5ftsdxs2yJ3sdybAfT2U5iKSPUU0YAZ30jAa+o9F+N1IglZVBy/SLPajkD0fFhZq
+	4AR9CLN1+FAa+M57F0HaRTime/YpzH9XZMVk3zOau0Xr45HbcWhxi/gAnPd/Bbwe
+	0w2dAwhNs47jWRJwA8rhQse8yqSwBp8qchqT+X7XTqhlxodZ4PVq1S7xZiqbH7ec
+	QJCQPg==
 Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4e3nv29d4g-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4e3nv39e2e-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Tue, 12 May 2026 04:08:39 +0000 (GMT)
-Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-2baf7378ad0so36286285ad.0
-        for <linux-phy@lists.infradead.org>; Mon, 11 May 2026 21:08:39 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Tue, 12 May 2026 04:08:47 +0000 (GMT)
+Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-2bc763c7256so61036865ad.3
+        for <linux-phy@lists.infradead.org>; Mon, 11 May 2026 21:08:46 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1778558918; x=1779163718; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1778558926; x=1779163726; darn=lists.infradead.org;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=X6gGgEnllp4zvZoYkPCyMOmUb+keOCb7VayvIxiJ+aM=;
-        b=Qt5tj13bhpRrhxaArX1J/XqssLm9TyQ65Njv7A+KEv6fVmNA1lTkVJU9BV+Xtd1M8h
-         EW38FctSwFgmgFCOYUpgurqK+Pjqzqn/aJ7ZGhTMSV4Cc9oc3cCCn+HTc8rwOCvf64MG
-         fjrrzT1Y82kPU15OZe8i4kEGJ3vukKuPWp7Jsl2GwLR8wYMgCJSPFMlVCxS4oawn+Blm
-         WPZDvlVWEk5gnlJc7+B32Zg2sOhcto3RMcuveNjhv5eF31KSbL+E5z3yCzClpVvZe5VF
-         C124/sngvMCIoRjbg3uvbTxEObR260iut2U1ANg9vcBgOcaXMl8pEELQiQ7SaanyB3ja
-         CORw==
+        bh=nRRFkzcTXIOWeWFFxG4NGYivawSndyqITg2svdIqJXA=;
+        b=BdTSDIB3D9/fJlTAI/i3sJWE3n42lU8XhhbQnFv0s3i7MGilw97Eyriktz7Ht11e7t
+         uTFjgJXCJSDAGu10pVUnl6uCEuMfaLi4lKwnQNeTMspBWMPTalygUpKkSGy0tC4pVgI0
+         Fc4RdIzBwjsrEdgT18Sh2kfKqguYL8/P6plZwl2Jg04msNIEUGxMVZ7nRDst17S+oN6z
+         D/CyxllxkRE2h9aNGgww2BX1uxS8IPjB4+QqkedfxI2FM8/XqhAEAcq9NOMEwdK/rQGS
+         nx9XDSr1pMZoad+i8ZiIQvyf6TbmvLDWMg4PVcGQN1XxUF/sIwwm6hu/2jRLaXIw58Yz
+         ET8A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1778558918; x=1779163718;
+        d=1e100.net; s=20251104; t=1778558926; x=1779163726;
         h=cc:to:in-reply-to:references:message-id:content-transfer-encoding
          :mime-version:subject:date:from:x-gm-gg:x-gm-message-state:from:to
          :cc:subject:date:message-id:reply-to;
-        bh=X6gGgEnllp4zvZoYkPCyMOmUb+keOCb7VayvIxiJ+aM=;
-        b=kEiyS4osQcKTP++luv49YJ5yLLp7xtSy8FJhfZq7Xo+qZfdWpuuXG83Ehp2foPJCAV
-         J14MZokqaCU93nprnOHBMDYC8TCcrM37cCxdJuegvM2Pv1MBzhGQhyCdzy7G/fqvPx6z
-         jOnq1DpeDJChRohCtD/diyfcK4Ilj0WxDyRp/veQ7F73b7JoY7JtBbOqgptbdwLHbZ2h
-         ncGZEQOlyAQUMFKud5AqUGue2Ae3tRJCGjLZ1uTRpuuI9ht3JvNUwaFeR1AoQ086yE0D
-         /tYduoLfBkdHsdpFXkc+7qqH8hMc7dGOVjk9oUMEPFlwdWEI+odu2RTWsSLAeUhIwjwF
-         eWYA==
-X-Forwarded-Encrypted: i=1; AFNElJ9GrFoFw3KH/GW4DAHO8LsZLpnCBD3qycjzNimuiFfnyjxynWE1v5kPNELdbHMum/4nr22EgxyeV40=@lists.infradead.org
-X-Gm-Message-State: AOJu0YykKVgIrscBYctMUxmWKrUgBd/c+A7AwOArMSS7wrMpHaEx4hQr
-	iRaUPgZFbLjaTftci/QufmH1QthdcdY5dFj3Tbbp2V1gTMy44kE5rCZrlVJtlieO/AvREgtun4o
-	QOmWSwiCDwcu1pVU5dpHuG4+9kfVSOMu44Rvf1O/40PkNl6A5dMa+tgdWcnQgkYMi6FVp
-X-Gm-Gg: Acq92OHMWd5705Ad6Ft58kLLSTPzs4DNz422Tbvq9lid7adlhSm8ypkKEoH4IDxKMly
-	f34Jie6x95avSBLxpoUNjNgfoqQDPa8zKgyPz8XOWwyqU6muYRptcBCMqzGggAZNqGlD2TyXTHp
-	llluuH5m3lQ2HTZTzJ8i3qXcWXIL3VU8gMG3/hZlx9Wb1XVnHbxkhZ6uOzSlzgnUKYwJJCtvYUu
-	nfuTBOyPGx/oqy1fc52CIJi7iK9ePPsPir+PmSotFjkFGhDH3LUxImDz2Opsp4aX/KestRrFMHE
-	35lQ07uuliSKFOF5VGHMUtPKkwiOCXUZ+1BD7YJ1WSENG699ylVTjrwabgqUkam0+30Ki/OMbzI
-	hl7DmnoHrq3CsU8lg58H2z1PA8xUUHTdNGeMO
-X-Received: by 2002:a17:903:1c8:b0:2b4:65d8:6a20 with SMTP id d9443c01a7336-2ba78f50177mr287506405ad.2.1778558918385;
-        Mon, 11 May 2026 21:08:38 -0700 (PDT)
-X-Received: by 2002:a17:903:1c8:b0:2b4:65d8:6a20 with SMTP id d9443c01a7336-2ba78f50177mr287506055ad.2.1778558917826;
-        Mon, 11 May 2026 21:08:37 -0700 (PDT)
+        bh=nRRFkzcTXIOWeWFFxG4NGYivawSndyqITg2svdIqJXA=;
+        b=HcL7+hKJkmT5h1SmW2Yg3M4cS68I576WHL9yc53EULWd1QyfQ2oBjJblMdoEMtBn+1
+         9vWzcODbTFRfBNL3FfAh9yq6PIf1dDvdIQpzvDGPE4d550KQYjCxl3sRWpdPyTVNugs3
+         AI7KIp1wI7+xKgGo857KRmirpMZETHaCP6p1qx7Rv09aTC1ByJjcUvf1+siAiH5iAfrO
+         8I7sF6wGuopBVru7il+XWnjtJY1gcmrYV7OVGkVdFA3jH+OCaeMTPZEOFAbOJ7gGwLDG
+         m0zm+d88jfR2Fa7wiHsrnKV/X/aDj/3PwCMFJASL+SzDZJx6Ny/rdVaM64Ogo6+6olsc
+         nn1g==
+X-Forwarded-Encrypted: i=1; AFNElJ/M4eVuIu1XRwGoECdUhPJ/lBHDPqTL3eLjju0uou5d+ABrFnI7E9rnS94gBNnu48uu24EbItmwzuI=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yyf0hnLUvvkQT0BVmHyzK84KJ30E4BF3+irWQvKf00cxibrYfCh
+	r3Lfu8Hcee1j7OdWz2gF+/vMQI+HZQTaO4cnFMpXCNyIiqPuBOx9LgBD695RdmRJXFwkuezMlxp
+	4Aj7d9mlapswrkQudPYBsAH35DKosvcR+QvXHcVPH5sBh+swVL/yjuMhCMh+otR+ySEHf
+X-Gm-Gg: Acq92OG+KhMDps0NIEzPnCkYTwuxcUq/6BEemb7zmT0WmavdoL5Oujq7B3DZFDBZl7q
+	wkQviqDCn6dcvz+r1if9Rahn8+bFjRNSB3u38aLkEW9GVLHrGb89JNbBH57aWk/QOd2NdvK1kNm
+	jLSy3cgLf7GvBQoDzV2hfk8dNbjGnOC7wRD5uuHpaT7s0ldhDxh8PsW5cSeLf+t9RjqiP5zh2UE
+	6C0QTApHqVBp0SLtW7MRsoOLPZbXgl7E+KU6whrMOduvmNneqPnVd5aeN47ZgoSTvEuC8XBx4qr
+	tQb9kdut/mtCLSa/StpRBNrXh7Z2T1kiu7tVS+QB033ZjQIfn+q0xLdv9UE3K21wbivqyum7bF6
+	rzcA1DuNVxNtLgRQX1ASveQ1GoNdXmHRwiS//
+X-Received: by 2002:a17:902:ebca:b0:2ba:6518:a6d4 with SMTP id d9443c01a7336-2bc7aa1356fmr140049315ad.20.1778558925729;
+        Mon, 11 May 2026 21:08:45 -0700 (PDT)
+X-Received: by 2002:a17:902:ebca:b0:2ba:6518:a6d4 with SMTP id d9443c01a7336-2bc7aa1356fmr140048775ad.20.1778558925065;
+        Mon, 11 May 2026 21:08:45 -0700 (PDT)
 Received: from [10.213.101.118] ([202.46.23.25])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2baf1d405adsm122646725ad.28.2026.05.11.21.08.33
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2baf1d405adsm122646725ad.28.2026.05.11.21.08.38
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 11 May 2026 21:08:37 -0700 (PDT)
+        Mon, 11 May 2026 21:08:44 -0700 (PDT)
 From: Komal Bajaj <komal.bajaj@oss.qualcomm.com>
-Date: Tue, 12 May 2026 09:38:04 +0530
-Subject: [PATCH 1/4] dt-bindings: arm: qcom: Document Shikra and its EVK
- boards
+Date: Tue, 12 May 2026 09:38:05 +0530
+Subject: [PATCH 2/4] arm64: dts: qcom: Introduce Shikra SoC base dtsi
 MIME-Version: 1.0
-Message-Id: <20260512-shikra-dt-v1-1-716438330dd0@oss.qualcomm.com>
+Message-Id: <20260512-shikra-dt-v1-2-716438330dd0@oss.qualcomm.com>
 References: <20260512-shikra-dt-v1-0-716438330dd0@oss.qualcomm.com>
 In-Reply-To: <20260512-shikra-dt-v1-0-716438330dd0@oss.qualcomm.com>
 To: Bjorn Andersson <andersson@kernel.org>,
@@ -104,42 +103,50 @@ To: Bjorn Andersson <andersson@kernel.org>,
         Wesley Cheng <quic_wcheng@quicinc.com>, Ulf Hansson <ulfh@kernel.org>
 Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
         linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-        linux-mmc@vger.kernel.org, Komal Bajaj <komal.bajaj@oss.qualcomm.com>
+        linux-mmc@vger.kernel.org, Komal Bajaj <komal.bajaj@oss.qualcomm.com>,
+        Imran Shaik <imran.shaik@oss.qualcomm.com>,
+        Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>,
+        Monish Chunara <quic_mchunara@quicinc.com>,
+        Rakesh Kota <rakesh.kota@oss.qualcomm.com>,
+        Raviteja Laggyshetty <raviteja.laggyshetty@oss.qualcomm.com>,
+        Sneh Mankad <sneh.mankad@oss.qualcomm.com>,
+        Vishnu Santhosh <vishnu.santhosh@oss.qualcomm.com>,
+        Xueyao An <xueyao.an@oss.qualcomm.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1778558905; l=1405;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1778558905; l=26577;
  i=komal.bajaj@oss.qualcomm.com; s=20250710; h=from:subject:message-id;
- bh=15Injmg8rK8ASVqp1eiycQ+rgVM/qUCUjHV9ZKRmK1w=;
- b=qsd+1ESlEP8UXvDEem+D9Z3wOKU5SlGZVippPIxIqbom5EjN/hps0owmuD6qyom/WZlyQsIrd
- rFDT+XPk5CtCmIIk3GlfKNMXLOIf4AwITOLAjL+jl3JRr8Ro0Q6zjxn
+ bh=/kTuk0mlb/XOlIPxchUb82sH5lPQGroF0VnwGfbC8tw=;
+ b=ovGY4nL8SuCEi6e+4yhRkg85qsHhlQvGUUJNjlEdOMrKM6CD0fs5HiPr4NfxMyAlUs72dgvhA
+ H1mn279AJWlDOfbn5pbwNMUUiebOlbbhNHSLHXKlDXSJyRPULD+dRbb
 X-Developer-Key: i=komal.bajaj@oss.qualcomm.com; a=ed25519;
  pk=wKh8mgDh+ePUZ4IIvpBhQOqf16/KvuQHvSvHK20LXNU=
-X-Proofpoint-ORIG-GUID: EENhkK8MlrHOF_kSYhgI6MCeU0Tvqmc2
-X-Authority-Analysis: v=2.4 cv=CeM4Irrl c=1 sm=1 tr=0 ts=6a02a7c7 cx=c_pps
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNTEyMDAzNSBTYWx0ZWRfX1ATNv57UuXjS
+ +nB4IcG/zqxhy+IpSy6QzJX31Oly9N+6yKX1HBvwCpMh19wrOBo0IO7lVT/JRQkHvuTTHsEXsnB
+ qIuuBzBRSGAomK33KLDI+VvNTp5uu9xpV4Ok1fxjyGjlb7f1ZIb7FpMw3DQ7XNJkfWp6SwCIjeQ
+ fkHH5AcLzvjQbmJ75F9/ePg8nH9Jf/YvhSRcP9wtHcnweJEl/0P2kVliGK+si+DRQcFDJ4U+BLF
+ wmpxapsTuQrzDQZ+oBaeXnoT4DtAc9d61UICN33RXqhHRJp32s8S3A6HJPc40V/tPHbxRY62IUZ
+ C5NBV8OX4AbhpLKxNhuBOZryI8fCLOnV7fmNw+E9ZJgiJ2AjRkfrG4gChc8sf93YHHSGaNklH1c
+ dv+d9qDxe7OlP59u9Qm1y6YdKHmazJ3ITR+52vbn8mJWmIWIGCbl+ojfgvsu+A7eiG/2pA7+Hie
+ IalZUd+dMEzOkqSS4eQ==
+X-Authority-Analysis: v=2.4 cv=Kvp9H2WN c=1 sm=1 tr=0 ts=6a02a7cf cx=c_pps
  a=JL+w9abYAAE89/QcEU+0QA==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
  a=IkcTkHD0fZMA:10 a=NGcC8JguVDcA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=rJkE3RaqiGZ5pbrm-msn:22
- a=EUspDBNiAAAA:8 a=s3D7Wza4eiaRwqfIe7sA:9 a=QEXdDO2ut3YA:10
- a=324X-CrmTo6CU4MGRt3R:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNTEyMDAzNSBTYWx0ZWRfX7zJAsjDfOpfn
- Bq0tUkAWS8zZXke/VuT4DFdynr3DA8rRvZldg5MrIaO3JzVKGscPe26NDJZBscXdlMZAu7w3eIA
- 71xuMf0OMR49uOu1bupXE8afp0HKMUx4w2SQQ4Pdd1g9bnyj7SuAL+/mIcqUaG6KDZap8L4P9Uu
- CNc8SNtSQ2qTHbn5RZaBDs3E6Ov6ZjKmsdYWEwUnDX472AtV+xhr0PyV1N0oxRtZRukRSlS2SH/
- stMUAu027xdPeNIQX45yE3UnTQFzRl4hIV0vvObZBNxLUv+nbKCJepXI2gYpB3/6K4s2P7J+QCG
- TfeHpDjcq9QuH5jyVRDIQQm+58praQa//ogaJ3zbfo1sgJj4tqz3/E6pVyWdg+Dmnm2pah/FGYC
- bhEE4jbXBvaFxhUENq5W6JBlJ7mveYox9cso11btW9VhZAvX6JuYCHomFq54rnr+7VgxS2IXdLe
- lhXYjFUZvzxbtZ4tJow==
-X-Proofpoint-GUID: EENhkK8MlrHOF_kSYhgI6MCeU0Tvqmc2
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yx91gb_oNiZeI1HMLzn7:22
+ a=EUspDBNiAAAA:8 a=COk6AnOGAAAA:8 a=e82vE-CE4E9mOn6BBO4A:9 a=QEXdDO2ut3YA:10
+ a=324X-CrmTo6CU4MGRt3R:22 a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-ORIG-GUID: VF6Dd13hlw107oPA-a-AAlgSJDVtXA2D
+X-Proofpoint-GUID: VF6Dd13hlw107oPA-a-AAlgSJDVtXA2D
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
  definitions=2026-05-11_05,2026-05-08_02,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 priorityscore=1501 phishscore=0 suspectscore=0 malwarescore=0
- clxscore=1015 lowpriorityscore=0 spamscore=0 adultscore=0 bulkscore=0
+ priorityscore=1501 adultscore=0 bulkscore=0 suspectscore=0 spamscore=0
+ lowpriorityscore=0 impostorscore=0 clxscore=1015 phishscore=0 malwarescore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
  reason=mlx scancount=1 engine=8.22.0-2605050000 definitions=main-2605120035
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260511_210840_429826_80CD3D06 
-X-CRM114-Status: GOOD (  11.07  )
+X-CRM114-CacheID: sfid-20260511_210848_349244_CA051740 
+X-CRM114-Status: GOOD (  14.53  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -156,45 +163,1014 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Shikra is a Qualcomm IoT SoC available in a System-on-Module (SoM)
-form factor. The SoM integrates the Shikra SoC, PMICs, and essential
-passives, and is designed to be mounted on carrier boards.
+Add initial device tree support for the Qualcomm Shikra SoC,
+an IoT-focused platform built around a heterogeneous CPU cluster
+(Cortex-A55 + Cortex-A78C) with RPM-based power and clock management.
 
-One SoM variant is introduced:
-  - CQM: retail variant with integrated modem (PM4125 PMIC)
+Enable support for the following peripherals:
+  - CPU nodes
+  - Global Clock Controller (GCC)
+  - RPM-based clock controller (RPMCC) and power domains (RPMPD)
+  - Interrupt controller
+  - Top Level Mode Multiplexer (TLMM)
+  - Debug UART
+  - eMMC host controller
+  - USB 3.0 controller with QUSB2 and QMP PHYs
+  - System timer and watchdog
 
-Two EVK boards are supported:
-  - shikra-cqm-evk: pairs with the CQM SoM
-  - shikra-cqs-evk: pairs with the CQM SoM, with no modem support
-
-Each EVK provides debug UART, USB, and other peripheral interfaces.
-
-Add compatible strings for the CQM SoM variant and its two
-corresponding EVK boards.
-
+Co-developed-by: Imran Shaik <imran.shaik@oss.qualcomm.com>
+Signed-off-by: Imran Shaik <imran.shaik@oss.qualcomm.com>
+Co-developed-by: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
+Signed-off-by: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
+Co-developed-by: Monish Chunara <quic_mchunara@quicinc.com>
+Signed-off-by: Monish Chunara <quic_mchunara@quicinc.com>
+Co-developed-by: Rakesh Kota <rakesh.kota@oss.qualcomm.com>
+Signed-off-by: Rakesh Kota <rakesh.kota@oss.qualcomm.com>
+Co-developed-by: Raviteja Laggyshetty <raviteja.laggyshetty@oss.qualcomm.com>
+Signed-off-by: Raviteja Laggyshetty <raviteja.laggyshetty@oss.qualcomm.com>
+Co-developed-by: Sneh Mankad <sneh.mankad@oss.qualcomm.com>
+Signed-off-by: Sneh Mankad <sneh.mankad@oss.qualcomm.com>
+Co-developed-by: Vishnu Santhosh <vishnu.santhosh@oss.qualcomm.com>
+Signed-off-by: Vishnu Santhosh <vishnu.santhosh@oss.qualcomm.com>
+Co-developed-by: Xueyao An <xueyao.an@oss.qualcomm.com>
+Signed-off-by: Xueyao An <xueyao.an@oss.qualcomm.com>
 Signed-off-by: Komal Bajaj <komal.bajaj@oss.qualcomm.com>
 ---
- Documentation/devicetree/bindings/arm/qcom.yaml | 7 +++++++
- 1 file changed, 7 insertions(+)
+ arch/arm64/boot/dts/qcom/shikra.dtsi | 966 +++++++++++++++++++++++++++++++++++
+ 1 file changed, 966 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/arm/qcom.yaml b/Documentation/devicetree/bindings/arm/qcom.yaml
-index 2741c07e9f41..f041d71d7957 100644
---- a/Documentation/devicetree/bindings/arm/qcom.yaml
-+++ b/Documentation/devicetree/bindings/arm/qcom.yaml
-@@ -963,6 +963,13 @@ properties:
-           - const: qcom,qcs9100
-           - const: qcom,sa8775p
- 
-+      - items:
-+          - enum:
-+              - qcom,shikra-cqm-evk
-+              - qcom,shikra-cqs-evk
-+          - const: qcom,shikra-cqm-som
-+          - const: qcom,shikra
+diff --git a/arch/arm64/boot/dts/qcom/shikra.dtsi b/arch/arm64/boot/dts/qcom/shikra.dtsi
+new file mode 100644
+index 000000000000..262c488add1e
+--- /dev/null
++++ b/arch/arm64/boot/dts/qcom/shikra.dtsi
+@@ -0,0 +1,966 @@
++// SPDX-License-Identifier: BSD-3-Clause
++/*
++ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
++ */
 +
-       - items:
-           - enum:
-               - google,blueline
++#include <dt-bindings/clock/qcom,rpmcc.h>
++#include <dt-bindings/clock/qcom,shikra-gcc.h>
++#include <dt-bindings/interconnect/qcom,icc.h>
++#include <dt-bindings/interconnect/qcom,rpm-icc.h>
++#include <dt-bindings/interconnect/qcom,shikra.h>
++#include <dt-bindings/interrupt-controller/arm-gic.h>
++#include <dt-bindings/power/qcom-rpmpd.h>
++
++/ {
++	interrupt-parent = <&intc>;
++
++	#address-cells = <2>;
++	#size-cells = <2>;
++
++	clocks {
++		xo_board: xo-board {
++			compatible = "fixed-clock";
++			clock-frequency = <38400000>;
++			#clock-cells = <0>;
++		};
++
++		sleep_clk: sleep-clk {
++			compatible = "fixed-clock";
++			clock-frequency = <32764>;
++			#clock-cells = <0>;
++		};
++	};
++
++	cpus {
++		#address-cells = <2>;
++		#size-cells = <0>;
++
++		cpu0: cpu@0 {
++			device_type = "cpu";
++			compatible = "arm,cortex-a55";
++			reg = <0x0 0x0>;
++			enable-method = "psci";
++			next-level-cache = <&l3>;
++			capacity-dmips-mhz = <1024>;
++			dynamic-power-coefficient = <100>;
++		};
++
++		cpu1: cpu@100 {
++			device_type = "cpu";
++			compatible = "arm,cortex-a55";
++			reg = <0x0 0x100>;
++			enable-method = "psci";
++			next-level-cache = <&l3>;
++			capacity-dmips-mhz = <1024>;
++			dynamic-power-coefficient = <100>;
++		};
++
++		cpu2: cpu@200 {
++			device_type = "cpu";
++			compatible = "arm,cortex-a55";
++			reg = <0x0 0x200>;
++			enable-method = "psci";
++			next-level-cache = <&l3>;
++			capacity-dmips-mhz = <1024>;
++			dynamic-power-coefficient = <100>;
++		};
++
++		cpu3: cpu@300 {
++			device_type = "cpu";
++			compatible = "arm,cortex-a78c";
++			reg = <0x0 0x300>;
++			enable-method = "psci";
++			next-level-cache = <&l2_3>;
++			capacity-dmips-mhz = <1946>;
++			dynamic-power-coefficient = <486>;
++
++			l2_3: l2-cache {
++				compatible = "cache";
++				cache-level = <2>;
++				cache-unified;
++				next-level-cache = <&l3>;
++				cache-size = <0x40000>;
++			};
++		};
++
++		cpu-map {
++			cluster0 {
++				core0 {
++					cpu = <&cpu0>;
++				};
++
++				core1 {
++					cpu = <&cpu1>;
++				};
++
++				core2 {
++					cpu = <&cpu2>;
++				};
++			};
++
++			cluster1 {
++				core0 {
++					cpu = <&cpu3>;
++				};
++			};
++		};
++
++		l3: l3-cache {
++			compatible = "cache";
++			cache-level = <3>;
++			cache-unified;
++			cache-size = <0x80000>;
++		};
++	};
++
++	firmware {
++		scm {
++			compatible = "qcom,scm-shikra", "qcom,scm";
++			clocks = <&rpmcc RPM_SMD_CE1_CLK>;
++			clock-names = "core";
++			qcom,dload-mode = <&tcsr_regs 0x13000>;
++			#reset-cells = <1>;
++			interconnects = <&system_noc MASTER_CRYPTO_CORE0 RPM_ALWAYS_TAG
++					 &mc_virt SLAVE_EBI_CH0 RPM_ALWAYS_TAG>;
++		};
++	};
++
++	memory@a0000000 {
++		device_type = "memory";
++		/* We expect the bootloader to fill in the size */
++		reg = <0x0 0xa0000000 0x0 0x0>;
++	};
++
++	pmu {
++		compatible = "arm,armv8-pmuv3";
++		interrupts = <GIC_PPI 5 IRQ_TYPE_LEVEL_HIGH>;
++	};
++
++	psci: psci {
++		compatible = "arm,psci-1.0";
++		method = "smc";
++	};
++
++	rpm: remoteproc {
++		compatible = "qcom,shikra-rpm-proc", "qcom,rpm-proc";
++
++		glink-edge {
++			compatible = "qcom,glink-rpm";
++			interrupts = <GIC_SPI 194 IRQ_TYPE_EDGE_RISING>;
++			qcom,rpm-msg-ram = <&rpm_msg_ram>;
++			mboxes = <&apcs_glb 0>;
++
++			rpm_requests: rpm-requests {
++				compatible = "qcom,rpm-shikra", "qcom,glink-smd-rpm";
++				qcom,glink-channels = "rpm_requests";
++
++				rpmcc: clock-controller {
++					compatible = "qcom,rpmcc-shikra", "qcom,rpmcc";
++					clocks = <&xo_board>;
++					clock-names = "xo";
++					#clock-cells = <1>;
++				};
++
++				rpmpd: power-controller {
++					compatible = "qcom,shikra-rpmpd";
++					#power-domain-cells = <1>;
++					operating-points-v2 = <&rpmpd_opp_table>;
++
++					rpmpd_opp_table: opp-table {
++						compatible = "operating-points-v2";
++
++						rpmpd_opp_min_svs: opp1 {
++							opp-level = <RPM_SMD_LEVEL_MIN_SVS>;
++						};
++
++						rpmpd_opp_low_svs: opp2 {
++							opp-level = <RPM_SMD_LEVEL_LOW_SVS>;
++						};
++
++						rpmpd_opp_svs: opp3 {
++							opp-level = <RPM_SMD_LEVEL_SVS>;
++						};
++
++						rpmpd_opp_svs_plus: opp4 {
++							opp-level = <RPM_SMD_LEVEL_SVS_PLUS>;
++						};
++
++						rpmpd_opp_nom: opp5 {
++							opp-level = <RPM_SMD_LEVEL_NOM>;
++						};
++
++						rpmpd_opp_nom_plus: opp6 {
++							opp-level = <RPM_SMD_LEVEL_NOM_PLUS>;
++						};
++
++						rpmpd_opp_turbo: opp7 {
++							opp-level = <RPM_SMD_LEVEL_TURBO>;
++						};
++
++						rpmpd_opp_turbo_plus: opp8 {
++							opp-level = <RPM_SMD_LEVEL_TURBO_NO_CPR>;
++						};
++					};
++				};
++			};
++		};
++
++		mpm: interrupt-controller {
++			compatible = "qcom,mpm";
++			qcom,rpm-msg-ram = <&apss_mpm>;
++			interrupts = <GIC_SPI 197 IRQ_TYPE_EDGE_RISING>;
++			mboxes = <&apcs_glb 1>;
++			interrupt-controller;
++			#interrupt-cells = <2>;
++			#power-domain-cells = <0>;
++			interrupt-parent = <&intc>;
++			qcom,mpm-pin-count = <96>;
++			qcom,mpm-pin-map = <2 275>,  /* TSENS0 uplow */
++					   <12 422>, /* DWC3 ss_phy_irq */
++					   <58 272>, /* QUSB2_PHY dmse_hv_vddmx */
++					   <59 273>, /* QUSB2_PHY dpse_hv_vddmx */
++					   <86 183>, /* MPM wake, SPMI */
++					   <90 157>, /* QUSB2_PHY DM */
++					   <91 158>; /* QUSB2_PHY DP */
++		};
++	};
++
++	reserved_memory: reserved-memory {
++		#address-cells = <2>;
++		#size-cells = <2>;
++		ranges;
++
++		hyp_mem: hyp@80000000 {
++			reg = <0x0 0x80000000 0x0 0x1600000>;
++			no-map;
++		};
++
++		xblboot_mem: xblboot@85e00000 {
++			reg = <0x0 0x85e00000 0x0 0x100000>;
++			no-map;
++		};
++
++		secdata_apss_mem: secdata-apss@85fff000 {
++			reg = <0x0 0x85fff000 0x0 0x1000>;
++			no-map;
++		};
++
++		smem_mem: smem@86000000 {
++			compatible = "qcom,smem";
++			reg = <0x0 0x86000000 0x0 0x200000>;
++			no-map;
++
++			hwlocks = <&tcsr_mutex 3>;
++		};
++
++		audio_heap_mem: audio-heap@86200000 {
++			reg = <0x0 0x86200000 0x0 0x100000>;
++			no-map;
++		};
++
++		tz_stat_mem: tz-stat@a0000000 {
++			reg = <0x0 0xa0000000 0x0 0x100000>;
++			no-map;
++		};
++
++		qtee_mem: qtee@a1300000 {
++			reg = <0x0 0xa1300000 0x0 0x500000>;
++			no-map;
++		};
++
++		tz_apps_mem: tz-apps@a1800000 {
++			reg = <0x0 0xa1800000 0x0 0x2100000>;
++			no-map;
++		};
++
++		mpss_wlan_mem: mpss-wlan@ab000000 {
++			reg = <0x0 0xab000000 0x0 0x6e00000>;
++			no-map;
++		};
++
++		wlan_mem: wlan@b2300000 {
++			reg = <0x0 0xb2300000 0x0 0x100000>;
++			no-map;
++		};
++
++		cdsp_mem: cdsp@b2400000 {
++			reg = <0x0 0xb2400000 0x0 0x1900000>;
++			no-map;
++		};
++
++		gpu_micro_code_mem: gpu-micro-code@b3d00000 {
++			reg = <0x0 0xb3d00000 0x0 0x2000>;
++			no-map;
++		};
++
++		video_mem: video@b3d02000 {
++			reg = <0x0 0xb3d02000 0x0 0x700000>;
++			no-map;
++		};
++
++		lmcu_mem: lmcu@b4402000 {
++			reg = <0x0 0xb4402000 0x0 0x300000>;
++			no-map;
++		};
++
++		lmcu_dtb_mem: lmcu-dtb@b4702000 {
++			reg = <0x0 0xb4702000 0x0 0x40000>;
++			no-map;
++		};
++	};
++
++	soc: soc@0 {
++		compatible = "simple-bus";
++
++		#address-cells = <2>;
++		#size-cells = <2>;
++		dma-ranges = <0x0 0x0 0x0 0x0 0x10 0x0>;
++		ranges = <0x0 0x0 0x0 0x0 0x10 0x0>;
++
++		tcsr_mutex: syscon@340000 {
++			compatible = "qcom,tcsr-mutex";
++			reg = <0x0 0x00340000 0x0 0x20000>;
++			#hwlock-cells = <1>;
++		};
++
++		tcsr_regs: syscon@3c0000 {
++			compatible = "qcom,shikra-tcsr", "syscon";
++			reg = <0x0 0x003c0000 0x0 0x40000>;
++		};
++
++		tlmm: pinctrl@500000 {
++			compatible = "qcom,shikra-tlmm";
++			reg = <0x0 0x00500000 0x0 0x700000>;
++
++			interrupts = <GIC_SPI 227 IRQ_TYPE_LEVEL_HIGH>;
++
++			gpio-controller;
++			#gpio-cells = <2>;
++
++			interrupt-controller;
++			#interrupt-cells = <2>;
++
++			gpio-ranges = <&tlmm 0 0 165>;
++			wakeup-parent = <&mpm>;
++
++			qup_uart0_default: qup-uart0-default-state {
++				pins = "gpio0", "gpio1";
++				function = "qup0_se0";
++				drive-strength = <2>;
++				bias-disable;
++			};
++
++			sdc1_state_on: sdc1-on-state {
++				clk-pins {
++					pins = "sdc1_clk";
++					drive-strength = <6>;
++					bias-disable;
++				};
++
++				cmd-pins {
++					pins = "sdc1_cmd";
++					drive-strength = <6>;
++					bias-pull-up;
++				};
++
++				data-pins {
++					pins = "sdc1_data";
++					drive-strength = <6>;
++					bias-pull-up;
++				};
++
++				rclk-pins {
++					pins = "sdc1_rclk";
++					bias-pull-down;
++				};
++			};
++
++			sdc1_state_off: sdc1-off-state {
++				clk-pins {
++					pins = "sdc1_clk";
++					drive-strength = <2>;
++					bias-bus-hold;
++				};
++
++				cmd-pins {
++					pins = "sdc1_cmd";
++					drive-strength = <2>;
++					bias-bus-hold;
++				};
++
++				data-pins {
++					pins = "sdc1_data";
++					drive-strength = <2>;
++					bias-bus-hold;
++				};
++
++				rclk-pins {
++					pins = "sdc1_rclk";
++					bias-bus-hold;
++				};
++			};
++		};
++
++		mem_noc: interconnect@d00000 {
++			compatible = "qcom,shikra-mem-noc-core";
++			reg = <0x0 0x00d00000 0x0 0x43080>;
++			clocks = <&gcc GCC_DDRSS_GPU_AXI_CLK>;
++			clock-names = "gpu_axi";
++			#interconnect-cells = <2>;
++		};
++
++		llcc: system-cache-controller@e00000 {
++			compatible = "qcom,shikra-llcc";
++			reg = <0x0 0x00e00000 0x0 0x80000>,
++			      <0x0 0x00f00000 0x0 0x80000>,
++			      <0x0 0x01000000 0x0 0x80000>;
++			reg-names = "llcc0_base",
++				    "llcc1_base",
++				    "llcc_broadcast_base";
++			interrupts = <GIC_SPI 539 IRQ_TYPE_LEVEL_HIGH>;
++		};
++
++		gcc: clock-controller@1400000 {
++			compatible = "qcom,shikra-gcc";
++			reg = <0x0 0x01400000 0x0 0x1f0000>;
++			clocks = <&rpmcc RPM_SMD_XO_CLK_SRC>,
++				 <&sleep_clk>,
++				 <0>,
++				 <0>,
++				 <0>,
++				 <0>,
++				 <0>,
++				 <0>;
++			power-domains = <&rpmpd RPMPD_VDDCX>;
++			#clock-cells = <1>;
++			#reset-cells = <1>;
++			#power-domain-cells = <1>;
++		};
++
++		usb_1_hsphy: phy@1613000 {
++			compatible = "qcom,shikra-qusb2-phy";
++			reg = <0x0 0x01613000 0x0 0x180>;
++
++			clocks = <&gcc GCC_AHB2PHY_USB_CLK>,
++				 <&rpmcc RPM_SMD_XO_CLK_SRC>;
++			clock-names = "cfg_ahb", "ref";
++
++			resets = <&gcc GCC_QUSB2PHY_PRIM_BCR>;
++			nvmem-cells = <&qusb2_hstx_trim_1>;
++			#phy-cells = <0>;
++
++			status = "disabled";
++		};
++
++		usb_qmpphy: phy@1615000 {
++			compatible = "qcom,shikra-qmp-usb3-phy";
++			reg = <0x0 0x01615000 0x0 0x1000>;
++
++			clocks = <&gcc GCC_AHB2PHY_USB_CLK>,
++				 <&gcc GCC_USB3_PRIM_CLKREF_EN>,
++				 <&gcc GCC_USB3_PRIM_PHY_COM_AUX_CLK>,
++				 <&gcc GCC_USB3_PRIM_PHY_PIPE_CLK>;
++			clock-names = "cfg_ahb",
++				      "ref",
++				      "com_aux",
++				      "pipe";
++
++			resets = <&gcc GCC_USB3_PHY_PRIM_SP0_BCR>,
++				 <&gcc GCC_USB3PHY_PHY_PRIM_SP0_BCR>;
++			reset-names = "phy",
++				      "phy_phy";
++
++			#clock-cells = <0>;
++			clock-output-names = "usb3_phy_pipe_clk_src";
++
++			#phy-cells = <0>;
++			orientation-switch;
++
++			qcom,tcsr-reg = <&tcsr_regs 0xb244>;
++
++			status = "disabled";
++
++			ports {
++				#address-cells = <1>;
++				#size-cells = <0>;
++
++				port@0 {
++					reg = <0>;
++
++					usb_qmpphy_out: endpoint {
++					};
++				};
++
++				port@1 {
++					reg = <1>;
++
++					usb_qmpphy_usb_ss_in: endpoint {
++						remote-endpoint = <&usb_1_dwc3_ss>;
++					};
++				};
++			};
++		};
++
++		system_noc: interconnect@1880000 {
++			compatible = "qcom,shikra-sys-noc";
++			reg = <0x0 0x01880000 0x0 0x6a080>;
++			clocks = <&gcc GCC_EMAC0_AXI_SYS_NOC_CLK>,
++				 <&gcc GCC_EMAC1_AXI_SYS_NOC_CLK>,
++				 <&gcc GCC_SYS_NOC_USB2_PRIM_AXI_CLK>,
++				 <&gcc GCC_SYS_NOC_USB3_PRIM_AXI_CLK>;
++			clock-names = "emac0_axi",
++				      "emac1_axi",
++				      "usb2_axi",
++				      "usb3_axi";
++			#interconnect-cells = <2>;
++
++			clk_virt: interconnect-clk {
++				compatible = "qcom,shikra-clk-virt";
++				#interconnect-cells = <2>;
++			};
++
++			mc_virt: interconnect-mc {
++				compatible = "qcom,shikra-mc-virt";
++				#interconnect-cells = <2>;
++			};
++
++			mmrt_virt: interconnect-mmrt {
++				compatible = "qcom,shikra-mmrt-virt";
++				#interconnect-cells = <2>;
++			};
++
++			mmnrt_virt: interconnect-mmnrt {
++				compatible = "qcom,shikra-mmnrt-virt";
++				#interconnect-cells = <2>;
++			};
++		};
++
++		config_noc: interconnect@1900000 {
++			compatible = "qcom,shikra-config-noc";
++			reg = <0x0 0x01900000 0x0 0x8080>;
++			#interconnect-cells = <2>;
++		};
++
++		qfprom: efuse@1b44000 {
++			compatible = "qcom,shikra-qfprom", "qcom,qfprom";
++			reg = <0x0 0x01b44000 0x0 0x3000>;
++			#address-cells = <1>;
++			#size-cells = <1>;
++
++			qusb2_hstx_trim_1: hstx-trim@25b {
++				reg = <0x25b 0x1>;
++				bits = <1 4>;
++			};
++
++			gpu_speed_bin: gpu-speed-bin@2006 {
++				reg = <0x2006 0x2>;
++				bits = <5 8>;
++			};
++		};
++
++		spmi_bus: spmi@1c40000 {
++			compatible = "qcom,spmi-pmic-arb";
++			reg = <0x0 0x01c40000 0x0 0x1100>,
++			      <0x0 0x01e00000 0x0 0x2000000>,
++			      <0x0 0x03e00000 0x0 0x100000>,
++			      <0x0 0x03f00000 0x0 0xa0000>,
++			      <0x0 0x01c0a000 0x0 0x26000>;
++			reg-names = "core",
++				    "chnls",
++				    "obsrvr",
++				    "intr",
++				    "cnfg";
++			interrupts-extended = <&mpm 86 IRQ_TYPE_EDGE_RISING>;
++			interrupt-names = "periph_irq";
++			interrupt-controller;
++			#interrupt-cells = <4>;
++			#address-cells = <2>;
++			#size-cells = <0>;
++			qcom,channel = <0>;
++			qcom,ee = <0>;
++		};
++
++		rpm_msg_ram: sram@45f0000 {
++			compatible = "qcom,rpm-msg-ram", "mmio-sram";
++			reg = <0x0 0x045f0000 0x0 0x7000>;
++
++			#address-cells = <1>;
++			#size-cells = <1>;
++			ranges = <0 0x0 0x045f0000 0x7000>;
++
++			apss_mpm: sram@1b8 {
++				reg = <0x1b8 0x48>;
++			};
++		};
++
++		sram@4690000 {
++			compatible = "qcom,rpm-stats";
++			reg = <0x0 0x04690000 0x0 0x14000>;
++		};
++
++		sdhc_1: mmc@4744000 {
++			compatible = "qcom,shikra-sdhci", "qcom,sdhci-msm-v5";
++
++			reg = <0x0 0x04744000 0x0 0x1000>,
++			      <0x0 0x04745000 0x0 0x1000>;
++			reg-names = "hc",
++				    "cqhci";
++
++			iommus = <&apps_smmu 0xc0 0x0>;
++
++			interrupts = <GIC_SPI 348 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 352 IRQ_TYPE_LEVEL_HIGH>;
++			interrupt-names = "hc_irq",
++					  "pwr_irq";
++
++			clocks = <&gcc GCC_SDCC1_AHB_CLK>,
++				 <&gcc GCC_SDCC1_APPS_CLK>,
++				 <&rpmcc RPM_SMD_XO_CLK_SRC>;
++			clock-names = "iface",
++				      "core",
++				      "xo";
++
++			interconnects = <&system_noc MASTER_SDCC_1 QCOM_ICC_TAG_ALWAYS
++					&mc_virt SLAVE_EBI_CH0 QCOM_ICC_TAG_ALWAYS>,
++					<&mem_noc MASTER_AMPSS_M0 QCOM_ICC_TAG_ACTIVE_ONLY
++					&config_noc SLAVE_SDCC_1 QCOM_ICC_TAG_ACTIVE_ONLY>;
++			interconnect-names = "sdhc-ddr",
++					     "cpu-sdhc";
++
++			power-domains = <&rpmpd RPMHPD_CX>;
++			operating-points-v2 = <&sdhc1_opp_table>;
++
++			qcom,dll-config = <0x000f642c>;
++			qcom,ddr-config = <0x80040868>;
++
++			bus-width = <8>;
++
++			mmc-ddr-1_8v;
++			mmc-hs200-1_8v;
++			mmc-hs400-1_8v;
++			mmc-hs400-enhanced-strobe;
++
++			resets = <&gcc GCC_SDCC1_BCR>;
++
++			status = "disabled";
++
++			sdhc1_opp_table: opp-table {
++				compatible = "operating-points-v2";
++
++				opp-100000000 {
++					opp-hz = /bits/ 64 <100000000>;
++					required-opps = <&rpmpd_opp_low_svs>;
++					opp-peak-kBps = <250000 133320>;
++					opp-avg-kBps = <104000 0>;
++				};
++
++				opp-384000000 {
++					opp-hz = /bits/ 64 <384000000>;
++					required-opps = <&rpmpd_opp_nom>;
++					opp-peak-kBps = <800000 300000>;
++					opp-avg-kBps = <400000 0>;
++				};
++			};
++		};
++
++		qupv3_0: geniqup@4ac0000 {
++			compatible = "qcom,geni-se-qup";
++			reg = <0x0 0x04ac0000 0x0 0x2000>;
++
++			clocks = <&gcc GCC_QUPV3_WRAP_0_M_AHB_CLK>,
++				 <&gcc GCC_QUPV3_WRAP_0_S_AHB_CLK>;
++			clock-names = "m-ahb",
++				      "s-ahb";
++
++			#address-cells = <2>;
++			#size-cells = <2>;
++			ranges;
++
++			uart0: serial@4a80000 {
++				compatible = "qcom,geni-debug-uart";
++				reg = <0x0 0x04a80000 0x0 0x4000>;
++
++				interrupts = <GIC_SPI 527 IRQ_TYPE_LEVEL_HIGH>;
++
++				clocks = <&gcc GCC_QUPV3_WRAP0_S0_CLK>;
++				clock-names = "se";
++
++				interconnects = <&clk_virt MASTER_QUP_CORE_0 RPM_ALWAYS_TAG
++						 &clk_virt SLAVE_QUP_CORE_0 RPM_ALWAYS_TAG>,
++						<&mem_noc MASTER_AMPSS_M0 RPM_ALWAYS_TAG
++						 &config_noc SLAVE_QUP_0 RPM_ALWAYS_TAG>;
++				interconnect-names = "qup-core",
++						     "qup-config";
++
++				pinctrl-0 = <&qup_uart0_default>;
++				pinctrl-names = "default";
++
++				status = "disabled";
++			};
++		};
++
++		usb_1: usb@4e00000 {
++			compatible = "qcom,shikra-dwc3", "qcom,snps-dwc3";
++			reg = <0x0 0x04e00000 0x0 0xfc100>;
++
++			clocks = <&gcc GCC_CFG_NOC_USB3_PRIM_AXI_CLK>,
++				 <&gcc GCC_USB30_PRIM_MASTER_CLK>,
++				 <&gcc GCC_SYS_NOC_USB3_PRIM_AXI_CLK>,
++				 <&gcc GCC_USB30_PRIM_SLEEP_CLK>,
++				 <&gcc GCC_USB30_PRIM_MOCK_UTMI_CLK>,
++				 <&gcc GCC_USB3_PRIM_CLKREF_EN>;
++			clock-names = "cfg_noc",
++				      "core",
++				      "iface",
++				      "sleep",
++				      "mock_utmi",
++				      "xo";
++
++			assigned-clocks = <&gcc GCC_USB30_PRIM_MOCK_UTMI_CLK>,
++					  <&gcc GCC_USB30_PRIM_MASTER_CLK>;
++			assigned-clock-rates = <19200000>, <133333333>;
++
++			interrupts-extended = <&intc GIC_SPI 255 IRQ_TYPE_LEVEL_HIGH>,
++					      <&intc GIC_SPI 302 IRQ_TYPE_LEVEL_HIGH>,
++					      <&intc GIC_SPI 260 IRQ_TYPE_LEVEL_HIGH>,
++					      <&intc GIC_SPI 254 IRQ_TYPE_LEVEL_HIGH>,
++					      <&intc GIC_SPI 422 IRQ_TYPE_LEVEL_HIGH>;
++			interrupt-names = "dwc_usb3",
++					  "pwr_event",
++					  "qusb2_phy",
++					  "hs_phy_irq",
++					  "ss_phy_irq";
++
++			iommus = <&apps_smmu 0x120 0x0>;
++
++			phys = <&usb_1_hsphy>, <&usb_qmpphy>;
++			phy-names = "usb2-phy", "usb3-phy";
++
++			power-domains = <&gcc GCC_USB30_PRIM_GDSC>;
++
++			resets = <&gcc GCC_USB30_PRIM_BCR>;
++
++			snps,dis_u2_susphy_quirk;
++			snps,dis_enblslpm_quirk;
++			snps,has-lpm-erratum;
++			snps,hird-threshold = /bits/ 8 <0x10>;
++			snps,usb3_lpm_capable;
++			snps,parkmode-disable-ss-quirk;
++
++			usb-role-switch;
++
++			wakeup-source;
++
++			status = "disabled";
++
++			ports {
++				#address-cells = <1>;
++				#size-cells = <0>;
++
++				port@0 {
++					reg = <0>;
++
++					usb_1_dwc3_hs: endpoint {
++					};
++				};
++
++				port@1 {
++					reg = <1>;
++
++					usb_1_dwc3_ss: endpoint {
++						remote-endpoint = <&usb_qmpphy_usb_ss_in>;
++					};
++				};
++			};
++		};
++
++		sram@c11e000 {
++			compatible = "qcom,shikra-imem", "mmio-sram";
++			reg = <0x0 0x0c11e000 0x0 0x1000>;
++			ranges = <0x0 0x0 0x0c11e000 0x1000>;
++
++			no-memory-wc;
++
++			#address-cells = <1>;
++			#size-cells = <1>;
++
++			pil-sram@94c {
++				compatible = "qcom,pil-reloc-info";
++				reg = <0x94c 0xc8>;
++			};
++		};
++
++		apps_smmu: iommu@c600000 {
++			compatible = "qcom,shikra-smmu-500", "qcom,smmu-500", "arm,mmu-500";
++			reg = <0x0 0x0c600000 0x0 0x80000>;
++			#iommu-cells = <2>;
++			#global-interrupts = <1>;
++
++			interrupts = <GIC_SPI 81 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 87 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 88 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 89 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 90 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 91 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 92 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 93 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 94 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 95 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 96 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 97 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 98 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 99 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 100 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 101 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 102 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 103 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 104 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 105 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 106 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 107 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 108 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 109 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 110 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 111 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 112 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 113 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 114 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 115 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 116 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 117 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 118 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 119 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 120 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 121 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 122 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 123 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 124 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 125 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 126 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 127 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 128 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 129 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 130 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 131 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 132 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 133 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 134 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 135 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 136 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 137 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 138 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 139 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 140 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 141 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 142 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 143 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 144 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 145 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 146 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 147 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 148 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 149 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 150 IRQ_TYPE_LEVEL_HIGH>;
++		};
++
++		intc: interrupt-controller@f200000 {
++			compatible = "arm,gic-v3";
++			reg = <0x0 0xf200000 0x0 0x10000>,
++			      <0x0 0xf240000 0x0 0x80000>;
++
++			interrupts = <GIC_PPI 8 IRQ_TYPE_LEVEL_HIGH>;
++
++			#interrupt-cells = <3>;
++			interrupt-controller;
++
++			#redistributor-regions = <1>;
++			redistributor-stride = <0x0 0x20000>;
++
++			#address-cells = <2>;
++			#size-cells = <2>;
++			ranges;
++		};
++
++		apcs_glb: mailbox@f400000 {
++			compatible = "qcom,shikra-apss-shared", "qcom,sdm845-apss-shared";
++			reg = <0x0 0x0f400000 0x0 0x1000>;
++			#mbox-cells = <1>;
++		};
++
++		watchdog@f410000 {
++			compatible = "qcom,apss-wdt-shikra", "qcom,kpss-wdt";
++			reg = <0x0 0x0f410000 0x0 0x1000>;
++			interrupts = <GIC_SPI 0 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 1 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&sleep_clk>;
++		};
++
++		timer@f420000 {
++			compatible = "arm,armv7-timer-mem";
++			reg = <0x0 0x0f420000  0x0 0x1000>;
++
++			#address-cells = <1>;
++			#size-cells = <1>;
++			ranges = <0x0 0x0 0x0 0x10000000>;
++
++			frame@f421000 {
++				reg = <0x0f421000 0x1000>,
++				      <0x0f422000 0x1000>;
++				frame-number = <0>;
++				interrupts = <GIC_SPI 8 IRQ_TYPE_LEVEL_HIGH>,
++					     <GIC_SPI 6 IRQ_TYPE_LEVEL_HIGH>;
++			};
++
++			frame@f423000 {
++				reg = <0x0f423000 0x1000>;
++				frame-number = <1>;
++				interrupts = <GIC_SPI 9 IRQ_TYPE_LEVEL_HIGH>;
++				status = "disabled";
++			};
++
++			frame@f425000 {
++				reg = <0x0f425000 0x1000>;
++				frame-number = <2>;
++				interrupts = <GIC_SPI 10 IRQ_TYPE_LEVEL_HIGH>;
++				status = "disabled";
++			};
++
++			frame@f427000 {
++				reg = <0x0f427000 0x1000>;
++				frame-number = <3>;
++				interrupts = <GIC_SPI 11 IRQ_TYPE_LEVEL_HIGH>;
++				status = "disabled";
++			};
++
++			frame@f429000 {
++				reg = <0x0f429000 0x1000>;
++				frame-number = <4>;
++				interrupts = <GIC_SPI 12 IRQ_TYPE_LEVEL_HIGH>;
++				status = "disabled";
++			};
++
++			frame@f42b000 {
++				reg = <0x0f42b000 0x1000>;
++				frame-number = <5>;
++				interrupts = <GIC_SPI 13 IRQ_TYPE_LEVEL_HIGH>;
++				status = "disabled";
++			};
++
++			frame@f42d000 {
++				reg = <0x0f42d000 0x1000>;
++				frame-number = <6>;
++				interrupts = <GIC_SPI 14 IRQ_TYPE_LEVEL_HIGH>;
++				status = "disabled";
++			};
++		};
++	};
++
++	timer {
++		compatible = "arm,armv8-timer";
++
++		interrupts = <GIC_PPI 1 IRQ_TYPE_LEVEL_LOW>,
++			     <GIC_PPI 2 IRQ_TYPE_LEVEL_LOW>,
++			     <GIC_PPI 3 IRQ_TYPE_LEVEL_LOW>,
++			     <GIC_PPI 0 IRQ_TYPE_LEVEL_LOW>;
++	};
++};
 
 -- 
 2.34.1
