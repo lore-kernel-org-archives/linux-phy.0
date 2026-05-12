@@ -4,80 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8E328CD4F35
-	for <linux-phy@archiver.kernel.org>; Tue, 12 May 2026 13:06:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8DEA5CD4851
+	for <linux-phy@archiver.kernel.org>; Tue, 12 May 2026 13:08:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xl7NzcAHDPc4bZdExt4ooffsinqO1FbnVRFpPzrdhGw=; b=3HSGYK4lxTYfX3
-	5/km4l5EXmt5Q+mL6JtJemTGzmcvlpuZHUavHQtC99VKxCt0KRLa0TToy4VUrmMtlEH8iYlJPWyYc
-	SVTSXgSgnHOZ005UMrLYFAE/xLE0YZEZPs/TTbKyBKZKDYumoG+SiMIc45Y2gV4XhObW2XsCNPv1o
-	ndgyPKiJhCCpAtT6lI+0wvrjqAvpisMPhhbYLyDNg2AbwrDwg9/iwwAwgvTDJTXIqa5dgdxZHLlNK
-	59krKhOyAYZ0JwYIIviQX0Za+7qGJ8YUSPMKIOEDSPdp4QncOzdQYviaiRVRyUR/lrEuu5HJwIRag
-	fFa7AYVyBY4X3VLMw4qQ==;
+	List-Owner; bh=QCt2zuH5vL5ZyaTS924JNRt0f/Pn93/ls/wseqibxqs=; b=GLGaB61XGPB3E5
+	rcThlIbbnvK3e7mgl7tMm76/ZOWPMunXYTQVDkVBLj/PwWFHOzFidAWSOPXhf06UlHj1NtaaD8YuG
+	66Ky42mQhS58aJhGqAnbvM/CoJebjQy6xplAZy74sjpyQRg2HcNQApDPw3Zr/dkWCH7X4fOreQxwy
+	DITMY3mJn8Qn+wgFOZAJdqycEqD6KEmGckBGYwHXD13vv5a+pXnw5Vw5Eh0wvFLiYDjnjlfOWVNzb
+	eIDZFOu5ZGpwHxx4xm9IMNznf/OuSjtyrOFEqPQ58LNIM8gODYBGUPoLi4zv8UQVzyiVgon0zujIY
+	sb6vWfa6yfeUqX/+6XrA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wMmov-0000000Gkq0-2U7s;
-	Tue, 12 May 2026 13:06:46 +0000
-Received: from mgamail.intel.com ([192.198.163.16])
+	id 1wMmqH-0000000Gm4g-1M1k;
+	Tue, 12 May 2026 13:08:09 +0000
+Received: from mgamail.intel.com ([198.175.65.13])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wMmos-0000000Gkm4-0Vlt
+	id 1wMmqE-0000000GkUU-49G7
 	for linux-phy@lists.infradead.org;
-	Tue, 12 May 2026 13:06:44 +0000
+	Tue, 12 May 2026 13:08:08 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1778591202; x=1810127202;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=znNkGxCWUoP43q4FZmHtbfCbpkEWJzJh8FmA72szqWY=;
-  b=Yi6jTV6Q8um2FJFcKwoXpw9mfErBUJroeKjyTRATKDDWQ/uAbFQVr+19
-   QrjaUSgjrX7NcRuw4eCOtDJaxSbFOzMVg64b4dsTCzKTuWnc35x0mAUUR
-   aUBA2ZaAARF6yK9PeM/FbBlxPPKPwbkcYDhkRZSxjRcbaD+dz/gJmGVSk
-   rJFQ/AP2Ui0iGtvBpTWVJxEfeUjvsA5eHda4QWvcaYGkUsV8aPIQYA9rb
-   3yzT/hcBr/YOJ+nAnBSl/1hWT1SvZi4fKsOLVeW/z/ndYtMeWR9eX88y2
-   EuvxzN0+Fgpd7VmPRoemlN05IP8Zdes2rY0K5AD9d+qmq01NvEyr6XFaQ
-   w==;
-X-CSE-ConnectionGUID: +vFPRbNuTJSIHm+yXxIpsw==
-X-CSE-MsgGUID: QPdXBRr7S9ewt1Erfgj5cQ==
-X-IronPort-AV: E=McAfee;i="6800,10657,11783"; a="67026601"
+  t=1778591287; x=1810127287;
+  h=from:to:cc:subject:date:message-id:in-reply-to:
+   references:mime-version:content-transfer-encoding;
+  bh=dwFBnLXsBSJhM0CEDgNPKRthY1LonLKx8Vv5G4u3TV8=;
+  b=MFcEYAgzHoz3YBSxBsbrYQDVfTePRlOKuOp3cOup5nLdU20cbvN78yJd
+   mjkAKeVKQBuiA2kgEmIsQLUNSi40Fiu0vYKm52F9T8M4QVZBcWr6W0kx7
+   ZUJXOy4sVXkllufyci+vGJ7VIqOjjRljTxdEAsLXl2rt8WIHZURU3Ob2b
+   7XQpgkl86XJtFdX5yDXLC19XHn9KZ4V2rdNZrSO68d+F7XfDqN/edD3+i
+   SyTKu81X2Y3wx6mjorz+NhCEzWzD8CqQ2A7co5ybGBYGIJHCmX3GlqEHD
+   MQPpM6nu7Ak3YD9l2BbDGV++GU0JjXAtexwB+SoXAmK8T8iBuJAhFFuCj
+   g==;
+X-CSE-ConnectionGUID: MpVnYI+sS1Os2Nrd4rytcA==
+X-CSE-MsgGUID: aCSZUtFoR7OnIHiyAgAKlw==
+X-IronPort-AV: E=McAfee;i="6800,10657,11783"; a="90600354"
 X-IronPort-AV: E=Sophos;i="6.23,230,1770624000"; 
-   d="scan'208";a="67026601"
-Received: from fmviesa008.fm.intel.com ([10.60.135.148])
-  by fmvoesa110.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 12 May 2026 06:06:38 -0700
-X-CSE-ConnectionGUID: xg/iWjAPSE+p7scyEFDOnA==
-X-CSE-MsgGUID: bP+pSJv1QK6ixYpICKEBqg==
+   d="scan'208";a="90600354"
+Received: from fmviesa006.fm.intel.com ([10.60.135.146])
+  by orvoesa105.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 12 May 2026 06:06:00 -0700
+X-CSE-ConnectionGUID: Y+1uMqVPSRezwEe6MW80Hw==
+X-CSE-MsgGUID: cGT3AJYYR/q/bPajHAkS5g==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.23,230,1770624000"; 
-   d="scan'208";a="235099026"
-Received: from kniemiec-mobl1.ger.corp.intel.com (HELO localhost) ([10.245.245.112])
-  by fmviesa008-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 12 May 2026 06:06:34 -0700
-Date: Tue, 12 May 2026 16:06:31 +0300
+   d="scan'208";a="233294181"
+Received: from black.igk.intel.com ([10.91.253.5])
+  by fmviesa006.fm.intel.com with ESMTP; 12 May 2026 06:05:56 -0700
+Received: by black.igk.intel.com (Postfix, from userid 1003)
+	id 7094699; Tue, 12 May 2026 15:05:55 +0200 (CEST)
 From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: Peng Fan <peng.fan@nxp.com>, linux-can@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org,
-	Marc Kleine-Budde <mkl@pengutronix.de>,
+To: Peng Fan <peng.fan@nxp.com>,
+	linux-can@vger.kernel.org,
+	linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Cc: Marc Kleine-Budde <mkl@pengutronix.de>,
 	Vincent Mailhol <mailhol@kernel.org>,
+	Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
-	Josua Mayer <josua@solid-run.com>, Ulf Hansson <ulfh@kernel.org>
-Subject: Re: [PATCH v3 0/4] phy: phy-can-transceiver: Ad-hoc cleanups and
- refactoring
-Message-ID: <agMl17o5Ti4eSM4P@ashevche-desk.local>
-References: <20260504070054.29508-1-andriy.shevchenko@linux.intel.com>
- <agBjOmnpKuZoDfWG@vaman>
- <agB_aj_2hzF3ON2h@ashevche-desk.local>
- <agIBJsOl4Trk4_KN@vaman>
+	Josua Mayer <josua@solid-run.com>,
+	Ulf Hansson <ulfh@kernel.org>,
+	Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+Subject: [PATCH v4 1/5] phy: phy-can-transceiver: Check driver match and driver data against NULL
+Date: Tue, 12 May 2026 15:01:49 +0200
+Message-ID: <20260512130552.272476-2-andriy.shevchenko@linux.intel.com>
+X-Mailer: git-send-email 2.50.1
+In-Reply-To: <20260512130552.272476-1-andriy.shevchenko@linux.intel.com>
+References: <20260512130552.272476-1-andriy.shevchenko@linux.intel.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <agIBJsOl4Trk4_KN@vaman>
-Organization: Intel Finland Oy - BIC 0357606-4 - c/o Alberga Business Park, 6
- krs, Bertel Jungin Aukio 5, 02600 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260512_060642_173932_D636A315 
-X-CRM114-Status: GOOD (  25.98  )
+X-CRM114-CacheID: sfid-20260512_060807_063630_4965A989 
+X-CRM114-Status: GOOD (  12.89  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,47 +94,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, May 11, 2026 at 09:47:42PM +0530, Vinod Koul wrote:
-> On 10-05-26, 15:51, Andy Shevchenko wrote:
-> > On Sun, May 10, 2026 at 04:21:38PM +0530, Vinod Koul wrote:
-> > > On 04-05-26, 08:58, Andy Shevchenko wrote:
-> > > > The driver does two things that need to be addressed:
-> > > > - includes subject to remove gpio.h
-> > > > - checks for error code from device property APIs when it can be done in
-> > > >   a robust way
-> > > > 
-> > > > This series addresses the above and adds a couple of additional refactoring.
-> > > 
-> > > Sashiko flagged some issues, some of them not introduced by this, can
-> > > you please check this:
-> > > 
-> > > https://sashiko.dev/#/patchset/20260504070054.29508-1-andriy.shevchenko%40linux.intel.com
-> > 
-> > "Could this result in a null pointer dereference if device_get_match_data()
-> > returns null?"
-> > Yes, it sounds legit but not introduced here.
-> > 
-> > "In the original code, the warning was suppressed when the property was missing
-> > because err evaluated to -EINVAL. Now, if the property is absent, max_bitrate
-> > is explicitly set to 0 in the else block, which then unconditionally triggers
-> > this warning."
-> > True, but I don't know which is better here, I consider that it's
-> > good to inform user about default being used as a fallback. I can change
-> > this back to the original logic. What do you prefer?
-> > 
-> > The third one is the repetition of the first one (see above).
-> > 
-> > TL;DR: The only one legitimated question is about a (new old) warning.
-> 
-> Yeah would be great if we could fix these as well please
+Every platform driver can be forced to match a device that doesn't
+match its list of device IDs because of device_match_driver_override()
+so platform drivers that rely on the existence of a device's driver
+data need to verify its presence.
 
-I just sent a v4:
-20260512130552.272476-1-andriy.shevchenko@linux.intel.com
+Accordingly, add requisite match and driver data checks against NULL
+to the driver where they are missing.
 
+Fixes: a4a86d273ff1 ("phy: phy-can-transceiver: Add support for generic CAN transceiver driver")
+Signed-off-by: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+---
+ drivers/phy/phy-can-transceiver.c | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/drivers/phy/phy-can-transceiver.c b/drivers/phy/phy-can-transceiver.c
+index 2b52e47f247a..1808f903c057 100644
+--- a/drivers/phy/phy-can-transceiver.c
++++ b/drivers/phy/phy-can-transceiver.c
+@@ -162,6 +162,9 @@ static int can_transceiver_phy_probe(struct platform_device *pdev)
+ 	int err, i, num_ch = 1;
+ 
+ 	match = of_match_node(can_transceiver_phy_ids, pdev->dev.of_node);
++	if (!match || !match->data)
++		return -ENODEV;
++
+ 	drvdata = match->data;
+ 	if (drvdata->flags & CAN_TRANSCEIVER_DUAL_CH)
+ 		num_ch = 2;
 -- 
-With Best Regards,
-Andy Shevchenko
-
+2.50.1
 
 
 -- 
