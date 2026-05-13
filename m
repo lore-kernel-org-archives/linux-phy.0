@@ -4,78 +4,106 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A1BADCD4F21
-	for <linux-phy@archiver.kernel.org>; Wed, 13 May 2026 13:12:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BBFC9CD4851
+	for <linux-phy@archiver.kernel.org>; Wed, 13 May 2026 13:31:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
-	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dAAHxK55CAOeDlFi8WaG3Z3QbRZBxmwxKHRk7dY691c=; b=f1KLEeOvglAf71
-	3r7jMao41hcSYU+j0/mZ87FLii3XaYSFwuS2oEfexV/OFjWZ65cVzQQFRKXagp3N7DRMQ4nF3moFu
-	gee7JHvER+h+otEkNqlWbR16NYP9su6uZdgHMEonjaaewk0jN6a0RztWyKTJKvHT4GsUpVQS/0+dH
-	9llyHIH7HbMaxIEGqykxk3BUmgSCDm+lapaaAIrFPLctI/+FKpBWY8XDIASVEPxvdNG4A6W5W/gSf
-	mNNOrGDiDsVzZOAMaUrn2VubIu6pCBQAibMhlV8t5MIuMeekN/sLMdTQKFfX/olFxvFk9bD0e7ksp
-	y+YUPUqKchxgUVXyD3bg==;
+	List-Owner; bh=Q1CM4TMArnCF9ACBrIYep6kKdmaYgvArDv40ZeDxkF4=; b=S08kYLK8kOg/Il
+	ahHFqKmEvbHl47fqsklX2xqQnl/d+S4GeOqtwLw1l/LVZ5cvHZh0+gXvvmd3tzijmuEhyI0VtbruG
+	+AVrDRXOmS1Hi87F61JgvY2CA2wYH/7yhJL3DaoYO0D9j6ztdlacDhdYyQWDJCnQmEFLykPgt4ymS
+	fAwDPCAWRIMqcXTLsmZQ5TrxXHgsJlzPG6ILfI9HsNJtWjMORbBqFqnV8gKgep9aF+vM6qUz7tYYK
+	kGBW72qR2EWz/v8Qh34kluVb8QNQSnUa2yPSILB/6gpYs69RY4064tJS0WXyXlXc9MPNgQGBCH0Dt
+	BInhQL9pvS80no2Zg5Kw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wN9Nk-00000002cXA-1ixU;
-	Wed, 13 May 2026 13:12:12 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wN9gt-00000002lln-2CGK;
+	Wed, 13 May 2026 13:31:59 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wN9Ng-00000002cVJ-3mjj
+	id 1wN9gr-00000002lkd-1A7J
 	for linux-phy@lists.infradead.org;
-	Wed, 13 May 2026 13:12:10 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id B8FCE43CB9;
-	Wed, 13 May 2026 13:12:07 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 9B451C4AF0B;
-	Wed, 13 May 2026 13:12:07 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1778677927;
-	bh=mrYufZayANyHbmSl28kp/x2VGhkIQRMjMFMD1iMr0/w=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
-	b=aFNKEvjhMqhemQ5CZDvdUVcZqfQTCC9++eC0JCoOJ6chRdS9kWJ069uWB5bQJ3hGe
-	 xEzNQVOMnEJgmbr3p07vy1vACe/aVWQHtFI+nFeoyCs2y53XzetG+99LRwySAmbYH+
-	 KvssCovzZlRPGvZsqq2GQTpTUYNknuMyA9lpDrw6ryGAfaAGT6ipb3WYiovmtVOwlx
-	 3rfG1TFCTB2NiubMZbpnMvvrbiTYU4Io9Smkh8RoK+hbwSTzwi0dzORSBgbbJrV8g3
-	 Iqn4BTfXCEiWmsYegiQpE2fzcYAL3gtruiB8jqGINBEOXE90nmP52SsYqvHKKQAxp8
-	 +H6JxXiNTxqUw==
-Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 88F9CCD4851;
-	Wed, 13 May 2026 13:12:07 +0000 (UTC)
-From: Dimitri Fedrau via B4 Relay <devnull+dimitri.fedrau.liebherr.com@kernel.org>
-Date: Wed, 13 May 2026 15:12:02 +0200
-Subject: [PATCH v5 1/2] dt-bindings: phy: add support for NXPs TJA1145 CAN
- transceiver
+	Wed, 13 May 2026 13:31:58 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 64DAVLFS3430151;
+	Wed, 13 May 2026 13:31:51 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	+Z9CF0PHRUZfgrMFz7Ke/C/05Lw0TTbfxjvrqLAahqw=; b=L35RNrRbcAY+NK6Z
+	jDurbt2fX7mVDoQdYaMCWxYWr+xP6uJKyhp/+TEbZboEQL86TFzAQxnDK4RyNpwX
+	J+w4VNnjjt5o+TgSz34DxnGALaA6XiPSpDaW3d16kaN2zlfzDorz+GcglHrZzrCL
+	MpWrpbUVJtjRQDuTMLvfTz92mBDSsQeXLKHJ3D3iaTzpXzP8oHXCtmqPjwqzwbqr
+	LsrYf2+emPAGeH0zMmH9Tfj2vTLKJWm0yVbHZ9aGXAyYMmrYju1hk+QYdNk08gd6
+	w3ZbqVCrcH4TB5f1wPee/v42iMt7zumd3aVSbMdb3VnoQQso8lK5u9abbXMdwWRH
+	ByhV9A==
+Received: from apblrppmta01.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4e4qmcgmgr-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 13 May 2026 13:31:50 +0000 (GMT)
+Received: from pps.filterd (APBLRPPMTA01.qualcomm.com [127.0.0.1])
+	by APBLRPPMTA01.qualcomm.com (8.18.1.7/8.18.1.7) with ESMTP id 64DDVlVW014639;
+	Wed, 13 May 2026 13:31:47 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTPS id 4e1x0jemsh-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 13 May 2026 13:31:47 +0000 (GMT)
+Received: from APBLRPPMTA01.qualcomm.com (APBLRPPMTA01.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.18.1.12/8.18.1.12) with ESMTP id 64DDVl5L014632;
+	Wed, 13 May 2026 13:31:47 GMT
+Received: from hu-devc-hyd-u22-c.qualcomm.com (hu-kotarake-hyd.qualcomm.com [10.213.97.140])
+	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTPS id 64DDVlxs014627
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 13 May 2026 13:31:47 +0000 (GMT)
+Received: by hu-devc-hyd-u22-c.qualcomm.com (Postfix, from userid 2389607)
+	id 4DAD8B35; Wed, 13 May 2026 19:01:46 +0530 (+0530)
+Date: Wed, 13 May 2026 19:01:46 +0530
+From: Rakesh Kota <rakesh.kota@oss.qualcomm.com>
+To: sashiko-reviews@lists.linux.dev
+Cc: Komal Bajaj <komal.bajaj@oss.qualcomm.com>, robh@kernel.org,
+        linux-phy@lists.infradead.org, neil.armstrong@linaro.org,
+        vkoul@kernel.org, olteanv@gmail.com, krzk+dt@kernel.org,
+        conor+dt@kernel.org, devicetree@vger.kernel.org
+Subject: Re: [PATCH 3/4] arm64: dts: qcom: Add Shikra CQM SoM platform
+Message-ID: <20260513133146.doe4rr6ahb4nrri4@hu-kotarake-hyd.qualcomm.com>
+References: <20260512-shikra-dt-v1-3-716438330dd0@oss.qualcomm.com>
+ <20260513042836.073F9C2BCB7@smtp.kernel.org>
 MIME-Version: 1.0
-Message-Id: <20260513-tja1145-support-v5-1-38720a7ee63e@liebherr.com>
-References: <20260513-tja1145-support-v5-0-38720a7ee63e@liebherr.com>
-In-Reply-To: <20260513-tja1145-support-v5-0-38720a7ee63e@liebherr.com>
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, Dimitri Fedrau <dimitri.fedrau@liebherr.com>, 
- Dimitri Fedrau <dima.fedrau@gmail.com>, 
- Conor Dooley <conor.dooley@microchip.com>
-X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1778677926; l=2608;
- i=dimitri.fedrau@liebherr.com; s=20241202; h=from:subject:message-id;
- bh=gO1sGVTxGhuOYWVBuaPrvVGhpYnctsS7WdK7HQbRpIY=;
- b=mrLckBKnirP5Y5c+tmLHjSOZr01KPgrbOdUcPMyZimv7TTFkFIxt0lMRSO3ByVF/wTtK3vCXj
- RnYvx0MiABpDsYazOQm3LbhwXdyGkTHPI4LGB/lvuXber71l1H0nzIn
-X-Developer-Key: i=dimitri.fedrau@liebherr.com; a=ed25519;
- pk=rT653x09JSQvotxIqQl4/XiI4AOiBZrdOGvxDUbb5m8=
-X-Endpoint-Received: by B4 Relay for dimitri.fedrau@liebherr.com/20241202
- with auth_id=290
-X-Original-From: Dimitri Fedrau <dimitri.fedrau@liebherr.com>
+Content-Disposition: inline
+In-Reply-To: <20260513042836.073F9C2BCB7@smtp.kernel.org>
+X-QCInternal: smtphost
+X-QCInternal: smtphost
+X-Proofpoint-GUID: y4GziVTAWi6UdMV5wtMI6r33G-6ETHa7
+X-Authority-Analysis: v=2.4 cv=Hu5G3UTS c=1 sm=1 tr=0 ts=6a047d47 cx=c_pps
+ a=Ou0eQOY4+eZoSc0qltEV5Q==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
+ a=8nJEP1OIZ-IA:10 a=NGcC8JguVDcA:10 a=VkNPw1HP01LnGYTKEx00:22
+ a=u7WPNUs3qKkmUXheDGA7:22 a=ZpdpYltYx_vBUK5n70dp:22 a=c92rfblmAAAA:8
+ a=EUspDBNiAAAA:8 a=JfrnYn6hAAAA:8 a=VwQbUJbxAAAA:8 a=RkLvNQZQ2IQHFO4gP24A:9
+ a=3ZKOabzyN94A:10 a=wPNLvfGTeEIA:10 a=GvGzcOZaWPEFPQC_NcjD:22
+ a=1CNFftbPRP8L7MoqJWF3:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNTEzMDEzOCBTYWx0ZWRfX7EWw0QuoGMYa
+ dIEqMmNVfYDKFAJo0aMnw0CmdjYtD0p355iZ0aip10De/KdxMNA3HdLQ4+4Sny7qGMnhhXblQM1
+ hUbtF0eo+1FRLenY8eJ0rjmo0rcQth0IyVS7WML2Ko2YcrmfSWJ7QwP5WIX2PRVfeLHxLcqYkBE
+ vMoKcymcWmaTRbLvde5aRk2RIny4B8LKIgAWh+m2edDsvSleK321PHkNE4VKidmeNkKNSPU0QDA
+ HYWI8fEqG5OhwkHtUPParPdN+KhYOZm2C4YzffMXKvxXvAlfTuvyPa8U0hn4LVEPK4kNbYJkcou
+ pOe4CBb1No5czzB6ZwNMk7QvLih6hf8fM5WcMlrMCOck2JolFcNgDxLUi1LK4qdsh7c9H/dNSQC
+ xe0q3wp95JxRFevioAEpegROiOzGRPJ7xmK5Ow/OYHc64Nf2NHqvg3abRb6/uXeErvaZgCq+FUQ
+ FQpSf2keJVSd0aIC8YA==
+X-Proofpoint-ORIG-GUID: y4GziVTAWi6UdMV5wtMI6r33G-6ETHa7
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
+ definitions=2026-05-13_01,2026-05-08_02,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ phishscore=0 malwarescore=0 impostorscore=0 priorityscore=1501 spamscore=0
+ clxscore=1011 bulkscore=0 suspectscore=0 adultscore=0 lowpriorityscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2605050000 definitions=main-2605130138
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260513_061208_989218_4FAA43A9 
-X-CRM114-Status: GOOD (  10.77  )
+X-CRM114-CacheID: sfid-20260513_063157_434754_740FA10B 
+X-CRM114-Status: GOOD (  22.04  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,119 +115,196 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: dimitri.fedrau@liebherr.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Dimitri Fedrau <dimitri.fedrau@liebherr.com>
+On Wed, May 13, 2026 at 04:28:35AM +0000, sashiko-bot@kernel.org wrote:
+> Thank you for your contribution! Sashiko AI review found 2 potential issu=
+e(s) to consider:
+> - [High] The PMIC regulator definitions omit their required input supply =
+dependencies (e.g., `vdd_s2-supply`, `vdd_l3-supply`), breaking the power h=
+ierarchy.
+> - [Medium] The device tree inaccurately hardcodes the `compatible` string=
+ to a different PMIC model (`qcom,rpm-pm2250-regulators`) instead of explic=
+itly identifying the actual hardware (PM4125).
+> --
+> =
 
-Adding documentation for NXPs TJA1145 CAN transceiver, which resides like
-the ti,tcan104x-can.yaml in the same directory as other generic PHY
-subsystem bindings. At the moment there is only support for simple PHYs
-by using regulator bindings in combination with can-transceiver.yaml or
-PHYs that implement the generic PHY subsystem like the NXP TJA1145.
+> commit 457abf6e7ac410430c866842e08e602ec3daaa51
+> Author: Komal Bajaj <komal.bajaj@oss.qualcomm.com>
+> =
 
-Reviewed-by: Conor Dooley <conor.dooley@microchip.com>
-Signed-off-by: Dimitri Fedrau <dimitri.fedrau@liebherr.com>
----
- .../devicetree/bindings/phy/nxp,tja1145.yaml       | 80 ++++++++++++++++++++++
- 1 file changed, 80 insertions(+)
+> arm64: dts: qcom: Add Shikra CQM SoM platform
+> =
 
-diff --git a/Documentation/devicetree/bindings/phy/nxp,tja1145.yaml b/Documentation/devicetree/bindings/phy/nxp,tja1145.yaml
-new file mode 100644
-index 0000000000000000000000000000000000000000..46de6d0f2dd9b9fd41c97eb4c9340e3ac36090a3
---- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/nxp,tja1145.yaml
-@@ -0,0 +1,80 @@
-+# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/phy/nxp,tja1145.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: TJA1145 CAN transceiver
-+
-+maintainers:
-+  - Dimitri Fedrau <dimitri.fedrau@liebherr.com>
-+
-+allOf:
-+  - $ref: /schemas/spi/spi-peripheral-props.yaml#
-+
-+properties:
-+  compatible:
-+    const: nxp,tja1145
-+
-+  reg:
-+    maxItems: 1
-+
-+  "#phy-cells":
-+    const: 0
-+
-+  spi-cpha: true
-+
-+  spi-max-frequency:
-+    maximum: 4000000
-+
-+  spi-cs-setup-delay-ns:
-+    minimum: 50
-+    default: 50
-+
-+  spi-cs-hold-delay-ns:
-+    minimum: 50
-+    default: 50
-+
-+  spi-cs-inactive-delay-ns:
-+    minimum: 250
-+    default: 250
-+
-+  vcc-supply:
-+    description:
-+      CAN transceiver supply voltage
-+
-+  vio-supply:
-+    description:
-+      Supply voltage for I/O level adaptor
-+
-+  vbat-supply:
-+    description:
-+      Battery supply voltage
-+
-+required:
-+  - compatible
-+  - reg
-+  - "#phy-cells"
-+  - spi-cpha
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    spi {
-+        #address-cells = <1>;
-+        #size-cells = <0>;
-+        can-phy@0 {
-+            compatible = "nxp,tja1145";
-+            reg = <0>;
-+            #phy-cells = <0>;
-+            spi-cpha;
-+            spi-max-frequency = <4000000>;
-+            spi-cs-setup-delay-ns = <50>;
-+            spi-cs-hold-delay-ns = <50>;
-+            spi-cs-inactive-delay-ns = <250>;
-+            vcc-supply = <&reg_5v0>;
-+            vio-supply = <&reg_3v3>;
-+            vbat-supply = <&reg_24v0>;
-+        };
-+    };
+> Add device tree include for the CQM variant of the Shikra System-on-Modul=
+e.
+> This variant integrates the Shikra SoC and PM4125 PMIC. The DTSI includes
+> the common shikra.dtsi and adds PM4125 PMIC regulator definitions.
+> =
 
--- 
-2.39.5
+> > diff --git a/arch/arm64/boot/dts/qcom/shikra-cqm-som.dtsi b/arch/arm64/=
+boot/dts/qcom/shikra-cqm-som.dtsi
+> > new file mode 100644
+> > index 0000000000000..401e71720519d
+> > --- /dev/null
+> > +++ b/arch/arm64/boot/dts/qcom/shikra-cqm-som.dtsi
+> [ ... ]
+> > +&rpm_requests {
+> > +	regulators {
+> > +		compatible =3D "qcom,rpm-pm2250-regulators";
+> =
 
+> Since the commit message indicates this is a PM4125 PMIC, should the
+> compatible string include a specific identifier for the actual hardware?
+> =
 
+> Using a specific identifier like "qcom,rpm-pm4125-regulators" alongside
+> the fallback allows the kernel to apply specific quirks if PM4125 errata
+> are discovered later.
+>
+PM2250 and PM4125 share identical regulator hardware with no functional
+differences. Therefore, using qcom,rpm-pm2250-regulators as the
+compatible string is sufficient i think.
 
--- 
+> > +
+> > +		pm4125_s2: s2 {
+> > +			regulator-min-microvolt =3D <1000000>;
+> > +			regulator-max-microvolt =3D <1200000>;
+> > +		};
+> =
+
+> Do these regulators need to explicitly define their input supply dependen=
+cies
+> such as vdd_s2-supply?
+> =
+
+> Without these properties, the regulator framework might be unaware that t=
+he
+> PMIC regulators draw power from upstream supplies.
+> =
+
+> If the kernel dynamically manages the upstream supply and its reference c=
+ount
+> drops to zero, could it be disabled, causing an unexpected power loss for
+> downstream components?
+> =
+
+As per the Qualcomm system design, the parent-child supply relationships
+for these regulators are managed by the AOP (Always-On Processor) FW.
+
+regards
+Rakesh Kota
+> [ ... ]
+> =
+
+> -- =
+
+> Sashiko AI review =B7 https://sashiko.dev/#/patchset/20260512-shikra-dt-v=
+1-0-716438330dd0@oss.qualcomm.com?part=3D3
+> =
+
+> -- =
+
+> linux-phy mailing list
+> linux-phy@lists.infradead.org
+> https://lists.infradead.org/mailman/listinfo/linux-phy
+On Wed, May 13, 2026 at 04:28:35AM +0000, sashiko-bot@kernel.org wrote:
+> Thank you for your contribution! Sashiko AI review found 2 potential issu=
+e(s) to consider:
+> - [High] The PMIC regulator definitions omit their required input supply =
+dependencies (e.g., `vdd_s2-supply`, `vdd_l3-supply`), breaking the power h=
+ierarchy.
+> - [Medium] The device tree inaccurately hardcodes the `compatible` string=
+ to a different PMIC model (`qcom,rpm-pm2250-regulators`) instead of explic=
+itly identifying the actual hardware (PM4125).
+> --
+> =
+
+> commit 457abf6e7ac410430c866842e08e602ec3daaa51
+> Author: Komal Bajaj <komal.bajaj@oss.qualcomm.com>
+> =
+
+> arm64: dts: qcom: Add Shikra CQM SoM platform
+> =
+
+> Add device tree include for the CQM variant of the Shikra System-on-Modul=
+e.
+> This variant integrates the Shikra SoC and PM4125 PMIC. The DTSI includes
+> the common shikra.dtsi and adds PM4125 PMIC regulator definitions.
+> =
+
+> > diff --git a/arch/arm64/boot/dts/qcom/shikra-cqm-som.dtsi b/arch/arm64/=
+boot/dts/qcom/shikra-cqm-som.dtsi
+> > new file mode 100644
+> > index 0000000000000..401e71720519d
+> > --- /dev/null
+> > +++ b/arch/arm64/boot/dts/qcom/shikra-cqm-som.dtsi
+> [ ... ]
+> > +&rpm_requests {
+> > +	regulators {
+> > +		compatible =3D "qcom,rpm-pm2250-regulators";
+> =
+
+> Since the commit message indicates this is a PM4125 PMIC, should the
+> compatible string include a specific identifier for the actual hardware?
+> =
+
+> Using a specific identifier like "qcom,rpm-pm4125-regulators" alongside
+> the fallback allows the kernel to apply specific quirks if PM4125 errata
+> are discovered later.
+>
+PM2250 and PM4125 share identical regulator hardware with no functional
+differences. Therefore, using qcom,rpm-pm2250-regulators as the
+compatible string is sufficient i think.
+
+> > +
+> > +		pm4125_s2: s2 {
+> > +			regulator-min-microvolt =3D <1000000>;
+> > +			regulator-max-microvolt =3D <1200000>;
+> > +		};
+> =
+
+> Do these regulators need to explicitly define their input supply dependen=
+cies
+> such as vdd_s2-supply?
+> =
+
+> Without these properties, the regulator framework might be unaware that t=
+he
+> PMIC regulators draw power from upstream supplies.
+> =
+
+> If the kernel dynamically manages the upstream supply and its reference c=
+ount
+> drops to zero, could it be disabled, causing an unexpected power loss for
+> downstream components?
+> =
+
+As per the Qualcomm system design, the parent-child supply relationships
+for these regulators are managed by the AOP (Always-On Processor) FW.
+
+regards
+Rakesh Kota
+> [ ... ]
+> =
+
+> -- =
+
+> Sashiko AI review =B7 https://sashiko.dev/#/patchset/20260512-shikra-dt-v=
+1-0-716438330dd0@oss.qualcomm.com?part=3D3
+> =
+
+> -- =
+
+> linux-phy mailing list
+> linux-phy@lists.infradead.org
+> https://lists.infradead.org/mailman/listinfo/linux-phy
+
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
