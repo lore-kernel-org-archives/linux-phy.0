@@ -4,59 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 08A2DCD4851
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AD3F5CD4F24
 	for <linux-phy@archiver.kernel.org>; Wed, 13 May 2026 13:12:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id
-	:Date:Subject:From:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=gSFW4XJv6/NbDDPNn3KrI2LTkXD32zVvvo4NzXCGsGk=; b=3fdzBgHsb1Ppzi
-	6LyqWj9s8cqnleLmzp0FKITs0Y6gnz3VL77fxFAkOTC7EItlqbkuVSTGJ2YaUaj4bDZKHYzNjWgix
-	qtScpCTjSrfts/41EbBYogIMzKqjuEV87kvC3MdUeARMe23Z401GiNpNpO5kMFEaFnZBVYwyVIAaZ
-	n29fnYGJ2+X+SePjHpbmYzOLwj4I7w/NRk9PdukhTFaHm13cMK3RJUJvcgtYGQ9k5Wb1m9fM4RhMs
-	782k0D0L0AruXsdS7r0kX1Zv192Dx7a6ytHyBlOvpwThTqFJ0shcOYH3vd5LuA5BmZgktrCioFp9H
-	xzZgCBh4EGy1qB5RIn/w==;
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:
+	Message-Id:MIME-Version:Subject:Date:From:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zHGDjvCGgQIq248ZYMTdRTraM6zsV/a86U5LKkYGsbY=; b=n8Cbd3hx0IUjfO
+	qmMC3Lgttd5K1RxXdx4qRQxa5nECj8H3c07a7yDruQxxjKGFWpXsnbPAaz3co9soIFcHyrNFrwZEO
+	hZVlY0RYaKKrOfyiYV+3wWlerD/AllCcq8JhydKsO5HWYSGoIwCm/QBVSkYJa5ZkBo+9QHswaQEAq
+	I3wZb9aoAdnCN1vF9k585ioIUnlauPtTZfK65T8OwSzUkH6zkDGZDeAtFvJpwUw7u9UL1aqFqcbLR
+	YpM+tz6YT5ZFvzhR7xo1AZDjtfmCB35qz5z0fLLKdRDX2N0E/skTPqy9cmTr1Tlz4wl28cr8NqoDY
+	iDogHItgtzBmA7Zy3d0Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wN9Ni-00000002cW8-1OSj;
-	Wed, 13 May 2026 13:12:10 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wN9Nj-00000002cWl-1Z2o;
+	Wed, 13 May 2026 13:12:11 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wN9Ng-00000002cVL-2omp
+	id 1wN9Ng-00000002cVK-3mix
 	for linux-phy@lists.infradead.org;
-	Wed, 13 May 2026 13:12:08 +0000
+	Wed, 13 May 2026 13:12:10 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id CF73A60121;
+	by sea.source.kernel.org (Postfix) with ESMTP id D226B44511;
 	Wed, 13 May 2026 13:12:07 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 8039EC2BCB7;
+Received: by smtp.kernel.org (Postfix) with ESMTPS id ADE45C2BCF5;
 	Wed, 13 May 2026 13:12:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1778677927;
-	bh=9JxEm/HHNJQiQUpuQ7/jDsnz645CHsgcyhfIXRpZ8oU=;
-	h=From:Subject:Date:To:Cc:Reply-To:From;
-	b=XqULGoIcCJ+z23cZbsdcxEnq9egoFu4yRFEvoIL7+pAV7diA/dNf/kg3JI1aXeWjd
-	 +stdbn/z2V8IKa9KXbpxWLHrkOjS2uzUv67FCbx4+Bz8LRa7qrlhTJItNBU/ti7MEC
-	 vTssS4MeS3Cfn2L8FfRFA5z3hzZgu+BpHlwQGyzsQo58LKd0iv9bDD87zRVJ8nszQ1
-	 1dOVLaBLzvOF5g0MKdtl0WLVoz0/1oVliPmrO4h3frAOysr57G2KhUWcscnhiR+xfO
-	 K4HYebUhU0pRpyPzFZQy3Cp0Xc6374bzdFSpu5edfolweX/qavC6avjrlOQXjTgyod
-	 Z9wqbWdUCVSlw==
+	bh=vfgwnBG+lxpWKDMp5Hl71qaLhmM4qDpidcG1oLR1LMU=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:Reply-To:From;
+	b=WMm5kWhCL4ZPTc7PBU45zcdWcgvv5uHLKypYlPvHn5WaZUvkOavqu+uGgVxsKR/qI
+	 kV5tee4DfBz1TQgIbmQDUB1Lk4nu6Yo32ZXrQ+6/YjAuOs/dA3JinjYgiKR8szA5BM
+	 L6M4xjjTq8yw0LMra++S/IBgYLbFuyx4XmTuBxsyqxqBUgQmV0g/AQUvnk0iUzrfC/
+	 K4eGRPAOv/TrAszK8DE0/ILyeMx8dh8jaKO519Q1U1F4F+rRnCRpI9wee52n/iAoHD
+	 oH7DvepibcyMDStSpYG4z27I3Y0bFWB1dicIJKr6nNh7H+Wl7lFrpDN/k+52IvuejE
+	 /2MSqUSehZ3ng==
 Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 72CA2CD4F39;
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 9FB3BCD4F24;
 	Wed, 13 May 2026 13:12:07 +0000 (UTC)
 From: Dimitri Fedrau via B4 Relay <devnull+dimitri.fedrau.liebherr.com@kernel.org>
-Subject: [PATCH v5 0/2] phy: add basic support for NXPs TJA1145 CAN
+Date: Wed, 13 May 2026 15:12:03 +0200
+Subject: [PATCH v5 2/2] phy: add basic support for NXPs TJA1145 CAN
  transceiver
-Date: Wed, 13 May 2026 15:12:01 +0200
-Message-Id: <20260513-tja1145-support-v5-0-38720a7ee63e@liebherr.com>
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIAKF4BGoC/23NQU7DMBCF4atUXmNkj8eJ3VXvUbFwPRNiBE1kh
- whU5e44lVoQ6fJ/0nxzEYVz4iL2u4vIPKeShnMN+7QTsQ/nV5aJagtQYFULjZzegtZoZfkcxyF
- PkpoYKSIBBSPq1Zi5S19X8fhSu09lGvL39cGs1/VmuY01a6kkn8ihR7Jo4+E98annnJ/j8CFWb
- oZfwoHfElCJRnnfdgacb/0DwtwJrbTZEqYSGDwB2o5V0z4g8C9htwSuBJkYtInOOf2PWJblBwQ
- 8Amp6AQAA
-X-Change-ID: 20250726-tja1145-support-d6ccdc4d2da3
+Message-Id: <20260513-tja1145-support-v5-2-38720a7ee63e@liebherr.com>
+References: <20260513-tja1145-support-v5-0-38720a7ee63e@liebherr.com>
+In-Reply-To: <20260513-tja1145-support-v5-0-38720a7ee63e@liebherr.com>
 To: Vinod Koul <vkoul@kernel.org>, 
  Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
  Krzysztof Kozlowski <krzk+dt@kernel.org>, 
@@ -64,20 +60,22 @@ To: Vinod Koul <vkoul@kernel.org>,
  Neil Armstrong <neil.armstrong@linaro.org>
 Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
  linux-kernel@vger.kernel.org, Dimitri Fedrau <dimitri.fedrau@liebherr.com>, 
- Dimitri Fedrau <dima.fedrau@gmail.com>, 
- Conor Dooley <conor.dooley@microchip.com>, lee.lockhey@gmail.com, 
+ Dimitri Fedrau <dima.fedrau@gmail.com>, lee.lockhey@gmail.com, 
  Marc Kleine-Budde <mkl@pengutronix.de>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1778677926; l=2287;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1778677926; l=7419;
  i=dimitri.fedrau@liebherr.com; s=20241202; h=from:subject:message-id;
- bh=9JxEm/HHNJQiQUpuQ7/jDsnz645CHsgcyhfIXRpZ8oU=;
- b=78Sz5dpvZTkvTtPlG/TiaXEnhtb9HDN27jhzJanz9IGXWc6jIbnKIhSA+SxXPZM/hjsf8Vgz8
- XSbGIQM7QILDarvKE3ObyKEqUG0Fkm9F1+i0G7EzTVDkfEB3YJCsTSb
+ bh=cTwa7LJ4WYrfE9uhGBTMXWFXb7E3Zcyu/daqVib881Q=;
+ b=KIIvZ/zU3Gq4STWp5pzqja9TX6gficBqv9/1O0vo4Djp98oBOvfFXFfZEOJn+lm/406L2f0qA
+ rclv3xoCLDtAF8iDdUFQjW7wpfcUtlJnm/pxd2ArTDsSRX8cHN/CFnY
 X-Developer-Key: i=dimitri.fedrau@liebherr.com; a=ed25519;
  pk=rT653x09JSQvotxIqQl4/XiI4AOiBZrdOGvxDUbb5m8=
 X-Endpoint-Received: by B4 Relay for dimitri.fedrau@liebherr.com/20241202
  with auth_id=290
 X-Original-From: Dimitri Fedrau <dimitri.fedrau@liebherr.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260513_061208_989582_76726398 
+X-CRM114-Status: GOOD (  19.09  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,59 +93,246 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+From: Dimitri Fedrau <dimitri.fedrau@liebherr.com>
+
 Add basic driver support for NXPs TJA1145 CAN transceiver which brings the
 PHY up/down by switching to normal/standby mode using SPI commands.
 
+Tested-by: <lee.lockhey@gmail.com>
+Reviewed-by: Marc Kleine-Budde <mkl@pengutronix.de>
 Signed-off-by: Dimitri Fedrau <dimitri.fedrau@liebherr.com>
 ---
-Changes in v5:
-- No functional change, basically a resend with added tags
-- fixed typo in define TJA1145_MODE_CRTL_STBY to TJA1145_MODE_CTRL_STBY
-  and TJA1145_MODE_CRTL_NORMAL to TJA1145_MODE_CTRL_NORMAL
-- remove unneeded include -#include <linux/bitfield.h>
-- added owner to tja1145_phy_ops
-- Link to v4: https://lore.kernel.org/r/20251015-tja1145-support-v4-0-4d3ca13c8881@liebherr.com
+ drivers/phy/Kconfig           |  10 +++
+ drivers/phy/Makefile          |   1 +
+ drivers/phy/phy-nxp-tja1145.c | 184 ++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 195 insertions(+)
 
-Changes in v4:
-- Change compatible to: nxp,tja1145 (Connor)
-- Mark spi-cpha as required (Connor)
-- Switch from unevaluatedProperties: false to
-  additionalProperties: false (Connor)
-- Remove double newline after tja1145_rd_table (Marc)
-- Link to v3: https://lore.kernel.org/r/20251013-tja1145-support-v3-0-4a9d245fe067@liebherr.com
+diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
+index ab96ee5858c1a9dee2aea3a896c09b397cc30c7f..a3f9a05e222002e23d5080aa22b56f2a822a4b97 100644
+--- a/drivers/phy/Kconfig
++++ b/drivers/phy/Kconfig
+@@ -124,6 +124,16 @@ config PHY_NXP_PTN3222
+ 	  schemes. It supports all three USB 2.0 data rates: Low Speed, Full
+ 	  Speed and High Speed.
+ 
++config PHY_NXP_TJA1145
++	tristate "NXP TJA1145 CAN transceiver PHY"
++	select GENERIC_PHY
++	select REGMAP_SPI
++	depends on SPI
++	help
++	  This option enables support for NXPs TJA1145 CAN transceiver as a PHY.
++	  This driver provides function for putting the transceiver in various
++	  functional modes using SPI commands.
++
+ config PHY_PISTACHIO_USB
+ 	tristate "IMG Pistachio USB2.0 PHY driver"
+ 	depends on MIPS || COMPILE_TEST
+diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
+index f31767745123773757e84b0b5fb85ec286c1d977..65ea9f0bc7f151378caa6e161f8b8a5c6884d7e5 100644
+--- a/drivers/phy/Makefile
++++ b/drivers/phy/Makefile
+@@ -14,6 +14,7 @@ obj-$(CONFIG_PHY_GOOGLE_USB)		+= phy-google-usb.o
+ obj-$(CONFIG_USB_LGM_PHY)		+= phy-lgm-usb.o
+ obj-$(CONFIG_PHY_LPC18XX_USB_OTG)	+= phy-lpc18xx-usb-otg.o
+ obj-$(CONFIG_PHY_NXP_PTN3222)		+= phy-nxp-ptn3222.o
++obj-$(CONFIG_PHY_NXP_TJA1145)		+= phy-nxp-tja1145.o
+ obj-$(CONFIG_PHY_PISTACHIO_USB)		+= phy-pistachio-usb.o
+ obj-$(CONFIG_PHY_SNPS_EUSB2)		+= phy-snps-eusb2.o
+ obj-$(CONFIG_PHY_XGENE)			+= phy-xgene.o
+diff --git a/drivers/phy/phy-nxp-tja1145.c b/drivers/phy/phy-nxp-tja1145.c
+new file mode 100644
+index 0000000000000000000000000000000000000000..1e8bd169743abfaeee6948d200e6ac320cd616ff
+--- /dev/null
++++ b/drivers/phy/phy-nxp-tja1145.c
+@@ -0,0 +1,184 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Copyright (C) 2025 Liebherr-Electronics and Drives GmbH
++ */
++#include <linux/module.h>
++#include <linux/regmap.h>
++
++#include <linux/phy/phy.h>
++#include <linux/spi/spi.h>
++
++#define TJA1145_MODE_CTRL		0x01
++#define TJA1145_MODE_CTRL_MC		GENMASK(2, 0)
++#define TJA1145_MODE_CTRL_STBY		BIT(2)
++#define TJA1145_MODE_CTRL_NORMAL	TJA1145_MODE_CTRL_MC
++
++#define TJA1145_CAN_CTRL		0x20
++#define TJA1145_CAN_CTRL_CMC		GENMASK(1, 0)
++#define TJA1145_CAN_CTRL_ACTIVE		BIT(1)
++
++#define TJA1145_IDENT			0x7e
++#define TJA1145_IDENT_TJA1145T		0x70
++
++#define TJA1145_SPI_READ_BIT		BIT(0)
++#define TJA1145T_MAX_BITRATE		1000000
++
++static int tja1145_phy_power_on(struct phy *phy)
++{
++	struct regmap *map = phy_get_drvdata(phy);
++	int ret;
++
++	/*
++	 * Switch operating mode to normal which is the active operating mode.
++	 * In this mode, the device is fully operational.
++	 */
++	ret = regmap_update_bits(map, TJA1145_MODE_CTRL, TJA1145_MODE_CTRL_MC,
++				 TJA1145_MODE_CTRL_NORMAL);
++	if (ret)
++		return ret;
++
++	/*
++	 * Switch to CAN operating mode active where the PHY can transmit and
++	 * receive data.
++	 */
++	return regmap_update_bits(map, TJA1145_CAN_CTRL, TJA1145_CAN_CTRL_CMC,
++				  TJA1145_CAN_CTRL_ACTIVE);
++}
++
++static int tja1145_phy_power_off(struct phy *phy)
++{
++	struct regmap *map = phy_get_drvdata(phy);
++
++	/*
++	 * Switch to operating mode standby, the PHY is unable to transmit or
++	 * receive data in standby mode.
++	 */
++	return regmap_update_bits(map, TJA1145_MODE_CTRL, TJA1145_MODE_CTRL_MC,
++				  TJA1145_MODE_CTRL_STBY);
++}
++
++static const struct phy_ops tja1145_phy_ops = {
++	.power_on = tja1145_phy_power_on,
++	.power_off = tja1145_phy_power_off,
++	.owner = THIS_MODULE,
++};
++
++static const struct regmap_range tja1145_wr_holes_ranges[] = {
++	regmap_reg_range(0x00, 0x00),
++	regmap_reg_range(0x02, 0x03),
++	regmap_reg_range(0x05, 0x05),
++	regmap_reg_range(0x0b, 0x1f),
++	regmap_reg_range(0x21, 0x22),
++	regmap_reg_range(0x24, 0x25),
++	regmap_reg_range(0x30, 0x4b),
++	regmap_reg_range(0x4d, 0x60),
++	regmap_reg_range(0x62, 0x62),
++	regmap_reg_range(0x65, 0x67),
++	regmap_reg_range(0x70, 0xff),
++};
++
++static const struct regmap_access_table tja1145_wr_table = {
++	.no_ranges = tja1145_wr_holes_ranges,
++	.n_no_ranges = ARRAY_SIZE(tja1145_wr_holes_ranges),
++};
++
++static const struct regmap_range tja1145_rd_holes_ranges[] = {
++	regmap_reg_range(0x00, 0x00),
++	regmap_reg_range(0x02, 0x02),
++	regmap_reg_range(0x05, 0x05),
++	regmap_reg_range(0x0b, 0x1f),
++	regmap_reg_range(0x21, 0x21),
++	regmap_reg_range(0x24, 0x25),
++	regmap_reg_range(0x30, 0x4a),
++	regmap_reg_range(0x4d, 0x5f),
++	regmap_reg_range(0x62, 0x62),
++	regmap_reg_range(0x65, 0x67),
++	regmap_reg_range(0x70, 0x7d),
++	regmap_reg_range(0x7f, 0xff),
++};
++
++static const struct regmap_access_table tja1145_rd_table = {
++	.no_ranges = tja1145_rd_holes_ranges,
++	.n_no_ranges = ARRAY_SIZE(tja1145_rd_holes_ranges),
++};
++
++static const struct regmap_config tja1145_regmap_config = {
++	.reg_bits = 8,
++	.reg_shift = -1,
++	.val_bits = 8,
++	.wr_table = &tja1145_wr_table,
++	.rd_table = &tja1145_rd_table,
++	.read_flag_mask = TJA1145_SPI_READ_BIT,
++	.max_register = TJA1145_IDENT,
++};
++
++static int tja1145_check_ident(struct device *dev, struct regmap *map)
++{
++	unsigned int val;
++	int ret;
++
++	ret = regmap_read(map, TJA1145_IDENT, &val);
++	if (ret)
++		return ret;
++
++	if (val != TJA1145_IDENT_TJA1145T) {
++		dev_err(dev, "Expected device id: 0x%02x, got: 0x%02x\n",
++			TJA1145_IDENT_TJA1145T, val);
++		return -ENODEV;
++	}
++
++	return 0;
++}
++
++static int tja1145_probe(struct spi_device *spi)
++{
++	struct phy_provider *phy_provider;
++	struct device *dev = &spi->dev;
++	struct regmap *map;
++	struct phy *phy;
++	int ret;
++
++	map = devm_regmap_init_spi(spi, &tja1145_regmap_config);
++	if (IS_ERR(map))
++		return dev_err_probe(dev, PTR_ERR(map), "failed to init regmap\n");
++
++	ret = tja1145_check_ident(dev, map);
++	if (ret)
++		return dev_err_probe(dev, ret, "failed to identify device\n");
++
++	phy = devm_phy_create(dev, dev->of_node, &tja1145_phy_ops);
++	if (IS_ERR(phy))
++		return dev_err_probe(dev, PTR_ERR(phy), "failed to create PHY\n");
++
++	phy->attrs.max_link_rate = TJA1145T_MAX_BITRATE;
++	phy_set_drvdata(phy, map);
++	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
++
++	return PTR_ERR_OR_ZERO(phy_provider);
++}
++
++static const struct spi_device_id tja1145_spi_id[] = {
++	{ "tja1145" },
++	{ }
++};
++MODULE_DEVICE_TABLE(spi, tja1145_spi_id);
++
++static const struct of_device_id tja1145_of_match[] = {
++	{ .compatible = "nxp,tja1145" },
++	{ }
++};
++MODULE_DEVICE_TABLE(of, tja1145_of_match);
++
++static struct spi_driver tja1145_driver = {
++	.driver = {
++		.name = "tja1145",
++		.of_match_table = tja1145_of_match,
++	},
++	.probe = tja1145_probe,
++	.id_table = tja1145_spi_id,
++};
++module_spi_driver(tja1145_driver);
++
++MODULE_DESCRIPTION("NXP TJA1145 CAN transceiver PHY driver");
++MODULE_AUTHOR("Dimitri Fedrau <dimitri.fedrau@liebherr.com>");
++MODULE_LICENSE("GPL");
 
-Changes in v3:
-- bindings: fix SPI bus unit address format error
-- bindings: added resolution of discussion into commit msg
-- Checked binding with:
-  make dt_binding_check DT_SCHEMA_FILES=nxp,tja1145-can.yaml
-  Missed it for V2, didn't do it intentionally. Sorry.
-- Link to v2: https://lore.kernel.org/r/20250829-tja1145-support-v2-0-60997f328979@liebherr.com
-
-Changes in v2:
-- bindings: Change node name in example to can-phy
-- bindings: Fix order of properties, reg property is second
-- bindings: Change compatible to match filename
-- change compatible to nxp,tja1145-can
-- Link to v1: https://lore.kernel.org/r/20250728-tja1145-support-v1-0-ebd8494d545c@liebherr.com
-
----
-Dimitri Fedrau (2):
-      dt-bindings: phy: add support for NXPs TJA1145 CAN transceiver
-      phy: add basic support for NXPs TJA1145 CAN transceiver
-
- .../devicetree/bindings/phy/nxp,tja1145.yaml       |  80 +++++++++
- drivers/phy/Kconfig                                |  10 ++
- drivers/phy/Makefile                               |   1 +
- drivers/phy/phy-nxp-tja1145.c                      | 184 +++++++++++++++++++++
- 4 files changed, 275 insertions(+)
----
-base-commit: 29b4d8a7637f027b538787896bee520f2dacc904
-change-id: 20250726-tja1145-support-d6ccdc4d2da3
-
-Best regards,
 -- 
-Dimitri Fedrau <dimitri.fedrau@liebherr.com>
+2.39.5
 
 
 
