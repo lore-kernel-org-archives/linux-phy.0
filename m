@@ -4,133 +4,108 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6965CD4F21
-	for <linux-phy@archiver.kernel.org>; Wed, 13 May 2026 13:37:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B57E9CD4F21
+	for <linux-phy@archiver.kernel.org>; Wed, 13 May 2026 14:29:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dBQh+DNnhsCEDSqodbf/DvwCRgITKUQvDiBiY9KHYEo=; b=yLBJCUMOZ2J1Rv
-	c/QgChyAEaR50jRhyXIF/mnfD0Bkz4lyg4wRGwTnyfVDabWC6UnFvcc4no2e6adgEYJggxEyszX0E
-	rt/epC7/W+b/DEmxN2IN2/Y+1KWWZYyYjQyBzlWC0yndP69wEANergM9huNCLHKvzFu4q1UudewoV
-	Esxmtb0/Knneir//ajlhmdhFxgN5EJ8XrQcH86GPwnvvT0N4gAdw2MLq1Z2D97R9S1dSB3nKwdZft
-	NqLXq1hQPj57SVXQIs0fXCZYdHNKEsHUPHc+VTVURTDvD/dAzIZ94gBMfCGvWayNZq5UWzPR5Sq4y
-	zjnjHVdH67coCsh0LWAQ==;
+	List-Owner; bh=l8QY0hshxokAuPGLdy4hlQnqTcub8vi6rJQTbvEDneI=; b=B+FXX4dS3A+gs4
+	Mo4zYWvL396Nl1CZltqRBHrcF6QXAG0nrIKj3KJmeNvHvZLKtiHK/694FMxGDU5X3xZ05X30VL02Z
+	Epqom+9fZ2D46u2b+umIdesHBRPez7WGGMY/KexBn9G4/KHH5wojzyuG3smf71jIhuFSs5R+u9Uov
+	OhsBcRuCUI3p3iE00BR4NSyJi2+tOstIB8qbhz0QxbgqNlzEVtEFL9KcKEm6HuxoA5I6UHdsZ9kzs
+	qBYE6MVtHt8Bbq/OUt36aNSzqCbpjD8aYAPrFJNvufHo/+QBfDgFXL8ICNKE96MWjhr39xBfdpoNy
+	AKxdi9gRvb7eVybqxTiQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wN9mL-00000002mtC-1kJ2;
-	Wed, 13 May 2026 13:37:37 +0000
-Received: from mail-norwayeastazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c20f::7] helo=OSPPR02CU001.outbound.protection.outlook.com)
+	id 1wNAaq-00000002vw8-24I5;
+	Wed, 13 May 2026 14:29:48 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wN9mI-00000002mrw-3Wa5
+	id 1wNAan-00000002vud-3paO
 	for linux-phy@lists.infradead.org;
-	Wed, 13 May 2026 13:37:36 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=P8JjAbuKFVo8n+jS345e+QB48s52oGRegDbarhOW+t33MCTULbCKbmMZ8hWq/cuTXbhyzaK7OzAyz0K9J4cVobtNdSD4E5VrH3lDDvnlqhQr8In8jS0XbaiIFyB9unZKfFxo6J/Tgz3buqNC89NWAFI0iC4v/5fqwJav8qIjQQrIXa4Qr8VW0lyJtg9bjC0joh+/RE6U+Sujvn2LsmarAlh0AhtijigHiB3EDpZ+yyN07joqgfhMZD1IBNfoMjWsa/T+P+e1F6lXQPoys9467BdJ+J8NKKym9LYER+UZPdkTnyMYrCkJo7GepzKsc5fkARLW0PLqgJyvOyLFcmZQfw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=Ze+dPCY7yqJUlKgPDKUn8mo8+ZapXhOH5rg7CJ+GFVI=;
- b=QxZd3vmY1SHlMIvvX+03wZ5dD2YTCnnFYJ5yp5fuP0GfPZ/OXtkTwSeIKfxMvsFhDeFidoAcT+sBPXX1vUgOhm7ddxuUI8FaJ+oX5BrZkRkcjqT/dYQOsiCAM4vJxLQREjElpi2KuL6IGK2LJNOZRGuaMUBMe29m+L5zY8NbO6nR12bvZkURltcyjOGhvixy7MkwdG2aMZz93hOBjH0I0aNFSoM8+w5Tt2wR51ytYXJh0mkqGs53lHBBpijMtHM6m76ni/rHTc1FUI/zXh6ZUN2YJgjqaH+XFz6u5OEbLkgzRwhXJtC0f8+aSFqZ558vZUrTfc9qrlHOJmHjlYzrEQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Ze+dPCY7yqJUlKgPDKUn8mo8+ZapXhOH5rg7CJ+GFVI=;
- b=K4yzozgupMiX+LxyX5HmPswkDSLuJCLeWdIEWmEChv0ydPXFyvxQyASoaE4CPSBsiRsZYphjICl88H7blqrT9KNcqLGNkh5Oc1fYpGsnmASRXxzX3kfX0J+lBHogNXIoDl/VaGgo30PGiy1DuPZgG7/8EP7EwxRREaFMbfrBKi3rWGpqnmHlgxQIoxpXRmcEbnD2pf+5/SvtecC6IrN/YsbCpXwlalfp3uIsZxR/Z1+vv/JQ4O8tCDhxMkdcEbFpsEIn3IuCoQjzFo+7ntgerSXo0+R5QOYRBo5eceMjBnlOfbICxvJvFh8V6boX7ypYRdPwUffP51omJ42AbMzmJQ==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from AM0PR04MB6900.eurprd04.prod.outlook.com (2603:10a6:208:17d::10)
- by AS1PR04MB9683.eurprd04.prod.outlook.com (2603:10a6:20b:473::5) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9913.11; Wed, 13 May
- 2026 13:37:24 +0000
-Received: from AM0PR04MB6900.eurprd04.prod.outlook.com
- ([fe80::7fda:8431:ca1b:b023]) by AM0PR04MB6900.eurprd04.prod.outlook.com
- ([fe80::7fda:8431:ca1b:b023%5]) with mapi id 15.20.9913.009; Wed, 13 May 2026
- 13:37:24 +0000
-Date: Wed, 13 May 2026 16:37:21 +0300
-From: Vladimir Oltean <vladimir.oltean@nxp.com>
-To: Josua Mayer <josua@solid-run.com>
-Cc: "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
-	"netdev@vger.kernel.org" <netdev@vger.kernel.org>,
-	Ioana Ciornei <ioana.ciornei@nxp.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-	Rabeeh Khoury <rabeeh@solid-run.com>,
-	Yazan Shhady <yazan.shhady@solid-run.com>
-Subject: Re: [PATCH phy-next 5/5] phy: lynx-28g: add support for 25GBASER
-Message-ID: <20260513133721.huu4j3wksxykizz4@skbuf>
-References: <20260511150023.1903577-1-vladimir.oltean@nxp.com>
- <20260511150023.1903577-6-vladimir.oltean@nxp.com>
- <1ba1f688-9f68-4749-a18f-20ae91738ae0@solid-run.com>
-Content-Disposition: inline
-In-Reply-To: <1ba1f688-9f68-4749-a18f-20ae91738ae0@solid-run.com>
-X-ClientProxiedBy: VI4PEPF0000011F.AUTP296.PROD.OUTLOOK.COM
- (2603:10a6:808:1::8a8) To AM0PR04MB6900.eurprd04.prod.outlook.com
- (2603:10a6:208:17d::10)
+	Wed, 13 May 2026 14:29:47 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 64D9jgE73007391;
+	Wed, 13 May 2026 14:29:41 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	dzi0WqqpoKiwCDZK2vIon9CGDsy/Ns+F9BdTazJ2ZUE=; b=UxU3VWSeDby+kzON
+	k+ImhcO3hhopOLl/85NxVWqssyDzp4sJL3kbv2Zqt7EWecXs0TkBtF1+A1n5dBxj
+	WssRMB9JOLTmNWbHz+nA31WsXGg9dtmi8fw4049foODyEPFgQ1rc7qkEPKo7NpSQ
+	uZov1RSxtPhNsFzn6qmEWfmhvj7xLUKw1puwdY62Rg5cuv1w99R9dAUMtSSmfdEm
+	7859rlIyV4sdHDwr8+ekK0dixexKqxUZzHLxWPVkQcJzMHAG8dkrO2KW8mkdwsEJ
+	se7OBkZyX1MEx73TstSpsK2JHwgeKVVcGJmWgFZzBNt6xR5DVDzh0lXb3jaE/qU+
+	IUzJaA==
+Received: from apblrppmta02.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4e4py0h17v-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 13 May 2026 14:29:40 +0000 (GMT)
+Received: from pps.filterd (APBLRPPMTA02.qualcomm.com [127.0.0.1])
+	by APBLRPPMTA02.qualcomm.com (8.18.1.7/8.18.1.7) with ESMTP id 64DETbh0017668;
+	Wed, 13 May 2026 14:29:37 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 4e1x0jrfau-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 13 May 2026 14:29:37 +0000 (GMT)
+Received: from APBLRPPMTA02.qualcomm.com (APBLRPPMTA02.qualcomm.com [127.0.0.1])
+	by pps.reinject (8.18.1.12/8.18.1.12) with ESMTP id 64DETb0j017661;
+	Wed, 13 May 2026 14:29:37 GMT
+Received: from hu-devc-hyd-u22-c.qualcomm.com (hu-kotarake-hyd.qualcomm.com [10.213.97.140])
+	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 64DETbNB017660
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 13 May 2026 14:29:37 +0000 (GMT)
+Received: by hu-devc-hyd-u22-c.qualcomm.com (Postfix, from userid 2389607)
+	id 9EB92B22; Wed, 13 May 2026 19:59:36 +0530 (+0530)
+Date: Wed, 13 May 2026 19:59:36 +0530
+From: Rakesh Kota <rakesh.kota@oss.qualcomm.com>
+To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+Cc: sashiko-reviews@lists.linux.dev,
+        Komal Bajaj <komal.bajaj@oss.qualcomm.com>, robh@kernel.org,
+        linux-phy@lists.infradead.org, neil.armstrong@linaro.org,
+        vkoul@kernel.org, olteanv@gmail.com, krzk+dt@kernel.org,
+        conor+dt@kernel.org, devicetree@vger.kernel.org
+Subject: Re: [PATCH 3/4] arm64: dts: qcom: Add Shikra CQM SoM platform
+Message-ID: <20260513142936.kauwa3czigfs7qs5@hu-kotarake-hyd.qualcomm.com>
+References: <20260512-shikra-dt-v1-3-716438330dd0@oss.qualcomm.com>
+ <20260513042836.073F9C2BCB7@smtp.kernel.org>
+ <t2sw6owdxy5iyodjqsldbw6bfaqnezhgvc4hhylxuyrrbjkjto@iwf4dr5nmot3>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AM0PR04MB6900:EE_|AS1PR04MB9683:EE_
-X-MS-Office365-Filtering-Correlation-Id: 2e0390eb-2b60-4e78-89bd-08deb0f4c410
-X-LD-Processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|1800799024|10070799003|366016|19092799006|11063799003|3023799003|56012099003|18002099003|22082099003;
-X-Microsoft-Antispam-Message-Info: PePmkvwhDlNkkOnGV1Fx4rdL6b1BEaBYBBxR/0kw3f4fa1RDsBRfxcOJtL/3pxxe5iIa0CStEJQsoqVOlbkMnIpjLG7CKvrto/HyFyXeki34sGgW7Mm4iooiTZYXgWNq+pc2+k4z8+qJGqSkExEIUiIjQVYYO48XMwRGCFgJeju3MGzsYGmoezwvmH4z4MEBJU0dzc3OZFmomm5YRYFcflyk0/PlZfEJ4Rg1yQmY0OVItVv7/3PydHwp9F6INj/nMycoScoMfOI7eQlLzHajK6Bx8AtRzESCYXgygHtwRIYTa4Yo2xrkoHXO5j/J5XlK36hG0rPtmtEC47S4KTNCUYysei6YNxWQZMFv7GzD2CeeQ8rLZJABU7mhZ1STxDaidfPUyB2jnWNyx3LymKyzI25mMFyqQcJhflj7BPuecRrLwhug/h2em584mJgwn6Qb/vT5JiscmOydWgLDtV6N3BNjBFL4voksbSTikWPIP7dlaY/kXmRdGCVXN40XQ+VOCalHdWiXds4T3nt+38zWJX4YuatFSo4K5Df9wRD9lj32AQBIIxnTLhhPtc6Yi6qDGL0mZPrkZtdMum7ihLlgax8WNI5e7/dYuyU1VuMQ6TOwntwawYmjbSnxc67BP4piFqeaW/1h/qvGJyn51xxBO5cCvp3uyaDZm5plGdHNYvY6nXj23tdXEUYl6R1/FSqj
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR04MB6900.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(1800799024)(10070799003)(366016)(19092799006)(11063799003)(3023799003)(56012099003)(18002099003)(22082099003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 2
-X-MS-Exchange-AntiSpam-MessageData-0: =?iso-8859-1?Q?Iyjdl0H7fpu4/bnVtGj3itgM2z0i3+/526H3QU4t0UluqOGzjhA1JUK2FB?=
- =?iso-8859-1?Q?mGDJphCP2rT29mSzUB1Gd1q2/CU+//Dgdt2JxoqxDqI86ssLkrRs9wabHE?=
- =?iso-8859-1?Q?t+6YsW2zyjruBm3OPo2DTe+wgDJwYe7GFacd7o4WyF8pnOGp9nX6LCgHkl?=
- =?iso-8859-1?Q?h8gWXEXnUAMJwlvXabt/T7t3NRSjYh5TPEMBxENpCGQoVNjn64uit++Ec8?=
- =?iso-8859-1?Q?d63h7+DtfhB9A/pBNAXWi2cs83X11nilIfRjj3YKc0ZqSJG9GG3NtI0nhi?=
- =?iso-8859-1?Q?iudGL1+/O0d991Aqs34Stq0PQLhUPhsJL5L7LkPC+Md0/ZBKQBGt5dcIwA?=
- =?iso-8859-1?Q?7ReC9uPFivDgo0b0oKGz6lvkRcNXidoH1BuvbKycb7DC+U7U2hcIMygq3W?=
- =?iso-8859-1?Q?LvVIR8Zjfd4H2lZTOCfCAJsNxoT1yz+T64lbHZ1zhNGgTFFZrFXhquxsZ4?=
- =?iso-8859-1?Q?D6nRy4MJDCIXjR3hx8WkXJf22WEQIz8l8kaVuWJm1LKwWlcO6Rl4tucb4Q?=
- =?iso-8859-1?Q?xyeypEn1r7lBO+1xjfxZyOZhJhx35vvFWQErhLBPkAzvGvYl6oSph3Cg8d?=
- =?iso-8859-1?Q?V7Vru1GIux+WP3OJSW6IwYyuysVeYZQDT65OMQsYBIn5r4w5/WJMCzw/jZ?=
- =?iso-8859-1?Q?vKPZPUubDpfWz2+GuAd5WI3f3YonJfo5wlLZeDkefdFm+lTs5M+rPF2Ni3?=
- =?iso-8859-1?Q?WA1PtqlwOoxBsbzqJlpDoV8DQaGMZEmUKLfibONxkcXOilH23SjbIbKNCN?=
- =?iso-8859-1?Q?OlYy04bFWDRZ5GGS5s4bcHLu/AInmvML1D2O51xlaOhmGjKgn0QIKP9You?=
- =?iso-8859-1?Q?bJo+eflU+Cshk5lYCxaJZzyoYyXkYH/XqE7JUC64/ezQlXgffjIbQBU38J?=
- =?iso-8859-1?Q?f4VaYt6fY6mp43/X9fx1p5I79kPluTBDzyh2jyn/9hgJELgSJiI//2SrjU?=
- =?iso-8859-1?Q?7VI582Vsi0aZyiEU6f4Citn9MRkyIwaFpYZpDVkIE2xaiNUngW5JvB7VdL?=
- =?iso-8859-1?Q?tE4KXDQnnld2CqV5+gz/DReWDosg0GIc3ZYN1DF7DgtD95VnJdmGHnYlet?=
- =?iso-8859-1?Q?sIrlFuC85rIsxm1RUsMt1kOaAWn9D12B/CKYFu73PuHz4FJonmi8yRNThU?=
- =?iso-8859-1?Q?Cwr2JFZ83CywbAjsuVOCgxqZDlm/ytCoN5usea7db2EbwztEnpTbk/OEwj?=
- =?iso-8859-1?Q?oeB2/VKsScGcCo94tOxqYHeL0m/0Tr4RTcT/ibTho4Op5/neTgkGY17Sjg?=
- =?iso-8859-1?Q?Kz8ZtPty9Dz3J3Hpglv5kOcTeZP0QJISnhW9XzFqjC7NZpH6ENebP4ziy7?=
- =?iso-8859-1?Q?Wh2Tqy4wKjfaoPJjDi6TIgnYpgTHRM/BmO73anZ1K9syoGuT/t+MmRijNp?=
- =?iso-8859-1?Q?u6kXY1cnffxox7gH1CgyoSjgj6u8i6abhOQOX3g1Y25hI6Vf/0YXRMqit0?=
- =?iso-8859-1?Q?5gRcWlSctb9ZmY4UygJq2SqauZ3tBXT1JbWjMixG6tY1S4o2OeUtKMlD8A?=
- =?iso-8859-1?Q?xUb712q8q8Mb530HpuY10/wxy6NizBcEKDLVSsea50Adbs+oTiQ0FuNnGp?=
- =?iso-8859-1?Q?FVyyNmofcYMe6zVXseK4fZHZYhpfo/71/PZEtafozIHwAZb+CvKn6zP1ky?=
- =?iso-8859-1?Q?r0xhBQE5GB44/xvCWK3SSK8Kqc7hHTw0fTw4v+VxK5BxTde38GcWjDYjgP?=
- =?iso-8859-1?Q?FWV6FkOgBzsMcpVyoZee5a/yEPsCWr/DiXlCij++yGZr02Bs/NEEzpV1/A?=
- =?iso-8859-1?Q?KrQfw3h+YNhz/4tjUhBnbZR6BLy7xsVGKc49aR7MXwyvqMrQGqI3t/KIsx?=
- =?iso-8859-1?Q?3e+vi/d8jFRmp64qHfKNBIWXN2lxYRm7xaYJzDm/pgx3d24rtCHVTs3b9C?=
- =?iso-8859-1?Q?ff?=
-X-MS-Exchange-AntiSpam-MessageData-1: jDXHmyTAMNX4aA==
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2e0390eb-2b60-4e78-89bd-08deb0f4c410
-X-MS-Exchange-CrossTenant-AuthSource: AM0PR04MB6900.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 May 2026 13:37:24.2438
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: xXdtbo37jW7Myo7iFLGFlOrwcUR6ntFhqf8ecMSjL3x4pvAyhey513cMqJ9bP+A1OlPXNEB7v4/fDIi94dVI8Q==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS1PR04MB9683
+Content-Disposition: inline
+In-Reply-To: <t2sw6owdxy5iyodjqsldbw6bfaqnezhgvc4hhylxuyrrbjkjto@iwf4dr5nmot3>
+X-QCInternal: smtphost
+X-QCInternal: smtphost
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNTEzMDE0NyBTYWx0ZWRfX8gDSvfk+iXn5
+ ssL2+AGXpcMb7LcuUAZ4vbhPycr5aRHDrBo4+ai/3d5ktYm56fLxTGv9K7naiigVk//5o3UuVnd
+ y96Y3WAweQXBKmvCnXU1wGJR3PUVjelLGqJfXyiZtvjG70XK19P/VPPpOvJsR5OEahbgogAj9FL
+ XmxNxew8n9EWVp7b/Tq4ysYfauGgxMmHm3fVt9jDcvjGODbY6FdVGZKq6VO1XYTpBCpZOuifsFE
+ IUr7YipUlGyjHzY4w8Nh+ho66mHfStR+vXn0DUDjhIjuU6mCMvQbi8p6errBmdKVyPli3PZ4hX7
+ vWccjxFmGZY2NF010B3x+a4dcw1fqTW79nbyfWZHYoJVxznD1io+u9uRXOAVEPuBgDapFcYjrZI
+ S9L7GOmp84wHgGzZ5++2Jm3Th3pkSrDVZYD8DxvFxbPQY5lv+Ta+zgqY8VRzdVZHT+E0kccAj2U
+ t3C3JkiKUWHo4jxQroA==
+X-Authority-Analysis: v=2.4 cv=XqXK/1F9 c=1 sm=1 tr=0 ts=6a048ad5 cx=c_pps
+ a=Ou0eQOY4+eZoSc0qltEV5Q==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
+ a=8nJEP1OIZ-IA:10 a=NGcC8JguVDcA:10 a=VkNPw1HP01LnGYTKEx00:22
+ a=u7WPNUs3qKkmUXheDGA7:22 a=rJkE3RaqiGZ5pbrm-msn:22 a=c92rfblmAAAA:8
+ a=EUspDBNiAAAA:8 a=JfrnYn6hAAAA:8 a=VwQbUJbxAAAA:8 a=di-1_IvPOJKa7E1frQIA:9
+ a=3ZKOabzyN94A:10 a=wPNLvfGTeEIA:10 a=GvGzcOZaWPEFPQC_NcjD:22
+ a=1CNFftbPRP8L7MoqJWF3:22
+X-Proofpoint-ORIG-GUID: vFY16SLsJwzj4ERAqKfxsgIzzrCp98z1
+X-Proofpoint-GUID: vFY16SLsJwzj4ERAqKfxsgIzzrCp98z1
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
+ definitions=2026-05-13_01,2026-05-13_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501 spamscore=0 phishscore=0 bulkscore=0 impostorscore=0
+ lowpriorityscore=0 malwarescore=0 adultscore=0 clxscore=1015 suspectscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2605050000 definitions=main-2605130147
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260513_063734_908319_0E7CBCCA 
-X-CRM114-Status: GOOD (  17.34  )
+X-CRM114-CacheID: sfid-20260513_072946_070282_E89C93F9 
+X-CRM114-Status: GOOD (  27.11  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -147,89 +122,116 @@ Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, May 13, 2026 at 11:37:14AM +0000, Josua Mayer wrote:
-> In order to test this patch with 25Gbps link, additional changes on other=
- drivers are needed.
-> This is not a short-coming of this patch.
+On Wed, May 13, 2026 at 03:01:47PM +0300, Dmitry Baryshkov wrote:
+> On Wed, May 13, 2026 at 04:28:35AM +0000, sashiko-bot@kernel.org wrote:
+> > Thank you for your contribution! Sashiko AI review found 2 potential is=
+sue(s) to consider:
+> > - [High] The PMIC regulator definitions omit their required input suppl=
+y dependencies (e.g., `vdd_s2-supply`, `vdd_l3-supply`), breaking the power=
+ hierarchy.
+> > - [Medium] The device tree inaccurately hardcodes the `compatible` stri=
+ng to a different PMIC model (`qcom,rpm-pm2250-regulators`) instead of expl=
+icitly identifying the actual hardware (PM4125).
+> > --
+> > =
+
+> > commit 457abf6e7ac410430c866842e08e602ec3daaa51
+> > Author: Komal Bajaj <komal.bajaj@oss.qualcomm.com>
+> > =
+
+> > arm64: dts: qcom: Add Shikra CQM SoM platform
+> > =
+
+> > Add device tree include for the CQM variant of the Shikra System-on-Mod=
+ule.
+> > This variant integrates the Shikra SoC and PM4125 PMIC. The DTSI includ=
+es
+> > the common shikra.dtsi and adds PM4125 PMIC regulator definitions.
+> > =
+
+> > > diff --git a/arch/arm64/boot/dts/qcom/shikra-cqm-som.dtsi b/arch/arm6=
+4/boot/dts/qcom/shikra-cqm-som.dtsi
+> > > new file mode 100644
+> > > index 0000000000000..401e71720519d
+> > > --- /dev/null
+> > > +++ b/arch/arm64/boot/dts/qcom/shikra-cqm-som.dtsi
+> > [ ... ]
+> > > +&rpm_requests {
+> > > +	regulators {
+> > > +		compatible =3D "qcom,rpm-pm2250-regulators";
+> > =
+
+> > Since the commit message indicates this is a PM4125 PMIC, should the
+> > compatible string include a specific identifier for the actual hardware?
+> > =
+
+> > Using a specific identifier like "qcom,rpm-pm4125-regulators" alongside
+> > the fallback allows the kernel to apply specific quirks if PM4125 errata
+> > are discovered later.
 > =
 
-> 1. I tested this patch-set alone on LX2162 Clearfog with SD1 Protocl 18 (=
-i.e. 2x 10G SFP, 2x 25G SFP):
+> This can be ignored. The compat is a leftover from the historically
+> incorrect naming.
 > =
 
-> 10Gbps ports are working fine!
+> > =
+
+> > > +
+> > > +		pm4125_s2: s2 {
+> > > +			regulator-min-microvolt =3D <1000000>;
+> > > +			regulator-max-microvolt =3D <1200000>;
+> > > +		};
+> > =
+
+> > Do these regulators need to explicitly define their input supply depend=
+encies
+> > such as vdd_s2-supply?
+> > =
+
+> > Without these properties, the regulator framework might be unaware that=
+ the
+> > PMIC regulators draw power from upstream supplies.
+> > =
+
+> > If the kernel dynamically manages the upstream supply and its reference=
+ count
+> > drops to zero, could it be disabled, causing an unexpected power loss f=
+or
+> > downstream components?
 > =
 
-> 25Gbps fail to probe (but this is partly expected):
+> And this is a correct comment. Please provide missing supplies.
+>
+As per the Qualcomm system design, the parent-child supply relationship
+is managed by the RPM firmware, not the Linux regulator framework. The
+RPM ensures the parent supply is never disabled until all subsystem
+votes are cleared. =
+
+
+regards
+Rakesh kota
+> > =
+
+> > [ ... ]
+> > =
+
+> > -- =
+
+> > Sashiko AI review =B7 https://sashiko.dev/#/patchset/20260512-shikra-dt=
+-v1-0-716438330dd0@oss.qualcomm.com?part=3D3
 > =
 
-> [=A0 =A0 8.373048] fsl_dpaa2_eth dpni.9 (unnamed net_device) (uninitializ=
-ed): MAC returned PCS which does not support 25gbase-r
-> [=A0 =A0 8.373065] fsl_dpaa2_eth dpni.9 (unnamed net_device) (uninitializ=
-ed): MAC returned PCS which does not support 25gbase-r
-> [=A0 =A0 8.373074] fsl_dpaa2_eth dpni.9 (unnamed net_device) (uninitializ=
-ed): failed to validate link configuration for in-band status
-> [=A0 =A0 8.373078] fsl_dpaa2_eth dpni.9 (unnamed net_device) (uninitializ=
-ed): Error connecting to the MAC endpoint: -EINVAL
-> [=A0 =A0 8.725004] fsl_dpaa2_eth dpni.9: probe with driver fsl_dpaa2_eth =
-failed with error -22
-> [=A0 =A0 8.920766] fsl_dpaa2_eth dpni.8 (unnamed net_device) (uninitializ=
-ed): MAC returned PCS which does not support 25gbase-r
-> [=A0 =A0 8.920783] fsl_dpaa2_eth dpni.8 (unnamed net_device) (uninitializ=
-ed): MAC returned PCS which does not support 25gbase-r
-> [=A0 =A0 8.920791] fsl_dpaa2_eth dpni.8 (unnamed net_device) (uninitializ=
-ed): failed to validate link configuration for in-band status
-> [=A0 =A0 8.920795] fsl_dpaa2_eth dpni.8 (unnamed net_device) (uninitializ=
-ed): Error connecting to the MAC endpoint: -EINVAL
-> [=A0 =A0 9.290005] fsl_dpaa2_eth dpni.8: probe with driver fsl_dpaa2_eth =
-failed with error -22
+> -- =
+
+> With best wishes
+> Dmitry
 > =
 
-> Perhaps driver could switch to 10G instead? However not important in my o=
-pinion.
-> =
+> -- =
 
-> 2. Tested with additional out of tree patches:
-> =
-
-> net: phylink: extend phylink_mii_c45_pcs_get_state also for PHY_INTERFACE=
-_MODE_25GBASER
-> net: pcs: lynx: extend support to also handle PHY_INTERFACE_MODE_25GBASER
-> =
-
-> Then insert 10Gbps SFP module and link-up + TX/RX working fine!
-> I.e. driver switched successfully from 25Gbps configuration to 10Gbps.
-> =
-
-> Then insert 25Gbps SFP module. Errors start occuring:
-> =
-
-> [=A0 357.043894] fsl_dpaa2_eth dpni.9 eth2: Link is Down
-> [=A0 357.941036] sfp sfp-bt: module removed
-> [=A0 364.269580] sfp sfp-bt: module FS=A0 =A0 =A0 =A0 =A0 =A0 =A0 =A0SFP-=
-25GSL-85=A0 =A0 =A0rev 1A=A0 =A0sn C2501330127=A0 =A0 =A0 dc 250203=A0=A0
-> [=A0 364.269625] fsl_dpaa2_eth dpni.9 eth2: switched to inband/25gbase-r =
-link mode
-> [=A0 364.271674] fsl_dpaa2_eth dpni.9 eth2: phy_set_mode_ext() =3D -95
-
--95 is -EOPNOTSUPP. Is it coming from lynx_28g_set_mode()? If it is,
-I suppose it is from lynx_28g_supports_lane_mode() returning false.
-
-Assuming your list of additional patches is exhaustive, I think you
-missed from patch 4/5:
-
- For old device trees with just "fsl,lynx-28g", the only things that
- change are:
- (...)
-
- - the feature set is frozen in time (e.g. no 25GbE). Since we cannot
-   guarantee that this protocol will work on a lane, just err on the safe
-   side and don't offer it (and require a device tree update to get it).
-
-You can look at my branch
-https://github.com/vladimiroltean/linux/commits/net-phy-upstreaming,
-specifically commit "arm64: dts: lx2160a: transition to device-specific
-SerDes compatible strings".
+> linux-phy mailing list
+> linux-phy@lists.infradead.org
+> https://lists.infradead.org/mailman/listinfo/linux-phy
 
 -- =
 
