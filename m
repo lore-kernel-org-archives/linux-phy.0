@@ -4,105 +4,155 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9037DCD4F21
-	for <linux-phy@archiver.kernel.org>; Wed, 13 May 2026 17:35:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5707CCD4F21
+	for <linux-phy@archiver.kernel.org>; Wed, 13 May 2026 18:14:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Qju4oOoqq2fbw2IwJOoRGfqDHG7B8LithJLw0GL3SJg=; b=iRMVC04QdClAY6
-	2sogD9JoieJn4FxJQK7FtK69XQ7ICKOZTXgxI/Y/uCqhH/4S++IMCKGItYW0GCj427urhnlasHh2G
-	uzYgMQ32kzyZ0/Nyi/CGWrIRq5Wdy79gr9cPMwSAiADRLh/SLZXymV0lHLheVH24SgdD6Xm/RhwHc
-	XTYa5pmySxU2M7H8sHcRbkRz46UXlhHCjiTPQJ1mcbn2sbIefc5lEXRNRPUSonFdRatbLBQivxoz5
-	Pri6fTK+JeT9ESXqtNSoOEb7bENVwWNaOIc4eIAfl0nkAzcOF+MRSb/maiiuASm2MZQzdNMBmXkrr
-	yfbeWK8vr21gAYpd2DGA==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=u6ctTtj/s0vWw1yRHof0LvlkF/maoWDlaoIdUT7f5ko=; b=uwjNAN+N5Vn/uP
+	3Gv+7IgKcyG6bTH0wIyA/yfGwohxPRhI9SSZ8ebyP5NRGz4smuswh+NTEdo+ek2/qnseMD1ADDrPA
+	c6tqGiOVat1p+tJMv0NIN4x4ERdh/y/1LEMqtbWXN8eaF9WAjIcssWAyGE43EIcmuS/xAcxR7pXN7
+	PtiR/2XZal0dVfTfGQ8Qy89rz27rWuELIqV6W0rKSH6sEg1Wuuw1XHrSXIMJI4w+P2ndRUTkUoZvj
+	m+Vh5GEpbmrCnEFiP1d9Cq7zot17exGYLqLgwUlEdCRd962LsV/HO0OVKFYEMZbmL5+ghdiDKGY+r
+	ydto92bNlrKBlxoeU/cg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wNDU5-00000003MsV-1PSR;
-	Wed, 13 May 2026 17:35:01 +0000
-Received: from mail-dy1-x1334.google.com ([2607:f8b0:4864:20::1334])
+	id 1wNE5z-00000003RSi-3egx;
+	Wed, 13 May 2026 18:14:11 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wNDU3-00000003Mrh-0B6L
+	id 1wNE5x-00000003RSM-2EfC
 	for linux-phy@lists.infradead.org;
-	Wed, 13 May 2026 17:35:00 +0000
-Received: by mail-dy1-x1334.google.com with SMTP id 5a478bee46e88-2ff5472f263so3272716eec.1
-        for <linux-phy@lists.infradead.org>; Wed, 13 May 2026 10:34:58 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1778693698; cv=none;
-        d=google.com; s=arc-20240605;
-        b=jp2q3+i+VLq5+X5GZMMI04sx/1wlshl454UT77WRYl3AQHMwoIV0G3BefDqG2ZIK9V
-         VhMfNFna1x/mz7xpwYv0SO6I19inFqOIFaTeunH3oaUTVRn595HKScT2+9heGa0bsmfA
-         g02Xwa9jpgflkuU/FcJAX3+oF/an6lVWZPdXXKp2j6t7wxfPkAMrPK3iCAQRf1HzstPg
-         j1CmMysFSELp9gkLqOWKF9AjwvZRJ+PP/EnC5asp6a4NeTbO56f+4CLgMcZGWTpt8AU3
-         gOywx0E2mDxw5tsfvgdDBzSrR8k83n8l7foHUyysZ+nYO7IkxFXHai6qFT2yeJFaclC4
-         3s7A==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:dkim-signature;
-        bh=SpmEe38ixB0yNCM9L2G46PM6Le+IQzZX2ErAyq3Ln7g=;
-        fh=F7miG/PamAO3R4rHmvKjn0yy1bry2WXdAEt829X33dg=;
-        b=QG2b/Tc0hRiHD/GQfliAYHCeuLw9k0xL21xEur0a8qd9FeD1zlchetAo22Xiv95RpQ
-         h/WOKesW70TqLIEJfw3NzgP9zksEvf88Xq41gM2uWYe5DnlLQIHqN+HDhOgy6jtcY7FN
-         wlN8Qd4o4ePK2PQSQoZwh15pVwhu14+AtSugZZKvX0KTqqpOQmRRzR2OXRFkGeyGzfpA
-         mr6ibK+MNShgriHqcpe5WQYrgojXzMvGLQizWDFlU+0yBKGVdMFWvmKIMAVYC4J0nC79
-         XOdLVbbMctn8EjWTlTps+7ThojuNaLxYYbk6MGtjyjQFNlMWuFX2qeWNX3efeiEU0+S7
-         Ow/A==;
-        darn=lists.infradead.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
+	Wed, 13 May 2026 18:14:11 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 64DEm9dx3474831
+	for <linux-phy@lists.infradead.org>; Wed, 13 May 2026 18:14:08 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=+5YP0QOKpbphYDgLRVZVQZ
+	pcwDOr8t0VL/ATQqa7Tmw=; b=YLYQC72syw3caPf+4dU9R138TxtZPBD8Y6O0Fr
+	TUV84VyPdV6XYwBTyHNoo+Hxo8bZn6sZKAYMxlMVRn+kfPCPLBSsEkjBqzX4p7+R
+	y4iAeGrYOdHU0f9hqJbi0iJvjKsXZ1X026deoKIMJbASlBFyaKsQCtl2S75Viw3R
+	M/fF68OppKTSZfgCW/+SfbuJeM1YlGB+4yJD4rHuFQP4xqxfmoX2H8p/roY1pXLR
+	PTngClyo65nCtt/YB2tVDnB3mv+hT/fRYCNk6rUBMHhdoLDuAJvNHtKreWd+PG7Y
+	6Y4CnfsYP86oLN5SntyPqus5zCJvGcSgizmE0dqudcxbn0qQ==
+Received: from mail-vs1-f70.google.com (mail-vs1-f70.google.com [209.85.217.70])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4e4p41a7qj-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Wed, 13 May 2026 18:14:08 +0000 (GMT)
+Received: by mail-vs1-f70.google.com with SMTP id ada2fe7eead31-6333021c63fso4981552137.2
+        for <linux-phy@lists.infradead.org>; Wed, 13 May 2026 11:14:08 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1778693698; x=1779298498; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=SpmEe38ixB0yNCM9L2G46PM6Le+IQzZX2ErAyq3Ln7g=;
-        b=C6VNGJPd2Dna4xw3nA2KRSR8y9ec58ERs8s2CuYfLXWXJcYjJSuv/MBv7HA4Az8Aur
-         QHotCdO04zkLO5yGZTL6xnD/ISXK6c4edSXGGMiAActwbEMb+ve6ScVXem22qOGkv1PE
-         cq+xqDZrCJEdWi/qHl5QGqKA6xcEz8ZmrUj0Ii+XBTWOoDvFnGn3taUZEp2q0E+Sqlys
-         XPQ9T/rjh1OZuqo13yN9XtWc1vxKt/XvqWSZNs++MQwo+Sy32kRxe0Ngnwv2bbbwokj+
-         XSMV4/my4EfHa/nJbSrjn/c+GgJFEwGUocIlVfwDg+DglNGs4dD8mDihu2LMdgPXzqOk
-         Nk5A==
+        d=oss.qualcomm.com; s=google; t=1778696048; x=1779300848; darn=lists.infradead.org;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=+5YP0QOKpbphYDgLRVZVQZpcwDOr8t0VL/ATQqa7Tmw=;
+        b=YnVqEVZmUabaXbqONTnkBbBVFG0J5rCNhqLTxgp5rzSomKjko+e/vr4QVwrF55oYaL
+         Ea/dS83xJ1tlM4iO/Q8qNaQBaSAB6TOm9pHDxzCPnFcrbN6CM7qfJf5L2qSdzj0NGnJJ
+         PLBjE2B4o9fjdjxshZZ7lRLLzcu4eYq6rvk3qdEnEE2spPxiw030Ku2dPWRVE5iaXVnL
+         jwf5GzvPZnNn73USItY5XnqXeUDT0MAKe9TgnUGrJtMvTbFaltzo1QrV2XUHFBFZSSPu
+         77qmbwUC1dfz2kMI55AeZCmKCkpWLE1CilunodtswqfEIrsVVq1nE6q94Sc2noTu1H3b
+         SgqA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1778693698; x=1779298498;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=SpmEe38ixB0yNCM9L2G46PM6Le+IQzZX2ErAyq3Ln7g=;
-        b=b7KWVHpWoT5jZOaEkPSiCROGXLKNwKpXbNsaNECF6QcjzoAamco6FrVpLRegLfTklZ
-         NpqE1G8vuLed8ED8UhsEDK6xnIQTNbrZ5CJgyOzwcQiB6z6+W7HjqWXNZoaPj4hh5SVX
-         qz0QrkikFWHd8yV6Hd8BlmXhC487Uv0f3vqi8GjNCxrIbnBPAF1LGI9ApAWnETHqe8ff
-         gsCmBqTQZZq+NnDVH1qqADAg3leDd5hk1zPkQ29mWf6jY4qvH0RLp77Bo7+aiYwhnxej
-         Y2lKfSY5DBCXl6mKhZTDGkhbblQu4W3JklaTrdOx3xsNiFAtwyjSTT75HOZc/AeCKdsa
-         R/PQ==
-X-Forwarded-Encrypted: i=1; AFNElJ/M7+N7heO8z8W0xZAlDjEQ64qjVZ8eXdzVGnGQTPrQ4YIpCcMIeSuME4l3D1PHAA3Rl2u67y7Oltg=@lists.infradead.org
-X-Gm-Message-State: AOJu0Ywa14Ni43vPgZ4zRxwMcCtYFUlbWW7hcyGwG+MSmoQr0Zf1OqH6
-	GwS0GKHSwUqG1f3kE43v293f1ez5Lh1ZYv5r2VaxF8fNt9hDOQIJJKfzUehz82M9yywiuzvyw00
-	PXG9Df6fjUWO9QXCXK3bXEomhQcUaO7Y=
-X-Gm-Gg: Acq92OE/xDEfZd3qFDG61S71WRB/8EFdqSiqM6P+rFSjHS6reCvhMpHmB7sngKAlZzI
-	Klf+yvpwsn+Zvhzo+AeqeVsabPANsgrbT4VnTJjr6rNZ9Xwlyt1+L7tHg7ayBhZdB7Zu2fe3Ams
-	TooNbq/JLy2jHiAdc3xrJIyQUB2T8Db6NytoEVF2Y3Yg0DDt5OnFuVufeCLkPuaG6f5k2A1DOE3
-	XEJYElUI8fmRXRmfPbDnGzRn5VqAUW68Peb0MQcF7++zinq6tOsHF+NAn7KiHOx3B+R66utLE4H
-	w3jSRWwaDkrID9D4MR0=
-X-Received: by 2002:a05:7301:198c:b0:2da:d4b4:c85a with SMTP id
- 5a478bee46e88-3011747e13bmr2818209eec.11.1778693697976; Wed, 13 May 2026
- 10:34:57 -0700 (PDT)
+        d=1e100.net; s=20251104; t=1778696048; x=1779300848;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=+5YP0QOKpbphYDgLRVZVQZpcwDOr8t0VL/ATQqa7Tmw=;
+        b=Q3pU4aL3+baHb3ZzLjsWTzEGJDKvO85QpaIWIen7bxS+wwTotV/2jC0bvdWBenE+yu
+         31m0POAS9QehVXA0HULz1PN4P3ihxtMpCbLnIQEsXY1oZu+z2eMXljAi7aQ1OX37pjvT
+         bSLQ411nLXY4LVhZiQI6UvtftWxrjm8jeOu2GpPUrx7cP3wBU8dNTweQnJl/742tifpc
+         PH2IbO1AMpo+48MxeNtlVKUFRKIF+9VjCAz01dYgg2ZMB8gXgWuVFx5h7WeHnsO2Bpzp
+         xWiPULjjQ6+AbGzVoJaTLg0fMYLjRRWSW+RUyIDO1z05ac+I5mYxVXHIA7zSf8vow3/n
+         5QPA==
+X-Forwarded-Encrypted: i=1; AFNElJ9mh1aK1sXabfMLv22o2VCp3AZNgwf7MTeuK0CUGcbfqQ+tP5tbb5L3uPKcDbBXChdKPkuveGCAw+g=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yzc4ruxFXM7wSJNisN2GFatADgHx0ijYpm3WW8p3uW9D2HfMNHa
+	CJX7buF0hhCbMRoeZMRcwMY0A3C6PCmChpPiGrvJvbZSC0w6AJLDnj7nSVUjFeRQsrn3JUzgJbs
+	WpiO3SLBDxXXESdoWYUT9XEW74wMPqXfK0IBBgDFMOGNqKYS5Fy6kvdduvsONrb1E0llG
+X-Gm-Gg: Acq92OHGL5CQYftnYqC69C9GJQimPTivKutQUOXM1YdOYvVbm0vK7uzrB1L/4aV9+OV
+	FuTNolgiJl4XtGJ8p+IJH/3O6WPklF9MfoyRnw3aS9JxO915pBDkVmB+aNdgS9EB0W/bfYB7OeF
+	5BEfO6+pxwwBSlfbn0q5XuYqXNHyVWD+mrCApfDAvrLDuryvvzmcMzAPXcVexE0xMtEOU3mg6/O
+	8v7hf8Fdgn9gFuQBG1e3n0XPQHD8WS7R0zhqlpB7eXOKiAeroEOqQNUrDpmQ/6pvUKyMSo1EvIt
+	YXRDTNRkTBFyKoiZi6Uls9gbPtrRetoi83l7VDl/TEDJ5TactjUKPsM/ab4NLP41a1qZ/qnZYJG
+	21mqC3modoSQXwZnM6zVk3axYPNlisO57hAwqe3UqvKqBe1hrjwUWlHukdodYyj9tEtUfn8i1cZ
+	kfcmkOrjNHi28sK7Nekl3/wFxfBNmJjrnD2Qs=
+X-Received: by 2002:a05:6102:945:b0:632:29a5:2b24 with SMTP id ada2fe7eead31-637a6c2fad0mr2435851137.3.1778696047651;
+        Wed, 13 May 2026 11:14:07 -0700 (PDT)
+X-Received: by 2002:a05:6102:945:b0:632:29a5:2b24 with SMTP id ada2fe7eead31-637a6c2fad0mr2435842137.3.1778696047257;
+        Wed, 13 May 2026 11:14:07 -0700 (PDT)
+Received: from umbar.lan (2001-14ba-a073-af00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a073:af00:264b:feff:fe8b:be8a])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5a8bd7d8974sm3174770e87.64.2026.05.13.11.14.05
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 13 May 2026 11:14:06 -0700 (PDT)
+From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+Subject: [PATCH v9 0/5] drm/msm/hdmi & phy: use generic PHY framework
+Date: Wed, 13 May 2026 21:14:03 +0300
+Message-Id: <20260513-fd-hdmi-phy-v9-0-ca98c72f1f9f@oss.qualcomm.com>
 MIME-Version: 1.0
-References: <20260511135703.62470-1-clamor95@gmail.com> <20260511135703.62470-2-clamor95@gmail.com>
-In-Reply-To: <20260511135703.62470-2-clamor95@gmail.com>
-From: Svyatoslav Ryhel <clamor95@gmail.com>
-Date: Wed, 13 May 2026 20:34:45 +0300
-X-Gm-Features: AVHnY4Jn_9cXsf7GdBN5Zma5dh7sHSjSA1xGhyeTeuyfFq_71h-4QZdAyPVKUFI
-Message-ID: <CAPVz0n2GkucfHqvgusF=K_KakqaJmZSLP=8VYMyVT5HAVDD_XQ@mail.gmail.com>
-Subject: Re: [PATCH v1 1/6] dt-bindings: usb: ci-hdrc-usb2: Document
- nvidia,external-control property
-To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
-	Conor Dooley <conor+dt@kernel.org>, Svyatoslav Ryhel <clamor95@gmail.com>
-Cc: netdev@vger.kernel.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
-	linux-tegra@vger.kernel.org, linux-usb@vger.kernel.org
+X-B4-Tracking: v=1; b=H4sIAGu/BGoC/3XRy2rDMBAF0F8JWldGI+vZVf6jdKGXY9HYSiXX1
+ AT/e+VAaFyajeAKdLgzuqIScgwFvR6uKIc5lpjGGvTLAbnejKeAo68ZUUIZAaJx53Hvh4gv/YI
+ Zs6oF3VnnJKovLjl08fumvb3X3OU04KnPwdyNlmiqAEC0pAEKkoHGgKs35aWxJi+l/0jz8RxHk
+ 1OT8mlj+1imlJdbx5lt+EZxwinZ1ZkZrhfOGiM4NV7yYyql+fwyZ5eGoakH2lrN/E4I0gLbE7w
+ SXAGlJmjhW/uEEI/EfimzqIQLnSPKcM4keULIB4L+aSErYRl4H5RXrVVPCPVL1M/ZE2obBCwJW
+ gXfCfcPsa7rD9FxG04AAgAA
+X-Change-ID: 20240109-fd-hdmi-phy-44b8319fbcc7
+To: Rob Clark <robin.clark@oss.qualcomm.com>,
+        Dmitry Baryshkov <lumag@kernel.org>,
+        Abhinav Kumar <abhinav.kumar@linux.dev>,
+        Jessica Zhang <jesszhan0024@gmail.com>, Sean Paul <sean@poorly.run>,
+        Marijn Suijten <marijn.suijten@somainline.org>,
+        David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+        Vinod Koul <vkoul@kernel.org>,
+        Neil Armstrong <neil.armstrong@linaro.org>
+Cc: linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+        dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
+        linux-phy@lists.infradead.org,
+        Dmitry Baryshkov <dmitry.baryshkov@linaro.org>,
+        Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
+        Konrad Dybcio <konradybcio@kernel.org>
+X-Mailer: b4 0.15.1
+X-Developer-Signature: v=1; a=openpgp-sha256; l=5467;
+ i=dmitry.baryshkov@oss.qualcomm.com; h=from:subject:message-id;
+ bh=mqLUBTI2S2Voxvu3yvM6wDaQbTBkg1ZFVIhIqHpLXg0=;
+ b=owGbwMvMwMXYbdNlx6SpcZXxtFoSQxbL/px7MZlGkzPWN8gLJcXH1iyZ8OmYXl+P6aK11pPTs
+ 0Q/LZLqZDRmYWDkYpAVU2TxKWiZGrMpOezDjqn1MINYmUCmMHBxCsBEFjNxMDTq+s+dKzlpS2SL
+ c9j3VruZ2muExKqXFfl4NiseCV5zsC2aXYPR/IhNYz5zclTLmWTe1A8vcrXO52tP3KzH6HvErkS
+ yLfeK758FzOez6zJmKdceLF1ZvVrMQGGL3gRbHlGBetvFRtMfSd1oar5hsqWy38dYosL6isNU5r
+ s5/093X3KqtNX4baV/rvVJjGLPHJ3HWe37X9c/zXvw+d1asynrsmP1FRX+6sUfrfh9Q3zWH3b79
+ 28f3p71hs/f6eF26VUzJpnLVyb4Liv1tkxO7emwO6K1onHe9PmLGnx47qWG9m9MXef2h+ufZ2ZV
+ /H2hFt+1S257f7ovvd4ytqlsnqW70qswg4DeBrdksxgA
+X-Developer-Key: i=dmitry.baryshkov@oss.qualcomm.com; a=openpgp;
+ fpr=8F88381DD5C873E4AE487DA5199BF1243632046A
+X-Authority-Analysis: v=2.4 cv=df+wG3Xe c=1 sm=1 tr=0 ts=6a04bf70 cx=c_pps
+ a=N1BjEkVkxJi3uNfLdpvX3g==:117 a=xqWC_Br6kY4A:10 a=IkcTkHD0fZMA:10
+ a=NGcC8JguVDcA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
+ a=u7WPNUs3qKkmUXheDGA7:22 a=yx91gb_oNiZeI1HMLzn7:22 a=bC-a23v3AAAA:8
+ a=EUspDBNiAAAA:8 a=VwQbUJbxAAAA:8 a=0ODQC-He88dBTbE4dnsA:9 a=QEXdDO2ut3YA:10
+ a=crWF4MFLhNY0qMRaF8an:22 a=FO4_E8m0qiDe52t0p3_H:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNTEzMDE4MiBTYWx0ZWRfX5nhI/LcPgs8A
+ bu3B6K//EuEXlDIKmrniUFcIEd7/4zNlZawf7kv/8dTJli2XP9cq8vlzFzL66BJtvCsDqhJYiNk
+ lvAZwEgRG2SE497MQW3C9LLTDwv3n5EHcNVhdfjKeVe8fHL/rg+IX1hdjyptHDC96XsIGBDjhxv
+ JZHzknZaUNQV8hJUXzVuqE3bng6OI/KORq1MW4TAqhNAYGE9AhX0xJdo3dx9fGGZsafoYVROsp/
+ xzPkQ7en1ieyfxF6CqLlxKkFlo6maTDh/QcPBHLzUem0HuU5+tVoeEUI2ca9Dj3UK/gFQXoWfXZ
+ EkAyqZbEDxE8iozs15Ptznff8xsTIs4SUo3pMl5wbdK+U3YUJo/UPLG0UjgPYXdLd/J26xL8FLf
+ GWyv99x4uVzwLrFRM/fLUgUKYmVykuHeeGzjzEJHQghMZLrq+fxKcIwPTBn1C2pYvzcuB30vD8w
+ XfTwdAkeSsRg1+cbE/w==
+X-Proofpoint-GUID: oyD8Im0tkvb6GBy7COHSzL-yUyIeWjy3
+X-Proofpoint-ORIG-GUID: oyD8Im0tkvb6GBy7COHSzL-yUyIeWjy3
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
+ definitions=2026-05-13_02,2026-05-13_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ adultscore=0 malwarescore=0 priorityscore=1501 suspectscore=0 clxscore=1015
+ impostorscore=0 phishscore=0 spamscore=0 lowpriorityscore=0 bulkscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2605050000 definitions=main-2605130182
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260513_103459_397291_199A7F7F 
-X-CRM114-Status: GOOD (  13.96  )
+X-CRM114-CacheID: sfid-20260513_111409_695629_2630646C 
+X-CRM114-Status: GOOD (  17.54  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,36 +164,127 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-0L/QvSwgMTEg0YLRgNCw0LIuIDIwMjbigK/RgC4g0L4gMTY6NTcgU3Z5YXRvc2xhdiBSeWhlbCA8
-Y2xhbW9yOTVAZ21haWwuY29tPiDQv9C40YjQtToKPgo+IERvY3VtZW50IHRoZSBudmlkaWEsZXh0
-ZXJuYWwtY29udHJvbCBwcm9wZXJ0eSByZXF1aXJlZCwgZm9yIGV4YW1wbGUsIGZvcgo+IFVTQiBs
-aW5lcyBpbiBIU0lDIG1vZGUgY29ubmVjdGVkIHRvIGEgbW9kZW0sIHdoZXJlIHRoZSBtb2RlbSBy
-ZXF1aXJlcwo+IHByZWNpc2UgY29udHJvbCBvdmVyIHRoZSBVU0IgYnVzIHRvIHByb3Blcmx5IGVu
-dW1lcmF0ZSBhbGwgaXRzIHN0YWdlcyBhbmQKPiBpbnRlcm1lZGlhdGUgZGV2aWNlcy4KPgo+IFNp
-Z25lZC1vZmYtYnk6IFN2eWF0b3NsYXYgUnloZWwgPGNsYW1vcjk1QGdtYWlsLmNvbT4KPiAtLS0K
-PiAgRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3VzYi9jaS1oZHJjLXVzYjIueWFt
-bCB8IDcgKysrKysrKwo+ICAxIGZpbGUgY2hhbmdlZCwgNyBpbnNlcnRpb25zKCspCj4KPiBkaWZm
-IC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3VzYi9jaS1oZHJjLXVz
-YjIueWFtbCBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy91c2IvY2ktaGRyYy11
-c2IyLnlhbWwKPiBpbmRleCA2OTFkNmNmMDJjMjcuLmExM2MxZWY0OWE1NyAxMDA2NDQKPiAtLS0g
-YS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvdXNiL2NpLWhkcmMtdXNiMi55YW1s
-Cj4gKysrIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3VzYi9jaS1oZHJjLXVz
-YjIueWFtbAo+IEBAIC03NSw2ICs3NSwxMyBAQCBwcm9wZXJ0aWVzOgo+ICAgICAgdHlwZTogYm9v
-bGVhbgo+ICAgICAgZGVwcmVjYXRlZDogdHJ1ZQo+Cj4gKyAgbnZpZGlhLGV4dGVybmFsLWNvbnRy
-b2w6Cj4gKyAgICBkZXNjcmlwdGlvbjoKPiArICAgICAgSW5kaWNhdGVzIHRoYXQgdGhlIGNvbnRy
-b2xsZXIgaXMgY29uZmlndXJlZCBleHRlcm5hbGx5IGFuZCB0aGF0IHRoZSBob3N0Cj4gKyAgICAg
-IHNob3VsZCBub3QgYXR0ZW1wdCB0byB0b3VjaCBpdC4gVXN1YWxseSB1c2VkIGJ5IGEgbW9kZW0g
-d2hpY2ggcmVxdWlyZXMKPiArICAgICAgcHJlY2lzZSBidXMgY29uZmlndXJhdGlvbi4KPiArICAg
-IHR5cGU6IGJvb2xlYW4KPiArCgpXb3VsZCBzY2hlbWEgbWFpbnRhaW5lcnMgbWluZCBpZiBJIGNy
-ZWF0ZSBzZXBhcmF0ZSBzY2hlbWEgbGlrZQpjaGlwaWRlYSx1c2IyLWlteC55YW1sIGlzIGhhbmRs
-ZWQ/IEF0IHRoZSBtb21lbnQgY2ktaGRyYy11c2IyIGhvbGRzIGEKbWl4ZWQgcHJvcGVydGllcyBv
-ZiBzZXZlcmFsIFNvQyBhbmQgY2FuIGNhdXNlIHVud2FudGVkL3Vuc3VwcG9ydGVkCm5vZGUgY29t
-YmluYXRpb25zLgoKPiAgICB1bHBpOgo+ICAgICAgdHlwZTogb2JqZWN0Cj4gICAgICBhZGRpdGlv
-bmFsUHJvcGVydGllczogZmFsc2UKPiAtLQo+IDIuNTEuMAo+CgotLSAKbGludXgtcGh5IG1haWxp
-bmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJh
-ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+The MSM HDMI PHYs have been using the ad-hoc approach / API instead of
+using the generic API framework. Move MSM HDMI PHY drivers to
+drivers/phy/qualcomm and rework them to use generic PHY framework. This
+way all the QMP-related code is kept at the same place.
+Also MSM8974 HDMI PHY, 28nm DSI PHY and apq8964 SATA PHY now can use
+common helpers for the UNI PLL.
+
+This also causes some design changes. Currently on MSM8996 the HDMI PLL
+implements clock's set_rate(), while other HDMI PHY drivers used the
+ad-hoc PHY API for setting the PLL rate (this includes in-tree MSM8960
+driver and posted, but not merged, MSM8974 driver). This might result in
+the PLL being set to one rate, while the rest of the PHY being tuned to
+work at another rate. Adopt the latter idea and always use
+phy_configure() to tune the PHY and set the PLL rate.
+
+Merge strategy: Merge the first patch (either through drm/msm or through
+the PHY tree), merge the rest of the patches in the next cycle.
+
+Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+---
+Changes in v9:
+- Split 28lpm changes to a separate patch (Sashiko)
+- Reworked PHY power up /down sequences in hdmi_bridge.c (Sashiko)
+- Switched to pm_runtime_put_sync() (Sashiko)
+- Link to v8: https://patch.msgid.link/20260401-fd-hdmi-phy-v8-0-51b0e98edf6c@oss.qualcomm.com
+
+Changes in v8:
+- Rebased on linux-next, fixing conflicts
+- Added missing ids for APQ8084 and MSM8998 (Sashiko)
+- Switched to pm_runtime_put() (Sashiko)
+- Fixed several missed *1000 after pixclk -> tmds_char_rate conversion
+  (Sashiko)
+- Fixed several math overflows (Sashiko)
+- Moved UNIPHY_PLL_LOCK to the common header (Sashiko)
+- Link to v7: https://patch.msgid.link/20260324-fd-hdmi-phy-v7-0-b41dde8d83b8@oss.qualcomm.com
+
+Changes in v7:
+- Fixed the build issue between msm8974 patches.
+- Dropped even more writel / readl wrappers (now from QMP PHYs)
+- Link to v6: https://lore.kernel.org/r/20260319-fd-hdmi-phy-v6-0-cefc08a55470@oss.qualcomm.com
+
+Changes in v6:
+- Changed MSM8974 HDMI PHY driver to use FIELD_PREP / FIELD_GET (Konrad)
+- Fixed rate recalculation for MSM8974 HDMI PHY (Konrad)
+- Dropped register read/write wrappers
+- Link to v5: https://lore.kernel.org/r/20260314-fd-hdmi-phy-v5-0-58122ae96d3b@oss.qualcomm.com
+
+Changes in v5:
+- Kept only a single place which handles extp clk (after PHY power on,
+  before PHY power off) (Neil)
+- Inlined pm_runtime calls in the HDMI TX driver, replaced
+  pm_runtime_resume_and_get() with pm_runtime_get_sync(), since
+  atomic_pre_enable() can not fail.
+- Renamed registers defines to drop the REG_ prefix.
+- Link to v4: https://lore.kernel.org/r/20250520-fd-hdmi-phy-v4-0-fcbaa652ad75@oss.qualcomm.com
+
+Changes in v3-v4:
+- Rebased on top of linux-next, solving conflicts
+- Squashed add-and-remove patches into a single git mv patch
+- Dropped HDMI PHY header patch (merged upstream)
+
+Changes in v2:
+- Changed msm8960 / apq8064 to calculate register data instead of using
+  fixed tables. This extends the list of supported modes.
+  (Implementation is based on mdss-hdmi-pll-28lpm.c from msm-4.14).
+
+- Fixed the reprogramming of PLL rate on apq8064.
+
+- Merged all non-QMP HDMI PHY drivers into a common PHY_QCOM_HDMI
+  driver (suggested by Rob Clark)
+
+---
+Dmitry Baryshkov (5):
+      drm/msm/hdmi: switch to generic PHY subsystem
+      phy: qualcomm: hdmi-28lpm: provide dynamic configuration
+      phy: qcom: apq8064-sata: extract UNI PLL register defines
+      phy: qcom-uniphy: add more registers from display PHYs
+      phy: qualcomm: add MSM8974 HDMI PHY support
+
+ drivers/gpu/drm/msm/Makefile                     |   7 -
+ drivers/gpu/drm/msm/hdmi/hdmi.c                  |  59 +-
+ drivers/gpu/drm/msm/hdmi/hdmi.h                  |  83 +--
+ drivers/gpu/drm/msm/hdmi/hdmi_bridge.c           |  88 ++-
+ drivers/gpu/drm/msm/hdmi/hdmi_phy.c              | 226 -------
+ drivers/gpu/drm/msm/hdmi/hdmi_phy_8960.c         |  51 --
+ drivers/gpu/drm/msm/hdmi/hdmi_phy_8996.c         | 761 ----------------------
+ drivers/gpu/drm/msm/hdmi/hdmi_phy_8998.c         | 765 -----------------------
+ drivers/gpu/drm/msm/hdmi/hdmi_phy_8x60.c         | 141 -----
+ drivers/gpu/drm/msm/hdmi/hdmi_phy_8x74.c         |  44 --
+ drivers/gpu/drm/msm/hdmi/hdmi_pll_8960.c         | 460 --------------
+ drivers/gpu/drm/msm/registers/display/hdmi.xml   | 537 ----------------
+ drivers/phy/qualcomm/Kconfig                     |  24 +
+ drivers/phy/qualcomm/Makefile                    |  14 +
+ drivers/phy/qualcomm/phy-qcom-apq8064-sata.c     |  24 +-
+ drivers/phy/qualcomm/phy-qcom-hdmi-28hpm.c       | 353 +++++++++++
+ drivers/phy/qualcomm/phy-qcom-hdmi-28lpm.c       | 477 ++++++++++++++
+ drivers/phy/qualcomm/phy-qcom-hdmi-45nm.c        | 186 ++++++
+ drivers/phy/qualcomm/phy-qcom-hdmi-preqmp.c      | 211 +++++++
+ drivers/phy/qualcomm/phy-qcom-hdmi-preqmp.h      |  59 ++
+ drivers/phy/qualcomm/phy-qcom-qmp-hdmi-base.c    | 185 ++++++
+ drivers/phy/qualcomm/phy-qcom-qmp-hdmi-msm8996.c | 440 +++++++++++++
+ drivers/phy/qualcomm/phy-qcom-qmp-hdmi-msm8998.c | 489 +++++++++++++++
+ drivers/phy/qualcomm/phy-qcom-qmp-hdmi.h         |  49 ++
+ drivers/phy/qualcomm/phy-qcom-uniphy.h           |  76 +++
+ 25 files changed, 2617 insertions(+), 3192 deletions(-)
+---
+base-commit: e6e0eed7a4199442ad9be37daafafa4503c3f436
+change-id: 20240109-fd-hdmi-phy-44b8319fbcc7
+
+Best regards,
+--  
+With best wishes
+Dmitry
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
