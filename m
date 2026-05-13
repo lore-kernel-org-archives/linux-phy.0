@@ -4,55 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3DD33CD37B6
-	for <linux-phy@archiver.kernel.org>; Wed, 13 May 2026 04:28:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A6CA5CD4851
+	for <linux-phy@archiver.kernel.org>; Wed, 13 May 2026 06:39:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uO93icHe6DKxfz8tEY9BqBUvqiGCDIIgQ38XlhCBhws=; b=QDTOAXPVk6/u4W
-	uiBCyQXC6faLxIHJk4DxW0ZDRXV6Um28Ch7M/glaIWIa66J+qnh6N9cWXtftIZRUa5Du5RSQO4x6F
-	2FowNXRj1eNR0dLsJk+K67Ri243+xF5fc5kH39/g4dP7mjGNiVTH77Zp7et0269q/vcVm/VwTQ7Do
-	knJ8yiDDJOuwAnbmSlCmfmDijsQAHNWHeFtCaxfMnu/aKUmSs+vOUBqX3P0c7iW3+U3mv0BmYT2S7
-	bYBdQtsy02KCTEi9saNvT2MJfrcR+m4XLasARwQ3wAbjJoY8CWazCKoSHVuSQe2tecrS2zsGb0vr9
-	J3NkjGReJ6VErZulhn6Q==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=aDpWaT4plb2eqmMdQzWPs51LQTPdxE8CdEH52FMaYeQ=; b=GYJfDDWh/q1XBJ
+	WG5v7wpI6eAQWe7SHUk8GDFkSZ6531MIPd7/6NCmOW03bDdU/reezAmuzURN8FABq0DDRRGE+cctN
+	tKi2k5XzSCA7m4+FvAQnOGtpvFPWCljYic2Lc5GDJSnCMrALzWaRtqEwfKvA2xeKrMVrWQTgJjWhv
+	WgXuoIXXApLI/acWbO9hChfjoDBRukodBHvHYfoYkWA/IOSWaja9X8toBBXb4r67DQggXm8Kq+o5d
+	gHZ+ozKWZt/jsBKF/oSXxtUm8GKYBC2Kpc41/mo+swA1/rVyMr7UhzWS+X4k/LXZzHKclyZbQ9jCp
+	VpsXPeZVJWlEvFKmRf2Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wN1D6-00000001CkL-3LuJ;
-	Wed, 13 May 2026 04:28:40 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wN3Fc-00000001SGi-0wVU;
+	Wed, 13 May 2026 06:39:24 +0000
+Received: from mailgw.kylinos.cn ([124.126.103.232])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wN1D4-00000001Cjm-0EsD
+	id 1wN3FW-00000001SEO-3Hkm
 	for linux-phy@lists.infradead.org;
-	Wed, 13 May 2026 04:28:39 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 83E7542A85;
-	Wed, 13 May 2026 04:28:36 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 073F9C2BCB7;
-	Wed, 13 May 2026 04:28:35 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1778646516;
-	bh=53KRb+QdttugPWcaOLSqdmFPTnZQu0vobGCck0ENdsA=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date:From;
-	b=jm2tuO+yYFYRTS6rFjTCoLhbUywV/kf7kFruRGcYcndqNzeiEJ9b2IBmknma+UzSg
-	 69eyN66TAQpqUViefcMYbvtTQn6g5CrlJttGMFEMCak/zWUhCGlhyl0y9o8IV89VUo
-	 c+65y2bRVwl9KOXh5E8yeG/XPYs6rexg+D1iR0OlsQjJLR6I+YdFOcPMjFvMU31s5F
-	 tAwO4G8CRFEBNo2mfFVH8qEnlZ2zXFRQ3XIBFq3InUY7gj9G/gVPQXb1yiZQqerUbD
-	 98+3RgQ+78OZbxn0Tj9srn7DhekpC0sApKtVLoPdbDFboPDn2uKvqWcyn0hnRK5saa
-	 u/k1xeqWx6t8w==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH 3/4] arm64: dts: qcom: Add Shikra CQM SoM platform
-To: "Komal Bajaj" <komal.bajaj@oss.qualcomm.com>
-Cc: robh@kernel.org, linux-phy@lists.infradead.org, neil.armstrong@linaro.org, vkoul@kernel.org, olteanv@gmail.com, krzk+dt@kernel.org, conor+dt@kernel.org, devicetree@vger.kernel.org
-In-Reply-To: <20260512-shikra-dt-v1-3-716438330dd0@oss.qualcomm.com>
-References: <20260512-shikra-dt-v1-3-716438330dd0@oss.qualcomm.com>
-Date: Wed, 13 May 2026 04:28:35 +0000
-Message-Id: <20260513042836.073F9C2BCB7@smtp.kernel.org>
+	Wed, 13 May 2026 06:39:22 +0000
+X-UUID: 70e197704e9611f1aa26b74ffac11d73-20260513
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.3.12,REQID:6fbbec6b-f8a9-4e4f-a3b2-88512a68e35c,IP:0,U
+	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
+	release,TS:0
+X-CID-META: VersionHash:e7bac3a,CLOUDID:1c7b70c8879ecd97cc4d13a5f5ec0bf4,BulkI
+	D:nil,BulkQuantity:0,Recheck:0,SF:102|850|898,TC:nil,Content:0|15|50,EDM:-
+	3,IP:nil,URL:0,File:nil,RT:nil,Bulk:nil,QS:nil,BEC:nil,COL:0,OSI:0,OSA:0,A
+	V:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
+X-CID-BVR: 2,SSN|SDN
+X-CID-BAS: 2,SSN|SDN,0,_
+X-CID-FACTOR: TF_CID_SPAM_SNR
+X-CID-RHF: D41D8CD98F00B204E9800998ECF8427E
+X-UUID: 70e197704e9611f1aa26b74ffac11d73-20260513
+X-User: zenghongling@kylinos.cn
+Received: from localhost.localdomain [(10.44.16.150)] by mailgw.kylinos.cn
+	(envelope-from <zenghongling@kylinos.cn>)
+	(Generic MTA with TLSv1.3 TLS_AES_256_GCM_SHA384 256/256)
+	with ESMTP id 1011301798; Wed, 13 May 2026 14:39:07 +0800
+From: Hongling Zeng <zenghongling@kylinos.cn>
+To: vkoul@kernel.org,
+	neil.armstrong@linaro.org,
+	johan@kernel.org,
+	kishon@kernel.org
+Cc: linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	zhongling0719@126.com,
+	Hongling Zeng <zenghongling@kylinos.cn>
+Subject: [PATCH] phy: ti: pipe3: Fix clock resource leak on probe errors
+Date: Wed, 13 May 2026 14:39:02 +0800
+Message-Id: <20260513063902.113956-1-zenghongling@kylinos.cn>
+X-Mailer: git-send-email 2.25.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260512_212838_551122_0630E40A 
-X-CRM114-Status: GOOD (  10.18  )
+X-CRM114-CacheID: sfid-20260512_233919_153307_1A98B359 
+X-CRM114-Status: GOOD (  10.11  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -64,49 +74,64 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIFRoZSBQTUlDIHJlZ3Vs
-YXRvciBkZWZpbml0aW9ucyBvbWl0IHRoZWlyIHJlcXVpcmVkIGlucHV0IHN1cHBseSBkZXBlbmRl
-bmNpZXMgKGUuZy4sIGB2ZGRfczItc3VwcGx5YCwgYHZkZF9sMy1zdXBwbHlgKSwgYnJlYWtpbmcg
-dGhlIHBvd2VyIGhpZXJhcmNoeS4KLSBbTWVkaXVtXSBUaGUgZGV2aWNlIHRyZWUgaW5hY2N1cmF0
-ZWx5IGhhcmRjb2RlcyB0aGUgYGNvbXBhdGlibGVgIHN0cmluZyB0byBhIGRpZmZlcmVudCBQTUlD
-IG1vZGVsIChgcWNvbSxycG0tcG0yMjUwLXJlZ3VsYXRvcnNgKSBpbnN0ZWFkIG9mIGV4cGxpY2l0
-bHkgaWRlbnRpZnlpbmcgdGhlIGFjdHVhbCBoYXJkd2FyZSAoUE00MTI1KS4KLS0KCmNvbW1pdCA0
-NTdhYmY2ZTdhYzQxMDQzMGM4NjY4NDJlMDhlNjAyZWMzZGFhYTUxCkF1dGhvcjogS29tYWwgQmFq
-YWogPGtvbWFsLmJhamFqQG9zcy5xdWFsY29tbS5jb20+Cgphcm02NDogZHRzOiBxY29tOiBBZGQg
-U2hpa3JhIENRTSBTb00gcGxhdGZvcm0KCkFkZCBkZXZpY2UgdHJlZSBpbmNsdWRlIGZvciB0aGUg
-Q1FNIHZhcmlhbnQgb2YgdGhlIFNoaWtyYSBTeXN0ZW0tb24tTW9kdWxlLgpUaGlzIHZhcmlhbnQg
-aW50ZWdyYXRlcyB0aGUgU2hpa3JhIFNvQyBhbmQgUE00MTI1IFBNSUMuIFRoZSBEVFNJIGluY2x1
-ZGVzCnRoZSBjb21tb24gc2hpa3JhLmR0c2kgYW5kIGFkZHMgUE00MTI1IFBNSUMgcmVndWxhdG9y
-IGRlZmluaXRpb25zLgoKPiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm02NC9ib290L2R0cy9xY29tL3No
-aWtyYS1jcW0tc29tLmR0c2kgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL3Fjb20vc2hpa3JhLWNxbS1z
-b20uZHRzaQo+IG5ldyBmaWxlIG1vZGUgMTAwNjQ0Cj4gaW5kZXggMDAwMDAwMDAwMDAwMC4uNDAx
-ZTcxNzIwNTE5ZAo+IC0tLSAvZGV2L251bGwKPiArKysgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL3Fj
-b20vc2hpa3JhLWNxbS1zb20uZHRzaQpbIC4uLiBdCj4gKyZycG1fcmVxdWVzdHMgewo+ICsJcmVn
-dWxhdG9ycyB7Cj4gKwkJY29tcGF0aWJsZSA9ICJxY29tLHJwbS1wbTIyNTAtcmVndWxhdG9ycyI7
-CgpTaW5jZSB0aGUgY29tbWl0IG1lc3NhZ2UgaW5kaWNhdGVzIHRoaXMgaXMgYSBQTTQxMjUgUE1J
-Qywgc2hvdWxkIHRoZQpjb21wYXRpYmxlIHN0cmluZyBpbmNsdWRlIGEgc3BlY2lmaWMgaWRlbnRp
-ZmllciBmb3IgdGhlIGFjdHVhbCBoYXJkd2FyZT8KClVzaW5nIGEgc3BlY2lmaWMgaWRlbnRpZmll
-ciBsaWtlICJxY29tLHJwbS1wbTQxMjUtcmVndWxhdG9ycyIgYWxvbmdzaWRlCnRoZSBmYWxsYmFj
-ayBhbGxvd3MgdGhlIGtlcm5lbCB0byBhcHBseSBzcGVjaWZpYyBxdWlya3MgaWYgUE00MTI1IGVy
-cmF0YQphcmUgZGlzY292ZXJlZCBsYXRlci4KCj4gKwo+ICsJCXBtNDEyNV9zMjogczIgewo+ICsJ
-CQlyZWd1bGF0b3ItbWluLW1pY3Jvdm9sdCA9IDwxMDAwMDAwPjsKPiArCQkJcmVndWxhdG9yLW1h
-eC1taWNyb3ZvbHQgPSA8MTIwMDAwMD47Cj4gKwkJfTsKCkRvIHRoZXNlIHJlZ3VsYXRvcnMgbmVl
-ZCB0byBleHBsaWNpdGx5IGRlZmluZSB0aGVpciBpbnB1dCBzdXBwbHkgZGVwZW5kZW5jaWVzCnN1
-Y2ggYXMgdmRkX3MyLXN1cHBseT8KCldpdGhvdXQgdGhlc2UgcHJvcGVydGllcywgdGhlIHJlZ3Vs
-YXRvciBmcmFtZXdvcmsgbWlnaHQgYmUgdW5hd2FyZSB0aGF0IHRoZQpQTUlDIHJlZ3VsYXRvcnMg
-ZHJhdyBwb3dlciBmcm9tIHVwc3RyZWFtIHN1cHBsaWVzLgoKSWYgdGhlIGtlcm5lbCBkeW5hbWlj
-YWxseSBtYW5hZ2VzIHRoZSB1cHN0cmVhbSBzdXBwbHkgYW5kIGl0cyByZWZlcmVuY2UgY291bnQK
-ZHJvcHMgdG8gemVybywgY291bGQgaXQgYmUgZGlzYWJsZWQsIGNhdXNpbmcgYW4gdW5leHBlY3Rl
-ZCBwb3dlciBsb3NzIGZvcgpkb3duc3RyZWFtIGNvbXBvbmVudHM/CgpbIC4uLiBdCgotLSAKU2Fz
-aGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRldi8jL3BhdGNoc2V0LzIwMjYwNTEy
-LXNoaWtyYS1kdC12MS0wLTcxNjQzODMzMGRkMEBvc3MucXVhbGNvbW0uY29tP3BhcnQ9MwoKLS0g
-CmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
-cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+When devm_phy_create() or devm_of_phy_provider_register() fails,
+the refclk that was enabled earlier is not disabled, causing a
+resource leak.
+
+Fix this by adding an error handling path to disable the clock
+when these functions fail.
+
+Fixes: 234738ea3390 ("phy: ti-pipe3: Add PHY driver for TI PIPE3 PHY")
+Signed-off-by: Hongling Zeng <zenghongling@kylinos.cn>
+---
+ drivers/phy/ti/phy-ti-pipe3.c | 18 +++++++++++++++---
+ 1 file changed, 15 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/phy/ti/phy-ti-pipe3.c b/drivers/phy/ti/phy-ti-pipe3.c
+index b5543b5c674c..29a4cbe73781 100644
+--- a/drivers/phy/ti/phy-ti-pipe3.c
++++ b/drivers/phy/ti/phy-ti-pipe3.c
+@@ -837,15 +837,27 @@ static int ti_pipe3_probe(struct platform_device *pdev)
+ 	}
+ 
+ 	generic_phy = devm_phy_create(dev, NULL, &ops);
+-	if (IS_ERR(generic_phy))
+-		return PTR_ERR(generic_phy);
++	if (IS_ERR(generic_phy)) {
++		ret = PTR_ERR(generic_phy);
++		goto err_clk_disable;
++	}
+ 
+ 	phy_set_drvdata(generic_phy, phy);
+ 
+ 	ti_pipe3_power_off(generic_phy);
+ 
+ 	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
+-	return PTR_ERR_OR_ZERO(phy_provider);
++	if (IS_ERR(phy_provider)) {
++		ret = PTR_ERR(phy_provider);
++		goto err_clk_disable;
++	}
++
++	return 0;
++
++err_clk_disable:
++	if (phy->sata_refclk_enabled)
++		clk_disable_unprepare(phy->refclk);
++	return ret;
+ }
+ 
+ static void ti_pipe3_remove(struct platform_device *pdev)
+-- 
+2.25.1
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
