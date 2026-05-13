@@ -4,118 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2CCAECD4F21
-	for <linux-phy@archiver.kernel.org>; Wed, 13 May 2026 18:56:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CA878CD4F21
+	for <linux-phy@archiver.kernel.org>; Wed, 13 May 2026 20:28:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OEtoXiwpWYWpbwWLPc3sWNRKli1ZnfvdSCEmDQBF52M=; b=H5FoQvo+zdN8Ol
-	EhL0MwD1wnmH+pXazkjSur7uTY8hAjWfwbmeIhCbRvWUSJDbJVbO/0fkfxCeTwhPyDJIR3WBWx1Tl
-	SsKt6/bFR+RMrZX886/Jhg+noNMljUurbUsP7WRf5T6lSzxOcfwNq26xUSehRyTLjadshGhJuCTMV
-	EAYFcsriirQpvxcTXrIXrjNFbKivwSjvjC4DXuB6i/FTwMO7FaKTwuk6u/yZc4+dUS6ceIYQ+96SH
-	mqeRwVCPgXmu+bAPnT1NoIUEZuGhsFPUyNFKnK6Y5z8DZ9K5+LQL7NNTnW2FiyiTxvPvaCa4rxE+L
-	dsVKUCRmUKPJU6fhO3fQ==;
+	List-Owner; bh=mv+TAIWCzUGwQS8hm+CxL9fM79YeYHsmkH52dwLeCh0=; b=Fk1rd0/JVfqBGe
+	/OYzzEaJO0AoGWUJdMv+KzAai1Hgca7smfE9/4jjo5bCmpHIe8Ek00EL1oboGwQDL4PMcqGv/40zJ
+	85fK93OLcZFtQUDllh9TwMx2+t0B/iPIRIT6aBBXLgbCYVn24v80jqQBnhzUdQylCckb44bzGFDlH
+	qv+d+18Xp+f9ZxxGq8flFc+gMFggjYGIwdeZyZ8J5UcLCAzRQw84NrkX2AUvAKIiU0W9SpgK8g9FD
+	QBpd9ky/oRlUnSdoIsQ/hoKfzFvweF+u0u0YwXJvUnXt84fk/bDbpNok4QAXvoNgM3w+SqLGasku3
+	+YhachG2/dT4zC4wj0Aw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wNElH-00000003VlE-3pKc;
-	Wed, 13 May 2026 18:56:51 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1wNGC7-00000003hzy-1Gi0;
+	Wed, 13 May 2026 20:28:39 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wNElG-00000003Vl4-0hkd
+	id 1wNGC6-00000003hzV-0kiS
 	for linux-phy@lists.infradead.org;
-	Wed, 13 May 2026 18:56:50 +0000
+	Wed, 13 May 2026 20:28:38 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 3B36F6013B;
-	Wed, 13 May 2026 18:56:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 64A23C19425;
-	Wed, 13 May 2026 18:56:45 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 4A8D360052;
+	Wed, 13 May 2026 20:28:37 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A5F5BC19425;
+	Wed, 13 May 2026 20:28:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1778698608;
-	bh=jMx+txkKorfgtXs0bfkX1JNch2Fr92Nh2+Sz2Iv0umM=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=lgismjC7AxCVEtEgqwYZKeNmd8LDlYEho+wg3k4SljV+fdznDRh34RfO7ZSpdKSs5
-	 KWpvIF+Su1HqaIJRaOzNlKM4eCEvA9QmKUSf5wl73n0zZfq3t9BwW2xheai6GYuPlO
-	 eXHIRWmzj7TwYc3s9Gu8f+vcV8lnoFTm73bkJH6z04mHsf8nutV3YZRy3TH3yASzZH
-	 rFWzdgMqXjwREI76PadK1vgv1wFho83ENAGyP02VKIRvJ5jeT9M38NXcqeaJEbdH7i
-	 Bn9BKHu69D9dxpEHmER5wkwNQSnoTvu1BZJAloieeQzME6ocgY692pjiYvKvytOyX7
-	 AJuIcsQARWvsw==
-Message-ID: <5baeeeed-7c18-46f7-82a3-5bb299ba05ef@kernel.org>
-Date: Wed, 13 May 2026 20:56:43 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 2/4] dt-bindings: phy: qcom,msm8998-qmp-usb3-phy: Add
- support for Shikra
-To: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>, Vinod Koul
- <vkoul@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
- Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>,
- Johan Hovold <johan+linaro@kernel.org>,
- Loic Poulain <loic.poulain@oss.qualcomm.com>,
- Kathiravan Thirumoorthy <kathiravan.thirumoorthy@oss.qualcomm.com>,
- Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20260504170659.282532-1-krishna.kurapati@oss.qualcomm.com>
- <20260504170659.282532-3-krishna.kurapati@oss.qualcomm.com>
- <20260505-gifted-salamander-of-prowess-5107a6@quoll>
- <8cd564af-9646-40c5-a8ef-c7197fb3cfe9@kernel.org>
- <95b567cc-b83c-4154-9520-e624555f1882@oss.qualcomm.com>
- <29571bdd-23bf-42a7-a9e3-918a28c79700@kernel.org>
- <62161822-2365-4ec7-80f7-8660bdadb177@oss.qualcomm.com>
- <40b5e0f6-bc61-4750-9560-bdcc268f0fe3@kernel.org>
- <d52c5039-9431-44ed-9f3b-bb00d03ae176@oss.qualcomm.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 a/A=
-In-Reply-To: <d52c5039-9431-44ed-9f3b-bb00d03ae176@oss.qualcomm.com>
+	s=k20201202; t=1778704117;
+	bh=Afno8vvfsJoHRFhuXhOEXKa/Zyq0ccYhyblQf2HRREs=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date:From;
+	b=lk7BOo/G5oMPSveY7pElLLbYBAR5T0gVYw+/r8ihmUxhD+sMn1BS0J40LVIxjOYWU
+	 RnsQ+Mi+GY1NviUVy4nxbrMYiRgzXc7cC845Z7IRNAv+UKkjHDcEd15BSERCt5yb2I
+	 TpX5XdsLNGNMoAX1nO9YfwRtxU1bIUHwRc1yhEV7zt/LYkqwESf+5Yf+HfVysgh/pK
+	 jQriowEEbLTIs9X3SLIUNgsKVlXtyv3ZVkmx2jg9tepG3qwmDSxUlVm9NpaTq6ho9v
+	 28L43M+KXFiTuMJ7G9j+yiYf7qsfCcNVOJlq025Qr6hMusD7Lhb9C4uPWvyQ7b3Khe
+	 nrhYMXfWQxlvQ==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v2] phy: fsl-imx8mq-usb: set usb phy to be wakeup
+ capable
+To: "Xu Yang" <xu.yang_2@nxp.com>
+Cc: olteanv@gmail.com, vkoul@kernel.org, Frank.Li@kernel.org, imx@lists.linux.dev, neil.armstrong@linaro.org, linux-phy@lists.infradead.org
+In-Reply-To: <20260512101046.1498096-1-xu.yang_2@nxp.com>
+References: <20260512101046.1498096-1-xu.yang_2@nxp.com>
+Date: Wed, 13 May 2026 20:28:36 +0000
+Message-Id: <20260513202836.A5F5BC19425@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -127,85 +62,72 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 07/05/2026 13:37, Krishna Kurapati wrote:
-> 
-> 
-> On 5/5/2026 7:30 PM, Krzysztof Kozlowski wrote:
->> On 05/05/2026 15:57, Krishna Kurapati wrote:
->>>
->>>
->>> On 5/5/2026 6:59 PM, Krzysztof Kozlowski wrote:
->>>> On 05/05/2026 15:27, Krishna Kurapati wrote:
->>>>>
->>>>>
->>>>> On 5/5/2026 4:22 PM, Krzysztof Kozlowski wrote:
->>>>>> On 05/05/2026 12:49, Krzysztof Kozlowski wrote:
->>>>>>> On Mon, May 04, 2026 at 10:36:57PM +0530, Krishna Kurapati wrote:
->>>>>>>> Declare the USB-C QMP PHY present on the Qualcomm Shikra platform.
->>>>>>>>
->>>>>>>> Signed-off-by: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
->>>>>>>> ---
->>>>>>>>     .../devicetree/bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml      | 2 ++
->>>>>>>>     1 file changed, 2 insertions(+)
->>>>>>>
->>>>>>> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
->>>>>>
->>>>>> ... and then I looked at the driver. So un-reviewed. Devices are clearly
->>>>>> compatible. If not, explain what is not compatible.
->>>>>>
->>>>> Talos uses GCC_USB3_PRIM_PHY_AUX_CLK.
->>>>>
->>>>> In Shikra, we are using GCC_USB3_PRIM_PHY_COM_AUX_CLK. We don't have
->>>>> GCC_USB3_PRIM_PHY_AUX_CLK.
->>>>>
->>>>> Hence, I didn't use a fallback compatible.
->>>>
->>>> This still explains nothing. How different clock makes interface for SW
->>>> incompatible exactly?
->>>>
->>> So I went by the naming. AUX vs COM_AUX.
->>
->> The naming does not matter. If the clock is called
->> "no_one_expects_spanish_inquisition", does that make software
->> incompatible? Why would the name itself matter?
->>
->>>
->>> Can I use a fallback compatible and in DT vote for "COM_AUX" clock with
->>> clock-names mentioning "aux" ?
->>
->> I don't know, I asked what is different in software interface.
->>
-> 
-> Hi Krzysztof,
-> 
->   I checked with the hw team here and found out two things.
-> 
->   1. Shikra is a spinoff of Agatti and its sw interface (clocks used and 
-> regulators used) is the same as agatti.
-> 
->   2. I thought we could use qcm2290 as a fallback since the phy register 
-> init sequence is the same for Talos/Shikra/Agatti. The difference 
-> between Talos and agatti when checked in the driver was the init load 
-> settings. I checked with the hw team and they suggested using the init 
-> load settings which talos was using.
-> 
->   Hence both these compatibles (qcm2290 and qcs615) cannot be used as 
-> fallback for Shikra.
-
-Then I do not understand why you are using qcs615_usb3phy_cfg for
-Shikra. You say that the initialization is different, but you use
-exactly the same initialization. So in a meaning of compatibility
-between hardware for Devicetree they are compatible.
-
-Best regards,
-Krzysztof
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MyBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0NyaXRpY2FsXSBNaXNzaW5nIGVy
+cm9yIGhhbmRsaW5nIGluIHRoZSBwcm9iZSBmdW5jdGlvbiBsZWFkcyB0byBhIFR5cGUtQyBzd2l0
+Y2ggbGVhayBhbmQgYSBjcml0aWNhbCBVc2UtQWZ0ZXItRnJlZS4KLSBbSGlnaF0gVXNpbmcgZGV2
+aWNlX3NldF93YWtldXBfY2FwYWJsZSgpIGZhaWxzIHRvIGVuYWJsZSB3YWtldXAgYnkgZGVmYXVs
+dCwgY2F1c2luZyB0aGUgUEhZIHBvd2VyIGRvbWFpbiB0byBzdGlsbCBiZSBwb3dlcmVkIGRvd24g
+ZHVyaW5nIHN1c3BlbmQuCi0gW0hpZ2hdIEZhaWxpbmcgdG8gZW5hYmxlIHRoZSBjbG9ja3MgaW4g
+aW14OG1xX3BoeV9wb3dlcl9vbigpIGxlYXZlcyB0aGUgdmJ1cyByZWd1bGF0b3IgcGVybWFuZW50
+bHkgZW5hYmxlZC4KLS0KCmNvbW1pdCBjMGIwNDVmZjk3NDZiNmFmZmJlY2MwMmRmNTk3MGZjMDJi
+YzZhM2VkCkF1dGhvcjogWHUgWWFuZyA8eHUueWFuZ18yQG54cC5jb20+CgpwaHk6IGZzbC1pbXg4
+bXEtdXNiOiBzZXQgdXNiIHBoeSB0byBiZSB3YWtldXAgY2FwYWJsZQoKVGhlIHBhdGNoIGludGVu
+ZHMgdG8ga2VlcCB0aGUgUEhZIHBvd2VyIGRvbWFpbiBhY3RpdmUgZHVyaW5nIHN1c3BlbmQKYnkg
+c2V0dGluZyB0aGUgUEhZIHRvIGJlIHdha2V1cCBjYXBhYmxlLgoKPiBkaWZmIC0tZ2l0IGEvZHJp
+dmVycy9waHkvZnJlZXNjYWxlL3BoeS1mc2wtaW14OG1xLXVzYi5jIGIvZHJpdmVycy9waHkvZnJl
+ZXNjYWxlL3BoeS1mc2wtaW14OG1xLXVzYi5jCj4gaW5kZXggYjA1ZDgwZTg0OWExNC4uYjJlMWUz
+NzQ5ZmMxOSAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL3BoeS9mcmVlc2NhbGUvcGh5LWZzbC1pbXg4
+bXEtdXNiLmMKPiArKysgYi9kcml2ZXJzL3BoeS9mcmVlc2NhbGUvcGh5LWZzbC1pbXg4bXEtdXNi
+LmMKPiBAQCAtNzMzLDYgKzczMyw3IEBAIHN0YXRpYyBpbnQgaW14OG1xX3VzYl9waHlfcHJvYmUo
+c3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKPiAgCQkJCQkiZmFpbGVkIHRvIGdldCB0Y2Fc
+biIpOwo+ICAKPiAgCWlteDhtX2dldF9waHlfdHVuaW5nX2RhdGEoaW14X3BoeSk7Cj4gKwlkZXZp
+Y2Vfc2V0X3dha2V1cF9jYXBhYmxlKGRldiwgdHJ1ZSk7CgpXaWxsIHRoaXMgc3VjY2Vzc2Z1bGx5
+IGVuYWJsZSB3YWtldXAgYnkgZGVmYXVsdD8KClRoZSBQTSBkb21haW4gZnJhbWV3b3JrIChnZW5w
+ZCkgY2hlY2tzIGdlbnBkX2lzX2FjdGl2ZV93YWtldXAoZ2VucGQpIGFuZApkZXZpY2VfYXdha2Vf
+cGF0aChkZXYpICh3aGljaCBkZXBlbmRzIG9uIGRldmljZV9tYXlfd2FrZXVwKGRldikpIHRvIGRl
+dGVybWluZQppZiB0aGUgZG9tYWluIHNob3VsZCByZW1haW4gcG93ZXJlZCBvbi4KCmRldmljZV9t
+YXlfd2FrZXVwKGRldikgZXZhbHVhdGVzIHRvIGRldi0+cG93ZXIuY2FuX3dha2V1cCAmJgpkZXYt
+PnBvd2VyLnNob3VsZF93YWtldXAuIFdoaWxlIGRldmljZV9zZXRfd2FrZXVwX2NhcGFibGUoZGV2
+LCB0cnVlKSBzZXRzCmNhbl93YWtldXAgPSB0cnVlLCBpdCBsZWF2ZXMgc2hvdWxkX3dha2V1cCA9
+IGZhbHNlLiBBcyBhIHJlc3VsdCwKZGV2aWNlX21heV93YWtldXAoKSByZXR1cm5zIGZhbHNlIGJ5
+IGRlZmF1bHQsIGFuZCBnZW5wZCB3aWxsIHN0aWxsIHBvd2VyIG9mZgp0aGUgUEhZIGRvbWFpbi4K
+ClNob3VsZCB0aGlzIHVzZSBkZXZpY2VfaW5pdF93YWtldXAoZGV2LCB0cnVlKSB0byBlbmFibGUg
+aXQgYnkgZGVmYXVsdCwKb3Igc2hvdWxkIHRoZSBVU0Igc3Vic3lzdGVtIGR5bmFtaWNhbGx5IHBy
+b3BhZ2F0ZSB0aGUgY29udHJvbGxlcidzIHdha2V1cCBzdGF0ZQp0byB0aGUgUEhZIGluc3RlYWQ/
+Cgo+ICAJcGh5X3Byb3ZpZGVyID0gZGV2bV9vZl9waHlfcHJvdmlkZXJfcmVnaXN0ZXIoZGV2LCBv
+Zl9waHlfc2ltcGxlX3hsYXRlKTsKClRoaXMgaXNuJ3QgYSBidWcgaW50cm9kdWNlZCBieSB0aGlz
+IHBhdGNoLCBidXQgZG9lcyB0aGlzIGNvZGUgbGVhdmUgYSBUeXBlLUMKc3dpdGNoIHJlZ2lzdGVy
+ZWQgaWYgZGV2bV9vZl9waHlfcHJvdmlkZXJfcmVnaXN0ZXIoKSBmYWlscz8KCklmIGRldm1fb2Zf
+cGh5X3Byb3ZpZGVyX3JlZ2lzdGVyKCkgcmV0dXJucyBhbiBlcnJvciwgdGhlIHByb2JlIGZ1bmN0
+aW9uIGV4aXRzCndpdGhvdXQgdW5yZWdpc3RlcmluZyB0aGUgVHlwZS1DIHN3aXRjaCAoZS5nLiwg
+dmlhIGlteDk1X3VzYl9waHlfcHV0X3RjYSgpKS4KVGhlIGlteF9waHkgc3RydWN0dXJlIGFsbG9j
+YXRlZCB3aXRoIGRldm1fa3phbGxvYygpIHdvdWxkIHRoZW4gYmUgZnJlZWQgYnkgdGhlCmRyaXZl
+ciBjb3JlLCBidXQgdGhlIHN3aXRjaCByZW1haW5zIGFjdGl2ZS4KCklmIHRoZSBUeXBlLUMgc3Vi
+c3lzdGVtIHRyaWdnZXJzIHRoZSBzd2l0Y2gncyBzZXQgY2FsbGJhY2sKKHRjYV9ibGtfdHlwZWNf
+c3dpdGNoX3NldCgpKSwgaXQgd2lsbCBhY2Nlc3MgdGhlIGZyZWVkIGlteF9waHksCnBvdGVudGlh
+bGx5IHJlc3VsdGluZyBpbiBhIHVzZS1hZnRlci1mcmVlLgoKPiAgCj4gIAlyZXR1cm4gUFRSX0VS
+Ul9PUl9aRVJPKHBoeV9wcm92aWRlcik7Cj4gIH0KClRoaXMgaXNuJ3QgYSBidWcgaW50cm9kdWNl
+ZCBieSB0aGlzIHBhdGNoLCBidXQgZG9lcyBpbXg4bXFfcGh5X3Bvd2VyX29uKCkgbGVhawphIHJl
+Z3VsYXRvciByZWZlcmVuY2Ugb24gZXJyb3IgcGF0aHM/CgpMb29raW5nIGF0IGlteDhtcV9waHlf
+cG93ZXJfb24oKToKCmRyaXZlcnMvcGh5L2ZyZWVzY2FsZS9waHktZnNsLWlteDhtcS11c2IuYzpp
+bXg4bXFfcGh5X3Bvd2VyX29uKCkgewogICAgLi4uCiAgICByZXQgPSByZWd1bGF0b3JfZW5hYmxl
+KGlteF9waHktPnZidXMpOwogICAgaWYgKHJldCkKICAgICAgICByZXR1cm4gcmV0OwoKICAgIHJl
+dCA9IGNsa19wcmVwYXJlX2VuYWJsZShpbXhfcGh5LT5jbGspOwogICAgaWYgKHJldCkKICAgICAg
+ICByZXR1cm4gcmV0OwogICAgLi4uCn0KCklmIGNsa19wcmVwYXJlX2VuYWJsZShpbXhfcGh5LT5j
+bGspIG9yIGNsa19wcmVwYXJlX2VuYWJsZShpbXhfcGh5LT5hbHRfY2xrKQpmYWlscywgdGhlIGZ1
+bmN0aW9uIHJldHVybnMgZGlyZWN0bHkgd2l0aG91dCBjYWxsaW5nCnJlZ3VsYXRvcl9kaXNhYmxl
+KGlteF9waHktPnZidXMpLgoKU2luY2UgdGhlIGZ1bmN0aW9uIHJldHVybnMgYW4gZXJyb3IsIHRo
+ZSBQSFkgZnJhbWV3b3JrIHdpbGwgbm90IGNhbGwKaW14OG1xX3BoeV9wb3dlcl9vZmYoKS4gQ291
+bGQgdGhpcyBsZWF2ZSB0aGUgdmJ1cyByZWd1bGF0b3IgcGVybWFuZW50bHkKZW5hYmxlZD8KCi0t
+IApTYXNoaWtvIEFJIHJldmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAy
+NjA1MTIxMDEwNDYuMTQ5ODA5Ni0xLXh1LnlhbmdfMkBueHAuY29tP3BhcnQ9MQoKLS0gCmxpbnV4
+LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9s
+aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
