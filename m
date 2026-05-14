@@ -4,120 +4,130 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 98CC3CD4851
-	for <linux-phy@archiver.kernel.org>; Thu, 14 May 2026 14:37:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F32C0CD4F25
+	for <linux-phy@archiver.kernel.org>; Thu, 14 May 2026 14:39:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uvUUOxtIbmStKowJIA9MuJQu791iXseAKHoEosbL88A=; b=0zoBr5eO4GZRgj
-	bXF34d7TtUJ20iMCURfphkBZ4rx/Ob6x/Plo+uqQSCGvqaEIBFwIOZYFqckz/BGta2POw1Vfw/Z9Y
-	mJQXjlz1rp0ynEeRh21AOraSCOgALP8YBwM5v5jW6DR1yYy1NUMo0YbaHEyxJVjzyJcV2Ln5QDogq
-	XdebzFFhWRRL31Cl+P3doC0wH5Pl1oycqrKOO5ejH+eMxaRN6CU4pog293edHsIddKUL9L6Pd6iBy
-	MGB56Iy49EWRvv3VKz53pHl27DCql/YEQspcDVtLQvJ3atoRMom3+IC5O3Voz3bm75pv90+dS7qK8
-	e3X0f6VadK2+yU49FLZA==;
+	List-Owner; bh=w9Y7biKYAyBgJNaHYpZUJQTdZfIucWTvp7rv85+rX0c=; b=akRKC7/DNcfYG2
+	XxBxc5ERXZugnz+GxgR65pJ35QpVthmY7U3cNoRt2z4iwnEgFzw8ExPkI1jOZhdqWeK1FrTfPBUjH
+	wIiK9dVtmewzG2nwkzJkGWqTq+uvr//xxpjJTHm7mzTgWd2GJSaYt3fLA1CxRkHARRFzx5iMerXF7
+	MRgEJcDSZ1eaAxCynjlLUFkY3T0qgKqP2XVGqQE9k6dBt9j/prDfEpKtwwk/HqszhfVVQq1PuU7cM
+	FsSb6uuOfVeuPe+uo7I2W5ImhU3PgQqrdKWnX9C16cQVpXm0Esa+/s0iAiFhJuZdfgoDkC0aPK94e
+	GQ3GcTyOztZ8kpoV3v8g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wNXC3-00000005kyc-1W8c;
-	Thu, 14 May 2026 14:37:43 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1wNXEC-00000005lTG-384l;
+	Thu, 14 May 2026 14:39:56 +0000
+Received: from mail-francesouthazon11011063.outbound.protection.outlook.com ([40.107.130.63] helo=MRWPR03CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wNXC1-00000005kxQ-0qji
+	id 1wNXEA-00000005lSV-3JQS
 	for linux-phy@lists.infradead.org;
-	Thu, 14 May 2026 14:37:41 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 3FCAD6015B;
-	Thu, 14 May 2026 14:37:40 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 67720C2BCB8;
-	Thu, 14 May 2026 14:37:36 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1778769459;
-	bh=5OPhjYvg1XCLhMTe0Zoo3kYdgFxqiwicl5MN1s+nxC0=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=rZ8WJmD3jE5YEH9Nmylv1lmcebcTp8GQx+2H1dIqhq6E2D/1K6/+MriHPngsNDx/l
-	 wazb+mXIH0R64f0HVkJ+H/wi0i9DhIU944fG/UoAmkSj2QKQHrYiDLq9IJsWBt1IIb
-	 PFVGUJIP7x5CmBhCmkb7LDq/NG1tiiyvHOZ1Da/+gvd+Sh1uEAwa72//OkezihkhJ/
-	 g1z/5RMVJzTAmTWm8Kl1sZzImPOGYJ2+Gc18kHFwR59yhtK1aYf3RHn4Jn5LPfr2Pz
-	 6KRX7yWhOwIoiuBBR6gQHI9m8LTWterJCiWEdLUWzvG0GUMovP7bN9ojTwrLza11Fu
-	 yBFBCJhpZ4zGg==
-Message-ID: <9ed7c714-07c1-48de-8d27-cbe24356c606@kernel.org>
-Date: Thu, 14 May 2026 16:37:34 +0200
+	Thu, 14 May 2026 14:39:56 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=n8cRwx7QNXn0dLPR07g0DUHLA1a4nAduDiY6sTrwX7xfneQzuXcJdjOGIuyr7GozBecVauciKAipMBjuL9zS2s9FcWnnOr1K96QwMrHZych7guc2Q2uJV92/2uPmjXTBunCZe+9N5stTZ42N9Y95wLc1c4lxpz/ACVGrSX6vuKcVIeGS8kVrt+UApQuImqeCgPwzNnvZRAGDhfQKJLrDwTbO+/q+TCR8kESsSROB8qM0HJM2NbN97nJ9XYDwh/H1JR8e2euwnTfFw8dZpqW8+eGRWeqa02SaAZj6+K4QUPfjRkOKYdHnpEOh9pJd0AvuvQicuFnpm8j14LOyCj2gYA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=V93wMlRPg60jLHpjQ4S06gJOmAj/36pnbcGVRl/8dKE=;
+ b=MRTACmyG828iHF/d87CXdbAgxRKlXbyChyCbQQmXs+kE/pmDk56wLNc430YkCkXPotMchDKiPkGrV6s22Bt0ECA28Hb99qAHMxLtjzO1KLvHDpoLqbO/dLj2Hsh4U7z72bOA5kuKRD+bPY5ymFK2yQNCSAWBXz2EW5DBjoCyc8BNDrwy2Jd/xeOW9c3tViWm0nHeNkSIq8D7bYgPTX4jUXPkSAoEPp0KgIj4UhhvuKgcz+Z1JYi2XgnnXovv6/y6PwRNG7Tgn9UfbRIm2abIBbTV0JAlbscaJUNhNQSlbgGhPT5T+fQgCl6lNSO141WHcqKRi7+YJGJBWungfhECjA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=V93wMlRPg60jLHpjQ4S06gJOmAj/36pnbcGVRl/8dKE=;
+ b=aEEUpBCuzjlTaTb//7ps3dodAUwJblx4PdfMKd0MZSshOhHyGy55Jb1oywBPL5W8p64EREYWwCDffWmhKZKt3DOCiQnCXGYUWcfFh8x/dbZSUY6/ULKuW4MBsO5xEnxx5cRylBzIoq7yfX7jl8lPufclJX4oLYClIPOQvNZaXbwjO8AcNONQpSJqlyTSDDomqCuTFsRgz9FB5kS2sEifGhZR0rb6KOA0cuTm5SQO3hKPHDBNNkCW01oS9INgdQiZzAx2JGs3DkpEJt+D3UAi5El501zqpzC5l3nnVg5b+Zs181S5NFLKJHAPO0gvbLcsvQ5TIESAAuOgXY6s66Tmvg==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from PR3PR04MB7402.eurprd04.prod.outlook.com (2603:10a6:102:89::16)
+ by VI2PR04MB10620.eurprd04.prod.outlook.com (2603:10a6:800:26f::19) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9913.11; Thu, 14 May
+ 2026 14:39:46 +0000
+Received: from PR3PR04MB7402.eurprd04.prod.outlook.com
+ ([fe80::4129:7aed:b5cb:b13d]) by PR3PR04MB7402.eurprd04.prod.outlook.com
+ ([fe80::4129:7aed:b5cb:b13d%5]) with mapi id 15.20.9913.009; Thu, 14 May 2026
+ 14:39:46 +0000
+Date: Thu, 14 May 2026 17:39:42 +0300
+From: Ioana Ciornei <ioana.ciornei@nxp.com>
+To: Josua Mayer <josua@solid-run.com>, 
+	Vladimir Oltean <vladimir.oltean@nxp.com>
+Cc: "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>, 
+	"netdev@vger.kernel.org" <netdev@vger.kernel.org>, Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, 
+	Rabeeh Khoury <rabeeh@solid-run.com>, Yazan Shhady <yazan.shhady@solid-run.com>
+Subject: Re: [PATCH phy-next 5/5] phy: lynx-28g: add support for 25GBASER
+Message-ID: <xnsfxbjmvyxr2vbxcpktd5p5twyzfuklzapiyvwctuikvhcrvi@da4e5q2hto34>
+References: <20260511150023.1903577-1-vladimir.oltean@nxp.com>
+ <20260511150023.1903577-6-vladimir.oltean@nxp.com>
+ <1ba1f688-9f68-4749-a18f-20ae91738ae0@solid-run.com>
+ <20260513133721.huu4j3wksxykizz4@skbuf>
+ <5cc008f1-d2c4-4a56-a1b4-6fd9bd470049@solid-run.com>
+ <20260513151018.sfyowih53zistli3@skbuf>
+Content-Disposition: inline
+In-Reply-To: <20260513151018.sfyowih53zistli3@skbuf>
+X-ClientProxiedBy: FR4P281CA0334.DEUP281.PROD.OUTLOOK.COM
+ (2603:10a6:d10:ea::10) To PR3PR04MB7402.eurprd04.prod.outlook.com
+ (2603:10a6:102:89::16)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 2/4] dt-bindings: phy: qcom,msm8998-qmp-usb3-phy: Add
- support for Shikra
-To: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>, Vinod Koul
- <vkoul@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
- Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>,
- Johan Hovold <johan+linaro@kernel.org>,
- Loic Poulain <loic.poulain@oss.qualcomm.com>,
- Kathiravan Thirumoorthy <kathiravan.thirumoorthy@oss.qualcomm.com>,
- Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20260504170659.282532-1-krishna.kurapati@oss.qualcomm.com>
- <20260504170659.282532-3-krishna.kurapati@oss.qualcomm.com>
- <20260505-gifted-salamander-of-prowess-5107a6@quoll>
- <8cd564af-9646-40c5-a8ef-c7197fb3cfe9@kernel.org>
- <95b567cc-b83c-4154-9520-e624555f1882@oss.qualcomm.com>
- <29571bdd-23bf-42a7-a9e3-918a28c79700@kernel.org>
- <62161822-2365-4ec7-80f7-8660bdadb177@oss.qualcomm.com>
- <40b5e0f6-bc61-4750-9560-bdcc268f0fe3@kernel.org>
- <d52c5039-9431-44ed-9f3b-bb00d03ae176@oss.qualcomm.com>
- <5baeeeed-7c18-46f7-82a3-5bb299ba05ef@kernel.org>
- <42ba6ac7-306a-419f-96b6-3427c51ef567@oss.qualcomm.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 a/A=
-In-Reply-To: <42ba6ac7-306a-419f-96b6-3427c51ef567@oss.qualcomm.com>
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PR3PR04MB7402:EE_|VI2PR04MB10620:EE_
+X-MS-Office365-Filtering-Correlation-Id: 7e5f87ba-6e74-4305-6aa4-08deb1c6a4cf
+X-LD-Processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|366016|19092799006|1800799024|18002099003|22082099003|4143699003|56012099003|11063799003;
+X-Microsoft-Antispam-Message-Info: /XI7oT3OdxsTbRYjEjbS8Hij5hRrUjCLYK1ttG1e/iUh1kfT+VOLFr+pz412IlrvoODYuTClUB4sQk07rsJZd0Q7MvFVx3nLfYgOmdEg2jDonJc/zSbawbpxK5Ez/FTIlpylzksBn//kFe4+oqMj3yH71csMDAvbMAZ6PprofjdHThoOqDAzqCbDcY5fW3Q3E12r046zHMWlTa+cpTHgL7Ok4dAvuZfCoIysDO35bCrRS9MRRpGmqvf+cfTvf8czVp+JcbYo3k3kNzS6J983zacPD1oGAPKVB5LNxTpQ3mxU+7kOsdn3lymE3TL0vqq6WnrHI0LzkTTUwP4rxCL3LqnJBQzbbqrpihRxNNNMvRN/EWamEahaFJFG3Q69gueQlhKv9TK+nP7EFFFAD9FDozBgxICNWIAglI8KgTvOWpOpMq9i+yRdC7UZ2lKuyjI2DD5V87UYFuxhHApvphtGhG7T9f7AqZHm1cmc4Rs9no/4Pjld41gML6t+PGd5CPZCxYZ+boxyreBJAtD2RAyH2vI+//R11F6Xce9vTEHDBu5AzhxYoX/TwCM5R1ipa5vg0gyQQUQjjxS8LMD2Q3SsQ527VWWIkWzfq9uMe6c4IdygFad4eJllBjWOhigxmB8skTivt8i61W3wEyxQZ8q7q4ZNAbxrHNJIvwqKUHeSSSFY26tFQCH21kQ8chy/t5om
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PR3PR04MB7402.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(366016)(19092799006)(1800799024)(18002099003)(22082099003)(4143699003)(56012099003)(11063799003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?tGcyqwMF/rqkmABMkcqzmfQkiQNDI9FKfIiXAfsn8ylCd5MGhwBr7I+i/4Gp?=
+ =?us-ascii?Q?gog5NxVDrxDpWn9H4hSb7oT8SLXJFjn1xRuOF1VHK5KSo9l1mbKyFpBMaJoZ?=
+ =?us-ascii?Q?/oWAWrY2jPrXXEM3s4/jdoEntJ1QdpCWEcaRGW5PEmu+/VyEo+7Lc4lHuWCW?=
+ =?us-ascii?Q?bkOzNM587GJM4mvgHgiF8cJqnuHBwCCBqZv8OHObopgmUCMm/KruvXdbXFUe?=
+ =?us-ascii?Q?ziw78UpDI9/TRK1NJCsTmUT54DPIO1L5MpbfLpFZZonqWQxUiCD11RyOCthe?=
+ =?us-ascii?Q?Ch3nZTr74iryRiitvJuKJ+aiq9hXUurlwDkn3DmdwgM9ArlP5vCaTyLYjWaa?=
+ =?us-ascii?Q?v34WjJsJr618/kJyV515Cx+2baTRdS0fyBUWkD9XmLVyhZ0ZdEJmPjTqC/Hy?=
+ =?us-ascii?Q?pHBo+sSSuBPunR6AlZBDCxJ9SP93gong2AJn6FAY4cMQHEqyMks+lwMm+wu8?=
+ =?us-ascii?Q?Y4IxyTlNwTTX4BYfS0ZCcaXYBSd9N5OfVDRDCBWvDYQ2TZLDCQMAzFw/kMGf?=
+ =?us-ascii?Q?2ius6g3Pae5l0otdjkKxCDD418lWVduP84v3mBpnKHG16Ivu3rlKsz6FMd/t?=
+ =?us-ascii?Q?OQnulq1a9n2vnqypT5oiU0dkLDM4QRBRdnclt2aMJWz75XfMGrEqKCqU1xRz?=
+ =?us-ascii?Q?ipzmOfH98z+ih9S8JSU6l4+vsNCYtQO/2nn4VyMZElYVjsBWvrMS+5+b9jtk?=
+ =?us-ascii?Q?ev5ajfkSsJX06h5XaZAAH49K2sByfVBeT+AW/3P/D0zGh+jURSACqs4m8GAS?=
+ =?us-ascii?Q?BPoa0KmrtdJL+3c8jWN5CMvNNQ+k3IEirqxQQGyJrEy7F/FiR8VFkkIwk6j4?=
+ =?us-ascii?Q?W6TPEfkS+Tg+3wzTIEmHuavPyZ6nZQGs/6VhHeisPqCGvSnisQ1k36DSM91z?=
+ =?us-ascii?Q?9G7KHxVgKwnAiE7AMkh8k4M6hiIHptg8c8Tz+omI/Q619Eil3/6ZFxoduu4U?=
+ =?us-ascii?Q?+WFTODRkhxiC9RC4H9C5JeZjjkYO3IdMyu75sY2Gcw/8oHXj7JYxVqiWkQ6t?=
+ =?us-ascii?Q?da8gCeEfy5ie58+TmJV+6Ubln23jmYFKcjjBDhe5nGqQzxoQR32yRmZLGD9v?=
+ =?us-ascii?Q?NPseZfRrw1prMDNa7A4FNcG9xEMKYl0g/vZ0minKuONypf+sg864uujTWUqL?=
+ =?us-ascii?Q?NAKm+3sM6HHmd6Xq/H4QObKzCR4uamXj8T+81s0Ybgipl5QjPsQYXgC/b6zs?=
+ =?us-ascii?Q?MNVlF3npvKq2YR9UHnfTugPM4s+Y9Cf/w0ALWxWvB55N46pRyWyS23iRwUcb?=
+ =?us-ascii?Q?8Y9Fa//+Jou8xcXGKRbRwtM7SbFJH6mC5VdX1D1cuFJjXx02aXTKKqgRkzPC?=
+ =?us-ascii?Q?0OlVnptQ45fiLQCXBYAeHEDpnXBwY7eGU+Q0kcjdoCr0tyDmUe3SKxQqCzN/?=
+ =?us-ascii?Q?mI9pHk44RLhUT/Kq0wHJ7o/yLFCw2v23oXZF9CKwNYntrRVliWE7WGrJVJkf?=
+ =?us-ascii?Q?ED/s5oiwe5htBk0JJHj/6fQ5QL41I8Wj4mLclIeT6a87JMWfanED21Sl5uGp?=
+ =?us-ascii?Q?U0J2A1B05jqiFwF9Hfuk5aVfruNdUUTM5FNiRW/r1wqw78Rze/Rf5AsF2fi6?=
+ =?us-ascii?Q?46iTSOAjUVgC8zkn7+E2u4XY9Wal9lB6zYtcYDe/8XbL2P+FEAA4Ghu9/Uf5?=
+ =?us-ascii?Q?pRLCf6LEFS6mEFs7La4Sig1fOzXrXx99R8d4PKLguDTBqGIOQ2pCbokE0kJN?=
+ =?us-ascii?Q?YctIeOTsmGc3+rkTCnopKqpAU/l9RO7V5mJvk3V7rqbAYlkatkSCSMPcxhkE?=
+ =?us-ascii?Q?4/cLLtDuTQ=3D=3D?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 7e5f87ba-6e74-4305-6aa4-08deb1c6a4cf
+X-MS-Exchange-CrossTenant-AuthSource: PR3PR04MB7402.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 May 2026 14:39:46.3492
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: jrT0p13NyuxJwMQd/0hUqGI0IxW0isaPcLvtTWSE/bc5FmO/B7yQs5x6crqK6SUzlync+DnQZD16j8OwLBA3RQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI2PR04MB10620
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260514_073954_834049_872B43F3 
+X-CRM114-Status: GOOD (  16.81  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -134,107 +144,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 14/05/2026 08:22, Krishna Kurapati wrote:
+On Wed, May 13, 2026 at 06:10:18PM +0300, Vladimir Oltean wrote:
+> On Wed, May 13, 2026 at 02:50:38PM +0000, Josua Mayer wrote:
+> > With updated compatible string it is working perfectly!
+> > 
+> > I'll send my tested-by on the series, thanks!
 > 
+> Thanks.
 > 
-> On 5/14/2026 12:26 AM, Krzysztof Kozlowski wrote:
->> On 07/05/2026 13:37, Krishna Kurapati wrote:
->>>
->>>
->>> On 5/5/2026 7:30 PM, Krzysztof Kozlowski wrote:
->>>> On 05/05/2026 15:57, Krishna Kurapati wrote:
->>>>>
->>>>>
->>>>> On 5/5/2026 6:59 PM, Krzysztof Kozlowski wrote:
->>>>>> On 05/05/2026 15:27, Krishna Kurapati wrote:
->>>>>>>
->>>>>>>
->>>>>>> On 5/5/2026 4:22 PM, Krzysztof Kozlowski wrote:
->>>>>>>> On 05/05/2026 12:49, Krzysztof Kozlowski wrote:
->>>>>>>>> On Mon, May 04, 2026 at 10:36:57PM +0530, Krishna Kurapati wrote:
->>>>>>>>>> Declare the USB-C QMP PHY present on the Qualcomm Shikra platform.
->>>>>>>>>>
->>>>>>>>>> Signed-off-by: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
->>>>>>>>>> ---
->>>>>>>>>>      .../devicetree/bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml      | 2 ++
->>>>>>>>>>      1 file changed, 2 insertions(+)
->>>>>>>>>
->>>>>>>>> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
->>>>>>>>
->>>>>>>> ... and then I looked at the driver. So un-reviewed. Devices are clearly
->>>>>>>> compatible. If not, explain what is not compatible.
->>>>>>>>
->>>>>>> Talos uses GCC_USB3_PRIM_PHY_AUX_CLK.
->>>>>>>
->>>>>>> In Shikra, we are using GCC_USB3_PRIM_PHY_COM_AUX_CLK. We don't have
->>>>>>> GCC_USB3_PRIM_PHY_AUX_CLK.
->>>>>>>
->>>>>>> Hence, I didn't use a fallback compatible.
->>>>>>
->>>>>> This still explains nothing. How different clock makes interface for SW
->>>>>> incompatible exactly?
->>>>>>
->>>>> So I went by the naming. AUX vs COM_AUX.
->>>>
->>>> The naming does not matter. If the clock is called
->>>> "no_one_expects_spanish_inquisition", does that make software
->>>> incompatible? Why would the name itself matter?
->>>>
->>>>>
->>>>> Can I use a fallback compatible and in DT vote for "COM_AUX" clock with
->>>>> clock-names mentioning "aux" ?
->>>>
->>>> I don't know, I asked what is different in software interface.
->>>>
->>>
->>> Hi Krzysztof,
->>>
->>>    I checked with the hw team here and found out two things.
->>>
->>>    1. Shikra is a spinoff of Agatti and its sw interface (clocks used and
->>> regulators used) is the same as agatti.
->>>
->>>    2. I thought we could use qcm2290 as a fallback since the phy register
->>> init sequence is the same for Talos/Shikra/Agatti. The difference
->>> between Talos and agatti when checked in the driver was the init load
->>> settings. I checked with the hw team and they suggested using the init
->>> load settings which talos was using.
->>>
->>>    Hence both these compatibles (qcm2290 and qcs615) cannot be used as
->>> fallback for Shikra.
->>
->> Then I do not understand why you are using qcs615_usb3phy_cfg for
->> Shikra. You say that the initialization is different, but you use
->> exactly the same initialization. So in a meaning of compatibility
->> between hardware for Devicetree they are compatible.
->>
-> Hi Krzysztof,
+> > >
+> > > You can look at my branch
+> > > https://github.com/vladimiroltean/linux/commits/net-phy-upstreaming
+> > > specifically commit "arm64: dts: lx2160a: transition to device-specific
+> > > SerDes compatible strings".
+> > 
+> > Thanks!
+> > 
+> > I will probably have retimer comments i.e. one phy object ehach for rx, and tx,
+> > instead of combined - as we can not rely on hardware designers making clean choices.
+> > E.g. imagine two retimer chips, one handling rx direction of 2 ports and one tx of 2 ports.
+> > 
+> > phys = <&serdes_1 0, &retimer_rx 0>, <&retimer_tx 0>;
+> > 
+> > Not relevant to this patch.
 > 
->   There are 3 things:
-> 
-> 1. Clocks used:
-> -> Talos supports AUX Clock since it supports DP over USB.
-> -> Agatti and Shikra use COM_AUX clock since they dont support DP over USB.
-> 
-> 2. Phy register Init sequence - same for all 3 targets
-> 
-> 3. Regulator init load:
-> -> Different for both Talos and Agatti
-> -> Recommendation is to use Talos regulator load values.
-> 
-> SW interface wise, shikra is comaptible with agatti. If we use agatti as 
-> fallback, we would end up using the platform data of Agatti where the 
-> regulator init load is not suitable for Shikra. Hence not using Agatti 
-> as fallback.
-> 
-> Coming to driver changes, I used qcs615_cfg because it has required phy 
-> register sequence and regulator init load as needed by shikra.
+> Correct. For the retimers we will upstream (Ioana is working on the TI
+> DS125DF111), their channels will be split to separate Generic PHY
+> objects, to cater specifically to that use case. Hoping that all other
+> multi-channel retimer submissions where there is no meaningful
+> distinction between RX and TX will do the same.
 
-So is it compatible with QCS615? If not, then something is incomplete or
-confusing. The driver uses the same software interface.
-
-Best regards,
-Krzysztof
+In case you didn't see, I send yesterday the series adding the TI
+DS125DF111 retimer driver that Vladimir was mentioning above.
+https://lore.kernel.org/all/20260513185103.1371809-1-ioana.ciornei@nxp.com/
 
 -- 
 linux-phy mailing list
