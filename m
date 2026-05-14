@@ -4,63 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0BFB5CD4851
-	for <linux-phy@archiver.kernel.org>; Thu, 14 May 2026 16:08:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D0099CD4F25
+	for <linux-phy@archiver.kernel.org>; Thu, 14 May 2026 16:17:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IbVKTEC6Py2Q71xijHWQ9YkLUBOFv9STlTqFNuI1fXw=; b=UNF2pYTj1fZsNK
-	/GIdbiSyauCeld9iWu33EH23fs65DIFMU3qgsi/jxckr4VQ6cojzoKXcZ7rokLoQSOvf6o4H3bszO
-	4FMpSPaM4tj5n5JKaSJhjeK++MStSla0+gWfbzCEVQZm58t/+2jY8NRqFDjaaHLUcOfKFkInnSkfb
-	e+oRaFA2jdA0bmt4g2emAr0xn+48+IDjniF4q4cp8d8TtpJQODCjtxRD8ABSoeZUI3bO5OdeJ4HG3
-	Zmzld8eYQ5g2Z6NpTUhcjYCRxeyeG8J7ZqfQIGolg2p0zkScdsbzBQFogGiiy/6UF4Y1Io3uhGRKW
-	X1X0OD9KyoVBHNBm5okQ==;
+	List-Owner; bh=SugW7axWJtT1VY7cervFGpISBdajxGFrGQdR7hStG0E=; b=XaAGyD+DB2pcvW
+	xq725Cip//TMiKcCV0xg0+CoCtleV+VMvvyFGJyycLDC7YD1EOZy1bBqOT7cLy37sXol564tuMw0Z
+	HOzSnq+y8vVbbzlw7js0wvgvfEMzJBwg4CvTunfaihtLf82NORXGT8w+S6cmAUkqBKDvRbQlfg3Qy
+	2dKPszQkvP/VwJv0Qp9gWMtGZcoxYFzKGvqxdiGlh/LWj5eLPfdHafybUwY6txarRxvJb4Huj7Zvp
+	VPlzCtsDMTFglISPFC+1LGezC+JcGkDgwuBF58nRK/ve61hKN0kj/kNRxoq5mZ+EVpfQE3XYCD6IB
+	Hzm2eVkTYnuxiUJduISg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wNYbq-0000000600v-1xFi;
-	Thu, 14 May 2026 16:08:26 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wNYkq-000000061R5-2DVz;
+	Thu, 14 May 2026 16:17:44 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wNYbo-0000000600N-0D38;
-	Thu, 14 May 2026 16:08:25 +0000
+	id 1wNYko-000000061QF-2aLB;
+	Thu, 14 May 2026 16:17:42 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 7A6214066D;
-	Thu, 14 May 2026 16:08:23 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 26BD6C2BCB3;
-	Thu, 14 May 2026 16:08:19 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id B2FE760138;
+	Thu, 14 May 2026 16:17:41 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A914EC2BCB3;
+	Thu, 14 May 2026 16:17:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1778774903;
-	bh=JgMf4wRpFiwD3alNMNl5XaWiw8QaBk00SyYTww0vZHg=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=QX849FNdq4n1pmDeYiczWfPi/yO0SBj6+z6Hg34KhSCUe8UfPKXfpb8S0/gUq29Rw
-	 ntpr2ddLBmVU18R2dqsRINe99c1TKju9sCH4QXRCdj4ipVNkOUhTmISarVEy22t1A2
-	 xG/jtJQe+j8jbDWhtttJr72lMk2Vx227JPBhzPIlHWgIi3HrcFwl7ZuT6gCacmvAR/
-	 g7xfAevIhvbGXRgGXQWifiehUTDcd8DU4s09uznuhJUSbcfrrfWQEsRFs2m0j8Mfd9
-	 LqcmF+oT4TACdpt1zxcpaoIOSvttx/snQU9nuc0cSX6nkQkcFTXphvvuImPdJx9q0O
-	 ryA+uquraHqXw==
+	s=k20201202; t=1778775461;
+	bh=NZmAc9HrKWORqZFVU2eBSr94To7Vjsv0TRyPrPbCY04=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=I3/AXt9hgkbcXNcCtG108srb1FZaFAJP6sB4eDR9jU82nD5FibRFXheIFU32QZ2Yl
+	 XZgazWy5/KebCqspESsmlD7FBvOB6s60nGUeZjs5mhmOFpv03EXB2l9yDj5YDz9RCA
+	 0K7zNwOaa7isDlDmveywQFSdAlcLYVgiq2CLGaQ4DKAtFQWwk8XBjWRXDjlcLb1DUl
+	 iRu1GJFGA3ay+/bgWSEtjPM2OWIdmDoJtorc0MJ3HHSE7WlCuQUAXs9SIyPvu/jHS5
+	 r2uplDqRbuiWkxFhffKXYet3msNBVZRRwV26I0xc071W+Z7d21AIUps3tgk6AQjN8H
+	 VrPTqnSOU4kPQ==
+Date: Thu, 14 May 2026 21:47:37 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: sven@kernel.org, j@jannau.net, neal@gompa.dev, 
- neil.armstrong@linaro.org, marcan@marcan.st, p.zabel@pengutronix.de, 
- David Carlier <devnexen@gmail.com>
-Cc: olteanv@gmail.com, asahi@lists.linux.dev, 
- linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org, 
- linux-kernel@vger.kernel.org
-In-Reply-To: <20260508201958.30060-1-devnexen@gmail.com>
-References: <20260507163746.108086-1-devnexen@gmail.com>
- <20260508201958.30060-1-devnexen@gmail.com>
-Subject: Re: [PATCH v3] phy: apple: atc: Fix typec switch/mux leak on
- unbind
-Message-Id: <177877489977.1079578.13272721889190867698.b4-ty@kernel.org>
-Date: Thu, 14 May 2026 21:38:19 +0530
+To: Heiko Stuebner <heiko@sntech.de>
+Cc: neil.armstrong@linaro.org, robh@kernel.org, krzk+dt@kernel.org,
+	conor+dt@kernel.org, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+	jonas@kwiboo.se
+Subject: Re: [PATCH v2 4/5] phy: rockchip: inno-usb2: Add clkout_ctl_phy
+ support
+Message-ID: <agX1obJdYdNhnvnN@vaman>
+References: <20260505170410.3265305-1-heiko@sntech.de>
+ <20260505170410.3265305-5-heiko@sntech.de>
 MIME-Version: 1.0
-X-Mailer: b4 0.13.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260514_090824_110893_A47D4315 
-X-CRM114-Status: UNSURE (   7.29  )
-X-CRM114-Notice: Please train this message.
+Content-Disposition: inline
+In-Reply-To: <20260505170410.3265305-5-heiko@sntech.de>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,32 +73,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-On Fri, 08 May 2026 21:19:58 +0100, David Carlier wrote:
-> atcphy_probe_switch() and atcphy_probe_mux() discard the pointers
-> returned by typec_switch_register() and typec_mux_register(). The
-> platform driver has no .remove callback, so when the driver unbinds
-> (e.g. via sysfs unbind) neither typec_switch_unregister() nor
-> typec_mux_unregister() is called. The framework reference taken in
-> typec_switch_register() (device_initialize() + device_add() in
-> drivers/usb/typec/mux.c) is therefore never dropped and the
-> typec_switch_dev / typec_mux_dev objects stay live forever, with
-> their sysfs entries under the typec_mux class also left behind. A
-> subsequent rebind cannot recreate them with the same fwnode-derived
-> name.
+On 05-05-26, 19:04, Heiko Stuebner wrote:
+> From: Jonas Karlman <jonas@kwiboo.se>
 > 
-> [...]
+> The 480m clk is controlled using regs in the PHY address space and not
+> in the USB GRF address space on e.g. RK3528 and RK3506.
+> 
+> Add a clkout_ctl_phy usb2phy_reg to handle enable/disable of the 480m
+> clk on these SoCs.
+> 
+> Signed-off-by: Jonas Karlman <jonas@kwiboo.se>
+> Signed-off-by: Heiko Stuebner <heiko@sntech.de>
+> ---
+>  drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 47 +++++++++++++++----
+>  1 file changed, 38 insertions(+), 9 deletions(-)
+> 
+> diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+> index 7cec45192393..d8879fcd4291 100644
+> --- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+> +++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
+> @@ -179,6 +179,7 @@ struct rockchip_usb2phy_cfg {
+>  	unsigned int	num_ports;
+>  	int (*phy_tuning)(struct rockchip_usb2phy *rphy);
+>  	struct usb2phy_reg	clkout_ctl;
+> +	struct usb2phy_reg	clkout_ctl_phy;
 
-Applied, thanks!
+This gives a kernel-doc warning. I have applied please send fix for this
 
-[1/1] phy: apple: atc: Fix typec switch/mux leak on unbind
-      commit: 1854082fe0ddb81bc93d1f8e8a00554217fd09d1
-
-Best regards,
 -- 
 ~Vinod
-
-
 
 -- 
 linux-phy mailing list
