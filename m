@@ -4,56 +4,147 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ADDEDCD4F39
-	for <linux-phy@archiver.kernel.org>; Thu, 14 May 2026 12:53:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DB6B3CD4851
+	for <linux-phy@archiver.kernel.org>; Thu, 14 May 2026 14:32:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4MCgPKh32fFR3P9/t6OjGhn6igPRIacues1p10SeYXI=; b=YEeFdWjE5qnyRp
-	LcFMSgRIM777dHkdg3Ou6hzSkSnn1SROa33hARUdHWv6CJRnOhl3Z/J6zpWWkcaXD011DJ0A/bYbG
-	2Ag6vI/l1hpxw7JU1DIuj8LbpsqRYTWeZkYVZn/9zrhnoDmyOEmx0ZtAdow4Z/bOdf0QszswVnKXG
-	FFx1G7IIyE+okCY/C2R8zAxs672urHVlTk//SEUkeolUKJRKWlb+wBSdEWEvbJOqhGDcTAVcTXnR2
-	yxGwJAof1ZJi0IPm7wmzxU/O9KfgfJMoO6yL378RfPE+0/1sRC/F0SsS1qtS4A5WEsjMxGP3c0inK
-	/Aoxe3Ro8efsGMjQZWuw==;
+	List-Owner; bh=rZmtdQJy+ypB2/QH6kgUeWwqjfr7/mt55CY2Sfar+sA=; b=ifCjTibX9k9Jzl
+	OZ3bDA87SC8pIIfR3ZR7fWX6PgnLzzVgyDJ/+k9UhHc5hqBLV1GCZUwZZs1DUU2UPPGISdzCRPghO
+	eVKYx4YMNQSJMPixIn7ICDZ7oooJ+5HqVnrFwE9pSW3eRxZEfBlm8M4dTxK6TC3p/49rEwMQs3e4A
+	BWSBMi2LvuYJS1dy5jZB4d5tRownT1ctdABH+ogD5B1q8DgDER1cXjdkYZWVBHjpDHVrazZIQS9u6
+	Gf8jE3rShnbR9W1tiU8jOZuni3/LQck0JNDzhgCkssbftVwXGGGCIFwhJ+6Hyfj54m7bUo7y/LGA4
+	+b/SDxU4WvlH2qe70OTQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wNVYi-00000005WHA-3azy;
-	Thu, 14 May 2026 12:53:01 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wNX7T-00000005kPR-1eVs;
+	Thu, 14 May 2026 14:32:59 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wNVYg-00000005WG1-1FkE
+	id 1wNX7R-00000005kOp-1PBb
+	for linux-phy@bombadil.infradead.org;
+	Thu, 14 May 2026 14:32:57 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=MIME-Version:In-Reply-To:
+	Content-Transfer-Encoding:Content-Type:References:Message-ID:Subject:Cc:To:
+	From:Date:Sender:Reply-To:Content-ID:Content-Description;
+	bh=faLCBQ19K5nYLejiXyK7N7kMl+rWdfCF9dfDNZCY14g=; b=DO9661Pw15AK2EEwJWgk/h+trD
+	+hadmuoz7jabL+YmCLzXv4QglzFkoTI+pG4vHdM94yuFBkJ2WZL0XFzFIZKSxFl27AJAgdtMvTOtS
+	VQ3wl+3SHiJeFC5s8wgJB7fRkP4WjJT2NgKKqbCbQTeqE/GtkGm2Hx5RrW+kfTnqxQOjE8V6694u0
+	vsH8MqwZh5mx4X83gKR+dOpTht5T7psqBRD33t2QpNq1JGYIrqTqvxh/7hlTqWlj+Yv1qjT0eBiJW
+	0Xg+KX3S8eGs2omqO9Hr5hIy6MCj8RrMsDOYXy5jf0d1V0S20tM4cPVquukzCok+yBxSwKdViOELE
+	G5+MWnow==;
+Received: from mail-northeuropeazlp170120005.outbound.protection.outlook.com ([2a01:111:f403:c200::5] helo=DUZPR83CU001.outbound.protection.outlook.com)
+	by desiato.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
+	id 1wNX7N-000000038F8-3rUT
 	for linux-phy@lists.infradead.org;
-	Thu, 14 May 2026 12:52:59 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id BBC2E43B9B;
-	Thu, 14 May 2026 12:52:57 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 78EB5C2BCB3;
-	Thu, 14 May 2026 12:52:56 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1778763177;
-	bh=7BcAX27xjr2pPp5tvFDoX6DqrmU5yLDBk+GGVOVgJUw=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date:From;
-	b=oWql75Ahkh1InVUuabW7hjhFvsQFpmGWMwrX5+655FAwp+APXbb9Dho4dR31CnCp+
-	 Ss6NCGngvVWkHGSiLnGefAm0GYHM9vjZDkJZCkBLq9OLAH8NBY80jqL5yDXAtkrW9q
-	 V6zBGS6rDwQzEi7UyJFq1VKT7SDEpQkvk6jI4l+msgDqXBGjlGU7R14yMhWDoBB5x1
-	 wA6GK/RUIiJNtutwrd4eZ4t7JzHL6mQRDsoUtco7ZCGWWnK88oorG8+WvUwR2ybdc0
-	 XAnWYapShREHOjMYjXEKW5wJX7VAyCnuipA3x4ZfzpkcDFZZw70XFEZa+ulVe+chiB
-	 p9INaAdAUozIg==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH 2/2] phy: qcom-qmp-pcie: Add support for ipq5210 PCIe
- phys
-To: "Varadarajan Narayanan" <varadarajan.narayanan@oss.qualcomm.com>
-Cc: olteanv@gmail.com, linux-phy@lists.infradead.org, krzk+dt@kernel.org, devicetree@vger.kernel.org, conor+dt@kernel.org, vkoul@kernel.org, robh@kernel.org, neil.armstrong@linaro.org
-In-Reply-To: <20260514-pci-phy-v1-2-482429192746@oss.qualcomm.com>
-References: <20260514-pci-phy-v1-2-482429192746@oss.qualcomm.com>
-Date: Thu, 14 May 2026 12:52:55 +0000
-Message-Id: <20260514125256.78EB5C2BCB3@smtp.kernel.org>
+	Thu, 14 May 2026 14:32:56 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=YgqQVa95cTTg69/JqbOh9QF8jru5kf8qxe8Q9XSeJMKPse2zIdC3lmfFkdfDrPiUPt2yEoI4IkWPiQdis4eJ+WdDZeMflzYeyaVMYbqP7eeJwyKiAT/WP7EnnjWIfYUXlWbGxs2FWqiaKGJRVv6V14HQ5xcL/kOzuneIUxzjymT/GmZn5g60JbitSzfPDIetW38KjlKVmAle+Ig8gdbAS4MT924IULiqhAOZ0Zf1d5j+ETIAm6kCCmhoe0qcLzU7Xi+QHwYCNXT+JnIgtyZIEs6ulUZFMO6jN9kezSyA/lq0JIWffIB3by2Q7LqWtziMr3BKJc9sqES/osb8689tgw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=k+/BEBkf5V+XUdHZXKK4LPmwvreUIy6/GROvq2oYRnk=;
+ b=E78E4wnLjr8CCwOKJw9W00P6vobdOCmPXWrtBTQnhjbTmRZFj3/2UFjFzu4giEsRfbVwdTC0QuGyiVJTGLPoO/lVlzJQ6HO7jaRCXZURJ7QCDbB0NoEFz/OXQQZ/U3PSELPBZIA2R7tKE04Y148j0oLT7CIuWniOi1U/P9BzedP9sRdTnwcUsZPcEmbmmMYfuVb0mftg7AR4ZHzngQRbvtd5s5BWboVPFpn5OM+fPowAR+QaRlnv8EkmbQT4g2Qosxkb4iGHErSxOJjUHtv86e25u6tG9NJWaeHN9fLlzr9c1wY5wqRp5dwnnu1Esm14S4FXL0i98imgytD2UTlPFg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=k+/BEBkf5V+XUdHZXKK4LPmwvreUIy6/GROvq2oYRnk=;
+ b=imR+DS5bWSwfZRWFjYPMcW2Jg8fHpd9D+oAoCwC5ct1b9eUyX8pe/AUkQhKH7FCWWB06GFawFpiKjkBwFCZ2pBRdkl/PUHI92JHYe1583Xvd5o3hVg/mC/itxCoqXnAtAdg8DX+xjPJXN6GnqtlyKVxEm503iR6SOTIp2QbpQC7VvVQHwy0Jst43IQ3D6/NRG1pSvBPRbCQpqzigJKsb/TLS4uvbSl0mNSgopqmRMBCBvmClnFaFG1dedRn964MNvqLj1nT9FS9q9MShv4Fp/pHhcpBav47x4uSNoh0yjvnb3rN8qNLSZDJ7+kqk3CTY49K+I6PHLL72+epeKPZxJg==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AM0PR04MB6900.eurprd04.prod.outlook.com (2603:10a6:208:17d::10)
+ by DB9PR04MB9645.eurprd04.prod.outlook.com (2603:10a6:10:309::13) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9913.11; Thu, 14 May
+ 2026 14:32:47 +0000
+Received: from AM0PR04MB6900.eurprd04.prod.outlook.com
+ ([fe80::7fda:8431:ca1b:b023]) by AM0PR04MB6900.eurprd04.prod.outlook.com
+ ([fe80::7fda:8431:ca1b:b023%5]) with mapi id 15.20.9913.009; Thu, 14 May 2026
+ 14:32:47 +0000
+Date: Thu, 14 May 2026 17:32:44 +0300
+From: Vladimir Oltean <vladimir.oltean@nxp.com>
+To: Josua Mayer <josua@solid-run.com>
+Cc: "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
+	"netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+	Ioana Ciornei <ioana.ciornei@nxp.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Subject: Re: [PATCH phy-next 5/5] phy: lynx-28g: add support for 25GBASER
+Message-ID: <20260514143244.fjwyed3nwc5rajoa@skbuf>
+References: <20260511150023.1903577-1-vladimir.oltean@nxp.com>
+ <20260511150023.1903577-6-vladimir.oltean@nxp.com>
+ <375dddbc-385c-4dcb-a280-33292215ae67@solid-run.com>
+ <20260513112222.2szwvxptk2udv7ga@skbuf>
+ <7aa87d24-5501-4ca4-bb39-791beb7c95f2@solid-run.com>
+Content-Disposition: inline
+In-Reply-To: <7aa87d24-5501-4ca4-bb39-791beb7c95f2@solid-run.com>
+X-ClientProxiedBy: VI1PR08CA0251.eurprd08.prod.outlook.com
+ (2603:10a6:803:dc::24) To AM0PR04MB6900.eurprd04.prod.outlook.com
+ (2603:10a6:208:17d::10)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM0PR04MB6900:EE_|DB9PR04MB9645:EE_
+X-MS-Office365-Filtering-Correlation-Id: 21a24545-0955-4a69-92da-08deb1c5ab11
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|1800799024|10070799003|376014|366016|56012099003|4143699003|11063799003|22082099003|18002099003|3023799003;
+X-Microsoft-Antispam-Message-Info: C+PZu/+6RQvKMy/mkBaOx+K1/ENAnNOqwypfnECwIBTvyvrbvrxnKnILbqDvOf5ciazdBJCXDLiEgZiKm4evHIn/kIkNz+rlsOZXPsxn1nCNjYfWai/bgdT2G/5vKH9ojfFpzdjAvvR0dNGFKUvWfuj79rjXFS2IXPK8qlBHUqH+a+bOHI7I/En3IIhvShxOcT1IjZH195UQcD4z15ckmYOJFu7u8rBdf56849TZer691cPpIX/MTIYURPDvj3uJEP3O54nMsjDBQaZIemZbCq+mAOFV9GZ3rMgyp0guiVY7zsgubddIVptIsDDi9tdr5A80D9CubzyL1A3FCrf51zB0FY+BoRM1AESXMHVMUK+4ju29XL5TXD3jltIpSIpjNWzaRYQNGTzqLq3vJm+1SjJTUD8JAYtXV6bChTvcXCWcACLj55l+Cym5Dsep6zpdIM7doLDch2k701ynubaihp1e/d7WrPmbKJ37ywdC/4MFCQeaS/lLoUqP4iJ9QBUFek8bQjpGRT4IlUCuIVM+fsTvoTxZ56x9BXk0WBR18Wz5n06nrukA/4Xb845oI29DkP5CMxx3YnK8ooKhAbxts90jJnahiFJ1lA4Dc+hVvdopXXG5BkeuuC+KxITuYJAy+6EVHIkuYYMuCYACWVx5xBS9k0biwmtW7oVoBq9rW3ogXLxw0c9xK6bM84N6qWaV
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR04MB6900.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(1800799024)(10070799003)(376014)(366016)(56012099003)(4143699003)(11063799003)(22082099003)(18002099003)(3023799003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 2
+X-MS-Exchange-AntiSpam-MessageData-0: =?iso-8859-1?Q?grGjnqHq207cGgk+IQuF5OUSCYKb/I1/eF4pweHAtuz+OUepnvrQHANZrj?=
+ =?iso-8859-1?Q?5MPQCmenYba3NLN3kHu7rTzB+ZXalf31ys2fine2ZSsWyAYOhwSfpI2gWQ?=
+ =?iso-8859-1?Q?k+E5opcxN9VOPoid+tIcWr/Rc5oU+gsFyJzS149I7xwqN/A5GMS8wh5AkI?=
+ =?iso-8859-1?Q?WxjX4yV3tBgsWJWvQWTQ+vkRf35u7nL9LDmfhjXhptHYbY2JDsXqBvcbc5?=
+ =?iso-8859-1?Q?b384tJJd6VTq0VD/+I58N9G6Gq/LQ++IIfHKN3GSQWnK7NPi7emPBy3KMb?=
+ =?iso-8859-1?Q?3VbeUelshPRirgVWSGi948Md41cNWGnAFdcfsNCi8tUpZwATX0xLJ8xj1Z?=
+ =?iso-8859-1?Q?h2hZa62GrsodzWQ08J5oGJE/l2nmF2DhsayWUOz5HNhdmyVEu5C2BxAcK7?=
+ =?iso-8859-1?Q?XNdz91Y693SiVpX8IXI6QuNt1WvW4LHrNy0i1j+gnHEPQ6uTWxiRdj8ZMB?=
+ =?iso-8859-1?Q?tBfY4FZ6zXCGjqC27C96UkHT+I6Eb2iJVXpyFA5i2qV53+78mvr+XL0aAq?=
+ =?iso-8859-1?Q?G7dAJ7Ewe4gOznzLip1dl9ljpJZMQG4SBQI6Sj15bIx5yUPuwRu5lRTlKa?=
+ =?iso-8859-1?Q?U4A7asXHRvgeSn6lU8l6ZTPHadAsok3SxUvhRKCbWlaIou6M3tTebMRLd5?=
+ =?iso-8859-1?Q?Jt/6x6eSkauwZaJA2+pOQedvPsFpMRGJf5aPFZl2qSYiHtRm/ABmnc6UWv?=
+ =?iso-8859-1?Q?PeAWD/3kTb3yc2dTEfzeX/vOcDFPbdUt660dFQdotkCzzNo7fgIq/jQTzY?=
+ =?iso-8859-1?Q?ScD/Gd+I1zX/mtfBga6FFV6K0PP2nI7EflBLM/7Q0NJY00FlOJMq5AkJ8Z?=
+ =?iso-8859-1?Q?hEyZZlxTBi7Say0jYSD/M7SYbCggTcAWGsviin3pSOkg0QxZFk9dIryKZt?=
+ =?iso-8859-1?Q?IjX9NaLmFZTPMI6W9ZPUmq7D0eF/YWpwsGxSG0hPqpakEcLBsHxy0m7TIo?=
+ =?iso-8859-1?Q?0XgULIPpDNsXVHHq8Om+H1Gnilgs/oLHn9Oll4xPw7rsqpttAnCMtF84HH?=
+ =?iso-8859-1?Q?jfsaJBY1uaCfz7WAdgz4yJPy3lmipnK71FzJQYLnebSZZqcM8Xt1qRSOfi?=
+ =?iso-8859-1?Q?itcWvZmXOcWhao6YURq8gcjk/6jhiv2LCXaTrLyosfpmb9NnBHAfNfKP37?=
+ =?iso-8859-1?Q?xSsW4Mx5QK142TGrU29B3VdrDZK+Kn7q2xjiNu6tiJWPWKJrNfwybazzaL?=
+ =?iso-8859-1?Q?F8gmo6uZQRPEjX9dS4DrWSy8Q9nXRhkvjO3qeNNrN2jOr+tFn7Gizj4sV0?=
+ =?iso-8859-1?Q?KZ1/yJjHukUVtSlKixAFcPe6A37V39BmHoBjnQvkyZYS8HYuJcpAWTMkgC?=
+ =?iso-8859-1?Q?GTgMYheQQyIFuaSvcVMrEY1jEXuRpydJ4lQb7IKpc6JuLawFo5CBkSZw6+?=
+ =?iso-8859-1?Q?+XBJdKLt3HYPugjT9avLg251hb7DAWS8jHyp/hWs61IkYdVnGJDDNSbmEv?=
+ =?iso-8859-1?Q?ck7ylQrodCk6g5j4HOwguY/DANtseKezqqyMsF9Q6lGV4rq3Gor5k+H6dK?=
+ =?iso-8859-1?Q?5iuaZj9HMGJfvtlJv0UKMga2LtdiMX3NNGgLT56Z1yeloiPlDRqIHbxzrt?=
+ =?iso-8859-1?Q?rLoFcJZ0j/YMMT9DtyKn7FJdHvWPBs1ZhlOlLLa4qM+AzJT2xGYROoZS0Z?=
+ =?iso-8859-1?Q?mf47luQcz+UP1PhW1/SqgPtsRAccd012LrL/6mip101+4qRE00xdCN1J4q?=
+ =?iso-8859-1?Q?2kOc3mp9+0Hajf8Di8qX+NEN/zyUrPma1+sWU+8M9GrNEUeFGDzWXPIXO1?=
+ =?iso-8859-1?Q?BNaCVqsETX35S90x2/T9r8WXGTsrpfIVTO+uXiDSiQ6Un0uS3lbiZXWcLx?=
+ =?iso-8859-1?Q?XW7pGI5BBo1pUSltloMtjBlET65hoC2mIHgKAEDTxjt8saCGT345PfUr3q?=
+ =?iso-8859-1?Q?9Y?=
+X-MS-Exchange-AntiSpam-MessageData-1: ESdz4R1buAyrLg==
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 21a24545-0955-4a69-92da-08deb1c5ab11
+X-MS-Exchange-CrossTenant-AuthSource: AM0PR04MB6900.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 May 2026 14:32:47.1602
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: vCVrhJ1u0MIonm7oSWeTcN0os1Pi2BUGLmfR91Z2KwA2JINtPVMUodMF+iDavWirDL97t0W5HJeC0QoqUI/m+Q==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB9PR04MB9645
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260514_055258_380027_29C7318A 
-X-CRM114-Status: GOOD (  12.66  )
+X-CRM114-CacheID: sfid-20260514_153254_348297_B11299A2 
+X-CRM114-Status: GOOD (  23.22  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -65,79 +156,79 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0xvd10gUmVkdW5kYW50IGFycmF5
-IGR1cGxpY2F0aW9uIGFuZCBtaXNsZWFkaW5nIG5hbWluZyBmb3IgUEhZIGluaXQgdGFibGVzCi0t
-Cgpjb21taXQgMWE0ZmI2NWE4NDQ5NDQxNWVhMmMxNTFlZjdlMWE2YzQzMjhkM2Q3ZgpBdXRob3I6
-IFZhcmFkYXJhamFuIE5hcmF5YW5hbiA8dmFyYWRhcmFqYW4ubmFyYXlhbmFuQG9zcy5xdWFsY29t
-bS5jb20+CgpwaHk6IHFjb20tcW1wLXBjaWU6IEFkZCBzdXBwb3J0IGZvciBpcHE1MjEwIFBDSWUg
-cGh5cwoKVGhpcyBjb21taXQgYWRkcyBzdXBwb3J0IGZvciB0aGUgUENJZSBQSFlzIGZvdW5kIG9u
-IHRoZSBRdWFsY29tbQppcHE1MjEwIHBsYXRmb3JtLgoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9w
-aHkvcXVhbGNvbW0vcGh5LXFjb20tcW1wLXBjaWUuYyBiL2RyaXZlcnMvcGh5L3F1YWxjb21tL3Bo
-eS1xY29tLXFtcC1wY2llLmMKPiAtLS0gYS9kcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1x
-bXAtcGNpZS5jCj4gKysrIGIvZHJpdmVycy9waHkvcXVhbGNvbW0vcGh5LXFjb20tcW1wLXBjaWUu
-Ywo+IEBAIC01MTQsNiArNTE0LDEwNSBAQCBzdGF0aWMgY29uc3Qgc3RydWN0IHFtcF9waHlfaW5p
-dF90YmwgaXBxODA3NF9wY2llX2dlbjNfcGNzX21pc2NfdGJsW10gPSB7ClsgLi4uIF0KPiArc3Rh
-dGljIGNvbnN0IHN0cnVjdCBxbXBfcGh5X2luaXRfdGJsIGlwcTUyMTBfZ2VuM3gxX3BjaWVfZXBf
-dHhfdGJsW10gPSB7Cj4gKwlRTVBfUEhZX0lOSVRfQ0ZHKFFTRVJERVNfVjRfVFhfUkVTX0NPREVf
-TEFORV9PRkZTRVRfVFgsIDB4MDIpLAo+ICsJUU1QX1BIWV9JTklUX0NGRyhRU0VSREVTX1Y0X1RY
-X0xBTkVfTU9ERV8xLCAweDA2KSwKPiArCVFNUF9QSFlfSU5JVF9DRkcoUVNFUkRFU19WNF9UWF9S
-Q1ZfREVURUNUX0xWTF8yLCAweDEyKSwKPiArfTsKCkRvZXMgdGhpcyBuZXcgdGFibGUgZHVwbGlj
-YXRlIHRoZSBleGlzdGluZyBpcHE2MDE4X3BjaWVfdHhfdGJsPyBDb3VsZCB3ZQpyZXVzZSB0aGUg
-ZXhpc3RpbmcgdGFibGUgaW5zdGVhZCBvZiBjcmVhdGluZyBhIHJlZHVuZGFudCBjb3B5PwoKWyAu
-Li4gXQo+ICtzdGF0aWMgY29uc3Qgc3RydWN0IHFtcF9waHlfaW5pdF90YmwgaXBxNTIxMF9nZW4z
-eDFfcGNpZV9lcF9wY3NfdGJsW10gPSB7Cj4gKwlRTVBfUEhZX0lOSVRfQ0ZHKFFQSFlfVjRfUENT
-X0ZMTF9DTlRSTDEsIDB4MDEpLAo+ICsJUU1QX1BIWV9JTklUX0NGRyhRUEhZX1Y0X1BDU19SRUZH
-RU5fUkVRX0NPTkZJRzEsIDB4MGQpLAo+ICsJUU1QX1BIWV9JTklUX0NGRyhRUEhZX1Y0X1BDU19H
-MTJTMV9UWERFRU1QSF9NM1A1REIsIDB4MTApLAo+ICsJUU1QX1BIWV9JTklUX0NGRyhRUEhZX1Y0
-X1BDU19SWF9TSUdERVRfTFZMLCAweGFhKSwKPiArCVFNUF9QSFlfSU5JVF9DRkcoUVBIWV9WNF9Q
-Q1NfUDJVM19XQUtFVVBfRExZX1RJTUVfQVVYQ0xLX0wsIDB4MDEpLAo+ICsJUU1QX1BIWV9JTklU
-X0NGRyhRUEhZX1Y0X1BDU19SWF9EQ0NfQ0FMX0NPTkZJRywgMHgwMSksCj4gKwlRTVBfUEhZX0lO
-SVRfQ0ZHKFFQSFlfVjRfUENTX0VRX0NPTkZJRzUsIDB4MDEpLAo+ICt9OwoKSXMgaXQgcG9zc2li
-bGUgdGhpcyBpcyBhbiBleGFjdCBkdXBsaWNhdGUgb2YgaXBxNjAxOF9wY2llX3Bjc190Ymw/Cgpb
-IC4uLiBdCj4gQEAgLTY1NCw2ICs3NTMsMTMgQEAgc3RhdGljIGNvbnN0IHN0cnVjdCBxbXBfcGh5
-X2luaXRfdGJsIGlwcTk1NzRfZ2VuM3gyX3BjaWVfc2VyZGVzX3RibFtdID0gewpbIC4uLiBdCj4g
-K3N0YXRpYyBjb25zdCBzdHJ1Y3QgcW1wX3BoeV9pbml0X3RibCBpcHE5NTc0X3BjaWVfdHhfdGJs
-W10gPSB7Cj4gKwlRTVBfUEhZX0lOSVRfQ0ZHKFFTRVJERVNfVjRfVFhfUkVTX0NPREVfTEFORV9P
-RkZTRVRfVFgsIDB4MDIpLAo+ICsJUU1QX1BIWV9JTklUX0NGRyhRU0VSREVTX1Y0X1RYX1JDVl9E
-RVRFQ1RfTFZMXzIsIDB4MTIpLAo+ICsJUU1QX1BIWV9JTklUX0NGRyhRU0VSREVTX1Y0X1RYX0hJ
-R0haX0RSVlJfRU4sIDB4MTApLAo+ICsJUU1QX1BIWV9JTklUX0NGRyhRU0VSREVTX1Y0X1RYX0xB
-TkVfTU9ERV8xLCAweDA2KSwKPiArfTsKCkNvdWxkIHRoaXMgdGFibGUgYmUgZW50aXJlbHkgcmVw
-bGFjZWQgYnkgaXBxODA3NF9wY2llX2dlbjNfdHhfdGJsPwoKQWxzbywgZG9lcyB0aGUgbmFtZSBp
-cHE5NTc0X3BjaWVfdHhfdGJsIGFjY3VyYXRlbHkgcmVmbGVjdCBpdHMgdXNhZ2U/IEl0CnNlZW1z
-IHRvIGJlIHVzZWQgZXhjbHVzaXZlbHkgYnkgdGhlIG5ld2x5IGFkZGVkIGlwcTUyMTBfZ2VuM3gx
-X3BjaWVwaHlfY2ZnLAp3aGlsZSB0aGUgYWN0dWFsIElQUTk1NzQgY29uZmlndXJhdGlvbnMgcmV0
-YWluIHRoZWlyIHVzZSBvZiB0aGUgaXBxODA3NCB0YWJsZS4KClsgLi4uIF0KPiBAQCAtMzYxMyw2
-ICszNzE5LDQ5IEBAIHN0YXRpYyBjb25zdCBzdHJ1Y3QgcW1wX3BoeV9jZmcgaXBxNjAxOF9wY2ll
-cGh5X2NmZyA9IHsKWyAuLi4gXQo+ICtzdGF0aWMgY29uc3Qgc3RydWN0IHFtcF9waHlfY2ZnIGlw
-cTUyMTBfZ2VuM3gxX3BjaWVwaHlfY2ZnID0gewo+ICsJLmxhbmVzCQkJPSAxLAo+ICsKPiArCS5v
-ZmZzZXRzCQk9ICZxbXBfcGNpZV9vZmZzZXRzX3Y0eDEsCj4gKwo+ICsJLnRibHMgPSAgewo+ICsJ
-CS5zZXJkZXMJCT0gaXBxOTU3NF9nZW4zeDFfcGNpZV9zZXJkZXNfdGJsLAo+ICsJCS5zZXJkZXNf
-bnVtCT0gQVJSQVlfU0laRShpcHE5NTc0X2dlbjN4MV9wY2llX3NlcmRlc190YmwpLAo+ICsJCS50
-eAkJPSBpcHE5NTc0X3BjaWVfdHhfdGJsLAo+ICsJCS50eF9udW0JCT0gQVJSQVlfU0laRShpcHE5
-NTc0X3BjaWVfdHhfdGJsKSwKCklmIGlwcTk1NzRfcGNpZV90eF90YmwgaXMgaWRlbnRpY2FsIHRv
-IGlwcTgwNzRfcGNpZV9nZW4zX3R4X3RibCwgc2hvdWxkCnRoaXMgcmVmZXJlbmNlIHRoZSBleGlz
-dGluZyBpcHE4MDc0X3BjaWVfZ2VuM190eF90YmwgaW5zdGVhZD8KCj4gKwkJLnJ4CQk9IGlwcTk1
-NzRfcGNpZV9yeF90YmwsCj4gKwkJLnJ4X251bQkJPSBBUlJBWV9TSVpFKGlwcTk1NzRfcGNpZV9y
-eF90YmwpLApbIC4uLiBdCj4gKwkudGJsc19lcCA9ICYoY29uc3Qgc3RydWN0IHFtcF9waHlfY2Zn
-X3RibHMpIHsKPiArCQkuc2VyZGVzCQk9IGlwcTUyMTBfZ2VuM3gxX3BjaWVfZXBfc2VyZGVzX3Ri
-bCwKPiArCQkuc2VyZGVzX251bQk9IEFSUkFZX1NJWkUoaXBxNTIxMF9nZW4zeDFfcGNpZV9lcF9z
-ZXJkZXNfdGJsKSwKPiArCQkudHgJCT0gaXBxNTIxMF9nZW4zeDFfcGNpZV9lcF90eF90YmwsCj4g
-KwkJLnR4X251bQkJPSBBUlJBWV9TSVpFKGlwcTUyMTBfZ2VuM3gxX3BjaWVfZXBfdHhfdGJsKSwK
-PiArCQkucngJCT0gaXBxNTIxMF9nZW4zeDFfcGNpZV9lcF9yeF90YmwsCj4gKwkJLnJ4X251bQkJ
-PSBBUlJBWV9TSVpFKGlwcTUyMTBfZ2VuM3gxX3BjaWVfZXBfcnhfdGJsKSwKPiArCQkucGNzCQk9
-IGlwcTUyMTBfZ2VuM3gxX3BjaWVfZXBfcGNzX3RibCwKPiArCQkucGNzX251bQk9IEFSUkFZX1NJ
-WkUoaXBxNTIxMF9nZW4zeDFfcGNpZV9lcF9wY3NfdGJsKSwKClNpbWlsYXJseSwgY291bGQgdGhl
-c2UgcG9pbnQgdG8gaXBxNjAxOF9wY2llX3R4X3RibCBhbmQKaXBxNjAxOF9wY2llX3Bjc190Ymwg
-cmVzcGVjdGl2ZWx5PwoKLS0gClNhc2hpa28gQUkgcmV2aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5k
-ZXYvIy9wYXRjaHNldC8yMDI2MDUxNC1wY2ktcGh5LXYxLTAtNDgyNDI5MTkyNzQ2QG9zcy5xdWFs
-Y29tbS5jb20/cGFydD0yCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlz
-dHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
-aW5mby9saW51eC1waHkK
+Hi Josua,
+
+On Wed, May 13, 2026 at 11:41:06AM +0000, Josua Mayer wrote:
+> Am 13.05.26 um 13:22 schrieb Vladimir Oltean:
+> =
+
+> > On Wed, May 13, 2026 at 11:00:32AM +0000, Josua Mayer wrote:
+> >> Wouldn't it be more clear instead of indirect lane offset shift with
+> >> lynx_28g_e25g_pcvt, to instead fix the E25G_CFG definition?:
+> >>
+> >> -#define E25G_CFG(id) (28 - (id) * 4) /* Offset into PCCD */
+> >> +#define E25G_CFG(id) ((id) * 4)=A0 =A0 =A0 /* Offset into PCCD */
+> >>
+> >> This is equivalent when inserting (7 - lane) into E25G_CFG id:
+> >>
+> >> (28 - (id) * 4) =3D=A0(28 - (7 - lane) * 4) =3D=A0(28 - 7*4 + lane*4)
+> > The 'indirect' lane offset shift is actually a two-step lookup:
+> > lane -> protocol converter index
+> > protocol converted index -> offset into PCCD
+> >
+> > LX2160ARM documents PCCD fields as:
+> > E25GA_CFG, aka E25G_CFG(0) in code: 30:28
+> > E25GB_CFG, aka E25G_CFG(1) in code: 26:24
+> > ...
+> > E25GH_CFG, aka E25G_CFG(7) in code: 2:0
+> >
+> > The odd bit is that lane 0 uses E25G protocol converter 7, unlike, say,
+> > 1G and 10G where we have a lane:pcvt identity mapping.
+> > lynx_28g_e25g_pcvt() performs that translation.
+> >
+> > Additionally, for locating E40GA_CFG, E40GB_CFG in PCCE, I've adopted
+> > the same scheme downstream, where E40G_CFG() returns bits 30:28 for
+> > argument 0 (pcvt A) and bits 26:24 for argument 1 (pcvt B), and it is
+> > called with this lane->pcvt translation function:
+> >
+> > static int lynx_28g_e40g_pcvt(int lane)
+> > {
+> > 	return lane < 4 ? 1 : 0;
+> > }
+> >
+> > Are you saying that merging the two lookups would be more clear because
+> > as a reader you'd get to ask yourself less questions (the code would
+> > flow more naturally) despite the non-trivial lane<->pcvt mapping,
+> Exactly for this reason. Fewer look-up steps.
+> RM dos not document this mapping, but now you do in source-code.
+> =
+
+> Perhaps a short comment on the function will help, e.g.
+> /* get protocol converter id for lane */
+> =
+
+> > or why
+> > exactly? For me it is the exact opposite. I can follow the RM
+> > definitions and then I have a separate function that tells me how lanes
+> > are mapped to the protocol converters.
+> I think you give a good reason here!
+
+So you would like me to respin this series? What change would address
+your feedback here? Keep the E25G_CFG() macros as is, just add this?
+
++/* get protocol converter id for lane */
+ static int lynx_28g_e25g_pcvt(int lane)
+ {
+ 	return 7 - lane;
+ }
+
+-- =
+
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
