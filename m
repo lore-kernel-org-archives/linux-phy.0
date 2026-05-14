@@ -4,57 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3434ACD4F39
-	for <linux-phy@archiver.kernel.org>; Thu, 14 May 2026 16:18:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 62222CD4F39
+	for <linux-phy@archiver.kernel.org>; Thu, 14 May 2026 16:18:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gvDGAiOP9JViTybjYGm9fx86zQlmuGGhm2g6Fk7y2Bs=; b=VutFdHiNwNwbP3
-	GalwhXgl8pHcbJxXN1dsYRTwuEg+Yr05BZIuM2jbvWaCEO79V+qxxn7ERKh9uruzEZEE3LuEsS4cB
-	lYWxEDHuswgeYUA734FU0uuZ2FSvkGkotgv7JaMk2rHvsHwnCu+3LxegqwgR0h5BdLZiXa6sVLBFc
-	KuEeGnOeWeuJDrIPqmM0wvOOAeQoTINRbXON7DsXqraXCBcyqlW9xuhzZe39T0TRWnnK1zfvEERau
-	7sjALmxjIUSuEcYWD7BlohGdwuBq2ys6QPW+s+u9nnJ0Zf2eJri5bEhYE0r4JgDLUBTsM64YqcdWZ
-	4C33mhcsRB6IOPQfG6qQ==;
+	List-Owner; bh=l4HX4pyxTyPbYTcENNhSx2iMDzF369MG7whPy5HnOkY=; b=bgqh2Ign55dLHc
+	lSCRPD4GsTFTTgwrLSVzjDl6hxTawv4TYpNQiZqRQjCe2pavBU6+cH3i6GjJi99pPKfkf11SG6xSb
+	uV8mlMb70Io/R2VYybpJiPSXFsiXWUXhMCd/Vt8Z032W5sHy/sVrwIaI/9HAl86+ACNoSnhlzyudO
+	i7FUfrpSCpb7HA5sxeHHRxcc8qK0ZgqY9TIUZupDpDOv82YyBLcrGxEyd7aW0H28tiB4mfyi2j1Ce
+	4BtdYnnCB7sYMqJqCwZXycdEGid0juPhp0Z3GQgHkAPSybG67IJ7AaSANHHTH2j537p60Cy5Os21w
+	24wtqjo9LWZA9dk+8FBw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wNYlD-000000061be-40ZV;
-	Thu, 14 May 2026 16:18:07 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wNYlJ-000000061fB-0QqL;
+	Thu, 14 May 2026 16:18:13 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wNYlC-000000061aV-2PlK
+	id 1wNYlG-000000061cs-19B0
 	for linux-phy@lists.infradead.org;
-	Thu, 14 May 2026 16:18:06 +0000
+	Thu, 14 May 2026 16:18:11 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id D3CF16015B;
+	by sea.source.kernel.org (Postfix) with ESMTP id BF604437AD;
+	Thu, 14 May 2026 16:18:07 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2D361C2BCC9;
 	Thu, 14 May 2026 16:18:05 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BC9EAC2BCB3;
-	Thu, 14 May 2026 16:18:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1778775485;
-	bh=/g4jFjZPiFSrClQIiaJoDlvUPxodjYT6LCU7ijnm8BM=;
+	s=k20201202; t=1778775487;
+	bh=7YYdKtGlfnKHsAP2aKZIZJDNPvZ1jULG4/aw9QNQLgU=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=LyBsB3EIWVZOr4P93gQNPAlllnr+FlO7i+5WUsP5PoxljT8j8A1jsceMHoeOQxLqQ
-	 tF/JAWtAGNiIS+BzPapxpBI7x4dVkyIVxIjYMBQu46DcBd6hNkdixAlSTd2ODUzXVw
-	 KENOMYjFVf0FXq8HJXesrVKt6FHUKFIZHJu5GQP70cy91lPP9eMdbUYy1hJegltRA/
-	 NJVxDH+GUhXz76+ZH3KOmTzTIHhXmAlY/15fpxEZybIRp1X24bvMb5uyUtt70fAvTF
-	 oMLvFjrD6Yn/rjOi/ft4G3JSmwdpzWLZMvGOW2o4zjwSibGBmKhhj4yAn+CLYpMPlI
-	 hCHGKfV9xJF7A==
+	b=kHXvUjODb/DDtyVekllZYuJqqWrI+mT5LlGzje2hciMqsSHyuPQmR+mqlAm51Cv90
+	 X1LahNWQpmT917+2zrPnG/1a0HL111QdvuEFQIrNirB8nq+2B+doyuYOjrfiOac9H4
+	 m0C+xzoHtOdl/NcDw/BYFYkZ3MVmaOvddsko65jJzMRKUCbYUPtsWsTQCna4HtAVek
+	 AmjjqdfVm2bJG37skAXQV1pfFWI1xsqQ/9DmYfHHymdLO6CbUBzdpr0n6UV41n7QNx
+	 G+f7JLbEAVFIfhnDJaNP/alZJ2u0nChxK+ZiJut+EH2XO7b513Q03kyOnEkOAP9n+j
+	 3uiq2rrlxfmOg==
 From: Vinod Koul <vkoul@kernel.org>
-To: linux-phy@lists.infradead.org, Caleb James DeLisle <cjd@cjdns.fr>
-Cc: naseefkm@gmail.com, neil.armstrong@linaro.org, robh@kernel.org, 
- krzk+dt@kernel.org, conor+dt@kernel.org, linux-mips@vger.kernel.org, 
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-In-Reply-To: <20260425173642.406089-1-cjd@cjdns.fr>
-References: <20260425173642.406089-1-cjd@cjdns.fr>
-Subject: Re: [PATCH v3 0/2] phy: econet: Add PCIe PHY driver for EcoNet
- SoCs
-Message-Id: <177877548239.1092446.7962897182903086280.b4-ty@kernel.org>
-Date: Thu, 14 May 2026 21:48:02 +0530
+To: linux-phy@lists.infradead.org, Rosen Penev <rosenp@gmail.com>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>, 
+ linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org
+In-Reply-To: <20260315214930.4621-1-rosenp@gmail.com>
+References: <20260315214930.4621-1-rosenp@gmail.com>
+Subject: Re: [PATCH] phy: qcom-usb-hs: use flexible array member
+Message-Id: <177877548580.1092446.11009102114814879783.b4-ty@kernel.org>
+Date: Thu, 14 May 2026 21:48:05 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260514_091810_335342_40F26146 
+X-CRM114-Status: UNSURE (   3.11  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,24 +74,15 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Sat, 25 Apr 2026 17:36:40 +0000, Caleb James DeLisle wrote:
-> I just added explicit includes per the recommendation of
-> vladimiroltean/sashiko
-> See https://sashiko.dev/#/patchset/20260404184918.2184070-1-cjd@cjdns.fr
+On Sun, 15 Mar 2026 14:49:30 -0700, Rosen Penev wrote:
+> Simplify allocation by removing kmalloc_array and just doing kzalloc.
 > 
-> Changes from v2:
-> * Added includes per recommendation of vladimiroltean/sashiko
-> * Rebased on commit 7080e32d3f09 ("Add linux-next specific files for 20260424")
-> * v2: https://lore.kernel.org/linux-mips/20260404184918.2184070-1-cjd@cjdns.fr/
 > 
-> [...]
 
 Applied, thanks!
 
-[1/2] dt-bindings: phy: Document PCIe PHY in EcoNet EN751221 and EN7528
-      commit: 2cc066dbd3a211628b40967949cff2790d0f62eb
-[2/2] phy: econet: Add PCIe PHY driver for EcoNet EN751221 and EN7528 SoCs.
-      commit: da1af49257591190ad6521abb3198f1f40420407
+[1/1] phy: qcom-usb-hs: use flexible array member
+      commit: deb281cec3cbef5f02c6bc29fa5cd51f6d5be10f
 
 Best regards,
 -- 
