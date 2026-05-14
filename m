@@ -4,64 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E4133CD4851
-	for <linux-phy@archiver.kernel.org>; Thu, 14 May 2026 15:49:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0BFB5CD4851
+	for <linux-phy@archiver.kernel.org>; Thu, 14 May 2026 16:08:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eXsU+UpfIZkycOTlEVZq4AA3MfL3ih39kYZa66w3VSY=; b=Gq/S9lbE3cY27C
-	ow4ILckGYf9Ud3oGccnAUuhf3QLAV6MPcJW+tabNCgEjFwtH38VPLJxgAW/n7L/++Ia9OpS5kwhXP
-	J7bXu8rmavFKtyCWK+lgVVdNML0sAcPy5zzPSnXuPxrPf2LLO2ouNGFA3epNPk2dXhACJVCqnxnoC
-	zzUQYAMtnjQ6skXyWdgJ/qO07mj0smCu2OdiewufyrPld4YUJ8WaBLJ/MAkyS4vQRqKEofx8FwUYW
-	h9/tHZWo7W225YRHbn5hKonXo1DuRKYGXrwpy9wfn22ujFKul6ZIsYle9gEaXijU+6Tau05BKZ/y2
-	ECAo9TqFHzin8/lmxvjA==;
+	List-Owner; bh=IbVKTEC6Py2Q71xijHWQ9YkLUBOFv9STlTqFNuI1fXw=; b=UNF2pYTj1fZsNK
+	/GIdbiSyauCeld9iWu33EH23fs65DIFMU3qgsi/jxckr4VQ6cojzoKXcZ7rokLoQSOvf6o4H3bszO
+	4FMpSPaM4tj5n5JKaSJhjeK++MStSla0+gWfbzCEVQZm58t/+2jY8NRqFDjaaHLUcOfKFkInnSkfb
+	e+oRaFA2jdA0bmt4g2emAr0xn+48+IDjniF4q4cp8d8TtpJQODCjtxRD8ABSoeZUI3bO5OdeJ4HG3
+	Zmzld8eYQ5g2Z6NpTUhcjYCRxeyeG8J7ZqfQIGolg2p0zkScdsbzBQFogGiiy/6UF4Y1Io3uhGRKW
+	X1X0OD9KyoVBHNBm5okQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wNYJU-00000005wVh-1oGK;
-	Thu, 14 May 2026 15:49:28 +0000
+	id 1wNYbq-0000000600v-1xFi;
+	Thu, 14 May 2026 16:08:26 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wNYJR-00000005wUi-1ZVy;
-	Thu, 14 May 2026 15:49:26 +0000
+	id 1wNYbo-0000000600N-0D38;
+	Thu, 14 May 2026 16:08:25 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 686D043CD0;
-	Thu, 14 May 2026 15:49:24 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C77FDC2BCB3;
-	Thu, 14 May 2026 15:49:23 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 7A6214066D;
+	Thu, 14 May 2026 16:08:23 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 26BD6C2BCB3;
+	Thu, 14 May 2026 16:08:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1778773764;
-	bh=HvYYmbt7vIXkmuUhJ1bsT180d7aFwrKQEHP4FFnba90=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=Y7G/MlDxc7c+iftuGNVZEM9Kb7YR+s4gViNlXrJHQtlEzT36sylvsQ3qTpmLx4yxa
-	 iVr3zOI8qWxKqej6V1ZFUwpdVgzYLLu57pO+QN+YOPPMobuaj89I9fUt6tmRenh7bT
-	 uHZ5ryMuUrjba9tzsuaNTpvpzIhPL3U0vCbZTiw6E0iMQ5MhAOz3oXcGH2u/lGd/yj
-	 nhd9wOvKsDZ+wYfwPzjDFqZklfutUCwFAwoIiOODxsJ+33fJA9fndK6qDIj5ymZXJ5
-	 sB49VnvrdHeM+ZSsI/04qwecYL1isVJXSvS9eITmx2P6RW4FSWHLSE7H9iJ6gjP8BG
-	 J2Kl2fWSncpWA==
-Date: Thu, 14 May 2026 21:19:20 +0530
+	s=k20201202; t=1778774903;
+	bh=JgMf4wRpFiwD3alNMNl5XaWiw8QaBk00SyYTww0vZHg=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=QX849FNdq4n1pmDeYiczWfPi/yO0SBj6+z6Hg34KhSCUe8UfPKXfpb8S0/gUq29Rw
+	 ntpr2ddLBmVU18R2dqsRINe99c1TKju9sCH4QXRCdj4ipVNkOUhTmISarVEy22t1A2
+	 xG/jtJQe+j8jbDWhtttJr72lMk2Vx227JPBhzPIlHWgIi3HrcFwl7ZuT6gCacmvAR/
+	 g7xfAevIhvbGXRgGXQWifiehUTDcd8DU4s09uznuhJUSbcfrrfWQEsRFs2m0j8Mfd9
+	 LqcmF+oT4TACdpt1zxcpaoIOSvttx/snQU9nuc0cSX6nkQkcFTXphvvuImPdJx9q0O
+	 ryA+uquraHqXw==
 From: Vinod Koul <vkoul@kernel.org>
-To: Felix Gu <ustc.gu@gmail.com>
-Cc: Peter Griffin <peter.griffin@linaro.org>,
-	=?iso-8859-1?Q?Andr=E9?= Draszik <andre.draszik@linaro.org>,
-	Tudor Ambarus <tudor.ambarus@linaro.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Naveen Kumar <mnkumar@google.com>,
-	Joy Chakraborty <joychakr@google.com>, Roy Luo <royluo@google.com>,
-	linux-arm-kernel@lists.infradead.org,
-	linux-samsung-soc@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] phy: google-usb: Fix runtime PM cleanup on probe failure
-Message-ID: <agXvAB1AgXvywP2B@vaman>
-References: <20260316-google-v1-1-30a034e87a2a@gmail.com>
+To: sven@kernel.org, j@jannau.net, neal@gompa.dev, 
+ neil.armstrong@linaro.org, marcan@marcan.st, p.zabel@pengutronix.de, 
+ David Carlier <devnexen@gmail.com>
+Cc: olteanv@gmail.com, asahi@lists.linux.dev, 
+ linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org, 
+ linux-kernel@vger.kernel.org
+In-Reply-To: <20260508201958.30060-1-devnexen@gmail.com>
+References: <20260507163746.108086-1-devnexen@gmail.com>
+ <20260508201958.30060-1-devnexen@gmail.com>
+Subject: Re: [PATCH v3] phy: apple: atc: Fix typec switch/mux leak on
+ unbind
+Message-Id: <177877489977.1079578.13272721889190867698.b4-ty@kernel.org>
+Date: Thu, 14 May 2026 21:38:19 +0530
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260316-google-v1-1-30a034e87a2a@gmail.com>
+X-Mailer: b4 0.13.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260514_084925_430545_2E2DDE5B 
-X-CRM114-Status: GOOD (  18.20  )
+X-CRM114-CacheID: sfid-20260514_090824_110893_A47D4315 
+X-CRM114-Status: UNSURE (   7.29  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,58 +77,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 16-03-26, 21:11, Felix Gu wrote:
-> In google_usb_phy_probe(), if typec_switch_register() fails,
-> pm_runtime_disable() is not called, leading to an unbalanced
-> runtime PM state on probe failure.
-> 
-> Switch to devm_pm_runtime_enable() to ensure that runtime PM is
-> automatically disabled both on probe failure and during driver
-> removal.
 
-PLease see https://sashiko.dev/#/patchset/20260316-google-v1-1-30a034e87a2a%40gmail.com
+On Fri, 08 May 2026 21:19:58 +0100, David Carlier wrote:
+> atcphy_probe_switch() and atcphy_probe_mux() discard the pointers
+> returned by typec_switch_register() and typec_mux_register(). The
+> platform driver has no .remove callback, so when the driver unbinds
+> (e.g. via sysfs unbind) neither typec_switch_unregister() nor
+> typec_mux_unregister() is called. The framework reference taken in
+> typec_switch_register() (device_initialize() + device_add() in
+> drivers/usb/typec/mux.c) is therefore never dropped and the
+> typec_switch_dev / typec_mux_dev objects stay live forever, with
+> their sysfs entries under the typec_mux class also left behind. A
+> subsequent rebind cannot recreate them with the same fwnode-derived
+> name.
+> 
+> [...]
 
-> 
-> Fixes: cbce66669c82 ("phy: Add Google Tensor SoC USB PHY driver")
-> Signed-off-by: Felix Gu <ustc.gu@gmail.com>
-> ---
->  drivers/phy/phy-google-usb.c | 5 +++--
->  1 file changed, 3 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/phy/phy-google-usb.c b/drivers/phy/phy-google-usb.c
-> index ab20bc20f19e..79480f8b110e 100644
-> --- a/drivers/phy/phy-google-usb.c
-> +++ b/drivers/phy/phy-google-usb.c
-> @@ -251,7 +251,9 @@ static int google_usb_phy_probe(struct platform_device *pdev)
->  		return dev_err_probe(dev, PTR_ERR(phy_provider),
->  				     "failed to register phy provider\n");
->  
-> -	pm_runtime_enable(dev);
-> +	ret = devm_pm_runtime_enable(dev);
-> +	if (ret)
-> +		return dev_err_probe(dev, ret, "Failed to enable runtime PM\n");
->  
->  	sw_desc.fwnode = dev_fwnode(dev);
->  	sw_desc.drvdata = gphy;
-> @@ -271,7 +273,6 @@ static void google_usb_phy_remove(struct platform_device *pdev)
->  	struct google_usb_phy *gphy = dev_get_drvdata(&pdev->dev);
->  
->  	typec_switch_unregister(gphy->sw);
-> -	pm_runtime_disable(&pdev->dev);
->  }
->  
->  static const struct of_device_id google_usb_phy_of_match[] = {
-> 
-> ---
-> base-commit: b84a0ebe421ca56995ff78b66307667b62b3a900
-> change-id: 20260316-google-3acfa2f3de9d
-> 
-> Best regards,
-> -- 
-> Felix Gu <ustc.gu@gmail.com>
+Applied, thanks!
 
+[1/1] phy: apple: atc: Fix typec switch/mux leak on unbind
+      commit: 1854082fe0ddb81bc93d1f8e8a00554217fd09d1
+
+Best regards,
 -- 
 ~Vinod
+
+
 
 -- 
 linux-phy mailing list
