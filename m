@@ -4,147 +4,120 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DB6B3CD4851
-	for <linux-phy@archiver.kernel.org>; Thu, 14 May 2026 14:32:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 98CC3CD4851
+	for <linux-phy@archiver.kernel.org>; Thu, 14 May 2026 14:37:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rZmtdQJy+ypB2/QH6kgUeWwqjfr7/mt55CY2Sfar+sA=; b=ifCjTibX9k9Jzl
-	OZ3bDA87SC8pIIfR3ZR7fWX6PgnLzzVgyDJ/+k9UhHc5hqBLV1GCZUwZZs1DUU2UPPGISdzCRPghO
-	eVKYx4YMNQSJMPixIn7ICDZ7oooJ+5HqVnrFwE9pSW3eRxZEfBlm8M4dTxK6TC3p/49rEwMQs3e4A
-	BWSBMi2LvuYJS1dy5jZB4d5tRownT1ctdABH+ogD5B1q8DgDER1cXjdkYZWVBHjpDHVrazZIQS9u6
-	Gf8jE3rShnbR9W1tiU8jOZuni3/LQck0JNDzhgCkssbftVwXGGGCIFwhJ+6Hyfj54m7bUo7y/LGA4
-	+b/SDxU4WvlH2qe70OTQ==;
+	List-Owner; bh=uvUUOxtIbmStKowJIA9MuJQu791iXseAKHoEosbL88A=; b=0zoBr5eO4GZRgj
+	bXF34d7TtUJ20iMCURfphkBZ4rx/Ob6x/Plo+uqQSCGvqaEIBFwIOZYFqckz/BGta2POw1Vfw/Z9Y
+	mJQXjlz1rp0ynEeRh21AOraSCOgALP8YBwM5v5jW6DR1yYy1NUMo0YbaHEyxJVjzyJcV2Ln5QDogq
+	XdebzFFhWRRL31Cl+P3doC0wH5Pl1oycqrKOO5ejH+eMxaRN6CU4pog293edHsIddKUL9L6Pd6iBy
+	MGB56Iy49EWRvv3VKz53pHl27DCql/YEQspcDVtLQvJ3atoRMom3+IC5O3Voz3bm75pv90+dS7qK8
+	e3X0f6VadK2+yU49FLZA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wNX7T-00000005kPR-1eVs;
-	Thu, 14 May 2026 14:32:59 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1wNXC3-00000005kyc-1W8c;
+	Thu, 14 May 2026 14:37:43 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wNX7R-00000005kOp-1PBb
-	for linux-phy@bombadil.infradead.org;
-	Thu, 14 May 2026 14:32:57 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=MIME-Version:In-Reply-To:
-	Content-Transfer-Encoding:Content-Type:References:Message-ID:Subject:Cc:To:
-	From:Date:Sender:Reply-To:Content-ID:Content-Description;
-	bh=faLCBQ19K5nYLejiXyK7N7kMl+rWdfCF9dfDNZCY14g=; b=DO9661Pw15AK2EEwJWgk/h+trD
-	+hadmuoz7jabL+YmCLzXv4QglzFkoTI+pG4vHdM94yuFBkJ2WZL0XFzFIZKSxFl27AJAgdtMvTOtS
-	VQ3wl+3SHiJeFC5s8wgJB7fRkP4WjJT2NgKKqbCbQTeqE/GtkGm2Hx5RrW+kfTnqxQOjE8V6694u0
-	vsH8MqwZh5mx4X83gKR+dOpTht5T7psqBRD33t2QpNq1JGYIrqTqvxh/7hlTqWlj+Yv1qjT0eBiJW
-	0Xg+KX3S8eGs2omqO9Hr5hIy6MCj8RrMsDOYXy5jf0d1V0S20tM4cPVquukzCok+yBxSwKdViOELE
-	G5+MWnow==;
-Received: from mail-northeuropeazlp170120005.outbound.protection.outlook.com ([2a01:111:f403:c200::5] helo=DUZPR83CU001.outbound.protection.outlook.com)
-	by desiato.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wNX7N-000000038F8-3rUT
+	id 1wNXC1-00000005kxQ-0qji
 	for linux-phy@lists.infradead.org;
-	Thu, 14 May 2026 14:32:56 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=YgqQVa95cTTg69/JqbOh9QF8jru5kf8qxe8Q9XSeJMKPse2zIdC3lmfFkdfDrPiUPt2yEoI4IkWPiQdis4eJ+WdDZeMflzYeyaVMYbqP7eeJwyKiAT/WP7EnnjWIfYUXlWbGxs2FWqiaKGJRVv6V14HQ5xcL/kOzuneIUxzjymT/GmZn5g60JbitSzfPDIetW38KjlKVmAle+Ig8gdbAS4MT924IULiqhAOZ0Zf1d5j+ETIAm6kCCmhoe0qcLzU7Xi+QHwYCNXT+JnIgtyZIEs6ulUZFMO6jN9kezSyA/lq0JIWffIB3by2Q7LqWtziMr3BKJc9sqES/osb8689tgw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=k+/BEBkf5V+XUdHZXKK4LPmwvreUIy6/GROvq2oYRnk=;
- b=E78E4wnLjr8CCwOKJw9W00P6vobdOCmPXWrtBTQnhjbTmRZFj3/2UFjFzu4giEsRfbVwdTC0QuGyiVJTGLPoO/lVlzJQ6HO7jaRCXZURJ7QCDbB0NoEFz/OXQQZ/U3PSELPBZIA2R7tKE04Y148j0oLT7CIuWniOi1U/P9BzedP9sRdTnwcUsZPcEmbmmMYfuVb0mftg7AR4ZHzngQRbvtd5s5BWboVPFpn5OM+fPowAR+QaRlnv8EkmbQT4g2Qosxkb4iGHErSxOJjUHtv86e25u6tG9NJWaeHN9fLlzr9c1wY5wqRp5dwnnu1Esm14S4FXL0i98imgytD2UTlPFg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=k+/BEBkf5V+XUdHZXKK4LPmwvreUIy6/GROvq2oYRnk=;
- b=imR+DS5bWSwfZRWFjYPMcW2Jg8fHpd9D+oAoCwC5ct1b9eUyX8pe/AUkQhKH7FCWWB06GFawFpiKjkBwFCZ2pBRdkl/PUHI92JHYe1583Xvd5o3hVg/mC/itxCoqXnAtAdg8DX+xjPJXN6GnqtlyKVxEm503iR6SOTIp2QbpQC7VvVQHwy0Jst43IQ3D6/NRG1pSvBPRbCQpqzigJKsb/TLS4uvbSl0mNSgopqmRMBCBvmClnFaFG1dedRn964MNvqLj1nT9FS9q9MShv4Fp/pHhcpBav47x4uSNoh0yjvnb3rN8qNLSZDJ7+kqk3CTY49K+I6PHLL72+epeKPZxJg==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from AM0PR04MB6900.eurprd04.prod.outlook.com (2603:10a6:208:17d::10)
- by DB9PR04MB9645.eurprd04.prod.outlook.com (2603:10a6:10:309::13) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9913.11; Thu, 14 May
- 2026 14:32:47 +0000
-Received: from AM0PR04MB6900.eurprd04.prod.outlook.com
- ([fe80::7fda:8431:ca1b:b023]) by AM0PR04MB6900.eurprd04.prod.outlook.com
- ([fe80::7fda:8431:ca1b:b023%5]) with mapi id 15.20.9913.009; Thu, 14 May 2026
- 14:32:47 +0000
-Date: Thu, 14 May 2026 17:32:44 +0300
-From: Vladimir Oltean <vladimir.oltean@nxp.com>
-To: Josua Mayer <josua@solid-run.com>
-Cc: "linux-phy@lists.infradead.org" <linux-phy@lists.infradead.org>,
-	"netdev@vger.kernel.org" <netdev@vger.kernel.org>,
-	Ioana Ciornei <ioana.ciornei@nxp.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH phy-next 5/5] phy: lynx-28g: add support for 25GBASER
-Message-ID: <20260514143244.fjwyed3nwc5rajoa@skbuf>
-References: <20260511150023.1903577-1-vladimir.oltean@nxp.com>
- <20260511150023.1903577-6-vladimir.oltean@nxp.com>
- <375dddbc-385c-4dcb-a280-33292215ae67@solid-run.com>
- <20260513112222.2szwvxptk2udv7ga@skbuf>
- <7aa87d24-5501-4ca4-bb39-791beb7c95f2@solid-run.com>
-Content-Disposition: inline
-In-Reply-To: <7aa87d24-5501-4ca4-bb39-791beb7c95f2@solid-run.com>
-X-ClientProxiedBy: VI1PR08CA0251.eurprd08.prod.outlook.com
- (2603:10a6:803:dc::24) To AM0PR04MB6900.eurprd04.prod.outlook.com
- (2603:10a6:208:17d::10)
+	Thu, 14 May 2026 14:37:41 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 3FCAD6015B;
+	Thu, 14 May 2026 14:37:40 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 67720C2BCB8;
+	Thu, 14 May 2026 14:37:36 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1778769459;
+	bh=5OPhjYvg1XCLhMTe0Zoo3kYdgFxqiwicl5MN1s+nxC0=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=rZ8WJmD3jE5YEH9Nmylv1lmcebcTp8GQx+2H1dIqhq6E2D/1K6/+MriHPngsNDx/l
+	 wazb+mXIH0R64f0HVkJ+H/wi0i9DhIU944fG/UoAmkSj2QKQHrYiDLq9IJsWBt1IIb
+	 PFVGUJIP7x5CmBhCmkb7LDq/NG1tiiyvHOZ1Da/+gvd+Sh1uEAwa72//OkezihkhJ/
+	 g1z/5RMVJzTAmTWm8Kl1sZzImPOGYJ2+Gc18kHFwR59yhtK1aYf3RHn4Jn5LPfr2Pz
+	 6KRX7yWhOwIoiuBBR6gQHI9m8LTWterJCiWEdLUWzvG0GUMovP7bN9ojTwrLza11Fu
+	 yBFBCJhpZ4zGg==
+Message-ID: <9ed7c714-07c1-48de-8d27-cbe24356c606@kernel.org>
+Date: Thu, 14 May 2026 16:37:34 +0200
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AM0PR04MB6900:EE_|DB9PR04MB9645:EE_
-X-MS-Office365-Filtering-Correlation-Id: 21a24545-0955-4a69-92da-08deb1c5ab11
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|1800799024|10070799003|376014|366016|56012099003|4143699003|11063799003|22082099003|18002099003|3023799003;
-X-Microsoft-Antispam-Message-Info: C+PZu/+6RQvKMy/mkBaOx+K1/ENAnNOqwypfnECwIBTvyvrbvrxnKnILbqDvOf5ciazdBJCXDLiEgZiKm4evHIn/kIkNz+rlsOZXPsxn1nCNjYfWai/bgdT2G/5vKH9ojfFpzdjAvvR0dNGFKUvWfuj79rjXFS2IXPK8qlBHUqH+a+bOHI7I/En3IIhvShxOcT1IjZH195UQcD4z15ckmYOJFu7u8rBdf56849TZer691cPpIX/MTIYURPDvj3uJEP3O54nMsjDBQaZIemZbCq+mAOFV9GZ3rMgyp0guiVY7zsgubddIVptIsDDi9tdr5A80D9CubzyL1A3FCrf51zB0FY+BoRM1AESXMHVMUK+4ju29XL5TXD3jltIpSIpjNWzaRYQNGTzqLq3vJm+1SjJTUD8JAYtXV6bChTvcXCWcACLj55l+Cym5Dsep6zpdIM7doLDch2k701ynubaihp1e/d7WrPmbKJ37ywdC/4MFCQeaS/lLoUqP4iJ9QBUFek8bQjpGRT4IlUCuIVM+fsTvoTxZ56x9BXk0WBR18Wz5n06nrukA/4Xb845oI29DkP5CMxx3YnK8ooKhAbxts90jJnahiFJ1lA4Dc+hVvdopXXG5BkeuuC+KxITuYJAy+6EVHIkuYYMuCYACWVx5xBS9k0biwmtW7oVoBq9rW3ogXLxw0c9xK6bM84N6qWaV
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR04MB6900.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(1800799024)(10070799003)(376014)(366016)(56012099003)(4143699003)(11063799003)(22082099003)(18002099003)(3023799003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 2
-X-MS-Exchange-AntiSpam-MessageData-0: =?iso-8859-1?Q?grGjnqHq207cGgk+IQuF5OUSCYKb/I1/eF4pweHAtuz+OUepnvrQHANZrj?=
- =?iso-8859-1?Q?5MPQCmenYba3NLN3kHu7rTzB+ZXalf31ys2fine2ZSsWyAYOhwSfpI2gWQ?=
- =?iso-8859-1?Q?k+E5opcxN9VOPoid+tIcWr/Rc5oU+gsFyJzS149I7xwqN/A5GMS8wh5AkI?=
- =?iso-8859-1?Q?WxjX4yV3tBgsWJWvQWTQ+vkRf35u7nL9LDmfhjXhptHYbY2JDsXqBvcbc5?=
- =?iso-8859-1?Q?b384tJJd6VTq0VD/+I58N9G6Gq/LQ++IIfHKN3GSQWnK7NPi7emPBy3KMb?=
- =?iso-8859-1?Q?3VbeUelshPRirgVWSGi948Md41cNWGnAFdcfsNCi8tUpZwATX0xLJ8xj1Z?=
- =?iso-8859-1?Q?h2hZa62GrsodzWQ08J5oGJE/l2nmF2DhsayWUOz5HNhdmyVEu5C2BxAcK7?=
- =?iso-8859-1?Q?XNdz91Y693SiVpX8IXI6QuNt1WvW4LHrNy0i1j+gnHEPQ6uTWxiRdj8ZMB?=
- =?iso-8859-1?Q?tBfY4FZ6zXCGjqC27C96UkHT+I6Eb2iJVXpyFA5i2qV53+78mvr+XL0aAq?=
- =?iso-8859-1?Q?G7dAJ7Ewe4gOznzLip1dl9ljpJZMQG4SBQI6Sj15bIx5yUPuwRu5lRTlKa?=
- =?iso-8859-1?Q?U4A7asXHRvgeSn6lU8l6ZTPHadAsok3SxUvhRKCbWlaIou6M3tTebMRLd5?=
- =?iso-8859-1?Q?Jt/6x6eSkauwZaJA2+pOQedvPsFpMRGJf5aPFZl2qSYiHtRm/ABmnc6UWv?=
- =?iso-8859-1?Q?PeAWD/3kTb3yc2dTEfzeX/vOcDFPbdUt660dFQdotkCzzNo7fgIq/jQTzY?=
- =?iso-8859-1?Q?ScD/Gd+I1zX/mtfBga6FFV6K0PP2nI7EflBLM/7Q0NJY00FlOJMq5AkJ8Z?=
- =?iso-8859-1?Q?hEyZZlxTBi7Say0jYSD/M7SYbCggTcAWGsviin3pSOkg0QxZFk9dIryKZt?=
- =?iso-8859-1?Q?IjX9NaLmFZTPMI6W9ZPUmq7D0eF/YWpwsGxSG0hPqpakEcLBsHxy0m7TIo?=
- =?iso-8859-1?Q?0XgULIPpDNsXVHHq8Om+H1Gnilgs/oLHn9Oll4xPw7rsqpttAnCMtF84HH?=
- =?iso-8859-1?Q?jfsaJBY1uaCfz7WAdgz4yJPy3lmipnK71FzJQYLnebSZZqcM8Xt1qRSOfi?=
- =?iso-8859-1?Q?itcWvZmXOcWhao6YURq8gcjk/6jhiv2LCXaTrLyosfpmb9NnBHAfNfKP37?=
- =?iso-8859-1?Q?xSsW4Mx5QK142TGrU29B3VdrDZK+Kn7q2xjiNu6tiJWPWKJrNfwybazzaL?=
- =?iso-8859-1?Q?F8gmo6uZQRPEjX9dS4DrWSy8Q9nXRhkvjO3qeNNrN2jOr+tFn7Gizj4sV0?=
- =?iso-8859-1?Q?KZ1/yJjHukUVtSlKixAFcPe6A37V39BmHoBjnQvkyZYS8HYuJcpAWTMkgC?=
- =?iso-8859-1?Q?GTgMYheQQyIFuaSvcVMrEY1jEXuRpydJ4lQb7IKpc6JuLawFo5CBkSZw6+?=
- =?iso-8859-1?Q?+XBJdKLt3HYPugjT9avLg251hb7DAWS8jHyp/hWs61IkYdVnGJDDNSbmEv?=
- =?iso-8859-1?Q?ck7ylQrodCk6g5j4HOwguY/DANtseKezqqyMsF9Q6lGV4rq3Gor5k+H6dK?=
- =?iso-8859-1?Q?5iuaZj9HMGJfvtlJv0UKMga2LtdiMX3NNGgLT56Z1yeloiPlDRqIHbxzrt?=
- =?iso-8859-1?Q?rLoFcJZ0j/YMMT9DtyKn7FJdHvWPBs1ZhlOlLLa4qM+AzJT2xGYROoZS0Z?=
- =?iso-8859-1?Q?mf47luQcz+UP1PhW1/SqgPtsRAccd012LrL/6mip101+4qRE00xdCN1J4q?=
- =?iso-8859-1?Q?2kOc3mp9+0Hajf8Di8qX+NEN/zyUrPma1+sWU+8M9GrNEUeFGDzWXPIXO1?=
- =?iso-8859-1?Q?BNaCVqsETX35S90x2/T9r8WXGTsrpfIVTO+uXiDSiQ6Un0uS3lbiZXWcLx?=
- =?iso-8859-1?Q?XW7pGI5BBo1pUSltloMtjBlET65hoC2mIHgKAEDTxjt8saCGT345PfUr3q?=
- =?iso-8859-1?Q?9Y?=
-X-MS-Exchange-AntiSpam-MessageData-1: ESdz4R1buAyrLg==
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 21a24545-0955-4a69-92da-08deb1c5ab11
-X-MS-Exchange-CrossTenant-AuthSource: AM0PR04MB6900.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 May 2026 14:32:47.1602
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: vCVrhJ1u0MIonm7oSWeTcN0os1Pi2BUGLmfR91Z2KwA2JINtPVMUodMF+iDavWirDL97t0W5HJeC0QoqUI/m+Q==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB9PR04MB9645
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260514_153254_348297_B11299A2 
-X-CRM114-Status: GOOD (  23.22  )
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 2/4] dt-bindings: phy: qcom,msm8998-qmp-usb3-phy: Add
+ support for Shikra
+To: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>, Vinod Koul
+ <vkoul@kernel.org>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
+ Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
+ Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>,
+ Johan Hovold <johan+linaro@kernel.org>,
+ Loic Poulain <loic.poulain@oss.qualcomm.com>,
+ Kathiravan Thirumoorthy <kathiravan.thirumoorthy@oss.qualcomm.com>,
+ Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+ linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <20260504170659.282532-1-krishna.kurapati@oss.qualcomm.com>
+ <20260504170659.282532-3-krishna.kurapati@oss.qualcomm.com>
+ <20260505-gifted-salamander-of-prowess-5107a6@quoll>
+ <8cd564af-9646-40c5-a8ef-c7197fb3cfe9@kernel.org>
+ <95b567cc-b83c-4154-9520-e624555f1882@oss.qualcomm.com>
+ <29571bdd-23bf-42a7-a9e3-918a28c79700@kernel.org>
+ <62161822-2365-4ec7-80f7-8660bdadb177@oss.qualcomm.com>
+ <40b5e0f6-bc61-4750-9560-bdcc268f0fe3@kernel.org>
+ <d52c5039-9431-44ed-9f3b-bb00d03ae176@oss.qualcomm.com>
+ <5baeeeed-7c18-46f7-82a3-5bb299ba05ef@kernel.org>
+ <42ba6ac7-306a-419f-96b6-3427c51ef567@oss.qualcomm.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 a/A=
+In-Reply-To: <42ba6ac7-306a-419f-96b6-3427c51ef567@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -156,79 +129,114 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi Josua,
+On 14/05/2026 08:22, Krishna Kurapati wrote:
+> 
+> 
+> On 5/14/2026 12:26 AM, Krzysztof Kozlowski wrote:
+>> On 07/05/2026 13:37, Krishna Kurapati wrote:
+>>>
+>>>
+>>> On 5/5/2026 7:30 PM, Krzysztof Kozlowski wrote:
+>>>> On 05/05/2026 15:57, Krishna Kurapati wrote:
+>>>>>
+>>>>>
+>>>>> On 5/5/2026 6:59 PM, Krzysztof Kozlowski wrote:
+>>>>>> On 05/05/2026 15:27, Krishna Kurapati wrote:
+>>>>>>>
+>>>>>>>
+>>>>>>> On 5/5/2026 4:22 PM, Krzysztof Kozlowski wrote:
+>>>>>>>> On 05/05/2026 12:49, Krzysztof Kozlowski wrote:
+>>>>>>>>> On Mon, May 04, 2026 at 10:36:57PM +0530, Krishna Kurapati wrote:
+>>>>>>>>>> Declare the USB-C QMP PHY present on the Qualcomm Shikra platform.
+>>>>>>>>>>
+>>>>>>>>>> Signed-off-by: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
+>>>>>>>>>> ---
+>>>>>>>>>>      .../devicetree/bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml      | 2 ++
+>>>>>>>>>>      1 file changed, 2 insertions(+)
+>>>>>>>>>
+>>>>>>>>> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+>>>>>>>>
+>>>>>>>> ... and then I looked at the driver. So un-reviewed. Devices are clearly
+>>>>>>>> compatible. If not, explain what is not compatible.
+>>>>>>>>
+>>>>>>> Talos uses GCC_USB3_PRIM_PHY_AUX_CLK.
+>>>>>>>
+>>>>>>> In Shikra, we are using GCC_USB3_PRIM_PHY_COM_AUX_CLK. We don't have
+>>>>>>> GCC_USB3_PRIM_PHY_AUX_CLK.
+>>>>>>>
+>>>>>>> Hence, I didn't use a fallback compatible.
+>>>>>>
+>>>>>> This still explains nothing. How different clock makes interface for SW
+>>>>>> incompatible exactly?
+>>>>>>
+>>>>> So I went by the naming. AUX vs COM_AUX.
+>>>>
+>>>> The naming does not matter. If the clock is called
+>>>> "no_one_expects_spanish_inquisition", does that make software
+>>>> incompatible? Why would the name itself matter?
+>>>>
+>>>>>
+>>>>> Can I use a fallback compatible and in DT vote for "COM_AUX" clock with
+>>>>> clock-names mentioning "aux" ?
+>>>>
+>>>> I don't know, I asked what is different in software interface.
+>>>>
+>>>
+>>> Hi Krzysztof,
+>>>
+>>>    I checked with the hw team here and found out two things.
+>>>
+>>>    1. Shikra is a spinoff of Agatti and its sw interface (clocks used and
+>>> regulators used) is the same as agatti.
+>>>
+>>>    2. I thought we could use qcm2290 as a fallback since the phy register
+>>> init sequence is the same for Talos/Shikra/Agatti. The difference
+>>> between Talos and agatti when checked in the driver was the init load
+>>> settings. I checked with the hw team and they suggested using the init
+>>> load settings which talos was using.
+>>>
+>>>    Hence both these compatibles (qcm2290 and qcs615) cannot be used as
+>>> fallback for Shikra.
+>>
+>> Then I do not understand why you are using qcs615_usb3phy_cfg for
+>> Shikra. You say that the initialization is different, but you use
+>> exactly the same initialization. So in a meaning of compatibility
+>> between hardware for Devicetree they are compatible.
+>>
+> Hi Krzysztof,
+> 
+>   There are 3 things:
+> 
+> 1. Clocks used:
+> -> Talos supports AUX Clock since it supports DP over USB.
+> -> Agatti and Shikra use COM_AUX clock since they dont support DP over USB.
+> 
+> 2. Phy register Init sequence - same for all 3 targets
+> 
+> 3. Regulator init load:
+> -> Different for both Talos and Agatti
+> -> Recommendation is to use Talos regulator load values.
+> 
+> SW interface wise, shikra is comaptible with agatti. If we use agatti as 
+> fallback, we would end up using the platform data of Agatti where the 
+> regulator init load is not suitable for Shikra. Hence not using Agatti 
+> as fallback.
+> 
+> Coming to driver changes, I used qcs615_cfg because it has required phy 
+> register sequence and regulator init load as needed by shikra.
 
-On Wed, May 13, 2026 at 11:41:06AM +0000, Josua Mayer wrote:
-> Am 13.05.26 um 13:22 schrieb Vladimir Oltean:
-> =
+So is it compatible with QCS615? If not, then something is incomplete or
+confusing. The driver uses the same software interface.
 
-> > On Wed, May 13, 2026 at 11:00:32AM +0000, Josua Mayer wrote:
-> >> Wouldn't it be more clear instead of indirect lane offset shift with
-> >> lynx_28g_e25g_pcvt, to instead fix the E25G_CFG definition?:
-> >>
-> >> -#define E25G_CFG(id) (28 - (id) * 4) /* Offset into PCCD */
-> >> +#define E25G_CFG(id) ((id) * 4)=A0 =A0 =A0 /* Offset into PCCD */
-> >>
-> >> This is equivalent when inserting (7 - lane) into E25G_CFG id:
-> >>
-> >> (28 - (id) * 4) =3D=A0(28 - (7 - lane) * 4) =3D=A0(28 - 7*4 + lane*4)
-> > The 'indirect' lane offset shift is actually a two-step lookup:
-> > lane -> protocol converter index
-> > protocol converted index -> offset into PCCD
-> >
-> > LX2160ARM documents PCCD fields as:
-> > E25GA_CFG, aka E25G_CFG(0) in code: 30:28
-> > E25GB_CFG, aka E25G_CFG(1) in code: 26:24
-> > ...
-> > E25GH_CFG, aka E25G_CFG(7) in code: 2:0
-> >
-> > The odd bit is that lane 0 uses E25G protocol converter 7, unlike, say,
-> > 1G and 10G where we have a lane:pcvt identity mapping.
-> > lynx_28g_e25g_pcvt() performs that translation.
-> >
-> > Additionally, for locating E40GA_CFG, E40GB_CFG in PCCE, I've adopted
-> > the same scheme downstream, where E40G_CFG() returns bits 30:28 for
-> > argument 0 (pcvt A) and bits 26:24 for argument 1 (pcvt B), and it is
-> > called with this lane->pcvt translation function:
-> >
-> > static int lynx_28g_e40g_pcvt(int lane)
-> > {
-> > 	return lane < 4 ? 1 : 0;
-> > }
-> >
-> > Are you saying that merging the two lookups would be more clear because
-> > as a reader you'd get to ask yourself less questions (the code would
-> > flow more naturally) despite the non-trivial lane<->pcvt mapping,
-> Exactly for this reason. Fewer look-up steps.
-> RM dos not document this mapping, but now you do in source-code.
-> =
+Best regards,
+Krzysztof
 
-> Perhaps a short comment on the function will help, e.g.
-> /* get protocol converter id for lane */
-> =
-
-> > or why
-> > exactly? For me it is the exact opposite. I can follow the RM
-> > definitions and then I have a separate function that tells me how lanes
-> > are mapped to the protocol converters.
-> I think you give a good reason here!
-
-So you would like me to respin this series? What change would address
-your feedback here? Keep the E25G_CFG() macros as is, just add this?
-
-+/* get protocol converter id for lane */
- static int lynx_28g_e25g_pcvt(int lane)
- {
- 	return 7 - lane;
- }
-
--- =
-
+-- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
