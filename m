@@ -4,124 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7E277CD4851
-	for <linux-phy@archiver.kernel.org>; Thu, 14 May 2026 10:47:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1270ECD4851
+	for <linux-phy@archiver.kernel.org>; Thu, 14 May 2026 10:52:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ge29Jim4KCw+7cS4jgTrbCbjIXKvTzzsz57Jcfg746w=; b=rN+H7cdURt27nE
-	B7ZEREm5R/ijXNBLM2m130znsEf0UEktJVZgwIY2WY7UnEGtMZT1pX1gJnZHJeEAQVfCwnNaSW0K7
-	Z5OUT3Z5kbkRNd6FBxQpPv9iGabUhwF8XdKOdPH9ylOBFU0INqABZt3+3eD2F7kdxaegtjxC0XBMQ
-	RDKjuvhQ7grHIzTvsOd/t9Xh0XJpkShf6FGrWz/cXEsIXy+YiOXTTKfjLOHNuBHK9FtWKkmMI2mDX
-	vqMrLAEwP4OSw5U4jyzMd5IR4XL8Zzw1RUx7NuUS39+5tQuZDZnd9/0oGrCvIFw9fH6wA28cdmySP
-	3GswHDdeQmGVkg+530kw==;
+	List-Owner; bh=8iSg/WcXs06V8a3nlgn5StMhWStl2CCVDx1/fuWrZV0=; b=c+cFh/+PodJDjG
+	gIYrPxME3nBTbYA8+NOV1AUCIqOBay4sdMCy3uQAzCu2BcsKGZRBIWOcNQ8bG/Fpc38L4mQbZASK7
+	+witzBgd3pzuewql30J7SE3zDnGnbhEBpx9I63b1P5RybpcSyy63ZBXYHGmYm5Swja1mcJe2jamUd
+	yUYgd7iGqF9IBxDPplswpax4WD3woyDe6eJvMmUEIsp4TGnECEqhipMBvfcUSc8DW37T7vW4laMnC
+	LmwKIxdgw7vhhSxZrXPcffEpGDHAVx4eDsyeE9Y1jebou/Nj5Y4FSbi7DysCe5+DmpGEV16saRjJB
+	7GhcxbYutKxi1VDSQTUA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wNTbU-00000005Ekt-0hQh;
-	Thu, 14 May 2026 10:47:44 +0000
-Received: from mail-francesouthazon11011063.outbound.protection.outlook.com ([40.107.130.63] helo=MRWPR03CU001.outbound.protection.outlook.com)
+	id 1wNTgP-00000005FLa-3SAh;
+	Thu, 14 May 2026 10:52:49 +0000
+Received: from mail-wr1-x434.google.com ([2a00:1450:4864:20::434])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wNTbR-00000005EkB-212Q
+	id 1wNTgN-00000005FKa-3RRz
 	for linux-phy@lists.infradead.org;
-	Thu, 14 May 2026 10:47:42 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=kxRHio0KYBVcwlz4m6yySWy4rZMOwfE1tVTsjW7jgOjOCTPt9UTXcMJL+q7jdtTBXV7dJu+mBMg5SghnHZzEjEXVGeH7mOXvW3rtWqJ/IFEe+92kpIV108602w6ygpp4CnaU20bXxClBvR4/E9aM4W8vGzXobdYSKMNHZgXWieXJjOgsgMAQUXcgv4tN7nQYYMjXA0+8oEU2qftpfKyTe47oVyHkfrQaHFqtmuBODWvq+tQkf+VQerGVKAPAX4BLWQyLEYz1UIUOlYZAK13VLiJsdBA6hBuMg48xjJ0sYXWr8M1D6BJjiVVE9P0hEnG+c7IgKdg5yGxwkeJOVMp7eA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=I/q93aQzpnyrKyYcOwWMXiqo0D+j8mPGooacq6cSdGs=;
- b=j8HysPlNi1yMv2NPtLD4fjTDsX5+GD0clBnKf+Pazap92hdEZK7W9tWbgCLD01DGJACBzlfG8WCW2J19n8epxEr1h9gdbYp0gSSA/wqC11+zmcLSxAhtnoOVjTZYxICKfzy/H+n7RTJh3jWnRKz7s93Ef1mwV5+YJS9uDrRa6izoqXBvxE/Nj2VrOtNDZe/zsqVrZYdndNA3BDi0ffHQVam6YNRdLBlUWsM8J4QldbxxZhuATnYkE//nb4fBMkq1OfloCB20alq8vuX//xn8qx4VNpKk5fwDOoYc0ebGbJMB1wLC7jQBYW/Z1i/u/xPn+shyhmOvIc9lmSpCaeoY5Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=I/q93aQzpnyrKyYcOwWMXiqo0D+j8mPGooacq6cSdGs=;
- b=GYMs2PiFRyQtChNHTKq5hcw1+2Sj7yA4M6GpX7y/jkKvL0b81vq9XjeYMuFOOCkmMVK080XdErzu7RL+zmxtokdMQOa5LHu1aTunuO66GKXExy06eLLoyQlYRsALpa/2PTh7nDuPT/IUoJpI2qy/HNdDf3yvA2L9nOsYvnihAU4T6/K+GWDuYxtye09KZkbXvglyRxka3olJDzP37iOneEFxuMZotDHIwTD6flOqP3c58xHxGKkvgwOIb82PBYFpgdydu2CB83SVQFXt3oOCmeIaZDNJwSFrq65B5DwNTLaFLYCGtnpsCU7FJRz36JlSGBvWikJzxnvhBzxZNHFQYA==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from PR3PR04MB7402.eurprd04.prod.outlook.com (2603:10a6:102:89::16)
- by VI1PR04MB9931.eurprd04.prod.outlook.com (2603:10a6:800:1d4::21) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9913.11; Thu, 14 May
- 2026 10:47:35 +0000
-Received: from PR3PR04MB7402.eurprd04.prod.outlook.com
- ([fe80::4129:7aed:b5cb:b13d]) by PR3PR04MB7402.eurprd04.prod.outlook.com
- ([fe80::4129:7aed:b5cb:b13d%5]) with mapi id 15.20.9913.009; Thu, 14 May 2026
- 10:47:35 +0000
-Date: Thu, 14 May 2026 13:47:31 +0300
-From: Ioana Ciornei <ioana.ciornei@nxp.com>
-To: sashiko-reviews@lists.linux.dev
-Cc: robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, 
-	neil.armstrong@linaro.org, olteanv@gmail.com, devicetree@vger.kernel.org, vkoul@kernel.org, 
-	linux-phy@lists.infradead.org
-Subject: Re: [PATCH phy-next 2/2] phy: ti: add PHY driver for TI DS125DF111
+	Thu, 14 May 2026 10:52:49 +0000
+Received: by mail-wr1-x434.google.com with SMTP id ffacd0b85a97d-45db6fd7dc3so78133f8f.1
+        for <linux-phy@lists.infradead.org>; Thu, 14 May 2026 03:52:47 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1778755966; x=1779360766; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=H3xNx0DGWfnDiOAhTp4e3i+kPDvC+nvRiuRLvqIBtX0=;
+        b=NKLMpf/MaZhv14UCsZKxjYXIR+mdSZiNWlC2Tru8JmoG7gZVX6CYiV30mI4tNDJdVA
+         F9+cam31EwekqDEacBOgjzh+01MsFCTx0XnN1aqXTHix2bXhMbxhdUjglsJxQt0RyXdK
+         z/KmUBpaXFDANfiDsPA4KwNC/ME1Azzh4t+W+k+sHycyO1/qRngM1cbeT8swQxaUwUoi
+         IWO+coWl5PtQp/mTLBVFoneaU9b2s0aj0XksfMWiMbD89h/sRGJSwvZXRiFa1cQh8csS
+         8bnT3Nz+QjhBDBFB12lsf4mwYbnsKB4PLB29mlu5BKh5ZCLmBmy59zWyupAoElA1npgT
+         w8kQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1778755966; x=1779360766;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=H3xNx0DGWfnDiOAhTp4e3i+kPDvC+nvRiuRLvqIBtX0=;
+        b=kqpHe60HJqhk/s7XMNhUDCaWUmZ7LWD7IpMdo76nnQAvIuTyqwq4VOLfj08i7a6Nh0
+         yThY5IHwcsBBezFN4Yu4nbTbxM8Ija0smkNm/beBOC+1L+Yq+w8RnV0X0Jp5XP/W9lsC
+         Fm8TlqhKsyPNwahnae+rX3ve6FRD59qVuUoBrmgAe71ZTKPyGD7i5moF6aUqmsv9eyHn
+         Os93Q3DdYn8hiQBaqpt3mmvwiCBZEaLYdSkZFW6veLliIKW2uyfRG+bXrm272KO6DYEt
+         O4qwlu3OC4yZBXi/SqB9is3VlcCMimEkCxpid43BKrfRRdL0uD8Z6zvIzOt/gIZ7nzV6
+         K2wQ==
+X-Forwarded-Encrypted: i=1; AFNElJ/+elHqRMkc2IHTMWlNSkr+U3zJn7qMo/EcsHsfT2p60ICQpwWim47rGFa5as4UA+ekBMlKtnCPji0=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yxwai7dlH/V18mRR//LO2O5WPFIw6oLBJ3BN4TQQJwIzYM/M3Lj
+	SueODRt9K3sE26HSfYrnuPDOWvGZXCHjLd/gj8QvQvk0dEwzt8EvQ5cX
+X-Gm-Gg: Acq92OHbIrsWlgkfZH6bGlUY/dt9/RxvIaM9WTofpmNzkYTE1lR7TA5qa3PMxNvFtql
+	lZXH5C3S24vEV8LCcSWwDkOOXtBfKlMk8Ks1SYvVZjSor+HfSesjjuhq9Bv6sudZPSDX/h+HaYb
+	YsvcFuP6C2BBEqhgh0wm6svosjGMVAGToEdApgGri1U1ICyKKHado8cJMCd7+pc8joj6JGe7vUB
+	PATIBrmSbr/B3gQ0CqXxhKRUR4PPIXGcEWaQk0MsmOYfwXvmFtt8oEY2Q1vTYkuj6ukbByAxOUO
+	uwNelFjJwpDTxqRW95XjvxzNlLpRW26JjECvnLgMTE/AXSd3qz94EGapEogNBJlUxIG+YtRZcm8
+	QbwtuYPurRzt+4GxJOvSNHy3OcaCaA+PF46aQAu1qWcUpI6/HSt+kiCTyq81Vyi8JT5dXNz13hJ
+	CtMIYOb+974/9TkWjYwrsD8SenEiAWe4bBWw==
+X-Received: by 2002:a05:600c:1385:b0:48e:6db5:76e6 with SMTP id 5b1f17b1804b1-48fc99ede8emr49117735e9.2.1778755965596;
+        Thu, 14 May 2026 03:52:45 -0700 (PDT)
+Received: from skbuf ([2a02:2f04:d003:300:6c81:7110:517:9a7e])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-45da0a19a0csm6075424f8f.20.2026.05.14.03.52.44
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 14 May 2026 03:52:44 -0700 (PDT)
+Date: Thu, 14 May 2026 13:52:42 +0300
+From: Vladimir Oltean <olteanv@gmail.com>
+To: Ioana Ciornei <ioana.ciornei@nxp.com>
+Cc: vkoul@kernel.org, neil.armstrong@linaro.org, robh@kernel.org,
+	krzk+dt@kernel.org, conor+dt@kernel.org, johan@kernel.org,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH phy-next 0/2] phy: ti: add driver for TI DS125DF111
  Dual-Channel Retimer
-Message-ID: <rvkq5fnqythnnh6jbitkw24whblqc7domwpxnyxv7hz7mwp34e@ofh7mt6tfdip>
-References: <20260513185103.1371809-3-ioana.ciornei@nxp.com>
- <20260514103143.4B33BC2BCB8@smtp.kernel.org>
-Content-Disposition: inline
-In-Reply-To: <20260514103143.4B33BC2BCB8@smtp.kernel.org>
-X-ClientProxiedBy: FR4P281CA0019.DEUP281.PROD.OUTLOOK.COM
- (2603:10a6:d10:c9::16) To PR3PR04MB7402.eurprd04.prod.outlook.com
- (2603:10a6:102:89::16)
+Message-ID: <20260514105242.kzi4ttchz5puxk7r@skbuf>
+References: <20260513185103.1371809-1-ioana.ciornei@nxp.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PR3PR04MB7402:EE_|VI1PR04MB9931:EE_
-X-MS-Office365-Filtering-Correlation-Id: cae3efaa-1b6e-4f42-0a75-08deb1a6353a
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|19092799006|1800799024|376014|4143699003|18002099003|22082099003|56012099003|3023799003|11063799003;
-X-Microsoft-Antispam-Message-Info: 3P+9G6gw/joa28UpSYRur2oJU6J2HFMudsEFSvCvCDrghUy9Oa8AlPAYH6gLd8Dw/FicF/HnibYKI0gyn3PzniuXgqnOkL3dh39HZV5V+7meZPZSsKN9Ll5oKkG/FC9gPNKPkLF78R1DUjY33HhryEeRhNf2263GZrfts84nXiWPH9rcFzkvP4Ui7STKZCAjTVG2P8xwDdu+SkECHPLeuSZVh2CCcT8Hp5jCLqZs4CRb7cYjkpuI5AcC54y/i91THdQKtipblUPxXTnO+1JkoOfyz4AgHx21MXTE9PzBBZoB0pvAfmk9c7CsRgCgfWRzLqX5DrRR4Zo8KCyigVo8TI61n2McSsS8kTuhML8NOWGKc2SjjkMnEynqHIIf/azdyxhYOixaFn8SR2B6oPB/fRZVB5t0hAvA0AfYKxWKfGCcHRf+/1uFJhvk3vvsZMopa+cFaM1lsCdC/Otqw+2UeIUR/vTXwD3e0jGXL1NYrA0xh6px+WbLGoywE0Njet+C/+EaqR2PMTbRfqftWgqDRelkJk87AsRvoLgFSr/QDbHyTLA7/+rkM2WfaJ7mhg0AIN1roN1p4MktmTdcSfhlsBE7oSYmt/H+i2vYhmSV0mOXU7rTc1Z8hli9JmTV9Ur5si8SIZKhTpa2tmPGkdWgsry+F5EN7xM2WNoLrcZLUpQmCGQZ8L0H7II/GDvy6jvu
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PR3PR04MB7402.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(19092799006)(1800799024)(376014)(4143699003)(18002099003)(22082099003)(56012099003)(3023799003)(11063799003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?XTjoQsIWCo9X/N5Pgu47xIbnNU43xsvOFcSiy+0+cVHrWoDk0/GtmsyNTyG0?=
- =?us-ascii?Q?3cl9OCARXSWBNNuDEA4hEz7GIwr3Yj++5M5e8KEQ+T4g2for9gBqE3R08Yih?=
- =?us-ascii?Q?E12MmH3TAjr7A+Kx/Cp1lywT1D3ZMWauc7ZZvr2U82WGeIxOSfVZ7bDdldzG?=
- =?us-ascii?Q?S0U0SZFpwmhPr4EP8B42YWzPhHFA6GP5PaTEvOs10AtFI7nAD2iCrMwGTNxm?=
- =?us-ascii?Q?ok8+9mw3yc8O6RHl3aSddQYfq5V7ao0JxaoKc+d0pc6SJ+4gS7Y7tGKN3Vn7?=
- =?us-ascii?Q?rctiju/RU8TPMIlb6YqhA4a8Uw2BVSJbgcOMNU0VH/5gyW8MDMKpz4wrOJVG?=
- =?us-ascii?Q?cZvx/KevPfM6FmA+AJ9bVj7wuvgyeybQl3C7b9QVPmZ8Fpb9WNuVxR2PJObl?=
- =?us-ascii?Q?ue7FjD1IO5f0HuuRIpDNPu+QqeGP1/5KsQAZpjpbbBy9O91lHdSdAQKqp4pD?=
- =?us-ascii?Q?/o+Qs6tE0a8tyFkliQyIGnC4/RGmNr+JaYe29msH91rjgTLacKk7MtJ92bhY?=
- =?us-ascii?Q?DCKP+onKxpK2lcXlEy7cbKWT9yGS6ngPd78JbB8FUJBnoyWTe0J9vRrNSXjD?=
- =?us-ascii?Q?ccCWOmWxvwTX8dDacF4n5yUSBqYK1vcS1cH+BChEeUwp7Ffnm/smG8OSkbEw?=
- =?us-ascii?Q?75HtnVqYB0egBSMTmLzFHpNNEstPvctXpaNvhQLPwDoBbm62gOggo7gp0TWD?=
- =?us-ascii?Q?ESyDk3TnWMeGF53xcSeN8pw8ozlHYScdwfWHothwTz+rnqBFZvZ89xZRTFfA?=
- =?us-ascii?Q?OaSyWAYbxiRribwMtnQTjAWWcukZJVV0D/lnWNXAwTivOs7C1j3hflKpD38z?=
- =?us-ascii?Q?Y525kyIl6V4c/wxzPH+iQjwMEpQplc4BLjLAvceYngOSubQMZ/+EvGFaD7kS?=
- =?us-ascii?Q?FG5BqJ5WL9J0vW9kMkaPhwybRPhYYA7/LRWclKHuJ/3v/TeJEPCs7YoWQHgv?=
- =?us-ascii?Q?3NI3w3fB6l9SphNB0DkDBbyR8fdC16PMds4KTtTK1alp8BiOckp2Av3gsDoK?=
- =?us-ascii?Q?stcUW0ca6XCcZiG9vLxF/CH63xbVTvVLh3Ad2VXsbbMBGjK5/tdP9xhink52?=
- =?us-ascii?Q?n8+UZGpyoIBT5rEg/ib+LUbebl/3X/P95+b+eCfwnqe3D60utAKsWz8YRa64?=
- =?us-ascii?Q?FvHacq55Nc18IMBtIXVzAyfLS92lDz1wEMCFPV1FOYTFx3vPKVsHFmgrfCjm?=
- =?us-ascii?Q?pdvDe1uMIdpP53UoJ684cMHlQeYtbZy78odnXK8KaD21cfwBdJove567VpnR?=
- =?us-ascii?Q?2LLc+pvkNXDjnpbRhrzGJ7+zEVW+ngW54w9InnavDydXo97DpwkvJ6wDdSEp?=
- =?us-ascii?Q?+MU2lA+N6yNHZ8+/Vxd2SDeVeg408DJP7ojfjfaiHRNO1/haooGrmyiILIZ8?=
- =?us-ascii?Q?7m0WoX++0eWilWxqBEffTGNw3BsHDPymNC5Q5ao/OoV4dig98d0vBMy7SszW?=
- =?us-ascii?Q?83btVWsvwaC+62HXtlXfDC5MkgwNdUf/ZfZfQNtP6UF5q8cAKF/ilK2dGsCp?=
- =?us-ascii?Q?qn/0J127QYxp2Kwi9K/LJsUm8cCcImKZZxkiHXtW9KITi6OgtxXGTZcUUSbL?=
- =?us-ascii?Q?GlnHLwd6ZwRkdnLey5csiKA0cAZAhPK4wKdjhLpKqTD2C5plTUNGtwZrUSwQ?=
- =?us-ascii?Q?fJ9UK4IuNGRUTvqzIlbgFI00E1lCjD+bEI2TmV0dC8lj3KLU/yN+JzWfIR65?=
- =?us-ascii?Q?sfiqZ3t/D/u9VGv5HJOGWyfS8klZ8nhxfWTdWYlAGIyEBmJ6lz4/loBZHme0?=
- =?us-ascii?Q?xBzKtjCBrQ=3D=3D?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: cae3efaa-1b6e-4f42-0a75-08deb1a6353a
-X-MS-Exchange-CrossTenant-AuthSource: PR3PR04MB7402.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 May 2026 10:47:35.0093
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: rKiGY0Wltguu+l7rPbAKaL4MZuT0Qc7xQl+7KU9O4KkVLf53ebt/ymxuE1odb7kL3C8ucKHHDYs1YwehHDbDUQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB9931
+Content-Disposition: inline
+In-Reply-To: <20260513185103.1371809-1-ioana.ciornei@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260514_034741_532317_68BEC675 
-X-CRM114-Status: GOOD (  23.99  )
+X-CRM114-CacheID: sfid-20260514_035247_874832_AE2E7E6F 
+X-CRM114-Status: GOOD (  19.15  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -138,69 +101,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, May 14, 2026 at 10:31:42AM +0000, sashiko-bot@kernel.org wrote:
-> [You don't often get email from sashiko-bot@kernel.org. Learn why this is important at https://aka.ms/LearnAboutSenderIdentification ]
+On Wed, May 13, 2026 at 09:51:01PM +0300, Ioana Ciornei wrote:
+> This patch set adds a generic PHY driver and the corresponding DT
+> binding for the TI DS125DF111 Dual-Channel retimer. The datasheet on
+> which this driver was based on can be found at -
+> https://www.ti.com/lit/gpn/DS125DF111.
 > 
-> Thank you for your contribution! Sashiko AI review found 2 potential issue(s) to consider:
-> - [Medium] Uninitialized memory read in `ds125df111_xlate` due to missing `args_count` validation.
-> - [Low] Missing explicit header inclusions for macros and memory allocation functions.
-> --
+> A separate generic PHY is registered for each of the two channels of the
+> retimer, so consumers can drive each channel independently. This allows
+> for independent control of the channels, which is especially important
+> since each channel can be routed to different SerDes lanes and it is not
+> guaranteed that the same retimer will do both directions of SerDes lane.
 > 
-> commit a5dcf247e2e2a6b752d667ac46227925aa476def
-> Author: Ioana Ciornei <ioana.ciornei@nxp.com>
+> This was tested on a LS1088ARDB board with the Lynx10G SerDes PHY driver
+> yet to be submitted.
 > 
-> phy: ti: add PHY driver for TI DS125DF111 Dual-Channel Retimer
+> Ioana Ciornei (2):
+>   dt-bindings: phy: add PHY bindings for the TI DS125DF111 Retimer PHY
+>   phy: ti: add PHY driver for TI DS125DF111 Dual-Channel Retimer
 > 
-> This commit adds a generic PHY driver for the TI DS125DF111 Multi-Protocol
-> Dual-Channel Retimer over I2C. It currently supports 10G and 1G link speeds,
-> and registers a separate PHY device for each of the two channels to allow
-> independent configuration.
+>  .../bindings/phy/ti,ds125df111.yaml           |  46 ++++
+>  drivers/phy/ti/Kconfig                        |  10 +
+>  drivers/phy/ti/Makefile                       |   1 +
+>  drivers/phy/ti/phy-ds125df111.c               | 245 ++++++++++++++++++
+>  4 files changed, 302 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/ti,ds125df111.yaml
+>  create mode 100644 drivers/phy/ti/phy-ds125df111.c
 > 
-> > diff --git a/drivers/phy/ti/phy-ds125df111.c b/drivers/phy/ti/phy-ds125df111.c
-> > new file mode 100644
-> > index 0000000000000..8ac10c603bf70
-> > --- /dev/null
-> > +++ b/drivers/phy/ti/phy-ds125df111.c
-> > @@ -0,0 +1,245 @@
-> > +// SPDX-License-Identifier: GPL-2.0
-> > +/* Copyright 2026 NXP */
-> > +
-> > +#include <linux/i2c.h>
-> > +#include <linux/kernel.h>
-> > +#include <linux/module.h>
-> > +#include <linux/phy.h>
-> > +#include <linux/phy/phy.h>
-> 
-> This isn't a bug, but should this include linux/bitfield.h, linux/bits.h,
-> and linux/slab.h?
-> 
-> The driver uses FIELD_PREP(), GENMASK(), and devm_kzalloc(), but relies on
-> implicit inclusions for these headers. Explicitly including them can help
-> prevent build breakages if the include chains are refactored in the future.
+> -- 
+> 2.25.1
 
-Ok, sure. Will fix in v2.
+When you resend, please add a MAINTAINERS entry for this driver.
 
-> 
-> [ ... ]
-> 
-> > +static struct phy *ds125df111_xlate(struct device *dev,
-> > +                                 const struct of_phandle_args *args)
-> > +{
-> > +     struct ds125df111_priv *priv = dev_get_drvdata(dev);
-> > +     u32 idx = args->args[0];
-> 
-> Is it possible to read uninitialized memory here?
-> 
-> If a consumer's Device Tree reference incorrectly configures #phy-cells = <0>,
-> of_parse_phandle_with_args() sets args->args_count to 0 and leaves the
-> args array unmodified.
-> 
-> Since the of_phandle_args structure is often allocated on the stack, for
-> example in _of_phy_get(), evaluating args->args[0] without verifying that
-> args->args_count >= 1 could result in evaluating stack garbage against the
-> maximum channel count.
-
-Good point. Will verify the args_count.
+Thanks!
 
 -- 
 linux-phy mailing list
