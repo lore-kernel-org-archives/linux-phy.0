@@ -4,62 +4,125 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 05AC0CD343F
-	for <linux-phy@archiver.kernel.org>; Fri, 15 May 2026 08:51:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 232D2CD4851
+	for <linux-phy@archiver.kernel.org>; Fri, 15 May 2026 09:23:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fWpokoQwl/MrfeVnESBKFnJKLZZVGqtfWk7XLQrB/mg=; b=2PyzoSgNtssxyb
-	3yDl0PTcRlWn/b3kW+ph0pxlrcZrJpGObNTzkzbVz/yx4skIRZmM8Tml6e4b+upxiD+/lfUbsNRJZ
-	glK0sc6lypopoL5HhAB4xAyzBPS5nilL6DQ5QNteGYRTvB3PdovljEm79KnuSeWBkEkKHcYalx4rA
-	9SC7RkbnvuwSaAOT3Be3iAp0Ag4BkA19hg/DGoH8xG0JMY7rKbNOjsj/ZHOwM9Bn+qtCXqdJgGmle
-	KF867dmkVVJyOHH6eOIH5ADYn8H+W4ykryJWsliQDse2zegjc5DRFDNoyShOz1CY3uzuKiQrrZib7
-	VRx2OTl52FfthygUvFAA==;
+	List-Owner; bh=2Q41esPgJpPPVkM7mU0butQ/dig3Jj+vd5ufc5aQ+K4=; b=ahghkkX7LzQUxq
+	2DOIoPkHF4g5szHl/Y5aEPqjLRN9AnvTPOM5AnzyC6lrT7STCbDmsnGbsoW/1EKW1mK8AOho3Qe+N
+	flClshL5zil5pUYR9POY/oPpNCWZS29IVjP0hyFlC7hVYiUlJJS/JJhjY6iEqe9hiGOo7eW0g/W2F
+	WYmI+/DE73CDkACXAO06ADj1wmhWwGkmh6WGqUmhogmsPZejFvZJkFz+99ZfQqics+S9gRmYQOQj5
+	UrwZDie3oS3FlrSzQbbRzWAjjlM8zxGT9GlUeCyvvxkNPIFDjZULJ6nKVa0ZrGkpuneZNInaOxhYC
+	tU2X5pu2Nyam/e67yxpg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wNoGj-00000007mzZ-2BhV;
-	Fri, 15 May 2026 08:51:41 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1wNoli-00000007s9o-2wky;
+	Fri, 15 May 2026 09:23:42 +0000
+Received: from mail-swedencentralazon11013039.outbound.protection.outlook.com ([52.101.83.39] helo=GVXPR05CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wNoGi-00000007mzM-3wyp
+	id 1wNolg-00000007s8i-23lB
 	for linux-phy@lists.infradead.org;
-	Fri, 15 May 2026 08:51:40 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id F40C760252;
-	Fri, 15 May 2026 08:51:39 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 26B1DC2BCB8;
-	Fri, 15 May 2026 08:51:38 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1778835099;
-	bh=GUDh7csve5Af1Ir+XPRcGhmpi3nn8y3D30mqwIhD+Co=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=jvv1IfIX+ZBhMY8G9UetoR0uoqNjjcFeLAt3il2BC9JTuHY5MInnFdXZ5tUb8PqHg
-	 qL3Xbyjy71xJ/jvam8M6axLkhOvI6jzCyY7lGZ6WYdD3tpb3boP8hVOIR66iwTPMlA
-	 HSwD7I0xlCK7EYN19OEcbZxL3TeaRPzBBzQ2goIi8465urOFKL2mjRuW+J5zfmgyzA
-	 ucOcDbsmWZszBqMwHqXhVa/dF3Y0+vGxMLPOEG8nKligwC/Im8jTjKaL+XLaRzK/ej
-	 BfR/HZIkCLqLHchBHpMh/+pO2dxC4ExCtzME8dHmkZddGZUzepO7ryBrsEFq3+Fr6b
-	 F4W/OWdBBTUhw==
-Date: Fri, 15 May 2026 10:51:37 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Komal Bajaj <komal.bajaj@oss.qualcomm.com>
-Cc: Bjorn Andersson <andersson@kernel.org>, 
-	Konrad Dybcio <konradybcio@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
-	Wesley Cheng <quic_wcheng@quicinc.com>, Ulf Hansson <ulfh@kernel.org>, linux-arm-msm@vger.kernel.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
-	linux-mmc@vger.kernel.org
-Subject: Re: [PATCH 1/4] dt-bindings: arm: qcom: Document Shikra and its EVK
- boards
-Message-ID: <20260515-pumpkin-cuscus-of-expression-cec1ea@quoll>
-References: <20260512-shikra-dt-v1-0-716438330dd0@oss.qualcomm.com>
- <20260512-shikra-dt-v1-1-716438330dd0@oss.qualcomm.com>
-MIME-Version: 1.0
+	Fri, 15 May 2026 09:23:41 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=zNRXboDM4iRUSTCR/Y6lTVgJCF3nFowvzdJ/Dwi7JvF29Dx3a48ZminPZu1iYnTLAr5us9Pvi5cfqZn8XCRRXo5PRxjbgFPJOa7mXQH/j+87DoxU0qvqhki4VEhLcWRsrgtlnl3nMqR7kk5LG6CzMi7GZ6SJYYJfDSFBosuClFnwcnrj2S6ChVAHEBCAZk33am+UAuYjtttcCW57zhyquPgvKxMh+3sf3inJyx/YTjAzvP4/FxnRBgT8sbm/pkR3seQwdWDXTpf/ys97HhZ7c8tL7BYr4cLkprHEu2pCWt8joTgy33vDhDo5EzP0dmV6k3C+c412RCmgc+xUO7Ectw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=CENLJZTPzr5ufZHoPbRNS8lgPWkF1Tek+F8XcZ02IfM=;
+ b=FqZNe3zNUfD8Z/M4IcOr8gmndcUWPNkQ9suZhHp7WjOaQCtmXsIC00VhXizM5rlQ8zCrxygJIgnaUU7ndpjj4i78VitfSliNCHybw4t+UxBGmiZqgZZAi4ntU6ZxYJdICGPV6DtEuf4gGXnjgbikbHuF3ExwVNiIJcq64jhzM2JpProv0ranEyGMvCeJJcdGQzNfaxL3x9/vSvzOjkBH0qROVPhgCtxGRv+umY4MfujsQigalvYbFpaaBtZW7x6RMKuU/fECXmFOOTXYnHRE7dxieiLIkE9CREE84yXeh+vWWCxKkovFj9oCIrS86sLfH6d1I1WrpqjiPmL1UeJJGA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=CENLJZTPzr5ufZHoPbRNS8lgPWkF1Tek+F8XcZ02IfM=;
+ b=VJwKI4rKk5u78hdre03BdIFaAs8vWuzPRuh228m8Z9XottjI/DMpK8oqSHByUNLYjHa0tOoWMv9TdfjFxOY/g/S4y8SDcF43F5w8H07uAWpwjJ8POAhhysi9xbGeo/dWO/dUauTLD3gxX7CgyI0qELYVoRalbrALiNoc6egU+t+H/Dpkm/FxptCeiFSGQXb3nr/jTFdu+bGT07iN5ONHXfcfbo4TYIGwkCNsXlmNujc5BSQD+GxhJ3sSztaegnHQdo7ezTsvY11L9NW7Ybzquu5Nu96EHzyMFKk7cyetTiLCiV1CH6zUNUnuy/Cwl27+eWsssEJ3fG5FSTtxA9gGmA==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from PR3PR04MB7402.eurprd04.prod.outlook.com (2603:10a6:102:89::16)
+ by GVXPR04MB11479.eurprd04.prod.outlook.com (2603:10a6:150:287::20) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9913.11; Fri, 15 May
+ 2026 09:23:33 +0000
+Received: from PR3PR04MB7402.eurprd04.prod.outlook.com
+ ([fe80::4129:7aed:b5cb:b13d]) by PR3PR04MB7402.eurprd04.prod.outlook.com
+ ([fe80::4129:7aed:b5cb:b13d%5]) with mapi id 15.20.9913.009; Fri, 15 May 2026
+ 09:23:33 +0000
+Date: Fri, 15 May 2026 12:23:29 +0300
+From: Ioana Ciornei <ioana.ciornei@nxp.com>
+To: Conor Dooley <conor@kernel.org>
+Cc: vkoul@kernel.org, neil.armstrong@linaro.org, robh@kernel.org, 
+	krzk+dt@kernel.org, conor+dt@kernel.org, johan@kernel.org, 
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH phy-next 1/2] dt-bindings: phy: add PHY bindings for the
+ TI DS125DF111 Retimer PHY
+Message-ID: <5u7a5lwvfgrs3gx3ft55adwxq6eut7c65uzd7cgurnimlau2fw@bszb4qna2tvv>
+References: <20260513185103.1371809-1-ioana.ciornei@nxp.com>
+ <20260513185103.1371809-2-ioana.ciornei@nxp.com>
+ <20260514-scorebook-uproot-c9766b3e1be4@spud>
 Content-Disposition: inline
-In-Reply-To: <20260512-shikra-dt-v1-1-716438330dd0@oss.qualcomm.com>
+In-Reply-To: <20260514-scorebook-uproot-c9766b3e1be4@spud>
+X-ClientProxiedBy: AS4P189CA0013.EURP189.PROD.OUTLOOK.COM
+ (2603:10a6:20b:5d7::16) To PR3PR04MB7402.eurprd04.prod.outlook.com
+ (2603:10a6:102:89::16)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PR3PR04MB7402:EE_|GVXPR04MB11479:EE_
+X-MS-Office365-Filtering-Correlation-Id: d4f57f99-454b-4126-c1f4-08deb263a28f
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|7416014|376014|1800799024|19092799006|22082099003|18002099003|4143699003|11063799003|56012099003;
+X-Microsoft-Antispam-Message-Info: UoRhjJCWbYoiCS16lwLZHdorSGUeTVqBuRvLFNj0FlHketp/hmAyRxctFO83/TkWXYCdYEBWzj0z0wzPMtNBIeVtHu3tvVFq3FfzAwN7DOdPnFm/0ZfL9gIr7louHeVxG/ylnt2GKdjkJMNyucOP65SkyVCsNJjBua8ojN+Lr5waNWdVajS3CzTD++qsW0ilzOwVJUBwRy+MaXl2HjkgdlT6ax/t0ATj2hpsAZoyNxJTaHEGHSu7ULI1UeNS1Amr9KYE3OP1Xt+Uz2hv8tw+KDUdMgOKGJd+d+KCPC/+GJZPOfg6pckiXsk1ffdeN+vAXqvq9m+bJDq9k+7Z+rV4Ghr8e3aj3Z42PfI/RIUB8Wd/f7cwPAg7eVeh6pIyw0FtBcYnEqVqncPAaAo/3ASwOMXbvFlwz6DmNvqRI3t9namGDnHy/sAVCiNqHOijlhoobeXk7H3KQmUU1Zy2usQ60+8Rm5p6ruT1AqrnCAJfyw1A4tUUNepsfjzWXSNzxXcr3annHCR555xBbvirLfB22va10J2MWnkqMn2m6nmjc8WMvjKwHIKWXEeW8OkvjqZUHDt6NVQhfvk8rXP1pitG5M3A2C1bRJSek9tsgMszPOBOPaTKvOa9RuojsXs0xgzmqAZlK7Ih5wHSNwzLkaCqV6ThAKU+tBMY/iw5tDll+D1I2pBVi3mwySX7tW1YhGTQ
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PR3PR04MB7402.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(7416014)(376014)(1800799024)(19092799006)(22082099003)(18002099003)(4143699003)(11063799003)(56012099003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?tdllSNM6yj/JVEVD5XS6Y/mpkBYg3aGesc8sAtUzksNJo+IGCAZDtFCPtvym?=
+ =?us-ascii?Q?t//RV5Y7eKvy1mBI07kTRfjTUECsejLm6TbFHIcjX9Ukoqn0XvZt1PoMADcW?=
+ =?us-ascii?Q?GfkbxVXdyADEhD4KCdl1WTAWrOxpnajlJ7JSUMxLoM/2lroBobIzOymJB2Q4?=
+ =?us-ascii?Q?5M7/jqvEocBhOAV3Q7D1jFgQqo8ul0JC5UOl7Lg2UcVkQ4Oa+1UH2SVTFb75?=
+ =?us-ascii?Q?pwJHCzd3fbEX6tDBhs/mabzNDu2zTtcE6RKSKP7NhVht+xvEwbs0uGK0GLGm?=
+ =?us-ascii?Q?aVhr3zjUifpYGgJRp0NDqq4d1TLV5DdyQ+jq/4+9HeojPjM1KA+C9xIkrdCP?=
+ =?us-ascii?Q?3XDzk8UYydSEExRCoFuSyNFgWGka2tmffTJje/NISz2tRCtzU1tg8vNi0/qg?=
+ =?us-ascii?Q?nnsoo3p+kMBclMYZ2U18H0SSXE490tBJQ9FQwiD569AGodLBD5QzxyW3VCoC?=
+ =?us-ascii?Q?yA0avqzoXYFohh2mzwkm7UNrYJOMUwYIkeCxpnKmN29xY28yKYiYp61Hw6SN?=
+ =?us-ascii?Q?2PY4LFZkqdfYO70QtF/4aondDsd6TU/8DIhzLTODMnCAcKHoLZUNY9s36zQX?=
+ =?us-ascii?Q?l1H3mUD3stECMW3CPulWBYtjRXoGoPaA50CYtS96sc1vGG5132cdb5/w0AX9?=
+ =?us-ascii?Q?F9XeE0phEIIFS0zq3o/UCT0j46J3qBN9UaNVhjSbYRqheTNO3j1UTxdZd7f4?=
+ =?us-ascii?Q?MQ59WXtCaHs+jwwXbTVFEYTaSHgrrRuQWAQZdKHnyZ5B+8IiyyAOQ9NyPKZL?=
+ =?us-ascii?Q?9uWAmRcJb9huFQgqNsyISlpeo8bfU4wIz4ke2n1s20NOTv2NH2ebE8rM6aBL?=
+ =?us-ascii?Q?biFxxAJRx389mwSV19VfFFWoYQUTAz7eIFJU4ezn/E73U9y0FjrkSq8SW1xZ?=
+ =?us-ascii?Q?0F7qufChktTB1ncodzHHxRub9jBwkehFOZ4efbaMKq6sS9E8VOeutfgTbT9Y?=
+ =?us-ascii?Q?azaBOBHUR9Zmym0LGQuSgSzhh+ChDGL+g64z92Ddw80tamkmWtD3cdpdQzPa?=
+ =?us-ascii?Q?BcJYkTJ0j9+7Snwz2QXIj7wddCsq4H3ZRMAsUqk+JMXqJR6cX/C8+Q+X5Pqd?=
+ =?us-ascii?Q?0pewPHTK8CeTfLeMtKSY0R2k7GoKwvtU1aebPpiZANlVdx6mWdMKKZwkgx41?=
+ =?us-ascii?Q?Z6u/vP8ntibUgL/7n9JNS8abUY2G/QyLvNgAkjAS6Oi4WqX8CwTGx6yeXFBF?=
+ =?us-ascii?Q?yOiGjlBISG68jRYiVOuw0qEHOJnFLAqX1qSoitBA6JCc3KirT/k7iCIko2Rs?=
+ =?us-ascii?Q?jnB4gfU5XMqHsP250gq3N4R/OnirgrRb6appVp3+n8u7MP5tTeBUeQQj4NdK?=
+ =?us-ascii?Q?qyMFd/36jy8jIf9gREkH/MKHicG/OujSwFUeQbXMVsVyPcbEf+An4XXaR5zW?=
+ =?us-ascii?Q?JeiR9USOQJPFzLQaijjO83r+TLviyNDpmp8YGp7GxZYN4OIv11HK9ky3Oitw?=
+ =?us-ascii?Q?ihDZiqhn60w7agD7Aeo75NFsjhIl8/UpzGIH57wtiO2xSCDgoH39CUe6Kq6C?=
+ =?us-ascii?Q?8HvJCrSo8DHu0BXJ842aSnYRNFS5F0Orz9hOhjIebhVFBzrUrx8uqn0s3dC4?=
+ =?us-ascii?Q?/8/lML1EhtBcwUhNmYrzyvoanzsP6h8qLt5fb8/gQ2lLM507HZId4wuzXRsR?=
+ =?us-ascii?Q?keJdui7ZN1FY91V3pIPH54iDbXU1L0qwmVtgB+ZoLfheVtc6bXoHkIpcNvAp?=
+ =?us-ascii?Q?4j2Q/Ouf62t3LqB8nJZazF8lV326hSXXPWb6nhuv4X+EsGerUsWjJodyg0T9?=
+ =?us-ascii?Q?PNO1ScxnsQ=3D=3D?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: d4f57f99-454b-4126-c1f4-08deb263a28f
+X-MS-Exchange-CrossTenant-AuthSource: PR3PR04MB7402.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 15 May 2026 09:23:33.3787
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: US32rWN8Ff5P/DZYVomkJeEacNFbOxN4SlNq6s7Awodn95PqkW0wLJ8awcPzQkvupZj7CwqWSuu9NVRhGYZtZA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: GVXPR04MB11479
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260515_022340_538412_CA1CE163 
+X-CRM114-Status: GOOD (  12.78  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,63 +139,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, May 12, 2026 at 09:38:04AM +0530, Komal Bajaj wrote:
-> Shikra is a Qualcomm IoT SoC available in a System-on-Module (SoM)
-> form factor. The SoM integrates the Shikra SoC, PMICs, and essential
-> passives, and is designed to be mounted on carrier boards.
+On Thu, May 14, 2026 at 07:09:13PM +0100, Conor Dooley wrote:
+> On Wed, May 13, 2026 at 09:51:02PM +0300, Ioana Ciornei wrote:
+> > Add device tree binding for the TI DS125DF111 Retimer PHY.
+> > 
+> > Signed-off-by: Ioana Ciornei <ioana.ciornei@nxp.com>
+> > ---
+> >  .../bindings/phy/ti,ds125df111.yaml           | 46 +++++++++++++++++++
+> >  1 file changed, 46 insertions(+)
+> >  create mode 100644 Documentation/devicetree/bindings/phy/ti,ds125df111.yaml
+> > 
+
+(...)
+
+> > +
+> > +examples:
+> > +  - |
+> > +    i2c {
+> > +      #address-cells = <1>;
+> > +      #size-cells = <0>;
+> > +
+> > +      ti_retimer: retimer@18 {
 > 
-> One SoM variant is introduced:
->   - CQM: retail variant with integrated modem (PM4125 PMIC)
-> 
-> Two EVK boards are supported:
->   - shikra-cqm-evk: pairs with the CQM SoM
->   - shikra-cqs-evk: pairs with the CQM SoM, with no modem support
+> Drop the unused label here please. How come the node name isn't phy@
+> btw?
+> Otherwise,
+> Acked-by: Conor Dooley <conor.dooley@microchip.com>
+> pw-bot: changes-requested
 
-s/CQM/CQS/
+Ok, will drop the label, change the node name to phy and add your
+Acked-by.
 
-but anyway I would prefer to use full product names from
-include/dt-bindings/arm/qcom,ids.h (so CQXXXXM).
-
-> 
-> Each EVK provides debug UART, USB, and other peripheral interfaces.
-> 
-> Add compatible strings for the CQM SoM variant and its two
-> corresponding EVK boards.
-> 
-> Signed-off-by: Komal Bajaj <komal.bajaj@oss.qualcomm.com>
-> ---
->  Documentation/devicetree/bindings/arm/qcom.yaml | 7 +++++++
->  1 file changed, 7 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/arm/qcom.yaml b/Documentation/devicetree/bindings/arm/qcom.yaml
-> index 2741c07e9f41..f041d71d7957 100644
-> --- a/Documentation/devicetree/bindings/arm/qcom.yaml
-> +++ b/Documentation/devicetree/bindings/arm/qcom.yaml
-> @@ -963,6 +963,13 @@ properties:
->            - const: qcom,qcs9100
->            - const: qcom,sa8775p
->  
-> +      - items:
-> +          - enum:
-> +              - qcom,shikra-cqm-evk
-> +              - qcom,shikra-cqs-evk
-> +          - const: qcom,shikra-cqm-som
-
-This is not accurate. The SoM has physically different SoC - either CQM
-or CQS. You either need two lists, like Toradex is doing (e.g.
-toradex,verdin-imx95), or enum in the middle of the lists, like Renesas
-is doing (e.g. renesas,rzt2h-evk).
-
-I prefer the first option, so Toradex choice.
-
-But for sure you do not get the third solution... Really, you are not
-supposed to invent these things, but look at existing solutions (and I
-was mentioning Toradex during internal meetings whenever someone asked
-me how the SoM and carrier should be organized).
-
-Best regards,
-Krzysztof
-
+Thanks!
 
 -- 
 linux-phy mailing list
