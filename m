@@ -4,125 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 106CFCD343F
-	for <linux-phy@archiver.kernel.org>; Fri, 15 May 2026 15:39:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D2FCCCD343F
+	for <linux-phy@archiver.kernel.org>; Fri, 15 May 2026 15:56:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y2xHKlkxQ1Nt9YMJmVObkDy9uHarBM1H/M5GTRwyhbQ=; b=pO5V0RymaSQSyw
-	7MQvPewSpP5imlDeNVk84pm4YXLgU92wQwkWTgM7dtFeTaQ55gKXsOAcmQnraD4nXnuK8gFrR1040
-	jOvFnX+hxG7RFbtMBUXRj0ithCBmDqToZfsFTqscIpu0+1ebJrSFwKujJQUuQ2XwNV65oOmaCBV1Q
-	/pUKWeAZ8M+s99v2F716Ihd3CNVpZFT/PCwDKfFyy7PeKNeVXxhcOZ965exwZ991r8Q0y/bsBJCYw
-	nwGI4Arh1N04hLZyccfHsqPkx5t1VgMzgatIIMsPlJLGACy/Cem5cL3ymCP9oTF8koTxWiTng0K9w
-	v/m9rsCbAwG4HHAyBLgg==;
+	List-Owner; bh=FAI1OYptXyFOI8MDesTyNpJwJ7GizJ1+qVd/mNFAIDA=; b=mRC5q6uexab190
+	ZZM7d8kYrDnSrzkcnbJ23AUfWGIamgOvjvOO/CWLwkLMrL7Cb3ll0id1JAWvrBoT3fgbZHLeHchVp
+	8mlUYDYdcAFyq4N2Hq58lADf0G6ZlSY30e2+8vO8WpOYxCRUbg9G06/USetEd1TkwXrCTn9aJPLo+
+	wK039CoKx8Na1Nu6gv3XT8eCJF3RrICktWaJMdUBBfaVBxoV9oZYX5xN+kbiwAX8lxDOq3wRZhAHL
+	UuuthCqmtg2o2ijJ7wj1jOBPpgPGjlabAmEehlQjVBaKQYSZsaBjK4eRS2947PBY6iy0qixgpI9Ek
+	SCfAvG8t6cKbuHLtzyHA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wNudQ-00000008m58-1NWw;
-	Fri, 15 May 2026 15:39:32 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wNutS-00000008nzb-1yHW;
+	Fri, 15 May 2026 15:56:06 +0000
+Received: from mail-wr1-x42d.google.com ([2a00:1450:4864:20::42d])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wNudO-00000008m4S-05LW
+	id 1wNutP-00000008nyx-2oOO
 	for linux-phy@lists.infradead.org;
-	Fri, 15 May 2026 15:39:31 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 6FB274189B;
-	Fri, 15 May 2026 15:39:29 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 849EDC2BCC9;
-	Fri, 15 May 2026 15:39:25 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1778859569;
-	bh=T1eEHSyyLgSbr9sArcALV84p9lrY1225gvm0yy3XBic=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=Ti9afzSKKaWFunffGxlAhThltdbqXXiVdXsgZwgG7nCUZ5FqbXHAF9ygSYSJRh5/B
-	 GP7bxBJyzclV3ZeyD+iuU3SAG4pS5n17opkGTBS7DhWAHjIqRl0HLbVGnXqfg1qAEd
-	 92L83B2bWUKbjnAapqw1LBwXU38A4C1f3By86jeiJ8kwB6HIlFDFx8wromI4jjM2o7
-	 vgNAYyRnf0j5MZ08V4QrvCCCTnSpNFN/wL2HHMT1uABOfdXKlgtsvWK5NSDwdwvmi9
-	 qoVcAVl7iK1iVykPoJk4Gdk0MN1vTN1JvkQTvON4CJr3g6rN1IOiLj/MfViwqi9RLJ
-	 c6RguukAQL0FA==
-Message-ID: <159d813e-1f2d-420a-bfa7-48ac8f533db5@kernel.org>
-Date: Fri, 15 May 2026 17:39:23 +0200
+	Fri, 15 May 2026 15:56:05 +0000
+Received: by mail-wr1-x42d.google.com with SMTP id ffacd0b85a97d-452aacde862so861860f8f.0
+        for <linux-phy@lists.infradead.org>; Fri, 15 May 2026 08:56:03 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1778860562; x=1779465362; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=cIoaHInJzJMFZFUL5vSiONN3t6PkwcrQhMuCb/BggXc=;
+        b=nbWfNcuThvTNASKaeP/vp0C1qtYnY6pw7xeSNsrdXPLF2BHjsN9AjU4sRpOrOq1y8W
+         /YpZIvmwQquEbRjHq387to/OSIlUgb9x5afb4y9SI3tdDjbQ4AW1DVPAYbf1hPMWzloW
+         I/vr2sfOMaBlgdbJLMgNF/lz0dUp/9F3mmu/RKpayvQNOqmRP1eV6mc4HiDhLagJA5wf
+         gpx2XlK1i3pKjxJv8VLQKhO1uzc/sIsbENiSwZ8j91cnq4jUL2VTPl4SuBAXDpGQimR0
+         u9xWdRC40wbpZMySKAQwbn5+1RiwVwbfn+7MOyQi1BDEhWyoiZLEHHKT8ZFChRmgk0FA
+         5hNg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1778860562; x=1779465362;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=cIoaHInJzJMFZFUL5vSiONN3t6PkwcrQhMuCb/BggXc=;
+        b=KiTpGK6GV6yjyr4QyZukNgEF3qDHrZRZJu+dW99vPuaL+RY0HEjufMGhqUOtx7vw8X
+         uT6dPpg6OjQkcfQA0TalUF15vC718tgCvB1vgBgS1oxuMvXgxQm3S6pk73hCtdnbZ95w
+         OqfxOpmmLzrxAoK3KuFJMAR31GZLnx3ugU+3XcHYit/EFj/dy9Ja4n/7yE8Zfr0mCshw
+         S+IIgf1XLQo8k0l5wAfcNaUBt1VISBCWA84N737fV4ChPK9UQYolwvF90Tfy+IH6Z22Z
+         35iPJPDJZegmaic+4tvxrj0XKSPZ+B7XM8xn4wDdaZSXZ3loE1KlEs2GwSqX7Lx/des2
+         8nUQ==
+X-Forwarded-Encrypted: i=1; AFNElJ+wgClD0W5Jdw0otJQLGRXRLq6lou/2b/Qa3vUpdeEkTUa+npylTOhrCZX2k5yV6QH38Rf9Dv459p8=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yxn9Gr+MfYcxavKMZLRlSZ0zeOK2DQGr01MrixtoXlHkDF3OJQu
+	cw2zt8LJpB/rSlI/epDxyJvz+TD7GZLs5GWAuNJStJ3DahomR8ncvOib
+X-Gm-Gg: Acq92OGRZVHAOpOQblZlhzeIdi8DGqa01i3u+gvoe0Xsgr9LebxxEtiRnnMKCK371CB
+	Brf0N0/1MOYMOugZH7G7/mbHyqE2ZXhjd7HK6SHVsYBvzRncWJMhsAkUElJJ9JxQW5OGu6oDrnn
+	iu8ZE3P6VOLQ8OR4Np27St/CojKBWEVJvke/epkYsaSEBWR69rACODInKt4LhXwLWxJsZrrlhcn
+	re/gkhRNarONKSQdparS5PJVSLYTtZE3jSUzq9xCJ6HfMrqCj7kTnBlL+JYLuzJxaPM5+Gj9vWM
+	2Y0WXxnyjLAgcSEvrkaOHQ0PvmXibyGQQzlbiT2ooIeQs81B7k7zRP9QSIdzxc5Ubf7yvRVH5R4
+	B7e4ORDYQ7KPoBkh1alaUD87uYIM+fnjYVp/sfeTB+LxXEERmGy54JHWrM1W+/VJ2JdjGB7Br2z
+	aS9ZjomWI6CAOklINf6qAjlMKTeriIzsozf+0=
+X-Received: by 2002:a05:6000:46dc:b0:446:8299:c109 with SMTP id ffacd0b85a97d-45e5c5eb0dcmr1729431f8f.7.1778860561475;
+        Fri, 15 May 2026 08:56:01 -0700 (PDT)
+Received: from skbuf ([2a02:2f04:d507:6e00:9f61:24db:b04:35c4])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-45da0a19b1dsm15188387f8f.17.2026.05.15.08.56.00
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 15 May 2026 08:56:00 -0700 (PDT)
+Date: Fri, 15 May 2026 18:55:58 +0300
+From: Vladimir Oltean <olteanv@gmail.com>
+To: Hongling Zeng <zenghongling@kylinos.cn>
+Cc: vkoul@kernel.org, neil.armstrong@linaro.org, johan@kernel.org,
+	kishon@kernel.org, linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org, zhongling0719@126.com
+Subject: Re: [PATCH 1/2 v3] phy: ti: pipe3: Fix clock resource leak on probe
+ errors
+Message-ID: <20260515155558.eigeqtmkdifqciu5@skbuf>
+References: <20260515040522.27793-1-zenghongling@kylinos.cn>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 2/4] dt-bindings: phy: qcom,msm8998-qmp-usb3-phy: Add
- support for Shikra
-To: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
-Cc: Neil Armstrong <neil.armstrong@linaro.org>, Vinod Koul
- <vkoul@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
- Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>,
- Johan Hovold <johan+linaro@kernel.org>,
- Loic Poulain <loic.poulain@oss.qualcomm.com>,
- Kathiravan Thirumoorthy <kathiravan.thirumoorthy@oss.qualcomm.com>,
- Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20260504170659.282532-1-krishna.kurapati@oss.qualcomm.com>
- <20260504170659.282532-3-krishna.kurapati@oss.qualcomm.com>
- <20260505-gifted-salamander-of-prowess-5107a6@quoll>
- <8cd564af-9646-40c5-a8ef-c7197fb3cfe9@kernel.org>
- <95b567cc-b83c-4154-9520-e624555f1882@oss.qualcomm.com>
- <29571bdd-23bf-42a7-a9e3-918a28c79700@kernel.org>
- <62161822-2365-4ec7-80f7-8660bdadb177@oss.qualcomm.com>
- <40b5e0f6-bc61-4750-9560-bdcc268f0fe3@kernel.org>
- <d52c5039-9431-44ed-9f3b-bb00d03ae176@oss.qualcomm.com>
- <5baeeeed-7c18-46f7-82a3-5bb299ba05ef@kernel.org>
- <42ba6ac7-306a-419f-96b6-3427c51ef567@oss.qualcomm.com>
- <9ed7c714-07c1-48de-8d27-cbe24356c606@kernel.org>
- <34586ed6-4f78-490f-a916-baf7657cca7a@oss.qualcomm.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 a/A=
-In-Reply-To: <34586ed6-4f78-490f-a916-baf7657cca7a@oss.qualcomm.com>
+Content-Disposition: inline
+In-Reply-To: <20260515040522.27793-1-zenghongling@kylinos.cn>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260515_083930_105269_CA496CF9 
-X-CRM114-Status: GOOD (  23.10  )
+X-CRM114-CacheID: sfid-20260515_085603_735124_6202AC71 
+X-CRM114-Status: GOOD (  22.76  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -139,123 +100,92 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 15/05/2026 17:36, Krishna Kurapati wrote:
+On Fri, May 15, 2026 at 12:05:22PM +0800, Hongling Zeng wrote:
+> When devm_phy_create() or devm_of_phy_provider_register() fails,
+> the refclk that was enabled earlier is not disabled, causing a
+> resource leak.
 > 
+> Fix this by adding an error handling path to disable the clock
+> when these functions fail.
 > 
-> On 5/14/2026 8:07 PM, Krzysztof Kozlowski wrote:
->> On 14/05/2026 08:22, Krishna Kurapati wrote:
->>>
->>>
->>> On 5/14/2026 12:26 AM, Krzysztof Kozlowski wrote:
->>>> On 07/05/2026 13:37, Krishna Kurapati wrote:
->>>>>
->>>>>
->>>>> On 5/5/2026 7:30 PM, Krzysztof Kozlowski wrote:
->>>>>> On 05/05/2026 15:57, Krishna Kurapati wrote:
->>>>>>>
->>>>>>>
->>>>>>> On 5/5/2026 6:59 PM, Krzysztof Kozlowski wrote:
->>>>>>>> On 05/05/2026 15:27, Krishna Kurapati wrote:
->>>>>>>>>
->>>>>>>>>
->>>>>>>>> On 5/5/2026 4:22 PM, Krzysztof Kozlowski wrote:
->>>>>>>>>> On 05/05/2026 12:49, Krzysztof Kozlowski wrote:
->>>>>>>>>>> On Mon, May 04, 2026 at 10:36:57PM +0530, Krishna Kurapati wrote:
->>>>>>>>>>>> Declare the USB-C QMP PHY present on the Qualcomm Shikra platform.
->>>>>>>>>>>>
->>>>>>>>>>>> Signed-off-by: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
->>>>>>>>>>>> ---
->>>>>>>>>>>>       .../devicetree/bindings/phy/qcom,msm8998-qmp-usb3-phy.yaml      | 2 ++
->>>>>>>>>>>>       1 file changed, 2 insertions(+)
->>>>>>>>>>>
->>>>>>>>>>> Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
->>>>>>>>>>
->>>>>>>>>> ... and then I looked at the driver. So un-reviewed. Devices are clearly
->>>>>>>>>> compatible. If not, explain what is not compatible.
->>>>>>>>>>
->>>>>>>>> Talos uses GCC_USB3_PRIM_PHY_AUX_CLK.
->>>>>>>>>
->>>>>>>>> In Shikra, we are using GCC_USB3_PRIM_PHY_COM_AUX_CLK. We don't have
->>>>>>>>> GCC_USB3_PRIM_PHY_AUX_CLK.
->>>>>>>>>
->>>>>>>>> Hence, I didn't use a fallback compatible.
->>>>>>>>
->>>>>>>> This still explains nothing. How different clock makes interface for SW
->>>>>>>> incompatible exactly?
->>>>>>>>
->>>>>>> So I went by the naming. AUX vs COM_AUX.
->>>>>>
->>>>>> The naming does not matter. If the clock is called
->>>>>> "no_one_expects_spanish_inquisition", does that make software
->>>>>> incompatible? Why would the name itself matter?
->>>>>>
->>>>>>>
->>>>>>> Can I use a fallback compatible and in DT vote for "COM_AUX" clock with
->>>>>>> clock-names mentioning "aux" ?
->>>>>>
->>>>>> I don't know, I asked what is different in software interface.
->>>>>>
->>>>>
->>>>> Hi Krzysztof,
->>>>>
->>>>>     I checked with the hw team here and found out two things.
->>>>>
->>>>>     1. Shikra is a spinoff of Agatti and its sw interface (clocks used and
->>>>> regulators used) is the same as agatti.
->>>>>
->>>>>     2. I thought we could use qcm2290 as a fallback since the phy register
->>>>> init sequence is the same for Talos/Shikra/Agatti. The difference
->>>>> between Talos and agatti when checked in the driver was the init load
->>>>> settings. I checked with the hw team and they suggested using the init
->>>>> load settings which talos was using.
->>>>>
->>>>>     Hence both these compatibles (qcm2290 and qcs615) cannot be used as
->>>>> fallback for Shikra.
->>>>
->>>> Then I do not understand why you are using qcs615_usb3phy_cfg for
->>>> Shikra. You say that the initialization is different, but you use
->>>> exactly the same initialization. So in a meaning of compatibility
->>>> between hardware for Devicetree they are compatible.
->>>>
->>> Hi Krzysztof,
->>>
->>>    There are 3 things:
->>>
->>> 1. Clocks used:
->>> -> Talos supports AUX Clock since it supports DP over USB.
->>> -> Agatti and Shikra use COM_AUX clock since they dont support DP over USB.
->>>
->>> 2. Phy register Init sequence - same for all 3 targets
->>>
->>> 3. Regulator init load:
->>> -> Different for both Talos and Agatti
->>> -> Recommendation is to use Talos regulator load values.
->>>
->>> SW interface wise, shikra is comaptible with agatti. If we use agatti as
->>> fallback, we would end up using the platform data of Agatti where the
->>> regulator init load is not suitable for Shikra. Hence not using Agatti
->>> as fallback.
->>>
->>> Coming to driver changes, I used qcs615_cfg because it has required phy
->>> register sequence and regulator init load as needed by shikra.
->>
->> So is it compatible with QCS615? If not, then something is incomplete or
->> confusing. The driver uses the same software interface.
->>
-> Sorry for the confusion. The Talos compatible represents the USB/DP PHY 
-> with aux clock input, while Shikra is a USB-only PHY with com_aux input 
-> clock, so the two PHYs are not compatible with each other.
-> 
-> In the Linux driver implementation the match data is currently used only 
-> to affect the init sequence and regulator init load and here Shikra can 
-> reuse the Talos match data structure.
+> Fixes: 234738ea3390 ("phy: ti-pipe3: move clk initialization to a separate function")
+> Signed-off-by: Hongling Zeng <zenghongling@kylinos.cn>
 > 
 
-I wrote three times already, not writing anymore. You still did not
-answer the problem here.
+Your patch numbering broke Patchwork. Please do not name patches 1/2 if
+2/2 is not in the same thread. Neither this patch nor "[2/2] phy:
+ti-pipe3: Fix EPROBE_DEFER handling for clock resources" can be applied.
 
-Best regards,
-Krzysztof
+Also, wasn't v3 this? https://patchwork.kernel.org/project/linux-phy/patch/20260515021635.13444-1-zenghongling@kylinos.cn/
+shouldn't this be v4?
+
+pw-bot: cr
+
+> ---
+>  Change in v2:
+>   -Add pm_runtime_disable() in error path (reported by Sashiko AI).
+> ---
+>  change in v3:
+>   -Fix unbalanced clock disable by checking clk_prepare_enable()return value and
+> setting sata_refclk_enabledonly on success.
+>   -Fix error path teardown order to match ti_pipe3_remove()(disable clock before
+> disabling runtime PM).
+> ---
+>  drivers/phy/ti/phy-ti-pipe3.c | 26 ++++++++++++++++++++++----
+>  1 file changed, 22 insertions(+), 4 deletions(-)
+> 
+> diff --git a/drivers/phy/ti/phy-ti-pipe3.c b/drivers/phy/ti/phy-ti-pipe3.c
+> index b5543b5c674c..58fbc3b27813 100644
+> --- a/drivers/phy/ti/phy-ti-pipe3.c
+> +++ b/drivers/phy/ti/phy-ti-pipe3.c
+> @@ -831,21 +831,39 @@ static int ti_pipe3_probe(struct platform_device *pdev)
+>  	 */
+>  	if (phy->mode == PIPE3_MODE_SATA) {
+>  		if (!IS_ERR(phy->refclk)) {
+> -			clk_prepare_enable(phy->refclk);
+> +			ret = clk_prepare_enable(phy->refclk);
+> +			if (ret) {
+> +				dev_err(dev, "Failed to enable refclk %d\n", ret);
+> +				goto err_pm_disable;
+> +			}
+>  			phy->sata_refclk_enabled = true;
+>  		}
+>  	}
+>  
+>  	generic_phy = devm_phy_create(dev, NULL, &ops);
+> -	if (IS_ERR(generic_phy))
+> -		return PTR_ERR(generic_phy);
+> +	if (IS_ERR(generic_phy)) {
+> +		ret = PTR_ERR(generic_phy);
+> +		goto err_clk_disable;
+> +	}
+>  
+>  	phy_set_drvdata(generic_phy, phy);
+>  
+>  	ti_pipe3_power_off(generic_phy);
+>  
+>  	phy_provider = devm_of_phy_provider_register(dev, of_phy_simple_xlate);
+> -	return PTR_ERR_OR_ZERO(phy_provider);
+> +	if (IS_ERR(phy_provider)) {
+> +		ret = PTR_ERR(phy_provider);
+> +		goto err_clk_disable;
+> +	}
+> +
+> +	return 0;
+> +
+> +err_clk_disable:
+> +	if (phy->sata_refclk_enabled && !IS_ERR(phy->refclk))
+> +		clk_disable_unprepare(phy->refclk);
+> +err_pm_disable:
+> +	pm_runtime_disable(dev);
+> +	return ret;
+>  }
+>  
+>  static void ti_pipe3_remove(struct platform_device *pdev)
+> -- 
+> 2.25.1
+> 
+> 
 
 -- 
 linux-phy mailing list
