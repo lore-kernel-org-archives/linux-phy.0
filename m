@@ -4,125 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 232D2CD4851
-	for <linux-phy@archiver.kernel.org>; Fri, 15 May 2026 09:23:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 24177CD343F
+	for <linux-phy@archiver.kernel.org>; Fri, 15 May 2026 09:47:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2Q41esPgJpPPVkM7mU0butQ/dig3Jj+vd5ufc5aQ+K4=; b=ahghkkX7LzQUxq
-	2DOIoPkHF4g5szHl/Y5aEPqjLRN9AnvTPOM5AnzyC6lrT7STCbDmsnGbsoW/1EKW1mK8AOho3Qe+N
-	flClshL5zil5pUYR9POY/oPpNCWZS29IVjP0hyFlC7hVYiUlJJS/JJhjY6iEqe9hiGOo7eW0g/W2F
-	WYmI+/DE73CDkACXAO06ADj1wmhWwGkmh6WGqUmhogmsPZejFvZJkFz+99ZfQqics+S9gRmYQOQj5
-	UrwZDie3oS3FlrSzQbbRzWAjjlM8zxGT9GlUeCyvvxkNPIFDjZULJ6nKVa0ZrGkpuneZNInaOxhYC
-	tU2X5pu2Nyam/e67yxpg==;
+	List-Owner; bh=bvWk88Xa9AzsNFwL1GLvVE6OX4nUjyCjg3K4g1AyxNY=; b=tJt3WdYoCqFciP
+	+AUFuYID4GkCs7UeuNGQpsaw9keTRhOXDdILzQtOiEmn19y9I2U6XPsRDYR7c6mT1EVFI8vpXKvpk
+	mGD7lB1vdOXwieZmpJ6GNqB+BeYKrAwIrq/5HXRDt5y33RvArvgzH+BdJ2nU0UfXW7sWmrBYSvo7Y
+	pXDzgLuM4r5fmhRlD/2dupl9f6zq2A5GGZ0qzF4cw+T9FsaNleSBJP2bwac730gJLlqOKHDrQLnvu
+	AhxB9DTUwlAi8uac3GxhfPcgDSifoosbvqnk/54iSi6V4hkTWtozYMvZepJAvfEpb6Sf/xuRc5ojG
+	VRM/t2DiNx35keZyDs1g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wNoli-00000007s9o-2wky;
-	Fri, 15 May 2026 09:23:42 +0000
-Received: from mail-swedencentralazon11013039.outbound.protection.outlook.com ([52.101.83.39] helo=GVXPR05CU001.outbound.protection.outlook.com)
+	id 1wNp9A-00000007wuA-2j8Y;
+	Fri, 15 May 2026 09:47:56 +0000
+Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wNolg-00000007s8i-23lB
+	id 1wNp97-00000007wtP-3jNC
 	for linux-phy@lists.infradead.org;
-	Fri, 15 May 2026 09:23:41 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=zNRXboDM4iRUSTCR/Y6lTVgJCF3nFowvzdJ/Dwi7JvF29Dx3a48ZminPZu1iYnTLAr5us9Pvi5cfqZn8XCRRXo5PRxjbgFPJOa7mXQH/j+87DoxU0qvqhki4VEhLcWRsrgtlnl3nMqR7kk5LG6CzMi7GZ6SJYYJfDSFBosuClFnwcnrj2S6ChVAHEBCAZk33am+UAuYjtttcCW57zhyquPgvKxMh+3sf3inJyx/YTjAzvP4/FxnRBgT8sbm/pkR3seQwdWDXTpf/ys97HhZ7c8tL7BYr4cLkprHEu2pCWt8joTgy33vDhDo5EzP0dmV6k3C+c412RCmgc+xUO7Ectw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=CENLJZTPzr5ufZHoPbRNS8lgPWkF1Tek+F8XcZ02IfM=;
- b=FqZNe3zNUfD8Z/M4IcOr8gmndcUWPNkQ9suZhHp7WjOaQCtmXsIC00VhXizM5rlQ8zCrxygJIgnaUU7ndpjj4i78VitfSliNCHybw4t+UxBGmiZqgZZAi4ntU6ZxYJdICGPV6DtEuf4gGXnjgbikbHuF3ExwVNiIJcq64jhzM2JpProv0ranEyGMvCeJJcdGQzNfaxL3x9/vSvzOjkBH0qROVPhgCtxGRv+umY4MfujsQigalvYbFpaaBtZW7x6RMKuU/fECXmFOOTXYnHRE7dxieiLIkE9CREE84yXeh+vWWCxKkovFj9oCIrS86sLfH6d1I1WrpqjiPmL1UeJJGA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=CENLJZTPzr5ufZHoPbRNS8lgPWkF1Tek+F8XcZ02IfM=;
- b=VJwKI4rKk5u78hdre03BdIFaAs8vWuzPRuh228m8Z9XottjI/DMpK8oqSHByUNLYjHa0tOoWMv9TdfjFxOY/g/S4y8SDcF43F5w8H07uAWpwjJ8POAhhysi9xbGeo/dWO/dUauTLD3gxX7CgyI0qELYVoRalbrALiNoc6egU+t+H/Dpkm/FxptCeiFSGQXb3nr/jTFdu+bGT07iN5ONHXfcfbo4TYIGwkCNsXlmNujc5BSQD+GxhJ3sSztaegnHQdo7ezTsvY11L9NW7Ybzquu5Nu96EHzyMFKk7cyetTiLCiV1CH6zUNUnuy/Cwl27+eWsssEJ3fG5FSTtxA9gGmA==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from PR3PR04MB7402.eurprd04.prod.outlook.com (2603:10a6:102:89::16)
- by GVXPR04MB11479.eurprd04.prod.outlook.com (2603:10a6:150:287::20) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9913.11; Fri, 15 May
- 2026 09:23:33 +0000
-Received: from PR3PR04MB7402.eurprd04.prod.outlook.com
- ([fe80::4129:7aed:b5cb:b13d]) by PR3PR04MB7402.eurprd04.prod.outlook.com
- ([fe80::4129:7aed:b5cb:b13d%5]) with mapi id 15.20.9913.009; Fri, 15 May 2026
- 09:23:33 +0000
-Date: Fri, 15 May 2026 12:23:29 +0300
-From: Ioana Ciornei <ioana.ciornei@nxp.com>
-To: Conor Dooley <conor@kernel.org>
-Cc: vkoul@kernel.org, neil.armstrong@linaro.org, robh@kernel.org, 
-	krzk+dt@kernel.org, conor+dt@kernel.org, johan@kernel.org, 
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH phy-next 1/2] dt-bindings: phy: add PHY bindings for the
- TI DS125DF111 Retimer PHY
-Message-ID: <5u7a5lwvfgrs3gx3ft55adwxq6eut7c65uzd7cgurnimlau2fw@bszb4qna2tvv>
-References: <20260513185103.1371809-1-ioana.ciornei@nxp.com>
- <20260513185103.1371809-2-ioana.ciornei@nxp.com>
- <20260514-scorebook-uproot-c9766b3e1be4@spud>
-Content-Disposition: inline
-In-Reply-To: <20260514-scorebook-uproot-c9766b3e1be4@spud>
-X-ClientProxiedBy: AS4P189CA0013.EURP189.PROD.OUTLOOK.COM
- (2603:10a6:20b:5d7::16) To PR3PR04MB7402.eurprd04.prod.outlook.com
- (2603:10a6:102:89::16)
+	Fri, 15 May 2026 09:47:55 +0000
+Received: by mail-wm1-x32c.google.com with SMTP id 5b1f17b1804b1-48d146705b4so105671775e9.3
+        for <linux-phy@lists.infradead.org>; Fri, 15 May 2026 02:47:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1778838472; x=1779443272; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:subject:cc:to:from:date:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=r/e37VgLdpUmdJ/sT4E0Yd2dWN5tYEQahe7Aa4DMknc=;
+        b=TZqgi4R6rEdajlaE5bBErxcOgUgasGas8u3dZaRq8iyheki5qp08QNggCrx9Qrc26e
+         Y3+gQDwuzpUddHB/EMkM5LL9trq6cCatl6S+15ZziYQrIqS+VmJ9MBcIfmJcRxzPUDPG
+         w3Sj0vnvUih9pKy4lQfpV2XaJZOBXIV6OmBGfL8yhSTahaFVupnCCUIKqAFo0n1VWMks
+         aROvnKwa2YXc1tHms5B+pPIp2cyKngBuSAutCEniiSbXWX19FluhEYUMHIsDCsZP2Jlw
+         fKmPuF+u+8On9g0Qb85TqAWTqjE3VrNpjB7724ngXzB3U9OVjzYoV6A0+qzHmeB1QiBf
+         0yqA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1778838472; x=1779443272;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to;
+        bh=r/e37VgLdpUmdJ/sT4E0Yd2dWN5tYEQahe7Aa4DMknc=;
+        b=LspeG+gTA0DKxQq+1dnWqg2pB5Xh/9LafbYkJeISGiTBKlzerXPM0mVwHQ6Ltb82h2
+         M2xjVvB/aKm+HipAd2IbmxCxjJqwjlJjrJ/OF8EKOEHhY1isXW+ctePXFTCPIRUrlxGs
+         +Zs+ORlt3m2K/nEcYGj/tMU1+h2OcMjESM5tUFj7Tu21U5tWNJfxxwjbq556rojXLfFZ
+         wSSDjTegXKaWggRI8V8RxHnNqTK0+5+EVdmVcXz1C/kPU3H/l/bJe2qBEW8CFm+izB81
+         JQcKEjtBSAI6XfvO9NtFNlIaqzYqUdmPVWYxsFOVylmo/nEOVd+l7ifQARHGMF7UljYs
+         LGEw==
+X-Forwarded-Encrypted: i=1; AFNElJ8haSfmoPC6DPyL0aJ35lm5CpJtNvIVv5cxOxYSA/bku9cMG6pkWRQ0uTI/K89uuriFsw9Dxm7DZZc=@lists.infradead.org
+X-Gm-Message-State: AOJu0YykDkUctA3ik2lttH+WjBIvTeGgYo+WfeGSmArA3azKBwiw3ua/
+	S5m45IEOSz9RuVkJuquAt7TDp6FyRxCBhHukhlktsS0sMym2FxcFecTO
+X-Gm-Gg: Acq92OHBBxtrDorBGcjhsmiID9ELgPlYVb8XdjNxDX9RCDYUgoeee5Erb75MyO5lPqp
+	KRVY8Og734ZRbDo5vaLxbxIGeoJ0LnbKlYAm+cuePMe9XQIaP2VPX3jxY1rzAP4xVgRVD7G5bMe
+	QLK3Ges8cNpUPrLlYvSgsXFw2jJdgxJvR34HTylhmK8oBvk5Kw01qxmLJtuCwPsFUiAfqVtbSB8
+	m5RzojbGN3dGTRCVOzKdnl3YO5dvgrUTg7tlPjzpeskrHhGh1ix54hlJIotws3K1+2LStJ63ynD
+	wj8RkLRkCNO5tGZk2SKxVKnkzOP2t4fQ0Obdm+///uc/8E9/X9Kw2lr5dJHlhlZO212GIMr2NuS
+	UAbDUbFIfHZFi7kZN9aD0K1cRB2aZVxrr23vJoIxGGqoz0u1c2RBqyaYyQx0MyHwRpyglFlYrkg
+	lw5oi1VYDzJpLkk1GATaME9mr/LjzApQiJKi9Kxuc5FKCqnxneMYx8wRbnRD+Z
+X-Received: by 2002:a05:600c:a4f:b0:48f:e230:2a24 with SMTP id 5b1f17b1804b1-48fe66204e8mr41076455e9.31.1778838471669;
+        Fri, 15 May 2026 02:47:51 -0700 (PDT)
+Received: from pumpkin (82-69-66-36.dsl.in-addr.zen.co.uk. [82.69.66.36])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-48fe5cab882sm54024555e9.13.2026.05.15.02.47.51
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 15 May 2026 02:47:51 -0700 (PDT)
+Date: Fri, 15 May 2026 10:47:49 +0100
+From: David Laight <david.laight.linux@gmail.com>
+To: Pavel Machek <pavel@nabladev.com>
+Cc: Claudiu Beznea <claudiu.beznea@kernel.org>,
+ yoshihiro.shimoda.uh@renesas.com, vkoul@kernel.org,
+ neil.armstrong@linaro.org, geert+renesas@glider.be, magnus.damm@gmail.com,
+ prabhakar.mahadev-lad.rj@bp.renesas.com, linux-renesas-soc@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, Claudiu Beznea
+ <claudiu.beznea.uj@bp.renesas.com>, stable@vger.kernel.org, Nobuhiro
+ Iwamatsu <iwamatsu@nigauri.org>
+Subject: Re: [PATCH] phy: renesas: rcar-gen3-usb2: Avoid long delay in
+ atomic context
+Message-ID: <20260515104749.24135f22@pumpkin>
+In-Reply-To: <agY8NAyCcHkhBvBv@duo.ucw.cz>
+References: <20260514111300.2152386-1-claudiu.beznea@kernel.org>
+	<agY8NAyCcHkhBvBv@duo.ucw.cz>
+X-Mailer: Claws Mail 4.1.1 (GTK 3.24.38; arm-unknown-linux-gnueabihf)
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PR3PR04MB7402:EE_|GVXPR04MB11479:EE_
-X-MS-Office365-Filtering-Correlation-Id: d4f57f99-454b-4126-c1f4-08deb263a28f
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|7416014|376014|1800799024|19092799006|22082099003|18002099003|4143699003|11063799003|56012099003;
-X-Microsoft-Antispam-Message-Info: UoRhjJCWbYoiCS16lwLZHdorSGUeTVqBuRvLFNj0FlHketp/hmAyRxctFO83/TkWXYCdYEBWzj0z0wzPMtNBIeVtHu3tvVFq3FfzAwN7DOdPnFm/0ZfL9gIr7louHeVxG/ylnt2GKdjkJMNyucOP65SkyVCsNJjBua8ojN+Lr5waNWdVajS3CzTD++qsW0ilzOwVJUBwRy+MaXl2HjkgdlT6ax/t0ATj2hpsAZoyNxJTaHEGHSu7ULI1UeNS1Amr9KYE3OP1Xt+Uz2hv8tw+KDUdMgOKGJd+d+KCPC/+GJZPOfg6pckiXsk1ffdeN+vAXqvq9m+bJDq9k+7Z+rV4Ghr8e3aj3Z42PfI/RIUB8Wd/f7cwPAg7eVeh6pIyw0FtBcYnEqVqncPAaAo/3ASwOMXbvFlwz6DmNvqRI3t9namGDnHy/sAVCiNqHOijlhoobeXk7H3KQmUU1Zy2usQ60+8Rm5p6ruT1AqrnCAJfyw1A4tUUNepsfjzWXSNzxXcr3annHCR555xBbvirLfB22va10J2MWnkqMn2m6nmjc8WMvjKwHIKWXEeW8OkvjqZUHDt6NVQhfvk8rXP1pitG5M3A2C1bRJSek9tsgMszPOBOPaTKvOa9RuojsXs0xgzmqAZlK7Ih5wHSNwzLkaCqV6ThAKU+tBMY/iw5tDll+D1I2pBVi3mwySX7tW1YhGTQ
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PR3PR04MB7402.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(7416014)(376014)(1800799024)(19092799006)(22082099003)(18002099003)(4143699003)(11063799003)(56012099003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?tdllSNM6yj/JVEVD5XS6Y/mpkBYg3aGesc8sAtUzksNJo+IGCAZDtFCPtvym?=
- =?us-ascii?Q?t//RV5Y7eKvy1mBI07kTRfjTUECsejLm6TbFHIcjX9Ukoqn0XvZt1PoMADcW?=
- =?us-ascii?Q?GfkbxVXdyADEhD4KCdl1WTAWrOxpnajlJ7JSUMxLoM/2lroBobIzOymJB2Q4?=
- =?us-ascii?Q?5M7/jqvEocBhOAV3Q7D1jFgQqo8ul0JC5UOl7Lg2UcVkQ4Oa+1UH2SVTFb75?=
- =?us-ascii?Q?pwJHCzd3fbEX6tDBhs/mabzNDu2zTtcE6RKSKP7NhVht+xvEwbs0uGK0GLGm?=
- =?us-ascii?Q?aVhr3zjUifpYGgJRp0NDqq4d1TLV5DdyQ+jq/4+9HeojPjM1KA+C9xIkrdCP?=
- =?us-ascii?Q?3XDzk8UYydSEExRCoFuSyNFgWGka2tmffTJje/NISz2tRCtzU1tg8vNi0/qg?=
- =?us-ascii?Q?nnsoo3p+kMBclMYZ2U18H0SSXE490tBJQ9FQwiD569AGodLBD5QzxyW3VCoC?=
- =?us-ascii?Q?yA0avqzoXYFohh2mzwkm7UNrYJOMUwYIkeCxpnKmN29xY28yKYiYp61Hw6SN?=
- =?us-ascii?Q?2PY4LFZkqdfYO70QtF/4aondDsd6TU/8DIhzLTODMnCAcKHoLZUNY9s36zQX?=
- =?us-ascii?Q?l1H3mUD3stECMW3CPulWBYtjRXoGoPaA50CYtS96sc1vGG5132cdb5/w0AX9?=
- =?us-ascii?Q?F9XeE0phEIIFS0zq3o/UCT0j46J3qBN9UaNVhjSbYRqheTNO3j1UTxdZd7f4?=
- =?us-ascii?Q?MQ59WXtCaHs+jwwXbTVFEYTaSHgrrRuQWAQZdKHnyZ5B+8IiyyAOQ9NyPKZL?=
- =?us-ascii?Q?9uWAmRcJb9huFQgqNsyISlpeo8bfU4wIz4ke2n1s20NOTv2NH2ebE8rM6aBL?=
- =?us-ascii?Q?biFxxAJRx389mwSV19VfFFWoYQUTAz7eIFJU4ezn/E73U9y0FjrkSq8SW1xZ?=
- =?us-ascii?Q?0F7qufChktTB1ncodzHHxRub9jBwkehFOZ4efbaMKq6sS9E8VOeutfgTbT9Y?=
- =?us-ascii?Q?azaBOBHUR9Zmym0LGQuSgSzhh+ChDGL+g64z92Ddw80tamkmWtD3cdpdQzPa?=
- =?us-ascii?Q?BcJYkTJ0j9+7Snwz2QXIj7wddCsq4H3ZRMAsUqk+JMXqJR6cX/C8+Q+X5Pqd?=
- =?us-ascii?Q?0pewPHTK8CeTfLeMtKSY0R2k7GoKwvtU1aebPpiZANlVdx6mWdMKKZwkgx41?=
- =?us-ascii?Q?Z6u/vP8ntibUgL/7n9JNS8abUY2G/QyLvNgAkjAS6Oi4WqX8CwTGx6yeXFBF?=
- =?us-ascii?Q?yOiGjlBISG68jRYiVOuw0qEHOJnFLAqX1qSoitBA6JCc3KirT/k7iCIko2Rs?=
- =?us-ascii?Q?jnB4gfU5XMqHsP250gq3N4R/OnirgrRb6appVp3+n8u7MP5tTeBUeQQj4NdK?=
- =?us-ascii?Q?qyMFd/36jy8jIf9gREkH/MKHicG/OujSwFUeQbXMVsVyPcbEf+An4XXaR5zW?=
- =?us-ascii?Q?JeiR9USOQJPFzLQaijjO83r+TLviyNDpmp8YGp7GxZYN4OIv11HK9ky3Oitw?=
- =?us-ascii?Q?ihDZiqhn60w7agD7Aeo75NFsjhIl8/UpzGIH57wtiO2xSCDgoH39CUe6Kq6C?=
- =?us-ascii?Q?8HvJCrSo8DHu0BXJ842aSnYRNFS5F0Orz9hOhjIebhVFBzrUrx8uqn0s3dC4?=
- =?us-ascii?Q?/8/lML1EhtBcwUhNmYrzyvoanzsP6h8qLt5fb8/gQ2lLM507HZId4wuzXRsR?=
- =?us-ascii?Q?keJdui7ZN1FY91V3pIPH54iDbXU1L0qwmVtgB+ZoLfheVtc6bXoHkIpcNvAp?=
- =?us-ascii?Q?4j2Q/Ouf62t3LqB8nJZazF8lV326hSXXPWb6nhuv4X+EsGerUsWjJodyg0T9?=
- =?us-ascii?Q?PNO1ScxnsQ=3D=3D?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: d4f57f99-454b-4126-c1f4-08deb263a28f
-X-MS-Exchange-CrossTenant-AuthSource: PR3PR04MB7402.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 15 May 2026 09:23:33.3787
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: US32rWN8Ff5P/DZYVomkJeEacNFbOxN4SlNq6s7Awodn95PqkW0wLJ8awcPzQkvupZj7CwqWSuu9NVRhGYZtZA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: GVXPR04MB11479
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260515_022340_538412_CA1CE163 
-X-CRM114-Status: GOOD (  12.78  )
+X-CRM114-CacheID: sfid-20260515_024753_961515_E419E344 
+X-CRM114-Status: GOOD (  27.26  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -139,38 +106,78 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, May 14, 2026 at 07:09:13PM +0100, Conor Dooley wrote:
-> On Wed, May 13, 2026 at 09:51:02PM +0300, Ioana Ciornei wrote:
-> > Add device tree binding for the TI DS125DF111 Retimer PHY.
-> > 
-> > Signed-off-by: Ioana Ciornei <ioana.ciornei@nxp.com>
-> > ---
-> >  .../bindings/phy/ti,ds125df111.yaml           | 46 +++++++++++++++++++
-> >  1 file changed, 46 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/phy/ti,ds125df111.yaml
-> > 
+On Thu, 14 May 2026 23:18:44 +0200
+Pavel Machek <pavel@nabladev.com> wrote:
 
-(...)
-
-> > +
-> > +examples:
-> > +  - |
-> > +    i2c {
-> > +      #address-cells = <1>;
-> > +      #size-cells = <0>;
-> > +
-> > +      ti_retimer: retimer@18 {
+> Hi!
 > 
-> Drop the unused label here please. How come the node name isn't phy@
-> btw?
-> Otherwise,
-> Acked-by: Conor Dooley <conor.dooley@microchip.com>
-> pw-bot: changes-requested
+> > From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+> > 
+> > The OTG PHY initialization sequence needs to wait for 20 ms at a specific
+> > step, as described in commit 72c0339c115b ("phy: renesas:
+> > rcar-gen3-usb2: follow the hardware manual procedure").
+> > 
+> > Commit 55a387ebb921 ("phy: renesas: rcar-gen3-usb2: Lock around hardware
+> > registers and driver data") tried to address various problems in the
+> > rcar-gen3-usb2 driver and converted the mutex protecting HW register
+> > accesses to a spin lock, leaving, however, a long delay in the critical
+> > section protected by the spin lock. This may become a problem,
+> > especially on RT kernels.
+> > 
+> > To address this, release the spin lock before sleeping for 20 ms as
+> > required by the HW manual and reacquire it afterwards. To avoid other
+> > threads entering the critical section and configuring the HW while the
+> > software is waiting for the OTG initialization to complete, introduce the
+> > otg_initializing variable alongside the otg_init_done completion. Any
+> > other thread trying to configure the HW while the OTG PHY initialization
+> > is in progress waits for the completion instead of immediately returning
+> > errors to PHY users. The IRQs were also disabled while waiting for the OTG
+> > PHY initialization to complete, as the interrupt handler may also apply HW
+> > settings.  
+> 
+> Just... there has to be a better way.
+> 
+> > +++ b/drivers/phy/renesas/phy-rcar-gen3-usb2.c
+> > +static int rcar_gen3_phy_wait_otg_init(struct rcar_gen3_chan *channel,
+> > +				       unsigned long *flags)
+> > +{
+> > +	unsigned long timeout = msecs_to_jiffies(25);
+> > +	unsigned long ret = 1;
+> > +
+> > +	lockdep_assert_held(&channel->lock);
+> > +
+> > +	/*
+> > +	 * The OTG can be initialized only once and needs to release the lock
+> > +	 * and wait for 20 ms due to hardware constraints. Wait for the OTG PHY
+> > +	 * initialization to complete if another PHY executes configuration
+> > +	 * code while the OTG PHY is waiting. This avoids returning failures to
+> > +	 * PHY users.
+> > +	 */
+> > +	if (READ_ONCE(channel->otg_initializing)) {
+> > +		spin_unlock_irqrestore(&channel->lock, *flags);  
+> 
+> This is not nice, passing flags between functions like this is a red flag.
 
-Ok, will drop the label, change the node name to phy and add your
-Acked-by.
+It would be better to just inline the code.
+And I'd guess you need to redo the initial tests after re-acquiring the lock?
+Or even need to do a state change/reference count before releasing the
+lock to stop other threads 'doing anything nasty'.
 
-Thanks!
+-- David
+
+> 
+> You are only accessing otg_initializing under the spinlock. That means
+> that READ_ONCE is reduntant.
+> 
+> But AFAICT spinlock is only held over this function to protect
+> channel->otg_initializing access. I suspect correct answer here is
+> getting rid of spinlock over this function, and using
+> test_bit(BIT_INITIALIZING, ...) or something similar.
+> 
+> Best regards,
+> 								Pavel
+> 
+
 
 -- 
 linux-phy mailing list
