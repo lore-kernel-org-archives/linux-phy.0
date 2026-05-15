@@ -4,66 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6F489CD343F
-	for <linux-phy@archiver.kernel.org>; Fri, 15 May 2026 04:07:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B9206CD4851
+	for <linux-phy@archiver.kernel.org>; Fri, 15 May 2026 06:51:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=2ZvcqSI20ngQblLgroPGtLRkRzBcLLV87TnasWHHKv8=; b=rdGfRgbQPVYX8G
-	SVraqu6v7zO/rWYAMSU2us9GauVpG/s7o6U4T8nO0XkHVzdocfngcNGNnPYRbWD3qr9Zu5EoKA3Zx
-	D/AwNJpE5+vqfskFvvOpR1yfeiKZxtg5u41HD9mYpx+7/8S342IOQKbp5DffMODLv32nep6FgNyCj
-	aQZQxUdhy4aYaSH+TXll01QbMZdIEF3Wm3pGjmqxfhXI8lD1gnAbOf5dSHZWUGHby/uIkB1bo2G+z
-	ftgCIzlXC/H9Vplm0GqX+Ae2S+HmhKfq7AkeZxB5Qj46RKhP/Meig0d1G4GIj+KMJLfSP0ZFGU45g
-	SA5oxq9eyDjMWvBsPtAQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/8mXO4+FkEgvPuiz7kVr7Yp9RXjrMG9cpeTYabt37JI=; b=HEzfIdT1EBQ5ug
+	ZP0pF+tRJ1yyPS3GEvyK6NVHKLyrX4cWNe8og56qUxm5iXV3u8wYRh3sMeuTbMW3fBYXCAMSDxtjE
+	K8XYRbh9fivqpgdp+ZDEx2oBpOit5xAMo/BI9o086hGMkAZfa/9Q1jOTgaXtgUdWsSODn07GXKKXI
+	7ywUVtBPvG1yfcRDrm4IpJUztwPhpnvqCSHVYrzdqojrqmKqU3t8KMp7+6Vly/yjB6uvxCnQOqQw6
+	e1Rf6AaDAH+O11RqHNMIgcc6Z362/4Es9dmkpNddo5w57sT/6KUCEQRnkryA0DPa1YyVQ/WaWYhwf
+	fjk2hrrMzrWklZgsFUMw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wNjq1-00000007H9R-0geH;
-	Fri, 15 May 2026 04:07:49 +0000
-Received: from mailgw.kylinos.cn ([124.126.103.232])
+	id 1wNmON-00000007Y3T-1VMp;
+	Fri, 15 May 2026 06:51:27 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wNjpy-00000007H91-3Gca
+	id 1wNmOM-00000007Y38-0pXA
 	for linux-phy@lists.infradead.org;
-	Fri, 15 May 2026 04:07:48 +0000
-X-UUID: 9e1133f8501311f1aa26b74ffac11d73-20260515
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.3.12,REQID:d51b19e9-efa3-49b9-87dd-9ab69b70a299,IP:0,U
-	RL:0,TC:0,Content:0,EDM:-25,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTIO
-	N:release,TS:-25
-X-CID-META: VersionHash:e7bac3a,CLOUDID:dcddeb06bad0e39d871a8ecb84ef0c22,BulkI
-	D:nil,BulkQuantity:0,Recheck:0,SF:102|850|898,TC:nil,Content:0|15|50,EDM:2
-	,IP:nil,URL:0,File:nil,RT:nil,Bulk:nil,QS:nil,BEC:nil,COL:0,OSI:0,OSA:0,AV
-	:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
-X-CID-BVR: 2,SSN|SDN
-X-CID-BAS: 2,SSN|SDN,0,_
-X-CID-FACTOR: TF_CID_SPAM_SNR
-X-CID-RHF: D41D8CD98F00B204E9800998ECF8427E
-X-UUID: 9e1133f8501311f1aa26b74ffac11d73-20260515
-X-User: zenghongling@kylinos.cn
-Received: from localhost.localdomain [(10.44.16.150)] by mailgw.kylinos.cn
-	(envelope-from <zenghongling@kylinos.cn>)
-	(Generic MTA with TLSv1.3 TLS_AES_256_GCM_SHA384 256/256)
-	with ESMTP id 227261460; Fri, 15 May 2026 12:07:41 +0800
-From: Hongling Zeng <zenghongling@kylinos.cn>
-To: vkoul@kernel.org,
-	neil.armstrong@linaro.org,
-	johan@kernel.org,
-	kishon@kernel.org,
-	rogerq@ti.com
-Cc: linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	zhongling0719@126.com,
-	Hongling Zeng <zenghongling@kylinos.cn>
-Subject: [PATCH 2/2] phy: ti-pipe3: Fix EPROBE_DEFER handling for clock resources
-Date: Fri, 15 May 2026 12:07:37 +0800
-Message-Id: <20260515040737.28075-1-zenghongling@kylinos.cn>
-X-Mailer: git-send-email 2.25.1
+	Fri, 15 May 2026 06:51:26 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id D872860581;
+	Fri, 15 May 2026 06:51:24 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D1106C2BCB0;
+	Fri, 15 May 2026 06:51:23 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1778827884;
+	bh=m4DPST+KutR6/rvxIxP+lFM7F84xG9wpPKCxbGtvGJc=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=FHBKcQMr+NibHshjUcBi/Xi4SQaFaE3JWMAvd1ndwZu2XXhXDoFH1P/ARowkAoSQi
+	 f0QbmZzu4SlmvuqAzsnZ4riqzs1lj6qKFuVGZaKUp0ZzefzSsey1ENcRRaZvdAJJJn
+	 9gRNSMSU0k4uGD7OxJkb7e+sL00aAJs+Leajoa0WT+mrd4l4C3j4j8Ma9z88SSWjON
+	 LkU4DuSNjeBD5c42FSgZFFbbgSxeEEjhPQxJAtMq8OJf3Ary7j0KbjmY86vFbcEUVB
+	 0+cQ8OvzZWvMYNNqSSp8GufPSeYe4slKgCcC0e2OBU9OuLzaARjSi8L1a/3dE7lhyY
+	 /Yelezh2QIBnw==
+Date: Fri, 15 May 2026 12:21:20 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: =?utf-8?B?5pu+57qi546y?= <zenghongling@kylinos.cn>
+Cc: sashiko-bot <sashiko-bot@kernel.org>,
+	linux-phy <linux-phy@lists.infradead.org>,
+	"neil.armstrong" <neil.armstrong@linaro.org>,
+	olteanv <olteanv@gmail.com>, zhongling0719 <zhongling0719@126.com>
+Subject: Re: =?utf-8?B?5Zue5aSNOiBSZTogW1BBVEM=?= =?utf-8?Q?H?= v3] phy: ti:
+ pipe3: Fix clock resource leak on probe errors
+Message-ID: <agbCaI490NQN37te@vaman>
+References: <1hn0m80l7wbt-1hn5kvizr04q@nsmail8.2--kylin--1>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260514_210747_149878_F8B2DFC6 
-X-CRM114-Status: GOOD (  12.10  )
+Content-Disposition: inline
+In-Reply-To: <1hn0m80l7wbt-1hn5kvizr04q@nsmail8.2--kylin--1>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,82 +67,98 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-ti_pipe3_get_clk() has two issues with -EPROBE_DEFER error handling:
-
-1. When devm_clk_get() for sysclk fails, the function returns -EINVAL
-   instead of propagating the actual error code. This masks -EPROBE_DEFER
-   to -EINVAL, breaking the probe deferral mechanism and causing permanent
-   driver initialization failure on systems with non-deterministic probe
-   ordering.
-
-2. For SATA PHY refclk, the function ignores all errors to support older
-   DTBs missing the refclk property. However, this incorrectly ignores
-   -EPROBE_DEFER as well, causing the driver to proceed without waiting
-   for the clock provider to become available.
-
-Fix both issues:
-- Return PTR_ERR(phy->sys_clk) instead of -EINVAL to propagate all
-  error codes including -EPROBE_DEFER
-- For SATA refclk, only ignore -ENOENT (clock not found in old DTBs)
-  but propagate other errors like -EPROBE_DEFER
-
-Fixes: a70143bbef6b ("drivers: phy: usb3/pipe3: Adapt pipe3 driver to Generic PHY Framework")
-Fixes: 7f33912d2978 ("phy: ti-pipe3: Fix SATA across suspend/resume")
-Signed-off-by: Hongling Zeng <zenghongling@kylinos.cn>
----
- drivers/phy/ti/phy-ti-pipe3.c | 17 ++++++++++++-----
- 1 file changed, 12 insertions(+), 5 deletions(-)
-
-diff --git a/drivers/phy/ti/phy-ti-pipe3.c b/drivers/phy/ti/phy-ti-pipe3.c
-index 58fbc3b27813..2bfcd0c70abd 100644
---- a/drivers/phy/ti/phy-ti-pipe3.c
-+++ b/drivers/phy/ti/phy-ti-pipe3.c
-@@ -604,15 +604,22 @@ static int ti_pipe3_get_clk(struct ti_pipe3 *phy)
- {
- 	struct clk *clk;
- 	struct device *dev = phy->dev;
-+	int ret;
- 
- 	phy->refclk = devm_clk_get(dev, "refclk");
- 	if (IS_ERR(phy->refclk)) {
--		dev_err(dev, "unable to get refclk\n");
-+		ret = PTR_ERR(phy->refclk);
- 		/* older DTBs have missing refclk in SATA PHY
--		 * so don't bail out in case of SATA PHY.
-+		 * so don't bail out for -ENOENT, but still defer
-+		 * probe for other errors like -EPROBE_DEFER.
- 		 */
--		if (phy->mode != PIPE3_MODE_SATA)
--			return PTR_ERR(phy->refclk);
-+		if (ret == -ENOENT) {
-+			if (phy->mode != PIPE3_MODE_SATA)
-+				return ret;
-+		} else {
-+			dev_err(dev, "unable to get refclk\n");
-+			return ret;
-+		}
- 	}
- 
- 	if (phy->mode != PIPE3_MODE_SATA) {
-@@ -629,7 +636,7 @@ static int ti_pipe3_get_clk(struct ti_pipe3 *phy)
- 		phy->sys_clk = devm_clk_get(dev, "sysclk");
- 		if (IS_ERR(phy->sys_clk)) {
- 			dev_err(dev, "unable to get sysclk\n");
--			return -EINVAL;
-+			return PTR_ERR(phy->sys_clk);
- 		}
- 	}
- 
--- 
-2.25.1
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+T24gMTUtMDUtMjYsIDEzOjE0LCDmm77nuqLnjrIgd3JvdGU6CgpQbGVhc2Ugc2VuZCB0ZXh0IG9u
+bHkgZW1haWxzIG9uIHRoZSBsaXN0ISEhCgo+IDxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5Ok1pY3Jv
+c29mdCBZYUhlaTtmb250LXNpemU6MTRweDtjb2xvcjojMDAwMDAwOyIgY2xhc3M9Imxfbm9kZV9o
+YXNfY29sb3IiPjxkaXY+SGksPC9kaXY+Cj4gPGRpdj5UaGFua3MgZm9yIHBvaW50aW5nIG91dCB0
+aGUgcHJvYmUgZGVmZXJyYWwgcHJvYmxlbXMuPC9kaXY+Cj4gPGRpdj5Cb3RoIGlzc3VlcyB5b3Ug
+bWVudGlvbmVkIGFyZSB2YWxpZDo8L2Rpdj4KPiA8dWw+Cj4gPGxpPgo+IDxkaXY+c3lzY2xrIHNo
+b3VsZCBub3QgY29udmVydCA8Y29kZT4tRVBST0JFX0RFRkVSPC9jb2RlPnRvIDxjb2RlPi1FSU5W
+QUw8L2NvZGU+LjwvZGl2Pgo+IDwvbGk+Cj4gPGxpPgo+IDxkaXY+U0FUQSByZWZjbGsgbXVzdCBu
+b3QgaWdub3JlIDxjb2RlPi1FUFJPQkVfREVGRVI8L2NvZGU+LCBhbHRob3VnaCA8Y29kZT4tRU5P
+RU5UPC9jb2RlPmNhbiBzdGlsbCBiZSB0b2xlcmF0ZWQgZm9yIGNvbXBhdGliaWxpdHkuPC9kaXY+
+Cj4gPC9saT4KPiA8L3VsPgo+IDxkaXY+SSBoYXZlIGZpeCB0aGVtIHRvZ2V0aGVyIHdpdGggdGhl
+IGNsb2NrIGxlYWsgZml4IGluIC48L2Rpdj4KPiA8ZGl2PltQQVRDSCAxLzIgdjNdIHBoeTogdGk6
+IHBpcGUzOiBGaXggY2xvY2sgcmVzb3VyY2UgbGVhayBvbiBwcm9iZSBlcnJvcnM8L2Rpdj4KPiA8
+ZGl2PltQQVRDSCAyLzJdIHBoeTogdGktcGlwZTM6IEZpeCBFUFJPQkVfREVGRVIgaGFuZGxpbmcg
+Zm9yIGNsb2NrIHJlc291cmNlczwvZGl2Pgo+IDxkaXY+Jm5ic3A7PC9kaXY+Cj4gPGRpdj5BcHBy
+ZWNpYXRlIHRoZSBjYXJlZnVsIHJldmlldy48L2Rpdj4KPiA8ZGl2PiZuYnNwOzwvZGl2Pgo+IDxk
+aXY+UmVnYXJkcyw8L2Rpdj4KPiA8ZGl2PkhvbmdsaW5nPC9kaXY+Cj4gPHA+Jm5ic3A7PC9wPgo+
+IDxkaXYgaWQ9InNpZ25hdHVyZVRvcCI+PC9kaXY+Cj4gPGRpdiBpZD0iY3MyY19yZSIgc3R5bGU9
+Im1hcmdpbi1sZWZ0OiAwLjVlbTsgcGFkZGluZy1sZWZ0OiAwLjVlbTsgYm9yZGVyLWxlZnQ6IDFw
+eCBzb2xpZCAjY2FjYWNhOyAtd2Via2l0LXVzZXItbW9kaWZ5OiByZWFkLW9ubHk7IC1tb3otdXNl
+ci1tb2RpZnk6IHJlYWQtb25seTsgLW1zLXVzZXItbW9kaWZ5OiByZWFkLW9ubHk7IC1vLXVzZXIt
+bW9kaWZ5OiByZWFkLW9ubHk7Ij48YnI+PGJyPjxicj4KPiA8ZGl2IHN0eWxlPSJiYWNrZ3JvdW5k
+LWNvbG9yOiAjZjhmOGY4OyBwYWRkaW5nOiA4cHggMTBweDsgZm9udC1mYW1pbHk6IE1pY3Jvc29m
+dCBZYUhlaTsgZm9udC1zaXplOiAxNHB4OyBjb2xvcjogIzAwMDsiPjxzdHJvbmc+5Li7Jm5ic3A7
+Jm5ic3A7Jm5ic3A76aKY77yaPC9zdHJvbmc+PHNwYW4gaWQ9ImNzMmNfc3ViamVjdCI+UmU6IFtQ
+QVRDSCB2M10gcGh5OiB0aTogcGlwZTM6IEZpeCBjbG9jayByZXNvdXJjZSBsZWFrIG9uIHByb2Jl
+IGVycm9yczwvc3Bhbj4gPGJyPjxzdHJvbmc+5pelJm5ic3A7Jm5ic3A7Jm5ic3A75pyf77yaPC9z
+dHJvbmc+PHNwYW4gaWQ9ImNzMmNfZGF0ZSI+MjAyNuW5tDA15pyIMTXml6UxMDozMjwvc3Bhbj4g
+PGJyPjxzdHJvbmc+5Y+R5Lu25Lq677yaPC9zdHJvbmc+PHNwYW4gaWQ9ImNzMmNfZnJvbSI+c2Fz
+aGlrby1ib3Q8L3NwYW4+IDxicj48c3Ryb25nPuaUtuS7tuS6uu+8mjwvc3Ryb25nPjxzcGFuIGlk
+PSJjczJjX3RvIiBzdHlsZT0id29yZC1icmVhazogYnJlYWstYWxsOyI+c2FzaGlrby1ib3Q8L3Nw
+YW4+IDxicj48c3Ryb25nPuaKhOmAgeS6uu+8mjwvc3Ryb25nPjxzcGFuIGlkPSJjczJjX3RvIiBz
+dHlsZT0id29yZC1icmVhazogYnJlYWstYWxsOyI+bGludXgtcGh5LG5laWwuYXJtc3Ryb25nLG9s
+dGVhbnYsdmtvdWw8L3NwYW4+PC9kaXY+Cj4gPGJyPgo+IDxkaXYgaWQ9ImNzMmNfY29udGVudCI+
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6IC0gW0hpZ2hdIE1hc2tpbmcgb2YgLUVQ
+Uk9CRV9ERUZFUiB0byAtRUlOVkFMIHdoZW4gZmV0Y2hpbmcgc3lzY2xrLiAtIFtIaWdoXSBJZ25v
+cmluZyAtRVBST0JFX0RFRkVSIGZvciB0aGUgU0FUQSByZWZjbGsuIC0tIGNvbW1pdCA0ZjJmYmQ2
+MjdlZTgwNDU1Y2FjMTk0YTRhZTFiNTU5ZDQ4MTgwMDc1IEF1dGhvcjogSG9uZ2xpbmcgWmVuZyAm
+bHQ7emVuZ2hvbmdsaW5nQGt5bGlub3MuY24mZ3Q7IHBoeTogdGk6IHBpcGUzOiBGaXggY2xvY2sg
+cmVzb3VyY2UgbGVhayBvbiBwcm9iZSBlcnJvcnMgV2hlbiBkZXZtX3BoeV9jcmVhdGUoKSBvciBk
+ZXZtX29mX3BoeV9wcm92aWRlcl9yZWdpc3RlcigpIGZhaWxzLCB0aGUgcmVmY2xrIHRoYXQgd2Fz
+IGVuYWJsZWQgZWFybGllciBpcyBub3QgZGlzYWJsZWQsIGNhdXNpbmcgYSByZXNvdXJjZSBsZWFr
+LiBGaXggdGhpcyBieSBhZGRpbmcgYW4gZXJyb3IgaGFuZGxpbmcgcGF0aCB0byBkaXNhYmxlIHRo
+ZSBjbG9jayB3aGVuIHRoZXNlIGZ1bmN0aW9ucyBmYWlsLiAmZ3Q7IGRpZmYgLS1naXQgYS9kcml2
+ZXJzL3BoeS90aS9waHktdGktcGlwZTMuYyBiL2RyaXZlcnMvcGh5L3RpL3BoeS10aS1waXBlMy5j
+ICZndDsgaW5kZXggYjU1NDNiNWM2NzRjOC4uNThmYmMzYjI3ODEzMCAxMDA2NDQgJmd0OyAtLS0g
+YS9kcml2ZXJzL3BoeS90aS9waHktdGktcGlwZTMuYyAmZ3Q7ICsrKyBiL2RyaXZlcnMvcGh5L3Rp
+L3BoeS10aS1waXBlMy5jIFsgLi4uIF0gVGhpcyBpc24ndCBhIHJlZ3Jlc3Npb24gaW50cm9kdWNl
+ZCBieSB0aGlzIHBhdGNoLCBidXQgbG9va2luZyBhdCB0aV9waXBlM19nZXRfY2xrKCkgY2FsbGVk
+IGVhcmxpZXIgaW4gdGhlIHByb2JlIHNlcXVlbmNlOiBkcml2ZXJzL3BoeS90aS9waHktdGktcGlw
+ZTMuYzp0aV9waXBlM19nZXRfY2xrKCkgeyAuLi4gaWYgKHBoeS0mZ3Q7bW9kZSAhPSBQSVBFM19N
+T0RFX1BDSUUgfHwgcGh5LSZndDtwaHlfcG93ZXJfc3lzY29uKSB7IHBoeS0mZ3Q7c3lzX2NsayA9
+IGRldm1fY2xrX2dldChkZXYsICJzeXNjbGsiKTsgaWYgKElTX0VSUihwaHktJmd0O3N5c19jbGsp
+KSB7IGRldl9lcnIoZGV2LCAidW5hYmxlIHRvIGdldCBzeXNjbGtcbiIpOyByZXR1cm4gLUVJTlZB
+TDsgfSB9IC4uLiB9IERvZXMgdGhpcyBjb2RlIG1hc2sgLUVQUk9CRV9ERUZFUiB0byAtRUlOVkFM
+IHdoZW4gZmV0Y2hpbmcgc3lzY2xrPyBJZiBkZXZtX2Nsa19nZXQoKSBmb3IgdGhlIHN5c2NsayBy
+ZXR1cm5zIC1FUFJPQkVfREVGRVIsIHRoZSBmdW5jdGlvbiBleHBsaWNpdGx5IGNvbnZlcnRzIHRo
+ZSBlcnJvciBhbmQgcmV0dXJucyAtRUlOVkFMLiBUaGlzIGNvbXBsZXRlbHkgYnJlYWtzIHRoZSBs
+aWZlY3ljbGUgb2YgcHJvYmUgZGVmZXJyYWwgZm9yIHRoZSBzeXNjbGsgcmVzb3VyY2UuIEluc3Rl
+YWQgb2YgcmV0cnlpbmcgd2hlbiB0aGUgY2xvY2sgcHJvdmlkZXIgYmVjb21lcyBhdmFpbGFibGUg
+bGF0ZXIgaW4gdGhlIGJvb3QgcHJvY2VzcywgdGhlIGRyaXZlciBpbml0aWFsaXphdGlvbiBmYWls
+cyBwZXJtYW5lbnRseSwgcmVuZGVyaW5nIHRoZSBQSFkgZGV2aWNlIHVudXNhYmxlIG9uIHN5c3Rl
+bXMgd2l0aCBub24tZGV0ZXJtaW5pc3RpYyBwcm9iZSBvcmRlcnMuIFNpbWlsYXJseSwgbG9va2lu
+ZyBhdCB0aGUgU0FUQSByZWZjbGsgaGFuZGxpbmcgaW4gdGhlIHNhbWUgZnVuY3Rpb246IGRyaXZl
+cnMvcGh5L3RpL3BoeS10aS1waXBlMy5jOnRpX3BpcGUzX2dldF9jbGsoKSB7IC4uLiBwaHktJmd0
+O3JlZmNsayA9IGRldm1fY2xrX2dldChkZXYsICJyZWZjbGsiKTsgaWYgKElTX0VSUihwaHktJmd0
+O3JlZmNsaykpIHsgZGV2X2VycihkZXYsICJ1bmFibGUgdG8gZ2V0IHJlZmNsa1xuIik7IC8qIG9s
+ZGVyIERUQnMgaGF2ZSBtaXNzaW5nIHJlZmNsayBpbiBTQVRBIFBIWSAqIHNvIGRvbid0IGJhaWwg
+b3V0IGluIGNhc2Ugb2YgU0FUQSBQSFkuICovIGlmIChwaHktJmd0O21vZGUgIT0gUElQRTNfTU9E
+RV9TQVRBKSByZXR1cm4gUFRSX0VSUihwaHktJmd0O3JlZmNsayk7IH0gLi4uIH0gQXJlIGVycm9y
+cyByZXR1cm5lZCBieSBkZXZtX2Nsa19nZXQoKSBmb3IgdGhlIHJlZmNsayBpZ25vcmVkIHdoZW4g
+dGhlIG1vZGUgaXMgUElQRTNfTU9ERV9TQVRBPyBXaGlsZSBpZ25vcmluZyAtRU5PRU5UIGlzIGlu
+dGVudGlvbmFsbHkgZG9uZSB0byBzdXBwb3J0IG9sZGVyIERUQnMgbWlzc2luZyB0aGUgY2xvY2ss
+IGluZGlzY3JpbWluYXRlbHkgaWdub3JpbmcgLUVQUk9CRV9ERUZFUiBicmVha3MgdGhlIHByb2Jl
+IGRlZmVycmFsIG1lY2hhbmlzbS4gVGhlIGRyaXZlciB3aWxsIHByb2NlZWQgaW1tZWRpYXRlbHkg
+d2l0aG91dCB3YWl0aW5nIGZvciB0aGUgY2xvY2sgcHJvdmlkZXIgdG8gcHJvYmUsIHJlc3VsdGlu
+ZyBpbiB0aGUgU0FUQSBQSFkgYmVpbmcgaW5pdGlhbGl6ZWQgd2l0aG91dCBpdHMgcmVxdWlyZWQg
+cmVmZXJlbmNlIGNsb2NrIGFuZCBzdWJzZXF1ZW50bHkgZmFpbGluZyB0byBmdW5jdGlvbiBwcm9w
+ZXJseS4gLS0gU2FzaGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRldi8jL3BhdGNo
+c2V0LzIwMjYwNTE1MDIxNjM1LjEzNDQ0LTEtemVuZ2hvbmdsaW5nQGt5bGlub3MuY24/cGFydD0x
+ICZsdDsvemVuZ2hvbmdsaW5nQGt5bGlub3MuY24mZ3Q7PC9kaXY+Cj4gPC9kaXY+Cj4gPHA+Jm5i
+c3A7PC9wPgo+IDxwPiZuYnNwOzwvcD4KPiA8ZGl2IGlkPSJzaWduYXR1cmVCb20iPgo+IDxkaXY+
+Cj4gPHA+Jm5ic3A7PC9wPgo+IDxicj4KPiA8cCBzdHlsZT0iY29sb3I6ICMwMDA7IGZvbnQtc2l6
+ZTogMTZweDsiPi0tLTwvcD4KPiA8ZGl2IGlkPSJjczJjX21haWxfc2lnYXR1cmUiIHN0eWxlPSJj
+b2xvcjogIzAwMDsgZm9udC1zaXplOiAxNnB4OyBmb250LWZhbWlseTogTWljcm9zb2Z0IFlhSGVp
+OyI+PC9kaXY+Cj4gPHA+Jm5ic3A7PC9wPgo+IDwvZGl2Pgo+IDwvZGl2PjwvZGl2PgoKLS0gCn5W
+aW5vZAoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVh
+ZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgt
+cGh5Cg==
