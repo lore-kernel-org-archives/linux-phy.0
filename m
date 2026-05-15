@@ -4,41 +4,41 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1D8D5CD4F3C
-	for <linux-phy@archiver.kernel.org>; Fri, 15 May 2026 19:55:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DBE35CD4F3C
+	for <linux-phy@archiver.kernel.org>; Fri, 15 May 2026 20:06:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Xks+5aWBaSa1res3E92SCVFuwEXOQ2GHgqzvUKGT/HI=; b=nWi1+bePGB4FiH
-	gprD3xpxj6uYJt7+KbSzhMh2N97M35bQ7icyqc2srlDvkbmxlytuYBCMQ6WlxEl0LRmlrv1vx5ixv
-	LPQ5VzlIfHKRp4cKQWfh+fesisBdMRrZFXQKD1Cg2qzeq0J9MJOlmDcmXJNFkOE2bdYsPva4aM1jI
-	pk8y1rFuN7tEYDayBADVsZIYd60QMpLWJQ6+t2l4yL4R8UYz3wGdtzFWhxIrTr9f6WVCCqxywCy0/
-	syrQX4hcyGD5PChVkL+/8Jk/p+OG/B/2rEd7iCJb7q1rj+FOA2EjcJd6PC84tvEdcAW1aHTnQ1u4j
-	fqb5PYE0qkviOq9NiIaA==;
+	List-Owner; bh=dALAq8p467CODfs5sAAQ8XtAdP7VTqrIdP4Qg519XJ4=; b=A+XqkBjJ5Ggqlk
+	gGaAjOUowmFcLG0lavxw7bT4jdfT/PqERqGxFZizpUI1ELrCaW1xmNBmg+c0GiJvZY5dIqyKYYjq7
+	Qe0LDR2wgCKvAi62gAl7AgMn7av2BydY7Ws5hGvycNJQ9DKqX/AzbFJ5FzU5+3H/dlnMj9mMf92mZ
+	mXj/m7GvmRpdJcdj1Mr6Ir7B1mwGBOyFrCSk+zpRO744jH8VyAjDkJnZNCrvphqNnNZx3c35hxv+b
+	qDrUiZxfIvxRuXGWE4oQCGzpeWn5pg3zhpVzvw7DQTXXTEJ4hxuWoytvNxEP1ZmNmWOTsRBgUgGYD
+	EnhFF/pTIRRsq29OjZBA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wNydQ-00000009GaF-3NAv;
-	Fri, 15 May 2026 19:55:48 +0000
-Received: from smtp.forwardemail.net ([121.127.44.73])
+	id 1wNyoA-00000009IOw-1Wuj;
+	Fri, 15 May 2026 20:06:54 +0000
+Received: from smtp.forwardemail.net ([149.28.215.223])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wNydH-00000009GUD-056t
+	id 1wNyo7-00000009IN8-3Xvc
 	for linux-phy@lists.infradead.org;
-	Fri, 15 May 2026 19:55:47 +0000
+	Fri, 15 May 2026 20:06:52 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kwiboo.se;
  h=Content-Transfer-Encoding: MIME-Version: References: In-Reply-To:
  Message-ID: Date: Subject: Cc: To: From; q=dns/txt; s=fe-e1b5cab7be;
- t=1778874933; bh=mQVj/vJocDfc9bnl+TBBUvO4ZpEZfSztcJ6eIOcbskY=;
- b=Vi8IIs+xz/KCiOk0ttSDSYqoR+Tjx6yDvStcOrXqUzlxGBjKz6QroPe6CVdDZtsa47LyhkcsX
- l1etNaMzxvFZCjeYOGQs+t8mFphSgFVE6Uq2bsVZHd58qrFBQd5/rS0D60GmBdEBsuDisejP5Lt
- OcdEL3D7/ICYoAbjTRrwhcN08E+ADDybRrQMLsJOB9eUeTLpOrqnalnmZ8bu4/5Lhhaj/SDqlQx
- 9BaTDWZkTFXGMOURL+3X5Df+3jzdY8y9Q7bGQMeaR4X8mrck4blN3muRrVhPzR2iidFKfmr9hrx
- NW0fPKDX6zHsT00vW3/JJkhogS544AEcR+P13OrbgFgw==
-X-Forward-Email-ID: 6a077a26ad7e292af75a1093
+ t=1778875592; bh=tFwTKW3kDBLJUKllmiRBoo0ahcgcG8TLGz1il3QI99Q=;
+ b=eXWt84YoWFPNJLTsKJHXf1aAC8qD6POCdUifqI/NoOiP7YGfL+KFlu79RhmNofTVtmxCiGXu9
+ mmlgoLgDLykiq/57PLw4wch3nx/q9WOw9AvSFUwiLy9OClu+Z0hn9QA0LAgoV0a5/KxRKRsNPAa
+ gzAXpsE9oUOV9Zgd7lu/KFGUB0/2RZyoIefvLpImu5pvxJ48+a9nX1wbANSTtzN7xbWvxMuvX3I
+ uISxTCDGIpPPUmlT2ymZ9hw/2XVgNUQBfU5lQDWB0DkuKpnH6ctDUTc0cXIGSp91nka8Bvua2BE
+ RVGiBI3SvuXGoSYNt0gU83bPNMQ6hCyyD7Z7BHmnpbJA==
+X-Forward-Email-ID: 6a077a28ad7e292af75a10b0
 X-Forward-Email-Sender: rfc822; jonas@kwiboo.se, smtp.forwardemail.net,
- 121.127.44.73
+ 149.28.215.223
 X-Forward-Email-Version: 2.8.12
 X-Forward-Email-Website: https://forwardemail.net
 X-Complaints-To: abuse@forwardemail.net
@@ -53,16 +53,16 @@ Cc: linux-phy@lists.infradead.org,
 	linux-arm-kernel@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Jonas Karlman <jonas@kwiboo.se>
-Subject: [PATCH v3 1/2] phy: rockchip: inno-hdmi: Add configure() and validate() ops
-Date: Fri, 15 May 2026 19:55:10 +0000
-Message-ID: <20260515195512.1757363-2-jonas@kwiboo.se>
+Subject: [PATCH v3 2/2] phy: rockchip: inno-hdmi: Remove deprecated way to configure TMDS rate
+Date: Fri, 15 May 2026 19:55:11 +0000
+Message-ID: <20260515195512.1757363-3-jonas@kwiboo.se>
 X-Mailer: git-send-email 2.54.0
 In-Reply-To: <20260515195512.1757363-1-jonas@kwiboo.se>
 References: <20260515195512.1757363-1-jonas@kwiboo.se>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260515_125545_940793_047A30BE 
-X-CRM114-Status: GOOD (  21.56  )
+X-CRM114-CacheID: sfid-20260515_130651_887805_2B6A5621 
+X-CRM114-Status: GOOD (  10.90  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,154 +79,65 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The commit 10ed34d6eaaf ("phy: Add HDMI configuration options")
-introduced a way for HDMI PHYs to be configured through the generic
-phy_configure() function.
+The TMDS character rate of this PHY is configured using PHY bus width
+in downstream vendor kernel and out-of-tree patches, however no in-tree
+consumer of this PHY has ever called phy_set_bus_width() to change the
+TMDS character rate as currently only 8-bit RGB output is supported by
+the HDMI display driver.
 
-This driver derives the TMDS character rate from the pixel clock and the
-PHY bus width setting. However, no in-tree consumer of this PHY has ever
-called phy_set_bus_width() to change the TMDS character rate as only
-8-bit RGB output is supported by the HDMI display driver.
+The series "Split Generic PHY consumer and provider" clarifies that
+phy_set_bus_width() is intended as a provider-only function.
 
-Add configure() and validate() ops to allow consumers to configure the
-TMDS character rate using phy_configure(). Fallback to the deprecated
-way of using the PHY bus width to configure the TMDS character rate.
-
-A typical call chain during DRM modeset on a RK3328 device:
-
-  dw_hdmi_rockchip_encoder_atomic_check():
-  - inno_hdmi_phy_validate(): pixclock 148500000 tmdsclock 594000000
-
-  dw_hdmi_rockchip_encoder_atomic_mode_set():
-  - inno_hdmi_phy_configure(): pixclock 148500000
-    - inno_hdmi_phy_validate(): pixclock 148500000 tmdsclock 594000000
-
-  vop_crtc_atomic_enable():
-  - inno_hdmi_phy_rk3328_clk_set_rate(): rate 594000000 tmdsclk 594000000
-  - inno_hdmi_phy_rk3328_clk_set_rate(): pixclock 594000000 tmdsclock 594000000
-  - inno_hdmi_phy_rk3328_clk_recalc_rate(): pixclock 594000000 vco 594000000
-
-  dw_hdmi_rockchip_encoder_enable():
-  - inno_hdmi_phy_power_on(): Inno HDMI PHY Power On
-  - inno_hdmi_phy_rk3328_clk_set_rate(): rate 594000000 tmdsclk 594000000
+Remove the deprecated unused fallback way to configure TMDS character
+rate now that this HDMI PHY support using phy_configure() to configure
+the TMDS character rate.
 
 Signed-off-by: Jonas Karlman <jonas@kwiboo.se>
 ---
-Changes in v3:
-- Change validate() ops to only validate tmdsclock
-- Add comments about expected consumer usage
-- Update commit message with a typical call chain
-Changes in v2:
-- Add validate() ops to validate that the TMDS rate is supported
-- Split out parts that remove the old workaround into a separate patch
-
-Patch "drm/rockchip: dw_hdmi: Configure HDMI PHY in atomic_mode_set()"
-at [1] adds phy_validate() and phy_configure() calls for this HDMI PHY.
-
-[1] https://lore.kernel.org/dri-devel/20260510183114.1248840-10-jonas@kwiboo.se/
+v3: No change
+v2: New patch, split from original patch
 ---
- drivers/phy/rockchip/phy-rockchip-inno-hdmi.c | 60 ++++++++++++++++++-
- 1 file changed, 59 insertions(+), 1 deletion(-)
+ drivers/phy/rockchip/phy-rockchip-inno-hdmi.c | 17 +----------------
+ 1 file changed, 1 insertion(+), 16 deletions(-)
 
 diff --git a/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c b/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c
-index 1483907413fa..efa95c22b3bb 100644
+index efa95c22b3bb..3bc73f0cff70 100644
 --- a/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c
 +++ b/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c
-@@ -245,6 +245,7 @@ struct inno_hdmi_phy {
- 	struct clk *phyclk;
- 	unsigned long pixclock;
- 	unsigned long tmdsclock;
-+	struct phy_configure_opts_hdmi hdmi_cfg;
- };
- 
- struct pre_pll_config {
-@@ -554,7 +555,12 @@ static inline void inno_update_bits(struct inno_hdmi_phy *inno, u8 reg,
+@@ -555,24 +555,10 @@ static inline void inno_update_bits(struct inno_hdmi_phy *inno, u8 reg,
  static unsigned long inno_hdmi_phy_get_tmdsclk(struct inno_hdmi_phy *inno,
  					       unsigned long rate)
  {
--	int bus_width = phy_get_bus_width(inno->phy);
-+	int bus_width;
-+
-+	if (inno->hdmi_cfg.tmds_char_rate)
-+		return inno->hdmi_cfg.tmds_char_rate;
-+
-+	bus_width = phy_get_bus_width(inno->phy);
+-	int bus_width;
+-
+ 	if (inno->hdmi_cfg.tmds_char_rate)
+ 		return inno->hdmi_cfg.tmds_char_rate;
  
- 	switch (bus_width) {
- 	case 4:
-@@ -602,6 +608,55 @@ static irqreturn_t inno_hdmi_phy_rk3328_irq(int irq, void *dev_id)
- 	return IRQ_HANDLED;
+-	bus_width = phy_get_bus_width(inno->phy);
+-
+-	switch (bus_width) {
+-	case 4:
+-	case 5:
+-	case 6:
+-	case 10:
+-	case 12:
+-	case 16:
+-		return (u64)rate * bus_width / 8;
+-	default:
+-		return rate;
+-	}
++	return rate;
  }
  
-+static int inno_hdmi_phy_validate(struct phy *phy, enum phy_mode mode,
-+				  int submode, union phy_configure_opts *opts)
-+{
-+	const struct pre_pll_config *cfg = pre_pll_cfg_table;
-+	unsigned long tmdsclock;
-+
-+	if (!(mode == PHY_MODE_HDMI && submode == PHY_HDMI_MODE_TMDS))
-+		return -EINVAL;
-+
-+	if (!opts->hdmi.tmds_char_rate || opts->hdmi.tmds_char_rate > 594000000)
-+		return -EINVAL;
-+
-+	/*
-+	 * phy_validate() is expected to be called from encoder atomic_check(),
-+	 * before the hdmiphy pixel clock is known. Without knowing the actual
-+	 * pixel clock, we cannot do full validation of the configuration.
-+	 * Instead, we do a simple check that the pre-pll table contains an
-+	 * entry for the requested TMDS character rate.
-+	 */
-+	tmdsclock = opts->hdmi.tmds_char_rate;
-+	for (; cfg->pixclock != 0; cfg++)
-+		if (cfg->tmdsclock == tmdsclock)
-+			return 0;
-+
-+	return -EINVAL;
-+}
-+
-+static int inno_hdmi_phy_configure(struct phy *phy,
-+				   union phy_configure_opts *opts)
-+{
-+	struct inno_hdmi_phy *inno = phy_get_drvdata(phy);
-+	int ret;
-+
-+	ret = inno_hdmi_phy_validate(phy, phy_get_mode(phy),
-+				     PHY_HDMI_MODE_TMDS, opts);
-+	if (ret)
-+		return ret;
-+
-+	/*
-+	 * phy_configure() is expected to be called from atomic_set_mode(),
-+	 * before the hdmiphy pixel clock is known. Store the requested TMDS
-+	 * character rate, so that it can be used later in power_on() and/or
-+	 * set_rate() when the pixel clock is known.
-+	 */
-+	inno->hdmi_cfg = opts->hdmi;
-+
-+	return 0;
-+}
-+
- static int inno_hdmi_phy_power_on(struct phy *phy)
- {
- 	struct inno_hdmi_phy *inno = phy_get_drvdata(phy);
-@@ -670,6 +725,8 @@ static const struct phy_ops inno_hdmi_phy_ops = {
- 	.owner = THIS_MODULE,
- 	.power_on = inno_hdmi_phy_power_on,
- 	.power_off = inno_hdmi_phy_power_off,
-+	.configure = inno_hdmi_phy_configure,
-+	.validate = inno_hdmi_phy_validate,
- };
- 
- static const
-@@ -1392,6 +1449,7 @@ static int inno_hdmi_phy_probe(struct platform_device *pdev)
- 	}
+ static irqreturn_t inno_hdmi_phy_rk3328_hardirq(int irq, void *dev_id)
+@@ -1450,7 +1436,6 @@ static int inno_hdmi_phy_probe(struct platform_device *pdev)
  
  	phy_set_drvdata(inno->phy, inno);
-+	phy_set_mode_ext(inno->phy, PHY_MODE_HDMI, PHY_HDMI_MODE_TMDS);
- 	phy_set_bus_width(inno->phy, 8);
+ 	phy_set_mode_ext(inno->phy, PHY_MODE_HDMI, PHY_HDMI_MODE_TMDS);
+-	phy_set_bus_width(inno->phy, 8);
  
  	if (inno->plat_data->ops->init) {
+ 		ret = inno->plat_data->ops->init(inno);
 -- 
 2.54.0
 
