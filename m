@@ -4,59 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F0CD0CD4F47
-	for <linux-phy@archiver.kernel.org>; Sun, 17 May 2026 16:38:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8A732CD4F4A
+	for <linux-phy@archiver.kernel.org>; Sun, 17 May 2026 16:54:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/yObDmZVr+qQEjBermiFrdVMnnUh1ETWxWGPdm7fPUY=; b=UlE0DR5hP1QEVT
-	ofJ1iuogMCAPBHhAIYHOUx9k5csLt+rNfjqAjfag3Jwxt16nrr9LycP2mp5PAuyU1zfavAv4ZMLwO
-	7662dFyZFESXd6FpDld4xEqbqEu1PcZ8m6uKjStsM6ncWJgUg0AUzrVEKBjY/ZgLxOAeazkkCsuJv
-	Nuf3yPiWchLVKVgHj4p2eo/PUDWgXl1EHLT22/qrDShEOdFYpIm5R8hFFSAfx5AwLAx6yp/cUjfn5
-	x9xLX56cgF5FOrSQvkQCkG+QWDX/mGNAOFv8wmXtUbomcMfh1xRSvA4rpG9WZEdHmoiAhYFr84Lbu
-	Nogxq44bTrhqFuyc9+qg==;
+	List-Owner; bh=sVqbf8ygDx7PLY6ARUdzA0mHxh21kkJ/B4919dDc7T0=; b=RNVMKo0qIBceUX
+	lz24H6dMqG4EvRp3/2UGJEIHMS6cjKobR/oevmfLsWhjYAK5v4NUn+GtgxU3xvm4WUtAxPcq/LHss
+	5avvdNKXizonssU8sAfufwGGsAoftwYRSIId4xlVMg4Hoizuh253Y9JyMYfz0Yn2K24puq/t7LRHh
+	ed+dpbClAMNr72B3RLjB0Ozp2Db6RhHuABbHPb+9+9uJYsMRzO0BiHHH3Imhz9FaQ1gQOVvcRfsvg
+	HkYFSTKBDWupnRqMRiNqtHredw7OijEmJnOSr6lF9MX471h9KZTbVgAAA2y4rbFOgKNSpRbnn9eFk
+	UChAhRxVv/JpzrLKudHg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wOeV9-0000000D2J4-1ndf;
-	Sun, 17 May 2026 16:38:03 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1wOelR-0000000D3d0-0JH3;
+	Sun, 17 May 2026 16:54:53 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wOeV7-0000000D2In-3DED
-	for linux-phy@lists.infradead.org;
-	Sun, 17 May 2026 16:38:01 +0000
+	id 1wOelO-0000000D3bz-2IV0;
+	Sun, 17 May 2026 16:54:52 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id AE7AE60125;
-	Sun, 17 May 2026 16:38:00 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C8B4FC2BCB0;
-	Sun, 17 May 2026 16:37:59 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id A4293416A7;
+	Sun, 17 May 2026 16:54:48 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EEE6BC2BCB0;
+	Sun, 17 May 2026 16:54:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1779035880;
-	bh=+LYQ5X69Ij/o6P43EjB7X6DpZkZiMN5FBEa13GAqLmU=;
+	s=k20201202; t=1779036888;
+	bh=rl8/+H7UrkvD6Wm6GXhI3VO843IjVdH5GorUML886+s=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=Yi5V/ECEHHOSSNF/vj1ZFL4uuBHJg0Me5MMwlS4NINDJCS7jSEIbaU422M/xYAT1v
-	 R0ya7dAScQwXrvtkXHjcc3XT5pFdCHTsYB1OFPzt7LGTED5ADGa3dzlcHqGGHsO9B+
-	 +oI7jpcn36mvariCVO/KYnUTWRYbHfgLvLM7ZasSf78mbad/6jYSDrBvr4UnwOSy/5
-	 emA/QVOZ2b6767kb5QYXVWU4lBXKUkJh+waO0NXSQc11YXMlZNzn3NvC9wp0TdW2rS
-	 Xf+VtcgKMqWclb9orzsmsGn7hch0TbHCZm5txmNSfpA3CO9/psYh+uS84JDqqt+etE
-	 +Zd+2n4JQVu3g==
-Date: Sun, 17 May 2026 22:07:56 +0530
+	b=JsbuppPfeqHH826a2rLBZNT3CPj7ruSwlDcOIGBAMfxGU0LFwgx2/s+KvhkULmoY0
+	 hyccBDN6SGggxgqY8GCkNqjMwJZ9va5Q1N3NBASYSJpnBtrjcSDOVo0RLgW9g78nIj
+	 BJzZSnp4D1aNaNNENmFUit0Fd5u2FagM0CS2EtbQMWMD4wHj5d5byfx1QD7vP81eg4
+	 EqNlosfLq58w3zL8FXfGeDAI5fM5ke012FrHi6w0loU111sRbhVyedtdPTt7wsNQiE
+	 /ZXLzavaTaJsqsl+B48Wh43rpbgslHByU9QG5hF+V7LD5pixVnEOUwqpyyAZnylaw2
+	 /OhcjcWFm6lhw==
+Date: Sun, 17 May 2026 22:24:44 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Ioana Ciornei <ioana.ciornei@nxp.com>
-Cc: neil.armstrong@linaro.org, robh@kernel.org, krzk+dt@kernel.org,
-	conor+dt@kernel.org, johan@kernel.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v3 phy-next 2/2] phy: ti: add PHY driver for TI
- DS125DF111 Dual-Channel Retimer
-Message-ID: <agnu5Mmf_d8zvWXH@vaman>
-References: <20260516060309.2282592-1-ioana.ciornei@nxp.com>
- <20260516060309.2282592-3-ioana.ciornei@nxp.com>
+To: Jonas Karlman <jonas@kwiboo.se>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>,
+	Heiko Stuebner <heiko@sntech.de>, linux-phy@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v3 1/2] phy: rockchip: inno-hdmi: Add configure() and
+ validate() ops
+Message-ID: <agny1ER5j6om9hIT@vaman>
+References: <20260515195512.1757363-1-jonas@kwiboo.se>
+ <20260515195512.1757363-2-jonas@kwiboo.se>
+ <d69b500b-0473-496d-b17e-c60ce9839e0c@kwiboo.se>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260516060309.2282592-3-ioana.ciornei@nxp.com>
+In-Reply-To: <d69b500b-0473-496d-b17e-c60ce9839e0c@kwiboo.se>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260517_095450_628726_56C554FE 
+X-CRM114-Status: GOOD (  27.14  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,407 +76,94 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 16-05-26, 09:03, Ioana Ciornei wrote:
-> Add a generic PHY driver for the TI DS125DF111 Multi-Protocol
-> Dual-Channel Retimer. The driver currently supports only 10G and 1G link
-> speeds but it can easily extended to also cover other usecases.
+On 15-05-26, 23:04, Jonas Karlman wrote:
+> Hi,
 > 
-> Since the available datasheet (https://www.ti.com/lit/gpn/DS125DF111)
-> does not name the registers, the name for the macros were determined by
-> their usage pattern.
+> On 5/15/2026 9:55 PM, Jonas Karlman wrote:
+> > The commit 10ed34d6eaaf ("phy: Add HDMI configuration options")
+> > introduced a way for HDMI PHYs to be configured through the generic
+> > phy_configure() function.
+> > 
+> > This driver derives the TMDS character rate from the pixel clock and the
+> > PHY bus width setting. However, no in-tree consumer of this PHY has ever
+> > called phy_set_bus_width() to change the TMDS character rate as only
+> > 8-bit RGB output is supported by the HDMI display driver.
+> > 
+> > Add configure() and validate() ops to allow consumers to configure the
+> > TMDS character rate using phy_configure(). Fallback to the deprecated
+> > way of using the PHY bus width to configure the TMDS character rate.
+> > 
+> > A typical call chain during DRM modeset on a RK3328 device:
+> > 
+> >   dw_hdmi_rockchip_encoder_atomic_check():
+> >   - inno_hdmi_phy_validate(): pixclock 148500000 tmdsclock 594000000
+> > 
+> >   dw_hdmi_rockchip_encoder_atomic_mode_set():
+> >   - inno_hdmi_phy_configure(): pixclock 148500000
+> >     - inno_hdmi_phy_validate(): pixclock 148500000 tmdsclock 594000000
+> > 
+> >   vop_crtc_atomic_enable():
+> >   - inno_hdmi_phy_rk3328_clk_set_rate(): rate 594000000 tmdsclk 594000000
+> >   - inno_hdmi_phy_rk3328_clk_set_rate(): pixclock 594000000 tmdsclock 594000000
+> >   - inno_hdmi_phy_rk3328_clk_recalc_rate(): pixclock 594000000 vco 594000000
+> > 
+> >   dw_hdmi_rockchip_encoder_enable():
+> >   - inno_hdmi_phy_power_on(): Inno HDMI PHY Power On
+> >   - inno_hdmi_phy_rk3328_clk_set_rate(): rate 594000000 tmdsclk 594000000
+> > 
+> > Signed-off-by: Jonas Karlman <jonas@kwiboo.se>
+> > ---
+> > Changes in v3:
+> > - Change validate() ops to only validate tmdsclock
+> > - Add comments about expected consumer usage
+> > - Update commit message with a typical call chain
+> > Changes in v2:
+> > - Add validate() ops to validate that the TMDS rate is supported
+> > - Split out parts that remove the old workaround into a separate patch
+> > 
+> > Patch "drm/rockchip: dw_hdmi: Configure HDMI PHY in atomic_mode_set()"
+> > at [1] adds phy_validate() and phy_configure() calls for this HDMI PHY.
+> > 
+> > [1] https://lore.kernel.org/dri-devel/20260510183114.1248840-10-jonas@kwiboo.se/
+> > ---
+> >  drivers/phy/rockchip/phy-rockchip-inno-hdmi.c | 60 ++++++++++++++++++-
+> >  1 file changed, 59 insertions(+), 1 deletion(-)
 > 
-> A PHY device is created for each of the two channels present on the
-> retimer. This allows for independent configuration of the two channels.
-> This capability is especially important on retimers which have more than
-> 2 channels that can be, depending on the board design, connected in
-> multiple different ways to the SerDes lanes.
+> [snip]
 > 
-> Signed-off-by: Ioana Ciornei <ioana.ciornei@nxp.com>
-> ---
-> Changes in v3:
-> - Use reverse Christmas tree ordering
-> - Print a symbolic description in case of error
-> - Some words do not need to be capitalized
-> - Remove duplicated exit code path
-> - Return -EINVAL in case of unsupported submode received in .set_mode()
-> - Add a .validate() callback
-> - Remove comma after sentinel entry
-> - Add a ds125df111_rmw() helper
-> - Use read_poll_timeout() to wait for channel reset to complete
+> > +static int inno_hdmi_phy_validate(struct phy *phy, enum phy_mode mode,
+> > +				  int submode, union phy_configure_opts *opts)
+> > +{
+> > +	const struct pre_pll_config *cfg = pre_pll_cfg_table;
+> > +	unsigned long tmdsclock;
+> > +
+> > +	if (!(mode == PHY_MODE_HDMI && submode == PHY_HDMI_MODE_TMDS))
+> > +		return -EINVAL;
+> > +
+> > +	if (!opts->hdmi.tmds_char_rate || opts->hdmi.tmds_char_rate > 594000000)
+> > +		return -EINVAL;
 > 
-> Changes in v2:
-> - Explicitly include all the needed headers
-> - Change ds125df111_xlate() so that it returns an error if args_count is
-> not exactly 1
-> - Add a MAINTAINERS entry
-> ---
->  MAINTAINERS                     |   7 +
->  drivers/phy/ti/Kconfig          |  10 ++
->  drivers/phy/ti/Makefile         |   1 +
->  drivers/phy/ti/phy-ds125df111.c | 294 ++++++++++++++++++++++++++++++++
->  4 files changed, 312 insertions(+)
->  create mode 100644 drivers/phy/ti/phy-ds125df111.c
+> Sashiko reasoning log pointed out that a consumer of phy_validate() or
+> phy_configure() can make a call with opts=NULL, so I may likely send a
+> v4 of this series to fix such possible NULL pointer dereference here.
+
+Yes please
+
 > 
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index f877e5aaf2c7..58f410b666e7 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -26781,6 +26781,13 @@ T:	git git://linuxtv.org/mhadli/v4l-dvb-davinci_devices.git
->  F:	drivers/media/platform/ti/davinci/
->  F:	include/media/davinci/
->  
-> +TI DS125DF111 RETIMER PHY DRIVER
-> +M:	Ioana Ciornei <ioana.ciornei@nxp.com>
-> +L:	linux-phy@lists.infradead.org (moderated for non-subscribers)
-> +S:	Maintained
-> +F:	Documentation/devicetree/bindings/phy/ti,ds125df111.yaml
-> +F:	drivers/phy/ti/phy-ds125df111.c
-> +
->  TI ENHANCED CAPTURE (eCAP) DRIVER
->  M:	Vignesh Raghavendra <vigneshr@ti.com>
->  R:	Julien Panis <jpanis@baylibre.com>
-> diff --git a/drivers/phy/ti/Kconfig b/drivers/phy/ti/Kconfig
-> index b40f28019131..475e80fcd52d 100644
-> --- a/drivers/phy/ti/Kconfig
-> +++ b/drivers/phy/ti/Kconfig
-> @@ -111,3 +111,13 @@ config PHY_TI_GMII_SEL
->  	help
->  	  This driver supports configuring of the TI CPSW Port mode depending on
->  	  the Ethernet PHY connected to the CPSW Port.
-> +
-> +config PHY_TI_DS125DF111
+> Or is that something that possible should be checked before phy core
+> calls the .validate()/.configure() ops?
 
-This should be in alphabetical order, so I guess before PHY_TI_G...
+The opts is an optional argument depending upon the mode to be valid. So
+we cant do that in the core...
 
-> +	tristate "DS125DF111 2-Channel Retimer Driver"
-> +	depends on OF && I2C
-> +	select GENERIC_PHY
-> +	help
-> +	  Enable this to add support for configuration and runtime management
-> +	  of the TI DS125DF111 Multi-Protocol 2-Channel Retimer.
-> +	  The retimer is modeled as a Generic PHY and supports both 10G and 1G
-> +	  link speeds.
-> diff --git a/drivers/phy/ti/Makefile b/drivers/phy/ti/Makefile
-> index dcba2571c9bd..e68445ddd848 100644
-> --- a/drivers/phy/ti/Makefile
-> +++ b/drivers/phy/ti/Makefile
-> @@ -9,3 +9,4 @@ obj-$(CONFIG_TWL4030_USB)		+= phy-twl4030-usb.o
->  obj-$(CONFIG_PHY_AM654_SERDES)		+= phy-am654-serdes.o
->  obj-$(CONFIG_PHY_TI_GMII_SEL)		+= phy-gmii-sel.o
->  obj-$(CONFIG_PHY_J721E_WIZ)		+= phy-j721e-wiz.o
-> +obj-$(CONFIG_PHY_TI_DS125DF111)		+= phy-ds125df111.o
+> 
+> Multiple other phy .configure() ops seem to dereference opts members
+> without any type of opts NULL check. (next-20260508)
 
-Here as well
+We should fix these
 
-> diff --git a/drivers/phy/ti/phy-ds125df111.c b/drivers/phy/ti/phy-ds125df111.c
-> new file mode 100644
-> index 000000000000..8788f340e3b0
-> --- /dev/null
-> +++ b/drivers/phy/ti/phy-ds125df111.c
-> @@ -0,0 +1,294 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/* Copyright 2026 NXP */
-> +
-> +#include <linux/bitfield.h>
-> +#include <linux/bits.h>
-> +#include <linux/i2c.h>
-> +#include <linux/iopoll.h>
-> +#include <linux/kernel.h>
-> +#include <linux/module.h>
-> +#include <linux/phy.h>
-> +#include <linux/phy/phy.h>
-> +#include <linux/slab.h>
-> +
-> +#define DS125DF111_NUM_CH			2
-> +#define DS125DF111_NUM_VCO_GROUP_REG		5
-> +
-> +#define DS125DF111_CH_SELECT			0xff
-> +#define DS125DF111_CH_SELECT_TARGET_MASK	GENMASK(3, 0)
-> +#define DS125DF111_CH_SELECT_EN			BIT(2)
-> +
-> +#define DS125DF111_CH_CTRL			0x00
-> +#define DS125DF111_CH_CTRL_RESET		BIT(2) /* self clearing */
-> +
-> +#define DS125DF111_CH_RST_SLEEP_US		10
-> +#define DS125DF111_CH_RST_TIMEOUT_US		10000
-> +
-> +#define DS125DF111_VCO_GROUP_BASE		0x60
-> +
-> +#define DS125DF111_RATIOS			0x2F
 
-Lower case for the hex values please
-
-> +#define DS125DF111_RATIOS_RATE_MASK		GENMASK(7, 6)
-> +#define DS125DF111_RATIOS_SUBRATE_MASK		GENMASK(5, 4)
-> +#define DS125DF111_RATIOS_MASK			GENMASK(7, 4)
-> +
-> +struct ds125df111_ch {
-> +	struct phy *phy;
-> +	struct ds125df111_priv *priv;
-> +	int idx;
-> +};
-> +
-> +struct ds125df111_priv {
-> +	struct ds125df111_ch ch[DS125DF111_NUM_CH];
-> +	struct i2c_client *client;
-> +	struct mutex mutex; /* protects access to shared registers */
-> +};
-> +
-> +enum ds125df111_mode {
-> +	FREQ_1G,
-> +	FREQ_10G,
-> +};
-> +
-> +static const struct ds125df111_config {
-> +	u8 vco_group[DS125DF111_NUM_VCO_GROUP_REG];
-> +	u8 rate;
-> +	u8 subrate;
-> +} ds125df111_cfg[] = {
-> +	[FREQ_1G] = {
-> +		/* VCO group #0 = 10GHz, VCO group #1 = 10GHz */
-> +		.vco_group = {0x00, 0xB2, 0x00, 0xB2, 0xCC},
-> +		/* By using the following combination of rate and subrate we
-> +		 * select divide ratios of 1, 2, 4, 8 on both groups
-> +		 */
-> +		.rate = 0x1,
-> +		.subrate = 0x2,
-> +	},
-> +
-> +	[FREQ_10G] = {
-> +		/* VCO group #0 = 10.3125GHz, VCO group #1 = 10.3125GHz */
-> +		.vco_group = {0x90, 0xB3, 0x90, 0xB3, 0xCD},
-> +		/* By using the following combination of rate and subrate we
-> +		 * select divide ratios of 1 on both groups
-> +		 */
-> +		.rate = 0x1,
-> +		.subrate = 0x3,
-> +	},
-> +};
-> +
-> +static int ds125df111_rmw(struct ds125df111_priv *priv, u8 reg, u8 clr, u8 set)
-> +{
-> +	struct i2c_client *i2c = priv->client;
-> +	int err;
-> +	u8 val;
-> +
-> +	err = i2c_smbus_read_byte_data(i2c, reg);
-> +	if (err < 0)
-> +		return err;
-> +
-> +	val = (u8)err;
-> +	val &= ~clr;
-> +	val |= set;
-> +
-> +	err = i2c_smbus_write_byte_data(i2c, reg, val);
-> +	if (err < 0)
-> +		return err;
-> +
-> +	return 0;
-> +}
-> +
-> +static int ds125df111_configure(struct phy *phy,
-> +				const struct ds125df111_config *cfg)
-
-This should start at preceding line open braces (here and few other
-places)
-
-> +{
-> +	struct ds125df111_ch *ch = phy_get_drvdata(phy);
-> +	struct ds125df111_priv *priv = ch->priv;
-> +	struct i2c_client *i2c = priv->client;
-> +	struct device *dev = &phy->dev;
-> +	u8 ratios_val;
-> +	int err, i;
-> +	int val;
-> +
-> +	mutex_lock(&priv->mutex);
-> +
-> +	/* Make sure that any subsequent read/write operation will be directed
-> +	 * only to the registers of the selected channel
-> +	 */
-> +	err = ds125df111_rmw(priv, DS125DF111_CH_SELECT,
-> +			     DS125DF111_CH_SELECT_TARGET_MASK,
-> +			     DS125DF111_CH_SELECT_EN | ch->idx);
-> +	if (err < 0) {
-> +		dev_err(dev, "Unable to select channel: %pe\n", ERR_PTR(err));
-> +		goto out;
-> +	}
-> +
-> +	/* Reset channel registers and wait until the bit was cleared */
-> +	err = ds125df111_rmw(priv, DS125DF111_CH_CTRL, 0,
-> +			     DS125DF111_CH_CTRL_RESET);
-> +	if (err < 0) {
-> +		dev_err(dev, "Error resetting channel configuration: %pe\n",
-> +			ERR_PTR(err));
-> +		goto out;
-> +	}
-> +
-> +	err = read_poll_timeout(i2c_smbus_read_byte_data, val,
-> +				val < 0 || !(val & DS125DF111_CH_CTRL_RESET),
-> +				DS125DF111_CH_RST_SLEEP_US,
-> +				DS125DF111_CH_RST_TIMEOUT_US, false, i2c,
-> +				DS125DF111_CH_CTRL);
-> +	if (err) {
-> +		dev_err(dev, "Timed out waiting for channel reset: %pe\n",
-> +			ERR_PTR(err));
-> +		goto out;
-> +	}
-> +
-> +	if (val < 0) {
-> +		dev_err(dev, "Error reading reset status: %pe\n", ERR_PTR(val));
-> +		err = val;
-> +		goto out;
-> +	}
-> +
-> +	/* Program the VCO group frequencies */
-> +	for (i = 0; i < DS125DF111_NUM_VCO_GROUP_REG; i++) {
-> +		err = i2c_smbus_write_byte_data(i2c,
-> +						DS125DF111_VCO_GROUP_BASE + i,
-> +						cfg->vco_group[i]);
-> +		if (err < 0) {
-> +			dev_err(dev, "Error programming VCO group: %pe\n",
-> +				ERR_PTR(err));
-> +			goto out;
-> +		}
-> +	}
-> +
-> +	/* Set the divide ratios for the VCO groups */
-> +	ratios_val = FIELD_PREP(DS125DF111_RATIOS_RATE_MASK, cfg->rate) |
-> +		FIELD_PREP(DS125DF111_RATIOS_SUBRATE_MASK, cfg->subrate);
-> +	err = ds125df111_rmw(priv, DS125DF111_RATIOS, DS125DF111_RATIOS_MASK,
-> +			     ratios_val);
-> +	if (err < 0) {
-> +		dev_err(dev, "Error programming the divide ratios: %pe\n",
-> +			ERR_PTR(err));
-> +		goto out;
-> +	}
-> +
-> +out:
-> +	mutex_unlock(&priv->mutex);
-> +
-> +	return err;
-> +}
-> +
-> +static int ds125df111_set_mode(struct phy *phy, enum phy_mode mode, int submode)
-> +{
-> +	const struct ds125df111_config *cfg;
-> +
-> +	if (mode != PHY_MODE_ETHERNET)
-> +		return -EINVAL;
-> +
-> +	switch (submode) {
-> +	case PHY_INTERFACE_MODE_10GBASER:
-> +		cfg = &ds125df111_cfg[FREQ_10G];
-> +		break;
-> +	case PHY_INTERFACE_MODE_1000BASEX:
-> +	case PHY_INTERFACE_MODE_SGMII:
-> +		cfg = &ds125df111_cfg[FREQ_1G];
-> +		break;
-> +	default:
-> +		return -EINVAL;
-> +	}
-> +
-> +	return ds125df111_configure(phy, cfg);
-> +}
-> +
-> +static int ds125df111_validate(struct phy *phy, enum phy_mode mode, int submode,
-> +			       union phy_configure_opts *opts __always_unused)
-> +{
-> +	if (mode != PHY_MODE_ETHERNET)
-> +		return -EINVAL;
-> +
-> +	switch (submode) {
-> +	case PHY_INTERFACE_MODE_10GBASER:
-> +	case PHY_INTERFACE_MODE_1000BASEX:
-> +	case PHY_INTERFACE_MODE_SGMII:
-> +		return 0;
-> +	default:
-> +		return -EINVAL;
-> +	}
-> +}
-> +
-> +static const struct phy_ops ds125df111_ops = {
-> +	.validate	= ds125df111_validate,
-> +	.set_mode	= ds125df111_set_mode,
-> +	.owner		= THIS_MODULE,
-> +};
-> +
-> +static struct phy *ds125df111_xlate(struct device *dev,
-> +				    const struct of_phandle_args *args)
-> +{
-> +	struct ds125df111_priv *priv = dev_get_drvdata(dev);
-> +	u32 idx;
-> +
-> +	if (args->args_count != 1)
-> +		return ERR_PTR(-EINVAL);
-> +
-> +	idx = args->args[0];
-> +	if (idx >= DS125DF111_NUM_CH) {
-> +		dev_err(dev, "Maximum number of channels is %d\n",
-> +			DS125DF111_NUM_CH);
-> +		return ERR_PTR(-EINVAL);
-> +	}
-> +
-> +	return priv->ch[idx].phy;
-> +}
-> +
-> +static int ds125df111_probe(struct i2c_client *client)
-> +{
-> +	struct device *dev = &client->dev;
-> +	struct phy_provider *provider;
-> +	struct ds125df111_priv *priv;
-> +	int i, err;
-> +
-> +	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
-> +	if (!priv)
-> +		return -ENOMEM;
-> +	priv->client = client;
-> +	err = devm_mutex_init(dev, &priv->mutex);
-> +	if (err)
-> +		return err;
-> +
-> +	i2c_set_clientdata(client, priv);
-> +
-> +	for (i = 0; i < DS125DF111_NUM_CH; i++) {
-> +		struct ds125df111_ch *ch = &priv->ch[i];
-> +		struct phy *phy;
-> +
-> +		phy = devm_phy_create(dev, NULL, &ds125df111_ops);
-> +		if (IS_ERR(phy))
-> +			return PTR_ERR(phy);
-> +
-> +		ch->idx = i;
-> +		ch->priv = priv;
-> +		ch->phy = phy;
-> +
-> +		phy_set_drvdata(phy, ch);
-> +	}
-> +
-> +	provider = devm_of_phy_provider_register(dev, ds125df111_xlate);
-> +
-> +	return PTR_ERR_OR_ZERO(provider);
-> +}
-> +
-> +static const struct of_device_id ds125df111_dt_ids[] = {
-> +	{ .compatible = "ti,ds125df111", },
-> +	{}
-> +};
-> +MODULE_DEVICE_TABLE(of, ds125df111_dt_ids);
-> +
-> +static struct i2c_driver ds125df111_driver = {
-> +	.driver = {
-> +		.name = "ds125df111",
-> +		.of_match_table = ds125df111_dt_ids,
-> +	},
-> +	.probe = ds125df111_probe,
-> +};
-> +module_i2c_driver(ds125df111_driver);
-> +
-> +MODULE_AUTHOR("Ioana Ciornei <ioana.ciornei@nxp.com>");
-> +MODULE_DESCRIPTION("TI DS125DF111 Retimer driver");
-> +MODULE_LICENSE("GPL");
-> -- 
-> 2.25.1
+PS: Any reason why you are sending encypted emails?
 
 -- 
 ~Vinod
