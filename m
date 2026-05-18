@@ -4,125 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B7EDECD4F3C
-	for <linux-phy@archiver.kernel.org>; Mon, 18 May 2026 07:23:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8E7ECCD4F48
+	for <linux-phy@archiver.kernel.org>; Mon, 18 May 2026 07:26:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5lAqhXeseWEhr3L7QDjiwFZ2CtuVK00pYuaLA4Jm+Ek=; b=Pr8pusltOnS974
-	dp+9DFKrNTGBdA40T/PjJ0jyA+zuhjsFx52g+39GfwdKVhbZkyp2TVaZ0u8uuXLSn+nUHdJbLmpiB
-	PtK8GXaE7LIuef5yJ4N+VQOELwqt16QfTM64w3ZBlztd/+AEHKAX0QJqwcxQ2zBZ2VEkTMnAgTZqU
-	2zPROeAq+MsX0sDynLtH4Hik5gplO0WsxckeSp3goGvxWI4+yumDjNMTrf1D5WgWTYDPpZ/rDm+CQ
-	35DtnxhR85kallprNjgml2qByUtLSeHIGkAzid2NEA9YRTLhi+fXkYBdAUZFOg5Uu3ZNObTSBs/lC
-	chQXz6HlndECPMhV9hyA==;
+	List-Owner; bh=NLu7jqcpoKQrbZ50l/62mJoWHVMByWyglZa10infWuQ=; b=1eNoKKSsgpwxld
+	f0zzN9aLlVG1htJNYV+0Qap/7lPLVt4EDGgtycc3imI0rUpahMMHZziQ/KbKVvBHaYczs0cAiRKpA
+	oDwRHz/hdvdvnPkJxPayNeJbtnC0DT4qWs3rb+W8mW7YWHQ57M2Gxdp0OInImZ9LFCj9E8cDczfSz
+	Dl1Eg2D5HADC0x5Qwx/HsxWh0rlA7L/Jpm6CmBUUdHbO4qUeQspGJKJNQk9P1Et5O6xWbs7spLozT
+	0J0RM6ObR5Yjb3P4an0quMySs0EEb/fl94Nh9hHSEm+1iIuvU6+ENH9qs28/wSQ+SpOjmmH+fbzip
+	WxdTrBJw9C3q6jJMKATg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wOsJa-0000000EZUg-1JOs;
-	Mon, 18 May 2026 07:23:02 +0000
-Received: from mail-northeuropeazlp170120005.outbound.protection.outlook.com ([2a01:111:f403:c200::5] helo=DUZPR83CU001.outbound.protection.outlook.com)
+	id 1wOsMZ-0000000EaEO-1OZt;
+	Mon, 18 May 2026 07:26:07 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wOsJU-0000000EZRp-3brC
+	id 1wOsMX-0000000EaE1-3Lwf
 	for linux-phy@lists.infradead.org;
-	Mon, 18 May 2026 07:23:01 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=mi75O78fd85Y71ceB1EV973ZVliQmoFbnZzN65TwrMuxX8E/K+ij/+PeWyXXaFUBb7decw6gEVK5Y/iznBOLURyPhD87iy3E7YX+SqT9LzJxZFsoYZ9c9QWNIoSk1at4QOrFZpzFPtnnLaP/ywysAd3TndfAPNTZc5nGFE2/M2zqP8JGdbey4FLj6jVAJlH1BdpUhZKAXBhJJg6hs0IOj4E/Ave8QRpqV+QQra4WYuqMkMhg34dRa3ci2YD2z/gfD8212EYBQWMupMOQLYmviSV18+aFdR40JTrY2x5wpG9Fem9vy55QmX5NmOgFovXxzJVLHWsnA3ioAFtmrO/C8A==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=xYc2TBkaHl8eq6DLTqJOT6zOjymyXUi4XMG+wJi6xA4=;
- b=xWxVsFhLCQuJT+kG1SVv5GGpUNNCQYNzyG87FcPxOMAWRN3VwaldEqrUzU7IuXELNBNyB/efie+3q+XMcYiZKt2as84JwIQ7bbCFyhAbG/+GDL11mqHzGOTbqWlsuxo+TtZSySTO4xo5G7zqIXEtw3wtYdDD4OiZ9PMpw5W7tMXbZ0sEv7xsmcttza0rkGxFx2xc2G8hb5bgRe8SdxKXtD0Lj/S0n5dDXg43Od4cbl9EtarTxHeX8PNOa10aRehy/wAyH5uH0PhmQ0POK2ENJ4JK4d48Ztn7um6L8OgU0FFEtwFvbMVr8djKpTNeaT5pXXTowUg1h+gtGiPAWeUABA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=xYc2TBkaHl8eq6DLTqJOT6zOjymyXUi4XMG+wJi6xA4=;
- b=fjSxIhokLCNBV/PpKa9BhLTKiarM3flVSIYASqNGSB7f2JfL1yJHAIrz36P52wUJrKghoppJCNfezPa2s2uT+iD1T0GjY8CEcDKNkrbOIRbIWrNjq238INeHsJL7Evku/LO/1q1VcXG2gUcy5AZOnVV1lfZgKCb4P1S9tieegToX1Kl86XLVr693YrbTLXvYvwtW2i0qf4RbEJZk0UET6HfDEioP2vGbND48Vh9dwSJ8kWEsJHhDe258ltAt4wojyev333qMz8afk9gM/wKfpBC1wwI/7e4T9tpHHpVRQ/dRFPA2oHokN0egTq6HiJi1I+owDJBuNxOVbeb7B8QG+w==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from PR3PR04MB7402.eurprd04.prod.outlook.com (2603:10a6:102:89::16)
- by AMBPR04MB11764.eurprd04.prod.outlook.com (2603:10a6:20b:6f6::15) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.25.21; Mon, 18 May
- 2026 07:22:51 +0000
-Received: from PR3PR04MB7402.eurprd04.prod.outlook.com
- ([fe80::4129:7aed:b5cb:b13d]) by PR3PR04MB7402.eurprd04.prod.outlook.com
- ([fe80::4129:7aed:b5cb:b13d%5]) with mapi id 15.20.9913.009; Mon, 18 May 2026
- 07:22:50 +0000
-Date: Mon, 18 May 2026 10:22:47 +0300
-From: Ioana Ciornei <ioana.ciornei@nxp.com>
-To: Vinod Koul <vkoul@kernel.org>
-Cc: neil.armstrong@linaro.org, robh@kernel.org, krzk+dt@kernel.org, 
-	conor+dt@kernel.org, johan@kernel.org, linux-phy@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v3 phy-next 2/2] phy: ti: add PHY driver for TI
- DS125DF111 Dual-Channel Retimer
-Message-ID: <qbwdkmrrkbrl235rtyi6jsfntlruooelyleq2jcfzllou52kma@y43tmo3i7r7t>
-References: <20260516060309.2282592-1-ioana.ciornei@nxp.com>
- <20260516060309.2282592-3-ioana.ciornei@nxp.com>
- <agnu5Mmf_d8zvWXH@vaman>
-Content-Disposition: inline
-In-Reply-To: <agnu5Mmf_d8zvWXH@vaman>
-X-ClientProxiedBy: AM9P195CA0001.EURP195.PROD.OUTLOOK.COM
- (2603:10a6:20b:21f::6) To PR3PR04MB7402.eurprd04.prod.outlook.com
- (2603:10a6:102:89::16)
-MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PR3PR04MB7402:EE_|AMBPR04MB11764:EE_
-X-MS-Office365-Filtering-Correlation-Id: 06997580-b763-498f-18c6-08deb4ae44d9
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|366016|376014|19092799006|18002099003|22082099003|56012099003|11063799003|3023799003|4143699003;
-X-Microsoft-Antispam-Message-Info: DTZy9W1AwjXvZsYQGZC+C0I+7GPd4bzjJhjJq8vszxmyBQJOd2bMnzqFBrVq43kbkCQrz5JhvEAWb4/HlPJNX+Go7BFZVMrWZxDiTKxKs+qrI6Idgw3ny5mC7ZNsgZfvjUGd1P/NDdbgmuoB7sch2LKMxt+cEntsiFVTomwd6D9LFp3QGfEamS5ocJUvvqSGvELpmnELrHvSXSJ8jgXSU/JO2JGzgy47qGMdxL7Qj1By5hyPfrmuI93e1EtVrJG6REhln80fUd1ED7K2vhav+7LIRaqb+I9euHbpOY7toy/Aepbypod3FgF8ZvHjPQAgcJanahcftCnka5fLZgctNBDJZQ/98uC1Z642di1glICezsu5+uDbn0HGqkbSVOmOQpftQi2iZJbjL78PjzFrpwbw7YOFOrbC7NgB71W5F3FCYm9y1rEwo1tAVKDJxQAWDDBSDNGchu3VNEVUPkNXgnUnrLQWnExCqcNEbmLdoEOKt+PCLwU82vA9qdK042AizxC4LwsLjjMcP0kIsSyXv/1YwsJeu3bgc/3a47HG5q4MFBC9ld/YW/8wsGAMaXY9oXan4XChMlR9i7blZy1RYGb8urb0KyOwtxN/nZL/yRyOM8VV9XXJf1Lei4MnHURCcC/BNWJiAFx83Y8tM8umUT4245ddj5pDcWZvAXP8dNfmmquo+5QAFVGqzPfqtxyp
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PR3PR04MB7402.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(376014)(19092799006)(18002099003)(22082099003)(56012099003)(11063799003)(3023799003)(4143699003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?cpE7GttGIyyyvUSacz/Dc/+nNjF0R24K07iRHSyMYBIPublKmsn0oOOj69vK?=
- =?us-ascii?Q?yceSaLUlC7h7F7LpX+dZAJNQuNhUkYNxPQI9egPY+6xNbDmBiQm3rzZl7jSB?=
- =?us-ascii?Q?JXhxRIjaD+t7sT1chkSvwY3UQfjK8HO+/9/k6oHpBj6wYY8kcQ1kL7IitxIk?=
- =?us-ascii?Q?riwBCURonBfRRrE6mmhy0b1tWOV57qRYqVYhD5VdyKZ3lb6bBx9oFCtpd2P+?=
- =?us-ascii?Q?YForacFuZ7Wu5IW/MccF7NqYs7DX/sRTNem8uY54F1QTjY4eU1Kjg1TLn3NX?=
- =?us-ascii?Q?prS8nkZuN1/dweIxWyKTAWIzQo/+tXekUj3VQdlH9TMnLgu0mITBqPtqfttR?=
- =?us-ascii?Q?4l5DMm3oJrMJpZivorK6+L30q5DyqW4tDpCZh3mqP3wcvmJFgf5gMjNKaIwl?=
- =?us-ascii?Q?dDPyRxgGgHf7ZOc8MONnUq8DgQmT4OIFL2bifGtQDdF8FL0pHGJb+dBYjPQw?=
- =?us-ascii?Q?u9elCK5+LEYRYrIKOw1ITVAEbGxH8L7p5NRoYTiOZVh+QubwukpIm1xp8Bki?=
- =?us-ascii?Q?kASQDaJfDosobyhf+49COd8Dy31ys6j3emZ4+D9i5IEieJ571XBXOzrbm/e4?=
- =?us-ascii?Q?EVkdk1NfDcgXOnrSGnCNqLfGQ6SbYeV/5aaBf0QsClrQs43UnkK1nYEOL4v9?=
- =?us-ascii?Q?GD3pC3K5jo3t3gC9MjzfyFFCniPRiD3gomzmPu4NR3JAxSxvGSztuAm1EpSl?=
- =?us-ascii?Q?r51WQcHR2q39FkySqQ1BvucN+OSPnzxmrJUoc2l2rAq7KCHleFQa1ncvH8Kg?=
- =?us-ascii?Q?NjJbg3CXTQdOl1rXarZuP4whudXPb7yWx1HICbgwb7qk4vH7l7SPzm10z+Sp?=
- =?us-ascii?Q?dPB5MUP5ox+dOQWfNPlccxT3jEBN6PaDzpueN5tCkMCdPjH1KW4VeIRqc/1C?=
- =?us-ascii?Q?AMDWHqS1Qu+YM+0hgATitC96CEkmoEqcv+q+mPET2tRex1XsSqNMQNlgZAa+?=
- =?us-ascii?Q?1GQcHpI98f7ZzVrRkNu1OuHbD6jP0d5ktuTo/og3XwIstJesw1ih3B1Dmv8u?=
- =?us-ascii?Q?/MwRn2TnMS/DdjgvVLxTo9/Xor+MjObbn589oOmCtlXw0bzd4AK0jEL+5XUA?=
- =?us-ascii?Q?nX3eqXCgVJjSKe1rltZdzwRgI/RvPBjtU5E8r+i9iFQJqWQxSM4Ni6322WSL?=
- =?us-ascii?Q?1oyyuquk86YeOr7/cFWs48Y2ilcO7M1egUd8qAGXKSeitd+MtPQCRKgzWtc8?=
- =?us-ascii?Q?hO+vhJiM4avH+/US8j9JLoRPRW3IKYn4Hj4dWWD9T/jb6gG0UQis85z5+IRx?=
- =?us-ascii?Q?3tj2GOhwnbOG+2tf04D0964uFwgNTJMMnasO8lCdfBe0KXgczpMYzJ6AFqKL?=
- =?us-ascii?Q?ZdJ7vFeTXY3xybBnwPho9WAV4JwZXZULwCHXJBGvxMY/iggBnTbSd0+/bIul?=
- =?us-ascii?Q?PkXbx1VcFZwj57ipzBQHa8K8pi5RON8CRHatV76/eAWIUsGgb1JXpamipw5d?=
- =?us-ascii?Q?yt+n0QSPQ6CsWEeTMKXj26Nmy/Mp/VvIeDzJM0D9uKcy0xbZPPKuKLByJP4k?=
- =?us-ascii?Q?J967dxeMtSf4cZcD2ZldOY9/elWhCwWqDampKQc6Sh1GzHC3OAHg+bri8a6h?=
- =?us-ascii?Q?X7ff4YDMTQfS+MhB8ikkbJ5Tr6wmQuMuzDaPaZCLAUsVOQuKmP/IYlHhOhp3?=
- =?us-ascii?Q?Efn3apIZV18G7/qNJQwemR45jbE0V+g+jKakS8Zn3VJ3uqSSjSJjx1lH8JYA?=
- =?us-ascii?Q?+TKFfDjQMye9mTdryecWfqiLEvKI7NdiNqPQxpVf0QoM9jSoWyPvDUflaj4+?=
- =?us-ascii?Q?7TWnILLEEw=3D=3D?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 06997580-b763-498f-18c6-08deb4ae44d9
-X-MS-Exchange-CrossTenant-AuthSource: PR3PR04MB7402.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 May 2026 07:22:50.7417
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: lsMot00MSZ7kkBixVEZUZMnP32bbOwutZjehEpWzas3ygIyqNq6+5od9zUKwTPII4MIHE9yJ635dajJu04MKzw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AMBPR04MB11764
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260518_002257_067908_169CB2C3 
-X-CRM114-Status: GOOD (  43.39  )
+	Mon, 18 May 2026 07:26:05 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 1854D60055;
+	Mon, 18 May 2026 07:26:05 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 85B57C2BCB7;
+	Mon, 18 May 2026 07:26:04 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1779089164;
+	bh=yniDhowcZ3VwQNW4uAnqiLT+zqn/mzaMEA1Bz19GslE=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date:From;
+	b=UWwK/qHGQZ8W35ZIpDxsPJUxWXcJpQqExSY/GV2PGdIThgwyvDrp03yJzF/NVpr0p
+	 zAQK7JXejQbPQtvlPE6P9dI4IFsWjPNLxpb0HQJHi50C7bO7IdtcAgY+g3mjohegDD
+	 BhKcUioaJvFifNMnWyJ4kQXRfaVwzG9xg5MrGD/8PjAnvZI9qIm5L8shunOUVXXgyO
+	 AmvyTdnRRDoVriCCsPWHEdM3F08zZjgQ+UEzUWPTQSeC7AkV2b5TXqMFlz9Jvbz6ni
+	 2rYAeKAwzQc4lXB7R0xzI87MHMltac4v0de7hirMPlY3ctwGvH072u7HGPxuWskArH
+	 m//2bxB7nrtqg==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v5 3/4] phy: ti-pipe3: Fix EPROBE_DEFER handling for
+ clock  resources
+To: "Hongling Zeng" <zenghongling@kylinos.cn>
+Cc: vkoul@kernel.org, linux-phy@lists.infradead.org, neil.armstrong@linaro.org, olteanv@gmail.com
+In-Reply-To: <20260518062938.48114-4-zenghongling@kylinos.cn>
+References: <20260518062938.48114-4-zenghongling@kylinos.cn>
+Date: Mon, 18 May 2026 07:26:03 +0000
+Message-Id: <20260518072604.85B57C2BCB7@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -134,229 +62,58 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sun, May 17, 2026 at 10:07:56PM +0530, Vinod Koul wrote:
-> On 16-05-26, 09:03, Ioana Ciornei wrote:
-> > Add a generic PHY driver for the TI DS125DF111 Multi-Protocol
-> > Dual-Channel Retimer. The driver currently supports only 10G and 1G link
-> > speeds but it can easily extended to also cover other usecases.
-> > 
-> > Since the available datasheet (https://www.ti.com/lit/gpn/DS125DF111)
-> > does not name the registers, the name for the macros were determined by
-> > their usage pattern.
-> > 
-> > A PHY device is created for each of the two channels present on the
-> > retimer. This allows for independent configuration of the two channels.
-> > This capability is especially important on retimers which have more than
-> > 2 channels that can be, depending on the board design, connected in
-> > multiple different ways to the SerDes lanes.
-> > 
-> > Signed-off-by: Ioana Ciornei <ioana.ciornei@nxp.com>
-> > ---
-> > Changes in v3:
-> > - Use reverse Christmas tree ordering
-> > - Print a symbolic description in case of error
-> > - Some words do not need to be capitalized
-> > - Remove duplicated exit code path
-> > - Return -EINVAL in case of unsupported submode received in .set_mode()
-> > - Add a .validate() callback
-> > - Remove comma after sentinel entry
-> > - Add a ds125df111_rmw() helper
-> > - Use read_poll_timeout() to wait for channel reset to complete
-> > 
-> > Changes in v2:
-> > - Explicitly include all the needed headers
-> > - Change ds125df111_xlate() so that it returns an error if args_count is
-> > not exactly 1
-> > - Add a MAINTAINERS entry
-> > ---
-> >  MAINTAINERS                     |   7 +
-> >  drivers/phy/ti/Kconfig          |  10 ++
-> >  drivers/phy/ti/Makefile         |   1 +
-> >  drivers/phy/ti/phy-ds125df111.c | 294 ++++++++++++++++++++++++++++++++
-> >  4 files changed, 312 insertions(+)
-> >  create mode 100644 drivers/phy/ti/phy-ds125df111.c
-> > 
-> > diff --git a/MAINTAINERS b/MAINTAINERS
-> > index f877e5aaf2c7..58f410b666e7 100644
-> > --- a/MAINTAINERS
-> > +++ b/MAINTAINERS
-> > @@ -26781,6 +26781,13 @@ T:	git git://linuxtv.org/mhadli/v4l-dvb-davinci_devices.git
-> >  F:	drivers/media/platform/ti/davinci/
-> >  F:	include/media/davinci/
-> >  
-> > +TI DS125DF111 RETIMER PHY DRIVER
-> > +M:	Ioana Ciornei <ioana.ciornei@nxp.com>
-> > +L:	linux-phy@lists.infradead.org (moderated for non-subscribers)
-> > +S:	Maintained
-> > +F:	Documentation/devicetree/bindings/phy/ti,ds125df111.yaml
-> > +F:	drivers/phy/ti/phy-ds125df111.c
-> > +
-> >  TI ENHANCED CAPTURE (eCAP) DRIVER
-> >  M:	Vignesh Raghavendra <vigneshr@ti.com>
-> >  R:	Julien Panis <jpanis@baylibre.com>
-> > diff --git a/drivers/phy/ti/Kconfig b/drivers/phy/ti/Kconfig
-> > index b40f28019131..475e80fcd52d 100644
-> > --- a/drivers/phy/ti/Kconfig
-> > +++ b/drivers/phy/ti/Kconfig
-> > @@ -111,3 +111,13 @@ config PHY_TI_GMII_SEL
-> >  	help
-> >  	  This driver supports configuring of the TI CPSW Port mode depending on
-> >  	  the Ethernet PHY connected to the CPSW Port.
-> > +
-> > +config PHY_TI_DS125DF111
-> 
-> This should be in alphabetical order, so I guess before PHY_TI_G...
-
-Ok, will reorder them.
-> 
-> > +	tristate "DS125DF111 2-Channel Retimer Driver"
-> > +	depends on OF && I2C
-> > +	select GENERIC_PHY
-> > +	help
-> > +	  Enable this to add support for configuration and runtime management
-> > +	  of the TI DS125DF111 Multi-Protocol 2-Channel Retimer.
-> > +	  The retimer is modeled as a Generic PHY and supports both 10G and 1G
-> > +	  link speeds.
-> > diff --git a/drivers/phy/ti/Makefile b/drivers/phy/ti/Makefile
-> > index dcba2571c9bd..e68445ddd848 100644
-> > --- a/drivers/phy/ti/Makefile
-> > +++ b/drivers/phy/ti/Makefile
-> > @@ -9,3 +9,4 @@ obj-$(CONFIG_TWL4030_USB)		+= phy-twl4030-usb.o
-> >  obj-$(CONFIG_PHY_AM654_SERDES)		+= phy-am654-serdes.o
-> >  obj-$(CONFIG_PHY_TI_GMII_SEL)		+= phy-gmii-sel.o
-> >  obj-$(CONFIG_PHY_J721E_WIZ)		+= phy-j721e-wiz.o
-> > +obj-$(CONFIG_PHY_TI_DS125DF111)		+= phy-ds125df111.o
-> 
-> Here as well
-
-Sure.
-
-> 
-> > diff --git a/drivers/phy/ti/phy-ds125df111.c b/drivers/phy/ti/phy-ds125df111.c
-> > new file mode 100644
-> > index 000000000000..8788f340e3b0
-> > --- /dev/null
-> > +++ b/drivers/phy/ti/phy-ds125df111.c
-> > @@ -0,0 +1,294 @@
-> > +// SPDX-License-Identifier: GPL-2.0
-> > +/* Copyright 2026 NXP */
-> > +
-> > +#include <linux/bitfield.h>
-> > +#include <linux/bits.h>
-> > +#include <linux/i2c.h>
-> > +#include <linux/iopoll.h>
-> > +#include <linux/kernel.h>
-> > +#include <linux/module.h>
-> > +#include <linux/phy.h>
-> > +#include <linux/phy/phy.h>
-> > +#include <linux/slab.h>
-> > +
-> > +#define DS125DF111_NUM_CH			2
-> > +#define DS125DF111_NUM_VCO_GROUP_REG		5
-> > +
-> > +#define DS125DF111_CH_SELECT			0xff
-> > +#define DS125DF111_CH_SELECT_TARGET_MASK	GENMASK(3, 0)
-> > +#define DS125DF111_CH_SELECT_EN			BIT(2)
-> > +
-> > +#define DS125DF111_CH_CTRL			0x00
-> > +#define DS125DF111_CH_CTRL_RESET		BIT(2) /* self clearing */
-> > +
-> > +#define DS125DF111_CH_RST_SLEEP_US		10
-> > +#define DS125DF111_CH_RST_TIMEOUT_US		10000
-> > +
-> > +#define DS125DF111_VCO_GROUP_BASE		0x60
-> > +
-> > +#define DS125DF111_RATIOS			0x2F
-> 
-> Lower case for the hex values please
-> 
-> > +#define DS125DF111_RATIOS_RATE_MASK		GENMASK(7, 6)
-> > +#define DS125DF111_RATIOS_SUBRATE_MASK		GENMASK(5, 4)
-> > +#define DS125DF111_RATIOS_MASK			GENMASK(7, 4)
-> > +
-> > +struct ds125df111_ch {
-> > +	struct phy *phy;
-> > +	struct ds125df111_priv *priv;
-> > +	int idx;
-> > +};
-> > +
-> > +struct ds125df111_priv {
-> > +	struct ds125df111_ch ch[DS125DF111_NUM_CH];
-> > +	struct i2c_client *client;
-> > +	struct mutex mutex; /* protects access to shared registers */
-> > +};
-> > +
-> > +enum ds125df111_mode {
-> > +	FREQ_1G,
-> > +	FREQ_10G,
-> > +};
-> > +
-> > +static const struct ds125df111_config {
-> > +	u8 vco_group[DS125DF111_NUM_VCO_GROUP_REG];
-> > +	u8 rate;
-> > +	u8 subrate;
-> > +} ds125df111_cfg[] = {
-> > +	[FREQ_1G] = {
-> > +		/* VCO group #0 = 10GHz, VCO group #1 = 10GHz */
-> > +		.vco_group = {0x00, 0xB2, 0x00, 0xB2, 0xCC},
-> > +		/* By using the following combination of rate and subrate we
-> > +		 * select divide ratios of 1, 2, 4, 8 on both groups
-> > +		 */
-> > +		.rate = 0x1,
-> > +		.subrate = 0x2,
-> > +	},
-> > +
-> > +	[FREQ_10G] = {
-> > +		/* VCO group #0 = 10.3125GHz, VCO group #1 = 10.3125GHz */
-> > +		.vco_group = {0x90, 0xB3, 0x90, 0xB3, 0xCD},
-> > +		/* By using the following combination of rate and subrate we
-> > +		 * select divide ratios of 1 on both groups
-> > +		 */
-> > +		.rate = 0x1,
-> > +		.subrate = 0x3,
-> > +	},
-> > +};
-> > +
-> > +static int ds125df111_rmw(struct ds125df111_priv *priv, u8 reg, u8 clr, u8 set)
-> > +{
-> > +	struct i2c_client *i2c = priv->client;
-> > +	int err;
-> > +	u8 val;
-> > +
-> > +	err = i2c_smbus_read_byte_data(i2c, reg);
-> > +	if (err < 0)
-> > +		return err;
-> > +
-> > +	val = (u8)err;
-> > +	val &= ~clr;
-> > +	val |= set;
-> > +
-> > +	err = i2c_smbus_write_byte_data(i2c, reg, val);
-> > +	if (err < 0)
-> > +		return err;
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int ds125df111_configure(struct phy *phy,
-> > +				const struct ds125df111_config *cfg)
-> 
-> This should start at preceding line open braces (here and few other
-> places)
-
-And it does start after the open braces of the previous line.
-
-The .patch format adds that '+' which messes up with the alignment,
-mainly when tabs are used. Once you apply the patch you can see that the
-arguments start where they should.
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW01lZGl1bV0gVGhlIHBhdGNoIGNv
+cnJlY3RseSBmaXhlcyAtRVBST0JFX0RFRkVSIHByb3BhZ2F0aW9uIGZvciBgc3lzY2xrYCBhbmQg
+YHJlZmNsa2AgYnV0IHJldGFpbnMgYGRldl9lcnIoKWAgZm9yIGxvZ2dpbmcuIFRoaXMgaW50cm9k
+dWNlcyBkbWVzZyBzcGFtIGJlY2F1c2UgdGhlIHByb2JlIHdpbGwgbm93IGJlIHJlcGVhdGVkbHkg
+ZGVmZXJyZWQgYW5kIHJldHJpZWQsIHByaW50aW5nIHRoZSBlcnJvciBvbiBldmVyeSBhdHRlbXB0
+LgotLQoKY29tbWl0IDNmNjk4NTRkZDk1MmU0ZTVhZWU3M2IyNGU2ZDI3YzEwYTMxYTM5ZGMKQXV0
+aG9yOiBIb25nbGluZyBaZW5nIDx6ZW5naG9uZ2xpbmdAa3lsaW5vcy5jbj4KCnBoeTogdGktcGlw
+ZTM6IEZpeCBFUFJPQkVfREVGRVIgaGFuZGxpbmcgZm9yIGNsb2NrIHJlc291cmNlcwoKVGhpcyBj
+b21taXQgZml4ZXMgcHJvYmUgZGVmZXJyYWwgaGFuZGxpbmcgYnkgcHJvcGFnYXRpbmcgdGhlIGFj
+dHVhbCBlcnJvcgpjb2RlcyBmb3Igc3lzY2xrIGFuZCByZWZjbGsgaW5zdGVhZCBvZiByZXR1cm5p
+bmcgLUVJTlZBTCBvciBpZ25vcmluZyBlcnJvcnMKY29tcGxldGVseS4KCj4gZGlmZiAtLWdpdCBh
+L2RyaXZlcnMvcGh5L3RpL3BoeS10aS1waXBlMy5jIGIvZHJpdmVycy9waHkvdGkvcGh5LXRpLXBp
+cGUzLmMKPiBpbmRleCAyZDM2ZmU0YzQyMThjLi45ZWMyMjhjMmE5NDBjIDEwMDY0NAo+IC0tLSBh
+L2RyaXZlcnMvcGh5L3RpL3BoeS10aS1waXBlMy5jCj4gKysrIGIvZHJpdmVycy9waHkvdGkvcGh5
+LXRpLXBpcGUzLmMKPiBAQCAtNjA4LDE0ICs2MDgsMjAgQEAgc3RhdGljIGludCB0aV9waXBlM19n
+ZXRfY2xrKHN0cnVjdCB0aV9waXBlMyAqcGh5KQo+ICAJc3RydWN0IGNsayAqY2xrOwo+ICAJc3Ry
+dWN0IGRldmljZSAqZGV2ID0gcGh5LT5kZXY7Cj4gIAo+IC0JcGh5LT5yZWZjbGsgPSBkZXZtX2Ns
+a19nZXQoZGV2LCAicmVmY2xrIik7Cj4gKwkvKgo+ICsJICogcmVmY2xrIGlzIG9wdGlvbmFsIGZv
+ciBTQVRBIFBIWSB0byBzdXBwb3J0IG9sZGVyIERUQnMsIGJ1dAo+ICsJICogcmVxdWlyZWQgZm9y
+IG90aGVyIG1vZGVzLiBVc2UgZGV2bV9jbGtfZ2V0X29wdGlvbmFsKCkgZm9yIFNBVEEKPiArCSAq
+IHdoaWNoIHJldHVybnMgTlVMTCBmb3IgLUVOT0VOVCwgYWxsb3dpbmcgdXMgdG8gcHJvcGFnYXRl
+IGFsbAo+ICsJICogb3RoZXIgZXJyb3JzIGluY2x1ZGluZyAtRVBST0JFX0RFRkVSLgo+ICsJICov
+Cj4gKwlpZiAocGh5LT5tb2RlID09IFBJUEUzX01PREVfU0FUQSkKPiArCQlwaHktPnJlZmNsayA9
+IGRldm1fY2xrX2dldF9vcHRpb25hbChkZXYsICJyZWZjbGsiKTsKPiArCWVsc2UKPiArCQlwaHkt
+PnJlZmNsayA9IGRldm1fY2xrX2dldChkZXYsICJyZWZjbGsiKTsKPiArCj4gIAlpZiAoSVNfRVJS
+KHBoeS0+cmVmY2xrKSkgewo+ICAJCWRldl9lcnIoZGV2LCAidW5hYmxlIHRvIGdldCByZWZjbGtc
+biIpOwoKTm93IHRoYXQgdGhlIGNvZGUgY29ycmVjdGx5IHByb3BhZ2F0ZXMgLUVQUk9CRV9ERUZF
+Uiwgd2lsbCB0aGlzIGRldl9lcnIoKQpjYWxsIGNhdXNlIGRtZXNnIHNwYW0gb24gc3lzdGVtcyB3
+aGVyZSB0aGUgY2xvY2sgcHJvdmlkZXIgaXMgZGVmZXJyZWQgYW5kCnJldHJpZWQgbXVsdGlwbGUg
+dGltZXM/CgpXb3VsZCBpdCBiZSBiZXR0ZXIgdG8gcmVwbGFjZSBkZXZfZXJyKCkgd2l0aCBkZXZf
+ZXJyX3Byb2JlKCkgaGVyZSB0byBjbGVhbmx5CnN1cHByZXNzIHRoZSBlcnJvciBtZXNzYWdlIG9u
+IGRlZmVycmFscyBhbmQgcmVjb3JkIHRoZSBkZWZlcnJhbCByZWFzb24/Cgo+IC0JCS8qIG9sZGVy
+IERUQnMgaGF2ZSBtaXNzaW5nIHJlZmNsayBpbiBTQVRBIFBIWQo+IC0JCSAqIHNvIGRvbid0IGJh
+aWwgb3V0IGluIGNhc2Ugb2YgU0FUQSBQSFkuCj4gLQkJICovCj4gLQkJaWYgKHBoeS0+bW9kZSAh
+PSBQSVBFM19NT0RFX1NBVEEpCj4gLQkJCXJldHVybiBQVFJfRVJSKHBoeS0+cmVmY2xrKTsKPiAr
+CQlyZXR1cm4gUFRSX0VSUihwaHktPnJlZmNsayk7Cj4gIAl9CgpbIC4uLiBdCgo+IEBAIC02MzIs
+NyArNjM4LDcgQEAgc3RhdGljIGludCB0aV9waXBlM19nZXRfY2xrKHN0cnVjdCB0aV9waXBlMyAq
+cGh5KQo+ICAJCXBoeS0+c3lzX2NsayA9IGRldm1fY2xrX2dldChkZXYsICJzeXNjbGsiKTsKPiAg
+CQlpZiAoSVNfRVJSKHBoeS0+c3lzX2NsaykpIHsKPiAgCQkJZGV2X2VycihkZXYsICJ1bmFibGUg
+dG8gZ2V0IHN5c2Nsa1xuIik7CgpEb2VzIHRoaXMgc3lzY2xrIGVycm9yIGhhbmRsaW5nIGFsc28g
+aGF2ZSB0aGUgc2FtZSBsb2dnaW5nIGlzc3VlIHdoZW4KcmV0dXJuaW5nIC1FUFJPQkVfREVGRVI/
+Cgo+IC0JCQlyZXR1cm4gLUVJTlZBTDsKPiArCQkJcmV0dXJuIFBUUl9FUlIocGh5LT5zeXNfY2xr
+KTsKPiAgCQl9Cj4gIAl9CgotLSAKU2FzaGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtv
+LmRldi8jL3BhdGNoc2V0LzIwMjYwNTE4MDYyOTM4LjQ4MTE0LTEtemVuZ2hvbmdsaW5nQGt5bGlu
+b3MuY24/cGFydD0zCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMu
+aW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
+by9saW51eC1waHkK
