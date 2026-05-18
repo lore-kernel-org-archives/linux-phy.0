@@ -4,50 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8164FCD4F3C
-	for <linux-phy@archiver.kernel.org>; Mon, 18 May 2026 10:32:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A1776CD4F52
+	for <linux-phy@archiver.kernel.org>; Mon, 18 May 2026 10:33:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TZtSp9f9ufWBKgDnsK034pdOYQPChf1r3HtCW4KNnSE=; b=Dqm8N5ltmP6+8e
-	z6FdX1kRP4/hHRZ/0BLuZQCjHglLZzbL/iINyaWtGTRvw87RY7/Tn68ZhBPJ5rW+Yv+EzljehrfBV
-	Ofo8ZgpN7vFgFnn8CL1FonzJHsVkYlM4bPj2NmZR0ai7ME4s2BucyGiz0l+K73OCXydMbjUrkbrxP
-	9SGmrB7aZlve7ED8vbQSQiCnQ0PFhnx81QT9zu3pEPd7Mk0RIojARZ/+aQcgIKKURp00ZNxwSwB1Q
-	X5fsHIB1WJeV4wTNfqlgu4gslteUO+WH+4lkv6ZLyaG1dDehEJknKeCIetBW4h93js5rXYtkou3NC
-	LBnxWc11s40ouNjO2SVQ==;
+	List-Owner; bh=o6qzZNMU4drvLXy/YcCD1bUhFybdBDtemVu16oSX1kE=; b=RyGemfXFGAY6W2
+	inqlWYFv4V2YpbUXQr+n0lgCjBb+XRO++9krLfIOU5NRZuFUifvikYOqe5pno1EH40gcEOhfTbNB2
+	kTV/3/Aca03oomCbHwbN2XhusyuYmOj4NdpbGrLhJPO3CFcnpeS6Lgqbq7zSfNk9aaK3Zq9rBoCKq
+	tjug21E988THNhuQL+4iDbzDH3Usm0siXHmaVFhBQNI0ekkNZ0EqRPuCEDOqmHJrOxR3+aMAawPJN
+	/yAOvtqqc/D3tJhG+HYin882oOnBCqAojhAOXhfDvqEzhWcq8mhBgykjHQIPKeU1QtozgIT9zH2B0
+	ec/D9lvzoOixzRwMa+Gg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wOvHN-0000000FFpS-1686;
-	Mon, 18 May 2026 10:32:57 +0000
+	id 1wOvHS-0000000FFsR-1kk6;
+	Mon, 18 May 2026 10:33:02 +0000
 Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wOvHL-0000000FFoC-3keV
+	id 1wOvHR-0000000FFrT-1oYX
 	for linux-phy@lists.infradead.org;
-	Mon, 18 May 2026 10:32:56 +0000
+	Mon, 18 May 2026 10:33:01 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 5BC15601E7;
+	by tor.source.kernel.org (Postfix) with ESMTP id DE378601E4;
+	Mon, 18 May 2026 10:33:00 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B2286C2BCC6;
 	Mon, 18 May 2026 10:32:55 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id F2DBEC2BCB8;
-	Mon, 18 May 2026 10:32:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1779100375;
-	bh=Bx+uK0De2e8QKsDbMgINkrI+kBC4yYhtPUn60fv3ne0=;
+	s=k20201202; t=1779100380;
+	bh=u4mlMQuiRSVOJoZk0W9VqXiNcwQBWqJwQpwyGvpon/w=;
 	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=hpjC0vNGT49oMapbw3QF4sY1siLZmwzxAKWYJZZAbbqd9tK4YVApCi5160gwA51B1
-	 rlTXJsCRxTZqS34ni3XF+w8RofJ0tP4GQpyLQ0rPwotL3difYOXs7QPvYTXtnVd7w3
-	 0BRjHT5dEzA1kZ+nJ4qqQm/Ru7JLKjGnrHAZHXzaYJbPU/zTwIXJh0n2v5lEo5LSOs
-	 OQBq+4tkHTRyEmeBzGDh+/NrnoyjXMgW9y9AKYOxbFrPlQy5aP2M5wonS4KdK/d9GF
-	 b0SsLF1MIDtut0K7NdHDmesq/4SjoTptSkoaSj/hyLgzmn9IusmX3091rywq0zv7N4
-	 9BQEAd+PX1hvA==
+	b=ZJPqUXk9C7D6Skr2TewVA109U1nl6rojJkb3hOnerw8JaFH01t7Jp0RxNIwADMh+L
+	 gcyI0My5UXZFeWnFGu9DEwpbDtJy8ySc2xY5Zs6glEeeibD0WalAaLP7qQhMBRi6QG
+	 LLt0CdJpCx45pk+mFaSIzyee30qnNghStmR1a20KYwoH9oDfGpjjaq1E6PoTR1RLoU
+	 DO3l6ohZZQMfs6+0ndlpYSjD9J5RwJQ+XpKN7qGuUWpWPsYM4LZWCipo3KB7nwgrom
+	 Fr0pbXNUau8GHVDBC57KvT1e+tSeK8BweVTh+PxpWlvYTMTv4TIXKkcwP9QEvBx+N6
+	 gWM/EwdAAqu+g==
 From: Konrad Dybcio <konradybcio@kernel.org>
-Date: Mon, 18 May 2026 12:29:48 +0200
-Subject: [PATCH 1/5] dt-bindings: phy: qcom,qmp-usb3-dp: Extend X1E
- description for USB4
+Date: Mon, 18 May 2026 12:29:49 +0200
+Subject: [PATCH 2/5] phy: core: Define TBT phy_mode
 MIME-Version: 1.0
-Message-Id: <20260518-topic-usb4phy-v1-1-71d827c49dca@oss.qualcomm.com>
+Message-Id: <20260518-topic-usb4phy-v1-2-71d827c49dca@oss.qualcomm.com>
 References: <20260518-topic-usb4phy-v1-0-71d827c49dca@oss.qualcomm.com>
 In-Reply-To: <20260518-topic-usb4phy-v1-0-71d827c49dca@oss.qualcomm.com>
 To: Vinod Koul <vkoul@kernel.org>, 
@@ -62,11 +61,11 @@ Cc: linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
  Mika Westerberg <westeri@kernel.org>, Sven Peter <sven@kernel.org>, 
  Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1779100365; l=1927;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1779100365; l=1765;
  i=konrad.dybcio@oss.qualcomm.com; s=20230215; h=from:subject:message-id;
- bh=pSMLt5sTaDAUG12dp7QckV1kipkrWLzLV1rYLCisTNU=;
- b=RhurK+mAgHAvX0Ecu9GE8VFqhRDtVVBt+tphD/OVy7nmVSYy3fz4Qn/qL6Z2RB/dmk8ubTDtl
- IBDNDYMUm3DDrSzq1NtOmWtfRNYOEzhplY34C1qxGn6oa6s9GNPhVAV
+ bh=RMwhfzMTBEbqo12DI9ixrBoeEOqCH1NR2RKBf/hbieM=;
+ b=AlyKt6pSJ+eYUl4BNy94aQsgcx84VvCq8TLQuBoxvud08RayFKVzo9wrDoixbllXq8g/RVP2d
+ DdYg++MadnIDHHLqs0yjHVPDGwobA/FTD3UPon58ucRoFN5ESPsdOX/
 X-Developer-Key: i=konrad.dybcio@oss.qualcomm.com; a=ed25519;
  pk=iclgkYvtl2w05SSXO5EjjSYlhFKsJ+5OSZBjOkQuEms=
 X-BeenThere: linux-phy@lists.infradead.org
@@ -87,54 +86,65 @@ Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 
-Some instances of the QMP combo PHY (called USB43DP) feature a third
-functional sub-block, responsible for USB4/Thunderbolt 3 communication.
+There exist OS-accessible USB4 and Thunderbolt PHYs that need specific
+configuration. Define a new phy_mode for them.
 
-Compared to the today's state of the binding, one more clock (P2RR2P -
-PHY-to-Router, Router-to-PHY) needs to be enabled for the PHY to be
-able to switch to USB4 mode. Allow that for X1E.
+Currently, USB4 and TBT3 are defined as submodes, because they're quite
+distinct, most visibly in the electrical/analog aspects (slightly
+different frequencies, timings, etc.). This results in a need to make
+the PHY aware of the actual mode needed (at least in the Qualcomm
+implementation, but I believe that'll be a general need).
 
-Also, add a bindings define to let consumers access it.
+Newer versions of TBT are basically supersets of USB4 with higher
+host-side requirements, so these are not defined. This can always be
+changed as necessary.
 
 Signed-off-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 ---
- .../devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml         | 3 ++-
- include/dt-bindings/phy/phy-qcom-qmp.h                                 | 1 +
- 2 files changed, 3 insertions(+), 1 deletion(-)
+ include/linux/phy/phy-tbt.h | 14 ++++++++++++++
+ include/linux/phy/phy.h     |  2 ++
+ 2 files changed, 16 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
-index 3d537b7f9985..eba4bee474fb 100644
---- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
-+++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
-@@ -52,7 +52,7 @@ properties:
-       - const: ref
-       - const: com_aux
-       - const: usb3_pipe
--      - const: cfg_ahb
-+      - enum: [ p2rr2p_pipe, cfg_ahb ]
+diff --git a/include/linux/phy/phy-tbt.h b/include/linux/phy/phy-tbt.h
+new file mode 100644
+index 000000000000..5f48059814e1
+--- /dev/null
++++ b/include/linux/phy/phy-tbt.h
+@@ -0,0 +1,14 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
++ */
++
++#ifndef __PHY_TBT_H_
++#define __PHY_TBT_H_
++
++enum tbt_phy_submode {
++	PHY_SUBMODE_TBT3,
++	PHY_SUBMODE_USB4,
++};
++
++#endif
+diff --git a/include/linux/phy/phy.h b/include/linux/phy/phy.h
+index ea47975e288a..26a91c070f8c 100644
+--- a/include/linux/phy/phy.h
++++ b/include/linux/phy/phy.h
+@@ -20,6 +20,7 @@
+ #include <linux/phy/phy-hdmi.h>
+ #include <linux/phy/phy-lvds.h>
+ #include <linux/phy/phy-mipi-dphy.h>
++#include <linux/phy/phy-tbt.h>
  
-   power-domains:
-     maxItems: 1
-@@ -186,6 +186,7 @@ allOf:
-           enum:
-             - qcom,sc7180-qmp-usb3-dp-phy
-             - qcom,sdm845-qmp-usb3-dp-phy
-+            - qcom,x1e80100-qmp-usb3-dp-phy
-     then:
-       properties:
-         clocks:
-diff --git a/include/dt-bindings/phy/phy-qcom-qmp.h b/include/dt-bindings/phy/phy-qcom-qmp.h
-index 6b43ea9e0051..1c3ce0c02b0c 100644
---- a/include/dt-bindings/phy/phy-qcom-qmp.h
-+++ b/include/dt-bindings/phy/phy-qcom-qmp.h
-@@ -16,6 +16,7 @@
- /* QMP USB4-USB3-DP PHYs */
- #define QMP_USB43DP_USB3_PHY		0
- #define QMP_USB43DP_DP_PHY		1
-+#define QMP_USB43DP_USB4_PHY		2
+ struct phy;
  
- /* QMP PCIE PHYs */
- #define QMP_PCIE_PIPE_CLK		0
+@@ -45,6 +46,7 @@ enum phy_mode {
+ 	PHY_MODE_LVDS,
+ 	PHY_MODE_DP,
+ 	PHY_MODE_HDMI,
++	PHY_MODE_TBT,
+ };
+ 
+ enum phy_media {
 
 -- 
 2.54.0
