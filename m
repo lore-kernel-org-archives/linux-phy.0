@@ -4,127 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D55F4CD4F50
-	for <linux-phy@archiver.kernel.org>; Mon, 18 May 2026 14:21:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 21CE7CD4F4A
+	for <linux-phy@archiver.kernel.org>; Mon, 18 May 2026 14:40:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7P7BtVV8rbNpOOprGMllR1NxipfNPsjom8DZxVFboaE=; b=qaH82EjVIywqoa
-	AU61/7kIp/dfMsj/MUNthbHOWpl2CAWjG1r/5ATgMIpeMqsQ1uwmLNa1a6mu0fribpdLoYi7To2y9
-	Y2oGzPhyi7goroCNmP9bDtekJWBdG6bZ++9YxHMEjnmHqoj1c88GHfv2KmVQiuNYQH07fWexuVNGd
-	0BN1KGYiK5wqm5xVPxn0ukqoiiC+RhvkXaivkHNUQT7a42az3GQq60OWSGLohh4VheFaqPx9mg387
-	XC99wTvqjJlz+FsX2vU9nIBuTc3HUbI74jjDunn3h4jzi8qnmoFO0oTR3L2ysCVX7LMlhDuz6vmGC
-	x1OixP5R/R6UyBA1meUw==;
+	List-Owner; bh=+1mbLKzpZ2XPa1jdb8pax+gu8d6xhpSMreSW9slTByA=; b=ZyZbmS3rlBiDAl
+	ndI85DwN5DxKRqxpGwnoULLtcj9YpjKzunxJTkE3HOFZur4FCMNQQS128DAlX6TxqPfqNpMYeun2+
+	N33yOkeMSbdHBNGrBlYhiAjX+0lr5Imu3w7fLCIKfcZHcEqddEHkhBZCIt7C6NRl8DIoq+/M9tOds
+	ov9NpUe+4wjBNn+2Zwqntot3RtHaoRsaGu/ZStt4RYVZ/2SOyQpEtvGRs5KaaD/of+3cabX+CSIxD
+	0jR1WRWNZMH0RtMNAXTmAud9SJCiNmkCALcv0rEKsdd1oPzmCu8BsEk6wHXkVfrzokShQWBrkVMKd
+	vcdobiZw2i85BcUhut3w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wOyq6-0000000FxZi-2IIu;
-	Mon, 18 May 2026 14:21:02 +0000
-Received: from mail-northeuropeazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c200::1] helo=DB3PR0202CU003.outbound.protection.outlook.com)
+	id 1wOz9G-0000000G1ci-3l0I;
+	Mon, 18 May 2026 14:40:50 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wOyq3-0000000FxUs-1kt1
+	id 1wOz9E-0000000G1bQ-0IXj
 	for linux-phy@lists.infradead.org;
-	Mon, 18 May 2026 14:21:00 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=f2stWidBOHN9dJKh+SFakEEQPm8NNNaNEDBTp8pHCAUESR3M7Clo3Ywm3/kXVJ5BilWvESBmioVHIzPDjRTU5a4orbwYlnZvIJZ8n7AL76XuXrbiENYSYFnkAQ9Q4hhlwDSgrTV+lSkBive+FRONMOhYRIoxfMo272fl9dIL26NUyn1Hh7JvMW5WLmgECIGX+aMsO3rKygrdxRhzKvbjbcVpL+O244Cmq0RpuU5/vE2DmOooVoGJSEBjEH5FoPBBkK8oNscH2ugtW6fW9DH7sqtZBtJ4tbVrwiWsHE9wcVam658y1oxCIZTzf3QN55uP5aEwRK6uM9qFBY1fab9rmw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=qr6bSNAV/RMt20+1zHcqefmFaKTfSTvGwgJSUgihYfQ=;
- b=eMTF5Z4fETCGyWTUramkhok6DIJHC/mN8ytFaIEJIXXMC5bvs/TAWOCS9wAUAXi+HeJm78ZVPcf7Gr0l4Cur7McC8I8WeFAMwm1HLmcDkZTEL/ZMJm57Hzm5ABowp1lMCkVugqnIjfTJNlvmRkCxyA7ptXx+2SitAa9nAFrJ53uJPsSBwLn0VixYxtt9DTEWBEXg3zJL/4V3BMN1AsyCqAfE3F9iQpSFfjd7TyAjxqjTb1/W6iAg2hYbYMszLP7pXlnMSiUpmX6C3WqR9jesxixNvNJ1xrbcpRjl7uT9+H+ZKXGsUioFKRTaYUs3rn+cZKxE7cZk+LrulhsXNcBd6w==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=qr6bSNAV/RMt20+1zHcqefmFaKTfSTvGwgJSUgihYfQ=;
- b=BqHkaLzVE2HpDL3mqF9QtXggLLO+BBEiucOjeGWOkPCqWPDvyVpteADspNI/zCj3lJ9SpGpoa1B8y7hcc/8/RaxU4H4NWgvzfbWzH+Gv77ZrGt4D6AYtyxR5ulKLZTJ7oepenPG59A6PYW5AugwGqlzJhc5nLvK027xxLHqYxSvHDqEGo3sGI1JLk2lHLlAIcz6srSptAi3rChnfh+gYnHB95XzSF/m81siYTn6dgEmLdEv2GOI+U43rftoixtplfZf+7bkpSizCvn2J6htD2rldg+ULZgyPbF3bezxWKnbIjjrKVrgKaeOyNOiJAMLqRbKSOFInNQthV1IQoAEoGA==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from PR3PR04MB7402.eurprd04.prod.outlook.com (2603:10a6:102:89::16)
- by GV4PR04MB11793.eurprd04.prod.outlook.com (2603:10a6:150:2dc::15) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.25.23; Mon, 18 May
- 2026 14:20:51 +0000
-Received: from PR3PR04MB7402.eurprd04.prod.outlook.com
- ([fe80::4129:7aed:b5cb:b13d]) by PR3PR04MB7402.eurprd04.prod.outlook.com
- ([fe80::4129:7aed:b5cb:b13d%5]) with mapi id 15.20.9913.009; Mon, 18 May 2026
- 14:20:51 +0000
-From: Ioana Ciornei <ioana.ciornei@nxp.com>
-To: vkoul@kernel.org,
-	neil.armstrong@linaro.org,
-	robh@kernel.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	johan@kernel.org,
-	linux-phy@lists.infradead.org
-Cc: devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH v4 linux-phy 3/3] phy: ti: add PHY driver for TI DS125DF111 Dual-Channel Retimer
-Date: Mon, 18 May 2026 17:20:26 +0300
-Message-Id: <20260518142026.3098496-4-ioana.ciornei@nxp.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20260518142026.3098496-1-ioana.ciornei@nxp.com>
-References: <20260518142026.3098496-1-ioana.ciornei@nxp.com>
-X-ClientProxiedBy: AS4P191CA0030.EURP191.PROD.OUTLOOK.COM
- (2603:10a6:20b:5d9::16) To PR3PR04MB7402.eurprd04.prod.outlook.com
- (2603:10a6:102:89::16)
-MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PR3PR04MB7402:EE_|GV4PR04MB11793:EE_
-X-MS-Office365-Filtering-Correlation-Id: e908bdf6-3d43-4e07-6824-08deb4e8a9f3
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|366016|1800799024|19092799006|11063799003|3023799003|22082099003|56012099003|18002099003;
-X-Microsoft-Antispam-Message-Info: GfXpajvl4f/5hQOyzuoVcZyd9QVxRI1DZZZrCtYiVtOUK71Rf/PlBMXhiurok/DWfxBLczXP1SQF9xWxTPIm9OGLt37lpVWjdUz/DEOulJA6UOLfzpoAxJUXFT79EBuHbDQEzKu8QSx34eTd+fnmZ9s0XWsglObY0Z2qHLbXKTIQ0xkS+zeJws17zK8TKxFljJfpm8wwOETt+h0k09bgKxV6wj+wFl3rJ5LShTpMkCaWja9Rn0UECOcLDO03OWnoDNSzSTYPc8VwTlAiGbQOxcQyh9kSSrGEbZQrjReaVGCB+kVfp1sPJhmXfJPq+bogQil6vPx72rkDJumbxTSihfA/5h87oF5tjg91rIn/rw5zJhT9e58bZQr6iBmS+Wut0z5B8yqNExdqKp8Xk9bMQtNdGPs4kfm5ai/XW7ceM+HoiBIsAB3tgOmoC/5PMdTg1j6va7KGRoSWFFx4uNX+N4R0nNuHO1qVhqXQWbjt6nrWDzo1L86IZrHXDyYcIjKjixWmGsaNMCLg6dr9Z7orRDUTBn9I5w+bWoSEmY2qcUm0HH3tG7CqMvRq9OIa1nU/82Ypw7OO7Xm0DynKgHBoFwgFgTY9pVsaMDp+CijMQPQjQ0xHu7xqkqdbACssrkGMW8d5Dr19kB+GKT8tC+xpommT+v4M88Sev/9lAFVL+g+pntz9JCfeuttjyeuxCcABwCTvlTSOKmMt5/fcGbGq6Q==
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PR3PR04MB7402.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(366016)(1800799024)(19092799006)(11063799003)(3023799003)(22082099003)(56012099003)(18002099003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?2grl8+XB1I7GE6/H41ptWRwQDKr8+xuNxg/7w11T2WMHyII9EJdgK2+3CYsg?=
- =?us-ascii?Q?DsMTG2ThtQ42PWmchkJIkWfy81ZKagr2d2JZHEcsIxpyWNh7Gzs6qAX4nE7z?=
- =?us-ascii?Q?TLsBTULiXlzGauCsN6X5Wv7A5lC98JZNDQNNfu/2f5+wCZDU2Mt6+Ixz88n1?=
- =?us-ascii?Q?QqdQjMs2nZcGF5zcsvj96GyUdiWSvRNNykyBE+ZHdYIF0qtG5LGzKZ/aYgQ2?=
- =?us-ascii?Q?Hm5trgpJKgLlPs6w0wUjfRgbJQEEfvwW0GmpOzIbx3a5XGMbfbI0zR7gY+dC?=
- =?us-ascii?Q?PMVf5p/Wch3UbkImY0pT/1PCVLARqjdJKuJpFfOp4fe392wBLNCE6EqhxbpN?=
- =?us-ascii?Q?uwsKOfa02Xo3PNw75htr4NRbIiO6I9IKAZYcGNrtf3KrKOTj6o+CgwuEimku?=
- =?us-ascii?Q?fajUxEaWKm2d7S+EVhM61CIrfE7ZTuvtmD0ECQcoE4oge10kHcjBeychVC2y?=
- =?us-ascii?Q?bXWtESwlrpSi0nuCiZVFi2KjMAVs4WYybDoK+JV7rsV085wELo+6Dtdh2pIi?=
- =?us-ascii?Q?m+CwOevX5NiLe5czHBV3ZH/35/Nk/CCWWcheikSw/8GLvN0Xsz848d5xYzRA?=
- =?us-ascii?Q?3ZLNViaxt6GQGibphPMjEZfCnFTmUxjxTIhdjviA5EOVqsD+FvSPuq85rdRV?=
- =?us-ascii?Q?HPUEtUoqk/iQf1fwy4EWmxhghAcVKnRxqi6WPRaQHKRIzqUzVtSMC/JoCNId?=
- =?us-ascii?Q?otzDDNXr17kv3koGYpzZo2mqYqssy9o26TrB3G0TsxuN5yzpuGmk1DEUIlQZ?=
- =?us-ascii?Q?n8d+1W3sHoCslCKAt/uZmZDdPVyMb1Q6/hwrb1THyHEdrKac63Z6OfQZ4D2p?=
- =?us-ascii?Q?w8rYf0rJhWdikiesdwd3vRYEpQFFCFt0kEhoczmdcffAzUvnHZ1ZICxvtpnS?=
- =?us-ascii?Q?0uOeTQ2GjZ1xm0Cn60hAMZTHTK1FB1Y21I9LO3i0sqw8BZQTz0zSWfTuEn9X?=
- =?us-ascii?Q?rhlEiBhK3wBN/Wl0MPiPFrVLA1w+nlgbsBZhd/P2K9gTxTAFctaVwD3FT7ng?=
- =?us-ascii?Q?29zpoCSvUYZCcWQJsxki6vu7+lzIr8pG1jVuDq3PHSfLZPADgV8ZrjaV0vdL?=
- =?us-ascii?Q?BghxLsN6W19Bym8vadvprngj6rYdMUocKFxUR8NYl8Lg5qBNLNxVhRkhQ3VM?=
- =?us-ascii?Q?yyLDKMYOsTJIdJG9WNd7WOqxgxD+MSNB0RtTgZynpzXQs8MgJlsI2+e7DbbS?=
- =?us-ascii?Q?PUsX6ANmW6WIl25ruNptZUB5f/Sn9PzSKN08S3t6dbPRgKZJRKLKuTxj42U7?=
- =?us-ascii?Q?A9TtS6jCnCbADHwWlaf+n3gZYs3QcsZFJJ76zdzObsWW6DbJcv0a/SLO0LTL?=
- =?us-ascii?Q?/VjeiTL1rEsssj0SpzWIp+97Z9Xnn0AkPMlM8b1tVnCgE+RwYVRqqXFw1lwV?=
- =?us-ascii?Q?y62x3h5AhKZZB0vrEmZvBq+IM/7Rhsm9bNV1BddrR6YY8dfEqreB4IkEK3Jm?=
- =?us-ascii?Q?PMFnzGb8xix4w/0KF7Og5M0KYnUns7iQNY5uApeOtYTpjpzWkneCi7+gKBTL?=
- =?us-ascii?Q?RVJWLUouvK2p+P5a8f59PN90xp9Zq9rxTfU5ERQu3iFeNjFYRvuWDi4yWF5K?=
- =?us-ascii?Q?Dlvmx0xHynJSEWdMIl8VDe9galLRSuXf11fR+6j+S8JcncpR9JM7O6b6kNHL?=
- =?us-ascii?Q?4Tckbyu1J4sFdW8Kyghub7uITfQ1J5+JLuUZ2B97luVvfBS0JoZci6ocihcz?=
- =?us-ascii?Q?Uv1EdcgEqkfgSjgB9JBrFTXE5kNZz5Dfx8xxX04Bou2bBPtzanJXwVPsxPMr?=
- =?us-ascii?Q?23krpAAsZQ=3D=3D?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: e908bdf6-3d43-4e07-6824-08deb4e8a9f3
-X-MS-Exchange-CrossTenant-AuthSource: PR3PR04MB7402.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 May 2026 14:20:51.0916
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 5GS1j8ZZHXbW6SqmGM1IZkT66aSlk3ngL3SCbuw4h9139a+rEnCkL8v3k+/cB8YLgR7TcHJubUXNhm73M5CzCg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV4PR04MB11793
+	Mon, 18 May 2026 14:40:49 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 6BDEC4037F;
+	Mon, 18 May 2026 14:40:47 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EE840C2BCB7;
+	Mon, 18 May 2026 14:40:46 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1779115247;
+	bh=Bng3RcR9g1tPQxp632lA6SH6v3CbL4x4QY9YwK7Jobg=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date:From;
+	b=KHeRSTPq04L0K/bP+m3HYfPrurHkSszlgtrfchLlBJtFKlytl3xxL3ZnmpHB+/Ger
+	 gsNSx+rgY/IvBJKPyY/Y7UOOeOV509EnW4wE/NVRw382LQJ2hBWH9/hN+3h67EhTLJ
+	 D0MDWcfWWCj79q9ViaVdmvCHGz5Uv4+MEbvcBfkz33bL62PK+WgiwLowEylsvr5wkf
+	 FLRuOcK/Si3wYr9drHp5eCLOHX9h7Vd5YKQ6xnlgPhF+OK6juJ/V0ux4wyKz6rz9MN
+	 jtq6VMk/j/1dWyyzcHRrhfvowD5pdgCyN1t/X2KN5deiZBnJKnT4G7THN9vMfxyFgt
+	 rqnVUJlpEM4DQ==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH 2/2] phy: econet: Add EcoNet USB PHY
+To: "Caleb James DeLisle" <cjd@cjdns.fr>
+Cc: linux-phy@lists.infradead.org, robh@kernel.org, devicetree@vger.kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org, conor+dt@kernel.org, olteanv@gmail.com
+In-Reply-To: <20260518141343.401555-3-cjd@cjdns.fr>
+References: <20260518141343.401555-3-cjd@cjdns.fr>
+Date: Mon, 18 May 2026 14:40:46 +0000
+Message-Id: <20260518144046.EE840C2BCB7@smtp.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260518_072059_475004_52775919 
-X-CRM114-Status: GOOD (  31.20  )
+X-CRM114-CacheID: sfid-20260518_074048_194374_F7CC4813 
+X-CRM114-Status: GOOD (  23.66  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -136,413 +64,136 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add a generic PHY driver for the TI DS125DF111 Multi-Protocol
-Dual-Channel Retimer. The driver currently supports only 10G and 1G link
-speeds but it can easily extended to also cover other usecases.
-
-Since the available datasheet (https://www.ti.com/lit/gpn/DS125DF111)
-does not name the registers, the name for the macros were determined by
-their usage pattern.
-
-A PHY device is created for each of the two channels present on the
-retimer. This allows for independent configuration of the two channels.
-This capability is especially important on retimers which have more than
-2 channels that can be, depending on the board design, connected in
-multiple different ways to the SerDes lanes.
-
-Signed-off-by: Ioana Ciornei <ioana.ciornei@nxp.com>
-Reviewed-by: Vladimir Oltean <olteanv@gmail.com>
----
-Changes in v4:
-- Use lower case for hex values
-- Insert the new entry in the Kconfig/Makefile so that we keep the
-alphabetical order established in the previous patch
-
-Changes in v3:
-- Use reverse Christmas tree ordering
-- Print a symbolic description in case of error
-- Some words do not need to be capitalized
-- Remove duplicated exit code path
-- Return -EINVAL in case of unsupported submode received in .set_mode()
-- Add a .validate() callback
-- Remove comma after sentinel entry
-- Add a ds125df111_rmw() helper
-- Use read_poll_timeout() to wait for channel reset to complete
-
-Changes in v2:
-- Explicitly include all the needed headers
-- Change ds125df111_xlate() so that it returns an error if args_count is
-not exactly 1
-- Add a MAINTAINERS entry
----
- MAINTAINERS                     |   7 +
- drivers/phy/ti/Kconfig          |  10 ++
- drivers/phy/ti/Makefile         |   1 +
- drivers/phy/ti/phy-ds125df111.c | 294 ++++++++++++++++++++++++++++++++
- 4 files changed, 312 insertions(+)
- create mode 100644 drivers/phy/ti/phy-ds125df111.c
-
-diff --git a/MAINTAINERS b/MAINTAINERS
-index f877e5aaf2c7..58f410b666e7 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -26781,6 +26781,13 @@ T:	git git://linuxtv.org/mhadli/v4l-dvb-davinci_devices.git
- F:	drivers/media/platform/ti/davinci/
- F:	include/media/davinci/
- 
-+TI DS125DF111 RETIMER PHY DRIVER
-+M:	Ioana Ciornei <ioana.ciornei@nxp.com>
-+L:	linux-phy@lists.infradead.org (moderated for non-subscribers)
-+S:	Maintained
-+F:	Documentation/devicetree/bindings/phy/ti,ds125df111.yaml
-+F:	drivers/phy/ti/phy-ds125df111.c
-+
- TI ENHANCED CAPTURE (eCAP) DRIVER
- M:	Vignesh Raghavendra <vigneshr@ti.com>
- R:	Julien Panis <jpanis@baylibre.com>
-diff --git a/drivers/phy/ti/Kconfig b/drivers/phy/ti/Kconfig
-index dbe65500f20c..b52c7eabe24c 100644
---- a/drivers/phy/ti/Kconfig
-+++ b/drivers/phy/ti/Kconfig
-@@ -73,6 +73,16 @@ config PHY_J721E_WIZ
- 	  three clock selects (pll0, pll1, dig) and resets for each of the
- 	  lanes.
- 
-+config PHY_TI_DS125DF111
-+	tristate "TI DS125DF111 2-Channel Retimer Driver"
-+	depends on OF && I2C
-+	select GENERIC_PHY
-+	help
-+	  Enable this to add support for configuration and runtime management
-+	  of the TI DS125DF111 Multi-Protocol 2-Channel Retimer.
-+	  The retimer is modeled as a Generic PHY and supports both 10G and 1G
-+	  link speeds.
-+
- config PHY_TI_GMII_SEL
- 	tristate
- 	select GENERIC_PHY
-diff --git a/drivers/phy/ti/Makefile b/drivers/phy/ti/Makefile
-index 975fb8448ba5..a002ef8764a2 100644
---- a/drivers/phy/ti/Makefile
-+++ b/drivers/phy/ti/Makefile
-@@ -5,6 +5,7 @@ obj-$(CONFIG_PHY_AM654_SERDES)		+= phy-am654-serdes.o
- obj-$(CONFIG_PHY_DA8XX_USB)		+= phy-da8xx-usb.o
- obj-$(CONFIG_PHY_DM816X_USB)		+= phy-dm816x-usb.o
- obj-$(CONFIG_PHY_J721E_WIZ)		+= phy-j721e-wiz.o
-+obj-$(CONFIG_PHY_TI_DS125DF111)		+= phy-ds125df111.o
- obj-$(CONFIG_PHY_TI_GMII_SEL)		+= phy-gmii-sel.o
- obj-$(CONFIG_PHY_TUSB1210)		+= phy-tusb1210.o
- obj-$(CONFIG_TI_PIPE3)			+= phy-ti-pipe3.o
-diff --git a/drivers/phy/ti/phy-ds125df111.c b/drivers/phy/ti/phy-ds125df111.c
-new file mode 100644
-index 000000000000..84ff96d7d589
---- /dev/null
-+++ b/drivers/phy/ti/phy-ds125df111.c
-@@ -0,0 +1,294 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/* Copyright 2026 NXP */
-+
-+#include <linux/bitfield.h>
-+#include <linux/bits.h>
-+#include <linux/i2c.h>
-+#include <linux/iopoll.h>
-+#include <linux/kernel.h>
-+#include <linux/module.h>
-+#include <linux/phy.h>
-+#include <linux/phy/phy.h>
-+#include <linux/slab.h>
-+
-+#define DS125DF111_NUM_CH			2
-+#define DS125DF111_NUM_VCO_GROUP_REG		5
-+
-+#define DS125DF111_CH_SELECT			0xff
-+#define DS125DF111_CH_SELECT_TARGET_MASK	GENMASK(3, 0)
-+#define DS125DF111_CH_SELECT_EN			BIT(2)
-+
-+#define DS125DF111_CH_CTRL			0x00
-+#define DS125DF111_CH_CTRL_RESET		BIT(2) /* self clearing */
-+
-+#define DS125DF111_CH_RST_SLEEP_US		10
-+#define DS125DF111_CH_RST_TIMEOUT_US		10000
-+
-+#define DS125DF111_VCO_GROUP_BASE		0x60
-+
-+#define DS125DF111_RATIOS			0x2f
-+#define DS125DF111_RATIOS_RATE_MASK		GENMASK(7, 6)
-+#define DS125DF111_RATIOS_SUBRATE_MASK		GENMASK(5, 4)
-+#define DS125DF111_RATIOS_MASK			GENMASK(7, 4)
-+
-+struct ds125df111_ch {
-+	struct phy *phy;
-+	struct ds125df111_priv *priv;
-+	int idx;
-+};
-+
-+struct ds125df111_priv {
-+	struct ds125df111_ch ch[DS125DF111_NUM_CH];
-+	struct i2c_client *client;
-+	struct mutex mutex; /* protects access to shared registers */
-+};
-+
-+enum ds125df111_mode {
-+	FREQ_1G,
-+	FREQ_10G,
-+};
-+
-+static const struct ds125df111_config {
-+	u8 vco_group[DS125DF111_NUM_VCO_GROUP_REG];
-+	u8 rate;
-+	u8 subrate;
-+} ds125df111_cfg[] = {
-+	[FREQ_1G] = {
-+		/* VCO group #0 = 10GHz, VCO group #1 = 10GHz */
-+		.vco_group = {0x00, 0xB2, 0x00, 0xB2, 0xCC},
-+		/* By using the following combination of rate and subrate we
-+		 * select divide ratios of 1, 2, 4, 8 on both groups
-+		 */
-+		.rate = 0x1,
-+		.subrate = 0x2,
-+	},
-+
-+	[FREQ_10G] = {
-+		/* VCO group #0 = 10.3125GHz, VCO group #1 = 10.3125GHz */
-+		.vco_group = {0x90, 0xB3, 0x90, 0xB3, 0xCD},
-+		/* By using the following combination of rate and subrate we
-+		 * select divide ratios of 1 on both groups
-+		 */
-+		.rate = 0x1,
-+		.subrate = 0x3,
-+	},
-+};
-+
-+static int ds125df111_rmw(struct ds125df111_priv *priv, u8 reg, u8 clr, u8 set)
-+{
-+	struct i2c_client *i2c = priv->client;
-+	int err;
-+	u8 val;
-+
-+	err = i2c_smbus_read_byte_data(i2c, reg);
-+	if (err < 0)
-+		return err;
-+
-+	val = (u8)err;
-+	val &= ~clr;
-+	val |= set;
-+
-+	err = i2c_smbus_write_byte_data(i2c, reg, val);
-+	if (err < 0)
-+		return err;
-+
-+	return 0;
-+}
-+
-+static int ds125df111_configure(struct phy *phy,
-+				const struct ds125df111_config *cfg)
-+{
-+	struct ds125df111_ch *ch = phy_get_drvdata(phy);
-+	struct ds125df111_priv *priv = ch->priv;
-+	struct i2c_client *i2c = priv->client;
-+	struct device *dev = &phy->dev;
-+	u8 ratios_val;
-+	int err, i;
-+	int val;
-+
-+	mutex_lock(&priv->mutex);
-+
-+	/* Make sure that any subsequent read/write operation will be directed
-+	 * only to the registers of the selected channel
-+	 */
-+	err = ds125df111_rmw(priv, DS125DF111_CH_SELECT,
-+			     DS125DF111_CH_SELECT_TARGET_MASK,
-+			     DS125DF111_CH_SELECT_EN | ch->idx);
-+	if (err < 0) {
-+		dev_err(dev, "Unable to select channel: %pe\n", ERR_PTR(err));
-+		goto out;
-+	}
-+
-+	/* Reset channel registers and wait until the bit was cleared */
-+	err = ds125df111_rmw(priv, DS125DF111_CH_CTRL, 0,
-+			     DS125DF111_CH_CTRL_RESET);
-+	if (err < 0) {
-+		dev_err(dev, "Error resetting channel configuration: %pe\n",
-+			ERR_PTR(err));
-+		goto out;
-+	}
-+
-+	err = read_poll_timeout(i2c_smbus_read_byte_data, val,
-+				val < 0 || !(val & DS125DF111_CH_CTRL_RESET),
-+				DS125DF111_CH_RST_SLEEP_US,
-+				DS125DF111_CH_RST_TIMEOUT_US, false, i2c,
-+				DS125DF111_CH_CTRL);
-+	if (err) {
-+		dev_err(dev, "Timed out waiting for channel reset: %pe\n",
-+			ERR_PTR(err));
-+		goto out;
-+	}
-+
-+	if (val < 0) {
-+		dev_err(dev, "Error reading reset status: %pe\n", ERR_PTR(val));
-+		err = val;
-+		goto out;
-+	}
-+
-+	/* Program the VCO group frequencies */
-+	for (i = 0; i < DS125DF111_NUM_VCO_GROUP_REG; i++) {
-+		err = i2c_smbus_write_byte_data(i2c,
-+						DS125DF111_VCO_GROUP_BASE + i,
-+						cfg->vco_group[i]);
-+		if (err < 0) {
-+			dev_err(dev, "Error programming VCO group: %pe\n",
-+				ERR_PTR(err));
-+			goto out;
-+		}
-+	}
-+
-+	/* Set the divide ratios for the VCO groups */
-+	ratios_val = FIELD_PREP(DS125DF111_RATIOS_RATE_MASK, cfg->rate) |
-+		FIELD_PREP(DS125DF111_RATIOS_SUBRATE_MASK, cfg->subrate);
-+	err = ds125df111_rmw(priv, DS125DF111_RATIOS, DS125DF111_RATIOS_MASK,
-+			     ratios_val);
-+	if (err < 0) {
-+		dev_err(dev, "Error programming the divide ratios: %pe\n",
-+			ERR_PTR(err));
-+		goto out;
-+	}
-+
-+out:
-+	mutex_unlock(&priv->mutex);
-+
-+	return err;
-+}
-+
-+static int ds125df111_set_mode(struct phy *phy, enum phy_mode mode, int submode)
-+{
-+	const struct ds125df111_config *cfg;
-+
-+	if (mode != PHY_MODE_ETHERNET)
-+		return -EINVAL;
-+
-+	switch (submode) {
-+	case PHY_INTERFACE_MODE_10GBASER:
-+		cfg = &ds125df111_cfg[FREQ_10G];
-+		break;
-+	case PHY_INTERFACE_MODE_1000BASEX:
-+	case PHY_INTERFACE_MODE_SGMII:
-+		cfg = &ds125df111_cfg[FREQ_1G];
-+		break;
-+	default:
-+		return -EINVAL;
-+	}
-+
-+	return ds125df111_configure(phy, cfg);
-+}
-+
-+static int ds125df111_validate(struct phy *phy, enum phy_mode mode, int submode,
-+			       union phy_configure_opts *opts __always_unused)
-+{
-+	if (mode != PHY_MODE_ETHERNET)
-+		return -EINVAL;
-+
-+	switch (submode) {
-+	case PHY_INTERFACE_MODE_10GBASER:
-+	case PHY_INTERFACE_MODE_1000BASEX:
-+	case PHY_INTERFACE_MODE_SGMII:
-+		return 0;
-+	default:
-+		return -EINVAL;
-+	}
-+}
-+
-+static const struct phy_ops ds125df111_ops = {
-+	.validate	= ds125df111_validate,
-+	.set_mode	= ds125df111_set_mode,
-+	.owner		= THIS_MODULE,
-+};
-+
-+static struct phy *ds125df111_xlate(struct device *dev,
-+				    const struct of_phandle_args *args)
-+{
-+	struct ds125df111_priv *priv = dev_get_drvdata(dev);
-+	u32 idx;
-+
-+	if (args->args_count != 1)
-+		return ERR_PTR(-EINVAL);
-+
-+	idx = args->args[0];
-+	if (idx >= DS125DF111_NUM_CH) {
-+		dev_err(dev, "Maximum number of channels is %d\n",
-+			DS125DF111_NUM_CH);
-+		return ERR_PTR(-EINVAL);
-+	}
-+
-+	return priv->ch[idx].phy;
-+}
-+
-+static int ds125df111_probe(struct i2c_client *client)
-+{
-+	struct device *dev = &client->dev;
-+	struct phy_provider *provider;
-+	struct ds125df111_priv *priv;
-+	int i, err;
-+
-+	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
-+	if (!priv)
-+		return -ENOMEM;
-+	priv->client = client;
-+	err = devm_mutex_init(dev, &priv->mutex);
-+	if (err)
-+		return err;
-+
-+	i2c_set_clientdata(client, priv);
-+
-+	for (i = 0; i < DS125DF111_NUM_CH; i++) {
-+		struct ds125df111_ch *ch = &priv->ch[i];
-+		struct phy *phy;
-+
-+		phy = devm_phy_create(dev, NULL, &ds125df111_ops);
-+		if (IS_ERR(phy))
-+			return PTR_ERR(phy);
-+
-+		ch->idx = i;
-+		ch->priv = priv;
-+		ch->phy = phy;
-+
-+		phy_set_drvdata(phy, ch);
-+	}
-+
-+	provider = devm_of_phy_provider_register(dev, ds125df111_xlate);
-+
-+	return PTR_ERR_OR_ZERO(provider);
-+}
-+
-+static const struct of_device_id ds125df111_dt_ids[] = {
-+	{ .compatible = "ti,ds125df111", },
-+	{}
-+};
-+MODULE_DEVICE_TABLE(of, ds125df111_dt_ids);
-+
-+static struct i2c_driver ds125df111_driver = {
-+	.driver = {
-+		.name = "ds125df111",
-+		.of_match_table = ds125df111_dt_ids,
-+	},
-+	.probe = ds125df111_probe,
-+};
-+module_i2c_driver(ds125df111_driver);
-+
-+MODULE_AUTHOR("Ioana Ciornei <ioana.ciornei@nxp.com>");
-+MODULE_DESCRIPTION("TI DS125DF111 Retimer driver");
-+MODULE_LICENSE("GPL");
--- 
-2.25.1
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+NiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIFJhY2UgY29uZGl0aW9u
+IG9uIHNoYXJlZCBGcmVxdWVuY3kgTWV0ZXIgcmVnaXN0ZXJzIGR1cmluZyBjb25jdXJyZW50IFBI
+WSBpbml0aWFsaXphdGlvbi4KLSBbSGlnaF0gSGFyZHdhcmUgc3RhdGUgbWFjaGluZSByYWNlIGR1
+ZSB0byBwb2xsaW5nIGRhdGEgcmVnaXN0ZXIgaW5zdGVhZCBvZiB2YWxpZCBiaXQuCi0gW0hpZ2hd
+IERldnJlcyBsaWZlY3ljbGUgYnVnIGNhdXNlZCBieSBhdHRhY2hpbmcgbWVtb3J5IGFuZCByZWdt
+YXAgcmVzb3VyY2VzIHRvIHRoZSBjaGlsZCBQSFkgZGV2aWNlLgotIFtNZWRpdW1dIEl0ZXJhdGlv
+biBvdmVyIGRpc2FibGVkIERldmljZSBUcmVlIG5vZGVzIGFjY2Vzc2VzIHVucG93ZXJlZCBoYXJk
+d2FyZS4KLSBbTWVkaXVtXSBNaXNzaW5nIGJvdW5kcyBjaGVjayBvbiBkeW5hbWljYWxseSBjYWxj
+dWxhdGVkIHNsZXcgcmF0ZSBjb25maWd1cmF0aW9uIGV4cG9zZXMgaGFyZHdhcmUgdG8gc2lsZW50
+IGJpdCB0cnVuY2F0aW9uLgotIFtMb3ddIFBvaW50ZXIgc2lnbmVkbmVzcyBtaXNtYXRjaCBpbiBg
+cmVnbWFwX3JlYWRfcG9sbF90aW1lb3V0YCBjYXVzZXMgY29tcGlsZXIgd2FybmluZ3MgYW5kIHZp
+b2xhdGVzIHR5cGUgc2FmZXR5LgotLQoKY29tbWl0IGFiNjE0ZmQzZGE3NTkyNTE2NDA0OGFlODFi
+MDFiNTllYzc2MGQ2N2UKQXV0aG9yOiBDYWxlYiBKYW1lcyBEZUxpc2xlIDxjamRAY2pkbnMuZnI+
+CgpwaHk6IGVjb25ldDogQWRkIEVjb05ldCBVU0IgUEhZCgpUaGlzIGNvbW1pdCBhZGRzIHN1cHBv
+cnQgZm9yIHRoZSBVU0IgUEhZIGZvdW5kIG9uIEVjb05ldCBFTjc1MTIyMSwgRU43NTE2MjcsCmFu
+ZCBFTjc1MjggYmFzZWQgU29Dcy4gSXQgaW1wbGVtZW50cyB0aGUgc2V0dXAgYW5kIHR1bmluZyBy
+aXR1YWxzIGZvciBib3RoClVTQiAyLjAgYW5kIFVTQiAzLjAgUEhZIGJsb2Nrcy4KCkxpbms6IGh0
+dHBzOi8vZ2l0aHViLmNvbS9vcGVud3J0L29wZW53cnQvcHVsbC8yMzI2NCNpc3N1ZWNvbW1lbnQt
+NDQxNTkwNjU2OAoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvcGh5LWVjb25ldC11c2IuYyBi
+L2RyaXZlcnMvcGh5L3BoeS1lY29uZXQtdXNiLmMKPiBuZXcgZmlsZSBtb2RlIDEwMDY0NAo+IGlu
+ZGV4IDAwMDAwMDAwMDAwMDAuLmU4ZmEyZTgwZWIxMzAKPiAtLS0gL2Rldi9udWxsCj4gKysrIGIv
+ZHJpdmVycy9waHkvcGh5LWVjb25ldC11c2IuYwoKWyAuLi4gXQoKPiArc3RhdGljIHZvaWQgdTJf
+c2xld19yYXRlX2NhbGlicmF0aW9uKHN0cnVjdCBlY29uZXRfdXNiX3BoeV9wcml2ICpwcml2LAo+
+ICsJCQkJICAgICBzdHJ1Y3QgZWNvbmV0X3BoeV9pbnN0YW5jZSAqaW5zdGFuY2UpCj4gK3sKPiAr
+CXN0cnVjdCByZWdtYXAgKmNvbSA9IGluc3RhbmNlLT5yZWdtYXA7Cj4gKwlzdHJ1Y3QgcmVnbWFw
+ICpyZWdtYXAgPSBwcml2LT5yZWdtYXA7Cj4gKwlpbnQgZm1fb3V0ID0gMDsKCkRvZXMgdGhpcyBw
+b2ludGVyIHR5cGUgY2F1c2UgY29tcGlsZXIgd2FybmluZ3M/CgpyZWdtYXBfcmVhZF9wb2xsX3Rp
+bWVvdXQoKSBwYXNzZXMgdGhlIGFkZHJlc3Mgb2YgZm1fb3V0IHRvIHJlZ21hcF9yZWFkKCksCndo
+aWNoIGV4cGVjdHMgYW4gdW5zaWduZWQgaW50IHBvaW50ZXIuIFVzaW5nIGEgc2lnbmVkIGludCBj
+YW4gbGVhZCB0bwppbmNvbXBhdGlibGUgcG9pbnRlciB0eXBlIHdhcm5pbmdzLgoKPiArCXUzMiBz
+cmN0cmw7Cj4gKwo+ICsJLyogRW5hYmxlIEhTIFRYIFNSIGNhbGlicmF0aW9uICovCj4gKwlyZWdt
+YXBfc2V0X2JpdHMoY29tLCBVMlBIWV9DT00gKyBVU0JQSFlBQ1IwLCBSR19IU1RYX1NSQ0FMX0VO
+KTsKPiArCj4gKwl1c2xlZXBfcmFuZ2UoMTAwMCwgMTUwMCk7Cj4gKwo+ICsJLyogRW5hYmxlIEZy
+ZWUgcnVuIGNsb2NrICovCj4gKwlyZWdtYXBfc2V0X2JpdHMocmVnbWFwLCBGTVJFRyArIEZNTU9O
+UjEsIFJHX0ZSQ0tfRU4pOwo+ICsKPiArCS8qIFNlbGVjdCBNb25pdG9yIENsb2NrICovCj4gKwly
+ZWdtYXBfdXBkYXRlX2JpdHMocmVnbWFwLCBGTVJFRyArIEZNQ1IwLCBSR19NT05DTEtfU0VMLAo+
+ICsJCQkgICBGSUVMRF9QUkVQKFJHX01PTkNMS19TRUwsIGluc3RhbmNlLT5wb3J0X2lkKSk7CgpJ
+cyBpdCBwb3NzaWJsZSBmb3IgbXVsdGlwbGUgUEhZIHBvcnRzIHRvIHJhY2Ugd2hlbiBhY2Nlc3Np
+bmcgdGhlc2Ugc2hhcmVkCkZNUkVHIHJlZ2lzdGVycz8KClRoZSBMaW51eCBQSFkgY29yZSBzZXJp
+YWxpemVzIHBoeV9pbml0KCkgb25seSBwZXItUEhZIGluc3RhbmNlLCBtZWFuaW5nCm11bHRpcGxl
+IHBvcnRzIGNvdWxkIHBvdGVudGlhbGx5IGluaXRpYWxpemUgYXQgdGhlIHNhbWUgdGltZS4gSWYg
+dHdvCnRocmVhZHMgcnVuIHRoaXMgY2FsaWJyYXRpb24gY29uY3VycmVudGx5LCBjb3VsZCBvbmUg
+b3ZlcndyaXRlIHRoZSBhY3RpdmUKcG9ydCBzZWxlY3Rpb24gb3IgcHJlbWF0dXJlbHkgY2xlYXIg
+dGhlIGZyZXF1ZW5jeSBkZXRlY3Rpb24gZW5hYmxlIGJpdAp3aGlsZSB0aGUgb3RoZXIgaXMgc3Rp
+bGwgcG9sbGluZz8KCk1pZ2h0IHRoaXMgcmVxdWlyZSBhIGRyaXZlci1sZXZlbCBtdXRleCB0byBz
+ZXJpYWxpemUgYWNjZXNzIHRvIHRoZSBGTVJFRwpoYXJkd2FyZSBibG9jaz8KCj4gKwo+ICsJLyog
+U2V0IGN5Y2xlY250ICovCj4gKwlyZWdtYXBfdXBkYXRlX2JpdHMocmVnbWFwLCBGTVJFRyArIEZN
+Q1IwLCBSR19DWUNMRUNOVCwKPiArCQkJICAgRklFTERfUFJFUF9DT05TVChSR19DWUNMRUNOVCwK
+PiArCQkJCQkgICAgRUNPTkVUX1VTQl9QSFlfVTJfRk1fREVUX0NZQ0xFX0NOVCkpOwo+ICsKPiAr
+CS8qIEVuYWJsZSBGcmVxdWVuY3kgbWV0ZXIgKi8KPiArCXJlZ21hcF9zZXRfYml0cyhyZWdtYXAs
+IEZNUkVHICsgRk1DUjAsIFJHX0ZSRVFERVRfRU4pOwo+ICsKPiArCS8qIFRpbWVvdXQgY2FuIGhh
+cHBlbiBhbmQgd2Ugd2lsbCBhcHBseSB3b3JrYXJvdW5kIGF0IHRoZSBlbmQgKi8KPiArCXJlZ21h
+cF9yZWFkX3BvbGxfdGltZW91dChyZWdtYXAsIEZNUkVHICsgRk1NT05SMCwgZm1fb3V0LAo+ICsJ
+CQkJIGZtX291dCwgRUNPTkVUX1VTQl9QSFlfRlJFUURFVF9TTEVFUCwKPiArCQkJCSBFQ09ORVRf
+VVNCX1BIWV9GUkVRREVUX1RJTUVPVVQpOwoKQ291bGQgdGhpcyBsb29wIHByZW1hdHVyZWx5IHN1
+Y2NlZWQgYnkgcmVhZGluZyBhIHN0YWxlIHZhbHVlPwoKRk1NT05SMCBob2xkcyB0aGUgcmVzdWx0
+IG9mIHRoZSBjYWxpYnJhdGlvbi4gSWYgdGhpcyBmdW5jdGlvbiBpcyBjYWxsZWQKYSBzZWNvbmQg
+dGltZSBmb3IgYW5vdGhlciBwb3J0LCBwb2xsaW5nIGZvciBmbV9vdXQgIT0gMCBtaWdodCBpbnN0
+YW50bHkKc3VjY2VlZCB1c2luZyB0aGUgcHJldmlvdXMgcnVuJ3MgcmVzdWx0LgoKV291bGQgaXQg
+YmUgbW9yZSByb2J1c3QgdG8gcG9sbCB0aGUgRk1NT05SMSByZWdpc3RlciBmb3IgdGhlIFJHX0ZN
+X1ZBTElECmZsYWcgYmVmb3JlIHJlYWRpbmcgdGhlIHJlc3VsdCBmcm9tIEZNTU9OUjA/CgpbIC4u
+LiBdCgo+ICsJfSBlbHNlIHsKPiArCQkvKiAoMTAyNCAvIEZNX09VVCkgKiBSRUZfQ0sgKiBVMl9T
+Ul9DT0VGIChyb3VuZCB0byBuZWFyZXN0KSAqLwo+ICsJCXNyY3RybCA9IEVDT05FVF9VU0JfUEhZ
+X1JFRl9DSyAqIEVDT05FVF9VU0JfUEhZX1UyX1NSX0NPRUY7Cj4gKwkJc3JjdHJsID0gKHNyY3Ry
+bCAqIEVDT05FVF9VU0JfUEhZX1UyX0ZNX0RFVF9DWUNMRV9DTlQpIC8gZm1fb3V0Owo+ICsJCXNy
+Y3RybCA9IERJVl9ST1VORF9DTE9TRVNUKHNyY3RybCwKPiArCQkJCQkgICBFQ09ORVRfVVNCX1BI
+WV9VMl9TUl9DT0VGX0RJVklTT1IpOwo+ICsJCWRldl9pbmZvKCZpbnN0YW5jZS0+cGh5LT5kZXYs
+Cj4gKwkJCSAiZnJlcXVlbmN5IG1ldGVyIHJlc3VsdCAweCV4LCBzZXQgc2xldyByYXRlIDB4JXhc
+biIsCj4gKwkJCSBmbV9vdXQsIHNyY3RybCk7Cj4gKwl9Cj4gKwo+ICsJLyogU2V0IHNsZXcgcmF0
+ZSAqLwo+ICsJcmVnbWFwX3VwZGF0ZV9iaXRzKGNvbSwgVTJQSFlfQ09NICsgVVNCUEhZQUNSMCwg
+UkdfSFNUWF9TUkNUUkwsCj4gKwkJCSAgIEZJRUxEX1BSRVAoUkdfSFNUWF9TUkNUUkwsIHNyY3Ry
+bCkpOwoKSXMgdGhlcmUgYSByaXNrIG9mIHNpbGVudCBiaXQgdHJ1bmNhdGlvbiBoZXJlPwoKVGhl
+IHRhcmdldCBmaWVsZCBSR19IU1RYX1NSQ1RSTCBpcyBvbmx5IDMgYml0cyB3aWRlLiBJZiB0aGUg
+ZnJlcXVlbmN5IG1ldGVyCnByb3ZpZGVzIGEgbG93IG91dHB1dCB2YWx1ZSAoZm9yIGluc3RhbmNl
+LCBkdWUgdG8gYSBzdGFsZSByZWFkKSwgdGhlIGRpdmlzaW9uCmFib3ZlIGNvdWxkIHlpZWxkIGEg
+dmFsdWUgbXVjaCBsYXJnZXIgdGhhbiA3LgoKU2luY2UgRklFTERfUFJFUCBtYXNrcyBydW50aW1l
+IHZhbHVlcyB3aXRob3V0IGVycm9yLCBjb3VsZCB0aGlzIHdyaXRlCmFuIHVuaW50ZW5kZWQgY29u
+ZmlndXJhdGlvbiB0byB0aGUgaGFyZHdhcmU/IFNob3VsZCB0aGUgY2FsY3VsYXRlZCBzcmN0cmwK
+dmFsdWUgYmUgY2xhbXBlZCBiZWZvcmUgYXBwbHlpbmcgaXQ/CgpbIC4uLiBdCgo+ICtzdGF0aWMg
+aW50IGVjb25ldF91c2JfcGh5X3Byb2JlKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCj4g
+K3sKPiArCXN0cnVjdCBkZXZpY2UgKmRldiA9ICZwZGV2LT5kZXY7Cj4gKwlzdHJ1Y3QgZGV2aWNl
+X25vZGUgKm5wID0gZGV2LT5vZl9ub2RlOwoKWyAuLi4gXQoKPiArCXBoeV9uID0gMDsKPiArCWZv
+cl9lYWNoX2NoaWxkX29mX25vZGVfc2NvcGVkKG5wLCBjaGlsZF9ucCkgewoKRG9lcyB0aGlzIGxv
+b3AgaW50ZXJhY3Qgd2l0aCBkaXNhYmxlZCBoYXJkd2FyZSBibG9ja3M/CgpVc2luZyBmb3JfZWFj
+aF9jaGlsZF9vZl9ub2RlX3Njb3BlZCgpIHdpbGwgaXRlcmF0ZSBvdmVyIGFsbCBjaGlsZCBub2Rl
+cywKaW5jbHVkaW5nIHRob3NlIHdpdGggc3RhdHVzID0gImRpc2FibGVkIiBpbiB0aGUgZGV2aWNl
+IHRyZWUuCgpUaGlzIHJlc3VsdHMgaW4gdGhlIGRyaXZlciBtYXBwaW5nIG1lbW9yeSwgaW5pdGlh
+bGl6aW5nIHJlZ21hcHMsIGFuZApjYWxsaW5nIGVjb25ldF91c2JfcGh5X2V4aXQoKSB0byB3cml0
+ZSB0byByZWdpc3RlcnMgb24gdW5wb3dlcmVkIG9yCnVuY2xvY2tlZCBoYXJkd2FyZSwgd2hpY2gg
+Y2FuIHNvbWV0aW1lcyBjYXVzZSBzeXN0ZW0gaGFuZ3MuCgpXb3VsZCBpdCBiZSBzYWZlciB0byB1
+c2UgZm9yX2VhY2hfYXZhaWxhYmxlX2NoaWxkX29mX25vZGVfc2NvcGVkKCk/Cgo+ICsJCXN0cnVj
+dCBlY29uZXRfcGh5X2luc3RhbmNlICppbnN0YW5jZTsKPiArCQl2b2lkIF9faW9tZW0gKnBoeV9i
+YXNlOwo+ICsJCXN0cnVjdCBkZXZpY2UgKnN1YmRldjsKPiArCQlzdHJ1Y3QgcmVzb3VyY2UgcmVz
+Owo+ICsJCWludCByZXR2YWw7CgpbIC4uLiBdCgo+ICsJCWluc3RhbmNlLT5waHkgPSBkZXZtX3Bo
+eV9jcmVhdGUoZGV2LCBjaGlsZF9ucCwgJmVjb25ldF9waHkpOwo+ICsJCWlmIChJU19FUlIoaW5z
+dGFuY2UtPnBoeSkpCj4gKwkJCXJldHVybiBkZXZfZXJyX3Byb2JlKGRldiwgUFRSX0VSUihpbnN0
+YW5jZS0+cGh5KSwKPiArCQkJCQkgICAgICJmYWlsZWQgdG8gY3JlYXRlIHBoeVxuIik7Cj4gKwo+
+ICsJCXN1YmRldiA9ICZpbnN0YW5jZS0+cGh5LT5kZXY7Cj4gKwkJcmV0dmFsID0gb2ZfYWRkcmVz
+c190b19yZXNvdXJjZShjaGlsZF9ucCwgMCwgJnJlcyk7Cj4gKwkJaWYgKHJldHZhbCkKPiArCQkJ
+cmV0dXJuIGRldl9lcnJfcHJvYmUoc3ViZGV2LCByZXR2YWwsCj4gKwkJCQkJICAgICAiZ2V0dGlu
+ZyByZWcgZm9yIHBoeSAlZFxuIiwKPiArCQkJCQkgICAgIHBoeV9uKTsKPiArCj4gKwkJcGh5X2Jh
+c2UgPSBkZXZtX2lvcmVtYXBfcmVzb3VyY2Uoc3ViZGV2LCAmcmVzKTsKCkNhbiB1c2luZyB0aGUg
+Y2hpbGQgUEhZIGRldmljZSBmb3IgcmVzb3VyY2UgYWxsb2NhdGlvbnMgY2F1c2UgbWVtb3J5IGxl
+YWtzCmFuZCBwcm9iZSBmYWlsdXJlcz8KClRoZSBzdWJkZXYgcG9pbnRlciBiZWxvbmdzIHRvIHRo
+ZSBjaGlsZCBQSFkgZGV2aWNlIGNyZWF0ZWQgYnkKZGV2bV9waHlfY3JlYXRlKCkuIERldnJlcyBy
+ZXNvdXJjZXMgYXJlIHRpZWQgdG8gdGhlIGRldmljZSdzIHJlZmVyZW5jZQpjb3VudCByZWFjaGlu
+ZyB6ZXJvLgoKSWYgdXNlcnNwYWNlIGhvbGRzIGFuIGFjdGl2ZSBzeXNmcyBmaWxlIGRlc2NyaXB0
+b3IgZm9yIHRoZSBQSFkgZGV2aWNlIHdoZW4KdGhlIHBhcmVudCBwbGF0Zm9ybSBkcml2ZXIgdW5i
+aW5kcywgdGhlIHN1YmRldiBrb2JqZWN0IHN0YXlzIGFsaXZlIGFuZAp0aGUgbWVtb3J5IHJlZ2lv
+biBpcyBub3QgZnJlZWQuCgpJZiB0aGUgcGxhdGZvcm0gZHJpdmVyIGlzIHJlLXByb2JlZCwgaXQg
+bWlnaHQgZmFpbCB3aXRoIC1FQlVTWSB3aGVuCnJlcXVlc3RpbmcgdGhlIHNhbWUgbWVtb3J5IHJl
+Z2lvbi4gU2hvdWxkIGRldm1faW9yZW1hcF9yZXNvdXJjZSBhbmQKZGV2bV9yZWdtYXBfaW5pdF9t
+bWlvIGJlIGFzc29jaWF0ZWQgd2l0aCB0aGUgcGFyZW50IHBsYXRmb3JtIGRldmljZSBpbnN0ZWFk
+PwoKPiArCQlpZiAoSVNfRVJSKHBoeV9iYXNlKSkKPiArCQkJcmV0dXJuIGRldl9lcnJfcHJvYmUo
+c3ViZGV2LCBQVFJfRVJSKHBoeV9iYXNlKSwKPiArCQkJCQkgICAgICJyZW1hcHBpbmcgcmVnIGZv
+ciBwaHkgJWRcbiIsCj4gKwkJCQkJICAgICBwaHlfbik7Cj4gKwo+ICsJCWluc3RhbmNlLT5yZWdt
+YXAgPQo+ICsJCQlkZXZtX3JlZ21hcF9pbml0X21taW8oc3ViZGV2LCBwaHlfYmFzZSwKPiArCQkJ
+CQkgICAgICAmZWNvbmV0X3VzYl9waHlfcmVnbWFwX2NvbmZpZyk7Cj4gKwkJaWYgKElTX0VSUihp
+bnN0YW5jZS0+cmVnbWFwKSkKPiArCQkJcmV0dXJuIGRldl9lcnJfcHJvYmUoc3ViZGV2LCBQVFJf
+RVJSKGluc3RhbmNlLT5yZWdtYXApLAo+ICsJCQkJCSAgICAgIm1ha2luZyByZWdtYXAgZm9yIHBo
+eSAlZFxuIiwKPiArCQkJCQkgICAgIHBoeV9uKTsKCi0tIApTYXNoaWtvIEFJIHJldmlldyDCtyBo
+dHRwczovL3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAyNjA1MTgxNDEzNDMuNDAxNTU1LTEtY2pk
+QGNqZG5zLmZyP3BhcnQ9MgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxp
+c3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
+dGluZm8vbGludXgtcGh5Cg==
