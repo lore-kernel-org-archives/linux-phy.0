@@ -4,63 +4,144 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73A0BCD4F4A
-	for <linux-phy@archiver.kernel.org>; Mon, 18 May 2026 14:14:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D5BBCD4F49
+	for <linux-phy@archiver.kernel.org>; Mon, 18 May 2026 14:15:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HiL1DIsl55hFT/Z+QvrVJcNt1PlnnotR1/sqQimpaTk=; b=ZqEdFbYbZlos5P
-	jExLfC5gMA7pA1dilFiR8AAoAu7L6uD6sxC/vabt2RcEhNp6mvcj085dsr+h+0TMxHtn+lBOZUXEF
-	7vcatky7SSH/FLymcDISy3Z2jbk4CZOI5W7uPqJwuZc0esVUERxcQYMgEZZ2H1k8maCUgGMicEruv
-	oB36VYlpnDKmbK7bdHNJiFgO3p6mSNto0gJYRxEE9PxFIER/C6EIYHM8/GSTXSsLuIfQJMZAZpfmt
-	lcZk5bZOgkezwecwQzxSOAdtAyAVc1/bZzvZSrnWrNcGo5hf4mpC9/reCSW36fac4SqtS5CNNlfPO
-	nrk4EFX3PkFdT9yZhcFw==;
+	List-Owner; bh=fTGsfuYrUIObHc01OfOeq/aM7gVbeKT4HhhwuAkhRZg=; b=Xn5PoYijjK1efN
+	rZeeYdjEOj3gsxcezNIFLXbmxQTEqPaad5wpkU1AWgEpdHBtG82oPy2LLhfxozqO38Y9vrR/NekS9
+	vOTv9ddgJH6z4iDjtvdlrCltB3fOfonUNPj2wsh98TzkG68T+dFC/qD+J9miTjj9/fv5cFLm65488
+	GYFx/ETVTqq6nZh3k5PFwdHstf4jNHBKeZRl2wzC1SK83MAzSCoATO9CX6nyrAlevaISrHMe/kUT7
+	vypBGSGKTEPDakkkzxnknb57K0Y5thFAZkWIUVaRwxh6ywWMKuiBWg8uZetuemzX+3jJT7gc/TGq/
+	HIgSbYlLtqYUdztjUsCg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wOyjN-0000000FwYA-0u7p;
-	Mon, 18 May 2026 14:14:05 +0000
-Received: from mail.cjdns.fr ([5.135.140.105])
+	id 1wOykg-0000000FwlB-2NR7;
+	Mon, 18 May 2026 14:15:26 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wOyjK-0000000FwWF-0Unk
+	id 1wOyke-0000000Fwkb-0v0p
 	for linux-phy@lists.infradead.org;
-	Mon, 18 May 2026 14:14:03 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 1AB40412F6F;
-	Mon, 18 May 2026 16:13:54 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cjdns.fr; s=dkim;
-	t=1779113639; h=from:subject:date:message-id:to:cc:mime-version:
-	 content-transfer-encoding:in-reply-to:references;
-	bh=lAEtOVhxL47rMN5ASFOhDrgx469XHP0gDm2RAGJXgfk=;
-	b=nK1eBKvG67x9FORzjAScRey6wqy1UaB5UQwALVwW//Mc6jruZG4ViW5yfTQLIcm034IZ05
-	JXGK9jYCP+blAfc1tmSbvXLfRdJH1wwEW0M09IxxtWwmIAEH3XZYwsiym5wooecsF0DL45
-	7ZUvujwDP1IPBZ/94WZ0OERU2po4jvzRr4xhj7xX5rM21uCmO73zMI+05GhPdJvSy3okEu
-	nykDxsZI8IFTmZxVg5xi6s9yysSWypjbCIc/c575tViB8JXR89Dno0xyIN2iAv620VWN3u
-	ZojGybARc6E8nKYplSBkdtii+0ksimJWLhif7IP2zc2iSAkJPDafdxbP7azHIQ==
-From: Caleb James DeLisle <cjd@cjdns.fr>
-To: linux-mips@vger.kernel.org
-Cc: vkoul@kernel.org,
-	neil.armstrong@linaro.org,
-	robh@kernel.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	linux-phy@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	Caleb James DeLisle <cjd@cjdns.fr>,
-	Benjamin Larsson <benjamin.larsson@genexis.eu>,
-	Ahmed Naseef <naseefkm@gmail.com>
-Subject: [PATCH 2/2] phy: econet: Add EcoNet USB PHY
-Date: Mon, 18 May 2026 14:13:43 +0000
-Message-Id: <20260518141343.401555-3-cjd@cjdns.fr>
-In-Reply-To: <20260518141343.401555-1-cjd@cjdns.fr>
-References: <20260518141343.401555-1-cjd@cjdns.fr>
+	Mon, 18 May 2026 14:15:25 +0000
+Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 64IDOKwL2188790
+	for <linux-phy@lists.infradead.org>; Mon, 18 May 2026 14:15:23 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	tl5cNuX7Q/EbJEBDKEJHU8Nft3cHRScimLTBtlsFjco=; b=IJ9b7bFAeMpd+FjF
+	HnelMReAhJzkanlPDuAR+teQUGers9J7Zm+ABfthhX07bh1Vc9NxWJ6LodphBJlC
+	kalNdJjr4FWUtP8gxZVN7XZdimWtPEQFDFylsCWPljAECp+cK504vDcpbzHSwg27
+	ciL1j398fRSEi/OjY1q0cHY1LOryCmqztZLsYSjMUWunnWr+CJOG0gmGE1zq2UQN
+	YIXnXeR+yjSWx/Hqn9DuyAeX8yj+Zlw6cxXS5E9HYLv1iJdZW7qhYpP4mcl1GfzC
+	CmI2BrqrSnry+0cUDS+09kki8WVyQFg/tqW8mg6wm76oTtbYsQ+RF5fAvloNPAGq
+	FlO5dQ==
+Received: from mail-vs1-f69.google.com (mail-vs1-f69.google.com [209.85.217.69])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4e7xkuhkp7-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Mon, 18 May 2026 14:15:22 +0000 (GMT)
+Received: by mail-vs1-f69.google.com with SMTP id ada2fe7eead31-63126f42441so104254137.3
+        for <linux-phy@lists.infradead.org>; Mon, 18 May 2026 07:15:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1779113722; x=1779718522; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=tl5cNuX7Q/EbJEBDKEJHU8Nft3cHRScimLTBtlsFjco=;
+        b=j5OKvNcJfT84KoimJZYsEPjsTp35QAkb1S7qDdfk2W7OxQniHKkEU3dOU2qjOyHZmf
+         ax89I4iuNSDcQyKEPbsqvgawChfu2629htXZ02NjPmcDCueAd6jOXnOs4GsbgSTc2Wdo
+         6YLYcyCCWhlrXEzdkGFZp0/FFg1vg1MEkxigk/OIPz5Ibbo8Vk/10GFPQ6XZBfAhrvDV
+         zXNNNF7WXlwDEfIM9HG+dF2dX3XPhLjG0lXuxyW0e+KTT882fV6PP60kQL07nmSkqJmF
+         8Z8dZkyIpOLyjjrsQrSuEANlcEwdytikfdmB1eBK5dvBdi+ti5dXSsSpyRGYaDIHOqaM
+         rOhw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1779113722; x=1779718522;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=tl5cNuX7Q/EbJEBDKEJHU8Nft3cHRScimLTBtlsFjco=;
+        b=QteeUUpfp5QB0Vr1rRSGxZD3auZTAIofCUb0rJDUZTbEGJc0qWgiHOei2yuPF7Yu8U
+         XXsZWyIAFHr2MBpWYrFWJoBOItDI4aesyx0jF3AfJG41SFL2TviSaE5oWrPVKA7VZrI9
+         8ld+j02F5V/LXRTOTtw/9F5tMMiSIzkzne0kWBVGgtlgIEiqbYiYLwN34GVx6soRWf8H
+         msfiP8tpuVe5X6+UJMHHN8tINh/qxYajPl/hX96gtYqIL7dEQOl7jzNdG3HrjN4LIJxV
+         lPPMqzu3FhqP3bR++bhSqICnmZ2s9DvIXbWV4BmHRzpogrR+k+tm0gZTn4DssYpqDNFQ
+         6+nQ==
+X-Forwarded-Encrypted: i=1; AFNElJ9kFVHh2cbCHrVANLrHI2BEj+jRUG0ttsOhf+r+mGBghFDgM2qlmrE/u7PVeCJVCxEo//53QF21MAM=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz6xPRy7tcKiNSDYg/8PudjKGmbzmJMPn9xKsYqUOcQBAPu3ksb
+	6bgBTfFs6d8BBAlTlb3XiPZYbyDTyWiFuHt0Ej1ZBesagbCP+AWNhHRgEC6mOzrxRN82bMxLMRa
+	Yf9h8yBj/pvaEgDu101m1W6hSn+sBKOxjZ2NWf9Hu3lzx+r7v8HUlN2LhfoW7bmQKt1y9
+X-Gm-Gg: Acq92OF5rsPjLxoJekLrh5ekQg45twRVsFNF2zARl/o+8JGnJ/LNgIv98XAI0PRyVOR
+	QA3D6IU7A+RyUrZ2Yf12jUlNFAafI+OxokrlHHkbE1+KlqvpqnnDbAehkfAwZOMH5H16xxTmA2i
+	JzH5gIA2KAWU2YIkoTRbwOeXL90qBgtVMfOqyAaM11MRBspD4e7SG2/t4yc/6r5N9RKiTGkfw8H
+	mqTIVBbEbN8gbyyCzQwqabJDFd0A+AstfvGmEH5NTNJLJt+zp8eK1lQagXtztnrzz2sQKChPYDE
+	i+Ft1Q3X9hPDeK5k7HnGgL6v2UU44hJeXb9TbRfToMJSJXuSl5qqhiWFcE0v/psvmoyMO9lcdNo
+	6IR25XU4ZAtHu74Dj3L2vhz2shjT8k3/oa5jpNlzsdc3zYsmzru788yM27mGoFNnij1awkSLSc1
+	Tsdpw=
+X-Received: by 2002:a05:6102:1242:b0:62f:46c:40bb with SMTP id ada2fe7eead31-63a402a0379mr2115115137.5.1779113721957;
+        Mon, 18 May 2026 07:15:21 -0700 (PDT)
+X-Received: by 2002:a05:6102:1242:b0:62f:46c:40bb with SMTP id ada2fe7eead31-63a402a0379mr2115097137.5.1779113721214;
+        Mon, 18 May 2026 07:15:21 -0700 (PDT)
+Received: from [192.168.119.254] (078088045245.garwolin.vectranet.pl. [78.88.45.245])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-bd7bbae7a93sm132624466b.22.2026.05.18.07.15.17
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 18 May 2026 07:15:20 -0700 (PDT)
+Message-ID: <9aad8e45-b0a5-4c59-8793-8c0747d8fafa@oss.qualcomm.com>
+Date: Mon, 18 May 2026 16:15:16 +0200
 MIME-Version: 1.0
-X-Last-TLS-Session-Version: TLSv1.3
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 3/5] phy: qualcomm: qmp-combo: Add preliminary USB4
+ support
+To: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+        Konrad Dybcio <konradybcio@kernel.org>
+Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
+ <neil.armstrong@linaro.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley
+ <conor+dt@kernel.org>,
+        Bjorn Andersson <andersson@kernel.org>, linux-kernel@vger.kernel.org,
+        linux-phy@lists.infradead.org, linux-arm-msm@vger.kernel.org,
+        devicetree@vger.kernel.org, usb4-upstream@oss.qualcomm.com,
+        Raghavendra Thoorpu <rthoorpu@qti.qualcomm.com>,
+        Mika Westerberg <westeri@kernel.org>, Sven Peter <sven@kernel.org>
+References: <20260518-topic-usb4phy-v1-0-71d827c49dca@oss.qualcomm.com>
+ <20260518-topic-usb4phy-v1-3-71d827c49dca@oss.qualcomm.com>
+ <4nqlpu7qfptekyn77sd7sdn446stgn3v3lw2356bvizrnvjgnr@czqgivemigt5>
+Content-Language: en-US
+From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+In-Reply-To: <4nqlpu7qfptekyn77sd7sdn446stgn3v3lw2356bvizrnvjgnr@czqgivemigt5>
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNTE4MDEzOSBTYWx0ZWRfXwJwolrG/41f0
+ OcLuDLJAK6Hp6dcSZonbWEg6UyfFxHd36ItsZoF6ikBgPzIowDFFRrKQFI1MLYiwoqm3Hx3dOPb
+ ruyvhByl4zs5Cr/Yq2n0V+fAlmjy434jO3tqU9tV3U3VNvanar36fqFaPapxk3ofWogpEFD5ZM+
+ ivp/9XLjigYGO6H4IGUEJJaRELS+QNRGasgI4Op6lw9elG3qOtuZDRJ1RdqB+i1XhLHoURJ5UFg
+ 8BCxLynW9HUWHymZAfzMQjt7rt/s6mwKFTFRMasaF363fD8HN28IxJJVObn8qqazPpxUFXYgvvW
+ XCPL/gzgoB9JH1dDTedSOdLAl+V5icJvKfbe9QCrvw3Of2cca8ofpEbpdBIqYGOn/yaOZoKr0lC
+ FNnE5OjuDigwTWrpAg7/wPbUZKwZSsS5O48I1xxLSecPNl2eoX1SmOjy+0Sjc1db5LqS/gzYkY2
+ dtBicyvr5u3hDi3aurA==
+X-Proofpoint-GUID: KjKCOPkQxNGGG0ynBDVPNHyHbtrI91Pu
+X-Proofpoint-ORIG-GUID: KjKCOPkQxNGGG0ynBDVPNHyHbtrI91Pu
+X-Authority-Analysis: v=2.4 cv=FsY1OWrq c=1 sm=1 tr=0 ts=6a0b1efa cx=c_pps
+ a=5HAIKLe1ejAbszaTRHs9Ug==:117 a=FpWmc02/iXfjRdCD7H54yg==:17
+ a=IkcTkHD0fZMA:10 a=NGcC8JguVDcA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yx91gb_oNiZeI1HMLzn7:22
+ a=EUspDBNiAAAA:8 a=KUSMMZrqeANCeUtcB44A:9 a=QEXdDO2ut3YA:10
+ a=gYDTvv6II1OnSo0itH1n:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
+ definitions=2026-05-18_03,2026-05-15_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ suspectscore=0 adultscore=0 clxscore=1015 phishscore=0 priorityscore=1501
+ malwarescore=0 impostorscore=0 spamscore=0 lowpriorityscore=0 bulkscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2605130000 definitions=main-2605180139
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260518_071402_616776_C2E0ACD3 
-X-CRM114-Status: GOOD (  21.70  )
+X-CRM114-CacheID: sfid-20260518_071524_385420_D31B8AA6 
+X-CRM114-Status: GOOD (  20.98  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,650 +158,74 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add support for USB PHY found on EcoNet EN751221, EN751627, and
-EN7528 based SoCs. This PHY is somewhat similar to Mediatek tphy-v1,
-but in terms of setup ritual it has essentially nothing in common.
+On 5/18/26 3:57 PM, Dmitry Baryshkov wrote:
+> On Mon, May 18, 2026 at 12:29:50PM +0200, Konrad Dybcio wrote:
+>> From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+>>
+>> Some Combo PHYs (so far only on SC8280XP, X1E80100 and Glymur), come in
+>> a flavor called USB43DP, which as the name implies, features USB4, USB3
+>> and DP signal processing capabilities. In that architecture, USB3 and
+>> USB4 PHYs share the same USB_PLL while featuring separate logic spaces.
+>> The DP part is roughly the same as on the instances without USB4.
+>>
+>> The USB4 and USB3/DP operation modes of the PHY are mutually exclusive.
+>> Only one USB protocol (and flavor of pipe clock) can be active at a
+>> given moment (not to be confused with USB3 not being able to be
+>> tunneled as USB4 packets - that of course remains possible).
+>> The DP PLL is still used for clocking tunneled DP links. It may be
+>> turned off to save power when no tunnels are active, but that's left as
+>> a TODO item for now.
+>>
+>> Due to the nature of USB4, the Type-C handling happens entirely inside
+>> the Host Router, and as such the QMPPHY's mux_set() function is
+>> nullified for the period when USB4 PHY remains active. This is strictly
+>> necessary, as the Host Router driver is going to excercise manual
+>> control over the USB4 PHY's power state, which is needed by the suspend
+>> and resume flows. Failure to control that synchronously with other
+>> parts of the code results in a SoC crash by unlocked access.
+>>
+>> Because of that, a new struct phy is spawned to expose the USB4 mode,
+>> along with a .set_mode callback to allow toggling between USB4 and TBT3
+>> submodes.
+>>
+>> Thunderbolt 3, having a number of differences vs USB4, requires a
+>> couple specific overrides, pertaining to electrical characteristics,
+>> which are easily accommodated for.
+>>
+>> Signed-off-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+>> ---
+>>  drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 392 ++++++++++++++++++++++++------
+>>  1 file changed, 322 insertions(+), 70 deletions(-)
+>>
+> 
+> Overall it looks good. The major question (after looking at TODOs), do
+> we need a separate submode for USB+DP / TBT+DP?
 
-Based on work originally by Benjamin Larsson with bug fixes and
-added support for EN751627 and EN7528.
+The problem space is as follows:
 
-Tested on:
-* EN7526G (SmartFiber XP8421-B) USB 2.0
-* EN7526F (ChinaMobile GS3101) USB 2.0
-* EN7516 (Zyxel EX3301-T0) USB 2.0
+After a TBT (collectively TBT3+ and USB4) link has been established and
+we have a link partner, we may (based on the HW capabilities and user
+config, such as kernel params but not only) start or stop a DP tunnel at
+runtime. On Qualcomm hardware, the PHY is kept in USB4 mode and its DP
+AUX lines are not used (instead, the encapsulated DP AUX packets are r/w
+entirely within the USB4 subsystem via a pair of FIFOs that Linux sees
+as a separate DP AUX host)
 
-Tested by Ahmed Naseef on EN7528 (Dasan H660GM) USB 2.0
+Then, on hamoa/glymur specifically, any of the 3 USB4-capable DP hosts
+can be muxed to either of the 2 DPIN ports on any of the 3 USB4 routers
+(and each of these routers is hardwired to one of the PHYs).
 
-Tested by Benjamin Larsson on unreleased EN751221 board with USB 3.0
+To underline, we have 3 DP producers and 6 consumers. If there's e.g. a
+super high-res display at one of the physical ports, or a long
+daisy-chain, we may need to use 2 DPTXes to service 1 receptacle. Then,
+we would only need one of the PHYs (associated with the router that's
+wired to that port) to provide a DP clock.
 
-Originally-by: Benjamin Larsson <benjamin.larsson@genexis.eu>
-Signed-off-by: Caleb James DeLisle <cjd@cjdns.fr>
-Tested-by: Ahmed Naseef <naseefkm@gmail.com>
-Tested-by: Benjamin Larsson <benjamin.larsson@genexis.eu>
-Link: https://github.com/openwrt/openwrt/pull/23264#issuecomment-4415906568
----
- MAINTAINERS                  |   1 +
- drivers/phy/Kconfig          |  13 +
- drivers/phy/Makefile         |   1 +
- drivers/phy/phy-econet-usb.c | 558 +++++++++++++++++++++++++++++++++++
- 4 files changed, 573 insertions(+)
- create mode 100644 drivers/phy/phy-econet-usb.c
+This, along with the normal (logical or physical) present/absent status
+can change at runtime. My plan is to use phy_set_opts(dp_tunelling=true)
+or something along those lines to toggle that bit as necessary
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 1a90a1736294..74cf07bbc49f 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -9209,6 +9209,7 @@ M:	Caleb James DeLisle <cjd@cjdns.fr>
- L:	linux-mips@vger.kernel.org
- S:	Maintained
- F:	Documentation/devicetree/bindings/phy/econet,en751221-usb-phy.yaml
-+F:	drivers/phy/phy-econet-usb.c
- 
- ECRYPT FILE SYSTEM
- M:	Tyler Hicks <code@tyhicks.com>
-diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
-index 227b9a4c612e..0a3bec9af93e 100644
---- a/drivers/phy/Kconfig
-+++ b/drivers/phy/Kconfig
-@@ -66,6 +66,19 @@ config PHY_CAN_TRANSCEIVER
- 	  functional modes using gpios and sets the attribute max link
- 	  rate, for CAN drivers.
- 
-+config PHY_ECONET_USB
-+	tristate "EcoNet USB PHY driver"
-+	depends on ECONET || COMPILE_TEST
-+	depends on OF
-+	select GENERIC_PHY
-+	select REGMAP_MMIO
-+	help
-+	  Enable support for the USB PHY on EcoNet EN751221, EN751627, and
-+	  EN7528 SoCs. These PHYs support USB 2.0 and USB 3.0. SoCs typically
-+	  have two ports, one supporting USB 2.0 only and the other supporting
-+	  USB 3.0. Though some chip configurations have only the 2.0 capable
-+	  port and some only have the 3.0 capable port.
-+
- config PHY_GOOGLE_USB
- 	tristate "Google Tensor SoC USB PHY driver"
- 	select GENERIC_PHY
-diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
-index f49d83f00a3d..8a58bb151198 100644
---- a/drivers/phy/Makefile
-+++ b/drivers/phy/Makefile
-@@ -9,6 +9,7 @@ obj-$(CONFIG_GENERIC_PHY)		+= phy-core.o
- obj-$(CONFIG_GENERIC_PHY_MIPI_DPHY)	+= phy-core-mipi-dphy.o
- obj-$(CONFIG_PHY_AIROHA_PCIE)		+= phy-airoha-pcie.o
- obj-$(CONFIG_PHY_CAN_TRANSCEIVER)	+= phy-can-transceiver.o
-+obj-$(CONFIG_PHY_ECONET_USB)		+= phy-econet-usb.o
- obj-$(CONFIG_PHY_GOOGLE_USB)		+= phy-google-usb.o
- obj-$(CONFIG_USB_LGM_PHY)		+= phy-lgm-usb.o
- obj-$(CONFIG_PHY_LPC18XX_USB_OTG)	+= phy-lpc18xx-usb-otg.o
-diff --git a/drivers/phy/phy-econet-usb.c b/drivers/phy/phy-econet-usb.c
-new file mode 100644
-index 000000000000..e8fa2e80eb13
---- /dev/null
-+++ b/drivers/phy/phy-econet-usb.c
-@@ -0,0 +1,558 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Author: Benjamin Larsson <benjamin.larsson@genexis.eu>
-+ * Author: Caleb James DeLisle <cjd@cjdns.fr>
-+ */
-+
-+#include <dt-bindings/phy/phy.h>
-+#include <linux/bitfield.h>
-+#include <linux/clk.h>
-+#include <linux/math.h>
-+#include <linux/module.h>
-+#include <linux/of.h>
-+#include <linux/of_address.h>
-+#include <linux/phy/phy.h>
-+#include <linux/platform_device.h>
-+#include <linux/regmap.h>
-+
-+/* SSUSB SIFSLV SPLLC (0x0) */
-+#define SPLLC					0x00
-+
-+/* SSUSB SIFSLV FMREG (0x100) offset based on SSUSB SIFSLV SPLLC */
-+#define FMREG					0x100
-+#define   FMCR0					0x00
-+#define     RG_MONCLK_SEL			GENMASK(27, 26)
-+#define     RG_FREQDET_EN			BIT(24)
-+#define     RG_CYCLECNT				GENMASK(23, 0)
-+#define   FMMONR0				0x0c
-+#define     RG_FM_OUT				GENMASK(31, 0)
-+#define   FMMONR1				0x10
-+#define     RG_FM_VALID				BIT(0)
-+#define     RG_FRCK_EN				BIT(8)
-+
-+/* SSUSB SIFSLV U2PHY COM (0x800, 0x1000) */
-+#define U2PHY_COM				0x00
-+#define   USBPHYACR0				0x10
-+#define     RG_HSTX_SRCAL_EN			BIT(23)
-+#define     RG_HSTX_SRCTRL			GENMASK(18, 16)
-+#define   USBPHYACR3				0x1C
-+#define     RG_PUPD				GENMASK(12, 8)
-+#define       RG_PUPD_EN			BIT(12)
-+#define       RG_PUPD_PD_DM			BIT(10)
-+#define       RG_PUPD_PD_DP			BIT(8)
-+#define     RG_REV				GENMASK(7, 0)
-+#define       REVISION_P0			FIELD_PREP(RG_REV, 0x08)
-+#define       REVISION_P0_DOWN			FIELD_PREP(RG_REV, 0x80)
-+#define       REVISION_P1			FIELD_PREP(RG_REV, 0x00)
-+#define   U2PHYDCR1				0x64
-+#define     RG_USB20_SW_PLLMODE			GENMASK(19, 18)
-+
-+/* SSUSB SIFSLV U3PHYD (0x900) */
-+#define U3PHYD					0x00
-+#define   LFPS1					0x0c
-+#define     RG_SSUSB_FWAKE_TH			GENMASK(21, 16)
-+
-+/* SSUSB SIFSLV U3PHYD BANK2 (0xA00) offset based on SSUSB SIFSLV U3PHYD */
-+#define U3PHYD_BANK2				0x100
-+#define   B2_PHYD_RXDET1			0x028
-+#define     RG_SSUSB_RXDET_STB2_SET		GENMASK(17, 9)
-+#define   B2_PHYD_RXDET2			0x02C
-+#define     RG_SSUSB_RXDET_STB2_SET_P3		GENMASK(8, 0)
-+
-+/* SSUSB SIFSLV U3PHYA (0xB00) offset based on SSUSB SIFSLV U3PHYD */
-+#define U3PHYA					0x200
-+#define   U3PHYA_REG2				0x008
-+#define     RG_SSUSB_SYSPLL_LF			BIT(31)
-+#define     RG_SSUSB_SYSPLL_FBDIV		GENMASK(30, 24)
-+#define     RG_SSUSB_SYSPLL_POSDIV		GENMASK(23, 22)
-+#define     RG_SSUSB_SYSPLL_VCO_DIV_SEL		BIT(21)
-+#define     RG_SSUSB_SYSPLL_BLP			BIT(20)
-+#define     RG_SSUSB_SYSPLL_BP			BIT(19)
-+#define     RG_SSUSB_SYSPLL_BR			BIT(18)
-+#define     RG_SSUSB_SYSPLL_BC			BIT(17)
-+#define     RG_SSUSB_SYSPLL_DIVEN		GENMASK(16, 14)
-+#define     RG_SSUSB_SYSPLL_FPEN		BIT(13)
-+#define     RG_SSUSB_SYSPLL_MONCK_EN		BIT(12)
-+#define     RG_SSUSB_SYSPLL_MONVC_EN		BIT(11)
-+#define     RG_SSUSB_SYSPLL_MONREF_EN		BIT(10)
-+#define     RG_SSUSB_SYSPLL_VOD_EN		BIT(9)
-+#define     RG_SSUSB_SYSPLL_CK_SEL		BIT(8)
-+#define   U3PHYA_REG4				0x010
-+#define     RG_SSUSB_SYSPLL_PCW_NCPO		GENMASK(31, 1)
-+#define   U3PHYA_REG9				0x024
-+#define     RG_SSUSB_PLL_DDS_DMY		GENMASK(31, 16)
-+#define     RG_SSUSB_PLL_SSC_PRD		GENMASK(15, 0)
-+#define   U3PHYA_REGB				0x02c
-+#define     RG_SSUSB_RX_50_TAR			GENMASK(13, 12)
-+
-+/* SSUSB SIFSLV U3PHYA DA (0xC00) offset based on SSUSB SIFSLV U3PHYD */
-+#define U3PHYA_DA				0x300
-+#define   U3PHYA_DA_REG9			0x01C
-+#define     RG_SSUSB_PLL_FBKDIV_PE2H		GENMASK(30, 24)
-+#define     RG_SSUSB_PLL_FBKDIV_PE1D		GENMASK(22, 16)
-+#define     RG_SSUSB_PLL_FBKDIV_PE1H		GENMASK(14, 8)
-+#define     RG_SSUSB_PLL_FBKDIV_U3		GENMASK(6, 0)
-+#define   U3PHYA_DA_REG12			0x024
-+#define     RG_SSUSB_PLL_PCW_NCPO_U3		GENMASK(30, 0)
-+#define   U3PHYA_DA_REG13			0x028
-+#define     RG_SSUSB_PLL_PCW_NCPO_PE1H		GENMASK(30, 0)
-+#define   U3PHYA_DA_REG14			0x02C
-+#define     RG_SSUSB_PLL_PCW_NCPO_PE1D		GENMASK(30, 0)
-+#define   U3PHYA_DA_REG15			0x030
-+#define     RG_SSUSB_PLL_PCW_NCPO_PE2H		GENMASK(30, 0)
-+#define   U3PHYA_DA_REG19			0x038
-+#define     RG_SSUSB_PLL_SSC_DELTA1_PE1H	GENMASK(31, 16)
-+#define     RG_SSUSB_PLL_SSC_DELTA1_U3		GENMASK(15, 0)
-+#define   U3PHYA_DA_REG20			0x03C
-+#define     RG_SSUSB_PLL_SSC_DELTA1_PE2H	GENMASK(31, 16)
-+#define     RG_SSUSB_PLL_SSC_DELTA1_PE1D	GENMASK(15, 0)
-+#define   U3PHYA_DA_REG21			0x040
-+#define     RG_SSUSB_PLL_SSC_DELTA_U3		GENMASK(31, 16)
-+#define     RG_SSUSB_PLL_SSC_DELTA1_PE2D	GENMASK(15, 0)
-+#define   U3PHYA_DA_REG23			0x044
-+#define     RG_SSUSB_PLL_SSC_DELTA_PE1D		GENMASK(31, 16)
-+#define     RG_SSUSB_PLL_SSC_DELTA_PE1H		GENMASK(15, 0)
-+#define   U3PHYA_DA_REG25			0x048
-+#define     RG_SSUSB_PLL_SSC_DELTA_PE2D		GENMASK(31, 16)
-+#define     RG_SSUSB_PLL_SSC_DELTA_PE2H		GENMASK(15, 0)
-+
-+#define ECONET_USB_PHY_U2_FM_DET_CYCLE_CNT	1024
-+#define ECONET_USB_PHY_REF_CK			20
-+#define ECONET_USB_PHY_U2_SR_COEF		28
-+#define ECONET_USB_PHY_U2_SR_COEF_DIVISOR	1000
-+#define ECONET_USB_PHY_U2_SR_DEFAULT		0x4
-+
-+#define ECONET_USB_PHY_FREQDET_SLEEP		1000 /* 1ms */
-+#define ECONET_USB_PHY_FREQDET_TIMEOUT		(ECONET_USB_PHY_FREQDET_SLEEP * 10)
-+
-+#define ECONET_USB_PHY_MAX_INSTANCE		3
-+
-+#define ECONET_PORT_ID_FIELD			"econet,usb-port-id"
-+
-+enum econet_phy_soc {
-+	SOC_EN751221 = 1,
-+	SOC_EN751627,
-+	SOC_EN7528,
-+};
-+
-+/**
-+ * econet_phy_instance - the individual PHY block
-+ * @phy: The phy object
-+ * @regmap: A regmap for the phy block, per DT subnode reg field
-+ * @type: PHY_TYPE_USB2 / PHY_TYPE_USB3 depending on PHY block
-+ * @port_id: Number of the physical port [0,1]
-+ *
-+ * There are typically 3 PHY blocks, 2x USB 2.0 blocks, and 1x USB 3.0. The USB
-+ * 3.0 PHY is piggybacked on top of one of the USB2 ports and activates when
-+ * the connected device negotiates a USB 3.0 link. Main actions like powering
-+ * on the port are governed in the USB 2.0 block.
-+ */
-+struct econet_phy_instance {
-+	struct phy	*phy;
-+	struct regmap	*regmap;
-+	int		type;
-+	int		port_id;
-+};
-+
-+/**
-+ * econet_usb_phy_priv the main PHY driver structure
-+ * @dev: The root device
-+ * @regmap: A regmap of registers that are shared between the PHY blocks
-+ * @clk: The system Xtal clock, if 25Mhz then we need additional configuration
-+ * @phys: The individual PHY blocks, normally there are three: Two USB 2.0 and
-+ *        one USB 3.0 which is shared on the same port at one of the USB 2.0.
-+ * @soc: The ID of the device, which is relevant to some of the tuning ritual.
-+ */
-+struct econet_usb_phy_priv {
-+	struct device			*dev;
-+	struct regmap			*regmap;
-+	struct clk			*clk;
-+	struct econet_phy_instance	phys[ECONET_USB_PHY_MAX_INSTANCE];
-+	enum econet_phy_soc		soc;
-+};
-+
-+static void u2_slew_rate_calibration(struct econet_usb_phy_priv *priv,
-+				     struct econet_phy_instance *instance)
-+{
-+	struct regmap *com = instance->regmap;
-+	struct regmap *regmap = priv->regmap;
-+	int fm_out = 0;
-+	u32 srctrl;
-+
-+	/* Enable HS TX SR calibration */
-+	regmap_set_bits(com, U2PHY_COM + USBPHYACR0, RG_HSTX_SRCAL_EN);
-+
-+	usleep_range(1000, 1500);
-+
-+	/* Enable Free run clock */
-+	regmap_set_bits(regmap, FMREG + FMMONR1, RG_FRCK_EN);
-+
-+	/* Select Monitor Clock */
-+	regmap_update_bits(regmap, FMREG + FMCR0, RG_MONCLK_SEL,
-+			   FIELD_PREP(RG_MONCLK_SEL, instance->port_id));
-+
-+	/* Set cyclecnt */
-+	regmap_update_bits(regmap, FMREG + FMCR0, RG_CYCLECNT,
-+			   FIELD_PREP_CONST(RG_CYCLECNT,
-+					    ECONET_USB_PHY_U2_FM_DET_CYCLE_CNT));
-+
-+	/* Enable Frequency meter */
-+	regmap_set_bits(regmap, FMREG + FMCR0, RG_FREQDET_EN);
-+
-+	/* Timeout can happen and we will apply workaround at the end */
-+	regmap_read_poll_timeout(regmap, FMREG + FMMONR0, fm_out,
-+				 fm_out, ECONET_USB_PHY_FREQDET_SLEEP,
-+				 ECONET_USB_PHY_FREQDET_TIMEOUT);
-+
-+	/* Disable Frequency meter */
-+	regmap_clear_bits(regmap, FMREG + FMCR0, RG_FREQDET_EN);
-+
-+	/* Disable Free run clock */
-+	regmap_clear_bits(regmap, FMREG + FMMONR1, RG_FRCK_EN);
-+
-+	/* Disable HS TX SR calibration */
-+	regmap_clear_bits(com, U2PHY_COM + USBPHYACR0, RG_HSTX_SRCAL_EN);
-+
-+	usleep_range(1000, 1500);
-+
-+	if (!fm_out) {
-+		srctrl = ECONET_USB_PHY_U2_SR_DEFAULT;
-+		dev_warn(&instance->phy->dev,
-+			 "frequency detection failed, using default slew rate 0x%x\n",
-+			 srctrl);
-+	} else {
-+		/* (1024 / FM_OUT) * REF_CK * U2_SR_COEF (round to nearest) */
-+		srctrl = ECONET_USB_PHY_REF_CK * ECONET_USB_PHY_U2_SR_COEF;
-+		srctrl = (srctrl * ECONET_USB_PHY_U2_FM_DET_CYCLE_CNT) / fm_out;
-+		srctrl = DIV_ROUND_CLOSEST(srctrl,
-+					   ECONET_USB_PHY_U2_SR_COEF_DIVISOR);
-+		dev_info(&instance->phy->dev,
-+			 "frequency meter result 0x%x, set slew rate 0x%x\n",
-+			 fm_out, srctrl);
-+	}
-+
-+	/* Set slew rate */
-+	regmap_update_bits(com, U2PHY_COM + USBPHYACR0, RG_HSTX_SRCTRL,
-+			   FIELD_PREP(RG_HSTX_SRCTRL, srctrl));
-+}
-+
-+static int econet_usb_phy_u2_init(struct econet_usb_phy_priv *priv,
-+				  struct econet_phy_instance *instance)
-+{
-+	struct regmap *com = instance->regmap;
-+
-+	regmap_update_bits(com, U2PHY_COM + USBPHYACR3, RG_PUPD | RG_REV,
-+			   instance->port_id == 0 ? REVISION_P0 : REVISION_P1);
-+
-+	/* set SW PLL Stable mode to 1 for U2 LPM device remote wakeup */
-+	if (priv->soc != SOC_EN7528)
-+		regmap_update_bits(com, U2PHY_COM + U2PHYDCR1,
-+				   RG_USB20_SW_PLLMODE,
-+				   FIELD_PREP(RG_USB20_SW_PLLMODE, 0x1));
-+
-+	u2_slew_rate_calibration(priv, instance);
-+
-+	usleep_range(1000, 1500);
-+
-+	return 0;
-+}
-+
-+static int u3_setup_25mhz_xtal(struct econet_usb_phy_priv *priv,
-+			       struct econet_phy_instance *instance)
-+{
-+	struct regmap *u3phyd = instance->regmap;
-+
-+	/* Setup 25MHz XTAL */
-+	regmap_update_bits(u3phyd, U3PHYA_DA + U3PHYA_DA_REG9,
-+			   RG_SSUSB_PLL_FBKDIV_U3,
-+			   FIELD_PREP(RG_SSUSB_PLL_FBKDIV_U3, 0x18));
-+	regmap_update_bits(u3phyd, U3PHYA_DA + U3PHYA_DA_REG9,
-+			   RG_SSUSB_PLL_FBKDIV_PE1H,
-+			   FIELD_PREP(RG_SSUSB_PLL_FBKDIV_PE1H, 0x18));
-+	regmap_update_bits(u3phyd, U3PHYA_DA + U3PHYA_DA_REG9,
-+			   RG_SSUSB_PLL_FBKDIV_PE2H,
-+			   FIELD_PREP(RG_SSUSB_PLL_FBKDIV_PE2H, 0x18));
-+
-+	regmap_update_bits(u3phyd, U3PHYA_DA + U3PHYA_DA_REG12,
-+			   RG_SSUSB_PLL_PCW_NCPO_U3,
-+			   FIELD_PREP(RG_SSUSB_PLL_PCW_NCPO_U3, 0x18000000));
-+
-+	regmap_update_bits(u3phyd, U3PHYA_DA + U3PHYA_DA_REG13,
-+			   RG_SSUSB_PLL_PCW_NCPO_PE1H,
-+			   FIELD_PREP(RG_SSUSB_PLL_PCW_NCPO_PE1H, 0x18000000));
-+
-+	regmap_update_bits(u3phyd, U3PHYA_DA + U3PHYA_DA_REG15,
-+			   RG_SSUSB_PLL_PCW_NCPO_PE2H,
-+			   FIELD_PREP(RG_SSUSB_PLL_PCW_NCPO_PE2H, 0x18000000));
-+
-+	regmap_update_bits(u3phyd, U3PHYA_DA + U3PHYA_DA_REG19,
-+			   RG_SSUSB_PLL_SSC_DELTA1_PE1H,
-+			   FIELD_PREP(RG_SSUSB_PLL_SSC_DELTA1_PE1H, 0x4a));
-+	regmap_update_bits(u3phyd, U3PHYA_DA + U3PHYA_DA_REG19,
-+			   RG_SSUSB_PLL_SSC_DELTA1_U3,
-+			   FIELD_PREP(RG_SSUSB_PLL_SSC_DELTA1_U3, 0x4a));
-+
-+	regmap_update_bits(u3phyd, U3PHYA_DA + U3PHYA_DA_REG20,
-+			   RG_SSUSB_PLL_SSC_DELTA1_PE2H,
-+			   FIELD_PREP(RG_SSUSB_PLL_SSC_DELTA1_PE2H, 0x4a));
-+
-+	regmap_update_bits(u3phyd, U3PHYA_DA + U3PHYA_DA_REG21,
-+			   RG_SSUSB_PLL_SSC_DELTA_U3,
-+			   FIELD_PREP(RG_SSUSB_PLL_SSC_DELTA_U3, 0x48));
-+
-+	regmap_update_bits(u3phyd, U3PHYA_DA + U3PHYA_DA_REG23,
-+			   RG_SSUSB_PLL_SSC_DELTA_PE1H,
-+			   FIELD_PREP(RG_SSUSB_PLL_SSC_DELTA_PE1H, 0x48));
-+
-+	regmap_update_bits(u3phyd, U3PHYA_DA + U3PHYA_DA_REG25,
-+			   RG_SSUSB_PLL_SSC_DELTA_PE2H,
-+			   FIELD_PREP(RG_SSUSB_PLL_SSC_DELTA_PE2H, 0x48));
-+
-+	regmap_update_bits(u3phyd, U3PHYA + U3PHYA_REG9,
-+			   RG_SSUSB_PLL_SSC_PRD,
-+			   FIELD_PREP(RG_SSUSB_PLL_SSC_PRD, 0x190));
-+	regmap_update_bits(u3phyd, U3PHYA + U3PHYA_REG4,
-+			   RG_SSUSB_SYSPLL_PCW_NCPO,
-+			   FIELD_PREP(RG_SSUSB_SYSPLL_PCW_NCPO, 0xe000000));
-+	regmap_update_bits(u3phyd, U3PHYA + U3PHYA_REG2,
-+			   RG_SSUSB_SYSPLL_FBDIV,
-+			   FIELD_PREP(RG_SSUSB_SYSPLL_FBDIV, 0xe));
-+	return 0;
-+}
-+
-+static int econet_usb_phy_u3_init(struct econet_usb_phy_priv *priv,
-+				  struct econet_phy_instance *instance)
-+{
-+	struct regmap *u3phyd = instance->regmap;
-+
-+	if (priv->soc == SOC_EN751221) {
-+		/* Patch TxDetRx Timing for E1 */
-+		regmap_update_bits(u3phyd, U3PHYD_BANK2 + B2_PHYD_RXDET1,
-+				   RG_SSUSB_RXDET_STB2_SET,
-+				   FIELD_PREP(RG_SSUSB_RXDET_STB2_SET, 0x10));
-+
-+		regmap_update_bits(u3phyd, U3PHYD_BANK2 + B2_PHYD_RXDET2,
-+				   RG_SSUSB_RXDET_STB2_SET_P3,
-+				   FIELD_PREP(RG_SSUSB_RXDET_STB2_SET_P3, 0x10));
-+
-+		/* Patch LFPS Filter Threshold for E1 */
-+		regmap_update_bits(u3phyd, U3PHYD + LFPS1, RG_SSUSB_FWAKE_TH,
-+				   FIELD_PREP(RG_SSUSB_FWAKE_TH, 0x34));
-+
-+	} else if (priv->soc == SOC_EN7528) {
-+		/* combo phy Rx R FT mean value too high, target R -5 Ohm */
-+		regmap_update_bits(u3phyd, U3PHYA + U3PHYA_REGB,
-+				   RG_SSUSB_RX_50_TAR,
-+				   FIELD_PREP(RG_SSUSB_RX_50_TAR, 0x01));
-+	}
-+
-+	if (clk_get_rate(priv->clk) == 25 * 1000 * 1000)
-+		u3_setup_25mhz_xtal(priv, instance);
-+
-+	return 0;
-+}
-+
-+static int econet_usb_phy_init(struct phy *phy)
-+{
-+	struct econet_phy_instance *instance = phy_get_drvdata(phy);
-+	struct econet_usb_phy_priv *priv = dev_get_drvdata(phy->dev.parent);
-+
-+	if (instance->type == PHY_TYPE_USB2)
-+		return econet_usb_phy_u2_init(priv, instance);
-+	else if (instance->type == PHY_TYPE_USB3)
-+		return econet_usb_phy_u3_init(priv, instance);
-+
-+	return -EINVAL;
-+}
-+
-+static int econet_usb_phy_exit(struct phy *phy)
-+{
-+	struct econet_phy_instance *instance = phy_get_drvdata(phy);
-+
-+	/*
-+	 * Disable the port by setting PHY revision to REVISION_P0_DOWN and
-+	 * enabling pulldown resistors on D+ and D- lines. The USB 3.0 PHY
-+	 * piggybacks on top of the USB 2.0 for the same port and does not
-+	 * have any such switch.
-+	 */
-+	if (instance->type == PHY_TYPE_USB2)
-+		return regmap_update_bits(instance->regmap,
-+					  U2PHY_COM + USBPHYACR3,
-+					  RG_PUPD | RG_REV,
-+					  RG_PUPD_EN | RG_PUPD_PD_DM |
-+					  RG_PUPD_PD_DP | REVISION_P0_DOWN);
-+
-+	return 0;
-+}
-+
-+static struct phy *econet_usb_phy_xlate(struct device *dev,
-+					const struct of_phandle_args *args)
-+{
-+	struct econet_usb_phy_priv *priv = dev_get_drvdata(dev);
-+	struct device_node *phy_np = args->np;
-+	int index;
-+
-+	if (!of_device_is_available(phy_np)) {
-+		dev_err(dev, "can't use disabled phy\n");
-+		return ERR_PTR(-EINVAL);
-+	}
-+
-+	for (index = 0; index < ARRAY_SIZE(priv->phys); index++) {
-+		/* Empty slots if the DT doesn't specify all subnodes */
-+		if (!priv->phys[index].phy)
-+			continue;
-+
-+		if (phy_np != priv->phys[index].phy->dev.of_node)
-+			continue;
-+
-+		return priv->phys[index].phy;
-+	}
-+
-+	dev_err(dev, "failed to find phy\n");
-+	return ERR_PTR(-EINVAL);
-+}
-+
-+static const struct phy_ops econet_phy = {
-+	.init		= econet_usb_phy_init,
-+	.exit		= econet_usb_phy_exit,
-+	.owner		= THIS_MODULE,
-+};
-+
-+static const struct regmap_config econet_usb_phy_regmap_config = {
-+	.reg_bits	= 32,
-+	.val_bits	= 32,
-+	.reg_stride	= 4,
-+};
-+
-+static const struct of_device_id econet_phy_id_table[] = {
-+	{ .compatible = "econet,en751221-usb-phy", .data = (void *) SOC_EN751221 },
-+	{ .compatible = "econet,en751627-usb-phy", .data = (void *) SOC_EN751627 },
-+	{ .compatible = "econet,en7528-usb-phy", .data = (void *) SOC_EN7528 },
-+	{ },
-+};
-+MODULE_DEVICE_TABLE(of, econet_phy_id_table);
-+
-+static int econet_usb_phy_probe(struct platform_device *pdev)
-+{
-+	struct device *dev = &pdev->dev;
-+	struct device_node *np = dev->of_node;
-+	struct econet_usb_phy_priv *priv;
-+	const struct of_device_id *match;
-+	struct phy_provider *provider;
-+	void *base;
-+	int phy_n;
-+
-+	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
-+	if (!priv)
-+		return -ENOMEM;
-+
-+	priv->dev = dev;
-+
-+	base = devm_platform_ioremap_resource(pdev, 0);
-+	if (IS_ERR(base))
-+		return dev_err_probe(dev, PTR_ERR(base), "getting reg\n");
-+
-+	platform_set_drvdata(pdev, priv);
-+	priv->regmap = devm_regmap_init_mmio(dev, base, &econet_usb_phy_regmap_config);
-+	if (IS_ERR(priv->regmap))
-+		return PTR_ERR(priv->regmap);
-+
-+	priv->clk = devm_clk_get(dev, NULL);
-+	if (IS_ERR(priv->clk))
-+		return dev_err_probe(dev, PTR_ERR(priv->clk), "getting clk\n");
-+
-+	match = of_match_node(econet_phy_id_table, np);
-+	if (!match || !match->data)
-+		return dev_err_probe(dev, -EINVAL, "no OF match data\n");
-+
-+	priv->soc = (enum econet_phy_soc)(uintptr_t)match->data;
-+
-+	phy_n = 0;
-+	for_each_child_of_node_scoped(np, child_np) {
-+		struct econet_phy_instance *instance;
-+		void __iomem *phy_base;
-+		struct device *subdev;
-+		struct resource res;
-+		int retval;
-+
-+		if (phy_n >= ARRAY_SIZE(priv->phys))
-+			return dev_err_probe(dev, -EINVAL,
-+					     "too many PHY subnodes\n");
-+
-+		instance = &priv->phys[phy_n];
-+
-+		if (of_device_is_compatible(child_np, "econet,usb2-phy"))
-+			instance->type = PHY_TYPE_USB2;
-+		else if (of_device_is_compatible(child_np, "econet,usb3-phy"))
-+			instance->type = PHY_TYPE_USB3;
-+		else
-+			return dev_err_probe(dev, -EINVAL,
-+					     "phy %d unknown type\n", phy_n);
-+
-+		instance->phy = devm_phy_create(dev, child_np, &econet_phy);
-+		if (IS_ERR(instance->phy))
-+			return dev_err_probe(dev, PTR_ERR(instance->phy),
-+					     "failed to create phy\n");
-+
-+		subdev = &instance->phy->dev;
-+		retval = of_address_to_resource(child_np, 0, &res);
-+		if (retval)
-+			return dev_err_probe(subdev, retval,
-+					     "getting reg for phy %d\n",
-+					     phy_n);
-+
-+		phy_base = devm_ioremap_resource(subdev, &res);
-+		if (IS_ERR(phy_base))
-+			return dev_err_probe(subdev, PTR_ERR(phy_base),
-+					     "remapping reg for phy %d\n",
-+					     phy_n);
-+
-+		instance->regmap =
-+			devm_regmap_init_mmio(subdev, phy_base,
-+					      &econet_usb_phy_regmap_config);
-+		if (IS_ERR(instance->regmap))
-+			return dev_err_probe(subdev, PTR_ERR(instance->regmap),
-+					     "making regmap for phy %d\n",
-+					     phy_n);
-+
-+		retval = device_property_read_u32(subdev, ECONET_PORT_ID_FIELD,
-+						  &instance->port_id);
-+		if (retval)
-+			return dev_err_probe(subdev, retval,
-+					     "getting %s for phy %d\n",
-+					     ECONET_PORT_ID_FIELD, phy_n);
-+
-+		phy_set_drvdata(instance->phy, instance);
-+
-+		/*
-+		 * Initial setup ritual disables both ports. On QFP silicon,
-+		 * only one port is wired (port1) but port0 still has a PHY
-+		 * present which is still disabled in setup.
-+		 */
-+		retval = econet_usb_phy_exit(instance->phy);
-+		if (retval)
-+			dev_warn(subdev, "stopping phy %d: %pe\n", phy_n,
-+				 ERR_PTR(retval));
-+
-+		phy_n++;
-+	}
-+
-+	provider = devm_of_phy_provider_register(dev, econet_usb_phy_xlate);
-+
-+	return PTR_ERR_OR_ZERO(provider);
-+}
-+
-+static struct platform_driver econet_usb_phy_driver = {
-+	.probe		= econet_usb_phy_probe,
-+	.driver		= {
-+		.name	= "econet-usb-phy",
-+		.of_match_table = econet_phy_id_table,
-+	},
-+};
-+
-+module_platform_driver(econet_usb_phy_driver);
-+
-+MODULE_AUTHOR("Benjamin Larsson <benjamin.larsson@genexis.eu>");
-+MODULE_AUTHOR("Caleb James DeLisle <cjd@cjdns.fr>");
-+MODULE_LICENSE("GPL");
-+MODULE_DESCRIPTION("Econet USB PHY driver");
--- 
-2.39.5
-
+Konrad
 
 -- 
 linux-phy mailing list
