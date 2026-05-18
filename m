@@ -4,53 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7D356CD4F52
-	for <linux-phy@archiver.kernel.org>; Mon, 18 May 2026 10:32:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8164FCD4F3C
+	for <linux-phy@archiver.kernel.org>; Mon, 18 May 2026 10:32:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
-	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=o1nFwgFg17W7AZVefoL1OWNBwj1IU6VPNbbZbd6ikbA=; b=4BCkIBB+FBciGq
-	ZJBvHxYQGzfQ6Dm2qWnrcah55Z8r02hWrIZVmhJfQ84qrk7pwcqX7Dpc7AT32gednJyGBL40Yb6BM
-	YGqmh6DgVUOqaTsDCBjP8eSQ3Pl/aSW7D/7C1020A8u+yuEP3b0SXMzgtgcBl//PY8mYvDlbimXRW
-	RT9wQmGmPRfL1tsC7pVYap3y4ZxGAhnj9QJDrft/FOOdTqecgtofGvXIcXWXbxanOLTPtZ/ILKfDM
-	7yY3LE3r/2RXCgfJAN8aR+XHxOjrIVmW2fbRNjDeYrfMPOllx0U+SFce5h2PP6mskbEd+OpRUa1EX
-	6K1FBrpDfX1ylSHEqEuA==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=TZtSp9f9ufWBKgDnsK034pdOYQPChf1r3HtCW4KNnSE=; b=Dqm8N5ltmP6+8e
+	z6FdX1kRP4/hHRZ/0BLuZQCjHglLZzbL/iINyaWtGTRvw87RY7/Tn68ZhBPJ5rW+Yv+EzljehrfBV
+	Ofo8ZgpN7vFgFnn8CL1FonzJHsVkYlM4bPj2NmZR0ai7ME4s2BucyGiz0l+K73OCXydMbjUrkbrxP
+	9SGmrB7aZlve7ED8vbQSQiCnQ0PFhnx81QT9zu3pEPd7Mk0RIojARZ/+aQcgIKKURp00ZNxwSwB1Q
+	X5fsHIB1WJeV4wTNfqlgu4gslteUO+WH+4lkv6ZLyaG1dDehEJknKeCIetBW4h93js5rXYtkou3NC
+	LBnxWc11s40ouNjO2SVQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wOvHH-0000000FFlp-44rt;
-	Mon, 18 May 2026 10:32:51 +0000
+	id 1wOvHN-0000000FFpS-1686;
+	Mon, 18 May 2026 10:32:57 +0000
 Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wOvHG-0000000FFkU-1L3g
+	id 1wOvHL-0000000FFoC-3keV
 	for linux-phy@lists.infradead.org;
-	Mon, 18 May 2026 10:32:50 +0000
+	Mon, 18 May 2026 10:32:56 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id C2750601E7;
+	by tor.source.kernel.org (Postfix) with ESMTP id 5BC15601E7;
+	Mon, 18 May 2026 10:32:55 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id F2DBEC2BCB8;
 	Mon, 18 May 2026 10:32:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C61CDC2BCB7;
-	Mon, 18 May 2026 10:32:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1779100369;
-	bh=CuGMsmt65q1xArX/xFdVXKdCLsSzlp0jRAyYesuhoqo=;
-	h=From:Subject:Date:To:Cc:From;
-	b=kdwDUZIXZfgVRHnfFx8yd4g4OmGTNX19XwqMhdEoD5zOr3Gg6zKOpn+hCd/xrTRh8
-	 KsnPjqux4/WCEb0osRH+dZQyfV5Fz8pqOlOmu8TkoBX8+RldSjF0vB9tOGEjAPK9TK
-	 hK2EEhdxCKXeI+R4nbhJpJ7lS/NC/e6lReCpCMTnjhyLTVRb51ZGfX4qm0TPIo/MfC
-	 nKvmVbdnpuZb4DzqktlxCCXwFAyi4ckLSSyQ0UrnUASsgojlaY1F3Tz0IR8aL5nwBH
-	 cKswVXm4DEZSREYxdD4kgrJ6i441C68SREPtjZMeIfXlUvbwm+kwmjcpchHtZ43hGT
-	 Cm1uAfRCNSweQ==
+	s=k20201202; t=1779100375;
+	bh=Bx+uK0De2e8QKsDbMgINkrI+kBC4yYhtPUn60fv3ne0=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
+	b=hpjC0vNGT49oMapbw3QF4sY1siLZmwzxAKWYJZZAbbqd9tK4YVApCi5160gwA51B1
+	 rlTXJsCRxTZqS34ni3XF+w8RofJ0tP4GQpyLQ0rPwotL3difYOXs7QPvYTXtnVd7w3
+	 0BRjHT5dEzA1kZ+nJ4qqQm/Ru7JLKjGnrHAZHXzaYJbPU/zTwIXJh0n2v5lEo5LSOs
+	 OQBq+4tkHTRyEmeBzGDh+/NrnoyjXMgW9y9AKYOxbFrPlQy5aP2M5wonS4KdK/d9GF
+	 b0SsLF1MIDtut0K7NdHDmesq/4SjoTptSkoaSj/hyLgzmn9IusmX3091rywq0zv7N4
+	 9BQEAd+PX1hvA==
 From: Konrad Dybcio <konradybcio@kernel.org>
-Subject: [PATCH 0/5] USB4 mode programming for QMMPHY on X1E
-Date: Mon, 18 May 2026 12:29:47 +0200
-Message-Id: <20260518-topic-usb4phy-v1-0-71d827c49dca@oss.qualcomm.com>
+Date: Mon, 18 May 2026 12:29:48 +0200
+Subject: [PATCH 1/5] dt-bindings: phy: qcom,qmp-usb3-dp: Extend X1E
+ description for USB4
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIAAAAAAAC/yXMQQ5AMBBA0avIrDVpGwRXEYu2BmNB00GIuLti+
- Rb/X8AYCBnq5IKAOzEtc4RKE3CjmQcU1EWDlrqQuSrFunhyYmOb+fEUWBVK97k1UpYQGx+wp+P
- 7Ne1v3uyEbn0ncN8PhnQFl3EAAAA=
-X-Change-ID: 20260518-topic-usb4phy-e9612f5ba008
+Message-Id: <20260518-topic-usb4phy-v1-1-71d827c49dca@oss.qualcomm.com>
+References: <20260518-topic-usb4phy-v1-0-71d827c49dca@oss.qualcomm.com>
+In-Reply-To: <20260518-topic-usb4phy-v1-0-71d827c49dca@oss.qualcomm.com>
 To: Vinod Koul <vkoul@kernel.org>, 
  Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
  Krzysztof Kozlowski <krzk+dt@kernel.org>, 
@@ -63,11 +62,11 @@ Cc: linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
  Mika Westerberg <westeri@kernel.org>, Sven Peter <sven@kernel.org>, 
  Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1779100365; l=1709;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1779100365; l=1927;
  i=konrad.dybcio@oss.qualcomm.com; s=20230215; h=from:subject:message-id;
- bh=CuGMsmt65q1xArX/xFdVXKdCLsSzlp0jRAyYesuhoqo=;
- b=7N1YrzhfQ7nF1tgr606f4KLpGYjIE/tgXt8TkdWQocdBEVzcXsO2gL/QMmC/uZnYFGoIXm3FY
- lVJJ6yxQPh/AeL4y19mPoM+T5zmxtmOQso4OWAd+SsA1D2kGrmcD5DQ
+ bh=pSMLt5sTaDAUG12dp7QckV1kipkrWLzLV1rYLCisTNU=;
+ b=RhurK+mAgHAvX0Ecu9GE8VFqhRDtVVBt+tphD/OVy7nmVSYy3fz4Qn/qL6Z2RB/dmk8ubTDtl
+ IBDNDYMUm3DDrSzq1NtOmWtfRNYOEzhplY34C1qxGn6oa6s9GNPhVAV
 X-Developer-Key: i=konrad.dybcio@oss.qualcomm.com; a=ed25519;
  pk=iclgkYvtl2w05SSXO5EjjSYlhFKsJ+5OSZBjOkQuEms=
 X-BeenThere: linux-phy@lists.infradead.org
@@ -86,45 +85,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The USB43DP QMP PHY, as the name suggests, supports USB4 in addition to
-DP/USB. This series provides the necessary plumbing to switch to that
-mode of operation on hamoa/purwa.
+From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 
-This is achieved by exposing a third `struct phy *` for the USB4 sub-
-PHY, which will be toggled by the USB4 router driver, living within the
-Thunderbolt framework, which will be posted separately.
+Some instances of the QMP combo PHY (called USB43DP) feature a third
+functional sub-block, responsible for USB4/Thunderbolt 3 communication.
 
-Find more details in the individual commit messages. Tested on a
-X1E80100 CRD.
+Compared to the today's state of the binding, one more clock (P2RR2P -
+PHY-to-Router, Router-to-PHY) needs to be enabled for the PHY to be
+able to switch to USB4 mode. Allow that for X1E.
 
-No external dependencies.
+Also, add a bindings define to let consumers access it.
 
 Signed-off-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 ---
-Konrad Dybcio (5):
-      dt-bindings: phy: qcom,qmp-usb3-dp: Extend X1E description for USB4
-      phy: core: Define TBT phy_mode
-      phy: qualcomm: qmp-combo: Add preliminary USB4 support
-      phy: qualcomm: qmp-combo: Add USB4/TBT3 configuration data for Hamoa
-      arm64: dts: qcom: hamoa: Extend QMPPHY description for USB4
+ .../devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml         | 3 ++-
+ include/dt-bindings/phy/phy-qcom-qmp.h                                 | 1 +
+ 2 files changed, 3 insertions(+), 1 deletion(-)
 
- .../phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml         |   3 +-
- arch/arm64/boot/dts/qcom/hamoa.dtsi                |  18 +-
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c          | 592 ++++++++++++++++++---
- drivers/phy/qualcomm/phy-qcom-qmp-pcs-aon-v6.h     |   2 +
- drivers/phy/qualcomm/phy-qcom-qmp-pcs-usb-v6.h     |  15 +
- .../phy/qualcomm/phy-qcom-qmp-qserdes-txrx-v6_n4.h |  45 ++
- include/dt-bindings/phy/phy-qcom-qmp.h             |   1 +
- include/linux/phy/phy-tbt.h                        |  14 +
- include/linux/phy/phy.h                            |   2 +
- 9 files changed, 609 insertions(+), 83 deletions(-)
----
-base-commit: e98d21c170b01ddef366f023bbfcf6b31509fa83
-change-id: 20260518-topic-usb4phy-e9612f5ba008
+diff --git a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
+index 3d537b7f9985..eba4bee474fb 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,sc8280xp-qmp-usb43dp-phy.yaml
+@@ -52,7 +52,7 @@ properties:
+       - const: ref
+       - const: com_aux
+       - const: usb3_pipe
+-      - const: cfg_ahb
++      - enum: [ p2rr2p_pipe, cfg_ahb ]
+ 
+   power-domains:
+     maxItems: 1
+@@ -186,6 +186,7 @@ allOf:
+           enum:
+             - qcom,sc7180-qmp-usb3-dp-phy
+             - qcom,sdm845-qmp-usb3-dp-phy
++            - qcom,x1e80100-qmp-usb3-dp-phy
+     then:
+       properties:
+         clocks:
+diff --git a/include/dt-bindings/phy/phy-qcom-qmp.h b/include/dt-bindings/phy/phy-qcom-qmp.h
+index 6b43ea9e0051..1c3ce0c02b0c 100644
+--- a/include/dt-bindings/phy/phy-qcom-qmp.h
++++ b/include/dt-bindings/phy/phy-qcom-qmp.h
+@@ -16,6 +16,7 @@
+ /* QMP USB4-USB3-DP PHYs */
+ #define QMP_USB43DP_USB3_PHY		0
+ #define QMP_USB43DP_DP_PHY		1
++#define QMP_USB43DP_USB4_PHY		2
+ 
+ /* QMP PCIE PHYs */
+ #define QMP_PCIE_PIPE_CLK		0
 
-Best regards,
---  
-Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+-- 
+2.54.0
 
 
 -- 
