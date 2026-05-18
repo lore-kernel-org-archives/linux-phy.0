@@ -4,52 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73961CD4F52
-	for <linux-phy@archiver.kernel.org>; Mon, 18 May 2026 11:03:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CB09BCD4F52
+	for <linux-phy@archiver.kernel.org>; Mon, 18 May 2026 11:30:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Fzex2UBbcSRiJ9wPPy1XdbglK4mbqsh/ephVx+xoRlw=; b=YQ+Z39GjWeyLxs
-	0ldtEf0CgpSWlanW12VvP+j5wqmGazHIqBKNSKrxAg3Fw/NO7t9hTXIRKRGAE7DY20HJCZQ7NeNWY
-	ZVV7SAp6ZGHLsATRBUwoWorANsU0N8phqJi94PqHx5iQ1rGwZLRIMXulqV+iKCcCK2uuSpIebSN50
-	CUe1skEXnSMCdrQdSNCDyx/4A+2puqxOUpq9Ow+2rFyPRZ4GCEPDkvFf8q3epp+JwBJJPZm6ieYBp
-	06V+ceRpZInKzNWw3sNrokU01NrLYs77fgXcgVEZRNqJm6vslrta3BoxNul5HTzAmj9sZ+M7QOYrK
-	l1BKCkF0MraPvUZYoZBw==;
+	List-Owner; bh=ZeUdvs6TODhtiFEm3sVzGdVkKsjvEhPvsZ3Mc2rSSVE=; b=mB9cvKZrJ/W5HD
+	f9P9BA7VxEsUpjt94+aCskZzwMlZmkbS3ff2PvHsTtjcDBSunCqixse+R3LooKwfbmhxIS+Lthdh9
+	srvYj4NCc3o3lJdcAstMQDy/rv3BPE4DC8E38a42cHHMTlmXP2WRhdqp8LluPhuugH52SBhB9mfit
+	NMO9lIieRFxulqTUt6OzkDdeZrBgBz6BmzmcHP+G0W6JqpOGRDMMgPiPC/6z28WZWDd/A6cQUyhOp
+	3IWTVRI/9IwQnh7dDenJTOF3ZoOH6USHjAfj5RftCpNaTd+NO22+a4mWadOFdYbt/YEgTWnUvBcDX
+	NzS8J0oaq5mLw13uAJvQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wOvkq-0000000FMe4-05YN;
-	Mon, 18 May 2026 11:03:24 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1wOwBT-0000000FRJl-27ef;
+	Mon, 18 May 2026 11:30:55 +0000
+Received: from smtp.forwardemail.net ([121.127.44.66])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wOvko-0000000FMdj-28eG
+	id 1wOwBP-0000000FRH4-2ssR
 	for linux-phy@lists.infradead.org;
-	Mon, 18 May 2026 11:03:22 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 9A1F760055;
-	Mon, 18 May 2026 11:03:21 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id F1C39C2BCB8;
-	Mon, 18 May 2026 11:03:20 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1779102201;
-	bh=RC+EB6AGqYPaOpeRYcttsp5h/6sH2zJN0L9kROF4HRU=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date:From;
-	b=XWZhN6x0RQcRVf6MWIXcbqcjAKAebH1ThNb1XrDU59wyjlmBjgkKA/Bdwt9mlHxYH
-	 ysTE6ZnpfyAOP8HwRdGs53d3P1xeHbhgpakRoZLSSulPebjb+dLq9CWmXdwmCGVmpu
-	 Karo4wzXgPtHvsRlCBKYUHd78hti6hxkkzmgFNEab7iStYWutqwBfhTcKWlyduRhwS
-	 qA8uKGb24PgkpshnYeYSeaQnVt5QU6/hHhjPWpi13HE1oJvO5eenb/6rHyhQIlsLZd
-	 h+qCT/lTU8R2BdQBZoRYpCAfRbU69Rt83g0X4QFkNYw+8tp+xnVAnzql0JTiEk7mzN
-	 cDr7kfOJm9kVQ==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH 2/5] phy: core: Define TBT phy_mode
-To: "Konrad Dybcio" <konradybcio@kernel.org>
-Cc: olteanv@gmail.com, conor+dt@kernel.org, devicetree@vger.kernel.org, vkoul@kernel.org, linux-phy@lists.infradead.org, robh@kernel.org, neil.armstrong@linaro.org
-In-Reply-To: <20260518-topic-usb4phy-v1-2-71d827c49dca@oss.qualcomm.com>
-References: <20260518-topic-usb4phy-v1-2-71d827c49dca@oss.qualcomm.com>
-Date: Mon, 18 May 2026 11:03:20 +0000
-Message-Id: <20260518110320.F1C39C2BCB8@smtp.kernel.org>
+	Mon, 18 May 2026 11:30:53 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kwiboo.se;
+ h=Content-Transfer-Encoding: Content-Type: In-Reply-To: From: References:
+ Cc: To: Subject: MIME-Version: Date: Message-ID; q=dns/txt;
+ s=fe-e1b5cab7be; t=1779103844;
+ bh=oKUtByP6fF4AypeEupS0cYqkKaLgZeEGVKbSVhRby8E=;
+ b=HrLofn58jRb1q0X59cjtaR8D8ZpdTYvs+bE0dk6ggDU6a65+Qfr2glEJuyFEZBam6+q6UkmkH
+ OeEXVXh+h+VixNxytB3soJXXLhqKRPtnan44u6FX3J7w52Vqm5dlUQQ/C9Z6kzJFa4opW7BHwrE
+ gkD9LDeeh0FvQmpCpuHdXA8puAyfUBVV7eB1aqZmxNbcVv6LP/iWG7P+WevX67UgLsIoF7ErRas
+ eexW/UuINmwreW8A/TT5MjwBUTte3NE/GyDKmX44sjRVbCpp+Lcg/lC/fvYfKcdhmkekLn77FPY
+ /g9zv5SL/JT+78M0WjdxBbIaVQK62EwIVBp6UiQwuQkQ==
+X-Forward-Email-ID: 6a0af5de2fc1d62a42a3115f
+X-Forward-Email-Sender: rfc822; jonas@kwiboo.se, smtp.forwardemail.net,
+ 121.127.44.66
+X-Forward-Email-Version: 2.8.12
+X-Forward-Email-Website: https://forwardemail.net
+X-Complaints-To: abuse@forwardemail.net
+X-Report-Abuse: abuse@forwardemail.net
+X-Report-Abuse-To: abuse@forwardemail.net
+Message-ID: <b80598df-9fa0-4868-9704-075688786a92@kwiboo.se>
+Date: Mon, 18 May 2026 13:19:55 +0200
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 1/2] phy: rockchip: inno-hdmi: Add configure() and
+ validate() ops
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>,
+ Heiko Stuebner <heiko@sntech.de>, linux-phy@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+References: <20260515195512.1757363-1-jonas@kwiboo.se>
+ <20260515195512.1757363-2-jonas@kwiboo.se>
+ <d69b500b-0473-496d-b17e-c60ce9839e0c@kwiboo.se> <agny1ER5j6om9hIT@vaman>
+Content-Language: en-US
+From: Jonas Karlman <jonas@kwiboo.se>
+In-Reply-To: <agny1ER5j6om9hIT@vaman>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260518_043051_813747_AA0CE557 
+X-CRM114-Status: GOOD (  22.41  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -61,59 +76,124 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW01lZGl1bV0gVGhlIHRidF9waHlf
-c3VibW9kZSBlbnVtIGltcGxpY2l0bHkgc2V0cyBQSFlfU1VCTU9ERV9UQlQzIHRvIDAsIG1ha2lu
-ZyBpdCB0aGUgaGlkZGVuIGRlZmF1bHQgc3VibW9kZSBmb3IgcGh5X3NldF9tb2RlKCkuCi0gW0xv
-d10gVXNpbmcgUEhZX01PREVfVEJUIGFzIHRoZSBnZW5lcmljIG1vZGUgd2l0aCBVU0I0IGFzIGEg
-c3VibW9kZSBjb25jZXB0dWFsbHkgaW52ZXJ0cyB0aGUgaW5kdXN0cnkgc3RhbmRhcmQgaGllcmFy
-Y2h5LgotLQoKY29tbWl0IGYxYWQzM2NhMWVkNjJhYThkNGFiODA2Y2VkMDk5MDhkNGU5ZjM2MjUK
-QXV0aG9yOiBLb25yYWQgRHliY2lvIDxrb25yYWQuZHliY2lvQG9zcy5xdWFsY29tbS5jb20+Cgpw
-aHk6IGNvcmU6IERlZmluZSBUQlQgcGh5X21vZGUKClRoaXMgY29tbWl0IGludHJvZHVjZXMgYSBu
-ZXcgUEhZIG1vZGUgZm9yIFRodW5kZXJib2x0IChUQlQpIGFuZCBVU0I0IFBIWXMKdGhhdCByZXF1
-aXJlIHNwZWNpZmljIGVsZWN0cmljYWwgYW5kIGFuYWxvZyBjb25maWd1cmF0aW9ucy4gSXQgZGVm
-aW5lcwpQSFlfTU9ERV9UQlQgYWxvbmcgd2l0aCBQSFlfU1VCTU9ERV9UQlQzIGFuZCBQSFlfU1VC
-TU9ERV9VU0I0IHN1Ym1vZGVzLgoKPiBkaWZmIC0tZ2l0IGEvaW5jbHVkZS9saW51eC9waHkvcGh5
-LXRidC5oIGIvaW5jbHVkZS9saW51eC9waHkvcGh5LXRidC5oCj4gbmV3IGZpbGUgbW9kZSAxMDA2
-NDQKPiBpbmRleCAwMDAwMDAwMDAwMDAwLi41ZjQ4MDU5ODE0ZTE5Cj4gLS0tIC9kZXYvbnVsbAo+
-ICsrKyBiL2luY2x1ZGUvbGludXgvcGh5L3BoeS10YnQuaAo+IEBAIC0wLDAgKzEsMTQgQEAKPiAr
-LyogU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IEdQTC0yLjAgKi8KPiArLyoKPiArICogQ29weXJp
-Z2h0IChjKSBRdWFsY29tbSBUZWNobm9sb2dpZXMsIEluYy4gYW5kL29yIGl0cyBzdWJzaWRpYXJp
-ZXMuCj4gKyAqLwo+ICsKPiArI2lmbmRlZiBfX1BIWV9UQlRfSF8KPiArI2RlZmluZSBfX1BIWV9U
-QlRfSF8KPiArCj4gK2VudW0gdGJ0X3BoeV9zdWJtb2RlIHsKPiArCVBIWV9TVUJNT0RFX1RCVDMs
-CgpTaW5jZSBQSFlfU1VCTU9ERV9UQlQzIGlzIHRoZSBmaXJzdCBlbGVtZW50LCBpdCBpbXBsaWNp
-dGx5IGV2YWx1YXRlcyB0byAwLgoKVGhlIGdlbmVyaWMgcGh5X3NldF9tb2RlKHBoeSwgbW9kZSkg
-bWFjcm8gaW4gaW5jbHVkZS9saW51eC9waHkvcGh5Lmggd3JhcHMKcGh5X3NldF9tb2RlX2V4dChw
-aHksIG1vZGUsIDApLgoKRG9lcyB0aGlzIG1lYW4gYW55IGRyaXZlciBjYWxsaW5nIHBoeV9zZXRf
-bW9kZShwaHksIFBIWV9NT0RFX1RCVCkgd2lsbApzaWxlbnRseSBkZWZhdWx0IHRvIHJlcXVlc3Rp
-bmcgdGhlIGxlZ2FjeSBUQlQzIGVsZWN0cmljYWwvdGltaW5nCmNvbmZpZ3VyYXRpb24gaW5zdGVh
-ZCBvZiBVU0I0PwoKV291bGQgaXQgYmUgc2FmZXIgdG8gcmVzZXJ2ZSAwIGZvciBhbiB1bnNwZWNp
-ZmllZCBzdGF0ZSAoZS5nLiwKUEhZX1NVQk1PREVfVU5TUEVDSUZJRUQgPSAwKSB0byBmb3JjZSBl
-eHBsaWNpdCBzdWJtb2RlIHNlbGVjdGlvbiwgb3IgdG8KbWFrZSB0aGUgbW9kZXJuIHN0YW5kYXJk
-IChVU0I0KSB0aGUgZGVmYXVsdD8KCj4gKwlQSFlfU1VCTU9ERV9VU0I0LAo+ICt9Owo+ICsKPiAr
-I2VuZGlmCgo+IGRpZmYgLS1naXQgYS9pbmNsdWRlL2xpbnV4L3BoeS9waHkuaCBiL2luY2x1ZGUv
-bGludXgvcGh5L3BoeS5oCj4gaW5kZXggZWE0Nzk3NWUyODhhZS4uMjZhOTFjMDcwZjhjZSAxMDA2
-NDQKPiAtLS0gYS9pbmNsdWRlL2xpbnV4L3BoeS9waHkuaAo+ICsrKyBiL2luY2x1ZGUvbGludXgv
-cGh5L3BoeS5oCgpbIC4uLiBdCgo+IEBAIC00NSw2ICs0Niw3IEBAIGVudW0gcGh5X21vZGUgewo+
-ICAJUEhZX01PREVfTFZEUywKPiAgCVBIWV9NT0RFX0RQLAo+ICAJUEhZX01PREVfSERNSSwKPiAr
-CVBIWV9NT0RFX1RCVCwKCklzIHVzaW5nIFBIWV9NT0RFX1RCVCBhcyB0aGUgZ2VuZXJpYyBtb2Rl
-IHdpdGggVVNCNCBhcyBhIHN1Ym1vZGUgdGhlIGJlc3QKaGllcmFyY2h5IGhlcmU/CgpVU0I0IGlz
-IHRoZSBmb3VuZGF0aW9uYWwgb3BlbiBzdGFuZGFyZCBlc3RhYmxpc2hlZCBieSB0aGUgVVNCLUlG
-LCBhbmQgdGhlCkxpbnV4IGtlcm5lbCBVU0IgYW5kIFR5cGUtQyBzdWJzeXN0ZW1zIG5hdGl2ZWx5
-IHRyZWF0IFVTQjQgYXMgdGhlIHByaW1hcnkKbW9kZSAoZS5nLiwgVFlQRUNfTU9ERV9VU0I0KS4K
-CkNvdWxkIGdyb3VwaW5nIFVTQjQgdW5kZXIgYSBUaHVuZGVyYm9sdCBQSFkgbW9kZSBjYXVzZSBz
-ZW1hbnRpYyBjb25mdXNpb24KYW5kIGNvbnRyYWRpY3QgZXhpc3Rpbmcga2VybmVsIFVTQiBub21l
-bmNsYXR1cmU/IE1pZ2h0IGl0IGJlIG1vcmUKY29uc2lzdGVudCB0byB1c2UgUEhZX01PREVfVVNC
-NCBhcyB0aGUgcHJpbWFyeSBtb2RlLCB3aXRoIFRCVDMgYXMgYQpsZWdhY3kgZmFsbGJhY2sgc3Vi
-bW9kZT8KCj4gIH07Cj4gIAo+ICBlbnVtIHBoeV9tZWRpYSB7CgotLSAKU2FzaGlrbyBBSSByZXZp
-ZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRldi8jL3BhdGNoc2V0LzIwMjYwNTE4LXRvcGljLXVzYjRw
-aHktdjEtMC03MWQ4MjdjNDlkY2FAb3NzLnF1YWxjb21tLmNvbT9wYXJ0PTIKCi0tIApsaW51eC1w
-aHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlz
-dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+On 5/17/2026 6:54 PM, Vinod Koul wrote:
+> On 15-05-26, 23:04, Jonas Karlman wrote:
+>> Hi,
+>>
+>> On 5/15/2026 9:55 PM, Jonas Karlman wrote:
+>>> The commit 10ed34d6eaaf ("phy: Add HDMI configuration options")
+>>> introduced a way for HDMI PHYs to be configured through the generic
+>>> phy_configure() function.
+>>>
+>>> This driver derives the TMDS character rate from the pixel clock and the
+>>> PHY bus width setting. However, no in-tree consumer of this PHY has ever
+>>> called phy_set_bus_width() to change the TMDS character rate as only
+>>> 8-bit RGB output is supported by the HDMI display driver.
+>>>
+>>> Add configure() and validate() ops to allow consumers to configure the
+>>> TMDS character rate using phy_configure(). Fallback to the deprecated
+>>> way of using the PHY bus width to configure the TMDS character rate.
+>>>
+>>> A typical call chain during DRM modeset on a RK3328 device:
+>>>
+>>>   dw_hdmi_rockchip_encoder_atomic_check():
+>>>   - inno_hdmi_phy_validate(): pixclock 148500000 tmdsclock 594000000
+>>>
+>>>   dw_hdmi_rockchip_encoder_atomic_mode_set():
+>>>   - inno_hdmi_phy_configure(): pixclock 148500000
+>>>     - inno_hdmi_phy_validate(): pixclock 148500000 tmdsclock 594000000
+>>>
+>>>   vop_crtc_atomic_enable():
+>>>   - inno_hdmi_phy_rk3328_clk_set_rate(): rate 594000000 tmdsclk 594000000
+>>>   - inno_hdmi_phy_rk3328_clk_set_rate(): pixclock 594000000 tmdsclock 594000000
+>>>   - inno_hdmi_phy_rk3328_clk_recalc_rate(): pixclock 594000000 vco 594000000
+>>>
+>>>   dw_hdmi_rockchip_encoder_enable():
+>>>   - inno_hdmi_phy_power_on(): Inno HDMI PHY Power On
+>>>   - inno_hdmi_phy_rk3328_clk_set_rate(): rate 594000000 tmdsclk 594000000
+>>>
+>>> Signed-off-by: Jonas Karlman <jonas@kwiboo.se>
+>>> ---
+>>> Changes in v3:
+>>> - Change validate() ops to only validate tmdsclock
+>>> - Add comments about expected consumer usage
+>>> - Update commit message with a typical call chain
+>>> Changes in v2:
+>>> - Add validate() ops to validate that the TMDS rate is supported
+>>> - Split out parts that remove the old workaround into a separate patch
+>>>
+>>> Patch "drm/rockchip: dw_hdmi: Configure HDMI PHY in atomic_mode_set()"
+>>> at [1] adds phy_validate() and phy_configure() calls for this HDMI PHY.
+>>>
+>>> [1] https://lore.kernel.org/dri-devel/20260510183114.1248840-10-jonas@kwiboo.se/
+>>> ---
+>>>  drivers/phy/rockchip/phy-rockchip-inno-hdmi.c | 60 ++++++++++++++++++-
+>>>  1 file changed, 59 insertions(+), 1 deletion(-)
+>>
+>> [snip]
+>>
+>>> +static int inno_hdmi_phy_validate(struct phy *phy, enum phy_mode mode,
+>>> +				  int submode, union phy_configure_opts *opts)
+>>> +{
+>>> +	const struct pre_pll_config *cfg = pre_pll_cfg_table;
+>>> +	unsigned long tmdsclock;
+>>> +
+>>> +	if (!(mode == PHY_MODE_HDMI && submode == PHY_HDMI_MODE_TMDS))
+>>> +		return -EINVAL;
+>>> +
+>>> +	if (!opts->hdmi.tmds_char_rate || opts->hdmi.tmds_char_rate > 594000000)
+>>> +		return -EINVAL;
+>>
+>> Sashiko reasoning log pointed out that a consumer of phy_validate() or
+>> phy_configure() can make a call with opts=NULL, so I may likely send a
+>> v4 of this series to fix such possible NULL pointer dereference here.
+> 
+> Yes please
+
+I will send a v4 that includes a NULL check, thanks.
+
+> 
+>>
+>> Or is that something that possible should be checked before phy core
+>> calls the .validate()/.configure() ops?
+> 
+> The opts is an optional argument depending upon the mode to be valid. So
+> we cant do that in the core...
+> 
+>>
+>> Multiple other phy .configure() ops seem to dereference opts members
+>> without any type of opts NULL check. (next-20260508)
+> 
+> We should fix these
+> 
+> 
+> PS: Any reason why you are sending encypted emails?
+
+Hopefully you find a way to read this :-)
+
+My email provider tries to be smart and encrypts any outgoing mail when
+there is a PGP key published for a recipient in a Web Key Directory,
+something that kernel.org has [2].
+
+I raised an issue with the provider and was hoping that the change they
+made [3] would fix the issue, and it looks like your published PGP key
+is not sign-only and is in fact encryption-capable.
+
+Will open a new issue and ask them to add some way to fully disable use
+of automatic encryption on outgoing mails.
+
+[2] https://www.kernel.org/category/signatures.html
+[3] https://github.com/forwardemail/forwardemail.net/commit/88def5438a8da678252c234e876d3cdd469a8202
+
+Regards,
+Jonas
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
