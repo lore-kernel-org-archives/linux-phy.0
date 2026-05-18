@@ -4,52 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 229DDCD4F4A
-	for <linux-phy@archiver.kernel.org>; Mon, 18 May 2026 17:29:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1D99DCD4F3C
+	for <linux-phy@archiver.kernel.org>; Mon, 18 May 2026 18:07:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=shy4VQTsrhPxb07/HKVcnF142nyP64YICCtMilafyec=; b=gnfGEbhEOw8gpG
-	PwWG5PJke1A2pVFozhQPQdtkeAWeh0YgEhZzgE4H8X9QdkFCSuXX+sbCUlO2rhgWN5rhEa0ul/l2A
-	vire55GbMddrrfqjS83iDcQNKpCcOI6oIm72jhPJAr0/JCAV/WDX70mTi5I5VWUZ4AiV4t91mGrmt
-	I/YtSwdIRMKfjh1rD8jmTMynnbHv+iIX/E/RFV76jbfq4DRY0N077bWDH6caMac8lPYbV4yIyWk8G
-	7zh3OpNf11VZuDB3YlVvRJdCyF1fY50YeNUgEJjqufAUFdQkKoJU1EblzB1WZAfAl5XDi8oIc+hkZ
-	UHBW6BweBGZB5WKeK4qA==;
+	List-Owner; bh=Z6ddkCDLUf1ntet0zk8G8U+sWdAjzQUSQ0cdZ8DeVLM=; b=Lbdx6QdWhYQLmu
+	jIWBlQlle+3de3waI5ukQHUsdGxSrzeICEjyVJfRsE6uRfFcLtyHv9r+yR3Gnz+phSeyyNLczd2zS
+	jTGdkI9c9BcNY0Zoo4JSCtN0PmEH7kPzoR2CR46DaOfRXBfZ/S2Cx1LUIoLhYn7ALDZaqV5r2L5iF
+	ikyZkWmPDxSR+mIga26uM/4S3CgJCGfSrS3SD7UQqQv6QVtmnFoGJdeGUakpLM7ojAZQGgZl3/0GS
+	mzrGQOLf217AiCIaJkIkAuyOO51dTBJi2G+YOSKR9Ih7vuCsMP3TG8TO7fa70eL6U1ruQy5bA8oeq
+	D5/670+QrIq2GJiWcXpA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wP1mn-0000000GPYW-2Mwv;
-	Mon, 18 May 2026 17:29:49 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wP2NN-0000000GW4C-3HPD;
+	Mon, 18 May 2026 18:07:37 +0000
+Received: from smtp.forwardemail.net ([121.127.44.73])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wP1ml-0000000GPYB-0Z1y
+	id 1wP2NJ-0000000GW25-2p62
 	for linux-phy@lists.infradead.org;
-	Mon, 18 May 2026 17:29:47 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id AFC00600CB;
-	Mon, 18 May 2026 17:29:45 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 657FFC2BCB7;
-	Mon, 18 May 2026 17:29:44 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1779125385;
-	bh=MT5hotBsGBvGo6ebLCh0/y2UPVnF0qNyMVgDULEhvWA=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date:From;
-	b=X961oXhFdoMlepy2QzXoDEWGbenkjr9FqAYrpd5emjqgJ2BZxxSeHT/ZKNG1i+oLT
-	 EYn6bs/n9JiIgrNAfiBwsgwVcXcdhaOd5q4xnfOFp/HPpU14M9/CAu+JKhJhRIb+PA
-	 DPu97NF5LUkIXg8luzhtdQC3bLrG4phPP4t4ldRSzyolS763hM70yBIvwibNvjumfC
-	 HjdRRDhr1uU9uWp6MKfzF7nT7SemMHlg5cgDSEXAOtBxEYFTflymKBgu4sHOTNul4M
-	 9YhhSaGiPNwCGUUlt1vpZtPOCKheZuNwCs701OYah9VxzJtk1adnPVoVe1Yzp5mJD1
-	 G3p+J+9lR6v4w==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH V1 3/3] phy: qcom-qmp-ufs: Add UFS PHY support on Hawi
-To: palash.kambar@oss.qualcomm.com
-Cc: robh@kernel.org, conor+dt@kernel.org, devicetree@vger.kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com, linux-phy@lists.infradead.org
-In-Reply-To: <20260518165346.1732548-4-palash.kambar@oss.qualcomm.com>
-References: <20260518165346.1732548-4-palash.kambar@oss.qualcomm.com>
-Date: Mon, 18 May 2026 17:29:43 +0000
-Message-Id: <20260518172944.657FFC2BCB7@smtp.kernel.org>
+	Mon, 18 May 2026 18:07:36 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kwiboo.se;
+ h=Content-Transfer-Encoding: MIME-Version: References: In-Reply-To:
+ Message-ID: Date: Subject: Cc: To: From; q=dns/txt; s=fe-e1b5cab7be;
+ t=1779127653; bh=Om2PZYrmAnT0z+VXLPIUjC0V4XlIZRqSgVsbqfTyzpU=;
+ b=CTs4xSClzUecYJC5Xyz4o1Rfk7ez4qV+36dTHk4iyYs1PCEpmgolI43lAtfqpSh0crVmuC1UG
+ 8x7yFOzsK2qEYznc9XWFaW4Fh40CZhBKNs8LdDpACZ5Im25sJZBNTLYlo3XJnInRzAYRstfXx9M
+ 9wn/ypojRycwV0j7j9E68Mt11bIv1GQOtPq1I9a0RklTdBQelKenTItrqCZzqaT2Th3ZP2FPYNq
+ vJYZlPUwtVw/NTp98m6JZIN5oje3cmuCprRqqQ4/CD9dp/+qr0mRDOQ0HhYCavWspvh4HRwBos5
+ Ctbo6pH9rQ2fuUfP/Le0f4Ez5KnJ0d5jzKSGbZP44VgA==
+X-Forward-Email-ID: 6a0b5563b74b0ebd362ee060
+X-Forward-Email-Sender: rfc822; jonas@kwiboo.se, smtp.forwardemail.net,
+ 121.127.44.73
+X-Forward-Email-Version: 2.8.12
+X-Forward-Email-Website: https://forwardemail.net
+X-Complaints-To: abuse@forwardemail.net
+X-Report-Abuse: abuse@forwardemail.net
+X-Report-Abuse-To: abuse@forwardemail.net
+From: Jonas Karlman <jonas@kwiboo.se>
+To: Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Heiko Stuebner <heiko@sntech.de>
+Cc: linux-phy@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Jonas Karlman <jonas@kwiboo.se>
+Subject: [PATCH v4 1/2] phy: rockchip: inno-hdmi: Add configure() and validate() ops
+Date: Mon, 18 May 2026 18:07:20 +0000
+Message-ID: <20260518180722.2480799-2-jonas@kwiboo.se>
+X-Mailer: git-send-email 2.54.0
+In-Reply-To: <20260518180722.2480799-1-jonas@kwiboo.se>
+References: <20260518180722.2480799-1-jonas@kwiboo.se>
+MIME-Version: 1.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260518_110733_807889_072C58AC 
+X-CRM114-Status: GOOD (  22.73  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -61,69 +74,172 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIE1pc3NpbmcgVUZTIEhT
-LUc0IGdlYXIgY29uZmlndXJhdGlvbiBvdmVybGF5IGZvciB0aGUgSGF3aSBQSFkgd2lsbCBsZWF2
-ZSBjcml0aWNhbCBoYXJkd2FyZSBjYXBhYmlsaXRpZXMgdW5pbml0aWFsaXplZCBkdXJpbmcgRzQg
-bmVnb3RpYXRpb24uCi0tCgpjb21taXQgYTBkODNkZmU4YTMyMDNiNTA2ZDQ1ZDVjODI2MmY3ZjBi
-MTRkODEwYQpBdXRob3I6IFBhbGFzaCBLYW1iYXIgPHBhbGFzaC5rYW1iYXJAb3NzLnF1YWxjb21t
-LmNvbT4KCnBoeTogcWNvbS1xbXAtdWZzOiBBZGQgVUZTIFBIWSBzdXBwb3J0IG9uIEhhd2kKCkFk
-ZHMgdGhlIGluaXRpYWxpemF0aW9uIHNlcXVlbmNlIHRhYmxlcyBhbmQgY29uZmlndXJhdGlvbiBm
-b3IgdGhlIFVGUwpRTVAgUEhZIGZvdW5kIGluIHRoZSBIYXdpIFNvQy4KCj4gZGlmZiAtLWdpdCBh
-L2RyaXZlcnMvcGh5L3F1YWxjb21tL3BoeS1xY29tLXFtcC11ZnMuYyBiL2RyaXZlcnMvcGh5L3F1
-YWxjb21tL3BoeS1xY29tLXFtcC11ZnMuYwo+IC0tLSBhL2RyaXZlcnMvcGh5L3F1YWxjb21tL3Bo
-eS1xY29tLXFtcC11ZnMuYwo+ICsrKyBiL2RyaXZlcnMvcGh5L3F1YWxjb21tL3BoeS1xY29tLXFt
-cC11ZnMuYwpbIC4uLiBdCj4gQEAgLTE4NDQsNiArMTg2OCwxMTkgQEAgc3RhdGljIGNvbnN0IHN0
-cnVjdCBxbXBfcGh5X2NmZyBzbTg3NTBfdWZzcGh5X2NmZyA9IHsKWyAuLi4gXQo+ICtzdGF0aWMg
-Y29uc3Qgc3RydWN0IHFtcF9waHlfaW5pdF90YmwgaGF3aV91ZnNwaHlfZzVfcGNzW10gPSB7Cj4g
-KwlRTVBfUEhZX0lOSVRfQ0ZHKFFQSFlfVjdfUENTX1VGU19QTExfQ05UTCwgMHgzYiksCj4gKwlR
-TVBfUEhZX0lOSVRfQ0ZHKFFQSFlfVjdfUENTX1VGU19UWF9IU0dFQVJfQ0FQQUJJTElUWSwgMHgw
-NSksCj4gKwlRTVBfUEhZX0lOSVRfQ0ZHKFFQSFlfVjdfUENTX1VGU19SWF9IU0dFQVJfQ0FQQUJJ
-TElUWSwgMHgwNSksCj4gK307Cj4gKwo+ICtzdGF0aWMgY29uc3Qgc3RydWN0IHFtcF9waHlfY2Zn
-IGhhd2lfdWZzcGh5X2NmZyA9IHsKPiArCS5sYW5lcwkJCT0gMiwKPiArCj4gKwkub2Zmc2V0cwkJ
-PSAmcW1wX3Vmc19vZmZzZXRzX3Y3LAo+ICsJLm1heF9zdXBwb3J0ZWRfZ2Vhcgk9IFVGU19IU19H
-NSwKPiArCj4gKwkudGJscyA9IHsKPiArCQkuc2VyZGVzCQk9IGhhd2lfdWZzcGh5X3NlcmRlcywK
-PiArCQkuc2VyZGVzX251bQk9IEFSUkFZX1NJWkUoaGF3aV91ZnNwaHlfc2VyZGVzKSwKPiArCQku
-dHgJCT0gaGF3aV91ZnNwaHlfdHgsCj4gKwkJLnR4X251bQkJPSBBUlJBWV9TSVpFKGhhd2lfdWZz
-cGh5X3R4KSwKPiArCQkucngJCT0gaGF3aV91ZnNwaHlfcngsCj4gKwkJLnJ4X251bQkJPSBBUlJB
-WV9TSVpFKGhhd2lfdWZzcGh5X3J4KSwKPiArCQkucGNzCQk9IGhhd2lfdWZzcGh5X3BjcywKPiAr
-CQkucGNzX251bQk9IEFSUkFZX1NJWkUoaGF3aV91ZnNwaHlfcGNzKSwKPiArCX0sCj4gKwo+ICsJ
-LnRibHNfaHNfb3ZlcmxheVswXSA9IHsKPiArCQkucGNzCQk9IGhhd2lfdWZzcGh5X2c1X3BjcywK
-PiArCQkucGNzX251bQk9IEFSUkFZX1NJWkUoaGF3aV91ZnNwaHlfZzVfcGNzKSwKPiArCQkubWF4
-X2dlYXIJPSBVRlNfSFNfRzUsCj4gKwl9LAo+ICsKCklzIHRoZXJlIGEgbWlzc2luZyBVRlMgSFMt
-RzQgZ2VhciBjb25maWd1cmF0aW9uIG92ZXJsYXkgZm9yIHRoZSBIYXdpIFBIWSBoZXJlPwoKV2hl
-biB0aGUgVUZTIGNvbnRyb2xsZXIgbmVnb3RpYXRlcyBIUy1HNCAoZS5nLiwgY29ubmVjdGVkIHRv
-IGEgRzQtb25seQpkZXZpY2Ugb3IgZHVyaW5nIGZhbGxiYWNrKSBhbmQgcmVxdWVzdHMgdGhlIFBI
-WSB0byBvcGVyYXRlIGF0IEc0LApxbXBfdWZzX2dldF9nZWFyX292ZXJsYXkoKSB3aWxsIGZhaWwg
-dG8gZmluZCBhIG1hdGNoaW5nIGNvbmZpZ3VyYXRpb24uCgpJbiBxbXBfdWZzX2dldF9nZWFyX292
-ZXJsYXkoKSwgaXQgaW5pdGlhbGl6ZXMgZmxvb3JfbWF4X2dlYXIgdG8gNS4KSXQgdGhlbiBjaGVj
-a3MgdGhlIG9ubHkgYXZhaWxhYmxlIHRhYmxlIHdoZXJlIG1heF9nZWFyIGlzIDUuClNpbmNlIHN1
-Ym1vZGUgKDQpID09IG1heF9nZWFyICg1KSBpcyBmYWxzZSwgYW5kIG1heF9nZWFyICg1KSA8CmZs
-b29yX21heF9nZWFyICg1KSBpcyBhbHNvIGZhbHNlLCBpdCByZXR1cm5zIC1FSU5WQUwuCgpCZWNh
-dXNlIHFtcF91ZnNfZ2V0X2dlYXJfb3ZlcmxheSgpIHJldHVybnMgLUVJTlZBTCwKcW1wX3Vmc19p
-bml0X3JlZ2lzdGVycygpIHdpbGwgc2tpcCBhcHBseWluZyBhbnkgb3ZlcmxheS4gVGhpcyBtZWFu
-cwpjYXBhYmlsaXRpZXMgbGlrZSBRUEhZX1Y3X1BDU19VRlNfVFhfSFNHRUFSX0NBUEFCSUxJVFkg
-YXJlIG5ldmVyCnByb2dyYW1tZWQgZHVyaW5nIEc0IG9wZXJhdGlvbi4KCk90aGVyIEc1LWNhcGFi
-bGUgUEhZcyAobGlrZSBzbTg3NTApIHNlZW0gdG8gcHJvdmlkZSBib3RoIEc0IGFuZCBHNSBvdmVy
-bGF5czoKCnN0YXRpYyBjb25zdCBzdHJ1Y3QgcW1wX3BoeV9jZmcgc204NzUwX3Vmc3BoeV9jZmcg
-PSB7ClsgLi4uIF0KCS50YmxzX2hzX292ZXJsYXlbMF0gPSB7CgkJLnBjcwkJPSBzbTg3NTBfdWZz
-cGh5X2c0X3BjcywKCQkucGNzX251bQk9IEFSUkFZX1NJWkUoc204NzUwX3Vmc3BoeV9nNF9wY3Mp
-LAoJCS5tYXhfZ2Vhcgk9IFVGU19IU19HNCwKCX0sCgkudGJsc19oc19vdmVybGF5WzFdID0gewoJ
-CS5wY3MJCT0gc204NjUwX3Vmc3BoeV9nNV9wY3MsCgkJLnBjc19udW0JPSBBUlJBWV9TSVpFKHNt
-ODY1MF91ZnNwaHlfZzVfcGNzKSwKCQkubWF4X2dlYXIJPSBVRlNfSFNfRzUsCgl9LApbIC4uLiBd
-Cn07CgpXaWxsIGxlYXZpbmcgdGhlc2UgdW5pbml0aWFsaXplZCBjYXVzZSBsaW5rIGluc3RhYmls
-aXR5IG9yIGluaXRpYWxpemF0aW9uCmZhaWx1cmUgb24gZGV2aWNlcyBmYWxsaW5nIGJhY2sgdG8g
-SFMtRzQ/Cgo+ICsJLnZyZWdfbGlzdAkJPSBoYXdpX3Vmc3BoeV92cmVnX2wsCj4gKwkubnVtX3Zy
-ZWdzCQk9IEFSUkFZX1NJWkUoaGF3aV91ZnNwaHlfdnJlZ19sKSwKPiArCS5yZWdzCQkJPSB1ZnNw
-aHlfdjdfcmVnc19sYXlvdXQsCj4gK307CgotLSAKU2FzaGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6
-Ly9zYXNoaWtvLmRldi8jL3BhdGNoc2V0LzIwMjYwNTE4MTY1MzQ2LjE3MzI1NDgtMS1wYWxhc2gu
-a2FtYmFyQG9zcy5xdWFsY29tbS5jb20/cGFydD0zCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlz
-dApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5v
-cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+The commit 10ed34d6eaaf ("phy: Add HDMI configuration options")
+introduced a way for HDMI PHYs to be configured through the generic
+phy_configure() function.
+
+This driver derives the TMDS character rate from the pixel clock and the
+PHY bus width setting. However, no in-tree consumer of this PHY has ever
+called phy_set_bus_width() to change the TMDS character rate as only
+8-bit RGB output is supported by the HDMI display driver.
+
+Add configure() and validate() ops to allow consumers to configure the
+TMDS character rate using phy_configure(). Fallback to the deprecated
+way of using the PHY bus width to configure the TMDS character rate.
+
+A typical call chain during DRM modeset on a RK3328 device:
+
+  dw_hdmi_rockchip_encoder_atomic_check():
+  - inno_hdmi_phy_validate(): pixclock 148500000 tmdsclock 594000000
+
+  dw_hdmi_rockchip_encoder_atomic_mode_set():
+  - inno_hdmi_phy_configure(): pixclock 148500000
+    - inno_hdmi_phy_validate(): pixclock 148500000 tmdsclock 594000000
+
+  vop_crtc_atomic_enable():
+  - inno_hdmi_phy_rk3328_clk_set_rate(): rate 594000000 tmdsclk 594000000
+    inno_hdmi_phy_rk3328_clk_set_rate(): pixclock 594000000 tmdsclock 594000000
+  - inno_hdmi_phy_rk3328_clk_recalc_rate(): pixclock 594000000 vco 594000000
+
+  dw_hdmi_rockchip_encoder_enable():
+  - inno_hdmi_phy_power_on(): Inno HDMI PHY Power On
+    - inno_hdmi_phy_rk3328_clk_set_rate(): rate 594000000 tmdsclk 594000000
+
+Signed-off-by: Jonas Karlman <jonas@kwiboo.se>
+---
+Changes in v4:
+- Add NULL opts check in validate()
+- Only store the opts->hdmi.tmds_char_rate value for later use
+- Move comments about expected consumer usage from inline to above the
+  functions
+- Indent a set_rate() sub-call in the commit message call chain
+Changes in v3:
+- Change validate() ops to only validate tmdsclock
+- Add comments about expected consumer usage
+- Update commit message with a typical call chain
+Changes in v2:
+- Add validate() ops to validate that the TMDS rate is supported
+- Split out parts that remove the old workaround into a separate patch
+
+Patch "drm/rockchip: dw_hdmi: Configure HDMI PHY in atomic_mode_set()"
+at [1] adds phy_validate() and phy_configure() calls for this HDMI PHY.
+
+[1] https://lore.kernel.org/dri-devel/20260510183114.1248840-10-jonas@kwiboo.se/
+---
+ drivers/phy/rockchip/phy-rockchip-inno-hdmi.c | 62 ++++++++++++++++++-
+ 1 file changed, 61 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c b/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c
+index 1483907413fa..1c43ea700f0e 100644
+--- a/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c
++++ b/drivers/phy/rockchip/phy-rockchip-inno-hdmi.c
+@@ -245,6 +245,7 @@ struct inno_hdmi_phy {
+ 	struct clk *phyclk;
+ 	unsigned long pixclock;
+ 	unsigned long tmdsclock;
++	unsigned long opts_tmds_char_rate;
+ };
+ 
+ struct pre_pll_config {
+@@ -554,7 +555,12 @@ static inline void inno_update_bits(struct inno_hdmi_phy *inno, u8 reg,
+ static unsigned long inno_hdmi_phy_get_tmdsclk(struct inno_hdmi_phy *inno,
+ 					       unsigned long rate)
+ {
+-	int bus_width = phy_get_bus_width(inno->phy);
++	int bus_width;
++
++	if (inno->opts_tmds_char_rate)
++		return inno->opts_tmds_char_rate;
++
++	bus_width = phy_get_bus_width(inno->phy);
+ 
+ 	switch (bus_width) {
+ 	case 4:
+@@ -602,6 +608,57 @@ static irqreturn_t inno_hdmi_phy_rk3328_irq(int irq, void *dev_id)
+ 	return IRQ_HANDLED;
+ }
+ 
++/*
++ * phy_validate() is expected to be called from encoder atomic_check(), before
++ * the hdmiphy pixel clock is known. Without knowing the actual pixel clock, we
++ * cannot do full validation of the configuration. Instead, we do a simple check
++ * that the pre-pll table contains an entry for the requested TMDS char rate.
++ */
++static int inno_hdmi_phy_validate(struct phy *phy, enum phy_mode mode,
++				  int submode, union phy_configure_opts *opts)
++{
++	const struct pre_pll_config *cfg = pre_pll_cfg_table;
++	unsigned long tmdsclock;
++
++	if (!(mode == PHY_MODE_HDMI && submode == PHY_HDMI_MODE_TMDS))
++		return -EINVAL;
++
++	if (!opts)
++		return -EINVAL;
++
++	if (!opts->hdmi.tmds_char_rate || opts->hdmi.tmds_char_rate > 594000000)
++		return -EINVAL;
++
++	tmdsclock = opts->hdmi.tmds_char_rate;
++	for (; cfg->pixclock != 0; cfg++)
++		if (cfg->tmdsclock == tmdsclock)
++			return 0;
++
++	return -EINVAL;
++}
++
++/*
++ * phy_configure() is expected to be called from encoder atomic_set_mode(),
++ * before the hdmiphy pixel clock is known. Store the requested TMDS character
++ * rate, so that it can be used later in power_on() and/or set_rate() when the
++ * pixel clock is known.
++ */
++static int inno_hdmi_phy_configure(struct phy *phy,
++				   union phy_configure_opts *opts)
++{
++	struct inno_hdmi_phy *inno = phy_get_drvdata(phy);
++	int ret;
++
++	ret = inno_hdmi_phy_validate(phy, phy_get_mode(phy),
++				     PHY_HDMI_MODE_TMDS, opts);
++	if (ret)
++		return ret;
++
++	inno->opts_tmds_char_rate = opts->hdmi.tmds_char_rate;
++
++	return 0;
++}
++
+ static int inno_hdmi_phy_power_on(struct phy *phy)
+ {
+ 	struct inno_hdmi_phy *inno = phy_get_drvdata(phy);
+@@ -670,6 +727,8 @@ static const struct phy_ops inno_hdmi_phy_ops = {
+ 	.owner = THIS_MODULE,
+ 	.power_on = inno_hdmi_phy_power_on,
+ 	.power_off = inno_hdmi_phy_power_off,
++	.configure = inno_hdmi_phy_configure,
++	.validate = inno_hdmi_phy_validate,
+ };
+ 
+ static const
+@@ -1392,6 +1451,7 @@ static int inno_hdmi_phy_probe(struct platform_device *pdev)
+ 	}
+ 
+ 	phy_set_drvdata(inno->phy, inno);
++	phy_set_mode_ext(inno->phy, PHY_MODE_HDMI, PHY_HDMI_MODE_TMDS);
+ 	phy_set_bus_width(inno->phy, 8);
+ 
+ 	if (inno->plat_data->ops->init) {
+-- 
+2.54.0
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
