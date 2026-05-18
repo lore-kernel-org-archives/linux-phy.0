@@ -4,54 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6CE8DCD4F49
-	for <linux-phy@archiver.kernel.org>; Mon, 18 May 2026 14:21:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D55F4CD4F50
+	for <linux-phy@archiver.kernel.org>; Mon, 18 May 2026 14:21:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1NR/WfRb33hbGbVKNrSqp2ShFN/ZJABGxSCZeb9jkxw=; b=sVkBH4DyRJbemh
-	Zke1QdR4Er/w6mFE4YFc+avxlKc3NApZ6Pdf7LUGWmz8LqJJiu5bHaVhJmjclSN4F+oodKHlxOZxg
-	/6MlZKAykHrKiAEUvnztdN6LEu5zxajFf5E2RxRT5C9k0qFg8bJBC3w/H3pa72XHkiT2k4mYtS9Wj
-	560OW489bL6pUvjchOOiChElLICEoxDM2m09lzupT68WhC9sMUOkYi/+HEk3sK4h2OX11k7azIkDN
-	T/DGfRHx1qqoHA4jYA3Ylp4ntn7ZKW+60c6Hu10SMFDNR/pjvIJefkhnQWN4ZNwTa/6CmqpDY3YpU
-	dZs5QQ78N3GGNIE2KZow==;
+	List-Owner; bh=7P7BtVV8rbNpOOprGMllR1NxipfNPsjom8DZxVFboaE=; b=qaH82EjVIywqoa
+	AU61/7kIp/dfMsj/MUNthbHOWpl2CAWjG1r/5ATgMIpeMqsQ1uwmLNa1a6mu0fribpdLoYi7To2y9
+	Y2oGzPhyi7goroCNmP9bDtekJWBdG6bZ++9YxHMEjnmHqoj1c88GHfv2KmVQiuNYQH07fWexuVNGd
+	0BN1KGYiK5wqm5xVPxn0ukqoiiC+RhvkXaivkHNUQT7a42az3GQq60OWSGLohh4VheFaqPx9mg387
+	XC99wTvqjJlz+FsX2vU9nIBuTc3HUbI74jjDunn3h4jzi8qnmoFO0oTR3L2ysCVX7LMlhDuz6vmGC
+	x1OixP5R/R6UyBA1meUw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wOyq4-0000000FxYP-0Uhr;
-	Mon, 18 May 2026 14:21:00 +0000
+	id 1wOyq6-0000000FxZi-2IIu;
+	Mon, 18 May 2026 14:21:02 +0000
 Received: from mail-northeuropeazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c200::1] helo=DB3PR0202CU003.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wOyq1-0000000FxUs-3Goy
+	id 1wOyq3-0000000FxUs-1kt1
 	for linux-phy@lists.infradead.org;
-	Mon, 18 May 2026 14:20:58 +0000
+	Mon, 18 May 2026 14:21:00 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=Aieestufdcl2ZUB8eMeqhmHV7HMhgyNdzz7GKR1Ark2/Wka+n0PvWO8pMvx4odvA3lwk5BIBDOk13+WkkxP4Y0tVcfhxc/jXss140MsUm2657nRDX6cSIFjKsbVG3ojmV70lf565LwMdKJ41IdfLyUpRAtsPgwQGoyevfG3BMp7XUqRPx6iru2hJMiYQi9Dn3yfRyCb1I+oWuF7aY6tI4PXuqNtaN7DzBw/BczjWdmQS920aBEy7wQlM2Jg3pXTfvYO+HDTxSbDF3T5FiVlcpB8RF5dkbMtaVvRrYUFTkO7ESs9QPBTp1pek07niWMYXu6RH+L61Xp3k9Arsxb1khA==
+ b=f2stWidBOHN9dJKh+SFakEEQPm8NNNaNEDBTp8pHCAUESR3M7Clo3Ywm3/kXVJ5BilWvESBmioVHIzPDjRTU5a4orbwYlnZvIJZ8n7AL76XuXrbiENYSYFnkAQ9Q4hhlwDSgrTV+lSkBive+FRONMOhYRIoxfMo272fl9dIL26NUyn1Hh7JvMW5WLmgECIGX+aMsO3rKygrdxRhzKvbjbcVpL+O244Cmq0RpuU5/vE2DmOooVoGJSEBjEH5FoPBBkK8oNscH2ugtW6fW9DH7sqtZBtJ4tbVrwiWsHE9wcVam658y1oxCIZTzf3QN55uP5aEwRK6uM9qFBY1fab9rmw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=XAuJzBzuuqDSLklFQ6dEVc5lGCIBeNkMzONWTNDaitw=;
- b=C+QVKoVk/sf4OAwtlRoENk8Ine3rqoEZMk7UUAr6VgAxMlOK/M6z/DeRJuJyrI1YhebSI83KjRpEdq2o9xo9vheK/3yVy+ceQoStYWa+Kv+FkbSMadgNVQrLNCQIbumX+vC3FDgYOg4UFyp8Xvn3vBOqbyJ41iJaQKAAWxETRJb0C3jeaent8R5I1MFbqCN/lAUh7aQb6ETt89cDdN4ZXdFxrCMXwwgkOTSbxji8JCiII3E18NbS8RaYmqSySfbN5MbV0X1KDYW/8nCPflBHfPhYYtutVybLRoPZKqkyt71t72yzfz3p1pudqIR9qnsnvM9gBDhZY6luhCz4YDOa0Q==
+ bh=qr6bSNAV/RMt20+1zHcqefmFaKTfSTvGwgJSUgihYfQ=;
+ b=eMTF5Z4fETCGyWTUramkhok6DIJHC/mN8ytFaIEJIXXMC5bvs/TAWOCS9wAUAXi+HeJm78ZVPcf7Gr0l4Cur7McC8I8WeFAMwm1HLmcDkZTEL/ZMJm57Hzm5ABowp1lMCkVugqnIjfTJNlvmRkCxyA7ptXx+2SitAa9nAFrJ53uJPsSBwLn0VixYxtt9DTEWBEXg3zJL/4V3BMN1AsyCqAfE3F9iQpSFfjd7TyAjxqjTb1/W6iAg2hYbYMszLP7pXlnMSiUpmX6C3WqR9jesxixNvNJ1xrbcpRjl7uT9+H+ZKXGsUioFKRTaYUs3rn+cZKxE7cZk+LrulhsXNcBd6w==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=XAuJzBzuuqDSLklFQ6dEVc5lGCIBeNkMzONWTNDaitw=;
- b=OTqzanOtt0cx4nxbYK0SgOLnDUttGAP8gfhjx0fzgyocEd8ajFU7kPmol5qjgm9RKtZYaeyT9/3XmVGdbN3FpkVpt3DPR/mNNQq0aKrDFt4Fy6sV6J0/5MtQlsTsLFXQmisK92+pmSc41MUfFOMYqv/N6Z3GlDJBwPU7R7XeX4a7PO/X/wNJ4DqFjuQsblzG7Ukc5HVSHtXb5L5Ap/mnRfBJ2h0TDsLBipO5uVLVI88fpAp4pzKII7vAF4C1CqFgSZmPBVdQK0sB6H8Io6FvbOmBgkJFq4K1WwexshsM8hHH29Gh+nYIXP7ZDnKQJB8rRor7W9vse7RfEDHylT2Lzw==
+ bh=qr6bSNAV/RMt20+1zHcqefmFaKTfSTvGwgJSUgihYfQ=;
+ b=BqHkaLzVE2HpDL3mqF9QtXggLLO+BBEiucOjeGWOkPCqWPDvyVpteADspNI/zCj3lJ9SpGpoa1B8y7hcc/8/RaxU4H4NWgvzfbWzH+Gv77ZrGt4D6AYtyxR5ulKLZTJ7oepenPG59A6PYW5AugwGqlzJhc5nLvK027xxLHqYxSvHDqEGo3sGI1JLk2lHLlAIcz6srSptAi3rChnfh+gYnHB95XzSF/m81siYTn6dgEmLdEv2GOI+U43rftoixtplfZf+7bkpSizCvn2J6htD2rldg+ULZgyPbF3bezxWKnbIjjrKVrgKaeOyNOiJAMLqRbKSOFInNQthV1IQoAEoGA==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from PR3PR04MB7402.eurprd04.prod.outlook.com (2603:10a6:102:89::16)
  by GV4PR04MB11793.eurprd04.prod.outlook.com (2603:10a6:150:2dc::15) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.25.23; Mon, 18 May
- 2026 14:20:48 +0000
+ 2026 14:20:51 +0000
 Received: from PR3PR04MB7402.eurprd04.prod.outlook.com
  ([fe80::4129:7aed:b5cb:b13d]) by PR3PR04MB7402.eurprd04.prod.outlook.com
  ([fe80::4129:7aed:b5cb:b13d%5]) with mapi id 15.20.9913.009; Mon, 18 May 2026
- 14:20:48 +0000
+ 14:20:51 +0000
 From: Ioana Ciornei <ioana.ciornei@nxp.com>
 To: vkoul@kernel.org,
 	neil.armstrong@linaro.org,
@@ -62,69 +62,69 @@ To: vkoul@kernel.org,
 	linux-phy@lists.infradead.org
 Cc: devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH v4 linux-phy 2/3] phy: ti: alphabetically sort Kconfig and Makefile
-Date: Mon, 18 May 2026 17:20:25 +0300
-Message-Id: <20260518142026.3098496-3-ioana.ciornei@nxp.com>
+Subject: [PATCH v4 linux-phy 3/3] phy: ti: add PHY driver for TI DS125DF111 Dual-Channel Retimer
+Date: Mon, 18 May 2026 17:20:26 +0300
+Message-Id: <20260518142026.3098496-4-ioana.ciornei@nxp.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20260518142026.3098496-1-ioana.ciornei@nxp.com>
 References: <20260518142026.3098496-1-ioana.ciornei@nxp.com>
-X-ClientProxiedBy: AS4P191CA0017.EURP191.PROD.OUTLOOK.COM
- (2603:10a6:20b:5d9::7) To PR3PR04MB7402.eurprd04.prod.outlook.com
+X-ClientProxiedBy: AS4P191CA0030.EURP191.PROD.OUTLOOK.COM
+ (2603:10a6:20b:5d9::16) To PR3PR04MB7402.eurprd04.prod.outlook.com
  (2603:10a6:102:89::16)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
 X-MS-TrafficTypeDiagnostic: PR3PR04MB7402:EE_|GV4PR04MB11793:EE_
-X-MS-Office365-Filtering-Correlation-Id: df91766a-74e0-454d-ee4a-08deb4e8a89e
+X-MS-Office365-Filtering-Correlation-Id: e908bdf6-3d43-4e07-6824-08deb4e8a9f3
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|366016|1800799024|19092799006|11063799003|22082099003|56012099003|18002099003;
-X-Microsoft-Antispam-Message-Info: xM6a0ooLyeuY2sr/Gwa9INVZEHuhMbzItZ/AeaQcEjYv9TnBF73W8DYanFe+I6dztzOEFGQY6V5Uk+9/IOvadURemSR9aFvAm4RA9nD0170Z5UHz4lu1JdvSI6DAvdj54x9ylU5YFtgT40maLs83afqzT7OS4a3Ml+ghioHQtnHOojqqRSIqdNFjNRZxCuJvFx/9rSKJiKdlMcVka7YX6aSeOEWl3pW73v9R7Jx705bzA38Ig7XnTCaDmWAROjIjFzfqMO+frb2HXJpuMdsf0B8tC7Nwrvz75FTjL/sjVXvABakTghy2/1NgfTKQtn9MaZEuSkOZA6zfMp9FNvsX/JDbYvMLfZoHOWOzjIFJp/rxzDQChY5Io5xr1nrlprykfFPCPvuhCuQPUkJ+APnctvPlhsz5mUUjSI8LgZoXCijXT5U3gpKtDtdKmzDTGHAApzZXHUPCmdhXuIvCE+B66May/Erw+nLEuMn6WAf3syc4FrEEWs08jCSCJ2/gGn5yHUiwebeSo4ZRodUYcVvgLCJVFMdm/bivqV6gSCiX7kyX27Yi4FdJ12zkUBsmkwqC+blUTuCr/t1pTWFX22/ytub++s2D1L/kniqFbtPYadx5Jli58Jlasf2fNUmVsShZYrm7TBKIbPbIQ3+9veJSDW25tlP6J35WMdlbBO9CfmhOMEYqtIbH57cWnK7c/WWn
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PR3PR04MB7402.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(366016)(1800799024)(19092799006)(11063799003)(22082099003)(56012099003)(18002099003);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|366016|1800799024|19092799006|11063799003|3023799003|22082099003|56012099003|18002099003;
+X-Microsoft-Antispam-Message-Info: GfXpajvl4f/5hQOyzuoVcZyd9QVxRI1DZZZrCtYiVtOUK71Rf/PlBMXhiurok/DWfxBLczXP1SQF9xWxTPIm9OGLt37lpVWjdUz/DEOulJA6UOLfzpoAxJUXFT79EBuHbDQEzKu8QSx34eTd+fnmZ9s0XWsglObY0Z2qHLbXKTIQ0xkS+zeJws17zK8TKxFljJfpm8wwOETt+h0k09bgKxV6wj+wFl3rJ5LShTpMkCaWja9Rn0UECOcLDO03OWnoDNSzSTYPc8VwTlAiGbQOxcQyh9kSSrGEbZQrjReaVGCB+kVfp1sPJhmXfJPq+bogQil6vPx72rkDJumbxTSihfA/5h87oF5tjg91rIn/rw5zJhT9e58bZQr6iBmS+Wut0z5B8yqNExdqKp8Xk9bMQtNdGPs4kfm5ai/XW7ceM+HoiBIsAB3tgOmoC/5PMdTg1j6va7KGRoSWFFx4uNX+N4R0nNuHO1qVhqXQWbjt6nrWDzo1L86IZrHXDyYcIjKjixWmGsaNMCLg6dr9Z7orRDUTBn9I5w+bWoSEmY2qcUm0HH3tG7CqMvRq9OIa1nU/82Ypw7OO7Xm0DynKgHBoFwgFgTY9pVsaMDp+CijMQPQjQ0xHu7xqkqdbACssrkGMW8d5Dr19kB+GKT8tC+xpommT+v4M88Sev/9lAFVL+g+pntz9JCfeuttjyeuxCcABwCTvlTSOKmMt5/fcGbGq6Q==
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PR3PR04MB7402.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(366016)(1800799024)(19092799006)(11063799003)(3023799003)(22082099003)(56012099003)(18002099003);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?CaZDr12Ro4JzO+2AF849AYhrcu4yKBQJSLHN285kPMQfWwBYu0zQk/xg/m5N?=
- =?us-ascii?Q?3fh985atiricGLB8Cy5MdWVQsZsCqWhEK/Ot47ETfx7lWykLXtNKE+KTetqI?=
- =?us-ascii?Q?xuITBRBwSE0vPLfn1El3QNBfK2fjA/oO6vPpfAN3HHBQ9Wj1JsTy8BR0OVnz?=
- =?us-ascii?Q?lQcDRzV6Q2taHoHj2m54eYPstZrN+qeDHh3LWq4guX6TR6MajZFIos2ngPcR?=
- =?us-ascii?Q?5gldHR60x1h4Yh2jjW9HFazIODN+eRgjmR9zPjGYM9z2qPTYD3ibvovoLCHT?=
- =?us-ascii?Q?sOzsjWQA4Rv7IKm4SFaQ7h7NyC/vRgIQr9zbqN/VRG1WMQdEU9CS9R4gSxM8?=
- =?us-ascii?Q?rzOTVoIif9RNcigOhJ+Rmlkq5noNHwnxUc/L0lBennn9PAyokierNnDxK9f0?=
- =?us-ascii?Q?KmZhgYtEX+DBc2DdQ5qLAGLzgUCNqWl02eM9oYYQL4jBNz6ikcIC4FtSpPuF?=
- =?us-ascii?Q?3KfPUAzCkkGsxl43JxpCW9tirbKijevtPX0NQiA8sIEWLvKT1aEOPY/0IJ6f?=
- =?us-ascii?Q?MyYNm6FXTGh04fXXupbrvfO/GNB0lwtDCd+IHBvWXIg8jWxazlPuQHchA8ZC?=
- =?us-ascii?Q?Qz2gWi/FATWWyDEMa3SI2ZQTFgd256np28iKgng3NISg0/YCOVVAWVg/C8ie?=
- =?us-ascii?Q?X1BAaL5VLR1w5Z0QnAWS1xTnqV5HthKfrKbF6bi32T7uLyBoFhkKpoTO6x9v?=
- =?us-ascii?Q?ECbt9gy9UN3U40S5SmYuCYbYcMnaWDmA1fHAir/y0QjkiNTv4D0J5uWjHULv?=
- =?us-ascii?Q?kuKEaKpwBcrZ8nxcv4XU+E+5y1gZ6HLbIBongDUA7LWXQ67aQ8x0gDe00NJp?=
- =?us-ascii?Q?0X5yBK+TNvTZNvnO/Mh09vtKMQSgZ/vbeeGlWO+V31ZO1dZctyMQvh3bfgkj?=
- =?us-ascii?Q?JCgKFwLv+xiTQUpC3kZG9GKqi5Es8OXCMS9L3U3xXcRDDf2LaEMHsA7phObc?=
- =?us-ascii?Q?IUdoiKjlypdG/enST9l569z+VvSWOqSWxQ7ELNwVRZ0+IL57ZwwD3LapfTLw?=
- =?us-ascii?Q?DJKhobRXjn1phQvfy6AAiZlnf82vVdUb5uH28xqUMoCQfJFiRlxm/trNFsOF?=
- =?us-ascii?Q?vy2lLDuei+CgAkEF8/mU20dSkTKimLyYzejFGKsGd+t+QrvKeTnc1Z5YQ6JU?=
- =?us-ascii?Q?4y/mm00g77uG8dR76m9912cnAHJf3jwCPFUOqtsdVxBOfH5d/mbtZFITpuRA?=
- =?us-ascii?Q?L0C4jMZ/vZNkBp/8CH2flVifuAThTfDXxKfyfngCC2NvKYqmoHLtUXcsvh4Z?=
- =?us-ascii?Q?jBI7n+bmzF0DpEo2w7fSwKdDhfOHLzawzEvAmSmcAaLWoVTeeHzrDBqNpoNx?=
- =?us-ascii?Q?1JYGvxqJb6qFNHAoiJP7bkzBcepmCcZ1LfcqokV+bRtP6wxedviicYX8vpWt?=
- =?us-ascii?Q?mkhzItnG27+SVhYMmLypnLNlzShZbv/SVivlQl6H26BmTORFVoNETT87jqFx?=
- =?us-ascii?Q?+j2mvWJiuNn3ozlQjYyoVJD+deFMVZ6K/tpAUQlfA2aZMLWYMZDRhr3vQV1Q?=
- =?us-ascii?Q?ghKfMe3qC6EFFQcRmiUvze8Qi7oRl5fmh9LYQuKJ6causR5TjuTcU18vWDho?=
- =?us-ascii?Q?YpBh1l/zNwMZR8a05KW9fL6By1prMdXKGD+EHzEqHkucYN/zg4vIPgRIIOS2?=
- =?us-ascii?Q?eDqV5b+IXc7MPhoT272DXhXpgLHKrIA56NcZZi+ls5yCwSlt8J6JvNgVME4M?=
- =?us-ascii?Q?bqPqQc6I3OUpI1KMSMGtiV3HSzOb0DDTLTf8IssKeDJiVRHylUqBuNapRBi1?=
- =?us-ascii?Q?tg0Qf3PGkQ=3D=3D?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?2grl8+XB1I7GE6/H41ptWRwQDKr8+xuNxg/7w11T2WMHyII9EJdgK2+3CYsg?=
+ =?us-ascii?Q?DsMTG2ThtQ42PWmchkJIkWfy81ZKagr2d2JZHEcsIxpyWNh7Gzs6qAX4nE7z?=
+ =?us-ascii?Q?TLsBTULiXlzGauCsN6X5Wv7A5lC98JZNDQNNfu/2f5+wCZDU2Mt6+Ixz88n1?=
+ =?us-ascii?Q?QqdQjMs2nZcGF5zcsvj96GyUdiWSvRNNykyBE+ZHdYIF0qtG5LGzKZ/aYgQ2?=
+ =?us-ascii?Q?Hm5trgpJKgLlPs6w0wUjfRgbJQEEfvwW0GmpOzIbx3a5XGMbfbI0zR7gY+dC?=
+ =?us-ascii?Q?PMVf5p/Wch3UbkImY0pT/1PCVLARqjdJKuJpFfOp4fe392wBLNCE6EqhxbpN?=
+ =?us-ascii?Q?uwsKOfa02Xo3PNw75htr4NRbIiO6I9IKAZYcGNrtf3KrKOTj6o+CgwuEimku?=
+ =?us-ascii?Q?fajUxEaWKm2d7S+EVhM61CIrfE7ZTuvtmD0ECQcoE4oge10kHcjBeychVC2y?=
+ =?us-ascii?Q?bXWtESwlrpSi0nuCiZVFi2KjMAVs4WYybDoK+JV7rsV085wELo+6Dtdh2pIi?=
+ =?us-ascii?Q?m+CwOevX5NiLe5czHBV3ZH/35/Nk/CCWWcheikSw/8GLvN0Xsz848d5xYzRA?=
+ =?us-ascii?Q?3ZLNViaxt6GQGibphPMjEZfCnFTmUxjxTIhdjviA5EOVqsD+FvSPuq85rdRV?=
+ =?us-ascii?Q?HPUEtUoqk/iQf1fwy4EWmxhghAcVKnRxqi6WPRaQHKRIzqUzVtSMC/JoCNId?=
+ =?us-ascii?Q?otzDDNXr17kv3koGYpzZo2mqYqssy9o26TrB3G0TsxuN5yzpuGmk1DEUIlQZ?=
+ =?us-ascii?Q?n8d+1W3sHoCslCKAt/uZmZDdPVyMb1Q6/hwrb1THyHEdrKac63Z6OfQZ4D2p?=
+ =?us-ascii?Q?w8rYf0rJhWdikiesdwd3vRYEpQFFCFt0kEhoczmdcffAzUvnHZ1ZICxvtpnS?=
+ =?us-ascii?Q?0uOeTQ2GjZ1xm0Cn60hAMZTHTK1FB1Y21I9LO3i0sqw8BZQTz0zSWfTuEn9X?=
+ =?us-ascii?Q?rhlEiBhK3wBN/Wl0MPiPFrVLA1w+nlgbsBZhd/P2K9gTxTAFctaVwD3FT7ng?=
+ =?us-ascii?Q?29zpoCSvUYZCcWQJsxki6vu7+lzIr8pG1jVuDq3PHSfLZPADgV8ZrjaV0vdL?=
+ =?us-ascii?Q?BghxLsN6W19Bym8vadvprngj6rYdMUocKFxUR8NYl8Lg5qBNLNxVhRkhQ3VM?=
+ =?us-ascii?Q?yyLDKMYOsTJIdJG9WNd7WOqxgxD+MSNB0RtTgZynpzXQs8MgJlsI2+e7DbbS?=
+ =?us-ascii?Q?PUsX6ANmW6WIl25ruNptZUB5f/Sn9PzSKN08S3t6dbPRgKZJRKLKuTxj42U7?=
+ =?us-ascii?Q?A9TtS6jCnCbADHwWlaf+n3gZYs3QcsZFJJ76zdzObsWW6DbJcv0a/SLO0LTL?=
+ =?us-ascii?Q?/VjeiTL1rEsssj0SpzWIp+97Z9Xnn0AkPMlM8b1tVnCgE+RwYVRqqXFw1lwV?=
+ =?us-ascii?Q?y62x3h5AhKZZB0vrEmZvBq+IM/7Rhsm9bNV1BddrR6YY8dfEqreB4IkEK3Jm?=
+ =?us-ascii?Q?PMFnzGb8xix4w/0KF7Og5M0KYnUns7iQNY5uApeOtYTpjpzWkneCi7+gKBTL?=
+ =?us-ascii?Q?RVJWLUouvK2p+P5a8f59PN90xp9Zq9rxTfU5ERQu3iFeNjFYRvuWDi4yWF5K?=
+ =?us-ascii?Q?Dlvmx0xHynJSEWdMIl8VDe9galLRSuXf11fR+6j+S8JcncpR9JM7O6b6kNHL?=
+ =?us-ascii?Q?4Tckbyu1J4sFdW8Kyghub7uITfQ1J5+JLuUZ2B97luVvfBS0JoZci6ocihcz?=
+ =?us-ascii?Q?Uv1EdcgEqkfgSjgB9JBrFTXE5kNZz5Dfx8xxX04Bou2bBPtzanJXwVPsxPMr?=
+ =?us-ascii?Q?23krpAAsZQ=3D=3D?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: df91766a-74e0-454d-ee4a-08deb4e8a89e
+X-MS-Exchange-CrossTenant-Network-Message-Id: e908bdf6-3d43-4e07-6824-08deb4e8a9f3
 X-MS-Exchange-CrossTenant-AuthSource: PR3PR04MB7402.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 May 2026 14:20:48.8550
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 May 2026 14:20:51.0916
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: b4GEIHymWchKQEu/luRmiExk7W6HF2w/pP4yPdLrmhbM9y1JrwdhC9Cxt9t8qCvz/XQ/8gJmD3hhCmDEnSBNVw==
+X-MS-Exchange-CrossTenant-UserPrincipalName: 5GS1j8ZZHXbW6SqmGM1IZkT66aSlk3ngL3SCbuw4h9139a+rEnCkL8v3k+/cB8YLgR7TcHJubUXNhm73M5CzCg==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV4PR04MB11793
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260518_072057_820795_FF1BBA10 
-X-CRM114-Status: GOOD (  18.43  )
+X-CRM114-CacheID: sfid-20260518_072059_475004_52775919 
+X-CRM114-Status: GOOD (  31.20  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -141,177 +141,403 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Sort alphabetically the entries in the Kconfig and Makefile files.
+Add a generic PHY driver for the TI DS125DF111 Multi-Protocol
+Dual-Channel Retimer. The driver currently supports only 10G and 1G link
+speeds but it can easily extended to also cover other usecases.
+
+Since the available datasheet (https://www.ti.com/lit/gpn/DS125DF111)
+does not name the registers, the name for the macros were determined by
+their usage pattern.
+
+A PHY device is created for each of the two channels present on the
+retimer. This allows for independent configuration of the two channels.
+This capability is especially important on retimers which have more than
+2 channels that can be, depending on the board design, connected in
+multiple different ways to the SerDes lanes.
 
 Signed-off-by: Ioana Ciornei <ioana.ciornei@nxp.com>
+Reviewed-by: Vladimir Oltean <olteanv@gmail.com>
 ---
 Changes in v4:
-- patch is new
----
- drivers/phy/ti/Kconfig  | 92 ++++++++++++++++++++---------------------
- drivers/phy/ti/Makefile | 12 +++---
- 2 files changed, 52 insertions(+), 52 deletions(-)
+- Use lower case for hex values
+- Insert the new entry in the Kconfig/Makefile so that we keep the
+alphabetical order established in the previous patch
 
+Changes in v3:
+- Use reverse Christmas tree ordering
+- Print a symbolic description in case of error
+- Some words do not need to be capitalized
+- Remove duplicated exit code path
+- Return -EINVAL in case of unsupported submode received in .set_mode()
+- Add a .validate() callback
+- Remove comma after sentinel entry
+- Add a ds125df111_rmw() helper
+- Use read_poll_timeout() to wait for channel reset to complete
+
+Changes in v2:
+- Explicitly include all the needed headers
+- Change ds125df111_xlate() so that it returns an error if args_count is
+not exactly 1
+- Add a MAINTAINERS entry
+---
+ MAINTAINERS                     |   7 +
+ drivers/phy/ti/Kconfig          |  10 ++
+ drivers/phy/ti/Makefile         |   1 +
+ drivers/phy/ti/phy-ds125df111.c | 294 ++++++++++++++++++++++++++++++++
+ 4 files changed, 312 insertions(+)
+ create mode 100644 drivers/phy/ti/phy-ds125df111.c
+
+diff --git a/MAINTAINERS b/MAINTAINERS
+index f877e5aaf2c7..58f410b666e7 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -26781,6 +26781,13 @@ T:	git git://linuxtv.org/mhadli/v4l-dvb-davinci_devices.git
+ F:	drivers/media/platform/ti/davinci/
+ F:	include/media/davinci/
+ 
++TI DS125DF111 RETIMER PHY DRIVER
++M:	Ioana Ciornei <ioana.ciornei@nxp.com>
++L:	linux-phy@lists.infradead.org (moderated for non-subscribers)
++S:	Maintained
++F:	Documentation/devicetree/bindings/phy/ti,ds125df111.yaml
++F:	drivers/phy/ti/phy-ds125df111.c
++
+ TI ENHANCED CAPTURE (eCAP) DRIVER
+ M:	Vignesh Raghavendra <vigneshr@ti.com>
+ R:	Julien Panis <jpanis@baylibre.com>
 diff --git a/drivers/phy/ti/Kconfig b/drivers/phy/ti/Kconfig
-index b40f28019131..dbe65500f20c 100644
+index dbe65500f20c..b52c7eabe24c 100644
 --- a/drivers/phy/ti/Kconfig
 +++ b/drivers/phy/ti/Kconfig
-@@ -2,24 +2,29 @@
- #
- # Phy drivers for TI platforms
- #
--config PHY_DA8XX_USB
--	tristate "TI DA8xx USB PHY Driver"
--	depends on ARCH_DAVINCI_DA8XX || COMPILE_TEST
--	select GENERIC_PHY
--	select MFD_SYSCON
-+config OMAP_CONTROL_PHY
-+	tristate "OMAP CONTROL PHY Driver"
-+	depends on ARCH_OMAP2PLUS || COMPILE_TEST
- 	help
--	  Enable this to support the USB PHY on DA8xx SoCs.
--
--	  This driver controls both the USB 1.1 PHY and the USB 2.0 PHY.
-+	  Enable this to add support for the PHY part present in the control
-+	  module. This driver has API to power on the USB2 PHY and to write to
-+	  the mailbox. The mailbox is present only in omap4 and the register to
-+	  power on the USB2 PHY is present in OMAP4 and OMAP5. OMAP5 has an
-+	  additional register to power on USB3 PHY/SATA PHY/PCIE PHY
-+	  (PIPE3 PHY).
- 
--config PHY_DM816X_USB
--	tristate "TI dm816x USB PHY driver"
--	depends on ARCH_OMAP2PLUS || COMPILE_TEST
-+config OMAP_USB2
-+	tristate "OMAP USB2 PHY Driver"
-+	depends on ARCH_OMAP2PLUS || ARCH_K3 || COMPILE_TEST
- 	depends on USB_SUPPORT
- 	select GENERIC_PHY
- 	select USB_PHY
-+	select OMAP_CONTROL_PHY if ARCH_OMAP2PLUS || COMPILE_TEST
- 	help
--	  Enable this for dm816x USB to work.
-+	  Enable this to support the transceiver that is part of SOC. This
-+	  driver takes care of all the PHY functionality apart from comparator.
-+	  The USB OTG controller communicates with the comparator using this
-+	  driver.
- 
- config PHY_AM654_SERDES
- 	tristate "TI AM654 SERDES support"
-@@ -33,6 +38,25 @@ config PHY_AM654_SERDES
- 	  This option enables support for TI AM654 SerDes PHY used for
- 	  PCIe.
- 
-+config PHY_DA8XX_USB
-+	tristate "TI DA8xx USB PHY Driver"
-+	depends on ARCH_DAVINCI_DA8XX || COMPILE_TEST
-+	select GENERIC_PHY
-+	select MFD_SYSCON
-+	help
-+	  Enable this to support the USB PHY on DA8xx SoCs.
-+
-+	  This driver controls both the USB 1.1 PHY and the USB 2.0 PHY.
-+
-+config PHY_DM816X_USB
-+	tristate "TI dm816x USB PHY driver"
-+	depends on ARCH_OMAP2PLUS || COMPILE_TEST
-+	depends on USB_SUPPORT
-+	select GENERIC_PHY
-+	select USB_PHY
-+	help
-+	  Enable this for dm816x USB to work.
-+
- config PHY_J721E_WIZ
- 	tristate "TI J721E WIZ (SERDES Wrapper) support"
- 	depends on OF && (ARCH_K3 || COMPILE_TEST)
-@@ -49,29 +73,20 @@ config PHY_J721E_WIZ
+@@ -73,6 +73,16 @@ config PHY_J721E_WIZ
  	  three clock selects (pll0, pll1, dig) and resets for each of the
  	  lanes.
  
--config OMAP_CONTROL_PHY
--	tristate "OMAP CONTROL PHY Driver"
--	depends on ARCH_OMAP2PLUS || COMPILE_TEST
-+config PHY_TI_GMII_SEL
-+	tristate
++config PHY_TI_DS125DF111
++	tristate "TI DS125DF111 2-Channel Retimer Driver"
++	depends on OF && I2C
 +	select GENERIC_PHY
-+	select REGMAP
- 	help
--	  Enable this to add support for the PHY part present in the control
--	  module. This driver has API to power on the USB2 PHY and to write to
--	  the mailbox. The mailbox is present only in omap4 and the register to
--	  power on the USB2 PHY is present in OMAP4 and OMAP5. OMAP5 has an
--	  additional register to power on USB3 PHY/SATA PHY/PCIE PHY
--	  (PIPE3 PHY).
-+	  This driver supports configuring of the TI CPSW Port mode depending on
-+	  the Ethernet PHY connected to the CPSW Port.
- 
--config OMAP_USB2
--	tristate "OMAP USB2 PHY Driver"
--	depends on ARCH_OMAP2PLUS || ARCH_K3 || COMPILE_TEST
--	depends on USB_SUPPORT
-+config PHY_TUSB1210
-+	tristate "TI TUSB1210 ULPI PHY module"
-+	depends on USB_ULPI_BUS
++	help
++	  Enable this to add support for configuration and runtime management
++	  of the TI DS125DF111 Multi-Protocol 2-Channel Retimer.
++	  The retimer is modeled as a Generic PHY and supports both 10G and 1G
++	  link speeds.
++
+ config PHY_TI_GMII_SEL
+ 	tristate
  	select GENERIC_PHY
--	select USB_PHY
--	select OMAP_CONTROL_PHY if ARCH_OMAP2PLUS || COMPILE_TEST
- 	help
--	  Enable this to support the transceiver that is part of SOC. This
--	  driver takes care of all the PHY functionality apart from comparator.
--	  The USB OTG controller communicates with the comparator using this
--	  driver.
-+	  Support for TI TUSB1210 USB ULPI PHY.
- 
- config TI_PIPE3
- 	tristate "TI PIPE3 PHY Driver"
-@@ -84,13 +99,6 @@ config TI_PIPE3
- 	  This driver interacts with the "OMAP Control PHY Driver" to power
- 	  on/off the PHY.
- 
--config PHY_TUSB1210
--	tristate "TI TUSB1210 ULPI PHY module"
--	depends on USB_ULPI_BUS
--	select GENERIC_PHY
--	help
--	  Support for TI TUSB1210 USB ULPI PHY.
--
- config TWL4030_USB
- 	tristate "TWL4030 USB Transceiver Driver"
- 	depends on TWL4030_CORE && REGULATOR_TWL4030 && USB_MUSB_OMAP2PLUS
-@@ -103,11 +111,3 @@ config TWL4030_USB
- 	  family chips (including the TWL5030 and TPS659x0 devices).
- 	  This transceiver supports high and full speed devices plus,
- 	  in host mode, low speed.
--
--config PHY_TI_GMII_SEL
--	tristate
--	select GENERIC_PHY
--	select REGMAP
--	help
--	  This driver supports configuring of the TI CPSW Port mode depending on
--	  the Ethernet PHY connected to the CPSW Port.
 diff --git a/drivers/phy/ti/Makefile b/drivers/phy/ti/Makefile
-index dcba2571c9bd..975fb8448ba5 100644
+index 975fb8448ba5..a002ef8764a2 100644
 --- a/drivers/phy/ti/Makefile
 +++ b/drivers/phy/ti/Makefile
-@@ -1,11 +1,11 @@
- # SPDX-License-Identifier: GPL-2.0
--obj-$(CONFIG_PHY_DA8XX_USB)		+= phy-da8xx-usb.o
--obj-$(CONFIG_PHY_DM816X_USB)		+= phy-dm816x-usb.o
- obj-$(CONFIG_OMAP_CONTROL_PHY)		+= phy-omap-control.o
- obj-$(CONFIG_OMAP_USB2)			+= phy-omap-usb2.o
--obj-$(CONFIG_TI_PIPE3)			+= phy-ti-pipe3.o
--obj-$(CONFIG_PHY_TUSB1210)		+= phy-tusb1210.o
--obj-$(CONFIG_TWL4030_USB)		+= phy-twl4030-usb.o
- obj-$(CONFIG_PHY_AM654_SERDES)		+= phy-am654-serdes.o
--obj-$(CONFIG_PHY_TI_GMII_SEL)		+= phy-gmii-sel.o
-+obj-$(CONFIG_PHY_DA8XX_USB)		+= phy-da8xx-usb.o
-+obj-$(CONFIG_PHY_DM816X_USB)		+= phy-dm816x-usb.o
+@@ -5,6 +5,7 @@ obj-$(CONFIG_PHY_AM654_SERDES)		+= phy-am654-serdes.o
+ obj-$(CONFIG_PHY_DA8XX_USB)		+= phy-da8xx-usb.o
+ obj-$(CONFIG_PHY_DM816X_USB)		+= phy-dm816x-usb.o
  obj-$(CONFIG_PHY_J721E_WIZ)		+= phy-j721e-wiz.o
-+obj-$(CONFIG_PHY_TI_GMII_SEL)		+= phy-gmii-sel.o
-+obj-$(CONFIG_PHY_TUSB1210)		+= phy-tusb1210.o
-+obj-$(CONFIG_TI_PIPE3)			+= phy-ti-pipe3.o
-+obj-$(CONFIG_TWL4030_USB)		+= phy-twl4030-usb.o
++obj-$(CONFIG_PHY_TI_DS125DF111)		+= phy-ds125df111.o
+ obj-$(CONFIG_PHY_TI_GMII_SEL)		+= phy-gmii-sel.o
+ obj-$(CONFIG_PHY_TUSB1210)		+= phy-tusb1210.o
+ obj-$(CONFIG_TI_PIPE3)			+= phy-ti-pipe3.o
+diff --git a/drivers/phy/ti/phy-ds125df111.c b/drivers/phy/ti/phy-ds125df111.c
+new file mode 100644
+index 000000000000..84ff96d7d589
+--- /dev/null
++++ b/drivers/phy/ti/phy-ds125df111.c
+@@ -0,0 +1,294 @@
++// SPDX-License-Identifier: GPL-2.0
++/* Copyright 2026 NXP */
++
++#include <linux/bitfield.h>
++#include <linux/bits.h>
++#include <linux/i2c.h>
++#include <linux/iopoll.h>
++#include <linux/kernel.h>
++#include <linux/module.h>
++#include <linux/phy.h>
++#include <linux/phy/phy.h>
++#include <linux/slab.h>
++
++#define DS125DF111_NUM_CH			2
++#define DS125DF111_NUM_VCO_GROUP_REG		5
++
++#define DS125DF111_CH_SELECT			0xff
++#define DS125DF111_CH_SELECT_TARGET_MASK	GENMASK(3, 0)
++#define DS125DF111_CH_SELECT_EN			BIT(2)
++
++#define DS125DF111_CH_CTRL			0x00
++#define DS125DF111_CH_CTRL_RESET		BIT(2) /* self clearing */
++
++#define DS125DF111_CH_RST_SLEEP_US		10
++#define DS125DF111_CH_RST_TIMEOUT_US		10000
++
++#define DS125DF111_VCO_GROUP_BASE		0x60
++
++#define DS125DF111_RATIOS			0x2f
++#define DS125DF111_RATIOS_RATE_MASK		GENMASK(7, 6)
++#define DS125DF111_RATIOS_SUBRATE_MASK		GENMASK(5, 4)
++#define DS125DF111_RATIOS_MASK			GENMASK(7, 4)
++
++struct ds125df111_ch {
++	struct phy *phy;
++	struct ds125df111_priv *priv;
++	int idx;
++};
++
++struct ds125df111_priv {
++	struct ds125df111_ch ch[DS125DF111_NUM_CH];
++	struct i2c_client *client;
++	struct mutex mutex; /* protects access to shared registers */
++};
++
++enum ds125df111_mode {
++	FREQ_1G,
++	FREQ_10G,
++};
++
++static const struct ds125df111_config {
++	u8 vco_group[DS125DF111_NUM_VCO_GROUP_REG];
++	u8 rate;
++	u8 subrate;
++} ds125df111_cfg[] = {
++	[FREQ_1G] = {
++		/* VCO group #0 = 10GHz, VCO group #1 = 10GHz */
++		.vco_group = {0x00, 0xB2, 0x00, 0xB2, 0xCC},
++		/* By using the following combination of rate and subrate we
++		 * select divide ratios of 1, 2, 4, 8 on both groups
++		 */
++		.rate = 0x1,
++		.subrate = 0x2,
++	},
++
++	[FREQ_10G] = {
++		/* VCO group #0 = 10.3125GHz, VCO group #1 = 10.3125GHz */
++		.vco_group = {0x90, 0xB3, 0x90, 0xB3, 0xCD},
++		/* By using the following combination of rate and subrate we
++		 * select divide ratios of 1 on both groups
++		 */
++		.rate = 0x1,
++		.subrate = 0x3,
++	},
++};
++
++static int ds125df111_rmw(struct ds125df111_priv *priv, u8 reg, u8 clr, u8 set)
++{
++	struct i2c_client *i2c = priv->client;
++	int err;
++	u8 val;
++
++	err = i2c_smbus_read_byte_data(i2c, reg);
++	if (err < 0)
++		return err;
++
++	val = (u8)err;
++	val &= ~clr;
++	val |= set;
++
++	err = i2c_smbus_write_byte_data(i2c, reg, val);
++	if (err < 0)
++		return err;
++
++	return 0;
++}
++
++static int ds125df111_configure(struct phy *phy,
++				const struct ds125df111_config *cfg)
++{
++	struct ds125df111_ch *ch = phy_get_drvdata(phy);
++	struct ds125df111_priv *priv = ch->priv;
++	struct i2c_client *i2c = priv->client;
++	struct device *dev = &phy->dev;
++	u8 ratios_val;
++	int err, i;
++	int val;
++
++	mutex_lock(&priv->mutex);
++
++	/* Make sure that any subsequent read/write operation will be directed
++	 * only to the registers of the selected channel
++	 */
++	err = ds125df111_rmw(priv, DS125DF111_CH_SELECT,
++			     DS125DF111_CH_SELECT_TARGET_MASK,
++			     DS125DF111_CH_SELECT_EN | ch->idx);
++	if (err < 0) {
++		dev_err(dev, "Unable to select channel: %pe\n", ERR_PTR(err));
++		goto out;
++	}
++
++	/* Reset channel registers and wait until the bit was cleared */
++	err = ds125df111_rmw(priv, DS125DF111_CH_CTRL, 0,
++			     DS125DF111_CH_CTRL_RESET);
++	if (err < 0) {
++		dev_err(dev, "Error resetting channel configuration: %pe\n",
++			ERR_PTR(err));
++		goto out;
++	}
++
++	err = read_poll_timeout(i2c_smbus_read_byte_data, val,
++				val < 0 || !(val & DS125DF111_CH_CTRL_RESET),
++				DS125DF111_CH_RST_SLEEP_US,
++				DS125DF111_CH_RST_TIMEOUT_US, false, i2c,
++				DS125DF111_CH_CTRL);
++	if (err) {
++		dev_err(dev, "Timed out waiting for channel reset: %pe\n",
++			ERR_PTR(err));
++		goto out;
++	}
++
++	if (val < 0) {
++		dev_err(dev, "Error reading reset status: %pe\n", ERR_PTR(val));
++		err = val;
++		goto out;
++	}
++
++	/* Program the VCO group frequencies */
++	for (i = 0; i < DS125DF111_NUM_VCO_GROUP_REG; i++) {
++		err = i2c_smbus_write_byte_data(i2c,
++						DS125DF111_VCO_GROUP_BASE + i,
++						cfg->vco_group[i]);
++		if (err < 0) {
++			dev_err(dev, "Error programming VCO group: %pe\n",
++				ERR_PTR(err));
++			goto out;
++		}
++	}
++
++	/* Set the divide ratios for the VCO groups */
++	ratios_val = FIELD_PREP(DS125DF111_RATIOS_RATE_MASK, cfg->rate) |
++		FIELD_PREP(DS125DF111_RATIOS_SUBRATE_MASK, cfg->subrate);
++	err = ds125df111_rmw(priv, DS125DF111_RATIOS, DS125DF111_RATIOS_MASK,
++			     ratios_val);
++	if (err < 0) {
++		dev_err(dev, "Error programming the divide ratios: %pe\n",
++			ERR_PTR(err));
++		goto out;
++	}
++
++out:
++	mutex_unlock(&priv->mutex);
++
++	return err;
++}
++
++static int ds125df111_set_mode(struct phy *phy, enum phy_mode mode, int submode)
++{
++	const struct ds125df111_config *cfg;
++
++	if (mode != PHY_MODE_ETHERNET)
++		return -EINVAL;
++
++	switch (submode) {
++	case PHY_INTERFACE_MODE_10GBASER:
++		cfg = &ds125df111_cfg[FREQ_10G];
++		break;
++	case PHY_INTERFACE_MODE_1000BASEX:
++	case PHY_INTERFACE_MODE_SGMII:
++		cfg = &ds125df111_cfg[FREQ_1G];
++		break;
++	default:
++		return -EINVAL;
++	}
++
++	return ds125df111_configure(phy, cfg);
++}
++
++static int ds125df111_validate(struct phy *phy, enum phy_mode mode, int submode,
++			       union phy_configure_opts *opts __always_unused)
++{
++	if (mode != PHY_MODE_ETHERNET)
++		return -EINVAL;
++
++	switch (submode) {
++	case PHY_INTERFACE_MODE_10GBASER:
++	case PHY_INTERFACE_MODE_1000BASEX:
++	case PHY_INTERFACE_MODE_SGMII:
++		return 0;
++	default:
++		return -EINVAL;
++	}
++}
++
++static const struct phy_ops ds125df111_ops = {
++	.validate	= ds125df111_validate,
++	.set_mode	= ds125df111_set_mode,
++	.owner		= THIS_MODULE,
++};
++
++static struct phy *ds125df111_xlate(struct device *dev,
++				    const struct of_phandle_args *args)
++{
++	struct ds125df111_priv *priv = dev_get_drvdata(dev);
++	u32 idx;
++
++	if (args->args_count != 1)
++		return ERR_PTR(-EINVAL);
++
++	idx = args->args[0];
++	if (idx >= DS125DF111_NUM_CH) {
++		dev_err(dev, "Maximum number of channels is %d\n",
++			DS125DF111_NUM_CH);
++		return ERR_PTR(-EINVAL);
++	}
++
++	return priv->ch[idx].phy;
++}
++
++static int ds125df111_probe(struct i2c_client *client)
++{
++	struct device *dev = &client->dev;
++	struct phy_provider *provider;
++	struct ds125df111_priv *priv;
++	int i, err;
++
++	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
++	if (!priv)
++		return -ENOMEM;
++	priv->client = client;
++	err = devm_mutex_init(dev, &priv->mutex);
++	if (err)
++		return err;
++
++	i2c_set_clientdata(client, priv);
++
++	for (i = 0; i < DS125DF111_NUM_CH; i++) {
++		struct ds125df111_ch *ch = &priv->ch[i];
++		struct phy *phy;
++
++		phy = devm_phy_create(dev, NULL, &ds125df111_ops);
++		if (IS_ERR(phy))
++			return PTR_ERR(phy);
++
++		ch->idx = i;
++		ch->priv = priv;
++		ch->phy = phy;
++
++		phy_set_drvdata(phy, ch);
++	}
++
++	provider = devm_of_phy_provider_register(dev, ds125df111_xlate);
++
++	return PTR_ERR_OR_ZERO(provider);
++}
++
++static const struct of_device_id ds125df111_dt_ids[] = {
++	{ .compatible = "ti,ds125df111", },
++	{}
++};
++MODULE_DEVICE_TABLE(of, ds125df111_dt_ids);
++
++static struct i2c_driver ds125df111_driver = {
++	.driver = {
++		.name = "ds125df111",
++		.of_match_table = ds125df111_dt_ids,
++	},
++	.probe = ds125df111_probe,
++};
++module_i2c_driver(ds125df111_driver);
++
++MODULE_AUTHOR("Ioana Ciornei <ioana.ciornei@nxp.com>");
++MODULE_DESCRIPTION("TI DS125DF111 Retimer driver");
++MODULE_LICENSE("GPL");
 -- 
 2.25.1
 
