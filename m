@@ -4,71 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A1F04CD4F54
-	for <linux-phy@archiver.kernel.org>; Mon, 18 May 2026 10:33:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2A893CD4F52
+	for <linux-phy@archiver.kernel.org>; Mon, 18 May 2026 10:47:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=B060hZiR1HwkUGqyJ8R7vXTYpWdiiNxivNRLi4O1Yj0=; b=sewYyS1xWkzNU4
-	HpeBGqSl7U0dS3ZDyzvpTfbZChtpIAuPI4vOGIcHtKcnubWUX3Kyfy50R3pL6Zav1HjpQiaes5sSj
-	HXgCkK54AHCkKQmeg8V9AzdMM/Idkvwjj7xxZIUHpfGrRNNgy+nUOhQSMKzo/rPPNcyuA5IUOFJGS
-	gWUqADDNcvqe+Dv9wlrslH2FdVmUyL3ohdwrA7f+NCV6zZmm61qgamehouP9NIiDnPTizOr0tQIpR
-	vLr8ZDgwl5Gv2tW2oDEjZUxVmDzdvvVRyH7lsZY4m71J9WKpHsOe/+4Qnh1tEq43Y/+JNFkA/gF4y
-	Fd/I3IXknSrbJODAc80g==;
+	List-Owner; bh=2pwjGSrSr4MoTWmWtLN7BcJU5ilnPEPl03mhM+23RdM=; b=DJb42YdXGPraoC
+	z0GgW2FY8NL4ugUIVjRzkAlKlVTU/QUDI1+vnF0X2cxOMQfrFF06yBzdoca2V/nRcZ7/WI9xYaPdH
+	PxEtMqCK8i6a/wxCQOZ9ZxeIXmv7Bdpjmxg3xhmFqrILE0PevwqZK/rFmjue1ONyrih8fVh5ErbMW
+	odJNxkEMbC90GNeXv5yGIlqDZilYeXEJ756ySxO6oM9m/J/wznpqpMU9+vCZLIp+YCIcPVPdwNxbI
+	T9ISBJTBexCuKrMU2MtNuU6sFKLSFM1iJSF8SmkoCNc5031Fa/0t2Su8VYNxPh4qHYgOp1qTSJQme
+	5y9dGZvztFBXLQiFXawA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wOvHh-0000000FG0b-1iDL;
-	Mon, 18 May 2026 10:33:17 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wOvVu-0000000FJBL-2z46;
+	Mon, 18 May 2026 10:47:58 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wOvHf-0000000FFz6-2SgN
+	id 1wOvVq-0000000FJA4-3Jvw
 	for linux-phy@lists.infradead.org;
-	Mon, 18 May 2026 10:33:15 +0000
+	Mon, 18 May 2026 10:47:57 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 0EB0260211;
-	Mon, 18 May 2026 10:33:15 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1C5A1C2BCB8;
-	Mon, 18 May 2026 10:33:10 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 6E094445C1;
+	Mon, 18 May 2026 10:47:54 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id F0F5DC2BCC6;
+	Mon, 18 May 2026 10:47:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1779100394;
-	bh=Ni9fQvmbrgzkq9Jn7zqHNgRT1E+F5kIfL7a6vKy9HWE=;
-	h=From:Date:Subject:References:In-Reply-To:To:Cc:From;
-	b=Qzl36VC6NQ+H2cueH7saMlIS4JGN5VwNcEuWdJLeeR7LDspbnwNZ48rC5OiBceJxe
-	 XwUxzN07D6+I1xOeE1ulP0weOLX1JbzI3uRW7NB0nQ7wEnALshZlwYmD3dCZ4RyFY5
-	 hTvYdTJ6AoSKwutNSHaN0FXoijti04gTcP+BxuSTCm33d/KQ+APECDQNA+xgHh4jqo
-	 tZGJcjKboq8JqOuRUzQCgKo5BmYlagGt4XhatrGjaHnFpXA9bRZY7SQ3bm9vyDCeE/
-	 xTPGuC+ME3ROq7FJckU/0qMwCAEzE7e17++w1SV4LUeC5BPX/4hFYb8rAibE0QQL/x
-	 ym/H7BPR6z2yA==
-From: Konrad Dybcio <konradybcio@kernel.org>
-Date: Mon, 18 May 2026 12:29:52 +0200
-Subject: [PATCH 5/5] arm64: dts: qcom: hamoa: Extend QMPPHY description for
- USB4
-MIME-Version: 1.0
-Message-Id: <20260518-topic-usb4phy-v1-5-71d827c49dca@oss.qualcomm.com>
-References: <20260518-topic-usb4phy-v1-0-71d827c49dca@oss.qualcomm.com>
-In-Reply-To: <20260518-topic-usb4phy-v1-0-71d827c49dca@oss.qualcomm.com>
-To: Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, Bjorn Andersson <andersson@kernel.org>, 
- Konrad Dybcio <konradybcio@kernel.org>
-Cc: linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
- linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, 
- usb4-upstream@oss.qualcomm.com, 
- Raghavendra Thoorpu <rthoorpu@qti.qualcomm.com>, 
- Mika Westerberg <westeri@kernel.org>, Sven Peter <sven@kernel.org>, 
- Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1779100365; l=2122;
- i=konrad.dybcio@oss.qualcomm.com; s=20230215; h=from:subject:message-id;
- bh=NxiWYOiKuL7FnNRrsrEKfegkS+O2u9GgOYEUAAJlDz4=;
- b=AOd7m6fqje/mnmm+RIuJqH2HF80M35P0IB4uPwFUCtSdk5scTkiVAPGoC3VAMSt99DCRVXM+P
- clIMsnFuvXTCJXktngrxtMdT4ipwtiD7YJKsCL8EDjQDc14ltb9ndMY
-X-Developer-Key: i=konrad.dybcio@oss.qualcomm.com; a=ed25519;
- pk=iclgkYvtl2w05SSXO5EjjSYlhFKsJ+5OSZBjOkQuEms=
+	s=k20201202; t=1779101274;
+	bh=15Lrki1qnue4iCVlWxRlamDE2lMl6PPjO95TQJWLv9Q=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date:From;
+	b=UMaa6bdCoBvqnIs0zEFu5QT/pGkcP5GN1FuBkF79jRhT7CrA8LHyJO1/7thsg5iuF
+	 A3qbrBfSRzjNoVT7qdu9EoV1B6XwNBIYvVbn1f44NGtsjxUmnaJsoJKDpdajiUCKcA
+	 kIEjPhuAynhRx4j+gQpba5FfBgEqkgeFgws1ml3lWWrIY+62IBzDkBABQNjjJeMKMt
+	 /Xbf+GfoaNfuSrP5LHrM8xaSof55VhWqhRVWIWqRq1eqPBy25IHCIfnpcQnITQDRDK
+	 H3OLU4kQNJfkhw5/waoyTEfi2+TzVbm/79z+2Av1ByUQY4wFP2idP+/+m3l6QSZ5sR
+	 JlnLQeeweIQgw==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH 1/5] dt-bindings: phy: qcom,qmp-usb3-dp: Extend X1E
+ description for USB4
+To: "Konrad Dybcio" <konradybcio@kernel.org>
+Cc: conor+dt@kernel.org, neil.armstrong@linaro.org, devicetree@vger.kernel.org, olteanv@gmail.com, vkoul@kernel.org, linux-phy@lists.infradead.org, robh@kernel.org
+In-Reply-To: <20260518-topic-usb4phy-v1-1-71d827c49dca@oss.qualcomm.com>
+References: <20260518-topic-usb4phy-v1-1-71d827c49dca@oss.qualcomm.com>
+Date: Mon, 18 May 2026 10:47:53 +0000
+Message-Id: <20260518104753.F0F5DC2BCC6@smtp.kernel.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260518_034754_867326_1703D755 
+X-CRM114-Status: UNSURE (   8.77  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,80 +66,50 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
-
-The USB4 part of the QMPPHY requires that one more GCC clock (P2RR2P -
-PHY-to-Router, Router-to-PHY) is enabled for the PHY to initialize
-successfully. Describe that.
-
-Signed-off-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
----
- arch/arm64/boot/dts/qcom/hamoa.dtsi | 18 ++++++++++++------
- 1 file changed, 12 insertions(+), 6 deletions(-)
-
-diff --git a/arch/arm64/boot/dts/qcom/hamoa.dtsi b/arch/arm64/boot/dts/qcom/hamoa.dtsi
-index 4ba751a65142..63430f49ba2a 100644
---- a/arch/arm64/boot/dts/qcom/hamoa.dtsi
-+++ b/arch/arm64/boot/dts/qcom/hamoa.dtsi
-@@ -2883,11 +2883,13 @@ usb_1_ss0_qmpphy: phy@fd5000 {
- 			clocks = <&gcc GCC_USB3_PRIM_PHY_AUX_CLK>,
- 				 <&rpmhcc RPMH_CXO_CLK>,
- 				 <&gcc GCC_USB3_PRIM_PHY_COM_AUX_CLK>,
--				 <&gcc GCC_USB3_PRIM_PHY_PIPE_CLK>;
-+				 <&gcc GCC_USB3_PRIM_PHY_PIPE_CLK>,
-+				 <&gcc GCC_USB4_0_PHY_P2RR2P_PIPE_CLK>;
- 			clock-names = "aux",
- 				      "ref",
- 				      "com_aux",
--				      "usb3_pipe";
-+				      "usb3_pipe",
-+				      "p2rr2p_pipe";
- 
- 			power-domains = <&gcc GCC_USB_0_PHY_GDSC>;
- 
-@@ -2954,11 +2956,13 @@ usb_1_ss1_qmpphy: phy@fda000 {
- 			clocks = <&gcc GCC_USB3_SEC_PHY_AUX_CLK>,
- 				 <&tcsr TCSR_USB4_1_CLKREF_EN>,
- 				 <&gcc GCC_USB3_SEC_PHY_COM_AUX_CLK>,
--				 <&gcc GCC_USB3_SEC_PHY_PIPE_CLK>;
-+				 <&gcc GCC_USB3_SEC_PHY_PIPE_CLK>,
-+				 <&gcc GCC_USB4_1_PHY_P2RR2P_PIPE_CLK>;
- 			clock-names = "aux",
- 				      "ref",
- 				      "com_aux",
--				      "usb3_pipe";
-+				      "usb3_pipe",
-+				      "p2rr2p_pipe";
- 
- 			power-domains = <&gcc GCC_USB_1_PHY_GDSC>;
- 
-@@ -3025,11 +3029,13 @@ usb_1_ss2_qmpphy: phy@fdf000 {
- 			clocks = <&gcc GCC_USB3_TERT_PHY_AUX_CLK>,
- 				 <&tcsr TCSR_USB4_2_CLKREF_EN>,
- 				 <&gcc GCC_USB3_TERT_PHY_COM_AUX_CLK>,
--				 <&gcc GCC_USB3_TERT_PHY_PIPE_CLK>;
-+				 <&gcc GCC_USB3_TERT_PHY_PIPE_CLK>,
-+				 <&gcc GCC_USB4_2_PHY_P2RR2P_PIPE_CLK>;
- 			clock-names = "aux",
- 				      "ref",
- 				      "com_aux",
--				      "usb3_pipe";
-+				      "usb3_pipe",
-+				      "p2rr2p_pipe";
- 
- 			power-domains = <&gcc GCC_USB_2_PHY_GDSC>;
- 
-
--- 
-2.54.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0xvd10gVGhlIGJpbmRpbmcgaW5j
+b3JyZWN0bHkgcmVsYXhlcyBjbG9jayBjb25zdHJhaW50cyBieSBncm91cGluZyAneDFlODAxMDAn
+IHdpdGggJ3NjNzE4MCcgYW5kICdzZG04NDUnIGFuZCBnbG9iYWxseSBjaGFuZ2luZyB0aGUgNXRo
+ICdjbG9jay1uYW1lcycgaXRlbSB0byBhbiBlbnVtLgotLQoKY29tbWl0IDU0ZDFmMGZkMjM0NmQw
+ZGJmNDg2Y2E1MjEyNzY3YWQzM2Y1OWZkZTAKQXV0aG9yOiBLb25yYWQgRHliY2lvIDxrb25yYWQu
+ZHliY2lvQG9zcy5xdWFsY29tbS5jb20+CgpkdC1iaW5kaW5nczogcGh5OiBxY29tLHFtcC11c2Iz
+LWRwOiBFeHRlbmQgWDFFIGRlc2NyaXB0aW9uIGZvciBVU0I0CgpUaGlzIGNvbW1pdCBleHRlbmRz
+IHRoZSBRTVAgY29tYm8gUEhZIGJpbmRpbmcgZm9yIFgxRTgwMTAwIHRvIHN1cHBvcnQgVVNCNApj
+b21tdW5pY2F0aW9uLiBJdCB1cGRhdGVzIHRoZSBzY2hlbWEgdG8gYWxsb3cgYSBuZXcgY2xvY2ss
+IFAyUlIyUCwgd2hpY2ggaXMKcmVxdWlyZWQgZm9yIHN3aXRjaGluZyB0byBVU0I0IG1vZGUsIGFu
+ZCBhZGRzIGEgY29ycmVzcG9uZGluZyBkZWZpbml0aW9uLgoKPiBkaWZmIC0tZ2l0IGEvRG9jdW1l
+bnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS9xY29tLHNjODI4MHhwLXFtcC11c2I0M2Rw
+LXBoeS55YW1sIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS9xY29tLHNj
+ODI4MHhwLXFtcC11c2I0M2RwLXBoeS55YW1sCj4gLS0tIGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0
+cmVlL2JpbmRpbmdzL3BoeS9xY29tLHNjODI4MHhwLXFtcC11c2I0M2RwLXBoeS55YW1sCj4gKysr
+IGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS9xY29tLHNjODI4MHhwLXFt
+cC11c2I0M2RwLXBoeS55YW1sCj4gQEAgLTUyLDcgKzUyLDcgQEAgcHJvcGVydGllczoKPiAgICAg
+ICAgLSBjb25zdDogcmVmCj4gICAgICAgIC0gY29uc3Q6IGNvbV9hdXgKPiAgICAgICAgLSBjb25z
+dDogdXNiM19waXBlCj4gLSAgICAgIC0gY29uc3Q6IGNmZ19haGIKPiArICAgICAgLSBlbnVtOiBb
+IHAycnIycF9waXBlLCBjZmdfYWhiIF0KCkRvZXMgdGhpcyBnbG9iYWwgZW51bSBjaGFuZ2UgaW5h
+ZHZlcnRlbnRseSByZWxheCB0aGUgY29uc3RyYWludCBmb3IgYWxsCnZhcmlhbnRzPwoKSXQgYXBw
+ZWFycyB0aGF0IG9sZGVyIHZhcmlhbnRzIHdoaWNoIHByZXZpb3VzbHkgc3RyaWN0bHkgcmVxdWly
+ZWQgY2ZnX2FoYgpjb3VsZCBub3cgcGFzcyBzY2hlbWEgdmFsaWRhdGlvbiB1c2luZyBwMnJyMnBf
+cGlwZSBpbnN0ZWFkLCBhbmQgdmljZSB2ZXJzYS4KClsgLi4uIF0KCj4gQEAgLTE4Niw2ICsxODYs
+NyBAQCBhbGxPZjoKPiAgICAgICAgICAgIGVudW06Cj4gICAgICAgICAgICAgIC0gcWNvbSxzYzcx
+ODAtcW1wLXVzYjMtZHAtcGh5Cj4gICAgICAgICAgICAgIC0gcWNvbSxzZG04NDUtcW1wLXVzYjMt
+ZHAtcGh5Cj4gKyAgICAgICAgICAgIC0gcWNvbSx4MWU4MDEwMC1xbXAtdXNiMy1kcC1waHkKPiAg
+ICAgIHRoZW46Cj4gICAgICAgIHByb3BlcnRpZXM6Cj4gICAgICAgICAgY2xvY2tzOgoKU2hvdWxk
+IHgxZTgwMTAwIGJlIHBsYWNlZCBpbiBpdHMgb3duIGlmL3RoZW4gYmxvY2s/CgpHcm91cGluZyB4
+MWU4MDEwMCB3aXRoIHNjNzE4MCBhbmQgc2RtODQ1IG1lYW5zIHRoZSBzY2hlbWEgb25seSBlbmZv
+cmNlcyB0aGUKbWF4aW11bSBudW1iZXIgb2YgaXRlbXMsIGJ1dCBkb2Vzbid0IHN0cmljdGx5IHRp
+ZSB0aGUgNXRoIGNsb2NrIHRvIHRoZQpzcGVjaWZpYyBoYXJkd2FyZSBnZW5lcmF0aW9uLiBBIHNl
+cGFyYXRlIGJsb2NrIHdvdWxkIGVuc3VyZSB4MWU4MDEwMCBpcwpyZXN0cmljdGVkIHRvIHAycnIy
+cF9waXBlLCB3aGlsZSB0aGUgb2xkZXIgdmFyaWFudHMgcmVtYWluIHJlc3RyaWN0ZWQgdG8KY2Zn
+X2FoYi4KCi0tIApTYXNoaWtvIEFJIHJldmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0
+Y2hzZXQvMjAyNjA1MTgtdG9waWMtdXNiNHBoeS12MS0wLTcxZDgyN2M0OWRjYUBvc3MucXVhbGNv
+bW0uY29tP3BhcnQ9MQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3Rz
+LmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGlu
+Zm8vbGludXgtcGh5Cg==
