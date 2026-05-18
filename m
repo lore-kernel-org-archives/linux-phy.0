@@ -4,63 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E2FFBCD4F3C
-	for <linux-phy@archiver.kernel.org>; Mon, 18 May 2026 06:30:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 33CF0CD343F
+	for <linux-phy@archiver.kernel.org>; Mon, 18 May 2026 06:30:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zPT20kH2j5odyTT7rd8XrdfAxuB4G0IT5OsJFXzruSQ=; b=osHFP25qZL6TVu
-	hLT6rtQhDj5f6x+NEar5+2JHmb0BcPSp3bbv0cpCCUVGhzpsyeG+v/LbN6ZOFXBRRisKNxcu+H1Rc
-	V3SsRayC+pzfzuFj5wSnhh42QLEUVze2d+JlTXQZZRSpBLwQ/UiIQ5MT3E0uj8VDb1j2fpZ4xFJHz
-	JQN0kUUWD17zD59CL/OEckcaiVZenbrg4RMzViLmzjMkyd3nE6RupGE1cVXaIuqLu1qGlif+/cT8p
-	4/BdR536AS24DeUyUwOSklck8M+vMekga867e239l5w7l5T2VZtGur6DGz/BKGJahp3Ts8/TUNtax
-	enOrll9ah4vBdFEZpYSw==;
+	List-Owner; bh=6Iqsd3oRd2GgtWMkNIn1mzaU6B7IwXC32zM/TtwmAc4=; b=CPOnudyMBnn5g5
+	qwTVjJKcKlNnzT88JUAP6LyfccTwwbGaWklCw349kyVbAGZw7JYMpHhmDNZERuiQnCvQPGrbIKIwO
+	siJsSwUi9HLVW6KvdsCx+6yIT1BvHsXPQK21dmDGRWW49k+Z5rAh79LmGN9Hb0Z+5+C36NbR23g4N
+	jsTmMVW1jdveasipmlOtR829aEbWNARwLQD+vjJdXn2Rwpg7IbS6unUL0LbvDuC9d+ORYPajzfiQH
+	P71Cy8bAQK1Xfvy1sgprN9/bZ8bPfwPNl5tY5mSv5YR9fK/kpe4qGr9egSVtbj3MMKEKrqEpcL62P
+	Ju8VgBFKaFWktrhOF57A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wOrUS-0000000EQnG-2tME;
-	Mon, 18 May 2026 06:30:12 +0000
+	id 1wOrUS-0000000EQnK-32YJ;
+	Mon, 18 May 2026 06:30:13 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wOrUR-0000000EQml-0lRS
+	id 1wOrUR-0000000EQmm-2CPt
 	for linux-phy@bombadil.infradead.org;
 	Mon, 18 May 2026 06:30:11 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
 	:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
 	Content-Type:Content-ID:Content-Description;
-	bh=g97ePg0wtl+cDE+JA/yxEgz/Kza2fUbSBj8vtsijvAQ=; b=VmZS7RPzRYi+u4IXmF3W4dhVCs
-	BCMNsnaui/Vux4Vz/uUP/yPYoarkHYQKpFP4UPOIJI5wgOdOS8sHQ+uh9tffjvXWo6OVF+YIFkf60
-	FwumItoaw9RKt9OLXOytSiuwMS/MJ1MDhL1VKZFYs/AQhs6OKUDIyMvn5Zym67UhW2An8RU5Ek8mG
-	jE0258oqnQhaP3cIGYY+Mw0E30+ECYKvb1cx5oD5kPpIw2b7p7Eultj8cbVtwxZN/yl0qGoH/DP9P
-	HYnsK48b2H96KUqr++EJdIaNom76Qs9QVsIJSulp6LKv7APWQ1bJW9Z1gzYOdLdY6mGjpWDp/V/GA
-	su0v++zg==;
+	bh=PRCQGJXxlQyZsJOmaBRAoQPXa3m7L0m8okvy+7Dv7NA=; b=oAoCp0D8tLwQLVNULh4QyfwJCY
+	BJpjUqfHUIEzoIrF33TAT8SB269ztiO3YWeRyYDzHh9EGJj3In0vbkMQy7BoIDIaMcxJskz2Iskx0
+	pR6Z514Ezcv2OartNqXrNK0QEVI5ugpZGGPZzgmPIzTMzJj0vpZujRsqJCKQYkfGq+bGpSuHw8amb
+	k6B6IxUlfVpBJGVVivxwyef58UQNw1xo7pGZ3+ZeYn92ozXNoy9tbozbm8RksYRqGur8brQf6r600
+	IsWMAsC3/SUyYGIY9d/Ev3foz9D1UZUy+AqTx3ujfHkKEFYG/GoSqOSOea6D7y39Lqcsw7XLsvrcf
+	kOC7ULtw==;
 Received: from mailgw.kylinos.cn ([124.126.103.232])
 	by desiato.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wOrUL-0000000A1Qb-1zdh
+	id 1wOrUL-0000000A1Qe-2iHc
 	for linux-phy@lists.infradead.org;
 	Mon, 18 May 2026 06:30:09 +0000
-X-UUID: f5a03896528211f1aa26b74ffac11d73-20260518
+X-UUID: f607e8ba528211f1aa26b74ffac11d73-20260518
 X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.3.12,REQID:1bdacc40-41bc-4fa9-9563-7407ddda0d18,IP:0,U
-	RL:0,TC:0,Content:0,EDM:-25,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTIO
+X-CID-O-INFO: VERSION:1.3.12,REQID:4bb8eabc-56d3-4dfa-a082-a4f92b4d3046,IP:0,U
+	RL:0,TC:0,Content:-25,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTIO
 	N:release,TS:-25
-X-CID-META: VersionHash:e7bac3a,CLOUDID:ae4bcf6a226be54b013a9e53c77356b2,BulkI
+X-CID-META: VersionHash:e7bac3a,CLOUDID:2cf1c7d3a309c4189b32b605f2a15957,BulkI
 	D:nil,BulkQuantity:0,Recheck:0,SF:81|82|102|850|865|898,TC:nil,Content:0|1
-	5|50,EDM:2,IP:nil,URL:0,File:nil,RT:nil,Bulk:nil,QS:nil,BEC:nil,COL:0,OSI:
-	0,OSA:0,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
+	5|50,EDM:-3,IP:nil,URL:99|1,File:nil,RT:nil,Bulk:nil,QS:nil,BEC:nil,COL:0,
+	OSI:0,OSA:0,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
 X-CID-BVR: 2,SSN|SDN
 X-CID-BAS: 2,SSN|SDN,0,_
-X-CID-FACTOR: TF_CID_SPAM_SNR
+X-CID-FACTOR: TF_CID_SPAM_SNR,TF_CID_SPAM_ULS
 X-CID-RHF: D41D8CD98F00B204E9800998ECF8427E
-X-UUID: f5a03896528211f1aa26b74ffac11d73-20260518
+X-UUID: f607e8ba528211f1aa26b74ffac11d73-20260518
 X-User: zenghongling@kylinos.cn
 Received: from localhost.localdomain [(10.44.16.150)] by mailgw.kylinos.cn
 	(envelope-from <zenghongling@kylinos.cn>)
 	(Generic MTA with TLSv1.3 TLS_AES_256_GCM_SHA384 256/256)
-	with ESMTP id 248636260; Mon, 18 May 2026 14:29:44 +0800
+	with ESMTP id 2073245212; Mon, 18 May 2026 14:29:45 +0800
 From: Hongling Zeng <zenghongling@kylinos.cn>
 To: vkoul@kernel.org,
 	neil.armstrong@linaro.org,
@@ -70,17 +70,20 @@ To: vkoul@kernel.org,
 Cc: linux-phy@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	zhongling0719@126.com,
-	Hongling Zeng <zenghongling@kylinos.cn>
-Subject: [PATCH v5 3/4] phy: ti-pipe3: Fix EPROBE_DEFER handling for clock  resources
-Date: Mon, 18 May 2026 14:29:37 +0800
-Message-Id: <20260518062938.48114-4-zenghongling@kylinos.cn>
+	Hongling Zeng <zenghongling@kylinos.cn>,
+	Sashiko AI <sashiko@kernel.org>,
+	stable@vger.kernel.org
+Subject: [PATCH v5 4/4] phy: ti-pipe3: Fix clock leak in init error path
+Date: Mon, 18 May 2026 14:29:38 +0800
+Message-Id: <20260518062938.48114-5-zenghongling@kylinos.cn>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20260518062938.48114-1-zenghongling@kylinos.cn>
 References: <20260518062938.48114-1-zenghongling@kylinos.cn>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260518_073007_060012_703A0911 
-X-CRM114-Status: GOOD (  13.07  )
+X-CRM114-CacheID: sfid-20260518_073007_057667_364D9B82 
+X-CRM114-Status: UNSURE (   7.25  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,80 +100,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-ti_pipe3_get_clk() has two issues with -EPROBE_DEFER error handling:
+When regmap_update_bits() fails in ti_pipe3_init() for PCIe mode,
+the function returns the error without calling ti_pipe3_disable_clocks().
+This leaves the clocks permanently enabled since the PHY framework won't
+invoke the .exit callback on init failure.
 
-1. When devm_clk_get() for sysclk fails, the function returns -EINVAL
-   instead of propagating the actual error code. This masks -EPROBE_DEFER
-   to -EINVAL, breaking the probe deferral mechanism and causing permanent
-   driver initialization failure on systems with non-deterministic probe
-   ordering.
+Fix this by adding proper clock cleanup in the PCIe error path, consistent
+with how the DPLL program error path handles cleanup.
 
-2. For SATA PHY refclk, the function ignores all errors to support older
-   DTBs missing the refclk property. However, this incorrectly ignores
-   -EPROBE_DEFER as well, causing the driver to proceed without waiting
-   for the clock provider to become available.
-
-Fix both issues:
-- Return PTR_ERR(phy->sys_clk) instead of -EINVAL to propagate all
-  error codes including -EPROBE_DEFER
-- Use devm_clk_get_optional() for SATA refclk to handle optional
-  clocks while propagating -EPROBE_DEFER and other errors
-
-Fixes: a70143bbef6b ("drivers: phy: usb3/pipe3: Adapt pipe3 driver to Generic PHY Framework")
-Fixes: 7f33912d2978 ("phy: ti-pipe3: Fix SATA across suspend/resume")
+Fixes: 234738ea3390 ("phy: ti-pipe3: move clk initialization to a separate function")
+Reported-by: Sashiko AI <sashiko@kernel.org>
+Closes: https://lore.kernel.org/all/20260518023657.41852C2BCB0@smtp.kernel.org/
 Signed-off-by: Hongling Zeng <zenghongling@kylinos.cn>
+Cc: stable@vger.kernel.org
 
 ---
-  Change in v4:
-   - Merge refclk leak fix and EPROBE_DEFER fix into a single patch
-   - Use devm_clk_get_optional() for SATA refclk
-   - Drop manual -ENOENT handling
-   - Ensure error paths are fully symmetric
+Change in v5:
+  -Add Fix ignored clock enable return value in init patch
 ---
-  Change in v5:
-   -Add Fix ignored clock enable return value in init patch
----
- drivers/phy/ti/phy-ti-pipe3.c | 20 +++++++++++++-------
- 1 file changed, 13 insertions(+), 7 deletions(-)
+ drivers/phy/ti/phy-ti-pipe3.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
 diff --git a/drivers/phy/ti/phy-ti-pipe3.c b/drivers/phy/ti/phy-ti-pipe3.c
-index 2d36fe4c4218..9ec228c2a940 100644
+index 9ec228c2a940..4897e4ba2d7d 100644
 --- a/drivers/phy/ti/phy-ti-pipe3.c
 +++ b/drivers/phy/ti/phy-ti-pipe3.c
-@@ -608,14 +608,20 @@ static int ti_pipe3_get_clk(struct ti_pipe3 *phy)
- 	struct clk *clk;
- 	struct device *dev = phy->dev;
- 
--	phy->refclk = devm_clk_get(dev, "refclk");
-+	/*
-+	 * refclk is optional for SATA PHY to support older DTBs, but
-+	 * required for other modes. Use devm_clk_get_optional() for SATA
-+	 * which returns NULL for -ENOENT, allowing us to propagate all
-+	 * other errors including -EPROBE_DEFER.
-+	 */
-+	if (phy->mode == PIPE3_MODE_SATA)
-+		phy->refclk = devm_clk_get_optional(dev, "refclk");
-+	else
-+		phy->refclk = devm_clk_get(dev, "refclk");
-+
- 	if (IS_ERR(phy->refclk)) {
- 		dev_err(dev, "unable to get refclk\n");
--		/* older DTBs have missing refclk in SATA PHY
--		 * so don't bail out in case of SATA PHY.
--		 */
--		if (phy->mode != PIPE3_MODE_SATA)
--			return PTR_ERR(phy->refclk);
-+		return PTR_ERR(phy->refclk);
- 	}
- 
- 	if (phy->mode != PIPE3_MODE_SATA) {
-@@ -632,7 +638,7 @@ static int ti_pipe3_get_clk(struct ti_pipe3 *phy)
- 		phy->sys_clk = devm_clk_get(dev, "sysclk");
- 		if (IS_ERR(phy->sys_clk)) {
- 			dev_err(dev, "unable to get sysclk\n");
--			return -EINVAL;
-+			return PTR_ERR(phy->sys_clk);
- 		}
+@@ -518,6 +518,8 @@ static int ti_pipe3_init(struct phy *x)
+ 		val = 0x96 << OMAP_CTRL_PCIE_PCS_DELAY_COUNT_SHIFT;
+ 		ret = regmap_update_bits(phy->pcs_syscon, phy->pcie_pcs_reg,
+ 					 PCIE_PCS_MASK, val);
++		if (ret)
++			ti_pipe3_disable_clocks(phy);
+ 		return ret;
  	}
  
 -- 
