@@ -4,114 +4,133 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0DDBCCD4F3C
-	for <linux-phy@archiver.kernel.org>; Tue, 19 May 2026 13:43:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BCC6DCD4F3C
+	for <linux-phy@archiver.kernel.org>; Tue, 19 May 2026 14:26:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xOr79bq5uIXJn8dSIFBuc6+OeIFsMHRgTAha4TqBg/U=; b=20o4RX4OXE9Uom
-	yupKx3G1e3JSGx1DSdex+27ujxgM0YDoErQQFRXSQyY8fzybrZ4MMcuGxs2P+6D2KqHnByDSDa9cw
-	ZId+PhAgMMvz32FL9kRIrPnm34BFMqIBRaVJMFauc6eIZ0qFjQf4zbGq6j3Vb1rnruRxh8uctYwA+
-	ihrtyZkUvaGeNxbFMSoo3nlXxnjrTVQ42ap6UEgNtbALGLwrPuH7NANHvM3wA1aM9nHN5txniWsQX
-	/mn3s7BJqh5U3dXZBTadnncAStDU1pt0gCoTTOHGHTKtDeKF2bPxcyiDl7ZUiXDJ23bYuYz3FQ8UP
-	CySSvt4OL8FeKxSaHFYg==;
+	List-Owner; bh=KDFdAeM0cYPG9rSR/b/wQCkhj+/ViHQevgAxraFLbw8=; b=s8N5iS/PoByEm9
+	um8pXtvHSBluv/uO1fHPdxzeKhzh1IBI9x0IdW7yaAHMLbIhu9BnnURpvGn0hGOu66l+IsJwkLm99
+	AYrLTU22pJFmGhJHLiT2VSorxyF5reVzH67KnrhabhRmMbVw5VegbkN6oxKt9Zsxr3MGfbFrBbei4
+	InWBSu1WlZyGUKgb1vt0gsC8fBIT93SMNphzBgt+vvKWHb4nqzJ2IVdXbmsTZ9VNUu2FrSPfhWnio
+	nIw3YmOlTL4mIMoaswThOezbPs1bPx6tKpu/xaVVigmw5U1QjMame+wM8/bNwqFtN0aBZdhSWyqb+
+	8srhNO4xErbw5OAOLNsg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wPKjd-00000001hr7-2kU1;
-	Tue, 19 May 2026 13:43:49 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1wPLP5-00000001pFB-3JOR;
+	Tue, 19 May 2026 14:26:40 +0000
+Received: from mail-westeuropeazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c201::3] helo=AS8PR04CU009.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wPKjb-00000001hqT-1Z1Z;
-	Tue, 19 May 2026 13:43:47 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=In-Reply-To:Content-Type:MIME-Version:
-	References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description;
-	bh=z31A+Yns+m44y72wILb74PxiG+hCd4u+Y123tfDJv0k=; b=qa/YiFmPv+dFh6g0iu/Sue4aCf
-	RF/O65Z6cXvgeggoyevJozhaAOoXTD5KEZyyKnCTs7Zn52mhFc943m3nwgbORK2lYfHg0Wyo25H0/
-	QEQnDp070Q/ViP0UyolwSSIqqI2LeFttn5yITHHvn9XRlL5KKARlit+yL4ZuOIqjyB8EKfru7hRjx
-	nL/OmPEhFlyoOtCs1R9B9K8gy1wuJz5yKAn07jari/C6m2hKzZeoSD387GOdZj5kLUTZKrqnzsBU2
-	YgvaH0PmHPpCC1m/w4sZpmuWRtd+N3oe75o4GTwXSw5C35IdzUC6C4ytVbutH3S3N/KwCcSbkWuhO
-	kSvE2yHA==;
-Received: from mgamail.intel.com ([198.175.65.18])
-	by desiato.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wPKjX-0000000EPAC-2d0e;
-	Tue, 19 May 2026 13:43:46 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1779198224; x=1810734224;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=exV8hygySw1KI0J7oiVeWZSbjE1gtP4/UQEEL14ddOw=;
-  b=U7Tuj9zlvwSFFWeKNEuAQQEdVo0OwqKsAjK2hmE10lIqLlypc0p/LADi
-   x3W11DjbSvKXsTQToOD5Sk4kARSwLxsdoHUhT5VTMsd/NdtufdsnOMTds
-   oZiE5Ob+jLun31FeBovAQ/NvXsMgmeMk4hY9jO9LkHnRa2AsfMB7Jlt/R
-   /9gbzTjmGQK7qefqTpL2XTAJIHadW7saBEKeWa8Emj8kLweq3Ug6jje9z
-   544uIR5THtEOXP38CYBFswNMks6K+al5CGjhWeL4eKNqlM0T10qIziGsg
-   P6/IWElop8pydwsBo9ZaOJPJSTKALcWnGakTSgIF6lC5A0RWYkBKZWxAy
-   g==;
-X-CSE-ConnectionGUID: yCQyrrTZQqSZIp3kpYBZLg==
-X-CSE-MsgGUID: jlhuIiAXS7OR9C+QjhZlpQ==
-X-IronPort-AV: E=McAfee;i="6800,10657,11791"; a="80127263"
-X-IronPort-AV: E=Sophos;i="6.23,243,1770624000"; 
-   d="scan'208";a="80127263"
-Received: from fmviesa001.fm.intel.com ([10.60.135.141])
-  by orvoesa110.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 19 May 2026 06:43:35 -0700
-X-CSE-ConnectionGUID: JZZhgaONSbu9Kph92VzKig==
-X-CSE-MsgGUID: Yw2KK65NR8eVdiGAgLaHAQ==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.23,243,1770624000"; 
-   d="scan'208";a="263555729"
-Received: from black.igk.intel.com ([10.91.253.5])
-  by fmviesa001.fm.intel.com with ESMTP; 19 May 2026 06:43:27 -0700
-Received: by black.igk.intel.com (Postfix, from userid 1008)
-	id 7C24995; Tue, 19 May 2026 15:43:26 +0200 (CEST)
-Date: Tue, 19 May 2026 16:43:14 +0300
-From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
-To: Chaoyi Chen <kernel@airkyi.com>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
-	Peter Chen <hzpeterchen@gmail.com>,
-	Luca Ceresoli <luca.ceresoli@bootlin.com>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Kishon Vijay Abraham I <kishon@kernel.org>,
-	Heiko Stuebner <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
-	Andy Yan <andy.yan@rock-chips.com>,
-	Yubing Zhang <yubing.zhang@rock-chips.com>,
-	Frank Wang <frank.wang@rock-chips.com>,
-	Andrzej Hajda <andrzej.hajda@intel.com>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Robert Foss <rfoss@kernel.org>,
-	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
-	Jonas Karlman <jonas@kwiboo.se>,
-	Jernej Skrabec <jernej.skrabec@gmail.com>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
-	Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
-	Amit Sunil Dhamne <amitsd@google.com>,
-	Dragan Simic <dsimic@manjaro.org>, Johan Jonker <jbx6244@gmail.com>,
-	Diederik de Haas <didi.debian@cknow.org>,
-	Peter Robinson <pbrobinson@gmail.com>,
-	Hugh Cole-Baker <sigmaris@gmail.com>, linux-usb@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
-	linux-rockchip@lists.infradead.org, dri-devel@lists.freedesktop.org,
-	Chaoyi Chen <chaoyi.chen@rock-chips.com>
-Subject: Re: [PATCH v15 0/9] Add Type-C DP support for RK3399 EVB IND board
-Message-ID: <agxo8ic94e81nQRx@kuha>
-References: <20260304094152.92-1-kernel@airkyi.com>
-MIME-Version: 1.0
+	id 1wPLOz-00000001pCg-1ug6;
+	Tue, 19 May 2026 14:26:38 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=F+1MaPHbS4Ey4Cpz05KyT018y5zqkGnUFX45V9uuzzhBMPW2TkZHCzYotvqMpY8Z2GU3U22S6NoK7svLcAyOEeZQMKh0R3nzseuFuJsubLCnQAfeI8XCF0tEya5dFjxyo7lw2pKuzKl2/9ExO+QVETfXKsxfpCjIMeYeuBhZR3NogCBjK89uhd+ARH7SsU0iKPnGdnTtGv/YSoBzySQah6JoljhK7p4/YSLx1abvQ1g3IW2ypibDZCtnz/HOG5Yyyyee9fRZVAvRqJBEH54ayJu2f0Kyu37xi0LaRm3vU0TDck16ocVmB+v7bdI9V9I1IQgykR0ywe8D+6p+UMQP+w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=o0N0iV9AfWsuuaEPuiOJOOK8UNEX2u555MmO8yvCwqs=;
+ b=ikf/dpnVbkowPzVt5AmIP2E4pvnnrX+PgOObN0DTOqpPqGLL1VV384aEK7yZA4znKcAc6gzXza2KilYpAcc60BXESqUrlcn5ac0yQOPiKpZvGi94VgrlI0D8UgY44QbrG4HZ/dwUkbpd/stTTcrNaW+eSVIkTTu8zo16UG+YJpmNaSjIFO/i4SihjwellUz/FmlfJUZpEv97FnnxsyCyA8Q6x9yFv8mW5r0ivrhY31vxtfjckA/U4EjBilkBrg7qqxeaQvr1YevJPascDNcz6LohkiGCub+CfPUVmjVpVSRvELMmBKBOkyWeg5EecCComdDhXxdtIz1uwigPtwM/VA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
+ dkim=pass header.d=oss.nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
+ s=selector1-NXP1-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=o0N0iV9AfWsuuaEPuiOJOOK8UNEX2u555MmO8yvCwqs=;
+ b=HtMd/wxG/XE8OAODcck8YVdZxstsg44jQf59OJQ4Luok0BF3B/8NUjKgR2Lu/eEiMLdtECYjQNliDt2h0x3GQbQ9yrlUNVrVsGgP53tr0E4F4V8jpJ8bWfAUCPFv40valhtp6sLBuEjmgJPrUVJ1Xf2jbu6SNk15abkBEBNTpf1ewtk5lYnlxGbEJzis4kw+UT8z1OyVzwkALFKEGFnZLg7pAXQs3N9FFCYbt/woB6rSCMKjPjRpc5axg8/xyuN0b9Ij6bbhlQkQl12JD/jyRR06VWS749uKJ4HyODvLYwcewXVXAc8p268Lxjp4gD/OL9fstDpJOrkGG6kLBoj/wg==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=oss.nxp.com;
+Received: from GV1PR04MB9135.eurprd04.prod.outlook.com (2603:10a6:150:26::19)
+ by PA2PR04MB10446.eurprd04.prod.outlook.com (2603:10a6:102:415::11) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.25.23; Tue, 19 May
+ 2026 14:26:24 +0000
+Received: from GV1PR04MB9135.eurprd04.prod.outlook.com
+ ([fe80::3826:2706:1e81:c9e2]) by GV1PR04MB9135.eurprd04.prod.outlook.com
+ ([fe80::3826:2706:1e81:c9e2%5]) with mapi id 15.21.0025.023; Tue, 19 May 2026
+ 14:26:23 +0000
+Date: Tue, 19 May 2026 17:26:18 +0300
+From: Laurentiu Palcu <laurentiu.palcu@oss.nxp.com>
+To: Vinod Koul <vkoul@kernel.org>
+Cc: Parshuram Thombare <pthombar@cadence.com>, 
+	Swapnil Jakhade <sjakhade@cadence.com>, Neil Armstrong <neil.armstrong@linaro.org>, 
+	Frank Li <Frank.Li@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>, 
+	Pengutronix Kernel Team <kernel@pengutronix.de>, Fabio Estevam <festevam@gmail.com>, 
+	dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-phy@lists.infradead.org, imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org, 
+	linux@ew.tq-group.com, Alexander Stein <alexander.stein@ew.tq-group.com>, 
+	Ying Liu <victor.liu@nxp.com>
+Subject: Re: [PATCH v22 6/8] phy: freescale: Add DisplayPort/HDMI Combo-PHY
+ driver for i.MX8MQ
+Message-ID: <brv6sgyrwplbrf2hgqowvzwfxmnv7mea5jlbhyscdhyhse3nd2@mvuxnkgknmc3>
+References: <20260424-dcss-hdmi-upstreaming-v22-0-30a28f89298d@oss.nxp.com>
+ <20260424-dcss-hdmi-upstreaming-v22-6-30a28f89298d@oss.nxp.com>
+ <afd9juuQh8OB6SEw@vaman>
 Content-Disposition: inline
-In-Reply-To: <20260304094152.92-1-kernel@airkyi.com>
+In-Reply-To: <afd9juuQh8OB6SEw@vaman>
+X-ClientProxiedBy: AM0PR05CA0075.eurprd05.prod.outlook.com
+ (2603:10a6:208:136::15) To GV1PR04MB9135.eurprd04.prod.outlook.com
+ (2603:10a6:150:26::19)
+MIME-Version: 1.0
+X-MS-Exchange-MessageSentRepresentingType: 1
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: GV1PR04MB9135:EE_|PA2PR04MB10446:EE_
+X-MS-Office365-Filtering-Correlation-Id: 1cbbaa63-8fe7-4a60-26b2-08deb5b29a89
+X-MS-Exchange-SharedMailbox-RoutingAgent-Processed: True
+X-LD-Processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|1800799024|366016|7416014|376014|11063799006|18002099003|22082099003|56012099003|4143699003;
+X-Microsoft-Antispam-Message-Info: 3Xcp99mchCcT5a0ytck5zF1loRFAG7uH+0Ytsu1nFMak2Rb4eijsDWS5SpSexUxlVUCFCXsBepS8bbr+PoBGVKcScbBCKXiB32muNexsEQM690jSWJZtHpc+83lnOWGmV8I9bpED4dNOT+HmXX7sisXsEPjaZawIxI4R9+Hq9EksuvVIUP8u3hcybuHXEOzITf1V9+0gGs1O9wVNeP27QweIftXcfB1J0JBIoN7JMdnrkHjs6rtvkSVkhsy9RuQ31Gfg/X2Ks0Po9R4fGxAuaR/Z8ZvwDfmJrAI75We+YpUs2czQ0fOWNOyWmqgeb9uOdhb/M7+RgHm0c/6WCPjclrH8E1d+9mqN4ReplKnEUf4Uig9/8m69cFmXAqmnXC6b/FA7Dzs7BjbWLJp0Tnr4DOROfFgfdi+DminHFV+jw7iwgLYhh4XDbP4hfzqPfQZ0buLJYY41oaJU8rnAD2/xW5EOc0tizHYvjvRwxoCI2OkQ7tpqa1pC0lERHFDwdznWip2ksX3wMI4LmwXRlh/3aE49MD2TKd6QgjvmlMnsyvmVuSnIkpHXXKPk/gOuXtk0u8+hjzAgQrpTEa88V5EsNq0tZFadAnNwqemFsvhNMa9NEj/HEe6bt+vfIm+laqKI
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV1PR04MB9135.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(1800799024)(366016)(7416014)(376014)(11063799006)(18002099003)(22082099003)(56012099003)(4143699003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?YlzdRHxf9K6ccZGR18VGbSdemfOUi6nOSkM6VwLKjyjTT+4ixYNtVgr09BAS?=
+ =?us-ascii?Q?0xFygaRz3EFBlXFTYEeckOQ8SSqOzMTii0umKAXGTcKvmfEIDpqw38/XX7d+?=
+ =?us-ascii?Q?N6RMY7JvF07WLNPa7VS8XtddVHVJN20/iA/qfX7h8uXk9OSDinIGSzOSpOIQ?=
+ =?us-ascii?Q?6ppuiTAvy6+DCD9jIOIBWwBYc45FqpPje3opZ3FIbZ29MIKt+uTgYj5d6wKk?=
+ =?us-ascii?Q?bxMpmzEmj3GyQbAF3BnNLXJwkdmG3oqYpehcS9hE1oZ8/n01y54ZslZl+XqC?=
+ =?us-ascii?Q?OYBy7VhbPAlDZrg9GmiivGcrvFg7MWNiPmeab0l9Mo7bQbCkAZm5gXJqcY7f?=
+ =?us-ascii?Q?k1eW4x9P8lzOXrhh7vfpKOcnbuveWu68ioRmaZYVy44esISOct/5TkP5OBrt?=
+ =?us-ascii?Q?JqTps+zMseAqVZiQ1OSZFiG7rkAlWSHebc4ueixKs0rFGoEBEEKWj/GpJZbL?=
+ =?us-ascii?Q?kClS0fWrxEb0m8ytHIxgieOQlxPQUVjUSK65kayDtdlZ1ddHGwWX8MgD+cF2?=
+ =?us-ascii?Q?2si+67XmtQqD0XxoCM5AVL16pyC4n0FXEeUpGNdIp0efErYLBadewrfhL5Df?=
+ =?us-ascii?Q?k8SuA5gVuzuxHExmC+w4Nn9bh6CZIVFVHXKqnUUN5z5zoITEsBYgXHBYYfjI?=
+ =?us-ascii?Q?kdKagnxaB6rhsYRC4SKH+9G0wQ6K0nhn7ZT2REhF/mQfZTlVONVPw7YGG9nh?=
+ =?us-ascii?Q?okMLRNRFR6D0XOCoox0cWidcjjkQx5D96Oz2xu3X2AkfWMKzWU0o0LTusGLU?=
+ =?us-ascii?Q?GTt/a49NpM/SFraRViGow3lbyf75vrGOUyCWDV4H4udm9PsiM6srA4VGQgZu?=
+ =?us-ascii?Q?CqA/Xp3Ltyr+fEbyoQwYhnRdk/yT52tUIL4unqnDQUoWTsPvv0XpBGaJZQhp?=
+ =?us-ascii?Q?C0YOa6CL4tsRDtgCHyGgupbRyHo7K59xewp0q8zDr8t3MmgFjUHDW9tY6vQp?=
+ =?us-ascii?Q?QkoEOSj2NlVo88ExZv8EtUyvoLiX3+ihK5Opm9cSVB7MasIYe7Y6Hk0wkyIO?=
+ =?us-ascii?Q?n96s/LugZw9VU+VvAEHw/mV0KfpbFBNJC8L1qV97Y5FO7+ie99T8YLnIm+SE?=
+ =?us-ascii?Q?YJ/0WYCPGhk4DJjvGQLHXKY5dABhPZVMWlCPxm6PUaslYWTlpD4S/3M99Dry?=
+ =?us-ascii?Q?ZyKGUoI3Nn+ERuDuSjnrFZ9M3GOcjYxbYpFaaf6iVZaKUkZZJDgrB8HKIEXB?=
+ =?us-ascii?Q?eJYo7ofe9t7MkOEAkgVqrivw8VYC1TGf3723tuh+zIvkQwfXMCOsVciXKQYd?=
+ =?us-ascii?Q?xE4XdR4rvCQYYJB3Cm8Q0mi0DlRlPED9rmc8G/G5k0Rk3nPP49tcbGVAERi3?=
+ =?us-ascii?Q?WhAOxa1xDtYnCXj21Yeq5Gr8Um/xW4mkeSEPqg0Emtap+6jcXr0OL9FSdpL4?=
+ =?us-ascii?Q?tYtB6iInOVNXnpH9DdJ1OTQjI3fsgbgaosPi5svmyThgTpn21TYUTbjEZD+e?=
+ =?us-ascii?Q?rMCbvdaXSYs1nv9UzdY4oAHS8Z4ripGeagW0EmXlANvLdlo/uH5zK7G3Tpg/?=
+ =?us-ascii?Q?BLEOdC+o43Ar116koSU/P45DiKNCU0Rz+dKfLzB7T62jNfAQ+3KPtoFpUnUx?=
+ =?us-ascii?Q?xk39MocEBYCfMMahPQRp6FQDAEFJsDyQOnCKujjMRjRYL6aBxHP4wO/Pya+X?=
+ =?us-ascii?Q?TnCkQ/vV/ZoZpEMEryFdL7KTTJaruEOQrKYKaiZyEbLKQAESY9tY2Ud988f5?=
+ =?us-ascii?Q?+48aQX2PxVr9+vP4ZcwL2GXKq66Lwsu/+02utCm/1kivPOhsDrr9O7fJwixv?=
+ =?us-ascii?Q?+EITU1CodR/+RlvMhjiixtVj1b1Qs9M=3D?=
+X-OriginatorOrg: oss.nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1cbbaa63-8fe7-4a60-26b2-08deb5b29a89
+X-MS-Exchange-CrossTenant-AuthSource: GV1PR04MB9135.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 May 2026 14:26:23.7603
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: VV2iq5H+fk/clfZmzCJWa4wDzcthpTZh5CP62HXyDkrTG0Oz19XGsiYw/efVp6p1wjjiwGFzajLB6avQW1AXYw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA2PR04MB10446
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260519_144344_264070_DF75417A 
-X-CRM114-Status: GOOD (  40.40  )
+X-CRM114-CacheID: sfid-20260519_072633_502260_EDE22F2C 
+X-CRM114-Status: GOOD (  12.30  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -128,222 +147,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
+Hi Vinod,
 
-On Wed, Mar 04, 2026 at 05:41:43PM +0800, Chaoyi Chen wrote:
-> From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+On Sun, May 03, 2026 at 10:23:34PM +0530, Vinod Koul wrote:
+> On 24-04-26, 11:07, Laurentiu Palcu wrote:
+> > From: Sandor Yu <Sandor.yu@nxp.com>
+> > 
+> > Add Cadence HDP-TX DisplayPort and HDMI PHY driver for i.MX8MQ.
+> > 
+> > Cadence HDP-TX PHY could be put in either DP mode or
+> > HDMI mode base on the configuration chosen.
+> > DisplayPort or HDMI PHY mode is configured in the driver.
 > 
-> This series focuses on adding Type-C DP support for USBDP PHY and DP
-> driver. The USBDP PHY and DP will perceive the changes in cable status
-> based on the USB PD and Type-C state machines provided by TCPM. Before
-> this, the USBDP PHY and DP controller of RK3399 sensed cable state
-> changes through extcon, and devices such as the RK3399 Gru-Chromebook
-> rely on them. This series should not break them.
+> Hi,
+> 
+> Please consider if this can be split from rest of the series and posted
+> as phy driver
 
-What's the status with this series?
-Are these inteded to go via the DRM tree?
+Unfortunately it cannot be split. It depends on mailbox helper functions
+added in the first patch.
 
-thanks,
+> 
+> Also sasiko has flagged some issues, please take a look https://sashiko.dev/#/patchset/20260424-dcss-hdmi-upstreaming-v22-0-30a28f89298d%40oss.nxp.com
 
-> ====
-> 1. DisplayPort HPD status notify
-> 
-> Before v7, I implemented a variety of DP HPD status notify. However,
-> they all had various problems and it was difficult to become a generic
-> solution.
-> 
-> Under the guidance of Heikki and Dmitry, a decoupled notification
-> method between the TypeC and DRM subsystems was introduced in v7.
-> First, a notification is sent when TypeC registers a new altmode.
-> Then, a generic DP AUX HPD bridge is implemented on the DRM side.
-> 
-> During v7-v10, we added a new notifier in typec to notify the altmode
-> device register event. With the help of Greg and Heikki, we implemented
-> the reuse of notifiers for the type bus itself in patch1 of v11.
-> 
-> The USB subsystem related parts have already been merged into the
-> usb-next branch in v13 [0][1]. Therefore, this series no longer includes
-> these patches starting from v14. Thanks to Greg and Heikki!
-> 
-> [0]: https://git.kernel.org/pub/scm/linux/kernel/git/gregkh/usb.git/commit/?h=usb-next&id=67ab45426215c7fdccb65aecd4cac15bbe4dfcbb
-> [1]: https://git.kernel.org/pub/scm/linux/kernel/git/gregkh/usb.git/commit/?h=usb-next&id=4dee13db29de6dd869af9b3827e1ff569644e838
-> 
-> That makes it redundant for each Type-C controller driver to implement
-> a similar DP AUX HPD bridge in embedded scenarios.
-> 
-> ====
-> 2. Altmode switching and orientation switching for USBDP PHY
-> 
-> For USB Type-C interfaces, an external Type-C controller chip assists
-> by detecting cable attachment, determining plug orientation, and
-> reporting USB PD message. The USB/DP combo PHY supports software
-> configurable pin mapping and DisplayPort lane assignment. Based on
-> these message, the combo PHY can perform both altmode switching and
-> orientation switching via software.
-> 
-> The RK3399 EVB IND board has a Type-C interface DisplayPort. It use
-> fusb302 chip as Type-C controller. The connection diagram is shown below:
-> 
-> fusb302 chip +---> USB2.0 PHY ----> DWC3 USB controller
->              |
->              +---> USB/DP PHY0 +--> CDN-DP controller
->                                |
->                                +--> DWC3 USB controller
-> 
-> ====
-> 3. Multiple bridge model for RK3399 CDN-DP
-> 
-> The RK3399 has two USB/DP combo PHY and one CDN-DP controller. And
-> the CDN-DP can be switched to output to one of the PHYs.
-> 
-> USB/DP PHY0 ---+
->                | <----> CDN-DP controller
-> USB/DP PHY1 ---+
-> 
-> In previous versions, if both PHY ports were connected to DP,
-> the CDN-DP driver would select the first PHY port for output.
-> 
-> On Dmitry's suggestion, we introduced a multi-bridge model to support
-> flexible selection of the output PHY port. For each PHY port, a
-> separate encoder and bridge are registered.
-> 
-> The change is based on the DRM AUX HPD bridge, rather than the
-> extcon approach. This requires the DT to correctly describe the
-> connections between the first bridge in bridge chain and DP
-> controller. And Once the first bridge is obtained, we can get the
-> last bridge corresponding to the USB-C connector, and then set the
-> DRM connector's fwnode to the corresponding one to enable HPD
-> notification.
-> 
-> ====
-> Patch1 add generic USB Type-C DP HPD bridge (Dmitry, Heikki).
-> Patch2 add new API drm_aux_bridge_register_from_node() (Neil) .
-> Patch3 add new Type-C mode switch for RK3399 USBDP phy binding (Krzysztof).
-> Patch4 add typec_mux and typec_switch for RK3399 USBDP PHY.
-> Patch5 add DRM AUX bridge support for RK3399 USBDP PHY (Neil).
-> Patch6 drops CDN-DP's extcon dependency when Type-C is present (Dmitry).
-> Patch7 add multiple bridges to support PHY port selection (Dmitry, Luca).
-> Patch8 add missing dp_out port for RK3399 CDN-DP.
-> Patch9 add Type-C DP support for RK3399 EVB IND board (Diederik, Peter).
-> 
-> Changes in v15:
-> - Link to V14: https://lore.kernel.org/all/20260119073100.143-1-kernel@airkyi.com/
-> - Improve clarity by inlining drm_bridge_get() in assignment (Luca).
-> 
-> Changes in v14:
-> - Link to V13: https://lore.kernel.org/all/20251208015500.94-1-kernel@airkyi.com/
-> - Drop the patches for the USB Type-C subsusytem part, as they have
->   already been merged into usb-next.
-> 
-> Changes in v13:
-> - Link to V12: https://lore.kernel.org/all/20251204063109.104-1-kernel@airkyi.com/
-> - Only register drm dp hpd bridge for typec port altmode device.
-> 
-> Changes in v12:
-> - Link to V11: https://lore.kernel.org/all/20251128020405.90-1-kernel@airkyi.com/
-> - Add missing Signed-off-by line.
-> 
-> Changes in v11:
-> - Link to V10: https://lore.kernel.org/all/20251120022343.250-1-kernel@airkyi.com/
-> - Switch to using typec bus notifiers.
-> 
-> Changes in v10:
-> - Link to V9: https://lore.kernel.org/all/20251111105040.94-1-kernel@airkyi.com/
-> - Notify TYPEC_ALTMODE_UNREGISTERED when altmode removed. 
-> - Add drm_aux_bridge_register_from_node().
-> - Fix refcount usage of drm_bridge.
-> 
-> Changes in v9:
-> - Link to V8: https://lore.kernel.org/all/20251029071435.88-1-kernel@airkyi.com/
-> - Remove the exposed DRM_AUX_HPD_BRIDGE option, and select
-> DRM_AUX_HPD_TYPEC_BRIDGE when it is available.
-> - Add usb role switch for Type-C.
-> - Remove USB2 PHY in Type-C connection.
-> - ...
-> 
-> Changes in v8:
-> - Link to V7: https://lore.kernel.org/all/20251023033009.90-1-kernel@airkyi.com/
-> - Export all typec device types for identification.
-> - Merge generic DP HPD bridge into one module.
-> - Fix coding style.
-> 
-> Changes in v7:
-> - Link to V6: https://lore.kernel.org/all/20251016022741.91-1-kernel@airkyi.com/
-> - Add notifier functions for Type-C core.
-> - Add generic USB Type-C DP HPD bridge.
-> 
-> Changes in v6:
-> - Link to V5: https://lore.kernel.org/all/20251011033233.97-1-kernel@airkyi.com/
-> - Fix depend in Kconfig.
-> - Check DP svid in tcphy_typec_mux_set().
-> - Remove mode setting in tcphy_orien_sw_set().
-> - Rename some variable names.
-> - Attach the DP bridge to the next bridge.
-> 
-> Changes in v5:
-> - Link to V4: https://lore.kernel.org/all/20250922012039.323-1-kernel@airkyi.com/
-> - Remove the calls related to `drm_aux_hpd_bridge_notify()`.
-> - Place the helper functions in the same compilation unit.
-> - Add more comments about parent device.
-> - Add DRM AUX bridge support for RK3399 USBDP PHY
-> - By parsing the HPD bridge chain, set the connector's of_node to the
-> of_node corresponding to the USB-C connector.
-> - Return EDID cache when other port is already enabled.
-> 
-> Changes in v4:
-> - Link to V3: https://lore.kernel.org/all/20250729090032.97-1-kernel@airkyi.com/
-> - Add default HPD device for DisplayPort altmode.
-> - Introduce multiple bridges for CDN-DP.
-> - ...
-> 
-> Changes in v3:
-> - Link to V2: https://lore.kernel.org/all/20250718062619.99-1-kernel@airkyi.com/
-> - Add more descriptions to clarify the role of the PHY in switching.
-> - Fix wrong vdo value.
-> - Fix port node in usb-c-connector.
-> 
-> Changes in v2:
-> - Link to V1: https://lore.kernel.org/all/20250715112456.101-1-kernel@airkyi.com/
-> - Reuse dp-port/usb3-port in rk3399-typec-phy binding.
-> - Fix compile error when CONFIG_TYPEC is not enabled.
-> - Notify DP HPD state by USB/DP PHY.
-> - Ignore duplicate HPD events.
-> - Add endpoint to link DP PHY and DP controller.
-> - Fix devicetree coding style.
-> 
-> Chaoyi Chen (9):
->   drm/bridge: Implement generic USB Type-C DP HPD bridge
->   drm/bridge: aux: Add drm_aux_bridge_register_from_node()
->   dt-bindings: phy: rockchip: rk3399-typec-phy: Support mode-switch
->   phy: rockchip: phy-rockchip-typec: Add typec_mux/typec_switch support
->   phy: rockchip: phy-rockchip-typec: Add DRM AUX bridge
->   drm/rockchip: cdn-dp: Support handle lane info without extcon
->   drm/rockchip: cdn-dp: Add multiple bridges to support PHY port
->     selection
->   arm64: dts: rockchip: Add missing dp_out port for RK3399 CDN-DP
->   arm64: dts: rockchip: rk3399-evb-ind: Add support for DisplayPort
-> 
->  .../phy/rockchip,rk3399-typec-phy.yaml        |   6 +
->  arch/arm64/boot/dts/rockchip/rk3399-base.dtsi |  10 +-
->  .../boot/dts/rockchip/rk3399-evb-ind.dts      | 147 +++++++
->  drivers/gpu/drm/bridge/Kconfig                |  10 +
->  drivers/gpu/drm/bridge/Makefile               |   1 +
->  drivers/gpu/drm/bridge/aux-bridge.c           |  24 +-
->  .../gpu/drm/bridge/aux-hpd-typec-dp-bridge.c  |  49 +++
->  drivers/gpu/drm/rockchip/Kconfig              |   1 +
->  drivers/gpu/drm/rockchip/cdn-dp-core.c        | 349 +++++++++++++---
->  drivers/gpu/drm/rockchip/cdn-dp-core.h        |  18 +-
->  drivers/phy/rockchip/Kconfig                  |   3 +
->  drivers/phy/rockchip/phy-rockchip-typec.c     | 373 +++++++++++++++++-
->  include/drm/bridge/aux-bridge.h               |   6 +
->  13 files changed, 913 insertions(+), 84 deletions(-)
->  create mode 100644 drivers/gpu/drm/bridge/aux-hpd-typec-dp-bridge.c
-> 
-> -- 
-> 2.51.1
+I will address them.
 
 -- 
-heikki
+Thanks,
+Laurentiu
 
 -- 
 linux-phy mailing list
