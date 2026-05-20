@@ -4,80 +4,110 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ABE9DCD4F3C
-	for <linux-phy@archiver.kernel.org>; Wed, 20 May 2026 14:21:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EFDA9CD4F3D
+	for <linux-phy@archiver.kernel.org>; Wed, 20 May 2026 14:58:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HL/3SR0tq/2HuTn9xtS8E0rXadhRkB4kZT+KmxNbXxk=; b=ZTuCVEPsZu2YaM
-	scFRp478gW/vg1/2gq2+pwz83j8rdwfAvcWdUkzhPSjHeXzS63iGSpIYngIqjzcE36qBLRfw9lps7
-	FGQONNjHFkMj4mn0WRi9Jni5B+kY+aS5MoUrtN6gdchduvtu7TsQjsGWcOi+icOX1ODX+cZ8pLWer
-	uD4sPYh0nCqyfS9XNINHtYm6fYOPShGxYeSz6hiE08hlzLAbe+gZblz+iCupkpnICEau7A/0oVDLU
-	vD5jE7/QM153y0zTopafjmQgEenR68oC4e0GJmkTvHXUHNk2mmMGd9kNCTDRyPwQCjHjqUi9BfZ3T
-	8i0l9U/C46n1PZ75Vh1A==;
+	List-Owner; bh=TRi1X7FnjqKzmZm0poDHw9D5KxQIH62rF6i5BjhBR40=; b=mpCZ5FwLmYkUR7
+	zpl5hM2VIJRm+ntKflqUh6JXWuoQ+lcrd0AaWxwaUHAVRNjYkV3jLiidQitwsc2isC5NYFgnbSyym
+	Ha53cY/rW6UDBALv0Ke3SBorTi4hgn8tSKXUFHRx8VvSJwyirrayGMouyN0v2EoBulySPzwUcL2VW
+	xq+HjgLhsTd0WyBvZ2uFOI1tcQLhqWBZPKktC6qlNP4e4H9pDugWoXVk2DDAkAevtKDxw2ayz/lKg
+	feql6pVWN4GSX02giB6D8+gQfPzq/brP15KRSkHY66kdtllwZCXbmSH4tl8SXnQZ/C6V+M2CEWxFC
+	mBIvbO1tMbAREB+4HUDw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wPhnr-00000004nEj-2vxD;
-	Wed, 20 May 2026 14:21:43 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1wPiNe-00000004tag-2OWe;
+	Wed, 20 May 2026 14:58:42 +0000
+Received: from mail-westeuropeazon11011065.outbound.protection.outlook.com ([52.101.70.65] helo=AS8PR04CU009.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wPhnq-00000004nDx-28za;
-	Wed, 20 May 2026 14:21:42 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Type:Content-Transfer-Encoding
-	:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=GDgiypVIwA/PQvdX7RyrKY/+g5n+NMwhEKvQxfGp7xE=; b=WixYvNLZnwbi+Wy8l7n2aZrSLX
-	1n2TMbpSF0rC54FLkAITvIiaNFtItXiawaXRTInMctrMjEEzrwylvBzY6RBZzKHMQlkONqZF/w/Br
-	mrNbYV7HySrh6Q8H3z4lHFPCQ63L2NfLep9F9V6FGSqLjFbaM0utByQgJtQI0KbobzkIQ3++FIcHA
-	5TV8MENexvq9ipYkRB9iybyZ4KKqFSpIiaUFsTpBSoRg4F4ruxTnjLZz9vSl/uX0DcWK0POygRw1R
-	IqbsNY0Jot32XLQBaGSvx3GgH2So52C5w7DCoSUHHWYAmvKUp2IVr6is1ToGaXZBh8ffd8+pgdAMq
-	futhAalA==;
-Received: from gloria.sntech.de ([185.11.138.130])
-	by desiato.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wPhnm-0000000H3MA-06WD;
-	Wed, 20 May 2026 14:21:40 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sntech.de;
-	s=gloria202408; h=Content-Type:Content-Transfer-Encoding:MIME-Version:
-	References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Reply-To;
-	bh=GDgiypVIwA/PQvdX7RyrKY/+g5n+NMwhEKvQxfGp7xE=; b=qKOs1rSHUfFyQjQ2QU90qLmsEG
-	E4rO+KqFDvZdMnNVkhT2xM9SqMD/CMUMADckAN8zJzIgHiiRGrfYvDLfVYwvte7zRaDJPjinr9dN7
-	W41mCtDYikWfvkdAm1kyTt5Ns2JB93TsQ4vLGQVdLdw8UDj+b5s76SDCSf59Tvpostexn9puA2nth
-	1WSXxPyw1cawkSEQwtUp6XpmyN9Z6+X49zn1Jkj0dxFSvWFTrY7Udx+xmwDa/G9o8rsguZyCHlSmu
-	oG53XHOV5DRGeBYTKUVFMdMkD5aBSLI4rVQszy9k+eZF8tHtjXWW6HmPSv6IqLIL+WyoyuC5IVfQI
-	V1VVfT8w==;
-From: Heiko Stuebner <heiko@sntech.de>
-To: linux-phy@lists.infradead.org, Vladimir Oltean <vladimir.oltean@nxp.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
- dri-devel@lists.freedesktop.org, freedreno@lists.freedesktop.org,
- linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
- linux-can@vger.kernel.org, linux-gpio@vger.kernel.org,
- linux-ide@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-media@vger.kernel.org, linux-pci@vger.kernel.org,
- linux-renesas-soc@vger.kernel.org, linux-riscv@lists.infradead.org,
- linux-rockchip@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
- linux-scsi@vger.kernel.org, linux-sunxi@lists.linux.dev,
- linux-tegra@vger.kernel.org, linux-usb@vger.kernel.org,
- netdev@vger.kernel.org, spacemit@lists.linux.dev,
- UNGLinuxDriver@microchip.com, Sandy Huang <hjc@rock-chips.com>,
- Andy Yan <andy.yan@rock-chips.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>
-Subject: Re: [PATCH v8 phy-next 15/31] drm/rockchip: dw_hdmi: avoid direct dereference
- of phy->dev.of_node
-Date: Wed, 20 May 2026 16:21:24 +0200
-Message-ID: <3758596.1xdlsreqCQ@phil>
-In-Reply-To: <20260505100523.1922388-16-vladimir.oltean@nxp.com>
-References: <20260505100523.1922388-1-vladimir.oltean@nxp.com>
- <20260505100523.1922388-16-vladimir.oltean@nxp.com>
+	id 1wPiNc-00000004ta0-1oTm;
+	Wed, 20 May 2026 14:58:41 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=WgTJKljgXaz4qyUebJFZs2rZN83pDNIybGJGrqrX9eIvr55bnkncf+D59MwHuHXMGRUCFhoOhBq8wL9bGX2Eu2Chh4Ft5hi0wu9MNT1SYox/KPWyIqA5IXcbGebFwmOuLRnhEfjpTwXjzcxHeHuW7vDNGapOCwAc3hM4i+slXpr3xMkMNBlg3+enUTnCNhlQ74sZWA/y9WjmsCnPhhxIXXkkXtaZ21gmU3II00CF6JpE7kuoUkoOZJparJtJM1YguPdrVZfMLYKyaGg7A07dtBo7obiOGlinUuAqZEdYWek76YnvT+Wm9FZwf3/1Bleu9ZOQ3RD55WwCyJnGxhyilg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=M1J20+gZkBDYLgLO/Zj16KzsGulk0s5EUCVMweL77Q8=;
+ b=MX+orgf7lfl47DV+csbD/l7LfrJ4LGmyj9F8TsXiV2ehXpYBWnyvc8NnHbk2KWrtTs2/KnsqdA7SXlGXvzpeGj2w6Jg/GbiYbD1sdTRldaEvTxyiPu+iTWxzze0Dr8ujHt+LE4unXEzHYo8LEfUIxNiF24zYhGYZ1xcOuV4KyNVOuIAsy+VvvyPbecdCh0pEsxze6Uh4Rn91u/7IrdCLmRtl75A0LeeLS7y7//Vnu2nCJ0FqMYrNQ8ZLbj9+UfSaQ0dwmhG78i0cyIYhFJM7PjMuGmUVW2meANlGA7PcS/D2AVnEtSI1qTAH/v/MQzvRRb97iHJFlxZKZ5ymGK27fw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 195.60.68.100) smtp.rcpttodomain=vger.kernel.org smtp.mailfrom=axis.com;
+ dmarc=pass (p=none sp=none pct=100) action=none header.from=axis.com;
+ dkim=none (message not signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=axis.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=M1J20+gZkBDYLgLO/Zj16KzsGulk0s5EUCVMweL77Q8=;
+ b=Kr1dgDk6ojE+82R/D2Q1czXSOhtLcN621l22n8SKMC9Cdm6kW1lgHODPTFW15Hv+ObkDF9DBsAnGN/PBkxdKmZQlRaqBO2ajXohmrpnLWjR4CBRfzMsQRQqMafhrR3inwBYsPL2yCrma5XALTjR1wd4VKDKHAHHQTmzsd+W5F5w=
+Received: from DB7PR05CA0016.eurprd05.prod.outlook.com (2603:10a6:10:36::29)
+ by VI0PR02MB10926.eurprd02.prod.outlook.com (2603:10a6:800:20a::9) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.48.14; Wed, 20 May
+ 2026 14:58:31 +0000
+Received: from DB1PEPF000509F6.eurprd02.prod.outlook.com
+ (2603:10a6:10:36:cafe::53) by DB7PR05CA0016.outlook.office365.com
+ (2603:10a6:10:36::29) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.21.48.14 via Frontend Transport; Wed, 20
+ May 2026 14:58:31 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 195.60.68.100)
+ smtp.mailfrom=axis.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=axis.com;
+Received-SPF: Pass (protection.outlook.com: domain of axis.com designates
+ 195.60.68.100 as permitted sender) receiver=protection.outlook.com;
+ client-ip=195.60.68.100; helo=mail.axis.com; pr=C
+Received: from mail.axis.com (195.60.68.100) by
+ DB1PEPF000509F6.mail.protection.outlook.com (10.167.242.152) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.21.48.11 via Frontend Transport; Wed, 20 May 2026 14:58:31 +0000
+Received: from pc67007-2609 (10.4.0.13) by se-mail10w.axis.com (10.20.40.10)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.39; Wed, 20 May
+ 2026 16:58:30 +0200
+From: Waqar Hameed <waqar.hameed@axis.com>
+To: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+	Krzysztof Kozlowski <krzk@kernel.org>, Alim Akhtar <alim.akhtar@samsung.com>
+CC: <kernel@axis.com>, <linux-phy@lists.infradead.org>,
+	<linux-arm-kernel@lists.infradead.org>, <linux-samsung-soc@vger.kernel.org>,
+	<linux-kernel@vger.kernel.org>
+Subject: Re: [PATCH v2] phy: exynos5-usbdrd: Remove error print for
+ devm_add_action_or_reset()
+In-Reply-To: <pnd7bx2j2pi.a.out@axis.com> (Waqar Hameed's message of "Fri, 10
+	Oct 2025 15:39:21 +0200")
+References: <pnd34a6m7tc.a.out@axis.com> <pnd7bx2j2pi.a.out@axis.com>
+User-Agent: a.out
+Date: Wed, 20 May 2026 16:58:30 +0200
+Message-ID: <pndjysynn55.a.out@axis.com>
 MIME-Version: 1.0
+X-Originating-IP: [10.4.0.13]
+X-ClientProxiedBy: se-mail10w.axis.com (10.20.40.10) To se-mail10w.axis.com
+ (10.20.40.10)
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DB1PEPF000509F6:EE_|VI0PR02MB10926:EE_
+X-MS-Office365-Filtering-Correlation-Id: f8a12f89-a002-4e26-8df3-08deb68041ed
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|36860700016|82310400026|376014|1800799024|13003099007|22082099003|18002099003|56012099003|11063799006|4143699003;
+X-Microsoft-Antispam-Message-Info: HKx1eaA/WtVrHZQJJq+nUH2DNZyxZH8H3lWfQOTawXl27fCqOn7iBMfC+Bsl6Rm69JTeP6un0H0qaJd5w29ajy6kgTJ5BbEI/jdEEWbDqSeGy4bgM4+nHnGBlwP3PrljgtL4GjRNC93A/S4YcVlDUcjfSr9BMC7RR9e44O25NZ/v8ypq5P2jFN6oUyesp5fBfyLiKMyHmx3NuCaT2YGiBFoxOt1o7Q97J31Rk2AmL9Pn8CYBmjZ+f+qvTh8pQGqbme+5xLcWesJDSA3af+BWsgvR/RCBg95x7aRhm9jyeIHEw6Irp4Z/iCCmx/4fDUofiBprsqrazdV01oD0n7eGRFGWE9Q1Vgb4sSg4y9UBt0gsEHm1ZaXGvbN2IXRd/EYJ/dv2YuFCqRkYSYUeXmfSuUJeLPBKcQI1Os6w6lMQ5yIxNBwtI8AGHl0SQZYwVrT2PO2/FhcsH2eJ5fNmv1kfo+9mWGl+XJaQwRJxmyOg7KYnpKsDI0CiXCCGcQjpEejU6VBGHL3ZzeSYjGQDhdU+RHuuK/ROvDjlwEsVxULxNpcXtSjaAWEn2+Fj5cxpIWncwuXYdVJIahKuXk/yl5JOMoOLgY7/627LFwzh2ktSQfbvVMWNJmaK6Q/AbXZERVqVmMDf3NosGL55D6uWWg2QvWPXTukrx3gqjSgdsBG4ma+mXPJPzmla1k7qqWIlMZ31
+X-Forefront-Antispam-Report: CIP:195.60.68.100;CTRY:SE;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.axis.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(36860700016)(82310400026)(376014)(1800799024)(13003099007)(22082099003)(18002099003)(56012099003)(11063799006)(4143699003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: lloo1ct/3C/DhQx8m2uDzJK1hKE+3HxlkHjTCWjQyHVdrBEWopJZJaRoMoc5IFNaL3UuppGpNvdm36XGuX+R0r951UIXBFmKVCp1jMF5S+MqXxyYeGvHh92/EjtTSUoN1JOg+HMzM3HB+2PHZfK9Rnvn9JZER2uBCOp+Bu/qW+p38RUCVWwCYoY9j2RFEnNX1/isasZmpgGonTHt/PqA2+FD8rXUSDyu7x41zruLp3CBOfaqj/UUzJ5Dj5gtJM9wy0/2V6xiLA8t4wntNswCXmCHveP/Ucvy+OLTgysN9aHzxWORVLo/JxVqaSaTjxpSz+oQWnWdjnuVVu6/LbnwYfW59OcaGazlRaunQTA0vIY9rVkC27DpZerEDPclFPUG+KO4k6oj97NsOTfTFB6KUzW+nRCaGv58h9HiCH4cRW7vSyl1qpDLLglKcWrNpH1y
+X-OriginatorOrg: axis.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 May 2026 14:58:31.0858
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: f8a12f89-a002-4e26-8df3-08deb68041ed
+X-MS-Exchange-CrossTenant-Id: 78703d3c-b907-432f-b066-88f7af9ca3af
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=78703d3c-b907-432f-b066-88f7af9ca3af;Ip=[195.60.68.100];Helo=[mail.axis.com]
+X-MS-Exchange-CrossTenant-AuthSource: DB1PEPF000509F6.eurprd02.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI0PR02MB10926
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260520_152138_835037_C5291ACB 
-X-CRM114-Status: GOOD (  10.00  )
+X-CRM114-CacheID: sfid-20260520_075840_475486_1D4065F6 
+X-CRM114-Status: UNSURE (   9.09  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,35 +119,30 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGkgVmxhZGltaXIsCgpBbSBEaWVuc3RhZywgNS4gTWFpIDIwMjYsIDEyOjA1OjA3IE1pdHRlbGV1
-cm9ww6Rpc2NoZSBTb21tZXJ6ZWl0IHNjaHJpZWIgVmxhZGltaXIgT2x0ZWFuOgo+IFRoZSBkd19o
-ZG1pLXJvY2tjaGlwIGRyaXZlciB2YWxpZGF0ZXMgcGl4ZWwgY2xvY2sgcmF0ZXMgYWdhaW5zdCB0
-aGUKPiBIRE1JIFBIWSdzIGludGVybmFsIGNsb2NrIHByb3ZpZGVyIG9uIGNlcnRhaW4gU29DcyBs
-aWtlIFJLMzMyOC4KPiBUaGlzIGlzIGN1cnJlbnRseSBhY2hpZXZlZCBieSBkZXJlZmVyZW5jaW5n
-IGhkbWktPnBoeS0+ZGV2Lm9mX25vZGUKPiB0byBvYnRhaW4gdGhlIHByb3ZpZGVyIG5vZGUsIHdo
-aWNoIHZpb2xhdGVzIHRoZSBHZW5lcmljIFBIWSBBUEkncwo+IGVuY2Fwc3VsYXRpb24gKHRoZSBn
-b2FsIGlzIGZvciBzdHJ1Y3QgcGh5IHRvIGJlIGFuIG9wYXF1ZSBwb2ludGVyCj4gd2l0aCBhIGhp
-ZGRlbiBkZWZpbml0aW9uLCB0byBiZSBpbnRlcmFjdGVkIHdpdGggb25seSB1c2luZyBBUEkKPiBm
-dW5jdGlvbnMgb3IgTlVMTCBwb2ludGVyIGNoZWNrcywgZm9yIHRoZSBjYXNlIHdoZXJlIG9wdGlv
-bmFsIHZhcmlhbnRzCj4gb2YgcGh5X2dldCgpIGRpZCBub3QgZmluZCBhIFBIWSkuCj4gCj4gUmVm
-YWN0b3IgZHdfaGRtaV9yb2NrY2hpcF9iaW5kKCkgdG8gcGVyZm9ybSBhIG1hbnVhbCBwaGFuZGxl
-IGxvb2t1cAo+IG9uIHRoZSAiaGRtaSIgUEhZIGluZGV4IHdpdGhpbiB0aGUgY29udHJvbGxlcidz
-IERUIG5vZGUuIFRoaXMgcHJvdmlkZXMKPiBhIHBhcmFsbGVsIHBhdGggdG8gdGhlIGNsb2NrIHBy
-b3ZpZGVyJ3MgT0Ygbm9kZSB3aXRob3V0IHJlbHlpbmcgb24gdGhlCj4gaW50ZXJuYWwgc3RydWN0
-dXJlIG9mIHRoZSBzdHJ1Y3QgcGh5IGhhbmRsZS4KPiAKPiBTaWduZWQtb2ZmLWJ5OiBWbGFkaW1p
-ciBPbHRlYW4gPHZsYWRpbWlyLm9sdGVhbkBueHAuY29tPgo+IFJldmlld2VkLWJ5OiBIZWlrbyBT
-dHVlYmVyIDxoZWlrb0BzbnRlY2guZGU+Cgp0aGVyZSBpcyBub3cgYWxyZWFkeSBtb3JlIHN0dWZm
-IGRlcGVuZGluZyBvbiB0aGlzIGNoYW5nZSBbMF0sIGFuZAp0aGUgY2hhbmdlIGl0c2VsZiBhbHNv
-IGlzIHNvcnQgb2YgaW5kZXBlbmRlbnQgb2YgdGhlIHdob2xlCnBoeS1zZXJpZXMuIEFuZCBzb21l
-aG93IHRoaXMgc2VyaWVzIGl0c2VsZiBzYWRseSBoYXNuJ3QgZ290dGVuCm11Y2ggcmV2aWV3IHll
-dC4KClNvIHdvdWxkIHlvdSBiZSBvayB3aXRoIG1lIGp1c3QgcGlja2luZyB0aGlzIG9uZSBwYXRj
-aCBmb3IgdGhlCmRybS1taXNjLXRyZWU/CgoKVGhhbmtzCkhlaWtvCgpbMF0gaHR0cHM6Ly9sb3Jl
-Lmtlcm5lbC5vcmcvZHJpLWRldmVsLzIwMjYwNTE4MTkzNzQ4LjI0ODI4MjMtMS1qb25hc0Brd2li
-b28uc2UvCgoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZy
-YWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xp
-bnV4LXBoeQo=
+On Fri, Oct 10, 2025 at 15:39 +0200 Waqar Hameed <waqar.hameed@axis.com> wrote:
+
+> On Tue, Aug 05, 2025 at 11:33 +0200 Waqar Hameed <waqar.hameed@axis.com> wrote:
+
+[...]
+
+> Friendly ping incoming!
+
+Friendly ping 2 incoming!
+
+This will be the last ping for the original patch [1]. I'll interpret
+the silence as a NACK (though it would preferable to get an explicit
+one...). All other patches in the previous patch series has been merged
+[2].
+
+[1] https://lore.kernel.org/all/pnd34a6m7tc.a.out@axis.com/
+[2] https://lore.kernel.org/all/pnd7c0s6ji2.fsf@axis.com/
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
