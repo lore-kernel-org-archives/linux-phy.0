@@ -4,94 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 47170CD5BA4
-	for <linux-phy@archiver.kernel.org>; Wed, 20 May 2026 17:06:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3AA93CD4F3D
+	for <linux-phy@archiver.kernel.org>; Wed, 20 May 2026 17:58:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EQVLP7hr2f9vWVpaHqH+wAeoZNPRnMvX0hoGw+SAVpA=; b=2ShocGNTa6oQyT
-	BhDAwrZwnE+2BkiFGcV2bD4yaYJolQFmX7L3iDinpXpEr9Z2cXQolmSOqOLJS37EgplM/tevNYWhT
-	RJZyPM/pzHW//xkcJ7ZP7yDLavl95PS2ro/CynlBkGLDuXnFZHm0A7uyixb0ItqkOfwTGeF4nU3Me
-	4gn3RSjZfHeN119D3NCRJN4WLTZ1+txm4FhlTZB3hkhs1RpcdQ/3Bp/6QqmNU2y4HRpqMWU9i0RrA
-	hmM5fT1URBw5iFZIXAMpQMyff/o9YUH5s9biivPuv3CX+VfT0ljwKjdH4/pNJRzO0R4X3FxAMJR+U
-	iVeJqxKjdBXdw8rka9lw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=AmvGEezwIZyKinA3Wz9K1rksVr3GW5oNC80liH5BSIo=; b=3TO7pQAOukyYek
+	GocTqg/JN46X3rctIctWuYnBSX9V82aggjzCy4BQBq0GeYqoBtJAV0dGJFTKPlAQcqn0bK5z7FgjN
+	FFappmrrs1YazKBL/bGd+lN/+BGc7AX0qCdYdAanYieA7ecui9qCdamzuzFESTOcRdwNMCSKsViOZ
+	iJZcxkQ5ZvfJxVW5Ldafv/FulL5GQTWUfvz2keq+zCl2p1N3tF7gAh8E7M4QRV2h8I6CEmpQT859i
+	Efrr3dg0nZ3r0ASiE8YSYyMIQwIrKRGU+ZkLLvB4WaKAqYjYVVf/WMBVIID4QmJua0XLXpkwOgCnJ
+	ehGMcdf9UK3Hbq8lWhGw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wPkN3-00000005G1u-0QKP;
-	Wed, 20 May 2026 17:06:14 +0000
-Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
+	id 1wPlBK-00000005Nay-3DJf;
+	Wed, 20 May 2026 17:58:10 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wPkN0-00000005G0u-0Us7
+	id 1wPlBJ-00000005Naa-1tbC
+	for linux-phy@bombadil.infradead.org;
+	Wed, 20 May 2026 17:58:09 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
+	:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+	Content-Description:In-Reply-To:References;
+	bh=zfMVTOjlatgB798QzYG6HySltKyKQKv67NKh8zresE4=; b=Wqfq4NtyQ8vd7Z/sOdJ9bZSgZr
+	9lzcTQfNZsIU1WxLo4ljfFltUF61H+TqcjoNKN9SXUjLdfkFNnlkbLShMmHHxdbYrdTdS97My8XIL
+	jlA8/c8BD1xZMJLBSzUR/Rrs3N9Fw7ivsRCheBPCkNKa3Df208GdI24Zk6vybcLq2gMaNaQnk4yR9
+	tftDDDJ2f6A2gsVaZsWBjF6tHfvFqDIz/GFzeSt6MhIW9MuetupefFIGIGD7dOCyHIksXpz/M6Jtb
+	flboZh7H6MgbgahtRDvslPzSFiwSpJ9hFeiPbya3AiQBUQr6+lTNB79W56y2xaw4fDax/ZiKzCmzy
+	ePDLuz2Q==;
+Received: from layka.disroot.org ([178.21.23.139])
+	by desiato.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
+	id 1wPlBF-0000000HYRQ-19iV
 	for linux-phy@lists.infradead.org;
-	Wed, 20 May 2026 17:06:11 +0000
-Received: by mail-wm1-x32c.google.com with SMTP id 5b1f17b1804b1-488b150559bso39820905e9.1
-        for <linux-phy@lists.infradead.org>; Wed, 20 May 2026 10:06:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1779296768; x=1779901568; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=FJ2IHJqYxmFCyCy0y/0mCJBJ621zTHkH62ufit0bSyQ=;
-        b=kT4cKNi9X1iodDoA+OU2G7xzebTz4ZfmlhFhIQQCp+07+iFSBlX4tfd8h1/+fCZ4ME
-         lbVieAO+kI08eb35oYJX7IYsnRNJtmGg7PpOJTdG1EkjTJVof0Uq3FLIWobnC1Y4BX2S
-         E4aBV8zGhXYNg1iAFG0OQRZdqF8e2YJQeBbLfySyBWs7EDjgQoM8ebS3xEk2o9ZX6GTO
-         XTk1lsZWTWhB/HnU5stdMLmLaN7KFanlTRMPtrcU1almrCXMHrJYQ0EiZDibyiyRWLJC
-         dnntuQCDHwsoh/r0qwlbaK4kszUyITcHEPC/GhgzqxIeV7cHrwG1GAbJUTOWdIY8v3/D
-         Yk6g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1779296768; x=1779901568;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=FJ2IHJqYxmFCyCy0y/0mCJBJ621zTHkH62ufit0bSyQ=;
-        b=hrAblYxS7aW84gAibyiVt5qYtwa/idX6YhD5WpxD0OVilcLq37WXzfTYwffexoziiA
-         nl+FZjlkFm/G8irt3Upud3w5bqVTBIU/axndOA6lpkJe17EjfIpuxlcm6L+dX7w0rbaw
-         qRcNqY+Gq/C5lsQVKVNhIWotq8hSdcjRQ+ujAUzMRtyZ7/xVrGKzyiChhnhE6UPvJ0H/
-         TOstmic0hHEus85shw4u7grIncJaeV287UZqU4qf4XDA4gmcneHd32vczoNrz2uUaeSZ
-         iKJWiQstrOC+wRXI+THq4eRioJiOKyVb2sLF5YSuvZA+YxNQaps57IAF/Htv1sKgNQDl
-         6BDQ==
-X-Forwarded-Encrypted: i=1; AFNElJ+J59QHEnw5cijiIWZOzo+nORnseJcDbddtN8aHM6kUkec0t+16BL10EgkbQGMdoxKOZHSypr0eb40=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yw6QmLm8G+3zkA9gFTF2TZGIZvypWKB2WxBYpl3U5EZwRhATRWK
-	HCggHtqwpkgw1rzY3T7+P2VSr4+iZEUUZ0lp/YXGmdtjsw1NPppHNR1WKqQbPMDT42s=
-X-Gm-Gg: Acq92OHaImz8VJnxDudrCRbXQfdNqlEc8Jol7+SAqs765TGEUvFXahgvVwdWuyt5YuD
-	0RIFEBPaknf3LR3rlN3Yrd36lcchYf+s8OJwy8IubTPeeam+0lUPVBrwdeAPeqaxDGVsFXvptL0
-	FXFnB7Eu89YfGbUmV0i4T8UnE9tAdnu50JLm6z8s8GgYMsaeWNjpHMmWcIb4c2ak5fY6oq3DqZk
-	6qJ9hdkPu5bobB9PshzkI+HRdJ6vo6AU3T4ZYXR8a0Rv6LRCVvm5PgL+baq3jGmbOlEs6JmOoMW
-	rSIvR0a6URN9JlvjsDpVcU87CXqQTqKgmfR1SztMfTmSZgOcvaVm+kDSSUHnpBNFHhMNteTGO/c
-	AYXDnG9s4GAgE03fNl96I/4Nz4i3vjmnGIGEosjUoet+5gfYLJhkPsQLVKAbTWsSys+5N4Heupn
-	1Fol+0l5qn9mM5NtCnjW5qARabbmobayU=
-X-Received: by 2002:a05:600c:46cf:b0:48f:d5a0:284e with SMTP id 5b1f17b1804b1-48fe66267eemr368182925e9.28.1779296767731;
-        Wed, 20 May 2026 10:06:07 -0700 (PDT)
-Received: from [10.11.12.109] ([82.76.215.73])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-49033d5f21dsm5156135e9.13.2026.05.20.10.06.06
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 20 May 2026 10:06:07 -0700 (PDT)
-Message-ID: <3d0ef4a0-f943-444b-acc3-6d44e690fa16@linaro.org>
-Date: Wed, 20 May 2026 20:06:03 +0300
+	Wed, 20 May 2026 17:58:07 +0000
+Received: from mail01.disroot.lan (localhost [127.0.0.1])
+	by disroot.org (Postfix) with ESMTP id 739D8275C1;
+	Wed, 20 May 2026 19:58:02 +0200 (CEST)
+X-Virus-Scanned: SPAM Filter at disroot.org
+Received: from layka.disroot.org ([127.0.0.1])
+ by localhost (disroot.org [127.0.0.1]) (amavis, port 10024) with ESMTP
+ id A--ynDofJVxY; Wed, 20 May 2026 19:58:01 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disroot.org; s=mail;
+	t=1779299881; bh=2NkRc386fV0Tgt0p2m70A2/Us9y0xHQS2xgqPJg5ZGo=;
+	h=From:To:Cc:Subject:Date;
+	b=NqNpUJx0xMWpt1b+Vz1gM2M3iqjOih+wqzH1Pyicrwx7+WwcYrTTxU5M5hDOt3aIm
+	 SEmdvG41TZ1sKK/5AIEHPr6Ez/GJesa2362tvxiStbvz+DnjPaV3t+QC/ofxFPcoQ4
+	 WxeqpEF1Qu3xCv2IMYehP3v+h4/cbc+VJSZBohVfryCfOXYjRhgTi6xV3P0Fg/FKwD
+	 XspOzd3CKlDaSsOV9Og0DpigDwGfohi5HGgYgiD8yGH89E8Aei9Zr3SyyucExJK7bg
+	 RF24Y5vPa1YfPKExWeRYvW6qo1gKmLvebdk8CcP/rckg9N5k56w5eyjZ4V9ODjmBlK
+	 Zc1DUv7t8lktg==
+From: Rustam Adilov <adilov@disroot.org>
+To: Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Stanley Chang <stanley_chang@realtek.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Cc: Rustam Adilov <adilov@disroot.org>
+Subject: [PATCH v6 0/6] phy: realtek: usb2: support for RTL9607C USB2 PHY
+Date: Wed, 20 May 2026 22:57:22 +0500
+Message-ID: <20260520175728.720877-1-adilov@disroot.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2] phy: exynos5-usbdrd: Remove error print for
- devm_add_action_or_reset()
-To: Waqar Hameed <waqar.hameed@axis.com>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, Alim Akhtar <alim.akhtar@samsung.com>
-Cc: kernel@axis.com, linux-phy@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
- linux-kernel@vger.kernel.org, Peter Griffin <peter.griffin@linaro.org>,
- =?UTF-8?Q?Andr=C3=A9_Draszik?= <andre.draszik@linaro.org>,
- Juan Yescas <jyescas@google.com>
-References: <pnd34a6m7tc.a.out@axis.com> <pnd7bx2j2pi.a.out@axis.com>
- <pndjysynn55.a.out@axis.com>
-Content-Language: en-US
-From: Tudor Ambarus <tudor.ambarus@linaro.org>
-In-Reply-To: <pndjysynn55.a.out@axis.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260520_100610_180737_66F7D210 
-X-CRM114-Status: GOOD (  10.87  )
+X-CRM114-CacheID: sfid-20260520_185805_866315_5A08806B 
+X-CRM114-Status: GOOD (  16.98  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,32 +93,113 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+This patch series for Realtek USB2 PHY driver adds support for RTL9607C
+USB2 PHY.
 
+RTL9607C is a big endian MIPS CPU which is quite far from RTD series SoCs
+supported by realtek usb2 phy driver, but the phy initilization is found
+to be very indentical in most areas.
 
-On 5/20/26 5:58 PM, Waqar Hameed wrote:
-> On Fri, Oct 10, 2025 at 15:39 +0200 Waqar Hameed <waqar.hameed@axis.com> wrote:
-> 
->> On Tue, Aug 05, 2025 at 11:33 +0200 Waqar Hameed <waqar.hameed@axis.com> wrote:
-> 
-> [...]
-> 
->> Friendly ping incoming!
-> 
-> Friendly ping 2 incoming!
-> 
-> This will be the last ping for the original patch [1]. I'll interpret
-> the silence as a NACK (though it would preferable to get an explicit
+Most of the code was based on the Realtek's usb driver from the GPL tarball
+in [1] and adjusted to fit into the realtek usb2 phy driver code format.
 
-The patch is fine, I think it just slipped through the cracks:
+The patch series was split into smaller patches that add/change something
+in the driver that are not exactly related to RTL9607C and that also
+helps for easier review. That also means, patch 5 depends on all the prior
+patches that come before it.
 
-Reviewed-by: Tudor Ambarus <tudor.ambarus@linaro.org>
+USB2 PHY on RTL9607C is primarly used for its internal OHCI/EHCI controllers.
 
-> one...). All other patches in the previous patch series has been merged
-> [2].
-> 
-> [1] https://lore.kernel.org/all/pnd34a6m7tc.a.out@axis.com/
-> [2] https://lore.kernel.org/all/pnd7c0s6ji2.fsf@axis.com/
-> 
+Tested on my RTL9607C based machine as a backport to 6.18 linux in OpenWrt.
+
+[1] - https://github.com/jameywine/GPL-for-GP3000/blob/main/linux-5.10.x/arch/mips/rtl9607c/usb.c
+
+---
+Changelog in v6:
+Driver has been refactored with enabled SWAP_IO_SPACE config in mind.
+- Patch 1
+ - fixed one line exceeding 80 columns.
+- Patch 2
+ - changed to use the introduced read/write functions for reg_wrap_vstatus
+   instead of reg_gusb2phyacc0.
+- Patch 3
+ - properly added the review tag from v4 of patch series.
+- Patch 5
+ - fixed the lines exceeding 80 columns.
+ - changed msleep(10) to usleep_range(10000, 11000).
+ - changed the read and write functions to use ioread32be instead of __le32 
+   now that we are using them for reg_wrap_vstatus.
+- Link to v5: https://lore.kernel.org/linux-phy/20260420191941.81834-1-adilov@disroot.org/
+
+Changelog in v5:
+Mostly addressing LLM review
+- Patch 1
+ - changed int to u32 type for new_reg_req and vstatus_busy data fields.
+ - changed comments in rtk_phy_read/write from PHY_NEW_REG_REQ to phy_reg->new_reg_req.
+- Patch 2
+ - explained readl/writel native endianess issue in more detail.
+ - explained why vstatus register doesn't need byte swapping.
+- Patch 4
+ - moved reset_control_deassert to rtk_phy_init function to keep it outside of for loop.
+ - changed msleep(5) to usleep_range(5000, 6000).
+ - explained why reset_control_assert is not needed.
+- Patch 5
+ - explained readl/writel native endianess issue here as well.
+ - explained why FORCE_DISCONNECT_REG doesn't need byte swapping.
+- Link to v4: https://lore.kernel.org/linux-phy/20260406181228.25892-1-adilov@disroot.org/
+
+Changelog in v4:
+- Patch 2
+ - moved the le variations of read/write functions to Patch 5 where it is actually used because
+   otherwise, it results in unused errors when only Patch 2 is applied.
+ - updated the commit message to to point the reason for le32 wrappers around readl/writel.
+- Patch 3
+ - added "Reviewed by Krzysztof Kozlowski"
+- Patch 5
+ - updated the commit message to include the addition of little endian read/write functions from
+   Patch 2.
+- Link to v3: https://lore.kernel.org/linux-phy/20260402154414.196012-1-adilov@disroot.org/
+
+Changelog in v3:
+- Patch 2
+ - renamed phy read and functions to "rtk_usb2phy" to not collide with networking API functions
+ - fixed the sparse warnings by creating intermidiate "tmp" variable and then pass it to writel
+ - sligtly adjusted commit message to instead use "default read" not "default phy_read"
+- Patch 4
+ - added the check for reset_control_deassert() just in case
+ - changed mdelay(5) to msleep(5)
+ - changed dev_err and return combo with one dev_err_probe for phy_rst
+- Patch 5
+ - changed mdelay(10) under force_host_disconnect to msleep(10)
+ - removed struct fields with false like force_host_disconnect and more in rtl9607_phy_cfg
+- Patch 6
+ - updated the #endif commend to now include MACH_REALTEK_RTL to reflect if on top
+- Link to v2: https://lore.kernel.org/linux-phy/20260327160638.15134-1-adilov@disroot.org/
+
+Changelog in v2:
+- Patch 3
+ - removed the line about OHCI/EHCI controllers from description.
+ - set the resets to false for RTD SoC devices and changed the
+   commit message to reflect that.
+- Link to v1: https://lore.kernel.org/linux-phy/20260326193419.48419-1-adilov@disroot.org/
+
+Rustam Adilov (6):
+  phy: realtek: usb2: introduce vstatus/new_reg_req variables to driver
+    data
+  phy: realtek: usb2: introduce read and write functions to driver data
+  dt-bindings: phy: realtek,usb2phy.yaml: extend for resets and RTL9607C
+    support
+  phy: realtek: usb2: introduce reset controller struct
+  phy: realtek: usb2: add support for RTL9607C USB2 PHY
+  phy: realtek: Make configs available for MACH_REALTEK_RTL
+
+ .../bindings/phy/realtek,usb2phy.yaml         |  25 ++-
+ drivers/phy/realtek/Kconfig                   |   4 +-
+ drivers/phy/realtek/phy-rtk-usb2.c            | 178 ++++++++++++++++--
+ 3 files changed, 189 insertions(+), 18 deletions(-)
+
+-- 
+2.54.0
 
 
 -- 
