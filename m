@@ -4,80 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D59CACD4F5B
-	for <linux-phy@archiver.kernel.org>; Wed, 20 May 2026 01:14:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EF5D8CD4F3D
+	for <linux-phy@archiver.kernel.org>; Wed, 20 May 2026 03:57:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D/uISXqXKLR7XoZ5PHCrnJSRAyQ05ymINvMI5UhILFM=; b=h5xMGqdkY6qfiV
-	Wnb/tkyZvOheOE9DQ9qvRd7JL9g+589943XU/aKoqHvmBqVsC7+b+zUMa3CbKviaDC/986goab0nS
-	AZi+79mA6FbqdSTf7H5kGYEzeWy7kw4BuB1/C5M0HL0wK+cnyCDC0l69FO5RbvQ+9tInrR8kk48Tj
-	Al+Mx4QuGdXc+h5HbFKDDMjZyS5e8d608SHfcNjZHgc6nAUw6g9zgbrcNu3OmnBkqmjoA8YwskwLs
-	2CAsu/kk9NIwbsAyhKJDbtiZH0dyVQqlMK6IkeyJDp0LRqyw+nfkV2OsJvgZMTZndDPOSuj32G8f4
-	za9UcyezVcHM/cvGxeeA==;
+	List-Owner; bh=ElwQTLGvdoH5TYIwqKJBwwFc6xBallhit4A3xNvQ9ys=; b=GFWzKLRhCJanLW
+	EnXGty+j4VnlfPxJDvaGjWANvYsV+Hht9SLpKFiy/fSrBH4CSoqIm4E/1yFchFV7e/d6Z4AIBOf54
+	9btNh8IiwTWkf3MSvf7ve4QXhvkYM5tp6Y7uQxDqmtNiMG//bzvLndUZ48zi8NvtY6LUFrkB0R+e7
+	rLvZSl1W9/N9mEte3jtSFQUMmLucks6IJxazMp8GeQrvydiClVcpAcV6iOCBOb3yakWQggblXgAgN
+	Esyn1wExZHZakCYk/rwhY5X9KliWS/9daP9Ic8wPrvu33qSk6SfALcO/9UgFk1a6vaoYM/nOn7wtz
+	zxTUbWib7ZADy7QD+yHg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wPVVZ-00000003D28-0FIt;
-	Wed, 20 May 2026 01:14:01 +0000
-Received: from mail-m60156.netease.com ([210.79.60.156])
+	id 1wPY3u-00000003R8V-1wPU;
+	Wed, 20 May 2026 03:57:38 +0000
+Received: from mail.tkos.co.il ([84.110.109.230])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wPVVV-00000003D0u-1DiI;
-	Wed, 20 May 2026 01:13:59 +0000
-Received: from [172.16.12.51] (unknown [61.154.14.86])
-	by smtp.qiye.163.com (Hmail) with ESMTP id 3f0f4bf32;
-	Wed, 20 May 2026 09:13:41 +0800 (GMT+08:00)
-Message-ID: <c0bc4796-afe5-40ff-8816-9605a6114d23@rock-chips.com>
-Date: Wed, 20 May 2026 09:13:25 +0800
+	id 1wPY3q-00000003R79-2a7A;
+	Wed, 20 May 2026 03:57:37 +0000
+Received: from localhost (unknown [10.0.8.3])
+	by mail.tkos.co.il (Postfix) with ESMTP id 957194409AD;
+	Wed, 20 May 2026 06:56:49 +0300 (IDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=tkos.co.il;
+	s=default; t=1779249409;
+	bh=YC8qRmmq/k5/5b+peTPbFAaVZ53DEJFUcvpKg8iJ8D0=;
+	h=From:To:Cc:Subject:In-Reply-To:References:Date:From;
+	b=MHej4Fj1FJgII7Koo1w9p39t/AcGgi3ic/5vxuoHwkYugHM1Oiih6eWT6ppN5uRW2
+	 5w9/R5hGThaZCG/Mc1UEZ5gVsFCYO4MWcWBFVorxGEgvYmhiRWAioaXaKjVlX13MM3
+	 cPDw3IFL/+CzOY/5Io1HAETefykV6RK1Ghsm+HYijcbg50c+CSHtIVUkvaZR6E6RYo
+	 hAv0c36WMHNrik4cUkmHTUVWIv3CB21kQgc3E69hTiJKGMMkmapwUrQsf7mlE/9wBM
+	 B0t8PQhTsYCiaRqy9LGPJyb7MLNA2VZc2AEE9WjvKIpMPi8wvotaOIfhBEuI8KPsWy
+	 2skZqm2MYBWlg==
+From: Baruch Siach <baruch@tkos.co.il>
+To: Christian Marangi <ansuelsmth@gmail.com>
+Cc: Michael Turquette <mturquette@baylibre.com>,  Stephen Boyd
+ <sboyd@kernel.org>,  Brian Masney <bmasney@redhat.com>,  Rob Herring
+ <robh@kernel.org>,  Krzysztof Kozlowski <krzk+dt@kernel.org>,  Conor
+ Dooley <conor+dt@kernel.org>,  Vinod Koul <vkoul@kernel.org>,  Neil
+ Armstrong <neil.armstrong@linaro.org>,  Lorenzo Bianconi
+ <lorenzo@kernel.org>,  Felix Fietkau <nbd@nbd.name>,
+  linux-clk@vger.kernel.org,  devicetree@vger.kernel.org,
+  linux-kernel@vger.kernel.org,  linux-arm-kernel@lists.infradead.org,
+  linux-phy@lists.infradead.org
+Subject: Re: [PATCH v7 5/6] phy: move and rename Airoha PCIe PHY driver to
+ dedicated directory
+In-Reply-To: <20260519220813.28468-6-ansuelsmth@gmail.com> (Christian
+	Marangi's message of "Wed, 20 May 2026 00:08:10 +0200")
+References: <20260519220813.28468-1-ansuelsmth@gmail.com>
+	<20260519220813.28468-6-ansuelsmth@gmail.com>
+User-Agent: mu4e 1.12.15; emacs 30.2
+Date: Wed, 20 May 2026 06:57:25 +0300
+Message-ID: <87a4tuu40q.fsf@tarshish>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v15 0/9] Add Type-C DP support for RK3399 EVB IND board
-To: Heikki Krogerus <heikki.krogerus@linux.intel.com>
-Cc: Chaoyi Chen <kernel@airkyi.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
- Peter Chen <hzpeterchen@gmail.com>, Luca Ceresoli
- <luca.ceresoli@bootlin.com>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Kishon Vijay Abraham I <kishon@kernel.org>, Heiko Stuebner
- <heiko@sntech.de>, Sandy Huang <hjc@rock-chips.com>,
- Andy Yan <andy.yan@rock-chips.com>,
- Yubing Zhang <yubing.zhang@rock-chips.com>,
- Frank Wang <frank.wang@rock-chips.com>,
- Andrzej Hajda <andrzej.hajda@intel.com>,
- Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
- Amit Sunil Dhamne <amitsd@google.com>, Dragan Simic <dsimic@manjaro.org>,
- Johan Jonker <jbx6244@gmail.com>, Diederik de Haas <didi.debian@cknow.org>,
- Peter Robinson <pbrobinson@gmail.com>, Hugh Cole-Baker <sigmaris@gmail.com>,
- linux-usb@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
- dri-devel@lists.freedesktop.org
-References: <20260304094152.92-1-kernel@airkyi.com> <agxo8ic94e81nQRx@kuha>
-Content-Language: en-US
-From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
-In-Reply-To: <agxo8ic94e81nQRx@kuha>
-X-HM-Tid: 0a9e42f214cf03abkunmde1056153a93c
-X-HM-MType: 1
-X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
-	tZV1koWUFITzdXWRgWCB1ZQUpXWS1ZQUlXWQ8JGhUIEh9ZQVlDQkoaVhhOGE9LGE9LQ01JTFYVFA
-	kWGhdVEwETFhoSFyQUDg9ZV1kYEgtZQVlNSlVKTk9VSk9VQ01ZV1kWGg8SFR0UWUFZT0tIVUpLSE
-	pPSExVSktLVUpCS0tZBg++
-DKIM-Signature: a=rsa-sha256;
-	b=gwTF78PPuLUm1sysWyZUVBaAIEKd3WixyNY3bmjSc5enP6t3T7LjW1vDPot1Ro5hpeJzDUUuaKmRf3Cz6DX9uu/L1JxbBv2q7RmlverbAPspYQqTopSj5X3/+EdlkoFK2PHIs+UdzLX137UjUapaHB2spXQq0d9N+RLByQu9LFk=; s=default; c=relaxed/relaxed; d=rock-chips.com; v=1;
-	bh=Puww1BH0j/oGm+Paq7ifcsE10dx5Hg0yZyciu4GUl4o=;
-	h=date:mime-version:subject:message-id:from;
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260519_181357_878603_EB04483E 
-X-CRM114-Status: GOOD (  13.75  )
+X-CRM114-CacheID: sfid-20260519_205735_163861_92424C7B 
+X-CRM114-Status: GOOD (  14.50  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,37 +79,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hello Heikki,
+Hi Christian,
 
-On 5/19/2026 9:43 PM, Heikki Krogerus wrote:
-> Hi,
-> 
-> On Wed, Mar 04, 2026 at 05:41:43PM +0800, Chaoyi Chen wrote:
->> From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
->>
->> This series focuses on adding Type-C DP support for USBDP PHY and DP
->> driver. The USBDP PHY and DP will perceive the changes in cable status
->> based on the USB PD and Type-C state machines provided by TCPM. Before
->> this, the USBDP PHY and DP controller of RK3399 sensed cable state
->> changes through extcon, and devices such as the RK3399 Gru-Chromebook
->> rely on them. This series should not break them.
-> 
-> What's the status with this series?
-> Are these inteded to go via the DRM tree?
-> 
-> thanks,
-> 
+On Wed, May 20 2026, Christian Marangi wrote:
+> To keep the generic PHY directory tidy, move the PCIe PHY driver for
+> Airoha AN7581 SoC to a dedicated directory.
+>
+> Also rename the driver and add the relevant SoC name to the .c and .h
+> file in preparation for support of PCIe and USB PHY driver for Airoha
+> AN7583 SoC that use a completely different implementation and
+> calibration for PHYs and will have their own dedicated drivers.
+>
+> The rename permits to better identify the specific usage of the driver
+> in the future once the airoha PHY directory will have multiple driver
+> for multiple SoC.
+>
+> The config is changed from PHY_AIROHA_PCIE to PHY_AIROHA_AN7581_PCIE.
+>
+> Signed-off-by: Christian Marangi <ansuelsmth@gmail.com>
+> ---
+>  MAINTAINERS                               |    4 +-
+>  drivers/phy/Kconfig                       |   11 +-
+>  drivers/phy/Makefile                      |    4 +-
+>  drivers/phy/airoha/Kconfig                |   13 +
+>  drivers/phy/airoha/Makefile               |    3 +
+>  drivers/phy/airoha/phy-an7581-pcie-regs.h |  494 ++++++++
+>  drivers/phy/airoha/phy-an7581-pcie.c      | 1290 +++++++++++++++++++++
 
-Thank you very much for your continued attention to this series.
-The maintainers seem quite busy... Despite there being no further review
-comments, this series have yet to be merged into the DRM tree. 
+This patch creates a .c file under drivers/phy/airoha/, but doesn't remove
+the existing file under drivers/phy/.
 
-And some of my other patches are in the same situation. 
-Do you happen to know what the next steps should be? Thank you.
+baruch
 
 -- 
-Best, 
-Chaoyi
+                                                     ~. .~   Tk Open Systems
+=}------------------------------------------------ooO--U--Ooo------------{=
+   - baruch@tkos.co.il - tel: +972.52.368.4656, http://www.tkos.co.il -
 
 -- 
 linux-phy mailing list
