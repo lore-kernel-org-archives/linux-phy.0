@@ -4,99 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BF4D1CD4F3C
-	for <linux-phy@archiver.kernel.org>; Wed, 20 May 2026 15:09:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D2E36CD4F3D
+	for <linux-phy@archiver.kernel.org>; Wed, 20 May 2026 15:15:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Subject:To:From:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=N5qI/OMHI71QZS6WaglFI+iqOMbNnxAi8M8GKhMmShs=; b=gQdFX/J/KyzUoY
-	pQ8pP8M8pae+7csP5nX+0JXADWz5m9QY6ZuE7NNBHlmr8GOd+Lv+AEbL6DBgzh1yLwzEk9gzsThV9
-	wgwFtY3uX/hMWVpPWOM4c/9p7cZiJpa8N65DcI3fKTRcdJ/QZPV7uSRL9iZXP1Pi3wWjWxZvi5wMb
-	x7FpIoHwd3uGn75zgHaC/DSPxeXq5uobUOaC5+AJ4blpZheBKpkK2nD2xjAfvN1JzZ/MdUF2ywqSb
-	B6hB8mNG/FIyesQVWoMwNAUmzrY4TJLE88T5YFsgdXxjYV/1gZjAVzoNBX6JpG/GbgUTGIJolCMCt
-	BTpcznLSYen0AuO6gSVQ==;
+	List-Owner; bh=CgGRYvzZSV+M/yNLAz1qdckwG7o7s8tHYRVPaFl5KjI=; b=QEodV3a6/sJs+f
+	YK9TTz98AJjkcUpEbYo7++sv2TiPcrg6oJdtmDk9fmSF75J5pEv/tnoRTx15fBti7j0XZV/OeMftH
+	pvTnUAoebwSGSo/GmtWngP8bPDcH+J6i9VdNbFkxADnrUB5wQO/3WiLV8gg8mkoP3v9Njzc89qKyE
+	yst/XHJQpnkUPJdJ5wuovnAtT1YwexCAK44mSsWXrYjq7vU+A0OkfIaHMPBjXl5rwdxD/WRzbgKOJ
+	jggVPfObdJwP2ErH1H38RdQ135cLBPMMR4iQC8+si+NSvBY4YKyS72kbRusnbSv+Q0OHZZhcGKaud
+	B2giURAz/8DKTjmy3bgg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wPiYT-00000004veO-2BP8;
-	Wed, 20 May 2026 15:09:53 +0000
-Received: from mail-wr1-x436.google.com ([2a00:1450:4864:20::436])
+	id 1wPidR-00000004wqR-2VaV;
+	Wed, 20 May 2026 15:15:01 +0000
+Received: from mail-wm1-x32c.google.com ([2a00:1450:4864:20::32c])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wPiYF-00000004vTB-3Y2U
+	id 1wPidN-00000004wp5-428p
 	for linux-phy@lists.infradead.org;
-	Wed, 20 May 2026 15:09:41 +0000
-Received: by mail-wr1-x436.google.com with SMTP id ffacd0b85a97d-44e5624c053so3076425f8f.2
-        for <linux-phy@lists.infradead.org>; Wed, 20 May 2026 08:09:39 -0700 (PDT)
+	Wed, 20 May 2026 15:14:59 +0000
+Received: by mail-wm1-x32c.google.com with SMTP id 5b1f17b1804b1-4891c0620bcso32683855e9.1
+        for <linux-phy@lists.infradead.org>; Wed, 20 May 2026 08:14:57 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1779289778; x=1779894578; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:to:from:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=JWS1OAAP+b6jwf7on2TcOnkNACLqdJFBfR6vTM3JGm4=;
-        b=Yl3TpyNG3PCMssM9+6d+KwPyZkcLl1zA6ekfqiD59Fr6c0zX5bVhdvCpxStRTfVRvG
-         Zk5Jgunxw7+GavXhDzNvuBuQQEoBs6/Ip5Lpt7U7btBtnHoMqv+q5+gTZBbtap/1quD9
-         AKefHUlTp8SBFQlRkUu3VdM4Chrpw3SmOEkGa4BHAvVriOCorSqou0oqGTjxIhmAoATD
-         Cc0QoflMeJEvOGbM6NvCuMba5rFruyZce34wNo+V6whL6rbppYOjY8RxrKCRVQOlr8ie
-         8/AGFh3lnRobeJcmCaDEarTJPlETwrS6vZNQDI1QXqI+399oYnJ3up/o/tFRloDEMTFF
-         XdUg==
+        d=gmail.com; s=20251104; t=1779290096; x=1779894896; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:subject:to
+         :from:date:message-id:from:to:cc:subject:date:message-id:reply-to;
+        bh=ccZEEEBlnDZ7RGFHJwE5hSCMMi66BiukOOfPa72Eyrc=;
+        b=kXUgqBIf6jQ+LE2eNU2SxsEsAr8qs8OrcrIJD1t0lb0RwvpHcD+io5e6UlBAh9v3Ka
+         qs67wVFPu4ph1w87ffx5rZzz3XHzY8Nyuw+E0OzYZ7FHALu5Grwycuzy4Nu6PB7LS/s4
+         yMOFGeDM1d8DKVhYR0Bwfzs+pASzPKbuu+QkHUcpYG6pq9xesbaIrUe34Tx4OpADEeVc
+         wNBMzxm1P/1vxvSRzi04EVuPTY4pDr9Ejidr9quHvbTw5ueYznFp3N0tJfkSrKc8pksI
+         IMWOMWTQCYivB9WhbsmRTzDkbLtRIFqc8mkITbA2Xq/7HBgHVBeANrSGy7VWYKKNDG3z
+         vE0A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1779289778; x=1779894578;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:to:from:x-gm-gg:x-gm-message-state:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=JWS1OAAP+b6jwf7on2TcOnkNACLqdJFBfR6vTM3JGm4=;
-        b=meVLx+aP9jO20V6CRzR69PQn1LIXq15n+qBM4gYQeaYm7PB4uhA/WifzRF5oOmB/6E
-         jDmumMJw06RdmsAIG8o6fOZ2hTlDKHCmkHFxkORM4htdG5ZOdXwMtcBxYFFbkNprlIUB
-         u59qHGHT/32v6DGu3yxQ7RJMuRzH1dItNkvb/N9xR7md6xbLZrzAj9wkasggiz5Nzllg
-         +y4Fxjd1ScaGlSpnvjJ4W9FT3DgyLbHiIbthRm8Hc5JFTynDuM5s48Jeh9OuE8g7tRKa
-         Egt+EdpgHFjotgT+91jpu2yFblSHiHmsqbHeTx8pwzgUMeN9Ju+nst2hlVUSgqs+E/g3
-         4lbQ==
-X-Forwarded-Encrypted: i=1; AFNElJ8mwUv9jX0JVtt2pk5AvXSUxHVU30mXRVcChLH0q8gcS21bVS1w99gr/BzO+6ZVa4n67VVMSdqzsS0=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxVTE2JsXOxJ8NGlasfMvi7bnGTu6L3j6Je3SXGpPEUs6I8uPnY
-	Bbz//MuLQEt0Kk95J/8KYQGCXyBG355jiw3I6Tn2oJPQvEfUT+81ZctD
-X-Gm-Gg: Acq92OF7i3R0hQO+TfyincT5q1QR8fU0AAFrEDy3TGLvg45KCZrIhafiOVrw7PdDxDu
-	GfrozgJaMg8Z+Y8hvMipp9sArq/2ZsYrgfeSz3x978yhF/iYT3D4kLVW08TRw10s5nR16lipFVZ
-	71Yd8pBlnN+n1uBBgUKwOd9UhrRAwYYKUIy6+xRkF/OiwlRsW4XevXGJu9o9+gNe90HqSXujlxP
-	Ji8iTJM6aLn8vT3yuKgDeflmR+uBlF3P3M+6d7b1f0L0nhdP7mAceJJKniE2xJh5yhaUosvII1Z
-	DK2CnrChkbyvx6EsJ7bYoifMGHRF9QoL7SYoL/kA0ypl60tDogFamsGR/eoEiyOw92Z3x47I4xk
-	kd+7r1FwdS1DLez0VJ8edXzci+JE8VcQGYoxEv4CtBHcLlNyO7+SFUSRta3zSdgqIxSn+8bZmZQ
-	3wU8VzRFEjf0DEf3BLG7O4c9fTe0M6F8IFWh/zPqYBjiqPFxhxX+4eYtjApaFtoBQJK0/fTgXoC
-	Q==
-X-Received: by 2002:a5d:5d0d:0:b0:43c:f583:126a with SMTP id ffacd0b85a97d-45e5c5a0cf8mr40664221f8f.14.1779289777753;
-        Wed, 20 May 2026 08:09:37 -0700 (PDT)
-Received: from Ansuel-XPS24 (host-79-22-5-99.retail.telecomitalia.it. [79.22.5.99])
-        by smtp.googlemail.com with ESMTPSA id ffacd0b85a97d-45d9ec39806sm53639804f8f.9.2026.05.20.08.09.36
+        d=1e100.net; s=20251104; t=1779290096; x=1779894896;
+        h=in-reply-to:content-disposition:mime-version:references:subject:to
+         :from:date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=ccZEEEBlnDZ7RGFHJwE5hSCMMi66BiukOOfPa72Eyrc=;
+        b=tJbdeZ3OKBmVf7wM4N/jhh0OXgSxEQ1xisFzcEYQlXwjZkrZ3G55BzCxdCq2XZhWjw
+         M6MoVt1naOZe07LaBGO8COTfIQuRdir04cmY4LLdaAgSG6yHBHHV4tagqgGfHNRl/++a
+         QmthdabQ/IONg9nOuK9i4VWMbFyIJ5bRftslGXK1381ws1iZJF3my8lVeeR26Aah+S7Y
+         f/zu1dd7G8oRQ3ohZC0RLKGIHwCkZR5Xf1YCR5i7WnRVex79hGDcrxwrgWL/DETSP8Np
+         HajuPQS2d1aZ1qi0zbZoJbTpnND54k8QRpqy/vFNKETCjnb7tcC6v2Bs7YwTHAcYnIbC
+         jlIw==
+X-Forwarded-Encrypted: i=1; AFNElJ/6pTYIjTMu68wQ+J8PgS8aGaXh/ZFsnp4zdp4cDIjA4TSbHU4HqKTCbtVPnLfIMbGTGhPIWLOQifQ=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz+oRIyuVNiaJQLGHA6DH0SkVXdN26YXcSbdvv28ucLnPIjDXOP
+	UdihkCGokWoX5feJ6B6BCYrw/TYfeCEOBGH8uvtxeXoZrL7Lwn3PRFJd
+X-Gm-Gg: Acq92OENfK4fKm6ciLu1lI6pYG36MjXXEqKPmJKtPUtiiaQ96W5kFnlpTpd7SEL16dx
+	aB0emd8sjgvMTyNwRbOUaHA72GsRBzVvBK8/1YMd9qjiEXg9AdjSkqpVWeK7WXUBQGpjd1YmCIq
+	+fQGZrmavflgB1EKcfWJvUv9RHWLYJH2JaRQdsXmMnwZ66e7PNv+K0GJs0mGb0x+FnQIzqYYasu
+	UAuqv5X67d7V0n2SsaiOQGRipKVl95RwqmYwDIgqLTEpVivH4t7rDeXIojs7D+1jJEifYmao+yl
+	453NHfOm3UpGzLCY+D1yqCzhPK7q1/k/kqbTe8XBSvzdiwKHNuQRFzo7q0xDduFoj0YNuTABgXJ
+	m+4IvJMFX6aEcj2jE//2YQfvTrMfgcQTdknT+bBt0VB8XN/MfdjJorH1xpBSkiogdf6pSm+EjhQ
+	DvK5aqQZWETq84sZWMA2CAEpn68V2ZkUYI3MyHh6I5f/wyOfqrI0Pq9Z4BLngL5A==
+X-Received: by 2002:a05:600c:a405:b0:48a:52ce:a4b1 with SMTP id 5b1f17b1804b1-48fe60dd5e8mr371333235e9.15.1779290095645;
+        Wed, 20 May 2026 08:14:55 -0700 (PDT)
+Received: from Ansuel-XPS. (host-79-22-5-99.retail.telecomitalia.it. [79.22.5.99])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-48febe585absm136106415e9.19.2026.05.20.08.14.54
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 20 May 2026 08:09:37 -0700 (PDT)
+        Wed, 20 May 2026 08:14:55 -0700 (PDT)
+Message-ID: <6a0dcfef.b6ded719.106719.1acd@mx.google.com>
+X-Google-Original-Message-ID: <ag3P62h_xNArpB2V@Ansuel-XPS.>
+Date: Wed, 20 May 2026 17:14:51 +0200
 From: Christian Marangi <ansuelsmth@gmail.com>
 To: Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>,
-	Brian Masney <bmasney@redhat.com>,
+	Stephen Boyd <sboyd@kernel.org>, Brian Masney <bmasney@redhat.com>,
 	Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Christian Marangi <ansuelsmth@gmail.com>,
-	Vinod Koul <vkoul@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
-	Lorenzo Bianconi <lorenzo@kernel.org>,
-	Felix Fietkau <nbd@nbd.name>,
-	linux-clk@vger.kernel.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
+	Lorenzo Bianconi <lorenzo@kernel.org>, Felix Fietkau <nbd@nbd.name>,
+	linux-clk@vger.kernel.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
 	linux-phy@lists.infradead.org
-Subject: [PATCH v8 5/5] phy: airoha: Add support for Airoha AN7581 USB PHY
-Date: Wed, 20 May 2026 17:09:10 +0200
-Message-ID: <20260520150912.11614-6-ansuelsmth@gmail.com>
-X-Mailer: git-send-email 2.53.0
-In-Reply-To: <20260520150912.11614-1-ansuelsmth@gmail.com>
+Subject: Re: [PATCH v8 0/5] airoha: an7581: USB support
 References: <20260520150912.11614-1-ansuelsmth@gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20260520150912.11614-1-ansuelsmth@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260520_080940_049142_FFC4CBC5 
-X-CRM114-Status: GOOD (  22.17  )
+X-CRM114-CacheID: sfid-20260520_081458_036925_A591806F 
+X-CRM114-Status: GOOD (  27.87  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,631 +106,112 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add support for Airoha AN7581 USB PHY driver. AN7581 supports up to 2
-USB port with USB 2.0 mode always supported and USB 3.0 mode available
-only if the Serdes port is correctly configured for USB 3.0.
+On Wed, May 20, 2026 at 05:09:05PM +0200, Christian Marangi wrote:
+> This is a major rework of the old v2 series.
+> 
+> The SoC always support USB 2.0 but for USB 3.0 it needs additional
+> configuration for the Serdes port. Such port can be either configured
+> for USB usage or for PCIe lines or HSGMII and these are configured
+> in the SCU space.
+> 
+> The previous implementation of a dedicated SSR driver was too
+> complex and fragile for the simple task of configuring a register
+> hence it was dropped and the handling is entirely in the PHY driver.
+> 
+> Everything was reducted to the dt-bindings to describe the Serdes line.
+> 
+> Also the property for the PHY are renamed to a more suitable name and
+> everything is now mandatory to simplify the implementation.
+> (the PHY are always present and active on the SoC)
+> 
+> Also other unrelated patch are dropped from this series.
+> 
+> Changes v8:
+> - Squash header to clk Documentation patch
+> - Address comments from AI Bot
+> 
+> Changes v7:
+> - Rework to double PHY implementation
+>   (suggested by Rob)
+>   Now the clk driver expose a PHY for Serdes port
+>   USB PHY driver selects it
+> - Rebase on top of linux-next
+>   Link: https://lore.kernel.org/all/20260306190156.22297-1-ansuelsmth@gmail.com/
 
-If the USB 3.0 mode is not configured, the modes needs to be also
-disabled in the xHCI node or the driver will report unsable clock and
-fail probe.
+Typo for the link. It's:
 
-For USB 2.0 Slew Rate calibration, airoha,usb2-monitor-clk-sel is
-mandatory and is used to select the monitor clock for calibration.
+  Link: https://lore.kernel.org/all/20260519220813.28468-1-ansuelsmth@gmail.com/
 
-Normally it's 1 for USB port 1 and 2 for USB port 2.
+> 
+> Changes v6:
+> - Fix kernel test robot (sparse warning)
+>   Link: https://lore.kernel.org/all/20260306190156.22297-1-ansuelsmth@gmail.com/
+> 
+> Changes v5:
+> - Add Ack and Review tag from Connor
+> - Implement Ethernet support in the USB driver
+>   (testing support for this Serdes on a special reference board)
+> - Use an7581 prefix for USB PHY driver
+>   Link: https://lore.kernel.org/all/20251107160251.2307088-1-ansuelsmth@gmail.com/
+> 
+> Changes v4:
+> - Rename PCIe and USB PHY to AN7581
+> - Drop airoha,scu (handled directly in driver)
+> - Drop dt-bindings for monitor clock in favor of raw values
+> - Better describe the usage of airoha,usb3-serdes
+> - Simplify values of dt-bindings SSR SERDES
+>   Link: https://lore.kernel.org/all/20251107160251.2307088-1-ansuelsmth@gmail.com/
+> 
+> Changes v3:
+> - Drop clk changes
+> - Drop SSR driver
+> - Rename property in Documentation
+> - Simplify PHY handling
+> - Move SSR handling inside the PHY driver
+>   Link: https://lore.kernel.org/all/20251029173713.7670-1-ansuelsmth@gmail.com/
+> 
+> Changes v2:
+> - Drop changes for simple-mfd
+> - Rework PHY node structure to single node
+> - Drop port-id property in favor of serdes-port and
+>   usb2-monitor-clock-sel
+> - Make the SSR driver probe from the clock driver
+> 
+> Christian Marangi (5):
+>   dt-bindings: clock: airoha: Add PHY binding for Serdes port
+>   dt-bindings: phy: Add documentation for Airoha AN7581 USB PHY
+>   clk: en7523: Add support for selecting the Serdes port in SCU
+>   phy: move and rename Airoha PCIe PHY driver to dedicated directory
+>   phy: airoha: Add support for Airoha AN7581 USB PHY
+> 
+>  .../bindings/clock/airoha,en7523-scu.yaml     |   9 +
+>  .../bindings/phy/airoha,an7581-usb-phy.yaml   |  62 ++
+>  MAINTAINERS                                   |  11 +-
+>  drivers/clk/Kconfig                           |   1 +
+>  drivers/clk/clk-en7523.c                      | 216 ++++++-
+>  drivers/phy/Kconfig                           |  11 +-
+>  drivers/phy/Makefile                          |   4 +-
+>  drivers/phy/airoha/Kconfig                    |  24 +
+>  drivers/phy/airoha/Makefile                   |   4 +
+>  .../phy-an7581-pcie-regs.h}                   |   2 +-
+>  .../phy-an7581-pcie.c}                        |   6 +-
+>  drivers/phy/airoha/phy-an7581-usb.c           | 554 ++++++++++++++++++
+>  include/dt-bindings/soc/airoha,scu-ssr.h      |  11 +
+>  13 files changed, 894 insertions(+), 21 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/phy/airoha,an7581-usb-phy.yaml
+>  create mode 100644 drivers/phy/airoha/Kconfig
+>  create mode 100644 drivers/phy/airoha/Makefile
+>  rename drivers/phy/{phy-airoha-pcie-regs.h => airoha/phy-an7581-pcie-regs.h} (99%)
+>  rename drivers/phy/{phy-airoha-pcie.c => airoha/phy-an7581-pcie.c} (99%)
+>  create mode 100644 drivers/phy/airoha/phy-an7581-usb.c
+>  create mode 100644 include/dt-bindings/soc/airoha,scu-ssr.h
+> 
+> -- 
+> 2.53.0
+> 
 
-Signed-off-by: Christian Marangi <ansuelsmth@gmail.com>
----
- MAINTAINERS                         |   1 +
- drivers/phy/airoha/Kconfig          |  11 +
- drivers/phy/airoha/Makefile         |   1 +
- drivers/phy/airoha/phy-an7581-usb.c | 554 ++++++++++++++++++++++++++++
- 4 files changed, 567 insertions(+)
- create mode 100644 drivers/phy/airoha/phy-an7581-usb.c
-
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 7bea8c620da8..2f05faa44503 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -776,6 +776,7 @@ M:	Christian Marangi <ansuelsmth@gmail.com>
- L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
- S:	Maintained
- F:	Documentation/devicetree/bindings/phy/airoha,an7581-usb-phy.yaml
-+F:	drivers/phy/airoha/phy-an7581-usb.c
- 
- AIRSPY MEDIA DRIVER
- L:	linux-media@vger.kernel.org
-diff --git a/drivers/phy/airoha/Kconfig b/drivers/phy/airoha/Kconfig
-index 9a1b625a7701..634448ee39b5 100644
---- a/drivers/phy/airoha/Kconfig
-+++ b/drivers/phy/airoha/Kconfig
-@@ -11,3 +11,14 @@ config PHY_AIROHA_AN7581_PCIE
- 	  Say Y here to add support for Airoha AN7581 PCIe PHY driver.
- 	  This driver create the basic PHY instance and provides initialize
- 	  callback for PCIe GEN3 port.
-+
-+config PHY_AIROHA_AN7581_USB
-+	tristate "Airoha AN7581 USB PHY Driver"
-+	depends on ARCH_AIROHA || COMPILE_TEST
-+	depends on OF
-+	select GENERIC_PHY
-+	select REGMAP_MMIO
-+	help
-+	  Say 'Y' here to add support for Airoha AN7581 USB PHY driver.
-+	  This driver create the basic PHY instance and provides initialize
-+	  callback for USB port.
-diff --git a/drivers/phy/airoha/Makefile b/drivers/phy/airoha/Makefile
-index 912f3e11a061..944bf842deba 100644
---- a/drivers/phy/airoha/Makefile
-+++ b/drivers/phy/airoha/Makefile
-@@ -1,3 +1,4 @@
- # SPDX-License-Identifier: GPL-2.0
- 
- obj-$(CONFIG_PHY_AIROHA_AN7581_PCIE)	+= phy-an7581-pcie.o
-+obj-$(CONFIG_PHY_AIROHA_AN7581_USB)	+= phy-an7581-usb.o
-diff --git a/drivers/phy/airoha/phy-an7581-usb.c b/drivers/phy/airoha/phy-an7581-usb.c
-new file mode 100644
-index 000000000000..af20f5cb4ed1
---- /dev/null
-+++ b/drivers/phy/airoha/phy-an7581-usb.c
-@@ -0,0 +1,554 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Author: Christian Marangi <ansuelsmth@gmail.com>
-+ */
-+
-+#include <dt-bindings/phy/phy.h>
-+#include <dt-bindings/soc/airoha,scu-ssr.h>
-+#include <linux/bitfield.h>
-+#include <linux/math.h>
-+#include <linux/module.h>
-+#include <linux/mfd/syscon.h>
-+#include <linux/phy/phy.h>
-+#include <linux/platform_device.h>
-+#include <linux/regmap.h>
-+
-+/* U2PHY */
-+#define AIROHA_USB_PHY_FMCR0			0x100
-+#define   AIROHA_USB_PHY_MONCLK_SEL		GENMASK(27, 26)
-+#define   AIROHA_USB_PHY_MONCLK_SEL0		FIELD_PREP_CONST(AIROHA_USB_PHY_MONCLK_SEL, 0x0)
-+#define   AIROHA_USB_PHY_MONCLK_SEL1		FIELD_PREP_CONST(AIROHA_USB_PHY_MONCLK_SEL, 0x1)
-+#define   AIROHA_USB_PHY_MONCLK_SEL2		FIELD_PREP_CONST(AIROHA_USB_PHY_MONCLK_SEL, 0x2)
-+#define   AIROHA_USB_PHY_MONCLK_SEL3		FIELD_PREP_CONST(AIROHA_USB_PHY_MONCLK_SEL, 0x3)
-+#define   AIROHA_USB_PHY_FREQDET_EN		BIT(24)
-+#define   AIROHA_USB_PHY_CYCLECNT		GENMASK(23, 0)
-+#define AIROHA_USB_PHY_FMMONR0			0x10c
-+#define   AIROHA_USB_PHY_USB_FM_OUT		GENMASK(31, 0)
-+#define AIROHA_USB_PHY_FMMONR1			0x110
-+#define   AIROHA_USB_PHY_FRCK_EN		BIT(8)
-+
-+#define AIROHA_USB_PHY_USBPHYACR4		0x310
-+#define   AIROHA_USB_PHY_USB20_FS_CR		GENMASK(10, 8)
-+#define   AIROHA_USB_PHY_USB20_FS_CR_MAX	FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_FS_CR, 0x0)
-+#define   AIROHA_USB_PHY_USB20_FS_CR_NORMAL	FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_FS_CR, 0x2)
-+#define   AIROHA_USB_PHY_USB20_FS_CR_SMALLER	FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_FS_CR, 0x4)
-+#define   AIROHA_USB_PHY_USB20_FS_CR_MIN	FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_FS_CR, 0x6)
-+#define   AIROHA_USB_PHY_USB20_FS_SR		GENMASK(2, 0)
-+#define   AIROHA_USB_PHY_USB20_FS_SR_MAX	FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_FS_SR, 0x0)
-+#define   AIROHA_USB_PHY_USB20_FS_SR_NORMAL	FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_FS_SR, 0x2)
-+#define   AIROHA_USB_PHY_USB20_FS_SR_SMALLER	FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_FS_SR, 0x4)
-+#define   AIROHA_USB_PHY_USB20_FS_SR_MIN	FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_FS_SR, 0x6)
-+#define AIROHA_USB_PHY_USBPHYACR5		0x314
-+#define   AIROHA_USB_PHY_USB20_HSTX_SRCAL_EN	BIT(15)
-+#define   AIROHA_USB_PHY_USB20_HSTX_SRCTRL	GENMASK(14, 12)
-+#define AIROHA_USB_PHY_USBPHYACR6		0x318
-+#define   AIROHA_USB_PHY_USB20_BC11_SW_EN	BIT(23)
-+#define   AIROHA_USB_PHY_USB20_DISCTH		GENMASK(7, 4)
-+#define   AIROHA_USB_PHY_USB20_DISCTH_400	FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_DISCTH, 0x0)
-+#define   AIROHA_USB_PHY_USB20_DISCTH_420	FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_DISCTH, 0x1)
-+#define   AIROHA_USB_PHY_USB20_DISCTH_440	FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_DISCTH, 0x2)
-+#define   AIROHA_USB_PHY_USB20_DISCTH_460	FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_DISCTH, 0x3)
-+#define   AIROHA_USB_PHY_USB20_DISCTH_480	FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_DISCTH, 0x4)
-+#define   AIROHA_USB_PHY_USB20_DISCTH_500	FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_DISCTH, 0x5)
-+#define   AIROHA_USB_PHY_USB20_DISCTH_520	FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_DISCTH, 0x6)
-+#define   AIROHA_USB_PHY_USB20_DISCTH_540	FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_DISCTH, 0x7)
-+#define   AIROHA_USB_PHY_USB20_DISCTH_560	FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_DISCTH, 0x8)
-+#define   AIROHA_USB_PHY_USB20_DISCTH_580	FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_DISCTH, 0x9)
-+#define   AIROHA_USB_PHY_USB20_DISCTH_600	FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_DISCTH, 0xa)
-+#define   AIROHA_USB_PHY_USB20_DISCTH_620	FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_DISCTH, 0xb)
-+#define   AIROHA_USB_PHY_USB20_DISCTH_640	FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_DISCTH, 0xc)
-+#define   AIROHA_USB_PHY_USB20_DISCTH_660	FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_DISCTH, 0xd)
-+#define   AIROHA_USB_PHY_USB20_DISCTH_680	FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_DISCTH, 0xe)
-+#define   AIROHA_USB_PHY_USB20_DISCTH_700	FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_DISCTH, 0xf)
-+#define   AIROHA_USB_PHY_USB20_SQTH		GENMASK(3, 0)
-+#define   AIROHA_USB_PHY_USB20_SQTH_85		FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_SQTH, 0x0)
-+#define   AIROHA_USB_PHY_USB20_SQTH_90		FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_SQTH, 0x1)
-+#define   AIROHA_USB_PHY_USB20_SQTH_95		FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_SQTH, 0x2)
-+#define   AIROHA_USB_PHY_USB20_SQTH_100		FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_SQTH, 0x3)
-+#define   AIROHA_USB_PHY_USB20_SQTH_105		FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_SQTH, 0x4)
-+#define   AIROHA_USB_PHY_USB20_SQTH_110		FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_SQTH, 0x5)
-+#define   AIROHA_USB_PHY_USB20_SQTH_115		FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_SQTH, 0x6)
-+#define   AIROHA_USB_PHY_USB20_SQTH_120		FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_SQTH, 0x7)
-+#define   AIROHA_USB_PHY_USB20_SQTH_125		FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_SQTH, 0x8)
-+#define   AIROHA_USB_PHY_USB20_SQTH_130		FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_SQTH, 0x9)
-+#define   AIROHA_USB_PHY_USB20_SQTH_135		FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_SQTH, 0xa)
-+#define   AIROHA_USB_PHY_USB20_SQTH_140		FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_SQTH, 0xb)
-+#define   AIROHA_USB_PHY_USB20_SQTH_145		FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_SQTH, 0xc)
-+#define   AIROHA_USB_PHY_USB20_SQTH_150		FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_SQTH, 0xd)
-+#define   AIROHA_USB_PHY_USB20_SQTH_155		FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_SQTH, 0xe)
-+#define   AIROHA_USB_PHY_USB20_SQTH_160		FIELD_PREP_CONST(AIROHA_USB_PHY_USB20_SQTH, 0xf)
-+
-+#define AIROHA_USB_PHY_U2PHYDTM1		0x36c
-+#define   AIROHA_USB_PHY_FORCE_IDDIG		BIT(9)
-+#define   AIROHA_USB_PHY_IDDIG			BIT(1)
-+
-+#define AIROHA_USB_PHY_GPIO_CTLD		0x80c
-+#define   AIROHA_USB_PHY_C60802_GPIO_CTLD	GENMASK(31, 0)
-+#define     AIROHA_USB_PHY_SSUSB_IP_SW_RST	BIT(31)
-+#define     AIROHA_USB_PHY_MCU_BUS_CK_GATE_EN	BIT(30)
-+#define     AIROHA_USB_PHY_FORCE_SSUSB_IP_SW_RST BIT(29)
-+#define     AIROHA_USB_PHY_SSUSB_SW_RST		BIT(28)
-+
-+#define AIROHA_USB_PHY_U3_PHYA_REG0		0xb00
-+#define   AIROHA_USB_PHY_SSUSB_BG_DIV		GENMASK(29, 28)
-+#define   AIROHA_USB_PHY_SSUSB_BG_DIV_2		FIELD_PREP_CONST(AIROHA_USB_PHY_SSUSB_BG_DIV, 0x0)
-+#define   AIROHA_USB_PHY_SSUSB_BG_DIV_4		FIELD_PREP_CONST(AIROHA_USB_PHY_SSUSB_BG_DIV, 0x1)
-+#define   AIROHA_USB_PHY_SSUSB_BG_DIV_8		FIELD_PREP_CONST(AIROHA_USB_PHY_SSUSB_BG_DIV, 0x2)
-+#define   AIROHA_USB_PHY_SSUSB_BG_DIV_16	FIELD_PREP_CONST(AIROHA_USB_PHY_SSUSB_BG_DIV, 0x3)
-+#define AIROHA_USB_PHY_U3_PHYA_REG1		0xb04
-+#define   AIROHA_USB_PHY_SSUSB_XTAL_TOP_RESERVE	GENMASK(25, 10)
-+#define AIROHA_USB_PHY_U3_PHYA_REG6		0xb18
-+#define   AIROHA_USB_PHY_SSUSB_CDR_RESERVE	GENMASK(31, 24)
-+#define AIROHA_USB_PHY_U3_PHYA_REG8		0xb20
-+#define   AIROHA_USB_PHY_SSUSB_CDR_RST_DLY	GENMASK(7, 6)
-+#define   AIROHA_USB_PHY_SSUSB_CDR_RST_DLY_32	FIELD_PREP_CONST(AIROHA_USB_PHY_SSUSB_CDR_RST_DLY, 0x0)
-+#define   AIROHA_USB_PHY_SSUSB_CDR_RST_DLY_64	FIELD_PREP_CONST(AIROHA_USB_PHY_SSUSB_CDR_RST_DLY, 0x1)
-+#define   AIROHA_USB_PHY_SSUSB_CDR_RST_DLY_128	FIELD_PREP_CONST(AIROHA_USB_PHY_SSUSB_CDR_RST_DLY, 0x2)
-+#define   AIROHA_USB_PHY_SSUSB_CDR_RST_DLY_216	FIELD_PREP_CONST(AIROHA_USB_PHY_SSUSB_CDR_RST_DLY, 0x3)
-+
-+#define AIROHA_USB_PHY_U3_PHYA_DA_REG19		0xc38
-+#define   AIROHA_USB_PHY_SSUSB_PLL_SSC_DELTA1_U3 GENMASK(15, 0)
-+
-+#define AIROHA_USB_PHY_U2_FM_DET_CYCLE_CNT	1024
-+#define AIROHA_USB_PHY_REF_CK			20
-+#define AIROHA_USB_PHY_U2_SR_COEF		28
-+#define AIROHA_USB_PHY_U2_SR_COEF_DIVISOR	1000
-+
-+#define AIROHA_USB_PHY_DEFAULT_SR_CALIBRATION	0x5
-+#define AIROHA_USB_PHY_FREQDET_SLEEP		1000 /* 1ms */
-+#define AIROHA_USB_PHY_FREQDET_TIMEOUT		(AIROHA_USB_PHY_FREQDET_SLEEP * 10)
-+
-+struct an7581_usb_phy_instance {
-+	struct phy *phy;
-+	u32 type;
-+};
-+
-+enum an7581_usb_phy_instance_type {
-+	AIROHA_PHY_USB2,
-+	AIROHA_PHY_USB3,
-+
-+	AIROHA_PHY_USB_MAX,
-+};
-+
-+struct an7581_usb_phy_priv {
-+	struct device *dev;
-+	struct regmap *regmap;
-+
-+	unsigned int monclk_sel;
-+
-+	struct phy *serdes_phy;
-+	struct an7581_usb_phy_instance *phys[AIROHA_PHY_USB_MAX];
-+};
-+
-+static void an7581_usb_phy_u2_slew_rate_calibration(struct an7581_usb_phy_priv *priv)
-+{
-+	u32 fm_out = 0;
-+	u32 srctrl;
-+
-+	/* Enable HS TX SR calibration */
-+	regmap_set_bits(priv->regmap, AIROHA_USB_PHY_USBPHYACR5,
-+			AIROHA_USB_PHY_USB20_HSTX_SRCAL_EN);
-+
-+	usleep_range(1000, 1500);
-+
-+	/* Enable Free run clock */
-+	regmap_set_bits(priv->regmap, AIROHA_USB_PHY_FMMONR1,
-+			AIROHA_USB_PHY_FRCK_EN);
-+
-+	/* Select Monitor Clock */
-+	regmap_update_bits(priv->regmap, AIROHA_USB_PHY_FMCR0,
-+			   AIROHA_USB_PHY_MONCLK_SEL,
-+			   FIELD_PREP(AIROHA_USB_PHY_MONCLK_SEL,
-+				      priv->monclk_sel));
-+
-+	/* Set cyclecnt */
-+	regmap_update_bits(priv->regmap, AIROHA_USB_PHY_FMCR0,
-+			   AIROHA_USB_PHY_CYCLECNT,
-+			   FIELD_PREP(AIROHA_USB_PHY_CYCLECNT,
-+				      AIROHA_USB_PHY_U2_FM_DET_CYCLE_CNT));
-+
-+	/* Enable Frequency meter */
-+	regmap_set_bits(priv->regmap, AIROHA_USB_PHY_FMCR0,
-+			AIROHA_USB_PHY_FREQDET_EN);
-+
-+	/* Timeout can happen and we will apply workaround at the end */
-+	regmap_read_poll_timeout(priv->regmap, AIROHA_USB_PHY_FMMONR0, fm_out,
-+				 fm_out, AIROHA_USB_PHY_FREQDET_SLEEP,
-+				 AIROHA_USB_PHY_FREQDET_TIMEOUT);
-+
-+	/* Disable Frequency meter */
-+	regmap_clear_bits(priv->regmap, AIROHA_USB_PHY_FMCR0,
-+			  AIROHA_USB_PHY_FREQDET_EN);
-+
-+	/* Disable Free run clock */
-+	regmap_clear_bits(priv->regmap, AIROHA_USB_PHY_FMMONR1,
-+			  AIROHA_USB_PHY_FRCK_EN);
-+
-+	/* Disable HS TX SR calibration */
-+	regmap_clear_bits(priv->regmap, AIROHA_USB_PHY_USBPHYACR5,
-+			  AIROHA_USB_PHY_USB20_HSTX_SRCAL_EN);
-+
-+	usleep_range(1000, 1500);
-+
-+	/* Frequency was not detected, use default SR calibration value */
-+	if (!fm_out) {
-+		srctrl = AIROHA_USB_PHY_DEFAULT_SR_CALIBRATION;
-+		dev_err(priv->dev, "Frequency not detected, using default SR calibration.\n");
-+	} else {
-+		/* (1024 / FM_OUT) * REF_CK * U2_SR_COEF (round to the nearest digits) */
-+		srctrl = AIROHA_USB_PHY_REF_CK * AIROHA_USB_PHY_U2_SR_COEF;
-+		srctrl = (srctrl * AIROHA_USB_PHY_U2_FM_DET_CYCLE_CNT) / fm_out;
-+		srctrl = DIV_ROUND_CLOSEST(srctrl, AIROHA_USB_PHY_U2_SR_COEF_DIVISOR);
-+		dev_dbg(priv->dev, "SR calibration applied: %x\n", srctrl);
-+	}
-+
-+	regmap_update_bits(priv->regmap, AIROHA_USB_PHY_USBPHYACR5,
-+			   AIROHA_USB_PHY_USB20_HSTX_SRCTRL,
-+			   FIELD_PREP(AIROHA_USB_PHY_USB20_HSTX_SRCTRL, srctrl));
-+}
-+
-+static void an7581_usb_phy_u2_init(struct an7581_usb_phy_priv *priv)
-+{
-+	regmap_update_bits(priv->regmap, AIROHA_USB_PHY_USBPHYACR4,
-+			   AIROHA_USB_PHY_USB20_FS_CR,
-+			   AIROHA_USB_PHY_USB20_FS_CR_MIN);
-+
-+	regmap_update_bits(priv->regmap, AIROHA_USB_PHY_USBPHYACR4,
-+			   AIROHA_USB_PHY_USB20_FS_SR,
-+			   AIROHA_USB_PHY_USB20_FS_SR_NORMAL);
-+
-+	/* FIXME: evaluate if needed */
-+	regmap_update_bits(priv->regmap, AIROHA_USB_PHY_USBPHYACR6,
-+			   AIROHA_USB_PHY_USB20_SQTH,
-+			   AIROHA_USB_PHY_USB20_SQTH_130);
-+
-+	regmap_update_bits(priv->regmap, AIROHA_USB_PHY_USBPHYACR6,
-+			   AIROHA_USB_PHY_USB20_DISCTH,
-+			   AIROHA_USB_PHY_USB20_DISCTH_600);
-+
-+	/* Enable the USB port and then disable after calibration */
-+	regmap_clear_bits(priv->regmap, AIROHA_USB_PHY_USBPHYACR6,
-+			  AIROHA_USB_PHY_USB20_BC11_SW_EN);
-+
-+	an7581_usb_phy_u2_slew_rate_calibration(priv);
-+
-+	regmap_set_bits(priv->regmap, AIROHA_USB_PHY_USBPHYACR6,
-+			AIROHA_USB_PHY_USB20_BC11_SW_EN);
-+
-+	usleep_range(1000, 1500);
-+}
-+
-+/*
-+ * USB 3.0 mode can only work if USB serdes is correctly set.
-+ * This is validated in xLate function.
-+ */
-+static void an7581_usb_phy_u3_init(struct an7581_usb_phy_priv *priv)
-+{
-+	regmap_update_bits(priv->regmap, AIROHA_USB_PHY_U3_PHYA_REG8,
-+			   AIROHA_USB_PHY_SSUSB_CDR_RST_DLY,
-+			   AIROHA_USB_PHY_SSUSB_CDR_RST_DLY_32);
-+
-+	regmap_update_bits(priv->regmap, AIROHA_USB_PHY_U3_PHYA_REG6,
-+			   AIROHA_USB_PHY_SSUSB_CDR_RESERVE,
-+			   FIELD_PREP(AIROHA_USB_PHY_SSUSB_CDR_RESERVE, 0xe));
-+
-+	regmap_update_bits(priv->regmap, AIROHA_USB_PHY_U3_PHYA_REG0,
-+			   AIROHA_USB_PHY_SSUSB_BG_DIV,
-+			   AIROHA_USB_PHY_SSUSB_BG_DIV_4);
-+
-+	regmap_set_bits(priv->regmap, AIROHA_USB_PHY_U3_PHYA_REG1,
-+			FIELD_PREP(AIROHA_USB_PHY_SSUSB_XTAL_TOP_RESERVE, 0x600));
-+
-+	regmap_update_bits(priv->regmap, AIROHA_USB_PHY_U3_PHYA_DA_REG19,
-+			   AIROHA_USB_PHY_SSUSB_PLL_SSC_DELTA1_U3,
-+			   FIELD_PREP(AIROHA_USB_PHY_SSUSB_PLL_SSC_DELTA1_U3, 0x43));
-+}
-+
-+static int an7581_usb_phy_init(struct phy *phy)
-+{
-+	struct an7581_usb_phy_instance *instance = phy_get_drvdata(phy);
-+	struct an7581_usb_phy_priv *priv = dev_get_drvdata(phy->dev.parent);
-+	int ret;
-+
-+	switch (instance->type) {
-+	case PHY_TYPE_USB2:
-+		an7581_usb_phy_u2_init(priv);
-+		break;
-+	case PHY_TYPE_USB3:
-+		ret = phy_set_mode(priv->serdes_phy, PHY_MODE_USB_DEVICE_SS);
-+		if (ret)
-+			return ret;
-+
-+		an7581_usb_phy_u3_init(priv);
-+		break;
-+	default:
-+		return -EINVAL;
-+	}
-+
-+	return 0;
-+}
-+
-+static int an7581_usb_phy_u2_power_on(struct an7581_usb_phy_priv *priv)
-+{
-+	regmap_clear_bits(priv->regmap, AIROHA_USB_PHY_USBPHYACR6,
-+			  AIROHA_USB_PHY_USB20_BC11_SW_EN);
-+
-+	usleep_range(1000, 1500);
-+
-+	return 0;
-+}
-+
-+static int an7581_usb_phy_u3_power_on(struct an7581_usb_phy_priv *priv)
-+{
-+	regmap_clear_bits(priv->regmap, AIROHA_USB_PHY_GPIO_CTLD,
-+			  AIROHA_USB_PHY_SSUSB_IP_SW_RST |
-+			  AIROHA_USB_PHY_MCU_BUS_CK_GATE_EN |
-+			  AIROHA_USB_PHY_FORCE_SSUSB_IP_SW_RST |
-+			  AIROHA_USB_PHY_SSUSB_SW_RST);
-+
-+	usleep_range(1000, 1500);
-+
-+	return 0;
-+}
-+
-+static int an7581_usb_phy_power_on(struct phy *phy)
-+{
-+	struct an7581_usb_phy_instance *instance = phy_get_drvdata(phy);
-+	struct an7581_usb_phy_priv *priv = dev_get_drvdata(phy->dev.parent);
-+
-+	switch (instance->type) {
-+	case PHY_TYPE_USB2:
-+		an7581_usb_phy_u2_power_on(priv);
-+		break;
-+	case PHY_TYPE_USB3:
-+		an7581_usb_phy_u3_power_on(priv);
-+		break;
-+	default:
-+		return -EINVAL;
-+	}
-+
-+	return 0;
-+}
-+
-+static int an7581_usb_phy_u2_power_off(struct an7581_usb_phy_priv *priv)
-+{
-+	regmap_set_bits(priv->regmap, AIROHA_USB_PHY_USBPHYACR6,
-+			AIROHA_USB_PHY_USB20_BC11_SW_EN);
-+
-+	usleep_range(1000, 1500);
-+
-+	return 0;
-+}
-+
-+static int an7581_usb_phy_u3_power_off(struct an7581_usb_phy_priv *priv)
-+{
-+	regmap_set_bits(priv->regmap, AIROHA_USB_PHY_GPIO_CTLD,
-+			AIROHA_USB_PHY_SSUSB_IP_SW_RST |
-+			AIROHA_USB_PHY_FORCE_SSUSB_IP_SW_RST);
-+
-+	usleep_range(1000, 1500);
-+
-+	return 0;
-+}
-+
-+static int an7581_usb_phy_power_off(struct phy *phy)
-+{
-+	struct an7581_usb_phy_instance *instance = phy_get_drvdata(phy);
-+	struct an7581_usb_phy_priv *priv = dev_get_drvdata(phy->dev.parent);
-+
-+	switch (instance->type) {
-+	case PHY_TYPE_USB2:
-+		an7581_usb_phy_u2_power_off(priv);
-+		break;
-+	case PHY_TYPE_USB3:
-+		an7581_usb_phy_u3_power_off(priv);
-+		break;
-+	default:
-+		return -EINVAL;
-+	}
-+
-+	return 0;
-+}
-+
-+static int an7581_usb_phy_u2_set_mode(struct an7581_usb_phy_priv *priv,
-+				      enum phy_mode mode)
-+{
-+	u32 val;
-+
-+	/*
-+	 * For Device and Host mode, enable force IDDIG.
-+	 * For Device set IDDIG, for Host clear IDDIG.
-+	 * For OTG disable force and clear IDDIG bit while at it.
-+	 */
-+	switch (mode) {
-+	case PHY_MODE_USB_DEVICE:
-+		val = AIROHA_USB_PHY_FORCE_IDDIG |
-+		      AIROHA_USB_PHY_IDDIG;
-+		break;
-+	case PHY_MODE_USB_HOST:
-+		val = AIROHA_USB_PHY_FORCE_IDDIG;
-+		break;
-+	case PHY_MODE_USB_OTG:
-+		val = 0;
-+		break;
-+	default:
-+		return 0;
-+	}
-+
-+	regmap_update_bits(priv->regmap, AIROHA_USB_PHY_U2PHYDTM1,
-+			   AIROHA_USB_PHY_FORCE_IDDIG |
-+			   AIROHA_USB_PHY_IDDIG, val);
-+
-+	return 0;
-+}
-+
-+static int an7581_usb_phy_set_mode(struct phy *phy, enum phy_mode mode, int submode)
-+{
-+	struct an7581_usb_phy_instance *instance = phy_get_drvdata(phy);
-+	struct an7581_usb_phy_priv *priv = dev_get_drvdata(phy->dev.parent);
-+
-+	switch (instance->type) {
-+	case PHY_TYPE_USB2:
-+		return an7581_usb_phy_u2_set_mode(priv, mode);
-+	default:
-+		return 0;
-+	}
-+}
-+
-+static struct phy *an7581_usb_phy_xlate(struct device *dev,
-+					const struct of_phandle_args *args)
-+{
-+	struct an7581_usb_phy_priv *priv = dev_get_drvdata(dev);
-+	struct an7581_usb_phy_instance *instance = NULL;
-+	unsigned int index, phy_type;
-+
-+	if (args->args_count != 1) {
-+		dev_err(dev, "invalid number of cells in 'phy' property\n");
-+		return ERR_PTR(-EINVAL);
-+	}
-+
-+	phy_type = args->args[0];
-+	if (!(phy_type == PHY_TYPE_USB2 || phy_type == PHY_TYPE_USB3)) {
-+		dev_err(dev, "unsupported device type: %d\n", phy_type);
-+		return ERR_PTR(-EINVAL);
-+	}
-+
-+	for (index = 0; index < AIROHA_PHY_USB_MAX; index++)
-+		if (priv->phys[index] &&
-+		    phy_type == priv->phys[index]->type) {
-+			instance = priv->phys[index];
-+			break;
-+		}
-+
-+	if (!instance) {
-+		dev_err(dev, "failed to find appropriate phy\n");
-+		return ERR_PTR(-EINVAL);
-+	}
-+
-+	return instance->phy;
-+}
-+
-+static const struct phy_ops airoha_phy = {
-+	.init		= an7581_usb_phy_init,
-+	.power_on	= an7581_usb_phy_power_on,
-+	.power_off	= an7581_usb_phy_power_off,
-+	.set_mode	= an7581_usb_phy_set_mode,
-+	.owner		= THIS_MODULE,
-+};
-+
-+static const struct regmap_config an7581_usb_phy_regmap_config = {
-+	.reg_bits = 32,
-+	.val_bits = 32,
-+	.reg_stride = 4,
-+};
-+
-+static int an7581_usb_phy_probe(struct platform_device *pdev)
-+{
-+	struct phy_provider *phy_provider;
-+	struct an7581_usb_phy_priv *priv;
-+	struct device *dev = &pdev->dev;
-+	unsigned int index;
-+	void __iomem *base;
-+	int ret;
-+
-+	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
-+	if (!priv)
-+		return -ENOMEM;
-+
-+	priv->dev = dev;
-+
-+	ret = of_property_read_u32(dev->of_node, "airoha,usb2-monitor-clk-sel",
-+				   &priv->monclk_sel);
-+	if (ret)
-+		return dev_err_probe(dev, ret, "Monitor clock selection is mandatory for USB PHY calibration\n");
-+
-+	if (priv->monclk_sel > 3)
-+		return dev_err_probe(dev, -EINVAL, "only 4 Monitor clock are selectable on the SoC\n");
-+
-+	base = devm_platform_ioremap_resource(pdev, 0);
-+	if (IS_ERR(base))
-+		return PTR_ERR(base);
-+
-+	priv->regmap = devm_regmap_init_mmio(dev, base, &an7581_usb_phy_regmap_config);
-+	if (IS_ERR(priv->regmap))
-+		return PTR_ERR(priv->regmap);
-+
-+	platform_set_drvdata(pdev, priv);
-+
-+	for (index = 0; index < AIROHA_PHY_USB_MAX; index++) {
-+		struct an7581_usb_phy_instance *instance;
-+		u32 phy_type;
-+
-+		switch (index) {
-+		case AIROHA_PHY_USB2:
-+			phy_type = PHY_TYPE_USB2;
-+			break;
-+		case AIROHA_PHY_USB3:
-+			phy_type = PHY_TYPE_USB3;
-+			break;
-+		}
-+
-+		if (phy_type == PHY_TYPE_USB3) {
-+			priv->serdes_phy = devm_phy_get(dev, NULL);
-+			if (IS_ERR(priv->serdes_phy))
-+				return dev_err_probe(dev, PTR_ERR(priv->serdes_phy), "missing serdes phy for USB 3.0\n");
-+		}
-+
-+		instance = devm_kzalloc(dev, sizeof(*instance), GFP_KERNEL);
-+		if (!instance)
-+			return -ENOMEM;
-+
-+		instance->type = phy_type;
-+		priv->phys[index] = instance;
-+
-+		instance->phy = devm_phy_create(dev, NULL, &airoha_phy);
-+		if (IS_ERR(instance->phy))
-+			return dev_err_probe(dev, PTR_ERR(instance->phy), "failed to create phy\n");
-+
-+		phy_set_drvdata(instance->phy, instance);
-+	}
-+
-+	phy_provider = devm_of_phy_provider_register(&pdev->dev, an7581_usb_phy_xlate);
-+
-+	return PTR_ERR_OR_ZERO(phy_provider);
-+}
-+
-+static const struct of_device_id airoha_phy_id_table[] = {
-+	{ .compatible = "airoha,an7581-usb-phy" },
-+	{ },
-+};
-+MODULE_DEVICE_TABLE(of, airoha_phy_id_table);
-+
-+static struct platform_driver an7581_usb_driver = {
-+	.probe		= an7581_usb_phy_probe,
-+	.driver		= {
-+		.name	= "airoha-an7581-usb-phy",
-+		.of_match_table = airoha_phy_id_table,
-+	},
-+};
-+
-+module_platform_driver(an7581_usb_driver);
-+
-+MODULE_DESCRIPTION("Airoha AN7581 USB PHY driver");
-+MODULE_AUTHOR("Christian Marangi <ansuelsmth@gmail.com>");
-+MODULE_LICENSE("GPL");
 -- 
-2.53.0
-
+	Ansuel
 
 -- 
 linux-phy mailing list
