@@ -4,65 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CFE28CD5BAC
-	for <linux-phy@archiver.kernel.org>; Thu, 21 May 2026 10:13:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 399DCCD5BA4
+	for <linux-phy@archiver.kernel.org>; Thu, 21 May 2026 11:58:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=FSD4WPLE4Ww5ipLm/o3WRIvLYUoXV8qwdxriBP7LNI4=; b=i+LmuIjQK/CpJPwukdJRXtucw1
-	9daaIBH7cHzqyX8VhY6ho+KjaYUduNImaEsDftNGjyBVjA0gzP0s4iLyEwF5dXPbHmZeglq7DOz+s
-	+Xy/l/Tb0NQYUIEp1xub+SlV7i/UJJpm+Izk4/gMtJWuvrlN1KYUaSwS/D+gygS2VWhGir9CJJuNL
-	j5gof0SmDvXwy/9wjgTrSVQbOO+CoL/CG//NouklIdUyVrbnu9ZDEHWuJ7ZMUkApn33v63jEduTU0
-	mgII4KBmv3gCy9D5Oy8G3D7LYvXd02OsHDIHQ6EkIZldCmgS92Pl/ycNDzFxkr2mlzgbrDUyiX5N8
-	u6Jz+L9A==;
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=sxvIGj3C2iiHfYs/47mvGiGP2F2EDfedGboRSXqQGDU=; b=QiiuCSppit07BZ
+	aDUAwxsKsLs3E+PP5Zd5j+sNNsGa/NJFWnHs4kLTTCU7OxvUBwCq1kSGLiHvu+V/fzIuz4WWSoKNx
+	mOi1Wgm+l4paYGrXxJTGhOxkRf5FrxBZbJpDNIkrbywO12sm6qZKTX9efRK5sAnJIrHUlZ/Yk9cMm
+	/ewVMuagyo1M+vOfJVwB4ycnuXUM0QQo/K4r6Wy78qGg/lkRNLnIq5P6iIrxntpvNxTFFwATAr0cM
+	nV/J5JHaYDyOOlAILK7uOVMSLh9J1DFY2Tf5Wy+Piv/khRbh8NbNGsTPF8r8sVLr9FKaMKOTGqA4t
+	1Rj5DXLeAZgArjndIlkg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wQ0PM-00000007Q78-1Esi;
-	Thu, 21 May 2026 10:13:40 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wQ22e-00000007fMh-1W4y;
+	Thu, 21 May 2026 11:58:20 +0000
+Received: from mail-wr1-x433.google.com ([2a00:1450:4864:20::433])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wQ0PJ-00000007Q6W-3fnb;
-	Thu, 21 May 2026 10:13:39 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 6067743BE9;
-	Thu, 21 May 2026 10:13:37 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BAFF71F000E9;
-	Thu, 21 May 2026 10:13:36 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1779358417;
-	bh=yJeHngwTjx7iNIdwSm6fHexQ8q+sCx+IVxLkKopKarU=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=TuVK0Q/qAfpjOGxYzuqJ3o6qbYhgM3EhNpWORTVle5w6GmwzVfh4LvX7F6KQFUlUa
-	 lQ0kkLurG5uYLYCxgQMJOhc0Uk0J4Vf9F8YOh7x3IlMONQ5i+PQr2ml4lShMnUBtna
-	 YDHaS2O67rBYSfIyj1DgDDjkMQuvH87vM+TdChh8juyQiDu2nXhpi/j3P8ixy3t60S
-	 TPkW9MLExBAVxP+bQWB/WoumU6wpIJXvP5cewVqZrnBENKw/D27NEi8/OQQoB9E7c9
-	 Tq3bT2kTqAdGKN5YP2IWi0PEwHbmz8y99w9Zu50FzDYZpqTmDDbfgUoWi6Qgnf1AZi
-	 /ohoTqq5tQQGQ==
-Date: Thu, 21 May 2026 12:13:34 +0200
-From: Lorenzo Bianconi <lorenzo@kernel.org>
-To: Christian Marangi <ansuelsmth@gmail.com>
-Cc: Michael Turquette <mturquette@baylibre.com>,
-	Stephen Boyd <sboyd@kernel.org>, Brian Masney <bmasney@redhat.com>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Felix Fietkau <nbd@nbd.name>, linux-clk@vger.kernel.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH v8 4/5] phy: move and rename Airoha PCIe PHY driver to
- dedicated directory
-Message-ID: <ag7azmxlWspK_iVS@lore-desk>
-References: <20260520150912.11614-1-ansuelsmth@gmail.com>
- <20260520150912.11614-5-ansuelsmth@gmail.com>
+	id 1wQ22b-00000007fLv-1t0j
+	for linux-phy@lists.infradead.org;
+	Thu, 21 May 2026 11:58:18 +0000
+Received: by mail-wr1-x433.google.com with SMTP id ffacd0b85a97d-44a044cb827so4439639f8f.0
+        for <linux-phy@lists.infradead.org>; Thu, 21 May 2026 04:58:16 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1779364695; x=1779969495; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=4stJ0wGm3jktbxjyMiS2oEBiggoOgvX2rImz04PGH7E=;
+        b=hRDGy86Uj0E9GMnQc9myPe4aFp4m+bcxNO/bwejIBnMYa+LMN8OgZsLz+7ruEN8x3/
+         MGnrUfazlBLsbNroSPHZZUgY2ZgZXZiGuug6WcZTbuPqjJC4b/ndGdHatZlQWNSM8pr5
+         u13moBW+vLEsLWH9a9gA1TklqrRvRLwF87q+/VOMX2kcliL+HR1RJcIHcszIRim80Vh7
+         3xU5i3seC7uGv8USQ2GnPF2FN9MFlg+MUE0mcJDg+nHEfBy/9+SjB/q0qFEfwoRJ2JdE
+         Gwh4pGCdUinSI/X13YpYv0HWLW0VQGqEm73KMvPuD57jGp1gNH2+sRBCkA8bsOK4rfy4
+         /oCA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1779364695; x=1779969495;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=4stJ0wGm3jktbxjyMiS2oEBiggoOgvX2rImz04PGH7E=;
+        b=Dq9qPBq8sfOoqfEQQWtAIQYP+6U0swii4HjTnDXkj7IrXIE3YYqTHQU1EBffH/VtUw
+         BWyQROaQ8cWRWNSf2lA7ojGLNgHXBNWxpL1Il75vEd0kGd8RKKzGItR2kAHT7B6Xbiaq
+         0LRDQ3rooBBcmCy8mYHs9ocTDLaojbXBXa8tVx9c+j87ceSClz8yTUCEAkIjmHXVNgc2
+         9vP+YWK2w7R0fnHpQDSXwX8ClBMH1ADrzh1oI0LxWki2vlyWLV/GfMFkSsZq8nN4boTJ
+         pAgxZePH4Y3fLgqU7u/iKUHfSFalCvIcR/ixEcjELcMAhLEcWIcCX5oICzB4qqawLq/D
+         0pgQ==
+X-Forwarded-Encrypted: i=1; AFNElJ8dXe3UhGcaLUfgVs8u9dPc/s+4or6gAXxk6urz1R0TdcWoG5/Ftz3J+YH6+ZMpVm/7bxxeLpXIsW0=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzP0qIjlHwqxxIP2deRMc5WEygSiRXxpswhzW9apkDxhaf4QZxx
+	IEMF0h8aj6oKYKnUwq8SQ/OK03woft6F+UAxvACCL4S4oCTaibrZRwMh3KPLsmVVJ4A=
+X-Gm-Gg: Acq92OHs+kdlmRWHUEr9Lc9Oc9xey+LqM/Iji2Y6vY2LP3zDyaLv8PstQPrcx/cLm+S
+	GCaGDH3AgCvTWmRSr5gUshUmNADT52P3mV6ilzR0w4v/WBEgjUMxdPqIVbMvjViIulyrep+Y/fQ
+	CI78ALUI9iOyhC47fxeUZiylrG3rCsjTxAwbBhBE1HfkalsnS6rotfeQdwiiB9/ROXxdvcDmuYl
+	Ez8IODjVGVQCqDetE7XRtawnUd37jaXF8uJyZfF7SkH0VPsq60feOrAqnUWD4Lx7tRXGBV7KmQo
+	Y0IZJivcU8KQH/+4/mgaGuhOjV495paSgoxgQhKBU2o6PB1uRnD5erZcFUPksGRlDwCfphrQtyK
+	c6o3gapmApv3mIjCBlcCZv3I2qpqSGY+IGQsdbrJSW2QQ5HP3SS3NTfR8OlMyx9iUuod861Hham
+	OQKzo6cy6moR/u2Iplo5PIhICehTAhLTg6tQ==
+X-Received: by 2002:a05:6000:4615:b0:45b:d891:56bb with SMTP id ffacd0b85a97d-45ea4109a8dmr3655913f8f.38.1779364694940;
+        Thu, 21 May 2026 04:58:14 -0700 (PDT)
+Received: from [192.168.0.35] ([109.76.55.220])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-45eaa93d291sm2227253f8f.36.2026.05.21.04.58.13
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 21 May 2026 04:58:14 -0700 (PDT)
+Message-ID: <d543fe6c-88a3-40b8-a83a-ccc6fa80eee3@linaro.org>
+Date: Thu, 21 May 2026 12:58:12 +0100
 MIME-Version: 1.0
-In-Reply-To: <20260520150912.11614-5-ansuelsmth@gmail.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 1/4] phy: qcom: qmp-combo: skip USB power_off/exit
+ after device teardown
+To: Michael Scott <mike.scott@oss.qualcomm.com>, linux-arm-msm@vger.kernel.org
+Cc: vkoul@kernel.org, neil.armstrong@linaro.org,
+ dmitry.baryshkov@oss.qualcomm.com, wesley.cheng@oss.qualcomm.com,
+ abelvesa@kernel.org, faisal.hassan@oss.qualcomm.com,
+ linux-phy@lists.infradead.org, andersson@kernel.org, konradybcio@kernel.org,
+ robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+ devicetree@vger.kernel.org, val@packett.cool, laurentiu.tudor1@dell.com,
+ alex.vinarskis@gmail.com, linux-kernel@vger.kernel.org
+References: <20260521010935.1333494-1-mike.scott@oss.qualcomm.com>
+ <20260521010935.1333494-2-mike.scott@oss.qualcomm.com>
+Content-Language: en-US
+From: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+In-Reply-To: <20260521010935.1333494-2-mike.scott@oss.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260521_031337_958016_3B9AFCAF 
-X-CRM114-Status: GOOD (  30.09  )
+X-CRM114-CacheID: sfid-20260521_045817_531089_26579411 
+X-CRM114-Status: GOOD (  26.92  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,225 +103,128 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============6080795420382082646=="
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+On 21/05/2026 02:09, Michael Scott wrote:
+> qmp_combo_usb_power_off() is reachable from an external consumer
+> (notably dwc3 via phy_exit() during driver unbind) after this device's
+> backing resources have already been released along a separate teardown
+> chain. The dereference of qmp->pcs (whose ioremap mapping has been
+> freed by devm cleanup) then takes a level-3 translation fault and
+> oopses.
+> 
+> Easily reproducible during testing of USB-C role-switch enablement on
+> Dell Latitude 7455 (X1E80100), by writing "none" to a USB-C DWC3's
+> usb_role_switch role attribute, e.g.
+> 
+>    echo none > /sys/class/usb_role/a800000.usb-role-switch/role
+> 
+> which triggers the chain:
+> 
+>    Unable to handle kernel paging request at virtual address ffff8000876c5400
+>    pc : qmp_combo_usb_power_off.isra.0+0x58/0x470 [phy_qcom_qmp_combo]
+>    Call trace:
+>      qmp_combo_usb_power_off+0x58/0x470 [phy_qcom_qmp_combo]
+>      qmp_combo_usb_exit+0x38/0x90 [phy_qcom_qmp_combo]
+>      phy_exit
+>      dwc3_phy_exit [dwc3]
+>      dwc3_core_remove [dwc3]
+>      dwc3_remove [dwc3]
+>      platform_remove
+>      device_release_driver_internal
+>      device_driver_detach
+>      unbind_store
+>      sysfs_kf_write
+>      vfs_write
+>      ksys_write
+>      __arm64_sys_write
+>      el0_svc
+> 
+> Two WARNs precede the oops from the same teardown chain, confirming
+> the resource ordering:
+> 
+>    WARNING: drivers/clk/clk.c:4494 at clk_nodrv_disable_unprepare+0x8/0x18
+>    WARNING: drivers/regulator/core.c:2657 at _regulator_put+0x84/0x98
+> 
+> i.e. the pipe clock provider has been unregistered and the regulators
+> released before qmp_combo_usb_power_off() runs.
+> 
+> The proper long-term fix is a teardown-ordering rework so the QMP
+> PHY's backing resources outlive any consumer that may still call its
+> phy_ops. Pending that, guard the power_off/exit paths with the
+> existing usb_init_count balance so re-entry after teardown does not
+> oops. usb_init_count tracks the balance of usb_power_on/off; if it
+> is zero we have either never powered on or have already powered off,
+> and there is nothing to do.
+> 
+> The same guard is added to qmp_combo_usb_exit() since it is the entry
+> point used by external consumers via phy_exit().
+> 
+> Signed-off-by: Michael Scott <mike.scott@oss.qualcomm.com>
 
---===============6080795420382082646==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="+GwfGcxHJb0ERKyP"
-Content-Disposition: inline
-
-
---+GwfGcxHJb0ERKyP
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-> To keep the generic PHY directory tidy, move the PCIe PHY driver for
-> Airoha AN7581 SoC to a dedicated directory.
->=20
-> Also rename the driver and add the relevant SoC name to the .c and .h
-> file in preparation for support of PCIe and USB PHY driver for Airoha
-> AN7583 SoC that use a completely different implementation and
-> calibration for PHYs and will have their own dedicated drivers.
->=20
-> The rename permits to better identify the specific usage of the driver
-> in the future once the airoha PHY directory will have multiple driver
-> for multiple SoC.
->=20
-> The config is changed from PHY_AIROHA_PCIE to PHY_AIROHA_AN7581_PCIE.
->=20
-> Signed-off-by: Christian Marangi <ansuelsmth@gmail.com>
-
-Acked-by: Lorenzo Bianconi <lorenzo@kernel.org>
+Something like this requires a Fixes: tag
 
 > ---
->  MAINTAINERS                                         |  4 ++--
->  drivers/phy/Kconfig                                 | 11 +----------
->  drivers/phy/Makefile                                |  4 ++--
->  drivers/phy/airoha/Kconfig                          | 13 +++++++++++++
->  drivers/phy/airoha/Makefile                         |  3 +++
->  .../phy-an7581-pcie-regs.h}                         |  2 +-
->  .../{phy-airoha-pcie.c =3D> airoha/phy-an7581-pcie.c} |  6 +++---
->  7 files changed, 25 insertions(+), 18 deletions(-)
->  create mode 100644 drivers/phy/airoha/Kconfig
->  create mode 100644 drivers/phy/airoha/Makefile
->  rename drivers/phy/{phy-airoha-pcie-regs.h =3D> airoha/phy-an7581-pcie-r=
-egs.h} (99%)
->  rename drivers/phy/{phy-airoha-pcie.c =3D> airoha/phy-an7581-pcie.c} (99=
-%)
->=20
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index 932044785a39..7bea8c620da8 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -759,8 +759,8 @@ M:	Lorenzo Bianconi <lorenzo@kernel.org>
->  L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
->  S:	Maintained
->  F:	Documentation/devicetree/bindings/phy/airoha,en7581-pcie-phy.yaml
-> -F:	drivers/phy/phy-airoha-pcie-regs.h
-> -F:	drivers/phy/phy-airoha-pcie.c
-> +F:	drivers/phy/airoha/phy-an7581-pcie-regs.h
-> +F:	drivers/phy/airoha/phy-an7581-pcie.c
-> =20
->  AIROHA SPI SNFI DRIVER
->  M:	Lorenzo Bianconi <lorenzo@kernel.org>
-> diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
-> index 227b9a4c612e..f9cd765a3ccc 100644
-> --- a/drivers/phy/Kconfig
-> +++ b/drivers/phy/Kconfig
-> @@ -46,16 +46,6 @@ config GENERIC_PHY_MIPI_DPHY
->  	  Provides a number of helpers a core functions for MIPI D-PHY
->  	  drivers to us.
-> =20
-> -config PHY_AIROHA_PCIE
-> -	tristate "Airoha PCIe-PHY Driver"
-> -	depends on ARCH_AIROHA || COMPILE_TEST
-> -	depends on OF
-> -	select GENERIC_PHY
-> -	help
-> -	  Say Y here to add support for Airoha PCIe PHY driver.
-> -	  This driver create the basic PHY instance and provides initialize
-> -	  callback for PCIe GEN3 port.
-> -
->  config PHY_CAN_TRANSCEIVER
->  	tristate "CAN transceiver PHY"
->  	select GENERIC_PHY
-> @@ -133,6 +123,7 @@ config PHY_XGENE
->  	help
->  	  This option enables support for APM X-Gene SoC multi-purpose PHY.
-> =20
-> +source "drivers/phy/airoha/Kconfig"
->  source "drivers/phy/allwinner/Kconfig"
->  source "drivers/phy/amlogic/Kconfig"
->  source "drivers/phy/apple/Kconfig"
-> diff --git a/drivers/phy/Makefile b/drivers/phy/Makefile
-> index f49d83f00a3d..84062279fa63 100644
-> --- a/drivers/phy/Makefile
-> +++ b/drivers/phy/Makefile
-> @@ -7,7 +7,6 @@ obj-$(CONFIG_PHY_COMMON_PROPS)		+=3D phy-common-props.o
->  obj-$(CONFIG_PHY_COMMON_PROPS_TEST)	+=3D phy-common-props-test.o
->  obj-$(CONFIG_GENERIC_PHY)		+=3D phy-core.o
->  obj-$(CONFIG_GENERIC_PHY_MIPI_DPHY)	+=3D phy-core-mipi-dphy.o
-> -obj-$(CONFIG_PHY_AIROHA_PCIE)		+=3D phy-airoha-pcie.o
->  obj-$(CONFIG_PHY_CAN_TRANSCEIVER)	+=3D phy-can-transceiver.o
->  obj-$(CONFIG_PHY_GOOGLE_USB)		+=3D phy-google-usb.o
->  obj-$(CONFIG_USB_LGM_PHY)		+=3D phy-lgm-usb.o
-> @@ -17,7 +16,8 @@ obj-$(CONFIG_PHY_PISTACHIO_USB)		+=3D phy-pistachio-usb=
-=2Eo
->  obj-$(CONFIG_PHY_SNPS_EUSB2)		+=3D phy-snps-eusb2.o
->  obj-$(CONFIG_PHY_XGENE)			+=3D phy-xgene.o
-> =20
-> -obj-$(CONFIG_GENERIC_PHY)		+=3D allwinner/	\
-> +obj-$(CONFIG_GENERIC_PHY)		+=3D airoha/	\
-> +					   allwinner/	\
->  					   amlogic/	\
->  					   apple/	\
->  					   broadcom/	\
-> diff --git a/drivers/phy/airoha/Kconfig b/drivers/phy/airoha/Kconfig
-> new file mode 100644
-> index 000000000000..9a1b625a7701
-> --- /dev/null
-> +++ b/drivers/phy/airoha/Kconfig
-> @@ -0,0 +1,13 @@
-> +# SPDX-License-Identifier: GPL-2.0-only
-> +#
-> +# Phy drivers for Airoha devices
-> +#
-> +config PHY_AIROHA_AN7581_PCIE
-> +	tristate "Airoha AN7581 PCIe-PHY Driver"
-> +	depends on ARCH_AIROHA || COMPILE_TEST
-> +	depends on OF
-> +	select GENERIC_PHY
-> +	help
-> +	  Say Y here to add support for Airoha AN7581 PCIe PHY driver.
-> +	  This driver create the basic PHY instance and provides initialize
-> +	  callback for PCIe GEN3 port.
-> diff --git a/drivers/phy/airoha/Makefile b/drivers/phy/airoha/Makefile
-> new file mode 100644
-> index 000000000000..912f3e11a061
-> --- /dev/null
-> +++ b/drivers/phy/airoha/Makefile
-> @@ -0,0 +1,3 @@
-> +# SPDX-License-Identifier: GPL-2.0
+>   drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 22 ++++++++++++++++++++++
+>   1 file changed, 22 insertions(+)
+> 
+> diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> index cdcfad2e86b1..0db200292642 100644
+> --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+> @@ -3926,6 +3926,17 @@ static int qmp_combo_usb_power_off(struct phy *phy)
+>   	struct qmp_combo *qmp = phy_get_drvdata(phy);
+>   	const struct qmp_phy_cfg *cfg = qmp->cfg;
+>   
+> +	/*
+> +	 * Reachable as ->exit from external consumers (notably dwc3) after
+> +	 * this device's backing resources have already been released along
+> +	 * a teardown chain. Refuse to touch registers in that case.
+> +	 */
+> +	if (!qmp->usb_init_count) {
+> +		dev_dbg(qmp->dev, "%s: PHY not powered on, skipping\n",
+> +			__func__);
+> +		return 0;
+> +	}
 > +
-> +obj-$(CONFIG_PHY_AIROHA_AN7581_PCIE)	+=3D phy-an7581-pcie.o
-> diff --git a/drivers/phy/phy-airoha-pcie-regs.h b/drivers/phy/airoha/phy-=
-an7581-pcie-regs.h
-> similarity index 99%
-> rename from drivers/phy/phy-airoha-pcie-regs.h
-> rename to drivers/phy/airoha/phy-an7581-pcie-regs.h
-> index 58572c793722..b938a7b468fe 100644
-> --- a/drivers/phy/phy-airoha-pcie-regs.h
-> +++ b/drivers/phy/airoha/phy-an7581-pcie-regs.h
-> @@ -1,4 +1,4 @@
-> -/* SPDX-License-Identifier: GPL-2.0-only */
-> +// SPDX-License-Identifier: GPL-2.0-only
->  /*
->   * Copyright (c) 2024 AIROHA Inc
->   * Author: Lorenzo Bianconi <lorenzo@kernel.org>
-> diff --git a/drivers/phy/phy-airoha-pcie.c b/drivers/phy/airoha/phy-an758=
-1-pcie.c
-> similarity index 99%
-> rename from drivers/phy/phy-airoha-pcie.c
-> rename to drivers/phy/airoha/phy-an7581-pcie.c
-> index 56e9ade8a9fd..81ddf0e7638b 100644
-> --- a/drivers/phy/phy-airoha-pcie.c
-> +++ b/drivers/phy/airoha/phy-an7581-pcie.c
-> @@ -13,7 +13,7 @@
->  #include <linux/platform_device.h>
->  #include <linux/slab.h>
-> =20
-> -#include "phy-airoha-pcie-regs.h"
-> +#include "phy-an7581-pcie-regs.h"
-> =20
->  #define LEQ_LEN_CTRL_MAX_VAL	7
->  #define FREQ_LOCK_MAX_ATTEMPT	10
-> @@ -1279,12 +1279,12 @@ MODULE_DEVICE_TABLE(of, airoha_pcie_phy_of_match);
->  static struct platform_driver airoha_pcie_phy_driver =3D {
->  	.probe	=3D airoha_pcie_phy_probe,
->  	.driver	=3D {
-> -		.name =3D "airoha-pcie-phy",
-> +		.name =3D "airoha-an7581-pcie-phy",
->  		.of_match_table =3D airoha_pcie_phy_of_match,
->  	},
->  };
->  module_platform_driver(airoha_pcie_phy_driver);
-> =20
-> -MODULE_DESCRIPTION("Airoha PCIe PHY driver");
-> +MODULE_DESCRIPTION("Airoha AN7581 PCIe PHY driver");
->  MODULE_AUTHOR("Lorenzo Bianconi <lorenzo@kernel.org>");
->  MODULE_LICENSE("GPL");
-> --=20
+>   	/* PHY reset */
+>   	qphy_setbits(qmp->pcs, cfg->regs[QPHY_SW_RESET], SW_RESET);
+>   
+> @@ -3968,6 +3979,17 @@ static int qmp_combo_usb_exit(struct phy *phy)
+>   	struct qmp_combo *qmp = phy_get_drvdata(phy);
+>   	int ret;
+>   
+> +	/*
+> +	 * See qmp_combo_usb_power_off(): an external consumer may call
+> +	 * phy_exit() after the QMP device's resources have been torn
+> +	 * down. usb_init_count tracks usb_init/usb_exit balance.
+> +	 */
+> +	if (!qmp->usb_init_count) {
+> +		dev_dbg(qmp->dev, "%s: PHY not initialised, skipping\n",
+> +			__func__);
+> +		return 0;
+> +	}
+> +
+>   	mutex_lock(&qmp->phy_mutex);
+>   	ret = qmp_combo_usb_power_off(phy);
+
+This can't be right - you check usb_init_count before the mutex and then 
+again inside the mutex @ qmp_combo_usb_power_off();
+
+It seems like an error to even get to this function with !usb_init_count 
+also check if that is a signed or an unsigned value as usb_init_count = 
+-1 will evaluate true.
+
+>   	if (ret)
+> --
 > 2.53.0
->=20
+> 
 
---+GwfGcxHJb0ERKyP
-Content-Type: application/pgp-signature; name=signature.asc
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYKAB0WIQTquNwa3Txd3rGGn7Y6cBh0uS2trAUCag7azgAKCRA6cBh0uS2t
-rFl9AP9jI7aQgapV/BhGPwx6KIRaUVocpOpElFOYjVyAYUrVWAEAlzn1Hem7Kfsm
-7AaS1RgEi0GfQMSjQgzQ81hdjLzT8Ag=
-=O8tV
------END PGP SIGNATURE-----
-
---+GwfGcxHJb0ERKyP--
-
-
---===============6080795420382082646==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============6080795420382082646==--
-
