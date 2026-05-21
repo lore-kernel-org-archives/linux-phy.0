@@ -4,65 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E26FACD4F3D
-	for <linux-phy@archiver.kernel.org>; Thu, 21 May 2026 14:51:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9FE02CD4F3D
+	for <linux-phy@archiver.kernel.org>; Thu, 21 May 2026 15:15:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eJ7SWqx9W3FD/4h0nGt4OtTT50g+DnjrnevfyK1lC7s=; b=OBSbqxeY8tqg+e
-	qgMACLJ1Qz+CrC7gIeRe50CvBWW75/Ax06SiS6xL8vQvOsx4hJe117/HDEcxquafRa/TCnS9aW3u9
-	XkcBweUt+oF0M1JlVu3gNJE9PVPylB2ywiqL0m95uQ4juJDnxVE8L3EaC3W/0EWyoQv+LdDq1Pe8t
-	FQv1r9udrqWYALCdXtJNOFQELsjBuLUDaEwqHMudJVupbS7b8vy3ykVCZCkWbjGr8MHCNipFoeQnD
-	lFHK83yVMWzJbxK9PNeZt7QjTQQAC0NGzdm8BTifibyORl/pplFV8OaH/sbpTo7tj3IcMgKkpOE4f
-	DvxU3Ti/gsZrHcv4sQIA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
+	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=yga42YRTQ33dPk8uShnXSgoRvh4fAMayrlb9Oyd8RZQ=; b=ZHs0We8Ia0l62RvXFL3y8uWUW3
+	NICl7ruYMTg3+cSmQ2i152nder9mw+CKZONVcIlDQbhrmZaisPpcToDMDUB4DgKiK3KQ3H9XBzol6
+	DBizFd5lnn+BAtThpprs1HIFErPH3+m9NfpegaEljXeuVCGfgaN2jMvKWjBnDg4nyLcwwytcvSxa3
+	1Sdo5cOXzmHVqexCVdhY2AX3ujz0sWpuM79HdcQnqB4vqohydz6r8niJGCj266Zb9v3TbAiSmz30G
+	bFG1xFZKlBKMpVegWdvkH0jieNzG7qtWFXac3Ce4MS7rScBCKPztJU9+yjK1NdXXyMN9/raT8xrjq
+	TaAO3UKw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wQ4jq-000000088y7-0wkH;
-	Thu, 21 May 2026 14:51:06 +0000
-Received: from smtpout-04.galae.net ([185.171.202.116])
+	id 1wQ57s-00000008HF4-3CeM;
+	Thu, 21 May 2026 15:15:59 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wQ4jl-000000088u9-1Etl
+	id 1wQ57r-00000008HEN-1Xdz
 	for linux-phy@lists.infradead.org;
-	Thu, 21 May 2026 14:51:03 +0000
-Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-04.galae.net (Postfix) with ESMTPS id 3D425C2C64D;
-	Thu, 21 May 2026 14:51:50 +0000 (UTC)
-Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id 044E760495;
-	Thu, 21 May 2026 14:50:56 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 4E841107E89AF;
-	Thu, 21 May 2026 16:50:45 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1779375055; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 content-transfer-encoding:content-language:in-reply-to:references;
-	bh=fTteTqIzCkDDRfgTUqBszUa4Ju7v0nJjWKenJsd6KUA=;
-	b=nB7dqaCbGmYNQpadDDIPmQoye+tBE1lUNZvnmsMHr5H8yJL6gZlt6Z1KK1CsY6pxBD7CV7
-	0lg+Pcu0jDpSIlvZubgvSTe1r49CPtRBhdzx8oBEATZSE7hhmFjpp0VEIbWyr9UWVHTqsV
-	lG9cBJf2qbTkdmqxNydPfcP+ePMw9Utsrqf7SnHTGCuL1dZHqtjCyOmzIufrWaW8CNMxP+
-	YQAZteWlPklCBBlLPXLKMb0e6qeHAfFMpSWxn94l0h17LbH+RxTn3Q/b4oglUYEL0tZWUt
-	fpA6iLiaCGy1JFmy+U0dOPw3+OyGY95GLWgebbtNiJvNsPZPm7Qam6gkoJDq2A==
-Message-ID: <a02f6a76-add7-446a-9f92-304fee0ef594@bootlin.com>
-Date: Thu, 21 May 2026 16:50:44 +0200
+	Thu, 21 May 2026 15:15:55 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 63256601F3;
+	Thu, 21 May 2026 15:15:54 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EED471F00A3B;
+	Thu, 21 May 2026 15:15:53 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1779376554;
+	bh=6+hPFg766OszpUSn1xTNsvl7vipNukyxXO874O2maWg=;
+	h=Date:From:Cc:To:In-Reply-To:References:Subject;
+	b=WH2q71/J6y0dFUjb7NBabK7U82iWvGQixkAmY0LxWgp3ltpqlgBBhXJD6QrjiWCvC
+	 WDicWNNAvjRQ5HZhFPtlEqzBdgCRJeunIr5v99a38F7faeQwSM7j6qrEABeVtQn76A
+	 aD04TSH7GhElThcrlErG3k+X8otgHzK836QoyPjDk6aWOnDTRGr4ePnTTMng4uw21/
+	 GW9JPDLS0wod1oo3RwrSdRgI8e83q/hFjpLftRNkmZBjsu8i1sBPSr2IexAQqomzsM
+	 nUhBuAhrJLZDE9v3Vgu/dYBHIU9vNwh9+HRY8WFKqT30AnEuf/8aEJ/SsB1Bg5Seky
+	 bDnXphfoTyTHw==
+Date: Thu, 21 May 2026 10:15:53 -0500
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH net-next v6] net: phy: sfp: probe for RollBall I2C-to-MDIO
- bridge in mdio-i2c
-To: Petr Wozniak <petr.wozniak@gmail.com>, netdev@vger.kernel.org
-Cc: linux-kernel@vger.kernel.org, andrew@lunn.ch, hkallweit1@gmail.com,
- linux@armlinux.org.uk, davem@davemloft.net, edumazet@google.com,
- kuba@kernel.org, pabeni@redhat.com, bjorn@mork.no,
- linux-phy@lists.infradead.org, jan@3e8.eu
-References: <20260521025755.24649-1-petr.wozniak@gmail.com>
-Content-Language: en-US
-From: Maxime Chevallier <maxime.chevallier@bootlin.com>
-In-Reply-To: <20260521025755.24649-1-petr.wozniak@gmail.com>
-X-Last-TLS-Session-Version: TLSv1.3
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260521_075101_660079_9FB21078 
-X-CRM114-Status: GOOD (  28.51  )
+From: "Rob Herring (Arm)" <robh@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-media@vger.kernel.org, 
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Bryan O'Donoghue <bod@kernel.org>, devicetree@vger.kernel.org, 
+ Neil Armstrong <neil.armstrong@linaro.org>, Vinod Koul <vkoul@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
+To: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+In-Reply-To: <20260521-x1e-csi2-phy-v6-1-9d73d9bd7d20@linaro.org>
+References: <20260521-x1e-csi2-phy-v6-0-9d73d9bd7d20@linaro.org>
+ <20260521-x1e-csi2-phy-v6-1-9d73d9bd7d20@linaro.org>
+Message-Id: <177937655318.1947776.1539787576186189902.robh@kernel.org>
+Subject: Re: [PATCH v6 1/2] dt-bindings: phy: qcom: Add CSI2 C-PHY/DPHY
+ schema
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,151 +72,81 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
 
-On 5/21/26 04:57, Petr Wozniak wrote:
-> The "OEM"/"SFP-10G-T" quirk entry in sfp_fixup_rollball_cc()
-> unconditionally forces MDIO_I2C_ROLLBALL for all modules matching that
-> vendor/part-number combination.  This works for modules that genuinely
-> implement a RollBall I2C-to-MDIO bridge, but silently breaks modules
-> that share the same EEPROM strings without having such a bridge.
+On Thu, 21 May 2026 13:20:08 +0100, Bryan O'Donoghue wrote:
+> Add a base schema initially compatible with x1e80100 to describe MIPI CSI2
+> PHY devices.
 > 
-> The Realtek RTL8261BE-CG is one such module: a pure copper 10G SFP+
-> media converter with no I2C-to-MDIO bridge.  Its EEPROM reports
-> vendor="OEM", part="SFP-10G-T-I", and -- critically -- Vendor OUI
-> 00:00:00, making OUI-based differentiation impossible.  With
-> MDIO_I2C_ROLLBALL forced, the module silently ACKs the unlock password
-> write, the MDIO bus is created, but no PHY responds; the SFP state
-> machine cycles through the RollBall PHY-probe retry window before
-> reporting no PHY.
+> The hardware can support both CPHY, DPHY and a special split-mode DPHY.
 > 
-> Move the probe into i2c_mii_init_rollball() in mdio-i2c.c, where the
-> RollBall protocol constants are already defined.  After sending the
-> unlock password, issue a CMD_READ and poll for CMD_DONE up to 200 ms
-> (10 x 20 ms, matching the existing rollball poll tolerance).  A genuine
-> RollBall bridge asserts CMD_DONE within that window; modules without a
-> bridge never do, so i2c_mii_init_rollball() returns -ENODEV.
-> mdio_i2c_alloc() propagates -ENODEV to the caller to signal that no
-> bridge is present and PHY probing should be skipped.
-> sfp_sm_add_mdio_bus() catches -ENODEV and transitions
-> sfp->mdio_protocol to MDIO_I2C_NONE so the rest of the state machine
-> skips PHY probing for this module.
+> The schema here defines three ports:
 > 
-> Any I2C-level error (NACK, timeout) during the probe is also treated as
-> -ENODEV: if the module does not respond at I2C address 0x51 at all,
-> there is certainly no RollBall bridge there, and SFP initialization
-> should not abort.
+> port@0:
+>     The first input port where a sensor is always required.
 > 
-> The probe writes are safe with respect to SFP EEPROM integrity: only
-> modules explicitly listed in the quirk table enter this path, and the
-> RollBall password unlock write to 0x51 was already issued by
-> i2c_mii_init_rollball() before the probe for all such modules.  Any
-> module without a device at 0x51 NACKs the transfer and is treated as
-> -ENODEV.
+> port@1:
+>     A second optional input port which if present implies DPHY split-mode.
 > 
-> Add "OEM"/"SFP-10G-T-I" to the quirk table so RTL8261BE modules enter
-> the probe path; genuine RollBall modules continue to work as before.
+> port@2:
+>     A third always required output port which connects to the controller.
 > 
-> Signed-off-by: Petr Wozniak <petr.wozniak@gmail.com>
-> Reviewed-by: Maxime Chevallier <maxime.chevallier@bootlin.com>
+> The CSIPHY devices have their own pinouts on the SoC as well as their own
+> individual voltage rails.
+> 
+> The need to model voltage rails on a per-PHY basis leads us to define
+> CSIPHY devices as individual nodes.
+> 
+> Two nice outcomes in terms of schema and DT arise from this change.
+> 
+> 1. The ability to define on a per-PHY basis voltage rails.
+> 2. The ability to require those voltage.
+> 
+> We have had a complete bodge upstream for this where a single set of
+> voltage rail for all CSIPHYs has been buried inside of CAMSS.
+> 
+> Much like the I2C bus which is dedicated to Camera sensors - the CCI bus in
+> CAMSS parlance, the CSIPHY devices should be individually modelled.
+> 
+> Signed-off-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
 > ---
+>  .../bindings/phy/qcom,x1e80100-csi2-phy.yaml       | 205 +++++++++++++++++++++
+>  1 file changed, 205 insertions(+)
 > 
-> Changes since v5 (Sashiko AI review):
->    - Treat I2C NACK/errors in i2c_mii_init_rollball() as -ENODEV so
->      modules without a 0x51 EEPROM do not abort SFP initialization
->    - Replace fixed 70 ms wait with 10 x 20 ms poll (total 200 ms),
->      matching the existing i2c_rollball_mii_poll() tolerance and
->      preventing false -ENODEV on slow RollBall bridges
-> 
-> Changes since v4 (feedback from Maxime Chevallier):
->    - Fix commit message: replace "stalls" with accurate description of
->      the RollBall PHY-probe retry window
->    - Fix variable declaration order in i2c_mii_probe_rollball() to
->      follow reverse-xmas tree (descending line length)
->    - Remove spurious alignment space on "SFP-10G-T" quirk entry
->    - Document that -ENODEV from mdio_i2c_alloc() means no bridge present,
->      PHY probing should be skipped
-> 
-> Changes since v3 (feedback from Jakub Kicinski):
->    - Drop spurious Tested-by: tag -- author and tester are the same person
->    - Use PATCH net-next subject prefix
->    - Move -ENODEV handling from sfp_i2c_mdiobus_create() into
->      sfp_sm_add_mdio_bus() so bus-creation code does not mutate
->      sfp->mdio_protocol; the state machine is the correct place for
->      protocol-state transitions
->    - Split combined variable declaration for clarity
-> 
-> Changes since v2:
->    - Compile-tested and hardware-tested on BPI-R4 (MT7988A, 6.12.87)
->    - RTL8261BE (OEM/SFP-10G-T-I): probes MDIO_I2C_NONE, link Up 10Gbps
->    - Genuine RollBall (OEM/SFP-10G-T): bridge detected, link Up 10Gbps
-> 
->   drivers/net/mdio/mdio-i2c.c | 65 ++++++++++++++++++++++++++++++------
->   drivers/net/phy/sfp.c       | 16 ++++++++--
->   2 files changed, 68 insertions(+), 13 deletions(-)
-> --- a/drivers/net/mdio/mdio-i2c.c
-> +++ b/drivers/net/mdio/mdio-i2c.c
-> @@ -352,6 +352,54 @@
->   	return 0;
->   }
->   
-> +static int i2c_mii_probe_rollball(struct i2c_adapter *i2c)
-> +{
-> +	u8 data_buf[] = { ROLLBALL_DATA_ADDR, 0x01, 0x00, 0x00 };
-> +	u8 cmd_buf[]  = { ROLLBALL_CMD_ADDR, ROLLBALL_CMD_READ };
-> +	u8 cmd_addr   = ROLLBALL_CMD_ADDR;
-> +	struct i2c_msg msgs[2];
-> +	u8 result;
-> +	int ret;
-> +	int i;
-> +
-> +	msgs[0].addr  = ROLLBALL_PHY_I2C_ADDR;
-> +	msgs[0].flags = 0;
-> +	msgs[0].len   = sizeof(data_buf);
-> +	msgs[0].buf   = data_buf;
-> +	msgs[1].addr  = ROLLBALL_PHY_I2C_ADDR;
-> +	msgs[1].flags = 0;
-> +	msgs[1].len   = sizeof(cmd_buf);
-> +	msgs[1].buf   = cmd_buf;
-> +
-> +	ret = i2c_transfer_rollball(i2c, msgs, ARRAY_SIZE(msgs));
-> +	if (ret < 0)
-> +		return -ENODEV;
-> +	if (ret)
-> +		return ret;
-> +
-> +	msgs[0].addr  = ROLLBALL_PHY_I2C_ADDR;
-> +	msgs[0].flags = 0;
-> +	msgs[0].len   = 1;
-> +	msgs[0].buf   = &cmd_addr;
-> +	msgs[1].addr  = ROLLBALL_PHY_I2C_ADDR;
-> +	msgs[1].flags = I2C_M_RD;
-> +	msgs[1].len   = 1;
-> +	msgs[1].buf   = &result;
-> +
-> +	for (i = 0; i < 10; i++) {
-> +		msleep(20);
-> +		ret = i2c_transfer_rollball(i2c, msgs, ARRAY_SIZE(msgs));
-> +		if (ret < 0)
-> +			return -ENODEV;
-> +		if (ret)
-> +			return ret;
 
-I think this check is not needed, it seems to me that 
-i2c_transfer_rollball() always returns either a negative number, or 
-zero. All the calls in i2c_transfer_rollball() end-up returning the 
-return value from __i2c_transfer_err(), which is always either negative 
-or 0.
+My bot found errors running 'make dt_binding_check' on your patch:
 
-There's a similar check below that can be simplified as well
+yamllint warnings/errors:
 
-Maxime
+dtschema/dtc warnings/errors:
+/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml: port@0: Missing additionalProperties/unevaluatedProperties constraint
+/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml: port@1: Missing additionalProperties/unevaluatedProperties constraint
+/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml: port@2: Missing additionalProperties/unevaluatedProperties constraint
+/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.example.dtb: csiphy@ace4000 (qcom,x1e80100-csi2-phy): ports:port@0:endpoint: 'data-lanes' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,x1e80100-csi2-phy.yaml
+/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.example.dtb: csiphy@ace4000 (qcom,x1e80100-csi2-phy): ports:port@0:endpoint: 'clock-lanes' is a required property
+	from schema $id: http://devicetree.org/schemas/phy/qcom,x1e80100-csi2-phy.yaml
 
+doc reference errors (make refcheckdocs):
+
+See https://patchwork.kernel.org/project/devicetree/patch/20260521-x1e-csi2-phy-v6-1-9d73d9bd7d20@linaro.org
+
+The base for the series is generally the latest rc1. A different dependency
+should be noted in *this* patch.
+
+If you already ran 'make dt_binding_check' and didn't see the above
+error(s), then make sure 'yamllint' is installed and dt-schema is up to
+date:
+
+pip3 install dtschema --upgrade
+
+Please check and re-submit after running the above command yourself. Note
+that DT_SCHEMA_FILES can be set to your schema file to speed up checking
+your schema. However, it must be unset to test all examples with your schema.
 
 
 -- 
