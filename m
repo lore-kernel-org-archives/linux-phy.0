@@ -4,56 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40462CD4F3D
-	for <linux-phy@archiver.kernel.org>; Thu, 21 May 2026 02:37:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0F710CD4F54
+	for <linux-phy@archiver.kernel.org>; Thu, 21 May 2026 02:58:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LFaFuXo5Qhz2X91CmY00bY+ckE1Ad/9Hzis6ROJFq+o=; b=rkWjphedEh4yLq
-	l98hDtUGKgYRuCkZyisTGBALJTQK68Yv7iu2N4yQ8fIMFI0JGb6tOVUX6yPAFmiutKCaPuWRFbReM
-	vDhf/u4zCTFqmS6TqGMLeoNC2IyIL9m/aMjRArzqXPUe7t1laoPYADlwacufY1ISRGi0WLpV/rraX
-	wioJS4g2kcD/kYRlQJbr0GY8voPgFGio5IiYK/R46qtcVfE4fTsO4PhK8XQeIKn7fQtX7RSewS6N7
-	Bi0Tz3qFz1FFz9j6s2R/QPRDU9YO+/FLW3kxQueXyDTJ5mzoMAtS+j/ydN63zMjKm+ul9kCoZ/dUh
-	5l3emKYLtILb/e7G+qxQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Dk25kFJsp1XnDo3HeFjh/hmofCh9u4K+ALzkgx4/sIY=; b=NWdZ/ZiFfaL/nu
+	+a8w2ISfVPEYMNb550ihmMbi4umqYdm9lBIVyz9NXMOSaRFmKRDvdtDd3/mpDy/eJzKU2wKR1oaSe
+	dmlxkdiHJPnhUrTkPjWeloKXS3vUmLJM3tDf/zkWbuHVLsEp8rOvTKwtZ7z0G+hE31oQa+8WLsUgE
+	YxFKcBiI4JTemG9juiaSFYll5stZk77sQ72q8LrzC8Nn6wgV4HvfT8qUEKWeP4EdaV0DH8kLZ9qmC
+	fw45FIghtm7YavGLPKZlaf6uDdCnzea77Tpr4o/2xWBNP8JjUIk/d/A9cTpe4hfCP3kg91kakLqch
+	kwIhfUnAANJdSJ74bdfg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wPtII-00000006TlL-3BhD;
-	Thu, 21 May 2026 02:37:54 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wPtbp-00000006VMN-2RHU;
+	Thu, 21 May 2026 02:58:05 +0000
+Received: from mail-wr1-x42b.google.com ([2a00:1450:4864:20::42b])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wPtIG-00000006Tko-3iWt
+	id 1wPtbm-00000006VLS-3kR7
 	for linux-phy@lists.infradead.org;
-	Thu, 21 May 2026 02:37:54 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 2C72B403EF;
-	Thu, 21 May 2026 02:37:52 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B46421F000E9;
-	Thu, 21 May 2026 02:37:51 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1779331072;
-	bh=WSTyVe7OqLlaZJo9xDBU9ryVwlnHoQoWqeaZOnwy1/I=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=GT2zdoAN/5ynnVYS6ivClgw3LHEoeEPncPpbZzIFOrJy+WT6R5XWZrlHxT/Tx8V+Z
-	 WHHvgDm9hVTSmakz7D+UAtEY+Y12snUAP37S4wjbBtMsWBNiLNDofqtwKfejioL/7r
-	 OY7Uq7brnSTqwtyapFBIUF+CrMxay1d+U7g87AudX85MRDZULiYzid5fiIHJajoK5C
-	 HG9t3haHzuLqRi8A4VFimVw/G/rux7uU/hoPUmsB8Fbskyaf6xOjF52qOT8zMlj5i1
-	 vzlHdZOKW47zy8hYXx997XU7HkNqLjwrSGscAV+oG8Kd3erigT/PIDI2DOaqoXj1wG
-	 xkFHhGhlV1ejw==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v2 2/4] phy: qcom: qmp-combo: track whether the cached
- typec_mux mode was committed to hardware
-To: "Michael Scott" <mike.scott@oss.qualcomm.com>
-Cc: devicetree@vger.kernel.org, robh@kernel.org, conor+dt@kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org, olteanv@gmail.com, linux-phy@lists.infradead.org
-In-Reply-To: <20260521010935.1333494-3-mike.scott@oss.qualcomm.com>
-References: <20260521010935.1333494-3-mike.scott@oss.qualcomm.com>
-Date: Thu, 21 May 2026 02:37:51 +0000
-Message-Id: <20260521023751.B46421F000E9@smtp.kernel.org>
+	Thu, 21 May 2026 02:58:04 +0000
+Received: by mail-wr1-x42b.google.com with SMTP id ffacd0b85a97d-441209fb77eso3531747f8f.1
+        for <linux-phy@lists.infradead.org>; Wed, 20 May 2026 19:58:02 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1779332281; x=1779937081; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=b6wzXBilwDaEqTrdj11rHbLJY7P7PclyJf2gWIGAYeg=;
+        b=A6KVv7e3Tu+llMRVarSZe9NYxHfTTKJO1B7pAv+30s9MKL3+qqdp5FR9FnnMEm4pSd
+         TEq62lX7rngYNVdVHWMbGDmLSUMtGNCVnGSlmnM959SdNOZVET4PRBSFsx17x3vSA2LJ
+         ksMq9LM5OfGAytQT3ygd+pQnk2XyBX6yg9J1coTtuhXqSjfisGJ5L1gm7klpJsA2yI44
+         3xTw7a6uwr+UCrtot4RHspqIo09SAF/KAFBtspoOqvw/vB69HQ6EOWR1XUzaVIx7UujI
+         04SJGlAV6vzrVgKJu9ieiHRRjQCm/IcwvjCZsRJx2XWqOc2RJuNry6KIHpI4RYSYh9Fn
+         fcNA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1779332281; x=1779937081;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=b6wzXBilwDaEqTrdj11rHbLJY7P7PclyJf2gWIGAYeg=;
+        b=mjlHSjGoYwjZIwYfdvK8NstvA93xRi8ZAOsAZdzxpUKGL81CfuUF1MdxtCbxahp1Az
+         tkMCbtpsknMU/CZHdKNRiLmFgRiwPcDp5TUX1cx8HFzqyRfrgxxQPqwg0F92s2Fd6Bqi
+         tAhy09HwNIt75LnODvkoFLimcPkMMY21EcxOQ1a/ranVZUFmuiW7N3ohr7xrlW79gj3k
+         cJr0cPnG2CgrC+Rgf58zFiual/u2TJfdXE0sAcoivZvs44KJ7oN3YlG3o5aYjg2DUh/V
+         6ugCR2DWAH8nMBn6BaTMJSwoP2A38sW9jn5UO7T9Qja8/PzDMtqePHA3GMJKd5cqs8Kl
+         onTw==
+X-Forwarded-Encrypted: i=1; AFNElJ+ncReqa478qWDtGywOTTqsKRaLNU/HIcu64KJx+1rWbIQmAWWygvNLs+/tTl5rv39DERpf6hkeltQ=@lists.infradead.org
+X-Gm-Message-State: AOJu0YznVSIiBewoNBQdGXEqDK0zh0gOx56atLKRTRrIHcSfBOzO58zv
+	ts6vpi7sZXQldNGpV5kBL/jQ090ZwBYFaiCDjDnPCRkuGoyVdsp5CEBC
+X-Gm-Gg: Acq92OFhwnk2O8tpzgNQLDcB0bCC4cXLS3EbRILrP2C0kr9bm3DObsy2nQ1KYeGRuqJ
+	szqA9ug4DbUEgm0zS5gCtHwOQ5lZ5ogOELDZDE84QwxL20yYoDeHbTCq9M1H5ZNkGHSWcKNeTxD
+	pHLhoJJkLpKgrH+A/OtDnHeDroL2oAMmGakOSgiolqMc4JMwDnAXiKm/yHN4Y6XEpNEkBITfPDL
+	GcpD2mP8OddFYTfbIgrlXiIWmz3k3EvVilozV3mx+8EnU/YKnYiTnplb5BsMTUEAy30Y+Aw6Nh+
+	5202z5hA0KtJdG+Xe2SCv+Ur1hOY+krqkDnR4CGuteTzw30R+wP3ozrPHCWHkBvdbltEgfvZFSS
+	8Z+OtWP2+WoHvVOc2QlJVoiVNRlNTcN/2hyCSMChW8tWgJuEDDaR8CSAn0BVLzHRm/NdeGBlCxi
+	TgsZ6HFMHCfIKMJ1lMWSB1U/SO+TIVAbmEWMkMlTOsLE5WJnpTpdymKFgAbOlxccRMTeqj+jjDY
+	iOKVQEG1l1z0R8wjA==
+X-Received: by 2002:a5d:6f10:0:b0:449:cd74:7432 with SMTP id ffacd0b85a97d-45ea34ab49bmr878157f8f.15.1779332280425;
+        Wed, 20 May 2026 19:58:00 -0700 (PDT)
+Received: from localhost.localdomain (ip-89-176-136-191.bb.vodafone.cz. [89.176.136.191])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-45da0a1a22csm58114198f8f.19.2026.05.20.19.57.56
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 20 May 2026 19:57:58 -0700 (PDT)
+From: Petr Wozniak <petr.wozniak@gmail.com>
+To: netdev@vger.kernel.org
+Cc: linux-kernel@vger.kernel.org,
+	andrew@lunn.ch,
+	hkallweit1@gmail.com,
+	linux@armlinux.org.uk,
+	davem@davemloft.net,
+	edumazet@google.com,
+	kuba@kernel.org,
+	pabeni@redhat.com,
+	maxime.chevallier@bootlin.com,
+	bjorn@mork.no,
+	linux-phy@lists.infradead.org,
+	jan@3e8.eu
+Subject: [PATCH net-next v6] net: phy: sfp: probe for RollBall I2C-to-MDIO bridge in mdio-i2c
+Date: Thu, 21 May 2026 04:57:55 +0200
+Message-ID: <20260521025755.24649-1-petr.wozniak@gmail.com>
+X-Mailer: git-send-email 2.50.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260520_193752_971621_C3671FBD 
-X-CRM114-Status: GOOD (  26.36  )
+X-CRM114-CacheID: sfid-20260520_195802_971339_73FB062C 
+X-CRM114-Status: GOOD (  21.18  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -65,115 +102,215 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-NCBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpOZXcgaXNzdWVzOgotIFtIaWdoXSBU
-aGUgcGF0Y2ggZmFpbHMgdG8gcmVzb2x2ZSB0aGUgdW5wcm9ncmFtbWVkIGhhcmR3YXJlIHN0YXRl
-IGJlY2F1c2UgdGhlIHJlcHJvZ3JhbW1pbmcgc2VxdWVuY2UgaXMgc3RpbGwgY29tcGxldGVseSBi
-eXBhc3NlZCB3aGVuIGBpbml0X2NvdW50ID09IDBgLgoKUHJlLWV4aXN0aW5nIGlzc3VlczoKLSBb
-SGlnaF0gVGhlIGVycm9yIGhhbmRsaW5nIHBhdGggaW4gYHFtcF9jb21ib19jb21faW5pdCgpYCBp
-bmNvcnJlY3RseSBkZWNyZW1lbnRzIGBpbml0X2NvdW50YCB3aGVuIGNhbGxlZCB3aXRoIGBmb3Jj
-ZSA9PSB0cnVlYC4KLSBbSGlnaF0gVHlwZS1DIE1VWCBzZXQgb3BlcmF0aW9ucyBtb2RpZnkgYHVz
-Yl9pbml0X2NvdW50YCBpbmRlcGVuZGVudGx5IG9mIGBpbml0X2NvdW50YCwgbGVhZGluZyB0byBy
-ZXNvdXJjZSBsZWFrcy4KLSBbSGlnaF0gTG9ja2xlc3MgYWNjZXNzIHRvIGBxbXAtPnVzYl9pbml0
-X2NvdW50YCBpbiBgcW1wX2NvbWJvX3VzYl9leGl0KClgIGNhdXNlcyBhIFRpbWUtT2YtQ2hlY2sg
-dG8gVGltZS1PZi1Vc2UgcmFjZSBjb25kaXRpb24uCi0tCgpjb21taXQgYzRiZDBhZDE0NDU2OGIx
-OGNmNmNjZmRjNTBjMDlmOGQwODhkYjljNApBdXRob3I6IE1pY2hhZWwgU2NvdHQgPG1pa2Uuc2Nv
-dHRAb3NzLnF1YWxjb21tLmNvbT4KCiAgICBwaHk6IHFjb206IHFtcC1jb21ibzogdHJhY2sgd2hl
-dGhlciB0aGUgY2FjaGVkIHR5cGVjX211eCBtb2RlIHdhcyBjb21taXR0ZWQgdG8gaGFyZHdhcmUK
-CiAgICBUaGlzIGNvbW1pdCBpbnRyb2R1Y2VzIGEgcW1wcGh5X21vZGVfY29tbWl0dGVkIGZsYWcg
-dG8gdHJhY2sgd2hldGhlciB0aGUKICAgIGNhY2hlZCB0eXBlY19tdXggbW9kZSBoYXMgYmVlbiBh
-cHBsaWVkIHRvIGhhcmR3YXJlLiBJdCBhaW1zIHRvIHByZXZlbnQgYW4KICAgIGVhcmx5IGJhaWwt
-b3V0IGluIHFtcF9jb21ib190eXBlY19tdXhfc2V0KCkgd2hlbiB0aGUgUEhZIGhhcyBub3QgeWV0
-IGJlZW4KICAgIGluaXRpYWxpemVkIGFuZCB0aGUgaGFyZHdhcmUgc3RhdGUgaXMgb3V0IG9mIHN5
-bmMgd2l0aCB0aGUgY2FjaGUuCgo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9xdWFsY29tbS9w
-aHktcWNvbS1xbXAtY29tYm8uYyBiL2RyaXZlcnMvcGh5L3F1YWxjb21tL3BoeS1xY29tLXFtcC1j
-b21iby5jCj4gaW5kZXggMGRiMjAwMjkyNjQyZS4uZTI4YmMxY2M3YTc4YiAxMDA2NDQKPiAtLS0g
-YS9kcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1xbXAtY29tYm8uYwo+ICsrKyBiL2RyaXZl
-cnMvcGh5L3F1YWxjb21tL3BoeS1xY29tLXFtcC1jb21iby5jClsgLi4uIF0KPiBAQCAtMzc1NCw2
-ICszNzU1LDkgQEAgc3RhdGljIGludCBxbXBfY29tYm9fY29tX2luaXQoc3RydWN0IHFtcF9jb21i
-byAqcW1wLCBib29sIGZvcmNlKQo+ICAJcXBoeV9zZXRiaXRzKHFtcC0+cGNzLCBjZmctPnJlZ3Nb
-UVBIWV9QQ1NfUE9XRVJfRE9XTl9DT05UUk9MXSwKPiAgCQkJU1dfUFdSRE4pOwo+ICAKPiArCS8q
-IGNvbV9pbml0KCkganVzdCBwcm9ncmFtbWVkIHJlZ2lzdGVycyBmcm9tIHFtcC0+cW1wcGh5X21v
-ZGUuICovCj4gKwlxbXAtPnFtcHBoeV9tb2RlX2NvbW1pdHRlZCA9IHRydWU7Cj4gKwo+ICAJcmV0
-dXJuIDA7Cj4gIAo+ICBlcnJfZGlzYWJsZV9jbG9ja3M6Cj4gIAljbGtfYnVsa19kaXNhYmxlX3Vu
-cHJlcGFyZShxbXAtPm51bV9jbGtzLCBxbXAtPmNsa3MpOwo+ICBlcnJfYXNzZXJ0X3Jlc2V0Ogo+
-ICAJcmVzZXRfY29udHJvbF9idWxrX2Fzc2VydChjZmctPm51bV9yZXNldHMsIHFtcC0+cmVzZXRz
-KTsKPiAgZXJyX2Rpc2FibGVfcmVndWxhdG9yczoKPiAgCXJlZ3VsYXRvcl9idWxrX2Rpc2FibGUo
-Y2ZnLT5udW1fdnJlZ3MsIHFtcC0+dnJlZ3MpOwo+ICBlcnJfZGVjcmVtZW50X2NvdW50Ogo+ICAJ
-cW1wLT5pbml0X2NvdW50LS07CgpbU2V2ZXJpdHk6IEhpZ2hdClRoaXMgaXMgYSBwcmUtZXhpc3Rp
-bmcgaXNzdWUsIGJ1dCBkb2VzIHRoaXMgZXJyb3IgcGF0aCBwZXJtYW5lbnRseSBicmVhayB0aGUK
-UEhZJ3MgcG93ZXIgbWFuYWdlbWVudCBsaWZlY3ljbGU/CgpXaGVuIHFtcF9jb21ib19jb21faW5p
-dCgpIGlzIGNhbGxlZCB3aXRoIGZvcmNlID09IHRydWUsIHRoZSBpbml0X2NvdW50IGlzIG5vdApp
-bmNyZW1lbnRlZCBhdCB0aGUgc3RhcnQgb2YgdGhlIGZ1bmN0aW9uLiAgSG93ZXZlciwgaWYgYSBo
-YXJkd2FyZQppbml0aWFsaXphdGlvbiBzdGVwIGZhaWxzIGFuZCBleGVjdXRpb24ganVtcHMgdG8g
-ZXJyX2RlY3JlbWVudF9jb3VudCwgaXQgd2lsbApkZWNyZW1lbnQgcW1wLT5pbml0X2NvdW50LCBs
-ZWFkaW5nIHRvIGFuIGludGVnZXIgdW5kZXJmbG93LgoKPiAgCXJldHVybiByZXQ7Cj4gIH0KWyAu
-Li4gXQo+IEBAIC00NTA5LDkgKzQ1MTMsMjIgQEAgc3RhdGljIGludCBxbXBfY29tYm9fdHlwZWNf
-bXV4X3NldChzdHJ1Y3QgdHlwZWNfbXV4X2RldiAqbXV4LCBzdHJ1Y3QgdHlwZWNfbXV4X3MKPiAg
-CQluZXdfbW9kZSA9IFFNUFBIWV9NT0RFX1VTQjNfT05MWTsKPiAgCX0KPiAgCj4gKwkvKgo+ICsJ
-ICogRmFzdC1wYXRoIGJhaWwgb25seSB3aGVuIHRoZSBjYWNoZWQgbW9kZSBpcyBhbHNvIGtub3du
-IHRvIGJlCj4gKwkgKiBjb21taXR0ZWQgdG8gaGFyZHdhcmUuIFRoZSBjYWNoZSBtYXkgYmUgYWhl
-YWQgb2YgdGhlIGhhcmR3YXJlCj4gKwkgKiBpZiBhIHR5cGVjX211eF9zZXQgYXJyaXZlZCB3aGls
-ZSB0aGUgUEhZIGhhZCBub3QgeWV0IGJlZW4KPiArCSAqIGluaXRpYWxpc2VkIChpbml0X2NvdW50
-ID09IDApOyBpbiB0aGF0IGNhc2UgdGhlIGNhY2hlIHVwZGF0ZQo+ICsJICogYmVsb3cgd2FzIHRo
-ZSBvbmx5IHRoaW5nIHRoYXQgcmFuLCBhbmQgd2Ugc3RpbGwgbmVlZCB0byBkcml2ZQo+ICsJICog
-dGhlIHJlZ2lzdGVycyB3aGVuIHRoZSBQSFkgZG9lcyBjb21lIHVwLgo+ICsJICovCj4gIAlpZiAo
-bmV3X21vZGUgPT0gcW1wLT5xbXBwaHlfbW9kZSkgewo+IC0JCWRldl9kYmcocW1wLT5kZXYsICJ0
-eXBlY19tdXhfc2V0OiBzYW1lIHFtcHBoeSBtb2RlLCBiYWlsIG91dFxuIik7Cj4gLQkJcmV0dXJu
-IDA7Cj4gKwkJaWYgKHFtcC0+cW1wcGh5X21vZGVfY29tbWl0dGVkKSB7Cj4gKwkJCWRldl9kYmco
-cW1wLT5kZXYsCj4gKwkJCQkidHlwZWNfbXV4X3NldDogc2FtZSBxbXBwaHkgbW9kZSAoY29tbWl0
-dGVkKSwgYmFpbCBvdXRcbiIpOwo+ICsJCQlyZXR1cm4gMDsKPiArCQl9Cj4gKwkJZGV2X2RiZyhx
-bXAtPmRldiwKPiArCQkJInR5cGVjX211eF9zZXQ6IHNhbWUgcW1wcGh5IG1vZGUgYnV0IHVuY29t
-bWl0dGVkOyByZXByb2dyYW1taW5nXG4iKTsKPiAgCX0KPiAgCj4gIAlpZiAocW1wLT5xbXBwaHlf
-bW9kZSAhPSBRTVBQSFlfTU9ERV9VU0IzX09OTFkgJiYgcW1wLT5kcF9wb3dlcmVkX29uKSB7Cj4g
-QEAgLTQ1MjMsNiArNDU0MCw3IEBAIHN0YXRpYyBpbnQgcW1wX2NvbWJvX3R5cGVjX211eF9zZXQo
-c3RydWN0IHR5cGVjX211eF9kZXYgKm11eCwgc3RydWN0IHR5cGVjX211eF9zCj4gIAkJcW1wLT5x
-bXBwaHlfbW9kZSwgbmV3X21vZGUpOwo+ICAKPiAgCXFtcC0+cW1wcGh5X21vZGUgPSBuZXdfbW9k
-ZTsKPiArCXFtcC0+cW1wcGh5X21vZGVfY29tbWl0dGVkID0gZmFsc2U7Cj4gIAo+ICAJaWYgKHFt
-cC0+aW5pdF9jb3VudCkgewoKW1NldmVyaXR5OiBIaWdoXQpEb2VzIHRoaXMgYWN0dWFsbHkgZml4
-IHRoZSB1bnByb2dyYW1tZWQgaGFyZHdhcmUgc3RhdGU/CgpXaGVuIGluaXRfY291bnQgPT0gMCwg
-dGhlIGVhcmx5IGJhaWxvdXQgaXMgYnlwYXNzZWQsIGJ1dCB0aGUgaGFyZHdhcmUKcHJvZ3JhbW1p
-bmcgYmxvY2sgaW5zaWRlIHRoaXMgaWYgKHFtcC0+aW5pdF9jb3VudCkgY29uZGl0aW9uIGlzIGFs
-c28gc2tpcHBlZC4KCk9uY2UgcGh5X2luaXQoKSBpcyBjYWxsZWQsIGl0IGV4ZWN1dGVzIHFtcF9j
-b21ib19jb21faW5pdCgpLCB3aGljaCBzZXRzCnFtcHBoeV9tb2RlX2NvbW1pdHRlZCA9IHRydWUu
-ICBXb3VsZCBzdWJzZXF1ZW50IGNhbGxzIHRvIHR5cGVjX211eF9zZXQoKSB0aGVuCnNlZSBjb21t
-aXR0ZWQgPT0gdHJ1ZSBhbmQgaGl0IHRoZSBlYXJseSBiYWlsb3V0IGp1c3QgYXMgdGhleSBkaWQg
-YmVmb3JlIHRoaXMKcGF0Y2g/Cgo+ICAJCWlmIChxbXAtPnVzYl9pbml0X2NvdW50KQoKW1NldmVy
-aXR5OiBIaWdoXQpUaGlzIGlzbid0IGEgYnVnIGludHJvZHVjZWQgYnkgdGhpcyBwYXRjaCwgYnV0
-IGNhbiB0aGUgaW50ZXJhY3Rpb24gYmV0d2Vlbgp1c2JfaW5pdF9jb3VudCBhbmQgaW5pdF9jb3Vu
-dCBsZWFkIHRvIGEgcmVzb3VyY2UgbGVhaz8KCldoZW4gdHJhbnNpdGlvbmluZyB0byBEUC1vbmx5
-IG1vZGUgaW4gcW1wX2NvbWJvX3R5cGVjX211eF9zZXQoKSwKcW1wLT51c2JfaW5pdF9jb3VudCBp
-cyBkZWNyZW1lbnRlZCB3aGlsZSB1c2luZyBxbXBfY29tYm9fY29tX2V4aXQocW1wLCB0cnVlKSwK
-d2hpY2ggYnlwYXNzZXMgZGVjcmVtZW50aW5nIHRoZSBtYXN0ZXIgcW1wLT5pbml0X2NvdW50LgoK
-SWYgdXNiX2luaXRfY291bnQgZHJvcHMgdG8gMCwgd291bGQgYSBzdWJzZXF1ZW50IHBoeV9leGl0
-KCkgYnkgdGhlIFVTQiBjb25zdW1lcgpyZXR1cm4gZWFybHkgaW4gcW1wX2NvbWJvX3VzYl9leGl0
-KCkgYW5kIHNraXAgY2FsbGluZwpxbXBfY29tYm9fY29tX2V4aXQocW1wLCBmYWxzZSk/IFRoaXMg
-d291bGQgbGVhdmUgdGhlIFVTQiBjb25zdW1lcidzIG9yaWdpbmFsCmNvbnRyaWJ1dGlvbiB0byBp
-bml0X2NvdW50IHVuYWNjb3VudGVkIGZvciwga2VlcGluZyByZWd1bGF0b3JzIGFuZCBjbG9ja3MK
-ZW5hYmxlZCBmb3JldmVyLgoKW1NldmVyaXR5OiBIaWdoXQpUaGlzIGlzIGEgcHJlLWV4aXN0aW5n
-IGlzc3VlLCBidXQgZG9lcyBsb2NrbGVzcyBhY2Nlc3MgdG8gcW1wLT51c2JfaW5pdF9jb3VudApp
-biBxbXBfY29tYm9fdXNiX2V4aXQoKSBjYXVzZSBhIFRpbWUtT2YtQ2hlY2sgdG8gVGltZS1PZi1V
-c2UgcmFjZSBjb25kaXRpb24/CgpJZiBxbXBfY29tYm9fdXNiX2V4aXQoKSBjaGVja3MgdXNiX2lu
-aXRfY291bnQgd2l0aG91dCBob2xkaW5nIHFtcC0+cGh5X211dGV4LApjb3VsZCBpdCBkcm9wIHRv
-IDAgY29uY3VycmVudGx5IHZpYSBhIE1VWCBzd2l0Y2ggdG8gRFAtb25seSBpbgpxbXBfY29tYm9f
-dHlwZWNfbXV4X3NldCgpPyAgV2hlbiBxbXBfY29tYm9fdXNiX2V4aXQoKSBzdWJzZXF1ZW50bHkg
-YWNxdWlyZXMgdGhlCmxvY2sgYW5kIGNvbnRpbnVlcywgaXQgd291bGQgZGVjcmVtZW50IHVzYl9p
-bml0X2NvdW50IGNhdXNpbmcgYW4gdW5kZXJmbG93IHRvClVJTlRfTUFYLCBhbGxvd2luZyBmdXR1
-cmUgZXhpdHMgdG8gYnlwYXNzIHRoZSB6ZXJvIGNoZWNrIGFuZCB0cmlnZ2VyIHVuYmFsYW5jZWQK
-dGVhcmRvd25zLgoKPiBAQCAtNDU1MSw2ICs0NTY5LDkgQEAgc3RhdGljIGludCBxbXBfY29tYm9f
-dHlwZWNfbXV4X3NldChzdHJ1Y3QgdHlwZWNfbXV4X2RldiAqbXV4LCBzdHJ1Y3QgdHlwZWNfbXV4
-X3MKPiAgCQkJaWYgKHFtcC0+ZHBfaW5pdF9jb3VudCkKPiAgCQkJCWNmZy0+ZHBfYXV4X2luaXQo
-cW1wKTsKPiAgCQl9Cj4gKwo+ICsJCS8qIFJlcHJvZ3JhbSBjb21wbGV0ZTsgY2FjaGUgbm93IHJl
-ZmxlY3RzIGhhcmR3YXJlLiAqLwo+ICsJCXFtcC0+cW1wcGh5X21vZGVfY29tbWl0dGVkID0gdHJ1
-ZTsKPiAgCX0KPiAgCj4gIAlyZXR1cm4gMDsKCi0tIApTYXNoaWtvIEFJIHJldmlldyDCtyBodHRw
-czovL3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAyNjA1MjEwMTA5MzUuMTMzMzQ5NC0xLW1pa2Uu
-c2NvdHRAb3NzLnF1YWxjb21tLmNvbT9wYXJ0PTIKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0
-CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9y
-Zy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+The "OEM"/"SFP-10G-T" quirk entry in sfp_fixup_rollball_cc()
+unconditionally forces MDIO_I2C_ROLLBALL for all modules matching that
+vendor/part-number combination.  This works for modules that genuinely
+implement a RollBall I2C-to-MDIO bridge, but silently breaks modules
+that share the same EEPROM strings without having such a bridge.
+
+The Realtek RTL8261BE-CG is one such module: a pure copper 10G SFP+
+media converter with no I2C-to-MDIO bridge.  Its EEPROM reports
+vendor="OEM", part="SFP-10G-T-I", and -- critically -- Vendor OUI
+00:00:00, making OUI-based differentiation impossible.  With
+MDIO_I2C_ROLLBALL forced, the module silently ACKs the unlock password
+write, the MDIO bus is created, but no PHY responds; the SFP state
+machine cycles through the RollBall PHY-probe retry window before
+reporting no PHY.
+
+Move the probe into i2c_mii_init_rollball() in mdio-i2c.c, where the
+RollBall protocol constants are already defined.  After sending the
+unlock password, issue a CMD_READ and poll for CMD_DONE up to 200 ms
+(10 x 20 ms, matching the existing rollball poll tolerance).  A genuine
+RollBall bridge asserts CMD_DONE within that window; modules without a
+bridge never do, so i2c_mii_init_rollball() returns -ENODEV.
+mdio_i2c_alloc() propagates -ENODEV to the caller to signal that no
+bridge is present and PHY probing should be skipped.
+sfp_sm_add_mdio_bus() catches -ENODEV and transitions
+sfp->mdio_protocol to MDIO_I2C_NONE so the rest of the state machine
+skips PHY probing for this module.
+
+Any I2C-level error (NACK, timeout) during the probe is also treated as
+-ENODEV: if the module does not respond at I2C address 0x51 at all,
+there is certainly no RollBall bridge there, and SFP initialization
+should not abort.
+
+The probe writes are safe with respect to SFP EEPROM integrity: only
+modules explicitly listed in the quirk table enter this path, and the
+RollBall password unlock write to 0x51 was already issued by
+i2c_mii_init_rollball() before the probe for all such modules.  Any
+module without a device at 0x51 NACKs the transfer and is treated as
+-ENODEV.
+
+Add "OEM"/"SFP-10G-T-I" to the quirk table so RTL8261BE modules enter
+the probe path; genuine RollBall modules continue to work as before.
+
+Signed-off-by: Petr Wozniak <petr.wozniak@gmail.com>
+Reviewed-by: Maxime Chevallier <maxime.chevallier@bootlin.com>
+---
+
+Changes since v5 (Sashiko AI review):
+  - Treat I2C NACK/errors in i2c_mii_init_rollball() as -ENODEV so
+    modules without a 0x51 EEPROM do not abort SFP initialization
+  - Replace fixed 70 ms wait with 10 x 20 ms poll (total 200 ms),
+    matching the existing i2c_rollball_mii_poll() tolerance and
+    preventing false -ENODEV on slow RollBall bridges
+
+Changes since v4 (feedback from Maxime Chevallier):
+  - Fix commit message: replace "stalls" with accurate description of
+    the RollBall PHY-probe retry window
+  - Fix variable declaration order in i2c_mii_probe_rollball() to
+    follow reverse-xmas tree (descending line length)
+  - Remove spurious alignment space on "SFP-10G-T" quirk entry
+  - Document that -ENODEV from mdio_i2c_alloc() means no bridge present,
+    PHY probing should be skipped
+
+Changes since v3 (feedback from Jakub Kicinski):
+  - Drop spurious Tested-by: tag -- author and tester are the same person
+  - Use PATCH net-next subject prefix
+  - Move -ENODEV handling from sfp_i2c_mdiobus_create() into
+    sfp_sm_add_mdio_bus() so bus-creation code does not mutate
+    sfp->mdio_protocol; the state machine is the correct place for
+    protocol-state transitions
+  - Split combined variable declaration for clarity
+
+Changes since v2:
+  - Compile-tested and hardware-tested on BPI-R4 (MT7988A, 6.12.87)
+  - RTL8261BE (OEM/SFP-10G-T-I): probes MDIO_I2C_NONE, link Up 10Gbps
+  - Genuine RollBall (OEM/SFP-10G-T): bridge detected, link Up 10Gbps
+
+ drivers/net/mdio/mdio-i2c.c | 65 ++++++++++++++++++++++++++++++------
+ drivers/net/phy/sfp.c       | 16 ++++++++--
+ 2 files changed, 68 insertions(+), 13 deletions(-)
+--- a/drivers/net/mdio/mdio-i2c.c
++++ b/drivers/net/mdio/mdio-i2c.c
+@@ -352,6 +352,54 @@
+ 	return 0;
+ }
+ 
++static int i2c_mii_probe_rollball(struct i2c_adapter *i2c)
++{
++	u8 data_buf[] = { ROLLBALL_DATA_ADDR, 0x01, 0x00, 0x00 };
++	u8 cmd_buf[]  = { ROLLBALL_CMD_ADDR, ROLLBALL_CMD_READ };
++	u8 cmd_addr   = ROLLBALL_CMD_ADDR;
++	struct i2c_msg msgs[2];
++	u8 result;
++	int ret;
++	int i;
++
++	msgs[0].addr  = ROLLBALL_PHY_I2C_ADDR;
++	msgs[0].flags = 0;
++	msgs[0].len   = sizeof(data_buf);
++	msgs[0].buf   = data_buf;
++	msgs[1].addr  = ROLLBALL_PHY_I2C_ADDR;
++	msgs[1].flags = 0;
++	msgs[1].len   = sizeof(cmd_buf);
++	msgs[1].buf   = cmd_buf;
++
++	ret = i2c_transfer_rollball(i2c, msgs, ARRAY_SIZE(msgs));
++	if (ret < 0)
++		return -ENODEV;
++	if (ret)
++		return ret;
++
++	msgs[0].addr  = ROLLBALL_PHY_I2C_ADDR;
++	msgs[0].flags = 0;
++	msgs[0].len   = 1;
++	msgs[0].buf   = &cmd_addr;
++	msgs[1].addr  = ROLLBALL_PHY_I2C_ADDR;
++	msgs[1].flags = I2C_M_RD;
++	msgs[1].len   = 1;
++	msgs[1].buf   = &result;
++
++	for (i = 0; i < 10; i++) {
++		msleep(20);
++		ret = i2c_transfer_rollball(i2c, msgs, ARRAY_SIZE(msgs));
++		if (ret < 0)
++			return -ENODEV;
++		if (ret)
++			return ret;
++		if (result == ROLLBALL_CMD_DONE)
++			return 0;
++	}
++
++	return -ENODEV;
++}
++
+ static int i2c_mii_init_rollball(struct i2c_adapter *i2c)
+ {
+ 	struct i2c_msg msg;
+@@ -371,11 +419,11 @@
+ 
+ 	ret = i2c_transfer(i2c, &msg, 1);
+ 	if (ret < 0)
+-		return ret;
+-	else if (ret != 1)
++		return -ENODEV;
++	if (ret != 1)
+ 		return -EIO;
+-	else
+-		return 0;
++
++	return i2c_mii_probe_rollball(i2c);
+ }
+ 
+ struct mii_bus *mdio_i2c_alloc(struct device *parent, struct i2c_adapter *i2c,
+@@ -399,9 +447,12 @@
+ 	case MDIO_I2C_ROLLBALL:
+ 		ret = i2c_mii_init_rollball(i2c);
+ 		if (ret < 0) {
+-			dev_err(parent,
+-				"Cannot initialize RollBall MDIO I2C protocol: %d\n",
+-				ret);
++			if (ret != -ENODEV)
++				dev_err(parent,
++					"Cannot initialize RollBall MDIO I2C protocol: %d\n",
++					ret);
++			/* -ENODEV propagates to caller: no bridge present,
++			 * PHY probing should be skipped for this module. */
+ 			mdiobus_free(mii);
+ 			return ERR_PTR(ret);
+ 		}
+--- a/drivers/net/phy/sfp.c
++++ b/drivers/net/phy/sfp.c
+@@ -607,6 +607,7 @@
+ 	SFP_QUIRK_S("TP-LINK", "TL-SM410U", sfp_quirk_oem_2_5g),
+ 
+ 	SFP_QUIRK_F("ETU", "ESP-T5-R", sfp_fixup_rollball_cc),
++	SFP_QUIRK_F("OEM", "SFP-10G-T-I", sfp_fixup_rollball),
+ 	SFP_QUIRK_F("OEM", "SFP-10G-T", sfp_fixup_rollball_cc),
+ 	SFP_QUIRK_S("OEM", "SFP-2.5G-T", sfp_quirk_oem_2_5g),
+ 	SFP_QUIRK_S("OEM", "SFP-2.5G-BX10-D", sfp_quirk_2500basex),
+@@ -2029,10 +2030,18 @@
+ 	dev_info(sfp->dev, "probing phy device through the [%s] protocol\n",
+ 		 mdio_i2c_proto_type(sfp->mdio_protocol));
+ 
+-	if (sfp->mdio_protocol != MDIO_I2C_NONE)
+-		return sfp_i2c_mdiobus_create(sfp);
++	int ret;
+ 
+-	return 0;
++	if (sfp->mdio_protocol == MDIO_I2C_NONE)
++		return 0;
++
++	ret = sfp_i2c_mdiobus_create(sfp);
++	if (ret == -ENODEV) {
++		/* Probe confirmed no bridge present; skip PHY discovery. */
++		sfp->mdio_protocol = MDIO_I2C_NONE;
++		return 0;
++	}
++	return ret;
+ }
+ 
+ /* Probe a SFP for a PHY device if the module supports copper - the PHY
+--
+2.51.0
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
