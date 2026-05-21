@@ -4,90 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8E488CD4F3D
-	for <linux-phy@archiver.kernel.org>; Thu, 21 May 2026 00:37:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 83629CD4F54
+	for <linux-phy@archiver.kernel.org>; Thu, 21 May 2026 00:37:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IMqlILsYBxahhbtQ4eXmd34x+AqONe+wfqiFOAnYzms=; b=pg3KEoP5ORZ7Wz
-	X/BAYFHgoCx+fDsWHdm7a9pidauF5II/AfZYeJBEpqOLf9Hty54O19JRPmZPbsrTGpx/52uxbJSYo
-	Ok3bANnP/V/ERjuSy+O9xCF+cwf4rQktRapdFZk8wdsOYFa9cJF4B61sFw6MefZyU8MsIcJjmB4Mg
-	yY0zFaQMGHmbiqPUIs4W0g/TT4DERBD/p1rl95ges/nb3kAw3AheiU4hSMMJMUPQ97qhUk2LPWsom
-	pA4r5KrwtfVv2eTAZOFtUwyjcCofu2MQ4oAvwV1eJXIbY+abs3Twk5BJV1ffE4HBP3RAos/J4kxE8
-	WA0pXhRm8z2/9YNh/0/Q==;
+	List-Owner; bh=5IpV4MsZwWaQmxDGY405nwrf1ty4a1BasRKqhGhASLQ=; b=eBZzZ3wLhXaHov
+	MBVZuBi2kMCqWTuvUndcQuyKRU7L0kXhYnVKNbauY0E/I2JWw2cI5XInUzeCKgDOLS4PseV+0tdnS
+	Jq+yA2JIcgJ1dK7rAiwLGUaCwkXzUlX1x0i4IAPC3ubnuMSrzppiiGjbzJyOP6Ig/OM/6ilyvbQR7
+	aaRkgqPsclIFdfGPYNy4x+czg/raLfzxOsJ8K7LDC+ZALeHJTwygvEFULfYlKWNgcfvrvYAjB1Gji
+	55kAvPpI/s3QdFF5AIsDiNkX54l5Td9izeP/OYf/A42nZps+A/OPXAq91WE/isf4FZXHNQrMSkzUM
+	iGOL6zQuTChNC1XEB4AQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wPrPZ-00000006Hxn-0wk4;
-	Thu, 21 May 2026 00:37:19 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1wPrPe-00000006Hzi-158p;
+	Thu, 21 May 2026 00:37:22 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wPrPW-00000006HwR-260n
+	id 1wPrPZ-00000006HxX-0v9z
 	for linux-phy@lists.infradead.org;
-	Thu, 21 May 2026 00:37:15 +0000
-Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 64KM09m23680440
-	for <linux-phy@lists.infradead.org>; Thu, 21 May 2026 00:37:13 GMT
+	Thu, 21 May 2026 00:37:20 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 64KKP8df316412
+	for <linux-phy@lists.infradead.org>; Thu, 21 May 2026 00:37:16 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=Fdw4wGz0s7N
-	X7rZlmQyXYCSIQlXchuQ2tG5rGljK0io=; b=PGBK2bA8MWsiAutAPM87yw4W7Ir
-	5m+2p23yoSDwzTi7LI4GgFR5OkME+NiTyJvGjpAKDVkpwmJRMXQi8gcK4tJnkrzO
-	jUzAcKqkmKDbFZFsOADV4kxN655nok5LxZfyTikA7BQovndHJxqOoBujqCl5Tt92
-	KfxQ8sUPN8GzaQnf7Z5zecmSCgqkdEptILaMVsS08/Gp14N7qvXTWTqK/7Qw2IF4
-	dRyyTGB6B2FuCHiBZLX5yBROslF0DS51PI7VrawMFZjDrIzIiGHEbDVcRDh6jjb1
-	zGc07qAkXrFr3eHUI+J5SdTSviiVzPA+ZSxWT9qy0Htkx+Fcx0EdSm5+1SQ==
-Received: from mail-yw1-f197.google.com (mail-yw1-f197.google.com [209.85.128.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4e9e9j2c9f-1
+	:mime-version:references:subject:to; s=qcppdkim1; bh=/53XCL17jN3
+	51K4aaPlGvru/vziGTGGtsn9yhfrv7hk=; b=eXz3QRKZIFXaBD89KyrgH/U9+4j
+	wJVHWfbLEEOJ0YXXbIM3w4KqIrR8Y3bsudCd/ytYzDSNvoQGPIQCK6EwALgkENon
+	t0SmaEztdhd3iuBUEqxC3fnzfrlNzcZFuCbdjiJJEShUk4WFKq/d7Fdvf2YGkXIb
+	D9eIdo5v0IfmQ1JrS3RSeo/vpTAticWOSUlMfiJ4hHpkOkBQerW9XAkrXRX1JCFf
+	J9QHkFV1OXBCNmz6D4FHDEVLDAiZXq4Ya25lYhSQxvRuTNVI8ZTk8E0tiZ+HtjM7
+	twJ7cawUdp1HsPu7NSKUea1N3HIt8OypVR+GQL9HwJAfgzixs2fRbT4wuCw==
+Received: from mail-yw1-f198.google.com (mail-yw1-f198.google.com [209.85.128.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4e9d5qtku9-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Thu, 21 May 2026 00:37:13 +0000 (GMT)
-Received: by mail-yw1-f197.google.com with SMTP id 00721157ae682-7bd92c50e6aso103651117b3.2
-        for <linux-phy@lists.infradead.org>; Wed, 20 May 2026 17:37:13 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Thu, 21 May 2026 00:37:16 +0000 (GMT)
+Received: by mail-yw1-f198.google.com with SMTP id 00721157ae682-7bd726a9569so108410147b3.3
+        for <linux-phy@lists.infradead.org>; Wed, 20 May 2026 17:37:16 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1779323832; x=1779928632; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1779323836; x=1779928636; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=Fdw4wGz0s7NX7rZlmQyXYCSIQlXchuQ2tG5rGljK0io=;
-        b=OkP8KODyCGxH+PlDW8SPQ5FzRNcRxHROIs82gzxOMaTqs5XPmlKFPGosYDf94CrmEf
-         ae0wVwdwj3DBR2L90gBXz9iy3zci96my1PpKAS+VjiUJ5N1i+LVyG/ss2bHvJpPRrpCX
-         xPiW+XOIBjTM7p1PNyYN91tYfjKwFkbcDEq5Qc4EllpLKrexfXC9+7L7M+xd4S+lY3IE
-         gho/Q4tK/06p5bAnKp90W24cU1BbAeU6kwnubqZLAp0qfQe7al6zDVVknj0ITzr7ajzJ
-         V4loXtSECqAAiNRO2ppgG+AnOwy+QscXSircE3qUXu2xIdeMEwkIK/ngjPjQ11F2wKMw
-         cQ7A==
+        bh=/53XCL17jN351K4aaPlGvru/vziGTGGtsn9yhfrv7hk=;
+        b=TBKXczhsFNK5QzNkBRHlfGLaQq+LYba+Btss04bkWZlDyOI/DfNvKaDSpQOHrg0Fv3
+         CDw7lcgqIPJGQ7WdVO4KojU1gkpLM8BAiGGMsPf7C7zjQhgw8ObUfmQFxJHDOMnrnFUK
+         upslfBHCx2D+kQo/8c04/cjtU5Ed4iAyeToO/vv6OsYXId6dhbSNJ8amnMG1wCN9GIK7
+         chGWRrwIQj10Gnt3OvmOb+Bpu1SypPeVeEjncx7/ZqwN5fcAHOsY03GTSR96zC7urcKW
+         dcuyfrpOJJidz4WeYo26EnF0AVoUcA1tFyuXdKM9/NuzpNeSnK+H3GrgO4lWSAsd18lQ
+         xHNA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1779323832; x=1779928632;
+        d=1e100.net; s=20251104; t=1779323836; x=1779928636;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to;
-        bh=Fdw4wGz0s7NX7rZlmQyXYCSIQlXchuQ2tG5rGljK0io=;
-        b=E9rgs6E1fsYkmVfpHCDcoj/6jJwmqJwZnkuiXPiiRoAWkCateRF1bSsjaSBKf1F4WH
-         LnYqa3M8rZ7B46rfh9aIS5O7zB/gwpstlyvXtan/sdPvsT/ehYKA2jiSO18IuPaPv6FT
-         jGPZoiisO/+7Xw3h8p7Q20PWQNtibCEHEwujKfZIaDjQTaIL7ywrosBOSo6vpxOz6/ly
-         460DXVqf7+PqGfUY/ghd1HpE/yz4GuYA4Dy/vWdQxkYEXvAT7OMuESpriWk0B2Ma9xZ2
-         zOxDBrTLyV0atV7sdAbxWp1prLXrVqyXMfXqJUOk40vjYT66xlCrzlcGzM4ReM5QnwFS
-         67tQ==
-X-Forwarded-Encrypted: i=1; AFNElJ9JEymQQa8wPbyw/xQ9JRh1I2xh4lup+xzMCUBvPeHHJgSE4l7CqldDzVxeczsVeQWpJWN7nn7PE+Y=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx0nBS4yxB3QWAym791u+YuhM7/ZoyKMMiNs18BdssJr5UzdP5l
-	fD2wwR9Jvq3WFR8m5By29PpsUnz2T3VrotpVH2mrlbsAAI4ryFYMqxK2lsCMas/895oBONxBlUR
-	NFcDEEB8DVtFArl6/mVG7xpcyT6ePVZrFbIKEcvzb5UAgEPTCpCZYI8dDwryw9nkUcSTq
-X-Gm-Gg: Acq92OEMwi4ysGb87f0KG+r6guyPvT6wjwckry19MJsNBtyUTFa8s0r63IbQo+HN4/5
-	UNNjtRJzU1WrIQ9yikp6XOdNIViBxSosvn/7cp2jh4js0Me1t/UPjqjW4aRwKGqD3uph0QkFZmn
-	dIUTz5IskQVscwfrl9crTZ9hZH6NeYDl77QL0fh/RSVKN4e3XRaaHMLhL8NidAsl5YO0tE8CUw0
-	HsXWUnJrntRQ9jArmrT2frR00VgGkcBq6WtGZox3iPmAQf0nLO3TkzAN0bfvxgRgJNzkEfGW+18
-	HR+xTGCESooN/FG1aV6OSIF951ZL8UMP6NPw38gq9XsXq0oWA8CfatgR4D8TaZ66gwSlTduySsD
-	L4C8UwT7EU9nI2HfvrHdzODLIWFF4EaTsMkKtfEzuJ/NV1ruFvIN+fCto0wAACC6t636wbEXyJg
-	FucBbCuhcY8tdvzpmdAm9PmwIWJg==
-X-Received: by 2002:a05:690c:b8e:b0:7cf:d9bc:80af with SMTP id 00721157ae682-7d20c54bdfdmr7903317b3.30.1779323832406;
-        Wed, 20 May 2026 17:37:12 -0700 (PDT)
-X-Received: by 2002:a05:690c:b8e:b0:7cf:d9bc:80af with SMTP id 00721157ae682-7d20c54bdfdmr7902977b3.30.1779323832015;
-        Wed, 20 May 2026 17:37:12 -0700 (PDT)
+        bh=/53XCL17jN351K4aaPlGvru/vziGTGGtsn9yhfrv7hk=;
+        b=qNX8B0A3dZtE47SZI0k390kDZv3ImmsbTJYsW+kiU+PnvvDB6xZ7iDqBvDTxye5llV
+         0pb3IfnchHBNWXAATVFeiY9dMTHrgOrWcfDtg4aZ8sQ0Kq0I6tybXFkP1ZH4TG/pckYl
+         ET3IqHTddQgt2mN3Q2mW57y3W/1LVNurxZvT11w21fMOA0yPiwBqRJF4LpqTU8NoHxFH
+         l1FW/EmmSbqDTKuuJ5EAahsLFdyfu3eABt6MsFTBLvb7UBUQ45Niyph3R/twsuN/jl5g
+         Nv8RNHJnn+6fPFlUSLLdPQ2SeuhO9YZM/hfRrEomxp7GoamHOks9jiLy9jvumEPgnMNr
+         YKoQ==
+X-Forwarded-Encrypted: i=1; AFNElJ9Nd3sLAtosFhU0ABvAbSn9F1SKZUs1uZx/GbyHpaOQBK0vEPLbPA+DAnVRscuZf3VsaV+ZfPSTauc=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yyi0NvEz4DLgKrBqAZsWkUwSC+r9/fgqjHir+wBLTUPIQ39bMGI
+	lhs33DC7pQdtR3rnDxv7h1AfPqIgmgXN9C6rJ2BcvsYPlBqzZRPefAFWf/AGCwxlzbiL4vpUfXf
+	4m9giypSN7grhYzmNSX+Vb5OK/s0V44BqKNs3T2Mbn79X9rqgyurHqJuYNu2NhUeGD2Wo
+X-Gm-Gg: Acq92OFT+aIHRsuWb3hrQCPBYoCG1KvLCEiB47p9Ckyf20NbhpWFbngSXUwxTyxmarz
+	gx+c5Cxg9Vas+fmKNH2Do9uZh9cvKVVWcPDDgar42JS1+R2EfDN9wMXFxPuLtqnw82+UdzR6gco
+	js2QnX1Ls5UZMGlrVKQCjfmpRl9UF4+eqWrvpjk/xn/2NXnENXO7RjzF+gsJH8+xTy1xV+W/7fR
+	gRXDfZ5XUcPcT3OFYFI/EM6ex1UrLF8M+HJ/7H6c1/UdQZmFtjl62GboPepPCZqmBrNQ2BEU6A/
+	xY4VMaqWbAMwNbVl0Wf5/dSvMBiBJ98h6SX1AjTy9AKWDo7UllpcYIOotsGLn2CYT22guu25xDS
+	Ji59Qu1uwwb+5buEsZPCwCqRnroa9SX+h1by40v1UkYifmXxHm5EPEYiEZHJAacdDOb2/yJ0jjv
+	Ch2+v1txrHXnvbnHQ=
+X-Received: by 2002:a05:690c:6202:b0:79a:6249:a046 with SMTP id 00721157ae682-7d209cd3355mr7511117b3.9.1779323835771;
+        Wed, 20 May 2026 17:37:15 -0700 (PDT)
+X-Received: by 2002:a05:690c:6202:b0:79a:6249:a046 with SMTP id 00721157ae682-7d209cd3355mr7510937b3.9.1779323835378;
+        Wed, 20 May 2026 17:37:15 -0700 (PDT)
 Received: from scottml-Latitude-7455 (107-198-5-8.lightspeed.irvnca.sbcglobal.net. [107.198.5.8])
-        by smtp.gmail.com with ESMTPSA id 00721157ae682-7cc991c98d9sm60545717b3.10.2026.05.20.17.37.10
+        by smtp.gmail.com with ESMTPSA id 00721157ae682-7cc991c98d9sm60545717b3.10.2026.05.20.17.37.13
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 20 May 2026 17:37:11 -0700 (PDT)
+        Wed, 20 May 2026 17:37:14 -0700 (PDT)
 From: Michael Scott <mike.scott@oss.qualcomm.com>
 To: linux-arm-msm@vger.kernel.org
 Cc: vkoul@kernel.org, neil.armstrong@linaro.org,
@@ -99,40 +99,40 @@ Cc: vkoul@kernel.org, neil.armstrong@linaro.org,
         bryan.odonoghue@linaro.org, laurentiu.tudor1@dell.com,
         alex.vinarskis@gmail.com, linux-kernel@vger.kernel.org,
         Michael Scott <mike.scott@oss.qualcomm.com>
-Subject: [PATCH 1/4] phy: qcom: qmp-combo: skip USB power_off/exit after device teardown
-Date: Wed, 20 May 2026 17:36:12 -0700
-Message-ID: <20260521003615.1260844-2-mike.scott@oss.qualcomm.com>
+Subject: [PATCH 2/4] phy: qcom: qmp-combo: track whether the cached typec_mux mode was committed to hardware
+Date: Wed, 20 May 2026 17:36:13 -0700
+Message-ID: <20260521003615.1260844-3-mike.scott@oss.qualcomm.com>
 X-Mailer: git-send-email 2.53.0
 In-Reply-To: <20260521003615.1260844-1-mike.scott@oss.qualcomm.com>
 References: <20260521003615.1260844-1-mike.scott@oss.qualcomm.com>
 MIME-Version: 1.0
-X-Authority-Analysis: v=2.4 cv=bfhbluPB c=1 sm=1 tr=0 ts=6a0e53b9 cx=c_pps
- a=0mLRTIufkjop4KoA/9S1MA==:117 a=cdagev08qavQYXHyx3V8vg==:17
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNTIxMDAwMyBTYWx0ZWRfX9nU1EhecnLWB
+ P3AcpKbYAEn8jaOcC/41TZpX1oCAvo9DiGNXXgJ9JkpR3CxP2v+RFfIIf1qK05oJaDzrP12wAsZ
+ o2E3NSlC8gKzgcq4BlulBPpWWhgMOS1VU74VZ/RdBf0qDwmw507pSxLvD7oz7ISW295RV8UP3ob
+ E7GOvX5R/6D+7H/ecuO5+2rjM1BXlEkNpMJCk12EXdL4kIxlWOPb8H+DaIf8R2X7nfoxNxypBMD
+ YMka2tay+KZjOCTjIYpQKnhCZXIDccn0USAH9YRqHUdyzg+niB2AarpSnjAoGa8CTuDnG5DmI/8
+ AQeJIMjoSbCuc6ZfYT7tLgHr0kIft34H6JnVE+lBkMwTOBCFRGHOKAF6LWFfPJ3RDL8765FeQ5y
+ +E8VgMrLscf98gFO4fKk6dpxwwdn3Qp7WMHQNx89na8P3/eIbyvWt8i9/PhsL4RGt6cBeXCJfp/
+ 3HZ1HZ/sL6vuN71aZfA==
+X-Authority-Analysis: v=2.4 cv=QshuG1yd c=1 sm=1 tr=0 ts=6a0e53bc cx=c_pps
+ a=g1v0Z557R90hA0UpD/5Yag==:117 a=cdagev08qavQYXHyx3V8vg==:17
  a=NGcC8JguVDcA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=YMgV9FUhrdKAYTUUvYB2:22 a=EUspDBNiAAAA:8
- a=EvQFHbMspfJCUfrvVzMA:9 a=WgItmB6HBUc_1uVUp3mg:22
-X-Proofpoint-GUID: vsrG0887wC1DozJtdbt6bBh0WjmgIsaB
-X-Proofpoint-ORIG-GUID: vsrG0887wC1DozJtdbt6bBh0WjmgIsaB
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNTIxMDAwMyBTYWx0ZWRfX9w2JesLKvoD2
- taAlbDnB9LJYSwz/bmcanVa3kuA2sJOd4jin8EfdN1jtS3KsXKKfbESHGjcTswjOCS+8VPLgs2f
- l3N7W+4tsqr8kl/QpnJPyYuwzIuOqBWwjTPenqDNn6cPfiTBXit8QZXFiOLwYFPsGL4DEC7nz0R
- MTnU6gR+6a51/sUhS9ToUJwW6f80mYPSMGmsXm21ovpz7dFEeT4jhZfIlAYp+0SeM9FfUpXfwol
- oZ3Ft6V618+1fwLwksyCeaH7hC+3LhlmkUxofFttjL1VMpg0+Bo/PBj9cCWOooySHvkdtaanUwM
- sYo+3oP7T7H19rlPJYvsg5aSD8nrPTlj7xnDK3BE0O6XdSozZVwtBoDuUh7471y4SVLpeLH4tBk
- V6f90gttEJFgDXUHmK2HLyfgRxb2vG3RWU9CDadPfBxolmGA5x1KlrFJeojLW8dOVE/Kxe59GAH
- yJ59oJ+WD2kZxgisGww==
+ a=u7WPNUs3qKkmUXheDGA7:22 a=rJkE3RaqiGZ5pbrm-msn:22 a=EUspDBNiAAAA:8
+ a=GhrnwN_qMCjkbgjgO0kA:9 a=+jEqtf1s3R9VXZ0wqowq2kgwd+I=:19
+ a=MFSWADHSvvjO3QEy5MdX:22
+X-Proofpoint-GUID: uBoocSTa3BCuDnv3rp4qBG5Y79jf4WSy
+X-Proofpoint-ORIG-GUID: uBoocSTa3BCuDnv3rp4qBG5Y79jf4WSy
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
  definitions=2026-05-20_03,2026-05-18_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- phishscore=0 lowpriorityscore=0 impostorscore=0 priorityscore=1501
- bulkscore=0 clxscore=1015 adultscore=0 spamscore=0 malwarescore=0
- suspectscore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2605130000
- definitions=main-2605210003
+ malwarescore=0 impostorscore=0 clxscore=1011 phishscore=0 spamscore=0
+ suspectscore=0 bulkscore=0 adultscore=0 priorityscore=1501 lowpriorityscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2605130000 definitions=main-2605210003
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260520_173714_543340_0B373303 
-X-CRM114-Status: GOOD (  17.24  )
+X-CRM114-CacheID: sfid-20260520_173719_258149_1364ADB9 
+X-CRM114-Status: GOOD (  23.64  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -149,105 +149,111 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-qmp_combo_usb_power_off() is reachable from an external consumer
-(notably dwc3 via phy_exit() during driver unbind) after this device's
-backing resources have already been released along a separate teardown
-chain. The dereference of qmp->pcs (whose ioremap mapping has been
-freed by devm cleanup) then takes a level-3 translation fault and
-oopses.
+qmp_combo_typec_mux_set() updates qmp->qmpphy_mode (the cached state)
+unconditionally, but only reprograms hardware when qmp->init_count is
+non-zero. If pmic_glink_altmode (or any other typec_mux consumer)
+calls into the PHY before DWC3 has performed phy_init() -- a real
+ordering observed during testing of USB-C role-switch enablement on
+Snapdragon X (X1E80100) -- the cache transitions away from the
+probe default QMPPHY_MODE_USB3DP but the hardware is never touched.
 
-Easily reproducible during testing of USB-C role-switch enablement on
-Dell Latitude 7455 (X1E80100), by writing "none" to a USB-C DWC3's
-usb_role_switch role attribute, e.g.
+Subsequent calls (for example on partner detach, where TYPEC_STATE_SAFE
+also resolves to QMPPHY_MODE_USB3_ONLY in the !DP-SVID branch) then
+match the cached mode and the function bails out early with:
 
-  echo none > /sys/class/usb_role/a800000.usb-role-switch/role
+  qcom-qmp-combo-phy faXX000.phy: typec_mux_set: same qmpphy mode, bail out
 
-which triggers the chain:
+leaving the lane mux in whatever configuration it powered up in. On
+the Dell Latitude 7455 this manifests as the SS lanes being left in
+the default state when the first altmode notification arrives during
+DWC3 probe, with the function bailing out on every subsequent attach.
 
-  Unable to handle kernel paging request at virtual address ffff8000876c5400
-  pc : qmp_combo_usb_power_off.isra.0+0x58/0x470 [phy_qcom_qmp_combo]
-  Call trace:
-    qmp_combo_usb_power_off+0x58/0x470 [phy_qcom_qmp_combo]
-    qmp_combo_usb_exit+0x38/0x90 [phy_qcom_qmp_combo]
-    phy_exit
-    dwc3_phy_exit [dwc3]
-    dwc3_core_remove [dwc3]
-    dwc3_remove [dwc3]
-    platform_remove
-    device_release_driver_internal
-    device_driver_detach
-    unbind_store
-    sysfs_kf_write
-    vfs_write
-    ksys_write
-    __arm64_sys_write
-    el0_svc
+Track separately whether the cached mode has actually been committed
+to hardware. The bail-out optimization is only safe when the cache
+truly reflects the hardware:
 
-Two WARNs precede the oops from the same teardown chain, confirming
-the resource ordering:
+  - qmp_combo_typec_mux_set(): bail only when the cached mode matches
+    and was committed; clear the committed flag whenever the cache is
+    updated, set it again after a successful reprogram inside the
+    init_count-guarded block.
 
-  WARNING: drivers/clk/clk.c:4494 at clk_nodrv_disable_unprepare+0x8/0x18
-  WARNING: drivers/regulator/core.c:2657 at _regulator_put+0x84/0x98
+  - qmp_combo_com_init(): set the committed flag at the end of a
+    successful init, since com_init() programs registers from the
+    cached qmpphy_mode.
 
-i.e. the pipe clock provider has been unregistered and the regulators
-released before qmp_combo_usb_power_off() runs.
-
-The proper long-term fix is a teardown-ordering rework so the QMP
-PHY's backing resources outlive any consumer that may still call its
-phy_ops. Pending that, guard the power_off/exit paths with the
-existing usb_init_count balance so re-entry after teardown does not
-oops. usb_init_count tracks the balance of usb_power_on/off; if it
-is zero we have either never powered on or have already powered off,
-and there is nothing to do.
-
-The same guard is added to qmp_combo_usb_exit() since it is the entry
-point used by external consumers via phy_exit().
+No behavioural change on platforms where typec_mux_set never fires
+before phy_init -- committed remains true through normal operation.
 
 Signed-off-by: Michael Scott <mike.scott@oss.qualcomm.com>
 ---
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 22 ++++++++++++++++++++++
- 1 file changed, 22 insertions(+)
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 25 +++++++++++++++++++++--
+ 1 file changed, 23 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-index 93f1aa10d400..4057583c0cfe 100644
+index 4057583c0cfe..9b6da783ce60 100644
 --- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
 +++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
-@@ -3922,6 +3922,17 @@ static int qmp_combo_usb_power_off(struct phy *phy)
- 	struct qmp_combo *qmp = phy_get_drvdata(phy);
- 	const struct qmp_phy_cfg *cfg = qmp->cfg;
+@@ -2295,6 +2295,7 @@ struct qmp_combo {
+ 	struct mutex phy_mutex;
+ 	int init_count;
+ 	enum qmpphy_mode qmpphy_mode;
++	bool qmpphy_mode_committed;
+ 
+ 	struct phy *usb_phy;
+ 	enum phy_mode phy_mode;
+@@ -3747,6 +3748,9 @@ static int qmp_combo_com_init(struct qmp_combo *qmp, bool force)
+ 	qphy_setbits(qmp->pcs, cfg->regs[QPHY_PCS_POWER_DOWN_CONTROL],
+ 			SW_PWRDN);
+ 
++	/* com_init() just programmed registers from qmp->qmpphy_mode. */
++	qmp->qmpphy_mode_committed = true;
++
+ 	return 0;
+ 
+ err_assert_reset:
+@@ -4507,9 +4511,22 @@ static int qmp_combo_typec_mux_set(struct typec_mux_dev *mux, struct typec_mux_s
+ 		new_mode = QMPPHY_MODE_USB3_ONLY;
+ 	}
  
 +	/*
-+	 * Reachable as ->exit from external consumers (notably dwc3) after
-+	 * this device's backing resources have already been released along
-+	 * a teardown chain. Refuse to touch registers in that case.
++	 * Fast-path bail only when the cached mode is also known to be
++	 * committed to hardware. The cache may be ahead of the hardware
++	 * if a typec_mux_set arrived while the PHY had not yet been
++	 * initialised (init_count == 0); in that case the cache update
++	 * below was the only thing that ran, and we still need to drive
++	 * the registers when the PHY does come up.
 +	 */
-+	if (!qmp->usb_init_count) {
-+		dev_dbg(qmp->dev, "%s: PHY not powered on, skipping\n",
-+			__func__);
-+		return 0;
-+	}
-+
- 	clk_disable_unprepare(qmp->pipe_clk);
+ 	if (new_mode == qmp->qmpphy_mode) {
+-		dev_dbg(qmp->dev, "typec_mux_set: same qmpphy mode, bail out\n");
+-		return 0;
++		if (qmp->qmpphy_mode_committed) {
++			dev_dbg(qmp->dev,
++				"typec_mux_set: same qmpphy mode (committed), bail out\n");
++			return 0;
++		}
++		dev_dbg(qmp->dev,
++			"typec_mux_set: same qmpphy mode but uncommitted; reprogramming\n");
+ 	}
  
- 	/* PHY reset */
-@@ -3966,6 +3977,17 @@ static int qmp_combo_usb_exit(struct phy *phy)
- 	struct qmp_combo *qmp = phy_get_drvdata(phy);
- 	int ret;
+ 	if (qmp->qmpphy_mode != QMPPHY_MODE_USB3_ONLY && qmp->dp_powered_on) {
+@@ -4521,6 +4538,7 @@ static int qmp_combo_typec_mux_set(struct typec_mux_dev *mux, struct typec_mux_s
+ 		qmp->qmpphy_mode, new_mode);
  
-+	/*
-+	 * See qmp_combo_usb_power_off(): an external consumer may call
-+	 * phy_exit() after the QMP device's resources have been torn
-+	 * down. usb_init_count tracks usb_init/usb_exit balance.
-+	 */
-+	if (!qmp->usb_init_count) {
-+		dev_dbg(qmp->dev, "%s: PHY not initialised, skipping\n",
-+			__func__);
-+		return 0;
-+	}
+ 	qmp->qmpphy_mode = new_mode;
++	qmp->qmpphy_mode_committed = false;
+ 
+ 	if (qmp->init_count) {
+ 		if (qmp->usb_init_count)
+@@ -4549,6 +4567,9 @@ static int qmp_combo_typec_mux_set(struct typec_mux_dev *mux, struct typec_mux_s
+ 			if (qmp->dp_init_count)
+ 				cfg->dp_aux_init(qmp);
+ 		}
 +
- 	mutex_lock(&qmp->phy_mutex);
- 	ret = qmp_combo_usb_power_off(phy);
- 	if (ret)
++		/* Reprogram complete; cache now reflects hardware. */
++		qmp->qmpphy_mode_committed = true;
+ 	}
+ 
+ 	return 0;
 -- 
 2.53.0
 
