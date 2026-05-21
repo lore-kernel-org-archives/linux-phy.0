@@ -4,89 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7DA05CD4F54
-	for <linux-phy@archiver.kernel.org>; Thu, 21 May 2026 00:37:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8E488CD4F3D
+	for <linux-phy@archiver.kernel.org>; Thu, 21 May 2026 00:37:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=oHOV1taPgMtVFnESnVbbnLP990DldRtgEEAyZgTkDM8=; b=nRNFeoff2ePj8t
-	GyrGI8mQmHMfIog3fU/ngwXibcbEp86/yH5bIXk6cKsJhwCkSkqvoIgG+gI5JVgL2YjvitTKYtiqX
-	hAvxpPFfMAtD39LwA2ZvP1Zwq87a4QDOMYFGUZUQk8zHzBFC8UyBFHD2HU7o+uExHtVaeLAsY9KkK
-	mP+uOYZdqjH8QaRTia4OhJ5jAbCXmTSnLw88MNjZlWnVjyyW70NM/49dX6vl/HYZgZxtY9Xt2bnkE
-	XQxTJKDScq6sPPN0wa4YGbulvGs0Ypo85TkyK6DgT2ZvI9j2YzeZns2GhL4IXmovkMiBzUie7XYVf
-	6DgLrwHXT7WHRGxCB+FA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=IMqlILsYBxahhbtQ4eXmd34x+AqONe+wfqiFOAnYzms=; b=pg3KEoP5ORZ7Wz
+	X/BAYFHgoCx+fDsWHdm7a9pidauF5II/AfZYeJBEpqOLf9Hty54O19JRPmZPbsrTGpx/52uxbJSYo
+	Ok3bANnP/V/ERjuSy+O9xCF+cwf4rQktRapdFZk8wdsOYFa9cJF4B61sFw6MefZyU8MsIcJjmB4Mg
+	yY0zFaQMGHmbiqPUIs4W0g/TT4DERBD/p1rl95ges/nb3kAw3AheiU4hSMMJMUPQ97qhUk2LPWsom
+	pA4r5KrwtfVv2eTAZOFtUwyjcCofu2MQ4oAvwV1eJXIbY+abs3Twk5BJV1ffE4HBP3RAos/J4kxE8
+	WA0pXhRm8z2/9YNh/0/Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wPrPX-00000006Hwj-0RgO;
-	Thu, 21 May 2026 00:37:15 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1wPrPZ-00000006Hxn-0wk4;
+	Thu, 21 May 2026 00:37:19 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wPrPU-00000006Hw7-0NB0
+	id 1wPrPW-00000006HwR-260n
 	for linux-phy@lists.infradead.org;
-	Thu, 21 May 2026 00:37:13 +0000
-Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 64KFjZ1E4115406
-	for <linux-phy@lists.infradead.org>; Thu, 21 May 2026 00:37:10 GMT
+	Thu, 21 May 2026 00:37:15 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 64KM09m23680440
+	for <linux-phy@lists.infradead.org>; Thu, 21 May 2026 00:37:13 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=qcppdkim1; bh=N5+3xR0mUUwO8PD3e537dZ
-	4FKHW/cDZ0dA7B6EMde9s=; b=aMLy8IUg/8i8V5HuAK4txe+hHTC79W0uOX5IOW
-	isxbcAq5p1ChBPk60KjFGXc2l5gyB4Lconzy43+/2NAZ0HNFx+dzzKWDaG17HbtG
-	qYrPIPwsd7iXZ36hHtUGwGSlhDxF+KbD+eFGmoiDsx+dXvceacVlMnqxtcrYniiM
-	uSME+sEhvA/HybArDAU9Ct8zis8tO96Uvy0ZLKhsVbRPcK/Goet/xaAOwAW9wSk2
-	Tts+W2PqxSKYWQPkZ3beJlcNRk+P5ZMWNc23B5nAJZ1c0/uga+nzib7dvDEtdXbF
-	HFcryPAzcZcJ6FS0QeNdwd8p4P0qAV+IpegMNCeS47Eeabig==
+	cc:content-transfer-encoding:date:from:in-reply-to:message-id
+	:mime-version:references:subject:to; s=qcppdkim1; bh=Fdw4wGz0s7N
+	X7rZlmQyXYCSIQlXchuQ2tG5rGljK0io=; b=PGBK2bA8MWsiAutAPM87yw4W7Ir
+	5m+2p23yoSDwzTi7LI4GgFR5OkME+NiTyJvGjpAKDVkpwmJRMXQi8gcK4tJnkrzO
+	jUzAcKqkmKDbFZFsOADV4kxN655nok5LxZfyTikA7BQovndHJxqOoBujqCl5Tt92
+	KfxQ8sUPN8GzaQnf7Z5zecmSCgqkdEptILaMVsS08/Gp14N7qvXTWTqK/7Qw2IF4
+	dRyyTGB6B2FuCHiBZLX5yBROslF0DS51PI7VrawMFZjDrIzIiGHEbDVcRDh6jjb1
+	zGc07qAkXrFr3eHUI+J5SdTSviiVzPA+ZSxWT9qy0Htkx+Fcx0EdSm5+1SQ==
 Received: from mail-yw1-f197.google.com (mail-yw1-f197.google.com [209.85.128.197])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4e99w0kdt7-1
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4e9e9j2c9f-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Thu, 21 May 2026 00:37:09 +0000 (GMT)
-Received: by mail-yw1-f197.google.com with SMTP id 00721157ae682-7bf1433b750so87945017b3.1
-        for <linux-phy@lists.infradead.org>; Wed, 20 May 2026 17:37:09 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Thu, 21 May 2026 00:37:13 +0000 (GMT)
+Received: by mail-yw1-f197.google.com with SMTP id 00721157ae682-7bd92c50e6aso103651117b3.2
+        for <linux-phy@lists.infradead.org>; Wed, 20 May 2026 17:37:13 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1779323829; x=1779928629; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=N5+3xR0mUUwO8PD3e537dZ4FKHW/cDZ0dA7B6EMde9s=;
-        b=Ih+shTGzKQrOPPy7V/sIrW1UqjS0vS3oYxqxrH6h3h0CLs3oOQK8DoZEeBhLEBDm1h
-         FA6Xd6DiIQI9Mpq9wkOp2KHV0rSsgxjWSUgX51u9RbZz+afNvakdE0Pcy+OzrguRehb7
-         H4c75I7sX8IwGuB+w6GIwFeLcGZCN75uZbYQjtRHIg7FNLJbFqrE87p4YWon0dq5UMVz
-         vc7zKlBzCOr978ajeTLyrJJxfeec+iOmQAQ3i//5CsfqK6BmTG32A5PCp0IlFKekUrzB
-         q8C3Y0Vsp9R+41WVPG0YRhwupNSyAwbKD5YcuAQjywySe+IQAutrtY8iXG7hS6XB4j+r
-         cXjw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1779323829; x=1779928629;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=oss.qualcomm.com; s=google; t=1779323832; x=1779928632; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=N5+3xR0mUUwO8PD3e537dZ4FKHW/cDZ0dA7B6EMde9s=;
-        b=WZY09kNDkXaDKkXTFfzjAcddbacw2c4xo1poTuvMUucVgGZHfJG4gl786338KwfbbS
-         wFwx1kfLFrDoxmWVC4wrWEX5PQA/ZaTHQxjDf1S0Jz5vkibse2Uhkgtrw7/ZCKsGff0d
-         Gu0spAsPJO4bxJqLnzCx9tafOSY0oh5gtlnC8uHaV44UIXz2QHvzuDMVdPz2dC5xFMqZ
-         LOEWpU7YuEFEUB++0FMZHG34wgYKSbfczMOBVbEE1NxxLWmj7gasAulVzJmJ8Hxud9zP
-         o7jHRs35eRgVcWsDv+qcWH3zctSqgekmH4nIE3Hjj8duncHMlDDqzx91KSarQaDRqU3p
-         IXIw==
-X-Forwarded-Encrypted: i=1; AFNElJ8zFjb0khhgHRTYKS5cg8BDY0HwrInhrZ6P35roVPrwUS55nkfz/O2fprPGPs64s/IWro99HPcy4IQ=@lists.infradead.org
-X-Gm-Message-State: AOJu0YykVSyUVAljEpsksSTz+IqmI3W6VdKK9qShlhv53RixPKomx0+0
-	zo/EZPdUvezWNyikmYZBhWz4Owzz3GY+fWux8G8eB5qVKrDs2HpiXejabO9e4FAofu07f87mqJe
-	2fVXp12ks0b5zctg4JahwXJC3AH+UJFT4so8iyKkNH3rYeW0X2j9RrmYSV5gIo2GXYXdw
-X-Gm-Gg: Acq92OEoOWvjWz9zstG6RU1Pqf0XJm5HmCnjuar5z5lAr4Fyggd/Bi59A6a+krfJuxF
-	aX8tKMvdWr+lUu0TcJq9cQFv18u+AFh4PxLTp8EZ4m5FxdR3F7t2wX3DyShQqX/5ugiAvlD/Uec
-	PPtNiQdGWnbx53FG/tZ+UUp/gu326CSRFxNAK7GrAreYc26oiO3zvdRdDXR/cMteoFIci3D5hhn
-	wdQ55nzHOWIj+Q8wltXCOhRYGggV8IbXoCq1ZbgI8Naf6FY8UjgR+CuWXzWBT/g4V7ZB5J7ZkwS
-	zlKlg8cIRXOpZuDQnYkz+B1S2DJAbEfRk0o1cf1ziUtUxoRQn/AS0f18mYGIGvQvnK3ELU2UB6L
-	X8P4aaBvjNOXsbxMOeL4pXhLP9yWUPaCZ7U7Uv18ctjQQQ9OeEC4Z8z77teVsTuN8QU10EF8ktT
-	EXY61RZB+s/k20fK4=
-X-Received: by 2002:a05:690c:e3ee:b0:7d1:dd7b:b71f with SMTP id 00721157ae682-7d20c944571mr8724657b3.29.1779323829395;
-        Wed, 20 May 2026 17:37:09 -0700 (PDT)
-X-Received: by 2002:a05:690c:e3ee:b0:7d1:dd7b:b71f with SMTP id 00721157ae682-7d20c944571mr8724297b3.29.1779323828982;
-        Wed, 20 May 2026 17:37:08 -0700 (PDT)
+        bh=Fdw4wGz0s7NX7rZlmQyXYCSIQlXchuQ2tG5rGljK0io=;
+        b=OkP8KODyCGxH+PlDW8SPQ5FzRNcRxHROIs82gzxOMaTqs5XPmlKFPGosYDf94CrmEf
+         ae0wVwdwj3DBR2L90gBXz9iy3zci96my1PpKAS+VjiUJ5N1i+LVyG/ss2bHvJpPRrpCX
+         xPiW+XOIBjTM7p1PNyYN91tYfjKwFkbcDEq5Qc4EllpLKrexfXC9+7L7M+xd4S+lY3IE
+         gho/Q4tK/06p5bAnKp90W24cU1BbAeU6kwnubqZLAp0qfQe7al6zDVVknj0ITzr7ajzJ
+         V4loXtSECqAAiNRO2ppgG+AnOwy+QscXSircE3qUXu2xIdeMEwkIK/ngjPjQ11F2wKMw
+         cQ7A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1779323832; x=1779928632;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to;
+        bh=Fdw4wGz0s7NX7rZlmQyXYCSIQlXchuQ2tG5rGljK0io=;
+        b=E9rgs6E1fsYkmVfpHCDcoj/6jJwmqJwZnkuiXPiiRoAWkCateRF1bSsjaSBKf1F4WH
+         LnYqa3M8rZ7B46rfh9aIS5O7zB/gwpstlyvXtan/sdPvsT/ehYKA2jiSO18IuPaPv6FT
+         jGPZoiisO/+7Xw3h8p7Q20PWQNtibCEHEwujKfZIaDjQTaIL7ywrosBOSo6vpxOz6/ly
+         460DXVqf7+PqGfUY/ghd1HpE/yz4GuYA4Dy/vWdQxkYEXvAT7OMuESpriWk0B2Ma9xZ2
+         zOxDBrTLyV0atV7sdAbxWp1prLXrVqyXMfXqJUOk40vjYT66xlCrzlcGzM4ReM5QnwFS
+         67tQ==
+X-Forwarded-Encrypted: i=1; AFNElJ9JEymQQa8wPbyw/xQ9JRh1I2xh4lup+xzMCUBvPeHHJgSE4l7CqldDzVxeczsVeQWpJWN7nn7PE+Y=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yx0nBS4yxB3QWAym791u+YuhM7/ZoyKMMiNs18BdssJr5UzdP5l
+	fD2wwR9Jvq3WFR8m5By29PpsUnz2T3VrotpVH2mrlbsAAI4ryFYMqxK2lsCMas/895oBONxBlUR
+	NFcDEEB8DVtFArl6/mVG7xpcyT6ePVZrFbIKEcvzb5UAgEPTCpCZYI8dDwryw9nkUcSTq
+X-Gm-Gg: Acq92OEMwi4ysGb87f0KG+r6guyPvT6wjwckry19MJsNBtyUTFa8s0r63IbQo+HN4/5
+	UNNjtRJzU1WrIQ9yikp6XOdNIViBxSosvn/7cp2jh4js0Me1t/UPjqjW4aRwKGqD3uph0QkFZmn
+	dIUTz5IskQVscwfrl9crTZ9hZH6NeYDl77QL0fh/RSVKN4e3XRaaHMLhL8NidAsl5YO0tE8CUw0
+	HsXWUnJrntRQ9jArmrT2frR00VgGkcBq6WtGZox3iPmAQf0nLO3TkzAN0bfvxgRgJNzkEfGW+18
+	HR+xTGCESooN/FG1aV6OSIF951ZL8UMP6NPw38gq9XsXq0oWA8CfatgR4D8TaZ66gwSlTduySsD
+	L4C8UwT7EU9nI2HfvrHdzODLIWFF4EaTsMkKtfEzuJ/NV1ruFvIN+fCto0wAACC6t636wbEXyJg
+	FucBbCuhcY8tdvzpmdAm9PmwIWJg==
+X-Received: by 2002:a05:690c:b8e:b0:7cf:d9bc:80af with SMTP id 00721157ae682-7d20c54bdfdmr7903317b3.30.1779323832406;
+        Wed, 20 May 2026 17:37:12 -0700 (PDT)
+X-Received: by 2002:a05:690c:b8e:b0:7cf:d9bc:80af with SMTP id 00721157ae682-7d20c54bdfdmr7902977b3.30.1779323832015;
+        Wed, 20 May 2026 17:37:12 -0700 (PDT)
 Received: from scottml-Latitude-7455 (107-198-5-8.lightspeed.irvnca.sbcglobal.net. [107.198.5.8])
-        by smtp.gmail.com with ESMTPSA id 00721157ae682-7cc991c98d9sm60545717b3.10.2026.05.20.17.37.06
+        by smtp.gmail.com with ESMTPSA id 00721157ae682-7cc991c98d9sm60545717b3.10.2026.05.20.17.37.10
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 20 May 2026 17:37:07 -0700 (PDT)
+        Wed, 20 May 2026 17:37:11 -0700 (PDT)
 From: Michael Scott <mike.scott@oss.qualcomm.com>
 To: linux-arm-msm@vger.kernel.org
 Cc: vkoul@kernel.org, neil.armstrong@linaro.org,
@@ -98,37 +99,40 @@ Cc: vkoul@kernel.org, neil.armstrong@linaro.org,
         bryan.odonoghue@linaro.org, laurentiu.tudor1@dell.com,
         alex.vinarskis@gmail.com, linux-kernel@vger.kernel.org,
         Michael Scott <mike.scott@oss.qualcomm.com>
-Subject: [PATCH 0/4] phy: qcom: qmp-combo fixes + x1-dell-thena DT maintenance
-Date: Wed, 20 May 2026 17:36:11 -0700
-Message-ID: <20260521003615.1260844-1-mike.scott@oss.qualcomm.com>
+Subject: [PATCH 1/4] phy: qcom: qmp-combo: skip USB power_off/exit after device teardown
+Date: Wed, 20 May 2026 17:36:12 -0700
+Message-ID: <20260521003615.1260844-2-mike.scott@oss.qualcomm.com>
 X-Mailer: git-send-email 2.53.0
+In-Reply-To: <20260521003615.1260844-1-mike.scott@oss.qualcomm.com>
+References: <20260521003615.1260844-1-mike.scott@oss.qualcomm.com>
 MIME-Version: 1.0
-X-Proofpoint-ORIG-GUID: sn13hTY2y1gOdPGCr0kfJ7WBPyUC6C3N
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNTIxMDAwMyBTYWx0ZWRfX+vgInrWojUDW
- wmHFdogmA4CCojH7QMtIWfv/T0OAtl2XdVleO7q23XEwUYclnfEIplmYhcjv3UqTNwaSg3BvGdy
- wujuZokSHz1Wz59SS/6gwjBSaoB9i3UaQz7WQauTxHtWKUG6rkUPS62mchyVYsr9o0CFcs4ldmJ
- CIpejAvQ8JkOzh3Bp9zqNijkadDHBgAulndO6QNd1kOEsn5N303PnDAph1Ay8rK/2VcJiKS4JfU
- 0KgYzvYuUX5vYLfRD8VElUj11HXp2+x7Q/Jrof+HWH1ZhE/WuSA2yrU8wxHr90cVV+MVIsTbU/S
- OrC0we69M3zlINpRq+tpcn8sUSmf3JM8P7Igkuhm7ZTX/tVDCv2jNE8tvSaLwhDxvF2qMjMNrkA
- HTiw4DQlI0pV8IpVj0xk5011sBzZv9fzCnYWylIBnH9uT4doX57Z18hjVgRtBYqjNrA5u8PWt/1
- y+zPuygBwZG534LV9bw==
-X-Authority-Analysis: v=2.4 cv=RZigzVtv c=1 sm=1 tr=0 ts=6a0e53b5 cx=c_pps
+X-Authority-Analysis: v=2.4 cv=bfhbluPB c=1 sm=1 tr=0 ts=6a0e53b9 cx=c_pps
  a=0mLRTIufkjop4KoA/9S1MA==:117 a=cdagev08qavQYXHyx3V8vg==:17
- a=IkcTkHD0fZMA:10 a=NGcC8JguVDcA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=gowsoOTTUOVcmtlkKump:22
- a=SOupQL3pC_S58mEsAAwA:9 a=QEXdDO2ut3YA:10 a=WgItmB6HBUc_1uVUp3mg:22
-X-Proofpoint-GUID: sn13hTY2y1gOdPGCr0kfJ7WBPyUC6C3N
+ a=NGcC8JguVDcA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
+ a=u7WPNUs3qKkmUXheDGA7:22 a=YMgV9FUhrdKAYTUUvYB2:22 a=EUspDBNiAAAA:8
+ a=EvQFHbMspfJCUfrvVzMA:9 a=WgItmB6HBUc_1uVUp3mg:22
+X-Proofpoint-GUID: vsrG0887wC1DozJtdbt6bBh0WjmgIsaB
+X-Proofpoint-ORIG-GUID: vsrG0887wC1DozJtdbt6bBh0WjmgIsaB
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNTIxMDAwMyBTYWx0ZWRfX9w2JesLKvoD2
+ taAlbDnB9LJYSwz/bmcanVa3kuA2sJOd4jin8EfdN1jtS3KsXKKfbESHGjcTswjOCS+8VPLgs2f
+ l3N7W+4tsqr8kl/QpnJPyYuwzIuOqBWwjTPenqDNn6cPfiTBXit8QZXFiOLwYFPsGL4DEC7nz0R
+ MTnU6gR+6a51/sUhS9ToUJwW6f80mYPSMGmsXm21ovpz7dFEeT4jhZfIlAYp+0SeM9FfUpXfwol
+ oZ3Ft6V618+1fwLwksyCeaH7hC+3LhlmkUxofFttjL1VMpg0+Bo/PBj9cCWOooySHvkdtaanUwM
+ sYo+3oP7T7H19rlPJYvsg5aSD8nrPTlj7xnDK3BE0O6XdSozZVwtBoDuUh7471y4SVLpeLH4tBk
+ V6f90gttEJFgDXUHmK2HLyfgRxb2vG3RWU9CDadPfBxolmGA5x1KlrFJeojLW8dOVE/Kxe59GAH
+ yJ59oJ+WD2kZxgisGww==
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
  definitions=2026-05-20_03,2026-05-18_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- phishscore=0 suspectscore=0 lowpriorityscore=0 adultscore=0 clxscore=1011
- priorityscore=1501 malwarescore=0 impostorscore=0 bulkscore=0 spamscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2605130000 definitions=main-2605210003
+ phishscore=0 lowpriorityscore=0 impostorscore=0 priorityscore=1501
+ bulkscore=0 clxscore=1015 adultscore=0 spamscore=0 malwarescore=0
+ suspectscore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2605130000
+ definitions=main-2605210003
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260520_173712_249768_57AA1037 
-X-CRM114-Status: GOOD (  21.47  )
+X-CRM114-CacheID: sfid-20260520_173714_543340_0B373303 
+X-CRM114-Status: GOOD (  17.24  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -145,135 +149,106 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Four patches:
+qmp_combo_usb_power_off() is reachable from an external consumer
+(notably dwc3 via phy_exit() during driver unbind) after this device's
+backing resources have already been released along a separate teardown
+chain. The dereference of qmp->pcs (whose ioremap mapping has been
+freed by devm cleanup) then takes a level-3 translation fault and
+oopses.
 
-  * Two pre-existing bug fixes in phy-qcom-qmp-combo that are reachable
-    today on any board which registers a usb_role_switch on this PHY,
-    and will become reachable on more X1E boards as their Type-C
-    support matures (patches 1-2).
+Easily reproducible during testing of USB-C role-switch enablement on
+Dell Latitude 7455 (X1E80100), by writing "none" to a USB-C DWC3's
+usb_role_switch role attribute, e.g.
 
-  * Two dell-thena DT maintenance items: one mirrors a regulator
-    always-on change Hovold applied to the rest of the X1E80100
-    family but that dell-thena missed, and one bumps the linux,cma
-    reserved-memory pool so the camera pipeline can actually
-    allocate buffers alongside a normal desktop (patches 3-4).
+  echo none > /sys/class/usb_role/a800000.usb-role-switch/role
 
-== phy-qcom-qmp-combo fixes (patches 1-2) ==
+which triggers the chain:
 
-Both bugs were found by exercising the typec_mux + role-switch code
-paths on Dell Latitude 7455 (X1E80100, dell-thena). In mainline
-today the bugs are reachable on x1e001de-devkit, which registers a
-usb_role_switch on one USB-C port; they would also fire on any
-future board that opts into the same DT pattern.
+  Unable to handle kernel paging request at virtual address ffff8000876c5400
+  pc : qmp_combo_usb_power_off.isra.0+0x58/0x470 [phy_qcom_qmp_combo]
+  Call trace:
+    qmp_combo_usb_power_off+0x58/0x470 [phy_qcom_qmp_combo]
+    qmp_combo_usb_exit+0x38/0x90 [phy_qcom_qmp_combo]
+    phy_exit
+    dwc3_phy_exit [dwc3]
+    dwc3_core_remove [dwc3]
+    dwc3_remove [dwc3]
+    platform_remove
+    device_release_driver_internal
+    device_driver_detach
+    unbind_store
+    sysfs_kf_write
+    vfs_write
+    ksys_write
+    __arm64_sys_write
+    el0_svc
 
-Patch 1: qmp_combo_usb_power_off() / qmp_combo_usb_exit() can be
-re-entered as ->exit from an external consumer (dwc3 phy_exit during
-driver unbind) after this device's backing devm resources have
-already been released along a separate teardown chain. The
-dereference of qmp->pcs (whose ioremap has been freed) then oopses
-with a level-3 translation fault. The patch adds a usb_init_count
-guard so the re-entry is a no-op. The proper long-term fix is a
-teardown-ordering rework so the QMP PHY outlives any consumer that
-may still call its phy_ops; until then, this guard prevents the
-oops.
+Two WARNs precede the oops from the same teardown chain, confirming
+the resource ordering:
 
-Patch 2: qmp_combo_typec_mux_set() updates the cached qmpphy_mode
-unconditionally, but only reprograms hardware when init_count is
-non-zero. So a typec_mux_set arriving before phy_init updates the
-cache without programming hardware; subsequent calls then see a
-"match" against the cached mode and bail out early, leaving the
-lane mux in whatever state it powered up in. The patch tracks
-separately whether the cache has been committed to hardware, so
-the fast-path bail only happens when the cache truly reflects the
-hardware.
+  WARNING: drivers/clk/clk.c:4494 at clk_nodrv_disable_unprepare+0x8/0x18
+  WARNING: drivers/regulator/core.c:2657 at _regulator_put+0x84/0x98
 
-== DT maintenance (patches 3-4) ==
+i.e. the pipe clock provider has been unregistered and the regulators
+released before qmp_combo_usb_power_off() runs.
 
-Patch 3 marks vreg_l12b_1p2 and vreg_l15b_1p8 always-on. Hovold did
-this for every other X1E80100 board in March 2025; dell-thena landed
-four months later (commit e7733b42111c) and missed the change, which
-leaves the kernel free to disable those LDOs even though several
-board-level fixed regulators have no described vin-supply link back
-to them.
+The proper long-term fix is a teardown-ordering rework so the QMP
+PHY's backing resources outlive any consumer that may still call its
+phy_ops. Pending that, guard the power_off/exit paths with the
+existing usb_init_count balance so re-entry after teardown does not
+oops. usb_init_count tracks the balance of usb_power_on/off; if it
+is zero we have either never powered on or have already powered off,
+and there is nothing to do.
 
-Patch 4 raises linux,cma from 128 MiB to 256 MiB. The 128 MiB pool
-is too small to support libcamera's buffer set in parallel with the
-normal desktop: msm DRM framebuffers, qcom_iris codec buffers, and
-qcom_camss VFE pre-allocations occupy ~100 MiB at GNOME idle,
-leaving ~25 MiB free. libcamera's "simple" pipeline asks for four
-8.35 MiB ABGR8888 frames (32 MiB total) and the fourth allocation
-fails with "dma-heap allocation failure". At 256 MiB, ~150 MiB is
-free at idle -- comfortable headroom.
+The same guard is added to qmp_combo_usb_exit() since it is the entry
+point used by external consumers via phy_exit().
 
-Note for other X1E maintainers: every other X1E80100 / X1E78100 /
-X1P42100 board in mainline is still on the 128 MiB default, and
-several of them carry camera nodes (Dell XPS 13 9345, Medion
-Sprchrgd-14, ASUS Zenbook A14, Microsoft Romulus, Microsoft Denali,
-Lenovo ThinkBook 16). Those boards are likely to hit the same
-allocation failure once libcamera enablement lands on them, and
-should probably take a similar bump. I limited this patch to
-dell-thena because I do not have the other boards on hand to
-verify the resulting CmaFree numbers under a real workload --
-applying the same change blindly across boards I cannot test would
-just shift the guesswork.
+Signed-off-by: Michael Scott <mike.scott@oss.qualcomm.com>
+---
+ drivers/phy/qualcomm/phy-qcom-qmp-combo.c | 22 ++++++++++++++++++++++
+ 1 file changed, 22 insertions(+)
 
-== Patch summary ==
-
-  1/4  phy: qcom: qmp-combo: skip USB power_off/exit after device
-       teardown
-  2/4  phy: qcom: qmp-combo: track whether the cached typec_mux mode
-       was committed to hardware
-  3/4  arm64: dts: qcom: x1-dell-thena: mark l12b and l15b always-on
-  4/4  arm64: dts: qcom: x1-dell-thena: bump linux,cma to 256 MiB
-
-== Testing ==
-
-Hardware: Dell Latitude 7455 (X1E80100), running Ubuntu 26.04.
-
-Test kernel: a local build of Ubuntu's 7.0.0-15-generic source with
-this series applied on top. The series has additionally been verified
-to apply cleanly on mainline v7.1-rc4 via `git am` with zero conflicts,
-which is the base used to generate the patches in this submission.
-
-  - Without this series:
-    * Writing "none" to a manually-bound usb_role_switch reliably
-      oopses the kernel. vmcore captured via kdump-tools; crash(1)
-      analysis confirms qmp->pcs UAF in qmp_combo_usb_power_off,
-      reached via dwc3_remove -> dwc3_phy_exit -> phy_exit ->
-      qmp_combo_usb_exit.
-    * Without patch 2, the first typec_mux_set arriving before
-      phy_init updates the cache but not the hardware; the next
-      call hits "same qmpphy mode, bail out" and the lane mux
-      stays in its default configuration.
-    * libcamera-mediated camera apps (gnome-snapshot, etc.) fail
-      to start with "dma-heap allocation failure for frame-3".
-
-  - With this series:
-    * Role-switch teardown no longer oopses (patch 1's guard).
-    * QMP PHY is reprogrammed on first altmode notification after
-      phy_init (patch 2's committed-state tracking).
-    * CmaFree at GNOME idle is ~150 MiB (was ~25 MiB).
-    * gnome-snapshot opens with a live preview from the OV02E10
-      sensor.
-
-Patches 1-2 were exercised by manually wiring up a usb_role_switch
-on dell-thena and driving the role-switch path; the DT change that
-makes that wiring permanent is not part of this series.
-
-Michael Scott (4):
-  phy: qcom: qmp-combo: skip USB power_off/exit after device teardown
-  phy: qcom: qmp-combo: track whether the cached typec_mux mode was
-    committed to hardware
-  arm64: dts: qcom: x1-dell-thena: mark l12b and l15b always-on
-  arm64: dts: qcom: x1-dell-thena: bump linux,cma to 256 MiB
-
- arch/arm64/boot/dts/qcom/x1-dell-thena.dtsi |  4 ++-
- drivers/phy/qualcomm/phy-qcom-qmp-combo.c   | 47 +++++++++++++++++++++++++++--
- 2 files changed, 48 insertions(+), 3 deletions(-)
-
-base-commit: aa61612ab641d7d62b0b6889f2c7c9251489f6e3
-
---
+diff --git a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+index 93f1aa10d400..4057583c0cfe 100644
+--- a/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
++++ b/drivers/phy/qualcomm/phy-qcom-qmp-combo.c
+@@ -3922,6 +3922,17 @@ static int qmp_combo_usb_power_off(struct phy *phy)
+ 	struct qmp_combo *qmp = phy_get_drvdata(phy);
+ 	const struct qmp_phy_cfg *cfg = qmp->cfg;
+ 
++	/*
++	 * Reachable as ->exit from external consumers (notably dwc3) after
++	 * this device's backing resources have already been released along
++	 * a teardown chain. Refuse to touch registers in that case.
++	 */
++	if (!qmp->usb_init_count) {
++		dev_dbg(qmp->dev, "%s: PHY not powered on, skipping\n",
++			__func__);
++		return 0;
++	}
++
+ 	clk_disable_unprepare(qmp->pipe_clk);
+ 
+ 	/* PHY reset */
+@@ -3966,6 +3977,17 @@ static int qmp_combo_usb_exit(struct phy *phy)
+ 	struct qmp_combo *qmp = phy_get_drvdata(phy);
+ 	int ret;
+ 
++	/*
++	 * See qmp_combo_usb_power_off(): an external consumer may call
++	 * phy_exit() after the QMP device's resources have been torn
++	 * down. usb_init_count tracks usb_init/usb_exit balance.
++	 */
++	if (!qmp->usb_init_count) {
++		dev_dbg(qmp->dev, "%s: PHY not initialised, skipping\n",
++			__func__);
++		return 0;
++	}
++
+ 	mutex_lock(&qmp->phy_mutex);
+ 	ret = qmp_combo_usb_power_off(phy);
+ 	if (ret)
+-- 
 2.53.0
 
 
