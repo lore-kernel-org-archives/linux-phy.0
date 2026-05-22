@@ -4,64 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 41BB8CD4F5B
-	for <linux-phy@archiver.kernel.org>; Fri, 22 May 2026 06:07:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 82B81CD4F5B
+	for <linux-phy@archiver.kernel.org>; Fri, 22 May 2026 06:46:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6zVIZHTIaNaJaXzNy9R6pnMxrj8avGq1wIHRN+oDuvU=; b=lF5xtxu8vc1Sgw
-	fv1Pl7U1lRsopVVGZ0wkeMs7jQvtLihccN8pUKkxOvXwMg94Ec4s5yHHoBbmEiaF8de/3MsrT8Dxt
-	3Yeq6tnNLhULsJlZbCY29lr8Br/HQVqz6Qi1MZ4U7yFW9HH/Trw4dkdwvn3UTmNOp2drplSSKwBwO
-	RRo9kjZumK/LUQ7JBJBKroI1zAPJcbcQTi5YhK5P9tWX2pMPuoKvbSJH87dPSDnqbM+smJno2HHw+
-	alwX7/py6E+Ax4iFPY7ijDEDPEWSMy9d4mYSl4GDp8BLmvi/oYwATqSIFOU5kwno6NI71WaOAI75S
-	4ngwgA8rF+QyCPScT7ww==;
+	List-Owner; bh=K6nIoiPnSsJBYxfZvYHRQs7k/xd6yBfEv77ZZnfUslg=; b=2iPLthP+fPqIdX
+	AzPqZGjuzekEaoFGAzrGw4/ygmfqk/9tooBwqcUu5+ChuLjRrMw5AfXFqaakNSYULeqvUMNO7NHIg
+	BariPUfKD8CDd592d60FBHVY7gqapaqIcdA9grRsBDksjtnlV6xUHWnPVqhf695ko/SCB4DNO9I4G
+	uIygKau0UeZiLX2jaux1AbjcuPPb7u13kv8J9Tl/W1i2y05mAoLiacKq5a8quuW8DNRJus8OCvLMh
+	I1BQ9IaAcoQPYuucXDZMvP6HnfC4jVM+ZwssnZxMyoSenQcRh5tDeMD5WSJBCjCnFDec8naolaK1H
+	/iMqtmYFQSLmjgOYGRXg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wQJ2C-00000009vf6-33Ul;
-	Fri, 22 May 2026 06:07:00 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wQJei-0000000A0Ei-2Dcd;
+	Fri, 22 May 2026 06:46:48 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wQJ29-00000009ve8-3vEr;
-	Fri, 22 May 2026 06:06:59 +0000
+	id 1wQJeg-0000000A0EN-3GPU
+	for linux-phy@lists.infradead.org;
+	Fri, 22 May 2026 06:46:46 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id A973840207;
-	Fri, 22 May 2026 06:06:56 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 04F241F000E9;
-	Fri, 22 May 2026 06:06:55 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id AAB6B60172;
+	Fri, 22 May 2026 06:46:45 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CD18B1F000E9;
+	Fri, 22 May 2026 06:46:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1779430016;
-	bh=Zv+bq8Y4125ZUtVQWA5vR0XBl99zeMI54gkrK9c5vNE=;
+	s=k20260515; t=1779432405;
+	bh=Lmc4GHivIsEB0A3/jAF6LGKkujzqqym8ZZvS1oCGxs8=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=bTaHUPD5OkGxNjL9uDPG4wGMmKtXLO5mPQJ/MqDVK5784jUhIG9jhLGixf0M7782/
-	 xHdlQaLig7FdM8Ht8T9tEHIZRzxp74JaRC7kKg48+RQ7lpqiq7pMnddYb8fyhP7Vj2
-	 BfZUktHANeYE5bMliEjICrkfRZMMGeM3xlKRCUDPMx3ZwybizsnxkJ6A4wjXGmztFg
-	 /t1mgbdSx1cVLlinmtNaMTqk5dumtUrGw3ZRyfNbm/CbxVCjyTamvaTiQhx15KXRUG
-	 mm/WU2adz4GbLOYZph/VQTLmuURBDMePgoZPN1CtvjNIbMTHGZjoIWxkbIhIpFOJof
-	 tRmum7N4OWKNg==
-Date: Fri, 22 May 2026 08:06:54 +0200
+	b=cLHTKI9c3wsL8WarmEDtNBHT352Xv0juZjhw4Dpr3nDirPdj94nuILqg5/tHWMsqF
+	 2BxRXG36V01kZhI4WmAiUAzWRa7i+ERLO/y5pqrtNMb/1xI2z5DSqAIfyFawTx9iUo
+	 vfc6+Blg0oejnEt++1tSXf4GByGeQPjDBeeG31XhF4V0BNa8EAImeYVsYzdEuQzIDW
+	 ahaubWQr+RcXmD+9heeGOYDSdC1l3t44rciCgE7ZgBzMxnjkUxbXWsoRpbzMAN3U6K
+	 p0lNPp+kWcXcq0iCWCeaaZdkziO9xc/xHgtqRY4BHlMIieO1U8j2HXP+vifo+YoE7D
+	 DB06XhgqhqICQ==
+Date: Fri, 22 May 2026 08:46:43 +0200
 From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Christian Marangi <ansuelsmth@gmail.com>
-Cc: Michael Turquette <mturquette@baylibre.com>, 
-	Stephen Boyd <sboyd@kernel.org>, Brian Masney <bmasney@redhat.com>, Rob Herring <robh@kernel.org>, 
+To: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
 	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
-	Lorenzo Bianconi <lorenzo@kernel.org>, Felix Fietkau <nbd@nbd.name>, linux-clk@vger.kernel.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-phy@lists.infradead.org
-Subject: Re: [PATCH v9 2/5] dt-bindings: phy: Add documentation for Airoha
- AN7581 USB PHY
-Message-ID: <20260522-obedient-lovely-kingfisher-2deda1@quoll>
-References: <20260521153645.7028-1-ansuelsmth@gmail.com>
- <20260521153645.7028-3-ansuelsmth@gmail.com>
+	Lorenzo Pieralisi <lpieralisi@kernel.org>, Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kwilczynski@kernel.org>, 
+	Manivannan Sadhasivam <mani@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>, 
+	Bjorn Andersson <andersson@kernel.org>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org
+Subject: Re: [PATCH 1/4] dt-bindings: phy: sc8280xp-qmp-pcie: Document Eliza
+ PCIe phy
+Message-ID: <20260522-crimson-salamander-of-maturity-ef05e5@quoll>
+References: <20260521-eliza-v1-0-97cdbe88389d@oss.qualcomm.com>
+ <20260521-eliza-v1-1-97cdbe88389d@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260521153645.7028-3-ansuelsmth@gmail.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260521_230657_990006_B610D638 
-X-CRM114-Status: GOOD (  15.60  )
+In-Reply-To: <20260521-eliza-v1-1-97cdbe88389d@oss.qualcomm.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,33 +76,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Thu, May 21, 2026 at 05:35:53PM +0200, Christian Marangi wrote:
-> Add documentation for Airoha AN7581 USB PHY that describe the USB PHY
-> for the USB controller.
+On Thu, May 21, 2026 at 07:35:29PM +0530, Krishna Chaitanya Chundru wrote:
+> Add compatibles for the Eliza PCIe QMP PHY's, which supports Gen3x1 and
+> Gen3x2 configurations.
 > 
-> Airoha AN7581 SoC support a maximum of 2 USB port. The USB 2.0 mode is
-> always supported. The USB 3.0 mode is optional and depends on the Serdes
-> mode currently configured on the system for the relevant USB port.
-> 
-> To correctly calibrate, the USB 2.0 port require correct value in
-> "airoha,usb2-monitor-clk-sel" property. Both the 2 USB 2.0 port permit
-> selecting one of the 4 monitor clock for calibration (internal clock not
-> exposed to the system) but each port have only one of the 4 actually
-> connected in HW hence the correct value needs to be specified in DT
-> based on board and the physical port. Normally it's monitor clock 1 for
-> USB1 and monitor clock 2 for USB2.
-> 
-> To correctly setup the Serdes mode attached to the USB 3.0 mode, a phys
-> property is required with the phandle pointing to the correct Serdes port
-> provided by the SCU node. Providing the phys property is optional if USB
-> 3.0 is not used.
-> 
-> Signed-off-by: Christian Marangi <ansuelsmth@gmail.com>
+> Signed-off-by: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
 > ---
->  .../bindings/phy/airoha,an7581-usb-phy.yaml   | 62 +++++++++++++++++++
->  MAINTAINERS                                   |  6 ++
->  2 files changed, 68 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/airoha,an7581-usb-phy.yaml
+>  .../devicetree/bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml         | 6 ++++++
+>  1 file changed, 6 insertions(+)
 
 Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
 
