@@ -4,97 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46C81CD5BAC
-	for <linux-phy@archiver.kernel.org>; Fri, 22 May 2026 09:17:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E2CD7CD5BB0
+	for <linux-phy@archiver.kernel.org>; Fri, 22 May 2026 09:31:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QJLt1zD6taTNLLyxp1HxrV6fIOk8UjiRvYZcz0MXnuo=; b=3H8QIOsTKHdalw
-	+Q8BdKL+ABCY0ju4cyVfb5z0GBGA3bPZrPEXUT35uc4Kz1HAcwYlclTc169zmhpWL2KiQBPfvTzyx
-	lxZCm2gJKeEcjmFv3eDqmSKKZ22ZhJZwk8y7VUBXlItqtYgEw5TFFEEwPcuaxaKgkwZjWVW2Snv2f
-	pvcCRQP92u3S7mPdiX4qH4Z0zsd2ZFlDYE1eHRPph+HGaMEUeDUV6y5PJ6pwEw6V4zH2f8Ba4pS69
-	ZeBsJhTOTN4UU1M6vOy5MfBbjPdrvgwrAl4eL4GNQe8NLl8hsv4GPf01mRObQgnpiCiFy7kq5Ejd7
-	slRgLyz7VhUI7w9vPEgA==;
+	List-Owner; bh=OvBCGBjcKg6LLBF6Yhce8oFXgSJTwPIPrYzygLKt8Lk=; b=JmMKomV5DrfsAa
+	tsfxoc9PImWXdQprYzDEnEGr6w9GH3B37QpujfV/q6urCOdF/6vNx8PCcA+WjIHoGys28CaQidBa6
+	0VuhH5lLvmswYC2XNr8yeAsT8Tt/CCEaSxVcfMW336YEkeU2b6UVhjI6R1NhB5DIjBjgglhMV1gwy
+	5W6tr7FvRd1xqvl4egL31hGx3Ws4smyoWVWS9RKlLZIpISI3g3rPrzjDt/cBGnNn2zhFxWeZ2jTT6
+	7Z644vi+XsHOAPx39aLHfPK1eVJkB6EDed5u6RQL3OwoN7fZkyxwr3irAGRAZJLH7HAgYqRJNON0k
+	WyNZHQ7ATZLZ+o538Xmw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wQM0o-0000000AInz-0A6Z;
-	Fri, 22 May 2026 09:17:46 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1wQME4-0000000AL0v-1wyk;
+	Fri, 22 May 2026 09:31:29 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wQM0l-0000000AIms-0wjb
+	id 1wQME1-0000000AL0E-2lit
 	for linux-phy@lists.infradead.org;
-	Fri, 22 May 2026 09:17:44 +0000
-Received: from pps.filterd (m0279867.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 64M8mlN2399407
-	for <linux-phy@lists.infradead.org>; Fri, 22 May 2026 09:17:43 GMT
+	Fri, 22 May 2026 09:31:26 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 64M6UPME1959859
+	for <linux-phy@lists.infradead.org>; Fri, 22 May 2026 09:31:24 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	AzvTTIr3cJGUQwmNxyvJg4Lnn3zUHh4faG+9J1SDeU0=; b=Ea7evTwvhGg3h4GB
-	byPpTgL7JAzMdGkJwWSTbOsT8P8VAa8n4DxEFfmKHHD9/eTWrCg2Y7jNTtZmgRWw
-	jzqHX0KdeSkKgZmgZkujA4mazWYR4ao5khAgwrb0bs9t0LjUfYJihtasCK78bbO9
-	q9p8/ORoU0LCw6fZJDo1JZf+AU1xoYsvX2qOGRESonCyR/lf+ShrhKNit/N9cUaI
-	PE3+NI8MfKHOUyFGiiZ+KiwNnbYeCrtIp3LjPo+EoFjXJw2B10Mv8CKi7P0p5RCn
-	Tyfna8yy0FQ5JkgP6wQ5lwfEuWgOqqA2WyFGWppOzqRZVtydGy1iILboXfE8pn2s
-	ni3bJQ==
-Received: from mail-pl1-f198.google.com (mail-pl1-f198.google.com [209.85.214.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4ea5p9ukqt-1
+	CmuyIiSD8BrtuoCQP+CAPpqrC+rs5hG3BsCae1P/mCs=; b=YHicWvgIi1t1p7dy
+	a53VKRNrD/g7G30Spr4USby0aatZy/IbRFe86lZr31rcihEBfAhGBsSRRmeQ4I/0
+	SgHEuUunAOE+sXrQO2oH6dFz+vkG4JzXFDQQYihTv8m8EczHzOKkvXArQhrIWC/K
+	5IBg/PzZy/m0W5HYfV3LcNk/CBwvUO2+3EJFMqq1elHuVY9dMmMp8vjqoKHtyx3B
+	rIdTEeMCrcAcw0u9xWXsagl0W4xJ8O9hiX+Lk816HvLR1WVElA2+M7sppAZoj9U6
+	JEKE0PUXNER/UnrSTAcI1+dOF9IUgJfB1bZXVEPUWoNlnZsyqsogdoPSFrUJvFQN
+	6DOXYA==
+Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com [209.85.216.71])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4eahxeruud-1
 	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Fri, 22 May 2026 09:17:42 +0000 (GMT)
-Received: by mail-pl1-f198.google.com with SMTP id d9443c01a7336-2b458add85aso77155675ad.2
-        for <linux-phy@lists.infradead.org>; Fri, 22 May 2026 02:17:42 -0700 (PDT)
+	for <linux-phy@lists.infradead.org>; Fri, 22 May 2026 09:31:24 +0000 (GMT)
+Received: by mail-pj1-f71.google.com with SMTP id 98e67ed59e1d1-369ef27fd09so5405021a91.3
+        for <linux-phy@lists.infradead.org>; Fri, 22 May 2026 02:31:24 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1779441462; x=1780046262; darn=lists.infradead.org;
+        d=oss.qualcomm.com; s=google; t=1779442283; x=1780047083; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:from:content-language
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=AzvTTIr3cJGUQwmNxyvJg4Lnn3zUHh4faG+9J1SDeU0=;
-        b=SvFTtrB72wBoaAbc6MQ8jv7gL4qX2z4jXfB64XM3z+8yleSPK7P9ry0ICWI807rPdQ
-         sApsIJ7sTn/xxIgmde6TBKbfQooVRfGYr58K6Q+UBkkEsb05w0GpM52Mxr2p+yubFSow
-         RSq/oEHLYCSwmkyuMZrWVMz4QNIP/q0iywHOI9Xpebm9au7WhsIbmicTLg/JQuWTa0XG
-         08bnR0FyIOEgG9lDRl/X3VNl/Wi1KOdTKzUGHwDW2kRbweJaJm+dH+Puw2bc5wROGe6o
-         I0HYvwShddn0YaZ1BHnyy8o8PJr8OI7ncTMwW3fIcVoHAB42oL+/XDMQ11NPVytrhI5F
-         Iu+Q==
+        bh=CmuyIiSD8BrtuoCQP+CAPpqrC+rs5hG3BsCae1P/mCs=;
+        b=ZvBY/cL7vuTzgQxW4r1TeebSfDZa36xCgdB/+ruBAYwoTVM+B3UC1J8tNnIrUmPPcS
+         Viep+A7K2mWO8lfveRC8pg1/OHSP5gHtUq2haxh2vythbYDSakv/mAxyRL9kWlc/3EnP
+         H/Zz8LAG5xZ7TQpCF0BqL/2Jk+tatSeLzOmw4wjH88VikkcItNe/lCV1+U6dXjqdwYf+
+         p6NIhR5IcXZWGW0fcJ+pLa1QA7XXCkCy0LPZWGMHpJgdVoMvJdaCohFtzlGE7dbNJUfz
+         Isuo5VnCkIY/2y42vCBWFRIfiY7EmQQOYVWUbZyHKpEP7moeEfwNv4z5S6IrprCFIOh8
+         6p7Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1779441462; x=1780046262;
+        d=1e100.net; s=20251104; t=1779442283; x=1780047083;
         h=content-transfer-encoding:in-reply-to:from:content-language
          :references:cc:to:subject:user-agent:mime-version:date:message-id
          :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=AzvTTIr3cJGUQwmNxyvJg4Lnn3zUHh4faG+9J1SDeU0=;
-        b=Ncwcc0e94dWBNRNUMBaYP7FknQhIb47j/BsMEGYOLHls7pCgjcMp11Ge5qZkzUkLEr
-         mVV6fobsREed2Ia9gkI3HXhEDf6AkA0+WRnEwEdNfZ/J0W3pO1d+9eyHjnep4gJCav7g
-         vsZH7sQKNTCdFarnC8NDbOk3E80AEopppUCR57wD3bVJAe194h2soCDbMnjIqwSEnoau
-         G9ebaxf/683MlshKUYS56ZsPrwb3ZomW9sPUB6HODm4WWNeLnAkryFlmyoQMEXC8IbBK
-         WHibT5a8KZcpuZpxwenT4tmNBwh7Cr6KKalS0mGLMisQABf4sdEFaQlMXpQJA4f6N+6I
-         9A6g==
-X-Forwarded-Encrypted: i=1; AFNElJ8BPXIM12BCsnHftFpP0lh5Hk1P3yRUho5Pxf5/F5NDbXRU+VB64B153lYacU3eeDU5SiTJM5oYB74=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzCX9qu5Q63/COiKSHjd0ZslUgmzvygk1RfpAAfyie5pwfLKs2C
-	x3hC40LHxsXJW29Hviaoq62J+UR/Oo3Z1C3A2CmNng61gEE/rqTzMl2AaKSoMW3EwQV5djhMvf0
-	pYLsjdZsgmp3Vy1x4jXX1D+6W/axI3D2GWQdji6ILPcRDtp6iF7Hq8pghxi6srz0ryIqk
-X-Gm-Gg: Acq92OFh18GBYv50w1W2RWOdY+9fv8V/nnTPyQfp2keYtsCuDgahMchTdDsBAeSKqdg
-	ZadVLfmspkZLX1ePhJfjnTMRQXmRtA+57pFtZvhyLFdsZgjgLhdvBjh5q4BDYDY7yyJwFnMptg6
-	sSmT/reW4Mw6EtuiHNML2ue32/Faw3FI3dDCu7WSUWbGrsnslT87jjAwVBvE0YSA3EXs3UAwWMJ
-	2S9NqByUljjDHI+wKN+Mm1jsdWjjQEC2XplDShF72LCgIrn7qbAq2/6bz5WyjCdsDICbgS4hvtD
-	0VRdKdY0WdPFMlOEnMuo/w1BWn2Buv/JWe+7vPr0O2W7Y2TRSC7aD3kB+GOGPXsMIs7vKyQhnyU
-	Kp7YrywgwkFuCVSShqa/t6aCxjSJtErRvu7GM8AwTec5s/8tjVHeu0g==
-X-Received: by 2002:a05:6300:6d8d:10b0:3b2:8675:47ef with SMTP id adf61e73a8af0-3b328ed49damr1680130637.45.1779441461900;
-        Fri, 22 May 2026 02:17:41 -0700 (PDT)
-X-Received: by 2002:a05:6300:6d8d:10b0:3b2:8675:47ef with SMTP id adf61e73a8af0-3b328ed49damr1680096637.45.1779441461364;
-        Fri, 22 May 2026 02:17:41 -0700 (PDT)
+        bh=CmuyIiSD8BrtuoCQP+CAPpqrC+rs5hG3BsCae1P/mCs=;
+        b=igEtIVn6ziwxT+nOU5Fb54a3i9WoQMLTmqO38RdxJ/gMvDw0SDc9ka15/Ngwo2Gtvk
+         44nPlJEO3reqMO00B0GNp8NamhcQmru2HjFbHqnpWm6pIUE+ZQ9Wl3xLdKVriIoiRQkZ
+         445zhP7qVv4rPhF4+9/RS/u8aAyWaN/ssEP85upFMnW4ucuqam1Ff8XxRLJWp4cmHIL5
+         6sLNKIBOhnw0WRAJk1QJqVugxLFnyuChJfusc0CbLkThd84nIHxdLMe0BsnFg5WeRcFV
+         FIRuM0Nvhh8K37/8GKWvJEuGs4Zp5H/XnJ7zfJaMhfKbkcm8+WmMeLGZa7SWodm2zkr4
+         tV1Q==
+X-Forwarded-Encrypted: i=1; AFNElJ/QbfNHQAOG10KJwU1rmjqT6ksDuU6CJMzonbZxR0eRG0yNes5xCO24nDdfnWCjS1xQHYkeFk0y/44=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyJiYJlQ94rh/ylKu1cH3xZcaCVcbqUll9k0DhJLnzHFbtSdCzJ
+	POkM+ys6SQfCEJUIYx1ApBxDhkJAcBRNqRCpjmS2b3JrDjHeid/AeWmx4OZMuxdPhc2aUuYMXBF
+	TSELXjVKc8r90tBZRzgRHtJ/+2qUJ2rXjVAi6ph5WHBjeAh5dmsbRtKZGPXvQfa6gOtEw
+X-Gm-Gg: Acq92OEmJIL3LXiKWK1cjq2hYHfLpUt/FfSyug8uBSi3cEDUlXlho3uQeNvoeo6jr58
+	HS3bHyjbXkPxPvnhvrQ/jnSf1HAenrUyzzFnKJr9+aDoBivssq9CNU3Bq4U2Npd5k4QCTdXIdFd
+	e4Tszfcn7EDJfRkfznuZUlbkOMj2dqfzUT/DsJ3se8MR7NCVeLzHfs4T2waplb5uDWyOCjjQavB
+	0h12ZJ4ydpes52A38Ns4HaJfzeUfkJeSSV/47f/BS9LTixRStxUFdXjmvKOZARxtQW9umsxN/ZC
+	SdzU2Y61brYVmbKp7ZuIyr02G8PCZjQb0Ys8xBhK7R6rNRkic5eAt0+GOlyZxklu0JWjct7O4h8
+	m80zjv5L5Bh1OJI5T8Qq6DkSp2HtLBKk11gjsqJ8GTdmjqMaZP+bDeLk/wL+0MquI
+X-Received: by 2002:a17:90b:2584:b0:368:6159:980c with SMTP id 98e67ed59e1d1-36a676276b9mr2733220a91.20.1779442283321;
+        Fri, 22 May 2026 02:31:23 -0700 (PDT)
+X-Received: by 2002:a17:90b:2584:b0:368:6159:980c with SMTP id 98e67ed59e1d1-36a676276b9mr2733193a91.20.1779442282825;
+        Fri, 22 May 2026 02:31:22 -0700 (PDT)
 Received: from [10.92.193.94] ([202.46.23.19])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-84165003369sm1548246b3a.57.2026.05.22.02.17.36
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-36a6772f486sm936162a91.2.2026.05.22.02.31.17
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Fri, 22 May 2026 02:17:41 -0700 (PDT)
-Message-ID: <1cf87303-2394-454b-9541-4a3ea4f3ff4a@oss.qualcomm.com>
-Date: Fri, 22 May 2026 14:47:35 +0530
+        Fri, 22 May 2026 02:31:22 -0700 (PDT)
+Message-ID: <5593d136-569e-4ba9-9a2f-e635125899aa@oss.qualcomm.com>
+Date: Fri, 22 May 2026 15:01:16 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 2/4] dt-bindings: PCI: qcom: Document the Eliza PCIe
- Controller
+Subject: Re: [PATCH 3/4] PCI: qcom: Add Support for Eliza
 To: Krzysztof Kozlowski <krzk@kernel.org>
 Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
  <neil.armstrong@linaro.org>,
@@ -111,39 +110,39 @@ Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
         linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
         linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org
 References: <20260521-eliza-v1-0-97cdbe88389d@oss.qualcomm.com>
- <20260521-eliza-v1-2-97cdbe88389d@oss.qualcomm.com>
- <20260522-calm-bug-of-kindness-2dfae2@quoll>
+ <20260521-eliza-v1-3-97cdbe88389d@oss.qualcomm.com>
+ <20260522-discerning-sympathetic-moth-daa9e7@quoll>
 Content-Language: en-US
 From: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
-In-Reply-To: <20260522-calm-bug-of-kindness-2dfae2@quoll>
-X-Authority-Analysis: v=2.4 cv=DKm/JSNb c=1 sm=1 tr=0 ts=6a101f36 cx=c_pps
- a=MTSHoo12Qbhz2p7MsH1ifg==:117 a=j4ogTh8yFefVWWEFDRgCtg==:17
+In-Reply-To: <20260522-discerning-sympathetic-moth-daa9e7@quoll>
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNTIyMDA5MyBTYWx0ZWRfX136lHQXzhl4U
+ MEEj5cNJc9KTeoMoD6fw/F6eByAa7Iz87tM20i+U4fe1Puy1lGp8IwnwQcpEnRoruKsdUwF3Rlx
+ mPh1wF1diAeHgCaIIZYTD88/c8qQQNGnihqcQ1/Nk4X19MhYCfQpeeUj7c306GzggbD48I4Wy0R
+ oE/H0/w7Gxof3bhkqUa1I37osd7PS/4TGIGNxk3j2ddvLVkB0YThm1ALJvIi4PzaRPRwUdDiK3W
+ n9EqdAqn7DYx49xy9f8Q7zln4IFCfzMUhysvEJJqQo3t+BWmy6mPcq6Q/k4x4oaHvmkJjpRr+7H
+ pUzJlYXMtfjmnLKFxI++OqltVVrdtVJl1k6M+vqWLLfOXbbL5wuCtQFQNub3g0xNnWZZz6iaczK
+ NePiOXRIAQWYEKDJ2PNYC97ry0+obJjCjjcidVSHXm2rla8t1iwfhdUL2n8WLvwGP2BC0wA0u5n
+ 7XkEg53HzZW9A+UzWgw==
+X-Proofpoint-GUID: gvajTyCmWX30bEy89mU2URm2acqCFrsh
+X-Proofpoint-ORIG-GUID: gvajTyCmWX30bEy89mU2URm2acqCFrsh
+X-Authority-Analysis: v=2.4 cv=ar2CzyZV c=1 sm=1 tr=0 ts=6a10226c cx=c_pps
+ a=UNFcQwm+pnOIJct1K4W+Mw==:117 a=j4ogTh8yFefVWWEFDRgCtg==:17
  a=IkcTkHD0fZMA:10 a=NGcC8JguVDcA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=eoimf2acIAo5FJnRuUoq:22
- a=2kbbHuhoKpOpG5pfR5YA:9 a=YgbPQC_rjE-wQlsd:21 a=QEXdDO2ut3YA:10
- a=GvdueXVYPmCkWapjIL-Q:22
-X-Proofpoint-GUID: MlK-B8aCzMTFuHPzzBMURcYAqysEjINR
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNTIyMDA5MiBTYWx0ZWRfX/r6RILhf7OD2
- T5sgnQRF6+9AXCN61c/hhXu7GhLBtqUxemgU/bsa6+ZnSfoll3t48TYGd8e3UPocx809y4t3xLb
- aITZv7mgRqQYGIRRJMbm7PHe6Z75VPdfd38WRfcES10BlYyuWarppscFtEA5snKSJVKzaSkL63M
- dlHGCAPkmW8aXWzXHq/12KvPh4UCOnBE1oUiMgsJajRh1OTxoCPJb6Nr+tERdxRmf6oh1Tcluiz
- V7YMrP7QFDImxlOnUjvZPsNlYuO429rWfWe28LBsFfCjJxVDMT4rkphyE08lCQiMd40p2NOcmx7
- T3Fh5ZhfrvvwE3Gj4WU9Seklx8cMZR3dbCQXHNE3WGu32OIcC4Mz8XIS5NlBV1mdzBR+Z9M79zH
- BJo2u64zhPusJ5Ym5AJv/CeunWhPViUzMSGL8QawuMUMvmEpHpV5egtTH25iEgvcz7guLVWJHpp
- c5ph3pkuI/3St4ABEQw==
-X-Proofpoint-ORIG-GUID: MlK-B8aCzMTFuHPzzBMURcYAqysEjINR
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=ZpdpYltYx_vBUK5n70dp:22
+ a=EUspDBNiAAAA:8 a=jbukJSVhv8iEu2CO0E0A:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
+ a=uKXjsCUrEbL0IQVhDsJ9:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
  definitions=2026-05-22_02,2026-05-18_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- bulkscore=0 malwarescore=0 spamscore=0 phishscore=0 suspectscore=0
- priorityscore=1501 clxscore=1015 impostorscore=0 adultscore=0
- lowpriorityscore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ impostorscore=0 bulkscore=0 spamscore=0 malwarescore=0 adultscore=0
+ clxscore=1015 priorityscore=1501 phishscore=0 lowpriorityscore=0
+ suspectscore=0 classifier=typeunknown authscore=0 authtc= authcc=
  route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2605130000
- definitions=main-2605220092
+ definitions=main-2605220093
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260522_021743_277704_F95FBEF9 
-X-CRM114-Status: GOOD (  12.94  )
+X-CRM114-CacheID: sfid-20260522_023125_819052_EDFC6E01 
+X-CRM114-Status: GOOD (  18.61  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -155,183 +154,39 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
-
-On 5/22/2026 12:20 PM, Krzysztof Kozlowski wrote:
-> On Thu, May 21, 2026 at 07:35:30PM +0530, Krishna Chaitanya Chundru wrote:
->> +description:
->> +  Qualcomm ELIZA SoC (and compatible) PCIe root complex controller is based on
->> +  the Synopsis DesignWare PCIe IP.
->> +
->> +properties:
->> +  compatible:
->> +    const: qcom,pcie-eliza
-> All new pcie compatibles moved to correct format.
-Ack, I will change it to qcom,elize-pcie
->> +
->> +  reg:
->> +    minItems: 5
->> +    maxItems: 6
->> +
->> +  reg-names:
->> +    minItems: 5
->> +    items:
->> +      - const: parf # Qualcomm specific registers
->> +      - const: dbi # DesignWare PCIe registers
->> +      - const: elbi # External local bus interface registers
->> +      - const: atu # ATU address space
->> +      - const: config # PCIe configuration space
->> +      - const: mhi # MHI registers
->> +
->> +  clocks:
->> +    maxItems: 7
->> +
->> +  clock-names:
->> +    items:
->> +      - const: aux # Auxiliary clock
->> +      - const: cfg # Configuration clock
->> +      - const: bus_master # Master AXI clock
->> +      - const: bus_slave # Slave AXI clock
->> +      - const: slave_q2a # Slave Q2A clock
->> +      - const: ddrss_sf_tbu # PCIe SF TBU clock
->> +      - const: cnoc_sf_axi # Config NoC PCIe1 AXI clock
->> +
->> +  interrupts:
->> +    minItems: 8
-> This should not be flexible. Neither 'reg'.
-ack I will remove minItems
->> +    maxItems: 9
->> +
->> +  interrupt-names:
->> +    minItems: 8
->> +    items:
->> +      - const: msi0
->> +      - const: msi1
->> +      - const: msi2
->> +      - const: msi3
->> +      - const: msi4
->> +      - const: msi5
->> +      - const: msi6
->> +      - const: msi7
->> +      - const: global
->> +
->> +  resets:
->> +    maxItems: 2
->> +
->> +  reset-names:
->> +    items:
->> +      - const: pci # PCIe core reset
->> +      - const: link_down # PCIe link down reset
->> +
->> +required:
->> +  - power-domains
->> +  - resets
->> +  - reset-names
->> +
->> +allOf:
->> +  - $ref: qcom,pcie-common.yaml#
->> +
->> +unevaluatedProperties: false
->> +
->> +examples:
->> +  - |
->> +    #include <dt-bindings/clock/qcom,eliza-gcc.h>
->> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
->> +    #include <dt-bindings/interconnect/qcom,eliza-rpmh.h>
->> +
->> +    soc {
->> +        #address-cells = <2>;
->> +        #size-cells = <2>;
->> +
->> +        pcie@1c00000 {
->> +            compatible = "qcom,pcie-eliza";
->> +            reg = <0 0x01c00000 0 0x3000>,
->> +                  <0 0x40000000 0 0xf1d>,
->> +                  <0 0x40000f20 0 0xa8>,
->> +                  <0 0x40001000 0 0x1000>,
->> +                  <0 0x40100000 0 0x100000>;
->> +            reg-names = "parf", "dbi", "elbi", "atu", "config";
->> +            ranges = <0x01000000 0x0 0x00000000 0x0 0x40200000 0x0 0x100000>,
->> +                     <0x02000000 0x0 0x40300000 0x0 0x40300000 0x0 0x3d00000>;
->> +
->> +            bus-range = <0x00 0xff>;
->> +            device_type = "pci";
->> +            linux,pci-domain = <0>;
->> +            num-lanes = <1>;
->> +
->> +            #address-cells = <3>;
->> +            #size-cells = <2>;
->> +
->> +            clocks = <&gcc GCC_PCIE_0_AUX_CLK>,
->> +                     <&gcc GCC_PCIE_0_CFG_AHB_CLK>,
->> +                     <&gcc GCC_PCIE_0_MSTR_AXI_CLK>,
->> +                     <&gcc GCC_PCIE_0_SLV_AXI_CLK>,
->> +                     <&gcc GCC_PCIE_0_SLV_Q2A_AXI_CLK>,
->> +                     <&gcc GCC_DDRSS_PCIE_SF_QTB_CLK>,
->> +                     <&gcc GCC_CNOC_PCIE_SF_AXI_CLK>;
->> +            clock-names = "aux",
->> +                          "cfg",
->> +                          "bus_master",
->> +                          "bus_slave",
->> +                          "slave_q2a",
->> +                          "ddrss_sf_tbu",
->> +                          "cnoc_sf_axi";
->> +
->> +            dma-coherent;
->> +
->> +            interrupts = <GIC_SPI 376 IRQ_TYPE_LEVEL_HIGH>,
->> +                         <GIC_SPI 478 IRQ_TYPE_LEVEL_HIGH>,
->> +                         <GIC_SPI 479 IRQ_TYPE_LEVEL_HIGH>,
->> +                         <GIC_SPI 535 IRQ_TYPE_LEVEL_HIGH>,
->> +                         <GIC_SPI 536 IRQ_TYPE_LEVEL_HIGH>,
->> +                         <GIC_SPI 537 IRQ_TYPE_LEVEL_HIGH>,
->> +                         <GIC_SPI 540 IRQ_TYPE_LEVEL_HIGH>,
->> +                         <GIC_SPI 653 IRQ_TYPE_LEVEL_HIGH>,
->> +                         <GIC_SPI 370 IRQ_TYPE_LEVEL_HIGH>;
->> +            interrupt-names = "msi0", "msi1", "msi2", "msi3",
->> +                              "msi4", "msi5", "msi6", "msi7", "global";
->> +            #interrupt-cells = <1>;
->> +            interrupt-map-mask = <0 0 0 0x7>;
->> +            interrupt-map = <0 0 0 1 &intc 0 0 0 564 IRQ_TYPE_LEVEL_HIGH>, /* int_a */
->> +                            <0 0 0 2 &intc 0 0 0 565 IRQ_TYPE_LEVEL_HIGH>, /* int_b */
->> +                            <0 0 0 3 &intc 0 0 0 566 IRQ_TYPE_LEVEL_HIGH>, /* int_c */
->> +                            <0 0 0 4 &intc 0 0 0 567 IRQ_TYPE_LEVEL_HIGH>; /* int_d */
->> +
->> +            interconnects = <&pcie_noc MASTER_PCIE_0 0 &mc_virt SLAVE_EBI1 0>,
->> +                            <&gem_noc MASTER_APPSS_PROC 0 &cnoc_main SLAVE_PCIE_0 0>;
->> +            interconnect-names = "pcie-mem", "cpu-pcie";
->> +
->> +            iommu-map = <0x0 &apps_smmu 0x1480 0x1>,
->> +                        <0x100 &apps_smmu 0x1481 0x1>;
->> +
->> +            pinctrl-0 = <&pcie0_default_state>;
->> +            pinctrl-names = "default";
->> +
->> +            power-domains = <&gcc GCC_PCIE_0_GDSC>;
->> +
->> +            resets = <&gcc GCC_PCIE_0_BCR>,
->> +                     <&gcc GCC_PCIE_0_LINK_DOWN_BCR>;
->> +            reset-names = "pci",
->> +                          "link_down";
->> +
-> Drop stray blank line.
-ack.
-
-- Krishna Chaitanya.
->> +        };
->> +    };
->>
->> -- 
->> 2.34.1
->>
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+CgpPbiA1LzIyLzIwMjYgMTI6MjEgUE0sIEtyenlzenRvZiBLb3psb3dza2kgd3JvdGU6Cj4gT24g
+VGh1LCBNYXkgMjEsIDIwMjYgYXQgMDc6MzU6MzFQTSArMDUzMCwgS3Jpc2huYSBDaGFpdGFueWEg
+Q2h1bmRydSB3cm90ZToKPj4gQWRkIHN1cHBvcnQgZm9yIEVsaXphIHNvYywgd2hpY2ggaGFzIHR3
+byBQQ0llIGNvbnRyb2xsZXJzIGNhcGFibGUKPj4gb2YgOEdUL3MgWDEgYW5kIDhHVC9zIFgyLCB1
+c2luZyB0aGUgY2ZnXzFfOV8wIGNvbmZpZ3VyYXRpb24uCj4+Cj4+IFNpZ25lZC1vZmYtYnk6IEty
+aXNobmEgQ2hhaXRhbnlhIENodW5kcnUgPGtyaXNobmEuY2h1bmRydUBvc3MucXVhbGNvbW0uY29t
+Pgo+PiAtLS0KPj4gIGRyaXZlcnMvcGNpL2NvbnRyb2xsZXIvZHdjL3BjaWUtcWNvbS5jIHwgMSAr
+Cj4+ICAxIGZpbGUgY2hhbmdlZCwgMSBpbnNlcnRpb24oKykKPj4KPj4gZGlmZiAtLWdpdCBhL2Ry
+aXZlcnMvcGNpL2NvbnRyb2xsZXIvZHdjL3BjaWUtcWNvbS5jIGIvZHJpdmVycy9wY2kvY29udHJv
+bGxlci9kd2MvcGNpZS1xY29tLmMKPj4gaW5kZXggYWY2YmY1Y2NlNjViLi40MGYwYTVmMjQ3ZWIg
+MTAwNjQ0Cj4+IC0tLSBhL2RyaXZlcnMvcGNpL2NvbnRyb2xsZXIvZHdjL3BjaWUtcWNvbS5jCj4+
+ICsrKyBiL2RyaXZlcnMvcGNpL2NvbnRyb2xsZXIvZHdjL3BjaWUtcWNvbS5jCj4+IEBAIC0yMTIz
+LDYgKzIxMjMsNyBAQCBzdGF0aWMgaW50IHFjb21fcGNpZV9yZXN1bWVfbm9pcnEoc3RydWN0IGRl
+dmljZSAqZGV2KQo+PiAgc3RhdGljIGNvbnN0IHN0cnVjdCBvZl9kZXZpY2VfaWQgcWNvbV9wY2ll
+X21hdGNoW10gPSB7Cj4+ICAJeyAuY29tcGF0aWJsZSA9ICJxY29tLHBjaWUtYXBxODA2NCIsIC5k
+YXRhID0gJmNmZ18yXzFfMCB9LAo+PiAgCXsgLmNvbXBhdGlibGUgPSAicWNvbSxwY2llLWFwcTgw
+ODQiLCAuZGF0YSA9ICZjZmdfMV8wXzAgfSwKPj4gKwl7IC5jb21wYXRpYmxlID0gInFjb20scGNp
+ZS1lbGl6YSIsIC5kYXRhID0gJmNmZ18xXzlfMCB9LAo+IFNvIGNvbXBhdGlibGUgd2l0aCBzbTg1
+NTAuIFdoeSBpc24ndCB0aGlzIGV4cGxhaW5lZCBpbiBjb21taXQgbXNnIG9mCj4gdGhlIGJpbmRp
+bmc/Ck5vLCBQQ0llIGNvbnRyb2xsZXIgaXMgbm90IGNvbXBhdGlibGUgd2l0aCBzbTg1NTAsIHdl
+IGFyZSBqdXN0IHJlIHVzaW5nIHRoZSBib290CnNlcXVlbmNlIHVzZWQgYnkgdGhlIHNtODU1MC4K
+PiBBbnl3YXksIGRyb3AgdGhlIGNoYW5nZSwgcG9pbnRsZXNzLiBMb29rIGhvdyBvdGhlciBkZXZp
+Y2VzIGhhbmRsZSB0aGlzIC0KPiBkbyB5b3Ugc2VlIGthYW5hcGFsaSBoZXJlPyBOby4KQXMgd2Ug
+YXJlIGdvaW5nIHRvIHVzZSBkaWZmZXJlbnQgZHRzIHNjaGVtYSBmb3IgdGhpcyBjb250cm9sbGVy
+IHdlIGNhbid0CnJlYWxseSByZS11c2UKbGlrZSBob3cgd2UgaGF2ZSBkb25lIGluIGthYW5hcGFs
+aSBjYXNlLsKgIGthYW5wYWxpIGlzIHJldXNpbmcgc204NTUwIHNjaGVtYSwgd2hlcmUKdGhpcyBj
+b250cm9sbGVyIGNhbid0IHVzZSBzbTg1NTAgc2NoZW1hLCBhcyBzb21lIGNsb2NrcyBhcmUgZGlm
+ZmVyZW50LgoKLSBLcmlzaG5hIENoYWl0YW55YS4KPgo+IEJlc3QgcmVnYXJkcywKPiBLcnp5c3p0
+b2YKPgoKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRl
+YWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4
+LXBoeQo=
