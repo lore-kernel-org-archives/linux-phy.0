@@ -4,64 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7B5C3CD5BB0
-	for <linux-phy@archiver.kernel.org>; Fri, 22 May 2026 21:37:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B78D6CD5BBF
+	for <linux-phy@archiver.kernel.org>; Sat, 23 May 2026 02:20:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AD8g/PtMvIUBe0O8/PloMt0rZvO27L9waQ40h5qEto0=; b=YLQUEVOFAvfJJl
-	jaCT0ypjAb0Y2ZGlVnguKsTsK6toHj4jrfIr3ZrAV5Sd/jDKe5n8h9luPJdIxF1kdLGIRgjqwvTpt
-	wXcCTIww4oq+nRg5NALc9QJFp4/Wh4/kdzKY0/19k9phRB1Ej4bd3PjIQSlIFxk10WnxGEPh8XZRA
-	qgRKa8VT5u7rAd1M1CuLExP4xsbZ/P3D9RUSTereQWwGf935lIziu3UOA+junOBXsNIdP0OfhMl2L
-	nmdEHNYAa/STnuCaZSxejea/mQfaOzK0sa/CMXa/ZuGYy1150ckzV2GxKbA0e9TNzCF9AtKuuPkJp
-	Dhw8/Z3MKu4GjcTJnBEQ==;
+	List-Owner; bh=AHg+rTbBBUDxjUt7+L2WwTInLoQzuH5C5SOq7D/024A=; b=hx3SqWPYif+mOW
+	DnK/taNz4AoWmX15+estP1cx1OOoV/+HVp4gnGMB7Ur4dsrQJbeMwDC0uZzz8TIsqMdTyYNyQMWhN
+	XsUziJ+1tvsRfe4B7wDvyEtGymuSxDgVazodqMwiByPh3gtWrmFWpkzQVksi6nPd++c08Tw+uobLt
+	teAYq6/aRIrJNLyWHUMs01z+JTd+r0RkEZNTQyZFVfS0sdRdXbrWkELRA3V1Zljegssci2VaY4h1R
+	2eKmAf8r2qKsLIOmsl8W6RB1aRTpjHjGrvtFEZpTrN9YqpOK0dEg7dIkqXa2Q6h/weBuQuY2RPcnE
+	zZ8uTVLFdbM90Hlt7oVQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wQXZ1-0000000C0Yz-14Lk;
-	Fri, 22 May 2026 21:37:51 +0000
+	id 1wQbyh-0000000CWL7-3c2Q;
+	Sat, 23 May 2026 02:20:39 +0000
 Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wQXYz-0000000C0Yd-0rSv
+	id 1wQbyg-0000000CWKj-0PTY
 	for linux-phy@lists.infradead.org;
-	Fri, 22 May 2026 21:37:49 +0000
+	Sat, 23 May 2026 02:20:38 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 7D67060103;
-	Fri, 22 May 2026 21:37:48 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C8D4D1F000E9;
-	Fri, 22 May 2026 21:37:45 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 1921960217;
+	Sat, 23 May 2026 02:20:37 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CAF8B1F00ACF;
+	Sat, 23 May 2026 02:20:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1779485868;
-	bh=rKySuRH7zxmKCkRj+vsH6WLK86VeQbARbGCmHU+Y/HI=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=bfU8jLI2yGgJ3S8yrF4rdgC5styfISFtbqUQutRoKEdI6SnhOTpvbwhLfdrndcTsa
-	 +bfIF8AAU0aOQ4Pk7SAfasWZTu0J//QGjMm+0Mw0YB8p+UO2PdO/mFGahGimEqKJx7
-	 Z19tzRTKvAefScpofcsg1goggwxVwonn1DOpcfBm403OGjEXxzigt7hy09yItg4y48
-	 5grJVQcaY3fJpC6I4rsmmJvQbAlGt1Uklz7Fetg1MQaBskuPcKc8A7PcW7oPRBM1me
-	 bGrkadhxfZ3g74ZO1eRP4pDSPL0UVo+Kxr6iwZlwoHdZU8lWjEELBA1iIEi+M+to9C
-	 jiIjbyCsEraBw==
-Message-ID: <b5dc7f51-b71c-46b1-823b-76f02d325acb@kernel.org>
-Date: Fri, 22 May 2026 22:37:44 +0100
+	s=k20260515; t=1779502836;
+	bh=fBqQY9ZHL/9cRLn8Occ+Ug3mEK4c+qwKMVy6BmevSGc=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References;
+	b=S3kSZj3u8L9wzn3G0IySJ/qib8kxdjnTrF5+H9P2Q/MLQmpUIAQLBfmZMi/wX6sr7
+	 Pe+xbSNDmhnFtf5FODb38MDAfPysadCA/pIxypN2s4DPeTqhkxX8+yzrjLyraz6Ers
+	 0OXBcqilsc0/RrfpbKbvb1FLBU5BKOPg7GmHj1zLgkHhrnzRXi5mmynSRXZhTltx74
+	 KlwKmksUHzwDrSR4I+fKg9gYJTHYBrYpLUc1z+3+SSWtCaioSAZCsED5dMANX2lGtV
+	 lTFMgXzx6skzbFFILszhlSTAhgYtD2JVxO8mAH0yzkF3FHmGOg3nIfvWjM62gBG7J7
+	 ZzuboHbBnY1jQ==
+From: Bjorn Andersson <andersson@kernel.org>
+To: robin.clark@oss.qualcomm.com,
+	lumag@kernel.org,
+	abhinav.kumar@linux.dev,
+	sean@poorly.run,
+	marijn.suijten@somainline.org,
+	maarten.lankhorst@linux.intel.com,
+	mripard@kernel.org,
+	tzimmermann@suse.de,
+	airlied@gmail.com,
+	simona@ffwll.ch,
+	robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	quic_mahap@quicinc.com,
+	konradybcio@kernel.org,
+	mani@kernel.org,
+	James.Bottomley@HansenPartnership.com,
+	martin.petersen@oracle.com,
+	vkoul@kernel.org,
+	kishon@kernel.org,
+	cros-qcom-dts-watchers@chromium.org,
+	Ritesh Kumar <quic_riteshk@quicinc.com>
+Cc: linux-phy@lists.infradead.org,
+	linux-arm-msm@vger.kernel.org,
+	dri-devel@lists.freedesktop.org,
+	freedreno@lists.freedesktop.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-scsi@vger.kernel.org,
+	quic_vproddut@quicinc.com
+Subject: Re: (subset) [PATCH v4 0/2] Add edp reference clock for lemans
+Date: Fri, 22 May 2026 21:20:02 -0500
+Message-ID: <177950280338.1097700.6276233449765894719.b4-ty@kernel.org>
+X-Mailer: git-send-email 2.53.0
+In-Reply-To: <20260128114853.2543416-1-quic_riteshk@quicinc.com>
+References: <20260128114853.2543416-1-quic_riteshk@quicinc.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v7 1/2] dt-bindings: phy: qcom: Add CSI2 C-PHY/DPHY schema
-To: "Rob Herring (Arm)" <robh@kernel.org>,
- Bryan O'Donoghue <bryan.odonoghue@linaro.org>
-Cc: linux-kernel@vger.kernel.org, Kishon Vijay Abraham I <kishon@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>, linux-phy@lists.infradead.org,
- linux-media@vger.kernel.org, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, linux-arm-msm@vger.kernel.org,
- Vinod Koul <vkoul@kernel.org>, devicetree@vger.kernel.org,
- Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
-References: <20260522-x1e-csi2-phy-v7-0-79cb1280fad6@linaro.org>
- <20260522-x1e-csi2-phy-v7-1-79cb1280fad6@linaro.org>
- <svzHygggdG4PSd3qFMz0chRKqXNkhZwTvHoC3_oynq8e5HYOEn-_EHLnXm1w959nIDz9GaLZG9MgXqAJPNhWSA==@protonmail.internalid>
- <177946855028.3571140.11988520251406266072.robh@kernel.org>
-Content-Language: en-US
-From: Bryan O'Donoghue <bod@kernel.org>
-In-Reply-To: <177946855028.3571140.11988520251406266072.robh@kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,92 +91,64 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 22/05/2026 17:49, Rob Herring (Arm) wrote:
+
+On Wed, 28 Jan 2026 17:18:48 +0530, Ritesh Kumar wrote:
+> On lemans chipset, edp reference clock is being voted by ufs mem phy
+> (ufs_mem_phy: phy@1d87000). But after commit 77d2fa54a945
+> ("scsi: ufs: qcom : Refactor phy_power_on/off calls") edp reference
+> clock is getting turned off, leading to below phy poweron failure on
+> lemans edp phy.
 > 
-> On Fri, 22 May 2026 15:45:09 +0100, Bryan O'Donoghue wrote:
->> Add a base schema initially compatible with x1e80100 to describe MIPI CSI2
->> PHY devices.
->>
->> The hardware can support both CPHY, DPHY and a special split-mode DPHY.
->>
->> The schema here defines three ports:
->>
->> port@0:
->>      The first input port where a sensor is always required.
->>
->> port@1:
->>      A second optional input port which if present implies DPHY split-mode.
->>
->> port@2:
->>      A third always required output port which connects to the controller.
->>
->> The CSIPHY devices have their own pinouts on the SoC as well as their own
->> individual voltage rails.
->>
->> The need to model voltage rails on a per-PHY basis leads us to define
->> CSIPHY devices as individual nodes.
->>
->> Two nice outcomes in terms of schema and DT arise from this change.
->>
->> 1. The ability to define on a per-PHY basis voltage rails.
->> 2. The ability to require those voltage.
->>
->> We have had a complete bodge upstream for this where a single set of
->> voltage rail for all CSIPHYs has been buried inside of CAMSS.
->>
->> Much like the I2C bus which is dedicated to Camera sensors - the CCI bus in
->> CAMSS parlance, the CSIPHY devices should be individually modelled.
->>
->> Signed-off-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
->> ---
->>   .../bindings/phy/qcom,x1e80100-csi2-phy.yaml       | 208 +++++++++++++++++++++
->>   1 file changed, 208 insertions(+)
->>
+> [   19.830220] phy phy-aec2a00.phy.10: phy poweron failed --> -110
+> [   19.842112] mdss_0_disp_cc_mdss_dptx0_link_clk status stuck at 'off'
+> [   19.842131] WARNING: CPU: 2 PID: 371 at drivers/clk/qcom/clk-branch.c:87 clk_branch_toggle+0x174/0x18c
+> [   19.984356] Hardware name: Qualcomm QCS9100 Ride (DT)
+> [   19.989548] pstate: 604000c5 (nZCv daIF +PAN -UAO -TCO -DIT -SSBS BTYPE=--)
+> [   19.996697] pc : clk_branch_toggle+0x174/0x18c
+> [   20.001267] lr : clk_branch_toggle+0x174/0x18c
+> [   20.005833] sp : ffff8000863ebbc0
+> [   20.009251] x29: ffff8000863ebbd0 x28: 0000000000000000 x27: 0000000000000000
+> [   20.016579] x26: 0000000000000000 x25: 0000000000000000 x24: 0000000000000001
+> [   20.023915] x23: ffff0000c53de980 x22: 0000000000000001 x21: ffffb4b57fd8d710
+> [   20.031245] x20: ffffb4b5bb238b88 x19: 0000000000000000 x18: ffffffffffff7198
+> [   20.038584] x17: 0000000000000014 x16: ffffb4b5bb1e2330 x15: 0000000000000048
+> [   20.045926] x14: 0000000000000000 x13: ffffb4b5bd386a48 x12: 0000000000000dfb
+> [   20.053263] x11: 00000000000004a9 x10: ffffb4b5bd3e5a20 x9 : ffffb4b5bd386a48
+> [   20.060600] x8 : 00000000ffffefff x7 : ffffb4b5bd3dea48 x6 : 00000000000004a9
+> [   20.067934] x5 : ffff000eb7d38408 x4 : 40000000fffff4a9 x3 : ffff4b58fb2b7000
+> [   20.075269] x2 : 0000000000000000 x1 : 0000000000000000 x0 : ffff000ec4fc3480
+> [   20.082601] Call trace:
+> [   20.085127]  clk_branch_toggle+0x174/0x18c (P)
+> [   20.089705]  clk_branch2_enable+0x1c/0x28
+> [   20.093829]  clk_core_enable+0x6c/0xac
+> [   20.097687]  clk_enable+0x2c/0x4c
+> [   20.101104]  clk_bulk_enable+0x4c/0xd8
+> [   20.104964]  msm_dp_ctrl_enable_mainlink_clocks+0x184/0x24c [msm]
+> [   20.111294]  msm_dp_ctrl_on_link+0xb0/0x400 [msm]
+> [   20.116178]  msm_dp_display_process_hpd_high+0x110/0x190 [msm]
+> [   20.122209]  msm_dp_hpd_plug_handle.isra.0+0xac/0x1c4 [msm]
+> [   20.127983]  hpd_event_thread+0x320/0x5cc [msm]
+> [   20.132680]  kthread+0x12c/0x204
+> [   20.136011]  ret_from_fork+0x10/0x20
+> [   20.139699] ---[ end trace 0000000000000000 ]---
+> [   20.144489] Failed to enable clk 'ctrl_link': -16
+> [   20.149340] [drm:msm_dp_ctrl_enable_mainlink_clocks [msm]] *ERROR* Unable to start link clocks. ret=-16
 > 
-> My bot found errors running 'make dt_binding_check' on your patch:
-> 
-> yamllint warnings/errors:
-> 
-> dtschema/dtc warnings/errors:
-> /builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml: port@0: Missing additionalProperties/unevaluatedProperties constraint
-> /builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml: port@1: Missing additionalProperties/unevaluatedProperties constraint
-> /builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml: port@2: Missing additionalProperties/unevaluatedProperties constraint
-> /builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.example.dtb: csiphy@ace4000 (qcom,x1e80100-csi2-phy): ports:port@2:endpoint: Unevaluated properties are not allowed ('clock-lanes', 'data-lanes' were unexpected)
-> 	from schema $id: http://devicetree.org/schemas/phy/qcom,x1e80100-csi2-phy.yaml
-Frustratingly
+> [...]
 
-dtbs_do_check2 phy/qcom,x1e80100-mipi-csi2-combo-phy.yaml 
-qcom/x1e80100-crd.dtb
+Applied, thanks!
 
-dtbs_do_check2 () {
+[2/2] arm64: dts: qcom: lemans: Add eDP ref clock for eDP PHYs
+      commit: 4bd073e00fd79c0aead74ad64ade48c904221245
 
-echo "checking " $1 " and " $2
-make dtbs_check ARCH=$ARCH CROSS_COMPILE=$CROSS_COMPILE O=$BUILDDIR 
-DT_DOC_CHECKER=$DT_DOC_CHECKER DT_EXTRACT_EX=$DT_EXTRACT_EX 
-DT_MK_SCHEMA=$DT_MK_SCHEMA DT_SCHEMA_FILES=$1 CHECK_DTBS=y $2
-make dt_binding_check O=$BUILDDIR DT_CHECKER_FLAGS=-m 
-DT_DOC_CHECKER=$DT_DOC_CHECKER DT_EXTRACT_EX=$DT_EXTRACT_EX 
-DT_MK_SCHEMA=$DT_MK_SCHEMA DT_SCHEMA_FILES=$1 CHECK_DTBS=y $2
-
-}
-
-Neither my script nor the Makefile throw an error when the yaml name 
-doesn't exist i.e. when it changes.
-
-I really did run the checker - just for a file that doesn't exist.
-
-Feels like a bug I should blame on AI enslopification but, it was me..
-
-meh
-
----
-bod
-phy/qcom,x1e80100-mipi-csi2-combo-phy.yaml
+Best regards,
+-- 
+Bjorn Andersson <andersson@kernel.org>
 
 -- 
 linux-phy mailing list
