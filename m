@@ -4,94 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6C118CD5BB8
-	for <linux-phy@archiver.kernel.org>; Sat, 23 May 2026 15:19:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 36E6CCD5BAB
+	for <linux-phy@archiver.kernel.org>; Sun, 24 May 2026 10:59:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=0hkB+7YvPp6jj5aUHvdepEv5fT+xYFfEu8a372qILt0=; b=PmnCxns0/qp5pO
-	uHIDRFR6aqm0UlC7rgFWVVxPy5oITtE1f8THA6gpDDzr8r9J9SO4WWerVbUwVPWL/6DNJ9n2cAQHP
-	11Of/80kpj+bVhRxJcWSQ3epETICImd70cwIp491BoeQ0N4Rwzzy9Ptlqqa2OitUF7pjbfQVVNBi3
-	P7XGj/D33pliee3hFJKLeF/u+002qhRpihogqkW8EuYqyd7WWl+3x0bmV/OMuVj4htmsnx0XQcPRo
-	5w/TCc/0zznwW29BH5Y/V5F06F0R46yz4Jp2AHPaz3LEPE9JzbkDKGJWXKYqY0gMmzegzLjYyNVgS
-	wY0NBJVr2Wn/MgXqSafA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4rUYHsB+nmcM4AAV+FpefORexGnegYLR0BHJ1BLVVP0=; b=f9UzSdig7JKr3k
+	wXMrYVxz7FkgCuKdMmPP8Ls7NFoxvUJTko8Euvwkj/ELUH7jkDVzdFVNrqkHSYK1zVG83sLps8vFY
+	PB5cmxQ0PkwdUsAn+O5TuJoLPq9dL1lMpXQOrzc29RSGfzYL4nPqb9WVTtr28ZwvbkACTEvpU9Xjw
+	3l1ojzit/iTRq9SQ9xhb20csv5kif9rPw4tW2KJXzAAgBk9dKs29vXEmLEjvWC3Fvp0OzsO4zjfJ0
+	azAQwcQ2JwpTPortDGckCVigrSROQzdQ65snWnu/54E4eLBn2wbHBmOIU0pQAVgvU5H8MKREpaMIm
+	TT+XHUdvWt1fL/FJz/+Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wQo85-0000000DU39-3BCy;
-	Sat, 23 May 2026 15:19:09 +0000
-Received: from mail-wm1-x333.google.com ([2a00:1450:4864:20::333])
+	id 1wR6YC-0000000EqrY-2GZe;
+	Sun, 24 May 2026 10:59:20 +0000
+Received: from mail-wm1-x32d.google.com ([2a00:1450:4864:20::32d])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wQo83-0000000DU2W-0rKJ
+	id 1wR6YA-0000000Eqqr-1R2J
 	for linux-phy@lists.infradead.org;
-	Sat, 23 May 2026 15:19:08 +0000
-Received: by mail-wm1-x333.google.com with SMTP id 5b1f17b1804b1-4891c0620bcso51869435e9.1
-        for <linux-phy@lists.infradead.org>; Sat, 23 May 2026 08:19:06 -0700 (PDT)
+	Sun, 24 May 2026 10:59:19 +0000
+Received: by mail-wm1-x32d.google.com with SMTP id 5b1f17b1804b1-49042aeeb75so31793455e9.1
+        for <linux-phy@lists.infradead.org>; Sun, 24 May 2026 03:59:16 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1779549545; x=1780154345; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=qMgDahtrFCXXY7J8kNXrJQw4x08PqM0mxJ2Gu2fN2io=;
-        b=UOwiP0URbR7j43A23LlbAufAtN+alnlvu8fhgb1Scju8Ds+z/fKciVux/Q6sXqD5Ne
-         YPSxfOLCCGaN8Dv31nMd6R/QuuX2xMTVDRJJM4IPcMdJyboeZgIuFdXvLInBUds8qY0S
-         Xn0kTZ2VxsLt3M6anE5APykaYPvX/IrgIBLleS37cVGR+N8GLqwH71Z39aanX6g1G31h
-         Gt59J8RXE2rFzXl376e1bpPVK6nsSzLqm7lapODTR5NlkZUoWjUQ95D9T7u2ZM3mdWyM
-         uWiOVcG6yx/MWcnct1Pbrb5tlLS7Bkr306BpRSmZo/RpD72jCoDcGqenT/ML+3gAA668
-         8oPQ==
+        d=linaro.org; s=google; t=1779620355; x=1780225155; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=7s/WuWNL9ddRgnnG+HfLCLif5sg1VJxBqglIWP1cQXQ=;
+        b=XMB6FN6Wf9inH3W9t8P7ba/e/KaKjvMnlK96HaXykkZ88V1TIFvYU73cPLyyhGH+09
+         xunW0xQNR3KydrJPgW+WKRC5rjb5dy2SJgmbo3ez1vET1p8JVxYe68vLC4uqW/knTd/5
+         LklPvqvils2xcQp25Olf/50HOMkEQlEB5zpln/y7wvU7Pwfr/gl3nPyb4XwtxNW+p7CL
+         B35CqVWOEVCLC1mrXeSn1srk4ZFEv1GB4N++UUuZKzz+xUHpKlryf62iWrRMiNvezNF2
+         HOTHC0vQSqthF50+odKDvzLEsYq9zGFEn8sa4sxG15cUpfHoMJ6Mrfrx/F0xlgtYMrWF
+         M8ew==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1779549545; x=1780154345;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=qMgDahtrFCXXY7J8kNXrJQw4x08PqM0mxJ2Gu2fN2io=;
-        b=lv4Qay6pcZ95jUXd2p6D3zPb8mC66fA/emDboSkHIcAHrRSfzMSuFaD+NnkmWgJ9qV
-         SIlu6g4WGWzfyYzLY4et34s9WQFF2LgA13Gwt5DzydHi7TIVRKz46HsyOzfCgRmboKMU
-         EY4DCPWW/ZBqit1rHS9RGm9aw7dQySXaI2dz9OTKKCewI+NBCc/WyuMSPvr5+wWDWpfy
-         D4IjY8720i5a7Ce2eaBA1+gDKqtrzLMD0YrTyknj7pfevE5I+16hLcTKkbyLjVcfW8Yn
-         KlzrlpR6PvqIn53hgFZl4KwZqASDrSuhAS/Pfwyxr7NvqWmjXzj364is5N4DrIRcavVx
-         KicA==
-X-Forwarded-Encrypted: i=1; AFNElJ8Ilm16DNQexHsYb7Ax+/W3otQPMpe/R1aLw6W/72OoVt/NLITivwHQeSVV7SDa+RZ803CaEMF3zmw=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yz7iaL4KSfbS+ty5U0MzW2SvyL5wN9bNaVWmmunhQEi2LJn7nn6
-	cU+U9Ao7Zlp80TtgnGLOLYDL/5WqPuPMzlCzni3ovNaSRf3PEp1FY48L
-X-Gm-Gg: Acq92OGRjRHlIK7mkrPcCetl1xrIgqoireOaHps1qeoz8ac0vYFhmY//qicpR5+yJuM
-	7bseGDGwNZm5m2S8olL0QXMamPi1wNPQ4cM+o3k+QsQIItlsk2uS5NVw99S8Gcp8dk6djlRXm0l
-	j/kYpSZlAVPGFkMFe5oGAcwQW99q1jy3GrO26E1psgaTTh1BBv+Fv/OD2ODbNsfqJ9m+b9+gYj+
-	zQk1HHDI00fYjI65MabYo/Nrrwe9UkNRIdqZwJlVL7q/JvIjgv874IYfnASEsu96amPYmkZYDKo
-	D0F75zOwPHWSMYhl5zdDvbIiE+AtBqbq/wLxumL+73Pg8CftxcgkCZns4b5tgU8Vee2gEOPVVFK
-	4J2wDLIAqFuuDX2h3LDWHNlLUME5MMDjQ2kZ9AOKulZ0AxHDN2sNZFHKkh5yepA8o/1ctCGylYr
-	kKzqWcDoZ6Ggv+ER3W7DMr/NmU9v4nfdYSc6LbKaUubQbn/vJflGfF7Q5G89wIK4riWWqa5KXmi
-	r2RLBXOSlLqC1ti0g==
-X-Received: by 2002:a05:600c:6383:b0:490:4717:970f with SMTP id 5b1f17b1804b1-4904717984dmr110577425e9.14.1779549544789;
-        Sat, 23 May 2026 08:19:04 -0700 (PDT)
-Received: from localhost.localdomain (ip-89-176-136-191.bb.vodafone.cz. [89.176.136.191])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-4904527dbf3sm111897405e9.6.2026.05.23.08.19.01
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 23 May 2026 08:19:02 -0700 (PDT)
-From: Petr Wozniak <petr.wozniak@gmail.com>
-To: netdev@vger.kernel.org
-Cc: maxime.chevallier@bootlin.com,
-	bjorn@mork.no,
-	andrew@lunn.ch,
-	hkallweit1@gmail.com,
-	linux@armlinux.org.uk,
-	davem@davemloft.net,
-	edumazet@google.com,
-	kuba@kernel.org,
-	pabeni@redhat.com,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	jan@3e8.eu,
-	Petr Wozniak <petr.wozniak@gmail.com>
-Subject: [PATCH net-next v7] net: phy: sfp: probe for RollBall I2C-to-MDIO bridge in mdio-i2c
-Date: Sat, 23 May 2026 17:18:59 +0200
-Message-ID: <20260523151859.1665-1-petr.wozniak@gmail.com>
-X-Mailer: git-send-email 2.50.1
+        d=1e100.net; s=20251104; t=1779620355; x=1780225155;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=7s/WuWNL9ddRgnnG+HfLCLif5sg1VJxBqglIWP1cQXQ=;
+        b=gKhaOl1ZBTBjXQCiObw7qgvAjuWZPf23+REOkjL9CdFCsKZXLTZ7cuAhQ4GQEWoPoz
+         JDxQsremLQwvCxTF9XUZGR4xT4DTYhJnHd1K5YXyzEjk518P8a6Di2KEeyWHW+7e8TAq
+         X2aam4kyH81Z2BKUmqM0JJ0Cg92AWrEs6UWo/aSDKCliaS9g6n7gev7UNjpGwcjJgCrT
+         SoR1Bn9CV2yLfNNMIkQlGkdYN4w5mVi3BTEyYacxG6BmlwOZKp/iuccbzG34ZEUruAOi
+         z5WNd0g0FjR4/TPlca7EcL5XXKFWEtbuoGV0JUE1nXoEnXSZZP80VV/960UTtOnOZL4E
+         KJCA==
+X-Forwarded-Encrypted: i=1; AFNElJ9GddnOSZSm3vEy95V75E1F66TpS7hxUHok/EQ1hHJ9h4lFKti+0EYqbaE+A2Q4KWYQ++V0vDQt3Dc=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyyZDgUf8a0q1UcuOnSW7/QcT3LXjq4xU01JeQ+FcchGvp+NwuA
+	LsXHaQxZ+dN5evDZkDX7+rEXw5fOIYRAnI/oPm8ocbZGujzfuimaNSK62gy2/pwLsNba7Rg4Ntt
+	kWEB6F3w=
+X-Gm-Gg: Acq92OHfQhxcyiWutbt4IhxRwcZaJp3+nTdVNaz597FU3+/N+HdXs37z45zf4O1/txt
+	bnlHXyaaV88+z8cfheYQxm9O50AEvgH7mpLKwh7mXY7iwVFPxOR/jKULpb+0WRBot9omnN1EGyt
+	EGiAwLDEfIP4Ozf4Nr7jjE6egIqp5xV8HWnLscKRXT6UEWGtFgGey7byazNb45WXMwG2qonSXML
+	XZELUJWiLO9XPBhyrMbHpRwGjFgH6HdQNXbTkMTuwyS/CVFECp9Ch+obEZ7w1j0kYeiUnDq3MxG
+	MGCrQXhgmcfzEHbg15Z7xbY1DYygkmizZAmrrXbTPYm4BypglCqNG8R4xOFMig/6x1kAKRLyzOJ
+	N7S2PeWNNt+vpcyeRMpmDrnoizsvlctW1CbsIswJW3pHSWgZAIofJQ2MAOCt7FmyJMKwS7JuDUg
+	Eb+abp0geETY1D/5otFtJjowiJ1F0g+hEP81KU669QPxo=
+X-Received: by 2002:a05:600c:3b0a:b0:490:60cb:560b with SMTP id 5b1f17b1804b1-49060cb57b1mr22246205e9.28.1779620354935;
+        Sun, 24 May 2026 03:59:14 -0700 (PDT)
+Received: from [172.20.52.45] ([89.101.53.26])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-490428e5adcsm66212625e9.21.2026.05.24.03.59.11
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 24 May 2026 03:59:14 -0700 (PDT)
+Message-ID: <8f19b1c2-8469-4699-980b-fbd3b3354169@linaro.org>
+Date: Sun, 24 May 2026 11:59:09 +0100
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v8 1/2] dt-bindings: phy: qcom: Add CSI2 C-PHY/DPHY schema
+To: sashiko-reviews@lists.linux.dev
+Cc: neil.armstrong@linaro.org, robh@kernel.org, devicetree@vger.kernel.org,
+ linux-phy@lists.infradead.org, olteanv@gmail.com, vkoul@kernel.org,
+ conor+dt@kernel.org
+References: <20260523-x1e-csi2-phy-v8-1-a85668459521@linaro.org>
+ <20260523030420.045501F000E9@smtp.kernel.org>
+Content-Language: en-US
+From: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+In-Reply-To: <20260523030420.045501F000E9@smtp.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260523_081907_286177_09336CE3 
-X-CRM114-Status: GOOD (  21.24  )
+X-CRM114-CacheID: sfid-20260524_035918_428215_2FCD3BA6 
+X-CRM114-Status: GOOD (  21.96  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,214 +99,157 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The "OEM"/"SFP-10G-T" quirk entry in sfp_fixup_rollball_cc()
-unconditionally forces MDIO_I2C_ROLLBALL for all modules matching that
-vendor/part-number combination.  This works for modules that genuinely
-implement a RollBall I2C-to-MDIO bridge, but silently breaks modules
-that share the same EEPROM strings without having such a bridge.
+On 23/05/2026 04:04, sashiko-bot@kernel.org wrote:
+> Thank you for your contribution! Sashiko AI review found 4 potential issue(s) to consider:
+> - [Medium] Using the literal `endpoint:` property name inside ports bypasses constraint validation for endpoints with unit addresses.
+> - [Medium] The `data-lanes` property on `port@1` is overly restricted to `maxItems: 1`, which will break multi-lane DPHY split-mode configurations.
+> - [Low] The example uses a non-generic device tree node name `csiphy@...` instead of the standard `phy@...`.
+> - [Low] Mismatch between the `vdda-0p9-supply` property name and the actual 0.8V hardware supply used on the x1e80100 platform.
+> --
+> 
+> commit 10936c65e44aeea784cc13676d51700996cf6559
+> Author: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+> 
+> dt-bindings: phy: qcom: Add CSI2 C-PHY/DPHY schema
+> 
+> Add a base schema initially compatible with x1e80100 to describe MIPI CSI2
+> PHY devices.
+> 
+>> diff --git a/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml
+>> new file mode 100644
+>> index 0000000000000..270375f949880
+>> --- /dev/null
+>> +++ b/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml
+> [ ... ]
+>> +  power-domain-names:
+>> +    items:
+>> +      - const: mmcx
+>> +      - const: mx
+>> +
+>> +  vdda-0p9-supply:
+>> +    description: Phandle to a 0.9V regulator supply to a PHY.
+> 
+> [Severity: Low]
+> Does this property name mismatch the actual hardware supply voltage for the
+> x1e80100 platform?
+> 
+> The example later in this schema uses <&vreg_l2c_0p8>, which indicates an
+> 0.8V rail. Should this be updated to reflect the 0.8V voltage?
 
-The Realtek RTL8261BE-CG is one such module: a pure copper 10G SFP+
-media converter with no I2C-to-MDIO bridge.  Its EEPROM reports
-vendor="OEM", part="SFP-10G-T-I", and -- critically -- Vendor OUI
-00:00:00, making OUI-based differentiation impossible.  With
-MDIO_I2C_ROLLBALL forced, the module silently ACKs the unlock password
-write, the MDIO bus is created, but no PHY responds; the SFP state
-machine cycles through the RollBall PHY-probe retry window before
-reporting no PHY.
+This was feedback I forgot to implement yes.
 
-Move the probe into i2c_mii_init_rollball() in mdio-i2c.c, where the
-RollBall protocol constants are already defined.  After sending the
-unlock password, issue a CMD_READ and poll for CMD_DONE up to 200 ms
-(10 x 20 ms, matching the existing rollball poll tolerance).  A genuine
-RollBall bridge asserts CMD_DONE within that window; modules without a
-bridge never do, so i2c_mii_init_rollball() returns -ENODEV.
-mdio_i2c_alloc() propagates -ENODEV to the caller to signal that no
-bridge is present and PHY probing should be skipped.
-sfp_sm_add_mdio_bus() catches -ENODEV and transitions
-sfp->mdio_protocol to MDIO_I2C_NONE so the rest of the state machine
-skips PHY probing for this module.
+>> +
+>> +  vdda-1p2-supply:
+>> +    description: Phandle to 1.2V regulator supply to a PHY.
+>> +
+>> +  ports:
+>> +    $ref: /schemas/graph.yaml#/properties/ports
+>> +
+>> +    properties:
+>> +      port@0:
+>> +        $ref: /schemas/graph.yaml#/$defs/port-base
+>> +        description: Sensor input. Always present.
+>> +        unevaluatedProperties: false
+>> +
+>> +        properties:
+>> +          endpoint:
+> 
+> [Severity: Medium]
+> Will using the literal endpoint: key bypass constraint validation if an
+> endpoint with a unit address (e.g., endpoint@0) is used?
+> 
+> Because the port references port-base, such an endpoint will pass the
+> unevaluatedProperties: false check, but its specific constraints wouldn't
+> be validated. Could this use patternProperties: "^endpoint(@[0-9a-f]+)?$":
+> instead?
 
-Any I2C-level error (NACK, timeout) during the probe is also treated as
--ENODEV: if the module does not respond at I2C address 0x51 at all,
-there is certainly no RollBall bridge there, and SFP initialization
-should not abort.
+Not sure about the answer to that. Also feels like the tool could have 
+made this suggestion at v7, definitely room for improvement.
 
-The probe writes are safe with respect to SFP EEPROM integrity: only
-modules explicitly listed in the quirk table enter this path, and the
-RollBall password unlock write to 0x51 was already issued by
-i2c_mii_init_rollball() before the probe for all such modules.  Any
-module without a device at 0x51 NACKs the transfer and is treated as
--ENODEV.
+> 
+>> +            $ref: /schemas/media/video-interfaces.yaml#
+>> +            unevaluatedProperties: false
+> [ ... ]
+>> +      port@1:
+>> +        $ref: /schemas/graph.yaml#/$defs/port-base
+>> +        description:
+>> +          Second sensor input. When present, indicates DPHY split mode.
+>> +        unevaluatedProperties: false
+>> +
+>> +        properties:
+>> +          endpoint:
+> 
+> [Severity: Medium]
+> As with port@0, should this use patternProperties: "^endpoint(@[0-9a-f]+)?$":
+> to ensure endpoints with unit addresses are properly validated?
+> 
+>> +            $ref: /schemas/media/video-interfaces.yaml#
+>> +            unevaluatedProperties: false
+>> +            properties:
+>> +              data-lanes:
+>> +                maxItems: 1
+> 
+> [Severity: Medium]
+> Is maxItems: 1 too restrictive for multi-lane DPHY split-mode configurations?
+> 
+> Split-mode typically divides a 4-lane PHY into two independent 2-lane
+> interfaces (e.g., data-lanes = <2 3>). This configuration would fail
+> dt_binding_check validation with a single item limit.
 
-Add "OEM"/"SFP-10G-T-I" to the quirk table so RTL8261BE modules enter
-the probe path; genuine RollBall modules continue to work as before.
+Not sure where Sashiko is getting this "typically" stuff from since 
+split-mode is a qcomism.
 
-Signed-off-by: Petr Wozniak <petr.wozniak@gmail.com>
-Reviewed-by: Maxime Chevallier <maxime.chevallier@bootlin.com>
----
+But no in split mode port@1 is specifically restricted this way.
 
-Changes since v6 (feedback from Maxime Chevallier):
-  - Remove redundant if (ret) checks after i2c_transfer_rollball() calls;
-    the function never returns a positive value (always 0 or negative),
-    so these branches were dead code
+Is there a way to give definitive feedback - with a meta comment perhaps 
+- that stops the tool continually giving the same feedback ?
 
-Changes since v5 (Sashiko AI review):
-  - Treat I2C NACK/errors in i2c_mii_init_rollball() as -ENODEV so
-    modules without a 0x51 EEPROM do not abort SFP initialization
-  - Replace fixed 70 ms wait with 10 x 20 ms poll (total 200 ms),
-    matching the existing i2c_rollball_mii_poll() tolerance and
-    preventing false -ENODEV on slow RollBall bridges
+> 
+>> +              clock-lanes:
+>> +                maxItems: 1
+> [ ... ]
+>> +      port@2:
+>> +        $ref: /schemas/graph.yaml#/$defs/port-base
+>> +        description: Output to CAMSS controller.
+>> +        unevaluatedProperties: false
+>> +
+>> +        properties:
+>> +          endpoint:
+> 
+> [Severity: Medium]
+> As above, should this use patternProperties: "^endpoint(@[0-9a-f]+)?$":?
+> 
+>> +            $ref: /schemas/graph.yaml#/$defs/endpoint-base
+>> +            unevaluatedProperties: false
+> [ ... ]
+>> +examples:
+>> +  - |
+>> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+>> +    #include <dt-bindings/clock/qcom,x1e80100-camcc.h>
+>> +    #include <dt-bindings/clock/qcom,x1e80100-gcc.h>
+>> +    #include <dt-bindings/power/qcom,rpmhpd.h>
+>> +
+>> +    csiphy4: csiphy@ace4000 {
+> 
+> [Severity: Low]
+> Does this node name violate the standard naming convention for PHY providers?
 
-Changes since v4 (feedback from Maxime Chevallier):
-  - Fix commit message: replace "stalls" with accurate description of
-    the RollBall PHY-probe retry window
-  - Fix variable declaration order in i2c_mii_probe_rollball() to
-    follow reverse-xmas tree (descending line length)
-  - Remove spurious alignment space on "SFP-10G-T" quirk entry
-  - Document that -ENODEV from mdio_i2c_alloc() means no bridge present,
-    PHY probing should be skipped
+In the example does that matter ? Passes the dt checker anyway.
 
-Changes since v3 (feedback from Jakub Kicinski):
-  - Drop spurious Tested-by: tag -- author and tester are the same person
-  - Use PATCH net-next subject prefix
-  - Move -ENODEV handling from sfp_i2c_mdiobus_create() into
-    sfp_sm_add_mdio_bus() so bus-creation code does not mutate
-    sfp->mdio_protocol; the state machine is the correct place for
-    protocol-state transitions
-  - Split combined variable declaration for clarity
+> The core phy-provider.yaml schema expects node names to match the generic
+> pattern ^phy(@.*)?$. The current name csiphy@ace4000 will likely trigger a
+> dt_binding_check warning.
+> 
+>> +        compatible = "qcom,x1e80100-csi2-phy";
+>> +        reg = <0x0ace4000 0x2000>;
+>> +        #phy-cells = <1>;
+> 
 
-Changes since v2:
-  - Compile-tested and hardware-tested on BPI-R4 (MT7988A, 6.12.87)
-  - RTL8261BE (OEM/SFP-10G-T-I): probes MDIO_I2C_NONE, link Up 10Gbps
-  - Genuine RollBall (OEM/SFP-10G-T): bridge detected, link Up 10Gbps
-
- drivers/net/mdio/mdio-i2c.c | 61 ++++++++++++++++++++++++++++++------
- drivers/net/phy/sfp.c       | 16 ++++++++--
- 2 files changed, 64 insertions(+), 13 deletions(-)
---- a/drivers/net/mdio/mdio-i2c.c
-+++ b/drivers/net/mdio/mdio-i2c.c
-@@ -352,6 +352,50 @@
- 	return 0;
- }
- 
-+static int i2c_mii_probe_rollball(struct i2c_adapter *i2c)
-+{
-+	u8 data_buf[] = { ROLLBALL_DATA_ADDR, 0x01, 0x00, 0x00 };
-+	u8 cmd_buf[]  = { ROLLBALL_CMD_ADDR, ROLLBALL_CMD_READ };
-+	u8 cmd_addr   = ROLLBALL_CMD_ADDR;
-+	struct i2c_msg msgs[2];
-+	u8 result;
-+	int ret;
-+	int i;
-+
-+	msgs[0].addr  = ROLLBALL_PHY_I2C_ADDR;
-+	msgs[0].flags = 0;
-+	msgs[0].len   = sizeof(data_buf);
-+	msgs[0].buf   = data_buf;
-+	msgs[1].addr  = ROLLBALL_PHY_I2C_ADDR;
-+	msgs[1].flags = 0;
-+	msgs[1].len   = sizeof(cmd_buf);
-+	msgs[1].buf   = cmd_buf;
-+
-+	ret = i2c_transfer_rollball(i2c, msgs, ARRAY_SIZE(msgs));
-+	if (ret < 0)
-+		return -ENODEV;
-+
-+	msgs[0].addr  = ROLLBALL_PHY_I2C_ADDR;
-+	msgs[0].flags = 0;
-+	msgs[0].len   = 1;
-+	msgs[0].buf   = &cmd_addr;
-+	msgs[1].addr  = ROLLBALL_PHY_I2C_ADDR;
-+	msgs[1].flags = I2C_M_RD;
-+	msgs[1].len   = 1;
-+	msgs[1].buf   = &result;
-+
-+	for (i = 0; i < 10; i++) {
-+		msleep(20);
-+		ret = i2c_transfer_rollball(i2c, msgs, ARRAY_SIZE(msgs));
-+		if (ret < 0)
-+			return -ENODEV;
-+		if (result == ROLLBALL_CMD_DONE)
-+			return 0;
-+	}
-+
-+	return -ENODEV;
-+}
-+
- static int i2c_mii_init_rollball(struct i2c_adapter *i2c)
- {
- 	struct i2c_msg msg;
-@@ -371,11 +415,11 @@
- 
- 	ret = i2c_transfer(i2c, &msg, 1);
- 	if (ret < 0)
--		return ret;
--	else if (ret != 1)
-+		return -ENODEV;
-+	if (ret != 1)
- 		return -EIO;
--	else
--		return 0;
-+
-+	return i2c_mii_probe_rollball(i2c);
- }
- 
- struct mii_bus *mdio_i2c_alloc(struct device *parent, struct i2c_adapter *i2c,
-@@ -399,9 +443,12 @@
- 	case MDIO_I2C_ROLLBALL:
- 		ret = i2c_mii_init_rollball(i2c);
- 		if (ret < 0) {
--			dev_err(parent,
--				"Cannot initialize RollBall MDIO I2C protocol: %d\n",
--				ret);
-+			if (ret != -ENODEV)
-+				dev_err(parent,
-+					"Cannot initialize RollBall MDIO I2C protocol: %d\n",
-+					ret);
-+			/* -ENODEV propagates to caller: no bridge present,
-+			 * PHY probing should be skipped for this module. */
- 			mdiobus_free(mii);
- 			return ERR_PTR(ret);
- 		}
---- a/drivers/net/phy/sfp.c
-+++ b/drivers/net/phy/sfp.c
-@@ -607,6 +607,7 @@
- 	SFP_QUIRK_S("TP-LINK", "TL-SM410U", sfp_quirk_oem_2_5g),
- 
- 	SFP_QUIRK_F("ETU", "ESP-T5-R", sfp_fixup_rollball_cc),
-+	SFP_QUIRK_F("OEM", "SFP-10G-T-I", sfp_fixup_rollball),
- 	SFP_QUIRK_F("OEM", "SFP-10G-T", sfp_fixup_rollball_cc),
- 	SFP_QUIRK_S("OEM", "SFP-2.5G-T", sfp_quirk_oem_2_5g),
- 	SFP_QUIRK_S("OEM", "SFP-2.5G-BX10-D", sfp_quirk_2500basex),
-@@ -2029,10 +2030,18 @@
- 	dev_info(sfp->dev, "probing phy device through the [%s] protocol\n",
- 		 mdio_i2c_proto_type(sfp->mdio_protocol));
- 
--	if (sfp->mdio_protocol != MDIO_I2C_NONE)
--		return sfp_i2c_mdiobus_create(sfp);
-+	int ret;
- 
--	return 0;
-+	if (sfp->mdio_protocol == MDIO_I2C_NONE)
-+		return 0;
-+
-+	ret = sfp_i2c_mdiobus_create(sfp);
-+	if (ret == -ENODEV) {
-+		/* Probe confirmed no bridge present; skip PHY discovery. */
-+		sfp->mdio_protocol = MDIO_I2C_NONE;
-+		return 0;
-+	}
-+	return ret;
- }
- 
- /* Probe a SFP for a PHY device if the module supports copper - the PHY
---
-2.51.0
 
 -- 
 linux-phy mailing list
