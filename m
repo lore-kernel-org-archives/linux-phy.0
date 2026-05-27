@@ -4,106 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 38C9ACD4F54
-	for <linux-phy@archiver.kernel.org>; Wed, 27 May 2026 08:21:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DAFC1CD4F54
+	for <linux-phy@archiver.kernel.org>; Wed, 27 May 2026 08:53:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=WHZByI/oPpuAMK86zHFl87NOHXhn79ctcQmnoLpyW+4=; b=RPA9Cow/RGYqEb
-	FyK2od9aJ87z2ZGiL8JE4//3UCTWC/Lut/evN7fRlESBTzOXDU443gsuyMIXZ9xy1diLLCglN1ZTT
-	aJbTvjLNn/DAW0oI6lYz+sKAfjhzrbjqnMSFNe2XIhn7ck6y8Hhk7Zjn7re48U8vx5KJlxf24008N
-	RdkbFW/g4DjEAwICBNiXOEh12bQeEk2hKSCKQBWUKt6aCO61UEWoj5GtF32AwGbxc5L8KnZLlNGnr
-	EGWwmSJmLpDYBkVcsq+xc0GQOqe18AfUzTt5LDQooVzagDnohYKMPYYEJxCN11N4TdKV/8JdFb2B4
-	FhYnTNFY9fxA1SBRFoFg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6TS4MRNZF8r51a+SMZOvMqu69IrBHQqn4YctAMusBls=; b=exuVNSJCZmJaTv
+	iUSLh4Wcn9O/+oMPyx5z8tr7CF3qp1tGO9gh+zZfkWehGc/0WwNgDCyF4L8TWMfIKTw5iUzvYQYlq
+	t1o40NSs9LPSTluOJvWVJjl2lrRQSLz6pEsxNp7TwC5Pc4Q4SXMhaVL57ejOFk+hNXao1HOF0zNfg
+	oGeQ9VKF4jqgpTFl6zsyO9ngldfHsdSyjnSfbp5E3119sAMn51Gi7siRnLoEJwoJ69AKdXtDsr9uy
+	ski3f3jK6o1ArySMRiRcL+zH5Kc1OJr8LbgcJ2fQKs+xTFL5+9JPWWlKcj9iejyDo5fuzzgxa1bG9
+	EGAYY8xiztpXxeeeIlzg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wS9Vq-00000003XHs-37zq;
-	Wed, 27 May 2026 08:21:14 +0000
-Received: from mail-japanwestazon11010056.outbound.protection.outlook.com ([52.101.228.56] helo=OS0P286CU011.outbound.protection.outlook.com)
+	id 1wSA0m-00000003Zxs-2jqo;
+	Wed, 27 May 2026 08:53:12 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wS9Vo-00000003XGt-15Ei
+	id 1wSA0l-00000003Zxc-1aJq
 	for linux-phy@lists.infradead.org;
-	Wed, 27 May 2026 08:21:14 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=q2ZVfyz2G1TBN4ibD7kjU0SlTVNaaVxN5RZxsLKrz/J3HjJyofvwiCXHpPQM4H1qIfMcinVIWB3OSx8Rpiej6bzOAoan29DJqrkAtmBvn9gO848ibFWrlim0IUqy6MruIXd+rmrsQ58p0xw9KJezpQcZ3FYC1V/WgpkQS0CceoEBH0YKhwt/qiYlPc6K+7SOdLoQ+v9FEesWNeXlNGOHUselV1sD+3PshCOXvM8jXfjOiGFQeJ0/toRitNkHkX0zmyfKNSfq/jxCdbS5LrXN2CXo4OuUplHPBUcEs06fU4F2wfaooLZEOGFlRtdRcoqFFpnJZl/zk3hcEhMHVJFWNw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=mvvhJchdza69Qne4ITJhK7TcwvDfBYdVe3SfaMEqN5o=;
- b=LUUPgrwhPz1DiIqClwhecdtDkxsG+/ZPIqtfLr+LfbNZPK8hxHlJdyjM/IuhAeTOU/zBR+sQL2YJHDBFHJnuchw9O/oQmMTCOiJYgtvRq5JbEh4miZoda3pggKqGWofZATI3iHmmGf9cQK4ktmoYygm3BZ9gy8YEyIEc2aObWcHaQcwZNGqxYHZdoI9s2itwFNJIUejmyUf8Tt7Cwc8kZUpNJj7Z/ZBFpjnf10KP9FaHUPT4KXOhSD94RBpn5j0taSKvKhDqKWaHyJDJQZoHW/w4m3169/FrRAnMqqi/RGVjBSYXAtlaj4fVCweuPGCDiqA63sIjyG7cU2cCPXg0aQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 8.62.32.50) smtp.rcpttodomain=bp.renesas.com smtp.mailfrom=renesas.com;
- dmarc=pass (p=none sp=none pct=100) action=none header.from=renesas.com;
- dkim=none (message not signed); arc=none (0)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=renesas.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=mvvhJchdza69Qne4ITJhK7TcwvDfBYdVe3SfaMEqN5o=;
- b=SgIB3lfzdXdKqE926QQ58pyK5ekacjU9GA42wHj0OHRDrQnUl/9moVHIw8GZFmJpwhLiuZvicQC2yOJ5tGjGwxq9oqylKRKAYhgQWdZTA75ZXjxNiDV/sZ/2s5xVtLKtoRZD3Oqfv/CgIzbtt3f319zPCmvWUpQAaMBhcRkQxXc=
-Received: from TYCPR01CA0144.jpnprd01.prod.outlook.com (2603:1096:400:2b7::20)
- by OS9PR01MB15442.jpnprd01.prod.outlook.com (2603:1096:604:3be::8) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.71.12; Wed, 27 May
- 2026 08:21:04 +0000
-Received: from TY2PEPF00005624.JPNP286.PROD.OUTLOOK.COM
- (2603:1096:400:2b7:cafe::69) by TYCPR01CA0144.outlook.office365.com
- (2603:1096:400:2b7::20) with Microsoft SMTP Server (version=TLS1_3,
- cipher=TLS_AES_256_GCM_SHA384) id 15.21.71.12 via Frontend Transport; Wed, 27
- May 2026 08:21:04 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 8.62.32.50)
- smtp.mailfrom=renesas.com; dkim=none (message not signed)
- header.d=none;dmarc=pass action=none header.from=renesas.com;
-Received-SPF: Pass (protection.outlook.com: domain of renesas.com designates
- 8.62.32.50 as permitted sender) receiver=protection.outlook.com;
- client-ip=8.62.32.50; helo=ejcrelay005p.adwin.renesas.com; pr=E
-Received: from ejcrelay005p.adwin.renesas.com (8.62.32.50) by
- TY2PEPF00005624.mail.protection.outlook.com (10.167.240.55) with Microsoft
- SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.21.71.7 via
- Frontend Transport; Wed, 27 May 2026 08:21:04 +0000
-Received: from vm01.adwin.renesas.com (DEU-5CG20946WF.adwin.renesas.com [10.226.92.196])
-	by ejcrelay005p.adwin.renesas.com (Postfix) with ESMTP id F4061300010D;
-	Wed, 27 May 2026 17:21:01 +0900 (JST)
-From: Ovidiu Panait <ovidiu.panait.rb@renesas.com>
-To: Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Biju Das <biju.das.jz@bp.renesas.com>,
-	Geert Uytterhoeven <geert+renesas@glider.be>
-Cc: linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	linux-renesas-soc@vger.kernel.org,
-	Ovidiu Panait <ovidiu.panait.rb@renesas.com>
-Subject: [PATCH v2] phy: renesas: phy-rzg3e-usb3: Use SYSTEM_SLEEP_PM_OPS instead of NOIRQ
-Date: Wed, 27 May 2026 08:20:52 +0000
-Message-ID: <20260527082052.117289-1-ovidiu.panait.rb@renesas.com>
-X-Mailer: git-send-email 2.43.0
-MIME-Version: 1.0
-X-EOPAttributedMessage: 0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: TY2PEPF00005624:EE_|OS9PR01MB15442:EE_
-X-MS-Office365-Filtering-Correlation-Id: 714afbe2-e73a-4ada-e415-08debbc8e535
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|36860700016|82310400026|1800799024|56012099006|11063799006|18002099003|13003099007;
-X-Microsoft-Antispam-Message-Info: slkcXPDT8u6h2W6LmqJcx9KzQ17AJe2TrqLfNDXyVgrJwYyy5bT7HvwwcmLC3Yeyz0HSBCFcD1U08+7HQvyJmkE1mpUvtc//XdiK8xAtSrJwFhpkQytXzMTctnpjLnT24kFYv5vI4k094VTQc+qSJQ27P0R4kl32CdR57cTeyzWw97w5yplu/Tin7N8grjSIt2C5xStwWQQNQuGtkPWfS+HMp5AwBCxmJqjQDFutnu11beKlFEPoWYx4X9kVe6+o7CW8A2h69ulzlYVulTVq0ZXms7ugNz8E3zy9GvralOBZgYDVNlb3l4N5pvhgBmZzqALmvmAnFkV78bRutCEEHSev6qwIX/Li2+oXb7vBZFRy6Oyp/NBD6bKnj6yakKdFRSFzFcT9WePqaZn5SALG76meexOa566G7ORdyYhVIBQQK22t55MoggfbjjwhpYEz4GvfZW6AuKKASBRWvJNjWbOq5dk9Sji8yov97XYSPmpk6Eo+hqgC1Clj8MT+Q6bKjRcTAvlYVEKU2UKYzrgi4zggMQTfN4ip3a1FSAgkS8byx5LpV8WmvyyYVielYmUF1qQ7j5DwIM8/xen6jYlYbW3iC0/hH4BC6u/MccvUp1tu0Oc7ccp+pCuUI6c/c9SrLMZnprnggKz0gIn5NDr1nZ/5W+Qk2+gpgL+hoHVQLoAUqg472Os3uVdCnYohHD1IWByBRk2JLgCiYy93y4mwCUMQgp3ZXk4D00PeUSMYeGA=
-X-Forefront-Antispam-Report: CIP:8.62.32.50;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:ejcrelay005p.adwin.renesas.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(376014)(36860700016)(82310400026)(1800799024)(56012099006)(11063799006)(18002099003)(13003099007);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: DCQPqAgK5mwZLMQCMQ4eBuDoYunmFbI+4+Sya1KyKxG+Gh0h37CVIpsJEePxAfxguxr0rBAGbcsWecyUan6BimfY51BKkN1MSUxlag/re88aOi9KIyuRz1uITpRM3scHkHTN5+pzdgfeqTQ7NLKCJP+sZuw9La7xwjT9it62EHPW1jWAybg+2zK98+AP84TNfelgCmT6aUXrpVYkrtIw7Y+26LJy0Y9NBArjZUMa0oL7ynKqCXvKBN5VZBIP0P28HOkxbaL9GuxRv2t0I9C4YVSsADiUwwoP5dhmNKGGzz7y0YEE/31fHEOBruLOcHPWcg3skU9C+SNXmTaXKXAqmEqCu62GQJx2qqBCCH88MNRtuVvfD7F/GDp68S+cVbbP2Q+i6jp0+yMgx4BnVbzGNa1bNM1W44PahcEeROZRfprC+zY1Sp8slJwTimVSBxlG
-X-OriginatorOrg: renesas.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 May 2026 08:21:04.6047
- (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 714afbe2-e73a-4ada-e415-08debbc8e535
-X-MS-Exchange-CrossTenant-Id: 53d82571-da19-47e4-9cb4-625a166a4a2a
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=53d82571-da19-47e4-9cb4-625a166a4a2a;Ip=[8.62.32.50];Helo=[ejcrelay005p.adwin.renesas.com]
-X-MS-Exchange-CrossTenant-AuthSource: TY2PEPF00005624.JPNP286.PROD.OUTLOOK.COM
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: OS9PR01MB15442
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260527_012112_312466_0C465D96 
-X-CRM114-Status: GOOD (  12.74  )
+	Wed, 27 May 2026 08:53:11 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 9C174600CB;
+	Wed, 27 May 2026 08:53:10 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0DBC81F00A3D;
+	Wed, 27 May 2026 08:53:10 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1779871990;
+	bh=/M7r1Rc5NcbEt14bLXc9Fv5+50vA1MjHWDCxJ2IwYQ8=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=Msm/oSjPKyaQEqXtHWmgjYVo9MtObvr1BZAXmMAmjFR23r31qrTS5/NX/CrTxbQ5a
+	 1cbY7pQ4yG5RlUFesrGAUvzF7CY419mo3lCabPt/ZzkC9khDOWAlD8zc0Pmse5qR6U
+	 br7GMCpmg+W/ipcfp1fGkAHRf7ndm6G+ExYhx4pJ5lfqrEtyQQf+fgAcKfEFPg/9vi
+	 +o2jbumOGgAMi7z9tgjYWM/gBxKvMWuncsbBwDN5f0sJjf9AHEhuJcwgb1jefG1Y/B
+	 ZgE5yVPJp1kEtGWYUk5C590gKWpozCovRkfqvCfJu5mPWaq5M2XX1nk86ddHzBDOUY
+	 e3uOy35FvLOUw==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v2] phy: renesas: phy-rzg3e-usb3: Use
+ SYSTEM_SLEEP_PM_OPS instead of NOIRQ
+To: "Ovidiu Panait" <ovidiu.panait.rb@renesas.com>
+Cc: wsa+renesas@sang-engineering.com, neil.armstrong@linaro.org, olteanv@gmail.com, linux-phy@lists.infradead.org, vkoul@kernel.org
+In-Reply-To: <20260527082052.117289-1-ovidiu.panait.rb@renesas.com>
+References: <20260527082052.117289-1-ovidiu.panait.rb@renesas.com>
+Date: Wed, 27 May 2026 08:53:09 +0000
+Message-Id: <20260527085310.0DBC81F00A3D@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,59 +62,77 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On the Renesas RZ/V2H platform, if the xhci driver is unbound and the
-system is suspended afterwards, a PM underflow error will occur:
-
- # echo 15850000.usb > /sys/bus/platform/drivers/xhci-renesas-hcd/unbind
- # systemctl suspend
- 15870000.usb-phy: PM: dpm_run_callback(): genpd_resume_noirq returns -13
- 15870000.usb-phy: PM: failed to resume noirq: error -13
- 15870000.usb-phy: Runtime PM usage count underflow!
-
-When the xhci driver is unbound, the runtime PM usage count of the PHY
-drops to 0. Since the suspend/resume callbacks are in the noirq phase,
-the pm_runtime_resume_and_get() on resume errors out with -EACCES and
-the usage count stays at 0. The subsequent put in device_complete()
-then underflows the counter.
-
-To fix this, move the suspend/resume callbacks out of the noirq phase by
-switching from NOIRQ_SYSTEM_SLEEP_PM_OPS to SYSTEM_SLEEP_PM_OPS.
-
-Fixes: ee5f1a3f90a4 ("phy: renesas: Add Renesas RZ/G3E USB3.0 PHY driver")
-Signed-off-by: Ovidiu Panait <ovidiu.panait.rb@renesas.com>
----
-v2:
-- Dropped the runtime PM rework part from the previous version, as it
-  was not needed to fix the original issue.
-
-v1: https://lore.kernel.org/all/20260427194741.161533-1-ovidiu.panait.rb@renesas.com/
-
- drivers/phy/renesas/phy-rzg3e-usb3.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/phy/renesas/phy-rzg3e-usb3.c b/drivers/phy/renesas/phy-rzg3e-usb3.c
-index 060309547ea5..4d2b0f5f5b09 100644
---- a/drivers/phy/renesas/phy-rzg3e-usb3.c
-+++ b/drivers/phy/renesas/phy-rzg3e-usb3.c
-@@ -233,7 +233,7 @@ static int rzg3e_phy_usb3_resume(struct device *dev)
- }
- 
- static const struct dev_pm_ops rzg3e_phy_usb3_pm = {
--	NOIRQ_SYSTEM_SLEEP_PM_OPS(rzg3e_phy_usb3_suspend, rzg3e_phy_usb3_resume)
-+	SYSTEM_SLEEP_PM_OPS(rzg3e_phy_usb3_suspend, rzg3e_phy_usb3_resume)
- };
- 
- static const struct of_device_id rzg3e_phy_usb3_match_table[] = {
--- 
-2.34.1
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MyBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpQcmUtZXhpc3RpbmcgaXNzdWVzOgot
+IFtIaWdoXSBUaGUgZHJpdmVyIG1hbnVhbGx5IG1hbmlwdWxhdGVzIHRoZSBydW50aW1lIFBNIHVz
+YWdlIGNvdW50IGluc2lkZSBzbGVlcCBjYWxsYmFja3MsIHdoaWNoIGRlZmVhdHMgUE0gY29yZSBz
+eW5jaHJvbml6YXRpb24gYW5kIGNhdXNlcyB1bmRlcmZsb3dzIG9uIGVycm9yIHBhdGhzLgotIFtI
+aWdoXSBBc3luY2hyb25vdXMgcG1fcnVudGltZV9wdXQoKSBpcyB1c2VkIGltbWVkaWF0ZWx5IGJl
+Zm9yZSBhc3NlcnRpbmcgYSBoYXJkd2FyZSByZXNldCwgdmlvbGF0aW5nIGhhcmR3YXJlIG9yZGVy
+aW5nIGNvbnN0cmFpbnRzIGFuZCBjYXVzaW5nIHJhY2UgY29uZGl0aW9ucy4KLSBbSGlnaF0gRmxh
+d2VkIHNraXBfcmVpbml0IHN0YXRlIG1hY2hpbmUgbGVhdmVzIHRoZSBQSFkgdW5pbml0aWFsaXpl
+ZCBpZiBpdCBydW50aW1lIHN1c3BlbmRzIGFmdGVyIHN5c3RlbSByZXN1bWUuCi0tCgpjb21taXQg
+Y2RjNmY5MDkzMmQ0MjdlZWRkNDk0ZDgwOTY0OTgyZmQxZjA5YWJjYgpBdXRob3I6IE92aWRpdSBQ
+YW5haXQgPG92aWRpdS5wYW5haXQucmJAcmVuZXNhcy5jb20+CgpwaHk6IHJlbmVzYXM6IHBoeS1y
+emczZS11c2IzOiBVc2UgU1lTVEVNX1NMRUVQX1BNX09QUyBpbnN0ZWFkIG9mIE5PSVJRCgpUaGlz
+IHBhdGNoIG1vdmVzIHRoZSBzdXNwZW5kL3Jlc3VtZSBjYWxsYmFja3Mgb3V0IG9mIHRoZSBub2ly
+cSBwaGFzZSBieQpzd2l0Y2hpbmcgZnJvbSBOT0lSUV9TWVNURU1fU0xFRVBfUE1fT1BTIHRvIFNZ
+U1RFTV9TTEVFUF9QTV9PUFMuIFRoaXMgYWltcwp0byBmaXggYSBQTSB1c2FnZSBjb3VudCB1bmRl
+cmZsb3cgb24gc3VzcGVuZCB3aGVuIHRoZSB4aGNpIGRyaXZlciBpcwp1bmJvdW5kLgoKPiBkaWZm
+IC0tZ2l0IGEvZHJpdmVycy9waHkvcmVuZXNhcy9waHktcnpnM2UtdXNiMy5jIGIvZHJpdmVycy9w
+aHkvcmVuZXNhcy9waHktcnpnM2UtdXNiMy5jCj4gaW5kZXggNmIzNDUzZWEwMDA0Yy4uNzg2N2Nh
+M2JjM2FiMiAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL3BoeS9yZW5lc2FzL3BoeS1yemczZS11c2Iz
+LmMKPiArKysgYi9kcml2ZXJzL3BoeS9yZW5lc2FzL3BoeS1yemczZS11c2IzLmMKPiBAQCAtMjM1
+LDcgKzIzNSw3IEBAIHN0YXRpYyBpbnQgcnpnM2VfcGh5X3VzYjNfcmVzdW1lKHN0cnVjdCBkZXZp
+Y2UgKmRldikKPiAgfQo+ICAKPiAgc3RhdGljIGNvbnN0IHN0cnVjdCBkZXZfcG1fb3BzIHJ6ZzNl
+X3BoeV91c2IzX3BtID0gewo+IC0JTk9JUlFfU1lTVEVNX1NMRUVQX1BNX09QUyhyemczZV9waHlf
+dXNiM19zdXNwZW5kLCByemczZV9waHlfdXNiM19yZXN1bWUpCj4gKwlTWVNURU1fU0xFRVBfUE1f
+T1BTKHJ6ZzNlX3BoeV91c2IzX3N1c3BlbmQsIHJ6ZzNlX3BoeV91c2IzX3Jlc3VtZSkKPiAgfTsK
+CltTZXZlcml0eTogSGlnaF0KVGhpcyBpc24ndCBhIGJ1ZyBpbnRyb2R1Y2VkIGJ5IHRoaXMgcGF0
+Y2gsIGJ1dCBtb2RpZnlpbmcgdGhlc2UgY2FsbGJhY2tzCmJyaW5ncyB1cCBhIHByZWV4aXN0aW5n
+IGlzc3VlLiBEb2VzIHRoZSBtYW51YWwgbWFuaXB1bGF0aW9uIG9mIHJ1bnRpbWUgUE0KdXNhZ2Ug
+Y291bnRzIGluc2lkZSB0aGVzZSBzbGVlcCBjYWxsYmFja3MgZGVmZWF0IHRoZSBQTSBjb3JlJ3MK
+c3luY2hyb25pemF0aW9uPwoKVGhlIFBNIGNvcmUgdGFrZXMgYSBydW50aW1lIFBNIHJlZmVyZW5j
+ZSBvbiBhbGwgZGV2aWNlcyBkdXJpbmcKZGV2aWNlX3ByZXBhcmUoKSB0byBwcmV2ZW50IGNvbmN1
+cnJlbnQgdHJhbnNpdGlvbnMgZHVyaW5nIHN5c3RlbSBzbGVlcCwgYW5kCnJlbGVhc2VzIGl0IGlu
+IGRldmljZV9jb21wbGV0ZSgpLgoKSWYgcnpnM2VfcGh5X3VzYjNfc3VzcGVuZCgpIG1hbnVhbGx5
+IGRyb3BzIHRoaXMgcmVmZXJlbmNlLCBhbmQKcnpnM2VfcGh5X3VzYjNfcmVzdW1lKCkgYXR0ZW1w
+dHMgdG8gcmVhY3F1aXJlIGl0IGJ1dCBmYWlscyBlYXJseSBvbiBhbiBlcnJvcgpwYXRoOgoKc3Rh
+dGljIGludCByemczZV9waHlfdXNiM19yZXN1bWUoc3RydWN0IGRldmljZSAqZGV2KQp7CiAgICAg
+ICAgLi4uCiAgICAgICAgcmV0ID0gcmVzZXRfY29udHJvbF9kZWFzc2VydChyLT5yc3RjKTsKICAg
+ICAgICBpZiAocmV0KQogICAgICAgICAgICAgICAgcmV0dXJuIHJldDsKCiAgICAgICAgcmV0ID0g
+cG1fcnVudGltZV9yZXN1bWVfYW5kX2dldChkZXYpOwogICAgICAgIC4uLgoKV2lsbCB0aGlzIGNh
+dXNlIGFub3RoZXIgbmVnYXRpdmUgdXNhZ2UgY291bnQgdW5kZXJmbG93IHdoZW4gdGhlIFBNIGNv
+cmUKdW5jb25kaXRpb25hbGx5IGNhbGxzIGRldmljZV9jb21wbGV0ZSgpIGFuZCBleGVjdXRlcyBp
+dHMgb3duCnBtX3J1bnRpbWVfcHV0KCk/CgpbU2V2ZXJpdHk6IEhpZ2hdClRoaXMgaXMgYSBwcmUt
+ZXhpc3RpbmcgaXNzdWUsIGJ1dCBkb2VzIHRoZSBzdXNwZW5kIHBhdGggaW50cm9kdWNlIGEgcmFj
+ZQpjb25kaXRpb24gYnkgdXNpbmcgYW4gYXN5bmNocm9ub3VzIHJ1bnRpbWUgcHV0IGp1c3QgYmVm
+b3JlIGFzc2VydGluZyB0aGUKaGFyZHdhcmUgcmVzZXQ/CgpJbiByemczZV9waHlfdXNiM19zdXNw
+ZW5kKCksIHRoZSBkcml2ZXIgZHJvcHMgdGhlIHJ1bnRpbWUgUE0gcmVmZXJlbmNlIHZpYQpwbV9y
+dW50aW1lX3B1dCgpIGFuZCB0aGVuIGltbWVkaWF0ZWx5IGFzc2VydHMgdGhlIGhhcmR3YXJlIHJl
+c2V0IGxpbmUuCkJlY2F1c2UgcG1fcnVudGltZV9wdXQoKSBpcyBhc3luY2hyb25vdXMsIGNvdWxk
+IHRoZSBnZW5lcmljIFBNIGRvbWFpbiBiZQpwb3dlcmVkIG9mZiBjb25jdXJyZW50bHkgd2l0aCBv
+ciBpbW1lZGlhdGVseSBhZnRlciB0aGUgaGFyZHdhcmUgcmVzZXQgaXMKc3luY2hyb25vdXNseSBh
+c3NlcnRlZD8KCltTZXZlcml0eTogSGlnaF0KVGhpcyBpcyBhIHByZS1leGlzdGluZyBpc3N1ZSwg
+YnV0IGRvZXMgdGhlIHNraXBfcmVpbml0IHN0YXRlIG1hY2hpbmUgbGVhdmUKdGhlIFBIWSB1bmlu
+aXRpYWxpemVkIGlmIGl0IHJ1bnRpbWUgc3VzcGVuZHMgYWZ0ZXIgc3lzdGVtIHJlc3VtZT8KCkR1
+cmluZyBzeXN0ZW0gcmVzdW1lLCByemczZV9waHlfdXNiM19yZXN1bWUoKSB1bmNvbmRpdGlvbmFs
+bHkgc2V0cwpyLT5za2lwX3JlaW5pdCA9IHRydWUuIFRoaXMgZmxhZyBpcyBvbmx5IGNsZWFyZWQg
+ZHVyaW5nIHN5c3RlbSBzdXNwZW5kLgoKSWYgdGhlIFBIWSBjb25zdW1lciB1bmJpbmRzIG9yIHJ1
+bnRpbWUgc3VzcGVuZHMsIHRoZSBQSFkgbG9zZXMgaXRzIGhhcmR3YXJlCnN0YXRlLiBXaGVuIHRo
+ZSBjb25zdW1lciBpcyBsYXRlciBib3VuZCBvciBydW50aW1lIHJlc3VtZWQsIGl0IGNhbGxzCnBo
+eV9pbml0KCkgdG8gcmVpbml0aWFsaXplLiBTaW5jZSByLT5za2lwX3JlaW5pdCBpcyBzdGlsbCB0
+cnVlLCB3aWxsCnBoeV9pbml0KCkgc2tpcCB0aGUgaW5pdGlhbGl6YXRpb24gc2VxdWVuY2UgYW5k
+IGxlYXZlIHRoZSBoYXJkd2FyZSBicm9rZW4KdW50aWwgdGhlIG5leHQgZnVsbCBzeXN0ZW0gc3Vz
+cGVuZCBjeWNsZT8KCi0tIApTYXNoaWtvIEFJIHJldmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2
+LyMvcGF0Y2hzZXQvMjAyNjA1MjcwODIwNTIuMTE3Mjg5LTEtb3ZpZGl1LnBhbmFpdC5yYkByZW5l
+c2FzLmNvbT9wYXJ0PTEKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0
+cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
+bmZvL2xpbnV4LXBoeQo=
