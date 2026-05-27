@@ -4,94 +4,144 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 68042CD4F54
-	for <linux-phy@archiver.kernel.org>; Wed, 27 May 2026 05:39:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D679DCD5BDE
+	for <linux-phy@archiver.kernel.org>; Wed, 27 May 2026 06:27:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=wBqDWGJbKc50Tsy7If6DkuYsJqkePvpa8QF2W9M1taI=; b=hKwzpAim6SPnuA
-	pIywHUR5nR4SXrsn1QVwIvwpDMTOFdxp/gEWEb8Rv1dfCh37hkwMaz86ku88FrCHNMEfTxN5VZSjD
-	spByCiXaLGeLKYDmFUi+V3DST8M61w/NanaHrzOO4YXi4aLtNYdKG31p4wwctccWdurcX67HF2hEr
-	BayiIg/Lts5J+2h7n3nrxctBVCrmrZdOycRgBn9htzgz7tkd+37JURAGRk4zzhuUMYRzxgkaiEe4N
-	Ea/l4zCAOnmcwCdMpONRNXC6rSpEjVAQJ1JC1P+3lusBUc6bQJAgelrmNKMQrVwvRAvTIabU6xIbY
-	QGi6WF25tcUvh/b7+CQg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uDcXhp0fvw0jE8Wuwg6/YyM7ZHdQ4uknfCvE18bYdv4=; b=fZAc+js6EnTePD
+	H7xxVdMaHyAKnDOYTuQegBgp6oGj6CkeBzQkytzAvsxUVpHerJqishiSswXS+UbmtwO/O2ExV2v2D
+	izBooDyCtsAhYaOBu6SxA+m8WXUE9gEu49mNvXbOj8QeRYS6o63LS7BReqa5eOD2FBCSbX8itBE4p
+	e92QM4KpWIYFHLcISV4Ci/JQidtNq/tPCNsrpUR9IlbGeTt9mnKbThsUBaUQwGiTSEmonW8S1ezOa
+	xN8s5dANMSIzdsS0cXZeYbXAnDx3HjzaZEAGXWjhhlBrMb4TlDot8DVIzNVKs/sExQSqPadfdlLfM
+	1fPPXGgNQKhqRhH7RTug==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wS6z7-00000003MNC-3hl2;
-	Wed, 27 May 2026 05:39:17 +0000
-Received: from mail-wm1-x32e.google.com ([2a00:1450:4864:20::32e])
+	id 1wS7jX-00000003OsP-1zKG;
+	Wed, 27 May 2026 06:27:15 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wS6z5-00000003MMr-3WTu
+	id 1wS7jV-00000003Oro-26Um
 	for linux-phy@lists.infradead.org;
-	Wed, 27 May 2026 05:39:17 +0000
-Received: by mail-wm1-x32e.google.com with SMTP id 5b1f17b1804b1-4903974854dso49570265e9.3
-        for <linux-phy@lists.infradead.org>; Tue, 26 May 2026 22:39:14 -0700 (PDT)
+	Wed, 27 May 2026 06:27:14 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 64R2Whe1018706
+	for <linux-phy@lists.infradead.org>; Wed, 27 May 2026 06:27:11 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	6dU205cHGcCVdQJGGLYo2nsq0Ll/crMV3YgonLyTuLc=; b=pT7WAYQ0k+Ya74gS
+	wFgwiF7hDNQUI4g2K0FWNMQkPKDfwZJsQdibBtZNS7NO81jYBBbwaj8pp3c/9YuX
+	P/jBZaUjzUOIh6DM48jygjINQJtHWRPz6WRHs1DAGEh4F0gwqZWeFyW8loBZZDi/
+	w4egqnTG41fDndrD1wMwQuX7GYcJUNwf8Aoiv8e+TN15HZN4OHTRTrNquhfg1s5K
+	zOcGXdmN8CFqdMA5BDKrd4+svzCm1VW4DnNHME9/5oDOkfRx0YmaF53myoLoZgAC
+	4cxYAsB7PZyC3f+6YGIoLEXsJHk1ADDJveyR32sLEGt7eBIkGkbQ4NoK3fLF+lim
+	H4GPPw==
+Received: from mail-pl1-f198.google.com (mail-pl1-f198.google.com [209.85.214.198])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4eddqku13j-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Wed, 27 May 2026 06:27:11 +0000 (GMT)
+Received: by mail-pl1-f198.google.com with SMTP id d9443c01a7336-2ba6ebe52ebso34111115ad.0
+        for <linux-phy@lists.infradead.org>; Tue, 26 May 2026 23:27:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1779860353; x=1780465153; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=3mRI8mly2NbR54vqkvITGVjBSIViH+A5ziT0lYtjbs8=;
-        b=B859de+rohwZEgs7c/I5OI5OqUcmfcQd3SXolZiv7jofZqwjiCI71XE1W/4CnmuUX+
-         iBPLGqBZf0EGZvDTXjcrLrL6Zk9utfYXflR7Zf/fA8obMHVOV0tAlUTpnjiEGBJAUdJW
-         vkC5lWa7y7E2caxdCh0mJY6lU8xGImMgdYEZdzqyue4k5pLdP3k/KfkHn0j/iuR9SCCA
-         3p9LaRAS6MB0D0L7ChsdyqDtfbQfsPFfr2TFy5KxL22FD20KV39XmzIZ3AaHRPjKphiz
-         b5bWzl9rQU77NQ6bW8KmII1Cev26WIPiqm0E4acgRMaxw2k71iRMAwpis7jO0OK7+ITn
-         uY7w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1779860353; x=1780465153;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=oss.qualcomm.com; s=google; t=1779863230; x=1780468030; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to:subject
+         :user-agent:mime-version:date:message-id:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=3mRI8mly2NbR54vqkvITGVjBSIViH+A5ziT0lYtjbs8=;
-        b=I1LE2rTFa+a764CqjMHSfUyGt8RnLUFRaUAdmhCx4PiRGOLUPY8YekzavBue0PzaSu
-         mxPUN8YXK+qILEIpI7OEgadKtCxenllArwoDG7TzlkQxORbc9rGqqt10dzXeNpKkXazn
-         tHjUcRp9QWCMbkYytxybLjXTPeiTzYPHhrZGoM6LGQHWQGH3X7GI94iEgZzlcCxoKURz
-         nW8JEokzQ541SnEYnm7NpyYFv04hBWDegSmPuXTxxJiNTKjEfkl8zO0AAJwDF8zeA+uN
-         n5+A7FQiBG6sew2aNVjeOjoiz9AnbuO4TLav2mojpsPIctRg4ybhjh8VVzC4m9cuBJZo
-         CdpA==
-X-Forwarded-Encrypted: i=1; AFNElJ/OBXpgPkHbfHBlqvrHaGL8huGSFp3VzDwTQ3M7B0NN/VxmJ+oucse6KONudxSKhvaSnmCqfve9dck=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwaroOPFVlMk1ZoyCDTP2tY1KhzNu+zigkyXSg3a2D5ZS/zqJSA
-	7Pl7qImsBFeg9KAD+YXaYTh7YE/exAZks6+yuq0PiB7Pq9GuQJRbVBZq
-X-Gm-Gg: Acq92OFTNu7mo+TbRY9rJ2c5dTXT7u2x0DOWpkvTJPUIBk44Sxw5QNBIGKt8J0+0A/A
-	2+FlSOFpni6JOGzldc4kUw1szV6CpuXfBYWIpgEQ6M8i1fZaowSTz5VLIzkQGFQFENWxDMDpOnR
-	W55gebc3ThvycAFJm8F6Ml3zfd6cZnrbr+/OnzDxgJIKpFm1nXzBjv3JWmMzJUs/02Zd93VaZpo
-	NhFdUPd3ysROI4E+zXj9ApcMASlGQYXvpwj7guICKu/l6B+jgfJDDVp38U3dr3lBqRNPsmR9Ns7
-	n5m0DbsfWtQKKIh9m2dirdMOV1LV3KOTEj5xyvwd3DsGmXfmoH5z8uTc6PR38/Zaq9gAjKdODw+
-	EFKUUrNcl6rRIQ61x7OgwcvaHe4GZLxDeuwM98yZ0knu5imUoHzIySGV/IPxBLyOJ5ac63ZRG68
-	GZZ/zah2RxEZZXwAmVWHKOOaO0hNb7k3DaBAO5IwVKxyuOYc90b7VCKSzZ4yq7dq2zptysWWZcc
-	t1WnV7yx9OUEtZuXq6gU5ZTEQmJjdS4bkQd6Rg=
-X-Received: by 2002:a05:600c:37c8:b0:48f:e230:8cad with SMTP id 5b1f17b1804b1-49042ae0201mr391034895e9.33.1779860353006;
-        Tue, 26 May 2026 22:39:13 -0700 (PDT)
-Received: from localhost.localdomain (ip-89-176-136-191.bb.vodafone.cz. [89.176.136.191])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-490838b2b9fsm6502285e9.0.2026.05.26.22.39.11
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 26 May 2026 22:39:12 -0700 (PDT)
-From: Petr Wozniak <petr.wozniak@gmail.com>
-To: netdev@vger.kernel.org
-Cc: maxime.chevallier@bootlin.com,
-	bjorn@mork.no,
-	andrew@lunn.ch,
-	hkallweit1@gmail.com,
-	linux@armlinux.org.uk,
-	davem@davemloft.net,
-	edumazet@google.com,
-	kuba@kernel.org,
-	pabeni@redhat.com,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	jan@3e8.eu,
-	Petr Wozniak <petr.wozniak@gmail.com>
-Subject: [PATCH net-next v8] net: phy: sfp: probe for RollBall I2C-to-MDIO bridge in mdio-i2c
-Date: Wed, 27 May 2026 07:39:09 +0200
-Message-ID: <20260527053909.2118-1-petr.wozniak@gmail.com>
-X-Mailer: git-send-email 2.50.1
+        bh=6dU205cHGcCVdQJGGLYo2nsq0Ll/crMV3YgonLyTuLc=;
+        b=TscsUm/sC+XUjxPfJVJS1xQSTPfI1h1zySF6hcPuxO6/nQF/LdcPd9TzkjcVq/yJuT
+         B2QnTsIiGoES3SU8mHtJOmBrq2lMEMRQrEY2SHglkf0Vok3hoNxwZUkroDFz1aFfcJzO
+         +NQ8xsPVWepmOflh3Q0mQ6R4c8S1ah8V+9U5DlBhOB/KJG4OsZDOcL6WJHvuapAC2pFr
+         uuP9kPPzLRZB53/mK4KkWyYmIG8cCB5sEhMQ+SB4jJk/i6Nf5So8M8czmdVII7b5PC0V
+         zrr2E71MzRAc16PP2f/wPvaZH8cA36ThqZaP3iPzNpSn6yeeRWALLOWsRcGoY3tU9QTK
+         9Rcw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1779863230; x=1780468030;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to:subject
+         :user-agent:mime-version:date:message-id:x-gm-gg:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=6dU205cHGcCVdQJGGLYo2nsq0Ll/crMV3YgonLyTuLc=;
+        b=Q37aaRpOVp8Brvye7GhsMBCLPZdn+NsdHebCMgdJ+bb814EsfNoA7bAdHi+4OZKnZH
+         QsvypgcclSwZ6DBCkHpeFpOTkNZbTVxzB/ZnwGSw7afgzfjD0c7oi8G1GWwatuDafSAK
+         1M6UH3rJFgY7xqEKf+vPQpMqrG4eF41l5hcNU4+8t+LDgI0onDAUMjSXFD3OPwRMBu3y
+         VAMwX4t0M1F9aQQ57kdghEsboi+QuYPyzAIOyqGZjlXUnWy267pEZrWUcTrpa9mS9o7N
+         a/5dBccBAZnWn3fw8mDfypmXPggSNvzHIzvbWKTpK+pdF29IIxqxXnHrkNK4k5cnRMi+
+         wksA==
+X-Forwarded-Encrypted: i=1; AFNElJ8J7DTgDYSrEhEQ18oWbj/vO/Kw/TTuafpwghBrXWgpx5yT7dZlNEyNHB5frGhVkyz/WjEEL2+ybBY=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzMn01AqLcy8u8vwy6IdymC8iJsmmvb8NEIwlRjf5GBAHq+jUHQ
+	/9FFhG8+8AvNmpOnYHGy9zykxpYgsm+f09zsGvyVuYI8VOZmkNtoPCaVKkjZXktiJejy16DW2ge
+	GJUXLWlCSPLE/QjEvotXigNrdgg8XgNcA6vbBQJ3qDYAq1Of2yID8FmPuIwO7UdCo7SgR
+X-Gm-Gg: Acq92OFCCkOMAa3l5dgv8+RH3pQVazER2J+n1z2shY7dKX6CuLtzhYx7CCDJN7TBesG
+	ZyM5HtcaGB759SXd2L2sV3zUE4bm9J98T0FeQdmJudO5pziNTPI/Eqmu4E/4ZANReq7RN7NAiNG
+	RS/Ocngswxf+D6v0GBk1NGE6kZ1Xqy3mRvtFxgAsIk4y930XxD4Fw60kUjytKL8fKAswjGdvxut
+	KjIJah9XyBjd8jjzyt0eNQnqSO090Ap4PyVvinUAC7vIjEUkMEl5lyK4oulC4i3kyD05GLYiGLv
+	EBI6IZiWlkOISMxwu6QzPXsNjh3kJi3q90tDVvpmJCIwIo28K2GOBsIYOO04WmNG33DV9GYSrJX
+	GIjKl8jpPwI4d1H4Mjd9BDD6fcjiHEeuXsGVFCLIzD+KLyvfI2K0mpwscHJYq2+B944buGBw4TF
+	upi17gCKMb7Xq83d5d
+X-Received: by 2002:a17:903:3850:b0:2ba:7374:76e7 with SMTP id d9443c01a7336-2beb03312ffmr122769795ad.0.1779863230629;
+        Tue, 26 May 2026 23:27:10 -0700 (PDT)
+X-Received: by 2002:a17:903:3850:b0:2ba:7374:76e7 with SMTP id d9443c01a7336-2beb03312ffmr122769675ad.0.1779863230247;
+        Tue, 26 May 2026 23:27:10 -0700 (PDT)
+Received: from [10.133.33.246] (tpe-colo-wan-fw-bordernet.qualcomm.com. [103.229.16.4])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2beb58dba7bsm138308185ad.66.2026.05.26.23.27.05
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 26 May 2026 23:27:09 -0700 (PDT)
+Message-ID: <d2098b36-c514-44e8-99b9-2213c4d52752@oss.qualcomm.com>
+Date: Wed, 27 May 2026 14:27:01 +0800
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 4/4] phy: qcom: qmp-usbc: Add support for "phy" reset
+ used on Shikra
+To: Pratham Pratap <pratham.pratap@oss.qualcomm.com>,
+        Neil Armstrong <neil.armstrong@linaro.org>,
+        Vinod Koul <vkoul@kernel.org>, Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
+        Johan Hovold <johan+linaro@kernel.org>,
+        Loic Poulain <loic.poulain@oss.qualcomm.com>,
+        Kathiravan Thirumoorthy <kathiravan.thirumoorthy@oss.qualcomm.com>,
+        Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+        Abel Vesa <abel.vesa@oss.qualcomm.com>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
+References: <20260526184401.3959717-1-pratham.pratap@oss.qualcomm.com>
+ <20260526184401.3959717-5-pratham.pratap@oss.qualcomm.com>
+From: Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>
+In-Reply-To: <20260526184401.3959717-5-pratham.pratap@oss.qualcomm.com>
+X-Authority-Analysis: v=2.4 cv=Zubd7d7G c=1 sm=1 tr=0 ts=6a168ebf cx=c_pps
+ a=MTSHoo12Qbhz2p7MsH1ifg==:117 a=nuhDOHQX5FNHPW3J6Bj6AA==:17
+ a=IkcTkHD0fZMA:10 a=NGcC8JguVDcA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=rJkE3RaqiGZ5pbrm-msn:22
+ a=EUspDBNiAAAA:8 a=BIqxoA4OLNVSwOVwhU0A:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
+ a=GvdueXVYPmCkWapjIL-Q:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNTI3MDA2MCBTYWx0ZWRfX1XLZez/UOfoz
+ zE4bVtgpGqWI7/gxJfp30YPZ0EA8+AFpjhBUvadYPife78a5UtDeo1keeCVZ1xkkLnJ1HEIea8a
+ bmxutTEJHW8VjSXkkd2sWYyZ51X2P9yTAGh5SJ9fEYsSStoOAjJg1OHKqlaFQ17qR2rTW8BiFvF
+ Mozfjpy++I1GtNc7Mlsit4ttt2XT/PAPohA7Gzd9rlOVVUFRS4mwW3NkT6qnzJP02hReRGNFPX6
+ H13sisZqzsygE2AFiULFAwt7THk+PpvAxTlIS2ivCmazOlYlbS5dD2DkftbL+ap/i/kEAah59Iu
+ MSbs95FuDz47idAVUhORXm0LCGUqziwls7zeVNTlzL0t4snabllbdbB+V81pb8vUkHiCkWZuR3i
+ drmWjbxDAYltsXhGJ/z6kLpGYPMvhN92/jcYLNVHCbQlturWr4Hw+k22NoDv73QxwI/JAM/4WC0
+ 8gEj/AaL5UmCO30XzzQ==
+X-Proofpoint-ORIG-GUID: lF0oKewVW4JRV-3WEJdSL0bMDrR7vvTB
+X-Proofpoint-GUID: lF0oKewVW4JRV-3WEJdSL0bMDrR7vvTB
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.125,FMLib:17.12.100.49
+ definitions=2026-05-26_05,2026-05-26_03,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ adultscore=0 priorityscore=1501 phishscore=0 lowpriorityscore=0
+ impostorscore=0 clxscore=1011 suspectscore=0 malwarescore=0 bulkscore=0
+ spamscore=0 classifier=typeunknown authscore=0 authtc= authcc= route=outbound
+ adjust=0 reason=mlx scancount=1 engine=8.22.0-2605130000
+ definitions=main-2605270060
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260526_223915_917879_4ED3A506 
-X-CRM114-Status: GOOD (  23.72  )
+X-CRM114-CacheID: sfid-20260526_232713_735513_754E0119 
+X-CRM114-Status: GOOD (  18.62  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,222 +153,33 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The "OEM"/"SFP-10G-T" quirk entry in sfp_fixup_rollball_cc()
-unconditionally forces MDIO_I2C_ROLLBALL for all modules matching that
-vendor/part-number combination.  This works for modules that genuinely
-implement a RollBall I2C-to-MDIO bridge, but silently breaks modules
-that share the same EEPROM strings without having such a bridge.
-
-The Realtek RTL8261BE-CG is one such module: a pure copper 10G SFP+
-media converter with no I2C-to-MDIO bridge.  Its EEPROM reports
-vendor="OEM", part="SFP-10G-T-I", and -- critically -- Vendor OUI
-00:00:00, making OUI-based differentiation impossible.  With
-MDIO_I2C_ROLLBALL forced, the module silently ACKs the unlock password
-write, the MDIO bus is created, but no PHY responds; the SFP state
-machine cycles through the RollBall PHY-probe retry window before
-reporting no PHY.
-
-Move the probe into i2c_mii_init_rollball() in mdio-i2c.c, where the
-RollBall protocol constants are already defined.  After sending the
-unlock password, issue a CMD_READ and poll for CMD_DONE up to 200 ms
-(10 x 20 ms, matching the existing rollball poll tolerance).  A genuine
-RollBall bridge asserts CMD_DONE within that window; modules without a
-bridge never do, so i2c_mii_init_rollball() returns -ENODEV.
-mdio_i2c_alloc() propagates -ENODEV to the caller to signal that no
-bridge is present and PHY probing should be skipped.
-sfp_sm_add_mdio_bus() catches -ENODEV and transitions
-sfp->mdio_protocol to MDIO_I2C_NONE so the rest of the state machine
-skips PHY probing for this module.
-
-Any I2C-level error (NACK, timeout) during the probe is also treated as
--ENODEV: if the module does not respond at I2C address 0x51 at all,
-there is certainly no RollBall bridge there, and SFP initialization
-should not abort.
-
-The probe writes are safe with respect to SFP EEPROM integrity: only
-modules explicitly listed in the quirk table enter this path, and the
-RollBall password unlock write to 0x51 was already issued by
-i2c_mii_init_rollball() before the probe for all such modules.  Any
-module without a device at 0x51 NACKs the transfer and is treated as
--ENODEV.
-
-Add "OEM"/"SFP-10G-T-I" to the quirk table so RTL8261BE modules enter
-the probe path; genuine RollBall modules continue to work as before.
-
-Signed-off-by: Petr Wozniak <petr.wozniak@gmail.com>
-Reviewed-by: Maxime Chevallier <maxime.chevallier@bootlin.com>
----
-
-Changes since v7 (feedback from Jakub Kicinski):
-  - Rebased on current net-next; no functional changes
-
-Changes since v6 (feedback from Maxime Chevallier):
-  - Remove redundant if (ret) checks after i2c_transfer_rollball() calls;
-    the function never returns a positive value (always 0 or negative),
-    so these branches were dead code
-
-Changes since v5 (Sashiko AI review):
-  - Treat I2C NACK/errors in i2c_mii_init_rollball() as -ENODEV so
-    modules without a 0x51 EEPROM do not abort SFP initialization
-  - Replace fixed 70 ms wait with 10 x 20 ms poll (total 200 ms),
-    matching the existing i2c_rollball_mii_poll() tolerance and
-    preventing false -ENODEV on slow RollBall bridges
-
-Changes since v4 (feedback from Maxime Chevallier):
-  - Fix commit message: replace "stalls" with accurate description of
-    the RollBall PHY-probe retry window
-  - Fix variable declaration order in i2c_mii_probe_rollball() to
-    follow reverse-xmas tree (descending line length)
-  - Remove spurious alignment space on "SFP-10G-T" quirk entry
-  - Document that -ENODEV from mdio_i2c_alloc() means no bridge present,
-    PHY probing should be skipped
-
-Changes since v3 (feedback from Jakub Kicinski):
-  - Drop spurious Tested-by: tag -- author and tester are the same person
-  - Use PATCH net-next subject prefix
-  - Move -ENODEV handling from sfp_i2c_mdiobus_create() into
-    sfp_sm_add_mdio_bus() so bus-creation code does not mutate
-    sfp->mdio_protocol; the state machine is the correct place for
-    protocol-state transitions
-  - Split combined variable declaration for clarity
-
-Changes since v2:
-  - Compile-tested and hardware-tested on BPI-R4 (MT7988A, 6.12.87)
-  - RTL8261BE (OEM/SFP-10G-T-I): probes MDIO_I2C_NONE, link Up 10Gbps
-  - Genuine RollBall (OEM/SFP-10G-T): bridge detected, link Up 10Gbps
----
- drivers/net/mdio/mdio-i2c.c | 59 ++++++++++++++++++++++++++++++++-----
- drivers/net/phy/sfp.c       | 14 +++++++--
- 2 files changed, 63 insertions(+), 10 deletions(-)
-
-diff --git a/drivers/net/mdio/mdio-i2c.c b/drivers/net/mdio/mdio-i2c.c
-index ed20352a5..b88f63234 100644
---- a/drivers/net/mdio/mdio-i2c.c
-+++ b/drivers/net/mdio/mdio-i2c.c
-@@ -419,6 +419,50 @@ static int i2c_mii_write_rollball(struct mii_bus *bus, int phy_id, int devad,
- 	return 0;
- }
- 
-+static int i2c_mii_probe_rollball(struct i2c_adapter *i2c)
-+{
-+	u8 data_buf[] = { ROLLBALL_DATA_ADDR, 0x01, 0x00, 0x00 };
-+	u8 cmd_buf[]  = { ROLLBALL_CMD_ADDR, ROLLBALL_CMD_READ };
-+	u8 cmd_addr   = ROLLBALL_CMD_ADDR;
-+	struct i2c_msg msgs[2];
-+	u8 result;
-+	int ret;
-+	int i;
-+
-+	msgs[0].addr  = ROLLBALL_PHY_I2C_ADDR;
-+	msgs[0].flags = 0;
-+	msgs[0].len   = sizeof(data_buf);
-+	msgs[0].buf   = data_buf;
-+	msgs[1].addr  = ROLLBALL_PHY_I2C_ADDR;
-+	msgs[1].flags = 0;
-+	msgs[1].len   = sizeof(cmd_buf);
-+	msgs[1].buf   = cmd_buf;
-+
-+	ret = i2c_transfer_rollball(i2c, msgs, ARRAY_SIZE(msgs));
-+	if (ret < 0)
-+		return -ENODEV;
-+
-+	msgs[0].addr  = ROLLBALL_PHY_I2C_ADDR;
-+	msgs[0].flags = 0;
-+	msgs[0].len   = 1;
-+	msgs[0].buf   = &cmd_addr;
-+	msgs[1].addr  = ROLLBALL_PHY_I2C_ADDR;
-+	msgs[1].flags = I2C_M_RD;
-+	msgs[1].len   = 1;
-+	msgs[1].buf   = &result;
-+
-+	for (i = 0; i < 10; i++) {
-+		msleep(20);
-+		ret = i2c_transfer_rollball(i2c, msgs, ARRAY_SIZE(msgs));
-+		if (ret < 0)
-+			return -ENODEV;
-+		if (result == ROLLBALL_CMD_DONE)
-+			return 0;
-+	}
-+
-+	return -ENODEV;
-+}
-+
- static int i2c_mii_init_rollball(struct i2c_adapter *i2c)
- {
- 	struct i2c_msg msg;
-@@ -438,11 +482,11 @@ static int i2c_mii_init_rollball(struct i2c_adapter *i2c)
- 
- 	ret = i2c_transfer(i2c, &msg, 1);
- 	if (ret < 0)
--		return ret;
--	else if (ret != 1)
-+		return -ENODEV;
-+	if (ret != 1)
- 		return -EIO;
--	else
--		return 0;
-+
-+	return i2c_mii_probe_rollball(i2c);
- }
- 
- static bool mdio_i2c_check_functionality(struct i2c_adapter *i2c,
-@@ -487,9 +531,10 @@ struct mii_bus *mdio_i2c_alloc(struct device *parent, struct i2c_adapter *i2c,
- 	case MDIO_I2C_ROLLBALL:
- 		ret = i2c_mii_init_rollball(i2c);
- 		if (ret < 0) {
--			dev_err(parent,
--				"Cannot initialize RollBall MDIO I2C protocol: %d\n",
--				ret);
-+			if (ret != -ENODEV)
-+				dev_err(parent,
-+					"Cannot initialize RollBall MDIO I2C protocol: %d\n",
-+					ret);
- 			mdiobus_free(mii);
- 			return ERR_PTR(ret);
- 		}
-diff --git a/drivers/net/phy/sfp.c b/drivers/net/phy/sfp.c
-index bd970f753..7b2c20d78 100644
---- a/drivers/net/phy/sfp.c
-+++ b/drivers/net/phy/sfp.c
-@@ -579,6 +579,7 @@ static const struct sfp_quirk sfp_quirks[] = {
- 	// OEM SFP-GE-T is a 1000Base-T module with broken TX_FAULT indicator
- 	SFP_QUIRK_F("OEM", "SFP-GE-T", sfp_fixup_ignore_tx_fault),
- 
-+	SFP_QUIRK_F("OEM", "SFP-10G-T-I", sfp_fixup_rollball),
- 	SFP_QUIRK_F("OEM", "SFP-10G-T", sfp_fixup_rollball_cc),
- 	SFP_QUIRK_S("OEM", "SFP-2.5G-T", sfp_quirk_oem_2_5g),
- 	SFP_QUIRK_S("OEM", "SFP-2.5G-BX10-D", sfp_quirk_2500basex),
-@@ -2022,10 +2023,17 @@ static void sfp_sm_fault(struct sfp *sfp, unsigned int next_state, bool warn)
- 
- static int sfp_sm_add_mdio_bus(struct sfp *sfp)
- {
--	if (sfp->mdio_protocol != MDIO_I2C_NONE)
--		return sfp_i2c_mdiobus_create(sfp);
-+	int ret;
- 
--	return 0;
-+	if (sfp->mdio_protocol == MDIO_I2C_NONE)
-+		return 0;
-+
-+	ret = sfp_i2c_mdiobus_create(sfp);
-+	if (ret == -ENODEV) {
-+		sfp->mdio_protocol = MDIO_I2C_NONE;
-+		return 0;
-+	}
-+	return ret;
- }
- 
- /* Probe a SFP for a PHY device if the module supports copper - the PHY
--- 
-2.51.0
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+Ck9uIDUvMjcvMjAyNiAyOjQ0IEFNLCBQcmF0aGFtIFByYXRhcCB3cm90ZToKPiBGcm9tOiBLcmlz
+aG5hIEt1cmFwYXRpIDxrcmlzaG5hLmt1cmFwYXRpQG9zcy5xdWFsY29tbS5jb20+Cj4KPiBTaGlr
+cmEgdXNlcyB0aHJlZSByZXNldHMgKGRwLyBwaHkvIHBoeV9waHkpLiBBZGQgdGhlIGV4dHJhICJw
+aHkiIHJlc2V0Cj4gbmVlZGVkIGZvciBvcGVyYXRpb24gb2YgUU1QIFBoeSBvbiBTaGlrcmEuCj4K
+PiBTaWduZWQtb2ZmLWJ5OiBLcmlzaG5hIEt1cmFwYXRpIDxrcmlzaG5hLmt1cmFwYXRpQG9zcy5x
+dWFsY29tbS5jb20+Cj4gU2lnbmVkLW9mZi1ieTogUHJhdGhhbSBQcmF0YXAgPHByYXRoYW0ucHJh
+dGFwQG9zcy5xdWFsY29tbS5jb20+Cj4gLS0tCj4gIGRyaXZlcnMvcGh5L3F1YWxjb21tL3BoeS1x
+Y29tLXFtcC11c2JjLmMgfCAyICstCj4gIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigrKSwg
+MSBkZWxldGlvbigtKQo+Cj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGh5L3F1YWxjb21tL3BoeS1x
+Y29tLXFtcC11c2JjLmMgYi9kcml2ZXJzL3BoeS9xdWFsY29tbS9waHktcWNvbS1xbXAtdXNiYy5j
+Cj4gaW5kZXggYzM0MjQ3OWEzNzk4Li4wNjdlN2Y2ZTU2NDIgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVy
+cy9waHkvcXVhbGNvbW0vcGh5LXFjb20tcW1wLXVzYmMuYwo+ICsrKyBiL2RyaXZlcnMvcGh5L3F1
+YWxjb21tL3BoeS1xY29tLXFtcC11c2JjLmMKPiBAQCAtNTEzLDcgKzUxMyw3IEBAIHN0YXRpYyBj
+b25zdCBjaGFyICogY29uc3QgdXNiM3BoeV9yZXNldF9sW10gPSB7Cj4gIH07Cj4gIAo+ICBzdGF0
+aWMgY29uc3QgY2hhciAqIGNvbnN0IHVzYjNkcHBoeV9yZXNldF9sW10gPSB7Cj4gLQkicGh5X3Bo
+eSIsICJkcF9waHkiLAo+ICsJInBoeV9waHkiLCAiZHBfcGh5IiwgInBoeSIsCj4gIH07Cj4gIAoK
+CnVzYjNkcHBoeV9yZXNldF9sIGlzIHNoYXJlZCB3aXRoIHFjczYxNV91c2IzZHBfcGh5X2NmZywg
+YnV0IEkgZGlkbid0IGZpbmQgYW55IG9wdGlvbmFsLXJlc2V0IGhhbmRsaW5nIGluIHFtcF91c2Jj
+X3Jlc2V0X2luaXQoKS4KdGFsb3MuZHRzaSBvbmx5IGRlZmluZXMgdHdvIHJlc2V0cyBmb3IgcWNv
+bSxxY3M2MTUtcW1wLXVzYjMtZHAtcGh5LCBzbyBhZGRpbmcgInBoeSIgaGVyZSB1bmNvbmRpdGlv
+bmFsbHkgd2lsbCBicmVhayBwcm9iZSBvbiBRQ1M2MTUuwqAKUGxlYXNlIGNyZWF0ZSBhIHNlcGFy
+YXRlIHJlc2V0IGxpc3QgZm9yIFNoaWtyYSBpbnN0ZWFkLgoKCj4gIHN0YXRpYyBjb25zdCBzdHJ1
+Y3QgcmVndWxhdG9yX2J1bGtfZGF0YSBxbXBfcGh5X21zbTg5OThfdnJlZ19sW10gPSB7CgotLSAK
+bGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRw
+czovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
