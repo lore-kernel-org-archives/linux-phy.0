@@ -4,140 +4,106 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 79B69CD4F54
-	for <linux-phy@archiver.kernel.org>; Wed, 27 May 2026 07:12:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 38C9ACD4F54
+	for <linux-phy@archiver.kernel.org>; Wed, 27 May 2026 08:21:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/ZbrE4/E1k1dhSVpOIY9T6kdlvSSuyJTKLfiRLY7rxI=; b=plucvpKyvjvD5T
-	co/2nwJj8GLqDz4jg+2sJP0bSpjNQyKXeBJPE5aBCA3b+uN/DXktl0bMJY83NFHCMybKgVjHQoLLO
-	PuLc2Kf8ynp9mw5bnRw2FX72e7dh9N1AwrGkzvuPeljnu/GGoQ/lU2wtE0ySBExvw0ZSNpKqTiiFu
-	jDV72uWCxNDB3F3dIeGyMoixJ0SeHbzwrUTTcVElN5j0bLKzVuEnOSQ8uwd3Y6pvx811um0rYJcS5
-	WsBLwYGSRjcQPnZ3sThH6DVkOFLfvuYrt532J0qzGe8G2CtRyueRaEQsxQYgBWsJSZq5hTIfGC2Hr
-	KYL/ga5t8ZoEZZNNtz4A==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=WHZByI/oPpuAMK86zHFl87NOHXhn79ctcQmnoLpyW+4=; b=RPA9Cow/RGYqEb
+	FyK2od9aJ87z2ZGiL8JE4//3UCTWC/Lut/evN7fRlESBTzOXDU443gsuyMIXZ9xy1diLLCglN1ZTT
+	aJbTvjLNn/DAW0oI6lYz+sKAfjhzrbjqnMSFNe2XIhn7ck6y8Hhk7Zjn7re48U8vx5KJlxf24008N
+	RdkbFW/g4DjEAwICBNiXOEh12bQeEk2hKSCKQBWUKt6aCO61UEWoj5GtF32AwGbxc5L8KnZLlNGnr
+	EGWwmSJmLpDYBkVcsq+xc0GQOqe18AfUzTt5LDQooVzagDnohYKMPYYEJxCN11N4TdKV/8JdFb2B4
+	FhYnTNFY9fxA1SBRFoFg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wS8RK-00000003Rd2-3jaO;
-	Wed, 27 May 2026 07:12:30 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1wS9Vq-00000003XHs-37zq;
+	Wed, 27 May 2026 08:21:14 +0000
+Received: from mail-japanwestazon11010056.outbound.protection.outlook.com ([52.101.228.56] helo=OS0P286CU011.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wS8RI-00000003Rcc-3BkY
+	id 1wS9Vo-00000003XGt-15Ei
 	for linux-phy@lists.infradead.org;
-	Wed, 27 May 2026 07:12:30 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 64R2WVMC3396767
-	for <linux-phy@lists.infradead.org>; Wed, 27 May 2026 07:12:28 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	sFqDIrJjKC2IJFbPzvKdfW/q7cLOEJE24hhamOrvPj0=; b=kdjzTCAj4p7g6NBv
-	6dhNZ8mo6TNx4IxOtjBmPyr6UHpoXl3t9pwDzBtzVU8abDJDEQZvPQlNRaixvcqW
-	NNMW9hZDVWlIpipChxJkLQyakIJbm4BJsEJK4cZoQpCsFHHqhO8BHiHGBP+bkUgo
-	jsFF39Q9Rg8msD3ACKNWkeNfEFwgqgBiA7Oq6TD9MQ59pl1cR3K1trjNTaoKbRvY
-	tw4y5S+R7pdibCy+25RinBAJcR+/BLgmsAQN7ywDPFS9Bkq5MpJ87qxc57KCJ1uI
-	GJWeRs3jl4aLOL23fJwvgoqqLnYS+jsIoI8h/N6dPZx6kH+/2YDekOKh8NR3tvYN
-	XMK7CQ==
-Received: from mail-pj1-f70.google.com (mail-pj1-f70.google.com [209.85.216.70])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4edg5pabqa-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Wed, 27 May 2026 07:12:27 +0000 (GMT)
-Received: by mail-pj1-f70.google.com with SMTP id 98e67ed59e1d1-3663d5e9b9bso10804078a91.1
-        for <linux-phy@lists.infradead.org>; Wed, 27 May 2026 00:12:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1779865947; x=1780470747; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=sFqDIrJjKC2IJFbPzvKdfW/q7cLOEJE24hhamOrvPj0=;
-        b=YJ3n1VIFvisby72C8g7xwGpUwY3bdXA4dwqKnFGoDoYTstI5aLvPPwuIhJECxYZ/YG
-         RwGn3FshVqGwsM8B6z8BeTz0caIzW7pAwJ9kA0LvhShVdsPq/F+Ft2Z7nbwGaMOdbchO
-         n5J9ovrgkbecp7TgJWyug8VZRwO6Mf4GwYK/qLRAcDy6dVRtXOTCJsjH9FyfbHbt2iic
-         eVvrGTCMLeWXjvn9IuLw2mr73hPvuLSOJB3NIdxbPQVGMdjvIMsqUgSYOnlNfs+kMMUD
-         a/gW4OaUMznnVnEEMfo8tvjShCjh2owEHDmqmXiZncfvfSd9feeE8g7CZWKU3yssSrKo
-         Rf0w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1779865947; x=1780470747;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=sFqDIrJjKC2IJFbPzvKdfW/q7cLOEJE24hhamOrvPj0=;
-        b=CmItJHt/4VrW15bHmLF7/JzsHYrapOl97V0b7GZoBCzlbmu1ihZ/qymBSv0d37K5Im
-         7J5clBGwewHKsItcCyLB1vmP5Vw8v7m+u7+2gHePW+YdaLky7mrePlJCps40qxk6BQPW
-         PUyobRd9Wv+IBfZszs16hIA57xFYAS74c2gWy6nL4uamSNra5ypdTbTmv3dED8SIdYkM
-         /u42j8/eUny46/HAflNRmOuwFfwIplc8yqa591Z4nyn3nUOxOs+2E8KL/x3NXO/90LZ9
-         Mf35a/QqF6oEHL9RhQkgAU3kpAST+5l4VzSfsdDapokQ3hsRhLJHg9EX1JfwD6OBuhsr
-         DY1g==
-X-Forwarded-Encrypted: i=1; AFNElJ9EYzDz/1QmnTRqJY5+8fBXYo2IhpRgZ7Rlu77BJpGd4oiVewVa9zPKpXA8PFP3AG+2ricp8K0DcFg=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyJKnP1godKsfv42VReqMZFdvE8DjUDuFBcdMdQMIGUlFq+b5Qk
-	3MNZTABP+EGctqCUJO/UCL3hltT263N4DODGcOtcIooR/dt2yW/S8OXvNGOFsfTlc/PSu6sUBTY
-	D6YOMbCN772JLOf3zoIhorEpYMzEMpvSh1it/ZJes64lwOL+0tTx7UdxuQqUXAFh6XYGo
-X-Gm-Gg: Acq92OF0pVcCoyZNVUXk9KN2+vBzDGmw7rqfuISGad2ENvll2BBYtV8E4cazpG/P9wC
-	JJ1ut2k41NAVtghuFFS9TJhEnrovM+vxdeIGbnl1ZcMx6JfpLr/blLW+xIxER5c/lfVaqrr/evQ
-	Q/mLgvZ8v2V7DB2emwdTCmDIIelHLx4SkubUCH8m7znBG6KuD81yCTLWu0wJkFhOSXEOrK50lJe
-	Gw9iRg47gFnSUexxE+M+7MAFV++2KO97y0xYUqT8XEwKpFvnsqVhUtmEIO2Lu0vdaXdN/vtyTsF
-	sjfzhhrmrYvh3vqI5O4JHf585hnrJAkoe2VFyxkKKfQzUqIuvPDk5R08snq5Pnip8+BuqI0MyYF
-	NnKDMahqzGa1kyLevbBh72Exvi6BFPR4ABw7A4svDQ6/UHoEa
-X-Received: by 2002:a17:902:ceca:b0:2b4:604c:ec6f with SMTP id d9443c01a7336-2beb069853bmr239368775ad.32.1779865947241;
-        Wed, 27 May 2026 00:12:27 -0700 (PDT)
-X-Received: by 2002:a17:902:ceca:b0:2b4:604c:ec6f with SMTP id d9443c01a7336-2beb069853bmr239368465ad.32.1779865946736;
-        Wed, 27 May 2026 00:12:26 -0700 (PDT)
-Received: from [10.219.57.29] ([202.46.23.19])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2beb56ce4easm134672025ad.30.2026.05.27.00.12.21
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 27 May 2026 00:12:26 -0700 (PDT)
-Message-ID: <951c9b8f-4513-47ca-afb6-481dedd3eff9@oss.qualcomm.com>
-Date: Wed, 27 May 2026 12:42:20 +0530
+	Wed, 27 May 2026 08:21:14 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=q2ZVfyz2G1TBN4ibD7kjU0SlTVNaaVxN5RZxsLKrz/J3HjJyofvwiCXHpPQM4H1qIfMcinVIWB3OSx8Rpiej6bzOAoan29DJqrkAtmBvn9gO848ibFWrlim0IUqy6MruIXd+rmrsQ58p0xw9KJezpQcZ3FYC1V/WgpkQS0CceoEBH0YKhwt/qiYlPc6K+7SOdLoQ+v9FEesWNeXlNGOHUselV1sD+3PshCOXvM8jXfjOiGFQeJ0/toRitNkHkX0zmyfKNSfq/jxCdbS5LrXN2CXo4OuUplHPBUcEs06fU4F2wfaooLZEOGFlRtdRcoqFFpnJZl/zk3hcEhMHVJFWNw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=mvvhJchdza69Qne4ITJhK7TcwvDfBYdVe3SfaMEqN5o=;
+ b=LUUPgrwhPz1DiIqClwhecdtDkxsG+/ZPIqtfLr+LfbNZPK8hxHlJdyjM/IuhAeTOU/zBR+sQL2YJHDBFHJnuchw9O/oQmMTCOiJYgtvRq5JbEh4miZoda3pggKqGWofZATI3iHmmGf9cQK4ktmoYygm3BZ9gy8YEyIEc2aObWcHaQcwZNGqxYHZdoI9s2itwFNJIUejmyUf8Tt7Cwc8kZUpNJj7Z/ZBFpjnf10KP9FaHUPT4KXOhSD94RBpn5j0taSKvKhDqKWaHyJDJQZoHW/w4m3169/FrRAnMqqi/RGVjBSYXAtlaj4fVCweuPGCDiqA63sIjyG7cU2cCPXg0aQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 8.62.32.50) smtp.rcpttodomain=bp.renesas.com smtp.mailfrom=renesas.com;
+ dmarc=pass (p=none sp=none pct=100) action=none header.from=renesas.com;
+ dkim=none (message not signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=renesas.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=mvvhJchdza69Qne4ITJhK7TcwvDfBYdVe3SfaMEqN5o=;
+ b=SgIB3lfzdXdKqE926QQ58pyK5ekacjU9GA42wHj0OHRDrQnUl/9moVHIw8GZFmJpwhLiuZvicQC2yOJ5tGjGwxq9oqylKRKAYhgQWdZTA75ZXjxNiDV/sZ/2s5xVtLKtoRZD3Oqfv/CgIzbtt3f319zPCmvWUpQAaMBhcRkQxXc=
+Received: from TYCPR01CA0144.jpnprd01.prod.outlook.com (2603:1096:400:2b7::20)
+ by OS9PR01MB15442.jpnprd01.prod.outlook.com (2603:1096:604:3be::8) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.71.12; Wed, 27 May
+ 2026 08:21:04 +0000
+Received: from TY2PEPF00005624.JPNP286.PROD.OUTLOOK.COM
+ (2603:1096:400:2b7:cafe::69) by TYCPR01CA0144.outlook.office365.com
+ (2603:1096:400:2b7::20) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.21.71.12 via Frontend Transport; Wed, 27
+ May 2026 08:21:04 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 8.62.32.50)
+ smtp.mailfrom=renesas.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=renesas.com;
+Received-SPF: Pass (protection.outlook.com: domain of renesas.com designates
+ 8.62.32.50 as permitted sender) receiver=protection.outlook.com;
+ client-ip=8.62.32.50; helo=ejcrelay005p.adwin.renesas.com; pr=E
+Received: from ejcrelay005p.adwin.renesas.com (8.62.32.50) by
+ TY2PEPF00005624.mail.protection.outlook.com (10.167.240.55) with Microsoft
+ SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.21.71.7 via
+ Frontend Transport; Wed, 27 May 2026 08:21:04 +0000
+Received: from vm01.adwin.renesas.com (DEU-5CG20946WF.adwin.renesas.com [10.226.92.196])
+	by ejcrelay005p.adwin.renesas.com (Postfix) with ESMTP id F4061300010D;
+	Wed, 27 May 2026 17:21:01 +0900 (JST)
+From: Ovidiu Panait <ovidiu.panait.rb@renesas.com>
+To: Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Biju Das <biju.das.jz@bp.renesas.com>,
+	Geert Uytterhoeven <geert+renesas@glider.be>
+Cc: linux-phy@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	linux-renesas-soc@vger.kernel.org,
+	Ovidiu Panait <ovidiu.panait.rb@renesas.com>
+Subject: [PATCH v2] phy: renesas: phy-rzg3e-usb3: Use SYSTEM_SLEEP_PM_OPS instead of NOIRQ
+Date: Wed, 27 May 2026 08:20:52 +0000
+Message-ID: <20260527082052.117289-1-ovidiu.panait.rb@renesas.com>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 1/5] dt-bindings: arm: qcom: Document Shikra and its
- EVK boards
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Cc: Bjorn Andersson <andersson@kernel.org>,
-        Konrad Dybcio <konradybcio@kernel.org>, Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley
- <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
-        Neil Armstrong <neil.armstrong@linaro.org>,
-        Wesley Cheng <quic_wcheng@quicinc.com>, Ulf Hansson <ulfh@kernel.org>,
-        linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
-        linux-mmc@vger.kernel.org, monish.chunara@oss.qualcomm.com
-References: <20260522-shikra-dt-v3-0-80ffde8a3dc4@oss.qualcomm.com>
- <20260522-shikra-dt-v3-1-80ffde8a3dc4@oss.qualcomm.com>
- <20260526-quantum-funny-gorilla-cfc983@quoll>
-Content-Language: en-US
-From: Komal Bajaj <komal.bajaj@oss.qualcomm.com>
-In-Reply-To: <20260526-quantum-funny-gorilla-cfc983@quoll>
-X-Proofpoint-ORIG-GUID: KwiegZv-JLfzbY1cfCIRIM5ssGB5tjaU
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNTI3MDA2OCBTYWx0ZWRfX9+hn+VZBpauq
- DliFtR+ktlz+MfRfW3ykn+wCZMm5OfzJA6HDVaPtIojr2/YJmgyljwRlulRede3QsS5iPNTuloO
- UA0YPtVf32YVRKmby49p4F+L2esPdvrJnzeCQ5VOXTeqGOr2Q9/yZhfY4TIk6CA83xjRiM3PyEj
- gWYhMuzpgwl9fqeru/B1Tori5+5DMkP0iVEGO9X1cdCKP8bI00396iY8+ywlZaBMUn50BPjRGG/
- 3sfii5dS2peuo/BjNydbiqnPvsECMnwbtqq9wW37TVqpm5My7K/e5ud06IksgSnKD1wl8ApLhLF
- h4bRPy/H99x+JJx9D+oUkuDT85tM41kGvRXe7E42P+j5SOOYGu2vmp6Q7+jIIvihgrOWXkPPP9p
- n6RoOM5oyMeiO1CAh6WzXVtuHGCtQT3/YUZ7FbKA88RzQrengYLZJzyuJ/vlV/3V0raC5mJb8yC
- dHgWn8Ppl8QXLje7e5g==
-X-Authority-Analysis: v=2.4 cv=I95Vgtgg c=1 sm=1 tr=0 ts=6a16995b cx=c_pps
- a=0uOsjrqzRL749jD1oC5vDA==:117 a=j4ogTh8yFefVWWEFDRgCtg==:17
- a=IkcTkHD0fZMA:10 a=NGcC8JguVDcA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yOCtJkima9RkubShWh1s:22
- a=kjqM9UcslzgJvOEO4JEA:9 a=QEXdDO2ut3YA:10 a=mQ_c8vxmzFEMiUWkPHU9:22
-X-Proofpoint-GUID: KwiegZv-JLfzbY1cfCIRIM5ssGB5tjaU
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.125,FMLib:17.12.100.49
- definitions=2026-05-26_05,2026-05-26_03,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 clxscore=1015 priorityscore=1501 bulkscore=0 suspectscore=0
- malwarescore=0 phishscore=0 adultscore=0 lowpriorityscore=0 impostorscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2605130000 definitions=main-2605270068
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: TY2PEPF00005624:EE_|OS9PR01MB15442:EE_
+X-MS-Office365-Filtering-Correlation-Id: 714afbe2-e73a-4ada-e415-08debbc8e535
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|36860700016|82310400026|1800799024|56012099006|11063799006|18002099003|13003099007;
+X-Microsoft-Antispam-Message-Info: slkcXPDT8u6h2W6LmqJcx9KzQ17AJe2TrqLfNDXyVgrJwYyy5bT7HvwwcmLC3Yeyz0HSBCFcD1U08+7HQvyJmkE1mpUvtc//XdiK8xAtSrJwFhpkQytXzMTctnpjLnT24kFYv5vI4k094VTQc+qSJQ27P0R4kl32CdR57cTeyzWw97w5yplu/Tin7N8grjSIt2C5xStwWQQNQuGtkPWfS+HMp5AwBCxmJqjQDFutnu11beKlFEPoWYx4X9kVe6+o7CW8A2h69ulzlYVulTVq0ZXms7ugNz8E3zy9GvralOBZgYDVNlb3l4N5pvhgBmZzqALmvmAnFkV78bRutCEEHSev6qwIX/Li2+oXb7vBZFRy6Oyp/NBD6bKnj6yakKdFRSFzFcT9WePqaZn5SALG76meexOa566G7ORdyYhVIBQQK22t55MoggfbjjwhpYEz4GvfZW6AuKKASBRWvJNjWbOq5dk9Sji8yov97XYSPmpk6Eo+hqgC1Clj8MT+Q6bKjRcTAvlYVEKU2UKYzrgi4zggMQTfN4ip3a1FSAgkS8byx5LpV8WmvyyYVielYmUF1qQ7j5DwIM8/xen6jYlYbW3iC0/hH4BC6u/MccvUp1tu0Oc7ccp+pCuUI6c/c9SrLMZnprnggKz0gIn5NDr1nZ/5W+Qk2+gpgL+hoHVQLoAUqg472Os3uVdCnYohHD1IWByBRk2JLgCiYy93y4mwCUMQgp3ZXk4D00PeUSMYeGA=
+X-Forefront-Antispam-Report: CIP:8.62.32.50;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:ejcrelay005p.adwin.renesas.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(376014)(36860700016)(82310400026)(1800799024)(56012099006)(11063799006)(18002099003)(13003099007);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: DCQPqAgK5mwZLMQCMQ4eBuDoYunmFbI+4+Sya1KyKxG+Gh0h37CVIpsJEePxAfxguxr0rBAGbcsWecyUan6BimfY51BKkN1MSUxlag/re88aOi9KIyuRz1uITpRM3scHkHTN5+pzdgfeqTQ7NLKCJP+sZuw9La7xwjT9it62EHPW1jWAybg+2zK98+AP84TNfelgCmT6aUXrpVYkrtIw7Y+26LJy0Y9NBArjZUMa0oL7ynKqCXvKBN5VZBIP0P28HOkxbaL9GuxRv2t0I9C4YVSsADiUwwoP5dhmNKGGzz7y0YEE/31fHEOBruLOcHPWcg3skU9C+SNXmTaXKXAqmEqCu62GQJx2qqBCCH88MNRtuVvfD7F/GDp68S+cVbbP2Q+i6jp0+yMgx4BnVbzGNa1bNM1W44PahcEeROZRfprC+zY1Sp8slJwTimVSBxlG
+X-OriginatorOrg: renesas.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 May 2026 08:21:04.6047
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 714afbe2-e73a-4ada-e415-08debbc8e535
+X-MS-Exchange-CrossTenant-Id: 53d82571-da19-47e4-9cb4-625a166a4a2a
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=53d82571-da19-47e4-9cb4-625a166a4a2a;Ip=[8.62.32.50];Helo=[ejcrelay005p.adwin.renesas.com]
+X-MS-Exchange-CrossTenant-AuthSource: TY2PEPF00005624.JPNP286.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: OS9PR01MB15442
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260527_001228_814061_300F3AE8 
-X-CRM114-Status: GOOD (  13.01  )
+X-CRM114-CacheID: sfid-20260527_012112_312466_0C465D96 
+X-CRM114-Status: GOOD (  12.74  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -149,37 +115,56 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 5/26/2026 9:15 PM, Krzysztof Kozlowski wrote:
-> On Fri, May 22, 2026 at 11:32:24PM +0530, Komal Bajaj wrote:
->> Shikra is a Qualcomm IoT SoC available in a System-on-Module (SoM)
->> form factor. The SoM integrates the Shikra SoC, PMICs, and essential
->> passives, and is designed to be mounted on carrier boards.
->>
->> Three eSoM variant are introduced:
->>    - CQM: retail variant with integrated modem
->>    - CQS: retail variant without modem
->>    - IQS: industrial-grade variant without modem
-> Industrial/consumer variants differ often only with thermal, so how is
-> it here? Thermal difference does not make them incompatible. Honestly,
-> usually industrial one does not even receive dedicated compatibles.
+On the Renesas RZ/V2H platform, if the xhci driver is unbound and the
+system is suspended afterwards, a PM underflow error will occur:
 
-The IQS variant uses a PM8150 PMIC, while CQS/CQM use PM4125 + PM8005. 
-These have different regulator topologies and RPM regulator bindings, 
-making the DTBs genuinely incompatible, IQS SoM cannot boot with CQS 
-DTB. Thus, a separate compatible is required and not merely a thermal 
-distinction.
+ # echo 15850000.usb > /sys/bus/platform/drivers/xhci-renesas-hcd/unbind
+ # systemctl suspend
+ 15870000.usb-phy: PM: dpm_run_callback(): genpd_resume_noirq returns -13
+ 15870000.usb-phy: PM: failed to resume noirq: error -13
+ 15870000.usb-phy: Runtime PM usage count underflow!
 
-Thanks
-Komal
+When the xhci driver is unbound, the runtime PM usage count of the PHY
+drops to 0. Since the suspend/resume callbacks are in the noirq phase,
+the pm_runtime_resume_and_get() on resume errors out with -EACCES and
+the usage count stays at 0. The subsequent put in device_complete()
+then underflows the counter.
 
-> Best regards,
-> Krzysztof
->
+To fix this, move the suspend/resume callbacks out of the noirq phase by
+switching from NOIRQ_SYSTEM_SLEEP_PM_OPS to SYSTEM_SLEEP_PM_OPS.
+
+Fixes: ee5f1a3f90a4 ("phy: renesas: Add Renesas RZ/G3E USB3.0 PHY driver")
+Signed-off-by: Ovidiu Panait <ovidiu.panait.rb@renesas.com>
+---
+v2:
+- Dropped the runtime PM rework part from the previous version, as it
+  was not needed to fix the original issue.
+
+v1: https://lore.kernel.org/all/20260427194741.161533-1-ovidiu.panait.rb@renesas.com/
+
+ drivers/phy/renesas/phy-rzg3e-usb3.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/phy/renesas/phy-rzg3e-usb3.c b/drivers/phy/renesas/phy-rzg3e-usb3.c
+index 060309547ea5..4d2b0f5f5b09 100644
+--- a/drivers/phy/renesas/phy-rzg3e-usb3.c
++++ b/drivers/phy/renesas/phy-rzg3e-usb3.c
+@@ -233,7 +233,7 @@ static int rzg3e_phy_usb3_resume(struct device *dev)
+ }
+ 
+ static const struct dev_pm_ops rzg3e_phy_usb3_pm = {
+-	NOIRQ_SYSTEM_SLEEP_PM_OPS(rzg3e_phy_usb3_suspend, rzg3e_phy_usb3_resume)
++	SYSTEM_SLEEP_PM_OPS(rzg3e_phy_usb3_suspend, rzg3e_phy_usb3_resume)
+ };
+ 
+ static const struct of_device_id rzg3e_phy_usb3_match_table[] = {
+-- 
+2.34.1
 
 
 -- 
