@@ -4,67 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C9681CD5BDE
-	for <linux-phy@archiver.kernel.org>; Wed, 27 May 2026 08:56:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2248ECD5BD5
+	for <linux-phy@archiver.kernel.org>; Wed, 27 May 2026 09:47:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t8xEy61SXOW3fhQ6iqweWqlPtZ2DJH5pQ/4Cj8EHcxk=; b=0j5Mb+z3MkfCQX
-	P0daRj+l3EBpUXCS4dCQqJ1AuA94HTS8AUFtyEg/LsuI1J58420KCzIwJH86rQ2g7SLXhCnq9jlDG
-	5Ab6Vu+y06hXt5yrpeR/L3y/wY6B23C1vNzMMuMdruoTxB8TLRFUn6+fmZB3QCHH6kQT2vvctWy6g
-	wDWn4KF4mShoF8nMBqAvBObRnTxj087KrTwknl9QXGCSlt5ZlSN6J0or8cNfVUN5p5BqU4weu2Wvk
-	jcsvlNeszypK77HWWtjGjsab4qRV8OrWeDcbiS6bAo6ZgVHtDGq/pSK6h+dEfzoKNRhdNJpmQ0Tu4
-	fHXkga2GmlGRJ3dUQfjA==;
+	List-Owner; bh=SnNaTwfD1dXVGREr6WNDeuy74p2MTYCHoeiiYeSM6eY=; b=olc7hAvdIyvf0Q
+	BuVNpjiIkMqwwkxEZFLzus9zVBei0F+trUWbh64BcnG7Loi8TwDMl10UOYC5H4Oz4QGfbF4LlDO0w
+	Mbhs/WRG4+8Qd8sDrCnXap32SZJi4yZWgygN5Jit74wAIoI1YXSjVqiZJ4pVbh45LrmnFRn0u+si9
+	wKk3QPzeE7uodGIrcfeVlnPNISpGeC4dZrUMyUpnSF+xnOWYp2MRVF4je/1Nc+omgGx95gl1nTHnI
+	a6NLd+6Q8z5h73l41zpQdwYOyd+nEKVSVajeW4A04uev9C7EYWpzHBxEeGgiW4aiVO3R7t+vLuzcg
+	/ksZElFIF0RnBX0zTjFw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wSA3Y-00000003a8s-3JyY;
-	Wed, 27 May 2026 08:56:05 +0000
+	id 1wSAqu-00000003feI-2zZM;
+	Wed, 27 May 2026 09:47:04 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wSA3V-00000003a8Q-2MAg
+	id 1wSAqr-00000003fdk-1kXM
 	for linux-phy@lists.infradead.org;
-	Wed, 27 May 2026 08:56:02 +0000
+	Wed, 27 May 2026 09:47:02 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id F21A2417CD;
-	Wed, 27 May 2026 08:56:00 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B484D1F000E9;
-	Wed, 27 May 2026 08:55:59 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id A9E6A4043F;
+	Wed, 27 May 2026 09:47:00 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9B3001F000E9;
+	Wed, 27 May 2026 09:46:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1779872160;
-	bh=ib0u8wAsUxzvlOKdNKtDF+qDqNdM6aAwqqnl17TlWSs=;
+	s=k20260515; t=1779875220;
+	bh=h4ygXi+M61Kh65pAlNbVGkkZk7Opw5+JbN1xsmPciA0=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=KQacwnWZYucad3OMlH4bgCwK5+HytIlP2xmUWDWVu1aKNEcMnRkoHDS6oxA0yoXbJ
-	 UOghVEifFw/Mqlc76smlZkxTGYk4NMV8VSIG85qmEL7CBZkU07KEaSYg0lGOcGeVOC
-	 ZBZSwTSdOpA00S+sWnT/dgD9gnIrmYD0IuwPUo6205l0qSeDfid14p0PVruPBo9Cme
-	 u+rNTr8ax//Lp4Qvgkr9sFWZqwCGAHBioxr31EE8Dy5l/xtMQfv9IKqsW/60MLTiLD
-	 aINgobM7iV3C7FiarP6cZVYEZurwe5lFcxbIiinHFmNk2EbZ7lJJpu431MmJwBGERR
-	 OzxXmQAfyNIFA==
-Date: Wed, 27 May 2026 10:55:56 +0200
+	b=dztGWNBXJlrtM4TSWDh08qXRvph15INJ1Gv5A3AGaywUjyIvqklrgH6H1ao3LPfri
+	 j/gEkobn6ZBREZx9MfeRbB5IoFN6NHeGDGJT8KW8YrUUg+QZ9MiTgxpErIak0ulq24
+	 UEeZBX3HIJCg4tjmyVIPjyIrF+pXUJWrATBdZwSFbjmSIRhHdZpeJs24t51Bd3BWgz
+	 wgY/iST2IURBxtJsYEcDrnbg+l1aIfY9NOsd3bd+jNumZ1iHBmrn3ey5htb5thXccX
+	 bcxm04D7kpBhMmeH4LHeF20ECtxKiPbbpLeNABrc9zlGKrTT6X4Mk5nSLAJEzOkmnb
+	 XisbgmYN1Mg+A==
+Date: Wed, 27 May 2026 11:46:57 +0200
 From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Komal Bajaj <komal.bajaj@oss.qualcomm.com>
-Cc: Bjorn Andersson <andersson@kernel.org>, 
-	Konrad Dybcio <konradybcio@kernel.org>, Rob Herring <robh@kernel.org>, 
+To: Pratham Pratap <pratham.pratap@oss.qualcomm.com>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>, 
+	Vinod Koul <vkoul@kernel.org>, Rob Herring <robh@kernel.org>, 
 	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>, 
-	Wesley Cheng <quic_wcheng@quicinc.com>, Ulf Hansson <ulfh@kernel.org>, linux-arm-msm@vger.kernel.org, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org, 
-	linux-mmc@vger.kernel.org, monish.chunara@oss.qualcomm.com
-Subject: Re: [PATCH v3 1/5] dt-bindings: arm: qcom: Document Shikra and its
- EVK boards
-Message-ID: <20260527-pastel-fuzzy-mastodon-a4d9cd@quoll>
-References: <20260522-shikra-dt-v3-0-80ffde8a3dc4@oss.qualcomm.com>
- <20260522-shikra-dt-v3-1-80ffde8a3dc4@oss.qualcomm.com>
- <20260526-quantum-funny-gorilla-cfc983@quoll>
- <951c9b8f-4513-47ca-afb6-481dedd3eff9@oss.qualcomm.com>
+	Bjorn Andersson <andersson@kernel.org>, Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>, 
+	Xiangxu Yin <xiangxu.yin@oss.qualcomm.com>, Johan Hovold <johan+linaro@kernel.org>, 
+	Loic Poulain <loic.poulain@oss.qualcomm.com>, 
+	Kathiravan Thirumoorthy <kathiravan.thirumoorthy@oss.qualcomm.com>, Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>, 
+	Abel Vesa <abel.vesa@oss.qualcomm.com>, linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
+Subject: Re: [PATCH v3 2/4] dt-bindings: phy: qcom,qcs615-qmp-usb3-dp-phy:
+ Add support for Shikra
+Message-ID: <20260527-lucky-porcelain-bullfrog-185f1d@quoll>
+References: <20260526184401.3959717-1-pratham.pratap@oss.qualcomm.com>
+ <20260526184401.3959717-3-pratham.pratap@oss.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <951c9b8f-4513-47ca-afb6-481dedd3eff9@oss.qualcomm.com>
+In-Reply-To: <20260526184401.3959717-3-pratham.pratap@oss.qualcomm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260527_015601_630184_9B71CEFF 
-X-CRM114-Status: GOOD (  13.04  )
+X-CRM114-CacheID: sfid-20260527_024701_499704_C4714FBF 
+X-CRM114-Status: GOOD (  18.62  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,35 +82,75 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, May 27, 2026 at 12:42:20PM +0530, Komal Bajaj wrote:
-> On 5/26/2026 9:15 PM, Krzysztof Kozlowski wrote:
-> > On Fri, May 22, 2026 at 11:32:24PM +0530, Komal Bajaj wrote:
-> > > Shikra is a Qualcomm IoT SoC available in a System-on-Module (SoM)
-> > > form factor. The SoM integrates the Shikra SoC, PMICs, and essential
-> > > passives, and is designed to be mounted on carrier boards.
-> > > 
-> > > Three eSoM variant are introduced:
-> > >    - CQM: retail variant with integrated modem
-> > >    - CQS: retail variant without modem
-> > >    - IQS: industrial-grade variant without modem
-> > Industrial/consumer variants differ often only with thermal, so how is
-> > it here? Thermal difference does not make them incompatible. Honestly,
-> > usually industrial one does not even receive dedicated compatibles.
+On Wed, May 27, 2026 at 12:13:59AM +0530, Pratham Pratap wrote:
+> From: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
 > 
-> The IQS variant uses a PM8150 PMIC, while CQS/CQM use PM4125 + PM8005. These
+> Declare the USB QMP Phy present on Shikra SoC. On this SoC, although
+> there are DP registers, the required internal pins have been removed
+> and hence DP wouldn't be operational.
+> 
+> Shikra needs 3 resets (dp/ phy/ phy_phy) to be asserted and de-asserted
+> as per hardware recommendation. Extend the bindings to accommodate the
+> additional reset.
+> 
+> Use QCS615 as a fallback since the software interface is compatible with
+> Shikra.
+> 
+> Signed-off-by: Krishna Kurapati <krishna.kurapati@oss.qualcomm.com>
+> Signed-off-by: Pratham Pratap <pratham.pratap@oss.qualcomm.com>
+> ---
+>  .../bindings/phy/qcom,qcs615-qmp-usb3dp-phy.yaml    | 13 ++++++++++---
+>  1 file changed, 10 insertions(+), 3 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,qcs615-qmp-usb3dp-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qcs615-qmp-usb3dp-phy.yaml
+> index efb465c71c1b..65ae4c6e09db 100644
+> --- a/Documentation/devicetree/bindings/phy/qcom,qcs615-qmp-usb3dp-phy.yaml
+> +++ b/Documentation/devicetree/bindings/phy/qcom,qcs615-qmp-usb3dp-phy.yaml
+> @@ -16,8 +16,12 @@ description:
+>  
+>  properties:
+>    compatible:
+> -    enum:
+> -      - qcom,qcs615-qmp-usb3-dp-phy
+> +    oneOf:
+> +      - items:
+> +          - enum:
+> +              - qcom,shikra-qmp-usb3-dp-phy
+> +          - const: qcom,qcs615-qmp-usb3-dp-phy
+> +      - const: qcom,qcs615-qmp-usb3-dp-phy
+>  
+>    reg:
+>      maxItems: 1
+> @@ -33,12 +37,15 @@ properties:
+>        - const: pipe
+>  
+>    resets:
+> -    maxItems: 2
+> +    minItems: 2
+> +    maxItems: 3
+
+So QCS615 has three resets now? This needs to be explained in the commit
+msg. Or fixed with constraints, see writing bindings.
+
+>  
+>    reset-names:
+> +    minItems: 2
+>      items:
+>        - const: phy_phy
+>        - const: dp_phy
+> +      - const: phy
+
+Not phy_phy_phy? Joking aside, you already have a phy - "phy_phy" - so
+this is not correct name. I don't know what is the correct name, though.
+Please consult device manual.
 
 
-This should be part of commit msg. You explained WHAT you did, not WHY.
-We see the diff and we see you added cqm, cqs and iqs...
-
-Also:
-Please wrap commit message according to Linux coding style / submission
-process (neither too early nor over the limit):
-https://elixir.bootlin.com/linux/v6.4-rc1/source/Documentation/process/submitting-patches.rst#L597
-
-Best regards,
-Krzysztof
-
+>  
+>    vdda-phy-supply: true
+>  
+> -- 
+> 2.34.1
+> 
 
 -- 
 linux-phy mailing list
