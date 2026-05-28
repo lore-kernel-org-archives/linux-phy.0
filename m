@@ -4,122 +4,128 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 67AFFCD4F54
-	for <linux-phy@archiver.kernel.org>; Thu, 28 May 2026 17:24:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 41428CD5BD5
+	for <linux-phy@archiver.kernel.org>; Thu, 28 May 2026 17:24:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=NI8NGbu9jkc3lMcPODylAYqMX/n5hUF8WO/5CFnbrUs=; b=3T4fAHW+OuW/a6
-	eFjhx9DiHMufWsYRVhXIrXrz/jNCo7Bp6aKrZ2cVhml27KNowERSoN/2G015WgZ0yAY6YYbbmLev0
-	a3nOasaghwEZ8yVU6uSPj27HfkzRgHQ0N/4tUKDTudHzlY0XCrLbfXddigM+64eq9rwkWVPTyzCq+
-	49DRDOxsuMrJv540mNs0xkwhD4sBQKDA8YqCx6rt0rWPKcnoCK2FWJSy+LVIROfqr+jeJ2/u7t/6p
-	jIEZ6l/DliDbPJccr6n9AzH0DXFDBX/OhfWeNe+vI7nE2blXVaFtyaweN6JLPuAXle0Es1WvlUiAz
-	XBUdPDWTlPj+GKaX9G7g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wPjfak3d/hNRQvNOEd3iOT4t5d4KY0hlzbCl7GSGRmE=; b=Qa56U/ce6elNoN
+	6ADOGTPrlANe8+AXAr8d4qGrVfBUQk+w1fGo6P3pLJbRbSkkHcw8jkpCTvvYhFQkBPIJp83OzIFSM
+	AkiSyORjxs9xSdcjlpzYTmIT7GUdKjWpruvsWSiYp+Z6+YRdx4uxInH37GFnCrWzdcdUmFKmg2ER2
+	XF4IteLRGHrUOAsgna1+nVJa6xAViVkJ03nmx9uHiKUgeq13vKnjaOHo85FxhqteOz1wHwUls2tet
+	FBzKjR2buGWGS9X1rxa+Z8qu44cw9p1wHlMr0EmROX9+EnPsQk8XMwDTPbMHrzaNnLTD0o4Q0G180
+	B6Wqg6C2KBnA1bFlxU1Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wSeSw-000000065Np-3dct;
-	Thu, 28 May 2026 17:24:18 +0000
+	id 1wSeSy-000000065OX-3njC;
+	Thu, 28 May 2026 17:24:20 +0000
 Received: from mail-norwayeastazon11013030.outbound.protection.outlook.com ([40.107.159.30] helo=OSPPR02CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wSeSu-000000065Mi-0FV6
+	id 1wSeSv-000000065Mi-3X0u
 	for linux-phy@lists.infradead.org;
-	Thu, 28 May 2026 17:24:17 +0000
+	Thu, 28 May 2026 17:24:19 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=dGgv5gOhkY9G/IJ87UjI116plS86Z1Nh2vh7fQalNNtG75+qBzSGWK40RnNkGqCaTmTjouTeeJX7tLCv8LL0Cnw70IuPxC5TrkP2bM+GJVtNhp1wKwoK7DaDMuKdIRe0oMx14tJDdORLElMP45ZR8UwWwU3Y5E4qK2h8YCXPBJxX36GAeKW59wRM1TUbvkAa2oQIG3QYlm+EsgvzpwNWN2MYlVX5C3Qk8Qeg9OlCCSNNHC8zTueVvD8ZoheNQM5kgajMEH0vixyuXQmmxw+JN0rZDbglPnKut60Za4bzYxdtvATGKqcercIooeVCZ3vtVlhTmYQZu/JpVM9zO4KQhw==
+ b=tImhgZGNnVRYDrZS1BLm1K9PEmDpXoNz7zZzDZyxVSnBu6zzNox300fpCD5Ygmq/eIc668tL7Xm/vQwXSEDHFp/V7MniGFYN0qKfeEux+zk7lso2iAtID2z9qAwL4I5EkO+zV76DM9omOJTF57Zfjx9MLW2mmSEDUnQYuT7D44kjcc7/u7UPsQ5GQJY2d2ipx/HbRHRKwu5wxB2chB2/xi6sDlMg6O/Iu8+afOmQEusZKwiEvWr/+pNzVOtU+237batesRxDNAP4t3WXxSPSe3aa/06Q34qV8c2fv1nr+Dj6Fwo/IFIc/ZUTJtd4PZOQ8E8HbQAxB/Svybtsbz7fDA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=IVPmLjCRvQXCWk6N6IRMbmmhzw9/WjyAnutoUbB7YsY=;
- b=Hk3VLkx1E+OuMbrKF/HV4iUOLK1AoXQO6YTAVucBCiMKRd38CnhX6FJy54SKQdgrPvW8TdO8xN5KWMbDgrKizK4fp/awUug6z+at2Jyc8uTWASXkJvk3jEz5U9SOxqrWigkXTlPP2mQiEJx9qU3v/eNV7WM1ydRqB+ffWCCe+88YbmkYzHDgszkIBX9sY5dZwXtiwJRdE2ULyzGa2c3zaggYV9qyeVsKZ0GcauT3q1uM6gs9cpZLBI/njBX7qoay1Wqc0Bjwujcmfm5s5r355UTzSCLWCs/L1cTmX0YE8baYQEUDYIvqe15lL0dp556eB4eMUtJJpek+lhtKk8xxnQ==
+ bh=UNbDw6+PbBDsVo/M/YuzB2SUI8rXqHL/AYb9R3RzatY=;
+ b=R/XXBPW4aBvQtPiMVOmYjJYCOx/mg+sCR570hJiGt/nLD/HnsBKyIDGRcWwPfaDm3dxugen+o7vHHpM5XkOX8SCR8nJWNQsHi8B0xF3CHy2/Cy+Nm4t8NogASbzSv12j1sEzvxygHKdJKAtPa1CxyA3qizxhbv48EKx25B8amJpnP57P+NTRqvlf87RlqzA8l3f/4GvlRu6dbiDZI4inZYAOPwZmUZg1B6XyaBvPD5HLrsaXcyDOYvpDLBsCIseKdBBUcj97Cesb/M0EXcugNq2Mmm8ZtdBCvsACeRD188K4r16HsI+BrLAF488jRvTyMmTnHgtVDm5MdlEWOWRzYA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=IVPmLjCRvQXCWk6N6IRMbmmhzw9/WjyAnutoUbB7YsY=;
- b=IqV0vwhJxNOJ7qg8hKaz5zlS3yitG7ygVdZV/hkX1F4OHyGmmhAEhpzABCGfQOv2JDBZSXkmt5WHe3sh07TvEGAn/s74X4TYtr7rORGih/wOmIf//EouVDRlEAVQSj0fVbXgCaJsEYEuVynsy64NcEmaNPgqU7vH93fHp/lxNZG0X+vvr9Q1bMl5oqTQob1SOpfmF6h9fn7oUFAW4BLwAPToQfTOPmc3YhANfTZ7kTRioe3GCcdGpK0iVoqjmbhtDaM89c6C9KjpcuUT6/PptyVWBCqA6JI2oRAK05momp8hlUeM0eN43O2YNVbQFbMiyia6fSjkdTvUcBmFJCkkEw==
+ bh=UNbDw6+PbBDsVo/M/YuzB2SUI8rXqHL/AYb9R3RzatY=;
+ b=ibHES8TJssm/rEcH1MyXQ0FVg9XJf9IeWgzRsQylYig+zi2N16gThbNrzvfoO4vDHx9wV0E1oASv1LDPR9CZZOD7U5z2gcgu2OAMP8Xo+yeZw6uc5ypJCzWqdKETzaCr/AZinbmUdz7H4gfEE7kJ629BCeSKZVkEuOK/90MiXukOo1z+BrnUlIKjUZUbj1v7Hld+wXksmPEK3LL/HWOxG88zxIEH81xCYIciglW4uhdwk3oUQfCS9XXajXvLQDtLm7sYrvH31VbnNO9CQJPKK7JsdBkaU14XTVP7IgSetl24h7sBfJYUOUzDWfclhIfwroiOT5n2M0rIGRjkm8uUbQ==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from AM0PR04MB6900.eurprd04.prod.outlook.com (2603:10a6:208:17d::10)
  by AM0PR04MB6993.eurprd04.prod.outlook.com (2603:10a6:208:17d::7) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.71.12; Thu, 28 May
- 2026 17:24:08 +0000
+ 2026 17:24:09 +0000
 Received: from AM0PR04MB6900.eurprd04.prod.outlook.com
  ([fe80::7fda:8431:ca1b:b023]) by AM0PR04MB6900.eurprd04.prod.outlook.com
  ([fe80::7fda:8431:ca1b:b023%5]) with mapi id 15.21.0071.011; Thu, 28 May 2026
- 17:24:07 +0000
+ 17:24:09 +0000
 From: Vladimir Oltean <vladimir.oltean@nxp.com>
 To: linux-phy@lists.infradead.org
 Cc: Ioana Ciornei <ioana.ciornei@nxp.com>,
 	Vinod Koul <vkoul@kernel.org>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
 	Tanjeff Moos <tanjeff.moos@westermo.com>,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH phy-next 00/13] New Generic PHY driver for Lynx 10G SerDes
-Date: Thu, 28 May 2026 20:23:51 +0300
-Message-Id: <20260528172404.733196-1-vladimir.oltean@nxp.com>
+	linux-kernel@vger.kernel.org,
+	devicetree@vger.kernel.org,
+	Conor Dooley <conor+dt@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Rob Herring <robh@kernel.org>
+Subject: [PATCH phy-next 01/13] dt-bindings: phy: lynx-10g: initial document
+Date: Thu, 28 May 2026 20:23:52 +0300
+Message-Id: <20260528172404.733196-2-vladimir.oltean@nxp.com>
 X-Mailer: git-send-email 2.34.1
-X-ClientProxiedBy: AM4PR0302CA0025.eurprd03.prod.outlook.com
- (2603:10a6:205:2::38) To AM0PR04MB6900.eurprd04.prod.outlook.com
+In-Reply-To: <20260528172404.733196-1-vladimir.oltean@nxp.com>
+References: <20260528172404.733196-1-vladimir.oltean@nxp.com>
+X-ClientProxiedBy: AM4PR0302CA0016.eurprd03.prod.outlook.com
+ (2603:10a6:205:2::29) To AM0PR04MB6900.eurprd04.prod.outlook.com
  (2603:10a6:208:17d::10)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
 X-MS-TrafficTypeDiagnostic: AM0PR04MB6900:EE_|AM0PR04MB6993:EE_
-X-MS-Office365-Filtering-Correlation-Id: 7c4bb51b-06e4-4d6a-2607-08debcddecaa
+X-MS-Office365-Filtering-Correlation-Id: 1c798144-6ab3-4d7b-02f5-08debcddedab
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|366016|10070799003|376014|19092799006|6133799003|3023799007|56012099006|11063799006|18002099003;
-X-Microsoft-Antispam-Message-Info: 8CWiA3VESxT39k1qTl/y3JY/O+wL6WcnQLeGEkcycVvDbm5ICjLIywPzliL8zF7f0ZGbqYXX6PhERHOwHYim5Z5OB5S76/FSdK9QG0xLcxajfgc+M3oZqq/Gs32d3YEpW/Os6+B3ibmyTTyjI/VVHmw7G+89TCnGLuvFiGUqRodOAmdEoqGUVarrSp59U2MKyElKK+4t7AGULx8Is8hsfHOpidYaeuvGQRvr+dOf+GpGcvQox9PfmF6tfDuYkIuW/yigk2cwPir4GV/PFl5frGb+iYwgu723G+rjQI/rIUtXovv/AuRvI33NVUp/wjlrGj170ckB+visZ7C/7fj2TLeIamh1joWO1VdM36vuOkjkA8ewb4eQJZMWf5xONeab/kvbPiUtJkZJn1ZF28lusWAjCXUJv4i6mkoelzHx5mrwsxZtn09vracvbx8fB9RoW5vzpJ2fejkB3bcAY4B2S4ZmlOSK9SjAUsJj2ikoud2fjxoX8DYvM5enqfZwdN2ERB+VZqFbPHLIrEsfFFyZ3X8i+BvpdKtCgnZhQmlmLsXa9G7A9fr6E6JUA97XvG1IO3V9NrYqn7e2HsFgR8k8+Ea6mtUZ5zYwlDEXKq51bMfMjmV1BovmNfIUVIlkxFKawKrhIrOdErjr7QNAL08s6E4fa7dy/81UJ5/V2QyTe3t4qD2hNmLOecpAAID72FbG
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR04MB6900.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(10070799003)(376014)(19092799006)(6133799003)(3023799007)(56012099006)(11063799006)(18002099003);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|366016|10070799003|376014|19092799006|6133799003|3023799007|22082099003|56012099006|11063799006|18002099003;
+X-Microsoft-Antispam-Message-Info: yVuSHResT8vHoH/h4PWgWWdg4WWTQog00RlqT09Q4c3XHvd4KzYNJUyMJCPBMIzlaQM0X2/PGajP2REv+2voW4QVGVffnVMCJd6kkCc5dhn+GSy/mJ/HAsno0PY7KBvP0hooBtSu6PBFRvWzfs7124Hk2J8vG0mVk2Ok5a5jtef+x9rM4SWNjrxXd9nZylCKtTGsL0XZiG2YDzhaHYa5X7jMDQ5kr4986TI+kjaNk94ZXD34jq1FBhx6fy8sO6dRusK7PyW1+M5A1SkvvxKh8RbDSiV0rA7dk9rkztVoxJdbi4+nTAs1WBiY45+bgEbFK9OYrHV9ZmCi0gb1KjlpNFh6RRM9icjOKRbdJksZAUv9wPgBdM9XI5PeK6Ns+eqggqz5MoLcmWMmD9JuJaWhulaQNLYRDkVDPQJEjt5k66tW6uNK7LPk54Z2lq5P6YFrBCIbGKggL3LIEok2sUcq+6d2x5hDa2yYKuiXcb9iLvz4TEHxZytp80WBq+vpDMW5UxWvNplhnfuFilazojr1150jecrtJ9YbxydLTrTUDNN17B+XuX7ISQKQD1SYnA7e50eljHt85tUtcad+7hEl2IviBt3eYWeyjTzd141PgOH4HIdHF7px4sXtth+fjoZvWt6Mr2ofKELRSKmZGpP0gg==
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR04MB6900.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(10070799003)(376014)(19092799006)(6133799003)(3023799007)(22082099003)(56012099006)(11063799006)(18002099003);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?ceEs04jWWKPc91EKoAMqTDeqw3iUYHtNK6stKhGX+JZzItPKTEMGFqyVv0cE?=
- =?us-ascii?Q?a6PuFxrLW2jXTfJfgfX5+CRpCYvpqeFujP5Zt+BZuSTYBDjIa77C3qX8QnS9?=
- =?us-ascii?Q?TDBEEMrs11gFKuSZoDBUfW55pgU3DOJeLXdqVHJvHXOsGk+AQr3C4l0XV1Dr?=
- =?us-ascii?Q?9xw4e713Xsjwd9OhFTQvLEGT5E5P/OHWs1pChvToDejcs6DIbqNXZkZFNaq/?=
- =?us-ascii?Q?lBwoWGIKnJxtWLWjcyex3IR/fg0TtCI9TKkiCH3lB1URkUU+PAd5zsiWgRjf?=
- =?us-ascii?Q?zklgAIDUdSh1aC/BTlj1x75k+moMtl4k7++vRzI4JU/ddEKjD9URhrDSmgOI?=
- =?us-ascii?Q?mGKjYE/Md94NmNJdOO4T3nkirMaRhngqNp25jX7opEh/9c+KQvpaTcSwv9wm?=
- =?us-ascii?Q?gZZMOWHyx2fgQTx5QNGUa5wGRfQRCyHdesR7zPKwQkL9xuWqjZw42gzKVRtc?=
- =?us-ascii?Q?JRHboD6mdYRB/kaLcsU3Iqm0rdJUrMdbJVDCPPZ7+/Auop89S37O1CQF/GUP?=
- =?us-ascii?Q?R0UZ/Yz3gnBZ8FxJu3uUT84zsrjRknZCGBBO5xHia4cbexUlmzhu6Tw916UG?=
- =?us-ascii?Q?Hlrss2wnL/VwRgBhU4qL07A3hqwPkY3OyoA0P1z7X2CE3vHVOOKjzHJV9K1o?=
- =?us-ascii?Q?qufONU9BD3Ja9a42LY1HDHMNqKcRRpneiMcW91D1uq4c+gnJUyDFxR+DDe8D?=
- =?us-ascii?Q?Dm+9662RspNdWKWqxCL+gh0cGxpe+0xwoZgpqqEfechSGvWpdlVjiOwGtRgq?=
- =?us-ascii?Q?NkQtiHwCgAoJ3temT3vmbuIB++0fdj+/jtQes3HeEAY5yLSuphMgxIA2P81/?=
- =?us-ascii?Q?mwMbPVTDsuyJ1kt+Rs7mPLfcrGsS3/M4Z1GVwSHyYnKz8asKOFcOfCDnwEBT?=
- =?us-ascii?Q?3Ss/wDTzCLKgCtPnIbLxguPjmHfFQRdctW5kQMOjcw1jJ+x5LJlOUuyfAs1K?=
- =?us-ascii?Q?rPVmie5MRZr7stJCveynIjpRgzVtXI0WHjxPiEVD92vXiTqAMu5qZXYE6ZA/?=
- =?us-ascii?Q?C8L8FjWHHGxYfBcGwwC6ygC85YQx9Qb4gGIuy6Q0dRan4Q5nQb0yF2imnZqf?=
- =?us-ascii?Q?unfUnOz3m7dGV5RFkPdg1Xxkemah2ZXrQyZnry4pHlK1Oi9S0xN+IKAo0BR4?=
- =?us-ascii?Q?uwX9U+nwwlDiBdi2Dk0qif6Uz/uGBV4ns1s9bJhTbmgmYT07aIRTNc300jCN?=
- =?us-ascii?Q?URyz9LRX1REsEK3MCed4dmssA/VoL5qyVbWoQBBHMZIUBYqX7yLGwy1/v0oA?=
- =?us-ascii?Q?SHMIQDse8spHiJBzBubNR8ZPD2ZQlEF1U6X4H+0vw8b8k4BZ+rlBh+XxX901?=
- =?us-ascii?Q?1T1zJBv1WKxmbcT2B2vuOEfAKRNZKlKVTIYWv9J1jxb7Diq4Ph3HJa3zkCF/?=
- =?us-ascii?Q?jza8HciJAhQkiBxaqrgThmbDKWTSCxmSwzJkjU3KKkOIehGDZXcAeizmPYvB?=
- =?us-ascii?Q?ZqIFDMyAQEPL2dehpJlix7aroSIrrFemYVgrikkFB36q5KnGQMdhDoWuGiui?=
- =?us-ascii?Q?oPegnMv6GNPWw3CP/PYcNrtbRzt/oowZcEMDPakcZ4Q7im92HPNDzAszRRg0?=
- =?us-ascii?Q?AAVUNiKE3l3wbxz1LTraLNgwcel85gg/eXbaqXupjPTI+YQogK3espeVPlvT?=
- =?us-ascii?Q?2rAMv+bz299C/q9YTaL5Toi/zayAhNzBdop55XAkmqIMszySgiuRVOj92ne9?=
- =?us-ascii?Q?3/vxhyJzkb27tqxxrvyHmon1jtP5l09rl+g1bQW3oFpHb/ggKRm4+h8dIHdV?=
- =?us-ascii?Q?d6rvz0yg2R3EJI1CzHgDpQYN8WXgnpA6Y7ZEdzuOirHtoFZbEi4F?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?B/6YE9PbXI2qBP6ahIr5Z4Otsl7TFdmQY+KcdIkSeRFBAr+vX/DiZQTMZhch?=
+ =?us-ascii?Q?wD+Um9WJpYX3hLVF+oj6rblbOEnjVoN/vSwfzRvBFD/SnduKOJGXX557dULm?=
+ =?us-ascii?Q?LpPUWpcB2pzs0ak+9seA1qFyWnLIdbgZy7w2bO0sSSyvM1Czt10wBkSDTc60?=
+ =?us-ascii?Q?UYZjsof8/P8UoiV66GLwQ7JAuxxbHlh6TpkHVOchl88oJv0wz3+GrHN5B9qX?=
+ =?us-ascii?Q?Dz1byWEZlhCUDg4cJTcByKp5QafOjIt0N64FOTH/yXDfJUJbymKjKM7YRyi3?=
+ =?us-ascii?Q?mXMJy2qDFNNZqzvvFso512N8W7pc+vbTYEgbnoMuqrYrQwQobKAaPG0jT5Vv?=
+ =?us-ascii?Q?CCu68J+pNwi4119AjIyc9q09yaXhlL+OBN075/qf+nnPVi1LxNL9hzHHtx1W?=
+ =?us-ascii?Q?xp561F9Oi+nhmQ7rR7QWF9D0wu/MlGCp0J+VUgwWNND15pCDMgPaVPs9o9wI?=
+ =?us-ascii?Q?KUEGuwNFdt42y3FaOweyfIGs5ES89zQvTMVhLOtWeXohMLzg7ZnO99EL5GaR?=
+ =?us-ascii?Q?w7Vms2Xas6pd3Ekql8RiVvcqJELDinh4GnritgdXWwitLgu8Z3mco7segvJM?=
+ =?us-ascii?Q?o72EBx/Uls7N5jGXKsyfyIHdVOpOcUt71oriOe+lohTrzI35fB+O3HORF7ot?=
+ =?us-ascii?Q?URPfX/b8zh8X40R2G5E2oGzCiTU4v1jDy7N7U8bbTEpIw6JpHR3o33CNaSDD?=
+ =?us-ascii?Q?v3ePT5Gg44ZBpM91I59smhcLOPv017SbSa90zOPIeZSMDfHp3Nx4xVtECUxZ?=
+ =?us-ascii?Q?TOcNWu0kJcG4QHygOSUytUAnNzceB8ezTkChVioaSv8VcQquPCymuAw2vthL?=
+ =?us-ascii?Q?PCbzJUrP7rtnGxDjY9vVVF7B3eHnVdYr9FKtUSheJezEO5X/krVlI5d4oP2n?=
+ =?us-ascii?Q?tRzjrgcFiB7ksL1hbt7QMt8IvFxUIdpML1figLch8KUE7nHHSpcL+u/uzmS/?=
+ =?us-ascii?Q?Fd5SGRZIozYxLnJc1EE6zXAnK/6NOun6uN4skTCZmx4UhEBCGoEmRZ0AbG4R?=
+ =?us-ascii?Q?2HRcgMXR1+4OXr4qD/cf/jaOlz/1Q0EWzuBbiHRfVUKdMY910azqIFccFpvY?=
+ =?us-ascii?Q?7oSXg+6R6r+y4FbdlNArb3enypp2mlX6smx1XsnlX75hi8lpv4u/abXSP03D?=
+ =?us-ascii?Q?hlfYX2U+gp9JCmODflfQQwZYGOKH9fEbJYCeES2UKUGm//ZDku75bOYR2x0b?=
+ =?us-ascii?Q?eJavv1fq9Iw2V7IQZTdAcYMq+Ro8A46S/msfRh+GR8vl3foPo6Ccmfh9fAyE?=
+ =?us-ascii?Q?nxuxAvd8NW+JLjoI7zT33OUTS3SiPKrC4kAYWqmkxxHnXvrEfudKtiSurV55?=
+ =?us-ascii?Q?uiyhjwXUdjNSClcD8YDeliR11PSlnWjoEofw88TVFOb09DYXF/Ky5Z/73h52?=
+ =?us-ascii?Q?NRtM2m6wmu+Vz1f0kI9I2rjVnq9nfpkT2KDrzQ3yj5cBo+Nc5o9uQGx6rHBG?=
+ =?us-ascii?Q?jYrhCmIFQZxx3MkRlJeFHDD957ZBRrcJnPbN5lVV/nxhiGl6nnZOq1cCsWA/?=
+ =?us-ascii?Q?vjYpmTfKcQf4AwOMKKgIKkudCsoI5DOiTsUOHOUHf5ng6e5TeLPD+8ZFvtfI?=
+ =?us-ascii?Q?GAEH0AYt3gBiiJYtf7qKkfpealdxIqV5yQiZTdekTVUMoeedjyhjAh4FWiMG?=
+ =?us-ascii?Q?pO1gc8lNxg2YxCyEyS8N+NK/hJditew1RhkiOEoNfAUD3dndykqxIGYZJDXv?=
+ =?us-ascii?Q?MltyweA6TBB0BXACzHgRkZofPVpqg92W6CFKOlvHdQsS6KQvh4nDXafY24/2?=
+ =?us-ascii?Q?AmtbgRZajuDPoCYnviOXtVLyg5aX9xm7hUtuY740Ivrl/YLjUIvS?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7c4bb51b-06e4-4d6a-2607-08debcddecaa
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1c798144-6ab3-4d7b-02f5-08debcddedab
 X-MS-Exchange-CrossTenant-AuthSource: AM0PR04MB6900.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 28 May 2026 17:24:07.8812
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 28 May 2026 17:24:09.5740
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: rj+Ee1DzXU687OjG9XYMmd0TDdlUZ8+yHiM+SY8Kv/B3ioO9DbpOJK7PS5xEA1fMTbiJLEl521UJ9uDy6k1UzA==
+X-MS-Exchange-CrossTenant-UserPrincipalName: PJ26SDZm+7vsOe/QGULGWjG/hkaemfkgO0/d+1daPSBS1ZIwfit6O/zFXGn3Z79g/yrHqyWqzUARZwdkEpDr2g==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6993
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260528_102416_098188_F0F1F5E4 
-X-CRM114-Status: GOOD (  11.31  )
+X-CRM114-CacheID: sfid-20260528_102417_891186_53136618 
+X-CRM114-Status: GOOD (  14.66  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -136,51 +142,162 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The 10G Lynx SerDes is present on NXP LS1028A, LS1046A, LS1088A,
-LS2088A and other SoCs (unsupported here). It is an older generation of
-the 28G Lynx present in LX2160A and LX2162A.
+Add a schema for the 10G Lynx SerDes. This is very similar to the modern
+form of the 28G Lynx SerDes, which is very much the intention.
 
-Modify the Generic PHY driver for lynx-28g to create a common portion
-(lynx-common) and add a new driver for lynx-10g and DT bindings.
+We allow both forms of #phy-cells = <1> in the top-level provider
+and #phy-cells = <0> in the per-lane provider for more flexibility to
+consumers, and because the kernel code is shared with the 28G Lynx which
+already has that support for compatibility reasons.
 
-Main use case is networking - dynamic SerDes protocol changing - but
-initial support is limited to minor changes (1GbE <-> 2.5GbE) due to
-lack of support for the RCW override procedure necessary for major
-protocol changes (1GbE <-> 10GbE). This is the next step once the base
-driver is available.
-
-Vladimir Oltean (13):
-  dt-bindings: phy: lynx-10g: initial document
-  phy: lynx-28g: move lane mode helpers to new core module
-  phy: lynx-28g: move data structures to core
-  phy: lynx-28g: common lynx_pll_get()
-  phy: lynx-28g: generalize protocol converter accessors
-  phy: lynx-28g: provide default lynx_lane_supports_mode()
-    implementation
-  phy: lynx-28g: move struct lynx_info definitions downwards
-  phy: lynx-28g: make lynx_28g_pll_read_configuration() callable per PLL
-  phy: lynx-28g: common probe() and remove()
-  phy: lynx-28g: add support for big endian register maps
-  phy: lynx-28g: optimize read-modify-write operation
-  phy: lynx-10g: new driver
-  MAINTAINERS: expand Lynx 28G entry to cover Lynx 10G SerDes
-
- .../devicetree/bindings/phy/fsl,lynx-10g.yaml |  131 ++
- MAINTAINERS                                   |    8 +-
- drivers/phy/freescale/Kconfig                 |   17 +
- drivers/phy/freescale/Makefile                |    2 +
- drivers/phy/freescale/phy-fsl-lynx-10g.c      | 1319 +++++++++++++++++
- drivers/phy/freescale/phy-fsl-lynx-28g.c      |  580 ++------
- drivers/phy/freescale/phy-fsl-lynx-core.c     |  386 +++++
- drivers/phy/freescale/phy-fsl-lynx-core.h     |  132 ++
- include/soc/fsl/phy-fsl-lynx.h                |   43 +
- 9 files changed, 2160 insertions(+), 458 deletions(-)
+Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
+---
+Cc: devicetree@vger.kernel.org
+Cc: Conor Dooley <conor+dt@kernel.org>
+Cc: Krzysztof Kozlowski <krzk+dt@kernel.org>
+Cc: Rob Herring <robh@kernel.org>
+---
+ .../devicetree/bindings/phy/fsl,lynx-10g.yaml | 131 ++++++++++++++++++
+ 1 file changed, 131 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml
- create mode 100644 drivers/phy/freescale/phy-fsl-lynx-10g.c
- create mode 100644 drivers/phy/freescale/phy-fsl-lynx-core.c
- create mode 100644 drivers/phy/freescale/phy-fsl-lynx-core.h
- create mode 100644 include/soc/fsl/phy-fsl-lynx.h
 
+diff --git a/Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml b/Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml
+new file mode 100644
+index 000000000000..993f076bba4e
+--- /dev/null
++++ b/Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml
+@@ -0,0 +1,131 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/phy/fsl,lynx-10g.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Freescale Lynx 10G SerDes PHY
++
++maintainers:
++  - Vladimir Oltean <vladimir.oltean@nxp.com>
++
++description:
++  The 10G Lynx is a multi-protocol SerDes block which handles networking, PCIe,
++  SATA and other high-speed interfaces. It is present on most QorIQ and
++  Layerscape SoCs. The register map is common, but the integration is
++  SoC-specific, with the differences consisting in register endianness, the
++  number of lanes, protocol converters available per lane and their location in
++  the PCCR registers. Some SoCs have multiple SerDes blocks and those differ in
++  their protocol capabilities per lane.
++
++properties:
++  compatible:
++    description:
++      There is intentionally no generic fsl,lynx-10g compatible string due to
++      the hardware inability to report its capabilities, despite having a
++      common register map.
++    enum:
++      - fsl,ls1028a-serdes
++      - fsl,ls1046a-serdes1
++      - fsl,ls1046a-serdes2
++      - fsl,ls1088a-serdes1
++      - fsl,ls1088a-serdes2
++      - fsl,ls2088a-serdes1
++      - fsl,ls2088a-serdes2
++
++  reg:
++    maxItems: 1
++
++  big-endian: true
++
++  "#phy-cells":
++    const: 1
++
++  "#address-cells":
++    const: 1
++
++  "#size-cells":
++    const: 0
++
++patternProperties:
++  "^phy@[0-7]$":
++    type: object
++    description: SerDes lane (single RX/TX differential pair)
++
++    properties:
++      reg:
++        minimum: 0
++        maximum: 7
++        description: Lane index as seen in register map
++
++      "#phy-cells":
++        const: 0
++
++    required:
++      - reg
++      - "#phy-cells"
++
++    additionalProperties: false
++
++required:
++  - compatible
++  - reg
++  - "#phy-cells"
++  - "#address-cells"
++  - "#size-cells"
++
++allOf:
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - fsl,ls1028a-serdes
++              - fsl,ls1046a-serdes1
++              - fsl,ls1046a-serdes2
++              - fsl,ls1088a-serdes1
++              - fsl,ls1088a-serdes2
++    then:
++      patternProperties:
++        "^phy@[0-7]$":
++          properties:
++            reg:
++              minimum: 0
++              maximum: 3
++
++additionalProperties: false
++
++examples:
++  - |
++    soc {
++      #address-cells = <2>;
++      #size-cells = <2>;
++
++      serdes@1ea0000 {
++        compatible = "fsl,ls1028a-serdes";
++        reg = <0x0 0x1ea0000 0x0 0xffff>;
++        #address-cells = <1>;
++        #size-cells = <0>;
++        #phy-cells = <1>;
++
++        phy@0 {
++          reg = <0>;
++          #phy-cells = <0>;
++        };
++
++        phy@1 {
++          reg = <1>;
++          #phy-cells = <0>;
++        };
++
++        phy@2 {
++          reg = <2>;
++          #phy-cells = <0>;
++        };
++
++        phy@3 {
++          reg = <3>;
++          #phy-cells = <0>;
++        };
++      };
++    };
 -- 
 2.34.1
 
