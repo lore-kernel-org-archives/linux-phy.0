@@ -4,54 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CBA0CCD4F54
-	for <linux-phy@archiver.kernel.org>; Thu, 28 May 2026 17:24:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EAE1ECD6E4A
+	for <linux-phy@archiver.kernel.org>; Thu, 28 May 2026 17:24:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1wkJozWrD/Er4tnE+y/ApDzmWy4itS73D98hVXsUYIs=; b=xEoKhy083tXd7P
-	4dfrDiuLcf1DEMKeqaaYR6qnZFZB6z8IEOfXQ7X/euD9MB+4G0ruCw8lzi3opbINuugkGb/5dsvul
-	t8t3p/6jeztx5LSm/m5+9A0VgbJmzPP5+MRIhQumrXH32BUtNv7qr9GHOJUG0IyFjU3dEunXcN4L9
-	GK6shkPX29cyyPKKXnYcHDDG3zWlOaYsklGAAT3y5Y4r2j/YZ9NqtRB8URagBE0qjby0tUSdPIpAU
-	sdlduUOKS0O7FqUTQ90SQwWUlIzx+ZXm7CsqvAMO6nKfIOV7xpp9HWlxZDgu9+51jQI0n8MEw/DwL
-	UNbEDZhVOGOFk6nfX55w==;
+	List-Owner; bh=uiBp039RtI+bv2Po6Th6kUu3fKfvhl1fpP3q5Tvxtpc=; b=EQwF2zR7qkgn6s
+	emVlrzOtAS6tAVO9R1Jxmo7QVrlhmDD5ibVaRZA/pwCi0HslVfQBSS62cgzawnJpUfYkzF105TSfD
+	uwJH9eGNWTWgRkWTRRJCEpfbDqE8SxzX+73b7WlNwiKUbcg1KIi8EOBg/mjzmMI6gnbs5d1p/hkqx
+	VDMg0xCsq6QaSpemT4plDBcpaykWvwbvaCFVab3CswVhOJ+8BU4vz5kqhUDiZ6MwK1xLif6e8p0ec
+	+p9PzyGowlx2o/MhNMxrVwqH/Wdu8yPuNb4l8wAJEccPxhsHpOU6rQSToGgwi8CJ62mEFK+HRRstS
+	/eLc9LoAVNGRETeiQJwg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wSeTA-000000065Ux-2TqP;
-	Thu, 28 May 2026 17:24:32 +0000
+	id 1wSeTC-000000065W5-2yPH;
+	Thu, 28 May 2026 17:24:34 +0000
 Received: from mail-northeuropeazlp170120005.outbound.protection.outlook.com ([2a01:111:f403:c200::5] helo=DUZPR83CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wSeT8-000000065T8-0r9N
+	id 1wSeT9-000000065T8-3TFe
 	for linux-phy@lists.infradead.org;
-	Thu, 28 May 2026 17:24:31 +0000
+	Thu, 28 May 2026 17:24:32 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=ENvsdVpLPk9LfGLi2o2cVNmJiFaDMXW6qQAT4G6wxHocHGgB8pzTp3goSBVqhCOy4Ve+oER7zn4kw94msCdasMo6WTe/UdVFcA1+oE/QpRt5TqGvxGQqBQ8fPmRpVbe4vHG34O8ia8hkT84NDXAeMHcPlQBxyUpW08CG3GAy0kCIwitPq8fQARRpA7UXkgs3T3/R/jbFyUDon5JTuiJwASb2jePSRQww3NB8IP0U5mLCnojaS2HvxC3kduMeLsnU0Coq4PY4+qnuYFt5adsc9ErVt5eyxdvnm6M5w770bGP8BCAvRrk4TYRFENwJwos//T65EmYupMaaa95aN93agA==
+ b=vdKnggSb537O4jsQVfjZsaALuZp5rxEwYhonO168OHNFpsFUegDjrVfRuDFtQouKU0ULsG4k/wCZty5HxnTNNpxZPcdC2IGqUzf1XEna6S/HuYJeXzdYeCPlnsyDEj2Pmxg/AotXTxEJm9UYYDC8XgRHF+NK2FsBAJeZlYPCU+8uc5jJo1NAM9k+3cvOe8WI/uZNbdIrCkndj4tMrntsizuNJYrz/3wuDrMtvzmmud9QRO8IFbV4zDbX85V/0KpuFyXmhjq7KDFKrXiYFab8OGtP6BE7bDYoZXtKbmSo0d+HGhwFTaruapE5znb0lPUEh9ARCw2ixICKQReEFQEPag==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=SwELAK+l3JqIFv+dK40xI2evP2ApDhKYiYdRtogU1uU=;
- b=D4+109GeL1GsuySZOaanBPXTNdLTXARJqErSXTOC9oG/HCbRRIy1zqzp/ku7nzR0qtWUWEXXqkysVvP/4kc2nHk+bUv+zbYVKH+0m0Oz/niEDi0lFI3XhVCMjtm3DtbhjAECFJbHJtxZRgdYpvkGOxPEu/WUOoOCA+ctR/DCAqgtXOtQTtkDo4YSvpYgWZqXzv/PMCZ9UROOwMU0QCq2FJtl5BRNSEOyAbl8B5HrtjdW3zTHIya59VUEnmPMEld134cIpaktvNzX8gZRumoRKE4foYzrI7zbt492d8Kog141R0OxK+p/qB0Rsxgy5Vq7cV95TaY26+x0AdLkNQ19fg==
+ bh=CqfUedrQIfLE9VCTnR6pmz3OG3F4aC8Rw7OUPGOcuIE=;
+ b=auChdXEJsFuB1mzaSI3Yj5q30eVB+/Fw4m05uxqjjuPcSAdaTe3hcyeJLys5R+xBvR6MD7rNvf2KtDI5bEUJPLNVFsHQrXLhIznAg6Fz9mOLiS3ram4HHDI/q+E5olwE5S976fkn4KBxTjJp35abn7KGhvMWbSyxDkpazc/sIWBVmBch72DGer+mgCewZaLfN8VINGOegPSy9YT2hWydxgbpiYaTGXb0piOmbzLG2FsZyW/WlsN+n4JpjQB+g1x3VwT5n+aCNR+qUAT02P9xBSKpujtLrpYPZ2oJdazVh4R6ra1PQJ+NnY5zD1CKgh5g9ODr3UzWmdMlbHwxQaaqCQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=SwELAK+l3JqIFv+dK40xI2evP2ApDhKYiYdRtogU1uU=;
- b=Bmd4Ffv0ezfcTvll2/NY773Pq2tQaXjN68wN1DdMPhUfAlnuqTzMfA4HI5MkNfBHxI8B4gpSNidoujsCLnPWA5uwv+gde6OBSfEPTxEYsO1ixH2ivjvlnt91i91VKSoNwJ/bUYMl8X9w4DpE4p15r3Onb/+TPw4du025hAd5XuRhs3T97KWBWrMn2HqGTYNW8xF2CiMBJQOtFdnBsPJgzTa1KW6oBjdHGFBpFu6J1KIjJ7AiobQBwSNZPp0qg3zHqsDawfkOPbziNnZlX6ID2z7sqxZg3+1R8HUXenU2wpxT5o0wJbWCYFUY1B/2MDWdmSUIMliZnmdoBtooOyEq5w==
+ bh=CqfUedrQIfLE9VCTnR6pmz3OG3F4aC8Rw7OUPGOcuIE=;
+ b=LkGYYPfbHyjARtZMryoVMzvT5JazR+jxLvRN7eOFopPVgiGFpbN8VEgBG/eQ2CUp8GL0tn57iuYwX0I1ZfAk9CWb2tdMft5aK2TfZeE9zs3uSl1gYI41oCNzLSIWog6VDwVOYJULRIP5sAmUT8ztiyBJolbAFCuhSwGeOB27W5tC8C0aIGRYcDDUkAQNjjcq1uybuUwMyoWR6D23xfkyy62N1S2a0Tgc5WQx3SD/WQrlqb03jFbfJOkQ8TQePWAKeZHYbcHX2S/19ZkUdOwdFegZ7IPMEws1g+F9vaDa8E+e9PjTG5E+SbvkhHYFbgf0BzqoBhSLwQZiZEJA2sPKww==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from AM0PR04MB6900.eurprd04.prod.outlook.com (2603:10a6:208:17d::10)
  by AM0PR04MB11931.eurprd04.prod.outlook.com (2603:10a6:20b:6fd::21) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.71.14; Thu, 28 May
- 2026 17:24:25 +0000
+ 2026 17:24:27 +0000
 Received: from AM0PR04MB6900.eurprd04.prod.outlook.com
  ([fe80::7fda:8431:ca1b:b023]) by AM0PR04MB6900.eurprd04.prod.outlook.com
  ([fe80::7fda:8431:ca1b:b023%5]) with mapi id 15.21.0071.011; Thu, 28 May 2026
- 17:24:25 +0000
+ 17:24:27 +0000
 From: Vladimir Oltean <vladimir.oltean@nxp.com>
 To: linux-phy@lists.infradead.org
 Cc: Ioana Ciornei <ioana.ciornei@nxp.com>,
@@ -59,69 +59,70 @@ Cc: Ioana Ciornei <ioana.ciornei@nxp.com>,
 	Neil Armstrong <neil.armstrong@linaro.org>,
 	Tanjeff Moos <tanjeff.moos@westermo.com>,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH phy-next 10/13] phy: lynx-28g: add support for big endian register maps
-Date: Thu, 28 May 2026 20:24:01 +0300
-Message-Id: <20260528172404.733196-11-vladimir.oltean@nxp.com>
+Subject: [PATCH phy-next 11/13] phy: lynx-28g: optimize read-modify-write operation
+Date: Thu, 28 May 2026 20:24:02 +0300
+Message-Id: <20260528172404.733196-12-vladimir.oltean@nxp.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20260528172404.733196-1-vladimir.oltean@nxp.com>
 References: <20260528172404.733196-1-vladimir.oltean@nxp.com>
-X-ClientProxiedBy: AS4P195CA0044.EURP195.PROD.OUTLOOK.COM
- (2603:10a6:20b:65a::7) To AM0PR04MB6900.eurprd04.prod.outlook.com
+X-ClientProxiedBy: AS4P195CA0039.EURP195.PROD.OUTLOOK.COM
+ (2603:10a6:20b:65a::15) To AM0PR04MB6900.eurprd04.prod.outlook.com
  (2603:10a6:208:17d::10)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
 X-MS-TrafficTypeDiagnostic: AM0PR04MB6900:EE_|AM0PR04MB11931:EE_
-X-MS-Office365-Filtering-Correlation-Id: 90d7b1be-3fd0-4a15-9bef-08debcddf71a
+X-MS-Office365-Filtering-Correlation-Id: bf72791e-e7c2-4c46-e2c9-08debcddf81b
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|366016|376014|1800799024|10070799003|22082099003|18002099003|11063799006|56012099006;
-X-Microsoft-Antispam-Message-Info: yVyK4yv9Rnm2Muqn/20v6c9G4m100mRcxk5Gv8/ukXLT06qkknwxE8SJ/uPLtO/dhdPwHUfjuoMqeXLWYjcJiwqwI+DW4kw3NrNkdPKHZWJaDVjs6lAXd6cB81Kv0mkq99drbfSlnaASFoKPRT6ZcxF8BsMOuuvs5mlGFRaEexuDEpXWOOVF+hrLMhd5XXGLzXbg42YZt96jmGfJ7q1T96fx9Wq1GLhrG5Cp6JKjFPGa9LDscyKl7XTEIWOqqieY34X7e/PJy0KPBGPtptwTFfqN5wrWF4Qv6m0woO6RX04SOrgcPfM0rljxsoyK7oxSYoV8AedFlrhvZjKbs+USKOLOgUbfCFFSxCNfmiwJ0pDBbZlQsSMb1Lw1muK3HdGpEN5lZIVLir64h1I63M6FpxUwNs2Jp9F7EsnXpVjvE88xeWaOyFe7UpvTv6eBsFy8IQA1c+l25Pn9uTrZ/+uPd2DZph1xYOP8FHbW+6I6t48T7czB5GH8ikls6ujMLwgJGuMqbRSoTYoRVNMjHcCPaYRED+TxlxCroKESOjaP1p4bHpItasrcErz5yGg4TrjPDffitPT8R4s3NSkdxsBSJ7/z7ZsrxWrMpTGx/tlFh9dBf2jfrX9zqLvFBA/3uqhvNgaMdx0B26Gyi+o4/yRXrPPlneijN3+I4xSaqyE8K2hmsp3FiEMSb6oaolBvgdyQ
+X-Microsoft-Antispam-Message-Info: 7W5hsmpt0NwXiWUAffABR3k5x+MtT2MP/xM4gWJ0h0RWPKpSGOKcv4bsmkkTiIsi7iuXhwEP2SDrlrUUT5rnL4nhn08/Y5e8+gHJ6oAeUBpsniZlteqkSKYY24lld0xV0zzLKxtIvR91iX3swHm54xolj3ENjWKdoi80fKnW5ybNNsHHpqluQU67JoF/B+rowLQEU7Z+ZS2h4HWiLYk6pQeWNYrvfSoikStJDUNTNErZtJUxt4+kV5OsH88guWTof3z5sPVUt4pN2s+Njqvo8H4HjVenZez0tc9sAQJ8lXnm77+RYXvJv/Lu2fT5eMo/2r8GUguGT/DjrMngqLtWn8HTvqhqfpiT+bblNiCL7FN2tORoLQ1AL0H82YTsDyJf+mYl8/dbn4xPDd76gu9qPeIPYULXbD2Ur8LWHRv3DLZCZpurrNWKTrEmUWzMaSZIa0AyKEvbcOwL5lxTqaYKRw2qPscD9nFxR5YwkHVF+aXo58Z0JJZH5g4Kush/WYkPrk93VKqOM+Co6sHHRo6DD6yvTxpMtU23RDWo/yAJovGck/7Tf/G6tCCnwP97LL1J7GB4q/FSr2UDwBgFKSyjojzRdk6ZX/XSuA+iEYo6o/peVq4oK9l7QBOxcoqT890OtRNqOZA2wVuWpwLv4OiYVJakixo+oTFg4R5zZ1YjSRER7TiAFkdVNBF1qVSM8/gU
 X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR04MB6900.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(366016)(376014)(1800799024)(10070799003)(22082099003)(18002099003)(11063799006)(56012099006);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?z+zC4OMybXwa9gjesgFqnywyqYlBQTiAkYxhRBxhuiYcHbvhWAqJVXnwoXEl?=
- =?us-ascii?Q?1dS+Grmxhgui4KQPWUG5l6qLANsWgc5hneeOOcc4CgYSzoSWkZ7PLTnnw43l?=
- =?us-ascii?Q?XDCejYIbMpaJMfTyX/tamr9LDEzoHoubfNQKrY1PguHc4qsif/ceR/+UzYa/?=
- =?us-ascii?Q?R8/8Y1R0DGEvZFSbl3bcv/7TB73jVkFseik3Chj0a87a8aIX3Y0NgPBJuWn+?=
- =?us-ascii?Q?U7s3KDDo0JU7NmCwoZUEGernvpOsUXVEwY1qeiEqIhCMXpb4Pi/tmyE4+i4S?=
- =?us-ascii?Q?NU6M9DA20Wg7P7cWg+E2WspOw4zSPc62n6vvYe3e6c3+UaeHeqDblCnpf+hy?=
- =?us-ascii?Q?WBJ4mGL9gHkfYUmVAa6RaritDoNW2tKZZ0uwi6fK8xOkMlBljTgM7++iXR7A?=
- =?us-ascii?Q?2Ib9fG55GGeSeCU7srO+PmTcAryxtSnuWAfqikn67+hKdMqY/8k5eNnxq98n?=
- =?us-ascii?Q?BE5v2ZVzNQindjjFv/j8f4hOiw+hMt0nu6N9Pkg1uZCVIPRuwVKq9LTJbvMs?=
- =?us-ascii?Q?noT1tpozJsVm3FKochYtQ3ur8tL4tJ8y+I7ObczpwqZseucp5Cv+hEUZLaaX?=
- =?us-ascii?Q?JEwnDlEv6vO8T561cVdQFYGtPBOcgXt1lQzuM/YB+q1PKAdUh1DshjdTg/cC?=
- =?us-ascii?Q?GYUsNG0Ml7/TBvUGE8QU5JSrokm3FYoi5ChJLz22aPjP1z3rUwh33ahTkNAH?=
- =?us-ascii?Q?QBLxXoWBPTS4IHEVSXm3Fui7Ur4V0XMwAqZOGv2hyKq0uad0bZIAm0YgVZWQ?=
- =?us-ascii?Q?gO+fuD3G+LjTA3a1bP072Yx6/DzNi/3FNeOapyhhOqB9D5mjI2xTgeh40PAZ?=
- =?us-ascii?Q?QtO6D96b7UYFcBhzNd15dYHKRXf8QSpQzsDxH3JMjtog2vu/YaPwWw0FOxFf?=
- =?us-ascii?Q?Pzv+CJtPDalamlR+2mwmpPzTCHLTDVurDookCoPUA22nQPLvGFE09xodgGa4?=
- =?us-ascii?Q?oWgm9lCQNg44CMF5Jh5JLyiFWWRp0WsiYF4vTH9MZLrb7DNCLgdnRdM0wxZx?=
- =?us-ascii?Q?0YnTlY3S2W29hgOVJbWwccx4rRZzX9kk3UFuTFBDAXLZ4lOCxTqPqqGWWlPs?=
- =?us-ascii?Q?iamnvhg9009Q84dhNzHk/qB8q6tTmsr/1nMC+YaWBvl2zphZsqNIhkZERo/E?=
- =?us-ascii?Q?Y3Qb9iHXtYjE4aeuIiz/+30k7i40yYC77d+u+kyd8nIcs4oQJFF2+e15f00G?=
- =?us-ascii?Q?+kzAaKuoE67dpNV+plW9e5SLUoUVc6kcVfTS6yLXu1zBQ7fYd0byPihtwYx6?=
- =?us-ascii?Q?8UmooJODMzwX9krK8pWJb21wnPMLQ4FKUTSTAcCtd7rBRUClc9O2OucX1btq?=
- =?us-ascii?Q?9NFvJRKrY29cTyXVwTuIQDqINAy3Oq/B42SSzJxqarrGcNgDPLtuuTo1BmpD?=
- =?us-ascii?Q?Wk06s8jo5PXQSss7fBvAhbC6D6C6NuZzEg5PI5yIDh15O7RBmmYVuf3hJuBR?=
- =?us-ascii?Q?Vaz1rBG7iTj4DtBT1sBS8FAKr7BhnMTMRcN1GsC1i6XQc+Jw4+tqtcX0SbAk?=
- =?us-ascii?Q?Cn+wSoXpPI8YFqQlJ1riRRKlvKBl3ZdIV9uEksok2JFNxJpDuEfveRzv6TyP?=
- =?us-ascii?Q?ozegQJB6iCe+HI0SlwDFcCrMbLFTM1RqnR9DZxKkvcKYES+xcp3jEB9ntVt0?=
- =?us-ascii?Q?J60hTQtvnTNXJugkrCkAx8suABMSVRy0lAsHdqcm+2NJATXsGHZB0QDqyUps?=
- =?us-ascii?Q?SuCV37MpdOJfISJXay5PZEmcOrY5thd05Sy10ZYIZXYJezy4aWcTvwOpPShn?=
- =?us-ascii?Q?BL0GY0wKWXZ8hZxRHah6PrJfJcrj3IaJ8boFIMha074vWqvpQSPJ?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?2o2cdluC6cb1oAcgfENPznCiof0tQO9npTRneBnIGTWLIAO7lDjlJHoygQS5?=
+ =?us-ascii?Q?1x5yZin13sXulE4jPXiQ9GLrul8g5Xwiz/kifWc2+e+97tlFpA1EPYNBEYfR?=
+ =?us-ascii?Q?qrjWs4siVfz7X9aCCMKnhjGETaYDAJkziyD3DNWv7SOY27pHytE6FWcSP6Xv?=
+ =?us-ascii?Q?zrd3NXBcrpyREcNf96i8lNHkpsyjh+G3AnZO1N8d8iKbBJyF9Oyrw0lRlmA2?=
+ =?us-ascii?Q?KVfvExJNt1j7E/hbGtRwYlnrNcCxYLjiiTWlGR8IdBjzF6ffUFI79W6mPwY1?=
+ =?us-ascii?Q?0bhyNU4vDIzZA5aDKlUKhFoQlnQqWib38cByIXQZpGDRF/QGXcOq2RprW/1U?=
+ =?us-ascii?Q?ypbkDty9Z6aMInYxJKoI6/nfvWnU8YacHgRUJURBsEWpwdSU28nrFXY//I1c?=
+ =?us-ascii?Q?Iy4yX5vIi/Wac40Cru9eiy7rVbyQTMn2i19tylaJgipy0esarsQcHYu+J4bd?=
+ =?us-ascii?Q?ISoTVw3t4E356KxtKuc7d6W+vdAmP0m+7MRjY9AyBT7aUpMSI7t2oDY8VZyq?=
+ =?us-ascii?Q?//5osY+sD9UToAwAS3MFiiiID0Irlm0V0XzuKuBppYXSy1pt6k0jdcdDKmlf?=
+ =?us-ascii?Q?guOQQCQx+nvBtUEDmJpwd6CK1DZpoyy4WA8b8+dL91Ss44jynQdQBOrcGg9t?=
+ =?us-ascii?Q?hs3BKh7UxAh3UZ7XCFNPzCIABOn1Obzj8TKsU3S+Pj54Oy24GxAKoogTQ0x8?=
+ =?us-ascii?Q?cJ/CHHHhkDmO2oKtxn1Y0XdRgo6Ywymst7peMV+WHZGMXdVs4m92/Q6X1RwM?=
+ =?us-ascii?Q?KAzW+C0EixyvQ2qD+zAsHKJE4o6KtkmKDhsXJ+/IG04KURpcBdKP94YVW7xS?=
+ =?us-ascii?Q?hsy/RNVESydJbx8RKX+QpbhY6Qoz4g3b+k46Qwq1BTN0d9/tpMjyCHjxrb7Q?=
+ =?us-ascii?Q?l2UO/53CC2dku+HU08Enw+fPKduj+AHVrU4s9AbzLNkJWNWHFxatweEHK/zu?=
+ =?us-ascii?Q?FlvFkSKQ6ZPdP6hSv41wz1xhkSFaAOUnAzK3khwZI344npPOljALCcQ3EfFE?=
+ =?us-ascii?Q?H+IcYTbQp6C/V1w42+gt1XNKoO8/Sbj5WAKLJEmVupzYRT7teMIX7vlBJAVY?=
+ =?us-ascii?Q?pD5vCDYGHYIckoz8re+QGhGKD4Kg8c3MOXgMVfaMnOWGGfFAO3AjIJEcAyqg?=
+ =?us-ascii?Q?/eRBJ/Wy8UgLw65Ahuui+AmqAxIiRrJ2MDsrL0bKn6qulF3iV1sBSaMVTOHX?=
+ =?us-ascii?Q?hbbTyvN2FLyPtlVrIk1vvn04DVf3qG+YeFaneiF0GOk3knNhG3gY9eucT2ov?=
+ =?us-ascii?Q?omtu0JSRQcJ3UzJoedW2a7gIPo7Yq+MfnpZcuykxhSGvmEQBTzIm+OWARCCl?=
+ =?us-ascii?Q?fQkwhQtyqgWD8oFy+0+sY0rHO7OXllzyX+qqC38MqSJ/lK/SJZvpYlm43iJa?=
+ =?us-ascii?Q?swdBJKIyfgcvInZKUdewq1X8NhCcJmiTuAncT+s3SlrNEeDNq0hrwDqw3UBc?=
+ =?us-ascii?Q?hvAqyv4Q9Qj+w/jxH2Ih9cYsELEfV+4zNkX7f+uJVwzW/7MXFr+P7QiGGJyo?=
+ =?us-ascii?Q?Lqvk3Sy+wIavBk39GUcSe/SbJm7m1Ups2F5qoF3k6vT8t3IzTnS2NSJmF9c2?=
+ =?us-ascii?Q?UwTTjSQQ3pp/dW4WwLkyh7G4S/qDpERowwNQH+bBV1LD8kd3sGthBWtcYtrP?=
+ =?us-ascii?Q?QLkMaOkJtCzbTTtWRqfytOsEZSV+hz/fmZBxxqUuHr12RGWnVK2QkfC0oc5R?=
+ =?us-ascii?Q?hnSPFQ4hVwu5+6ltdEo/6WLOJrL52NjPpBkHgz553nF/bXjJhxiFdu0C4tbJ?=
+ =?us-ascii?Q?wwXuGsEY9I3l4C+DzEhN1fLLUajoGdmPfEldppxa4/W3PeyHuLeI?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 90d7b1be-3fd0-4a15-9bef-08debcddf71a
+X-MS-Exchange-CrossTenant-Network-Message-Id: bf72791e-e7c2-4c46-e2c9-08debcddf81b
 X-MS-Exchange-CrossTenant-AuthSource: AM0PR04MB6900.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 28 May 2026 17:24:25.4273
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 28 May 2026 17:24:27.0609
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: CzQY9GPJpvxUseUpECdUKOvs/ZFDQ9Ot6xClAQDUkirj3Wf/jZHeW2bRqqyH0ferh77yK2kNvl+xaoESaW+Ngw==
+X-MS-Exchange-CrossTenant-UserPrincipalName: 9cqwdDE1IoIMsgux0cf6U0hCeh59+qejEy3TWPeJ//VoI6SF67DzMfTUKqcIs/rgs255doJ2lE/nUgrOM1oDXw==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB11931
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260528_102430_248110_F650D19D 
-X-CRM114-Status: GOOD (  12.53  )
+X-CRM114-CacheID: sfid-20260528_102431_868359_42831DBB 
+X-CRM114-Status: UNSURE (   9.71  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -138,102 +139,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Some 10G Lynx SerDes blocks are big endian and require byte swapping
-because the CPUs are little endian armv8 (LS1046A). Parse the
-"big-endian" device tree property, and modify the base lynx_read() and
-lynx_write() accessors to test this property before issuing either the
-ioread32() or ioread32be() variants (as per
-Documentation/driver-api/device-io.rst).
-
-All other accessors - lynx_rmw(), lynx_lane_read(), lynx_lane_write(),
-lynx_lane_rmw(), lynx_pll_read() - need to go through these endian-aware
-helpers.
+It is unnecessary to rewrite a register if the masked field already
+contains the desired value upon reading. The hardware behaviour does not
+depend upon register writes with identical values.
 
 Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
 ---
- drivers/phy/freescale/phy-fsl-lynx-core.c |  1 +
- drivers/phy/freescale/phy-fsl-lynx-core.h | 36 ++++++++++++++++-------
- 2 files changed, 27 insertions(+), 10 deletions(-)
+ drivers/phy/freescale/phy-fsl-lynx-core.h | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/phy/freescale/phy-fsl-lynx-core.c b/drivers/phy/freescale/phy-fsl-lynx-core.c
-index bd1cd78e80bb..ca523e59b167 100644
---- a/drivers/phy/freescale/phy-fsl-lynx-core.c
-+++ b/drivers/phy/freescale/phy-fsl-lynx-core.c
-@@ -292,6 +292,7 @@ int lynx_probe(struct platform_device *pdev, const struct lynx_info *info,
- 
- 	priv->dev = dev;
- 	priv->info = info;
-+	priv->big_endian = device_property_read_bool(dev, "big-endian");
- 	dev_set_drvdata(dev, priv);
- 	spin_lock_init(&priv->pcc_lock);
- 	INIT_DELAYED_WORK(&priv->cdr_check, lynx_cdr_lock_check);
 diff --git a/drivers/phy/freescale/phy-fsl-lynx-core.h b/drivers/phy/freescale/phy-fsl-lynx-core.h
-index e8b280cc9b38..d82e529fa65a 100644
+index d82e529fa65a..3d9508dfb2c1 100644
 --- a/drivers/phy/freescale/phy-fsl-lynx-core.h
 +++ b/drivers/phy/freescale/phy-fsl-lynx-core.h
-@@ -58,36 +58,52 @@ struct lynx_priv {
- 	 * like PCCn
- 	 */
- 	spinlock_t pcc_lock;
-+	bool big_endian;
- 	struct lynx_pll pll[LYNX_NUM_PLL];
- 	struct lynx_lane *lane;
- 
- 	struct delayed_work cdr_check;
- };
- 
-+static inline u32 lynx_read(struct lynx_priv *priv, unsigned long off)
-+{
-+	void __iomem *reg = priv->base + off;
-+
-+	if (priv->big_endian)
-+		return ioread32be(reg);
-+
-+	return ioread32(reg);
-+}
-+
-+static inline void lynx_write(struct lynx_priv *priv, unsigned long off, u32 val)
-+{
-+	void __iomem *reg = priv->base + off;
-+
-+	if (priv->big_endian)
-+		return iowrite32be(val, reg);
-+
-+	return iowrite32(val, reg);
-+}
-+
- static inline void lynx_rmw(struct lynx_priv *priv, unsigned long off, u32 val,
- 			    u32 mask)
- {
--	void __iomem *reg = priv->base + off;
- 	u32 orig, tmp;
- 
--	orig = ioread32(reg);
-+	orig = lynx_read(priv, off);
+@@ -93,7 +93,8 @@ static inline void lynx_rmw(struct lynx_priv *priv, unsigned long off, u32 val,
+ 	orig = lynx_read(priv, off);
  	tmp = orig & ~mask;
  	tmp |= val;
--	iowrite32(tmp, reg);
-+	lynx_write(priv, off, tmp);
+-	lynx_write(priv, off, tmp);
++	if (orig != tmp)
++		lynx_write(priv, off, tmp);
  }
  
--#define lynx_read(priv, off) \
--	ioread32((priv)->base + (off))
--#define lynx_write(priv, off, val) \
--	iowrite32(val, (priv)->base + (off))
  #define lynx_lane_rmw(lane, reg, val, mask)	\
- 	lynx_rmw((lane)->priv, reg(lane->id), val, mask)
- #define lynx_lane_read(lane, reg)			\
--	ioread32((lane)->priv->base + reg((lane)->id))
-+	lynx_read((lane)->priv, reg((lane)->id))
- #define lynx_lane_write(lane, reg, val)		\
--	iowrite32(val, (lane)->priv->base + reg((lane)->id))
-+	lynx_write((lane)->priv, reg((lane)->id), val)
- #define lynx_pll_read(pll, reg)			\
--	ioread32((pll)->priv->base + reg((pll)->id))
-+	lynx_read((pll)->priv, reg((pll)->id))
- 
- int lynx_probe(struct platform_device *pdev, const struct lynx_info *info,
- 	       const struct phy_ops *phy_ops);
 -- 
 2.34.1
 
