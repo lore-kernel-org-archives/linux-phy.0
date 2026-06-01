@@ -4,71 +4,147 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8DC1CCD6E4C
-	for <linux-phy@archiver.kernel.org>; Mon,  1 Jun 2026 06:34:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 89337CD6E55
+	for <linux-phy@archiver.kernel.org>; Mon,  1 Jun 2026 17:30:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fSuIVepJBJi/l1nB3SY6j0aD5GoVsEKy8LIYFhukCwQ=; b=qVJ/NaInLDE1Dq
-	IKoS5GoAv/4+ljvLFVGe0yqVQf5ljnvMb/bwEDs6YfI5U0NGpmRhpiqUteS4DNQM1eXZKkWVuv6RB
-	04nruqxCfNEBHX9TUgBqR9uh8+vnsSwFzBSOkdj6K0LokZs/G00iERHcKDOXB/BG1UV0TZwmMRwl/
-	F+EH05yuM6UqFMMjp0dB1OMM0WsJ9pQRDw0vV2q1HtcKFEU8HyXaZ8ckVmZG+5LJwXqvJMOQwcYUu
-	E5DFtnBePZHDsIDwAJpCeJVxt13ksreDGFfLKN4eWQqc+5vBoO/H9Y+d+/9fC1ymn2mcPjFhf9z++
-	2IGx1O/3LhuYnr0joVGQ==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=N2prk59hZEFeb63KUq6wbNRjRNnYU1K054/eg7rhWCA=; b=J1PmP4nBAZUGqF
+	TI4oMst0GzCW/Mp40/D+CbmD7s0tgB+jTpvvN2meIjJf0gtpstpkiZYtcLN74h0B1ODftBRETLUMV
+	dZwlvt2t6LqtDEx6lR0M6OASes7WFMzlAHISGd/w22Hi3zgonFMW4zNQQ1uYe6IEOk5fEpqKCfhia
+	4SInABS4AlyR8aGwsCbRiN7RHMz7L1WfbRtQjGzA1leRyHpo7vawalPgucD2uDZhj6eRTEDz1EexN
+	0NnIkga3CPU8aKJ8DxD0rHDykv4pNONT8ejFBnmGC1ww42Rfi/6Zg7Qh0CPjhazN4aWJ7dA0sGsCl
+	ipYiH57W5ldzwJ6uSwTQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wTwEZ-0000000ADQi-0ED7;
-	Mon, 01 Jun 2026 06:34:47 +0000
-Received: from www537.your-server.de ([188.40.3.216])
+	id 1wU6TW-0000000Ba5r-48lz;
+	Mon, 01 Jun 2026 17:30:55 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wTwEW-0000000ADPt-1RWi
+	id 1wU6TU-0000000Ba5F-0Iv8
 	for linux-phy@lists.infradead.org;
-	Mon, 01 Jun 2026 06:34:45 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=ew.tq-group.com; s=default2602; h=Content-Type:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender
-	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID;
-	bh=iTV5J9c1q6vU4HfXaFRAppoi5WMSCM3q+VMiSk/mHIo=; b=AVod6Zd/wLpW1zV3QJyTjcYH+k
-	qKq2Ly5mppBJmHYvWHjO1a2PpnPcysbt8HekijajAh60PTW3cD9F7fH9SEz6sGqHyLI1HAm3lPxnK
-	Ul8TQeyanb189L3nQiVI0hmjLEttTu8RSpz6IGjVTUkj9f2I8bs+pqnJ0x4vL/dU3j01TjM+1K6us
-	VMWov7ANnX6p2ubsMCQI3z33e4jzgP4na4uq6W7xWz+YJ/7rZWuBSeirN08A+OcCOPrSWVocO91dq
-	4pf+6XduOvybNiCCnisZD0mnRw1TLAUy4yG/igytrAEJWn4q18hTHmv30inxPMkoWy1cYw+BPUWwf
-	tQAW8cFQ==;
-Received: from sslproxy04.your-server.de ([78.46.152.42])
-	by www537.your-server.de with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
-	(Exim 4.96.2)
-	(envelope-from <alexander.stein@ew.tq-group.com>)
-	id 1wTwEE-000DJL-1d;
-	Mon, 01 Jun 2026 08:34:26 +0200
-Received: from localhost ([127.0.0.1])
-	by sslproxy04.your-server.de with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
-	(Exim 4.96)
-	(envelope-from <alexander.stein@ew.tq-group.com>)
-	id 1wTwEK-000IYB-1G;
-	Mon, 01 Jun 2026 08:34:32 +0200
-From: Alexander Stein <alexander.stein@ew.tq-group.com>
-To: linux-phy@lists.infradead.org, Vladimir Oltean <vladimir.oltean@nxp.com>
-Cc: Ioana Ciornei <ioana.ciornei@nxp.com>, Vinod Koul <vkoul@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>,
- Tanjeff Moos <tanjeff.moos@westermo.com>, linux-kernel@vger.kernel.org,
- devicetree@vger.kernel.org, Conor Dooley <conor+dt@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v2 phy-next 13/15] dt-bindings: phy: lynx-10g: initial document
-Date: Mon, 01 Jun 2026 08:34:25 +0200
-Message-ID: <2842502.mvXUDI8C0e@steina-w>
-Organization: TQ-Systems GmbH
-In-Reply-To: <20260529171509.1163787-14-vladimir.oltean@nxp.com>
-References: <20260529171509.1163787-1-vladimir.oltean@nxp.com>
- <20260529171509.1163787-14-vladimir.oltean@nxp.com>
+	Mon, 01 Jun 2026 17:30:53 +0000
+Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 651BB5633127901
+	for <linux-phy@lists.infradead.org>; Mon, 1 Jun 2026 17:30:50 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=1sUnhF+L9/rWjdKJJ0odJH
+	7BcvEADzaujue7QqNbFpk=; b=NoHcs2AkVINkHBMo1UxnXo9Lg21KG+lmgeXhjx
+	tNcuv0fZep+lpCwWlxhXFAI81g1efigyLZJxZ7NipfWBjxfi7/7UdOYdiNNHg+cu
+	RNMpA6EvETSWSA9Za0RCsuZJvWCdooXHcdSuF682Bd+HIZmL/W5CXrbvCoWyFrT0
+	CARIfVCsaxvKsXIh8y21xLATKfMVOpXsBzRlYtZ3OrQQMP9XEEgSCpiNJn9d1bWq
+	IqGHAiormyNZ8KiHu4FvVQhuIJxggo+2NgGrHRhoOvhubZL6yb+hjlMdwl0l/HMx
+	wGe74B88mAn7bCfxkkeHLA09U+9KEckPfHkdswrtg2sFP6MQ==
+Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com [209.85.214.199])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4eh9011m5g-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Mon, 01 Jun 2026 17:30:50 +0000 (GMT)
+Received: by mail-pl1-f199.google.com with SMTP id d9443c01a7336-2c0c32faa62so29863065ad.2
+        for <linux-phy@lists.infradead.org>; Mon, 01 Jun 2026 10:30:49 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1780335049; x=1780939849; darn=lists.infradead.org;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=1sUnhF+L9/rWjdKJJ0odJH7BcvEADzaujue7QqNbFpk=;
+        b=L+xuw1ljr6XEVoqDU3w/61Y9d//Edq7vIiWDVaq8JrLAiM1wx+knY0/ja+lEpFgYZr
+         gI1qaThf/GX/S8WfD8rxkz+EwmCIeHh4CGYNbiStmQfM5BEkv95IS13TMZLCa+Fhjl+0
+         qtHnpzYqckiT3mInrDBQjSlZvb48EHMmN5of4SLLQB8TRN8O9SBCwiIH0cEtNpqcgNLZ
+         h9m915f6NjAmWbGsOjaM+3cVIomCwlxr1fr5+DTGYF4lBKf9A9rNrPF/arvYOegB5Ekh
+         1xjgzBTmzdl1B2PgevBcRo5iruySFM2ntuFT8KcS9P/lwlNdFgFWQE6h0MUBRe7yU8NU
+         WFdg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1780335049; x=1780939849;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=1sUnhF+L9/rWjdKJJ0odJH7BcvEADzaujue7QqNbFpk=;
+        b=RLB3sUsD2hqOW/mev9mHNoYgVOGXogFJfumwbnRV0Aw8nlZbMwk9Lp+3JEC289nBSt
+         9AMo7dgU4DRU1DAIU6Ym+ttHm3iz++gUFVq5drIQJclSCANiE0TUIvIp73PACs+Ize+H
+         B/+uElZK3liv+Ru1KBuD0gwCozvPMDnqc18GX8xR05JT7NZoZFrjwiqfO28sT8bnwc6k
+         /R5agY3zKVrtlRNhllW4k00MZgyZCR9kx3dbGditvVSAruKbU5vz1QOd/uOm/GX3k7zp
+         XP5sP4/Ufw94rtd4xOY1dLh80EjkKsn4fXWannUVwD9sHZK8id53C/HzLrbpMi1dVOs8
+         3++Q==
+X-Forwarded-Encrypted: i=1; AFNElJ8nOcwHKUg5o047X5G1WWzpZVY+iI6qlkMkqc9tNODkEraOuCROwe4faxtSPq3EjKCGN7gibFuOn9U=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yywrb9Df2iP+lcb9Pv9msjJhlMfZVdxeWKVIrEAEuYHxMHbNcCI
+	Prn5D4fhTqEhvIEKd84M0FHl9pVayqvpZTfRQxLyRDwyQpD6YdyMCGXIY10oKiV6wRLZcWF2Xkp
+	rB/75BYuj4ZdLZdc6MwQHq/M8EttEUhQy8E8wQpDCHePh4a5K6/v5kovNZq0yP1Vvmcw4
+X-Gm-Gg: Acq92OEs/IF2XdtHsxJvprZk+S6zOvrbO2Y71BuUHtBg0NVZq3Qp9/Vnr4xFgFtaCl7
+	3xb/NMc/ILpjEhTKLNVccmCk1Yl5TS+GCAAWshwNmAcEGA6hUWfqONG2/a4i/zI1a6YZxWqi2Py
+	ZHPCHLkJ2bU308emkDK74WYlbtKz3H/0F6nWAcrnsdhN3LFGQeAFxIiY6pSTDdUoa33XZuSjGta
+	ca39pTVeDMYNNBNAuEpyKWP+SMq3ZCMqk8N6+xLV1m/ZM3KFvuIJ6el5wF8oQpNyL/gIMzYGxOK
+	I3o83nmaTcM48VaisDCAizzqyA09uDcvanEDC5jeoxSOIvUvTVa4eIgtPehg+HxGRpYROsIggK0
+	xYiRJt08veDhEzu8Xa/8fbwNCmLxKlEl82J5tjd4ijaTFR7jDViRleF7hwawwPFJ2rps=
+X-Received: by 2002:a17:903:1905:b0:2b0:c59f:3b58 with SMTP id d9443c01a7336-2bf367aa885mr142466285ad.9.1780335048858;
+        Mon, 01 Jun 2026 10:30:48 -0700 (PDT)
+X-Received: by 2002:a17:903:1905:b0:2b0:c59f:3b58 with SMTP id d9443c01a7336-2bf367aa885mr142466035ad.9.1780335048449;
+        Mon, 01 Jun 2026 10:30:48 -0700 (PDT)
+Received: from hu-krichai-hyd.qualcomm.com ([202.46.23.25])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2bf23b011f7sm149136085ad.41.2026.06.01.10.30.43
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 01 Jun 2026 10:30:47 -0700 (PDT)
+From: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
+Subject: [PATCH v2 0/3] PCI: qcom: Add support for Eliza
+Date: Mon, 01 Jun 2026 22:59:43 +0530
+Message-Id: <20260601-eliza-v2-0-6b44c9c23d5e@oss.qualcomm.com>
 MIME-Version: 1.0
-X-Virus-Scanned: Clear (ClamAV 1.4.3/28017/Sun May 31 08:27:13 2026)
+X-B4-Tracking: v=1; b=H4sIAIfBHWoC/y2NQQ6CMBBFr0JmbQktVsCV9zAsShllDFDtAFEJd
+ 7eAm0le8v6bGRg9IcM5msHjREyuD6AOEdjG9HcUVAcGlahTclSZwJa+RqBOpdYG81xJCO7T443
+ eW+da7sxj9UA7rOPVaIgH5z/bo0mu3t7USv6bkxSJKDJbVyGb5kV9cczxazStdV0XhwPlsiw/N
+ XXKzrMAAAA=
+X-Change-ID: 20260427-eliza-e53155ae8821
+To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Lorenzo Pieralisi <lpieralisi@kernel.org>,
+        =?utf-8?q?Krzysztof_Wilczy=C5=84ski?= <kwilczynski@kernel.org>,
+        Manivannan Sadhasivam <mani@kernel.org>,
+        Bjorn Helgaas <bhelgaas@google.com>,
+        Bjorn Andersson <andersson@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        linux-pci@vger.kernel.org,
+        Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>,
+        Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+X-Mailer: b4 0.15.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1780335042; l=1634;
+ i=krishna.chundru@oss.qualcomm.com; s=20230907; h=from:subject:message-id;
+ bh=dTxWkC9D/nQhAvkCNBylGPNDKnNQFBcLRIV4F8qd8OE=;
+ b=i817uyArXAMMqslAv/+8fL2dnAFE1MVeVBOaxSzivu9AVo2CwzvvglB3MKVuJQfu3fpQc2QR7
+ xvCY2FF/gswBAD/2k2XNLQ5erDIcvuEmPuV9CJy6s0L/gAw/nXLQ9L2
+X-Developer-Key: i=krishna.chundru@oss.qualcomm.com; a=ed25519;
+ pk=10CL2pdAKFyzyOHbfSWHCD0X0my7CXxj8gJScmn1FAg=
+X-Authority-Analysis: v=2.4 cv=H6nrBeYi c=1 sm=1 tr=0 ts=6a1dc1ca cx=c_pps
+ a=JL+w9abYAAE89/QcEU+0QA==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
+ a=IkcTkHD0fZMA:10 a=FelO9ux0wxsA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_glEPmIy2e8OvE2BGh3C:22
+ a=bC-a23v3AAAA:8 a=EUspDBNiAAAA:8 a=qIbWdXD6M1inJYch3NYA:9 a=QEXdDO2ut3YA:10
+ a=324X-CrmTo6CU4MGRt3R:22 a=FO4_E8m0qiDe52t0p3_H:22
+X-Proofpoint-ORIG-GUID: Ow5JfQqMKXuipJhNl3bi0hiosZMO3m93
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjAxMDE3MyBTYWx0ZWRfX9tsbROFqSQnz
+ jPzjSkvykiD232tYOeZJgNC7oBc2dQgWaSFjmZr19IrOtGeTjZN257yK+XySVN2z+d92DhwtyEL
+ p+RfQ8gUJwCzL8L2g9Tq1FP/29P7lxz0tQhPQ173hZii/D61gIzPDXBHy1G20IYrXfBX8gXr+m3
+ 9ZUVr4BYbR4biTiAuB3qvh2xamTrNrTfkYHot686pL+/b+yHa6LGO3S9tifNJV0VqkE8YKX/ww0
+ 0NipZGjtFdX5P5CtgokwmPGj3pSiwcY1P8WqN5oHv6jxmwPcU49TgCkr/o2a47Ab0wqy2Zs0RXo
+ GpukU60nlnka1xxd0KS9I/cW1kYQGU+Fv6VaGe5PyJScCXOcWI2qQPYQa0+d4Ldwfh/6l2FFewU
+ kP4TTyyaJrdKkXa0rg50LQhADfa8+UTyfpx4yJ9YqlcVOOVZL3OC8KksDNWp6xQsef8Hao0e3z7
+ U6JYp2I2NY22knxPdlA==
+X-Proofpoint-GUID: Ow5JfQqMKXuipJhNl3bi0hiosZMO3m93
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.125,FMLib:17.12.100.49
+ definitions=2026-06-01_05,2026-05-28_03,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ malwarescore=0 adultscore=0 clxscore=1015 phishscore=0 impostorscore=0
+ bulkscore=0 lowpriorityscore=0 priorityscore=1501 spamscore=0 suspectscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2605210000 definitions=main-2606010173
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260531_233444_490586_3B69C941 
-X-CRM114-Status: GOOD (  19.60  )
+X-CRM114-CacheID: sfid-20260601_103052_255802_E6FEFC64 
+X-CRM114-Status: GOOD (  13.47  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,207 +156,53 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
+This series adds PCIe support for the Qualcomm Eliza SoC. Eliza includes
+two PCIe root complex controllers capable of 8GT/s x1 and 8GT/s x2.
 
-Am Freitag, 29. Mai 2026, 19:15:07 CEST schrieb Vladimir Oltean:
-> Add a schema for the 10G Lynx SerDes. This is very similar to the modern
-> form of the 28G Lynx SerDes, which is very much the intention.
-> =
+The QMP PCIe PHY support adds a new Gen3x1 PHY configuration with
+Eliza-specific initialization tables, and reuses the existing SM8550
+Gen3x2 configuration for the x2 PHY instance.
 
-> We allow both forms of #phy-cells =3D <1> in the top-level provider
-> and #phy-cells =3D <0> in the per-lane provider for more flexibility to
-> consumers, and because the kernel code is shared with the 28G Lynx which
-> already has that support for compatibility reasons.
-> =
+The series consists of:
+- dt-bindings for the Eliza PCIe QMP PHY
+- dt-bindings schema for the Eliza PCIe controller
+- Driver entry in the Qcom PCIe controller for Eliza
+- QMP PCIe PHY initialization tables and configuration for Eliza
 
-> Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
-> ---
-> Cc: devicetree@vger.kernel.org
-> Cc: Conor Dooley <conor+dt@kernel.org>
-> Cc: Krzysztof Kozlowski <krzk+dt@kernel.org>
-> Cc: Rob Herring <robh@kernel.org>
-> =
+Signed-off-by: Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
+---
+Changes in v2:
+- Remove the driver patch and instead use compatible of sm8550 just like
+  kaanapali (Krzysztof)
+- Move all the phy settings to lowercase (Dimitry).
+- Link to v1: https://patch.msgid.link/20260521-eliza-v1-0-97cdbe88389d@oss.qualcomm.com
 
-> v1->v2:
-> - move patch later in series, right before driver
-> - deliberately ignoring this Sashiko feedback:
->   https://lore.kernel.org/linux-phy/20260529125017.ifqunh52gdzhthdg@skbuf/
-> ---
->  .../devicetree/bindings/phy/fsl,lynx-10g.yaml | 131 ++++++++++++++++++
->  1 file changed, 131 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/fsl,lynx-10g.ya=
-ml
-> =
+---
+Krishna Chaitanya Chundru (3):
+      dt-bindings: phy: sc8280xp-qmp-pcie: Document Eliza PCIe phy
+      dt-bindings: PCI: qcom,pcie-sm8550: Add Eliza compatible
+      phy: qcom: qmp-pcie: Add QMP PCIe PHY support for Eliza
 
-> diff --git a/Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml b/Do=
-cumentation/devicetree/bindings/phy/fsl,lynx-10g.yaml
-> new file mode 100644
-> index 000000000000..993f076bba4e
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml
-> @@ -0,0 +1,131 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/fsl,lynx-10g.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Freescale Lynx 10G SerDes PHY
-> +
-> +maintainers:
-> +  - Vladimir Oltean <vladimir.oltean@nxp.com>
-> +
-> +description:
-> +  The 10G Lynx is a multi-protocol SerDes block which handles networking=
-, PCIe,
-> +  SATA and other high-speed interfaces. It is present on most QorIQ and
-> +  Layerscape SoCs. The register map is common, but the integration is
-> +  SoC-specific, with the differences consisting in register endianness, =
-the
-> +  number of lanes, protocol converters available per lane and their loca=
-tion in
-> +  the PCCR registers. Some SoCs have multiple SerDes blocks and those di=
-ffer in
-> +  their protocol capabilities per lane.
-> +
-> +properties:
-> +  compatible:
-> +    description:
-> +      There is intentionally no generic fsl,lynx-10g compatible string d=
-ue to
-> +      the hardware inability to report its capabilities, despite having a
-> +      common register map.
-> +    enum:
-> +      - fsl,ls1028a-serdes
-> +      - fsl,ls1046a-serdes1
-> +      - fsl,ls1046a-serdes2
-> +      - fsl,ls1088a-serdes1
-> +      - fsl,ls1088a-serdes2
-> +      - fsl,ls2088a-serdes1
-> +      - fsl,ls2088a-serdes2
+ .../devicetree/bindings/pci/qcom,pcie-sm8550.yaml  |   1 +
+ .../bindings/phy/qcom,sc8280xp-qmp-pcie-phy.yaml   |   6 +
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c           | 139 +++++++++++++++++++++
+ drivers/phy/qualcomm/phy-qcom-qmp-pcs-pcie-v6.h    |   1 +
+ 4 files changed, 147 insertions(+)
+---
+base-commit: 254f49634ee16a731174d2ae34bc50bd5f45e731
+change-id: 20260427-eliza-e53155ae8821
 
-Silly question: What about LS1043A? AFAIK it has a single serdes block.
-
-Best regards
-Alexander
-
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  big-endian: true
-> +
-> +  "#phy-cells":
-> +    const: 1
-> +
-> +  "#address-cells":
-> +    const: 1
-> +
-> +  "#size-cells":
-> +    const: 0
-> +
-> +patternProperties:
-> +  "^phy@[0-7]$":
-> +    type: object
-> +    description: SerDes lane (single RX/TX differential pair)
-> +
-> +    properties:
-> +      reg:
-> +        minimum: 0
-> +        maximum: 7
-> +        description: Lane index as seen in register map
-> +
-> +      "#phy-cells":
-> +        const: 0
-> +
-> +    required:
-> +      - reg
-> +      - "#phy-cells"
-> +
-> +    additionalProperties: false
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - "#phy-cells"
-> +  - "#address-cells"
-> +  - "#size-cells"
-> +
-> +allOf:
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            enum:
-> +              - fsl,ls1028a-serdes
-> +              - fsl,ls1046a-serdes1
-> +              - fsl,ls1046a-serdes2
-> +              - fsl,ls1088a-serdes1
-> +              - fsl,ls1088a-serdes2
-> +    then:
-> +      patternProperties:
-> +        "^phy@[0-7]$":
-> +          properties:
-> +            reg:
-> +              minimum: 0
-> +              maximum: 3
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    soc {
-> +      #address-cells =3D <2>;
-> +      #size-cells =3D <2>;
-> +
-> +      serdes@1ea0000 {
-> +        compatible =3D "fsl,ls1028a-serdes";
-> +        reg =3D <0x0 0x1ea0000 0x0 0xffff>;
-> +        #address-cells =3D <1>;
-> +        #size-cells =3D <0>;
-> +        #phy-cells =3D <1>;
-> +
-> +        phy@0 {
-> +          reg =3D <0>;
-> +          #phy-cells =3D <0>;
-> +        };
-> +
-> +        phy@1 {
-> +          reg =3D <1>;
-> +          #phy-cells =3D <0>;
-> +        };
-> +
-> +        phy@2 {
-> +          reg =3D <2>;
-> +          #phy-cells =3D <0>;
-> +        };
-> +
-> +        phy@3 {
-> +          reg =3D <3>;
-> +          #phy-cells =3D <0>;
-> +        };
-> +      };
-> +    };
-> =
+Best regards,
+--  
+Krishna Chaitanya Chundru <krishna.chundru@oss.qualcomm.com>
 
 
-
--- =
-
-TQ-Systems GmbH | M=FChlstra=DFe 2, Gut Delling | 82229 Seefeld, Germany
-Amtsgericht M=FCnchen, HRB 105018
-Gesch=E4ftsf=FChrer: Detlef Schneider, R=FCdiger Stahl, Stefan Schneider
-http://www.tq-group.com/
-
-
-
--- =
-
+-- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
