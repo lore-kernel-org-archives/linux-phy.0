@@ -4,53 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 82740CD6E55
-	for <linux-phy@archiver.kernel.org>; Mon,  1 Jun 2026 17:38:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4AD1ACD6E55
+	for <linux-phy@archiver.kernel.org>; Mon,  1 Jun 2026 22:09:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ahM9bq+MLOeZIcxKfAP+OGwNYvihEKQHIwmS06OLN8s=; b=RQps3nKRq9DmM+
-	nPbjuHB6thsDjZxw/PXI0aEvlnmQE4TuENYsfGF80ZmVtWkVw/BEf+IsGVtdOduMGf2jQ9QrNDGYC
-	a0RLeT0ln7bKOgoP6iVyz/brYiSvLh51617mEuHvjkPVXMQ0pFf5wRjuCRUhkpGw7tWJofB1AXqy3
-	uKDFYpPxNhvoEDdg5ja0AGhW8wpfSAYvM3goT7i9viZWZxhfDs0qMnHUZiRtRBlSPjJNgkyduqZwV
-	hk39shPhTGYJNKdEFmuBLvkt44/hqIVRE2KxM+BzcMcc4OvYjbN6lp+Up5qA2pvQ/s8hCKrcCPted
-	uVnbAcotPrJiNutiNa3A==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=H7DO84SH7GZ9SWDoPn+j0F84jIjUura4xv9IIMm9oX8=; b=iMzoUCtdHIAv1S0Vlu6fiwLWsz
+	+mEH6GL+VAH5MV+/Yjop0EfPWxACvmBbhO6AnOy4yiCuU245EmuOCHoHjpcGGtUmIUzvWkjnCp1M2
+	5iNLsEBT4ew3xDd7YafoV24//iZNCb5I/0Ijy8WnPbDDS0YGOZN0p4UzbmrIrqB99GcBq5vDdvFaW
+	um/3zyfPkMW5ElPRqjLTaCD5ACGFgyou00sj4Wml8XW3l6ux7+b4D9jRepQU06r5aGrHeDlECtMem
+	YC+VfYZJSQUJ+mCU/OcuEJluSkFIMIw0jjfjUDwwsFlA5CEBqKDxMHQrq3uR204+FgDjdS6emagVl
+	tsQKITcg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wU6af-0000000Bb0V-1BT9;
-	Mon, 01 Jun 2026 17:38:17 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wUApC-0000000Buy0-3HSr;
+	Mon, 01 Jun 2026 22:09:35 +0000
+Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wU6ad-0000000Bazu-1XCs
-	for linux-phy@lists.infradead.org;
-	Mon, 01 Jun 2026 17:38:15 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 769A9600AA;
-	Mon,  1 Jun 2026 17:38:14 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BEE691F00893;
-	Mon,  1 Jun 2026 17:38:13 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1780335494;
-	bh=hEqYqLf3qTtAVk+r+1pqv1nASrzWTTWGxu96dEN13tw=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=Yz8YFjVj8g5acgJ94wYNdvk3yF2ynbPugVX3Mf0pta1PW6KMF/JqrzIuz8mtOnEEA
-	 ZFQyJZRZFmhmmUDjKzX4QFJyp92UCnrAC06hvCEH7rKnmLb6RA58db2YXdm2EGwJfD
-	 YUcDHHSG8Ylys4XcENz/TYVDem+dF7SDwSz+EQVIUsN+9qgUdfYad4pAeeg9Uue2jr
-	 Qp9P2AzTIwtrkrTtHaQ2lKqNKIksNrccvccYz2Twn7WfspFMtI1wvnPjTfGQPZ3yS2
-	 41G9G3sgdsgk8MB6+twZRG58NV009OTTTmtxBNPf6t9qqLpsPe91mFxZrKQWwA7TZ8
-	 c5F4knmjy1X1g==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v2 2/3] dt-bindings: PCI: qcom,pcie-sm8550: Add Eliza
- compatible
-To: "Krishna Chaitanya Chundru" <krishna.chundru@oss.qualcomm.com>
-Cc: linux-phy@lists.infradead.org, vkoul@kernel.org, linux-pci@vger.kernel.org, devicetree@vger.kernel.org, robh@kernel.org, neil.armstrong@linaro.org, conor+dt@kernel.org, olteanv@gmail.com
-In-Reply-To: <20260601-eliza-v2-2-6b44c9c23d5e@oss.qualcomm.com>
-References: <20260601-eliza-v2-2-6b44c9c23d5e@oss.qualcomm.com>
-Date: Mon, 01 Jun 2026 17:38:13 +0000
-Message-Id: <20260601173813.BEE691F00893@smtp.kernel.org>
+	id 1wUAp9-0000000BuxB-27F2;
+	Mon, 01 Jun 2026 22:09:33 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1780351738; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=DFTvSjlq6jnIXNf0M9KS2sJ/lMP29aQTGqrIezRk3x0RGNMbLqF03kl/DA4yD8aJsNSkH1COokzAXzNNXe71ZJVxyHB+AGlcVdEch2FxEhpUeOqe1CnU/Uz2dPd/FMfYt3l9Wpriicp8dRyO/R2fOQWzHTNznefdxS8HMEtTTmo=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1780351738; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
+	bh=1lK1yNZdrKT8RuPFT6vih0wWSf1jo44LoNBqX+KfL0M=; 
+	b=KH/4V1Ldup46P6gqKWWlb8LM0fPlt2BDHkk813kn6x7F7A0vc44ppp5HUCFuF3LbFwGglUkfI4MpOkIZ/n2Wfel8CIQekOrw42gr5P+zy8du1QWfeuQ5qZ9VzWVM03b4iexSdd8wfqde7urVU+0ks5FHGqkiROvoeDcVyXXlcI0=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=collabora.com;
+	spf=pass  smtp.mailfrom=sebastian.reichel@collabora.com;
+	dmarc=pass header.from=<sebastian.reichel@collabora.com>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1780351737;
+	s=zohomail; d=collabora.com; i=sebastian.reichel@collabora.com;
+	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:References:MIME-Version:Content-Type:In-Reply-To:Message-Id:Reply-To;
+	bh=1lK1yNZdrKT8RuPFT6vih0wWSf1jo44LoNBqX+KfL0M=;
+	b=BUIQ3fbngH6E2GT5G7rpUSBewxAJyxIl+lR3yFYwvtS2tqoPkRt7+/Muq5CFSNaL
+	mV6NLFOKmwKjS6jyoO/Wjw5dePkldz5YHfYGq0wbVLSyK6vPS9caCalpe7Tp2HCHLWC
+	sX1JY7n/mW01G2j7r4weTdsWLFO2IWm3ZmbWPssc=
+Received: by mx.zohomail.com with SMTPS id 1780351733835755.6229336935343;
+	Mon, 1 Jun 2026 15:08:53 -0700 (PDT)
+Received: by venus (Postfix, from userid 1000)
+	id D5550183854; Tue, 02 Jun 2026 00:08:46 +0200 (CEST)
+Date: Tue, 2 Jun 2026 00:08:46 +0200
+From: Sebastian Reichel <sebastian.reichel@collabora.com>
+To: Chaoyi Chen <kernel@airkyi.com>
+Cc: Andrzej Hajda <andrzej.hajda@intel.com>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>, 
+	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, Jonas Karlman <jonas@kwiboo.se>, 
+	Jernej Skrabec <jernej.skrabec@gmail.com>, Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
+	Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, 
+	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
+	Sandy Huang <hjc@rock-chips.com>, Heiko =?utf-8?Q?St=C3=BCbner?= <heiko@sntech.de>, 
+	Andy Yan <andy.yan@rock-chips.com>, Vinod Koul <vkoul@kernel.org>, 
+	Heikki Krogerus <heikki.krogerus@linux.intel.com>, Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>, 
+	Luca Ceresoli <luca.ceresoli@bootlin.com>, linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org, 
+	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
+	linux-phy@lists.infradead.org, Chaoyi Chen <chaoyi.chen@rock-chips.com>
+Subject: Re: [PATCH 1/5] drm/bridge: Implement generic USB Type-C DP HPD
+ bridge
+Message-ID: <ah3-auKugGCVojOp@venus>
+References: <20260521032854.103-1-kernel@airkyi.com>
+ <20260521032854.103-2-kernel@airkyi.com>
+MIME-Version: 1.0
+In-Reply-To: <20260521032854.103-2-kernel@airkyi.com>
+X-Zoho-Virus-Status: 1
+X-Zoho-AV-Stamp: zmail-av-0.2.2.1.5.2/280.325.56
+X-ZohoMailClient: External
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260601_150931_576774_A2AD378D 
+X-CRM114-Status: GOOD (  34.26  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -62,30 +87,209 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============2926379647262307279=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0xvd10gVGhlIGNvbW1pdCBtZXNz
-YWdlIGluY29ycmVjdGx5IHN0YXRlcyB0aGUgYmFja3dhcmRzIGNvbXBhdGliaWxpdHkgdGFyZ2V0
-LCBtYWtpbmcgaXQgbG9naWNhbGx5IGNvbmZ1c2luZy4KLS0KCmNvbW1pdCA0NzAwYzdjYzA2NmYz
-YTA4ZTA5MDgxNzE5NGUxNmY1NWU4Mzc4NzYyCkF1dGhvcjogS3Jpc2huYSBDaGFpdGFueWEgQ2h1
-bmRydSA8a3Jpc2huYS5jaHVuZHJ1QG9zcy5xdWFsY29tbS5jb20+CgpkdC1iaW5kaW5nczogUENJ
-OiBxY29tLHBjaWUtc204NTUwOiBBZGQgRWxpemEgY29tcGF0aWJsZQoKVGhpcyBjb21taXQgYWRk
-cyB0aGUgcWNvbSxlbGl6YS1wY2llIGNvbXBhdGlibGUgc3RyaW5nIHRvIHRoZSBTTTg1NTAgUENJ
-ZQpkZXZpY2UgdHJlZSBiaW5kaW5nIHNjaGVtYS4KCj4gUENJZSBjb250cm9sbGVyIHByZXNlbnQg
-aW4gRWxpemEgU29DIGlzIGJhY2t3YXJkcyBjb21wYXRpYmxlIHdpdGggdGhlCj4gY29udHJvbGxl
-ciBwcmVzZW50IGluIEVsaXphIFNvQy4gSGVuY2UsIGFkZCB0aGUgY29tcGF0aWJsZSB3aXRoIFNN
-ODU1MAo+IGZhbGxiYWNrLgoKW1NldmVyaXR5OiBMb3ddClRoaXMgaXNuJ3QgYSBidWcsIGJ1dCB0
-aGVyZSBpcyBhIHR5cG8gaW4gdGhlIGNvbW1pdCBtZXNzYWdlLiBJdCBzdGF0ZXMKdGhhdCB0aGUg
-RWxpemEgU29DIGNvbnRyb2xsZXIgaXMgYmFja3dhcmRzIGNvbXBhdGlibGUgd2l0aCB0aGUgRWxp
-emEgU29DLgpTaG91bGQgdGhpcyBzYXkgaXQgaXMgYmFja3dhcmRzIGNvbXBhdGlibGUgd2l0aCB0
-aGUgU004NTUwIFNvQz8KCi0tIApTYXNoaWtvIEFJIHJldmlldyDCtyBodHRwczovL3Nhc2hpa28u
-ZGV2LyMvcGF0Y2hzZXQvMjAyNjA2MDEtZWxpemEtdjItMC02YjQ0YzljMjNkNWVAb3NzLnF1YWxj
-b21tLmNvbT9wYXJ0PTIKCi0tIApsaW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0
-cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
-bmZvL2xpbnV4LXBoeQo=
+
+--===============2926379647262307279==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="2wjtyeyqji5ix4fa"
+Content-Disposition: inline
+
+
+--2wjtyeyqji5ix4fa
+Content-Type: text/plain; protected-headers=v1; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Subject: Re: [PATCH 1/5] drm/bridge: Implement generic USB Type-C DP HPD
+ bridge
+MIME-Version: 1.0
+
+Hi,
+
+On Thu, May 21, 2026 at 11:28:50AM +0800, Chaoyi Chen wrote:
+> From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+>=20
+> The HPD function of Type-C DP is implemented through
+> drm_connector_oob_hotplug_event(). For embedded DP, it is required
+> that the DRM connector fwnode corresponds to the Type-C port fwnode.
+>=20
+> To describe the relationship between the DP controller and the Type-C
+> port device, we usually using drm_bridge to build a bridge chain.
+>=20
+> Now several USB-C controller drivers have already implemented the DP
+> HPD bridge function provided by aux-hpd-bridge.c, it will build a DP
+> HPD bridge on USB-C connector port device.
+>=20
+> But this requires the USB-C controller driver to manually register the
+> HPD bridge. If the driver does not implement this feature, the bridge
+> will not be create.
+>=20
+> So this patch implements a generic DP HPD bridge based on
+> aux-hpd-bridge.c. It will monitor Type-C bus events, and when a
+> Type-C port device containing the DP svid is registered, it will
+> create an HPD bridge for it without the need for the USB-C controller
+> driver to implement it.
+>=20
+> Signed-off-by: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+> Reviewed-by: Heikki Krogerus <heikki.krogerus@linux.intel.com>
+> ---
+>  drivers/gpu/drm/bridge/Kconfig                | 10 ++++
+>  drivers/gpu/drm/bridge/Makefile               |  1 +
+>  .../gpu/drm/bridge/aux-hpd-typec-dp-bridge.c  | 49 +++++++++++++++++++
+
+Doesn't this require removing the manual registration of the HPD
+auxillary bridge in the USB-C controller drivers to avoid that
+two bridges are registered for them?
+
+>  3 files changed, 60 insertions(+)
+>  create mode 100644 drivers/gpu/drm/bridge/aux-hpd-typec-dp-bridge.c
+>=20
+> diff --git a/drivers/gpu/drm/bridge/Kconfig b/drivers/gpu/drm/bridge/Kcon=
+fig
+> index c3209b0f4678..d92e93875793 100644
+> --- a/drivers/gpu/drm/bridge/Kconfig
+> +++ b/drivers/gpu/drm/bridge/Kconfig
+> @@ -30,6 +30,16 @@ config DRM_AUX_HPD_BRIDGE
+>  	  Simple bridge that terminates the bridge chain and provides HPD
+>  	  support.
+> =20
+> +if DRM_AUX_HPD_BRIDGE
+> +config DRM_AUX_HPD_TYPEC_BRIDGE
+> +	tristate
+> +	depends on TYPEC || !TYPEC
+> +	default TYPEC
+> +	help
+> +	  Simple bridge that terminates the bridge chain and provides HPD
+> +	  support. It build bridge on each USB-C connector device node.
+> +endif
+> +
+>  menu "Display Interface Bridges"
+>  	depends on DRM && DRM_BRIDGE
+> =20
+> diff --git a/drivers/gpu/drm/bridge/Makefile b/drivers/gpu/drm/bridge/Mak=
+efile
+> index beab5b695a6e..c4761526ba0a 100644
+> --- a/drivers/gpu/drm/bridge/Makefile
+> +++ b/drivers/gpu/drm/bridge/Makefile
+> @@ -1,6 +1,7 @@
+>  # SPDX-License-Identifier: GPL-2.0
+>  obj-$(CONFIG_DRM_AUX_BRIDGE) +=3D aux-bridge.o
+>  obj-$(CONFIG_DRM_AUX_HPD_BRIDGE) +=3D aux-hpd-bridge.o
+> +obj-$(CONFIG_DRM_AUX_HPD_TYPEC_BRIDGE) +=3D aux-hpd-typec-dp-bridge.o
+>  obj-$(CONFIG_DRM_CHIPONE_ICN6211) +=3D chipone-icn6211.o
+>  obj-$(CONFIG_DRM_CHRONTEL_CH7033) +=3D chrontel-ch7033.o
+>  obj-$(CONFIG_DRM_CROS_EC_ANX7688) +=3D cros-ec-anx7688.o
+> diff --git a/drivers/gpu/drm/bridge/aux-hpd-typec-dp-bridge.c b/drivers/g=
+pu/drm/bridge/aux-hpd-typec-dp-bridge.c
+> new file mode 100644
+> index 000000000000..d915e0fb0668
+> --- /dev/null
+> +++ b/drivers/gpu/drm/bridge/aux-hpd-typec-dp-bridge.c
+> @@ -0,0 +1,49 @@
+> +// SPDX-License-Identifier: GPL-2.0+
+> +#include <linux/of.h>
+> +#include <linux/usb/typec_altmode.h>
+> +#include <linux/usb/typec_dp.h>
+> +
+> +#include <drm/bridge/aux-bridge.h>
+> +
+> +static int drm_typec_bus_event(struct notifier_block *nb,
+> +			       unsigned long action, void *data)
+> +{
+> +	struct device *dev =3D (struct device *)data;
+> +	struct typec_altmode *alt =3D to_typec_altmode(dev);
+> +
+> +	if (action !=3D BUS_NOTIFY_ADD_DEVICE)
+> +		goto done;
+> +
+> +	/*
+> +	 * alt->dev.parent->parent : USB-C controller device
+> +	 * alt->dev.parent         : USB-C connector device
+> +	 */
+> +	if (is_typec_port_altmode(&alt->dev) && alt->svid =3D=3D USB_TYPEC_DP_S=
+ID)
+> +		drm_dp_hpd_bridge_register(alt->dev.parent->parent,
+> +					   to_of_node(alt->dev.parent->fwnode));
+
+IIUIC this is called when the USB-C controller spawns a sub-device
+for the DP AltMode and then registers a HPD bridge to the USB-C
+controller itself. Wouldn't that register new HPD bridges on every
+USB-C replug?
+
+Also doesn't this result in the bridge not being registered when
+nothing is plugged and thus the DRM pipeline not being able to bind
+properly?
+
+Greetings,
+
+-- Sebastian
+
+> +
+> +done:
+> +	return NOTIFY_OK;
+> +}
+> +
+> +static struct notifier_block drm_typec_event_nb =3D {
+> +	.notifier_call =3D drm_typec_bus_event,
+> +};
+> +
+> +static void drm_aux_hpd_typec_dp_bridge_module_exit(void)
+> +{
+> +	bus_unregister_notifier(&typec_bus, &drm_typec_event_nb);
+> +}
+> +
+> +static int __init drm_aux_hpd_typec_dp_bridge_module_init(void)
+> +{
+> +	bus_register_notifier(&typec_bus, &drm_typec_event_nb);
+> +
+> +	return 0;
+> +}
+> +
+> +module_init(drm_aux_hpd_typec_dp_bridge_module_init);
+> +module_exit(drm_aux_hpd_typec_dp_bridge_module_exit);
+> +
+> +MODULE_DESCRIPTION("DRM TYPEC DP HPD BRIDGE");
+> +MODULE_LICENSE("GPL");
+> --=20
+> 2.53.0
+>=20
+>=20
+
+--2wjtyeyqji5ix4fa
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmoeAusACgkQ2O7X88g7
++poFDhAAqmoRFuBnWXN9ThmBhdcTbKmP9xRiRbmFvKqyJCJGzQ3m9vJWXeRgnm2p
+xp0Pd6zOCm4m4snw4PElFYmAJACJZbKD19oPGRUy7ClzIHqyQUmh/DweeHexRcwb
+iS7XC9qxSrCmkWu2/CVYnIVDb+YeC7/aMwjMG5nn6PL3i0ftBqiMGM2TFbka3O+1
+THzO03GrjEl3f2mNJm2HYI//Lsl27+WXebGweEhyGtZIoI+BGi3uCMLq7afmeKc+
+BhTXSJAjHQDo76RglJLBiOi1PfeLQT8SLxu6cfqTIrjVnBoy7iPTtopTpuQK5a8g
+nVh8C7wuSwHhO0FAp2kt6JeFYTzLRQj6YCdMdzIS8fw9vc9dSKgwFhTk6wDbDzds
+Z6qmigIPYvawBo3cWy20RHQynxXchqaKbSqT9IJ3QxdHgGiNdPc5AzrS3V/Oyi/s
+q4QWtaqoLN1qCTGVNOnqJ+1vQhzBuLZCZJt/g8nlJMYSVUe0RYGXRUjOgK9f1B97
+Vc1myj5dNB1u5EwcRhcDopxmw6S95GqAPZydo9yduYUIj2Uu5adlFGDZiaJMoZvz
+w/51Wmp/n+azkiSyBhjPLr9ieZD/WKuUpbAwzeLv/B9cL+L2i3n1PtAwwj/W3Tgx
+VP8/olbfezC3hFV6Wwzap+LPLW91JARUpjYwZuptpDcuDDfsVho=
+=0qDd
+-----END PGP SIGNATURE-----
+
+--2wjtyeyqji5ix4fa--
+
+
+--===============2926379647262307279==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============2926379647262307279==--
+
