@@ -4,77 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 02EFBCD5BD1
-	for <linux-phy@archiver.kernel.org>; Mon,  1 Jun 2026 22:29:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 35A0CCD6E55
+	for <linux-phy@archiver.kernel.org>; Mon,  1 Jun 2026 22:58:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=2+uEXBX2d1Azmqmh4ydN9Q/qt83kNk4qwTVYLSOsv4s=; b=xaYpX6/2uV+vcae2/7kUMhEHi2
-	hrgR7IO8CYZc8As3BsP2iC/vqoxNeTO9EN4zsZblyrhzWUe1FaJPk7NRvU0G7TfrjTe8Cy/3Efd2f
-	7wK8aflDdMFrOh0DSvxRp2dLZjYoQgu/ybmCQzGVf9ESDnTqre3DzewVx+kgFoyEHCKmrDv1SSOZs
-	j6GcUQ4lyK94FAmALxoKSez6dwZ7KpISDXl18KL+Vc5dqpDsnoh9wBblFw+/nW5lnrrCH2Ss62eNy
-	YIwK9uQ+VTipp2mRei6AInRlJ4Q0zDiDbYoxjRSBSRlqkjxaw6kpJmTCWYwcCRMsbFtpfenZZUN7o
-	ceTFwq/Q==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/y1c1nu+2SGE3bpikD/6dGwlxIXMDJ/3keaNltn4pPg=; b=mDp86/8qOAJCnZ
+	0aG+44jsP5WEVVyxxVHmMsRMuf2XmXFZshHPxe35Lg+kZ9U3U+HuQtSdtYa52J9VkizY9QeExq2nq
+	sHL6uP9tYSAmS/DYomvz7C+vY+jnfaQKwvi6s6bp2umm5ThVCWo3uSg16JvEnzWM+8TVkMDTDu2/C
+	h8Nl1BCqbVxKL9cIL48epqmHDI4I7jPlL6+m7QMKn1ozN7GdanViG6kXZHlfWrEumo9w/c7kgGHyG
+	uX/PhMt47GnxeOKMFQoxYHyDAePjncfDNH7DEjTXc0IGjzsZ8jWedyU4N4MucZQXg7aRVGR7gwI85
+	uVkBzUMOLQSmzAxiN+gQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUB83-0000000BwWC-355p;
-	Mon, 01 Jun 2026 22:29:03 +0000
-Received: from sender4-pp-f112.zoho.com ([136.143.188.112])
+	id 1wUBaD-0000000C1rK-3KNf;
+	Mon, 01 Jun 2026 22:58:09 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUB80-0000000BwUi-01x8;
-	Mon, 01 Jun 2026 22:29:02 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1780352910; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=EBa4rEJKUjMggfBN4WqO10eaB0RHrw1pwY/4cwhx5FL71fNEv14JC2gJdfQ355mCrlrqeJMOSVvE9JrFzHfGrlN61suy4qugBsgosp/THYCohzhQ3lJNJu2B3ctczd6ee73XvUUVn6QXDBgxUPE/bszy+Tz6yjv1y/nMtRaYePg=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1780352910; h=Content-Type:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=AA8Fj6bzRSMBMFNGM9dw0WJ6PAlf3cOl099jN99Op18=; 
-	b=UO0En8fZvNc2TToDF3D0G2D/9C/Ph2vt0uXPp6mn8NId7P3eJMl82RF8MxEybWMlddWJZfde2asZToSwqDwC2xmSuMsdBgJoWvrOxb9WM6ZRAHeeJwwCNkfryoMjSQm4m9fEWWW7CgEK+5hlfHFNkIFct0v3aaiel674Y8rPIbU=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=collabora.com;
-	spf=pass  smtp.mailfrom=sebastian.reichel@collabora.com;
-	dmarc=pass header.from=<sebastian.reichel@collabora.com>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1780352910;
-	s=zohomail; d=collabora.com; i=sebastian.reichel@collabora.com;
-	h=Date:Date:From:From:To:To:Cc:Cc:Subject:Subject:Message-ID:References:MIME-Version:Content-Type:In-Reply-To:Message-Id:Reply-To;
-	bh=AA8Fj6bzRSMBMFNGM9dw0WJ6PAlf3cOl099jN99Op18=;
-	b=NBtOqyb5VpXucL5UuQ0l/70jSHr+zkS7X9GYFTlbraoEIAhFYUkSQ3EC0BbqBkSm
-	6vDUrS+uaqab/+Bblze+nQljEKG6ZscoADEdMEktLSIDIgtow97CeYLRdyRyzEx88vU
-	crY2C7XeRBgeYnXVpx4z6wrqa0wBVqXWdRQ+wi08=
-Received: by mx.zohomail.com with SMTPS id 1780352907800763.4228970296604;
-	Mon, 1 Jun 2026 15:28:27 -0700 (PDT)
-Received: by venus (Postfix, from userid 1000)
-	id EE616183854; Tue, 02 Jun 2026 00:28:20 +0200 (CEST)
-Date: Tue, 2 Jun 2026 00:28:20 +0200
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-To: Chaoyi Chen <kernel@airkyi.com>
-Cc: Andrzej Hajda <andrzej.hajda@intel.com>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>, 
-	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, Jonas Karlman <jonas@kwiboo.se>, 
-	Jernej Skrabec <jernej.skrabec@gmail.com>, Maarten Lankhorst <maarten.lankhorst@linux.intel.com>, 
-	Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>, 
-	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
-	Sandy Huang <hjc@rock-chips.com>, Heiko =?utf-8?Q?St=C3=BCbner?= <heiko@sntech.de>, 
-	Andy Yan <andy.yan@rock-chips.com>, Vinod Koul <vkoul@kernel.org>, 
-	Heikki Krogerus <heikki.krogerus@linux.intel.com>, Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>, 
-	Luca Ceresoli <luca.ceresoli@bootlin.com>, linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org, 
-	linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org, 
-	linux-phy@lists.infradead.org, Chaoyi Chen <chaoyi.chen@rock-chips.com>
-Subject: Re: [PATCH 3/5] phy: rockchip: phy-rockchip-typec: Add DRM AUX bridge
-Message-ID: <ah4Ha3Y0I68i9j1z@venus>
-References: <20260521032854.103-1-kernel@airkyi.com>
- <20260521032854.103-4-kernel@airkyi.com>
+	id 1wUBaB-0000000C1qz-1pob
+	for linux-phy@lists.infradead.org;
+	Mon, 01 Jun 2026 22:58:08 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id A9F1143401;
+	Mon,  1 Jun 2026 22:58:06 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 571081F00893;
+	Mon,  1 Jun 2026 22:58:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1780354686;
+	bh=MzlIrZ2xitOElGGvcFl7v9dFMNgCf3mriv86YlPvr/U=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=PsSONfve6OOJYc+tFMyWBx8YeL/z8+OtDwdrC2ic3L9RzBOfRQJYP5R2EU7cQkTvU
+	 hcTSdNRgJWGay4ighXmn52Jv3RUOnifIMCvXDROjbR3eHmnCQpTDcuurLP3ARPN1Ft
+	 p4jPWvakR1AVlNhZ1IkZyg/wj1JPf9Xe23A5piS8pgg5bQXeIyVH+Q7IOY6os+aw/y
+	 I8MTU0bKrUXu+xGf3NiSSanr0vfgnWcGxOqAukOqpGDmquKLvXk35EBRZY85xcBJnV
+	 teMxLYCmGKhC/uoA2j7M9TGW8xaXRMSCqtaX/YCWIyZqYvpvSG6jUBj9kwuZPKnH/i
+	 tR14u2DAzwWCA==
+Date: Mon, 1 Jun 2026 17:58:05 -0500
+From: Rob Herring <robh@kernel.org>
+To: Caleb James DeLisle <cjd@cjdns.fr>
+Cc: linux-mips@vger.kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org,
+	krzk+dt@kernel.org, conor+dt@kernel.org,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 1/2] dt-bindings: phy: econet: Document EN751221 USB PHY
+Message-ID: <20260601225805.GA129257-robh@kernel.org>
+References: <20260518141343.401555-1-cjd@cjdns.fr>
+ <20260518141343.401555-2-cjd@cjdns.fr>
 MIME-Version: 1.0
-In-Reply-To: <20260521032854.103-4-kernel@airkyi.com>
-X-Zoho-Virus-Status: 1
-X-Zoho-AV-Stamp: zmail-av-0.1.0.1.4.3/280.325.56
-X-ZohoMailClient: External
+Content-Disposition: inline
+In-Reply-To: <20260518141343.401555-2-cjd@cjdns.fr>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260601_152900_090423_E37FCAC6 
-X-CRM114-Status: GOOD (  20.26  )
+X-CRM114-CacheID: sfid-20260601_155807_542014_416B8E00 
+X-CRM114-Status: GOOD (  19.18  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,138 +70,108 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============7940754220569400093=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-
---===============7940754220569400093==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="qin6jzopmvvno7lx"
-Content-Disposition: inline
-
-
---qin6jzopmvvno7lx
-Content-Type: text/plain; protected-headers=v1; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-Subject: Re: [PATCH 3/5] phy: rockchip: phy-rockchip-typec: Add DRM AUX bridge
-MIME-Version: 1.0
-
-Hi,
-
-On Thu, May 21, 2026 at 11:28:52AM +0800, Chaoyi Chen wrote:
-> From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
->=20
-> Using the DRM_AUX_BRIDGE helper to create the transparent DRM bridge
-> device.
->=20
-> Signed-off-by: Chaoyi Chen <chaoyi.chen@rock-chips.com>
-> Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
+On Mon, May 18, 2026 at 02:13:42PM +0000, Caleb James DeLisle wrote:
+> Document the USB PHY devices which appear in EcoNet EN751221, EN751627,
+> and EN7528 based SoCs.
+> 
+> Signed-off-by: Caleb James DeLisle <cjd@cjdns.fr>
 > ---
-
-Reviewed-by: Sebastian Reichel <sebastian.reichel@collabora.com>
-
-Greetings,
-
--- Sebastian
-
->  drivers/phy/rockchip/Kconfig              |  2 ++
->  drivers/phy/rockchip/phy-rockchip-typec.c | 13 +++++++++++--
->  2 files changed, 13 insertions(+), 2 deletions(-)
->=20
-> diff --git a/drivers/phy/rockchip/Kconfig b/drivers/phy/rockchip/Kconfig
-> index 14698571b607..9173d3b4fef4 100644
-> --- a/drivers/phy/rockchip/Kconfig
-> +++ b/drivers/phy/rockchip/Kconfig
-> @@ -119,6 +119,8 @@ config PHY_ROCKCHIP_SNPS_PCIE3
->  config PHY_ROCKCHIP_TYPEC
->  	tristate "Rockchip TYPEC PHY Driver"
->  	depends on OF && (ARCH_ROCKCHIP || COMPILE_TEST)
-> +	depends on DRM || DRM=3Dn
-> +	select DRM_AUX_BRIDGE if DRM_BRIDGE
->  	select EXTCON
->  	select GENERIC_PHY
->  	select RESET_CONTROLLER
-> diff --git a/drivers/phy/rockchip/phy-rockchip-typec.c b/drivers/phy/rock=
-chip/phy-rockchip-typec.c
-> index d9701b6106d5..48070b50416e 100644
-> --- a/drivers/phy/rockchip/phy-rockchip-typec.c
-> +++ b/drivers/phy/rockchip/phy-rockchip-typec.c
-> @@ -54,6 +54,7 @@
-> =20
->  #include <linux/mfd/syscon.h>
->  #include <linux/phy/phy.h>
-> +#include <drm/bridge/aux-bridge.h>
-> =20
->  #define CMN_SSM_BANDGAP			(0x21 << 2)
->  #define CMN_SSM_BIAS			(0x22 << 2)
-> @@ -1162,16 +1163,24 @@ static int rockchip_typec_phy_probe(struct platfo=
-rm_device *pdev)
-> =20
->  	for_each_available_child_of_node(np, child_np) {
->  		struct phy *phy;
-> +		ret =3D 0;
-> =20
-> -		if (of_node_name_eq(child_np, "dp-port"))
-> +		if (of_node_name_eq(child_np, "dp-port")) {
->  			phy =3D devm_phy_create(dev, child_np,
->  					      &rockchip_dp_phy_ops);
-> -		else if (of_node_name_eq(child_np, "usb3-port"))
-> +			ret =3D drm_aux_bridge_register_from_node(dev, child_np);
-> +		} else if (of_node_name_eq(child_np, "usb3-port"))
->  			phy =3D devm_phy_create(dev, child_np,
->  					      &rockchip_usb3_phy_ops);
->  		else
->  			continue;
-> =20
-> +		if (ret) {
-> +			pm_runtime_disable(dev);
-> +			of_node_put(child_np);
-> +			return ret;
-> +		}
+>  .../bindings/phy/econet,en751221-usb-phy.yaml | 128 ++++++++++++++++++
+>  MAINTAINERS                                   |   6 +
+>  2 files changed, 134 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/econet,en751221-usb-phy.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/econet,en751221-usb-phy.yaml b/Documentation/devicetree/bindings/phy/econet,en751221-usb-phy.yaml
+> new file mode 100644
+> index 000000000000..a44f59601747
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/econet,en751221-usb-phy.yaml
+> @@ -0,0 +1,128 @@
+> +# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
+> +# Copyright (C) 2024 EcoNet
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/econet,en751221-usb-phy.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > +
->  		if (IS_ERR(phy)) {
->  			dev_err(dev, "failed to create phy: %pOFn\n",
->  				child_np);
-> --=20
-> 2.53.0
->=20
->=20
+> +title: EcoNet EN751221 USB PHY
+> +
+> +maintainers:
+> +  - Caleb James DeLisle <cjd@cjdns.fr>
+> +
+> +description: |
 
---qin6jzopmvvno7lx
-Content-Type: application/pgp-signature; name="signature.asc"
+Don't need '|' unless there is formatting to preserve.
 
------BEGIN PGP SIGNATURE-----
+> +  USB PHY controller found on EcoNet EN751221 SoCs as well as on EN751627 and
+> +  EN7528. These devices generally have two ports, one of which is a USB 3.0,
+> +  and the other is USB 2.0. The USB 3.0 port is driven by one of two PHY
+> +  blocks, depending on whether the connected device has negotiated USB 3.0 or
+> +  2.0. These PHYs are also used on other EcoNet silicon in varying
+> +  configurations, such as only port 0 (the USB 3.0 port), or only port 1 (the
+> +  USB 2.0 port).
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - econet,en751221-usb-phy
+> +      - econet,en751627-usb-phy
+> +      - econet,en7528-usb-phy
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  "#address-cells": true
+> +  "#size-cells": true
+> +  ranges: true
+> +
+> +  clocks:
+> +    maxItems: 1
+> +    description: |
+> +      Crystal oscillator clock source. EcoNet devices run at either 20Mhz or
+> +      25Mhz. 25Mhz devices require additional tuning in the USB 3.0 PHY.
+> +
+> +  clock-names:
+> +    items:
+> +      - const: xtal
+> +
+> +patternProperties:
+> +  "^usb-phy@[0-9a-f]+$":
+> +    type: object
+> +    description: USB 2.0 or 3.0 PHY sub-node.
+> +
+> +    properties:
+> +      compatible:
+> +        enum:
+> +          - econet,usb2-phy
+> +          - econet,usb3-phy
+> +
+> +      reg:
+> +        maxItems: 1
+> +
+> +      resets:
+> +        maxItems: 1
+> +
+> +      econet,usb-port-id:
+> +        $ref: /schemas/types.yaml#/definitions/uint32
+> +        enum: [0, 1]
+> +        description: |
+> +          Physical port number. Since USB 3.0 requires a second PHY for the 2.0
+> +          fallback, multiple PHYs can map to the same physical port.
 
-iQIzBAABCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAmoeB4QACgkQ2O7X88g7
-+potHhAApMK7BcNqtAuBen0JlY4pfpPJBWMvliktBqgcJxbfXjGgj2cte05nfKJf
-gBMxX3L2PrBd8tVopdyzwIpaJtjeUbgg8Mb93TLik1jQql3akhKGqZpaYwE3gsG+
-5ArTDJeEQFI/N4hvE+LoUYPKHyB32ZGPs3fTd/MdAkyesmwWKQeE1VN1fFFC+OuF
-j6w0kevJhqBV41pCi9Z9k7nL/ZxTzQSiMZiOF5X+R7I549oYLfQqTRgZkf0PXNTY
-fGwoBisvAcNyBNZqVVH9SbXVq2wlpKw8DxkSV9FBSH/gz11C84SSfMTi+ElktePk
-sLTFE2A0N0ZjIpI31rGR+F7rHZ+3MYdgiVGMC0rbqoNkiN6z6IVHftjufw2zE4XA
-tcddzIiqc4TrPb20Ly3btLfOqebn7a9Hen7PSzpQ0UcoczaoUlFK+6MN454bK+Yb
-TZXtfsGTmVBxdWr3TH7gA40c40rYDBW3HuVneSptz2ui2DA1XjK52ZJuBLkdYdNA
-nDZsL+NQx91+TV47ibIFuMQa/2bVyjDAHBFNZ+HmTWhOencln1UYvCzS6GBK/Nw8
-xxzTcvWS78OffbXeoB8BfqukpEne1YFMNl6PLa9wj61VnT7IZ6JkLAk5SOVP+ekl
-yxKnc5imF4fXw3bmBLwsAKOvMeOGEqYRzubNR/BzMtZXKOQCMyw=
-=tOw3
------END PGP SIGNATURE-----
+What is special about this platform needing this property. Lots of 
+platforms have 2 phys for USB 2.0 and 3.0 yet don't need a property 
+like this. Can't you figure out which phys are the same USB port by the 
+USB controller 'phys' property which would define that?
 
---qin6jzopmvvno7lx--
-
-
---===============7940754220569400093==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Rob
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
-
---===============7940754220569400093==--
-
