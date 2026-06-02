@@ -4,100 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CCACECD5BD1
-	for <linux-phy@archiver.kernel.org>; Tue,  2 Jun 2026 14:12:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6C165CD6E57
+	for <linux-phy@archiver.kernel.org>; Tue,  2 Jun 2026 14:24:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
-	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=bfTPthuJhDj4nFWmnebpHP2z7qoSX9vFbMhu8ZMKFD0=; b=i2Kioxj82u3sQP
-	RmIIoxZHCI2zAKRlQ56kyuCNrF91XKqKrGxAabqf+wHGZ9D9ZQM33MoywVX89YjepPYGfEdmrK1Zn
-	7eqfi6OK4cuoTCjWsBr/uIHVMb7AfhN+muzWPo4gyV1zzZGV3x+KDFCOIzK4kT+LL1AaCW7TSu2Mi
-	ruhrtUj7epkw5CrCXv1mW3SMbzRy3vlEvKyNtWGohWRnb93iwveDLAHSmssJYtDruD+AxBukFK60A
-	QVPjsVJ34I6S50Egb6Yi0AK81hDqOge+m/liGB63NzzpZxjZPl2u6cgQVGx6HoG0T1en2BjNPpiRn
-	ZD6FJxeLnA5p59iiUrrA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=efr8zScOLSB/e38LivBobD4dUhsLzowkqUCiSGbDJ4s=; b=bpKHEj9rhFewGa
+	mlJiZDgMcKiomeaQu4riP5Tri1EwB6oLLihvmcUXoigPYt8wz0k0cL2cJ5jCOPBgX9SFu1Dj/C8PX
+	+OQiKzEqqoZ/s5cbBEIUUIlW40WOwNRB1Gz0J61L6pKXUhHjEz8Ruf6V+0utDvfUobVHqwUDXrDXE
+	0XYH5z87FicgbzxcGyxUNWpzSzAji00LSeGIYwPWeoRW4grLpff5TfPpvrRXwZp+y3q5vSpf0vzJR
+	Gd57MgCXxr+mVzjSWEFD1GAJbgxlPNLplxK8Xy5htabAGhg2c5KV2ERCqx6FqGO2Y8nG219HAW4Yt
+	qUlmUNh873RhboF7Jk0g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUPrP-0000000D9mS-0iUJ;
-	Tue, 02 Jun 2026 14:12:51 +0000
-Received: from mail-pj1-x1034.google.com ([2607:f8b0:4864:20::1034])
+	id 1wUQ31-0000000DB6P-0oYR;
+	Tue, 02 Jun 2026 14:24:51 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUPrM-0000000D9lR-25wn
+	id 1wUQ2y-0000000DB5H-26Rc
 	for linux-phy@lists.infradead.org;
-	Tue, 02 Jun 2026 14:12:49 +0000
-Received: by mail-pj1-x1034.google.com with SMTP id 98e67ed59e1d1-36dac5d5d05so1093245a91.2
-        for <linux-phy@lists.infradead.org>; Tue, 02 Jun 2026 07:12:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1780409567; x=1781014367; darn=lists.infradead.org;
-        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
-         :date:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=7XCowtVnjKXnbcRNuimTNpT8EiRYTBtdlRiIVINQJ3g=;
-        b=IqBte+L5oSUbEQhTvCI0AHl624cYwwrf+c6orztNF+6FxMUV85ugkhal6gGbKXKXe4
-         nuFrY2GGV69Xvj/aurgUF7iy7dzZKuO/56nWbFHs6Hy9c79A1Beuuu9rH9mZlLBuIrCj
-         iB6HlaLwMo91HuuojJM7WwYfNVwHpemDHv++WHh7V1YK2Y4/dCLwHe+MZgrl5/Q7dSN+
-         NJvyP6H3AoMQGZdcDhQGk7/YDVk5NK871grBEeTyFfcRyiJHKPMXBf48PblI19OlPKBq
-         Eowbha7GnWA6yn8MmMJFvPTqHLxxIcUAhEqbMxbijzYQVSq8kmOcN0Hf6jQy0167TXKK
-         BtrA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1780409567; x=1781014367;
-        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
-         :date:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=7XCowtVnjKXnbcRNuimTNpT8EiRYTBtdlRiIVINQJ3g=;
-        b=OqtM5GZhzWU4OY9ljTZKPStmwnwT8sLyz0dNKox4r2CBL8Vf3loBPcbhGpGFgB/qIf
-         eifPqOS0eYcB4Ygsu3E8EsR0JcjftyI/5h4tF1JccjcHUf0cuF6lnIZUjN/H2BFUpvp8
-         jOfNvpNzl+evH7y/ggWtt8Dt8cZCachiVT4jYK2Ps/fxl7uyYFDl5/1wKjNnfCWAiD1B
-         Auu0mQzFXJ2hSPa44G18ljRCD6JmTZTLkGH5QCBy+iLcquY0zHwr/12Tona6cr1yc21G
-         ddKULZPfa8YYbh3mx2WEEhw+XUylcnHtAoKRURJ6PDw1YVA1h+w3znYepALtocJ1hp5q
-         3xzw==
-X-Gm-Message-State: AOJu0YzsJSfRtIeaf5efSc8nP+I/gyteQJT8RqMfWc1jN7hHrdnw+wp/
-	QaT76riNiI4KagMqJL6jYdddQl3lMLe4u1vsfXWZNS5NC5po7ZOdqQea
-X-Gm-Gg: Acq92OGEwDRSY9RA0RVpSfm8VUbXe4PuQ2cwEikJaBolyZmgx7IAr0ey9S+JQGn7qKg
-	etQr8/1nAULAJJ73K/p9a0f4jQxU+BpnkH/VkSjLosZXXsxmmJmP9HcvZmFJnqUPcmJ4Z4FZa61
-	HMwrW5t7XdQRJcI/9VIjlxGDaNbbDUaTFu+tDzUCbHtxlLAVQNtwCDDoikIWkTBNOofoG5gjY3E
-	XsMdHV0EztLHL+q32+Yz/85ve+4AZWxAEFJb2nB8GD24TeliM13V++Tp/Xu9DutNIiXsUDNIg26
-	CZWG0R4bVupwj7FyZtcthWlf2EdrJOn+4Z6FbBTIEbvkh0fheQAYkX1nLMGNOX5uG8AByaJ1Zd/
-	iDg6cmXaUk0o76//V6oFXvcRiQD0/qHebexgTZi7sqD/tR6EqnPRO+x6yzzrKtBjwDmWDKeUqtw
-	l1LVUw+6OQyWTj6TkuiMc/mnPwFd79Te+WAEr//x+NeM1qisyM4o/YkNg8NzaEBZVT7oN4tyyQ+
-	XTZ8mQu0pVPwzd4Bub0Lp+yPru2
-X-Received: by 2002:a17:90b:3442:b0:36c:e254:4d5 with SMTP id 98e67ed59e1d1-36ce25410d6mr9832117a91.4.1780409567301;
-        Tue, 02 Jun 2026 07:12:47 -0700 (PDT)
-Received: from junjungu-PC.localdomain ([223.166.246.30])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-36dd90415besm3601775a91.0.2026.06.02.07.12.43
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 02 Jun 2026 07:12:46 -0700 (PDT)
-From: Felix Gu <ustc.gu@gmail.com>
-Date: Tue, 02 Jun 2026 22:12:41 +0800
-Subject: [PATCH] phy: fsl-imx8mq-usb: fix typec switch leak on probe error
- path
-MIME-Version: 1.0
-Message-Id: <20260602-imx8mq-typec-v1-1-3debe9bc77d9@gmail.com>
-X-B4-Tracking: v=1; b=H4sIANjkHmoC/yXMTQ5AMBBA4avIrDWZdtHgKmJBTRmJvxapiLsrl
- t/ivQs8OSYPRXKBo4M9z1OETBMwfT11JLiNBoVKo0YleAzZuIrtXMgIhbW2spU5ooWYLI4sh29
- XVr/93gxktvcB9/0A33aWg3AAAAA=
-X-Change-ID: 20260602-imx8mq-typec-20a6f1d1900f
-To: Vinod Koul <vkoul@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, Frank Li <Frank.Li@nxp.com>, 
- Sascha Hauer <s.hauer@pengutronix.de>, 
- Pengutronix Kernel Team <kernel@pengutronix.de>, 
- Fabio Estevam <festevam@gmail.com>, Xu Yang <xu.yang_2@nxp.com>, 
- Jun Li <jun.li@nxp.com>
-Cc: linux-phy@lists.infradead.org, imx@lists.linux.dev, 
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, 
- Felix Gu <ustc.gu@gmail.com>
-X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1780409563; l=2735;
- i=ustc.gu@gmail.com; h=from:subject:message-id;
- bh=kpmGkkU11ecTwdVdTxlaGp+lNBsMTsb/Nj9af5UXA/A=;
- b=4YSIt8pCDNOFocdXGuAudSQFQldGYnUBr8V6MOtFtbIGLD00AcsWNSa6+B/Ptk3ul3742sf1P
- htOMmlEyovCCgKwh7yZxmffvwspM7qwRIj/dbKpNJgLdmX5jcRHNlr2
-X-Developer-Key: i=ustc.gu@gmail.com; a=ed25519;
- pk=fjUXwmjchVN7Ja6KGP55IXOzFeCl9edaHoQIEUA+/hw=
+	Tue, 02 Jun 2026 14:24:50 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 45A074436A;
+	Tue,  2 Jun 2026 14:24:47 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C5A5F1F00898;
+	Tue,  2 Jun 2026 14:24:45 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1780410287;
+	bh=SXAayy10Ie1KB/LuASBKA28+N8P9zo1ocn6gpxfPpUE=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=biX/R5rFl5/wmE1kyL1NuvYPaV/q0qeq0omQ1osx5dTor8JQQXpvD0fdS4r90vfD2
+	 h8CRRa2PfOKPt9+E18bzcbCmPyXfTdWPKhrM+/bVkJq6A3YdW1nNUSIw5HbboB14gM
+	 fRhWlI4XE2VDYU7XKBwJa5TijX2zKSM/EV17N+8+2Cm6dvKoKw5uQYFa/Yohfa/eOg
+	 qMfyiATPb7n/lbmcdh9gQmmAAX9ppQC8qVa7RiYAbhc3fUzKNSkdl9VS9wn8ZXEoe6
+	 rnNYhddCMxtYO4YsLKnulSYUrcKI8ZmAnA3qHprmBrlwDzmcJ2ZgwnS8Nd0neltYaA
+	 ipfuPLc4B+HKg==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH] phy: fsl-imx8mq-usb: fix typec switch leak on probe
+ error path
+To: "Felix Gu" <ustc.gu@gmail.com>
+Cc: neil.armstrong@linaro.org, linux-phy@lists.infradead.org, vkoul@kernel.org, Frank.Li@kernel.org, olteanv@gmail.com, imx@lists.linux.dev
+In-Reply-To: <20260602-imx8mq-typec-v1-1-3debe9bc77d9@gmail.com>
+References: <20260602-imx8mq-typec-v1-1-3debe9bc77d9@gmail.com>
+Date: Tue, 02 Jun 2026 14:24:45 +0000
+Message-Id: <20260602142445.C5A5F1F00898@smtp.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260602_071248_550028_33056152 
-X-CRM114-Status: GOOD (  14.90  )
+X-CRM114-CacheID: sfid-20260602_072448_583078_0F0E0AD7 
+X-CRM114-Status: GOOD (  14.87  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,99 +65,74 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-If probe fails after imx95_usb_phy_get_tca() succeeds, the typec
-switch leaks because the only cleanup path was in .remove, which
-never runs on probe failure.
-
-Use devm_add_action_or_reset() so the switch is cleaned up on both
-probe failure and driver removal.  The .remove callback and
-imx95_usb_phy_put_tca() are no longer needed.
-
-Fixes: b58f0f86fd61 ("phy: fsl-imx8mq-usb: add tca function driver for imx95")
-Signed-off-by: Felix Gu <ustc.gu@gmail.com>
----
- drivers/phy/freescale/phy-fsl-imx8mq-usb.c | 27 ++++++++-------------------
- 1 file changed, 8 insertions(+), 19 deletions(-)
-
-diff --git a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-index b05d80e849a1..8af5a4f85698 100644
---- a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-+++ b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-@@ -173,8 +173,10 @@ static struct typec_switch_dev *tca_blk_get_typec_switch(struct platform_device
- 	return sw;
- }
- 
--static void tca_blk_put_typec_switch(struct typec_switch_dev *sw)
-+static void tca_blk_put_typec_switch(void *data)
- {
-+	struct typec_switch_dev *sw = data;
-+
- 	typec_switch_unregister(sw);
- }
- 
-@@ -248,6 +250,7 @@ static struct tca_blk *imx95_usb_phy_get_tca(struct platform_device *pdev,
- 	struct device *dev = &pdev->dev;
- 	struct resource *res;
- 	struct tca_blk *tca;
-+	int ret;
- 
- 	res = platform_get_resource(pdev, IORESOURCE_MEM, 1);
- 	if (!res)
-@@ -266,17 +269,11 @@ static struct tca_blk *imx95_usb_phy_get_tca(struct platform_device *pdev,
- 	tca->orientation = TYPEC_ORIENTATION_NORMAL;
- 	tca->sw = tca_blk_get_typec_switch(pdev, imx_phy);
- 
--	return tca;
--}
--
--static void imx95_usb_phy_put_tca(struct imx8mq_usb_phy *imx_phy)
--{
--	struct tca_blk *tca = imx_phy->tca;
--
--	if (!tca)
--		return;
-+	ret = devm_add_action_or_reset(&pdev->dev, tca_blk_put_typec_switch, tca->sw);
-+	if (ret)
-+		return ERR_PTR(ret);
- 
--	tca_blk_put_typec_switch(tca->sw);
-+	return tca;
- }
- 
- static u32 phy_tx_vref_tune_from_property(u32 percent)
-@@ -739,16 +736,8 @@ static int imx8mq_usb_phy_probe(struct platform_device *pdev)
- 	return PTR_ERR_OR_ZERO(phy_provider);
- }
- 
--static void imx8mq_usb_phy_remove(struct platform_device *pdev)
--{
--	struct imx8mq_usb_phy *imx_phy = platform_get_drvdata(pdev);
--
--	imx95_usb_phy_put_tca(imx_phy);
--}
--
- static struct platform_driver imx8mq_usb_phy_driver = {
- 	.probe	= imx8mq_usb_phy_probe,
--	.remove = imx8mq_usb_phy_remove,
- 	.driver = {
- 		.name	= "imx8mq-usb-phy",
- 		.of_match_table	= imx8mq_usb_phy_of_match,
-
----
-base-commit: 08484c504b55a98bd100527fbe10a3caf55ff3ff
-change-id: 20260602-imx8mq-typec-20a6f1d1900f
-
-Best regards,
---  
-Felix Gu <ustc.gu@gmail.com>
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpQcmUtZXhpc3RpbmcgaXNzdWVzOgot
+IFtIaWdoXSBQb3RlbnRpYWwgTlVMTCBwb2ludGVyIGRlcmVmZXJlbmNlIGlmIHRoZSBUeXBlLUMg
+c3dpdGNoJ3MgYC5zZXQoKWAgY2FsbGJhY2sgaXMgaW52b2tlZCBjb25jdXJyZW50bHkgZHVyaW5n
+IHByb2JlLgotIFtIaWdoXSBQb3RlbnRpYWwgVXNlLUFmdGVyLUZyZWUgaWYgYSB0eXBlYyBwb3J0
+IGRyaXZlciBob2xkcyBhIHJlZmVyZW5jZSB0byB0aGUgc3dpdGNoIGFuZCBjYWxscyBgLnNldCgp
+YCBhZnRlciB0aGUgUEhZIGRyaXZlciB1bmJpbmRzLgotLQoKY29tbWl0IDU0NmIwN2M1NGUwMDc3
+ZDMyNWNmM2ZkMjBiMWRkOTVkMWMxMjNhOWQKQXV0aG9yOiBGZWxpeCBHdSA8dXN0Yy5ndUBnbWFp
+bC5jb20+CgpwaHk6IGZzbC1pbXg4bXEtdXNiOiBmaXggdHlwZWMgc3dpdGNoIGxlYWsgb24gcHJv
+YmUgZXJyb3IgcGF0aAoKSWYgcHJvYmUgZmFpbHMgYWZ0ZXIgaW14OTVfdXNiX3BoeV9nZXRfdGNh
+KCkgc3VjY2VlZHMsIHRoZSB0eXBlYwpzd2l0Y2ggbGVha3MgYmVjYXVzZSB0aGUgb25seSBjbGVh
+bnVwIHBhdGggd2FzIGluIC5yZW1vdmUsIHdoaWNoCm5ldmVyIHJ1bnMgb24gcHJvYmUgZmFpbHVy
+ZS4KClVzZSBkZXZtX2FkZF9hY3Rpb25fb3JfcmVzZXQoKSBzbyB0aGUgc3dpdGNoIGlzIGNsZWFu
+ZWQgdXAgb24gYm90aApwcm9iZSBmYWlsdXJlIGFuZCBkcml2ZXIgcmVtb3ZhbC4KCj4gZGlmZiAt
+LWdpdCBhL2RyaXZlcnMvcGh5L2ZyZWVzY2FsZS9waHktZnNsLWlteDhtcS11c2IuYyBiL2RyaXZl
+cnMvcGh5L2ZyZWVzY2FsZS9waHktZnNsLWlteDhtcS11c2IuYwo+IGluZGV4IGIwNWQ4MGU4NDlh
+MTQuLjhhZjVhNGY4NTY5ODcgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9waHkvZnJlZXNjYWxlL3Bo
+eS1mc2wtaW14OG1xLXVzYi5jCj4gKysrIGIvZHJpdmVycy9waHkvZnJlZXNjYWxlL3BoeS1mc2wt
+aW14OG1xLXVzYi5jCj4gQEAgLTE3Myw4ICsxNzMsMTAgQEAgc3RhdGljIHN0cnVjdCB0eXBlY19z
+d2l0Y2hfZGV2ICp0Y2FfYmxrX2dldF90eXBlY19zd2l0Y2goc3RydWN0IHBsYXRmb3JtX2Rldmlj
+ZQo+ICAJcmV0dXJuIHN3Owo+ICB9Cj4gIAo+IC1zdGF0aWMgdm9pZCB0Y2FfYmxrX3B1dF90eXBl
+Y19zd2l0Y2goc3RydWN0IHR5cGVjX3N3aXRjaF9kZXYgKnN3KQo+ICtzdGF0aWMgdm9pZCB0Y2Ff
+YmxrX3B1dF90eXBlY19zd2l0Y2godm9pZCAqZGF0YSkKPiAgewo+ICsJc3RydWN0IHR5cGVjX3N3
+aXRjaF9kZXYgKnN3ID0gZGF0YTsKPiArCj4gIAl0eXBlY19zd2l0Y2hfdW5yZWdpc3Rlcihzdyk7
+Cj4gIH0KCltTZXZlcml0eTogSGlnaF0KVGhpcyBpcyBhIHByZS1leGlzdGluZyBpc3N1ZSwgYnV0
+IGNvdWxkIHRoaXMgY2xlYW51cCBzZXF1ZW5jZSBsZWFkIHRvIGEKdXNlLWFmdGVyLWZyZWUgZHVy
+aW5nIHVuYmluZD8KCldoZW4gdGhlIFBIWSBkcml2ZXIgdW5iaW5kcyBvciBmYWlscyBwcm9iZSBs
+YXRlLCB0aGUgZGV2cmVzIGZyYW1ld29yayB3aWxsCmF1dG9tYXRpY2FsbHkgZnJlZSB0aGUgaW14
+X3BoeSBhbmQgdGNhIHN0cnVjdHVyZXMgc2luY2UgdGhleSBhcmUgYWxsb2NhdGVkCndpdGggZGV2
+bV9remFsbG9jLiBXaGlsZSB0eXBlY19zd2l0Y2hfdW5yZWdpc3RlcigpIGRyb3BzIHRoZSBpbml0
+aWFsCnJlZmVyZW5jZSB0byB0aGUgc3dpdGNoLCBpdCBkb2Vzbid0IGZvcmNlIGNvbnN1bWVycyB0
+byBkcm9wIHRoZWlyIHJlZmVyZW5jZXMuCgpJZiBhIGNvbnN1bWVyIHR5cGVjIHBvcnQgZHJpdmVy
+IHN0aWxsIGhvbGRzIGEgcmVmZXJlbmNlIHRvIHRoZSBzd2l0Y2ggYW5kCmNhbGxzIGl0cyAuc2V0
+IGNhbGxiYWNrIGFmdGVyIHRoZSBQSFkgZHJpdmVyIHVuYmluZHM6Cgp0Y2FfYmxrX3R5cGVjX3N3
+aXRjaF9zZXQoKQogICAgc3RydWN0IGlteDhtcV91c2JfcGh5ICppbXhfcGh5ID0gdHlwZWNfc3dp
+dGNoX2dldF9kcnZkYXRhKHN3KTsKICAgIHN0cnVjdCB0Y2FfYmxrICp0Y2EgPSBpbXhfcGh5LT50
+Y2E7Cgp3b24ndCB0aGlzIGNhbGxiYWNrIGFjY2VzcyB0aGUgZnJlZWQgaW14X3BoeSBhbmQgdGNh
+IG1lbW9yeT8KClsgLi4uIF0KCj4gQEAgLTI2NiwxNyArMjY5LDExIEBAIHN0YXRpYyBzdHJ1Y3Qg
+dGNhX2JsayAqaW14OTVfdXNiX3BoeV9nZXRfdGNhKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBk
+ZXYsCj4gIAl0Y2EtPm9yaWVudGF0aW9uID0gVFlQRUNfT1JJRU5UQVRJT05fTk9STUFMOwo+ICAJ
+dGNhLT5zdyA9IHRjYV9ibGtfZ2V0X3R5cGVjX3N3aXRjaChwZGV2LCBpbXhfcGh5KTsKCltTZXZl
+cml0eTogSGlnaF0KVGhpcyBpc24ndCBhIGJ1ZyBpbnRyb2R1Y2VkIGJ5IHRoaXMgcGF0Y2gsIGJ1
+dCBkb2VzIHJlZ2lzdGVyaW5nIHRoZSBzd2l0Y2gKaGVyZSBleHBvc2UgaXQgdG8gY29uc3VtZXJz
+IGJlZm9yZSBpbXhfcGh5LT50Y2EgaXMgYXNzaWduZWQ/CgpPbmNlIHJlZ2lzdGVyZWQsIHRoZSBz
+d2l0Y2ggYmVjb21lcyBnbG9iYWxseSBkaXNjb3ZlcmFibGUgdmlhIGZ3bm9kZSBtYXRjaGluZy4K
+SWYgYSBjb25zdW1lciBkaXNjb3ZlcnMgaXQgYW5kIGltbWVkaWF0ZWx5IGludm9rZXMgdGhlIC5z
+ZXQgY2FsbGJhY2sKKHRjYV9ibGtfdHlwZWNfc3dpdGNoX3NldCksIHRoYXQgY2FsbGJhY2sgZXhw
+ZWN0cyBpbXhfcGh5LT50Y2EgdG8gYmUKZnVsbHkgaW5pdGlhbGl6ZWQ6Cgp0Y2FfYmxrX3R5cGVj
+X3N3aXRjaF9zZXQoKQogICAgc3RydWN0IHRjYV9ibGsgKnRjYSA9IGlteF9waHktPnRjYTsKICAg
+IGludCByZXQ7CgogICAgaWYgKHRjYS0+b3JpZW50YXRpb24gPT0gb3JpZW50YXRpb24pCgpTaW5j
+ZSB0aGUgYXNzaWdubWVudCBvZiBpbXhfcGh5LT50Y2EgaGFwcGVucyBsYXRlciBpbiB0aGUgcHJv
+YmUgc2VxdWVuY2UKYWZ0ZXIgdGhpcyBmdW5jdGlvbiByZXR1cm5zLCB3b3VsZG4ndCB0aGlzIGNv
+bmN1cnJlbnQgYWNjZXNzIGRlcmVmZXJlbmNlIGEKTlVMTCBwb2ludGVyPwoKPiAtCXJldHVybiB0
+Y2E7Cj4gLX0KPiAtCj4gLXN0YXRpYyB2b2lkIGlteDk1X3VzYl9waHlfcHV0X3RjYShzdHJ1Y3Qg
+aW14OG1xX3VzYl9waHkgKmlteF9waHkpCj4gLXsKPiAtCXN0cnVjdCB0Y2FfYmxrICp0Y2EgPSBp
+bXhfcGh5LT50Y2E7Cj4gLQo+IC0JaWYgKCF0Y2EpCj4gLQkJcmV0dXJuOwo+ICsJcmV0ID0gZGV2
+bV9hZGRfYWN0aW9uX29yX3Jlc2V0KCZwZGV2LT5kZXYsIHRjYV9ibGtfcHV0X3R5cGVjX3N3aXRj
+aCwgdGNhLT5zdyk7Cj4gKwlpZiAocmV0KQo+ICsJCXJldHVybiBFUlJfUFRSKHJldCk7Cj4gIAo+
+IC0JdGNhX2Jsa19wdXRfdHlwZWNfc3dpdGNoKHRjYS0+c3cpOwo+ICsJcmV0dXJuIHRjYTsKPiAg
+fQoKLS0gClNhc2hpa28gQUkgcmV2aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNl
+dC8yMDI2MDYwMi1pbXg4bXEtdHlwZWMtdjEtMS0zZGViZTliYzc3ZDlAZ21haWwuY29tP3BhcnQ9
+MQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5v
+cmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5
+Cg==
