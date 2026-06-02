@@ -4,124 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 62033CD6E60
-	for <linux-phy@archiver.kernel.org>; Tue,  2 Jun 2026 14:52:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 97CD5CD6E64
+	for <linux-phy@archiver.kernel.org>; Tue,  2 Jun 2026 16:02:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iFd8JtCTQvexDIWb8Q9W/iXn41u10moEx8XbzpE6DzE=; b=bsgiBgJHtoKClG
-	3jhG7GJ2oZmjhguE3HlVXH8r/cFKb+3yASLyyagJefPGJ8mmsBLvCQwUNxML4rQFlBWpcTu5KgV86
-	KiBwRefSPc1W3nMj3Cn4F0McxUIt/ompAj1JHT/zr4TKBwqKRYhJCQrb+tDzoQHXNq3tf608uEnWz
-	sqo7ajZ/YVga/ixLNWwaW/kBCxcpjiT4m7nFVex3sRkuzwzGOpqsvLUO9pV8C0pDi4oFROxkxHnIC
-	eLg9LYnWf9SEXktUS1FDF+guPpYEMXwOBKJ8PaO4hSvqqVFqlTPNYL3d73Azf0BWd8uIM6cW2Ziq7
-	fm+D7x/WbcT/x+b9yl5A==;
+	List-Owner; bh=tih7xwGGK3OUel7frsZuyl7GAGqpcH3cWTVWArSzRTI=; b=1M6iTu8RNhKxk+
+	KFo+byjbrfgGRyYeCqHwtg0j8TDCtOe1UDdisgKcL8wvgmO3llz9y/RreZxCfc1Wfcd5sKMBEBzsk
+	SGvB+nVBK0m5ewq+x3xI3DUvBsUvsMt9mXA3pBXejnUZExAGIQ0LgRy7Mx3rY+IcHtbemxUj+e22U
+	D4R3CUNslLsTKGpSFJrRj4EQKpIjaW1BQ7ozjs6x8AimgT6yevkIo4ob4ps48UvRr1ZlIRjN/c7zb
+	FlxOEcvhaa00M+4KyiqoEh4Riig+9GNSinBmqTMYMIqe0qMUWxK1ZmcZaWG93G/4S3WQxRI32XOR+
+	vGrhMG8rCxrGQKTWSXZw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUQTq-0000000DDnu-47uJ;
-	Tue, 02 Jun 2026 14:52:35 +0000
-Received: from mail-swedencentralazon11013041.outbound.protection.outlook.com ([52.101.83.41] helo=GVXPR05CU001.outbound.protection.outlook.com)
+	id 1wURZJ-0000000DOti-1QXN;
+	Tue, 02 Jun 2026 16:02:17 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUQTo-0000000DDnD-3ftt
+	id 1wURZH-0000000DOtG-41wx
+	for linux-phy@bombadil.infradead.org;
+	Tue, 02 Jun 2026 16:02:16 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=In-Reply-To:Content-Transfer-Encoding:
+	Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=Zvuxqt8EQAyLjRjKOeZfynJoxMTq7BZkratyX8ZCO88=; b=OOAfpP+LVvyBzb58O4G3sdVOEV
+	Hn2u5pWJAxFjN+awQ8YBmlDOtvPllqGNnVbkZiYsjwV1UCq52Jx1zlyKay2yNSK0E4EvULdON9AUC
+	v36KXPtVwbMP1fVfEGxhs8DxcfBPv8irHpNNzhLlLROh1pN3OutcyXYDPCGE8leaM0XeCuBCyDrbw
+	iPzuJbXBQbswEzGUghd+YittNJcvXkNxMb9UE45lFe/DCtxfI2MrTEcIk6l39Vqa5kXFCvNEUArej
+	tnb0bXlWRPzfO+bU9pNSeiFpvJz0bk6UDZGmSS+lphzqAqDkTdwEtPmf/LgpV5dxjp6wF8dHmOnJc
+	CRSY/feQ==;
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
+	id 1wURZE-00000009soT-27if
 	for linux-phy@lists.infradead.org;
-	Tue, 02 Jun 2026 14:52:34 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=sde/5a0vn/sHxhpOdR22KzkcdI3zi9Xd6SPcrlODAgF3PCfJdnnX5iSa90bp+IRrFlS2Qk/wi1UZq0O/hn9gXvS6CdB0bb50FgAykq/N0fWmQQ9WXr/FXB+uUtD6PNUVyHTrssiRoTasqQLqqHpW6orG9BgcL60YDUYUcXobVsGQc9w3m+zFOF+IBNdOHHe2C8ubmzlibNtwIffaqtyXGYXWUXcMhA7QUa1C1oLHyGAv48rkzSv25qsJpCnRgK6yLJsylQP+Oag/OhxDga0CB07aj9stIfAifNmJGgOl+zh+k3qcCcPuE4Pj6NPbBSPogorDwU9X0TNtJOXgnOU92Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=r7OVsoqQ9EEedF2DReVjY6RgDfrEWTZYz219XyDBmkc=;
- b=tI2eai8mW8J8sFZ3WrMb5S6AZB6F+BUmpQ/gxZWWnF8TJi074oJNgigmGilpEj2ZBahdnEmpCF8FgBZEmLEggOqbLy36h4jN7xvvjgjXZ4NCcXxEsGKkEzYI/NIs90yO3NnnaFD0q+zfOUnq6BCWTHenm55Y1KvzBRIxlql1osGOIwCIynHLNKP7oKKAML3M6TpPIDwNRCyJkBSR6X91QCfrzujWP5LyANr1QanmEyzT8V5dVPrZBcVstOsEaV9zUXtoZRSxkRyoSedUGISgZuE3YOM+e5U950TtrNV7ZQKEXFXnyc65dklsWQG9G22Yz5H9rZgoT646PUesTodqkg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=r7OVsoqQ9EEedF2DReVjY6RgDfrEWTZYz219XyDBmkc=;
- b=W6lUbSUswD6MYelXZFlChF+h4lQAkIvD75P9aucCohegce8k9tc0om4gOzkadI0ml50ayMRaY7Q/SAwxYOJJq0OLn7GDhfIIOmhCbK2Tn2yjkSir3OohaaDopPK+YCP88Q7BcAUm2YRqZn3PZ94EzePti0A3y4RkDmvmTMy7feROIu6gT+AHbDQReFnUYjboekJ/CkBV07RJ33ta7buxs0XLhhB3AznUbP+XFHaa3J5ga4fxtF4qlo+X90XSYJg0ZNCiSzJOXbFMCpVy3NrdgkI1G4FtyBSnhmL/KolzQvWZgPSzAg7Ywl0UKxeQFYzdDUs2roIA2eursrwETPd3ug==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from AM0PR04MB6900.eurprd04.prod.outlook.com (2603:10a6:208:17d::10)
- by DBBPR04MB7993.eurprd04.prod.outlook.com (2603:10a6:10:1eb::6) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.92.7; Tue, 2 Jun 2026
- 14:52:27 +0000
-Received: from AM0PR04MB6900.eurprd04.prod.outlook.com
- ([fe80::7fda:8431:ca1b:b023]) by AM0PR04MB6900.eurprd04.prod.outlook.com
- ([fe80::7fda:8431:ca1b:b023%5]) with mapi id 15.21.0071.015; Tue, 2 Jun 2026
- 14:52:26 +0000
-Date: Tue, 2 Jun 2026 17:52:22 +0300
-From: Vladimir Oltean <vladimir.oltean@nxp.com>
+	Tue, 02 Jun 2026 16:02:14 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 81588443AF;
+	Tue,  2 Jun 2026 16:02:10 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3EB9E1F00893;
+	Tue,  2 Jun 2026 16:02:10 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1780416130;
+	bh=Zvuxqt8EQAyLjRjKOeZfynJoxMTq7BZkratyX8ZCO88=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=VGhscnmZrVS40m2ApsDm26tVMSp9X1RychA3k7eAZHP4mPN7fm3knQfeDhPDYSEYG
+	 CE61MnCwp2NrgbTZpj4cFPMKT2qwzke+KHeWXcQy4ORCOj3lgzoU1oSLKZ94h+Dq32
+	 Qb3+15aNnQ0yYrkTvWFWC4b7NnJff42MjKW4bOlsGSKZ6X66o1yZ7LbGZG4w811uVN
+	 f/LuL6sznJQhDs+trAGfFuEk2e10PeoIEIWT8PLXxryVAHfjK7w52BDZoGX74BZv1N
+	 SC/QpSHjFjsXNHsl+0jHkItzwZOgn4hByTAtrG/Et/hWdObNkTj96GrfRhAUfErNxE
+	 Joui8G22dlHnA==
+Date: Tue, 2 Jun 2026 11:02:09 -0500
+From: Rob Herring <robh@kernel.org>
 To: sashiko-reviews@lists.linux.dev
-Cc: vkoul@kernel.org, linux-phy@lists.infradead.org, olteanv@gmail.com,
-	neil.armstrong@linaro.org
-Subject: Re: [PATCH v2 phy-next 01/15] phy: lynx-28g: reject probing on
- devices with unsupported OF nodes
-Message-ID: <20260602145222.rukxvfhant3x56zl@skbuf>
-References: <20260529171509.1163787-2-vladimir.oltean@nxp.com>
- <20260529173544.908FE1F00893@smtp.kernel.org>
-Content-Disposition: inline
-In-Reply-To: <20260529173544.908FE1F00893@smtp.kernel.org>
-X-ClientProxiedBy: VI1PR04CA0119.eurprd04.prod.outlook.com
- (2603:10a6:803:f0::17) To AM0PR04MB6900.eurprd04.prod.outlook.com
- (2603:10a6:208:17d::10)
+Cc: Dimitri Fedrau via B4 Relay <devnull+dimitri.fedrau.liebherr.com@kernel.org>,
+	olteanv@gmail.com, vkoul@kernel.org, neil.armstrong@linaro.org,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	conor+dt@kernel.org
+Subject: Incorrect reply address with b4 relay [was Re: [PATCH v6 2/2] phy:
+ add basic support for NXPs TJA1145 CAN transceiver]
+Message-ID: <20260602160209.GA410207-robh@kernel.org>
+References: <20260602-tja1145-support-v6-2-0e0ffc8ee63d@liebherr.com>
+ <20260602083856.E92081F00898@smtp.kernel.org>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AM0PR04MB6900:EE_|DBBPR04MB7993:EE_
-X-MS-Office365-Filtering-Correlation-Id: 64465f59-35b7-4122-0700-08dec0b68f9d
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|10070799003|19092799006|376014|366016|22082099003|18002099003|6133799003|3023799007|56012099006|11063799006|4143699003;
-X-Microsoft-Antispam-Message-Info: /SHVPjD46EmZIgZWVYGVDuq/8S7R2TWb73IjIJlg+M4CLUnopaNcv1irrXdu/NACBJpFBAi7eSqoo7j3nO1bq9WhktFYJvP8D4WNV83ERpA26VRw2y7Uscb2J/r0ylqeTC1jt3RgegEM0AEp6pGVml/WVPTCpGJQe6LZanozjCpaDGIDvyWTVHW0cgnLpuanVZvSndYktMrY0F2hza607tMjjJ9A+z+Qp66y1FNzomg3AlcFp11aU7DWuY56Nz2SL8NcnxkylXTgggNtJ3rcHpJNufIH3Mz4tlUpy89VGT2mgl1QpKen0O+xm69qlCtwB/wL5zCIMJ9KZGM4moL7czlksu/MqJiUPBSQGH1+wyyScrwx3bbPuYYAdy3NcVY6+H9VJK8FHaTZVm9FQXA4f7BCKKeQlbLQZOOQ8lAOz4mNJuU+qVA/rIUJ/I33q8OC7PYk88wFohXs74c2COPT529db3IC5xEebS4uCryY1MGXHEhSwyadLhax+2DOgyPIbbkmfK/fmz9AekqLwfxKvZSncI4sQxBYKGlQf2e10/y5KllKafLIrYNqBShW7BXmGb5DWUKcvaUJtIACpQlu67t2TUC7EIv0iX0hIQDxHyUdZtmnrAq5bc95/Q5ErnnjRHw3KKA6zbSsu1LkqlmpQDsb0Kqv8Ld2AvTdyAeZN0mpzO6MxHbEsxWZr1eRvTHs
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR04MB6900.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(10070799003)(19092799006)(376014)(366016)(22082099003)(18002099003)(6133799003)(3023799007)(56012099006)(11063799006)(4143699003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 2
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?0814vTGi7eF9EOHn2yzG+681bpWqJcddMLoiOHW3FHNkMebr0AvWQNpCDNmC?=
- =?us-ascii?Q?wyUOLHC8ruen0WfUWZi/lf5H8//aw012FvXLJg3A9Ed+b0nv0Nl5rnwROtK8?=
- =?us-ascii?Q?zch1ISZE1QwF2MFQcB3SvY+kczmazrphqIF4mtVSr//yHybIzoS1xNtjjB5X?=
- =?us-ascii?Q?hbWpAIDCw+zpVidQWwHV1zDZZIMFEhmhFoMqg1qNdJtRq8lm3tZSBYqJdIPE?=
- =?us-ascii?Q?uFfp/G2PL9vhU6IcDLbj4LyKQh/KEbT3VHd6QFhKCT6SYfMtag/aJeriRdFj?=
- =?us-ascii?Q?xMBRX6XRSSQzDSwlUhk/D9HOSkOmBVmaT4hPH+asaIWU1lBIsGC11xeTr7TA?=
- =?us-ascii?Q?FbDbQa6g2YrM6c/wGW5g57m7nLLlns1IQIuiWlwePD5hMHeAtx5I03fjjcKp?=
- =?us-ascii?Q?1CRABhDZmXBddQ0grh9Mf7GXaBOBfgoLShymwCs4aBiN3DI5IBAGR08S+5Hz?=
- =?us-ascii?Q?o+Dyays6KwxkvGK8//TW+uvkYwHP12X18JP8sQ5hwuGcP62a4oAwZOWc19Ii?=
- =?us-ascii?Q?AOHF2jIDa6GTlfsZuAk2a2Cb8zCpYUDCZMIeCIi8i3h8fstvPZtubWXub5U/?=
- =?us-ascii?Q?c9P9crYBU0uyzVuSE4byT41SzAGpdzdgaA3aLS376rl2JoNtBeZjxNVTOJaR?=
- =?us-ascii?Q?TBbzktxaZSmu8ZAwWwC8yo9d3d3Rzuzd8j9M5Ty8o/+SfOKolKT8AO3N1X6w?=
- =?us-ascii?Q?4FMRRkCVxfkGqOoFAViB45xDWAshzuNFKwePZaQvN/X5rV27naj1tJXRim27?=
- =?us-ascii?Q?MVavH5f0FJWXGPEkcoySFBNrv+L90gPr3jefZDQp7gWKl+VXX8GRO8e8kvjk?=
- =?us-ascii?Q?aVdNmWYPhJS31Pjn3p8UAmU4z2M3lXfCz0fOEVsYafMym7fmnlU1fIvWLrAq?=
- =?us-ascii?Q?j+90+Y6J3q1gu+C9yu7luDGCEnHuXxceafR7KQEqcVplY7ysXYVNpTOZxKwJ?=
- =?us-ascii?Q?bqUOYgcPPi+HXlNo4GcqIzlDjW0SCOR5sWgfEgkP2/MRXzfZcE7klaZIoWWy?=
- =?us-ascii?Q?02OpgJB7KFHYQYZi4VuloRtMp41HiwT6Cj0l2v4fym/TY9XsHioQbYqvvFxn?=
- =?us-ascii?Q?lRrmSymN0gNtXCwcmt8IjZbV1XZRflGahCLZ5nJqNzWJgfzFxPF690xrYK+4?=
- =?us-ascii?Q?AOfskfMCmp4FJkeCGmcUIeh0gnXoQs/fkMDIILiOrlTuiUnoPQXbSyG7E2GG?=
- =?us-ascii?Q?ssyazS+oinNxeXyIhG4aBnFY8dsBdbvnllZuplZRM4dhS2DxIqKDg/s5JdXN?=
- =?us-ascii?Q?5o6G+5I5x73oEFgWN/VxtL4Yfs16vVlspP+/nq8G9neCycDonGGkFxJWN0A2?=
- =?us-ascii?Q?4R9w0OEAWWSTKH3oOuWgiW4NBOrnpBLtdkmNWG9zDgiz0ywcmbO6RFHsg3Jy?=
- =?us-ascii?Q?SNKgSwNKQtK0Z3jrvJN4t91Q3oQ9GgvKzTyQfewMA0CnxkwoEYqDYujrmPlJ?=
- =?us-ascii?Q?+OPLHr91wc7KSCp9Boo3Yzm5qGnFucCp+W2Fch9vF7cwgKs+CjR5ZNwirk/5?=
- =?us-ascii?Q?5irHPzotYeUoKDdnKmYayCLWZvk/4W/83wvBDhQRl/RuaYSyldsQXKFScpp0?=
- =?us-ascii?Q?t3Dde8Aphe/2xf08T5jlsP/drEYNr2U6RrzZLXQd3/i12zWwCka5gSt+rHmH?=
- =?us-ascii?Q?QCMqCcu32mV/5M9TxeKP5sKBYy/wUdEAQLearJNIVbtoDHw4RsJTX4QsuTtp?=
- =?us-ascii?Q?MhcrSKmq1yAq0AFiCNlxYJRxKV3oNkVOUBFxINf72oV7Z2iExJ5JZ6spy3PM?=
- =?us-ascii?Q?wDbaUGvr7C/suEiEwQeBGUGxtN7k7iTVae2k7InRuARmWSbZLS1tk47Y5AUl?=
-X-MS-Exchange-AntiSpam-MessageData-1: SHbYO1uz2+JFOTYeuH2FY7sTx3kyHqGaZOw=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 64465f59-35b7-4122-0700-08dec0b68f9d
-X-MS-Exchange-CrossTenant-AuthSource: AM0PR04MB6900.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Jun 2026 14:52:26.0217
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: H1bHu403mgm+1mBzJmHji64RnVG9jcce4c+zEhpDi2PxvWU8Ey6jQGhYP4GbQYvIB/R66OqCAf+SX2qbwVHwHg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DBBPR04MB7993
+Content-Disposition: inline
+In-Reply-To: <20260602083856.E92081F00898@smtp.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260602_075232_925248_8475CF31 
-X-CRM114-Status: GOOD (  29.38  )
+X-CRM114-CacheID: sfid-20260602_170212_935068_A6FFBE6F 
+X-CRM114-Status: GOOD (  25.98  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -133,99 +86,125 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Fri, May 29, 2026 at 05:35:43PM +0000, sashiko-bot@kernel.org wrote:
-> Thank you for your contribution! Sashiko AI review found 2 potential issue(s) to consider:
-> 
-> Pre-existing issues:
-> - [High] The lynx_28g_xlate callback can return NULL for uninitialized PHY lanes, leading to a NULL pointer dereference in the PHY framework.
-> - [High] The PHY device retains a pointer to an OF child node after its reference count has been dropped, leading to a potential Use-After-Free.
+Sashiko devs,
+
+It looks like sashiko replies to b4 relay submissions don't get sent to =
+
+the author's email and instead go to the relay's email (devnull). Here's =
+
+the header of the reply:
+
+> Date: Tue, 02 Jun 2026 08:38:56 +0000                                    =
+                                                                           =
+                                                                   =
+
+> From: sashiko-bot@kernel.org                                             =
+                                                                           =
+                                                                   =
+
+> To: Dimitri Fedrau via B4 Relay <devnull+dimitri.fedrau.liebherr.com@kern=
+el.org>                                                                    =
+                                                                   =
+
+> Cc: olteanv@gmail.com, vkoul@kernel.org, neil.armstrong@linaro.org, linux=
+-phy@lists.infradead.org, devicetree@vger.kernel.org, conor+dt@kernel.org, =
+robh@kernel.org                                                    =
+
+> Subject: Re: [PATCH v6 2/2] phy: add basic support for NXPs TJA1145 CAN t=
+ransceiver                                                                 =
+                                                                   =
+
+> Message-Id: <20260602083856.E92081F00898@smtp.kernel.org>                =
+                                                                           =
+                                                                   =
+
+
+
+On Tue, Jun 02, 2026 at 08:38:56AM +0000, sashiko-bot@kernel.org wrote:
+> Thank you for your contribution! Sashiko AI review found 1 potential issu=
+e(s) to consider:
+> - [Medium] If setting the CAN operating mode fails during `tja1145_phy_po=
+wer_on`, the PHY hardware is left in normal operating mode without rolling =
+back to standby mode.
 > --
-> 
-> commit 74be4f3f82272eac244d345f53d8340e9a230084
-> Author: Vladimir Oltean <vladimir.oltean@nxp.com>
-> 
-> phy: lynx-28g: reject probing on devices with unsupported OF nodes
-> 
-> This patch fixes a crash triggered via the driver_override mechanism when
-> of_device_get_match_data() returns NULL for a device with a different
-> compatible string. It adds a check to return -ENODEV if the match data
-> is missing.
-> 
-> > diff --git a/drivers/phy/freescale/phy-fsl-lynx-28g.c b/drivers/phy/freescale/phy-fsl-lynx-28g.c
-> > index 92bfc5f65e0b8..4461b47a16ad6 100644
-> > --- a/drivers/phy/freescale/phy-fsl-lynx-28g.c
-> > +++ b/drivers/phy/freescale/phy-fsl-lynx-28g.c
-> > @@ -1477,6 +1477,9 @@ static int lynx_28g_probe(struct platform_device *pdev)
-> >  
-> >  	priv->dev = dev;
-> >  	priv->info = of_device_get_match_data(dev);
-> > +	if (!priv->info)
-> > +		return -ENODEV;
+> =
+
+> commit 4b999361552fc4af356fbf9fbd3b1ca5f2dd59bf
+> Author: Dimitri Fedrau <dimitri.fedrau@liebherr.com>
+> =
+
+> phy: add basic support for NXPs TJA1145 CAN transceiver
+> =
+
+> This commit adds basic driver support for the NXP TJA1145 CAN transceiver.
+> It enables bringing the PHY up or down by switching between normal and
+> standby modes using SPI commands.
+> =
+
+> > diff --git a/drivers/phy/phy-nxp-tja1145.c b/drivers/phy/phy-nxp-tja114=
+5.c
+> > new file mode 100644
+> > index 0000000000000..1e8bd169743ab
+> > --- /dev/null
+> > +++ b/drivers/phy/phy-nxp-tja1145.c
+> =
+
+> [ ... ]
+> =
+
+> > +static int tja1145_phy_power_on(struct phy *phy)
+> > +{
+> > +	struct regmap *map =3D phy_get_drvdata(phy);
+> > +	int ret;
 > > +
-> >  	dev_set_drvdata(dev, priv);
-> >  	spin_lock_init(&priv->pcc_lock);
-> >  	INIT_DELAYED_WORK(&priv->cdr_check, lynx_28g_cdr_lock_check);
-> 
-> [Severity: High]
-> This isn't a bug introduced by this patch, but does this function leave the
-> PHY device with a pointer to a freed child node later in the probe process?
-> 
-> Further down in lynx_28g_probe():
-> 
->     for_each_available_child_of_node(dn, child) {
->         ...
->         err = lynx_28g_probe_lane(priv, reg, child);
->     ...
-> 
-> The for_each_available_child_of_node() macro automatically handles
-> reference counting for the child node.
-> 
-> When lynx_28g_probe_lane() creates the PHY, phy_create() stores this
-> child node in phy->dev.of_node, but it does not call of_node_get() to
-> acquire an additional reference.
-> 
-> Once the loop advances, the iterator automatically calls of_node_put(),
-> dropping the reference. If the node is later dynamically freed, such as
-> during a DT overlay unload, could this cause a use-after-free when
-> phy->dev.of_node is accessed?
->
+> > +	/*
+> > +	 * Switch operating mode to normal which is the active operating mode.
+> > +	 * In this mode, the device is fully operational.
+> > +	 */
+> > +	ret =3D regmap_update_bits(map, TJA1145_MODE_CTRL, TJA1145_MODE_CTRL_=
+MC,
+> > +				 TJA1145_MODE_CTRL_NORMAL);
+> > +	if (ret)
+> > +		return ret;
+> > +
+> > +	/*
+> > +	 * Switch to CAN operating mode active where the PHY can transmit and
+> > +	 * receive data.
+> > +	 */
+> > +	return regmap_update_bits(map, TJA1145_CAN_CTRL, TJA1145_CAN_CTRL_CMC,
+> > +				  TJA1145_CAN_CTRL_ACTIVE);
+> > +}
+> =
 
-This is a problem within phy_create() not calling of_node_get() when
-assigning phy->dev.of_node. It is out of scope for this series.
+> [Severity: Medium]
+> If the second regmap_update_bits call fails to set TJA1145_CAN_CTRL, does
+> this leave the hardware in normal mode without reverting to standby?
+> =
 
-> [Severity: High]
-> This is a pre-existing issue, but can the xlate callback return NULL for
-> uninitialized PHY lanes and cause a crash in the PHY framework?
-> 
-> If a requested lane index is within bounds but the lane was not probed
-> (due to a missing subnode in the device tree), priv->lane[idx].phy remains
-> NULL and is returned directly by lynx_28g_xlate().
-> 
-> When this NULL is passed to of_phy_get() by _of_phy_get():
-> 
-> drivers/phy/phy-core.c:of_phy_get() {
->     ...
->     if (IS_ERR(phy))
->         return phy;
-> 
->     if (!try_module_get(phy->ops->owner))
->     ...
-> }
-> 
-> Since IS_ERR(NULL) evaluates to false, it proceeds to dereference the NULL
-> pointer via phy->ops->owner. Should the callback return ERR_PTR(-ENODEV)
-> instead for missing lanes?
+> Because tja1145_phy_power_on would return an error here, the PHY framework
+> will not consider the PHY powered on and will not invoke
+> tja1145_phy_power_off later. Could this result in the hardware being
+> permanently left in a higher-power state?
+> =
 
-Yeah, ok, _of_phy_get() does not work when phy_provider->of_xlate()
-returns NULL, it needs to be an error-encoded pointer instead.
-Will add one patch for v3.
+> Should the driver intercept this error and attempt to roll back
+> TJA1145_MODE_CTRL to TJA1145_MODE_CTRL_STBY before returning?
+> =
 
--- 
+> -- =
+
+> Sashiko AI review =B7 https://sashiko.dev/#/patchset/20260602-tja1145-sup=
+port-v6-0-0e0ffc8ee63d@liebherr.com?part=3D2
+> =
+
+
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
