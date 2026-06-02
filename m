@@ -4,59 +4,99 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8851FCD6E60
-	for <linux-phy@archiver.kernel.org>; Tue,  2 Jun 2026 12:40:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C293FCD6E60
+	for <linux-phy@archiver.kernel.org>; Tue,  2 Jun 2026 13:14:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5mbXR0F5pXlt4Hk3nCQ9uPmQ1NFQk6IoNBZkxs+EVaQ=; b=z7eM+N/7jPM/ZB
-	Dg+in7P3HvTelWEiwhL3/5J3atnRtu89HjhG6t0H8D7F6IMueyGiMYQ7zNpufjK1LUqoqbK3mQYjJ
-	Q4OS1foZ03toFvr/lSHcRcH6iWgpR66Cm2JIB1O/8opfofXjS2t0uh/A1qWnF6bANbQF+CgfW8j2U
-	6Daa/ixUeKu5PHXZ0BcV3xYYvKAYvy3ueAQenHyukcJGUIhUBpe0edLCSUpngEoV9M8PeJR46r9lS
-	Ruh2xX/wzdW6OCbAVQirvu33vDmu3duRD+KNJwG64rfUySf0GyyKUlGoMbQ+vryX7TEn9bfeJbUye
-	gm9SzCnvCBpAViaKOMAQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
+	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=J2VYjIVXmuuDeHCUj3XcOEORhhWV4cC2qoKNqg1Z8C0=; b=2KyVXwuju8T4FP
+	ZIjO2UjzPdcSbxVhF0pJd5ZVZr+wBSHChHcba/ulAoAb/iuiI4QF4F4L0ADfBEKd2uR9T6wYdyWXG
+	ArAC/TDdvu7TS8y7pQ8hJZlxf9p1DD6PUWoeaMAQQPqJXqoMC6OCQoaD+Ikk/Tdj6hIgTLmXJnOvh
+	T1YRs7fczk9GVd2N6atxiK7hJ1n412ETGYregTxy77xfhZuGCH6PiehMrZYWEhG69uiqpHznOeJhV
+	iFQt3rb/cvxolK/jsHE5nNVhcaT2Z3RsosqgIXeKKNYqNtW0d/QLO9Vxfh3kTiRc085vyiS9vFmkb
+	D7vaVg32to7JJkh73sBg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUOPm-0000000D0NV-2gUm;
-	Tue, 02 Jun 2026 12:40:14 +0000
-Received: from mail.cjdns.fr ([5.135.140.105])
+	id 1wUOx8-0000000D3eT-1eEn;
+	Tue, 02 Jun 2026 13:14:42 +0000
+Received: from mail-pl1-x62d.google.com ([2607:f8b0:4864:20::62d])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUOPi-0000000D0Mk-48eI
+	id 1wUOx5-0000000D3dd-2x7l
 	for linux-phy@lists.infradead.org;
-	Tue, 02 Jun 2026 12:40:12 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id B6D5250B5AE;
-	Tue,  2 Jun 2026 14:40:02 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cjdns.fr; s=dkim;
-	t=1780404005; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 content-transfer-encoding:content-language:in-reply-to:references;
-	bh=R2nfexBzeT3y69ffHG5mi+zUFQP+2uBFKJLddW+7WaM=;
-	b=MNReIQGnhOFsrTtxcvpE449+11XiJa5LVLE+tlgqpLGvVrd/T97k7T61/85DLXXvTzy9kb
-	ctOPnuJsFG8OrKYZi0Zpa00HuLCwpCP2LMhXAAL6Ee2FEXZRlMWUshFExHZbg3CnNDmjyO
-	gh9aI7w2n/QyOxHpcRAp6XCj9/2l/1HOhImQKYComSkAenB8KLAH7PE87DnwxvJcUhvryn
-	nFYvhWXnFYbfOOSIcoU8g8be5uph6cBbl0IECPkABQ2BFUBf7xHo8MqZAz/fPg6INBCrKy
-	VjL0+1ajfp+P2P7OaFmZamgK3Fq/W5Nu5544gspLeKWhWboInmWigbbVPXoqaQ==
-Message-ID: <373aaeff-ca95-4e45-8e1a-ce7e79e91f42@cjdns.fr>
-Date: Tue, 2 Jun 2026 14:40:01 +0200
+	Tue, 02 Jun 2026 13:14:40 +0000
+Received: by mail-pl1-x62d.google.com with SMTP id d9443c01a7336-2bf30d530bdso39591695ad.3
+        for <linux-phy@lists.infradead.org>; Tue, 02 Jun 2026 06:14:39 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1780406078; x=1781010878; darn=lists.infradead.org;
+        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
+         :date:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=m1KVnd1R5IOEaVntsRV6w5ohh6MM9xtfcSuVzw7+bPI=;
+        b=i+bH7W72Qu/oL2WKpdXmUzZ/odKkfLe/LJLllA9CP+1rBqCo5IpD3CzrCArFEfDavU
+         XtAutiX9maO1HlqaNFs9JtxrG6vrpSybfS8UrJtARGvE2MoLyj6+epH3w+vCUqpfS6u5
+         yacvSoL2zYbKItohe2Yq2OeihEz555fH5W5aSOrwdiGPH02Fbz1lX2ldIoOvqZuZFCI6
+         7a8jt5L05MDd/6qnWiLsY/6H1QJBQA9++2SBi4FmCTjIz5QjMhncClP5PC2ZwcKddUc+
+         OeXqXUJG4/qWTiZ1fvgFjPTRaF63CcqSeirpSKBFB0k314QUnBtaKaY+TpPORqskzpKa
+         ozCw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1780406078; x=1781010878;
+        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
+         :date:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=m1KVnd1R5IOEaVntsRV6w5ohh6MM9xtfcSuVzw7+bPI=;
+        b=QRKm9wKTtzgcjKNrZXhJQkgIjKjvzn5hJENBpGy4wE4GWTwfXNY7gbX7Yi+nR8aoz8
+         HTE798rAwulIGWEedb15G8JvxUvJ9oxRhgVECS5kqFnMqNeMmFGgG+OeUEUXL3kBAXzq
+         O6Bv29jYz355p2+3/anXFkG1c0hf2fmBz8lqVTITN1u1ztnIJezhWgk5ojWkRRuO0+er
+         zp8ol/CcxiLUKZ6zgJ5EMGRKlUYh55dHeRQFfAXae9nGsL3oo5ozmNQy7C6jb4kklSLy
+         5xOhBgT/q8fORtj0zog3zbShuYGhQOJw6iYoyLzrNBcUSrOhwzTb4Vlnysj11lHi0EKj
+         ix2A==
+X-Gm-Message-State: AOJu0YwbbQO6r6gqKFgyJ7zGLe97NB7o5VgsBZIGArERe+FNpLPVhmqz
+	1zkcQTowBwJMrwt5rCRfRaAYC48VVnK7OtMP9OaOs9IMUNb6p7E1t1gAMI4oQ+rl
+X-Gm-Gg: Acq92OEjXSSpZfG7bRZR3TCpWvK9vpj1vjurBCIU7ljAR1CyuHWs6GzjKS0uQoQkzDG
+	ixfFIwpBP50Ymez8dAUDH5czTTmxUBlE080k7HXPV4rSbIfVD+/lvS2MAHUIqptAgWVWwjrqsdw
+	w/iahh8NQpG87EzmkPI4O+mU7xk+TP+rl82apBHTXpUG5GW8A7KyJoqNne2CtWTqt4XAOuHFE+S
+	CY9RYhp3kSFCBTAq8zwQ/EfFCmLZIwoFzLqp6Z96n0vH9crUFG5rJjOPO+2qt57gTNX9PRlsT+h
+	dB9d7xQ3hNBqPF8dB2AD/isRvGyJmY9n8PZ/k/TwRGrmjxjoU7A6hMcLmq3hveLWARrYaqOQLlu
+	F/AUwtngKdwKwpEbp9tXlKpCku5pWeHwpKW4F8PMIsuymwwMYUBv5jWRI/YxeZMxHuK1PZO27Fo
+	W6TFMleUr79aDqaQ92LCEDAbYbl5hsuEGitcH2v4s7ka3d2bMDjt5KzwiKzMRhNUf7BsB+A0T73
+	82YUJN3J7Q8KZJh4sOs1VzEv8HDwKu2yE3isLg=
+X-Received: by 2002:a17:903:1a0c:b0:2c0:f807:56b6 with SMTP id d9443c01a7336-2c0f80758b4mr76638985ad.4.1780406078215;
+        Tue, 02 Jun 2026 06:14:38 -0700 (PDT)
+Received: from junjungu-PC.localdomain ([223.166.246.30])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2bf239e7024sm136568705ad.6.2026.06.02.06.14.33
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 02 Jun 2026 06:14:37 -0700 (PDT)
+From: Felix Gu <ustc.gu@gmail.com>
+Date: Tue, 02 Jun 2026 21:14:33 +0800
+Subject: [PATCH] phy: fsl-imx8mq-usb: fix vbus regulator leak on error
+ paths
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird Beta
-Subject: Re: [PATCH 1/2] dt-bindings: phy: econet: Document EN751221 USB PHY
-To: Rob Herring <robh@kernel.org>
-Cc: linux-mips@vger.kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org,
- krzk+dt@kernel.org, conor+dt@kernel.org, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20260518141343.401555-1-cjd@cjdns.fr>
- <20260518141343.401555-2-cjd@cjdns.fr>
- <20260601225805.GA129257-robh@kernel.org>
-Content-Language: en-US
-From: Caleb James DeLisle <cjd@cjdns.fr>
-In-Reply-To: <20260601225805.GA129257-robh@kernel.org>
-X-Last-TLS-Session-Version: TLSv1.3
+Message-Id: <20260602-imx9mq-v1-1-e58b912923d2@gmail.com>
+X-B4-Tracking: v=1; b=H4sIADjXHmoC/yXM0QpAMBTG8VfRubY6m6zmVeSCOTjKsCEl7264/
+ NX/+y4I5JkCFMkFng4OPLsImSZgh9r1JLiNBoVKo0YleDrNtIoMpTYqM01uEGK8eOr4/I7K6nf
+ Ym5Hs9q7hvh+Sh+HCagAAAA==
+X-Change-ID: 20260602-imx9mq-30169239b590
+To: Vinod Koul <vkoul@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, Frank Li <Frank.Li@nxp.com>, 
+ Sascha Hauer <s.hauer@pengutronix.de>, 
+ Pengutronix Kernel Team <kernel@pengutronix.de>, 
+ Fabio Estevam <festevam@gmail.com>, Xu Yang <xu.yang_2@nxp.com>
+Cc: linux-phy@lists.infradead.org, imx@lists.linux.dev, 
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ Felix Gu <ustc.gu@gmail.com>
+X-Mailer: b4 0.15.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1780406073; l=1702;
+ i=ustc.gu@gmail.com; h=from:subject:message-id;
+ bh=2P56B+ZQr3CMN8Q55LeqttmN2FV6MnYrkE4+rKOUiPI=;
+ b=g2pyz/lE7GuPW7EbYIxceMDMUv9+CWTXEQIMXX8ydyaRLCAB+gzEIohDQmvjmmkIS1HKFwuY2
+ a5WVBm2mQgXA0UAuruhmAeMLBxclchAkYoPqxRyWet4Ts00kbW5mkVa
+X-Developer-Key: i=ustc.gu@gmail.com; a=ed25519;
+ pk=fjUXwmjchVN7Ja6KGP55IXOzFeCl9edaHoQIEUA+/hw=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260602_054011_533340_41A2D6BA 
-X-CRM114-Status: GOOD (  19.87  )
+X-CRM114-CacheID: sfid-20260602_061439_749746_E22B3E4F 
+X-CRM114-Status: GOOD (  11.18  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -68,81 +108,71 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Ck9uIDAyLzA2LzIwMjYgMDA6NTgsIFJvYiBIZXJyaW5nIHdyb3RlOgo+IE9uIE1vbiwgTWF5IDE4
-LCAyMDI2IGF0IDAyOjEzOjQyUE0gKzAwMDAsIENhbGViIEphbWVzIERlTGlzbGUgd3JvdGU6Cj4+
-IERvY3VtZW50IHRoZSBVU0IgUEhZIGRldmljZXMgd2hpY2ggYXBwZWFyIGluIEVjb05ldCBFTjc1
-MTIyMSwgRU43NTE2MjcsCj4+IGFuZCBFTjc1MjggYmFzZWQgU29Dcy4KPj4KPj4gU2lnbmVkLW9m
-Zi1ieTogQ2FsZWIgSmFtZXMgRGVMaXNsZSA8Y2pkQGNqZG5zLmZyPgo+PiAtLS0KPj4gICAuLi4v
-YmluZGluZ3MvcGh5L2Vjb25ldCxlbjc1MTIyMS11c2ItcGh5LnlhbWwgfCAxMjggKysrKysrKysr
-KysrKysrKysrCj4+ICAgTUFJTlRBSU5FUlMgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgIHwgICA2ICsKPj4gICAyIGZpbGVzIGNoYW5nZWQsIDEzNCBpbnNlcnRpb25zKCspCj4+ICAg
-Y3JlYXRlIG1vZGUgMTAwNjQ0IERvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9waHkv
-ZWNvbmV0LGVuNzUxMjIxLXVzYi1waHkueWFtbAo+Pgo+PiBkaWZmIC0tZ2l0IGEvRG9jdW1lbnRh
-dGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS9lY29uZXQsZW43NTEyMjEtdXNiLXBoeS55YW1s
-IGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS9lY29uZXQsZW43NTEyMjEt
-dXNiLXBoeS55YW1sCj4+IG5ldyBmaWxlIG1vZGUgMTAwNjQ0Cj4+IGluZGV4IDAwMDAwMDAwMDAw
-MC4uYTQ0ZjU5NjAxNzQ3Cj4+IC0tLSAvZGV2L251bGwKPj4gKysrIGIvRG9jdW1lbnRhdGlvbi9k
-ZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS9lY29uZXQsZW43NTEyMjEtdXNiLXBoeS55YW1sCj4+IEBA
-IC0wLDAgKzEsMTI4IEBACj4+ICsjIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiBHUEwtMi4wLW9u
-bHkgT1IgQlNELTItQ2xhdXNlCj4+ICsjIENvcHlyaWdodCAoQykgMjAyNCBFY29OZXQKPj4gKyVZ
-QU1MIDEuMgo+PiArLS0tCj4+ICskaWQ6IGh0dHA6Ly9kZXZpY2V0cmVlLm9yZy9zY2hlbWFzL3Bo
-eS9lY29uZXQsZW43NTEyMjEtdXNiLXBoeS55YW1sIwo+PiArJHNjaGVtYTogaHR0cDovL2Rldmlj
-ZXRyZWUub3JnL21ldGEtc2NoZW1hcy9jb3JlLnlhbWwjCj4+ICsKPj4gK3RpdGxlOiBFY29OZXQg
-RU43NTEyMjEgVVNCIFBIWQo+PiArCj4+ICttYWludGFpbmVyczoKPj4gKyAgLSBDYWxlYiBKYW1l
-cyBEZUxpc2xlIDxjamRAY2pkbnMuZnI+Cj4+ICsKPj4gK2Rlc2NyaXB0aW9uOiB8Cj4gRG9uJ3Qg
-bmVlZCAnfCcgdW5sZXNzIHRoZXJlIGlzIGZvcm1hdHRpbmcgdG8gcHJlc2VydmUuCj4KPj4gKyAg
-VVNCIFBIWSBjb250cm9sbGVyIGZvdW5kIG9uIEVjb05ldCBFTjc1MTIyMSBTb0NzIGFzIHdlbGwg
-YXMgb24gRU43NTE2MjcgYW5kCj4+ICsgIEVONzUyOC4gVGhlc2UgZGV2aWNlcyBnZW5lcmFsbHkg
-aGF2ZSB0d28gcG9ydHMsIG9uZSBvZiB3aGljaCBpcyBhIFVTQiAzLjAsCj4+ICsgIGFuZCB0aGUg
-b3RoZXIgaXMgVVNCIDIuMC4gVGhlIFVTQiAzLjAgcG9ydCBpcyBkcml2ZW4gYnkgb25lIG9mIHR3
-byBQSFkKPj4gKyAgYmxvY2tzLCBkZXBlbmRpbmcgb24gd2hldGhlciB0aGUgY29ubmVjdGVkIGRl
-dmljZSBoYXMgbmVnb3RpYXRlZCBVU0IgMy4wIG9yCj4+ICsgIDIuMC4gVGhlc2UgUEhZcyBhcmUg
-YWxzbyB1c2VkIG9uIG90aGVyIEVjb05ldCBzaWxpY29uIGluIHZhcnlpbmcKPj4gKyAgY29uZmln
-dXJhdGlvbnMsIHN1Y2ggYXMgb25seSBwb3J0IDAgKHRoZSBVU0IgMy4wIHBvcnQpLCBvciBvbmx5
-IHBvcnQgMSAodGhlCj4+ICsgIFVTQiAyLjAgcG9ydCkuCj4+ICsKPj4gK3Byb3BlcnRpZXM6Cj4+
-ICsgIGNvbXBhdGlibGU6Cj4+ICsgICAgZW51bToKPj4gKyAgICAgIC0gZWNvbmV0LGVuNzUxMjIx
-LXVzYi1waHkKPj4gKyAgICAgIC0gZWNvbmV0LGVuNzUxNjI3LXVzYi1waHkKPj4gKyAgICAgIC0g
-ZWNvbmV0LGVuNzUyOC11c2ItcGh5Cj4+ICsKPj4gKyAgcmVnOgo+PiArICAgIG1heEl0ZW1zOiAx
-Cj4+ICsKPj4gKyAgIiNhZGRyZXNzLWNlbGxzIjogdHJ1ZQo+PiArICAiI3NpemUtY2VsbHMiOiB0
-cnVlCj4+ICsgIHJhbmdlczogdHJ1ZQo+PiArCj4+ICsgIGNsb2NrczoKPj4gKyAgICBtYXhJdGVt
-czogMQo+PiArICAgIGRlc2NyaXB0aW9uOiB8Cj4+ICsgICAgICBDcnlzdGFsIG9zY2lsbGF0b3Ig
-Y2xvY2sgc291cmNlLiBFY29OZXQgZGV2aWNlcyBydW4gYXQgZWl0aGVyIDIwTWh6IG9yCj4+ICsg
-ICAgICAyNU1oei4gMjVNaHogZGV2aWNlcyByZXF1aXJlIGFkZGl0aW9uYWwgdHVuaW5nIGluIHRo
-ZSBVU0IgMy4wIFBIWS4KPj4gKwo+PiArICBjbG9jay1uYW1lczoKPj4gKyAgICBpdGVtczoKPj4g
-KyAgICAgIC0gY29uc3Q6IHh0YWwKPj4gKwo+PiArcGF0dGVyblByb3BlcnRpZXM6Cj4+ICsgICJe
-dXNiLXBoeUBbMC05YS1mXSskIjoKPj4gKyAgICB0eXBlOiBvYmplY3QKPj4gKyAgICBkZXNjcmlw
-dGlvbjogVVNCIDIuMCBvciAzLjAgUEhZIHN1Yi1ub2RlLgo+PiArCj4+ICsgICAgcHJvcGVydGll
-czoKPj4gKyAgICAgIGNvbXBhdGlibGU6Cj4+ICsgICAgICAgIGVudW06Cj4+ICsgICAgICAgICAg
-LSBlY29uZXQsdXNiMi1waHkKPj4gKyAgICAgICAgICAtIGVjb25ldCx1c2IzLXBoeQo+PiArCj4+
-ICsgICAgICByZWc6Cj4+ICsgICAgICAgIG1heEl0ZW1zOiAxCj4+ICsKPj4gKyAgICAgIHJlc2V0
-czoKPj4gKyAgICAgICAgbWF4SXRlbXM6IDEKPj4gKwo+PiArICAgICAgZWNvbmV0LHVzYi1wb3J0
-LWlkOgo+PiArICAgICAgICAkcmVmOiAvc2NoZW1hcy90eXBlcy55YW1sIy9kZWZpbml0aW9ucy91
-aW50MzIKPj4gKyAgICAgICAgZW51bTogWzAsIDFdCj4+ICsgICAgICAgIGRlc2NyaXB0aW9uOiB8
-Cj4+ICsgICAgICAgICAgUGh5c2ljYWwgcG9ydCBudW1iZXIuIFNpbmNlIFVTQiAzLjAgcmVxdWly
-ZXMgYSBzZWNvbmQgUEhZIGZvciB0aGUgMi4wCj4+ICsgICAgICAgICAgZmFsbGJhY2ssIG11bHRp
-cGxlIFBIWXMgY2FuIG1hcCB0byB0aGUgc2FtZSBwaHlzaWNhbCBwb3J0Lgo+IFdoYXQgaXMgc3Bl
-Y2lhbCBhYm91dCB0aGlzIHBsYXRmb3JtIG5lZWRpbmcgdGhpcyBwcm9wZXJ0eS4KCkZvciBtZWFz
-dXJpbmcgdGhlIGZyZXF1ZW5jeSB0byBzZXQgdGhlIHNsZXcgcmF0ZSwgd2UgbmVlZCB0byBrbm93
-IHdoaWNoIApwb3J0IHdlJ3JlIHdvcmtpbmcgd2l0aC4gQWxzbyB0aGUgaGFyZHdhcmUgcmV2aXNp
-b24gaGFzIHRvIGJlIHNldCAKZGlmZmVyZW50bHkgb24gcG9ydCAxIHRoYW4gcG9ydCAwLgoKPiBM
-b3RzIG9mCj4gcGxhdGZvcm1zIGhhdmUgMiBwaHlzIGZvciBVU0IgMi4wIGFuZCAzLjAgeWV0IGRv
-bid0IG5lZWQgYSBwcm9wZXJ0eQo+IGxpa2UgdGhpcy4KSSBjb3BpZWQgdGhlIGlkZWEgZnJvbSBn
-b29nbGUsZXh0Y29uLXVzYmMtY3Jvcy1lYyB3aGljaCB1c2VzIApnb29nbGUsdXNiLXBvcnQtaWQu
-Cj4gQ2FuJ3QgeW91IGZpZ3VyZSBvdXQgd2hpY2ggcGh5cyBhcmUgdGhlIHNhbWUgVVNCIHBvcnQg
-YnkgdGhlCj4gVVNCIGNvbnRyb2xsZXIgJ3BoeXMnIHByb3BlcnR5IHdoaWNoIHdvdWxkIGRlZmlu
-ZSB0aGF0PwoKVW5mb3J0dW5hdGVseSB0aGUgTWVkaWF0ZWsgZHJpdmVyIGhhbmRsZXMgYWxsIG9m
-IHRoZSBwb3J0cyBhbmQgb25seSB1c2VzIApvbmUgRFQgbm9kZS4gSSBzdXBwb3NlIEkgY291bGQg
-ZW5jb2RlIHRoZSBpbmZvcm1hdGlvbiBpbiB0aGUgY29tcGF0aWJsZSAKb2YgdGhlIHN1Ym5vZGUs
-IHNvbWV0aGluZyBsaWtlOgoKCnVzYi1waHlAMWZhODAwMDAgewogICAgICAgY29tcGF0aWJsZSA9
-ICJlY29uZXQsZW43NTEyMjEtdXNiLXBoeSI7CgogwqAgwqAgwqAgLi4uCgogICAgICAgdXNiLXBo
-eUAxZmE4MDgwMCB7CiAgICAgICAgICAgY29tcGF0aWJsZSA9ICJlY29uZXQsdXNiMi1wb3J0MC1w
-aHkiOwogICAgICAgICAgIC4uLgogICAgICAgfTsKICAgICAgIC4uLgp9OwoKSSdtIG5vdCByZWFs
-bHkgc3VyZSB3aGljaCB3YXkgaXMgbW9yZSBjb3JyZWN0LiBJZiB5b3UgaGF2ZSBhbiBvcGluaW9u
-IG9uIHRoaXMsIGxldCBtZSBrbm93LgoKVGhhbmtzLApDYWxlYgoKPgo+IFJvYgo+CgotLSAKbGlu
-dXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczov
-L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+In imx8mq_phy_power_on(), if clk_prepare_enable() fails after
+regulator_enable() has succeeded, the vbus regulator is left
+enabled. The same issue exists for the alt_clk error path.
+
+Fix both by converting to the standard goto-based cleanup
+pattern, ensuring the regulator is disabled when any
+subsequent step fails.
+
+Fixes: 3b64ea4768e7 ("phy: fsl-imx8mq-usb: support alternate reference clock")
+Signed-off-by: Felix Gu <ustc.gu@gmail.com>
+---
+ drivers/phy/freescale/phy-fsl-imx8mq-usb.c | 15 ++++++++++-----
+ 1 file changed, 10 insertions(+), 5 deletions(-)
+
+diff --git a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
+index b05d80e849a1..e45e4f16057e 100644
+--- a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
++++ b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
+@@ -627,13 +627,11 @@ static int imx8mq_phy_power_on(struct phy *phy)
+ 
+ 	ret = clk_prepare_enable(imx_phy->clk);
+ 	if (ret)
+-		return ret;
++		goto disable_vbus;
+ 
+ 	ret = clk_prepare_enable(imx_phy->alt_clk);
+-	if (ret) {
+-		clk_disable_unprepare(imx_phy->clk);
+-		return ret;
+-	}
++	if (ret)
++		goto disable_clk;
+ 
+ 	/* Disable rx term override */
+ 	value = readl(imx_phy->base + PHY_CTRL6);
+@@ -641,6 +639,13 @@ static int imx8mq_phy_power_on(struct phy *phy)
+ 	writel(value, imx_phy->base + PHY_CTRL6);
+ 
+ 	return 0;
++
++disable_clk:
++	clk_disable_unprepare(imx_phy->clk);
++disable_vbus:
++	regulator_disable(imx_phy->vbus);
++
++	return ret;
+ }
+ 
+ static int imx8mq_phy_power_off(struct phy *phy)
+
+---
+base-commit: 08484c504b55a98bd100527fbe10a3caf55ff3ff
+change-id: 20260602-imx9mq-30169239b590
+
+Best regards,
+--  
+Felix Gu <ustc.gu@gmail.com>
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
