@@ -4,98 +4,92 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 889AFCD6E5D
-	for <linux-phy@archiver.kernel.org>; Tue,  2 Jun 2026 21:00:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6BC91CD5BD1
+	for <linux-phy@archiver.kernel.org>; Tue,  2 Jun 2026 21:59:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=s0kdN8yi8lFOQmxZODqLuC68vXp9bzFs/5aDwMXrPsA=; b=fj1UDfDQlHEQb0
-	EwAd1sH5/ypeuqEaMtHnDZNA4jwPA7ybj6Lfa6b2cIbq4VkpDdmfew9O/jYz2YTpoujagicN7iLX2
-	bx4SwUElDrh3iSSnQFZ3osabMWbTAYwupOGr1m/C8wn8JgAqzBpokzIRc6k9lxKPjI3aOUnjYAHBD
-	VQZaHTxzU04WeBClWx/61w2nNmkFgiwf5wATolRXsEdQLMkRzI4kklu8dWlq8Q30cirjgNihg0gQY
-	4Sx9TrttPo6UZPIGFYGZ0pyQ5MkApH3uV2qefqCWFEDlS7/fBi8AmzlJ6yGCGv0fsrNb8fqrzK556
-	h4+n4WSobH1WMq1m29jQ==;
+	List-Owner; bh=K4+CBxMBXKGJIU/X8qsM/QW5vEmUfuwReGarOKPUEE8=; b=KK9NhQdjZeQWEG
+	n6nP4/56zcBRTopwLy0ctcBBmbQ8ulUnOpn2wtPXPP2T5/sTZAk/azbItPV8zGxSXz3npupZGPeeP
+	waq82OxL6byJE3bBZcHKCNH6WH0w6C4qX1bqrF0AgUYXDPLQMvY8Rv0xJ2IkGcbidBGratODErPtr
+	rn2Xw584qehdnP3KtScTTGEN8AUbo0cwSXel9A0jXVLSxXypXQESW/eE5TIcuQpOl/PRZQOey6sPz
+	H9PCSIN1nU2R3RR0dBSEW5l2noFEpV4/Z6jVdaH1QIF0LysyBFQZqh6v+x1Z7qC33DizW9g6oR4UB
+	WTQ7JLs54Rp4kKeXJpgw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUWDw-0000000DnAQ-1Lto;
-	Tue, 02 Jun 2026 21:00:32 +0000
-Received: from mail-wm1-x336.google.com ([2a00:1450:4864:20::336])
+	id 1wUX9M-0000000DrJQ-3ksh;
+	Tue, 02 Jun 2026 21:59:52 +0000
+Received: from mail-lj1-x22c.google.com ([2a00:1450:4864:20::22c])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUWDu-0000000Dn9M-2jhN
+	id 1wUX9J-0000000DrIg-3rjj
 	for linux-phy@lists.infradead.org;
-	Tue, 02 Jun 2026 21:00:31 +0000
-Received: by mail-wm1-x336.google.com with SMTP id 5b1f17b1804b1-490ac10e337so15448065e9.3
-        for <linux-phy@lists.infradead.org>; Tue, 02 Jun 2026 14:00:29 -0700 (PDT)
+	Tue, 02 Jun 2026 21:59:51 +0000
+Received: by mail-lj1-x22c.google.com with SMTP id 38308e7fff4ca-396773734e8so4611921fa.3
+        for <linux-phy@lists.infradead.org>; Tue, 02 Jun 2026 14:59:48 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1780434029; x=1781038829; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=o3xo5dhddNfd1GteqLJrkhqAoPlpEA1sqWA6MOtGTrE=;
-        b=KtlHj1qan3YHtSa7UWLMcIG20LBO02tE4bmHePZqau/OOpsk5onAgUTSdtsrDixxEq
-         tpjg0blU40k/dZDcLLaIpBzcS9RsnadGucUdj0RHDEN3aN8NNK9RVz30rosE26FE7/9y
-         5rQnMpA0PwoYzS3QIqS2SvVm/yc9yUA8bD8BkYnQxgs5YNdwCEU6NgHp/m8r1BacbCZS
-         B2rOsEeRkNJAAAIFEOFWz0uPj6V6PYvJllshBUse1xv/CXTeQY7XMhIhSTlFfN7gykpx
-         ZT+JR/kbum3DnWbJGKG7ArlSFslXJyNXw/lFpLcPSgCAYToRG97PNrOSpWG0L8bSRDjK
-         asfw==
+        d=linaro.org; s=google; t=1780437587; x=1781042387; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to:subject
+         :user-agent:mime-version:date:message-id:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=/rYnZ3lqT7DmKRSTxtVSgTNnxHdLejTszMrt6K93BCk=;
+        b=Bq5hKH6bZxG6TtYnqGZun9fBNastMbrYvwCwTRVDMdz65j+61PHe9FZF0+47+D5TRQ
+         GhQeAJOh2zjP5U37ChOMpQsGdRupp9fSjyneOqQ1TwLr2j9ee9yNsZgxVZkaukn0OHTj
+         oQv9msZuTRXXiUFxomQDy5aQOnT87Wj9inWQ5dEhIv+5t5JwV5UVKOL6y6KGOimUpxeX
+         hh8v1+quFlV/WOqrY3N22hSnkt5tZfDs7yMBTs+hiw6v4Uvoeqsdji3LgCDI5jylqrOF
+         h1kLT5+6LfgLyOr4Pbx/j4SERTcm9eEAYei8qADt8BLbyW/0sg6lf3TXOLYqllblXLEH
+         K+zw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1780434029; x=1781038829;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=o3xo5dhddNfd1GteqLJrkhqAoPlpEA1sqWA6MOtGTrE=;
-        b=KIbRV4/NP1dQy4eJrB+fCU7r/LMOwsW5lOcFiBwgQijjdqu4TSjZm9q7KstIe1wkXg
-         gJkCrfRW7R6AHXkbyvjMn3L4SJ3yHepNfc8c5/buMfvA8sYlTw9IhMajGgRohcB0PiOK
-         ysXWAy0TsjE7oscCg+jQd39wcDmtHdlRvkZoMs7xHf0yYfGtpMyO2J99aNeUVN1jjjZ2
-         zqKTobg6cc6f1zwz4iIdxZkWvKwFhLHvJvdi7125YUn4L2ttbhSDt8edlbKrpb7QIYA1
-         LlDenBXqVNVP67w8gcqW6eZVEAewPXfMy/2yz2T0gnQcFW05e7KsahZq6FVLYh1ZwlF7
-         Amww==
-X-Forwarded-Encrypted: i=1; AFNElJ+lCg3pQAPsiGaLbvBpkVmOFf02h1XpI9wN0fXZiB5ofFPwJnEDQjnNEZiSmRsis3tNSB+ZHnG9YSU=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyTInCC5sYmLZ2kC6vovLSP15CC0dVHsZcrOIiCPyYb+5dQMqTk
-	RDmhLoCVvUS6mzTbOcd/pDg5LeLhDVk/V2cdjohSvHgAtkEM+L79//E4n27UEVX0OtFJx7eL0C9
-	EFU6HcAY=
-X-Gm-Gg: Acq92OFn9wA/9OqnflCtknDNBLSEKgiIG0sHksAoBoThyEbOlV2Wq+/8yS8lPCg6ZzO
-	rt4xViaNgws9vdqi13CGhIqIsNa64OPq3PR3QgFL86/mtHT7HfKQrFii16efvudjyKl7ZLlH8Qe
-	iQIuXxwT3KkjDR8WgOPTgURok3/qNCI8OgKMvIh8irLTsNbBkzKLu86EogDFOEl9dlLBPAygLDP
-	hJ5eS9+vaJpQ9TOy9vCM0mFVqSrGMzlGswdqg+v1tA29wJfWLXkK0nQtSddnCRZOxcoKIVsGEPh
-	FutuMmxliJAdCWk0g23Da2CUEh+c9AwAAbBLyt/4px1jvMtSspn2VB7xEuwtQFkh5X1d1SZuFPU
-	lEwYnt1pCubUxywykcoM+q9yzBimAFgZVcIJOELU5q+bVCXm8mM88H1S76MtBUt2hwhfbbFZMmG
-	LiF+VCkjc/ISBlPa5Cn9LzlV/o00SbAZYYBQzvcLR/uNng
-X-Received: by 2002:a05:600c:4513:b0:48e:7854:1608 with SMTP id 5b1f17b1804b1-490b5fe9bd8mr6349125e9.25.1780434028575;
-        Tue, 02 Jun 2026 14:00:28 -0700 (PDT)
-Received: from [192.168.0.35] ([109.77.42.178])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-490b6d16f0csm1316135e9.15.2026.06.02.14.00.26
+        d=1e100.net; s=20251104; t=1780437587; x=1781042387;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to:subject
+         :user-agent:mime-version:date:message-id:x-gm-gg:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=/rYnZ3lqT7DmKRSTxtVSgTNnxHdLejTszMrt6K93BCk=;
+        b=q2X9LRcTKNAoONkCa4NEO/eRaYoktf8o2Pcu5KtfVzcNJP8WHRc7019dXWtIplSuJo
+         gVJgCgj3GXtsUnJfJ3Zgv7t7im7veLtSYVMPS4DvZJyHY/Rt0BY0OJhT2NH6g/3dY/iP
+         FFVLTBaso5PysVIJ4Uzq3GNmUWgSM6seY7pOeC/E29gROVWvbR3D0oTpSBkkoqCQ2AgM
+         vl3OrgOJFSinWyv+UfBXk9RoCMJ/DayW8ANPhP4xTLL+xq4f965ZlDnsjRr9D3x6UXL5
+         1wa8WswZbnqbcsB5IqehhJ5KK9nTrHiu0Cx1VwaPcG/QXZC1er/bJ8/IQkL/KOabOadC
+         nMZQ==
+X-Forwarded-Encrypted: i=1; AFNElJ8aJtswxCCYLDCLXUThHT8EBG7J9Zq1bRfnndqtDc0QNDE08KVaKHQbTGSUACnbXTTlyNYGWjhHa9A=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yylr0PyFGYyINt+wdyd1jXgMd6Lo5V/7ttLeVEctzuKTXflVstE
+	LqoogAi2qKncXW+fGk41At8nQ3xgKZdX/cBMCDh6n0dOyGJqo6osVLp8O/dD7rUrpMA=
+X-Gm-Gg: Acq92OEOKZrCBBjHMXAKK0e7VYkTVnN5+6j11eIm8ZUsS/bal+f0muv1nRlKbb1Tilb
+	BzjnodKH3T2OV4fbSjZBAabMZYps6q5GcWhIvbYFaajVuYoUdd9svXO4euSAor0XoEyW1TAlMJI
+	HnDigKVsbBZgu1L+PnezZxB4D3z8uJJEaZY5vJakBw1fh08tNRkcxd9qNlFWC1WNPc5tzYuW4Vo
+	aOb0ZkHys5qdIzaKqUyO8FuKbD7rFMBmrQEd5k8NDN3GP5DQLQmcBkPmJR+jIlhAz78WpJZzwyR
+	wOaXryCW9IbKgbTM5m5KRNgC4iwQmAiQLyR54PeT9p/S33wn33eGHELmaq62hkkFhZjISNYYF5b
+	37Ce853Gg6q3h0x73eKuJVJqTsgZeODXpvw8DVn1Xp0Cvu9GGqEMcFn+2CzJgq5Y4xQwB8QfyEn
+	gRqzWbrjyw1cDqfdrdXEbJpbmPPu2hwyLc+7H6VVpS7PMZbSzKVtd+Qd8jmZRuTrabvctFw5R7j
+	kialHG4504gyPCj
+X-Received: by 2002:a2e:bc2a:0:b0:396:975f:c384 with SMTP id 38308e7fff4ca-396ac314d06mr1880491fa.6.1780437587064;
+        Tue, 02 Jun 2026 14:59:47 -0700 (PDT)
+Received: from [192.168.1.100] (91-159-24-186.elisa-laajakaista.fi. [91.159.24.186])
+        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-396abd6cbe6sm3606351fa.0.2026.06.02.14.59.46
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 02 Jun 2026 14:00:27 -0700 (PDT)
-Message-ID: <d45f3000-35e7-4f65-b9fe-5348105abb0f@linaro.org>
-Date: Tue, 2 Jun 2026 22:00:26 +0100
+        Tue, 02 Jun 2026 14:59:46 -0700 (PDT)
+Message-ID: <dda32577-04e0-4507-acaf-a5694f4f31b3@linaro.org>
+Date: Wed, 3 Jun 2026 00:59:40 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v8 1/2] dt-bindings: phy: qcom: Add CSI2 C-PHY/DPHY schema
-To: Frank Li <Frank.li@nxp.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
- Bryan O'Donoghue <bod@kernel.org>,
- Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-media@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
+To: Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>
+Cc: Bryan O'Donoghue <bod@kernel.org>, linux-arm-msm@vger.kernel.org,
+ linux-phy@lists.infradead.org, linux-media@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
 References: <20260523-x1e-csi2-phy-v8-0-a85668459521@linaro.org>
  <20260523-x1e-csi2-phy-v8-1-a85668459521@linaro.org>
- <ah9DMPcKUaTm324I@lizhi-Precision-Tower-5810>
-Content-Language: en-US
-From: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
-In-Reply-To: <ah9DMPcKUaTm324I@lizhi-Precision-Tower-5810>
+From: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
+In-Reply-To: <20260523-x1e-csi2-phy-v8-1-a85668459521@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260602_140030_711871_E2A300DE 
-X-CRM114-Status: UNSURE (   6.50  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260602_145950_044450_31078027 
+X-CRM114-Status: GOOD (  25.99  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -112,29 +106,287 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 02/06/2026 21:55, Frank Li wrote:
-> phy {
-> 	...
-> }
+On 5/23/26 05:48, Bryan O'Donoghue wrote:
+> Add a base schema initially compatible with x1e80100 to describe MIPI CSI2
+> PHY devices.
 > 
-> csi2 {
-> 	phy=<&phy>;
+> The hardware can support both CPHY, DPHY and a special split-mode DPHY.
 > 
-> 	port@0: {
-> 	}
-> 	...
-> }
+> The schema here defines three ports:
+> 
+> port@0:
+>      The first input port where a sensor is always required.
+> 
+> port@1:
+>      A second optional input port which if present implies DPHY split-mode.
+> 
+> port@2:
+>      A third always required output port which connects to the controller.
+> 
 
-Agreed.
+This port numeration is imperfect, because port@0 and port@2 are required,
+while middle port@1 is optional.
 
-However, we also want to support "split-mode" which is a special mode of 
-this PHY where two sensors can be connected to one CSIPHY.
+Like it was stated before a number of times, it seems natural to operate
+with two ports, where input port may have two endpoints rather than 3 ports,
+also that approach solves the problem of a hole in the port numeration.
 
-After a lot of debate adding ports/endpoints to the CSIPHY itself has 
-been pretty much settled on.
+> The CSIPHY devices have their own pinouts on the SoC as well as their own
+> individual voltage rails.
+> 
+> The need to model voltage rails on a per-PHY basis leads us to define
+> CSIPHY devices as individual nodes.
+> 
+> Two nice outcomes in terms of schema and DT arise from this change.
+> 
+> 1. The ability to define on a per-PHY basis voltage rails.
+> 2. The ability to require those voltage.
+> 
+> We have had a complete bodge upstream for this where a single set of
+> voltage rail for all CSIPHYs has been buried inside of CAMSS.
+> 
+> Much like the I2C bus which is dedicated to Camera sensors - the CCI bus in
+> CAMSS parlance, the CSIPHY devices should be individually modelled.
+> 
+> Signed-off-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+> ---
+>   .../bindings/phy/qcom,x1e80100-csi2-phy.yaml       | 209 +++++++++++++++++++++
+>   1 file changed, 209 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml
+> new file mode 100644
+> index 0000000000000..270375f949880
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/qcom,x1e80100-csi2-phy.yaml
+> @@ -0,0 +1,209 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/qcom,x1e80100-csi2-phy.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Qualcomm CSI2 PHY
+> +
+> +maintainers:
+> +  - Bryan O'Donoghue <bod@kernel.org>
+> +
+> +description:
+> +  Qualcomm MIPI CSI2 C-PHY/D-PHY combination PHY. Connects MIPI CSI2 sensors
+> +  to Qualcomm's Camera CSI Decoder. The PHY supports both C-PHY and D-PHY
+> +  modes.
+> +
+> +properties:
+> +  compatible:
+> +    const: qcom,x1e80100-csi2-phy
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  "#phy-cells":
+> +    const: 1
+> +    description:
+> +      The single cell specifies the PHY operating mode.
 
----
-bod
+#phy-cells should be 0, because the PHY operating mode is well defined
+by 'bus-type' property of an endpoint on the sensor side, the opposite
+side of CAMSS/CSID as a CSIPHY "consumer" should not dictate the PHY type.
+
+> +
+> +  clocks:
+> +    maxItems: 2
+> +
+> +  clock-names:
+> +    items:
+> +      - const: core
+> +      - const: timer
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +  operating-points-v2:
+> +    maxItems: 1
+> +
+> +  power-domains:
+> +    items:
+> +      - description: MMCX voltage rail
+> +      - description: MXC or MXA voltage rail
+
+Only "qcom,x1e80100-csi2-phy" device is supported so far, unlikely it's
+the case that "MXC or MXA voltage rail" should be specified, it'd be
+just one of two or both.
+
+> +
+> +  power-domain-names:
+> +    items:
+> +      - const: mmcx
+> +      - const: mx
+> +
+> +  vdda-0p9-supply:
+> +    description: Phandle to a 0.9V regulator supply to a PHY.
+> +
+> +  vdda-1p2-supply:
+> +    description: Phandle to 1.2V regulator supply to a PHY.
+> +
+> +  ports:
+> +    $ref: /schemas/graph.yaml#/properties/ports
+> +
+> +    properties:
+> +      port@0:
+> +        $ref: /schemas/graph.yaml#/$defs/port-base
+> +        description: Sensor input. Always present.
+> +        unevaluatedProperties: false
+> +
+> +        properties:
+> +          endpoint:
+> +            $ref: /schemas/media/video-interfaces.yaml#
+> +            unevaluatedProperties: false
+> +            properties:
+> +              data-lanes:
+> +                minItems: 1
+> +                maxItems: 4
+> +              clock-lanes:
+> +                maxItems: 1
+> +              remote-endpoint: true
+> +            required:
+> +              - data-lanes
+> +              - remote-endpoint
+> +
+> +      port@1:
+> +        $ref: /schemas/graph.yaml#/$defs/port-base
+> +        description:
+> +          Second sensor input. When present, indicates DPHY split mode.
+> +        unevaluatedProperties: false
+> +
+> +        properties:
+> +          endpoint:
+> +            $ref: /schemas/media/video-interfaces.yaml#
+> +            unevaluatedProperties: false
+> +            properties:
+> +              data-lanes:
+> +                maxItems: 1
+> +              clock-lanes:
+> +                maxItems: 1
+> +              remote-endpoint: true
+> +            required:
+> +              - data-lanes
+> +              - clock-lanes
+> +              - remote-endpoint
+
+As it's stated above, it should be converted to a single port with two
+endpoints, it'd be done in accordance to video-interfaces.yaml.
+
+> +
+> +      port@2:
+> +        $ref: /schemas/graph.yaml#/$defs/port-base
+> +        description: Output to CAMSS controller.
+> +        unevaluatedProperties: false
+> +
+> +        properties:
+> +          endpoint:
+> +            $ref: /schemas/graph.yaml#/$defs/endpoint-base
+> +            unevaluatedProperties: false
+> +            properties:
+> +              remote-endpoint: true
+> +            required:
+> +              - remote-endpoint
+> +
+> +    required:
+> +      - port@0
+> +      - port@2
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - "#phy-cells"
+> +  - clocks
+> +  - clock-names
+> +  - interrupts
+> +  - operating-points-v2
+> +  - power-domains
+> +  - power-domain-names
+> +  - vdda-0p9-supply
+> +  - vdda-1p2-supply
+> +  - ports
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +    #include <dt-bindings/clock/qcom,x1e80100-camcc.h>
+> +    #include <dt-bindings/clock/qcom,x1e80100-gcc.h>
+> +    #include <dt-bindings/power/qcom,rpmhpd.h>
+> +
+> +    csiphy4: csiphy@ace4000 {
+> +        compatible = "qcom,x1e80100-csi2-phy";
+> +        reg = <0x0ace4000 0x2000>;
+> +        #phy-cells = <1>;
+> +
+> +        clocks = <&camcc CAM_CC_CSIPHY0_CLK>,
+> +                 <&camcc CAM_CC_CSI0PHYTIMER_CLK>;
+> +        clock-names = "core",
+> +                      "timer";
+> +
+> +        operating-points-v2 = <&csiphy_opp_table>;
+> +
+> +        interrupts = <GIC_SPI 477 IRQ_TYPE_EDGE_RISING>;
+> +
+> +        power-domains = <&rpmhpd RPMHPD_MMCX>,
+> +                        <&rpmhpd RPMHPD_MX>;
+> +        power-domain-names = "mmcx",
+> +                             "mx";
+> +
+> +        vdda-0p9-supply = <&vreg_l2c_0p8>;
+> +        vdda-1p2-supply = <&vreg_l1c_1p2>;
+> +
+> +        ports {
+> +            #address-cells = <1>;
+> +            #size-cells = <0>;
+> +
+> +            port@0 {
+> +                reg = <0>;
+> +                csiphy0_in_ep: endpoint {
+> +                    data-lanes = <0 1>;
+> +                    clock-lanes = <2>;
+> +                    remote-endpoint = <&sensor_out>;
+> +                };
+> +            };
+> +
+> +            port@2 {
+> +                reg = <2>;
+> +                csiphy0_out_ep: endpoint {
+> +                    remote-endpoint = <&controller_in>;
+> +                };
+> +            };
+> +        };
+> +    };
+> +
+> +    csiphy_opp_table: opp-table {
+> +        compatible = "operating-points-v2";
+> +
+> +        opp-300000000 {
+> +            opp-hz = /bits/ 64 <300000000>;
+> +            required-opps = <&rpmhpd_opp_low_svs_d1>,
+> +                            <&rpmhpd_opp_low_svs_d1>;
+> +        };
+> +
+> +        opp-400000000 {
+> +            opp-hz = /bits/ 64 <400000000>;
+> +            required-opps = <&rpmhpd_opp_low_svs>,
+> +                            <&rpmhpd_opp_low_svs_d1>;
+> +        };
+> +
+> +        opp-480000000 {
+> +            opp-hz = /bits/ 64 <480000000>;
+> +            required-opps = <&rpmhpd_opp_low_svs>,
+> +                            <&rpmhpd_opp_low_svs_d1>;
+> +        };
+> +    };
+> 
+
+-- 
+Best wishes,
+Vladimir
 
 -- 
 linux-phy mailing list
