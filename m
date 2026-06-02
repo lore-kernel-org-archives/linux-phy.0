@@ -4,84 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 838DCCD6E57
-	for <linux-phy@archiver.kernel.org>; Tue,  2 Jun 2026 08:25:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 35DA0C5DF71
+	for <linux-phy@archiver.kernel.org>; Tue,  2 Jun 2026 08:39:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id
-	:Date:Subject:From:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=pxGwuMLRZzQ4Pg4uoSV0iKkRjBEISSvAQ4vtkfA6EV8=; b=kg0Cx8CBQ6uZ2g
-	thTNIh3HgH/JOKzofFVVMvkQcSJSNz964lMgUc5CqGs+NvYLNmlO46NmdztMKDpBHNbkmLyap8DRm
-	mc2+3btF96Nw/LxNi7XybPR4y2ejCo5aVqZPTiDYgzF3ZtQo3pttiMC8ny6C/R1136DUrJMs/JOzb
-	u6+CEC06q4FeEElaeX033pwOxaLb8RMIAw8R/DRorEY9cDkCFrsqH3QO/v3erckb0j1TzkhDLjEcz
-	+4MzuBFItpof12LKk8t2tSJ+E7XRas4xBwIJyILybjx7ATqc0GJjboJKaWI8n2ze3iCu5QGSFV3S7
-	R8sn8qnLY/t4H7SGFWjw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Ny1PXUJ2Fx9uMyZi1Mqj1WNhjJ7sCsnu7aGwyLl4C28=; b=yDsNRNkE0Jq/Gb
+	ux1oItSXTqXdZRvy1RPRNN336Y7dLlIOvuEM+cLTARcVbPuUXjEZd9eZCe8rPG8lO3y4KcQp4TtZh
+	kq30kTQLbJPh01leUpCJs5CchUgNTbDWTqL+mJhbbOK7ixtv5oTy4toMdPiEFmNjhBddhafbtGsI0
+	O7CYjXfQUVd+d/iR/trTGoD7eul3OUkywNCRL2hA3p7Z4Ppuait2PV7t5lEFwR/ltO4qsrJcfc6iQ
+	Vri5DYNgmVAJXJbl5mz5mPX3KvvmIet6uf23GZjbHffqbCDlbNehe9ESKo3BPaitQYlqvOm1jVyz1
+	hl78Kg+wTFKwbkdnhfjQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUKRf-0000000CYqc-13xG;
-	Tue, 02 Jun 2026 08:25:55 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wUKeK-0000000CaLr-1nTd;
+	Tue, 02 Jun 2026 08:39:00 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUKRZ-0000000CYpY-32hG
+	id 1wUKeI-0000000CaLT-1ykX
 	for linux-phy@lists.infradead.org;
-	Tue, 02 Jun 2026 08:25:52 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 1CAFF4195A;
-	Tue,  2 Jun 2026 08:25:48 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id E763FC2BCB4;
-	Tue,  2 Jun 2026 08:25:47 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1780388748;
-	bh=cHp3nkT0cfcBUKtkYPQ5ueVJrGW1JpdFjs6fxXYP9t8=;
-	h=From:Subject:Date:To:Cc:Reply-To:From;
-	b=OOW9Pl54BT11UnaiRQXy54J2+Mz/tKgFC70yOwziqjplGS8j5beJbQKu+7qke5Qox
-	 fQcVtTSfsJuqAQDJbstLiRVwFsQ0g8miNl9oUYXlvO2uPC6kKEa0uxoOFeYiRBKRFj
-	 b8DXMhioJsI7KT2saR4O2hFy4r51lr/2w5YsXSQiLrPm8H8PWj657CfPVuwxeNOXKv
-	 3gMX3CJ+HEFyVrSNi+P88tS6ystZcIfUQPitlf0FFtGBA72uUOpnFQmBVqcnyrv4LN
-	 GHiaTU4vIzCdo+n5odX/VkAv0gnxcrGXNGhJl7XYCTZhG2mZV9cVLsDkfdJqagosWP
-	 Ol7L78MgbANow==
-Received: from aws-us-west-2-korg-lkml-1.web.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id DC4D2CD6E57;
-	Tue,  2 Jun 2026 08:25:47 +0000 (UTC)
-From: Dimitri Fedrau via B4 Relay <devnull+dimitri.fedrau.liebherr.com@kernel.org>
-Subject: [PATCH v6 0/2] phy: add basic support for NXPs TJA1145 CAN
+	Tue, 02 Jun 2026 08:38:58 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 9CD2960018;
+	Tue,  2 Jun 2026 08:38:57 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E92081F00898;
+	Tue,  2 Jun 2026 08:38:56 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1780389537;
+	bh=snrZ+Yne5ySmBFquNK6XTiD+YCZe8k5Pqw8/c2nWpzo=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=TNoSIv5vJa4FLXzNbGyWkhzRH9wJbiUYujacoc2VgL7M9aJiNakGmpuiBq/CW7cDr
+	 p4THnJ7V1GrZ+D9Acuik5VGnrxDgHWAOZrYsz8tQj+gHv1GSBUExygmRdXLWiGq+dn
+	 syyaxPVLXe8SwD7+6GPH0VeaOUlHFO1L82ath3PK/Y6BS/nT2efJ8llPL4Kog/VLbI
+	 pQQGhYwoR6NpCh2wEZ2Uc9o+Gd5GgMKQf+0jOIcZnF7oetKfOubt8ZvsEDd1PEdlUi
+	 TifIAaRAJcplUU/VFeFY/5qtU+7rpRjOUrvo9w/Na9GTWEnGcpoeRdPRewwNAPm/+h
+	 snZKYBnoGVdzg==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v6 2/2] phy: add basic support for NXPs TJA1145 CAN
  transceiver
-Date: Tue, 02 Jun 2026 10:25:36 +0200
-Message-Id: <20260602-tja1145-support-v6-0-0e0ffc8ee63d@liebherr.com>
-MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIAICTHmoC/23OzU7DMAzA8VeZciYoceJ8cOI90A5Z4tIgWKukV
- ENT35100gDRHv+W/LOvrFLJVNnT4coKzbnm4dzCPBxY7MP5lXhOrRkIQGHB8OktSKmR189xHMr
- Ek4kxRZ0gBcXa1lioy5eb+HJs3ec6DeXrdmCW6/RuuY01Sy44nZLTXifUGJ/fM516KuUxDh9s5
- Wb4JRz4LQGNMMJ72ylw3vodQv0QUki1JVQjdPAJNHYkjN0h9F8Ct4ReiaRikCo65+QOgXfCCNz
- 7AhuhnAURLJFR9I9YluUbmXjhDb0BAAA=
-X-Change-ID: 20250726-tja1145-support-d6ccdc4d2da3
-To: Vinod Koul <vkoul@kernel.org>, 
- Kishon Vijay Abraham I <kishon@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Dimitri Fedrau <dima.fedrau@gmail.com>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, Dimitri Fedrau <dimitri.fedrau@liebherr.com>, 
- Conor Dooley <conor.dooley@microchip.com>, lee.lockhey@gmail.com, 
- Marc Kleine-Budde <mkl@pengutronix.de>
-X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1780388746; l=2451;
- i=dimitri.fedrau@liebherr.com; s=20241202; h=from:subject:message-id;
- bh=cHp3nkT0cfcBUKtkYPQ5ueVJrGW1JpdFjs6fxXYP9t8=;
- b=p1me/q6zUuMZYy17fczKcV6f2U8Y8qghF6aQalv6p3RC54NImHNf1nsAXn0PJRtX21EXJhhpH
- IknPafPwXvABnXb3ntP9Z0Qxxd/YYCTXP7un9KI3NOA79jhoFfyh3vS
-X-Developer-Key: i=dimitri.fedrau@liebherr.com; a=ed25519;
- pk=rT653x09JSQvotxIqQl4/XiI4AOiBZrdOGvxDUbb5m8=
-X-Endpoint-Received: by B4 Relay for dimitri.fedrau@liebherr.com/20241202
- with auth_id=290
-X-Original-From: Dimitri Fedrau <dimitri.fedrau@liebherr.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260602_012549_881297_39C27C66 
-X-CRM114-Status: UNSURE (   8.86  )
-X-CRM114-Notice: Please train this message.
+To: "Dimitri Fedrau via B4 Relay" <devnull+dimitri.fedrau.liebherr.com@kernel.org>
+Cc: olteanv@gmail.com, vkoul@kernel.org, neil.armstrong@linaro.org, linux-phy@lists.infradead.org, devicetree@vger.kernel.org, conor+dt@kernel.org, robh@kernel.org
+In-Reply-To: <20260602-tja1145-support-v6-2-0e0ffc8ee63d@liebherr.com>
+References: <20260602-tja1145-support-v6-2-0e0ffc8ee63d@liebherr.com>
+Date: Tue, 02 Jun 2026 08:38:56 +0000
+Message-Id: <20260602083856.E92081F00898@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,73 +62,49 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: dimitri.fedrau@liebherr.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Add basic driver support for NXPs TJA1145 CAN transceiver which brings the
-PHY up/down by switching to normal/standby mode using SPI commands.
-
-Signed-off-by: Dimitri Fedrau <dimitri.fedrau@liebherr.com>
----
-Changes in v6:
-- Added interrupts to bindings and dt example.
-- Link to v5: https://lore.kernel.org/r/20260513-tja1145-support-v5-0-38720a7ee63e@liebherr.com
-
-Changes in v5:
-- No functional change, basically a resend with added tags
-- fixed typo in define TJA1145_MODE_CRTL_STBY to TJA1145_MODE_CTRL_STBY
-  and TJA1145_MODE_CRTL_NORMAL to TJA1145_MODE_CTRL_NORMAL
-- remove unneeded include -#include <linux/bitfield.h>
-- added owner to tja1145_phy_ops
-- Link to v4: https://lore.kernel.org/r/20251015-tja1145-support-v4-0-4d3ca13c8881@liebherr.com
-
-Changes in v4:
-- Change compatible to: nxp,tja1145 (Connor)
-- Mark spi-cpha as required (Connor)
-- Switch from unevaluatedProperties: false to
-  additionalProperties: false (Connor)
-- Remove double newline after tja1145_rd_table (Marc)
-- Link to v3: https://lore.kernel.org/r/20251013-tja1145-support-v3-0-4a9d245fe067@liebherr.com
-
-Changes in v3:
-- bindings: fix SPI bus unit address format error
-- bindings: added resolution of discussion into commit msg
-- Checked binding with:
-  make dt_binding_check DT_SCHEMA_FILES=nxp,tja1145-can.yaml
-  Missed it for V2, didn't do it intentionally. Sorry.
-- Link to v2: https://lore.kernel.org/r/20250829-tja1145-support-v2-0-60997f328979@liebherr.com
-
-Changes in v2:
-- bindings: Change node name in example to can-phy
-- bindings: Fix order of properties, reg property is second
-- bindings: Change compatible to match filename
-- change compatible to nxp,tja1145-can
-- Link to v1: https://lore.kernel.org/r/20250728-tja1145-support-v1-0-ebd8494d545c@liebherr.com
-
----
-Dimitri Fedrau (2):
-      dt-bindings: phy: add support for NXPs TJA1145 CAN transceiver
-      phy: add basic support for NXPs TJA1145 CAN transceiver
-
- .../devicetree/bindings/phy/nxp,tja1145.yaml       |  86 ++++++++++
- drivers/phy/Kconfig                                |  10 ++
- drivers/phy/Makefile                               |   1 +
- drivers/phy/phy-nxp-tja1145.c                      | 184 +++++++++++++++++++++
- 4 files changed, 281 insertions(+)
----
-base-commit: 29b4d8a7637f027b538787896bee520f2dacc904
-change-id: 20250726-tja1145-support-d6ccdc4d2da3
-
-Best regards,
--- 
-Dimitri Fedrau <dimitri.fedrau@liebherr.com>
-
-
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW01lZGl1bV0gSWYgc2V0dGluZyB0
+aGUgQ0FOIG9wZXJhdGluZyBtb2RlIGZhaWxzIGR1cmluZyBgdGphMTE0NV9waHlfcG93ZXJfb25g
+LCB0aGUgUEhZIGhhcmR3YXJlIGlzIGxlZnQgaW4gbm9ybWFsIG9wZXJhdGluZyBtb2RlIHdpdGhv
+dXQgcm9sbGluZyBiYWNrIHRvIHN0YW5kYnkgbW9kZS4KLS0KCmNvbW1pdCA0Yjk5OTM2MTU1MmZj
+NGFmMzU2ZmJmOWZiZDNiMWNhNWYyZGQ1OWJmCkF1dGhvcjogRGltaXRyaSBGZWRyYXUgPGRpbWl0
+cmkuZmVkcmF1QGxpZWJoZXJyLmNvbT4KCnBoeTogYWRkIGJhc2ljIHN1cHBvcnQgZm9yIE5YUHMg
+VEpBMTE0NSBDQU4gdHJhbnNjZWl2ZXIKClRoaXMgY29tbWl0IGFkZHMgYmFzaWMgZHJpdmVyIHN1
+cHBvcnQgZm9yIHRoZSBOWFAgVEpBMTE0NSBDQU4gdHJhbnNjZWl2ZXIuCkl0IGVuYWJsZXMgYnJp
+bmdpbmcgdGhlIFBIWSB1cCBvciBkb3duIGJ5IHN3aXRjaGluZyBiZXR3ZWVuIG5vcm1hbCBhbmQK
+c3RhbmRieSBtb2RlcyB1c2luZyBTUEkgY29tbWFuZHMuCgo+IGRpZmYgLS1naXQgYS9kcml2ZXJz
+L3BoeS9waHktbnhwLXRqYTExNDUuYyBiL2RyaXZlcnMvcGh5L3BoeS1ueHAtdGphMTE0NS5jCj4g
+bmV3IGZpbGUgbW9kZSAxMDA2NDQKPiBpbmRleCAwMDAwMDAwMDAwMDAwLi4xZThiZDE2OTc0M2Fi
+Cj4gLS0tIC9kZXYvbnVsbAo+ICsrKyBiL2RyaXZlcnMvcGh5L3BoeS1ueHAtdGphMTE0NS5jCgpb
+IC4uLiBdCgo+ICtzdGF0aWMgaW50IHRqYTExNDVfcGh5X3Bvd2VyX29uKHN0cnVjdCBwaHkgKnBo
+eSkKPiArewo+ICsJc3RydWN0IHJlZ21hcCAqbWFwID0gcGh5X2dldF9kcnZkYXRhKHBoeSk7Cj4g
+KwlpbnQgcmV0Owo+ICsKPiArCS8qCj4gKwkgKiBTd2l0Y2ggb3BlcmF0aW5nIG1vZGUgdG8gbm9y
+bWFsIHdoaWNoIGlzIHRoZSBhY3RpdmUgb3BlcmF0aW5nIG1vZGUuCj4gKwkgKiBJbiB0aGlzIG1v
+ZGUsIHRoZSBkZXZpY2UgaXMgZnVsbHkgb3BlcmF0aW9uYWwuCj4gKwkgKi8KPiArCXJldCA9IHJl
+Z21hcF91cGRhdGVfYml0cyhtYXAsIFRKQTExNDVfTU9ERV9DVFJMLCBUSkExMTQ1X01PREVfQ1RS
+TF9NQywKPiArCQkJCSBUSkExMTQ1X01PREVfQ1RSTF9OT1JNQUwpOwo+ICsJaWYgKHJldCkKPiAr
+CQlyZXR1cm4gcmV0Owo+ICsKPiArCS8qCj4gKwkgKiBTd2l0Y2ggdG8gQ0FOIG9wZXJhdGluZyBt
+b2RlIGFjdGl2ZSB3aGVyZSB0aGUgUEhZIGNhbiB0cmFuc21pdCBhbmQKPiArCSAqIHJlY2VpdmUg
+ZGF0YS4KPiArCSAqLwo+ICsJcmV0dXJuIHJlZ21hcF91cGRhdGVfYml0cyhtYXAsIFRKQTExNDVf
+Q0FOX0NUUkwsIFRKQTExNDVfQ0FOX0NUUkxfQ01DLAo+ICsJCQkJICBUSkExMTQ1X0NBTl9DVFJM
+X0FDVElWRSk7Cj4gK30KCltTZXZlcml0eTogTWVkaXVtXQpJZiB0aGUgc2Vjb25kIHJlZ21hcF91
+cGRhdGVfYml0cyBjYWxsIGZhaWxzIHRvIHNldCBUSkExMTQ1X0NBTl9DVFJMLCBkb2VzCnRoaXMg
+bGVhdmUgdGhlIGhhcmR3YXJlIGluIG5vcm1hbCBtb2RlIHdpdGhvdXQgcmV2ZXJ0aW5nIHRvIHN0
+YW5kYnk/CgpCZWNhdXNlIHRqYTExNDVfcGh5X3Bvd2VyX29uIHdvdWxkIHJldHVybiBhbiBlcnJv
+ciBoZXJlLCB0aGUgUEhZIGZyYW1ld29yawp3aWxsIG5vdCBjb25zaWRlciB0aGUgUEhZIHBvd2Vy
+ZWQgb24gYW5kIHdpbGwgbm90IGludm9rZQp0amExMTQ1X3BoeV9wb3dlcl9vZmYgbGF0ZXIuIENv
+dWxkIHRoaXMgcmVzdWx0IGluIHRoZSBoYXJkd2FyZSBiZWluZwpwZXJtYW5lbnRseSBsZWZ0IGlu
+IGEgaGlnaGVyLXBvd2VyIHN0YXRlPwoKU2hvdWxkIHRoZSBkcml2ZXIgaW50ZXJjZXB0IHRoaXMg
+ZXJyb3IgYW5kIGF0dGVtcHQgdG8gcm9sbCBiYWNrClRKQTExNDVfTU9ERV9DVFJMIHRvIFRKQTEx
+NDVfTU9ERV9DVFJMX1NUQlkgYmVmb3JlIHJldHVybmluZz8KCi0tIApTYXNoaWtvIEFJIHJldmll
+dyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAyNjA2MDItdGphMTE0NS1zdXBw
+b3J0LXY2LTAtMGUwZmZjOGVlNjNkQGxpZWJoZXJyLmNvbT9wYXJ0PTIKCi0tIApsaW51eC1waHkg
+bWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBzOi8vbGlzdHMu
+aW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
