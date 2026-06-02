@@ -4,61 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 35A0CCD6E55
-	for <linux-phy@archiver.kernel.org>; Mon,  1 Jun 2026 22:58:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E02DFCD6E55
+	for <linux-phy@archiver.kernel.org>; Tue,  2 Jun 2026 01:28:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/y1c1nu+2SGE3bpikD/6dGwlxIXMDJ/3keaNltn4pPg=; b=mDp86/8qOAJCnZ
-	0aG+44jsP5WEVVyxxVHmMsRMuf2XmXFZshHPxe35Lg+kZ9U3U+HuQtSdtYa52J9VkizY9QeExq2nq
-	sHL6uP9tYSAmS/DYomvz7C+vY+jnfaQKwvi6s6bp2umm5ThVCWo3uSg16JvEnzWM+8TVkMDTDu2/C
-	h8Nl1BCqbVxKL9cIL48epqmHDI4I7jPlL6+m7QMKn1ozN7GdanViG6kXZHlfWrEumo9w/c7kgGHyG
-	uX/PhMt47GnxeOKMFQoxYHyDAePjncfDNH7DEjTXc0IGjzsZ8jWedyU4N4MucZQXg7aRVGR7gwI85
-	uVkBzUMOLQSmzAxiN+gQ==;
+	List-Owner; bh=9mSUIclXagQVi/qMoehzCbxGnzqAngd6VNd/gw5qd1Y=; b=bOHlIOIu1jJ6Yk
+	bUvl8q6ejll6vH1D+5PeNvvFbzBupJWTZjYwJU2h3jsPDP94ipOpxjvWF4ngANoPe7FHF5MulepAT
+	xeyJJ1JQzqd5gnYITyGd6IQCN7I/rrVKaH+Djkylh9iGDmp881YEBXnRFDTPztcgLGfSnAh0W3tlT
+	MVqKdSlUPhn+gWmR0vteiDd8jIoDeKE2tGcuaLjjPRn4UJaUo413uu1YNIsfaqEqfq3/6KdmynDtp
+	iJtUxUayLIqtm9y57Wa/FBdiGJYdCTvUU0Okc3ZblCn7YFZFdDqXghiBeM4MZOGm8I0/XfA9BRDoU
+	a6fSZ47a7sDbdejH7IOQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUBaD-0000000C1rK-3KNf;
-	Mon, 01 Jun 2026 22:58:09 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wUDw1-0000000C9GV-0HB3;
+	Tue, 02 Jun 2026 01:28:49 +0000
+Received: from mail-m128144.netease.com ([103.209.128.144])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUBaB-0000000C1qz-1pob
-	for linux-phy@lists.infradead.org;
-	Mon, 01 Jun 2026 22:58:08 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id A9F1143401;
-	Mon,  1 Jun 2026 22:58:06 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 571081F00893;
-	Mon,  1 Jun 2026 22:58:06 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1780354686;
-	bh=MzlIrZ2xitOElGGvcFl7v9dFMNgCf3mriv86YlPvr/U=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=PsSONfve6OOJYc+tFMyWBx8YeL/z8+OtDwdrC2ic3L9RzBOfRQJYP5R2EU7cQkTvU
-	 hcTSdNRgJWGay4ighXmn52Jv3RUOnifIMCvXDROjbR3eHmnCQpTDcuurLP3ARPN1Ft
-	 p4jPWvakR1AVlNhZ1IkZyg/wj1JPf9Xe23A5piS8pgg5bQXeIyVH+Q7IOY6os+aw/y
-	 I8MTU0bKrUXu+xGf3NiSSanr0vfgnWcGxOqAukOqpGDmquKLvXk35EBRZY85xcBJnV
-	 teMxLYCmGKhC/uoA2j7M9TGW8xaXRMSCqtaX/YCWIyZqYvpvSG6jUBj9kwuZPKnH/i
-	 tR14u2DAzwWCA==
-Date: Mon, 1 Jun 2026 17:58:05 -0500
-From: Rob Herring <robh@kernel.org>
-To: Caleb James DeLisle <cjd@cjdns.fr>
-Cc: linux-mips@vger.kernel.org, vkoul@kernel.org, neil.armstrong@linaro.org,
-	krzk+dt@kernel.org, conor+dt@kernel.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 1/2] dt-bindings: phy: econet: Document EN751221 USB PHY
-Message-ID: <20260601225805.GA129257-robh@kernel.org>
-References: <20260518141343.401555-1-cjd@cjdns.fr>
- <20260518141343.401555-2-cjd@cjdns.fr>
+	id 1wUDvx-0000000C9Fp-0MB1;
+	Tue, 02 Jun 2026 01:28:47 +0000
+Received: from [172.16.12.90] (unknown [61.154.14.86])
+	by smtp.qiye.163.com (Hmail) with ESMTP id 40ab83ee7;
+	Tue, 2 Jun 2026 09:28:33 +0800 (GMT+08:00)
+Message-ID: <bee9fdba-536f-4296-a9be-db35ab8d4172@rock-chips.com>
+Date: Tue, 2 Jun 2026 09:28:32 +0800
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260518141343.401555-2-cjd@cjdns.fr>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 1/5] drm/bridge: Implement generic USB Type-C DP HPD
+ bridge
+To: Sebastian Reichel <sebastian.reichel@collabora.com>
+Cc: Andrzej Hajda <andrzej.hajda@intel.com>,
+ Neil Armstrong <neil.armstrong@linaro.org>, Robert Foss <rfoss@kernel.org>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@gmail.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
+ David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+ Sandy Huang <hjc@rock-chips.com>, =?UTF-8?Q?Heiko_St=C3=BCbner?=
+ <heiko@sntech.de>, Andy Yan <andy.yan@rock-chips.com>,
+ Vinod Koul <vkoul@kernel.org>,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+ Luca Ceresoli <luca.ceresoli@bootlin.com>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, linux-phy@lists.infradead.org
+References: <20260521032854.103-1-kernel@airkyi.com>
+ <20260521032854.103-2-kernel@airkyi.com> <ah3-auKugGCVojOp@venus>
+Content-Language: en-US
+From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+In-Reply-To: <ah3-auKugGCVojOp@venus>
+X-HM-Tid: 0a9e85f25b4c03a7kunm8d21327629bc6f
+X-HM-MType: 1
+X-HM-Spam-Status: e1kfGhgUHx5ZQUpXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
+	tZV1koWUFITzdXWRgWCB1ZQUpXWS1ZQUlXWQ8JGhUIEh9ZQVkZGRkaVk5KSElOSk9OTk1NS1YVFA
+	kWGhdVEwETFhoSFyQUDg9ZV1kYEgtZQVlNSlVKTk9VSk9VQ01ZV1kWGg8SFR0UWUFZT0tIVUpLSE
+	pKQk1VSktLVUpCWQY+
+DKIM-Signature: a=rsa-sha256;
+	b=R5sU8Xowx13A7b3tEpXEjh68l/6BcGouqkVH9cIcjydpMUe+bcLLnLBhrYB8NITiM2QDaYlcz8cbGbRu8/aEwYC4JinvABAmYkGevvUGt6KfDj8+JwsYZv/3TqtkLPaMIIVZ0S1pykGEATLAaBZHyX6+H1q3JDt8ZFS/sOK4O3o=; c=relaxed/relaxed; s=default; d=rock-chips.com; v=1;
+	bh=gvBTxmnkMtYSMLhCFymsQ41jj4G+NLVy+qkjJoW9Up0=;
+	h=date:mime-version:subject:message-id:from;
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260601_155807_542014_416B8E00 
-X-CRM114-Status: GOOD (  19.18  )
+X-CRM114-CacheID: sfid-20260601_182845_715212_64E0D7F1 
+X-CRM114-Status: GOOD (  28.24  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,101 +85,138 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Mon, May 18, 2026 at 02:13:42PM +0000, Caleb James DeLisle wrote:
-> Document the USB PHY devices which appear in EcoNet EN751221, EN751627,
-> and EN7528 based SoCs.
+Hi Sebastian,
+
+On 6/2/2026 6:08 AM, Sebastian Reichel wrote:
+> Hi,
 > 
-> Signed-off-by: Caleb James DeLisle <cjd@cjdns.fr>
-> ---
->  .../bindings/phy/econet,en751221-usb-phy.yaml | 128 ++++++++++++++++++
->  MAINTAINERS                                   |   6 +
->  2 files changed, 134 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/phy/econet,en751221-usb-phy.yaml
+> On Thu, May 21, 2026 at 11:28:50AM +0800, Chaoyi Chen wrote:
+>> From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+>>
+>> The HPD function of Type-C DP is implemented through
+>> drm_connector_oob_hotplug_event(). For embedded DP, it is required
+>> that the DRM connector fwnode corresponds to the Type-C port fwnode.
+>>
+>> To describe the relationship between the DP controller and the Type-C
+>> port device, we usually using drm_bridge to build a bridge chain.
+>>
+>> Now several USB-C controller drivers have already implemented the DP
+>> HPD bridge function provided by aux-hpd-bridge.c, it will build a DP
+>> HPD bridge on USB-C connector port device.
+>>
+>> But this requires the USB-C controller driver to manually register the
+>> HPD bridge. If the driver does not implement this feature, the bridge
+>> will not be create.
+>>
+>> So this patch implements a generic DP HPD bridge based on
+>> aux-hpd-bridge.c. It will monitor Type-C bus events, and when a
+>> Type-C port device containing the DP svid is registered, it will
+>> create an HPD bridge for it without the need for the USB-C controller
+>> driver to implement it.
+>>
+>> Signed-off-by: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+>> Reviewed-by: Heikki Krogerus <heikki.krogerus@linux.intel.com>
+>> ---
+>>  drivers/gpu/drm/bridge/Kconfig                | 10 ++++
+>>  drivers/gpu/drm/bridge/Makefile               |  1 +
+>>  .../gpu/drm/bridge/aux-hpd-typec-dp-bridge.c  | 49 +++++++++++++++++++
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/econet,en751221-usb-phy.yaml b/Documentation/devicetree/bindings/phy/econet,en751221-usb-phy.yaml
-> new file mode 100644
-> index 000000000000..a44f59601747
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/econet,en751221-usb-phy.yaml
-> @@ -0,0 +1,128 @@
-> +# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
-> +# Copyright (C) 2024 EcoNet
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/phy/econet,en751221-usb-phy.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: EcoNet EN751221 USB PHY
-> +
-> +maintainers:
-> +  - Caleb James DeLisle <cjd@cjdns.fr>
-> +
-> +description: |
+> Doesn't this require removing the manual registration of the HPD
+> auxillary bridge in the USB-C controller drivers to avoid that
+> two bridges are registered for them?
+> 
 
-Don't need '|' unless there is formatting to preserve.
+I believe this will not affect existing controller drivers,
+as they call drm_bridge_attach during registration. Of course,
+while it won't affect the main bridge chain, you'll still see
+an additional HPD bridge.
 
-> +  USB PHY controller found on EcoNet EN751221 SoCs as well as on EN751627 and
-> +  EN7528. These devices generally have two ports, one of which is a USB 3.0,
-> +  and the other is USB 2.0. The USB 3.0 port is driven by one of two PHY
-> +  blocks, depending on whether the connected device has negotiated USB 3.0 or
-> +  2.0. These PHYs are also used on other EcoNet silicon in varying
-> +  configurations, such as only port 0 (the USB 3.0 port), or only port 1 (the
-> +  USB 2.0 port).
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - econet,en751221-usb-phy
-> +      - econet,en751627-usb-phy
-> +      - econet,en7528-usb-phy
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  "#address-cells": true
-> +  "#size-cells": true
-> +  ranges: true
-> +
-> +  clocks:
-> +    maxItems: 1
-> +    description: |
-> +      Crystal oscillator clock source. EcoNet devices run at either 20Mhz or
-> +      25Mhz. 25Mhz devices require additional tuning in the USB 3.0 PHY.
-> +
-> +  clock-names:
-> +    items:
-> +      - const: xtal
-> +
-> +patternProperties:
-> +  "^usb-phy@[0-9a-f]+$":
-> +    type: object
-> +    description: USB 2.0 or 3.0 PHY sub-node.
-> +
-> +    properties:
-> +      compatible:
-> +        enum:
-> +          - econet,usb2-phy
-> +          - econet,usb3-phy
-> +
-> +      reg:
-> +        maxItems: 1
-> +
-> +      resets:
-> +        maxItems: 1
-> +
-> +      econet,usb-port-id:
-> +        $ref: /schemas/types.yaml#/definitions/uint32
-> +        enum: [0, 1]
-> +        description: |
-> +          Physical port number. Since USB 3.0 requires a second PHY for the 2.0
-> +          fallback, multiple PHYs can map to the same physical port.
+>>  3 files changed, 60 insertions(+)
+>>  create mode 100644 drivers/gpu/drm/bridge/aux-hpd-typec-dp-bridge.c
+>>
+>> diff --git a/drivers/gpu/drm/bridge/Kconfig b/drivers/gpu/drm/bridge/Kconfig
+>> index c3209b0f4678..d92e93875793 100644
+>> --- a/drivers/gpu/drm/bridge/Kconfig
+>> +++ b/drivers/gpu/drm/bridge/Kconfig
+>> @@ -30,6 +30,16 @@ config DRM_AUX_HPD_BRIDGE
+>>  	  Simple bridge that terminates the bridge chain and provides HPD
+>>  	  support.
+>>  
+>> +if DRM_AUX_HPD_BRIDGE
+>> +config DRM_AUX_HPD_TYPEC_BRIDGE
+>> +	tristate
+>> +	depends on TYPEC || !TYPEC
+>> +	default TYPEC
+>> +	help
+>> +	  Simple bridge that terminates the bridge chain and provides HPD
+>> +	  support. It build bridge on each USB-C connector device node.
+>> +endif
+>> +
+>>  menu "Display Interface Bridges"
+>>  	depends on DRM && DRM_BRIDGE
+>>  
+>> diff --git a/drivers/gpu/drm/bridge/Makefile b/drivers/gpu/drm/bridge/Makefile
+>> index beab5b695a6e..c4761526ba0a 100644
+>> --- a/drivers/gpu/drm/bridge/Makefile
+>> +++ b/drivers/gpu/drm/bridge/Makefile
+>> @@ -1,6 +1,7 @@
+>>  # SPDX-License-Identifier: GPL-2.0
+>>  obj-$(CONFIG_DRM_AUX_BRIDGE) += aux-bridge.o
+>>  obj-$(CONFIG_DRM_AUX_HPD_BRIDGE) += aux-hpd-bridge.o
+>> +obj-$(CONFIG_DRM_AUX_HPD_TYPEC_BRIDGE) += aux-hpd-typec-dp-bridge.o
+>>  obj-$(CONFIG_DRM_CHIPONE_ICN6211) += chipone-icn6211.o
+>>  obj-$(CONFIG_DRM_CHRONTEL_CH7033) += chrontel-ch7033.o
+>>  obj-$(CONFIG_DRM_CROS_EC_ANX7688) += cros-ec-anx7688.o
+>> diff --git a/drivers/gpu/drm/bridge/aux-hpd-typec-dp-bridge.c b/drivers/gpu/drm/bridge/aux-hpd-typec-dp-bridge.c
+>> new file mode 100644
+>> index 000000000000..d915e0fb0668
+>> --- /dev/null
+>> +++ b/drivers/gpu/drm/bridge/aux-hpd-typec-dp-bridge.c
+>> @@ -0,0 +1,49 @@
+>> +// SPDX-License-Identifier: GPL-2.0+
+>> +#include <linux/of.h>
+>> +#include <linux/usb/typec_altmode.h>
+>> +#include <linux/usb/typec_dp.h>
+>> +
+>> +#include <drm/bridge/aux-bridge.h>
+>> +
+>> +static int drm_typec_bus_event(struct notifier_block *nb,
+>> +			       unsigned long action, void *data)
+>> +{
+>> +	struct device *dev = (struct device *)data;
+>> +	struct typec_altmode *alt = to_typec_altmode(dev);
+>> +
+>> +	if (action != BUS_NOTIFY_ADD_DEVICE)
+>> +		goto done;
+>> +
+>> +	/*
+>> +	 * alt->dev.parent->parent : USB-C controller device
+>> +	 * alt->dev.parent         : USB-C connector device
+>> +	 */
+>> +	if (is_typec_port_altmode(&alt->dev) && alt->svid == USB_TYPEC_DP_SID)
+>> +		drm_dp_hpd_bridge_register(alt->dev.parent->parent,
+>> +					   to_of_node(alt->dev.parent->fwnode));
+> 
+> IIUIC this is called when the USB-C controller spawns a sub-device
+> for the DP AltMode and then registers a HPD bridge to the USB-C
+> controller itself. Wouldn't that register new HPD bridges on every
+> USB-C replug?
+> 
+> Also doesn't this result in the bridge not being registered when
+> nothing is plugged and thus the DRM pipeline not being able to bind
+> properly?
+>
 
-What is special about this platform needing this property. Lots of 
-platforms have 2 phys for USB 2.0 and 3.0 yet don't need a property 
-like this. Can't you figure out which phys are the same USB port by the 
-USB controller 'phys' property which would define that?
+That's a good question. The port altmode device here is only registered
+once during initialization. While the parnter altmode device will
+register and unregister during the plugging and unplugging process.
+So you don't need to worry about that :)
 
-Rob
+https://lore.kernel.org/all/4fddba9a-b073-4bca-bd13-64a415f4bc47@rock-chips.com/
+
+-- 
+Best, 
+Chaoyi
 
 -- 
 linux-phy mailing list
