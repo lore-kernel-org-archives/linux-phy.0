@@ -4,133 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D15A2CD6E55
-	for <linux-phy@archiver.kernel.org>; Wed,  3 Jun 2026 15:39:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5DC72CD6E57
+	for <linux-phy@archiver.kernel.org>; Wed,  3 Jun 2026 15:50:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gtYGnHducGu6pBIo3ojyPTt4vCOXvrKslyQ2Z+saT+g=; b=pL+PhYVNjt73/C
-	m+EC/Wfc+Bq4TDQwen+yrI3GU0sRqxHQFhK2f8u9VRiiY454r4710z/zDs5uzHgw7rZug5EFMJadj
-	BgX479SRhVWdWAV9qndDt7F4VognL+VVzkpXzHSdu4cGFkYncwUVBNiJ4h8mlUmuY9f9xfpK68xID
-	jBQi38Y9yLidgtKISIOj69wKQN6TOeaturL6x6rq6BRkqlomHqIfd1KSpYZi1nPrV/kgeUyTA4N27
-	YP45ctIrOyG3PJtPOBNsYM016GuVetXiHm9+2TwsmOs+rXu2kbUnaIruHlqYptFZaj7iDEzY2IZD0
-	rBu11Op+Ss7PYjtQIFIA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=xP0Xs/xa/uUOjpJvtEbE14yI9sv9CduGI56N4Pcu7EA=; b=UoilB72jzxlvW1EV5WKU18CLiB
+	LR1oNsFfZW4uJe7476FKUwhQbBh0QDgA1Ut7GlYcx3nn52z60y8ksbF05Bc5/ccR2vg8WVdWTr4wy
+	I4QD1Iimk0tjtsHRDzNlpRu6wdER6D3gEpFG6uZcJwHz0OmwN4hxOrda6Mz4VVLRoAMXxFXWTfPjP
+	LjX12cfqIq9URmpJCm05gd9U5OUKIpXcfFx7IKu2OV5ZLXqNtexeT6wF5Xc3nROXR+S5hx6gp60Mh
+	k5jww3BulhwUiIGupdU++i18SGX+oo121wrhY5fSwUDvKPk7+x8hPYuN8ws8om6536dpPk2Fd4+WP
+	y8bpo2Lw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUngi-0000000FR4I-1xqO;
-	Wed, 03 Jun 2026 15:39:24 +0000
-Received: from mail-northeuropeazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c200::3] helo=DU2PR03CU002.outbound.protection.outlook.com)
+	id 1wUnri-0000000FT3D-01pR;
+	Wed, 03 Jun 2026 15:50:46 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUngg-0000000FR3v-1R3v
+	id 1wUnrg-0000000FT37-2rha
 	for linux-phy@lists.infradead.org;
-	Wed, 03 Jun 2026 15:39:23 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=Mw4cDXucABn+tyYN8lFq9GwLymA8k75jWrlgb0E0jGPKwJ3lfzyl+Bb16vLlByE7EdAoiErXNkMMET6IgkzV0ZZ/eL40Ag8IKvlzchp5SR41665S5anoqg8eGCdSGTWVSu/GRNWxi+mtCdmxx45joO0S+l+Iht08IdZwSR4kABSrJRfTXoS0Hg5XcPS+MzeBJrCUlpjQzdUpLPLv5h4mSfmhgHpUHP4YJIKQ1V0iytgECKdej4Hc6UbOSEPYyVS3YD70MxIFmvoGsihynWS90Pv+fSzMFx3weOcuZ778EZVAlHgBATi4y5e9kZfbXaQzVogCcDZkAwEhJewXBHRKCg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=e7IPPsT4Lpp0di1P7vUIdJttHZ8MYTEang9bcET5PdI=;
- b=C6WPFd8Efz99y4/B3IVOcfSVzJMalLQfTNZ5okvhApB/3tU5RLfLRXvjb0JrpBSgVj9jCj+L1EEQgh8FXk/dyNKzJtZeMrV6i2Q44fY4im1MbWxTBj8baF9UUDNIxvfvGt1QRDwEZHSnkP8Sr0roCOGRDGNb8s8CCS23zClxnT6YJ49kkPc431WDiWHYZAzCl8JKuy4Gmq/VXAgXnItZYt2gAuvlJ5+wdJ+TjbbmReD33ewqnnU2vsp2U5gV6+rttMpHL1z1vrUUh5gLTx//h3mR109UMPGpvOHHsuwTdww1pFnIXjKxlxJBpJN/EX5etOb0xbRA8B3kmWX3OLOsog==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=e7IPPsT4Lpp0di1P7vUIdJttHZ8MYTEang9bcET5PdI=;
- b=csD3ulTakzcVhXvHSN3LnwciENOirRTxRkQO1l4telJcya6JJxLW0atGTs5enAR0tTaukVFdQIufzh3UjmZQJKqY1J455fSz4CTMVz0CapO8D/McPLMnyXXCMZiUU/f3RQklom5cDR21z4Jp1qU7NTAgjxnwHX8ur5pWcdGxMLX4JsLS7UGSiAC5H+nZElKOtpoCK8/TEzU3TicJpUF2owZKUfqBDG9eOmK+MqKaN8J6y5E7jlZ4ik6B0TogUO/QJtw810ln82eZJrhY8D9qkf18Oc9a4V3WAvj2kDUWSoBmc384jBCxjCvzCV9/lC3QdmS3reV59tvrwgYCj9koLQ==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from AM0PR04MB6900.eurprd04.prod.outlook.com (2603:10a6:208:17d::10)
- by DB9PR04MB8480.eurprd04.prod.outlook.com (2603:10a6:10:2c6::20) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.48.20; Wed, 3 Jun 2026
- 15:39:09 +0000
-Received: from AM0PR04MB6900.eurprd04.prod.outlook.com
- ([fe80::7fda:8431:ca1b:b023]) by AM0PR04MB6900.eurprd04.prod.outlook.com
- ([fe80::7fda:8431:ca1b:b023%5]) with mapi id 15.21.0092.006; Wed, 3 Jun 2026
- 15:39:09 +0000
-Date: Wed, 3 Jun 2026 18:39:05 +0300
-From: Vladimir Oltean <vladimir.oltean@nxp.com>
-To: Conor Dooley <conor@kernel.org>
-Cc: linux-phy@lists.infradead.org, Ioana Ciornei <ioana.ciornei@nxp.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Tanjeff Moos <tanjeff.moos@westermo.com>,
-	linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
-	Conor Dooley <conor+dt@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v2 phy-next 13/15] dt-bindings: phy: lynx-10g: initial
+	Wed, 03 Jun 2026 15:50:44 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 65FD660126;
+	Wed,  3 Jun 2026 15:50:43 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 54BA71F00898;
+	Wed,  3 Jun 2026 15:50:41 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1780501843;
+	bh=vCs9UAIkiodhsbZ/odVVdbmcYh4cByi63umqI9snLoM=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=nhLlZQBHzf12m7nTEXBM2ed1IJWgFkuHT6XsTb2EEF94DiMUraBF0RSjS3ZRFYGgg
+	 DBLOBnqpwD8g/FEHx8gUU/EmZt5VzMU/nbBRK0EXknBFzJkDKsV1hfb/dtCXs565Xa
+	 5cXNJt6LTFfvtsOw6jSiwWYV67aM0W8TmseM2qV1YfFAOwb6rGMzHmwwmufiezLYyQ
+	 rVNPrwkPcJVBhPSv+khVbCXkrUP+UyroIEVQK/bUCmaXMQmdx6om5zwT23WM/9cGau
+	 ZTAFvqecZxFX+yTGIP+wbKnMvE4T26OZqD65V+anK22Kt17sctqriFtNv+Tn/+tshX
+	 MKcT+iVc002/g==
+Date: Wed, 3 Jun 2026 16:50:39 +0100
+From: Conor Dooley <conor@kernel.org>
+To: Vladimir Oltean <vladimir.oltean@nxp.com>
+Cc: sashiko-reviews@lists.linux.dev, robh@kernel.org, vkoul@kernel.org,
+	neil.armstrong@linaro.org, conor+dt@kernel.org,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	olteanv@gmail.com
+Subject: Re: [PATCH v3 phy-next 14/16] dt-bindings: phy: lynx-10g: initial
  document
-Message-ID: <20260603153905.64vkypfsjfjjohva@skbuf>
-References: <20260529171509.1163787-1-vladimir.oltean@nxp.com>
- <20260529171509.1163787-14-vladimir.oltean@nxp.com>
- <20260602-reviving-aging-a7d066d2448b@spud>
- <20260603115654.k4v7cayysvy7yte4@skbuf>
- <20260603-bleach-arming-247f1b0fb87b@spud>
-Content-Disposition: inline
-In-Reply-To: <20260603-bleach-arming-247f1b0fb87b@spud>
-X-ClientProxiedBy: WA1P291CA0018.POLP291.PROD.OUTLOOK.COM
- (2603:10a6:1d0:19::25) To AM0PR04MB6900.eurprd04.prod.outlook.com
- (2603:10a6:208:17d::10)
+Message-ID: <20260603-numerate-unbundle-ef259832006d@spud>
+References: <20260603132059.503527-1-vladimir.oltean@nxp.com>
+ <20260603133350.9FA271F00893@smtp.kernel.org>
+ <20260603133825.l544tnmtn2pqfrzh@skbuf>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AM0PR04MB6900:EE_|DB9PR04MB8480:EE_
-X-MS-Office365-Filtering-Correlation-Id: e39a9b1a-b103-4958-a256-08dec18640d1
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|10070799003|376014|7416014|366016|1800799024|18002099003|22082099003|11063799006|3023799007|6133799003|4143699003|56012099006;
-X-Microsoft-Antispam-Message-Info: U6QyAvdOu+Hu2jcgjgZnzbMkoDU3RfacJKelh5dyAQcymBV7aNjiwvO9FlIB9XDHHUcy/kt+zV3mYdSXaFIjWM6WveieVHWuGPAm8WQy2/R9/BWC4YdoJeCYNkvhhSzcAKpMxqQF/5KxE4pfnx6imouVih8w7hePp22SsmXzY7BZjr4Z614H61qLNA84MELsEReUCgvj+xsjZZDYSYwISWhlspVKL5No5i55mXtbhS9vxi7qKneIAmQGDwDyXHiCn5cozPcPlAyi0XscVwhEcx1GMdRURFs203mbY0mDe9Ziq1UXRQdICXvqi/Z+KZKfEbtHP7YKHz79GtcyQciDjUq7+dcEpwqodC3ZTsO63fzpvCh3xFJ9p4dLUiW65zc6m7u8mQXEFy/LRHgr6hhvDM6Kd1ghEQjOAeY7GUZmDvK6X3xYrGn9TBZl4gDYDiRRf0UtzskjF/2VhXLTv5wrn/YgbzJO/aH/bZqEsSnxyko/V4i9DUQrL3eQ8c7XQdbgGopwjK6S47sR0l8mqIV9xFEcIlWnemeJdT4dpQeo+Bha1kRv9uU8637btZMU1smRTsOH9Trsr/QshcWoH8TBkrcmLVyvqelZ7VhJdpiyVBu1dNEPwBT4pa8iIjxZsPBQJj6GnVxHr+z61TMJ/6/Gog==
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR04MB6900.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(10070799003)(376014)(7416014)(366016)(1800799024)(18002099003)(22082099003)(11063799006)(3023799007)(6133799003)(4143699003)(56012099006);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 2
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?UE6+u61H6MIS0eWyxUGwwe9Rv9pF3vmajqrVfDLeaZxu2hPrUSax8YV9Detb?=
- =?us-ascii?Q?ojVGBDuocUZecd/qCApi5QoKNynWeL+ziJZpOZQ6/GjDhJiGYhUppJX3uPXY?=
- =?us-ascii?Q?WYZzSIcfhpXA1HKWGga0CkJEf3I/ryWJ4rxH1Wi/R/OW7J5piF7xuBKLFEVZ?=
- =?us-ascii?Q?/aHSObBtQiddNxUsl8Rqlo7VZKrLlt5m1jR6W4Zr/VJ2MR/xcMS3eyRaHmSf?=
- =?us-ascii?Q?wyXM4H3PhRrS+CKlt9PTkUoaC9DTw7D1FefeJv5ExVUzgW+JvDkaQli5GalY?=
- =?us-ascii?Q?iO4SV3/79yRCP7NbCVPYeN9L4VI7TopqOxQKKh5awxsc71uOaBWgy7tlhV14?=
- =?us-ascii?Q?mte9hSoGRhjMR1ZcBygqwKl8CfqEZWHfhcsj0KHcB+qvA+kTSE+/gHQ0RZRO?=
- =?us-ascii?Q?Hrnqhbo+XJbYuBYZb80UHwA6z3zsmzsMM4bHOgPYR9gtverThKkq0QX1KVde?=
- =?us-ascii?Q?85csrDvNSfzyjVJHoV9NBu6EXaaoIbpYevq6QskiCmIo3pT8E1jYC8xZ0Gda?=
- =?us-ascii?Q?FffCvTpFYbYvan+OeuhPbNvBcHsv5JDTpKCVejbzXY3nhuhN6rQtyme4ndH/?=
- =?us-ascii?Q?EujJctsXacz11GbkoeBeJWb9zOdRlKZajaXi3nrRPSnHuTx8SaiXaZNpCrZW?=
- =?us-ascii?Q?TYekOWnNCmCwIbV4S9CZOEOP/AY3NOidUI4d0laVe8xHX15oW/AtwhkYzWGA?=
- =?us-ascii?Q?NYXBn5Ri6GQD54ym4fCvQak0o0dI7Th/0JWpwRbul2giUqWUjQjr+sbpobSW?=
- =?us-ascii?Q?mvO8ROyQk2T8tPMNERihCfv7rSDSg/1eExnOTMCCRcCEIkY6IAQNw6fZj9K5?=
- =?us-ascii?Q?fzo0Nv5hg+n3srVJnXihfmEMsljC0pKXKkP+4zykxqTWoSAin7xXtGI3abeO?=
- =?us-ascii?Q?4LzGycP0POVYDycED04jZ1000AJ/gAPO5jL0jZKZBEa//kNZFfigo9sXJJgQ?=
- =?us-ascii?Q?7eacEBNNB4mHwe2NW2tDdI8PM6TmVnxIq/jQF+uUmqF6HSAXaUUIUTexxtLd?=
- =?us-ascii?Q?fxZIs+RprYqsMrOsmjlNwOK9GNhAaRtr0NNNgJT0lbA2ZM8WN/eIDOT4w2Fd?=
- =?us-ascii?Q?iDXrxAbUKwXYwjPv0LuGbfL73lVM8gNdL1wMBlsgFed+6+ryPHk6h5SdhQkH?=
- =?us-ascii?Q?xPxEX9lwjJrM7PFaS4JzcCJXBHmUsP/9bKvXUNAdOAU9ZvfkBA3UD3+Pfzcp?=
- =?us-ascii?Q?7nbRW6prw6wWGrx2rlhlhtOdcQaE6453f4sFAialmg0d4QYvFXQE+tVjO1pT?=
- =?us-ascii?Q?TOnqr6C5FgCI141mL5CWPOQLnaIQ6vvPKKhS3c9KgDkCMayF48rl7aMxkmkL?=
- =?us-ascii?Q?Bxk1yMiFSM+N+Lsf1oUz1YcSWX/zC8QDeDq8fmtXfPAZiQjwvBfwtMZSCOPh?=
- =?us-ascii?Q?W7RaKmmkzfmCu3sA/x5UeqqYSfvuDJ/0klTdFtZZiTOykIDLOlzTVw98JaE7?=
- =?us-ascii?Q?WOSUtNz6gHy3uDo2y8YAx5tySg2IaqZOslgSTeECItO39IVOn/7TuBLnk22L?=
- =?us-ascii?Q?KagDHBXmqUGC+T2XW2mjswThbxS8/eD008AOJqMGRhygBW0pEGrj1yfw/5Bc?=
- =?us-ascii?Q?+Pwp51S+C+Lff8/dWtqMWwa7dGs6X4V4tcwSqdsP/GAwhQ6JQGgRZgJuHc36?=
- =?us-ascii?Q?hFnZqZLbPXItmfc0/bispifoxmcOfd+yCs0BjC3Nls821s1tJoWh+kxVOcyS?=
- =?us-ascii?Q?ZLqXpHZ//tSk3BzxlX5xoXufQqfmbG7jFVW5L1TZXWreIHUIOoX+VjxsUcpE?=
- =?us-ascii?Q?//IkCEbf4Cpm28fefgCMhg/Eiyz+ejTIyc/mKB8A1N/x3wtv56e76m7jdbHn?=
-X-MS-Exchange-AntiSpam-MessageData-1: hDwdDOisyeCL6Eo1MuDN9oRB1XbPcCu7oxY=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: e39a9b1a-b103-4958-a256-08dec18640d1
-X-MS-Exchange-CrossTenant-AuthSource: AM0PR04MB6900.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Jun 2026 15:39:09.2259
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: B4CtjOGS9ypQo1NKeBMaD9lXQ4nwlYnvRIVZHtFEnsDWk8aytMuB0Jdu3xFOu+MK38AUcMitUWn3EEnTOQKTMw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB9PR04MB8480
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260603_083922_382692_89B53721 
-X-CRM114-Status: GOOD (  33.97  )
+In-Reply-To: <20260603133825.l544tnmtn2pqfrzh@skbuf>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -142,109 +68,117 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============8768222549758253812=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jun 03, 2026 at 04:09:32PM +0100, Conor Dooley wrote:
-> On Wed, Jun 03, 2026 at 02:56:54PM +0300, Vladimir Oltean wrote:
-> > On Tue, Jun 02, 2026 at 06:10:30PM +0100, Conor Dooley wrote:
-> > > On Fri, May 29, 2026 at 08:15:07PM +0300, Vladimir Oltean wrote:
-> > > > Add a schema for the 10G Lynx SerDes. This is very similar to the modern
-> > > > form of the 28G Lynx SerDes, which is very much the intention.
-> > > > 
-> > > > We allow both forms of #phy-cells = <1> in the top-level provider
-> > > > and #phy-cells = <0> in the per-lane provider for more flexibility to
-> > > > consumers, and because the kernel code is shared with the 28G Lynx which
-> > > > already has that support for compatibility reasons.
-> > > > 
-> > > > Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
-> > > > ---
-> > > > Cc: devicetree@vger.kernel.org
-> > > > Cc: Conor Dooley <conor+dt@kernel.org>
-> > > > Cc: Krzysztof Kozlowski <krzk+dt@kernel.org>
-> > > > Cc: Rob Herring <robh@kernel.org>
-> > > > 
-> > > > v1->v2:
-> > > > - move patch later in series, right before driver
-> > > > - deliberately ignoring this Sashiko feedback:
-> > > >   https://lore.kernel.org/linux-phy/20260529125017.ifqunh52gdzhthdg@skbuf/
-> > > > ---
-> > > >  .../devicetree/bindings/phy/fsl,lynx-10g.yaml | 131 ++++++++++++++++++
-> > > >  1 file changed, 131 insertions(+)
-> > > >  create mode 100644 Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml
-> > > > 
-> > > > diff --git a/Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml b/Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml
-> > > > new file mode 100644
-> > > > index 000000000000..993f076bba4e
-> > > > --- /dev/null
-> > > > +++ b/Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml
-> > > > @@ -0,0 +1,131 @@
-> > > > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> > > > +%YAML 1.2
-> > > > +---
-> > > > +$id: http://devicetree.org/schemas/phy/fsl,lynx-10g.yaml#
-> > > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > > > +
-> > > > +title: Freescale Lynx 10G SerDes PHY
-> > > > +
-> > > > +maintainers:
-> > > > +  - Vladimir Oltean <vladimir.oltean@nxp.com>
-> > > > +
-> > > > +description:
-> > > > +  The 10G Lynx is a multi-protocol SerDes block which handles networking, PCIe,
-> > > > +  SATA and other high-speed interfaces. It is present on most QorIQ and
-> > > > +  Layerscape SoCs. The register map is common, but the integration is
-> > > > +  SoC-specific, with the differences consisting in register endianness, the
-> > > > +  number of lanes, protocol converters available per lane and their location in
-> > > > +  the PCCR registers. Some SoCs have multiple SerDes blocks and those differ in
-> > > > +  their protocol capabilities per lane.
-> > > > +
-> > > > +properties:
-> > > > +  compatible:
-> > > > +    description:
-> > > > +      There is intentionally no generic fsl,lynx-10g compatible string due to
-> > > > +      the hardware inability to report its capabilities, despite having a
-> > > > +      common register map.
-> > > 
-> > > I think you can probably drop this from the diff, and put it in the
-> > > commit message.
-> > 
-> > Ok.
-> > 
-> > > > +    enum:
-> > > > +      - fsl,ls1028a-serdes
-> > > > +      - fsl,ls1046a-serdes1
-> > > > +      - fsl,ls1046a-serdes2
-> > > > +      - fsl,ls1088a-serdes1
-> > > > +      - fsl,ls1088a-serdes2
-> > > > +      - fsl,ls2088a-serdes1
-> > > > +      - fsl,ls2088a-serdes2
-> > > > +
-> > > > +  reg:
-> > > > +    maxItems: 1
-> > > > +
-> > > > +  big-endian: true
-> > > 
-> > > This isn't a required property, but should it be made required for the
-> > > specific compatibles that are big endian? Or are we not that lucky, and
-> > > devices can be either?
-> > 
-> > I can make big-endian a required property for fsl,ls1046a-serdes1 and
-> > fsl,ls1046a-serdes2.
-> 
-> 
-> Please do. In that case,
-> pw-bot: changes-requested
-> 
-> Cheers,
-> Conor.
 
-I've already sent v3:
-https://lore.kernel.org/linux-phy/20260603132059.503527-1-vladimir.oltean@nxp.com/
+--===============8768222549758253812==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="29efmMoE7cLoxf6X"
+Content-Disposition: inline
+
+
+--29efmMoE7cLoxf6X
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Wed, Jun 03, 2026 at 04:38:25PM +0300, Vladimir Oltean wrote:
+> On Wed, Jun 03, 2026 at 01:33:50PM +0000, sashiko-bot@kernel.org wrote:
+> > Thank you for your contribution! Sashiko AI review found 1 potential is=
+sue(s) to consider:
+> > - [Medium] The `if` condition for enforcing the `big-endian` property i=
+ncorrectly matches the `compatible` string array directly against an `enum`=
+, which will always evaluate to false and cause the requirement to silently=
+ fail.
+> > --
+> >=20
+> > commit 8bd3982a89722b20a3686e42d4ab3b9f0711ae11
+> > Author: Vladimir Oltean <vladimir.oltean@nxp.com>
+> >=20
+> > dt-bindings: phy: lynx-10g: initial document
+> >=20
+> > This commit adds the schema for the 10G Lynx SerDes used on most QorIQ =
+and
+> > Layerscape SoCs. It defines the valid compatible strings, PHY cell requ=
+irements,
+> > and enforces SoC-specific constraints such as lane counts and endiannes=
+s.
+> >=20
+> > > diff --git a/Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml =
+b/Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml
+> > > new file mode 100644
+> > > index 0000000000000..8cf6027a75b91
+> > > --- /dev/null
+> > > +++ b/Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml
+> > > +  - if:
+> > > +      properties:
+> > > +        compatible:
+> > > +          enum:
+> > > +            - fsl,ls1046a-serdes1
+> > > +            - fsl,ls1046a-serdes2
+> >=20
+> > [Severity: Medium]
+> > Does this conditional correctly enforce the big-endian property?=20
+> >=20
+> > Since the compatible property is a string array in device trees, evalua=
+ting it
+> > directly against an enum always returns false. Should this use "contain=
+s:"=20
+> > with the enum, similar to the preceding if block, so dt_binding_check=
+=20
+> > correctly enforces the requirement?
+>=20
+> The tests I did suggest that it does enforce the requirement.
+
+Yeah, sashiko just doesn't understand how this works without "contains".
+"contains" is only actually required for validation purposes if there's
+fallback compatibles and you're trying to get a partial match.
+
+>=20
+> - "make dt_binding_check" passes with the submitted example
+>=20
+> - If I replace "fsl,ls1028a-serdes" from the example with
+>   "fsl,ls1046a-serdes1" but leave everything else as is (implying:
+>   little endian), I get:
+>=20
+> $ make -j 8 DT_CHECKER_FLAGS=3D-m dt_binding_check DT_SCHEMA_FILES=3Dphy/=
+fsl,lynx-10g.yaml
+>   SCHEMA  Documentation/devicetree/bindings/processed-schema.json
+>   CHKDT   ../Documentation/devicetree/bindings
+>   LINT    ../Documentation/devicetree/bindings
+>   DTEX    Documentation/devicetree/bindings/phy/fsl,lynx-10g.example.dts
+>   DTC [C] Documentation/devicetree/bindings/phy/fsl,lynx-10g.example.dtb
+> Documentation/devicetree/bindings/phy/fsl,lynx-10g.example.dtb: serdes@1e=
+a0000 (fsl,ls1046a-serdes1): 'big-endian' is a required property
+>         from schema $id: http://devicetree.org/schemas/phy/fsl,lynx-10g.y=
+aml
+
+--29efmMoE7cLoxf6X
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaiBNTwAKCRB4tDGHoIJi
+0qEpAP9xJIQD67kq3rH/iSn47fcaj5H2Gm4eWSUDKokdZ9vTHgEAg/Se6W+36U7P
+aL+sw1M/xaTL+1SnXFHozFNqtmazbgE=
+=gCxu
+-----END PGP SIGNATURE-----
+
+--29efmMoE7cLoxf6X--
+
+
+--===============8768222549758253812==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============8768222549758253812==--
+
