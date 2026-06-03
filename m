@@ -4,116 +4,142 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 87B10CD6E55
-	for <linux-phy@archiver.kernel.org>; Wed,  3 Jun 2026 20:52:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3028BCD6E57
+	for <linux-phy@archiver.kernel.org>; Wed,  3 Jun 2026 21:11:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Vm+VpVRPSnHnWqIBkumM/lnsZR9f0XOmlO+1VI27Nj4=; b=zDq9GjTJjneOEN
-	g0CntmDoEV0CYeuNSMRlX4kzHna77y1BFSmxYwCe7WmuX7p56hkBTK4Gqw2iO3hnAjQqTK9HR7eXR
-	2O1YdO84qRL92DQ2dKq8zUt7cPYS7OCWk18awuKvYW8jFlW1+gWoZdHmVX2eiQEg8KmXFpt5X6rbT
-	rxm9JlPIES9hKX3cAOoNhHRtKO8ThVY1BWL0YUML6GGMSx4+Ydq6PsuJQNnV/Q5vtDuRueG6aJYin
-	TqJdQObXzKCQhgR/kQkUWdb3W86myu3NhlHPEP6UJxfo0KhyjtWABpGlumlfo1eXRr/PqqsBAILIn
-	Da9qgIJ9dVNXhOcGR1UQ==;
+	List-Owner; bh=rnrgAGNzIQa8cwBsZAbmbU35foAvCWS6pk2rNQW6otc=; b=M6FUfIJhpCw37N
+	+lBBF1U2lXAoMJk+PEXzvxFjDuF1Ju01RXrk4FFn51OYW8suONjzNIOvPzSbKq+IW9MG2ulkTVXjF
+	oTLAEi+ZcBcdBv84Le5cP9b6grUtUUARO+ibqjvKEqu94XU//4V3259umQpDefak+FAxWQJLxq7mg
+	M1qv9JEdU3ol4OHqX75hQt5plwJ/Gr9yAI+eSrF9pD4O4MxgxDCjIN37Wh5kvGWUL1L4mPJGBLwhr
+	1f9Oawq8TuVk/6zfW6MtzPhexyIWuGV7IRspTbNqXR3vy7Sq+Gn/9VHz/ZVzrkYeokE/64q5Bd9fA
+	sRqYKfnvii6G5ymFe4ng==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUsZg-0000000Fp4u-0i3O;
-	Wed, 03 Jun 2026 20:52:28 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wUssO-0000000Fq7A-1n8B;
+	Wed, 03 Jun 2026 21:11:48 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUsZd-0000000Fp4Z-3Cly
+	id 1wUssL-0000000Fq6p-2xxf
 	for linux-phy@lists.infradead.org;
-	Wed, 03 Jun 2026 20:52:27 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id D255043D78;
-	Wed,  3 Jun 2026 20:52:24 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0FE2E1F00893;
-	Wed,  3 Jun 2026 20:52:21 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1780519944;
-	bh=YS+6UAe3eWKQ6I/deKGAHEi/uKiRdTdYTAK7SD/sfio=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=UDwfgTj062Fo7wFHvKZQYtGqjCmabLdXZ4HVexYOR8i3cJ87e2XFQTupOuS41Sy4H
-	 zYl3rZ9akqFhCQp7cEvu00YKk3NAqZ2j0/XiavWJuo7nNR0/gffUAo1oRvI2ej1KUr
-	 Rle04Hcy5dHDw4rNVs4anzzA2rdNJlCSrIRTvPc+5fdenJuM4VNBx4pvB5kzn5X1ZF
-	 OgQSZgKMEhu5CWo8ZsQ3a5OFQU33DAqdb7BJ1b9zTGNnI1m3bxlGYhftBCP4/UEwe+
-	 SiVA4YjlfIM8uJ3gvwCBRenLSliNG0udrwvRrQtFMqob/Uv12LcHvpNKQ2slXQkI6l
-	 DxfdAdpZcjWVA==
-Message-ID: <dbc4b9b9-5c7a-4426-85bb-e99ad6be6ac6@kernel.org>
-Date: Wed, 3 Jun 2026 21:52:19 +0100
+	Wed, 03 Jun 2026 21:11:47 +0000
+Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 653HvwUs3233931
+	for <linux-phy@lists.infradead.org>; Wed, 3 Jun 2026 21:11:44 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	KFNNrZ16F0t0SGVljQpL9QVM2HrKzZ11LQqQcfJ5ywU=; b=b28eM0K0Bme5KO0l
+	jdTv6W1Qyo0c4bwt99fXRSJ+1Pi3x64sLML2dtF6LoNweii33taUEEJKIpCi5TcQ
+	y9BBRmVHWXKBSHI/KZ/IxBNSFdXCIFeJEdPECrPP9nqE0vudx6M0+X9ZaxjOazFD
+	GRGJ6NVh5e8vrzEBIQxM0K9ede108TKN9686jMrFWvErzbH4NkpxlOh2sU+tTN2J
+	0puT8McvsiProepihtJB+hac/NeybZUZ5vG1ciFlkxyPWdfpHMwHs1aXetG9Rfjr
+	HlzHNzGDDForS96ikYfudmFBqiBhUnCf9sHcWgidtYMnt6QW+lvaIpgKU42eB+jO
+	Lt/mSA==
+Received: from mail-dy1-f200.google.com (mail-dy1-f200.google.com [74.125.82.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4ejs4s0qy5-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Wed, 03 Jun 2026 21:11:44 +0000 (GMT)
+Received: by mail-dy1-f200.google.com with SMTP id 5a478bee46e88-304d0d0b28eso912671eec.0
+        for <linux-phy@lists.infradead.org>; Wed, 03 Jun 2026 14:11:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1780521103; x=1781125903; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=KFNNrZ16F0t0SGVljQpL9QVM2HrKzZ11LQqQcfJ5ywU=;
+        b=ifv3VPPSWJDs9cFxy30ezxE85qaxNw+Rm6c3dd59xFHUpimzGZH12ccH+/YQ0kDH9f
+         SGmz9v6bWe9SnjYlt9Gjsc4RhNw8Qb2yJEIR5sSA3xEJ7FYEaqX5BWYP0El1m5GQPPRw
+         FERMo4lZITsVEfXcN+V4pD/RSGARLekPfVHvhxkaWUMbOgCnSfs7PXD+Xw6vgyZ9sryr
+         IRryMDzHniTdcmbB4GzZLUmkynLcH80hSELUN8upTjhv3VImKMw+bLK/z7rk8qKEzLsm
+         MF8WGrB13qiwp9ttVDx1EvoWwRbNTSugQyoZ1GifMBtn0mjjzDNnk9j9IPZKEZ2tmZTf
+         1UZg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1780521103; x=1781125903;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=KFNNrZ16F0t0SGVljQpL9QVM2HrKzZ11LQqQcfJ5ywU=;
+        b=Yrpg75CWG+yHnSIYTqTwJn2+kzqDSB2ELiR2fEkMSR7J4OM3eBlPC3OefJ4c/e8FsM
+         qr4S5Plqq6Z2Z3+i4rx1nV871dXAmhxQpSF+xMN2Wo2Ku5FKNjCJiFRBaFXnt6yEOmDY
+         RiAzzErwMNdyZahRHzUgpa0T1Chx/atKqA9nApk3+8CUf/cK0VqsTOtGlJPpGvFJ/nKk
+         YcoEpKl+YoAdlvqNTmt7woyypHocigaQyjFa02p39ciQhotPDEBBfe5t5ifRPCF+Oyiu
+         wSDdzmF1Ehuq6nSE3Nd2Bfmafz0knvaXMoe2ke6mC4oRvpEW+43tZLmiW0rHoRU9wv+F
+         kekw==
+X-Forwarded-Encrypted: i=1; AFNElJ+8sDw/OPoAbPZN+hcrK15N7LbGUOrweio1QZXWT1XQE6XPsVtTEC63hxNRNGUhAO7Az3saJsy0xVo=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz6qqvh/LsD95i6tOjzIWPXh5KJjizJIDZz3HBUy65WdkQAZtgj
+	qEdU75Gh+3uRSLLv3qoBYJec3j9h9Fa8jHUHxL4OCSl3/JtZtKBt8b6L66y49/OVhGzCFIm+/Jk
+	jurzBzxCFzZjvMu2t31cDg5VO0j7TAQmUNGoDko0/IMVeDw1V1zuO9oXcZ0mf1hx69Aiw
+X-Gm-Gg: Acq92OE5U4Xc+3/RHlQ/E2ltGG1wKkW8xwIC5yamhJprVYMg4ydWn2ZHYl+J9oG6D7H
+	d5oB9f0a/wsCCb0QasoZuIMY69JwIZ+KfYWXi4WHf2XBWaXqoEFZwsTp+xu98Y4ybY/5PrfS69a
+	ppQPh9o2hiZBQTMbKvwT5p14u3itrVRONe+oJcj1YuEZZCrEzDFb0DY17ralk0knAHnqq23cSN6
+	ZgeUgESffoGUUtyJvmeCWsMjBYgGbRc7TBjVrtKnFexucB5uJvoEhETT/mfcowqKHQvusG/9Ydl
+	r92YKo4To3iCllKti/D9O15YPnWW1WE5doNYjV4TEG2bVr3uE+gUtaV1NhzRtXB9CjGRCpUUqfg
+	As+3flo9gsXklyQkHFtlfJKjNvz7g1pcBfsWj0RV1m9G9OrOYcAAyoT7dMli1+Kkkq+u2vMKpyA
+	PJAc/jWyFwVIU=
+X-Received: by 2002:a05:693c:23c9:b0:304:b15:17d6 with SMTP id 5a478bee46e88-3074fa5732amr2347708eec.6.1780521102993;
+        Wed, 03 Jun 2026 14:11:42 -0700 (PDT)
+X-Received: by 2002:a05:693c:23c9:b0:304:b15:17d6 with SMTP id 5a478bee46e88-3074fa5732amr2347687eec.6.1780521102270;
+        Wed, 03 Jun 2026 14:11:42 -0700 (PDT)
+Received: from [10.62.37.26] (i-global254.qualcomm.com. [199.106.103.254])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-3074dcb98aasm3137896eec.12.2026.06.03.14.11.41
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 03 Jun 2026 14:11:41 -0700 (PDT)
+Message-ID: <ab49d7f9-82de-48f8-9822-e8d1d812b376@oss.qualcomm.com>
+Date: Wed, 3 Jun 2026 14:11:41 -0700
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v8 1/2] dt-bindings: phy: qcom: Add CSI2 C-PHY/DPHY schema
-To: Vijay Kumar Tumati <vijay.tumati@oss.qualcomm.com>,
- Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
- Bryan O'Donoghue <bryan.odonoghue@linaro.org>, Vinod Koul
- <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>
-Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-media@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v8 2/2] phy: qcom-mipi-csi2: Add a CSI2 MIPI DPHY driver
+To: Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
+        Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Neil Armstrong <neil.armstrong@linaro.org>
+Cc: Bryan O'Donoghue <bod@kernel.org>,
+        Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
+        linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org
 References: <20260523-x1e-csi2-phy-v8-0-a85668459521@linaro.org>
- <20260523-x1e-csi2-phy-v8-1-a85668459521@linaro.org>
- <rpnNMsR9GY8gbynzeBO8Zm61JAOq3ubt6sp0x3WDPPwkMAJzlcofECD1kabN-IUoK6sSwP5P6l28UIZLFCOpjQ==@protonmail.internalid>
- <dda32577-04e0-4507-acaf-a5694f4f31b3@linaro.org>
- <478df3ed-d4ef-43aa-bb84-e2075798542b@kernel.org>
- <ec98ef2f-02b4-4086-8b4b-07b6953dbd20@oss.qualcomm.com>
- <tgG0QPGHUXMOoExQ9gjtNbUKbFpoiuWPHWCsh5vpGqFRGIeTcWiiNC1okUddn3T6nCfDzNbLlYkpSMdhfFVxmA==@protonmail.internalid>
- <514cf213-5778-45e1-8d70-d3fe27991fcc@oss.qualcomm.com>
-From: Bryan O'Donoghue <bod@kernel.org>
+ <20260523-x1e-csi2-phy-v8-2-a85668459521@linaro.org>
 Content-Language: en-US
-Autocrypt: addr=bod@kernel.org; keydata=
- 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
-In-Reply-To: <514cf213-5778-45e1-8d70-d3fe27991fcc@oss.qualcomm.com>
+From: Vijay Kumar Tumati <vijay.tumati@oss.qualcomm.com>
+In-Reply-To: <20260523-x1e-csi2-phy-v8-2-a85668459521@linaro.org>
+X-Proofpoint-ORIG-GUID: P7A0lVHe45Pk1lghc9wxTSPmJDiCnuaD
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjAzMDIwNSBTYWx0ZWRfX1QIOeiqFLija
+ xXDj++u95Yg7RFM76xvy1+heP8WgkNA/3MPDdD62wneuWdBvrVOPmW7sSs8iph1i4+oTM1N1hx0
+ 01SuN0S87nqB8crG1hZNoxpv9f92mIWNXsqi4OBWbvGOHnYVMb9L9twTWdScuLiOwcvh1H4rlli
+ QwsD7XlLng/0d/UxM/a4A4YeZo2IYIKPzC6RtDf2vLWbiQSi1Q34hXJsMfpr33cmBnYC3uktd+F
+ gVh1TsnefGpTeAsC1kjw3B6fgR2rOiTxYmzSefK4SKdKWr7hlZ65mJVeluGNb2B0V+rgNQ0aYoI
+ Iz6wG2ftlIC8kGVi7P6WxKCib2J8fnVoeDHQCli9OmjA8WMvqEDFhPprSujGfNEKMOcfoHO8Qsy
+ kYcMdoyWsxCUjpUvToa1W1pimGW0A5GIHov5lCrGI1j6Agv9139gzdiir1KwHlM/9VDU6U2Pm1X
+ JtRqSTCWKUma8eK7ihw==
+X-Authority-Analysis: v=2.4 cv=afRRWxot c=1 sm=1 tr=0 ts=6a209890 cx=c_pps
+ a=PfFC4Oe2JQzmKTvty2cRDw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17
+ a=IkcTkHD0fZMA:10 a=FelO9ux0wxsA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=rJkE3RaqiGZ5pbrm-msn:22
+ a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=KKAkSRfTAAAA:8 a=JfrnYn6hAAAA:8
+ a=eN9KxjBUUqKLPoSrR9MA:9 a=b5241zE0TQxO9l7o:21 a=QEXdDO2ut3YA:10
+ a=6Ab_bkdmUrQuMsNx7PHu:22 a=cvBusfyB2V15izCimMoJ:22 a=1CNFftbPRP8L7MoqJWF3:22
+X-Proofpoint-GUID: P7A0lVHe45Pk1lghc9wxTSPmJDiCnuaD
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.125,FMLib:17.12.100.49
+ definitions=2026-06-03_06,2026-05-28_03,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501 suspectscore=0 bulkscore=0 phishscore=0 clxscore=1015
+ adultscore=0 lowpriorityscore=0 spamscore=0 impostorscore=0 malwarescore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2605210000 definitions=main-2606030205
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260603_135225_888799_01BD6A31 
-X-CRM114-Status: GOOD (  20.67  )
+X-CRM114-CacheID: sfid-20260603_141145_978311_7A46BFF5 
+X-CRM114-Status: GOOD (  37.76  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -125,264 +151,1024 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gMDMvMDYvMjAyNiAyMToyNCwgVmlqYXkgS3VtYXIgVHVtYXRpIHdyb3RlOgo+IAo+IAo+IE9u
-IDYvMy8yMDI2IDE6MTYgUE0sIFZpamF5IEt1bWFyIFR1bWF0aSB3cm90ZToKPj4gSGksCj4+Cj4+
-IE9uIDYvMi8yMDI2IDM6NTEgUE0sIEJyeWFuIE8nRG9ub2dodWUgd3JvdGU6Cj4+PiBPbiAwMi8w
-Ni8yMDI2IDIyOjU5LCBWbGFkaW1pciBaYXBvbHNraXkgd3JvdGU6Cj4+Pj4gT24gNS8yMy8yNiAw
-NTo0OCwgQnJ5YW4gTydEb25vZ2h1ZSB3cm90ZToKPj4+Pj4gQWRkIGEgYmFzZSBzY2hlbWEgaW5p
-dGlhbGx5IGNvbXBhdGlibGUgd2l0aCB4MWU4MDEwMCB0byBkZXNjcmliZQo+Pj4+PiBNSVBJIENT
-STIKPj4+Pj4gUEhZIGRldmljZXMuCj4+Pj4+Cj4+Pj4+IFRoZSBoYXJkd2FyZSBjYW4gc3VwcG9y
-dCBib3RoIENQSFksIERQSFkgYW5kIGEgc3BlY2lhbCBzcGxpdC1tb2RlIERQSFkuCj4+Pj4+Cj4+
-Pj4+IFRoZSBzY2hlbWEgaGVyZSBkZWZpbmVzIHRocmVlIHBvcnRzOgo+Pj4+Pgo+Pj4+PiBwb3J0
-QDA6Cj4+Pj4+ICDCoMKgwqDCoMKgIFRoZSBmaXJzdCBpbnB1dCBwb3J0IHdoZXJlIGEgc2Vuc29y
-IGlzIGFsd2F5cyByZXF1aXJlZC4KPj4+Pj4KPj4+Pj4gcG9ydEAxOgo+Pj4+PiAgwqDCoMKgwqDC
-oCBBIHNlY29uZCBvcHRpb25hbCBpbnB1dCBwb3J0IHdoaWNoIGlmIHByZXNlbnQgaW1wbGllcyBE
-UEhZCj4+Pj4+IHNwbGl0LW1vZGUuCj4+Pj4+Cj4+Pj4+IHBvcnRAMjoKPj4+Pj4gIMKgwqDCoMKg
-wqAgQSB0aGlyZCBhbHdheXMgcmVxdWlyZWQgb3V0cHV0IHBvcnQgd2hpY2ggY29ubmVjdHMgdG8g
-dGhlCj4+Pj4+IGNvbnRyb2xsZXIuCj4+Pj4+Cj4+Pj4KPj4+PiBUaGlzIHBvcnQgbnVtZXJhdGlv
-biBpcyBpbXBlcmZlY3QsIGJlY2F1c2UgcG9ydEAwIGFuZCBwb3J0QDIgYXJlCj4+Pj4gcmVxdWly
-ZWQsCj4+Pj4gd2hpbGUgbWlkZGxlIHBvcnRAMSBpcyBvcHRpb25hbC4KPj4+Pgo+Pj4+IExpa2Ug
-aXQgd2FzIHN0YXRlZCBiZWZvcmUgYSBudW1iZXIgb2YgdGltZXMsIGl0IHNlZW1zIG5hdHVyYWwg
-dG8gb3BlcmF0ZQo+Pj4+IHdpdGggdHdvIHBvcnRzLCB3aGVyZSBpbnB1dCBwb3J0IG1heSBoYXZl
-IHR3byBlbmRwb2ludHMgcmF0aGVyIHRoYW4gMwo+Pj4+IHBvcnRzLAo+Pj4+IGFsc28gdGhhdCBh
-cHByb2FjaCBzb2x2ZXMgdGhlIHByb2JsZW0gb2YgYSBob2xlIGluIHRoZSBwb3J0IG51bWVyYXRp
-b24uCj4+Pgo+Pj4gQ2FuIHlvdSBjb25maXJtIHRoaXMgaXMgd2hhdCB5b3UgYXJlIGFmdGVyID8K
-Pj4+Cj4+PiBwb3J0QDAgewo+Pj4gIMKgwqDCoMKgICNhZGRyZXNzLWNlbGxzID0gPDE+Owo+Pj4g
-IMKgwqDCoMKgICNzaXplLWNlbGxzID0gPDA+Owo+Pj4KPj4+ICDCoMKgwqDCoCBlbmRwb2ludEAw
-IHvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAvKiBwcmltYXJ5IHNlbnNvciAqLwo+Pj4gIMKg
-wqDCoMKgwqDCoMKgwqAgcmVnID0gPDA+Owo+Pj4gIMKgwqDCoMKgwqDCoMKgwqAgZGF0YS1sYW5l
-cyA9IDwwIDEgMiAzPjsKPj4+ICDCoMKgwqDCoMKgwqDCoMKgIHJlbW90ZS1lbmRwb2ludCA9IDwm
-c2Vuc29yMF9vdXQ+Owo+Pj4gIMKgwqDCoMKgIH07Cj4+Pgo+Pj4gIMKgwqDCoMKgIGVuZHBvaW50
-QDEge8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIC8qIHNwbGl0LW1vZGUgc2Vjb25kIHNlbnNv
-ciwgb3B0aW9uYWwgKi8KPj4+ICDCoMKgwqDCoMKgwqDCoMKgIHJlZyA9IDwxPjsKPj4+ICDCoMKg
-wqDCoMKgwqDCoMKgIGRhdGEtbGFuZXMgPSA8MD47Cj4+PiAgwqDCoMKgwqDCoMKgwqDCoCByZW1v
-dGUtZW5kcG9pbnQgPSA8JnNlbnNvcjFfb3V0PjsKPj4+ICDCoMKgwqDCoCB9Owo+Pj4gfTsKPj4+
-Cj4+PiBwb3J0QDEge8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgLyog
-b3V0cHV0IHRvIENBTVNTLCB3YXMgcG9ydEAyICovCj4+PiAgwqDCoMKgwqAgZW5kcG9pbnQgeyBy
-ZW1vdGUtZW5kcG9pbnQgPSA8JmNvbnRyb2xsZXJfaW4+OyB9Owo+Pj4gfTsKPj4+Cj4+PiBUaGlz
-IHdvcmtzIGZvciBtZSBCVFcuCj4+IEVpdGhlciB3YXksIGRvIHdlIG5lZWQgdG8gZG9jdW1lbnQg
-dGhlIGNvbnN0cmFpbnQgb2YgdXNpbmcgcG9ydEAwIG9yCj4+IGVuZHBvaW50QDAgJ29ubHknIGZv
-ciB0aGUgNCsxIG9yIDIrMSBtb2RlIGFuZCB0aGUgb3RoZXIgb25lIGlzIGZvciB0aGUKPj4gMSsx
-IG1vZGU/IE9yIGlzIGl0IGltcGxpY2l0IGZyb20gdGhpcyBiaW5kaW5ncyBmb3IgYSBkZXZlbG9w
-ZXI/CgpUaGUgYmluZGluZyBtYW5kYXRlcyBpdCB3aXRoIGFuIGlmIC8gZWxzZSBzdHJ1Y3R1cmUK
-Cj4KPj4+Pj4gVGhlIENTSVBIWSBkZXZpY2VzIGhhdmUgdGhlaXIgb3duIHBpbm91dHMgb24gdGhl
-IFNvQyBhcyB3ZWxsIGFzCj4+Pj4+IHRoZWlyIG93bgo+Pj4+PiBpbmRpdmlkdWFsIHZvbHRhZ2Ug
-cmFpbHMuCj4+Pj4+Cj4+Pj4+IFRoZSBuZWVkIHRvIG1vZGVsIHZvbHRhZ2UgcmFpbHMgb24gYSBw
-ZXItUEhZIGJhc2lzIGxlYWRzIHVzIHRvIGRlZmluZQo+Pj4+PiBDU0lQSFkgZGV2aWNlcyBhcyBp
-bmRpdmlkdWFsIG5vZGVzLgo+Pj4+Pgo+Pj4+PiBUd28gbmljZSBvdXRjb21lcyBpbiB0ZXJtcyBv
-ZiBzY2hlbWEgYW5kIERUIGFyaXNlIGZyb20gdGhpcyBjaGFuZ2UuCj4+Pj4+Cj4+Pj4+IDEuIFRo
-ZSBhYmlsaXR5IHRvIGRlZmluZSBvbiBhIHBlci1QSFkgYmFzaXMgdm9sdGFnZSByYWlscy4KPj4+
-Pj4gMi4gVGhlIGFiaWxpdHkgdG8gcmVxdWlyZSB0aG9zZSB2b2x0YWdlLgo+Pj4+Pgo+Pj4+PiBX
-ZSBoYXZlIGhhZCBhIGNvbXBsZXRlIGJvZGdlIHVwc3RyZWFtIGZvciB0aGlzIHdoZXJlIGEgc2lu
-Z2xlIHNldCBvZgo+Pj4+PiB2b2x0YWdlIHJhaWwgZm9yIGFsbCBDU0lQSFlzIGhhcyBiZWVuIGJ1
-cmllZCBpbnNpZGUgb2YgQ0FNU1MuCj4+Pj4+Cj4+Pj4+IE11Y2ggbGlrZSB0aGUgSTJDIGJ1cyB3
-aGljaCBpcyBkZWRpY2F0ZWQgdG8gQ2FtZXJhIHNlbnNvcnMgLSB0aGUgQ0NJCj4+Pj4+IGJ1cyBp
-bgo+Pj4+PiBDQU1TUyBwYXJsYW5jZSwgdGhlIENTSVBIWSBkZXZpY2VzIHNob3VsZCBiZSBpbmRp
-dmlkdWFsbHkgbW9kZWxsZWQuCj4+Pj4+Cj4+Pj4+IFNpZ25lZC1vZmYtYnk6IEJyeWFuIE8nRG9u
-b2dodWUgPGJyeWFuLm9kb25vZ2h1ZUBsaW5hcm8ub3JnPgo+Pj4+PiAtLS0KPj4+Pj4gIMKgwqAg
-Li4uL2JpbmRpbmdzL3BoeS9xY29tLHgxZTgwMTAwLWNzaTItcGh5LnlhbWzCoMKgwqDCoMKgwqAg
-fCAyMDkgKysrKysrKysKPj4+Pj4gKyArKysrKysrKysrKysKPj4+Pj4gIMKgwqAgMSBmaWxlIGNo
-YW5nZWQsIDIwOSBpbnNlcnRpb25zKCspCj4+Pj4+Cj4+Pj4+IGRpZmYgLS1naXQgYS9Eb2N1bWVu
-dGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcGh5L3Fjb20seDFlODAxMDAtCj4+Pj4+IGNzaTIt
-cGh5LnlhbWwgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcGh5L3Fjb20seDFl
-ODAxMDAtCj4+Pj4+IGNzaTItcGh5LnlhbWwKPj4+Pj4gbmV3IGZpbGUgbW9kZSAxMDA2NDQKPj4+
-Pj4gaW5kZXggMDAwMDAwMDAwMDAwMC4uMjcwMzc1Zjk0OTg4MAo+Pj4+PiAtLS0gL2Rldi9udWxs
-Cj4+Pj4+ICsrKyBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9waHkvcWNvbSx4
-MWU4MDEwMC1jc2kyLXBoeS55YW1sCj4+Pj4+IEBAIC0wLDAgKzEsMjA5IEBACj4+Pj4+ICsjIFNQ
-RFgtTGljZW5zZS1JZGVudGlmaWVyOiAoR1BMLTIuMCBPUiBCU0QtMi1DbGF1c2UpCj4+Pj4+ICsl
-WUFNTCAxLjIKPj4+Pj4gKy0tLQo+Pj4+PiArJGlkOiBodHRwOi8vZGV2aWNldHJlZS5vcmcvc2No
-ZW1hcy9waHkvcWNvbSx4MWU4MDEwMC1jc2kyLXBoeS55YW1sIwo+Pj4+PiArJHNjaGVtYTogaHR0
-cDovL2RldmljZXRyZWUub3JnL21ldGEtc2NoZW1hcy9jb3JlLnlhbWwjCj4+Pj4+ICsKPj4+Pj4g
-K3RpdGxlOiBRdWFsY29tbSBDU0kyIFBIWQo+Pj4+PiArCj4+Pj4+ICttYWludGFpbmVyczoKPj4+
-Pj4gK8KgIC0gQnJ5YW4gTydEb25vZ2h1ZSA8Ym9kQGtlcm5lbC5vcmc+Cj4+Pj4+ICsKPj4+Pj4g
-K2Rlc2NyaXB0aW9uOgo+Pj4+PiArwqAgUXVhbGNvbW0gTUlQSSBDU0kyIEMtUEhZL0QtUEhZIGNv
-bWJpbmF0aW9uIFBIWS4gQ29ubmVjdHMgTUlQSQo+Pj4+PiBDU0kyIHNlbnNvcnMKPj4+Pj4gK8Kg
-IHRvIFF1YWxjb21tJ3MgQ2FtZXJhIENTSSBEZWNvZGVyLiBUaGUgUEhZIHN1cHBvcnRzIGJvdGgg
-Qy1QSFkgYW5kCj4+Pj4+IEQtUEhZCj4+Pj4+ICvCoCBtb2Rlcy4KPj4+Pj4gKwo+Pj4+PiArcHJv
-cGVydGllczoKPj4+Pj4gK8KgIGNvbXBhdGlibGU6Cj4+Pj4+ICvCoMKgwqAgY29uc3Q6IHFjb20s
-eDFlODAxMDAtY3NpMi1waHkKPj4+Pj4gKwo+Pj4+PiArwqAgcmVnOgo+Pj4+PiArwqDCoMKgIG1h
-eEl0ZW1zOiAxCj4+Pj4+ICsKPj4+Pj4gK8KgICIjcGh5LWNlbGxzIjoKPj4+Pj4gK8KgwqDCoCBj
-b25zdDogMQo+Pj4+PiArwqDCoMKgIGRlc2NyaXB0aW9uOgo+Pj4+PiArwqDCoMKgwqDCoCBUaGUg
-c2luZ2xlIGNlbGwgc3BlY2lmaWVzIHRoZSBQSFkgb3BlcmF0aW5nIG1vZGUuCj4+Pj4KPj4+PiAj
-cGh5LWNlbGxzIHNob3VsZCBiZSAwLCBiZWNhdXNlIHRoZSBQSFkgb3BlcmF0aW5nIG1vZGUgaXMg
-d2VsbCBkZWZpbmVkCj4+Pj4gYnkgJ2J1cy10eXBlJyBwcm9wZXJ0eSBvZiBhbiBlbmRwb2ludCBv
-biB0aGUgc2Vuc29yIHNpZGUsIHRoZSBvcHBvc2l0ZQo+Pj4+IHNpZGUgb2YgQ0FNU1MvQ1NJRCBh
-cyBhIENTSVBIWSAiY29uc3VtZXIiIHNob3VsZCBub3QgZGljdGF0ZSB0aGUgUEhZCj4+Pj4gdHlw
-ZS4KPj4+Cj4+PiBSb2Igc2FpZCBjb25zdW1lciBidXQsIEknbSBhbHNvIG5vdCB2ZXJ5IGJvdGhl
-cmVkIGFib3V0IHRoYXQuIGJ1cy10eXBlCj4+PiBpcyBwZXJmZWN0bHkgYWNjZXB0YWJsZSB0byBt
-ZS4KPj4+Cj4+Pj4+ICsKPj4+Pj4gK8KgIGNsb2NrczoKPj4+Pj4gK8KgwqDCoCBtYXhJdGVtczog
-Mgo+Pj4+PiArCj4+Pj4+ICvCoCBjbG9jay1uYW1lczoKPj4+Pj4gK8KgwqDCoCBpdGVtczoKPj4+
-Pj4gK8KgwqDCoMKgwqAgLSBjb25zdDogY29yZQo+Pj4+PiArwqDCoMKgwqDCoCAtIGNvbnN0OiB0
-aW1lcgo+Pj4+PiArCj4+Pj4+ICvCoCBpbnRlcnJ1cHRzOgo+Pj4+PiArwqDCoMKgIG1heEl0ZW1z
-OiAxCj4+Pj4+ICsKPj4+Pj4gK8KgIG9wZXJhdGluZy1wb2ludHMtdjI6Cj4+Pj4+ICvCoMKgwqAg
-bWF4SXRlbXM6IDEKPj4+Pj4gKwo+Pj4+PiArwqAgcG93ZXItZG9tYWluczoKPj4+Pj4gK8KgwqDC
-oCBpdGVtczoKPj4+Pj4gK8KgwqDCoMKgwqAgLSBkZXNjcmlwdGlvbjogTU1DWCB2b2x0YWdlIHJh
-aWwKPj4+Pj4gK8KgwqDCoMKgwqAgLSBkZXNjcmlwdGlvbjogTVhDIG9yIE1YQSB2b2x0YWdlIHJh
-aWwKPj4+Pgo+Pj4+IE9ubHkgInFjb20seDFlODAxMDAtY3NpMi1waHkiIGRldmljZSBpcyBzdXBw
-b3J0ZWQgc28gZmFyLCB1bmxpa2VseSBpdCdzCj4+Pj4gdGhlIGNhc2UgdGhhdCAiTVhDIG9yIE1Y
-QSB2b2x0YWdlIHJhaWwiIHNob3VsZCBiZSBzcGVjaWZpZWQsIGl0J2QgYmUKPj4+PiBqdXN0IG9u
-ZSBvZiB0d28gb3IgYm90aC4KPj4+Cj4+PiBIbW0uIEknbSBub3QgYmVpbmcgY2xlYXIgaGVyZSBp
-ZiB0aGlzIGlzIHlvdXIgdGFrZSwgSSB3aWxsIHJld29yZCBpdAo+Pj4gdG8gbWFrZSBpdCBjbGVh
-cmVyIHRoaXMgZ2VuZXJhdGlvbiBvZiBQSFkgX211c3RfIGhhdmUgZWl0aGVyCj4+Pgo+Pj4gLSBN
-TUNYIGFuZCBNWEMKPj4+IG9yCj4+PiAtIE1NQ1ggYW5kIE1YQQo+PiBJIGFtIG5vdCBzdXJlIG9m
-IHRoaXMsIEJyeWFuLiBJZiB5b3UgbG9vayBhdCB0aGUgUEhZIGNvcmUgY2xvY2sKPj4gc2VwYXJh
-dGVseSwgc3VyZSwgdGhhdCBpcyBjb3JyZWN0LiBCdXQgYWxsIG9mIHRoZW0sIG9uIHRoaXMgcGxh
-dGZvcm0gYXMKPj4gd2VsbCwgc2hhcmUgdGhlIFJDRywgd2hpY2ggcmVxdWlyZXMgYWxsIDMgcG93
-ZXIgZG9tYWlucy4gU28KPj4gZnVuZGFtZW50YWxseSwgeW91IG5lZWQgdG8gZW5hYmxlIGFsbCBv
-ZiB0aG9zZSBmcm9tIGVhY2ggUEhZLiBZb3UgY2FuCj4+IG1ha2UgaXQgY29uc3RhbnQgMyBwb3dl
-ciBkb21haW5zLj4KCkhtbSBkbyB5b3UgbWVhbiB0aGUgR0RTQyB3aGljaCBJIG9taXR0ZWQgZm9y
-bSB0aGUgZXhhbXBsZSBhbmQgc2hvdWxkbid0IApoYXZlIFRJVEFOX1RPUF9HRFNDIG9yIGRvIHlv
-dSBtZWFuIE1NQ1gsIE1YQyBhbmQgTVhBIGFyZSByZXF1aXJlZCA/CgpJIGRvbid0IGJlbGlldmUg
-dGhlIGNsb2NrIGRlZmluaXRpb25zIHNheSB0aGF0LiBBbHNvIG5vdCB3aGF0IHlvdSBzYWlkIApp
-biB0aGUgcHJldmlvdXMgY3ljbGUuCgpJJ2QgYmUgb2JsaWdlZCBpZiB5b3UgY291bGQgYmUgcHJl
-Y2lzZSBhbmQgY2xlYXIgc2luY2UgYXMgeW91IGtub3cgdGhlIApQSFkgYXMgYSBzZXBhcmF0ZSB0
-aGluZyBpcyBpbXBvcnRhbnQgdG8gcmVsZWFzZSBuZXcgU29DIGFkZGl0aW9ucy4KPj4+Pj4gKwo+
-Pj4+PiArwqAgcG93ZXItZG9tYWluLW5hbWVzOgo+Pj4+PiArwqDCoMKgIGl0ZW1zOgo+Pj4+PiAr
-wqDCoMKgwqDCoCAtIGNvbnN0OiBtbWN4Cj4+Pj4+ICvCoMKgwqDCoMKgIC0gY29uc3Q6IG14Cj4+
-Pj4+ICsKPj4+Pj4gK8KgIHZkZGEtMHA5LXN1cHBseToKPj4+Pj4gK8KgwqDCoCBkZXNjcmlwdGlv
-bjogUGhhbmRsZSB0byBhIDAuOVYgcmVndWxhdG9yIHN1cHBseSB0byBhIFBIWS4KPj4+Pj4gKwo+
-Pj4+PiArwqAgdmRkYS0xcDItc3VwcGx5Ogo+Pj4+PiArwqDCoMKgIGRlc2NyaXB0aW9uOiBQaGFu
-ZGxlIHRvIDEuMlYgcmVndWxhdG9yIHN1cHBseSB0byBhIFBIWS4KPj4+Pj4gKwo+Pj4+PiArwqAg
-cG9ydHM6Cj4+Pj4+ICvCoMKgwqAgJHJlZjogL3NjaGVtYXMvZ3JhcGgueWFtbCMvcHJvcGVydGll
-cy9wb3J0cwo+Pj4+PiArCj4+Pj4+ICvCoMKgwqAgcHJvcGVydGllczoKPj4+Pj4gK8KgwqDCoMKg
-wqAgcG9ydEAwOgo+Pj4+PiArwqDCoMKgwqDCoMKgwqAgJHJlZjogL3NjaGVtYXMvZ3JhcGgueWFt
-bCMvJGRlZnMvcG9ydC1iYXNlCj4+Pj4+ICvCoMKgwqDCoMKgwqDCoCBkZXNjcmlwdGlvbjogU2Vu
-c29yIGlucHV0LiBBbHdheXMgcHJlc2VudC4KPj4+Pj4gK8KgwqDCoMKgwqDCoMKgIHVuZXZhbHVh
-dGVkUHJvcGVydGllczogZmFsc2UKPj4+Pj4gKwo+Pj4+PiArwqDCoMKgwqDCoMKgwqAgcHJvcGVy
-dGllczoKPj4+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoCBlbmRwb2ludDoKPj4+Pj4gK8KgwqDCoMKg
-wqDCoMKgwqDCoMKgwqAgJHJlZjogL3NjaGVtYXMvbWVkaWEvdmlkZW8taW50ZXJmYWNlcy55YW1s
-Iwo+Pj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB1bmV2YWx1YXRlZFByb3BlcnRpZXM6IGZh
-bHNlCj4+Pj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHByb3BlcnRpZXM6Cj4+Pj4+ICvCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBkYXRhLWxhbmVzOgo+Pj4+PiArwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgIG1pbkl0ZW1zOiAxCj4+Pj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqAgbWF4SXRlbXM6IDQKPj4+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGNs
-b2NrLWxhbmVzOgo+Pj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIG1heEl0ZW1z
-OiAxCj4+Pj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCByZW1vdGUtZW5kcG9pbnQ6IHRy
-dWUKPj4+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcmVxdWlyZWQ6Cj4+Pj4+ICvCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoCAtIGRhdGEtbGFuZXMKPj4+Pj4gK8KgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgIC0gcmVtb3RlLWVuZHBvaW50Cj4+Pj4+ICsKPj4+Pj4gK8KgwqDCoMKgwqAgcG9y
-dEAxOgo+Pj4+PiArwqDCoMKgwqDCoMKgwqAgJHJlZjogL3NjaGVtYXMvZ3JhcGgueWFtbCMvJGRl
-ZnMvcG9ydC1iYXNlCj4+Pj4+ICvCoMKgwqDCoMKgwqDCoCBkZXNjcmlwdGlvbjoKPj4+Pj4gK8Kg
-wqDCoMKgwqDCoMKgwqDCoCBTZWNvbmQgc2Vuc29yIGlucHV0LiBXaGVuIHByZXNlbnQsIGluZGlj
-YXRlcyBEUEhZIHNwbGl0Cj4+Pj4+IG1vZGUuCj4+Pj4+ICvCoMKgwqDCoMKgwqDCoCB1bmV2YWx1
-YXRlZFByb3BlcnRpZXM6IGZhbHNlCj4+Pj4+ICsKPj4+Pj4gK8KgwqDCoMKgwqDCoMKgIHByb3Bl
-cnRpZXM6Cj4+Pj4+ICvCoMKgwqDCoMKgwqDCoMKgwqAgZW5kcG9pbnQ6Cj4+Pj4+ICvCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgICRyZWY6IC9zY2hlbWFzL21lZGlhL3ZpZGVvLWludGVyZmFjZXMueWFt
-bCMKPj4+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqAgdW5ldmFsdWF0ZWRQcm9wZXJ0aWVzOiBm
-YWxzZQo+Pj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBwcm9wZXJ0aWVzOgo+Pj4+PiArwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgZGF0YS1sYW5lczoKPj4+Pj4gK8KgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoCBtYXhJdGVtczogMQo+Pj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqAgY2xvY2stbGFuZXM6Cj4+Pj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAg
-bWF4SXRlbXM6IDEKPj4+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHJlbW90ZS1lbmRw
-b2ludDogdHJ1ZQo+Pj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCByZXF1aXJlZDoKPj4+Pj4g
-K8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIC0gZGF0YS1sYW5lcwo+Pj4+PiArwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqAgLSBjbG9jay1sYW5lcwo+Pj4+PiArwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqAgLSByZW1vdGUtZW5kcG9pbnQKPj4+Pgo+Pj4+IEFzIGl0J3Mgc3RhdGVkIGFib3Zl
-LCBpdCBzaG91bGQgYmUgY29udmVydGVkIHRvIGEgc2luZ2xlIHBvcnQgd2l0aCB0d28KPj4+PiBl
-bmRwb2ludHMsIGl0J2QgYmUgZG9uZSBpbiBhY2NvcmRhbmNlIHRvIHZpZGVvLWludGVyZmFjZXMu
-eWFtbC4KPj4+Pgo+Pj4+PiArCj4+Pj4+ICvCoMKgwqDCoMKgIHBvcnRAMjoKPj4+Pj4gK8KgwqDC
-oMKgwqDCoMKgICRyZWY6IC9zY2hlbWFzL2dyYXBoLnlhbWwjLyRkZWZzL3BvcnQtYmFzZQo+Pj4+
-PiArwqDCoMKgwqDCoMKgwqAgZGVzY3JpcHRpb246IE91dHB1dCB0byBDQU1TUyBjb250cm9sbGVy
-Lgo+Pj4+PiArwqDCoMKgwqDCoMKgwqAgdW5ldmFsdWF0ZWRQcm9wZXJ0aWVzOiBmYWxzZQo+Pj4+
-PiArCj4+Pj4+ICvCoMKgwqDCoMKgwqDCoCBwcm9wZXJ0aWVzOgo+Pj4+PiArwqDCoMKgwqDCoMKg
-wqDCoMKgIGVuZHBvaW50Ogo+Pj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAkcmVmOiAvc2No
-ZW1hcy9ncmFwaC55YW1sIy8kZGVmcy9lbmRwb2ludC1iYXNlCj4+Pj4+ICvCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgIHVuZXZhbHVhdGVkUHJvcGVydGllczogZmFsc2UKPj4+Pj4gK8KgwqDCoMKgwqDC
-oMKgwqDCoMKgwqAgcHJvcGVydGllczoKPj4+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-IHJlbW90ZS1lbmRwb2ludDogdHJ1ZQo+Pj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCByZXF1
-aXJlZDoKPj4+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIC0gcmVtb3RlLWVuZHBvaW50
-Cj4+Pj4+ICsKPj4+Pj4gK8KgwqDCoCByZXF1aXJlZDoKPj4+Pj4gK8KgwqDCoMKgwqAgLSBwb3J0
-QDAKPj4+Pj4gK8KgwqDCoMKgwqAgLSBwb3J0QDIKPj4+Pj4gKwo+Pj4+PiArcmVxdWlyZWQ6Cj4+
-Pj4+ICvCoCAtIGNvbXBhdGlibGUKPj4+Pj4gK8KgIC0gcmVnCj4+Pj4+ICvCoCAtICIjcGh5LWNl
-bGxzIgo+Pj4+PiArwqAgLSBjbG9ja3MKPj4+Pj4gK8KgIC0gY2xvY2stbmFtZXMKPj4+Pj4gK8Kg
-IC0gaW50ZXJydXB0cwo+Pj4+PiArwqAgLSBvcGVyYXRpbmctcG9pbnRzLXYyCj4+Pj4+ICvCoCAt
-IHBvd2VyLWRvbWFpbnMKPj4+Pj4gK8KgIC0gcG93ZXItZG9tYWluLW5hbWVzCj4+Pj4+ICvCoCAt
-IHZkZGEtMHA5LXN1cHBseQo+Pj4+PiArwqAgLSB2ZGRhLTFwMi1zdXBwbHkKPj4+Pj4gK8KgIC0g
-cG9ydHMKPj4+Pj4gKwo+Pj4+PiArYWRkaXRpb25hbFByb3BlcnRpZXM6IGZhbHNlCj4+Pj4+ICsK
-Pj4+Pj4gK2V4YW1wbGVzOgo+Pj4+PiArwqAgLSB8Cj4+Pj4+ICvCoMKgwqAgI2luY2x1ZGUgPGR0
-LWJpbmRpbmdzL2ludGVycnVwdC1jb250cm9sbGVyL2FybS1naWMuaD4KPj4+Pj4gK8KgwqDCoCAj
-aW5jbHVkZSA8ZHQtYmluZGluZ3MvY2xvY2svcWNvbSx4MWU4MDEwMC1jYW1jYy5oPgo+Pj4+PiAr
-wqDCoMKgICNpbmNsdWRlIDxkdC1iaW5kaW5ncy9jbG9jay9xY29tLHgxZTgwMTAwLWdjYy5oPgo+
-Pj4+PiArwqDCoMKgICNpbmNsdWRlIDxkdC1iaW5kaW5ncy9wb3dlci9xY29tLHJwbWhwZC5oPgo+
-Pj4+PiArCj4+Pj4+ICvCoMKgwqAgY3NpcGh5NDogY3NpcGh5QGFjZTQwMDAgewo+Pj4+PiArwqDC
-oMKgwqDCoMKgwqAgY29tcGF0aWJsZSA9ICJxY29tLHgxZTgwMTAwLWNzaTItcGh5IjsKPj4+Pj4g
-K8KgwqDCoMKgwqDCoMKgIHJlZyA9IDwweDBhY2U0MDAwIDB4MjAwMD47Cj4+Pj4+ICvCoMKgwqDC
-oMKgwqDCoCAjcGh5LWNlbGxzID0gPDE+Owo+Pj4+PiArCj4+Pj4+ICvCoMKgwqDCoMKgwqDCoCBj
-bG9ja3MgPSA8JmNhbWNjIENBTV9DQ19DU0lQSFkwX0NMSz4sCj4+Pj4+ICvCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoCA8JmNhbWNjIENBTV9DQ19DU0kwUEhZVElNRVJfQ0xLPjsKPj4+
-Pj4gK8KgwqDCoMKgwqDCoMKgIGNsb2NrLW5hbWVzID0gImNvcmUiLAo+Pj4+PiArwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICJ0aW1lciI7Cj4+Pj4+ICsKPj4+Pj4g
-K8KgwqDCoMKgwqDCoMKgIG9wZXJhdGluZy1wb2ludHMtdjIgPSA8JmNzaXBoeV9vcHBfdGFibGU+
-Owo+Pj4+PiArCj4+Pj4+ICvCoMKgwqDCoMKgwqDCoCBpbnRlcnJ1cHRzID0gPEdJQ19TUEkgNDc3
-IElSUV9UWVBFX0VER0VfUklTSU5HPjsKPj4+Pj4gKwo+Pj4+PiArwqDCoMKgwqDCoMKgwqAgcG93
-ZXItZG9tYWlucyA9IDwmcnBtaHBkIFJQTUhQRF9NTUNYPiwKPj4+Pj4gK8KgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgPCZycG1ocGQgUlBNSFBEX01YPjsKPj4+
-Pj4gK8KgwqDCoMKgwqDCoMKgIHBvd2VyLWRvbWFpbi1uYW1lcyA9ICJtbWN4IiwKPj4+Pj4gK8Kg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICJt
-eCI7Cj4gQWN0dWFsbHksIG9uZSBtb3JlIHRoaW5nLCBXaHkgaXNuJ3QgVElUQU4gVE9QIEdEU0Mg
-aGVyZT8+Pj4+ICsKClllcyB0aGUgRFRTSSBoYXMgVElUQU5fVE9QX0dEU0MgSSBoYXZlbid0IHVw
-ZGF0ZWQgdGhlIFlBTUwgdG8gY2FwdHVyZSB0aGF0LgoKU28gaXQgc2hvdWxkIGJlCgp0b3AKbW1j
-eApteAoKV2l0aCBvYnZpb3VzbHkgb24gbW1jeCBhbmQgbXggc2NhbGFibGUuIFdlIGVzdGFibGlz
-aGVkIHRoYXQgQ1NJUEhZNCBoYWQgCk1YQSB3aGVyZWFzIHRoZSBvdGhlciBDU0lQSFlzIGhhZCBN
-WEMgaW4gdjUgb3IgdjQgLSBjYW4geW91IGJlIGNsZWFyIGlmIAp5b3UgYWdyZWVpbmcgd2l0aCB0
-aGF0IHN0aWxsIG9yIHNheWluZyBzb21ldGhpbmcgZGlmZmVyZW50LiBQZXIgbXkgCm1lbW9yeSBv
-ZiByZWFkaW5nIHRoZSBkb2NzLCB0aGVyZSB3YXMgbm90aGluZyBpbiB0aGUgY2xvY2sgdHJlZSB0
-byAKaW5kaWNhdGUgYm90aCBNWEEgYW5kIE1YQyB3ZXJlIHJlcXVpcmVkIGZvciBhbGwgUEhZcy4K
-Cj4+Pj4+ICvCoMKgwqDCoMKgwqDCoCB2ZGRhLTBwOS1zdXBwbHkgPSA8JnZyZWdfbDJjXzBwOD47
-Cj4+Pj4+ICvCoMKgwqDCoMKgwqDCoCB2ZGRhLTFwMi1zdXBwbHkgPSA8JnZyZWdfbDFjXzFwMj47
-Cj4+Pj4+ICsKPj4+Pj4gK8KgwqDCoMKgwqDCoMKgIHBvcnRzIHsKPj4+Pj4gK8KgwqDCoMKgwqDC
-oMKgwqDCoMKgwqAgI2FkZHJlc3MtY2VsbHMgPSA8MT47Cj4+Pj4+ICvCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgICNzaXplLWNlbGxzID0gPDA+Owo+Pj4+PiArCj4+Pj4+ICvCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgIHBvcnRAMCB7Cj4+Pj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcmVn
-ID0gPDA+Owo+Pj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGNzaXBoeTBfaW5f
-ZXA6IGVuZHBvaW50IHsKPj4+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgIGRhdGEtbGFuZXMgPSA8MCAxPjsKPj4+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgIGNsb2NrLWxhbmVzID0gPDI+Owo+Pj4+PiArwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqAgcmVtb3RlLWVuZHBvaW50ID0gPCZzZW5zb3Jfb3V0PjsKPj4+
-Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB9Owo+Pj4+PiArwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoCB9Owo+Pj4+PiArCj4+Pj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHBvcnRA
-MiB7Cj4+Pj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcmVnID0gPDI+Owo+Pj4+
-PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGNzaXBoeTBfb3V0X2VwOiBlbmRwb2lu
-dCB7Cj4+Pj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCByZW1vdGUt
-ZW5kcG9pbnQgPSA8JmNvbnRyb2xsZXJfaW4+Owo+Pj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgIH07Cj4+Pj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIH07Cj4+Pj4+ICvCoMKg
-wqDCoMKgwqDCoCB9Owo+Pj4+PiArwqDCoMKgIH07Cj4+Pj4+ICsKPj4+Pj4gK8KgwqDCoCBjc2lw
-aHlfb3BwX3RhYmxlOiBvcHAtdGFibGUgewo+Pj4+PiArwqDCoMKgwqDCoMKgwqAgY29tcGF0aWJs
-ZSA9ICJvcGVyYXRpbmctcG9pbnRzLXYyIjsKPj4+Pj4gKwo+Pj4+PiArwqDCoMKgwqDCoMKgwqAg
-b3BwLTMwMDAwMDAwMCB7Cj4+Pj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIG9wcC1oeiA9IC9i
-aXRzLyA2NCA8MzAwMDAwMDAwPjsKPj4gSSB3b25kZXIgd2h5IHlvdSB3b3VsZCBoYXZlIG9ubHkg
-b25lIGNsb2NrIGhlcmUuIFlvdSBzaG91bGQgYmUgc2V0dGluZwo+PiB0aGUgcmF0ZSBmb3IgYm90
-aCB0aGUgY29yZSBhbmQgdGltZXIsIGlzbid0IGl0PwoKWWVzIHRoZSBkdHNpIGhhcyBpdCwgdGhl
-IGV4YW1wbGUgZG9lcyBub3QuIEkgaGFkIHB1c2hiYWNrIGZyb20gb3RoZXJzIAphYm91dCB0aGUg
-ZXhhbXBsZSBiZWluZyB0b28gY29tcGxleCAtIHlvdSBjYW4ndCBwbGVhc2UgYWxsIG9mIHRoZSBw
-ZW9wbGUgCmFsbCBvZiB0aGUgdGltZS4KCkkgd2lsbCBkcm9wIHRoZSBmdWxsIHRhYmxlIEAgdjkK
-Cj4+PiArIHJlcXVpcmVkLW9wcHMgPQo+PiA8JnJwbWhwZF9vcHBfbG93X3N2c19kMT4sCj4+Pj4+
-ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAg
-PCZycG1ocGRfb3BwX2xvd19zdnNfZDE+Owo+PiBTYW1lIGhlcmUsIGl0IHNob3VsZCAzIHBvd2Vy
-IGRvbWFpbnMgc2V0Lj4+PiArwqDCoMKgwqDCoMKgwqAgfTsKClR3byBwb3dlciBkb21haW5zIHNj
-YWxlZCwgb25lIHNldCBhdCBsZWFzdCBJIGhvcGUgdGhhdCdzIHdoYXQgeW91IG1lYW4gCmkuZS4g
-YWRkIHRoZSBHRFNDLCBhbHJlYWR5IGluIG15IGNvZGUgSSBqdXN0IGRpZG4ndCBhZGQgaXQgaGVy
-ZSBhcyBJIApzaG91bGQgaGF2ZS4KCi0gR0RTQyBlbmFibGVkCi0gTU1DWCBzY2FsZWQKLSBNWCBz
-Y2FsZWQKCldoZW4gTVggcG9pbnRzIHRvIE1YQSB0aGUgc2NhbGluZyBpcyBhIE5PUCBAIHJwbWhw
-ZF9vcHBfbG93X3N2c19kMS4KCkFncmVlZCA/Cj4+Pj4+ICsKPj4+Pj4gK8KgwqDCoMKgwqDCoMKg
-IG9wcC00MDAwMDAwMDAgewo+Pj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBvcHAtaHogPSAv
-Yml0cy8gNjQgPDQwMDAwMDAwMD47Cj4+Pj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHJlcXVp
-cmVkLW9wcHMgPSA8JnJwbWhwZF9vcHBfbG93X3N2cz4sCj4+Pj4+ICvCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgPCZycG1ocGRfb3BwX2xvd19z
-dnNfZDE+Owo+PiBXaHkgaXMgb25lIGF0IHN2cyBhbmQgdGhlIG90aGVyIGF0IHN2c19kMT8gU2hv
-dWxkbid0IGJvdGggYmUgc3ZzPz4+Pgo+PiArwqDCoMKgwqDCoMKgwqAgfTsKPj4+Pj4gKwo+Pj4+
-PiArwqDCoMKgwqDCoMKgwqAgb3BwLTQ4MDAwMDAwMCB7Cj4+Pj4+ICvCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgIG9wcC1oeiA9IC9iaXRzLyA2NCA8NDgwMDAwMDAwPjsKPj4+Pj4gK8KgwqDCoMKgwqDC
-oMKgwqDCoMKgwqAgcmVxdWlyZWQtb3BwcyA9IDwmcnBtaHBkX29wcF9sb3dfc3ZzPiwKPj4+Pj4g
-K8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCA8
-JnJwbWhwZF9vcHBfbG93X3N2c19kMT47Cj4+IEFuZCBoZXJlLCBib3RoIHNob3VsZCBiZSBzdnNf
-bDE/Pj4+ICvCoMKgwqDCoMKgwqDCoCB9Owo+Pj4+PiArwqDCoMKgIH07Cj4+Pj4+Cj4+Pj4KPj4+
-PiAtLQo+Pj4+IEJlc3Qgd2lzaGVzLAo+Pj4+IFZsYWRpbWlyCj4+Pgo+Pj4KPj4gVGhhbmtzLAo+
-PiBWaWpheS4KPj4KPiAKCgotLSAKbGludXgtcGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlz
-dHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
-aW5mby9saW51eC1waHkK
+
+
+On 5/22/2026 7:48 PM, Bryan O'Donoghue wrote:
+> Add a new MIPI CSI2 driver in DPHY mode initially. The entire set of
+> existing CAMSS CSI PHY init sequences are imported in order to save time
+> and effort in later patches.
+> 
+> The following devices are supported in this drop:
+> "qcom,x1e80100-csi2-phy"
+> 
+> In-line with other PHY drivers the process node is included in the name.
+> Data-lane and clock lane positioning and polarity selection via newly
+> amended struct phy_configure_opts_mipi_dphy{} is supported.
+> 
+> The Qualcomm 3PH class of PHYs can do both DPHY and CPHY mode. For now only
+> DPHY is supported.
+> 
+> In porting some of the logic over from camss-csiphy*.c to here its also
+> possible to rationalise some of the code.
+> 
+> In particular use of regulator_bulk and clk_bulk as well as dropping the
+> seemingly useless and unused interrupt handler.
+> 
+> The PHY sequences and a lot of the logic that goes with them are well
+> proven in CAMSS and mature so the main thing to watch out for here is how
+> to get the right sequencing of regulators, clocks and register-writes.
+> 
+> The register init sequence table is imported verbatim from the existing
+> CAMSS csiphy driver. A follow-up series will rework the table to extract
+> the repetitive per-lane pattern into a loop.
+> 
+> Signed-off-by: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+> ---
+>   MAINTAINERS                                        |  10 +
+>   drivers/phy/qualcomm/Kconfig                       |  14 +
+>   drivers/phy/qualcomm/Makefile                      |   5 +
+>   drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c | 376 +++++++++++++++++++
+>   drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c     | 402 +++++++++++++++++++++
+>   drivers/phy/qualcomm/phy-qcom-mipi-csi2.h          |  95 +++++
+>   6 files changed, 902 insertions(+)
+> 
+> diff --git a/MAINTAINERS b/MAINTAINERS
+> index 63389fea5d150..3b5da8a40383f 100644
+> --- a/MAINTAINERS
+> +++ b/MAINTAINERS
+> @@ -22018,6 +22018,16 @@ S:	Maintained
+>   F:	Documentation/devicetree/bindings/media/qcom,*-iris.yaml
+>   F:	drivers/media/platform/qcom/iris/
+>   
+> +QUALCOMM MIPI CSI2 PHY DRIVER
+> +M:	Bryan O'Donoghue <bod@kernel.org>
+> +L:	linux-phy@lists.infradead.org
+> +L:	linux-media@vger.kernel.org
+> +L:	linux-arm-msm@vger.kernel.org
+> +S:	Maintained
+> +F:	Documentation/devicetree/bindings/phy/qcom,*-csi2-phy.yaml
+> +F:	drivers/phy/qualcomm/phy-qcom-mipi-csi2*.c
+> +F:	drivers/phy/qualcomm/phy-qcom-mipi-csi2*.h
+> +
+>   QUALCOMM NAND CONTROLLER DRIVER
+>   M:	Manivannan Sadhasivam <mani@kernel.org>
+>   L:	linux-mtd@lists.infradead.org
+> diff --git a/drivers/phy/qualcomm/Kconfig b/drivers/phy/qualcomm/Kconfig
+> index 60a0ead127fa9..779a3511ba852 100644
+> --- a/drivers/phy/qualcomm/Kconfig
+> +++ b/drivers/phy/qualcomm/Kconfig
+> @@ -28,6 +28,20 @@ config PHY_QCOM_EDP
+>   	  Enable this driver to support the Qualcomm eDP PHY found in various
+>   	  Qualcomm chipsets.
+>   
+> +config PHY_QCOM_MIPI_CSI2
+> +	tristate "Qualcomm MIPI CSI2 PHY driver"
+> +	depends on ARCH_QCOM || COMPILE_TEST
+> +	depends on OF
+> +	depends on PM
+> +	depends on COMMON_CLK
+> +	select GENERIC_PHY
+> +	select GENERIC_PHY_MIPI_DPHY
+> +	help
+> +	  Enable this to support the MIPI CSI2 PHY driver found in various
+> +	  Qualcomm chipsets. This PHY is used to connect MIPI CSI2
+> +	  camera sensors to the CSI Decoder in the Qualcomm Camera Subsystem
+> +	  CAMSS.
+> +
+>   config PHY_QCOM_IPQ4019_USB
+>   	tristate "Qualcomm IPQ4019 USB PHY driver"
+>   	depends on OF && (ARCH_QCOM || COMPILE_TEST)
+> diff --git a/drivers/phy/qualcomm/Makefile b/drivers/phy/qualcomm/Makefile
+> index b71a6a0bed3f1..382cb594b06b6 100644
+> --- a/drivers/phy/qualcomm/Makefile
+> +++ b/drivers/phy/qualcomm/Makefile
+> @@ -6,6 +6,11 @@ obj-$(CONFIG_PHY_QCOM_IPQ4019_USB)	+= phy-qcom-ipq4019-usb.o
+>   obj-$(CONFIG_PHY_QCOM_IPQ806X_SATA)	+= phy-qcom-ipq806x-sata.o
+>   obj-$(CONFIG_PHY_QCOM_M31_USB)		+= phy-qcom-m31.o
+>   obj-$(CONFIG_PHY_QCOM_M31_EUSB)		+= phy-qcom-m31-eusb2.o
+> +
+> +phy-qcom-mipi-csi2-objs			+= phy-qcom-mipi-csi2-core.o \
+> +					   phy-qcom-mipi-csi2-3ph-dphy.o
+> +obj-$(CONFIG_PHY_QCOM_MIPI_CSI2)	+= phy-qcom-mipi-csi2.o
+> +
+>   obj-$(CONFIG_PHY_QCOM_PCIE2)		+= phy-qcom-pcie2.o
+>   
+>   obj-$(CONFIG_PHY_QCOM_QMP_COMBO)	+= phy-qcom-qmp-combo.o phy-qcom-qmp-usbc.o
+> diff --git a/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c
+> new file mode 100644
+> index 0000000000000..86ec405820e62
+> --- /dev/null
+> +++ b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-3ph-dphy.c
+This file name has always been confusing. I know it is saying that the 
+HW supports 3phase (cphy) but the driver is for dphy (2 phase). But is 
+there a way we can just make it phy-qcom-mipi-csi2-dphy.c so it is clear 
+for the reader that it is for 2ph only.> @@ -0,0 +1,376 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Qualcomm MSM Camera Subsystem - CSIPHY Module 3phase v1.0
+> + *
+> + * Copyright (c) 2011-2015, The Linux Foundation. All rights reserved.
+> + * Copyright (C) 2016-2025 Linaro Ltd.
+> + */
+> +
+> +#include <linux/delay.h>
+> +#include <linux/interrupt.h>
+> +#include <linux/io.h>
+> +#include <linux/time64.h>
+> +
+> +#include "phy-qcom-mipi-csi2.h"
+> +
+> +#define CSIPHY_3PH_CMN_CSI_COMMON_CTRLn(offset, n)	((offset) + 0x4 * (n))
+> +#define CSIPHY_3PH_CMN_CSI_COMMON_CTRL0_PHY_SW_RESET	BIT(0)
+> +#define CSIPHY_3PH_CMN_CSI_COMMON_CTRL5_CLK_ENABLE	BIT(7)
+> +#define CSIPHY_3PH_CMN_CSI_COMMON_CTRL6_COMMON_PWRDN_B	BIT(0)
+> +#define CSIPHY_3PH_CMN_CSI_COMMON_CTRL6_SHOW_REV_ID	BIT(1)
+> +#define CSIPHY_3PH_CMN_CSI_COMMON_CTRL10_IRQ_CLEAR_CMD	BIT(0)
+> +#define CSIPHY_3PH_CMN_CSI_COMMON_STATUSn(offset, n)	((offset) + 0xb0 + 0x4 * (n))
+> +
+> +#define CSIPHY_2PH_LN_CSI_2PHASE_CTRL9n(n)		((0x200 * (n)) + 0x24)
+> +
+> +/*
+> + * 3 phase CSI has 19 common status regs with only 0-10 being used
+> + * and 11-18 being reserved.
+> + */
+> +#define CSI_COMMON_STATUS_NUM				11
+> +/*
+> + * There are a number of common control registers
+> + * The offset to clear the CSIPHY IRQ status starts @ 22
+> + * So to clear CSI_COMMON_STATUS0 this is CSI_COMMON_CONTROL22, STATUS1 is
+> + * CONTROL23 and so on
+> + */
+> +#define CSI_CTRL_STATUS_INDEX				22
+Does a name like CSI_COMMON_STATUS_CTRL_OFFSET be clearer?> +
+> +/*
+> + * There are 43 COMMON_CTRL registers with regs after # 33 being reserved
+> + */
+> +#define CSI_CTRL_MAX					33
+> +
+> +#define CSIPHY_DEFAULT_PARAMS				0
+> +#define CSIPHY_SETTLE_CNT_LOWER_BYTE			2
+> +#define CSIPHY_SKEW_CAL					7
+> +
+> +/* 4nm 2PH v 2.1.2 2p5Gbps 4 lane DPHY mode */
+> +static const struct
+> +mipi_csi2phy_lane_regs lane_regs_x1e80100[] = {
+> +	/* Power up lanes 2ph mode */
+I think there were some discussions to not duplicate the settings for 
+each lane. Are we planning to take that up separately?> +	{.reg_addr = 
+0x1014, .reg_data = 0xd5, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x101c, .reg_data = 0x7a, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x1018, .reg_data = 0x01, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +
+> +	{.reg_addr = 0x0094, .reg_data = 0x00, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x00a0, .reg_data = 0x00, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0090, .reg_data = 0x0f, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0098, .reg_data = 0x08, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0094, .reg_data = 0x07, .delay_us = 0x01, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0030, .reg_data = 0x00, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0000, .reg_data = 0x8e, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0038, .reg_data = 0xfe, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x002c, .reg_data = 0x01, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0034, .reg_data = 0x0f, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x001c, .reg_data = 0x0a, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0014, .reg_data = 0x60, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x003c, .reg_data = 0xb8, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0004, .reg_data = 0x0c, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0020, .reg_data = 0x00, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0008, .reg_data = 0x10, .param_type = CSIPHY_SETTLE_CNT_LOWER_BYTE},
+> +	{.reg_addr = 0x0010, .reg_data = 0x52, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0094, .reg_data = 0xd7, .param_type = CSIPHY_SKEW_CAL},
+> +	{.reg_addr = 0x005c, .reg_data = 0x00, .param_type = CSIPHY_SKEW_CAL},
+> +	{.reg_addr = 0x0060, .reg_data = 0xbd, .param_type = CSIPHY_SKEW_CAL},
+> +	{.reg_addr = 0x0064, .reg_data = 0x7f, .param_type = CSIPHY_SKEW_CAL},
+> +
+> +	{.reg_addr = 0x0e94, .reg_data = 0x00, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0ea0, .reg_data = 0x00, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0e90, .reg_data = 0x0f, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0e98, .reg_data = 0x08, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0e94, .reg_data = 0x07, .delay_us =  0x01, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0e30, .reg_data = 0x00, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0e28, .reg_data = 0x04, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0e00, .reg_data = 0x80, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0e0c, .reg_data = 0xff, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0e38, .reg_data = 0x1f, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0e2c, .reg_data = 0x01, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0e34, .reg_data = 0x0f, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0e1c, .reg_data = 0x0a, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0e14, .reg_data = 0x60, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0e3c, .reg_data = 0xb8, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0e04, .reg_data = 0x0c, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0e20, .reg_data = 0x00, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0e08, .reg_data = 0x10, .param_type = CSIPHY_SETTLE_CNT_LOWER_BYTE},
+> +	{.reg_addr = 0x0e10, .reg_data = 0x52, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +
+> +	{.reg_addr = 0x0494, .reg_data = 0x00, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x04a0, .reg_data = 0x00, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0490, .reg_data = 0x0f, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0498, .reg_data = 0x08, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0494, .reg_data = 0x07, .delay_us =  0x01, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0430, .reg_data = 0x00, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0400, .reg_data = 0x8e, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0438, .reg_data = 0xfe, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x042c, .reg_data = 0x01, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0434, .reg_data = 0x0f, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x041c, .reg_data = 0x0a, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0414, .reg_data = 0x60, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x043c, .reg_data = 0xb8, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0404, .reg_data = 0x0c, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0420, .reg_data = 0x00, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0408, .reg_data = 0x10, .param_type = CSIPHY_SETTLE_CNT_LOWER_BYTE},
+> +	{.reg_addr = 0x0410, .reg_data = 0x52, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0494, .reg_data = 0xd7, .param_type = CSIPHY_SKEW_CAL},
+> +	{.reg_addr = 0x045c, .reg_data = 0x00, .param_type = CSIPHY_SKEW_CAL},
+> +	{.reg_addr = 0x0460, .reg_data = 0xbd, .param_type = CSIPHY_SKEW_CAL},
+> +	{.reg_addr = 0x0464, .reg_data = 0x7f, .param_type = CSIPHY_SKEW_CAL},
+> +
+> +	{.reg_addr = 0x0894, .reg_data = 0x00, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x08a0, .reg_data = 0x00, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0890, .reg_data = 0x0f, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0898, .reg_data = 0x08, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0894, .reg_data = 0x07, .delay_us =  0x01, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0830, .reg_data = 0x00, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0800, .reg_data = 0x8e, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0838, .reg_data = 0xfe, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x082c, .reg_data = 0x01, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0834, .reg_data = 0x0f, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x081c, .reg_data = 0x0a, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0814, .reg_data = 0x60, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x083c, .reg_data = 0xb8, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0804, .reg_data = 0x0c, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0820, .reg_data = 0x00, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0808, .reg_data = 0x10, .param_type = CSIPHY_SETTLE_CNT_LOWER_BYTE},
+> +	{.reg_addr = 0x0810, .reg_data = 0x52, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0894, .reg_data = 0xd7, .param_type = CSIPHY_SKEW_CAL},
+> +	{.reg_addr = 0x085c, .reg_data = 0x00, .param_type = CSIPHY_SKEW_CAL},
+> +	{.reg_addr = 0x0860, .reg_data = 0xbd, .param_type = CSIPHY_SKEW_CAL},
+> +	{.reg_addr = 0x0864, .reg_data = 0x7f, .param_type = CSIPHY_SKEW_CAL},
+> +
+> +	{.reg_addr = 0x0c94, .reg_data = 0x00, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0ca0, .reg_data = 0x00, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0c90, .reg_data = 0x0f, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0c98, .reg_data = 0x08, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0c94, .reg_data = 0x07, .delay_us =  0x01, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0c30, .reg_data = 0x00, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0c00, .reg_data = 0x8e, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0c38, .reg_data = 0xfe, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0c2c, .reg_data = 0x01, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0c34, .reg_data = 0x0f, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0c1c, .reg_data = 0x0a, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0c14, .reg_data = 0x60, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0c3c, .reg_data = 0xb8, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0c04, .reg_data = 0x0c, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0c20, .reg_data = 0x00, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0c08, .reg_data = 0x10, .param_type = CSIPHY_SETTLE_CNT_LOWER_BYTE},
+> +	{.reg_addr = 0x0c10, .reg_data = 0x52, .param_type = CSIPHY_DEFAULT_PARAMS},
+> +	{.reg_addr = 0x0c94, .reg_data = 0xd7, .param_type = CSIPHY_SKEW_CAL},
+> +	{.reg_addr = 0x0c5c, .reg_data = 0x00, .param_type = CSIPHY_SKEW_CAL},
+> +	{.reg_addr = 0x0c60, .reg_data = 0xbd, .param_type = CSIPHY_SKEW_CAL},
+> +	{.reg_addr = 0x0c64, .reg_data = 0x7f, .param_type = CSIPHY_SKEW_CAL},
+> +};
+> +
+> +static inline const struct mipi_csi2phy_device_regs *
+> +csi2phy_dev_to_regs(struct mipi_csi2phy_device *csi2phy)
+> +{
+> +	return &csi2phy->soc_cfg->reg_info;
+> +}
+> +
+> +static void phy_qcom_mipi_csi2_hw_version_read(struct mipi_csi2phy_device *csi2phy)
+> +{
+> +	const struct mipi_csi2phy_device_regs *regs = csi2phy_dev_to_regs(csi2phy);
+> +	u32 tmp;
+> +
+> +	writel(CSIPHY_3PH_CMN_CSI_COMMON_CTRL6_SHOW_REV_ID, csi2phy->base +
+> +	       CSIPHY_3PH_CMN_CSI_COMMON_CTRLn(regs->common_regs_offset, 6));
+> +
+> +	tmp = readl_relaxed(csi2phy->base +
+> +			    CSIPHY_3PH_CMN_CSI_COMMON_STATUSn(regs->common_regs_offset, 12));
+> +	csi2phy->hw_version = tmp;
+> +
+> +	tmp = readl_relaxed(csi2phy->base +
+> +			    CSIPHY_3PH_CMN_CSI_COMMON_STATUSn(regs->common_regs_offset, 13));
+> +	csi2phy->hw_version |= (tmp << 8) & 0xFF00;
+> +
+> +	tmp = readl_relaxed(csi2phy->base +
+> +			    CSIPHY_3PH_CMN_CSI_COMMON_STATUSn(regs->common_regs_offset, 14));
+> +	csi2phy->hw_version |= (tmp << 16) & 0xFF0000;
+> +
+> +	tmp = readl_relaxed(csi2phy->base +
+> +			    CSIPHY_3PH_CMN_CSI_COMMON_STATUSn(regs->common_regs_offset, 15));
+> +	csi2phy->hw_version |= (tmp << 24) & 0xFF000000;
+> +
+> +	dev_dbg_once(csi2phy->dev, "CSIPHY 3PH HW Version = 0x%08x\n", csi2phy->hw_version);
+> +}
+> +
+> +/*
+> + * phy_qcom_mipi_csi2_reset - Perform software reset on CSIPHY module
+> + * @phy_qcom_mipi_csi2: CSIPHY device
+> + */
+> +static void phy_qcom_mipi_csi2_reset(struct mipi_csi2phy_device *csi2phy)
+> +{
+> +	const struct mipi_csi2phy_device_regs *regs = csi2phy_dev_to_regs(csi2phy);
+> +
+> +	writel(CSIPHY_3PH_CMN_CSI_COMMON_CTRL0_PHY_SW_RESET,
+> +	       csi2phy->base + CSIPHY_3PH_CMN_CSI_COMMON_CTRLn(regs->common_regs_offset, 0));
+> +	usleep_range(5000, 8000);
+I know this delay is coming from the existing driver but it may be 
+necessary as much. Anyway, you can leave it for now I think.> + 
+writel(0x0, csi2phy->base +
+> +	       CSIPHY_3PH_CMN_CSI_COMMON_CTRLn(regs->common_regs_offset, 0));
+> +}
+> +
+> +/*
+> + * phy_qcom_mipi_csi2_settle_cnt_calc - Calculate settle count value
+> + *
+> + * Helper function to calculate settle count value. This is
+> + * based on the CSI2 T_hs_settle parameter which in turn
+> + * is calculated based on the CSI2 transmitter link frequency.
+> + *
+> + * Return settle count value or 0 if the CSI2 link frequency
+> + * is not available
+> + */
+> +static u8 phy_qcom_mipi_csi2_settle_cnt_calc(s64 link_freq, u32 timer_clk_rate)
+> +{
+> +	u32 t_hs_prepare_max_ps;
+> +	u32 timer_period_ps;
+> +	u32 t_hs_settle_ps;
+> +	u8 settle_cnt;
+> +	u32 ui_ps;
+> +
+> +	if (link_freq <= 0)
+> +		return 0;
+> +
+> +	ui_ps = div_u64(PSEC_PER_SEC, link_freq);
+> +	ui_ps /= 2;
+> +	t_hs_prepare_max_ps = 85000 + 6 * ui_ps;
+> +	t_hs_settle_ps = t_hs_prepare_max_ps;
+> +
+> +	timer_period_ps = div_u64(PSEC_PER_SEC, timer_clk_rate);
+> +	settle_cnt = t_hs_settle_ps / timer_period_ps - 6;
+> +
+> +	return settle_cnt;
+> +}
+> +
+> +static void
+> +phy_qcom_mipi_csi2_gen2_config_lanes(struct mipi_csi2phy_device *csi2phy,
+> +				     u8 settle_cnt)
+> +{
+> +	const struct mipi_csi2phy_device_regs *regs = csi2phy_dev_to_regs(csi2phy);
+> +	const struct mipi_csi2phy_lane_regs *r = regs->init_seq;
+> +	int i, array_size = regs->lane_array_size;
+> +	u32 val;
+> +
+> +	for (i = 0; i < array_size; i++, r++) {
+> +		switch (r->param_type) {
+> +		case CSIPHY_SETTLE_CNT_LOWER_BYTE:
+> +			val = settle_cnt & 0xff;
+> +			break;
+> +		case CSIPHY_SKEW_CAL:
+> +			/* TODO: support application of skew from dt flag */
+> +			continue;
+> +		default:
+> +			val = r->reg_data;
+> +			break;
+> +		}
+> +		writel(val, csi2phy->base + r->reg_addr);
+> +		if (r->delay_us)
+> +			udelay(r->delay_us);
+> +	}
+> +}
+> +
+> +static int phy_qcom_mipi_csi2_lanes_enable(struct mipi_csi2phy_device *csi2phy,
+> +					   struct mipi_csi2phy_stream_cfg *cfg)
+> +{
+> +	const struct mipi_csi2phy_device_regs *regs = csi2phy_dev_to_regs(csi2phy);
+> +	struct mipi_csi2phy_lanes_cfg *lane_cfg = &cfg->lane_cfg;
+> +	u8 settle_cnt;
+> +	u8 val;
+> +	int i;
+> +
+> +	settle_cnt = phy_qcom_mipi_csi2_settle_cnt_calc(cfg->link_freq, csi2phy->timer_clk_rate);
+> +
+> +	/* Lane position enable in common reg offset */
+> +	val = BIT(lane_cfg->clk.pos);
+> +	for (i = 0; i < cfg->num_data_lanes; i++)
+> +		val |= BIT(lane_cfg->data[i].pos);
+> +
+> +	writel(val, csi2phy->base +
+> +	       CSIPHY_3PH_CMN_CSI_COMMON_CTRLn(regs->common_regs_offset, 5));
+> +
+> +	/* Lane configuration for polarity @ CSIPHY-base + CTRL9 */
+> +	for (i = 0; i < cfg->num_data_lanes; i++) {
+> +		if (lane_cfg->data[i].pol) {
+> +			u8 pos = lane_cfg->data[i].pos;
+> +
+> +			writel(BIT(2), csi2phy->base + CSIPHY_2PH_LN_CSI_2PHASE_CTRL9n(pos));
+> +		}
+> +	}
+> +
+> +	if (lane_cfg->clk.pol)
+> +		writel(BIT(2), csi2phy->base + CSIPHY_2PH_LN_CSI_2PHASE_CTRL9n(lane_cfg->clk.pos));
+> +
+> +	val = CSIPHY_3PH_CMN_CSI_COMMON_CTRL6_COMMON_PWRDN_B;
+> +	writel(val, csi2phy->base +
+> +	       CSIPHY_3PH_CMN_CSI_COMMON_CTRLn(regs->common_regs_offset, 6));
+> +
+> +	val = 0x02;
+> +	writel(val, csi2phy->base +
+> +	       CSIPHY_3PH_CMN_CSI_COMMON_CTRLn(regs->common_regs_offset, 7));
+> +
+> +	val = 0x00;
+> +	writel(val, csi2phy->base +
+> +	       CSIPHY_3PH_CMN_CSI_COMMON_CTRLn(regs->common_regs_offset, 0));
+> +
+> +	phy_qcom_mipi_csi2_gen2_config_lanes(csi2phy, settle_cnt);
+> +
+> +	/* IRQ_MASK registers - disable all interrupts */
+> +	for (i = CSI_COMMON_STATUS_NUM; i < CSI_CTRL_STATUS_INDEX; i++) {
+> +		writel(0, csi2phy->base +
+> +		       CSIPHY_3PH_CMN_CSI_COMMON_CTRLn(regs->common_regs_offset, i));
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static void
+> +phy_qcom_mipi_csi2_lanes_disable(struct mipi_csi2phy_device *csi2phy,
+> +				 struct mipi_csi2phy_stream_cfg *cfg)
+> +{
+> +	const struct mipi_csi2phy_device_regs *regs = csi2phy_dev_to_regs(csi2phy);
+> +
+> +	writel(0, csi2phy->base +
+> +	       CSIPHY_3PH_CMN_CSI_COMMON_CTRLn(regs->common_regs_offset, 5));
+> +
+> +	writel(0, csi2phy->base +
+> +	       CSIPHY_3PH_CMN_CSI_COMMON_CTRLn(regs->common_regs_offset, 6));
+> +}
+> +
+> +static const struct mipi_csi2phy_hw_ops phy_qcom_mipi_csi2_ops_3ph_1_0 = {
+> +	.hw_version_read = phy_qcom_mipi_csi2_hw_version_read,
+> +	.reset = phy_qcom_mipi_csi2_reset,
+> +	.lanes_enable = phy_qcom_mipi_csi2_lanes_enable,
+> +	.lanes_disable = phy_qcom_mipi_csi2_lanes_disable,
+> +};
+> +
+> +static const char * const x1e_clks[] = {
+> +	"core",
+> +	"timer"
+> +};
+> +
+> +static const char * const x1e_supplies[] = {
+> +	"vdda-0p9",
+> +	"vdda-1p2"
+> +};
+> +
+> +static const char * const x1e_genpd_names[] = {
+> +	"mmcx",
+> +	"mx",
+> +};
+> +
+> +const struct mipi_csi2phy_soc_cfg mipi_csi2_dphy_4nm_x1e = {
+> +	.ops = &phy_qcom_mipi_csi2_ops_3ph_1_0,
+> +	.reg_info = {
+> +		.init_seq = lane_regs_x1e80100,
+> +		.lane_array_size = ARRAY_SIZE(lane_regs_x1e80100),
+> +		.common_regs_offset = 0x1000,
+> +	},
+> +	.supply_names = (const char **)x1e_supplies,
+> +	.num_supplies = ARRAY_SIZE(x1e_supplies),
+> +	.clk_names = (const char **)x1e_clks,
+> +	.num_clk = ARRAY_SIZE(x1e_clks),
+> +	.opp_clk = x1e_clks[0],
+> +	.timer_clk = x1e_clks[1],
+> +	.genpd_names = (const char **)x1e_genpd_names,
+> +	.num_genpd_names = ARRAY_SIZE(x1e_genpd_names),
+> +};
+> diff --git a/drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c
+> new file mode 100644
+> index 0000000000000..dfeff863a406f
+> --- /dev/null
+> +++ b/drivers/phy/qualcomm/phy-qcom-mipi-csi2-core.c
+> @@ -0,0 +1,402 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Copyright (c) 2025, Linaro Ltd.
+> + */
+> +#include <dt-bindings/phy/phy.h>
+> +#include <linux/clk.h>
+> +#include <linux/delay.h>
+> +#include <linux/err.h>
+> +#include <linux/io.h>
+> +#include <linux/kernel.h>
+> +#include <linux/module.h>
+> +#include <linux/of.h>
+> +#include <linux/pm_opp.h>
+> +#include <linux/phy/phy.h>
+> +#include <linux/phy/phy-mipi-dphy.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/pm_domain.h>
+> +#include <linux/pm_runtime.h>
+> +#include <linux/regmap.h>
+> +#include <linux/regulator/consumer.h>
+> +#include <linux/reset.h>
+> +#include <linux/slab.h>
+> +
+> +#include "phy-qcom-mipi-csi2.h"
+> +
+> +static int
+> +phy_qcom_mipi_csi2_set_clock_rates(struct mipi_csi2phy_device *csi2phy,
+> +				   s64 link_freq)
+> +{
+> +	struct device *dev = csi2phy->dev;
+> +	unsigned long opp_rate = link_freq / 4;
+> +	struct dev_pm_opp *opp;
+> +	long timer_rate;
+> +	int i, ret;
+> +
+> +	opp = dev_pm_opp_find_freq_ceil(dev, &opp_rate);
+> +	if (IS_ERR(opp)) {
+> +		dev_err(csi2phy->dev, "Couldn't find ceiling for %lld Hz\n",
+> +			link_freq);
+> +		return PTR_ERR(opp);
+> +	}
+> +
+> +	for (i = 0; i < csi2phy->pd_list->num_pds; i++) {
+> +		unsigned int perf = dev_pm_opp_get_required_pstate(opp, i);
+> +
+> +		ret = dev_pm_genpd_set_performance_state(csi2phy->pd_list->pd_devs[i], perf);
+Same comment as 
+https://lore.kernel.org/all/1f5d28ff-5661-4912-952d-d6114d1b1cb3@oss.qualcomm.com/
+This is already handled in dev_pm_opp_set_rate -> _set_opp ->
+_set_required_opps -> _set_opp_level ->
+dev_pm_domain_set_performance_state. Should we call it explicitly again?
+> +		if (ret) {
+> +			dev_err(csi2phy->dev, "Couldn't set perf state %u\n",
+> +				perf);
+> +			dev_pm_opp_put(opp);
+> +			goto unset_pstate;
+> +		}
+> +	}
+> +	dev_pm_opp_put(opp);
+> +
+> +	ret = dev_pm_opp_set_rate(dev, opp_rate);
+> +	if (ret) {
+> +		dev_err(csi2phy->dev, "dev_pm_opp_set_rate() fail\n");
+> +		goto unset_opp_rate;
+> +	}
+> +
+> +	timer_rate = clk_round_rate(csi2phy->timer_clk, link_freq / 4);
+> +	if (timer_rate <= 0) {
+> +		ret = -ENODEV;
+> +		goto unset_opp_rate;
+> +	}
+> +
+> +	ret = clk_set_rate(csi2phy->timer_clk, timer_rate);
+> +	if (ret)
+> +		goto unset_opp_rate;
+> +
+> +	csi2phy->timer_clk_rate = timer_rate;
+> +
+> +	return 0;
+> +
+> +unset_opp_rate:
+> +	dev_pm_opp_set_rate(dev, 0);
+> +
+> +unset_pstate:
+> +	while (i--)
+> +		dev_pm_genpd_set_performance_state(csi2phy->pd_list->pd_devs[i], 0);
+> +
+> +	return ret;
+> +}
+> +
+> +static int phy_qcom_mipi_csi2_configure(struct phy *phy,
+> +					union phy_configure_opts *opts)
+> +{
+> +	struct mipi_csi2phy_device *csi2phy = phy_get_drvdata(phy);
+> +	struct phy_configure_opts_mipi_dphy *dphy_cfg = &opts->mipi_dphy;
+> +	struct mipi_csi2phy_stream_cfg *stream_cfg = &csi2phy->stream_cfg;
+> +	int ret;
+> +
+> +	ret = phy_mipi_dphy_config_validate(dphy_cfg);
+> +	if (ret)
+> +		return ret;
+> +
+> +	if (dphy_cfg->lanes < 1 || dphy_cfg->lanes > CSI2_MAX_DATA_LANES)
+Can have a macro for the min # lanes as well if you would like.> +	 
+return -EINVAL;
+> +
+> +	stream_cfg->link_freq = dphy_cfg->hs_clk_rate;
+> +
+> +	return 0;
+> +}
+> +
+> +static int phy_qcom_mipi_csi2_power_on(struct phy *phy)
+> +{
+> +	struct mipi_csi2phy_device *csi2phy = phy_get_drvdata(phy);
+> +	const struct mipi_csi2phy_hw_ops *ops = csi2phy->soc_cfg->ops;
+> +	struct device *dev = &phy->dev;
+> +	int i, ret;
+> +
+> +	ret = regulator_bulk_enable(csi2phy->soc_cfg->num_supplies,
+> +				    csi2phy->supplies);
+> +	if (ret)
+> +		return ret;
+> +
+> +	ret = pm_runtime_resume_and_get(csi2phy->dev);
+> +	if (ret < 0)
+> +		goto disable_regulators;
+> +
+> +	ret = phy_qcom_mipi_csi2_set_clock_rates(csi2phy, csi2phy->stream_cfg.link_freq);
+> +	if (ret)
+> +		goto poweroff_phy;
+> +
+> +	ret = clk_bulk_prepare_enable(csi2phy->soc_cfg->num_clk,
+> +				      csi2phy->clks);
+> +	if (ret) {
+> +		dev_err(dev, "failed to enable clocks, %d\n", ret);
+> +		goto unset_rate;
+> +	}
+> +
+> +	ops->reset(csi2phy);
+> +
+> +	ops->hw_version_read(csi2phy);
+> +
+> +	return ops->lanes_enable(csi2phy, &csi2phy->stream_cfg);
+> +
+> +unset_rate:
+> +	for (i = 0; i < csi2phy->pd_list->num_pds; i++)
+> +		dev_pm_genpd_set_performance_state(csi2phy->pd_list->pd_devs[i], 0);
+> +
+> +	dev_pm_opp_set_rate(csi2phy->dev, 0);
+> +
+> +poweroff_phy:
+> +	pm_runtime_put_sync(csi2phy->dev);
+> +
+> +disable_regulators:
+> +	regulator_bulk_disable(csi2phy->soc_cfg->num_supplies,
+> +			       csi2phy->supplies);
+> +
+> +	return ret;
+> +}
+> +
+> +static int phy_qcom_mipi_csi2_power_off(struct phy *phy)
+> +{
+> +	struct mipi_csi2phy_device *csi2phy = phy_get_drvdata(phy);
+> +	const struct mipi_csi2phy_hw_ops *ops = csi2phy->soc_cfg->ops;
+> +	int i;
+> +
+> +	ops->lanes_disable(csi2phy, &csi2phy->stream_cfg);
+> +
+> +	clk_bulk_disable_unprepare(csi2phy->soc_cfg->num_clk,
+> +				   csi2phy->clks);
+> +
+> +	for (i = 0; i < csi2phy->pd_list->num_pds; i++)
+> +		dev_pm_genpd_set_performance_state(csi2phy->pd_list->pd_devs[i], 0);
+> +
+> +	dev_pm_opp_set_rate(csi2phy->dev, 0);
+> +
+> +	pm_runtime_put_sync(csi2phy->dev);
+> +
+> +	regulator_bulk_disable(csi2phy->soc_cfg->num_supplies,
+> +			       csi2phy->supplies);
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct phy_ops phy_qcom_mipi_csi2_ops = {
+> +	.configure	= phy_qcom_mipi_csi2_configure,
+> +	.power_on	= phy_qcom_mipi_csi2_power_on,
+> +	.power_off	= phy_qcom_mipi_csi2_power_off,
+> +	.owner		= THIS_MODULE,
+> +};
+> +
+> +static struct phy *qcom_csi2_phy_xlate(struct device *dev,
+> +				       const struct of_phandle_args *args)
+> +{
+> +	struct mipi_csi2phy_device *csi2phy = dev_get_drvdata(dev);
+> +
+> +	if (args->args[0] != PHY_TYPE_DPHY) {
+> +		dev_err(csi2phy->dev, "mode %d -EOPNOTSUPP\n", args->args[0]);
+> +		return ERR_PTR(-EOPNOTSUPP);
+> +	}
+> +
+> +	csi2phy->phy_mode = args->args[0];
+> +
+> +	return csi2phy->phy;
+> +}
+> +
+> +static int phy_qcom_mipi_csi2_attach_pm_domains(struct mipi_csi2phy_device *csi2phy)
+> +{
+> +	const struct dev_pm_domain_attach_data pd_data = {
+> +		.pd_names = csi2phy->soc_cfg->genpd_names,
+> +		.num_pd_names = csi2phy->soc_cfg->num_genpd_names,
+> +	};
+> +
+> +	return devm_pm_domain_attach_list(csi2phy->dev, &pd_data, &csi2phy->pd_list);
+> +}
+> +
+> +static int phy_qcom_mipi_csi2_parse_routing(struct mipi_csi2phy_device *csi2phy)
+> +{
+> +	struct mipi_csi2phy_stream_cfg *stream_cfg = &csi2phy->stream_cfg;
+> +	u32 lane_polarities[CSI2_MAX_DATA_LANES + 1];
+> +	u32 data_lanes[CSI2_MAX_DATA_LANES];
+> +	struct device *dev = csi2phy->dev;
+> +	struct fwnode_handle *ep;
+> +	int num_polarities;
+> +	int num_data_lanes;
+> +	u32 clock_lane;
+> +	int i, ret;
+> +
+> +	ep = fwnode_graph_get_endpoint_by_id(dev_fwnode(dev), 1, 0,
+> +					     FWNODE_GRAPH_ENDPOINT_NEXT);
+> +	if (ep) {
+> +		fwnode_handle_put(ep);
+> +		dev_err(dev, "DPHY split mode is not supported\n");
+> +		return -EOPNOTSUPP;
+> +	}
+> +
+> +	ep = fwnode_graph_get_endpoint_by_id(dev_fwnode(dev), 0, 0, 0);
+> +	if (!ep) {
+> +		dev_err(dev, "Missing port@0\n");
+> +		return -ENODEV;
+> +	}
+> +
+> +	num_data_lanes = fwnode_property_count_u32(ep, "data-lanes");
+> +	if (num_data_lanes < 1 || num_data_lanes > CSI2_MAX_DATA_LANES) {
+> +		ret = -EINVAL;
+> +		dev_err(dev, "Invalid data-lanes count: %d\n", num_data_lanes);
+> +		goto out_put;
+> +	}
+> +	stream_cfg->num_data_lanes = num_data_lanes;
+> +
+> +	ret = fwnode_property_read_u32_array(ep, "data-lanes", data_lanes,
+> +					     stream_cfg->num_data_lanes);
+> +	if (ret) {
+> +		dev_err(dev, "Failed to read data-lanes: %d\n", ret);
+> +		goto out_put;
+> +	}
+> +
+> +	ret = fwnode_property_read_u32(ep, "clock-lanes", &clock_lane);
+> +	if (ret) {
+> +		clock_lane = CSI2_DEFAULT_CLK_LN;
+> +		dev_info(dev, "Using default clock-lane %d\n",
+> +			 CSI2_DEFAULT_CLK_LN);
+> +	}
+> +
+> +	/* lane-polarities: optional, up to num_data_lanes + 1 entries */
+> +	memset(lane_polarities, 0x00, sizeof(lane_polarities));
+> +	num_polarities = fwnode_property_count_u32(ep, "lane-polarities");
+> +	if (num_polarities > 0) {
+> +		if (num_polarities != stream_cfg->num_data_lanes + 1) {
+> +			ret = -EINVAL;
+> +			dev_err(dev, "clock+data-lane %d/polarities %d mismatch\n",
+> +				stream_cfg->num_data_lanes + 1, num_polarities);
+> +			goto out_put;
+> +		}
+> +
+> +		ret = fwnode_property_read_u32_array(ep, "lane-polarities", lane_polarities,
+> +						     num_polarities);
+> +		if (ret) {
+> +			dev_err(dev, "Failed to read lane-polarities: %d\n", ret);
+> +			goto out_put;
+> +		}
+> +	}
+> +
+> +	for (i = 0; i < csi2phy->stream_cfg.num_data_lanes; i++) {
+> +		csi2phy->stream_cfg.lane_cfg.data[i].pos = data_lanes[i];
+> +		csi2phy->stream_cfg.lane_cfg.data[i].pol = lane_polarities[i + 1];
+> +	}
+> +	csi2phy->stream_cfg.lane_cfg.clk.pos = clock_lane;
+> +	csi2phy->stream_cfg.lane_cfg.clk.pol = lane_polarities[0];
+> +
+> +	ret = 0;
+> +
+> +out_put:
+> +	fwnode_handle_put(ep);
+> +
+> +	return ret;
+> +}
+> +
+> +static int phy_qcom_mipi_csi2_probe(struct platform_device *pdev)
+> +{
+> +	unsigned int i, num_clk, num_supplies;
+> +	struct mipi_csi2phy_device *csi2phy;
+> +	struct phy_provider *phy_provider;
+> +	struct device *dev = &pdev->dev;
+> +	struct phy *generic_phy;
+> +	int ret;
+> +
+> +	csi2phy = devm_kzalloc(dev, sizeof(*csi2phy), GFP_KERNEL);
+> +	if (!csi2phy)
+> +		return -ENOMEM;
+> +
+> +	csi2phy->dev = dev;
+> +	dev_set_drvdata(dev, csi2phy);
+> +
+> +	csi2phy->soc_cfg = device_get_match_data(&pdev->dev);
+> +
+> +	if (!csi2phy->soc_cfg)
+> +		return -EINVAL;
+> +
+> +	num_clk = csi2phy->soc_cfg->num_clk;
+> +	csi2phy->clks = devm_kzalloc(dev, sizeof(*csi2phy->clks) * num_clk, GFP_KERNEL);
+> +	if (!csi2phy->clks)
+> +		return -ENOMEM;
+> +
+> +	ret = phy_qcom_mipi_csi2_parse_routing(csi2phy);
+> +	if (ret)
+> +		return ret;
+> +
+> +	ret = phy_qcom_mipi_csi2_attach_pm_domains(csi2phy);
+> +	if (ret < 0)
+> +		return dev_err_probe(dev, ret, "Failed to attach power-domain list\n");
+> +
+> +	devm_pm_runtime_enable(dev);
+> +
+> +	for (i = 0; i < num_clk; i++)
+> +		csi2phy->clks[i].id = csi2phy->soc_cfg->clk_names[i];
+> +
+> +	ret = devm_clk_bulk_get(dev, num_clk, csi2phy->clks);
+> +	if (ret)
+> +		return dev_err_probe(dev, ret, "Failed to get clocks\n");
+> +
+> +	csi2phy->timer_clk = devm_clk_get(dev, csi2phy->soc_cfg->timer_clk);
+> +	if (IS_ERR(csi2phy->timer_clk)) {
+> +		return dev_err_probe(dev, PTR_ERR(csi2phy->timer_clk),
+> +				     "Failed to get timer clock\n");
+> +	}
+> +
+> +	ret = devm_pm_opp_set_clkname(dev, csi2phy->soc_cfg->opp_clk);
+> +	if (ret)
+> +		return dev_err_probe(dev, ret, "Failed to set opp clkname\n");
+> +
+> +	ret = devm_pm_opp_of_add_table(dev);
+> +	if (ret && ret != -ENODEV)
+> +		return dev_err_probe(dev, ret, "invalid OPP table in device tree\n");
+> +
+> +	num_supplies = csi2phy->soc_cfg->num_supplies;
+> +	csi2phy->supplies = devm_kzalloc(dev, sizeof(*csi2phy->supplies) * num_supplies,
+> +					 GFP_KERNEL);
+> +	if (!csi2phy->supplies)
+> +		return -ENOMEM;
+> +
+> +	for (i = 0; i < num_supplies; i++)
+> +		csi2phy->supplies[i].supply = csi2phy->soc_cfg->supply_names[i];
+> +
+> +	ret = devm_regulator_bulk_get(dev, num_supplies, csi2phy->supplies);
+> +	if (ret)
+> +		return dev_err_probe(dev, ret,
+> +				     "failed to get regulator supplies\n");
+> +
+> +	csi2phy->base = devm_platform_ioremap_resource(pdev, 0);
+> +	if (IS_ERR(csi2phy->base))
+> +		return PTR_ERR(csi2phy->base);
+> +
+> +	generic_phy = devm_phy_create(dev, NULL, &phy_qcom_mipi_csi2_ops);
+> +	if (IS_ERR(generic_phy)) {
+> +		ret = PTR_ERR(generic_phy);
+> +		return dev_err_probe(dev, ret, "failed to create phy\n");
+> +	}
+> +	csi2phy->phy = generic_phy;
+> +
+> +	phy_set_drvdata(generic_phy, csi2phy);
+> +
+> +	phy_provider = devm_of_phy_provider_register(dev, qcom_csi2_phy_xlate);
+> +	if (!IS_ERR(phy_provider))
+> +		dev_dbg(dev, "Registered MIPI CSI2 PHY device\n");
+> +
+> +	return PTR_ERR_OR_ZERO(phy_provider);
+> +}
+> +
+> +static const struct of_device_id phy_qcom_mipi_csi2_of_match_table[] = {
+> +	{ .compatible	= "qcom,x1e80100-csi2-phy", .data = &mipi_csi2_dphy_4nm_x1e },
+> +	{ }
+> +};
+> +MODULE_DEVICE_TABLE(of, phy_qcom_mipi_csi2_of_match_table);
+> +
+> +static struct platform_driver phy_qcom_mipi_csi2_driver = {
+> +	.probe		= phy_qcom_mipi_csi2_probe,
+> +	.driver = {
+> +		.name	= "qcom-mipi-csi2-phy",
+> +		.of_match_table = phy_qcom_mipi_csi2_of_match_table,
+> +	},
+> +};
+> +
+> +module_platform_driver(phy_qcom_mipi_csi2_driver);
+> +
+> +MODULE_DESCRIPTION("Qualcomm MIPI CSI2 PHY driver");
+> +MODULE_AUTHOR("Bryan O'Donoghue <bryan.odonoghue@linaro.org>");
+> +MODULE_LICENSE("GPL");
+> diff --git a/drivers/phy/qualcomm/phy-qcom-mipi-csi2.h b/drivers/phy/qualcomm/phy-qcom-mipi-csi2.h
+> new file mode 100644
+> index 0000000000000..e7c1ce00916e3
+> --- /dev/null
+> +++ b/drivers/phy/qualcomm/phy-qcom-mipi-csi2.h
+> @@ -0,0 +1,95 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +/*
+> + *
+> + * Qualcomm MIPI CSI2 CPHY/DPHY driver
+> + *
+> + * Copyright (C) 2025 Linaro Ltd.
+> + */
+> +#ifndef __PHY_QCOM_MIPI_CSI2_H__
+> +#define __PHY_QCOM_MIPI_CSI2_H__
+> +
+> +#include <linux/phy/phy.h>
+> +
+> +#define CSI2_MAX_DATA_LANES 4
+> +#define CSI2_DEFAULT_CLK_LN 7
+> +
+> +struct mipi_csi2phy_lane {
+> +	u8 pos;
+> +	u8 pol;
+> +};
+> +
+> +struct mipi_csi2phy_lanes_cfg {
+> +	struct mipi_csi2phy_lane data[CSI2_MAX_DATA_LANES];
+> +	struct mipi_csi2phy_lane clk;
+> +};
+> +
+> +struct mipi_csi2phy_stream_cfg {
+> +	s64 link_freq;
+> +	u8 num_data_lanes;
+> +	struct mipi_csi2phy_lanes_cfg lane_cfg;
+> +};
+> +
+> +struct mipi_csi2phy_device;
+> +
+> +struct mipi_csi2phy_hw_ops {
+> +	void (*hw_version_read)(struct mipi_csi2phy_device *csi2phy_dev);
+> +	void (*reset)(struct mipi_csi2phy_device *csi2phy_dev);
+> +	int (*lanes_enable)(struct mipi_csi2phy_device *csi2phy_dev,
+> +			    struct mipi_csi2phy_stream_cfg *cfg);
+> +	void (*lanes_disable)(struct mipi_csi2phy_device *csi2phy_dev,
+> +			      struct mipi_csi2phy_stream_cfg *cfg);
+> +};
+> +
+> +struct mipi_csi2phy_lane_regs {
+> +	const s32 reg_addr;
+> +	const s32 reg_data;
+> +	const u32 delay_us;
+> +	const u32 param_type;
+> +};
+> +
+> +struct mipi_csi2phy_device_regs {
+> +	const struct mipi_csi2phy_lane_regs *init_seq;
+> +	const int lane_array_size;
+> +	const u32 common_regs_offset;
+> +};
+> +
+> +struct mipi_csi2phy_soc_cfg {
+> +	const struct mipi_csi2phy_hw_ops *ops;
+> +	const struct mipi_csi2phy_device_regs reg_info;
+> +
+> +	const char ** const supply_names;
+> +	const unsigned int num_supplies;
+> +
+> +	const char ** const clk_names;
+> +	const unsigned int num_clk;
+> +
+> +	const char * const opp_clk;
+> +	const char * const timer_clk;
+> +
+> +	const char ** const genpd_names;
+> +	const unsigned int num_genpd_names;
+> +};
+> +
+> +struct mipi_csi2phy_device {
+> +	struct device *dev;
+> +	u8 phy_mode;
+> +
+> +	struct phy *phy;
+> +	void __iomem *base;
+> +
+> +	struct clk_bulk_data *clks;
+> +	struct clk *timer_clk;
+> +	u32 timer_clk_rate;
+> +
+> +	struct regulator_bulk_data *supplies;
+> +	struct dev_pm_domain_list *pd_list;
+> +
+> +	const struct mipi_csi2phy_soc_cfg *soc_cfg;
+> +	struct mipi_csi2phy_stream_cfg stream_cfg;
+> +
+> +	u32 hw_version;
+> +};
+> +
+> +extern const struct mipi_csi2phy_soc_cfg mipi_csi2_dphy_4nm_x1e;
+> +
+> +#endif /* __PHY_QCOM_MIPI_CSI2_H__ */
+> 
+
+Thanks,
+Vijay.
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
