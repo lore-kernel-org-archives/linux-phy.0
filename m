@@ -4,133 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D2D18CD6E55
-	for <linux-phy@archiver.kernel.org>; Wed,  3 Jun 2026 13:58:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7C6E0CD6E55
+	for <linux-phy@archiver.kernel.org>; Wed,  3 Jun 2026 15:09:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+Lqwg/xb9k7kHMvCCi2iwbMF6SN77L0ZmE1x4LBhmu4=; b=i8x74Ti6u2i862
-	fPsq85Y9dmEIAo0RaD1VibB/BDLzfASQMIInMgrr/ZFJxAHRddXyM4ZorcapxH7h+0QdOxCStaH9f
-	tZja4R1E84biHerGKuTgvGcZRnuw/ed+ZvbZEmqjR51Oney1jjYU2NQcQESiabwH4jwXLo4trbSLy
-	i+SJzAFTt+SvSFehRJcKywEZcYCrGr5ZcYA2RpJeBiPL41EkbJVelcjKCX6E+mKd6B0/heWPnLet9
-	b00d/OAoCqd0LGoPQ4pl9+9eYKmZtuL1moDb92Pywez3UGoslzpQFEq8WCfR5K5HRAG3s4WdEykSE
-	OXZw98SvmPdLlFbzn0sA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=eSRK6z22r7maqrnGkUKhesR1id30v/7p9g+PAZIbTJg=; b=p94xbigGty/mEeMbvPKS31W1ua
+	yxzJW6n+pjX0stPYTcKygMUwCc807A1q2h3Z+YEcxIrwoUjP8LIEM0rsipfMbYKvdvEv8nqADDgxc
+	3baF5mwlFGVng7fWDDw3JCmyOTzCzfvZKh5RSwauHgy9RmVrSryup42HXzQOK4k2vyHR+CDEqYghW
+	MG+IC0iy8yMOSHLu4OBRulzuOsoPoLvW0I9MISn/Wx4DfOYu0aKcCp/lNk/mTNqYufSrgqhFDe8jX
+	MliNDirn3vuxJq+23ckxYTr9QMxeX9qoDrFzSpCamS/CeDAES5p6AEOxiiuDuaV2/bbvX60041+Tp
+	v3axneCw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUm6j-0000000FD4G-0NZM;
-	Wed, 03 Jun 2026 13:58:09 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1wUnDw-0000000FKrc-1g9o;
+	Wed, 03 Jun 2026 15:09:40 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUm6g-0000000FD3l-15Rr
+	id 1wUnDt-0000000FKrA-1QiV
 	for linux-phy@lists.infradead.org;
-	Wed, 03 Jun 2026 13:58:07 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 653CQpUs1946600
-	for <linux-phy@lists.infradead.org>; Wed, 3 Jun 2026 13:58:05 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=04sBBkvYwcXhq/fsapj/4LEU
-	21npBSlWyomjaSXyXqc=; b=ddtl+jOxnmre09fbhB4QhnK/St83ZsU+Zw2ynDbH
-	Z1z5QJO/nbElu9Tq+FQ7tQPHnaKQ11gpuBQbsk+8VV+t641dRB2IEQsUu203iA5k
-	q/Y2fueONc1y0Vq8l8y244PQjnYjLqYt6wiv2MY0z3sn/20+376hIWsWoavMMUSv
-	y5xNW0lUWAqgl8FQmLBbxd57JGwYkGzJ6lc9J3Di+gHdGUVpmDvaE0D9m7PIDNaP
-	w1WCwabBcNPNe4YCxWPhfO2vrSh+Gpq3VdLQpU4rTg0vsTOtlZH03dk6fOjzxhyu
-	h+IfpKTQRI2nj5tO7m+kY1ubIopy3ImuIc2Jt4aBZTXlfA==
-Received: from mail-ua1-f70.google.com (mail-ua1-f70.google.com [209.85.222.70])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4ejabgjrsc-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Wed, 03 Jun 2026 13:58:05 +0000 (GMT)
-Received: by mail-ua1-f70.google.com with SMTP id a1e0cc1a2514c-96396658728so1549126241.1
-        for <linux-phy@lists.infradead.org>; Wed, 03 Jun 2026 06:58:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1780495085; x=1781099885; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=04sBBkvYwcXhq/fsapj/4LEU21npBSlWyomjaSXyXqc=;
-        b=g3rlqtHdHfk1lETCbVXq5QAzjCuC8Rr6GD+JDTghFcOFDuplBEt3wf050q0LQsUoAs
-         hK6Yoc+IQ24I/kF2upYmRBsmFzi/mXtDOJQmxbMID6Gq1WwC9NS1nVrY5x2YJja4BRlr
-         PVvTeLhqS6264AwR1ON6WM7QMDvr8L/AcNkGYtIL9Cx/mUKmVTexPICfYWzlrx8fg6vG
-         at4rl7OX6yCpNAgII8iM+oNDbS6GVWn6p3j08TIOtkO8O4/p0gvcnhmrL2lVilhSl30A
-         TAjR81pNUU1Re1XXMImH0vfjf0jOkfqM2bXqUsvUCcuyXzfs+yHiHAHsU5l/sZSWrTMD
-         W4Rw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1780495085; x=1781099885;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=04sBBkvYwcXhq/fsapj/4LEU21npBSlWyomjaSXyXqc=;
-        b=SqAuKp9iNYjxW/COZ/h9paKUxQ9j48HkSnl+x9HKdttdZE8G/R6+1pSUYLXs4jMc5a
-         4I7buxG+jbMdFUJQ4KjpPmM2/mYIQ4p9CzdBkpsQ1JoddRBdTX+UhaoarXM6bP3/tKDU
-         FYuyG5kOVl55ww07JM3Us/hn2ScRljLGxA5gU+VtPRBfXxqkCFoXDTJ8k0z+mYKZR3d2
-         WfexYoePF9QhzZGTSYbjcDSVhJJJZPn1nz8MBRGXR6JubW/HQWTEkLO13F9c2j/TjvwX
-         6/m+pe5f4liHwGH4gn0qwRa7YllxTIVhYiE35OlFOWZvYkXp+DbX0dKIWUrsEEyAm+9+
-         cafQ==
-X-Gm-Message-State: AOJu0YxkE5krzaRqz8H6O+TG93WG3BoGIcvF14w5LeASZ27hjh2epxvE
-	tbBSuUwR+QWUkYEIX/cyTpg5zCsOMX6ZBE1pQElYTgoVW/NyXgZXbXlrRBPGNfVwTqbTzEnPLWo
-	BIW1V16qLYS+d5vaSS2Q4y4qRZB57IA9msFUi1I2mSuVrBg9IEpIqg4/0+0uhKwkfyErSAUxmxB
-	a+g8k=
-X-Gm-Gg: Acq92OEtxFqo8My7b7Bn9nY3hWb2M6lyd9Vc+pXl+a4VwkJVX/ExqsZGIs86hS1cIRm
-	mYQhBVNxoHcs1ZOWjv1861eOi18WvGoK0H8Q6I1V5IkJv8LFbxGu+2NUyW+hhPbdg0LpiF3PUNc
-	xLWXnUcxIyMv7R1XQrts3cg9kR4nS9p/FyD6yxcaTbf3kVj3ojqJKONm8DI9tMzSDO+yEk8oc2a
-	I+hR20OQOlayceqtMd1cuVIxfrGfSKd95TmTVEf8608ZeDfvqf5UKVzJVjZF0NN5E8Pfe82tL79
-	VjkU9d5Tv/PDetiEaPQulAvkxZB9T0ozM+p16duYBe8eNKGmqV5XOB9E5V7mMxI6/Q4/bJj35F2
-	IJastGk3wfrYsN0XyTNoD9JcH+R96dtM7/a3KljlfMx2jn5+3mp+HEhJEWbMcNMMhRjkpoDBWpt
-	TjRsFHZYi1dwitPADqvy3yQD3kuLKHnEVZkWOh3vJ8OqGX5A==
-X-Received: by 2002:a05:6102:5129:b0:6dd:405b:26d0 with SMTP id ada2fe7eead31-6ec48fce1d6mr1437493137.23.1780495084618;
-        Wed, 03 Jun 2026 06:58:04 -0700 (PDT)
-X-Received: by 2002:a05:6102:5129:b0:6dd:405b:26d0 with SMTP id ada2fe7eead31-6ec48fce1d6mr1437482137.23.1780495084168;
-        Wed, 03 Jun 2026 06:58:04 -0700 (PDT)
-Received: from umbar.lan (2001-14ba-a073-af00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a073:af00:264b:feff:fe8b:be8a])
-        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-396abf674a7sm9436301fa.3.2026.06.03.06.58.02
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 03 Jun 2026 06:58:03 -0700 (PDT)
-Date: Wed, 3 Jun 2026 16:58:01 +0300
-From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-To: Herman van Hazendonk <github.com@herrie.org>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-        linux-arm-msm@vger.kernel.org, Vinod Koul <vkoul@kernel.org>,
-        Neil Armstrong <neil.armstrong@linaro.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>,
-        Bjorn Andersson <andersson@kernel.org>
-Subject: Re: [PATCH 2/2] phy: qcom: usb-hs: honour qcom,vendor-init-seq raw
- ULPI writes
-Message-ID: <rmlkstzpfukootrpfh4l5pgtwra4dnwbynvteztvuugl4udtx7@a4xacrg7ealc>
-References: <20260603054809.565723-1-github.com@herrie.org>
- <20260603054809.565723-3-github.com@herrie.org>
+	Wed, 03 Jun 2026 15:09:38 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 57D8841E4F;
+	Wed,  3 Jun 2026 15:09:36 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1E1791F00893;
+	Wed,  3 Jun 2026 15:09:33 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1780499376;
+	bh=ARuOFQjVr8e+L4jfVqSgMIfl93+q6E7LoYqJOO8jb90=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=dqnfBTtByIMI26ZoUrTeGnpDoxYzPftEQq1mU9bLsrnWR5ApVZE1F8lsS6hjFnTNA
+	 9u2nmzGODFKqXkwum2zCoYz09A8KJmfcLLNXh70vN3wNPrNV8FTikTiepZb5AoltQC
+	 EPqZWMjO/EyDhXUBah97UVZY1/z4C7U2o1n0qsLaTRLknfYVvEyVCMcl3hgDZChtzb
+	 4DtgUXaE4tdRR89ZQFbRSRpA67ZN3nEzHea7TAsdDRa1qdS9PjkZzn0ro0T1BiJkoo
+	 1sND5xvZ0/+CSZcDoo34q4sJ2Z7/ux8nKAs2bOdxb5pVTMrdDkt83SInAX5HjPn/ZJ
+	 9wfCO67nvvkJg==
+Date: Wed, 3 Jun 2026 16:09:32 +0100
+From: Conor Dooley <conor@kernel.org>
+To: Vladimir Oltean <vladimir.oltean@nxp.com>
+Cc: linux-phy@lists.infradead.org, Ioana Ciornei <ioana.ciornei@nxp.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Tanjeff Moos <tanjeff.moos@westermo.com>,
+	linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
+	Conor Dooley <conor+dt@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH v2 phy-next 13/15] dt-bindings: phy: lynx-10g: initial
+ document
+Message-ID: <20260603-bleach-arming-247f1b0fb87b@spud>
+References: <20260529171509.1163787-1-vladimir.oltean@nxp.com>
+ <20260529171509.1163787-14-vladimir.oltean@nxp.com>
+ <20260602-reviving-aging-a7d066d2448b@spud>
+ <20260603115654.k4v7cayysvy7yte4@skbuf>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260603054809.565723-3-github.com@herrie.org>
-X-Authority-Analysis: v=2.4 cv=R6sz39RX c=1 sm=1 tr=0 ts=6a2032ed cx=c_pps
- a=R6oCqFB+Yf/t2GF8e0/dFg==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
- a=FelO9ux0wxsA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=DJpcGTmdVt4CTyJn9g5Z:22 a=Bm0pR8FC1pe31243yBgA:9
- a=CjuIK1q_8ugA:10 a=TD8TdBvy0hsOASGTdmB-:22
-X-Proofpoint-GUID: 5voTQOHT-LrzPVdXmjy-TaVOzKVmFQnV
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjAzMDEzNCBTYWx0ZWRfX85s0sW3Qvii4
- f/wdtYRXXPFNAevfBKp6u6/66MkFkHfxfUQIt9j14oPQ9p45i97uIe9ITnluJqojV7M/8HRYZZZ
- A9zHNuZgfwxNuuaL5I4u57T8kFS1VWoztXKhhq0f+ZA9fip203FRce3TOCx5mNARhBi2C/edXLs
- qNsXLnELFce1DKLPhhIYhkfb7988LfcvgpFzhMjEREXX403lPJLz9o11eG4WpAHaykcLdCmJ3S1
- XM5YQ67edCKjdz5IZ1rJl+iCanfgnF3DufljzJgi6f7lfcRoq0GE1DRJuPq2akMG9O2KwkhHl2y
- ZoKr9r3XYgaZgFgeg4hg32UsvzlVEKgiiET3AsVOUb+D9lHyQHryBmNpINNbaEj4eRJdV4WInDr
- DMslApIfVtH+xq85XSGg6k3AviuPzi2v3q91kg65QjmRNiQ+BO4TtDHkIRSAe3GfUvnm7A4sU9f
- 4ojClUvzYmS85yfrrrQ==
-X-Proofpoint-ORIG-GUID: 5voTQOHT-LrzPVdXmjy-TaVOzKVmFQnV
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.125,FMLib:17.12.100.49
- definitions=2026-06-03_04,2026-05-28_03,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 priorityscore=1501 malwarescore=0 bulkscore=0 clxscore=1015
- lowpriorityscore=0 adultscore=0 impostorscore=0 suspectscore=0 phishscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2605210000 definitions=main-2606030134
+In-Reply-To: <20260603115654.k4v7cayysvy7yte4@skbuf>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260603_065806_302119_89E6E66D 
-X-CRM114-Status: GOOD (  12.36  )
+X-CRM114-CacheID: sfid-20260603_080937_480503_07834A24 
+X-CRM114-Status: GOOD (  32.44  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -142,29 +76,153 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============0506924293660008138=="
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jun 03, 2026 at 07:48:09AM +0200, Herman van Hazendonk wrote:
-> Add support for the optional qcom,vendor-init-seq DT property: a
-> list of u8 (addr, val) pairs written verbatim to raw ULPI register
-> addresses, rather than to ULPI_EXT_VENDOR_SPECIFIC + addr like the
-> existing qcom,init-seq sequence reaches. This lets boards reach the
-> standard vendor register range 0x30-0x3F where MSM8x60-era hardware
-> keeps pre-emphasis level / HS driver slope / CDR auto-reset, etc.
 
-I commented on the bindings. Platform-specific values should be defined
-in the driver. Device-specific valeus should use values rather than raw
-register data.
+--===============0506924293660008138==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="tvg35FipqBaZkrlN"
+Content-Disposition: inline
 
 
--- 
-With best wishes
-Dmitry
+--tvg35FipqBaZkrlN
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Wed, Jun 03, 2026 at 02:56:54PM +0300, Vladimir Oltean wrote:
+> On Tue, Jun 02, 2026 at 06:10:30PM +0100, Conor Dooley wrote:
+> > On Fri, May 29, 2026 at 08:15:07PM +0300, Vladimir Oltean wrote:
+> > > Add a schema for the 10G Lynx SerDes. This is very similar to the mod=
+ern
+> > > form of the 28G Lynx SerDes, which is very much the intention.
+> > >=20
+> > > We allow both forms of #phy-cells =3D <1> in the top-level provider
+> > > and #phy-cells =3D <0> in the per-lane provider for more flexibility =
+to
+> > > consumers, and because the kernel code is shared with the 28G Lynx wh=
+ich
+> > > already has that support for compatibility reasons.
+> > >=20
+> > > Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
+> > > ---
+> > > Cc: devicetree@vger.kernel.org
+> > > Cc: Conor Dooley <conor+dt@kernel.org>
+> > > Cc: Krzysztof Kozlowski <krzk+dt@kernel.org>
+> > > Cc: Rob Herring <robh@kernel.org>
+> > >=20
+> > > v1->v2:
+> > > - move patch later in series, right before driver
+> > > - deliberately ignoring this Sashiko feedback:
+> > >   https://lore.kernel.org/linux-phy/20260529125017.ifqunh52gdzhthdg@s=
+kbuf/
+> > > ---
+> > >  .../devicetree/bindings/phy/fsl,lynx-10g.yaml | 131 ++++++++++++++++=
+++
+> > >  1 file changed, 131 insertions(+)
+> > >  create mode 100644 Documentation/devicetree/bindings/phy/fsl,lynx-10=
+g.yaml
+> > >=20
+> > > diff --git a/Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml =
+b/Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml
+> > > new file mode 100644
+> > > index 000000000000..993f076bba4e
+> > > --- /dev/null
+> > > +++ b/Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml
+> > > @@ -0,0 +1,131 @@
+> > > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> > > +%YAML 1.2
+> > > +---
+> > > +$id: http://devicetree.org/schemas/phy/fsl,lynx-10g.yaml#
+> > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > > +
+> > > +title: Freescale Lynx 10G SerDes PHY
+> > > +
+> > > +maintainers:
+> > > +  - Vladimir Oltean <vladimir.oltean@nxp.com>
+> > > +
+> > > +description:
+> > > +  The 10G Lynx is a multi-protocol SerDes block which handles networ=
+king, PCIe,
+> > > +  SATA and other high-speed interfaces. It is present on most QorIQ =
+and
+> > > +  Layerscape SoCs. The register map is common, but the integration is
+> > > +  SoC-specific, with the differences consisting in register endianne=
+ss, the
+> > > +  number of lanes, protocol converters available per lane and their =
+location in
+> > > +  the PCCR registers. Some SoCs have multiple SerDes blocks and thos=
+e differ in
+> > > +  their protocol capabilities per lane.
+> > > +
+> > > +properties:
+> > > +  compatible:
+> > > +    description:
+> > > +      There is intentionally no generic fsl,lynx-10g compatible stri=
+ng due to
+> > > +      the hardware inability to report its capabilities, despite hav=
+ing a
+> > > +      common register map.
+> >=20
+> > I think you can probably drop this from the diff, and put it in the
+> > commit message.
+>=20
+> Ok.
+>=20
+> > > +    enum:
+> > > +      - fsl,ls1028a-serdes
+> > > +      - fsl,ls1046a-serdes1
+> > > +      - fsl,ls1046a-serdes2
+> > > +      - fsl,ls1088a-serdes1
+> > > +      - fsl,ls1088a-serdes2
+> > > +      - fsl,ls2088a-serdes1
+> > > +      - fsl,ls2088a-serdes2
+> > > +
+> > > +  reg:
+> > > +    maxItems: 1
+> > > +
+> > > +  big-endian: true
+> >=20
+> > This isn't a required property, but should it be made required for the
+> > specific compatibles that are big endian? Or are we not that lucky, and
+> > devices can be either?
+>=20
+> I can make big-endian a required property for fsl,ls1046a-serdes1 and
+> fsl,ls1046a-serdes2.
+
+
+Please do. In that case,
+pw-bot: changes-requested
+
+Cheers,
+Conor.
+
+--tvg35FipqBaZkrlN
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaiBDrAAKCRB4tDGHoIJi
+0qDgAQDqja67Y3bn5A9b3EDzCfoLaN2NFBUyf10W0X5fB4qOEQEAi3cLwgcPSKw1
+vD0fQbVfS2rXwauVMhQ6roFQUAeRoQY=
+=i/vn
+-----END PGP SIGNATURE-----
+
+--tvg35FipqBaZkrlN--
+
+
+--===============0506924293660008138==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
+
+--===============0506924293660008138==--
+
