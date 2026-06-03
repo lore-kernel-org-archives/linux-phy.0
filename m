@@ -4,93 +4,129 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0A485CD6E57
-	for <linux-phy@archiver.kernel.org>; Wed,  3 Jun 2026 17:21:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5F11FCD6E6B
+	for <linux-phy@archiver.kernel.org>; Wed,  3 Jun 2026 18:26:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BMAiFahzw5YufPGrSvy3UrrWlXGRWqpS4PHHT0hTLX8=; b=2/oLEbiRgAY0Mh
-	YQOaomTakg56YIZKWBaWLX20kXfrtYCbyBcuP2ESCejQaxus87WZ/cmu5G8ygL/H2ehwN7/W9ZVbv
-	w3mrHq+gWANFo5YGFbJP+a5nXj5xsUmGOaXH86LzJNIuLFbqXVi+ixwpS09BWFhqyMj8b7YHnM0gG
-	rweViQkx6ec3T86ywSThpQXM9C9kMG/8GlAFVBVAtZwj4cUm8uRj28CakLmW+gIREzKJDcEy0j8wc
-	DYqHIEVGoy0vZ67zeP/sijdyT8CJyQP4F/euYT3iFtg9Qs3nMO6cgVp3DiF9H/QcL0c2EfThwuwrd
-	a9W09LealDvYeG9ly8Yw==;
+	List-Owner; bh=2MY41kXEkfAneZnUAvBFsBjpuBoSnj6ohrPKvvhPGnw=; b=W9I7+2o6cLT8ql
+	LkEYvLTFeHO7J/ND4pHLzVpFEJHS8+N2WYr7CCmns/JHzkaBbZMBDg6koz6zeu7OJ20ZJRQzkSYcN
+	d+hHOJl+HGGxKkUjocr2a9n89TCjvFZY2iB0qxj4W4Fob+W6dnjN9DWFx80v7NIIQrQOUh/B85SKL
+	VfgvIkV042wvcaGKUxemhxkNZWWdXfKdXGnEEntn7o63tHjFajL94iLu34L4LbiOOJjG7TAzK7Jb/
+	MiblNSTUW2DRBOcKp8JNTWRXdA3oV678jNeJJdAHr5o0FBXrWkCuAFFYOEwzpX/YTzPEZ1H3iDwrl
+	QqJZhmCXUd6x4Pitlp+Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUpHN-0000000FZHO-1fPo;
-	Wed, 03 Jun 2026 17:21:21 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wUqHv-0000000FfrG-3ov5;
+	Wed, 03 Jun 2026 18:25:59 +0000
+Received: from mail-francecentralazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c20a::7] helo=PA4PR04CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUpHM-0000000FZH0-2ijQ;
-	Wed, 03 Jun 2026 17:21:20 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 1B9D56008A;
-	Wed,  3 Jun 2026 17:21:19 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0A9B71F00893;
-	Wed,  3 Jun 2026 17:20:57 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1780507278;
-	bh=Ig4zCGf7+4ptZbdZZMypwYARwR0YB1sgjeMspwVj9PE=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:References;
-	b=c18sJ7aSoq9r+i0IlOMIyM+kePG9Og4QNfkKdmvW9i9gHt/nkcyz7wt3X6sQ55+PN
-	 9FCuhhMNrZDZj6AiihMI5VZ5eSGx75aw2BHqp+z8eJPDKPiawLxyWYNdzegnzvTLP4
-	 SUK0v0AV8YpRWsaQN9Z7bVQvVxyvbFJIooaNjoNYh0o8y8mjZWNbqaH/2nGiGRSSjv
-	 yhGhdlantZDthW2N7NtTDXBDCNyfOloZ32O+IlYOTFWGg3Gt/jq7bLRmckBoFSWC6R
-	 Go6HqJDXVno0Uqebslcwu+6uFCc6/BDhadZDjKwxPxloA2uOX2Cy1qIxjyq10GIpqT
-	 8FjWPlNqvKQSg==
-Date: Wed, 3 Jun 2026 18:20:52 +0100
-From: Jonathan Cameron <jic23@kernel.org>
-To: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-Cc: Romain Gantois <romain.gantois@bootlin.com>, MyungJoo Ham
- <myungjoo.ham@samsung.com>, Chanwoo Choi <cw00.choi@samsung.com>, Guenter
- Roeck <linux@roeck-us.net>, Peter Rosin <peda@axentia.se>, David Lechner
- <dlechner@baylibre.com>, Nuno =?UTF-8?B?U8Oh?= <nuno.sa@analog.com>, Andy
- Shevchenko <andy@kernel.org>, Lars-Peter Clausen <lars@metafoo.de>, Michael
- Hennerich <Michael.Hennerich@analog.com>, Mariel Tinaco
- <Mariel.Tinaco@analog.com>, Kevin Tsai <ktsai@capellamicro.com>, Linus
- Walleij <linus.walleij@linaro.org>, Eugen Hristev
- <eugen.hristev@linaro.org>, Vinod Koul <vkoul@kernel.org>, Kishon Vijay
- Abraham I <kishon@kernel.org>, Sebastian Reichel <sre@kernel.org>, Chen-Yu
- Tsai <wens@csie.org>, Hans de Goede <hansg@kernel.org>, Support Opensource
- <support.opensource@diasemi.com>, Paul Cercueil <paul@crapouillou.net>,
- Iskren Chernev <me@iskren.info>, Krzysztof Kozlowski <krzk@kernel.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>, Matheus Castello
- <matheus@castello.eng.br>, Saravanan Sekar <sravanhome@gmail.com>, Matthias
- Brugger <matthias.bgg@gmail.com>, AngeloGioacchino Del Regno
- <angelogioacchino.delregno@collabora.com>, Casey Connolly
- <casey.connolly@linaro.org>, Pali =?UTF-8?B?Um9ow6Fy?= <pali@kernel.org>,
- Orson Zhai <orsonzhai@gmail.com>, Baolin Wang
- <baolin.wang@linux.alibaba.com>, Chunyan Zhang <zhang.lyra@gmail.com>, Amit
- Kucheria <amitk@kernel.org>, Thara Gopinath <thara.gopinath@gmail.com>,
- "Rafael J. Wysocki" <rafael@kernel.org>, Daniel Lezcano
- <daniel.lezcano@linaro.org>, Zhang Rui <rui.zhang@intel.com>, Lukasz Luba
- <lukasz.luba@arm.com>, Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>,
- Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
- Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>, Sylwester
- Nawrocki <s.nawrocki@samsung.com>, Olivier Moysan
- <olivier.moysan@foss.st.com>, Arnaud Pouliquen
- <arnaud.pouliquen@foss.st.com>, Maxime Coquelin
- <mcoquelin.stm32@gmail.com>, Alexandre Torgue
- <alexandre.torgue@foss.st.com>, Thomas Petazzoni
- <thomas.petazzoni@bootlin.com>, linux-kernel@vger.kernel.org,
- linux-hwmon@vger.kernel.org, linux-iio@vger.kernel.org,
- linux-input@vger.kernel.org, linux-phy@lists.infradead.org,
- linux-pm@vger.kernel.org, linux-mips@vger.kernel.org,
- linux-mediatek@lists.infradead.org, linux-arm-msm@vger.kernel.org,
- linux-sound@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
- Sebastian Reichel <sebastian.reichel@collabora.com>, Andy Shevchenko
- <andriy.shevchenko@intel.com>
-Subject: Re: [PATCH v2 2/2] iio: inkern: Use namespaced exports
-Message-ID: <20260603182052.7d23c067@jic23-huawei>
-In-Reply-To: <acBr-W2ILu9tnMyd@google.com>
-References: <20251209-iio-inkern-use-namespaced-exports-v2-0-9799a33c4b7f@bootlin.com>
-	<20251209-iio-inkern-use-namespaced-exports-v2-2-9799a33c4b7f@bootlin.com>
-	<acBr-W2ILu9tnMyd@google.com>
-X-Mailer: Claws Mail 4.4.0 (GTK 3.24.52; x86_64-pc-linux-gnu)
+	id 1wUqHt-0000000Ffqe-0tz1;
+	Wed, 03 Jun 2026 18:25:58 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=hQRwmqSr2UoazxyyXz8vaJVzMLcPHcMxne3tO+9vL0abDoCjP64NUi+31ONl37IssP2hUd/DdD8DYRX1KzUBLeaP2KOiW3uZIB9J1mV1LgtctZSfCWLgnh7HZhHRUY1DlGZAgSnve176w0lRXkxxTxueqEeapxusY7L0HLi4CxTdS+IGw9mvl9Zy9QTxdGJBotcY/+GBNMtOexq1TdPxeJxM6Uesrq8jjW7WPwtUyfjAZZAaeZmIckynFkxlLHWzZkfHL1WAUcAPD01C+jemzp0O3CXyltP7hgs5923R9Ju6p80Kf3s7qUydNk5vQG0BV4fWZWUANHAhz6UiywYHKg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=JYf9zqAkwe4A/uwWbD1D1D08fPtGbuiKj6p4y3N/f9A=;
+ b=TnJoTGuWFh/8kjd7crlu1V3USJqymzmjVzva4S7tdA3fUEz7odCOAGXD9k20prLaNze4VrrvDoObFpSFLtM7eFU9yju73hlfKlFLx+L/4Fx0dbRNBiO5LHX9/OqrTL1vgNA39CcEVTvQLJkvk6lqPZi+oI8ofkR/nWxQ4IaIfdBVjfys5Vhr4HPye9/cJvTtFgNy7qpvNBd/NMwdRrbDR/aSyhiLstYxmwz/aZdxeq4zMOEDkWhtlLxsFulryDVPYt5LbH8/w+SH2fsbV31c4LpXvSnk11e08Vu246AB7gPL39tHjc8IZz19Nzld7FKz10XcMOtklmiNZVdT9+Ozrg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=JYf9zqAkwe4A/uwWbD1D1D08fPtGbuiKj6p4y3N/f9A=;
+ b=OL70jeNRkKBPc5tFBb/jbs4FRGNrBQZ6U842TfBX3fnLmx/TYOPSW4ATOwpiICO+XkEkSMQjbU0X2lZwrsqxA/jU6qShyZWyezlUbxxlG0y0sD1y4ZI5P+YblkjpfHx1vPQ9n3iX/3qtZISFnalEbQKe2oNh2J754wieF+9T4Nx8mF+4r4LFdFh5EsUAj26o5OpMuL7+9pNUJVgowb4ng9bIjR+a5Cw1sySlHZ20uB8yoaBGO5ENxYcO7a7zBpYrWZ47RLkw2t3bAxi3puSeDTjvKIbxuT6eThGNNrylQYmeN2HkdpeJAHSrwUeNW9L+MkZtAW9hIh3jKG8ScZ5ZDw==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from PA4PR04MB9366.eurprd04.prod.outlook.com (2603:10a6:102:2a9::8)
+ by AMCPR04MB12669.eurprd04.prod.outlook.com (2603:10a6:20b:76f::15) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.92.7; Wed, 3 Jun 2026
+ 18:25:53 +0000
+Received: from PA4PR04MB9366.eurprd04.prod.outlook.com
+ ([fe80::75e4:8143:ddbc:6588]) by PA4PR04MB9366.eurprd04.prod.outlook.com
+ ([fe80::75e4:8143:ddbc:6588%3]) with mapi id 15.21.0092.006; Wed, 3 Jun 2026
+ 18:25:52 +0000
+Date: Wed, 3 Jun 2026 14:25:46 -0400
+From: Frank Li <Frank.li@nxp.com>
+To: Xu Yang <xu.yang_2@oss.nxp.com>
+Cc: Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Sascha Hauer <s.hauer@pengutronix.de>,
+	Pengutronix Kernel Team <kernel@pengutronix.de>,
+	Fabio Estevam <festevam@gmail.com>, Jun Li <jun.li@nxp.com>,
+	linux-phy@lists.infradead.org, imx@lists.linux.dev,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+	Felix Gu <ustc.gu@gmail.com>, stable@vger.kernel.org,
+	Xu Yang <xu.yang_2@nxp.com>
+Subject: Re: [PATCH v3 1/5] phy: fsl-imx8mq-usb: fix typec switch leak on
+ probe error path
+Message-ID: <aiBxqjm5lsPDXEtW@lizhi-Precision-Tower-5810>
+References: <20260603-imx8mp-usb-phy-improvement-v3-0-7afb8f89abc6@nxp.com>
+ <20260603-imx8mp-usb-phy-improvement-v3-1-7afb8f89abc6@nxp.com>
+Content-Disposition: inline
+In-Reply-To: <20260603-imx8mp-usb-phy-improvement-v3-1-7afb8f89abc6@nxp.com>
+X-ClientProxiedBy: SA0PR13CA0030.namprd13.prod.outlook.com
+ (2603:10b6:806:130::35) To PA4PR04MB9366.eurprd04.prod.outlook.com
+ (2603:10a6:102:2a9::8)
 MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PA4PR04MB9366:EE_|AMCPR04MB12669:EE_
+X-MS-Office365-Filtering-Correlation-Id: 6a824984-e165-49d9-181d-08dec19d8b7b
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|366016|19092799006|7416014|376014|52116014|4143699003|22082099003|18002099003|56012099006|11063799006|38350700014;
+X-Microsoft-Antispam-Message-Info: ULK+BLQ1rTPqeg7nCzM3SgafC0qle0ceDcMxhYLOXg+Ihp9196NVg4Bg1Q2DX47LaKyeCcMhgt3aGQ2PddxKmI4PljwXSf5MUsorWc+/PP3Q3wLuOw+yZtU97A4ymKmVS60YlP5CxdDPMTdl9aIgcobYJw57xKDIPcvj5b8ON1pxoFqFIR6MGjL2iqO6XQqXRDstroj+MdBhX20+NaHlxy7DK+DjiB9q2VLKuFm/QOTh01pBFZ6JoORuChwV7PVmdpd33pOFaAhj52yPLxSKwdYpAZr5VEC1SIw43KBxItta+Jfp4CdhdGRfkN6Ni4XxeNfmzeFv9P/GXagkYJvivkeasbJFZWNg2Pz8n1YUri2iaSe10Nbz7tB0/6No57yz5pr8I0ieeUgqIeRRI4T7oUYqwCRDaBn+NbAIhmEJN+iXqE2sA3Avw+3OJ3RJ72QZIReogPsdyFzdeNrmBk5N9ehTiPkfufMU9DKx7F8SOvTzB9GMZUm20ex2FaVcO8v7GDMqFmqcaQHFN3vnrMXTFf0fdELLqZ2nTcNsi9PEElzba1ExTG1DZKFF2YT+n3TG1/9YddpOaJu7eckrSnSsPVHiJjWZ25CeqwxKYnjzN6G8mNob7AIeMgdcAOoc+9pTYaFgjpgmxhvE5Pz42RmmgIZT/D5/g/Rz/jUk+1NDCWNnA1TVHQf6og3Dq4FyZbGmpz9S04LV1G55NhEOWz7uTKY8tRfywVjOoeKaP9hZ0NezNR8Xpl0xsHEoo2Yef/6Q
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PA4PR04MB9366.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(19092799006)(7416014)(376014)(52116014)(4143699003)(22082099003)(18002099003)(56012099006)(11063799006)(38350700014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?VJv8cZLQWMYJb7WyIK6xM1/tJbcrnjl8wM1h3me8qmq36ap9dPH6njqjQQig?=
+ =?us-ascii?Q?KQfxCXTM5b6J8u/tPdW04Hwczfr25arYn8y7gkLKdDZzCbV9BKZHjoHqqV2M?=
+ =?us-ascii?Q?UD8vK7/+UpOYc6gqPF1uKC/aLjyTQSG9mSVzmejhXPjVH+wT/CRzUgojWJxb?=
+ =?us-ascii?Q?VwnEGpozETobxxpNQ2G9plB6nfK/VW3wSPfqpJuQh2tIQThrGDvgM1SQZF4A?=
+ =?us-ascii?Q?GSzjAewocRuR+oJPBPh3D8T28ypRcpC6mKO3x/ENejjbUe07sWzBIlsq8Z7W?=
+ =?us-ascii?Q?53RUik9cg82YprNngvixAcPO+0XJLNSA+p54iYF5CkNi8pqBWq8bDy/1g12Y?=
+ =?us-ascii?Q?M++P+nLQmPhPTGqHcWXxNlWszwSJvTFdSSGUJ7CWMv+mVayQncjPWqZMuSgM?=
+ =?us-ascii?Q?SXNiohblbBo3hZ9/ZC62DWc7Cft4MC2ATVXmouLzFw+6Ucna9e0IQRs27sYf?=
+ =?us-ascii?Q?r+xOR/7+NHObjNDidAaxFB6PEO3xSJP/lP8H3qQz45xKdnpf2h0W8f96k5vk?=
+ =?us-ascii?Q?NyYw7auYyvxi/jo9w2aCTipU+0dH0TIycl0rQJchhMh/UNGIsnGgFhoMkfgL?=
+ =?us-ascii?Q?TrW9cpcsrasNPmWlIAhpBFhjSZaRo2zFVKR1IVjjoeVchnK7wBKpIhKVE6lz?=
+ =?us-ascii?Q?hsAl72uctWhNRiryX1jbSGmihAv6ahTjxTq4psyUwjrbfristFKNA4b71PUc?=
+ =?us-ascii?Q?FKAlGTBWkOF9e09UV1p1fPYRriT4yOfdXozewla9cnEKCdXC2v85urVPMC26?=
+ =?us-ascii?Q?Ayjeu2iBL5zvfWW94z+efuU7z/kVKYF/SoWiVHj3rRVRiYeVqLcettlx3mvy?=
+ =?us-ascii?Q?y/o7u7U9vpJ4APxB0q3SXQrOr8DcduakacwcWXu8ZPF07XuUlyWnm5RPped8?=
+ =?us-ascii?Q?RGP6GT5PxPnNlb3OmPRHATD/BBvda96Lyqmiuz9+ScDS8UyYLlSelO/Y0bA+?=
+ =?us-ascii?Q?AW0hOtf9hIUqJYI7C8vrGCHeYFWurI4HpXA0p1AHsa5KL7Tz59zeC7olEGm8?=
+ =?us-ascii?Q?RgKSYcmW9VnyDjYuwy+iygPKB2jhhD7jIj4IXKDEfTGUmqHtV2QkIlWV84lA?=
+ =?us-ascii?Q?5mNy+woyqPnQblhgBRYxLtz7Go+T+shmGR9QvpsqNFfeein9wgO2+DgjWZdw?=
+ =?us-ascii?Q?6iBgWlWZgR1Ql83BtJkbLhvO9+++Zk9A1fS521Hh6fbieWLnDYVCGePirCme?=
+ =?us-ascii?Q?ukUSfNNa1+2v/5ODJa274LO2D5G9STdyKNCqfcMrieWsONeZuWbsbMatJc+0?=
+ =?us-ascii?Q?P7FGjlwCh6QD9omdquMRaGrOBN/zEK3wywx3Vd4U5ZwQkEoAL9mENEiC7c10?=
+ =?us-ascii?Q?Y3nKUIsHeXqbeti7WM8XRS+6fI6ciFIznL0HzhnoYk6+yeMnTNmVcwYxCBXB?=
+ =?us-ascii?Q?JNpCkOrrUR6CKYbZHyiYML1Rs4pH4WLkEcjdhXiT6pTqY0rRXDLhR673MVx4?=
+ =?us-ascii?Q?FRnYJ0cpHDzbKTJZ+xO6XR0uOSZDQ7qACwIAJUScB5AqzWzyUDhInDJiyZpy?=
+ =?us-ascii?Q?gSkRmgCpFuUjUlWVS3LhkJHpenuzPyzfg0bY8zoEx4aIo0vx83h4grscgEW3?=
+ =?us-ascii?Q?UjoTWSHEVebhDvaD4w3hQoh3xjG1ZfhEuOM9kjI+XeF+GO6v677Mnk7wpqNQ?=
+ =?us-ascii?Q?D3Y+lfVdNMlOTkCdsDoC1mAKCmUv+OWO3r/0qZeK4zIHe+PJrsZJ1fAjZfrr?=
+ =?us-ascii?Q?CVZsECsIlXgGsRsY4ST/5XyxabV0QHB3uNxxdXag+Ys4SopH+sHW4l8ndvSC?=
+ =?us-ascii?Q?LGpMsXORMA=3D=3D?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 6a824984-e165-49d9-181d-08dec19d8b7b
+X-MS-Exchange-CrossTenant-AuthSource: PA4PR04MB9366.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Jun 2026 18:25:52.8951
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: fQBd2i8Heqls0hkthQaHP8KH0ZjC9nvXrOQx7EdsWDSOvXinu6U1WrCGfJDYswUL81ogv+Rv5l8tMAZXctzdVw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AMCPR04MB12669
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260603_112557_401867_D58C3CD6 
+X-CRM114-Status: GOOD (  25.84  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,37 +143,104 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Sun, 22 Mar 2026 15:24:21 -0700
-Dmitry Torokhov <dmitry.torokhov@gmail.com> wrote:
+On Wed, Jun 03, 2026 at 01:37:14PM +0800, Xu Yang wrote:
+> From: Felix Gu <ustc.gu@gmail.com>
+>
+> If probe fails after imx95_usb_phy_get_tca() succeeds, the typec
+> switch leaks because the only cleanup path was in .remove, which
+> never runs on probe failure.
+>
+> Use devm_add_action_or_reset() so the switch is cleaned up on both
+> probe failure and driver removal.  The .remove callback and
+> imx95_usb_phy_put_tca() are no longer needed.
+>
+> Fixes: b58f0f86fd61 ("phy: fsl-imx8mq-usb: add tca function driver for imx95")
+> Cc: stable@vger.kernel.org
+> Reviewed-by: Frank Li <Frank.Li@nxp.com>
+> Reviewed-by: Xu Yang <xu.yang_2@nxp.com>
+> Signed-off-by: Felix Gu <ustc.gu@gmail.com>
 
-> On Tue, Dec 09, 2025 at 09:25:56AM +0100, Romain Gantois wrote:
-> > Use namespaced exports for IIO consumer API functions.
-> > 
-> > This will make it easier to manage the IIO export surface. Consumer drivers
-> > will only be provided access to a specific set of functions, thereby
-> > restricting usage of internal IIO functions by other parts of the kernel.
-> > 
-> > This change cannot be split into several parts without breaking
-> > bisectability, thus all of the affected drivers are modified at once.
-> > 
-> > Acked-by: Sebastian Reichel <sebastian.reichel@collabora.com> # for power-supply
-> > Acked-by: Guenter Roeck <linux@roeck-us.net>
-> > Reviewed-by: Andy Shevchenko <andriy.shevchenko@intel.com>
-> > Signed-off-by: Romain Gantois <romain.gantois@bootlin.com>  
-> 
-> For input:
-> 
-> Acked-by: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-> 
-> Thanks.
-> 
+Xu yang, if you send out patch, need your s-o-b tag
 
-For anyone wondering what happened to this... I forgot to apply this at the
-beginning of the cycle and by the time I remembered we had too much queued up
-so it would have been messy to do an immutable branch.   Anyhow, I plan to
-sort this at start of next cycle.
+Frank
 
-Jonathan
+>
+> ---
+> Changes in v3:
+>  - add R-b tag
+>  - cc statble
+>  - drop "sw = data" conversion
+> ---
+>  drivers/phy/freescale/phy-fsl-imx8mq-usb.c | 27 +++++++--------------------
+>  1 file changed, 7 insertions(+), 20 deletions(-)
+>
+> diff --git a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
+> index b05d80e849a1..88b804b2c982 100644
+> --- a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
+> +++ b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
+> @@ -173,9 +173,9 @@ static struct typec_switch_dev *tca_blk_get_typec_switch(struct platform_device
+>  	return sw;
+>  }
+>
+> -static void tca_blk_put_typec_switch(struct typec_switch_dev *sw)
+> +static void tca_blk_put_typec_switch(void *data)
+>  {
+> -	typec_switch_unregister(sw);
+> +	typec_switch_unregister(data);
+>  }
+>
+>  static void tca_blk_orientation_set(struct tca_blk *tca,
+> @@ -248,6 +248,7 @@ static struct tca_blk *imx95_usb_phy_get_tca(struct platform_device *pdev,
+>  	struct device *dev = &pdev->dev;
+>  	struct resource *res;
+>  	struct tca_blk *tca;
+> +	int ret;
+>
+>  	res = platform_get_resource(pdev, IORESOURCE_MEM, 1);
+>  	if (!res)
+> @@ -266,17 +267,11 @@ static struct tca_blk *imx95_usb_phy_get_tca(struct platform_device *pdev,
+>  	tca->orientation = TYPEC_ORIENTATION_NORMAL;
+>  	tca->sw = tca_blk_get_typec_switch(pdev, imx_phy);
+>
+> -	return tca;
+> -}
+> -
+> -static void imx95_usb_phy_put_tca(struct imx8mq_usb_phy *imx_phy)
+> -{
+> -	struct tca_blk *tca = imx_phy->tca;
+> -
+> -	if (!tca)
+> -		return;
+> +	ret = devm_add_action_or_reset(&pdev->dev, tca_blk_put_typec_switch, tca->sw);
+> +	if (ret)
+> +		return ERR_PTR(ret);
+>
+> -	tca_blk_put_typec_switch(tca->sw);
+> +	return tca;
+>  }
+>
+>  static u32 phy_tx_vref_tune_from_property(u32 percent)
+> @@ -739,16 +734,8 @@ static int imx8mq_usb_phy_probe(struct platform_device *pdev)
+>  	return PTR_ERR_OR_ZERO(phy_provider);
+>  }
+>
+> -static void imx8mq_usb_phy_remove(struct platform_device *pdev)
+> -{
+> -	struct imx8mq_usb_phy *imx_phy = platform_get_drvdata(pdev);
+> -
+> -	imx95_usb_phy_put_tca(imx_phy);
+> -}
+> -
+>  static struct platform_driver imx8mq_usb_phy_driver = {
+>  	.probe	= imx8mq_usb_phy_probe,
+> -	.remove = imx8mq_usb_phy_remove,
+>  	.driver = {
+>  		.name	= "imx8mq-usb-phy",
+>  		.of_match_table	= imx8mq_usb_phy_of_match,
+>
+> --
+> 2.34.1
+>
 
 -- 
 linux-phy mailing list
