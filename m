@@ -4,53 +4,127 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C30F2CD6E4A
-	for <linux-phy@archiver.kernel.org>; Wed,  3 Jun 2026 05:43:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5A205CD6E55
+	for <linux-phy@archiver.kernel.org>; Wed,  3 Jun 2026 05:46:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=35OmQV/vsY8BnqLThAxaRba61ahacmhWJWfPHqqawK8=; b=ngiTo3DcwkFTHd
-	tH9VBnvYZkVTZSpSKghB8sx/OfK+cNoaJVWNdheHE3WEJKw1gsyY+/tftSytgSa61DyofuBXmcndP
-	PMOKlm7zcW0Afbnp/C+OtxU3t5bgovh3YPRPPt4g+xKy/OGgQ1GIWuqq5sN18oVO4AZLZEKXpWrqv
-	XryPto7niASuW1SSvT4FJc76EIp2YApCwZIeXuAH6++yHqKBzYIW3V0XEMaM5lca0iQyPkw5royA3
-	EmZLAuy3yIHvm+rH1JtxbuTVEhDnbrljTrck9dnLrSRrQcZgCzdkUiIqJsylrJow0kCsU4liQJWcM
-	V8TpP9KqYzEDH/JUv7bg==;
+	List-Owner; bh=DYWuG5xbzJjUU2URNp1uqrqpSLijklghYuGgWfg5LR8=; b=zz0MLriucoovm+
+	fIBJ0mCjGxzWae1JFxP21elMrHBzrg6O8z+bEP7rM910D5raw0POwBh8IU/OXJ6C3GeoxYpdOB08w
+	aXQ7mg1aUwuNC9PIfVaqMGjd5Qb50eCNEgFyoOujYWM5M29G7DRASWrNe5tPMnl6J0YqFQvihoNtU
+	XZJNiG56JTpqoL4ekay+lWzPg1AJl4IJLx70hQcTwzAKl4QHAH5/ptF0hG90ChJuBCeVbolQVSJlH
+	iOB/48faMzLOlOLXoMYkyCijHMgqzz28/PkFK9xUgIZBHzJPCCfBXBUPmptP/MMjs21xNoGbGtLMJ
+	/Dxgjh/UwOuOL4WdkaCg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUeNs-0000000EIp7-2JEa;
-	Wed, 03 Jun 2026 05:43:20 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1wUeQd-0000000EIzF-3vI9;
+	Wed, 03 Jun 2026 05:46:11 +0000
+Received: from mail-swedencentralazon11013003.outbound.protection.outlook.com ([52.101.83.3] helo=GVXPR05CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUeNr-0000000EIoy-43bG
-	for linux-phy@lists.infradead.org;
-	Wed, 03 Jun 2026 05:43:20 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id D8D1060222;
-	Wed,  3 Jun 2026 05:43:18 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3A8971F00893;
-	Wed,  3 Jun 2026 05:43:17 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1780465398;
-	bh=3LTD+XJkKGd5IErJKBFCejDTlCFHWVDxbcdMQLn50Aw=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=W+NtiAfIjRF5VCLdw4kn7mMyDpL40dJTSDy/cj/8p92WGyvsP9P0NdkSWpbRmYnxX
-	 1r3K3sb64vC2v7k68ls+2yQyLj+KX5gE/Cc0PmOEVEsuXkcMnAWKpA0CoumsHiDUdj
-	 yrdt66O0zhsAF7FaayTnbzz/bQx8GTDzZeW812gDQF7RN7p66vWZ/3tHkTct2gnpLg
-	 QePvli6ciAjWAcSb67vwOa8eXZB2D7vIKkJ7OqdxVePpUx+od4I9gKC8x73/xH/NM9
-	 tUOB3luO5YNoFX9bDjgrlk39jv16PyOk+JMRVeBANVa2JWmEZ566E6Sz741EJkTOOi
-	 CQYJ8F6pzIvGw==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v3 1/5] phy: fsl-imx8mq-usb: fix typec switch leak on
- probe error path
-To: "Xu Yang" <xu.yang_2@oss.nxp.com>
-Cc: imx@lists.linux.dev, vkoul@kernel.org, olteanv@gmail.com, linux-phy@lists.infradead.org, neil.armstrong@linaro.org, Frank.Li@kernel.org
-In-Reply-To: <20260603-imx8mp-usb-phy-improvement-v3-1-7afb8f89abc6@nxp.com>
-References: <20260603-imx8mp-usb-phy-improvement-v3-1-7afb8f89abc6@nxp.com>
-Date: Wed, 03 Jun 2026 05:43:17 +0000
-Message-Id: <20260603054318.3A8971F00893@smtp.kernel.org>
+	id 1wUeQb-0000000EIyX-1BCs;
+	Wed, 03 Jun 2026 05:46:10 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=yO/SHkYofRVFN0G39xUNgdL8927M0E+kfzXHy5yeuh855PLRM6pV0yd2gQrYOSBInzjbKIHk2gsVk05IoC0eWCdtJ1SUl+0fzf56VVVrnrf74QjZrSjM/WYqDkAEdnZU3BuvHUke6zLVyH42oaPlx7UU0LiJAJMQNkXBXg8ov1FjEQReSmH1x2Qbii9T9kShYogHxe9RGOqtPDUBhQQMR/fyQUlvs32KV8tMyjwHXlj60RiKCnFP4wtNYaE8CpnTQste8YhE7BFxTf0vHJ7mKI/O3oh4n+SRK2+ZWqQmzFRGrK3vIIbcWgG3FEhbxpTwabkreqkigDRzXJt14O40nA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=3RwLQweE4pxkT96+g7nuBEjoQ9A50333iRyALWgYafw=;
+ b=ql/cb/i4H1J7LqBUbZL8wIx9H1+F3sAUR9dnAXvTAqV9BCHn6H2h/XuoEpypm+IXjx88s4Je2B0e/jdORjr3POo9iJb1oOvt7mBrqvoZOvfY3WRe8A9CnEZyIzRZSzrRMaAc2eL0A+gPKSe986gTYYA2kTmZrPfSj/PoH0DQcHq+eI+JaQK2PQv9sm6OBUFk1iQx1HbQjLMyQpel8vqeYwE6h5AR71uoN/gpnYMieC9/GpVtprMyIbUFVKW5mEwaLCuT5vP/LqqIyrM29gO87u1mBTdOwywD6N2LM065Fnues5nlLoMBdHkaaKVnyOYx7zY+ISe7gj1sfEu2SLznHg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
+ dkim=pass header.d=oss.nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
+ s=selector1-NXP1-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=3RwLQweE4pxkT96+g7nuBEjoQ9A50333iRyALWgYafw=;
+ b=YZ24kYt29AF6Dep9YloSoOztzdgrkWRXrP8Co/BTAZemhdHAqRGnAN6Dl6YQcFsqYjk1LLttkuCiwRETuLauYnLZpgmpD6WiTOf+B3PLDhQdNcFLY0Pcv4g41aB0BUDzYNJ4oFc71eruzcipE72dT7l5k9018pGMyacgjwgffFIVpfkSi/fzhkmLsxfPe0oLFm91Kf6xMMxTVdI9XVJ4GswijYoLJ6LLjm/iCXmEitaAOHPykgx4J1G0rfNpTR1ls3Fz7SDbp9n6JIwZRQbaFzrPwB7BxiZ4n3m7vhoNaMmBLFZVnKjCckoECD+meUysd0ka49gkan2XSDxF2wGMag==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=oss.nxp.com;
+Received: from PAXPR04MB9422.eurprd04.prod.outlook.com (2603:10a6:102:2b4::21)
+ by AS8PR04MB7495.eurprd04.prod.outlook.com (2603:10a6:20b:295::14) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.92.7; Wed, 3 Jun 2026
+ 05:46:03 +0000
+Received: from PAXPR04MB9422.eurprd04.prod.outlook.com
+ ([fe80::54e:28bf:aa85:d25d]) by PAXPR04MB9422.eurprd04.prod.outlook.com
+ ([fe80::54e:28bf:aa85:d25d%4]) with mapi id 15.21.0071.015; Wed, 3 Jun 2026
+ 05:46:03 +0000
+Date: Wed, 3 Jun 2026 13:45:00 +0800
+From: Xu Yang <xu.yang_2@oss.nxp.com>
+To: Felix Gu <ustc.gu@gmail.com>
+Cc: Vinod Koul <vkoul@kernel.org>, 
+	Neil Armstrong <neil.armstrong@linaro.org>, Frank Li <Frank.Li@nxp.com>, 
+	Sascha Hauer <s.hauer@pengutronix.de>, Pengutronix Kernel Team <kernel@pengutronix.de>, 
+	Fabio Estevam <festevam@gmail.com>, Xu Yang <xu.yang_2@nxp.com>, Jun Li <jun.li@nxp.com>, 
+	linux-phy@lists.infradead.org, imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org, 
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] phy: fsl-imx8mq-usb: fix typec switch leak on probe
+ error path
+Message-ID: <7qxgf6rknx2ysv5oavwn5ige2isd4iqk43qrtxp7wzby56oaus@ygn2eocxxxzf>
+References: <20260602-imx8mq-typec-v1-1-3debe9bc77d9@gmail.com>
+ <ryzrcml3jo2lj657inrm6dlh2d3so7redxvjhhq3pbe435vq7n@khuctebwompe>
+Content-Disposition: inline
+In-Reply-To: <ryzrcml3jo2lj657inrm6dlh2d3so7redxvjhhq3pbe435vq7n@khuctebwompe>
+X-ClientProxiedBy: MA5P287CA0033.INDP287.PROD.OUTLOOK.COM
+ (2603:1096:a01:17a::16) To PAXPR04MB9422.eurprd04.prod.outlook.com
+ (2603:10a6:102:2b4::21)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PAXPR04MB9422:EE_|AS8PR04MB7495:EE_
+X-MS-Office365-Filtering-Correlation-Id: edb23de7-2cfb-450f-30c0-08dec13365d5
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|7416014|366016|19092799006|1800799024|4143699003|11063799006|56012099006|22082099003|18002099003;
+X-Microsoft-Antispam-Message-Info: SjQx4oZs4qk1STYJ1jKrPbk6p72fMTYhzYt6raaYP2JJczb9tgb/qfQjf1W0Kw7hmrObZAIQwcjOMqSJnPNlLvSVSn/B0hGXlJ8s8o1N5scpZnKILZ02ZPZ6xDtvguRcCPsmlUtmKiKNw4xwfnrB/xhGrTz/k59JOg9rTH3IeLo7PImIrTOJt5fpzQ6CnZIoc5uT+XmchvCqY/JVr3mOJe7PgH3Sg/ZJL1NbpuePtmNrKS+1RlgXCFmuhNausWQ+zJViBIrqAGOAUijdpQPZVIrB2fb6bIhkS3rOlONnClf2selE7oUFOAa4P9p0eMWnovZs6UOFS36smUnvAov11JIdRHBOkQRzlYubPVQBJG02Rmh1Vm2ZkJFlRzIy2POk0lsVfnpJnE+AVPdRiGoU7AEi+2hkrJNgUELw1ZO2NdOYi+HWvVclPn4lbCu2TcZwzewwJUZWgUF8ZicFIKKg9sf9sq6qe0iY2G1H0586zNhFnoMoADEAxHYtOXurk+1dEr9dcEcKwESqVLhud+m+QVWo7tqFh3wvhTZtZKm6DT58xtKEro9MRY5MNB03YA9f76eXEYDpYmVEhBs2X/TbiFL+S/uAyeBbKUgMfAlvhg4+GiLPydkodnEx0wSUBvxaq/179fTLmuIW2IHUWNMw3yi7keBe1ufoUjuaAQLnna/f8odcA/vzAZSscEzIhmGXYDRGIIBeHf32uraJikV8TQ==
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9422.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(7416014)(366016)(19092799006)(1800799024)(4143699003)(11063799006)(56012099006)(22082099003)(18002099003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?jaAeJ+zMsCswFUhXphhbTquEi3VGaZsbmD5ddACf2pd6dihTkJUrPshK7Sa/?=
+ =?us-ascii?Q?l/AonO7PRGjrZ41YR5QmKzuiL+gKtNH0b8bM4Z+0xcjYkUn9ovhPLihhAZHx?=
+ =?us-ascii?Q?BrGV9iNJDazVWhcbHtUwiaa2HnSw2KhtEE6l0h+EPsgsZ9GCGWuuOTQUhxOz?=
+ =?us-ascii?Q?5DYCmclXqoXHZELaOZSkqewZwMyj8QKsG0Zw1rLeZ29PXRZnp6MExxt2iZth?=
+ =?us-ascii?Q?x0Er8obdwfwc6n1a0qaYjLNAaZPnsmuICWRuLJSk/tu9QlOw/yibA7cSnip5?=
+ =?us-ascii?Q?pG0FRJdMCBbdsYArjeYfeZT9UytApk2sGM09fHTHmWNqRzfQgaQzXLxjhU3p?=
+ =?us-ascii?Q?tPYuXCgbsQWoG2ckoIpW97rxQRjxDhsKF20eNCiVuBjGLtMJtp8T/BElpMPp?=
+ =?us-ascii?Q?RjBP22oPHw1BPOE1TzTSz1hcF7QVKmL55cEaF1Q7URCylJnIGorQXPjFwgI8?=
+ =?us-ascii?Q?lliqD1bijL5rKi6vVTSUqfWsXYbkrflNcTtX7DScUJIFMbgVpkK0j13Rc+jW?=
+ =?us-ascii?Q?B0fPnvFZRRQkITmcbsMJVT8eaKbzUUJOR+ZCdu1REnZBkHnEtUptIqv3Ubae?=
+ =?us-ascii?Q?kBm/vrDzL/kIlfJnQWYMQI6XBWYnvKBxRGPilimfj6mpIJvHk46KArVHbe3E?=
+ =?us-ascii?Q?faFFrQIj6iDKuIXkY7r4vHIVgJ7gpTGjqV4PoLwy6Ihb2lho/kOWB1tvNpYx?=
+ =?us-ascii?Q?cxAlNSljSSlz+bhasTIfGB8GYt3z/X8kUAhUx6Y+jA9XDocOc6auS0OaFCln?=
+ =?us-ascii?Q?xj/gVeC2rCMCgM6TM5Sqqc8fS10w0Z3Evt+Z6M05V4vTertOnAVDQ6Pet1Mm?=
+ =?us-ascii?Q?z2GOyS4I9WZblaOmmsXmTLNNEQzyPt3LhM4RqJI0itUacRlNgfkFzn8N+jR0?=
+ =?us-ascii?Q?Hqr/UqnKkVXtPp2S4kZo8TT7CU3vNHm3sB5noKFh77gh1JfRXhOBzBwbo8wT?=
+ =?us-ascii?Q?h49M8wTD37he/uTJVKnoZ/yWDx+Yx8uFJJJwWQcYobP+ivbd4cotlYkbT1VT?=
+ =?us-ascii?Q?4IWwkFMx9CFOwzhLvZsiIMK2oZwF4Eo6Qq9KEgND9KcBMGTSEN/bpxSX5OTI?=
+ =?us-ascii?Q?t5dkY9Xh4maAJKm99fQh6Irggq15mUkjPIb4jSej56YNFprIwybY8IiPdYsM?=
+ =?us-ascii?Q?X/THcttUw0/kfl6DlppaLTOALSA7JErN2b+8LvoaG1ZOFEiTkeixUUsF36pI?=
+ =?us-ascii?Q?v6wFi51FIBjkffuQtmcyVlzu78YECL/3QUNCnevdwpngOEaN1AXFpqGN1GuE?=
+ =?us-ascii?Q?uZ/VybQEnCxWZ/PY9x6xDg6yFWDUpC1JlUE7JnrJaJ2tCFo47G/NgkAseTH7?=
+ =?us-ascii?Q?7JcNGI5LJlU7xV5y2+al4xPVx1KKawIa6OBS4M4wiFtMo45YJwsqLmNOf+E7?=
+ =?us-ascii?Q?qTHvBcxYJXYCXiI5K/J2u1C4DMp/X1q9RZDiab1lDaoz2ypaDva98uKpHKJE?=
+ =?us-ascii?Q?GG3EuxBodTmx8uooYWcVCd2LQ7/SuzjJ2e/o4DSZRWF0qyxEzxLw4c39dZhl?=
+ =?us-ascii?Q?8sWsFcU+0yBm6G31kE12BgoHTIVF46hZiVjCFp7e+2JFX5hfls+ltpL2i6pg?=
+ =?us-ascii?Q?dI2/WlVSZ4NRcUVelba0wSktMES5I8VdJnDJF9Y3Pi/3mcOI81B6QFy81FbX?=
+ =?us-ascii?Q?jZ6O5OYTjZlFJ1ESe9cJ9jowmJwcwmPnZPIt7NjVhuEavNJtsBYFnEzOs+WP?=
+ =?us-ascii?Q?dqg499wY0efWzmSilg0uB+6bIDMvqYg2h6iBk9KKNfbPJURKQZI3XHoe5zCd?=
+ =?us-ascii?Q?PSbzlJH1wnc95q7S7swRVlNPGR+y9wXJ9hebQFneKcy/WQU+yAp8?=
+X-OriginatorOrg: oss.nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: edb23de7-2cfb-450f-30c0-08dec13365d5
+X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9422.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Jun 2026 05:46:03.0421
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: nGWCF87qmMMwz4/zo+HyU4HbZAo27SuHNwIpgAkmc2ijsDKaNICytyBERdNuubIg3OAhlekIjr9bQ6dPIPuxQY40axPE0AH5vckJGZA6PtO1ZTxR6MjUhtkHucKp50H1
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB7495
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260602_224609_407529_65E499BE 
+X-CRM114-Status: GOOD (  21.75  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -62,61 +136,57 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpQcmUtZXhpc3RpbmcgaXNzdWVzOgot
-IFtIaWdoXSBBIGNvbmN1cnJlbnQgY29uc3VtZXIgY2FuIGludm9rZSB0aGUgVHlwZS1DIHN3aXRj
-aCBgLnNldGAgY2FsbGJhY2sgYmVmb3JlIGBpbXhfcGh5LT50Y2FgIGlzIGZ1bGx5IGluaXRpYWxp
-emVkLCBjYXVzaW5nIGEgTlVMTCBwb2ludGVyIGRlcmVmZXJlbmNlLgotLQoKY29tbWl0IDBiMjBm
-ODI0YTllOWE5YzYxM2IxYmNjNjYxNjdmMDAzODJjOWE1YTEKQXV0aG9yOiBGZWxpeCBHdSA8dXN0
-Yy5ndUBnbWFpbC5jb20+CgpwaHk6IGZzbC1pbXg4bXEtdXNiOiBmaXggdHlwZWMgc3dpdGNoIGxl
-YWsgb24gcHJvYmUgZXJyb3IgcGF0aAoKVGhpcyBwYXRjaCBmaXhlcyBhIHR5cGVjIHN3aXRjaCBs
-ZWFrIG9uIHRoZSBwcm9iZSBlcnJvciBwYXRoIGJ5IHVzaW5nCmRldm1fYWRkX2FjdGlvbl9vcl9y
-ZXNldC4gVGhpcyBhbGxvd3MgY2xlYW5pbmcgdXAgdGhlIHN3aXRjaCBvbiBib3RoCnByb2JlIGZh
-aWx1cmUgYW5kIGRyaXZlciByZW1vdmFsLCBlbGltaW5hdGluZyB0aGUgbmVlZCBmb3IgYSBzZXBh
-cmF0ZQpyZW1vdmUgY2FsbGJhY2suCgo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9mcmVlc2Nh
-bGUvcGh5LWZzbC1pbXg4bXEtdXNiLmMgYi9kcml2ZXJzL3BoeS9mcmVlc2NhbGUvcGh5LWZzbC1p
-bXg4bXEtdXNiLmMKPiAtLS0gYS9kcml2ZXJzL3BoeS9mcmVlc2NhbGUvcGh5LWZzbC1pbXg4bXEt
-dXNiLmMKPiArKysgYi9kcml2ZXJzL3BoeS9mcmVlc2NhbGUvcGh5LWZzbC1pbXg4bXEtdXNiLmMK
-WyAuLi4gXQo+IEBAIC0yNDgsNiArMjQ4LDcgQEAgc3RhdGljIHN0cnVjdCB0Y2FfYmxrICppbXg5
-NV91c2JfcGh5X2dldF90Y2Eoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldiwKPiAgCXN0cnVj
-dCBkZXZpY2UgKmRldiA9ICZwZGV2LT5kZXY7Cj4gIAlzdHJ1Y3QgcmVzb3VyY2UgKnJlczsKPiAg
-CXN0cnVjdCB0Y2FfYmxrICp0Y2E7Cj4gKwlpbnQgcmV0Owo+ICAKPiAgCXJlcyA9IHBsYXRmb3Jt
-X2dldF9yZXNvdXJjZShwZGV2LCBJT1JFU09VUkNFX01FTSwgMSk7Cj4gIAlpZiAoIXJlcykKPiBA
-QCAtMjY2LDE3ICsyNjcsMTEgQEAgc3RhdGljIHN0cnVjdCB0Y2FfYmxrICppbXg5NV91c2JfcGh5
-X2dldF90Y2Eoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldiwKPiAgCXRjYS0+b3JpZW50YXRp
-b24gPSBUWVBFQ19PUklFTlRBVElPTl9OT1JNQUw7Cj4gIAl0Y2EtPnN3ID0gdGNhX2Jsa19nZXRf
-dHlwZWNfc3dpdGNoKHBkZXYsIGlteF9waHkpOwoKW1NldmVyaXR5OiBIaWdoXQpUaGlzIGlzIGEg
-cHJlLWV4aXN0aW5nIGlzc3VlLCBidXQgaXMgaXQgcG9zc2libGUgZm9yIGEgY29uY3VycmVudCBj
-b25zdW1lcgp0byBpbnZva2UgdGhlIFR5cGUtQyBzd2l0Y2ggLnNldCBjYWxsYmFjayBiZWZvcmUg
-aW14X3BoeS0+dGNhIGlzIGZ1bGx5CmluaXRpYWxpemVkPwoKSW4gdGNhX2Jsa19nZXRfdHlwZWNf
-c3dpdGNoKCksIHdlIGNhbGwgdHlwZWNfc3dpdGNoX3JlZ2lzdGVyKCkgd2hpY2ggbWFrZXMKdGhl
-IHN3aXRjaCB2aXNpYmxlIHRvIHRoZSBzeXN0ZW0uIE9uY2UgcmVnaXN0ZXJlZCwgYSBjb25zdW1l
-ciBjb3VsZAppbW1lZGlhdGVseSByZXNvbHZlIGl0IGFuZCBpbnZva2UgaXRzIC5zZXQgY2FsbGJh
-Y2ssIHdoaWNoIGlzCnRjYV9ibGtfdHlwZWNfc3dpdGNoX3NldCgpLgoKSWYgdGhhdCBoYXBwZW5z
-LCB0Y2FfYmxrX3R5cGVjX3N3aXRjaF9zZXQoKSBkb2VzOgoKdGNhX2Jsa190eXBlY19zd2l0Y2hf
-c2V0KCkgewogICAgc3RydWN0IHRjYV9ibGsgKnRjYSA9IGlteF9waHktPnRjYTsKICAgIAogICAg
-aWYgKHRjYS0+b3JpZW50YXRpb24gPT0gb3JpZW50YXRpb24pCiAgICAgICAgLi4uCn0KCkhvd2V2
-ZXIsIGlteF9waHktPnRjYSBpcyBhc3NpZ25lZCB1c2luZyB0aGUgcmV0dXJuIHZhbHVlIG9mIHRo
-aXMgZnVuY3Rpb24KbGF0ZXIgaW4gaW14OG1xX3VzYl9waHlfcHJvYmUoKToKCmlteDhtcV91c2Jf
-cGh5X3Byb2JlKCkgewogICAgLi4uCiAgICBpbXhfcGh5LT50Y2EgPSBpbXg5NV91c2JfcGh5X2dl
-dF90Y2EocGRldiwgaW14X3BoeSk7CiAgICAuLi4KfQoKQ291bGQgdGhpcyByYWNlIGNvbmRpdGlv
-biByZXN1bHQgaW4gYSBOVUxMIHBvaW50ZXIgZGVyZWZlcmVuY2UgaWYgdGhlCmNhbGxiYWNrIGZp
-cmVzIGJlZm9yZSBwcm9iZSBmaW5pc2hlcyBhc3NpZ25pbmcgaW14X3BoeS0+dGNhPwoKPiAtCXJl
-dHVybiB0Y2E7Cj4gLX0KPiAtCj4gLXN0YXRpYyB2b2lkIGlteDk1X3VzYl9waHlfcHV0X3RjYShz
-dHJ1Y3QgaW14OG1xX3VzYl9waHkgKmlteF9waHkpCj4gLXsKPiAtCXN0cnVjdCB0Y2FfYmxrICp0
-Y2EgPSBpbXhfcGh5LT50Y2E7Cj4gLQo+IC0JaWYgKCF0Y2EpCj4gLQkJcmV0dXJuOwo+ICsJcmV0
-ID0gZGV2bV9hZGRfYWN0aW9uX29yX3Jlc2V0KCZwZGV2LT5kZXYsIHRjYV9ibGtfcHV0X3R5cGVj
-X3N3aXRjaCwgdGNhLT5zdyk7Cj4gKwlpZiAocmV0KQo+ICsJCXJldHVybiBFUlJfUFRSKHJldCk7
-Cj4gIAo+IC0JdGNhX2Jsa19wdXRfdHlwZWNfc3dpdGNoKHRjYS0+c3cpOwo+ICsJcmV0dXJuIHRj
-YTsKPiAgfQoKLS0gClNhc2hpa28gQUkgcmV2aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9w
-YXRjaHNldC8yMDI2MDYwMy1pbXg4bXAtdXNiLXBoeS1pbXByb3ZlbWVudC12My0wLTdhZmI4Zjg5
-YWJjNkBueHAuY29tP3BhcnQ9MQoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5
-QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
-bGlzdGluZm8vbGludXgtcGh5Cg==
+On Wed, Jun 03, 2026 at 11:09:32AM +0800, Xu Yang wrote:
+> On Tue, Jun 02, 2026 at 10:12:41PM +0800, Felix Gu wrote:
+> > If probe fails after imx95_usb_phy_get_tca() succeeds, the typec
+> > switch leaks because the only cleanup path was in .remove, which
+> > never runs on probe failure.
+> > 
+> > Use devm_add_action_or_reset() so the switch is cleaned up on both
+> > probe failure and driver removal.  The .remove callback and
+> > imx95_usb_phy_put_tca() are no longer needed.
+> > 
+> > Fixes: b58f0f86fd61 ("phy: fsl-imx8mq-usb: add tca function driver for imx95")
+> > Signed-off-by: Felix Gu <ustc.gu@gmail.com>
+> > ---
+> >  drivers/phy/freescale/phy-fsl-imx8mq-usb.c | 27 ++++++++-------------------
+> >  1 file changed, 8 insertions(+), 19 deletions(-)
+> > 
+> > diff --git a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
+> > index b05d80e849a1..8af5a4f85698 100644
+> > --- a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
+> > +++ b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
+> > @@ -173,8 +173,10 @@ static struct typec_switch_dev *tca_blk_get_typec_switch(struct platform_device
+> >  	return sw;
+> >  }
+> >  
+> > -static void tca_blk_put_typec_switch(struct typec_switch_dev *sw)
+> > +static void tca_blk_put_typec_switch(void *data)
+> >  {
+> > +	struct typec_switch_dev *sw = data;
+> > +
+> >  	typec_switch_unregister(sw);
+> >  }
+> 
+> Nit: You can simply call typec_switch_unregister(data)
+> 
+> Reviewed-by: Xu Yang <xu.yang_2@nxp.com>
+
+I have a similar patch in my patchset. I have added your patch to my patchset
+because it has been reviewed and my other patches depend on this one. Otherwise,
+rebase is needed for others.
+
+https://lore.kernel.org/linux-phy/20260603-imx8mp-usb-phy-improvement-v3-0-7afb8f89abc6@nxp.com/T/#t
+
+Thanks,
+Xu Yang
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
