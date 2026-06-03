@@ -4,131 +4,139 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 875E5CD6E55
-	for <linux-phy@archiver.kernel.org>; Wed,  3 Jun 2026 11:57:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 11C63CD6E55
+	for <linux-phy@archiver.kernel.org>; Wed,  3 Jun 2026 12:10:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=feAlHMofOOrGFzMfnr9v71TD22nt78LB6UPdcLs+k5c=; b=HYwVHXkRwpNetL
-	N8F3Wlt4qaRdK84BAsBwAFzqqEXlRLhGg4gdBmTT1QcPio5rVaYXBxASmdC7XW7ypovyG1VCp3bzP
-	hhMpKXIsqqJadF1GBcJmUUeXH2n2WzUZ7TKLC+vhtnoAbrCX8Rwonyi/RU4bFl3Eb2Dj6G/Ko0TEY
-	zbdilt+VoyXzlj5D55WTDzRiXXGctO8B19Zq7nQmO8GtcuuHgiBd1b5pcoLnP09OrMqz5cptYh+6X
-	QgJ/czqbK5iDKca9iAKoqDIDLmSoAYLEcDZlJUnzWrkQubd0mTa74vBh6My9JDk9npOzAmC4vb4iT
-	2Db9tALtnlT7Pms+orFQ==;
+	List-Owner; bh=hsiEFo/EEsRoHWBsvnJifXjbYk6Re9cHlOA9cH9qfgo=; b=uFElaLhcZ/MDZD
+	BHpgx+xpzizN9h8UJ+8Du11Nwoi6CFe2x5WcMOGQyNElMcL19nzFEYjuVpqi1D9+PiyD2iC8s+Z+9
+	8UepwevP9osM6/Q0nmBdxWifz3d6Vkdkr98IYDSyzN9oFRT9NuKbUHJUZztX2CxukyYEUHRCJcM0c
+	/tV08+zM9Ni7RgWy8t16TVu+L2PJWzOEr8KScAmPEfPdJU/+2RRQe7vjIYGM7h+cmYy5AgpgtrrDW
+	gmILSzIhHD1IIb1coEqQHRkPfcl5NPXbzqzATxpdZ/6gBpdFOAGkP6JrSK85m5KZwtGi3L3fh8Abr
+	9JaEkMsAMeoToesjqQ1w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUkDa-0000000Ezzy-1Fta;
-	Wed, 03 Jun 2026 11:57:06 +0000
-Received: from mail-norwayeastazon11013041.outbound.protection.outlook.com ([40.107.159.41] helo=OSPPR02CU001.outbound.protection.outlook.com)
+	id 1wUkQY-0000000F2Rd-3V19;
+	Wed, 03 Jun 2026 12:10:30 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUkDX-0000000Ezym-2nOa
+	id 1wUkQW-0000000F2RD-45oz
 	for linux-phy@lists.infradead.org;
-	Wed, 03 Jun 2026 11:57:05 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=XBELR6peh9kDHenkh/R61Yc+ag1G8lC0ba+mlZmaRW6ddZN0K6C6lzyWoQ/B0a9IiQhFfHM/Y/TfIzgcclcU7vqQmteR/JMTK0AjzfY14lskKzhmkRw1yWFbWIgN9whqnSAuIn1m6ztA8CP+pTuqGtcflyhxxWzg0rRa15mkN83NHslEUYasUKS264/YnLues+E8qeBTZ4YddY996eNqIb8LuPPy0DdVxUWDDkbvp8PaOq3+s34jOy8mndWeI0ZgFGcPFbrHAo1P4f7Y1FUjihrKxZFXrlvGDeawSUMN0M29QWO2s/noGWWViBIrt+RnNh3jOeIkd6f7P1rsjR1D2A==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=pj27gDZ39U4dYQ6mIAKEZ0ip/a+v7pIQ9Qud8QPV3ho=;
- b=TuF51slJeEhFekNLjQLFMI4lGhLhqws9MZ7DeOe/3bby8r4W/PIJsY0c9KfVfc3Aeczi7yH3Bk2aOfbnLRe6R0PNMM4oPirHN7wWS0Pgmu3ij6eTHf3W4sIl9BDGJAHgkNmgjl60+iWtpUAmKiTebVP6+is1x1NmFiagrBXy7VqCyDonerjFfDvQ+/eOM9wo/RVjkSgLp5FMy2TbEscKRwKaUSwuPMN5LnR4DN1wnMFWNp87MFZN3LGdul9dtTHFBxr3YO4rR0+7Lbp68qhAl0gbKKP9TdYi9xKlgbMarRq4+clDxBzdyPPXyvURlV1Nv7eGwIDSjzQ1ZQrKuLPaJg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=pj27gDZ39U4dYQ6mIAKEZ0ip/a+v7pIQ9Qud8QPV3ho=;
- b=KGXc0vEZqqgOWmBzcJNZaliXt7Pbz3ZSA6uXWu0lQsVpTGHKm/wuF919m5p527sfAhYWsN0VJnKT3ZqkDoy7mbwgS5EkqAK1l+4whNQ1QvFJL9sNyss7mp/rnTAFwlyAdA19ULRdFscg6N7g2GVeP41TYPTJUINIYyiiV4bV4n6hSLwKC2zBlKi27s25dPrR+XUvgX7lBziHGvYYKBzJdJW52+tnRFe4S3iWptoxVx2tpIQFtKEvO7NGJrRDIhMfSSDoGJjHj7Go4AbXVQ/HQOGKFY111oUqQ+Bkj4GirIa/n4S7hQWUZO30ml75y+vShGpc46tp/aFxA6V3xkB1CA==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from AM0PR04MB6900.eurprd04.prod.outlook.com (2603:10a6:208:17d::10)
- by VI0PR04MB12056.eurprd04.prod.outlook.com (2603:10a6:800:314::18) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.92.7; Wed, 3 Jun 2026
- 11:56:57 +0000
-Received: from AM0PR04MB6900.eurprd04.prod.outlook.com
- ([fe80::7fda:8431:ca1b:b023]) by AM0PR04MB6900.eurprd04.prod.outlook.com
- ([fe80::7fda:8431:ca1b:b023%5]) with mapi id 15.21.0092.006; Wed, 3 Jun 2026
- 11:56:57 +0000
-Date: Wed, 3 Jun 2026 14:56:54 +0300
-From: Vladimir Oltean <vladimir.oltean@nxp.com>
-To: Conor Dooley <conor@kernel.org>
-Cc: linux-phy@lists.infradead.org, Ioana Ciornei <ioana.ciornei@nxp.com>,
-	Vinod Koul <vkoul@kernel.org>,
-	Neil Armstrong <neil.armstrong@linaro.org>,
-	Tanjeff Moos <tanjeff.moos@westermo.com>,
-	linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
-	Conor Dooley <conor+dt@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v2 phy-next 13/15] dt-bindings: phy: lynx-10g: initial
- document
-Message-ID: <20260603115654.k4v7cayysvy7yte4@skbuf>
-References: <20260529171509.1163787-1-vladimir.oltean@nxp.com>
- <20260529171509.1163787-14-vladimir.oltean@nxp.com>
- <20260602-reviving-aging-a7d066d2448b@spud>
-Content-Disposition: inline
-In-Reply-To: <20260602-reviving-aging-a7d066d2448b@spud>
-X-ClientProxiedBy: WA2PEPF000008A7.POLP291.PROD.OUTLOOK.COM
- (2603:10a6:1d8::64c) To AM0PR04MB6900.eurprd04.prod.outlook.com
- (2603:10a6:208:17d::10)
+	Wed, 03 Jun 2026 12:10:30 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6536RaeA1946638
+	for <linux-phy@lists.infradead.org>; Wed, 3 Jun 2026 12:10:28 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	2ATJtFTYaLad3DCcw6EHaR6UDZL2D5tB2SW9NzD1xdM=; b=Rr+24RCInsAvsXQX
+	3+KhmLczGOqk6E0Onhh0aAeyNo6M1cBzQlYFI/MP+d3lgTJ/XwUdNqkpFcRCk7M5
+	D//ro5U4qxJ2nfNjzPIk8lBRl/0ZO4tV4hl5cuFxPCEUhL2ZjF0ISSJqRtdaRT3h
+	rFFrB6Gp6FNN8xQn0UYYzikBH7r/2pJipxrm3ELlmufBMRwmaM2StXntP/u5wzqy
+	2+wohFpm59HvzZacrSEGQBZwyo0naCYVUwgwjrBmcAal7az0fkd+z/wjmsQGl1iu
+	zGQ1ok30yEBiDmHojrCaxFHQc/WFeG3CG6Y25lIVA41QTNb0mvE5OEzEYUVDQoL/
+	Titn9A==
+Received: from mail-vs1-f69.google.com (mail-vs1-f69.google.com [209.85.217.69])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4ejabgjd0j-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Wed, 03 Jun 2026 12:10:28 +0000 (GMT)
+Received: by mail-vs1-f69.google.com with SMTP id ada2fe7eead31-6798c46f723so5824063137.1
+        for <linux-phy@lists.infradead.org>; Wed, 03 Jun 2026 05:10:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1780488627; x=1781093427; darn=lists.infradead.org;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=2ATJtFTYaLad3DCcw6EHaR6UDZL2D5tB2SW9NzD1xdM=;
+        b=K0ouGvkcHPwS80hnSjcEH4QHRiKtwijWn4ym+J31Q3a+q/ELYPflcifH4+UNx3z2rr
+         zO5Mlp+tK7/uCG4VF3AgrBSGtUDuWzK5X489drD9SE2MNotodmoYQsNiF6Ys84F8hiHL
+         L/UqHq4yXwe/ZAFIay3np3LbHuNHP3XKLoNAIeVIUCaYixIHwrLKThGbI0lszkrXWe7v
+         hhOhCgkXwzDBRoxU56taw1Jg5g0oxSMs9YvZmM4UYBiveXW0kuKhAmjU4OR5KZ0kozZa
+         DMK3eoGDwDs073HmSoyp/0IiDW/bbIc8KGi25wBVZQf+PMwXZqr2xVAa/y513cTj36aN
+         DjTw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1780488627; x=1781093427;
+        h=in-reply-to:content-transfer-encoding:content-disposition
+         :mime-version:references:message-id:subject:cc:to:from:date:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=2ATJtFTYaLad3DCcw6EHaR6UDZL2D5tB2SW9NzD1xdM=;
+        b=p6+CVdM9SqI9sIjr52XbQMz4fApqJaWqMRbssPTvf3Rrl450o4jqHxxGBLqKBQRJ5j
+         1+ZXMX3jQQ7MCSSq05YV3zwcbdGnCMiuTcVCiduJ9quVAaabLeH1YD4m1IPXhbhABXuj
+         PGQoSZ07Lb9lJHaYwwCwXNidL3TDlucfA+VGzHCEz2K0I9hnAMVpmEsFWDMwcdMvyV0y
+         W2UGTccTzkwMDrw5bNwVdN8ubFxI+X9g6rD3kHb/uVNmub8Dr2+3ND2eNQQxzSy0a+Sc
+         B0VjSNmQP7r9fAGnioSpcIx2ISM3FohFjJ49E6lLoPNm5AfpqOBFkqtDJ4DNvBJR96si
+         f8lA==
+X-Forwarded-Encrypted: i=1; AFNElJ/pQXJa9wD6+3jPgSc6fg2iZ9WwkKggmCC2CzlJ/AhjsfeRU9Gm2REnP9FJTYo1ewSUvbZaxxOy72c=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyfWYwVxM9ez43kGJ8zTNrHoK5R/nvcqz+lCG3BXpnA9ZHegvG7
+	8mmDLsWEm17y7RwUCP0s1RlIw7E7rFXQfj+ri0bCjTywVmYt7pq1FpWjG6Q0+qTWUXEF+zJtAaj
+	JDZBPiBc3Fs8ZYm6fBVbyGwEBBZ7LmZT5XUN6K8HwdOrNA/qZDOv3fiwl46n92WWlFbZT
+X-Gm-Gg: Acq92OENAIRtyAn71hb7VlqyX4M2/7HnlhjeyXI8Ty5AEGG62nST15n53jJw9DzFk+1
+	DNQyEpXH8CITj3C0vB7bXqgnGosUWZX83Mh9VTEjV6+8JNUBoHQa802CZVBBpDNIbNrfzmxewoC
+	tnALwS+kJ+3XanEZKaSmlk14o35WSRNlivNkYiyRuEBlbk24DtFY2JWioABuFn7B4mPVigzOyJh
+	sYsdWvAih+FqH+ZgEcUHaxNLk84UysfULMpc+tXaCfD+/KZz4cyzICUVgYZwZ3T7iT56MspmlWU
+	QeEblayvUttI8gM9HcLi5IIECFd/pt7cWBIzcBjixRcidUhDCa8fKYv90/QfCiRjz9nAWA3nnUy
+	DmnLykNcz96QpFXr3VIRJKKlGUgw1s55q7i2TTSu4y4KVGNXQV38z8Va5bmumaXeOGX+5UMAOys
+	7V5adW/wywn3MhWTFuiNYSfn8g2NetltOLKofiMbRsFy8sPA==
+X-Received: by 2002:a05:6102:32c4:b0:5ff:c5c8:2734 with SMTP id ada2fe7eead31-6ec4881b223mr1353315137.25.1780488627169;
+        Wed, 03 Jun 2026 05:10:27 -0700 (PDT)
+X-Received: by 2002:a05:6102:32c4:b0:5ff:c5c8:2734 with SMTP id ada2fe7eead31-6ec4881b223mr1353307137.25.1780488626732;
+        Wed, 03 Jun 2026 05:10:26 -0700 (PDT)
+Received: from umbar.lan (2001-14ba-a073-af00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a073:af00:264b:feff:fe8b:be8a])
+        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-396ac2d503fsm8633201fa.34.2026.06.03.05.10.22
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 03 Jun 2026 05:10:24 -0700 (PDT)
+Date: Wed, 3 Jun 2026 15:10:21 +0300
+From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
+To: Bryan O'Donoghue <bryan.odonoghue@linaro.org>
+Cc: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>,
+        Vinod Koul <vkoul@kernel.org>,
+        Kishon Vijay Abraham I <kishon@kernel.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>,
+        Neil Armstrong <neil.armstrong@linaro.org>,
+        Bryan O'Donoghue <bod@kernel.org>, linux-arm-msm@vger.kernel.org,
+        linux-phy@lists.infradead.org, linux-media@vger.kernel.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v8 2/2] phy: qcom-mipi-csi2: Add a CSI2 MIPI DPHY driver
+Message-ID: <c6aetoiz3dcedlxwjmt5cqh2mngswtmanf6p4s2molemnviwdc@btotpaqwcsoy>
+References: <20260523-x1e-csi2-phy-v8-0-a85668459521@linaro.org>
+ <20260523-x1e-csi2-phy-v8-2-a85668459521@linaro.org>
+ <54904b61-222d-4600-ad4c-c03a9952d337@linaro.org>
+ <be3e1abe-5148-4247-930b-2e23164eea73@linaro.org>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AM0PR04MB6900:EE_|VI0PR04MB12056:EE_
-X-MS-Office365-Filtering-Correlation-Id: 289476d1-378e-4b21-da20-08dec1673692
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|1800799024|366016|10070799003|7416014|19092799006|11063799006|4143699003|3023799007|6133799003|56012099006|18002099003|22082099003;
-X-Microsoft-Antispam-Message-Info: DMhRp97UkNcF3b7Q8067Hf2Tr/fzE4LemLQdvvHeKC7mb3fa3UKZmyBiq30qbARrn2ZbrAuwpvl92h5TgMbP/nmhJ57tCbdaRj2hEqPpqqeVDgbfFQldhZmp8g1SX4cAsHIneJKrgtJ1Yvo5Z8LSO5yNw85PbskxFjg5WZS4vcaX13lHWS1GyNaeJJuvS4Vpfi6jMV2nWnOr/ps5Pe9W8A84Ej5ducQHiHJSSh40xG9O+5ZztJCkSyoeKL2Q0vRAdfbWeIHuUBJUw2NWryUwropzbad9AFKd3P9eNC+uhTtau+YwlWDvmDMDNMmLQKhrNyM2YZVmRYBk7XSgBjRBWmolqITGDoe1ocCzzP7/asGthqC8n1SM7fTqRv9E4sl6ugyuC8I6PuVT9gRBZWZ9WG18uqtVs9MGqezxoMa6qnJ3A+fP2EPxYuOalPzQGsmkinefsTXCOLAYlpHSSqQQlrxgFFzpR6KHa5PDeDZsqDy+4MeibvFrIHwDb9yt8FNcuLeMJwtV0ch4IhYDMoFxZFiyB5equLjvmEZ8T1q7wfnfH8aFKoo4oh3Xj8uLsAT7aEuOZ4lKBIbDHwOuuGX5v1Cd+zlnGTR1t1xVJzhAKGYVJEQW7Cs0zUCr2feAIN2A9z3WAzpGbb49BWDbjAwg4Q==
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR04MB6900.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(1800799024)(366016)(10070799003)(7416014)(19092799006)(11063799006)(4143699003)(3023799007)(6133799003)(56012099006)(18002099003)(22082099003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 2
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?Wpr6++jI7HJDpWqNBloJTBo0tmwRkhpLYb6VXMuMN+4Cb0QqcwCzXdGiMYXH?=
- =?us-ascii?Q?LL+MeQQUCfOAZOcuU8yofuaPZHsdLqd/Yfax5yxnfPZUdodoE6qFU00jKXMG?=
- =?us-ascii?Q?3w7Hjw+2ihFZe32M/9J45QcQhM500+t0CuFd00JeSjA6WoY6c2pmnGx5fQaQ?=
- =?us-ascii?Q?0f8nnC/C3I605No94PnJt8yLXmQ4OMTy0sGAJQwPRB9BAibYI1XnYY6uEG98?=
- =?us-ascii?Q?0g7Y22d60HMqNBW92VFoNZu244YjVVLnI3RYYkbUP+QzW7pV4Ofsky0Q63Yd?=
- =?us-ascii?Q?AO2xRhYmgxToD4vysQaODjoBSyzUtJAgiW/vKSxvbPqfA0yDRHCxIYUFMKBG?=
- =?us-ascii?Q?xlBb0bvcZ+N+L7uT5m6efJ50jgF+pxOPyGioAOmK+qBCowh+pRyX/faxR8mT?=
- =?us-ascii?Q?nJV6sR1Ofb+0XvqQbzfV7s9MAsssd72el6jq55ow4GDRFFRy1IYhsaKAOnJs?=
- =?us-ascii?Q?/GN1m5BW0s6JAidogo/A3sBg480X3YmuCmO3xP3qmuL/6NO1uHn8VzYFq3Ve?=
- =?us-ascii?Q?g9wlQx8Xj2A3P2OGClxulZCC3kGzk2Tz9I071etYIRe8G5i6gXwFRbpwF/KS?=
- =?us-ascii?Q?MKB6darxXGC5XX6KJH8X1qCPmK11PXZqXr5Ia0bp28bnbjwbMBkY8HjBB6pu?=
- =?us-ascii?Q?M+s/pZQbH0loXbQrg/FuGZvqNMtMVu58jaHOPjSd9hqm4UGzlQ3u6xYPROuw?=
- =?us-ascii?Q?A99xPSgrkTwss4IVCz5usZNpzHN04DchTsBla+j3n9Ty3LhT0XPpiSAfwVX0?=
- =?us-ascii?Q?BgP4xJsCc6sl0UJViNfDD3NW6jY/d+RZWieNKx+6k/bzgy/MZoryXnPRqzg8?=
- =?us-ascii?Q?U09MObi/KFInQEzE2w7zrYQaSgf8jelMycaxKX1Ek63LeuB73ppVJXYw11N7?=
- =?us-ascii?Q?Vny6+pfZSSA/WpvCTUR3iOF+J82wz5wdy4+/NLOR7+O3NHO6RUfeZOJLiwpm?=
- =?us-ascii?Q?ugI+EjsLxghBPUFgK98aBWrWtqqOjFDwSd5PqAuT34GmwmUrgYunJxYL2nzh?=
- =?us-ascii?Q?EYZ9b0TXaRVYOJI01SwGePwSFRG6c94hEEPhoyndI+BfaI65U81knRm7+k91?=
- =?us-ascii?Q?OncmRhoVGYucxeAQEgtb/9O2ZqvwHe+6/okikE4yMMuWKPsVbYNzYbgX4e1b?=
- =?us-ascii?Q?A4BlT2uPHKraHhXs0RHPh2bCFt75XT/cEyNiVfk7SuzDDNvkbKI9/l7JOLKI?=
- =?us-ascii?Q?T1TaTCN+ZsWEEG7+5FLr3wKRQ4T4J8dA89jeRv3s0ZQa/SuCPnUc86OL1FKA?=
- =?us-ascii?Q?Eu2wFJWdH4duZACxzMKJydgXjjZXbfme3w7uDsokq+SZr4UnKnRSB27vM7Fu?=
- =?us-ascii?Q?O/S85G3GfHTN8I7B/XIu0AAIZe65o5S/QlPknWXeNZYzaA8Rnjr0pdAzGgZL?=
- =?us-ascii?Q?WS1/PQ+emfBniG/XAI1JWQ5L9WSEYeC+HqnFyB0qMPGr71TuqUoxvDHrdOqY?=
- =?us-ascii?Q?+B6IWg+6YylSKk79/SgGKusYSFHHP88dAVba700wz+3RpPM5gNDo99ePTmRe?=
- =?us-ascii?Q?LJFex6NPvz+8dnV9tc6YTvEEB6yWGQuH7fAqZ3gjacRvlabkfUBfaHMXmj82?=
- =?us-ascii?Q?AhGNvBXiGzSY3SIBm4cVOTn/eobB+f3UVf0is7wZepCSkZhZfnurJMMmh9vk?=
- =?us-ascii?Q?ok1khA+j/njOhJZwe6K3awtYtSC971mge4TxRTf4nYTwKD1ya6CNml+w+vY6?=
- =?us-ascii?Q?7JkX+uHMd9rgdVGKfQn7leizDmzs0UOFjvySHQ3LMxW91BUxVNjysNCamIXL?=
- =?us-ascii?Q?lVZoyhtA2KnHzInnR6buUF24Ug6z/NYz/l7u6llTT9UUXRoSsMzWF0T2eJ5L?=
-X-MS-Exchange-AntiSpam-MessageData-1: neLOCXFsYRb5Y1Qg759m/bApYMkqcfw3vHI=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 289476d1-378e-4b21-da20-08dec1673692
-X-MS-Exchange-CrossTenant-AuthSource: AM0PR04MB6900.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Jun 2026 11:56:57.5890
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: dI1yZjCjM7cOl4PDcg2QbZzd9MtJdtovFmOu9Bv+4TBV+70MfdwijjSL+7GEfhU6oaJR+q2FYwEg4KvNyHB+pA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI0PR04MB12056
+Content-Disposition: inline
+In-Reply-To: <be3e1abe-5148-4247-930b-2e23164eea73@linaro.org>
+X-Authority-Analysis: v=2.4 cv=R6sz39RX c=1 sm=1 tr=0 ts=6a2019b4 cx=c_pps
+ a=5HAIKLe1ejAbszaTRHs9Ug==:117 a=xqWC_Br6kY4A:10 a=8nJEP1OIZ-IA:10
+ a=FelO9ux0wxsA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
+ a=u7WPNUs3qKkmUXheDGA7:22 a=DJpcGTmdVt4CTyJn9g5Z:22 a=tcGPitenHjrlTjGvCv0A:9
+ a=3ZKOabzyN94A:10 a=wPNLvfGTeEIA:10 a=gYDTvv6II1OnSo0itH1n:22
+X-Proofpoint-GUID: fo_mtnP4BcJiVuIZ1eLMJXWVOzJdsQOn
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjAzMDExNiBTYWx0ZWRfXySZh/M2zS93I
+ XdG8CLv7n9RfEwANoI4tN5SZMJZRtJq/arP5QSfyKu3VZb0bpcSkQ28DyZ1bhCm0sfurGicElXU
+ YoUgdNz0YTs1pgCoMAjA0QA+GjNoIq/DBbrFEmDRKK3t7njfvSbZ4Sxk9E6jQcFy/qO/2mgX/VX
+ SV+/xZ0UrpeGUzInLrJPzamzEeaLAlM7yFor7CQJFJMTtJpyfh5cWe7/K69DZjZJnNvVZfMsgsQ
+ DjdzKognT7yaQOyxx0TohtrItPWRnpB3fJhwkmd/6pPogiBJDFBFFr+GlVrThGfLAJ4u7MZ+BGK
+ 9Xmp23LwD8nY8tj6etPNOezurIqqRtOCLwu3aJheLAEGXK4JfYLYVeUteUaPq7xnQexTt8S3RAP
+ ts8/0ds5HJE9sVET0iqWK/oBlY+y2zGurqJqe2azqqZXv5eaJAcdnm5w0mCM4KVOdVmoLV9R89W
+ D1n2l20I1QZzljMkZ8Q==
+X-Proofpoint-ORIG-GUID: fo_mtnP4BcJiVuIZ1eLMJXWVOzJdsQOn
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.125,FMLib:17.12.100.49
+ definitions=2026-06-03_04,2026-05-28_03,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ spamscore=0 priorityscore=1501 malwarescore=0 bulkscore=0 clxscore=1015
+ lowpriorityscore=0 adultscore=0 impostorscore=0 suspectscore=0 phishscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2605210000 definitions=main-2606030116
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260603_045703_704429_614DE850 
-X-CRM114-Status: GOOD (  29.37  )
+X-CRM114-CacheID: sfid-20260603_051029_022424_1750C11D 
+X-CRM114-Status: GOOD (  18.01  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -140,99 +148,50 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jun 02, 2026 at 06:10:30PM +0100, Conor Dooley wrote:
-> On Fri, May 29, 2026 at 08:15:07PM +0300, Vladimir Oltean wrote:
-> > Add a schema for the 10G Lynx SerDes. This is very similar to the modern
-> > form of the 28G Lynx SerDes, which is very much the intention.
-> > 
-> > We allow both forms of #phy-cells = <1> in the top-level provider
-> > and #phy-cells = <0> in the per-lane provider for more flexibility to
-> > consumers, and because the kernel code is shared with the 28G Lynx which
-> > already has that support for compatibility reasons.
-> > 
-> > Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
-> > ---
-> > Cc: devicetree@vger.kernel.org
-> > Cc: Conor Dooley <conor+dt@kernel.org>
-> > Cc: Krzysztof Kozlowski <krzk+dt@kernel.org>
-> > Cc: Rob Herring <robh@kernel.org>
-> > 
-> > v1->v2:
-> > - move patch later in series, right before driver
-> > - deliberately ignoring this Sashiko feedback:
-> >   https://lore.kernel.org/linux-phy/20260529125017.ifqunh52gdzhthdg@skbuf/
-> > ---
-> >  .../devicetree/bindings/phy/fsl,lynx-10g.yaml | 131 ++++++++++++++++++
-> >  1 file changed, 131 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml
-> > 
-> > diff --git a/Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml b/Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml
-> > new file mode 100644
-> > index 000000000000..993f076bba4e
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml
-> > @@ -0,0 +1,131 @@
-> > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/phy/fsl,lynx-10g.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: Freescale Lynx 10G SerDes PHY
-> > +
-> > +maintainers:
-> > +  - Vladimir Oltean <vladimir.oltean@nxp.com>
-> > +
-> > +description:
-> > +  The 10G Lynx is a multi-protocol SerDes block which handles networking, PCIe,
-> > +  SATA and other high-speed interfaces. It is present on most QorIQ and
-> > +  Layerscape SoCs. The register map is common, but the integration is
-> > +  SoC-specific, with the differences consisting in register endianness, the
-> > +  number of lanes, protocol converters available per lane and their location in
-> > +  the PCCR registers. Some SoCs have multiple SerDes blocks and those differ in
-> > +  their protocol capabilities per lane.
-> > +
-> > +properties:
-> > +  compatible:
-> > +    description:
-> > +      There is intentionally no generic fsl,lynx-10g compatible string due to
-> > +      the hardware inability to report its capabilities, despite having a
-> > +      common register map.
-> 
-> I think you can probably drop this from the diff, and put it in the
-> commit message.
+On Tue, Jun 02, 2026 at 11:22:41PM +0100, Bryan O'Donoghue wrote:
+> On 02/06/2026 23:07, Vladimir Zapolskiy wrote:
+> > > +=A0=A0=A0 ret =3D fwnode_property_read_u32(ep, "clock-lanes", &clock=
+_lane);
+> > > +=A0=A0=A0 if (ret) {
+> > > +=A0=A0=A0=A0=A0=A0=A0 clock_lane =3D CSI2_DEFAULT_CLK_LN;
+> > > +=A0=A0=A0=A0=A0=A0=A0 dev_info(dev, "Using default clock-lane %d\n",
+> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 CSI2_DEFAULT_CLK_LN);
+> > =
 
-Ok.
+> > Why CSI2_DEFAULT_CLK_LN is set to 7, what does it mean and how is it us=
+ed?
+> > =
 
-> > +    enum:
-> > +      - fsl,ls1028a-serdes
-> > +      - fsl,ls1046a-serdes1
-> > +      - fsl,ls1046a-serdes2
-> > +      - fsl,ls1088a-serdes1
-> > +      - fsl,ls1088a-serdes2
-> > +      - fsl,ls2088a-serdes1
-> > +      - fsl,ls2088a-serdes2
-> > +
-> > +  reg:
-> > +    maxItems: 1
-> > +
-> > +  big-endian: true
-> 
-> This isn't a required property, but should it be made required for the
-> specific compatibles that are big endian? Or are we not that lucky, and
-> devices can be either?
+> > Since "7" is a meaningless number in the context, I believe it's
+> > practically
+> > not used at all, and if so, 'clock-lanes' property should be just remov=
+ed.
+> =
 
-I can make big-endian a required property for fsl,ls1046a-serdes1 and
-fsl,ls1046a-serdes2.
+> Documentation shows clock lane at lane 7.
+> =
 
-Thanks for the review!
+> Truthfully it makes no sense that the clock lane would genuinely be locked
+> to lane 7 but the documentation does seem to suggest it.
+> =
 
--- 
+> Yes in fact I agree. clock-lanes can be reintroduced if someone can show
+> hardware that supports/depends on it.
+
+Konrad and I checked, Hamoa supports using other lanes as a clock lane.
+
+-- =
+
+With best wishes
+Dmitry
+
+-- =
+
 linux-phy mailing list
 linux-phy@lists.infradead.org
 https://lists.infradead.org/mailman/listinfo/linux-phy
