@@ -4,127 +4,104 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D57ACCD6E4A
-	for <linux-phy@archiver.kernel.org>; Thu,  4 Jun 2026 02:35:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8F117CD6E57
+	for <linux-phy@archiver.kernel.org>; Thu,  4 Jun 2026 08:46:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gtmdvs4m9TsJyf8ayhhJn5ALDmiNreC2nHNUNcQPBC0=; b=hbbbLb8eFlhLzw
-	W3TEH4X1fY6+K8UlGqvLwCLrohmolCXiQ1OQ4OhXR7tHqemfXcxfg9A/facvsZsQXYI8xuhUfIbVD
-	x4LjSy8Tziiji/yhDohLB1BIh3j7/Bz6H1D2QJMee6FsB34nBNi99YIq6H4Wd2CxmRtegCwUEAYdc
-	tq04lgdFa2eHZqsD5cP5yb2EM5kkOWVEEo8CRqTWh/8XqsNl6TNpevQ+9hfSkE7OAap5mB8/9h4IF
-	ett/sg6UMsKYjVTBm7yDOS0ShJ4KeVyWSfSaLfEJIeBMvMsBIZ1PLs5TLUX7cgD5Rv83dTYQza3lh
-	mcb8gMOIbiPFLK/Vt42w==;
+	List-Owner; bh=rLnqmSBCjt7X5JCytm1OkfDY/LHvbfO5T2PZi+i+diI=; b=TaKWQZRqlT0dKj
+	Ot+OqmNSEpP46X/Xwu8H5ORmDZwYDsH5Gq9UCE5EP0fIfx3UhVH1RFhfxWKOK1IMo3a9Mf8JT9Rk5
+	bwIwstMq00lQvuv4g7s/lTV3Q7xnI2L5QtJSkjMXtqSefjbq6yHnCqkwKW0sf19SD2MH8GQJZiA3N
+	n4QTn4AlCHwhuYbXTo/6f67/1BzCzk1zlAb1LZWSlaRC2eGf28Iy98gxWx+cdF6VoGcw7ZhU1lbQx
+	X73Fk1SYqJhE+v+57dUzjvtjGPGAlw0mRayOArCBPC97Bg+wBxH/J/TrFQwWJukkz0j1lOKfiu1mj
+	Yq923bzhlpVmzZjUGKQQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUxvy-0000000G3TG-21KO;
-	Thu, 04 Jun 2026 02:35:50 +0000
-Received: from mail-norwayeastazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c20f::7] helo=OSPPR02CU001.outbound.protection.outlook.com)
+	id 1wV3iW-0000000GQ1z-0Ya1;
+	Thu, 04 Jun 2026 08:46:20 +0000
+Received: from mail-lf1-x135.google.com ([2a00:1450:4864:20::135])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUxvv-0000000G3RE-2gqd;
-	Thu, 04 Jun 2026 02:35:48 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=UHrH0WRiqEQ/CnZWSbCDrVqpMVfFaNJ4fhgjJnWNiBD7NaH7EY0qiKmxEbP3qhkXEru5n5Y6My9Nez7wnEEV1GkQgmB7aWoXaMpyTrvTz3hJV/38PZeZ0qTrejXYTdmEfUCnpP8pjSW92T4ZP5a4Ts2DluR3wMIxlUjlOQYJ5LMoMP57djRq8g4tK9m0L0RmxnxLtXnf1D/m5teSlWLU6nnrzzUteZTr2BTrhzfVLi07D1E+CeYimEUIghswd+65lSDmhvNT3JUkWDZJ6wQ+w5Sed2KIUESZatHFfVYH+aw5v9kRArRPjN9GXniSZXh90Ctv7+2Xa/CEb8q4Of1H6g==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=fU0WOf7TMZvUc7k2CwrRJM6UP9kbQqrj65vFzssvQ08=;
- b=ntEk/Vai6TBmFjtfkzFFbsYsRwcDJQrBdKVWfOEoiyZ30KMvEzNc2ZfbkZO2eQdp9fNn4HPk8hidR3CNERsz6/4Fm9yBdn1wjBm2rLZOhed7Eu9PSsOMsQlLixt4G+OMEYck4UKfxrCzQZGOvYCsQOBAt1kwDQwQsnOPOtF/W5TXTWbSOvHfGB13cdmNNJ1Edz0rQMRMdy5rnctX8+Hg/Vvn1UfmAzPjon+C54xOMsUXoUzM1+NFStJkx4Hx+F4vVyAX+JLbYOrcek740EYVwquMgZpYaRw75a53P9y6qoNYcrJVVkw530UFTeHKF4huZDwqdrGFHYka+a0cMssX/Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
- dkim=pass header.d=oss.nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
- s=selector1-NXP1-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=fU0WOf7TMZvUc7k2CwrRJM6UP9kbQqrj65vFzssvQ08=;
- b=MbWW4whfLw3AjgKn+lDF2nGMAk3G+usz842MalrsRz+4+q278n+1wGp9Mh93GtOmBnkNPsnfl0H+0dmT4HhomjR0Bpq2y8MXA2ykBETUjugnb/CzEaZ0vNP1GOQiq62Tge6Eg8dWyLp+eX+YljFP1uTmhAcWNBwg4QTQXWmoYSs2QwHlwUR9oHpS7K6E8tpYO9cAHhd5U8e4ZlfJ8X/sKViRFZ7F4OYywBtxHJhU1jyyEnh6ubRjc2Rg+OkT3DNQZaE96x3ZN7vpHwR5xfxWMVZ8akT1f8OiE0Thn5PNT6yE3eLfNlez6XKjZsYiOU3AgeCGAxpy9BoAf9K/wM7AVg==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=oss.nxp.com;
-Received: from PAXPR04MB9422.eurprd04.prod.outlook.com (2603:10a6:102:2b4::21)
- by PAXPR04MB8797.eurprd04.prod.outlook.com (2603:10a6:102:20c::18) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9870.25; Thu, 4 Jun
- 2026 02:35:39 +0000
-Received: from PAXPR04MB9422.eurprd04.prod.outlook.com
- ([fe80::54e:28bf:aa85:d25d]) by PAXPR04MB9422.eurprd04.prod.outlook.com
- ([fe80::54e:28bf:aa85:d25d%4]) with mapi id 15.21.0092.006; Thu, 4 Jun 2026
- 02:35:39 +0000
-Date: Thu, 4 Jun 2026 10:34:38 +0800
-From: Xu Yang <xu.yang_2@oss.nxp.com>
-To: Bough Chen <haibo.chen@oss.nxp.com>
-Cc: Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Frank Li <Frank.Li@nxp.com>, 
-	Sascha Hauer <s.hauer@pengutronix.de>, Pengutronix Kernel Team <kernel@pengutronix.de>, 
-	Fabio Estevam <festevam@gmail.com>, Jun Li <jun.li@nxp.com>, linux-phy@lists.infradead.org, 
-	imx@lists.linux.dev, linux-arm-kernel@lists.infradead.org, 
-	linux-kernel@vger.kernel.org, Xu Yang <xu.yang_2@nxp.com>
-Subject: Re: [PATCH v3 4/5] phy: fsl-imx8mq-usb: add control register regmap
-Message-ID: <jcsry7quuw6ghiojy36llky7vrlopxjzugpayel3uuyhpm5hxi@ouwthba5wtyu>
-References: <20260603-imx8mp-usb-phy-improvement-v3-0-7afb8f89abc6@nxp.com>
- <20260603-imx8mp-usb-phy-improvement-v3-4-7afb8f89abc6@nxp.com>
- <20260603072107.xhrzxrgbrb7q6fhe@nxp.com>
-Content-Disposition: inline
-In-Reply-To: <20260603072107.xhrzxrgbrb7q6fhe@nxp.com>
-X-ClientProxiedBy: FR4P281CA0087.DEUP281.PROD.OUTLOOK.COM
- (2603:10a6:d10:cd::11) To PAXPR04MB9422.eurprd04.prod.outlook.com
- (2603:10a6:102:2b4::21)
+	id 1wV3iT-0000000GQ1A-3Zby
+	for linux-phy@lists.infradead.org;
+	Thu, 04 Jun 2026 08:46:19 +0000
+Received: by mail-lf1-x135.google.com with SMTP id 2adb3069b0e04-5aa68daa847so11460e87.2
+        for <linux-phy@lists.infradead.org>; Thu, 04 Jun 2026 01:46:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1780562776; x=1781167576; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to:subject
+         :user-agent:mime-version:date:message-id:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=ysCy4i0ZuZGHTLV0NNKNvTSVjrjWNaqQ7rMKNBVAW0s=;
+        b=E+o6kisJvRECgu1FbqWVeyUoqnyXOQPCHRwk+BSnNBgZQqGUrpYVj1vYss89zMcoFC
+         be3FxQ8T2bOvaSVPEvHdaog5LXRD/wBVBYav0wXgLKtRFZk3hH7W+2AmQIuX9GwJGJH6
+         JCkRcfQj2oFLVWuxSd6c0jxHYJ4Gety6jS+4Ww6u8Cb//CCxcO2SrRpX7sCwIBFXUqUE
+         OeeqMay+gkGuFfXmqdO7+xM+R/HtHc8uwvathF7hEffefQFfP+ppoFQDcL3UKZD8kOrW
+         oeljfY9/BA2m9bZHOMdxyE1FHO5M+ovZch7HrLbgaT8frVJIrsznGs1UUqNFNsVFdiQC
+         VZGA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1780562776; x=1781167576;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to:subject
+         :user-agent:mime-version:date:message-id:x-gm-gg:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=ysCy4i0ZuZGHTLV0NNKNvTSVjrjWNaqQ7rMKNBVAW0s=;
+        b=pXd2KN0Q7oM9+cXHVnsi+qsKW26xmvrif92oI2iAhKds1/ng8+P2lS8kh5I8Oss+fO
+         mwZLfw1f/KfdpboT7ZbM84ChSKDf7WQJzs/mcsKsu4aw8jUbtUG6YGBm3PDymtUjnJak
+         F48UlAPNRooU2gYrwGtTN/u+5QkV0sxmmCeISbrO8tsRF4sGWA2KyadCRunChrgDnSkD
+         vJPR4rfJ9Ok2ODQW3lSVzKMZBNZmnCVvEfVM+aMPWw3kJwFmVLQbgondAk/udgMOxm9r
+         9AtP5dj2N/soBqsJfRb8DgaKg76k2vpK7UD/CksJQFl5itsNAiqwr2Aas/EWo2OW9kNK
+         IueQ==
+X-Forwarded-Encrypted: i=1; AFNElJ/TlscZWW934nKfhqmTi7RykDMFTj56k3iD5ZCXd9ertdx7q6/3CavpO/E46rJcCcjl33xxnBzI0K8=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxXwBjgiouV/p/Xyw+zr3Zl9Sr38VEjr4BGO+VjrhJdG3InvdMV
+	f/oICZHnx+KiEuEi9o50Z45+B+38C6eG7sG5CaXe+F7Y9kgfNVcJyhg5POsBBdtbdpQ=
+X-Gm-Gg: Acq92OGfTezD0U82dxLw2NecAYyG4w9LOiwHrNGRg0ctc18sXt5gd6/pOqxnGChYYNT
+	x/paRwHUBbjdSJhkJR+K2OE/t8yadUjUtm+g/7E3J96LYUODelK9eT4tUBUaCnBEKrBOFYNE0lb
+	25PPZfk/OAlpcsbAvNwp+rKDZYOnSrNXeCUU/N7Jk80dk43RqZK17jWFhvgPyxUA7ynwlj+nfth
+	An8L+QosPaSJMrwJ4bJ7BG4E0v4UFNAYnBIyq/nkPtO+vJv2y3Dik3E7V0vKeCly8zo8ZGHM5vC
+	2pCeYNKKhYETxqv0qojHgO1676SVTqTwuY7iZPB3bnN1XP9/1ZRNXhsP/YeX5t1vzjhFSFRLEOL
+	v37Xn81mBEFvVOJ8Izc17rWygieOlQ6uNpdRxACh4WQOBfy4uunQiCWSJqBytpyWaFI3fs75jY/
+	7hAosmlMl4ILhz5Y6EBksFFhAQY9+AFMBGEHM6OSmttPxK/OxvnQgVnLPUBVuR25UaHS6kSDyuH
+	43OjGWNxUSnjfw7
+X-Received: by 2002:a05:6512:24d8:10b0:5a8:7317:540b with SMTP id 2adb3069b0e04-5aa81f36e3dmr159818e87.7.1780562775465;
+        Thu, 04 Jun 2026 01:46:15 -0700 (PDT)
+Received: from [192.168.1.100] (91-159-24-186.elisa-laajakaista.fi. [91.159.24.186])
+        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5aa7b99c74esm1075006e87.81.2026.06.04.01.46.14
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 04 Jun 2026 01:46:14 -0700 (PDT)
+Message-ID: <1b107aca-a857-4e58-a763-39c82af67747@linaro.org>
+Date: Thu, 4 Jun 2026 11:46:14 +0300
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PAXPR04MB9422:EE_|PAXPR04MB8797:EE_
-X-MS-Office365-Filtering-Correlation-Id: 29c94e99-f46e-423f-3673-08dec1e1f75e
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|1800799024|376014|19092799006|3023799007|11063799006|4143699003|18002099003|22082099003|56012099006;
-X-Microsoft-Antispam-Message-Info: zhRV/9y0b0iwJ1ANgtOJSY1XbJCOfOCo6K0r6/bPmfCQbEWZ/f639K33pjpYE/L0NWgxM3DDraP2YgnBFFN/batA5nyvghcUoYMW1GBYgESTwOVeLiDwl0vTosj12CngfQXwDfbAY0eTB7EHnQrDKbr0NHgApHyjCAShASmugWwjUdnGyoWXabaMaVDg7/H9B+MWOCQuy6z7MMz11xCgaT3LA81qsyNBePR/Wrt/1E+kQgEdY1Pruaulc/GFW42K4jqZIwAbrYYbknQBdJ13B/EdGGXqaKtl5gXu+GHsKU2En/YOJXvfKrB5OPtdKwV3vwiRv4/n2m87himnXn5cOkGMAbJLldLIPBtJPQ7D9kMPNuDmDOfnfOwWOAvsk8flRV0lrrqf67ZGRvsmre8MgNogBv3kdUxoeJfDITCGcIx11c1IZ5faPswD1JNb6XKAusVOUztk9iUsXJb5oin9i/4SPUXEjGzQaIDRF9FTcI/NMzqVQLktfwJULWV//PKLBL1xesda1bjpsXbsVvok3yDxJSZsA/zeb2aZa3RYxlP2BuW5PxsNPY1T36Oxs+hDG65Yj61bx41Vw/nb3vEZfhKHXwS1yi6q0aOgvUGjpIXjSnGmF/YQSMBhge+DJuKiUAylD/mosJV0Lw3PyLzR84Cb/aHv3xZkRho2RddkYqlP/nxtLkOzWa+CAKCbOh0l
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9422.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(376014)(19092799006)(3023799007)(11063799006)(4143699003)(18002099003)(22082099003)(56012099006);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?W1KtdG5VWSzDxrwtr8PhTEAs5UKIgdCcqpyXdvjnJ/4sPsHtb+G1b3/oNO6h?=
- =?us-ascii?Q?62mtIqw29UPcMzRHnkiNJ05i31qSgR/2Crz7IApFHksEUAGacP2HO/1JnKKU?=
- =?us-ascii?Q?IKevwDeiPxqSY0yiLZXukDXh7IUa52jFdxIoU3fnMqgL08tvWR+mOoF0eWvk?=
- =?us-ascii?Q?AqHs0nJE51E/uKwHeybIZDpry3A/fRV9e41Uq9bpBsUm1WVpjVuS8187ThtX?=
- =?us-ascii?Q?nF+ZlvFuXKkre47xFg/IAlmuz0voCNeQvMnKLcbTGnbE4Ee4BRkguXLT8McG?=
- =?us-ascii?Q?SEEpVlgJqY3mnLIDWuc/bSXgvn2FV+hshS7BSXyIBGB5mR5jLs0J3aSUh9uZ?=
- =?us-ascii?Q?vU4zDPjzCDhi20H9jSCKDxXrMi4oJrzEKXZz04OA0+xzTzocaNtpSCwI8cbY?=
- =?us-ascii?Q?w5DE9W811b+NZLXLJ7zSIIOGukLUM+gwwFU6tbflQYlIWqUR+h4kPIdqtb6Y?=
- =?us-ascii?Q?3zGA7IucQE09sssOAQgiKlyySxcFHFujCNkYrpJpNN9571G099zgvlcpdwly?=
- =?us-ascii?Q?7u9KXQop9jHruwCZShTQa7A5yjZcUx85bf9DVpJ1WNJuOQh5dIFzT6xAYTDy?=
- =?us-ascii?Q?If9oBycyf7/j+rV3fhL0ZgSBfsB2pALP9jAbFiBNqLCAmRaSLazF6z1XHQKa?=
- =?us-ascii?Q?hrn4SCqeNv0EnIxInNrtAUEDS8KxG6mzkwe2dvCEaVkQriIMcBUFN/nsPNAt?=
- =?us-ascii?Q?zdU6pUNb1ulLJXG085k+Cppvf/6xQfg743GmntAZ0t7nC55FD0I765LvbkiR?=
- =?us-ascii?Q?FcdzPSwoKNOy/1rWPW8j2pGM3Fblc0j2LLmEz26aoCPJ7bG2AVCDg8KekMdP?=
- =?us-ascii?Q?cx3FIw+QDIIEatOzOGCInOeKFbEfsfzlNR269bDN5ndZ3shnbKPnUgv5rt21?=
- =?us-ascii?Q?6plPVpz5vsjOwQpRzPBE4KZLR1IZxEAx3HQFQXIhrE11Q4OKnMqS6zbcsQzl?=
- =?us-ascii?Q?jFJUj+KF+s8G3H1Vl6Cf7H4bQUVSflzaXZyb5VvXJEryHmvlR46se+Z8NuDv?=
- =?us-ascii?Q?A126VKWuaIc1Zugmx2V0/GlnEPcItvDBaV5AUDuv3SyT5VzOsGsFACGfYthp?=
- =?us-ascii?Q?jffwbdS7ld67q5T2WqkVLY4ZyhyWQFWdIQ4QnlGDZGrUHmUKQowYYHl6SWiv?=
- =?us-ascii?Q?uVrdR4G4HfbkORGeFPD15Dngp3uzLP3F3oSYgj5lGn7wYqq04PvXLB0s2VTl?=
- =?us-ascii?Q?MSNEVUvT6M5CjDPJle0CgIlu8fn8EZTrOFwt8bflAX3nBEVhXHRHdVZJUIUU?=
- =?us-ascii?Q?bmmZZs8fWLPGa8KKqDCDddZZshyVVb5riTsZ8uDwj/nxop/h18rzTFoWrH9g?=
- =?us-ascii?Q?uJ2rF8e+zI+k/5r/AX8FYvqKXOuVdm6e6sq5QvEpgmWvT53Idqaz7/KCU1Wl?=
- =?us-ascii?Q?fcroBF8Vu6XqCexpTHq80Lq33rpqFcpGuKUCYNUxrg15B9peupNXmmCZpqUf?=
- =?us-ascii?Q?WdVWmN1DVpUQDq16oBJncKrxdQoF0J9W8h716GybQFwK5clk+5YEbN5twA6V?=
- =?us-ascii?Q?LGGdCO6sPmyB9YucNOscMMAZ10D0R/5dBqiHag+F5F+adZu6egbnWfmIHhmK?=
- =?us-ascii?Q?MTrZ+Lu8OxArSElgUu6AygPcm9KK1VoMi4OK4nGuJKG+y/yRU/CuBiXtSbwq?=
- =?us-ascii?Q?fecs5uDpcH+j729zgWdhVI/EN37c+AyvDrnAXkzbjK3uHAuh09j9HF1lSRnf?=
- =?us-ascii?Q?oyBYnbDsqe9KKp37qHZTwQBw2Z5cSiDT1HbCcc+qtaG+RBEoTA81oZu8RZjd?=
- =?us-ascii?Q?+vwSn2pqQqN6KyZx5ZLOPoCqbn8GAOBsAB53eRat+KnzLFYoKn1L?=
-X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 29c94e99-f46e-423f-3673-08dec1e1f75e
-X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9422.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Jun 2026 02:35:39.6103
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: yLIbktcMUd6iG8dDgIhpADDrRL/swOhKDxsscbgmSSt90TRyIdpxuX+U9555vnVE+Ah8zC8vCedQVCcmhyUkuRCsp7n7SldDlh2Ryo1Z3Ba4MtkPwR/VZCXuHqXTOIta
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAXPR04MB8797
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v8 1/2] dt-bindings: phy: qcom: Add CSI2 C-PHY/DPHY schema
+To: Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
+ Bryan O'Donoghue <bod@kernel.org>,
+ Vijay Kumar Tumati <vijay.tumati@oss.qualcomm.com>,
+ Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+References: <20260523-x1e-csi2-phy-v8-0-a85668459521@linaro.org>
+ <20260523-x1e-csi2-phy-v8-1-a85668459521@linaro.org>
+ <rpnNMsR9GY8gbynzeBO8Zm61JAOq3ubt6sp0x3WDPPwkMAJzlcofECD1kabN-IUoK6sSwP5P6l28UIZLFCOpjQ==@protonmail.internalid>
+ <dda32577-04e0-4507-acaf-a5694f4f31b3@linaro.org>
+ <478df3ed-d4ef-43aa-bb84-e2075798542b@kernel.org>
+ <ec98ef2f-02b4-4086-8b4b-07b6953dbd20@oss.qualcomm.com>
+ <514cf213-5778-45e1-8d70-d3fe27991fcc@oss.qualcomm.com>
+ <7JNJ4dUNz4ennJ5dkzhfLSuVo72JpfZAbprICPRqlRYnSzVDJw6x3h-1nESd_PK-3us9f1V3qOiLiywsTqP8vQ==@protonmail.internalid>
+ <f01c0e22-4e5c-44e7-9ea4-4bc8d53aea2e@linaro.org>
+ <29e8491f-20e8-4082-8943-66bee7e3af1d@kernel.org>
+ <5ca611b1-0663-4975-bd56-b1343851e5fd@linaro.org>
+ <83c12dc5-fcb4-4089-9917-9f0fcc4f940d@linaro.org>
+From: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
+In-Reply-To: <83c12dc5-fcb4-4089-9917-9f0fcc4f940d@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260603_193547_693245_5BC1271A 
-X-CRM114-Status: GOOD (  26.53  )
+X-CRM114-CacheID: sfid-20260604_014617_966792_005FF93C 
+X-CRM114-Status: GOOD (  21.49  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -136,116 +113,82 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jun 03, 2026 at 03:21:07PM +0800, Bough Chen wrote:
-> On Wed, Jun 03, 2026 at 01:37:17PM +0800, Xu Yang wrote:
-> > From: Xu Yang <xu.yang_2@nxp.com>
-> > 
-> > The CR port is a simple 16-bit data/address parallel port that is
-> > provided for on-chip access to the control registers inside the
-> > USB 3.0 femtoPHY. Add control register regmap and export these
-> > registers by debugfs to help PHY's diagnostic.
-> > 
-> > Signed-off-by: Xu Yang <xu.yang_2@nxp.com>
-> > 
-> > ---
-> > Changes in v3:
-> >  - drop Frank's tag because it includes other changes
-> >  - new patch
-> > ---
-> >  drivers/phy/freescale/phy-fsl-imx8mq-usb.c | 27 ++++++++++++++++++++++++++-
-> >  1 file changed, 26 insertions(+), 1 deletion(-)
-> > 
-> > diff --git a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-> > index b0092c34416e..cda88ea1f12d 100644
-> > --- a/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-> > +++ b/drivers/phy/freescale/phy-fsl-imx8mq-usb.c
-> > @@ -1,5 +1,5 @@
-> >  // SPDX-License-Identifier: GPL-2.0+
-> > -/* Copyright (c) 2017 NXP. */
-> > +/* Copyright 2017-2026 NXP. */
+On 6/4/26 03:30, Bryan O'Donoghue wrote:
+> On 04/06/2026 01:07, Vladimir Zapolskiy wrote:
+>> On 6/4/26 00:18, Bryan O'Donoghue wrote:
+>>> On 03/06/2026 21:51, Vladimir Zapolskiy wrote:
+>>>>> Actually, one more thing, Why isn't TITAN TOP GDSC here?>>>> +
+>>>> If CSIPHYs are true subdevices under the umbrella CAMSS device and well
+>>>> described as subnodes, then likely none of power domains are needed
+>>>> to be
+>>>> repeatedly described in the children device nodes, since this
+>>>> information
+>>>> can be obtained from the parent device by the driver.
+>>>>
+>>>> Technically 'power-domains' property can be safely removed, I believe.
+>>>
+>>> The policy is to describe the power-domain dependency fully since DT
+>>> describes hardware not software architecture.
+>>
+>> It brings no contardiction to the statement I've given above, the needed
+>> power domans will be properly described in the parent device, and there
+>> is no
+>> sense to repeat the properties it again and again in every child subdevice.
+>>
+>>> Also for a very practical reason a sub-devices can probe/run
+>>> asynchronously of the parent device being active so in fact we do need
+>>> to describe the PDs fully.
+>>
+>> In opposite to the above this one is precisely a software centric argument,
+>> which should be excluded from the consideration, as well it's not a big
+>> deal to make a proper async initialization, removing excessive dt
+>> properties
+>> is worth it.
+>>
 > 
-> Should be : Copyright 2017, 2026 NXP.
+> Right look forget about that.
+> 
+> - DT requires you to describe your hardware. You're not entitled to have
+>     some other device vote for a clock or a PD you rely on.
+> 
 
-The Copyright hasn't been updated in a long time. So I want to extend the
-period here.
+Above are two uncorrelated between each other sentences.
 
-> 
-> >  
-> >  #include <linux/bitfield.h>
-> >  #include <linux/clk.h>
-> > @@ -11,6 +11,7 @@
-> >  #include <linux/platform_device.h>
-> >  #include <linux/pm_runtime.h>
-> >  #include <linux/regulator/consumer.h>
-> > +#include <linux/regmap.h>
-> >  #include <linux/usb/typec_mux.h>
-> >  
-> >  #define PHY_CTRL0			0x0
-> > @@ -56,6 +57,8 @@
-> >  #define PHY_CTRL6_ALT_CLK_EN		BIT(1)
-> >  #define PHY_CTRL6_ALT_CLK_SEL		BIT(0)
-> >  
-> > +#define PHY_CRCTL			0x30
-> > +
-> >  #define PHY_TUNE_DEFAULT		0xffffffff
-> >  
-> >  #define TCA_CLK_RST			0x00
-> > @@ -119,6 +122,7 @@ struct imx8mq_usb_phy {
-> >  	void __iomem *base;
-> >  	struct regulator *vbus;
-> >  	struct tca_blk *tca;
-> > +	struct regmap *cr_regmap;
-> >  	u32 pcs_tx_swing_full;
-> >  	u32 pcs_tx_deemph_3p5db;
-> >  	u32 tx_vref_tune;
-> > @@ -665,6 +669,14 @@ static const struct of_device_id imx8mq_usb_phy_of_match[] = {
-> >  };
-> >  MODULE_DEVICE_TABLE(of, imx8mq_usb_phy_of_match);
-> >  
-> > +static const struct regmap_config imx_cr_regmap_config = {
-> > +	.name = "cr",
-> > +	.reg_bits = 32,
-> > +	.val_bits = 32,
-> > +	.reg_stride = 4,
-> > +	.max_register = 0x7,
-> > +};
-> > +
-> 
-> Your commit message says: The CR port is a simple 16-bit data/address parallel port
-> But here you use 32 bit mmio, which is a bit confuse to reader. 
-> Maybe you can add the following comment before the regmap config:
-> 
-> /*
->  * CR Port MMIO Register Map
->  * 
->  * The CR (Control Register) port uses a 16-bit data/address protocol,
->  * but is accessed through 32-bit MMIO registers:
->  * 
->  * Offset 0x0: CR Control Register
->  *   [31:16] - Control/Status flags
->  *   [15:0]  - 16-bit CR Address
->  * 
->  * Offset 0x4: CR Data Register
->  *   [31:16] - Reserved/Status
->  *   [15:0]  - 16-bit CR Data
->  */
-> 
-> Or change your commit log like this:
-> 
-> The CR port is a 16-bit data/address parallel port protocol that is
-> accessed through 32-bit MMIO registers for on-chip access to the
-> control registers inside the USB 3.0 femtoPHY. Add control register
-> regmap and export these registers by debugfs to help PHY's diagnostic.
+A device ("consumer") can ask another device ("provider") to behave in
+one or another way, this is the only possible and thus natually selected
+system design, and nothing behind it was asked. There is no justification
+for the proposed flood of multiply repeated data, it's avoidable.
 
-OK. Thanks for the suggestion.
+>     That's exactly the type of downstream short cut we are trying to zap.
+> 
+> - In our case we also need to vote on PDs individually when the PHY
+>     is active.
+> 
+> In extremis say we are only running the TPG then we have no reason to
+> vote for CSIPHY specific rails or operating points in the parent device.
 
-Thanks,
-Xu Yang
+So, TPG shall communicate with CAMSS, there is no CSIPHY in the equation.
+
+> We could make the parent power-domain argument for CAMSS and CCI but we
+> have TITAN_TOP_GDSC in CCI specifically because we have to model the
+> hardware - including the PDs for that device.
+
+CCI is not described as a child of CAMSS, here the situation is different.
+
+> If tomorrow we put CCI as a sub-device of top-level CAMSS, that won't
+> negate the need to include that GDSC.
+
+Of course in this case a phandle to Titan GDSC will be marked as obsolete
+or unused for CCI, no problem here.
+
+-- 
+Best wishes,
+Vladimir
 
 -- 
 linux-phy mailing list
