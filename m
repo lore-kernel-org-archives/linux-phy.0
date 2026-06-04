@@ -4,103 +4,102 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ED2FFCD6E57
-	for <linux-phy@archiver.kernel.org>; Wed,  3 Jun 2026 23:58:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E57FCCD6E60
+	for <linux-phy@archiver.kernel.org>; Thu,  4 Jun 2026 00:07:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J3m95ocnQz0rCRMbdRY0eVUIijwwMoxxrHGao1xk8yo=; b=V7Clw2tC+gMZ2r
-	CWQsidzpdzqUWOFctgwHDjccsoHTTFNTCqVOuwyxcpO43uGkVGqLKDm2BgumvQtrW3Xfn9RVpXh4S
-	bwJ7N7345eH0IgUouruwEF8CH6FoFvUoSgOkoO6N0chtcT5AJL7HC8V7H+q9O3PSAu/L3F2JgYoCo
-	hRYVaxdtR3Bc8+ev0BI9IBqVD4ExuKFW8OSnt/8d41rw27h35SikSatiKJmp+16jQgZwmZ/w9Oz5z
-	pQlAq88qyW0IB64q1Fziil2LHE2jf3sxXb/G6U9LXU6ZPai9QcF8hrUNfUhFIDNxptBXlWhClYeo5
-	/0hfZ7GNEbngWure2nOA==;
+	List-Owner; bh=zXZxdKeCt7cFLBYLlJBKWhwkgaBotoUKOlZAd/NtNm0=; b=X5LHudeSRyAi+3
+	Y6sTjozAqa+4NrcaSnZwIaO+1OY08mc8Rj1WWwQUNVh5H08izChTME+tIt7e6myfJDJ/dhh9tm0rO
+	31ont6BkG884ynZzbdApEkwvsMQBO3Yqg5PnVlKRwAMEA36ASCPbpxdddZ+z2/W2GD6YEX6a2+LDs
+	1Fcis+fcfh+zqeFnYdCJr9Bogp0dmeMhdOBF1T7LBdj06RuJwljbDsCw43oqmBDVofIRP2RxUrMyt
+	tirhAdFB4ha0her0g5WS1QWtIhKyAJDUycYClV0V/aJL0wgdaHSb9zk4FpEwiA+Y7sa8xXrmOSBZz
+	Nhrt1LukLPTNZebnRNoA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUvUA-0000000Fx7F-1JOZ;
-	Wed, 03 Jun 2026 23:58:58 +0000
+	id 1wUvcD-0000000FxOv-2QNy;
+	Thu, 04 Jun 2026 00:07:17 +0000
 Received: from mail-lf1-x130.google.com ([2a00:1450:4864:20::130])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUvU7-0000000Fx6s-2G2I
+	id 1wUvcB-0000000FxOX-0ngg
 	for linux-phy@lists.infradead.org;
-	Wed, 03 Jun 2026 23:58:56 +0000
-Received: by mail-lf1-x130.google.com with SMTP id 2adb3069b0e04-5aa65757ef4so9532e87.2
-        for <linux-phy@lists.infradead.org>; Wed, 03 Jun 2026 16:58:54 -0700 (PDT)
+	Thu, 04 Jun 2026 00:07:16 +0000
+Received: by mail-lf1-x130.google.com with SMTP id 2adb3069b0e04-5aa4a98cf0aso10610e87.0
+        for <linux-phy@lists.infradead.org>; Wed, 03 Jun 2026 17:07:14 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1780531133; x=1781135933; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1780531633; x=1781136433; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to:subject
          :user-agent:mime-version:date:message-id:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=+1SCC74DIXhE8DyDejW1+bo9tsnjHROThMMbJp6vt8s=;
-        b=ctRNZqizGUoDhF6//7Bx6lGPOb6inxB8UgjrB4fD8Z2whbuMiuHE/qDEPzPKmM3Vli
-         Wo+5G0fxIHwvlYqHOSwrEQ+nux9YwI02c8ObQ9Ps4+qimhECf38x2FlzDGiWxfI0w8Ko
-         ctdGXb9MVUmDlo7bqGlyWLWbJu0SLVLhrMwUPPqbFX5GmYUhEbpN3Ac+kBETVfs5e1ke
-         a4HO1UmkBozPUVddJ9XNBn/GKy7fsjgYxCF2k+H5uri5IjlxLMGUA5Bo6MWB5y2/9M3e
-         8zATc8yEtC4S0k8P0M7t5BJgsxxMytvS+R16NRd7hCi6GA6IRz01Q4aM2gbYGxOhzGy4
-         IaLA==
+        bh=9WKFOB3y1f0a/8eMDecdjOklsltsKxIJ4YPYh7+XMfw=;
+        b=no8uvJFo0TxazjOOLpEIp7w9iARS/IT3uzXEAJreJXxIV8eWdtbsXoLttJse4jl+Nx
+         Kfl0uMvWsmzRgXnsFxQ0QtE+HXuum5tld3eCPN50/BEXxioWCzwlolJFG3LhyOZ9E1H+
+         Os9eZ6s7gGP/FdOa7A6CRgAX7ARlm6Y10qVba3m79Db2RMBRkA2czXfPd3er2LF1XlCi
+         V7562PUDPmx4YzlWwKBpK1uQ3VfVsHTcc3qO1WzybqclKC7adb6XYZR73FDGiM7P/SWc
+         jeN52JOhu4SGxvI1gOef4RK8VTLgC40+q2RxK6ieIIZk1hO5amskIia3BKASq/kIqESq
+         UcCA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1780531133; x=1781135933;
+        d=1e100.net; s=20251104; t=1780531633; x=1781136433;
         h=content-transfer-encoding:in-reply-to:from:references:cc:to:subject
          :user-agent:mime-version:date:message-id:x-gm-gg:x-gm-message-state
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=+1SCC74DIXhE8DyDejW1+bo9tsnjHROThMMbJp6vt8s=;
-        b=GeemCU16+nTMxFWk0EQjsAv/fKzHp8+uHH8kSsu2CwOq/FDu+hEUBH5UTQ+m4IU69U
-         tDHFHBPuCjo766opvvfHyLpJw5Cf5jTIwD8tVGM/C4MAeGcnFMihmIzDta70Joi06JCw
-         JQIkCtpq8iPWHvVn+b3iz78cdm8IpZw5PbrY5f6/zYXKHgoCXbu1+gqUEgw6hIN6L5e2
-         3o0AaupwIKUoX3kQQonVPOW79u33O+9nbwjl8VB1gagmqde46xvh9FxdV3JmBixTXvet
-         LvhkuJ/jthqKr/THPiJy5szHvbRn65iUmJ1D/WtsvnvGagp8W3eetC4IhjcLxjsZEQfe
-         ec5Q==
-X-Forwarded-Encrypted: i=1; AFNElJ8JfXJMGtYF/0czzBrRdJd/WnGy7rgG+WWzJbCh0WsWe7IoOMnKwgoYxPuYuvRUZecfFfOcFSlmtPA=@lists.infradead.org
-X-Gm-Message-State: AOJu0YySebK0FadBP4MDKQ9Os9Bu0O5fTCbdF4q1DOTbYlsCq5sIurvI
-	6eT1ol2o7KR3f0Sda/veynq6jhB5svnV3ZILPifhv/JwMZk8jk8oEuggcB9d+tGwQLM=
-X-Gm-Gg: Acq92OHY9l+TyaNqlfUIRI/8yY12zY80CsPpAeHMez29JMMZS9rEF1NB1GStcWna/De
-	QtwxJOs/6JnztBoIHj4mSB85MqCsQOWR0qb3MxbX7/TJjqRRnnr4E0ktmJdhEUXAHmBGJfXqiEu
-	NLOhUrP4ANmugDh8+Gv9WvAc1U1LXlDloqMLNrd7ykvcAFaNYdUL63l72GL0cLSwAFlXq49COxF
-	HWOaeb+ivK/riauXo7WltrprayZh3uluhraPCepthojNDf8ilWav3Rk7+MOJzDJiZwMD4PuQ96r
-	pfPqhfsn9ZzlCM3gz/pKjQc466OmcphkxMaTvHNJ+yqfhx9Or3C9IRCz3VwbFupNHJEaXDh1ODS
-	0U3twHgHyaqDmMw/rXaVPDIs4K34Q0LRAtGGoxKEiopJbIPjjmEO6LuTYP5FPHzkcxLg06ayCCH
-	kJLSqlcn7dqXXc5dlJEXcA3d9pMS/quW8kbFT1ANvUFt0Us6h0gRNETkkPDOnRk8Ym+CzHhYNc6
-	8lYx6g2tZteQxiO
-X-Received: by 2002:a05:6512:6404:b0:5aa:635f:7c08 with SMTP id 2adb3069b0e04-5aa7bf5279dmr878301e87.7.1780531132531;
-        Wed, 03 Jun 2026 16:58:52 -0700 (PDT)
+        bh=9WKFOB3y1f0a/8eMDecdjOklsltsKxIJ4YPYh7+XMfw=;
+        b=Qg4HUAH+s6B0Oi0VhoZpoawGRvEUNOnbWzTeuKn6YNJ59+EVrOawF42tufxMRVagPX
+         DV/5JLphwxzHFn3jhmb/VnyMfz/hNNkHb9WA81a0wiXoYk2kswuQLD3JFkmCxHd/PaTN
+         Q2J2Af8s6Wb3kqKh+gmDFY20necDFeXnZklZzxy4NykYYpeZr/NKWKxXYBCBcJsxHVA2
+         IDlEnoZSGy2/Kv0CEoiblDAzaUHE0pMmi1DlGxsM+UmixdrK29cGd6+0rzo/i1hqq5yg
+         4yu6pZ3Qxfq0Er0SiJ4mcwyOS5OPIO+SI/XfvcKERp+m8S63ZGBjNHOxt9fzjra0gkay
+         r8QA==
+X-Forwarded-Encrypted: i=1; AFNElJ9GPhjTC+cFjVgk4XS+/7Qzvmw+lpEbcofdbi/nLITr6Sfk8/rMnMbVGXUXtEMZknKHzCHY+R/agOs=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yx0me1jGXwtkqjD0W0185oGVxw7dPM44dWKIWKJFhbJIi6gOBvg
+	CfDdSNVtQ+y1EOr4Q5jrpx0LHp7qsDvxatGQqrb7ba7HDL4Qnh0HooKQcKhPvxhKsTU=
+X-Gm-Gg: Acq92OHRPnMIByrnGyjwTExn9i5kmmGay4KGIoNSBT0Lu1HoLNez57jFSSmoBHhSp0T
+	iEDBE/efbjZ1MvTieAflcb02XEA27LOrsk0jWcDpQy22Z5LdEKIwJSjLoLg+JvX2RQWieIaipkC
+	sHZWRIMW0o7ZzgI5nJiiiIr8xxsIlGRLjp9CIz0GwEBx3eM7vTaCT+SvmkumnPReuNq1WJ2kyme
+	AGb9WcUCau9BdM186Ny1A1cs9C31OYe5xsw4XODv9nN2IIB2uY5hICAiU1j545/cE+TyfOiYzQx
+	LVq7dVWCQTZ1jY1j/PGiQ4yWKOOgMAlp/bUbykZfCfyoxnBDM/olJJaWTMA/1H1C5+7aVNTTXbI
+	7FKljR+ws5yZq7bln4qgO5o0UvJqPdhVAvOLL7+kYSsmmoTq3fZ/OxFIoyV81Dp3WdgdNEsY2C3
+	lVTQKnUFqVXEyXmxQhu1OK/eJOQZ8ouIPrAHookcfPY9Ki2kVbHHIvenQr3CJj6hlza4qCwyy9t
+	ufrN9QCRPnJi6LC
+X-Received: by 2002:a05:651c:1594:b0:38a:325a:8a0b with SMTP id 38308e7fff4ca-396bf26804fmr522041fa.5.1780531632840;
+        Wed, 03 Jun 2026 17:07:12 -0700 (PDT)
 Received: from [192.168.1.100] (91-159-24-186.elisa-laajakaista.fi. [91.159.24.186])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-5aa7b8ed659sm899338e87.12.2026.06.03.16.58.51
+        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-396ac2ed9e1sm12353711fa.38.2026.06.03.17.07.11
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 03 Jun 2026 16:58:51 -0700 (PDT)
-Message-ID: <374f17c6-f08e-4f4b-a6c1-ef2cd1b87631@linaro.org>
-Date: Thu, 4 Jun 2026 02:58:50 +0300
+        Wed, 03 Jun 2026 17:07:12 -0700 (PDT)
+Message-ID: <5ca611b1-0663-4975-bd56-b1343851e5fd@linaro.org>
+Date: Thu, 4 Jun 2026 03:07:11 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v8 2/2] phy: qcom-mipi-csi2: Add a CSI2 MIPI DPHY driver
+Subject: Re: [PATCH v8 1/2] dt-bindings: phy: qcom: Add CSI2 C-PHY/DPHY schema
 To: Bryan O'Donoghue <bod@kernel.org>,
- Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
- Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Kishon Vijay Abraham I
- <kishon@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
- linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+ Vijay Kumar Tumati <vijay.tumati@oss.qualcomm.com>,
+ Bryan O'Donoghue <bryan.odonoghue@linaro.org>, Vinod Koul
+ <vkoul@kernel.org>, Kishon Vijay Abraham I <kishon@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>,
+ Neil Armstrong <neil.armstrong@linaro.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  linux-media@vger.kernel.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org
 References: <20260523-x1e-csi2-phy-v8-0-a85668459521@linaro.org>
- <20260523-x1e-csi2-phy-v8-2-a85668459521@linaro.org>
- <54904b61-222d-4600-ad4c-c03a9952d337@linaro.org>
- <be3e1abe-5148-4247-930b-2e23164eea73@linaro.org>
- <c6aetoiz3dcedlxwjmt5cqh2mngswtmanf6p4s2molemnviwdc@btotpaqwcsoy>
- <f6c91099-0002-4580-a5e8-5611b089024b@linaro.org>
- <v4vz7cistjb2iuzha4oykglar7duw4y2uuyhumzs33yvpwrxcu@i5tsg4uzpuwc>
- <8eb709ce-3469-4303-9c3d-8d1a221cb8de@linaro.org>
- <4QKRXnKlt962x7eipKO1dLr9tzEF6a3M65FZXI8PNsXwx_RhKzJtEfQKOOwI8synBSe0GtUZxWVFFeD1qVlGnA==@protonmail.internalid>
- <6e962010-8097-4b52-9369-0727c0d5a31a@linaro.org>
- <41ab1685-3d0a-4c8b-b7a9-6e9299c48400@kernel.org>
+ <20260523-x1e-csi2-phy-v8-1-a85668459521@linaro.org>
+ <rpnNMsR9GY8gbynzeBO8Zm61JAOq3ubt6sp0x3WDPPwkMAJzlcofECD1kabN-IUoK6sSwP5P6l28UIZLFCOpjQ==@protonmail.internalid>
+ <dda32577-04e0-4507-acaf-a5694f4f31b3@linaro.org>
+ <478df3ed-d4ef-43aa-bb84-e2075798542b@kernel.org>
+ <ec98ef2f-02b4-4086-8b4b-07b6953dbd20@oss.qualcomm.com>
+ <514cf213-5778-45e1-8d70-d3fe27991fcc@oss.qualcomm.com>
+ <7JNJ4dUNz4ennJ5dkzhfLSuVo72JpfZAbprICPRqlRYnSzVDJw6x3h-1nESd_PK-3us9f1V3qOiLiywsTqP8vQ==@protonmail.internalid>
+ <f01c0e22-4e5c-44e7-9ea4-4bc8d53aea2e@linaro.org>
+ <29e8491f-20e8-4082-8943-66bee7e3af1d@kernel.org>
 From: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
-In-Reply-To: <41ab1685-3d0a-4c8b-b7a9-6e9299c48400@kernel.org>
+In-Reply-To: <29e8491f-20e8-4082-8943-66bee7e3af1d@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260603_165855_614845_EC2F34D4 
-X-CRM114-Status: GOOD (  12.66  )
+X-CRM114-CacheID: sfid-20260603_170715_291908_3D65CE33 
+X-CRM114-Status: GOOD (  11.62  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,43 +116,31 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 6/4/26 00:12, Bryan O'Donoghue wrote:
-> On 03/06/2026 21:42, Vladimir Zapolskiy wrote:
->>>> Split configurations explicitly use other lanes for clocks. E.g. check
->>>> the RB5 Navigation schematics, CAM0B connector.
->>> Can you please check:
->>>
->>> CSI_3PHASE_COMMON.CSI_COMMON_CTRL5
->>>
->>> 0 LN0_PWRDN_B Lane 0
->>> ...
->>> 7 LNCK_PWRDN_B Clock Lane
->> Please note that media devices have a numeration scheme of lanes starting
->> from 1 (it'd be easy to check/confirm it), for instance today CAMSS has
->> lane numeration starting from 0 is out of the accepted scheme, and here
->> it'd be better to correct it and not enter the same pit.
+On 6/4/26 00:18, Bryan O'Donoghue wrote:
+> On 03/06/2026 21:51, Vladimir Zapolskiy wrote:
+>>> Actually, one more thing, Why isn't TITAN TOP GDSC here?>>>> +
+>> If CSIPHYs are true subdevices under the umbrella CAMSS device and well
+>> described as subnodes, then likely none of power domains are needed to be
+>> repeatedly described in the children device nodes, since this information
+>> can be obtained from the parent device by the driver.
+>>
+>> Technically 'power-domains' property can be safely removed, I believe.
 > 
-> Yes fair point CAMSS has done this wrong since forever. data-lanes = <1
-> 2 3 4> => LN0, LN1, LN2, LN3>
->> I don't have access to the IP spec, anyway I do not grasp it, where are
->> 8 lanes on the CSIPHY found? Each CSIPHY IP has 4+1 D-PHY lanes, not 8.
-> 
-> Max CSI2 data-lanes is 8
-> 
-> #define V4L2_MBUS_CSI2_MAX_DATA_LANES          8
-> 
+> The policy is to describe the power-domain dependency fully since DT
+> describes hardware not software architecture.
 
-Judging by the name that's something V4L2 or in other words software
-specific, while I do reference to the actual pads of Qualcomm SoCs,
-and I do not see 8 differential pairs per a CSIPHY, but only 5 lanes.
+It brings no contardiction to the statement I've given above, the needed
+power domans will be properly described in the parent device, and there is no
+sense to repeat the properties it again and again in every child subdevice.
 
-If that's correct, the data/clock lane numbers should lay in 1 to 5 range.
+> Also for a very practical reason a sub-devices can probe/run
+> asynchronously of the parent device being active so in fact we do need
+> to describe the PDs fully.
 
-> That doesn't really explain why this register has seven data-lanes and
-> one-clock lane.
-> 
-> It just is what it is.
-> 
+In opposite to the above this one is precisely a software centric argument,
+which should be excluded from the consideration, as well it's not a big
+deal to make a proper async initialization, removing excessive dt properties
+is worth it.
 
 -- 
 Best wishes,
