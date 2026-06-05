@@ -4,98 +4,128 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9208ECD6E5D
-	for <linux-phy@archiver.kernel.org>; Fri,  5 Jun 2026 05:34:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E9DCDCD6E6B
+	for <linux-phy@archiver.kernel.org>; Fri,  5 Jun 2026 08:37:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tmKwH+fIp0sb7jH2L02KoyN4Hh2V1clGTUlnvZDypL0=; b=3gJfawpRp8ofS8
-	/060Y6hr4HirAqS1eG8jgzUz9JeAuOpAH6y6X4bZ2Eru0sHN05WWy8MmmLQ/0uWaREWWDG4vqESk2
-	LBPt8lbFa+3TWGvI18ngG9pJpep4EWF8Xu2R/Kif1qkyRqEKguW2PY8JoyGxFuATlcbHTx8h2uVoC
-	UzBrTJKHsAIYqPcE15mgY8hgWSODsk8gLybIsur+hwrk3lu+W0OBjTw7zh2JNqLP/e4ns/dt/F1NT
-	fBI746rx+JQ25Z5cCdEzY0arXPWaTdv6e7mc8Y8v3G3nFVkVZNnnsb3FsKIjbG3VeF7CsThJUZioC
-	6xt4GAHHcixPNHLzRv2w==;
+	List-Owner; bh=Eo5JwyohcR4JMJAeMgaBKbRTrlGbkrStstFLEksTwY8=; b=vtVYJg59RIFTfZ
+	pXRXzj9LOs64Ci9VNAYWwSi7KA1Jyg/MxM7yOK7vN9HNf5G9ZshWjKBEmPkauPejr2LP+cuauSEQ7
+	3TCSJRVyrISoaBJktN5uvCgcRsyvmDv0i9nk94vd/hKpKZlBc5bvKOcWqezkqdBmkj31XRfXtWzzt
+	Yv1YM/1XPVfUEHztEhU4+gE5OqN+uYy7W1duiMsAyKwG/kfr8uAUbCyYnK0/QluySDwZgnEhpoGiA
+	44yEgEvXee/lH+Y/PU1PyyHJ6aIoZOKOzzU0akpo8iRhIxIbdP6NxSnaR94v0N6Fy4lekIWyTuyE3
+	BmmBLvmP5TyqLsRMOwCg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wVNC8-000000006qI-18el;
-	Fri, 05 Jun 2026 05:34:12 +0000
-Received: from mail-wr1-x42b.google.com ([2a00:1450:4864:20::42b])
+	id 1wVQ3p-00000000KOh-1bpV;
+	Fri, 05 Jun 2026 08:37:49 +0000
+Received: from mail-northeuropeazon11010001.outbound.protection.outlook.com ([52.101.84.1] helo=DB3PR0202CU003.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wVNC6-000000006px-0wNe
+	id 1wVQ3m-00000000KOG-3Igp
 	for linux-phy@lists.infradead.org;
-	Fri, 05 Jun 2026 05:34:11 +0000
-Received: by mail-wr1-x42b.google.com with SMTP id ffacd0b85a97d-460166910e6so793049f8f.2
-        for <linux-phy@lists.infradead.org>; Thu, 04 Jun 2026 22:34:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1780637648; x=1781242448; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=sjXzyZnNDhRfEEmts9pWPcuuMg/BpffNpvk3G1fwCko=;
-        b=FgTIq1sToAuenDzszn43ufqXPXsXwIDFsC39SLzxEM5vH3+04LtDqUa6rxRPSo3GHX
-         iFTW8aonUIk2gYCN/NV7jiuopzd4ud1uCrcN54P5Gu/IkwWfzeqMdyE6yOmUUgmTWZ8r
-         A7iAQJgra7HvE1gfguUvv9lDjZ8tW8qCiK8siYtSzT5dujlPCgeT+Nc8MBw+avFatHM+
-         hQTeWLKgclVHGbOtf1lK5OGu9Vw/pWqMLsJFOKM4qBj9MNGhAo/8e6bNIjpNPc1sp8xL
-         leC+BPe1E8l8a/XznSX/ihU/AMWUr/F44DJcpe1KjJHAY5cnVlThXjgKcuazwPe0qYZg
-         y5sA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1780637648; x=1781242448;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=sjXzyZnNDhRfEEmts9pWPcuuMg/BpffNpvk3G1fwCko=;
-        b=U0wIbkA6ueAPOLnWkA/28NEYafo9EwE4E4WK75Lo616hnQXmBVpfWLfNM/PZ2M2/qp
-         FucSSTaQZkeBPvs2yzrO1Y9tLC99DNYYtZIji4McHREf64FBchx787a8uC3ctKwH9oeK
-         Dpzq5+5/kBex6cb02A7G2YADmFhiC1AiR7oGtkg46W1DKfzLN+J2WhqTzW0JN9iihakI
-         69I4qCeQyeYN1AcxXnEtbQGRNHZygSer/H+b3AQmDdIU6GOHq9VwyAPcTi8MlpeN12aU
-         Xibgnem/0vTdfmXtCpGbA4ZIuLeeXqal672RIZOSSpzB2Ep2SOGz12pCIaduEyNv11jK
-         Yz5A==
-X-Forwarded-Encrypted: i=1; AFNElJ9HVOi6ndUUTfoXdhAdsx7x0Kz9tPejIyb/9+xv/ZvooEhuAs/SBofvZKRf6dT0cJ3MtzlDYFrUupU=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyT2+e2dPNcWHS45x4U8rv42kmIEUCjQnotrbbUbBGiMn6y287e
-	J52xsvGHfUICwv4k+fIrRpSGkxhlDm/6Of4Nl9/IKuyQhgDaq4JRf8/I
-X-Gm-Gg: Acq92OFem8mD7LfAuSZE8/HJNzawsAgGViaNipWvCxB5BoHRmVOGOJ/COLXYvSmoWR2
-	s/KVWOHqyH/BjqZJygduIvp3u5DzZIpcLDtzEDejUgNywB7n3X8TX2IXr7MfMZebAs5vBNP54AH
-	/cD7oLTQNOhDFOldAF7ZDrRr8SyFp59SWpgT5I52XwXciNqy/bXenB+E3zNO4hO1I4In2QXYPb+
-	rlcTlJ1zeu11tqjMPkzmIndQovIZq51NRbOyXufR2QOX6gRQz329h49a2MXJ0CPmGZRzF4EA/iC
-	acBIzvs7ITaaXppPVdQc9+sEoPLe/0dLTq0KPTc/RQgdhvUAcgMKLIssjZTAb0s8T/tFH3kd6IP
-	BE/hvh8DL1EUz9DGWvfPNgQNgxDV9B02gofD/XbtEB9ESIaP89aUvzTkpMI5/IpUAzjfEEmdOi4
-	EXeVr04Ffxl8H7jncMA0VrRAENkAesbi/3V+gFRW9x2EgKDYRGsUOkR+GjXZvAD1EwyL8N4Y4Za
-	rnVo9F4kH8aH4jPFUxDi1vlB3Xv
-X-Received: by 2002:a5d:4e09:0:b0:45e:ea68:523e with SMTP id ffacd0b85a97d-460304fe066mr2555737f8f.21.1780637648182;
-        Thu, 04 Jun 2026 22:34:08 -0700 (PDT)
-Received: from localhost.localdomain (ip-89-176-136-191.bb.vodafone.cz. [89.176.136.191])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-4601f35fd33sm24383821f8f.35.2026.06.04.22.34.06
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 04 Jun 2026 22:34:07 -0700 (PDT)
-From: Petr Wozniak <petr.wozniak@gmail.com>
-To: maxime.chevallier@bootlin.com,
-	netdev@vger.kernel.org
-Cc: kuba@kernel.org,
-	andrew@lunn.ch,
-	hkallweit1@gmail.com,
-	linux@armlinux.org.uk,
-	davem@davemloft.net,
-	edumazet@google.com,
-	pabeni@redhat.com,
-	linux-phy@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	bjorn@mork.no,
-	olek2@wp.pl,
-	Petr Wozniak <petr.wozniak@gmail.com>
-Subject: Re: [PATCH net-next] net: phy: mdio-i2c: defer RollBall bridge probe to PHY discovery
-Date: Fri,  5 Jun 2026 07:34:05 +0200
-Message-ID: <20260605053405.2019-1-petr.wozniak@gmail.com>
-X-Mailer: git-send-email 2.50.1
-In-Reply-To: <19e947e08e51987b@gmail.com>
-References: <19e947e08e51987b@gmail.com>
+	Fri, 05 Jun 2026 08:37:48 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=oZEaseueILQWpXqfW7nSl/ns/RljIXcBRmo6ITwDTuy0Q/3gG/i5TlP2mJFIiS651LXrXNTyypch6xW0apAvx+5XswQUWizJQZMaMXlSmDY5npAQFj6FvrGu9kVZJ3qMjXhFyY8mg6eJbS+8iLL1FAk/WeNaWA7T42kgoIV7IHj1DY3jt9HLfe6rlEOfkDij3it4VS/R+uExHWQnOXFz+6VFEVqXB3aMmghOLSlJOcM8qRjPRwOGGXDiqfW+SOF+OVY7wDm6EdN5uygT7O3oziLF6B+t5SCnyyf/NMqJj3y3VcjLUMjxKH7mrk2D3/l2NDlJv365OFTdqHq79SGBEA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=qDfTYEJXknXEcNN3B+2j3MWih85Kmab+QPA0sW0FYu8=;
+ b=wiRT7m7XG9hbGYVF5kO3VQzOC1hHt6/uOwcKeAvGUbdW2scDc5J5NvllQweId5mX9L2eSu2JX6uCbueLpihlKAxeV0IHMr4W8g5gUdAO+Cwq4tYPEPLoM24GRwlZcDrDtUFpkbtu87dB43Km/bR+zhY1YffBhxEG5vJRwWazT6CTuiYzcI8jXFi4lCI9e6qyg15sDuZkEOgeUB9mvSfqylP/MKxQXbtrrOKttmMnSQzZcwwCUYtmFx1ySimtj/sAcfgkAgW/LjI/L3wo0fW9lnWEpMB5igOe5F4STpGj5mNjxV9BFOJ/PDemwS/jw+S9mwF3EehoJ+RnNrU62kDTzw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=qDfTYEJXknXEcNN3B+2j3MWih85Kmab+QPA0sW0FYu8=;
+ b=JqiPJDVpNEzZhtmaYTN1hkHkLE+jHHzC9uQEeTT1fUu1O5+JHIVowY5luVEz6/MlgnPb0FizssDXoHg9enieLiuEznMc0hxYOf0eC6C/MIdfjd5s7wVmfelqgzAqLHe9uzfUpj6yLhYkSc8Lf8rfGHNhYUSF4v2pixKQSIuKf7bAaAK50jD6fzsDZL/AhCNtMtabQ7hfT24dFhFfkIkWuf4Zj7b2ZjbcnxMxkAnAK5i4ynqZxVG5c7V7CkwCCvc4l8xkzhZykewUZOaDW+9PmgslnB18ZaEyL9528JjJezK3H63iNf4X8047VP854911PZWMniHTqBJMEp1BDEUKRQ==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AM0PR04MB6900.eurprd04.prod.outlook.com (2603:10a6:208:17d::10)
+ by GV4PR04MB11404.eurprd04.prod.outlook.com (2603:10a6:150:299::17) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.92.8; Fri, 5 Jun 2026
+ 08:37:41 +0000
+Received: from AM0PR04MB6900.eurprd04.prod.outlook.com
+ ([fe80::7fda:8431:ca1b:b023]) by AM0PR04MB6900.eurprd04.prod.outlook.com
+ ([fe80::7fda:8431:ca1b:b023%5]) with mapi id 15.21.0092.007; Fri, 5 Jun 2026
+ 08:37:41 +0000
+Date: Fri, 5 Jun 2026 11:37:37 +0300
+From: Vladimir Oltean <vladimir.oltean@nxp.com>
+To: Conor Dooley <conor@kernel.org>
+Cc: sashiko-reviews@lists.linux.dev, robh@kernel.org, vkoul@kernel.org,
+	neil.armstrong@linaro.org, conor+dt@kernel.org,
+	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
+	olteanv@gmail.com
+Subject: Re: [PATCH v3 phy-next 14/16] dt-bindings: phy: lynx-10g: initial
+ document
+Message-ID: <20260605083737.yryq2a763zhnkjyq@skbuf>
+References: <20260603132059.503527-1-vladimir.oltean@nxp.com>
+ <20260603133350.9FA271F00893@smtp.kernel.org>
+ <20260603133825.l544tnmtn2pqfrzh@skbuf>
+ <20260603-numerate-unbundle-ef259832006d@spud>
+Content-Disposition: inline
+In-Reply-To: <20260603-numerate-unbundle-ef259832006d@spud>
+X-ClientProxiedBy: BE1P281CA0481.DEUP281.PROD.OUTLOOK.COM
+ (2603:10a6:b10:7e::14) To AM0PR04MB6900.eurprd04.prod.outlook.com
+ (2603:10a6:208:17d::10)
 MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM0PR04MB6900:EE_|GV4PR04MB11404:EE_
+X-MS-Office365-Filtering-Correlation-Id: 69ef690c-edb9-4151-7333-08dec2ddb4aa
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|10070799003|19092799006|366016|376014|1800799024|3023799007|22082099003|56012099006|11063799006|4143699003|18002099003;
+X-Microsoft-Antispam-Message-Info: NbQtd5RUc/xKg+JV5gz3sk4AQmWKy+q62TXCL52XlD092Od+GEzyWnPHDe9oznr6LOdh0YHfsn8gVYMJcYnt7Pqh5KCRTF+6+BrODiYY0XMsCQ0X/3VN6kHs/ASf5UAzCSPDOK63zTDH3QeAAItVL479gCNiD/9uM/phfcRwQGovOWxS4yFdrtI6NpKLxyTo4w0J1SH2te7Cv39RwKKlt/adnXHyrQxAZB1X/kZjyGgmQEIkfGNENYFirR+OfvsASHzk2tO14/shitfVh9eVtTATka9t2fylKTEFq3rbX4SDf8KZEZ7CZBZW17fcpHqqbTAnSY1MZN3Ekq8H7n3ZNx3UJBkXcGp5kmZrEoyRpmYnpEgPEzint3fWFDS02bANMx+piccqazJaCK2bOtSVgkVjHmHIg7zRQ4Y+Pj2fuT5hk9xalltyzZKeG/sbIrJ1/xOfg9KXfipj9i34+5MvriocwVtrN/kT/3Xvz0mdD+BwlxUJ6ebx3lRUAM3Qk4zU2LFsx1ijLot2NpKTuUyYYfl5WdiZmTutFhzoYsu0AXTGDx1tk0t8WPAXQLnj/9U+bwVviB6zNreKgeBdz085nX6RimbAI/JsXldVcy+1VLqSWtYOq1cWwrwU1JYTb61ii/01RyRfHzPjMKLBKNYwliz8c3PoKRjmI36X6PpqNiiIdU7PFkfPMDAPMciC2VNsVpR464rwHskHt5lugW7GLw==
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR04MB6900.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(10070799003)(19092799006)(366016)(376014)(1800799024)(3023799007)(22082099003)(56012099006)(11063799006)(4143699003)(18002099003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 2
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?YPAk8V5s9TKjDYLie1nKXaLYu2zb1KwWqnchr367rzXnhCGZRhv2NcjrZqEV?=
+ =?us-ascii?Q?6+4i2idkrHJ1zNXwhbj/17beyfPNZXm7N2/CgmKB8+AYMdZdfvSiFO5Mjucz?=
+ =?us-ascii?Q?NTDcykcCKRvXrqlRgsTW7w813f++dWzjGbQKTYZK3pa93lOYQy3swpM1czxx?=
+ =?us-ascii?Q?aC18a7hOY75IehKOPke2FhqEGTkxorqBCytfEKXDhTip5kquSoKFvGz/ZNiy?=
+ =?us-ascii?Q?GkTZ02lGs2/sw6K5qiVt64lI1Rmshp0xMXeJvSL8x6s0A/zxTxYnLUIV8522?=
+ =?us-ascii?Q?/7kRQCrHgS2IHSlrF0z8Lm5V6GZsdGSF3bGddXDf+2Y1ft9hPaw3ImcLRO4y?=
+ =?us-ascii?Q?VnLFqQimcNMAaYV/Ge2th773bQRuHvdAwN40tk+dYUsx6nFo5wUrKUg+WC+r?=
+ =?us-ascii?Q?jQYpSqxTV5WureM+dBohiP4h3Om2qaMj80SzahW8WpMxyRBLlxGVcsyQvT2B?=
+ =?us-ascii?Q?/Z+k8moQrmqxI9XVN0xSMPus1Nu5W6QD/m2Oi756ewDbfG9rUpSL8AsSZixS?=
+ =?us-ascii?Q?FE1igwG7oOnZc5dBjVR07St1Til5Geq+ykr04A2Og0wwZQFHw067L5QzCMBa?=
+ =?us-ascii?Q?UbdVLbQexFQT6P9Qpyaz7SneuGC+0drYMsfXTH2UubyuDEOdaKcEONQ9r4Oy?=
+ =?us-ascii?Q?2zj7AHMlUQQw7qtRBEJkPCahqsD4Tg/h42TbUDBzsHukA4luIpLv5mg8HQVv?=
+ =?us-ascii?Q?7ol70nnsITfLXdojTiLIoOHJpJ4ua9PH/3Q7JjoJfj7aKVpe5PIxBUtVDqGM?=
+ =?us-ascii?Q?4JkrHv/UkTj1ui9EecwEgPBs9VZDACQXFnhVZN6S1o+PzuXYNfnKR2MctD39?=
+ =?us-ascii?Q?sM5JoLp/4alBQYV555hvPUyWrOi5/9nONfgoGv17WWBkdFebizbrL0futfSH?=
+ =?us-ascii?Q?rcmQPd5rGDCukAv88Z5JYuylXh8V1u1f+GP+wEbj9jMyq6moWJViyKgbbxJ+?=
+ =?us-ascii?Q?W+kMf0lTF3n9qCkWXK8zwLPlDASbsntx1JLwp4v9/i1sNCo3mB+wNSaUqOM+?=
+ =?us-ascii?Q?AsLOTiaQu0OumI+3DQhzBSUzD7xPZR7F5F8dynX0jEq379/yhQoU0wWTTbFX?=
+ =?us-ascii?Q?FXnt9l/ErNgBBOEFuRGf7EGdQk+7RUy6nlMES1Xn9u4yVFJHQWm5bqM0oZ+O?=
+ =?us-ascii?Q?bAE1ZNo98mHqDq1GO6+qAGfkOXJ24Nmz++LZEnIAKJl+08dQw/ljeJuwNn3o?=
+ =?us-ascii?Q?KquSVnoi5K9Cy0SbC8UnokL3VodDx8sAJDsj5lgWgPr5sSnmrSGsIOtWOwuR?=
+ =?us-ascii?Q?w/dQyd24270uEfixBtwe1/mRxEr9mgulA61zpOO0snbRjiU11M/ZictcmAOa?=
+ =?us-ascii?Q?0SrcaIBsW/zaVlj+Tr1myGWQklcHPq2Jwli2YreXkENS7zLDnA1Wbu5BlhBp?=
+ =?us-ascii?Q?AkzQKRLs0rI5mGufWGZNTJJggBpazcP3c93sEIDHDgQTEpSJa/AVE84ATWLF?=
+ =?us-ascii?Q?rPdBvwbG9BwkQEDEKb2rfj4HvWKSTV3WK3M06F6zZ3BURsBqx4Ql4AM+ucL2?=
+ =?us-ascii?Q?jNrg8XhLnOCJ87tbEKJWPeqxMVfkjMJVw9rKJHj6kaULXARUS/cf5x+VdxbS?=
+ =?us-ascii?Q?6LpAsnbd/3mNPPeCzZe+0cpRKc7JS0HFlVpYBU7JeFG3rSlvgXDDBXsxBv8F?=
+ =?us-ascii?Q?r7PoCR56OahfpRu317VAVDOIiwzkAsWi8O0JmthTf0xtleb4EekjD8zupXZh?=
+ =?us-ascii?Q?lyB1DKytczY4IeHg3E/CcnRpRjukQmbJM+y+uyhd3NLFrsFOrcJ9f+fR0m5q?=
+ =?us-ascii?Q?cM3GkePudqhuybiEsDrdnSrPP0rlWyyZd4hLsrhlQi4UKKte2CIQGTU93xQL?=
+X-MS-Exchange-AntiSpam-MessageData-1: I+lNuIPX81jaYkXG+LRS/J1Gy3GTFkIhQG4=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 69ef690c-edb9-4151-7333-08dec2ddb4aa
+X-MS-Exchange-CrossTenant-AuthSource: AM0PR04MB6900.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Jun 2026 08:37:40.9822
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: lXUmmMJPLMOb9vP5heV6xwnvJaRrjYJCf699FZ5PNMorOZ9uwqAnOChCH7PtysGQ/SQ2Z5QRbE5SwwdIQkE7AA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV4PR04MB11404
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260604_223410_292919_611F958E 
-X-CRM114-Status: UNSURE (   8.11  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260605_013746_860029_42A5E86B 
+X-CRM114-Status: GOOD (  24.30  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,26 +137,62 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-SGkgTWF4aW1lLAoKVGhhbmsgeW91IGZvciB0aGUgcXVlc3Rpb24g4oCUIGl0IHJldmVhbGVkIGEg
-Z2FwIGluIHRoZSBjb21taXQgbWVzc2FnZS4KClRoZSByZWdyZXNzaW9uIHR1cm5zIG91dCB0byBh
-ZmZlY3QgYm90aCBib290LWluc2VydGVkIGFuZCBob3RwbHVnZ2VkCmdlbnVpbmUgUm9sbEJhbGwg
-bW9kdWxlcy4gQWxla3NhbmRlciBCYWprb3dza2kgY29uZmlybWVkIHRoYXQgaGlzIEZMWVBSTwpT
-RlAtMTBHVC1DUy0zME0gKHdpdGggQXF1YW50aWEgQVFSMTEzQykgaXMgYnJva2VuIGV2ZW4gd2hl
-biBob3RwbHVnZ2VkIOKAlAp0aGUgUEhZIGlzIG5vIGxvbmdlciBkZXRlY3RlZCBhZnRlciA4ZmUx
-MjU4OTJmNDAuCgpTbyB0aGUgcm9vdCBjYXVzZSBpcyBub3QgYm9vdCB2cy4gaG90cGx1ZyBzcGVj
-aWZpY2FsbHk6IHNmcF9zbV9hZGRfbWRpb19idXMoKQppbiBTRlBfU19JTklUIGdpdmVzIHRoZSBi
-cmlkZ2Ugb25seSBhIDIwMCBtcyB3aW5kb3csIHdoaWNoIGlzIGluc3VmZmljaWVudCBvbgpoYXJk
-d2FyZSB3aGVyZSBicmlkZ2UgaW5pdGlhbGl6YXRpb24gdGFrZXMgbG9uZ2VyLCByZWdhcmRsZXNz
-IG9mIGluc2VydGlvbgp0aW1pbmcuCgpKYW4gSG9mZm1hbm4gYWxzbyBjb3JyZWN0bHkgcG9pbnRl
-ZCBvdXQgdGhhdCB0aGUgY29tbWl0IG1lc3NhZ2Ugd2FzIHdyb25nCmFib3V0IHRoZSBzdGF0ZTog
-dGhlIHByb2JlIHJ1bnMgaW4gU0ZQX1NfSU5JVCAod2hpY2ggZm9sbG93cyBTRlBfU19XQUlUKSwK
-bm90ICJiZWZvcmUgaW5pdGlhbGl6YXRpb24gZGVsYXlzLiIKCnYyIHdpdGggYm90aCBjb3JyZWN0
-aW9ucyBpcyBhdDoKaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvbmV0ZGV2LzIwMjYwNjA1MDUzMDU2
-LjE5NzctMS1wZXRyLndvem5pYWtAZ21haWwuY29tLwoKVGhhbmtzLApQZXRyCgotLSAKbGludXgt
-cGh5IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xp
-c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+On Wed, Jun 03, 2026 at 04:50:39PM +0100, Conor Dooley wrote:
+> On Wed, Jun 03, 2026 at 04:38:25PM +0300, Vladimir Oltean wrote:
+> > On Wed, Jun 03, 2026 at 01:33:50PM +0000, sashiko-bot@kernel.org wrote:
+> > > Thank you for your contribution! Sashiko AI review found 1 potential issue(s) to consider:
+> > > - [Medium] The `if` condition for enforcing the `big-endian` property incorrectly matches the `compatible` string array directly against an `enum`, which will always evaluate to false and cause the requirement to silently fail.
+> > > --
+> > > 
+> > > commit 8bd3982a89722b20a3686e42d4ab3b9f0711ae11
+> > > Author: Vladimir Oltean <vladimir.oltean@nxp.com>
+> > > 
+> > > dt-bindings: phy: lynx-10g: initial document
+> > > 
+> > > This commit adds the schema for the 10G Lynx SerDes used on most QorIQ and
+> > > Layerscape SoCs. It defines the valid compatible strings, PHY cell requirements,
+> > > and enforces SoC-specific constraints such as lane counts and endianness.
+> > > 
+> > > > diff --git a/Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml b/Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml
+> > > > new file mode 100644
+> > > > index 0000000000000..8cf6027a75b91
+> > > > --- /dev/null
+> > > > +++ b/Documentation/devicetree/bindings/phy/fsl,lynx-10g.yaml
+> > > > +  - if:
+> > > > +      properties:
+> > > > +        compatible:
+> > > > +          enum:
+> > > > +            - fsl,ls1046a-serdes1
+> > > > +            - fsl,ls1046a-serdes2
+> > > 
+> > > [Severity: Medium]
+> > > Does this conditional correctly enforce the big-endian property? 
+> > > 
+> > > Since the compatible property is a string array in device trees, evaluating it
+> > > directly against an enum always returns false. Should this use "contains:" 
+> > > with the enum, similar to the preceding if block, so dt_binding_check 
+> > > correctly enforces the requirement?
+> > 
+> > The tests I did suggest that it does enforce the requirement.
+> 
+> Yeah, sashiko just doesn't understand how this works without "contains".
+> "contains" is only actually required for validation purposes if there's
+> fallback compatibles and you're trying to get a partial match.
+
+Yeah, I have no clear understanding of the json-schema syntax either, I
+just copied from another place where it was clear that the intention was
+to have multiple matches on nodes having a single compatible string each.
+
+But maybe it would be good from DT bindings maintainers to teach LLMs
+where they get things wrong in this repo?
+https://github.com/masoncl/review-prompts/blob/main/kernel/subsystem/dt-bindings.md
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
