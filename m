@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7F443CD8CAC
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6FC25CD8CAB
 	for <linux-phy@archiver.kernel.org>; Mon,  8 Jun 2026 10:11:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,38 +12,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JDmJRfxMQVU0b9S4pkEtNmVT2c5Iq2/9gyiyAH3CRQQ=; b=DXjX7aiV5r4ePn
-	eR2Esvi6pWQrkV0XCmQUejDlZuVFUxsMy0P+uIutC+2f7qwexVtMt/kdra5+a8Es//w1JXRHnI57x
-	r/FnJA6Lx6CMN9zUK57Wu2kLhAdp0zQhC2EgmX/bn62nFbR1qnVwiLoh/nhMKdu5gzHHZaC4/7Ulp
-	/S9cmnEAabI46lqCvwCmBlU4GznKsQRxU33CcefcgtaAz+8Hw5sg1ls4vTUXU5EJyUJU7zJG9i64E
-	ghSwAefgIeHmlgd/FU5D8pGYOD18fNQIitiWBEA+EEZFtdWB+cCy7y37tFxfmJBodALE7zcGeueO7
-	6NG3Wo6hFsLUvRXxpYig==;
+	List-Owner; bh=sltGnIIMLQCcBioC7BADgr5W0YRGmH6JlkXKI+9XnL8=; b=Fz6SGefA55VuvR
+	avrHMD0FkcfQJMJo+XVakUd3daaxHotRonTHAkeJaN+9wmjUt4oGh+kEjl3PnJlKEm5b153DLRZ30
+	sk8Cl4TsWifVWYcnT/2CZtyv+ZTwA9t01SRqTM+bc4/LW8AMVWjXCK0SuoBPcFjQmqDE+2ymNybta
+	2rOqRwTYHcy+sVhGxushJhpZGi30oN4edxCLLCjtrl4remAQe99ERDpTrrai59Zz1YiZwSA/A4LXl
+	SBQPwLSpcK7Dw9/ggDZNmSs8XzV16u9WWWzJSp5dyeI83+8Dy6qmxdFlXSg8kEzjlsSyGOn69vQzk
+	gOqbZTmgWbzXtDTTsphA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wWWwi-00000003JAs-0vgd;
+	id 1wWWwi-00000003JAl-0YIw;
 	Mon, 08 Jun 2026 10:11:04 +0000
-Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wWWwa-00000003J5s-1yCe
+	id 1wWWwb-00000003J6M-0fWB
 	for linux-phy@lists.infradead.org;
-	Mon, 08 Jun 2026 10:11:01 +0000
+	Mon, 08 Jun 2026 10:11:00 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1780913454;
-	bh=8D7sHh0LbWIVvo0dK/zPkFjBDZksD7eaPPqZIGWhDXs=;
+	s=mail; t=1780913455;
+	bh=ocBR4DK3N5YI3SCULMPVftw8BGWTTDX62cB4q/nsdYI=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=I1OS95kMWE1eVM4sbRDXz+VHEPhoq3TSN5VRwCPH9tVwkyoqGZ1HATHpvgh+M1qYx
-	 omMWRORn0p5WDUj4v6UxaxjhzQFw+WYypmizYMupjWa+uj0kR3li2HQeKolJsz3fJF
-	 p73WEkSluiotv7W3CSDfVwq1SBernZp7peBbKrbvKEyC2TTsQo+/uH0gkTH9BAY94n
-	 JkTi/ZgEy21g1UN7kGadNP7qC8I0imBpgM+3G2Jwtv6RE63IT7NjcBYhkX+sJX5UgZ
-	 QF2IcENOCXPxWnFb+nOVN00GE3ZIDO64P0AqSworK6sSiJsG0oShhz1xvgcVk5ekmv
-	 RD6Kw/6YFIvLQ==
+	b=P/w6l/vj/VXslD8EaFC1dGZjEtFneSYTAYGMO9y1/Sdqpz9Yd0irRgVpvcwEK1fgJ
+	 WyhqLa0MRQLsTZIHYDtFZapi6JP743xrMHFHYMtZApcJmySQZ7i4YKdWei0qO5KDEQ
+	 Tb/eVHJnhDeZ+uYX958jELSMq/KEZayJpyWYqUThxWZ/1TGANlmTZlwkebM+4MjPY/
+	 RDsOHSA2xMR2y2ATsbSipfPYueGZYQLcmQRU3VCvWrmdPdpdd/HjK3e3qPMkeOSReV
+	 RDcyKRzBauE22VML81KpNeYjdNilsEeEa0SPtXAa4N0thiKS/XeD8kylZOav30dQwR
+	 MdVTMlK9qlZfQ==
 Received: from IcarusMOD.eternityproject.eu (unknown [100.64.1.21])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
 	(Authenticated sender: kholk11)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 26E6B17E02F1;
-	Mon,  8 Jun 2026 12:10:53 +0200 (CEST)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 6A62E17E05FC;
+	Mon,  8 Jun 2026 12:10:54 +0200 (CEST)
 From: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 To: jic23@kernel.org
 Cc: dlechner@baylibre.com,
@@ -76,16 +76,16 @@ Cc: dlechner@baylibre.com,
 	kernel@collabora.com,
 	Jonathan Cameron <jonathan.cameron@huawei.com>,
 	Andy Shevchenko <andriy.shevchenko@intel.com>
-Subject: [PATCH v9 09/10] iio: adc: qcom-spmi-iadc: Migrate to devm_spmi_subdevice_alloc_and_add()
-Date: Mon,  8 Jun 2026 12:09:48 +0200
-Message-ID: <20260608100949.36309-10-angelogioacchino.delregno@collabora.com>
+Subject: [PATCH v9 10/10] iio: adc: qcom-spmi-iadc: Remove regmap R/W wrapper functions
+Date: Mon,  8 Jun 2026 12:09:49 +0200
+Message-ID: <20260608100949.36309-11-angelogioacchino.delregno@collabora.com>
 X-Mailer: git-send-email 2.54.0
 In-Reply-To: <20260608100949.36309-1-angelogioacchino.delregno@collabora.com>
 References: <20260608100949.36309-1-angelogioacchino.delregno@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260608_031058_438644_5782637E 
-X-CRM114-Status: GOOD (  16.23  )
+X-CRM114-CacheID: sfid-20260608_031058_529942_CB68E919 
+X-CRM114-Status: GOOD (  11.48  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,137 +102,263 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Some Qualcomm PMICs integrate an Current ADC device, reachable
-in a specific address range over SPMI.
+This driver doesn't need to add any register base address to any
+regmap call anymore since it was migrated to register as a SPMI
+subdevice with its own regmap reg_base, which makes the regmap
+API to automatically add such base address internally.
 
-Instead of using the parent SPMI device (the main PMIC) as a kind
-of syscon in this driver, register a new SPMI sub-device and
-initialize its own regmap with this sub-device's specific base
-address, retrieved from the devicetree.
-
-This allows to stop manually adding the register base address to
-every R/W call in this driver, as this can be, and is now, handled
-by the regmap API instead.
+Since the iadc_{read,write,read_result}() functions now only do
+call regmap_{read,write,bulk_read}() and nothing else, simplify
+the driver by removing them and by calling regmap APIs directly.
 
 Reviewed-by: Jonathan Cameron <jonathan.cameron@huawei.com>
 Tested-by: Neil Armstrong <neil.armstrong@linaro.org> # on SM8650-QRD
 Reviewed-by: Andy Shevchenko <andriy.shevchenko@intel.com>
 Signed-off-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
 ---
- drivers/iio/adc/qcom-spmi-iadc.c | 35 ++++++++++++++++++++++----------
- 1 file changed, 24 insertions(+), 11 deletions(-)
+ drivers/iio/adc/qcom-spmi-iadc.c | 89 ++++++++++++--------------------
+ 1 file changed, 33 insertions(+), 56 deletions(-)
 
 diff --git a/drivers/iio/adc/qcom-spmi-iadc.c b/drivers/iio/adc/qcom-spmi-iadc.c
-index 0ec3a0c4b1de..ad66bb92fe19 100644
+index ad66bb92fe19..29e71e6ac374 100644
 --- a/drivers/iio/adc/qcom-spmi-iadc.c
 +++ b/drivers/iio/adc/qcom-spmi-iadc.c
-@@ -16,6 +16,7 @@
- #include <linux/platform_device.h>
- #include <linux/regmap.h>
- #include <linux/slab.h>
-+#include <linux/spmi.h>
+@@ -113,77 +113,59 @@ struct iadc_chip {
+ 	struct completion complete;
+ };
  
- /* IADC register and bit definition */
- #define IADC_REVISION2				0x1
-@@ -94,7 +95,6 @@
-  * struct iadc_chip - IADC Current ADC device structure.
-  * @regmap: regmap for register read/write.
-  * @dev: This device pointer.
-- * @base: base offset for the ADC peripheral.
-  * @rsense: Values of the internal and external sense resister in micro Ohms.
-  * @poll_eoc: Poll for end of conversion instead of waiting for IRQ.
-  * @offset: Raw offset values for the internal and external channels.
-@@ -105,7 +105,6 @@
- struct iadc_chip {
- 	struct regmap	*regmap;
- 	struct device	*dev;
--	u16		base;
- 	bool		poll_eoc;
- 	u32		rsense[2];
- 	u16		offset[2];
-@@ -119,7 +118,7 @@ static int iadc_read(struct iadc_chip *iadc, u16 offset, u8 *data)
- 	unsigned int val;
+-static int iadc_read(struct iadc_chip *iadc, u16 offset, u8 *data)
+-{
+-	unsigned int val;
+-	int ret;
+-
+-	ret = regmap_read(iadc->regmap, offset, &val);
+-	if (ret < 0)
+-		return ret;
+-
+-	*data = val;
+-	return 0;
+-}
+-
+-static int iadc_write(struct iadc_chip *iadc, u16 offset, u8 data)
+-{
+-	return regmap_write(iadc->regmap, offset, data);
+-}
+-
+ static int iadc_reset(struct iadc_chip *iadc)
+ {
+-	u8 data;
++	u32 data;
  	int ret;
  
--	ret = regmap_read(iadc->regmap, iadc->base + offset, &val);
-+	ret = regmap_read(iadc->regmap, offset, &val);
+-	ret = iadc_write(iadc, IADC_SEC_ACCESS, IADC_SEC_ACCESS_DATA);
++	ret = regmap_write(iadc->regmap, IADC_SEC_ACCESS, IADC_SEC_ACCESS_DATA);
  	if (ret < 0)
  		return ret;
  
-@@ -129,7 +128,7 @@ static int iadc_read(struct iadc_chip *iadc, u16 offset, u8 *data)
+-	ret = iadc_read(iadc, IADC_PERH_RESET_CTL3, &data);
++	ret = regmap_read(iadc->regmap, IADC_PERH_RESET_CTL3, &data);
+ 	if (ret < 0)
+ 		return ret;
  
- static int iadc_write(struct iadc_chip *iadc, u16 offset, u8 data)
- {
--	return regmap_write(iadc->regmap, iadc->base + offset, data);
-+	return regmap_write(iadc->regmap, offset, data);
+-	ret = iadc_write(iadc, IADC_SEC_ACCESS, IADC_SEC_ACCESS_DATA);
++	ret = regmap_write(iadc->regmap, IADC_SEC_ACCESS, IADC_SEC_ACCESS_DATA);
+ 	if (ret < 0)
+ 		return ret;
+ 
+ 	data |= IADC_FOLLOW_WARM_RB;
+ 
+-	return iadc_write(iadc, IADC_PERH_RESET_CTL3, data);
++	return regmap_write(iadc->regmap, IADC_PERH_RESET_CTL3, data);
  }
  
- static int iadc_reset(struct iadc_chip *iadc)
-@@ -270,7 +269,7 @@ static int iadc_poll_wait_eoc(struct iadc_chip *iadc, unsigned int interval_us)
- 
- static int iadc_read_result(struct iadc_chip *iadc, u16 *data)
+ static int iadc_set_state(struct iadc_chip *iadc, bool state)
  {
--	return regmap_bulk_read(iadc->regmap, iadc->base + IADC_DATA, data, 2);
-+	return regmap_bulk_read(iadc->regmap, IADC_DATA, data, 2);
+-	return iadc_write(iadc, IADC_EN_CTL1, state ? IADC_EN_CTL1_SET : 0);
++	return regmap_write(iadc->regmap, IADC_EN_CTL1, state ? IADC_EN_CTL1_SET : 0);
  }
  
+ static void iadc_status_show(struct iadc_chip *iadc)
+ {
+-	u8 mode, sta1, chan, dig, en, req;
++	u32 mode, sta1, chan, dig, en, req;
+ 	int ret;
+ 
+-	ret = iadc_read(iadc, IADC_MODE_CTL, &mode);
++	ret = regmap_read(iadc->regmap, IADC_MODE_CTL, &mode);
+ 	if (ret < 0)
+ 		return;
+ 
+-	ret = iadc_read(iadc, IADC_DIG_PARAM, &dig);
++	ret = regmap_read(iadc->regmap, IADC_DIG_PARAM, &dig);
+ 	if (ret < 0)
+ 		return;
+ 
+-	ret = iadc_read(iadc, IADC_CH_SEL_CTL, &chan);
++	ret = regmap_read(iadc->regmap, IADC_CH_SEL_CTL, &chan);
+ 	if (ret < 0)
+ 		return;
+ 
+-	ret = iadc_read(iadc, IADC_CONV_REQ, &req);
++	ret = regmap_read(iadc->regmap, IADC_CONV_REQ, &req);
+ 	if (ret < 0)
+ 		return;
+ 
+-	ret = iadc_read(iadc, IADC_STATUS1, &sta1);
++	ret = regmap_read(iadc->regmap, IADC_STATUS1, &sta1);
+ 	if (ret < 0)
+ 		return;
+ 
+-	ret = iadc_read(iadc, IADC_EN_CTL1, &en);
++	ret = regmap_read(iadc->regmap, IADC_EN_CTL1, &en);
+ 	if (ret < 0)
+ 		return;
+ 
+@@ -199,34 +181,34 @@ static int iadc_configure(struct iadc_chip *iadc, int channel)
+ 
+ 	/* Mode selection */
+ 	mode = (IADC_OP_MODE_NORMAL << IADC_OP_MODE_SHIFT) | IADC_TRIM_EN;
+-	ret = iadc_write(iadc, IADC_MODE_CTL, mode);
++	ret = regmap_write(iadc->regmap, IADC_MODE_CTL, mode);
+ 	if (ret < 0)
+ 		return ret;
+ 
+ 	/* Channel selection */
+-	ret = iadc_write(iadc, IADC_CH_SEL_CTL, channel);
++	ret = regmap_write(iadc->regmap, IADC_CH_SEL_CTL, channel);
+ 	if (ret < 0)
+ 		return ret;
+ 
+ 	/* Digital parameter setup */
+ 	decim = IADC_DEF_DECIMATION << IADC_DIG_DEC_RATIO_SEL_SHIFT;
+-	ret = iadc_write(iadc, IADC_DIG_PARAM, decim);
++	ret = regmap_write(iadc->regmap, IADC_DIG_PARAM, decim);
+ 	if (ret < 0)
+ 		return ret;
+ 
+ 	/* HW settle time delay */
+-	ret = iadc_write(iadc, IADC_HW_SETTLE_DELAY, IADC_DEF_HW_SETTLE_TIME);
++	ret = regmap_write(iadc->regmap, IADC_HW_SETTLE_DELAY, IADC_DEF_HW_SETTLE_TIME);
+ 	if (ret < 0)
+ 		return ret;
+ 
+-	ret = iadc_write(iadc, IADC_FAST_AVG_CTL, IADC_DEF_AVG_SAMPLES);
++	ret = regmap_write(iadc->regmap, IADC_FAST_AVG_CTL, IADC_DEF_AVG_SAMPLES);
+ 	if (ret < 0)
+ 		return ret;
+ 
+ 	if (IADC_DEF_AVG_SAMPLES)
+-		ret = iadc_write(iadc, IADC_FAST_AVG_EN, IADC_FAST_AVG_EN_SET);
++		ret = regmap_write(iadc->regmap, IADC_FAST_AVG_EN, IADC_FAST_AVG_EN_SET);
+ 	else
+-		ret = iadc_write(iadc, IADC_FAST_AVG_EN, 0);
++		ret = regmap_write(iadc->regmap, IADC_FAST_AVG_EN, 0);
+ 
+ 	if (ret < 0)
+ 		return ret;
+@@ -239,19 +221,19 @@ static int iadc_configure(struct iadc_chip *iadc, int channel)
+ 		return ret;
+ 
+ 	/* Request conversion */
+-	return iadc_write(iadc, IADC_CONV_REQ, IADC_CONV_REQ_SET);
++	return regmap_write(iadc->regmap, IADC_CONV_REQ, IADC_CONV_REQ_SET);
+ }
+ 
+ static int iadc_poll_wait_eoc(struct iadc_chip *iadc, unsigned int interval_us)
+ {
+ 	unsigned int count, retry;
++	u32 sta1;
+ 	int ret;
+-	u8 sta1;
+ 
+ 	retry = interval_us / IADC_CONV_TIME_MIN_US;
+ 
+ 	for (count = 0; count < retry; count++) {
+-		ret = iadc_read(iadc, IADC_STATUS1, &sta1);
++		ret = regmap_read(iadc->regmap, IADC_STATUS1, &sta1);
+ 		if (ret < 0)
+ 			return ret;
+ 
+@@ -267,11 +249,6 @@ static int iadc_poll_wait_eoc(struct iadc_chip *iadc, unsigned int interval_us)
+ 	return -ETIMEDOUT;
+ }
+ 
+-static int iadc_read_result(struct iadc_chip *iadc, u16 *data)
+-{
+-	return regmap_bulk_read(iadc->regmap, IADC_DATA, data, 2);
+-}
+-
  static int iadc_do_conversion(struct iadc_chip *iadc, int chan, u16 *data)
-@@ -488,12 +487,22 @@ static void iadc_disable_irq_wake(void *data)
- 
- static int iadc_probe(struct platform_device *pdev)
  {
-+	struct regmap_config iadc_regmap_config = {
-+		.reg_bits = 16,
-+		.val_bits = 8,
-+		.max_register = 0xff,
-+		.fast_io = true,
-+	};
- 	struct device_node *node = pdev->dev.of_node;
- 	struct device *dev = &pdev->dev;
-+	struct spmi_subdevice *sub_sdev;
-+	struct spmi_device *sparent;
- 	struct iio_dev *indio_dev;
- 	struct iadc_chip *iadc;
- 	int ret, irq_eoc;
--	u32 res;
-+
-+	if (!dev->parent)
-+		return -ENODEV;
+ 	unsigned int wait;
+@@ -296,7 +273,7 @@ static int iadc_do_conversion(struct iadc_chip *iadc, int chan, u16 *data)
+ 	}
  
- 	indio_dev = devm_iio_device_alloc(dev, sizeof(*iadc));
- 	if (!indio_dev)
-@@ -502,18 +511,21 @@ static int iadc_probe(struct platform_device *pdev)
- 	iadc = iio_priv(indio_dev);
- 	iadc->dev = dev;
- 
--	iadc->regmap = dev_get_regmap(dev->parent, NULL);
--	if (!iadc->regmap)
--		return -ENODEV;
-+	sparent = to_spmi_device(dev->parent);
-+	sub_sdev = devm_spmi_subdevice_alloc_and_add(dev, sparent);
-+	if (IS_ERR(sub_sdev))
-+		return PTR_ERR(sub_sdev);
- 
- 	init_completion(&iadc->complete);
- 	mutex_init(&iadc->lock);
- 
--	ret = of_property_read_u32(node, "reg", &res);
-+	ret = device_property_read_u32(dev, "reg", &iadc_regmap_config.reg_base);
+ 	if (!ret)
+-		ret = iadc_read_result(iadc, data);
++		ret = regmap_bulk_read(iadc->regmap, IADC_DATA, data, sizeof(*data));
+ exit:
+ 	iadc_set_state(iadc, false);
  	if (ret < 0)
- 		return -ENODEV;
+@@ -392,33 +369,33 @@ static int iadc_update_offset(struct iadc_chip *iadc)
  
--	iadc->base = res;
-+	iadc->regmap = devm_regmap_init_spmi_ext(&sub_sdev->sdev, &iadc_regmap_config);
-+	if (IS_ERR(iadc->regmap))
-+		return PTR_ERR(iadc->regmap);
+ static int iadc_version_check(struct iadc_chip *iadc)
+ {
+-	u8 val;
++	u32 val;
+ 	int ret;
  
- 	ret = iadc_version_check(iadc);
+-	ret = iadc_read(iadc, IADC_PERPH_TYPE, &val);
++	ret = regmap_read(iadc->regmap, IADC_PERPH_TYPE, &val);
  	if (ret < 0)
-@@ -596,3 +608,4 @@ MODULE_ALIAS("platform:qcom-spmi-iadc");
- MODULE_DESCRIPTION("Qualcomm SPMI PMIC current ADC driver");
- MODULE_LICENSE("GPL v2");
- MODULE_AUTHOR("Ivan T. Ivanov <iivanov@mm-sol.com>");
-+MODULE_IMPORT_NS("SPMI");
+ 		return ret;
+ 
+ 	if (val < IADC_PERPH_TYPE_ADC) {
+-		dev_err(iadc->dev, "%d is not ADC\n", val);
++		dev_err(iadc->dev, "%u is not ADC\n", val);
+ 		return -EINVAL;
+ 	}
+ 
+-	ret = iadc_read(iadc, IADC_PERPH_SUBTYPE, &val);
++	ret = regmap_read(iadc->regmap, IADC_PERPH_SUBTYPE, &val);
+ 	if (ret < 0)
+ 		return ret;
+ 
+ 	if (val < IADC_PERPH_SUBTYPE_IADC) {
+-		dev_err(iadc->dev, "%d is not IADC\n", val);
++		dev_err(iadc->dev, "%u is not IADC\n", val);
+ 		return -EINVAL;
+ 	}
+ 
+-	ret = iadc_read(iadc, IADC_REVISION2, &val);
++	ret = regmap_read(iadc->regmap, IADC_REVISION2, &val);
+ 	if (ret < 0)
+ 		return ret;
+ 
+ 	if (val < IADC_REVISION2_SUPPORTED_IADC) {
+-		dev_err(iadc->dev, "revision %d not supported\n", val);
++		dev_err(iadc->dev, "revision %u not supported\n", val);
+ 		return -EINVAL;
+ 	}
+ 
+@@ -428,7 +405,7 @@ static int iadc_version_check(struct iadc_chip *iadc)
+ static int iadc_rsense_read(struct iadc_chip *iadc, struct device_node *node)
+ {
+ 	int ret, sign, int_sense;
+-	u8 deviation;
++	u32 deviation;
+ 
+ 	ret = of_property_read_u32(node, "qcom,external-resistor-micro-ohms",
+ 				   &iadc->rsense[IADC_EXT_RSENSE]);
+@@ -440,7 +417,7 @@ static int iadc_rsense_read(struct iadc_chip *iadc, struct device_node *node)
+ 		return -EINVAL;
+ 	}
+ 
+-	ret = iadc_read(iadc, IADC_NOMINAL_RSENSE, &deviation);
++	ret = regmap_read(iadc->regmap, IADC_NOMINAL_RSENSE, &deviation);
+ 	if (ret < 0)
+ 		return ret;
+ 
 -- 
 2.54.0
 
