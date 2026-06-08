@@ -4,131 +4,99 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0FCDDCD8C8E
-	for <linux-phy@archiver.kernel.org>; Mon,  8 Jun 2026 06:56:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8D2D6CD8C8E
+	for <linux-phy@archiver.kernel.org>; Mon,  8 Jun 2026 07:09:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZAeIMke+5RwSFsvBn9t0ssBhk4uAG1Y29L7ybdhlJ3U=; b=UQbM0tutRdcp79
-	gzGb1VC+IGLHzlBMzQbdX8S5zr0va4O957jjuLCvsgKPmI/LmVzbL0+K+g1xxV3Zj9I6bFa68H4VV
-	B271EDXL6gG8qEYQpTW2LObK2Hsy+r4xPUZaBbX+2+iELixs4nNP/C3XOb85x3dQtfatELwLwhXcY
-	RwmFwfvF5H9RuR6ut2tIVkcKLy/BWBKiLYM9WGwzIot88JLT/YMbcnHK2rDi3MDHrKZ94m5o4kZ7M
-	AMZNE2k42N0IhExJ4kSOuSCgUHET85Vws68qROGyMqbpyHWrxMAQez25b6SBDYhAHbl9dHCEbk28p
-	m50EWP7/IFPBYu3P3ePw==;
+	List-Owner; bh=UpXzInAXIAa5k2N86x6eodLZCxr3RRcJ64km2EGich0=; b=l9ds/t0w80qiAl
+	/GYaSmlutB8riLRx1LDSRcXehvuGrjl/sEaQmFA+ZpCciZq0R22gSxtpGIFkE5jXz1IbI9RwFRSIz
+	eQvY9sB9Xd9+IJfu2FW5/6XOfb4mBMecA1qy50DvhZSxBmykPGSpBszMYAr1e/1O50sFbgv/C+VZQ
+	kYNBIJn77LNRlpPS4D3GaJyUJZp+l1wL0r8t2PSpURK62WnFMIW7dxiYFNI7F1ud2ygC4imRFdvVP
+	z6Uox9ZVJ3kC8SbXlSbfPWw6qYHXRUq9+30RZkGulCBfadQaov7DPnxTjrL/AHAFYibggiAylhLcB
+	3huesmVXw1SMDKw8OolA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wWTuY-00000002vBm-2Ldp;
-	Mon, 08 Jun 2026 06:56:38 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1wWU6v-00000002x1P-0hMs;
+	Mon, 08 Jun 2026 07:09:25 +0000
+Received: from smtpbgbr1.qq.com ([54.207.19.206])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wWTuV-00000002vBQ-2tAa
-	for linux-phy@lists.infradead.org;
-	Mon, 08 Jun 2026 06:56:37 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6586Paqp2808386
-	for <linux-phy@lists.infradead.org>; Mon, 8 Jun 2026 06:56:34 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-type:date:from:in-reply-to:message-id:mime-version
-	:references:subject:to; s=qcppdkim1; bh=sDJvWTVEGOUQxwxd+IZUiqxC
-	pZ3z+NvRZh6WslCfjos=; b=dOtKPITRwDunlS4VRA8U8VTbgTGox4HcIEsQj6Uf
-	8RxhPThUY2Zvlsgyj/urSei/Y7oJckaBUhh1IgglpMYpo9jrFUVybKNVnKOqYQRR
-	lf6FhOGTh8+VFzFMPF+WUX6Y/lzdO/6RBd7XlEtB9jKPGB0fvH9XuHDCkc/VCSeG
-	z0zpSMUE5sqtqKg2aW4RrMP1ES26dF3GwBH/vuS4ZYQpC5PuXgImc7wpuWeC2sid
-	NbDTabdMoysiTfoug2GXkfgshsYo4u0Rv71TZGPu5GOhYt5rOqnKOJuGgxvAuw+4
-	NsTEv6Qq6oA1/m6BveuNV1iMy+eJ/P7KIF7QRSNFFOWFfQ==
-Received: from mail-qt1-f200.google.com (mail-qt1-f200.google.com [209.85.160.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4emb4w6dtw-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-phy@lists.infradead.org>; Mon, 08 Jun 2026 06:56:28 +0000 (GMT)
-Received: by mail-qt1-f200.google.com with SMTP id d75a77b69052e-51758177935so32433491cf.1
-        for <linux-phy@lists.infradead.org>; Sun, 07 Jun 2026 23:56:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1780901787; x=1781506587; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=sDJvWTVEGOUQxwxd+IZUiqxCpZ3z+NvRZh6WslCfjos=;
-        b=j+HhfNT/f1u251kZXq3SzE2wzLv3+hmfBp+C72+7FJGhXPH5PwTUj36cVM/uF9dzqk
-         Lm/VY2sh9N7+kf1Q2Zl0wh/r02du2ukuAfzx4WXNtgwJJ6bu/exIs3YSwXO4iOD1Dwcs
-         nEESkzD5bzb3JMUojWz0jPrp2SzpZSD2xRIFnMjptcqntgoNY6EoVNwk6OuCw7BQ/8+9
-         Q+IojeXfJSODiECwePNmROJ+pUIAb4POOFEguj4tmVjaz3xG2+caS9JfGtODrsAFHU+w
-         dm98cueD715PjSbRPkYyX46R2wF+VSGr8Y46kq7h36X5rjnW0le14hyoysmU7N5h435e
-         X8MA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1780901787; x=1781506587;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=sDJvWTVEGOUQxwxd+IZUiqxCpZ3z+NvRZh6WslCfjos=;
-        b=boXelsz1elBiBPpGtmXLkyn4RS2TQsG2HBTgRZ1OjZVW8cReififgKIocZroOHkK5r
-         mAsWy8+XQ+ej/oqiwR42B9x9iCidomXnaSbPeCDrrznpNxd11Rhz7UbXkUqPLCgYELhK
-         aPuilQKTIvslg5MNh4uwl3CbexByUnHTalrwQpuaLoV3hOxiSMRODphk7Vub0dtWmlPi
-         IpGmGgk28gJkWgFLqzy1hpyKhr6p9rHrY2FylXrywg/O9VrDSCAv1TSsNqoSixlbLzGg
-         hKc329iOBAdsHAzyQxZbplnci9FHImbeTIfQja8QBl82Nyk/oOMG8nxHvDI56kwLVkZv
-         w3Aw==
-X-Forwarded-Encrypted: i=1; AFNElJ8RIF0NyUvNGBq4wpwXnHjUkw6MeyX1pMCTvaQXvrxzlBiD44JZUtWR8p1CfLJ5KRbyTnBSGNmyeS4=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwON2N4+Sg2g4vISnaQKCCf4DJJGqxw5oORsc1XYZ/TNlcmqddF
-	nt4g1BDO135FWGL3//igEfDv9qZaNvnwWhY6xCGyUpV4M7j5Xc4Q3EvuQVgeqU+2ze3JD9yf5+L
-	TZTT1o4rbCE06JYTPwX4roCIWDks7OZsdT0dxPztPEdaa3uez6FZ3uPOpa/Izq+2QhlFW
-X-Gm-Gg: Acq92OHmDYQDpxUQlKDNIg7gkIOTzdFKIJKBlL8mb0AfRw55vwZqwvI8BK+RX/K0ize
-	biG21GhQiRdsya2kFoFebWfmzDG4kjJTUZfFTiKQIYez2FmBDLpgjUPKr/kQ9n7di4uJQKeliog
-	sw8jWOMiSWlyG84dBt7oB+hMajIxwFBctlnrhFcqf/dWXtO/OeqT3EbYJTOqr2LsPWS4lIN3JWx
-	Dmk1E2LL4clZI/fMoeJU9GMv82VZhcvSdf3XnMqQW0dg4fWDVfzF5bm9rbxRB0fH98id9FBIqjz
-	LElwZAj6+OkuW1N5mQrWeWjULnbhakTHLTpPnPSGwkK9IILOrMf09FVKGZrEn5ijxiP1TnAChyA
-	iKOX/NOKf3m5B6WxpUoq0cOvt9XK2HW1vmq1mKNCnLGYeG1mW7OMup7BHSQInUV128oUpDl85zs
-	HLLUKSfvUIL5cgpMQk5wc/X8BB6zGo48CjmrPooROAH7Yseg==
-X-Received: by 2002:a05:622a:250e:b0:517:7701:c085 with SMTP id d75a77b69052e-51795b9e6efmr221641851cf.21.1780901787522;
-        Sun, 07 Jun 2026 23:56:27 -0700 (PDT)
-X-Received: by 2002:a05:622a:250e:b0:517:7701:c085 with SMTP id d75a77b69052e-51795b9e6efmr221641561cf.21.1780901787165;
-        Sun, 07 Jun 2026 23:56:27 -0700 (PDT)
-Received: from umbar.lan (2001-14ba-a073-af00-264b-feff-fe8b-be8a.rev.dnainternet.fi. [2001:14ba:a073:af00:264b:feff:fe8b:be8a])
-        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-396ac2be00dsm42953011fa.24.2026.06.07.23.56.25
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 07 Jun 2026 23:56:26 -0700 (PDT)
-Date: Mon, 8 Jun 2026 09:56:24 +0300
-From: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
-To: Kathiravan Thirumoorthy <kathiravan.thirumoorthy@oss.qualcomm.com>
-Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
-        Rob Herring <robh@kernel.org>,
-        Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>, linux-arm-msm@vger.kernel.org,
-        linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-        linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 2/2] phy: qcom: qmp-pcie: Add IPQ9650 PCIe PHY support
-Message-ID: <56zkq7bwrt5smmmum6jckzrekkkqrych2gntx3obnrmamwumtv@espahwe6pc3v>
-References: <20260602-ipq9650_pcie_phy-v1-0-d8c32a36dbd9@oss.qualcomm.com>
- <20260602-ipq9650_pcie_phy-v1-2-d8c32a36dbd9@oss.qualcomm.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260602-ipq9650_pcie_phy-v1-2-d8c32a36dbd9@oss.qualcomm.com>
-X-Proofpoint-ORIG-GUID: AnRSG1-U_2uzS0UkEETmFomJt08px3u6
-X-Proofpoint-GUID: AnRSG1-U_2uzS0UkEETmFomJt08px3u6
-X-Authority-Analysis: v=2.4 cv=YIWvDxGx c=1 sm=1 tr=0 ts=6a26679c cx=c_pps
- a=JbAStetqSzwMeJznSMzCyw==:117 a=xqWC_Br6kY4A:10 a=kj9zAlcOel0A:10
- a=FelO9ux0wxsA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=3WHJM1ZQz_JShphwDgj5:22 a=EUspDBNiAAAA:8
- a=wA38C85zNOdD-9IkiXoA:9 a=CjuIK1q_8ugA:10 a=uxP6HrT_eTzRwkO_Te1X:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjA4MDA2MiBTYWx0ZWRfX4v6WBWkNcovj
- imaaoCz0XHFAcSoeiERlVfyV3YoVCcVvi2GKIKFdghC+eXe50Bsn7vubiDwpxSXyillo0V5xorz
- IUHWkUdHzCuGVrhUu5O5JdrN+FclKpEIFpcSNUx/lwoVqdRBXGAeIgDkii92fOVn7SIM/6e5EB1
- Ts44eLdpVZwFlhwD1et4dkvPHNtyJSiroyLAvvl9P1cKHBs37EMQTYU3o0ireJ2V0R+kE3ZjlDP
- BGgtIlcDZBmNp00F3kDkmGFqxjsPc379ch3ndSPA1i4kKCNFoGTf1dH10LSuSYEjy/8qD3VNWQx
- CqLpBDFlAX/+0Ol7Un23a1wHuJaVlT86l0vQtIWvriIODMLAJBqZG88PFXSH4tBGN+JiHGhImuF
- Am1XJSXgQ0mOfs6TlxmDPQF36O7famV4s7JmD/BwO+lO5W8oZQLi9kAKud8yCjDZI2YUWt9dpo/
- owjHUz6F8VnEQTbT4HQ==
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.125,FMLib:17.12.100.49
- definitions=2026-06-08_02,2026-06-05_02,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- suspectscore=0 malwarescore=0 lowpriorityscore=0 adultscore=0 impostorscore=0
- spamscore=0 phishscore=0 clxscore=1015 priorityscore=1501 bulkscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2605210000 definitions=main-2606080062
+	id 1wWU6s-00000002x0o-1F2L;
+	Mon, 08 Jun 2026 07:09:24 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=airkyi.com;
+	s=altu2504; t=1780902515;
+	bh=57OXAMQqqj4xbXyszs1R+EibBlVBpUVo5uuotM2InZI=;
+	h=From:To:Subject:Date:Message-Id;
+	b=D4yqfhaw1nJ9J7Tkn9qy+S3c1L9sRjhDM/lRNEs4r1mPIcA6FrDBH6g/a/lSiFv2t
+	 lucZ37a2B1EtzlVIu6wBbiwsUyZUgi6KtL1+eJjI9Oz2XmEo6txB43CT1hl+Dzf0UF
+	 5/fgqnleJwWzbV4YMnbuIt7TSgR9UREnrw/EAk6M=
+X-QQ-mid: esmtpsz10t1780902513t7fbbf0a9
+X-QQ-Originating-IP: XF/2kaHxRqFGalrQAGZQ0zFGemSye6Cjnqw2mX0Z/Bw=
+Received: from DESKTOP-8BT1A2O.localdomain ( [58.22.7.114])
+	by bizesmtp.qq.com (ESMTP) with 
+	id ; Mon, 08 Jun 2026 15:08:29 +0800 (CST)
+X-QQ-SSF: 0000000000000000000000000000000
+X-QQ-GoodBg: 0
+X-BIZMAIL-ID: 2467102534402940748
+From: Chaoyi Chen <kernel@airkyi.com>
+To: Andrzej Hajda <andrzej.hajda@intel.com>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Robert Foss <rfoss@kernel.org>,
+	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+	Jonas Karlman <jonas@kwiboo.se>,
+	Jernej Skrabec <jernej.skrabec@gmail.com>,
+	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+	Maxime Ripard <mripard@kernel.org>,
+	Thomas Zimmermann <tzimmermann@suse.de>,
+	David Airlie <airlied@gmail.com>,
+	Simona Vetter <simona@ffwll.ch>,
+	Sandy Huang <hjc@rock-chips.com>,
+	=?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
+	Andy Yan <andy.yan@rock-chips.com>,
+	Vinod Koul <vkoul@kernel.org>
+Cc: Nicolas Frattaroli <nicolas.frattaroli@collabora.com>,
+	Sebastian Reichel <sebastian.reichel@collabora.com>,
+	Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+	Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>,
+	Luca Ceresoli <luca.ceresoli@bootlin.com>,
+	linux-kernel@vger.kernel.org,
+	dri-devel@lists.freedesktop.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org,
+	linux-phy@lists.infradead.org,
+	Chaoyi Chen <chaoyi.chen@rock-chips.com>
+Subject: [PATCH 3/5] phy: rockchip: phy-rockchip-typec: Add DRM AUX bridge
+Date: Mon,  8 Jun 2026 15:08:03 +0800
+Message-Id: <20260608070805.88-4-kernel@airkyi.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20260608070805.88-1-kernel@airkyi.com>
+References: <20260608070805.88-1-kernel@airkyi.com>
+X-QQ-SENDSIZE: 520
+Feedback-ID: esmtpsz:airkyi.com:qybglogicsvrgz:qybglogicsvrgz6b-0
+X-QQ-XMAILINFO: ONv4FG6+I+027FK+4nHy2WCbSawcqCYuW4HOiUqL7D6Fs4udPBiCCgIG
+	k+UEKrOIq9uD69MhBUgnmzuLdkV+uQOwskn/Z0gSCyUsH6pPVkTjvdhQq+XAfPPXf7RpfY1
+	C26xdihzXi17ALaCFvf6SQyFif4k54Oz9vLAuzjvLyt262rwL6NBHtOcTA4TL8ewNCwlNzG
+	73OWSS2/TuNLbG6h3QU7WtwqmF1IfdCrNgGsbA+tv2ce832fZsh643mAclHf8TFDkJVsyfy
+	WtCTje8MX3a/lyZvsJ4AkZJ2YXI42SvODln482jbNuDjho/C0kyE8RGVcvaH4IyeA5+/FLR
+	Tfg8kuUMIHJYN/z8AQT+EMJ3xcDKte8ipzwKkrwLhBCAird9pGxJQBbuo/sOJ1pmWf0Sf3B
+	IZ+VzzbakC9UPq6F60LgT7E7Kx5/z9Uoo59E9EHLAXaS1Ux+GP48SHjbAQwoT8oooLaf2rq
+	YilxK6gMgVjLuCoeQQGyRNF5iemZvp+Vb0DSKuu2IWaix7QGgiHwJMdaCw4odC5sC7Ignge
+	6A38ul+saIVRQ4O72Aj38IIsIeBJmwyza8eeh8QXfWoBzhgGWzQ1O3/E5Ywc7ST4PseJK+k
+	HjWogGQUByrEn4CkboMkIENx8nGGPPqB037eCulbhQTSY/oR9srs+TRrTWzeulHz8jBwhI9
+	b4+8E6fiPN0eeg2hpOXqMNQ6xDE7VPrFwGftKjWnjfpKYNhZZGY45Tew5I+4K2cNs6Dshua
+	WeELERLkYmwFLwyemOPiTWVnzaTSPyia5SCGnRnq39gEkGSaaLuqeD8b9h/TjUlM0g7G3s6
+	U2t2EZpbMjC6kHq/jDkVbTbsuv5M4ZS81XRwo6xiSIVzjY1JfBSh6evu6osii6eB8DMakhn
+	yPfva62pkqqXU7bZGL2FYrunh8oDoYK1/V+rB+kCMUxjHQ17bCsuAW+dsNILE0HHWYEYDU1
+	DtegpK4tBQdcKe8HEoMgm0nOrsg2tqQYDJdvD8tP0UU5tSBySKhs44zL0gTTKUiFgDdQPAc
+	15YDcsd4zibONa5XDut7UmuSrq44KiHjAHWvAsIg==
+X-QQ-XMRINFO: MSVp+SPm3vtSI1QTLgDHQqIV1w2oNKDqfg==
+X-QQ-RECHKSPAM: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260607_235635_876100_FB6B269D 
-X-CRM114-Status: GOOD (  14.05  )
+X-CRM114-CacheID: sfid-20260608_000923_148507_AA5CBB17 
+X-CRM114-Status: GOOD (  11.72  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -140,42 +108,83 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jun 02, 2026 at 02:40:18PM +0530, Kathiravan Thirumoorthy wrote:
-> The IPQ9650 platform has three Gen3 2-lane PCIe controllers and two Gen3
-> 1-lane PCIe controllers. The PHY instances also require the on-chip refgen
-> supply.
-> 
-> Add the IPQ9650 Gen3 x1 and x2 QMP PCIe PHY configurations, including the
-> refgen regulator supply.
-> 
-> Signed-off-by: Kathiravan Thirumoorthy <kathiravan.thirumoorthy@oss.qualcomm.com>
-> ---
->  drivers/phy/qualcomm/phy-qcom-qmp-pcie.c | 220 +++++++++++++++++++++++++++++++
->  1 file changed, 220 insertions(+)
-> 
-> @@ -3378,6 +3524,10 @@ static const char * const qmp_phy_vreg_l[] = {
->  	"vdda-phy", "vdda-pll",
->  };
->  
-> +static const char * const ipq9650_qmp_phy_vreg_l[] = {
-> +	"refgen",
-> +};
+From: Chaoyi Chen <chaoyi.chen@rock-chips.com>
 
-Now vdda-phy / vdda-pll supplies?
+Using the DRM_AUX_BRIDGE helper to create the transparent DRM bridge
+device.
 
-> +
->  static const char * const sm8550_qmp_phy_vreg_l[] = {
->  	"vdda-phy", "vdda-pll", "vdda-qref",
->  };
+Signed-off-by: Chaoyi Chen <chaoyi.chen@rock-chips.com>
+Reviewed-by: Neil Armstrong <neil.armstrong@linaro.org>
+Reviewed-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+---
+(no changes since v1)
 
+---
+ drivers/phy/rockchip/Kconfig              |  2 ++
+ drivers/phy/rockchip/phy-rockchip-typec.c | 13 +++++++++++--
+ 2 files changed, 13 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/phy/rockchip/Kconfig b/drivers/phy/rockchip/Kconfig
+index 14698571b607..9173d3b4fef4 100644
+--- a/drivers/phy/rockchip/Kconfig
++++ b/drivers/phy/rockchip/Kconfig
+@@ -119,6 +119,8 @@ config PHY_ROCKCHIP_SNPS_PCIE3
+ config PHY_ROCKCHIP_TYPEC
+ 	tristate "Rockchip TYPEC PHY Driver"
+ 	depends on OF && (ARCH_ROCKCHIP || COMPILE_TEST)
++	depends on DRM || DRM=n
++	select DRM_AUX_BRIDGE if DRM_BRIDGE
+ 	select EXTCON
+ 	select GENERIC_PHY
+ 	select RESET_CONTROLLER
+diff --git a/drivers/phy/rockchip/phy-rockchip-typec.c b/drivers/phy/rockchip/phy-rockchip-typec.c
+index d9701b6106d5..48070b50416e 100644
+--- a/drivers/phy/rockchip/phy-rockchip-typec.c
++++ b/drivers/phy/rockchip/phy-rockchip-typec.c
+@@ -54,6 +54,7 @@
+ 
+ #include <linux/mfd/syscon.h>
+ #include <linux/phy/phy.h>
++#include <drm/bridge/aux-bridge.h>
+ 
+ #define CMN_SSM_BANDGAP			(0x21 << 2)
+ #define CMN_SSM_BIAS			(0x22 << 2)
+@@ -1162,16 +1163,24 @@ static int rockchip_typec_phy_probe(struct platform_device *pdev)
+ 
+ 	for_each_available_child_of_node(np, child_np) {
+ 		struct phy *phy;
++		ret = 0;
+ 
+-		if (of_node_name_eq(child_np, "dp-port"))
++		if (of_node_name_eq(child_np, "dp-port")) {
+ 			phy = devm_phy_create(dev, child_np,
+ 					      &rockchip_dp_phy_ops);
+-		else if (of_node_name_eq(child_np, "usb3-port"))
++			ret = drm_aux_bridge_register_from_node(dev, child_np);
++		} else if (of_node_name_eq(child_np, "usb3-port"))
+ 			phy = devm_phy_create(dev, child_np,
+ 					      &rockchip_usb3_phy_ops);
+ 		else
+ 			continue;
+ 
++		if (ret) {
++			pm_runtime_disable(dev);
++			of_node_put(child_np);
++			return ret;
++		}
++
+ 		if (IS_ERR(phy)) {
+ 			dev_err(dev, "failed to create phy: %pOFn\n",
+ 				child_np);
 -- 
-With best wishes
-Dmitry
+2.54.0
+
 
 -- 
 linux-phy mailing list
