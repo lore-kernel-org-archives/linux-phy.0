@@ -4,59 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 30073CD6E79
-	for <linux-phy@archiver.kernel.org>; Tue,  9 Jun 2026 02:28:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 57C32CD6E79
+	for <linux-phy@archiver.kernel.org>; Tue,  9 Jun 2026 03:26:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Af3wXQy1JVWTHNoY/+0j5m7378zPnmHJqwaPW5HTU3E=; b=SMNxLEBtwtspAq
-	OEA2JEgI9eWNgPP7J0FAggjToxY8XrI5qe78tz7eUoF1rwWTLnhoiIiipzwF/PNxcTJHWkkkrdZsm
-	fjlOeaBeKTXj4PVP82qrzG9o6ngTPnMoDWcfLDr/MyMU9xIKp3llJErmYjvRtNKSfzF+MRwUCGa5F
-	EUiE2vfwDHRoIJbV6EC9Eo5SPAP2EkewChdulPxU4KNd6eIORsHXRwBfbLpHU5MvReEOBGngSBu7B
-	+SQIIMjyeIdnp8LOA2Ru0Bs76OhmojaLph4dZpay2Bl4klleGr9pLouSnKmJEydftmMxOjS2k2BiH
-	8jG4C3/qFcbPoZFbiTug==;
+	List-Owner; bh=GuGBJijldWTDvg0E5lICc7W4AyVKeW1yq0kNok+2//4=; b=JQObJiZmw8J7GU
+	YJxhvCEe2eWUJFvMtm/hmxlDQesKW3bwtV0nbSz/3mQk5ccr20sCiRf8ouyNpEhUhtNmC51r7UPXi
+	WayVBiry73hu8bWcNavNLe4TSdCkDQsiHHuhvxKdPeRbLxmEkWbGEUOHUbFQ0kIZGf7bRU938B/Ha
+	iq5c2J/yD0PVZMT/vIpSWNk2Nz9on3CpA8UZyQgsbM8g222fujvRRsbP/F70vbmQV9DsnfzmU6Qgr
+	/c6YFrlxjFUVp3H0JM4nsFwlwGpm/OKo/zqZvbZxO8sOcmg5tMOBVZviLrhWp+hDYJEsg1OVroUxe
+	12vCpw76kkLW0oGJZKOg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wWmCj-00000004d4H-2Qix;
-	Tue, 09 Jun 2026 02:28:37 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wWn6P-00000004fTM-34Gd;
+	Tue, 09 Jun 2026 03:26:09 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wWmCi-00000004d4B-3XoX
-	for linux-phy@lists.infradead.org;
-	Tue, 09 Jun 2026 02:28:36 +0000
+	id 1wWn6P-00000004fTC-01NY;
+	Tue, 09 Jun 2026 03:26:09 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id D95904191A;
-	Tue,  9 Jun 2026 02:28:35 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4B9DF1F00893;
-	Tue,  9 Jun 2026 02:28:35 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 96BEB601E1;
+	Tue,  9 Jun 2026 03:26:06 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C9B731F00893;
+	Tue,  9 Jun 2026 03:26:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1780972115;
-	bh=cwxpf8kSX8737xmFn9bWE+GiAzV9m+yFDvV80gYy6eg=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:References;
-	b=ox0dD+AnTk5/0KPqZP+MqAYw17kd6W1fdHSxOUNBd2pti7O4xlqZ5msjw8IdBfENt
-	 6UMAmONixeWmg1PuJ/fGK86QERQvNU9Mb5B8I2HfepcuFvmSnTVNVpKWvB2Z5SiKeq
-	 ZMMSUBCIOzbntzm3Vfpw/z3cVnD3MTJCwzx83K/mf03Gg+mvsnaG/7OOSijE3iKBZL
-	 6Nt+LoTO3UnqCw5PIb6xL6KnL5fBgJhnSSk0m/Z05FZVCApCSrU4CDdiNspN024adn
-	 6kntGrv3s/O0dueDDqHdsb010sVlcct73DSZtvaCLoJ0qmgnxk29wfsNr+rEdBggYB
-	 n7gh0yyIEhttQ==
-Date: Mon, 8 Jun 2026 19:28:34 -0700
-From: Jakub Kicinski <kuba@kernel.org>
-To: Petr Wozniak <petr.wozniak@gmail.com>
-Cc: netdev@vger.kernel.org, andrew@lunn.ch, hkallweit1@gmail.com,
- linux@armlinux.org.uk, davem@davemloft.net, edumazet@google.com,
- pabeni@redhat.com, linux-phy@lists.infradead.org,
- linux-kernel@vger.kernel.org, maxime.chevallier@bootlin.com, bjorn@mork.no,
- olek2@wp.pl
-Subject: Re: [PATCH v2 net-next] net: phy: mdio-i2c: defer RollBall bridge
- probe to PHY discovery
-Message-ID: <20260608192834.4244bcc9@kernel.org>
-In-Reply-To: <20260605053056.1977-1-petr.wozniak@gmail.com>
-References: <20260604181207.17468-1-petr.wozniak@gmail.com>
-	<20260605053056.1977-1-petr.wozniak@gmail.com>
+	s=k20260515; t=1780975566;
+	bh=DTwyV+49fLCBDx2v0KMlJ6TqGe0qDGgv9OAfvSH0tYE=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=iFmxC3RkKrUAh3QAMl5gVzb8HdROjdH5oT0UbWEJI/omLbuPjezupcvYRxHysTALW
+	 PwBym09KYsmIImspBm9kvoe39DehTn/5wtF7q1Io3gED0Cnmmlvjb8E2ctQSAEz04x
+	 S1jJSWnl+tOFBaMa4X8sI12BBltgG1aA1kjT9IIN/BxI4czNurrj8HWr6lzvroPith
+	 u4asF+F3VomimsF7xgZzwEF0OOZ30gNyvRVyJwKN8Gk5Zh/sAgDNGWVNEACoAeXGnQ
+	 ydNvQXYNvRuEnUaMI6AyrlDvqlBmnbAsReI7IN5Gap0o4bCQSzO/kz+3QF/vogd6Is
+	 M56LbLVzROnmQ==
+Date: Mon, 8 Jun 2026 20:26:04 -0700
+From: Drew Fustini <fustini@kernel.org>
+To: Icenowy Zheng <zhengxingda@iscas.ac.cn>
+Cc: Guo Ren <guoren@kernel.org>, Fu Wei <wefu@redhat.com>,
+	Michael Turquette <mturquette@baylibre.com>,
+	Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+	Neil Armstrong <neil.armstrong@linaro.org>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Paul Walmsley <pjw@kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>,
+	Albert Ou <aou@eecs.berkeley.edu>, Alexandre Ghiti <alex@ghiti.fr>,
+	Jisheng Zhang <jszhang@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	linux-riscv@lists.infradead.org, linux-clk@vger.kernel.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-gpio@vger.kernel.org, linux-phy@lists.infradead.org,
+	linux-usb@vger.kernel.org, Icenowy Zheng <uwu@icenowy.me>,
+	Han Gao <rabenda.cn@gmail.com>, Yao Zi <ziyao@disroot.org>
+Subject: Re: [PATCH 01/12] dt-bindings: clock: thead: add TH1520 MISC subsys
+ clock controller
+Message-ID: <aieHzC76oys5ejWT@thelio>
+References: <20260507081710.4090814-1-zhengxingda@iscas.ac.cn>
+ <20260507081710.4090814-2-zhengxingda@iscas.ac.cn>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20260507081710.4090814-2-zhengxingda@iscas.ac.cn>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -68,50 +79,30 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-T24gRnJpLCAgNSBKdW4gMjAyNiAwNzozMDo1NiArMDIwMCBQZXRyIFdvem5pYWsgd3JvdGU6Cj4g
-Y29tbWl0IDhmZTEyNTg5MmY0MCAoIm5ldDogcGh5OiBzZnA6IHByb2JlIGZvciBSb2xsQmFsbCBJ
-MkMtdG8tTURJTwo+IGJyaWRnZSBpbiBtZGlvLWkyYyIpIGludHJvZHVjZWQgYSByZWdyZXNzaW9u
-OiB0aGUgUm9sbEJhbGwgSTJDLXRvLU1ESU8KPiBicmlkZ2UgaXMgbm90IHlldCByZWFkeSB0byBy
-ZXNwb25kIHRvIENNRF9SRUFEL0NNRF9ET05FIGN5Y2xlcyB3aGVuCj4gc2ZwX3NtX2FkZF9tZGlv
-X2J1cygpIHJ1bnMgaW4gU0ZQX1NfSU5JVC4gIFRoZSAyMDAgbXMgcHJvYmUgdGltZXMgb3V0LAo+
-IGkyY19taWlfcHJvYmVfcm9sbGJhbGwoKSByZXR1cm5zIC1FTk9ERVYsIGFuZCBzZnBfc21fYWRk
-X21kaW9fYnVzKCkKPiBzZXRzIG1kaW9fcHJvdG9jb2wgPSBNRElPX0kyQ19OT05FLiAgQnkgdGhl
-IHRpbWUgc2ZwX3NtX3Byb2JlX2Zvcl9waHkoKQo+IHJ1bnMgKHVwIHRvIH4xNyBzIGxhdGVyIG9u
-IGFmZmVjdGVkIGhhcmR3YXJlKSwgdGhlIGJyaWRnZSBpcyBmdWxseQo+IGluaXRpYWxpemVkIOKA
-lCBidXQgUEhZIHByb2JpbmcgaXMgc2tpcHBlZCBiZWNhdXNlIHRoZSBwcm90b2NvbCBoYXMKPiBh
-bHJlYWR5IGJlZW4gY2hhbmdlZCB0byBOT05FLgo+IAo+IFRoaXMgYWZmZWN0cyBib3RoIG1vZHVs
-ZXMgaW5zZXJ0ZWQgYmVmb3JlIGJvb3QgYW5kIGhvdHBsdWdnZWQgbW9kdWxlcyBvbgo+IGhhcmR3
-YXJlIHdoZXJlIGJyaWRnZSBpbml0aWFsaXphdGlvbiBleGNlZWRzIHRoZSAyMDAgbXMgcHJvYmUg
-d2luZG93Cj4gKGNvbmZpcm1lZDogRkxZUFJPIFNGUC0xMEdULUNTLTMwTSB3aXRoIEFxdWFudGlh
-IEFRUjExM0MsIGhvdHBsdWdnZWQpLgo+IAo+IE1vdmUgdGhlIHByb2JlIGZyb20gaTJjX21paV9p
-bml0X3JvbGxiYWxsKCkg4oCUIGNhbGxlZCBhdCBidXMtY3JlYXRpb24KPiB0aW1lIOKAlCB0byBz
-ZnBfc21fcHJvYmVfZm9yX3BoeSgpIGluIHNmcC5jLCB3aGVyZSBpdCBydW5zIGFmdGVyIHRoZSBT
-RlAKPiBzdGF0ZSBtYWNoaW5lJ3MgbW9kdWxlIGluaXRpYWxpemF0aW9uIGRlbGF5cy4gIEV4cG9y
-dCB0aGUgcHJvYmUgZnVuY3Rpb24KPiBhcyBtZGlvX2kyY19wcm9iZV9yb2xsYmFsbCgpIHNvIHNm
-cC5jIGNhbiBjYWxsIGl0Lgo+IAo+IEZvciBSVEw4MjYxQkUtYmFzZWQgbW9kdWxlczogdGhlIHBy
-b2JlIGNvcnJlY3RseSByZXR1cm5zIC1FTk9ERVYgYXQgUEhZCj4gZGlzY292ZXJ5IHRpbWUsIGNh
-dXNpbmcgc2ZwX3NtX3Byb2JlX2Zvcl9waHkoKSB0byBkZXN0cm95IHRoZSBNRElPIGJ1cwo+IGFu
-ZCBzZXQgTURJT19JMkNfTk9ORSDigJQgZWxpbWluYXRpbmcgdGhlIDUrIG1pbnV0ZSBQSFkgcHJv
-YmUgcmV0cnkgbG9vcC4KPiAKPiBGb3IgZ2VudWluZSBSb2xsQmFsbCBtb2R1bGVzIChlLmcuIEZM
-WVBSTyBTRlAtMTBHVC1DUy0zME0gd2l0aCBBcXVhbnRpYQo+IEFRUjExM0MpOiB0aGUgcHJvYmUg
-bm93IHJ1bnMgYWZ0ZXIgaW5pdGlhbGl6YXRpb24gaXMgY29tcGxldGUgYW5kCj4gY29ycmVjdGx5
-IHJldHVybnMgMCDigJQgUEhZIGRldGVjdGlvbiBwcm9jZWVkcyBub3JtYWxseS4KCiQgZ2l0IHB3
-IHNlcmllcyBhcHBseSAxMTA2MzQxCkZhaWxlZCB0byBhcHBseSBwYXRjaDoKQXBwbHlpbmc6IG5l
-dDogcGh5OiBtZGlvLWkyYzogZGVmZXIgUm9sbEJhbGwgYnJpZGdlIHByb2JlIHRvIFBIWSBkaXNj
-b3ZlcnkKZXJyb3I6IGNvcnJ1cHQgcGF0Y2ggYXQgLmdpdC9yZWJhc2UtYXBwbHkvcGF0Y2g6NDQK
-ZXJyb3I6IGNvdWxkIG5vdCBidWlsZCBmYWtlIGFuY2VzdG9yCmhpbnQ6IFVzZSAnZ2l0IGFtIC0t
-c2hvdy1jdXJyZW50LXBhdGNoPWRpZmYnIHRvIHNlZSB0aGUgZmFpbGVkIHBhdGNoCmhpbnQ6IFdo
-ZW4geW91IGhhdmUgcmVzb2x2ZWQgdGhpcyBwcm9ibGVtLCBydW4gImdpdCBhbSAtLWNvbnRpbnVl
-Ii4KaGludDogSWYgeW91IHByZWZlciB0byBza2lwIHRoaXMgcGF0Y2gsIHJ1biAiZ2l0IGFtIC0t
-c2tpcCIgaW5zdGVhZC4KaGludDogVG8gcmVzdG9yZSB0aGUgb3JpZ2luYWwgYnJhbmNoIGFuZCBz
-dG9wIHBhdGNoaW5nLCBydW4gImdpdCBhbSAtLWFib3J0Ii4KaGludDogRGlzYWJsZSB0aGlzIG1l
-c3NhZ2Ugd2l0aCAiZ2l0IGNvbmZpZyBzZXQgYWR2aWNlLm1lcmdlQ29uZmxpY3QgZmFsc2UiClBh
-dGNoIGZhaWxlZCBhdCAwMDAxIG5ldDogcGh5OiBtZGlvLWkyYzogZGVmZXIgUm9sbEJhbGwgYnJp
-ZGdlIHByb2JlIHRvIFBIWSBkaXNjb3ZlcnkKLS0gCnB3LWJvdDogY3IKCgotLSAKbGludXgtcGh5
-IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3Rz
-LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
+On Thu, May 07, 2026 at 04:16:59PM +0800, Icenowy Zheng wrote:
+> TH1520 has a subsystem clock controller called MISC_SUBSYS in its
+> manual, mainly controlling clocks for USB and MMC/SD in non-TEE
+> environment.
+> 
+> Add device tree binding for it.
+> 
+> Signed-off-by: Icenowy Zheng <zhengxingda@iscas.ac.cn>
+> ---
+>  .../devicetree/bindings/clock/thead,th1520-clk-ap.yaml |  5 +++--
+>  include/dt-bindings/clock/thead,th1520-clk-ap.h        | 10 ++++++++++
+>  2 files changed, 13 insertions(+), 2 deletions(-)
+
+Thanks for working on USB and sorry for the delay in reviewing this series.
+
+Reviewed-by: Drew Fustini <fustini@kernel.org>
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
