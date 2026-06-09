@@ -4,96 +4,136 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6FA0CD6E79
-	for <linux-phy@archiver.kernel.org>; Tue,  9 Jun 2026 09:15:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 52721CD8CA4
+	for <linux-phy@archiver.kernel.org>; Tue,  9 Jun 2026 09:22:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=trkdIJ6VG6WY3f/1la+DN/BmLzznGg5AKPRzSu8adF0=; b=LjH1+0O0M6hDQG
-	xm0F09U7kaBaSoRDtCx6vl/182zf2dVUhmafu/9gYXAm0y0bRtMWbbze73DHPxYjzBLYkBk7fi+DV
-	nefnoVUiI6HuyRhn2lE68dWHvPXFgLF78agjP8rdiT5w7h5xrsc/t/fQOIOfiNXY7vCW3/6rS3ahn
-	wmrq0Jrf2jWTMQ421DTbx2ktIE4wj4p80e1mzputsqh8r23EQz9cLDjfA00jfkW6wTQz0rCSJLzjq
-	nRQPBk1y+J5tJAy8LWT4LLi4lDpm5uP3hi+zU7FjKPFIjhWv19g25m+Ou/hTjr0aYP3ENUtfh1l9u
-	6BPgOZ18TKy2mu4CwnGw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Znxd0eRvqo5VX5sPGXG2e3X3VQK3zWRmpo5X4B3sNbE=; b=vbd1oIkiRn8fus
+	ktUGBTpcCJIlmgFLxc6KzAoBPdz3Y3MgvExH44uW2sPgadZzkHqXTqYmi4Zv7K4FGY0imsWp6tBS8
+	OaFhHXpfdh5/sffwmTSwvRLRV8uwkPrFi4corxTVzywh8/70LUsuC7SkKn/XMhfrlOnMXDJzcnvJc
+	lhzX9Aq6IUWX1JBkQwPZ2qEzvloBhH7mOsXIx4Z40QE7yqulKZhY2LTRWDUT4NwP2Ea9MeV8RO/sH
+	GfB2FS6hYsiFFsHusS2lfeJlidmqRxA2/lDOOdi0974QzX+oTLUd8hh/dMrm25iK35400+1xq+njV
+	IKDoUzlIZwguZs+1mjTQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wWsYE-00000005B76-1tk0;
-	Tue, 09 Jun 2026 09:15:14 +0000
-Received: from mail-pj1-x102b.google.com ([2607:f8b0:4864:20::102b])
+	id 1wWsfS-00000005CJN-3lud;
+	Tue, 09 Jun 2026 09:22:42 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wWsYC-00000005B6S-3KB8
+	id 1wWsfJ-00000005CIX-2NXl
 	for linux-phy@lists.infradead.org;
-	Tue, 09 Jun 2026 09:15:14 +0000
-Received: by mail-pj1-x102b.google.com with SMTP id 98e67ed59e1d1-36bcf3d2565so3768904a91.3
-        for <linux-phy@lists.infradead.org>; Tue, 09 Jun 2026 02:15:12 -0700 (PDT)
+	Tue, 09 Jun 2026 09:22:36 +0000
+Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 6599JswI1784231
+	for <linux-phy@lists.infradead.org>; Tue, 9 Jun 2026 09:22:33 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=oLk9QPedDkL2uCX+n3ZKHm
+	PgbpWGF63huvolXEqxgzA=; b=dGE7nyv6Jm2Y29d2xm4CPI9j07RBzl7fB4bKvh
+	hxP5vbQ5E6pBUulCSMaRttaLa2r371y8DOs8XJKndldGkLdkk1g7dAa0ZVNliRDC
+	rsxrcaFaY4nu6qOJ5w4MJ9fh5gfnICxBgoCCL2Fu8fbR65DjlMI3OJ1TxZa/8bq0
+	8RFc4NTkmRS+3Dq0WondAsfsMDCcmQP5p7npV7oKz26XKK4/XuJoYOglRtDNZ2ZE
+	7Ub3ZCIxagz4nm4fKNxSkKv8lUYe4UJSprtRPOBeh1lC2U7jYu47usEfE76/ljH1
+	MFqOuBq8mX9esKhr9AQGkoi+ZhqwSbJmHnvGmJ0HCts2dOdA==
+Received: from mail-pf1-f200.google.com (mail-pf1-f200.google.com [209.85.210.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4epg3wg0aw-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Tue, 09 Jun 2026 09:22:32 +0000 (GMT)
+Received: by mail-pf1-f200.google.com with SMTP id d2e1a72fcca58-842b0dd8107so2968935b3a.0
+        for <linux-phy@lists.infradead.org>; Tue, 09 Jun 2026 02:22:32 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1780996511; x=1781601311; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=0o0LqIeARHGVNWJRSz7OmbFxoiBCC04C/bpvJasunoc=;
-        b=YpGosZRvN+HqeafjurwMqYnwrh1lPEnG0gj/vvTleNRB6OAvXw6HGB7LAfJIaJo3od
-         DJhQlj871l2vwPkPi9eJ+OeWCrtMl1POwq7bjdh78ZxdttlGzWnNBmNpYptw8kq6CfpE
-         8vq1Z7Kirj+Z26StjUGd1uQgBZA2vKiK+Ezhz7RO8STOyPq/UAScR+MEDqHBmG9IfRP1
-         i7GlFzTZ891ts/i9ze+SzacU9jlwGp2VQ6/PYxG3GZdhdvp/Amlm5Clbse15+OLf9xG8
-         khaXF7Ul3MbLHBcv/qznvVQ9zNM0wDnjBzWqNYVZI+Qm5Yr4Rmx2yicNVqzV5mYU714x
-         GJcQ==
+        d=oss.qualcomm.com; s=google; t=1780996952; x=1781601752; darn=lists.infradead.org;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=oLk9QPedDkL2uCX+n3ZKHmPgbpWGF63huvolXEqxgzA=;
+        b=QJ77gnSIq0ezcQr/mUMMwoG368JnWNwIWSEtSnSrF9P80x+IaGtDuVvrP2YfWKApR6
+         f6BdGu+ysjBm3kdx5e+HTKj6B06wbOc+cY0OBLLPnATqz26sx7e+qXOsJuQaKPTmbXAc
+         56bct11h3RZzBWRaYQ2uL/BAe7cHdz0zwdAFfnLgWLwi86w2auF1wb9xOjYPVvNRUPga
+         aw6KlRwhrPgkLdclXjHgy1jkcYh5r5b3Ym58pgWiyO3laG+UScn1kt/ZE/Sdd8ohePBA
+         QFsyEKztjUcWXpS049f2GRzMglNhkiAPb7uGf6GgnTMxfy0iY37HURM7dUup+X3+92NX
+         oOsw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1780996511; x=1781601311;
-        h=content-transfer-encoding:in-reply-to:from:content-language
-         :references:cc:to:subject:user-agent:mime-version:date:message-id
-         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=0o0LqIeARHGVNWJRSz7OmbFxoiBCC04C/bpvJasunoc=;
-        b=BCSZ8bPofu1gjaVH2Zcd4c8cHhbYeUUV2LNotb7r+49M1B5K1XVpQT0FlYVQVwpZqW
-         75O5ynx4/WzhNBLPVwCkkGObk7dWNG6P6N9INhka80P7cPJgh+5GnIrDCDoRTLdRW1SL
-         vA7aLOoKoB9eOcamOdPRnSGDQtp8AGoa0hoODpiQp5qVcqoUMVTDp5wdAH/PDYKNy55n
-         o+eOkpXui8tkP1q2QaK4fAZxO9XcKny2TQZZpQl5bnf402q5ezj0yx6hCIuoWygnpVaO
-         WDowk8a2SBM/gho3vtug/Cx6EtkcDpUL9Nsg2zaPKV1L0ffHg/o/+hSApVLpb2nmirPn
-         YFbQ==
-X-Forwarded-Encrypted: i=1; AFNElJ/4eYvswJgTj15AY4bUUQMik4cMBeJ1yjDyNzcxBd/reaLrr8FO81FZCjI4h6DTSIIkBfRV0B6lpHo=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzqwPqGAXL9DhDKtfk9Tawj6UbvNlzC19dD9RgHHI5ZSGr16nu0
-	rPb6ny2bj4Ps9C14dcKE8XCLtho1vzcDsUh5tuvEx35ilwg0l2ACAxyk
-X-Gm-Gg: Acq92OHXs15Bh06G4+1yN+eV8P/G2SYx9d0NtLc3zo4gawmGoreaiBDUQ6mOawDmVen
-	+Oy+m90VZSMlaS8oeZONbGQud0TEWh/p+O5O2rSVhKE8DB9Ldm9PQB7kAM4V/mtrxX/xA5iKfG4
-	FdHBmebGrVsfbFAclMBl7gjDZeyKRCL4KGMnA+4eORoZ+Fb80l3rIp5w+9zBAEVxkwU0YIohmGX
-	bGL8JlVO/JLM3r0CWNCCPhQtlKCQQTH4LF/Kd5Y2VbM5zGaQXjwnGMJAdeqntCr7VN8jNlwDbqY
-	mTGjNIB8c0RhXDs9oqpqLXqGXgvyoa6e1g7mfwuyNws8OuaTL00ZFgWxijIOJ7lK5lHpbaQAs0g
-	GMryUL0BX5U/aZU5asWA5HxD9CLC1JQAXnk+biU5twCdP0oUA+U4/mv4rOQ6dZP5OpmFQeVuRPx
-	tWiMnuE5cSs4sbjv/yT3i60qGPWpAJOc7uNtvDWl+3bzXqSfKLhxH//OcawRf7ACsw+CA28aDGt
-	Bp384+uYU7Pvn8=
-X-Received: by 2002:a17:90b:6c3:b0:36d:6308:12fa with SMTP id 98e67ed59e1d1-370f0386f18mr21294469a91.18.1780996511281;
-        Tue, 09 Jun 2026 02:15:11 -0700 (PDT)
-Received: from [192.168.0.100] (60-250-196-139.hinet-ip.hinet.net. [60.250.196.139])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-36f6c76f55asm18560817a91.7.2026.06.09.02.15.06
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 09 Jun 2026 02:15:09 -0700 (PDT)
-Message-ID: <c480d9a9-9489-4801-ad7d-33ec4ffc3242@gmail.com>
-Date: Tue, 9 Jun 2026 17:15:03 +0800
+        d=1e100.net; s=20251104; t=1780996952; x=1781601752;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=oLk9QPedDkL2uCX+n3ZKHmPgbpWGF63huvolXEqxgzA=;
+        b=ZzUWlDw6CDntF0Nm2L6kkgKO5yOBz8BlnfLK1ohh35mo2Zi9rV4FJDtlqQQrgU/1s/
+         nyBef5s77yVLFZYiKDtSi7CDux/NFzabf+ETkPnKnfpewzoCObLHRC4xRQM/fxVLw+Fl
+         oxsmOhkqO8MZz4sCrl3vU5jnLrfXQHXRp5f0yd/8epbFZ+tcjbupUDPvCFvxeNLpcgoX
+         TXf3BGDk3ix3EPDal12CJQBYJiLfR7+wmNj2/8Z5X68/RWIm42RscH3LMRO9Nuv8NAAa
+         Am4K9Ft7Y4j/yiKo3bxK+Tv8mZmFoHpR+hpntt1UUfqNLPrQMnqWnKU9ftCItQz3IHkq
+         6qMw==
+X-Forwarded-Encrypted: i=1; AFNElJ9YBbRrWArdMgOTFWuV+zwd8YAw8rzP0Ux6twd1xdQ7/BXMA3Vk8eMnTYY65iS7mvXbIukscwEsytM=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz5DzXJ6TwBKy3XWfmxETnUzugTyGH3pVujOTDSYO2xtj4Vvdyx
+	tMb8PbPmKYx0Gkt97pEu92A8fGHK6zpiTYTLnrfs8HnTtDu2a4H0uZAGHyBnxTErzlKY+HdOBOr
+	uKA/9PI1lX2QqcEktmXaq8p/QQYODhTgh34PFf/D8Sqtm8mmoMgukVV3DM8k+XFC9gigL
+X-Gm-Gg: Acq92OGZ2S6hLh/6ioE97S0/58LcgYgCyjnxz0GiDBkAHZlmN5vGIzTiyu3c13m7UMy
+	fTa8qL/LUrkqK714G+6R8ldYPpTXbbG2DB7GtpD5nKKEG4rElJoCsTxQl2EwKY4E63drEQyJFvp
+	UKED/nB2MCBq6GAO+zXscVeZhSajdRNyu0pgzKxzNebeOQ5NTrdnpoQuLq6zRSzl18a4WOlIlHR
+	O6QlXKLoqTdhjtxugf+8hp8cHRD7zdth7SghFWoMVk9Ixw6GMdBB4KXeFdn0frlnwY3zyGSG+CC
+	0Xw93DaTFzOzYmzR983G9mCsvnbcal2bUS8oHE00oOFg/z2dVXEL/ijH12PjoS4yKzqBlOxU1rd
+	zf8EQB9W1W89IrqRxY2aBnT/pwUiNFusmZ/V934T0q1czEwwO5WHsPaBJjrcyXGGfJ8OqF6ThF7
+	HBhy01/q0uvHtxSX3+NFM4LfzEtwugHlDzgr0504Sz3Ee43nIQGUZFktatCS0Nfg==
+X-Received: by 2002:a05:6a00:3d0d:b0:836:5c3c:2054 with SMTP id d2e1a72fcca58-842b0fbb621mr17711741b3a.37.1780996952106;
+        Tue, 09 Jun 2026 02:22:32 -0700 (PDT)
+X-Received: by 2002:a05:6a00:3d0d:b0:836:5c3c:2054 with SMTP id d2e1a72fcca58-842b0fbb621mr17711707b3a.37.1780996951659;
+        Tue, 09 Jun 2026 02:22:31 -0700 (PDT)
+Received: from hu-varada-blr.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com. [103.229.18.19])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-84282882170sm22861582b3a.30.2026.06.09.02.22.28
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 09 Jun 2026 02:22:31 -0700 (PDT)
+From: Varadarajan Narayanan <varadarajan.narayanan@oss.qualcomm.com>
+Subject: [PATCH v2 0/2] Enable the QMP PCIe PHY present in Qualcomm ipq5210
+ SoC
+Date: Tue, 09 Jun 2026 14:52:11 +0530
+Message-Id: <20260609-pcie-phy-v2-0-83bc80e79fa6@oss.qualcomm.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/2] dt-bindings: phy: nuvoton: Add MA35D1 USB2 OTG PHY
- binding
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Cc: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
- <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Jacky Huang <ychuang3@nuvoton.com>,
- Shan-Chun Hung <schung@nuvoton.com>, linux-phy@lists.infradead.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-References: <20260604101220.1092822-1-a0987203069@gmail.com>
- <20260604101220.1092822-2-a0987203069@gmail.com>
- <20260608-demonic-horned-honeybee-4f6bb7@quoll>
-Content-Language: en-US
-From: Joey Lu <a0987203069@gmail.com>
-In-Reply-To: <20260608-demonic-horned-honeybee-4f6bb7@quoll>
+X-B4-Tracking: v=1; b=H4sIAEPbJ2oC/02OQQ7CIBBFr9LMWpIBCpRexbig00Fn0VppNRrj3
+ UXduHw/Py/vCSsX4RX65gmFb7LKea5gdg3QKc1HVjJWBoPGo8eoFhJWy+mhYsyUo05o8gj1vhT
+ Ocv+q9ocfF75cq3H7jTCklRWdp0m2vkldCDa01lFO2rY50kjkox+SxQ6DiyO2lIOB/5Ia9ulwu
+ lVCpGS5OKNRYRrQZpssd7a/aTi8Xm/Smwyh2QAAAA==
+X-Change-ID: 20260609-pcie-phy-99fcf91a02fd
+To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong <neil.armstrong@linaro.org>,
+        Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
+        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+        Varadarajan Narayanan <varadarajan.narayanan@oss.qualcomm.com>
+X-Mailer: b4 0.14.3
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjA5MDA4NiBTYWx0ZWRfXwXYCsrVi0Lt/
+ gsuSrDunXotco9DqZraiDDFE2s9OK4mpcK/Ofal6t+C/TsEE+43HihJgudNqnKttRNjKST++HIO
+ 5qzflvTH4wBSWTVK2M3g88DewwIDIGlW58ybNoZeePV/tzynYzvjXHmuKXbyfalj/PAJHsE3NbS
+ P/edXaXDdcKd+RlkxFsLayJZQ4TJJoYiS5kum6fF6ylobB28MqNRcyP9xDRlcxm26EetqhnirAk
+ Mj5yDRBLV+bG50d4YeECWZ/1Kzqr1vQoL2rwVRR5TkUg/vhaO30yCYYHeRovy/rl2ZKLoKWj4CT
+ bPimIVoWUuUajY+BbDiVw+QWVyxggWocrB9D0JQ93GyXJ7QV1Nk3hkn5NTul3J+G9j8JaJHiFx2
+ UEw4TnrvMm+0ZRnp5Q9bmaCOnbv6z4wlVNJaN+OhCNXFFDnLTVExW/MofHRirE8HzB4hhLnkHv0
+ E1pch1V6PV8qc/MHw4g==
+X-Authority-Analysis: v=2.4 cv=csWrVV4i c=1 sm=1 tr=0 ts=6a27db58 cx=c_pps
+ a=mDZGXZTwRPZaeRUbqKGCBw==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
+ a=IkcTkHD0fZMA:10 a=FelO9ux0wxsA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yOCtJkima9RkubShWh1s:22
+ a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=Xdo0bYGMzzAWwOA9nckA:9 a=QEXdDO2ut3YA:10
+ a=zc0IvFSfCIW2DFIPzwfm:22
+X-Proofpoint-GUID: nXg79tzB1vqg-v3pXs4g1UhuPoWpNEkr
+X-Proofpoint-ORIG-GUID: nXg79tzB1vqg-v3pXs4g1UhuPoWpNEkr
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.125,FMLib:17.12.100.49
+ definitions=2026-06-09_02,2026-06-09_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501 clxscore=1015 spamscore=0 adultscore=0 lowpriorityscore=0
+ malwarescore=0 impostorscore=0 phishscore=0 suspectscore=0 bulkscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2605210000 definitions=main-2606090086
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260609_021512_842169_F2CE8055 
-X-CRM114-Status: GOOD (  14.23  )
+X-CRM114-CacheID: sfid-20260609_022235_400109_CA782AFC 
+X-CRM114-Status: UNSURE (   9.49  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,102 +145,41 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
+Document the bindings and update the driver to support
+the PCIe phy present in Qualcomm ipq5210 SoC.
 
-On 6/8/2026 6:45 PM, Krzysztof Kozlowski wrote:
-> On Thu, Jun 04, 2026 at 06:12:19PM +0800, Joey Lu wrote:
->
-> A nit, subject: drop second/last, redundant "binding". The
-> "dt-bindings" prefix is already stating that these are bindings.
-> See also:
-> https://elixir.bootlin.com/linux/v6.17-rc3/source/Documentation/devicetree/bindings/submitting-patches.rst#L18
-Understood. The trailing "binding" will be dropped from the patch 
-subject line in the next submission.
->> +properties:
->> +  compatible:
->> +    const: nuvoton,ma35d1-usb2-phy-otg
->> +
-> Where is reg? MMIO is expressed with reg, not via custom phandle.
-Understood. The PHY node will be restructured as a child of the syscon 
-node, with a `reg = <0x60 0x14>` property covering the writable PHY 
-control registers (USBPMISCR, MISCFCR0) within the parent's address 
-space. The `nuvoton,sys` custom phandle will be removed; the driver will 
-obtain the parent's regmap via 
-`syscon_node_to_regmap(dev->parent->of_node)`, which looks up the global 
-syscon list by `of_node`. PHY instance selection will be expressed via 
-`#phy-cells = <1>`, with 0 for the OTG port (USB0) and 1 for the 
-host-only port (USB1).
->
->> +  clocks:
->> +    maxItems: 1
->> +
->> +  nuvoton,sys:
->> +    $ref: /schemas/types.yaml#/definitions/phandle-array
->> +    items:
->> +      - items:
->> +          - description: phandle to the system management syscon.
->> +          - description: PHY instance index.
->> +            enum:
->> +              - 0   # USB0, OTG port (shared with DWC2 gadget controller)
->> +              - 1   # USB1, host-only port
->> +    description:
->> +      A phandle to the syscon node covering the SYS register block, with
->> +      one argument selecting the PHY instance. Index 0 selects the OTG
->> +      port PHY (USB0) and index 1 selects the host-only PHY (USB1).
->> +
->> +  "#phy-cells":
->> +    const: 0
->> +
->> +  nuvoton,rcalcode:
->> +    $ref: /schemas/types.yaml#/definitions/uint32
->> +    minimum: 0
->> +    maximum: 15
->> +    description:
->> +      Resistor calibration trim code written to the RCALCODE field in
->> +      USBPMISCR. The 4-bit value adjusts the PHY's internal termination
->> +      resistance. When absent the hardware reset default is used.
->> +
->> +  nuvoton,oc-active-high:
->> +    type: boolean
->> +    description:
->> +      When present, the over-current detect input from the VBUS power
->> +      switch is treated as active-high. The default (property absent) is
->> +      active-low. This setting is shared by both USB host ports.
->> +
->> +required:
->> +  - compatible
->> +  - clocks
->> +  - nuvoton,sys
->> +  - "#phy-cells"
->> +
->> +additionalProperties: false
->> +
->> +examples:
->> +  - |
->> +    #include <dt-bindings/clock/nuvoton,ma35d1-clk.h>
->> +
->> +    usb_hphy0: usb-host-phy {
-> usb-phy
->
-> And drop unused label.
+v2: Had incorrectly made both the phys as fallback. The single
+    lane phy is standalone and double lane uses ipq9574 as
+    fallback.
 
-Understood. The node name will be changed to `usb-phy` and the unused 
-label `usb_hphy0:` will be removed.
+v1: https://lore.kernel.org/linux-arm-msm/20260514-pci-phy-v1-0-482429192746@oss.qualcomm.com/
 
-Thanks for the review!
+Signed-off-by: Varadarajan Narayanan <varadarajan.narayanan@oss.qualcomm.com>
+---
+Varadarajan Narayanan (2):
+      dt-bindings: phy: qcom,ipq8074-qmp-pcie: Document the ipq5210 QMP PCIe PHY
+      phy: qcom-qmp-pcie: Add support for ipq5210 PCIe phys
 
->> +        compatible = "nuvoton,ma35d1-usb2-phy-otg";
->> +        clocks = <&clk HUSBH0_GATE>;
->> +        nuvoton,sys = <&sys 0>;
->> +        #phy-cells = <0>;
->> +    };
->> -- 
->> 2.43.0
->>
+ .../bindings/phy/qcom,ipq8074-qmp-pcie-phy.yaml    |   2 +
+ drivers/phy/qualcomm/phy-qcom-qmp-pcie.c           | 145 +++++++++++++++++++++
+ 2 files changed, 147 insertions(+)
+---
+base-commit: a87737435cfa134f9cdcc696ba3080759d04cf72
+change-id: 20260609-pcie-phy-99fcf91a02fd
+prerequisite-change-id: 20260514-icc-ipq5210-0ab03f3a3e83:v1
+prerequisite-patch-id: 0b6145b6635b18fe79fbbff5815041b43778c5ed
+prerequisite-patch-id: 924c6ff7baf4283ac7991ee94c803a00fc5cece4
+prerequisite-patch-id: c2fe1800fe769dccd37f94c19860a07f979e3c4c
+
+Best regards,
+-- 
+Varadarajan Narayanan <varadarajan.narayanan@oss.qualcomm.com>
+
 
 -- 
 linux-phy mailing list
