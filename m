@@ -4,50 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0CCF3CD8CB9
-	for <linux-phy@archiver.kernel.org>; Wed, 10 Jun 2026 12:24:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6449ACD8CB2
+	for <linux-phy@archiver.kernel.org>; Wed, 10 Jun 2026 12:25:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yxM9O2NJuey/Pr9Tbfd6SewaXEl+1LH6eem4avKnV9Q=; b=trxYz2MGcB6p6j
-	8xEAPtwxXMuR+kuZAgKD59HAuStjtCN+4aAbg3AEM5zgx+taUfxIhmsjIQo1NTSerDooZQmd1j4a2
-	9xQ+juCThj3Q3JB3Ymbfj9AcvSJyzS+QlInr/ZgPri/rBnGVZEHFIcvAuDHVhjKaUxyuYE9B4dQFa
-	Z9z7i8ay4sMQQMdUYGtglQLP6ZBapDeczNTbkHVAGpQSpJomCkSdVT2a9krRi0YVBJ/XXf98mZuJ7
-	W8NsC2LRvlXAKXxKdcFanhHJ+4g2PyJ9DnoRxC1qvW2MCuKtU6ECaw7hQ1bblbzONXRFX9P7eh5lX
-	gazInz8Zn3F7VFoaXUXg==;
+	List-Owner; bh=p1nrtBbutPxoCoK6/98792HlRjXTf9qNibm/GCv075I=; b=bji9eNYv0OTDJu
+	GszYEe2jGloAMz5/bD16CE0OtGMr2zntWlcnhvhWbyb2LPvmTgxzUw1j6uTit056qu+mfaCAqKEqq
+	HNA4Y5MTZzwKlsb+IYxMLHyNEXDFhTLY/EfX9isZVxQoyLDHfeEvCcyzKidNSDBJSpMC7Ye2pSEV1
+	dVfIe+yMz0Pl8rh7kEzAGLgH30VM19gqO1K5AJnEoG8MzzpYgcR+xYO/yCzp92ZxBCvaslOMahLRX
+	JsMbLxYQS8OeSCaxgh5c0uzS4SeoeOoVfiTqUNHAlWNtXeE8LGifA61hrucjON0W3E63du3i6qPic
+	ZEyYGN/ZzAkAgd7erEvw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXHyb-00000007dMU-350q;
-	Wed, 10 Jun 2026 12:24:09 +0000
+	id 1wXHzR-00000007dPJ-3UB2;
+	Wed, 10 Jun 2026 12:25:01 +0000
 Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXHya-00000007dMI-3LYX
+	id 1wXHzQ-00000007dOr-3kvP
 	for linux-phy@lists.infradead.org;
-	Wed, 10 Jun 2026 12:24:08 +0000
+	Wed, 10 Jun 2026 12:25:01 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 061276001D;
-	Wed, 10 Jun 2026 12:24:08 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 726541F00893;
-	Wed, 10 Jun 2026 12:24:04 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 57D71601E2;
+	Wed, 10 Jun 2026 12:25:00 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CC1251F00898;
+	Wed, 10 Jun 2026 12:24:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1781094247;
-	bh=mtvcuboUrlI0AQsrEOX/TZHrf9WeGic53kIp1kIHFUU=;
+	s=k20260515; t=1781094300;
+	bh=1kOU6NEg2CoUQdUwA85btrDwjWC9Ghu3pzAeY3TiXWU=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=Q2J9xLcRDeMtBiJAGyoR1JrBp7QriTckIB3WKeluy8JE57zoTOx7aP8ewr25cIyya
-	 bKJfGYxjm1s4oyemTKPAGsAB2X/XkLOOYrKR8v17sr1b+SRPGgmlKebNLhdD77bRKd
-	 Td/G8U31VIMaYO4+ev/toWo4wMzJw1+Os6AgA8+aOl6bmRffuhGOy5kWKxWeHmbiJR
-	 4XX8tvvZP1UPqR9NNIaCZ85bXXxvmFpSBMkH+w9udK9+lMJ7zK/qWmvznpocLr/ZET
-	 LOf2xwlYoBPr64zw6uBHyZDUF8BLZrfVBwatA/+Nj/xmATPC9u80Crwnd0Sb0KgFe3
-	 p9ETl3ONTeGRg==
-Message-ID: <0915cf12-a709-4777-aa5b-76c59d7e0cc4@kernel.org>
-Date: Wed, 10 Jun 2026 13:24:03 +0100
+	b=iQmXobFh9+asgdhgjn3dG9alw9DB+C/BO/s5LrKpqh5PbsWszee99/FrytQIQviYa
+	 kkEvTmno1Byr5Tpz4ugbR9ZiOUTvyTz8ZvbiIHkUjfM6QILjPI6Yf1Eh0sx0MqyWwJ
+	 QGDPy2la87ZdCXa5tWaZ2zzdiraW3jjT0KAzpRFMKHKfj4vOURmKTj88rHGxhFjo/M
+	 h98k2XJnAX934CT6pq8i4Lpmh9hvJXMERd/k9FA584o2vwwCaPVspJGcpjvSAhjO6t
+	 gMGaUpmJmxzAs0Dpve+2pp+BVKkF1t/IgS6sDIfkw8L6rzAW35S0IvAI9JhyyITLAg
+	 BIneHGfCkuw4A==
+Message-ID: <717792fb-c577-4ffb-9da2-56cb5c92bbf6@kernel.org>
+Date: Wed, 10 Jun 2026 13:24:55 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 4/9] MAINTAINERS: add entry for the Himax HM1092 sensor
- driver
+Subject: Re: [PATCH 7/9] arm64: dts: qcom: hamoa: reorder csiphy power-domains
+ for v8 CSI2-PHY
 To: Ramshouriesh <rshouriesh@gmail.com>,
  Bjorn Andersson <andersson@kernel.org>,
  Konrad Dybcio <konradybcio@kernel.org>, Rob Herring <robh@kernel.org>,
@@ -61,8 +61,8 @@ Cc: Aleksandrs Vinarskis <alex@vinarskis.com>, linux-arm-msm@vger.kernel.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-media@vger.kernel.org, linux-phy@lists.infradead.org
 References: <20260610-a14-himax-hm1092-v1-0-0c9907da47ed@gmail.com>
- <7J-1gC8dgmINtnoLxjOKRYa-3oonvV1RdoNSv3yCbHn_nmRKnHuQdYoxEu3iNdC7CdylTpM_R3WgXSvtxNQGFg==@protonmail.internalid>
- <20260610-a14-himax-hm1092-v1-4-0c9907da47ed@gmail.com>
+ <TVP2LaJffMZ_-0R3db-ID9Mof0YjutY69iFhCmgVSHp7iecd_kgAdMJaP_fKUZZpr253-o1ydtdGmXKkNw4sVg==@protonmail.internalid>
+ <20260610-a14-himax-hm1092-v1-7-0c9907da47ed@gmail.com>
 From: Bryan O'Donoghue <bod@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=bod@kernel.org; keydata=
@@ -108,7 +108,7 @@ Autocrypt: addr=bod@kernel.org; keydata=
  LKSGEglMpiX07M1AotgvylN5C8fjbouoK+/RAMsXkk8jba6rPfuuXPaDjCyyKn6zSVHETnHW
  3AJbgVY50T8STpnxayBQvWbCvu+6NOEjXCbyaOJig+5l0zlGN9XHjdANXC5HnwmyaGRL9YDq
  Jh2nVXVJDincOdQRdKcJjYLqaOAoWrYWSDi1iZGspHBTDrnOvfMQzzHY
-In-Reply-To: <20260610-a14-himax-hm1092-v1-4-0c9907da47ed@gmail.com>
+In-Reply-To: <20260610-a14-himax-hm1092-v1-7-0c9907da47ed@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -126,41 +126,12 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 On 10/06/2026 12:09, Ramshouriesh wrote:
-> Add a MAINTAINERS entry covering the Himax HM1092 NIR sensor driver and
-> its DT binding.
-> 
-> Signed-off-by: Ramshouriesh <rshouriesh@gmail.com>
-> ---
->   MAINTAINERS | 8 ++++++++
->   1 file changed, 8 insertions(+)
-> 
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index dadc54fe2bc8..ece71732e6dd 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -11643,6 +11643,14 @@ L:	linux-kernel@vger.kernel.org
->   S:	Maintained
->   F:	drivers/misc/hisi_hikey_usb.c
-> 
-> +HIMAX HM1092 SENSOR DRIVER
-> +M:	Ramshouriesh <rshouriesh@gmail.com>
-> +L:	linux-media@vger.kernel.org
-> +S:	Maintained
-> +F:	Documentation/devicetree/bindings/media/i2c/himax,hm1092.yaml
-> +F:	drivers/media/i2c/hm1092.c
-> +F:	drivers/media/i2c/hm1092_regs.h
-> +
->   HIMAX HX83112B TOUCHSCREEN SUPPORT
->   M:	Job Noorman <job@noorman.info>
->   L:	linux-input@vger.kernel.org
-> 
-> --
-> 2.53.0
-> 
+> The v8 phy-qcom-mipi-csi2 binding mandates power-domain-names ordered
+> "mmcx", "mx" (MMCX first)
 
-Splitting this will cause checkpatch grumbles.
+Feels like it probably shouldn't.
 
-Squash down into the previous patch.
+strings > magic indexes. Thanks for finding.
 
 ---
 bod
