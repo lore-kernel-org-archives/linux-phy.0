@@ -4,53 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8A554CD8CB9
-	for <linux-phy@archiver.kernel.org>; Wed, 10 Jun 2026 12:04:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8F8A2CD98C5
+	for <linux-phy@archiver.kernel.org>; Wed, 10 Jun 2026 12:04:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
-	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=LI5BaprflVCcaZhx4OB3pnFd0IZl2gUnQzyUh+8+nbA=; b=yH01nPdkPCbv4T
-	N+U3EQeyKxcRrz1PShm0ay3WpAqEaREivFOJoIlwLHXz42Czp04eFXt531eHTyWRyNRF3t6Mjjksj
-	eeHM83nKIyM+4F6BK6FGElHybpRFLavbmyExYOf0yTsBhV7GfGziWmVF5iOz5ndgE6G0oRYEMj7Ol
-	tLB0SHTYRWhxPheWpbuAN5iCKbVWkO7INttwH7p/I5LCEilovZbg8N79A2pSWbm+elw4K28mamzeG
-	DC/DYIw6z67eowy8zTMch8y+KMSU2Da7LjJM6fAKLWFWUVGD3Q71AgG894nDoyuIEoM4IDD8zOsdT
-	Exl3XIdby+seoGcl2Sdg==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=oO4cGYJBS3tdrh0z9ssotXpUjYfXuSK431OHbrAlTDE=; b=drP1TqyyyDOFhg
+	qgKW9LjXH6Xme2XVEh6tc7GtJYphNa19AEUCIZiv0ICz/A08WSLnNZN1hx5iSFA0t/XmSiLudnPYV
+	PwfUEjmJ25yDl5A5Gwxvi54Tcnwl1MkXFuD7LjP9EhPNEQs/IYVK43YsSqi3AeumjO+gk5k40gajf
+	DyFCywqB51yAx0PwW/S74IN2wp4yX1sRe7ogN03H6moZ6erphS7lS+sFlviMM63r0ueb6cNBhpVq1
+	4nKQwU80XLPpWPqDSn//r+BqgSL/wqCda+KIMdBVoV2j1KvdXHddrHpLZbhI0IqM7rQrXIEJdKsIf
+	WH6GVXTf4363bhd0I1lA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXHfd-00000007c8G-0leU;
-	Wed, 10 Jun 2026 12:04:33 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wXHfg-00000007c8y-1HAX;
+	Wed, 10 Jun 2026 12:04:36 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXHfc-00000007c86-2Dle
+	id 1wXHff-00000007c8g-2QxI
 	for linux-phy@lists.infradead.org;
-	Wed, 10 Jun 2026 12:04:32 +0000
+	Wed, 10 Jun 2026 12:04:35 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 04AE66020A;
-	Wed, 10 Jun 2026 12:04:30 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3BE961F00893;
-	Wed, 10 Jun 2026 12:04:24 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id EB40E42B6B;
+	Wed, 10 Jun 2026 12:04:34 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3FFE71F00898;
+	Wed, 10 Jun 2026 12:04:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1781093069;
-	bh=S4ACn8G1qS/jxxSppQTORw0fclxZxMlqldRqBXSGWms=;
-	h=From:Subject:Date:To:Cc;
-	b=jWlP5gEi4x/Hph6kQmh+OQS//Qbt9cMqqiKUdamgTpTr53nisXQMpgp2wLuQQi8me
-	 zJyl5nCjxl8SaePyo6NpxMrBNrxL8wQsBtQ4VeauHYc8CFdPN5aIzi3wsRTBxILwUb
-	 F5MhdM2Jto7+7x+VgUdzqLijx85tJmzt0wOgrT0iZA/Zw/sEig/ryZYMDVYBTL/eNR
-	 3QT290e/BJzKedY1i/cCFkTLj6mesTqcWgcbIZh+dR+XgpB0gBHAUZfIz7NudZF545
-	 Gj2K1SZd3hU06wdLLP5CZ7eC8XikwlZF5+lL+XH4hStQ6TSEpFWPco+gKqLmiPPTgA
-	 hUfREgsGO2/7Q==
+	s=k20260515; t=1781093074;
+	bh=IGbORZDlP08xL4kOubw+qIvp2KwcZHcpvZwB7+QRpIQ=;
+	h=From:Date:Subject:References:In-Reply-To:To:Cc;
+	b=KAoGGZGt20loUN3/qjFAufr10x4g2FZO0Mfg48RCmEITdMx1hnhECOkwfGRPBGb8R
+	 ISDcZ/DPypOLhg1I8AVkO7pqVWMef2GHrnU20VF5U/xt/USoAQRpUMIp3wPJ9J3SMu
+	 gJrzyBTI3EbY4fBKO2015ROTYTs4MOWHEPJ4pxYPrOU3rdbhxvHL7GFVqushInUF/k
+	 sFJLRRsqoRYbA+lgKYaA0+hrgNhyBp8DZl1wfqnNSjsXP0nMzds4bkryjXl/CRzgOj
+	 QvOAF/X9FdSrD/DZ83cw4yMdhVjJUd8RUuLGabKn/cRbCMUDcQU6A1fZtP06yptNds
+	 kEKkfsJiuvvkQ==
 From: Konrad Dybcio <konradybcio@kernel.org>
-Subject: [PATCH 0/4] Fix up QUSB2 PHY description for MSM8996/SM61[12]5
-Date: Wed, 10 Jun 2026 14:04:13 +0200
-Message-Id: <20260610-topic-8996_61x5_qusb2phy-v1-0-d7135980e78f@oss.qualcomm.com>
+Date: Wed, 10 Jun 2026 14:04:14 +0200
+Subject: [PATCH 1/4] dt-bindings: phy: qcom,qusb2: Straighten out SM6125
+ and MSM8996
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIAAAAAAAC/yXMQQqDMBBA0avIrA0kAUOnVykiJpnW6ULTjIoi3
- t20Xb7F/wcIZSaBe3VAppWFp7HA1BWEoR9fpDgWg9XWaWe0mqfEQd0QXefM1nSfRbxNw676qBv
- rEQkjQclTpidvv/Wj/VsW/6Ywf39wnhehaurafAAAAA==
-X-Change-ID: 20260610-topic-8996_61x5_qusb2phy-ad052b99e9de
+Message-Id: <20260610-topic-8996_61x5_qusb2phy-v1-1-d7135980e78f@oss.qualcomm.com>
+References: <20260610-topic-8996_61x5_qusb2phy-v1-0-d7135980e78f@oss.qualcomm.com>
+In-Reply-To: <20260610-topic-8996_61x5_qusb2phy-v1-0-d7135980e78f@oss.qualcomm.com>
 To: Vinod Koul <vkoul@kernel.org>, 
  Neil Armstrong <neil.armstrong@linaro.org>, Rob Herring <robh@kernel.org>, 
  Krzysztof Kozlowski <krzk+dt@kernel.org>, 
@@ -63,11 +62,11 @@ Cc: linux-arm-msm@vger.kernel.org, linux-phy@lists.infradead.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
  Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 X-Mailer: b4 0.15.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1781093064; l=1144;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1781093064; l=2934;
  i=konrad.dybcio@oss.qualcomm.com; s=20230215; h=from:subject:message-id;
- bh=bOB0AGGYszRk8rdclHAm2uGM6gHRVDNyn12YRlDVLfU=;
- b=E0PII49h2C/XxqCZEJsN1/iwnwdlzXHu/G6Au1rVCEZlwL5sjiHsYzRSk+H6rLRHlyT0DJZJD
- MEXTCWlIPU5AgLxj88cJKbPpe/44IGWUpeUGxamPCQOcm2k3lldzYVO
+ bh=c0LyjotfcFpdJBOn3D1FeK657jniSJjiEt+FZvf/UR4=;
+ b=A/bXzo4KUFVVoT2SN7t+ixD9CPwPowrpvPUhn/xtxEKVtI0yJrsjWasjvlCnI9/MWRVmf03CO
+ tbnxDSmoVOKDITnkbjdAmps0buLF820oXctOK/GHmm6xUeBJNaqpNFS
 X-Developer-Key: i=konrad.dybcio@oss.qualcomm.com; a=ed25519;
  pk=iclgkYvtl2w05SSXO5EjjSYlhFKsJ+5OSZBjOkQuEms=
 X-BeenThere: linux-phy@lists.infradead.org
@@ -86,33 +85,102 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-The MSM8996 QUSB2PHY was not being guaranteed a power source.
-The SM6125's QUSB2PHY was believed to be idential as the 96 one. It
-wasn't. This series tackles that, freeing us of some dt checker
-errors about vdd-supply not found on MSM8996 boards.
+From: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 
-Compile-tested only, but docs confirm my findings..
+SM6125 DT currently uses just the MSM8996 compatible (without a primary
+SM6125-specific one). This is not only wrong for the reasons of
+violating guidelines, but also happens to not be valid.
+
+The MSM8996 PHY is quite similar, although it requies a different init
+sequence (for arch reasons). MSM8996 also needs different power
+plumbing, as the VDD supply is fed through VDD_MX (which we define as
+a power domain rather than a regulator), unlike on SM6125.
+
+The init sequence seems to have been "good enough", but now that the
+bindings clearly diverge, add a new compatible for SM6125 with a SM6115
+fallback (as they seem to be an exact match from the SW interface POV).
 
 Signed-off-by: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
 ---
-Konrad Dybcio (4):
-      dt-bindings: phy: qcom,qusb2: Straighten out SM6125 and MSM8996
-      phy: qcom-qusb2: Fix SM6115 init sequence
-      arm64: dts: qcom: msm8996: Add VDD_MX to QUSB2 PHYs
-      arm64: dts: qcom: sm6125: Fix QUSB2 compatible
-
  .../devicetree/bindings/phy/qcom,qusb2-phy.yaml    | 31 ++++++++++++++++++++--
- arch/arm64/boot/dts/qcom/msm8996.dtsi              | 10 +++++++
- arch/arm64/boot/dts/qcom/sm6125.dtsi               |  3 ++-
- drivers/phy/qualcomm/phy-qcom-qusb2.c              |  4 +--
- 4 files changed, 43 insertions(+), 5 deletions(-)
----
-base-commit: 49e02880ec0a8c378e811bc9d85da188d7c6204c
-change-id: 20260610-topic-8996_61x5_qusb2phy-ad052b99e9de
+ 1 file changed, 29 insertions(+), 2 deletions(-)
 
-Best regards,
---  
-Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+diff --git a/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml b/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
+index 39851ba9de43..807d64aee547 100644
+--- a/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
++++ b/Documentation/devicetree/bindings/phy/qcom,qusb2-phy.yaml
+@@ -30,6 +30,9 @@ properties:
+               - qcom,sdm660-qusb2-phy
+               - qcom,sm4250-qusb2-phy
+               - qcom,sm6115-qusb2-phy
++      - items:
++          - const: qcom,sm6125-qusb2-phy
++          - const: qcom,sm6115-qusb2-phy
+       - items:
+           - enum:
+               - qcom,sc7180-qusb2-phy
+@@ -57,6 +60,12 @@ properties:
+       - const: ref
+       - const: iface
+ 
++  power-domains:
++    maxItems: 1
++
++  required-opps:
++    maxItems: 1
++
+   vdd-supply:
+     description:
+       Phandle to 0.9V regulator supply to PHY digital circuit.
+@@ -160,7 +169,6 @@ required:
+   - "#phy-cells"
+   - clocks
+   - clock-names
+-  - vdd-supply
+   - vdda-pll-supply
+   - vdda-phy-dpdm-supply
+   - resets
+@@ -182,6 +190,22 @@ allOf:
+         qcom,preemphasis-width: false
+         qcom,hsdisc-trim-value: false
+ 
++  # On MSM8996, VDD is supplied via the MX power domain
++  - if:
++      properties:
++        compatible:
++          const: qcom,msm8996-qusb2-phy
++    then:
++      required:
++        - power-domains
++        - required-opps
++    else:
++      properties:
++        power-domains: false
++        required-opps: false
++      required:
++        - vdd-supply
++
+ additionalProperties: false
+ 
+ examples:
+@@ -196,10 +220,13 @@ examples:
+                  <&gcc GCC_RX1_USB2_CLKREF_CLK>;
+         clock-names = "cfg_ahb", "ref";
+ 
+-        vdd-supply = <&pm8994_l28>;
+         vdda-pll-supply = <&pm8994_l12>;
+         vdda-phy-dpdm-supply = <&pm8994_l24>;
+ 
+         resets = <&gcc GCC_QUSB2PHY_PRIM_BCR>;
++
++        power-domains = <&rpmpd_mx>;
++        required-opps = <&rpmpd_opp4>;
++
+         nvmem-cells = <&qusb2p_hstx_trim>;
+     };
+
+-- 
+2.54.0
 
 
 -- 
