@@ -4,53 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2DF19CD98C7
-	for <linux-phy@archiver.kernel.org>; Thu, 11 Jun 2026 15:35:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4F3B5CD98D5
+	for <linux-phy@archiver.kernel.org>; Thu, 11 Jun 2026 15:35:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WWT14PTypPD3mTQ4O4qvVo5UDGIQu1WK3mW4VWJbRPQ=; b=tWXgkhw+RSdIH+
-	dsRy0z17hRG8mT8A4vM3tccJi26buyPfn6E4fXG5ncLcY8F7O+WFNvsJapU+nZaX0w+GnnIwgHlhM
-	gqy5fpO2pTCGqQULs5PBFn5QaxnIrRfzQrstEv6Ap1HCPeg0yXFxqEFCuRcTin8aqrgPzJA/1ttqB
-	BVL+DE1Fo5O7mIkSLLx3JJY5UVhkFqH25yY2T6911iiHmXSkRwoDVLpUFEvLEb9W0vVDogmq4a1Fy
-	9fYwFVRkdQIIAgkSjJcI82Ly+7z6yjHACx4NW+H6c1GT5h7HsqCT1GCiUCnaD5c254Vz8fkLwxAxM
-	nY4QZTiqQXjERhqsvbvg==;
+	List-Owner; bh=JpazjUm8jRGBg8Tdusce/1gJ/SUQgUJjpYxJnunmgIw=; b=iHn3Uuex7eC37M
+	UCS0LrfGcQuNDOrz2jIx4CFADoVC0cgFoAPa+f+k6CEKttrToEZ5X8qb2HOSh+mU5VkR/SU9NOXO0
+	bl1shBa6J7WttdxUGDxxqOqyCOfWUsTvAHpHRi6WbN2Gkca2lRRzgdA+1AkkXJ8SEE6Nsx71TmJy9
+	9PYkBhYail0ExL7mi/Hz0tkNvbTCVkFiNf1xXO6J68C8YIwMUP3nTOFap4yasIJcW5ku1H7Ek54Fu
+	ciKSITMEUEkW+5WI2hbYsnLXheFXy1q19O1/VsVC9iZUGGUGdECOAE7iShdsumUmy8HiyK8Ddr8aU
+	aqDv4jtDLq+tJ0qp+QpQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXhRl-00000009gvn-3zcw;
-	Thu, 11 Jun 2026 15:35:57 +0000
+	id 1wXhRn-00000009gwc-0JvA;
+	Thu, 11 Jun 2026 15:35:59 +0000
 Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXhRj-00000009guj-3HMp
-	for linux-phy@lists.infradead.org;
-	Thu, 11 Jun 2026 15:35:55 +0000
+	id 1wXhRm-00000009gw2-1tAO;
+	Thu, 11 Jun 2026 15:35:58 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 1657B600AA;
+	by tor.source.kernel.org (Postfix) with ESMTP id E238E600AF;
+	Thu, 11 Jun 2026 15:35:57 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 639191F00898;
 	Thu, 11 Jun 2026 15:35:55 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8CD5C1F00899;
-	Thu, 11 Jun 2026 15:35:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1781192154;
-	bh=+X//aE8JlBO0vat6y9vMNAc6uzi9BwS+bAP1p8utoyo=;
-	h=From:To:In-Reply-To:References:Subject:Date;
-	b=Fwf6uYG3qASA+gQsgnceviGjCHaBB6ty9IKbidIN2HCgBY7v6DYdXHakg6FU1jpQB
-	 MhU62iAaVENuX5EviS6OaeXokvpZRMG5KqV2MHMX+zXJEbM75y+Hk/Rl8znIg8KbNP
-	 VEq6iJO49uOZLZqTgDqvhLlVroguz4wYlc5WgPHokBk+vHGzQm3obyAYYyiRf9AusU
-	 XJ9BaCNidbGZ0Apy3Ol+6HBpWo4ZqDMbSRdwZCZ67AzH2mqPs87z6AzUIUu251Xz4v
-	 X/FyImdkTxH0iENh5t2Eq2RJvlB0HIWWB0jX4pvrbP7yc0VJs7eGCtgoTwdi6CMj/j
-	 VV8ThKFufMEig==
+	s=k20260515; t=1781192157;
+	bh=lTh3gak2OlqNapbhLUv8xX/8vtksD36ETk2Ye1RapUg=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date;
+	b=EBoJhAcmgzBjRcX8N4qApsGdnmzn/aIvaeCzfI0z2lvhr7IJZn+2kl6knENc8Gk5g
+	 Hay9dBH72lbf6Zjx9VyAqPddfY0PsYW6nk2DcqVa7jIwOcY4pdZHQHfDnfYKFrbqeW
+	 vB/6cV4hNiQKLjVMfZURiasdSjFJXxii00M3lNkgi1yZNjmDZVemhBI3MMKGD/Q32p
+	 4tfSacB4WKBxr1zufxrxQwZSWseSp791FWqEVqgO+oJGDRd9YvDxLhk/aZFaOmk3bA
+	 u1wAOMZlSBV5kbtjAk9mE/RFZWP1tZCQnLnsVHscjJRWivP/ZF/BtgeMtYx3JnihPG
+	 qic5kYF1iXWNg==
 From: Vinod Koul <vkoul@kernel.org>
-To: Neil Armstrong <neil.armstrong@linaro.org>, 
- linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
- Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
-In-Reply-To: <20260505102913.188406-2-krzysztof.kozlowski@oss.qualcomm.com>
-References: <20260505102913.188406-2-krzysztof.kozlowski@oss.qualcomm.com>
-Subject: Re: [PATCH] phy: Move MODULE_DEVICE_TABLE next to the table itself
-Message-Id: <178119215320.568088.3981475882754864802.b4-ty@kernel.org>
-Date: Thu, 11 Jun 2026 21:05:53 +0530
+To: Heiko Stuebner <heiko@sntech.de>
+Cc: neil.armstrong@linaro.org, jonas@kwiboo.se, 
+ linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org, 
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ kernel test robot <lkp@intel.com>
+In-Reply-To: <20260520102859.1357411-1-heiko@sntech.de>
+References: <20260520102859.1357411-1-heiko@sntech.de>
+Subject: Re: [PATCH] phy: rockchip: inno-usb2: Add missing clkout_ctl_phy
+ kerneldoc
+Message-Id: <178119215503.568088.10282212626375144435.b4-ty@kernel.org>
+Date: Thu, 11 Jun 2026 21:05:55 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
 X-BeenThere: linux-phy@lists.infradead.org
@@ -70,20 +72,15 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Tue, 05 May 2026 12:29:14 +0200, Krzysztof Kozlowski wrote:
-> By convention MODULE_DEVICE_TABLE() immediately follows the ID table it
-> exports, because this is easier to read and verify.  It also makes more
-> sense since #ifdef for ACPI or OF could hide both of them.
+On Wed, 20 May 2026 12:28:59 +0200, Heiko Stuebner wrote:
+> Add the missing documentation for the newly added clkout_ctl_phy field.
 > 
-> Most of the privers already have this correctly placed, so adjust
-> the missing ones.  No functional impact.
 > 
-> [...]
 
 Applied, thanks!
 
-[1/1] phy: Move MODULE_DEVICE_TABLE next to the table itself
-      commit: 1e8065dfac34d1217f961e079959b71c69123417
+[1/1] phy: rockchip: inno-usb2: Add missing clkout_ctl_phy kerneldoc
+      commit: 2ace2e949979b82f82f12dd76d7c5a6145246ca3
 
 Best regards,
 -- 
