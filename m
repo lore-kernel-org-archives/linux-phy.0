@@ -4,53 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CC370CD98CE
-	for <linux-phy@archiver.kernel.org>; Thu, 11 Jun 2026 12:52:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6A033CD98CE
+	for <linux-phy@archiver.kernel.org>; Thu, 11 Jun 2026 14:11:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t4A5SgLYKrase7bPdb4gBDhrns0dN9tka5ZvHYt91NY=; b=rzEXHUIUvn/gFG
-	fGD1Cn9v4uRKAsrPdeNrR7SW0ZB1XfPkdetMqne9SxHvgh7DuKqq8utWkwIj1t1Tboh5KPAHBB1Bv
-	duEe3OrfYtHUHpuHKZsELbpZ7w2mPr2PeRTWtui1pOj/SXfclLbbxEA3rVZnO9iqzuO9ncm3K/XMX
-	r2u6G6jKnoOpcj8b/OGdKfy+eezxhZRyfersT8+B/ZbG9KqilHkMZEmIxNpS+jzdsqEvelABNhId+
-	LJsyOZkVrE+xXoB3vcLA728fqN7Wd8+Ea2ekWi1nTmoAWkV+7f0zt8kbEHFOm2D88LdB1aiu3OTob
-	ld2QQfiaEcYwwry9tshw==;
+	List-Owner; bh=Q0xifXyYvZsKJrQQq3QfFPq++5zwXgF536q/jPStWXo=; b=1C5rJGNvWDm4pz
+	OhGs9mHuLvJg9vCG0aipXt2kFR4OXUn2bMVSz0JYGHEyWxVTKPRhM1QHVMIbGCo/MCWhOH9RxCGoN
+	UFu8U21yCcaFipb8kJs8K9avzfORKRQx1FaDN34gJ8CzyK0yk5JF3bGWGj49kZc4asytc/Xw9B0m8
+	p7cC9I+s1imLcBBM7DQsZzeDy1KKpJ03VkrFjuNQoqXiF8SKc/75JaAwu0eXDFoMPl522qLGbXVCB
+	7Oau6R6BWcz2c8+pfjz/WUYqpylevk+oEJdf17AK5N7NFTaw6qaH94up4T0Pw3krSR/Mm5gxhPavQ
+	SBEiRwaEfGXsbT4uIp6Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXetN-00000009Rg4-2JwN;
-	Thu, 11 Jun 2026 12:52:17 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wXg81-00000009Zqg-3DmT;
+	Thu, 11 Jun 2026 14:11:29 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXetM-00000009RfN-2q5s
+	id 1wXg7x-00000009ZqI-2waO
 	for linux-phy@lists.infradead.org;
-	Thu, 11 Jun 2026 12:52:16 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 0A63B4351C;
-	Thu, 11 Jun 2026 12:52:16 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9BE6C1F00898;
-	Thu, 11 Jun 2026 12:52:15 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1781182335;
-	bh=DFik4Idksa4Qt8B+00AV0rHfATGSQA5g5/7zk70opuI=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=NAA8rns2cnPXpXNNOQFnl7AzjNlhc+0tesv5ahUEMVlZ6oE49K7l+2vMSCF14OkMx
-	 V1s70PN9tsFUs+3B9XBGccuMmIE7OxKzhMi9kYNbI5at4lOwvovRF12nOt4n7rAg8c
-	 8zsSXNbTgd44VyDYPYiCDoWQtiZwQoezWEE6QXWX2qN6jW7VTlP7ZLz2BOeVTfX23q
-	 iZB77uMdZpFpOzyLgkRRKw7L5KRyb+5fnynS8Ah43Jqn3hBkUQ6opspsR0A38tbP0h
-	 Pxc3R7DeU5mCVFd0CMtDda7PiqGAWBO8l5t2n0CH9tE7u8Vja0BmLwfILlUvsxIvOv
-	 XU4TFaRU4yemQ==
-From: sashiko-bot@kernel.org
+	Thu, 11 Jun 2026 14:11:27 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1781187081;
+	bh=W7EGVJuT/r3agCU+HVq3EU1ny2saXdSuciAfZkVKCaE=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=qOmq9GBJYbhAAcsggdtw/CtOU7Rsb5WeSSfYg/SRateggR45l6GsRoT++lLB7Ja2P
+	 vu5jUNZtSwj6YRdOu3pE4BzhuxVNDNG0dEgWAjuJ+CAIMq7mBixI5K3flc77LYk2SO
+	 7CoE7FKFbeSX8HgkefOlbK+eGA5g7MbSXhfwLNz1R5cy9ZlBQmL8QJJo3NYt6pKM6i
+	 ssjrqGBvRGB6ARpcHbrnPtAiIoBWqVk72X7vhRgydfEXb2ad0tBPZpIs9HYrtxjA+m
+	 3kCqhhkHYcQqTBYxQHV2QFVTXkckvJHh2/2079r7EJvXqQh1KlV9YHrd+htDMPC7JT
+	 4DyrGr4coDiAg==
+Received: from [100.64.0.241] (unknown [100.64.0.241])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: cristicc)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 6C5BC17E03D7;
+	Thu, 11 Jun 2026 16:11:21 +0200 (CEST)
+Message-ID: <88624071-de6b-4fd1-9984-f79270c2979f@collabora.com>
+Date: Thu, 11 Jun 2026 17:11:20 +0300
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v3 2/6] phy: rockchip: samsung-hdptx: Handle uncommitted
  PHY config changes
-To: "Cristian Ciocaltea" <cristian.ciocaltea@collabora.com>
-Cc: neil.armstrong@linaro.org, olteanv@gmail.com, vkoul@kernel.org, linux-phy@lists.infradead.org
-In-Reply-To: <20260611-hdptx-clk-fixes-v3-2-67b1b0c00e16@collabora.com>
+To: sashiko-reviews@lists.linux.dev
+Cc: neil.armstrong@linaro.org, olteanv@gmail.com, vkoul@kernel.org,
+ linux-phy@lists.infradead.org
 References: <20260611-hdptx-clk-fixes-v3-2-67b1b0c00e16@collabora.com>
-Date: Thu, 11 Jun 2026 12:52:14 +0000
-Message-Id: <20260611125215.9BE6C1F00898@smtp.kernel.org>
+ <20260611125215.9BE6C1F00898@smtp.kernel.org>
+Content-Language: en-US
+From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+In-Reply-To: <20260611125215.9BE6C1F00898@smtp.kernel.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260611_071125_926669_33AA4F6C 
+X-CRM114-Status: GOOD (  24.02  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -62,72 +72,118 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIElnbm9yaW5nIFBMTCBj
-b25maWd1cmF0aW9uIGVycm9ycyBpbiBgcmtfaGRwdHhfcGh5X2NvbnN1bWVyX2dldCgpYCBsZWFk
-cyB0byBzaWxlbnQgaGFyZHdhcmUgZmFpbHVyZSBhbmQgdmlvbGF0ZXMgdGhlIENDRiBBUEkgY29u
-dHJhY3QuCi0tCgpjb21taXQgNmIxNDI2OGEzODg4OWM3M2VlZGQ2YzA4NWQ3ODAzMTZlYjBlN2Mz
-YwpBdXRob3I6IENyaXN0aWFuIENpb2NhbHRlYSA8Y3Jpc3RpYW4uY2lvY2FsdGVhQGNvbGxhYm9y
-YS5jb20+CgpwaHk6IHJvY2tjaGlwOiBzYW1zdW5nLWhkcHR4OiBIYW5kbGUgdW5jb21taXR0ZWQg
-UEhZIGNvbmZpZyBjaGFuZ2VzCgpUaGlzIGNvbW1pdCBpbnRyb2R1Y2VzIGEgcGxsX2NvbmZpZ19k
-aXJ0eSBmbGFnIHRvIGtlZXAgdHJhY2sgb2YgdW5jb21taXR0ZWQKUEhZIGNvbmZpZ3VyYXRpb24g
-Y2hhbmdlcy4gSXQgZW5zdXJlcyB0aGF0IGNoYW5nZXMgdG8gdGhlIFBIWSBsaW5rIHJhdGUgb3IK
-Y29sb3IgZGVwdGggYXJlIGRlbGF5ZWQgYW5kIHByb3Blcmx5IHByb2dyYW1tZWQgaW50byB0aGUg
-aGFyZHdhcmUgd2hlbiB0aGUKUEhZIHVzYWdlIGNvdW50IGlzIGluY3JlbWVudGVkLgoKPiBkaWZm
-IC0tZ2l0IGEvZHJpdmVycy9waHkvcm9ja2NoaXAvcGh5LXJvY2tjaGlwLXNhbXN1bmctaGRwdHgu
-YyBiL2RyaXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC1zYW1zdW5nLWhkcHR4LmMKPiBp
-bmRleCA3MTA2MDNhZmZmODY2Li41Mjk1ZDVmNmYyODdhIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMv
-cGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC1zYW1zdW5nLWhkcHR4LmMKPiArKysgYi9kcml2ZXJz
-L3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtc2Ftc3VuZy1oZHB0eC5jClsgLi4uIF0KPiBAQCAt
-MTM0NywyNSArMTM1NCwyMiBAQCBzdGF0aWMgaW50IHJrX2hkcHR4X3BoeV9jb25zdW1lcl9nZXQo
-c3RydWN0IHJrX2hkcHR4X3BoeSAqaGRwdHgpCj4gIAkJcmV0dXJuIDA7Cj4gIAo+ICAJcmV0ID0g
-cmVnbWFwX3JlYWQoaGRwdHgtPmdyZiwgR1JGX0hEUFRYX1NUQVRVUywgJnN0YXR1cyk7Cj4gLQlp
-ZiAocmV0KQo+IC0JCWdvdG8gZGVjX3VzYWdlOwo+IC0KPiAtCWlmIChzdGF0dXMgJiBIRFBUWF9P
-X1BMTF9MT0NLX0RPTkUpCj4gLQkJZGV2X3dhcm4oaGRwdHgtPmRldiwgIlBMTCBsb2NrZWQgYnkg
-dW5rbm93biBjb25zdW1lciFcbiIpOwo+ICsJaWYgKHJldCkgewo+ICsJCWF0b21pY19kZWMoJmhk
-cHR4LT51c2FnZV9jb3VudCk7Cj4gKwkJcmV0dXJuIHJldDsKPiArCX0KPiAgCj4gIAlpZiAobW9k
-ZSA9PSBQSFlfTU9ERV9EUCkgewo+ICAJCXJrX2hkcHR4X2RwX3Jlc2V0KGhkcHR4KTsKPiAgCX0g
-ZWxzZSB7Cj4gLQkJcmV0ID0gcmtfaGRwdHhfcGxsX2Ntbl9jb25maWcoaGRwdHgpOwo+IC0JCWlm
-IChyZXQpCj4gLQkJCWdvdG8gZGVjX3VzYWdlOwo+ICsJCS8qCj4gKwkJICogSWdub3JlIFBMTCBj
-b25maWcgZXJyb3JzIGF0IHRoaXMgcG9pbnQgYXMgcGxsX2NvbmZpZ19kaXJ0eQo+ICsJCSAqIHdh
-cyBub3QgcmVzZXQgYW5kLCB0aGVyZWZvcmUsIG9wZXJhdGlvbiB3aWxsIGJlIHJldHJpZWQuCj4g
-KwkJICovCj4gKwkJcmtfaGRwdHhfcGxsX2Ntbl9jb25maWcoaGRwdHgpOwo+ICAJfQo+ICAKPiAg
-CXJldHVybiAwOwoKW1NldmVyaXR5OiBIaWdoXQpJcyBpdCBzYWZlIHRvIGlnbm9yZSB0aGUgcmV0
-dXJuIHZhbHVlIG9mIHJrX2hkcHR4X3BsbF9jbW5fY29uZmlnKCkgaGVyZT8KCklmIHJrX2hkcHR4
-X3BsbF9jbW5fY29uZmlnKCkgZmFpbHMsIHdlIHJldHVybiAwIHRvIHRoZSBjYWxsZXIuIFRoaXMg
-Y2F1c2VzCmNsa19wcmVwYXJlKCkgdG8gcmV0dXJuIHN1Y2Nlc3MgdG8gdGhlIENvbW1vbiBDbG9j
-ayBGcmFtZXdvcmsgZXZlbiB0aG91Z2gKdGhlIGhhcmR3YXJlIGZhaWxlZCB0byBpbml0aWFsaXpl
-LiBEb2VzIHRoaXMgdmlvbGF0ZSB0aGUgQVBJIGNvbnRyYWN0PwoKQWxzbywgaGRwdHgtPnVzYWdl
-X2NvdW50IGlzIGxlZnQgaW5jcmVtZW50ZWQgZGVzcGl0ZSB0aGUgaGFyZHdhcmUgZmFpbHVyZS4K
-ClsgLi4uIF0KPiBAQCAtMTcwMCwxMyArMTcwNCwxOCBAQCBzdGF0aWMgaW50IHJrX2hkcHR4X3Bo
-eV9wb3dlcl9vbihzdHJ1Y3QgcGh5ICpwaHkpCj4gIAkJaWYgKHJldCkKPiAgCQkJcmtfaGRwdHhf
-cGh5X2NvbnN1bWVyX3B1dChoZHB0eCwgdHJ1ZSk7Cj4gIAl9IGVsc2Ugewo+IC0JCXJlZ21hcF93
-cml0ZShoZHB0eC0+Z3JmLCBHUkZfSERQVFhfQ09OMCwKPiAtCQkJICAgICBIRFBUWF9NT0RFX1NF
-TCA8PCAxNiB8IEZJRUxEX1BSRVAoSERQVFhfTU9ERV9TRUwsIDB4MCkpOwo+ICsJCWlmIChoZHB0
-eC0+cGxsX2NvbmZpZ19kaXJ0eSkKPiArCQkJcmV0ID0gcmtfaGRwdHhfcGxsX2Ntbl9jb25maWco
-aGRwdHgpOwoKW1NldmVyaXR5OiBIaWdoXQpXaWxsIHRoaXMgcmV0cnkgYmxvY2sgYWN0dWFsbHkg
-ZXhlY3V0ZSBpZiBwbGxfY29uZmlnX2RpcnR5IHdhcyBhbHJlYWR5IGZhbHNlPwoKSWYgdGhlIGlu
-aXRpYWwgcmtfaGRwdHhfcGxsX2Ntbl9jb25maWcoKSBmYWlsdXJlIGhhcHBlbmVkIGluIApya19o
-ZHB0eF9waHlfY29uc3VtZXJfZ2V0KCkgd2hlbiBwbGxfY29uZmlnX2RpcnR5IHdhcyBmYWxzZSwg
-aXQgc2VlbXMKcGxsX2NvbmZpZ19kaXJ0eSByZW1haW5zIGZhbHNlLiBXaGVuIHJrX2hkcHR4X3Bo
-eV9wb3dlcl9vbigpIGlzIGxhdGVyIGNhbGxlZCwKaXQgY2hlY2tzIGlmIHBsbF9jb25maWdfZGly
-dHkgaXMgdHJ1ZSBhbmQgbWlnaHQgc2tpcCB0aGUgcmV0cnkgZW50aXJlbHksCmxlYXZpbmcgdGhl
-IGhhcmR3YXJlIGluIGEgcGFydGlhbGx5IGluaXRpYWxpemVkIHN0YXRlIHdpdGggYW4gdW5sb2Nr
-ZWQgUExMLgoKPiArCQlpZiAoIXJldCkgewo+ICsJCQlyZWdtYXBfd3JpdGUoaGRwdHgtPmdyZiwg
-R1JGX0hEUFRYX0NPTjAsCj4gKwkJCQkgICAgIEhEUFRYX01PREVfU0VMIDw8IDE2IHwgRklFTERf
-UFJFUChIRFBUWF9NT0RFX1NFTCwgMHgwKSk7Cj4gKwo+ICsJCQlpZiAoaGRwdHgtPmhkbWlfY2Zn
-Lm1vZGUgPT0gUEhZX0hETUlfTU9ERV9GUkwpCj4gKwkJCQlyZXQgPSBya19oZHB0eF9mcmxfbGNw
-bGxfbW9kZV9jb25maWcoaGRwdHgpOwo+ICsJCQllbHNlCj4gKwkJCQlyZXQgPSBya19oZHB0eF90
-bWRzX3JvcGxsX21vZGVfY29uZmlnKGhkcHR4KTsKPiArCQl9Cj4gIAo+ICAJCWlmIChyZXQpCj4g
-IAkJCXJrX2hkcHR4X3BoeV9jb25zdW1lcl9wdXQoaGRwdHgsIHRydWUpOwoKLS0gClNhc2hpa28g
-QUkgcmV2aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MDYxMS1oZHB0
-eC1jbGstZml4ZXMtdjMtMC02N2IxYjBjMDBlMTZAY29sbGFib3JhLmNvbT9wYXJ0PTIKCi0tIAps
-aW51eC1waHkgbWFpbGluZyBsaXN0CmxpbnV4LXBoeUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHBz
-Oi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXBoeQo=
+Hi,
+
+TL;DR: This is similar to the review we got on v2, i.e. no real concerns, the
+series can be safely applied.
+
+Regards,
+Cristian
+
+On 6/11/26 3:52 PM, sashiko-bot@kernel.org wrote:
+> Thank you for your contribution! Sashiko AI review found 1 potential issue(s)
+> to consider: - [High] Ignoring PLL configuration errors in
+> `rk_hdptx_phy_consumer_get()` leads to silent hardware failure and violates
+> the CCF API contract. --
+> 
+> commit 6b14268a38889c73eedd6c085d780316eb0e7c3c Author: Cristian Ciocaltea
+> <cristian.ciocaltea@collabora.com>
+> 
+> phy: rockchip: samsung-hdptx: Handle uncommitted PHY config changes
+> 
+> This commit introduces a pll_config_dirty flag to keep track of uncommitted
+> PHY configuration changes. It ensures that changes to the PHY link rate or
+> color depth are delayed and properly programmed into the hardware when the PHY
+> usage count is incremented.
+> 
+>> diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+>> b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c index
+>> 710603afff866..5295d5f6f287a 100644 ---
+>> a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c +++
+>> b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+> [ ... ]
+>> @@ -1347,25 +1354,22 @@ static int rk_hdptx_phy_consumer_get(struct
+>> rk_hdptx_phy *hdptx) return 0;
+>>  
+>>  	ret = regmap_read(hdptx->grf, GRF_HDPTX_STATUS, &status); -	if (ret)
+>>  	-		goto dec_usage; - -	if (status &
+>>  	HDPTX_O_PLL_LOCK_DONE) -		dev_warn(hdptx->dev, "PLL locked
+>>  	by unknown consumer!\n"); +	if (ret) { +
+>>  	atomic_dec(&hdptx->usage_count); +		return ret; +	}
+>>  
+>>  	if (mode == PHY_MODE_DP) { rk_hdptx_dp_reset(hdptx); } else { -
+>>  	ret = rk_hdptx_pll_cmn_config(hdptx); -		if (ret) -
+>>  	goto dec_usage; +		/* +		 * Ignore PLL config
+>>  	errors at this point as pll_config_dirty +		 * was not reset
+>>  	and, therefore, operation will be retried. +		 */ +
+>>  	rk_hdptx_pll_cmn_config(hdptx); }
+>>  
+>>  	return 0;
+> 
+> [Severity: High] Is it safe to ignore the return value of
+> rk_hdptx_pll_cmn_config() here?
+
+Yes, this is done on purpose since the error is not critical at this point and
+we don't want to bail out too early. In practice, this shouldn't happen, unless
+the hardware is faulty, in which case the kernel is likely to crash before
+reaching this.
+
+> 
+> If rk_hdptx_pll_cmn_config() fails, we return 0 to the caller. This causes
+> clk_prepare() to return success to the Common Clock Framework even though
+> the hardware failed to initialize. Does this violate the API contract?
+> 
+> Also, hdptx->usage_count is left incremented despite the hardware failure.
+
+That's not a valid usecase, the hardware will be eventually programmed by
+rk_hdptx_phy_clk_set_rate() or rk_hdptx_phy_power_on(), whichever comes first.
+The clock provider is dependent on the PHY configuration, which is expected to
+follow clk_prepare_enable().
+
+> 
+> [ ... ]
+>> @@ -1700,13 +1704,18 @@ static int rk_hdptx_phy_power_on(struct phy *phy)
+>>  		if (ret)
+>>  			rk_hdptx_phy_consumer_put(hdptx, true);
+>>  	} else {
+>> -		regmap_write(hdptx->grf, GRF_HDPTX_CON0,
+>> -			     HDPTX_MODE_SEL << 16 | FIELD_PREP(HDPTX_MODE_SEL, 0x0));
+>> +		if (hdptx->pll_config_dirty)
+>> +			ret = rk_hdptx_pll_cmn_config(hdptx);
+> 
+> [Severity: High]
+> Will this retry block actually execute if pll_config_dirty was already false?
+> 
+> If the initial rk_hdptx_pll_cmn_config() failure happened in 
+> rk_hdptx_phy_consumer_get() when pll_config_dirty was false, it seems
+> pll_config_dirty remains false. When rk_hdptx_phy_power_on() is later called,
+> it checks if pll_config_dirty is true and might skip the retry entirely,
+> leaving the hardware in a partially initialized state with an unlocked PLL.
+
+The hardware is not really useful without rk_hdptx_phy_configure() being called,
+which sets pll_config_dirty to true.
+
+> 
+>> +		if (!ret) {
+>> +			regmap_write(hdptx->grf, GRF_HDPTX_CON0,
+>> +				     HDPTX_MODE_SEL << 16 | FIELD_PREP(HDPTX_MODE_SEL, 0x0));
+>> +
+>> +			if (hdptx->hdmi_cfg.mode == PHY_HDMI_MODE_FRL)
+>> +				ret = rk_hdptx_frl_lcpll_mode_config(hdptx);
+>> +			else
+>> +				ret = rk_hdptx_tmds_ropll_mode_config(hdptx);
+>> +		}
+>>  
+>>  		if (ret)
+>>  			rk_hdptx_phy_consumer_put(hdptx, true);
+> 
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
