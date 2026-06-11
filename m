@@ -4,96 +4,160 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5BEE7CD98D2
-	for <linux-phy@archiver.kernel.org>; Thu, 11 Jun 2026 10:01:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A1EBBCD98D2
+	for <linux-phy@archiver.kernel.org>; Thu, 11 Jun 2026 10:10:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VDNWrHPcUMshm4teCSWNgrtqKbwah7O0v7+m1GYjRL0=; b=g9TWlQ3hM/wfJ3
-	ijAGCE8t21IVJxStAJ1G7JRdBOST1GuCk4wZQNZA8FlnoK3l6O1kO0dPs4YIiu0Nsi5GmoZ7JG9zJ
-	PjpElhOj+gonohJleHyQ4qgoYKLEmkhh1SAONokaIGI8VXCS3ZnUV9u1J94PY343Un4tlBh+/yg5E
-	4apExLhSLmHBXbo8FDYFjv6hGNk8LBIfSSvWZishSV1GTv8BL9IiTrj37H6L2u8GgDbVNEumsQPrg
-	UoaZjBR9Mot6R3dZrN8vjuMHdka+EL2MVAO5OM9oW0iKllxZzs8zSEZ/kCaniWNrvXH+Yi3Dpm6fz
-	JA6o2KKWjfbCLinCfArg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=MpsQtLgoqVS8AoR6C7jfH84d2Qp9IjKqh0Jc/4PyyUM=; b=Rt8UKIoVXWm490
+	t252zrc8JhVoKCuaPFPs3MEPV20X9esYT3+fU4FCd5KkwPxEQSDCWMhI4AA0ycsQYDJ1zVTrVP949
+	/u9Ad9mhXtb3ALwuTk6Wyqxmn+QJ50S05YNIPEgX3w6MiI1ogRBBgOb5pOm0sPqEaDButSDWH9DZV
+	tSK630oqc9PoKlvL4hGqzIvejws9o4V1SDiERyS4JICFAOQ2hzLskAFN7vROzzLfWelWm6bHbw7tx
+	/sW10yd/3q+WiBIbMx4kdBBIs+aotMJ8O0GO2BPn4x92UPIGWRMSTydYq19EqrFRgspyfqiNsBJ4C
+	8ybUjELL8RzTLynsRMLw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXcED-00000009BS1-49Jm;
-	Thu, 11 Jun 2026 10:01:37 +0000
-Received: from mail-lj1-x22e.google.com ([2a00:1450:4864:20::22e])
+	id 1wXcMk-00000009C8E-1frE;
+	Thu, 11 Jun 2026 10:10:26 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXcEA-00000009BRV-48Ed
+	id 1wXcMh-00000009C7d-0p63
 	for linux-phy@lists.infradead.org;
-	Thu, 11 Jun 2026 10:01:36 +0000
-Received: by mail-lj1-x22e.google.com with SMTP id 38308e7fff4ca-396773734e8so9928451fa.3
-        for <linux-phy@lists.infradead.org>; Thu, 11 Jun 2026 03:01:33 -0700 (PDT)
+	Thu, 11 Jun 2026 10:10:24 +0000
+Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 65BA1SJS168127
+	for <linux-phy@lists.infradead.org>; Thu, 11 Jun 2026 10:10:22 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=YqRP6zDTIs74HF9sx2xYRh
+	n3mKkqsdODgZ5PXkmDO38=; b=EuYgqavH13xCJ2sM6C8hG8QMUEv63rc4IhGRI8
+	hbfmZvSjD7I6DULRbBKLVF84YDgkkPmrf8a6jghvzXG0wYx9S4nV9E7SsVKOJNdN
+	36EpJhZYPlxrY77LJkVtH5nDtRZizzm66xxOccNWiY/4JLZnJyh2jc/Kleer+ybC
+	ev7SVtM9cLLE/0wYssJ6lgoA83+yQgVEjrnxHm++siO4VYc3l7gWYLCpwJjMKMG8
+	ovwxvrVu3HbRiJU49b1bbD0ANlBDgRhfdjOaBDY5afY0Pj3uyW4WaxLiWXICzc5A
+	z8jYciOlXRZNP7EjDb11zojeZPUvNrk6j5wF8PeVNDlJ2ong==
+Received: from mail-pg1-f200.google.com (mail-pg1-f200.google.com [209.85.215.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4eqe6uav5b-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-phy@lists.infradead.org>; Thu, 11 Jun 2026 10:10:21 +0000 (GMT)
+Received: by mail-pg1-f200.google.com with SMTP id 41be03b00d2f7-c856470fe9fso4964238a12.2
+        for <linux-phy@lists.infradead.org>; Thu, 11 Jun 2026 03:10:21 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1781172092; x=1781776892; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to:subject
-         :user-agent:mime-version:date:message-id:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=Z6S7G7H1yZX6es3QmcIIuBRUMbZtpN//hujuIUHm018=;
-        b=xJKjL0jhg3Pf+NJg5rlNk+/7U07DFQgziFFTD26hrprvMTzq+H0qJWdtCcPmWrWvTL
-         P5c1aieHXOVCxRICaWb3fSYwKqZ90JjuhmyWv5pNLqiE8mjSTU86abuPDQKT2Lb1Dsrd
-         RLcT3hcMJfY+02LKKvRnjtgQaY6dp0Qbj+dm4lhjJn7AFlImf2KlRW6deo+7BWvMTkLy
-         l1Hp9apcH6UqD0rm/Y6mYSkBGufK2Wj+yr3K0Guq+k0Sk7VIxk/ojYfcculU98vNglVw
-         y3yX7kjLYa15LO/A7usFnrYHnwafSV8znNIZJFhpVZRxrQVhnFjgoCsQAg7pQL+/kiz/
-         x+PQ==
+        d=oss.qualcomm.com; s=google; t=1781172621; x=1781777421; darn=lists.infradead.org;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=YqRP6zDTIs74HF9sx2xYRhn3mKkqsdODgZ5PXkmDO38=;
+        b=j2qCSFJpolL+zCAJfmhy8VSEqnaQDskHd2UL67t+pjb9BDql62bbGrG1OC/CXeN+oo
+         TlEZkLTEkKRDsgMe76Ne6IvSy5hnJ8Eo6Zj5CVwE1Wv+IqWaLdJY/+KDGpePsxP8eXKj
+         S/ZIDoDmSjxfpReOZQVpTPfJ6/3cmsxqAPivesFd8qc2qcPJNTzwYVLzCWG1+GRIZxsI
+         sG96zLOgUsQSh2+kw2neIeK9eTrMy32ZKJHjdvMC2AsJfEuJWqoxW+UIMAehcs0zUk/R
+         cVA2P90PsWZrwSFsX+oWt29fkdRil7xnRxuiVOxg1m0J8X4f+UxVvLSrgJ8b2TNWDzFN
+         9SYw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1781172092; x=1781776892;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to:subject
-         :user-agent:mime-version:date:message-id:x-gm-gg:x-gm-message-state
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=Z6S7G7H1yZX6es3QmcIIuBRUMbZtpN//hujuIUHm018=;
-        b=bWxBpQWBFedHd2nrnO6ozCYglhdhgZVTUoL+CEOQXOmjTw4HX7+KduMGQwuhYkEzO+
-         9637ZnXUSb+TSLJoK9uyD0Ar7BvJZ4I+sERlhTqu0Wk72QSmWN5fc1tE10nvLVeeV0wq
-         +HkboKvfoEPqM+9gngib39g36xsD49dfjtVm0N/SmmLdw72WG74tLrkUH0cg5U4jtEum
-         O8Q3r0XiputSjfzdbj/YJ/Di4FfaXZWLSkurLDJaHlENRWmnSv25Uo/HJVVPoj2XOtP9
-         +vqAHXgodr0KEI6iRicJiGQt9KeV/P26B8HVnCxXOFhQ+YtNUlSZaD1JYsPKkLeur958
-         tthQ==
-X-Forwarded-Encrypted: i=1; AFNElJ+2arrcOdB6KTDpovkaaQqSXf0D8C6Hs0c1zXrs1cxI7EJU0QGl9/vXiaOBlxuXKiOhXS6flCn/3nU=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yz1fui5nB2Lt/HWLgwk9PnqchXJ36GDlUG/X1F+bYJS9KBAwp84
-	/iOeN6BuDt+NS6BQTyOjJdKggyzo4CY1p0q5TmkjvCwIJLBG4edtRVyTcuK3wzBGJdU=
-X-Gm-Gg: Acq92OHQkp5QIVl1KfkTMcK//EhX4eXLCgbH+3C8fenZeTjd1xvXWsL7nmHUPRHGeTK
-	bbObxAZc4WMyXbEWevo0pUe1dzlTknUvlH6z7gn/E3KFIFE0Pb0V1PxqCyiMLkgzXa8lIZNVWJk
-	w+IJ+XYufamsIzqF/RXlTytkhqGdsnPHbidNgUM9gpG7CeZUyEpvbtUNFlb05gfAurzgoyDe0Z3
-	B2sEl3XCFO/9BfLFaZEheWsa3KjSRlduZUvi30tkBro2x5L8klzAOdhyM2S0hoBoB41GNolHIYy
-	89yhyACwN/u1djemlpqdcnLmB39LhcotR7+XQRpENmTBGNIRjHo6Gpzx4fhQiFWrjDoyWL5mpgi
-	vu18MhfiW9C+7WikZqznLMhffADPqwy50NQjFrEvVs0Xs0Mv+6lmy9Fwy+DvoPOAMkSjM9vLTgW
-	MyhAv1I0SnW40uPz+fpUCi8euHP7JhZ17wK+cTJ80sYtnXQvmkoK7y2bTcjO5J2yYA5dXEgpXAj
-	TWQuwpRqiurwayv
-X-Received: by 2002:a2e:a90f:0:b0:396:7e06:4ecd with SMTP id 38308e7fff4ca-3991a0f7804mr2442451fa.7.1781172091878;
-        Thu, 11 Jun 2026 03:01:31 -0700 (PDT)
-Received: from [192.168.1.100] (91-159-24-186.elisa-laajakaista.fi. [91.159.24.186])
-        by smtp.gmail.com with ESMTPSA id 38308e7fff4ca-3991adc355asm3445981fa.41.2026.06.11.03.01.30
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 11 Jun 2026 03:01:31 -0700 (PDT)
-Message-ID: <8be0a964-e2fc-4c0a-a5ca-0e9e42b3d747@linaro.org>
-Date: Thu, 11 Jun 2026 13:01:30 +0300
+        d=1e100.net; s=20251104; t=1781172621; x=1781777421;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=YqRP6zDTIs74HF9sx2xYRhn3mKkqsdODgZ5PXkmDO38=;
+        b=RMQtdY4GBz3b06e6NA7zF/qIxd8sG0FPAy4lkZUPOUeCutOXookdFEakqErOJ7h5xY
+         43U9sQRhS2ItCj79e8mywCjdpKiY9bcid+Ie6YJ2WzlF2nxd/6RG6+vdXbdqxSnHX7A4
+         3Q9f++8oERSaTxw0mcH7ykUu20gkKSjkUf9U1GN5URxKOQTU3eZ7lTvHhswVxNX8NZs4
+         uyEhTbA8VeQ+OHthGFDuA/xVOgiiKcVC433aLfab45rQJruE7TwA0Fi3EWIKcEu/g3+F
+         Bref8pVuB4y85TJJObOiWlosMAq4sOaBNI9k/QM23skghI6brxfwyp5JrSQ6cbjSveup
+         K1nA==
+X-Forwarded-Encrypted: i=1; AFNElJ/HnkTYZmZWOhy5zNWOdJcRSzzPj+Kh0NbZfNib0yjYl1kMZ5Cr3Ythwjmftc54jd3jg5UhZKig+7I=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxKoKx4BetGelAguH5QdSEYBqLmxTK0XQk50lMpSBTNqvma8xVo
+	xrQePUaa0YQ8qdMbQc02IppJUZsXFNnGWeuSU26Bzid5pk/phv9yw/J3HX75kui0OBrIYnmwjpa
+	JuxVhzifrgUjfs+DCPvFNBqGkBHJT7QI/r/JzgmRrvfi1lt3vRbPZNkSa8E59sSxC1mwa
+X-Gm-Gg: Acq92OFTQmpEPa3DhSwfUm+gFCe1sTx4L/t6Uf5oKrUxsEaSX5BINhQTSgS0j15vCk2
+	25g7e+vztN+f2MV90FGcmELGKt1Chu7jHWCEJDKcE0L2sa0QLqgsvmrnkEEjPbLZm+SH3B41URc
+	5qhSPpww3Cn57gCDEDVAtxlCWmZiBbabrNY4HThmlkcCrEqWM+pwIEtaGPELC1l6gwgsVV6ucNp
+	StnuqjdY4z23vN5tTRkDIKxnhqdq83JTdEgTdMzVT2GmA1PLe3E/EDz7VY8nKwKh9YMeUTlW1k+
+	howcdpSWTnN97hn8aH81WN/KqecfXrTXGa3awBRJNmzQfjsUfI2sAjb+jc4C/bjJgI3XCbX5lJC
+	fyPNrLtYNkaDqMMqCd2jectB7DYJGK76IjQD1FNOQxnqZguA=
+X-Received: by 2002:a05:6a21:610c:b0:3b4:80db:f1b6 with SMTP id adf61e73a8af0-3b5e3191983mr2487540637.6.1781172620578;
+        Thu, 11 Jun 2026 03:10:20 -0700 (PDT)
+X-Received: by 2002:a05:6a21:610c:b0:3b4:80db:f1b6 with SMTP id adf61e73a8af0-3b5e3191983mr2487508637.6.1781172620116;
+        Thu, 11 Jun 2026 03:10:20 -0700 (PDT)
+Received: from [10.213.101.118] ([202.46.23.25])
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-c865860f3d4sm1279646a12.19.2026.06.11.03.10.12
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 11 Jun 2026 03:10:19 -0700 (PDT)
+From: Komal Bajaj <komal.bajaj@oss.qualcomm.com>
+Subject: [PATCH v5 0/5] arm64: dts: qcom: Add initial device tree support
+ for Shikra
+Date: Thu, 11 Jun 2026 15:40:07 +0530
+Message-Id: <20260611-shikra-dt-v5-0-103ed26a8529@oss.qualcomm.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 0/9] media/arm64: HM1092 IR camera and ASUS Zenbook A14
- (X1P42100) camera support
-To: Ramshouriesh <rshouriesh@gmail.com>,
- Bjorn Andersson <andersson@kernel.org>,
- Konrad Dybcio <konradybcio@kernel.org>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Mauro Carvalho Chehab <mchehab@kernel.org>,
- Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
- Loic Poulain <loic.poulain@oss.qualcomm.com>,
- Bryan O'Donoghue <bod@kernel.org>, Vinod Koul <vkoul@kernel.org>,
- Neil Armstrong <neil.armstrong@linaro.org>
-Cc: Aleksandrs Vinarskis <alex@vinarskis.com>, linux-arm-msm@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-media@vger.kernel.org, linux-phy@lists.infradead.org
-References: <20260610-a14-himax-hm1092-v1-0-0c9907da47ed@gmail.com>
-From: Vladimir Zapolskiy <vladimir.zapolskiy@linaro.org>
-In-Reply-To: <20260610-a14-himax-hm1092-v1-0-0c9907da47ed@gmail.com>
+X-B4-Tracking: v=1; b=H4sIAH+JKmoC/6XS207jMBAG4Fepco2R7fExV7wHQpVP01o0SYlDx
+ Ar13ddpC5sVIJC4sTRR/i+Z8bw2JY05labdvDZjmnPJQ18LebNpwt71u0RyrHXDKVdUMkbKPj+
+ OjsSJRC2j1UIKJVRT3z+OCfPL2bp/uNRjenqu5HR5+E9sN2dPcPvm7UIg47GrZzg8FsKpFSkiI
+ njaznLhu1SKW6clNdf0tnP54IeXrevjtirby4cKmYEwoqxBkyR6AHs3lHL79OwOYei623r8Qub
+ fyx8aBvrWcO5SR3zuY+53xGnvbeTIVOTtzD6LSvo++xLWSUSJzkeKP0hOoYzv0TpdpoxNglp9j
+ XpXElkayFO7cT4pyQzo4MEK1CpqME47LTRwjsGBR6a9a5bL3ucyDeOf8x5Va7nt68rw1crMjFC
+ imRJgAGiM9OPUFmzma8CuAV6BQJm3FL0AK78AYAXw//4AKmAoYkzGQQziC0CsAb0GRAW8DI6ho
+ 3Uw/BPgdDr9BR4b6bZZAwAA
+X-Change-ID: 20260511-shikra-dt-d75d97454646
+To: Bjorn Andersson <andersson@kernel.org>,
+        Konrad Dybcio <konradybcio@kernel.org>, Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski <krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>, Vinod Koul <vkoul@kernel.org>,
+        Neil Armstrong <neil.armstrong@linaro.org>,
+        Wesley Cheng <quic_wcheng@quicinc.com>, Ulf Hansson <ulfh@kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
+        linux-kernel@vger.kernel.org, linux-phy@lists.infradead.org,
+        linux-mmc@vger.kernel.org, monish.chunara@oss.qualcomm.com,
+        Komal Bajaj <komal.bajaj@oss.qualcomm.com>,
+        Imran Shaik <imran.shaik@oss.qualcomm.com>,
+        Monish Chunara <quic_mchunara@quicinc.com>,
+        Rakesh Kota <rakesh.kota@oss.qualcomm.com>,
+        Raviteja Laggyshetty <raviteja.laggyshetty@oss.qualcomm.com>,
+        Sneh Mankad <sneh.mankad@oss.qualcomm.com>,
+        Vishnu Santhosh <vishnu.santhosh@oss.qualcomm.com>,
+        Xueyao An <xueyao.an@oss.qualcomm.com>,
+        Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>
+X-Mailer: b4 0.14.3
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1781172612; l=4628;
+ i=komal.bajaj@oss.qualcomm.com; s=20250710; h=from:subject:message-id;
+ bh=qwwBqiUVQhsEEk8IMHKN6+o4JIzdec3YADBMvEXeMO8=;
+ b=SeTICSgt8xeYx9/zvEW0plaXxOwnexE1sXl0CQBgwnTqRlBrb5+SzSC2VALH4i7BTgTh6R/iI
+ 0GFuY6GnlLjBVeKljMqXqvoIs99wLs8oDejlH/Ekv/dS+SmFmbi60H5
+X-Developer-Key: i=komal.bajaj@oss.qualcomm.com; a=ed25519;
+ pk=wKh8mgDh+ePUZ4IIvpBhQOqf16/KvuQHvSvHK20LXNU=
+X-Proofpoint-Spam-Info: AW1haW4tMjYwNjExMDEwMSBTYWx0ZWRfX4rDGZ81sXxAL
+ zCnz6yUrjZCme3ilLIFZYbqhXXD4QZIt42xZwFllH+aigrUa3gjM5oVW0FUywDFkeMSKdd/8CPu
+ Jv1ltSFee4YgRbLzvgnlfiZDTi/Ksvw=
+X-Authority-Analysis: v=2.4 cv=atOCzyZV c=1 sm=1 tr=0 ts=6a2a898d cx=c_pps
+ a=oF/VQ+ItUULfLr/lQ2/icg==:117 a=ZePRamnt/+rB5gQjfz0u9A==:17
+ a=IkcTkHD0fZMA:10 a=FelO9ux0wxsA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=ZpdpYltYx_vBUK5n70dp:22
+ a=VwQbUJbxAAAA:8 a=EUspDBNiAAAA:8 a=thxruFBVZ7uuMI2BP_UA:9 a=QEXdDO2ut3YA:10
+ a=3WC7DwWrALyhR5TkjVHa:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNjExMDEwMSBTYWx0ZWRfX9OyrdNgZlQc3
+ Zy4F3ywgDNgjzouHA+NvUjJ33Q4gMJzjxWA2DTCtMl3uraR8DAfaxiHrUV+Ja13Li/rkc8r6q6B
+ e3SvjUB0Wep5Wt/fpRE7U4kdy73NuqBU03clq4Y67XwCZQroY8bLrwg+k7Yu51veTsxEZ+8rXpT
+ qHbvDmIfnHpkbl1kke2sjrkkz7gXRyRs5qgXDawaFEZ5O0vO7XX/IzQ1oaaNYY10Iu99IdOjXqn
+ ++CxFlgqTFBPLuYxB4PsTdSHX6Ual1Vn3MQce0E1f9/v5pEzztKVpeocRSTNXRdAz4N65Pw48tB
+ zoos8v61tKzR1UMpFCFapeWfUbnvzhfwuncNi4Vw7KMz2AE+xJw5E4ZNomEOEWSYfXwRz0tm3W2
+ tthKPfaDLUDKWR1BkMl6ZU5IoOfV+nySVecn0JGrVV3uASvbI/wOiYrCaoNXD1FA13i685O/olu
+ Vbo6E2PTBpseWGS4b9A==
+X-Proofpoint-GUID: DKcEw6va8_WKYxXGxGLVtcCvN1t0wY8H
+X-Proofpoint-ORIG-GUID: DKcEw6va8_WKYxXGxGLVtcCvN1t0wY8H
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.125,FMLib:17.12.100.49
+ definitions=2026-06-11_02,2026-06-09_02,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ adultscore=0 impostorscore=0 bulkscore=0 clxscore=1015 spamscore=0
+ malwarescore=0 phishscore=0 priorityscore=1501 lowpriorityscore=0
+ suspectscore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2606040000
+ definitions=main-2606110101
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260611_030135_053620_8C5735C0 
-X-CRM114-Status: GOOD (  20.11  )
+X-CRM114-CacheID: sfid-20260611_031023_416785_57BEDEDC 
+X-CRM114-Status: GOOD (  11.84  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,66 +169,102 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 6/10/26 14:09, Ramshouriesh wrote:
-> The ASUS Zenbook A14 (Qualcomm X1P42100, "Purwa") has two front cameras
-> behind the SoC CAMSS: an OV02C10 RGB sensor and a Himax HM1092 mono NIR
-> sensor used for face unlock. This series adds a driver for the HM1092 and
-> the device tree to wire both sensors up on the A14.
-> 
-> The HM1092 binding, driver and MAINTAINERS entry do not depend on the
-> rest of the series and can go through the media tree on their own.
-> 
-> The remaining DTS and PHY patches are the A14 camera enablement. They sit
-> on top of several series that are not in mainline yet, listed below. With
-> those applied the series builds on next-20260609: the A14 dtb and every
-> module it touches (hm1092, qcom-camss including csiphy, and the
-> qcom-mipi-csi2 phy) compile and work: both sensors probe and stream
-> frames on the A14.
-> 
-> Prerequisites, in the order they apply:
-> 
->    1. phy: dphy: Extend phy_configure_opts_mipi_dphy to support position
->       and polarity (Bryan O'Donoghue, v1)
->       https://lore.kernel.org/all/20260325-dphy-params-extension-v1-0-c6df5599284a@linaro.org/
->    2. clk: qcom: videocc and camcc for X1P42100 (Jagadeesh Kona, v5)
->       https://lore.kernel.org/all/20260507-purwa-videocc-camcc-v5-0-fc3af4130282@oss.qualcomm.com/
->    3. phy: qcom-mipi-csi2: Add a CSI2 MIPI DPHY driver (Bryan O'Donoghue, v8)
->       https://lore.kernel.org/all/20260523-x1e-csi2-phy-v8-0-a85668459521@linaro.org/
->    4. media: dt-bindings and PHY updates for CAMSS on x1e80100 (Bryan O'Donoghue, v11)
->       https://lore.kernel.org/all/20260326-b4-linux-next-25-03-13-dtsi-x1e80100-camss-v11-0-5b93415be6dd@linaro.org/
->    5. arm64: dts: qcom: x1e/Hamoa camera DTSI (Bryan O'Donoghue, v3)
->       https://lore.kernel.org/all/20260326-x1e-camss-csi2-phy-dtsi-v3-0-1d5a9306116a@linaro.org/
->    6. media: qcom: camss: Add support for X1P42100 camss (Wenmeng Liu, v2)
->       https://lore.kernel.org/all/20260511-purwa_camss-v2-0-22608ab9126c@oss.qualcomm.com/
+Add initial device tree support for the Qualcomm Shikra SoC.
+Shikra ships in a SoM form factor; this series covers the CQ2390M,
+CQ2390S and IQ2390S SoM variants and their EVK boards.
+The series adds:
+- dt-bindings for the Shikra SoC, CQ2390M/CQ2390S/IQ2390S EVK boards
+- SoC base DTSI
+- CQ2390M SoM DTSI with PM4125 and PM8005 PMIC regulator definitions
+- IQ2390S SoM DTSI with PM8150 PMIC regulator definitions
+- EVK DTS files enabling UART and eMMC on the carrier board
 
-That's a long list.
+Note: USB support is intentionally dropped from this series. It will be
+sent separately once the USB driver changes for Shikra are concluded.
 
-> 
->  From the videocc/camcc series only the CAMCC block (patch 6/6) is still
-> needed; its clock drivers and bindings are already in linux-next. That
-> patch adds the camcc node and sets the Purwa camcc and videocc compatibles.
-> 
->  From the x1e/Hamoa camera DTSI series only the CCI and CAMSS-block patches
-> are needed; its CAMCC block duplicates the videocc/camcc series, and the
-> x1e80100 board patches do not apply to the A14.
-> 
-> Patch 1 adds the OV02C10 node. It is Aleksandrs Vinarskis' work, carried
-> here with his Signed-off-by so the A14 camera support stays one chain.
+Signed-off-by: Komal Bajaj <komal.bajaj@oss.qualcomm.com>
 
-This patch should be removed from consideration, since it is not based on
-the upstream codebase.
+---
+Changes in v5:
+- Add qcom,rpmcc-qcm2290 fallback compatible to rpmcc node in shikra.dtsi
+- Link to v4: https://lore.kernel.org/r/20260527-shikra-dt-v4-0-b5ca1fa0b392@oss.qualcomm.com
 
-I'd suggest you to upstream the sensor driver only through linux-media, which
-is patches 2/9 and 3/8, all other changes should go only after it.
+Changes in v4:
+- Updated commit message for 1/5 and 3/5 (Krzysztof, Konrad)
+- Incorporated Konrad's comment
+- Collected Reviewed-By tags
+- Link to v3: https://lore.kernel.org/r/20260522-shikra-dt-v3-0-80ffde8a3dc4@oss.qualcomm.com
 
+Changes in v3:
+- Drop USB nodes from this series; will be sent separately pending
+  conclusion of USB driver changes for Shikra
+- Fix memory base (0xa0000000 -> 0x80000000) (sashiko-bot)
+- Fix power-domain macro: QCM2290_VDDCX -> RPMPD_VDDCX for sdhc (sashiko-bot)
+- Fix INTC GIC_PPI number from 8 to GIC_PPI 9 (sashiko-bot)
+- Rename SoM variant CQ7790M to CQ2390M (Konrad)
+- Add PMIC DTSI includes to CQ2390M and IQ2390S SoM
+- Link to v2: https://lore.kernel.org/r/20260519-shikra-dt-v2-0-c01b90fb4395@oss.qualcomm.com
+
+Changes in v2:
+- Update SoM/EVK combination bindings (Krzysztof)
+- Add per-CPU-type PMU nodes with PPI partitions for the heterogeneous
+  cluster (Cortex-A55 + Cortex-A78C) (Konrad)
+- Use full product names CQ2390M/CQ2390S in commit messages (Krzysztof)
+- Update RPM interconnect tags and power-domain to RPMPD for sdhc (sashiko-bot)
+- Update to use MPM for ss_phy_irq instead of direct GIC for usb (sashiko-bot)
+- Add IQ2390S SoM (PM8150 PMIC) and IQS EVK board support
+- Link to v1: https://lore.kernel.org/r/20260512-shikra-dt-v1-0-716438330dd0@oss.qualcomm.com
+
+---
+Komal Bajaj (5):
+      dt-bindings: arm: qcom: Document Shikra and its EVK boards
+      arm64: dts: qcom: Introduce Shikra SoC base dtsi
+      arm64: dts: qcom: Add Shikra CQ2390M SoM platform
+      arm64: dts: qcom: Add Shikra IQ2390S SoM platform
+      arm64: dts: qcom: Add Shikra EVK boards
+
+ Documentation/devicetree/bindings/arm/qcom.yaml |  18 +
+ arch/arm64/boot/dts/qcom/Makefile               |   3 +
+ arch/arm64/boot/dts/qcom/shikra-cqm-evk.dts     |  40 ++
+ arch/arm64/boot/dts/qcom/shikra-cqm-som.dtsi    | 156 +++++
+ arch/arm64/boot/dts/qcom/shikra-cqs-evk.dts     |  40 ++
+ arch/arm64/boot/dts/qcom/shikra-evk.dtsi        |  15 +
+ arch/arm64/boot/dts/qcom/shikra-iqs-evk.dts     |  40 ++
+ arch/arm64/boot/dts/qcom/shikra-iqs-som.dtsi    | 170 +++++
+ arch/arm64/boot/dts/qcom/shikra.dtsi            | 842 ++++++++++++++++++++++++
+ 9 files changed, 1324 insertions(+)
+---
+base-commit: abe651837cb394f76d738a7a747322fca3bf17ba
+change-id: 20260511-shikra-dt-d75d97454646
+prerequisite-change-id: 20260429-shikra-gcc-rpmcc-clks-2094edfff3b0:v5
+prerequisite-patch-id: 59bb0a7828e41f546f734f127d81da83c0adcda9
+prerequisite-patch-id: 197da6bcb15cadc47869dba88c8020987b25c335
+prerequisite-patch-id: 8ec9c1eb03f052ae232ed54117abed38672c23f6
+prerequisite-patch-id: 350db4f4bcdfc0fad9ed57cd5b1723f85ad44f5d
+prerequisite-message-id: 20260508-shikra_mailbox_and_rpm_changes-v3-1-698f8e5fb339@oss.qualcomm.com
+prerequisite-patch-id: e80ea7940b9817449cec21afa6e9e443e007166f
+prerequisite-patch-id: 2526e0507d3b5c065eafd75a657d7f903af8488f
+prerequisite-patch-id: c3b7e18cd60d1f779b88ace2fae1227d3d37d83e
+prerequisite-message-id: 20260508-shikra_mailbox_and_rpm_changes-v3-2-698f8e5fb339@oss.qualcomm.com
+prerequisite-patch-id: e80ea7940b9817449cec21afa6e9e443e007166f
+prerequisite-patch-id: 2526e0507d3b5c065eafd75a657d7f903af8488f
+prerequisite-patch-id: c3b7e18cd60d1f779b88ace2fae1227d3d37d83e
+prerequisite-change-id: 20260430-shikra-imem-binding-a7bb9d2f16d2:v1
+prerequisite-patch-id: 80d8ab865b7b0663c5b2878b45b55e2e4fde9c19
+prerequisite-change-id: 20260501-shikra-scm-binding-a7ff5fabd0f2:v1
+prerequisite-patch-id: 8e645e1c6ad6182de4813a726c293654324de1df
+prerequisite-change-id: 20260501-shikra-tcsr-binding-fff1689e4097:v1
+prerequisite-patch-id: f6781d2cf0829ccb32f1400623c95739972f2ee2
+
+Best regards,
 -- 
-Best wishes,
-Vladimir
+Komal Bajaj <komal.bajaj@oss.qualcomm.com>
+
 
 -- 
 linux-phy mailing list
