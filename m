@@ -4,59 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 270C0CD98D2
-	for <linux-phy@archiver.kernel.org>; Thu, 11 Jun 2026 11:15:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6F9DBCD98D2
+	for <linux-phy@archiver.kernel.org>; Thu, 11 Jun 2026 11:26:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3SQ4qoWizvtj1nBemyFobkPZfQPrhCWum2/fvV/77jU=; b=MDP3C1i8i2NzHx
-	HXgO1v6R2dLq4mBxvjMjd+xpwvHXvxzDrUGh5p4jzzkvpeNmvhslSQPVrYlHFIlHRirrecJlEiw2U
-	sPqGkopEhJ/Pi4iynPGDmDJ6Qtp+Lmvml/pjomaS6gqKoO2Uh8fUWswMIq9zISbKETMM7YTsur5z5
-	Ygewhz/1/UunYRVFv4wB9U6NmLC7Mg0NGI7NzE38/7or5kwUe2BFDiJC1m7MnbMENm80nyqJU8lx9
-	31pHXS5+hpmsapAQLc2+WAzTOrdz7YvT0rlUpH6wqVkLH+/HvgV50a4OKXoDhjJTfSS9q8AbsHm7J
-	jbcv13Pdsh4NnraGe/mA==;
+	List-Owner; bh=AeHTACn1SAXQRPM1NGGz9FWvR9+t7pdQxZJIXv1erCc=; b=y9weOs0wJc8r7S
+	AUjUxiL/iCOcB+yEjO/Nj4c6wb6fpVSiwzMwL6sk0MnNpnpL/Fpl8Cc7yOmCuoedeXJS3yNsWCaJI
+	RW1hgfJZjuads8T+aUkZcMJPeHk7rFK+pnReJO0Z/Rh2S2gEwrMlDsxaVmB8tb9pyEzM4iP/wmXjW
+	RgSqI/mYHspmDqugC8GbX0PFeSmnVqe7G4AMUqlHVrQH/oIaC0T9zwYOWWeZ1WCWA2anOUzZt/AZm
+	zv52o8dwfT36guwvk1FCa3TrKKbu77Und/0Wqg5FAHWVBYqhEw6Q9TwkIfL4WTzyGcNWLnv28/7uT
+	ycLojGibiVM1cRHQoJ8g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXdNN-00000009IDJ-2KSB;
-	Thu, 11 Jun 2026 11:15:09 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wXdYM-00000009J5e-2dDP;
+	Thu, 11 Jun 2026 11:26:30 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXdNM-00000009ID1-1l81
-	for linux-phy@lists.infradead.org;
-	Thu, 11 Jun 2026 11:15:08 +0000
+	id 1wXdYK-00000009J5L-45Jj;
+	Thu, 11 Jun 2026 11:26:29 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 528BD42DB0;
-	Thu, 11 Jun 2026 11:15:07 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 63BB01F00893;
-	Thu, 11 Jun 2026 11:15:06 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id E69D760098;
+	Thu, 11 Jun 2026 11:26:27 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CDE651F00893;
+	Thu, 11 Jun 2026 11:26:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1781176507;
-	bh=eiOE8vVz5OGc1lHCEeMyCTtaRiC/BRktpZAb812CfB8=;
+	s=k20260515; t=1781177187;
+	bh=jt/4CoziO1pfujnzGp8Dx/334/iuWrZI1G8H43vKVzU=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=ABgAUygNo1qA032l/mHOs7ejxd526JKw+2A8A5mQSQGpsrMSIPV3Gr/Mi1tospcbA
-	 qDll/0RhYf0fZY1qmyND5rjcHxuUd6Evmz/CjjBU3ALzJuYSrhSTCuDJLwhL+s+da9
-	 PMjtAmceMkjfTGgqaF3x8gW+k1ZXOPwWDizCNv9c3JkDA6MeuEq8p47eXTwB+l+UfZ
-	 f330JAvG8ftNODUqPJGaeHLZJvWVQs/onlqPZrfAOYD4v0BBL4pRcgrsSxxrQxiWnI
-	 v4u8aXheYJwJiCZ6Ex6NsWwZKI4oFUu2DKJ1K30iWooPGTgupgRe0LIs5Y5785S1XU
-	 aHLXSc8EPQXPQ==
-Date: Thu, 11 Jun 2026 16:45:02 +0530
+	b=byfHpEwlcUt9heMsyrQH4N9eBo6mUbveEBwEpCRSBIcZrJBykhJLF8NObO9WSzETZ
+	 zWQLO1lolxvUZcl/j7ihhMOrCAs/BYEvbNeHnh3PGDn3efBgBY/Pff2IK2xU+AhV7t
+	 uZMVrWESFygYvONgEEssIB6/sUTxtTyrAaXuLW4Jqa+FhzWHkTiweMvz8KbVsza9Dk
+	 BmjWNsH5I9VoCTfQEuG9PO3KpM+TnVms0LXGSXYyC9WJjLps7uTvsQQ0LfLEvMpO8H
+	 afgm85GUgv8xLs3HqszPJTP5Rp7CyVMngjHVr3eAksR4TJ+O/zdz3tsEmghAasKPXp
+	 08Cg2GCtl2nUQ==
+Date: Thu, 11 Jun 2026 16:56:23 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Kathiravan Thirumoorthy <kathiravan.thirumoorthy@oss.qualcomm.com>
+To: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
 Cc: Neil Armstrong <neil.armstrong@linaro.org>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, linux-arm-msm@vger.kernel.org,
-	linux-phy@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 0/2] Add support for the QMP PCIe PHYs in Qualcomm IPQ9650
-Message-ID: <aiqYtowP2DQt7Jw0@vaman>
-References: <20260602-ipq9650_pcie_phy-v1-0-d8c32a36dbd9@oss.qualcomm.com>
+	Heiko Stuebner <heiko@sntech.de>,
+	Algea Cao <algea.cao@rock-chips.com>,
+	Dmitry Baryshkov <lumag@kernel.org>, kernel@collabora.com,
+	linux-phy@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+	linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
+	Thomas =?iso-8859-1?Q?Niederpr=FCm?= <dubito@online.de>,
+	Simon Wright <simon@symple.nz>
+Subject: Re: [PATCH v2 0/6] phy: rockchip: samsung-hdptx: Clock fixes and API
+ transition cleanups
+Message-ID: <aiqbX8kon8HtiSEl@vaman>
+References: <20260511-hdptx-clk-fixes-v2-0-664e41379cab@collabora.com>
+ <e0eeb794-11b9-4ba6-bee2-f6cc607d3a16@collabora.com>
+ <ebcad67e-e14a-4d0e-b3e0-79ae1d146eaf@collabora.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260602-ipq9650_pcie_phy-v1-0-d8c32a36dbd9@oss.qualcomm.com>
+In-Reply-To: <ebcad67e-e14a-4d0e-b3e0-79ae1d146eaf@collabora.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,18 +77,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 02-06-26, 14:40, Kathiravan Thirumoorthy wrote:
-> Qualcomm's IPQ9650 SoC has 3 Gen3 dual lane and 2 Gen3 single lane
-> controllers with the QMP PHYs. Unlike the PHYs in the other IPQ SoC,
-> refgen supply is needed to bringup the PHYs. Both single and dual lane
-> shares the same HW init sequence. So reuse the tables.
-> 
-> Document the compatible along with refgen supply and add the phy driver
-> support for it.
+On 03-06-26, 13:27, Cristian Ciocaltea wrote:
+> On 5/20/26 10:05 PM, Cristian Ciocaltea wrote:
+> > Hi Vinod,
+> > 
+> > On 5/11/26 9:21 PM, Cristian Ciocaltea wrote:
+> >> This series provides a set of bug fixes and cleanups for the Rockchip
+> >> Samsung HDPTX PHY driver.
+> >>
+> >> The first part of the series (i.e. PATCH 1 & 2) addresses clock rate
+> >> calculation and synchronization issues.  Specifically, it fixes edge
+> >> cases where the PHY PLL is pre-programmed by an external component (like
+> >> a bootloader) or when changing the color depth (bpc) while keeping the
+> >> modeline constant.  Because the Common Clock Framework .set_rate()
+> >> callback might not be invoked if the pixel clock remains unchanged, this
+> >> previously led to out-of-sync states between CCF and the actual HDMI PHY
+> >> configuration.
+> >>
+> >> The second part focuses on code cleanups and modernizing the register
+> >> access.  Now that dw_hdmi_qp driver has fully switched to using
+> >> phy_configure(), we can drop the deprecated TMDS rate setup workarounds
+> >> and the restrict_rate_change flag logic.  Finally, it refactors the
+> >> driver to consistently use standard bitfield macros.
+> >>
+> >> Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+> >> ---
+> >> Changes in v2:
+> >> - Collected Tested-by tags from Thomas and Simon
+> >> - Fixed a typo in commit description of patch 1
+> >> - Added a comment in patch 2 explaining why PLL config errors are
+> >>   ignored for rk_hdptx_phy_consumer_get()
+> >> - Added a missed FIELD_GET conversion for lcpll_hw.pms_sdiv in patch 6
+> >> - Rebased onto latest phy/fixes
+> >> - Link to v1: https://lore.kernel.org/r/20260227-hdptx-clk-fixes-v1-0-f998f2762d0f@collabora.com
+> > 
+> > In case you missed my comments from last week on the Sashiko AI review findings
+> > - in short, I don't think there is anything to worry about and the series should
+> > be fine to apply as-is.  Please let me know if you would still prefer a new
+> > revision.
+> Kind reminder..
 
-Please rebase this on phy-next tomorrow. It does not apply for me due to
-changes applied ealier today
+Please post a new revision based on phy/next
 
+Thanks
 -- 
 ~Vinod
 
