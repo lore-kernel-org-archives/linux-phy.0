@@ -4,58 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 98B2ACD98CE
-	for <linux-phy@archiver.kernel.org>; Thu, 11 Jun 2026 15:35:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ACEBACD98CE
+	for <linux-phy@archiver.kernel.org>; Thu, 11 Jun 2026 15:35:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	References:In-Reply-To:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9Y82LliJJ1G54WhBlVeKZcIgpHhHVawWY5V7Rve74GE=; b=qEKhckZdd7RlBO
-	G6sL7FFCzIDPFTspfY+gr1ZXxLKiMwEmal08tI9Y04nCs+5ob1jkuoSje/2pq8L4uzm/ieOD0C8kI
-	lC3XZvZMCozHQgSq2CgRRKQrM6QWS2Hrp07XLjpkD/hA4wlbnsQhwMKS7lhEX6xlZreNArVw9Qwzm
-	IYx8P5jHutumjJBdiVjHRLYCO+otlFSvHaPTOnjhrTh89PwBqAF+7YOueoupTqSECqcSYNgZ+5IZ7
-	PGC3Z/Hor1VfE0YGk1AhAetf2BHRx5QLqGKBoT0V+c627WcvY+X25inXxaxT080ATpiNYqvFO8i53
-	wuJlVmGJRAjfGqoikXeQ==;
+	List-Owner; bh=expeRr7mHr2X97vUJ4u6UsaMUF8XsYTtdK5pQ0sYrfU=; b=ls+B+rAhO4cIrI
+	wkIwi3KaMvsPljAMglB0Nejbolg7mq0DuAGIcAfuMUkaIieVM98LER5OcJUNi2iW5rClJV97cG+Fe
+	/9FxxaOvgAD3xNXeQ99cXfurHB7tIVPp4VV3tTik2vU7X2evwzO1/6JP2Lb0/3gpEfU+OvuKCW5Es
+	yvvdheeQHSjQyAEa08fDxbH4G9qZV5i50oZ75G1l3TYVhGlC0wgBPF72naeK5+UCBNX2bTSHNCKcf
+	Ij8K9cA1bC3GUaETriEKQ623/HETbR+wT3uvxCKCQdT8icMeyZLV/VPdM8Dc5hFBb0JAW2uIf4SNj
+	Ee1LOIGZP8ukVjNH8vFw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXhRX-00000009gph-1b9n;
-	Thu, 11 Jun 2026 15:35:43 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wXhRa-00000009gqx-1kZk;
+	Thu, 11 Jun 2026 15:35:46 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXhRW-00000009gpG-1I5z;
-	Thu, 11 Jun 2026 15:35:42 +0000
+	id 1wXhRZ-00000009gql-2j54
+	for linux-phy@lists.infradead.org;
+	Thu, 11 Jun 2026 15:35:45 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 1673741A8D;
+	by sea.source.kernel.org (Postfix) with ESMTP id 686404061B;
+	Thu, 11 Jun 2026 15:35:45 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8D3751F00893;
 	Thu, 11 Jun 2026 15:35:42 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B5A441F00899;
-	Thu, 11 Jun 2026 15:35:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1781192142;
-	bh=CyqMjRcBNzsNW4+u7ngkuXlJ7cl2LUvTia3Gu9mccqo=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=Nkcb7rNGVLCJ2HdS9QQfPdbdGLjE9oRSbWoVk17PMAvYXTitn6IKehO9rvyNIF9+p
-	 OupNCoPq7xtTtjkTTrZ7rrZP2G4hQMB2+Z7MgayrgKhDinKH87J7J06Z7bIjEVFxlF
-	 mP95yrpByTg0PHFcM94Z0hvmP8NZAD56bkkIeTheNnLGvCYw+WC0yBD+uoD5trapRB
-	 kmLvwLACjzRG6QtUpistPnKLsZtG96Vi62jDMF1bFZbNdcdkn3qkhniB2ZrZk8KHK+
-	 VnlSiC6oVM+6CkZfYaWhFizOLaiMbeur0OBwsAqMzH0pWKEJqpSewHevj7SQIKeAkR
-	 wtnf3sIBOA2jQ==
+	s=k20260515; t=1781192145;
+	bh=E24s/V0gP4pvIVYXL0IxO3RudIxFGgl7ueNQ5LXIy+k=;
+	h=From:To:In-Reply-To:References:Subject:Date;
+	b=fYzhtRuYXY1nC5cxz6JrTldD2vkeA0uuqS846tXbE1yFizXlO1kAU6MxOD4briwe8
+	 JmUCvVQislDbrwWR1OQ1Vr08MudIb0qsQKH8ueZ5tJTBI1ugGhBpY6YJDAqG4Ztf2J
+	 yDRpCisOnqfZZy7ZN97veJfWj7X9CePp2kfyfEZ/i9MIZwtvzhAmksgurmaz5Zj1l8
+	 rYwTIS27ouuk2WRqPtMD2WBss01WBByRayUbO2VoTSr6VY81qO4G8QpIpK890zHGQP
+	 UgYFxYw6NoXjsT8QiFfK6zje+1DKKn4oTyiSyc1oS8Y0aj8zVSCmcmi9gKsgueLMYN
+	 FNRmGdV1T2Rqw==
 From: Vinod Koul <vkoul@kernel.org>
-To: Neil Armstrong <neil.armstrong@linaro.org>, Frank Li <Frank.Li@nxp.com>, 
- Sascha Hauer <s.hauer@pengutronix.de>, 
- Pengutronix Kernel Team <kernel@pengutronix.de>, 
- Fabio Estevam <festevam@gmail.com>, Liu Ying <victor.liu@nxp.com>, 
- Felix Gu <ustc.gu@gmail.com>
-Cc: linux-phy@lists.infradead.org, imx@lists.linux.dev, 
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, 
- sashiko <sashiko-bot@kernel.org>
-In-Reply-To: <20260609-lvds-phy-v1-1-6ad790c6d0ea@gmail.com>
-References: <20260609-lvds-phy-v1-1-6ad790c6d0ea@gmail.com>
-Subject: Re: [PATCH] phy: freescale: phy-fsl-imx8qm-lvds-phy: Use
- synchronous PM runtime put in reset
-Message-Id: <178119213836.568088.17165360220822956179.b4-ty@kernel.org>
-Date: Thu, 11 Jun 2026 21:05:38 +0530
+To: neil.armstrong@linaro.org, robh@kernel.org, krzk+dt@kernel.org, 
+ conor+dt@kernel.org, quic_wcheng@quicinc.com, linux-arm-msm@vger.kernel.org, 
+ linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, 
+ Varadarajan Narayanan <varadarajan.narayanan@oss.qualcomm.com>
+In-Reply-To: <20260608103344.2740174-1-varadarajan.narayanan@oss.qualcomm.com>
+References: <20260608103344.2740174-1-varadarajan.narayanan@oss.qualcomm.com>
+Subject: Re: [PATCH v2 0/2] Add ipq5210 USB phy support
+Message-Id: <178119214219.568088.11214023955554602445.b4-ty@kernel.org>
+Date: Thu, 11 Jun 2026 21:05:42 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
 X-BeenThere: linux-phy@lists.infradead.org
@@ -75,21 +72,22 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Tue, 09 Jun 2026 22:48:50 +0800, Felix Gu wrote:
-> The mixel_lvds_phy_reset() function pairs pm_runtime_resume_and_get()
-> with pm_runtime_put(). The asynchronous variant queues a work item
-> to handle the idle check and potential suspend, which can be cancelled
-> by a subsequent pm_runtime_disable() call if probe fails after the reset.
+On Mon, 08 Jun 2026 16:03:42 +0530, Varadarajan Narayanan wrote:
+> The ipq5210 SoC has both USB2.0 and USB3.0 controllers. The USB3.0
+> can connect to either of USB2.0 or USB3.0 phy and operate in the
+> respective mode.
 > 
-> Switch to pm_runtime_put_sync() to run the idle check and suspend
-> synchronously.
+> v2: Use ipq6018 and ipq9574 as fallback compatibles for qusb2 and qmp
+>     phys respectively instead of introducing ipq5210 as a new compatible.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/1] phy: freescale: phy-fsl-imx8qm-lvds-phy: Use synchronous PM runtime put in reset
-      commit: b28ec8ce03d8f9a0f7a9ec84f1ed9b5a6f393791
+[1/2] dt-bindings: phy: qcom,qusb2: Document IPQ5210 compatible
+      commit: a9a9bae2174bbad63fc73a0d445b7437f63b2498
+[2/2] dt-bindings: phy: qcom,qmp-usb: Add ipq5210 USB3 PHY
+      commit: 609878c1b684ea3f77ab72237511eb9bec927102
 
 Best regards,
 -- 
