@@ -4,53 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5F960CD98CC
-	for <linux-phy@archiver.kernel.org>; Thu, 11 Jun 2026 23:57:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4CE51CD98C7
+	for <linux-phy@archiver.kernel.org>; Thu, 11 Jun 2026 23:58:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:From:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NlOgsPwuHH93x8MMoHy1JDSMgFXjBWw8PVa2HrMBysU=; b=bWpxA83UuiyzBr
-	aOvYfF4BLntgxCrx3CP6T6OJz1Ddkf/32+vC4NZH3awEdVraZ4fsvqRfk+08HFkTHS9OjJ04AqTAc
-	cUvB5ZEYPNHLuQnw0LTZ3eCF3994l5djxoKyGF7Y9GaldQwwe4bjvsIBnrWUdh+K87rhS+Pex1ZIU
-	teTajKbSgpYF2nc95zlE8KFE61dTQ8QtUUX4ar8Cqfu0m4UySG4v4u+KRPeP8+6kq1Q54CM4Jzp+p
-	s09oRcLQVzRoAfEho1d7McWcYBqbE7B0wxhxrfZKPi1kw2tx5gcdwDnV4rVHi0oVVTkqCpNy4xq9l
-	AUnBgUpMsJsMNePPDpCw==;
+	List-Owner; bh=5dwbQt1ZptPU9KYh8OGrNF/2KlqPw/szaZBovHOUtWA=; b=XIgKvGQy7Hux3n
+	4XIkpC0CNFEcWAOarQV+eGBIu0DVQlHVwoBvgTOBjVDhOfMVqoqqUWM5WuXLVN0kcFEhpblsVAvmy
+	zCRLn4/urU/eeAs6ip45R+TXKJTow10tzXq55oidSfwLWG/DQmtlcvhBvb5Cr4pFM6crXfVOOiX2c
+	hQJgzGmjfr4/wCUw/tnBrlFpZAa1hIcyORvvbOaAbrQd/pwrabzdyPjRGmnipNN5xi3GskIm9VPGk
+	RsefUFIhs+zdfnYJEQuXcLogxshnMZ19iEYQakOpiE9mhD26kF2x6cuRV5Vgv/s0WMGwROUFquxme
+	hlUaVzPE5vH2qX8Z/9Vw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXpGi-0000000ACxc-3LKL;
-	Thu, 11 Jun 2026 23:57:04 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wXpI0-0000000ACze-0G0C;
+	Thu, 11 Jun 2026 23:58:24 +0000
+Received: from bali.collaboradmins.com ([2a01:4f8:201:9162::2])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXpGh-0000000ACxU-2MnA
-	for linux-phy@lists.infradead.org;
-	Thu, 11 Jun 2026 23:57:03 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 9206C6020C;
-	Thu, 11 Jun 2026 23:57:02 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0E9691F000E9;
-	Thu, 11 Jun 2026 23:57:02 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1781222222;
-	bh=Rj87OwKeOPoTyaUK6dbQYJfLE/PpMUM/s4tvRFlX7F0=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=PAR2r017kigoV4XOpaXjfC9b06OWCBiiYCNcNWdFTEs5YUECNvZhINIc7vB4gSWB8
-	 vC6BzXzfTmWxy5uzcLIy4ySpxf16Wk1Wck8wzDUCrPl6NKwV2l3JcERRZ6Rg2JJsb5
-	 6IiTCuwHYPUo/Fnat7ilU1MzxUkCMTgOmcPck8tuWyF1cmHA0JkfY26IViA+XknM1/
-	 K9WuwMbJKubi8Wlrx4G19jesz8Sbpc1R7cyqvP6KrfP4Bx+HVVRa2wB7Sdd75KLKRc
-	 VYbgwV1i/bN2t3CWm591JMOYy3oHQHVgrkKMT5CggSUcvRoyNVjB9Fb8e514PqxB0g
-	 vsyag4EPXS3Fg==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v4 2/8] phy: rockchip: samsung-hdptx: Prevent
- divide-by-zero when computing clk rate
-To: "Cristian Ciocaltea" <cristian.ciocaltea@collabora.com>
-Cc: neil.armstrong@linaro.org, olteanv@gmail.com, linux-phy@lists.infradead.org, vkoul@kernel.org
-In-Reply-To: <20260612-hdptx-clk-fixes-v4-2-ce5e1d456cda@collabora.com>
-References: <20260612-hdptx-clk-fixes-v4-2-ce5e1d456cda@collabora.com>
-Date: Thu, 11 Jun 2026 23:57:01 +0000
-Message-Id: <20260611235702.0E9691F000E9@smtp.kernel.org>
+	id 1wXpHx-0000000ACz8-2Zih;
+	Thu, 11 Jun 2026 23:58:23 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1781222299;
+	bh=ypszbHyzB39x79bcGaB6iFn+Y2ljrD/Div0NqvLkCCw=;
+	h=Date:Subject:From:To:Cc:References:In-Reply-To:From;
+	b=UQIZwuINbbo1Gsuv/8GDU95NlR1SVDlU/WBPSgbAkgafvPSpVxq/rUa5sGRctCvHR
+	 AvQUY9nUEE40TN3oREpbavfacRDXhf1WEOrFZfxkudAAd95M+7tKF2M2RsncYYlFX3
+	 WXi6J19/BO4tphd+y0pjwCN+S3EJ4jCl8EyT7Y2QeWi6faQhez/5SJGetgFhcC3DEm
+	 zws31jK420nNdX1HsO0DUpOqFyycHFlacnGtwTO0QNzXMDwccr640I2+qYVBc5bH43
+	 bHhdg1irQvFXGL7m43avpv+dVxjOlk7kLcOfNjaN2tQ93WzIVYWdQG7d+J6OR4eBp/
+	 57e5DlKRHRUFg==
+Received: from [100.64.0.241] (unknown [100.64.0.241])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
+	(No client certificate requested)
+	(Authenticated sender: cristicc)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 8BD2517E0416;
+	Fri, 12 Jun 2026 01:58:18 +0200 (CEST)
+Message-ID: <25f0a87d-0607-49eb-b297-b45c11b4df1b@collabora.com>
+Date: Fri, 12 Jun 2026 02:58:18 +0300
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 0/6] phy: rockchip: samsung-hdptx: Clock fixes and API
+ transition cleanups
+From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+To: Vinod Koul <vkoul@kernel.org>, Neil Armstrong
+ <neil.armstrong@linaro.org>, Heiko Stuebner <heiko@sntech.de>,
+ Algea Cao <algea.cao@rock-chips.com>, Dmitry Baryshkov <lumag@kernel.org>
+Cc: kernel@collabora.com, linux-phy@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org,
+ linux-kernel@vger.kernel.org, =?UTF-8?Q?Thomas_Niederpr=C3=BCm?=
+ <dubito@online.de>, Simon Wright <simon@symple.nz>
+References: <20260611-hdptx-clk-fixes-v3-0-67b1b0c00e16@collabora.com>
+Content-Language: en-US
+In-Reply-To: <20260611-hdptx-clk-fixes-v3-0-67b1b0c00e16@collabora.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260611_165821_829323_48973CA8 
+X-CRM114-Status: GOOD (  14.30  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -62,58 +74,47 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpQcmUtZXhpc3RpbmcgaXNzdWVzOgot
-IFtIaWdoXSBQb3RlbnRpYWwgaW50ZWdlciB1bmRlcmZsb3cgaW4gYGZvdXRgIGNhbGN1bGF0aW9u
-IHdoZW4gaGFyZHdhcmUgc3RhdGUgaXMgbWlzY29uZmlndXJlZCwgbGVhZGluZyB0byBhIG1hc3Np
-dmUgYm9ndXMgY2xvY2sgcmF0ZSB0aGF0IGNvdWxkIGhhbmcgZG93bnN0cmVhbSBjb21wb25lbnRz
-LgotLQoKY29tbWl0IGNiMjFjOGMxM2I4ODBkMDhkMTdiNWVlNjk3NDAyMjk1MjdkYjU0NDIKQXV0
-aG9yOiBDcmlzdGlhbiBDaW9jYWx0ZWEgPGNyaXN0aWFuLmNpb2NhbHRlYUBjb2xsYWJvcmEuY29t
-PgoKcGh5OiByb2NrY2hpcDogc2Ftc3VuZy1oZHB0eDogUHJldmVudCBkaXZpZGUtYnktemVybyB3
-aGVuIGNvbXB1dGluZyBjbGsgcmF0ZQoKVGhpcyBjb21taXQgYWRkcyBzYW5pdGl6YXRpb24gdG8g
-cmtfaGRwdHhfcGh5X2Nsa19jYWxjX3JhdGVfZnJvbV9wbGxfY2ZnKCkKdG8gcHJldmVudCBhIGRp
-dmlkZS1ieS16ZXJvIGR1cmluZyBjbG9jayByYXRlIGNhbGN1bGF0aW9uLiBJdCBjaGVja3MgdGhl
-CmRlbm9taW5hdG9yIGRlcml2ZWQgZnJvbSBoYXJkd2FyZSByZWdpc3RlcnMsIHdoaWNoIGNvdWxk
-IGJlIHVuaW5pdGlhbGl6ZWQgb3IKbWlzY29uZmlndXJlZC4KCkNsb3NlczogaHR0cHM6Ly9zYXNo
-aWtvLmRldi8jL3BhdGNoc2V0LzIwMjYwNjExLWhkcHR4LWNsay1maXhlcy12My0wLTY3YjFiMGMw
-MGUxNkBjb2xsYWJvcmEuY29tP3BhcnQ9MQoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9waHkvcm9j
-a2NoaXAvcGh5LXJvY2tjaGlwLXNhbXN1bmctaGRwdHguYyBiL2RyaXZlcnMvcGh5L3JvY2tjaGlw
-L3BoeS1yb2NrY2hpcC1zYW1zdW5nLWhkcHR4LmMKPiBpbmRleCA3MTA2MDNhZmZmODY2Li44YzA0
-NDM4MWI4M2E0IDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hp
-cC1zYW1zdW5nLWhkcHR4LmMKPiArKysgYi9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2No
-aXAtc2Ftc3VuZy1oZHB0eC5jCj4gQEAgLTIyNzAsMTAgKzIyNzAsMTUgQEAgc3RhdGljIHU2NCBy
-a19oZHB0eF9waHlfY2xrX2NhbGNfcmF0ZV9mcm9tX3BsbF9jZmcoc3RydWN0IHJrX2hkcHR4X3Bo
-eSAqaGRwdHgpCj4gIAo+ICAJZm91dCA9IFBMTF9SRUZfQ0xLICogcm9wbGxfaHcucG1zX21kaXY7
-Cj4gIAlpZiAocm9wbGxfaHcuc2RtX2VuKSB7Cj4gKwkJdmFsID0gMTZVICogcm9wbGxfaHcuc2Rt
-X2Rlbm8gKgo+ICsJCSAgICAgIChyb3BsbF9ody5zZGNfZGVubyAqIHJvcGxsX2h3LnNkY19uIC0g
-cm9wbGxfaHcuc2RjX251bSk7Cj4gKwkJaWYgKCF2YWwpIHsKPiArCQkJZGV2X2RiZyhoZHB0eC0+
-ZGV2LCAiJXMgaW52YWxpZCBST1BMTCBodyBzdGF0ZVxuIiwgX19mdW5jX18pOwo+ICsJCQlyZXR1
-cm4gMDsKPiArCQl9Cj4gKwo+ICAJCXNkbSA9IGRpdl91NjQoUExMX1JFRl9DTEsgKiByb3BsbF9o
-dy5zZGNfZGVubyAqCj4gLQkJCSAgICAgIHJvcGxsX2h3LnBtc19tZGl2ICogcm9wbGxfaHcuc2Rt
-X251bSwKPiAtCQkJICAgICAgMTYgKiByb3BsbF9ody5zZG1fZGVubyAqCj4gLQkJCSAgICAgIChy
-b3BsbF9ody5zZGNfZGVubyAqIHJvcGxsX2h3LnNkY19uIC0gcm9wbGxfaHcuc2RjX251bSkpOwo+
-ICsJCQkgICAgICByb3BsbF9ody5wbXNfbWRpdiAqIHJvcGxsX2h3LnNkbV9udW0sIHZhbCk7Cj4g
-IAo+ICAJCWlmIChyb3BsbF9ody5zZG1fbnVtX3NpZ24pCj4gIAkJCWZvdXQgPSBmb3V0IC0gc2Rt
-OwoKW1NldmVyaXR5OiBIaWdoXQpUaGlzIGlzIGEgcHJlLWV4aXN0aW5nIGlzc3VlLCBidXQgY291
-bGQgdGhpcyBzdWJ0cmFjdGlvbiByZXN1bHQgaW4gYW4KaW50ZWdlciB1bmRlcmZsb3c/CgpJZiB0
-aGUgaGFyZHdhcmUgcmVnaXN0ZXJzIGFyZSBtaXNjb25maWd1cmVkIG9yIGNvbnRhaW4gdW5pbml0
-aWFsaXplZCB2YWx1ZXMsCml0IHNlZW1zIHRoZSBjb21wdXRlZCBzaWdtYS1kZWx0YSBtb2R1bGF0
-b3Igb2Zmc2V0IHNkbSBjb3VsZCBiZSBzaWduaWZpY2FudGx5CmxhcmdlciB0aGFuIHRoZSBiYXNl
-IGZyZXF1ZW5jeSBmb3V0LgoKU2luY2UgZm91dCBpcyBhbiB1bnNpZ25lZCA2NC1iaXQgaW50ZWdl
-ciwgc3VidHJhY3RpbmcgYSBsYXJnZXIgc2RtIGluCnJrX2hkcHR4X3BoeV9jbGtfY2FsY19yYXRl
-X2Zyb21fcGxsX2NmZygpIHdvdWxkIHdyYXAgYXJvdW5kIHRvIGEgbWFzc2l2ZQpwb3NpdGl2ZSB2
-YWx1ZS4KCkNvdWxkIHRoaXMgdW5kZXJmbG93IGxlYWQgdG8gYW4gYWJzdXJkbHkgaGlnaCBjbG9j
-ayByYXRlIGJlaW5nIHJldHVybmVkCnRvIHRoZSBDb21tb24gQ2xvY2sgRnJhbWV3b3JrLCBwb3Rl
-bnRpYWxseSBjYXVzaW5nIGhhbmdzIG9yIGRpdi1ieS16ZXJvCmVycm9ycyBpbiBkb3duc3RyZWFt
-IGNvbXBvbmVudHM/CgotLSAKU2FzaGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRl
-di8jL3BhdGNoc2V0LzIwMjYwNjEyLWhkcHR4LWNsay1maXhlcy12NC0wLWNlNWUxZDQ1NmNkYUBj
-b2xsYWJvcmEuY29tP3BhcnQ9MgoKLS0gCmxpbnV4LXBoeSBtYWlsaW5nIGxpc3QKbGludXgtcGh5
-QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
-bGlzdGluZm8vbGludXgtcGh5Cg==
+Hi,
+
+On 6/11/26 3:31 PM, Cristian Ciocaltea wrote:
+> This series provides a set of bug fixes and cleanups for the Rockchip
+> Samsung HDPTX PHY driver.
+> 
+> The first part of the series (i.e. PATCH 1 & 2) addresses clock rate
+> calculation and synchronization issues.  Specifically, it fixes edge
+> cases where the PHY PLL is pre-programmed by an external component (like
+> a bootloader) or when changing the color depth (bpc) while keeping the
+> modeline constant.  Because the Common Clock Framework .set_rate()
+> callback might not be invoked if the pixel clock remains unchanged, this
+> previously led to out-of-sync states between CCF and the actual HDMI PHY
+> configuration.
+> 
+> The second part focuses on code cleanups and modernizing the register
+> access.  Now that dw_hdmi_qp driver has fully switched to using
+> phy_configure(), we can drop the deprecated TMDS rate setup workarounds
+> and the restrict_rate_change flag logic.  Finally, it refactors the
+> driver to consistently use standard bitfield macros.
+> 
+> Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+> ---
+> Changes in v3:
+> - Replaced div_u64() with DIV_ROUND_CLOSEST_ULL() in Patch 1 (Sashiko)
+> - Fixed theoretical usage_count unbalanced issue in Patch 2 (Sashiko)
+> - Rebased series onto latest phy/next
+> - Link to v2: https://patch.msgid.link/20260511-hdptx-clk-fixes-v2-0-664e41379cab@collabora.com
+Please use v4 as I added two more patches to address latest findings from Sashiko:
+
+https://lore.kernel.org/all/20260612-hdptx-clk-fixes-v4-0-ce5e1d456cda@collabora.com/
+
+Thanks,
+Cristian
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
