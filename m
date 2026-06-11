@@ -4,63 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6A033CD98CE
-	for <linux-phy@archiver.kernel.org>; Thu, 11 Jun 2026 14:11:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 31E89CD98CC
+	for <linux-phy@archiver.kernel.org>; Thu, 11 Jun 2026 14:43:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Q0xifXyYvZsKJrQQq3QfFPq++5zwXgF536q/jPStWXo=; b=1C5rJGNvWDm4pz
-	OhGs9mHuLvJg9vCG0aipXt2kFR4OXUn2bMVSz0JYGHEyWxVTKPRhM1QHVMIbGCo/MCWhOH9RxCGoN
-	UFu8U21yCcaFipb8kJs8K9avzfORKRQx1FaDN34gJ8CzyK0yk5JF3bGWGj49kZc4asytc/Xw9B0m8
-	p7cC9I+s1imLcBBM7DQsZzeDy1KKpJ03VkrFjuNQoqXiF8SKc/75JaAwu0eXDFoMPl522qLGbXVCB
-	7Oau6R6BWcz2c8+pfjz/WUYqpylevk+oEJdf17AK5N7NFTaw6qaH94up4T0Pw3krSR/Mm5gxhPavQ
-	SBEiRwaEfGXsbT4uIp6Q==;
+	List-Owner; bh=lkMi/aW/9BR1I8/HJ+M6XWeMkRku6dcpFH+FCsc9/pE=; b=TLlW5CtPllQP24
+	gZ1PnhlmHQ36jPpHLBIKn7PMXztLZWbplYqzttYK3BcZWqEu403Jx0ve1uREel7vnkqPXiJntAAKn
+	DPrhnMSPTpF11ohD+uUzFFCurn9T9jOV8NX/R0jBpa1dhf++bDAaAX2gnF06Gj0REhGIfaCHU2viG
+	FqiJ2KsrGPMGa4J5MHW4pTOMghfABx3loqFS/X3/jwRLji5gmHRz1ecc/a/ECBxvroMmgzzNNCLP4
+	+DGSmduIxd3ybifX6T0MpZxdl0QaxjgZ8oWHeQwasYa4ameA4cmvBTR16myMQJAbxp9vPTbGc+JED
+	jiK7zBhP+Dx3CfOZepGA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXg81-00000009Zqg-3DmT;
-	Thu, 11 Jun 2026 14:11:29 +0000
-Received: from bali.collaboradmins.com ([148.251.105.195])
+	id 1wXgcj-00000009bcM-3PQ0;
+	Thu, 11 Jun 2026 14:43:13 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXg7x-00000009ZqI-2waO
+	id 1wXgcj-00000009bc7-140D
 	for linux-phy@lists.infradead.org;
-	Thu, 11 Jun 2026 14:11:27 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1781187081;
-	bh=W7EGVJuT/r3agCU+HVq3EU1ny2saXdSuciAfZkVKCaE=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=qOmq9GBJYbhAAcsggdtw/CtOU7Rsb5WeSSfYg/SRateggR45l6GsRoT++lLB7Ja2P
-	 vu5jUNZtSwj6YRdOu3pE4BzhuxVNDNG0dEgWAjuJ+CAIMq7mBixI5K3flc77LYk2SO
-	 7CoE7FKFbeSX8HgkefOlbK+eGA5g7MbSXhfwLNz1R5cy9ZlBQmL8QJJo3NYt6pKM6i
-	 ssjrqGBvRGB6ARpcHbrnPtAiIoBWqVk72X7vhRgydfEXb2ad0tBPZpIs9HYrtxjA+m
-	 3kCqhhkHYcQqTBYxQHV2QFVTXkckvJHh2/2079r7EJvXqQh1KlV9YHrd+htDMPC7JT
-	 4DyrGr4coDiAg==
-Received: from [100.64.0.241] (unknown [100.64.0.241])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	(Authenticated sender: cristicc)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id 6C5BC17E03D7;
-	Thu, 11 Jun 2026 16:11:21 +0200 (CEST)
-Message-ID: <88624071-de6b-4fd1-9984-f79270c2979f@collabora.com>
-Date: Thu, 11 Jun 2026 17:11:20 +0300
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 2/6] phy: rockchip: samsung-hdptx: Handle uncommitted
- PHY config changes
-To: sashiko-reviews@lists.linux.dev
-Cc: neil.armstrong@linaro.org, olteanv@gmail.com, vkoul@kernel.org,
- linux-phy@lists.infradead.org
-References: <20260611-hdptx-clk-fixes-v3-2-67b1b0c00e16@collabora.com>
- <20260611125215.9BE6C1F00898@smtp.kernel.org>
-Content-Language: en-US
-From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-In-Reply-To: <20260611125215.9BE6C1F00898@smtp.kernel.org>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260611_071125_926669_33AA4F6C 
-X-CRM114-Status: GOOD (  24.02  )
+	Thu, 11 Jun 2026 14:43:13 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 61AC26001A;
+	Thu, 11 Jun 2026 14:43:12 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 561861F00893;
+	Thu, 11 Jun 2026 14:43:11 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1781188992;
+	bh=5FEh7E1qiARNn3Y1kDJpfZBuj+kdeQzRKpLdT05Bj00=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=kkcmQea6ugV7Cuv7g9UvvQhxiPh2EGRE0EqWNSuEKj6CFa3C+8msQC3/USWSmhOSn
+	 IcNi6fk2epxHOPBsLs4SDXjytvkqTZdClz5hn2yj50oYAzpIOPiOv2chH/peiirzxa
+	 jFAd4ZPXdJeN4QftOL2Zm0KGUCOdG7+nQX0olozE0DvqXSQLJ6CLKUBZAZxWH5bzzg
+	 VcZvHp4ANmXW2Vbk57Cw8AA6NZRlKylq3kYHihRL93fKlT/p8YjultsF+guUMnMigU
+	 u6nYZgAY/fGEcs7INPYOo2ejTj/6vp9hFqN2p0ahmuaEN0Sh1vHzRCzq9ANlacqrWh
+	 JYYcaWRBhFATA==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v3 1/6] phy: rockchip: samsung-hdptx: Fix rate
+ recalculation for high bpc
+To: "Cristian Ciocaltea" <cristian.ciocaltea@collabora.com>
+Cc: neil.armstrong@linaro.org, vkoul@kernel.org, olteanv@gmail.com, linux-phy@lists.infradead.org
+In-Reply-To: <20260611-hdptx-clk-fixes-v3-1-67b1b0c00e16@collabora.com>
+References: <20260611-hdptx-clk-fixes-v3-1-67b1b0c00e16@collabora.com>
+Date: Thu, 11 Jun 2026 14:43:10 +0000
+Message-Id: <20260611144311.561861F00893@smtp.kernel.org>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,118 +62,87 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-Hi,
-
-TL;DR: This is similar to the review we got on v2, i.e. no real concerns, the
-series can be safely applied.
-
-Regards,
-Cristian
-
-On 6/11/26 3:52 PM, sashiko-bot@kernel.org wrote:
-> Thank you for your contribution! Sashiko AI review found 1 potential issue(s)
-> to consider: - [High] Ignoring PLL configuration errors in
-> `rk_hdptx_phy_consumer_get()` leads to silent hardware failure and violates
-> the CCF API contract. --
-> 
-> commit 6b14268a38889c73eedd6c085d780316eb0e7c3c Author: Cristian Ciocaltea
-> <cristian.ciocaltea@collabora.com>
-> 
-> phy: rockchip: samsung-hdptx: Handle uncommitted PHY config changes
-> 
-> This commit introduces a pll_config_dirty flag to keep track of uncommitted
-> PHY configuration changes. It ensures that changes to the PHY link rate or
-> color depth are delayed and properly programmed into the hardware when the PHY
-> usage count is incremented.
-> 
->> diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
->> b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c index
->> 710603afff866..5295d5f6f287a 100644 ---
->> a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c +++
->> b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
-> [ ... ]
->> @@ -1347,25 +1354,22 @@ static int rk_hdptx_phy_consumer_get(struct
->> rk_hdptx_phy *hdptx) return 0;
->>  
->>  	ret = regmap_read(hdptx->grf, GRF_HDPTX_STATUS, &status); -	if (ret)
->>  	-		goto dec_usage; - -	if (status &
->>  	HDPTX_O_PLL_LOCK_DONE) -		dev_warn(hdptx->dev, "PLL locked
->>  	by unknown consumer!\n"); +	if (ret) { +
->>  	atomic_dec(&hdptx->usage_count); +		return ret; +	}
->>  
->>  	if (mode == PHY_MODE_DP) { rk_hdptx_dp_reset(hdptx); } else { -
->>  	ret = rk_hdptx_pll_cmn_config(hdptx); -		if (ret) -
->>  	goto dec_usage; +		/* +		 * Ignore PLL config
->>  	errors at this point as pll_config_dirty +		 * was not reset
->>  	and, therefore, operation will be retried. +		 */ +
->>  	rk_hdptx_pll_cmn_config(hdptx); }
->>  
->>  	return 0;
-> 
-> [Severity: High] Is it safe to ignore the return value of
-> rk_hdptx_pll_cmn_config() here?
-
-Yes, this is done on purpose since the error is not critical at this point and
-we don't want to bail out too early. In practice, this shouldn't happen, unless
-the hardware is faulty, in which case the kernel is likely to crash before
-reaching this.
-
-> 
-> If rk_hdptx_pll_cmn_config() fails, we return 0 to the caller. This causes
-> clk_prepare() to return success to the Common Clock Framework even though
-> the hardware failed to initialize. Does this violate the API contract?
-> 
-> Also, hdptx->usage_count is left incremented despite the hardware failure.
-
-That's not a valid usecase, the hardware will be eventually programmed by
-rk_hdptx_phy_clk_set_rate() or rk_hdptx_phy_power_on(), whichever comes first.
-The clock provider is dependent on the PHY configuration, which is expected to
-follow clk_prepare_enable().
-
-> 
-> [ ... ]
->> @@ -1700,13 +1704,18 @@ static int rk_hdptx_phy_power_on(struct phy *phy)
->>  		if (ret)
->>  			rk_hdptx_phy_consumer_put(hdptx, true);
->>  	} else {
->> -		regmap_write(hdptx->grf, GRF_HDPTX_CON0,
->> -			     HDPTX_MODE_SEL << 16 | FIELD_PREP(HDPTX_MODE_SEL, 0x0));
->> +		if (hdptx->pll_config_dirty)
->> +			ret = rk_hdptx_pll_cmn_config(hdptx);
-> 
-> [Severity: High]
-> Will this retry block actually execute if pll_config_dirty was already false?
-> 
-> If the initial rk_hdptx_pll_cmn_config() failure happened in 
-> rk_hdptx_phy_consumer_get() when pll_config_dirty was false, it seems
-> pll_config_dirty remains false. When rk_hdptx_phy_power_on() is later called,
-> it checks if pll_config_dirty is true and might skip the retry entirely,
-> leaving the hardware in a partially initialized state with an unlocked PLL.
-
-The hardware is not really useful without rk_hdptx_phy_configure() being called,
-which sets pll_config_dirty to true.
-
-> 
->> +		if (!ret) {
->> +			regmap_write(hdptx->grf, GRF_HDPTX_CON0,
->> +				     HDPTX_MODE_SEL << 16 | FIELD_PREP(HDPTX_MODE_SEL, 0x0));
->> +
->> +			if (hdptx->hdmi_cfg.mode == PHY_HDMI_MODE_FRL)
->> +				ret = rk_hdptx_frl_lcpll_mode_config(hdptx);
->> +			else
->> +				ret = rk_hdptx_tmds_ropll_mode_config(hdptx);
->> +		}
->>  
->>  		if (ret)
->>  			rk_hdptx_phy_consumer_put(hdptx, true);
-> 
-
--- 
-linux-phy mailing list
-linux-phy@lists.infradead.org
-https://lists.infradead.org/mailman/listinfo/linux-phy
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpQcmUtZXhpc3RpbmcgaXNzdWVzOgot
+IFtIaWdoXSBQb3RlbnRpYWwgZGl2aWRlLWJ5LXplcm8gd2hlbiBjb21wdXRpbmcgU0RNIGZyYWN0
+aW9uIGlmIGJvb3Rsb2FkZXIgbGVhdmVzIHNwZWNpZmljIFBMTCByZWdpc3RlcnMgdW5pbml0aWFs
+aXplZCBvciBtaXNjb25maWd1cmVkLgotIFtIaWdoXSBGUkxfOEc0TF9SQVRFICgzLjJHSHopIGNh
+c2NhZGUgbW9kZSBpcyBub3QgaGFuZGxlZCBjb3JyZWN0bHkgaW4gY2xvY2sgcmF0ZSByZWNhbGN1
+bGF0aW9uLCBjYXVzaW5nIGl0IHRvIHJldHVybiAwLgotLQoKY29tbWl0IDdjOTg5ZDVmNWNmNjhl
+M2FlYTE5YjlkZDU4YmU3YzhiOTA3NjE5YWEKQXV0aG9yOiBDcmlzdGlhbiBDaW9jYWx0ZWEgPGNy
+aXN0aWFuLmNpb2NhbHRlYUBjb2xsYWJvcmEuY29tPgoKcGh5OiByb2NrY2hpcDogc2Ftc3VuZy1o
+ZHB0eDogRml4IHJhdGUgcmVjYWxjdWxhdGlvbiBmb3IgaGlnaCBicGMKClRoaXMgcGF0Y2ggdXBk
+YXRlcyB0aGUgcmF0ZSByZWNhbGN1bGF0aW9uIGxvZ2ljIHRvIHJlYWQgdGhlIGJwYyB2YWx1ZSBk
+aXJlY3RseQpmcm9tIGhhcmR3YXJlIHJlZ2lzdGVycyBpbnN0ZWFkIG9mIHJlbHlpbmcgb24gdGhl
+IHVuaW5pdGlhbGl6ZWQgSERNSSBQSFkKY29uZmlndXJhdGlvbi4gVGhpcyByZXNvbHZlcyBpbmNv
+cnJlY3QgcmF0ZSBjYWxjdWxhdGlvbnMgd2hlbiBicGMgaXMgaGlnaGVyCnRoYW4gOC4KCj4gZGlm
+ZiAtLWdpdCBhL2RyaXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1yb2NrY2hpcC1zYW1zdW5nLWhkcHR4
+LmMgYi9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtc2Ftc3VuZy1oZHB0eC5jCj4g
+aW5kZXggMmQ5NzNiYzM3ZjA3Ni4uNzEwNjAzYWZmZjg2NiAxMDA2NDQKPiAtLS0gYS9kcml2ZXJz
+L3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtc2Ftc3VuZy1oZHB0eC5jCj4gKysrIGIvZHJpdmVy
+cy9waHkvcm9ja2NoaXAvcGh5LXJvY2tjaGlwLXNhbXN1bmctaGRwdHguYwo+IEBAIC0yMTY4LDcg
+KzIxNjgsNyBAQCBzdGF0aWMgdTY0IHJrX2hkcHR4X3BoeV9jbGtfY2FsY19yYXRlX2Zyb21fcGxs
+X2NmZyhzdHJ1Y3QgcmtfaGRwdHhfcGh5ICpoZHB0eCkKPiAgCXN0cnVjdCBsY3BsbF9jb25maWcg
+bGNwbGxfaHc7Cj4gIAlzdHJ1Y3Qgcm9wbGxfY29uZmlnIHJvcGxsX2h3Owo+ICAJdTY0IGZvdXQs
+IHNkbTsKPiAtCXUzMiBtb2RlLCB2YWw7Cj4gKwl1MzIgbW9kZSwgYnBjLCB2YWw7Cj4gIAlpbnQg
+cmV0LCBpOwo+ICAKPiAgCXJldCA9IHJlZ21hcF9yZWFkKGhkcHR4LT5yZWdtYXAsIENNTl9SRUco
+MDAwOCksICZtb2RlKTsKCltTZXZlcml0eTogSGlnaF0KVGhpcyBpcyBhIHByZS1leGlzdGluZyBp
+c3N1ZSwgYnV0IGRvZXMgCnJrX2hkcHR4X3BoeV9jbGtfY2FsY19yYXRlX2Zyb21fcGxsX2NmZygp
+IGZhaWwgdG8gaGFuZGxlIGNhc2NhZGUgbW9kZSBmb3IgdGhlCjMuMkdIeiBGUkxfOEc0TF9SQVRF
+PwoKV2hlbiB0aGUgaGFyZHdhcmUgaXMgY29uZmlndXJlZCBpbiBjYXNjYWRlIG1vZGUgdXNpbmcg
+Ym90aCBMQ1BMTCBhbmQgUk9QTEwsCkNNTl9SRUcoMDAwOCkgaGFzIExDUExMX0xDVkNPX01PREVf
+RU5fTUFTSyBzZXQuCgpUaGUgZnVuY3Rpb24gc2VlcyB0aGlzIGJpdCBhbmQgYXNzdW1lcyB0aGUg
+cmF0ZSBtdXN0IGJlIGRldGVybWluZWQgc29sZWx5CmZyb20gdGhlIHJrX2hkcHR4X2ZybF9sY3Bs
+bF9jZmcgYXJyYXk6Cgpkcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9ja2NoaXAtc2Ftc3VuZy1o
+ZHB0eC5jOnJrX2hkcHR4X3BoeV9jbGtfY2FsY19yYXRlX2Zyb21fcGxsX2NmZygpIHsKICAgIC4u
+LgogICAgaWYgKG1vZGUgJiBMQ1BMTF9MQ1ZDT19NT0RFX0VOX01BU0spIHsKICAgICAgICAuLi4K
+ICAgICAgICBmb3IgKGkgPSAwOyBpIDwgQVJSQVlfU0laRShya19oZHB0eF9mcmxfbGNwbGxfY2Zn
+KTsgaSsrKSB7CiAgICAgICAgICAgIC4uLgogICAgICAgICAgICAgICAgcmV0dXJuIGNmZy0+cmF0
+ZTsKICAgICAgICB9CgogICAgICAgIGRldl9kYmcoaGRwdHgtPmRldiwgIiVzIG5vIEZSTCBtYXRj
+aCBmb3VuZFxuIiwgX19mdW5jX18pOwogICAgICAgIHJldHVybiAwOwogICAgfQogICAgLi4uCn0K
+CkZvciB0aGUgMy4yR0h6IGNvbmZpZywgaXQgc2VhcmNoZXMgdGhlIGFycmF5IGZvciBhbiBlbnRy
+eSB3aXRoIHBtc19tZGl2IG9mCjEwNywgZmluZHMgbm8gbWF0Y2gsIGFuZCByZXR1cm5zIDAgaW5z
+dGVhZCBvZiBmYWxsaW5nIHRocm91Z2ggdG8gdGhlIFJPUExMCmNhbGN1bGF0aW9uLgoKQ291bGQg
+dGhpcyBieXBhc3MgdGhlIFJPUExMIGNhbGN1bGF0aW9uIGFuZCBjYXVzZSB0aGUgY2xvY2sgZnJh
+bWV3b3JrIHRvCnJlZ2lzdGVyIGEgMCBIeiByYXRlIGZvciB0aGUgMy4yR0h6IEhETUkgbW9kZT8K
+ClsgLi4uIF0KCj4gQEAgLTIyNjYsNiArMjI2Niw3IEBAIHN0YXRpYyB1NjQgcmtfaGRwdHhfcGh5
+X2Nsa19jYWxjX3JhdGVfZnJvbV9wbGxfY2ZnKHN0cnVjdCBya19oZHB0eF9waHkgKmhkcHR4KQo+
+ICAJaWYgKHJldCkKPiAgCQlyZXR1cm4gMDsKPiAgCXJvcGxsX2h3LnBtc19zZGl2ID0gKCh2YWwg
+JiBQTExfUENHX1BPU1RESVZfU0VMX01BU0spID4+IDQpICsgMTsKPiArCWJwYyA9IChGSUVMRF9H
+RVQoUExMX1BDR19DTEtfU0VMX01BU0ssIHZhbCkgPDwgMSkgKyA4Owo+ICAKPiAgCWZvdXQgPSBQ
+TExfUkVGX0NMSyAqIHJvcGxsX2h3LnBtc19tZGl2Owo+ICAJaWYgKHJvcGxsX2h3LnNkbV9lbikg
+ewoKW1NldmVyaXR5OiBIaWdoXQpUaGlzIGlzIGEgcHJlLWV4aXN0aW5nIGlzc3VlLCBidXQgY291
+bGQgdGhpcyBkaXZpc2lvbiB0cmlnZ2VyIGEKZGl2aWRlLWJ5LXplcm8gcGFuaWMgaWYgdGhlIGJv
+b3Rsb2FkZXIgbGVhdmVzIHRoZSBQTEwgcmVnaXN0ZXJzCnVuaW5pdGlhbGl6ZWQgb3IgbWlzY29u
+ZmlndXJlZD8KClRoZSBjYWxjdWxhdGlvbiB1c2VzIGRpdl91NjQoKSB3aXRoIGEgZGVub21pbmF0
+b3IgcmVhZCBkaXJlY3RseSBmcm9tIGhhcmR3YXJlOgoKZHJpdmVycy9waHkvcm9ja2NoaXAvcGh5
+LXJvY2tjaGlwLXNhbXN1bmctaGRwdHguYzpya19oZHB0eF9waHlfY2xrX2NhbGNfcmF0ZV9mcm9t
+X3BsbF9jZmcoKSB7CiAgICAuLi4KICAgIGlmIChyb3BsbF9ody5zZG1fZW4pIHsKICAgICAgICBz
+ZG0gPSBkaXZfdTY0KFBMTF9SRUZfQ0xLICogcm9wbGxfaHcuc2RjX2Rlbm8gKgogICAgICAgICAg
+ICAgICAgICAgICAgcm9wbGxfaHcucG1zX21kaXYgKiByb3BsbF9ody5zZG1fbnVtLAogICAgICAg
+ICAgICAgICAgICAgICAgMTYgKiByb3BsbF9ody5zZG1fZGVubyAqCiAgICAgICAgICAgICAgICAg
+ICAgICAocm9wbGxfaHcuc2RjX2Rlbm8gKiByb3BsbF9ody5zZGNfbiAtIHJvcGxsX2h3LnNkY19u
+dW0pKTsKICAgIC4uLgp9CgpUaGUgdmFsdWVzIHJvcGxsX2h3LnNkbV9kZW5vLCByb3BsbF9ody5z
+ZGNfZGVubywgcm9wbGxfaHcuc2RjX24sIGFuZApyb3BsbF9ody5zZGNfbnVtIGFyZSBwb3B1bGF0
+ZWQgZnJvbSBDTU5fUkVHKDAwNjApLCBDTU5fUkVHKDAwNzApLCBldGMuLAp3aXRob3V0IGFueSB6
+ZXJvLWNoZWNrcy4KCklmIHRoZSBQTEwgaXMgZW5hYmxlZCBidXQgdGhlc2UgcmVnaXN0ZXJzIGV2
+YWx1YXRlIHRvIDAsIGl0IGFwcGVhcnMgdGhpcwp3b3VsZCBjYXVzZSBhIHBhbmljIGR1cmluZyBk
+cml2ZXIgcHJvYmUgb3Igd2hlbiB0aGUgY2xvY2sgZnJhbWV3b3JrIHF1ZXJpZXMKdGhlIHJhdGUu
+CgpJcyBpdCBzYWZlIHRvIGRpcmVjdGx5IHRydXN0IHRoZSBoYXJkd2FyZSByZWdpc3RlciBzdGF0
+ZSBmb3IgdGhpcyBkZW5vbWluYXRvcgp3aXRob3V0IHNhbml0aXphdGlvbj8KCj4gQEAgLTIyODAs
+NyArMjI4MSw3IEBAIHN0YXRpYyB1NjQgcmtfaGRwdHhfcGh5X2Nsa19jYWxjX3JhdGVfZnJvbV9w
+bGxfY2ZnKHN0cnVjdCBya19oZHB0eF9waHkgKmhkcHR4KQo+ICAJCQlmb3V0ID0gZm91dCArIHNk
+bTsKPiAgCX0KPiAgCj4gLQlyZXR1cm4gZGl2X3U2NChmb3V0ICogMiwgcm9wbGxfaHcucG1zX3Nk
+aXYgKiAxMCk7Cj4gKwlyZXR1cm4gRElWX1JPVU5EX0NMT1NFU1RfVUxMKGZvdXQgKiAyICogOCwg
+cm9wbGxfaHcucG1zX3NkaXYgKiAxMCAqIGJwYyk7Cj4gIH0KCi0tIApTYXNoaWtvIEFJIHJldmll
+dyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAyNjA2MTEtaGRwdHgtY2xrLWZp
+eGVzLXYzLTAtNjdiMWIwYzAwZTE2QGNvbGxhYm9yYS5jb20/cGFydD0xCgotLSAKbGludXgtcGh5
+IG1haWxpbmcgbGlzdApsaW51eC1waHlAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwczovL2xpc3Rz
+LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1waHkK
