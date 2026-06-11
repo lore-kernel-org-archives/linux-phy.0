@@ -4,57 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 09AFACD98C7
-	for <linux-phy@archiver.kernel.org>; Thu, 11 Jun 2026 15:35:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 15F79CD98CE
+	for <linux-phy@archiver.kernel.org>; Thu, 11 Jun 2026 15:35:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
 	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xk942u5zGFzPYeD7CXT4sZb7rqcbIjb4RSZQnt/go1U=; b=ARboyri20c8hWS
-	I2BVT4gE69kew8+vugqHQIU2lI7/oA5xogDaMJdvfBiVJG/6RnNJHgSrV6F4ANJk0lma26doQd1d2
-	3pYWplpswb/wYVj0n3n37UBYta2/1XjTNbRwyfcSRUYzZ52b33+1gdgAT7jYm/JdZkKxN9KYAmZuQ
-	RTBvWM5U6oJnFsgpje3ejYz6okBXYLW3kgj1aCFUWn11dfRpzp+ps906tjWC+I7wAum1CNF/o/KV8
-	lH7fyjo0u0bOrc53sCxW9uBkAJvdZq6l8yRQF8gw/9015b/E/Z//3R4rStVHRk7LxDdgZkB3nSDxb
-	ydrSlODkCdH1p2SIRaNA==;
+	List-Owner; bh=bXr+4bcPhkWL/PogEAHv+dGXQAevpXE+fVmvh5JCsOU=; b=W5iUpics9PRjy0
+	m4vNvUzuNvjhBke9DTmu5DqHhE88JsTXdyp2Xx0ExvBB3ymhZOstST3sWT+0nwGM38EL5uDgLzZW/
+	rORfj0xeCZ3rIN+GFfRlCgsoFT/S3lhf85YsxtIkeR0XXjMIs51zu6UfOe1gsuh5IcpiTGcA6+fUh
+	emRxA9j+Fy8hr/hMEnp2HJFWELpC20dE+TIZ42IV4KbbY6joRXq/MqeOMhGZqvr72gUYSKiZzVsLE
+	XCDWh6pGcvkQdxOZhNcABsxKT1vRF22v50E1m6vOWOG7538TkXhMIgBxLHIkUFMXcSz7rtEL/RkLY
+	veWT+51DicSEcJADRXgg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXhRe-00000009gsh-35dH;
-	Thu, 11 Jun 2026 15:35:50 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1wXhRi-00000009guK-3UwD;
+	Thu, 11 Jun 2026 15:35:54 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXhRd-00000009grw-4A4j;
-	Thu, 11 Jun 2026 15:35:50 +0000
+	id 1wXhRh-00000009gu3-1Kuo
+	for linux-phy@lists.infradead.org;
+	Thu, 11 Jun 2026 15:35:53 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 2BBBC600AF;
+	by sea.source.kernel.org (Postfix) with ESMTP id 18B5D44310;
+	Thu, 11 Jun 2026 15:35:53 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 79E701F00893;
 	Thu, 11 Jun 2026 15:35:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DD5131F00898;
-	Thu, 11 Jun 2026 15:35:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1781192148;
-	bh=+j2YhohFB/HwnCxh8xFFgMkWvDaXNClb8/BZwsoLoFw=;
+	s=k20260515; t=1781192153;
+	bh=yHHu3KmrI9zJ+e6R4+US0jxvIkq583Z8aVM5y5adfUU=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=A1D/tmBEy2STYW/pTS7lVBHE4ek0/WqtChV8XxlYJnveGcN86bflYpc073arEhag4
-	 +43OyKgMcqyz+QTmYk8gJccn89PpvEBhvSu3ztyuQqeSDyY1R/0stDaWQTgKlQTw0X
-	 mSs6PgWmrF/n6VwvqAdYhdoBe9D4/8w76ZmS7tm5z574Am2aK7x+ANNNDRfHu3yLmg
-	 OgluB0zx5a9SaCZo3/Jh2MYcf+EyrMOIQ4kyBL9d4ewdXZINwn8DmiKRFQ2DZrGsEk
-	 dOOyLfaFWlZVQnHo/V/gNACW2HhMinP8E8Cqj2RwhRIF/GtgNTgnjoazYJk21svf23
-	 och8PzEttTf6A==
+	b=Z8tiSgNIDM/EWWsqzCXO6CUWe/YVGFxQI/lJHr22emjHju6nvrJDfixrn7lCuYlIZ
+	 weAWYEvzyXcB5CmYparzKJCBsz6cBKFVgepl3UcydJec1z60DhCwp/Bv3wmKnnijXU
+	 BQHQSm7QIzbNr07jYlkto6o8zdOPtmWLMUdKL/klgAuIKJAiBHvW3lun+LUr33hfTv
+	 G159nBqXm5wLiUPfLJTQDb29e2xDAFniBaa6lshHlGLFG08pOB1yvxua6T/PM/Zzle
+	 CA4jEThbR7zisHOgnDIrbmBWWkkSsHZoskoxwmC5dnPal7DeRsUtIP7tITnwr9grwK
+	 4eVei0Cg84Ccg==
 From: Vinod Koul <vkoul@kernel.org>
-To: Neil Armstrong <neil.armstrong@linaro.org>, Frank Li <Frank.Li@nxp.com>, 
- Sascha Hauer <s.hauer@pengutronix.de>, 
- Pengutronix Kernel Team <kernel@pengutronix.de>, 
- Fabio Estevam <festevam@gmail.com>, Liu Ying <victor.liu@nxp.com>, 
- Felix Gu <ustc.gu@gmail.com>
-Cc: linux-phy@lists.infradead.org, imx@lists.linux.dev, 
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-In-Reply-To: <20260605-lvds-v2-1-3ce7539d1104@gmail.com>
-References: <20260605-lvds-v2-1-3ce7539d1104@gmail.com>
-Subject: Re: [PATCH v2] phy: freescale: phy-fsl-imx8qm-lvds-phy: Fix
- missing pm_runtime_disable() on probe error path
-Message-Id: <178119214553.568088.1035620775294899553.b4-ty@kernel.org>
-Date: Thu, 11 Jun 2026 21:05:45 +0530
+To: Kishon Vijay Abraham I <kishon@kernel.org>, 
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Neil Armstrong <neil.armstrong@linaro.org>, 
+ Dimitri Fedrau <dima.fedrau@gmail.com>, 
+ Dimitri Fedrau <dimitri.fedrau@liebherr.com>
+Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, Conor Dooley <conor.dooley@microchip.com>, 
+ lee.lockhey@gmail.com, Marc Kleine-Budde <mkl@pengutronix.de>
+In-Reply-To: <20260602-tja1145-support-v6-0-0e0ffc8ee63d@liebherr.com>
+References: <20260602-tja1145-support-v6-0-0e0ffc8ee63d@liebherr.com>
+Subject: Re: [PATCH v6 0/2] phy: add basic support for NXPs TJA1145 CAN
+ transceiver
+Message-Id: <178119214911.568088.18225085446293272381.b4-ty@kernel.org>
+Date: Thu, 11 Jun 2026 21:05:49 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
 X-BeenThere: linux-phy@lists.infradead.org
@@ -74,21 +77,18 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Fri, 05 Jun 2026 19:57:20 +0800, Felix Gu wrote:
-> If mixel_lvds_phy_reset() fails in probe after pm_runtime_enable(),
-> the function returns directly without calling pm_runtime_disable(),
-> leaving runtime PM permanently enabled for the device.
+On Tue, 02 Jun 2026 10:25:36 +0200, Dimitri Fedrau wrote:
+> Add basic driver support for NXPs TJA1145 CAN transceiver which brings the
+> PHY up/down by switching to normal/standby mode using SPI commands.
 > 
-> Fix this by using devm_pm_runtime_enable() so that cleanup is
-> automatic on any probe failure or driver unbind. This also allows
-> removing the manual err label and the .remove callback.
 > 
-> [...]
 
 Applied, thanks!
 
-[1/1] phy: freescale: phy-fsl-imx8qm-lvds-phy: Fix missing pm_runtime_disable() on probe error path
-      commit: 799e7cf2f0b50b34660b5ffce0f7d8dec376a0d5
+[1/2] dt-bindings: phy: add support for NXPs TJA1145 CAN transceiver
+      commit: baacd0af457c2505137c4774e71efe044c11b26d
+[2/2] phy: add basic support for NXPs TJA1145 CAN transceiver
+      commit: e5a9c1c917b59a4aff066b9f317501834c6d5af2
 
 Best regards,
 -- 
