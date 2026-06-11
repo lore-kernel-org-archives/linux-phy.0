@@ -4,60 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 15F79CD98CE
-	for <linux-phy@archiver.kernel.org>; Thu, 11 Jun 2026 15:35:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2DF19CD98C7
+	for <linux-phy@archiver.kernel.org>; Thu, 11 Jun 2026 15:35:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	References:In-Reply-To:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bXr+4bcPhkWL/PogEAHv+dGXQAevpXE+fVmvh5JCsOU=; b=W5iUpics9PRjy0
-	m4vNvUzuNvjhBke9DTmu5DqHhE88JsTXdyp2Xx0ExvBB3ymhZOstST3sWT+0nwGM38EL5uDgLzZW/
-	rORfj0xeCZ3rIN+GFfRlCgsoFT/S3lhf85YsxtIkeR0XXjMIs51zu6UfOe1gsuh5IcpiTGcA6+fUh
-	emRxA9j+Fy8hr/hMEnp2HJFWELpC20dE+TIZ42IV4KbbY6joRXq/MqeOMhGZqvr72gUYSKiZzVsLE
-	XCDWh6pGcvkQdxOZhNcABsxKT1vRF22v50E1m6vOWOG7538TkXhMIgBxLHIkUFMXcSz7rtEL/RkLY
-	veWT+51DicSEcJADRXgg==;
+	List-Owner; bh=WWT14PTypPD3mTQ4O4qvVo5UDGIQu1WK3mW4VWJbRPQ=; b=tWXgkhw+RSdIH+
+	dsRy0z17hRG8mT8A4vM3tccJi26buyPfn6E4fXG5ncLcY8F7O+WFNvsJapU+nZaX0w+GnnIwgHlhM
+	gqy5fpO2pTCGqQULs5PBFn5QaxnIrRfzQrstEv6Ap1HCPeg0yXFxqEFCuRcTin8aqrgPzJA/1ttqB
+	BVL+DE1Fo5O7mIkSLLx3JJY5UVhkFqH25yY2T6911iiHmXSkRwoDVLpUFEvLEb9W0vVDogmq4a1Fy
+	9fYwFVRkdQIIAgkSjJcI82Ly+7z6yjHACx4NW+H6c1GT5h7HsqCT1GCiUCnaD5c254Vz8fkLwxAxM
+	nY4QZTiqQXjERhqsvbvg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXhRi-00000009guK-3UwD;
-	Thu, 11 Jun 2026 15:35:54 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wXhRl-00000009gvn-3zcw;
+	Thu, 11 Jun 2026 15:35:57 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXhRh-00000009gu3-1Kuo
+	id 1wXhRj-00000009guj-3HMp
 	for linux-phy@lists.infradead.org;
-	Thu, 11 Jun 2026 15:35:53 +0000
+	Thu, 11 Jun 2026 15:35:55 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 18B5D44310;
+	by tor.source.kernel.org (Postfix) with ESMTP id 1657B600AA;
+	Thu, 11 Jun 2026 15:35:55 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8CD5C1F00899;
 	Thu, 11 Jun 2026 15:35:53 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 79E701F00893;
-	Thu, 11 Jun 2026 15:35:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1781192153;
-	bh=yHHu3KmrI9zJ+e6R4+US0jxvIkq583Z8aVM5y5adfUU=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=Z8tiSgNIDM/EWWsqzCXO6CUWe/YVGFxQI/lJHr22emjHju6nvrJDfixrn7lCuYlIZ
-	 weAWYEvzyXcB5CmYparzKJCBsz6cBKFVgepl3UcydJec1z60DhCwp/Bv3wmKnnijXU
-	 BQHQSm7QIzbNr07jYlkto6o8zdOPtmWLMUdKL/klgAuIKJAiBHvW3lun+LUr33hfTv
-	 G159nBqXm5wLiUPfLJTQDb29e2xDAFniBaa6lshHlGLFG08pOB1yvxua6T/PM/Zzle
-	 CA4jEThbR7zisHOgnDIrbmBWWkkSsHZoskoxwmC5dnPal7DeRsUtIP7tITnwr9grwK
-	 4eVei0Cg84Ccg==
+	s=k20260515; t=1781192154;
+	bh=+X//aE8JlBO0vat6y9vMNAc6uzi9BwS+bAP1p8utoyo=;
+	h=From:To:In-Reply-To:References:Subject:Date;
+	b=Fwf6uYG3qASA+gQsgnceviGjCHaBB6ty9IKbidIN2HCgBY7v6DYdXHakg6FU1jpQB
+	 MhU62iAaVENuX5EviS6OaeXokvpZRMG5KqV2MHMX+zXJEbM75y+Hk/Rl8znIg8KbNP
+	 VEq6iJO49uOZLZqTgDqvhLlVroguz4wYlc5WgPHokBk+vHGzQm3obyAYYyiRf9AusU
+	 XJ9BaCNidbGZ0Apy3Ol+6HBpWo4ZqDMbSRdwZCZ67AzH2mqPs87z6AzUIUu251Xz4v
+	 X/FyImdkTxH0iENh5t2Eq2RJvlB0HIWWB0jX4pvrbP7yc0VJs7eGCtgoTwdi6CMj/j
+	 VV8ThKFufMEig==
 From: Vinod Koul <vkoul@kernel.org>
-To: Kishon Vijay Abraham I <kishon@kernel.org>, 
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Neil Armstrong <neil.armstrong@linaro.org>, 
- Dimitri Fedrau <dima.fedrau@gmail.com>, 
- Dimitri Fedrau <dimitri.fedrau@liebherr.com>
-Cc: linux-phy@lists.infradead.org, devicetree@vger.kernel.org, 
- linux-kernel@vger.kernel.org, Conor Dooley <conor.dooley@microchip.com>, 
- lee.lockhey@gmail.com, Marc Kleine-Budde <mkl@pengutronix.de>
-In-Reply-To: <20260602-tja1145-support-v6-0-0e0ffc8ee63d@liebherr.com>
-References: <20260602-tja1145-support-v6-0-0e0ffc8ee63d@liebherr.com>
-Subject: Re: [PATCH v6 0/2] phy: add basic support for NXPs TJA1145 CAN
- transceiver
-Message-Id: <178119214911.568088.18225085446293272381.b4-ty@kernel.org>
-Date: Thu, 11 Jun 2026 21:05:49 +0530
+To: Neil Armstrong <neil.armstrong@linaro.org>, 
+ linux-phy@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+In-Reply-To: <20260505102913.188406-2-krzysztof.kozlowski@oss.qualcomm.com>
+References: <20260505102913.188406-2-krzysztof.kozlowski@oss.qualcomm.com>
+Subject: Re: [PATCH] phy: Move MODULE_DEVICE_TABLE next to the table itself
+Message-Id: <178119215320.568088.3981475882754864802.b4-ty@kernel.org>
+Date: Thu, 11 Jun 2026 21:05:53 +0530
 MIME-Version: 1.0
 X-Mailer: b4 0.13.0
 X-BeenThere: linux-phy@lists.infradead.org
@@ -77,18 +70,20 @@ Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
 
-On Tue, 02 Jun 2026 10:25:36 +0200, Dimitri Fedrau wrote:
-> Add basic driver support for NXPs TJA1145 CAN transceiver which brings the
-> PHY up/down by switching to normal/standby mode using SPI commands.
+On Tue, 05 May 2026 12:29:14 +0200, Krzysztof Kozlowski wrote:
+> By convention MODULE_DEVICE_TABLE() immediately follows the ID table it
+> exports, because this is easier to read and verify.  It also makes more
+> sense since #ifdef for ACPI or OF could hide both of them.
 > 
+> Most of the privers already have this correctly placed, so adjust
+> the missing ones.  No functional impact.
 > 
+> [...]
 
 Applied, thanks!
 
-[1/2] dt-bindings: phy: add support for NXPs TJA1145 CAN transceiver
-      commit: baacd0af457c2505137c4774e71efe044c11b26d
-[2/2] phy: add basic support for NXPs TJA1145 CAN transceiver
-      commit: e5a9c1c917b59a4aff066b9f317501834c6d5af2
+[1/1] phy: Move MODULE_DEVICE_TABLE next to the table itself
+      commit: 1e8065dfac34d1217f961e079959b71c69123417
 
 Best regards,
 -- 
