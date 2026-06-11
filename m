@@ -4,125 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8C20FCD98D2
-	for <linux-phy@archiver.kernel.org>; Thu, 11 Jun 2026 11:03:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DC641CD98D2
+	for <linux-phy@archiver.kernel.org>; Thu, 11 Jun 2026 11:04:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7DFmazS6KHX15JTifjgUVZ+FSmiExhKoP4vV+BYG0kI=; b=zhfG4oGLiuyT0y
-	n8LTqrFDGS4gKXWpKckTFRxjiHXT1yyhQmUfy+4z3PPqp7Ny9BbB339+YN9kiomKSMaVIaIK9SiZJ
-	GlOqS/3U+/4Lg6HHaFhSHJQtLBQtkA4ADH0PJd0cn/BudCYS4AN6I9irAWiwLpfwXTY194Nhoc0yd
-	T/TqXRIyyOzhg9buws6NB+UorfbqtFbk4gxl9TCHiGUfXq+aYTUl03tQNxHQPfWWlwR356//e0qRp
-	CAIBmIlGpnYwZpWRBaJvV/ZdcMinHrQSbbPOlQAIe9nXUAL/cv/q5x7BmL34ABAH3gvBhnIxIoXcM
-	gObhyE/fZjkiH/433VDA==;
+	List-Owner; bh=K5zlScdnSuuQJEVXiyAcY1tfkLxwMsNnLzaWFN0mpT4=; b=JqQ6goQBK1TknW
+	7Bu7IJ/GTpP65dDx0yOlVVRpasbMuDj5wMlOc/cZc51VE71Pfn5bHMt1Ke0uPFXHMZXpY+JzPC6vL
+	UpSNQYqifiD/13k1MDr5FOwzDXO6y20We7/vQYlTJzTQf+qQtCr+9hCNdBMUNbSRT2qp9SdmJrMQj
+	g2f9LVYhJPxjATWx0LqFMORTABcIzxO22EcMlYk+1UCldasrxGb8B++2hTHEL4RVVwq+zTA2oTB13
+	e91ib5L03vCEnD5qIK7+UuytNdp0t8KFgtYvHH4Ph/cMY3vNujA9RT7WgTmHdITcTPygegWJHcX58
+	j5oBqEANK9gwBk3Sm3mQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXdC4-00000009H42-1GrB;
-	Thu, 11 Jun 2026 11:03:28 +0000
-Received: from mail-francesouthazon11011069.outbound.protection.outlook.com ([40.107.130.69] helo=MRWPR03CU001.outbound.protection.outlook.com)
+	id 1wXdDL-00000009H8R-2iQE;
+	Thu, 11 Jun 2026 11:04:47 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXdC1-00000009H3e-13zC
-	for linux-phy@lists.infradead.org;
-	Thu, 11 Jun 2026 11:03:26 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=rylu5uBIaD7EAVPd5BPNFRISz0CPVe1a0/BZQmgIgDP+5IfNoNmh7/eLdiaAipWxWPqb1DO/i0Qh6utJkKP1MajpZVIe/4NCREVkjft6mJEan7Ba+6ILOJvlPCEHJ621I9ubxVRjJT9AcqfBQby30h4+I59sP3bG0giIXQllbrsi4ouj9WFY3Y9dxfc9/88m8Lb2uvlAxIkq4HLHIndJeIRfjcT1X552H170i2V5nkU3MJTPep9/6fvYV9yw3AU/gC3/6cZ9MFPkh2+zqKsyY7EgySTzY0pkAvwDgaB24unu7BIng+MNg2d5wetO5e4CAnZ+hSK4kyrByegnP+Q3tg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=iJsv+e6yjuozRcI1NvTuAtq0laz9e71MZFjK4NP5j+Y=;
- b=SjHmOaAjF86yGGxuVmasslFbX13d38b+KX4UQDOYvdhMtmGJolVtDgAD5qQOZQWZ+Tklux2G6a9BmvHtn4Repix9FB3tLcQUIM/nuTw/BGDdhlBvs7P7u7et0So5ybIY/XeWPiG1vBY1Oqp8rp50/Xh73VS7yjjpLoS0zjjU/XxhoNVjXURmXh9CFprP5LYjvMLuObu/+yDPY+dWXTc1B4x50/QsyOuE7L8McQ+3gelyx0TlqIHSJIhq129YeKPCfCpwg5cVHBWNb4deN0aeneTO1vnYZF3YEYf0XVwqhF62oyjRV4xeptP2ALqYI3JmgxuP8VakicNXUGxT0DMtmQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=iJsv+e6yjuozRcI1NvTuAtq0laz9e71MZFjK4NP5j+Y=;
- b=hVZ/DvTJV+9yfL64m69/HdJcoCtZiRnSMbc5WSx4C2T83MgQVPuYP2lAJPsplYX/Ep9WxvCuErce+ax0WCbVESU9lEDSxe9KwtZlYQlFArUeRXsTtw1aLuyzhszO5HnQGGMFoT4c1CtP7Mrf3E1WpaAEeF0+3ylRGd2pmi3PSZM47q0o4J8jBylD3WUHgjkRIhwrOz6Z5FAfquIZYV2XfC/XQ7ZZXI9BFLO1HzEH6Ihd3FALBTgdGHVHTJLZRocq2m7i8uKZcbSFCFaq7HDALKzp82kH9dVhTcNzrZli5GX4C6HG71MU//Qs+ON7mc0l4oWGDByh5yRcHl/bv/HkpA==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from GVXPR04MB12290.eurprd04.prod.outlook.com
- (2603:10a6:150:319::13) by VE1PR04MB7487.eurprd04.prod.outlook.com
- (2603:10a6:800:1a2::13) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.113.13; Thu, 11 Jun
- 2026 11:03:18 +0000
-Received: from GVXPR04MB12290.eurprd04.prod.outlook.com
- ([fe80::1739:3404:2175:33dd]) by GVXPR04MB12290.eurprd04.prod.outlook.com
- ([fe80::1739:3404:2175:33dd%6]) with mapi id 15.21.0092.016; Thu, 11 Jun 2026
- 11:03:18 +0000
-Date: Thu, 11 Jun 2026 14:03:14 +0300
-From: Ioana Ciornei <ioana.ciornei@nxp.com>
-To: Vladimir Oltean <vladimir.oltean@nxp.com>
-Cc: linux-phy@lists.infradead.org, Vinod Koul <vkoul@kernel.org>, 
-	Neil Armstrong <neil.armstrong@linaro.org>, Tanjeff Moos <tanjeff.moos@westermo.com>, 
+	id 1wXdDK-00000009H8E-07YN;
+	Thu, 11 Jun 2026 11:04:46 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 41D8960212;
+	Thu, 11 Jun 2026 11:04:45 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 257FA1F00893;
+	Thu, 11 Jun 2026 11:04:43 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1781175885;
+	bh=DXbvGxjsbYKAOSuXjFoiX5RrWY+cznGeY+TWkckl1mM=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=aCH8ip6yO86ZyM5RRiI3m8OEnA/TqawQ4wlHxYSGqZhTZo2KKwiTPXTjUqgnJqJnI
+	 kp+7C9baLAEpHRO79tziW5AsKGHxmQaD8We1Qw/5iGigtapLlquxNPluMLNPlpYuxG
+	 XsUBe1pOm7B/L21eJD4ZWePh5lmFTM0MlJlIv00W2Mk2eKQFGyqiRwqCq8TTTAPoGe
+	 7gzZ5yY7dGMTiG8t46ExvIbgilFMBuwF9adQ32ZJtB0nEVqUie7n8cRsoHwjQAOo0C
+	 TZVzWq+GBjRWMiJQODRtouB3r+857gVp8nNObP+sXwGGE+WOJVyz9h+G0ZSiUjRcCZ
+	 XK1naB+iufW2w==
+Date: Thu, 11 Jun 2026 16:34:40 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Joey Lu <a0987203069@gmail.com>
+Cc: Neil Armstrong <neil.armstrong@linaro.org>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Jacky Huang <ychuang3@nuvoton.com>,
+	Shan-Chun Hung <schung@nuvoton.com>, linux-phy@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v5 phy-next 08/16] phy: lynx-28g: move struct lynx_info
- definitions downwards
-Message-ID: <6zcuopu5s35vvtruib6ufd3edtymylkk2mrbsv2tmksckmdhfu@snsmyylht75k>
-References: <20260610151952.2141019-1-vladimir.oltean@nxp.com>
- <20260610151952.2141019-9-vladimir.oltean@nxp.com>
-Content-Disposition: inline
-In-Reply-To: <20260610151952.2141019-9-vladimir.oltean@nxp.com>
-X-ClientProxiedBy: FR4P281CA0372.DEUP281.PROD.OUTLOOK.COM
- (2603:10a6:d10:f8::18) To GVXPR04MB12290.eurprd04.prod.outlook.com
- (2603:10a6:150:319::13)
+Subject: Re: [PATCH 2/2] phy: nuvoton: Add MA35D1 USB2 OTG PHY driver
+Message-ID: <aiqWSGCuhAK7hoY9@vaman>
+References: <20260604101220.1092822-1-a0987203069@gmail.com>
+ <20260604101220.1092822-3-a0987203069@gmail.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: GVXPR04MB12290:EE_|VE1PR04MB7487:EE_
-X-MS-Office365-Filtering-Correlation-Id: e94357d7-5e7a-433e-4bc9-08dec7a90b27
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|23010399003|19092799006|376014|1800799024|56012099006|11063799006|4143699003|18002099003|22082099003;
-X-Microsoft-Antispam-Message-Info: oOIY7VlQy/9DIW+xKWS7kpFVBh8te4qBXKxWRu/mR9jQ5elqmUT3L71L1Kq2tdn219Ad7VZ+YMQDl9ZPOtjs6zu3PYMhLAtKkCqM2PqfA+qlztOZulQZwB460mTdB6hyA2HSKOsTSSpSlJ4iJitKEkj9zoy5XBZrVP1SwADN/40TDJnf2ynQMAPSOs1TqZcPT+rd2IPbgbWggIAxe5ttPImtvoPUzFmik/kMw9Ce+wQU9lc4DyJ6kuGXthRk9ZzX3DWaCdqCC8EiDYjDFUPkiVwEDxxniMw/egzdy1A7ktMgqzEiMxnppdpbZnIYvygG0QVdqp0IwrVOsSmIrn+k0fARlG6vKiSwgzNkeBduSALWEkr3rGmXoASKeM2Rt2G5TWRnNfJCoNuajEHShxYf+DtmoImjLvaS8abCOAIXtIlZErSZ3LYe0RHUREbGmIZcjR4/yWGtXIbWqD5FIjvhfZgq0cWE5THeY7Cvcej6TOB/VD9M54ABvqIYVe3UP+uEXNGRAYzV/Sq3RGRsiFS9y54hlp+RI9eSYNxgFEjK99xWiXa3ZVmoLmAnv8xqLU99cbNI+AY+jU9YEJMNjoEuoqpGzMIyGvbVNmDK7g4EtPhH6zI9ggZDWaCwQkYloIKhXGqPUXbVwgZ0L7MBBSqfnI2918LoWMIdqpjxLn9un7fv+sAyBip1v9iHtqDBmIRF
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GVXPR04MB12290.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(23010399003)(19092799006)(376014)(1800799024)(56012099006)(11063799006)(4143699003)(18002099003)(22082099003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?UGyVJo5ug5weD1JYiiM40fNdqgPcismtXzUVBlR4BrFif/FT1RxRx8J+JxSY?=
- =?us-ascii?Q?r1cCVKb/nj8KtwxeOrDyYTbEvmV9XFR9uuT8YxnXSBRD6JiLpcgcJSn5VhfF?=
- =?us-ascii?Q?lRrqzIC+w4e7YzGbAzGkIEU6kwjgKMm0bYfTDTPnxf6u0vVHh9CS8Qc5xHwv?=
- =?us-ascii?Q?Fqco+D34UO/5+qZH07AGehcwFZnpJZ9Vc8cE7CYsYMOg3wL44EFuBaJ9kfKo?=
- =?us-ascii?Q?8mLMiBLkfYTjQ0WbPAcDGD/4FleFEwc7lMwIZ/5PFAX0mUUyM15MTUEh6Od8?=
- =?us-ascii?Q?jZmwSY/8IffDDk30ETYO+PFlP4fB4iTV7nNtandLM0Q9KZ8x/SUIVKaBzeUG?=
- =?us-ascii?Q?U9mQgiK3SxX+Aoo9DD/ddDUim+sWZaYb7mO0K1jhHi34M5XvtXMtOHohskjR?=
- =?us-ascii?Q?Ja+2JVJm+h5b14UHpcplyqhoRCbCXKzI94NY7bPdDsWeb5VWBt3ulFe03IGW?=
- =?us-ascii?Q?M91jwoH6EgWaAcVANx3kWO1zM8iK7qrMmxinl8SRHfBXKtz15xPmwgKLGhXo?=
- =?us-ascii?Q?OR6KDMCh/OC7zjnLvJS3JGhjWRytbnC1oJazk2GlGOq6tPU8dLEuipxNCl6R?=
- =?us-ascii?Q?6bAxNjJ0hUCS5sdMp0DQJljaolDVQZ19Y206ZLp9PuCKgZtdbpZ3yQOSV0az?=
- =?us-ascii?Q?MMH0VkmS/zoYG5rIWkn2T5KJX108d/lUI116nkq1o7lmtkEKKHtCdecCNDLl?=
- =?us-ascii?Q?Y9gV62wnlNTl/ShB/bDjx0VqTmK8thAaru06Rb8yDnLoBII4XNN7YhLEZU11?=
- =?us-ascii?Q?fQn5+qnvx1EHsNE5g2s5oStQwkK1iUt2pTc9MgoaOCCjEHrOhc4U+yEbN9XF?=
- =?us-ascii?Q?Leq3+DLLa8tVkFn81kzFk50czv67i9VI3Y3nXprYTgb06CG/EL8P4DiZNB+N?=
- =?us-ascii?Q?LauWw114SJEmjlw3CAYt5T4nPZAUTcYqOhhuVJPGoG7v61JYdQq8UNPsi3KQ?=
- =?us-ascii?Q?uQbZvnV3C++mgAjEcI80Xwa1DDO1FPT5aHQiuxgVK93T15FA3uoLeCcXXAmf?=
- =?us-ascii?Q?f0QtV/7Jk9i/KhTibHLXq0/A9iE3Af9RroWVy6qLITzGpB/Vvv9LvgFSK6Xt?=
- =?us-ascii?Q?BtPi40jilldCh9leOAGjIBc1nXsRkynJakRJ5J2F7J3QL8zPUZLSdbfj1FKX?=
- =?us-ascii?Q?6JNjqLQWpK9r8VG6wqa4YBA33gN/WwQ7VK3ggVRKP8pCru55UsPwIxqQh2IW?=
- =?us-ascii?Q?I5JoRtdDK7+BeOEHyaiyeJuY5xNeeND5/tN2D/Y7Mti3J6abAplL+K2gzE7o?=
- =?us-ascii?Q?2HWjZGlFUt2chyqcNGhv+IGIUrcqKAVAh96SlZIpokGWNL0txgJrPFrre3DN?=
- =?us-ascii?Q?VSEMaO2wSMP0xPasqJwd+wrCKXqBDt7ixJx1URFESdzvl6YDLRsAzEvdRcxF?=
- =?us-ascii?Q?jEvj8gDLZhulbbU1sx0VH9EIaGhtsX54wViMfutZD1bixSe5X5l9GHgDx+u2?=
- =?us-ascii?Q?aP9Y1tXUBpjiEQ0y5UPHa0B1riVQ54kXBsh+kED6BQReMPpjujOarwh62Anp?=
- =?us-ascii?Q?VT9oSDrlf3AEBg8rYDrgAivH/bFF7Ik8Vb3bXJUxVc+O79Og1QrumWMeDM8y?=
- =?us-ascii?Q?pW5w0cAadJX+BbumJIucD03R9YVhnTpt6yV5UKnJlxiBTmtDBB2Q/ISNAM+m?=
- =?us-ascii?Q?uu/ai24hir7eGkFBTVl64FmJjsJJPqSDlAH3xbOAZ+g6Tz/0xJkrpsyz6DEp?=
- =?us-ascii?Q?9ahcPMGLgidrMM+roff9+lLOFTjrieJsWypBcw1pHr0w9BfqE5XsnXRWdE+r?=
- =?us-ascii?Q?mEyEKET4qw=3D=3D?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: e94357d7-5e7a-433e-4bc9-08dec7a90b27
-X-MS-Exchange-CrossTenant-AuthSource: GVXPR04MB12290.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Jun 2026 11:03:18.4893
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: u6OOVNOUFzhAtHnOwSEvKJ+TGu7ihyI9eFuXpNGMQegOJ/fSbxSz5X+ekbrfhgF3IFtjgWFlN5dDk6H4QJAamg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB7487
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260611_040325_315629_E097BB26 
-X-CRM114-Status: UNSURE (   8.52  )
-X-CRM114-Notice: Please train this message.
+Content-Disposition: inline
+In-Reply-To: <20260604101220.1092822-3-a0987203069@gmail.com>
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -139,17 +75,76 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jun 10, 2026 at 06:19:44PM +0300, Vladimir Oltean wrote:
-> We need to be able to reference more function pointers in upcoming
-> patches. The struct lynx_info definitions are currently placed a bit up
-> in lynx-28g.c in order to be able to do that without function prototype
-> forward declarations, so move them downward to avoid that situation.
+On 04-06-26, 18:12, Joey Lu wrote:
+> Add a PHY driver for the USB 2.0 PHYs in the Nuvoton MA35D1 SoC,
+> intended for use with the EHCI and OHCI host controllers.
 > 
-> No functional change intended.
+> The MA35D1 SoC has two USB ports:
 > 
-> Signed-off-by: Vladimir Oltean <vladimir.oltean@nxp.com>
+>   - USB0: an OTG port shared between a DWC2 gadget controller and
+>     EHCI0/OHCI0 host controllers.  A hardware mux automatically routes
+>     the physical USB0 signals to the appropriate controller based on the
+>     USB ID pin state.  The DWC2 IP is device-only in hardware,
+>     so host-mode operation on USB0 is handled entirely by EHCI0/OHCI0.
+> 
+>   - USB1: a dedicated host-only port served by EHCI1/OHCI1.
+> 
+> The driver implements:
+>   - Power-On Reset sequence with a guard that skips re-initialization if
+>     the PHY is already operational.  This protects PHY0 when the DWC2
+>     gadget driver has already run its own init before EHCI0 probes.
+>   - Optional resistor calibration trim via nuvoton,rcalcode.
+>   - Optional over-current detect polarity via nuvoton,oc-active-high.
+>   - For PHY0 only: a USB role switch that exposes the hardware ID pin
+>     state (PWRONOTP[16]).
+> 
+> Signed-off-by: Joey Lu <a0987203069@gmail.com>
+> ---
+>  drivers/phy/nuvoton/Kconfig          |  15 ++
+>  drivers/phy/nuvoton/Makefile         |   1 +
+>  drivers/phy/nuvoton/phy-ma35d1-otg.c | 264 +++++++++++++++++++++++++++
+>  3 files changed, 280 insertions(+)
+>  create mode 100644 drivers/phy/nuvoton/phy-ma35d1-otg.c
+> 
+> diff --git a/drivers/phy/nuvoton/Kconfig b/drivers/phy/nuvoton/Kconfig
+> index d02cae2db315..5fdd13f841e7 100644
+> --- a/drivers/phy/nuvoton/Kconfig
+> +++ b/drivers/phy/nuvoton/Kconfig
+> @@ -10,3 +10,18 @@ config PHY_MA35_USB
+>  	help
+>  	  Enable this to support the USB2.0 PHY on the Nuvoton MA35
+>  	  series SoCs.
+> +
+> +config PHY_MA35_USB_OTG
+> +	tristate "Nuvoton MA35 USB2.0 OTG PHY driver"
+> +	depends on ARCH_MA35 || COMPILE_TEST
+> +	depends on OF
+> +	select GENERIC_PHY
+> +	select MFD_SYSCON
+> +	select USB_ROLE_SWITCH
+> +	help
+> +	  Enable this to support the USB2.0 OTG PHY on the Nuvoton MA35
+> +	  series SoCs.  This driver handles PHY initialization for the
+> +	  EHCI/OHCI host controllers, including per-PHY power-on reset,
+> +	  resistor calibration trim, and over-current polarity
+> +	  configuration.  For the OTG port (PHY0), it also monitors the
+> +	  USB ID pin and registers a USB role switch.
+> diff --git a/drivers/phy/nuvoton/Makefile b/drivers/phy/nuvoton/Makefile
+> index 2937e3921898..3ecd76f35d7c 100644
+> --- a/drivers/phy/nuvoton/Makefile
+> +++ b/drivers/phy/nuvoton/Makefile
+> @@ -1,3 +1,4 @@
+>  # SPDX-License-Identifier: GPL-2.0
+>  
+>  obj-$(CONFIG_PHY_MA35_USB)		+= phy-ma35d1-usb2.o
+> +obj-$(CONFIG_PHY_MA35_USB_OTG)		+= phy-ma35d1-otg.o
 
-Reviewed-by: Ioana Ciornei <ioana.ciornei@nxp.com>
+Have you considered reusing usb2 driver with a different power_on
+function? Or handle the differences internally in the driver. There are
+few similarities in two and some things are different
+
+-- 
+~Vinod
 
 -- 
 linux-phy mailing list
