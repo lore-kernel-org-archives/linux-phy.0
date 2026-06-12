@@ -4,63 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AD865CD98C7
-	for <linux-phy@archiver.kernel.org>; Fri, 12 Jun 2026 00:18:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 41991CD98CC
+	for <linux-phy@archiver.kernel.org>; Fri, 12 Jun 2026 00:23:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BXcErDF373rBuMZ3U2h5Zkrlw5obd4jB6qVOcFM4Uhk=; b=O90WapDogUsl0s
-	AEdas9fe0dy1Yv/slYlc8tOwCGVnL9WK5PEYPAhZr0eY7tfTif7LhLBNdHb/4W5vHDfEpMfdmEDgx
-	mkHlHm6Yd/Hxbl8HNSfd8iu6Y6tm8+oRRGyCUc3nnPEgY01D/IxnYLZOR7u3FwiWYnr1DyqpVFcKw
-	NtLIeUnHmiSo4j4X7UmEPMF7T1DnlwYULuVUMb57YJtSmW54H1v/kKyYcwsIMsJeFSSqzqZZnDmHy
-	CdgKN8ZJDxTli/Iqzdi1a931mcCwuJ5fXKcSl+Ki3tivK2XyBsv0MLgavQXFVYVl+g3r62b+cwMI9
-	HlySsOlGxkts2lJbmXpA==;
+	List-Owner; bh=/ozcfCKgTu7nnb3LolMruQXbNv+FRjaxKFyqChqBqX0=; b=0XKbONJ+Kmv3y+
+	72rE3XeemdASEFepFJgMncfZ8Ss3ynIdoqyfscnTW7zFahWMzRxEQePZgbLy8SJByVIGS/fTRJJTr
+	WQcRMn1OpPFuqtaUIhBtRWThtrOeomKX3FVIgx/eEmKnM00SzRxrZlzGAqFQ4/ut79LoNo4B8e6N5
+	Q0qqCAsd7kKA5GtNHYnXIS8qBHmfXVXkwo+pA2ORuqD3dOjNSQ17XsUeWCZn6W42PKVV0CLI8zLLY
+	Oy2L+ZiCErPB9Q4tjnKlHuXMRKtyaygqST5m2fLXprIVC9Dy33kNKG0cCz9X/7dEH7xO/YtGOEYGn
+	Hm6Mc2WAMi3QnLE9wMng==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXpbu-0000000ADfA-0nM0;
-	Fri, 12 Jun 2026 00:18:58 +0000
+	id 1wXpgP-0000000ADj2-2f2a;
+	Fri, 12 Jun 2026 00:23:37 +0000
 Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXpbr-0000000ADee-0sg3
+	id 1wXpgN-0000000ADig-1tZA
 	for linux-phy@lists.infradead.org;
-	Fri, 12 Jun 2026 00:18:56 +0000
+	Fri, 12 Jun 2026 00:23:37 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
-	s=mail; t=1781223533;
-	bh=mSYn42qFwxcVeNAG6Q7Ssv9a2+y5l0z2gCqDv5a0n40=;
+	s=mail; t=1781223813;
+	bh=eCcFF2QPBF5RNy+nVOWMOGFMgPN0kvjN5EYT784Tu2E=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=pQvnXBDBlYcq54uxYzw0Ta5dSsxMjn7YemUnO/ATA63z0i7zhSyb5UK+IlwE+5mDC
-	 hlqlqZRd6mh5LEtRDGyeVUv3UXK5R9vpsABmEuSiHIwDpOoeQznd0yIRRsumM1BcTi
-	 pUNCxniOe3uVkwlZBHpzUthvy3xc8cNcYVuK1GBKtkCfv+QHTqzit23tKSkdcLED2Z
-	 cB8UUs8UhQQcErWoUfIdWAoNLvXD0rm7oNyRneX3Dbnocx+EuleZ7Ty5tD8kO7eeaV
-	 p+6SKkq/bgpeua/67x27UucCvcIDdZ7Z3X1dTLUi2tLULFPH2se4p8wHGJeQAgnWK2
-	 0sNUl/R8uo74Q==
+	b=b2h+XObsvrJSNqgVOWJcf55VqaQFtUL3CZRhAY3YRhYPXl39f6O5JTC4SHVGZMD9q
+	 aXJeQ8qU78ZdDJSFlai12a7qE8FeglOjPIh3mCRcQACBjlgQB7m+BMDmblAKBe2WAn
+	 Xo/BGMASPZkk92GBSmsJWq9Gq2wsSowBI0LjsQpO8m3SDa2s/5hlKABuhYbbyM4fZd
+	 Lye2lzGWB0b+fO53QxsxmTm2DThNaP5AmO0z/krGN0eblHjLc//dE+3MXEA1k2xw4o
+	 B3hOxktq+bVznlyP+2CavJKbvllIAPZqRT0Jc65BM37CZOcV1IRwC7reCyAQq6yN20
+	 WUm6Lj/fhrUHg==
 Received: from [100.64.0.241] (unknown [100.64.0.241])
 	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
 	(No client certificate requested)
 	(Authenticated sender: cristicc)
-	by bali.collaboradmins.com (Postfix) with ESMTPSA id E648517E03D7;
-	Fri, 12 Jun 2026 02:18:52 +0200 (CEST)
-Message-ID: <90ac7bbc-977b-432a-9f17-b7280e19d819@collabora.com>
-Date: Fri, 12 Jun 2026 03:18:52 +0300
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id 743E917E02F1;
+	Fri, 12 Jun 2026 02:23:33 +0200 (CEST)
+Message-ID: <2566d475-38ef-4f2e-9211-35498a8b1fc6@collabora.com>
+Date: Fri, 12 Jun 2026 03:23:33 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 2/8] phy: rockchip: samsung-hdptx: Prevent
- divide-by-zero when computing clk rate
+Subject: Re: [PATCH v4 4/8] phy: rockchip: samsung-hdptx: Handle uncommitted
+ PHY config changes
 To: sashiko-reviews@lists.linux.dev
-Cc: neil.armstrong@linaro.org, olteanv@gmail.com,
- linux-phy@lists.infradead.org, vkoul@kernel.org
-References: <20260612-hdptx-clk-fixes-v4-2-ce5e1d456cda@collabora.com>
- <20260611235702.0E9691F000E9@smtp.kernel.org>
+Cc: linux-phy@lists.infradead.org, olteanv@gmail.com,
+ neil.armstrong@linaro.org, vkoul@kernel.org
+References: <20260612-hdptx-clk-fixes-v4-4-ce5e1d456cda@collabora.com>
+ <20260611235951.9D16B1F000E9@smtp.kernel.org>
 Content-Language: en-US
 From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
-In-Reply-To: <20260611235702.0E9691F000E9@smtp.kernel.org>
+In-Reply-To: <20260611235951.9D16B1F000E9@smtp.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260611_171855_418623_A1D19262 
-X-CRM114-Status: GOOD (  16.40  )
+X-CRM114-CacheID: sfid-20260611_172335_650849_9FD55E7E 
+X-CRM114-Status: GOOD (  23.14  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,72 +77,125 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-On 6/12/26 2:57 AM, sashiko-bot@kernel.org wrote:
-> Thank you for your contribution! Sashiko AI review found 1 potential issue(s) to consider:
-> 
-> Pre-existing issues:
-> - [High] Potential integer underflow in `fout` calculation when hardware state is misconfigured, leading to a massive bogus clock rate that could hang downstream components.
+
+On 6/12/26 2:59 AM, sashiko-bot@kernel.org wrote:
+> Thank you for your contribution! Sashiko AI review found 3 potential issue(s) to consider:
+> - [High] rk_hdptx_phy_clk_determine_rate() incorrectly forces a 0 Hz clock rate when pll_config_dirty is true, breaking CCF semantics.
+> - [High] rk_hdptx_phy_consumer_get() silently suppresses PLL hardware lock failures, breaking the clk_prepare() error propagation contract.
+> - [High] Data race and missing synchronization between CCF and PHY APIs leading to concurrent hardware initialization.
 > --
 
-If the hardware reached such a damaged state, the kernel is likely already encountering more serious issues.
-
-Regardless, I will address this in the "FRL TxFFE level control" series, which is currently blocked by this one, to avoid any further delays.
-
-Regards,
-Cristian
+Nothing new here, already discussed before - we can move on..
 
 > 
-> commit cb21c8c13b880d08d17b5ee69740229527db5442
+> commit 2dc0dee2b507137b074178dc88bd9b69dbe45d38
 > Author: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
 > 
-> phy: rockchip: samsung-hdptx: Prevent divide-by-zero when computing clk rate
+> phy: rockchip: samsung-hdptx: Handle uncommitted PHY config changes
 > 
-> This commit adds sanitization to rk_hdptx_phy_clk_calc_rate_from_pll_cfg()
-> to prevent a divide-by-zero during clock rate calculation. It checks the
-> denominator derived from hardware registers, which could be uninitialized or
-> misconfigured.
-> 
-> Closes: https://sashiko.dev/#/patchset/20260611-hdptx-clk-fixes-v3-0-67b1b0c00e16@collabora.com?part=1
+> This commit defers programming HDMI PHY configuration changes to the hardware
+> until the PHY usage count increments. It introduces a pll_config_dirty flag
+> to track uncommitted state and invalidates the clock rate in the CCF callback
+> to force hardware updates.
 > 
 >> diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
->> index 710603afff866..8c044381b83a4 100644
 >> --- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
 >> +++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
->> @@ -2270,10 +2270,15 @@ static u64 rk_hdptx_phy_clk_calc_rate_from_pll_cfg(struct rk_hdptx_phy *hdptx)
+>> @@ -1347,25 +1354,22 @@ static int rk_hdptx_phy_consumer_get(struct rk_hdptx_phy *hdptx)
+>>  		return 0;
 >>  
->>  	fout = PLL_REF_CLK * ropll_hw.pms_mdiv;
->>  	if (ropll_hw.sdm_en) {
->> +		val = 16U * ropll_hw.sdm_deno *
->> +		      (ropll_hw.sdc_deno * ropll_hw.sdc_n - ropll_hw.sdc_num);
->> +		if (!val) {
->> +			dev_dbg(hdptx->dev, "%s invalid ROPLL hw state\n", __func__);
->> +			return 0;
->> +		}
->> +
->>  		sdm = div_u64(PLL_REF_CLK * ropll_hw.sdc_deno *
->> -			      ropll_hw.pms_mdiv * ropll_hw.sdm_num,
->> -			      16 * ropll_hw.sdm_deno *
->> -			      (ropll_hw.sdc_deno * ropll_hw.sdc_n - ropll_hw.sdc_num));
->> +			      ropll_hw.pms_mdiv * ropll_hw.sdm_num, val);
+>>  	ret = regmap_read(hdptx->grf, GRF_HDPTX_STATUS, &status);
+>> -	if (ret)
+>> -		goto dec_usage;
+>> -
+>> -	if (status & HDPTX_O_PLL_LOCK_DONE)
+>> -		dev_warn(hdptx->dev, "PLL locked by unknown consumer!\n");
+>> +	if (ret) {
+>> +		atomic_dec(&hdptx->usage_count);
+>> +		return ret;
+>> +	}
 >>  
->>  		if (ropll_hw.sdm_num_sign)
->>  			fout = fout - sdm;
+>>  	if (mode == PHY_MODE_DP) {
+>>  		rk_hdptx_dp_reset(hdptx);
+>>  	} else {
+>> -		ret = rk_hdptx_pll_cmn_config(hdptx);
+>> -		if (ret)
+>> -			goto dec_usage;
+>> +		/*
+>> +		 * Ignore PLL config errors at this point as pll_config_dirty
+>> +		 * was not reset and, therefore, operation will be retried.
+>> +		 */
+>> +		rk_hdptx_pll_cmn_config(hdptx);
+>>  	}
+>>  
+>>  	return 0;
 > 
 > [Severity: High]
-> This is a pre-existing issue, but could this subtraction result in an
-> integer underflow?
+> Does silently discarding this error break the clk_prepare error propagation
+> contract?
 > 
-> If the hardware registers are misconfigured or contain uninitialized values,
-> it seems the computed sigma-delta modulator offset sdm could be significantly
-> larger than the base frequency fout.
+> When this function is invoked via the clock provider's prepare phase, a
+> hardware failure such as an I/O timeout during the HDPTX_O_PHY_CLK_RDY wait
+> gets completely swallowed. The clk_prepare call would return success, allowing
+> CCF consumers to proceed while the PHY hardware remains uninitialized.
 > 
-> Since fout is an unsigned 64-bit integer, subtracting a larger sdm in
-> rk_hdptx_phy_clk_calc_rate_from_pll_cfg() would wrap around to a massive
-> positive value.
+> Although the comment assumes operations will be retried, if clk_set_rate is
+> not subsequently called, no further attempts will be made.
 > 
-> Could this underflow lead to an absurdly high clock rate being returned
-> to the Common Clock Framework, potentially causing hangs or div-by-zero
-> errors in downstream components?
+> [ ... ]
+> 
+>> @@ -1700,13 +1704,18 @@ static int rk_hdptx_phy_power_on(struct phy *phy)
+>>  		if (ret)
+>>  			rk_hdptx_phy_consumer_put(hdptx, true);
+>>  	} else {
+>> -		regmap_write(hdptx->grf, GRF_HDPTX_CON0,
+>> -			     HDPTX_MODE_SEL << 16 | FIELD_PREP(HDPTX_MODE_SEL, 0x0));
+>> +		if (hdptx->pll_config_dirty)
+>> +			ret = rk_hdptx_pll_cmn_config(hdptx);
+> 
+> [Severity: High]
+> Can this missing synchronization lead to concurrent hardware initialization?
+> 
+> If thread A calls clk_prepare and thread B concurrently calls phy_power_on:
+> 
+> Thread A increments usage_count to 1 in rk_hdptx_phy_consumer_get and
+> enters rk_hdptx_pll_cmn_config.
+> 
+> Thread B increments usage_count to 2, returns immediately from
+> rk_hdptx_phy_consumer_get, and proceeds here to check pll_config_dirty.
+> Because thread A hasn't cleared the flag yet, thread B will also invoke
+> rk_hdptx_pll_cmn_config.
+> 
+> Could this data race allow both threads to concurrently execute non-atomic
+> regmap multi-write sequences and corrupt the PHY state? Are driver-level
+> locks needed to protect the shared pll_config_dirty and hdmi_cfg structures?
+> 
+> [ ... ]
+> 
+>> @@ -2323,8 +2335,19 @@ static int rk_hdptx_phy_clk_determine_rate(struct clk_hw *hw,
+>>  {
+>>  	struct rk_hdptx_phy *hdptx = to_rk_hdptx_phy(hw);
+>>  
+>> -	if (hdptx->hdmi_cfg.mode == PHY_HDMI_MODE_FRL)
+>> -		return hdptx->hdmi_cfg.rate;
+>> +	/*
+>> +	 * Invalidate current clock rate to ensure rk_hdptx_phy_clk_set_rate()
+>> +	 * will be invoked to commit PLL configuration.
+>> +	 */
+>> +	if (hdptx->pll_config_dirty) {
+>> +		req->rate = 0;
+>> +		return 0;
+>> +	}
+> 
+> [Severity: High]
+> Will returning 0 here break CCF semantics and cause a divide-by-zero crash
+> in downstream consumers?
+> 
+> When req->rate is explicitly forced to 0 Hz, the Common Clock Framework
+> uses this returned value to fulfill clk_round_rate and update its cached
+> clock rate. Consumers like the VOP2 display controller or DRM core that
+> rely on clk_get_rate will receive 0 Hz, which is known to lead to
+> crashes when calculating timestamping constants or display timings.
 > 
 
 
