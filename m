@@ -4,53 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 792F8CD98C7
-	for <linux-phy@archiver.kernel.org>; Thu, 11 Jun 2026 23:59:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AD865CD98C7
+	for <linux-phy@archiver.kernel.org>; Fri, 12 Jun 2026 00:18:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4LMcwg5Nd6mo65jb83H5kj2ZxZSkk1ByfDauRTcwAVw=; b=naNaKP02oaXEFa
-	jWYy09rk8Gc3Saeo60q2w3dT632+0zFq5lYNG/akW9vCIfnFsVQ4XyB2qA006q7RVFu5MEWyJtZAJ
-	ledBD3Lqzkv/iNqGaVGAfZsi6nP8HEkJwp4mF/wxw6eQouXr9bl8QGdiJqlOs97+0CnLvD3HhSw72
-	gbua2Vvxw1LS+nqkIZnxgD96wvcxNSGFnU94PjzNh26DT8U3abz8XM9ZXrkOn4iGfb12sDg8a1kRU
-	u65qic0lsHlsJthq0HsGP0mwVnellGU1g2ZTByeXE47xON0U+4WfPX1jcVFEDV43KysGnJ5N/mh5j
-	JQOfehdu5k1DqAFwQsNA==;
+	List-Owner; bh=BXcErDF373rBuMZ3U2h5Zkrlw5obd4jB6qVOcFM4Uhk=; b=O90WapDogUsl0s
+	AEdas9fe0dy1Yv/slYlc8tOwCGVnL9WK5PEYPAhZr0eY7tfTif7LhLBNdHb/4W5vHDfEpMfdmEDgx
+	mkHlHm6Yd/Hxbl8HNSfd8iu6Y6tm8+oRRGyCUc3nnPEgY01D/IxnYLZOR7u3FwiWYnr1DyqpVFcKw
+	NtLIeUnHmiSo4j4X7UmEPMF7T1DnlwYULuVUMb57YJtSmW54H1v/kKyYcwsIMsJeFSSqzqZZnDmHy
+	CdgKN8ZJDxTli/Iqzdi1a931mcCwuJ5fXKcSl+Ki3tivK2XyBsv0MLgavQXFVYVl+g3r62b+cwMI9
+	HlySsOlGxkts2lJbmXpA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXpJR-0000000AD8F-14za;
-	Thu, 11 Jun 2026 23:59:53 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wXpbu-0000000ADfA-0nM0;
+	Fri, 12 Jun 2026 00:18:58 +0000
+Received: from bali.collaboradmins.com ([148.251.105.195])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXpJQ-0000000AD89-2DLq
+	id 1wXpbr-0000000ADee-0sg3
 	for linux-phy@lists.infradead.org;
-	Thu, 11 Jun 2026 23:59:52 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 0313A40B76;
-	Thu, 11 Jun 2026 23:59:52 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9D16B1F000E9;
-	Thu, 11 Jun 2026 23:59:49 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1781222391;
-	bh=H7BUAH5FPzcMzhBalr/vYZBzBU7fe18METyMELZCpds=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=NN8wbZiVjSNJTMeiDITD/mJ6Ba7gFjWqQUG+tKWM4utuzRBt/SeEPPHWBKfpaqg75
-	 2+BXeBm9laVUedYVhoJ5pUnDh230O2zn6kcos8+eJhT3wgRPFu9q5wmaqYI3SaXqET
-	 zNjauv4ZTepjzA2L9+7LnQH2MpOk4tLUnPhynC1fvvccjkc5a3I4gz3mvG5LiMENeh
-	 fS1F31aY9NAqdOhskTWAtJzBXjTGWGleMRe6n2H1avzA2aL+6u+b1xdzIq2UZwxrac
-	 6vDHo4BDyW6RW3JDdX2Z8uoXxpfGFJXTJXU3zI4pVRLVBszsy0HDDvrZc2Ae2rQK8x
-	 JxwAexeejo4Kw==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v4 4/8] phy: rockchip: samsung-hdptx: Handle uncommitted
- PHY config changes
-To: "Cristian Ciocaltea" <cristian.ciocaltea@collabora.com>
-Cc: linux-phy@lists.infradead.org, olteanv@gmail.com, neil.armstrong@linaro.org, vkoul@kernel.org
-In-Reply-To: <20260612-hdptx-clk-fixes-v4-4-ce5e1d456cda@collabora.com>
-References: <20260612-hdptx-clk-fixes-v4-4-ce5e1d456cda@collabora.com>
-Date: Thu, 11 Jun 2026 23:59:48 +0000
-Message-Id: <20260611235951.9D16B1F000E9@smtp.kernel.org>
+	Fri, 12 Jun 2026 00:18:56 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=collabora.com;
+	s=mail; t=1781223533;
+	bh=mSYn42qFwxcVeNAG6Q7Ssv9a2+y5l0z2gCqDv5a0n40=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=pQvnXBDBlYcq54uxYzw0Ta5dSsxMjn7YemUnO/ATA63z0i7zhSyb5UK+IlwE+5mDC
+	 hlqlqZRd6mh5LEtRDGyeVUv3UXK5R9vpsABmEuSiHIwDpOoeQznd0yIRRsumM1BcTi
+	 pUNCxniOe3uVkwlZBHpzUthvy3xc8cNcYVuK1GBKtkCfv+QHTqzit23tKSkdcLED2Z
+	 cB8UUs8UhQQcErWoUfIdWAoNLvXD0rm7oNyRneX3Dbnocx+EuleZ7Ty5tD8kO7eeaV
+	 p+6SKkq/bgpeua/67x27UucCvcIDdZ7Z3X1dTLUi2tLULFPH2se4p8wHGJeQAgnWK2
+	 0sNUl/R8uo74Q==
+Received: from [100.64.0.241] (unknown [100.64.0.241])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: cristicc)
+	by bali.collaboradmins.com (Postfix) with ESMTPSA id E648517E03D7;
+	Fri, 12 Jun 2026 02:18:52 +0200 (CEST)
+Message-ID: <90ac7bbc-977b-432a-9f17-b7280e19d819@collabora.com>
+Date: Fri, 12 Jun 2026 03:18:52 +0300
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v4 2/8] phy: rockchip: samsung-hdptx: Prevent
+ divide-by-zero when computing clk rate
+To: sashiko-reviews@lists.linux.dev
+Cc: neil.armstrong@linaro.org, olteanv@gmail.com,
+ linux-phy@lists.infradead.org, vkoul@kernel.org
+References: <20260612-hdptx-clk-fixes-v4-2-ce5e1d456cda@collabora.com>
+ <20260611235702.0E9691F000E9@smtp.kernel.org>
+Content-Language: en-US
+From: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+In-Reply-To: <20260611235702.0E9691F000E9@smtp.kernel.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260611_171855_418623_A1D19262 
+X-CRM114-Status: GOOD (  16.40  )
 X-BeenThere: linux-phy@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -62,93 +72,81 @@ List-Post: <mailto:linux-phy@lists.infradead.org>
 List-Help: <mailto:linux-phy-request@lists.infradead.org?subject=help>
 List-Subscribe: <https://lists.infradead.org/mailman/listinfo/linux-phy>,
  <mailto:linux-phy-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-phy" <linux-phy-bounces@lists.infradead.org>
 Errors-To: linux-phy-bounces+linux-phy=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MyBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIHJrX2hkcHR4X3BoeV9j
-bGtfZGV0ZXJtaW5lX3JhdGUoKSBpbmNvcnJlY3RseSBmb3JjZXMgYSAwIEh6IGNsb2NrIHJhdGUg
-d2hlbiBwbGxfY29uZmlnX2RpcnR5IGlzIHRydWUsIGJyZWFraW5nIENDRiBzZW1hbnRpY3MuCi0g
-W0hpZ2hdIHJrX2hkcHR4X3BoeV9jb25zdW1lcl9nZXQoKSBzaWxlbnRseSBzdXBwcmVzc2VzIFBM
-TCBoYXJkd2FyZSBsb2NrIGZhaWx1cmVzLCBicmVha2luZyB0aGUgY2xrX3ByZXBhcmUoKSBlcnJv
-ciBwcm9wYWdhdGlvbiBjb250cmFjdC4KLSBbSGlnaF0gRGF0YSByYWNlIGFuZCBtaXNzaW5nIHN5
-bmNocm9uaXphdGlvbiBiZXR3ZWVuIENDRiBhbmQgUEhZIEFQSXMgbGVhZGluZyB0byBjb25jdXJy
-ZW50IGhhcmR3YXJlIGluaXRpYWxpemF0aW9uLgotLQoKY29tbWl0IDJkYzBkZWUyYjUwNzEzN2Iw
-NzQxNzhkYzg4YmQ5YjY5ZGJlNDVkMzgKQXV0aG9yOiBDcmlzdGlhbiBDaW9jYWx0ZWEgPGNyaXN0
-aWFuLmNpb2NhbHRlYUBjb2xsYWJvcmEuY29tPgoKcGh5OiByb2NrY2hpcDogc2Ftc3VuZy1oZHB0
-eDogSGFuZGxlIHVuY29tbWl0dGVkIFBIWSBjb25maWcgY2hhbmdlcwoKVGhpcyBjb21taXQgZGVm
-ZXJzIHByb2dyYW1taW5nIEhETUkgUEhZIGNvbmZpZ3VyYXRpb24gY2hhbmdlcyB0byB0aGUgaGFy
-ZHdhcmUKdW50aWwgdGhlIFBIWSB1c2FnZSBjb3VudCBpbmNyZW1lbnRzLiBJdCBpbnRyb2R1Y2Vz
-IGEgcGxsX2NvbmZpZ19kaXJ0eSBmbGFnCnRvIHRyYWNrIHVuY29tbWl0dGVkIHN0YXRlIGFuZCBp
-bnZhbGlkYXRlcyB0aGUgY2xvY2sgcmF0ZSBpbiB0aGUgQ0NGIGNhbGxiYWNrCnRvIGZvcmNlIGhh
-cmR3YXJlIHVwZGF0ZXMuCgo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHkt
-cm9ja2NoaXAtc2Ftc3VuZy1oZHB0eC5jIGIvZHJpdmVycy9waHkvcm9ja2NoaXAvcGh5LXJvY2tj
-aGlwLXNhbXN1bmctaGRwdHguYwo+IC0tLSBhL2RyaXZlcnMvcGh5L3JvY2tjaGlwL3BoeS1yb2Nr
-Y2hpcC1zYW1zdW5nLWhkcHR4LmMKPiArKysgYi9kcml2ZXJzL3BoeS9yb2NrY2hpcC9waHktcm9j
-a2NoaXAtc2Ftc3VuZy1oZHB0eC5jCj4gQEAgLTEzNDcsMjUgKzEzNTQsMjIgQEAgc3RhdGljIGlu
-dCBya19oZHB0eF9waHlfY29uc3VtZXJfZ2V0KHN0cnVjdCBya19oZHB0eF9waHkgKmhkcHR4KQo+
-ICAJCXJldHVybiAwOwo+ICAKPiAgCXJldCA9IHJlZ21hcF9yZWFkKGhkcHR4LT5ncmYsIEdSRl9I
-RFBUWF9TVEFUVVMsICZzdGF0dXMpOwo+IC0JaWYgKHJldCkKPiAtCQlnb3RvIGRlY191c2FnZTsK
-PiAtCj4gLQlpZiAoc3RhdHVzICYgSERQVFhfT19QTExfTE9DS19ET05FKQo+IC0JCWRldl93YXJu
-KGhkcHR4LT5kZXYsICJQTEwgbG9ja2VkIGJ5IHVua25vd24gY29uc3VtZXIhXG4iKTsKPiArCWlm
-IChyZXQpIHsKPiArCQlhdG9taWNfZGVjKCZoZHB0eC0+dXNhZ2VfY291bnQpOwo+ICsJCXJldHVy
-biByZXQ7Cj4gKwl9Cj4gIAo+ICAJaWYgKG1vZGUgPT0gUEhZX01PREVfRFApIHsKPiAgCQlya19o
-ZHB0eF9kcF9yZXNldChoZHB0eCk7Cj4gIAl9IGVsc2Ugewo+IC0JCXJldCA9IHJrX2hkcHR4X3Bs
-bF9jbW5fY29uZmlnKGhkcHR4KTsKPiAtCQlpZiAocmV0KQo+IC0JCQlnb3RvIGRlY191c2FnZTsK
-PiArCQkvKgo+ICsJCSAqIElnbm9yZSBQTEwgY29uZmlnIGVycm9ycyBhdCB0aGlzIHBvaW50IGFz
-IHBsbF9jb25maWdfZGlydHkKPiArCQkgKiB3YXMgbm90IHJlc2V0IGFuZCwgdGhlcmVmb3JlLCBv
-cGVyYXRpb24gd2lsbCBiZSByZXRyaWVkLgo+ICsJCSAqLwo+ICsJCXJrX2hkcHR4X3BsbF9jbW5f
-Y29uZmlnKGhkcHR4KTsKPiAgCX0KPiAgCj4gIAlyZXR1cm4gMDsKCltTZXZlcml0eTogSGlnaF0K
-RG9lcyBzaWxlbnRseSBkaXNjYXJkaW5nIHRoaXMgZXJyb3IgYnJlYWsgdGhlIGNsa19wcmVwYXJl
-IGVycm9yIHByb3BhZ2F0aW9uCmNvbnRyYWN0PwoKV2hlbiB0aGlzIGZ1bmN0aW9uIGlzIGludm9r
-ZWQgdmlhIHRoZSBjbG9jayBwcm92aWRlcidzIHByZXBhcmUgcGhhc2UsIGEKaGFyZHdhcmUgZmFp
-bHVyZSBzdWNoIGFzIGFuIEkvTyB0aW1lb3V0IGR1cmluZyB0aGUgSERQVFhfT19QSFlfQ0xLX1JE
-WSB3YWl0CmdldHMgY29tcGxldGVseSBzd2FsbG93ZWQuIFRoZSBjbGtfcHJlcGFyZSBjYWxsIHdv
-dWxkIHJldHVybiBzdWNjZXNzLCBhbGxvd2luZwpDQ0YgY29uc3VtZXJzIHRvIHByb2NlZWQgd2hp
-bGUgdGhlIFBIWSBoYXJkd2FyZSByZW1haW5zIHVuaW5pdGlhbGl6ZWQuCgpBbHRob3VnaCB0aGUg
-Y29tbWVudCBhc3N1bWVzIG9wZXJhdGlvbnMgd2lsbCBiZSByZXRyaWVkLCBpZiBjbGtfc2V0X3Jh
-dGUgaXMKbm90IHN1YnNlcXVlbnRseSBjYWxsZWQsIG5vIGZ1cnRoZXIgYXR0ZW1wdHMgd2lsbCBi
-ZSBtYWRlLgoKWyAuLi4gXQoKPiBAQCAtMTcwMCwxMyArMTcwNCwxOCBAQCBzdGF0aWMgaW50IHJr
-X2hkcHR4X3BoeV9wb3dlcl9vbihzdHJ1Y3QgcGh5ICpwaHkpCj4gIAkJaWYgKHJldCkKPiAgCQkJ
-cmtfaGRwdHhfcGh5X2NvbnN1bWVyX3B1dChoZHB0eCwgdHJ1ZSk7Cj4gIAl9IGVsc2Ugewo+IC0J
-CXJlZ21hcF93cml0ZShoZHB0eC0+Z3JmLCBHUkZfSERQVFhfQ09OMCwKPiAtCQkJICAgICBIRFBU
-WF9NT0RFX1NFTCA8PCAxNiB8IEZJRUxEX1BSRVAoSERQVFhfTU9ERV9TRUwsIDB4MCkpOwo+ICsJ
-CWlmIChoZHB0eC0+cGxsX2NvbmZpZ19kaXJ0eSkKPiArCQkJcmV0ID0gcmtfaGRwdHhfcGxsX2Nt
-bl9jb25maWcoaGRwdHgpOwoKW1NldmVyaXR5OiBIaWdoXQpDYW4gdGhpcyBtaXNzaW5nIHN5bmNo
-cm9uaXphdGlvbiBsZWFkIHRvIGNvbmN1cnJlbnQgaGFyZHdhcmUgaW5pdGlhbGl6YXRpb24/CgpJ
-ZiB0aHJlYWQgQSBjYWxscyBjbGtfcHJlcGFyZSBhbmQgdGhyZWFkIEIgY29uY3VycmVudGx5IGNh
-bGxzIHBoeV9wb3dlcl9vbjoKClRocmVhZCBBIGluY3JlbWVudHMgdXNhZ2VfY291bnQgdG8gMSBp
-biBya19oZHB0eF9waHlfY29uc3VtZXJfZ2V0IGFuZAplbnRlcnMgcmtfaGRwdHhfcGxsX2Ntbl9j
-b25maWcuCgpUaHJlYWQgQiBpbmNyZW1lbnRzIHVzYWdlX2NvdW50IHRvIDIsIHJldHVybnMgaW1t
-ZWRpYXRlbHkgZnJvbQpya19oZHB0eF9waHlfY29uc3VtZXJfZ2V0LCBhbmQgcHJvY2VlZHMgaGVy
-ZSB0byBjaGVjayBwbGxfY29uZmlnX2RpcnR5LgpCZWNhdXNlIHRocmVhZCBBIGhhc24ndCBjbGVh
-cmVkIHRoZSBmbGFnIHlldCwgdGhyZWFkIEIgd2lsbCBhbHNvIGludm9rZQpya19oZHB0eF9wbGxf
-Y21uX2NvbmZpZy4KCkNvdWxkIHRoaXMgZGF0YSByYWNlIGFsbG93IGJvdGggdGhyZWFkcyB0byBj
-b25jdXJyZW50bHkgZXhlY3V0ZSBub24tYXRvbWljCnJlZ21hcCBtdWx0aS13cml0ZSBzZXF1ZW5j
-ZXMgYW5kIGNvcnJ1cHQgdGhlIFBIWSBzdGF0ZT8gQXJlIGRyaXZlci1sZXZlbApsb2NrcyBuZWVk
-ZWQgdG8gcHJvdGVjdCB0aGUgc2hhcmVkIHBsbF9jb25maWdfZGlydHkgYW5kIGhkbWlfY2ZnIHN0
-cnVjdHVyZXM/CgpbIC4uLiBdCgo+IEBAIC0yMzIzLDggKzIzMzUsMTkgQEAgc3RhdGljIGludCBy
-a19oZHB0eF9waHlfY2xrX2RldGVybWluZV9yYXRlKHN0cnVjdCBjbGtfaHcgKmh3LAo+ICB7Cj4g
-IAlzdHJ1Y3QgcmtfaGRwdHhfcGh5ICpoZHB0eCA9IHRvX3JrX2hkcHR4X3BoeShodyk7Cj4gIAo+
-IC0JaWYgKGhkcHR4LT5oZG1pX2NmZy5tb2RlID09IFBIWV9IRE1JX01PREVfRlJMKQo+IC0JCXJl
-dHVybiBoZHB0eC0+aGRtaV9jZmcucmF0ZTsKPiArCS8qCj4gKwkgKiBJbnZhbGlkYXRlIGN1cnJl
-bnQgY2xvY2sgcmF0ZSB0byBlbnN1cmUgcmtfaGRwdHhfcGh5X2Nsa19zZXRfcmF0ZSgpCj4gKwkg
-KiB3aWxsIGJlIGludm9rZWQgdG8gY29tbWl0IFBMTCBjb25maWd1cmF0aW9uLgo+ICsJICovCj4g
-KwlpZiAoaGRwdHgtPnBsbF9jb25maWdfZGlydHkpIHsKPiArCQlyZXEtPnJhdGUgPSAwOwo+ICsJ
-CXJldHVybiAwOwo+ICsJfQoKW1NldmVyaXR5OiBIaWdoXQpXaWxsIHJldHVybmluZyAwIGhlcmUg
-YnJlYWsgQ0NGIHNlbWFudGljcyBhbmQgY2F1c2UgYSBkaXZpZGUtYnktemVybyBjcmFzaAppbiBk
-b3duc3RyZWFtIGNvbnN1bWVycz8KCldoZW4gcmVxLT5yYXRlIGlzIGV4cGxpY2l0bHkgZm9yY2Vk
-IHRvIDAgSHosIHRoZSBDb21tb24gQ2xvY2sgRnJhbWV3b3JrCnVzZXMgdGhpcyByZXR1cm5lZCB2
-YWx1ZSB0byBmdWxmaWxsIGNsa19yb3VuZF9yYXRlIGFuZCB1cGRhdGUgaXRzIGNhY2hlZApjbG9j
-ayByYXRlLiBDb25zdW1lcnMgbGlrZSB0aGUgVk9QMiBkaXNwbGF5IGNvbnRyb2xsZXIgb3IgRFJN
-IGNvcmUgdGhhdApyZWx5IG9uIGNsa19nZXRfcmF0ZSB3aWxsIHJlY2VpdmUgMCBIeiwgd2hpY2gg
-aXMga25vd24gdG8gbGVhZCB0bwpjcmFzaGVzIHdoZW4gY2FsY3VsYXRpbmcgdGltZXN0YW1waW5n
-IGNvbnN0YW50cyBvciBkaXNwbGF5IHRpbWluZ3MuCgotLSAKU2FzaGlrbyBBSSByZXZpZXcgwrcg
-aHR0cHM6Ly9zYXNoaWtvLmRldi8jL3BhdGNoc2V0LzIwMjYwNjEyLWhkcHR4LWNsay1maXhlcy12
-NC0wLWNlNWUxZDQ1NmNkYUBjb2xsYWJvcmEuY29tP3BhcnQ9NAoKLS0gCmxpbnV4LXBoeSBtYWls
-aW5nIGxpc3QKbGludXgtcGh5QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cHM6Ly9saXN0cy5pbmZy
-YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcGh5Cg==
+On 6/12/26 2:57 AM, sashiko-bot@kernel.org wrote:
+> Thank you for your contribution! Sashiko AI review found 1 potential issue(s) to consider:
+> 
+> Pre-existing issues:
+> - [High] Potential integer underflow in `fout` calculation when hardware state is misconfigured, leading to a massive bogus clock rate that could hang downstream components.
+> --
+
+If the hardware reached such a damaged state, the kernel is likely already encountering more serious issues.
+
+Regardless, I will address this in the "FRL TxFFE level control" series, which is currently blocked by this one, to avoid any further delays.
+
+Regards,
+Cristian
+
+> 
+> commit cb21c8c13b880d08d17b5ee69740229527db5442
+> Author: Cristian Ciocaltea <cristian.ciocaltea@collabora.com>
+> 
+> phy: rockchip: samsung-hdptx: Prevent divide-by-zero when computing clk rate
+> 
+> This commit adds sanitization to rk_hdptx_phy_clk_calc_rate_from_pll_cfg()
+> to prevent a divide-by-zero during clock rate calculation. It checks the
+> denominator derived from hardware registers, which could be uninitialized or
+> misconfigured.
+> 
+> Closes: https://sashiko.dev/#/patchset/20260611-hdptx-clk-fixes-v3-0-67b1b0c00e16@collabora.com?part=1
+> 
+>> diff --git a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+>> index 710603afff866..8c044381b83a4 100644
+>> --- a/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+>> +++ b/drivers/phy/rockchip/phy-rockchip-samsung-hdptx.c
+>> @@ -2270,10 +2270,15 @@ static u64 rk_hdptx_phy_clk_calc_rate_from_pll_cfg(struct rk_hdptx_phy *hdptx)
+>>  
+>>  	fout = PLL_REF_CLK * ropll_hw.pms_mdiv;
+>>  	if (ropll_hw.sdm_en) {
+>> +		val = 16U * ropll_hw.sdm_deno *
+>> +		      (ropll_hw.sdc_deno * ropll_hw.sdc_n - ropll_hw.sdc_num);
+>> +		if (!val) {
+>> +			dev_dbg(hdptx->dev, "%s invalid ROPLL hw state\n", __func__);
+>> +			return 0;
+>> +		}
+>> +
+>>  		sdm = div_u64(PLL_REF_CLK * ropll_hw.sdc_deno *
+>> -			      ropll_hw.pms_mdiv * ropll_hw.sdm_num,
+>> -			      16 * ropll_hw.sdm_deno *
+>> -			      (ropll_hw.sdc_deno * ropll_hw.sdc_n - ropll_hw.sdc_num));
+>> +			      ropll_hw.pms_mdiv * ropll_hw.sdm_num, val);
+>>  
+>>  		if (ropll_hw.sdm_num_sign)
+>>  			fout = fout - sdm;
+> 
+> [Severity: High]
+> This is a pre-existing issue, but could this subtraction result in an
+> integer underflow?
+> 
+> If the hardware registers are misconfigured or contain uninitialized values,
+> it seems the computed sigma-delta modulator offset sdm could be significantly
+> larger than the base frequency fout.
+> 
+> Since fout is an unsigned 64-bit integer, subtracting a larger sdm in
+> rk_hdptx_phy_clk_calc_rate_from_pll_cfg() would wrap around to a massive
+> positive value.
+> 
+> Could this underflow lead to an absurdly high clock rate being returned
+> to the Common Clock Framework, potentially causing hangs or div-by-zero
+> errors in downstream components?
+> 
+
+
+-- 
+linux-phy mailing list
+linux-phy@lists.infradead.org
+https://lists.infradead.org/mailman/listinfo/linux-phy
